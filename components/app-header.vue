@@ -13,9 +13,17 @@
 					<div class="app-header__brand-text">docta.me</div>
 				</NuxtLink>
 
-				<!-- Центральная часть - поиск (только в компактном режиме) -->
-				<div class="app-header__search-compact" v-if="!isExpanded">
-					<SearchBar compact @search="handleSearch" />
+				<!-- Центральная часть -->
+				<div class="app-header__center">
+					<!-- Поиск в компактном режиме -->
+					<div class="app-header__search-compact" v-if="!isExpanded">
+						<SearchBar compact @search="handleSearch" />
+					</div>
+
+					<!-- Табы категорий в расширенном режиме -->
+					<div class="app-header__category-tabs" v-if="isExpanded">
+						<CategoryTabs @category-change="handleCategoryChange" />
+					</div>
 				</div>
 
 				<!-- Правая часть - переключатель языка -->
@@ -25,33 +33,10 @@
 			</div>
 		</div>
 
-		<!-- Расширенная часть (табы + поиск) -->
+		<!-- Расширенная часть (только поиск) -->
 		<div class="app-header__expanded" v-if="isExpanded">
-			<CategoryTabs @category-change="handleCategoryChange" />
-			<SearchBar @search="handleSearch" />
+			<SearchBar flat @search="handleSearch" />
 		</div>
-
-		<!-- Кнопка переключения состояния -->
-		<button
-			class="app-header__toggle"
-			@click="toggleExpanded"
-			:aria-label="isExpanded ? t('CollapseSearch') : t('ExpandSearch')"
-		>
-			<svg
-				class="app-header__toggle-icon"
-				:class="{ 'app-header__toggle-icon--expanded': isExpanded }"
-				viewBox="0 0 24 24"
-				fill="none"
-			>
-				<path
-					d="M6 9L12 15L18 9"
-					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				/>
-			</svg>
-		</button>
 	</header>
 </template>
 
@@ -65,20 +50,16 @@ const { country } = useCountry();
 const { locale } = useI18n({ useScope: 'global' });
 const { uiCurrency } = useCurrency();
 
-const isExpanded = ref(false);
+// Используем filters composable
+const { isExpanded, setCategory } = useFilters();
 
 const mainPageLink = computed(() => ({
 	name: 'index',
 	query: getRegionalQuery(country.value, locale.value, uiCurrency.value),
 }));
 
-const toggleExpanded = () => {
-	isExpanded.value = !isExpanded.value;
-};
-
-const handleCategoryChange = (category: string) => {
-	console.log('Category changed:', category);
-	// TODO: Implement category change logic
+const handleCategoryChange = (category: 'doctors' | 'pharmacies') => {
+	setCategory(category);
 };
 
 const handleSearch = () => {
@@ -90,39 +71,25 @@ const handleSearch = () => {
 <i18n lang="json">
 {
 	"en": {
-		"GoToMainPage": "Go to main page",
-		"CollapseSearch": "Collapse search",
-		"ExpandSearch": "Expand search"
+		"GoToMainPage": "Go to main page"
 	},
 	"ru": {
-		"GoToMainPage": "Перейти на главную страницу",
-		"CollapseSearch": "Свернуть поиск",
-		"ExpandSearch": "Развернуть поиск"
+		"GoToMainPage": "Перейти на главную страницу"
 	},
 	"sr": {
-		"GoToMainPage": "Idi na početnu stranicu",
-		"CollapseSearch": "Smanji pretragu",
-		"ExpandSearch": "Proširi pretragu"
+		"GoToMainPage": "Idi na početnu stranicu"
 	},
 	"ba": {
-		"GoToMainPage": "Idi na početnu stranicu",
-		"CollapseSearch": "Smanji pretragu",
-		"ExpandSearch": "Proširi pretragu"
+		"GoToMainPage": "Idi na početnu stranicu"
 	},
 	"me": {
-		"GoToMainPage": "Idi na početnu stranicu",
-		"CollapseSearch": "Smanji pretragu",
-		"ExpandSearch": "Proširi pretragu"
+		"GoToMainPage": "Idi na početnu stranicu"
 	},
 	"de": {
-		"GoToMainPage": "Zur Startseite gehen",
-		"CollapseSearch": "Suche reduzieren",
-		"ExpandSearch": "Suche erweitern"
+		"GoToMainPage": "Zur Startseite gehen"
 	},
 	"tr": {
-		"GoToMainPage": "Ana sayfaya git",
-		"CollapseSearch": "Aramayı daralt",
-		"ExpandSearch": "Aramayı genişlet"
+		"GoToMainPage": "Ana sayfaya git"
 	}
 }
 </i18n>
@@ -187,10 +154,27 @@ const handleSearch = () => {
 		white-space: nowrap;
 	}
 
-	&__search-compact {
+	&__center {
 		flex: 1;
-		max-width: 600px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		margin: 0 @base-padding;
+	}
+
+	&__search-compact {
+		width: 100%;
+		max-width: 600px;
+	}
+
+	&__category-tabs {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		:deep(.category-tabs) {
+			padding: 0;
+		}
 	}
 
 	&__actions {
@@ -201,43 +185,7 @@ const handleSearch = () => {
 	}
 
 	&__expanded {
-		border-top: 1px solid @light-gray-color;
-		background: #fafafa;
-		padding: @base-padding 0;
-	}
-
-	&__toggle {
-		position: absolute;
-		bottom: -16px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 32px;
-		height: 32px;
-		border: 1px solid @light-gray-color;
-		background: white;
-		border-radius: 50%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		cursor: pointer;
-		transition: all 0.2s ease;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-
-		&:hover {
-			background: #f8f9fa;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-		}
-	}
-
-	&__toggle-icon {
-		width: 16px;
-		height: 16px;
-		color: @dark-gray-color;
-		transition: transform 0.2s ease;
-
-		&--expanded {
-			transform: rotate(180deg);
-		}
+		padding: @base-offset 0 @base-padding 0;
 	}
 }
 
@@ -257,6 +205,10 @@ const handleSearch = () => {
 
 		&__brand-text {
 			font-size: 20px;
+		}
+
+		&__center {
+			margin: 0 @base-offset;
 		}
 
 		&__search-compact {
@@ -281,8 +233,12 @@ const handleSearch = () => {
 			height: 32px;
 		}
 
+		&__center {
+			margin: 0 @base-offset / 2;
+		}
+
 		&__search-compact {
-			margin: 0 @base-offset;
+			margin: 0;
 		}
 	}
 }
@@ -297,8 +253,12 @@ const handleSearch = () => {
 			display: none;
 		}
 
+		&__center {
+			margin: 0;
+		}
+
 		&__search-compact {
-			margin: 0 @base-offset;
+			margin: 0;
 		}
 	}
 }

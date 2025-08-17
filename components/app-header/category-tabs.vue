@@ -1,7 +1,7 @@
 <template>
 	<div class="category-tabs">
 		<el-tabs
-			v-model="activeCategory"
+			v-model="category"
 			@tab-change="handleTabChange"
 			class="category-tabs__inner"
 		>
@@ -14,14 +14,17 @@
 <script setup lang="ts">
 const { t } = useI18n();
 
-const activeCategory = ref('doctors');
+// Используем filters composable
+const { category, setCategory } = useFilters();
 
 const emit = defineEmits<{
-	categoryChange: [category: string];
+	categoryChange: [category: 'doctors' | 'pharmacies'];
 }>();
 
-const handleTabChange = (category: string | number) => {
-	emit('categoryChange', String(category));
+const handleTabChange = (newCategory: string | number) => {
+	const categoryValue = String(newCategory) as 'doctors' | 'pharmacies';
+	setCategory(categoryValue);
+	emit('categoryChange', categoryValue);
 };
 </script>
 

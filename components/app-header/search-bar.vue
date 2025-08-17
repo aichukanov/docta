@@ -1,8 +1,11 @@
 <template>
-	<div class="search-bar" :class="{ 'search-bar--compact': compact }">
+	<div
+		class="search-bar"
+		:class="{ 'search-bar--compact': compact, 'search-bar--flat': flat }"
+	>
 		<div class="search-bar__container">
 			<div class="search-bar__filters">
-				<div class="search-bar__filter" @click="showCategoryFilter = true">
+				<div class="search-bar__filter" @click="handleCategoryClick">
 					<div class="search-bar__filter-label">{{ t('Category') }}</div>
 					<div class="search-bar__filter-value">{{ selectedCategory }}</div>
 				</div>
@@ -51,13 +54,18 @@
 <script setup lang="ts">
 interface Props {
 	compact?: boolean;
+	flat?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
 	compact: false,
+	flat: false,
 });
 
 const { t } = useI18n();
+
+// Используем filters composable
+const { category, specialties, city, language, setExpanded } = useFilters();
 
 // Filter states
 const showCategoryFilter = ref(false);
@@ -66,14 +74,27 @@ const showCityFilter = ref(false);
 const showLanguageFilter = ref(false);
 
 // Selected values
-const selectedCategory = computed(() => t('Doctors'));
-const selectedSpecialties = computed(() => t('AnySpecialty'));
-const selectedCity = computed(() => t('AnyCity'));
-const selectedLanguage = computed(() => t('AnyLanguage'));
+const selectedCategory = computed(() => {
+	return category.value === 'doctors' ? t('Doctors') : t('Pharmacies');
+});
+
+const selectedSpecialties = computed(() => {
+	if (specialties.value.length === 0) return t('AnySpecialty');
+	if (specialties.value.length === 1) return specialties.value[0];
+	return t('SpecialtiesCount', { count: specialties.value.length });
+});
+
+const selectedCity = computed(() => city.value || t('AnyCity'));
+const selectedLanguage = computed(() => language.value || t('AnyLanguage'));
 
 const emit = defineEmits<{
 	search: [];
 }>();
+
+const handleCategoryClick = () => {
+	// Активируем расширенный режим при клике на категорию
+	setExpanded(true);
+};
 
 const handleSearch = () => {
 	emit('search');
@@ -89,9 +110,11 @@ const handleSearch = () => {
 		"Language": "Language",
 		"Search": "Search",
 		"Doctors": "Doctors",
+		"Pharmacies": "Pharmacies",
 		"AnySpecialty": "Any specialty",
 		"AnyCity": "Any city",
-		"AnyLanguage": "Any language"
+		"AnyLanguage": "Any language",
+		"SpecialtiesCount": "{count} specialties"
 	},
 	"ru": {
 		"Category": "Категория",
@@ -100,9 +123,11 @@ const handleSearch = () => {
 		"Language": "Язык",
 		"Search": "Поиск",
 		"Doctors": "Доктора",
+		"Pharmacies": "Аптеки",
 		"AnySpecialty": "Любая специализация",
 		"AnyCity": "Любой город",
-		"AnyLanguage": "Любой язык"
+		"AnyLanguage": "Любой язык",
+		"SpecialtiesCount": "{count} специализаций"
 	},
 	"sr": {
 		"Category": "Kategorija",
@@ -111,9 +136,11 @@ const handleSearch = () => {
 		"Language": "Jezik",
 		"Search": "Pretraga",
 		"Doctors": "Lekari",
+		"Pharmacies": "Apoteke",
 		"AnySpecialty": "Bilo koja specijalizacija",
 		"AnyCity": "Bilo koji grad",
-		"AnyLanguage": "Bilo koji jezik"
+		"AnyLanguage": "Bilo koji jezik",
+		"SpecialtiesCount": "{count} specijalizacija"
 	},
 	"ba": {
 		"Category": "Kategorija",
@@ -122,9 +149,11 @@ const handleSearch = () => {
 		"Language": "Jezik",
 		"Search": "Pretraga",
 		"Doctors": "Lekari",
+		"Pharmacies": "Apoteke",
 		"AnySpecialty": "Bilo koja specijalizacija",
 		"AnyCity": "Bilo koji grad",
-		"AnyLanguage": "Bilo koji jezik"
+		"AnyLanguage": "Bilo koji jezik",
+		"SpecialtiesCount": "{count} specijalizacija"
 	},
 	"me": {
 		"Category": "Kategorija",
@@ -133,9 +162,11 @@ const handleSearch = () => {
 		"Language": "Jezik",
 		"Search": "Pretraga",
 		"Doctors": "Ljekari",
+		"Pharmacies": "Apoteke",
 		"AnySpecialty": "Bilo koja specijalizacija",
 		"AnyCity": "Bilo koji grad",
-		"AnyLanguage": "Bilo koji jezik"
+		"AnyLanguage": "Bilo koji jezik",
+		"SpecialtiesCount": "{count} specijalizacija"
 	},
 	"de": {
 		"Category": "Kategorie",
@@ -144,9 +175,11 @@ const handleSearch = () => {
 		"Language": "Sprache",
 		"Search": "Suchen",
 		"Doctors": "Ärzte",
+		"Pharmacies": "Apotheken",
 		"AnySpecialty": "Jede Fachrichtung",
 		"AnyCity": "Jede Stadt",
-		"AnyLanguage": "Jede Sprache"
+		"AnyLanguage": "Jede Sprache",
+		"SpecialtiesCount": "{count} Fachrichtungen"
 	},
 	"tr": {
 		"Category": "Kategori",
@@ -155,9 +188,11 @@ const handleSearch = () => {
 		"Language": "Dil",
 		"Search": "Ara",
 		"Doctors": "Doktorlar",
+		"Pharmacies": "Eczaneler",
 		"AnySpecialty": "Herhangi bir uzmanlık",
 		"AnyCity": "Herhangi bir şehir",
-		"AnyLanguage": "Herhangi bir dil"
+		"AnyLanguage": "Herhangi bir dil",
+		"SpecialtiesCount": "{count} uzmanlık"
 	}
 }
 </i18n>
@@ -174,6 +209,19 @@ const handleSearch = () => {
 
 	&--compact {
 		padding: @base-offset 0 0 0;
+	}
+
+	&--flat {
+		.search-bar__filters {
+			border: none;
+			box-shadow: none;
+			background: transparent;
+			border-radius: 0;
+
+			&:hover {
+				box-shadow: none;
+			}
+		}
 	}
 
 	&__container {

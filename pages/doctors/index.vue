@@ -1,64 +1,58 @@
 <script setup lang="ts">
-import { ref, onMounted, nextTick } from 'vue';
+import { ref, onMounted, nextTick, computed, watch, toRaw } from 'vue';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import type { DoctorWithClinics, Specialty } from '~/interfaces/doctor';
+import {
+	MONTENEGRO_CENTER,
+	MONTENEGRO_ZOOM_SETTINGS,
+} from '~/common/constants';
 
-interface Doctor {
-	id: number;
-	name: string;
-	specialty: string;
-	address: string;
-	phone: string;
-	image?: string;
-}
-
-// Mock data for doctors
-const doctors = ref<Doctor[]>([
-	{
-		id: 1,
-		name: 'Dr. Marko Petrović',
-		specialty: 'Kardiolog',
-		address: 'Kneza Miloša 15, Beograd',
-		phone: '+381 11 123 4567',
-		image: '/doctors/doctor-1.jpg',
-	},
-	{
-		id: 2,
-		name: 'Dr. Ana Nikolić',
-		specialty: 'Dermatolog',
-		address: 'Nemanjina 25, Novi Sad',
-		phone: '+381 21 987 6543',
-		image: '/doctors/doctor-2.jpg',
-	},
-	{
-		id: 3,
-		name: 'Dr. Stefan Jovanović',
-		specialty: 'Neurolog',
-		address: 'Kralja Petra 8, Niš',
-		phone: '+381 18 456 7890',
-		image: '/doctors/doctor-3.jpg',
-	},
-	{
-		id: 4,
-		name: 'Dr. Milica Stojanović',
-		specialty: 'Ginekolog',
-		address: 'Cara Dušana 12, Kragujevac',
-		phone: '+381 34 234 5678',
-		image: '/doctors/doctor-4.jpg',
-	},
-	{
-		id: 5,
-		name: 'Dr. Miloš Radić',
-		specialty: 'Ortoped',
-		address: 'Vuka Karadžića 30, Subotica',
-		phone: '+381 24 345 6789',
-		image: '/doctors/doctor-5.jpg',
-	},
-]);
+const {
+	doctors,
+	specialties,
+	loading,
+	loadDoctors,
+	loadSpecialties,
+	getSpecialtyNames,
+} = useDoctors();
+const searchQuery = ref('');
 
 let map: L.Map | null = null;
+let markersGroup: L.LayerGroup | null = null;
 
-onMounted(() => {
+// Filtered doctors based on search query
+const filteredDoctors = computed(() => {
+	if (!searchQuery.value) return doctors.value;
+
+	const query = searchQuery.value.toLowerCase();
+	return doctors.value.filter(
+		(doctor) =>
+			doctor.name.toLowerCase().includes(query) ||
+			(doctor.clinics &&
+				doctor.clinics.some(
+					(clinic) =>
+						clinic.clinicName.toLowerCase().includes(query) ||
+						clinic.cityName.toLowerCase().includes(query) ||
+						clinic.address.toLowerCase().includes(query),
+				)),
+	);
+});
+
+// Load data from API
+async function loadData() {
+	try {
+		// Load doctors and specialties in parallel
+		await Promise.all([loadDoctors(), loadSpecialties()]);
+	} catch (error) {
+		console.error('Error loading data:', error);
+	}
+}
+
+// Initialize map
+function initMap() {
+	if (map) return;
+
 	// Fix Leaflet marker icons
 	delete (L.Icon.Default.prototype as any)._getIconUrl;
 	L.Icon.Default.mergeOptions({
@@ -70,37 +64,68 @@ onMounted(() => {
 			'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
 	});
 
-	// Initialize Leaflet map
-	nextTick(() => {
-		if (!map) {
-			map = L.map('map').setView([44.8176, 20.4567], 7); // Center on Serbia
+	// Initialize map centered on Montenegro
+	map = L.map('map').setView(
+		MONTENEGRO_CENTER,
+		MONTENEGRO_ZOOM_SETTINGS.defaultZoom,
+	);
 
-			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-				attribution: '© OpenStreetMap contributors',
-			}).addTo(map);
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '© OpenStreetMap contributors',
+	}).addTo(map);
 
-			// Add markers for doctors
-			doctors.value.forEach((doctor, index) => {
-				// Mock coordinates for demonstration
-				const coords: [number, number] = [
-					44.8176 + (Math.random() - 0.5) * 2,
-					20.4567 + (Math.random() - 0.5) * 2,
-				];
+	// Create markers group
+	markersGroup = L.layerGroup().addTo(map);
+}
 
-				L.marker(coords)
+// Update map markers
+function updateMapMarkers() {
+	if (!map || !markersGroup) return;
+
+	// Clear existing markers
+	markersGroup.clearLayers();
+
+	// Add markers for filtered doctors
+	filteredDoctors.value.forEach((doctor) => {
+		toRaw(doctor.clinics).forEach((clinic) => {
+			if (clinic.latitude && clinic.longitude) {
+				const specialtyNames = getSpecialtyNames(toRaw(doctor));
+
+				L.marker([clinic.latitude, clinic.longitude])
 					.bindPopup(
 						`
 						<div class="map-popup">
 							<h3>${doctor.name}</h3>
-							<p><strong>${doctor.specialty}</strong></p>
-							<p>${doctor.address}</p>
-							<p>${doctor.phone}</p>
+							<p><strong>${specialtyNames.join(', ')}</strong></p>
+							<p><strong>Клиника:</strong> ${clinic.clinicName}</p>
+							<p><strong>Адрес:</strong> ${clinic.address}</p>
+							<p><strong>Град:</strong> ${clinic.cityName}</p>
+							${doctor.phone ? `<p><strong>Телефон:</strong> ${doctor.phone}</p>` : ''}
+							${
+								clinic.phone
+									? `<p><strong>Клиника телефон:</strong> ${clinic.phone}</p>`
+									: ''
+							}
 						</div>
 					`,
 					)
-					.addTo(map!);
-			});
-		}
+					.addTo(markersGroup!);
+			}
+		});
+	});
+}
+
+// Watch for changes in filtered doctors and update map
+watch(filteredDoctors, () => {
+	nextTick(() => updateMapMarkers());
+});
+
+onMounted(async () => {
+	await loadData();
+
+	nextTick(() => {
+		initMap();
+		updateMapMarkers();
 	});
 });
 </script>
@@ -112,14 +137,28 @@ onMounted(() => {
 				<h1 class="page-title">Врачи</h1>
 				<div class="search-bar">
 					<input
+						v-model="searchQuery"
 						type="text"
 						placeholder="Поиск врачей..."
 						class="search-input"
 					/>
 				</div>
 
-				<div class="doctors-list">
-					<div v-for="doctor in doctors" :key="doctor.id" class="doctor-card">
+				<div v-if="loading" class="loading">
+					<div class="loading-spinner"></div>
+					<p>Загрузка врачей...</p>
+				</div>
+
+				<div v-else class="doctors-list">
+					<div v-if="filteredDoctors.length === 0" class="empty-state">
+						<p>Врачи не найдены</p>
+					</div>
+
+					<div
+						v-for="doctor in filteredDoctors"
+						:key="doctor.id"
+						class="doctor-card"
+					>
 						<div class="doctor-avatar">
 							<div class="avatar-placeholder">
 								{{ doctor.name.charAt(3)
@@ -129,14 +168,32 @@ onMounted(() => {
 
 						<div class="doctor-info">
 							<h3 class="doctor-name">{{ doctor.name }}</h3>
-							<p class="doctor-specialty">{{ doctor.specialty }}</p>
-							<p class="doctor-address">{{ doctor.address }}</p>
-							<p class="doctor-phone">{{ doctor.phone }}</p>
+							<p class="doctor-specialty">{{
+								getSpecialtyNames(toRaw(doctor)).join(', ')
+							}}</p>
+							<div v-if="doctor.clinics.length > 0" class="doctor-clinics">
+								<div
+									v-for="clinic in doctor.clinics"
+									:key="clinic.clinicId"
+									class="clinic-item"
+								>
+									<p class="clinic-name">{{ clinic.clinicName }}</p>
+									<p class="clinic-address"
+										>{{ clinic.address }}, {{ clinic.cityName }}</p
+									>
+								</div>
+							</div>
+							<p v-if="doctor.phone" class="doctor-phone">{{ doctor.phone }}</p>
 						</div>
 
 						<div class="doctor-actions">
 							<button class="action-btn primary">Записаться</button>
-							<button class="action-btn secondary">Детали</button>
+							<NuxtLink
+								:to="`/doctors/details?id=${doctor.id}`"
+								class="action-btn secondary"
+							>
+								Детали
+							</NuxtLink>
 						</div>
 					</div>
 				</div>
@@ -260,12 +317,68 @@ onMounted(() => {
 	font-size: 0.9rem;
 }
 
-.doctor-address,
 .doctor-phone {
 	color: #6b7280;
 	font-size: 0.875rem;
-	margin: 4px 0 0 0;
+	margin: 8px 0 0 0;
 	line-height: 1.4;
+}
+
+.doctor-clinics {
+	margin: 8px 0;
+}
+
+.clinic-item {
+	margin: 4px 0;
+}
+
+.clinic-name {
+	color: #6b7280;
+	font-size: 0.875rem;
+	font-weight: 500;
+	margin: 0;
+	line-height: 1.3;
+}
+
+.clinic-address {
+	color: #9ca3af;
+	font-size: 0.8rem;
+	margin: 2px 0 0 0;
+	line-height: 1.3;
+}
+
+.loading {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+	color: #6b7280;
+}
+
+.loading-spinner {
+	width: 40px;
+	height: 40px;
+	border: 3px solid #e5e7eb;
+	border-top: 3px solid #4f46e5;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+	margin-bottom: 16px;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.empty-state {
+	text-align: center;
+	padding: 40px;
+	color: #6b7280;
 }
 
 .doctor-actions {
@@ -298,6 +411,10 @@ onMounted(() => {
 		background: transparent;
 		color: #4f46e5;
 		border: 1px solid #4f46e5;
+		text-decoration: none;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 
 		&:hover {
 			background: #f8fafc;

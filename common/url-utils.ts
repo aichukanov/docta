@@ -1,7 +1,4 @@
-import type { Currency } from '~/enums/currency';
-import { CountryCode, formatCountriesAsQuery } from '~/composables/use-country';
 import { formatLocaleAsQuery } from '~/composables/use-locale';
-import { formatCurrencyAsQuery } from '~/composables/currency';
 
 function addQueryParams(
 	searchParams: URLSearchParams,
@@ -45,28 +42,16 @@ function updateQueryInUrl(
 	return `${pathname}?${searchParams.toString()}`;
 }
 
-export function getRegionalQuery(
-	country: CountryCode[],
-	lang: string,
-	currency: Currency,
-) {
+export function getRegionalQuery(lang: string) {
 	return {
-		country: formatCountriesAsQuery(country),
 		lang: formatLocaleAsQuery(lang),
-		currency: formatCurrencyAsQuery(currency),
 	};
 }
 
 export function getRegionalUrl(
 	url: string,
 	query: Record<string, string | string[]>,
-	country: CountryCode[],
 	lang: string,
-	currency: Currency,
 ) {
-	return updateQueryInUrl(
-		url,
-		query,
-		getRegionalQuery(country, lang, currency),
-	);
+	return updateQueryInUrl(url, query, getRegionalQuery(lang));
 }

@@ -1,9 +1,7 @@
 import { SitemapLink } from './utils';
 import { SITEMAP_LIMIT } from '../limits';
 import { locales } from '~/composables/use-locale';
-import { allCountries, CountryCode } from '~/composables/use-country';
 import { getRegionalUrl } from '~/common/url-utils';
-import { Currency } from '~/enums/currency';
 
 export function menuItemToLinks(
 	routeName: string,
@@ -31,23 +29,13 @@ export function menuItemToLinks(
 			continue;
 		}
 
-		for (let j = 0; j < allCountries.length; j++) {
-			const country = allCountries[j];
-
-			linksWithParams.push({
-				hreflang: `${lang}-${country}`, // another format as in query
-				href: getRegionalUrl(
-					url,
-					query,
-					[country],
-					lang,
-					country === CountryCode.BIH ? Currency.BAM : Currency.EUR,
-				),
-			});
-		}
+		linksWithParams.push({
+			hreflang: `${lang}-ME`,
+			href: getRegionalUrl(url, query, lang),
+		});
 	}
 
-	const loc = getRegionalUrl(url, query, [CountryCode.MNE], 'sr', Currency.EUR);
+	const loc = getRegionalUrl(url, query, 'sr');
 
 	return {
 		loc,

@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
 	compatibilityDate: '2025-07-02',
 
-	modules: ['nuxt-gtag', '@element-plus/nuxt', '@nuxtjs/i18n'],
+	modules: ['nuxt-gtag', '@element-plus/nuxt', '@nuxtjs/i18n', '@pinia/nuxt'],
 
 	// gtag: {
 	// 	id: process.env.GTAG_ID,

@@ -1,5 +1,3 @@
-import { ArticleCategory } from '~/enums/article-category';
-import { Currency } from '~/enums/currency';
 import { locales, type Locale } from '~/composables/use-locale';
 
 function showError(from: string, message: string) {
@@ -13,18 +11,6 @@ export function validateBody(body: any, from: string) {
 	}
 
 	return true;
-}
-
-export function validateCountry(
-	{ country }: { country: string },
-	from: string,
-) {
-	if (country?.length > 0) {
-		return true;
-	} else {
-		showError(from, 'Invalid country: ' + country);
-		return false;
-	}
 }
 
 export function validatePageNumber(

@@ -1,5 +1,5 @@
 <template>
-	<header class="app-header" :class="{ 'app-header--expanded': isExpanded }">
+	<header class="app-header">
 		<!-- Основная строка хедера -->
 		<div class="app-header__main">
 			<div class="app-header__main-content">
@@ -15,14 +15,8 @@
 
 				<!-- Центральная часть -->
 				<div class="app-header__center">
-					<!-- Поиск в компактном режиме -->
-					<div class="app-header__search-compact" v-if="!isExpanded">
-						<SearchBar compact @search="handleSearch" />
-					</div>
-
-					<!-- Табы категорий в расширенном режиме -->
-					<div class="app-header__category-tabs" v-if="isExpanded">
-						<CategoryTabs @category-change="handleCategoryChange" />
+					<div class="app-header__search-compact">
+						<AppHeaderSearchBar @search="handleSearch" />
 					</div>
 				</div>
 
@@ -32,35 +26,19 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- Расширенная часть (только поиск) -->
-		<div class="app-header__expanded" v-if="isExpanded">
-			<SearchBar flat @search="handleSearch" />
-		</div>
 	</header>
 </template>
 
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
-import CategoryTabs from '~/components/app-header/category-tabs.vue';
-import SearchBar from '~/components/app-header/search-bar.vue';
 
 const { t } = useI18n();
-const { country } = useCountry();
 const { locale } = useI18n({ useScope: 'global' });
-const { uiCurrency } = useCurrency();
-
-// Используем filters composable
-const { isExpanded, setCategory } = useFilters();
 
 const mainPageLink = computed(() => ({
 	name: 'index',
-	query: getRegionalQuery(country.value, locale.value, uiCurrency.value),
+	query: getRegionalQuery(locale.value),
 }));
-
-const handleCategoryChange = (category: 'doctors' | 'pharmacies') => {
-	setCategory(category);
-};
 
 const handleSearch = () => {
 	console.log('Search triggered');
@@ -138,8 +116,8 @@ const handleSearch = () => {
 	}
 
 	&__logo {
-		width: 40px;
-		height: 40px;
+		width: 30px;
+		height: 30px;
 		background-image: url('/logo-site.png');
 		background-size: contain;
 		background-repeat: no-repeat;

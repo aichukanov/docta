@@ -3,7 +3,6 @@
 		<AppHeader />
 
 		<div class="layout-body">
-			<BreadCrumbs />
 			<slot />
 		</div>
 
@@ -41,7 +40,7 @@
 const { isConsentGiven } = useCookieControl();
 const { t } = useI18n();
 
-const years = computed(() => `2025 - ${new Date().getFullYear()}`);
+const years = computed(() => `2025`); //  - ${new Date().getFullYear()}
 
 watch(
 	isConsentGiven,

@@ -1,6 +1,8 @@
 import { locales, defaultLocale } from '~/composables/use-locale';
 
-const sr = {};
+const sr = {
+	ApplicationName: 'docta.me | Svi lekari Crne Gore',
+};
 
 export default defineI18nConfig(() => ({
 	locales,
@@ -10,12 +12,20 @@ export default defineI18nConfig(() => ({
 	legacy: false,
 	strategy: 'no_prefix',
 	messages: {
-		en: {},
-		ru: {},
+		en: {
+			ApplicationName: 'docta.me | All doctors of Montenegro',
+		},
+		ru: {
+			ApplicationName: 'docta.me | Все врачи Черногории',
+		},
 		sr,
-		ba: Object.assign({}, sr, {}),
-		me: Object.assign({}, sr, {}),
-		de: {},
-		tr: {},
+		ba: sr,
+		me: sr,
+		de: {
+			ApplicationName: 'docta.me | Alle Ärzte Montenegros',
+		},
+		tr: {
+			ApplicationName: "docta.me | Karadağ'ın tüm doktorları",
+		},
 	},
 }));

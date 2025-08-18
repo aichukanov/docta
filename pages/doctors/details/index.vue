@@ -2,7 +2,7 @@
 
 <template>
 	<PageWrapper>
-		<div class="main-page"> main page </div>
+		<div class="main-page"> doctor details page </div>
 	</PageWrapper>
 </template>
 

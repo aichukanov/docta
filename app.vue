@@ -1,31 +1,13 @@
 <script setup lang="ts">
-import { CountryCode, enrichForCountry } from './composables/use-country';
 import { locales, type Locale } from './composables/use-locale';
 import { getRegionalUrl } from './common/url-utils';
-import { Currency } from './enums/currency';
 
 const { t, locale } = useI18n({ useScope: 'global' });
 const route = useRoute();
-const { country } = useCountry();
-const { uiCurrency } = useCurrency();
 
 const queryLocale = getLocaleFromQuery(route.query.lang as string | string[]);
 if (queryLocale) {
 	locale.value = queryLocale;
-}
-
-const queryCountry = getCountryCodeFromQuery(
-	route.query.country as string | string[],
-);
-if (queryCountry) {
-	country.value = queryCountry;
-}
-
-const queryCurrency = getCurrencyFromQuery(
-	route.query.currency as string | string[],
-);
-if (queryCurrency) {
-	uiCurrency.value = queryCurrency;
 }
 
 function getMainUrl() {
@@ -34,13 +16,11 @@ function getMainUrl() {
 	return `https://docta.me${path}`;
 }
 
-function getLangLink(mainUrl: string, lang: Locale, country: CountryCode) {
+function getLangLink(mainUrl: string, lang: Locale) {
 	return getRegionalUrl(
 		mainUrl,
 		route.query as Record<string, string | string[]>,
-		[country],
 		lang,
-		country === CountryCode.BIH ? Currency.BAM : Currency.EUR,
 	);
 }
 
@@ -54,15 +34,8 @@ const alternateLinks = computed(() => {
 	}> = [
 		{
 			rel: 'canonical',
-			// href: getMainUrl(),
-			href: getLangLink(mainUrl, 'sr', CountryCode.MNE),
+			href: getLangLink(mainUrl, 'sr'),
 		},
-		// todo: need to add country-switcher to layout if country is not set
-		// {
-		// 	rel: 'alternate',
-		// 	href: getMainUrl(),
-		// 	hreflang: 'x-default',
-		// },
 	];
 
 	for (let i = 0; i < locales.length; i++) {
@@ -71,15 +44,6 @@ const alternateLinks = computed(() => {
 		// Google doesn't support montenegrin language
 		if (lang === 'me') {
 			continue;
-		}
-
-		for (let j = 0; j < allCountries.length; j++) {
-			const country = allCountries[j];
-			links.push({
-				rel: 'alternate',
-				href: getLangLink(mainUrl, lang, country),
-				hreflang: `${lang}-${country.toUpperCase()}`,
-			});
 		}
 	}
 
@@ -91,10 +55,12 @@ useHead({
 });
 
 useSeoMeta({
-	applicationName: () => t(enrichForCountry('ApplicationName')),
+	title: () => t('ApplicationName'),
+	description: () => t('ApplicationName'),
+	applicationName: 'docta.me',
 	viewport: 'width=device-width, initial-scale=1',
 	ogType: 'website',
-	ogSiteName: 'svad',
+	ogSiteName: 'docta.me',
 	ogLocale: () => locale.value,
 	ogUrl: () => `https://docta.me${route.fullPath}`,
 });

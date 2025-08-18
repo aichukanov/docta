@@ -1,5 +1,3 @@
-import { CountryCode } from '~/composables/use-country';
-
 export const locales = ['sr', 'ba', 'me', 'en', 'ru', 'de', 'tr'];
 
 export type Locale = (typeof locales)[number];
@@ -21,19 +19,6 @@ export function getLocaleFromQuery(value: string | string[]): Locale | null {
 	).toLowerCase();
 
 	return locale && locales.includes(locale) ? locale : null;
-}
-
-export function getLocaleFromCountry(country: CountryCode[]): Locale {
-	if (country.length === 1) {
-		switch (country[0]) {
-			case CountryCode.BIH:
-				return 'ba';
-			case CountryCode.MNE:
-				return 'me';
-		}
-	}
-
-	return 'sr';
 }
 
 export function formatLocaleAsQuery(lang: Locale): string {

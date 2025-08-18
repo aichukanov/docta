@@ -1,17 +1,7 @@
 <template>
-	<div
-		class="search-bar"
-		:class="{ 'search-bar--compact': compact, 'search-bar--flat': flat }"
-	>
+	<div class="search-bar search-bar--compact search-bar--flat">
 		<div class="search-bar__container">
 			<div class="search-bar__filters">
-				<div class="search-bar__filter" @click="handleCategoryClick">
-					<div class="search-bar__filter-label">{{ t('Category') }}</div>
-					<div class="search-bar__filter-value">{{ selectedCategory }}</div>
-				</div>
-
-				<div class="search-bar__separator"></div>
-
 				<div class="search-bar__filter" @click="showSpecialtyFilter = true">
 					<div class="search-bar__filter-label">{{ t('Specialty') }}</div>
 					<div class="search-bar__filter-value">{{ selectedSpecialties }}</div>
@@ -52,49 +42,31 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
-	compact?: boolean;
-	flat?: boolean;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-	compact: false,
-	flat: false,
-});
-
-const { t } = useI18n();
-
-// Используем filters composable
-const { category, specialties, city, language, setExpanded } = useFilters();
-
-// Filter states
-const showCategoryFilter = ref(false);
-const showSpecialtyFilter = ref(false);
-const showCityFilter = ref(false);
-const showLanguageFilter = ref(false);
-
-// Selected values
-const selectedCategory = computed(() => {
-	return category.value === 'doctors' ? t('Doctors') : t('Pharmacies');
-});
-
-const selectedSpecialties = computed(() => {
-	if (specialties.value.length === 0) return t('AnySpecialty');
-	if (specialties.value.length === 1) return specialties.value[0];
-	return t('SpecialtiesCount', { count: specialties.value.length });
-});
-
-const selectedCity = computed(() => city.value || t('AnyCity'));
-const selectedLanguage = computed(() => language.value || t('AnyLanguage'));
+import { useFiltersStore } from '~/stores/filters';
 
 const emit = defineEmits<{
 	search: [];
 }>();
 
-const handleCategoryClick = () => {
-	// Активируем расширенный режим при клике на категорию
-	setExpanded(true);
-};
+const { t } = useI18n();
+
+const filtersStore = useFiltersStore();
+
+// Filter states
+const showSpecialtyFilter = ref(false);
+const showCityFilter = ref(false);
+const showLanguageFilter = ref(false);
+
+const selectedSpecialties = computed(() => {
+	if (filtersStore.specialties.length === 0) return t('AnySpecialty');
+	if (filtersStore.specialties.length === 1) return filtersStore.specialties[0];
+	return t('SpecialtiesCount', { count: filtersStore.specialties.length });
+});
+
+const selectedCity = computed(() => filtersStore.city || t('AnyCity'));
+const selectedLanguage = computed(
+	() => filtersStore.language || t('AnyLanguage'),
+);
 
 const handleSearch = () => {
 	emit('search');
@@ -104,7 +76,6 @@ const handleSearch = () => {
 <i18n lang="json">
 {
 	"en": {
-		"Category": "Category",
 		"Specialty": "Specialty",
 		"City": "City",
 		"Language": "Language",
@@ -117,7 +88,6 @@ const handleSearch = () => {
 		"SpecialtiesCount": "{count} specialties"
 	},
 	"ru": {
-		"Category": "Категория",
 		"Specialty": "Специализация",
 		"City": "Город",
 		"Language": "Язык",
@@ -130,7 +100,6 @@ const handleSearch = () => {
 		"SpecialtiesCount": "{count} специализаций"
 	},
 	"sr": {
-		"Category": "Kategorija",
 		"Specialty": "Specijalizacija",
 		"City": "Grad",
 		"Language": "Jezik",
@@ -143,7 +112,6 @@ const handleSearch = () => {
 		"SpecialtiesCount": "{count} specijalizacija"
 	},
 	"ba": {
-		"Category": "Kategorija",
 		"Specialty": "Specijalizacija",
 		"City": "Grad",
 		"Language": "Jezik",
@@ -156,7 +124,6 @@ const handleSearch = () => {
 		"SpecialtiesCount": "{count} specijalizacija"
 	},
 	"me": {
-		"Category": "Kategorija",
 		"Specialty": "Specijalizacija",
 		"City": "Grad",
 		"Language": "Jezik",
@@ -169,7 +136,6 @@ const handleSearch = () => {
 		"SpecialtiesCount": "{count} specijalizacija"
 	},
 	"de": {
-		"Category": "Kategorie",
 		"Specialty": "Fachrichtung",
 		"City": "Stadt",
 		"Language": "Sprache",
@@ -182,7 +148,6 @@ const handleSearch = () => {
 		"SpecialtiesCount": "{count} Fachrichtungen"
 	},
 	"tr": {
-		"Category": "Kategori",
 		"Specialty": "Uzmanlık",
 		"City": "Şehir",
 		"Language": "Dil",

@@ -45,8 +45,19 @@ async function getDoctorWithClinicsById(
 	try {
 		// Запрос для получения врача с специализациями и языками
 		const doctorQuery = `
-			SELECT DISTINCT
-				d.*,
+			SELECT 
+				d.id,
+				d.name,
+				d.photo_url,
+				d.phone,
+				d.email,
+				d.facebook,
+				d.instagram,
+				d.telegram,
+				d.whatsapp,
+				d.viber,
+				d.description,
+				d.created_at,
 				GROUP_CONCAT(DISTINCT s.id ORDER BY s.id) as specialty_ids,
 				GROUP_CONCAT(DISTINCT l.code ORDER BY l.code) as language_codes
 			FROM doctors d
@@ -55,7 +66,7 @@ async function getDoctorWithClinicsById(
 			LEFT JOIN doctor_languages dl ON d.id = dl.doctor_id
 			LEFT JOIN languages l ON dl.language_id = l.id
 			WHERE d.id = ?
-			GROUP BY d.id, d.name
+			GROUP BY d.id, d.name, d.photo_url, d.phone, d.email, d.facebook, d.instagram, d.telegram, d.whatsapp, d.viber, d.description, d.created_at
 		`;
 
 		const [doctorRows] = await connection.execute(doctorQuery, [id]);

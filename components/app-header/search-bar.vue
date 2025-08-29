@@ -42,31 +42,22 @@
 </template>
 
 <script setup lang="ts">
-import { useFiltersStore } from '~/stores/filters';
-
 const emit = defineEmits<{
 	search: [];
 }>();
 
 const { t } = useI18n();
 
-const filtersStore = useFiltersStore();
-
-// Filter states
 const showSpecialtyFilter = ref(false);
 const showCityFilter = ref(false);
 const showLanguageFilter = ref(false);
 
 const selectedSpecialties = computed(() => {
-	if (filtersStore.specialties.length === 0) return t('AnySpecialty');
-	if (filtersStore.specialties.length === 1) return filtersStore.specialties[0];
-	return t('SpecialtiesCount', { count: filtersStore.specialties.length });
+	return t('SpecialtiesCount', { count: 0 });
 });
 
-const selectedCity = computed(() => filtersStore.city || t('AnyCity'));
-const selectedLanguage = computed(
-	() => filtersStore.language || t('AnyLanguage'),
-);
+const selectedCity = computed(() => t('AnyCity'));
+const selectedLanguage = computed(() => t('AnyLanguage'));
 
 const handleSearch = () => {
 	emit('search');

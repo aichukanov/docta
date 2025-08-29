@@ -106,3 +106,45 @@ export interface DoctorsResponse {
 	doctors: DoctorWithClinics[];
 	totalCount: number;
 }
+
+// -----------
+
+export interface ContactList {
+	email: string;
+	phone: string;
+	facebook: string;
+	instagram: string;
+	telegram: string;
+	whatsapp: string;
+	viber: string;
+	website: string;
+}
+
+export interface DoctorData extends ContactList {
+	id: number;
+	name: string;
+	specialtyIds: string;
+	languageCodes: string;
+	clinicIds: string;
+	professionalTitle: string;
+	photoUrl: string;
+}
+
+export interface ClinicData extends ContactList {
+	id: number;
+	name: string;
+	cityId: CityId;
+	address: string;
+	latitude: number;
+	longitude: number;
+}
+
+export interface DoctorList {
+	doctors: DoctorData[];
+	totalCount: number;
+}
+
+export interface ClinicList {
+	clinics: ClinicData[];
+	totalCount: number;
+}

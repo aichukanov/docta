@@ -1,13 +1,7 @@
 import { getConnection } from '~/server/common/db-mysql';
-import type {
-	DoctorWithClinics,
-	DoctorFilters,
-	DoctorsResponse,
-	DoctorClinicFull,
-} from '~/interfaces/doctor';
-import type { CityId } from '~/common/constants';
+import type { DoctorList } from '~/interfaces/doctor';
 
-export default defineEventHandler(async (event): Promise<DoctorsResponse> => {
+export default defineEventHandler(async (event): Promise<DoctorList> => {
 	try {
 		// const query = getQuery(event);
 
@@ -41,7 +35,10 @@ export default defineEventHandler(async (event): Promise<DoctorsResponse> => {
 		const [doctorRows] = await connection.execute(doctorsQuery);
 		await connection.end();
 
-		return doctorRows;
+		return {
+			doctors: doctorRows,
+			totalCount: doctorRows.length,
+		};
 	} catch (error) {
 		console.error('API Error - doctors:', error);
 		throw createError({

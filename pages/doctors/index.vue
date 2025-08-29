@@ -4,7 +4,7 @@ import { useDoctorsStore } from '~/stores/doctors';
 
 const { t, locale } = useI18n();
 
-const { pending: isLoading, data: doctors } = await useFetch(
+const { pending: isLoadingDoctors, data: doctorsList } = await useFetch(
 	'/api/doctors/list',
 	{
 		key: 'doctors-list',
@@ -12,8 +12,23 @@ const { pending: isLoading, data: doctors } = await useFetch(
 	},
 );
 
-const filteredDoctors = computed(() => {
-	return doctors.value;
+const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
+	'/api/clinics/list',
+	{
+		key: 'clinics-list',
+		method: 'POST',
+	},
+);
+
+const preparedDoctors = computed(() => {
+	return doctorsList.value.doctors.map((doctor) => {
+		return {
+			...doctor,
+			clinics: clinicsList.value.clinics.filter((clinic) =>
+				doctor.clinicIds.split(',').map(Number).includes(clinic.id),
+			),
+		};
+	});
 });
 </script>
 
@@ -46,18 +61,18 @@ const filteredDoctors = computed(() => {
 					/>
 				</div> -->
 
-				<div v-if="isLoading" class="loading">
+				<div v-if="isLoadingDoctors || isLoadingClinics" class="loading">
 					<div class="loading-spinner"></div>
 					<p>{{ t('loading_doctors') }}</p>
 				</div>
 
 				<div v-else class="doctors-list">
-					<div v-if="filteredDoctors.length === 0" class="empty-state">
+					<div v-if="preparedDoctors.length === 0" class="empty-state">
 						<p>{{ t('no_doctors_found') }}</p>
 					</div>
 
 					<DoctorListCard
-						v-for="doctor in filteredDoctors"
+						v-for="doctor in preparedDoctors"
 						:key="doctor.id"
 						:doctor="doctor"
 					/>

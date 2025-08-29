@@ -37,7 +37,7 @@
 			</div>
 		</div>
 
-		<!-- <div class="doctor-meta">
+		<div class="doctor-meta">
 			<div class="meta-item locations-meta">
 				<div class="locations-list">
 					<ClinicSummary
@@ -47,7 +47,7 @@
 					/>
 				</div>
 			</div>
-		</div> -->
+		</div>
 	</div>
 </template>
 

@@ -109,6 +109,8 @@ watch(
 	/* Основная палитра - более мягкая и современная */
 	--color-primary: #4f46e5; /* Индиго */
 	--color-primary-dark: #3730a3; /* Темно-индиго для hover */
+	--color-primary-green: #0e5d14;
+	--color-primary-dark-green: #0a4210;
 	--color-secondary: #06b6d4; /* Циан */
 	--color-accent: #f59e0b; /* Теплый янтарный */
 	--color-success: #10b981; /* Зеленый для успеха */

@@ -25,14 +25,9 @@
 				<div class="doctor-specialty">
 					{{ specialtiesText }}
 				</div>
-				<div class="languages">
-					<span
-						v-for="lang in doctor.languages"
-						:key="lang"
-						class="language-badge"
-					>
-						{{ t(lang) }}
-					</span>
+				<div class="languages" :title="t('DoctorLanguages')">
+					<IconLanguage />
+					<span class="languages-text">{{ languagesText }}</span>
 				</div>
 			</div>
 		</div>
@@ -60,6 +55,13 @@ const specialtiesText = computed(() => {
 	return props.doctor.specialtyIds
 		?.split(',')
 		.map((specialty) => t(specialty) || specialty)
+		.join(', ');
+});
+
+const languagesText = computed(() => {
+	return props.doctor.languageCodes
+		?.split(',')
+		.map((lang) => t(lang) || lang)
 		.join(', ');
 });
 </script>
@@ -98,13 +100,13 @@ const specialtiesText = computed(() => {
 }
 
 .doctor-name-link {
-	color: inherit;
+	color: var(--color-primary);
 	text-decoration: none;
-	transition: color var(--transition-base);
 }
 
 .doctor-name-link:hover {
-	color: var(--color-primary);
+	color: var(--color-primary-dark);
+	text-decoration: underline;
 }
 
 .doctor-professional-title {
@@ -119,20 +121,8 @@ const specialtiesText = computed(() => {
 .doctor-specialty {
 	font-size: var(--font-size-lg);
 	font-weight: 600;
-	color: var(--color-primary);
+	color: var(--color-primary-green);
 	line-height: 1.3;
-}
-
-.meta-item {
-	display: flex;
-	align-items: flex-start;
-	gap: var(--spacing-sm);
-	font-size: var(--font-size-md);
-	color: var(--color-text-secondary);
-}
-
-.locations-meta {
-	align-items: flex-start;
 }
 
 .clinics-list {
@@ -147,27 +137,10 @@ const specialtiesText = computed(() => {
 	display: flex;
 	gap: var(--spacing-xs);
 	flex-wrap: wrap;
-}
 
-.language-badge {
-	display: inline-flex;
-	align-items: center;
-	padding: var(--spacing-xs) var(--spacing-sm);
-	background: var(--color-surface-secondary);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-sm);
-	font-size: var(--font-size-xs);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-secondary);
-}
-
-.doctor-description {
-	margin: 0 0 var(--spacing-xl) 0;
-	font-size: var(--font-size-md);
-	line-height: 1.6;
-	color: var(--color-text-secondary);
-	font-style: italic;
-	opacity: 0.9;
+	.languages-text {
+		color: var(--color-primary-green);
+	}
 }
 
 @media (max-width: 768px) {
@@ -190,10 +163,6 @@ const specialtiesText = computed(() => {
 
 	.doctor-specialty {
 		font-size: var(--font-size-md);
-	}
-
-	.meta-item {
-		font-size: var(--font-size-sm);
 	}
 
 	.locations-list {

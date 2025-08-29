@@ -37,16 +37,12 @@
 			</div>
 		</div>
 
-		<div class="doctor-meta">
-			<div class="meta-item locations-meta">
-				<div class="locations-list">
-					<ClinicSummary
-						v-for="clinic in doctor.clinics"
-						:key="clinic.clinicId"
-						:clinic="clinic"
-					/>
-				</div>
-			</div>
+		<div class="clinics-list">
+			<ClinicSummary
+				v-for="clinic in doctor.clinics"
+				:key="clinic.clinicId"
+				:clinic="clinic"
+			/>
 		</div>
 	</div>
 </template>
@@ -127,13 +123,6 @@ const specialtiesText = computed(() => {
 	line-height: 1.3;
 }
 
-.doctor-meta {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-md);
-	margin-bottom: var(--spacing-xl);
-}
-
 .meta-item {
 	display: flex;
 	align-items: flex-start;
@@ -146,7 +135,8 @@ const specialtiesText = computed(() => {
 	align-items: flex-start;
 }
 
-.locations-list {
+.clinics-list {
+	margin-top: var(--spacing-xl);
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-lg);

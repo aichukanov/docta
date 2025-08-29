@@ -9,9 +9,9 @@
 					rel="noopener noreferrer"
 					class="clinic-website-link clinic-name"
 				>
-					{{ clinic.clinicName }}
+					{{ clinic.name }}
 				</a>
-				<span v-else class="clinic-name">{{ clinic.clinicName }}</span>
+				<span v-else class="clinic-name">{{ clinic.name }}</span>
 			</div>
 			<div v-if="clinic.address" class="location-address">
 				<IconMapPin
@@ -35,24 +35,11 @@
 </template>
 
 <script setup lang="ts">
-import type { DoctorClinicFull } from '~/interfaces/doctor';
+import type { ClinicData } from '~/interfaces/doctor';
 
 defineProps<{
-	clinic: DoctorClinicFull;
-	locationIndex?: number;
-	doctorId?: number;
+	clinic: ClinicData;
 }>();
-
-const emit = defineEmits<{
-	showOnMap: [clinic: DoctorClinicFull, coordinates: [number, number]];
-}>();
-
-const onShowOnMap = (
-	clinic: DoctorClinicFull,
-	coordinates: [number, number],
-) => {
-	emit('showOnMap', clinic, coordinates);
-};
 </script>
 
 <style scoped>

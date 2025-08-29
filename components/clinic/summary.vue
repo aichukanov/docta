@@ -2,15 +2,15 @@
 	<div class="location-item">
 		<div class="location-info">
 			<div class="clinic-name-container">
-				<a
+				<el-link
 					v-if="clinic.website"
 					:href="clinic.website"
+					:underline="false"
 					target="_blank"
-					rel="noopener noreferrer"
-					class="clinic-website-link clinic-name"
+					class="clinic-name"
 				>
 					{{ clinic.name }}
-				</a>
+				</el-link>
 				<span v-else class="clinic-name">{{ clinic.name }}</span>
 			</div>
 			<div v-if="clinic.address" class="location-address">
@@ -23,13 +23,8 @@
 			</div>
 		</div>
 		<div class="location-buttons">
-			<!-- <ClinicShowOnMapButton
-				:clinic="clinic"
-				:location-index="locationIndex"
-				:doctor-id="doctorId"
-				@show-on-map="onShowOnMap"
-			/>
-			<ClinicRouteButton :clinic="clinic" /> -->
+			<ClinicShowOnMapButton :clinic="clinic" @click="showOnMap()" />
+			<ClinicRouteButton :clinic="clinic" />
 		</div>
 	</div>
 </template>
@@ -37,9 +32,13 @@
 <script setup lang="ts">
 import type { ClinicData } from '~/interfaces/doctor';
 
-defineProps<{
+const props = defineProps<{
 	clinic: ClinicData;
 }>();
+
+function showOnMap() {
+	console.log('showOnMap', props.clinic);
+}
 </script>
 
 <style scoped>
@@ -71,19 +70,6 @@ defineProps<{
 .clinic-name {
 	font-size: var(--font-size-lg);
 	font-weight: 600;
-	color: var(--color-text-primary);
-}
-
-.clinic-website-link {
-	color: var(--color-primary);
-	text-decoration: none;
-	transition: color var(--transition-base);
-	font-weight: inherit;
-}
-
-.clinic-website-link:hover {
-	color: var(--color-primary-dark);
-	text-decoration: underline;
 }
 
 .location-address {

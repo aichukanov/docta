@@ -1,5 +1,5 @@
 <template>
-	<el-link target="_blank" :href="googleMapsUrl" :underline="false">
+	<el-link target="_blank" :href="googleMapsUrl" underline="never">
 		<span class="link-with-icon">
 			<IconRoute :size="20" />
 			{{ t('BuildRoute') }}

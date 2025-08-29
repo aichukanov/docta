@@ -5,7 +5,7 @@
 				<el-link
 					v-if="clinic.website"
 					:href="clinic.website"
-					:underline="false"
+					underline="hover"
 					target="_blank"
 					class="clinic-name"
 				>

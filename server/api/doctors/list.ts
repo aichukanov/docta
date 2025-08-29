@@ -15,6 +15,7 @@ export default defineEventHandler(async (event): Promise<DoctorsResponse> => {
 			SELECT DISTINCT
 				d.id,
 				d.name,
+				d.professional_title as professionalTitle,
 				d.photo_url as photoUrl,
 				d.phone,
 				d.email,
@@ -23,7 +24,6 @@ export default defineEventHandler(async (event): Promise<DoctorsResponse> => {
 				d.telegram,
 				d.whatsapp,
 				d.viber,
-				d.description,
 				d.website,
 				GROUP_CONCAT(DISTINCT s.id ORDER BY s.id) as specialtyIds,
 				GROUP_CONCAT(DISTINCT l.code ORDER BY l.code) as languageCodes,   

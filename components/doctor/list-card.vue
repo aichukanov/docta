@@ -19,6 +19,9 @@
 						{{ doctor.name }}
 					</NuxtLink>
 				</h3>
+				<div v-if="doctor.professionalTitle" class="doctor-professional-title">
+					{{ doctor.professionalTitle }}
+				</div>
 				<div class="doctor-specialty">
 					{{ specialtiesText }}
 				</div>
@@ -31,9 +34,6 @@
 						{{ t(lang) }}
 					</span>
 				</div>
-				<p v-if="doctor.description" class="doctor-description">
-					{{ doctor.description }}
-				</p>
 			</div>
 		</div>
 
@@ -109,6 +109,15 @@ const specialtiesText = computed(() => {
 
 .doctor-name-link:hover {
 	color: var(--color-primary);
+}
+
+.doctor-professional-title {
+	font-size: var(--font-size-md);
+	font-weight: var(--font-weight-medium);
+	color: var(--color-text-secondary);
+	line-height: 1.4;
+	font-style: italic;
+	opacity: 0.85;
 }
 
 .doctor-specialty {

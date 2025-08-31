@@ -9,7 +9,21 @@ defineProps<{
 
 <template>
 	<div class="clinic-popup">
-		<h2>{{ clinic.name }}</h2>
+		<div class="clinic-name-container">
+			<el-link
+				v-if="clinic.website"
+				:href="clinic.website"
+				underline="hover"
+				target="_blank"
+				class="clinic-name"
+			>
+				{{ clinic.name }}
+			</el-link>
+			<h2 v-else class="clinic-name">
+				{{ clinic.name }}
+			</h2>
+		</div>
+
 		<ClinicRouteButton :clinic="clinic" :text="clinic.address" />
 
 		<div class="doctors-list">
@@ -31,5 +45,14 @@ defineProps<{
 	margin-top: var(--spacing-xl);
 	max-height: 300px;
 	overflow-y: auto;
+}
+
+.clinic-name-container {
+	margin-bottom: var(--spacing-xs);
+
+	.clinic-name {
+		font-size: var(--font-size-2xl);
+		font-weight: 600;
+	}
 }
 </style>

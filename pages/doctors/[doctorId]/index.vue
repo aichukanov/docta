@@ -50,10 +50,11 @@ defineProps<{
 }>();
 
 const { t } = useI18n();
-const mapStore = useMapStore();
+// const mapStore = useMapStore();
 
 const onShowOnMap = (clinic: any, coordinates: [number, number]) => {
-	mapStore.showClinicOnMap(clinic, coordinates);
+	// 	mapStore.showClinicOnMap(clinic, coordinates);
+	console.log('clinic', clinic);
 };
 </script>
 

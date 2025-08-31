@@ -25,18 +25,12 @@ interface UseLeafletOptions {
 }
 
 export function useLeaflet(options: UseLeafletOptions = {}) {
-	const { onViewportChanged } = options;
-
 	let leafletMap: any = null;
+	let popup: any = null;
+
 	const isLoading = ref(true);
 	const isInitialized = ref(false);
 	const markers = new Map<string, any>();
-
-	(bounds: any, center: any, zoom: number) => {
-		if (onViewportChanged) {
-			onViewportChanged({ bounds, center, zoom });
-		}
-	};
 
 	const loadLeaflet = async (): Promise<void> => {
 		if (typeof window !== 'undefined' && window.L) {
@@ -94,12 +88,13 @@ export function useLeaflet(options: UseLeafletOptions = {}) {
 
 			// Setup viewport change listeners
 			leafletMap.on('moveend zoomend', () => {
-				if (onViewportChanged) {
-					const bounds = leafletMap.getBounds();
-					const center = leafletMap.getCenter();
-					const zoom = leafletMap.getZoom();
-					onViewportChanged({ bounds, center, zoom });
-				}
+				console.log('moveend zoomend');
+				// if (onViewportChanged) {
+				// 	const bounds = leafletMap.getBounds();
+				// 	const center = leafletMap.getCenter();
+				// 	const zoom = leafletMap.getZoom();
+				// 	onViewportChanged({ bounds, center, zoom });
+				// }
 			});
 
 			isInitialized.value = true;
@@ -143,7 +138,7 @@ export function useLeaflet(options: UseLeafletOptions = {}) {
 		}
 
 		const icon = window.L.divIcon({
-			html: `<div id="${id}" class="vue-marker-container"></div>`,
+			html: `<div id="${id}"></div>`,
 			className: 'custom-marker-icon',
 			iconSize: [40, 40],
 			iconAnchor: [20, 20],
@@ -151,6 +146,15 @@ export function useLeaflet(options: UseLeafletOptions = {}) {
 
 		const marker = window.L.marker([lat, lng], { icon });
 		marker.addTo(leafletMap);
+
+		// // Добавляем контейнер для попапа к маркеру
+		// marker.bindPopup(`<div id="popup-container"></div>`, {
+		// 	maxWidth: 400,
+		// 	maxHeight: 500,
+		// 	keepInView: true,
+		// 	autoPan: true,
+		// });
+
 		markers.set(id, marker);
 	};
 
@@ -176,6 +180,14 @@ export function useLeaflet(options: UseLeafletOptions = {}) {
 		markers.clear();
 	};
 
+	const openPopup = (lat: number, lng: number, onClose: () => void) => {
+		if (!popup) {
+			popup = window.L.popup().setContent('<div id="popup-container"></div>');
+		}
+
+		popup.setLatLng([lat, lng]).openOn(leafletMap);
+	};
+
 	return {
 		isLoading: readonly(isLoading),
 		isInitialized: readonly(isInitialized),
@@ -183,6 +195,8 @@ export function useLeaflet(options: UseLeafletOptions = {}) {
 		initializeMap,
 		centerOnLocations,
 
+		openPopup,
+		markers,
 		addMarker,
 		removeMarker,
 		updateMarkerPosition,

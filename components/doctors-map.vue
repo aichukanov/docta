@@ -6,8 +6,6 @@
 			</div>
 		</div>
 
-		<!-- <DoctorPopup /> -->
-
 		<template v-if="isTeleportReady">
 			<Teleport
 				v-for="clinic in clinics"
@@ -17,8 +15,12 @@
 				<DoctorMarker
 					:doctorCount="12"
 					:isForced="false"
-					@click="onMarkerClick(clinic)"
+					@click.stop="onMarkerClick(clinic)"
 				/>
+			</Teleport>
+
+			<Teleport v-if="selectedClinic" to="#popup-container">
+				<MapClinicPopup :clinic="selectedClinic" />
 			</Teleport>
 		</template>
 	</div>
@@ -27,26 +29,29 @@
 <script setup lang="ts">
 import type { ClinicData } from '~/interfaces/doctor';
 import type { MarkerData } from '~/interfaces/marker';
+import { getClinicMarkerId } from '~/common/utils';
 
 const props = defineProps<{
 	clinics: ClinicData[];
 }>();
 
 const { t } = useI18n();
-const mapStore = useMapStore();
 
-const { isLoading, initializeMap, addMarker, markers } = useLeaflet();
+const { isLoading, initializeMap, addMarker, markers, openPopup } =
+	useLeaflet();
 
 const markerList = ref<MarkerData[]>([]);
 const mapContainer = ref<HTMLElement | null>(null);
 const isTeleportReady = ref(false);
 
-const onMarkerClick = (marker: MarkerData) => {
-	console.log('marker', marker);
-};
+const selectedClinic = ref<ClinicData | null>(null);
 
-const getClinicMarkerId = (clinicId: number) => {
-	return `clinic-marker-${clinicId}`;
+const onMarkerClick = async (clinic: ClinicData) => {
+	selectedClinic.value = null;
+	await nextTick();
+
+	openPopup(clinic.latitude, clinic.longitude);
+	selectedClinic.value = clinic;
 };
 
 // Инициализация карты при монтировании

@@ -183,7 +183,7 @@ export function useLeaflet(options: UseLeafletOptions = {}) {
 	const openPopup = (lat: number, lng: number, onClose: () => void) => {
 		if (!popup) {
 			popup = window.L.popup({
-				minWidth: 300,
+				minWidth: 350,
 				maxWidth: 500,
 				offset: [-20, -30], // Сдвигаем popup вверх на половину высоты маркера
 			}).setContent('<div id="popup-container"></div>');

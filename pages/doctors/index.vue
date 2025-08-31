@@ -80,7 +80,11 @@ const preparedDoctors = computed(() => {
 			</div>
 
 			<div class="map-container">
-				<DoctorsMap id="doctors-page-map" :clinics="clinicsList.clinics" />
+				<DoctorsMap
+					id="doctors-page-map"
+					:doctors="preparedDoctors"
+					:clinics="clinicsList.clinics"
+				/>
 			</div>
 		</div>
 	</PageWrapper>

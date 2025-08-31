@@ -8,31 +8,35 @@
 
 		<template v-if="isTeleportReady">
 			<Teleport
-				v-for="clinic in clinics"
+				v-for="clinic in clinicsWithDoctors"
 				:key="clinic.id"
 				:to="`#${getClinicMarkerId(clinic.id)}`"
 			>
 				<DoctorMarker
-					:doctorCount="12"
+					:doctorCount="clinic.doctors.length"
 					:isForced="false"
 					@click.stop="onMarkerClick(clinic)"
 				/>
 			</Teleport>
 
 			<Teleport v-if="selectedClinic" to="#popup-container">
-				<MapClinicPopup :clinic="selectedClinic" />
+				<MapClinicPopup
+					:clinic="selectedClinic"
+					:doctors="selectedClinicDoctors"
+				/>
 			</Teleport>
 		</template>
 	</div>
 </template>
 
 <script setup lang="ts">
-import type { ClinicData } from '~/interfaces/doctor';
+import type { ClinicData, DoctorData } from '~/interfaces/doctor';
 import type { MarkerData } from '~/interfaces/marker';
 import { getClinicMarkerId } from '~/common/utils';
 
 const props = defineProps<{
 	clinics: ClinicData[];
+	doctors: DoctorData[];
 }>();
 
 const { t } = useI18n();
@@ -45,6 +49,27 @@ const mapContainer = ref<HTMLElement | null>(null);
 const isTeleportReady = ref(false);
 
 const selectedClinic = ref<ClinicData | null>(null);
+
+const clinicsWithDoctors = computed(() => {
+	return props.clinics
+		.map((clinic) => {
+			return {
+				...clinic,
+				doctors: getClinicDoctors(clinic),
+			};
+		})
+		.filter((clinic) => clinic.doctors.length > 0);
+});
+
+const getClinicDoctors = (clinic: ClinicData) => {
+	return props.doctors.filter((doctor) =>
+		doctor.clinicIds.split(',').map(Number).includes(clinic.id),
+	);
+};
+
+const selectedClinicDoctors = computed(() => {
+	return selectedClinic.value ? getClinicDoctors(selectedClinic.value) : [];
+});
 
 const onMarkerClick = async (clinic: ClinicData) => {
 	selectedClinic.value = null;

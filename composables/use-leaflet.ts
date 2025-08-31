@@ -1,4 +1,3 @@
-import { debounce } from 'lodash-es';
 import type { Ref } from 'vue';
 import {
 	MONTENEGRO_CENTER,
@@ -28,20 +27,17 @@ interface UseLeafletOptions {
 export function useLeaflet(options: UseLeafletOptions = {}) {
 	const { onViewportChanged } = options;
 
-	const leafletMap = ref<any>(null);
+	let leafletMap: any = null;
 	const isLoading = ref(true);
 	const isInitialized = ref(false);
+	const markers = new Map<string, any>();
 
-	const debouncedViewportChange = debounce(
-		(bounds: any, center: any, zoom: number) => {
-			if (onViewportChanged) {
-				onViewportChanged({ bounds, center, zoom });
-			}
-		},
-		300,
-	);
+	(bounds: any, center: any, zoom: number) => {
+		if (onViewportChanged) {
+			onViewportChanged({ bounds, center, zoom });
+		}
+	};
 
-	// Load Leaflet library
 	const loadLeaflet = async (): Promise<void> => {
 		if (typeof window !== 'undefined' && window.L) {
 			return Promise.resolve();
@@ -80,29 +76,30 @@ export function useLeaflet(options: UseLeafletOptions = {}) {
 			isLoading.value = true;
 			await loadLeaflet();
 
-			leafletMap.value = window.L.map(container, {
+			leafletMap = window.L.map(container, {
 				center: MONTENEGRO_CENTER,
 				zoom: MONTENEGRO_ZOOM_SETTINGS.defaultZoom,
 				maxBounds: MONTENEGRO_MAX_BOUNDS,
 				maxBoundsViscosity: 1.0,
 				minZoom: MONTENEGRO_ZOOM_SETTINGS.minZoom,
 				maxZoom: MONTENEGRO_ZOOM_SETTINGS.maxZoom,
-				...mapOptions,
+				...options,
 			});
 
 			// Add OpenStreetMap tiles
 			window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 				attribution:
 					'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-			}).addTo(leafletMap.value);
+			}).addTo(leafletMap);
 
 			// Setup viewport change listeners
-			leafletMap.value.on('moveend zoomend', () => {
-				const bounds = leafletMap.value.getBounds();
-				const center = leafletMap.value.getCenter();
-				const zoom = leafletMap.value.getZoom();
-
-				debouncedViewportChange(bounds, center, zoom);
+			leafletMap.on('moveend zoomend', () => {
+				if (onViewportChanged) {
+					const bounds = leafletMap.getBounds();
+					const center = leafletMap.getCenter();
+					const zoom = leafletMap.getZoom();
+					onViewportChanged({ bounds, center, zoom });
+				}
 			});
 
 			isInitialized.value = true;
@@ -113,48 +110,12 @@ export function useLeaflet(options: UseLeafletOptions = {}) {
 		}
 	};
 
-	// Map control methods
-	const setView = (center: [number, number], zoom: number): void => {
-		if (!leafletMap.value) return;
-		leafletMap.value.setView(center, zoom);
-	};
-
-	const fitBounds = (bounds: any, options: any = {}): void => {
-		if (!leafletMap.value) return;
-		leafletMap.value.fitBounds(bounds, options);
-	};
-
-	const getBounds = () => {
-		if (!leafletMap.value) return null;
-		return leafletMap.value.getBounds();
-	};
-
-	const getCenter = () => {
-		if (!leafletMap.value) return null;
-		return leafletMap.value.getCenter();
-	};
-
-	const getZoom = (): number | null => {
-		if (!leafletMap.value) return null;
-		return leafletMap.value.getZoom();
-	};
-
-	const invalidateSize = (): void => {
-		if (!leafletMap.value) return;
-		leafletMap.value.invalidateSize();
-	};
-
-	const centerOnLocation = (coordinates: [number, number], zoom = 15): void => {
-		if (!leafletMap.value || !coordinates || coordinates.length !== 2) return;
-		setView(coordinates, zoom);
-	};
-
 	const centerOnLocations = async (
 		locations: [number, number][],
 		padding = 0.2,
 	): Promise<void> => {
 		if (
-			!leafletMap.value ||
+			!leafletMap ||
 			!locations ||
 			locations.length === 0 ||
 			typeof window === 'undefined' ||
@@ -164,7 +125,7 @@ export function useLeaflet(options: UseLeafletOptions = {}) {
 		}
 
 		if (locations.length === 1) {
-			centerOnLocation(locations[0]);
+			leafletMap.centerOnLocation(locations[0]);
 			return;
 		}
 
@@ -176,33 +137,55 @@ export function useLeaflet(options: UseLeafletOptions = {}) {
 		}
 	};
 
-	// Cleanup function
-	const destroyMap = (): void => {
-		if (leafletMap.value) {
-			leafletMap.value.remove();
-			leafletMap.value = null;
-			isInitialized.value = false;
+	const addMarker = (id: string, lat: number, lng: number) => {
+		if (!lat || !lng) {
+			console.error('Error adding marker:', id, lat, lng);
+		}
+
+		const icon = window.L.divIcon({
+			html: `<div id="${id}" class="vue-marker-container"></div>`,
+			className: 'custom-marker-icon',
+			iconSize: [40, 40],
+			iconAnchor: [20, 20],
+		});
+
+		const marker = window.L.marker([lat, lng], { icon });
+		marker.addTo(leafletMap);
+		markers.set(id, marker);
+	};
+
+	const removeMarker = (id: string): void => {
+		const marker = markers.get(id);
+		if (marker && leafletMap) {
+			leafletMap.removeLayer(marker);
+			markers.delete(id);
 		}
 	};
 
-	onUnmounted(() => {
-		destroyMap();
-	});
+	const updateMarkerPosition = (id: string, lat: number, lng: number): void => {
+		const marker = markers.get(id);
+		if (marker) {
+			marker.setLatLng([lat, lng]);
+		}
+	};
+
+	const clearMarkers = (): void => {
+		markers.forEach((marker) => {
+			leafletMap.removeLayer(marker);
+		});
+		markers.clear();
+	};
 
 	return {
 		isLoading: readonly(isLoading),
 		isInitialized: readonly(isInitialized),
 
-		// Methods
 		initializeMap,
-		destroyMap,
-		setView,
-		fitBounds,
-		getBounds,
-		getCenter,
-		getZoom,
-		invalidateSize,
-		centerOnLocation,
 		centerOnLocations,
+
+		addMarker,
+		removeMarker,
+		updateMarkerPosition,
+		clearMarkers,
 	};
 }

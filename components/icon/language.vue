@@ -68,13 +68,14 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
-	size?: string | number;
-	color?: string;
-}
-
-withDefaults(defineProps<Props>(), {
-	size: 24,
-	color: 'currentColor',
-});
+withDefaults(
+	defineProps<{
+		size?: string | number;
+		color?: string;
+	}>(),
+	{
+		size: 24,
+		color: 'currentColor',
+	},
+);
 </script>

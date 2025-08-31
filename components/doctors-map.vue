@@ -6,122 +6,65 @@
 			</div>
 		</div>
 
-		<DoctorPopup />
-		<DoctorMarkersContainer
-			:markers="doctorMarkers.vueMarkers"
-			@marker-click="onVueMarkerClick"
-		/>
+		<!-- <DoctorPopup /> -->
+
+		<template v-if="isTeleportReady">
+			<Teleport
+				v-for="clinic in clinics"
+				:key="clinic.id"
+				:to="`#${getClinicMarkerId(clinic.id)}`"
+			>
+				<DoctorMarker
+					:doctorCount="12"
+					:isForced="false"
+					@click="onMarkerClick(clinic)"
+				/>
+			</Teleport>
+		</template>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { debounce } from 'lodash-es';
-import { CityId } from '~/common/constants';
-import { useDoctorsStore } from '~/stores/doctors';
+import type { ClinicData } from '~/interfaces/doctor';
+import type { MarkerData } from '~/interfaces/marker';
 
 const props = defineProps<{
-	hidePopup?: boolean;
-	mapId?: string;
-}>();
-
-const emit = defineEmits<{
-	mapReady: [mapInstance: any];
-	doctorsVisible: [visibleDoctorIds: number[]];
-	showOnMap: [data: { doctorId: number; clinic: any; doctor: any }];
+	clinics: ClinicData[];
 }>();
 
 const { t } = useI18n();
 const mapStore = useMapStore();
-const doctorsStore = useDoctorsStore();
 
-// Реактивные данные
+const { isLoading, initializeMap, addMarker, markers } = useLeaflet();
+
+const markerList = ref<MarkerData[]>([]);
 const mapContainer = ref<HTMLElement | null>(null);
+const isTeleportReady = ref(false);
 
-const debouncedNotifyVisibleDoctors = debounce(() => {
-	const visibleDoctorIds = doctorMarkers.getVisibleDoctors();
-	doctorsStore.setVisibleDoctorIds(visibleDoctorIds);
-}, 300);
-
-// Используем useLeaflet напрямую
-const {
-	isLoading,
-	initializeMap,
-	setView,
-	fitBounds,
-	getBounds,
-	getCenter,
-	getZoom,
-	invalidateSize,
-	centerOnLocation,
-	centerOnLocations,
-} = useLeaflet({
-	onViewportChanged: debouncedNotifyVisibleDoctors,
-});
-
-// Инициализируем композабл для маркеров - он сам получит данные из сторов
-const doctorMarkers = useDoctorMarkers(props.hidePopup);
-
-// Обработчик клика по Vue маркеру
-const onVueMarkerClick = async (markerData: {
-	doctors: any[];
-	clinics: any[];
-	location: { lat: number; lng: number };
-}) => {
-	if (props.hidePopup) return;
-
-	// Для Vue маркеров мы можем напрямую использовать store без поиска маркера
-	await mapStore.showPopupForMarker(
-		null, // Vue маркеры не нуждаются в Leaflet маркере
-		markerData.doctors,
-		markerData.clinics,
-		{ maxWidth: 420, maxHeight: 600 },
-	);
+const onMarkerClick = (marker: MarkerData) => {
+	console.log('marker', marker);
 };
 
-// Упрощенный обработчик клика по маркеру (DRY - используем store) - DEPRECATED
-const onMarkerClick = async (markerData: any) => {
-	if (props.hidePopup) return;
-
-	const marker = mapStore.findMarkerAtLocation(markerData.location);
-	if (!marker) return;
-
-	// Используем общий метод из store (DRY)
-	await mapStore.showPopupForMarker(
-		marker,
-		markerData.doctors,
-		markerData.clinics,
-		{ maxWidth: 420, maxHeight: 600 }, // Немного больше для карточек врачей
-	);
+const getClinicMarkerId = (clinicId: number) => {
+	return `clinic-${clinicId}`;
 };
-
-// Слушаем клики по маркерам
-doctorMarkers.onMarkerClick(onMarkerClick);
 
 // Инициализация карты при монтировании
 onMounted(async () => {
-	await nextTick();
-
 	if (mapContainer.value) {
 		await initializeMap(mapContainer.value);
-		debouncedNotifyVisibleDoctors();
+
+		props.clinics.forEach((clinic) => {
+			addMarker(
+				getClinicMarkerId(clinic.id),
+				clinic.latitude,
+				clinic.longitude,
+			);
+		});
+
+		isTeleportReady.value = true;
 	}
 });
-
-// Следим за изменениями города в фильтрах
-// watch(
-// 	() => filtersStore.city,
-// 	(newCity) => {
-// 		if (newCity) {
-// 			// Преобразуем строку города в массив ID городов
-// 			// TODO: Нужно создать функцию для преобразования названия города в CityId
-// 			const cityIds = [newCity as unknown as CityId]; // Временное решение
-// 			mapStore.centerMapOnCities(cityIds);
-// 		} else {
-// 			// Если город не выбран, показываем все маркеры
-// 			mapStore.centerMapOnCities([]);
-// 		}
-// 	},
-// );
 </script>
 
 <style>
@@ -156,21 +99,21 @@ onMounted(async () => {
 }
 
 /* Стили для маркеров врачей */
-:global(.doctor-marker) {
+/* .doctor-marker {
 	background: var(--color-primary);
 	border-radius: var(--border-radius-lg);
 	border: 2px solid var(--color-bg-primary);
 	box-shadow: var(--shadow-hover);
 }
 
-:global(.doctor-marker-group) {
+.doctor-marker-group {
 	background: var(--color-primary);
 	border-radius: var(--border-radius-full);
 	border: 2px solid var(--color-bg-primary);
 	box-shadow: var(--shadow-hover);
 }
 
-:global(.marker-inner) {
+.marker-inner {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -180,7 +123,7 @@ onMounted(async () => {
 	font-family: system-ui, -apple-system, sans-serif;
 }
 
-:global(.marker-inner-group) {
+.marker-inner-group {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -192,7 +135,7 @@ onMounted(async () => {
 	font-size: var(--font-size-sm);
 }
 
-:global(.forced-marker) {
+.forced-marker {
 	animation: pulse 2s infinite;
 }
 
@@ -206,5 +149,5 @@ onMounted(async () => {
 	100% {
 		box-shadow: var(--shadow-hover);
 	}
-}
+} */
 </style>

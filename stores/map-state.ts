@@ -221,7 +221,6 @@ export const useMapStore = defineStore('mapState', () => {
 		showClinicOnMap,
 		showPopupForMarker, // Общий метод (DRY)
 		findMarkerAtLocation, // Нужен для onMarkerClick
-		refreshCurrentPopup, // Нужен для зума
 		clearPopup, // Очистка попапа
 	};
 });

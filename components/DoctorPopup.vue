@@ -128,7 +128,7 @@ const teleportTarget = computed(() =>
 				@show-on-map="handleShowOnMap"
 			/>
 
-			<div class="popup-meta">
+			<!-- <div class="popup-meta">
 				<div class="location-info">
 					<h4 class="clinic-name-popup">
 						<a
@@ -196,7 +196,7 @@ const teleportTarget = computed(() =>
 				>
 					{{ t('show_on_map') }}
 				</button>
-			</div>
+			</div> -->
 		</div>
 	</Teleport>
 </template>

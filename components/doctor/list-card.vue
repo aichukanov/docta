@@ -26,7 +26,7 @@
 					{{ specialtiesText }}
 				</div>
 				<div class="languages" :title="t('DoctorLanguages')">
-					<IconLanguage />
+					<IconLanguage size="18" />
 					<span class="languages-text">{{ languagesText }}</span>
 				</div>
 			</div>
@@ -135,11 +135,13 @@ const languagesText = computed(() => {
 
 .languages {
 	display: flex;
+	align-items: center;
 	gap: var(--spacing-xs);
 	flex-wrap: wrap;
 
 	.languages-text {
 		color: var(--color-primary-green);
+		margin-top: -3px;
 	}
 }
 

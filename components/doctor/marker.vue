@@ -1,66 +1,23 @@
 <template>
-	<Teleport v-if="teleportTarget && hasValidData" :to="teleportTarget">
-		<div
-			class="doctor-marker"
-			:class="{ 'forced-marker': isForced }"
-			@click="handleClick"
-		>
-			<div v-if="isSingleDoctor" class="marker-inner">
-				<IconDoctor class="doctor-icon" />
-			</div>
-			<div v-else class="marker-inner-group">
-				{{ doctorCount }}
-			</div>
+	<div
+		class="doctor-marker"
+		:class="{ 'forced-marker': isForced }"
+		@click="$emit('click')"
+	>
+		<div v-if="doctorCount === 1" class="marker-inner">
+			<IconDoctor />
 		</div>
-	</Teleport>
+		<div v-else class="marker-inner-group">
+			{{ doctorCount }}
+		</div>
+	</div>
 </template>
 
 <script setup lang="ts">
-import type { DoctorWithClinics, DoctorClinicFull } from '~/interfaces/doctor';
-
-const props = defineProps<{
-	doctors: DoctorWithClinics[];
-	clinics: DoctorClinicFull[];
-	location: { lat: number; lng: number };
-	teleportTarget: string | null;
+defineProps<{
+	doctorCount: number;
 	isForced?: boolean;
 }>();
-
-const emit = defineEmits<{
-	markerClick: [
-		data: {
-			doctors: DoctorWithClinics[];
-			clinics: DoctorClinicFull[];
-			location: { lat: number; lng: number };
-		},
-	];
-}>();
-
-// Computed properties with safety checks
-const doctorCount = computed(() => props.doctors?.length || 0);
-const isSingleDoctor = computed(() => doctorCount.value === 1);
-
-// Safety check for valid data
-const hasValidData = computed(
-	() =>
-		props.doctors &&
-		props.doctors.length > 0 &&
-		props.clinics &&
-		props.clinics.length > 0,
-);
-
-const handleClick = () => {
-	if (!hasValidData.value) {
-		console.warn('Marker clicked with invalid data');
-		return;
-	}
-
-	emit('markerClick', {
-		doctors: props.doctors,
-		clinics: props.clinics,
-		location: props.location,
-	});
-};
 </script>
 
 <style scoped>
@@ -114,11 +71,6 @@ const handleClick = () => {
 .marker-inner-group {
 	font-weight: var(--font-weight-semibold);
 	font-size: var(--font-size-sm);
-}
-
-.doctor-icon {
-	width: 24px;
-	height: 24px;
 }
 
 @keyframes pulse {

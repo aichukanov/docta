@@ -1,9 +1,5 @@
 <template>
-	<div
-		class="doctor-marker"
-		:class="{ 'forced-marker': isForced }"
-		@click="$emit('click')"
-	>
+	<div class="doctor-marker" :class="{ 'forced-marker': isForced }">
 		<div v-if="doctorCount === 1" class="marker-inner">
 			<IconDoctor />
 		</div>

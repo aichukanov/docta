@@ -46,7 +46,7 @@ const onMarkerClick = (marker: MarkerData) => {
 };
 
 const getClinicMarkerId = (clinicId: number) => {
-	return `clinic-${clinicId}`;
+	return `clinic-marker-${clinicId}`;
 };
 
 // Инициализация карты при монтировании

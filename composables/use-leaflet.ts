@@ -20,11 +20,7 @@ interface ViewportChangeEvent {
 	zoom: number;
 }
 
-interface UseLeafletOptions {
-	onViewportChanged?: (event: ViewportChangeEvent) => void;
-}
-
-export function useLeaflet(options: UseLeafletOptions = {}) {
+export function useLeaflet() {
 	let leafletMap: any = null;
 	let popup: any = null;
 
@@ -73,14 +69,11 @@ export function useLeaflet(options: UseLeafletOptions = {}) {
 			leafletMap = window.L.map(container, {
 				center: MONTENEGRO_CENTER,
 				zoom: MONTENEGRO_ZOOM_SETTINGS.defaultZoom,
-				maxBounds: MONTENEGRO_MAX_BOUNDS,
-				maxBoundsViscosity: 1.0,
+				// maxBounds: MONTENEGRO_MAX_BOUNDS,
 				minZoom: MONTENEGRO_ZOOM_SETTINGS.minZoom,
 				maxZoom: MONTENEGRO_ZOOM_SETTINGS.maxZoom,
-				...options,
 			});
 
-			// Add OpenStreetMap tiles
 			window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 				attribution:
 					'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -146,15 +139,6 @@ export function useLeaflet(options: UseLeafletOptions = {}) {
 
 		const marker = window.L.marker([lat, lng], { icon });
 		marker.addTo(leafletMap);
-
-		// // Добавляем контейнер для попапа к маркеру
-		// marker.bindPopup(`<div id="popup-container"></div>`, {
-		// 	maxWidth: 400,
-		// 	maxHeight: 500,
-		// 	keepInView: true,
-		// 	autoPan: true,
-		// });
-
 		markers.set(id, marker);
 	};
 
@@ -185,11 +169,40 @@ export function useLeaflet(options: UseLeafletOptions = {}) {
 			popup = window.L.popup({
 				minWidth: 350,
 				maxWidth: 500,
-				offset: [-20, -30], // Сдвигаем popup вверх на половину высоты маркера
+				maxHeight: 500,
+				offset: [-20, -30],
 			}).setContent('<div id="popup-container"></div>');
 		}
-
 		popup.setLatLng([lat, lng]).openOn(leafletMap);
+
+		// Получаем размеры контейнера карты
+		const mapSize = leafletMap.getSize();
+
+		// Вычисляем целевую позицию: центр по горизонтали, 30px от низа
+		const targetPoint = window.L.point(
+			mapSize.x / 2, // центр по горизонтали
+			400 + (mapSize.y - 400) / 2, // 400px - высота попапа
+		);
+
+		// Получаем текущую пиксельную позицию целевой точки
+		const currentPoint = leafletMap.latLngToContainerPoint([lat, lng]);
+
+		// Вычисляем смещение
+		const offsetPoint = currentPoint.subtract(targetPoint);
+
+		// Получаем текущий центр карты в пиксельных координатах
+		const currentCenter = leafletMap.getCenter();
+		const currentCenterPoint = leafletMap.latLngToContainerPoint(currentCenter);
+
+		// Вычисляем новый центр карты
+		const newCenterPoint = currentCenterPoint.add(offsetPoint);
+		const newCenter = leafletMap.containerPointToLatLng(newCenterPoint);
+
+		// Плавно перемещаем карту к новому центру
+		leafletMap.panTo(newCenter, {
+			animate: true,
+			duration: 0.5,
+		});
 	};
 
 	return {

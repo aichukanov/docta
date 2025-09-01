@@ -38,7 +38,7 @@ export const MONTENEGRO_MAX_BOUNDS: [[number, number], [number, number]] = [
 
 // Настройки зума для карты Черногории
 export const MONTENEGRO_ZOOM_SETTINGS = {
-	minZoom: 8, // Минимальный зум - видна вся страна
+	minZoom: 7, // Минимальный зум - видна вся страна
 	maxZoom: 18, // Максимальный зум
 	defaultZoom: 9, // Зум по умолчанию
 };

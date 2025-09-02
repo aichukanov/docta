@@ -5,19 +5,18 @@
 			<span>{{ phoneNumber }}</span>
 		</span>
 
-		<ContactsCopyButton :phoneNumber="cleanPhoneNumber" />
+		<ContactsCopyButton :phoneNumber="phoneNumber" />
 	</div>
 </template>
 
 <script setup lang="ts">
-import { formatPhoneNumber, getCleanPhoneNumber } from './utils';
+import { formatPhoneNumber } from './utils';
 
 const props = defineProps<{
 	phoneNumber: string;
 }>();
 
 const phoneNumber = computed(() => formatPhoneNumber(props.phoneNumber));
-const cleanPhoneNumber = computed(() => getCleanPhoneNumber(props.phoneNumber));
 </script>
 
 <style scoped src="./style.css" />

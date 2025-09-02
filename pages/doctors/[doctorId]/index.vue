@@ -2,7 +2,7 @@
 	<div class="doctor-content">
 		<section class="doctor-details">
 			<div class="detail-section">
-				<h3 class="section-title">{{ t('DoctorLanguages') }}</h3>
+				<h3 class="section-title">{{ t('Languages') }}</h3>
 				<div class="languages-list">
 					<LanguageBadge
 						v-for="lang in doctor.languages"
@@ -13,7 +13,7 @@
 			</div>
 
 			<div class="detail-section">
-				<h3 class="section-title">{{ t('DoctorContacts') }}</h3>
+				<h3 class="section-title">{{ t('Contacts') }}</h3>
 				<ContactsCollapseVue :doctor="doctor" />
 			</div>
 

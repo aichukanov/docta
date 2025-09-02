@@ -24,8 +24,12 @@
 				<ClinicRouteButton :clinic="clinic" />
 			</div>
 		</div>
-		<div class="contacts-wrapper">
-			<ContactsList v-if="hasContacts" :list="clinic" />
+		<div v-if="hasContacts" class="contacts-wrapper">
+			<el-collapse expand-icon-position="left">
+				<el-collapse-item :title="t('Contacts')">
+					<ContactsList :list="clinic" />
+				</el-collapse-item>
+			</el-collapse>
 		</div>
 	</div>
 </template>
@@ -33,22 +37,13 @@
 <script setup lang="ts">
 import { LocationFilled } from '@element-plus/icons-vue';
 import type { ContactList } from '~/interfaces/contacts';
+import { hasContacts } from '../contacts/utils';
 
 const props = defineProps<{
 	clinic: ClinicData;
 }>();
 
-const hasContacts = computed(() => {
-	return !!(
-		props.clinic.phone ||
-		props.clinic.email ||
-		props.clinic.facebook ||
-		props.clinic.instagram ||
-		props.clinic.telegram ||
-		props.clinic.whatsapp ||
-		props.clinic.viber
-	);
-});
+const { t } = useI18n();
 
 function showOnMap() {
 	console.log('showOnMap', props.clinic);

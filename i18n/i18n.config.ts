@@ -12,22 +12,14 @@ const sr = {
 	ru: 'ruski',
 	tr: 'turski',
 
-	// Doctor sections
-	DoctorLanguages: 'Jezici',
-	DoctorContacts: 'Kontakti',
-	DoctorLocations: 'Lokacije',
+	Languages: 'Jezici',
+	Contacts: 'Kontakti',
+	NoContacts: 'Kontakti nisu pronađeni',
 
-	// Route building
 	BuildRoute: 'Napravi rutu',
-
-	// Map
 	MapLoading: 'Učitava mapa',
 	ShowOnMap: 'Prikaži na mapi',
 
-	// Contacts
-	NoContacts: 'Kontakti nisu pronađeni',
-
-	// Doctors page
 	doctors: 'Lekari',
 	show_only_doctors_on_map: 'Prikaži samo lekare na mapi',
 	search_doctors_placeholder: 'Pretraga lekara...',
@@ -123,22 +115,14 @@ export default defineI18nConfig(() => ({
 			ru: 'russian',
 			tr: 'turkish',
 
-			// Doctor sections
-			DoctorLanguages: 'Languages',
-			DoctorContacts: 'Contacts',
-			DoctorLocations: 'Locations',
+			Languages: 'Languages',
+			Contacts: 'Contacts',
+			NoContacts: 'No contacts found',
 
-			// Route building
 			BuildRoute: 'Build Route',
-
-			// Map
 			MapLoading: 'Loading map',
 			ShowOnMap: 'Show on map',
 
-			// Contacts
-			NoContacts: 'No contacts found',
-
-			// Doctors page
 			doctors: 'Doctors',
 			show_only_doctors_on_map: 'Show only doctors on map',
 			search_doctors_placeholder: 'Search doctors...',
@@ -228,22 +212,14 @@ export default defineI18nConfig(() => ({
 			ru: 'русский',
 			tr: 'турецкий',
 
-			// Doctor sections
-			DoctorLanguages: 'Языки',
-			DoctorContacts: 'Контакты',
-			DoctorLocations: 'Местоположения',
+			Languages: 'Языки',
+			Contacts: 'Контакты',
+			NoContacts: 'Контакты не найдены',
 
-			// Route building
 			BuildRoute: 'Построить маршрут',
-
-			// Map
 			MapLoading: 'Загрузка карты',
 			ShowOnMap: 'Показать на карте',
 
-			// Contacts
-			NoContacts: 'Контакты не найдены',
-
-			// Doctors page
 			doctors: 'Врачи',
 			show_only_doctors_on_map: 'Показывать только врачей на карте',
 			search_doctors_placeholder: 'Поиск врачей...',
@@ -334,22 +310,14 @@ export default defineI18nConfig(() => ({
 			ru: 'Russisch',
 			tr: 'Türkisch',
 
-			// Doctor sections
-			DoctorLanguages: 'Sprachen',
-			DoctorContacts: 'Kontakte',
-			DoctorLocations: 'Standorte',
+			Languages: 'Sprachen',
+			Contacts: 'Kontakte',
+			NoContacts: 'Keine Kontakte gefunden',
 
-			// Route building
 			BuildRoute: 'Route erstellen',
-
-			// Map
 			MapLoading: 'Karte wird geladen',
 			ShowOnMap: 'Auf Karte zeigen',
 
-			// Contacts
-			NoContacts: 'Keine Kontakte gefunden',
-
-			// Doctors page
 			doctors: 'Ärzte',
 			show_only_doctors_on_map: 'Nur Ärzte auf Karte anzeigen',
 			search_doctors_placeholder: 'Ärzte suchen...',
@@ -438,22 +406,14 @@ export default defineI18nConfig(() => ({
 			ru: 'Rusça',
 			tr: 'Türkçe',
 
-			// Doctor sections
-			DoctorLanguages: 'Diller',
-			DoctorContacts: 'İletişim',
-			DoctorLocations: 'Konumlar',
+			Languages: 'Diller',
+			Contacts: 'İletişim',
+			NoContacts: 'İletişim bilgisi bulunamadı',
 
-			// Route building
 			BuildRoute: 'Rota Oluştur',
-
-			// Map
 			MapLoading: 'Harita yükleniyor',
 			ShowOnMap: 'Haritada göster',
 
-			// Contacts
-			NoContacts: 'İletişim bilgisi bulunamadı',
-
-			// Doctors page
 			doctors: 'Doktorlar',
 			show_only_doctors_on_map: 'Sadece haritadaki doktorları göster',
 			search_doctors_placeholder: 'Doktor ara...',

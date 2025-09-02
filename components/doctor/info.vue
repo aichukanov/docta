@@ -57,7 +57,7 @@ const languagesText = computed(() => {
 			<div class="doctor-specialty">
 				{{ specialtiesText }}
 			</div>
-			<div v-if="!short" class="languages" :title="t('DoctorLanguages')">
+			<div v-if="!short" class="languages" :title="t('Languages')">
 				<IconLanguage size="18" />
 				<span class="languages-text">{{ languagesText }}</span>
 			</div>

@@ -5,6 +5,7 @@ import { useDoctorsStore } from '~/stores/doctors';
 const { t, locale } = useI18n();
 
 const doctorsListRef = ref<HTMLElement>();
+const doctorsMapRef = ref<HTMLElement>();
 const PAGE_LIMIT = 20;
 const pageNumber = ref(1);
 
@@ -36,7 +37,12 @@ const doctorsOnPage = computed(() => {
 	);
 });
 
+const showClinicOnMap = (clinic: ClinicData) => {
+	doctorsMapRef.value.openClinicPopup(clinic);
+};
+
 watch(pageNumber, () => {
+	window.scrollTo(0, 0);
 	if (doctorsListRef.value) {
 		doctorsListRef.value.scrollTo(0, 0);
 	}
@@ -64,6 +70,7 @@ watch(pageNumber, () => {
 						:key="doctor.id"
 						:doctor="doctor"
 						:clinics="clinicsList.clinics"
+						@show-on-map="showClinicOnMap($event)"
 					/>
 				</div>
 
@@ -76,7 +83,7 @@ watch(pageNumber, () => {
 
 			<div class="map-container">
 				<DoctorsMap
-					id="doctors-page-map"
+					ref="doctorsMapRef"
 					:doctors="filteredDoctors"
 					:clinics="clinicsList.clinics"
 				/>

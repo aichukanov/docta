@@ -1,5 +1,5 @@
 <template>
-	<el-button :title="t('ShowOnMap')" @click="$emit('click')">
+	<el-button :title="t('ShowOnMap')">
 		<template #icon>
 			<el-icon><LocationFilled /></el-icon>
 		</template>

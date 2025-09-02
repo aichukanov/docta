@@ -20,7 +20,7 @@
 				</div>
 			</div>
 			<div class="location-buttons">
-				<ClinicShowOnMapButton :clinic="clinic" @click="showOnMap()" />
+				<ClinicShowOnMapButton :clinic="clinic" @click="$emit('show-on-map')" />
 				<ClinicRouteButton :clinic="clinic" />
 			</div>
 		</div>
@@ -43,11 +43,11 @@ const props = defineProps<{
 	clinic: ClinicData;
 }>();
 
-const { t } = useI18n();
+defineEmits<{
+	(e: 'show-on-map'): void;
+}>();
 
-function showOnMap() {
-	console.log('showOnMap', props.clinic);
-}
+const { t } = useI18n();
 </script>
 
 <style scoped lang="less">

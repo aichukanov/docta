@@ -15,7 +15,7 @@
 				<DoctorMarker
 					:doctorCount="clinic.doctors.length"
 					:isForced="false"
-					@click.stop="onMarkerClick(clinic)"
+					@click.stop="openClinicPopup(clinic)"
 				/>
 			</Teleport>
 
@@ -71,7 +71,7 @@ const selectedClinicDoctors = computed(() => {
 	return selectedClinic.value ? getClinicDoctors(selectedClinic.value) : [];
 });
 
-const onMarkerClick = async (clinic: ClinicData) => {
+const openClinicPopup = async (clinic: ClinicData) => {
 	selectedClinic.value = null;
 	await nextTick();
 
@@ -94,6 +94,10 @@ onMounted(async () => {
 
 		isTeleportReady.value = true;
 	}
+});
+
+defineExpose({
+	openClinicPopup,
 });
 </script>
 

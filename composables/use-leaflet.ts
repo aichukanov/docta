@@ -79,16 +79,14 @@ export function useLeaflet() {
 					'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 			}).addTo(leafletMap);
 
-			// Setup viewport change listeners
-			leafletMap.on('moveend zoomend', () => {
-				console.log('moveend zoomend');
-				// if (onViewportChanged) {
-				// 	const bounds = leafletMap.getBounds();
-				// 	const center = leafletMap.getCenter();
-				// 	const zoom = leafletMap.getZoom();
-				// 	onViewportChanged({ bounds, center, zoom });
-				// }
-			});
+			// leafletMap.on('moveend zoomend', () => {
+			// if (onViewportChanged) {
+			// 	const bounds = leafletMap.getBounds();
+			// 	const center = leafletMap.getCenter();
+			// 	const zoom = leafletMap.getZoom();
+			// 	onViewportChanged({ bounds, center, zoom });
+			// }
+			// });
 
 			isInitialized.value = true;
 			isLoading.value = false;

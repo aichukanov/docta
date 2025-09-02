@@ -7,6 +7,7 @@
 				v-for="clinic in doctorClinics"
 				:key="clinic.id"
 				:clinic="clinic"
+				@show-on-map="$emit('show-on-map', clinic)"
 			/>
 		</div>
 	</div>
@@ -19,6 +20,10 @@ import type { ClinicData } from '~/interfaces/clinic';
 const props = defineProps<{
 	doctor: DoctorData;
 	clinics: ClinicData[];
+}>();
+
+defineEmits<{
+	(e: 'show-on-map', clinic: ClinicData): void;
 }>();
 
 const doctorClinics = computed(() => {

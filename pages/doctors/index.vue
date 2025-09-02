@@ -67,46 +67,6 @@ const preparedDoctors = computed(() => {
 	</PageWrapper>
 </template>
 
-<i18n lang="json">
-{
-	"en": {
-		"Doctors": "Doctors",
-		"LoadingDoctors": "Loading doctors...",
-		"NoDoctorsFound": "No doctors found"
-	},
-	"ru": {
-		"Doctors": "Врачи",
-		"LoadingDoctors": "Загрузка врачей...",
-		"NoDoctorsFound": "Врачи не найдены"
-	},
-	"tr": {
-		"Doctors": "Doktorlar",
-		"LoadingDoctors": "Doktorlar yükleniyor...",
-		"NoDoctorsFound": "Doktor bulunamadı"
-	},
-	"de": {
-		"Doctors": "Ärzte",
-		"LoadingDoctors": "Ärzte werden geladen...",
-		"NoDoctorsFound": "Keine Ärzte gefunden"
-	},
-	"sr": {
-		"Doctors": "Lekari",
-		"LoadingDoctors": "Učitava lekare...",
-		"NoDoctorsFound": "Lekari nisu pronađeni"
-	},
-	"ba": {
-		"Doctors": "Lekari",
-		"LoadingDoctors": "Učitava lekare...",
-		"NoDoctorsFound": "Lekari nisu pronađeni"
-	},
-	"me": {
-		"Doctors": "Lekari",
-		"LoadingDoctors": "Učitava lekare...",
-		"NoDoctorsFound": "Lekari nisu pronađeni"
-	}
-}
-</i18n>
-
 <style lang="less" scoped>
 @import url('~/assets/css/vars.less');
 
@@ -131,84 +91,6 @@ const preparedDoctors = computed(() => {
 	color: #1f2937;
 	margin: 0 0 @double-padding 0;
 	font-family: system-ui, -apple-system, sans-serif;
-}
-
-.filter-toggle {
-	margin-bottom: @base-padding;
-}
-
-.toggle-container {
-	display: flex;
-	align-items: center;
-	cursor: pointer;
-	user-select: none;
-}
-
-.toggle-checkbox {
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-}
-
-.toggle-switch {
-	position: relative;
-	width: 44px;
-	height: 24px;
-	background: #e5e7eb;
-	border-radius: 12px;
-	margin-right: 12px;
-	transition: background-color 0.2s ease;
-
-	&::before {
-		content: '';
-		position: absolute;
-		top: 2px;
-		left: 2px;
-		width: 20px;
-		height: 20px;
-		background: #ffffff;
-		border-radius: 50%;
-		transition: transform 0.2s ease;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	}
-
-	.toggle-checkbox:checked + & {
-		background: #4f46e5;
-
-		&::before {
-			transform: translateX(20px);
-		}
-	}
-}
-
-.toggle-label {
-	font-size: 0.9rem;
-	color: #374151;
-	font-family: system-ui, -apple-system, sans-serif;
-}
-
-.search-bar {
-	margin-bottom: @double-padding;
-}
-
-.search-input {
-	width: 100%;
-	padding: 12px @base-padding;
-	border: 1px solid #e5e7eb;
-	border-radius: 6px;
-	font-size: 1rem;
-	font-family: system-ui, -apple-system, sans-serif;
-	transition: border-color 0.2s ease, box-shadow 0.2s ease;
-
-	&:focus {
-		outline: none;
-		border-color: #4f46e5;
-		box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.05);
-	}
-
-	&::placeholder {
-		color: #9ca3af;
-	}
 }
 
 .doctors-list {
@@ -251,54 +133,12 @@ const preparedDoctors = computed(() => {
 	color: #6b7280;
 }
 
-.doctor-actions {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-	flex-shrink: 0;
-}
-
-.action-btn {
-	padding: 8px 12px;
-	border-radius: 6px;
-	font-size: 0.875rem;
-	font-weight: 500;
-	border: none;
-	cursor: pointer;
-	transition: all 0.2s ease;
-	font-family: system-ui, -apple-system, sans-serif;
-
-	&.primary {
-		background: #4f46e5;
-		color: white;
-
-		&:hover {
-			background: #4338ca;
-		}
-	}
-
-	&.secondary {
-		background: transparent;
-		color: #4f46e5;
-		border: 1px solid #4f46e5;
-		text-decoration: none;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-
-		&:hover {
-			background: #f8fafc;
-		}
-	}
-}
-
 .map-container {
 	flex: 1;
 	max-width: 50%;
 	position: relative;
 }
 
-// Responsive design
 @media (max-width: 768px) {
 	.doctors-page {
 		flex-direction: column;
@@ -315,3 +155,43 @@ const preparedDoctors = computed(() => {
 	}
 }
 </style>
+
+<i18n lang="json">
+{
+	"en": {
+		"Doctors": "Doctors",
+		"LoadingDoctors": "Loading doctors...",
+		"NoDoctorsFound": "No doctors found"
+	},
+	"ru": {
+		"Doctors": "Врачи",
+		"LoadingDoctors": "Загрузка врачей...",
+		"NoDoctorsFound": "Врачи не найдены"
+	},
+	"tr": {
+		"Doctors": "Doktorlar",
+		"LoadingDoctors": "Doktorlar yükleniyor...",
+		"NoDoctorsFound": "Doktor bulunamadı"
+	},
+	"de": {
+		"Doctors": "Ärzte",
+		"LoadingDoctors": "Ärzte werden geladen...",
+		"NoDoctorsFound": "Keine Ärzte gefunden"
+	},
+	"sr": {
+		"Doctors": "Lekari",
+		"LoadingDoctors": "Učitava lekare...",
+		"NoDoctorsFound": "Lekari nisu pronađeni"
+	},
+	"ba": {
+		"Doctors": "Lekari",
+		"LoadingDoctors": "Učitava lekare...",
+		"NoDoctorsFound": "Lekari nisu pronađeni"
+	},
+	"me": {
+		"Doctors": "Lekari",
+		"LoadingDoctors": "Učitava lekare...",
+		"NoDoctorsFound": "Lekari nisu pronađeni"
+	}
+}
+</i18n>

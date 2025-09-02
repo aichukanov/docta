@@ -4,6 +4,10 @@ import { useDoctorsStore } from '~/stores/doctors';
 
 const { t, locale } = useI18n();
 
+const doctorsListRef = ref<HTMLElement>();
+const PAGE_LIMIT = 20;
+const pageNumber = ref(1);
+
 const { pending: isLoadingDoctors, data: doctorsList } = await useFetch(
 	'/api/doctors/list',
 	{
@@ -20,22 +24,29 @@ const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
 	},
 );
 
-const preparedDoctors = computed(() => {
-	return doctorsList.value.doctors.map((doctor) => {
-		return {
-			...doctor,
-			clinics: clinicsList.value.clinics.filter((clinic) =>
-				doctor.clinicIds.split(',').map(Number).includes(clinic.id),
-			),
-		};
-	});
+const filteredDoctors = computed(() => {
+	// todo: фильтрация
+	return doctorsList.value.doctors;
+});
+
+const doctorsOnPage = computed(() => {
+	return filteredDoctors.value.slice(
+		(pageNumber.value - 1) * PAGE_LIMIT,
+		pageNumber.value * PAGE_LIMIT,
+	);
+});
+
+watch(pageNumber, () => {
+	if (doctorsListRef.value) {
+		doctorsListRef.value.scrollTo(0, 0);
+	}
 });
 </script>
 
 <template>
 	<PageWrapper>
 		<div class="doctors-page">
-			<div class="doctors-sidebar">
+			<div ref="doctorsListRef" class="doctors-sidebar">
 				<h1 class="page-title">{{ t('Doctors') }}</h1>
 
 				<div v-if="isLoadingDoctors || isLoadingClinics" class="loading">
@@ -44,22 +55,29 @@ const preparedDoctors = computed(() => {
 				</div>
 
 				<div v-else class="doctors-list">
-					<div v-if="preparedDoctors.length === 0" class="empty-state">
+					<div v-if="doctorsList.doctors.length === 0" class="empty-state">
 						<p>{{ t('NoDoctorsFound') }}</p>
 					</div>
 
 					<DoctorListCard
-						v-for="doctor in preparedDoctors"
+						v-for="doctor in doctorsOnPage"
 						:key="doctor.id"
 						:doctor="doctor"
+						:clinics="clinicsList.clinics"
 					/>
 				</div>
+
+				<Pagination
+					:total="doctorsList.totalCount"
+					:page-size="PAGE_LIMIT"
+					v-model:current-page="pageNumber"
+				/>
 			</div>
 
 			<div class="map-container">
 				<DoctorsMap
 					id="doctors-page-map"
-					:doctors="preparedDoctors"
+					:doctors="filteredDoctors"
 					:clinics="clinicsList.clinics"
 				/>
 			</div>

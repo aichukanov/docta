@@ -4,7 +4,7 @@
 			background
 			layout="prev, pager, next"
 			:total="total"
-			:page-size="RECORD_LIMIT"
+			:page-size="pageSize"
 			:pager-count="5"
 			:disabled="disabled"
 			v-model:current-page="pageNumber"
@@ -13,13 +13,18 @@
 </template>
 
 <script setup lang="ts">
-const RECORD_LIMIT = 36;
-
-const props = defineProps({
-	total: { type: Number, default: 1 },
-	currentPage: { type: Number, default: 1 },
-	disabled: { type: Boolean, default: false },
-});
+const props = withDefaults(
+	defineProps<{
+		total: number;
+		currentPage: number;
+		disabled?: boolean;
+		pageSize?: number;
+	}>(),
+	{
+		pageSize: 20,
+		disabled: false,
+	},
+);
 
 const emit = defineEmits(['update:current-page']);
 
@@ -28,7 +33,6 @@ const pageNumber = computed({
 		return props.currentPage;
 	},
 	set(value) {
-		window.scrollTo(0, 0);
 		emit('update:current-page', value);
 	},
 });

@@ -55,7 +55,7 @@ function showOnMap() {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-lg);
-	background: var(--color-surface-secondary);
+	background: var(--color-surface-primary);
 	border: 1px solid var(--color-border-light);
 	border-radius: var(--border-radius-md);
 	padding: var(--spacing-md) var(--spacing-lg);

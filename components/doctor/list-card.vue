@@ -4,8 +4,8 @@
 
 		<div class="clinics-list">
 			<ClinicSummary
-				v-for="clinic in doctor.clinics"
-				:key="clinic.clinicId"
+				v-for="clinic in doctorClinics"
+				:key="clinic.id"
 				:clinic="clinic"
 			/>
 		</div>
@@ -13,11 +13,19 @@
 </template>
 
 <script setup lang="ts">
-import type { DoctorWithClinics } from '~/interfaces/doctor';
+import type { DoctorData } from '~/interfaces/doctor';
+import type { ClinicData } from '~/interfaces/clinic';
 
 const props = defineProps<{
-	doctor: DoctorWithClinics;
+	doctor: DoctorData;
+	clinics: ClinicData[];
 }>();
+
+const doctorClinics = computed(() => {
+	return props.clinics.filter((clinic) =>
+		props.doctor.clinicIds.split(',').map(Number).includes(clinic.id),
+	);
+});
 </script>
 
 <style scoped lang="less">
@@ -30,7 +38,7 @@ const props = defineProps<{
 }
 
 .doctor-card {
-	background: var(--color-surface-primary);
+	background: var(--color-surface-secondary);
 	border: 1px solid var(--color-border-primary);
 	border-radius: var(--border-radius-lg);
 	padding: var(--spacing-xl) var(--spacing-2xl);

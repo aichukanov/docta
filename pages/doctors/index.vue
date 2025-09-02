@@ -36,39 +36,16 @@ const preparedDoctors = computed(() => {
 	<PageWrapper>
 		<div class="doctors-page">
 			<div class="doctors-sidebar">
-				<h1 class="page-title">{{ t('doctors') }}</h1>
-				<!-- 
-				<div class="filter-toggle">
-					<label class="toggle-container">
-						<input
-							v-model="doctorsStore.mapFilterEnabled"
-							type="checkbox"
-							class="toggle-checkbox"
-						/>
-						<span class="toggle-switch"></span>
-						<span class="toggle-label">{{
-							t('show_only_doctors_on_map')
-						}}</span>
-					</label>
-				</div>
-
-				<div class="search-bar">
-					<input
-						v-model="doctorsStore.searchQuery"
-						type="text"
-						:placeholder="t('search_doctors_placeholder')"
-						class="search-input"
-					/>
-				</div> -->
+				<h1 class="page-title">{{ t('Doctors') }}</h1>
 
 				<div v-if="isLoadingDoctors || isLoadingClinics" class="loading">
 					<div class="loading-spinner"></div>
-					<p>{{ t('loading_doctors') }}</p>
+					<p>{{ t('LoadingDoctors') }}</p>
 				</div>
 
 				<div v-else class="doctors-list">
 					<div v-if="preparedDoctors.length === 0" class="empty-state">
-						<p>{{ t('no_doctors_found') }}</p>
+						<p>{{ t('NoDoctorsFound') }}</p>
 					</div>
 
 					<DoctorListCard
@@ -89,6 +66,46 @@ const preparedDoctors = computed(() => {
 		</div>
 	</PageWrapper>
 </template>
+
+<i18n lang="json">
+{
+	"en": {
+		"Doctors": "Doctors",
+		"LoadingDoctors": "Loading doctors...",
+		"NoDoctorsFound": "No doctors found"
+	},
+	"ru": {
+		"Doctors": "Врачи",
+		"LoadingDoctors": "Загрузка врачей...",
+		"NoDoctorsFound": "Врачи не найдены"
+	},
+	"tr": {
+		"Doctors": "Doktorlar",
+		"LoadingDoctors": "Doktorlar yükleniyor...",
+		"NoDoctorsFound": "Doktor bulunamadı"
+	},
+	"de": {
+		"Doctors": "Ärzte",
+		"LoadingDoctors": "Ärzte werden geladen...",
+		"NoDoctorsFound": "Keine Ärzte gefunden"
+	},
+	"sr": {
+		"Doctors": "Lekari",
+		"LoadingDoctors": "Učitava lekare...",
+		"NoDoctorsFound": "Lekari nisu pronađeni"
+	},
+	"ba": {
+		"Doctors": "Lekari",
+		"LoadingDoctors": "Učitava lekare...",
+		"NoDoctorsFound": "Lekari nisu pronađeni"
+	},
+	"me": {
+		"Doctors": "Lekari",
+		"LoadingDoctors": "Učitava lekare...",
+		"NoDoctorsFound": "Lekari nisu pronađeni"
+	}
+}
+</i18n>
 
 <style lang="less" scoped>
 @import url('~/assets/css/vars.less');

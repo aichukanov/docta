@@ -2,7 +2,7 @@
 	<div class="contact-item">
 		<a :href="instagramUrl" class="contact-link messenger-link" target="_blank">
 			<IconInstagram :size="20" class="messenger-icon" />
-			<span>Instagram</span>
+			<span>{{ profile }}</span>
 		</a>
 	</div>
 </template>
@@ -13,9 +13,7 @@ const props = defineProps<{
 }>();
 
 const instagramUrl = computed(() =>
-	props.profile.startsWith('http')
-		? props.profile
-		: `https://instagram.com/${props.profile}`,
+	props.profile.replace('@', 'https://instagram.com/'),
 );
 </script>
 

@@ -1,61 +1,84 @@
 <template>
-	<div class="location-item">
-		<div class="location-info">
-			<div class="clinic-name-container">
-				<el-link
-					v-if="clinic.website"
-					:href="clinic.website"
-					underline="hover"
-					target="_blank"
-					class="clinic-name"
-				>
-					{{ clinic.name }}
-				</el-link>
-				<span v-else class="clinic-name">{{ clinic.name }}</span>
+	<div class="clinic-summary">
+		<div class="location-wrapper">
+			<div class="location-info">
+				<div class="clinic-name-container">
+					<el-link
+						v-if="clinic.website"
+						:href="clinic.website"
+						underline="hover"
+						target="_blank"
+						class="clinic-name"
+					>
+						{{ clinic.name }}
+					</el-link>
+					<span v-else class="clinic-name">{{ clinic.name }}</span>
+				</div>
+				<div v-if="clinic.address" class="location-address">
+					<el-icon><LocationFilled /></el-icon>
+					<span>{{ clinic.address }}</span>
+				</div>
 			</div>
-			<div v-if="clinic.address" class="location-address">
-				<el-icon><LocationFilled /></el-icon>
-				<span>{{ clinic.address }}</span>
+			<div class="location-buttons">
+				<ClinicShowOnMapButton :clinic="clinic" @click="showOnMap()" />
+				<ClinicRouteButton :clinic="clinic" />
 			</div>
 		</div>
-		<div class="location-buttons">
-			<ClinicShowOnMapButton :clinic="clinic" @click="showOnMap()" />
-			<ClinicRouteButton :clinic="clinic" />
+		<div class="contacts-wrapper">
+			<ContactsList v-if="hasContacts" :list="clinic" />
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
 import { LocationFilled } from '@element-plus/icons-vue';
-import type { ClinicData } from '~/interfaces/doctor';
+import type { ContactList } from '~/interfaces/contacts';
 
 const props = defineProps<{
 	clinic: ClinicData;
 }>();
+
+const hasContacts = computed(() => {
+	return !!(
+		props.clinic.phone ||
+		props.clinic.email ||
+		props.clinic.facebook ||
+		props.clinic.instagram ||
+		props.clinic.telegram ||
+		props.clinic.whatsapp ||
+		props.clinic.viber
+	);
+});
 
 function showOnMap() {
 	console.log('showOnMap', props.clinic);
 }
 </script>
 
-<style scoped>
-.location-item {
+<style scoped lang="less">
+.clinic-summary {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	flex-direction: column;
+	gap: var(--spacing-lg);
 	background: var(--color-surface-secondary);
 	border: 1px solid var(--color-border-light);
 	border-radius: var(--border-radius-md);
 	padding: var(--spacing-md) var(--spacing-lg);
-	gap: var(--spacing-lg);
 }
 
-.location-info {
+.location-wrapper {
 	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: var(--spacing-xs);
-	flex: 1;
+	justify-content: space-between;
+	align-items: center;
+	gap: var(--spacing-lg);
+
+	.location-info {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--spacing-xs);
+		flex: 1;
+	}
 }
 
 .clinic-name-container {
@@ -77,11 +100,6 @@ function showOnMap() {
 	color: var(--color-text-secondary);
 }
 
-.pin-icon {
-	flex-shrink: 0;
-	opacity: 0.8;
-}
-
 .location-buttons {
 	display: flex;
 	flex-direction: column;
@@ -89,8 +107,14 @@ function showOnMap() {
 	align-items: stretch;
 }
 
+.contacts-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+}
+
 @media (max-width: 768px) {
-	.location-item {
+	.location-wrapper {
 		flex-direction: column;
 		align-items: stretch;
 		gap: var(--spacing-md);

@@ -1,4 +1,5 @@
 export interface ContactList {
+	website?: string;
 	phone?: string;
 	email?: string;
 	facebook?: string;

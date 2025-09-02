@@ -1,16 +1,14 @@
 <template>
-	<DsButton
-		variant="secondary"
-		size="sm"
-		@click="copyToClipboard"
+	<el-button
 		:title="isCopied ? t('Copied') : t('CopyNumber')"
 		:class="isCopied ? 'copy-button copied' : 'copy-button'"
+		@click="copyToClipboard"
 	>
 		<template #icon>
 			<IconCheck v-if="isCopied" :size="14" color="var(--color-success)" />
 			<IconCopy v-else :size="14" color="var(--color-text-secondary)" />
 		</template>
-	</DsButton>
+	</el-button>
 </template>
 
 <script setup lang="ts">
@@ -38,10 +36,10 @@ async function copyToClipboard(): Promise<void> {
 
 <style scoped>
 .copy-button {
-	width: 32px;
-	height: 32px;
+	min-width: 16px;
+	width: 16px;
+	height: 16px;
 	padding: 0;
-	min-width: 32px;
 	border: none;
 }
 

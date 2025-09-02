@@ -2,7 +2,7 @@
 	<div class="contact-item">
 		<a :href="facebookUrl" class="contact-link messenger-link" target="_blank">
 			<IconFacebook :size="20" class="messenger-icon" />
-			<span>Facebook</span>
+			<span>{{ profile }}</span>
 		</a>
 	</div>
 </template>
@@ -12,11 +12,7 @@ const props = defineProps<{
 	profile: string;
 }>();
 
-const facebookUrl = computed(() =>
-	props.profile.startsWith('http')
-		? props.profile
-		: `https://facebook.com/${props.profile}`,
-);
+const facebookUrl = computed(() => `https://${props.profile}`);
 </script>
 
 <style scoped src="./style.css" />

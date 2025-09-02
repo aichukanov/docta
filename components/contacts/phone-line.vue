@@ -5,7 +5,7 @@
 			<span>{{ phoneNumber }}</span>
 		</span>
 
-		<CopyButton :phoneNumber="cleanPhoneNumber" />
+		<ContactsCopyButton :phoneNumber="cleanPhoneNumber" />
 	</div>
 </template>
 

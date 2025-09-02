@@ -178,7 +178,6 @@ export function useLeaflet() {
 		// Получаем размеры контейнера карты
 		const mapSize = leafletMap.getSize();
 
-		// Вычисляем целевую позицию: центр по горизонтали, 30px от низа
 		const targetPoint = window.L.point(
 			mapSize.x / 2, // центр по горизонтали
 			400 + (mapSize.y - 400) / 2, // 400px - высота попапа

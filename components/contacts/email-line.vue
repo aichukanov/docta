@@ -1,7 +1,7 @@
 <template>
 	<div class="contact-item">
 		<a :href="`mailto:${emailAddress}`" class="contact-link">
-			<IconMail :size="20" class="messenger-icon" />
+			<IconEmail :size="20" class="messenger-icon" />
 			<span>{{ emailAddress }}</span>
 		</a>
 	</div>

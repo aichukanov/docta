@@ -3,7 +3,7 @@
 .contacts-list {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
+	gap: var(--spacing-xs);
 }
 
 /* Дополнительные стили для мессенджеров */
@@ -16,12 +16,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: var(--spacing-sm) var(--spacing-md);
+	padding: var(--spacing-md);
 	background: var(--color-bg-primary);
 	border: 1px solid var(--color-border-light);
 	border-radius: var(--border-radius-sm);
 	transition: all var(--transition-base);
-	margin-bottom: var(--spacing-sm);
 }
 
 .contact-item:last-child {

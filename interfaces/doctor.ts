@@ -1,4 +1,5 @@
 import type { CityId } from '~/common/constants';
+import type { ContactList } from '~/interfaces/contacts';
 
 export interface Language {
 	id: number;
@@ -108,17 +109,6 @@ export interface DoctorsResponse {
 }
 
 // -----------
-
-export interface ContactList {
-	email: string;
-	phone: string;
-	facebook: string;
-	instagram: string;
-	telegram: string;
-	whatsapp: string;
-	viber: string;
-	website: string;
-}
 
 export interface DoctorData extends ContactList {
 	id: number;

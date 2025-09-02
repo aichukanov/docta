@@ -1,5 +1,11 @@
 <template>
 	<div class="contacts-list">
+		<ContactsWebsiteLine
+			v-for="websiteUrl in websiteUrls"
+			:key="websiteUrl"
+			:websiteUrl="websiteUrl"
+		/>
+
 		<ContactsPhoneLine
 			v-for="phoneNumber in phoneNumbers"
 			:key="phoneNumber"
@@ -59,6 +65,7 @@ const telegramContacts = computed(() => splitContacts(props.list.telegram));
 const viberContacts = computed(() => splitContacts(props.list.viber));
 const facebookProfiles = computed(() => splitContacts(props.list.facebook));
 const instagramProfiles = computed(() => splitContacts(props.list.instagram));
+const websiteUrls = computed(() => splitContacts(props.list.website));
 </script>
 
 <style scoped src="./style.css" />

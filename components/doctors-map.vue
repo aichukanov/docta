@@ -31,7 +31,6 @@
 
 <script setup lang="ts">
 import type { ClinicData, DoctorData } from '~/interfaces/doctor';
-import type { MarkerData } from '~/interfaces/marker';
 import { getClinicMarkerId } from '~/common/utils';
 
 const props = defineProps<{
@@ -44,7 +43,6 @@ const { t } = useI18n();
 const { isLoading, initializeMap, addMarker, markers, openPopup } =
 	useLeaflet();
 
-const markerList = ref<MarkerData[]>([]);
 const mapContainer = ref<HTMLElement | null>(null);
 const isTeleportReady = ref(false);
 

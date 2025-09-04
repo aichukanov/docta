@@ -9,11 +9,6 @@
 
 <script setup lang="ts">
 import { LocationFilled } from '@element-plus/icons-vue';
-import type { DoctorClinicFull } from '~/interfaces/doctor';
-
-const props = defineProps<{
-	clinic: DoctorClinicFull;
-}>();
 
 const { t } = useI18n();
 </script>

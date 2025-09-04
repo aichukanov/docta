@@ -1,9 +1,7 @@
 <template>
 	<header class="app-header">
-		<!-- Основная строка хедера -->
 		<div class="app-header__main">
 			<div class="app-header__main-content">
-				<!-- Левая часть - логотип и название -->
 				<NuxtLink
 					class="app-header__brand"
 					:to="mainPageLink"
@@ -13,14 +11,20 @@
 					<div class="app-header__brand-text">docta.me</div>
 				</NuxtLink>
 
-				<!-- Центральная часть -->
 				<div class="app-header__center">
 					<div class="app-header__search-compact">
-						<AppHeaderSearchBar @search="handleSearch" />
+						<div class="search-bar">
+							<div class="search-bar__container">
+								<div class="search-bar__filters">
+									<FilterSpecialty />
+									<FilterCity />
+									<FilterLanguage />
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 
-				<!-- Правая часть - переключатель языка -->
 				<div class="app-header__actions">
 					<LanguageSwitcher />
 				</div>
@@ -39,11 +43,6 @@ const mainPageLink = computed(() => ({
 	name: 'index',
 	query: getRegionalQuery(locale.value),
 }));
-
-const handleSearch = () => {
-	console.log('Search triggered');
-	// TODO: Implement search logic
-};
 </script>
 
 <i18n lang="json">
@@ -78,7 +77,7 @@ const handleSearch = () => {
 .app-header {
 	position: sticky;
 	top: 0;
-	z-index: 999;
+	z-index: var(--z-header);
 	background: white;
 	border-bottom: 1px solid @light-gray-color;
 	transition: all 0.3s ease;
@@ -165,6 +164,27 @@ const handleSearch = () => {
 	&__expanded {
 		padding: @base-offset 0 @base-padding 0;
 	}
+
+	.search-bar {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		padding: @base-offset 0 0 0;
+		box-sizing: border-box;
+
+		&__container {
+			width: 100%;
+			max-width: 850px;
+			padding: 0 @base-padding;
+			box-sizing: border-box;
+		}
+
+		&__filters {
+			display: flex;
+			align-items: center;
+			border-radius: 32px;
+		}
+	}
 }
 
 @media only screen and (max-width: 1200px) {
@@ -217,6 +237,12 @@ const handleSearch = () => {
 
 		&__search-compact {
 			margin: 0;
+		}
+
+		.search-bar {
+			&__container {
+				padding: 0 @base-offset;
+			}
 		}
 	}
 }

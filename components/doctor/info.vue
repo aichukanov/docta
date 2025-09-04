@@ -10,22 +10,6 @@ const props = withDefaults(
 		short: false,
 	},
 );
-
-const { t } = useI18n();
-
-const specialtiesText = computed(() => {
-	return props.doctor.specialtyIds
-		?.split(',')
-		.map((specialty) => t(specialty) || specialty)
-		.join(', ');
-});
-
-const languagesText = computed(() => {
-	return props.doctor.languageCodes
-		?.split(',')
-		.map((lang) => t(lang) || lang)
-		.join(', ');
-});
 </script>
 
 <template>
@@ -54,13 +38,8 @@ const languagesText = computed(() => {
 			>
 				{{ doctor.professionalTitle }}
 			</div>
-			<div class="doctor-specialty">
-				{{ specialtiesText }}
-			</div>
-			<div v-if="!short" class="languages" :title="t('Languages')">
-				<IconLanguage size="18" />
-				<span class="languages-text">{{ languagesText }}</span>
-			</div>
+			<DoctorSpecialties :doctor="doctor" />
+			<DoctorLanguages v-if="!short" :doctor="doctor" />
 		</div>
 	</div>
 </template>
@@ -105,25 +84,6 @@ const languagesText = computed(() => {
 		opacity: 0.85;
 	}
 
-	.doctor-specialty {
-		font-size: var(--font-size-lg);
-		font-weight: 600;
-		color: var(--color-primary-green);
-		line-height: 1.3;
-	}
-
-	.languages {
-		display: flex;
-		align-items: center;
-		gap: var(--spacing-xs);
-		flex-wrap: wrap;
-
-		.languages-text {
-			color: var(--color-primary-green);
-			margin-top: -3px;
-		}
-	}
-
 	&.doctor-wrapper__short {
 		gap: var(--spacing-md);
 
@@ -154,10 +114,6 @@ const languagesText = computed(() => {
 
 	.doctor-name {
 		font-size: var(--font-size-xl);
-	}
-
-	.doctor-specialty {
-		font-size: var(--font-size-md);
 	}
 
 	.locations-list {

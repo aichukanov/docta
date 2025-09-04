@@ -1,0 +1,17 @@
+export enum CityId {
+	PODGORICA = 1,
+	NIKSIC = 2,
+	BUDVA = 3,
+	TIVAT = 4,
+	ULCINJ = 5,
+	KOTOR = 6,
+}
+
+export const CITY_COORDINATES = {
+	[CityId.PODGORICA]: [42.442574, 19.268646],
+	[CityId.NIKSIC]: [42.77105944, 18.9476806],
+	[CityId.BUDVA]: [42.2864, 18.84],
+	[CityId.TIVAT]: [42.4349809, 18.7066398],
+	[CityId.ULCINJ]: [41.9297, 19.2142],
+	[CityId.KOTOR]: [42.43204385, 18.76945397],
+};

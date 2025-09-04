@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { createDoctorUrl, getRegionalQuery } from '~/common/url-utils';
-import { useDoctorsStore } from '~/stores/doctors';
 
 const { t, locale } = useI18n();
 
@@ -50,46 +49,44 @@ watch(pageNumber, () => {
 </script>
 
 <template>
-	<PageWrapper>
-		<div class="doctors-page">
-			<div ref="doctorsListRef" class="doctors-sidebar">
-				<h1 class="page-title">{{ t('Doctors') }}</h1>
+	<div class="doctors-page">
+		<div ref="doctorsListRef" class="doctors-sidebar">
+			<h1 class="page-title">{{ t('Doctors') }}</h1>
 
-				<div v-if="isLoadingDoctors || isLoadingClinics" class="loading">
-					<div class="loading-spinner"></div>
-					<p>{{ t('LoadingDoctors') }}</p>
-				</div>
-
-				<div v-else class="doctors-list">
-					<div v-if="doctorsList.doctors.length === 0" class="empty-state">
-						<p>{{ t('NoDoctorsFound') }}</p>
-					</div>
-
-					<DoctorListCard
-						v-for="doctor in doctorsOnPage"
-						:key="doctor.id"
-						:doctor="doctor"
-						:clinics="clinicsList.clinics"
-						@show-on-map="showClinicOnMap($event)"
-					/>
-				</div>
-
-				<Pagination
-					:total="doctorsList.totalCount"
-					:page-size="PAGE_LIMIT"
-					v-model:current-page="pageNumber"
-				/>
+			<div v-if="isLoadingDoctors || isLoadingClinics" class="loading">
+				<div class="loading-spinner"></div>
+				<p>{{ t('LoadingDoctors') }}</p>
 			</div>
 
-			<div class="map-container">
-				<DoctorsMap
-					ref="doctorsMapRef"
-					:doctors="filteredDoctors"
+			<div v-else class="doctors-list">
+				<div v-if="doctorsList.doctors.length === 0" class="empty-state">
+					<p>{{ t('NoDoctorsFound') }}</p>
+				</div>
+
+				<DoctorListCard
+					v-for="doctor in doctorsOnPage"
+					:key="doctor.id"
+					:doctor="doctor"
 					:clinics="clinicsList.clinics"
+					@show-on-map="showClinicOnMap($event)"
 				/>
 			</div>
+
+			<Pagination
+				:total="doctorsList.totalCount"
+				:page-size="PAGE_LIMIT"
+				v-model:current-page="pageNumber"
+			/>
 		</div>
-	</PageWrapper>
+
+		<div class="map-container">
+			<DoctorsMap
+				ref="doctorsMapRef"
+				:doctors="filteredDoctors"
+				:clinics="clinicsList.clinics"
+			/>
+		</div>
+	</div>
 </template>
 
 <style lang="less" scoped>

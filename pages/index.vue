@@ -1,9 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-	<PageWrapper>
-		<div class="main-page"> main page </div>
-	</PageWrapper>
+	<div class="main-page"> main page </div>
 </template>
 
 <style lang="less" scoped>

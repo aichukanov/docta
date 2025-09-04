@@ -1,16 +1,26 @@
-export const locales = ['sr', 'ba', 'me', 'en', 'ru', 'de', 'tr'];
+import { Language } from '~/enums/language';
+
+export const locales = [
+	Language.SR,
+	Language.BA,
+	Language.ME,
+	Language.EN,
+	Language.RU,
+	Language.DE,
+	Language.TR,
+];
 
 export type Locale = (typeof locales)[number];
-export const defaultLocale: (typeof locales)[number] = 'sr';
+export const defaultLocale: (typeof locales)[number] = Language.SR;
 
 export const localeNames: Record<Locale, string> = {
-	sr: 'Srpski',
-	ba: 'Bosanski',
-	me: 'Crnogorski',
-	en: 'English',
-	ru: 'Русский',
-	de: 'Deutsch',
-	tr: 'Türkçe',
+	[Language.SR]: 'Srpski',
+	[Language.BA]: 'Bosanski',
+	[Language.ME]: 'Crnogorski',
+	[Language.EN]: 'English',
+	[Language.RU]: 'Русский',
+	[Language.DE]: 'Deutsch',
+	[Language.TR]: 'Türkçe',
 };
 
 export function getLocaleFromQuery(value: string | string[]): Locale | null {

@@ -1,5 +1,5 @@
 <template>
-	<div class="pagination-wrapper">
+	<div class="pagination-wrapper" :class="`pagination-wrapper_align_${align}`">
 		<el-pagination
 			background
 			layout="prev, pager, next"
@@ -19,10 +19,12 @@ const props = withDefaults(
 		currentPage: number;
 		disabled?: boolean;
 		pageSize?: number;
+		align?: 'center' | 'right';
 	}>(),
 	{
 		pageSize: 20,
 		disabled: false,
+		align: 'right',
 	},
 );
 
@@ -41,9 +43,16 @@ const pageNumber = computed({
 <style lang="less" scoped>
 .pagination-wrapper {
 	display: flex;
-	align-items: flex-end;
 	flex-direction: column;
 	margin: 10px 0;
 	flex: 0 0 30px;
+
+	&_align_center {
+		align-items: center;
+	}
+
+	&_align_right {
+		align-items: flex-end;
+	}
 }
 </style>

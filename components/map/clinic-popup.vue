@@ -1,10 +1,27 @@
 <script setup lang="ts">
 import type { ClinicData, DoctorData } from '~/interfaces/doctor';
 
-defineProps<{
+const props = defineProps<{
 	clinic: ClinicData;
 	doctors: DoctorData[];
 }>();
+
+const doctorsListRef = ref<HTMLElement>();
+const pageNumber = ref(1);
+const PAGE_LIMIT = 20;
+
+const doctorsOnPage = computed(() => {
+	return props.doctors.slice(
+		(pageNumber.value - 1) * PAGE_LIMIT,
+		pageNumber.value * PAGE_LIMIT,
+	);
+});
+
+watch(pageNumber, () => {
+	if (doctorsListRef.value) {
+		doctorsListRef.value.scrollTo(0, 0);
+	}
+});
 </script>
 
 <template>
@@ -26,23 +43,31 @@ defineProps<{
 
 		<ClinicRouteButton :clinic="clinic" :text="clinic.address" />
 
-		<div class="doctors-list">
+		<div class="doctors-list" ref="doctorsListRef">
 			<DoctorInfo
-				v-for="doctor in doctors"
+				v-for="doctor in doctorsOnPage"
 				:key="doctor.id"
 				:doctor="doctor"
 				short
+			/>
+			<Pagination
+				align="center"
+				:total="doctors.length"
+				:page-size="PAGE_LIMIT"
+				v-model:current-page="pageNumber"
 			/>
 		</div>
 	</div>
 </template>
 
-<style scoped>
+<style scoped lang="less">
 .doctors-list {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-xl);
 	margin-top: var(--spacing-xl);
+	margin-right: -20px; // fix inner leaflet margin
+	padding-right: var(--spacing-xs);
 	max-height: 300px;
 	overflow-y: auto;
 }

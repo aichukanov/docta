@@ -2,9 +2,11 @@
 	<el-select
 		v-model="languageIds"
 		:placeholder="t('AnyLanguage')"
+		size="large"
 		multiple
 		collapse-tags
 		collapse-tags-tooltip
+		class="filter-language"
 	>
 		<el-option
 			v-for="{ text, value } in languages"
@@ -38,3 +40,9 @@ const languages = computed(() => [
 	},
 ]);
 </script>
+
+<style lang="less" scoped>
+.filter-language {
+	max-width: 200px;
+}
+</style>

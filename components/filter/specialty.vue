@@ -2,11 +2,14 @@
 	<el-select
 		v-model="specialtyIds"
 		:placeholder="t('AnySpecialty')"
+		size="large"
 		multiple
-		filterable
 		collapse-tags
 		collapse-tags-tooltip
 	>
+		<template #header>
+			<el-input v-model="search" :placeholder="t('SearchSpecialty')" />
+		</template>
 		<el-option
 			v-for="{ text, value } in specialties"
 			:key="value"
@@ -20,13 +23,11 @@
 import { DoctorSpecialty } from '~/enums/specialty';
 import specialtyI18n from '~/i18n/specialty';
 
-const emit = defineEmits<{
-	search: [];
-}>();
-
 const { t } = useI18n(specialtyI18n);
 
 const { specialtyIds } = useFilters();
+
+const search = ref('');
 
 const specialties = computed(() =>
 	Object.keys(DoctorSpecialty)
@@ -35,6 +36,9 @@ const specialties = computed(() =>
 			text: t(key),
 			value: key,
 		}))
+		.filter((specialty) =>
+			specialty.text.toLowerCase().includes(search.value.toLowerCase()),
+		)
 		.sort((a, b) => a.text.localeCompare(b.text)),
 );
 </script>

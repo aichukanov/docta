@@ -1,3 +1,15 @@
+<script setup lang="ts">
+import { getRegionalQuery } from '~/common/url-utils';
+
+const { t } = useI18n();
+const { locale } = useI18n({ useScope: 'global' });
+
+const mainPageLink = computed(() => ({
+	name: 'index',
+	query: getRegionalQuery(locale.value),
+}));
+</script>
+
 <template>
 	<header class="app-header">
 		<div class="app-header__main">
@@ -32,18 +44,6 @@
 		</div>
 	</header>
 </template>
-
-<script setup lang="ts">
-import { getRegionalQuery } from '~/common/url-utils';
-
-const { t } = useI18n();
-const { locale } = useI18n({ useScope: 'global' });
-
-const mainPageLink = computed(() => ({
-	name: 'index',
-	query: getRegionalQuery(locale.value),
-}));
-</script>
 
 <i18n lang="json">
 {
@@ -81,10 +81,6 @@ const mainPageLink = computed(() => ({
 	background: white;
 	border-bottom: 1px solid @light-gray-color;
 	transition: all 0.3s ease;
-
-	&--expanded {
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-	}
 
 	&__main {
 		width: 100%;
@@ -141,7 +137,6 @@ const mainPageLink = computed(() => ({
 
 	&__search-compact {
 		width: 100%;
-		max-width: 600px;
 	}
 
 	&__category-tabs {
@@ -159,10 +154,6 @@ const mainPageLink = computed(() => ({
 		align-items: center;
 		gap: @base-offset;
 		flex-shrink: 0;
-	}
-
-	&__expanded {
-		padding: @base-offset 0 @base-padding 0;
 	}
 
 	.search-bar {
@@ -183,6 +174,7 @@ const mainPageLink = computed(() => ({
 			display: flex;
 			align-items: center;
 			border-radius: 32px;
+			gap: var(--spacing-md);
 		}
 	}
 }

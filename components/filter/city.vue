@@ -2,9 +2,11 @@
 	<el-select
 		v-model="cityIds"
 		:placeholder="t('AnyCity')"
+		size="large"
 		multiple
 		collapse-tags
 		collapse-tags-tooltip
+		class="filter-city"
 	>
 		<el-option
 			v-for="{ text, value } in cities"
@@ -37,3 +39,9 @@ const cities = computed(() =>
 		.sort((a, b) => a.text.localeCompare(b.text)),
 );
 </script>
+
+<style lang="less" scoped>
+.filter-city {
+	max-width: 200px;
+}
+</style>

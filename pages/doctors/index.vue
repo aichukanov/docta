@@ -9,6 +9,12 @@ const doctorsMapRef = ref<HTMLElement>();
 const PAGE_LIMIT = 20;
 const pageNumber = ref(1);
 
+const filterList = computed(() => ({
+	specialtyIds: specialtyIds.value,
+	cityIds: cityIds.value,
+	languageIds: languageIds.value,
+}));
+
 const { pending: isLoadingDoctors, data: doctorsList } = await useFetch(
 	'/api/doctors/list',
 	{
@@ -51,6 +57,10 @@ watch(pageNumber, () => {
 	if (doctorsListRef.value) {
 		doctorsListRef.value.scrollTo(0, 0);
 	}
+});
+
+watch(filterList, () => {
+	pageNumber.value = 1;
 });
 </script>
 

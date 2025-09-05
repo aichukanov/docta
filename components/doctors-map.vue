@@ -14,7 +14,6 @@
 			>
 				<DoctorMarker
 					:doctorCount="clinic.doctors.length"
-					:isForced="false"
 					@click.stop="openClinicPopup(clinic)"
 				/>
 			</Teleport>

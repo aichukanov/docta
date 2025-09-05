@@ -2,6 +2,7 @@
 import { createDoctorUrl, getRegionalQuery } from '~/common/url-utils';
 
 const { t, locale } = useI18n();
+const { specialtyIds, cityIds, languageIds } = useFilters();
 
 const doctorsListRef = ref<HTMLElement>();
 const doctorsMapRef = ref<HTMLElement>();
@@ -13,6 +14,11 @@ const { pending: isLoadingDoctors, data: doctorsList } = await useFetch(
 	{
 		key: 'doctors-list',
 		method: 'POST',
+		body: computed(() => ({
+			specialtyIds: specialtyIds.value,
+			cityIds: cityIds.value,
+			languageIds: languageIds.value,
+		})),
 	},
 );
 

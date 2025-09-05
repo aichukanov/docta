@@ -1,9 +1,46 @@
 import { getConnection } from '~/server/common/db-mysql';
 import type { DoctorList } from '~/interfaces/doctor';
+import {
+	validateBody,
+	validateSpecialtyIds,
+	validateCityIds,
+	validateDoctorLanguageIds,
+} from '~/server/common/validation';
 
 export default defineEventHandler(async (event): Promise<DoctorList> => {
 	try {
-		// const query = getQuery(event);
+		const body = await readBody(event);
+
+		if (!validateBody(body, 'api/doctors/list')) {
+			setResponseStatus(event, 400, 'Invalid parameters');
+			return null;
+		}
+		if (!validateSpecialtyIds(body, 'api/doctors/list')) {
+			setResponseStatus(event, 400, 'Invalid specialty');
+			return null;
+		}
+		if (!validateCityIds(body, 'api/doctors/list')) {
+			setResponseStatus(event, 400, 'Invalid city');
+			return null;
+		}
+		if (!validateDoctorLanguageIds(body, 'api/doctors/list')) {
+			setResponseStatus(event, 400, 'Invalid doctor language');
+			return null;
+		}
+
+		const whereFilters = [];
+		if (body.specialtyIds.length > 0) {
+			whereFilters.push(`s.id IN (${body.specialtyIds.join(',')})`);
+		}
+		if (body.cityIds.length > 0) {
+			whereFilters.push(`dc.city_id IN (${body.cityIds.join(',')})`);
+		}
+		if (body.languageIds.length > 0) {
+			whereFilters.push(`l.id IN (${body.languageIds.join(',')})`);
+		}
+
+		const whereFiltersString =
+			whereFilters.length > 0 ? 'WHERE ' + whereFilters.join(' AND ') : '';
 
 		const doctorsQuery = `
 			SELECT DISTINCT
@@ -28,6 +65,7 @@ export default defineEventHandler(async (event): Promise<DoctorList> => {
 			LEFT JOIN doctor_languages dl ON d.id = dl.doctor_id
 			LEFT JOIN languages l ON dl.language_id = l.id
 			LEFT JOIN doctor_clinics dc ON d.id = dc.doctor_id
+			${whereFiltersString}
 			GROUP BY d.id, d.name ORDER BY d.name ASC;
 		`;
 

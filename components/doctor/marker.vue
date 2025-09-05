@@ -1,9 +1,6 @@
 <template>
-	<div class="doctor-marker" :class="{ 'forced-marker': isForced }">
-		<div v-if="doctorCount === 1" class="marker-inner">
-			<IconDoctor />
-		</div>
-		<div v-else class="marker-inner-group">
+	<div class="doctor-marker">
+		<div class="marker-inner-group">
 			{{ doctorCount }}
 		</div>
 	</div>
@@ -12,7 +9,6 @@
 <script setup lang="ts">
 defineProps<{
 	doctorCount: number;
-	isForced?: boolean;
 }>();
 </script>
 
@@ -32,11 +28,6 @@ defineProps<{
 	z-index: 1001;
 }
 
-.doctor-marker.forced-marker {
-	animation: pulse 2s infinite;
-	border: 3px solid var(--color-secondary);
-}
-
 /* Одиночный врач */
 .doctor-marker:has(.marker-inner) {
 	background: var(--color-primary);
@@ -53,7 +44,6 @@ defineProps<{
 	box-shadow: var(--shadow-hover);
 }
 
-.marker-inner,
 .marker-inner-group {
 	display: flex;
 	align-items: center;

@@ -3,6 +3,7 @@
 		v-model="specialtyIds"
 		:placeholder="t('AnySpecialty')"
 		multiple
+		filterable
 		collapse-tags
 		collapse-tags-tooltip
 	>

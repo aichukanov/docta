@@ -1,4 +1,4 @@
-import type { CityId } from '~/common/constants';
+import type { CityId } from '~/enums/cities';
 import type { ContactList } from '~/interfaces/contacts';
 
 export interface DoctorData extends ContactList {

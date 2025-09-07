@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import { createDoctorUrl, getRegionalQuery } from '~/common/url-utils';
+const router = useRouter();
+const route = useRoute();
+const { t } = useI18n();
+const { specialtyIds, cityIds, languageIds, updateFromRoute, getRouteParams } =
+	useFilters();
 
-const { t, locale } = useI18n();
-const { specialtyIds, cityIds, languageIds } = useFilters();
+updateFromRoute(route.query);
 
 const doctorsListRef = ref<HTMLElement>();
 const doctorsMapRef = ref<HTMLElement>();
@@ -36,13 +39,8 @@ const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
 	},
 );
 
-const filteredDoctors = computed(() => {
-	// todo: фильтрация
-	return doctorsList.value.doctors;
-});
-
 const doctorsOnPage = computed(() => {
-	return filteredDoctors.value.slice(
+	return doctorsList.value.doctors.slice(
 		(pageNumber.value - 1) * PAGE_LIMIT,
 		pageNumber.value * PAGE_LIMIT,
 	);
@@ -52,15 +50,22 @@ const showClinicOnMap = (clinic: ClinicData) => {
 	doctorsMapRef.value.openClinicPopup(clinic);
 };
 
-watch(pageNumber, () => {
-	window.scrollTo(0, 0);
-	if (doctorsListRef.value) {
-		doctorsListRef.value.scrollTo(0, 0);
-	}
-});
+onMounted(async () => {
+	await nextTick();
+	router.replace(getRouteParams());
 
-watch(filterList, () => {
-	pageNumber.value = 1;
+	watch(filterList, () => {
+		pageNumber.value = 1;
+
+		router.replace(getRouteParams());
+	});
+
+	watch(pageNumber, () => {
+		window.scrollTo(0, 0);
+		if (doctorsListRef.value) {
+			doctorsListRef.value.scrollTo(0, 0);
+		}
+	});
 });
 </script>
 
@@ -98,7 +103,7 @@ watch(filterList, () => {
 		<div class="map-container">
 			<DoctorsMap
 				ref="doctorsMapRef"
-				:doctors="filteredDoctors"
+				:doctors="doctorsList.doctors"
 				:clinics="clinicsList.clinics"
 			/>
 		</div>

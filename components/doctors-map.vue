@@ -98,6 +98,32 @@ defineExpose({
 });
 </script>
 
+<i18n lang="json">
+{
+	"en": {
+		"MapLoading": "Loading map"
+	},
+	"ru": {
+		"MapLoading": "Загрузка карты"
+	},
+	"de": {
+		"MapLoading": "Karte wird geladen"
+	},
+	"tr": {
+		"MapLoading": "Harita yükleniyor"
+	},
+	"sr": {
+		"MapLoading": "Učitava mapu"
+	},
+	"ba": {
+		"MapLoading": "Učitava mapu"
+	},
+	"me": {
+		"MapLoading": "Učitava mapu"
+	}
+}
+</i18n>
+
 <style>
 .doctors-map-container {
 	width: 100%;

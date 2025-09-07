@@ -5,7 +5,7 @@ import {
 	validateSpecialtyIds,
 	validateCityIds,
 	validateDoctorLanguageIds,
-} from '~/server/common/validation';
+} from '~/common/validation';
 
 export default defineEventHandler(async (event): Promise<DoctorList> => {
 	try {

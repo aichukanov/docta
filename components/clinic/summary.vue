@@ -50,6 +50,32 @@ defineEmits<{
 const { t } = useI18n();
 </script>
 
+<i18n lang="json">
+{
+	"en": {
+		"Contacts": "Contacts"
+	},
+	"ru": {
+		"Contacts": "Контакты"
+	},
+	"de": {
+		"Contacts": "Kontakte"
+	},
+	"tr": {
+		"Contacts": "İletişim"
+	},
+	"sr": {
+		"Contacts": "Kontakti"
+	},
+	"ba": {
+		"Contacts": "Kontakti"
+	},
+	"me": {
+		"Contacts": "Kontakti"
+	}
+}
+</i18n>
+
 <style scoped lang="less">
 .clinic-summary {
 	display: flex;

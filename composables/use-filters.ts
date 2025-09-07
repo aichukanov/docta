@@ -19,14 +19,46 @@ const getRouteParams = () => {
 };
 
 const updateFromRoute = (query: Record<string, string | string[]>) => {
-	if (query.specialtyIds && validateSpecialtyIds(query, 'use-filters')) {
-		specialtyIds.value = query.specialtyIds;
+	const preparedSpecialtyIds = query.specialtyIds
+		? Array.isArray(query.specialtyIds)
+			? query.specialtyIds
+			: [query.specialtyIds]
+		: null;
+
+	const preparedLanguageIds = query.languageIds
+		? Array.isArray(query.languageIds)
+			? query.languageIds
+			: [query.languageIds]
+		: null;
+
+	const preparedCityIds = query.cityIds
+		? Array.isArray(query.cityIds)
+			? query.cityIds
+			: [query.cityIds]
+		: null;
+
+	if (
+		preparedSpecialtyIds &&
+		validateSpecialtyIds({ specialtyIds: preparedSpecialtyIds }, 'use-filters')
+	) {
+		specialtyIds.value = preparedSpecialtyIds;
 	}
-	if (query.languageIds && validateDoctorLanguageIds(query, 'use-filters')) {
-		languageIds.value = query.languageIds;
+
+	if (
+		preparedLanguageIds &&
+		validateDoctorLanguageIds(
+			{ languageIds: preparedLanguageIds },
+			'use-filters',
+		)
+	) {
+		languageIds.value = preparedLanguageIds;
 	}
-	if (query.cityIds && validateCityIds(query, 'use-filters')) {
-		cityIds.value = query.cityIds;
+
+	if (
+		preparedCityIds &&
+		validateCityIds({ cityIds: preparedCityIds }, 'use-filters')
+	) {
+		cityIds.value = preparedCityIds;
 	}
 };
 

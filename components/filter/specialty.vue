@@ -2,13 +2,19 @@
 	<el-select
 		v-model="specialtyIds"
 		:placeholder="t('AnySpecialty')"
+		:no-data-text="t('NotFound')"
 		size="large"
 		multiple
 		collapse-tags
 		collapse-tags-tooltip
+		@visible-change="focusSearchInput($event)"
 	>
 		<template #header>
-			<el-input v-model="search" :placeholder="t('SearchSpecialty')" />
+			<el-input
+				ref="searchInput"
+				v-model="search"
+				:placeholder="t('SearchSpecialty')"
+			/>
 		</template>
 		<el-option
 			v-for="{ text, value } in specialties"
@@ -28,6 +34,7 @@ const { t } = useI18n(specialtyI18n);
 const { specialtyIds } = useFilters();
 
 const search = ref('');
+const searchInput = ref<HTMLInputElement | null>(null);
 
 const specialties = computed(() =>
 	Object.keys(DoctorSpecialty)
@@ -41,4 +48,11 @@ const specialties = computed(() =>
 		)
 		.sort((a, b) => a.text.localeCompare(b.text)),
 );
+
+const focusSearchInput = async (visible: boolean) => {
+	if (visible && searchInput.value) {
+		await nextTick();
+		searchInput.value.focus();
+	}
+};
 </script>

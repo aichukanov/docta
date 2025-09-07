@@ -3,6 +3,7 @@ import { DoctorSpecialty } from '~/enums/specialty';
 const sr = {
 	AnySpecialty: 'Bilo koja specijalnost',
 	SearchSpecialty: 'Pretraga specijalnosti',
+	NotFound: 'Nije pronađena specijalnost',
 
 	[DoctorSpecialty.CARDIOLOGY]: 'Kardiologija',
 	[DoctorSpecialty.INTERNAL_MEDICINE]: 'Interna medicina',
@@ -72,6 +73,7 @@ export default {
 		en: {
 			AnySpecialty: 'Any specialty',
 			SearchSpecialty: 'Search specialty',
+			NotFound: 'Specialty not found',
 
 			[DoctorSpecialty.CARDIOLOGY]: 'Cardiology',
 			[DoctorSpecialty.INTERNAL_MEDICINE]: 'Internal Medicine',
@@ -141,6 +143,7 @@ export default {
 		ru: {
 			AnySpecialty: 'Любая специальность',
 			SearchSpecialty: 'Поиск специальности',
+			NotFound: 'Специальность не найдена',
 
 			[DoctorSpecialty.CARDIOLOGY]: 'Кардиология',
 			[DoctorSpecialty.INTERNAL_MEDICINE]: 'Внутренние болезни',
@@ -211,6 +214,7 @@ export default {
 		de: {
 			AnySpecialty: 'Beliebige Fachrichtung',
 			SearchSpecialty: 'Fachrichtung suchen',
+			NotFound: 'Fachrichtung nicht gefunden',
 
 			[DoctorSpecialty.CARDIOLOGY]: 'Kardiologie',
 			[DoctorSpecialty.INTERNAL_MEDICINE]: 'Innere Medizin',
@@ -279,6 +283,7 @@ export default {
 		tr: {
 			AnySpecialty: 'Herhangi bir uzmanlık',
 			SearchSpecialty: 'Uzmanlık ara',
+			NotFound: 'Uzmanlık bulunamadı',
 
 			[DoctorSpecialty.CARDIOLOGY]: 'Kardiyoloji',
 			[DoctorSpecialty.INTERNAL_MEDICINE]: 'İç Hastalıkları',

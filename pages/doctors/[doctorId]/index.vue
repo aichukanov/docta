@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n();
 const route = useRoute();
+const doctorsMapRef = ref<HTMLElement>();
 
 const { pending: isLoadingDoctor, data: doctorData } = await useFetch(
 	'/api/doctors/details',
@@ -12,6 +13,23 @@ const { pending: isLoadingDoctor, data: doctorData } = await useFetch(
 		})),
 	},
 );
+
+const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
+	'/api/clinics/list',
+	{
+		key: 'clinics-list',
+		method: 'POST',
+	},
+);
+const doctorClinics = computed(() => {
+	return clinicsList.value.clinics.filter((clinic) =>
+		doctorData.value.clinicIds.split(',').map(Number).includes(clinic.id),
+	);
+});
+
+const showClinicOnMap = (clinic: ClinicData) => {
+	doctorsMapRef.value?.openClinicPopup(clinic);
+};
 </script>
 
 <template>
@@ -20,17 +38,24 @@ const { pending: isLoadingDoctor, data: doctorData } = await useFetch(
 			<div class="loading-spinner"></div>
 			<p>{{ t('LoadingDoctor') }}</p>
 		</div>
-		<div v-else>
-			<DoctorInfo :doctor="doctorData" />
-		</div>
-		<!-- <div class="clinics-list">
-			<ClinicSummary
-				v-for="clinic in doctorClinics"
-				:key="clinic.id"
-				:clinic="clinic"
-				@show-on-map="$emit('show-on-map', clinic)"
+		<div v-else class="doctor-info-container">
+			<div class="doctor-info-wrapper">
+				<DoctorInfo :doctor="doctorData" />
+				<div class="clinics-list">
+					<ClinicSummary
+						v-for="clinic in doctorClinics"
+						:key="clinic.id"
+						:clinic="clinic"
+						@show-on-map="showClinicOnMap(clinic)"
+					/>
+				</div>
+			</div>
+			<DoctorsMap
+				ref="doctorsMapRef"
+				:doctors="[doctorData]"
+				:clinics="doctorClinics"
 			/>
-		</div> -->
+		</div>
 	</div>
 </template>
 
@@ -39,8 +64,29 @@ const { pending: isLoadingDoctor, data: doctorData } = await useFetch(
 
 .doctor-page {
 	display: flex;
-	flex-wrap: wrap;
-	gap: @base-offset;
+	gap: var(--spacing-2xl);
+	margin-top: var(--spacing-2xl);
+	justify-content: center;
+
+	.doctor-info-container {
+		display: flex;
+		flex-direction: row;
+		gap: var(--spacing-2xl);
+		width: 100%;
+		min-height: 700px;
+		max-width: 1600px;
+
+		& > * {
+			flex: 1;
+			height: 100%;
+		}
+
+		.doctor-info-wrapper {
+			display: flex;
+			flex-direction: column;
+			gap: var(--spacing-2xl);
+		}
+	}
 }
 </style>
 

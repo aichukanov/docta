@@ -5,7 +5,6 @@ import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 export default defineEventHandler(async (event): Promise<DoctorData> => {
 	try {
 		const body = await readBody(event);
-		console.log(body.doctorId, 'body.doctorId');
 
 		if (!validateBody(body, 'api/doctors/doctor')) {
 			setResponseStatus(event, 400, 'Invalid parameters');

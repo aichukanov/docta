@@ -7,11 +7,8 @@ const { t, locale } = useI18n({ useScope: 'global' });
 const router = useRouter();
 const route = useRoute();
 
-const cookieLocale = useCookie<string>('locale', {
-	maxAge: 1000 * 60 * 60 * 24 * 365,
-});
 const queryLocale = getLocaleFromQuery(route.query.lang as string | string[]);
-locale.value = cookieLocale.value || queryLocale || defaultLocale;
+locale.value = queryLocale || defaultLocale;
 
 function getMainUrl() {
 	const searchParamsRe = /(?=.+)\?.+/gi;
@@ -66,25 +63,6 @@ useSeoMeta({
 	ogSiteName: 'docta.me',
 	ogLocale: () => locale.value,
 	ogUrl: () => `https://docta.me${route.fullPath}`,
-});
-
-onMounted(async () => {
-	await nextTick();
-
-	watch(
-		locale,
-		() => {
-			cookieLocale.value = locale.value;
-
-			router.replace({
-				query: {
-					...route.query,
-					lang: formatLocaleAsQuery(locale.value),
-				},
-			});
-		},
-		{ immediate: true },
-	);
 });
 </script>
 

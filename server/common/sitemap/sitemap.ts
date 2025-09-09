@@ -3,11 +3,14 @@ import { SITEMAP_LIMIT } from './utils';
 import { locales } from '~/composables/use-locale';
 import { getRegionalUrl } from '~/common/url-utils';
 import { getDoctorList } from '~/server/api/doctors/list';
+import { DoctorSpecialty } from '~/enums/specialty';
 
-export function menuItemToLinks(routeName: string) {
+export function menuItemToLinks(
+	routeName: string,
+	query: Record<string, string | string[]> = {},
+) {
 	const url = 'https://docta.me/' + routeName.replaceAll('-', '/');
 
-	const query: Record<string, string | string[]> = {};
 	const linksWithParams: Array<{ hreflang: string; href: string }> = [];
 
 	for (let i = 0; i < locales.length; i++) {
@@ -35,11 +38,21 @@ export function menuItemToLinks(routeName: string) {
 export async function generateSitemapPage(sitemapIndex: number) {
 	const { doctors } = await getDoctorList();
 
-	let menuLinks: SitemapLink[] = doctors.map((doctor) =>
+	const doctorLinks: SitemapLink[] = doctors.map((doctor) =>
 		menuItemToLinks(`doctors-${doctor.id}`),
 	);
 
-	return await generateSitemap(menuLinks);
+	const specialtyLinks: SitemapLink[] = Object.values(DoctorSpecialty)
+		.map((specialty) => {
+			if (Number.isNaN(Number(specialty))) {
+				return null;
+			}
+
+			return menuItemToLinks(`doctors`, { specialtyIds: specialty });
+		})
+		.filter(Boolean);
+
+	return await generateSitemap([...doctorLinks, ...specialtyLinks]);
 }
 
 async function generateSitemap(routes: SitemapLink[]) {
@@ -59,8 +72,6 @@ async function generateSitemap(routes: SitemapLink[]) {
 	}
 
 	async function getUrlData(route: SitemapLink) {
-		const imgLinks = await getImageLinks(route.id);
-
 		return `	<url>
 		<loc>${route.loc.replaceAll('&', '&amp;')}</loc>
 		<lastmod>${route.lastmod.toISOString()}</lastmod>

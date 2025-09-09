@@ -1,4 +1,4 @@
-// import { fixUrlRegionalParams } from '../common/redirect/regional-settings';
+import { fixUrlRegionalParams } from '../common/redirect/regional-settings';
 import { sendSitemap } from '../common/sitemap/utils';
 import { generateSitemapPage } from '../common/sitemap/sitemap';
 import { generateSitemapIndex } from '../common/sitemap/sitemap-index';
@@ -11,6 +11,7 @@ export default defineEventHandler(async (event) => {
 	if (pathArray[0] === 'sitemap.xml') {
 		return sendSitemap(event, await generateSitemapPage());
 	} else if (
+		pathArray[0] === 'api' ||
 		pathArray[0] === 'ads' ||
 		pathArray[0] === 'search' ||
 		pathArray[0].includes('a1b2c3d4e5f6789012345678901234567890abcd') ||
@@ -20,5 +21,15 @@ export default defineEventHandler(async (event) => {
 		// ignore these calls
 	} else if (pathArray[0] === '') {
 		return sendRedirect(event, '/doctors', 302);
+	} else {
+		const queryParamsRedirect = fixUrlRegionalParams(event);
+		if (queryParamsRedirect) {
+			await sendRedirect(
+				event,
+				queryParamsRedirect.url,
+				queryParamsRedirect.status,
+			);
+			return;
+		}
 	}
 });

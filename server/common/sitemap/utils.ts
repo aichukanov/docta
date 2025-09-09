@@ -1,3 +1,5 @@
+export const SITEMAP_LIMIT = 1000;
+
 export interface SitemapLink {
 	loc: string;
 	lastmod: Date;

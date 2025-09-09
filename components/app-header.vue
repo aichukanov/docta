@@ -5,7 +5,7 @@ const { t } = useI18n();
 const { locale } = useI18n({ useScope: 'global' });
 
 const mainPageLink = computed(() => ({
-	name: 'index',
+	name: 'doctors',
 	query: getRegionalQuery(locale.value),
 }));
 </script>

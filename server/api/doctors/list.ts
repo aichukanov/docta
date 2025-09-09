@@ -28,23 +28,39 @@ export default defineEventHandler(async (event): Promise<DoctorList> => {
 			return null;
 		}
 
-		const whereFilters = [];
-		if (body.specialtyIds.length > 0) {
-			whereFilters.push(`s.id IN (${body.specialtyIds.join(',')})`);
-		}
-		if (body.cityIds.length > 0) {
-			whereFilters.push(`cities.id IN (${body.cityIds.join(',')})`);
-		}
-		if (body.languageIds.length > 0) {
-			whereFilters.push(
-				`languages.code IN ("${body.languageIds.join('","')}")`,
-			);
-		}
+		return getDoctorList(body);
+	} catch (error) {
+		console.error('API Error - doctors:', error);
+		throw createError({
+			statusCode: 500,
+			statusMessage: 'Failed to fetch doctors',
+		});
+	}
+});
 
-		const whereFiltersString =
-			whereFilters.length > 0 ? 'WHERE ' + whereFilters.join(' AND ') : '';
+export async function getDoctorList(
+	body: {
+		specialtyIds?: number[];
+		cityIds?: number[];
+		languageIds?: string[];
+	} = {},
+) {
+	const whereFilters = [];
 
-		const doctorsQuery = `
+	if (body.specialtyIds?.length > 0) {
+		whereFilters.push(`s.id IN (${body.specialtyIds.join(',')})`);
+	}
+	if (body.cityIds?.length > 0) {
+		whereFilters.push(`cities.id IN (${body.cityIds.join(',')})`);
+	}
+	if (body.languageIds?.length > 0) {
+		whereFilters.push(`languages.code IN ("${body.languageIds.join('","')}")`);
+	}
+
+	const whereFiltersString =
+		whereFilters.length > 0 ? 'WHERE ' + whereFilters.join(' AND ') : '';
+
+	const doctorsQuery = `
 			SELECT DISTINCT
 				d.id,
 				d.name,
@@ -73,19 +89,12 @@ export default defineEventHandler(async (event): Promise<DoctorList> => {
 			GROUP BY d.id, d.name ORDER BY d.name ASC;
 		`;
 
-		const connection = await getConnection();
-		const [doctorRows] = await connection.execute(doctorsQuery);
-		await connection.end();
+	const connection = await getConnection();
+	const [doctorRows] = await connection.execute(doctorsQuery);
+	await connection.end();
 
-		return {
-			doctors: doctorRows,
-			totalCount: doctorRows.length,
-		};
-	} catch (error) {
-		console.error('API Error - doctors:', error);
-		throw createError({
-			statusCode: 500,
-			statusMessage: 'Failed to fetch doctors',
-		});
-	}
-});
+	return {
+		doctors: doctorRows,
+		totalCount: doctorRows.length,
+	};
+}

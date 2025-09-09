@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { getRegionalQuery } from '~/common/url-utils';
+
 const router = useRouter();
 const route = useRoute();
-const { t } = useI18n();
+const { t, locale } = useI18n();
 const { specialtyIds, cityIds, languageIds, updateFromRoute, getRouteParams } =
 	useFilters();
 
@@ -39,6 +41,12 @@ const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
 	},
 );
 
+const routeWithParams = computed(() => {
+	return {
+		query: { ...getRouteParams().query, ...getRegionalQuery(locale.value) },
+	};
+});
+
 const doctorsOnPage = computed(() => {
 	return doctorsList.value.doctors.slice(
 		(pageNumber.value - 1) * PAGE_LIMIT,
@@ -52,12 +60,12 @@ const showClinicOnMap = (clinic: ClinicData) => {
 
 onMounted(async () => {
 	await nextTick();
-	router.replace(getRouteParams());
+	router.replace(routeWithParams.value);
 
 	watch(filterList, () => {
 		pageNumber.value = 1;
 
-		router.replace(getRouteParams());
+		router.replace(routeWithParams.value);
 	});
 
 	watch(pageNumber, () => {

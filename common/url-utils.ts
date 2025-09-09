@@ -55,11 +55,3 @@ export function getRegionalUrl(
 ) {
 	return updateQueryInUrl(url, query, getRegionalQuery(lang));
 }
-
-export function createDoctorUrl(doctorId: number, locale: string) {
-	return {
-		name: 'doctors-doctorId',
-		params: { doctorId: doctorId.toString() },
-		query: getRegionalQuery(locale),
-	};
-}

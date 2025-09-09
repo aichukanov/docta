@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { defaultLocale } from '~/composables/use-locale';
+
 defineProps<{
 	smaller?: boolean;
 }>();
@@ -8,21 +10,11 @@ const route = useRoute();
 
 const { locale } = useI18n({ useScope: 'global' });
 const { t } = useI18n();
-const cookieLocale = useCookie<string>('locale', {
-	maxAge: 1000 * 60 * 60 * 24 * 365,
-});
+
 const isExpanded = ref(false);
 
 function updateLocale(value: string) {
 	locale.value = value;
-	cookieLocale.value = value;
-
-	router.replace({
-		query: {
-			...route.query,
-			lang: formatLocaleAsQuery(locale.value),
-		},
-	});
 }
 
 function handleVisibleChange(visible: boolean) {

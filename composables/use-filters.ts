@@ -5,7 +5,7 @@ import {
 } from '~/common/validation';
 
 const specialtyIds = ref<number[]>([]);
-const languageIds = ref<string[]>([]);
+const languageIds = ref<number[]>([]);
 const cityIds = ref<number[]>([]);
 
 const getRouteParams = () => {
@@ -21,20 +21,20 @@ const getRouteParams = () => {
 const updateFromRoute = (query: Record<string, string | string[]>) => {
 	const preparedSpecialtyIds = query.specialtyIds
 		? Array.isArray(query.specialtyIds)
-			? query.specialtyIds
-			: [query.specialtyIds]
+			? query.specialtyIds.map(Number)
+			: [+query.specialtyIds]
 		: null;
 
 	const preparedLanguageIds = query.languageIds
 		? Array.isArray(query.languageIds)
-			? query.languageIds
-			: [query.languageIds]
+			? query.languageIds.map(Number)
+			: [+query.languageIds]
 		: null;
 
 	const preparedCityIds = query.cityIds
 		? Array.isArray(query.cityIds)
-			? query.cityIds
-			: [query.cityIds]
+			? query.cityIds.map(Number)
+			: [+query.cityIds]
 		: null;
 
 	if (

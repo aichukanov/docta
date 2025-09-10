@@ -1,5 +1,5 @@
 import { locales, type Locale } from '~/composables/use-locale';
-import { Language, isLanguage } from '~/enums/language';
+import { Language, isDoctorLanguage } from '~/enums/language';
 import { DoctorSpecialty } from '~/enums/specialty';
 import { CityId } from '~/enums/cities';
 
@@ -55,7 +55,7 @@ export function validateDoctorLanguageIds(
 ) {
 	if (
 		!Array.isArray(languageIds) ||
-		!languageIds.every((lang) => isLanguage(lang as Language))
+		!languageIds.every((lang) => isDoctorLanguage(lang as LanguageId))
 	) {
 		showError(from, 'Invalid doctor language: ' + languageIds);
 		return false;

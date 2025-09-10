@@ -4,6 +4,8 @@ import { locales } from '~/composables/use-locale';
 import { getRegionalUrl } from '~/common/url-utils';
 import { getDoctorList } from '~/server/api/doctors/list';
 import { DoctorSpecialty } from '~/enums/specialty';
+import { CityId } from '~/enums/cities';
+import { LanguageId } from '~/enums/language';
 
 export function menuItemToLinks(
 	routeName: string,
@@ -35,6 +37,12 @@ export function menuItemToLinks(
 	};
 }
 
+function getEnumValues(enumType: any) {
+	return Object.values(enumType).filter(
+		(value) => !Number.isNaN(Number(value)),
+	);
+}
+
 export async function generateSitemapPage(sitemapIndex: number) {
 	const { doctors } = await getDoctorList();
 
@@ -42,17 +50,67 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		menuItemToLinks(`doctors-${doctor.id}`),
 	);
 
-	const specialtyLinks: SitemapLink[] = Object.values(DoctorSpecialty)
-		.map((specialty) => {
-			if (Number.isNaN(Number(specialty))) {
-				return null;
-			}
+	const specialtyIds = getEnumValues(DoctorSpecialty);
+	const cityIds = getEnumValues(CityId);
+	const languageIds = getEnumValues(LanguageId);
 
-			return menuItemToLinks(`doctors`, { specialtyIds: specialty });
-		})
-		.filter(Boolean);
+	const specialtyLinks: SitemapLink[] = specialtyIds.map((specialty) =>
+		menuItemToLinks(`doctors`, { specialtyIds: specialty }),
+	);
 
-	return await generateSitemap([...doctorLinks, ...specialtyLinks]);
+	const cityLinks: SitemapLink[] = cityIds.map((city) =>
+		menuItemToLinks(`doctors`, { cityIds: city }),
+	);
+
+	const languageLinks: SitemapLink[] = languageIds.map((language) =>
+		menuItemToLinks(`doctors`, { languageIds: language }),
+	);
+
+	const specialtyCityLinks: SitemapLink[] = specialtyIds.flatMap((specialty) =>
+		cityIds.map((city) =>
+			menuItemToLinks(`doctors`, { specialtyIds: specialty, cityIds: city }),
+		),
+	);
+
+	const specialtyLanguageLinks: SitemapLink[] = specialtyIds.flatMap(
+		(specialty) =>
+			languageIds.map((language) =>
+				menuItemToLinks(`doctors`, {
+					specialtyIds: specialty,
+					languageIds: language,
+				}),
+			),
+	);
+
+	const specialtyLanguageCityLinks: SitemapLink[] = specialtyIds.flatMap(
+		(specialty) =>
+			languageIds.flatMap((language) =>
+				cityIds.map((city) =>
+					menuItemToLinks(`doctors`, {
+						specialtyIds: specialty,
+						languageIds: language,
+						cityIds: city,
+					}),
+				),
+			),
+	);
+
+	const languageCityLinks: SitemapLink[] = languageIds.flatMap((language) =>
+		cityIds.map((city) =>
+			menuItemToLinks(`doctors`, { languageIds: language, cityIds: city }),
+		),
+	);
+
+	return await generateSitemap([
+		...doctorLinks,
+		...specialtyLinks,
+		...cityLinks,
+		...languageLinks,
+		...specialtyCityLinks,
+		...specialtyLanguageLinks,
+		...specialtyLanguageCityLinks,
+		...languageCityLinks,
+	]);
 }
 
 async function generateSitemap(routes: SitemapLink[]) {

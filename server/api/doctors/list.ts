@@ -54,7 +54,7 @@ export async function getDoctorList(
 		whereFilters.push(`cities.id IN (${body.cityIds.join(',')})`);
 	}
 	if (body.languageIds?.length > 0) {
-		whereFilters.push(`languages.code IN ("${body.languageIds.join('","')}")`);
+		whereFilters.push(`languages.id IN ("${body.languageIds.join('","')}")`);
 	}
 
 	const whereFiltersString =

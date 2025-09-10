@@ -15,6 +15,6 @@ export enum LanguageId {
 	EN = 3,
 }
 
-export function isLanguage(lang: string): boolean {
-	return Object.values(Language).includes(lang as Language);
+export function isDoctorLanguage(lang: string): boolean {
+	return Object.values(LanguageId).filter(Number).includes(+lang);
 }

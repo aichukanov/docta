@@ -37,7 +37,7 @@ const search = ref('');
 const searchInput = ref<HTMLInputElement | null>(null);
 
 const specialties = computed(() =>
-	Object.keys(DoctorSpecialty)
+	Object.values(DoctorSpecialty)
 		.filter(Number)
 		.map((key) => ({
 			text: t(key),

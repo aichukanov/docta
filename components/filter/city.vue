@@ -30,7 +30,7 @@ const { t } = useI18n(citiesI18n);
 const { cityIds } = useFilters();
 
 const cities = computed(() =>
-	Object.keys(CityId)
+	Object.values(CityId)
 		.filter(Number)
 		.map((key) => ({
 			text: t(key),

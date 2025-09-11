@@ -30,9 +30,9 @@ const specialtiesText = computed(() => {
 	line-height: 1.3;
 }
 
-@media (max-width: 768px) {
-	.doctor-specialty {
-		font-size: var(--font-size-md);
-	}
-}
+// @media (max-width: 768px) {
+// 	.doctor-specialty {
+// 		font-size: var(--font-size-md);
+// 	}
+// }
 </style>

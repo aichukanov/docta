@@ -102,22 +102,22 @@ const props = withDefaults(
 	}
 }
 
-@media (max-width: 768px) {
-	.doctor-wrapper {
-		gap: var(--spacing-md);
-	}
+// @media (max-width: 768px) {
+// 	.doctor-wrapper {
+// 		gap: var(--spacing-md);
+// 	}
 
-	.doctor-avatar {
-		width: 50px !important;
-		height: 50px !important;
-	}
+// 	.doctor-avatar {
+// 		width: 50px !important;
+// 		height: 50px !important;
+// 	}
 
-	.doctor-name {
-		font-size: var(--font-size-xl);
-	}
+// 	.doctor-name {
+// 		font-size: var(--font-size-xl);
+// 	}
 
-	.locations-list {
-		gap: var(--spacing-md);
-	}
-}
+// 	.locations-list {
+// 		gap: var(--spacing-md);
+// 	}
+// }
 </style>

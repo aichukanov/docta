@@ -224,6 +224,7 @@ onMounted(async () => {
 .map-container {
 	flex: 1 1 40%;
 	min-width: 400px;
+	min-height: 400px;
 }
 
 @media (max-width: 1300px) {
@@ -238,37 +239,45 @@ onMounted(async () => {
 			position: initial;
 			max-width: 100%;
 			width: 100%;
+			gap: var(--spacing-sm);
 		}
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
 	.doctors-page {
-		flex-direction: column;
 		height: auto;
-	}
-
-	.filters-sidebar {
-		width: 100%;
-		max-width: 100%;
-		min-width: 0;
-		border-right: none;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-		overflow: visible;
-		position: static;
-		top: auto;
-		max-height: none;
-	}
-
-	.doctors-sidebar,
-	.map-container {
-		max-width: 100%;
-	}
-
-	.map-container {
-		height: 400px;
+		flex-wrap: wrap;
 	}
 }
+
+// @media (max-width: 768px) {
+// 	.doctors-page {
+// 		flex-direction: column;
+// 		height: auto;
+// 	}
+
+// 	.filters-sidebar {
+// 		width: 100%;
+// 		max-width: 100%;
+// 		min-width: 0;
+// 		border-right: none;
+// 		border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+// 		overflow: visible;
+// 		position: static;
+// 		top: auto;
+// 		max-height: none;
+// 	}
+
+// 	.doctors-sidebar,
+// 	.map-container {
+// 		max-width: 100%;
+// 	}
+
+// 	.map-container {
+// 		height: 400px;
+// 	}
+// }
 </style>
 
 <i18n lang="json">

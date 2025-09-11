@@ -52,9 +52,9 @@ const doctorClinics = computed(() => {
 	box-shadow: var(--shadow-xs);
 }
 
-@media (max-width: 768px) {
-	.doctor-card {
-		padding: var(--spacing-xl);
-	}
-}
+// @media (max-width: 768px) {
+// 	.doctor-card {
+// 		padding: var(--spacing-xl);
+// 	}
+// }
 </style>

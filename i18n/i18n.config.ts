@@ -1,6 +1,4 @@
 import { locales, defaultLocale } from '~/composables/use-locale';
-import { DoctorSpecialty } from '~/enums/specialty';
-import { CityId } from '~/enums/cities';
 
 const sr = {
 	ApplicationName: 'docta.me | Svi lekari Crne Gore',

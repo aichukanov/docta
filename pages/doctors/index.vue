@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
 import { CITY_COORDINATES } from '~/enums/cities';
+import specialtyI18n from '~/i18n/specialty';
+import cityI18n from '~/i18n/city';
 
 const router = useRouter();
 const route = useRoute();
@@ -88,12 +90,37 @@ onMounted(async () => {
 		}
 	});
 });
+
+const pageTitle = computed(() => {
+	if (specialtyIds.value.length === 1) {
+		if (cityIds.value.length === 1) {
+			return t('DoctorsSpecialtyCity', {
+				specialty:
+					specialtyI18n.messages[locale.value][
+						specialtyIds.value[0].toString()
+					],
+				city: cityI18n.messages[locale.value][cityIds.value[0].toString()],
+			});
+		}
+
+		return t('DoctorsSpecialty', {
+			specialty:
+				specialtyI18n.messages[locale.value][specialtyIds.value[0].toString()],
+		});
+	} else if (cityIds.value.length === 1) {
+		return t('DoctorsCity', {
+			city: cityI18n.messages[locale.value][cityIds.value[0].toString()],
+		});
+	}
+
+	return t('Doctors');
+});
 </script>
 
 <template>
 	<div class="doctors-page">
 		<div ref="doctorsListRef" class="doctors-sidebar">
-			<h1 class="page-title">{{ t('Doctors') }}</h1>
+			<h1 class="page-title">{{ pageTitle }}</h1>
 
 			<div class="doctors-list-container">
 				<div class="filters-sidebar">
@@ -272,6 +299,9 @@ onMounted(async () => {
 	},
 	"ru": {
 		"Doctors": "Врачи",
+		"DoctorsCity": "Врачи в городе {city}",
+		"DoctorsSpecialty": "Врачи специальности {specialty} в Черногории",
+		"DoctorsSpecialtyCity": "Врачи специальности {specialty} в городе {city}",
 		"LoadingDoctors": "Загрузка врачей...",
 		"NoDoctorsFound": "Врачи не найдены"
 	},

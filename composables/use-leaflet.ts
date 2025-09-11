@@ -111,13 +111,13 @@ export function useLeaflet() {
 		}
 
 		if (locations.length === 1) {
-			leafletMap.centerOnLocation(locations[0]);
+			leafletMap.panTo(locations[0]);
 			return;
 		}
 
 		try {
 			const bounds = new window.L.LatLngBounds(locations);
-			fitBounds(bounds.pad(padding));
+			leafletMap.fitBounds(bounds.pad(padding));
 		} catch (error) {
 			console.error('Error centering on locations:', error);
 		}

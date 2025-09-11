@@ -37,10 +37,20 @@ const props = defineProps<{
 	doctors: DoctorData[];
 }>();
 
+const emit = defineEmits<{
+	(e: 'ready'): void;
+}>();
+
 const { t } = useI18n();
 
-const { isLoading, initializeMap, addMarker, markers, openPopup } =
-	useLeaflet();
+const {
+	isLoading,
+	initializeMap,
+	addMarker,
+	markers,
+	openPopup,
+	centerOnLocations,
+} = useLeaflet();
 
 const mapContainer = ref<HTMLElement | null>(null);
 const isTeleportReady = ref(false);
@@ -68,12 +78,40 @@ const selectedClinicDoctors = computed(() => {
 	return selectedClinic.value ? getClinicDoctors(selectedClinic.value) : [];
 });
 
+const shouldScrollToMap = (): boolean => {
+	if (!mapContainer.value || typeof window === 'undefined') return false;
+
+	const rect = mapContainer.value.getBoundingClientRect();
+	const viewportHeight =
+		window.innerHeight || document.documentElement.clientHeight;
+	const visibleTop = Math.max(rect.top, 0);
+	const visibleBottom = Math.min(rect.bottom, viewportHeight);
+	const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+	return visibleHeight < rect.height / 2;
+};
+
+const scrollToMap = () => {
+	if (shouldScrollToMap()) {
+		mapContainer.value?.scrollIntoView({ behavior: 'smooth' });
+	}
+};
+
 const openClinicPopup = async (clinic: ClinicData) => {
 	selectedClinic.value = null;
 	await nextTick();
 
 	openPopup(clinic.latitude, clinic.longitude);
 	selectedClinic.value = clinic;
+
+	scrollToMap();
+};
+
+const centerOnClinics = (clinics: ClinicData[]) => {
+	centerOnLocations(
+		clinics.map((clinic) => [clinic.latitude, clinic.longitude]),
+	);
+
+	scrollToMap();
 };
 
 // Инициализация карты при монтировании
@@ -90,11 +128,13 @@ onMounted(async () => {
 		});
 
 		isTeleportReady.value = true;
+		emit('ready');
 	}
 });
 
 defineExpose({
 	openClinicPopup,
+	centerOnClinics,
 });
 </script>
 
@@ -127,7 +167,9 @@ defineExpose({
 <style>
 .doctors-map-container {
 	width: 100%;
+	min-width: min(400px, 100%);
 	height: 100%;
+	min-height: 500px;
 	position: relative;
 }
 

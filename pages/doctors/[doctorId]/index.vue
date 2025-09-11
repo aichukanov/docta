@@ -32,11 +32,15 @@ const doctorClinics = computed(() => {
 });
 
 const showClinicOnMap = (clinic: ClinicData) => {
-	doctorsMapRef.value?.openClinicPopup(clinic);
+	doctorsMapRef.value?.centerOnClinics([clinic]);
 };
 
 const backToSearch = () => {
 	router.push({ name: 'doctors', ...getRouteParams() });
+};
+
+const onMapReady = () => {
+	doctorsMapRef.value?.centerOnClinics(doctorClinics.value);
 };
 </script>
 
@@ -68,6 +72,7 @@ const backToSearch = () => {
 					ref="doctorsMapRef"
 					:doctors="[doctorData]"
 					:clinics="doctorClinics"
+					@ready="onMapReady"
 				/>
 			</div>
 		</div>
@@ -106,6 +111,16 @@ const backToSearch = () => {
 				display: flex;
 				flex-direction: column;
 				gap: var(--spacing-2xl);
+			}
+		}
+	}
+}
+
+@media (max-width: 650px) {
+	.doctor-page {
+		.doctor-page-content {
+			.doctor-info-container {
+				flex-direction: column;
 			}
 		}
 	}

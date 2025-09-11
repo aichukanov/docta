@@ -223,7 +223,7 @@ onMounted(async () => {
 
 .map-container {
 	flex: 1 1 40%;
-	min-width: 400px;
+	min-width: min(400px, 100%);
 	min-height: 600px;
 }
 

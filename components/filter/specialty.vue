@@ -1,28 +1,28 @@
 <template>
-	<el-select
-		v-model="specialtyIds"
-		:placeholder="t('AnySpecialty')"
-		:no-data-text="t('NotFound')"
-		size="large"
-		multiple
-		collapse-tags
-		collapse-tags-tooltip
-		@visible-change="focusSearchInput($event)"
-	>
-		<template #header>
-			<el-input
-				ref="searchInput"
-				v-model="search"
-				:placeholder="t('SearchSpecialty')"
+	<FilterWrapper :label="t('Specialty')">
+		<el-select
+			v-model="specialtyIds"
+			:placeholder="t('AnySpecialty')"
+			:no-data-text="t('NotFound')"
+			size="large"
+			multiple
+			@visible-change="focusSearchInput($event)"
+		>
+			<template #header>
+				<el-input
+					ref="searchInput"
+					v-model="search"
+					:placeholder="t('SearchSpecialty')"
+				/>
+			</template>
+			<el-option
+				v-for="{ text, value } in specialties"
+				:key="value"
+				:label="text"
+				:value="value"
 			/>
-		</template>
-		<el-option
-			v-for="{ text, value } in specialties"
-			:key="value"
-			:label="text"
-			:value="value"
-		/>
-	</el-select>
+		</el-select>
+	</FilterWrapper>
 </template>
 
 <script setup lang="ts">

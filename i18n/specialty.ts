@@ -1,6 +1,7 @@
 import { DoctorSpecialty } from '~/enums/specialty';
 
 const sr = {
+	Specialty: 'Specijalnost',
 	AnySpecialty: 'Bilo koja specijalnost',
 	SearchSpecialty: 'Pretraga specijalnosti',
 	NotFound: 'Nije pronađena specijalnost',
@@ -71,6 +72,7 @@ const sr = {
 export default {
 	messages: {
 		en: {
+			Specialty: 'Specialty',
 			AnySpecialty: 'Any specialty',
 			SearchSpecialty: 'Search specialty',
 			NotFound: 'Specialty not found',
@@ -141,6 +143,7 @@ export default {
 			[DoctorSpecialty.ORAL_SURGERY]: 'Oral Surgery',
 		},
 		ru: {
+			Specialty: 'Специальность',
 			AnySpecialty: 'Любая специальность',
 			SearchSpecialty: 'Поиск специальности',
 			NotFound: 'Специальность не найдена',
@@ -212,6 +215,7 @@ export default {
 		ba: sr,
 		me: sr,
 		de: {
+			Specialty: 'Fachrichtung',
 			AnySpecialty: 'Beliebige Fachrichtung',
 			SearchSpecialty: 'Fachrichtung suchen',
 			NotFound: 'Fachrichtung nicht gefunden',
@@ -281,6 +285,7 @@ export default {
 			[DoctorSpecialty.ORAL_SURGERY]: 'Oralchirurgie',
 		},
 		tr: {
+			Specialty: 'Uzmanlık',
 			AnySpecialty: 'Herhangi bir uzmanlık',
 			SearchSpecialty: 'Uzmanlık ara',
 			NotFound: 'Uzmanlık bulunamadı',

@@ -1,6 +1,7 @@
 import { CityId } from '~/enums/cities';
 
 const sr = {
+	City: 'Grad',
 	AnyCity: 'Bilo koji grad',
 
 	[CityId.PODGORICA]: 'Podgorica',
@@ -14,6 +15,7 @@ const sr = {
 export default {
 	messages: {
 		en: {
+			City: 'City',
 			AnyCity: 'Any city',
 			[CityId.PODGORICA]: 'Podgorica',
 			[CityId.NIKSIC]: 'Niksic',
@@ -23,6 +25,7 @@ export default {
 			[CityId.KOTOR]: 'Kotor',
 		},
 		ru: {
+			City: 'Город',
 			AnyCity: 'Любой город',
 
 			[CityId.PODGORICA]: 'Подгорица',
@@ -36,6 +39,7 @@ export default {
 		ba: sr,
 		me: sr,
 		de: {
+			City: 'Ort',
 			AnyCity: 'Beliebiger Ort',
 
 			[CityId.PODGORICA]: 'Podgorica',
@@ -46,6 +50,7 @@ export default {
 			[CityId.KOTOR]: 'Kotor',
 		},
 		tr: {
+			City: 'Şehir',
 			AnyCity: 'Herhangi bir şehir',
 
 			[CityId.PODGORICA]: 'Podgorica',

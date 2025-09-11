@@ -1,6 +1,7 @@
 import { Language } from '~/enums/language';
 
 const sr = {
+	ConsultationLanguage: 'Jezik konsultacije',
 	Languages: 'Jezici',
 	AnyLanguage: 'Bilo koji jezik',
 
@@ -16,6 +17,7 @@ const sr = {
 export default {
 	messages: {
 		en: {
+			ConsultationLanguage: 'Consultation Language',
 			Languages: 'Languages',
 			AnyLanguage: 'Any language',
 
@@ -28,6 +30,7 @@ export default {
 			[Language.TR]: 'turkish',
 		},
 		ru: {
+			ConsultationLanguage: 'Язык приема',
 			Languages: 'Языки',
 			AnyLanguage: 'Любой язык',
 
@@ -43,6 +46,7 @@ export default {
 		ba: sr,
 		me: sr,
 		de: {
+			ConsultationLanguage: 'Beratungssprache',
 			Languages: 'Sprachen',
 			AnyLanguage: 'Beliebiger Sprache',
 
@@ -55,6 +59,7 @@ export default {
 			[Language.TR]: 'Türkisch',
 		},
 		tr: {
+			ConsultationLanguage: 'Görüşme dili',
 			Languages: 'Diller',
 			AnyLanguage: 'Herhangi bir dil',
 

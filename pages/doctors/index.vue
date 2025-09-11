@@ -79,6 +79,12 @@ onMounted(async () => {
 
 <template>
 	<div class="doctors-page">
+		<div class="filters-sidebar">
+			<FilterCity />
+			<FilterLanguage />
+			<FilterSpecialty />
+		</div>
+
 		<div ref="doctorsListRef" class="doctors-sidebar">
 			<h1 class="page-title">{{ t('Doctors') }}</h1>
 
@@ -127,9 +133,21 @@ onMounted(async () => {
 	gap: 0;
 }
 
+.filters-sidebar {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	min-width: 180px;
+	max-width: 320px;
+	padding: @double-padding @double-padding;
+	background: #ffffff;
+	border-right: 1px solid rgba(0, 0, 0, 0.06);
+	overflow-y: auto;
+	gap: var(--spacing-lg);
+}
+
 .doctors-sidebar {
-	flex: 1;
-	max-width: 50%;
+	flex: 1 1 auto;
 	padding: @double-padding;
 	background: #ffffff;
 	border-right: 1px solid rgba(0, 0, 0, 0.06);
@@ -185,8 +203,7 @@ onMounted(async () => {
 }
 
 .map-container {
-	flex: 1;
-	max-width: 50%;
+	flex: 1 1 auto;
 	position: relative;
 }
 
@@ -194,6 +211,15 @@ onMounted(async () => {
 	.doctors-page {
 		flex-direction: column;
 		height: auto;
+	}
+
+	.filters-sidebar {
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+		border-right: none;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+		overflow: visible;
 	}
 
 	.doctors-sidebar,

@@ -23,20 +23,6 @@ const mainPageLink = computed(() => ({
 					<div class="app-header__brand-text">docta.me</div>
 				</NuxtLink>
 
-				<div class="app-header__center">
-					<div class="app-header__search-compact">
-						<div class="search-bar">
-							<div class="search-bar__container">
-								<div class="search-bar__filters">
-									<FilterSpecialty />
-									<FilterCity />
-									<FilterLanguage />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
 				<div class="app-header__actions">
 					<LanguageSwitcher />
 				</div>
@@ -127,14 +113,6 @@ const mainPageLink = computed(() => ({
 		white-space: nowrap;
 	}
 
-	&__center {
-		flex: 1;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin: 0 @base-padding;
-	}
-
 	&__search-compact {
 		width: 100%;
 	}
@@ -197,10 +175,6 @@ const mainPageLink = computed(() => ({
 			font-size: 20px;
 		}
 
-		&__center {
-			margin: 0 @base-offset;
-		}
-
 		&__search-compact {
 			max-width: 400px;
 		}
@@ -223,10 +197,6 @@ const mainPageLink = computed(() => ({
 			height: 32px;
 		}
 
-		&__center {
-			margin: 0 @base-offset / 2;
-		}
-
 		&__search-compact {
 			margin: 0;
 		}
@@ -247,10 +217,6 @@ const mainPageLink = computed(() => ({
 
 		&__brand-text {
 			display: none;
-		}
-
-		&__center {
-			margin: 0;
 		}
 
 		&__search-compact {

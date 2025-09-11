@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import { ArrowLeft } from '@element-plus/icons-vue';
+
 const { t } = useI18n();
+const router = useRouter();
 const route = useRoute();
 const doctorsMapRef = ref<HTMLElement>();
+const { getRouteParams } = useFilters();
 
 const { pending: isLoadingDoctor, data: doctorData } = await useFetch(
 	'/api/doctors/details',
@@ -30,31 +34,42 @@ const doctorClinics = computed(() => {
 const showClinicOnMap = (clinic: ClinicData) => {
 	doctorsMapRef.value?.openClinicPopup(clinic);
 };
+
+const backToSearch = () => {
+	router.push({ name: 'doctors', ...getRouteParams() });
+};
 </script>
 
 <template>
 	<div class="doctor-page">
-		<div v-if="isLoadingDoctor" class="loading">
-			<div class="loading-spinner"></div>
-			<p>{{ t('LoadingDoctor') }}</p>
+		<div class="doctor-page-header">
+			<el-button @click="backToSearch()" :icon="ArrowLeft">
+				{{ t('ToSearchPage') }}
+			</el-button>
 		</div>
-		<div v-else class="doctor-info-container">
-			<div class="doctor-info-wrapper">
-				<DoctorInfo :doctor="doctorData" />
-				<div class="clinics-list">
-					<ClinicSummary
-						v-for="clinic in doctorClinics"
-						:key="clinic.id"
-						:clinic="clinic"
-						@show-on-map="showClinicOnMap(clinic)"
-					/>
-				</div>
+		<div class="doctor-page-content">
+			<div v-if="isLoadingDoctor" class="loading">
+				<div class="loading-spinner"></div>
+				<p>{{ t('LoadingDoctor') }}</p>
 			</div>
-			<DoctorsMap
-				ref="doctorsMapRef"
-				:doctors="[doctorData]"
-				:clinics="doctorClinics"
-			/>
+			<div v-else class="doctor-info-container">
+				<div class="doctor-info-wrapper">
+					<DoctorInfo :doctor="doctorData" />
+					<div class="clinics-list">
+						<ClinicSummary
+							v-for="clinic in doctorClinics"
+							:key="clinic.id"
+							:clinic="clinic"
+							@show-on-map="showClinicOnMap(clinic)"
+						/>
+					</div>
+				</div>
+				<DoctorsMap
+					ref="doctorsMapRef"
+					:doctors="[doctorData]"
+					:clinics="doctorClinics"
+				/>
+			</div>
 		</div>
 	</div>
 </template>
@@ -63,28 +78,35 @@ const showClinicOnMap = (clinic: ClinicData) => {
 @import url('~/assets/css/vars.less');
 
 .doctor-page {
-	display: flex;
-	gap: var(--spacing-2xl);
-	margin-top: var(--spacing-2xl);
-	justify-content: center;
+	padding: var(--spacing-md);
 
-	.doctor-info-container {
+	.doctor-page-header {
+		margin-bottom: var(--spacing-md);
+	}
+
+	.doctor-page-content {
 		display: flex;
-		flex-direction: row;
 		gap: var(--spacing-2xl);
-		width: 100%;
-		min-height: 700px;
-		max-width: 1600px;
+		justify-content: center;
 
-		& > * {
-			flex: 1;
-			height: 100%;
-		}
-
-		.doctor-info-wrapper {
+		.doctor-info-container {
 			display: flex;
-			flex-direction: column;
+			flex-direction: row;
 			gap: var(--spacing-2xl);
+			width: 100%;
+			min-height: 700px;
+			max-width: 1600px;
+
+			& > * {
+				flex: 1;
+				height: 100%;
+			}
+
+			.doctor-info-wrapper {
+				display: flex;
+				flex-direction: column;
+				gap: var(--spacing-2xl);
+			}
 		}
 	}
 }
@@ -93,25 +115,32 @@ const showClinicOnMap = (clinic: ClinicData) => {
 <i18n lang="json">
 {
 	"en": {
-		"LoadingDoctor": "Loading doctor data..."
+		"LoadingDoctor": "Loading doctor data...",
+		"ToSearchPage": "To search page"
 	},
 	"ru": {
-		"LoadingDoctor": "Загрузка данных о враче..."
+		"LoadingDoctor": "Загрузка данных о враче...",
+		"ToSearchPage": "К поиску"
 	},
 	"tr": {
-		"LoadingDoctor": "Doktor verileri yükleniyor..."
+		"LoadingDoctor": "Doktor verileri yükleniyor...",
+		"ToSearchPage": "Arama sayfasına git"
 	},
 	"de": {
-		"LoadingDoctor": "Doktor-Daten werden geladen..."
+		"LoadingDoctor": "Doktor-Daten werden geladen...",
+		"ToSearchPage": "Zur Suche"
 	},
 	"sr": {
-		"LoadingDoctor": "Učitavanje podataka o lekaru..."
+		"LoadingDoctor": "Učitavanje podataka o lekaru...",
+		"ToSearchPage": "Na stranicu pretrage"
 	},
 	"ba": {
-		"LoadingDoctor": "Učitavanje podataka o lekaru..."
+		"LoadingDoctor": "Učitavanje podataka o lekaru...",
+		"ToSearchPage": "Na stranicu pretrage"
 	},
 	"me": {
-		"LoadingDoctor": "Učitavanje podataka o lekaru..."
+		"LoadingDoctor": "Učitavanje podataka o lekaru...",
+		"ToSearchPage": "Na stranicu pretrage"
 	}
 }
 </i18n>

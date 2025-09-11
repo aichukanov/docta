@@ -43,6 +43,7 @@ const doctorClinics = computed(() => {
 }
 
 .doctor-card {
+	min-width: 250px;
 	background: var(--color-surface-secondary);
 	border: 1px solid var(--color-border-primary);
 	border-radius: var(--border-radius-lg);

@@ -135,6 +135,7 @@ onMounted(async () => {
 
 .filters-sidebar {
 	display: flex;
+	box-sizing: border-box;
 	flex-direction: column;
 	flex: 1 1 auto;
 	min-width: 180px;
@@ -152,6 +153,7 @@ onMounted(async () => {
 	background: #ffffff;
 	border-right: 1px solid rgba(0, 0, 0, 0.06);
 	overflow-y: auto;
+	min-width: 450px;
 }
 
 .page-title {
@@ -205,6 +207,7 @@ onMounted(async () => {
 .map-container {
 	flex: 1 1 auto;
 	position: relative;
+	min-width: 400px;
 }
 
 @media (max-width: 768px) {

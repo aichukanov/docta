@@ -55,6 +55,7 @@ const doctorsOnPage = computed(() => {
 });
 
 const showClinicOnMap = (clinic: ClinicData) => {
+	doctorsMapRef.value.$el.scrollIntoView({ behavior: 'smooth' });
 	doctorsMapRef.value.openClinicPopup(clinic);
 };
 
@@ -223,7 +224,7 @@ onMounted(async () => {
 .map-container {
 	flex: 1 1 40%;
 	min-width: 400px;
-	min-height: 400px;
+	min-height: 600px;
 }
 
 @media (max-width: 1300px) {

@@ -28,5 +28,6 @@ const specialtiesText = computed(() => {
 	font-weight: 600;
 	color: var(--color-primary-green);
 	line-height: 1.3;
+	word-break: break-word;
 }
 </style>

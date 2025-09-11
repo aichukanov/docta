@@ -165,7 +165,7 @@ export function useLeaflet() {
 	const openPopup = (lat: number, lng: number, onClose: () => void) => {
 		if (!popup) {
 			popup = window.L.popup({
-				minWidth: 350,
+				minWidth: 280,
 				maxWidth: 500,
 				maxHeight: 500,
 				offset: [-20, -30],

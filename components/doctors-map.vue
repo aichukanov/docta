@@ -135,6 +135,7 @@ onMounted(async () => {
 defineExpose({
 	openClinicPopup,
 	centerOnClinics,
+	centerOnLocations,
 });
 </script>
 

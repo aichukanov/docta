@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
+import { CITY_COORDINATES } from '~/enums/cities';
 
 const router = useRouter();
 const route = useRoute();
@@ -56,6 +57,18 @@ const doctorsOnPage = computed(() => {
 
 const showClinicOnMap = (clinic: ClinicData) => {
 	doctorsMapRef.value.openClinicPopup(clinic);
+};
+
+const onMapReady = () => {
+	watch(
+		cityIds,
+		() => {
+			doctorsMapRef.value?.centerOnLocations(
+				cityIds.value.map((cityId) => CITY_COORDINATES[cityId]),
+			);
+		},
+		{ immediate: true },
+	);
 };
 
 onMounted(async () => {
@@ -123,6 +136,7 @@ onMounted(async () => {
 				ref="doctorsMapRef"
 				:doctors="doctorsList.doctors"
 				:clinics="clinicsList.clinics"
+				@ready="onMapReady"
 			/>
 		</div>
 	</div>

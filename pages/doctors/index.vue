@@ -160,7 +160,6 @@ onMounted(async () => {
 	background: #ffffff;
 	border-right: 1px solid rgba(0, 0, 0, 0.06);
 	overflow-y: auto;
-	min-width: 450px;
 }
 
 .page-title {
@@ -250,34 +249,6 @@ onMounted(async () => {
 		flex-wrap: wrap;
 	}
 }
-
-// @media (max-width: 768px) {
-// 	.doctors-page {
-// 		flex-direction: column;
-// 		height: auto;
-// 	}
-
-// 	.filters-sidebar {
-// 		width: 100%;
-// 		max-width: 100%;
-// 		min-width: 0;
-// 		border-right: none;
-// 		border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-// 		overflow: visible;
-// 		position: static;
-// 		top: auto;
-// 		max-height: none;
-// 	}
-
-// 	.doctors-sidebar,
-// 	.map-container {
-// 		max-width: 100%;
-// 	}
-
-// 	.map-container {
-// 		height: 400px;
-// 	}
-// }
 </style>
 
 <i18n lang="json">

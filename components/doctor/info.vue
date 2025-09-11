@@ -18,7 +18,6 @@ const props = withDefaults(
 			:name="doctor.name"
 			:photoUrl="doctor.photoUrl"
 			:size="short ? 40 : 120"
-			class="doctor-avatar"
 		/>
 		<div class="doctor-info">
 			<h3 class="doctor-name">
@@ -102,22 +101,17 @@ const props = withDefaults(
 	}
 }
 
-// @media (max-width: 768px) {
-// 	.doctor-wrapper {
-// 		gap: var(--spacing-md);
-// 	}
+@media (max-width: 500px) {
+	.doctor-wrapper {
+		// flex-direction: column;
+		gap: var(--spacing-md);
+	}
+}
 
-// 	.doctor-avatar {
-// 		width: 50px !important;
-// 		height: 50px !important;
-// 	}
-
-// 	.doctor-name {
-// 		font-size: var(--font-size-xl);
-// 	}
-
-// 	.locations-list {
-// 		gap: var(--spacing-md);
-// 	}
-// }
+@media (max-width: 300px) {
+	.doctor-wrapper {
+		flex-direction: column;
+		padding: 0 var(--spacing-sm);
+	}
+}
 </style>

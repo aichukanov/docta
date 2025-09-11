@@ -1,13 +1,3 @@
-<template>
-	<img
-		:src="avatarUrl"
-		:alt="name"
-		:class="`doctor-avatar ${customClass}`"
-		:width="size"
-		:height="size"
-	/>
-</template>
-
 <script setup lang="ts">
 import { generateAvatarColor } from '~/common/avatar-colors';
 
@@ -40,6 +30,16 @@ const avatarUrl = computed(() => {
 	}
 });
 </script>
+
+<template>
+	<img
+		:src="avatarUrl"
+		:alt="name"
+		:class="`doctor-avatar ${customClass}`"
+		:width="size"
+		:height="size"
+	/>
+</template>
 
 <style scoped>
 .doctor-avatar {

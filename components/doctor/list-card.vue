@@ -39,11 +39,9 @@ const doctorClinics = computed(() => {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-lg);
-	flex: 1;
 }
 
 .doctor-card {
-	min-width: 250px;
 	background: var(--color-surface-secondary);
 	border: 1px solid var(--color-border-primary);
 	border-radius: var(--border-radius-lg);
@@ -52,9 +50,9 @@ const doctorClinics = computed(() => {
 	box-shadow: var(--shadow-xs);
 }
 
-// @media (max-width: 768px) {
-// 	.doctor-card {
-// 		padding: var(--spacing-xl);
-// 	}
-// }
+@media (max-width: 500px) {
+	.doctor-card {
+		padding: var(--spacing-sm) var(--spacing-xs);
+	}
+}
 </style>

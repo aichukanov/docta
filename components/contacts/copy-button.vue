@@ -46,14 +46,6 @@ async function copyToClipboard(): Promise<void> {
 .copy-button:hover {
 	background: var(--color-bg-secondary);
 }
-
-/* @media (max-width: 768px) {
-	.copy-button {
-		width: 28px;
-		height: 28px;
-		min-width: 28px;
-	}
-} */
 </style>
 
 <i18n>

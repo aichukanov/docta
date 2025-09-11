@@ -80,7 +80,6 @@ const { t } = useI18n();
 .clinic-summary {
 	display: flex;
 	flex-direction: column;
-	min-width: 210px;
 	gap: var(--spacing-lg);
 	background: var(--color-surface-primary);
 	border: 1px solid var(--color-border-light);
@@ -141,7 +140,12 @@ const { t } = useI18n();
 		flex-direction: column;
 		align-items: stretch;
 		gap: var(--spacing-md);
-		padding: var(--spacing-md);
+	}
+}
+
+@media (max-width: 400px) {
+	.clinic-summary {
+		padding: var(--spacing-lg);
 	}
 }
 </style>

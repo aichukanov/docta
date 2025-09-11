@@ -79,39 +79,43 @@ onMounted(async () => {
 
 <template>
 	<div class="doctors-page">
-		<div class="filters-sidebar">
-			<FilterCity />
-			<FilterLanguage />
-			<FilterSpecialty />
-		</div>
-
 		<div ref="doctorsListRef" class="doctors-sidebar">
 			<h1 class="page-title">{{ t('Doctors') }}</h1>
 
-			<div v-if="isLoadingDoctors || isLoadingClinics" class="loading">
-				<div class="loading-spinner"></div>
-				<p>{{ t('LoadingDoctors') }}</p>
-			</div>
-
-			<div v-else class="doctors-list">
-				<div v-if="doctorsList.doctors.length === 0" class="empty-state">
-					<p>{{ t('NoDoctorsFound') }}</p>
+			<div class="doctors-list-container">
+				<div class="filters-sidebar">
+					<FilterCity />
+					<FilterLanguage />
+					<FilterSpecialty />
 				</div>
 
-				<DoctorListCard
-					v-for="doctor in doctorsOnPage"
-					:key="doctor.id"
-					:doctor="doctor"
-					:clinics="clinicsList.clinics"
-					@show-on-map="showClinicOnMap($event)"
-				/>
-			</div>
+				<div class="doctors-list-content">
+					<div v-if="isLoadingDoctors || isLoadingClinics" class="loading">
+						<div class="loading-spinner"></div>
+						<p>{{ t('LoadingDoctors') }}</p>
+					</div>
 
-			<Pagination
-				:total="doctorsList.totalCount"
-				:page-size="PAGE_LIMIT"
-				v-model:current-page="pageNumber"
-			/>
+					<div v-else class="doctors-list">
+						<div v-if="doctorsList.doctors.length === 0" class="empty-state">
+							<p>{{ t('NoDoctorsFound') }}</p>
+						</div>
+
+						<DoctorListCard
+							v-for="doctor in doctorsOnPage"
+							:key="doctor.id"
+							:doctor="doctor"
+							:clinics="clinicsList.clinics"
+							@show-on-map="showClinicOnMap($event)"
+						/>
+					</div>
+
+					<Pagination
+						:total="doctorsList.totalCount"
+						:page-size="PAGE_LIMIT"
+						v-model:current-page="pageNumber"
+					/>
+				</div>
+			</div>
 		</div>
 
 		<div class="map-container">
@@ -131,6 +135,7 @@ onMounted(async () => {
 	display: flex;
 	height: calc(100vh - 120px);
 	gap: 0;
+	overflow-x: auto;
 }
 
 .filters-sidebar {
@@ -140,16 +145,18 @@ onMounted(async () => {
 	flex: 1 1 auto;
 	min-width: 180px;
 	max-width: 320px;
-	padding: @double-padding @double-padding;
 	background: #ffffff;
-	border-right: 1px solid rgba(0, 0, 0, 0.06);
 	overflow-y: auto;
 	gap: var(--spacing-lg);
+	position: sticky;
+	top: var(--spacing-lg);
+	align-self: flex-start;
+	max-height: calc(100vh - 120px - 2 * var(--spacing-lg));
 }
 
 .doctors-sidebar {
-	flex: 1 1 auto;
-	padding: @double-padding;
+	flex: 1 1 60%;
+	padding: var(--spacing-lg);
 	background: #ffffff;
 	border-right: 1px solid rgba(0, 0, 0, 0.06);
 	overflow-y: auto;
@@ -162,6 +169,16 @@ onMounted(async () => {
 	color: #1f2937;
 	margin: 0 0 @double-padding 0;
 	font-family: system-ui, -apple-system, sans-serif;
+}
+
+.doctors-list-container {
+	display: flex;
+	flex-direction: row;
+	gap: var(--spacing-2xl);
+
+	.doctors-list-content {
+		flex: 1 1 auto;
+	}
 }
 
 .doctors-list {
@@ -205,10 +222,15 @@ onMounted(async () => {
 }
 
 .map-container {
-	flex: 1 1 auto;
-	position: relative;
+	flex: 1 1 40%;
 	min-width: 400px;
 }
+
+// @media (max-width: 1300px) {
+// 	.filters-sidebar {
+// 		display: none;
+// 	}
+// }
 
 @media (max-width: 768px) {
 	.doctors-page {
@@ -223,6 +245,9 @@ onMounted(async () => {
 		border-right: none;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 		overflow: visible;
+		position: static;
+		top: auto;
+		max-height: none;
 	}
 
 	.doctors-sidebar,

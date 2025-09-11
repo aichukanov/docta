@@ -226,11 +226,21 @@ onMounted(async () => {
 	min-width: 400px;
 }
 
-// @media (max-width: 1300px) {
-// 	.filters-sidebar {
-// 		display: none;
-// 	}
-// }
+@media (max-width: 1300px) {
+	.page-title {
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.doctors-list-container {
+		flex-direction: column;
+
+		.filters-sidebar {
+			position: initial;
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+}
 
 @media (max-width: 768px) {
 	.doctors-page {

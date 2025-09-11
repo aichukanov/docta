@@ -126,7 +126,7 @@ const { t } = useI18n();
 	display: flex;
 	min-width: 180px;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--spacing-sm);
 	align-items: stretch;
 }
 
@@ -136,7 +136,7 @@ const { t } = useI18n();
 	align-items: stretch;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
 	.location-wrapper {
 		flex-direction: column;
 		align-items: stretch;

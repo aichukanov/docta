@@ -3,6 +3,7 @@ import { getRegionalQuery } from '~/common/url-utils';
 import { CITY_COORDINATES } from '~/enums/cities';
 import specialtyI18n from '~/i18n/specialty';
 import cityI18n from '~/i18n/city';
+import languageI18n from '~/i18n/language';
 
 const router = useRouter();
 const route = useRoute();
@@ -92,27 +93,82 @@ onMounted(async () => {
 });
 
 const pageTitle = computed(() => {
-	if (specialtyIds.value.length === 1) {
-		if (cityIds.value.length === 1) {
-			return t('DoctorsSpecialtyCity', {
+	if (languageIds.value.length === 1) {
+		console.log(
+			languageI18n,
+			`${languageIds.value[0].toString()}_genitive`,
+			languageI18n.messages[locale.value][
+				`${languageIds.value[0].toString()}_genitive`
+			],
+		);
+		if (specialtyIds.value.length === 1) {
+			if (cityIds.value.length === 1) {
+				return t('DoctorsLanguageSpecialtyCity', {
+					language:
+						languageI18n.messages[locale.value][
+							`${languageIds.value[0].toString()}_genitive`
+						],
+					specialtyDoctors:
+						specialtyI18n.messages[locale.value][
+							`doctors_${specialtyIds.value[0].toString()}`
+						],
+					city: cityI18n.messages[locale.value][cityIds.value[0].toString()],
+				});
+			} else {
+				return t('DoctorsLanguageSpecialty', {
+					language:
+						languageI18n.messages[locale.value][
+							`${languageIds.value[0].toString()}_genitive`
+						],
+					specialtyDoctors:
+						specialtyI18n.messages[locale.value][
+							`doctors_${specialtyIds.value[0].toString()}`
+						],
+				});
+			}
+		} else {
+			if (cityIds.value.length === 1) {
+				return t('DoctorsLanguageCity', {
+					language:
+						languageI18n.messages[locale.value][
+							`${languageIds.value[0].toString()}_genitive`
+						],
+					city: cityI18n.messages[locale.value][cityIds.value[0].toString()],
+				});
+			} else {
+				return t('DoctorsLanguage', {
+					language:
+						languageI18n.messages[locale.value][
+							`${languageIds.value[0].toString()}_genitive`
+						],
+				});
+			}
+		}
+	} else {
+		if (specialtyIds.value.length === 1) {
+			if (cityIds.value.length === 1) {
+				return t('DoctorsSpecialtyCity', {
+					specialtyDoctors:
+						specialtyI18n.messages[locale.value][
+							`doctors_${specialtyIds.value[0].toString()}`
+						],
+					city: cityI18n.messages[locale.value][cityIds.value[0].toString()],
+				});
+			}
+
+			return t('DoctorsSpecialty', {
 				specialtyDoctors:
 					specialtyI18n.messages[locale.value][
 						`doctors_${specialtyIds.value[0].toString()}`
 					],
-				city: cityI18n.messages[locale.value][cityIds.value[0].toString()],
 			});
+		} else {
+			if (cityIds.value.length === 1) {
+				return t('DoctorsCity', {
+					city: cityI18n.messages[locale.value][cityIds.value[0].toString()],
+				});
+			}
 		}
-
-		return t('DoctorsSpecialty', {
-			specialtyDoctors:
-				specialtyI18n.messages[locale.value][
-					`doctors_${specialtyIds.value[0].toString()}`
-				],
-		});
-	} else if (cityIds.value.length === 1) {
-		return t('DoctorsCity', {
-			city: cityI18n.messages[locale.value][cityIds.value[0].toString()],
-		});
 	}
 
 	return t('Doctors');
@@ -304,6 +360,11 @@ const pageTitle = computed(() => {
 		"DoctorsCity": "Врачи в городе {city}",
 		"DoctorsSpecialty": "{specialtyDoctors} в Черногории",
 		"DoctorsSpecialtyCity": "{specialtyDoctors} в городе {city}",
+		"DoctorsLanguage": "Врачи в Черногории, владеющие {language} языком",
+		"DoctorsLanguageCity": "Врачи в городе {city}, владеющие {language} языком",
+		"DoctorsLanguageSpecialty": "{specialtyDoctors} в Черногории, владеющие {language} языком",
+		"DoctorsLanguageSpecialtyCity": "{specialtyDoctors} в городе {city}, владеющие {language} языком",
+
 		"LoadingDoctors": "Загрузка врачей...",
 		"NoDoctorsFound": "Врачи не найдены"
 	},

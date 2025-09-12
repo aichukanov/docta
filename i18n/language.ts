@@ -1,4 +1,4 @@
-import { Language } from '~/enums/language';
+import { Language, LanguageId } from '~/enums/language';
 
 const sr = {
 	ConsultationLanguage: 'Jezik konsultacije',
@@ -35,11 +35,20 @@ export default {
 			AnyLanguage: 'Любой язык',
 
 			[Language.SR]: 'сербский',
+			[`${LanguageId.SR}_genitive`]: 'сербским',
+
 			[Language.BA]: 'боснийский',
+
 			[Language.ME]: 'черногорский',
+
 			[Language.DE]: 'немецкий',
+
 			[Language.EN]: 'английский',
+			[`${LanguageId.EN}_genitive`]: 'английским',
+
 			[Language.RU]: 'русский',
+			[`${LanguageId.RU}_genitive`]: 'русским',
+
 			[Language.TR]: 'турецкий',
 		},
 		sr,

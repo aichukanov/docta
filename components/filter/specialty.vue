@@ -40,7 +40,7 @@ const specialties = computed(() =>
 	Object.values(DoctorSpecialty)
 		.filter(Number)
 		.map((key) => ({
-			text: t(key),
+			text: t(`specialty_${key}`),
 			value: key,
 		}))
 		.filter((specialty) =>

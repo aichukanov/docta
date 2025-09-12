@@ -10,6 +10,7 @@ const sr = {
 	[CityId.TIVAT]: 'Tivat',
 	[CityId.ULCINJ]: 'Ulcinj',
 	[CityId.KOTOR]: 'Kotor',
+	[CityId.BAR]: 'Bar',
 };
 
 export default {
@@ -23,6 +24,7 @@ export default {
 			[CityId.TIVAT]: 'Tivat',
 			[CityId.ULCINJ]: 'Ulcinj',
 			[CityId.KOTOR]: 'Kotor',
+			[CityId.BAR]: 'Bar',
 		},
 		ru: {
 			City: 'Город',
@@ -34,6 +36,7 @@ export default {
 			[CityId.TIVAT]: 'Тиват',
 			[CityId.ULCINJ]: 'Ульцинь',
 			[CityId.KOTOR]: 'Котор',
+			[CityId.BAR]: 'Бар',
 		},
 		sr,
 		ba: sr,
@@ -48,6 +51,7 @@ export default {
 			[CityId.TIVAT]: 'Tivat',
 			[CityId.ULCINJ]: 'Ulcinj',
 			[CityId.KOTOR]: 'Kotor',
+			[CityId.BAR]: 'Bar',
 		},
 		tr: {
 			City: 'Şehir',
@@ -59,6 +63,7 @@ export default {
 			[CityId.TIVAT]: 'Tivat',
 			[CityId.ULCINJ]: 'Ulcinj',
 			[CityId.KOTOR]: 'Kotor',
+			[CityId.BAR]: 'Bar',
 		},
 	},
 };

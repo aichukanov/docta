@@ -95,17 +95,19 @@ const pageTitle = computed(() => {
 	if (specialtyIds.value.length === 1) {
 		if (cityIds.value.length === 1) {
 			return t('DoctorsSpecialtyCity', {
-				specialty:
+				specialtyDoctors:
 					specialtyI18n.messages[locale.value][
-						specialtyIds.value[0].toString()
+						`doctors_${specialtyIds.value[0].toString()}`
 					],
 				city: cityI18n.messages[locale.value][cityIds.value[0].toString()],
 			});
 		}
 
 		return t('DoctorsSpecialty', {
-			specialty:
-				specialtyI18n.messages[locale.value][specialtyIds.value[0].toString()],
+			specialtyDoctors:
+				specialtyI18n.messages[locale.value][
+					`doctors_${specialtyIds.value[0].toString()}`
+				],
 		});
 	} else if (cityIds.value.length === 1) {
 		return t('DoctorsCity', {
@@ -300,8 +302,8 @@ const pageTitle = computed(() => {
 	"ru": {
 		"Doctors": "Врачи",
 		"DoctorsCity": "Врачи в городе {city}",
-		"DoctorsSpecialty": "Врачи специальности {specialty} в Черногории",
-		"DoctorsSpecialtyCity": "Врачи специальности {specialty} в городе {city}",
+		"DoctorsSpecialty": "{specialtyDoctors} в Черногории",
+		"DoctorsSpecialtyCity": "{specialtyDoctors} в городе {city}",
 		"LoadingDoctors": "Загрузка врачей...",
 		"NoDoctorsFound": "Врачи не найдены"
 	},

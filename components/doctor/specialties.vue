@@ -11,7 +11,7 @@ const { t } = useI18n(specialtyI18n);
 const specialtiesText = computed(() => {
 	return props.doctor.specialtyIds
 		?.split(',')
-		.map((specialty) => t(specialty) || specialty)
+		.map((specialty) => t(`specialty_${specialty}`))
 		.join(', ');
 });
 </script>

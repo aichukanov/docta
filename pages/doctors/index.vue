@@ -94,13 +94,6 @@ onMounted(async () => {
 
 const pageTitle = computed(() => {
 	if (languageIds.value.length === 1) {
-		console.log(
-			languageI18n,
-			`${languageIds.value[0].toString()}_genitive`,
-			languageI18n.messages[locale.value][
-				`${languageIds.value[0].toString()}_genitive`
-			],
-		);
 		if (specialtyIds.value.length === 1) {
 			if (cityIds.value.length === 1) {
 				return t('DoctorsLanguageSpecialtyCity', {
@@ -352,6 +345,14 @@ const pageTitle = computed(() => {
 {
 	"en": {
 		"Doctors": "Doctors",
+		"DoctorsCity": "Doctors in {city}",
+		"DoctorsSpecialty": "{specialtyDoctors} in Montenegro",
+		"DoctorsSpecialtyCity": "{specialtyDoctors} in {city}",
+		"DoctorsLanguage": "Doctors in Montenegro who speak {language}",
+		"DoctorsLanguageCity": "Doctors in {city} who speak {language}",
+		"DoctorsLanguageSpecialty": "{specialtyDoctors} in Montenegro who speak {language}",
+		"DoctorsLanguageSpecialtyCity": "{specialtyDoctors} in {city} who speak {language}",
+
 		"LoadingDoctors": "Loading doctors...",
 		"NoDoctorsFound": "No doctors found"
 	},
@@ -370,26 +371,66 @@ const pageTitle = computed(() => {
 	},
 	"tr": {
 		"Doctors": "Doktorlar",
+		"DoctorsCity": "{city} şehrindeki doktorlar",
+		"DoctorsSpecialty": "Karadağ'daki {specialtyDoctors}",
+		"DoctorsSpecialtyCity": "{city} şehrindeki {specialtyDoctors}",
+		"DoctorsLanguage": "Karadağ'da {language} konuşan doktorlar",
+		"DoctorsLanguageCity": "{city} şehrinde {language} konuşan doktorlar",
+		"DoctorsLanguageSpecialty": "Karadağ'da {language} konuşan {specialtyDoctors}",
+		"DoctorsLanguageSpecialtyCity": "{city} şehrinde {language} konuşan {specialtyDoctors}",
+
 		"LoadingDoctors": "Doktorlar yükleniyor...",
 		"NoDoctorsFound": "Doktor bulunamadı"
 	},
 	"de": {
 		"Doctors": "Ärzte",
+		"DoctorsCity": "Ärzte in {city}",
+		"DoctorsSpecialty": "{specialtyDoctors} in Montenegro",
+		"DoctorsSpecialtyCity": "{specialtyDoctors} in {city}",
+		"DoctorsLanguage": "Ärzte in Montenegro, die {language} sprechen",
+		"DoctorsLanguageCity": "Ärzte in {city}, die {language} sprechen",
+		"DoctorsLanguageSpecialty": "{specialtyDoctors} in Montenegro, die {language} sprechen",
+		"DoctorsLanguageSpecialtyCity": "{specialtyDoctors} in {city}, die {language} sprechen",
+
 		"LoadingDoctors": "Ärzte werden geladen...",
 		"NoDoctorsFound": "Keine Ärzte gefunden"
 	},
 	"sr": {
 		"Doctors": "Lekari",
+		"DoctorsCity": "Lekari u gradu {city}",
+		"DoctorsSpecialty": "{specialtyDoctors} u Crnoj Gori",
+		"DoctorsSpecialtyCity": "{specialtyDoctors} u gradu {city}",
+		"DoctorsLanguage": "Lekari u Crnoj Gori koji govore {language} jezik",
+		"DoctorsLanguageCity": "Lekari u gradu {city} koji govore {language} jezik",
+		"DoctorsLanguageSpecialty": "{specialtyDoctors} u Crnoj Gori koji govore {language} jezik",
+		"DoctorsLanguageSpecialtyCity": "{specialtyDoctors} u gradu {city} koji govore {language} jezik",
+
 		"LoadingDoctors": "Učitava lekare...",
 		"NoDoctorsFound": "Lekari nisu pronađeni"
 	},
 	"ba": {
 		"Doctors": "Lekari",
+		"DoctorsCity": "Lekari u gradu {city}",
+		"DoctorsSpecialty": "{specialtyDoctors} u Crnoj Gori",
+		"DoctorsSpecialtyCity": "{specialtyDoctors} u gradu {city}",
+		"DoctorsLanguage": "Lekari u Crnoj Gori koji govore {language} jezik",
+		"DoctorsLanguageCity": "Lekari u gradu {city} koji govore {language} jezik",
+		"DoctorsLanguageSpecialty": "{specialtyDoctors} u Crnoj Gori koji govore {language} jezik",
+		"DoctorsLanguageSpecialtyCity": "{specialtyDoctors} u gradu {city} koji govore {language} jezik",
+
 		"LoadingDoctors": "Učitava lekare...",
 		"NoDoctorsFound": "Lekari nisu pronađeni"
 	},
 	"me": {
 		"Doctors": "Lekari",
+		"DoctorsCity": "Lekari u gradu {city}",
+		"DoctorsSpecialty": "{specialtyDoctors} u Crnoj Gori",
+		"DoctorsSpecialtyCity": "{specialtyDoctors} u gradu {city}",
+		"DoctorsLanguage": "Lekari u Crnoj Gori koji govore {language} jezik",
+		"DoctorsLanguageCity": "Lekari u gradu {city} koji govore {language} jezik",
+		"DoctorsLanguageSpecialty": "{specialtyDoctors} u Crnoj Gori koji govore {language} jezik",
+		"DoctorsLanguageSpecialtyCity": "{specialtyDoctors} u gradu {city} koji govore {language} jezik",
+
 		"LoadingDoctors": "Učitava lekare...",
 		"NoDoctorsFound": "Lekari nisu pronađeni"
 	}

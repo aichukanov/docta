@@ -11,7 +11,7 @@ const { t } = useI18n(languageI18n);
 const languagesText = computed(() => {
 	return props.doctor.languageCodes
 		?.split(',')
-		.map((lang) => t(lang) || lang)
+		.map((lang) => t(`language_${lang}`) || lang)
 		.join(', ');
 });
 </script>

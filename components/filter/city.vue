@@ -35,7 +35,7 @@ const cities = computed(() =>
 	Object.values(CityId)
 		.filter(Number)
 		.map((key) => ({
-			text: t(key),
+			text: t(`city_${key}`),
 			value: key,
 		}))
 		.sort((a, b) => a.text.localeCompare(b.text)),

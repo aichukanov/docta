@@ -29,15 +29,15 @@ const { languageIds } = useFilters();
 
 const languages = computed(() => [
 	{
-		text: t(Language.SR),
+		text: t(`language_${Language.SR}`),
 		value: LanguageId.SR,
 	},
 	{
-		text: t(Language.EN),
+		text: t(`language_${Language.EN}`),
 		value: LanguageId.EN,
 	},
 	{
-		text: t(Language.RU),
+		text: t(`language_${Language.RU}`),
 		value: LanguageId.RU,
 	},
 ]);

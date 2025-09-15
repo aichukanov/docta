@@ -5,7 +5,7 @@ export interface DoctorData extends ContactList {
 	id: number;
 	name: string;
 	specialtyIds: string;
-	languageCodes: string;
+	languageIds: string;
 	clinicIds: string;
 	professionalTitle: string;
 	photoUrl: string;

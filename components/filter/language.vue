@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { LanguageId, Language } from '~/enums/language';
+import { LanguageId } from '~/enums/language';
 import languageI18n from '~/i18n/language';
 
 const { t } = useI18n(languageI18n);
@@ -29,15 +29,15 @@ const { languageIds } = useFilters();
 
 const languages = computed(() => [
 	{
-		text: t(`language_${Language.SR}`),
+		text: t(`language_${LanguageId.SR}`),
 		value: LanguageId.SR,
 	},
 	{
-		text: t(`language_${Language.EN}`),
+		text: t(`language_${LanguageId.EN}`),
 		value: LanguageId.EN,
 	},
 	{
-		text: t(`language_${Language.RU}`),
+		text: t(`language_${LanguageId.RU}`),
 		value: LanguageId.RU,
 	},
 ]);

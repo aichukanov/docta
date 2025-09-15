@@ -9,7 +9,7 @@ const props = defineProps<{
 const { t } = useI18n(languageI18n);
 
 const languagesText = computed(() => {
-	return props.doctor.languageCodes
+	return props.doctor.languageIds
 		?.split(',')
 		.map((lang) => t(`language_${lang}`) || lang)
 		.join(', ');

@@ -31,7 +31,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 				d.viber,
 				d.website,
 				GROUP_CONCAT(DISTINCT s.id ORDER BY s.id) as specialtyIds,
-				GROUP_CONCAT(DISTINCT languages.code ORDER BY languages.code) as languageCodes,   
+				GROUP_CONCAT(DISTINCT languages.id ORDER BY languages.id) as languageIds,   
 				GROUP_CONCAT(DISTINCT dc.clinic_id ORDER BY dc.clinic_id) as clinicIds
 			FROM doctors d
 			LEFT JOIN doctor_specialties ds ON d.id = ds.doctor_id

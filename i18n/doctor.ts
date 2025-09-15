@@ -14,6 +14,8 @@ const sr = {
 
 	LoadingDoctors: 'Učitava lekare...',
 	NoDoctorsFound: 'Lekari nisu pronađeni',
+	LoadingDoctor: 'Učitavanje podataka o lekaru...',
+	ToSearchPage: 'Na stranicu pretrage',
 };
 
 export default {
@@ -34,6 +36,8 @@ export default {
 
 			LoadingDoctors: 'Loading doctors...',
 			NoDoctorsFound: 'No doctors found',
+			LoadingDoctor: 'Loading doctor data...',
+			ToSearchPage: 'To search page',
 		},
 		ru: {
 			Doctors: 'Врачи',
@@ -51,6 +55,8 @@ export default {
 
 			LoadingDoctors: 'Загрузка врачей...',
 			NoDoctorsFound: 'Врачи не найдены',
+			LoadingDoctor: 'Загрузка данных о враче...',
+			ToSearchPage: 'К поиску',
 		},
 		tr: {
 			Doctors: 'Doktorlar',
@@ -68,6 +74,8 @@ export default {
 
 			LoadingDoctors: 'Doktorlar yükleniyor...',
 			NoDoctorsFound: 'Doktor bulunamadı',
+			LoadingDoctor: 'Doktor verileri yükleniyor...',
+			ToSearchPage: 'Arama sayfasına git',
 		},
 		de: {
 			Doctors: 'Ärzte',
@@ -85,6 +93,8 @@ export default {
 
 			LoadingDoctors: 'Ärzte werden geladen...',
 			NoDoctorsFound: 'Keine Ärzte gefunden',
+			LoadingDoctor: 'Doktor-Daten werden geladen...',
+			ToSearchPage: 'Zur Suche',
 		},
 		sr,
 		ba: sr,

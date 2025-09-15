@@ -1,8 +1,23 @@
 <script setup lang="ts">
 import { ArrowLeft } from '@element-plus/icons-vue';
 import { getRegionalQuery } from '~/common/url-utils';
+import { combineI18nMessages } from '~/i18n/utils';
+import specialtyI18n from '~/i18n/specialty';
+import languageI18n from '~/i18n/language';
+import cityI18n from '~/i18n/city';
+import doctorI18n from '~/i18n/doctor';
+import { Language, LanguageId } from '~/enums/language';
 
-const { t, locale } = useI18n();
+const { t, locale } = useI18n({
+	useScope: 'local',
+	messages: combineI18nMessages([
+		doctorI18n,
+		specialtyI18n,
+		languageI18n,
+		cityI18n,
+	]),
+});
+
 const router = useRouter();
 const route = useRoute();
 const doctorsMapRef = ref<HTMLElement>();
@@ -46,6 +61,31 @@ const backToSearch = () => {
 const onMapReady = () => {
 	doctorsMapRef.value?.centerOnClinics(doctorClinics.value);
 };
+
+const pageTitle = computed(() => {
+	if (!doctorData.value) {
+		return '';
+	}
+
+	const specialtiesText = doctorData.value.specialtyIds
+		?.split(',')
+		.map((specialty) => t(`doctor_${specialty}`))
+		.join(', ');
+
+	const languagesText = doctorData.value.languageIds
+		?.split(',')
+		.map((language) => t(`language_${language}_prepositional`))
+		.join(', ');
+
+	const visitText = t('VisitLanguage', { language: languagesText });
+
+	return `${doctorData.value.name}, ${doctorData.value.professionalTitle} | ${visitText} | ${specialtiesText}`;
+});
+
+useSeoMeta({
+	title: () => pageTitle.value + ' | docta.me',
+	// description: pageTitle.value,
+});
 </script>
 
 <template>
@@ -130,36 +170,3 @@ const onMapReady = () => {
 	}
 }
 </style>
-
-<i18n lang="json">
-{
-	"en": {
-		"LoadingDoctor": "Loading doctor data...",
-		"ToSearchPage": "To search page"
-	},
-	"ru": {
-		"LoadingDoctor": "Загрузка данных о враче...",
-		"ToSearchPage": "К поиску"
-	},
-	"tr": {
-		"LoadingDoctor": "Doktor verileri yükleniyor...",
-		"ToSearchPage": "Arama sayfasına git"
-	},
-	"de": {
-		"LoadingDoctor": "Doktor-Daten werden geladen...",
-		"ToSearchPage": "Zur Suche"
-	},
-	"sr": {
-		"LoadingDoctor": "Učitavanje podataka o lekaru...",
-		"ToSearchPage": "Na stranicu pretrage"
-	},
-	"ba": {
-		"LoadingDoctor": "Učitavanje podataka o lekaru...",
-		"ToSearchPage": "Na stranicu pretrage"
-	},
-	"me": {
-		"LoadingDoctor": "Učitavanje podataka o lekaru...",
-		"ToSearchPage": "Na stranicu pretrage"
-	}
-}
-</i18n>

@@ -42,6 +42,8 @@ const updateFromRoute = (query: Record<string, string | string[]>) => {
 		validateSpecialtyIds({ specialtyIds: preparedSpecialtyIds }, 'use-filters')
 	) {
 		specialtyIds.value = preparedSpecialtyIds;
+	} else {
+		specialtyIds.value = [];
 	}
 
 	if (
@@ -52,6 +54,8 @@ const updateFromRoute = (query: Record<string, string | string[]>) => {
 		)
 	) {
 		languageIds.value = preparedLanguageIds;
+	} else {
+		languageIds.value = [];
 	}
 
 	if (
@@ -59,6 +63,8 @@ const updateFromRoute = (query: Record<string, string | string[]>) => {
 		validateCityIds({ cityIds: preparedCityIds }, 'use-filters')
 	) {
 		cityIds.value = preparedCityIds;
+	} else {
+		cityIds.value = [];
 	}
 };
 

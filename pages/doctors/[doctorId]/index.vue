@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ArrowLeft } from '@element-plus/icons-vue';
+import { getRegionalQuery } from '~/common/url-utils';
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 const router = useRouter();
 const route = useRoute();
 const doctorsMapRef = ref<HTMLElement>();
@@ -36,7 +37,10 @@ const showClinicOnMap = (clinic: ClinicData) => {
 };
 
 const backToSearch = () => {
-	router.push({ name: 'doctors', ...getRouteParams() });
+	router.push({
+		name: 'doctors',
+		query: { ...getRouteParams().query, ...getRegionalQuery(locale.value) },
+	});
 };
 
 const onMapReady = () => {

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { getRegionalQuery } from '~/common/url-utils';
 import type { DoctorData } from '~/interfaces/doctor';
 
 const props = withDefaults(
@@ -10,6 +11,14 @@ const props = withDefaults(
 		short: false,
 	},
 );
+
+const { locale } = useI18n();
+
+const doctorLink = computed(() => ({
+	name: 'doctors-doctorId',
+	params: { doctorId: props.doctor.id },
+	query: getRegionalQuery(locale.value),
+}));
 </script>
 
 <template>
@@ -21,13 +30,7 @@ const props = withDefaults(
 		/>
 		<div class="doctor-info">
 			<h3 class="doctor-name">
-				<NuxtLink
-					:to="{
-						name: 'doctors-doctorId',
-						params: { doctorId: doctor.id },
-					}"
-					class="doctor-name-link"
-				>
+				<NuxtLink :to="doctorLink" class="doctor-name-link">
 					{{ doctor.name }}
 				</NuxtLink>
 			</h3>

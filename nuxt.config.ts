@@ -33,8 +33,7 @@ export default defineNuxtConfig({
 	},
 
 	routeRules: {
-		// '/**': { cors: true, ssr: true, prerender: false },
-		'/**': { ssr: false },
+		'/**': { cors: true, ssr: true, prerender: false },
 	},
 
 	devtools: { enabled: false },

@@ -84,7 +84,7 @@ const pageTitle = computed(() => {
 
 useSeoMeta({
 	title: () => pageTitle.value + ' | docta.me',
-	// description: pageTitle.value,
+	description: pageTitle.value,
 });
 </script>
 

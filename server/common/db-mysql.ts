@@ -1,39 +1,17 @@
 import mysql from 'mysql2/promise';
 
-/**
- * MySQL Database Configuration
- *
- * Environment variables needed:
- * - DB_HOST: MySQL host (default: localhost)
- * - DB_USER: MySQL username (default: root)
- * - DB_PASSWORD: MySQL password (required)
- * - DB_DATABASE: Database name (default: docta_me)
- * - DB_PORT: MySQL port (default: 3306)
- *
- * Example .env file:
- * DB_HOST=localhost
- * DB_USER=root
- * DB_PASSWORD=your_password_here
- * DB_DATABASE=docta_me
- * DB_PORT=3306
- */
-
-// Конфигурация базы данных
-const dbConfig = {
-	host: process.env.DB_HOST || 'localhost',
-	user: process.env.DB_USER || 'root',
-	password: process.env.DB_PASSWORD,
-	database: process.env.DB_DATABASE || 'docta_me',
-	port: parseInt(process.env.DB_PORT || '3306'),
-	charset: 'utf8mb4',
-	timezone: '+00:00',
-};
-
 // Подключение к базе данных
 export async function getConnection() {
 	try {
-		const connection = await mysql.createConnection(dbConfig);
-		return connection;
+		return await mysql.createConnection({
+			host: process.env.DB_HOST,
+			user: process.env.DB_USER,
+			password: process.env.DB_PASSWORD,
+			database: process.env.DB_NAME,
+			port: +process.env.DB_PORT,
+			charset: 'utf8mb4',
+			timezone: '+00:00',
+		});
 	} catch (error) {
 		console.error('Database connection error:', error);
 		throw error;

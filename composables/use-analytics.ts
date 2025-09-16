@@ -28,7 +28,7 @@ export function useAnalytics() {
 			return;
 		}
 
-		const token = config.public.cloudflareTokens.svad;
+		const token = config.public.cloudflareToken;
 
 		if (!token) {
 			console.error('Token for cloudflare is not defined. Domain:', domain);

@@ -26,9 +26,7 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		public: {
 			mixpanelToken: process.env.MIXPANEL_TOKEN,
-			cloudflareTokens: {
-				svad: process.env.CLOUDFLARE_SVAD_TOKEN,
-			},
+			cloudflareToken: process.env.CLOUDFLARE_TOKEN,
 			connection: {
 				host: process.env.DB_HOST,
 				user: process.env.DB_USER,

@@ -76,7 +76,7 @@ const mainPageLink = computed(() => ({
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		height: 80px;
+		height: 60px;
 		gap: @base-padding;
 		padding: 0 @base-padding;
 		box-sizing: border-box;
@@ -113,70 +113,18 @@ const mainPageLink = computed(() => ({
 		white-space: nowrap;
 	}
 
-	&__search-compact {
-		width: 100%;
-	}
-
-	&__category-tabs {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		:deep(.category-tabs) {
-			padding: 0;
-		}
-	}
-
 	&__actions {
 		display: flex;
 		align-items: center;
 		gap: @base-offset;
 		flex-shrink: 0;
 	}
-
-	.search-bar {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		padding: @base-offset 0 0 0;
-		box-sizing: border-box;
-
-		&__container {
-			width: 100%;
-			max-width: 850px;
-			padding: 0 @base-padding;
-			box-sizing: border-box;
-		}
-
-		&__filters {
-			display: flex;
-			align-items: center;
-			border-radius: 32px;
-			gap: var(--spacing-md);
-		}
-	}
-}
-
-@media only screen and (max-width: 1200px) {
-	.app-header {
-		&__search-compact {
-			max-width: 500px;
-		}
-	}
 }
 
 @media only screen and (max-width: 900px) {
 	.app-header {
-		&__main-content {
-			height: 70px;
-		}
-
 		&__brand-text {
 			font-size: 20px;
-		}
-
-		&__search-compact {
-			max-width: 400px;
 		}
 	}
 }
@@ -184,8 +132,8 @@ const mainPageLink = computed(() => ({
 @media only screen and (max-width: 700px) {
 	.app-header {
 		&__main-content {
-			height: 60px;
-			gap: @base-offset;
+			height: 50px;
+			gap: var(--spacing-md);
 		}
 
 		&__brand-text {
@@ -196,16 +144,6 @@ const mainPageLink = computed(() => ({
 			width: 32px;
 			height: 32px;
 		}
-
-		&__search-compact {
-			margin: 0;
-		}
-
-		.search-bar {
-			&__container {
-				padding: 0 @base-offset;
-			}
-		}
 	}
 }
 
@@ -213,14 +151,6 @@ const mainPageLink = computed(() => ({
 	.app-header {
 		&__main-content {
 			padding: 0 @base-offset;
-		}
-
-		&__brand-text {
-			display: none;
-		}
-
-		&__search-compact {
-			margin: 0;
 		}
 	}
 }

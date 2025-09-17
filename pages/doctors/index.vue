@@ -270,10 +270,10 @@ onMounted(async () => {
 
 .doctors-sidebar {
 	flex: 1 1 60%;
-	padding: var(--spacing-lg);
 	background: #ffffff;
 	border-right: 1px solid rgba(0, 0, 0, 0.06);
 	overflow-y: auto;
+	padding: var(--spacing-lg);
 }
 
 .page-title {
@@ -359,6 +359,17 @@ onMounted(async () => {
 	.doctors-page {
 		height: auto;
 		flex-wrap: wrap;
+	}
+
+	.map-container {
+		max-height: 60vh;
+		overflow: hidden;
+	}
+}
+
+@media (max-width: 500px) {
+	.doctors-sidebar {
+		padding: var(--spacing-sm);
 	}
 }
 </style>

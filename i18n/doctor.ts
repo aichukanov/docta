@@ -1,5 +1,5 @@
 const sr = {
-	Doctors: 'Lekari',
+	Doctors: 'Lekari u Crnoj Gori',
 	DoctorsCity: 'Lekari u {city}',
 	DoctorsSpecialty: '{specialtyDoctors} u Crnoj Gori',
 	DoctorsSpecialtyCity: '{specialtyDoctors} u {city}',
@@ -21,7 +21,7 @@ const sr = {
 export default {
 	messages: {
 		en: {
-			Doctors: 'Doctors',
+			Doctors: 'Doctors in Montenegro',
 			DoctorsCity: 'Doctors in {city}',
 			DoctorsSpecialty: '{specialtyDoctors} in Montenegro',
 			DoctorsSpecialtyCity: '{specialtyDoctors} in {city}',
@@ -40,7 +40,7 @@ export default {
 			ToSearchPage: 'To search page',
 		},
 		ru: {
-			Doctors: 'Врачи',
+			Doctors: 'Врачи в Черногории',
 			DoctorsCity: 'Врачи в {city}',
 			DoctorsSpecialty: '{specialtyDoctors} в Черногории',
 			DoctorsSpecialtyCity: '{specialtyDoctors} в {city}',
@@ -59,7 +59,7 @@ export default {
 			ToSearchPage: 'К поиску',
 		},
 		tr: {
-			Doctors: 'Doktorlar',
+			Doctors: "Karadağ'daki doktorlar",
 			DoctorsCity: '{city} doktorları',
 			DoctorsSpecialty: "Karadağ'daki {specialtyDoctors}",
 			DoctorsSpecialtyCity: '{city} {specialtyDoctors}',
@@ -78,7 +78,7 @@ export default {
 			ToSearchPage: 'Arama sayfasına git',
 		},
 		de: {
-			Doctors: 'Ärzte',
+			Doctors: 'Ärzte in Montenegro',
 			DoctorsCity: 'Ärzte in {city}',
 			DoctorsSpecialty: '{specialtyDoctors} in Montenegro',
 			DoctorsSpecialtyCity: '{specialtyDoctors} in {city}',

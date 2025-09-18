@@ -28,10 +28,6 @@ export default defineEventHandler(async (event): Promise<DoctorList> => {
 			setResponseStatus(event, 400, 'Invalid doctor language');
 			return null;
 		}
-		if (!validateName(body, 'api/doctors/list')) {
-			setResponseStatus(event, 400, 'Invalid name');
-			return null;
-		}
 
 		return getDoctorList(body);
 	} catch (error) {
@@ -61,7 +57,7 @@ export async function getDoctorList(
 	if (body.languageIds?.length > 0) {
 		whereFilters.push(`languages.id IN ("${body.languageIds.join('","')}")`);
 	}
-	if (body.name) {
+	if (body.name && validateName(body, 'api/doctors/list')) {
 		whereFilters.push(`d.name LIKE '%${body.name}%'`);
 	}
 

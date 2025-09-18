@@ -21,14 +21,21 @@ const doctorTelegram = ref('');
 const doctorWhatsapp = ref('');
 const doctorViber = ref('');
 
-const clinicId = ref<number | null>(null);
+const clinicIds = ref<number[]>([]);
 const specialtyIds = ref<number[]>([]);
 const languageIds = ref<number[]>([]);
 
-const addDoctor = () => {
+const clinicOptions = computed(() => {
+	return props.clinics.map((clinic) => ({
+		label: clinic.name,
+		value: clinic.id,
+	}));
+});
+
+const addDoctor = async () => {
 	if (
 		!doctorName.value ||
-		!clinicId.value ||
+		!clinicIds.value.length ||
 		!specialtyIds.value.length ||
 		!languageIds.value.length
 	) {
@@ -36,21 +43,27 @@ const addDoctor = () => {
 		return;
 	}
 
-	emit('add', {
-		name: doctorName.value,
-		email: doctorEmail.value,
-		phone: doctorPhone.value,
-		website: doctorWebsite.value,
-		photoUrl: doctorPhotoUrl.value,
-		facebook: doctorFacebook.value,
-		instagram: doctorInstagram.value,
-		telegram: doctorTelegram.value,
-		whatsapp: doctorWhatsapp.value,
-		viber: doctorViber.value,
-		clinicIds: clinicId.value ? [clinicId.value] : [],
-		specialtyIds: specialtyIds.value,
-		languageIds: languageIds.value,
+	await useFetch('/api/doctors/add', {
+		key: 'doctors-add',
+		method: 'POST',
+		body: {
+			name: doctorName.value,
+			email: doctorEmail.value,
+			phone: doctorPhone.value,
+			website: doctorWebsite.value,
+			photoUrl: doctorPhotoUrl.value,
+			facebook: doctorFacebook.value,
+			instagram: doctorInstagram.value,
+			telegram: doctorTelegram.value,
+			whatsapp: doctorWhatsapp.value,
+			viber: doctorViber.value,
+			clinicIds: clinicIds.value,
+			specialtyIds: specialtyIds.value,
+			languageIds: languageIds.value,
+		},
 	});
+
+	alert('Врач добавлен');
 };
 </script>
 
@@ -74,14 +87,13 @@ const addDoctor = () => {
 			<p>Загрузка клиник...</p>
 		</div>
 		<div v-else>
-			<el-select v-model="clinicId" placeholder="Клиника" size="large">
-				<el-option
-					v-for="{ id, name } in clinics"
-					:key="id"
-					:label="name"
-					:value="id"
-				/>
-			</el-select>
+			<FilterableSelect
+				:items="clinicOptions"
+				v-model:value="clinicIds"
+				multiple
+				placeholder="Выберите клинику"
+				placeholderSearch="Введите часть названия клиники"
+			/>
 		</div>
 
 		<FilterSpecialtySelect v-model:value="specialtyIds" />

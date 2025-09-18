@@ -64,6 +64,23 @@ export function validateDoctorLanguageIds(
 	return true;
 }
 
+export function validateClinicIds(
+	{ clinicIds }: { clinicIds: unknown },
+	from: string,
+) {
+	if (!Array.isArray(clinicIds) || clinicIds.length === 0) {
+		showError(from, 'Invalid clinic ids: must be a non-empty array');
+		return false;
+	}
+
+	if (!clinicIds.every((id) => validateNonNegativeInteger(id as string))) {
+		showError(from, 'Invalid clinic id values: ' + String(clinicIds));
+		return false;
+	}
+
+	return true;
+}
+
 export function validateNonNegativeNumber(value: string): boolean {
 	if (value == null) {
 		return false;

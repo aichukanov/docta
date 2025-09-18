@@ -5,6 +5,7 @@ import {
 	validateSpecialtyIds,
 	validateCityIds,
 	validateDoctorLanguageIds,
+	validateName,
 } from '~/common/validation';
 
 export default defineEventHandler(async (event): Promise<DoctorList> => {
@@ -25,6 +26,10 @@ export default defineEventHandler(async (event): Promise<DoctorList> => {
 		}
 		if (!validateDoctorLanguageIds(body, 'api/doctors/list')) {
 			setResponseStatus(event, 400, 'Invalid doctor language');
+			return null;
+		}
+		if (!validateName(body, 'api/doctors/list')) {
+			setResponseStatus(event, 400, 'Invalid name');
 			return null;
 		}
 
@@ -55,6 +60,9 @@ export async function getDoctorList(
 	}
 	if (body.languageIds?.length > 0) {
 		whereFilters.push(`languages.id IN ("${body.languageIds.join('","')}")`);
+	}
+	if (body.name) {
+		whereFilters.push(`d.name LIKE '%${body.name}%'`);
 	}
 
 	const whereFiltersString =

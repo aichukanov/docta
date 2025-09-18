@@ -7,6 +7,7 @@ import {
 const specialtyIds = ref<number[]>([]);
 const languageIds = ref<number[]>([]);
 const cityIds = ref<number[]>([]);
+const name = ref<string>('');
 
 const getRouteParams = () => {
 	return {
@@ -14,6 +15,7 @@ const getRouteParams = () => {
 			specialtyIds: specialtyIds.value,
 			languageIds: languageIds.value,
 			cityIds: cityIds.value,
+			name: name.value,
 		},
 	};
 };
@@ -36,6 +38,8 @@ const updateFromRoute = (query: Record<string, string | string[]>) => {
 			? query.cityIds.map(Number)
 			: [+query.cityIds]
 		: null;
+
+	const preparedName = query.name ? query.name : null;
 
 	if (
 		preparedSpecialtyIds &&
@@ -66,6 +70,12 @@ const updateFromRoute = (query: Record<string, string | string[]>) => {
 	} else {
 		cityIds.value = [];
 	}
+
+	if (preparedName) {
+		name.value = preparedName;
+	} else {
+		name.value = '';
+	}
 };
 
 export const useFilters = () => {
@@ -75,5 +85,6 @@ export const useFilters = () => {
 		specialtyIds,
 		languageIds,
 		cityIds,
+		name,
 	};
 };

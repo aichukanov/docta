@@ -19,8 +19,14 @@ const { t, locale } = useI18n({
 		languageI18n,
 	]),
 });
-const { specialtyIds, cityIds, languageIds, updateFromRoute, getRouteParams } =
-	useFilters();
+const {
+	specialtyIds,
+	cityIds,
+	languageIds,
+	name,
+	updateFromRoute,
+	getRouteParams,
+} = useFilters();
 
 updateFromRoute(route.query);
 
@@ -33,6 +39,7 @@ const filterList = computed(() => ({
 	specialtyIds: specialtyIds.value,
 	cityIds: cityIds.value,
 	languageIds: languageIds.value,
+	name: name.value,
 }));
 
 const { pending: isLoadingDoctors, data: doctorsList } = await useFetch(
@@ -40,11 +47,7 @@ const { pending: isLoadingDoctors, data: doctorsList } = await useFetch(
 	{
 		key: 'doctors-list',
 		method: 'POST',
-		body: computed(() => ({
-			specialtyIds: specialtyIds.value,
-			cityIds: cityIds.value,
-			languageIds: languageIds.value,
-		})),
+		body: filterList,
 	},
 );
 
@@ -197,6 +200,7 @@ onMounted(async () => {
 
 			<div class="doctors-list-container">
 				<div class="filters-sidebar">
+					<FilterName />
 					<FilterCity />
 					<FilterLanguage />
 					<FilterSpecialty />

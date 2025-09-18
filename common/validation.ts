@@ -16,6 +16,28 @@ export function validateBody(body: any, from: string) {
 	return true;
 }
 
+export function validateName({ name }: { name: unknown }, from: string) {
+	if (typeof name !== 'string') {
+		showError(from, 'Invalid name: must be a string');
+		return false;
+	}
+
+	const trimmed = name.trim();
+
+	if (trimmed === '') {
+		return true;
+	}
+
+	// Allow only letters (any locale), spaces and hyphens
+	const allowedPattern = /^[\p{L}\s-]+$/u;
+	if (!allowedPattern.test(trimmed)) {
+		showError(from, 'Invalid name: only letters, spaces, and hyphens allowed');
+		return false;
+	}
+
+	return true;
+}
+
 export function validateSpecialtyIds(
 	{ specialtyIds }: { specialtyIds: unknown },
 	from: string,

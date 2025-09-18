@@ -37,6 +37,7 @@ export default defineNuxtConfig({
 
 	routeRules: {
 		'/**': { cors: true, ssr: true, prerender: false },
+		'/admin/**': { cors: true, ssr: false, prerender: false },
 	},
 
 	devtools: { enabled: false },

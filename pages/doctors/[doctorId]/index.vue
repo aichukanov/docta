@@ -79,7 +79,7 @@ const pageTitle = computed(() => {
 
 	const visitText = t('VisitLanguage', { language: languagesText });
 
-	return `${doctorData.value.name}, ${doctorData.value.professionalTitle} | ${visitText} | ${specialtiesText}`;
+	return `${doctorData.value.name}, ${doctorData.value.professionalTitle} | ${specialtiesText} | ${visitText}`;
 });
 
 useSeoMeta({

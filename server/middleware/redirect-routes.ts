@@ -25,8 +25,7 @@ export default defineEventHandler(async (event) => {
 		const adminCookie = getCookie(event, 'adm');
 		if (adminCookie !== 'xpycm') {
 			throw createError({
-				statusCode: 403,
-				statusMessage: 'Доступ запрещен',
+				statusCode: 404,
 			});
 		}
 	} else {

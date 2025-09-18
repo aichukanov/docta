@@ -7,7 +7,7 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-	(e: 'add', doctor: DoctorData): void;
+	(e: 'updated'): void;
 }>();
 
 const doctorName = ref('');
@@ -31,6 +31,22 @@ const clinicOptions = computed(() => {
 		value: clinic.id,
 	}));
 });
+
+const clearFields = () => {
+	doctorName.value = '';
+	doctorEmail.value = '';
+	doctorPhone.value = '';
+	doctorWebsite.value = '';
+	doctorPhotoUrl.value = '';
+	doctorFacebook.value = '';
+	doctorInstagram.value = '';
+	doctorTelegram.value = '';
+	doctorWhatsapp.value = '';
+	doctorViber.value = '';
+	clinicIds.value = [];
+	specialtyIds.value = [];
+	languageIds.value = [];
+};
 
 const addDoctor = async () => {
 	if (
@@ -63,6 +79,8 @@ const addDoctor = async () => {
 		},
 	});
 
+	clearFields();
+	emit('updated');
 	alert('Врач добавлен');
 };
 </script>

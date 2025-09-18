@@ -1,14 +1,16 @@
 <script setup lang="ts">
+const loadedDoctorsKey = ref(0);
 const { pending: isLoadingDoctors, data: doctorsList } = await useFetch(
 	'/api/doctors/list',
 	{
-		key: 'doctors-list',
+		key: `doctors-list`,
 		method: 'POST',
-		body: {
+		body: computed(() => ({
 			specialtyIds: [],
 			cityIds: [],
 			languageIds: [],
-		},
+			key: loadedDoctorsKey.value,
+		})),
 	},
 );
 
@@ -19,6 +21,10 @@ const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
 		method: 'POST',
 	},
 );
+
+const updateDoctors = () => {
+	loadedDoctorsKey.value++;
+};
 </script>
 
 <template>
@@ -28,6 +34,7 @@ const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
 				<AdminDoctorFind
 					:doctors="doctorsList.doctors"
 					:isLoadingDoctors="isLoadingDoctors"
+					@updated="updateDoctors"
 				/>
 			</el-collapse-item>
 
@@ -35,6 +42,7 @@ const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
 				<AdminDoctorAdd
 					:clinics="clinicsList.clinics"
 					:isLoadingClinics="isLoadingClinics"
+					@updated="updateDoctors"
 				/>
 			</el-collapse-item>
 

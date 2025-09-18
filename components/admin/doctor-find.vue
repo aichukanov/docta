@@ -4,6 +4,10 @@ const props = defineProps<{
 	isLoadingDoctors: boolean;
 }>();
 
+const emit = defineEmits<{
+	(e: 'updated'): void;
+}>();
+
 const doctorId = ref<number | null>(null);
 
 const searchDoctorName = ref('');
@@ -19,6 +23,30 @@ const doctorOptions = computed(() => {
 		value: doctor.id,
 	}));
 });
+
+const deleteDoctor = async () => {
+	if (!doctorId.value) {
+		alert('Выберите врача');
+		return;
+	}
+
+	if (!confirm('Вы уверены, что хотите удалить врача?')) {
+		return;
+	}
+
+	await useFetch('/api/doctors/remove', {
+		key: 'doctors-remove',
+		method: 'POST',
+		body: {
+			doctorId: doctorId.value,
+		},
+	});
+
+	doctorId.value = null;
+
+	emit('updated');
+	alert('Врач удален');
+};
 </script>
 
 <template>
@@ -50,6 +78,10 @@ const doctorOptions = computed(() => {
 				<div>Telegram: {{ selectedDoctor.telegram }}</div>
 				<div>Whatsapp: {{ selectedDoctor.whatsapp }}</div>
 				<div>Viber: {{ selectedDoctor.viber }}</div>
+
+				<div>
+					<el-button type="danger" @click="deleteDoctor">Удалить</el-button>
+				</div>
 			</div>
 		</div>
 	</div>

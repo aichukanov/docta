@@ -3,7 +3,6 @@ import type { DoctorData } from '~/interfaces/doctor';
 
 const props = defineProps<{
 	clinics: ClinicData[];
-	isLoadingClinics: boolean;
 }>();
 
 const emit = defineEmits<{
@@ -100,19 +99,13 @@ const addDoctor = async () => {
 		<el-input v-model="doctorWhatsapp" placeholder="Whatsapp" />
 		<el-input v-model="doctorViber" placeholder="Viber" />
 
-		<div v-if="isLoadingClinics">
-			<div class="loading-spinner"></div>
-			<p>Загрузка клиник...</p>
-		</div>
-		<div v-else>
-			<FilterableSelect
-				:items="clinicOptions"
-				v-model:value="clinicIds"
-				multiple
-				placeholder="Выберите клинику"
-				placeholderSearch="Введите часть названия клиники"
-			/>
-		</div>
+		<FilterableSelect
+			:items="clinicOptions"
+			v-model:value="clinicIds"
+			multiple
+			placeholder="Выберите клинику"
+			placeholderSearch="Введите часть названия клиники"
+		/>
 
 		<FilterSpecialtySelect v-model:value="specialtyIds" />
 		<FilterLanguageSelect v-model:value="languageIds" />

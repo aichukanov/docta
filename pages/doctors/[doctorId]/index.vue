@@ -41,7 +41,14 @@ const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
 		method: 'POST',
 	},
 );
+
+const isDoctorFound = computed(() => doctorData.value?.id != null);
+
 const doctorClinics = computed(() => {
+	if (!isDoctorFound.value) {
+		return [];
+	}
+
 	return clinicsList.value.clinics.filter((clinic) =>
 		doctorData.value.clinicIds.split(',').map(Number).includes(clinic.id),
 	);
@@ -63,7 +70,7 @@ const onMapReady = () => {
 };
 
 const pageTitle = computed(() => {
-	if (!doctorData.value) {
+	if (!isDoctorFound.value) {
 		return '';
 	}
 
@@ -100,7 +107,7 @@ useSeoMeta({
 				<div class="loading-spinner"></div>
 				<p>{{ t('LoadingDoctor') }}</p>
 			</div>
-			<div v-else class="doctor-info-container">
+			<div v-else-if="isDoctorFound" class="doctor-info-container">
 				<div class="doctor-info-wrapper">
 					<DoctorInfo :doctor="doctorData" />
 					<div class="clinics-list">
@@ -118,6 +125,9 @@ useSeoMeta({
 					:clinics="doctorClinics"
 					@ready="onMapReady"
 				/>
+			</div>
+			<div v-else class="doctor-info-container">
+				<p>{{ t('DoctorNotFound') }}</p>
 			</div>
 		</div>
 	</div>

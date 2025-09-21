@@ -16,6 +16,7 @@ const sr = {
 	NoDoctorsFound: 'Lekari nisu pronađeni',
 	LoadingDoctor: 'Učitavanje podataka o lekaru...',
 	ToSearchPage: 'Na stranicu pretrage',
+	DoctorNotFound: 'Lekar nije pronađen',
 };
 
 export default {
@@ -38,6 +39,7 @@ export default {
 			NoDoctorsFound: 'No doctors found',
 			LoadingDoctor: 'Loading doctor data...',
 			ToSearchPage: 'To search page',
+			DoctorNotFound: 'Doctor not found',
 		},
 		ru: {
 			Doctors: 'Врачи в Черногории',
@@ -57,6 +59,7 @@ export default {
 			NoDoctorsFound: 'Врачи не найдены',
 			LoadingDoctor: 'Загрузка данных о враче...',
 			ToSearchPage: 'К поиску',
+			DoctorNotFound: 'Врач не найден',
 		},
 		tr: {
 			Doctors: "Karadağ'daki doktorlar",
@@ -76,6 +79,7 @@ export default {
 			NoDoctorsFound: 'Doktor bulunamadı',
 			LoadingDoctor: 'Doktor verileri yükleniyor...',
 			ToSearchPage: 'Arama sayfasına git',
+			DoctorNotFound: 'Doktor bulunamadı',
 		},
 		de: {
 			Doctors: 'Ärzte in Montenegro',
@@ -95,6 +99,7 @@ export default {
 			NoDoctorsFound: 'Keine Ärzte gefunden',
 			LoadingDoctor: 'Doktor-Daten werden geladen...',
 			ToSearchPage: 'Zur Suche',
+			DoctorNotFound: 'Ärzte nicht gefunden',
 		},
 		sr,
 		ba: sr,

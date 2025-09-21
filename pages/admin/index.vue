@@ -29,11 +29,21 @@ const updateDoctors = () => {
 
 <template>
 	<div class="admin-index">
-		<el-collapse expand-icon-position="left">
+		<div v-if="isLoadingDoctors || isLoadingClinics">
+			<div class="loading-spinner"></div>
+			<p>Загрузка врачей и клиник...</p>
+		</div>
+		<el-collapse v-else expand-icon-position="left">
 			<el-collapse-item title="Найти врача">
 				<AdminDoctorFind
 					:doctors="doctorsList.doctors"
-					:isLoadingDoctors="isLoadingDoctors"
+					@updated="updateDoctors"
+				/>
+			</el-collapse-item>
+
+			<el-collapse-item title="Объединить врачей">
+				<AdminDoctorMerge
+					:doctors="doctorsList.doctors"
 					@updated="updateDoctors"
 				/>
 			</el-collapse-item>
@@ -41,16 +51,12 @@ const updateDoctors = () => {
 			<el-collapse-item title="Добавить врача">
 				<AdminDoctorAdd
 					:clinics="clinicsList.clinics"
-					:isLoadingClinics="isLoadingClinics"
 					@updated="updateDoctors"
 				/>
 			</el-collapse-item>
 
 			<el-collapse-item title="Добавить клинику">
-				<AdminClinicFind
-					:clinics="clinicsList.clinics"
-					:isLoadingClinics="isLoadingClinics"
-				/>
+				<AdminClinicFind :clinics="clinicsList.clinics" />
 			</el-collapse-item>
 
 			<el-collapse-item title="Добавить клинику">

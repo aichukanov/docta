@@ -1,8 +1,8 @@
 <template>
 	<div class="contact-item">
 		<a :href="waUrl" class="contact-link messenger-link" target="_blank">
-			<IconWhatsApp :size="20" class="messenger-icon" />
-			<span>WhatsApp {{ waContact }}</span>
+			<IconWhatsapp :size="20" class="messenger-icon" />
+			<span>{{ waContact }}</span>
 		</a>
 	</div>
 </template>

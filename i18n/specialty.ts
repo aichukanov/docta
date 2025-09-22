@@ -265,6 +265,26 @@ const sr = {
 
 	[`doctor_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralni hirurg',
 	[`doctors_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralni hirurzi',
+
+	[`specialty_${DoctorSpecialty.MAMMOLOGY}`]: 'Mamologija',
+	[`doctor_${DoctorSpecialty.MAMMOLOGY}`]: 'Mamolog',
+	[`doctors_${DoctorSpecialty.MAMMOLOGY}`]: 'Mamolozi',
+
+	[`specialty_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Onkološka hirurgija',
+	[`doctor_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Onkološki hirurg',
+	[`doctors_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Onkološki hirurzi',
+
+	[`specialty_${DoctorSpecialty.DENTISTRY}`]: 'Stomatologija',
+	[`doctor_${DoctorSpecialty.DENTISTRY}`]: 'Stomatolog',
+	[`doctors_${DoctorSpecialty.DENTISTRY}`]: 'Stomatolozi',
+
+	[`specialty_${DoctorSpecialty.ALLERGOLOGY}`]: 'Alergologija',
+	[`doctor_${DoctorSpecialty.ALLERGOLOGY}`]: 'Alergolog',
+	[`doctors_${DoctorSpecialty.ALLERGOLOGY}`]: 'Alergolozi',
+
+	[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'Imunologija',
+	[`doctor_${DoctorSpecialty.IMMUNOLOGY}`]: 'Imunolog',
+	[`doctors_${DoctorSpecialty.IMMUNOLOGY}`]: 'Imunolozi',
 };
 
 export default {
@@ -355,6 +375,11 @@ export default {
 			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
 				'Physical Medicine and Rehabilitation',
 			[`specialty_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oral Surgery',
+			[`specialty_${DoctorSpecialty.MAMMOLOGY}`]: 'Mammology',
+			[`specialty_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Oncologic Surgery',
+			[`specialty_${DoctorSpecialty.DENTISTRY}`]: 'Dentistry',
+			[`specialty_${DoctorSpecialty.ALLERGOLOGY}`]: 'Allergology',
+			[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunology',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologist',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologists',
@@ -582,6 +607,21 @@ export default {
 
 			[`doctor_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oral Surgeon',
 			[`doctors_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oral Surgeons',
+
+			[`doctor_${DoctorSpecialty.MAMMOLOGY}`]: 'Mammologist',
+			[`doctors_${DoctorSpecialty.MAMMOLOGY}`]: 'Mammologists',
+
+			[`doctor_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Oncologic Surgeon',
+			[`doctors_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Oncologic Surgeons',
+
+			[`doctor_${DoctorSpecialty.DENTISTRY}`]: 'Dentist',
+			[`doctors_${DoctorSpecialty.DENTISTRY}`]: 'Dentists',
+
+			[`doctor_${DoctorSpecialty.ALLERGOLOGY}`]: 'Allergologist',
+			[`doctors_${DoctorSpecialty.ALLERGOLOGY}`]: 'Allergologists',
+
+			[`doctor_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunologist',
+			[`doctors_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunologists',
 		},
 		ru: {
 			Specialty: 'Специальность',
@@ -887,6 +927,26 @@ export default {
 				'Хирургическая стоматология',
 			[`doctor_${DoctorSpecialty.ORAL_SURGERY}`]: 'Стоматолог-хирург',
 			[`doctors_${DoctorSpecialty.ORAL_SURGERY}`]: 'Стоматологи-хирурги',
+
+			[`specialty_${DoctorSpecialty.MAMMOLOGY}`]: 'Маммология',
+			[`doctor_${DoctorSpecialty.MAMMOLOGY}`]: 'Маммолог',
+			[`doctors_${DoctorSpecialty.MAMMOLOGY}`]: 'Маммологи',
+
+			[`specialty_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Онкохирургия',
+			[`doctor_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Онкохирург',
+			[`doctors_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Онкохирурги',
+
+			[`specialty_${DoctorSpecialty.DENTISTRY}`]: 'Стоматология',
+			[`doctor_${DoctorSpecialty.DENTISTRY}`]: 'Стоматолог',
+			[`doctors_${DoctorSpecialty.DENTISTRY}`]: 'Стоматологи',
+
+			[`specialty_${DoctorSpecialty.ALLERGOLOGY}`]: 'Аллергология',
+			[`doctor_${DoctorSpecialty.ALLERGOLOGY}`]: 'Аллерголог',
+			[`doctors_${DoctorSpecialty.ALLERGOLOGY}`]: 'Аллергологи',
+
+			[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'Иммунология',
+			[`doctor_${DoctorSpecialty.IMMUNOLOGY}`]: 'Иммунолог',
+			[`doctors_${DoctorSpecialty.IMMUNOLOGY}`]: 'Иммунологи',
 		},
 		sr,
 		ba: sr,
@@ -976,6 +1036,12 @@ export default {
 			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
 				'Physikalische Medizin und Rehabilitation',
 			[`specialty_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralchirurgie',
+			[`specialty_${DoctorSpecialty.MAMMOLOGY}`]: 'Mammologie',
+			[`specialty_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]:
+				'Onkologische Chirurgie',
+			[`specialty_${DoctorSpecialty.DENTISTRY}`]: 'Zahnmedizin',
+			[`specialty_${DoctorSpecialty.ALLERGOLOGY}`]: 'Allergologie',
+			[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunologie',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologe',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologen',
@@ -1180,6 +1246,22 @@ export default {
 
 			[`doctor_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralchirurg',
 			[`doctors_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralchirurgen',
+
+			[`doctor_${DoctorSpecialty.MAMMOLOGY}`]: 'Mammologe',
+			[`doctors_${DoctorSpecialty.MAMMOLOGY}`]: 'Mammologen',
+
+			[`doctor_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Onkologischer Chirurg',
+			[`doctors_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]:
+				'Onkologische Chirurgen',
+
+			[`doctor_${DoctorSpecialty.DENTISTRY}`]: 'Zahnarzt',
+			[`doctors_${DoctorSpecialty.DENTISTRY}`]: 'Zahnärzte',
+
+			[`doctor_${DoctorSpecialty.ALLERGOLOGY}`]: 'Allergologe',
+			[`doctors_${DoctorSpecialty.ALLERGOLOGY}`]: 'Allergologen',
+
+			[`doctor_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunologe',
+			[`doctors_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunologen',
 		},
 		tr: {
 			Specialty: 'Uzmanlık',
@@ -1261,6 +1343,11 @@ export default {
 			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
 				'Fiziksel Tıp ve Rehabilitasyon',
 			[`specialty_${DoctorSpecialty.ORAL_SURGERY}`]: 'Ağız Cerrahisi',
+			[`specialty_${DoctorSpecialty.MAMMOLOGY}`]: 'Mamoloji',
+			[`specialty_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Onkolojik Cerrahi',
+			[`specialty_${DoctorSpecialty.DENTISTRY}`]: 'Diş Hekimliği',
+			[`specialty_${DoctorSpecialty.ALLERGOLOGY}`]: 'Allerji',
+			[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'İmmünoloji',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyolog',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyologlar',
@@ -1476,6 +1563,21 @@ export default {
 
 			[`doctor_${DoctorSpecialty.ORAL_SURGERY}`]: 'Ağız Cerrahı',
 			[`doctors_${DoctorSpecialty.ORAL_SURGERY}`]: 'Ağız Cerrahları',
+
+			[`doctor_${DoctorSpecialty.MAMMOLOGY}`]: 'Mamolog',
+			[`doctors_${DoctorSpecialty.MAMMOLOGY}`]: 'Mamologlar',
+
+			[`doctor_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Onkolojik Cerrah',
+			[`doctors_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Onkolojik Cerrahlar',
+
+			[`doctor_${DoctorSpecialty.DENTISTRY}`]: 'Diş Hekimi',
+			[`doctors_${DoctorSpecialty.DENTISTRY}`]: 'Diş Hekimleri',
+
+			[`doctor_${DoctorSpecialty.ALLERGOLOGY}`]: 'Allerji Uzmanı',
+			[`doctors_${DoctorSpecialty.ALLERGOLOGY}`]: 'Allerji Uzmanları',
+
+			[`doctor_${DoctorSpecialty.IMMUNOLOGY}`]: 'İmmünolog',
+			[`doctors_${DoctorSpecialty.IMMUNOLOGY}`]: 'İmmünologlar',
 		},
 	},
 };

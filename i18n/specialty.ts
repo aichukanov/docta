@@ -285,6 +285,10 @@ const sr = {
 	[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'Imunologija',
 	[`doctor_${DoctorSpecialty.IMMUNOLOGY}`]: 'Imunolog',
 	[`doctors_${DoctorSpecialty.IMMUNOLOGY}`]: 'Imunolozi',
+
+	[`specialty_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Oftalmološka hirurgija',
+	[`doctor_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Oftalmolog-hirurg',
+	[`doctors_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Oftalmolozi-hirurzi',
 };
 
 export default {
@@ -380,6 +384,7 @@ export default {
 			[`specialty_${DoctorSpecialty.DENTISTRY}`]: 'Dentistry',
 			[`specialty_${DoctorSpecialty.ALLERGOLOGY}`]: 'Allergology',
 			[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunology',
+			[`specialty_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Ophthalmic Surgery',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologist',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologists',
@@ -622,6 +627,9 @@ export default {
 
 			[`doctor_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunologist',
 			[`doctors_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunologists',
+
+			[`doctor_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Ophthalmic Surgeon',
+			[`doctors_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Ophthalmic Surgeons',
 		},
 		ru: {
 			Specialty: 'Специальность',
@@ -947,6 +955,10 @@ export default {
 			[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'Иммунология',
 			[`doctor_${DoctorSpecialty.IMMUNOLOGY}`]: 'Иммунолог',
 			[`doctors_${DoctorSpecialty.IMMUNOLOGY}`]: 'Иммунологи',
+
+			[`specialty_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Офтальмохирургия',
+			[`doctor_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Офтальмолог-хирург',
+			[`doctors_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Офтальмологи-хирурги',
 		},
 		sr,
 		ba: sr,
@@ -1042,6 +1054,7 @@ export default {
 			[`specialty_${DoctorSpecialty.DENTISTRY}`]: 'Zahnmedizin',
 			[`specialty_${DoctorSpecialty.ALLERGOLOGY}`]: 'Allergologie',
 			[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunologie',
+			[`specialty_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Augenchirurgie',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologe',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologen',
@@ -1262,6 +1275,9 @@ export default {
 
 			[`doctor_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunologe',
 			[`doctors_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunologen',
+
+			[`doctor_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Augenchirurg',
+			[`doctors_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Augenchirurgen',
 		},
 		tr: {
 			Specialty: 'Uzmanlık',
@@ -1348,6 +1364,7 @@ export default {
 			[`specialty_${DoctorSpecialty.DENTISTRY}`]: 'Diş Hekimliği',
 			[`specialty_${DoctorSpecialty.ALLERGOLOGY}`]: 'Allerji',
 			[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'İmmünoloji',
+			[`specialty_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Göz Cerrahisi',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyolog',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyologlar',
@@ -1578,6 +1595,9 @@ export default {
 
 			[`doctor_${DoctorSpecialty.IMMUNOLOGY}`]: 'İmmünolog',
 			[`doctors_${DoctorSpecialty.IMMUNOLOGY}`]: 'İmmünologlar',
+
+			[`doctor_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Göz Cerrahı',
+			[`doctors_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Göz Cerrahları',
 		},
 	},
 };

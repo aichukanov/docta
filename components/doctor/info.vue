@@ -41,7 +41,7 @@ const doctorLink = computed(() => ({
 				{{ doctor.professionalTitle }}
 			</div>
 			<DoctorSpecialties :doctor="doctor" />
-			<DoctorLanguages v-if="!short" :doctor="doctor" />
+			<ConsultationLanguages v-if="!short" :languageIds="doctor.languageIds" />
 		</div>
 	</div>
 </template>

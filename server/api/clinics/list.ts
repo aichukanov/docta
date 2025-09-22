@@ -4,7 +4,7 @@ import type { ClinicList } from '~/interfaces/doctor';
 export default defineEventHandler(async (event): Promise<ClinicList> => {
 	try {
 		const clinicsQuery = `
-			SELECT DISTINCT
+			SELECT
 				c.id,
 				c.name,
 				c.city_id as cityId,
@@ -18,8 +18,12 @@ export default defineEventHandler(async (event): Promise<ClinicList> => {
 				c.telegram,
 				c.whatsapp,
 				c.viber,
-				c.website
-			FROM clinics c;
+				c.website,
+				COALESCE(GROUP_CONCAT(DISTINCT cl.language_id ORDER BY cl.language_id), '1') as languageIds
+			FROM clinics c
+			LEFT JOIN clinic_languages cl ON c.id = cl.clinic_id
+			GROUP BY c.id
+			ORDER BY c.name ASC;
 		`;
 
 		const connection = await getConnection();

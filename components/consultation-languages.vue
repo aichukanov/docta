@@ -1,15 +1,16 @@
 <script setup lang="ts">
 import type { DoctorData } from '~/interfaces/doctor';
 import languageI18n from '~/i18n/language';
+import type { LanguageId } from '~/enums/languages';
 
 const props = defineProps<{
-	doctor: DoctorData;
+	languageIds: string;
 }>();
 
 const { t } = useI18n(languageI18n);
 
 const languagesText = computed(() => {
-	return props.doctor.languageIds
+	return props.languageIds
 		?.split(',')
 		.map((lang) => t(`language_${lang}`) || lang)
 		.join(', ');

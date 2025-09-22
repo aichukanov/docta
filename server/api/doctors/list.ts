@@ -55,7 +55,10 @@ export async function getDoctorList(
 		whereFilters.push(`cities.id IN (${body.cityIds.join(',')})`);
 	}
 	if (body.languageIds?.length > 0) {
-		whereFilters.push(`languages.id IN ("${body.languageIds.join('","')}")`);
+		const languageList = body.languageIds.join(',');
+		whereFilters.push(
+			`(languages.id IN (${languageList}) OR clinic_languages.language_id IN (${languageList}))`,
+		);
 	}
 	if (body.name && validateName(body, 'api/doctors/list')) {
 		whereFilters.push(`d.name LIKE '%${body.name}%'`);
@@ -89,6 +92,7 @@ export async function getDoctorList(
 			LEFT JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			LEFT JOIN clinics ON dc.clinic_id = clinics.id
 			LEFT JOIN cities ON clinics.city_id = cities.id
+			LEFT JOIN clinic_languages ON dc.clinic_id = clinic_languages.clinic_id
 			${whereFiltersString}
 			GROUP BY d.id, d.name ORDER BY d.name ASC;
 		`;

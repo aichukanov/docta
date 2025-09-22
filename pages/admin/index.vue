@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const loadedDoctorsKey = ref(0);
+const loadedClinicsKey = ref(0);
+
 const { pending: isLoadingDoctors, data: doctorsList } = await useFetch(
 	'/api/doctors/list',
 	{
@@ -17,13 +19,20 @@ const { pending: isLoadingDoctors, data: doctorsList } = await useFetch(
 const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
 	'/api/clinics/list',
 	{
-		key: 'clinics-list',
+		key: `clinics-list`,
 		method: 'POST',
+		body: computed(() => ({
+			key: loadedClinicsKey.value,
+		})),
 	},
 );
 
 const updateDoctors = () => {
 	loadedDoctorsKey.value++;
+};
+
+const updateClinics = () => {
+	loadedClinicsKey.value++;
 };
 </script>
 
@@ -60,7 +69,7 @@ const updateDoctors = () => {
 			</el-collapse-item>
 
 			<el-collapse-item title="Добавить клинику">
-				<AdminClinicAdd />
+				<AdminClinicAdd @updated="updateClinics" />
 			</el-collapse-item>
 		</el-collapse>
 	</div>

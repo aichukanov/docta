@@ -18,6 +18,7 @@ export interface ClinicData extends ContactList {
 	address: string;
 	latitude: number;
 	longitude: number;
+	languageIds: string;
 }
 
 export interface DoctorList {

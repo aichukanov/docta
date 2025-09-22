@@ -1,3 +1,19 @@
+<script setup lang="ts">
+import { LocationFilled } from '@element-plus/icons-vue';
+import type { ContactList } from '~/interfaces/contacts';
+import { hasContacts } from '../contacts/utils';
+
+const props = defineProps<{
+	clinic: ClinicData;
+}>();
+
+defineEmits<{
+	(e: 'show-on-map'): void;
+}>();
+
+const { t } = useI18n();
+</script>
+
 <template>
 	<div class="clinic-summary">
 		<div class="location-wrapper">
@@ -14,7 +30,8 @@
 					</el-link>
 					<span v-else class="clinic-name">{{ clinic.name }}</span>
 				</div>
-				<div v-if="clinic.address" class="location-address">
+				<ConsultationLanguages :languageIds="clinic.languageIds" />
+				<div class="location-address">
 					<el-icon><LocationFilled /></el-icon>
 					<span>{{ clinic.address }}</span>
 				</div>
@@ -33,22 +50,6 @@
 		</div>
 	</div>
 </template>
-
-<script setup lang="ts">
-import { LocationFilled } from '@element-plus/icons-vue';
-import type { ContactList } from '~/interfaces/contacts';
-import { hasContacts } from '../contacts/utils';
-
-const props = defineProps<{
-	clinic: ClinicData;
-}>();
-
-defineEmits<{
-	(e: 'show-on-map'): void;
-}>();
-
-const { t } = useI18n();
-</script>
 
 <i18n lang="json">
 {

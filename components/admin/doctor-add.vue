@@ -10,6 +10,7 @@ const emit = defineEmits<{
 }>();
 
 const doctorName = ref('');
+const doctorProfessionalTitle = ref('');
 const doctorEmail = ref('');
 const doctorPhone = ref('');
 const doctorWebsite = ref('');
@@ -33,6 +34,7 @@ const clinicOptions = computed(() => {
 
 const clearFields = () => {
 	doctorName.value = '';
+	doctorProfessionalTitle.value = '';
 	doctorEmail.value = '';
 	doctorPhone.value = '';
 	doctorWebsite.value = '';
@@ -63,6 +65,7 @@ const addDoctor = async () => {
 		method: 'POST',
 		body: {
 			name: doctorName.value,
+			professionalTitle: doctorProfessionalTitle.value,
 			email: doctorEmail.value,
 			phone: doctorPhone.value,
 			website: doctorWebsite.value,
@@ -87,6 +90,10 @@ const addDoctor = async () => {
 <template>
 	<div class="doctor-add">
 		<el-input v-model="doctorName" placeholder="Имя" required />
+		<el-input
+			v-model="doctorProfessionalTitle"
+			placeholder="Профессиональное звание"
+		/>
 		<el-input v-model="doctorPhotoUrl" placeholder="Фото" />
 		<el-input v-model="doctorEmail" placeholder="Email" />
 		<el-input v-model="doctorPhone" placeholder="Телефон" />

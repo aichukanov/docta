@@ -24,6 +24,9 @@ const sr = {
 
 	[`city_${CityId.BAR}`]: 'Bar',
 	[`city_${CityId.BAR}_genitive`]: 'Baru',
+
+	[`city_${CityId.HERCEG_NOVI}`]: 'Herceg Novi',
+	[`city_${CityId.HERCEG_NOVI}_genitive`]: 'Herceg Novi',
 };
 
 export default {
@@ -46,6 +49,8 @@ export default {
 			[`city_${CityId.KOTOR}_genitive`]: 'Kotor',
 			[`city_${CityId.BAR}`]: 'Bar',
 			[`city_${CityId.BAR}_genitive`]: 'Bar',
+			[`city_${CityId.HERCEG_NOVI}`]: 'Herceg Novi',
+			[`city_${CityId.HERCEG_NOVI}_genitive`]: 'Herceg Novi',
 		},
 		ru: {
 			City: 'Город',
@@ -65,6 +70,8 @@ export default {
 			[`city_${CityId.KOTOR}_genitive`]: 'Которе',
 			[`city_${CityId.BAR}`]: 'Бар',
 			[`city_${CityId.BAR}_genitive`]: 'Баре',
+			[`city_${CityId.HERCEG_NOVI}`]: 'Херцег-Нови',
+			[`city_${CityId.HERCEG_NOVI}_genitive`]: 'Херцег-Нови',
 		},
 		sr,
 		ba: sr,
@@ -87,6 +94,8 @@ export default {
 			[`city_${CityId.KOTOR}_genitive`]: 'Kotor',
 			[`city_${CityId.BAR}`]: 'Bar',
 			[`city_${CityId.BAR}_genitive`]: 'Bar',
+			[`city_${CityId.HERCEG_NOVI}`]: 'Herceg Novi',
+			[`city_${CityId.HERCEG_NOVI}_genitive`]: 'Herceg Novi',
 		},
 		tr: {
 			City: 'Şehir',
@@ -106,6 +115,8 @@ export default {
 			[`city_${CityId.KOTOR}_genitive`]: "Kotor'da",
 			[`city_${CityId.BAR}`]: 'Bar',
 			[`city_${CityId.BAR}_genitive`]: "Bar'da",
+			[`city_${CityId.HERCEG_NOVI}`]: 'Herceg Novi',
+			[`city_${CityId.HERCEG_NOVI}_genitive`]: "Herceg Novi'de",
 		},
 	},
 };

@@ -6,6 +6,7 @@ export enum CityId {
 	ULCINJ = 5,
 	KOTOR = 6,
 	BAR = 7,
+	HERCEG_NOVI = 8,
 }
 
 export const CITY_COORDINATES = {
@@ -16,4 +17,5 @@ export const CITY_COORDINATES = {
 	[CityId.ULCINJ]: [41.9297, 19.2142],
 	[CityId.KOTOR]: [42.43204385, 18.76945397],
 	[CityId.BAR]: [42.0980602, 19.0948273],
+	[CityId.HERCEG_NOVI]: [42.3584331, 18.7988827],
 };

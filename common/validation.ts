@@ -89,6 +89,15 @@ export function validateDoctorLanguageIds(
 	return true;
 }
 
+export function validateCityId({ cityId }: { cityId: unknown }, from: string) {
+	if (CityId[cityId as keyof typeof CityId] == null) {
+		showError(from, 'Invalid city: ' + cityId);
+		return false;
+	}
+
+	return true;
+}
+
 export function validateClinicIds(
 	{ clinicIds }: { clinicIds: unknown },
 	from: string,

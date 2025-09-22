@@ -22,7 +22,7 @@ const doctorViber = ref('');
 
 const clinicIds = ref<number[]>([]);
 const specialtyIds = ref<number[]>([]);
-const languageIds = ref<number[]>([]);
+const languageIds = ref<number[]>([1]);
 
 const clinicOptions = computed(() => {
 	return props.clinics.map((clinic) => ({
@@ -44,7 +44,7 @@ const clearFields = () => {
 	doctorViber.value = '';
 	clinicIds.value = [];
 	specialtyIds.value = [];
-	languageIds.value = [];
+	languageIds.value = [1];
 };
 
 const addDoctor = async () => {
@@ -86,8 +86,6 @@ const addDoctor = async () => {
 
 <template>
 	<div class="doctor-add">
-		<h2>Добавить врача</h2>
-
 		<el-input v-model="doctorName" placeholder="Имя" required />
 		<el-input v-model="doctorPhotoUrl" placeholder="Фото" />
 		<el-input v-model="doctorEmail" placeholder="Email" />

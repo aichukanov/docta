@@ -55,7 +55,7 @@ const updateDoctors = () => {
 				/>
 			</el-collapse-item>
 
-			<el-collapse-item title="Добавить клинику">
+			<el-collapse-item title="Найти клинику">
 				<AdminClinicFind :clinics="clinicsList.clinics" />
 			</el-collapse-item>
 

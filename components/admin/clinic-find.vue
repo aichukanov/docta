@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { CityId } from '~/enums/cities';
+
 const props = defineProps<{
 	clinics: ClinicData[];
 }>();

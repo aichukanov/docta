@@ -289,6 +289,10 @@ const sr = {
 	[`specialty_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Oftalmološka hirurgija',
 	[`doctor_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Oftalmolog-hirurg',
 	[`doctors_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Oftalmolozi-hirurzi',
+
+	[`specialty_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopatija',
+	[`doctor_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopat',
+	[`doctors_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopati',
 };
 
 export default {
@@ -385,6 +389,7 @@ export default {
 			[`specialty_${DoctorSpecialty.ALLERGOLOGY}`]: 'Allergology',
 			[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunology',
 			[`specialty_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Ophthalmic Surgery',
+			[`specialty_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopathy',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologist',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologists',
@@ -630,6 +635,9 @@ export default {
 
 			[`doctor_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Ophthalmic Surgeon',
 			[`doctors_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Ophthalmic Surgeons',
+
+			[`doctor_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopath',
+			[`doctors_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopaths',
 		},
 		ru: {
 			Specialty: 'Специальность',
@@ -927,9 +935,9 @@ export default {
 			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
 				'Физикальная медицина и реабилитация',
 			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Физиолог',
+				'Физиотерапевт',
 			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Физиологи',
+				'Физиотерапевты',
 
 			[`specialty_${DoctorSpecialty.ORAL_SURGERY}`]:
 				'Хирургическая стоматология',
@@ -959,6 +967,10 @@ export default {
 			[`specialty_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Офтальмохирургия',
 			[`doctor_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Офтальмолог-хирург',
 			[`doctors_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Офтальмологи-хирурги',
+
+			[`specialty_${DoctorSpecialty.OSTEOPATHY}`]: 'Остеопатия',
+			[`doctor_${DoctorSpecialty.OSTEOPATHY}`]: 'Остеопат',
+			[`doctors_${DoctorSpecialty.OSTEOPATHY}`]: 'Остеопаты',
 		},
 		sr,
 		ba: sr,
@@ -1055,6 +1067,7 @@ export default {
 			[`specialty_${DoctorSpecialty.ALLERGOLOGY}`]: 'Allergologie',
 			[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunologie',
 			[`specialty_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Augenchirurgie',
+			[`specialty_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopathie',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologe',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologen',
@@ -1278,6 +1291,9 @@ export default {
 
 			[`doctor_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Augenchirurg',
 			[`doctors_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Augenchirurgen',
+
+			[`doctor_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopath',
+			[`doctors_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopathen',
 		},
 		tr: {
 			Specialty: 'Uzmanlık',
@@ -1365,6 +1381,7 @@ export default {
 			[`specialty_${DoctorSpecialty.ALLERGOLOGY}`]: 'Allerji',
 			[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'İmmünoloji',
 			[`specialty_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Göz Cerrahisi',
+			[`specialty_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopati',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyolog',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyologlar',
@@ -1598,6 +1615,9 @@ export default {
 
 			[`doctor_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Göz Cerrahı',
 			[`doctors_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Göz Cerrahları',
+
+			[`doctor_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopat',
+			[`doctors_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopatlar',
 		},
 	},
 };

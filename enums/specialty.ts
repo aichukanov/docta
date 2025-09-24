@@ -65,4 +65,5 @@ export enum DoctorSpecialty {
 	ALLERGOLOGY = 79,
 	IMMUNOLOGY = 80,
 	OPHTHALMIC_SURGERY = 81,
+	OSTEOPATHY = 82,
 }

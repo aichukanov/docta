@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-	phoneNumber: string;
+	value: string;
 }>();
 
 const { t } = useI18n();
@@ -22,7 +22,7 @@ const isCopied = ref(false);
 
 async function copyToClipboard(): Promise<void> {
 	try {
-		await navigator.clipboard.writeText(props.phoneNumber);
+		await navigator.clipboard.writeText(props.value);
 		isCopied.value = true;
 
 		setTimeout(() => {
@@ -48,35 +48,35 @@ async function copyToClipboard(): Promise<void> {
 }
 </style>
 
-<i18n>
+<i18n lang="json">
 {
 	"en": {
 		"Copied": "Copied",
-		"CopyNumber": "Copy Number"
+		"CopyNumber": "Copy"
 	},
 	"sr": {
 		"Copied": "Kopirano",
-		"CopyNumber": "Kopiraj broj"
+		"CopyNumber": "Kopiraj"
 	},
 	"me": {
 		"Copied": "Kopirano",
-		"CopyNumber": "Kopiraj broj"
+		"CopyNumber": "Kopiraj"
 	},
 	"ba": {
 		"Copied": "Kopirano",
-		"CopyNumber": "Kopiraj broj"
+		"CopyNumber": "Kopiraj"
 	},
 	"ru": {
 		"Copied": "Скопировано",
-		"CopyNumber": "Скопировать номер"
+		"CopyNumber": "Скопировать"
 	},
 	"de": {
 		"Copied": "Kopiert",
-		"CopyNumber": "Nummer kopieren"
+		"CopyNumber": "Kopieren"
 	},
 	"tr": {
 		"Copied": "Kopyalandı",
-		"CopyNumber": "Numarayı kopyala"
+		"CopyNumber": "Kopyala"
 	}
 }
 </i18n>

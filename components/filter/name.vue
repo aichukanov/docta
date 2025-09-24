@@ -21,9 +21,18 @@ const { t } = useI18n();
 		"DoctorName": "Doctor name",
 		"InsertDoctorName": "Insert doctor name"
 	},
-	"sr": { "DoctorName": "Име врача", "InsertDoctorName": "Унесите име врача" },
-	"ba": { "DoctorName": "Име врача", "InsertDoctorName": "Унесите име врача" },
-	"me": { "DoctorName": "Име врача", "InsertDoctorName": "Унесите име врача" },
+	"sr": {
+		"DoctorName": "Ime lekara",
+		"InsertDoctorName": "Unesite ime lekara"
+	},
+	"ba": {
+		"DoctorName": "Ime lekara",
+		"InsertDoctorName": "Unesite ime lekara"
+	},
+	"me": {
+		"DoctorName": "Ime lekara",
+		"InsertDoctorName": "Unesite ime lekara"
+	},
 	"de": { "DoctorName": "Arztname", "InsertDoctorName": "Arztname eingeben" },
 	"tr": { "DoctorName": "Doktor adı", "InsertDoctorName": "Doktor adı girin" }
 }

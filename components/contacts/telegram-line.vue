@@ -1,10 +1,8 @@
 <template>
-	<div class="contact-item">
-		<a :href="telegramUrl" class="contact-link messenger-link" target="_blank">
-			<IconTelegram :size="20" class="messenger-icon" />
-			<span>Telegram {{ telegramContact }}</span>
-		</a>
-	</div>
+	<ContactsLine :value="telegramUrl" link>
+		<IconTelegram :size="20" class="messenger-icon" />
+		<span>{{ telegramContact }}</span>
+	</ContactsLine>
 </template>
 
 <script setup lang="ts">

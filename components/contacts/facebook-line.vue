@@ -1,10 +1,8 @@
 <template>
-	<div class="contact-item">
-		<a :href="facebookUrl" class="contact-link messenger-link" target="_blank">
-			<IconFacebook :size="20" class="messenger-icon" />
-			<span>{{ profile }}</span>
-		</a>
-	</div>
+	<ContactsLine :value="facebookUrl" link>
+		<IconFacebook :size="20" class="messenger-icon" />
+		<span>{{ profile }}</span>
+	</ContactsLine>
 </template>
 
 <script setup lang="ts">

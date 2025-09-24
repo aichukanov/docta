@@ -1,10 +1,8 @@
 <template>
-	<div class="contact-item">
-		<a :href="viberUrl" class="contact-link messenger-link" target="_blank">
-			<IconViber :size="20" class="messenger-icon" />
-			<span>Viber {{ viberContact }}</span>
-		</a>
-	</div>
+	<ContactsLine :value="contact">
+		<IconViber :size="20" class="messenger-icon" />
+		<span>{{ viberContact }}</span>
+	</ContactsLine>
 </template>
 
 <script setup lang="ts">
@@ -14,9 +12,6 @@ const props = defineProps<{
 	contact: string;
 }>();
 
-const viberUrl = computed(
-	() => `viber://chat?number=${props.contact.replace(/[^+\d]/g, '')}`,
-);
 const viberContact = computed(() =>
 	isPhoneNumber(props.contact)
 		? formatPhoneNumber(props.contact)

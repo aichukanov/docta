@@ -74,7 +74,7 @@ const updateFromRoute = (query: Record<string, string | string[]>) => {
 	if (preparedName) {
 		name.value = preparedName;
 	} else {
-		name.value = '';
+		name.value = undefined;
 	}
 };
 

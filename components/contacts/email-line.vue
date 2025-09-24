@@ -1,10 +1,8 @@
 <template>
-	<div class="contact-item">
-		<a :href="`mailto:${emailAddress}`" class="contact-link">
-			<IconEmail :size="20" class="messenger-icon" />
-			<span>{{ emailAddress }}</span>
-		</a>
-	</div>
+	<ContactsLine :value="emailAddress">
+		<IconEmail :size="20" class="messenger-icon" />
+		<span>{{ emailAddress }}</span>
+	</ContactsLine>
 </template>
 
 <script setup lang="ts">

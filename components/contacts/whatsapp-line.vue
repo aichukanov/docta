@@ -1,10 +1,8 @@
 <template>
-	<div class="contact-item">
-		<a :href="waUrl" class="contact-link messenger-link" target="_blank">
-			<IconWhatsapp :size="20" class="messenger-icon" />
-			<span>{{ waContact }}</span>
-		</a>
-	</div>
+	<ContactsLine :value="waUrl" link>
+		<IconWhatsapp :size="20" class="messenger-icon" />
+		<span>{{ waContact }}</span>
+	</ContactsLine>
 </template>
 
 <script setup lang="ts">

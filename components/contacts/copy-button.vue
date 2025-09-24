@@ -1,14 +1,20 @@
 <template>
-	<el-button
-		:title="isCopied ? t('Copied') : t('CopyNumber')"
-		:class="isCopied ? 'copy-button copied' : 'copy-button'"
-		@click="copyToClipboard"
+	<el-tooltip
+		:content="isCopied ? t('Copied') : t('CopyNumber')"
+		placement="bottom"
+		effect="light"
+		:showAfter="700"
 	>
-		<template #icon>
-			<IconCheck v-if="isCopied" :size="14" color="var(--color-success)" />
-			<IconCopy v-else :size="14" color="var(--color-text-secondary)" />
-		</template>
-	</el-button>
+		<el-button
+			:class="isCopied ? 'copy-button copied' : 'copy-button'"
+			@click="copyToClipboard"
+		>
+			<template #icon>
+				<IconCheck v-if="isCopied" :size="14" color="var(--color-success)" />
+				<IconCopy v-else :size="14" color="var(--color-text-secondary)" />
+			</template>
+		</el-button>
+	</el-tooltip>
 </template>
 
 <script setup lang="ts">
@@ -68,7 +74,7 @@ async function copyToClipboard(): Promise<void> {
 	},
 	"ru": {
 		"Copied": "Скопировано",
-		"CopyNumber": "Скопировать"
+		"CopyNumber": "Копировать"
 	},
 	"de": {
 		"Copied": "Kopiert",

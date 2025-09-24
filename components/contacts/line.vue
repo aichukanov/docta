@@ -1,16 +1,23 @@
 <template>
 	<div class="contact-item phone-item">
-		<a
-			v-if="link"
-			:href="value"
-			class="contact-link messenger-link"
-			target="_blank"
+		<el-tooltip
+			:content="tooltip"
+			placement="bottom"
+			effect="light"
+			:showAfter="700"
 		>
-			<slot />
-		</a>
-		<span v-else class="contact-link">
-			<slot />
-		</span>
+			<a
+				v-if="link"
+				:href="value"
+				class="contact-link messenger-link"
+				target="_blank"
+			>
+				<slot />
+			</a>
+			<span v-else class="contact-link">
+				<slot />
+			</span>
+		</el-tooltip>
 
 		<ContactsCopyButton :value="value" />
 	</div>
@@ -19,6 +26,7 @@
 <script setup lang="ts">
 defineProps<{
 	value: string;
+	tooltip: string;
 	link?: boolean;
 }>();
 </script>

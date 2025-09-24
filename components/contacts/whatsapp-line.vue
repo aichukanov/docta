@@ -1,5 +1,5 @@
 <template>
-	<ContactsLine :value="waUrl" link>
+	<ContactsLine :value="waUrl" link :tooltip="t('Whatsapp')">
 		<IconWhatsapp :size="20" class="messenger-icon" />
 		<span>{{ waContact }}</span>
 	</ContactsLine>
@@ -21,6 +21,34 @@ const waContact = computed(() =>
 		? formatPhoneNumber(props.contact)
 		: props.contact,
 );
+
+const { t } = useI18n();
 </script>
 
 <style scoped src="./style.css" />
+
+<i18n lang="json">
+{
+	"en": {
+		"Whatsapp": "Whatsapp"
+	},
+	"ru": {
+		"Whatsapp": "Whatsapp"
+	},
+	"sr": {
+		"Whatsapp": "Whatsapp"
+	},
+	"ba": {
+		"Whatsapp": "Whatsapp"
+	},
+	"me": {
+		"Whatsapp": "Whatsapp"
+	},
+	"de": {
+		"Whatsapp": "Whatsapp"
+	},
+	"tr": {
+		"Whatsapp": "Whatsapp"
+	}
+}
+</i18n>

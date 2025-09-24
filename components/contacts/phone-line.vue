@@ -1,5 +1,5 @@
 <template>
-	<ContactsLine :value="phoneNumber">
+	<ContactsLine :value="phoneNumber" :tooltip="t('Phone')">
 		<IconPhone :size="20" class="phone-icon" />
 		<span>{{ formatPhoneNumber(phoneNumber) }}</span>
 	</ContactsLine>
@@ -11,6 +11,34 @@ import { formatPhoneNumber } from './utils';
 defineProps<{
 	phoneNumber: string;
 }>();
+
+const { t } = useI18n();
 </script>
 
 <style scoped src="./style.css" />
+
+<i18n lang="json">
+{
+	"en": {
+		"Phone": "Phone number"
+	},
+	"ru": {
+		"Phone": "Номер телефона"
+	},
+	"sr": {
+		"Phone": "Broj telefona"
+	},
+	"ba": {
+		"Phone": "Broj telefona"
+	},
+	"me": {
+		"Phone": "Broj telefona"
+	},
+	"de": {
+		"Phone": "Telefonnummer"
+	},
+	"tr": {
+		"Phone": "Telefon numarası"
+	}
+}
+</i18n>

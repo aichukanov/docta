@@ -1,5 +1,5 @@
 <template>
-	<ContactsLine :value="telegramUrl" link>
+	<ContactsLine :value="telegramUrl" link :tooltip="t('Telegram')">
 		<IconTelegram :size="20" class="messenger-icon" />
 		<span>{{ telegramContact }}</span>
 	</ContactsLine>
@@ -23,6 +23,34 @@ const telegramContact = computed(() =>
 		? formatPhoneNumber(props.contact)
 		: props.contact,
 );
+
+const { t } = useI18n();
 </script>
 
 <style scoped src="./style.css" />
+
+<i18n lang="json">
+{
+	"en": {
+		"Telegram": "Telegram"
+	},
+	"ru": {
+		"Telegram": "Telegram"
+	},
+	"sr": {
+		"Telegram": "Telegram"
+	},
+	"ba": {
+		"Telegram": "Telegram"
+	},
+	"me": {
+		"Telegram": "Telegram"
+	},
+	"de": {
+		"Telegram": "Telegram"
+	},
+	"tr": {
+		"Telegram": "Telegram"
+	}
+}
+</i18n>

@@ -293,6 +293,16 @@ const sr = {
 	[`specialty_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopatija',
 	[`doctor_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopat',
 	[`doctors_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopati',
+
+	[`specialty_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]: 'Hiperbarična medicina',
+	[`doctor_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
+		'Lekar hiperbaričke medicine',
+	[`doctors_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
+		'Lekari hiperbaričke medicine',
+
+	[`specialty_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Patološka anatomija',
+	[`doctor_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Patohistolog',
+	[`doctors_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Patohistolozi',
 };
 
 export default {
@@ -390,6 +400,10 @@ export default {
 			[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunology',
 			[`specialty_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Ophthalmic Surgery',
 			[`specialty_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopathy',
+			[`specialty_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
+				'Hyperbaric Medicine',
+			[`specialty_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]:
+				'Pathological Anatomy',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologist',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologists',
@@ -638,6 +652,14 @@ export default {
 
 			[`doctor_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopath',
 			[`doctors_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopaths',
+
+			[`doctor_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
+				'Hyperbaric Medicine Doctor',
+			[`doctors_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
+				'Hyperbaric Medicine Doctors',
+
+			[`doctor_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Pathologist',
+			[`doctors_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Pathologists',
 		},
 		ru: {
 			Specialty: 'Специальность',
@@ -971,6 +993,18 @@ export default {
 			[`specialty_${DoctorSpecialty.OSTEOPATHY}`]: 'Остеопатия',
 			[`doctor_${DoctorSpecialty.OSTEOPATHY}`]: 'Остеопат',
 			[`doctors_${DoctorSpecialty.OSTEOPATHY}`]: 'Остеопаты',
+
+			[`specialty_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
+				'Гипербарическая медицина',
+			[`doctor_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
+				'Врач гипербарической медицины',
+			[`doctors_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
+				'Врачи гипербарической медицины',
+
+			[`specialty_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]:
+				'Патологическая анатомия',
+			[`doctor_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Патологоанатом',
+			[`doctors_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Патологоанатомы',
 		},
 		sr,
 		ba: sr,
@@ -1068,6 +1102,9 @@ export default {
 			[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'Immunologie',
 			[`specialty_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Augenchirurgie',
 			[`specialty_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopathie',
+			[`specialty_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]: 'Hyperbare Medizin',
+			[`specialty_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]:
+				'Pathologische Anatomie',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologe',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologen',
@@ -1294,6 +1331,14 @@ export default {
 
 			[`doctor_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopath',
 			[`doctors_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopathen',
+
+			[`doctor_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
+				'Hyperbare Medizin Arzt',
+			[`doctors_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
+				'Hyperbare Medizin Ärzte',
+
+			[`doctor_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Pathologe',
+			[`doctors_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Pathologen',
 		},
 		tr: {
 			Specialty: 'Uzmanlık',
@@ -1382,6 +1427,9 @@ export default {
 			[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'İmmünoloji',
 			[`specialty_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Göz Cerrahisi',
 			[`specialty_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopati',
+			[`specialty_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]: 'Hiperbarik Tıp',
+			[`specialty_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]:
+				'Patolojik Anatomi',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyolog',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyologlar',
@@ -1618,6 +1666,14 @@ export default {
 
 			[`doctor_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopat',
 			[`doctors_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopatlar',
+
+			[`doctor_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
+				'Hiperbarik Tıp Doktoru',
+			[`doctors_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
+				'Hiperbarik Tıp Doktorları',
+
+			[`doctor_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Patolog',
+			[`doctors_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Patologlar',
 		},
 	},
 };

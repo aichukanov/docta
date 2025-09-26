@@ -303,6 +303,14 @@ const sr = {
 	[`specialty_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Patološka anatomija',
 	[`doctor_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Patohistolog',
 	[`doctors_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Patohistolozi',
+
+	[`specialty_${DoctorSpecialty.PODIATRY}`]: 'Podologija',
+	[`doctor_${DoctorSpecialty.PODIATRY}`]: 'Podolog',
+	[`doctors_${DoctorSpecialty.PODIATRY}`]: 'Podolozi',
+
+	[`specialty_${DoctorSpecialty.TRICHOLOGY}`]: 'Trihologija',
+	[`doctor_${DoctorSpecialty.TRICHOLOGY}`]: 'Triholog',
+	[`doctors_${DoctorSpecialty.TRICHOLOGY}`]: 'Triholozi',
 };
 
 export default {
@@ -404,6 +412,8 @@ export default {
 				'Hyperbaric Medicine',
 			[`specialty_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]:
 				'Pathological Anatomy',
+			[`specialty_${DoctorSpecialty.PODIATRY}`]: 'Podiatry',
+			[`specialty_${DoctorSpecialty.TRICHOLOGY}`]: 'Trichology',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologist',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologists',
@@ -660,6 +670,12 @@ export default {
 
 			[`doctor_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Pathologist',
 			[`doctors_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Pathologists',
+
+			[`doctor_${DoctorSpecialty.PODIATRY}`]: 'Podiatrist',
+			[`doctors_${DoctorSpecialty.PODIATRY}`]: 'Podiatrists',
+
+			[`doctor_${DoctorSpecialty.TRICHOLOGY}`]: 'Trichologist',
+			[`doctors_${DoctorSpecialty.TRICHOLOGY}`]: 'Trichologists',
 		},
 		ru: {
 			Specialty: 'Специальность',
@@ -1005,6 +1021,14 @@ export default {
 				'Патологическая анатомия',
 			[`doctor_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Патологоанатом',
 			[`doctors_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Патологоанатомы',
+
+			[`specialty_${DoctorSpecialty.PODIATRY}`]: 'Подология',
+			[`doctor_${DoctorSpecialty.PODIATRY}`]: 'Подолог',
+			[`doctors_${DoctorSpecialty.PODIATRY}`]: 'Подологи',
+
+			[`specialty_${DoctorSpecialty.TRICHOLOGY}`]: 'Трихология',
+			[`doctor_${DoctorSpecialty.TRICHOLOGY}`]: 'Трихолог',
+			[`doctors_${DoctorSpecialty.TRICHOLOGY}`]: 'Трихологи',
 		},
 		sr,
 		ba: sr,
@@ -1105,6 +1129,8 @@ export default {
 			[`specialty_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]: 'Hyperbare Medizin',
 			[`specialty_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]:
 				'Pathologische Anatomie',
+			[`specialty_${DoctorSpecialty.PODIATRY}`]: 'Podologie',
+			[`specialty_${DoctorSpecialty.TRICHOLOGY}`]: 'Trichologie',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologe',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologen',
@@ -1339,6 +1365,12 @@ export default {
 
 			[`doctor_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Pathologe',
 			[`doctors_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Pathologen',
+
+			[`doctor_${DoctorSpecialty.PODIATRY}`]: 'Podologe',
+			[`doctors_${DoctorSpecialty.PODIATRY}`]: 'Podologen',
+
+			[`doctor_${DoctorSpecialty.TRICHOLOGY}`]: 'Trichologe',
+			[`doctors_${DoctorSpecialty.TRICHOLOGY}`]: 'Trichologen',
 		},
 		tr: {
 			Specialty: 'Uzmanlık',
@@ -1430,6 +1462,8 @@ export default {
 			[`specialty_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]: 'Hiperbarik Tıp',
 			[`specialty_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]:
 				'Patolojik Anatomi',
+			[`specialty_${DoctorSpecialty.PODIATRY}`]: 'Podiyatri',
+			[`specialty_${DoctorSpecialty.TRICHOLOGY}`]: 'Trikoloji',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyolog',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyologlar',
@@ -1674,6 +1708,12 @@ export default {
 
 			[`doctor_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Patolog',
 			[`doctors_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Patologlar',
+
+			[`doctor_${DoctorSpecialty.PODIATRY}`]: 'Podiyatrist',
+			[`doctors_${DoctorSpecialty.PODIATRY}`]: 'Podiyatristler',
+
+			[`doctor_${DoctorSpecialty.TRICHOLOGY}`]: 'Trikolog',
+			[`doctors_${DoctorSpecialty.TRICHOLOGY}`]: 'Trikologlar',
 		},
 	},
 };

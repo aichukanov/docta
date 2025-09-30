@@ -33,7 +33,7 @@ updateFromRoute(route.query);
 const doctorsListRef = ref<HTMLElement>();
 const doctorsMapRef = ref<HTMLElement>();
 const PAGE_LIMIT = 20;
-const pageNumber = ref(1);
+const pageNumber = ref(+route.query.page || 1);
 
 const filterList = computed(() => ({
 	specialtyIds: specialtyIds.value,
@@ -61,7 +61,11 @@ const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
 
 const routeWithParams = computed(() => {
 	return {
-		query: { ...getRouteParams().query, ...getRegionalQuery(locale.value) },
+		query: {
+			page: pageNumber.value > 1 ? pageNumber.value : undefined,
+			...getRouteParams().query,
+			...getRegionalQuery(locale.value),
+		},
 	};
 });
 
@@ -181,6 +185,10 @@ onMounted(async () => {
 	watch(filterList, () => {
 		pageNumber.value = 1;
 
+		router.replace(routeWithParams.value);
+	});
+
+	watch(pageNumber, () => {
 		router.replace(routeWithParams.value);
 	});
 

@@ -20,7 +20,6 @@ const mainPageLink = computed(() => ({
 					:aria-label="t('GoToMainPage')"
 				>
 					<div class="app-header__logo"></div>
-					<div class="app-header__brand-text">docta.me</div>
 				</NuxtLink>
 
 				<div class="app-header__actions">
@@ -97,20 +96,13 @@ const mainPageLink = computed(() => ({
 	}
 
 	&__logo {
-		width: 30px;
+		width: 120px;
 		height: 30px;
 		background-image: url('/logo-site.png');
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
 		flex-shrink: 0;
-	}
-
-	&__brand-text {
-		font-size: 24px;
-		font-weight: 700;
-		color: @primary-color;
-		white-space: nowrap;
 	}
 
 	&__actions {
@@ -121,28 +113,11 @@ const mainPageLink = computed(() => ({
 	}
 }
 
-@media only screen and (max-width: 900px) {
-	.app-header {
-		&__brand-text {
-			font-size: 20px;
-		}
-	}
-}
-
 @media only screen and (max-width: 700px) {
 	.app-header {
 		&__main-content {
 			height: 50px;
 			gap: var(--spacing-md);
-		}
-
-		&__brand-text {
-			font-size: 18px;
-		}
-
-		&__logo {
-			width: 32px;
-			height: 32px;
 		}
 	}
 }

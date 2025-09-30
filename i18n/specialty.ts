@@ -311,6 +311,10 @@ const sr = {
 	[`specialty_${DoctorSpecialty.TRICHOLOGY}`]: 'Trihologija',
 	[`doctor_${DoctorSpecialty.TRICHOLOGY}`]: 'Triholog',
 	[`doctors_${DoctorSpecialty.TRICHOLOGY}`]: 'Triholozi',
+
+	[`specialty_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Dečja stomatologija',
+	[`doctor_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Dečji stomatolog',
+	[`doctors_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Dečji stomatolozi',
 };
 
 export default {
@@ -414,6 +418,8 @@ export default {
 				'Pathological Anatomy',
 			[`specialty_${DoctorSpecialty.PODIATRY}`]: 'Podiatry',
 			[`specialty_${DoctorSpecialty.TRICHOLOGY}`]: 'Trichology',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]:
+				'Pediatric Dentistry',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologist',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologists',
@@ -676,6 +682,9 @@ export default {
 
 			[`doctor_${DoctorSpecialty.TRICHOLOGY}`]: 'Trichologist',
 			[`doctors_${DoctorSpecialty.TRICHOLOGY}`]: 'Trichologists',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Pediatric Dentist',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Pediatric Dentists',
 		},
 		ru: {
 			Specialty: 'Специальность',
@@ -1029,6 +1038,11 @@ export default {
 			[`specialty_${DoctorSpecialty.TRICHOLOGY}`]: 'Трихология',
 			[`doctor_${DoctorSpecialty.TRICHOLOGY}`]: 'Трихолог',
 			[`doctors_${DoctorSpecialty.TRICHOLOGY}`]: 'Трихологи',
+
+			[`specialty_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]:
+				'Детская стоматология',
+			[`doctor_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Детский стоматолог',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Детские стоматологи',
 		},
 		sr,
 		ba: sr,
@@ -1131,6 +1145,8 @@ export default {
 				'Pathologische Anatomie',
 			[`specialty_${DoctorSpecialty.PODIATRY}`]: 'Podologie',
 			[`specialty_${DoctorSpecialty.TRICHOLOGY}`]: 'Trichologie',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]:
+				'Kinderzahnheilkunde',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologe',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologen',
@@ -1371,6 +1387,9 @@ export default {
 
 			[`doctor_${DoctorSpecialty.TRICHOLOGY}`]: 'Trichologe',
 			[`doctors_${DoctorSpecialty.TRICHOLOGY}`]: 'Trichologen',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Kinderzahnarzt',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Kinderzahnärzte',
 		},
 		tr: {
 			Specialty: 'Uzmanlık',
@@ -1464,6 +1483,8 @@ export default {
 				'Patolojik Anatomi',
 			[`specialty_${DoctorSpecialty.PODIATRY}`]: 'Podiyatri',
 			[`specialty_${DoctorSpecialty.TRICHOLOGY}`]: 'Trikoloji',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]:
+				'Çocuk Diş Hekimliği',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyolog',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyologlar',
@@ -1714,6 +1735,9 @@ export default {
 
 			[`doctor_${DoctorSpecialty.TRICHOLOGY}`]: 'Trikolog',
 			[`doctors_${DoctorSpecialty.TRICHOLOGY}`]: 'Trikologlar',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Çocuk Diş Hekimi',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Çocuk Diş Hekimleri',
 		},
 	},
 };

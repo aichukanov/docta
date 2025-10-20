@@ -1,7 +1,6 @@
 import { fixUrlRegionalParams } from '../common/redirect/regional-settings';
 import { sendSitemap } from '../common/sitemap/utils';
 import { generateSitemapPage } from '../common/sitemap/sitemap';
-import { generateSitemapIndex } from '../common/sitemap/sitemap-index';
 
 export default defineEventHandler(async (event) => {
 	const { pathname, searchParams } = getRequestURL(event);

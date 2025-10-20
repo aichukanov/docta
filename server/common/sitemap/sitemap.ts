@@ -6,6 +6,7 @@ import { getDoctorList } from '~/server/api/doctors/list';
 import { DoctorSpecialty } from '~/enums/specialty';
 import { CityId } from '~/enums/cities';
 import { LanguageId } from '~/enums/language';
+import { getConnection } from '~/server/common/db-mysql';
 
 export function menuItemToLinks(
 	routeName: string,
@@ -43,6 +44,97 @@ function getEnumValues(enumType: any) {
 	);
 }
 
+async function getActiveFilterCombinations() {
+	const connection = await getConnection();
+
+	// Комбинация: специальность + город
+	const specialtyCityQuery = `
+		SELECT DISTINCT ds.specialty_id as specialtyId, clinics.city_id as cityId
+		FROM doctors d
+		INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
+		INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
+		INNER JOIN clinics ON dc.clinic_id = clinics.id
+		ORDER BY ds.specialty_id, clinics.city_id;
+	`;
+	const [specialtyCityRows] = await connection.execute<any[]>(
+		specialtyCityQuery,
+	);
+
+	// Комбинация: специальность + язык
+	const specialtyLanguageQuery = `
+		SELECT DISTINCT specialty_id as specialtyId, lang_id as languageId
+		FROM (
+			SELECT ds.specialty_id, dl.language_id as lang_id
+			FROM doctors d
+			INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
+			INNER JOIN doctor_languages dl ON d.id = dl.doctor_id
+			UNION
+			SELECT ds.specialty_id, cl.language_id as lang_id
+			FROM doctors d
+			INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
+			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
+			INNER JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id
+		) as combined
+		ORDER BY specialty_id, lang_id;
+	`;
+	const [specialtyLanguageRows] = await connection.execute<any[]>(
+		specialtyLanguageQuery,
+	);
+
+	// Комбинация: язык + город
+	const languageCityQuery = `
+		SELECT DISTINCT lang_id as languageId, city_id as cityId
+		FROM (
+			SELECT dl.language_id as lang_id, clinics.city_id
+			FROM doctors d
+			INNER JOIN doctor_languages dl ON d.id = dl.doctor_id
+			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
+			INNER JOIN clinics ON dc.clinic_id = clinics.id
+			UNION
+			SELECT cl.language_id as lang_id, clinics.city_id
+			FROM doctors d
+			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
+			INNER JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id
+			INNER JOIN clinics ON dc.clinic_id = clinics.id
+		) as combined
+		ORDER BY lang_id, city_id;
+	`;
+	const [languageCityRows] = await connection.execute<any[]>(languageCityQuery);
+
+	// Комбинация: специальность + язык + город
+	const specialtyLanguageCityQuery = `
+		SELECT DISTINCT specialty_id as specialtyId, lang_id as languageId, city_id as cityId
+		FROM (
+			SELECT ds.specialty_id, dl.language_id as lang_id, clinics.city_id
+			FROM doctors d
+			INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
+			INNER JOIN doctor_languages dl ON d.id = dl.doctor_id
+			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
+			INNER JOIN clinics ON dc.clinic_id = clinics.id
+			UNION
+			SELECT ds.specialty_id, cl.language_id as lang_id, clinics.city_id
+			FROM doctors d
+			INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
+			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
+			INNER JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id
+			INNER JOIN clinics ON dc.clinic_id = clinics.id
+		) as combined
+		ORDER BY specialty_id, lang_id, city_id;
+	`;
+	const [specialtyLanguageCityRows] = await connection.execute<any[]>(
+		specialtyLanguageCityQuery,
+	);
+
+	await connection.end();
+
+	return {
+		specialtyCityCombinations: specialtyCityRows,
+		specialtyLanguageCombinations: specialtyLanguageRows,
+		languageCityCombinations: languageCityRows,
+		specialtyLanguageCityCombinations: specialtyLanguageCityRows,
+	};
+}
+
 export async function generateSitemapPage(sitemapIndex: number) {
 	const { doctors } = await getDoctorList();
 
@@ -50,6 +142,7 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		menuItemToLinks(`doctors-${doctor.id}`),
 	);
 
+	// Для одиночных фильтров можно оставить все значения - каждое гарантированно что-то вернёт
 	const specialtyIds = getEnumValues(DoctorSpecialty);
 	const cityIds = getEnumValues(CityId);
 	const languageIds = getEnumValues(LanguageId);
@@ -66,40 +159,41 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		menuItemToLinks(`doctors`, { languageIds: language }),
 	);
 
-	const specialtyCityLinks: SitemapLink[] = specialtyIds.flatMap((specialty) =>
-		cityIds.map((city) =>
-			menuItemToLinks(`doctors`, { specialtyIds: specialty, cityIds: city }),
-		),
-	);
+	// Получаем только реальные комбинации из БД
+	const combinations = await getActiveFilterCombinations();
 
-	const specialtyLanguageLinks: SitemapLink[] = specialtyIds.flatMap(
-		(specialty) =>
-			languageIds.map((language) =>
-				menuItemToLinks(`doctors`, {
-					specialtyIds: specialty,
-					languageIds: language,
-				}),
-			),
-	);
+	const specialtyCityLinks: SitemapLink[] =
+		combinations.specialtyCityCombinations.map((combo: any) =>
+			menuItemToLinks(`doctors`, {
+				specialtyIds: combo.specialtyId,
+				cityIds: combo.cityId,
+			}),
+		);
 
-	const specialtyLanguageCityLinks: SitemapLink[] = specialtyIds.flatMap(
-		(specialty) =>
-			languageIds.flatMap((language) =>
-				cityIds.map((city) =>
-					menuItemToLinks(`doctors`, {
-						specialtyIds: specialty,
-						languageIds: language,
-						cityIds: city,
-					}),
-				),
-			),
-	);
+	const specialtyLanguageLinks: SitemapLink[] =
+		combinations.specialtyLanguageCombinations.map((combo: any) =>
+			menuItemToLinks(`doctors`, {
+				specialtyIds: combo.specialtyId,
+				languageIds: combo.languageId,
+			}),
+		);
 
-	const languageCityLinks: SitemapLink[] = languageIds.flatMap((language) =>
-		cityIds.map((city) =>
-			menuItemToLinks(`doctors`, { languageIds: language, cityIds: city }),
-		),
-	);
+	const languageCityLinks: SitemapLink[] =
+		combinations.languageCityCombinations.map((combo: any) =>
+			menuItemToLinks(`doctors`, {
+				languageIds: combo.languageId,
+				cityIds: combo.cityId,
+			}),
+		);
+
+	const specialtyLanguageCityLinks: SitemapLink[] =
+		combinations.specialtyLanguageCityCombinations.map((combo: any) =>
+			menuItemToLinks(`doctors`, {
+				specialtyIds: combo.specialtyId,
+				languageIds: combo.languageId,
+				cityIds: combo.cityId,
+			}),
+		);
 
 	return await generateSitemap([
 		...doctorLinks,
@@ -108,8 +202,8 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		...languageLinks,
 		...specialtyCityLinks,
 		...specialtyLanguageLinks,
-		...specialtyLanguageCityLinks,
 		...languageCityLinks,
+		...specialtyLanguageCityLinks,
 	]);
 }
 

@@ -3,6 +3,7 @@ import { CityId } from '~/enums/cities';
 const sr = {
 	City: 'Grad',
 	AnyCity: 'Bilo koji grad',
+	And: 'i',
 
 	[`city_${CityId.PODGORICA}`]: 'Podgorica',
 	[`city_${CityId.PODGORICA}_genitive`]: 'Podgorici',
@@ -34,6 +35,7 @@ export default {
 		en: {
 			City: 'City',
 			AnyCity: 'Any city',
+			And: 'and',
 
 			[`city_${CityId.PODGORICA}`]: 'Podgorica',
 			[`city_${CityId.PODGORICA}_genitive`]: 'Podgorica',
@@ -55,6 +57,7 @@ export default {
 		ru: {
 			City: 'Город',
 			AnyCity: 'Любой город',
+			And: 'и',
 
 			[`city_${CityId.PODGORICA}`]: 'Подгорица',
 			[`city_${CityId.PODGORICA}_genitive`]: 'Подгорице',
@@ -79,6 +82,7 @@ export default {
 		de: {
 			City: 'Ort',
 			AnyCity: 'Beliebiger Ort',
+			And: 'und',
 
 			[`city_${CityId.PODGORICA}`]: 'Podgorica',
 			[`city_${CityId.PODGORICA}_genitive`]: 'Podgorica',
@@ -100,6 +104,7 @@ export default {
 		tr: {
 			City: 'Şehir',
 			AnyCity: 'Herhangi bir şehir',
+			And: 've',
 
 			[`city_${CityId.PODGORICA}`]: 'Podgorica',
 			[`city_${CityId.PODGORICA}_genitive`]: "Podgorica'da",

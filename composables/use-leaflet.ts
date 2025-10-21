@@ -1,7 +1,5 @@
-import type { Ref } from 'vue';
 import {
 	MONTENEGRO_CENTER,
-	MONTENEGRO_MAX_BOUNDS,
 	MONTENEGRO_ZOOM_SETTINGS,
 } from '~/common/constants';
 
@@ -162,7 +160,7 @@ export function useLeaflet() {
 		markers.clear();
 	};
 
-	const openPopup = (lat: number, lng: number, onClose: () => void) => {
+	const openPopup = (lat: number, lng: number) => {
 		if (!popup) {
 			popup = window.L.popup({
 				minWidth: 280,

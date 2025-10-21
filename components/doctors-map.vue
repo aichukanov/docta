@@ -29,8 +29,8 @@
 </template>
 
 <script setup lang="ts">
-import type { ClinicData, DoctorData } from '~/interfaces/doctor';
 import { getClinicMarkerId } from '~/common/utils';
+import type { ClinicData, DoctorData } from '~/interfaces/doctor';
 
 const props = defineProps<{
 	clinics: ClinicData[];
@@ -43,14 +43,8 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
-const {
-	isLoading,
-	initializeMap,
-	addMarker,
-	markers,
-	openPopup,
-	centerOnLocations,
-} = useLeaflet();
+const { isLoading, initializeMap, addMarker, openPopup, centerOnLocations } =
+	useLeaflet();
 
 const mapContainer = ref<HTMLElement | null>(null);
 const isTeleportReady = ref(false);

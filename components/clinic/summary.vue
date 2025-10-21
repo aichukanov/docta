@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { LocationFilled } from '@element-plus/icons-vue';
-import type { ContactList } from '~/interfaces/contacts';
 import { hasContacts } from '../contacts/utils';
 
 const props = defineProps<{
@@ -19,16 +18,7 @@ const { t } = useI18n();
 		<div class="location-wrapper">
 			<div class="location-info">
 				<div class="clinic-name-container">
-					<el-link
-						v-if="clinic.website"
-						:href="clinic.website"
-						underline="hover"
-						target="_blank"
-						class="clinic-name"
-					>
-						{{ clinic.name }}
-					</el-link>
-					<span v-else class="clinic-name">{{ clinic.name }}</span>
+					<span class="clinic-name">{{ clinic.name }}</span>
 				</div>
 				<ConsultationLanguages :languageIds="clinic.languageIds" />
 				<div class="location-address">

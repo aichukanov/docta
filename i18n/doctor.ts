@@ -10,7 +10,10 @@ const sr = {
 	DoctorsLanguageSpecialtyCity:
 		'{specialtyDoctors} u {city} koji govore {language} jezik',
 
+	Visit: 'Pregled u Crnoj Gori',
+	VisitCity: 'Pregled u {city}',
 	VisitLanguage: 'Pregled na {language} jeziku',
+	VisitLanguageCity: 'Pregled na {language} jeziku u {city}',
 
 	LoadingDoctors: 'Učitava lekare...',
 	NoDoctorsFound: 'Lekari nisu pronađeni',
@@ -33,7 +36,10 @@ export default {
 			DoctorsLanguageSpecialtyCity:
 				'{specialtyDoctors} in {city} who speak {language}',
 
+			Visit: 'Consultation in Montenegro',
+			VisitCity: 'Consultation in {city}',
 			VisitLanguage: 'Consultation in {language}',
+			VisitLanguageCity: 'Consultation in {language} in {city}',
 
 			LoadingDoctors: 'Loading doctors...',
 			NoDoctorsFound: 'No doctors found',
@@ -53,7 +59,10 @@ export default {
 			DoctorsLanguageSpecialtyCity:
 				'{specialtyDoctors} в {city}, владеющие {language} языком',
 
-			VisitLanguage: 'Прием на {language} языке',
+			Visit: 'Прием в Черногории',
+			VisitCity: 'Прием в {city}',
+			VisitLanguage: 'Прием на {language}',
+			VisitLanguageCity: 'Прием на {language} в {city}',
 
 			LoadingDoctors: 'Загрузка врачей...',
 			NoDoctorsFound: 'Врачи не найдены',
@@ -73,7 +82,10 @@ export default {
 			DoctorsLanguageSpecialtyCity:
 				'{city} {language} konuşan {specialtyDoctors}',
 
+			Visit: "Karadağ'da konsültasyon",
+			VisitCity: '{city} içinde konsültasyon',
 			VisitLanguage: '{language} dilinde konsültasyon',
+			VisitLanguageCity: '{language} dilinde konsültasyon {city} içinde',
 
 			LoadingDoctors: 'Doktorlar yükleniyor...',
 			NoDoctorsFound: 'Doktor bulunamadı',
@@ -93,7 +105,10 @@ export default {
 			DoctorsLanguageSpecialtyCity:
 				'{specialtyDoctors} in {city}, die {language} sprechen',
 
+			Visit: 'Beratung in Montenegro',
+			VisitCity: 'Beratung in {city}',
 			VisitLanguage: 'Beratung auf {language}',
+			VisitLanguageCity: 'Beratung auf {language} in {city}',
 
 			LoadingDoctors: 'Ärzte werden geladen...',
 			NoDoctorsFound: 'Keine Ärzte gefunden',

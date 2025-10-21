@@ -1,4 +1,4 @@
-import { Language, LanguageId } from '~/enums/language';
+import { LanguageId } from '~/enums/language';
 
 const sr = {
 	ConsultationLanguage: 'Jezik konsultacije',

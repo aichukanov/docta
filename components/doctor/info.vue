@@ -12,7 +12,7 @@ const props = withDefaults(
 	},
 );
 
-const { locale } = useI18n();
+const { t, locale } = useI18n();
 
 const doctorLink = computed(() => ({
 	name: 'doctors-doctorId',
@@ -41,10 +41,38 @@ const doctorLink = computed(() => ({
 				{{ doctor.professionalTitle }}
 			</div>
 			<DoctorSpecialties :doctor="doctor" />
-			<ConsultationLanguages v-if="!short" :languageIds="doctor.languageIds" />
+			<ConsultationLanguages v-if="!short" :languageIds="doctor.languageIds">
+				{{ t('DoctorLanguages') }}
+			</ConsultationLanguages>
 		</div>
 	</div>
 </template>
+
+<i18n lang="json">
+{
+	"en": {
+		"DoctorLanguages": "The doctor speaks the following languages:"
+	},
+	"ru": {
+		"DoctorLanguages": "Врач владеет следующими языками:"
+	},
+	"de": {
+		"DoctorLanguages": "Der Arzt spricht die folgenden Sprachen:"
+	},
+	"tr": {
+		"DoctorLanguages": "Doktor aşağıdaki dilleri konuşmaktadır:"
+	},
+	"sr": {
+		"DoctorLanguages": "Doktor govori sledeće jezike:"
+	},
+	"ba": {
+		"DoctorLanguages": "Doktor govori sljedeće jezike:"
+	},
+	"me": {
+		"DoctorLanguages": "Doktor govori sljedeće jezike:"
+	}
+}
+</i18n>
 
 <style scoped lang="less">
 .doctor-wrapper {

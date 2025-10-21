@@ -20,11 +20,15 @@ const { t } = useI18n();
 				<div class="clinic-name-container">
 					<span class="clinic-name">{{ clinic.name }}</span>
 				</div>
-				<ConsultationLanguages :languageIds="clinic.languageIds" />
+
 				<div class="location-address">
 					<el-icon><LocationFilled /></el-icon>
 					<span>{{ clinic.address }}</span>
 				</div>
+
+				<ConsultationLanguages :languageIds="clinic.languageIds">
+					{{ t('LanguageAssistance') }}
+				</ConsultationLanguages>
 			</div>
 			<div class="location-buttons">
 				<ClinicShowOnMapButton :clinic="clinic" @click="$emit('show-on-map')" />
@@ -44,25 +48,32 @@ const { t } = useI18n();
 <i18n lang="json">
 {
 	"en": {
-		"Contacts": "Contacts"
+		"Contacts": "Contacts",
+		"LanguageAssistance": "The clinic provides assistance in:"
 	},
 	"ru": {
-		"Contacts": "Контакты"
+		"Contacts": "Контакты",
+		"LanguageAssistance": "В клинике предоставляется сопровождение на следующих языках:"
 	},
 	"de": {
-		"Contacts": "Kontakte"
+		"Contacts": "Kontakte",
+		"LanguageAssistance": "Die Klinik bietet Unterstützung in:"
 	},
 	"tr": {
-		"Contacts": "İletişim"
+		"Contacts": "İletişim",
+		"LanguageAssistance": "Klinik aşağıdaki dillerde destek sunar:"
 	},
 	"sr": {
-		"Contacts": "Kontakti"
+		"Contacts": "Kontakti",
+		"LanguageAssistance": "Klinika pruža pomoć na sledećim jezicima:"
 	},
 	"ba": {
-		"Contacts": "Kontakti"
+		"Contacts": "Kontakti",
+		"LanguageAssistance": "Klinika pruža podršku na sljedećim jezicima:"
 	},
 	"me": {
-		"Contacts": "Kontakti"
+		"Contacts": "Kontakti",
+		"LanguageAssistance": "Klinika pruža podršku na sljedećim jezicima:"
 	}
 }
 </i18n>
@@ -88,7 +99,7 @@ const { t } = useI18n();
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: var(--spacing-xs);
+		gap: var(--spacing-sm);
 		flex: 1;
 	}
 }

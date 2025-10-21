@@ -3,10 +3,10 @@ import { getRegionalQuery } from '~/common/url-utils';
 import { CITY_COORDINATES } from '~/enums/cities';
 import { combineI18nMessages } from '~/i18n/utils';
 
-import specialtyI18n from '~/i18n/specialty';
 import cityI18n from '~/i18n/city';
-import languageI18n from '~/i18n/language';
 import doctorI18n from '~/i18n/doctor';
+import languageI18n from '~/i18n/language';
+import specialtyI18n from '~/i18n/specialty';
 
 const router = useRouter();
 const route = useRoute();
@@ -143,39 +143,8 @@ const pageTitle = computed(() => {
 	return t('Doctors');
 });
 
-const pageDescription = computed(() => {
-	const dataArray: string[] = [];
-
-	if (specialtyIds.value.length > 0) {
-		dataArray.push(
-			specialtyIds.value
-				.map((specialty) => t(`specialty_${specialty}`))
-				.join(', '),
-		);
-	}
-
-	if (cityIds.value.length > 0) {
-		dataArray.push(
-			cityIds.value.map((city) => t(`city_${city}_genitive`)).join(', '),
-		);
-	}
-
-	if (languageIds.value.length > 0) {
-		dataArray.push(
-			t('VisitLanguage', {
-				language: languageIds.value
-					.map((language) => t(`language_${language}_prepositional`))
-					.join('/'),
-			}),
-		);
-	}
-
-	return dataArray.join(' | ');
-});
-
 useSeoMeta({
-	title: () => pageTitle.value + ' | docta.me',
-	description: pageDescription,
+	title: pageTitle,
 });
 
 onMounted(async () => {

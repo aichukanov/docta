@@ -12,10 +12,8 @@ const props = defineProps<{
 	contact: string;
 }>();
 
-const telegramUrl = computed(() =>
-	props.contact.startsWith('http')
-		? props.contact
-		: `https://t.me/${props.contact.replace(/[^+\\d]/g, '')}`,
+const telegramUrl = computed(
+	() => `https://t.me/${props.contact.replace('@', '')}`,
 );
 
 const telegramContact = computed(() =>

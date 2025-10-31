@@ -71,4 +71,5 @@ export enum DoctorSpecialty {
 	PODIATRY = 85,
 	TRICHOLOGY = 86,
 	PEDIATRIC_DENTISTRY = 87,
+	NUCLEAR_MEDICINE = 88,
 }

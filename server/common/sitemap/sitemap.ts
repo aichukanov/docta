@@ -18,7 +18,7 @@ export function menuItemToLinks(
 
 	for (let i = 0; i < locales.length; i++) {
 		const lang = locales[i];
-		if (lang === 'me') {
+		if (lang === 'me' || lang === 'ba') {
 			continue;
 		}
 

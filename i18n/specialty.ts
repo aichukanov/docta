@@ -315,6 +315,10 @@ const sr = {
 	[`specialty_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Dečja stomatologija',
 	[`doctor_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Dečji stomatolog',
 	[`doctors_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Dečji stomatolozi',
+
+	[`specialty_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nuklearna medicina',
+	[`doctor_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Lekar nuklearne medicine',
+	[`doctors_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Lekari nuklearne medicine',
 };
 
 export default {
@@ -420,6 +424,7 @@ export default {
 			[`specialty_${DoctorSpecialty.TRICHOLOGY}`]: 'Trichology',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]:
 				'Pediatric Dentistry',
+			[`specialty_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nuclear Medicine',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologist',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologists',
@@ -685,6 +690,10 @@ export default {
 
 			[`doctor_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Pediatric Dentist',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Pediatric Dentists',
+
+			[`doctor_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nuclear Medicine Doctor',
+			[`doctors_${DoctorSpecialty.NUCLEAR_MEDICINE}`]:
+				'Nuclear Medicine Doctors',
 		},
 		ru: {
 			Specialty: 'Специальность',
@@ -1043,6 +1052,12 @@ export default {
 				'Детская стоматология',
 			[`doctor_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Детский стоматолог',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Детские стоматологи',
+
+			[`specialty_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Ядерная медицина',
+			[`doctor_${DoctorSpecialty.NUCLEAR_MEDICINE}`]:
+				'Специалист по ядерной медицине',
+			[`doctors_${DoctorSpecialty.NUCLEAR_MEDICINE}`]:
+				'Специалисты по ядерной медицине',
 		},
 		sr,
 		ba: sr,
@@ -1147,6 +1162,7 @@ export default {
 			[`specialty_${DoctorSpecialty.TRICHOLOGY}`]: 'Trichologie',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]:
 				'Kinderzahnheilkunde',
+			[`specialty_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nuklearmedizin',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologe',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologen',
@@ -1390,6 +1406,9 @@ export default {
 
 			[`doctor_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Kinderzahnarzt',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Kinderzahnärzte',
+
+			[`doctor_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nuklearmediziner',
+			[`doctors_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nuklearmediziner',
 		},
 		tr: {
 			Specialty: 'Uzmanlık',
@@ -1485,6 +1504,7 @@ export default {
 			[`specialty_${DoctorSpecialty.TRICHOLOGY}`]: 'Trikoloji',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]:
 				'Çocuk Diş Hekimliği',
+			[`specialty_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nükleer Tıp',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyolog',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyologlar',
@@ -1738,6 +1758,9 @@ export default {
 
 			[`doctor_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Çocuk Diş Hekimi',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Çocuk Diş Hekimleri',
+
+			[`doctor_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nükleer Tıp Doktoru',
+			[`doctors_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nükleer Tıp Doktorları',
 		},
 	},
 };

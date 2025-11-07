@@ -143,8 +143,16 @@ const pageTitle = computed(() => {
 	return t('Doctors');
 });
 
+const robotsMeta = computed(() => {
+	if (doctorsList.value?.doctors?.length === 0) {
+		return 'noindex, follow';
+	}
+	return undefined;
+});
+
 useSeoMeta({
 	title: pageTitle,
+	robots: robotsMeta,
 });
 
 onMounted(async () => {

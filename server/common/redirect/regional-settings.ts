@@ -1,4 +1,4 @@
-import { getLocaleFromQuery, Locale } from '~/composables/use-locale';
+import { getLocaleFromQuery, type Locale } from '~/composables/use-locale';
 import { getRegionalUrl } from '../../../common/url-utils';
 
 export function fixUrlRegionalParams(

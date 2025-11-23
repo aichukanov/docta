@@ -45,6 +45,12 @@ const alternateLinks = computed(() => {
 		if (lang === 'me') {
 			continue;
 		}
+		
+		links.push({
+			rel: 'alternate',
+			href: getLangLink(mainUrl, lang),
+			hreflang: `${lang}-ME`,
+		});
 	}
 
 	return links;

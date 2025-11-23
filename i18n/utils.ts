@@ -1,4 +1,4 @@
-import { locales, Locale } from '~/composables/use-locale';
+import { locales, type Locale } from '~/composables/use-locale';
 
 type MessageList = Record<Locale, Record<string, string>>;
 

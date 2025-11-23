@@ -41,7 +41,8 @@ const sr = {
 	[`specialty_${DoctorSpecialty.PEDIATRIC_ENT}`]: 'Dečja otorinolaringologija',
 	[`specialty_${DoctorSpecialty.PEDIATRIC_ORTHOPEDICS}`]: 'Dečja ortopedija',
 	[`specialty_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Dečja urologija',
-	[`specialty_${DoctorSpecialty.VASCULAR_SURGERY}`]: 'Vaskularna hirurgija',
+	[`specialty_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+		'Vaskularna hirurgija (flebologija)',
 	[`specialty_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endokrina hirurgija',
 	[`specialty_${DoctorSpecialty.PROCTOLOGY}`]: 'Proktologija',
 	[`specialty_${DoctorSpecialty.GYNECOLOGIC_ONCOLOGY}`]: 'Onkogineologija',
@@ -179,8 +180,10 @@ const sr = {
 	[`doctor_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Dečji urolog',
 	[`doctors_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Dečji urolozi',
 
-	[`doctor_${DoctorSpecialty.VASCULAR_SURGERY}`]: 'Vaskularni hirurg',
-	[`doctors_${DoctorSpecialty.VASCULAR_SURGERY}`]: 'Vaskularni hirurzi',
+	[`doctor_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+		'Vaskularni hirurg (flebolog)',
+	[`doctors_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+		'Vaskularni hirurzi (flebolozi)',
 
 	[`doctor_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endokrini hirurg',
 	[`doctors_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endokrini hirurzi',
@@ -373,7 +376,8 @@ export default {
 			[`specialty_${DoctorSpecialty.PEDIATRIC_ORTHOPEDICS}`]:
 				'Pediatric Orthopedics',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Pediatric Urology',
-			[`specialty_${DoctorSpecialty.VASCULAR_SURGERY}`]: 'Vascular Surgery',
+			[`specialty_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+				'Vascular Surgery (Phlebology)',
 			[`specialty_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endocrine Surgery',
 			[`specialty_${DoctorSpecialty.PROCTOLOGY}`]: 'Proctology',
 			[`specialty_${DoctorSpecialty.GYNECOLOGIC_ONCOLOGY}`]:
@@ -549,8 +553,10 @@ export default {
 			[`doctor_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Pediatric Urologist',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Pediatric Urologists',
 
-			[`doctor_${DoctorSpecialty.VASCULAR_SURGERY}`]: 'Vascular Surgeon',
-			[`doctors_${DoctorSpecialty.VASCULAR_SURGERY}`]: 'Vascular Surgeons',
+			[`doctor_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+				'Vascular Surgeon (Phlebologist)',
+			[`doctors_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+				'Vascular Surgeons (Phlebologists)',
 
 			[`doctor_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endocrine Surgeon',
 			[`doctors_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endocrine Surgeons',
@@ -857,9 +863,12 @@ export default {
 			[`doctor_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Детский уролог',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Детские урологи',
 
-			[`specialty_${DoctorSpecialty.VASCULAR_SURGERY}`]: 'Сосудистая хирургия',
-			[`doctor_${DoctorSpecialty.VASCULAR_SURGERY}`]: 'Сосудистый хирург',
-			[`doctors_${DoctorSpecialty.VASCULAR_SURGERY}`]: 'Сосудистые хирурги',
+			[`specialty_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+				'Сосудистая хирургия (флебология)',
+			[`doctor_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+				'Сосудистый хирург (флеболог)',
+			[`doctors_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+				'Сосудистые хирурги (флебологи)',
 
 			[`specialty_${DoctorSpecialty.ENDOCRINE_SURGERY}`]:
 				'Эндокринная хирургия',
@@ -1111,7 +1120,8 @@ export default {
 			[`specialty_${DoctorSpecialty.PEDIATRIC_ORTHOPEDICS}`]:
 				'Kinderorthopädie',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Kinderurologie',
-			[`specialty_${DoctorSpecialty.VASCULAR_SURGERY}`]: 'Gefäßchirurgie',
+			[`specialty_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+				'Gefäßchirurgie (Phlebologie)',
 			[`specialty_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endokrine Chirurgie',
 			[`specialty_${DoctorSpecialty.PROCTOLOGY}`]: 'Proktologie',
 			[`specialty_${DoctorSpecialty.GYNECOLOGIC_ONCOLOGY}`]:
@@ -1270,8 +1280,10 @@ export default {
 			[`doctor_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Kinderurologe',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Kinderurologen',
 
-			[`doctor_${DoctorSpecialty.VASCULAR_SURGERY}`]: 'Gefäßchirurg',
-			[`doctors_${DoctorSpecialty.VASCULAR_SURGERY}`]: 'Gefäßchirurgen',
+			[`doctor_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+				'Gefäßchirurg (Phlebologe)',
+			[`doctors_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+				'Gefäßchirurgen (Phlebologen)',
 
 			[`doctor_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endokriner Chirurg',
 			[`doctors_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endokrine Chirurgen',
@@ -1456,7 +1468,8 @@ export default {
 			[`specialty_${DoctorSpecialty.PEDIATRIC_ORTHOPEDICS}`]:
 				'Çocuk Ortopedisi',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Çocuk Ürolojisi',
-			[`specialty_${DoctorSpecialty.VASCULAR_SURGERY}`]: 'Damar Cerrahisi',
+			[`specialty_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+				'Damar Cerrahisi (Fleboloji)',
 			[`specialty_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endokrin Cerrahisi',
 			[`specialty_${DoctorSpecialty.PROCTOLOGY}`]: 'Proktoloji',
 			[`specialty_${DoctorSpecialty.GYNECOLOGIC_ONCOLOGY}`]:
@@ -1622,8 +1635,10 @@ export default {
 			[`doctor_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Çocuk Üroloğu',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Çocuk Ürologları',
 
-			[`doctor_${DoctorSpecialty.VASCULAR_SURGERY}`]: 'Damar Cerrahı',
-			[`doctors_${DoctorSpecialty.VASCULAR_SURGERY}`]: 'Damar Cerrahları',
+			[`doctor_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+				'Damar Cerrahı (Flebolog)',
+			[`doctors_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+				'Damar Cerrahları (Flebologlar)',
 
 			[`doctor_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endokrin Cerrahı',
 			[`doctors_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endokrin Cerrahları',

@@ -1,35 +1,5 @@
 import { CityId } from '~/enums/cities';
 
-const sr = {
-	City: 'Grad',
-	AnyCity: 'Bilo koji grad',
-	And: 'i',
-
-	[`city_${CityId.PODGORICA}`]: 'Podgorica',
-	[`city_${CityId.PODGORICA}_genitive`]: 'Podgorici',
-
-	[`city_${CityId.NIKSIC}`]: 'Nikšić',
-	[`city_${CityId.NIKSIC}_genitive`]: 'Nikšiću',
-
-	[`city_${CityId.BUDVA}`]: 'Budva',
-	[`city_${CityId.BUDVA}_genitive`]: 'Budvi',
-
-	[`city_${CityId.TIVAT}`]: 'Tivat',
-	[`city_${CityId.TIVAT}_genitive`]: 'Tivtu',
-
-	[`city_${CityId.ULCINJ}`]: 'Ulcinj',
-	[`city_${CityId.ULCINJ}_genitive`]: 'Ulcinju',
-
-	[`city_${CityId.KOTOR}`]: 'Kotor',
-	[`city_${CityId.KOTOR}_genitive`]: 'Kotoru',
-
-	[`city_${CityId.BAR}`]: 'Bar',
-	[`city_${CityId.BAR}_genitive`]: 'Baru',
-
-	[`city_${CityId.HERCEG_NOVI}`]: 'Herceg Novi',
-	[`city_${CityId.HERCEG_NOVI}_genitive`]: 'Herceg Novi',
-};
-
 export default {
 	messages: {
 		en: {
@@ -76,9 +46,35 @@ export default {
 			[`city_${CityId.HERCEG_NOVI}`]: 'Херцег-Нови',
 			[`city_${CityId.HERCEG_NOVI}_genitive`]: 'Херцег-Нови',
 		},
-		sr,
-		ba: sr,
-		me: sr,
+		sr: {
+			City: 'Grad',
+			AnyCity: 'Bilo koji grad',
+			And: 'i',
+
+			[`city_${CityId.PODGORICA}`]: 'Podgorica',
+			[`city_${CityId.PODGORICA}_genitive`]: 'Podgorici',
+
+			[`city_${CityId.NIKSIC}`]: 'Nikšić',
+			[`city_${CityId.NIKSIC}_genitive`]: 'Nikšiću',
+
+			[`city_${CityId.BUDVA}`]: 'Budva',
+			[`city_${CityId.BUDVA}_genitive`]: 'Budvi',
+
+			[`city_${CityId.TIVAT}`]: 'Tivat',
+			[`city_${CityId.TIVAT}_genitive`]: 'Tivtu',
+
+			[`city_${CityId.ULCINJ}`]: 'Ulcinj',
+			[`city_${CityId.ULCINJ}_genitive`]: 'Ulcinju',
+
+			[`city_${CityId.KOTOR}`]: 'Kotor',
+			[`city_${CityId.KOTOR}_genitive`]: 'Kotoru',
+
+			[`city_${CityId.BAR}`]: 'Bar',
+			[`city_${CityId.BAR}_genitive`]: 'Baru',
+
+			[`city_${CityId.HERCEG_NOVI}`]: 'Herceg Novi',
+			[`city_${CityId.HERCEG_NOVI}_genitive`]: 'Herceg Novi',
+		},
 		de: {
 			City: 'Ort',
 			AnyCity: 'Beliebiger Ort',

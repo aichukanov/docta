@@ -1,39 +1,3 @@
-const sr = {
-	Doctors: 'Lekari u Crnoj Gori',
-	DoctorsCity: 'Lekari u {city}',
-	DoctorsClinic: 'Lekari klinike {clinic} u Crnoj Gori',
-	DoctorsCityClinic: 'Lekari klinike {clinic} u {city}',
-	DoctorsSpecialty: '{specialtyDoctors} u Crnoj Gori',
-	DoctorsSpecialtyCity: '{specialtyDoctors} u {city}',
-	DoctorsSpecialtyClinic: '{specialtyDoctors} klinike {clinic} u Crnoj Gori',
-	DoctorsSpecialtyCityClinic: '{specialtyDoctors} klinike {clinic} u {city}',
-	DoctorsLanguage: 'Lekari u Crnoj Gori koji govore {language} jezik',
-	DoctorsLanguageCity: 'Lekari u {city} koji govore {language} jezik',
-	DoctorsLanguageClinic:
-		'Lekari klinike {clinic} u Crnoj Gori koji govore {language} jezik',
-	DoctorsLanguageCityClinic:
-		'Lekari klinike {clinic} u {city} koji govore {language} jezik',
-	DoctorsLanguageSpecialty:
-		'{specialtyDoctors} u Crnoj Gori koji govore {language} jezik',
-	DoctorsLanguageSpecialtyCity:
-		'{specialtyDoctors} u {city} koji govore {language} jezik',
-	DoctorsLanguageSpecialtyClinic:
-		'{specialtyDoctors} klinike {clinic} u Crnoj Gori koji govore {language} jezik',
-	DoctorsLanguageSpecialtyCityClinic:
-		'{specialtyDoctors} klinike {clinic} u {city} koji govore {language} jezik',
-
-	Visit: 'Pregled u Crnoj Gori',
-	VisitCity: 'Pregled u {city}',
-	VisitLanguage: 'Pregled na {language} jeziku',
-	VisitLanguageCity: 'Pregled na {language} jeziku u {city}',
-
-	LoadingDoctors: 'Učitava lekare...',
-	NoDoctorsFound: 'Lekari nisu pronađeni',
-	LoadingDoctor: 'Učitavanje podataka o lekaru...',
-	ToSearchPage: 'Na stranicu pretrage',
-	DoctorNotFound: 'Lekar nije pronađen',
-};
-
 export default {
 	messages: {
 		en: {
@@ -180,8 +144,42 @@ export default {
 			ToSearchPage: 'Zur Suche',
 			DoctorNotFound: 'Ärzte nicht gefunden',
 		},
-		sr,
-		ba: sr,
-		me: sr,
+		sr: {
+			Doctors: 'Lekari u Crnoj Gori',
+			DoctorsCity: 'Lekari u {city}',
+			DoctorsClinic: 'Lekari klinike {clinic} u Crnoj Gori',
+			DoctorsCityClinic: 'Lekari klinike {clinic} u {city}',
+			DoctorsSpecialty: '{specialtyDoctors} u Crnoj Gori',
+			DoctorsSpecialtyCity: '{specialtyDoctors} u {city}',
+			DoctorsSpecialtyClinic:
+				'{specialtyDoctors} klinike {clinic} u Crnoj Gori',
+			DoctorsSpecialtyCityClinic:
+				'{specialtyDoctors} klinike {clinic} u {city}',
+			DoctorsLanguage: 'Lekari u Crnoj Gori koji govore {language} jezik',
+			DoctorsLanguageCity: 'Lekari u {city} koji govore {language} jezik',
+			DoctorsLanguageClinic:
+				'Lekari klinike {clinic} u Crnoj Gori koji govore {language} jezik',
+			DoctorsLanguageCityClinic:
+				'Lekari klinike {clinic} u {city} koji govore {language} jezik',
+			DoctorsLanguageSpecialty:
+				'{specialtyDoctors} u Crnoj Gori koji govore {language} jezik',
+			DoctorsLanguageSpecialtyCity:
+				'{specialtyDoctors} u {city} koji govore {language} jezik',
+			DoctorsLanguageSpecialtyClinic:
+				'{specialtyDoctors} klinike {clinic} u Crnoj Gori koji govore {language} jezik',
+			DoctorsLanguageSpecialtyCityClinic:
+				'{specialtyDoctors} klinike {clinic} u {city} koji govore {language} jezik',
+
+			Visit: 'Pregled u Crnoj Gori',
+			VisitCity: 'Pregled u {city}',
+			VisitLanguage: 'Pregled na {language} jeziku',
+			VisitLanguageCity: 'Pregled na {language} jeziku u {city}',
+
+			LoadingDoctors: 'Učitava lekare...',
+			NoDoctorsFound: 'Lekari nisu pronađeni',
+			LoadingDoctor: 'Učitavanje podataka o lekaru...',
+			ToSearchPage: 'Na stranicu pretrage',
+			DoctorNotFound: 'Lekar nije pronađen',
+		},
 	},
 };

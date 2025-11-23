@@ -24,7 +24,10 @@ function updateLocale(value: string) {
 	router.replace({
 		query: {
 			...route.query,
-			lang: formatLocaleAsQuery(locale.value),
+			lang:
+				locale.value === defaultLocale
+					? undefined
+					: formatLocaleAsQuery(locale.value),
 		},
 	});
 }
@@ -81,14 +84,6 @@ function handleVisibleChange(visible: boolean) {
 		"Language": "Язык"
 	},
 	"sr": {
-		"LanguageSelector": "Izaberite jezik",
-		"Language": "Jezik"
-	},
-	"me": {
-		"LanguageSelector": "Izaberite jezik",
-		"Language": "Jezik"
-	},
-	"ba": {
 		"LanguageSelector": "Izaberite jezik",
 		"Language": "Jezik"
 	},

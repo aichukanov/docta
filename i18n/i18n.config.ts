@@ -24,8 +24,6 @@ export default defineI18nConfig(() => ({
 			ApplicationName: 'docta.me | Все врачи Черногории',
 		},
 		sr,
-		ba: sr,
-		me: sr,
 		de: {
 			ApplicationName: 'docta.me | Alle Ärzte Montenegros',
 		},

@@ -2,8 +2,6 @@ import { Language } from '~/enums/language';
 
 export const locales = [
 	Language.SR,
-	Language.BA,
-	Language.ME,
 	Language.EN,
 	Language.RU,
 	Language.DE,
@@ -15,8 +13,6 @@ export const defaultLocale: (typeof locales)[number] = Language.SR;
 
 export const localeNames: Record<Locale, string> = {
 	[Language.SR]: 'Srpski',
-	[Language.BA]: 'Bosanski',
-	[Language.ME]: 'Crnogorski',
 	[Language.EN]: 'English',
 	[Language.RU]: 'Русский',
 	[Language.DE]: 'Deutsch',
@@ -24,13 +20,22 @@ export const localeNames: Record<Locale, string> = {
 };
 
 export function getLocaleFromQuery(value: string | string[]): Locale | null {
-	const locale = (
-		(Array.isArray(value) ? value[0] : value) || ''
-	).toLowerCase();
+	if (!value) {
+		return null;
+	}
 
-	return locale && locales.includes(locale) ? locale : null;
+	const locale = formatLocaleAsQuery(
+		(Array.isArray(value) ? value[0] : value) || '',
+	);
+
+	return locale &&
+		(locales.includes(locale) ||
+			locale === Language.ME ||
+			locale === Language.BA)
+		? locale
+		: null;
 }
 
 export function formatLocaleAsQuery(lang: Locale): string {
-	return lang.toLowerCase();
+	return lang ? lang.toLowerCase() : '';
 }

@@ -10,6 +10,7 @@ import specialtyI18n from '~/i18n/specialty';
 
 const router = useRouter();
 const route = useRoute();
+
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([
@@ -19,6 +20,7 @@ const { t, locale } = useI18n({
 		languageI18n,
 	]),
 });
+
 const {
 	specialtyIds,
 	cityIds,

@@ -17,7 +17,7 @@ const getRouteParams = () => {
 			specialtyIds: specialtyIds.value,
 			languageIds: languageIds.value,
 			cityIds: cityIds.value,
-			name: name.value,
+			name: name.value || undefined,
 			clinicIds: clinicIds.value,
 		},
 	};

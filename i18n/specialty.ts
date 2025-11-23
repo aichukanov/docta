@@ -1,329 +1,5 @@
 import { DoctorSpecialty } from '~/enums/specialty';
 
-const sr = {
-	Specialty: 'Specijalnost',
-	AnySpecialty: 'Bilo koja specijalnost',
-	SearchSpecialty: 'Pretraga specijalnosti',
-	NotFound: 'Nije pronađena specijalnost',
-
-	[`specialty_${DoctorSpecialty.GENERAL_SURGERY}`]: 'Opšta hirurgija',
-	[`specialty_${DoctorSpecialty.PEDIATRICS}`]: 'Pedijatrija',
-	[`specialty_${DoctorSpecialty.GYNECOLOGY_OBSTETRICS}`]:
-		'Ginekologija i akušerstvo',
-	[`specialty_${DoctorSpecialty.OPHTHALMOLOGY}`]: 'Oftalmologija',
-	[`specialty_${DoctorSpecialty.DERMATOVENEROLOGY}`]: 'Dermatovenerologija',
-	[`specialty_${DoctorSpecialty.NEUROLOGY}`]: 'Neurologija',
-	[`specialty_${DoctorSpecialty.UROLOGY}`]: 'Urologija',
-	[`specialty_${DoctorSpecialty.RADIOLOGY}`]: 'Radiologija',
-	[`specialty_${DoctorSpecialty.OTORHINOLARYNGOLOGY}`]: 'Otorinolaringologija',
-	[`specialty_${DoctorSpecialty.ENDOCRINOLOGY}`]: 'Endokrinologija',
-	[`specialty_${DoctorSpecialty.GASTROENTEROLOGY}`]: 'Gastroenterologija',
-	[`specialty_${DoctorSpecialty.PULMONOLOGY}`]: 'Pneumoftiziologija',
-	[`specialty_${DoctorSpecialty.HEMATOLOGY}`]: 'Hematologija',
-	[`specialty_${DoctorSpecialty.RHEUMATOLOGY}`]: 'Reumatologija',
-	[`specialty_${DoctorSpecialty.ORTHOPEDICS_TRAUMATOLOGY}`]:
-		'Traumatologija i ortopedija',
-	[`specialty_${DoctorSpecialty.PLASTIC_SURGERY}`]: 'Plastična hirurgija',
-	[`specialty_${DoctorSpecialty.ANESTHESIOLOGY}`]: 'Anesteziologija',
-	[`specialty_${DoctorSpecialty.FAMILY_MEDICINE}`]: 'Porodična medicina',
-	[`specialty_${DoctorSpecialty.PSYCHIATRY}`]: 'Psihijatrija',
-	[`specialty_${DoctorSpecialty.PSYCHOLOGY}`]: 'Psihologija',
-	[`specialty_${DoctorSpecialty.PEDIATRIC_CARDIOLOGY}`]: 'Dečja kardiologija',
-	[`specialty_${DoctorSpecialty.PEDIATRIC_SURGERY}`]: 'Dečja hirurgija',
-	[`specialty_${DoctorSpecialty.PEDIATRIC_NEUROLOGY}`]: 'Dečja neurologija',
-	[`specialty_${DoctorSpecialty.PEDIATRIC_PULMONOLOGY}`]: 'Dečja pulmologija',
-	[`specialty_${DoctorSpecialty.PEDIATRIC_GASTROENTEROLOGY}`]:
-		'Dečja gastroenterologija',
-	[`specialty_${DoctorSpecialty.PEDIATRIC_ENDOCRINOLOGY}`]:
-		'Dečja endokrinologija',
-	[`specialty_${DoctorSpecialty.PEDIATRIC_HEMATOLOGY}`]: 'Dečja hematologija',
-	[`specialty_${DoctorSpecialty.PEDIATRIC_ALLERGOLOGY}`]: 'Dečja alergologija',
-	[`specialty_${DoctorSpecialty.PEDIATRIC_ENT}`]: 'Dečja otorinolaringologija',
-	[`specialty_${DoctorSpecialty.PEDIATRIC_ORTHOPEDICS}`]: 'Dečja ortopedija',
-	[`specialty_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Dečja urologija',
-	[`specialty_${DoctorSpecialty.VASCULAR_SURGERY}`]:
-		'Vaskularna hirurgija (flebologija)',
-	[`specialty_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endokrina hirurgija',
-	[`specialty_${DoctorSpecialty.PROCTOLOGY}`]: 'Proktologija',
-	[`specialty_${DoctorSpecialty.GYNECOLOGIC_ONCOLOGY}`]: 'Onkogineologija',
-	[`specialty_${DoctorSpecialty.REPRODUCTIVE_MEDICINE}`]:
-		'Reproduktivna medicina',
-	[`specialty_${DoctorSpecialty.CLINICAL_BIOCHEMISTRY}`]: 'Klinička biohemija',
-	[`specialty_${DoctorSpecialty.MICROBIOLOGY}`]: 'Mikrobiologija',
-	[`specialty_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Molekularna biologija',
-	[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Fizijatrija',
-	[`specialty_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-		'Dečja fizijatrija',
-	[`specialty_${DoctorSpecialty.AESTHETIC_MEDICINE}`]: 'Estetska medicina',
-	[`specialty_${DoctorSpecialty.GENERAL_MEDICINE}`]: 'Opšta medicina',
-	[`specialty_${DoctorSpecialty.NEPHROLOGY}`]: 'Nefrologija',
-	[`specialty_${DoctorSpecialty.NEUROSURGERY}`]: 'Neurohirurgija',
-	[`specialty_${DoctorSpecialty.ONCOLOGY}`]: 'Onkologija',
-	[`specialty_${DoctorSpecialty.EMERGENCY_MEDICINE}`]: 'Urgentna medicina',
-	[`specialty_${DoctorSpecialty.THORACIC_SURGERY}`]: 'Torakalna hirurgija',
-	[`specialty_${DoctorSpecialty.OCCUPATIONAL_MEDICINE}`]: 'Medicina rada',
-	[`specialty_${DoctorSpecialty.PSYCHOTHERAPY}`]: 'Psihoterapija',
-	[`specialty_${DoctorSpecialty.INFECTIOUS_DISEASES}`]: 'Infektivne bolesti',
-	[`specialty_${DoctorSpecialty.NEONATOLOGY}`]: 'Neonatologija',
-	[`specialty_${DoctorSpecialty.PEDIATRIC_OPHTHALMOLOGY}`]:
-		'Dečja oftalmologija',
-	[`specialty_${DoctorSpecialty.SPEECH_THERAPY}`]: 'Logopedija',
-	[`specialty_${DoctorSpecialty.PERINATOLOGY}`]: 'Perinatologija',
-	[`specialty_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
-		'Dečja plastična hirurgija',
-	[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-		'Fizikalna medicina i rehabilitacija',
-	[`specialty_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralna hirurgija',
-
-	[`specialty_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologija',
-	[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiolog',
-	[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiolozi',
-
-	[`specialty_${DoctorSpecialty.INTERNAL_MEDICINE}`]: 'Interna medicina',
-	[`doctor_${DoctorSpecialty.INTERNAL_MEDICINE}`]: 'Lekar interne medicine',
-	[`doctors_${DoctorSpecialty.INTERNAL_MEDICINE}`]: 'Lekari interne medicine',
-
-	[`doctor_${DoctorSpecialty.GENERAL_SURGERY}`]: 'Hirurg',
-	[`doctors_${DoctorSpecialty.GENERAL_SURGERY}`]: 'Hirurzi',
-
-	[`doctor_${DoctorSpecialty.PEDIATRICS}`]: 'Pedijatar',
-	[`doctors_${DoctorSpecialty.PEDIATRICS}`]: 'Pedijatri',
-
-	[`doctor_${DoctorSpecialty.GYNECOLOGY_OBSTETRICS}`]: 'Ginekolog',
-	[`doctors_${DoctorSpecialty.GYNECOLOGY_OBSTETRICS}`]: 'Ginekolozi',
-
-	[`doctor_${DoctorSpecialty.OPHTHALMOLOGY}`]: 'Oftalmolog',
-	[`doctors_${DoctorSpecialty.OPHTHALMOLOGY}`]: 'Oftalmolozi',
-
-	[`doctor_${DoctorSpecialty.DERMATOVENEROLOGY}`]: 'Dermatovenerolog',
-	[`doctors_${DoctorSpecialty.DERMATOVENEROLOGY}`]: 'Dermatovenerolozi',
-
-	[`doctor_${DoctorSpecialty.NEUROLOGY}`]: 'Neurolog',
-	[`doctors_${DoctorSpecialty.NEUROLOGY}`]: 'Neurolozi',
-
-	[`doctor_${DoctorSpecialty.UROLOGY}`]: 'Urolog',
-	[`doctors_${DoctorSpecialty.UROLOGY}`]: 'Urolozi',
-
-	[`doctor_${DoctorSpecialty.RADIOLOGY}`]: 'Radiolog',
-	[`doctors_${DoctorSpecialty.RADIOLOGY}`]: 'Radiolozi',
-
-	[`doctor_${DoctorSpecialty.OTORHINOLARYNGOLOGY}`]: 'Otorinolaringolog',
-	[`doctors_${DoctorSpecialty.OTORHINOLARYNGOLOGY}`]: 'Otorinolaringolozi',
-
-	[`doctor_${DoctorSpecialty.ENDOCRINOLOGY}`]: 'Endokrinolog',
-	[`doctors_${DoctorSpecialty.ENDOCRINOLOGY}`]: 'Endokrinolozi',
-
-	[`doctor_${DoctorSpecialty.GASTROENTEROLOGY}`]: 'Gastroenterolog',
-	[`doctors_${DoctorSpecialty.GASTROENTEROLOGY}`]: 'Gastroenterolozi',
-
-	[`doctor_${DoctorSpecialty.PULMONOLOGY}`]: 'Pulmolog',
-	[`doctors_${DoctorSpecialty.PULMONOLOGY}`]: 'Pulmolozi',
-
-	[`doctor_${DoctorSpecialty.HEMATOLOGY}`]: 'Hematolog',
-	[`doctors_${DoctorSpecialty.HEMATOLOGY}`]: 'Hematolozi',
-
-	[`doctor_${DoctorSpecialty.RHEUMATOLOGY}`]: 'Reumatolog',
-	[`doctors_${DoctorSpecialty.RHEUMATOLOGY}`]: 'Reumatolozi',
-
-	[`doctor_${DoctorSpecialty.ORTHOPEDICS_TRAUMATOLOGY}`]:
-		'Traumatolog i ortoped',
-	[`doctors_${DoctorSpecialty.ORTHOPEDICS_TRAUMATOLOGY}`]:
-		'Traumatolozi i ortopedi',
-
-	[`doctor_${DoctorSpecialty.PLASTIC_SURGERY}`]: 'Plastični hirurg',
-	[`doctors_${DoctorSpecialty.PLASTIC_SURGERY}`]: 'Plastični hirurzi',
-
-	[`doctor_${DoctorSpecialty.ANESTHESIOLOGY}`]: 'Anesteziolog',
-	[`doctors_${DoctorSpecialty.ANESTHESIOLOGY}`]: 'Anesteziolozi',
-
-	[`doctor_${DoctorSpecialty.FAMILY_MEDICINE}`]: 'Porodični lekar',
-	[`doctors_${DoctorSpecialty.FAMILY_MEDICINE}`]: 'Porodični lekari',
-
-	[`doctor_${DoctorSpecialty.PSYCHIATRY}`]: 'Psihijatar',
-	[`doctors_${DoctorSpecialty.PSYCHIATRY}`]: 'Psihijatri',
-
-	[`doctor_${DoctorSpecialty.PSYCHOLOGY}`]: 'Psiholog',
-	[`doctors_${DoctorSpecialty.PSYCHOLOGY}`]: 'Psiholozi',
-
-	[`doctor_${DoctorSpecialty.PEDIATRIC_CARDIOLOGY}`]: 'Dečji kardiolog',
-	[`doctors_${DoctorSpecialty.PEDIATRIC_CARDIOLOGY}`]: 'Dečji kardiolozi',
-
-	[`doctor_${DoctorSpecialty.PEDIATRIC_SURGERY}`]: 'Dečji hirurg',
-	[`doctors_${DoctorSpecialty.PEDIATRIC_SURGERY}`]: 'Dečji hirurzi',
-
-	[`doctor_${DoctorSpecialty.PEDIATRIC_NEUROLOGY}`]: 'Dečji neurolog',
-	[`doctors_${DoctorSpecialty.PEDIATRIC_NEUROLOGY}`]: 'Dečji neurolozi',
-
-	[`doctor_${DoctorSpecialty.PEDIATRIC_PULMONOLOGY}`]: 'Dečji pulmolog',
-	[`doctors_${DoctorSpecialty.PEDIATRIC_PULMONOLOGY}`]: 'Dečji pulmolozi',
-
-	[`doctor_${DoctorSpecialty.PEDIATRIC_GASTROENTEROLOGY}`]:
-		'Dečji gastroenterolog',
-	[`doctors_${DoctorSpecialty.PEDIATRIC_GASTROENTEROLOGY}`]:
-		'Dečji gastroenterolozi',
-
-	[`doctor_${DoctorSpecialty.PEDIATRIC_ENDOCRINOLOGY}`]: 'Dečji endokrinolog',
-	[`doctors_${DoctorSpecialty.PEDIATRIC_ENDOCRINOLOGY}`]: 'Dečji endokrinolozi',
-
-	[`doctor_${DoctorSpecialty.PEDIATRIC_HEMATOLOGY}`]: 'Dečji hematolog',
-	[`doctors_${DoctorSpecialty.PEDIATRIC_HEMATOLOGY}`]: 'Dečji hematolozi',
-
-	[`doctor_${DoctorSpecialty.PEDIATRIC_ALLERGOLOGY}`]: 'Dečji alergolog',
-	[`doctors_${DoctorSpecialty.PEDIATRIC_ALLERGOLOGY}`]: 'Dečji alergolozi',
-
-	[`doctor_${DoctorSpecialty.PEDIATRIC_ENT}`]: 'Dečji otorinolaringolog',
-	[`doctors_${DoctorSpecialty.PEDIATRIC_ENT}`]: 'Dečji otorinolaringolozi',
-
-	[`doctor_${DoctorSpecialty.PEDIATRIC_ORTHOPEDICS}`]: 'Dečji ortoped',
-	[`doctors_${DoctorSpecialty.PEDIATRIC_ORTHOPEDICS}`]: 'Dečji ortopedi',
-
-	[`doctor_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Dečji urolog',
-	[`doctors_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Dečji urolozi',
-
-	[`doctor_${DoctorSpecialty.VASCULAR_SURGERY}`]:
-		'Vaskularni hirurg (flebolog)',
-	[`doctors_${DoctorSpecialty.VASCULAR_SURGERY}`]:
-		'Vaskularni hirurzi (flebolozi)',
-
-	[`doctor_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endokrini hirurg',
-	[`doctors_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endokrini hirurzi',
-
-	[`doctor_${DoctorSpecialty.PROCTOLOGY}`]: 'Proktolog',
-	[`doctors_${DoctorSpecialty.PROCTOLOGY}`]: 'Proktolozi',
-
-	[`doctor_${DoctorSpecialty.GYNECOLOGIC_ONCOLOGY}`]: 'Onkogineolog',
-	[`doctors_${DoctorSpecialty.GYNECOLOGIC_ONCOLOGY}`]: 'Onkoginekolozi',
-
-	[`doctor_${DoctorSpecialty.REPRODUCTIVE_MEDICINE}`]:
-		'Lekar reproduktivne medicine',
-	[`doctors_${DoctorSpecialty.REPRODUCTIVE_MEDICINE}`]:
-		'Lekari reproduktivne medicine',
-
-	[`doctor_${DoctorSpecialty.CLINICAL_BIOCHEMISTRY}`]: 'Klinički biohemičar',
-	[`doctors_${DoctorSpecialty.CLINICAL_BIOCHEMISTRY}`]: 'Klinički biohemičari',
-
-	[`doctor_${DoctorSpecialty.MICROBIOLOGY}`]: 'Mikrobiolog',
-	[`doctors_${DoctorSpecialty.MICROBIOLOGY}`]: 'Mikrobiolozi',
-
-	[`doctor_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Molekularni biolog',
-	[`doctors_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Molekularni biolozi',
-
-	[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Fizijatar',
-	[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Fizijatri',
-
-	[`doctor_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]: 'Dečji fizijatar',
-	[`doctors_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]: 'Dečji fizijatri',
-
-	[`doctor_${DoctorSpecialty.AESTHETIC_MEDICINE}`]: 'Lekar estetske medicine',
-	[`doctors_${DoctorSpecialty.AESTHETIC_MEDICINE}`]: 'Lekari estetske medicine',
-
-	[`doctor_${DoctorSpecialty.GENERAL_MEDICINE}`]: 'Lekar opšte medicine',
-	[`doctors_${DoctorSpecialty.GENERAL_MEDICINE}`]: 'Lekari opšte medicine',
-
-	[`doctor_${DoctorSpecialty.NEPHROLOGY}`]: 'Nefrolog',
-	[`doctors_${DoctorSpecialty.NEPHROLOGY}`]: 'Nefrolozi',
-
-	[`doctor_${DoctorSpecialty.NEUROSURGERY}`]: 'Neurohirurg',
-	[`doctors_${DoctorSpecialty.NEUROSURGERY}`]: 'Neurohirurzi',
-
-	[`doctor_${DoctorSpecialty.ONCOLOGY}`]: 'Onkolog',
-	[`doctors_${DoctorSpecialty.ONCOLOGY}`]: 'Onkolozi',
-
-	[`doctor_${DoctorSpecialty.EMERGENCY_MEDICINE}`]: 'Lekar urgentne medicine',
-	[`doctors_${DoctorSpecialty.EMERGENCY_MEDICINE}`]: 'Lekari urgentne medicine',
-
-	[`doctor_${DoctorSpecialty.THORACIC_SURGERY}`]: 'Torakalni hirurg',
-	[`doctors_${DoctorSpecialty.THORACIC_SURGERY}`]: 'Torakalni hirurzi',
-
-	[`doctor_${DoctorSpecialty.OCCUPATIONAL_MEDICINE}`]: 'Lekar medicine rada',
-	[`doctors_${DoctorSpecialty.OCCUPATIONAL_MEDICINE}`]: 'Lekari medicine rada',
-
-	[`doctor_${DoctorSpecialty.PSYCHOTHERAPY}`]: 'Psihoterapeut',
-	[`doctors_${DoctorSpecialty.PSYCHOTHERAPY}`]: 'Psihoterapeuti',
-
-	[`doctor_${DoctorSpecialty.INFECTIOUS_DISEASES}`]:
-		'Lekar infektivnih bolesti',
-	[`doctors_${DoctorSpecialty.INFECTIOUS_DISEASES}`]:
-		'Lekari infektivnih bolesti',
-
-	[`doctor_${DoctorSpecialty.NEONATOLOGY}`]: 'Neonatolog',
-	[`doctors_${DoctorSpecialty.NEONATOLOGY}`]: 'Neonatolozi',
-
-	[`doctor_${DoctorSpecialty.PEDIATRIC_OPHTHALMOLOGY}`]: 'Dečji oftalmolog',
-	[`doctors_${DoctorSpecialty.PEDIATRIC_OPHTHALMOLOGY}`]: 'Dečji oftalmolozi',
-
-	[`doctor_${DoctorSpecialty.SPEECH_THERAPY}`]: 'Logoped',
-	[`doctors_${DoctorSpecialty.SPEECH_THERAPY}`]: 'Logopedi',
-
-	[`doctor_${DoctorSpecialty.PERINATOLOGY}`]: 'Perinatolog',
-	[`doctors_${DoctorSpecialty.PERINATOLOGY}`]: 'Perinatolozi',
-
-	[`doctor_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
-		'Dečji plastični hirurg',
-	[`doctors_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
-		'Dečji plastični hirurzi',
-
-	[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]: 'Fizijatar',
-	[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]: 'Fizijatri',
-
-	[`doctor_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralni hirurg',
-	[`doctors_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralni hirurzi',
-
-	[`specialty_${DoctorSpecialty.MAMMOLOGY}`]: 'Mamologija',
-	[`doctor_${DoctorSpecialty.MAMMOLOGY}`]: 'Mamolog',
-	[`doctors_${DoctorSpecialty.MAMMOLOGY}`]: 'Mamolozi',
-
-	[`specialty_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Onkološka hirurgija',
-	[`doctor_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Onkološki hirurg',
-	[`doctors_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Onkološki hirurzi',
-
-	[`specialty_${DoctorSpecialty.DENTISTRY}`]: 'Stomatologija',
-	[`doctor_${DoctorSpecialty.DENTISTRY}`]: 'Stomatolog',
-	[`doctors_${DoctorSpecialty.DENTISTRY}`]: 'Stomatolozi',
-
-	[`specialty_${DoctorSpecialty.ALLERGOLOGY}`]: 'Alergologija',
-	[`doctor_${DoctorSpecialty.ALLERGOLOGY}`]: 'Alergolog',
-	[`doctors_${DoctorSpecialty.ALLERGOLOGY}`]: 'Alergolozi',
-
-	[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'Imunologija',
-	[`doctor_${DoctorSpecialty.IMMUNOLOGY}`]: 'Imunolog',
-	[`doctors_${DoctorSpecialty.IMMUNOLOGY}`]: 'Imunolozi',
-
-	[`specialty_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Oftalmološka hirurgija',
-	[`doctor_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Oftalmolog-hirurg',
-	[`doctors_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Oftalmolozi-hirurzi',
-
-	[`specialty_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopatija',
-	[`doctor_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopat',
-	[`doctors_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopati',
-
-	[`specialty_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]: 'Hiperbarična medicina',
-	[`doctor_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
-		'Lekar hiperbaričke medicine',
-	[`doctors_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
-		'Lekari hiperbaričke medicine',
-
-	[`specialty_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Patološka anatomija',
-	[`doctor_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Patohistolog',
-	[`doctors_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Patohistolozi',
-
-	[`specialty_${DoctorSpecialty.PODIATRY}`]: 'Podologija',
-	[`doctor_${DoctorSpecialty.PODIATRY}`]: 'Podolog',
-	[`doctors_${DoctorSpecialty.PODIATRY}`]: 'Podolozi',
-
-	[`specialty_${DoctorSpecialty.TRICHOLOGY}`]: 'Trihologija',
-	[`doctor_${DoctorSpecialty.TRICHOLOGY}`]: 'Triholog',
-	[`doctors_${DoctorSpecialty.TRICHOLOGY}`]: 'Triholozi',
-
-	[`specialty_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Dečja stomatologija',
-	[`doctor_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Dečji stomatolog',
-	[`doctors_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Dečji stomatolozi',
-
-	[`specialty_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nuklearna medicina',
-	[`doctor_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Lekar nuklearne medicine',
-	[`doctors_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Lekari nuklearne medicine',
-};
-
 export default {
 	messages: {
 		en: {
@@ -1068,9 +744,361 @@ export default {
 			[`doctors_${DoctorSpecialty.NUCLEAR_MEDICINE}`]:
 				'Специалисты по ядерной медицине',
 		},
-		sr,
-		ba: sr,
-		me: sr,
+		sr: {
+			Specialty: 'Specijalnost',
+			AnySpecialty: 'Bilo koja specijalnost',
+			SearchSpecialty: 'Pretraga specijalnosti',
+			NotFound: 'Nije pronađena specijalnost',
+
+			[`specialty_${DoctorSpecialty.GENERAL_SURGERY}`]: 'Opšta hirurgija',
+			[`specialty_${DoctorSpecialty.PEDIATRICS}`]: 'Pedijatrija',
+			[`specialty_${DoctorSpecialty.GYNECOLOGY_OBSTETRICS}`]:
+				'Ginekologija i akušerstvo',
+			[`specialty_${DoctorSpecialty.OPHTHALMOLOGY}`]: 'Oftalmologija',
+			[`specialty_${DoctorSpecialty.DERMATOVENEROLOGY}`]: 'Dermatovenerologija',
+			[`specialty_${DoctorSpecialty.NEUROLOGY}`]: 'Neurologija',
+			[`specialty_${DoctorSpecialty.UROLOGY}`]: 'Urologija',
+			[`specialty_${DoctorSpecialty.RADIOLOGY}`]: 'Radiologija',
+			[`specialty_${DoctorSpecialty.OTORHINOLARYNGOLOGY}`]:
+				'Otorinolaringologija',
+			[`specialty_${DoctorSpecialty.ENDOCRINOLOGY}`]: 'Endokrinologija',
+			[`specialty_${DoctorSpecialty.GASTROENTEROLOGY}`]: 'Gastroenterologija',
+			[`specialty_${DoctorSpecialty.PULMONOLOGY}`]: 'Pneumoftiziologija',
+			[`specialty_${DoctorSpecialty.HEMATOLOGY}`]: 'Hematologija',
+			[`specialty_${DoctorSpecialty.RHEUMATOLOGY}`]: 'Reumatologija',
+			[`specialty_${DoctorSpecialty.ORTHOPEDICS_TRAUMATOLOGY}`]:
+				'Traumatologija i ortopedija',
+			[`specialty_${DoctorSpecialty.PLASTIC_SURGERY}`]: 'Plastična hirurgija',
+			[`specialty_${DoctorSpecialty.ANESTHESIOLOGY}`]: 'Anesteziologija',
+			[`specialty_${DoctorSpecialty.FAMILY_MEDICINE}`]: 'Porodična medicina',
+			[`specialty_${DoctorSpecialty.PSYCHIATRY}`]: 'Psihijatrija',
+			[`specialty_${DoctorSpecialty.PSYCHOLOGY}`]: 'Psihologija',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_CARDIOLOGY}`]:
+				'Dečja kardiologija',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_SURGERY}`]: 'Dečja hirurgija',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_NEUROLOGY}`]: 'Dečja neurologija',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_PULMONOLOGY}`]:
+				'Dečja pulmologija',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_GASTROENTEROLOGY}`]:
+				'Dečja gastroenterologija',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_ENDOCRINOLOGY}`]:
+				'Dečja endokrinologija',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_HEMATOLOGY}`]:
+				'Dečja hematologija',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_ALLERGOLOGY}`]:
+				'Dečja alergologija',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_ENT}`]:
+				'Dečja otorinolaringologija',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_ORTHOPEDICS}`]:
+				'Dečja ortopedija',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Dečja urologija',
+			[`specialty_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+				'Vaskularna hirurgija (flebologija)',
+			[`specialty_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endokrina hirurgija',
+			[`specialty_${DoctorSpecialty.PROCTOLOGY}`]: 'Proktologija',
+			[`specialty_${DoctorSpecialty.GYNECOLOGIC_ONCOLOGY}`]: 'Onkogineologija',
+			[`specialty_${DoctorSpecialty.REPRODUCTIVE_MEDICINE}`]:
+				'Reproduktivna medicina',
+			[`specialty_${DoctorSpecialty.CLINICAL_BIOCHEMISTRY}`]:
+				'Klinička biohemija',
+			[`specialty_${DoctorSpecialty.MICROBIOLOGY}`]: 'Mikrobiologija',
+			[`specialty_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]:
+				'Molekularna biologija',
+			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Fizijatrija',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
+				'Dečja fizijatrija',
+			[`specialty_${DoctorSpecialty.AESTHETIC_MEDICINE}`]: 'Estetska medicina',
+			[`specialty_${DoctorSpecialty.GENERAL_MEDICINE}`]: 'Opšta medicina',
+			[`specialty_${DoctorSpecialty.NEPHROLOGY}`]: 'Nefrologija',
+			[`specialty_${DoctorSpecialty.NEUROSURGERY}`]: 'Neurohirurgija',
+			[`specialty_${DoctorSpecialty.ONCOLOGY}`]: 'Onkologija',
+			[`specialty_${DoctorSpecialty.EMERGENCY_MEDICINE}`]: 'Urgentna medicina',
+			[`specialty_${DoctorSpecialty.THORACIC_SURGERY}`]: 'Torakalna hirurgija',
+			[`specialty_${DoctorSpecialty.OCCUPATIONAL_MEDICINE}`]: 'Medicina rada',
+			[`specialty_${DoctorSpecialty.PSYCHOTHERAPY}`]: 'Psihoterapija',
+			[`specialty_${DoctorSpecialty.INFECTIOUS_DISEASES}`]:
+				'Infektivne bolesti',
+			[`specialty_${DoctorSpecialty.NEONATOLOGY}`]: 'Neonatologija',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_OPHTHALMOLOGY}`]:
+				'Dečja oftalmologija',
+			[`specialty_${DoctorSpecialty.SPEECH_THERAPY}`]: 'Logopedija',
+			[`specialty_${DoctorSpecialty.PERINATOLOGY}`]: 'Perinatologija',
+			[`specialty_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
+				'Dečja plastična hirurgija',
+			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Fizikalna medicina i rehabilitacija',
+			[`specialty_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralna hirurgija',
+
+			[`specialty_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologija',
+			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiolog',
+			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiolozi',
+
+			[`specialty_${DoctorSpecialty.INTERNAL_MEDICINE}`]: 'Interna medicina',
+			[`doctor_${DoctorSpecialty.INTERNAL_MEDICINE}`]: 'Lekar interne medicine',
+			[`doctors_${DoctorSpecialty.INTERNAL_MEDICINE}`]:
+				'Lekari interne medicine',
+
+			[`doctor_${DoctorSpecialty.GENERAL_SURGERY}`]: 'Hirurg',
+			[`doctors_${DoctorSpecialty.GENERAL_SURGERY}`]: 'Hirurzi',
+
+			[`doctor_${DoctorSpecialty.PEDIATRICS}`]: 'Pedijatar',
+			[`doctors_${DoctorSpecialty.PEDIATRICS}`]: 'Pedijatri',
+
+			[`doctor_${DoctorSpecialty.GYNECOLOGY_OBSTETRICS}`]: 'Ginekolog',
+			[`doctors_${DoctorSpecialty.GYNECOLOGY_OBSTETRICS}`]: 'Ginekolozi',
+
+			[`doctor_${DoctorSpecialty.OPHTHALMOLOGY}`]: 'Oftalmolog',
+			[`doctors_${DoctorSpecialty.OPHTHALMOLOGY}`]: 'Oftalmolozi',
+
+			[`doctor_${DoctorSpecialty.DERMATOVENEROLOGY}`]: 'Dermatovenerolog',
+			[`doctors_${DoctorSpecialty.DERMATOVENEROLOGY}`]: 'Dermatovenerolozi',
+
+			[`doctor_${DoctorSpecialty.NEUROLOGY}`]: 'Neurolog',
+			[`doctors_${DoctorSpecialty.NEUROLOGY}`]: 'Neurolozi',
+
+			[`doctor_${DoctorSpecialty.UROLOGY}`]: 'Urolog',
+			[`doctors_${DoctorSpecialty.UROLOGY}`]: 'Urolozi',
+
+			[`doctor_${DoctorSpecialty.RADIOLOGY}`]: 'Radiolog',
+			[`doctors_${DoctorSpecialty.RADIOLOGY}`]: 'Radiolozi',
+
+			[`doctor_${DoctorSpecialty.OTORHINOLARYNGOLOGY}`]: 'Otorinolaringolog',
+			[`doctors_${DoctorSpecialty.OTORHINOLARYNGOLOGY}`]: 'Otorinolaringolozi',
+
+			[`doctor_${DoctorSpecialty.ENDOCRINOLOGY}`]: 'Endokrinolog',
+			[`doctors_${DoctorSpecialty.ENDOCRINOLOGY}`]: 'Endokrinolozi',
+
+			[`doctor_${DoctorSpecialty.GASTROENTEROLOGY}`]: 'Gastroenterolog',
+			[`doctors_${DoctorSpecialty.GASTROENTEROLOGY}`]: 'Gastroenterolozi',
+
+			[`doctor_${DoctorSpecialty.PULMONOLOGY}`]: 'Pulmolog',
+			[`doctors_${DoctorSpecialty.PULMONOLOGY}`]: 'Pulmolozi',
+
+			[`doctor_${DoctorSpecialty.HEMATOLOGY}`]: 'Hematolog',
+			[`doctors_${DoctorSpecialty.HEMATOLOGY}`]: 'Hematolozi',
+
+			[`doctor_${DoctorSpecialty.RHEUMATOLOGY}`]: 'Reumatolog',
+			[`doctors_${DoctorSpecialty.RHEUMATOLOGY}`]: 'Reumatolozi',
+
+			[`doctor_${DoctorSpecialty.ORTHOPEDICS_TRAUMATOLOGY}`]:
+				'Traumatolog i ortoped',
+			[`doctors_${DoctorSpecialty.ORTHOPEDICS_TRAUMATOLOGY}`]:
+				'Traumatolozi i ortopedi',
+
+			[`doctor_${DoctorSpecialty.PLASTIC_SURGERY}`]: 'Plastični hirurg',
+			[`doctors_${DoctorSpecialty.PLASTIC_SURGERY}`]: 'Plastični hirurzi',
+
+			[`doctor_${DoctorSpecialty.ANESTHESIOLOGY}`]: 'Anesteziolog',
+			[`doctors_${DoctorSpecialty.ANESTHESIOLOGY}`]: 'Anesteziolozi',
+
+			[`doctor_${DoctorSpecialty.FAMILY_MEDICINE}`]: 'Porodični lekar',
+			[`doctors_${DoctorSpecialty.FAMILY_MEDICINE}`]: 'Porodični lekari',
+
+			[`doctor_${DoctorSpecialty.PSYCHIATRY}`]: 'Psihijatar',
+			[`doctors_${DoctorSpecialty.PSYCHIATRY}`]: 'Psihijatri',
+
+			[`doctor_${DoctorSpecialty.PSYCHOLOGY}`]: 'Psiholog',
+			[`doctors_${DoctorSpecialty.PSYCHOLOGY}`]: 'Psiholozi',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_CARDIOLOGY}`]: 'Dečji kardiolog',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_CARDIOLOGY}`]: 'Dečji kardiolozi',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_SURGERY}`]: 'Dečji hirurg',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_SURGERY}`]: 'Dečji hirurzi',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_NEUROLOGY}`]: 'Dečji neurolog',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_NEUROLOGY}`]: 'Dečji neurolozi',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_PULMONOLOGY}`]: 'Dečji pulmolog',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_PULMONOLOGY}`]: 'Dečji pulmolozi',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_GASTROENTEROLOGY}`]:
+				'Dečji gastroenterolog',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_GASTROENTEROLOGY}`]:
+				'Dečji gastroenterolozi',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_ENDOCRINOLOGY}`]:
+				'Dečji endokrinolog',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_ENDOCRINOLOGY}`]:
+				'Dečji endokrinolozi',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_HEMATOLOGY}`]: 'Dečji hematolog',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_HEMATOLOGY}`]: 'Dečji hematolozi',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_ALLERGOLOGY}`]: 'Dečji alergolog',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_ALLERGOLOGY}`]: 'Dečji alergolozi',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_ENT}`]: 'Dečji otorinolaringolog',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_ENT}`]: 'Dečji otorinolaringolozi',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_ORTHOPEDICS}`]: 'Dečji ortoped',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_ORTHOPEDICS}`]: 'Dečji ortopedi',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Dečji urolog',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_UROLOGY}`]: 'Dečji urolozi',
+
+			[`doctor_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+				'Vaskularni hirurg (flebolog)',
+			[`doctors_${DoctorSpecialty.VASCULAR_SURGERY}`]:
+				'Vaskularni hirurzi (flebolozi)',
+
+			[`doctor_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endokrini hirurg',
+			[`doctors_${DoctorSpecialty.ENDOCRINE_SURGERY}`]: 'Endokrini hirurzi',
+
+			[`doctor_${DoctorSpecialty.PROCTOLOGY}`]: 'Proktolog',
+			[`doctors_${DoctorSpecialty.PROCTOLOGY}`]: 'Proktolozi',
+
+			[`doctor_${DoctorSpecialty.GYNECOLOGIC_ONCOLOGY}`]: 'Onkogineolog',
+			[`doctors_${DoctorSpecialty.GYNECOLOGIC_ONCOLOGY}`]: 'Onkoginekolozi',
+
+			[`doctor_${DoctorSpecialty.REPRODUCTIVE_MEDICINE}`]:
+				'Lekar reproduktivne medicine',
+			[`doctors_${DoctorSpecialty.REPRODUCTIVE_MEDICINE}`]:
+				'Lekari reproduktivne medicine',
+
+			[`doctor_${DoctorSpecialty.CLINICAL_BIOCHEMISTRY}`]:
+				'Klinički biohemičar',
+			[`doctors_${DoctorSpecialty.CLINICAL_BIOCHEMISTRY}`]:
+				'Klinički biohemičari',
+
+			[`doctor_${DoctorSpecialty.MICROBIOLOGY}`]: 'Mikrobiolog',
+			[`doctors_${DoctorSpecialty.MICROBIOLOGY}`]: 'Mikrobiolozi',
+
+			[`doctor_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Molekularni biolog',
+			[`doctors_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Molekularni biolozi',
+
+			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Fizijatar',
+			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Fizijatri',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
+				'Dečji fizijatar',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
+				'Dečji fizijatri',
+
+			[`doctor_${DoctorSpecialty.AESTHETIC_MEDICINE}`]:
+				'Lekar estetske medicine',
+			[`doctors_${DoctorSpecialty.AESTHETIC_MEDICINE}`]:
+				'Lekari estetske medicine',
+
+			[`doctor_${DoctorSpecialty.GENERAL_MEDICINE}`]: 'Lekar opšte medicine',
+			[`doctors_${DoctorSpecialty.GENERAL_MEDICINE}`]: 'Lekari opšte medicine',
+
+			[`doctor_${DoctorSpecialty.NEPHROLOGY}`]: 'Nefrolog',
+			[`doctors_${DoctorSpecialty.NEPHROLOGY}`]: 'Nefrolozi',
+
+			[`doctor_${DoctorSpecialty.NEUROSURGERY}`]: 'Neurohirurg',
+			[`doctors_${DoctorSpecialty.NEUROSURGERY}`]: 'Neurohirurzi',
+
+			[`doctor_${DoctorSpecialty.ONCOLOGY}`]: 'Onkolog',
+			[`doctors_${DoctorSpecialty.ONCOLOGY}`]: 'Onkolozi',
+
+			[`doctor_${DoctorSpecialty.EMERGENCY_MEDICINE}`]:
+				'Lekar urgentne medicine',
+			[`doctors_${DoctorSpecialty.EMERGENCY_MEDICINE}`]:
+				'Lekari urgentne medicine',
+
+			[`doctor_${DoctorSpecialty.THORACIC_SURGERY}`]: 'Torakalni hirurg',
+			[`doctors_${DoctorSpecialty.THORACIC_SURGERY}`]: 'Torakalni hirurzi',
+
+			[`doctor_${DoctorSpecialty.OCCUPATIONAL_MEDICINE}`]:
+				'Lekar medicine rada',
+			[`doctors_${DoctorSpecialty.OCCUPATIONAL_MEDICINE}`]:
+				'Lekari medicine rada',
+
+			[`doctor_${DoctorSpecialty.PSYCHOTHERAPY}`]: 'Psihoterapeut',
+			[`doctors_${DoctorSpecialty.PSYCHOTHERAPY}`]: 'Psihoterapeuti',
+
+			[`doctor_${DoctorSpecialty.INFECTIOUS_DISEASES}`]:
+				'Lekar infektivnih bolesti',
+			[`doctors_${DoctorSpecialty.INFECTIOUS_DISEASES}`]:
+				'Lekari infektivnih bolesti',
+
+			[`doctor_${DoctorSpecialty.NEONATOLOGY}`]: 'Neonatolog',
+			[`doctors_${DoctorSpecialty.NEONATOLOGY}`]: 'Neonatolozi',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_OPHTHALMOLOGY}`]: 'Dečji oftalmolog',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_OPHTHALMOLOGY}`]:
+				'Dečji oftalmolozi',
+
+			[`doctor_${DoctorSpecialty.SPEECH_THERAPY}`]: 'Logoped',
+			[`doctors_${DoctorSpecialty.SPEECH_THERAPY}`]: 'Logopedi',
+
+			[`doctor_${DoctorSpecialty.PERINATOLOGY}`]: 'Perinatolog',
+			[`doctors_${DoctorSpecialty.PERINATOLOGY}`]: 'Perinatolozi',
+
+			[`doctor_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
+				'Dečji plastični hirurg',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
+				'Dečji plastični hirurzi',
+
+			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Fizijatar',
+			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Fizijatri',
+
+			[`doctor_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralni hirurg',
+			[`doctors_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralni hirurzi',
+
+			[`specialty_${DoctorSpecialty.MAMMOLOGY}`]: 'Mamologija',
+			[`doctor_${DoctorSpecialty.MAMMOLOGY}`]: 'Mamolog',
+			[`doctors_${DoctorSpecialty.MAMMOLOGY}`]: 'Mamolozi',
+
+			[`specialty_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Onkološka hirurgija',
+			[`doctor_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Onkološki hirurg',
+			[`doctors_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Onkološki hirurzi',
+
+			[`specialty_${DoctorSpecialty.DENTISTRY}`]: 'Stomatologija',
+			[`doctor_${DoctorSpecialty.DENTISTRY}`]: 'Stomatolog',
+			[`doctors_${DoctorSpecialty.DENTISTRY}`]: 'Stomatolozi',
+
+			[`specialty_${DoctorSpecialty.ALLERGOLOGY}`]: 'Alergologija',
+			[`doctor_${DoctorSpecialty.ALLERGOLOGY}`]: 'Alergolog',
+			[`doctors_${DoctorSpecialty.ALLERGOLOGY}`]: 'Alergolozi',
+
+			[`specialty_${DoctorSpecialty.IMMUNOLOGY}`]: 'Imunologija',
+			[`doctor_${DoctorSpecialty.IMMUNOLOGY}`]: 'Imunolog',
+			[`doctors_${DoctorSpecialty.IMMUNOLOGY}`]: 'Imunolozi',
+
+			[`specialty_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]:
+				'Oftalmološka hirurgija',
+			[`doctor_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Oftalmolog-hirurg',
+			[`doctors_${DoctorSpecialty.OPHTHALMIC_SURGERY}`]: 'Oftalmolozi-hirurzi',
+
+			[`specialty_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopatija',
+			[`doctor_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopat',
+			[`doctors_${DoctorSpecialty.OSTEOPATHY}`]: 'Osteopati',
+
+			[`specialty_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
+				'Hiperbarična medicina',
+			[`doctor_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
+				'Lekar hiperbaričke medicine',
+			[`doctors_${DoctorSpecialty.HYPERBARIC_MEDICINE}`]:
+				'Lekari hiperbaričke medicine',
+
+			[`specialty_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]:
+				'Patološka anatomija',
+			[`doctor_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Patohistolog',
+			[`doctors_${DoctorSpecialty.PATHOLOGICAL_ANATOMY}`]: 'Patohistolozi',
+
+			[`specialty_${DoctorSpecialty.PODIATRY}`]: 'Podologija',
+			[`doctor_${DoctorSpecialty.PODIATRY}`]: 'Podolog',
+			[`doctors_${DoctorSpecialty.PODIATRY}`]: 'Podolozi',
+
+			[`specialty_${DoctorSpecialty.TRICHOLOGY}`]: 'Trihologija',
+			[`doctor_${DoctorSpecialty.TRICHOLOGY}`]: 'Triholog',
+			[`doctors_${DoctorSpecialty.TRICHOLOGY}`]: 'Triholozi',
+
+			[`specialty_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]:
+				'Dečja stomatologija',
+			[`doctor_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Dečji stomatolog',
+			[`doctors_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]: 'Dečji stomatolozi',
+
+			[`specialty_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nuklearna medicina',
+			[`doctor_${DoctorSpecialty.NUCLEAR_MEDICINE}`]:
+				'Lekar nuklearne medicine',
+			[`doctors_${DoctorSpecialty.NUCLEAR_MEDICINE}`]:
+				'Lekari nuklearne medicine',
+		},
 		de: {
 			Specialty: 'Fachrichtung',
 			AnySpecialty: 'Beliebige Fachrichtung',

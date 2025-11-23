@@ -1,5 +1,10 @@
-import { getLocaleFromQuery, type Locale } from '~/composables/use-locale';
+import {
+	getLocaleFromQuery,
+	type Locale,
+	defaultLocale,
+} from '~/composables/use-locale';
 import { getRegionalUrl } from '../../../common/url-utils';
+import { Language } from '~/enums/language';
 
 export function fixUrlRegionalParams(
 	event: any,
@@ -45,14 +50,24 @@ function getLocaleForQuery(event: any): {
 		}
 	}
 
-	const queryLocale = getLocaleFromQuery(query.lang as string | string[]);
-	const defaultLocale = 'me';
+	const queryLocale = query.lang
+		? getLocaleFromQuery(query.lang as string | string[])
+		: defaultLocale;
+
+	const locale = cookieLocale || queryLocale || defaultLocale;
+	if (locale === Language.ME || locale === Language.BA) {
+		deleteCookie(event, 'locale');
+
+		return {
+			locale: defaultLocale,
+			redirectStatus: 301,
+		};
+	}
 
 	return {
-		locale: cookieLocale || queryLocale || defaultLocale,
+		locale,
 		redirectStatus:
-			queryLocale == null ||
-			(Array.isArray(query.lang) && query.lang.length > 1)
+			Array.isArray(query.lang) && query.lang.length > 1
 				? 301
 				: cookieLocale != null && cookieLocale !== queryLocale
 				? 302

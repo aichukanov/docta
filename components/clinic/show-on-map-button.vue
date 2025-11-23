@@ -13,7 +13,7 @@ import { LocationFilled } from '@element-plus/icons-vue';
 const { t } = useI18n();
 </script>
 
-<i18n>
+<i18n lang="json">
 {
 	"en": {
 		"ShowOnMap": "Show on map"

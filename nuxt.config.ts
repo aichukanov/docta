@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-	compatibilityDate: '2025-07-02',
+	compatibilityDate: '2025-11-23',
 
 	modules: ['nuxt-gtag', '@element-plus/nuxt', '@nuxtjs/i18n', '@pinia/nuxt'],
 

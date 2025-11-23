@@ -1,4 +1,8 @@
-import { formatLocaleAsQuery } from '~/composables/use-locale';
+import {
+	formatLocaleAsQuery,
+	getLocaleFromQuery,
+	defaultLocale,
+} from '~/composables/use-locale';
 
 function addQueryParams(
 	searchParams: URLSearchParams,
@@ -39,12 +43,18 @@ function updateQueryInUrl(
 		addQueryParams(searchParams, key, value as string | string[]);
 	});
 
-	return `${pathname}?${searchParams.toString()}`;
+	const finalQuery = searchParams.toString();
+	if (finalQuery === '') {
+		return pathname;
+	}
+
+	return `${pathname}?${finalQuery}`;
 }
 
 export function getRegionalQuery(lang: string) {
+	const locale = getLocaleFromQuery(lang);
 	return {
-		lang: formatLocaleAsQuery(lang),
+		lang: !locale || locale === defaultLocale ? undefined : locale,
 	};
 }
 

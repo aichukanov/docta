@@ -13,8 +13,8 @@ export enum LanguageId {
 	SR = 1,
 	RU = 2,
 	EN = 3,
-	BA = 4,
-	ME = 5,
+	// BA = 4, // unused
+	// ME = 5, // unused
 	DE = 6,
 	TR = 7,
 }

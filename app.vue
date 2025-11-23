@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import { locales, type Locale } from './composables/use-locale';
-import { defaultLocale, getLocaleFromQuery } from './composables/use-locale';
 import { getRegionalUrl } from './common/url-utils';
+import {
+	defaultLocale,
+	getLocaleFromQuery,
+	locales,
+	type Locale,
+} from './composables/use-locale';
 
 const { t, locale } = useI18n({ useScope: 'global' });
 const router = useRouter();
@@ -34,18 +38,13 @@ const alternateLinks = computed(() => {
 	}> = [
 		{
 			rel: 'canonical',
-			href: getLangLink(mainUrl, 'sr'),
+			href: getLangLink(mainUrl, defaultLocale),
 		},
 	];
 
 	for (let i = 0; i < locales.length; i++) {
 		const lang = locales[i];
 
-		// Google doesn't support montenegrin language
-		if (lang === 'me') {
-			continue;
-		}
-		
 		links.push({
 			rel: 'alternate',
 			href: getLangLink(mainUrl, lang),

@@ -1,5 +1,5 @@
 <template>
-	<ContactsLine :value="websiteUrl" link :tooltip="t('Website')">
+	<ContactsLine :value="websiteUrlWithUtm" link :tooltip="t('Website')">
 		<IconWebsite :size="20" class="messenger-icon" />
 		<span>{{ websiteUrl }}</span>
 	</ContactsLine>
@@ -11,6 +11,17 @@ const props = defineProps<{
 }>();
 
 const { t } = useI18n();
+
+const websiteUrlWithUtm = computed(() => {
+	try {
+		const url = new URL(props.websiteUrl);
+		url.searchParams.set('utm_source', 'docta.me');
+		return url.toString();
+	} catch {
+		// Если URL невалидный, возвращаем как есть
+		return props.websiteUrl;
+	}
+});
 </script>
 
 <style scoped src="./style.css" />

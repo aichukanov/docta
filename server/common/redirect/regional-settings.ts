@@ -54,7 +54,8 @@ function getLocaleForQuery(event: any): {
 		? getLocaleFromQuery(query.lang as string | string[])
 		: defaultLocale;
 
-	const locale = cookieLocale || queryLocale || defaultLocale;
+	// удаляем устаревшие куки для черногорского и боснийского
+	const locale = cookieLocale || queryLocale;
 	if (locale === Language.ME || locale === Language.BA) {
 		deleteCookie(event, 'locale');
 
@@ -66,11 +67,14 @@ function getLocaleForQuery(event: any): {
 
 	return {
 		locale,
-		redirectStatus:
-			Array.isArray(query.lang) && query.lang.length > 1
-				? 301
-				: cookieLocale != null && cookieLocale !== queryLocale
-				? 302
-				: null,
+		redirectStatus: (
+			Array.isArray(query.lang)
+				? query.lang.length > 1 || query.lang[0] === defaultLocale
+				: query.lang === defaultLocale
+		)
+			? 301
+			: cookieLocale != null && cookieLocale !== queryLocale
+			? 302
+			: null,
 	};
 }

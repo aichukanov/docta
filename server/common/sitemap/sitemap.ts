@@ -68,12 +68,14 @@ async function getActiveFilterCombinations() {
 			FROM doctors d
 			INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
 			INNER JOIN doctor_languages dl ON d.id = dl.doctor_id
+			WHERE dl.language_id != 1
 			UNION
 			SELECT ds.specialty_id, cl.language_id as lang_id
 			FROM doctors d
 			INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
 			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			INNER JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id
+			WHERE cl.language_id != 1
 		) as combined
 		ORDER BY specialty_id, lang_id;
 	`;
@@ -90,12 +92,14 @@ async function getActiveFilterCombinations() {
 			INNER JOIN doctor_languages dl ON d.id = dl.doctor_id
 			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			INNER JOIN clinics ON dc.clinic_id = clinics.id
+			WHERE dl.language_id != 1
 			UNION
 			SELECT cl.language_id as lang_id, clinics.city_id
 			FROM doctors d
 			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			INNER JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id
 			INNER JOIN clinics ON dc.clinic_id = clinics.id
+			WHERE cl.language_id != 1
 		) as combined
 		ORDER BY lang_id, city_id;
 	`;
@@ -111,6 +115,7 @@ async function getActiveFilterCombinations() {
 			INNER JOIN doctor_languages dl ON d.id = dl.doctor_id
 			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			INNER JOIN clinics ON dc.clinic_id = clinics.id
+			WHERE dl.language_id != 1
 			UNION
 			SELECT ds.specialty_id, cl.language_id as lang_id, clinics.city_id
 			FROM doctors d
@@ -118,11 +123,79 @@ async function getActiveFilterCombinations() {
 			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			INNER JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id
 			INNER JOIN clinics ON dc.clinic_id = clinics.id
+			WHERE cl.language_id != 1
 		) as combined
 		ORDER BY specialty_id, lang_id, city_id;
 	`;
 	const [specialtyLanguageCityRows] = await connection.execute<any[]>(
 		specialtyLanguageCityQuery,
+	);
+
+	// Комбинация: только клиника
+	const clinicQuery = `
+		SELECT DISTINCT dc.clinic_id as clinicId
+		FROM doctors d
+		INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
+		ORDER BY dc.clinic_id;
+	`;
+	const [clinicRows] = await connection.execute<any[]>(clinicQuery);
+
+	// Комбинация: клиника + специальность
+	const clinicSpecialtyQuery = `
+		SELECT DISTINCT dc.clinic_id as clinicId, ds.specialty_id as specialtyId
+		FROM doctors d
+		INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
+		INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
+		ORDER BY dc.clinic_id, ds.specialty_id;
+	`;
+	const [clinicSpecialtyRows] = await connection.execute<any[]>(
+		clinicSpecialtyQuery,
+	);
+
+	// Комбинация: клиника + язык
+	const clinicLanguageQuery = `
+		SELECT DISTINCT clinic_id as clinicId, lang_id as languageId
+		FROM (
+			SELECT dc.clinic_id, dl.language_id as lang_id
+			FROM doctors d
+			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
+			INNER JOIN doctor_languages dl ON d.id = dl.doctor_id
+			WHERE dl.language_id != 1
+			UNION
+			SELECT dc.clinic_id, cl.language_id as lang_id
+			FROM doctors d
+			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
+			INNER JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id
+			WHERE cl.language_id != 1
+		) as combined
+		ORDER BY clinic_id, lang_id;
+	`;
+	const [clinicLanguageRows] = await connection.execute<any[]>(
+		clinicLanguageQuery,
+	);
+
+	// Комбинация: клиника + специальность + язык
+	const clinicSpecialtyLanguageQuery = `
+		SELECT DISTINCT clinic_id as clinicId, specialty_id as specialtyId, lang_id as languageId
+		FROM (
+			SELECT dc.clinic_id, ds.specialty_id, dl.language_id as lang_id
+			FROM doctors d
+			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
+			INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
+			INNER JOIN doctor_languages dl ON d.id = dl.doctor_id
+			WHERE dl.language_id != 1
+			UNION
+			SELECT dc.clinic_id, ds.specialty_id, cl.language_id as lang_id
+			FROM doctors d
+			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
+			INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
+			INNER JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id
+			WHERE cl.language_id != 1
+		) as combined
+		ORDER BY clinic_id, specialty_id, lang_id;
+	`;
+	const [clinicSpecialtyLanguageRows] = await connection.execute<any[]>(
+		clinicSpecialtyLanguageQuery,
 	);
 
 	await connection.end();
@@ -132,6 +205,10 @@ async function getActiveFilterCombinations() {
 		specialtyLanguageCombinations: specialtyLanguageRows,
 		languageCityCombinations: languageCityRows,
 		specialtyLanguageCityCombinations: specialtyLanguageCityRows,
+		clinicCombinations: clinicRows,
+		clinicSpecialtyCombinations: clinicSpecialtyRows,
+		clinicLanguageCombinations: clinicLanguageRows,
+		clinicSpecialtyLanguageCombinations: clinicSpecialtyLanguageRows,
 	};
 }
 
@@ -145,7 +222,7 @@ export async function generateSitemapPage(sitemapIndex: number) {
 	// Для одиночных фильтров можно оставить все значения - каждое гарантированно что-то вернёт
 	const specialtyIds = getEnumValues(DoctorSpecialty);
 	const cityIds = getEnumValues(CityId);
-	const languageIds = getEnumValues(LanguageId);
+	const languageIds = getEnumValues(LanguageId).filter((id) => id !== 1); // Исключаем сербский язык (id = 1)
 
 	const specialtyLinks: SitemapLink[] = specialtyIds.map((specialty) =>
 		menuItemToLinks(`doctors`, { specialtyIds: specialty }),
@@ -195,6 +272,46 @@ export async function generateSitemapPage(sitemapIndex: number) {
 			}),
 		);
 
+	const clinicLinks: SitemapLink[] =
+		combinations.clinicCombinations.length > 0
+			? combinations.clinicCombinations.map((combo: any) =>
+					menuItemToLinks(`doctors`, {
+						clinicIds: combo.clinicId,
+					}),
+			  )
+			: [];
+
+	const clinicSpecialtyLinks: SitemapLink[] =
+		combinations.clinicSpecialtyCombinations.length > 0
+			? combinations.clinicSpecialtyCombinations.map((combo: any) =>
+					menuItemToLinks(`doctors`, {
+						clinicIds: combo.clinicId,
+						specialtyIds: combo.specialtyId,
+					}),
+			  )
+			: [];
+
+	const clinicLanguageLinks: SitemapLink[] =
+		combinations.clinicLanguageCombinations.length > 0
+			? combinations.clinicLanguageCombinations.map((combo: any) =>
+					menuItemToLinks(`doctors`, {
+						clinicIds: combo.clinicId,
+						languageIds: combo.languageId,
+					}),
+			  )
+			: [];
+
+	const clinicSpecialtyLanguageLinks: SitemapLink[] =
+		combinations.clinicSpecialtyLanguageCombinations.length > 0
+			? combinations.clinicSpecialtyLanguageCombinations.map((combo: any) =>
+					menuItemToLinks(`doctors`, {
+						clinicIds: combo.clinicId,
+						specialtyIds: combo.specialtyId,
+						languageIds: combo.languageId,
+					}),
+			  )
+			: [];
+
 	return await generateSitemap([
 		...doctorLinks,
 		...specialtyLinks,
@@ -204,6 +321,10 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		...specialtyLanguageLinks,
 		...languageCityLinks,
 		...specialtyLanguageCityLinks,
+		...clinicLinks,
+		...clinicSpecialtyLinks,
+		...clinicLanguageLinks,
+		...clinicSpecialtyLanguageLinks,
 	]);
 }
 

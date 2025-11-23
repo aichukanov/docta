@@ -31,7 +31,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			setResponseStatus(event, 400, 'Invalid doctor language');
 			return null;
 		}
-		if (!validateClinicIds(body, 'api/doctors/add')) {
+		if (!validateClinicIds(body, 'api/doctors/add', true)) {
 			setResponseStatus(event, 400, 'Invalid clinic');
 			return null;
 		}

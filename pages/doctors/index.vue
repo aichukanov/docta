@@ -23,6 +23,7 @@ const {
 	specialtyIds,
 	cityIds,
 	languageIds,
+	clinicIds,
 	name,
 	updateFromRoute,
 	getRouteParams,
@@ -39,6 +40,7 @@ const filterList = computed(() => ({
 	specialtyIds: specialtyIds.value,
 	cityIds: cityIds.value,
 	languageIds: languageIds.value,
+	clinicIds: clinicIds.value,
 	name: name.value,
 }));
 
@@ -92,16 +94,41 @@ const onMapReady = () => {
 	);
 };
 
+const clinicName = computed(() => {
+	if (clinicIds.value.length === 1) {
+		const clinic = clinicsList.value?.clinics?.find(
+			(c) => c.id === clinicIds.value[0],
+		);
+		return clinic?.name || '';
+	}
+	return '';
+});
+
 const pageTitle = computed(() => {
 	if (languageIds.value.length === 1) {
 		if (specialtyIds.value.length === 1) {
 			if (cityIds.value.length === 1) {
+				if (clinicIds.value.length === 1) {
+					return t('DoctorsLanguageSpecialtyCityClinic', {
+						language: t(`language_${languageIds.value[0]}_genitive`),
+						specialtyDoctors: t(`doctors_${specialtyIds.value[0]}`),
+						city: t(`city_${cityIds.value[0]}_genitive`),
+						clinic: clinicName.value,
+					});
+				}
 				return t('DoctorsLanguageSpecialtyCity', {
 					language: t(`language_${languageIds.value[0]}_genitive`),
 					specialtyDoctors: t(`doctors_${specialtyIds.value[0]}`),
 					city: t(`city_${cityIds.value[0]}_genitive`),
 				});
 			} else {
+				if (clinicIds.value.length === 1) {
+					return t('DoctorsLanguageSpecialtyClinic', {
+						language: t(`language_${languageIds.value[0]}_genitive`),
+						specialtyDoctors: t(`doctors_${specialtyIds.value[0]}`),
+						clinic: clinicName.value,
+					});
+				}
 				return t('DoctorsLanguageSpecialty', {
 					language: t(`language_${languageIds.value[0]}_genitive`),
 					specialtyDoctors: t(`doctors_${specialtyIds.value[0]}`),
@@ -109,11 +136,24 @@ const pageTitle = computed(() => {
 			}
 		} else {
 			if (cityIds.value.length === 1) {
+				if (clinicIds.value.length === 1) {
+					return t('DoctorsLanguageCityClinic', {
+						language: t(`language_${languageIds.value[0]}_genitive`),
+						city: t(`city_${cityIds.value[0]}_genitive`),
+						clinic: clinicName.value,
+					});
+				}
 				return t('DoctorsLanguageCity', {
 					language: t(`language_${languageIds.value[0]}_genitive`),
 					city: t(`city_${cityIds.value[0]}_genitive`),
 				});
 			} else {
+				if (clinicIds.value.length === 1) {
+					return t('DoctorsLanguageClinic', {
+						language: t(`language_${languageIds.value[0]}_genitive`),
+						clinic: clinicName.value,
+					});
+				}
 				return t('DoctorsLanguage', {
 					language: t(`language_${languageIds.value[0]}_genitive`),
 				});
@@ -122,22 +162,47 @@ const pageTitle = computed(() => {
 	} else {
 		if (specialtyIds.value.length === 1) {
 			if (cityIds.value.length === 1) {
+				if (clinicIds.value.length === 1) {
+					return t('DoctorsSpecialtyCityClinic', {
+						specialtyDoctors: t(`doctors_${specialtyIds.value[0]}`),
+						city: t(`city_${cityIds.value[0]}_genitive`),
+						clinic: clinicName.value,
+					});
+				}
 				return t('DoctorsSpecialtyCity', {
 					specialtyDoctors: t(`doctors_${specialtyIds.value[0]}`),
 					city: t(`city_${cityIds.value[0]}_genitive`),
 				});
 			}
 
+			if (clinicIds.value.length === 1) {
+				return t('DoctorsSpecialtyClinic', {
+					specialtyDoctors: t(`doctors_${specialtyIds.value[0]}`),
+					clinic: clinicName.value,
+				});
+			}
 			return t('DoctorsSpecialty', {
 				specialtyDoctors: t(`doctors_${specialtyIds.value[0]}`),
 			});
 		} else {
 			if (cityIds.value.length === 1) {
+				if (clinicIds.value.length === 1) {
+					return t('DoctorsCityClinic', {
+						city: t(`city_${cityIds.value[0]}_genitive`),
+						clinic: clinicName.value,
+					});
+				}
 				return t('DoctorsCity', {
 					city: t(`city_${cityIds.value[0]}_genitive`),
 				});
 			}
 		}
+	}
+
+	if (clinicIds.value.length === 1) {
+		return t('DoctorsClinic', {
+			clinic: clinicName.value,
+		});
 	}
 
 	return t('Doctors');
@@ -147,6 +212,20 @@ const robotsMeta = computed(() => {
 	if (doctorsList.value?.doctors?.length === 0) {
 		return 'noindex, follow';
 	}
+
+	// Noindex если выбран только сербский язык без других фильтров
+	const onlySerbianLanguage =
+		languageIds.value.length === 1 &&
+		languageIds.value[0] === 1 &&
+		specialtyIds.value.length === 0 &&
+		cityIds.value.length === 0 &&
+		clinicIds.value.length === 0 &&
+		!name.value;
+
+	if (onlySerbianLanguage) {
+		return 'noindex, follow';
+	}
+
 	return undefined;
 });
 
@@ -186,9 +265,13 @@ onMounted(async () => {
 			<div class="doctors-list-container">
 				<div class="filters-sidebar">
 					<FilterName />
-					<FilterCity />
-					<FilterLanguage />
-					<FilterSpecialty />
+					<FilterCitySelect v-model:value="cityIds" />
+					<FilterLanguageSelect v-model:value="languageIds" />
+					<FilterSpecialtySelect v-model:value="specialtyIds" />
+					<FilterClinicSelect
+						:clinics="clinicsList.clinics"
+						v-model:value="clinicIds"
+					/>
 				</div>
 
 				<div class="doctors-list-content">

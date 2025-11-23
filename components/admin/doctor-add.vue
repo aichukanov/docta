@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { DoctorData } from '~/interfaces/doctor';
+import type { ClinicData } from '~/interfaces/doctor';
 
 const props = defineProps<{
 	clinics: ClinicData[];
@@ -24,13 +24,6 @@ const doctorViber = ref('');
 const clinicIds = ref<number[]>([]);
 const specialtyIds = ref<number[]>([]);
 const languageIds = ref<number[]>([1]);
-
-const clinicOptions = computed(() => {
-	return props.clinics.map((clinic) => ({
-		label: clinic.name,
-		value: clinic.id,
-	}));
-});
 
 const clearFields = () => {
 	doctorName.value = '';
@@ -104,14 +97,7 @@ const addDoctor = async () => {
 		<el-input v-model="doctorWhatsapp" placeholder="Whatsapp" />
 		<el-input v-model="doctorViber" placeholder="Viber" />
 
-		<FilterableSelect
-			:items="clinicOptions"
-			v-model:value="clinicIds"
-			multiple
-			placeholder="Выберите клинику"
-			placeholderSearch="Введите часть названия клиники"
-		/>
-
+		<FilterClinicSelect :clinics="clinics" v-model:value="clinicIds" />
 		<FilterSpecialtySelect v-model:value="specialtyIds" />
 		<FilterLanguageSelect v-model:value="languageIds" />
 

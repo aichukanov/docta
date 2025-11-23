@@ -101,8 +101,9 @@ export function validateCityId({ cityId }: { cityId: unknown }, from: string) {
 export function validateClinicIds(
 	{ clinicIds }: { clinicIds: unknown },
 	from: string,
+	required = false,
 ) {
-	if (!Array.isArray(clinicIds) || clinicIds.length === 0) {
+	if (!Array.isArray(clinicIds) || (required && clinicIds.length === 0)) {
 		showError(from, 'Invalid clinic ids: must be a non-empty array');
 		return false;
 	}

@@ -44,6 +44,7 @@ export async function getDoctorList(
 		specialtyIds?: number[];
 		cityIds?: number[];
 		languageIds?: string[];
+		clinicIds?: number[];
 	} = {},
 ) {
 	const whereFilters = [];
@@ -59,6 +60,9 @@ export async function getDoctorList(
 		whereFilters.push(
 			`(languages.id IN (${languageList}) OR clinic_languages.language_id IN (${languageList}))`,
 		);
+	}
+	if (body.clinicIds?.length > 0) {
+		whereFilters.push(`clinics.id IN (${body.clinicIds.join(',')})`);
 	}
 	if (body.name && validateName(body, 'api/doctors/list')) {
 		whereFilters.push(`d.name LIKE '%${body.name}%'`);

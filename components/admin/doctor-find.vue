@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import type { ClinicData } from '~/interfaces/doctor';
+
 const props = defineProps<{
 	doctors: DoctorData[];
+	clinics: ClinicData[];
 }>();
 
 const emit = defineEmits<{
@@ -36,7 +39,11 @@ const deleteDoctor = async () => {
 
 <template>
 	<div class="flex-block">
-		<AdminDoctorInfo :doctors="doctors" @selected="doctorId = $event" />
+		<AdminDoctorInfo
+			:doctors="doctors"
+			:clinics="clinics"
+			@selected="doctorId = $event"
+		/>
 		<div>
 			<el-button type="danger" :disabled="!doctorId" @click="deleteDoctor()">
 				Удалить

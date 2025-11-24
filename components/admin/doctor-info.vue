@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import type { ClinicData } from '~/interfaces/doctor';
+
 const props = defineProps<{
 	doctors: DoctorData[];
+	clinics: ClinicData[];
 }>();
 
 const emit = defineEmits<{
@@ -8,6 +11,7 @@ const emit = defineEmits<{
 }>();
 
 const doctorId = ref<number | null>(null);
+const doctorModel = ref<DoctorData | null>(null);
 
 const selectedDoctor = computed(() => {
 	return props.doctors.find((doctor) => doctor.id === doctorId.value);
@@ -23,6 +27,17 @@ const doctorOptions = computed(() => {
 watch(doctorId, (newDoctorId) => {
 	emit('selected', newDoctorId);
 });
+
+watch(selectedDoctor, (doctor) => {
+	if (doctor) {
+		doctorModel.value = {
+			...doctor,
+			clinicIds: doctor.clinicIds.split(',').map(Number),
+			specialtyIds: doctor.specialtyIds.split(',').map(Number),
+			languageIds: doctor.languageIds.split(',').map(Number),
+		};
+	}
+});
 </script>
 
 <template>
@@ -34,36 +49,98 @@ watch(doctorId, (newDoctorId) => {
 			placeholderSearch="Введите часть имени врача"
 		/>
 
-		<div v-if="selectedDoctor" class="doctor-info">
-			<h3>Имя: {{ selectedDoctor.name }}</h3>
-			<div>
-				<img :src="selectedDoctor.photoUrl" width="100" height="100" />
-				<el-input v-model="selectedDoctor.photoUrl" type="textarea" rows="3" />
-			</div>
+		<div v-if="doctorModel" class="doctor-info">
+			<AdminEditableField
+				label="Имя"
+				v-model:value="doctorModel.name"
+				:modified="selectedDoctor?.name !== doctorModel.name"
+				@reset="doctorModel.name = selectedDoctor?.name"
+			/>
+			<AdminEditableField
+				label="Профессиональное звание"
+				v-model:value="doctorModel.professionalTitle"
+				:modified="
+					selectedDoctor?.professionalTitle !== doctorModel.professionalTitle
+				"
+				@reset="
+					doctorModel.professionalTitle = selectedDoctor?.professionalTitle
+				"
+			/>
+			<AdminEditableField
+				label="Фото"
+				v-model:value="doctorModel.photoUrl"
+				type="photo"
+				:modified="selectedDoctor?.photoUrl !== doctorModel.photoUrl"
+				@reset="doctorModel.photoUrl = selectedDoctor?.photoUrl"
+			/>
+			<AdminEditableField
+				label="Email"
+				v-model:value="doctorModel.email"
+				:modified="selectedDoctor?.email !== doctorModel.email"
+				@reset="doctorModel.email = selectedDoctor?.email"
+			/>
+			<AdminEditableField
+				label="Телефон"
+				v-model:value="doctorModel.phone"
+				:modified="selectedDoctor?.phone !== doctorModel.phone"
+				@reset="doctorModel.phone = selectedDoctor?.phone"
+			/>
+			<AdminEditableField
+				label="Вебсайт"
+				v-model:value="doctorModel.website"
+				:modified="selectedDoctor?.website !== doctorModel.website"
+				@reset="doctorModel.website = selectedDoctor?.website"
+			/>
+			<AdminEditableField
+				label="Facebook"
+				v-model:value="doctorModel.facebook"
+				:modified="selectedDoctor?.facebook !== doctorModel.facebook"
+				@reset="doctorModel.facebook = selectedDoctor?.facebook"
+			/>
+			<AdminEditableField
+				label="Instagram"
+				v-model:value="doctorModel.instagram"
+				:modified="selectedDoctor?.instagram !== doctorModel.instagram"
+				@reset="doctorModel.instagram = selectedDoctor?.instagram"
+			/>
+			<AdminEditableField
+				label="Telegram"
+				v-model:value="doctorModel.telegram"
+				:modified="selectedDoctor?.telegram !== doctorModel.telegram"
+				@reset="doctorModel.telegram = selectedDoctor?.telegram"
+			/>
+			<AdminEditableField
+				label="Whatsapp"
+				v-model:value="doctorModel.whatsapp"
+				:modified="selectedDoctor?.whatsapp !== doctorModel.whatsapp"
+				@reset="doctorModel.whatsapp = selectedDoctor?.whatsapp"
+			/>
+			<AdminEditableField
+				label="Viber"
+				v-model:value="doctorModel.viber"
+				:modified="selectedDoctor?.viber !== doctorModel.viber"
+				@reset="doctorModel.viber = selectedDoctor?.viber"
+			/>
 
-			<div>email: {{ selectedDoctor.email }}</div>
-			<div>Телефон: {{ selectedDoctor.phone }}</div>
-			<div>Вебсайт: {{ selectedDoctor.website }}</div>
-			<div>Facebook: {{ selectedDoctor.facebook }}</div>
-			<div>Instagram: {{ selectedDoctor.instagram }}</div>
-			<div>Telegram: {{ selectedDoctor.telegram }}</div>
-			<div>Whatsapp: {{ selectedDoctor.whatsapp }}</div>
-			<div>Viber: {{ selectedDoctor.viber }}</div>
+			<FilterClinicSelect
+				:clinics="clinics"
+				v-model:value="doctorModel.clinicIds"
+			/>
+
+			<FilterSpecialtySelect v-model:value="doctorModel.specialtyIds" />
+
+			<FilterLanguageSelect v-model:value="doctorModel.languageIds" />
 		</div>
 	</div>
 </template>
 
-<style scoped>
+<style scoped lang="less">
 .doctor-info {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-md);
-
-	& > div {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: var(--spacing-lg);
-	}
+	margin-top: var(--spacing-lg);
+	border-top: 1px solid black;
+	padding-top: var(--spacing-lg);
 }
 </style>

@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import type { ClinicData } from '~/interfaces/doctor';
+
 const props = defineProps<{
 	doctors: DoctorData[];
+	clinics: ClinicData[];
 }>();
 
 const emit = defineEmits<{
@@ -55,8 +58,16 @@ const mergeDoctors = async () => {
 <template>
 	<div class="flex-block-column">
 		<div class="flex-block">
-			<AdminDoctorInfo :doctors="doctors" @selected="doctorId1 = $event" />
-			<AdminDoctorInfo :doctors="doctors" @selected="doctorId2 = $event" />
+			<AdminDoctorInfo
+				:doctors="doctors"
+				:clinics="clinics"
+				@selected="doctorId1 = $event"
+			/>
+			<AdminDoctorInfo
+				:doctors="doctors"
+				:clinics="clinics"
+				@selected="doctorId2 = $event"
+			/>
 		</div>
 		<div>
 			<el-button type="primary" @click="mergeDoctors">Объединить</el-button>

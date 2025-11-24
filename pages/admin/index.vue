@@ -42,36 +42,38 @@ const updateClinics = () => {
 			<div class="loading-spinner"></div>
 			<p>Загрузка врачей и клиник...</p>
 		</div>
-		<el-collapse v-else expand-icon-position="left">
-			<el-collapse-item title="Найти врача">
+		<el-tabs v-else>
+			<el-tab-pane label="Найти врача">
 				<AdminDoctorFind
 					:doctors="doctorsList.doctors"
+					:clinics="clinicsList.clinics"
 					@updated="updateDoctors"
 				/>
-			</el-collapse-item>
+			</el-tab-pane>
 
-			<el-collapse-item title="Объединить врачей">
+			<el-tab-pane label="Объединить врачей">
 				<AdminDoctorMerge
 					:doctors="doctorsList.doctors"
+					:clinics="clinicsList.clinics"
 					@updated="updateDoctors"
 				/>
-			</el-collapse-item>
+			</el-tab-pane>
 
-			<el-collapse-item title="Добавить врача">
+			<el-tab-pane label="Добавить врача">
 				<AdminDoctorAdd
 					:clinics="clinicsList.clinics"
 					@updated="updateDoctors"
 				/>
-			</el-collapse-item>
+			</el-tab-pane>
 
-			<el-collapse-item title="Найти клинику">
+			<el-tab-pane label="Найти клинику">
 				<AdminClinicFind :clinics="clinicsList.clinics" />
-			</el-collapse-item>
+			</el-tab-pane>
 
-			<el-collapse-item title="Добавить клинику">
+			<el-tab-pane label="Добавить клинику">
 				<AdminClinicAdd @updated="updateClinics" />
-			</el-collapse-item>
-		</el-collapse>
+			</el-tab-pane>
+		</el-tabs>
 	</div>
 </template>
 

@@ -38,8 +38,7 @@ const mergeDoctors = async () => {
 		return;
 	}
 
-	await useFetch('/api/doctors/merge', {
-		key: 'doctors-merge',
+	await $fetch('/api/doctors/merge', {
 		method: 'POST',
 		body: {
 			primaryDoctorId: doctorId1.value,

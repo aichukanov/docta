@@ -53,8 +53,7 @@ const addDoctor = async () => {
 		return;
 	}
 
-	await useFetch('/api/doctors/add', {
-		key: 'doctors-add',
+	await $fetch('/api/doctors/add', {
 		method: 'POST',
 		body: {
 			name: doctorName.value,

@@ -151,7 +151,7 @@ const saveChanges = async () => {
 		return;
 	}
 
-	await useFetch('/api/doctors/update', {
+	await $fetch('/api/doctors/update', {
 		method: 'POST',
 		body: doctorModel.value,
 	});
@@ -169,8 +169,7 @@ const deleteDoctor = async () => {
 		return;
 	}
 
-	await useFetch('/api/doctors/remove', {
-		key: 'doctors-remove',
+	await $fetch('/api/doctors/remove', {
 		method: 'POST',
 		body: {
 			doctorId: doctorId.value,

@@ -48,8 +48,7 @@ const addClinic = async () => {
 		return;
 	}
 
-	await useFetch('/api/clinics/add', {
-		key: 'clinics-add',
+	await $fetch('/api/clinics/add', {
 		method: 'POST',
 		body: {
 			name: clinicName.value,

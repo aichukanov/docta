@@ -43,6 +43,13 @@ const updateClinics = () => {
 			<p>Загрузка врачей и клиник...</p>
 		</div>
 		<el-tabs v-else>
+			<el-tab-pane label="Добавить врача">
+				<AdminDoctorAdd
+					:clinics="clinicsList.clinics"
+					@updated="updateDoctors"
+				/>
+			</el-tab-pane>
+
 			<el-tab-pane label="Найти врача">
 				<AdminDoctorFind
 					:doctors="doctorsList.doctors"
@@ -54,13 +61,6 @@ const updateClinics = () => {
 			<el-tab-pane label="Объединить врачей">
 				<AdminDoctorMerge
 					:doctors="doctorsList.doctors"
-					:clinics="clinicsList.clinics"
-					@updated="updateDoctors"
-				/>
-			</el-tab-pane>
-
-			<el-tab-pane label="Добавить врача">
-				<AdminDoctorAdd
 					:clinics="clinicsList.clinics"
 					@updated="updateDoctors"
 				/>

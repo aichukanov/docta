@@ -82,20 +82,24 @@ const addDoctor = async () => {
 
 <template>
 	<div class="doctor-add">
-		<el-input v-model="doctorName" placeholder="Имя" required />
-		<el-input
-			v-model="doctorProfessionalTitle"
-			placeholder="Профессиональное звание"
+		<AdminEditableField label="Имя" v-model:value="doctorName" />
+		<AdminEditableField
+			label="Профессиональное звание"
+			v-model:value="doctorProfessionalTitle"
 		/>
-		<el-input v-model="doctorPhotoUrl" placeholder="Фото" />
-		<el-input v-model="doctorEmail" placeholder="Email" />
-		<el-input v-model="doctorPhone" placeholder="Телефон" />
-		<el-input v-model="doctorWebsite" placeholder="Вебсайт" />
-		<el-input v-model="doctorFacebook" placeholder="Facebook" />
-		<el-input v-model="doctorInstagram" placeholder="Instagram" />
-		<el-input v-model="doctorTelegram" placeholder="Telegram" />
-		<el-input v-model="doctorWhatsapp" placeholder="Whatsapp" />
-		<el-input v-model="doctorViber" placeholder="Viber" />
+		<AdminEditableField
+			label="Фото"
+			type="photo"
+			v-model:value="doctorPhotoUrl"
+		/>
+		<AdminEditableField label="Email" v-model:value="doctorEmail" />
+		<AdminEditableField label="Телефон" v-model:value="doctorPhone" />
+		<AdminEditableField label="Вебсайт" v-model:value="doctorWebsite" />
+		<AdminEditableField label="Facebook" v-model:value="doctorFacebook" />
+		<AdminEditableField label="Instagram" v-model:value="doctorInstagram" />
+		<AdminEditableField label="Telegram" v-model:value="doctorTelegram" />
+		<AdminEditableField label="Whatsapp" v-model:value="doctorWhatsapp" />
+		<AdminEditableField label="Viber" v-model:value="doctorViber" />
 
 		<FilterClinicSelect :clinics="clinics" v-model:value="clinicIds" />
 		<FilterSpecialtySelect v-model:value="specialtyIds" />

@@ -80,18 +80,18 @@ const addClinic = async () => {
 		<div class="clinic-add-form">
 			<FilterCitySelect v-model:value="cityIds" />
 
-			<el-input v-model="clinicName" placeholder="Название" />
-			<el-input v-model="clinicAddress" placeholder="Адрес" />
-			<el-input v-model="clinicLatitude" placeholder="Широта" />
-			<el-input v-model="clinicLongitude" placeholder="Долгота" />
-			<el-input v-model="clinicPhone" placeholder="Телефон" />
-			<el-input v-model="clinicEmail" placeholder="Email" />
-			<el-input v-model="clinicWebsite" placeholder="Вебсайт" />
-			<el-input v-model="clinicFacebook" placeholder="Facebook" />
-			<el-input v-model="clinicInstagram" placeholder="Instagram" />
-			<el-input v-model="clinicTelegram" placeholder="Telegram" />
-			<el-input v-model="clinicWhatsapp" placeholder="Whatsapp" />
-			<el-input v-model="clinicViber" placeholder="Viber" />
+			<AdminEditableField label="Название" v-model:value="clinicName" />
+			<AdminEditableField label="Адрес" v-model:value="clinicAddress" />
+			<AdminEditableField label="Широта" v-model:value="clinicLatitude" />
+			<AdminEditableField label="Долгота" v-model:value="clinicLongitude" />
+			<AdminEditableField label="Телефон" v-model:value="clinicPhone" />
+			<AdminEditableField label="Email" v-model:value="clinicEmail" />
+			<AdminEditableField label="Вебсайт" v-model:value="clinicWebsite" />
+			<AdminEditableField label="Facebook" v-model:value="clinicFacebook" />
+			<AdminEditableField label="Instagram" v-model:value="clinicInstagram" />
+			<AdminEditableField label="Telegram" v-model:value="clinicTelegram" />
+			<AdminEditableField label="Whatsapp" v-model:value="clinicWhatsapp" />
+			<AdminEditableField label="Viber" v-model:value="clinicViber" />
 
 			<FilterLanguageSelect v-model:value="languageIds" />
 		</div>

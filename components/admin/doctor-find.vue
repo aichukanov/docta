@@ -43,6 +43,7 @@ const deleteDoctor = async () => {
 			:doctors="doctors"
 			:clinics="clinics"
 			@selected="doctorId = $event"
+			@updated="emit('updated')"
 		/>
 		<div>
 			<el-button type="danger" :disabled="!doctorId" @click="deleteDoctor()">

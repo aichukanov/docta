@@ -8,6 +8,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
 	(e: 'selected', doctorId: number): void;
+	(e: 'updated'): void;
 }>();
 
 const doctorId = ref<number | null>(null);
@@ -23,6 +24,134 @@ const doctorOptions = computed(() => {
 		value: doctor.id,
 	}));
 });
+
+const nameModified = computed(
+	() => selectedDoctor.value?.name !== doctorModel.value?.name,
+);
+
+const professionalTitleModified = computed(
+	() =>
+		selectedDoctor.value?.professionalTitle !==
+		doctorModel.value?.professionalTitle,
+);
+
+const photoUrlModified = computed(
+	() => selectedDoctor.value?.photoUrl !== doctorModel.value?.photoUrl,
+);
+
+const emailModified = computed(
+	() => selectedDoctor.value?.email !== doctorModel.value?.email,
+);
+
+const phoneModified = computed(
+	() => selectedDoctor.value?.phone !== doctorModel.value?.phone,
+);
+
+const websiteModified = computed(
+	() => selectedDoctor.value?.website !== doctorModel.value?.website,
+);
+
+const facebookModified = computed(
+	() => selectedDoctor.value?.facebook !== doctorModel.value?.facebook,
+);
+
+const instagramModified = computed(
+	() => selectedDoctor.value?.instagram !== doctorModel.value?.instagram,
+);
+
+const telegramModified = computed(
+	() => selectedDoctor.value?.telegram !== doctorModel.value?.telegram,
+);
+
+const whatsappModified = computed(
+	() => selectedDoctor.value?.whatsapp !== doctorModel.value?.whatsapp,
+);
+
+const viberModified = computed(
+	() => selectedDoctor.value?.viber !== doctorModel.value?.viber,
+);
+
+const clinicIdsModified = computed(() => {
+	if (!selectedDoctor.value || !doctorModel.value) {
+		return false;
+	}
+	const originalIds = selectedDoctor.value.clinicIds
+		.split(',')
+		.map(Number)
+		.sort();
+	const modelIds = [...doctorModel.value.clinicIds].sort();
+	return JSON.stringify(originalIds) !== JSON.stringify(modelIds);
+});
+
+const specialtyIdsModified = computed(() => {
+	if (!selectedDoctor.value || !doctorModel.value) {
+		return false;
+	}
+	const originalIds = selectedDoctor.value.specialtyIds
+		.split(',')
+		.map(Number)
+		.sort();
+	const modelIds = [...doctorModel.value.specialtyIds].sort();
+	return JSON.stringify(originalIds) !== JSON.stringify(modelIds);
+});
+
+const languageIdsModified = computed(() => {
+	if (!selectedDoctor.value || !doctorModel.value) {
+		return false;
+	}
+	const originalIds = selectedDoctor.value.languageIds
+		.split(',')
+		.map(Number)
+		.sort();
+	const modelIds = [...doctorModel.value.languageIds].sort();
+	return JSON.stringify(originalIds) !== JSON.stringify(modelIds);
+});
+
+const hasChanges = computed(() => {
+	return (
+		nameModified.value ||
+		professionalTitleModified.value ||
+		photoUrlModified.value ||
+		emailModified.value ||
+		phoneModified.value ||
+		websiteModified.value ||
+		facebookModified.value ||
+		instagramModified.value ||
+		telegramModified.value ||
+		whatsappModified.value ||
+		viberModified.value ||
+		clinicIdsModified.value ||
+		specialtyIdsModified.value ||
+		languageIdsModified.value
+	);
+});
+
+const saveChanges = async () => {
+	if (!doctorModel.value || !hasChanges.value) {
+		return;
+	}
+
+	if (
+		!doctorModel.value.name ||
+		!doctorModel.value.clinicIds.length ||
+		!doctorModel.value.specialtyIds.length ||
+		!doctorModel.value.languageIds.length
+	) {
+		alert('Имя, клиника, специализация и язык обязательны');
+		return;
+	}
+
+	if (!confirm('Вы уверены, что хотите сохранить изменения?')) {
+		return;
+	}
+
+	await useFetch('/api/doctors/update', {
+		method: 'POST',
+		body: doctorModel.value,
+	});
+
+	emit('updated');
+};
 
 watch(doctorId, (newDoctorId) => {
 	emit('selected', newDoctorId);
@@ -53,15 +182,13 @@ watch(selectedDoctor, (doctor) => {
 			<AdminEditableField
 				label="Имя"
 				v-model:value="doctorModel.name"
-				:modified="selectedDoctor?.name !== doctorModel.name"
+				:modified="nameModified"
 				@reset="doctorModel.name = selectedDoctor?.name"
 			/>
 			<AdminEditableField
 				label="Профессиональное звание"
 				v-model:value="doctorModel.professionalTitle"
-				:modified="
-					selectedDoctor?.professionalTitle !== doctorModel.professionalTitle
-				"
+				:modified="professionalTitleModified"
 				@reset="
 					doctorModel.professionalTitle = selectedDoctor?.professionalTitle
 				"
@@ -70,55 +197,55 @@ watch(selectedDoctor, (doctor) => {
 				label="Фото"
 				v-model:value="doctorModel.photoUrl"
 				type="photo"
-				:modified="selectedDoctor?.photoUrl !== doctorModel.photoUrl"
+				:modified="photoUrlModified"
 				@reset="doctorModel.photoUrl = selectedDoctor?.photoUrl"
 			/>
 			<AdminEditableField
 				label="Email"
 				v-model:value="doctorModel.email"
-				:modified="selectedDoctor?.email !== doctorModel.email"
+				:modified="emailModified"
 				@reset="doctorModel.email = selectedDoctor?.email"
 			/>
 			<AdminEditableField
 				label="Телефон"
 				v-model:value="doctorModel.phone"
-				:modified="selectedDoctor?.phone !== doctorModel.phone"
+				:modified="phoneModified"
 				@reset="doctorModel.phone = selectedDoctor?.phone"
 			/>
 			<AdminEditableField
 				label="Вебсайт"
 				v-model:value="doctorModel.website"
-				:modified="selectedDoctor?.website !== doctorModel.website"
+				:modified="websiteModified"
 				@reset="doctorModel.website = selectedDoctor?.website"
 			/>
 			<AdminEditableField
 				label="Facebook"
 				v-model:value="doctorModel.facebook"
-				:modified="selectedDoctor?.facebook !== doctorModel.facebook"
+				:modified="facebookModified"
 				@reset="doctorModel.facebook = selectedDoctor?.facebook"
 			/>
 			<AdminEditableField
 				label="Instagram"
 				v-model:value="doctorModel.instagram"
-				:modified="selectedDoctor?.instagram !== doctorModel.instagram"
+				:modified="instagramModified"
 				@reset="doctorModel.instagram = selectedDoctor?.instagram"
 			/>
 			<AdminEditableField
 				label="Telegram"
 				v-model:value="doctorModel.telegram"
-				:modified="selectedDoctor?.telegram !== doctorModel.telegram"
+				:modified="telegramModified"
 				@reset="doctorModel.telegram = selectedDoctor?.telegram"
 			/>
 			<AdminEditableField
 				label="Whatsapp"
 				v-model:value="doctorModel.whatsapp"
-				:modified="selectedDoctor?.whatsapp !== doctorModel.whatsapp"
+				:modified="whatsappModified"
 				@reset="doctorModel.whatsapp = selectedDoctor?.whatsapp"
 			/>
 			<AdminEditableField
 				label="Viber"
 				v-model:value="doctorModel.viber"
-				:modified="selectedDoctor?.viber !== doctorModel.viber"
+				:modified="viberModified"
 				@reset="doctorModel.viber = selectedDoctor?.viber"
 			/>
 
@@ -130,6 +257,12 @@ watch(selectedDoctor, (doctor) => {
 			<FilterSpecialtySelect v-model:value="doctorModel.specialtyIds" />
 
 			<FilterLanguageSelect v-model:value="doctorModel.languageIds" />
+
+			<div>
+				<el-button type="primary" @click="saveChanges" :disabled="!hasChanges">
+					Сохранить изменения
+				</el-button>
+			</div>
 		</div>
 	</div>
 </template>

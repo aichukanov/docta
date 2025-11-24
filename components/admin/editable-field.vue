@@ -7,11 +7,13 @@ const props = withDefaults(
 		value?: string | null;
 		modified?: boolean;
 		type?: 'text' | 'photo';
+		readonly?: boolean;
 	}>(),
 	{
 		value: '',
 		type: 'text',
 		modified: false,
+		readonly: false,
 	},
 );
 
@@ -32,9 +34,14 @@ const editableValue = computed({
 
 		<div v-if="props.type === 'photo'" class="photo-container">
 			<img :src="editableValue" width="100" height="100" />
-			<el-input v-model="editableValue" type="textarea" :rows="3" />
+			<el-input
+				v-model="editableValue"
+				type="textarea"
+				:rows="3"
+				:readonly="readonly"
+			/>
 		</div>
-		<el-input v-else v-model="editableValue">
+		<el-input v-else v-model="editableValue" :readonly="readonly">
 			<template #append v-if="props.modified">
 				<el-button :icon="RefreshLeft" @click="$emit('reset')" />
 			</template>

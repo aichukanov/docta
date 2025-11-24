@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import type { ClinicData } from '~/interfaces/doctor';
 
-const props = defineProps<{
-	doctors: DoctorData[];
-	clinics: ClinicData[];
-}>();
+const props = withDefaults(
+	defineProps<{
+		doctors: DoctorData[];
+		clinics: ClinicData[];
+		editable?: boolean;
+	}>(),
+	{
+		editable: false,
+	},
+);
 
 const emit = defineEmits<{
 	(e: 'selected', doctorId: number): void;
@@ -153,6 +159,31 @@ const saveChanges = async () => {
 	emit('updated');
 };
 
+const deleteDoctor = async () => {
+	if (!doctorId.value) {
+		alert('Выберите врача');
+		return;
+	}
+
+	if (!confirm('Вы уверены, что хотите удалить врача?')) {
+		return;
+	}
+
+	await useFetch('/api/doctors/remove', {
+		key: 'doctors-remove',
+		method: 'POST',
+		body: {
+			doctorId: doctorId.value,
+		},
+	});
+
+	doctorId.value = null;
+	doctorModel.value = null;
+
+	emit('updated');
+	alert('Врач удален');
+};
+
 watch(doctorId, (newDoctorId) => {
 	emit('selected', newDoctorId);
 });
@@ -188,6 +219,7 @@ watch(selectedDoctor, (doctor) => {
 			<AdminEditableField
 				label="Профессиональное звание"
 				v-model:value="doctorModel.professionalTitle"
+				:readonly="!editable"
 				:modified="professionalTitleModified"
 				@reset="
 					doctorModel.professionalTitle = selectedDoctor?.professionalTitle
@@ -203,48 +235,56 @@ watch(selectedDoctor, (doctor) => {
 			<AdminEditableField
 				label="Email"
 				v-model:value="doctorModel.email"
+				:readonly="!editable"
 				:modified="emailModified"
 				@reset="doctorModel.email = selectedDoctor?.email"
 			/>
 			<AdminEditableField
 				label="Телефон"
 				v-model:value="doctorModel.phone"
+				:readonly="!editable"
 				:modified="phoneModified"
 				@reset="doctorModel.phone = selectedDoctor?.phone"
 			/>
 			<AdminEditableField
 				label="Вебсайт"
 				v-model:value="doctorModel.website"
+				:readonly="!editable"
 				:modified="websiteModified"
 				@reset="doctorModel.website = selectedDoctor?.website"
 			/>
 			<AdminEditableField
 				label="Facebook"
 				v-model:value="doctorModel.facebook"
+				:readonly="!editable"
 				:modified="facebookModified"
 				@reset="doctorModel.facebook = selectedDoctor?.facebook"
 			/>
 			<AdminEditableField
 				label="Instagram"
 				v-model:value="doctorModel.instagram"
+				:readonly="!editable"
 				:modified="instagramModified"
 				@reset="doctorModel.instagram = selectedDoctor?.instagram"
 			/>
 			<AdminEditableField
 				label="Telegram"
 				v-model:value="doctorModel.telegram"
+				:readonly="!editable"
 				:modified="telegramModified"
 				@reset="doctorModel.telegram = selectedDoctor?.telegram"
 			/>
 			<AdminEditableField
 				label="Whatsapp"
 				v-model:value="doctorModel.whatsapp"
+				:readonly="!editable"
 				:modified="whatsappModified"
 				@reset="doctorModel.whatsapp = selectedDoctor?.whatsapp"
 			/>
 			<AdminEditableField
 				label="Viber"
 				v-model:value="doctorModel.viber"
+				:readonly="!editable"
 				:modified="viberModified"
 				@reset="doctorModel.viber = selectedDoctor?.viber"
 			/>
@@ -258,10 +298,11 @@ watch(selectedDoctor, (doctor) => {
 
 			<FilterLanguageSelect v-model:value="doctorModel.languageIds" />
 
-			<div>
+			<div v-if="editable" class="button-group">
 				<el-button type="primary" @click="saveChanges" :disabled="!hasChanges">
 					Сохранить изменения
 				</el-button>
+				<el-button type="danger" @click="deleteDoctor"> Удалить </el-button>
 			</div>
 		</div>
 	</div>
@@ -275,5 +316,10 @@ watch(selectedDoctor, (doctor) => {
 	margin-top: var(--spacing-lg);
 	border-top: 1px solid black;
 	padding-top: var(--spacing-lg);
+}
+
+.button-group {
+	display: flex;
+	gap: var(--spacing-md);
 }
 </style>

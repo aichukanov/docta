@@ -44,9 +44,10 @@ const updateClinics = () => {
 		</div>
 		<el-tabs v-else>
 			<el-tab-pane label="Найти врача">
-				<AdminDoctorFind
+				<AdminDoctorInfo
 					:doctors="doctorsList.doctors"
 					:clinics="clinicsList.clinics"
+					editable
 					@updated="updateDoctors"
 				/>
 			</el-tab-pane>

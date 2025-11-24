@@ -6,6 +6,7 @@ export enum Language {
 	RU = 'ru',
 	DE = 'de',
 	TR = 'tr',
+	IT = 'it',
 }
 
 // ID из базы данных
@@ -17,6 +18,7 @@ export enum LanguageId {
 	// ME = 5, // unused
 	DE = 6,
 	TR = 7,
+	IT = 8,
 }
 
 export function isDoctorLanguage(lang: string): boolean {

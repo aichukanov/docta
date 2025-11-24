@@ -22,6 +22,9 @@ export default {
 			[`language_${LanguageId.TR}`]: 'turkish',
 			[`language_${LanguageId.TR}_genitive`]: 'turkish',
 			[`language_${LanguageId.TR}_prepositional`]: 'Turkish',
+			[`language_${LanguageId.IT}`]: 'italian',
+			[`language_${LanguageId.IT}_genitive`]: 'italian',
+			[`language_${LanguageId.IT}_prepositional`]: 'Italian',
 		},
 		ru: {
 			ConsultationLanguage: 'Язык приема',
@@ -43,6 +46,9 @@ export default {
 			[`language_${LanguageId.TR}`]: 'турецкий',
 			[`language_${LanguageId.TR}_genitive`]: 'турецким',
 			[`language_${LanguageId.TR}_prepositional`]: 'турецком',
+			[`language_${LanguageId.IT}`]: 'итальянский',
+			[`language_${LanguageId.IT}_genitive`]: 'итальянским',
+			[`language_${LanguageId.IT}_prepositional`]: 'итальянском',
 		},
 		sr: {
 			ConsultationLanguage: 'Jezik konsultacije',
@@ -64,6 +70,9 @@ export default {
 			[`language_${LanguageId.TR}`]: 'turski',
 			[`language_${LanguageId.TR}_genitive`]: 'turski',
 			[`language_${LanguageId.TR}_prepositional`]: 'turskom',
+			[`language_${LanguageId.IT}`]: 'italijanski',
+			[`language_${LanguageId.IT}_genitive`]: 'italijanski',
+			[`language_${LanguageId.IT}_prepositional`]: 'italijanskom',
 		},
 		de: {
 			ConsultationLanguage: 'Beratungssprache',
@@ -85,6 +94,9 @@ export default {
 			[`language_${LanguageId.TR}`]: 'Türkisch',
 			[`language_${LanguageId.TR}_genitive`]: 'Türkisch',
 			[`language_${LanguageId.TR}_prepositional`]: 'Türkisch',
+			[`language_${LanguageId.IT}`]: 'Italienisch',
+			[`language_${LanguageId.IT}_genitive`]: 'Italienisch',
+			[`language_${LanguageId.IT}_prepositional`]: 'Italienisch',
 		},
 		tr: {
 			ConsultationLanguage: 'Görüşme dili',
@@ -106,6 +118,9 @@ export default {
 			[`language_${LanguageId.TR}`]: 'Türkçe',
 			[`language_${LanguageId.TR}_genitive`]: 'Türkçe',
 			[`language_${LanguageId.TR}_prepositional`]: 'Türkçe',
+			[`language_${LanguageId.IT}`]: 'İtalyanca',
+			[`language_${LanguageId.IT}_genitive`]: 'İtalyanca',
+			[`language_${LanguageId.IT}_prepositional`]: 'İtalyanca',
 		},
 	},
 };

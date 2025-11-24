@@ -5,6 +5,7 @@ import {
 	validateSpecialtyIds,
 	validateDoctorLanguageIds,
 	validateClinicIds,
+	validateNonNegativeInteger,
 } from '~/common/validation';
 
 export default defineEventHandler(async (event): Promise<boolean> => {
@@ -19,15 +20,16 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 		const body = await readBody(event);
 
-		if (!body.id || typeof body.id !== 'number') {
-			setResponseStatus(event, 400, 'Invalid doctor id');
-			return null;
-		}
-
 		if (!validateBody(body, 'api/doctors/update')) {
 			setResponseStatus(event, 400, 'Invalid parameters');
 			return null;
 		}
+
+		if (!validateNonNegativeInteger(body.id)) {
+			setResponseStatus(event, 400, 'Invalid doctor id');
+			return null;
+		}
+
 		if (!validateSpecialtyIds(body, 'api/doctors/update')) {
 			setResponseStatus(event, 400, 'Invalid specialty');
 			return null;

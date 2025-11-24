@@ -68,7 +68,11 @@ const updateClinics = () => {
 			</el-tab-pane>
 
 			<el-tab-pane label="Найти клинику">
-				<AdminClinicFind :clinics="clinicsList.clinics" />
+				<AdminClinicFind
+					:clinics="clinicsList.clinics"
+					editable
+					@updated="updateClinics"
+				/>
 			</el-tab-pane>
 
 			<el-tab-pane label="Добавить клинику">

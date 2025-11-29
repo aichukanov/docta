@@ -105,6 +105,9 @@ export default {
 			[`specialty_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]:
 				'Pediatric Dentistry',
 			[`specialty_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nuclear Medicine',
+			[`specialty_${DoctorSpecialty.GENETICS}`]: 'Medical Genetics',
+			[`specialty_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
+				'Gastrointestinal Surgery',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologist',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologists',
@@ -376,6 +379,14 @@ export default {
 			[`doctor_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nuclear Medicine Doctor',
 			[`doctors_${DoctorSpecialty.NUCLEAR_MEDICINE}`]:
 				'Nuclear Medicine Doctors',
+
+			[`doctor_${DoctorSpecialty.GENETICS}`]: 'Medical Geneticist',
+			[`doctors_${DoctorSpecialty.GENETICS}`]: 'Medical Geneticists',
+
+			[`doctor_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
+				'Gastrointestinal Surgeon',
+			[`doctors_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
+				'Gastrointestinal Surgeons',
 		},
 		ru: {
 			Specialty: 'Специальность',
@@ -743,6 +754,17 @@ export default {
 				'Специалист по ядерной медицине',
 			[`doctors_${DoctorSpecialty.NUCLEAR_MEDICINE}`]:
 				'Специалисты по ядерной медицине',
+
+			[`specialty_${DoctorSpecialty.GENETICS}`]: 'Медицинская генетика',
+			[`doctor_${DoctorSpecialty.GENETICS}`]: 'Генетик',
+			[`doctors_${DoctorSpecialty.GENETICS}`]: 'Генетики',
+
+			[`specialty_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
+				'Абдоминальная хирургия',
+			[`doctor_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
+				'Абдоминальный хирург',
+			[`doctors_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
+				'Абдоминальные хирурги',
 		},
 		sr: {
 			Specialty: 'Specijalnost',
@@ -1098,6 +1120,17 @@ export default {
 				'Lekar nuklearne medicine',
 			[`doctors_${DoctorSpecialty.NUCLEAR_MEDICINE}`]:
 				'Lekari nuklearne medicine',
+
+			[`specialty_${DoctorSpecialty.GENETICS}`]: 'Medicinska genetika',
+			[`doctor_${DoctorSpecialty.GENETICS}`]: 'Genetičar',
+			[`doctors_${DoctorSpecialty.GENETICS}`]: 'Genetičari',
+
+			[`specialty_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
+				'Gastrointestinalna hirurgija',
+			[`doctor_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
+				'Gastrointestinalni hirurg',
+			[`doctors_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
+				'Gastrointestinalni hirurzi',
 		},
 		de: {
 			Specialty: 'Fachrichtung',
@@ -1201,6 +1234,9 @@ export default {
 			[`specialty_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]:
 				'Kinderzahnheilkunde',
 			[`specialty_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nuklearmedizin',
+			[`specialty_${DoctorSpecialty.GENETICS}`]: 'Medizinische Genetik',
+			[`specialty_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
+				'Viszeralchirurgie',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologe',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologen',
@@ -1449,6 +1485,13 @@ export default {
 
 			[`doctor_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nuklearmediziner',
 			[`doctors_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nuklearmediziner',
+
+			[`doctor_${DoctorSpecialty.GENETICS}`]: 'Humangenetiker',
+			[`doctors_${DoctorSpecialty.GENETICS}`]: 'Humangenetiker',
+
+			[`doctor_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]: 'Viszeralchirurg',
+			[`doctors_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
+				'Viszeralchirurgen',
 		},
 		tr: {
 			Specialty: 'Uzmanlık',
@@ -1546,6 +1589,9 @@ export default {
 			[`specialty_${DoctorSpecialty.PEDIATRIC_DENTISTRY}`]:
 				'Çocuk Diş Hekimliği',
 			[`specialty_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nükleer Tıp',
+			[`specialty_${DoctorSpecialty.GENETICS}`]: 'Tıbbi Genetik',
+			[`specialty_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
+				'Gastrointestinal Cerrahi',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyolog',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyologlar',
@@ -1804,6 +1850,14 @@ export default {
 
 			[`doctor_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nükleer Tıp Doktoru',
 			[`doctors_${DoctorSpecialty.NUCLEAR_MEDICINE}`]: 'Nükleer Tıp Doktorları',
+
+			[`doctor_${DoctorSpecialty.GENETICS}`]: 'Tıbbi Genetik Uzmanı',
+			[`doctors_${DoctorSpecialty.GENETICS}`]: 'Tıbbi Genetik Uzmanları',
+
+			[`doctor_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
+				'Gastrointestinal Cerrah',
+			[`doctors_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
+				'Gastrointestinal Cerrahlar',
 		},
 	},
 };

@@ -110,6 +110,7 @@ export default {
 				'Gastrointestinal Surgery',
 			[`specialty_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
 				'Maxillofacial Surgery',
+			[`specialty_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Cardiac Surgery',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologist',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologists',
@@ -394,6 +395,9 @@ export default {
 				'Maxillofacial Surgeon',
 			[`doctors_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
 				'Maxillofacial Surgeons',
+
+			[`doctor_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Cardiac Surgeon',
+			[`doctors_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Cardiac Surgeons',
 		},
 		ru: {
 			Specialty: 'Специальность',
@@ -779,6 +783,10 @@ export default {
 				'Челюстно-лицевой хирург',
 			[`doctors_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
 				'Челюстно-лицевые хирурги',
+
+			[`specialty_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Кардиохирургия',
+			[`doctor_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Кардиохирург',
+			[`doctors_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Кардиохирурги',
 		},
 		sr: {
 			Specialty: 'Specijalnost',
@@ -1152,6 +1160,10 @@ export default {
 				'Maksilofacijalni hirurg',
 			[`doctors_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
 				'Maksilofacijalni hirurzi',
+
+			[`specialty_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Kardiohirurgija',
+			[`doctor_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Kardiohirurg',
+			[`doctors_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Kardiohirurzi',
 		},
 		de: {
 			Specialty: 'Fachrichtung',
@@ -1260,6 +1272,7 @@ export default {
 				'Viszeralchirurgie',
 			[`specialty_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
 				'Mund-Kiefer-Gesichtschirurgie',
+			[`specialty_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Herzchirurgie',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologe',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologen',
@@ -1520,6 +1533,9 @@ export default {
 				'Mund-Kiefer-Gesichtschirurg',
 			[`doctors_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
 				'Mund-Kiefer-Gesichtschirurgen',
+
+			[`doctor_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Herzchirurg',
+			[`doctors_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Herzchirurgen',
 		},
 		tr: {
 			Specialty: 'Uzmanlık',
@@ -1622,6 +1638,7 @@ export default {
 				'Gastrointestinal Cerrahi',
 			[`specialty_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
 				'Çene ve Yüz Cerrahisi',
+			[`specialty_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Kalp Cerrahisi',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyolog',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyologlar',
@@ -1893,6 +1910,9 @@ export default {
 				'Çene ve Yüz Cerrahı',
 			[`doctors_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
 				'Çene ve Yüz Cerrahları',
+
+			[`doctor_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Kalp Cerrahı',
+			[`doctors_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Kalp Cerrahları',
 		},
 	},
 };

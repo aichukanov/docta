@@ -108,6 +108,8 @@ export default {
 			[`specialty_${DoctorSpecialty.GENETICS}`]: 'Medical Genetics',
 			[`specialty_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
 				'Gastrointestinal Surgery',
+			[`specialty_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
+				'Maxillofacial Surgery',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologist',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologists',
@@ -387,6 +389,11 @@ export default {
 				'Gastrointestinal Surgeon',
 			[`doctors_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
 				'Gastrointestinal Surgeons',
+
+			[`doctor_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
+				'Maxillofacial Surgeon',
+			[`doctors_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
+				'Maxillofacial Surgeons',
 		},
 		ru: {
 			Specialty: 'Специальность',
@@ -765,6 +772,13 @@ export default {
 				'Абдоминальный хирург',
 			[`doctors_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
 				'Абдоминальные хирурги',
+
+			[`specialty_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
+				'Челюстно-лицевая хирургия',
+			[`doctor_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
+				'Челюстно-лицевой хирург',
+			[`doctors_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
+				'Челюстно-лицевые хирурги',
 		},
 		sr: {
 			Specialty: 'Specijalnost',
@@ -1131,6 +1145,13 @@ export default {
 				'Gastrointestinalni hirurg',
 			[`doctors_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
 				'Gastrointestinalni hirurzi',
+
+			[`specialty_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
+				'Maksilofacijalna hirurgija',
+			[`doctor_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
+				'Maksilofacijalni hirurg',
+			[`doctors_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
+				'Maksilofacijalni hirurzi',
 		},
 		de: {
 			Specialty: 'Fachrichtung',
@@ -1237,6 +1258,8 @@ export default {
 			[`specialty_${DoctorSpecialty.GENETICS}`]: 'Medizinische Genetik',
 			[`specialty_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
 				'Viszeralchirurgie',
+			[`specialty_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
+				'Mund-Kiefer-Gesichtschirurgie',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologe',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologen',
@@ -1492,6 +1515,11 @@ export default {
 			[`doctor_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]: 'Viszeralchirurg',
 			[`doctors_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
 				'Viszeralchirurgen',
+
+			[`doctor_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
+				'Mund-Kiefer-Gesichtschirurg',
+			[`doctors_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
+				'Mund-Kiefer-Gesichtschirurgen',
 		},
 		tr: {
 			Specialty: 'Uzmanlık',
@@ -1592,6 +1620,8 @@ export default {
 			[`specialty_${DoctorSpecialty.GENETICS}`]: 'Tıbbi Genetik',
 			[`specialty_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
 				'Gastrointestinal Cerrahi',
+			[`specialty_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
+				'Çene ve Yüz Cerrahisi',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyolog',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyologlar',
@@ -1858,6 +1888,11 @@ export default {
 				'Gastrointestinal Cerrah',
 			[`doctors_${DoctorSpecialty.GASTROINTESTINAL_SURGERY}`]:
 				'Gastrointestinal Cerrahlar',
+
+			[`doctor_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
+				'Çene ve Yüz Cerrahı',
+			[`doctors_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
+				'Çene ve Yüz Cerrahları',
 		},
 	},
 };

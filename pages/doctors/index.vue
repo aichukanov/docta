@@ -210,6 +210,10 @@ const pageTitle = computed(() => {
 	return t('Doctors');
 });
 
+const pageTitleWithCount = computed(() => {
+	return `${pageTitle.value} (${doctorsList.value?.totalCount})`;
+});
+
 const robotsMeta = computed(() => {
 	if (doctorsList.value?.doctors?.length === 0) {
 		return 'noindex, follow';
@@ -232,7 +236,7 @@ const robotsMeta = computed(() => {
 });
 
 useSeoMeta({
-	title: pageTitle,
+	title: pageTitleWithCount,
 	robots: robotsMeta,
 });
 
@@ -262,7 +266,7 @@ onMounted(async () => {
 <template>
 	<div class="doctors-page">
 		<div ref="doctorsListRef" class="doctors-sidebar">
-			<h1 class="page-title">{{ pageTitle }}</h1>
+			<h1 class="page-title">{{ pageTitleWithCount }}</h1>
 
 			<div class="doctors-list-container">
 				<div class="filters-sidebar">

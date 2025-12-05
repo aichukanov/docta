@@ -8,6 +8,11 @@ const mainPageLink = computed(() => ({
 	name: 'doctors',
 	query: getRegionalQuery(locale.value),
 }));
+
+const clinicsPageLink = computed(() => ({
+	name: 'clinics',
+	query: getRegionalQuery(locale.value),
+}));
 </script>
 
 <template>
@@ -22,6 +27,15 @@ const mainPageLink = computed(() => ({
 					<div class="app-header__logo"></div>
 				</NuxtLink>
 
+				<nav class="app-header__nav">
+					<NuxtLink class="app-header__nav-link" :to="mainPageLink">
+						{{ t('Doctors') }}
+					</NuxtLink>
+					<NuxtLink class="app-header__nav-link" :to="clinicsPageLink">
+						{{ t('Clinics') }}
+					</NuxtLink>
+				</nav>
+
 				<div class="app-header__actions">
 					<LanguageSwitcher />
 				</div>
@@ -33,25 +47,39 @@ const mainPageLink = computed(() => ({
 <i18n lang="json">
 {
 	"en": {
-		"GoToMainPage": "Go to main page"
+		"GoToMainPage": "Go to main page",
+		"Doctors": "Doctors",
+		"Clinics": "Clinics"
 	},
 	"ru": {
-		"GoToMainPage": "Перейти на главную страницу"
+		"GoToMainPage": "Перейти на главную страницу",
+		"Doctors": "Врачи",
+		"Clinics": "Клиники"
 	},
 	"sr": {
-		"GoToMainPage": "Idi na početnu stranicu"
+		"GoToMainPage": "Idi na početnu stranicu",
+		"Doctors": "Lekari",
+		"Clinics": "Klinike"
 	},
 	"ba": {
-		"GoToMainPage": "Idi na početnu stranicu"
+		"GoToMainPage": "Idi na početnu stranicu",
+		"Doctors": "Ljekari",
+		"Clinics": "Klinike"
 	},
 	"me": {
-		"GoToMainPage": "Idi na početnu stranicu"
+		"GoToMainPage": "Idi na početnu stranicu",
+		"Doctors": "Lekari",
+		"Clinics": "Klinike"
 	},
 	"de": {
-		"GoToMainPage": "Zur Startseite gehen"
+		"GoToMainPage": "Zur Startseite gehen",
+		"Doctors": "Ärzte",
+		"Clinics": "Kliniken"
 	},
 	"tr": {
-		"GoToMainPage": "Ana sayfaya git"
+		"GoToMainPage": "Ana sayfaya git",
+		"Doctors": "Doktorlar",
+		"Clinics": "Klinikler"
 	}
 }
 </i18n>
@@ -105,6 +133,32 @@ const mainPageLink = computed(() => ({
 		flex-shrink: 0;
 	}
 
+	&__nav {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-lg);
+		flex: 1;
+		margin-left: var(--spacing-lg);
+	}
+
+	&__nav-link {
+		font-size: var(--font-size-md);
+		font-weight: 500;
+		color: #4b5563;
+		text-decoration: none;
+		transition: color 0.2s ease;
+		white-space: nowrap;
+
+		&:hover {
+			color: #4f46e5;
+		}
+
+		&.router-link-active {
+			color: #4f46e5;
+			font-weight: 600;
+		}
+	}
+
 	&__actions {
 		display: flex;
 		align-items: center;
@@ -119,6 +173,15 @@ const mainPageLink = computed(() => ({
 			height: 50px;
 			gap: var(--spacing-md);
 		}
+
+		&__nav {
+			gap: var(--spacing-md);
+			margin-left: var(--spacing-md);
+		}
+
+		&__nav-link {
+			font-size: var(--font-size-sm);
+		}
 	}
 }
 
@@ -126,6 +189,11 @@ const mainPageLink = computed(() => ({
 	.app-header {
 		&__main-content {
 			padding: 0 @base-offset;
+		}
+
+		&__nav {
+			gap: var(--spacing-sm);
+			margin-left: var(--spacing-sm);
 		}
 	}
 }

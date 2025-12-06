@@ -292,13 +292,15 @@ onMounted(async () => {
 							<p>{{ t('NoDoctorsFound') }}</p>
 						</div>
 
-						<DoctorListCard
+						<ListCard
 							v-for="doctor in doctorsOnPage"
 							:key="doctor.id"
-							:doctor="doctor"
+							:clinicIds="doctor.clinicIds"
 							:clinics="clinicsList.clinics"
 							@show-on-map="showClinicOnMap($event)"
-						/>
+						>
+							<DoctorInfo :doctor="doctor" />
+						</ListCard>
 					</div>
 
 					<Pagination

@@ -176,11 +176,13 @@ onMounted(async () => {
 							<p>{{ t('NoLabTestsFound') }}</p>
 						</div>
 
-						<LabTestListCard
+						<ListCard
 							v-for="labTest in labTestsOnPage"
 							:key="labTest.id"
-							:labTest="labTest"
+							:title="labTest.name"
+							:clinicIds="labTest.clinicIds"
 							:clinics="clinicsList.clinics"
+							:clinicPrices="labTest.clinicPrices"
 							@show-on-map="showClinicOnMap($event)"
 						/>
 					</div>

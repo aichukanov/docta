@@ -190,11 +190,13 @@ onMounted(async () => {
 							<p>{{ t('NoMedicalServicesFound') }}</p>
 						</div>
 
-						<MedicalServiceListCard
+						<ListCard
 							v-for="medicalService in medicalServicesOnPage"
 							:key="medicalService.id"
-							:medicalService="medicalService"
-							:clinics="clinicsList?.clinics || []"
+							:title="medicalService.name"
+							:clinicIds="medicalService.clinicIds"
+							:clinicPrices="medicalService.clinicPrices"
+							:clinics="clinicsList.clinics"
 							@show-on-map="showClinicOnMap($event)"
 						/>
 					</div>

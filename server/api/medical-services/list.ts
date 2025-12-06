@@ -45,7 +45,11 @@ export async function getMedicalServiceList(
 		SELECT DISTINCT
 			ms.id,
 			ms.name,
-			GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY cms.clinic_id) as clinicIds
+			GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY cms.clinic_id) as clinicIds,
+			GROUP_CONCAT(
+				DISTINCT CONCAT(cms.clinic_id, ':', COALESCE(cms.price, 0), ':', COALESCE(cms.code, ''))
+				ORDER BY cms.clinic_id
+			) as clinicPricesData
 		FROM medical_services ms
 		LEFT JOIN clinic_medical_services cms ON ms.id = cms.medical_service_id
 		${whereFiltersString}
@@ -57,8 +61,31 @@ export async function getMedicalServiceList(
 	const [medicalServiceRows] = await connection.execute(medicalServicesQuery);
 	await connection.end();
 
+	// Преобразуем данные о ценах в массив объектов
+	const medicalServices = medicalServiceRows.map((row) => {
+		const clinicPrices = [];
+		if (row.clinicPricesData) {
+			const pricesData = row.clinicPricesData.split(',');
+			for (const priceData of pricesData) {
+				const [clinicId, price, code] = priceData.split(':');
+				clinicPrices.push({
+					clinicId: Number(clinicId),
+					price: Number(price) || null,
+					code: code || null,
+				});
+			}
+		}
+
+		return {
+			id: row.id,
+			name: row.name,
+			clinicIds: row.clinicIds,
+			clinicPrices,
+		};
+	});
+
 	return {
-		medicalServices: medicalServiceRows,
-		totalCount: medicalServiceRows.length,
+		medicalServices,
+		totalCount: medicalServices.length,
 	};
 }

@@ -140,12 +140,6 @@ useSeoMeta({
 						<div v-if="clinicDoctors.length === 0" class="empty-state">
 							<p>{{ t('NoDoctorsAtClinic') }}</p>
 						</div>
-						<DoctorListCard
-							v-for="doctor in clinicDoctors"
-							:key="doctor.id"
-							:doctor="doctor"
-							:clinics="[clinicData]"
-						/>
 					</div>
 				</div>
 				<DoctorsMap

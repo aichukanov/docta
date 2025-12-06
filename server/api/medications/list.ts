@@ -43,7 +43,11 @@ export async function getMedicationList(
 		SELECT DISTINCT
 			m.id,
 			m.name,
-			GROUP_CONCAT(DISTINCT cm.clinic_id ORDER BY cm.clinic_id) as clinicIds
+			GROUP_CONCAT(DISTINCT cm.clinic_id ORDER BY cm.clinic_id) as clinicIds,
+			GROUP_CONCAT(
+				DISTINCT CONCAT(cm.clinic_id, ':', COALESCE(cm.price, 0), ':', COALESCE(cm.code, ''))
+				ORDER BY cm.clinic_id
+			) as clinicPricesData
 		FROM medications m
 		LEFT JOIN clinic_medications cm ON m.id = cm.medication_id
 		${whereFiltersString}
@@ -55,8 +59,31 @@ export async function getMedicationList(
 	const [medicationRows] = await connection.execute(medicationsQuery);
 	await connection.end();
 
+	// Преобразуем данные о ценах в массив объектов
+	const medications = medicationRows.map((row) => {
+		const clinicPrices = [];
+		if (row.clinicPricesData) {
+			const pricesData = row.clinicPricesData.split(',');
+			for (const priceData of pricesData) {
+				const [clinicId, price, code] = priceData.split(':');
+				clinicPrices.push({
+					clinicId: Number(clinicId),
+					price: Number(price) || null,
+					code: code || null,
+				});
+			}
+		}
+
+		return {
+			id: row.id,
+			name: row.name,
+			clinicIds: row.clinicIds,
+			clinicPrices,
+		};
+	});
+
 	return {
-		medications: medicationRows,
-		totalCount: medicationRows.length,
+		medications,
+		totalCount: medications.length,
 	};
 }

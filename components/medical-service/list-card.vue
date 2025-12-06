@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import type { MedicalServiceData } from '~/interfaces/medical-service';
-import type { ClinicData } from '~/interfaces/doctor';
+import type { ClinicData } from '~/interfaces/clinic';
 
 const props = defineProps<{
 	medicalService: MedicalServiceData;

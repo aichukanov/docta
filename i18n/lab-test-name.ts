@@ -272,6 +272,7 @@ export default {
 			[`lab_test_${LabTest.PROLACTIN_13H}`]: 'Prolactin 1 PM',
 			[`lab_test_${LabTest.PROLACTIN_10H}`]: 'Prolactin 10 AM',
 			[`lab_test_${LabTest.MACROPROLACTIN}`]: 'Macroprolactin',
+			[`lab_test_${LabTest.PROLACTIN_PROFILE}`]: 'Prolactin Profile',
 			[`lab_test_${LabTest.FREE_TESTOSTERONE}`]: 'Free Testosterone',
 			[`lab_test_${LabTest.FREE_TESTOSTERONE_CALCULATED}`]:
 				'Free Testosterone (Calculated)',

@@ -2,6 +2,7 @@
 import { getRegionalQuery } from '~/common/url-utils';
 import { CITY_COORDINATES } from '~/enums/cities';
 import { combineI18nMessages } from '~/i18n/utils';
+import type { ClinicData } from '~/interfaces/clinic';
 
 import cityI18n from '~/i18n/city';
 import doctorI18n from '~/i18n/doctor';

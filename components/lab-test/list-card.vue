@@ -5,7 +5,7 @@
 		</div>
 
 		<div class="clinics-list">
-			<LabTestClinicSummary
+			<ClinicSummary
 				v-for="clinic in labTestClinics"
 				:key="clinic.id"
 				:clinic="clinic"
@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import type { LabTestData } from '~/interfaces/lab-test';
-import type { ClinicData } from '~/interfaces/doctor';
+import type { ClinicData } from '~/interfaces/clinic';
 
 const props = defineProps<{
 	labTest: LabTestData;

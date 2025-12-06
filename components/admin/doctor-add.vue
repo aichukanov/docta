@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ClinicData } from '~/interfaces/doctor';
+import type { ClinicData } from '~/interfaces/clinic';
 
 const props = defineProps<{
 	clinics: ClinicData[];

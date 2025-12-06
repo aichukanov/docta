@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import type { MedicationData } from '~/interfaces/medication';
-import type { ClinicData } from '~/interfaces/doctor';
+import type { ClinicData } from '~/interfaces/clinic';
 
 const props = defineProps<{
 	medication: MedicationData;

@@ -8,7 +8,7 @@ import doctorI18n from '~/i18n/doctor';
 import languageI18n from '~/i18n/language';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
-import type { ClinicData } from '~/interfaces/doctor';
+import type { ClinicData } from '~/interfaces/clinic';
 
 const { t, locale } = useI18n({
 	useScope: 'local',

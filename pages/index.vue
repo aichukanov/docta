@@ -18,6 +18,16 @@ const labTestsPageLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
+const medicalServicesPageLink = computed(() => ({
+	name: 'medical-services',
+	query: getRegionalQuery(locale.value),
+}));
+
+const medicationsPageLink = computed(() => ({
+	name: 'medications',
+	query: getRegionalQuery(locale.value),
+}));
+
 useSeoMeta({
 	title: t('MainPageTitle'),
 	description: t('MainPageDescription'),
@@ -55,6 +65,34 @@ useSeoMeta({
 				<h2 class="card-title">{{ t('LabTests') }}</h2>
 				<p class="card-description">{{ t('LabTestsDescription') }}</p>
 			</NuxtLink>
+
+			<NuxtLink :to="medicalServicesPageLink" class="category-card">
+				<div class="card-icon">
+					<IconCheck />
+				</div>
+				<h2 class="card-title">{{ t('MedicalServices') }}</h2>
+				<p class="card-description">{{ t('MedicalServicesDescription') }}</p>
+			</NuxtLink>
+
+			<NuxtLink :to="medicationsPageLink" class="category-card">
+				<div class="card-icon">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<rect x="4" y="4" width="16" height="16" rx="2" />
+						<path d="M12 8v8" />
+						<path d="M8 12h8" />
+					</svg>
+				</div>
+				<h2 class="card-title">{{ t('Medications') }}</h2>
+				<p class="card-description">{{ t('MedicationsDescription') }}</p>
+			</NuxtLink>
 		</div>
 	</div>
 </template>
@@ -63,53 +101,73 @@ useSeoMeta({
 {
 	"en": {
 		"MainPageTitle": "Healthcare Services in Montenegro",
-		"MainPageDescription": "Find doctors, clinics, and laboratory services in Montenegro",
+		"MainPageDescription": "Find doctors, clinics, laboratory services, medical services, and medications in Montenegro",
 		"Doctors": "Doctors",
 		"DoctorsDescription": "Find qualified doctors by specialty, city, and language",
 		"Clinics": "Clinics",
 		"ClinicsDescription": "Medical clinics and healthcare facilities across Montenegro",
 		"LabTests": "Lab Tests",
-		"LabTestsDescription": "Information about laboratory tests and services"
+		"LabTestsDescription": "Information about laboratory tests and services",
+		"MedicalServices": "Medical Services",
+		"MedicalServicesDescription": "Healthcare services and procedures available in Montenegro",
+		"Medications": "Medications",
+		"MedicationsDescription": "Information about medications and pharmaceuticals"
 	},
 	"ru": {
 		"MainPageTitle": "Медицинские услуги в Черногории",
-		"MainPageDescription": "Найдите врачей, клиники и лабораторные услуги в Черногории",
+		"MainPageDescription": "Найдите врачей, клиники, лабораторные услуги, медицинские процедуры и лекарства в Черногории",
 		"Doctors": "Врачи",
 		"DoctorsDescription": "Найдите квалифицированных врачей по специальности, городу и языку",
 		"Clinics": "Клиники",
 		"ClinicsDescription": "Медицинские клиники и учреждения здравоохранения по всей Черногории",
 		"LabTests": "Лабораторные анализы",
-		"LabTestsDescription": "Информация о лабораторных тестах и услугах"
+		"LabTestsDescription": "Информация о лабораторных тестах и услугах",
+		"MedicalServices": "Медицинские услуги",
+		"MedicalServicesDescription": "Медицинские услуги и процедуры, доступные в Черногории",
+		"Medications": "Лекарства",
+		"MedicationsDescription": "Информация о лекарственных препаратах"
 	},
 	"sr": {
 		"MainPageTitle": "Medicinske usluge u Crnoj Gori",
-		"MainPageDescription": "Pronađite lekare, klinike i laboratorijske usluge u Crnoj Gori",
+		"MainPageDescription": "Pronađite lekare, klinike, laboratorijske usluge, medicinske procedure i lekove u Crnoj Gori",
 		"Doctors": "Lekari",
 		"DoctorsDescription": "Pronađite kvalifikovane lekare po specijalnosti, gradu i jeziku",
 		"Clinics": "Klinike",
 		"ClinicsDescription": "Medicinske klinike i zdravstvene ustanove širom Crne Gore",
 		"LabTests": "Laboratorijske analize",
-		"LabTestsDescription": "Informacije o laboratorijskim testovima i uslugama"
+		"LabTestsDescription": "Informacije o laboratorijskim testovima i uslugama",
+		"MedicalServices": "Medicinske usluge",
+		"MedicalServicesDescription": "Medicinske usluge i procedure dostupne u Crnoj Gori",
+		"Medications": "Lekovi",
+		"MedicationsDescription": "Informacije o lekovima i farmaceutskim proizvodima"
 	},
 	"de": {
 		"MainPageTitle": "Gesundheitsdienste in Montenegro",
-		"MainPageDescription": "Finden Sie Ärzte, Kliniken und Labordienstleistungen in Montenegro",
+		"MainPageDescription": "Finden Sie Ärzte, Kliniken, Labordienstleistungen, medizinische Verfahren und Medikamente in Montenegro",
 		"Doctors": "Ärzte",
 		"DoctorsDescription": "Finden Sie qualifizierte Ärzte nach Fachgebiet, Stadt und Sprache",
 		"Clinics": "Kliniken",
 		"ClinicsDescription": "Medizinische Kliniken und Gesundheitseinrichtungen in Montenegro",
 		"LabTests": "Labortests",
-		"LabTestsDescription": "Informationen über Labortests und Dienstleistungen"
+		"LabTestsDescription": "Informationen über Labortests und Dienstleistungen",
+		"MedicalServices": "Medizinische Dienstleistungen",
+		"MedicalServicesDescription": "Medizinische Dienstleistungen und Verfahren in Montenegro",
+		"Medications": "Medikamente",
+		"MedicationsDescription": "Informationen über Medikamente und Arzneimittel"
 	},
 	"tr": {
 		"MainPageTitle": "Karadağ'da Sağlık Hizmetleri",
-		"MainPageDescription": "Karadağ'da doktor, klinik ve laboratuvar hizmetleri bulun",
+		"MainPageDescription": "Karadağ'da doktor, klinik, laboratuvar hizmetleri, tıbbi prosedürler ve ilaçlar bulun",
 		"Doctors": "Doktorlar",
 		"DoctorsDescription": "Uzmanlık, şehir ve dile göre nitelikli doktorlar bulun",
 		"Clinics": "Klinikler",
 		"ClinicsDescription": "Karadağ genelinde tıbbi klinikler ve sağlık tesisleri",
 		"LabTests": "Laboratuvar Testleri",
-		"LabTestsDescription": "Laboratuvar testleri ve hizmetleri hakkında bilgi"
+		"LabTestsDescription": "Laboratuvar testleri ve hizmetleri hakkında bilgi",
+		"MedicalServices": "Tıbbi Hizmetler",
+		"MedicalServicesDescription": "Karadağ'da mevcut tıbbi hizmetler ve prosedürler",
+		"Medications": "İlaçlar",
+		"MedicationsDescription": "İlaçlar ve farmasötik ürünler hakkında bilgi"
 	}
 }
 </i18n>
@@ -125,6 +183,8 @@ useSeoMeta({
 	max-width: 1200px;
 	margin: 0 auto;
 	gap: var(--spacing-2xl);
+	min-height: calc(100vh - 120px);
+	background: #f9fafb;
 }
 
 .hero-section {
@@ -161,15 +221,17 @@ useSeoMeta({
 	text-align: center;
 	padding: var(--spacing-2xl);
 	background: #ffffff;
-	border: 1px solid rgba(0, 0, 0, 0.06);
-	border-radius: var(--border-radius-lg);
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: 8px;
 	text-decoration: none;
 	color: inherit;
 	transition: all 0.2s ease;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 
 	&:hover {
 		border-color: #4f46e5;
-		box-shadow: 0 4px 12px rgba(79, 70, 229, 0.1);
+		box-shadow: 0 4px 12px rgba(79, 70, 229, 0.12);
+		transform: translateY(-2px);
 	}
 }
 

@@ -5,7 +5,7 @@ import type { CityId } from '~/enums/cities';
 import cityI18n from '~/i18n/city';
 import medicalServiceI18n from '~/i18n/medical-service';
 import { combineI18nMessages } from '~/i18n/utils';
-import type { ClinicData } from '~/interfaces/doctor';
+import type { ClinicData } from '~/interfaces/clinic';
 
 const { t, locale } = useI18n({
 	useScope: 'local',

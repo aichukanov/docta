@@ -30,7 +30,8 @@
 
 <script setup lang="ts">
 import { getClinicMarkerId } from '~/common/utils';
-import type { ClinicData, DoctorData } from '~/interfaces/doctor';
+import type { ClinicData } from '~/interfaces/clinic';
+import type { DoctorData } from '~/interfaces/doctor';
 
 const props = defineProps<{
 	clinics: ClinicData[];

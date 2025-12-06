@@ -1,5 +1,4 @@
 import { getConnection } from '~/server/common/db-mysql';
-import type { ClinicData } from '~/interfaces/doctor';
 import {
 	validateBody,
 	validateCityId,

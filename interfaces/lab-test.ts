@@ -1,9 +1,3 @@
-export interface LabTestClinicPrice {
-	clinicId: number;
-	price: number;
-	code: string;
-}
-
 export interface LabTestData {
 	id: number;
 	name: string;

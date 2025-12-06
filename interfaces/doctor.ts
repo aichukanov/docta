@@ -11,22 +11,7 @@ export interface DoctorData extends ContactList {
 	photoUrl: string;
 }
 
-export interface ClinicData extends ContactList {
-	id: number;
-	name: string;
-	cityId: CityId;
-	address: string;
-	latitude: number;
-	longitude: number;
-	languageIds: string;
-}
-
 export interface DoctorList {
 	doctors: DoctorData[];
-	totalCount: number;
-}
-
-export interface ClinicList {
-	clinics: ClinicData[];
 	totalCount: number;
 }

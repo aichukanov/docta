@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { CityId } from '~/enums/cities';
+import type { ClinicData } from '~/interfaces/clinic';
 
 const props = withDefaults(
 	defineProps<{
@@ -17,7 +18,7 @@ const emit = defineEmits<{
 
 const clinicId = ref<number | null>(null);
 const clinicModel = ref<ClinicData | null>(null);
-const cityIds = ref<number[]>([]);
+const cityIds = ref<CityId[]>([]);
 
 const selectedClinic = computed(() => {
 	return props.clinics.find((clinic) => clinic.id === clinicId.value);

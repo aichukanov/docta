@@ -1,16 +1,23 @@
 <script setup lang="ts">
 import { LocationFilled } from '@element-plus/icons-vue';
 import { hasContacts } from '../contacts/utils';
+import type { ClinicService } from '~/interfaces/clinic-service';
+import type { ClinicData } from '~/interfaces/clinic';
 
 const props = defineProps<{
 	clinic: ClinicData;
+	priceInfo?: ClinicService;
 }>();
 
 defineEmits<{
 	(e: 'show-on-map'): void;
 }>();
 
-const { t } = useI18n();
+const { t, n } = useI18n();
+
+const hasPrice = computed(() => {
+	return props.priceInfo != null;
+});
 </script>
 
 <template>
@@ -19,6 +26,12 @@ const { t } = useI18n();
 			<div class="location-info">
 				<div class="clinic-name-container">
 					<span class="clinic-name">{{ clinic.name }}</span>
+
+					<div v-if="hasPrice" class="price-badge">
+						<span class="price-value">{{
+							n(priceInfo.price, { style: 'currency', currency: 'EUR' })
+						}}</span>
+					</div>
 				</div>
 
 				<div class="location-address">
@@ -107,7 +120,7 @@ const { t } = useI18n();
 .clinic-name-container {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
+	gap: var(--spacing-md);
 }
 
 .clinic-name {
@@ -135,6 +148,24 @@ const { t } = useI18n();
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
+}
+
+.price-badge {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-md);
+	padding: var(--spacing-xs) var(--spacing-md);
+	background: var(--color-primary);
+	border-radius: var(--border-radius-sm);
+	color: white;
+	font-size: var(--font-size-md);
+	font-weight: var(--font-weight-semibold);
+	white-space: nowrap;
+
+	.price-value {
+		font-size: var(--font-size-2xl);
+		font-weight: var(--font-weight-bold);
+	}
 }
 
 @media (max-width: 950px) {

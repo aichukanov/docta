@@ -1,5 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
-import type { ClinicData } from '~/interfaces/doctor';
+import type { ClinicData } from '~/interfaces/clinic';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
 export default defineEventHandler(async (event): Promise<ClinicData> => {

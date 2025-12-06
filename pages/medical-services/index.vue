@@ -2,6 +2,7 @@
 import { getRegionalQuery } from '~/common/url-utils';
 import { CITY_COORDINATES } from '~/enums/cities';
 import { combineI18nMessages } from '~/i18n/utils';
+import type { ClinicData } from '~/interfaces/clinic';
 
 import cityI18n from '~/i18n/city';
 import medicalServiceI18n from '~/i18n/medical-service';
@@ -56,6 +57,9 @@ const routeWithParams = computed(() => {
 });
 
 const medicalServicesOnPage = computed(() => {
+	if (!medicalServicesList.value?.medicalServices) {
+		return [];
+	}
 	return medicalServicesList.value.medicalServices.slice(
 		(pageNumber.value - 1) * PAGE_LIMIT,
 		pageNumber.value * PAGE_LIMIT,
@@ -111,11 +115,14 @@ const pageTitle = computed(() => {
 });
 
 const pageTitleWithCount = computed(() => {
-	return `${pageTitle.value} (${medicalServicesList.value?.totalCount})`;
+	return `${pageTitle.value} (${medicalServicesList.value?.totalCount || 0})`;
 });
 
 const robotsMeta = computed(() => {
-	if (medicalServicesList.value?.medicalServices?.length === 0) {
+	if (
+		!medicalServicesList.value?.medicalServices ||
+		medicalServicesList.value.medicalServices.length === 0
+	) {
 		return 'noindex, follow';
 	}
 	return undefined;
@@ -158,7 +165,7 @@ onMounted(async () => {
 					<FilterName />
 					<FilterCitySelect v-model:value="cityIds" />
 					<FilterClinicSelect
-						:clinics="clinicsList.clinics"
+						:clinics="clinicsList?.clinics || []"
 						v-model:value="clinicIds"
 					/>
 				</div>
@@ -174,7 +181,10 @@ onMounted(async () => {
 
 					<div v-else class="medical-services-list">
 						<div
-							v-if="medicalServicesList.medicalServices.length === 0"
+							v-if="
+								!medicalServicesList?.medicalServices ||
+								medicalServicesList.medicalServices.length === 0
+							"
 							class="empty-state"
 						>
 							<p>{{ t('NoMedicalServicesFound') }}</p>
@@ -184,13 +194,13 @@ onMounted(async () => {
 							v-for="medicalService in medicalServicesOnPage"
 							:key="medicalService.id"
 							:medicalService="medicalService"
-							:clinics="clinicsList.clinics"
+							:clinics="clinicsList?.clinics || []"
 							@show-on-map="showClinicOnMap($event)"
 						/>
 					</div>
 
 					<Pagination
-						:total="medicalServicesList.totalCount"
+						:total="medicalServicesList?.totalCount || 0"
 						:page-size="PAGE_LIMIT"
 						v-model:current-page="pageNumber"
 					/>
@@ -201,8 +211,8 @@ onMounted(async () => {
 		<div class="map-container">
 			<DoctorsMap
 				ref="medicalServicesMapRef"
-				:doctors="medicalServicesList.medicalServices"
-				:clinics="clinicsList.clinics"
+				:doctors="medicalServicesList?.medicalServices || []"
+				:clinics="clinicsList?.clinics || []"
 				@ready="onMapReady"
 			/>
 		</div>

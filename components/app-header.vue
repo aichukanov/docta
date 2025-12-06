@@ -13,6 +13,21 @@ const clinicsPageLink = computed(() => ({
 	name: 'clinics',
 	query: getRegionalQuery(locale.value),
 }));
+
+const labTestsPageLink = computed(() => ({
+	name: 'lab-tests',
+	query: getRegionalQuery(locale.value),
+}));
+
+const medicalServicesPageLink = computed(() => ({
+	name: 'medical-services',
+	query: getRegionalQuery(locale.value),
+}));
+
+const medicationsPageLink = computed(() => ({
+	name: 'medications',
+	query: getRegionalQuery(locale.value),
+}));
 </script>
 
 <template>
@@ -34,6 +49,15 @@ const clinicsPageLink = computed(() => ({
 					<NuxtLink class="app-header__nav-link" :to="clinicsPageLink">
 						{{ t('Clinics') }}
 					</NuxtLink>
+					<NuxtLink class="app-header__nav-link" :to="labTestsPageLink">
+						{{ t('LabTests') }}
+					</NuxtLink>
+					<NuxtLink class="app-header__nav-link" :to="medicalServicesPageLink">
+						{{ t('MedicalServices') }}
+					</NuxtLink>
+					<NuxtLink class="app-header__nav-link" :to="medicationsPageLink">
+						{{ t('Medications') }}
+					</NuxtLink>
 				</nav>
 
 				<div class="app-header__actions">
@@ -49,37 +73,42 @@ const clinicsPageLink = computed(() => ({
 	"en": {
 		"GoToMainPage": "Go to main page",
 		"Doctors": "Doctors",
-		"Clinics": "Clinics"
+		"Clinics": "Clinics",
+		"LabTests": "Lab Tests",
+		"MedicalServices": "Medical Services",
+		"Medications": "Medications"
 	},
 	"ru": {
 		"GoToMainPage": "Перейти на главную страницу",
 		"Doctors": "Врачи",
-		"Clinics": "Клиники"
+		"Clinics": "Клиники",
+		"LabTests": "Анализы",
+		"MedicalServices": "Услуги",
+		"Medications": "Лекарства"
 	},
 	"sr": {
 		"GoToMainPage": "Idi na početnu stranicu",
 		"Doctors": "Lekari",
-		"Clinics": "Klinike"
-	},
-	"ba": {
-		"GoToMainPage": "Idi na početnu stranicu",
-		"Doctors": "Ljekari",
-		"Clinics": "Klinike"
-	},
-	"me": {
-		"GoToMainPage": "Idi na početnu stranicu",
-		"Doctors": "Lekari",
-		"Clinics": "Klinike"
+		"Clinics": "Klinike",
+		"LabTests": "Analize",
+		"MedicalServices": "Usluge",
+		"Medications": "Lekovi"
 	},
 	"de": {
 		"GoToMainPage": "Zur Startseite gehen",
 		"Doctors": "Ärzte",
-		"Clinics": "Kliniken"
+		"Clinics": "Kliniken",
+		"LabTests": "Labortests",
+		"MedicalServices": "Medizinische Dienstleistungen",
+		"Medications": "Medikamente"
 	},
 	"tr": {
 		"GoToMainPage": "Ana sayfaya git",
 		"Doctors": "Doktorlar",
-		"Clinics": "Klinikler"
+		"Clinics": "Klinikler",
+		"LabTests": "Laboratuvar Testleri",
+		"MedicalServices": "Tıbbi Hizmetler",
+		"Medications": "İlaçlar"
 	}
 }
 </i18n>

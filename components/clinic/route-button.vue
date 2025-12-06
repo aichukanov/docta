@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { createRouteUrl } from '~/common/google-maps';
-import type { ClinicData } from '~/interfaces/doctor';
+import type { ClinicData } from '~/interfaces/clinic';
 
 const props = defineProps<{
 	clinic: ClinicData;

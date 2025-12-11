@@ -164,6 +164,7 @@ onMounted(async () => {
 				ref="mapRef"
 				:services="mapClinics ? [] : list"
 				:clinics="mapClinics || clinicsStore.clinics"
+				:showAllClinics="!!mapClinics"
 				:detailsRouteName="detailsRouteName"
 				:detailsParamName="detailsParamName"
 				@ready="onMapReady"

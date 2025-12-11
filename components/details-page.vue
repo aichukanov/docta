@@ -68,6 +68,7 @@ const onMapReady = () => {
 								:key="clinic.id"
 								:clinic="clinic"
 								:priceInfo="getPriceInfo(clinic.id)"
+								linkable
 								@show-on-map="showClinicOnMap(clinic)"
 							/>
 						</div>
@@ -77,6 +78,7 @@ const onMapReady = () => {
 					ref="mapRef"
 					:services="[]"
 					:clinics="clinics"
+					:showAllClinics="true"
 					@ready="onMapReady"
 				/>
 			</div>

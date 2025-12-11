@@ -5,6 +5,7 @@ import type { ClinicData, ClinicServiceItem } from '~/interfaces/clinic';
 const props = defineProps<{
 	clinics: ClinicData[];
 	services: ClinicServiceItem[];
+	showAllClinics?: boolean;
 	detailsRouteName?: string;
 	detailsParamName?: string;
 }>();
@@ -23,19 +24,20 @@ const isTeleportReady = ref(false);
 
 const selectedClinic = ref<ClinicData | null>(null);
 
-const isClinicMode = computed(() => props.services.length === 0);
+const isClinicMode = computed(() => props.showAllClinics);
 
 const clinicsWithServices = computed<
 	Array<ClinicData & { services: number[] }>
 >(() => {
-	// Если services пустой, показываем все клиники (для страницы клиник)
-	if (props.services.length === 0) {
+	// Режим клиник: показываем все переданные клиники
+	if (props.showAllClinics) {
 		return props.clinics.map((clinic) => ({
 			...clinic,
 			services: [],
 		}));
 	}
 
+	// Режим услуг: показываем только клиники с услугами из списка
 	return props.clinics
 		.map((clinic) => {
 			return {

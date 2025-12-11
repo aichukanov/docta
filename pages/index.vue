@@ -36,64 +36,72 @@ useSeoMeta({
 
 <template>
 	<div class="main-page">
-		<div class="hero-section">
-			<h1 class="hero-title">{{ t('MainPageTitle') }}</h1>
-			<p class="hero-description">{{ t('MainPageDescription') }}</p>
-		</div>
+		<section class="hero">
+			<div class="hero__content">
+				<h1 class="hero__title">{{ t('MainPageTitle') }}</h1>
+				<p class="hero__subtitle">{{ t('MainPageDescription') }}</p>
+			</div>
+		</section>
 
-		<div class="cards-container">
-			<NuxtLink :to="doctorsPageLink" class="category-card">
-				<div class="card-icon">
+		<section class="bento">
+			<NuxtLink :to="doctorsPageLink" class="bento__card bento__card--primary">
+				<div class="bento__icon">
 					<IconDoctor />
 				</div>
-				<h2 class="card-title">{{ t('Doctors') }}</h2>
-				<p class="card-description">{{ t('DoctorsDescription') }}</p>
+				<div class="bento__text">
+					<h2 class="bento__title">{{ t('Doctors') }}</h2>
+					<p class="bento__desc">{{ t('DoctorsDescription') }}</p>
+				</div>
+				<span class="bento__arrow">→</span>
 			</NuxtLink>
 
-			<NuxtLink :to="clinicsPageLink" class="category-card">
-				<div class="card-icon">
-					<IconMapPin />
+			<NuxtLink
+				:to="clinicsPageLink"
+				class="bento__card bento__card--secondary"
+			>
+				<div class="bento__icon">
+					<IconClinic />
 				</div>
-				<h2 class="card-title">{{ t('Clinics') }}</h2>
-				<p class="card-description">{{ t('ClinicsDescription') }}</p>
+				<div class="bento__text">
+					<h2 class="bento__title">{{ t('Clinics') }}</h2>
+					<p class="bento__desc">{{ t('ClinicsDescription') }}</p>
+				</div>
+				<span class="bento__arrow">→</span>
 			</NuxtLink>
 
-			<NuxtLink :to="labTestsPageLink" class="category-card">
-				<div class="card-icon">
-					<IconSearch />
+			<NuxtLink :to="labTestsPageLink" class="bento__card">
+				<div class="bento__icon">
+					<IconLabTest />
 				</div>
-				<h2 class="card-title">{{ t('LabTests') }}</h2>
-				<p class="card-description">{{ t('LabTestsDescription') }}</p>
+				<div class="bento__text">
+					<h2 class="bento__title">{{ t('LabTests') }}</h2>
+					<p class="bento__desc">{{ t('LabTestsDescription') }}</p>
+				</div>
+				<span class="bento__arrow">→</span>
 			</NuxtLink>
 
-			<NuxtLink :to="medicalServicesPageLink" class="category-card">
-				<div class="card-icon">
-					<IconCheck />
+			<NuxtLink :to="medicalServicesPageLink" class="bento__card">
+				<div class="bento__icon">
+					<IconMedicalService />
 				</div>
-				<h2 class="card-title">{{ t('MedicalServices') }}</h2>
-				<p class="card-description">{{ t('MedicalServicesDescription') }}</p>
+				<div class="bento__text">
+					<h2 class="bento__title">{{ t('MedicalServices') }}</h2>
+					<p class="bento__desc">{{ t('MedicalServicesDescription') }}</p>
+				</div>
+				<span class="bento__arrow">→</span>
 			</NuxtLink>
 
-			<NuxtLink :to="medicationsPageLink" class="category-card">
-				<div class="card-icon">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					>
-						<rect x="4" y="4" width="16" height="16" rx="2" />
-						<path d="M12 8v8" />
-						<path d="M8 12h8" />
-					</svg>
+			<NuxtLink :to="medicationsPageLink" class="bento__card">
+				<div class="bento__icon">
+					<IconMedication />
 				</div>
-				<h2 class="card-title">{{ t('Medications') }}</h2>
-				<p class="card-description">{{ t('MedicationsDescription') }}</p>
+				<div class="bento__text">
+					<h2 class="bento__title">{{ t('Medications') }}</h2>
+					<p class="bento__desc">{{ t('MedicationsDescription') }}</p>
+				</div>
+				<span class="bento__arrow">→</span>
 			</NuxtLink>
-		</div>
+		</section>
 	</div>
 </template>
 
@@ -111,7 +119,7 @@ useSeoMeta({
 		"MedicalServices": "Medical Services",
 		"MedicalServicesDescription": "Healthcare services and procedures available in Montenegro",
 		"Medications": "Medications",
-		"MedicationsDescription": "Information about medications and pharmaceuticals"
+		"MedicationsDescription": "Find pharmacies and where to buy medications"
 	},
 	"ru": {
 		"MainPageTitle": "Медицинские услуги в Черногории",
@@ -125,7 +133,7 @@ useSeoMeta({
 		"MedicalServices": "Медицинские услуги",
 		"MedicalServicesDescription": "Медицинские услуги и процедуры, доступные в Черногории",
 		"Medications": "Лекарства",
-		"MedicationsDescription": "Информация о лекарственных препаратах"
+		"MedicationsDescription": "Найдите аптеки и где купить лекарства"
 	},
 	"sr": {
 		"MainPageTitle": "Medicinske usluge u Crnoj Gori",
@@ -139,7 +147,7 @@ useSeoMeta({
 		"MedicalServices": "Medicinske usluge",
 		"MedicalServicesDescription": "Medicinske usluge i procedure dostupne u Crnoj Gori",
 		"Medications": "Lekovi",
-		"MedicationsDescription": "Informacije o lekovima i farmaceutskim proizvodima"
+		"MedicationsDescription": "Pronađite apoteke i gde kupiti lekove"
 	},
 	"de": {
 		"MainPageTitle": "Gesundheitsdienste in Montenegro",
@@ -153,7 +161,7 @@ useSeoMeta({
 		"MedicalServices": "Medizinische Dienstleistungen",
 		"MedicalServicesDescription": "Medizinische Dienstleistungen und Verfahren in Montenegro",
 		"Medications": "Medikamente",
-		"MedicationsDescription": "Informationen über Medikamente und Arzneimittel"
+		"MedicationsDescription": "Finden Sie Apotheken und wo Sie Medikamente kaufen können"
 	},
 	"tr": {
 		"MainPageTitle": "Karadağ'da Sağlık Hizmetleri",
@@ -167,7 +175,7 @@ useSeoMeta({
 		"MedicalServices": "Tıbbi Hizmetler",
 		"MedicalServicesDescription": "Karadağ'da mevcut tıbbi hizmetler ve prosedürler",
 		"Medications": "İlaçlar",
-		"MedicationsDescription": "İlaçlar ve farmasötik ürünler hakkında bilgi"
+		"MedicationsDescription": "Eczaneleri ve ilaçları nereden alacağınızı bulun"
 	}
 }
 </i18n>
@@ -176,113 +184,240 @@ useSeoMeta({
 @import url('~/assets/css/vars.less');
 
 .main-page {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: var(--spacing-2xl) var(--spacing-lg);
-	max-width: 1200px;
-	margin: 0 auto;
-	gap: var(--spacing-2xl);
-	min-height: calc(100vh - 120px);
-	background: #f9fafb;
+	min-height: calc(100vh - 60px);
+	background: linear-gradient(180deg, #fafbff 0%, #f0f4ff 100%);
 }
 
-.hero-section {
+// Hero Section
+.hero {
+	padding: 60px @base-padding 40px;
 	text-align: center;
-	max-width: 800px;
+
+	&__content {
+		max-width: 680px;
+		margin: 0 auto;
+	}
+
+	&__title {
+		font-size: clamp(1.75rem, 5vw, 2.75rem);
+		font-weight: 700;
+		color: #0f172a;
+		margin: 0 0 16px;
+		letter-spacing: -0.02em;
+		line-height: 1.2;
+	}
+
+	&__subtitle {
+		font-size: clamp(1rem, 2.5vw, 1.125rem);
+		color: #64748b;
+		margin: 0;
+		line-height: 1.6;
+	}
 }
 
-.hero-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	color: #1f2937;
-	margin: 0 0 var(--spacing-lg) 0;
-	font-family: system-ui, -apple-system, sans-serif;
-}
-
-.hero-description {
-	font-size: var(--font-size-lg);
-	color: #6b7280;
-	margin: 0;
-	line-height: 1.6;
-}
-
-.cards-container {
+// Bento Grid
+.bento {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: var(--spacing-2xl);
-	width: 100%;
-}
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: auto;
+	gap: 16px;
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 @base-padding 60px;
 
-.category-card {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	padding: var(--spacing-2xl);
-	background: #ffffff;
-	border: 1px solid rgba(0, 0, 0, 0.08);
-	border-radius: 8px;
-	text-decoration: none;
-	color: inherit;
-	transition: all 0.2s ease;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+	&__card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		padding: 24px;
+		background: #fff;
+		border-radius: 20px;
+		text-decoration: none;
+		color: inherit;
+		border: 1px solid rgba(0, 0, 0, 0.04);
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.04);
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		overflow: hidden;
 
-	&:hover {
-		border-color: #4f46e5;
-		box-shadow: 0 4px 12px rgba(79, 70, 229, 0.12);
-		transform: translateY(-2px);
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(
+				135deg,
+				transparent 60%,
+				rgba(79, 70, 229, 0.03)
+			);
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		&:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04),
+				0 12px 32px rgba(79, 70, 229, 0.12);
+			border-color: rgba(79, 70, 229, 0.2);
+
+			&::before {
+				opacity: 1;
+			}
+
+			.bento__arrow {
+				transform: translateX(4px);
+				opacity: 1;
+			}
+
+			.bento__icon {
+				transform: scale(1.05);
+			}
+		}
+
+		// Primary card - spans full width
+		&--primary {
+			grid-column: 1 / -1;
+			flex-direction: row;
+			align-items: center;
+			gap: 24px;
+			background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+			border: none;
+
+			.bento__icon {
+				background: rgba(255, 255, 255, 0.2);
+				color: #fff;
+				width: 64px;
+				height: 64px;
+				flex-shrink: 0;
+
+				:deep(svg) {
+					width: 32px;
+					height: 32px;
+				}
+			}
+
+			.bento__title {
+				color: #fff;
+				font-size: 1.5rem;
+			}
+
+			.bento__desc {
+				color: rgba(255, 255, 255, 0.85);
+			}
+
+			.bento__arrow {
+				color: #fff;
+				font-size: 1.5rem;
+			}
+
+			&:hover {
+				box-shadow: 0 8px 16px rgba(79, 70, 229, 0.3),
+					0 16px 48px rgba(79, 70, 229, 0.2);
+			}
+		}
+
+		// Secondary card - accent style
+		&--secondary {
+			background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+			border-color: rgba(34, 197, 94, 0.2);
+
+			.bento__icon {
+				background: rgba(34, 197, 94, 0.15);
+				color: #16a34a;
+			}
+
+			&:hover {
+				border-color: rgba(34, 197, 94, 0.4);
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04),
+					0 12px 32px rgba(34, 197, 94, 0.15);
+			}
+		}
+	}
+
+	&__icon {
+		width: 48px;
+		height: 48px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #eef2ff;
+		border-radius: 14px;
+		color: #4f46e5;
+		margin-bottom: 16px;
+		transition: transform 0.3s ease;
+
+		:deep(svg) {
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	&__text {
+		flex: 1;
+	}
+
+	&__title {
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: #0f172a;
+		margin: 0 0 6px;
+		letter-spacing: -0.01em;
+	}
+
+	&__desc {
+		font-size: 0.875rem;
+		color: #64748b;
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	&__arrow {
+		position: absolute;
+		right: 24px;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 1.25rem;
+		color: #94a3b8;
+		opacity: 0;
+		transition: all 0.3s ease;
 	}
 }
 
-.card-icon {
-	width: 64px;
-	height: 64px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: #eef2ff;
-	border-radius: var(--border-radius-lg);
-	margin-bottom: var(--spacing-lg);
-	color: #4f46e5;
-
-	:deep(svg) {
-		width: 32px;
-		height: 32px;
-	}
-}
-
-.card-title {
-	font-size: var(--font-size-xl);
-	font-weight: 600;
-	color: #1f2937;
-	margin: 0 0 var(--spacing-sm) 0;
-	font-family: system-ui, -apple-system, sans-serif;
-}
-
-.card-description {
-	font-size: var(--font-size-md);
-	color: #6b7280;
-	margin: 0;
-	line-height: 1.5;
-}
-
-@media (max-width: 768px) {
-	.hero-title {
-		font-size: 2rem;
+// Responsive
+@media (max-width: 640px) {
+	.hero {
+		padding: 40px @base-padding 24px;
 	}
 
-	.hero-description {
-		font-size: var(--font-size-md);
-	}
-
-	.cards-container {
+	.bento {
 		grid-template-columns: 1fr;
-		gap: var(--spacing-lg);
-	}
+		padding: 0 @base-offset 40px;
 
-	.main-page {
-		padding: var(--spacing-lg) var(--spacing-md);
+		&__card {
+			padding: 20px;
+
+			&--primary {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 16px;
+
+				.bento__icon {
+					width: 52px;
+					height: 52px;
+
+					:deep(svg) {
+						width: 26px;
+						height: 26px;
+					}
+				}
+
+				.bento__title {
+					font-size: 1.25rem;
+				}
+			}
+		}
+
+		&__arrow {
+			display: none;
+		}
 	}
 }
 </style>

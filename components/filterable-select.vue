@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import type { ElSelect } from 'element-plus';
+
 type ValueType = string | number;
+
+const selectRef = ref<InstanceType<typeof ElSelect>>();
 
 const props = withDefaults(
 	defineProps<{
@@ -48,12 +52,14 @@ const focusSearchItemNameInput = async (visible: boolean) => {
 
 <template>
 	<el-select
+		ref="selectRef"
 		v-model="value"
 		:placeholder="placeholder"
 		size="large"
 		:multiple="multiple"
 		:no-data-text="noDataText"
 		@visible-change="focusSearchItemNameInput($event)"
+		@change="selectRef?.blur()"
 	>
 		<template #header>
 			<el-input

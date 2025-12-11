@@ -1,6 +1,7 @@
 <template>
 	<FilterWrapper :label="t('ConsultationLanguage')">
 		<el-select
+			ref="selectRef"
 			v-model="languageIds"
 			:placeholder="t('AnyLanguage')"
 			size="large"
@@ -8,6 +9,7 @@
 			collapse-tags
 			collapse-tags-tooltip
 			class="filter-language"
+			@change="selectRef?.blur()"
 		>
 			<el-option
 				v-for="{ text, value } in languages"
@@ -20,8 +22,11 @@
 </template>
 
 <script setup lang="ts">
+import type { ElSelect } from 'element-plus';
 import { LanguageId } from '~/enums/language';
 import languageI18n from '~/i18n/language';
+
+const selectRef = ref<InstanceType<typeof ElSelect>>();
 
 const props = defineProps<{
 	value: number[];

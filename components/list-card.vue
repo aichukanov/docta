@@ -55,6 +55,7 @@ const detailsLink = computed(() => {
 				:key="clinic.id"
 				:clinic="clinic"
 				:price-info="getPriceInfo(clinic.id)"
+				linkable
 				@show-on-map="$emit('show-on-map', clinic)"
 			/>
 		</div>

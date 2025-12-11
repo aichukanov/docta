@@ -1,6 +1,7 @@
 <template>
 	<FilterWrapper :label="t('City')">
 		<el-select
+			ref="selectRef"
 			v-model="cityIds"
 			:placeholder="t('AnyCity')"
 			size="large"
@@ -8,6 +9,7 @@
 			collapse-tags
 			collapse-tags-tooltip
 			class="filter-city"
+			@change="selectRef?.blur()"
 		>
 			<el-option
 				v-for="{ text, value } in cities"
@@ -20,8 +22,11 @@
 </template>
 
 <script setup lang="ts">
+import type { ElSelect } from 'element-plus';
 import { CityId } from '~/enums/cities';
 import citiesI18n from '~/i18n/city';
+
+const selectRef = ref<InstanceType<typeof ElSelect>>();
 
 const props = withDefaults(
 	defineProps<{

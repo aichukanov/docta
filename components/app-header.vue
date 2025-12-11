@@ -5,7 +5,12 @@ const { t } = useI18n();
 const { locale } = useI18n({ useScope: 'global' });
 const route = useRoute();
 
-const mainPageLink = computed(() => ({
+const indexPageLink = computed(() => ({
+	name: 'index',
+	query: getRegionalQuery(locale.value),
+}));
+
+const doctorsPageLink = computed(() => ({
 	name: 'doctors',
 	query: getRegionalQuery(locale.value),
 }));
@@ -41,7 +46,7 @@ const isActiveSection = (section: string) => {
 			<div class="app-header__main-content">
 				<NuxtLink
 					class="app-header__brand"
-					:to="mainPageLink"
+					:to="indexPageLink"
 					:aria-label="t('GoToMainPage')"
 				>
 					<div class="app-header__logo"></div>
@@ -51,7 +56,7 @@ const isActiveSection = (section: string) => {
 					<NuxtLink
 						class="app-header__nav-link"
 						:class="{ 'is-active': isActiveSection('doctors') }"
-						:to="mainPageLink"
+						:to="doctorsPageLink"
 					>
 						<IconDoctor class="nav-icon" />
 						<span>{{ t('Doctors') }}</span>

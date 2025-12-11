@@ -18,8 +18,6 @@ export default defineEventHandler(async (event) => {
 		pathArray[0].includes('robots')
 	) {
 		// ignore these calls
-		// } else if (pathArray[0] === '') {
-		// 	return sendRedirect(event, '/doctors', 302);
 	} else if (pathArray[0] === 'admin') {
 		const adminCookie = getCookie(event, 'adm');
 		if (adminCookie !== 'xpycm') {

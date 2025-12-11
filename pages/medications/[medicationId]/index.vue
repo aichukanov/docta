@@ -42,20 +42,22 @@ const pageTitle = computed(() => {
 	}
 
 	const usedCities: { [key: string]: true } = {};
-	const citiesText = medicationClinics.value
+	const uniqueCities = medicationClinics.value
 		.map((clinic) => {
 			if (usedCities[clinic.cityId]) {
-				return '';
+				return null;
 			}
 			usedCities[clinic.cityId] = true;
-			return t(`city_${clinic.cityId}`);
+			return clinic.cityId;
 		})
-		.filter(Boolean)
-		.join(', ');
+		.filter(Boolean);
 
-	return citiesText
-		? `${medicationData.value?.name} | ${citiesText}`
-		: medicationData.value?.name || '';
+	const locationText =
+		uniqueCities.length === 1
+			? t(`city_${uniqueCities[0]}`)
+			: t('InMontenegro');
+
+	return `${medicationData.value?.name} | ${locationText}`;
 });
 
 const pageDescription = computed(() => {

@@ -55,18 +55,22 @@ const pageTitle = computed(() => {
 		.join(', ');
 
 	const usedCities: { [key: string]: true } = {};
-	const citiesText = doctorClinics.value
+	const uniqueCities = doctorClinics.value
 		.map((clinic) => {
 			if (usedCities[clinic.cityId]) {
-				return '';
+				return null;
 			}
 			usedCities[clinic.cityId] = true;
-			return t(`city_${clinic.cityId}`);
+			return clinic.cityId;
 		})
-		.filter(Boolean)
-		.join(', ');
+		.filter(Boolean);
 
-	const titleParts = [doctorData.value?.name, specialtiesText, citiesText];
+	const locationText =
+		uniqueCities.length === 1
+			? t(`city_${uniqueCities[0]}`)
+			: t('InMontenegro');
+
+	const titleParts = [doctorData.value?.name, specialtiesText, locationText];
 	return titleParts.filter(Boolean).join(' | ');
 });
 

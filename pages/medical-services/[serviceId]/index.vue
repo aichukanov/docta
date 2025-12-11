@@ -45,20 +45,22 @@ const pageTitle = computed(() => {
 	}
 
 	const usedCities: { [key: string]: true } = {};
-	const citiesText = medicalServiceClinics.value
+	const uniqueCities = medicalServiceClinics.value
 		.map((clinic) => {
 			if (usedCities[clinic.cityId]) {
-				return '';
+				return null;
 			}
 			usedCities[clinic.cityId] = true;
-			return t(`city_${clinic.cityId}`);
+			return clinic.cityId;
 		})
-		.filter(Boolean)
-		.join(', ');
+		.filter(Boolean);
 
-	return citiesText
-		? `${medicalServiceData.value?.name} | ${citiesText}`
-		: medicalServiceData.value?.name || '';
+	const locationText =
+		uniqueCities.length === 1
+			? t(`city_${uniqueCities[0]}`)
+			: t('InMontenegro');
+
+	return `${medicalServiceData.value?.name} | ${locationText}`;
 });
 
 const pageDescription = computed(() => {

@@ -6,6 +6,7 @@ export default {
 			City: 'City',
 			AnyCity: 'Any city',
 			And: 'and',
+			InMontenegro: 'Montenegro',
 
 			[`city_${CityId.PODGORICA}`]: 'Podgorica',
 			[`city_${CityId.PODGORICA}_genitive`]: 'Podgorica',
@@ -28,6 +29,7 @@ export default {
 			City: 'Город',
 			AnyCity: 'Любой город',
 			And: 'и',
+			InMontenegro: 'Черногория',
 
 			[`city_${CityId.PODGORICA}`]: 'Подгорица',
 			[`city_${CityId.PODGORICA}_genitive`]: 'Подгорице',
@@ -50,6 +52,7 @@ export default {
 			City: 'Grad',
 			AnyCity: 'Bilo koji grad',
 			And: 'i',
+			InMontenegro: 'Crna Gora',
 
 			[`city_${CityId.PODGORICA}`]: 'Podgorica',
 			[`city_${CityId.PODGORICA}_genitive`]: 'Podgorici',
@@ -79,6 +82,7 @@ export default {
 			City: 'Ort',
 			AnyCity: 'Beliebiger Ort',
 			And: 'und',
+			InMontenegro: 'Montenegro',
 
 			[`city_${CityId.PODGORICA}`]: 'Podgorica',
 			[`city_${CityId.PODGORICA}_genitive`]: 'Podgorica',
@@ -101,6 +105,7 @@ export default {
 			City: 'Şehir',
 			AnyCity: 'Herhangi bir şehir',
 			And: 've',
+			InMontenegro: 'Karadağ',
 
 			[`city_${CityId.PODGORICA}`]: 'Podgorica',
 			[`city_${CityId.PODGORICA}_genitive`]: "Podgorica'da",

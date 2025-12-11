@@ -16,6 +16,9 @@ export { default as DoctorIcon } from './doctor.vue';
 export { default as BackIcon } from './back.vue';
 export { default as ArrowDownIcon } from './arrow-down.vue';
 export { default as SearchIcon } from './search.vue';
+export { default as LabTestIcon } from './lab-test.vue';
+export { default as MedicationIcon } from './medication.vue';
+export { default as MedicalServiceIcon } from './medical-service.vue';
 export { default as RouteIcon } from './route.vue';
 export { default as MapPinIcon } from './map-pin.vue';
 export { default as LanguageIcon } from './language.vue';
@@ -25,4 +28,3 @@ export interface IconProps {
 	size?: string | number;
 	color?: string;
 }
-

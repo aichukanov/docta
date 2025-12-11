@@ -3,6 +3,7 @@ import { getRegionalQuery } from '~/common/url-utils';
 
 const { t } = useI18n();
 const { locale } = useI18n({ useScope: 'global' });
+const route = useRoute();
 
 const mainPageLink = computed(() => ({
 	name: 'doctors',
@@ -28,6 +29,10 @@ const medicationsPageLink = computed(() => ({
 	name: 'medications',
 	query: getRegionalQuery(locale.value),
 }));
+
+const isActiveSection = (section: string) => {
+	return route.path.startsWith(`/${section}`);
+};
 </script>
 
 <template>
@@ -43,20 +48,45 @@ const medicationsPageLink = computed(() => ({
 				</NuxtLink>
 
 				<nav class="app-header__nav">
-					<NuxtLink class="app-header__nav-link" :to="mainPageLink">
-						{{ t('Doctors') }}
+					<NuxtLink
+						class="app-header__nav-link"
+						:class="{ 'is-active': isActiveSection('doctors') }"
+						:to="mainPageLink"
+					>
+						<IconDoctor class="nav-icon" />
+						<span>{{ t('Doctors') }}</span>
 					</NuxtLink>
-					<NuxtLink class="app-header__nav-link" :to="clinicsPageLink">
-						{{ t('Clinics') }}
+					<NuxtLink
+						class="app-header__nav-link"
+						:class="{ 'is-active': isActiveSection('clinics') }"
+						:to="clinicsPageLink"
+					>
+						<IconClinic class="nav-icon" />
+						<span>{{ t('Clinics') }}</span>
 					</NuxtLink>
-					<NuxtLink class="app-header__nav-link" :to="labTestsPageLink">
-						{{ t('LabTests') }}
+					<NuxtLink
+						class="app-header__nav-link"
+						:class="{ 'is-active': isActiveSection('lab-tests') }"
+						:to="labTestsPageLink"
+					>
+						<IconLabTest class="nav-icon" />
+						<span>{{ t('LabTests') }}</span>
 					</NuxtLink>
-					<NuxtLink class="app-header__nav-link" :to="medicalServicesPageLink">
-						{{ t('MedicalServices') }}
+					<NuxtLink
+						class="app-header__nav-link"
+						:class="{ 'is-active': isActiveSection('medical-services') }"
+						:to="medicalServicesPageLink"
+					>
+						<IconMedicalService class="nav-icon" />
+						<span>{{ t('MedicalServices') }}</span>
 					</NuxtLink>
-					<NuxtLink class="app-header__nav-link" :to="medicationsPageLink">
-						{{ t('Medications') }}
+					<NuxtLink
+						class="app-header__nav-link"
+						:class="{ 'is-active': isActiveSection('medications') }"
+						:to="medicationsPageLink"
+					>
+						<IconMedication class="nav-icon" />
+						<span>{{ t('Medications') }}</span>
 					</NuxtLink>
 				</nav>
 
@@ -171,20 +201,33 @@ const medicationsPageLink = computed(() => ({
 	}
 
 	&__nav-link {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-xs);
 		font-size: var(--font-size-md);
 		font-weight: 500;
 		color: #4b5563;
 		text-decoration: none;
-		transition: color 0.2s ease;
+		padding: var(--spacing-sm) var(--spacing-sm);
+		border-radius: var(--border-radius-sm);
+		transition: all 0.2s ease;
 		white-space: nowrap;
+
+		.nav-icon {
+			width: 18px;
+			height: 18px;
+			flex-shrink: 0;
+		}
 
 		&:hover {
 			color: #4f46e5;
+			background: rgba(79, 70, 229, 0.06);
 		}
 
-		&.router-link-active {
+		&.is-active {
 			color: #4f46e5;
 			font-weight: 600;
+			background: rgba(79, 70, 229, 0.1);
 		}
 	}
 

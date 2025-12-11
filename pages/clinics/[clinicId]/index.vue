@@ -199,7 +199,7 @@ useSeoMeta({
 					:clinicId="clinicId"
 				>
 					<template #icon>
-						<IconClinic />
+						<IconMedicalService />
 					</template>
 					<template #default="{ items }">
 						<div class="items-list">
@@ -235,7 +235,7 @@ useSeoMeta({
 					:clinicId="clinicId"
 				>
 					<template #icon>
-						<IconSearch />
+						<IconLabTest />
 					</template>
 					<template #default="{ items }">
 						<div class="items-list">
@@ -267,7 +267,7 @@ useSeoMeta({
 					:clinicId="clinicId"
 				>
 					<template #icon>
-						<IconCheck />
+						<IconMedication />
 					</template>
 					<template #default="{ items }">
 						<div class="items-list">

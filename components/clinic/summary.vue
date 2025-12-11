@@ -18,7 +18,7 @@ defineEmits<{
 const { t, n, locale } = useI18n();
 
 const hasPrice = computed(() => {
-	return props.priceInfo != null;
+	return props.priceInfo?.price != null;
 });
 
 const clinicLink = computed(() => ({

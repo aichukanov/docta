@@ -11,6 +11,13 @@ export default {
 			LoadingMedicalServices: 'Loading medical services...',
 			NoMedicalServicesFound: 'No medical services found',
 			ToSearchPage: 'To search page',
+			MedicalServiceDescriptionCity: '{name} — medical service in {city}',
+			MedicalServiceDescriptionDefault:
+				'{name} — medical service in Montenegro',
+			MedicalServicesListDescription:
+				'Find medical services in Montenegro by name, city, or clinic. Compare prices and clinic locations on the map.',
+			MedicalServicesListDescriptionCity:
+				'Medical services in {city} — search by name or clinic. Compare prices and clinic locations on the map.',
 		},
 		ru: {
 			ServiceName: 'Название услуги',
@@ -23,6 +30,13 @@ export default {
 			LoadingMedicalServices: 'Загрузка услуг...',
 			NoMedicalServicesFound: 'Услуги не найдены',
 			ToSearchPage: 'К поиску',
+			MedicalServiceDescriptionCity: '{name} — медицинская услуга в {city}',
+			MedicalServiceDescriptionDefault:
+				'{name} — медицинская услуга в Черногории',
+			MedicalServicesListDescription:
+				'Найдите медицинские услуги в Черногории по названию, городу или клинике. Сравните цены и адреса клиник на карте.',
+			MedicalServicesListDescriptionCity:
+				'Медицинские услуги в {city} — поиск по названию или клинике. Сравните цены и адреса клиник на карте.',
 		},
 		sr: {
 			ServiceName: 'Ime usluge',
@@ -37,6 +51,13 @@ export default {
 			LoadingMedicalServices: 'Učitavanje usluga...',
 			NoMedicalServicesFound: 'Usluge nisu pronađene',
 			ToSearchPage: 'Na stranicu pretrage',
+			MedicalServiceDescriptionCity: '{name} — medicinska usluga u {city}',
+			MedicalServiceDescriptionDefault:
+				'{name} — medicinska usluga u Crnoj Gori',
+			MedicalServicesListDescription:
+				'Pronađite medicinske usluge u Crnoj Gori po imenu, gradu ili klinici. Uporedite cene i lokacije klinika na mapi.',
+			MedicalServicesListDescriptionCity:
+				'Medicinske usluge u {city} — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
 		},
 		de: {
 			ServiceName: 'Dienstleistungsname',
@@ -51,6 +72,14 @@ export default {
 			LoadingMedicalServices: 'Medizinische Dienstleistungen werden geladen...',
 			NoMedicalServicesFound: 'Keine medizinischen Dienstleistungen gefunden',
 			ToSearchPage: 'Zur Suche',
+			MedicalServiceDescriptionCity:
+				'{name} — medizinische Dienstleistung in {city}',
+			MedicalServiceDescriptionDefault:
+				'{name} — medizinische Dienstleistung in Montenegro',
+			MedicalServicesListDescription:
+				'Finden Sie medizinische Dienstleistungen in Montenegro nach Name, Stadt oder Klinik. Vergleichen Sie Preise und Klinikstandorte auf der Karte.',
+			MedicalServicesListDescriptionCity:
+				'Medizinische Dienstleistungen in {city} — Suche nach Name oder Klinik. Vergleichen Sie Preise und Klinikstandorte auf der Karte.',
 		},
 		tr: {
 			ServiceName: 'Hizmet adı',
@@ -64,6 +93,12 @@ export default {
 			LoadingMedicalServices: 'Tıbbi hizmetler yükleniyor...',
 			NoMedicalServicesFound: 'Tıbbi hizmet bulunamadı',
 			ToSearchPage: 'Arama sayfasına git',
+			MedicalServiceDescriptionCity: "{name} — {city}'de tıbbi hizmet",
+			MedicalServiceDescriptionDefault: "{name} — Karadağ'da tıbbi hizmet",
+			MedicalServicesListDescription:
+				"Karadağ'da ada, şehre veya kliniğe göre tıbbi hizmetler bulun. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
+			MedicalServicesListDescriptionCity:
+				"{city}'de ada veya kliniğe göre tıbbi hizmetler arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
 		},
 	},
 };

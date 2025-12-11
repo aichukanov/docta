@@ -44,7 +44,21 @@ const pageTitle = computed(() => {
 		return '';
 	}
 
-	return medicalServiceData.value?.name || '';
+	const usedCities: { [key: string]: true } = {};
+	const citiesText = medicalServiceClinics.value
+		.map((clinic) => {
+			if (usedCities[clinic.cityId]) {
+				return '';
+			}
+			usedCities[clinic.cityId] = true;
+			return t(`city_${clinic.cityId}`);
+		})
+		.filter(Boolean)
+		.join(', ');
+
+	return citiesText
+		? `${medicalServiceData.value?.name} | ${citiesText}`
+		: medicalServiceData.value?.name || '';
 });
 
 const pageDescription = computed(() => {
@@ -72,8 +86,8 @@ const pageDescription = computed(() => {
 		.join(', ');
 
 	return citiesText
-		? `${name} — медицинская услуга в ${citiesText}`
-		: `${name} — медицинская услуга в Черногории`;
+		? t('MedicalServiceDescriptionCity', { name, city: citiesText })
+		: t('MedicalServiceDescriptionDefault', { name });
 });
 
 useSeoMeta({

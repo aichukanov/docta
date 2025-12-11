@@ -41,7 +41,21 @@ const pageTitle = computed(() => {
 		return '';
 	}
 
-	return labTestData.value?.name || '';
+	const usedCities: { [key: string]: true } = {};
+	const citiesText = labTestClinics.value
+		.map((clinic) => {
+			if (usedCities[clinic.cityId]) {
+				return '';
+			}
+			usedCities[clinic.cityId] = true;
+			return t(`city_${clinic.cityId}`);
+		})
+		.filter(Boolean)
+		.join(', ');
+
+	return citiesText
+		? `${labTestData.value?.name} | ${citiesText}`
+		: labTestData.value?.name || '';
 });
 
 const pageDescription = computed(() => {
@@ -65,8 +79,8 @@ const pageDescription = computed(() => {
 		.join(', ');
 
 	return citiesText
-		? `${name} — лабораторный анализ в ${citiesText}`
-		: `${name} — лабораторный анализ в Черногории`;
+		? t('LabTestDescriptionCity', { name, city: citiesText })
+		: t('LabTestDescriptionDefault', { name });
 });
 
 useSeoMeta({

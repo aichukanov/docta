@@ -36,6 +36,11 @@ export default {
 			LoadingDoctor: 'Loading doctor data...',
 			ToSearchPage: 'To search page',
 			DoctorNotFound: 'Doctor not found',
+			DoctorsListDescription:
+				'Find doctors in Montenegro by specialty, city, and consultation language. Clinics, addresses, and contacts.',
+			DoctorsListDescriptionCity:
+				'Doctors in {city} — search by specialty and consultation language. Clinics, addresses, and contacts.',
+			And: 'and',
 		},
 		ru: {
 			DoctorName: 'Имя врача',
@@ -75,6 +80,11 @@ export default {
 			LoadingDoctor: 'Загрузка данных о враче...',
 			ToSearchPage: 'К поиску',
 			DoctorNotFound: 'Врач не найден',
+			DoctorsListDescription:
+				'Найдите врача в Черногории по специальности, городу и языку консультации. Клиники с сопровождением, адреса и контакты.',
+			DoctorsListDescriptionCity:
+				'Врачи в {city} — поиск по специальности и языку консультации. Клиники с сопровождением, адреса и контакты.',
+			And: 'и',
 		},
 		tr: {
 			DoctorName: 'Doktor adı',
@@ -112,6 +122,11 @@ export default {
 			LoadingDoctor: 'Doktor verileri yükleniyor...',
 			ToSearchPage: 'Arama sayfasına git',
 			DoctorNotFound: 'Doktor bulunamadı',
+			DoctorsListDescription:
+				"Karadağ'da uzmanlık, şehir ve konsültasyon diline göre doktor bulun. Klinikler, adresler ve iletişim bilgileri.",
+			DoctorsListDescriptionCity:
+				"{city}'de uzmanlık ve konsültasyon diline göre doktor arayın. Klinikler, adresler ve iletişim bilgileri.",
+			And: 've',
 		},
 		de: {
 			DoctorName: 'Arztname',
@@ -151,6 +166,11 @@ export default {
 			LoadingDoctor: 'Doktor-Daten werden geladen...',
 			ToSearchPage: 'Zur Suche',
 			DoctorNotFound: 'Ärzte nicht gefunden',
+			DoctorsListDescription:
+				'Finden Sie Ärzte in Montenegro nach Fachgebiet, Stadt und Beratungssprache. Kliniken, Adressen und Kontakte.',
+			DoctorsListDescriptionCity:
+				'Ärzte in {city} — Suche nach Fachgebiet und Beratungssprache. Kliniken, Adressen und Kontakte.',
+			And: 'und',
 		},
 		sr: {
 			DoctorName: 'Ime lekara',
@@ -190,6 +210,11 @@ export default {
 			LoadingDoctor: 'Učitavanje podataka o lekaru...',
 			ToSearchPage: 'Na stranicu pretrage',
 			DoctorNotFound: 'Lekar nije pronađen',
+			DoctorsListDescription:
+				'Pronađite lekare u Crnoj Gori po specijalizaciji, gradu i jeziku konsultacije. Klinike, adrese i kontakti.',
+			DoctorsListDescriptionCity:
+				'Lekari u {city} — pretraga po specijalizaciji i jeziku konsultacije. Klinike, adrese i kontakti.',
+			And: 'i',
 		},
 	},
 };

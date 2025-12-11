@@ -16,6 +16,7 @@ const props = defineProps<{
 	totalCount: number;
 	isLoading: boolean;
 	pageTitle: string;
+	pageDescription?: string;
 	filterQuery: Record<string, any>;
 	cityIds: number[];
 	mapClinics?: ClinicData[];
@@ -80,6 +81,7 @@ await clinicsStore.fetchClinics();
 
 useSeoMeta({
 	title: props.pageTitle,
+	description: props.pageDescription,
 	robots: robotsMeta,
 });
 

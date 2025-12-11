@@ -54,7 +54,20 @@ const pageTitle = computed(() => {
 		.map((specialty) => t(`specialty_${specialty}`))
 		.join(', ');
 
-	return `${doctorData.value?.name} | ${specialtiesText}`;
+	const usedCities: { [key: string]: true } = {};
+	const citiesText = doctorClinics.value
+		.map((clinic) => {
+			if (usedCities[clinic.cityId]) {
+				return '';
+			}
+			usedCities[clinic.cityId] = true;
+			return t(`city_${clinic.cityId}`);
+		})
+		.filter(Boolean)
+		.join(', ');
+
+	const titleParts = [doctorData.value?.name, specialtiesText, citiesText];
+	return titleParts.filter(Boolean).join(' | ');
 });
 
 const pageDescription = computed(() => {

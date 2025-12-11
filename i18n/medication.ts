@@ -11,6 +11,12 @@ export default {
 			LoadingMedications: 'Loading medications...',
 			NoMedicationsFound: 'No medications found',
 			ToSearchPage: 'To search page',
+			MedicationDescriptionCity: '{name} — available in {city}',
+			MedicationDescriptionDefault: '{name}',
+			MedicationsListDescription:
+				'Find medications in Montenegro by name, city, or clinic. Compare prices and pharmacy locations on the map.',
+			MedicationsListDescriptionCity:
+				'Medications in {city} — search by name or clinic. Compare prices and pharmacy locations on the map.',
 		},
 		ru: {
 			MedicationName: 'Название лекарства',
@@ -23,6 +29,12 @@ export default {
 			LoadingMedications: 'Загрузка лекарств...',
 			NoMedicationsFound: 'Лекарства не найдены',
 			ToSearchPage: 'К поиску',
+			MedicationDescriptionCity: '{name} — доступно в {city}',
+			MedicationDescriptionDefault: '{name}',
+			MedicationsListDescription:
+				'Найдите лекарства в Черногории по названию, городу или аптеке. Сравните цены и адреса на карте.',
+			MedicationsListDescriptionCity:
+				'Лекарства в {city} — поиск по названию или аптеке. Сравните цены и адреса на карте.',
 		},
 		sr: {
 			MedicationName: 'Ime lijeka',
@@ -35,6 +47,12 @@ export default {
 			LoadingMedications: 'Učitavanje lijekova...',
 			NoMedicationsFound: 'Lijekovi nisu pronađeni',
 			ToSearchPage: 'Na stranicu pretrage',
+			MedicationDescriptionCity: '{name} — dostupno u {city}',
+			MedicationDescriptionDefault: '{name}',
+			MedicationsListDescription:
+				'Pronađite lekove u Crnoj Gori po imenu, gradu ili apoteci. Uporedite cene i lokacije na mapi.',
+			MedicationsListDescriptionCity:
+				'Lekovi u {city} — pretraga po imenu ili apoteci. Uporedite cene i lokacije na mapi.',
 		},
 		de: {
 			MedicationName: 'Medikamentenname',
@@ -47,6 +65,12 @@ export default {
 			LoadingMedications: 'Medikamente werden geladen...',
 			NoMedicationsFound: 'Keine Medikamente gefunden',
 			ToSearchPage: 'Zur Suche',
+			MedicationDescriptionCity: '{name} — verfügbar in {city}',
+			MedicationDescriptionDefault: '{name}',
+			MedicationsListDescription:
+				'Finden Sie Medikamente in Montenegro nach Name, Stadt oder Apotheke. Vergleichen Sie Preise und Standorte auf der Karte.',
+			MedicationsListDescriptionCity:
+				'Medikamente in {city} — Suche nach Name oder Apotheke. Vergleichen Sie Preise und Standorte auf der Karte.',
 		},
 		tr: {
 			MedicationName: 'İlaç adı',
@@ -59,6 +83,12 @@ export default {
 			LoadingMedications: 'İlaçlar yükleniyor...',
 			NoMedicationsFound: 'İlaç bulunamadı',
 			ToSearchPage: 'Arama sayfasına git',
+			MedicationDescriptionCity: "{name} — {city}'de mevcut",
+			MedicationDescriptionDefault: '{name}',
+			MedicationsListDescription:
+				"Karadağ'da ada, şehre veya eczaneye göre ilaç bulun. Fiyatları ve konumları haritada karşılaştırın.",
+			MedicationsListDescriptionCity:
+				"{city}'de ada veya eczaneye göre ilaç arayın. Fiyatları ve konumları haritada karşılaştırın.",
 		},
 	},
 };

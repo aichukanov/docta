@@ -10,6 +10,12 @@ export default {
 
 			LoadingLabTests: 'Loading laboratory tests...',
 			NoLabTestsFound: 'No laboratory tests found',
+			LabTestDescriptionCity: '{name} — laboratory test in {city}',
+			LabTestDescriptionDefault: '{name} — laboratory test in Montenegro',
+			LabTestsListDescription:
+				'Find laboratory tests in Montenegro by name, city, or clinic. Compare prices and clinic locations on the map.',
+			LabTestsListDescriptionCity:
+				'Laboratory tests in {city} — search by name or clinic. Compare prices and clinic locations on the map.',
 		},
 		ru: {
 			LabTestName: 'Название анализа',
@@ -21,6 +27,12 @@ export default {
 
 			LoadingLabTests: 'Загрузка анализов...',
 			NoLabTestsFound: 'Анализы не найдены',
+			LabTestDescriptionCity: '{name} — лабораторный анализ в {city}',
+			LabTestDescriptionDefault: '{name} — лабораторный анализ в Черногории',
+			LabTestsListDescription:
+				'Найдите анализы в Черногории по названию, городу или клинике. Сравните цены и адреса клиник на карте.',
+			LabTestsListDescriptionCity:
+				'Лабораторные анализы в {city} — поиск по названию или клинике. Сравните цены и адреса клиник на карте.',
 		},
 		sr: {
 			LabTestName: 'Ime analize',
@@ -32,6 +44,12 @@ export default {
 
 			LoadingLabTests: 'Učitavanje analiza...',
 			NoLabTestsFound: 'Analize nisu pronađene',
+			LabTestDescriptionCity: '{name} — laboratorijska analiza u {city}',
+			LabTestDescriptionDefault: '{name} — laboratorijska analiza u Crnoj Gori',
+			LabTestsListDescription:
+				'Pronađite laboratorijske analize u Crnoj Gori po imenu, gradu ili klinici. Uporedite cene i lokacije klinika na mapi.',
+			LabTestsListDescriptionCity:
+				'Laboratorijske analize u {city} — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
 		},
 		de: {
 			LabTestName: 'Testname',
@@ -43,6 +61,12 @@ export default {
 
 			LoadingLabTests: 'Laboruntersuchungen werden geladen...',
 			NoLabTestsFound: 'Keine Laboruntersuchungen gefunden',
+			LabTestDescriptionCity: '{name} — Laboruntersuchung in {city}',
+			LabTestDescriptionDefault: '{name} — Laboruntersuchung in Montenegro',
+			LabTestsListDescription:
+				'Finden Sie Laboruntersuchungen in Montenegro nach Name, Stadt oder Klinik. Vergleichen Sie Preise und Klinikstandorte auf der Karte.',
+			LabTestsListDescriptionCity:
+				'Laboruntersuchungen in {city} — Suche nach Name oder Klinik. Vergleichen Sie Preise und Klinikstandorte auf der Karte.',
 		},
 		tr: {
 			LabTestName: 'Test adı',
@@ -55,6 +79,12 @@ export default {
 
 			LoadingLabTests: 'Laboratuvar testleri yükleniyor...',
 			NoLabTestsFound: 'Laboratuvar testi bulunamadı',
+			LabTestDescriptionCity: "{name} — {city}'de laboratuvar testi",
+			LabTestDescriptionDefault: "{name} — Karadağ'da laboratuvar testi",
+			LabTestsListDescription:
+				"Karadağ'da ada, şehre veya kliniğe göre laboratuvar testleri bulun. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
+			LabTestsListDescriptionCity:
+				"{city}'de ada veya kliniğe göre laboratuvar testleri arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
 		},
 	},
 };

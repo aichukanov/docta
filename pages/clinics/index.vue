@@ -91,11 +91,21 @@ const pageTitle = computed(() => {
 const pageTitleWithCount = computed(() => {
 	return `${pageTitle.value} (${filteredClinics.value.length})`;
 });
+
+const pageDescription = computed(() => {
+	if (cityIds.value.length === 1) {
+		return t('ClinicsListDescriptionCity', {
+			city: t(`city_${cityIds.value[0]}_genitive`),
+		});
+	}
+	return t('ClinicsListDescription');
+});
 </script>
 
 <template>
 	<ListPage
 		:pageTitle="pageTitleWithCount"
+		:pageDescription="pageDescription"
 		:list="filteredClinics"
 		:totalCount="filteredClinics.length"
 		:isLoading="isLoadingClinics"

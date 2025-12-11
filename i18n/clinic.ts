@@ -16,6 +16,10 @@ export default {
 			DoctorsAtClinic: 'Doctors at the clinic',
 			NoDoctorsAtClinic: 'No doctors listed at this clinic',
 			And: 'and',
+			ClinicsListDescription:
+				'Find clinics in Montenegro by city and consultation language. Addresses, contacts, doctors, and services on the map.',
+			ClinicsListDescriptionCity:
+				'Clinics in {city} — search by consultation language. Addresses, contacts, doctors, and services on the map.',
 		},
 		ru: {
 			ClinicName: 'Название клиники',
@@ -33,6 +37,10 @@ export default {
 			DoctorsAtClinic: 'Врачи клиники',
 			NoDoctorsAtClinic: 'В этой клинике нет врачей',
 			And: 'и',
+			ClinicsListDescription:
+				'Найдите клинику в Черногории по городу и языку сопровождения. Адреса, контакты, врачи и услуги на карте.',
+			ClinicsListDescriptionCity:
+				'Клиники в {city} — поиск по языку сопровождения. Адреса, контакты, врачи и услуги на карте.',
 		},
 		tr: {
 			ClinicName: 'Klinik adı',
@@ -50,6 +58,10 @@ export default {
 			DoctorsAtClinic: 'Klinikteki doktorlar',
 			NoDoctorsAtClinic: 'Bu klinik için doktor bulunamadı',
 			And: 've',
+			ClinicsListDescription:
+				"Karadağ'da şehir ve konsültasyon diline göre klinik bulun. Adresler, iletişim, doktorlar ve haritada hizmetler.",
+			ClinicsListDescriptionCity:
+				"{city}'de konsültasyon diline göre klinik arayın. Adresler, iletişim, doktorlar ve haritada hizmetler.",
 		},
 		de: {
 			ClinicName: 'Klinikname',
@@ -67,6 +79,10 @@ export default {
 			DoctorsAtClinic: 'Ärzte der Klinik',
 			NoDoctorsAtClinic: 'Keine Ärzte in dieser Klinik',
 			And: 'und',
+			ClinicsListDescription:
+				'Finden Sie Kliniken in Montenegro nach Stadt und Beratungssprache. Adressen, Kontakte, Ärzte und Dienstleistungen auf der Karte.',
+			ClinicsListDescriptionCity:
+				'Kliniken in {city} — Suche nach Beratungssprache. Adressen, Kontakte, Ärzte und Dienstleistungen auf der Karte.',
 		},
 		sr: {
 			ClinicName: 'Ime klinike',
@@ -84,6 +100,10 @@ export default {
 			DoctorsAtClinic: 'Lekari klinike',
 			NoDoctorsAtClinic: 'U ovoj klinici nema lekara',
 			And: 'i',
+			ClinicsListDescription:
+				'Pronađite klinike u Crnoj Gori po gradu i jeziku konsultacije. Adrese, kontakti, lekari i usluge na mapi.',
+			ClinicsListDescriptionCity:
+				'Klinike u {city} — pretraga po jeziku konsultacije. Adrese, kontakti, lekari i usluge na mapi.',
 		},
 	},
 };

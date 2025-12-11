@@ -41,7 +41,21 @@ const pageTitle = computed(() => {
 		return '';
 	}
 
-	return medicationData.value?.name || '';
+	const usedCities: { [key: string]: true } = {};
+	const citiesText = medicationClinics.value
+		.map((clinic) => {
+			if (usedCities[clinic.cityId]) {
+				return '';
+			}
+			usedCities[clinic.cityId] = true;
+			return t(`city_${clinic.cityId}`);
+		})
+		.filter(Boolean)
+		.join(', ');
+
+	return citiesText
+		? `${medicationData.value?.name} | ${citiesText}`
+		: medicationData.value?.name || '';
 });
 
 const pageDescription = computed(() => {
@@ -64,7 +78,9 @@ const pageDescription = computed(() => {
 		.filter(Boolean)
 		.join(', ');
 
-	return citiesText ? `${name} — доступно в ${citiesText}` : name;
+	return citiesText
+		? t('MedicationDescriptionCity', { name, city: citiesText })
+		: t('MedicationDescriptionDefault', { name });
 });
 
 useSeoMeta({

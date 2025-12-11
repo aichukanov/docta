@@ -170,11 +170,21 @@ const pageTitle = computed(() => {
 const pageTitleWithCount = computed(() => {
 	return `${pageTitle.value} (${doctorsList.value?.totalCount})`;
 });
+
+const pageDescription = computed(() => {
+	if (cityIds.value.length === 1) {
+		return t('DoctorsListDescriptionCity', {
+			city: t(`city_${cityIds.value[0]}_genitive`),
+		});
+	}
+	return t('DoctorsListDescription');
+});
 </script>
 
 <template>
 	<ListPage
 		:pageTitle="pageTitleWithCount"
+		:pageDescription="pageDescription"
 		:list="doctorsList.doctors"
 		:totalCount="doctorsList.totalCount"
 		:isLoading="isLoadingDoctors"

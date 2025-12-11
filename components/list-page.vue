@@ -19,6 +19,8 @@ const props = defineProps<{
 	filterQuery: Record<string, any>;
 	cityIds: number[];
 	mapClinics?: ClinicData[];
+	detailsRouteName?: string;
+	detailsParamName?: string;
 }>();
 
 const { t, locale } = useI18n({ useScope: 'local' });
@@ -135,8 +137,11 @@ onMounted(async () => {
 							<slot name="card" :item="item" :showClinicOnMap="showClinicOnMap">
 								<ListCard
 									:title="item.name"
+									:itemId="item.id"
 									:clinicIds="item.clinicIds"
 									:clinicPrices="item.clinicPrices"
+									:detailsRouteName="detailsRouteName"
+									:detailsParamName="detailsParamName"
 									@show-on-map="showClinicOnMap($event)"
 								>
 									<slot name="item" :item="item" />

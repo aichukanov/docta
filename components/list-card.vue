@@ -1,14 +1,20 @@
 <script setup lang="ts">
+import { getRegionalQuery } from '~/common/url-utils';
+
 const props = defineProps<{
 	title?: string;
+	itemId?: number;
 	clinicIds: string;
 	clinicPrices?: ClinicService[];
+	detailsRouteName?: string;
+	detailsParamName?: string;
 }>();
 
 defineEmits<{
 	(e: 'show-on-map', clinic: ClinicData): void;
 }>();
 
+const { locale } = useI18n();
 const clinicsStore = useClinicsStore();
 
 const filteredClinics = computed(() => {
@@ -19,12 +25,28 @@ const filteredClinics = computed(() => {
 
 const getPriceInfo = (clinicId: number) =>
 	props.clinicPrices?.find((p) => p.clinicId === clinicId);
+
+const detailsLink = computed(() => {
+	if (!props.detailsRouteName || !props.detailsParamName || !props.itemId) {
+		return null;
+	}
+	return {
+		name: props.detailsRouteName,
+		params: { [props.detailsParamName]: props.itemId },
+		query: getRegionalQuery(locale.value),
+	};
+});
 </script>
 
 <template>
 	<div class="list-card">
 		<slot>
-			<h3 v-if="title" class="list-card-header">{{ title }}</h3>
+			<h3 v-if="title" class="list-card-header">
+				<NuxtLink v-if="detailsLink" :to="detailsLink" class="list-card-link">
+					{{ title }}
+				</NuxtLink>
+				<template v-else>{{ title }}</template>
+			</h3>
 		</slot>
 
 		<div class="clinics-list">
@@ -54,6 +76,16 @@ const getPriceInfo = (clinicId: number) =>
 		color: #1f2937;
 		margin: 0;
 		font-family: system-ui, -apple-system, sans-serif;
+
+		.list-card-link {
+			color: var(--color-primary);
+			text-decoration: none;
+
+			&:hover {
+				color: var(--color-primary-dark);
+				text-decoration: underline;
+			}
+		}
 	}
 }
 

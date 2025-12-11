@@ -1,4 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { parseClinicPricesData } from '~/server/common/utils';
 import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
@@ -21,7 +22,11 @@ export default defineEventHandler(
 			SELECT DISTINCT
 				ms.id,
 				ms.name,
-				GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY cms.clinic_id) as clinicIds
+				GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY cms.clinic_id) as clinicIds,
+				GROUP_CONCAT(
+					DISTINCT CONCAT(cms.clinic_id, ':', COALESCE(cms.price, 0), ':', COALESCE(cms.code, ''))
+					ORDER BY cms.clinic_id
+				) as clinicPricesData
 			FROM medical_services ms
 			LEFT JOIN clinic_medical_services cms ON ms.id = cms.medical_service_id
 			WHERE ms.id = ?
@@ -35,7 +40,17 @@ export default defineEventHandler(
 			);
 			await connection.end();
 
-			return medicalServiceRows[0];
+			const row = medicalServiceRows[0];
+			if (!row) {
+				return null;
+			}
+
+			return {
+				id: row.id,
+				name: row.name,
+				clinicIds: row.clinicIds,
+				clinicPrices: parseClinicPricesData(row.clinicPricesData),
+			};
 		} catch (error) {
 			console.error('API Error - medical service data:', error);
 			throw createError({

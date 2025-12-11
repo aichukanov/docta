@@ -1,4 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { parseClinicPricesData } from '~/server/common/utils';
 import type { ClinicServiceList } from '~/interfaces/clinic';
 import { validateBody, validateName } from '~/common/validation';
 
@@ -61,28 +62,12 @@ export async function getMedicalServiceList(
 	const [medicalServiceRows] = await connection.execute(medicalServicesQuery);
 	await connection.end();
 
-	// Преобразуем данные о ценах в массив объектов
-	const medicalServices = medicalServiceRows.map((row) => {
-		const clinicPrices = [];
-		if (row.clinicPricesData) {
-			const pricesData = row.clinicPricesData.split(',');
-			for (const priceData of pricesData) {
-				const [clinicId, price, code] = priceData.split(':');
-				clinicPrices.push({
-					clinicId: Number(clinicId),
-					price: Number(price) || null,
-					code: code || null,
-				});
-			}
-		}
-
-		return {
-			id: row.id,
-			name: row.name,
-			clinicIds: row.clinicIds,
-			clinicPrices,
-		};
-	});
+	const medicalServices = medicalServiceRows.map((row) => ({
+		id: row.id,
+		name: row.name,
+		clinicIds: row.clinicIds,
+		clinicPrices: parseClinicPricesData(row.clinicPricesData),
+	}));
 
 	return {
 		medicalServices,

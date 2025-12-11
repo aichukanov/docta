@@ -1,28 +1,17 @@
 <script setup lang="ts">
-import { ArrowLeft } from '@element-plus/icons-vue';
-import { getRegionalQuery } from '~/common/url-utils';
 import cityI18n from '~/i18n/city';
 import clinicI18n from '~/i18n/clinic';
 import languageI18n from '~/i18n/language';
 import { combineI18nMessages } from '~/i18n/utils';
 
-const { t, locale } = useI18n({
+const { t } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([clinicI18n, languageI18n, cityI18n]),
 });
 
-const router = useRouter();
 const route = useRoute();
-const clinicsMapRef = ref<
-	HTMLElement & {
-		centerOnClinics: (
-			clinics: Array<{ latitude: number; longitude: number }>,
-		) => void;
-	}
->();
-const { getRouteParams } = useFilters();
 
-const { pending: isLoadingClinic, data: clinicData } = await useFetch(
+const { pending: isLoading, data: clinicData } = await useFetch(
 	'/api/clinics/details',
 	{
 		key: 'clinic-details',
@@ -38,10 +27,10 @@ const { data: doctorsList } = await useFetch('/api/doctors/list', {
 	method: 'POST',
 });
 
-const isClinicFound = computed(() => clinicData.value?.id != null);
+const isFound = computed(() => clinicData.value?.id != null);
 
 const clinicDoctors = computed(() => {
-	if (!isClinicFound.value || !doctorsList.value?.doctors) {
+	if (!isFound.value || !doctorsList.value?.doctors) {
 		return [];
 	}
 
@@ -51,21 +40,12 @@ const clinicDoctors = computed(() => {
 	});
 });
 
-const backToSearch = () => {
-	router.push({
-		name: 'clinics',
-		query: { ...getRouteParams().query, ...getRegionalQuery(locale.value) },
-	});
-};
-
-const onMapReady = () => {
-	if (isClinicFound.value) {
-		clinicsMapRef.value?.centerOnClinics([clinicData.value]);
-	}
-};
+const clinicAsList = computed(() =>
+	isFound.value && clinicData.value ? [clinicData.value] : [],
+);
 
 const pageTitle = computed(() => {
-	if (!isClinicFound.value) {
+	if (!isFound.value) {
 		return '';
 	}
 
@@ -73,7 +53,7 @@ const pageTitle = computed(() => {
 });
 
 const pageDescription = computed(() => {
-	if (!isClinicFound.value || !clinicData.value) {
+	if (!isFound.value || !clinicData.value) {
 		return '';
 	}
 
@@ -120,40 +100,34 @@ useSeoMeta({
 </script>
 
 <template>
-	<div class="clinic-page">
-		<div class="clinic-page-header">
-			<el-button @click="backToSearch()" :icon="ArrowLeft">
-				{{ t('ToSearchPage') }}
-			</el-button>
-		</div>
-		<div class="clinic-page-content">
-			<div v-if="isLoadingClinic" class="loading">
-				<div class="loading-spinner"></div>
-				<p>{{ t('LoadingClinic') }}</p>
-			</div>
-			<div v-else-if="isClinicFound" class="clinic-info-container">
-				<div class="clinic-info-wrapper">
-					<ClinicSummary :clinic="clinicData" />
+	<DetailsPage
+		:isLoading="isLoading || false"
+		:isFound="isFound"
+		:clinics="clinicAsList"
+		backRouteName="clinics"
+		:loadingText="t('LoadingClinic')"
+		:notFoundText="t('ClinicNotFound')"
+	>
+		<template #info>
+			<ClinicSummary v-if="clinicData" :clinic="clinicData" />
+		</template>
 
-					<div class="doctors-section">
-						<h2 class="section-title">{{ t('DoctorsAtClinic') }}</h2>
-						<div v-if="clinicDoctors.length === 0" class="empty-state">
-							<p>{{ t('NoDoctorsAtClinic') }}</p>
-						</div>
-					</div>
+		<template #clinics>
+			<div class="doctors-section">
+				<h2 class="section-title">{{ t('DoctorsAtClinic') }}</h2>
+				<div v-if="clinicDoctors.length === 0" class="empty-state">
+					<p>{{ t('NoDoctorsAtClinic') }}</p>
 				</div>
-				<DoctorsMap
-					ref="clinicsMapRef"
-					:doctors="clinicDoctors"
-					:clinics="[clinicData]"
-					@ready="onMapReady"
-				/>
+				<div v-else class="doctors-list">
+					<DoctorInfo
+						v-for="doctor in clinicDoctors"
+						:key="doctor.id"
+						:service="doctor"
+					/>
+				</div>
 			</div>
-			<div v-else class="clinic-info-container">
-				<p>{{ t('ClinicNotFound') }}</p>
-			</div>
-		</div>
-	</div>
+		</template>
+	</DetailsPage>
 </template>
 
 <i18n lang="json">
@@ -177,42 +151,6 @@ useSeoMeta({
 </i18n>
 
 <style lang="less" scoped>
-@import url('~/assets/css/vars.less');
-
-.clinic-page {
-	padding: var(--spacing-md);
-
-	.clinic-page-header {
-		margin-bottom: var(--spacing-md);
-	}
-
-	.clinic-page-content {
-		display: flex;
-		gap: var(--spacing-2xl);
-		justify-content: center;
-
-		.clinic-info-container {
-			display: flex;
-			flex-direction: row;
-			gap: var(--spacing-2xl);
-			width: 100%;
-			min-height: 700px;
-			max-width: 1600px;
-
-			& > * {
-				flex: 1;
-				height: 100%;
-			}
-
-			.clinic-info-wrapper {
-				display: flex;
-				flex-direction: column;
-				gap: var(--spacing-2xl);
-			}
-		}
-	}
-}
-
 .doctors-section {
 	display: flex;
 	flex-direction: column;
@@ -233,41 +171,9 @@ useSeoMeta({
 	color: #6b7280;
 }
 
-.loading {
+.doctors-list {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 40px;
-	color: #6b7280;
-}
-
-.loading-spinner {
-	width: 40px;
-	height: 40px;
-	border: 3px solid #e5e7eb;
-	border-top: 3px solid #4f46e5;
-	border-radius: 50%;
-	animation: spin 1s linear infinite;
-	margin-bottom: 16px;
-}
-
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-@media (max-width: 650px) {
-	.clinic-page {
-		.clinic-page-content {
-			.clinic-info-container {
-				flex-direction: column;
-			}
-		}
-	}
+	gap: var(--spacing-lg);
 }
 </style>

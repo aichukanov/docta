@@ -78,6 +78,8 @@ const pageTitleWithCount = computed(() => {
 		:isLoading="isLoadingLabTests"
 		:filterQuery="filterQuery"
 		:cityIds="cityIds"
+		detailsRouteName="lab-tests-labTestId"
+		detailsParamName="labTestId"
 	>
 		<template #filters>
 			<FilterName />

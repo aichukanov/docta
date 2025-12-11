@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { LocationFilled } from '@element-plus/icons-vue';
+
+const { t } = useI18n();
+</script>
+
 <template>
 	<el-button :title="t('ShowOnMap')">
 		<template #icon>
@@ -6,12 +12,6 @@
 		{{ t('ShowOnMap') }}
 	</el-button>
 </template>
-
-<script setup lang="ts">
-import { LocationFilled } from '@element-plus/icons-vue';
-
-const { t } = useI18n();
-</script>
 
 <i18n lang="json">
 {

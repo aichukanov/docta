@@ -166,8 +166,8 @@ onMounted(async () => {
 				:clinics="mapClinics || clinicsStore.clinics"
 				@ready="onMapReady"
 			>
-				<template #map-clinic-popup>
-					<slot name="map-clinic-popup" />
+				<template #map-clinic-popup="slotProps">
+					<slot name="map-clinic-popup" v-bind="slotProps" />
 				</template>
 			</ClinicServicesMap>
 		</div>

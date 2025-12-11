@@ -33,13 +33,13 @@ const doctorLink = computed(() => ({
 				<NuxtLink :to="doctorLink" class="doctor-name-link">
 					{{ service.name }}
 				</NuxtLink>
+				<div
+					v-if="service.professionalTitle && !short"
+					class="doctor-professional-title"
+				>
+					{{ service.professionalTitle }}
+				</div>
 			</h3>
-			<div
-				v-if="service.professionalTitle && !short"
-				class="doctor-professional-title"
-			>
-				{{ service.professionalTitle }}
-			</div>
 			<DoctorSpecialties :doctor="service" />
 			<ConsultationLanguages v-if="!short" :languageIds="service.languageIds">
 				{{ t('DoctorLanguages') }}

@@ -112,6 +112,7 @@ const pageTitleWithCount = computed(() => {
 		<template #card="{ item, showClinicOnMap }">
 			<ClinicSummary
 				:clinic="item as ClinicData"
+				linkable
 				@show-on-map="showClinicOnMap(item)"
 			/>
 		</template>

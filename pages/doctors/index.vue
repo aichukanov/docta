@@ -41,6 +41,19 @@ const filterList = computed(() => ({
 
 const filterQuery = computed(() => getRouteParams().query);
 
+const clinicsStore = useClinicsStore();
+await clinicsStore.fetchClinics();
+
+const clinicName = computed(() => {
+	if (clinicIds.value.length === 1) {
+		const clinic = clinicsStore.clinics.find(
+			(c) => c.id === clinicIds.value[0],
+		);
+		return clinic?.name || '';
+	}
+	return '';
+});
+
 const { pending: isLoadingDoctors, data: doctorsList } = await useFetch(
 	'/api/doctors/list',
 	{
@@ -180,8 +193,8 @@ const pageTitleWithCount = computed(() => {
 			<DoctorInfo :service="item" />
 		</template>
 
-		<template #map-clinic-popup>
-			<DoctorInfo short />
+		<template #map-clinic-popup="{ service }">
+			<DoctorInfo :service="service" short />
 		</template>
 	</ListPage>
 </template>

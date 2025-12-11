@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { LocationFilled } from '@element-plus/icons-vue';
+import { getRegionalQuery } from '~/common/url-utils';
 import { hasContacts } from '../contacts/utils';
 import type { ClinicService } from '~/interfaces/clinic-service';
 import type { ClinicData } from '~/interfaces/clinic';
@@ -7,17 +8,24 @@ import type { ClinicData } from '~/interfaces/clinic';
 const props = defineProps<{
 	clinic: ClinicData;
 	priceInfo?: ClinicService;
+	linkable?: boolean;
 }>();
 
 defineEmits<{
 	(e: 'show-on-map'): void;
 }>();
 
-const { t, n } = useI18n();
+const { t, n, locale } = useI18n();
 
 const hasPrice = computed(() => {
 	return props.priceInfo != null;
 });
+
+const clinicLink = computed(() => ({
+	name: 'clinics-clinicId',
+	params: { clinicId: props.clinic.id },
+	query: getRegionalQuery(locale.value),
+}));
 </script>
 
 <template>
@@ -25,7 +33,14 @@ const hasPrice = computed(() => {
 		<div class="location-wrapper">
 			<div class="location-info">
 				<div class="clinic-name-container">
-					<span class="clinic-name">{{ clinic.name }}</span>
+					<NuxtLink
+						v-if="linkable"
+						:to="clinicLink"
+						class="clinic-name clinic-name-link"
+					>
+						{{ clinic.name }}
+					</NuxtLink>
+					<span v-else class="clinic-name">{{ clinic.name }}</span>
 
 					<div v-if="hasPrice" class="price-badge">
 						<span class="price-value">{{
@@ -126,6 +141,16 @@ const hasPrice = computed(() => {
 .clinic-name {
 	font-size: var(--font-size-lg);
 	font-weight: 600;
+
+	&.clinic-name-link {
+		color: var(--color-primary);
+		text-decoration: none;
+
+		&:hover {
+			color: var(--color-primary-dark);
+			text-decoration: underline;
+		}
+	}
 }
 
 .location-address {

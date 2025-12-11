@@ -141,7 +141,7 @@ defineExpose({
 					:services="selectedClinicServices"
 				>
 					<template #default="{ service }">
-						<slot name="map-clinic-popup">
+						<slot name="map-clinic-popup" :service="service">
 							<ServiceInfo :service="service" />
 						</slot>
 					</template>

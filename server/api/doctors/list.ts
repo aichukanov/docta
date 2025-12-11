@@ -16,15 +16,18 @@ export default defineEventHandler(async (event): Promise<DoctorList> => {
 			setResponseStatus(event, 400, 'Invalid parameters');
 			return null;
 		}
-		if (!validateSpecialtyIds(body, 'api/doctors/list')) {
+		if (body.specialtyIds && !validateSpecialtyIds(body, 'api/doctors/list')) {
 			setResponseStatus(event, 400, 'Invalid specialty');
 			return null;
 		}
-		if (!validateCityIds(body, 'api/doctors/list')) {
+		if (body.cityIds && !validateCityIds(body, 'api/doctors/list')) {
 			setResponseStatus(event, 400, 'Invalid city');
 			return null;
 		}
-		if (!validateDoctorLanguageIds(body, 'api/doctors/list')) {
+		if (
+			body.languageIds &&
+			!validateDoctorLanguageIds(body, 'api/doctors/list')
+		) {
 			setResponseStatus(event, 400, 'Invalid doctor language');
 			return null;
 		}

@@ -60,7 +60,7 @@ const onMapReady = () => {
 			</div>
 			<div v-else-if="isFound" class="details-info-container">
 				<div class="details-info-wrapper">
-					<slot name="info" />
+					<slot name="info" :showClinicOnMap="showClinicOnMap" />
 					<slot name="clinics" :showClinicOnMap="showClinicOnMap">
 						<div class="clinics-list">
 							<ClinicSummary
@@ -105,20 +105,26 @@ const onMapReady = () => {
 		.details-info-container {
 			display: flex;
 			flex-direction: row;
+			align-items: flex-start;
 			gap: var(--spacing-2xl);
 			width: 100%;
-			min-height: 700px;
 			max-width: 1600px;
 
-			& > * {
-				flex: 1;
-				height: 100%;
-			}
-
 			.details-info-wrapper {
+				flex: 1;
 				display: flex;
 				flex-direction: column;
 				gap: var(--spacing-2xl);
+				min-width: 0;
+			}
+
+			:deep(.clinic-services-map-container) {
+				flex: 1;
+				position: sticky;
+				top: calc(60px + var(--spacing-lg));
+				height: calc(100vh - 60px - var(--spacing-lg) - var(--spacing-md));
+				min-height: 400px;
+				max-height: 700px;
 			}
 		}
 	}

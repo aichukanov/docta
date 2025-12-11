@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { getRegionalQuery } from '~/common/url-utils';
 import type { ClinicData, ClinicServiceItem } from '~/interfaces/clinic';
 
 const props = defineProps<{
@@ -6,9 +7,17 @@ const props = defineProps<{
 	services: ClinicServiceItem[];
 }>();
 
+const { locale } = useI18n();
+
 const servicesListRef = ref<HTMLElement>();
 const pageNumber = ref(1);
 const PAGE_LIMIT = 20;
+
+const clinicLink = computed(() => ({
+	name: 'clinics-clinicId',
+	params: { clinicId: props.clinic.id },
+	query: getRegionalQuery(locale.value),
+}));
 
 const servicesOnPage = computed(() => {
 	return props.services.slice(
@@ -27,18 +36,9 @@ watch(pageNumber, () => {
 <template>
 	<div class="clinic-popup">
 		<div class="clinic-name-container">
-			<el-link
-				v-if="clinic.website"
-				:href="clinic.website"
-				underline="hover"
-				target="_blank"
-				class="clinic-name"
-			>
+			<NuxtLink :to="clinicLink" class="clinic-name">
 				{{ clinic.name }}
-			</el-link>
-			<h2 v-else class="clinic-name">
-				{{ clinic.name }}
-			</h2>
+			</NuxtLink>
 		</div>
 
 		<ClinicRouteButton :clinic="clinic" :text="clinic.address" />
@@ -75,6 +75,12 @@ watch(pageNumber, () => {
 	.clinic-name {
 		font-size: var(--font-size-2xl);
 		font-weight: 600;
+		color: var(--color-primary);
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 </style>

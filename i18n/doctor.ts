@@ -1,6 +1,8 @@
 export default {
 	messages: {
 		en: {
+			DoctorName: 'Doctor name',
+			InsertDoctorName: 'Enter doctor name',
 			Doctors: 'Doctors in Montenegro',
 			DoctorsCity: 'Doctors in {city}',
 			DoctorsClinic: 'Doctors at {clinic} in Montenegro',
@@ -36,6 +38,8 @@ export default {
 			DoctorNotFound: 'Doctor not found',
 		},
 		ru: {
+			DoctorName: 'Имя врача',
+			InsertDoctorName: 'Введите имя врача',
 			Doctors: 'Врачи в Черногории',
 			DoctorsCity: 'Врачи в {city}',
 			DoctorsClinic: 'Врачи клиники {clinic} в Черногории',
@@ -73,6 +77,8 @@ export default {
 			DoctorNotFound: 'Врач не найден',
 		},
 		tr: {
+			DoctorName: 'Doktor adı',
+			InsertDoctorName: 'Doktor adını girin',
 			Doctors: "Karadağ'daki doktorlar",
 			DoctorsCity: '{city} doktorları',
 			DoctorsClinic: "{clinic} doktorları Karadağ'da",
@@ -108,6 +114,8 @@ export default {
 			DoctorNotFound: 'Doktor bulunamadı',
 		},
 		de: {
+			DoctorName: 'Arztname',
+			InsertDoctorName: 'Arztname eingeben',
 			Doctors: 'Ärzte in Montenegro',
 			DoctorsCity: 'Ärzte in {city}',
 			DoctorsClinic: 'Ärzte der Klinik {clinic} in Montenegro',
@@ -145,6 +153,8 @@ export default {
 			DoctorNotFound: 'Ärzte nicht gefunden',
 		},
 		sr: {
+			DoctorName: 'Ime lekara',
+			InsertDoctorName: 'Unesite ime lekara',
 			Doctors: 'Lekari u Crnoj Gori',
 			DoctorsCity: 'Lekari u {city}',
 			DoctorsClinic: 'Lekari klinike {clinic} u Crnoj Gori',

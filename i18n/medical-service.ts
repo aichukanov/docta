@@ -1,6 +1,8 @@
 export default {
 	messages: {
 		en: {
+			ServiceName: 'Service name',
+			InsertServiceName: 'Enter service name',
 			MedicalServices: 'Medical Services in Montenegro',
 			MedicalServicesCity: 'Medical Services in {city}',
 			MedicalServicesClinic: 'Medical Services at {clinic} in Montenegro',
@@ -11,6 +13,8 @@ export default {
 			ToSearchPage: 'To search page',
 		},
 		ru: {
+			ServiceName: 'Название услуги',
+			InsertServiceName: 'Введите название услуги',
 			MedicalServices: 'Медицинские услуги в Черногории',
 			MedicalServicesCity: 'Медицинские услуги в {city}',
 			MedicalServicesClinic: 'Медицинские услуги клиники {clinic} в Черногории',
@@ -21,6 +25,8 @@ export default {
 			ToSearchPage: 'К поиску',
 		},
 		sr: {
+			ServiceName: 'Ime usluge',
+			InsertServiceName: 'Unesite ime usluge',
 			MedicalServices: 'Medicinske usluge u Crnoj Gori',
 			MedicalServicesCity: 'Medicinske usluge u {city}',
 			MedicalServicesClinic:
@@ -33,6 +39,8 @@ export default {
 			ToSearchPage: 'Na stranicu pretrage',
 		},
 		de: {
+			ServiceName: 'Dienstleistungsname',
+			InsertServiceName: 'Dienstleistungsname eingeben',
 			MedicalServices: 'Medizinische Dienstleistungen in Montenegro',
 			MedicalServicesCity: 'Medizinische Dienstleistungen in {city}',
 			MedicalServicesClinic:
@@ -45,6 +53,8 @@ export default {
 			ToSearchPage: 'Zur Suche',
 		},
 		tr: {
+			ServiceName: 'Hizmet adı',
+			InsertServiceName: 'Hizmet adını girin',
 			MedicalServices: "Karadağ'da Tıbbi Hizmetler",
 			MedicalServicesCity: '{city} şehrinde Tıbbi Hizmetler',
 			MedicalServicesClinic: "Karadağ'da {clinic} kliniğinde Tıbbi Hizmetler",

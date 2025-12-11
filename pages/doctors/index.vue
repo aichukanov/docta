@@ -182,7 +182,10 @@ const pageTitleWithCount = computed(() => {
 		:cityIds="cityIds"
 	>
 		<template #filters>
-			<FilterName />
+			<FilterName
+				:label="t('DoctorName')"
+				:placeholder="t('InsertDoctorName')"
+			/>
 			<FilterCitySelect v-model:value="cityIds" />
 			<FilterLanguageSelect v-model:value="languageIds" />
 			<FilterSpecialtySelect v-model:value="specialtyIds" />

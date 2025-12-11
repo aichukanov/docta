@@ -1,22 +1,18 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
-import type { DoctorData } from '~/interfaces/doctor';
+import type { ClinicServiceItem } from '~/interfaces/clinic';
 
-const props = withDefaults(
-	defineProps<{
-		doctor: DoctorData;
-		short?: boolean;
-	}>(),
-	{
-		short: false,
-	},
-);
+const props = defineProps<{
+	service: ClinicServiceItem;
+	detailsRouteName?: string;
+	detailsParamName?: string;
+}>();
 
 const { t, locale } = useI18n();
 
 const serviceLink = computed(() => ({
-	name: 'services-serviceId',
-	params: { serviceId: props.service.id },
+	name: props.detailsRouteName || 'medical-services-serviceId',
+	params: { [props.detailsParamName || 'serviceId']: props.service.id },
 	query: getRegionalQuery(locale.value),
 }));
 </script>
@@ -35,23 +31,29 @@ const serviceLink = computed(() => ({
 
 <style scoped lang="less">
 .service-wrapper {
-	display: flex;
-	gap: var(--spacing-2xl);
+	background: var(--color-surface-secondary);
+	border: 1px solid var(--color-border-light);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-sm) var(--spacing-md);
+	transition: border-color var(--transition-base);
+
+	&:hover {
+		border-color: var(--color-primary);
+	}
 
 	.service-info {
 		display: flex;
 		flex-direction: column;
-		gap: var(--spacing-sm);
-		flex: 1;
+		gap: var(--spacing-xs);
 	}
 
 	.service-name {
 		margin: 0;
-		font-size: var(--font-size-2xl);
-		font-weight: 700;
-		color: var(--color-text-primary);
-		line-height: 1.2;
-		letter-spacing: -0.01em;
+		font-size: var(--font-size-md);
+		font-weight: 500;
+		line-height: 1.3;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 
 	.service-name-link {
@@ -62,19 +64,6 @@ const serviceLink = computed(() => ({
 	.service-name-link:hover {
 		color: var(--color-primary-dark);
 		text-decoration: underline;
-	}
-}
-
-@media (max-width: 500px) {
-	.service-wrapper {
-		gap: var(--spacing-md);
-	}
-}
-
-@media (max-width: 300px) {
-	.service-wrapper {
-		flex-direction: column;
-		padding: 0 var(--spacing-sm);
 	}
 }
 </style>

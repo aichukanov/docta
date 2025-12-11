@@ -82,7 +82,10 @@ const pageTitleWithCount = computed(() => {
 		detailsParamName="labTestId"
 	>
 		<template #filters>
-			<FilterName />
+			<FilterName
+				:label="t('LabTestName')"
+				:placeholder="t('InsertLabTestName')"
+			/>
 			<FilterCitySelect v-model:value="cityIds" />
 			<FilterClinicSelect v-model:value="clinicIds" />
 		</template>

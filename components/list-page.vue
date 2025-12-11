@@ -164,6 +164,8 @@ onMounted(async () => {
 				ref="mapRef"
 				:services="mapClinics ? [] : list"
 				:clinics="mapClinics || clinicsStore.clinics"
+				:detailsRouteName="detailsRouteName"
+				:detailsParamName="detailsParamName"
 				@ready="onMapReady"
 			>
 				<template #map-clinic-popup="slotProps">

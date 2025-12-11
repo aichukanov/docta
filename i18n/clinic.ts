@@ -1,6 +1,8 @@
 export default {
 	messages: {
 		en: {
+			ClinicName: 'Clinic name',
+			InsertClinicName: 'Enter clinic name',
 			Clinics: 'Clinics in Montenegro',
 			ClinicsCity: 'Clinics in {city}',
 			ClinicsLanguage: 'Clinics in Montenegro where they speak {language}',
@@ -16,6 +18,8 @@ export default {
 			And: 'and',
 		},
 		ru: {
+			ClinicName: 'Название клиники',
+			InsertClinicName: 'Введите название клиники',
 			Clinics: 'Клиники в Черногории',
 			ClinicsCity: 'Клиники в {city}',
 			ClinicsLanguage: 'Клиники в Черногории, где говорят на {language} языке',
@@ -31,6 +35,8 @@ export default {
 			And: 'и',
 		},
 		tr: {
+			ClinicName: 'Klinik adı',
+			InsertClinicName: 'Klinik adını girin',
 			Clinics: "Karadağ'daki klinikler",
 			ClinicsCity: '{city} klinikleri',
 			ClinicsLanguage: "Karadağ'da {language} konuşulan klinikler",
@@ -46,6 +52,8 @@ export default {
 			And: 've',
 		},
 		de: {
+			ClinicName: 'Klinikname',
+			InsertClinicName: 'Klinikname eingeben',
 			Clinics: 'Kliniken in Montenegro',
 			ClinicsCity: 'Kliniken in {city}',
 			ClinicsLanguage: 'Kliniken in Montenegro, wo {language} gesprochen wird',
@@ -61,6 +69,8 @@ export default {
 			And: 'und',
 		},
 		sr: {
+			ClinicName: 'Ime klinike',
+			InsertClinicName: 'Unesite ime klinike',
 			Clinics: 'Klinike u Crnoj Gori',
 			ClinicsCity: 'Klinike u {city}',
 			ClinicsLanguage: 'Klinike u Crnoj Gori gde govore {language} jezik',

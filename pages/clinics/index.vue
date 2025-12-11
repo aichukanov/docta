@@ -104,7 +104,10 @@ const pageTitleWithCount = computed(() => {
 		:mapClinics="filteredClinics"
 	>
 		<template #filters>
-			<FilterName />
+			<FilterName
+				:label="t('ClinicName')"
+				:placeholder="t('InsertClinicName')"
+			/>
 			<FilterCitySelect v-model:value="cityIds" />
 			<FilterLanguageSelect v-model:value="languageIds" />
 		</template>

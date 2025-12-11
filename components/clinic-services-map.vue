@@ -5,6 +5,8 @@ import type { ClinicData, ClinicServiceItem } from '~/interfaces/clinic';
 const props = defineProps<{
 	clinics: ClinicData[];
 	services: ClinicServiceItem[];
+	detailsRouteName?: string;
+	detailsParamName?: string;
 }>();
 
 const emit = defineEmits<{
@@ -142,7 +144,11 @@ defineExpose({
 				>
 					<template #default="{ service }">
 						<slot name="map-clinic-popup" :service="service">
-							<ServiceInfo :service="service" />
+							<ServiceInfo
+								:service="service"
+								:detailsRouteName="detailsRouteName"
+								:detailsParamName="detailsParamName"
+							/>
 						</slot>
 					</template>
 				</MapClinicPopup>

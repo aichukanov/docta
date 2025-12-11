@@ -67,37 +67,6 @@ const clinicAsList = computed(() =>
 	isFound.value && clinicData.value ? [clinicData.value] : [],
 );
 
-// Лимит элементов по умолчанию
-const INITIAL_LIMIT = 10;
-
-// Состояние развернутости для каждого списка
-const showAllDoctors = ref(false);
-const showAllMedicalServices = ref(false);
-const showAllLabTests = ref(false);
-const showAllMedications = ref(false);
-
-// Отображаемые элементы с учетом лимита
-const visibleDoctors = computed(() =>
-	showAllDoctors.value
-		? clinicDoctors.value
-		: clinicDoctors.value.slice(0, INITIAL_LIMIT),
-);
-const visibleMedicalServices = computed(() =>
-	showAllMedicalServices.value
-		? clinicMedicalServices.value
-		: clinicMedicalServices.value.slice(0, INITIAL_LIMIT),
-);
-const visibleLabTests = computed(() =>
-	showAllLabTests.value
-		? clinicLabTests.value
-		: clinicLabTests.value.slice(0, INITIAL_LIMIT),
-);
-const visibleMedications = computed(() =>
-	showAllMedications.value
-		? clinicMedications.value
-		: clinicMedications.value.slice(0, INITIAL_LIMIT),
-);
-
 const getItemLink = (routeName: string, paramName: string, id: number) => ({
 	name: routeName,
 	params: { [paramName]: id },
@@ -201,52 +170,40 @@ useSeoMeta({
 		<template #clinics>
 			<div class="clinic-services">
 				<!-- Врачи -->
-				<div v-if="clinicDoctors.length > 0" class="service-section">
-					<div class="section-header">
-						<IconDoctor class="section-icon" />
-						<h2 class="section-title">{{ t('DoctorsAtClinic') }}</h2>
-						<span class="section-count">{{ clinicDoctors.length }}</span>
-					</div>
-					<div class="section-content">
+				<ClinicServiceSection
+					:title="t('DoctorsAtClinic')"
+					:items="clinicDoctors"
+					routeName="doctors"
+					:clinicId="clinicId"
+				>
+					<template #icon>
+						<IconDoctor />
+					</template>
+					<template #default="{ items }">
 						<div class="doctors-list">
 							<DoctorInfo
-								v-for="doctor in visibleDoctors"
+								v-for="doctor in items"
 								:key="doctor.id"
 								:service="doctor"
+								short
 							/>
 						</div>
-						<button
-							v-if="clinicDoctors.length > INITIAL_LIMIT"
-							class="show-more-button"
-							@click="showAllDoctors = !showAllDoctors"
-						>
-							{{
-								showAllDoctors
-									? t('ShowLess')
-									: t('ShowMore', {
-											count: clinicDoctors.length - INITIAL_LIMIT,
-									  })
-							}}
-						</button>
-					</div>
-				</div>
+					</template>
+				</ClinicServiceSection>
 
 				<!-- Медицинские услуги -->
-				<div v-if="clinicMedicalServices.length > 0" class="service-section">
-					<div class="section-header">
-						<IconClinic class="section-icon" />
-						<h2 class="section-title">{{ t('MedicalServicesAtClinic') }}</h2>
-						<span class="section-count">{{
-							clinicMedicalServices.length
-						}}</span>
-					</div>
-					<div class="section-content">
+				<ClinicServiceSection
+					:title="t('MedicalServicesAtClinic')"
+					:items="clinicMedicalServices"
+					routeName="medical-services"
+					:clinicId="clinicId"
+				>
+					<template #icon>
+						<IconClinic />
+					</template>
+					<template #default="{ items }">
 						<div class="items-list">
-							<div
-								v-for="service in visibleMedicalServices"
-								:key="service.id"
-								class="item-card"
-							>
+							<div v-for="service in items" :key="service.id" class="item-card">
 								<NuxtLink
 									:to="
 										getItemLink(
@@ -267,36 +224,22 @@ useSeoMeta({
 								</span>
 							</div>
 						</div>
-						<button
-							v-if="clinicMedicalServices.length > INITIAL_LIMIT"
-							class="show-more-button"
-							@click="showAllMedicalServices = !showAllMedicalServices"
-						>
-							{{
-								showAllMedicalServices
-									? t('ShowLess')
-									: t('ShowMore', {
-											count: clinicMedicalServices.length - INITIAL_LIMIT,
-									  })
-							}}
-						</button>
-					</div>
-				</div>
+					</template>
+				</ClinicServiceSection>
 
 				<!-- Анализы -->
-				<div v-if="clinicLabTests.length > 0" class="service-section">
-					<div class="section-header">
-						<IconSearch class="section-icon" />
-						<h2 class="section-title">{{ t('LabTestsAtClinic') }}</h2>
-						<span class="section-count">{{ clinicLabTests.length }}</span>
-					</div>
-					<div class="section-content">
+				<ClinicServiceSection
+					:title="t('LabTestsAtClinic')"
+					:items="clinicLabTests"
+					routeName="lab-tests"
+					:clinicId="clinicId"
+				>
+					<template #icon>
+						<IconSearch />
+					</template>
+					<template #default="{ items }">
 						<div class="items-list">
-							<div
-								v-for="labTest in visibleLabTests"
-								:key="labTest.id"
-								class="item-card"
-							>
+							<div v-for="labTest in items" :key="labTest.id" class="item-card">
 								<NuxtLink
 									:to="
 										getItemLink('lab-tests-labTestId', 'labTestId', labTest.id)
@@ -313,33 +256,23 @@ useSeoMeta({
 								</span>
 							</div>
 						</div>
-						<button
-							v-if="clinicLabTests.length > INITIAL_LIMIT"
-							class="show-more-button"
-							@click="showAllLabTests = !showAllLabTests"
-						>
-							{{
-								showAllLabTests
-									? t('ShowLess')
-									: t('ShowMore', {
-											count: clinicLabTests.length - INITIAL_LIMIT,
-									  })
-							}}
-						</button>
-					</div>
-				</div>
+					</template>
+				</ClinicServiceSection>
 
 				<!-- Лекарства -->
-				<div v-if="clinicMedications.length > 0" class="service-section">
-					<div class="section-header">
-						<IconCheck class="section-icon" />
-						<h2 class="section-title">{{ t('MedicationsAtClinic') }}</h2>
-						<span class="section-count">{{ clinicMedications.length }}</span>
-					</div>
-					<div class="section-content">
+				<ClinicServiceSection
+					:title="t('MedicationsAtClinic')"
+					:items="clinicMedications"
+					routeName="medications"
+					:clinicId="clinicId"
+				>
+					<template #icon>
+						<IconCheck />
+					</template>
+					<template #default="{ items }">
 						<div class="items-list">
 							<div
-								v-for="medication in visibleMedications"
+								v-for="medication in items"
 								:key="medication.id"
 								class="item-card"
 							>
@@ -363,21 +296,8 @@ useSeoMeta({
 								</span>
 							</div>
 						</div>
-						<button
-							v-if="clinicMedications.length > INITIAL_LIMIT"
-							class="show-more-button"
-							@click="showAllMedications = !showAllMedications"
-						>
-							{{
-								showAllMedications
-									? t('ShowLess')
-									: t('ShowMore', {
-											count: clinicMedications.length - INITIAL_LIMIT,
-									  })
-							}}
-						</button>
-					</div>
-				</div>
+					</template>
+				</ClinicServiceSection>
 
 				<!-- Если ничего нет -->
 				<div
@@ -405,9 +325,7 @@ useSeoMeta({
 		"MedicalServicesAtClinic": "Medical services",
 		"LabTestsAtClinic": "Lab tests",
 		"MedicationsAtClinic": "Medications",
-		"NoServicesAtClinic": "No services available at this clinic",
-		"ShowMore": "Show more ({count})",
-		"ShowLess": "Show less"
+		"NoServicesAtClinic": "No services available at this clinic"
 	},
 	"ru": {
 		"ClinicLanguageAssistance": "Предоставляется сопровождение на {language} языке.",
@@ -416,9 +334,7 @@ useSeoMeta({
 		"MedicalServicesAtClinic": "Медицинские услуги",
 		"LabTestsAtClinic": "Анализы",
 		"MedicationsAtClinic": "Лекарства",
-		"NoServicesAtClinic": "В этой клинике нет доступных услуг",
-		"ShowMore": "Показать ещё ({count})",
-		"ShowLess": "Свернуть"
+		"NoServicesAtClinic": "В этой клинике нет доступных услуг"
 	},
 	"de": {
 		"ClinicLanguageAssistance": "Unterstützung wird in {language} bereitgestellt.",
@@ -427,9 +343,7 @@ useSeoMeta({
 		"MedicalServicesAtClinic": "Medizinische Dienstleistungen",
 		"LabTestsAtClinic": "Laboruntersuchungen",
 		"MedicationsAtClinic": "Medikamente",
-		"NoServicesAtClinic": "Keine Dienstleistungen in dieser Klinik verfügbar",
-		"ShowMore": "Mehr anzeigen ({count})",
-		"ShowLess": "Weniger anzeigen"
+		"NoServicesAtClinic": "Keine Dienstleistungen in dieser Klinik verfügbar"
 	},
 	"tr": {
 		"ClinicLanguageAssistance": "{language} dilinde destek sağlanır.",
@@ -438,9 +352,7 @@ useSeoMeta({
 		"MedicalServicesAtClinic": "Tıbbi hizmetler",
 		"LabTestsAtClinic": "Laboratuvar testleri",
 		"MedicationsAtClinic": "İlaçlar",
-		"NoServicesAtClinic": "Bu klinikte hizmet bulunmamaktadır",
-		"ShowMore": "Daha fazla göster ({count})",
-		"ShowLess": "Daha az göster"
+		"NoServicesAtClinic": "Bu klinikte hizmet bulunmamaktadır"
 	},
 	"sr": {
 		"ClinicLanguageAssistance": "Pomoć se pruža na {language} jeziku.",
@@ -449,9 +361,7 @@ useSeoMeta({
 		"MedicalServicesAtClinic": "Medicinske usluge",
 		"LabTestsAtClinic": "Laboratorijske analize",
 		"MedicationsAtClinic": "Lekovi",
-		"NoServicesAtClinic": "Nema dostupnih usluga u ovoj klinici",
-		"ShowMore": "Prikaži više ({count})",
-		"ShowLess": "Prikaži manje"
+		"NoServicesAtClinic": "Nema dostupnih usluga u ovoj klinici"
 	}
 }
 </i18n>
@@ -523,53 +433,6 @@ useSeoMeta({
 	gap: var(--spacing-xl);
 }
 
-.service-section {
-	background: var(--color-surface-primary);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-md);
-	overflow: hidden;
-}
-
-.section-header {
-	display: flex;
-	align-items: center;
-	gap: var(--spacing-md);
-	padding: var(--spacing-lg) var(--spacing-xl);
-	background: linear-gradient(to right, rgba(79, 70, 229, 0.04), transparent);
-	border-bottom: 1px solid var(--color-border-light);
-}
-
-.section-icon {
-	width: 24px;
-	height: 24px;
-	color: var(--color-primary);
-	flex-shrink: 0;
-}
-
-.section-title {
-	font-size: var(--font-size-lg);
-	font-weight: 600;
-	color: var(--color-text-primary);
-	margin: 0;
-	flex: 1;
-	font-family: system-ui, -apple-system, sans-serif;
-}
-
-.section-count {
-	background: var(--color-primary);
-	color: white;
-	font-size: var(--font-size-sm);
-	font-weight: 600;
-	padding: var(--spacing-xs) var(--spacing-sm);
-	border-radius: var(--border-radius-full);
-	min-width: 28px;
-	text-align: center;
-}
-
-.section-content {
-	padding: var(--spacing-lg) var(--spacing-xl);
-}
-
 .empty-state {
 	text-align: center;
 	padding: 40px;
@@ -616,27 +479,5 @@ useSeoMeta({
 	font-weight: 600;
 	color: var(--color-text-primary);
 	white-space: nowrap;
-}
-
-.show-more-button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	padding: var(--spacing-md);
-	margin-top: var(--spacing-md);
-	background: transparent;
-	border: 1px dashed var(--color-border-light);
-	border-radius: var(--border-radius-md);
-	color: var(--color-primary);
-	font-size: var(--font-size-sm);
-	font-weight: 500;
-	cursor: pointer;
-	transition: all var(--transition-base);
-
-	&:hover {
-		border-color: var(--color-primary);
-		background: rgba(79, 70, 229, 0.04);
-	}
 }
 </style>

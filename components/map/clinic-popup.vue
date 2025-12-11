@@ -123,6 +123,7 @@ watch(pageNumber, () => {
 	max-height: 200px;
 	overflow-y: auto;
 	overflow-x: hidden;
+	align-self: stretch;
 }
 
 .clinic-name-container {

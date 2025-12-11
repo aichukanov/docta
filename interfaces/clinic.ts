@@ -6,17 +6,41 @@ export interface ClinicService {
 	code: string;
 }
 
-export interface ClinicData extends ContactList {
+export interface Coordinates {
+	latitude: number;
+	longitude: number;
+}
+
+export interface ClinicData extends ContactList, Coordinates {
 	id: number;
 	name: string;
 	cityId: CityId;
 	address: string;
-	latitude: number;
-	longitude: number;
 	languageIds: string;
 }
 
 export interface ClinicList {
 	clinics: ClinicData[];
+	totalCount: number;
+}
+
+export interface ClinicServiceItem {
+	id: number;
+	clinicIds: string;
+	name: string;
+}
+
+export interface ClinicPrice {
+	clinicId: number;
+	price: number;
+	code?: string;
+}
+
+export interface ClinicServiceWithPrices extends ClinicServiceItem {
+	clinicPrices: ClinicPrice[];
+}
+
+export interface ClinicServiceList {
+	items: ClinicServiceWithPrices[];
 	totalCount: number;
 }

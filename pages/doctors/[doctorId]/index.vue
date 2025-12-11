@@ -42,10 +42,13 @@ const { pending: isLoadingDoctor, data: doctorData } = await useFetch(
 	},
 );
 
-const { data: clinicsList } = await useFetch('/api/clinics/list', {
-	key: 'clinics-list',
-	method: 'POST',
-});
+const clinicsStore = useClinicsStore();
+await clinicsStore.fetchClinics();
+
+const clinicsList = computed(() => ({
+	clinics: clinicsStore.clinics,
+	totalCount: clinicsStore.clinics.length,
+}));
 
 const isDoctorFound = computed(() => doctorData.value?.id != null);
 

@@ -1,12 +1,9 @@
-import type { CityId } from '~/enums/cities';
 import type { ContactList } from '~/interfaces/contacts';
+import type { ClinicServiceItem } from '~/interfaces/clinic';
 
-export interface DoctorData extends ContactList {
-	id: number;
-	name: string;
+export interface DoctorData extends ClinicServiceItem, ContactList {
 	specialtyIds: string;
 	languageIds: string;
-	clinicIds: string;
 	professionalTitle: string;
 	photoUrl: string;
 }

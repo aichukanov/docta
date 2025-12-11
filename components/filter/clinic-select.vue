@@ -12,10 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ClinicData } from '~/interfaces/clinic';
-
 const props = defineProps<{
-	clinics: ClinicData[];
 	value: number[];
 }>();
 
@@ -25,6 +22,8 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
+const clinicsStore = useClinicsStore();
+
 const clinicIds = computed({
 	get: () => props.value,
 	set: (value: number[]) => {
@@ -33,7 +32,7 @@ const clinicIds = computed({
 });
 
 const clinicOptions = computed(() => {
-	return props.clinics.map((clinic) => ({
+	return clinicsStore.clinics.map((clinic) => ({
 		label: clinic.name,
 		value: clinic.id,
 	}));

@@ -1,9 +1,9 @@
 import { getConnection } from '~/server/common/db-mysql';
-import type { MedicalServiceData } from '~/interfaces/medical-service';
+import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
 export default defineEventHandler(
-	async (event): Promise<MedicalServiceData> => {
+	async (event): Promise<ClinicServiceWithPrices> => {
 		try {
 			const body = await readBody(event);
 

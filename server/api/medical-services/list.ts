@@ -1,5 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
-import type { MedicalServiceList } from '~/interfaces/medical-service';
+import type { ClinicServiceList } from '~/interfaces/clinic';
 import { validateBody, validateName } from '~/common/validation';
 
 export default defineEventHandler(

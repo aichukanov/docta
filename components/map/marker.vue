@@ -1,19 +1,21 @@
 <template>
-	<div class="doctor-marker">
+	<div class="clinic-service-marker" :class="{ 'is-icon': showIcon }">
 		<div class="marker-inner-group">
-			{{ doctorCount }}
+			<IconClinic v-if="showIcon" :size="20" color="white" />
+			<template v-else>{{ clinicServiceCount }}</template>
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
 defineProps<{
-	doctorCount: number;
+	clinicServiceCount: number;
+	showIcon?: boolean;
 }>();
 </script>
 
 <style scoped>
-.doctor-marker {
+.clinic-service-marker {
 	position: absolute;
 	width: 40px;
 	height: 40px;
@@ -23,13 +25,13 @@ defineProps<{
 	transition: all 0.2s ease;
 }
 
-.doctor-marker:hover {
+.clinic-service-marker:hover {
 	transform: translate(-50%, -50%) scale(1.1);
 	z-index: 1001;
 }
 
 /* Одиночный врач */
-.doctor-marker:has(.marker-inner) {
+.clinic-service-marker:has(.marker-inner) {
 	background: var(--color-primary);
 	border-radius: var(--border-radius-lg);
 	border: 2px solid var(--color-bg-primary);
@@ -37,7 +39,7 @@ defineProps<{
 }
 
 /* Группа врачей */
-.doctor-marker:has(.marker-inner-group) {
+.clinic-service-marker:has(.marker-inner-group) {
 	background: var(--color-primary);
 	border-radius: var(--border-radius-full);
 	border: 2px solid var(--color-bg-primary);

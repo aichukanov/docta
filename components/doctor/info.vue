@@ -4,7 +4,7 @@ import type { DoctorData } from '~/interfaces/doctor';
 
 const props = withDefaults(
 	defineProps<{
-		doctor: DoctorData;
+		service: DoctorData;
 		short?: boolean;
 	}>(),
 	{
@@ -16,7 +16,7 @@ const { t, locale } = useI18n();
 
 const doctorLink = computed(() => ({
 	name: 'doctors-doctorId',
-	params: { doctorId: props.doctor.id },
+	params: { doctorId: props.service.id },
 	query: getRegionalQuery(locale.value),
 }));
 </script>
@@ -24,24 +24,24 @@ const doctorLink = computed(() => ({
 <template>
 	<div class="doctor-wrapper" :class="{ 'doctor-wrapper__short': short }">
 		<DoctorAvatar
-			:name="doctor.name"
-			:photoUrl="doctor.photoUrl"
+			:name="service.name"
+			:photoUrl="service.photoUrl"
 			:size="short ? 40 : 120"
 		/>
 		<div class="doctor-info">
 			<h3 class="doctor-name">
 				<NuxtLink :to="doctorLink" class="doctor-name-link">
-					{{ doctor.name }}
+					{{ service.name }}
 				</NuxtLink>
 			</h3>
 			<div
-				v-if="doctor.professionalTitle && !short"
+				v-if="service.professionalTitle && !short"
 				class="doctor-professional-title"
 			>
-				{{ doctor.professionalTitle }}
+				{{ service.professionalTitle }}
 			</div>
-			<DoctorSpecialties :doctor="doctor" />
-			<ConsultationLanguages v-if="!short" :languageIds="doctor.languageIds">
+			<DoctorSpecialties :doctor="service" />
+			<ConsultationLanguages v-if="!short" :languageIds="service.languageIds">
 				{{ t('DoctorLanguages') }}
 			</ConsultationLanguages>
 		</div>

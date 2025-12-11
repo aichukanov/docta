@@ -1,26 +1,25 @@
 <script setup lang="ts">
-import type { ClinicData } from '~/interfaces/clinic';
-import type { DoctorData } from '~/interfaces/doctor';
+import type { ClinicData, ClinicServiceItem } from '~/interfaces/clinic';
 
 const props = defineProps<{
 	clinic: ClinicData;
-	doctors: DoctorData[];
+	services: ClinicServiceItem[];
 }>();
 
-const doctorsListRef = ref<HTMLElement>();
+const servicesListRef = ref<HTMLElement>();
 const pageNumber = ref(1);
 const PAGE_LIMIT = 20;
 
-const doctorsOnPage = computed(() => {
-	return props.doctors.slice(
+const servicesOnPage = computed(() => {
+	return props.services.slice(
 		(pageNumber.value - 1) * PAGE_LIMIT,
 		pageNumber.value * PAGE_LIMIT,
 	);
 });
 
 watch(pageNumber, () => {
-	if (doctorsListRef.value) {
-		doctorsListRef.value.scrollTo(0, 0);
+	if (servicesListRef.value) {
+		servicesListRef.value.scrollTo(0, 0);
 	}
 });
 </script>
@@ -44,16 +43,13 @@ watch(pageNumber, () => {
 
 		<ClinicRouteButton :clinic="clinic" :text="clinic.address" />
 
-		<div class="doctors-list" ref="doctorsListRef">
-			<DoctorInfo
-				v-for="doctor in doctorsOnPage"
-				:key="doctor.id"
-				:doctor="doctor"
-				short
-			/>
+		<div class="services-list" ref="servicesListRef">
+			<div v-for="service in servicesOnPage" :key="service.id">
+				<slot :service="service" />
+			</div>
 			<Pagination
 				align="center"
-				:total="doctors.length"
+				:total="services.length"
 				:page-size="PAGE_LIMIT"
 				v-model:current-page="pageNumber"
 			/>
@@ -62,7 +58,7 @@ watch(pageNumber, () => {
 </template>
 
 <style scoped lang="less">
-.doctors-list {
+.services-list {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-xl);

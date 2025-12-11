@@ -32,10 +32,13 @@ const { pending: isLoadingMedicalService, data: medicalServiceData } =
 		})),
 	});
 
-const { data: clinicsList } = await useFetch('/api/clinics/list', {
-	key: 'clinics-list',
-	method: 'POST',
-});
+const clinicsStore = useClinicsStore();
+await clinicsStore.fetchClinics();
+
+const clinicsList = computed(() => ({
+	clinics: clinicsStore.clinics,
+	totalCount: clinicsStore.clinics.length,
+}));
 
 const isMedicalServiceFound = computed(
 	() => medicalServiceData.value?.id != null,

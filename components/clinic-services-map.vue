@@ -1,41 +1,10 @@
-<template>
-	<div class="doctors-map-container">
-		<div ref="mapContainer" class="map">
-			<div v-if="isLoading" class="map-loading">
-				<p>{{ t('MapLoading') }}</p>
-			</div>
-		</div>
-
-		<template v-if="isTeleportReady">
-			<Teleport
-				v-for="clinic in clinicsWithDoctors"
-				:key="clinic.id"
-				:to="`#${getClinicMarkerId(clinic.id)}`"
-			>
-				<DoctorMarker
-					:doctorCount="clinic.doctors.length"
-					@click.stop="openClinicPopup(clinic)"
-				/>
-			</Teleport>
-
-			<Teleport v-if="selectedClinic" to="#popup-container">
-				<MapClinicPopup
-					:clinic="selectedClinic"
-					:doctors="selectedClinicDoctors"
-				/>
-			</Teleport>
-		</template>
-	</div>
-</template>
-
 <script setup lang="ts">
 import { getClinicMarkerId } from '~/common/utils';
-import type { ClinicData } from '~/interfaces/clinic';
-import type { DoctorData } from '~/interfaces/doctor';
+import type { ClinicData, ClinicServiceItem } from '~/interfaces/clinic';
 
 const props = defineProps<{
 	clinics: ClinicData[];
-	doctors: DoctorData[];
+	services: ClinicServiceItem[];
 }>();
 
 const emit = defineEmits<{
@@ -52,25 +21,37 @@ const isTeleportReady = ref(false);
 
 const selectedClinic = ref<ClinicData | null>(null);
 
-const clinicsWithDoctors = computed(() => {
+const isClinicMode = computed(() => props.services.length === 0);
+
+const clinicsWithServices = computed<
+	Array<ClinicData & { services: number[] }>
+>(() => {
+	// Если services пустой, показываем все клиники (для страницы клиник)
+	if (props.services.length === 0) {
+		return props.clinics.map((clinic) => ({
+			...clinic,
+			services: [],
+		}));
+	}
+
 	return props.clinics
 		.map((clinic) => {
 			return {
 				...clinic,
-				doctors: getClinicDoctors(clinic),
+				services: getClinicServices(clinic),
 			};
 		})
-		.filter((clinic) => clinic.doctors.length > 0);
+		.filter((clinic) => clinic.services.length > 0);
 });
 
-const getClinicDoctors = (clinic: ClinicData) => {
-	return props.doctors.filter((doctor) =>
-		doctor.clinicIds.split(',').map(Number).includes(clinic.id),
+const getClinicServices = (clinic: ClinicData): number[] => {
+	return props.services.filter(({ clinicIds }) =>
+		clinicIds.split(',').map(Number).includes(clinic.id),
 	);
 };
 
-const selectedClinicDoctors = computed(() => {
-	return selectedClinic.value ? getClinicDoctors(selectedClinic.value) : [];
+const selectedClinicServices = computed(() => {
+	return selectedClinic.value ? getClinicServices(selectedClinic.value) : [];
 });
 
 const shouldScrollToMap = (): boolean => {
@@ -109,7 +90,6 @@ const centerOnClinics = (clinics: ClinicData[]) => {
 	scrollToMap();
 };
 
-// Инициализация карты при монтировании
 onMounted(async () => {
 	if (mapContainer.value) {
 		await initializeMap(mapContainer.value);
@@ -133,6 +113,43 @@ defineExpose({
 	centerOnLocations,
 });
 </script>
+
+<template>
+	<div class="clinic-services-map-container">
+		<div ref="mapContainer" class="clinic-services-map">
+			<div v-if="isLoading" class="map-loading">
+				<p>{{ t('MapLoading') }}</p>
+			</div>
+		</div>
+
+		<template v-if="isTeleportReady">
+			<Teleport
+				v-for="clinic in clinicsWithServices"
+				:key="clinic.id"
+				:to="`#${getClinicMarkerId(clinic.id)}`"
+			>
+				<MapMarker
+					:clinicServiceCount="clinic.services.length"
+					:showIcon="isClinicMode"
+					@click.stop="openClinicPopup(clinic)"
+				/>
+			</Teleport>
+
+			<Teleport v-if="selectedClinic" to="#popup-container">
+				<MapClinicPopup
+					:clinic="selectedClinic"
+					:services="selectedClinicServices"
+				>
+					<template #default="{ service }">
+						<slot name="map-clinic-popup">
+							<ServiceInfo :service="service" />
+						</slot>
+					</template>
+				</MapClinicPopup>
+			</Teleport>
+		</template>
+	</div>
+</template>
 
 <i18n lang="json">
 {
@@ -161,7 +178,7 @@ defineExpose({
 </i18n>
 
 <style>
-.doctors-map-container {
+.clinic-services-map-container {
 	width: 100%;
 	min-width: min(400px, 100%);
 	height: 100%;
@@ -169,7 +186,7 @@ defineExpose({
 	position: relative;
 }
 
-.map {
+.clinic-services-map {
 	width: 100%;
 	height: 100%;
 	position: relative;
@@ -192,57 +209,4 @@ defineExpose({
 	height: 100%;
 	position: relative;
 }
-
-/* Стили для маркеров врачей */
-/* .doctor-marker {
-	background: var(--color-primary);
-	border-radius: var(--border-radius-lg);
-	border: 2px solid var(--color-bg-primary);
-	box-shadow: var(--shadow-hover);
-}
-
-.doctor-marker-group {
-	background: var(--color-primary);
-	border-radius: var(--border-radius-full);
-	border: 2px solid var(--color-bg-primary);
-	box-shadow: var(--shadow-hover);
-}
-
-.marker-inner {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 100%;
-	color: var(--color-bg-primary);
-	font-family: system-ui, -apple-system, sans-serif;
-}
-
-.marker-inner-group {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 100%;
-	color: var(--color-bg-primary);
-	font-family: system-ui, -apple-system, sans-serif;
-	font-weight: var(--font-weight-semibold);
-	font-size: var(--font-size-sm);
-}
-
-.forced-marker {
-	animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-	0% {
-		box-shadow: var(--shadow-hover);
-	}
-	50% {
-		box-shadow: var(--shadow-lg);
-	}
-	100% {
-		box-shadow: var(--shadow-hover);
-	}
-} */
 </style>

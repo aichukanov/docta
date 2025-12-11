@@ -1,11 +1,7 @@
 <script setup lang="ts">
-import type { DoctorData } from '~/interfaces/doctor';
-import type { ClinicData } from '~/interfaces/clinic';
-
 const props = defineProps<{
 	title?: string;
 	clinicIds: string;
-	clinics: ClinicData[];
 	clinicPrices?: ClinicService[];
 }>();
 
@@ -13,8 +9,10 @@ defineEmits<{
 	(e: 'show-on-map', clinic: ClinicData): void;
 }>();
 
+const clinicsStore = useClinicsStore();
+
 const filteredClinics = computed(() => {
-	return props.clinics.filter((clinic) =>
+	return clinicsStore.clinics.filter((clinic) =>
 		props.clinicIds.split(',').map(Number).includes(clinic.id),
 	);
 });

@@ -16,23 +16,21 @@ const { pending: isLoadingDoctors, data: doctorsList } = await useFetch(
 	},
 );
 
-const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
-	'/api/clinics/list',
-	{
-		key: `clinics-list`,
-		method: 'POST',
-		body: computed(() => ({
-			key: loadedClinicsKey.value,
-		})),
-	},
-);
+const clinicsStore = useClinicsStore();
+await clinicsStore.fetchClinics();
+
+const clinicsList = computed(() => ({
+	clinics: clinicsStore.clinics,
+	totalCount: clinicsStore.clinics.length,
+}));
+const isLoadingClinics = computed(() => clinicsStore.isLoading);
 
 const updateDoctors = () => {
 	loadedDoctorsKey.value++;
 };
 
-const updateClinics = () => {
-	loadedClinicsKey.value++;
+const updateClinics = async () => {
+	await clinicsStore.refresh();
 };
 </script>
 

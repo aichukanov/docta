@@ -81,7 +81,7 @@ const pageDescription = computed(() => {
 	<ListPage
 		:pageTitle="pageTitleWithCount"
 		:pageDescription="pageDescription"
-		:list="medicalServicesList?.medicalServices || []"
+		:list="medicalServicesList?.items || []"
 		:totalCount="medicalServicesList?.totalCount || 0"
 		:isLoading="isLoadingMedicalServices"
 		:filterQuery="filterQuery"

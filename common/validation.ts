@@ -2,6 +2,7 @@ import { locales, type Locale } from '~/composables/use-locale';
 import { Language, isDoctorLanguage } from '~/enums/language';
 import { DoctorSpecialty } from '~/enums/specialty';
 import { CityId } from '~/enums/cities';
+import { LabTestCategory } from '~/enums/lab-test-category';
 
 function showError(from: string, message: string) {
 	console.error('Error in ' + from + ';\n' + message);
@@ -28,12 +29,12 @@ export function validateName({ name }: { name: unknown }, from: string) {
 		return true;
 	}
 
-	// Allow only letters (any locale), spaces and hyphens
-	const allowedPattern = /^[\p{L}\d\s-]+$/u;
+	// Allow only letters (any locale), digits, spaces, hyphens, dots and commas
+	const allowedPattern = /^[\p{L}\d\s.,-]+$/u;
 	if (!allowedPattern.test(trimmed)) {
 		showError(
 			from,
-			`Invalid name: only letters, digits, spaces, and hyphens allowed. Received: "${trimmed}"`,
+			`Invalid name: only letters, digits, spaces, hyphens, dots and commas allowed. Received: "${trimmed}"`,
 		);
 		return false;
 	}
@@ -140,4 +141,22 @@ export function validateNonNegativeIntegerArray(arr: string[]): boolean {
 		arr.length > 0 &&
 		arr.every((v) => validateNonNegativeInteger(v))
 	);
+}
+
+export function validateCategoryIds(
+	{ categoryIds }: { categoryIds: unknown },
+	from: string,
+) {
+	if (
+		!Array.isArray(categoryIds) ||
+		categoryIds.some(
+			(category) =>
+				LabTestCategory[category as keyof typeof LabTestCategory] == null,
+		)
+	) {
+		showError(from, 'Invalid lab test category: ' + categoryIds);
+		return false;
+	}
+
+	return true;
 }

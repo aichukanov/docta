@@ -9,16 +9,13 @@ export default defineEventHandler(async (event): Promise<ClinicServiceList> => {
 
 		if (!validateBody(body, 'api/medications/list')) {
 			setResponseStatus(event, 400, 'Invalid parameters');
-			return null;
+			return { items: [], totalCount: 0 };
 		}
 
 		return getMedicationList(body);
 	} catch (error) {
 		console.error('API Error - medications:', error);
-		throw createError({
-			statusCode: 500,
-			statusMessage: 'Failed to fetch medications',
-		});
+		return { items: [], totalCount: 0 };
 	}
 });
 
@@ -60,7 +57,7 @@ export async function getMedicationList(
 	const [medicationRows] = await connection.execute(medicationsQuery);
 	await connection.end();
 
-	const medications = medicationRows.map((row) => ({
+	const items = medicationRows.map((row) => ({
 		id: row.id,
 		name: row.name,
 		clinicIds: row.clinicIds,
@@ -68,7 +65,7 @@ export async function getMedicationList(
 	}));
 
 	return {
-		medications,
-		totalCount: medications.length,
+		items,
+		totalCount: items.length,
 	};
 }

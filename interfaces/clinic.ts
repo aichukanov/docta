@@ -40,7 +40,17 @@ export interface ClinicServiceWithPrices extends ClinicServiceItem {
 	clinicPrices: ClinicPrice[];
 }
 
+export interface LabTestItem extends ClinicServiceWithPrices {
+	originalName?: string;
+	synonyms?: string[];
+}
+
 export interface ClinicServiceList {
 	items: ClinicServiceWithPrices[];
+	totalCount: number;
+}
+
+export interface LabTestList {
+	items: LabTestItem[];
 	totalCount: number;
 }

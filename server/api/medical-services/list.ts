@@ -3,26 +3,21 @@ import { parseClinicPricesData } from '~/server/common/utils';
 import type { ClinicServiceList } from '~/interfaces/clinic';
 import { validateBody, validateName } from '~/common/validation';
 
-export default defineEventHandler(
-	async (event): Promise<MedicalServiceList> => {
-		try {
-			const body = await readBody(event);
+export default defineEventHandler(async (event): Promise<ClinicServiceList> => {
+	try {
+		const body = await readBody(event);
 
-			if (!validateBody(body, 'api/medical-services/list')) {
-				setResponseStatus(event, 400, 'Invalid parameters');
-				return null;
-			}
-
-			return getMedicalServiceList(body);
-		} catch (error) {
-			console.error('API Error - medical-services:', error);
-			throw createError({
-				statusCode: 500,
-				statusMessage: 'Failed to fetch medical services',
-			});
+		if (!validateBody(body, 'api/medical-services/list')) {
+			setResponseStatus(event, 400, 'Invalid parameters');
+			return { items: [], totalCount: 0 };
 		}
-	},
-);
+
+		return getMedicalServiceList(body);
+	} catch (error) {
+		console.error('API Error - medical-services:', error);
+		return { items: [], totalCount: 0 };
+	}
+});
 
 export async function getMedicalServiceList(
 	body: {
@@ -62,7 +57,7 @@ export async function getMedicalServiceList(
 	const [medicalServiceRows] = await connection.execute(medicalServicesQuery);
 	await connection.end();
 
-	const medicalServices = medicalServiceRows.map((row) => ({
+	const items = medicalServiceRows.map((row) => ({
 		id: row.id,
 		name: row.name,
 		clinicIds: row.clinicIds,
@@ -70,7 +65,7 @@ export async function getMedicalServiceList(
 	}));
 
 	return {
-		medicalServices,
-		totalCount: medicalServices.length,
+		items,
+		totalCount: items.length,
 	};
 }

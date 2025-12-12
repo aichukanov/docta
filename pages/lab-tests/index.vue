@@ -3,21 +3,30 @@ import { combineI18nMessages } from '~/i18n/utils';
 
 import cityI18n from '~/i18n/city';
 import labTestI18n from '~/i18n/lab-test';
+import labTestCategoryI18n from '~/i18n/lab-test-category';
 
-const { t } = useI18n({
+const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([cityI18n, labTestI18n]),
+	messages: combineI18nMessages([cityI18n, labTestI18n, labTestCategoryI18n]),
 });
 
-const { cityIds, clinicIds, name, updateFromRoute, getRouteParams } =
-	useFilters();
+const {
+	cityIds,
+	categoryIds,
+	clinicIds,
+	name,
+	updateFromRoute,
+	getRouteParams,
+} = useFilters();
 
 updateFromRoute(useRoute().query);
 
 const filterList = computed(() => ({
 	cityIds: cityIds.value,
+	categoryIds: categoryIds.value,
 	clinicIds: clinicIds.value,
 	name: name.value,
+	locale: locale.value,
 }));
 
 const filterQuery = computed(() => getRouteParams().query);
@@ -32,6 +41,7 @@ const { pending: isLoadingLabTests, data: labTestsList } = await useFetch(
 );
 
 const clinicsStore = useClinicsStore();
+await clinicsStore.fetchClinics();
 
 const clinicName = computed(() => {
 	if (clinicIds.value.length === 1) {
@@ -43,7 +53,39 @@ const clinicName = computed(() => {
 	return '';
 });
 
+const categoryName = computed(() => {
+	if (categoryIds.value.length === 1) {
+		return t(`lab_test_category_${categoryIds.value[0]}_title`);
+	}
+	return '';
+});
+
 const pageTitle = computed(() => {
+	if (categoryIds.value.length === 1) {
+		if (cityIds.value.length === 1) {
+			if (clinicIds.value.length === 1) {
+				return t('LabTestsCategoryCityClinic', {
+					category: categoryName.value,
+					city: t(`city_${cityIds.value[0]}_genitive`),
+					clinic: clinicName.value,
+				});
+			}
+			return t('LabTestsCategoryCity', {
+				category: categoryName.value,
+				city: t(`city_${cityIds.value[0]}_genitive`),
+			});
+		}
+		if (clinicIds.value.length === 1) {
+			return t('LabTestsCategoryClinic', {
+				category: categoryName.value,
+				clinic: clinicName.value,
+			});
+		}
+		return t('LabTestsCategory', {
+			category: categoryName.value,
+		});
+	}
+
 	if (cityIds.value.length === 1) {
 		if (clinicIds.value.length === 1) {
 			return t('LabTestsCityClinic', {
@@ -70,6 +112,18 @@ const pageTitleWithCount = computed(() => {
 });
 
 const pageDescription = computed(() => {
+	if (categoryIds.value.length === 1) {
+		if (cityIds.value.length === 1) {
+			return t('LabTestsListDescriptionCategoryCity', {
+				category: categoryName.value,
+				city: t(`city_${cityIds.value[0]}_genitive`),
+			});
+		}
+		return t('LabTestsListDescriptionCategory', {
+			category: categoryName.value,
+		});
+	}
+
 	if (cityIds.value.length === 1) {
 		return t('LabTestsListDescriptionCity', {
 			city: t(`city_${cityIds.value[0]}_genitive`),
@@ -83,8 +137,8 @@ const pageDescription = computed(() => {
 	<ListPage
 		:pageTitle="pageTitleWithCount"
 		:pageDescription="pageDescription"
-		:list="labTestsList.labTests"
-		:totalCount="labTestsList.totalCount"
+		:list="labTestsList?.items || []"
+		:totalCount="labTestsList?.totalCount || 0"
 		:isLoading="isLoadingLabTests"
 		:filterQuery="filterQuery"
 		:cityIds="cityIds"
@@ -97,7 +151,19 @@ const pageDescription = computed(() => {
 				:placeholder="t('InsertLabTestName')"
 			/>
 			<FilterCitySelect v-model:value="cityIds" />
+			<FilterCategorySelect v-model:value="categoryIds" />
 			<FilterClinicSelect v-model:value="clinicIds" />
+		</template>
+
+		<template #item="{ item }">
+			<LabTestInfo
+				:name="item.name"
+				:originalName="item.originalName"
+				:synonyms="item.synonyms"
+				:itemId="item.id"
+				detailsRouteName="lab-tests-labTestId"
+				detailsParamName="labTestId"
+			/>
 		</template>
 	</ListPage>
 </template>

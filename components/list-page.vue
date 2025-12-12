@@ -7,6 +7,8 @@ import { LanguageId } from '~/enums/language';
 interface ListItem {
 	id: number;
 	name?: string;
+	originalName?: string;
+	synonyms?: string[];
 	clinicIds?: string;
 	clinicPrices?: ClinicPrice[];
 }

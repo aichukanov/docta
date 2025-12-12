@@ -3,7 +3,7 @@ import cityI18n from '~/i18n/city';
 import labTestI18n from '~/i18n/lab-test';
 import { combineI18nMessages } from '~/i18n/utils';
 
-const { t } = useI18n({
+const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([labTestI18n, cityI18n]),
 });
@@ -17,6 +17,7 @@ const { pending: isLoading, data: labTestData } = await useFetch(
 		method: 'POST',
 		body: computed(() => ({
 			labTestId: route.params.labTestId,
+			locale: locale.value,
 		})),
 	},
 );
@@ -104,6 +105,15 @@ useSeoMeta({
 		<template #info v-if="labTestData">
 			<div class="lab-test-header">
 				<h1 class="lab-test-name">{{ labTestData.name }}</h1>
+				<div v-if="labTestData.originalName" class="lab-test-original">
+					{{ labTestData.originalName }}
+				</div>
+				<div v-if="labTestData.synonyms?.length" class="lab-test-synonyms">
+					<span class="synonyms-label">{{ t('Synonyms') }}:</span>
+					<span class="synonyms-list">{{
+						labTestData.synonyms.join(', ')
+					}}</span>
+				</div>
 			</div>
 		</template>
 	</DetailsPage>
@@ -123,6 +133,28 @@ useSeoMeta({
 		color: #1f2937;
 		margin: 0;
 		font-family: system-ui, -apple-system, sans-serif;
+	}
+
+	.lab-test-original {
+		font-size: 1.1rem;
+		color: #6b7280;
+		margin-top: var(--spacing-sm);
+		font-style: italic;
+	}
+
+	.lab-test-synonyms {
+		font-size: 0.95rem;
+		color: #6b7280;
+		margin-top: var(--spacing-md);
+
+		.synonyms-label {
+			color: #9ca3af;
+			margin-right: var(--spacing-xs);
+		}
+
+		.synonyms-list {
+			color: #6b7280;
+		}
 	}
 }
 </style>

@@ -7,6 +7,10 @@ export default {
 			LabTestsCity: 'Laboratory Tests in {city}',
 			LabTestsClinic: 'Laboratory Tests at {clinic} in Montenegro',
 			LabTestsCityClinic: 'Laboratory Tests at {clinic} in {city}',
+			LabTestsCategory: '{category} Tests in Montenegro',
+			LabTestsCategoryCity: '{category} Tests in {city}',
+			LabTestsCategoryClinic: '{category} Tests at {clinic} in Montenegro',
+			LabTestsCategoryCityClinic: '{category} Tests at {clinic} in {city}',
 
 			LoadingLabTests: 'Loading laboratory tests...',
 			NoLabTestsFound: 'No laboratory tests found',
@@ -16,6 +20,11 @@ export default {
 				'Find laboratory tests in Montenegro by name, city, or clinic. Compare prices and clinic locations on the map.',
 			LabTestsListDescriptionCity:
 				'Laboratory tests in {city} — search by name or clinic. Compare prices and clinic locations on the map.',
+			LabTestsListDescriptionCategory:
+				'{category} tests in Montenegro — search by name or clinic. Compare prices and clinic locations on the map.',
+			LabTestsListDescriptionCategoryCity:
+				'{category} tests in {city} — search by name or clinic. Compare prices and clinic locations on the map.',
+			Synonyms: 'Also known as',
 		},
 		ru: {
 			LabTestName: 'Название анализа',
@@ -24,6 +33,10 @@ export default {
 			LabTestsCity: 'Лабораторные анализы в {city}',
 			LabTestsClinic: 'Лабораторные анализы клиники {clinic} в Черногории',
 			LabTestsCityClinic: 'Лабораторные анализы клиники {clinic} в {city}',
+			LabTestsCategory: '{category} в Черногории',
+			LabTestsCategoryCity: '{category} в {city}',
+			LabTestsCategoryClinic: '{category} клиники {clinic} в Черногории',
+			LabTestsCategoryCityClinic: '{category} клиники {clinic} в {city}',
 
 			LoadingLabTests: 'Загрузка анализов...',
 			NoLabTestsFound: 'Анализы не найдены',
@@ -33,6 +46,11 @@ export default {
 				'Найдите анализы в Черногории по названию, городу или клинике. Сравните цены и адреса клиник на карте.',
 			LabTestsListDescriptionCity:
 				'Лабораторные анализы в {city} — поиск по названию или клинике. Сравните цены и адреса клиник на карте.',
+			LabTestsListDescriptionCategory:
+				'{category} в Черногории — поиск по названию или клинике. Сравните цены и адреса клиник на карте.',
+			LabTestsListDescriptionCategoryCity:
+				'{category} в {city} — поиск по названию или клинике. Сравните цены и адреса клиник на карте.',
+			Synonyms: 'Также известен как',
 		},
 		sr: {
 			LabTestName: 'Ime analize',
@@ -41,6 +59,10 @@ export default {
 			LabTestsCity: 'Laboratorijske analize u {city}',
 			LabTestsClinic: 'Laboratorijske analize u klinici {clinic} u Crnoj Gori',
 			LabTestsCityClinic: 'Laboratorijske analize u klinici {clinic} u {city}',
+			LabTestsCategory: '{category} u Crnoj Gori',
+			LabTestsCategoryCity: '{category} u {city}',
+			LabTestsCategoryClinic: '{category} u klinici {clinic} u Crnoj Gori',
+			LabTestsCategoryCityClinic: '{category} u klinici {clinic} u {city}',
 
 			LoadingLabTests: 'Učitavanje analiza...',
 			NoLabTestsFound: 'Analize nisu pronađene',
@@ -50,6 +72,11 @@ export default {
 				'Pronađite laboratorijske analize u Crnoj Gori po imenu, gradu ili klinici. Uporedite cene i lokacije klinika na mapi.',
 			LabTestsListDescriptionCity:
 				'Laboratorijske analize u {city} — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
+			LabTestsListDescriptionCategory:
+				'{category} u Crnoj Gori — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
+			LabTestsListDescriptionCategoryCity:
+				'{category} u {city} — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
+			Synonyms: 'Poznato i kao',
 		},
 		de: {
 			LabTestName: 'Testname',
@@ -58,6 +85,10 @@ export default {
 			LabTestsCity: 'Laboruntersuchungen in {city}',
 			LabTestsClinic: 'Laboruntersuchungen in {clinic} in Montenegro',
 			LabTestsCityClinic: 'Laboruntersuchungen in {clinic} in {city}',
+			LabTestsCategory: '{category} in Montenegro',
+			LabTestsCategoryCity: '{category} in {city}',
+			LabTestsCategoryClinic: '{category} in {clinic} in Montenegro',
+			LabTestsCategoryCityClinic: '{category} in {clinic} in {city}',
 
 			LoadingLabTests: 'Laboruntersuchungen werden geladen...',
 			NoLabTestsFound: 'Keine Laboruntersuchungen gefunden',
@@ -67,6 +98,11 @@ export default {
 				'Finden Sie Laboruntersuchungen in Montenegro nach Name, Stadt oder Klinik. Vergleichen Sie Preise und Klinikstandorte auf der Karte.',
 			LabTestsListDescriptionCity:
 				'Laboruntersuchungen in {city} — Suche nach Name oder Klinik. Vergleichen Sie Preise und Klinikstandorte auf der Karte.',
+			LabTestsListDescriptionCategory:
+				'{category} in Montenegro — Suche nach Name oder Klinik. Vergleichen Sie Preise und Klinikstandorte auf der Karte.',
+			LabTestsListDescriptionCategoryCity:
+				'{category} in {city} — Suche nach Name oder Klinik. Vergleichen Sie Preise und Klinikstandorte auf der Karte.',
+			Synonyms: 'Auch bekannt als',
 		},
 		tr: {
 			LabTestName: 'Test adı',
@@ -76,6 +112,10 @@ export default {
 			LabTestsClinic: "Karadağ'da {clinic} kliniğinde Laboratuvar Testleri",
 			LabTestsCityClinic:
 				'{city} şehrinde {clinic} kliniğinde Laboratuvar Testleri',
+			LabTestsCategory: "Karadağ'da {category}",
+			LabTestsCategoryCity: "{city}'de {category}",
+			LabTestsCategoryClinic: "Karadağ'da {clinic} kliniğinde {category}",
+			LabTestsCategoryCityClinic: "{city}'de {clinic} kliniğinde {category}",
 
 			LoadingLabTests: 'Laboratuvar testleri yükleniyor...',
 			NoLabTestsFound: 'Laboratuvar testi bulunamadı',
@@ -85,6 +125,11 @@ export default {
 				"Karadağ'da ada, şehre veya kliniğe göre laboratuvar testleri bulun. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
 			LabTestsListDescriptionCity:
 				"{city}'de ada veya kliniğe göre laboratuvar testleri arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
+			LabTestsListDescriptionCategory:
+				"Karadağ'da {category} — ada veya kliniğe göre arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
+			LabTestsListDescriptionCategoryCity:
+				"{city}'de {category} — ada veya kliniğe göre arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
+			Synonyms: 'Ayrıca şu adla bilinir',
 		},
 	},
 };

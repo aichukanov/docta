@@ -89,7 +89,10 @@ export async function getLabTestList(
 			GROUP_CONCAT(
 				DISTINCT CONCAT(clt.clinic_id, ':', COALESCE(clt.price, 0), ':', COALESCE(clt.code, ''))
 				ORDER BY clt.clinic_id
-			) as clinicPricesData
+			) as clinicPricesData,
+			(SELECT GROUP_CONCAT(DISTINCT ltcr_cat.category_id ORDER BY ltcr_cat.category_id)
+			 FROM lab_test_categories_relations ltcr_cat
+			 WHERE ltcr_cat.lab_test_id = lt.id) as categoryIds
 		FROM lab_tests lt
 		${joinsString}
 		LEFT JOIN clinic_lab_tests clt ON lt.id = clt.lab_test_id
@@ -132,6 +135,9 @@ export async function getLabTestList(
 		synonyms: synonymsMap[row.id] || [],
 		clinicIds: row.clinicIds,
 		clinicPrices: parseClinicPricesData(row.clinicPricesData),
+		categoryIds: row.categoryIds
+			? row.categoryIds.split(',').map(Number)
+			: undefined,
 	}));
 
 	return {

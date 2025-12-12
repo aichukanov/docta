@@ -43,7 +43,10 @@ export default defineEventHandler(
 				GROUP_CONCAT(
 					DISTINCT CONCAT(clt.clinic_id, ':', COALESCE(clt.price, 0), ':', COALESCE(clt.code, ''))
 					ORDER BY clt.clinic_id
-				) as clinicPricesData
+				) as clinicPricesData,
+				(SELECT GROUP_CONCAT(DISTINCT ltcr.category_id ORDER BY ltcr.category_id)
+				 FROM lab_test_categories_relations ltcr
+				 WHERE ltcr.lab_test_id = lt.id) as categoryIds
 			FROM lab_tests lt
 			LEFT JOIN clinic_lab_tests clt ON lt.id = clt.lab_test_id
 			WHERE lt.id = ?
@@ -85,6 +88,9 @@ export default defineEventHandler(
 				synonyms,
 				clinicIds: row.clinicIds,
 				clinicPrices: parseClinicPricesData(row.clinicPricesData),
+				categoryIds: row.categoryIds
+					? row.categoryIds.split(',').map(Number)
+					: undefined,
 			};
 		} catch (error) {
 			console.error('API Error - lab test data:', error);

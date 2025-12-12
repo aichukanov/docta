@@ -1,18 +1,24 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
 import labTestI18n from '~/i18n/lab-test';
+import labTestCategoryI18n from '~/i18n/lab-test-category';
+import { combineI18nMessages } from '~/i18n/utils';
 
 const props = defineProps<{
 	name: string;
 	originalName?: string;
 	synonyms?: string[];
+	categoryIds?: number[];
 	short?: boolean;
 	itemId?: number;
 	detailsRouteName?: string;
 	detailsParamName?: string;
 }>();
 
-const { t, locale } = useI18n(labTestI18n);
+const { t, locale } = useI18n({
+	useScope: 'local',
+	messages: combineI18nMessages([labTestI18n, labTestCategoryI18n]),
+});
 
 const detailsLink = computed(() => {
 	if (!props.detailsRouteName || !props.detailsParamName || !props.itemId) {
@@ -40,6 +46,15 @@ const detailsLink = computed(() => {
 		<div v-if="!short && synonyms?.length" class="lab-test-synonyms">
 			<span class="synonyms-label">{{ t('Synonyms') }}:</span>
 			<span class="synonyms-list">{{ synonyms.join(', ') }}</span>
+		</div>
+		<div v-if="categoryIds?.length" class="lab-test-categories">
+			<span
+				v-for="categoryId in categoryIds"
+				:key="categoryId"
+				class="category-tag"
+			>
+				{{ t(`lab_test_category_${categoryId}`) }}
+			</span>
 		</div>
 	</div>
 </template>
@@ -69,6 +84,23 @@ const detailsLink = computed(() => {
 		color: #6b7280;
 		margin-top: var(--spacing-xs);
 		font-style: italic;
+	}
+
+	.lab-test-categories {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-xs);
+		margin-top: var(--spacing-sm);
+
+		.category-tag {
+			display: inline-block;
+			font-size: 0.75rem;
+			color: var(--color-primary);
+			background: rgba(79, 70, 229, 0.08);
+			padding: 2px 8px;
+			border-radius: 4px;
+			border: 1px solid rgba(79, 70, 229, 0.15);
+		}
 	}
 
 	.lab-test-synonyms {

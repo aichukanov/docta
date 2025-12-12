@@ -160,6 +160,7 @@ const pageDescription = computed(() => {
 				:name="item.name"
 				:originalName="item.originalName"
 				:synonyms="item.synonyms"
+				:categoryIds="item.categoryIds"
 				:itemId="item.id"
 				detailsRouteName="lab-tests-labTestId"
 				detailsParamName="labTestId"

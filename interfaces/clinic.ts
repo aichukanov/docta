@@ -43,6 +43,7 @@ export interface ClinicServiceWithPrices extends ClinicServiceItem {
 export interface LabTestItem extends ClinicServiceWithPrices {
 	originalName?: string;
 	synonyms?: string[];
+	categoryIds?: number[];
 }
 
 export interface ClinicServiceList {

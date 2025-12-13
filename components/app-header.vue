@@ -21,7 +21,7 @@ const clinicsPageLink = computed(() => ({
 }));
 
 const labTestsPageLink = computed(() => ({
-	name: 'lab-tests',
+	name: 'labtests',
 	query: getRegionalQuery(locale.value),
 }));
 
@@ -71,7 +71,7 @@ const isActiveSection = (section: string) => {
 					</NuxtLink>
 					<NuxtLink
 						class="app-header__nav-link"
-						:class="{ 'is-active': isActiveSection('lab-tests') }"
+						:class="{ 'is-active': isActiveSection('labtests') }"
 						:to="labTestsPageLink"
 					>
 						<IconLabTest class="nav-icon" />

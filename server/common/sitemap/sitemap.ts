@@ -3,7 +3,7 @@ import { SITEMAP_LIMIT } from './utils';
 import { locales } from '~/composables/use-locale';
 import { getRegionalUrl } from '~/common/url-utils';
 import { getDoctorList } from '~/server/api/doctors/list';
-import { getLabTestList } from '~/server/api/lab-tests/list';
+import { getLabTestList } from '~/server/api/labtests/list';
 import { getMedicationList } from '~/server/api/medications/list';
 import { getMedicalServiceList } from '~/server/api/services/list';
 import { DoctorSpecialty } from '~/enums/specialty';
@@ -48,7 +48,7 @@ function getEnumValues(enumType: any) {
 	);
 }
 
-// Получаем комбинации фильтров для lab-tests
+// Получаем комбинации фильтров для labtests
 async function getLabTestFilterCombinations() {
 	const connection = await getConnection();
 
@@ -64,7 +64,7 @@ async function getLabTestFilterCombinations() {
 		categoryClinicsQuery,
 	);
 
-	// Комбинация: только клиника (для lab-tests)
+	// Комбинация: только клиника (для labtests)
 	const clinicQuery = `
 		SELECT DISTINCT clt.clinic_id as clinicId
 		FROM clinic_lab_tests clt
@@ -72,7 +72,7 @@ async function getLabTestFilterCombinations() {
 	`;
 	const [clinicRows] = await connection.execute<any[]>(clinicQuery);
 
-	// Комбинация: только город (для lab-tests)
+	// Комбинация: только город (для labtests)
 	const cityQuery = `
 		SELECT DISTINCT c.city_id as cityId
 		FROM clinic_lab_tests clt
@@ -451,32 +451,32 @@ export async function generateSitemapPage(sitemapIndex: number) {
 	// === Lab Tests ===
 	const { items: labTests } = await getLabTestList();
 
-	const labTestsPageLink: SitemapLink = menuItemToLinks('lab-tests');
+	const labTestsPageLink: SitemapLink = menuItemToLinks('labtests');
 
 	const labTestLinks: SitemapLink[] = labTests.map((labTest) =>
-		menuItemToLinks(`lab-tests-${labTest.id}`),
+		menuItemToLinks(`labtests-${labTest.id}`),
 	);
 
 	const labTestCategoryIds = getEnumValues(LabTestCategory);
 	const labTestCategoryLinks: SitemapLink[] = labTestCategoryIds.map(
-		(categoryId) => menuItemToLinks('lab-tests', { categoryIds: categoryId }),
+		(categoryId) => menuItemToLinks('labtests', { categoryIds: categoryId }),
 	);
 
 	const labTestCombinations = await getLabTestFilterCombinations();
 
 	const labTestClinicLinks: SitemapLink[] =
 		labTestCombinations.clinicCombinations.map((combo: any) =>
-			menuItemToLinks('lab-tests', { clinicIds: combo.clinicId }),
+			menuItemToLinks('labtests', { clinicIds: combo.clinicId }),
 		);
 
 	const labTestCityLinks: SitemapLink[] =
 		labTestCombinations.cityCombinations.map((combo: any) =>
-			menuItemToLinks('lab-tests', { cityIds: combo.cityId }),
+			menuItemToLinks('labtests', { cityIds: combo.cityId }),
 		);
 
 	const labTestCategoryClinicLinks: SitemapLink[] =
 		labTestCombinations.categoryClinicCombinations.map((combo: any) =>
-			menuItemToLinks('lab-tests', {
+			menuItemToLinks('labtests', {
 				categoryIds: combo.categoryId,
 				clinicIds: combo.clinicId,
 			}),
@@ -484,7 +484,7 @@ export async function generateSitemapPage(sitemapIndex: number) {
 
 	const labTestCategoryCityLinks: SitemapLink[] =
 		labTestCombinations.categoryCityCombinations.map((combo: any) =>
-			menuItemToLinks('lab-tests', {
+			menuItemToLinks('labtests', {
 				categoryIds: combo.categoryId,
 				cityIds: combo.cityId,
 			}),

@@ -1,7 +1,11 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { parseClinicPricesData } from '~/server/common/utils';
 import type { ClinicServiceList } from '~/interfaces/clinic';
-import { validateBody, validateName } from '~/common/validation';
+import {
+	validateBody,
+	validateName,
+	validateCityIds,
+} from '~/common/validation';
 
 export default defineEventHandler(async (event): Promise<ClinicServiceList> => {
 	try {
@@ -9,6 +13,10 @@ export default defineEventHandler(async (event): Promise<ClinicServiceList> => {
 
 		if (!validateBody(body, 'api/services/list')) {
 			setResponseStatus(event, 400, 'Invalid parameters');
+			return { items: [], totalCount: 0 };
+		}
+		if (body.cityIds && !validateCityIds(body, 'api/services/list')) {
+			setResponseStatus(event, 400, 'Invalid city');
 			return { items: [], totalCount: 0 };
 		}
 
@@ -22,6 +30,7 @@ export default defineEventHandler(async (event): Promise<ClinicServiceList> => {
 export async function getMedicalServiceList(
 	body: {
 		clinicIds?: number[];
+		cityIds?: number[];
 		name?: string;
 	} = {},
 ) {
@@ -29,6 +38,9 @@ export async function getMedicalServiceList(
 
 	if (body.clinicIds?.length > 0) {
 		whereFilters.push(`cms.clinic_id IN (${body.clinicIds.join(',')})`);
+	}
+	if (body.cityIds?.length > 0) {
+		whereFilters.push(`cities.id IN (${body.cityIds.join(',')})`);
 	}
 	if (body.name && validateName(body, 'api/services/list')) {
 		whereFilters.push(`ms.name LIKE '%${body.name}%'`);
@@ -48,6 +60,8 @@ export async function getMedicalServiceList(
 			) as clinicPricesData
 		FROM medical_services ms
 		LEFT JOIN clinic_medical_services cms ON ms.id = cms.medical_service_id
+		LEFT JOIN clinics ON cms.clinic_id = clinics.id
+		LEFT JOIN cities ON clinics.city_id = cities.id
 		${whereFiltersString}
 		GROUP BY ms.id, ms.name 
 		ORDER BY ms.name ASC;

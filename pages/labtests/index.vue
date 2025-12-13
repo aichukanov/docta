@@ -32,9 +32,9 @@ const filterList = computed(() => ({
 const filterQuery = computed(() => getRouteParams().query);
 
 const { pending: isLoadingLabTests, data: labTestsList } = await useFetch(
-	'/api/lab-tests/list',
+	'/api/labtests/list',
 	{
-		key: 'lab-tests-list',
+		key: 'labtests-list',
 		method: 'POST',
 		body: filterList,
 	},
@@ -142,7 +142,7 @@ const pageDescription = computed(() => {
 		:isLoading="isLoadingLabTests"
 		:filterQuery="filterQuery"
 		:cityIds="cityIds"
-		detailsRouteName="lab-tests-labTestId"
+		detailsRouteName="labtests-labTestId"
 		detailsParamName="labTestId"
 	>
 		<template #filters>
@@ -162,7 +162,7 @@ const pageDescription = computed(() => {
 				:synonyms="item.synonyms"
 				:categoryIds="item.categoryIds"
 				:itemId="item.id"
-				detailsRouteName="lab-tests-labTestId"
+				detailsRouteName="labtests-labTestId"
 				detailsParamName="labTestId"
 			/>
 		</template>

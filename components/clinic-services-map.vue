@@ -16,13 +16,23 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
-const { isLoading, initializeMap, addMarker, openPopup, centerOnLocations } =
-	useLeaflet();
+const {
+	isLoading,
+	initializeMap,
+	addMarker,
+	removeMarker,
+	markers,
+	openPopup,
+	centerOnLocations,
+} = useLeaflet();
 
 const mapContainer = ref<HTMLElement | null>(null);
 const isTeleportReady = ref(false);
 
 const selectedClinic = ref<ClinicData | null>(null);
+
+// Реактивный Set для отслеживания существующих маркеров
+const existingMarkerIds = ref(new Set<string>());
 
 const isClinicMode = computed(() => props.showAllClinics);
 
@@ -46,6 +56,13 @@ const clinicsWithServices = computed<
 			};
 		})
 		.filter((clinic) => clinic.services.length > 0);
+});
+
+// Клиники с существующими маркерами для безопасного Teleport
+const clinicsWithMarkers = computed(() => {
+	return clinicsWithServices.value.filter((clinic) =>
+		existingMarkerIds.value.has(getClinicMarkerId(clinic.id)),
+	);
 });
 
 const getClinicServices = (clinic: ClinicData): number[] => {
@@ -94,6 +111,31 @@ const centerOnClinics = (clinics: ClinicData[]) => {
 	scrollToMap();
 };
 
+const syncMarkers = () => {
+	const currentMarkerIds = new Set(markers.keys());
+	const newClinicIds = new Set(
+		props.clinics.map((clinic) => getClinicMarkerId(clinic.id)),
+	);
+
+	// Удаляем маркеры для клиник, которых больше нет в списке
+	currentMarkerIds.forEach((markerId) => {
+		if (!newClinicIds.has(markerId)) {
+			removeMarker(markerId);
+		}
+	});
+
+	// Добавляем маркеры для новых клиник
+	props.clinics.forEach((clinic) => {
+		const markerId = getClinicMarkerId(clinic.id);
+		if (!currentMarkerIds.has(markerId)) {
+			addMarker(markerId, clinic.latitude, clinic.longitude);
+		}
+	});
+
+	// Обновляем реактивный Set существующих маркеров
+	existingMarkerIds.value = new Set(markers.keys());
+};
+
 onMounted(async () => {
 	if (mapContainer.value) {
 		await initializeMap(mapContainer.value);
@@ -106,8 +148,20 @@ onMounted(async () => {
 			);
 		});
 
+		// Инициализируем Set существующих маркеров
+		existingMarkerIds.value = new Set(markers.keys());
+
 		isTeleportReady.value = true;
 		emit('ready');
+
+		// Следим за изменениями списка клиник
+		watch(
+			() => props.clinics,
+			() => {
+				syncMarkers();
+			},
+			{ deep: true },
+		);
 	}
 });
 
@@ -128,7 +182,7 @@ defineExpose({
 
 		<template v-if="isTeleportReady">
 			<Teleport
-				v-for="clinic in clinicsWithServices"
+				v-for="clinic in clinicsWithMarkers"
 				:key="clinic.id"
 				:to="`#${getClinicMarkerId(clinic.id)}`"
 			>

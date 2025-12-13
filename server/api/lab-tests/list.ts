@@ -5,6 +5,7 @@ import {
 	validateBody,
 	validateName,
 	validateCategoryIds,
+	validateCityIds,
 } from '~/common/validation';
 
 const LOCALE_TO_NAME_FIELD: Record<string, string> = {
@@ -24,14 +25,18 @@ export default defineEventHandler(async (event): Promise<LabTestList> => {
 	try {
 		const body = await readBody(event);
 
-		if (!validateBody(body, 'api/lab-tests/list')) {
+		if (!validateBody(body, 'api/labtests/list')) {
 			setResponseStatus(event, 400, 'Invalid parameters');
+			return { items: [], totalCount: 0 };
+		}
+		if (body.cityIds && !validateCityIds(body, 'api/labtests/list')) {
+			setResponseStatus(event, 400, 'Invalid city');
 			return { items: [], totalCount: 0 };
 		}
 
 		return getLabTestList(body);
 	} catch (error) {
-		console.error('API Error - lab-tests:', error);
+		console.error('API Error - labtests:', error);
 		return { items: [], totalCount: 0 };
 	}
 });
@@ -39,6 +44,7 @@ export default defineEventHandler(async (event): Promise<LabTestList> => {
 export async function getLabTestList(
 	body: {
 		clinicIds?: number[];
+		cityIds?: number[];
 		categoryIds?: number[];
 		name?: string;
 		locale?: string;
@@ -53,7 +59,7 @@ export async function getLabTestList(
 		if (
 			!validateCategoryIds(
 				{ categoryIds: body.categoryIds },
-				'api/lab-tests/list',
+				'api/labtests/list',
 			)
 		) {
 			return { items: [], totalCount: 0 };
@@ -67,7 +73,10 @@ export async function getLabTestList(
 	if (body.clinicIds?.length > 0) {
 		whereFilters.push(`clt.clinic_id IN (${body.clinicIds.join(',')})`);
 	}
-	if (body.name && validateName(body, 'api/lab-tests/list')) {
+	if (body.cityIds?.length > 0) {
+		whereFilters.push(`cities.id IN (${body.cityIds.join(',')})`);
+	}
+	if (body.name && validateName(body, 'api/labtests/list')) {
 		joins.push(
 			'LEFT JOIN lab_test_synonyms lts_search ON lt.id = lts_search.lab_test_id',
 		);
@@ -96,6 +105,8 @@ export async function getLabTestList(
 		FROM lab_tests lt
 		${joinsString}
 		LEFT JOIN clinic_lab_tests clt ON lt.id = clt.lab_test_id
+		LEFT JOIN clinics ON clt.clinic_id = clinics.id
+		LEFT JOIN cities ON clinics.city_id = cities.id
 		${whereFiltersString}
 		GROUP BY lt.id, lt.${nameField}, lt.name_sr, lt.name
 		ORDER BY name ASC;

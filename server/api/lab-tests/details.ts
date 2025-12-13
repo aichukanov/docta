@@ -21,7 +21,7 @@ export default defineEventHandler(
 		try {
 			const body = await readBody(event);
 
-			if (!validateBody(body, 'api/lab-tests/details')) {
+			if (!validateBody(body, 'api/labtests/details')) {
 				setResponseStatus(event, 400, 'Invalid parameters');
 				return null;
 			}

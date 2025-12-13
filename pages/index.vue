@@ -14,7 +14,7 @@ const clinicsPageLink = computed(() => ({
 }));
 
 const labTestsPageLink = computed(() => ({
-	name: 'lab-tests',
+	name: 'labtests',
 	query: getRegionalQuery(locale.value),
 }));
 

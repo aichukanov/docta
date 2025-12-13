@@ -59,7 +59,13 @@ const pageTitle = computed(() => {
 			? t(`city_${uniqueCities[0]}`)
 			: t('InMontenegro');
 
-	return `${labTestData.value?.name} | ${locationText}`;
+	const categoryText = labTestData.value?.categoryIds?.length
+		? t(`lab_test_category_${labTestData.value.categoryIds[0]}_title`)
+		: '';
+
+	return categoryText
+		? `${labTestData.value?.name} | ${categoryText} | ${locationText}`
+		: `${labTestData.value?.name} | ${locationText}`;
 });
 
 const pageDescription = computed(() => {
@@ -67,7 +73,9 @@ const pageDescription = computed(() => {
 		return '';
 	}
 
-	const { name } = labTestData.value;
+	const { name, originalName } = labTestData.value;
+	const displayName =
+		originalName && originalName !== name ? `${name} (${originalName})` : name;
 
 	const usedCities: { [key: string]: true } = {};
 	const citiesText = labTestClinics.value
@@ -83,8 +91,8 @@ const pageDescription = computed(() => {
 		.join(', ');
 
 	return citiesText
-		? t('LabTestDescriptionCity', { name, city: citiesText })
-		: t('LabTestDescriptionDefault', { name });
+		? t('LabTestDescriptionCity', { name: displayName, city: citiesText })
+		: t('LabTestDescriptionDefault', { name: displayName });
 });
 
 useSeoMeta({

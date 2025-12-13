@@ -8,7 +8,7 @@ export default defineEventHandler(
 		try {
 			const body = await readBody(event);
 
-			if (!validateBody(body, 'api/medical-services/details')) {
+			if (!validateBody(body, 'api/services/details')) {
 				setResponseStatus(event, 400, 'Invalid parameters');
 				return null;
 			}

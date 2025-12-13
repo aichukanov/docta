@@ -11,7 +11,7 @@ const props = defineProps<{
 const { t, locale } = useI18n();
 
 const serviceLink = computed(() => ({
-	name: props.detailsRouteName || 'medical-services-serviceId',
+	name: props.detailsRouteName || 'services-serviceId',
 	params: { [props.detailsParamName || 'serviceId']: props.service.id },
 	query: getRegionalQuery(locale.value),
 }));

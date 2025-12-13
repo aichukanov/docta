@@ -11,9 +11,9 @@ const { t } = useI18n({
 const route = useRoute();
 
 const { pending: isLoading, data: medicalServiceData } = await useFetch(
-	'/api/medical-services/details',
+	'/api/services/details',
 	{
-		key: 'medical-service-details',
+		key: 'service-details',
 		method: 'POST',
 		body: computed(() => ({
 			serviceId: route.params.serviceId,
@@ -104,7 +104,7 @@ useSeoMeta({
 		:isFound="isFound"
 		:clinics="medicalServiceClinics"
 		:clinicPrices="medicalServiceData?.clinicPrices"
-		backRouteName="medical-services"
+		backRouteName="services"
 		:loadingText="t('LoadingMedicalServices')"
 		:notFoundText="t('NoMedicalServicesFound')"
 	>

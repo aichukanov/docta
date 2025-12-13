@@ -23,8 +23,8 @@ const filterList = computed(() => ({
 const filterQuery = computed(() => getRouteParams().query);
 
 const { pending: isLoadingMedicalServices, data: medicalServicesList } =
-	await useFetch('/api/medical-services/list', {
-		key: 'medical-services-list',
+	await useFetch('/api/services/list', {
+		key: 'services-list',
 		method: 'POST',
 		body: filterList,
 	});
@@ -86,7 +86,7 @@ const pageDescription = computed(() => {
 		:isLoading="isLoadingMedicalServices"
 		:filterQuery="filterQuery"
 		:cityIds="cityIds"
-		detailsRouteName="medical-services-serviceId"
+		detailsRouteName="services-serviceId"
 		detailsParamName="serviceId"
 	>
 		<template #filters>

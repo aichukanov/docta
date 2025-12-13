@@ -7,14 +7,14 @@ export default defineEventHandler(async (event): Promise<ClinicServiceList> => {
 	try {
 		const body = await readBody(event);
 
-		if (!validateBody(body, 'api/medical-services/list')) {
+		if (!validateBody(body, 'api/services/list')) {
 			setResponseStatus(event, 400, 'Invalid parameters');
 			return { items: [], totalCount: 0 };
 		}
 
 		return getMedicalServiceList(body);
 	} catch (error) {
-		console.error('API Error - medical-services:', error);
+		console.error('API Error - services:', error);
 		return { items: [], totalCount: 0 };
 	}
 });
@@ -30,7 +30,7 @@ export async function getMedicalServiceList(
 	if (body.clinicIds?.length > 0) {
 		whereFilters.push(`cms.clinic_id IN (${body.clinicIds.join(',')})`);
 	}
-	if (body.name && validateName(body, 'api/medical-services/list')) {
+	if (body.name && validateName(body, 'api/services/list')) {
 		whereFilters.push(`ms.name LIKE '%${body.name}%'`);
 	}
 

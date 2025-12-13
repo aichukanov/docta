@@ -3,9 +3,13 @@ import { SITEMAP_LIMIT } from './utils';
 import { locales } from '~/composables/use-locale';
 import { getRegionalUrl } from '~/common/url-utils';
 import { getDoctorList } from '~/server/api/doctors/list';
+import { getLabTestList } from '~/server/api/lab-tests/list';
+import { getMedicationList } from '~/server/api/medications/list';
+import { getMedicalServiceList } from '~/server/api/services/list';
 import { DoctorSpecialty } from '~/enums/specialty';
 import { CityId } from '~/enums/cities';
 import { LanguageId } from '~/enums/language';
+import { LabTestCategory } from '~/enums/lab-test-category';
 import { getConnection } from '~/server/common/db-mysql';
 
 export function menuItemToLinks(
@@ -42,6 +46,132 @@ function getEnumValues(enumType: any) {
 	return Object.values(enumType).filter(
 		(value) => !Number.isNaN(Number(value)),
 	);
+}
+
+// Получаем комбинации фильтров для lab-tests
+async function getLabTestFilterCombinations() {
+	const connection = await getConnection();
+
+	// Комбинация: категория + клиника
+	const categoryClinicsQuery = `
+		SELECT DISTINCT ltcr.category_id as categoryId, clt.clinic_id as clinicId
+		FROM lab_tests lt
+		INNER JOIN lab_test_categories_relations ltcr ON lt.id = ltcr.lab_test_id
+		INNER JOIN clinic_lab_tests clt ON lt.id = clt.lab_test_id
+		ORDER BY ltcr.category_id, clt.clinic_id;
+	`;
+	const [categoryClinicRows] = await connection.execute<any[]>(
+		categoryClinicsQuery,
+	);
+
+	// Комбинация: только клиника (для lab-tests)
+	const clinicQuery = `
+		SELECT DISTINCT clt.clinic_id as clinicId
+		FROM clinic_lab_tests clt
+		ORDER BY clt.clinic_id;
+	`;
+	const [clinicRows] = await connection.execute<any[]>(clinicQuery);
+
+	// Комбинация: только город (для lab-tests)
+	const cityQuery = `
+		SELECT DISTINCT c.city_id as cityId
+		FROM clinic_lab_tests clt
+		INNER JOIN clinics c ON clt.clinic_id = c.id
+		ORDER BY c.city_id;
+	`;
+	const [cityRows] = await connection.execute<any[]>(cityQuery);
+
+	// Комбинация: категория + город
+	const categoryCityQuery = `
+		SELECT DISTINCT ltcr.category_id as categoryId, c.city_id as cityId
+		FROM lab_tests lt
+		INNER JOIN lab_test_categories_relations ltcr ON lt.id = ltcr.lab_test_id
+		INNER JOIN clinic_lab_tests clt ON lt.id = clt.lab_test_id
+		INNER JOIN clinics c ON clt.clinic_id = c.id
+		ORDER BY ltcr.category_id, c.city_id;
+	`;
+	const [categoryCityRows] = await connection.execute<any[]>(categoryCityQuery);
+
+	await connection.end();
+
+	return {
+		categoryClinicCombinations: categoryClinicRows,
+		clinicCombinations: clinicRows,
+		cityCombinations: cityRows,
+		categoryCityCombinations: categoryCityRows,
+	};
+}
+
+// Получаем комбинации фильтров для medications
+async function getMedicationFilterCombinations() {
+	const connection = await getConnection();
+
+	const clinicQuery = `
+		SELECT DISTINCT cm.clinic_id as clinicId
+		FROM clinic_medications cm
+		ORDER BY cm.clinic_id;
+	`;
+	const [clinicRows] = await connection.execute<any[]>(clinicQuery);
+
+	// Комбинация: только город
+	const cityQuery = `
+		SELECT DISTINCT c.city_id as cityId
+		FROM clinic_medications cm
+		INNER JOIN clinics c ON cm.clinic_id = c.id
+		ORDER BY c.city_id;
+	`;
+	const [cityRows] = await connection.execute<any[]>(cityQuery);
+
+	await connection.end();
+
+	return {
+		clinicCombinations: clinicRows,
+		cityCombinations: cityRows,
+	};
+}
+
+// Получаем комбинации фильтров для services
+async function getMedicalServiceFilterCombinations() {
+	const connection = await getConnection();
+
+	const clinicQuery = `
+		SELECT DISTINCT cms.clinic_id as clinicId
+		FROM clinic_medical_services cms
+		ORDER BY cms.clinic_id;
+	`;
+	const [clinicRows] = await connection.execute<any[]>(clinicQuery);
+
+	// Комбинация: только город
+	const cityQuery = `
+		SELECT DISTINCT c.city_id as cityId
+		FROM clinic_medical_services cms
+		INNER JOIN clinics c ON cms.clinic_id = c.id
+		ORDER BY c.city_id;
+	`;
+	const [cityRows] = await connection.execute<any[]>(cityQuery);
+
+	await connection.end();
+
+	return {
+		clinicCombinations: clinicRows,
+		cityCombinations: cityRows,
+	};
+}
+
+// Получаем список клиник для sitemap
+async function getClinicList() {
+	const connection = await getConnection();
+
+	const clinicsQuery = `
+		SELECT c.id, c.city_id as cityId
+		FROM clinics c
+		ORDER BY c.id;
+	`;
+	const [clinicRows] = await connection.execute<any[]>(clinicsQuery);
+
+	await connection.end();
+
+	return clinicRows;
 }
 
 async function getActiveFilterCombinations() {
@@ -213,6 +343,10 @@ async function getActiveFilterCombinations() {
 }
 
 export async function generateSitemapPage(sitemapIndex: number) {
+	// === Главная страница ===
+	const homeLink: SitemapLink = menuItemToLinks('');
+
+	// === Doctors ===
 	const { doctors } = await getDoctorList();
 
 	const doctorLinks: SitemapLink[] = doctors.map((doctor) =>
@@ -223,6 +357,8 @@ export async function generateSitemapPage(sitemapIndex: number) {
 	const specialtyIds = getEnumValues(DoctorSpecialty);
 	const cityIds = getEnumValues(CityId);
 	const languageIds = getEnumValues(LanguageId).filter((id) => id !== 1); // Исключаем сербский язык (id = 1)
+
+	const doctorsPageLink: SitemapLink = menuItemToLinks('doctors');
 
 	const specialtyLinks: SitemapLink[] = specialtyIds.map((specialty) =>
 		menuItemToLinks(`doctors`, { specialtyIds: specialty }),
@@ -272,7 +408,7 @@ export async function generateSitemapPage(sitemapIndex: number) {
 			}),
 		);
 
-	const clinicLinks: SitemapLink[] =
+	const doctorClinicLinks: SitemapLink[] =
 		combinations.clinicCombinations.length > 0
 			? combinations.clinicCombinations.map((combo: any) =>
 					menuItemToLinks(`doctors`, {
@@ -312,7 +448,109 @@ export async function generateSitemapPage(sitemapIndex: number) {
 			  )
 			: [];
 
+	// === Lab Tests ===
+	const { items: labTests } = await getLabTestList();
+
+	const labTestsPageLink: SitemapLink = menuItemToLinks('lab-tests');
+
+	const labTestLinks: SitemapLink[] = labTests.map((labTest) =>
+		menuItemToLinks(`lab-tests-${labTest.id}`),
+	);
+
+	const labTestCategoryIds = getEnumValues(LabTestCategory);
+	const labTestCategoryLinks: SitemapLink[] = labTestCategoryIds.map(
+		(categoryId) => menuItemToLinks('lab-tests', { categoryIds: categoryId }),
+	);
+
+	const labTestCombinations = await getLabTestFilterCombinations();
+
+	const labTestClinicLinks: SitemapLink[] =
+		labTestCombinations.clinicCombinations.map((combo: any) =>
+			menuItemToLinks('lab-tests', { clinicIds: combo.clinicId }),
+		);
+
+	const labTestCityLinks: SitemapLink[] =
+		labTestCombinations.cityCombinations.map((combo: any) =>
+			menuItemToLinks('lab-tests', { cityIds: combo.cityId }),
+		);
+
+	const labTestCategoryClinicLinks: SitemapLink[] =
+		labTestCombinations.categoryClinicCombinations.map((combo: any) =>
+			menuItemToLinks('lab-tests', {
+				categoryIds: combo.categoryId,
+				clinicIds: combo.clinicId,
+			}),
+		);
+
+	const labTestCategoryCityLinks: SitemapLink[] =
+		labTestCombinations.categoryCityCombinations.map((combo: any) =>
+			menuItemToLinks('lab-tests', {
+				categoryIds: combo.categoryId,
+				cityIds: combo.cityId,
+			}),
+		);
+
+	// === Medications ===
+	const { items: medications } = await getMedicationList();
+
+	const medicationsPageLink: SitemapLink = menuItemToLinks('medications');
+
+	const medicationLinks: SitemapLink[] = medications.map((medication) =>
+		menuItemToLinks(`medications-${medication.id}`),
+	);
+
+	const medicationCombinations = await getMedicationFilterCombinations();
+
+	const medicationClinicLinks: SitemapLink[] =
+		medicationCombinations.clinicCombinations.map((combo: any) =>
+			menuItemToLinks('medications', { clinicIds: combo.clinicId }),
+		);
+
+	const medicationCityLinks: SitemapLink[] =
+		medicationCombinations.cityCombinations.map((combo: any) =>
+			menuItemToLinks('medications', { cityIds: combo.cityId }),
+		);
+
+	// === Medical Services ===
+	const { items: medicalServices } = await getMedicalServiceList();
+
+	const medicalServicesPageLink: SitemapLink = menuItemToLinks('services');
+
+	const medicalServiceLinks: SitemapLink[] = medicalServices.map((service) =>
+		menuItemToLinks(`services-${service.id}`),
+	);
+
+	const medicalServiceCombinations =
+		await getMedicalServiceFilterCombinations();
+
+	const medicalServiceClinicLinks: SitemapLink[] =
+		medicalServiceCombinations.clinicCombinations.map((combo: any) =>
+			menuItemToLinks('services', { clinicIds: combo.clinicId }),
+		);
+
+	const medicalServiceCityLinks: SitemapLink[] =
+		medicalServiceCombinations.cityCombinations.map((combo: any) =>
+			menuItemToLinks('services', { cityIds: combo.cityId }),
+		);
+
+	// === Clinics ===
+	const clinics = await getClinicList();
+
+	const clinicsPageLink: SitemapLink = menuItemToLinks('clinics');
+
+	const clinicLinks: SitemapLink[] = clinics.map((clinic) =>
+		menuItemToLinks(`clinics-${clinic.id}`),
+	);
+
+	const clinicCityLinks: SitemapLink[] = cityIds.map((city) =>
+		menuItemToLinks('clinics', { cityIds: city }),
+	);
+
 	return await generateSitemap([
+		// Главная страница
+		homeLink,
+		// Doctors
+		doctorsPageLink,
 		...doctorLinks,
 		...specialtyLinks,
 		...cityLinks,
@@ -321,10 +559,32 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		...specialtyLanguageLinks,
 		...languageCityLinks,
 		...specialtyLanguageCityLinks,
-		...clinicLinks,
+		...doctorClinicLinks,
 		...clinicSpecialtyLinks,
 		...clinicLanguageLinks,
 		...clinicSpecialtyLanguageLinks,
+		// Lab Tests
+		labTestsPageLink,
+		...labTestLinks,
+		...labTestCategoryLinks,
+		...labTestClinicLinks,
+		...labTestCityLinks,
+		...labTestCategoryClinicLinks,
+		...labTestCategoryCityLinks,
+		// Medications
+		medicationsPageLink,
+		...medicationLinks,
+		...medicationClinicLinks,
+		...medicationCityLinks,
+		// Medical Services
+		medicalServicesPageLink,
+		...medicalServiceLinks,
+		...medicalServiceClinicLinks,
+		...medicalServiceCityLinks,
+		// Clinics
+		clinicsPageLink,
+		...clinicLinks,
+		...clinicCityLinks,
 	]);
 }
 

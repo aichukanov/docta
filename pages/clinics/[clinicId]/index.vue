@@ -43,14 +43,11 @@ const { data: medicationsList } = await useFetch('/api/medications/list', {
 	body: { clinicIds: [clinicId.value] },
 });
 
-const { data: medicalServicesList } = await useFetch(
-	'/api/medical-services/list',
-	{
-		key: `medical-services-list-clinic-${route.params.clinicId}`,
-		method: 'POST',
-		body: { clinicIds: [clinicId.value] },
-	},
-);
+const { data: medicalServicesList } = await useFetch('/api/services/list', {
+	key: `services-list-clinic-${route.params.clinicId}`,
+	method: 'POST',
+	body: { clinicIds: [clinicId.value] },
+});
 
 const isFound = computed(() => clinicData.value?.id != null);
 
@@ -195,7 +192,7 @@ useSeoMeta({
 				<ClinicServiceSection
 					:title="t('MedicalServicesAtClinic')"
 					:items="clinicMedicalServices"
-					routeName="medical-services"
+					routeName="services"
 					:clinicId="clinicId"
 				>
 					<template #icon>
@@ -206,11 +203,7 @@ useSeoMeta({
 							<div v-for="service in items" :key="service.id" class="item-card">
 								<NuxtLink
 									:to="
-										getItemLink(
-											'medical-services-serviceId',
-											'serviceId',
-											service.id,
-										)
+										getItemLink('services-serviceId', 'serviceId', service.id)
 									"
 									class="item-link"
 								>

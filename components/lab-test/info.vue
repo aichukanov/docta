@@ -119,4 +119,3 @@ const detailsLink = computed(() => {
 	}
 }
 </style>
-

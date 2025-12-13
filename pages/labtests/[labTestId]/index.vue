@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import cityI18n from '~/i18n/city';
-import labTestI18n from '~/i18n/lab-test';
-import labTestCategoryI18n from '~/i18n/lab-test-category';
+import labTestI18n from '~/i18n/labtest';
+import labTestCategoryI18n from '~/i18n/labtest-category';
 import { combineI18nMessages } from '~/i18n/utils';
 
 const { t, locale } = useI18n({

@@ -9,7 +9,7 @@ import { getMedicalServiceList } from '~/server/api/services/list';
 import { DoctorSpecialty } from '~/enums/specialty';
 import { CityId } from '~/enums/cities';
 import { LanguageId } from '~/enums/language';
-import { LabTestCategory } from '~/enums/lab-test-category';
+import { LabTestCategory } from '~/enums/labtest-category';
 import { getConnection } from '~/server/common/db-mysql';
 
 export function menuItemToLinks(

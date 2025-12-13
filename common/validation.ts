@@ -2,7 +2,7 @@ import { locales, type Locale } from '~/composables/use-locale';
 import { Language, isDoctorLanguage } from '~/enums/language';
 import { DoctorSpecialty } from '~/enums/specialty';
 import { CityId } from '~/enums/cities';
-import { LabTestCategory } from '~/enums/lab-test-category';
+import { LabTestCategory } from '~/enums/labtest-category';
 
 function showError(from: string, message: string) {
 	console.error('Error in ' + from + ';\n' + message);

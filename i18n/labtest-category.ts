@@ -1,4 +1,4 @@
-import { LabTestCategory } from '~/enums/lab-test-category';
+import { LabTestCategory } from '~/enums/labtest-category';
 
 export default {
 	messages: {

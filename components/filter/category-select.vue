@@ -12,8 +12,8 @@
 </template>
 
 <script setup lang="ts">
-import { LabTestCategory } from '~/enums/lab-test-category';
-import labTestCategoryI18n from '~/i18n/lab-test-category';
+import { LabTestCategory } from '~/enums/labtest-category';
+import labTestCategoryI18n from '~/i18n/labtest-category';
 
 const props = defineProps<{
 	value: number[];

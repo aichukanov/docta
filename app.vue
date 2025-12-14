@@ -17,7 +17,7 @@ locale.value = queryLocale || defaultLocale;
 function getMainUrl() {
 	const searchParamsRe = /(?=.+)\?.+/gi;
 	const path = route.fullPath.replace(searchParamsRe, '');
-	return `https://docta.me${path}`;
+	return `https://omeda.me${path}`;
 }
 
 function getLangLink(mainUrl: string, lang: Locale) {
@@ -62,12 +62,12 @@ useHead({
 useSeoMeta({
 	title: () => t('ApplicationName'),
 	description: () => t('ApplicationName'),
-	applicationName: 'docta.me',
+	applicationName: 'omeda.me',
 	viewport: 'width=device-width, initial-scale=1',
 	ogType: 'website',
-	ogSiteName: 'docta.me',
+	ogSiteName: 'omeda.me',
 	ogLocale: () => locale.value,
-	ogUrl: () => `https://docta.me${route.fullPath}`,
+	ogUrl: () => `https://omeda.me${route.fullPath}`,
 });
 </script>
 

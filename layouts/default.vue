@@ -8,7 +8,7 @@
 
 		<div class="footer" :class="{ 'footer-tall': !isConsentGiven }">
 			<div class="footer-content">
-				<div>docta.me | {{ years }}</div>
+				<div>omeda.me | {{ years }}</div>
 
 				<div class="contact-us_wrapper">
 					<NuxtLink

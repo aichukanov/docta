@@ -188,7 +188,7 @@ const isActiveSection = (section: string) => {
 	}
 
 	&__logo {
-		width: 120px;
+		width: 100px;
 		height: 30px;
 		background-image: url('/logo-site.png');
 		background-size: contain;

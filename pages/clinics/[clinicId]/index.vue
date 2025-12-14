@@ -123,6 +123,13 @@ useSeoMeta({
 	title: pageTitle,
 	description: pageDescription,
 });
+
+const { setClinicSchema } = useSchemaOrg();
+watchEffect(() => {
+	if (clinicData.value && isFound.value) {
+		setClinicSchema(clinicData.value);
+	}
+});
 </script>
 
 <template>

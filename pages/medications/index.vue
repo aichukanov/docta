@@ -77,6 +77,23 @@ const pageDescription = computed(() => {
 	}
 	return t('MedicationsListDescription');
 });
+
+useSeoMeta({
+	title: pageTitleWithCount,
+	description: pageDescription,
+});
+
+const { setMedicationsListSchema } = useSchemaOrg();
+watchEffect(() => {
+	if (medicationsList.value) {
+		setMedicationsListSchema({
+			title: pageTitle.value,
+			description: pageDescription.value,
+			totalCount: medicationsList.value.totalCount,
+			medications: medicationsList.value.items,
+		});
+	}
+});
 </script>
 
 <template>

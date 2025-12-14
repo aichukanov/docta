@@ -89,6 +89,17 @@ useSeoMeta({
 	title: pageTitle,
 	description: pageDescription,
 });
+
+const { setMedicationSchema } = useSchemaOrg();
+watchEffect(() => {
+	if (medicationData.value && isFound.value) {
+		setMedicationSchema({
+			id: medicationData.value.id,
+			name: medicationData.value.name,
+			clinics: medicationClinics.value.map((clinic) => ({ name: clinic.name })),
+		});
+	}
+});
 </script>
 
 <template>

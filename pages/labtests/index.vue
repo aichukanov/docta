@@ -131,6 +131,23 @@ const pageDescription = computed(() => {
 	}
 	return t('LabTestsListDescription');
 });
+
+useSeoMeta({
+	title: pageTitleWithCount,
+	description: pageDescription,
+});
+
+const { setLabTestsListSchema } = useSchemaOrg();
+watchEffect(() => {
+	if (labTestsList.value) {
+		setLabTestsListSchema({
+			title: pageTitle.value,
+			description: pageDescription.value,
+			totalCount: labTestsList.value.totalCount,
+			labTests: labTestsList.value.items,
+		});
+	}
+});
 </script>
 
 <template>

@@ -6,15 +6,17 @@
 </template>
 
 <script setup lang="ts">
-import { formatPhoneNumber, isPhoneNumber } from './utils';
+import {
+	formatPhoneNumber,
+	isPhoneNumber,
+	normalizeTelegramUrl,
+} from './utils';
 
 const props = defineProps<{
 	contact: string;
 }>();
 
-const telegramUrl = computed(
-	() => `https://t.me/${props.contact.replace('@', '')}`,
-);
+const telegramUrl = computed(() => normalizeTelegramUrl(props.contact));
 
 const telegramContact = computed(() =>
 	isPhoneNumber(props.contact)

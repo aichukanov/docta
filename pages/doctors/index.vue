@@ -179,6 +179,23 @@ const pageDescription = computed(() => {
 	}
 	return t('DoctorsListDescription');
 });
+
+useSeoMeta({
+	title: pageTitleWithCount,
+	description: pageDescription,
+});
+
+const { setDoctorsListSchema } = useSchemaOrg();
+watchEffect(() => {
+	if (doctorsList.value) {
+		setDoctorsListSchema({
+			title: pageTitle.value,
+			description: pageDescription.value,
+			totalCount: doctorsList.value.totalCount,
+			doctors: doctorsList.value.doctors,
+		});
+	}
+});
 </script>
 
 <template>

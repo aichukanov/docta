@@ -1,7 +1,7 @@
 import { locales, defaultLocale } from '~/composables/use-locale';
 
 const sr = {
-	ApplicationName: 'docta.me | Svi lekari Crne Gore',
+	ApplicationName: 'omeda.me | Svi lekari Crne Gore',
 };
 
 export default defineI18nConfig(() => ({
@@ -18,17 +18,17 @@ export default defineI18nConfig(() => ({
 	},
 	messages: {
 		en: {
-			ApplicationName: 'docta.me | All doctors of Montenegro',
+			ApplicationName: 'omeda.me | All doctors of Montenegro',
 		},
 		ru: {
-			ApplicationName: 'docta.me | Все врачи Черногории',
+			ApplicationName: 'omeda.me | Все врачи Черногории',
 		},
 		sr,
 		de: {
-			ApplicationName: 'docta.me | Alle Ärzte Montenegros',
+			ApplicationName: 'omeda.me | Alle Ärzte Montenegros',
 		},
 		tr: {
-			ApplicationName: "docta.me | Karadağ'ın tüm doktorları",
+			ApplicationName: "omeda.me | Karadağ'ın tüm doktorları",
 		},
 	},
 }));

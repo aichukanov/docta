@@ -6,6 +6,8 @@
 </template>
 
 <script setup lang="ts">
+import { normalizeWebsiteUrl } from './utils';
+
 const props = defineProps<{
 	websiteUrl: string;
 }>();
@@ -13,13 +15,14 @@ const props = defineProps<{
 const { t } = useI18n();
 
 const websiteUrlWithUtm = computed(() => {
+	const normalized = normalizeWebsiteUrl(props.websiteUrl) ?? props.websiteUrl;
 	try {
-		const url = new URL(props.websiteUrl);
-		url.searchParams.set('utm_source', 'docta.me');
+		const url = new URL(normalized);
+		url.searchParams.set('utm_source', 'omeda.me');
 		return url.toString();
 	} catch {
 		// Если URL невалидный, возвращаем как есть
-		return props.websiteUrl;
+		return normalized;
 	}
 });
 </script>

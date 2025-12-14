@@ -6,13 +6,15 @@
 </template>
 
 <script setup lang="ts">
+import { normalizeFacebookUrl } from './utils';
+
 const props = defineProps<{
 	profile: string;
 }>();
 
 const { t } = useI18n();
 
-const facebookUrl = computed(() => `https://${props.profile}`);
+const facebookUrl = computed(() => normalizeFacebookUrl(props.profile));
 </script>
 
 <style scoped src="./style.css" />

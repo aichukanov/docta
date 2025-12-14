@@ -6,15 +6,15 @@
 </template>
 
 <script setup lang="ts">
+import { normalizeInstagramUrl } from './utils';
+
 const props = defineProps<{
 	profile: string;
 }>();
 
 const { t } = useI18n();
 
-const instagramUrl = computed(() =>
-	props.profile.replace('@', 'https://instagram.com/'),
-);
+const instagramUrl = computed(() => normalizeInstagramUrl(props.profile));
 </script>
 
 <style scoped src="./style.css" />

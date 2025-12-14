@@ -100,6 +100,23 @@ const pageDescription = computed(() => {
 	}
 	return t('ClinicsListDescription');
 });
+
+useSeoMeta({
+	title: pageTitleWithCount,
+	description: pageDescription,
+});
+
+const { setClinicsListSchema } = useSchemaOrg();
+watchEffect(() => {
+	if (filteredClinics.value) {
+		setClinicsListSchema({
+			title: pageTitle.value,
+			description: pageDescription.value,
+			totalCount: filteredClinics.value.length,
+			clinics: filteredClinics.value,
+		});
+	}
+});
 </script>
 
 <template>

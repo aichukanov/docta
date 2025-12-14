@@ -99,6 +99,19 @@ useSeoMeta({
 	title: pageTitle,
 	description: pageDescription,
 });
+
+const { setLabTestSchema } = useSchemaOrg();
+watchEffect(() => {
+	if (labTestData.value && isFound.value) {
+		setLabTestSchema({
+			id: labTestData.value.id,
+			name: labTestData.value.name,
+			originalName: labTestData.value.originalName,
+			synonyms: labTestData.value.synonyms,
+			clinics: labTestClinics.value.map((clinic) => ({ name: clinic.name })),
+		});
+	}
+});
 </script>
 
 <template>

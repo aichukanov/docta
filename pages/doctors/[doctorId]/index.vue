@@ -148,6 +148,24 @@ useSeoMeta({
 	title: pageTitle,
 	description: pageDescription,
 });
+
+const { setDoctorSchema } = useSchemaOrg();
+watchEffect(() => {
+	if (doctorData.value && isFound.value) {
+		const specialtyIds = doctorData.value.specialtyIds?.split(',').map(Number);
+		const languageIds = doctorData.value.languageIds?.split(',').map(Number);
+
+		setDoctorSchema({
+			id: doctorData.value.id,
+			name: doctorData.value.name,
+			photoUrl: doctorData.value.photoUrl,
+			specialtyIds,
+			languageIds,
+			clinics: doctorClinics.value,
+			title: doctorData.value.professionalTitle,
+		});
+	}
+});
 </script>
 
 <template>

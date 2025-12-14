@@ -32,6 +32,9 @@ useSeoMeta({
 	title: t('MainPageTitle'),
 	description: t('MainPageDescription'),
 });
+
+const { setWebsiteSchema } = useSchemaOrg();
+setWebsiteSchema({ description: t('MainPageDescription') });
 </script>
 
 <template>

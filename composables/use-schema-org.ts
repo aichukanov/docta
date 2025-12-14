@@ -175,6 +175,23 @@ interface BreadcrumbListSchema extends SchemaOrgBase {
 	}[];
 }
 
+interface AboutPageSchema extends SchemaOrgBase {
+	'@type': 'AboutPage';
+	'name': string;
+	'description'?: string;
+	'url'?: string;
+	'isPartOf'?: {
+		'@type': 'WebSite';
+		'name': string;
+		'url': string;
+	};
+	'about'?: {
+		'@type': 'Organization' | 'MedicalBusiness';
+		'name': string;
+		'url'?: string;
+	};
+}
+
 type SchemaOrg =
 	| OrganizationSchema
 	| WebSiteSchema
@@ -185,6 +202,7 @@ type SchemaOrg =
 	| MedicalProcedureSchema
 	| ItemListSchema
 	| BreadcrumbListSchema
+	| AboutPageSchema
 	| SchemaOrgBase;
 
 const SITE_NAME = 'omeda.me';
@@ -571,6 +589,32 @@ export const useSchemaOrg = () => {
 		} as BreadcrumbListSchema);
 	};
 
+	// Страница "О проекте" (E-E-A-T)
+	const setAboutPageSchema = (options: {
+		title: string;
+		description?: string;
+		url?: string;
+	}) => {
+		const baseUrl = getBaseUrl();
+
+		setSchemaOrg({
+			'@type': 'AboutPage',
+			'name': options.title,
+			'description': options.description,
+			'url': options.url || `${baseUrl}/about`,
+			'isPartOf': {
+				'@type': 'WebSite',
+				'name': SITE_NAME,
+				'url': baseUrl,
+			},
+			'about': {
+				'@type': 'MedicalBusiness',
+				'name': SITE_NAME,
+				'url': baseUrl,
+			},
+		} as AboutPageSchema);
+	};
+
 	return {
 		setSchemaOrg,
 		setWebsiteSchema,
@@ -585,5 +629,6 @@ export const useSchemaOrg = () => {
 		setMedicalServicesListSchema,
 		setMedicalServiceSchema,
 		setBreadcrumbs,
+		setAboutPageSchema,
 	};
 };

@@ -43,6 +43,7 @@ export function menuItemToLinks(
 export async function generateSitemapPage(sitemapIndex: number) {
 	// === Главная страница ===
 	const homeLink: SitemapLink = menuItemToLinks('');
+	const aboutLink: SitemapLink = menuItemToLinks('about');
 
 	// === Doctors ===
 	const { doctors } = await getDoctorList();
@@ -113,6 +114,7 @@ export async function generateSitemapPage(sitemapIndex: number) {
 	return await generateSitemap([
 		// Главная страница
 		homeLink,
+		aboutLink,
 		// Doctors: страницы + специальность + специальность+город + специальность+язык
 		doctorsPageLink,
 		...doctorLinks,

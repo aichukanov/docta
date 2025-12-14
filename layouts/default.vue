@@ -8,23 +8,70 @@
 
 		<div class="footer" :class="{ 'footer-tall': !isConsentGiven }">
 			<div class="footer-content">
-				<div>omeda.me | {{ years }}</div>
+				<div class="footer-top">
+					<div class="footer-brand">
+						<div class="footer-brand__text">
+							<div class="footer-brand__name">omeda.me</div>
+							<div class="footer-brand__tagline">{{ t('Tagline') }}</div>
+						</div>
+					</div>
 
-				<div class="contact-us_wrapper">
-					<NuxtLink
-						to="mailto:contact@svad.net"
-						target="_blank"
-						:aria-label="t('ContactUs')"
-					>
-						<div class="icon email-icon"></div>
-					</NuxtLink>
-					<NuxtLink
-						to="https://t.me/svad_net"
-						target="_blank"
-						:aria-label="t('NewsChannel')"
-					>
-						<div class="icon tg-icon"></div>
-					</NuxtLink>
+					<nav class="footer-nav" :aria-label="t('FooterNavLabel')">
+						<NuxtLink class="footer-link" :to="doctorsPageLink">
+							{{ t('Doctors') }}
+						</NuxtLink>
+						<NuxtLink class="footer-link" :to="clinicsPageLink">
+							{{ t('Clinics') }}
+						</NuxtLink>
+						<NuxtLink class="footer-link" :to="labTestsPageLink">
+							{{ t('LabTests') }}
+						</NuxtLink>
+						<NuxtLink class="footer-link" :to="medicalServicesPageLink">
+							{{ t('MedicalServices') }}
+						</NuxtLink>
+						<NuxtLink class="footer-link" :to="medicationsPageLink">
+							{{ t('Medications') }}
+						</NuxtLink>
+						<NuxtLink
+							class="footer-link footer-link--muted"
+							:to="aboutPageLink"
+						>
+							{{ t('AboutProject') }}
+						</NuxtLink>
+					</nav>
+
+					<div class="footer-contacts">
+						<div class="footer-contacts__title">{{ t('ContactsTitle') }}</div>
+						<div class="footer-contacts__actions">
+							<NuxtLink
+								class="footer-contact"
+								to="mailto:contact@svad.net"
+								target="_blank"
+								:aria-label="t('ContactUs')"
+							>
+								<span class="icon email-icon" aria-hidden="true"></span>
+								<span class="footer-contact__label">{{ t('Email') }}</span>
+							</NuxtLink>
+							<NuxtLink
+								class="footer-contact"
+								to="https://t.me/svad_net"
+								target="_blank"
+								:aria-label="t('NewsChannel')"
+							>
+								<span class="icon tg-icon" aria-hidden="true"></span>
+								<span class="footer-contact__label">{{ t('Telegram') }}</span>
+							</NuxtLink>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer-bottom">
+					<div class="footer-bottom__left">
+						<span class="footer-bottom__muted">© {{ years }} omeda.me</span>
+					</div>
+					<div class="footer-bottom__right">
+						<span class="footer-bottom__muted">{{ t('DisclaimerShort') }}</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -37,10 +84,43 @@
 </template>
 
 <script setup lang="ts">
+import { getRegionalQuery } from '~/common/url-utils';
+
 const { isConsentGiven } = useCookieControl();
 const { t } = useI18n();
+const { locale } = useI18n({ useScope: 'global' });
 
 const years = computed(() => `2025`); //  - ${new Date().getFullYear()}
+
+const doctorsPageLink = computed(() => ({
+	name: 'doctors',
+	query: getRegionalQuery(locale.value),
+}));
+
+const clinicsPageLink = computed(() => ({
+	name: 'clinics',
+	query: getRegionalQuery(locale.value),
+}));
+
+const labTestsPageLink = computed(() => ({
+	name: 'labtests',
+	query: getRegionalQuery(locale.value),
+}));
+
+const medicalServicesPageLink = computed(() => ({
+	name: 'services',
+	query: getRegionalQuery(locale.value),
+}));
+
+const medicationsPageLink = computed(() => ({
+	name: 'medications',
+	query: getRegionalQuery(locale.value),
+}));
+
+const aboutPageLink = computed(() => ({
+	name: 'about',
+	query: getRegionalQuery(locale.value),
+}));
 
 watch(
 	isConsentGiven,
@@ -59,32 +139,116 @@ watch(
 <i18n lang="json">
 {
 	"en": {
+		"FooterNavLabel": "Footer navigation",
+		"Tagline": "Healthcare in Montenegro — in one place",
+		"Doctors": "Doctors",
+		"Clinics": "Clinics",
+		"LabTests": "Lab Tests",
+		"MedicalServices": "Medical Services",
+		"Medications": "Medications",
+		"ContactsTitle": "Contacts",
+		"Email": "Email",
+		"Telegram": "Telegram",
+		"DisclaimerShort": "Information only. Not medical advice.",
 		"ContactUs": "Contact us by email",
-		"NewsChannel": "Our news channel on Telegram"
+		"NewsChannel": "Our news channel on Telegram",
+		"AboutProject": "About"
 	},
 	"ru": {
+		"FooterNavLabel": "Навигация в футере",
+		"Tagline": "Медицина в Черногории — в одном месте",
+		"Doctors": "Врачи",
+		"Clinics": "Клиники",
+		"LabTests": "Анализы",
+		"MedicalServices": "Услуги",
+		"Medications": "Лекарства",
+		"ContactsTitle": "Контакты",
+		"Email": "Email",
+		"Telegram": "Telegram",
+		"DisclaimerShort": "Справочная информация. Не является медрекомендациями.",
 		"ContactUs": "Связаться с нами по email",
-		"NewsChannel": "Наш канал новостей в Telegram"
+		"NewsChannel": "Наш канал новостей в Telegram",
+		"AboutProject": "О проекте"
 	},
 	"sr": {
+		"FooterNavLabel": "Navigacija u podnožju",
+		"Tagline": "Zdravstvo u Crnoj Gori — na jednom mjestu",
+		"Doctors": "Lekari",
+		"Clinics": "Klinike",
+		"LabTests": "Analize",
+		"MedicalServices": "Usluge",
+		"Medications": "Lekovi",
+		"ContactsTitle": "Kontakti",
+		"Email": "Email",
+		"Telegram": "Telegram",
+		"DisclaimerShort": "Samo informativno. Nije medicinski savet.",
 		"ContactUs": "Kontaktirajte nas putem emaila",
-		"NewsChannel": "Naš kanal za vesti na Telegramu"
+		"NewsChannel": "Naš kanal za vesti na Telegramu",
+		"AboutProject": "O projektu"
 	},
 	"ba": {
+		"FooterNavLabel": "Navigacija u podnožju",
+		"Tagline": "Zdravstvo u Crnoj Gori — na jednom mjestu",
+		"Doctors": "Lekari",
+		"Clinics": "Klinike",
+		"LabTests": "Analize",
+		"MedicalServices": "Usluge",
+		"Medications": "Lekovi",
+		"ContactsTitle": "Kontakti",
+		"Email": "Email",
+		"Telegram": "Telegram",
+		"DisclaimerShort": "Samo informativno. Nije medicinski savjet.",
 		"ContactUs": "Kontaktirajte nas putem emaila",
-		"NewsChannel": "Naš kanal za vijesti na Telegramu"
+		"NewsChannel": "Naš kanal za vijesti na Telegramu",
+		"AboutProject": "O projektu"
 	},
 	"me": {
+		"FooterNavLabel": "Navigacija u podnožju",
+		"Tagline": "Zdravstvo u Crnoj Gori — na jednom mjestu",
+		"Doctors": "Lekari",
+		"Clinics": "Klinike",
+		"LabTests": "Analize",
+		"MedicalServices": "Usluge",
+		"Medications": "Lekovi",
+		"ContactsTitle": "Kontakti",
+		"Email": "Email",
+		"Telegram": "Telegram",
+		"DisclaimerShort": "Samo informativno. Nije medicinski savjet.",
 		"ContactUs": "Kontaktirajte nas putem emaila",
-		"NewsChannel": "Naš kanal za vijesti na Telegramu"
+		"NewsChannel": "Naš kanal za vijesti na Telegramu",
+		"AboutProject": "O projektu"
 	},
 	"de": {
+		"FooterNavLabel": "Footer-Navigation",
+		"Tagline": "Gesundheit in Montenegro — an einem Ort",
+		"Doctors": "Ärzte",
+		"Clinics": "Kliniken",
+		"LabTests": "Labortests",
+		"MedicalServices": "Medizinische Dienstleistungen",
+		"Medications": "Medikamente",
+		"ContactsTitle": "Kontakt",
+		"Email": "E-Mail",
+		"Telegram": "Telegram",
+		"DisclaimerShort": "Nur Information. Keine medizinische Beratung.",
 		"ContactUs": "Kontaktieren Sie uns per E-Mail",
-		"NewsChannel": "Unser Nachrichtenkanal auf Telegram"
+		"NewsChannel": "Unser Nachrichtenkanal auf Telegram",
+		"AboutProject": "Über"
 	},
 	"tr": {
+		"FooterNavLabel": "Altbilgi gezinme",
+		"Tagline": "Karadağ'da sağlık — tek yerde",
+		"Doctors": "Doktorlar",
+		"Clinics": "Klinikler",
+		"LabTests": "Laboratuvar Testleri",
+		"MedicalServices": "Tıbbi Hizmetler",
+		"Medications": "İlaçlar",
+		"ContactsTitle": "İletişim",
+		"Email": "E-posta",
+		"Telegram": "Telegram",
+		"DisclaimerShort": "Bilgilendirme amaçlıdır. Tıbbi tavsiye değildir.",
 		"ContactUs": "Bize e-posta ile ulaşın",
-		"NewsChannel": "Telegram'daki haber kanalımız"
+		"NewsChannel": "Telegram'daki haber kanalımız",
+		"AboutProject": "Hakkında"
 	}
 }
 </i18n>
@@ -216,22 +380,118 @@ body {
 	.footer-content {
 		box-sizing: border-box;
 		flex-basis: 100%;
-		border-top: 1px solid #e0e0e0;
-		padding: 16px;
+		border-top: 1px solid var(--color-border-secondary);
+		background: linear-gradient(
+			180deg,
+			var(--color-bg-primary) 0%,
+			var(--color-bg-secondary) 100%
+		);
+		padding: var(--spacing-2xl);
 		min-width: 300px;
 		max-width: 1600px;
 		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		flex-direction: column;
+		gap: var(--spacing-xl);
 
-		.contact-us_wrapper {
+		.footer-top {
 			display: flex;
-			gap: 8px;
+			align-items: flex-start;
+			justify-content: space-between;
+			gap: var(--spacing-2xl);
+		}
+
+		.footer-brand {
+			display: flex;
+			align-items: center;
+			gap: var(--spacing-md);
+			min-width: 220px;
+
+			&__logo {
+				width: 92px;
+				height: 28px;
+				background-image: url('/logo-site.png');
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: left center;
+				flex-shrink: 0;
+			}
+
+			&__name {
+				font-weight: var(--font-weight-semibold);
+				color: var(--color-text-primary);
+				line-height: 1.2;
+			}
+
+			&__tagline {
+				margin-top: var(--spacing-xs);
+				font-size: var(--font-size-sm);
+				color: var(--color-text-muted);
+				line-height: 1.4;
+				max-width: 360px;
+			}
+		}
+
+		.footer-nav {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(140px, 1fr));
+			gap: var(--spacing-sm) var(--spacing-xl);
+			align-content: start;
+		}
+
+		.footer-link {
+			color: var(--color-text-secondary);
+			text-decoration: none;
+			font-size: var(--font-size-md);
+			line-height: 1.4;
+			padding: var(--spacing-xs) 0;
+
+			&:hover {
+				color: var(--color-primary);
+				text-decoration: underline;
+			}
+
+			&--muted {
+				color: var(--color-text-muted);
+			}
+		}
+
+		.footer-contacts {
+			min-width: 180px;
+
+			&__title {
+				font-size: var(--font-size-sm);
+				color: var(--color-text-muted);
+				margin-bottom: var(--spacing-sm);
+				font-weight: var(--font-weight-medium);
+			}
+
+			&__actions {
+				display: flex;
+				flex-direction: column;
+				gap: var(--spacing-sm);
+			}
+		}
+
+		.footer-contact {
+			display: inline-flex;
+			align-items: center;
+			gap: var(--spacing-sm);
+			text-decoration: none;
+			color: var(--color-text-secondary);
+			font-size: var(--font-size-sm);
+
+			&:hover {
+				color: var(--color-primary);
+			}
+
+			&__label {
+				white-space: nowrap;
+			}
 		}
 
 		.icon {
-			width: 24px;
-			height: 24px;
+			width: 20px;
+			height: 20px;
 			background-size: contain;
 			background-repeat: no-repeat;
 
@@ -241,6 +501,56 @@ body {
 
 			&.email-icon {
 				background-image: url('/email.png');
+			}
+		}
+
+		.footer-bottom {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: var(--spacing-lg);
+			padding-top: var(--spacing-lg);
+			border-top: 1px solid var(--color-border-light);
+
+			&__muted {
+				color: var(--color-text-light);
+				font-size: var(--font-size-sm);
+				line-height: 1.4;
+			}
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.footer {
+		.footer-content {
+			padding: var(--spacing-xl);
+
+			.footer-top {
+				flex-direction: column;
+				gap: var(--spacing-xl);
+			}
+
+			.footer-nav {
+				grid-template-columns: repeat(3, minmax(120px, 1fr));
+			}
+
+			.footer-bottom {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+		}
+	}
+}
+
+@media (max-width: 520px) {
+	.footer {
+		.footer-content {
+			padding: var(--spacing-lg);
+
+			.footer-nav {
+				grid-template-columns: repeat(2, minmax(120px, 1fr));
+				gap: var(--spacing-sm) var(--spacing-lg);
 			}
 		}
 	}

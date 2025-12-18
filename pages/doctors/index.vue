@@ -186,6 +186,15 @@ useSeoMeta({
 });
 
 const { setDoctorsListSchema } = useSchemaOrg();
+const isFiltered = computed(() => {
+	return (
+		specialtyIds.value.length > 0 ||
+		cityIds.value.length > 0 ||
+		languageIds.value.length > 0 ||
+		clinicIds.value.length > 0 ||
+		!!name.value
+	);
+});
 watchEffect(() => {
 	if (doctorsList.value) {
 		setDoctorsListSchema({
@@ -193,6 +202,7 @@ watchEffect(() => {
 			description: pageDescription.value,
 			totalCount: doctorsList.value.totalCount,
 			doctors: doctorsList.value.doctors,
+			isFiltered: isFiltered.value,
 		});
 	}
 });

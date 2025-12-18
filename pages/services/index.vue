@@ -83,6 +83,9 @@ useSeoMeta({
 });
 
 const { setMedicalServicesListSchema } = useSchemaOrg();
+const isFiltered = computed(() => {
+	return cityIds.value.length > 0 || clinicIds.value.length > 0 || !!name.value;
+});
 watchEffect(() => {
 	if (medicalServicesList.value) {
 		setMedicalServicesListSchema({
@@ -90,6 +93,7 @@ watchEffect(() => {
 			description: pageDescription.value,
 			totalCount: medicalServicesList.value.totalCount,
 			services: medicalServicesList.value.items,
+			isFiltered: isFiltered.value,
 		});
 	}
 });

@@ -84,6 +84,9 @@ useSeoMeta({
 });
 
 const { setMedicationsListSchema } = useSchemaOrg();
+const isFiltered = computed(() => {
+	return cityIds.value.length > 0 || clinicIds.value.length > 0 || !!name.value;
+});
 watchEffect(() => {
 	if (medicationsList.value) {
 		setMedicationsListSchema({
@@ -91,6 +94,7 @@ watchEffect(() => {
 			description: pageDescription.value,
 			totalCount: medicationsList.value.totalCount,
 			medications: medicationsList.value.items,
+			isFiltered: isFiltered.value,
 		});
 	}
 });

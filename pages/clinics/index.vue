@@ -107,6 +107,11 @@ useSeoMeta({
 });
 
 const { setClinicsListSchema } = useSchemaOrg();
+const isFiltered = computed(() => {
+	return (
+		cityIds.value.length > 0 || languageIds.value.length > 0 || !!name.value
+	);
+});
 watchEffect(() => {
 	if (filteredClinics.value) {
 		setClinicsListSchema({
@@ -114,6 +119,7 @@ watchEffect(() => {
 			description: pageDescription.value,
 			totalCount: filteredClinics.value.length,
 			clinics: filteredClinics.value,
+			isFiltered: isFiltered.value,
 		});
 	}
 });

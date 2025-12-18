@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getRegionalUrl } from './common/url-utils';
+import { Language } from './enums/language';
 import {
 	defaultLocale,
 	getLocaleFromQuery,
@@ -30,6 +31,7 @@ function getLangLink(mainUrl: string, lang: Locale) {
 
 const alternateLinks = computed(() => {
 	const mainUrl = getMainUrl();
+	const currentLocale = locale.value;
 
 	const links: Array<{
 		rel: string;
@@ -38,17 +40,26 @@ const alternateLinks = computed(() => {
 	}> = [
 		{
 			rel: 'canonical',
-			href: getLangLink(mainUrl, defaultLocale),
+			href: getLangLink(mainUrl, currentLocale),
+		},
+		{
+			rel: 'alternate',
+			href: getLangLink(mainUrl, Language.EN),
+			hreflang: 'x-default',
 		},
 	];
 
 	for (let i = 0; i < locales.length; i++) {
 		const lang = locales[i];
 
+		if (lang === currentLocale) {
+			continue;
+		}
+
 		links.push({
 			rel: 'alternate',
 			href: getLangLink(mainUrl, lang),
-			hreflang: `${lang}-ME`,
+			hreflang: lang,
 		});
 	}
 

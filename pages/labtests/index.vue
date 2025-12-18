@@ -138,6 +138,14 @@ useSeoMeta({
 });
 
 const { setLabTestsListSchema } = useSchemaOrg();
+const isFiltered = computed(() => {
+	return (
+		cityIds.value.length > 0 ||
+		categoryIds.value.length > 0 ||
+		clinicIds.value.length > 0 ||
+		!!name.value
+	);
+});
 watchEffect(() => {
 	if (labTestsList.value) {
 		setLabTestsListSchema({
@@ -145,6 +153,7 @@ watchEffect(() => {
 			description: pageDescription.value,
 			totalCount: labTestsList.value.totalCount,
 			labTests: labTestsList.value.items,
+			isFiltered: isFiltered.value,
 		});
 	}
 });

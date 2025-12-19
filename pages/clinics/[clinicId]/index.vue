@@ -5,6 +5,7 @@ import clinicI18n from '~/i18n/clinic';
 import languageI18n from '~/i18n/language';
 import { combineI18nMessages } from '~/i18n/utils';
 import { LocationFilled } from '@element-plus/icons-vue';
+import { formatClinicAddressLine } from '~/common/clinic-address';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -83,7 +84,12 @@ const pageDescription = computed(() => {
 		return '';
 	}
 
-	const { name, address, languageIds } = clinicData.value;
+	const { name, languageIds } = clinicData.value;
+
+	const addressText = formatClinicAddressLine({
+		clinic: clinicData.value,
+		cityName: t(`city_${clinicData.value.cityId}`),
+	});
 
 	const languagesText =
 		languageIds === '1'
@@ -98,7 +104,9 @@ const pageDescription = computed(() => {
 		? ` ${t('ClinicLanguageAssistance', { language: languagesText })}`
 		: '';
 
-	return `${name}. ${address}.${languageInfo}`;
+	return addressText
+		? `${name}. ${addressText}.${languageInfo}`
+		: `${name}.${languageInfo}`;
 });
 
 function joinWithAnd(items: string[]): string {
@@ -148,7 +156,12 @@ watchEffect(() => {
 
 					<div class="clinic-address">
 						<LocationFilled />
-						<span>{{ clinicData.address }}</span>
+						<span>{{
+							formatClinicAddressLine({
+								clinic: clinicData,
+								cityName: t(`city_${clinicData.cityId}`),
+							})
+						}}</span>
 					</div>
 
 					<ConsultationLanguages :languageIds="clinicData.languageIds">

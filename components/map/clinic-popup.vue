@@ -9,7 +9,6 @@ const props = defineProps<{
 }>();
 
 const { t, locale } = useI18n();
-
 const servicesListRef = ref<HTMLElement>();
 const pageNumber = ref(1);
 const PAGE_LIMIT = 20;
@@ -42,7 +41,9 @@ watch(pageNumber, () => {
 			</NuxtLink>
 		</div>
 
-		<ClinicRouteButton :clinic="clinic" :text="clinic.address" />
+		<ClinicRouteButton :clinic="clinic">
+			<ClinicLocationAddress :clinic="clinic" />
+		</ClinicRouteButton>
 
 		<ConsultationLanguages :languageIds="clinic.languageIds">
 			{{ t('LanguageAssistance') }}

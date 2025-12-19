@@ -1,5 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
-import type { ClinicList } from '~/interfaces/doctor';
+import type { ClinicList } from '~/interfaces/clinic';
 
 export default defineEventHandler(async (event): Promise<ClinicList> => {
 	try {
@@ -9,6 +9,8 @@ export default defineEventHandler(async (event): Promise<ClinicList> => {
 				c.name,
 				c.city_id as cityId,
 				c.address,
+				c.town,
+				c.postal_code as postalCode,
 				c.latitude,
 				c.longitude,
 				c.phone,

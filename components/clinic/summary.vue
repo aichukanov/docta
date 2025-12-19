@@ -51,7 +51,7 @@ const clinicLink = computed(() => ({
 
 				<div class="location-address">
 					<el-icon><LocationFilled /></el-icon>
-					<span>{{ clinic.address }}</span>
+					<ClinicLocationAddress :clinic="clinic" />
 				</div>
 
 				<ConsultationLanguages :languageIds="clinic.languageIds">

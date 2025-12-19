@@ -7,6 +7,8 @@ const cityIds = ref<number[]>([]);
 const languageIds = ref<number[]>([1]);
 const clinicName = ref('');
 const clinicAddress = ref('');
+const clinicTown = ref('');
+const clinicPostalCode = ref('');
 const clinicPhone = ref('');
 const clinicEmail = ref('');
 const clinicWebsite = ref('');
@@ -23,6 +25,8 @@ const clearFields = () => {
 	clinicName.value = '';
 	languageIds.value = [1];
 	clinicAddress.value = '';
+	clinicTown.value = '';
+	clinicPostalCode.value = '';
 	clinicLatitude.value = '';
 	clinicLongitude.value = '';
 	clinicPhone.value = '';
@@ -55,6 +59,8 @@ const addClinic = async () => {
 			cityId: cityIds.value[0],
 			languageIds: languageIds.value,
 			address: clinicAddress.value,
+			town: clinicTown.value,
+			postalCode: clinicPostalCode.value,
 			latitude: clinicLatitude.value,
 			longitude: clinicLongitude.value,
 			phone: clinicPhone.value,
@@ -81,6 +87,11 @@ const addClinic = async () => {
 
 			<AdminEditableField label="Название" v-model:value="clinicName" />
 			<AdminEditableField label="Адрес" v-model:value="clinicAddress" />
+			<AdminEditableField label="Town" v-model:value="clinicTown" />
+			<AdminEditableField
+				label="Postal code"
+				v-model:value="clinicPostalCode"
+			/>
 			<AdminEditableField label="Широта" v-model:value="clinicLatitude" />
 			<AdminEditableField label="Долгота" v-model:value="clinicLongitude" />
 			<AdminEditableField label="Телефон" v-model:value="clinicPhone" />

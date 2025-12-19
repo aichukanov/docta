@@ -10,11 +10,7 @@ import { Language, LanguageId } from '~/enums/language';
 import cityI18n from '~/i18n/city';
 import { getDoctorSpecialtySchemaOrgUrlById } from '~/common/schema-org-medical-specialty';
 import specialtyI18n from '~/i18n/specialty';
-
-const cityMessagesEn = cityI18n.messages.en;
-
-const getCityNameEn = (id: number): string | undefined =>
-	cityMessagesEn[`city_${id}`];
+import { combineI18nMessages } from '~/i18n/utils';
 
 // Маппинг ID языков на ISO 639-1 коды (используем существующие enum'ы)
 const LANGUAGE_CODES: Record<number, string> = {
@@ -46,6 +42,8 @@ interface OrganizationSchema extends SchemaOrgBase {
 		'@type': 'PostalAddress';
 		'addressCountry': 'ME';
 		'addressLocality'?: string;
+		'addressRegion'?: string;
+		'postalCode'?: string;
 		'streetAddress'?: string;
 	};
 }
@@ -76,6 +74,8 @@ interface PhysicianSchema extends SchemaOrgBase {
 			'@type': 'PostalAddress';
 			'streetAddress': string;
 			'addressLocality'?: string;
+			'addressRegion'?: string;
+			'postalCode'?: string;
 			'addressCountry': 'ME';
 		};
 		'telephone'?: string;
@@ -100,6 +100,8 @@ interface MedicalOrganizationSchema extends SchemaOrgBase {
 		'@type': 'PostalAddress';
 		'addressCountry': 'ME';
 		'addressLocality'?: string;
+		'addressRegion'?: string;
+		'postalCode'?: string;
 		'streetAddress'?: string;
 	};
 	'telephone'?: string;
@@ -232,11 +234,38 @@ function buildSameAs(
 }
 
 export const useSchemaOrg = () => {
-	const { locale } = useI18n({ useScope: 'global' });
-	const { t: tSpecialty } = useI18n(specialtyI18n);
+	const { t, locale } = useI18n({
+		useScope: 'local',
+		messages: combineI18nMessages([specialtyI18n, cityI18n]),
+	});
 
 	const isNonEmptyString = (value: unknown): value is string =>
 		typeof value === 'string' && value.length > 0;
+
+	const getCityName = (id: number): string | undefined => {
+		const key = `city_${id}`;
+		const value = t(key);
+		return value && value !== key ? value : undefined;
+	};
+
+	const buildClinicPostalAddress = (clinic: ClinicData) => {
+		const cityName = clinic.cityId ? getCityName(clinic.cityId) : undefined;
+		const town = typeof clinic.town === 'string' ? clinic.town.trim() : '';
+		const postalCode =
+			typeof clinic.postalCode === 'string' ? clinic.postalCode.trim() : '';
+
+		return clinic.address
+			? {
+					'@type': 'PostalAddress' as const,
+					'addressCountry': 'ME' as const,
+					'streetAddress': clinic.address,
+					// town (меньшая единица) кладём в locality, город из cityId — в region
+					'addressLocality': town || cityName || undefined,
+					'addressRegion': town ? cityName || undefined : undefined,
+					'postalCode': postalCode || undefined,
+			  }
+			: undefined;
+	};
 
 	const getBaseUrl = () => {
 		return 'https://omeda.me';
@@ -499,16 +528,7 @@ export const useSchemaOrg = () => {
 					'telephone': splitContacts(clinic.phone)[0] || undefined,
 					'email': splitContacts(clinic.email)[0] || undefined,
 					'sameAs': sameAs.length > 0 ? sameAs : undefined,
-					'address': clinic.address
-						? {
-								'@type': 'PostalAddress' as const,
-								'streetAddress': clinic.address,
-								'addressLocality': clinic.cityId
-									? getCityNameEn(clinic.cityId)
-									: undefined,
-								'addressCountry': 'ME',
-						  }
-						: undefined,
+					'address': buildClinicPostalAddress(clinic),
 				};
 			}),
 		} as PhysicianSchema;
@@ -554,14 +574,7 @@ export const useSchemaOrg = () => {
 				fragment: 'medicalorganization',
 			}),
 			name: clinic.name,
-			address: clinic.address
-				? {
-						'@type': 'PostalAddress',
-						'addressCountry': 'ME',
-						'addressLocality': getCityNameEn(clinic.cityId),
-						'streetAddress': clinic.address,
-				  }
-				: undefined,
+			address: buildClinicPostalAddress(clinic),
 		};
 
 		schema.telephone = splitContacts(clinic.phone)[0] || undefined;

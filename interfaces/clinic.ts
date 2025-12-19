@@ -16,6 +16,8 @@ export interface ClinicData extends ContactList, Coordinates {
 	name: string;
 	cityId: CityId;
 	address: string;
+	town?: string;
+	postalCode?: string;
 	languageIds: string;
 }
 

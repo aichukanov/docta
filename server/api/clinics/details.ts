@@ -22,6 +22,8 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 				c.name,
 				c.city_id as cityId,
 				c.address,
+				c.town,
+				c.postal_code as postalCode,
 				c.latitude,
 				c.longitude,
 				c.phone,
@@ -35,12 +37,14 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 				COALESCE(GROUP_CONCAT(DISTINCT cl.language_id ORDER BY cl.language_id), '1') as languageIds
 			FROM clinics c
 			LEFT JOIN clinic_languages cl ON c.id = cl.clinic_id
-			WHERE c.id = "${body.clinicId}"
+			WHERE c.id = ?
 			GROUP BY c.id;
 		`;
 
 		const connection = await getConnection();
-		const [clinicRows] = await connection.execute(clinicsQuery);
+		const [clinicRows] = await connection.execute(clinicsQuery, [
+			body.clinicId,
+		]);
 		await connection.end();
 
 		return clinicRows[0];

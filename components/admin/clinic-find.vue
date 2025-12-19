@@ -45,6 +45,14 @@ const addressModified = computed(
 	() => selectedClinic.value?.address !== clinicModel.value?.address,
 );
 
+const townModified = computed(
+	() => selectedClinic.value?.town !== clinicModel.value?.town,
+);
+
+const postalCodeModified = computed(
+	() => selectedClinic.value?.postalCode !== clinicModel.value?.postalCode,
+);
+
 const latitudeModified = computed(
 	() => selectedClinic.value?.latitude !== clinicModel.value?.latitude,
 );
@@ -105,6 +113,8 @@ const hasChanges = computed(() => {
 	return (
 		nameModified.value ||
 		addressModified.value ||
+		townModified.value ||
+		postalCodeModified.value ||
 		latitudeModified.value ||
 		longitudeModified.value ||
 		phoneModified.value ||
@@ -174,6 +184,8 @@ watch(selectedClinic, (clinic) => {
 	if (clinic) {
 		clinicModel.value = {
 			...clinic,
+			town: clinic.town || '',
+			postalCode: clinic.postalCode || '',
 			languageIds: clinic.languageIds.split(',').map(Number),
 		};
 		cityIds.value = [clinic.cityId];
@@ -203,6 +215,20 @@ watch(selectedClinic, (clinic) => {
 				:readonly="!editable"
 				:modified="addressModified"
 				@reset="clinicModel.address = selectedClinic?.address"
+			/>
+			<AdminEditableField
+				label="Town"
+				v-model:value="clinicModel.town"
+				:readonly="!editable"
+				:modified="townModified"
+				@reset="clinicModel.town = selectedClinic?.town || ''"
+			/>
+			<AdminEditableField
+				label="Postal code"
+				v-model:value="clinicModel.postalCode"
+				:readonly="!editable"
+				:modified="postalCodeModified"
+				@reset="clinicModel.postalCode = selectedClinic?.postalCode || ''"
 			/>
 			<AdminEditableField
 				label="Широта"

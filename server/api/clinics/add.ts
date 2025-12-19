@@ -31,14 +31,16 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 		}
 
 		const addClinicQuery = `
-			INSERT INTO clinics (name, city_id, address, latitude, longitude, phone, email, website, facebook, instagram, telegram, whatsapp, viber)
-			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+			INSERT INTO clinics (name, city_id, address, town, postal_code, latitude, longitude, phone, email, website, facebook, instagram, telegram, whatsapp, viber)
+			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 		`;
 
 		const addClinicQueryParams = [
 			body.name,
 			body.cityId,
 			body.address,
+			body.town || '',
+			body.postalCode || '',
 			body.latitude,
 			body.longitude,
 			body.phone,

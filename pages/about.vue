@@ -59,23 +59,23 @@ const homeLink = computed(() => ({
 </script>
 
 <template>
-	<div class="about-page">
+	<main class="about-page" role="main" :aria-label="t('AriaMainContent')">
 		<div class="about-page__container">
-			<div class="about-page__header">
-			<div class="about-page__breadcrumbs">
-				<NuxtLink class="about-page__crumb" :to="homeLink">{{
-					t('BreadcrumbHome')
-				}}</NuxtLink>
-				<span class="about-page__sep">/</span>
-				<span class="about-page__crumb is-current">{{
-					t('BreadcrumbAbout')
-				}}</span>
-			</div>
+			<header class="about-page__header">
+				<nav class="about-page__breadcrumbs" :aria-label="t('AriaBreadcrumbs')">
+					<NuxtLink class="about-page__crumb" :to="homeLink">{{
+						t('BreadcrumbHome')
+					}}</NuxtLink>
+					<span class="about-page__sep" aria-hidden="true">/</span>
+					<span class="about-page__crumb is-current" aria-current="page">{{
+						t('BreadcrumbAbout')
+					}}</span>
+				</nav>
 				<h1 class="about-page__title">{{ t('Title') }}</h1>
 				<p class="about-page__subtitle">{{ t('Subtitle') }}</p>
-			</div>
+			</header>
 
-			<div class="about-page__grid">
+			<article class="about-page__grid" :aria-label="t('AriaAboutContent')">
 				<section class="about-card">
 					<h2 class="about-card__title">{{ t('WhatWeDoTitle') }}</h2>
 					<p class="about-card__text">{{ t('WhatWeDoP1') }}</p>
@@ -91,7 +91,7 @@ const homeLink = computed(() => ({
 					</ul>
 				</section>
 
-				<section class="about-card about-card--warning">
+				<section class="about-card about-card--warning" role="alert">
 					<h2 class="about-card__title">{{ t('ImportantTitle') }}</h2>
 					<ul class="about-card__list">
 						<li>{{ t('ImportantLi1') }}</li>
@@ -106,9 +106,9 @@ const homeLink = computed(() => ({
 					<p class="about-card__text">{{ t('ResponsibilityP1') }}</p>
 					<p class="about-card__text">{{ t('ResponsibilityP2') }}</p>
 				</section>
-			</div>
+			</article>
 		</div>
-	</div>
+	</main>
 </template>
 
 <i18n lang="json">
@@ -131,7 +131,10 @@ const homeLink = computed(() => ({
 		"ImportantLi4": "The site is not responsible for the actions of clinics and doctors.",
 		"ResponsibilityTitle": "Limitations of responsibility",
 		"ResponsibilityP1": "Information on the site may become outdated and may contain inaccuracies from source materials.",
-		"ResponsibilityP2": "Before making any decisions about health, please consult a qualified medical professional and verify details with the clinic or laboratory."
+		"ResponsibilityP2": "Before making any decisions about health, please consult a qualified medical professional and verify details with the clinic or laboratory.",
+		"AriaMainContent": "Main content",
+		"AriaBreadcrumbs": "Page navigation path",
+		"AriaAboutContent": "Information about the project"
 	},
 	"ru": {
 		"Title": "О проекте",
@@ -151,7 +154,10 @@ const homeLink = computed(() => ({
 		"ImportantLi4": "Сайт не несёт ответственности за действия клиник и докторов.",
 		"ResponsibilityTitle": "Ограничение ответственности",
 		"ResponsibilityP1": "Информация на сайте может устаревать и содержать неточности, унаследованные из исходных материалов.",
-		"ResponsibilityP2": "Перед принятием решений по здоровью проконсультируйтесь с врачом и уточняйте детали в клинике или лаборатории."
+		"ResponsibilityP2": "Перед принятием решений по здоровью проконсультируйтесь с врачом и уточняйте детали в клинике или лаборатории.",
+		"AriaMainContent": "Основное содержимое",
+		"AriaBreadcrumbs": "Навигационная цепочка",
+		"AriaAboutContent": "Информация о проекте"
 	},
 	"sr": {
 		"Title": "O projektu",
@@ -171,7 +177,10 @@ const homeLink = computed(() => ({
 		"ImportantLi4": "Sajt ne snosi odgovornost za postupke klinika i lekara.",
 		"ResponsibilityTitle": "Ograničenje odgovornosti",
 		"ResponsibilityP1": "Informacije na sajtu mogu zastareti i mogu sadržati netačnosti iz izvora.",
-		"ResponsibilityP2": "Pre donošenja odluka o zdravlju posavetujte se sa lekarom i proverite detalje u klinici ili laboratoriji."
+		"ResponsibilityP2": "Pre donošenja odluka o zdravlju posavetujte se sa lekarom i proverite detalje u klinici ili laboratoriji.",
+		"AriaMainContent": "Glavni sadržaj",
+		"AriaBreadcrumbs": "Navigaciona putanja",
+		"AriaAboutContent": "Informacije o projektu"
 	},
 	"de": {
 		"Title": "Über das Projekt",
@@ -191,7 +200,10 @@ const homeLink = computed(() => ({
 		"ImportantLi4": "Die Website übernimmt keine Verantwortung für Handlungen von Kliniken und Ärzten.",
 		"ResponsibilityTitle": "Haftungsbeschränkung",
 		"ResponsibilityP1": "Informationen auf der Website können veralten und Ungenauigkeiten aus den Quellen enthalten.",
-		"ResponsibilityP2": "Bevor Sie gesundheitliche Entscheidungen treffen, konsultieren Sie bitte medizinisches Fachpersonal und prüfen Sie Details bei der Klinik oder dem Labor."
+		"ResponsibilityP2": "Bevor Sie gesundheitliche Entscheidungen treffen, konsultieren Sie bitte medizinisches Fachpersonal und prüfen Sie Details bei der Klinik oder dem Labor.",
+		"AriaMainContent": "Hauptinhalt",
+		"AriaBreadcrumbs": "Navigationspfad",
+		"AriaAboutContent": "Informationen über das Projekt"
 	},
 	"tr": {
 		"Title": "Proje hakkında",
@@ -211,7 +223,10 @@ const homeLink = computed(() => ({
 		"ImportantLi4": "Site, kliniklerin ve doktorların eylemlerinden sorumlu değildir.",
 		"ResponsibilityTitle": "Sorumluluk sınırı",
 		"ResponsibilityP1": "Sitedeki bilgiler zamanla güncelliğini yitirebilir ve kaynaklardan gelen hatalar içerebilir.",
-		"ResponsibilityP2": "Sağlıkla ilgili kararlar almadan önce bir doktora danışın ve ayrıntıları klinik veya laboratuvarla doğrulayın."
+		"ResponsibilityP2": "Sağlıkla ilgili kararlar almadan önce bir doktora danışın ve ayrıntıları klinik veya laboratuvarla doğrulayın.",
+		"AriaMainContent": "Ana içerik",
+		"AriaBreadcrumbs": "Navigasyon yolu",
+		"AriaAboutContent": "Proje hakkında bilgi"
 	}
 }
 </i18n>

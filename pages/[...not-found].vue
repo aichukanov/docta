@@ -4,20 +4,33 @@ const { t } = useI18n();
 </script>
 
 <template>
-	<div class="not-found-page">
+	<main class="not-found-page" role="main" :aria-label="t('AriaErrorMessage')">
 		<ErrorBlock :code="404" :title="t('Error404Title')" />
-	</div>
+	</main>
 </template>
 
 <i18n lang="json">
 {
-	"ru": { "Error404Title": "Страница не найдена" },
-	"en": { "Error404Title": "Page not found" },
-	"sr": { "Error404Title": "Stranica nije pronađena" },
-	"ba": { "Error404Title": "Stranica nije pronađena" },
-	"me": { "Error404Title": "Stranica nije pronađena" },
-	"de": { "Error404Title": "Seite nicht gefunden" },
-	"tr": { "Error404Title": "Sayfa bulunamadı" }
+	"en": {
+		"Error404Title": "Page not found",
+		"AriaErrorMessage": "Error message"
+	},
+	"ru": {
+		"Error404Title": "Страница не найдена",
+		"AriaErrorMessage": "Сообщение об ошибке"
+	},
+	"sr": {
+		"Error404Title": "Stranica nije pronađena",
+		"AriaErrorMessage": "Poruka o grešci"
+	},
+	"de": {
+		"Error404Title": "Seite nicht gefunden",
+		"AriaErrorMessage": "Fehlermeldung"
+	},
+	"tr": {
+		"Error404Title": "Sayfa bulunamadı",
+		"AriaErrorMessage": "Hata mesajı"
+	}
 }
 </i18n>
 

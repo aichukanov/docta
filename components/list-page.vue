@@ -112,58 +112,90 @@ onMounted(async () => {
 </script>
 
 <template>
-	<div class="list-page">
+	<div class="list-page" role="main" :aria-label="t('AriaMainContent')">
 		<div ref="listRef" class="list-sidebar">
 			<h1 class="page-title">{{ pageTitle }}</h1>
 
 			<div class="list-container">
-				<div class="filters-sidebar">
+				<aside
+					class="filters-sidebar"
+					role="search"
+					:aria-label="t('AriaSearchFilters')"
+				>
 					<slot name="filters" />
-				</div>
+				</aside>
 
-				<div class="list-content">
+				<section
+					class="list-content"
+					:aria-label="t('AriaSearchResults')"
+					:aria-busy="isLoading || clinicsStore.isLoadingClinics"
+				>
 					<div
 						v-if="isLoading || clinicsStore.isLoadingClinics"
 						class="loading"
+						role="status"
+						aria-live="polite"
+						:aria-label="t('AriaLoadingResults')"
 					>
-						<!-- todo: skeleton -->
-						<div class="loading-spinner"></div>
+						<div class="loading-spinner" aria-hidden="true"></div>
 						<p>{{ t('Loading') }}</p>
 					</div>
 
 					<div v-else class="list-wrapper">
-						<div v-if="list.length === 0" class="empty-state">
+						<div
+							v-if="list.length === 0"
+							class="empty-state"
+							role="status"
+							aria-live="polite"
+						>
 							<p>{{ t('NotFound') }}</p>
-							<!-- todo: empty state -->
 						</div>
 
-						<template v-for="item in listOnPage" :key="item.id">
-							<slot name="card" :item="item" :showClinicOnMap="showClinicOnMap">
-								<ListCard
-									:title="item.name"
-									:itemId="item.id"
-									:clinicIds="item.clinicIds"
-									:clinicPrices="item.clinicPrices"
-									:detailsRouteName="detailsRouteName"
-									:detailsParamName="detailsParamName"
-									@show-on-map="showClinicOnMap($event)"
+						<ul
+							v-else
+							class="results-list"
+							role="list"
+							:aria-label="t('AriaResultsList')"
+						>
+							<li
+								v-for="item in listOnPage"
+								:key="item.id"
+								role="listitem"
+								class="results-list-item"
+							>
+								<slot
+									name="card"
+									:item="item"
+									:showClinicOnMap="showClinicOnMap"
 								>
-									<slot name="item" :item="item" />
-								</ListCard>
-							</slot>
-						</template>
+									<ListCard
+										:title="item.name"
+										:itemId="item.id"
+										:clinicIds="item.clinicIds"
+										:clinicPrices="item.clinicPrices"
+										:detailsRouteName="detailsRouteName"
+										:detailsParamName="detailsParamName"
+										@show-on-map="showClinicOnMap($event)"
+									>
+										<slot name="item" :item="item" />
+									</ListCard>
+								</slot>
+							</li>
+						</ul>
 					</div>
 
-					<Pagination
-						:total="totalCount"
-						:page-size="PAGE_LIMIT"
-						v-model:current-page="pageNumber"
-					/>
-				</div>
+					<nav :aria-label="t('AriaPagination')">
+						<Pagination
+							:total="totalCount"
+							:page-size="PAGE_LIMIT"
+							v-model:current-page="pageNumber"
+						/>
+					</nav>
+				</section>
 			</div>
 		</div>
 
-		<div class="map-container">
+		<aside class="map-container" :aria-label="t('AriaMapSection')">
 			<ClinicServicesMap
 				ref="mapRef"
 				:services="mapClinics ? [] : list"
@@ -177,7 +209,7 @@ onMounted(async () => {
 					<slot name="map-clinic-popup" v-bind="slotProps" />
 				</template>
 			</ClinicServicesMap>
-		</div>
+		</aside>
 	</div>
 </template>
 
@@ -237,6 +269,19 @@ onMounted(async () => {
 	display: flex;
 	flex-direction: column;
 	gap: @base-padding;
+}
+
+.results-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: @base-padding;
+}
+
+.results-list-item {
+	display: block;
 }
 
 .loading {
@@ -317,23 +362,58 @@ onMounted(async () => {
 {
 	"en": {
 		"Loading": "Loading...",
-		"NotFound": "No results found"
+		"NotFound": "No results found",
+		"AriaMainContent": "Main content",
+		"AriaSearchFilters": "Search filters",
+		"AriaSearchResults": "Search results",
+		"AriaResultsList": "List of results",
+		"AriaLoadingResults": "Loading results",
+		"AriaPagination": "Results pagination",
+		"AriaMapSection": "Map with locations"
 	},
 	"ru": {
 		"Loading": "Загрузка...",
-		"NotFound": "Результаты не найдены"
+		"NotFound": "Результаты не найдены",
+		"AriaMainContent": "Основное содержимое",
+		"AriaSearchFilters": "Фильтры поиска",
+		"AriaSearchResults": "Результаты поиска",
+		"AriaResultsList": "Список результатов",
+		"AriaLoadingResults": "Загрузка результатов",
+		"AriaPagination": "Постраничная навигация",
+		"AriaMapSection": "Карта с расположениями"
 	},
 	"sr": {
 		"Loading": "Učitavanje...",
-		"NotFound": "Rezultati nisu pronađeni"
+		"NotFound": "Rezultati nisu pronađeni",
+		"AriaMainContent": "Glavni sadržaj",
+		"AriaSearchFilters": "Filteri pretrage",
+		"AriaSearchResults": "Rezultati pretrage",
+		"AriaResultsList": "Lista rezultata",
+		"AriaLoadingResults": "Učitavanje rezultata",
+		"AriaPagination": "Navigacija po stranicama",
+		"AriaMapSection": "Mapa sa lokacijama"
 	},
 	"de": {
 		"Loading": "Laden...",
-		"NotFound": "Keine Ergebnisse gefunden"
+		"NotFound": "Keine Ergebnisse gefunden",
+		"AriaMainContent": "Hauptinhalt",
+		"AriaSearchFilters": "Suchfilter",
+		"AriaSearchResults": "Suchergebnisse",
+		"AriaResultsList": "Ergebnisliste",
+		"AriaLoadingResults": "Ergebnisse werden geladen",
+		"AriaPagination": "Seitennavigation",
+		"AriaMapSection": "Karte mit Standorten"
 	},
 	"tr": {
 		"Loading": "Yükleniyor...",
-		"NotFound": "Sonuç bulunamadı"
+		"NotFound": "Sonuç bulunamadı",
+		"AriaMainContent": "Ana içerik",
+		"AriaSearchFilters": "Arama filtreleri",
+		"AriaSearchResults": "Arama sonuçları",
+		"AriaResultsList": "Sonuç listesi",
+		"AriaLoadingResults": "Sonuçlar yükleniyor",
+		"AriaPagination": "Sayfa navigasyonu",
+		"AriaMapSection": "Konumlu harita"
 	}
 }
 </i18n>

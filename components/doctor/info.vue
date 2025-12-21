@@ -6,9 +6,11 @@ const props = withDefaults(
 	defineProps<{
 		service: DoctorData;
 		short?: boolean;
+		isMainHeading?: boolean;
 	}>(),
 	{
 		short: false,
+		isMainHeading: false,
 	},
 );
 
@@ -29,7 +31,7 @@ const doctorLink = computed(() => ({
 			:size="short ? 40 : 120"
 		/>
 		<div class="doctor-info">
-			<h3 class="doctor-name">
+			<component :is="isMainHeading ? 'h1' : 'h3'" class="doctor-name">
 				<NuxtLink :to="doctorLink" class="doctor-name-link">
 					{{ service.name }}
 				</NuxtLink>
@@ -39,7 +41,7 @@ const doctorLink = computed(() => ({
 				>
 					{{ service.professionalTitle }}
 				</div>
-			</h3>
+			</component>
 			<DoctorSpecialties :doctor="service" />
 			<ConsultationLanguages v-if="!short" :languageIds="service.languageIds">
 				{{ t('DoctorLanguages') }}

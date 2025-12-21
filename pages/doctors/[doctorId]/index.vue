@@ -211,7 +211,7 @@ watchEffect(() => {
 		:notFoundText="t('DoctorNotFound')"
 	>
 		<template #info>
-			<DoctorInfo v-if="doctorData" :service="doctorData" />
+			<DoctorInfo v-if="doctorData" :service="doctorData" isMainHeading />
 		</template>
 	</DetailsPage>
 </template>

@@ -47,22 +47,35 @@ const onMapReady = () => {
 </script>
 
 <template>
-	<div class="details-page">
-		<div class="details-page-header">
+	<div class="details-page" role="main" :aria-label="t('AriaMainContent')">
+		<nav class="details-page-header" :aria-label="t('AriaBackToSearch')">
 			<el-button @click="backToSearch()" :icon="ArrowLeft">
 				{{ t('ToSearchPage') }}
 			</el-button>
-		</div>
-		<div class="details-page-content">
-			<div v-if="isLoading" class="loading">
-				<div class="loading-spinner"></div>
+		</nav>
+		<div class="details-page-content" :aria-busy="isLoading">
+			<div
+				v-if="isLoading"
+				class="loading"
+				role="status"
+				aria-live="polite"
+				:aria-label="t('AriaLoading')"
+			>
+				<div class="loading-spinner" aria-hidden="true"></div>
 				<p>{{ loadingText }}</p>
 			</div>
 			<div v-else-if="isFound" class="details-info-container">
-				<div class="details-info-wrapper">
+				<article
+					class="details-info-wrapper"
+					:aria-label="t('AriaDetailsContent')"
+				>
 					<slot name="info" :showClinicOnMap="showClinicOnMap" />
 					<slot name="clinics" :showClinicOnMap="showClinicOnMap">
-						<div class="clinics-list">
+						<section
+							class="clinics-list"
+							role="list"
+							:aria-label="t('AriaClinicsSection')"
+						>
 							<ClinicSummary
 								v-for="clinic in clinics"
 								:key="clinic.id"
@@ -70,19 +83,27 @@ const onMapReady = () => {
 								:priceInfo="getPriceInfo(clinic.id)"
 								linkable
 								@show-on-map="showClinicOnMap(clinic)"
+								role="listitem"
 							/>
-						</div>
+						</section>
 					</slot>
-				</div>
-				<ClinicServicesMap
-					ref="mapRef"
-					:services="[]"
-					:clinics="clinics"
-					:showAllClinics="true"
-					@ready="onMapReady"
-				/>
+				</article>
+				<aside :aria-label="t('AriaMapSection')">
+					<ClinicServicesMap
+						ref="mapRef"
+						:services="[]"
+						:clinics="clinics"
+						:showAllClinics="true"
+						@ready="onMapReady"
+					/>
+				</aside>
 			</div>
-			<div v-else class="details-info-container">
+			<div
+				v-else
+				class="details-info-container"
+				role="status"
+				aria-live="polite"
+			>
 				<p>{{ notFoundText }}</p>
 			</div>
 		</div>
@@ -180,25 +201,49 @@ const onMapReady = () => {
 <i18n lang="json">
 {
 	"en": {
-		"ToSearchPage": "Back to search"
+		"ToSearchPage": "Back to search",
+		"AriaMainContent": "Main content",
+		"AriaBackToSearch": "Back to search results",
+		"AriaLoading": "Loading",
+		"AriaDetailsContent": "Detailed information",
+		"AriaClinicsSection": "Available at clinics",
+		"AriaMapSection": "Map with locations"
 	},
 	"ru": {
-		"ToSearchPage": "К поиску"
+		"ToSearchPage": "К поиску",
+		"AriaMainContent": "Основное содержимое",
+		"AriaBackToSearch": "Вернуться к результатам поиска",
+		"AriaLoading": "Загрузка",
+		"AriaDetailsContent": "Подробная информация",
+		"AriaClinicsSection": "Доступно в клиниках",
+		"AriaMapSection": "Карта с расположениями"
 	},
 	"de": {
-		"ToSearchPage": "Zurück zur Suche"
+		"ToSearchPage": "Zurück zur Suche",
+		"AriaMainContent": "Hauptinhalt",
+		"AriaBackToSearch": "Zurück zu den Suchergebnissen",
+		"AriaLoading": "Laden",
+		"AriaDetailsContent": "Detaillierte Informationen",
+		"AriaClinicsSection": "Verfügbar in Kliniken",
+		"AriaMapSection": "Karte mit Standorten"
 	},
 	"tr": {
-		"ToSearchPage": "Aramaya geri dön"
+		"ToSearchPage": "Aramaya geri dön",
+		"AriaMainContent": "Ana içerik",
+		"AriaBackToSearch": "Arama sonuçlarına dön",
+		"AriaLoading": "Yükleniyor",
+		"AriaDetailsContent": "Detaylı bilgiler",
+		"AriaClinicsSection": "Kliniklerde mevcut",
+		"AriaMapSection": "Konumlu harita"
 	},
 	"sr": {
-		"ToSearchPage": "Nazad na pretragu"
-	},
-	"ba": {
-		"ToSearchPage": "Nazad na pretragu"
-	},
-	"me": {
-		"ToSearchPage": "Nazad na pretragu"
+		"ToSearchPage": "Nazad na pretragu",
+		"AriaMainContent": "Glavni sadržaj",
+		"AriaBackToSearch": "Nazad na rezultate pretrage",
+		"AriaLoading": "Učitavanje",
+		"AriaDetailsContent": "Detaljne informacije",
+		"AriaClinicsSection": "Dostupno u klinikama",
+		"AriaMapSection": "Mapa sa lokacijama"
 	}
 }
 </i18n>

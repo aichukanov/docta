@@ -183,38 +183,39 @@ watchEffect(() => {
 		:notFoundText="t('ClinicNotFound')"
 	>
 		<template #info="{ showClinicOnMap }">
-			<div v-if="clinicData" class="clinic-header">
+			<header v-if="clinicData" class="clinic-header">
 				<div class="clinic-main-info">
 					<h1 class="clinic-title">{{ clinicData.name }}</h1>
 
-					<div class="clinic-address">
-						<LocationFilled />
+					<address class="clinic-address">
+						<LocationFilled aria-hidden="true" />
 						<span>{{
 							formatClinicAddressLine({
 								clinic: clinicData,
 								cityName: t(`city_${clinicData.cityId}`),
 							})
 						}}</span>
-					</div>
+					</address>
 
 					<ConsultationLanguages :languageIds="clinicData.languageIds">
 						{{ t('LanguageAssistance') }}
 					</ConsultationLanguages>
 
-					<div class="clinic-actions">
+					<div class="clinic-actions" role="group">
 						<ClinicShowOnMapButton
 							:clinic="clinicData"
+							:aria-label="t('AriaShowOnMap')"
 							@click="showClinicOnMap(clinicData)"
 						/>
 						<ClinicRouteButton :clinic="clinicData" />
 					</div>
 				</div>
 
-				<div class="clinic-contacts">
+				<section class="clinic-contacts" :aria-label="t('AriaContactsSection')">
 					<h2 class="contacts-title">{{ t('Contacts') }}</h2>
 					<ContactsList :list="clinicData" />
-				</div>
-			</div>
+				</section>
+			</header>
 		</template>
 
 		<template #clinics>
@@ -371,7 +372,12 @@ watchEffect(() => {
 		"MedicalServicesAtClinic": "Medical services",
 		"LabTestsAtClinic": "Lab tests",
 		"MedicationsAtClinic": "Medications",
-		"NoServicesAtClinic": "No services available at this clinic"
+		"NoServicesAtClinic": "No services available at this clinic",
+		"AriaClinicInfo": "Clinic information",
+		"AriaClinicAddress": "Clinic address",
+		"AriaClinicActions": "Clinic actions",
+		"AriaClinicContacts": "Clinic contacts",
+		"AriaClinicServices": "Clinic services"
 	},
 	"ru": {
 		"ClinicLanguageAssistance": "Предоставляется сопровождение на {language} языке.",
@@ -380,7 +386,12 @@ watchEffect(() => {
 		"MedicalServicesAtClinic": "Медицинские услуги",
 		"LabTestsAtClinic": "Анализы",
 		"MedicationsAtClinic": "Лекарства",
-		"NoServicesAtClinic": "В этой клинике нет доступных услуг"
+		"NoServicesAtClinic": "В этой клинике нет доступных услуг",
+		"AriaClinicInfo": "Информация о клинике",
+		"AriaClinicAddress": "Адрес клиники",
+		"AriaClinicActions": "Действия с клиникой",
+		"AriaClinicContacts": "Контакты клиники",
+		"AriaClinicServices": "Услуги клиники"
 	},
 	"de": {
 		"ClinicLanguageAssistance": "Unterstützung wird in {language} bereitgestellt.",
@@ -389,7 +400,12 @@ watchEffect(() => {
 		"MedicalServicesAtClinic": "Medizinische Dienstleistungen",
 		"LabTestsAtClinic": "Laboruntersuchungen",
 		"MedicationsAtClinic": "Medikamente",
-		"NoServicesAtClinic": "Keine Dienstleistungen in dieser Klinik verfügbar"
+		"NoServicesAtClinic": "Keine Dienstleistungen in dieser Klinik verfügbar",
+		"AriaClinicInfo": "Klinikinformationen",
+		"AriaClinicAddress": "Klinikadresse",
+		"AriaClinicActions": "Klinikaktionen",
+		"AriaClinicContacts": "Klinikkontakte",
+		"AriaClinicServices": "Klinikleistungen"
 	},
 	"tr": {
 		"ClinicLanguageAssistance": "{language} dilinde destek sağlanır.",
@@ -398,7 +414,12 @@ watchEffect(() => {
 		"MedicalServicesAtClinic": "Tıbbi hizmetler",
 		"LabTestsAtClinic": "Laboratuvar testleri",
 		"MedicationsAtClinic": "İlaçlar",
-		"NoServicesAtClinic": "Bu klinikte hizmet bulunmamaktadır"
+		"NoServicesAtClinic": "Bu klinikte hizmet bulunmamaktadır",
+		"AriaClinicInfo": "Klinik bilgileri",
+		"AriaClinicAddress": "Klinik adresi",
+		"AriaClinicActions": "Klinik işlemleri",
+		"AriaClinicContacts": "Klinik iletişim",
+		"AriaClinicServices": "Klinik hizmetleri"
 	},
 	"sr": {
 		"ClinicLanguageAssistance": "Pomoć se pruža na {language} jeziku.",
@@ -407,7 +428,12 @@ watchEffect(() => {
 		"MedicalServicesAtClinic": "Medicinske usluge",
 		"LabTestsAtClinic": "Laboratorijske analize",
 		"MedicationsAtClinic": "Lekovi",
-		"NoServicesAtClinic": "Nema dostupnih usluga u ovoj klinici"
+		"NoServicesAtClinic": "Nema dostupnih usluga u ovoj klinici",
+		"AriaClinicInfo": "Informacije o klinici",
+		"AriaClinicAddress": "Adresa klinike",
+		"AriaClinicActions": "Akcije klinike",
+		"AriaClinicContacts": "Kontakti klinike",
+		"AriaClinicServices": "Usluge klinike"
 	}
 }
 </i18n>
@@ -443,6 +469,7 @@ watchEffect(() => {
 	gap: var(--spacing-xs);
 	font-size: var(--font-size-md);
 	color: var(--color-text-secondary);
+	font-style: normal;
 
 	svg {
 		width: 18px;

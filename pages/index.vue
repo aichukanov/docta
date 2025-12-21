@@ -67,74 +67,91 @@ schemaOrgStore.setSchemas([
 </script>
 
 <template>
-	<div class="main-page">
-		<section class="hero">
+	<main class="main-page" role="main" :aria-label="t('AriaMainContent')">
+		<section class="hero" :aria-label="t('AriaHeroSection')">
 			<div class="hero__content">
 				<h1 class="hero__title">{{ t('MainPageTitle') }}</h1>
 				<p class="hero__subtitle">{{ t('MainPageDescription') }}</p>
 			</div>
 		</section>
 
-		<section class="bento">
-			<NuxtLink :to="doctorsPageLink" class="bento__card bento__card--primary">
-				<div class="bento__icon">
+		<nav class="bento" :aria-label="t('AriaNavigationCards')">
+			<NuxtLink
+				:to="doctorsPageLink"
+				class="bento__card bento__card--primary"
+				:aria-label="t('AriaLinkToDoctors')"
+			>
+				<div class="bento__icon" aria-hidden="true">
 					<IconDoctor />
 				</div>
 				<div class="bento__text">
 					<h2 class="bento__title">{{ t('Doctors') }}</h2>
 					<p class="bento__desc">{{ t('DoctorsDescription') }}</p>
 				</div>
-				<span class="bento__arrow">→</span>
+				<span class="bento__arrow" aria-hidden="true">→</span>
 			</NuxtLink>
 
 			<NuxtLink
 				:to="clinicsPageLink"
 				class="bento__card bento__card--secondary"
+				:aria-label="t('AriaLinkToClinics')"
 			>
-				<div class="bento__icon">
+				<div class="bento__icon" aria-hidden="true">
 					<IconClinic />
 				</div>
 				<div class="bento__text">
 					<h2 class="bento__title">{{ t('Clinics') }}</h2>
 					<p class="bento__desc">{{ t('ClinicsDescription') }}</p>
 				</div>
-				<span class="bento__arrow">→</span>
+				<span class="bento__arrow" aria-hidden="true">→</span>
 			</NuxtLink>
 
-			<NuxtLink :to="labTestsPageLink" class="bento__card">
-				<div class="bento__icon">
+			<NuxtLink
+				:to="labTestsPageLink"
+				class="bento__card"
+				:aria-label="t('AriaLinkToLabTests')"
+			>
+				<div class="bento__icon" aria-hidden="true">
 					<IconLabTest />
 				</div>
 				<div class="bento__text">
 					<h2 class="bento__title">{{ t('LabTests') }}</h2>
 					<p class="bento__desc">{{ t('LabTestsDescription') }}</p>
 				</div>
-				<span class="bento__arrow">→</span>
+				<span class="bento__arrow" aria-hidden="true">→</span>
 			</NuxtLink>
 
-			<NuxtLink :to="medicalServicesPageLink" class="bento__card">
-				<div class="bento__icon">
+			<NuxtLink
+				:to="medicalServicesPageLink"
+				class="bento__card"
+				:aria-label="t('AriaLinkToServices')"
+			>
+				<div class="bento__icon" aria-hidden="true">
 					<IconMedicalService />
 				</div>
 				<div class="bento__text">
 					<h2 class="bento__title">{{ t('MedicalServices') }}</h2>
 					<p class="bento__desc">{{ t('MedicalServicesDescription') }}</p>
 				</div>
-				<span class="bento__arrow">→</span>
+				<span class="bento__arrow" aria-hidden="true">→</span>
 			</NuxtLink>
 
-			<NuxtLink :to="medicationsPageLink" class="bento__card">
-				<div class="bento__icon">
+			<NuxtLink
+				:to="medicationsPageLink"
+				class="bento__card"
+				:aria-label="t('AriaLinkToMedications')"
+			>
+				<div class="bento__icon" aria-hidden="true">
 					<IconMedication />
 				</div>
 				<div class="bento__text">
 					<h2 class="bento__title">{{ t('Medications') }}</h2>
 					<p class="bento__desc">{{ t('MedicationsDescription') }}</p>
 				</div>
-				<span class="bento__arrow">→</span>
+				<span class="bento__arrow" aria-hidden="true">→</span>
 			</NuxtLink>
-		</section>
-	</div>
+		</nav>
+	</main>
 </template>
 
 <i18n lang="json">
@@ -151,7 +168,15 @@ schemaOrgStore.setSchemas([
 		"MedicalServices": "Medical Services",
 		"MedicalServicesDescription": "Healthcare services and procedures available in Montenegro",
 		"Medications": "Medications",
-		"MedicationsDescription": "Find pharmacies and where to buy medications"
+		"MedicationsDescription": "Find pharmacies and where to buy medications",
+		"AriaMainContent": "Main content",
+		"AriaHeroSection": "Welcome section",
+		"AriaNavigationCards": "Navigation to site sections",
+		"AriaLinkToDoctors": "Go to doctors directory",
+		"AriaLinkToClinics": "Go to clinics directory",
+		"AriaLinkToLabTests": "Go to laboratory tests",
+		"AriaLinkToServices": "Go to medical services",
+		"AriaLinkToMedications": "Go to medications catalog"
 	},
 	"ru": {
 		"MainPageTitle": "Медицинские услуги в Черногории",
@@ -165,7 +190,15 @@ schemaOrgStore.setSchemas([
 		"MedicalServices": "Медицинские услуги",
 		"MedicalServicesDescription": "Медицинские услуги и процедуры, доступные в Черногории",
 		"Medications": "Лекарства",
-		"MedicationsDescription": "Найдите аптеки и где купить лекарства"
+		"MedicationsDescription": "Найдите аптеки и где купить лекарства",
+		"AriaMainContent": "Основное содержимое",
+		"AriaHeroSection": "Приветственный раздел",
+		"AriaNavigationCards": "Навигация по разделам сайта",
+		"AriaLinkToDoctors": "Перейти к каталогу врачей",
+		"AriaLinkToClinics": "Перейти к каталогу клиник",
+		"AriaLinkToLabTests": "Перейти к лабораторным анализам",
+		"AriaLinkToServices": "Перейти к медицинским услугам",
+		"AriaLinkToMedications": "Перейти к каталогу лекарств"
 	},
 	"sr": {
 		"MainPageTitle": "Medicinske usluge u Crnoj Gori",
@@ -179,7 +212,15 @@ schemaOrgStore.setSchemas([
 		"MedicalServices": "Medicinske usluge",
 		"MedicalServicesDescription": "Medicinske usluge i procedure dostupne u Crnoj Gori",
 		"Medications": "Lekovi",
-		"MedicationsDescription": "Pronađite apoteke i gde kupiti lekove"
+		"MedicationsDescription": "Pronađite apoteke i gde kupiti lekove",
+		"AriaMainContent": "Glavni sadržaj",
+		"AriaHeroSection": "Sekcija dobrodošlice",
+		"AriaNavigationCards": "Navigacija do sekcija sajta",
+		"AriaLinkToDoctors": "Idi na direktorijum lekara",
+		"AriaLinkToClinics": "Idi na direktorijum klinika",
+		"AriaLinkToLabTests": "Idi na laboratorijske analize",
+		"AriaLinkToServices": "Idi na medicinske usluge",
+		"AriaLinkToMedications": "Idi na katalog lekova"
 	},
 	"de": {
 		"MainPageTitle": "Gesundheitsdienste in Montenegro",
@@ -193,7 +234,15 @@ schemaOrgStore.setSchemas([
 		"MedicalServices": "Medizinische Dienstleistungen",
 		"MedicalServicesDescription": "Medizinische Dienstleistungen und Verfahren in Montenegro",
 		"Medications": "Medikamente",
-		"MedicationsDescription": "Finden Sie Apotheken und wo Sie Medikamente kaufen können"
+		"MedicationsDescription": "Finden Sie Apotheken und wo Sie Medikamente kaufen können",
+		"AriaMainContent": "Hauptinhalt",
+		"AriaHeroSection": "Willkommensbereich",
+		"AriaNavigationCards": "Navigation zu Websitebereichen",
+		"AriaLinkToDoctors": "Zum Ärzteverzeichnis",
+		"AriaLinkToClinics": "Zum Klinikverzeichnis",
+		"AriaLinkToLabTests": "Zu Labortests",
+		"AriaLinkToServices": "Zu medizinischen Dienstleistungen",
+		"AriaLinkToMedications": "Zum Medikamentenkatalog"
 	},
 	"tr": {
 		"MainPageTitle": "Karadağ'da Sağlık Hizmetleri",
@@ -207,7 +256,15 @@ schemaOrgStore.setSchemas([
 		"MedicalServices": "Tıbbi Hizmetler",
 		"MedicalServicesDescription": "Karadağ'da mevcut tıbbi hizmetler ve prosedürler",
 		"Medications": "İlaçlar",
-		"MedicationsDescription": "Eczaneleri ve ilaçları nereden alacağınızı bulun"
+		"MedicationsDescription": "Eczaneleri ve ilaçları nereden alacağınızı bulun",
+		"AriaMainContent": "Ana içerik",
+		"AriaHeroSection": "Karşılama bölümü",
+		"AriaNavigationCards": "Site bölümlerine navigasyon",
+		"AriaLinkToDoctors": "Doktor rehberine git",
+		"AriaLinkToClinics": "Klinik rehberine git",
+		"AriaLinkToLabTests": "Laboratuvar testlerine git",
+		"AriaLinkToServices": "Tıbbi hizmetlere git",
+		"AriaLinkToMedications": "İlaç kataloğuna git"
 	}
 }
 </i18n>

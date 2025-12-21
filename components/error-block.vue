@@ -9,11 +9,13 @@ const { t } = useI18n();
 </script>
 
 <template>
-	<div class="error-inline">
-		<div class="error-inline__code" v-if="props.code">{{ props.code }}</div>
-		<div class="error-inline__title">{{
-			props.title || t('ErrorGenericTitle')
+	<div class="error-inline" role="alert" aria-live="assertive">
+		<div class="error-inline__code" v-if="props.code" aria-hidden="true">{{
+			props.code
 		}}</div>
+		<h1 class="error-inline__title">{{
+			props.title || t('ErrorGenericTitle')
+		}}</h1>
 		<p v-if="props.message" class="error-inline__message">{{
 			props.message
 		}}</p>
@@ -46,6 +48,8 @@ const { t } = useI18n();
 }
 .error-inline__title {
 	font-weight: 700;
+	font-size: 1.25rem;
+	margin: 0;
 }
 .error-inline__message {
 	color: #6b7280;

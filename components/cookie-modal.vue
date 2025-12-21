@@ -420,24 +420,6 @@ function closeModal() {
 		"Required": "Obavezno",
 		"Accept": "Prihvati",
 		"Cancel": "Otkaži"
-	},
-	"ba": {
-		"CookieSettings": "Informacije o kolačićima",
-		"CookieInfoDescription": "Koristimo kolačiće da poboljšamo vaše iskustvo i analiziramo saobraćaj na sajtu. Svi kolačići su potrebni za ispravno funkcionisanje sajta.",
-		"CookiesUsed": "Korišćeni kolačići",
-		"MoreInfo": "Više informacija",
-		"Required": "Obavezno",
-		"Accept": "Prihvati",
-		"Cancel": "Otkaži"
-	},
-	"me": {
-		"CookieSettings": "Informacije o kolačićima",
-		"CookieInfoDescription": "Koristimo kolačiće da poboljšamo vaše iskustvo i analiziramo saobraćaj na sajtu. Svi kolačići su potrebni za ispravno funkcionisanje sajta.",
-		"CookiesUsed": "Korišćeni kolačići",
-		"MoreInfo": "Više informacija",
-		"Required": "Obavezno",
-		"Accept": "Prihvati",
-		"Cancel": "Otkaži"
 	}
 }
 </i18n>

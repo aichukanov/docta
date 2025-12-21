@@ -38,12 +38,6 @@ const { t } = useI18n();
 	"sr": {
 		"Whatsapp": "Whatsapp"
 	},
-	"ba": {
-		"Whatsapp": "Whatsapp"
-	},
-	"me": {
-		"Whatsapp": "Whatsapp"
-	},
 	"de": {
 		"Whatsapp": "Whatsapp"
 	},

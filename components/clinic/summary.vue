@@ -94,14 +94,6 @@ const clinicLink = computed(() => ({
 	"sr": {
 		"Contacts": "Kontakti",
 		"LanguageAssistance": "Klinika pruža pomoć na sledećim jezicima:"
-	},
-	"ba": {
-		"Contacts": "Kontakti",
-		"LanguageAssistance": "Klinika pruža podršku na sljedećim jezicima:"
-	},
-	"me": {
-		"Contacts": "Kontakti",
-		"LanguageAssistance": "Klinika pruža podršku na sljedećim jezicima:"
 	}
 }
 </i18n>

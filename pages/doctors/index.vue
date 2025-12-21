@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
 import {
-	buildEntityListSchema,
+	buildDoctorListSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
 import { CITY_COORDINATES } from '~/enums/cities';
@@ -209,16 +209,16 @@ watchEffect(() => {
 		const siteUrl = runtimeConfig.public.siteUrl;
 		const pageUrl = `${siteUrl}${route.fullPath}`;
 		schemaOrgStore.setSchemas([
-			...buildEntityListSchema({
+			...buildDoctorListSchema({
 				siteUrl,
 				pageUrl,
 				locale: locale.value,
 				title: pageTitle.value,
 				description: pageDescription.value,
 				totalCount: doctorsList.value.totalCount,
-				items: doctorsList.value.doctors,
-				buildPath: (doctor) => `/doctors/${doctor.id}`,
+				doctors: doctorsList.value.doctors,
 				isFiltered: isFiltered.value,
+				getSpecialtyName: (id) => t(`specialty_${id}`),
 			}),
 			buildBreadcrumbsSchema(pageUrl, [
 				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },

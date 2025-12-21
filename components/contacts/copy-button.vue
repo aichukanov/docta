@@ -64,14 +64,6 @@ async function copyToClipboard(): Promise<void> {
 		"Copied": "Kopirano",
 		"CopyNumber": "Kopiraj"
 	},
-	"me": {
-		"Copied": "Kopirano",
-		"CopyNumber": "Kopiraj"
-	},
-	"ba": {
-		"Copied": "Kopirano",
-		"CopyNumber": "Kopiraj"
-	},
 	"ru": {
 		"Copied": "Скопировано",
 		"CopyNumber": "Копировать"

@@ -70,18 +70,6 @@ const clinicOptions = computed(() => {
 		"AnyClinic": "Bilo koja klinika",
 		"SearchClinic": "Unesite deo naziva klinike",
 		"NotFoundClinic": "Klinika nije pronađena"
-	},
-	"ba": {
-		"Clinic": "Klinika",
-		"AnyClinic": "Bilo koja klinika",
-		"SearchClinic": "Unesite deo naziva klinike",
-		"NotFoundClinic": "Klinika nije pronađena"
-	},
-	"me": {
-		"Clinic": "Klinika",
-		"AnyClinic": "Bilo koja klinika",
-		"SearchClinic": "Unesite deo naziva klinike",
-		"NotFoundClinic": "Klinika nije pronađena"
 	}
 }
 </i18n>

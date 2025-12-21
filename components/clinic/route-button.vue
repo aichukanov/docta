@@ -48,12 +48,6 @@ const googleMapsUrl = computed(() => {
 	},
 	"sr": {
 		"BuildRoute": "Napravi rutu"
-	},
-	"ba": {
-		"BuildRoute": "Napravi rutu"
-	},
-	"me": {
-		"BuildRoute": "Napravi rutu"
 	}
 }
 </i18n>

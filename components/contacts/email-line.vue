@@ -26,12 +26,6 @@ const { t } = useI18n();
 	"sr": {
 		"Email": "Email"
 	},
-	"ba": {
-		"Email": "Email"
-	},
-	"me": {
-		"Email": "Email"
-	},
 	"de": {
 		"Email": "Email"
 	},

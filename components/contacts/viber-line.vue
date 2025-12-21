@@ -34,12 +34,6 @@ const { t } = useI18n();
 	"sr": {
 		"Viber": "Viber"
 	},
-	"ba": {
-		"Viber": "Viber"
-	},
-	"me": {
-		"Viber": "Viber"
-	},
 	"de": {
 		"Viber": "Viber"
 	},

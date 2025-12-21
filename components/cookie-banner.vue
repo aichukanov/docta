@@ -169,18 +169,6 @@ function acceptCookies() {
 		"CookieDescription": "Kolačići su potrebni za ispravno funkcionisanje sajta i analitiku, trebalo bi da dozvolite njihovu upotrebu.",
 		"CookieDescription2": "Možete povući svoju saglasnost u bilo kom trenutku.",
 		"Accept": "Prihvati"
-	},
-	"ba": {
-		"CookieTitle": "Kolačići",
-		"CookieDescription": "Kolačići su potrebni za ispravno funkcionisanje sajta i analitiku, trebalo bi da dozvolite njihovu upotrebu.",
-		"CookieDescription2": "Možete povući svoju saglasnost u bilo kom trenutku.",
-		"Accept": "Prihvati"
-	},
-	"me": {
-		"CookieTitle": "Kolačići",
-		"CookieDescription": "Kolačići su potrebni za ispravno funkcionisanje sajta i analitiku, trebalo bi da dozvolite njihovu upotrebu.",
-		"CookieDescription2": "Možete povući svoju saglasnost u bilo kom trenutku.",
-		"Accept": "Prihvati"
 	}
 }
 </i18n>

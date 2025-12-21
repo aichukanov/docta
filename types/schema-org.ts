@@ -53,6 +53,7 @@ export interface MedicalOrganizationRef {
 	'email'?: string;
 	'url'?: string;
 	'sameAs'?: string[];
+	'knowsLanguage'?: string[];
 }
 
 export interface PhysicianSchema extends SchemaOrgBase {
@@ -128,12 +129,24 @@ export interface MedicalProcedureSchema extends SchemaOrgBase {
 	}[];
 }
 
+/**
+ * Compact person reference for list items
+ */
+export interface PersonListItemRef {
+	'@type': 'Person' | 'Physician';
+	'@id': string;
+	'name': string;
+	'url': string;
+	'image'?: string;
+	'jobTitle'?: string | string[];
+}
+
 export interface ListItemSchema {
 	'@type': 'ListItem';
 	'position': number;
-	'name': string;
+	'name'?: string;
 	'url'?: string;
-	'item'?: string;
+	'item'?: string | PersonListItemRef;
 }
 
 export interface ItemListSchema extends SchemaOrgBase {

@@ -66,12 +66,6 @@ const doctorLink = computed(() => ({
 	},
 	"sr": {
 		"DoctorLanguages": "Doktor govori sledeće jezike:"
-	},
-	"ba": {
-		"DoctorLanguages": "Doktor govori sljedeće jezike:"
-	},
-	"me": {
-		"DoctorLanguages": "Doktor govori sljedeće jezike:"
 	}
 }
 </i18n>

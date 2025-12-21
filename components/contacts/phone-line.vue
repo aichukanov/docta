@@ -28,12 +28,6 @@ const { t } = useI18n();
 	"sr": {
 		"Phone": "Broj telefona"
 	},
-	"ba": {
-		"Phone": "Broj telefona"
-	},
-	"me": {
-		"Phone": "Broj telefona"
-	},
 	"de": {
 		"Phone": "Telefonnummer"
 	},

@@ -26,9 +26,7 @@ const { t } = useI18n();
 {
 	"ru": { "ErrorGenericTitle": "Произошла ошибка" },
 	"en": { "ErrorGenericTitle": "Something went wrong" },
-	"sr": { "ErrorGenericTitle": "Nešto je pošlo po zlu" },
-	"ba": { "ErrorGenericTitle": "Nešto je pošlo po zlu" },
-	"me": { "ErrorGenericTitle": "Nešto je pošlo po zlu" }
+	"sr": { "ErrorGenericTitle": "Nešto je pošlo po zlu" }
 }
 </i18n>
 

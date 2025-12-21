@@ -229,12 +229,6 @@ defineExpose({
 	},
 	"sr": {
 		"MapLoading": "Učitava mapu"
-	},
-	"ba": {
-		"MapLoading": "Učitava mapu"
-	},
-	"me": {
-		"MapLoading": "Učitava mapu"
 	}
 }
 </i18n>

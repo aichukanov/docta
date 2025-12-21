@@ -24,12 +24,6 @@ const { t } = useI18n();
 	"sr": {
 		"ShowOnMap": "Prikaži na mapi"
 	},
-	"ba": {
-		"ShowOnMap": "Prikaži na mapi"
-	},
-	"me": {
-		"ShowOnMap": "Prikaži na mapi"
-	},
 	"de": {
 		"ShowOnMap": "Auf der Karte anzeigen"
 	},

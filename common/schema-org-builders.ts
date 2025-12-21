@@ -7,6 +7,7 @@ import type {
 	MedicalOrganizationRef,
 	MedicalSpecialtySchema,
 	BreadcrumbListSchema,
+	PersonListItemRef,
 } from '~/types/schema-org';
 import type { ClinicData } from '~/interfaces/clinic';
 import {
@@ -155,6 +156,93 @@ export function buildTopListItemElements<
 }
 
 /**
+ * Doctor data for building person schema reference
+ */
+export interface DoctorSchemaData {
+	id: number;
+	name: string;
+	photoUrl?: string;
+	professionalTitle?: string;
+	specialtyIds?: number[];
+}
+
+/**
+ * Build Person/Physician schema reference for a doctor
+ * Used in both list pages and detail pages
+ */
+export function buildPersonSchemaRef(
+	doctor: DoctorSchemaData,
+	options: {
+		siteUrl: string;
+		getSpecialtyName: (id: number) => string | undefined;
+	},
+): PersonListItemRef {
+	const url = `${options.siteUrl}/doctors/${doctor.id}`;
+	const honorificPrefix = doctor.professionalTitle?.trim();
+	const schemaType: 'Physician' | 'Person' = honorificPrefix
+		? 'Physician'
+		: 'Person';
+	const fragment = schemaType === 'Physician' ? 'physician' : 'person';
+
+	// Build job titles from specialties
+	const jobTitles = doctor.specialtyIds
+		?.map((id) => options.getSpecialtyName(id))
+		.filter(isNonEmptyString);
+
+	return {
+		'@type': schemaType,
+		'@id': `${url}#${fragment}`,
+		'name': doctor.name,
+		'url': url,
+		'image': doctor.photoUrl || undefined,
+		'jobTitle': jobTitles && jobTitles.length > 0 ? jobTitles : undefined,
+	};
+}
+
+/**
+ * Build list item elements for doctors with Person/Physician type
+ */
+export function buildDoctorListItemElements(
+	doctors:
+		| Array<{
+				id: number;
+				name: string;
+				photoUrl?: string;
+				professionalTitle?: string;
+				specialtyIds?: string;
+		  }>
+		| undefined,
+	options: {
+		siteUrl: string;
+		limit?: number;
+		getSpecialtyName: (id: number) => string | undefined;
+	},
+): ListItemSchema[] | undefined {
+	if (!doctors) {
+		return undefined;
+	}
+
+	const limit = options.limit ?? 10;
+	return doctors.slice(0, limit).map((doctor, index) => {
+		// Convert string specialtyIds to number array
+		const specialtyIds = doctor.specialtyIds
+			?.split(',')
+			.map((id) => Number(id));
+
+		const personRef = buildPersonSchemaRef(
+			{ ...doctor, specialtyIds },
+			{ siteUrl: options.siteUrl, getSpecialtyName: options.getSpecialtyName },
+		);
+
+		return {
+			'@type': 'ListItem' as const,
+			'position': index + 1,
+			'item': personRef,
+		};
+	});
+}
+
+/**
  * Build collection page schemas (for list pages)
  */
 export function buildCollectionPageSchemas(options: {
@@ -222,6 +310,40 @@ export function buildEntityListSchema<
 }
 
 /**
+ * Build doctor list schema with Person/Physician types
+ */
+export function buildDoctorListSchema(options: {
+	siteUrl: string;
+	pageUrl: string;
+	locale: string;
+	title: string;
+	description: string;
+	totalCount: number;
+	doctors?: Array<{
+		id: number;
+		name: string;
+		photoUrl?: string;
+		professionalTitle?: string;
+		specialtyIds?: string;
+	}>;
+	isFiltered?: boolean;
+	getSpecialtyName: (id: number) => string | undefined;
+}): SchemaOrg[] {
+	return buildCollectionPageSchemas({
+		pageUrl: options.pageUrl,
+		locale: options.locale,
+		title: options.title,
+		description: options.description,
+		pageType: options.isFiltered ? 'SearchResultsPage' : 'CollectionPage',
+		numberOfItems: options.totalCount,
+		itemListElement: buildDoctorListItemElements(options.doctors, {
+			siteUrl: options.siteUrl,
+			getSpecialtyName: options.getSpecialtyName,
+		}),
+	});
+}
+
+/**
  * Build WebPage schema wrapper for entity pages
  */
 export function buildWebPageSchema(options: {
@@ -274,6 +396,12 @@ export function buildMedicalOrganizationRef(
 		telegram: clinic.telegram,
 	});
 
+	const knowsLanguage = clinic.languageIds
+		?.split(',')
+		.map((id) => Number(id))
+		.map((id) => getLanguageCode(id))
+		.filter(Boolean) as string[] | undefined;
+
 	return {
 		'@type': 'MedicalOrganization',
 		'name': clinic.name,
@@ -282,6 +410,8 @@ export function buildMedicalOrganizationRef(
 		'email': splitContacts(clinic.email)[0] || undefined,
 		'sameAs': sameAs.length > 0 ? sameAs : undefined,
 		'address': buildClinicPostalAddress(clinic, getCityName),
+		'knowsLanguage':
+			knowsLanguage && knowsLanguage.length > 0 ? knowsLanguage : undefined,
 	};
 }
 

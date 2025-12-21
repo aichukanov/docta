@@ -190,38 +190,6 @@ watch(
 		"NewsChannel": "Naš kanal za vesti na Telegramu",
 		"AboutProject": "O projektu"
 	},
-	"ba": {
-		"FooterNavLabel": "Navigacija u podnožju",
-		"Tagline": "Zdravstvo u Crnoj Gori — na jednom mjestu",
-		"Doctors": "Lekari",
-		"Clinics": "Klinike",
-		"LabTests": "Analize",
-		"MedicalServices": "Usluge",
-		"Medications": "Lekovi",
-		"ContactsTitle": "Kontakti",
-		"Email": "Email",
-		"Telegram": "Telegram",
-		"DisclaimerShort": "Samo informativno. Nije medicinski savjet.",
-		"ContactUs": "Kontaktirajte nas putem emaila",
-		"NewsChannel": "Naš kanal za vijesti na Telegramu",
-		"AboutProject": "O projektu"
-	},
-	"me": {
-		"FooterNavLabel": "Navigacija u podnožju",
-		"Tagline": "Zdravstvo u Crnoj Gori — na jednom mjestu",
-		"Doctors": "Lekari",
-		"Clinics": "Klinike",
-		"LabTests": "Analize",
-		"MedicalServices": "Usluge",
-		"Medications": "Lekovi",
-		"ContactsTitle": "Kontakti",
-		"Email": "Email",
-		"Telegram": "Telegram",
-		"DisclaimerShort": "Samo informativno. Nije medicinski savjet.",
-		"ContactUs": "Kontaktirajte nas putem emaila",
-		"NewsChannel": "Naš kanal za vijesti na Telegramu",
-		"AboutProject": "O projektu"
-	},
 	"de": {
 		"FooterNavLabel": "Footer-Navigation",
 		"Tagline": "Gesundheit in Montenegro — an einem Ort",

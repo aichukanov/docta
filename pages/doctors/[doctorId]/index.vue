@@ -150,13 +150,28 @@ function joinWithAnd(items: string[]): string {
 	);
 }
 
+const schemaOrgStore = useSchemaOrgStore();
+const runtimeConfig = useRuntimeConfig();
+
+const ogImage = computed(() => {
+	if (doctorData.value?.photoUrl) {
+		return doctorData.value.photoUrl;
+	}
+	return `${runtimeConfig.public.siteUrl}/logo-site.png`;
+});
+
 useSeoMeta({
 	title: pageTitle,
 	description: pageDescription,
+	ogTitle: pageTitle,
+	ogDescription: pageDescription,
+	ogImage: ogImage,
+	ogType: 'profile',
+	twitterCard: 'summary',
+	twitterTitle: pageTitle,
+	twitterDescription: pageDescription,
+	twitterImage: ogImage,
 });
-
-const schemaOrgStore = useSchemaOrgStore();
-const runtimeConfig = useRuntimeConfig();
 
 const getCityName = (id: number): string | undefined => {
 	const key = `city_${id}`;

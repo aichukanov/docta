@@ -126,7 +126,8 @@ watchEffect(() => {
 				'@type': 'WebPage',
 				'@id': `${testUrl}#webpage`,
 				'url': testUrl,
-				'name': labTestData.value.name,
+				'name': pageTitle.value,
+				'description': pageDescription.value,
 				'inLanguage': locale.value,
 				'mainEntity': { '@id': `${testUrl}#medicaltest` },
 			},
@@ -145,7 +146,7 @@ watchEffect(() => {
 			buildBreadcrumbsSchema(testUrl, [
 				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
 				{ name: t('BreadcrumbLabTests'), url: `${siteUrl}/labtests` },
-				{ name: labTestData.value.name },
+				{ name: pageTitle.value },
 			]),
 		]);
 	}

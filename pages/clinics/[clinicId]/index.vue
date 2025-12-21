@@ -161,12 +161,14 @@ watchEffect(() => {
 				siteUrl,
 				clinic: clinicData.value,
 				locale: locale.value,
+				pageTitle: pageTitle.value,
+				pageDescription: pageDescription.value,
 				getCityName,
 			}),
 			buildBreadcrumbsSchema(clinicUrl, [
 				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
 				{ name: t('BreadcrumbClinics'), url: `${siteUrl}/clinics` },
-				{ name: clinicData.value.name },
+				{ name: pageTitle.value },
 			]),
 		]);
 	}
@@ -376,7 +378,8 @@ watchEffect(() => {
 		"AriaClinicInfo": "Clinic information",
 		"AriaClinicAddress": "Clinic address",
 		"AriaClinicActions": "Clinic actions",
-		"AriaClinicContacts": "Clinic contacts",
+		"AriaShowOnMap": "Show on map",
+		"AriaContactsSection": "Clinic contacts",
 		"AriaClinicServices": "Clinic services"
 	},
 	"ru": {
@@ -390,7 +393,8 @@ watchEffect(() => {
 		"AriaClinicInfo": "Информация о клинике",
 		"AriaClinicAddress": "Адрес клиники",
 		"AriaClinicActions": "Действия с клиникой",
-		"AriaClinicContacts": "Контакты клиники",
+		"AriaShowOnMap": "Показать на карте",
+		"AriaContactsSection": "Контакты клиники",
 		"AriaClinicServices": "Услуги клиники"
 	},
 	"de": {
@@ -404,7 +408,8 @@ watchEffect(() => {
 		"AriaClinicInfo": "Klinikinformationen",
 		"AriaClinicAddress": "Klinikadresse",
 		"AriaClinicActions": "Klinikaktionen",
-		"AriaClinicContacts": "Klinikkontakte",
+		"AriaShowOnMap": "Auf Karte anzeigen",
+		"AriaContactsSection": "Klinikkontakte",
 		"AriaClinicServices": "Klinikleistungen"
 	},
 	"tr": {
@@ -418,7 +423,8 @@ watchEffect(() => {
 		"AriaClinicInfo": "Klinik bilgileri",
 		"AriaClinicAddress": "Klinik adresi",
 		"AriaClinicActions": "Klinik işlemleri",
-		"AriaClinicContacts": "Klinik iletişim",
+		"AriaShowOnMap": "Haritada göster",
+		"AriaContactsSection": "Klinik iletişim",
 		"AriaClinicServices": "Klinik hizmetleri"
 	},
 	"sr": {
@@ -432,7 +438,8 @@ watchEffect(() => {
 		"AriaClinicInfo": "Informacije o klinici",
 		"AriaClinicAddress": "Adresa klinike",
 		"AriaClinicActions": "Akcije klinike",
-		"AriaClinicContacts": "Kontakti klinike",
+		"AriaShowOnMap": "Prikaži na mapi",
+		"AriaContactsSection": "Kontakti klinike",
 		"AriaClinicServices": "Usluge klinike"
 	}
 }

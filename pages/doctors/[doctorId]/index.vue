@@ -188,13 +188,15 @@ watchEffect(() => {
 				clinics: doctorClinics.value,
 				title: doctorData.value.professionalTitle,
 				locale: locale.value,
+				pageTitle: pageTitle.value,
+				pageDescription: pageDescription.value,
 				getSpecialtyName,
 				getCityName,
 			}),
 			buildBreadcrumbsSchema(doctorUrl, [
 				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
 				{ name: t('BreadcrumbDoctors'), url: `${siteUrl}/doctors` },
-				{ name: doctorData.value.name },
+				{ name: pageTitle.value },
 			]),
 		]);
 	}

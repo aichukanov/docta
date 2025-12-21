@@ -106,7 +106,8 @@ watchEffect(() => {
 				'@type': 'WebPage',
 				'@id': `${medicationUrl}#webpage`,
 				'url': medicationUrl,
-				'name': medicationData.value.name,
+				'name': pageTitle.value,
+				'description': pageDescription.value,
 				'inLanguage': locale.value,
 				'mainEntity': { '@id': `${medicationUrl}#drug` },
 			},
@@ -124,7 +125,7 @@ watchEffect(() => {
 			buildBreadcrumbsSchema(medicationUrl, [
 				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
 				{ name: t('BreadcrumbMedications'), url: `${siteUrl}/medications` },
-				{ name: medicationData.value.name },
+				{ name: pageTitle.value },
 			]),
 		]);
 	}

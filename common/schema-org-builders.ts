@@ -228,6 +228,7 @@ export function buildWebPageSchema(options: {
 	url: string;
 	locale: string;
 	name: string;
+	description?: string;
 	mainEntityId: string;
 }): WebPageSchema {
 	return {
@@ -235,6 +236,7 @@ export function buildWebPageSchema(options: {
 		'@id': `${options.url}#webpage`,
 		'url': options.url,
 		'name': options.name,
+		'description': options.description,
 		'inLanguage': options.locale,
 		'mainEntity': { '@id': options.mainEntityId },
 	};
@@ -296,6 +298,8 @@ export function buildDoctorSchema(options: {
 	clinics?: ClinicData[];
 	title?: string;
 	locale: string;
+	pageTitle?: string;
+	pageDescription?: string;
 	getSpecialtyName: (id: number) => string | undefined;
 	getCityName: (id: number) => string | undefined;
 }): SchemaOrg[] {
@@ -346,7 +350,8 @@ export function buildDoctorSchema(options: {
 	const webPageSchema = buildWebPageSchema({
 		url: doctorUrl,
 		locale: options.locale,
-		name: options.name,
+		name: options.pageTitle || options.name,
+		description: options.pageDescription,
 		mainEntityId: doctorSchema['@id'] as string,
 	});
 
@@ -360,6 +365,8 @@ export function buildClinicSchema(options: {
 	siteUrl: string;
 	clinic: ClinicData;
 	locale: string;
+	pageTitle?: string;
+	pageDescription?: string;
 	getCityName: (id: number) => string | undefined;
 }): SchemaOrg[] {
 	const { siteUrl, clinic, locale, getCityName } = options;
@@ -412,7 +419,8 @@ export function buildClinicSchema(options: {
 	const webPageSchema = buildWebPageSchema({
 		url: clinicUrl,
 		locale,
-		name: clinic.name,
+		name: options.pageTitle || clinic.name,
+		description: options.pageDescription,
 		mainEntityId: clinicSchema['@id'] as string,
 	});
 

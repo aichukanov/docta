@@ -113,7 +113,8 @@ watchEffect(() => {
 				'@type': 'WebPage',
 				'@id': `${serviceUrl}#webpage`,
 				'url': serviceUrl,
-				'name': medicalServiceData.value.name,
+				'name': pageTitle.value,
+				'description': pageDescription.value,
 				'inLanguage': locale.value,
 				'mainEntity': { '@id': `${serviceUrl}#medicalprocedure` },
 			},
@@ -131,7 +132,7 @@ watchEffect(() => {
 			buildBreadcrumbsSchema(serviceUrl, [
 				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
 				{ name: t('BreadcrumbServices'), url: `${siteUrl}/services` },
-				{ name: medicalServiceData.value.name },
+				{ name: pageTitle.value },
 			]),
 		]);
 	}

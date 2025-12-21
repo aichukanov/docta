@@ -88,7 +88,7 @@ const onMapReady = () => {
 						</section>
 					</slot>
 				</article>
-				<aside :aria-label="t('AriaMapSection')">
+				<aside class="map-container" :aria-label="t('AriaMapSection')">
 					<ClinicServicesMap
 						ref="mapRef"
 						:services="[]"
@@ -141,7 +141,7 @@ const onMapReady = () => {
 				min-width: 0;
 			}
 
-			:deep(.clinic-services-map-container) {
+			.map-container {
 				flex: 1;
 				position: sticky;
 				top: calc(60px + var(--spacing-lg));

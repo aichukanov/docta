@@ -190,6 +190,8 @@ watchEffect(() => {
 				locale: locale.value,
 				pageTitle: pageTitle.value,
 				pageDescription: pageDescription.value,
+				facebook: doctorData.value.facebook,
+				instagram: doctorData.value.instagram,
 				getSpecialtyName,
 				getCityName,
 			}),

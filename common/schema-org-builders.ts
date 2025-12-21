@@ -430,6 +430,8 @@ export function buildDoctorSchema(options: {
 	locale: string;
 	pageTitle?: string;
 	pageDescription?: string;
+	facebook?: string | null;
+	instagram?: string | null;
 	getSpecialtyName: (id: number) => string | undefined;
 	getCityName: (id: number) => string | undefined;
 }): SchemaOrg[] {
@@ -455,6 +457,12 @@ export function buildDoctorSchema(options: {
 		?.map((id) => getLanguageCode(id))
 		.filter(isNonEmptyString);
 
+	// Build social media links
+	const sameAs = buildSameAs({
+		facebook: options.facebook,
+		instagram: options.instagram,
+	});
+
 	const doctorSchema = {
 		...buildEntitySchemaBase({
 			url: doctorUrl,
@@ -462,6 +470,7 @@ export function buildDoctorSchema(options: {
 			fragment: schemaType === 'Physician' ? 'physician' : 'person',
 		}),
 		name: options.name,
+		description: options.pageDescription || undefined,
 		image: options.photoUrl || undefined,
 		honorificPrefix,
 		medicalSpecialty: schemaType === 'Physician' ? specialties : undefined,
@@ -472,6 +481,7 @@ export function buildDoctorSchema(options: {
 					: undefined
 				: undefined,
 		knowsLanguage: languages,
+		sameAs: sameAs.length > 0 ? sameAs : undefined,
 		worksFor: options.clinics?.map((clinic) =>
 			buildMedicalOrganizationRef(clinic, options.getCityName),
 		),
@@ -528,6 +538,7 @@ export function buildClinicSchema(options: {
 			fragment: 'medicalorganization',
 		}),
 		name: clinic.name,
+		description: options.pageDescription || undefined,
 		address: buildClinicPostalAddress(clinic, getCityName),
 		telephone: splitContacts(clinic.phone)[0] || undefined,
 		email: splitContacts(clinic.email)[0] || undefined,

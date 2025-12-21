@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
+import {
+	buildEntityListSchema,
+	buildBreadcrumbsSchema,
+} from '~/common/schema-org-builders';
 import { CITY_COORDINATES } from '~/enums/cities';
 import { combineI18nMessages } from '~/i18n/utils';
 import type { ClinicData } from '~/interfaces/clinic';
 
+import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import doctorI18n from '~/i18n/doctor';
 import languageI18n from '~/i18n/language';
@@ -12,6 +17,7 @@ import specialtyI18n from '~/i18n/specialty';
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([
+		breadcrumbI18n,
 		doctorI18n,
 		specialtyI18n,
 		cityI18n,
@@ -185,7 +191,10 @@ useSeoMeta({
 	description: pageDescription,
 });
 
-const { setDoctorsListSchema } = useSchemaOrg();
+// Schema.org for doctors list
+const schemaOrgStore = useSchemaOrgStore();
+const route = useRoute();
+const runtimeConfig = useRuntimeConfig();
 const isFiltered = computed(() => {
 	return (
 		specialtyIds.value.length > 0 ||
@@ -197,13 +206,25 @@ const isFiltered = computed(() => {
 });
 watchEffect(() => {
 	if (doctorsList.value) {
-		setDoctorsListSchema({
-			title: pageTitle.value,
-			description: pageDescription.value,
-			totalCount: doctorsList.value.totalCount,
-			doctors: doctorsList.value.doctors,
-			isFiltered: isFiltered.value,
-		});
+		const siteUrl = runtimeConfig.public.siteUrl;
+		const pageUrl = `${siteUrl}${route.fullPath}`;
+		schemaOrgStore.setSchemas([
+			...buildEntityListSchema({
+				siteUrl,
+				pageUrl,
+				locale: locale.value,
+				title: pageTitle.value,
+				description: pageDescription.value,
+				totalCount: doctorsList.value.totalCount,
+				items: doctorsList.value.doctors,
+				buildPath: (doctor) => `/doctors/${doctor.id}`,
+				isFiltered: isFiltered.value,
+			}),
+			buildBreadcrumbsSchema(pageUrl, [
+				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
+				{ name: t('BreadcrumbDoctors') },
+			]),
+		]);
 	}
 });
 </script>

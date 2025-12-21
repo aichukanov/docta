@@ -1,14 +1,20 @@
 <script setup lang="ts">
 import { LanguageId } from '~/enums/language';
+import {
+	buildDoctorSchema,
+	buildBreadcrumbsSchema,
+} from '~/common/schema-org-builders';
+import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import doctorI18n from '~/i18n/doctor';
 import languageI18n from '~/i18n/language';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
 
-const { t } = useI18n({
+const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([
+		breadcrumbI18n,
 		doctorI18n,
 		specialtyI18n,
 		languageI18n,
@@ -149,21 +155,48 @@ useSeoMeta({
 	description: pageDescription,
 });
 
-const { setDoctorSchema } = useSchemaOrg();
+const schemaOrgStore = useSchemaOrgStore();
+const runtimeConfig = useRuntimeConfig();
+
+const getCityName = (id: number): string | undefined => {
+	const key = `city_${id}`;
+	const value = t(key);
+	return value && value !== key ? value : undefined;
+};
+
+const getSpecialtyName = (id: number): string | undefined => {
+	const key = `specialty_${id}`;
+	const value = t(key);
+	return value && value !== key ? value : undefined;
+};
+
 watchEffect(() => {
 	if (doctorData.value && isFound.value) {
 		const specialtyIds = doctorData.value.specialtyIds?.split(',').map(Number);
 		const languageIds = doctorData.value.languageIds?.split(',').map(Number);
+		const siteUrl = runtimeConfig.public.siteUrl;
+		const doctorUrl = `${siteUrl}/doctors/${doctorData.value.id}`;
 
-		setDoctorSchema({
-			id: doctorData.value.id,
-			name: doctorData.value.name,
-			photoUrl: doctorData.value.photoUrl,
-			specialtyIds,
-			languageIds,
-			clinics: doctorClinics.value,
-			title: doctorData.value.professionalTitle,
-		});
+		schemaOrgStore.setSchemas([
+			...buildDoctorSchema({
+				siteUrl,
+				id: doctorData.value.id,
+				name: doctorData.value.name,
+				photoUrl: doctorData.value.photoUrl,
+				specialtyIds,
+				languageIds,
+				clinics: doctorClinics.value,
+				title: doctorData.value.professionalTitle,
+				locale: locale.value,
+				getSpecialtyName,
+				getCityName,
+			}),
+			buildBreadcrumbsSchema(doctorUrl, [
+				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
+				{ name: t('BreadcrumbDoctors'), url: `${siteUrl}/doctors` },
+				{ name: doctorData.value.name },
+			]),
+		]);
 	}
 });
 </script>

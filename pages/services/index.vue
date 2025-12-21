@@ -1,12 +1,21 @@
 <script setup lang="ts">
 import { combineI18nMessages } from '~/i18n/utils';
+import {
+	buildEntityListSchema,
+	buildBreadcrumbsSchema,
+} from '~/common/schema-org-builders';
 
+import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import medicalServiceI18n from '~/i18n/medical-service';
 
 const { t } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([cityI18n, medicalServiceI18n]),
+	messages: combineI18nMessages([
+		breadcrumbI18n,
+		cityI18n,
+		medicalServiceI18n,
+	]),
 });
 
 const { cityIds, clinicIds, name, updateFromRoute, getRouteParams } =
@@ -82,19 +91,35 @@ useSeoMeta({
 	description: pageDescription,
 });
 
-const { setMedicalServicesListSchema } = useSchemaOrg();
+// Schema.org for medical services list
+const { locale } = useI18n();
+const schemaOrgStore = useSchemaOrgStore();
+const route = useRoute();
+const runtimeConfig = useRuntimeConfig();
 const isFiltered = computed(() => {
 	return cityIds.value.length > 0 || clinicIds.value.length > 0 || !!name.value;
 });
 watchEffect(() => {
 	if (medicalServicesList.value) {
-		setMedicalServicesListSchema({
-			title: pageTitle.value,
-			description: pageDescription.value,
-			totalCount: medicalServicesList.value.totalCount,
-			services: medicalServicesList.value.items,
-			isFiltered: isFiltered.value,
-		});
+		const siteUrl = runtimeConfig.public.siteUrl;
+		const pageUrl = `${siteUrl}${route.fullPath}`;
+		schemaOrgStore.setSchemas([
+			...buildEntityListSchema({
+				siteUrl,
+				pageUrl,
+				locale: locale.value,
+				title: pageTitle.value,
+				description: pageDescription.value,
+				totalCount: medicalServicesList.value.totalCount,
+				items: medicalServicesList.value.items,
+				buildPath: (service) => `/services/${service.id}`,
+				isFiltered: isFiltered.value,
+			}),
+			buildBreadcrumbsSchema(pageUrl, [
+				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
+				{ name: t('BreadcrumbServices') },
+			]),
+		]);
 	}
 });
 </script>

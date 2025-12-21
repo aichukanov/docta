@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import medicalServiceI18n from '~/i18n/medical-service';
 import { combineI18nMessages } from '~/i18n/utils';
+import { buildBreadcrumbsSchema } from '~/common/schema-org-builders';
 
 const { t } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([medicalServiceI18n, cityI18n]),
+	messages: combineI18nMessages([breadcrumbI18n, medicalServiceI18n, cityI18n]),
 });
 
 const route = useRoute();
@@ -97,16 +99,41 @@ useSeoMeta({
 	description: pageDescription,
 });
 
-const { setMedicalServiceSchema } = useSchemaOrg();
+// Schema.org for medical service details
+const { locale } = useI18n();
+const schemaOrgStore = useSchemaOrgStore();
+const runtimeConfig = useRuntimeConfig();
 watchEffect(() => {
 	if (medicalServiceData.value && isFound.value) {
-		setMedicalServiceSchema({
-			id: medicalServiceData.value.id,
-			name: medicalServiceData.value.name,
-			clinics: medicalServiceClinics.value.map((clinic) => ({
-				name: clinic.name,
-			})),
-		});
+		const siteUrl = runtimeConfig.public.siteUrl;
+		const serviceUrl = `${siteUrl}/services/${medicalServiceData.value.id}`;
+
+		schemaOrgStore.setSchemas([
+			{
+				'@type': 'WebPage',
+				'@id': `${serviceUrl}#webpage`,
+				'url': serviceUrl,
+				'name': medicalServiceData.value.name,
+				'inLanguage': locale.value,
+				'mainEntity': { '@id': `${serviceUrl}#medicalprocedure` },
+			},
+			{
+				'@type': 'MedicalProcedure',
+				'@id': `${serviceUrl}#medicalprocedure`,
+				'mainEntityOfPage': serviceUrl,
+				'url': serviceUrl,
+				'name': medicalServiceData.value.name,
+				'availableService': medicalServiceClinics.value.map((clinic) => ({
+					'@type': 'MedicalOrganization',
+					'name': clinic.name,
+				})),
+			},
+			buildBreadcrumbsSchema(serviceUrl, [
+				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
+				{ name: t('BreadcrumbServices'), url: `${siteUrl}/services` },
+				{ name: medicalServiceData.value.name },
+			]),
+		]);
 	}
 });
 </script>

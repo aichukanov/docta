@@ -14,7 +14,9 @@ export function menuItemToLinks(
 	routeName: string,
 	query: Record<string, string | string[]> = {},
 ) {
-	const url = 'https://omeda.me/' + routeName.replaceAll('-', '/');
+	const config = useRuntimeConfig();
+	const siteUrl = config.public.siteUrl || 'https://omeda.me';
+	const url = siteUrl + '/' + routeName.replaceAll('-', '/');
 
 	const linksWithParams: Array<{ hreflang: string; href: string }> = [];
 

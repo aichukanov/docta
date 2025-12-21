@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
+import {
+	buildClinicSchema,
+	buildBreadcrumbsSchema,
+} from '~/common/schema-org-builders';
+import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import clinicI18n from '~/i18n/clinic';
 import languageI18n from '~/i18n/language';
@@ -9,7 +14,12 @@ import { formatClinicAddressLine } from '~/common/clinic-address';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([clinicI18n, languageI18n, cityI18n]),
+	messages: combineI18nMessages([
+		breadcrumbI18n,
+		clinicI18n,
+		languageI18n,
+		cityI18n,
+	]),
 });
 
 const route = useRoute();
@@ -132,10 +142,33 @@ useSeoMeta({
 	description: pageDescription,
 });
 
-const { setClinicSchema } = useSchemaOrg();
+const schemaOrgStore = useSchemaOrgStore();
+const runtimeConfig = useRuntimeConfig();
+
+const getCityName = (id: number): string | undefined => {
+	const key = `city_${id}`;
+	const value = t(key);
+	return value && value !== key ? value : undefined;
+};
+
 watchEffect(() => {
 	if (clinicData.value && isFound.value) {
-		setClinicSchema(clinicData.value);
+		const siteUrl = runtimeConfig.public.siteUrl;
+		const clinicUrl = `${siteUrl}/clinics/${clinicData.value.id}`;
+
+		schemaOrgStore.setSchemas([
+			...buildClinicSchema({
+				siteUrl,
+				clinic: clinicData.value,
+				locale: locale.value,
+				getCityName,
+			}),
+			buildBreadcrumbsSchema(clinicUrl, [
+				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
+				{ name: t('BreadcrumbClinics'), url: `${siteUrl}/clinics` },
+				{ name: clinicData.value.name },
+			]),
+		]);
 	}
 });
 </script>

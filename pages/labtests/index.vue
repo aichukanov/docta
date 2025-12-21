@@ -1,13 +1,23 @@
 <script setup lang="ts">
 import { combineI18nMessages } from '~/i18n/utils';
+import {
+	buildEntityListSchema,
+	buildBreadcrumbsSchema,
+} from '~/common/schema-org-builders';
 
+import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import labTestI18n from '~/i18n/labtest';
 import labTestCategoryI18n from '~/i18n/labtest-category';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([cityI18n, labTestI18n, labTestCategoryI18n]),
+	messages: combineI18nMessages([
+		breadcrumbI18n,
+		cityI18n,
+		labTestI18n,
+		labTestCategoryI18n,
+	]),
 });
 
 const {
@@ -137,7 +147,10 @@ useSeoMeta({
 	description: pageDescription,
 });
 
-const { setLabTestsListSchema } = useSchemaOrg();
+// Schema.org for lab tests list
+const schemaOrgStore = useSchemaOrgStore();
+const route = useRoute();
+const runtimeConfig = useRuntimeConfig();
 const isFiltered = computed(() => {
 	return (
 		cityIds.value.length > 0 ||
@@ -148,13 +161,25 @@ const isFiltered = computed(() => {
 });
 watchEffect(() => {
 	if (labTestsList.value) {
-		setLabTestsListSchema({
-			title: pageTitle.value,
-			description: pageDescription.value,
-			totalCount: labTestsList.value.totalCount,
-			labTests: labTestsList.value.items,
-			isFiltered: isFiltered.value,
-		});
+		const siteUrl = runtimeConfig.public.siteUrl;
+		const pageUrl = `${siteUrl}${route.fullPath}`;
+		schemaOrgStore.setSchemas([
+			...buildEntityListSchema({
+				siteUrl,
+				pageUrl,
+				locale: locale.value,
+				title: pageTitle.value,
+				description: pageDescription.value,
+				totalCount: labTestsList.value.totalCount,
+				items: labTestsList.value.items,
+				buildPath: (test) => `/labtests/${test.id}`,
+				isFiltered: isFiltered.value,
+			}),
+			buildBreadcrumbsSchema(pageUrl, [
+				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
+				{ name: t('BreadcrumbLabTests') },
+			]),
+		]);
 	}
 });
 </script>

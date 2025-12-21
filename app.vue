@@ -7,10 +7,60 @@ import {
 	locales,
 	type Locale,
 } from './composables/use-locale';
+import { useSchemaOrgStore } from './stores/schema-org';
+import type { SchemaOrg } from './types/schema-org';
 
 const { t, locale } = useI18n({ useScope: 'global' });
 const router = useRouter();
 const route = useRoute();
+const schemaOrgStore = useSchemaOrgStore();
+const runtimeConfig = useRuntimeConfig();
+
+// Build JSON-LD from schemas
+const buildJsonLd = (schemas: SchemaOrg[]) => {
+	if (schemas.length === 0) {
+		return null;
+	}
+
+	const normalizeNode = (schema: SchemaOrg) => {
+		const { ['@context']: _context, ...rest } = schema as Record<
+			string,
+			unknown
+		>;
+		return rest;
+	};
+
+	return schemas.length === 1
+		? {
+				'@context': 'https://schema.org',
+				...normalizeNode(schemas[0]),
+		  }
+		: {
+				'@context': 'https://schema.org',
+				'@graph': schemas.map(normalizeNode),
+		  };
+};
+
+// Watch schema changes and update head
+watch(
+	() => schemaOrgStore.schemas,
+	(schemas) => {
+		const jsonLd = buildJsonLd(schemas);
+		if (jsonLd) {
+			useHead({
+				script: [
+					{
+						type: 'application/ld+json',
+						key: 'schema-org-jsonld',
+						tagDuplicateStrategy: 'replace',
+						innerHTML: JSON.stringify(jsonLd),
+					},
+				],
+			});
+		}
+	},
+	{ immediate: true, deep: true },
+);
 
 const queryLocale = getLocaleFromQuery(route.query.lang as string | string[]);
 locale.value = queryLocale || defaultLocale;
@@ -18,7 +68,7 @@ locale.value = queryLocale || defaultLocale;
 function getMainUrl() {
 	const searchParamsRe = /(?=.+)\?.+/gi;
 	const path = route.fullPath.replace(searchParamsRe, '');
-	return `https://omeda.me${path}`;
+	return `${runtimeConfig.public.siteUrl}${path}`;
 }
 
 function getLangLink(mainUrl: string, lang: Locale) {
@@ -73,12 +123,12 @@ useHead({
 useSeoMeta({
 	title: () => t('ApplicationName'),
 	description: () => t('ApplicationName'),
-	applicationName: 'omeda.me',
+	applicationName: runtimeConfig.public.siteName,
 	viewport: 'width=device-width, initial-scale=1',
 	ogType: 'website',
-	ogSiteName: 'omeda.me',
+	ogSiteName: runtimeConfig.public.siteName,
 	ogLocale: () => locale.value,
-	ogUrl: () => `https://omeda.me${route.fullPath}`,
+	ogUrl: () => `${runtimeConfig.public.siteUrl}${route.fullPath}`,
 });
 </script>
 

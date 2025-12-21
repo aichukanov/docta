@@ -13,12 +13,13 @@ const props = defineProps<{
 }>();
 
 const { t } = useI18n();
+const runtimeConfig = useRuntimeConfig();
 
 const websiteUrlWithUtm = computed(() => {
 	const normalized = normalizeWebsiteUrl(props.websiteUrl) ?? props.websiteUrl;
 	try {
 		const url = new URL(normalized);
-		url.searchParams.set('utm_source', 'omeda.me');
+		url.searchParams.set('utm_source', runtimeConfig.public.siteName);
 		return url.toString();
 	} catch {
 		// Если URL невалидный, возвращаем как есть

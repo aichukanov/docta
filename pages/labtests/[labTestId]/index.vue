@@ -1,12 +1,19 @@
 <script setup lang="ts">
+import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import labTestI18n from '~/i18n/labtest';
 import labTestCategoryI18n from '~/i18n/labtest-category';
 import { combineI18nMessages } from '~/i18n/utils';
+import { buildBreadcrumbsSchema } from '~/common/schema-org-builders';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([labTestI18n, cityI18n, labTestCategoryI18n]),
+	messages: combineI18nMessages([
+		breadcrumbI18n,
+		labTestI18n,
+		cityI18n,
+		labTestCategoryI18n,
+	]),
 });
 
 const route = useRoute();
@@ -100,16 +107,47 @@ useSeoMeta({
 	description: pageDescription,
 });
 
-const { setLabTestSchema } = useSchemaOrg();
+// Schema.org for lab test details
+const schemaOrgStore = useSchemaOrgStore();
+const runtimeConfig = useRuntimeConfig();
 watchEffect(() => {
 	if (labTestData.value && isFound.value) {
-		setLabTestSchema({
-			id: labTestData.value.id,
-			name: labTestData.value.name,
-			originalName: labTestData.value.originalName,
-			synonyms: labTestData.value.synonyms,
-			clinics: labTestClinics.value.map((clinic) => ({ name: clinic.name })),
-		});
+		const siteUrl = runtimeConfig.public.siteUrl;
+		const testUrl = `${siteUrl}/labtests/${labTestData.value.id}`;
+		const alternateName = [
+			labTestData.value.originalName,
+			...(labTestData.value.synonyms || []),
+		]
+			.filter(Boolean)
+			.join(', ');
+
+		schemaOrgStore.setSchemas([
+			{
+				'@type': 'WebPage',
+				'@id': `${testUrl}#webpage`,
+				'url': testUrl,
+				'name': labTestData.value.name,
+				'inLanguage': locale.value,
+				'mainEntity': { '@id': `${testUrl}#medicaltest` },
+			},
+			{
+				'@type': 'MedicalTest',
+				'@id': `${testUrl}#medicaltest`,
+				'mainEntityOfPage': testUrl,
+				'url': testUrl,
+				'name': labTestData.value.name,
+				'alternateName': alternateName || undefined,
+				'availableService': labTestClinics.value.map((clinic) => ({
+					'@type': 'MedicalOrganization',
+					'name': clinic.name,
+				})),
+			},
+			buildBreadcrumbsSchema(testUrl, [
+				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
+				{ name: t('BreadcrumbLabTests'), url: `${siteUrl}/labtests` },
+				{ name: labTestData.value.name },
+			]),
+		]);
 	}
 });
 </script>

@@ -33,8 +33,37 @@ useSeoMeta({
 	description: t('MainPageDescription'),
 });
 
-const { setWebsiteSchema } = useSchemaOrg();
-setWebsiteSchema({ description: t('MainPageDescription') });
+// Schema.org for website home page
+const schemaOrgStore = useSchemaOrgStore();
+const runtimeConfig = useRuntimeConfig();
+const siteUrl = runtimeConfig.public.siteUrl;
+const siteName = runtimeConfig.public.siteName;
+
+schemaOrgStore.setSchemas([
+	{
+		'@type': 'WebSite',
+		'@id': `${siteUrl}#website`,
+		'name': siteName,
+		'inLanguage': locale.value,
+		'url': siteUrl,
+		'potentialAction': {
+			'@type': 'SearchAction',
+			'target': `${siteUrl}/doctors?name={search_term_string}`,
+			'query-input': 'required name=search_term_string',
+		},
+	},
+	{
+		'@type': 'MedicalBusiness',
+		'@id': `${siteUrl}#organization`,
+		'name': siteName,
+		'url': siteUrl,
+		'description': t('MainPageDescription'),
+		'address': {
+			'@type': 'PostalAddress',
+			'addressCountry': 'ME',
+		},
+	},
+]);
 </script>
 
 <template>

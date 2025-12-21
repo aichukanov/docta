@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import medicationI18n from '~/i18n/medication';
 import { combineI18nMessages } from '~/i18n/utils';
+import { buildBreadcrumbsSchema } from '~/common/schema-org-builders';
 
 const { t } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([medicationI18n, cityI18n]),
+	messages: combineI18nMessages([breadcrumbI18n, medicationI18n, cityI18n]),
 });
 
 const route = useRoute();
@@ -90,14 +92,41 @@ useSeoMeta({
 	description: pageDescription,
 });
 
-const { setMedicationSchema } = useSchemaOrg();
+// Schema.org for medication details
+const { locale } = useI18n();
+const schemaOrgStore = useSchemaOrgStore();
+const runtimeConfig = useRuntimeConfig();
 watchEffect(() => {
 	if (medicationData.value && isFound.value) {
-		setMedicationSchema({
-			id: medicationData.value.id,
-			name: medicationData.value.name,
-			clinics: medicationClinics.value.map((clinic) => ({ name: clinic.name })),
-		});
+		const siteUrl = runtimeConfig.public.siteUrl;
+		const medicationUrl = `${siteUrl}/medications/${medicationData.value.id}`;
+
+		schemaOrgStore.setSchemas([
+			{
+				'@type': 'WebPage',
+				'@id': `${medicationUrl}#webpage`,
+				'url': medicationUrl,
+				'name': medicationData.value.name,
+				'inLanguage': locale.value,
+				'mainEntity': { '@id': `${medicationUrl}#drug` },
+			},
+			{
+				'@type': 'Drug',
+				'@id': `${medicationUrl}#drug`,
+				'mainEntityOfPage': medicationUrl,
+				'url': medicationUrl,
+				'name': medicationData.value.name,
+				'availableService': medicationClinics.value.map((clinic) => ({
+					'@type': 'MedicalOrganization',
+					'name': clinic.name,
+				})),
+			},
+			buildBreadcrumbsSchema(medicationUrl, [
+				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
+				{ name: t('BreadcrumbMedications'), url: `${siteUrl}/medications` },
+				{ name: medicationData.value.name },
+			]),
+		]);
 	}
 });
 </script>

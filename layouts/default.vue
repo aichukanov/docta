@@ -11,7 +11,7 @@
 				<div class="footer-top">
 					<div class="footer-brand">
 						<div class="footer-brand__text">
-							<div class="footer-brand__name">omeda.me</div>
+							<div class="footer-brand__name">{{ siteName }}</div>
 							<div class="footer-brand__tagline">{{ t('Tagline') }}</div>
 						</div>
 					</div>
@@ -67,7 +67,9 @@
 
 				<div class="footer-bottom">
 					<div class="footer-bottom__left">
-						<span class="footer-bottom__muted">© {{ years }} omeda.me</span>
+						<span class="footer-bottom__muted"
+							>© {{ years }} {{ siteName }}</span
+						>
 					</div>
 					<div class="footer-bottom__right">
 						<span class="footer-bottom__muted">{{ t('DisclaimerShort') }}</span>
@@ -89,6 +91,8 @@ import { getRegionalQuery } from '~/common/url-utils';
 const { isConsentGiven } = useCookieControl();
 const { t } = useI18n();
 const { locale } = useI18n({ useScope: 'global' });
+const runtimeConfig = useRuntimeConfig();
+const siteName = runtimeConfig.public.siteName;
 
 const years = computed(() => `2025`); //  - ${new Date().getFullYear()}
 

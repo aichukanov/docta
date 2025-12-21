@@ -2,7 +2,9 @@
 	<el-link target="_blank" :href="googleMapsUrl" underline="never">
 		<span class="link-with-icon">
 			<IconRoute :size="20" />
-			{{ text ?? t('BuildRoute') }}
+			<slot>
+				{{ t('BuildRoute') }}
+			</slot>
 		</span>
 	</el-link>
 </template>
@@ -13,7 +15,6 @@ import type { ClinicData } from '~/interfaces/clinic';
 
 const props = defineProps<{
 	clinic: ClinicData;
-	text?: string;
 }>();
 
 const { t } = useI18n();

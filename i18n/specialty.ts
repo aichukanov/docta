@@ -625,9 +625,12 @@ export default {
 			[`doctors_${DoctorSpecialty.AESTHETIC_MEDICINE}`]:
 				'Врачи эстетической медицины',
 
-			[`specialty_${DoctorSpecialty.GENERAL_MEDICINE}`]: 'Общая медицина',
-			[`doctor_${DoctorSpecialty.GENERAL_MEDICINE}`]: 'Врач общей медицины',
-			[`doctors_${DoctorSpecialty.GENERAL_MEDICINE}`]: 'Врачи общей медицины',
+			[`specialty_${DoctorSpecialty.GENERAL_MEDICINE}`]:
+				'Общая медицина (терапия)',
+			[`doctor_${DoctorSpecialty.GENERAL_MEDICINE}`]:
+				'Врач общей медицины (терапевт)',
+			[`doctors_${DoctorSpecialty.GENERAL_MEDICINE}`]:
+				'Врачи общей медицины (терапевты)',
 
 			[`specialty_${DoctorSpecialty.NEPHROLOGY}`]: 'Нефрология',
 			[`doctor_${DoctorSpecialty.NEPHROLOGY}`]: 'Нефролог',

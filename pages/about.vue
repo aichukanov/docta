@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
+import { buildBreadcrumbsSchema } from '~/common/schema-org-builders';
+import breadcrumbI18n from '~/i18n/breadcrumb';
+import { combineI18nMessages } from '~/i18n/utils';
 
-const { t } = useI18n({ useScope: 'local' });
-const { locale } = useI18n({ useScope: 'global' });
+const { t, locale } = useI18n({
+	useScope: 'local',
+	messages: combineI18nMessages([breadcrumbI18n]),
+});
 
 const route = useRoute();
 
@@ -14,22 +19,36 @@ useSeoMeta({
 	description: pageDescription,
 });
 
-const { setAboutPageSchema, setBreadcrumbs } = useSchemaOrg();
-
-const aboutUrl = computed(() => `https://omeda.me${route.path}`);
-
-watchEffect(() => {
-	setAboutPageSchema({
-		title: pageTitle.value,
-		description: pageDescription.value,
-		url: aboutUrl.value,
-	});
-});
+const schemaOrgStore = useSchemaOrgStore();
+const runtimeConfig = useRuntimeConfig();
+const siteUrl = runtimeConfig.public.siteUrl;
+const siteName = runtimeConfig.public.siteName;
+const aboutUrl = computed(() => `${siteUrl}${route.path}`);
 
 watchEffect(() => {
-	setBreadcrumbs([
-		{ name: t('BreadcrumbHome'), url: '/' },
-		{ name: t('BreadcrumbAbout'), url: '/about' },
+	schemaOrgStore.setSchemas([
+		{
+			'@type': 'AboutPage',
+			'@id': `${aboutUrl.value}#aboutpage`,
+			'name': pageTitle.value,
+			'description': pageDescription.value,
+			'inLanguage': locale.value,
+			'url': aboutUrl.value,
+			'isPartOf': {
+				'@type': 'WebSite',
+				'name': siteName,
+				'url': siteUrl,
+			},
+			'about': {
+				'@type': 'MedicalBusiness',
+				'name': siteName,
+				'url': siteUrl,
+			},
+		},
+		buildBreadcrumbsSchema(aboutUrl.value, [
+			{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
+			{ name: t('BreadcrumbAbout') },
+		]),
 	]);
 });
 
@@ -43,15 +62,15 @@ const homeLink = computed(() => ({
 	<div class="about-page">
 		<div class="about-page__container">
 			<div class="about-page__header">
-				<div class="about-page__breadcrumbs">
-					<NuxtLink class="about-page__crumb" :to="homeLink">{{
-						t('BreadcrumbHome')
-					}}</NuxtLink>
-					<span class="about-page__sep">/</span>
-					<span class="about-page__crumb is-current">{{
-						t('BreadcrumbAbout')
-					}}</span>
-				</div>
+			<div class="about-page__breadcrumbs">
+				<NuxtLink class="about-page__crumb" :to="homeLink">{{
+					t('BreadcrumbHome')
+				}}</NuxtLink>
+				<span class="about-page__sep">/</span>
+				<span class="about-page__crumb is-current">{{
+					t('BreadcrumbAbout')
+				}}</span>
+			</div>
 				<h1 class="about-page__title">{{ t('Title') }}</h1>
 				<p class="about-page__subtitle">{{ t('Subtitle') }}</p>
 			</div>
@@ -98,8 +117,6 @@ const homeLink = computed(() => ({
 		"Title": "About the project",
 		"Description": "How omeda.me collects and structures information about lab tests and medical services. Reference texts may be generated automatically and are not medical advice.",
 		"Subtitle": "We collect and systematize information about lab tests and medical services from open sources.",
-		"BreadcrumbHome": "Home",
-		"BreadcrumbAbout": "About",
 		"WhatWeDoTitle": "What this project does",
 		"WhatWeDoP1": "The site collects and structures information about laboratory tests and medical services from open sources of clinics and laboratories.",
 		"WhatWeDoP2": "Descriptions are formed using data from clinic and laboratory websites and medical reference sources.",
@@ -120,8 +137,6 @@ const homeLink = computed(() => ({
 		"Title": "О проекте",
 		"Description": "Как omeda.me собирает и систематизирует информацию об анализах и медицинских услугах. Тексты носят справочный характер, могут формироваться автоматически и не являются медицинскими рекомендациями.",
 		"Subtitle": "Собираем и систематизируем информацию об анализах и медицинских услугах из открытых источников.",
-		"BreadcrumbHome": "Главная",
-		"BreadcrumbAbout": "О проекте",
 		"WhatWeDoTitle": "Что делает этот проект",
 		"WhatWeDoP1": "Сайт собирает и систематизирует информацию об анализах и медицинских услугах из открытых источников клиник и лабораторий.",
 		"WhatWeDoP2": "Описания формируются на основе данных с сайтов клиник, лабораторий и медицинских справочников.",
@@ -142,8 +157,6 @@ const homeLink = computed(() => ({
 		"Title": "O projektu",
 		"Description": "Kako omeda.me prikuplja i sistematizuje informacije o analizama i medicinskim uslugama. Tekstovi su informativni, mogu biti automatski generisani i nisu medicinski saveti.",
 		"Subtitle": "Prikupljamo i sistematizujemo informacije o analizama i medicinskim uslugama iz otvorenih izvora.",
-		"BreadcrumbHome": "Početna",
-		"BreadcrumbAbout": "O projektu",
 		"WhatWeDoTitle": "Šta radi ovaj projekat",
 		"WhatWeDoP1": "Sajt prikuplja i sistematizuje informacije o laboratorijskim analizama i medicinskim uslugama iz otvorenih izvora klinika i laboratorija.",
 		"WhatWeDoP2": "Opisi se formiraju na osnovu podataka sa sajtova klinika, laboratorija i medicinskih referentnih izvora.",
@@ -164,8 +177,6 @@ const homeLink = computed(() => ({
 		"Title": "Über das Projekt",
 		"Description": "Wie omeda.me Informationen zu Laboranalysen und medizinischen Leistungen sammelt und strukturiert. Texte sind informativ, können automatisch erstellt werden und sind keine medizinische Beratung.",
 		"Subtitle": "Wir sammeln und systematisieren Informationen zu Laboranalysen und medizinischen Leistungen aus offenen Quellen.",
-		"BreadcrumbHome": "Startseite",
-		"BreadcrumbAbout": "Über",
 		"WhatWeDoTitle": "Was dieses Projekt macht",
 		"WhatWeDoP1": "Die Website sammelt und strukturiert Informationen zu Laboranalysen und medizinischen Leistungen aus offenen Quellen von Kliniken und Laboren.",
 		"WhatWeDoP2": "Beschreibungen werden anhand von Daten von Klinik- und Laborwebsites sowie medizinischen Nachschlagewerken erstellt.",
@@ -186,8 +197,6 @@ const homeLink = computed(() => ({
 		"Title": "Proje hakkında",
 		"Description": "omeda.me'nin laboratuvar testleri ve tıbbi hizmetler hakkında bilgiyi nasıl topladığı ve düzenlediği. Metinler bilgilendirme amaçlıdır, otomatik üretilebilir ve tıbbi tavsiye değildir.",
 		"Subtitle": "Laboratuvar testleri ve tıbbi hizmetler hakkında bilgiyi açık kaynaklardan topluyor ve sistematik hale getiriyoruz.",
-		"BreadcrumbHome": "Ana sayfa",
-		"BreadcrumbAbout": "Hakkında",
 		"WhatWeDoTitle": "Bu proje ne yapar",
 		"WhatWeDoP1": "Site, klinik ve laboratuvarların açık kaynaklarından laboratuvar testleri ve tıbbi hizmetler hakkında bilgiyi toplar ve düzenler.",
 		"WhatWeDoP2": "Açıklamalar, klinik ve laboratuvar siteleri ile tıbbi referans kaynaklarındaki verilere dayanarak oluşturulur.",

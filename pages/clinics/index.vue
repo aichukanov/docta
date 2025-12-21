@@ -1,14 +1,24 @@
 <script setup lang="ts">
 import { combineI18nMessages } from '~/i18n/utils';
+import {
+	buildEntityListSchema,
+	buildBreadcrumbsSchema,
+} from '~/common/schema-org-builders';
 import type { ClinicData } from '~/interfaces/clinic';
 
+import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import clinicI18n from '~/i18n/clinic';
 import languageI18n from '~/i18n/language';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([clinicI18n, cityI18n, languageI18n]),
+	messages: combineI18nMessages([
+		breadcrumbI18n,
+		clinicI18n,
+		cityI18n,
+		languageI18n,
+	]),
 });
 
 const { cityIds, languageIds, name, updateFromRoute, getRouteParams } =
@@ -106,7 +116,10 @@ useSeoMeta({
 	description: pageDescription,
 });
 
-const { setClinicsListSchema } = useSchemaOrg();
+// Schema.org for clinics list
+const schemaOrgStore = useSchemaOrgStore();
+const route = useRoute();
+const runtimeConfig = useRuntimeConfig();
 const isFiltered = computed(() => {
 	return (
 		cityIds.value.length > 0 || languageIds.value.length > 0 || !!name.value
@@ -114,13 +127,25 @@ const isFiltered = computed(() => {
 });
 watchEffect(() => {
 	if (filteredClinics.value) {
-		setClinicsListSchema({
-			title: pageTitle.value,
-			description: pageDescription.value,
-			totalCount: filteredClinics.value.length,
-			clinics: filteredClinics.value,
-			isFiltered: isFiltered.value,
-		});
+		const siteUrl = runtimeConfig.public.siteUrl;
+		const pageUrl = `${siteUrl}${route.fullPath}`;
+		schemaOrgStore.setSchemas([
+			...buildEntityListSchema({
+				siteUrl,
+				pageUrl,
+				locale: locale.value,
+				title: pageTitle.value,
+				description: pageDescription.value,
+				totalCount: filteredClinics.value.length,
+				items: filteredClinics.value,
+				buildPath: (clinic) => `/clinics/${clinic.id}`,
+				isFiltered: isFiltered.value,
+			}),
+			buildBreadcrumbsSchema(pageUrl, [
+				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
+				{ name: t('BreadcrumbClinics') },
+			]),
+		]);
 	}
 });
 </script>

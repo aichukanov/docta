@@ -25,6 +25,8 @@ export default defineNuxtConfig({
 
 	runtimeConfig: {
 		public: {
+			siteUrl: process.env.SITE_URL,
+			siteName: process.env.SITE_NAME,
 			mixpanelToken: process.env.MIXPANEL_TOKEN,
 			cloudflareToken: process.env.CLOUDFLARE_TOKEN,
 			connection: {

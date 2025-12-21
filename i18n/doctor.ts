@@ -40,6 +40,8 @@ export default {
 				'Find doctors in Montenegro by specialty, city, and consultation language. Clinics, addresses, and contacts.',
 			DoctorsListDescriptionCity:
 				'Doctors in {city} — search by specialty and consultation language. Clinics, addresses, and contacts.',
+			DoctorsListDescriptionFiltered:
+				'Found {count}: {title}. Clinics, addresses, and contacts.',
 			And: 'and',
 		},
 		ru: {
@@ -84,6 +86,8 @@ export default {
 				'Найдите врача в Черногории по специальности, городу и языку консультации. Клиники с сопровождением, адреса и контакты.',
 			DoctorsListDescriptionCity:
 				'Врачи в {city} — поиск по специальности и языку консультации. Клиники с сопровождением, адреса и контакты.',
+			DoctorsListDescriptionFiltered:
+				'Найдено {count}: {title}. Клиники, адреса и контакты.',
 			And: 'и',
 		},
 		tr: {
@@ -126,6 +130,8 @@ export default {
 				"Karadağ'da uzmanlık, şehir ve konsültasyon diline göre doktor bulun. Klinikler, adresler ve iletişim bilgileri.",
 			DoctorsListDescriptionCity:
 				"{city}'de uzmanlık ve konsültasyon diline göre doktor arayın. Klinikler, adresler ve iletişim bilgileri.",
+			DoctorsListDescriptionFiltered:
+				'{count} bulundu: {title}. Klinikler, adresler ve iletişim bilgileri.',
 			And: 've',
 		},
 		de: {
@@ -170,6 +176,8 @@ export default {
 				'Finden Sie Ärzte in Montenegro nach Fachgebiet, Stadt und Beratungssprache. Kliniken, Adressen und Kontakte.',
 			DoctorsListDescriptionCity:
 				'Ärzte in {city} — Suche nach Fachgebiet und Beratungssprache. Kliniken, Adressen und Kontakte.',
+			DoctorsListDescriptionFiltered:
+				'{count} gefunden: {title}. Kliniken, Adressen und Kontakte.',
 			And: 'und',
 		},
 		sr: {
@@ -214,6 +222,8 @@ export default {
 				'Pronađite lekare u Crnoj Gori po specijalizaciji, gradu i jeziku konsultacije. Klinike, adrese i kontakti.',
 			DoctorsListDescriptionCity:
 				'Lekari u {city} — pretraga po specijalizaciji i jeziku konsultacije. Klinike, adrese i kontakti.',
+			DoctorsListDescriptionFiltered:
+				'Pronađeno {count}: {title}. Klinike, adrese i kontakti.',
 			And: 'i',
 		},
 	},

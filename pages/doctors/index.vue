@@ -178,9 +178,17 @@ const pageTitleWithCount = computed(() => {
 });
 
 const pageDescription = computed(() => {
-	if (cityIds.value.length === 1) {
-		return t('DoctorsListDescriptionCity', {
-			city: t(`city_${cityIds.value[0]}_genitive`),
+	const count = doctorsList.value?.totalCount || 0;
+	const hasFilters =
+		specialtyIds.value.length > 0 ||
+		cityIds.value.length > 0 ||
+		languageIds.value.length > 0 ||
+		clinicIds.value.length > 0;
+
+	if (hasFilters) {
+		return t('DoctorsListDescriptionFiltered', {
+			count,
+			title: pageTitle.value,
 		});
 	}
 	return t('DoctorsListDescription');

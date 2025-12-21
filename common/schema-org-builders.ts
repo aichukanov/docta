@@ -567,3 +567,136 @@ export function buildClinicSchema(options: {
 
 	return [webPageSchema, clinicSchema];
 }
+
+/**
+ * Build MedicalTest schema for lab test pages
+ */
+export function buildMedicalTestSchema(options: {
+	siteUrl: string;
+	id: number;
+	name: string;
+	originalName?: string;
+	synonyms?: string[];
+	locale: string;
+	pageTitle: string;
+	pageDescription?: string;
+	clinics?: ClinicData[];
+	getCityName: (id: number) => string | undefined;
+}): SchemaOrg[] {
+	const testUrl = `${options.siteUrl}/labtests/${options.id}`;
+
+	// Build alternateName from originalName and synonyms
+	const alternateNames: string[] = [];
+	if (options.originalName && options.originalName !== options.name) {
+		alternateNames.push(options.originalName);
+	}
+	if (options.synonyms?.length) {
+		alternateNames.push(...options.synonyms);
+	}
+
+	const testSchema = {
+		...buildEntitySchemaBase({
+			url: testUrl,
+			type: 'MedicalTest' as const,
+			fragment: 'medicaltest',
+		}),
+		name: options.name,
+		description: options.pageDescription || undefined,
+		alternateName:
+			alternateNames.length > 0 ? alternateNames.join(', ') : undefined,
+		// Use availableAt to specify where the test is available
+		availableAt: options.clinics?.map((clinic) =>
+			buildMedicalOrganizationRef(clinic, options.getCityName),
+		),
+	};
+
+	const webPageSchema = buildWebPageSchema({
+		url: testUrl,
+		locale: options.locale,
+		name: options.pageTitle,
+		description: options.pageDescription,
+		mainEntityId: testSchema['@id'] as string,
+	});
+
+	return [webPageSchema, testSchema];
+}
+
+/**
+ * Build Drug schema for medication pages
+ */
+export function buildDrugSchema(options: {
+	siteUrl: string;
+	id: number;
+	name: string;
+	locale: string;
+	pageTitle: string;
+	pageDescription?: string;
+	clinics?: ClinicData[];
+	getCityName: (id: number) => string | undefined;
+}): SchemaOrg[] {
+	const drugUrl = `${options.siteUrl}/medications/${options.id}`;
+
+	const drugSchema = {
+		...buildEntitySchemaBase({
+			url: drugUrl,
+			type: 'Drug' as const,
+			fragment: 'drug',
+		}),
+		name: options.name,
+		description: options.pageDescription || undefined,
+		// Use availableAt to specify pharmacies/clinics where drug is available
+		availableAt: options.clinics?.map((clinic) =>
+			buildMedicalOrganizationRef(clinic, options.getCityName),
+		),
+	};
+
+	const webPageSchema = buildWebPageSchema({
+		url: drugUrl,
+		locale: options.locale,
+		name: options.pageTitle,
+		description: options.pageDescription,
+		mainEntityId: drugSchema['@id'] as string,
+	});
+
+	return [webPageSchema, drugSchema];
+}
+
+/**
+ * Build MedicalProcedure schema for medical service pages
+ */
+export function buildMedicalProcedureSchema(options: {
+	siteUrl: string;
+	id: number;
+	name: string;
+	locale: string;
+	pageTitle: string;
+	pageDescription?: string;
+	clinics?: ClinicData[];
+	getCityName: (id: number) => string | undefined;
+}): SchemaOrg[] {
+	const procedureUrl = `${options.siteUrl}/services/${options.id}`;
+
+	const procedureSchema = {
+		...buildEntitySchemaBase({
+			url: procedureUrl,
+			type: 'MedicalProcedure' as const,
+			fragment: 'medicalprocedure',
+		}),
+		name: options.name,
+		description: options.pageDescription || undefined,
+		// Use availableAt to specify clinics where procedure is performed
+		availableAt: options.clinics?.map((clinic) =>
+			buildMedicalOrganizationRef(clinic, options.getCityName),
+		),
+	};
+
+	const webPageSchema = buildWebPageSchema({
+		url: procedureUrl,
+		locale: options.locale,
+		name: options.pageTitle,
+		description: options.pageDescription,
+		mainEntityId: procedureSchema['@id'] as string,
+	});
+
+	return [webPageSchema, procedureSchema];
+}

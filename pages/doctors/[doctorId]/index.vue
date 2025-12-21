@@ -40,6 +40,11 @@ await clinicsStore.fetchClinics();
 
 const isFound = computed(() => doctorData.value?.id != null);
 
+// Set HTTP 404 status for not found doctor
+if (import.meta.server && !isFound.value) {
+	setResponseStatus(useRequestEvent()!, 404);
+}
+
 const doctorClinics = computed(() => {
 	if (!isFound.value || !clinicsStore.clinics) {
 		return [];
@@ -160,6 +165,8 @@ const ogImage = computed(() => {
 	return `${runtimeConfig.public.siteUrl}/logo-site.png`;
 });
 
+const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
+
 useSeoMeta({
 	title: pageTitle,
 	description: pageDescription,
@@ -171,6 +178,7 @@ useSeoMeta({
 	twitterTitle: pageTitle,
 	twitterDescription: pageDescription,
 	twitterImage: ogImage,
+	robots: robotsMeta,
 });
 
 const getCityName = (id: number): string | undefined => {

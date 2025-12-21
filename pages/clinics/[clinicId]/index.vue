@@ -62,6 +62,11 @@ const { data: medicalServicesList } = await useFetch('/api/services/list', {
 
 const isFound = computed(() => clinicData.value?.id != null);
 
+// Set HTTP 404 status for not found clinic
+if (import.meta.server && !isFound.value) {
+	setResponseStatus(useRequestEvent()!, 404);
+}
+
 const clinicDoctors = computed(() => doctorsList.value?.doctors || []);
 const clinicLabTests = computed(() => labTestsList.value?.labTests || []);
 const clinicMedications = computed(
@@ -137,13 +142,25 @@ function joinWithAnd(items: string[]): string {
 	);
 }
 
+const schemaOrgStore = useSchemaOrgStore();
+const runtimeConfig = useRuntimeConfig();
+
+const ogImage = `${runtimeConfig.public.siteUrl}/logo-site.png`;
+const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
+
 useSeoMeta({
 	title: pageTitle,
 	description: pageDescription,
+	ogTitle: pageTitle,
+	ogDescription: pageDescription,
+	ogImage: ogImage,
+	ogType: 'business.business',
+	twitterCard: 'summary',
+	twitterTitle: pageTitle,
+	twitterDescription: pageDescription,
+	twitterImage: ogImage,
+	robots: robotsMeta,
 });
-
-const schemaOrgStore = useSchemaOrgStore();
-const runtimeConfig = useRuntimeConfig();
 
 const getCityName = (id: number): string | undefined => {
 	const key = `city_${id}`;

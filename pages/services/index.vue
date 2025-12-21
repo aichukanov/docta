@@ -11,11 +11,7 @@ import medicalServiceI18n from '~/i18n/medical-service';
 
 const { t } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([
-		breadcrumbI18n,
-		cityI18n,
-		medicalServiceI18n,
-	]),
+	messages: combineI18nMessages([breadcrumbI18n, cityI18n, medicalServiceI18n]),
 });
 
 const { cityIds, clinicIds, name, updateFromRoute, getRouteParams } =
@@ -86,16 +82,25 @@ const pageDescription = computed(() => {
 	return t('MedicalServicesListDescription');
 });
 
-useSeoMeta({
-	title: pageTitleWithCount,
-	description: pageDescription,
-});
-
 // Schema.org for medical services list
 const { locale } = useI18n();
 const schemaOrgStore = useSchemaOrgStore();
 const route = useRoute();
 const runtimeConfig = useRuntimeConfig();
+
+const ogImage = `${runtimeConfig.public.siteUrl}/logo-site.png`;
+
+useSeoMeta({
+	title: pageTitleWithCount,
+	description: pageDescription,
+	ogTitle: pageTitleWithCount,
+	ogDescription: pageDescription,
+	ogImage: ogImage,
+	twitterCard: 'summary',
+	twitterTitle: pageTitleWithCount,
+	twitterDescription: pageDescription,
+	twitterImage: ogImage,
+});
 const isFiltered = computed(() => {
 	return cityIds.value.length > 0 || clinicIds.value.length > 0 || !!name.value;
 });

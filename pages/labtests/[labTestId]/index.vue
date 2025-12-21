@@ -4,7 +4,10 @@ import cityI18n from '~/i18n/city';
 import labTestI18n from '~/i18n/labtest';
 import labTestCategoryI18n from '~/i18n/labtest-category';
 import { combineI18nMessages } from '~/i18n/utils';
-import { buildBreadcrumbsSchema } from '~/common/schema-org-builders';
+import {
+	buildMedicalTestSchema,
+	buildBreadcrumbsSchema,
+} from '~/common/schema-org-builders';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -34,6 +37,11 @@ const clinicsStore = useClinicsStore();
 await clinicsStore.fetchClinics();
 
 const isFound = computed(() => labTestData.value?.id != null);
+
+// Set HTTP 404 status for not found lab test
+if (import.meta.server && !isFound.value) {
+	setResponseStatus(useRequestEvent()!, 404);
+}
 
 const labTestClinics = computed(() => {
 	if (!isFound.value || !clinicsStore.clinics) {
@@ -102,47 +110,51 @@ const pageDescription = computed(() => {
 		: t('LabTestDescriptionDefault', { name: displayName });
 });
 
-useSeoMeta({
-	title: pageTitle,
-	description: pageDescription,
-});
-
 // Schema.org for lab test details
 const schemaOrgStore = useSchemaOrgStore();
 const runtimeConfig = useRuntimeConfig();
+
+const ogImage = `${runtimeConfig.public.siteUrl}/logo-site.png`;
+const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
+
+useSeoMeta({
+	title: pageTitle,
+	description: pageDescription,
+	ogTitle: pageTitle,
+	ogDescription: pageDescription,
+	ogImage: ogImage,
+	ogType: 'article',
+	twitterCard: 'summary',
+	twitterTitle: pageTitle,
+	twitterDescription: pageDescription,
+	twitterImage: ogImage,
+	robots: robotsMeta,
+});
+
+const getCityName = (id: number): string | undefined => {
+	const key = `city_${id}`;
+	const value = t(key);
+	return value && value !== key ? value : undefined;
+};
+
 watchEffect(() => {
 	if (labTestData.value && isFound.value) {
 		const siteUrl = runtimeConfig.public.siteUrl;
 		const testUrl = `${siteUrl}/labtests/${labTestData.value.id}`;
-		const alternateName = [
-			labTestData.value.originalName,
-			...(labTestData.value.synonyms || []),
-		]
-			.filter(Boolean)
-			.join(', ');
 
 		schemaOrgStore.setSchemas([
-			{
-				'@type': 'WebPage',
-				'@id': `${testUrl}#webpage`,
-				'url': testUrl,
-				'name': pageTitle.value,
-				'description': pageDescription.value,
-				'inLanguage': locale.value,
-				'mainEntity': { '@id': `${testUrl}#medicaltest` },
-			},
-			{
-				'@type': 'MedicalTest',
-				'@id': `${testUrl}#medicaltest`,
-				'mainEntityOfPage': testUrl,
-				'url': testUrl,
-				'name': labTestData.value.name,
-				'alternateName': alternateName || undefined,
-				'availableService': labTestClinics.value.map((clinic) => ({
-					'@type': 'MedicalOrganization',
-					'name': clinic.name,
-				})),
-			},
+			...buildMedicalTestSchema({
+				siteUrl,
+				id: labTestData.value.id,
+				name: labTestData.value.name,
+				originalName: labTestData.value.originalName,
+				synonyms: labTestData.value.synonyms,
+				locale: locale.value,
+				pageTitle: pageTitle.value,
+				pageDescription: pageDescription.value,
+				clinics: labTestClinics.value,
+				getCityName,
+			}),
 			buildBreadcrumbsSchema(testUrl, [
 				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
 				{ name: t('BreadcrumbLabTests'), url: `${siteUrl}/labtests` },

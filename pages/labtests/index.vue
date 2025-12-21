@@ -142,15 +142,24 @@ const pageDescription = computed(() => {
 	return t('LabTestsListDescription');
 });
 
-useSeoMeta({
-	title: pageTitleWithCount,
-	description: pageDescription,
-});
-
 // Schema.org for lab tests list
 const schemaOrgStore = useSchemaOrgStore();
 const route = useRoute();
 const runtimeConfig = useRuntimeConfig();
+
+const ogImage = `${runtimeConfig.public.siteUrl}/logo-site.png`;
+
+useSeoMeta({
+	title: pageTitleWithCount,
+	description: pageDescription,
+	ogTitle: pageTitleWithCount,
+	ogDescription: pageDescription,
+	ogImage: ogImage,
+	twitterCard: 'summary',
+	twitterTitle: pageTitleWithCount,
+	twitterDescription: pageDescription,
+	twitterImage: ogImage,
+});
 const isFiltered = computed(() => {
 	return (
 		cityIds.value.length > 0 ||

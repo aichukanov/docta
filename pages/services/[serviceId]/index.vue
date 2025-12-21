@@ -3,9 +3,12 @@ import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import medicalServiceI18n from '~/i18n/medical-service';
 import { combineI18nMessages } from '~/i18n/utils';
-import { buildBreadcrumbsSchema } from '~/common/schema-org-builders';
+import {
+	buildMedicalProcedureSchema,
+	buildBreadcrumbsSchema,
+} from '~/common/schema-org-builders';
 
-const { t } = useI18n({
+const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([breadcrumbI18n, medicalServiceI18n, cityI18n]),
 });
@@ -27,6 +30,11 @@ const clinicsStore = useClinicsStore();
 await clinicsStore.fetchClinics();
 
 const isFound = computed(() => medicalServiceData.value?.id != null);
+
+// Set HTTP 404 status for not found service
+if (import.meta.server && !isFound.value) {
+	setResponseStatus(useRequestEvent()!, 404);
+}
 
 const medicalServiceClinics = computed(() => {
 	if (!isFound.value || !clinicsStore.clinics) {
@@ -94,41 +102,49 @@ const pageDescription = computed(() => {
 		: t('MedicalServiceDescriptionDefault', { name });
 });
 
+// Schema.org for medical service details
+const schemaOrgStore = useSchemaOrgStore();
+const runtimeConfig = useRuntimeConfig();
+
+const ogImage = `${runtimeConfig.public.siteUrl}/logo-site.png`;
+const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
+
 useSeoMeta({
 	title: pageTitle,
 	description: pageDescription,
+	ogTitle: pageTitle,
+	ogDescription: pageDescription,
+	ogImage: ogImage,
+	ogType: 'article',
+	twitterCard: 'summary',
+	twitterTitle: pageTitle,
+	twitterDescription: pageDescription,
+	twitterImage: ogImage,
+	robots: robotsMeta,
 });
 
-// Schema.org for medical service details
-const { locale } = useI18n();
-const schemaOrgStore = useSchemaOrgStore();
-const runtimeConfig = useRuntimeConfig();
+const getCityName = (id: number): string | undefined => {
+	const key = `city_${id}`;
+	const value = t(key);
+	return value && value !== key ? value : undefined;
+};
+
 watchEffect(() => {
 	if (medicalServiceData.value && isFound.value) {
 		const siteUrl = runtimeConfig.public.siteUrl;
 		const serviceUrl = `${siteUrl}/services/${medicalServiceData.value.id}`;
 
 		schemaOrgStore.setSchemas([
-			{
-				'@type': 'WebPage',
-				'@id': `${serviceUrl}#webpage`,
-				'url': serviceUrl,
-				'name': pageTitle.value,
-				'description': pageDescription.value,
-				'inLanguage': locale.value,
-				'mainEntity': { '@id': `${serviceUrl}#medicalprocedure` },
-			},
-			{
-				'@type': 'MedicalProcedure',
-				'@id': `${serviceUrl}#medicalprocedure`,
-				'mainEntityOfPage': serviceUrl,
-				'url': serviceUrl,
-				'name': medicalServiceData.value.name,
-				'availableService': medicalServiceClinics.value.map((clinic) => ({
-					'@type': 'MedicalOrganization',
-					'name': clinic.name,
-				})),
-			},
+			...buildMedicalProcedureSchema({
+				siteUrl,
+				id: medicalServiceData.value.id,
+				name: medicalServiceData.value.name,
+				locale: locale.value,
+				pageTitle: pageTitle.value,
+				pageDescription: pageDescription.value,
+				clinics: medicalServiceClinics.value,
+				getCityName,
+			}),
 			buildBreadcrumbsSchema(serviceUrl, [
 				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
 				{ name: t('BreadcrumbServices'), url: `${siteUrl}/services` },

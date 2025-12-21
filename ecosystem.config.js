@@ -3,7 +3,7 @@ require('dotenv').config();
 module.exports = {
 	apps: [
 		{
-			name: 'docta',
+			name: 'omeda',
 			port: '3000',
 			exec_mode: 'cluster',
 			instances: 'max',

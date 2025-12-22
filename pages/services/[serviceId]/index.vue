@@ -7,6 +7,7 @@ import {
 	buildMedicalProcedureSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
+import { SITE_URL } from '~/common/constants';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -104,9 +105,8 @@ const pageDescription = computed(() => {
 
 // Schema.org for medical service details
 const schemaOrgStore = useSchemaOrgStore();
-const runtimeConfig = useRuntimeConfig();
 
-const ogImage = `${runtimeConfig.public.siteUrl}/logo-site.png`;
+const ogImage = `${SITE_URL}/logo-site.png`;
 const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
 
 useSeoMeta({
@@ -131,12 +131,11 @@ const getCityName = (id: number): string | undefined => {
 
 watchEffect(() => {
 	if (medicalServiceData.value && isFound.value) {
-		const siteUrl = runtimeConfig.public.siteUrl;
-		const serviceUrl = `${siteUrl}/services/${medicalServiceData.value.id}`;
+		const serviceUrl = `${SITE_URL}/services/${medicalServiceData.value.id}`;
 
 		schemaOrgStore.setSchemas([
 			...buildMedicalProcedureSchema({
-				siteUrl,
+				siteUrl: SITE_URL,
 				id: medicalServiceData.value.id,
 				name: medicalServiceData.value.name,
 				locale: locale.value,
@@ -146,8 +145,8 @@ watchEffect(() => {
 				getCityName,
 			}),
 			buildBreadcrumbsSchema(serviceUrl, [
-				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
-				{ name: t('BreadcrumbServices'), url: `${siteUrl}/services` },
+				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
+				{ name: t('BreadcrumbServices'), url: `${SITE_URL}/services` },
 				{ name: pageTitle.value },
 			]),
 		]);

@@ -1,6 +1,7 @@
 import { SitemapLink } from './utils';
 import { locales } from '~/composables/use-locale';
 import { getRegionalUrl } from '~/common/url-utils';
+import { SITE_URL } from '~/common/constants';
 import { getDoctorList } from '~/server/api/doctors/list';
 import { getLabTestList } from '~/server/api/labtests/list';
 import { getSitemapFilters as getDoctorSitemapFilters } from './filters/doctors';
@@ -14,9 +15,7 @@ export function menuItemToLinks(
 	routeName: string,
 	query: Record<string, string | string[]> = {},
 ) {
-	const config = useRuntimeConfig();
-	const siteUrl = config.public.siteUrl || 'https://omeda.me';
-	const url = siteUrl + '/' + routeName.replaceAll('-', '/');
+	const url = SITE_URL + '/' + routeName.replaceAll('-', '/');
 
 	const linksWithParams: Array<{ hreflang: string; href: string }> = [];
 

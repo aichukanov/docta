@@ -24,3 +24,13 @@ export const MONTENEGRO_ZOOM_SETTINGS = {
 	maxZoom: 18, // Максимальный зум
 	defaultZoom: 9, // Зум по умолчанию
 };
+
+// Данные сайта
+export const SITE_URL = 'https://docta.me';
+export const SITE_NAME = 'docta.me';
+
+// Контактные данные проекта
+export const PROJECT_CONTACTS = {
+	email: 'contact@svad.net',
+	telegram: 'https://t.me/svad_net',
+};

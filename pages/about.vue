@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
 import { buildBreadcrumbsSchema } from '~/common/schema-org-builders';
+import { PROJECT_CONTACTS, SITE_URL, SITE_NAME } from '~/common/constants';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import { combineI18nMessages } from '~/i18n/utils';
 
@@ -12,7 +13,9 @@ const { t, locale } = useI18n({
 const route = useRoute();
 
 const pageTitle = computed(() => t('Title'));
-const pageDescription = computed(() => t('Description'));
+const pageDescription = computed(() =>
+	t('Description', { siteName: SITE_NAME }),
+);
 
 useSeoMeta({
 	title: pageTitle,
@@ -20,10 +23,7 @@ useSeoMeta({
 });
 
 const schemaOrgStore = useSchemaOrgStore();
-const runtimeConfig = useRuntimeConfig();
-const siteUrl = runtimeConfig.public.siteUrl;
-const siteName = runtimeConfig.public.siteName;
-const aboutUrl = computed(() => `${siteUrl}${route.path}`);
+const aboutUrl = computed(() => `${SITE_URL}${route.path}`);
 
 watchEffect(() => {
 	schemaOrgStore.setSchemas([
@@ -36,17 +36,17 @@ watchEffect(() => {
 			'url': aboutUrl.value,
 			'isPartOf': {
 				'@type': 'WebSite',
-				'name': siteName,
-				'url': siteUrl,
+				'name': SITE_NAME,
+				'url': SITE_URL,
 			},
 			'about': {
 				'@type': 'MedicalBusiness',
-				'name': siteName,
-				'url': siteUrl,
+				'name': SITE_NAME,
+				'url': SITE_URL,
 			},
 		},
 		buildBreadcrumbsSchema(aboutUrl.value, [
-			{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
+			{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
 			{ name: t('BreadcrumbAbout') },
 		]),
 	]);
@@ -76,18 +76,42 @@ const homeLink = computed(() => ({
 			</header>
 
 			<article class="about-page__grid" :aria-label="t('AriaAboutContent')">
+				<section class="about-card about-card--highlight">
+					<h2 class="about-card__title">{{ t('AboutUsTitle') }}</h2>
+					<p class="about-card__text">{{ t('AboutUsP1') }}</p>
+					<p class="about-card__text">{{
+						t('AboutUsP2', { siteName: SITE_NAME })
+					}}</p>
+				</section>
+
 				<section class="about-card">
 					<h2 class="about-card__title">{{ t('WhatWeDoTitle') }}</h2>
-					<p class="about-card__text">{{ t('WhatWeDoP1') }}</p>
+					<p class="about-card__text">{{
+						t('WhatWeDoP1', { siteName: SITE_NAME })
+					}}</p>
 					<p class="about-card__text">{{ t('WhatWeDoP2') }}</p>
 				</section>
 
 				<section class="about-card">
-					<h2 class="about-card__title">{{ t('SourcesTitle') }}</h2>
+					<h2 class="about-card__title">{{ t('DataSourcesTitle') }}</h2>
+					<p class="about-card__text">{{ t('DataSourcesIntro') }}</p>
 					<ul class="about-card__list">
-						<li>{{ t('SourcesLi1') }}</li>
-						<li>{{ t('SourcesLi2') }}</li>
-						<li>{{ t('SourcesLi3') }}</li>
+						<li>{{ t('DataSourcesLi1') }}</li>
+						<li>{{ t('DataSourcesLi2') }}</li>
+						<li>{{ t('DataSourcesLi3') }}</li>
+						<li>{{ t('DataSourcesLi4') }}</li>
+					</ul>
+					<p class="about-card__text about-card__text--note">
+						{{ t('DataSourcesNote') }}
+					</p>
+				</section>
+
+				<section class="about-card">
+					<h2 class="about-card__title">{{ t('HowWeWorkTitle') }}</h2>
+					<ul class="about-card__list">
+						<li>{{ t('HowWeWorkLi1') }}</li>
+						<li>{{ t('HowWeWorkLi2') }}</li>
+						<li>{{ t('HowWeWorkLi3') }}</li>
 					</ul>
 				</section>
 
@@ -106,6 +130,29 @@ const homeLink = computed(() => ({
 					<p class="about-card__text">{{ t('ResponsibilityP1') }}</p>
 					<p class="about-card__text">{{ t('ResponsibilityP2') }}</p>
 				</section>
+
+				<section class="about-card about-card--contact">
+					<h2 class="about-card__title">{{ t('ContactTitle') }}</h2>
+					<p class="about-card__text">{{ t('ContactIntro') }}</p>
+					<div class="about-card__contacts">
+						<a
+							class="about-card__contact-link"
+							:href="`mailto:${PROJECT_CONTACTS.email}`"
+							target="_blank"
+						>
+							<IconEmail class="about-card__contact-icon" />
+							<span>{{ PROJECT_CONTACTS.email }}</span>
+						</a>
+						<a
+							class="about-card__contact-link"
+							:href="PROJECT_CONTACTS.telegram"
+							target="_blank"
+						>
+							<IconTelegram class="about-card__contact-icon" />
+							<span>{{ t('TelegramChannel') }}</span>
+						</a>
+					</div>
+				</section>
 			</article>
 		</div>
 	</main>
@@ -115,15 +162,25 @@ const homeLink = computed(() => ({
 {
 	"en": {
 		"Title": "About the project",
-		"Description": "How omeda.me collects and structures information about lab tests and medical services. Reference texts may be generated automatically and are not medical advice.",
-		"Subtitle": "We collect and systematize information about lab tests and medical services from open sources.",
-		"WhatWeDoTitle": "What this project does",
-		"WhatWeDoP1": "The site collects and structures information about laboratory tests and medical services from open sources of clinics and laboratories.",
-		"WhatWeDoP2": "Descriptions are formed using data from clinic and laboratory websites and medical reference sources.",
-		"SourcesTitle": "How descriptions are prepared",
-		"SourcesLi1": "Texts are for reference only and may be processed automatically.",
-		"SourcesLi2": "Automatic processing and AI may be used to prepare descriptions.",
-		"SourcesLi3": "Texts are not medical recommendations.",
+		"Description": "{siteName} is a project by expats living in Montenegro. We aggregate information about doctors, clinics, lab tests and medical services to make healthcare search easier.",
+		"Subtitle": "We help people find doctors and medical services in Montenegro by bringing together information from multiple sources.",
+		"AboutUsTitle": "About us",
+		"AboutUsP1": "We are a small team of expats living in Montenegro. When we moved here, we faced the same challenge many newcomers face: finding the right doctor or clinic in a new country, especially without knowing the local language.",
+		"AboutUsP2": "This experience inspired us to create {siteName} — a service that aggregates and organizes information about healthcare in Montenegro, making it accessible in multiple languages.",
+		"WhatWeDoTitle": "What we do",
+		"WhatWeDoP1": "{siteName} collects and structures information about doctors, clinics, laboratory tests and medical services from open sources across Montenegro.",
+		"WhatWeDoP2": "Our goal is to make healthcare search transparent and convenient by bringing scattered data into one system with filtering by languages, cities and specialties.",
+		"DataSourcesTitle": "Our data sources",
+		"DataSourcesIntro": "We use only publicly available information from official sources:",
+		"DataSourcesLi1": "Official websites of clinics and medical centers",
+		"DataSourcesLi2": "Websites of laboratories operating in Montenegro",
+		"DataSourcesLi3": "Public price lists and service catalogs",
+		"DataSourcesLi4": "Medical reference sources for general descriptions",
+		"DataSourcesNote": "We provide direct contact information for each clinic so you can verify any details.",
+		"HowWeWorkTitle": "How information is processed",
+		"HowWeWorkLi1": "Data is collected from official clinic and laboratory websites",
+		"HowWeWorkLi2": "Information is aggregated and structured for easier search",
+		"HowWeWorkLi3": "Descriptions are reference material and are not medical recommendations",
 		"ImportantTitle": "Important",
 		"ImportantLi1": "Reference ranges and indications may differ depending on the laboratory, methodology and clinical context.",
 		"ImportantLi2": "The site does not provide medical services.",
@@ -132,21 +189,34 @@ const homeLink = computed(() => ({
 		"ResponsibilityTitle": "Limitations of responsibility",
 		"ResponsibilityP1": "Information on the site may become outdated and may contain inaccuracies from source materials.",
 		"ResponsibilityP2": "Before making any decisions about health, please consult a qualified medical professional and verify details with the clinic or laboratory.",
+		"ContactTitle": "Contact us",
+		"ContactIntro": "Have questions, suggestions or found an error? We'd love to hear from you:",
+		"TelegramChannel": "Telegram channel",
 		"AriaMainContent": "Main content",
 		"AriaBreadcrumbs": "Page navigation path",
 		"AriaAboutContent": "Information about the project"
 	},
 	"ru": {
 		"Title": "О проекте",
-		"Description": "Как omeda.me собирает и систематизирует информацию об анализах и медицинских услугах. Тексты носят справочный характер, могут формироваться автоматически и не являются медицинскими рекомендациями.",
-		"Subtitle": "Собираем и систематизируем информацию об анализах и медицинских услугах из открытых источников.",
-		"WhatWeDoTitle": "Что делает этот проект",
-		"WhatWeDoP1": "Сайт собирает и систематизирует информацию об анализах и медицинских услугах из открытых источников клиник и лабораторий.",
-		"WhatWeDoP2": "Описания формируются на основе данных с сайтов клиник, лабораторий и медицинских справочников.",
-		"SourcesTitle": "Как формируются описания",
-		"SourcesLi1": "Тексты носят справочный характер и могут обрабатываться автоматически.",
-		"SourcesLi2": "Для подготовки описаний используется автоматическая обработка информации и ИИ.",
-		"SourcesLi3": "Тексты не являются медицинскими рекомендациями.",
+		"Description": "{siteName} — проект экспатов, живущих в Черногории. Мы собираем информацию о врачах, клиниках, анализах и медицинских услугах, чтобы упростить поиск медпомощи.",
+		"Subtitle": "Помогаем находить врачей и медицинские услуги в Черногории, собирая информацию из разных источников в одном месте.",
+		"AboutUsTitle": "О нас",
+		"AboutUsP1": "Мы — небольшая команда экспатов, живущих в Черногории. Когда мы переехали сюда, столкнулись с той же проблемой, что и многие: как найти нужного врача или клинику в новой стране, особенно не зная местного языка.",
+		"AboutUsP2": "Этот опыт вдохновил нас создать {siteName} — сервис, который собирает и систематизирует информацию о медицине в Черногории, делая её доступной на нескольких языках.",
+		"WhatWeDoTitle": "Что мы делаем",
+		"WhatWeDoP1": "{siteName} собирает и систематизирует информацию о врачах, клиниках, лабораторных анализах и медицинских услугах из открытых источников по всей Черногории.",
+		"WhatWeDoP2": "Наша цель — сделать поиск медицинской помощи прозрачным и удобным, собрав разрозненные данные в единую систему с фильтрацией по языкам, городам и специальностям.",
+		"DataSourcesTitle": "Источники данных",
+		"DataSourcesIntro": "Мы используем только открытую информацию из официальных источников:",
+		"DataSourcesLi1": "Официальные сайты клиник и медицинских центров",
+		"DataSourcesLi2": "Сайты лабораторий, работающих в Черногории",
+		"DataSourcesLi3": "Публичные прайс-листы и каталоги услуг",
+		"DataSourcesLi4": "Медицинские справочники для общих описаний",
+		"DataSourcesNote": "Мы указываем прямые контакты каждой клиники, чтобы вы могли проверить любую информацию.",
+		"HowWeWorkTitle": "Как обрабатывается информация",
+		"HowWeWorkLi1": "Данные собираются с официальных сайтов клиник и лабораторий",
+		"HowWeWorkLi2": "Информация агрегируется и структурируется для удобного поиска",
+		"HowWeWorkLi3": "Описания носят справочный характер и не являются медицинскими рекомендациями",
 		"ImportantTitle": "Важно",
 		"ImportantLi1": "Нормы и показания могут отличаться в зависимости от лаборатории, методики и клинической ситуации.",
 		"ImportantLi2": "Сайт не оказывает медицинские услуги.",
@@ -155,21 +225,34 @@ const homeLink = computed(() => ({
 		"ResponsibilityTitle": "Ограничение ответственности",
 		"ResponsibilityP1": "Информация на сайте может устаревать и содержать неточности, унаследованные из исходных материалов.",
 		"ResponsibilityP2": "Перед принятием решений по здоровью проконсультируйтесь с врачом и уточняйте детали в клинике или лаборатории.",
+		"ContactTitle": "Свяжитесь с нами",
+		"ContactIntro": "Есть вопросы, предложения или нашли ошибку? Будем рады обратной связи:",
+		"TelegramChannel": "Telegram-канал",
 		"AriaMainContent": "Основное содержимое",
 		"AriaBreadcrumbs": "Навигационная цепочка",
 		"AriaAboutContent": "Информация о проекте"
 	},
 	"sr": {
 		"Title": "O projektu",
-		"Description": "Kako omeda.me prikuplja i sistematizuje informacije o analizama i medicinskim uslugama. Tekstovi su informativni, mogu biti automatski generisani i nisu medicinski saveti.",
-		"Subtitle": "Prikupljamo i sistematizujemo informacije o analizama i medicinskim uslugama iz otvorenih izvora.",
-		"WhatWeDoTitle": "Šta radi ovaj projekat",
-		"WhatWeDoP1": "Sajt prikuplja i sistematizuje informacije o laboratorijskim analizama i medicinskim uslugama iz otvorenih izvora klinika i laboratorija.",
-		"WhatWeDoP2": "Opisi se formiraju na osnovu podataka sa sajtova klinika, laboratorija i medicinskih referentnih izvora.",
-		"SourcesTitle": "Kako se pripremaju opisi",
-		"SourcesLi1": "Tekstovi su informativni i mogu biti automatski obrađeni.",
-		"SourcesLi2": "Automatska obrada i AI mogu se koristiti za pripremu opisa.",
-		"SourcesLi3": "Tekstovi nisu medicinske preporuke.",
+		"Description": "{siteName} je projekat ekspata koji žive u Crnoj Gori. Prikupljamo informacije o lekarima, klinikama, analizama i medicinskim uslugama da bismo olakšali pretragu zdravstvene zaštite.",
+		"Subtitle": "Pomažemo ljudima da pronađu lekare i medicinske usluge u Crnoj Gori prikupljanjem informacija iz više izvora na jednom mestu.",
+		"AboutUsTitle": "O nama",
+		"AboutUsP1": "Mi smo mali tim ekspata koji žive u Crnoj Gori. Kada smo se preselili ovde, suočili smo se sa istim izazovom sa kojim se suočavaju mnogi pridošlice: kako pronaći pravog lekara ili kliniku u novoj zemlji, posebno bez poznavanja lokalnog jezika.",
+		"AboutUsP2": "Ovo iskustvo nas je inspirisalo da kreiramo {siteName} — servis koji prikuplja i organizuje informacije o zdravstvenoj zaštiti u Crnoj Gori, čineći ih dostupnim na više jezika.",
+		"WhatWeDoTitle": "Šta radimo",
+		"WhatWeDoP1": "{siteName} prikuplja i strukturira informacije o lekarima, klinikama, laboratorijskim testovima i medicinskim uslugama iz otvorenih izvora širom Crne Gore.",
+		"WhatWeDoP2": "Naš cilj je da učinimo pretragu zdravstvene zaštite transparentnom i praktičnom, spajajući rasute podatke u jedan sistem sa filterima po jezicima, gradovima i specijalnostima.",
+		"DataSourcesTitle": "Naši izvori podataka",
+		"DataSourcesIntro": "Koristimo samo javno dostupne informacije iz zvaničnih izvora:",
+		"DataSourcesLi1": "Zvanični sajtovi klinika i medicinskih centara",
+		"DataSourcesLi2": "Sajtovi laboratorija koje rade u Crnoj Gori",
+		"DataSourcesLi3": "Javni cenovnici i katalozi usluga",
+		"DataSourcesLi4": "Medicinski referentni izvori za opšte opise",
+		"DataSourcesNote": "Pružamo direktne kontakt informacije za svaku kliniku kako biste mogli da proverite sve detalje.",
+		"HowWeWorkTitle": "Kako se informacije obrađuju",
+		"HowWeWorkLi1": "Podaci se prikupljaju sa zvaničnih sajtova klinika i laboratorija",
+		"HowWeWorkLi2": "Informacije se agregiraju i strukturiraju za lakšu pretragu",
+		"HowWeWorkLi3": "Opisi su referentni materijal i nisu medicinske preporuke",
 		"ImportantTitle": "Važno",
 		"ImportantLi1": "Referentne vrednosti i indikacije mogu se razlikovati u zavisnosti od laboratorije, metodologije i kliničkog konteksta.",
 		"ImportantLi2": "Sajt ne pruža medicinske usluge.",
@@ -178,21 +261,34 @@ const homeLink = computed(() => ({
 		"ResponsibilityTitle": "Ograničenje odgovornosti",
 		"ResponsibilityP1": "Informacije na sajtu mogu zastareti i mogu sadržati netačnosti iz izvora.",
 		"ResponsibilityP2": "Pre donošenja odluka o zdravlju posavetujte se sa lekarom i proverite detalje u klinici ili laboratoriji.",
+		"ContactTitle": "Kontaktirajte nas",
+		"ContactIntro": "Imate pitanja, predloge ili ste pronašli grešku? Rado ćemo čuti vaše mišljenje:",
+		"TelegramChannel": "Telegram kanal",
 		"AriaMainContent": "Glavni sadržaj",
 		"AriaBreadcrumbs": "Navigaciona putanja",
 		"AriaAboutContent": "Informacije o projektu"
 	},
 	"de": {
 		"Title": "Über das Projekt",
-		"Description": "Wie omeda.me Informationen zu Laboranalysen und medizinischen Leistungen sammelt und strukturiert. Texte sind informativ, können automatisch erstellt werden und sind keine medizinische Beratung.",
-		"Subtitle": "Wir sammeln und systematisieren Informationen zu Laboranalysen und medizinischen Leistungen aus offenen Quellen.",
-		"WhatWeDoTitle": "Was dieses Projekt macht",
-		"WhatWeDoP1": "Die Website sammelt und strukturiert Informationen zu Laboranalysen und medizinischen Leistungen aus offenen Quellen von Kliniken und Laboren.",
-		"WhatWeDoP2": "Beschreibungen werden anhand von Daten von Klinik- und Laborwebsites sowie medizinischen Nachschlagewerken erstellt.",
-		"SourcesTitle": "Wie Beschreibungen erstellt werden",
-		"SourcesLi1": "Texte dienen nur zur Information und können automatisch verarbeitet werden.",
-		"SourcesLi2": "Automatische Verarbeitung und KI können zur Erstellung von Beschreibungen eingesetzt werden.",
-		"SourcesLi3": "Texte sind keine medizinischen Empfehlungen.",
+		"Description": "{siteName} ist ein Projekt von Expats, die in Montenegro leben. Wir sammeln Informationen über Ärzte, Kliniken, Laboruntersuchungen und medizinische Dienstleistungen, um die Suche nach Gesundheitsversorgung zu erleichtern.",
+		"Subtitle": "Wir helfen Menschen, Ärzte und medizinische Dienstleistungen in Montenegro zu finden, indem wir Informationen aus verschiedenen Quellen an einem Ort zusammenführen.",
+		"AboutUsTitle": "Über uns",
+		"AboutUsP1": "Wir sind ein kleines Team von Expats, die in Montenegro leben. Als wir hierher gezogen sind, standen wir vor der gleichen Herausforderung wie viele Neuankömmlinge: den richtigen Arzt oder die richtige Klinik in einem neuen Land zu finden, besonders ohne die Landessprache zu kennen.",
+		"AboutUsP2": "Diese Erfahrung hat uns inspiriert, {siteName} zu erstellen — einen Service, der Informationen über die Gesundheitsversorgung in Montenegro sammelt und organisiert und sie in mehreren Sprachen zugänglich macht.",
+		"WhatWeDoTitle": "Was wir tun",
+		"WhatWeDoP1": "{siteName} sammelt und strukturiert Informationen über Ärzte, Kliniken, Laboruntersuchungen und medizinische Dienstleistungen aus öffentlichen Quellen in ganz Montenegro.",
+		"WhatWeDoP2": "Unser Ziel ist es, die Suche nach Gesundheitsversorgung transparent und bequem zu gestalten, indem wir verstreute Daten in einem System mit Filterung nach Sprachen, Städten und Fachrichtungen zusammenführen.",
+		"DataSourcesTitle": "Unsere Datenquellen",
+		"DataSourcesIntro": "Wir verwenden nur öffentlich zugängliche Informationen aus offiziellen Quellen:",
+		"DataSourcesLi1": "Offizielle Websites von Kliniken und medizinischen Zentren",
+		"DataSourcesLi2": "Websites von Laboratorien in Montenegro",
+		"DataSourcesLi3": "Öffentliche Preislisten und Servicekataloge",
+		"DataSourcesLi4": "Medizinische Nachschlagewerke für allgemeine Beschreibungen",
+		"DataSourcesNote": "Wir stellen direkte Kontaktinformationen für jede Klinik bereit, damit Sie alle Details überprüfen können.",
+		"HowWeWorkTitle": "Wie Informationen verarbeitet werden",
+		"HowWeWorkLi1": "Daten werden von offiziellen Websites von Kliniken und Laboren gesammelt",
+		"HowWeWorkLi2": "Informationen werden für eine einfachere Suche aggregiert und strukturiert",
+		"HowWeWorkLi3": "Beschreibungen sind Referenzmaterial und keine medizinischen Empfehlungen",
 		"ImportantTitle": "Wichtig",
 		"ImportantLi1": "Referenzbereiche und Indikationen können je nach Labor, Methode und klinischem Kontext variieren.",
 		"ImportantLi2": "Die Website bietet keine medizinischen Dienstleistungen an.",
@@ -201,21 +297,34 @@ const homeLink = computed(() => ({
 		"ResponsibilityTitle": "Haftungsbeschränkung",
 		"ResponsibilityP1": "Informationen auf der Website können veralten und Ungenauigkeiten aus den Quellen enthalten.",
 		"ResponsibilityP2": "Bevor Sie gesundheitliche Entscheidungen treffen, konsultieren Sie bitte medizinisches Fachpersonal und prüfen Sie Details bei der Klinik oder dem Labor.",
+		"ContactTitle": "Kontaktieren Sie uns",
+		"ContactIntro": "Haben Sie Fragen, Vorschläge oder einen Fehler gefunden? Wir freuen uns über Ihr Feedback:",
+		"TelegramChannel": "Telegram-Kanal",
 		"AriaMainContent": "Hauptinhalt",
 		"AriaBreadcrumbs": "Navigationspfad",
 		"AriaAboutContent": "Informationen über das Projekt"
 	},
 	"tr": {
 		"Title": "Proje hakkında",
-		"Description": "omeda.me'nin laboratuvar testleri ve tıbbi hizmetler hakkında bilgiyi nasıl topladığı ve düzenlediği. Metinler bilgilendirme amaçlıdır, otomatik üretilebilir ve tıbbi tavsiye değildir.",
-		"Subtitle": "Laboratuvar testleri ve tıbbi hizmetler hakkında bilgiyi açık kaynaklardan topluyor ve sistematik hale getiriyoruz.",
-		"WhatWeDoTitle": "Bu proje ne yapar",
-		"WhatWeDoP1": "Site, klinik ve laboratuvarların açık kaynaklarından laboratuvar testleri ve tıbbi hizmetler hakkında bilgiyi toplar ve düzenler.",
-		"WhatWeDoP2": "Açıklamalar, klinik ve laboratuvar siteleri ile tıbbi referans kaynaklarındaki verilere dayanarak oluşturulur.",
-		"SourcesTitle": "Açıklamalar nasıl hazırlanır",
-		"SourcesLi1": "Metinler bilgilendirme amaçlıdır ve otomatik olarak işlenebilir.",
-		"SourcesLi2": "Açıklamaların hazırlanmasında otomatik işleme ve yapay zekâ kullanılabilir.",
-		"SourcesLi3": "Metinler tıbbi öneri değildir.",
+		"Description": "{siteName}, Karadağ'da yaşayan gurbetçilerin bir projesidir. Sağlık arama sürecini kolaylaştırmak için doktorlar, klinikler, laboratuvar testleri ve tıbbi hizmetler hakkında bilgi topluyoruz.",
+		"Subtitle": "Farklı kaynaklardan bilgileri bir araya getirerek Karadağ'da doktor ve tıbbi hizmet bulmalarına yardımcı oluyoruz.",
+		"AboutUsTitle": "Hakkımızda",
+		"AboutUsP1": "Karadağ'da yaşayan küçük bir gurbetçi ekibiyiz. Buraya taşındığımızda, birçok yeni gelenin karşılaştığı aynı zorlukla karşılaştık: yeni bir ülkede, özellikle yerel dili bilmeden doğru doktoru veya kliniği bulmak.",
+		"AboutUsP2": "Bu deneyim bizi {siteName}'yi oluşturmaya ilham verdi — Karadağ'daki sağlık hizmetleri hakkında bilgi toplayan ve düzenleyen, birden fazla dilde erişilebilir kılan bir hizmet.",
+		"WhatWeDoTitle": "Ne yapıyoruz",
+		"WhatWeDoP1": "{siteName}, Karadağ genelindeki açık kaynaklardan doktorlar, klinikler, laboratuvar testleri ve tıbbi hizmetler hakkında bilgi toplar ve yapılandırır.",
+		"WhatWeDoP2": "Amacımız, dağınık verileri dillere, şehirlere ve uzmanlıklara göre filtreleme yapan tek bir sistemde bir araya getirerek sağlık aramasını şeffaf ve kullanışlı hale getirmektir.",
+		"DataSourcesTitle": "Veri kaynaklarımız",
+		"DataSourcesIntro": "Yalnızca resmi kaynaklardan kamuya açık bilgileri kullanıyoruz:",
+		"DataSourcesLi1": "Kliniklerin ve tıp merkezlerinin resmi web siteleri",
+		"DataSourcesLi2": "Karadağ'da faaliyet gösteren laboratuvarların web siteleri",
+		"DataSourcesLi3": "Halka açık fiyat listeleri ve hizmet katalogları",
+		"DataSourcesLi4": "Genel açıklamalar için tıbbi referans kaynakları",
+		"DataSourcesNote": "Tüm ayrıntıları doğrulayabilmeniz için her klinik için doğrudan iletişim bilgileri sağlıyoruz.",
+		"HowWeWorkTitle": "Bilgiler nasıl işlenir",
+		"HowWeWorkLi1": "Veriler kliniklerin ve laboratuvarların resmi web sitelerinden toplanır",
+		"HowWeWorkLi2": "Bilgiler daha kolay arama için toplanır ve yapılandırılır",
+		"HowWeWorkLi3": "Açıklamalar referans materyalidir ve tıbbi öneri değildir",
 		"ImportantTitle": "Önemli",
 		"ImportantLi1": "Referans aralıkları ve endikasyonlar laboratuvara, yönteme ve klinik duruma göre değişebilir.",
 		"ImportantLi2": "Site tıbbi hizmet sunmaz.",
@@ -224,6 +333,9 @@ const homeLink = computed(() => ({
 		"ResponsibilityTitle": "Sorumluluk sınırı",
 		"ResponsibilityP1": "Sitedeki bilgiler zamanla güncelliğini yitirebilir ve kaynaklardan gelen hatalar içerebilir.",
 		"ResponsibilityP2": "Sağlıkla ilgili kararlar almadan önce bir doktora danışın ve ayrıntıları klinik veya laboratuvarla doğrulayın.",
+		"ContactTitle": "Bize ulaşın",
+		"ContactIntro": "Sorularınız, önerileriniz var mı veya bir hata mı buldunuz? Geri bildiriminizi duymak isteriz:",
+		"TelegramChannel": "Telegram kanalı",
 		"AriaMainContent": "Ana içerik",
 		"AriaBreadcrumbs": "Navigasyon yolu",
 		"AriaAboutContent": "Proje hakkında bilgi"
@@ -276,21 +388,21 @@ const homeLink = computed(() => ({
 }
 
 .about-page__sep {
-	color: var(--color-text-light);
+	color: var(--color-text-muted);
 }
 
 .about-page__title {
 	margin: 0 0 var(--spacing-sm);
 	font-size: clamp(1.8rem, 4vw, 2.6rem);
 	letter-spacing: -0.02em;
-	color: #0f172a;
+	color: var(--color-text-heading);
 	line-height: 1.15;
 }
 
 .about-page__subtitle {
 	margin: 0;
 	max-width: 760px;
-	color: #64748b;
+	color: var(--color-text-secondary);
 	font-size: var(--font-size-xl);
 	line-height: 1.7;
 }
@@ -309,11 +421,29 @@ const homeLink = computed(() => ({
 	padding: var(--spacing-2xl);
 }
 
+.about-card--highlight {
+	border-color: rgba(79, 70, 229, 0.15);
+	background: linear-gradient(
+		180deg,
+		rgba(79, 70, 229, 0.04) 0%,
+		rgba(255, 255, 255, 1) 70%
+	);
+}
+
+.about-card--contact {
+	border-color: rgba(6, 182, 212, 0.2);
+	background: linear-gradient(
+		180deg,
+		rgba(6, 182, 212, 0.04) 0%,
+		rgba(255, 255, 255, 1) 70%
+	);
+}
+
 .about-card__title {
 	margin: 0 0 var(--spacing-lg);
 	font-size: var(--font-size-2xl);
 	font-weight: var(--font-weight-semibold);
-	color: #0f172a;
+	color: var(--color-text-heading);
 	letter-spacing: -0.01em;
 }
 
@@ -324,6 +454,14 @@ const homeLink = computed(() => ({
 
 	&:last-child {
 		margin-bottom: 0;
+	}
+
+	&--note {
+		font-size: var(--font-size-sm);
+		color: var(--color-text-secondary);
+		margin-top: var(--spacing-lg);
+		padding-top: var(--spacing-md);
+		border-top: 1px solid var(--color-border-light);
 	}
 }
 
@@ -345,6 +483,32 @@ const homeLink = computed(() => ({
 		rgba(245, 158, 11, 0.06) 0%,
 		rgba(255, 255, 255, 1) 70%
 	);
+}
+
+.about-card__contacts {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-md);
+	margin-top: var(--spacing-lg);
+}
+
+.about-card__contact-link {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	color: var(--color-text-secondary);
+	text-decoration: none;
+	font-size: var(--font-size-md);
+
+	&:hover {
+		color: var(--color-primary);
+	}
+}
+
+.about-card__contact-icon {
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
 }
 
 @media (max-width: 640px) {

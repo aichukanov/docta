@@ -1,8 +1,5 @@
 import { locales, defaultLocale } from '~/composables/use-locale';
-
-const sr = {
-	ApplicationName: 'omeda.me | Svi lekari Crne Gore',
-};
+import { SITE_NAME } from '~/common/constants';
 
 export default defineI18nConfig(() => ({
 	locales,
@@ -18,17 +15,19 @@ export default defineI18nConfig(() => ({
 	},
 	messages: {
 		en: {
-			ApplicationName: 'omeda.me | All doctors of Montenegro',
+			ApplicationName: `${SITE_NAME} | All doctors of Montenegro`,
 		},
 		ru: {
-			ApplicationName: 'omeda.me | Все врачи Черногории',
+			ApplicationName: `${SITE_NAME} | Все врачи Черногории`,
 		},
-		sr,
+		sr: {
+			ApplicationName: `${SITE_NAME} | Svi lekari Crne Gore`,
+		},
 		de: {
-			ApplicationName: 'omeda.me | Alle Ärzte Montenegros',
+			ApplicationName: `${SITE_NAME} | Alle Ärzte Montenegros`,
 		},
 		tr: {
-			ApplicationName: "omeda.me | Karadağ'ın tüm doktorları",
+			ApplicationName: `${SITE_NAME} | Karadağ'ın tüm doktorları`,
 		},
 	},
 }));

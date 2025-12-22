@@ -4,6 +4,7 @@ import {
 	buildEntityListSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
+import { SITE_URL } from '~/common/constants';
 
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
@@ -87,9 +88,8 @@ const pageDescription = computed(() => {
 const { locale } = useI18n();
 const schemaOrgStore = useSchemaOrgStore();
 const route = useRoute();
-const runtimeConfig = useRuntimeConfig();
 
-const ogImage = `${runtimeConfig.public.siteUrl}/logo-site.png`;
+const ogImage = `${SITE_URL}/logo-site.png`;
 
 useSeoMeta({
 	title: pageTitleWithCount,
@@ -107,11 +107,10 @@ const isFiltered = computed(() => {
 });
 watchEffect(() => {
 	if (medicationsList.value) {
-		const siteUrl = runtimeConfig.public.siteUrl;
-		const pageUrl = `${siteUrl}${route.fullPath}`;
+		const pageUrl = `${SITE_URL}${route.fullPath}`;
 		schemaOrgStore.setSchemas([
 			...buildEntityListSchema({
-				siteUrl,
+				siteUrl: SITE_URL,
 				pageUrl,
 				locale: locale.value,
 				title: pageTitle.value,
@@ -122,7 +121,7 @@ watchEffect(() => {
 				isFiltered: isFiltered.value,
 			}),
 			buildBreadcrumbsSchema(pageUrl, [
-				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
+				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
 				{ name: t('BreadcrumbMedications') },
 			]),
 		]);

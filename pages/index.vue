@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
+import { SITE_URL, SITE_NAME } from '~/common/constants';
 
 const { t, locale } = useI18n();
 
@@ -35,28 +36,25 @@ useSeoMeta({
 
 // Schema.org for website home page
 const schemaOrgStore = useSchemaOrgStore();
-const runtimeConfig = useRuntimeConfig();
-const siteUrl = runtimeConfig.public.siteUrl;
-const siteName = runtimeConfig.public.siteName;
 
 schemaOrgStore.setSchemas([
 	{
 		'@type': 'WebSite',
-		'@id': `${siteUrl}#website`,
-		'name': siteName,
+		'@id': `${SITE_URL}#website`,
+		'name': SITE_NAME,
 		'inLanguage': locale.value,
-		'url': siteUrl,
+		'url': SITE_URL,
 		'potentialAction': {
 			'@type': 'SearchAction',
-			'target': `${siteUrl}/doctors?name={search_term_string}`,
+			'target': `${SITE_URL}/doctors?name={search_term_string}`,
 			'query-input': 'required name=search_term_string',
 		},
 	},
 	{
 		'@type': 'MedicalBusiness',
-		'@id': `${siteUrl}#organization`,
-		'name': siteName,
-		'url': siteUrl,
+		'@id': `${SITE_URL}#organization`,
+		'name': SITE_NAME,
+		'url': SITE_URL,
 		'description': t('MainPageDescription'),
 		'address': {
 			'@type': 'PostalAddress',

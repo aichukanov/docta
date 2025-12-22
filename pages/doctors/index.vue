@@ -5,6 +5,7 @@ import {
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
 import { CITY_COORDINATES } from '~/enums/cities';
+import { SITE_URL } from '~/common/constants';
 import { combineI18nMessages } from '~/i18n/utils';
 import type { ClinicData } from '~/interfaces/clinic';
 
@@ -197,9 +198,8 @@ const pageDescription = computed(() => {
 // Schema.org for doctors list
 const schemaOrgStore = useSchemaOrgStore();
 const route = useRoute();
-const runtimeConfig = useRuntimeConfig();
 
-const ogImage = `${runtimeConfig.public.siteUrl}/logo-site.png`;
+const ogImage = `${SITE_URL}/logo-site.png`;
 
 useSeoMeta({
 	title: pageTitleWithCount,
@@ -223,11 +223,10 @@ const isFiltered = computed(() => {
 });
 watchEffect(() => {
 	if (doctorsList.value) {
-		const siteUrl = runtimeConfig.public.siteUrl;
-		const pageUrl = `${siteUrl}${route.fullPath}`;
+		const pageUrl = `${SITE_URL}${route.fullPath}`;
 		schemaOrgStore.setSchemas([
 			...buildDoctorListSchema({
-				siteUrl,
+				siteUrl: SITE_URL,
 				pageUrl,
 				locale: locale.value,
 				title: pageTitle.value,
@@ -238,7 +237,7 @@ watchEffect(() => {
 				getSpecialtyName: (id) => t(`specialty_${id}`),
 			}),
 			buildBreadcrumbsSchema(pageUrl, [
-				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
+				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
 				{ name: t('BreadcrumbDoctors') },
 			]),
 		]);

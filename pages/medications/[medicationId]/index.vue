@@ -7,6 +7,7 @@ import {
 	buildDrugSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
+import { SITE_URL } from '~/common/constants';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -97,9 +98,8 @@ const pageDescription = computed(() => {
 
 // Schema.org for medication details
 const schemaOrgStore = useSchemaOrgStore();
-const runtimeConfig = useRuntimeConfig();
 
-const ogImage = `${runtimeConfig.public.siteUrl}/logo-site.png`;
+const ogImage = `${SITE_URL}/logo-site.png`;
 const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
 
 useSeoMeta({
@@ -124,12 +124,11 @@ const getCityName = (id: number): string | undefined => {
 
 watchEffect(() => {
 	if (medicationData.value && isFound.value) {
-		const siteUrl = runtimeConfig.public.siteUrl;
-		const medicationUrl = `${siteUrl}/medications/${medicationData.value.id}`;
+		const medicationUrl = `${SITE_URL}/medications/${medicationData.value.id}`;
 
 		schemaOrgStore.setSchemas([
 			...buildDrugSchema({
-				siteUrl,
+				siteUrl: SITE_URL,
 				id: medicationData.value.id,
 				name: medicationData.value.name,
 				locale: locale.value,
@@ -139,8 +138,8 @@ watchEffect(() => {
 				getCityName,
 			}),
 			buildBreadcrumbsSchema(medicationUrl, [
-				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
-				{ name: t('BreadcrumbMedications'), url: `${siteUrl}/medications` },
+				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
+				{ name: t('BreadcrumbMedications'), url: `${SITE_URL}/medications` },
 				{ name: pageTitle.value },
 			]),
 		]);

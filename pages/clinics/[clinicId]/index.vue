@@ -4,6 +4,7 @@ import {
 	buildClinicSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
+import { SITE_URL } from '~/common/constants';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import clinicI18n from '~/i18n/clinic';
@@ -143,9 +144,8 @@ function joinWithAnd(items: string[]): string {
 }
 
 const schemaOrgStore = useSchemaOrgStore();
-const runtimeConfig = useRuntimeConfig();
 
-const ogImage = `${runtimeConfig.public.siteUrl}/logo-site.png`;
+const ogImage = `${SITE_URL}/logo-site.png`;
 const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
 
 useSeoMeta({
@@ -170,12 +170,11 @@ const getCityName = (id: number): string | undefined => {
 
 watchEffect(() => {
 	if (clinicData.value && isFound.value) {
-		const siteUrl = runtimeConfig.public.siteUrl;
-		const clinicUrl = `${siteUrl}/clinics/${clinicData.value.id}`;
+		const clinicUrl = `${SITE_URL}/clinics/${clinicData.value.id}`;
 
 		schemaOrgStore.setSchemas([
 			...buildClinicSchema({
-				siteUrl,
+				siteUrl: SITE_URL,
 				clinic: clinicData.value,
 				locale: locale.value,
 				pageTitle: pageTitle.value,
@@ -183,8 +182,8 @@ watchEffect(() => {
 				getCityName,
 			}),
 			buildBreadcrumbsSchema(clinicUrl, [
-				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
-				{ name: t('BreadcrumbClinics'), url: `${siteUrl}/clinics` },
+				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
+				{ name: t('BreadcrumbClinics'), url: `${SITE_URL}/clinics` },
 				{ name: pageTitle.value },
 			]),
 		]);

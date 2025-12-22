@@ -1,98 +1,10 @@
-<template>
-	<div class="layout-wrapper">
-		<AppHeader />
-
-		<div class="layout-body">
-			<slot />
-		</div>
-
-		<div class="footer" :class="{ 'footer-tall': !isConsentGiven }">
-			<div class="footer-content">
-				<div class="footer-top">
-					<div class="footer-brand">
-						<div class="footer-brand__text">
-							<div class="footer-brand__name">{{ siteName }}</div>
-							<div class="footer-brand__tagline">{{ t('Tagline') }}</div>
-						</div>
-					</div>
-
-					<nav class="footer-nav" :aria-label="t('FooterNavLabel')">
-						<NuxtLink class="footer-link" :to="doctorsPageLink">
-							{{ t('Doctors') }}
-						</NuxtLink>
-						<NuxtLink class="footer-link" :to="clinicsPageLink">
-							{{ t('Clinics') }}
-						</NuxtLink>
-						<NuxtLink class="footer-link" :to="labTestsPageLink">
-							{{ t('LabTests') }}
-						</NuxtLink>
-						<NuxtLink class="footer-link" :to="medicalServicesPageLink">
-							{{ t('MedicalServices') }}
-						</NuxtLink>
-						<NuxtLink class="footer-link" :to="medicationsPageLink">
-							{{ t('Medications') }}
-						</NuxtLink>
-						<NuxtLink
-							class="footer-link footer-link--muted"
-							:to="aboutPageLink"
-						>
-							{{ t('AboutProject') }}
-						</NuxtLink>
-					</nav>
-
-					<div class="footer-contacts">
-						<div class="footer-contacts__title">{{ t('ContactsTitle') }}</div>
-						<div class="footer-contacts__actions">
-							<NuxtLink
-								class="footer-contact"
-								to="mailto:contact@svad.net"
-								target="_blank"
-								:aria-label="t('ContactUs')"
-							>
-								<span class="icon email-icon" aria-hidden="true"></span>
-								<span class="footer-contact__label">{{ t('Email') }}</span>
-							</NuxtLink>
-							<NuxtLink
-								class="footer-contact"
-								to="https://t.me/svad_net"
-								target="_blank"
-								:aria-label="t('NewsChannel')"
-							>
-								<span class="icon tg-icon" aria-hidden="true"></span>
-								<span class="footer-contact__label">{{ t('Telegram') }}</span>
-							</NuxtLink>
-						</div>
-					</div>
-				</div>
-
-				<div class="footer-bottom">
-					<div class="footer-bottom__left">
-						<span class="footer-bottom__muted"
-							>© {{ years }} {{ siteName }}</span
-						>
-					</div>
-					<div class="footer-bottom__right">
-						<span class="footer-bottom__muted">{{ t('DisclaimerShort') }}</span>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<ClientOnly>
-			<CookieBanner v-if="!isConsentGiven" />
-			<CookieModal />
-		</ClientOnly>
-	</div>
-</template>
-
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
+import { PROJECT_CONTACTS, SITE_NAME } from '~/common/constants';
 
 const { isConsentGiven } = useCookieControl();
 const { t } = useI18n();
 const { locale } = useI18n({ useScope: 'global' });
-const runtimeConfig = useRuntimeConfig();
-const siteName = runtimeConfig.public.siteName;
 
 const years = computed(() => `2025`); //  - ${new Date().getFullYear()}
 
@@ -139,6 +51,93 @@ watch(
 	{ immediate: true },
 );
 </script>
+
+<template>
+	<div class="layout-wrapper">
+		<AppHeader />
+
+		<div class="layout-body">
+			<slot />
+		</div>
+
+		<div class="footer" :class="{ 'footer-tall': !isConsentGiven }">
+			<div class="footer-content">
+				<div class="footer-top">
+					<div class="footer-brand">
+						<div class="footer-brand__text">
+							<div class="footer-brand__name">{{ SITE_NAME }}</div>
+							<div class="footer-brand__tagline">{{ t('Tagline') }}</div>
+						</div>
+					</div>
+
+					<nav class="footer-nav" :aria-label="t('FooterNavLabel')">
+						<NuxtLink class="footer-link" :to="doctorsPageLink">
+							{{ t('Doctors') }}
+						</NuxtLink>
+						<NuxtLink class="footer-link" :to="clinicsPageLink">
+							{{ t('Clinics') }}
+						</NuxtLink>
+						<NuxtLink class="footer-link" :to="labTestsPageLink">
+							{{ t('LabTests') }}
+						</NuxtLink>
+						<NuxtLink class="footer-link" :to="medicalServicesPageLink">
+							{{ t('MedicalServices') }}
+						</NuxtLink>
+						<NuxtLink class="footer-link" :to="medicationsPageLink">
+							{{ t('Medications') }}
+						</NuxtLink>
+						<NuxtLink
+							class="footer-link footer-link--muted"
+							:to="aboutPageLink"
+						>
+							{{ t('AboutProject') }}
+						</NuxtLink>
+					</nav>
+
+					<div class="footer-contacts">
+						<div class="footer-contacts__title">{{ t('ContactsTitle') }}</div>
+						<div class="footer-contacts__actions">
+							<NuxtLink
+								class="footer-contact"
+								:to="`mailto:${PROJECT_CONTACTS.email}`"
+								target="_blank"
+								:aria-label="t('ContactUs')"
+							>
+								<span class="icon email-icon" aria-hidden="true"></span>
+								<span class="footer-contact__label">{{ t('Email') }}</span>
+							</NuxtLink>
+							<NuxtLink
+								class="footer-contact"
+								:to="PROJECT_CONTACTS.telegram"
+								target="_blank"
+								:aria-label="t('NewsChannel')"
+							>
+								<span class="icon tg-icon" aria-hidden="true"></span>
+								<span class="footer-contact__label">{{ t('Telegram') }}</span>
+							</NuxtLink>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer-bottom">
+					<div class="footer-bottom__left">
+						<span class="footer-bottom__muted"
+							>© {{ years }} {{ SITE_NAME }}</span
+						>
+					</div>
+					<div class="footer-bottom__right">
+						<span class="footer-bottom__muted">{{ t('DisclaimerShort') }}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<ClientOnly>
+			<CookieBanner v-if="!isConsentGiven" />
+			<CookieModal />
+		</ClientOnly>
+	</div>
+</template>
 
 <i18n lang="json">
 {
@@ -237,10 +236,11 @@ watch(
 	--color-accent: #f59e0b;
 	--color-success: #10b981;
 
+	--color-text-heading: #0f172a;
 	--color-text-primary: #333333;
-	--color-text-secondary: #666666;
-	--color-text-muted: #888888;
-	--color-text-light: #999999;
+	--color-text-secondary: #475569;
+	--color-text-muted: #64748b;
+	--color-text-light: #94a3b8;
 
 	--color-bg-primary: #ffffff;
 	--color-bg-secondary: #f8fafc;

@@ -4,6 +4,7 @@ import {
 	buildDoctorSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
+import { SITE_URL } from '~/common/constants';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import doctorI18n from '~/i18n/doctor';
@@ -156,13 +157,12 @@ function joinWithAnd(items: string[]): string {
 }
 
 const schemaOrgStore = useSchemaOrgStore();
-const runtimeConfig = useRuntimeConfig();
 
 const ogImage = computed(() => {
 	if (doctorData.value?.photoUrl) {
 		return doctorData.value.photoUrl;
 	}
-	return `${runtimeConfig.public.siteUrl}/logo-site.png`;
+	return `${SITE_URL}/logo-site.png`;
 });
 
 const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
@@ -197,12 +197,11 @@ watchEffect(() => {
 	if (doctorData.value && isFound.value) {
 		const specialtyIds = doctorData.value.specialtyIds?.split(',').map(Number);
 		const languageIds = doctorData.value.languageIds?.split(',').map(Number);
-		const siteUrl = runtimeConfig.public.siteUrl;
-		const doctorUrl = `${siteUrl}/doctors/${doctorData.value.id}`;
+		const doctorUrl = `${SITE_URL}/doctors/${doctorData.value.id}`;
 
 		schemaOrgStore.setSchemas([
 			...buildDoctorSchema({
-				siteUrl,
+				siteUrl: SITE_URL,
 				id: doctorData.value.id,
 				name: doctorData.value.name,
 				photoUrl: doctorData.value.photoUrl,
@@ -219,8 +218,8 @@ watchEffect(() => {
 				getCityName,
 			}),
 			buildBreadcrumbsSchema(doctorUrl, [
-				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
-				{ name: t('BreadcrumbDoctors'), url: `${siteUrl}/doctors` },
+				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
+				{ name: t('BreadcrumbDoctors'), url: `${SITE_URL}/doctors` },
 				{ name: pageTitle.value },
 			]),
 		]);

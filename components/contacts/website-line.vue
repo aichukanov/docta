@@ -7,19 +7,19 @@
 
 <script setup lang="ts">
 import { normalizeWebsiteUrl } from './utils';
+import { SITE_NAME } from '~/common/constants';
 
 const props = defineProps<{
 	websiteUrl: string;
 }>();
 
 const { t } = useI18n();
-const runtimeConfig = useRuntimeConfig();
 
 const websiteUrlWithUtm = computed(() => {
 	const normalized = normalizeWebsiteUrl(props.websiteUrl) ?? props.websiteUrl;
 	try {
 		const url = new URL(normalized);
-		url.searchParams.set('utm_source', runtimeConfig.public.siteName);
+		url.searchParams.set('utm_source', SITE_NAME);
 		return url.toString();
 	} catch {
 		// Если URL невалидный, возвращаем как есть

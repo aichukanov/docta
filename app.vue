@@ -9,12 +9,12 @@ import {
 } from './composables/use-locale';
 import { useSchemaOrgStore } from './stores/schema-org';
 import type { SchemaOrg } from './types/schema-org';
+import { SITE_URL, SITE_NAME } from './common/constants';
 
 const { t, locale } = useI18n({ useScope: 'global' });
 const router = useRouter();
 const route = useRoute();
 const schemaOrgStore = useSchemaOrgStore();
-const runtimeConfig = useRuntimeConfig();
 
 // Build JSON-LD from schemas
 const buildJsonLd = (schemas: SchemaOrg[]) => {
@@ -68,7 +68,7 @@ locale.value = queryLocale || defaultLocale;
 function getMainUrl() {
 	const searchParamsRe = /(?=.+)\?.+/gi;
 	const path = route.fullPath.replace(searchParamsRe, '');
-	return `${runtimeConfig.public.siteUrl}${path}`;
+	return `${SITE_URL}${path}`;
 }
 
 function getLangLink(mainUrl: string, lang: Locale) {
@@ -123,12 +123,12 @@ useHead({
 useSeoMeta({
 	title: () => t('ApplicationName'),
 	description: () => t('ApplicationName'),
-	applicationName: runtimeConfig.public.siteName,
+	applicationName: SITE_NAME,
 	viewport: 'width=device-width, initial-scale=1',
 	ogType: 'website',
-	ogSiteName: runtimeConfig.public.siteName,
+	ogSiteName: SITE_NAME,
 	ogLocale: () => locale.value,
-	ogUrl: () => `${runtimeConfig.public.siteUrl}${route.fullPath}`,
+	ogUrl: () => `${SITE_URL}${route.fullPath}`,
 });
 </script>
 

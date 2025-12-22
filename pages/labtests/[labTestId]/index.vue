@@ -8,6 +8,7 @@ import {
 	buildMedicalTestSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
+import { SITE_URL } from '~/common/constants';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -112,9 +113,8 @@ const pageDescription = computed(() => {
 
 // Schema.org for lab test details
 const schemaOrgStore = useSchemaOrgStore();
-const runtimeConfig = useRuntimeConfig();
 
-const ogImage = `${runtimeConfig.public.siteUrl}/logo-site.png`;
+const ogImage = `${SITE_URL}/logo-site.png`;
 const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
 
 useSeoMeta({
@@ -139,12 +139,11 @@ const getCityName = (id: number): string | undefined => {
 
 watchEffect(() => {
 	if (labTestData.value && isFound.value) {
-		const siteUrl = runtimeConfig.public.siteUrl;
-		const testUrl = `${siteUrl}/labtests/${labTestData.value.id}`;
+		const testUrl = `${SITE_URL}/labtests/${labTestData.value.id}`;
 
 		schemaOrgStore.setSchemas([
 			...buildMedicalTestSchema({
-				siteUrl,
+				siteUrl: SITE_URL,
 				id: labTestData.value.id,
 				name: labTestData.value.name,
 				originalName: labTestData.value.originalName,
@@ -156,8 +155,8 @@ watchEffect(() => {
 				getCityName,
 			}),
 			buildBreadcrumbsSchema(testUrl, [
-				{ name: t('BreadcrumbHome'), url: `${siteUrl}/` },
-				{ name: t('BreadcrumbLabTests'), url: `${siteUrl}/labtests` },
+				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
+				{ name: t('BreadcrumbLabTests'), url: `${SITE_URL}/labtests` },
 				{ name: pageTitle.value },
 			]),
 		]);

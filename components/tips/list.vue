@@ -36,6 +36,12 @@ const hasContent = computed(() => !!slots.default);
 	border-radius: var(--border-radius-xl);
 	position: relative;
 	overflow: hidden;
+	box-sizing: border-box;
+
+	@media (max-width: 500px) {
+		padding: var(--spacing-lg);
+		margin-top: var(--spacing-xl);
+	}
 
 	&::before {
 		content: '';
@@ -95,7 +101,11 @@ const hasContent = computed(() => !!slots.default);
 	color: var(--color-text-secondary);
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
-	white-space: nowrap;
+
+	@media (max-width: 400px) {
+		font-size: var(--font-size-md);
+		text-align: center;
+	}
 }
 
 .tips-grid {

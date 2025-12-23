@@ -64,6 +64,7 @@ const detailsLink = computed(() => {
 
 <style scoped lang="less">
 .list-card {
+	box-sizing: border-box;
 	background: var(--color-surface-secondary);
 	border: 1px solid var(--color-border-primary);
 	border-radius: var(--border-radius-lg);

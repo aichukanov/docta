@@ -238,7 +238,7 @@ defineExpose({
 	width: 100%;
 	min-width: min(400px, 100%);
 	height: 100%;
-	min-height: 500px;
+	min-height: inherit;
 	position: relative;
 }
 

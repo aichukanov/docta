@@ -158,6 +158,8 @@ const isActiveSection = (section: string) => {
 	background: white;
 	border-bottom: 1px solid @light-gray-color;
 	transition: all 0.3s ease;
+	box-sizing: border-box;
+	height: 60px;
 
 	&__main {
 		width: 100%;
@@ -247,17 +249,33 @@ const isActiveSection = (section: string) => {
 @media only screen and (max-width: 700px) {
 	.app-header {
 		&__main-content {
-			height: 50px;
+			height: auto;
+			min-height: 50px;
+			padding: var(--spacing-sm) var(--spacing-md);
+			flex-wrap: wrap;
 			gap: var(--spacing-md);
 		}
 
 		&__nav {
-			gap: var(--spacing-md);
-			margin-left: var(--spacing-md);
+			order: 3;
+			width: 100%;
+			margin-left: 0;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: var(--spacing-sm);
 		}
 
 		&__nav-link {
 			font-size: var(--font-size-sm);
+			padding: var(--spacing-xs) var(--spacing-sm);
+		}
+
+		&__actions {
+			order: 2;
+		}
+
+		&__brand {
+			order: 1;
 		}
 	}
 }

@@ -46,6 +46,8 @@ const pageNumber = computed({
 	flex-direction: column;
 	margin: 10px 0;
 	flex: 0 0 30px;
+	width: 100%;
+	box-sizing: border-box;
 
 	&_align_center {
 		align-items: center;
@@ -53,6 +55,10 @@ const pageNumber = computed({
 
 	&_align_right {
 		align-items: flex-end;
+	}
+
+	@media (max-width: 600px) {
+		align-items: center !important;
 	}
 }
 </style>

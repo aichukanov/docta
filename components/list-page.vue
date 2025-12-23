@@ -31,7 +31,6 @@ const { t, locale } = useI18n({ useScope: 'local' });
 const router = useRouter();
 const route = useRoute();
 
-const listRef = ref<HTMLElement>();
 const mapRef = ref<HTMLElement>();
 const PAGE_LIMIT = 20;
 const pageNumber = ref(+route.query.page || 1);
@@ -108,16 +107,13 @@ onMounted(async () => {
 		router.replace(routeWithParams.value);
 
 		window.scrollTo(0, 0);
-		if (listRef.value) {
-			listRef.value.scrollTo(0, 0);
-		}
 	});
 });
 </script>
 
 <template>
 	<div class="list-page" role="main" :aria-label="t('AriaMainContent')">
-		<div ref="listRef" class="list-sidebar">
+		<div class="list-sidebar">
 			<h1 class="page-title">{{ pageTitle }}</h1>
 
 			<div class="list-container">
@@ -226,32 +222,33 @@ onMounted(async () => {
 
 .list-page {
 	display: flex;
-	height: calc(100vh - 120px);
+	min-height: calc(100vh - 120px);
 	gap: 0;
-	overflow-x: auto;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .filters-sidebar {
 	display: flex;
 	box-sizing: border-box;
 	flex-direction: column;
-	flex: 1 1 auto;
-	min-width: 180px;
-	max-width: 320px;
+	flex: 0 0 280px;
+	width: 280px;
 	background: #ffffff;
-	overflow-y: auto;
 	gap: var(--spacing-lg);
 	position: sticky;
-	top: var(--spacing-lg);
+	top: calc(60px + var(--spacing-lg));
 	align-self: flex-start;
-	max-height: calc(100vh - 120px - 2 * var(--spacing-lg));
+	max-height: calc(100vh - 60px - 2 * var(--spacing-lg));
+	overflow-y: auto;
 }
 
 .list-sidebar {
 	flex: 1 1 60%;
+	min-width: 0;
+	box-sizing: border-box;
 	background: #ffffff;
 	border-right: 1px solid rgba(0, 0, 0, 0.06);
-	overflow-y: auto;
 	padding: var(--spacing-lg);
 }
 
@@ -261,15 +258,20 @@ onMounted(async () => {
 	color: #1f2937;
 	margin: 0 0 @double-padding 0;
 	font-family: system-ui, -apple-system, sans-serif;
+	word-wrap: break-word;
 }
 
 .list-container {
 	display: flex;
 	flex-direction: row;
 	gap: var(--spacing-2xl);
+	width: 100%;
+	box-sizing: border-box;
 
 	.list-content {
 		flex: 1 1 auto;
+		min-width: 0;
+		box-sizing: border-box;
 	}
 }
 
@@ -277,6 +279,8 @@ onMounted(async () => {
 	display: flex;
 	flex-direction: column;
 	gap: @base-padding;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .results-list {
@@ -286,10 +290,14 @@ onMounted(async () => {
 	display: flex;
 	flex-direction: column;
 	gap: @base-padding;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .results-list-item {
 	display: block;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .loading {
@@ -328,6 +336,12 @@ onMounted(async () => {
 
 .map-container {
 	flex: 1 1 40%;
+	min-width: 0;
+	box-sizing: border-box;
+	position: sticky;
+	top: 60px;
+	height: calc(100vh - 60px);
+	align-self: flex-start;
 }
 
 @media (max-width: 1300px) {
@@ -342,6 +356,8 @@ onMounted(async () => {
 			position: initial;
 			max-width: 100%;
 			width: 100%;
+			max-height: none;
+			overflow-y: visible;
 			gap: var(--spacing-sm);
 		}
 	}
@@ -349,13 +365,21 @@ onMounted(async () => {
 
 @media (max-width: 950px) {
 	.list-page {
-		height: auto;
-		flex-wrap: wrap;
+		flex-direction: column;
+	}
+
+	.list-sidebar {
+		flex: none;
+		width: 100%;
+		border-right: none;
 	}
 
 	.map-container {
-		max-height: 60vh;
-		overflow: hidden;
+		flex: none;
+		width: 100%;
+		position: static;
+		height: 450px;
+		margin-bottom: var(--spacing-2xl);
 	}
 }
 

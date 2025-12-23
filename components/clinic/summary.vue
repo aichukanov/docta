@@ -100,6 +100,7 @@ const clinicLink = computed(() => ({
 
 <style scoped lang="less">
 .clinic-summary {
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-lg);
@@ -127,12 +128,15 @@ const clinicLink = computed(() => ({
 .clinic-name-container {
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
 	gap: var(--spacing-md);
 }
 
 .clinic-name {
 	font-size: var(--font-size-lg);
 	font-weight: 600;
+	min-width: 0;
+	overflow-wrap: break-word;
 
 	&.clinic-name-link {
 		color: var(--color-primary);
@@ -151,11 +155,13 @@ const clinicLink = computed(() => ({
 	gap: var(--spacing-xs);
 	font-size: var(--font-size-md);
 	color: var(--color-text-secondary);
+	min-width: 0;
+	overflow-wrap: break-word;
 }
 
 .location-buttons {
 	display: flex;
-	min-width: 180px;
+	min-width: 160px;
 	flex-direction: column;
 	gap: var(--spacing-sm);
 	align-items: stretch;

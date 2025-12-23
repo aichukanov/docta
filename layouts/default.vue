@@ -344,11 +344,8 @@ body {
 }
 
 .footer {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	width: 100%;
 	margin-top: 16px;
-	margin-bottom: 50px;
 
 	&.footer-tall {
 		margin-bottom: 80vh;
@@ -356,7 +353,7 @@ body {
 
 	.footer-content {
 		box-sizing: border-box;
-		flex-basis: 100%;
+		width: 100%;
 		border-top: 1px solid var(--color-border-secondary);
 		background: linear-gradient(
 			180deg,
@@ -364,8 +361,6 @@ body {
 			var(--color-bg-secondary) 100%
 		);
 		padding: var(--spacing-2xl);
-		min-width: 300px;
-		max-width: 1600px;
 		display: flex;
 		flex-direction: column;
 		gap: var(--spacing-xl);
@@ -538,10 +533,6 @@ body {
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-}
-
-.layout-wrapper {
-	margin-bottom: 10px;
 }
 
 .without-filters {

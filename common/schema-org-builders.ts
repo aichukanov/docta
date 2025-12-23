@@ -178,8 +178,11 @@ function getSchemaType(professionalTitle: string): {
 		};
 	} else if (professionalTitle === 'mr ph') {
 		return {
-			schemaType: 'Pharmacist',
-			fragment: 'pharmacist',
+			schemaType: 'Person',
+			fragment: 'person',
+			// это только для аптекарей
+			// schemaType: 'Pharmacist',
+			// fragment: 'pharmacist',
 		};
 	} else {
 		return {

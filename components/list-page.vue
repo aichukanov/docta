@@ -55,6 +55,10 @@ const listOnPage = computed(() => {
 	);
 });
 
+const showTipsSection = computed(() => {
+	return listOnPage.value.length <= 5;
+});
+
 const showClinicOnMap = (clinic: ClinicData) => {
 	mapRef.value.openClinicPopup(clinic);
 };
@@ -182,6 +186,10 @@ onMounted(async () => {
 								</slot>
 							</li>
 						</ul>
+
+						<TipsList v-if="showTipsSection">
+							<slot name="tips" />
+						</TipsList>
 					</div>
 
 					<nav :aria-label="t('AriaPagination')">

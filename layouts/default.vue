@@ -247,6 +247,11 @@ watch(
 	--color-bg-tertiary: #f1f5f9;
 	--color-bg-muted: #e2e8f0;
 	--color-bg-soft: #fafbfc;
+	--color-bg-tips: linear-gradient(
+		135deg,
+		rgba(79, 70, 229, 0.04) 0%,
+		rgba(6, 182, 212, 0.04) 100%
+	);
 
 	--color-border-primary: #d1d5db;
 	--color-border-secondary: #e5e7eb;

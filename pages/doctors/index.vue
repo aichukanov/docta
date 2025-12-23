@@ -1,120 +1,16 @@
 <script setup lang="ts">
-import { getRegionalQuery } from '~/common/url-utils';
 import {
 	buildDoctorListSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
-import { CityId, CITY_COORDINATES } from '~/enums/cities';
 import { SITE_URL } from '~/common/constants';
 import { combineI18nMessages } from '~/i18n/utils';
-import type { ClinicData } from '~/interfaces/clinic';
 
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import doctorI18n from '~/i18n/doctor';
 import languageI18n from '~/i18n/language';
 import specialtyI18n from '~/i18n/specialty';
-
-// Clinic IDs
-const CLINIC_DOM_ZDRAVLJA_BUDVA = 43;
-const CLINIC_CLINICAL_CENTER_PODGORICA = 65;
-
-const tipsI18n = {
-	messages: {
-		en: {
-			TipBudva1: 'Budva does not have its own hospital, only',
-			TipDomZdravlja: 'Dom Zdravlya (polyclinic)',
-			TipBudva2: 'The nearest hospitals are in',
-			TipBar: 'Bar',
-			TipCetinje: 'Cetinje',
-			TipKotor: 'Kotor',
-			TipTivat: 'Tivat does not have its own hospital. The nearest are in',
-			TipRisan: 'Risan',
-			TipUlcinj: 'Ulcinj does not have its own hospital. The nearest is in',
-			TipBarCity:
-				'Bar has a Hospital with adult and pediatric departments and Dom Zdravlya (polyclinic).',
-			TipEmergency: 'In case of emergency, call ambulance at 📞 124.',
-			TipClinicalCenter1: 'The largest and most modern medical center is',
-			TipClinicalCenter2: 'Clinical Center of Montenegro in Podgorica',
-			TipClinicalCenter3: '(261 doctors!).',
-			And: 'and',
-		},
-		ru: {
-			TipBudva1: 'В Будве нет своей больницы, только',
-			TipDomZdravlja: 'Дом Здравля (поликлиника)',
-			TipBudva2: 'Ближайшие больницы находятся в',
-			TipBar: 'Баре',
-			TipCetinje: 'Цетине',
-			TipKotor: 'Которе',
-			TipTivat: 'В Тивате нет своей больницы. Ближайшие находятся в',
-			TipRisan: 'Рисане',
-			TipUlcinj: 'В Ульцине нет своей больницы. Ближайшая находится в',
-			TipBarCity:
-				'В Баре есть Больница со взрослым и детским отделениями и Дом Здравля (поликлиника).',
-			TipEmergency:
-				'В случае экстренной ситуации скорую помощь можно вызвать по номеру 📞 124.',
-			TipClinicalCenter1: 'Самый большой и современный медицинский центр —',
-			TipClinicalCenter2: 'Клинический центр Черногории в Подгорице',
-			TipClinicalCenter3: '(261 врач!).',
-			And: 'и',
-		},
-		sr: {
-			TipBudva1: 'Budva nema svoju bolnicu, samo',
-			TipDomZdravlja: 'Dom Zdravlja (poliklinika)',
-			TipBudva2: 'Najbliže bolnice su u',
-			TipBar: 'Baru',
-			TipCetinje: 'Cetinju',
-			TipKotor: 'Kotoru',
-			TipTivat: 'Tivat nema svoju bolnicu. Najbliže su u',
-			TipRisan: 'Risnu',
-			TipUlcinj: 'Ulcinj nema svoju bolnicu. Najbliža je u',
-			TipBarCity:
-				'Bar ima Bolnicu sa odeljenjima za odrasle i decu i Dom Zdravlja (poliklinika).',
-			TipEmergency: 'U slučaju hitnosti, pozovite hitnu pomoć na 📞 124.',
-			TipClinicalCenter1: 'Najveći i najsavremeniji medicinski centar je',
-			TipClinicalCenter2: 'Klinički centar Crne Gore u Podgorici',
-			TipClinicalCenter3: '(261 lekar!).',
-			And: 'i',
-		},
-		de: {
-			TipBudva1: 'Budva hat kein eigenes Krankenhaus, nur',
-			TipDomZdravlja: 'Dom Zdravlja (Poliklinik)',
-			TipBudva2: 'Die nächsten Krankenhäuser sind in',
-			TipBar: 'Bar',
-			TipCetinje: 'Cetinje',
-			TipKotor: 'Kotor',
-			TipTivat: 'Tivat hat kein eigenes Krankenhaus. Die nächsten sind in',
-			TipRisan: 'Risan',
-			TipUlcinj: 'Ulcinj hat kein eigenes Krankenhaus. Das nächste ist in',
-			TipBarCity:
-				'Bar hat ein Krankenhaus mit Erwachsenen- und Kinderabteilungen und Dom Zdravlja (Poliklinik).',
-			TipEmergency: 'Im Notfall rufen Sie den Krankenwagen unter 📞 124.',
-			TipClinicalCenter1:
-				'Das größte und modernste medizinische Zentrum ist das',
-			TipClinicalCenter2: 'Klinische Zentrum Montenegros in Podgorica',
-			TipClinicalCenter3: '(261 Ärzte!).',
-			And: 'und',
-		},
-		tr: {
-			TipBudva1: "Budva'nın kendi hastanesi yok, sadece",
-			TipDomZdravlja: 'Dom Zdravlja (poliklinik)',
-			TipBudva2: 'En yakın hastaneler',
-			TipBar: 'Bar',
-			TipCetinje: 'Cetinje',
-			TipKotor: 'Kotor',
-			TipTivat: "Tivat'ın kendi hastanesi yok. En yakınları",
-			TipRisan: 'Risan',
-			TipUlcinj: "Ulcinj'in kendi hastanesi yok. En yakını",
-			TipBarCity:
-				"Bar'da yetişkin ve çocuk bölümlerinden oluşan bir Hastane ve Dom Zdravlja (poliklinik) var.",
-			TipEmergency: 'Acil durumda 📞 124 numaralı telefonu arayın.',
-			TipClinicalCenter1: 'En büyük ve en modern tıp merkezi',
-			TipClinicalCenter2: "Podgorica'daki Karadağ Klinik Merkezi",
-			TipClinicalCenter3: '(261 doktor!).',
-			And: 've',
-		},
-	},
-};
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -124,7 +20,6 @@ const { t, locale } = useI18n({
 		specialtyI18n,
 		cityI18n,
 		languageI18n,
-		tipsI18n,
 	]),
 });
 
@@ -345,35 +240,6 @@ watchEffect(() => {
 		]);
 	}
 });
-
-// Clinic links for tips
-const clinicLink = (clinicId: number) => ({
-	name: 'clinics-clinicId',
-	params: { clinicId: String(clinicId) },
-	query: getRegionalQuery(locale.value),
-});
-
-const cityClinicLink = (cityId: number) => ({
-	name: 'clinics',
-	query: { ...getRegionalQuery(locale.value), cityIds: String(cityId) },
-});
-
-const domZdravljaBudvaLink = computed(() =>
-	clinicLink(CLINIC_DOM_ZDRAVLJA_BUDVA),
-);
-const clinicalCenterLink = computed(() =>
-	clinicLink(CLINIC_CLINICAL_CENTER_PODGORICA),
-);
-const barClinicsLink = computed(() => cityClinicLink(CityId.BAR));
-const kotorClinicsLink = computed(() => cityClinicLink(CityId.KOTOR));
-
-// Determine which city tips to show
-const selectedCityId = computed(() => {
-	if (cityIds.value.length === 1) {
-		return cityIds.value[0];
-	}
-	return null;
-});
 </script>
 
 <template>
@@ -406,45 +272,7 @@ const selectedCityId = computed(() => {
 		</template>
 
 		<template #tips>
-			<!-- General tips (always shown) -->
-			<TipsItem type="emergency" :text="t('TipEmergency')" />
-
-			<!-- City-specific tips -->
-			<TipsItem v-if="selectedCityId === CityId.BUDVA">
-				{{ t('TipBudva1') }}
-				<NuxtLink :to="domZdravljaBudvaLink">{{ t('TipDomZdravlja') }}</NuxtLink
-				>.
-				{{ t('TipBudva2') }}
-				<NuxtLink :to="barClinicsLink">{{ t('TipBar') }}</NuxtLink
-				>,
-				{{ t('TipCetinje') }}
-				{{ t('And') }}
-				<NuxtLink :to="kotorClinicsLink">{{ t('TipKotor') }}</NuxtLink
-				>.
-			</TipsItem>
-
-			<TipsItem v-if="selectedCityId === CityId.TIVAT">
-				{{ t('TipTivat') }}
-				<NuxtLink :to="kotorClinicsLink">{{ t('TipKotor') }}</NuxtLink>
-				{{ t('And') }}
-				{{ t('TipRisan') }}.
-			</TipsItem>
-
-			<TipsItem v-if="selectedCityId === CityId.ULCINJ">
-				{{ t('TipUlcinj') }}
-				<NuxtLink :to="barClinicsLink">{{ t('TipBar') }}</NuxtLink
-				>.
-			</TipsItem>
-
-			<TipsItem v-if="selectedCityId === CityId.BAR" :text="t('TipBarCity')" />
-
-			<TipsItem>
-				{{ t('TipClinicalCenter1') }}
-				<NuxtLink :to="clinicalCenterLink">{{
-					t('TipClinicalCenter2')
-				}}</NuxtLink>
-				{{ t('TipClinicalCenter3') }}
-			</TipsItem>
+			<TipsDoctors :cityIds="cityIds" :specialtyIds="specialtyIds" />
 		</template>
 	</ListPage>
 </template>

@@ -77,3 +77,44 @@ export enum DoctorSpecialty {
 	MAXILLOFACIAL_SURGERY = 91,
 	CARDIAC_SURGERY = 92,
 }
+
+// Pediatric specialties group
+export const PEDIATRIC_SPECIALTIES = [
+	DoctorSpecialty.PEDIATRICS,
+	DoctorSpecialty.PEDIATRIC_CARDIOLOGY,
+	DoctorSpecialty.PEDIATRIC_SURGERY,
+	DoctorSpecialty.PEDIATRIC_NEUROLOGY,
+	DoctorSpecialty.PEDIATRIC_PULMONOLOGY,
+	DoctorSpecialty.PEDIATRIC_GASTROENTEROLOGY,
+	DoctorSpecialty.PEDIATRIC_ENDOCRINOLOGY,
+	DoctorSpecialty.PEDIATRIC_HEMATOLOGY,
+	DoctorSpecialty.PEDIATRIC_ALLERGOLOGY,
+	DoctorSpecialty.PEDIATRIC_ENT,
+	DoctorSpecialty.PEDIATRIC_ORTHOPEDICS,
+	DoctorSpecialty.PEDIATRIC_UROLOGY,
+	DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE,
+	DoctorSpecialty.NEONATOLOGY,
+	DoctorSpecialty.PEDIATRIC_OPHTHALMOLOGY,
+	DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY,
+	DoctorSpecialty.PEDIATRIC_DENTISTRY,
+];
+
+// Surgical specialties group
+export const SURGICAL_SPECIALTIES = [
+	DoctorSpecialty.GENERAL_SURGERY,
+	DoctorSpecialty.PEDIATRIC_SURGERY,
+	DoctorSpecialty.VASCULAR_SURGERY,
+	DoctorSpecialty.ENDOCRINE_SURGERY,
+	DoctorSpecialty.PLASTIC_SURGERY,
+	DoctorSpecialty.THORACIC_SURGERY,
+	DoctorSpecialty.ONCOLOGIC_SURGERY,
+	DoctorSpecialty.ORAL_SURGERY,
+	DoctorSpecialty.NEUROSURGERY,
+	DoctorSpecialty.OPHTHALMIC_SURGERY,
+	DoctorSpecialty.GASTROINTESTINAL_SURGERY,
+	DoctorSpecialty.MAXILLOFACIAL_SURGERY,
+	DoctorSpecialty.CARDIAC_SURGERY,
+	DoctorSpecialty.PROCTOLOGY,
+	DoctorSpecialty.GYNECOLOGIC_ONCOLOGY,
+	DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY,
+];

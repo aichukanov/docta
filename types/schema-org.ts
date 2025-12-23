@@ -2,6 +2,8 @@
  * Schema.org types for structured data
  */
 
+export type PersonSchemaType = 'Physician' | 'Pharmacist' | 'Person';
+
 export interface SchemaOrgBase {
 	'@context'?: string;
 	'@type': string | string[];
@@ -133,7 +135,7 @@ export interface MedicalProcedureSchema extends SchemaOrgBase {
  * Compact person reference for list items
  */
 export interface PersonListItemRef {
-	'@type': 'Person' | 'Physician';
+	'@type': SchemaType;
 	'@id': string;
 	'name': string;
 	'url': string;

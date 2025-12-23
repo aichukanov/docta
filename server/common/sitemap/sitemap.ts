@@ -26,7 +26,7 @@ export function menuItemToLinks(
 		}
 
 		linksWithParams.push({
-			hreflang: `${lang}-ME`,
+			hreflang: lang,
 			href: getRegionalUrl(url, query, lang),
 		});
 	}

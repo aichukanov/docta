@@ -8,6 +8,7 @@ import type {
 	MedicalSpecialtySchema,
 	BreadcrumbListSchema,
 	PersonListItemRef,
+	PersonSchemaType,
 } from '~/types/schema-org';
 import type { ClinicData } from '~/interfaces/clinic';
 import {
@@ -166,6 +167,28 @@ export interface DoctorSchemaData {
 	specialtyIds?: number[];
 }
 
+function getSchemaType(professionalTitle: string): {
+	schemaType: PersonSchemaType;
+	fragment: string;
+} {
+	if (!professionalTitle) {
+		return {
+			schemaType: 'Person',
+			fragment: 'person',
+		};
+	} else if (professionalTitle === 'mr ph') {
+		return {
+			schemaType: 'Pharmacist',
+			fragment: 'pharmacist',
+		};
+	} else {
+		return {
+			schemaType: 'Physician',
+			fragment: 'physician',
+		};
+	}
+}
+
 /**
  * Build Person/Physician schema reference for a doctor
  * Used in both list pages and detail pages
@@ -178,11 +201,9 @@ export function buildPersonSchemaRef(
 	},
 ): PersonListItemRef {
 	const url = `${options.siteUrl}/doctors/${doctor.id}`;
-	const honorificPrefix = doctor.professionalTitle?.trim();
-	const schemaType: 'Physician' | 'Person' = honorificPrefix
-		? 'Physician'
-		: 'Person';
-	const fragment = schemaType === 'Physician' ? 'physician' : 'person';
+	const { schemaType, fragment } = getSchemaType(
+		doctor.professionalTitle?.trim(),
+	);
 
 	// Build job titles from specialties
 	const jobTitles = doctor.specialtyIds
@@ -437,11 +458,11 @@ export function buildDoctorSchema(options: {
 }): SchemaOrg[] {
 	const doctorUrl = `${options.siteUrl}/doctors/${options.id}`;
 	const honorificPrefix = options.title?.trim() || undefined;
-	const schemaType = honorificPrefix ? 'Physician' : 'Person';
+	const { schemaType, fragment } = getSchemaType(honorificPrefix);
 
 	// Build job titles for Person type
 	const jobTitles =
-		schemaType === 'Person'
+		schemaType === 'Person' || schemaType === 'Pharmacist'
 			? options.specialtyIds
 					?.map((id) => options.getSpecialtyName(id))
 					.filter(isNonEmptyString)
@@ -467,19 +488,14 @@ export function buildDoctorSchema(options: {
 		...buildEntitySchemaBase({
 			url: doctorUrl,
 			type: schemaType,
-			fragment: schemaType === 'Physician' ? 'physician' : 'person',
+			fragment,
 		}),
 		name: options.name,
 		description: options.pageDescription || undefined,
 		image: options.photoUrl || undefined,
 		honorificPrefix,
 		medicalSpecialty: schemaType === 'Physician' ? specialties : undefined,
-		jobTitle:
-			schemaType === 'Person'
-				? jobTitles && jobTitles.length > 0
-					? jobTitles
-					: undefined
-				: undefined,
+		jobTitle: jobTitles.length > 0 ? jobTitles : undefined,
 		knowsLanguage: languages,
 		sameAs: sameAs.length > 0 ? sameAs : undefined,
 		worksFor: options.clinics?.map((clinic) =>

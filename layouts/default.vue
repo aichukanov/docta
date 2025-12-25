@@ -343,6 +343,13 @@ body {
 	scrollbar-gutter: stable;
 }
 
+.layout-wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	min-height: 100dvh;
+}
+
 .footer {
 	width: 100%;
 	margin-top: 16px;
@@ -533,6 +540,7 @@ body {
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
 }
 
 .without-filters {

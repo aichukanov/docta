@@ -159,7 +159,8 @@ const isActiveSection = (section: string) => {
 	border-bottom: 1px solid @light-gray-color;
 	transition: all 0.3s ease;
 	box-sizing: border-box;
-	height: 60px;
+	height: auto;
+	min-height: 60px;
 
 	&__main {
 		width: 100%;
@@ -169,7 +170,7 @@ const isActiveSection = (section: string) => {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		height: 60px;
+		min-height: 60px;
 		gap: @base-padding;
 		padding: 0 @base-padding;
 		box-sizing: border-box;
@@ -246,28 +247,71 @@ const isActiveSection = (section: string) => {
 	}
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1024px) {
 	.app-header {
 		&__main-content {
 			height: auto;
-			min-height: 50px;
 			padding: var(--spacing-sm) var(--spacing-md);
 			flex-wrap: wrap;
-			gap: var(--spacing-md);
+			gap: var(--spacing-xs) var(--spacing-md);
 		}
 
 		&__nav {
 			order: 3;
 			width: 100%;
+			flex: none;
 			margin-left: 0;
-			justify-content: center;
-			flex-wrap: wrap;
-			gap: var(--spacing-sm);
+			justify-content: flex-start;
+			flex-wrap: nowrap;
+			overflow-x: auto;
+			padding: var(--spacing-xs) 0 var(--spacing-sm);
+			gap: var(--spacing-xs);
+			scrollbar-width: none; /* Firefox */
+
+			&::-webkit-scrollbar {
+				display: none; /* Chrome, Safari, Edge */
+			}
+
+			/* Добавляем небольшие отступы по краям для красоты при скролле */
+			&::after,
+			&::before {
+				content: '';
+				flex-shrink: 0;
+				width: var(--spacing-xs);
+			}
 		}
 
 		&__nav-link {
 			font-size: var(--font-size-sm);
-			padding: var(--spacing-xs) var(--spacing-sm);
+			padding: var(--spacing-sm) var(--spacing-md);
+			background: var(--color-bg-secondary);
+			border: 1px solid var(--color-border-secondary);
+			flex-direction: column;
+			gap: 4px;
+			min-width: 90px;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+
+			.nav-icon {
+				width: 20px;
+				height: 20px;
+			}
+
+			span {
+				font-size: 10px;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+			}
+
+			&:hover {
+				background: var(--color-bg-tertiary);
+			}
+
+			&.is-active {
+				background: rgba(79, 70, 229, 0.08);
+				border-color: rgba(79, 70, 229, 0.3);
+			}
 		}
 
 		&__actions {
@@ -283,12 +327,7 @@ const isActiveSection = (section: string) => {
 @media only screen and (max-width: 500px) {
 	.app-header {
 		&__main-content {
-			padding: 0 @base-offset;
-		}
-
-		&__nav {
-			gap: var(--spacing-sm);
-			margin-left: var(--spacing-sm);
+			padding: var(--spacing-sm) var(--spacing-sm);
 		}
 	}
 }

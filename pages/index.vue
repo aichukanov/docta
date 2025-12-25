@@ -271,7 +271,7 @@ schemaOrgStore.setSchemas([
 @import url('~/assets/css/vars.less');
 
 .main-page {
-	min-height: calc(100vh - 60px);
+	min-height: calc(100vh - 320px);
 	background: linear-gradient(180deg, #fafbff 0%, #f0f4ff 100%);
 }
 

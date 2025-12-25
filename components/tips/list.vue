@@ -1,17 +1,9 @@
 <script setup lang="ts">
 const { t } = useI18n({ useScope: 'local' });
-
-const slots = useSlots();
-
-const hasContent = computed(() => !!slots.default);
 </script>
 
 <template>
-	<aside
-		v-if="hasContent"
-		class="tips-section"
-		:aria-label="t('AriaTipsSection')"
-	>
+	<aside class="tips-section" :aria-label="t('AriaTipsSection')">
 		<div class="tips-header">
 			<div class="tips-header-line"></div>
 			<h3 class="tips-title">{{ t('TipsTitle') }}</h3>

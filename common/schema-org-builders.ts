@@ -469,12 +469,13 @@ export function buildDoctorSchema(options: {
 			? options.specialtyIds
 					?.map((id) => options.getSpecialtyName(id))
 					.filter(isNonEmptyString)
-			: undefined;
+			: [];
 
 	// Build medical specialties for Physician type
-	const specialties = options.specialtyIds
-		?.map((id) => buildMedicalSpecialtySchema(id, options.getSpecialtyName))
-		.filter(Boolean) as MedicalSpecialtySchema[] | undefined;
+	const specialties =
+		(options.specialtyIds
+			?.map((id) => buildMedicalSpecialtySchema(id, options.getSpecialtyName))
+			.filter(Boolean) as MedicalSpecialtySchema[]) || [];
 
 	// Build language codes
 	const languages = options.languageIds

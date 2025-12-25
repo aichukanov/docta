@@ -31,12 +31,17 @@ export function menuItemToLinks(
 		});
 	}
 
+	linksWithParams.push({
+		hreflang: 'x-default',
+		href: getRegionalUrl(url, query, 'en'),
+	});
+
 	const loc = getRegionalUrl(url, query, 'sr');
 
 	return {
 		loc,
 		lastmod: new Date(),
-		changefreq: 'daily',
+		changefreq: 'weekly',
 		alternatives: linksWithParams,
 	};
 }
@@ -124,13 +129,13 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		...specialtyLanguageLinks,
 		// Lab Tests: страницы + категории + категория+город
 		labTestsPageLink,
-		...labTestLinks,
+		// ...labTestLinks, // todo: потом добавить, сразу не размывать бюджет
 		...labTestCategoryLinks,
 		...labTestCategoryCityLinks,
 		// Clinics: страницы + город
 		clinicsPageLink,
 		...clinicLinks,
-		...clinicCityLinks,
+		// ...clinicCityLinks,
 	]);
 }
 

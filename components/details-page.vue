@@ -192,6 +192,14 @@ const onMapReady = () => {
 		.details-page-content {
 			.details-info-container {
 				flex-direction: column;
+
+				.details-info-wrapper {
+					width: 100%;
+				}
+			}
+
+			.map-container {
+				width: 100%;
 			}
 		}
 	}

@@ -17,14 +17,32 @@ defineEmits<{
 const { locale } = useI18n();
 const clinicsStore = useClinicsStore();
 
-const filteredClinics = computed(() => {
-	return clinicsStore.clinics.filter((clinic) =>
-		props.clinicIds.split(',').map(Number).includes(clinic.id),
-	);
-});
-
 const getPriceInfo = (clinicId: number) =>
 	props.clinicPrices?.find((p) => p.clinicId === clinicId);
+
+const sortedClinics = computed(() => {
+	const filtered = clinicsStore.clinics.filter((clinic) =>
+		props.clinicIds.split(',').map(Number).includes(clinic.id),
+	);
+
+	if (!props.clinicPrices || props.clinicPrices.length === 0) {
+		return filtered;
+	}
+
+	return [...filtered].sort((a, b) => {
+		const priceA = getPriceInfo(a.id)?.price;
+		const priceB = getPriceInfo(b.id)?.price;
+
+		const hasPriceA = priceA !== undefined && priceA !== null && priceA !== 0;
+		const hasPriceB = priceB !== undefined && priceB !== null && priceB !== 0;
+
+		if (!hasPriceA && !hasPriceB) return 0;
+		if (!hasPriceA) return 1;
+		if (!hasPriceB) return -1;
+
+		return (priceA as number) - (priceB as number);
+	});
+});
 
 const detailsLink = computed(() => {
 	if (!props.detailsRouteName || !props.detailsParamName || !props.itemId) {
@@ -51,7 +69,7 @@ const detailsLink = computed(() => {
 
 		<div class="clinics-list">
 			<ClinicSummary
-				v-for="clinic in filteredClinics"
+				v-for="clinic in sortedClinics"
 				:key="clinic.id"
 				:clinic="clinic"
 				:price-info="getPriceInfo(clinic.id)"

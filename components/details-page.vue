@@ -16,6 +16,26 @@ const props = defineProps<{
 const getPriceInfo = (clinicId: number) =>
 	props.clinicPrices?.find((p) => p.clinicId === clinicId);
 
+const sortedClinics = computed(() => {
+	if (!props.clinicPrices || props.clinicPrices.length === 0) {
+		return props.clinics;
+	}
+
+	return [...props.clinics].sort((a, b) => {
+		const priceA = getPriceInfo(a.id)?.price;
+		const priceB = getPriceInfo(b.id)?.price;
+
+		const hasPriceA = priceA !== undefined && priceA !== null && priceA !== 0;
+		const hasPriceB = priceB !== undefined && priceB !== null && priceB !== 0;
+
+		if (!hasPriceA && !hasPriceB) return 0;
+		if (!hasPriceA) return 1;
+		if (!hasPriceB) return -1;
+
+		return (priceA as number) - (priceB as number);
+	});
+});
+
 const { t, locale } = useI18n({ useScope: 'local' });
 const router = useRouter();
 const { getRouteParams } = useFilters();
@@ -40,8 +60,8 @@ const backToSearch = () => {
 };
 
 const onMapReady = () => {
-	if (props.clinics.length > 0) {
-		mapRef.value?.centerOnClinics(props.clinics);
+	if (sortedClinics.value.length > 0) {
+		mapRef.value?.centerOnClinics(sortedClinics.value);
 	}
 };
 </script>
@@ -77,7 +97,7 @@ const onMapReady = () => {
 							:aria-label="t('AriaClinicsSection')"
 						>
 							<ClinicSummary
-								v-for="clinic in clinics"
+								v-for="clinic in sortedClinics"
 								:key="clinic.id"
 								:clinic="clinic"
 								:priceInfo="getPriceInfo(clinic.id)"
@@ -92,7 +112,7 @@ const onMapReady = () => {
 					<ClinicServicesMap
 						ref="mapRef"
 						:services="[]"
-						:clinics="clinics"
+						:clinics="sortedClinics"
 						:showAllClinics="true"
 						@ready="onMapReady"
 					/>

@@ -69,12 +69,10 @@ if (import.meta.server && !isFound.value) {
 }
 
 const clinicDoctors = computed(() => doctorsList.value?.doctors || []);
-const clinicLabTests = computed(() => labTestsList.value?.labTests || []);
-const clinicMedications = computed(
-	() => medicationsList.value?.medications || [],
-);
+const clinicLabTests = computed(() => labTestsList.value?.items || []);
+const clinicMedications = computed(() => medicationsList.value?.items || []);
 const clinicMedicalServices = computed(
-	() => medicalServicesList.value?.medicalServices || [],
+	() => medicalServicesList.value?.items || [],
 );
 
 const clinicAsList = computed(() =>
@@ -390,7 +388,7 @@ watchEffect(() => {
 		"MedicalServicesAtClinic": "Medical services",
 		"LabTestsAtClinic": "Lab tests",
 		"MedicationsAtClinic": "Medications",
-		"NoServicesAtClinic": "No services available at this clinic",
+		"NoServicesAtClinic": "Information about services at this clinic is not yet available",
 		"AriaClinicInfo": "Clinic information",
 		"AriaClinicAddress": "Clinic address",
 		"AriaClinicActions": "Clinic actions",
@@ -405,7 +403,7 @@ watchEffect(() => {
 		"MedicalServicesAtClinic": "Медицинские услуги",
 		"LabTestsAtClinic": "Анализы",
 		"MedicationsAtClinic": "Лекарства",
-		"NoServicesAtClinic": "В этой клинике нет доступных услуг",
+		"NoServicesAtClinic": "У нас пока нет информации об услугах этой клиники",
 		"AriaClinicInfo": "Информация о клинике",
 		"AriaClinicAddress": "Адрес клиники",
 		"AriaClinicActions": "Действия с клиникой",
@@ -420,7 +418,7 @@ watchEffect(() => {
 		"MedicalServicesAtClinic": "Medizinische Dienstleistungen",
 		"LabTestsAtClinic": "Laboruntersuchungen",
 		"MedicationsAtClinic": "Medikamente",
-		"NoServicesAtClinic": "Keine Dienstleistungen in dieser Klinik verfügbar",
+		"NoServicesAtClinic": "Informationen über die Leistungen dieser Klinik sind noch nicht verfügbar",
 		"AriaClinicInfo": "Klinikinformationen",
 		"AriaClinicAddress": "Klinikadresse",
 		"AriaClinicActions": "Klinikaktionen",
@@ -435,7 +433,7 @@ watchEffect(() => {
 		"MedicalServicesAtClinic": "Tıbbi hizmetler",
 		"LabTestsAtClinic": "Laboratuvar testleri",
 		"MedicationsAtClinic": "İlaçlar",
-		"NoServicesAtClinic": "Bu klinikte hizmet bulunmamaktadır",
+		"NoServicesAtClinic": "Bu kliniğin hizmetleri hakkında henüz bilgi bulunmamaktadır",
 		"AriaClinicInfo": "Klinik bilgileri",
 		"AriaClinicAddress": "Klinik adresi",
 		"AriaClinicActions": "Klinik işlemleri",
@@ -450,7 +448,7 @@ watchEffect(() => {
 		"MedicalServicesAtClinic": "Medicinske usluge",
 		"LabTestsAtClinic": "Laboratorijske analize",
 		"MedicationsAtClinic": "Lekovi",
-		"NoServicesAtClinic": "Nema dostupnih usluga u ovoj klinici",
+		"NoServicesAtClinic": "Trenutno nemamo informacije o uslugama ove klinike",
 		"AriaClinicInfo": "Informacije o klinici",
 		"AriaClinicAddress": "Adresa klinike",
 		"AriaClinicActions": "Akcije klinike",

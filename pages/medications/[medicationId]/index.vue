@@ -135,6 +135,7 @@ watchEffect(() => {
 				pageTitle: pageTitle.value,
 				pageDescription: pageDescription.value,
 				clinics: medicationClinics.value,
+				clinicPrices: medicationData.value.clinicPrices,
 				getCityName,
 			}),
 			buildBreadcrumbsSchema(medicationUrl, [

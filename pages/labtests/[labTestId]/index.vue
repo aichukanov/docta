@@ -152,6 +152,7 @@ watchEffect(() => {
 				pageTitle: pageTitle.value,
 				pageDescription: pageDescription.value,
 				clinics: labTestClinics.value,
+				clinicPrices: labTestData.value.clinicPrices,
 				getCityName,
 			}),
 			buildBreadcrumbsSchema(testUrl, [

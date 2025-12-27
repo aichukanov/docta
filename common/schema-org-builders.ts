@@ -10,7 +10,7 @@ import type {
 	PersonListItemRef,
 	PersonSchemaType,
 } from '~/types/schema-org';
-import type { ClinicData } from '~/interfaces/clinic';
+import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
 import {
 	normalizeWebsiteUrl,
 	splitContacts,
@@ -589,6 +589,57 @@ export function buildClinicSchema(options: {
 }
 
 /**
+ * Build offers schema for products/services
+ */
+export function buildOffersSchema(options: {
+	siteUrl: string;
+	clinics?: ClinicData[];
+	clinicPrices?: ClinicPrice[];
+	getCityName: (id: number) => string | undefined;
+}) {
+	const validPrices =
+		options.clinicPrices?.filter((p) => p.price && p.price > 0) || [];
+
+	if (validPrices.length === 0) {
+		return undefined;
+	}
+
+	const prices = validPrices.map((p) => p.price);
+	const lowPrice = Math.min(...prices);
+	const highPrice = Math.max(...prices);
+
+	return {
+		'@type': 'AggregateOffer' as const,
+		'lowPrice': lowPrice.toFixed(2),
+		'highPrice': highPrice.toFixed(2),
+		'priceCurrency': 'EUR',
+		'offerCount': validPrices.length.toString(),
+		'offers': validPrices
+			.map((priceItem) => {
+				const clinic = options.clinics?.find(
+					(c) => c.id === priceItem.clinicId,
+				);
+				if (!clinic) return null;
+
+				const clinicUrl = `${options.siteUrl}/clinics/${clinic.id}`;
+
+				return {
+					'@type': 'Offer' as const,
+					'price': priceItem.price.toFixed(2),
+					'priceCurrency': 'EUR',
+					'url': clinicUrl,
+					'seller': {
+						...buildMedicalOrganizationRef(clinic, options.getCityName),
+						'@id': `${clinicUrl}#medicalorganization`,
+						'url': clinicUrl, // Ссылка на страницу клиники на нашем сайте
+					},
+				};
+			})
+			.filter(Boolean),
+	};
+}
+
+/**
  * Build MedicalTest schema for lab test pages
  */
 export function buildMedicalTestSchema(options: {
@@ -601,6 +652,7 @@ export function buildMedicalTestSchema(options: {
 	pageTitle: string;
 	pageDescription?: string;
 	clinics?: ClinicData[];
+	clinicPrices?: ClinicPrice[];
 	getCityName: (id: number) => string | undefined;
 }): SchemaOrg[] {
 	const testUrl = `${options.siteUrl}/labtests/${options.id}`;
@@ -617,7 +669,7 @@ export function buildMedicalTestSchema(options: {
 	const testSchema = {
 		...buildEntitySchemaBase({
 			url: testUrl,
-			type: 'MedicalTest' as const,
+			type: ['MedicalTest', 'Product'],
 			fragment: 'medicaltest',
 		}),
 		name: options.name,
@@ -628,6 +680,12 @@ export function buildMedicalTestSchema(options: {
 		availableAt: options.clinics?.map((clinic) =>
 			buildMedicalOrganizationRef(clinic, options.getCityName),
 		),
+		offers: buildOffersSchema({
+			siteUrl: options.siteUrl,
+			clinics: options.clinics,
+			clinicPrices: options.clinicPrices,
+			getCityName: options.getCityName,
+		}),
 	};
 
 	const webPageSchema = buildWebPageSchema({
@@ -652,6 +710,7 @@ export function buildDrugSchema(options: {
 	pageTitle: string;
 	pageDescription?: string;
 	clinics?: ClinicData[];
+	clinicPrices?: ClinicPrice[];
 	getCityName: (id: number) => string | undefined;
 }): SchemaOrg[] {
 	const drugUrl = `${options.siteUrl}/medications/${options.id}`;
@@ -659,7 +718,7 @@ export function buildDrugSchema(options: {
 	const drugSchema = {
 		...buildEntitySchemaBase({
 			url: drugUrl,
-			type: 'Drug' as const,
+			type: ['Drug', 'Product'],
 			fragment: 'drug',
 		}),
 		name: options.name,
@@ -668,6 +727,12 @@ export function buildDrugSchema(options: {
 		availableAt: options.clinics?.map((clinic) =>
 			buildMedicalOrganizationRef(clinic, options.getCityName),
 		),
+		offers: buildOffersSchema({
+			siteUrl: options.siteUrl,
+			clinics: options.clinics,
+			clinicPrices: options.clinicPrices,
+			getCityName: options.getCityName,
+		}),
 	};
 
 	const webPageSchema = buildWebPageSchema({
@@ -692,6 +757,7 @@ export function buildMedicalProcedureSchema(options: {
 	pageTitle: string;
 	pageDescription?: string;
 	clinics?: ClinicData[];
+	clinicPrices?: ClinicPrice[];
 	getCityName: (id: number) => string | undefined;
 }): SchemaOrg[] {
 	const procedureUrl = `${options.siteUrl}/services/${options.id}`;
@@ -699,7 +765,7 @@ export function buildMedicalProcedureSchema(options: {
 	const procedureSchema = {
 		...buildEntitySchemaBase({
 			url: procedureUrl,
-			type: 'MedicalProcedure' as const,
+			type: ['MedicalProcedure', 'Product'],
 			fragment: 'medicalprocedure',
 		}),
 		name: options.name,
@@ -708,6 +774,12 @@ export function buildMedicalProcedureSchema(options: {
 		availableAt: options.clinics?.map((clinic) =>
 			buildMedicalOrganizationRef(clinic, options.getCityName),
 		),
+		offers: buildOffersSchema({
+			siteUrl: options.siteUrl,
+			clinics: options.clinics,
+			clinicPrices: options.clinicPrices,
+			getCityName: options.getCityName,
+		}),
 	};
 
 	const webPageSchema = buildWebPageSchema({

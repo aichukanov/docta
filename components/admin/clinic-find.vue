@@ -97,6 +97,31 @@ const cityIdModified = computed(
 	() => selectedClinic.value?.cityId !== clinicModel.value?.cityId,
 );
 
+const descriptionSrModified = computed(
+	() =>
+		selectedClinic.value?.description_sr !== clinicModel.value?.description_sr,
+);
+
+const descriptionEnModified = computed(
+	() =>
+		selectedClinic.value?.description_en !== clinicModel.value?.description_en,
+);
+
+const descriptionRuModified = computed(
+	() =>
+		selectedClinic.value?.description_ru !== clinicModel.value?.description_ru,
+);
+
+const descriptionDeModified = computed(
+	() =>
+		selectedClinic.value?.description_de !== clinicModel.value?.description_de,
+);
+
+const descriptionTrModified = computed(
+	() =>
+		selectedClinic.value?.description_tr !== clinicModel.value?.description_tr,
+);
+
 const languageIdsModified = computed(() => {
 	if (!selectedClinic.value || !clinicModel.value) {
 		return false;
@@ -126,6 +151,11 @@ const hasChanges = computed(() => {
 		whatsappModified.value ||
 		viberModified.value ||
 		cityIdModified.value ||
+		descriptionSrModified.value ||
+		descriptionEnModified.value ||
+		descriptionRuModified.value ||
+		descriptionDeModified.value ||
+		descriptionTrModified.value ||
 		languageIdsModified.value
 	);
 });
@@ -299,6 +329,47 @@ watch(selectedClinic, (clinic) => {
 				:readonly="!editable"
 				:modified="viberModified"
 				@reset="clinicModel.viber = selectedClinic?.viber"
+			/>
+
+			<AdminEditableField
+				label="Описание (SR)"
+				type="textarea"
+				v-model:value="clinicModel.description_sr"
+				:readonly="!editable"
+				:modified="descriptionSrModified"
+				@reset="clinicModel.description_sr = selectedClinic?.description_sr"
+			/>
+			<AdminEditableField
+				label="Описание (EN)"
+				type="textarea"
+				v-model:value="clinicModel.description_en"
+				:readonly="!editable"
+				:modified="descriptionEnModified"
+				@reset="clinicModel.description_en = selectedClinic?.description_en"
+			/>
+			<AdminEditableField
+				label="Описание (RU)"
+				type="textarea"
+				v-model:value="clinicModel.description_ru"
+				:readonly="!editable"
+				:modified="descriptionRuModified"
+				@reset="clinicModel.description_ru = selectedClinic?.description_ru"
+			/>
+			<AdminEditableField
+				label="Описание (DE)"
+				type="textarea"
+				v-model:value="clinicModel.description_de"
+				:readonly="!editable"
+				:modified="descriptionDeModified"
+				@reset="clinicModel.description_de = selectedClinic?.description_de"
+			/>
+			<AdminEditableField
+				label="Описание (TR)"
+				type="textarea"
+				v-model:value="clinicModel.description_tr"
+				:readonly="!editable"
+				:modified="descriptionTrModified"
+				@reset="clinicModel.description_tr = selectedClinic?.description_tr"
 			/>
 
 			<FilterCitySelect v-model:value="cityIds" />

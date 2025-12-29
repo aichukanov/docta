@@ -43,7 +43,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 
 		const addDoctorQueryParams = [
 			body.name,
-			body.nameRu || '',
+			body.name_ru || '',
 			body.professionalTitle,
 			body.email,
 			body.phone,

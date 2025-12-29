@@ -68,6 +68,16 @@ if (import.meta.server && !isFound.value) {
 	setResponseStatus(useRequestEvent()!, 404);
 }
 
+const clinicDescription = computed(() => {
+	if (!isFound.value || !clinicData.value) {
+		return '';
+	}
+
+	console.log(clinicData.value);
+	const desc = clinicData.value[`description_${locale.value}`];
+	return desc || clinicData.value.description_sr || '';
+});
+
 const clinicDoctors = computed(() => doctorsList.value?.doctors || []);
 const clinicLabTests = computed(() => labTestsList.value?.items || []);
 const clinicMedications = computed(() => medicationsList.value?.items || []);
@@ -216,6 +226,10 @@ watchEffect(() => {
 					<ConsultationLanguages :languageIds="clinicData.languageIds">
 						{{ t('LanguageAssistance') }}
 					</ConsultationLanguages>
+
+					<div v-if="clinicDescription" class="clinic-description">
+						{{ clinicDescription }}
+					</div>
 
 					<div class="clinic-actions" role="group">
 						<ClinicShowOnMapButton
@@ -503,6 +517,14 @@ watchEffect(() => {
 	display: flex;
 	gap: var(--spacing-sm);
 	margin-top: var(--spacing-sm);
+}
+
+.clinic-description {
+	font-size: var(--font-size-md);
+	line-height: 1.6;
+	color: var(--color-text-primary);
+	white-space: pre-line;
+	margin-top: var(--spacing-xs);
 }
 
 .clinic-contacts {

@@ -59,7 +59,7 @@ const addDoctor = async () => {
 		method: 'POST',
 		body: {
 			name: doctorName.value,
-			nameRu: doctorNameRu.value,
+			name_ru: doctorNameRu.value,
 			professionalTitle: doctorProfessionalTitle.value,
 			email: doctorEmail.value,
 			phone: doctorPhone.value,

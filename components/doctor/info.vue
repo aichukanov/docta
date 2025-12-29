@@ -17,13 +17,7 @@ const props = withDefaults(
 const { t, locale } = useI18n();
 
 const localizedName = computed(() => {
-	const localeUpper =
-		locale.value.charAt(0).toUpperCase() + locale.value.slice(1);
-	const localizedKey = `name${localeUpper}`;
-	if (props.service[localizedKey]) {
-		return props.service[localizedKey];
-	}
-	return props.service.name;
+	return props.service[`name_${locale.value}`] || props.service.name;
 });
 
 const originalName = computed(() => {

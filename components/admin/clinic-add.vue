@@ -19,6 +19,11 @@ const clinicWhatsapp = ref('');
 const clinicViber = ref('');
 const clinicLatitude = ref('');
 const clinicLongitude = ref('');
+const clinicDescriptionSr = ref('');
+const clinicDescriptionEn = ref('');
+const clinicDescriptionRu = ref('');
+const clinicDescriptionDe = ref('');
+const clinicDescriptionTr = ref('');
 
 const clearFields = () => {
 	cityIds.value = [];
@@ -37,13 +42,17 @@ const clearFields = () => {
 	clinicTelegram.value = '';
 	clinicWhatsapp.value = '';
 	clinicViber.value = '';
+	clinicDescriptionSr.value = '';
+	clinicDescriptionEn.value = '';
+	clinicDescriptionRu.value = '';
+	clinicDescriptionDe.value = '';
+	clinicDescriptionTr.value = '';
 };
 
 const addClinic = async () => {
 	if (
 		!clinicName.value ||
-		!cityIds.value.length ||
-		!cityIds.value.length > 1 ||
+		cityIds.value.length !== 1 ||
 		!clinicAddress.value ||
 		!clinicLatitude.value ||
 		!clinicLongitude.value
@@ -71,6 +80,11 @@ const addClinic = async () => {
 			telegram: clinicTelegram.value,
 			whatsapp: clinicWhatsapp.value,
 			viber: clinicViber.value,
+			description_sr: clinicDescriptionSr.value,
+			description_en: clinicDescriptionEn.value,
+			description_ru: clinicDescriptionRu.value,
+			description_de: clinicDescriptionDe.value,
+			description_tr: clinicDescriptionTr.value,
 		},
 	});
 
@@ -102,6 +116,32 @@ const addClinic = async () => {
 			<AdminEditableField label="Telegram" v-model:value="clinicTelegram" />
 			<AdminEditableField label="Whatsapp" v-model:value="clinicWhatsapp" />
 			<AdminEditableField label="Viber" v-model:value="clinicViber" />
+
+			<AdminEditableField
+				label="Описание (SR)"
+				type="textarea"
+				v-model:value="clinicDescriptionSr"
+			/>
+			<AdminEditableField
+				label="Описание (EN)"
+				type="textarea"
+				v-model:value="clinicDescriptionEn"
+			/>
+			<AdminEditableField
+				label="Описание (RU)"
+				type="textarea"
+				v-model:value="clinicDescriptionRu"
+			/>
+			<AdminEditableField
+				label="Описание (DE)"
+				type="textarea"
+				v-model:value="clinicDescriptionDe"
+			/>
+			<AdminEditableField
+				label="Описание (TR)"
+				type="textarea"
+				v-model:value="clinicDescriptionTr"
+			/>
 
 			<FilterLanguageSelect v-model:value="languageIds" />
 		</div>

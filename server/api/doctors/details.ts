@@ -20,7 +20,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			SELECT DISTINCT
 				d.id,
 				d.name,
-				d.name_ru as nameRu,
+				d.name_ru,
 				d.professional_title as professionalTitle,
 				d.photo_url as photoUrl,
 				d.phone,

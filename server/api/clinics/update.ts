@@ -46,7 +46,8 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				UPDATE clinics 
 				SET name = ?, city_id = ?, address = ?, town = ?, postal_code = ?, latitude = ?, longitude = ?,
 				    phone = ?, email = ?, website = ?, facebook = ?, instagram = ?, 
-				    telegram = ?, whatsapp = ?, viber = ?
+				    telegram = ?, whatsapp = ?, viber = ?,
+				    description_sr = ?, description_en = ?, description_ru = ?, description_de = ?, description_tr = ?
 				WHERE id = ?;
 			`;
 
@@ -66,6 +67,11 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				body.telegram || '',
 				body.whatsapp || '',
 				body.viber || '',
+				body.description_sr || '',
+				body.description_en || '',
+				body.description_ru || '',
+				body.description_de || '',
+				body.description_tr || '',
 				body.id,
 			]);
 

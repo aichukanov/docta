@@ -45,10 +45,7 @@ const localizedName = computed(() => {
 	if (!doctorData.value) {
 		return '';
 	}
-	const localeUpper =
-		locale.value.charAt(0).toUpperCase() + locale.value.slice(1);
-	const localizedKey = `name${localeUpper}`;
-	return (doctorData.value as any)[localizedKey] || doctorData.value.name;
+	return doctorData.value[`name_${locale.value}`] || doctorData.value.name;
 });
 
 // Set HTTP 404 status for not found doctor

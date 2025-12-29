@@ -6,7 +6,7 @@ const props = withDefaults(
 		label: string;
 		value?: string | null;
 		modified?: boolean;
-		type?: 'text' | 'photo';
+		type?: 'text' | 'photo' | 'textarea';
 		readonly?: boolean;
 	}>(),
 	{
@@ -40,6 +40,17 @@ const editableValue = computed({
 				:rows="3"
 				:readonly="readonly"
 			/>
+		</div>
+		<div v-else-if="props.type === 'textarea'" class="textarea-container">
+			<el-input
+				v-model="editableValue"
+				type="textarea"
+				:autosize="{ minRows: 2, maxRows: 10 }"
+				:readonly="readonly"
+			/>
+			<div v-if="props.modified" class="reset-button">
+				<el-button :icon="RefreshLeft" @click="$emit('reset')" />
+			</div>
 		</div>
 		<el-input v-else v-model="editableValue" :readonly="readonly">
 			<template #append v-if="props.modified">
@@ -77,6 +88,16 @@ const editableValue = computed({
 	& > img {
 		border-radius: 8px;
 		object-fit: cover;
+	}
+}
+
+.textarea-container {
+	display: flex;
+	gap: var(--spacing-xs);
+	align-items: flex-start;
+
+	.reset-button {
+		margin-top: 4px;
 	}
 }
 </style>

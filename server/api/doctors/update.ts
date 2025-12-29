@@ -57,7 +57,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 			await connection.execute(updateDoctorQuery, [
 				body.name,
-				body.nameRu || '',
+				body.name_ru || '',
 				body.professionalTitle || '',
 				body.email || '',
 				body.phone || '',

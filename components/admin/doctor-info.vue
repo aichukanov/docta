@@ -36,7 +36,7 @@ const nameModified = computed(
 );
 
 const nameRuModified = computed(
-	() => selectedDoctor.value?.nameRu !== doctorModel.value?.nameRu,
+	() => selectedDoctor.value?.name_ru !== doctorModel.value?.name_ru,
 );
 
 const professionalTitleModified = computed(
@@ -222,9 +222,9 @@ watch(selectedDoctor, (doctor) => {
 			/>
 			<AdminEditableField
 				label="Имя (RU)"
-				v-model:value="doctorModel.nameRu"
+				v-model:value="doctorModel.name_ru"
 				:modified="nameRuModified"
-				@reset="doctorModel.nameRu = selectedDoctor?.nameRu"
+				@reset="doctorModel.name_ru = selectedDoctor?.name_ru"
 			/>
 			<AdminEditableField
 				label="Профессиональное звание"

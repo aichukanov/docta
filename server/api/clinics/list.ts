@@ -21,6 +21,11 @@ export default defineEventHandler(async (event): Promise<ClinicList> => {
 				c.whatsapp,
 				c.viber,
 				c.website,
+				c.description_sr,
+				c.description_en,
+				c.description_ru,
+				c.description_de,
+				c.description_tr,
 				COALESCE(GROUP_CONCAT(DISTINCT cl.language_id ORDER BY cl.language_id), '1') as languageIds
 			FROM clinics c
 			LEFT JOIN clinic_languages cl ON c.id = cl.clinic_id

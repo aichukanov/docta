@@ -19,6 +19,11 @@ export interface ClinicData extends ContactList, Coordinates {
 	town?: string;
 	postalCode?: string;
 	languageIds: string;
+	description_sr: string;
+	description_en: string;
+	description_ru: string;
+	description_de: string;
+	description_tr: string;
 }
 
 export interface ClinicList {
@@ -30,8 +35,7 @@ export interface ClinicServiceItem {
 	id: number;
 	clinicIds: string;
 	name: string;
-	nameRu?: string;
-	[key: `name${string}`]: any;
+	name_ru: string;
 }
 
 export interface ClinicPrice {

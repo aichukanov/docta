@@ -226,12 +226,6 @@ watchEffect(() => {
 						{{ t('LanguageAssistance') }}
 					</ConsultationLanguages>
 
-					<MarkedContent
-						v-if="clinicDescription"
-						:content="clinicDescription"
-						class="clinic-description-container"
-					/>
-
 					<div class="clinic-actions" role="group">
 						<ClinicShowOnMapButton
 							:clinic="clinicData"
@@ -240,6 +234,12 @@ watchEffect(() => {
 						/>
 						<ClinicRouteButton :clinic="clinicData" />
 					</div>
+
+					<MarkedContent
+						v-if="clinicDescription"
+						:content="clinicDescription"
+						class="clinic-description-container"
+					/>
 				</div>
 
 				<section class="clinic-contacts" :aria-label="t('AriaContactsSection')">

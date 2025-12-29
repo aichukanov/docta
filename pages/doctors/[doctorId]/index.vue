@@ -41,6 +41,16 @@ await clinicsStore.fetchClinics();
 
 const isFound = computed(() => doctorData.value?.id != null);
 
+const localizedName = computed(() => {
+	if (!doctorData.value) {
+		return '';
+	}
+	const localeUpper =
+		locale.value.charAt(0).toUpperCase() + locale.value.slice(1);
+	const localizedKey = `name${localeUpper}`;
+	return (doctorData.value as any)[localizedKey] || doctorData.value.name;
+});
+
 // Set HTTP 404 status for not found doctor
 if (import.meta.server && !isFound.value) {
 	setResponseStatus(useRequestEvent()!, 404);
@@ -82,7 +92,7 @@ const pageTitle = computed(() => {
 			? t(`city_${uniqueCities[0]}`)
 			: t('InMontenegro');
 
-	const titleParts = [doctorData.value?.name, specialtiesText, locationText];
+	const titleParts = [localizedName.value, specialtiesText, locationText];
 	return titleParts.filter(Boolean).join(' | ');
 });
 
@@ -91,8 +101,7 @@ const pageDescription = computed(() => {
 		return '';
 	}
 
-	const { specialtyIds, languageIds, professionalTitle, name } =
-		doctorData.value;
+	const { specialtyIds, languageIds, professionalTitle } = doctorData.value;
 
 	const specialtiesText = specialtyIds
 		?.split(',')
@@ -133,9 +142,10 @@ const pageDescription = computed(() => {
 			? t('VisitLanguage', { language: languagesText })
 			: t('Visit');
 
-	const doctorName = (professionalTitle ? professionalTitle + ' ' : '') + name;
+	const doctorNameFull =
+		(professionalTitle ? professionalTitle + ' ' : '') + localizedName.value;
 
-	return `${doctorName} — ${joinWithAnd(specialtiesText)}. ${visitText}`;
+	return `${doctorNameFull} — ${joinWithAnd(specialtiesText)}. ${visitText}`;
 });
 
 function joinWithAnd(items: string[]): string {
@@ -203,7 +213,7 @@ watchEffect(() => {
 			...buildDoctorSchema({
 				siteUrl: SITE_URL,
 				id: doctorData.value.id,
-				name: doctorData.value.name,
+				name: localizedName.value,
 				photoUrl: doctorData.value.photoUrl,
 				specialtyIds,
 				languageIds,

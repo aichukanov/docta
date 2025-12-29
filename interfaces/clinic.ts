@@ -30,6 +30,8 @@ export interface ClinicServiceItem {
 	id: number;
 	clinicIds: string;
 	name: string;
+	nameRu?: string;
+	[key: `name${string}`]: any;
 }
 
 export interface ClinicPrice {

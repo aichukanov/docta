@@ -111,6 +111,7 @@ export default {
 			[`specialty_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
 				'Maxillofacial Surgery',
 			[`specialty_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Cardiac Surgery',
+			[`specialty_${DoctorSpecialty.ORTHODONTIST}`]: 'Orthodontics',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologist',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologists',
@@ -398,6 +399,9 @@ export default {
 
 			[`doctor_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Cardiac Surgeon',
 			[`doctors_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Cardiac Surgeons',
+
+			[`doctor_${DoctorSpecialty.ORTHODONTIST}`]: 'Orthodontist',
+			[`doctors_${DoctorSpecialty.ORTHODONTIST}`]: 'Orthodontists',
 		},
 		ru: {
 			Specialty: 'Специальность',
@@ -790,6 +794,10 @@ export default {
 			[`specialty_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Кардиохирургия',
 			[`doctor_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Кардиохирург',
 			[`doctors_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Кардиохирурги',
+
+			[`specialty_${DoctorSpecialty.ORTHODONTIST}`]: 'Ортодонтия',
+			[`doctor_${DoctorSpecialty.ORTHODONTIST}`]: 'Ортодонт',
+			[`doctors_${DoctorSpecialty.ORTHODONTIST}`]: 'Ортодонты',
 		},
 		sr: {
 			Specialty: 'Specijalnost',
@@ -1167,6 +1175,10 @@ export default {
 			[`specialty_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Kardiohirurgija',
 			[`doctor_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Kardiohirurg',
 			[`doctors_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Kardiohirurzi',
+
+			[`specialty_${DoctorSpecialty.ORTHODONTIST}`]: 'Ortodoncija',
+			[`doctor_${DoctorSpecialty.ORTHODONTIST}`]: 'Ortodont',
+			[`doctors_${DoctorSpecialty.ORTHODONTIST}`]: 'Ortodonti',
 		},
 		de: {
 			Specialty: 'Fachrichtung',
@@ -1276,6 +1288,7 @@ export default {
 			[`specialty_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
 				'Mund-Kiefer-Gesichtschirurgie',
 			[`specialty_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Herzchirurgie',
+			[`specialty_${DoctorSpecialty.ORTHODONTIST}`]: 'Kieferorthopädie',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologe',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologen',
@@ -1539,6 +1552,9 @@ export default {
 
 			[`doctor_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Herzchirurg',
 			[`doctors_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Herzchirurgen',
+
+			[`doctor_${DoctorSpecialty.ORTHODONTIST}`]: 'Kieferorthopäde',
+			[`doctors_${DoctorSpecialty.ORTHODONTIST}`]: 'Kieferorthopäden',
 		},
 		tr: {
 			Specialty: 'Uzmanlık',
@@ -1642,6 +1658,7 @@ export default {
 			[`specialty_${DoctorSpecialty.MAXILLOFACIAL_SURGERY}`]:
 				'Çene ve Yüz Cerrahisi',
 			[`specialty_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Kalp Cerrahisi',
+			[`specialty_${DoctorSpecialty.ORTHODONTIST}`]: 'Ortodonti',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyolog',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyologlar',
@@ -1916,6 +1933,9 @@ export default {
 
 			[`doctor_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Kalp Cerrahı',
 			[`doctors_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Kalp Cerrahları',
+
+			[`doctor_${DoctorSpecialty.ORTHODONTIST}`]: 'Ortodontist',
+			[`doctors_${DoctorSpecialty.ORTHODONTIST}`]: 'Ortodontistler',
 		},
 	},
 };

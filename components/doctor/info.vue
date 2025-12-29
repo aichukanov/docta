@@ -16,6 +16,23 @@ const props = withDefaults(
 
 const { t, locale } = useI18n();
 
+const localizedName = computed(() => {
+	const localeUpper =
+		locale.value.charAt(0).toUpperCase() + locale.value.slice(1);
+	const localizedKey = `name${localeUpper}`;
+	if (props.service[localizedKey]) {
+		return props.service[localizedKey];
+	}
+	return props.service.name;
+});
+
+const originalName = computed(() => {
+	if (localizedName.value !== props.service.name) {
+		return props.service.name;
+	}
+	return null;
+});
+
 const doctorLink = computed(() => ({
 	name: 'doctors-doctorId',
 	params: { doctorId: props.service.id },
@@ -26,15 +43,18 @@ const doctorLink = computed(() => ({
 <template>
 	<div class="doctor-wrapper" :class="{ 'doctor-wrapper__short': short }">
 		<DoctorAvatar
-			:name="service.name"
+			:name="props.service.name"
 			:photoUrl="service.photoUrl"
 			:size="short ? 40 : 120"
 		/>
 		<div class="doctor-info">
 			<component :is="isMainHeading ? 'h1' : 'h3'" class="doctor-name">
 				<NuxtLink :to="doctorLink" class="doctor-name-link">
-					{{ service.name }}
+					{{ localizedName }}
 				</NuxtLink>
+				<div v-if="originalName && !short" class="doctor-original-name">
+					{{ originalName }}
+				</div>
 				<div
 					v-if="service.professionalTitle && !short"
 					class="doctor-professional-title"
@@ -108,6 +128,13 @@ const doctorLink = computed(() => ({
 		line-height: 1.4;
 		font-style: italic;
 		opacity: 0.85;
+	}
+
+	.doctor-original-name {
+		font-size: var(--font-size-md);
+		font-weight: var(--font-weight-medium);
+		color: var(--color-text-secondary);
+		margin-top: var(--spacing-xs);
 	}
 
 	&.doctor-wrapper__short {

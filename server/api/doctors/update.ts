@@ -50,13 +50,14 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 			const updateDoctorQuery = `
 				UPDATE doctors 
-				SET name = ?, professional_title = ?, email = ?, phone = ?, website = ?, 
+				SET name = ?, name_ru = ?, professional_title = ?, email = ?, phone = ?, website = ?, 
 				    photo_url = ?, facebook = ?, instagram = ?, telegram = ?, whatsapp = ?, viber = ?
 				WHERE id = ?;
 			`;
 
 			await connection.execute(updateDoctorQuery, [
 				body.name,
+				body.nameRu || '',
 				body.professionalTitle || '',
 				body.email || '',
 				body.phone || '',

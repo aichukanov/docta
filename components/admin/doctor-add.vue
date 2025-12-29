@@ -10,6 +10,7 @@ const emit = defineEmits<{
 }>();
 
 const doctorName = ref('');
+const doctorNameRu = ref('');
 const doctorProfessionalTitle = ref('');
 const doctorEmail = ref('');
 const doctorPhone = ref('');
@@ -27,6 +28,7 @@ const languageIds = ref<number[]>([1]);
 
 const clearFields = () => {
 	doctorName.value = '';
+	doctorNameRu.value = '';
 	doctorProfessionalTitle.value = '';
 	doctorEmail.value = '';
 	doctorPhone.value = '';
@@ -57,6 +59,7 @@ const addDoctor = async () => {
 		method: 'POST',
 		body: {
 			name: doctorName.value,
+			nameRu: doctorNameRu.value,
 			professionalTitle: doctorProfessionalTitle.value,
 			email: doctorEmail.value,
 			phone: doctorPhone.value,
@@ -82,6 +85,7 @@ const addDoctor = async () => {
 <template>
 	<div class="doctor-add">
 		<AdminEditableField label="Имя" v-model:value="doctorName" />
+		<AdminEditableField label="Имя (RU)" v-model:value="doctorNameRu" />
 		<AdminEditableField
 			label="Профессиональное звание"
 			v-model:value="doctorProfessionalTitle"

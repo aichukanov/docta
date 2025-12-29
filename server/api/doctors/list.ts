@@ -78,6 +78,7 @@ export async function getDoctorList(
 			SELECT DISTINCT
 				d.id,
 				d.name,
+				d.name_ru as nameRu,
 				d.professional_title as professionalTitle,
 				d.photo_url as photoUrl,
 				d.phone,

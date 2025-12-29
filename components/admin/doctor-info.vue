@@ -35,6 +35,10 @@ const nameModified = computed(
 	() => selectedDoctor.value?.name !== doctorModel.value?.name,
 );
 
+const nameRuModified = computed(
+	() => selectedDoctor.value?.nameRu !== doctorModel.value?.nameRu,
+);
+
 const professionalTitleModified = computed(
 	() =>
 		selectedDoctor.value?.professionalTitle !==
@@ -116,6 +120,7 @@ const languageIdsModified = computed(() => {
 const hasChanges = computed(() => {
 	return (
 		nameModified.value ||
+		nameRuModified.value ||
 		professionalTitleModified.value ||
 		photoUrlModified.value ||
 		emailModified.value ||
@@ -214,6 +219,12 @@ watch(selectedDoctor, (doctor) => {
 				v-model:value="doctorModel.name"
 				:modified="nameModified"
 				@reset="doctorModel.name = selectedDoctor?.name"
+			/>
+			<AdminEditableField
+				label="Имя (RU)"
+				v-model:value="doctorModel.nameRu"
+				:modified="nameRuModified"
+				@reset="doctorModel.nameRu = selectedDoctor?.nameRu"
 			/>
 			<AdminEditableField
 				label="Профессиональное звание"

@@ -122,6 +122,7 @@ const SPECIALTY_TO_SCHEMA_ORG_MEMBER: Partial<
 	[DoctorSpecialty.GASTROINTESTINAL_SURGERY]: 'Surgical',
 	[DoctorSpecialty.MAXILLOFACIAL_SURGERY]: 'Surgical',
 	[DoctorSpecialty.CARDIAC_SURGERY]: 'Cardiovascular',
+	[DoctorSpecialty.ORTHODONTIST]: 'Dentistry',
 };
 
 export function getDoctorSpecialtySchemaOrgUrlById(

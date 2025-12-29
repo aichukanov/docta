@@ -73,7 +73,6 @@ const clinicDescription = computed(() => {
 		return '';
 	}
 
-	console.log(clinicData.value);
 	const desc = clinicData.value[`description_${locale.value}`];
 	return desc || clinicData.value.description_sr || '';
 });
@@ -227,9 +226,11 @@ watchEffect(() => {
 						{{ t('LanguageAssistance') }}
 					</ConsultationLanguages>
 
-					<div v-if="clinicDescription" class="clinic-description">
-						{{ clinicDescription }}
-					</div>
+					<MarkedContent
+						v-if="clinicDescription"
+						:content="clinicDescription"
+						class="clinic-description-container"
+					/>
 
 					<div class="clinic-actions" role="group">
 						<ClinicShowOnMapButton
@@ -519,11 +520,7 @@ watchEffect(() => {
 	margin-top: var(--spacing-sm);
 }
 
-.clinic-description {
-	font-size: var(--font-size-md);
-	line-height: 1.6;
-	color: var(--color-text-primary);
-	white-space: pre-line;
+.clinic-description-container {
 	margin-top: var(--spacing-xs);
 }
 

@@ -196,7 +196,7 @@ const pageDescription = computed(() => {
 const schemaOrgStore = useSchemaOrgStore();
 const route = useRoute();
 
-const ogImage = `${SITE_URL}/logo-site.png`;
+const ogImage = `${SITE_URL}/apple-touch-icon.png`;
 
 useSeoMeta({
 	title: pageTitleWithCount,

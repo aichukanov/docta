@@ -129,6 +129,8 @@ useSeoMeta({
 	ogSiteName: SITE_NAME,
 	ogLocale: () => locale.value,
 	ogUrl: () => `${SITE_URL}${route.fullPath}`,
+	ogImage: `${SITE_URL}/apple-touch-icon.png`,
+	twitterCard: 'summary',
 });
 </script>
 

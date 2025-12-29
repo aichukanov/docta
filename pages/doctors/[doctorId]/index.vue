@@ -169,7 +169,7 @@ const ogImage = computed(() => {
 	if (doctorData.value?.photoUrl) {
 		return doctorData.value.photoUrl;
 	}
-	return `${SITE_URL}/logo-site.png`;
+	return `${SITE_URL}/apple-touch-icon.png`;
 });
 
 const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));

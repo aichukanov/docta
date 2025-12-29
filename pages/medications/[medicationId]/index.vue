@@ -99,7 +99,7 @@ const pageDescription = computed(() => {
 // Schema.org for medication details
 const schemaOrgStore = useSchemaOrgStore();
 
-const ogImage = `${SITE_URL}/logo-site.png`;
+const ogImage = `${SITE_URL}/apple-touch-icon.png`;
 const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
 
 useSeoMeta({

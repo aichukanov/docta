@@ -44,6 +44,7 @@ export default defineEventHandler(async (event): Promise<DoctorList> => {
 
 export async function getDoctorList(
 	body: {
+		name?: string;
 		specialtyIds?: number[];
 		cityIds?: number[];
 		languageIds?: string[];
@@ -68,7 +69,9 @@ export async function getDoctorList(
 		whereFilters.push(`clinics.id IN (${body.clinicIds.join(',')})`);
 	}
 	if (body.name && validateName(body, 'api/doctors/list')) {
-		whereFilters.push(`d.name LIKE '%${body.name}%'`);
+		whereFilters.push(
+			`(d.name LIKE '%${body.name}%' OR d.name_ru LIKE '%${body.name}%')`,
+		);
 	}
 
 	const whereFiltersString =

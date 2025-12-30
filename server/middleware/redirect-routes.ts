@@ -1,4 +1,6 @@
 import { fixUrlRegionalParams } from '../common/redirect/regional-settings';
+import { checkLabTestRedirect } from '../common/redirect/lab-test-redirects';
+import { checkDoctorRedirect } from '../common/redirect/doctor-redirects';
 import { sendSitemap } from '../common/sitemap/utils';
 import { generateSitemapPage } from '../common/sitemap/sitemap';
 
@@ -26,6 +28,19 @@ export default defineEventHandler(async (event) => {
 			});
 		}
 	} else {
+		// Проверяем редиректы для объединённых сущностей
+		const labTestRedirect = await checkLabTestRedirect(event, pathArray);
+		if (labTestRedirect) {
+			await sendRedirect(event, labTestRedirect.url, labTestRedirect.status);
+			return;
+		}
+
+		const doctorRedirect = await checkDoctorRedirect(event, pathArray);
+		if (doctorRedirect) {
+			await sendRedirect(event, doctorRedirect.url, doctorRedirect.status);
+			return;
+		}
+
 		const queryParamsRedirect = fixUrlRegionalParams(event);
 		if (queryParamsRedirect) {
 			await sendRedirect(

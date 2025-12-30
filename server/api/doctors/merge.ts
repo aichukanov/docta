@@ -132,7 +132,26 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				body.secondaryDoctorId,
 			]);
 
-			// 6. Удаляем второго врача
+			// 6. Обновляем существующие редиректы и добавляем новый
+			// Если A → B, а теперь B → C, то обновляем A → C
+			const updateOldRedirectsQuery = `
+				UPDATE doctor_redirects SET new_id = ? WHERE new_id = ?
+			`;
+			await connection.execute(updateOldRedirectsQuery, [
+				body.primaryDoctorId,
+				body.secondaryDoctorId,
+			]);
+
+			const saveRedirectQuery = `
+				INSERT IGNORE INTO doctor_redirects (old_id, new_id)
+				VALUES (?, ?)
+			`;
+			await connection.execute(saveRedirectQuery, [
+				body.secondaryDoctorId,
+				body.primaryDoctorId,
+			]);
+
+			// 7. Удаляем второго врача
 			const deleteSecondaryDoctorQuery = 'DELETE FROM doctors WHERE id = ?';
 			const [result]: any = await connection.execute(
 				deleteSecondaryDoctorQuery,

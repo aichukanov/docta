@@ -267,18 +267,6 @@ const isActiveSection = (section: string) => {
 			padding: var(--spacing-xs) 0 var(--spacing-sm);
 			gap: var(--spacing-xs);
 			scrollbar-width: none; /* Firefox */
-
-			&::-webkit-scrollbar {
-				display: none; /* Chrome, Safari, Edge */
-			}
-
-			/* Добавляем небольшие отступы по краям для красоты при скролле */
-			&::after,
-			&::before {
-				content: '';
-				flex-shrink: 0;
-				width: var(--spacing-xs);
-			}
 		}
 
 		&__nav-link {

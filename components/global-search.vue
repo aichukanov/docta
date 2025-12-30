@@ -213,8 +213,12 @@ async function searchEntities(query: string) {
 		allMedications.value = medicationsRes?.items || [];
 		allLabTests.value = labTestsRes?.items || [];
 	} catch (error: any) {
-		// Игнорируем ошибки отмены
-		if (error?.name === 'AbortError') {
+		// Игнорируем ошибки отмены (может быть AbortError напрямую или в cause)
+		if (
+			signal.aborted ||
+			error?.name === 'AbortError' ||
+			error?.cause?.name === 'AbortError'
+		) {
 			return;
 		}
 		console.error('Search error:', error);
@@ -578,6 +582,7 @@ onUnmounted(() => {
 		overflow: hidden;
 		overflow-y: auto;
 		z-index: var(--z-dropdown);
+		padding-bottom: var(--spacing-sm);
 
 		// Кастомный скроллбар
 		&::-webkit-scrollbar {

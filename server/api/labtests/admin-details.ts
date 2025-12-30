@@ -1,6 +1,12 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
+interface ClinicPrice {
+	clinicId: number;
+	price: number | null;
+	code: string | null;
+}
+
 interface LabTestAdminDetails {
 	id: number;
 	name: string;
@@ -9,6 +15,7 @@ interface LabTestAdminDetails {
 	name_de: string;
 	name_tr: string;
 	categoryIds: number[];
+	clinicPrices: ClinicPrice[];
 	synonyms: { language: string; values: string[] }[];
 }
 
@@ -53,6 +60,12 @@ export default defineEventHandler(
 				[body.labTestId],
 			);
 
+			// Получаем цены клиник
+			const [clinicPriceRows]: any = await connection.execute(
+				`SELECT clinic_id, price, code FROM clinic_lab_tests WHERE lab_test_id = ? ORDER BY clinic_id`,
+				[body.labTestId],
+			);
+
 			// Получаем синонимы на всех языках
 			const [synonymRows]: any = await connection.execute(
 				`SELECT another_name, language FROM lab_test_synonyms WHERE lab_test_id = ? ORDER BY language, another_name`,
@@ -77,6 +90,12 @@ export default defineEventHandler(
 				}),
 			);
 
+			const clinicPrices: ClinicPrice[] = clinicPriceRows.map((r: any) => ({
+				clinicId: r.clinic_id,
+				price: r.price,
+				code: r.code,
+			}));
+
 			return {
 				id: labTest.id,
 				name: labTest.name || '',
@@ -85,6 +104,7 @@ export default defineEventHandler(
 				name_de: labTest.name_de || '',
 				name_tr: labTest.name_tr || '',
 				categoryIds: categoryRows.map((r: any) => r.category_id),
+				clinicPrices,
 				synonyms,
 			};
 		} catch (error) {

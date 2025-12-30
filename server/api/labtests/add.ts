@@ -1,6 +1,12 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { validateBody } from '~/common/validation';
 
+interface ClinicPrice {
+	clinicId: number;
+	price?: number;
+	code?: string;
+}
+
 interface AddLabTestBody {
 	name: string;
 	name_sr: string;
@@ -8,7 +14,7 @@ interface AddLabTestBody {
 	name_de?: string;
 	name_tr?: string;
 	categoryIds?: number[];
-	clinicIds?: number[];
+	clinicPrices?: ClinicPrice[];
 }
 
 export default defineEventHandler(async (event): Promise<number | null> => {
@@ -60,14 +66,14 @@ export default defineEventHandler(async (event): Promise<number | null> => {
 				);
 			}
 
-			// 3. Добавляем связи с клиниками (без цены и кода)
-			if (body.clinicIds?.length > 0) {
-				const clinicValues = body.clinicIds
-					.map((clinicId) => `(${labTestId}, ${clinicId})`)
-					.join(',');
-				await connection.execute(
-					`INSERT INTO clinic_lab_tests (lab_test_id, clinic_id) VALUES ${clinicValues}`,
-				);
+			// 3. Добавляем связи с клиниками (с ценой и кодом)
+			if (body.clinicPrices?.length > 0) {
+				for (const cp of body.clinicPrices) {
+					await connection.execute(
+						`INSERT INTO clinic_lab_tests (lab_test_id, clinic_id, price, code) VALUES (?, ?, ?, ?)`,
+						[labTestId, cp.clinicId, cp.price || null, cp.code || null],
+					);
+				}
 			}
 
 			await connection.commit();

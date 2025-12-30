@@ -71,6 +71,7 @@ const mergeLabTests = async () => {
 				<h4>Оставить (основной)</h4>
 				<AdminLabtestInfo
 					:labTests="labTests"
+					:clinics="clinics"
 					@selected="labTestId1 = $event"
 				/>
 			</div>
@@ -78,6 +79,7 @@ const mergeLabTests = async () => {
 				<h4>Удалить (дубликат)</h4>
 				<AdminLabtestInfo
 					:labTests="labTests"
+					:clinics="clinics"
 					@selected="labTestId2 = $event"
 				/>
 			</div>

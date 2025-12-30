@@ -1,6 +1,12 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
+interface ClinicPrice {
+	clinicId: number;
+	price?: number | null;
+	code?: string | null;
+}
+
 interface UpdateLabTestBody {
 	id: number;
 	name: string;
@@ -9,6 +15,7 @@ interface UpdateLabTestBody {
 	name_de: string;
 	name_tr: string;
 	categoryIds: number[];
+	clinicPrices: ClinicPrice[];
 	synonyms: { language: string; values: string[] }[];
 }
 
@@ -87,7 +94,52 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				);
 			}
 
-			// 3. Обновляем синонимы
+			// 3. Обновляем цены клиник (только дифф)
+			const [existingClinicPrices]: any = await connection.execute(
+				'SELECT clinic_id, price, code FROM clinic_lab_tests WHERE lab_test_id = ?',
+				[body.id],
+			);
+			const existingClinicIds = existingClinicPrices.map(
+				(row: any) => row.clinic_id,
+			);
+			const newClinicPrices = body.clinicPrices || [];
+			const newClinicIds = newClinicPrices.map((cp) => cp.clinicId);
+
+			// Удаляем клиники, которых больше нет
+			const clinicsToRemove = existingClinicIds.filter(
+				(id: number) => !newClinicIds.includes(id),
+			);
+			if (clinicsToRemove.length > 0) {
+				const placeholders = clinicsToRemove.map(() => '?').join(',');
+				await connection.execute(
+					`DELETE FROM clinic_lab_tests WHERE lab_test_id = ? AND clinic_id IN (${placeholders})`,
+					[body.id, ...clinicsToRemove],
+				);
+			}
+
+			// Обновляем или добавляем клиники
+			for (const cp of newClinicPrices) {
+				const existing = existingClinicPrices.find(
+					(e: any) => e.clinic_id === cp.clinicId,
+				);
+				if (existing) {
+					// Обновляем только если изменилось
+					if (existing.price !== cp.price || existing.code !== cp.code) {
+						await connection.execute(
+							'UPDATE clinic_lab_tests SET price = ?, code = ? WHERE lab_test_id = ? AND clinic_id = ?',
+							[cp.price || null, cp.code || null, body.id, cp.clinicId],
+						);
+					}
+				} else {
+					// Добавляем новую
+					await connection.execute(
+						'INSERT INTO clinic_lab_tests (lab_test_id, clinic_id, price, code) VALUES (?, ?, ?, ?)',
+						[body.id, cp.clinicId, cp.price || null, cp.code || null],
+					);
+				}
+			}
+
+			// 4. Обновляем синонимы
 			await connection.execute(
 				'DELETE FROM lab_test_synonyms WHERE lab_test_id = ?',
 				[body.id],

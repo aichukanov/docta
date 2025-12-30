@@ -97,6 +97,7 @@ const updateLabTests = () => {
 					<el-tab-pane label="Найти">
 						<AdminLabtestInfo
 							:labTests="labTestsForSelect"
+							:clinics="clinicsList.clinics"
 							editable
 							@updated="updateLabTests"
 						/>

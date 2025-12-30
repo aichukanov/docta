@@ -149,9 +149,9 @@ const setSynonymsForLanguage = (lang: string, value: string) => {
 	}
 };
 
-const synonymsME = computed({
-	get: () => getSynonymsForLanguage('me'),
-	set: (v) => setSynonymsForLanguage('me', v),
+const synonymsSR = computed({
+	get: () => getSynonymsForLanguage('sr'),
+	set: (v) => setSynonymsForLanguage('sr', v),
 });
 const synonymsEN = computed({
 	get: () => getSynonymsForLanguage('en'),
@@ -344,9 +344,9 @@ watch(labTestId, async (newId) => {
 				<h4>Синонимы (по одному на строку)</h4>
 
 				<div class="field">
-					<label>Синонимы (ME/SR)</label>
+					<label>Синонимы (SR)</label>
 					<el-input
-						v-model="synonymsME"
+						v-model="synonymsSR"
 						type="textarea"
 						:autosize="{ minRows: 2, maxRows: 6 }"
 						placeholder="Один синоним на строку"

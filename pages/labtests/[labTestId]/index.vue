@@ -44,21 +44,11 @@ if (import.meta.server && !isFound.value) {
 	setResponseStatus(useRequestEvent()!, 404);
 }
 
-// Клиники уже отсортированы на сервере по цене, сохраняем порядок из clinicIds
-const labTestClinics = computed(() => {
-	if (
-		!isFound.value ||
-		!clinicsStore.clinics ||
-		!labTestData.value?.clinicIds
-	) {
-		return [];
-	}
-
-	const clinicIdsArray = labTestData.value.clinicIds.split(',').map(Number);
-	return clinicIdsArray
-		.map((id) => clinicsStore.clinics.find((clinic) => clinic.id === id))
-		.filter(Boolean) as typeof clinicsStore.clinics;
-});
+const labTestClinics = computed(() =>
+	isFound.value
+		? clinicsStore.getClinicsByIds(labTestData.value?.clinicIds)
+		: [],
+);
 
 const pageTitle = computed(() => {
 	if (!isFound.value) {
@@ -221,6 +211,7 @@ watchEffect(() => {
 		color: #1f2937;
 		margin: 0;
 		font-family: system-ui, -apple-system, sans-serif;
+		word-break: break-word;
 	}
 
 	.lab-test-original {
@@ -228,6 +219,7 @@ watchEffect(() => {
 		color: #6b7280;
 		margin-top: var(--spacing-sm);
 		font-style: italic;
+		word-break: break-word;
 	}
 
 	.lab-test-categories {

@@ -1,20 +1,11 @@
 import { getConnection } from '~/server/common/db-mysql';
-import { parseClinicPricesData } from '~/server/common/utils';
+import {
+	parseClinicPricesData,
+	getPriceOrderBySQL,
+	getLocalizedNameField,
+} from '~/server/common/utils';
 import type { LabTestItem } from '~/interfaces/clinic';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
-
-const LOCALE_TO_NAME_FIELD: Record<string, string> = {
-	en: 'name',
-	ru: 'name_ru',
-	sr: 'name_sr',
-	me: 'name_sr',
-	de: 'name_de',
-	tr: 'name_tr',
-};
-
-function getNameField(locale?: string): string {
-	return LOCALE_TO_NAME_FIELD[locale || 'en'] || 'name';
-}
 
 export default defineEventHandler(
 	async (event): Promise<LabTestItem | null> => {
@@ -31,8 +22,9 @@ export default defineEventHandler(
 				return null;
 			}
 
-			const nameField = getNameField(body.locale);
+			const nameField = getLocalizedNameField(body.locale);
 			const locale = body.locale || 'en';
+			const priceOrder = getPriceOrderBySQL();
 
 			const labTestQuery = `
 			SELECT DISTINCT
@@ -40,19 +32,14 @@ export default defineEventHandler(
 				COALESCE(NULLIF(lt.${nameField}, ''), NULLIF(lt.name_sr, ''), lt.name) as name,
 				COALESCE(NULLIF(lt.name_sr, ''), lt.name) as originalName,
 				(
-					SELECT GROUP_CONCAT(clinic_id ORDER BY
-						CASE WHEN price > 0 THEN 0 ELSE 1 END,
-						CASE WHEN price > 0 THEN price ELSE 999999999 END
-					)
+					SELECT GROUP_CONCAT(clinic_id ORDER BY ${priceOrder})
 					FROM clinic_lab_tests
 					WHERE lab_test_id = lt.id
 				) as clinicIds,
 				(
 					SELECT GROUP_CONCAT(
 						CONCAT(clinic_id, ':', COALESCE(price, 0), ':', COALESCE(code, ''))
-						ORDER BY
-							CASE WHEN price > 0 THEN 0 ELSE 1 END,
-							CASE WHEN price > 0 THEN price ELSE 999999999 END
+						ORDER BY ${priceOrder}
 					)
 					FROM clinic_lab_tests
 					WHERE lab_test_id = lt.id

@@ -37,17 +37,11 @@ if (import.meta.server && !isFound.value) {
 	setResponseStatus(useRequestEvent()!, 404);
 }
 
-// Клиники уже отсортированы на сервере по цене, сохраняем порядок из clinicIds
-const medicationClinics = computed(() => {
-	if (!isFound.value || !clinicsStore.clinics || !medicationData.value?.clinicIds) {
-		return [];
-	}
-
-	const clinicIdsArray = medicationData.value.clinicIds.split(',').map(Number);
-	return clinicIdsArray
-		.map((id) => clinicsStore.clinics.find((clinic) => clinic.id === id))
-		.filter(Boolean) as typeof clinicsStore.clinics;
-});
+const medicationClinics = computed(() =>
+	isFound.value
+		? clinicsStore.getClinicsByIds(medicationData.value?.clinicIds)
+		: [],
+);
 
 const pageTitle = computed(() => {
 	if (!isFound.value) {

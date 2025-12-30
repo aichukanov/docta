@@ -61,12 +61,15 @@ const detailsLink = computed(() => {
 
 <style scoped lang="less">
 .lab-test-info {
+	padding: 0 var(--spacing-xs);
+
 	.lab-test-name {
 		font-size: 1.25rem;
 		font-weight: 600;
 		color: #1f2937;
 		margin: 0;
 		font-family: system-ui, -apple-system, sans-serif;
+		word-break: break-word;
 
 		.lab-test-link {
 			color: var(--color-primary);
@@ -84,6 +87,7 @@ const detailsLink = computed(() => {
 		color: #6b7280;
 		margin-top: var(--spacing-xs);
 		font-style: italic;
+		word-break: break-word;
 	}
 
 	.lab-test-categories {

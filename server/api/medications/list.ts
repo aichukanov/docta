@@ -1,5 +1,8 @@
 import { getConnection } from '~/server/common/db-mysql';
-import { parseClinicPricesData } from '~/server/common/utils';
+import {
+	parseClinicPricesData,
+	getPriceOrderBySQL,
+} from '~/server/common/utils';
 import type { ClinicServiceList } from '~/interfaces/clinic';
 import {
 	validateBody,
@@ -49,19 +52,15 @@ export async function getMedicationList(
 	const whereFiltersString =
 		whereFilters.length > 0 ? 'WHERE ' + whereFilters.join(' AND ') : '';
 
+	const priceOrder = getPriceOrderBySQL('cm');
 	const medicationsQuery = `
 		SELECT DISTINCT
 			m.id,
 			m.name,
-			GROUP_CONCAT(DISTINCT cm.clinic_id ORDER BY
-				CASE WHEN cm.price > 0 THEN 0 ELSE 1 END,
-				CASE WHEN cm.price > 0 THEN cm.price ELSE 999999999 END
-			) as clinicIds,
+			GROUP_CONCAT(DISTINCT cm.clinic_id ORDER BY ${priceOrder}) as clinicIds,
 			GROUP_CONCAT(
 				DISTINCT CONCAT(cm.clinic_id, ':', COALESCE(cm.price, 0), ':', COALESCE(cm.code, ''))
-				ORDER BY
-					CASE WHEN cm.price > 0 THEN 0 ELSE 1 END,
-					CASE WHEN cm.price > 0 THEN cm.price ELSE 999999999 END
+				ORDER BY ${priceOrder}
 			) as clinicPricesData
 		FROM medications m
 		LEFT JOIN clinic_medications cm ON m.id = cm.medication_id

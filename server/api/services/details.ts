@@ -1,5 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
-import { parseClinicPricesData } from '~/server/common/utils';
+import { parseClinicPricesData, getPriceOrderBySQL } from '~/server/common/utils';
 import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
@@ -18,24 +18,20 @@ export default defineEventHandler(
 				return null;
 			}
 
+			const priceOrder = getPriceOrderBySQL();
 			const medicalServiceQuery = `
 			SELECT DISTINCT
 				ms.id,
 				ms.name,
 				(
-					SELECT GROUP_CONCAT(clinic_id ORDER BY
-						CASE WHEN price > 0 THEN 0 ELSE 1 END,
-						CASE WHEN price > 0 THEN price ELSE 999999999 END
-					)
+					SELECT GROUP_CONCAT(clinic_id ORDER BY ${priceOrder})
 					FROM clinic_medical_services
 					WHERE medical_service_id = ms.id
 				) as clinicIds,
 				(
 					SELECT GROUP_CONCAT(
 						CONCAT(clinic_id, ':', COALESCE(price, 0), ':', COALESCE(code, ''))
-						ORDER BY
-							CASE WHEN price > 0 THEN 0 ELSE 1 END,
-							CASE WHEN price > 0 THEN price ELSE 999999999 END
+						ORDER BY ${priceOrder}
 					)
 					FROM clinic_medical_services
 					WHERE medical_service_id = ms.id

@@ -46,11 +46,29 @@ export const useClinicsStore = defineStore('clinics', () => {
 		await loadClinicsData();
 	};
 
+	/**
+	 * Получает клиники по строке ID, сохраняя порядок (для сортировки по цене)
+	 * @param clinicIdsString - строка с ID клиник через запятую (например "1,5,3")
+	 */
+	const getClinicsByIds = (
+		clinicIdsString: string | undefined,
+	): ClinicData[] => {
+		if (!clinicIdsString || !clinics.value.length) {
+			return [];
+		}
+
+		const clinicIdsArray = clinicIdsString.split(',').map(Number);
+		return clinicIdsArray
+			.map((id) => clinics.value.find((clinic) => clinic.id === id))
+			.filter(Boolean) as ClinicData[];
+	};
+
 	return {
 		clinics,
 		isLoading,
 		isLoaded,
 		fetchClinics,
 		refresh,
+		getClinicsByIds,
 	};
 });

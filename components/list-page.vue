@@ -265,6 +265,7 @@ onMounted(async () => {
 	.list-content {
 		flex: 1 1 auto;
 		min-width: 0;
+		min-height: 400px;
 		box-sizing: border-box;
 	}
 }
@@ -301,6 +302,7 @@ onMounted(async () => {
 	justify-content: center;
 	padding: 40px;
 	color: #6b7280;
+	min-height: 300px;
 }
 
 .loading-spinner {

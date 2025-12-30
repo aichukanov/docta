@@ -39,16 +39,28 @@ export default defineEventHandler(
 				lt.id,
 				COALESCE(NULLIF(lt.${nameField}, ''), NULLIF(lt.name_sr, ''), lt.name) as name,
 				COALESCE(NULLIF(lt.name_sr, ''), lt.name) as originalName,
-				GROUP_CONCAT(DISTINCT clt.clinic_id ORDER BY clt.clinic_id) as clinicIds,
-				GROUP_CONCAT(
-					DISTINCT CONCAT(clt.clinic_id, ':', COALESCE(clt.price, 0), ':', COALESCE(clt.code, ''))
-					ORDER BY clt.clinic_id
+				(
+					SELECT GROUP_CONCAT(clinic_id ORDER BY
+						CASE WHEN price > 0 THEN 0 ELSE 1 END,
+						CASE WHEN price > 0 THEN price ELSE 999999999 END
+					)
+					FROM clinic_lab_tests
+					WHERE lab_test_id = lt.id
+				) as clinicIds,
+				(
+					SELECT GROUP_CONCAT(
+						CONCAT(clinic_id, ':', COALESCE(price, 0), ':', COALESCE(code, ''))
+						ORDER BY
+							CASE WHEN price > 0 THEN 0 ELSE 1 END,
+							CASE WHEN price > 0 THEN price ELSE 999999999 END
+					)
+					FROM clinic_lab_tests
+					WHERE lab_test_id = lt.id
 				) as clinicPricesData,
 				(SELECT GROUP_CONCAT(DISTINCT ltcr.category_id ORDER BY ltcr.category_id)
 				 FROM lab_test_categories_relations ltcr
 				 WHERE ltcr.lab_test_id = lt.id) as categoryIds
 			FROM lab_tests lt
-			LEFT JOIN clinic_lab_tests clt ON lt.id = clt.lab_test_id
 			WHERE lt.id = ?
 			GROUP BY lt.id, lt.${nameField}, lt.name_sr, lt.name;
 		`;

@@ -20,28 +20,12 @@ const clinicsStore = useClinicsStore();
 const getPriceInfo = (clinicId: number) =>
 	props.clinicPrices?.find((p) => p.clinicId === clinicId);
 
+// Клиники уже отсортированы на сервере по цене, сохраняем порядок из clinicIds
 const sortedClinics = computed(() => {
-	const filtered = clinicsStore.clinics.filter((clinic) =>
-		props.clinicIds.split(',').map(Number).includes(clinic.id),
-	);
-
-	if (!props.clinicPrices || props.clinicPrices.length === 0) {
-		return filtered;
-	}
-
-	return [...filtered].sort((a, b) => {
-		const priceA = getPriceInfo(a.id)?.price;
-		const priceB = getPriceInfo(b.id)?.price;
-
-		const hasPriceA = priceA !== undefined && priceA !== null && priceA !== 0;
-		const hasPriceB = priceB !== undefined && priceB !== null && priceB !== 0;
-
-		if (!hasPriceA && !hasPriceB) return 0;
-		if (!hasPriceA) return 1;
-		if (!hasPriceB) return -1;
-
-		return (priceA as number) - (priceB as number);
-	});
+	const clinicIdsArray = props.clinicIds.split(',').map(Number);
+	return clinicIdsArray
+		.map((id) => clinicsStore.clinics.find((clinic) => clinic.id === id))
+		.filter(Boolean) as typeof clinicsStore.clinics;
 });
 
 const detailsLink = computed(() => {

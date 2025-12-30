@@ -22,13 +22,25 @@ export default defineEventHandler(
 			SELECT DISTINCT
 				ms.id,
 				ms.name,
-				GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY cms.clinic_id) as clinicIds,
-				GROUP_CONCAT(
-					DISTINCT CONCAT(cms.clinic_id, ':', COALESCE(cms.price, 0), ':', COALESCE(cms.code, ''))
-					ORDER BY cms.clinic_id
+				(
+					SELECT GROUP_CONCAT(clinic_id ORDER BY
+						CASE WHEN price > 0 THEN 0 ELSE 1 END,
+						CASE WHEN price > 0 THEN price ELSE 999999999 END
+					)
+					FROM clinic_medical_services
+					WHERE medical_service_id = ms.id
+				) as clinicIds,
+				(
+					SELECT GROUP_CONCAT(
+						CONCAT(clinic_id, ':', COALESCE(price, 0), ':', COALESCE(code, ''))
+						ORDER BY
+							CASE WHEN price > 0 THEN 0 ELSE 1 END,
+							CASE WHEN price > 0 THEN price ELSE 999999999 END
+					)
+					FROM clinic_medical_services
+					WHERE medical_service_id = ms.id
 				) as clinicPricesData
 			FROM medical_services ms
-			LEFT JOIN clinic_medical_services cms ON ms.id = cms.medical_service_id
 			WHERE ms.id = ?
 			GROUP BY ms.id, ms.name;
 		`;

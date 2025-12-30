@@ -89,7 +89,7 @@ const shouldScrollToMap = (): boolean => {
 
 const scrollToMap = () => {
 	if (shouldScrollToMap()) {
-		mapContainer.value?.scrollIntoView({ behavior: 'smooth' });
+		mapContainer.value?.scrollIntoView({ behavior: 'smooth', block: 'end' });
 	}
 };
 

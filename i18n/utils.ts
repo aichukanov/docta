@@ -10,6 +10,11 @@ export function combineI18nMessages(messageLists: MessageList[]): MessageList {
 	for (let i = 0; i < messageLists.length; i++) {
 		const { messages } = messageLists[i];
 		for (const locale in messages) {
+			if (!combined[locale]) {
+				console.error(`Locale "${locale}" not found in combined messages`);
+				continue;
+			}
+
 			combined[locale] = Object.assign(combined[locale], messages[locale]);
 		}
 	}

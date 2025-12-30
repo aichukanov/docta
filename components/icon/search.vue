@@ -3,11 +3,30 @@
 		xmlns="http://www.w3.org/2000/svg"
 		:width="size"
 		:height="size"
-		viewBox="0 0 24 24"
+		viewBox="0 0 256 256"
 		:style="{ color }"
 	>
-		<circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" />
-		<path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" />
+		<circle
+			cx="112"
+			cy="112"
+			r="80"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+		/>
+		<line
+			x1="168.57"
+			y1="168.57"
+			x2="224"
+			y2="224"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+		/>
 	</svg>
 </template>
 

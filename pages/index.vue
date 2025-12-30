@@ -70,6 +70,9 @@ schemaOrgStore.setSchemas([
 			<div class="hero__content">
 				<h1 class="hero__title">{{ t('MainPageTitle') }}</h1>
 				<p class="hero__subtitle">{{ t('MainPageDescription') }}</p>
+				<div class="hero__search">
+					<GlobalSearch />
+				</div>
 			</div>
 		</section>
 
@@ -300,6 +303,10 @@ schemaOrgStore.setSchemas([
 		margin: 0;
 		line-height: 1.6;
 	}
+
+	&__search {
+		margin-top: 32px;
+	}
 }
 
 // Bento Grid
@@ -472,6 +479,10 @@ schemaOrgStore.setSchemas([
 @media (max-width: 640px) {
 	.hero {
 		padding: 40px @base-padding 24px;
+
+		&__search {
+			margin-top: 24px;
+		}
 	}
 
 	.bento {

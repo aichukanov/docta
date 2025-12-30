@@ -1,0 +1,370 @@
+<script setup lang="ts">
+interface LabTestListItem {
+	id: number;
+	name: string;
+}
+
+interface LabTestAdminDetails {
+	id: number;
+	name: string;
+	name_sr: string;
+	name_ru: string;
+	name_de: string;
+	name_tr: string;
+	categoryIds: number[];
+	synonyms: { language: string; values: string[] }[];
+}
+
+const props = withDefaults(
+	defineProps<{
+		labTests: LabTestListItem[];
+		editable?: boolean;
+	}>(),
+	{
+		editable: false,
+	},
+);
+
+const emit = defineEmits<{
+	(e: 'selected', labTestId: number): void;
+	(e: 'updated'): void;
+}>();
+
+const labTestId = ref<number | null>(null);
+const labTestModel = ref<LabTestAdminDetails | null>(null);
+const originalLabTest = ref<LabTestAdminDetails | null>(null);
+const isLoading = ref(false);
+
+const labTestOptions = computed(() =>
+	props.labTests.map((lt) => ({
+		label: lt.name,
+		value: lt.id,
+	})),
+);
+
+// Модифицированные поля
+const nameModified = computed(
+	() => originalLabTest.value?.name !== labTestModel.value?.name,
+);
+const nameSrModified = computed(
+	() => originalLabTest.value?.name_sr !== labTestModel.value?.name_sr,
+);
+const nameRuModified = computed(
+	() => originalLabTest.value?.name_ru !== labTestModel.value?.name_ru,
+);
+const nameDeModified = computed(
+	() => originalLabTest.value?.name_de !== labTestModel.value?.name_de,
+);
+const nameTrModified = computed(
+	() => originalLabTest.value?.name_tr !== labTestModel.value?.name_tr,
+);
+const categoryIdsModified = computed(() => {
+	if (!originalLabTest.value || !labTestModel.value) return false;
+	const orig = [...originalLabTest.value.categoryIds].sort();
+	const model = [...labTestModel.value.categoryIds].sort();
+	return JSON.stringify(orig) !== JSON.stringify(model);
+});
+const synonymsModified = computed(() => {
+	if (!originalLabTest.value || !labTestModel.value) return false;
+	return (
+		JSON.stringify(originalLabTest.value.synonyms) !==
+		JSON.stringify(labTestModel.value.synonyms)
+	);
+});
+
+const hasChanges = computed(
+	() =>
+		nameModified.value ||
+		nameSrModified.value ||
+		nameRuModified.value ||
+		nameDeModified.value ||
+		nameTrModified.value ||
+		categoryIdsModified.value ||
+		synonymsModified.value,
+);
+
+// Управление синонимами
+const getSynonymsForLanguage = (lang: string) => {
+	const found = labTestModel.value?.synonyms.find((s) => s.language === lang);
+	return found?.values.join('\n') || '';
+};
+
+const setSynonymsForLanguage = (lang: string, value: string) => {
+	if (!labTestModel.value) return;
+
+	const values = value
+		.split('\n')
+		.map((s) => s.trim())
+		.filter(Boolean);
+	const existing = labTestModel.value.synonyms.find((s) => s.language === lang);
+
+	if (existing) {
+		existing.values = values;
+	} else if (values.length > 0) {
+		labTestModel.value.synonyms.push({ language: lang, values });
+	}
+};
+
+const synonymsME = computed({
+	get: () => getSynonymsForLanguage('me'),
+	set: (v) => setSynonymsForLanguage('me', v),
+});
+const synonymsEN = computed({
+	get: () => getSynonymsForLanguage('en'),
+	set: (v) => setSynonymsForLanguage('en', v),
+});
+const synonymsRU = computed({
+	get: () => getSynonymsForLanguage('ru'),
+	set: (v) => setSynonymsForLanguage('ru', v),
+});
+const synonymsDE = computed({
+	get: () => getSynonymsForLanguage('de'),
+	set: (v) => setSynonymsForLanguage('de', v),
+});
+const synonymsTR = computed({
+	get: () => getSynonymsForLanguage('tr'),
+	set: (v) => setSynonymsForLanguage('tr', v),
+});
+
+const loadLabTestDetails = async (id: number) => {
+	isLoading.value = true;
+	try {
+		const data = await $fetch<LabTestAdminDetails | null>(
+			'/api/labtests/admin-details',
+			{
+				method: 'POST',
+				body: { labTestId: id },
+			},
+		);
+
+		if (data) {
+			originalLabTest.value = JSON.parse(JSON.stringify(data));
+			labTestModel.value = data;
+		}
+	} catch (e) {
+		console.error('Failed to load lab test details:', e);
+	} finally {
+		isLoading.value = false;
+	}
+};
+
+const saveChanges = async () => {
+	if (!labTestModel.value || !hasChanges.value) return;
+
+	if (!labTestModel.value.name_sr) {
+		alert('Название (SR) обязательно');
+		return;
+	}
+
+	if (!confirm('Сохранить изменения?')) return;
+
+	await $fetch('/api/labtests/update', {
+		method: 'POST',
+		body: labTestModel.value,
+	});
+
+	emit('updated');
+	alert('Анализ обновлён');
+
+	// Перезагружаем данные
+	if (labTestId.value) {
+		await loadLabTestDetails(labTestId.value);
+	}
+};
+
+const deleteLabTest = async () => {
+	if (!labTestId.value) {
+		alert('Выберите анализ');
+		return;
+	}
+
+	if (!confirm('Удалить анализ? Это действие необратимо!')) return;
+
+	await $fetch('/api/labtests/remove', {
+		method: 'POST',
+		body: { labTestId: labTestId.value },
+	});
+
+	labTestId.value = null;
+	labTestModel.value = null;
+	originalLabTest.value = null;
+
+	emit('updated');
+	alert('Анализ удалён');
+};
+
+watch(labTestId, async (newId) => {
+	emit('selected', newId!);
+	if (newId) {
+		await loadLabTestDetails(newId);
+	} else {
+		labTestModel.value = null;
+		originalLabTest.value = null;
+	}
+});
+</script>
+
+<template>
+	<div>
+		<FilterableSelect
+			:items="labTestOptions"
+			v-model:value="labTestId"
+			placeholder="Выберите анализ"
+			placeholderSearch="Введите название анализа"
+		/>
+
+		<div v-if="isLoading" class="loading">Загрузка...</div>
+
+		<div v-else-if="labTestModel" class="labtest-info">
+			<AdminEditableField
+				label="Название (EN)"
+				v-model:value="labTestModel.name"
+				:modified="nameModified"
+				@reset="labTestModel.name = originalLabTest?.name || ''"
+			/>
+			<AdminEditableField
+				label="Название (SR)"
+				v-model:value="labTestModel.name_sr"
+				:modified="nameSrModified"
+				@reset="labTestModel.name_sr = originalLabTest?.name_sr || ''"
+			/>
+			<AdminEditableField
+				label="Название (RU)"
+				v-model:value="labTestModel.name_ru"
+				:modified="nameRuModified"
+				@reset="labTestModel.name_ru = originalLabTest?.name_ru || ''"
+			/>
+			<AdminEditableField
+				label="Название (DE)"
+				v-model:value="labTestModel.name_de"
+				:modified="nameDeModified"
+				@reset="labTestModel.name_de = originalLabTest?.name_de || ''"
+			/>
+			<AdminEditableField
+				label="Название (TR)"
+				v-model:value="labTestModel.name_tr"
+				:modified="nameTrModified"
+				@reset="labTestModel.name_tr = originalLabTest?.name_tr || ''"
+			/>
+
+			<FilterCategorySelect v-model:value="labTestModel.categoryIds" />
+
+			<div class="synonyms-section" :class="{ modified: synonymsModified }">
+				<h4>Синонимы (по одному на строку)</h4>
+
+				<div class="field">
+					<label>Синонимы (ME/SR)</label>
+					<el-input
+						v-model="synonymsME"
+						type="textarea"
+						:autosize="{ minRows: 2, maxRows: 6 }"
+						placeholder="Один синоним на строку"
+					/>
+				</div>
+
+				<div class="field">
+					<label>Синонимы (EN)</label>
+					<el-input
+						v-model="synonymsEN"
+						type="textarea"
+						:autosize="{ minRows: 2, maxRows: 6 }"
+						placeholder="Один синоним на строку"
+					/>
+				</div>
+
+				<div class="field">
+					<label>Синонимы (RU)</label>
+					<el-input
+						v-model="synonymsRU"
+						type="textarea"
+						:autosize="{ minRows: 2, maxRows: 6 }"
+						placeholder="Один синоним на строку"
+					/>
+				</div>
+
+				<div class="field">
+					<label>Синонимы (DE)</label>
+					<el-input
+						v-model="synonymsDE"
+						type="textarea"
+						:autosize="{ minRows: 2, maxRows: 6 }"
+						placeholder="Один синоним на строку"
+					/>
+				</div>
+
+				<div class="field">
+					<label>Синонимы (TR)</label>
+					<el-input
+						v-model="synonymsTR"
+						type="textarea"
+						:autosize="{ minRows: 2, maxRows: 6 }"
+						placeholder="Один синоним на строку"
+					/>
+				</div>
+			</div>
+
+			<div v-if="editable" class="button-group">
+				<el-button type="primary" @click="saveChanges" :disabled="!hasChanges">
+					Сохранить изменения
+				</el-button>
+				<el-button type="danger" @click="deleteLabTest">Удалить</el-button>
+			</div>
+		</div>
+	</div>
+</template>
+
+<style scoped lang="less">
+.labtest-info {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-md);
+	margin-top: var(--spacing-lg);
+	border-top: 1px solid var(--color-border-primary);
+	padding-top: var(--spacing-lg);
+}
+
+.loading {
+	padding: var(--spacing-lg);
+	color: var(--color-text-secondary);
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+
+	& > label {
+		color: var(--color-text-secondary);
+		font-size: 14px;
+	}
+
+	&.modified > label {
+		color: #f59e0b;
+		font-weight: 500;
+	}
+}
+
+.synonyms-section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-md);
+	padding: var(--spacing-md);
+	background: var(--color-surface-secondary);
+	border-radius: var(--border-radius-md);
+	border: 1px solid var(--color-border-primary);
+
+	&.modified {
+		border-color: #f59e0b;
+	}
+
+	h4 {
+		margin: 0;
+		color: var(--color-text-primary);
+	}
+}
+
+.button-group {
+	display: flex;
+	gap: var(--spacing-md);
+}
+</style>

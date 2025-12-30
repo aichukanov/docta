@@ -94,10 +94,15 @@ export async function getLabTestList(
 			lt.id,
 			COALESCE(NULLIF(lt.${nameField}, ''), NULLIF(lt.name_sr, ''), lt.name) as name,
 			COALESCE(NULLIF(lt.name_sr, ''), lt.name) as originalName,
-			GROUP_CONCAT(DISTINCT clt.clinic_id ORDER BY clt.clinic_id) as clinicIds,
+			GROUP_CONCAT(DISTINCT clt.clinic_id ORDER BY
+				CASE WHEN clt.price > 0 THEN 0 ELSE 1 END,
+				CASE WHEN clt.price > 0 THEN clt.price ELSE 999999999 END
+			) as clinicIds,
 			GROUP_CONCAT(
 				DISTINCT CONCAT(clt.clinic_id, ':', COALESCE(clt.price, 0), ':', COALESCE(clt.code, ''))
-				ORDER BY clt.clinic_id
+				ORDER BY
+					CASE WHEN clt.price > 0 THEN 0 ELSE 1 END,
+					CASE WHEN clt.price > 0 THEN clt.price ELSE 999999999 END
 			) as clinicPricesData,
 			(SELECT GROUP_CONCAT(DISTINCT ltcr_cat.category_id ORDER BY ltcr_cat.category_id)
 			 FROM lab_test_categories_relations ltcr_cat

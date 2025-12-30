@@ -53,10 +53,15 @@ export async function getMedicationList(
 		SELECT DISTINCT
 			m.id,
 			m.name,
-			GROUP_CONCAT(DISTINCT cm.clinic_id ORDER BY cm.clinic_id) as clinicIds,
+			GROUP_CONCAT(DISTINCT cm.clinic_id ORDER BY
+				CASE WHEN cm.price > 0 THEN 0 ELSE 1 END,
+				CASE WHEN cm.price > 0 THEN cm.price ELSE 999999999 END
+			) as clinicIds,
 			GROUP_CONCAT(
 				DISTINCT CONCAT(cm.clinic_id, ':', COALESCE(cm.price, 0), ':', COALESCE(cm.code, ''))
-				ORDER BY cm.clinic_id
+				ORDER BY
+					CASE WHEN cm.price > 0 THEN 0 ELSE 1 END,
+					CASE WHEN cm.price > 0 THEN cm.price ELSE 999999999 END
 			) as clinicPricesData
 		FROM medications m
 		LEFT JOIN clinic_medications cm ON m.id = cm.medication_id

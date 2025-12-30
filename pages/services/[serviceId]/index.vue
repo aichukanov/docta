@@ -37,17 +37,16 @@ if (import.meta.server && !isFound.value) {
 	setResponseStatus(useRequestEvent()!, 404);
 }
 
+// Клиники уже отсортированы на сервере по цене, сохраняем порядок из clinicIds
 const medicalServiceClinics = computed(() => {
-	if (!isFound.value || !clinicsStore.clinics) {
+	if (!isFound.value || !clinicsStore.clinics || !medicalServiceData.value?.clinicIds) {
 		return [];
 	}
 
-	return clinicsStore.clinics.filter((clinic) =>
-		medicalServiceData.value?.clinicIds
-			.split(',')
-			.map(Number)
-			.includes(clinic.id),
-	);
+	const clinicIdsArray = medicalServiceData.value.clinicIds.split(',').map(Number);
+	return clinicIdsArray
+		.map((id) => clinicsStore.clinics.find((clinic) => clinic.id === id))
+		.filter(Boolean) as typeof clinicsStore.clinics;
 });
 
 const pageTitle = computed(() => {

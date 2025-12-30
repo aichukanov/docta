@@ -53,10 +53,15 @@ export async function getMedicalServiceList(
 		SELECT DISTINCT
 			ms.id,
 			ms.name,
-			GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY cms.clinic_id) as clinicIds,
+			GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY
+				CASE WHEN cms.price > 0 THEN 0 ELSE 1 END,
+				CASE WHEN cms.price > 0 THEN cms.price ELSE 999999999 END
+			) as clinicIds,
 			GROUP_CONCAT(
 				DISTINCT CONCAT(cms.clinic_id, ':', COALESCE(cms.price, 0), ':', COALESCE(cms.code, ''))
-				ORDER BY cms.clinic_id
+				ORDER BY
+					CASE WHEN cms.price > 0 THEN 0 ELSE 1 END,
+					CASE WHEN cms.price > 0 THEN cms.price ELSE 999999999 END
 			) as clinicPricesData
 		FROM medical_services ms
 		LEFT JOIN clinic_medical_services cms ON ms.id = cms.medical_service_id

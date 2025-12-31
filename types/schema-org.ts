@@ -165,7 +165,12 @@ export interface BreadcrumbListSchema extends SchemaOrgBase {
 }
 
 export interface WebPageSchema extends SchemaOrgBase {
-	'@type': 'WebPage' | 'CollectionPage' | 'SearchResultsPage' | 'AboutPage';
+	'@type':
+		| 'WebPage'
+		| 'CollectionPage'
+		| 'SearchResultsPage'
+		| 'AboutPage'
+		| 'MedicalWebPage';
 	'name': string;
 	'description'?: string;
 	'url'?: string;
@@ -180,6 +185,15 @@ export interface WebPageSchema extends SchemaOrgBase {
 		'name': string;
 		'url'?: string;
 	};
+	'author'?: {
+		'@type': 'Organization' | 'Person';
+		'name': string;
+		'url'?: string;
+	};
+	'datePublished'?: string;
+	'dateModified'?: string;
+	'lastReviewed'?: string;
+	'image'?: string;
 }
 
 export type SchemaOrg =

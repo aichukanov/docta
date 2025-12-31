@@ -8,6 +8,7 @@ export default {
 			BreadcrumbMedications: 'Medications',
 			BreadcrumbServices: 'Medical Services',
 			BreadcrumbAbout: 'About',
+			BreadcrumbArticles: 'Articles',
 		},
 		ru: {
 			BreadcrumbHome: 'Главная',
@@ -17,6 +18,7 @@ export default {
 			BreadcrumbMedications: 'Лекарства',
 			BreadcrumbServices: 'Медицинские услуги',
 			BreadcrumbAbout: 'О проекте',
+			BreadcrumbArticles: 'Статьи',
 		},
 		sr: {
 			BreadcrumbHome: 'Početna',
@@ -26,6 +28,7 @@ export default {
 			BreadcrumbMedications: 'Lekovi',
 			BreadcrumbServices: 'Medicinske usluge',
 			BreadcrumbAbout: 'O projektu',
+			BreadcrumbArticles: 'Članci',
 		},
 		de: {
 			BreadcrumbHome: 'Startseite',
@@ -35,6 +38,7 @@ export default {
 			BreadcrumbMedications: 'Medikamente',
 			BreadcrumbServices: 'Medizinische Dienstleistungen',
 			BreadcrumbAbout: 'Über',
+			BreadcrumbArticles: 'Artikel',
 		},
 		tr: {
 			BreadcrumbHome: 'Ana sayfa',
@@ -44,6 +48,7 @@ export default {
 			BreadcrumbMedications: 'İlaçlar',
 			BreadcrumbServices: 'Tıbbi Hizmetler',
 			BreadcrumbAbout: 'Hakkında',
+			BreadcrumbArticles: 'Makaleler',
 		},
 	},
 };

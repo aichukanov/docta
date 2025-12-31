@@ -11,6 +11,7 @@ import type {
 	PersonSchemaType,
 } from '~/types/schema-org';
 import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
+import { SITE_NAME } from '~/common/constants';
 import {
 	normalizeWebsiteUrl,
 	splitContacts,
@@ -791,4 +792,65 @@ export function buildMedicalProcedureSchema(options: {
 	});
 
 	return [webPageSchema, procedureSchema];
+}
+
+/**
+ * Build MedicalWebPage schema with ItemList (similar to doctor list schema)
+ * Used for medical article pages like "Russian-speaking doctors in Montenegro"
+ */
+export function buildMedicalWebPageSchema(options: {
+	siteUrl: string;
+	pageUrl: string;
+	locale: string;
+	title: string;
+	description?: string;
+	image?: string;
+	datePublished?: string;
+	dateModified?: string;
+	lastReviewed?: string;
+	totalCount: number;
+	doctors?: Array<{
+		id: number;
+		name: string;
+		photoUrl?: string;
+		professionalTitle?: string;
+		specialtyIds?: string;
+	}>;
+	getSpecialtyName: (id: number) => string | undefined;
+}): SchemaOrg[] {
+	const pageId = `${options.pageUrl}#webpage`;
+	const itemListId = `${options.pageUrl}#itemlist`;
+
+	const pageSchema: WebPageSchema = {
+		'@type': 'MedicalWebPage',
+		'@id': pageId,
+		'url': options.pageUrl,
+		'name': options.title,
+		'description': options.description,
+		'inLanguage': options.locale,
+		'mainEntity': { '@id': itemListId },
+		'author': {
+			'@type': 'Organization',
+			'name': SITE_NAME,
+			'url': options.siteUrl,
+		},
+		'datePublished': options.datePublished,
+		'dateModified': options.dateModified,
+		'lastReviewed': options.lastReviewed,
+		'image': options.image,
+	};
+
+	const itemListSchema: ItemListSchema = {
+		'@type': 'ItemList',
+		'@id': itemListId,
+		'name': options.title,
+		'description': options.description,
+		'numberOfItems': options.totalCount,
+		'itemListElement': buildDoctorListItemElements(options.doctors, {
+			siteUrl: options.siteUrl,
+			getSpecialtyName: options.getSpecialtyName,
+		}),
+	};
+
+	return [pageSchema, itemListSchema];
 }

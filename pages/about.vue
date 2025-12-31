@@ -56,21 +56,21 @@ const homeLink = computed(() => ({
 	name: 'index',
 	query: getRegionalQuery(locale.value),
 }));
+
+const breadcrumbItems = computed(() => [
+	{ label: t('BreadcrumbHome'), to: homeLink.value },
+	{ label: t('BreadcrumbAbout') },
+]);
 </script>
 
 <template>
 	<main class="about-page" role="main" :aria-label="t('AriaMainContent')">
 		<div class="about-page__container">
 			<header class="about-page__header">
-				<nav class="about-page__breadcrumbs" :aria-label="t('AriaBreadcrumbs')">
-					<NuxtLink class="about-page__crumb" :to="homeLink">{{
-						t('BreadcrumbHome')
-					}}</NuxtLink>
-					<span class="about-page__sep" aria-hidden="true">/</span>
-					<span class="about-page__crumb is-current" aria-current="page">{{
-						t('BreadcrumbAbout')
-					}}</span>
-				</nav>
+				<AppBreadcrumbs
+					:items="breadcrumbItems"
+					:aria-label="t('AriaBreadcrumbs')"
+				/>
 				<h1 class="about-page__title">{{ t('Title') }}</h1>
 				<p class="about-page__subtitle">{{ t('Subtitle') }}</p>
 			</header>
@@ -362,33 +362,10 @@ const homeLink = computed(() => ({
 
 .about-page__header {
 	margin-bottom: var(--spacing-2xl);
-}
 
-.about-page__breadcrumbs {
-	display: flex;
-	align-items: center;
-	gap: var(--spacing-sm);
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
-	margin-bottom: var(--spacing-lg);
-}
-
-.about-page__crumb {
-	color: inherit;
-	text-decoration: none;
-
-	&:hover {
-		text-decoration: underline;
+	:deep(.app-breadcrumbs) {
+		margin-bottom: var(--spacing-lg);
 	}
-
-	&.is-current {
-		color: var(--color-text-secondary);
-		font-weight: var(--font-weight-medium);
-	}
-}
-
-.about-page__sep {
-	color: var(--color-text-muted);
 }
 
 .about-page__title {

@@ -35,6 +35,11 @@ const medicationsPageLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
+const articlesPageLink = computed(() => ({
+	name: 'articles',
+	query: getRegionalQuery(locale.value),
+}));
+
 const isActiveSection = (section: string) => {
 	return route.path.startsWith(`/${section}`);
 };
@@ -93,6 +98,17 @@ const isActiveSection = (section: string) => {
 						<IconMedication class="nav-icon" />
 						<span>{{ t('Medications') }}</span>
 					</NuxtLink>
+
+					<div class="app-header__nav-divider" aria-hidden="true"></div>
+
+					<NuxtLink
+						class="app-header__nav-link"
+						:class="{ 'is-active': isActiveSection('articles') }"
+						:to="articlesPageLink"
+					>
+						<IconLightbulb class="nav-icon" />
+						<span>{{ t('Articles') }}</span>
+					</NuxtLink>
 				</nav>
 
 				<div class="app-header__actions">
@@ -111,7 +127,8 @@ const isActiveSection = (section: string) => {
 		"Clinics": "Clinics",
 		"LabTests": "Lab Tests",
 		"MedicalServices": "Medical Services",
-		"Medications": "Medications"
+		"Medications": "Medications",
+		"Articles": "Articles"
 	},
 	"ru": {
 		"GoToMainPage": "Перейти на главную страницу",
@@ -119,7 +136,8 @@ const isActiveSection = (section: string) => {
 		"Clinics": "Клиники",
 		"LabTests": "Анализы",
 		"MedicalServices": "Услуги",
-		"Medications": "Лекарства"
+		"Medications": "Лекарства",
+		"Articles": "Статьи"
 	},
 	"sr": {
 		"GoToMainPage": "Idi na početnu stranicu",
@@ -127,7 +145,8 @@ const isActiveSection = (section: string) => {
 		"Clinics": "Klinike",
 		"LabTests": "Analize",
 		"MedicalServices": "Usluge",
-		"Medications": "Lekovi"
+		"Medications": "Lekovi",
+		"Articles": "Članci"
 	},
 	"de": {
 		"GoToMainPage": "Zur Startseite gehen",
@@ -135,7 +154,8 @@ const isActiveSection = (section: string) => {
 		"Clinics": "Kliniken",
 		"LabTests": "Labortests",
 		"MedicalServices": "Medizinische Dienstleistungen",
-		"Medications": "Medikamente"
+		"Medications": "Medikamente",
+		"Articles": "Artikel"
 	},
 	"tr": {
 		"GoToMainPage": "Ana sayfaya git",
@@ -143,7 +163,8 @@ const isActiveSection = (section: string) => {
 		"Clinics": "Klinikler",
 		"LabTests": "Laboratuvar Testleri",
 		"MedicalServices": "Tıbbi Hizmetler",
-		"Medications": "İlaçlar"
+		"Medications": "İlaçlar",
+		"Articles": "Makaleler"
 	}
 }
 </i18n>
@@ -239,6 +260,14 @@ const isActiveSection = (section: string) => {
 		}
 	}
 
+	&__nav-divider {
+		width: 1px;
+		height: 20px;
+		background-color: @light-gray-color;
+		margin: 0 var(--spacing-xs);
+		flex-shrink: 0;
+	}
+
 	&__actions {
 		display: flex;
 		align-items: center;
@@ -300,6 +329,14 @@ const isActiveSection = (section: string) => {
 				background: rgba(79, 70, 229, 0.08);
 				border-color: rgba(79, 70, 229, 0.3);
 			}
+		}
+
+		&__nav-divider {
+			display: none;
+		}
+
+		&__nav-link:last-child {
+			margin-left: var(--spacing-sm);
 		}
 
 		&__actions {

@@ -49,6 +49,7 @@ export async function getDoctorList(
 		cityIds?: number[];
 		languageIds?: string[];
 		clinicIds?: number[];
+		onlyDoctorLanguages?: boolean;
 	} = {},
 ) {
 	const whereFilters = [];
@@ -61,9 +62,13 @@ export async function getDoctorList(
 	}
 	if (body.languageIds?.length > 0) {
 		const languageList = body.languageIds.join(',');
-		whereFilters.push(
-			`(languages.id IN (${languageList}) OR clinic_languages.language_id IN (${languageList}))`,
-		);
+		if (body.onlyDoctorLanguages) {
+			whereFilters.push(`languages.id IN (${languageList})`);
+		} else {
+			whereFilters.push(
+				`(languages.id IN (${languageList}) OR clinic_languages.language_id IN (${languageList}))`,
+			);
+		}
 	}
 	if (body.clinicIds?.length > 0) {
 		whereFilters.push(`clinics.id IN (${body.clinicIds.join(',')})`);

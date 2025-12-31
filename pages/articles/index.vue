@@ -36,6 +36,15 @@ const articles = computed(() => [
 			query: getRegionalQuery(locale.value),
 		},
 	},
+	{
+		title: t('ClinicsWithLanguageSupportTitle'),
+		description: t('ClinicsWithLanguageSupportDescription'),
+		image: '/img/articles/clinics-with-language-support.webp',
+		link: {
+			path: '/articles/clinics-with-language-support',
+			query: getRegionalQuery(locale.value),
+		},
+	},
 ]);
 
 const schemaOrgStore = useSchemaOrgStore();

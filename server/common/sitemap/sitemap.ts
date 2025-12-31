@@ -14,8 +14,11 @@ import {
 export function menuItemToLinks(
 	routeName: string,
 	query: Record<string, string | string[]> = {},
+	isUrl = false,
 ) {
-	const url = SITE_URL + '/' + routeName.replaceAll('-', '/');
+	const url = isUrl
+		? routeName
+		: SITE_URL + '/' + routeName.replaceAll('-', '/');
 
 	const linksWithParams: Array<{ hreflang: string; href: string }> = [];
 
@@ -50,6 +53,16 @@ export async function generateSitemapPage(sitemapIndex: number) {
 	// === Главная страница ===
 	const homeLink: SitemapLink = menuItemToLinks('');
 	const aboutLink: SitemapLink = menuItemToLinks('about');
+
+	// === Articles ===
+	const articlesPageLink: SitemapLink = menuItemToLinks('articles');
+	const articleList = [
+		'russian-speaking-doctors-in-montenegro',
+		'clinics-with-language-support',
+	];
+	const articleLinks: SitemapLink[] = articleList.map((article) =>
+		menuItemToLinks(SITE_URL + '/articles/' + article, {}, true),
+	);
 
 	// === Doctors ===
 	const { doctors } = await getDoctorList();
@@ -121,6 +134,9 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		// Главная страница
 		homeLink,
 		aboutLink,
+		// Articles
+		articlesPageLink,
+		...articleLinks,
 		// Doctors: страницы + специальность + специальность+город + специальность+язык
 		doctorsPageLink,
 		...doctorLinks,

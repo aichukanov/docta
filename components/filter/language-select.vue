@@ -66,5 +66,9 @@ const languages = computed(() => [
 		text: t(`language_${LanguageId.FR}`),
 		value: LanguageId.FR,
 	},
+	{
+		text: t(`language_${LanguageId.DE}`),
+		value: LanguageId.DE,
+	},
 ]);
 </script>

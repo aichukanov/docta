@@ -38,7 +38,7 @@ const searchInput = ref<HTMLInputElement | null>(null);
 
 const filteredItems = computed(() => {
 	return props.items.filter((item) =>
-		item.label.toLowerCase().includes(searchItemName.value.toLowerCase()),
+		item.label?.toLowerCase().includes(searchItemName.value.toLowerCase()),
 	);
 });
 

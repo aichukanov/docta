@@ -1,6 +1,6 @@
 export default {
 	messages: {
-		en: {
+		'en': {
 			DoctorName: 'Doctor name',
 			InsertDoctorName: 'Enter doctor name',
 			Doctors: 'Doctors in Montenegro',
@@ -44,7 +44,7 @@ export default {
 				'Found {count}: {title}. Clinics, addresses, and contacts.',
 			And: 'and',
 		},
-		ru: {
+		'ru': {
 			DoctorName: 'Имя врача',
 			InsertDoctorName: 'Введите имя врача',
 			Doctors: 'Врачи в Черногории',
@@ -90,7 +90,7 @@ export default {
 				'Найдено {count}: {title}. Клиники, адреса и контакты.',
 			And: 'и',
 		},
-		tr: {
+		'tr': {
 			DoctorName: 'Doktor adı',
 			InsertDoctorName: 'Doktor adını girin',
 			Doctors: "Karadağ'daki doktorlar",
@@ -134,7 +134,7 @@ export default {
 				'{count} bulundu: {title}. Klinikler, adresler ve iletişim bilgileri.',
 			And: 've',
 		},
-		de: {
+		'de': {
 			DoctorName: 'Arztname',
 			InsertDoctorName: 'Arztname eingeben',
 			Doctors: 'Ärzte in Montenegro',
@@ -180,7 +180,7 @@ export default {
 				'{count} gefunden: {title}. Kliniken, Adressen und Kontakte.',
 			And: 'und',
 		},
-		sr: {
+		'sr': {
 			DoctorName: 'Ime lekara',
 			InsertDoctorName: 'Unesite ime lekara',
 			Doctors: 'Lekari u Crnoj Gori',
@@ -225,6 +225,52 @@ export default {
 			DoctorsListDescriptionFiltered:
 				'Pronađeno {count}: {title}. Klinike, adrese i kontakti.',
 			And: 'i',
+		},
+		'sr-cyrl': {
+			DoctorName: 'Име лекара',
+			InsertDoctorName: 'Унесите име лекара',
+			Doctors: 'Лекари у Црној Гори',
+			DoctorsCity: 'Лекари у {city}',
+			DoctorsClinic: 'Лекари клинике {clinic} у Црној Гори',
+			DoctorsCityClinic: 'Лекари клинике {clinic} у {city}',
+			DoctorsSpecialty: '{specialtyDoctors} у Црној Гори',
+			DoctorsSpecialtyCity: '{specialtyDoctors} у {city}',
+			DoctorsSpecialtyClinic:
+				'{specialtyDoctors} клинике {clinic} у Црној Гори',
+			DoctorsSpecialtyCityClinic:
+				'{specialtyDoctors} клинике {clinic} у {city}',
+			DoctorsLanguage: 'Лекари у Црној Гори који говоре {language} језик',
+			DoctorsLanguageCity: 'Лекари у {city} који говоре {language} језик',
+			DoctorsLanguageClinic:
+				'Лекари клинике {clinic} у Црној Гори који говоре {language} језик',
+			DoctorsLanguageCityClinic:
+				'Лекари клинике {clinic} у {city} који говоре {language} језик',
+			DoctorsLanguageSpecialty:
+				'{specialtyDoctors} у Црној Гори који говоре {language} језик',
+			DoctorsLanguageSpecialtyCity:
+				'{specialtyDoctors} у {city} који говоре {language} језик',
+			DoctorsLanguageSpecialtyClinic:
+				'{specialtyDoctors} клинике {clinic} у Црној Гори који говоре {language} језик',
+			DoctorsLanguageSpecialtyCityClinic:
+				'{specialtyDoctors} клинике {clinic} у {city} који говоре {language} језик',
+
+			Visit: 'Преглед у Црној Гори',
+			VisitCity: 'Преглед у {city}',
+			VisitLanguage: 'Преглед на {language} језику',
+			VisitLanguageCity: 'Преглед на {language} језику у {city}',
+
+			LoadingDoctors: 'Учитава лекаре...',
+			NoDoctorsFound: 'Лекари нису пронађени',
+			LoadingDoctor: 'Учитавање података о лекару...',
+			ToSearchPage: 'На страницу претраге',
+			DoctorNotFound: 'Лекар није пронађен',
+			DoctorsListDescription:
+				'Пронађите лекаре у Црној Гори по специјализацији, граду и језику консултације. Клинике, адресе и контакти.',
+			DoctorsListDescriptionCity:
+				'Лекари у {city} — претрага по специјализацији и језику консултације. Клинике, адресе и контакти.',
+			DoctorsListDescriptionFiltered:
+				'Пронађено {count}: {title}. Клинике, адресе и контакти.',
+			And: 'и',
 		},
 	},
 };

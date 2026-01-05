@@ -2,6 +2,20 @@
 import { CityId } from '~/enums/cities';
 import type { ClinicData } from '~/interfaces/clinic';
 
+interface ClinicAdminModel extends ClinicData {
+	name_sr: string;
+	address_sr: string;
+	address_sr_cyrl: string;
+	town_sr: string;
+	town_sr_cyrl: string;
+	description_sr: string;
+	description_en: string;
+	description_ru: string;
+	description_de: string;
+	description_tr: string;
+	languageIds: number[];
+}
+
 const props = withDefaults(
 	defineProps<{
 		clinics: ClinicData[];
@@ -17,7 +31,7 @@ const emit = defineEmits<{
 }>();
 
 const clinicId = ref<number | null>(null);
-const clinicModel = ref<ClinicData | null>(null);
+const clinicModel = ref<ClinicAdminModel | null>(null);
 const cityIds = ref<CityId[]>([]);
 
 const selectedClinic = computed(() => {
@@ -37,16 +51,27 @@ watch(cityIds, (newCityIds) => {
 	}
 });
 
-const nameModified = computed(
-	() => selectedClinic.value?.name !== clinicModel.value?.name,
+const nameSrModified = computed(
+	() => selectedClinic.value?.name_sr !== clinicModel.value?.name_sr,
 );
 
-const addressModified = computed(
-	() => selectedClinic.value?.address !== clinicModel.value?.address,
+const addressSrModified = computed(
+	() => selectedClinic.value?.address_sr !== clinicModel.value?.address_sr,
 );
 
-const townModified = computed(
-	() => selectedClinic.value?.town !== clinicModel.value?.town,
+const addressSrCyrlModified = computed(
+	() =>
+		selectedClinic.value?.address_sr_cyrl !==
+		clinicModel.value?.address_sr_cyrl,
+);
+
+const townSrModified = computed(
+	() => selectedClinic.value?.town_sr !== clinicModel.value?.town_sr,
+);
+
+const townSrCyrlModified = computed(
+	() =>
+		selectedClinic.value?.town_sr_cyrl !== clinicModel.value?.town_sr_cyrl,
 );
 
 const postalCodeModified = computed(
@@ -136,9 +161,11 @@ const languageIdsModified = computed(() => {
 
 const hasChanges = computed(() => {
 	return (
-		nameModified.value ||
-		addressModified.value ||
-		townModified.value ||
+		nameSrModified.value ||
+		addressSrModified.value ||
+		addressSrCyrlModified.value ||
+		townSrModified.value ||
+		townSrCyrlModified.value ||
 		postalCodeModified.value ||
 		latitudeModified.value ||
 		longitudeModified.value ||
@@ -166,11 +193,11 @@ const saveChanges = async () => {
 	}
 
 	if (
-		!clinicModel.value.name ||
-		!clinicModel.value.address ||
+		!clinicModel.value.name_sr ||
+		!clinicModel.value.address_sr ||
 		!clinicModel.value.languageIds.length
 	) {
-		alert('Название, адрес и язык обязательны');
+		alert('Название (SR), адрес (SR) и язык обязательны');
 		return;
 	}
 
@@ -180,7 +207,32 @@ const saveChanges = async () => {
 
 	await $fetch('/api/clinics/update', {
 		method: 'POST',
-		body: clinicModel.value,
+		body: {
+			id: clinicModel.value.id,
+			name_sr: clinicModel.value.name_sr,
+			cityId: clinicModel.value.cityId,
+			address_sr: clinicModel.value.address_sr,
+			address_sr_cyrl: clinicModel.value.address_sr_cyrl,
+			town_sr: clinicModel.value.town_sr,
+			town_sr_cyrl: clinicModel.value.town_sr_cyrl,
+			postalCode: clinicModel.value.postalCode,
+			latitude: clinicModel.value.latitude,
+			longitude: clinicModel.value.longitude,
+			phone: clinicModel.value.phone,
+			email: clinicModel.value.email,
+			website: clinicModel.value.website,
+			facebook: clinicModel.value.facebook,
+			instagram: clinicModel.value.instagram,
+			telegram: clinicModel.value.telegram,
+			whatsapp: clinicModel.value.whatsapp,
+			viber: clinicModel.value.viber,
+			description_sr: clinicModel.value.description_sr,
+			description_en: clinicModel.value.description_en,
+			description_ru: clinicModel.value.description_ru,
+			description_de: clinicModel.value.description_de,
+			description_tr: clinicModel.value.description_tr,
+			languageIds: clinicModel.value.languageIds,
+		},
 	});
 
 	emit('updated');
@@ -210,15 +262,52 @@ const deleteClinic = async () => {
 	alert('Клиника удалена');
 };
 
-watch(selectedClinic, (clinic) => {
+watch(selectedClinic, async (clinic) => {
 	if (clinic) {
-		clinicModel.value = {
-			...clinic,
-			town: clinic.town || '',
-			postalCode: clinic.postalCode || '',
-			languageIds: clinic.languageIds.split(',').map(Number),
-		};
-		cityIds.value = [clinic.cityId];
+		// Получаем полные данные клиники из админского API
+		const adminData = await $fetch('/api/clinics/admin-details', {
+			method: 'POST',
+			body: {
+				clinicId: clinic.id,
+			},
+		});
+
+		if (adminData) {
+			clinicModel.value = {
+				...clinic,
+				name_sr: adminData.name_sr || '',
+				address_sr: adminData.address_sr || '',
+				address_sr_cyrl: adminData.address_sr_cyrl || '',
+				town_sr: adminData.town_sr || '',
+				town_sr_cyrl: adminData.town_sr_cyrl || '',
+				description_sr: adminData.description_sr || '',
+				description_en: adminData.description_en || '',
+				description_ru: adminData.description_ru || '',
+				description_de: adminData.description_de || '',
+				description_tr: adminData.description_tr || '',
+				postalCode: adminData.postalCode || '',
+				languageIds: adminData.languageIds,
+			};
+			cityIds.value = [adminData.cityId];
+		} else {
+			// Fallback на данные из списка, если админский API недоступен
+			clinicModel.value = {
+				...clinic,
+				name_sr: clinic.name || '',
+				address_sr: clinic.address || '',
+				address_sr_cyrl: '',
+				town_sr: clinic.town || '',
+				town_sr_cyrl: '',
+				description_sr: clinic.description || '',
+				description_en: '',
+				description_ru: '',
+				description_de: '',
+				description_tr: '',
+				postalCode: clinic.postalCode || '',
+				languageIds: clinic.languageIds.split(',').map(Number),
+			};
+			cityIds.value = [clinic.cityId];
+		}
 	}
 });
 </script>
@@ -234,24 +323,38 @@ watch(selectedClinic, (clinic) => {
 
 		<div v-if="clinicModel" class="clinic-info">
 			<AdminEditableField
-				label="Название"
-				v-model:value="clinicModel.name"
-				:modified="nameModified"
-				@reset="clinicModel.name = selectedClinic?.name"
+				label="Название (SR)"
+				v-model:value="clinicModel.name_sr"
+				:modified="nameSrModified"
+				@reset="clinicModel.name_sr = selectedClinic?.name_sr || selectedClinic?.name || ''"
 			/>
 			<AdminEditableField
-				label="Адрес"
-				v-model:value="clinicModel.address"
+				label="Адрес (SR)"
+				v-model:value="clinicModel.address_sr"
 				:readonly="!editable"
-				:modified="addressModified"
-				@reset="clinicModel.address = selectedClinic?.address"
+				:modified="addressSrModified"
+				@reset="clinicModel.address_sr = selectedClinic?.address_sr || selectedClinic?.address || ''"
 			/>
 			<AdminEditableField
-				label="Town"
-				v-model:value="clinicModel.town"
+				label="Адрес (SR-CYRL)"
+				v-model:value="clinicModel.address_sr_cyrl"
 				:readonly="!editable"
-				:modified="townModified"
-				@reset="clinicModel.town = selectedClinic?.town || ''"
+				:modified="addressSrCyrlModified"
+				@reset="clinicModel.address_sr_cyrl = selectedClinic?.address_sr_cyrl || ''"
+			/>
+			<AdminEditableField
+				label="Town (SR)"
+				v-model:value="clinicModel.town_sr"
+				:readonly="!editable"
+				:modified="townSrModified"
+				@reset="clinicModel.town_sr = selectedClinic?.town_sr || selectedClinic?.town || ''"
+			/>
+			<AdminEditableField
+				label="Town (SR-CYRL)"
+				v-model:value="clinicModel.town_sr_cyrl"
+				:readonly="!editable"
+				:modified="townSrCyrlModified"
+				@reset="clinicModel.town_sr_cyrl = selectedClinic?.town_sr_cyrl || ''"
 			/>
 			<AdminEditableField
 				label="Postal code"

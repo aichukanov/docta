@@ -95,7 +95,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				UPDATE doctors d1 
 				JOIN doctors d2 ON d2.id = ?
 				SET 
-					d1.name = COALESCE(NULLIF(d1.name, ''), d2.name),
+					d1.name_sr = COALESCE(NULLIF(d1.name_sr, ''), d2.name_sr),
 					d1.professional_title = COALESCE(NULLIF(d1.professional_title, ''), d2.professional_title),
 					d1.email = COALESCE(NULLIF(d1.email, ''), d2.email),
 					d1.phone = COALESCE(NULLIF(d1.phone, ''), d2.phone),

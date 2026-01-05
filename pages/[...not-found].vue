@@ -30,6 +30,10 @@ const { t } = useI18n();
 	"tr": {
 		"Error404Title": "Sayfa bulunamadı",
 		"AriaErrorMessage": "Hata mesajı"
+	},
+	"sr-cyrl": {
+		"Error404Title": "Страница није пронађена",
+		"AriaErrorMessage": "Порука о грешци"
 	}
 }
 </i18n>

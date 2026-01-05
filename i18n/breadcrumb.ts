@@ -1,6 +1,6 @@
 export default {
 	messages: {
-		en: {
+		'en': {
 			BreadcrumbHome: 'Home',
 			BreadcrumbDoctors: 'Doctors',
 			BreadcrumbClinics: 'Clinics',
@@ -10,7 +10,7 @@ export default {
 			BreadcrumbAbout: 'About',
 			BreadcrumbArticles: 'Articles',
 		},
-		ru: {
+		'ru': {
 			BreadcrumbHome: 'Главная',
 			BreadcrumbDoctors: 'Врачи',
 			BreadcrumbClinics: 'Клиники',
@@ -20,7 +20,7 @@ export default {
 			BreadcrumbAbout: 'О проекте',
 			BreadcrumbArticles: 'Статьи',
 		},
-		sr: {
+		'sr': {
 			BreadcrumbHome: 'Početna',
 			BreadcrumbDoctors: 'Lekari',
 			BreadcrumbClinics: 'Klinike',
@@ -30,7 +30,7 @@ export default {
 			BreadcrumbAbout: 'O projektu',
 			BreadcrumbArticles: 'Članci',
 		},
-		de: {
+		'de': {
 			BreadcrumbHome: 'Startseite',
 			BreadcrumbDoctors: 'Ärzte',
 			BreadcrumbClinics: 'Kliniken',
@@ -40,7 +40,7 @@ export default {
 			BreadcrumbAbout: 'Über',
 			BreadcrumbArticles: 'Artikel',
 		},
-		tr: {
+		'tr': {
 			BreadcrumbHome: 'Ana sayfa',
 			BreadcrumbDoctors: 'Doktorlar',
 			BreadcrumbClinics: 'Klinikler',
@@ -49,6 +49,16 @@ export default {
 			BreadcrumbServices: 'Tıbbi Hizmetler',
 			BreadcrumbAbout: 'Hakkında',
 			BreadcrumbArticles: 'Makaleler',
+		},
+		'sr-cyrl': {
+			BreadcrumbHome: 'Почетна',
+			BreadcrumbDoctors: 'Лекари',
+			BreadcrumbClinics: 'Клинике',
+			BreadcrumbLabTests: 'Лабораторијске анализе',
+			BreadcrumbMedications: 'Лекови',
+			BreadcrumbServices: 'Медицинске услуге',
+			BreadcrumbAbout: 'О пројекту',
+			BreadcrumbArticles: 'Чланци',
 		},
 	},
 };

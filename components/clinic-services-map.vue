@@ -229,6 +229,9 @@ defineExpose({
 	},
 	"sr": {
 		"MapLoading": "Učitava mapu"
+	},
+	"sr-cyrl": {
+		"MapLoading": "Учитава мапу"
 	}
 }
 </i18n>

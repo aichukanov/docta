@@ -44,7 +44,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 			const updateClinicQuery = `
 				UPDATE clinics 
-				SET name = ?, city_id = ?, address = ?, town = ?, postal_code = ?, latitude = ?, longitude = ?,
+				SET name_sr = ?, city_id = ?, address_sr = ?, address_sr_cyrl = ?, town_sr = ?, town_sr_cyrl = ?, postal_code = ?, latitude = ?, longitude = ?,
 				    phone = ?, email = ?, website = ?, facebook = ?, instagram = ?, 
 				    telegram = ?, whatsapp = ?, viber = ?,
 				    description_sr = ?, description_en = ?, description_ru = ?, description_de = ?, description_tr = ?
@@ -52,10 +52,12 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			`;
 
 			await connection.execute(updateClinicQuery, [
-				body.name,
+				body.name_sr || body.name || '',
 				body.cityId,
-				body.address || '',
-				body.town || '',
+				body.address_sr || body.address || '',
+				body.address_sr_cyrl || '',
+				body.town_sr || body.town || '',
+				body.town_sr_cyrl || '',
 				body.postalCode || '',
 				body.latitude || 0,
 				body.longitude || 0,

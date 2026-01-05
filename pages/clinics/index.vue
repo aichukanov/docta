@@ -5,6 +5,7 @@ import {
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
 import { SITE_URL } from '~/common/constants';
+import { getLocalizedName } from '~/common/utils';
 import type { ClinicData } from '~/interfaces/clinic';
 
 import breadcrumbI18n from '~/i18n/breadcrumb';
@@ -31,6 +32,7 @@ const filterList = computed(() => ({
 	cityIds: cityIds.value,
 	languageIds: languageIds.value,
 	name: name.value,
+	locale: locale.value,
 }));
 
 const filterQuery = computed(() => getRouteParams().query);
@@ -70,7 +72,7 @@ const filteredClinics = computed(() => {
 	if (name.value) {
 		const searchTerm = name.value.toLowerCase();
 		filtered = filtered.filter((clinic) =>
-			clinic.name.toLowerCase().includes(searchTerm),
+			getLocalizedName(clinic, locale.value).toLowerCase().includes(searchTerm),
 		);
 	}
 
@@ -181,7 +183,6 @@ watchEffect(() => {
 		<template #card="{ item, showClinicOnMap }">
 			<ClinicSummary
 				:clinic="item as ClinicData"
-				linkable
 				@show-on-map="showClinicOnMap(item)"
 			/>
 		</template>

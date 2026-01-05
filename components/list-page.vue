@@ -78,7 +78,7 @@ const robotsMeta = computed(() => {
 	return undefined;
 });
 
-await clinicsStore.fetchClinics();
+await clinicsStore.fetchClinics(locale.value);
 
 useSeoMeta({
 	title: props.pageTitle,
@@ -420,6 +420,17 @@ onMounted(async () => {
 		"AriaLoadingResults": "Učitavanje rezultata",
 		"AriaPagination": "Navigacija po stranicama",
 		"AriaMapSection": "Mapa sa lokacijama"
+	},
+	"sr-cyrl": {
+		"Loading": "Учитавање...",
+		"NotFound": "Резултати нису пронађени",
+		"AriaMainContent": "Главни садржај",
+		"AriaSearchFilters": "Филтери претраге",
+		"AriaSearchResults": "Резултати претраге",
+		"AriaResultsList": "Листа резултата",
+		"AriaLoadingResults": "Учитавање резултата",
+		"AriaPagination": "Навигација по страницама",
+		"AriaMapSection": "Мапа са локацијама"
 	},
 	"de": {
 		"Loading": "Laden...",

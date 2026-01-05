@@ -266,6 +266,28 @@ schemaOrgStore.setSchemas([
 		"AriaLinkToLabTests": "Laboratuvar testlerine git",
 		"AriaLinkToServices": "Tıbbi hizmetlere git",
 		"AriaLinkToMedications": "İlaç kataloğuna git"
+	},
+	"sr-cyrl": {
+		"MainPageTitle": "Медицинске услуге у Црној Гори",
+		"MainPageDescription": "Пронађите лекаре, клинике, лабораторијске услуге, медицинске процедуре и лекове у Црној Гори",
+		"Doctors": "Лекари",
+		"DoctorsDescription": "Пронађите квалификоване лекаре по специјалности, граду и језику",
+		"Clinics": "Клинике",
+		"ClinicsDescription": "Медицинске клинике и здравствене установе широм Црне Горе",
+		"LabTests": "Лабораторијске анализе",
+		"LabTestsDescription": "Информације о лабораторијским тестовима и услугама",
+		"MedicalServices": "Медицинске услуге",
+		"MedicalServicesDescription": "Медицинске услуге и процедуре доступне у Црној Гори",
+		"Medications": "Лекови",
+		"MedicationsDescription": "Пронађите аптеке и где купити лекове",
+		"AriaMainContent": "Главни садржај",
+		"AriaHeroSection": "Секција добродошлице",
+		"AriaNavigationCards": "Навигација до секција сајта",
+		"AriaLinkToDoctors": "Иди на директоријум лекара",
+		"AriaLinkToClinics": "Иди на директоријум клиника",
+		"AriaLinkToLabTests": "Иди на лабораторијске анализе",
+		"AriaLinkToServices": "Иди на медицинске услуге",
+		"AriaLinkToMedications": "Иди на каталог лекова"
 	}
 }
 </i18n>

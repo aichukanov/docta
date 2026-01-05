@@ -1,16 +1,12 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
-
-interface ClinicPrice {
-	clinicId: number;
-	price: number | null;
-	code: string | null;
-}
+import type { ClinicPrice } from '~/interfaces/clinic';
 
 interface LabTestAdminDetails {
 	id: number;
-	name: string;
+	name_en: string;
 	name_sr: string;
+	name_sr_cyrl: string;
 	name_ru: string;
 	name_de: string;
 	name_tr: string;
@@ -43,7 +39,7 @@ export default defineEventHandler(
 
 			// Получаем основные данные анализа
 			const [labTestRows]: any = await connection.execute(
-				`SELECT id, name, name_sr, name_ru, name_de, name_tr FROM lab_tests WHERE id = ?`,
+				`SELECT id, name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr FROM lab_tests WHERE id = ?`,
 				[body.labTestId],
 			);
 
@@ -98,8 +94,9 @@ export default defineEventHandler(
 
 			return {
 				id: labTest.id,
-				name: labTest.name || '',
+				name_en: labTest.name_en || '',
 				name_sr: labTest.name_sr || '',
+				name_sr_cyrl: labTest.name_sr_cyrl || '',
 				name_ru: labTest.name_ru || '',
 				name_de: labTest.name_de || '',
 				name_tr: labTest.name_tr || '',

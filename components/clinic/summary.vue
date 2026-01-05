@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { LocationFilled } from '@element-plus/icons-vue';
 import { getRegionalQuery } from '~/common/url-utils';
+import { getLocalizedName } from '~/common/utils';
 import { hasContacts } from '../contacts/utils';
 import type { ClinicService } from '~/interfaces/clinic-service';
 import type { ClinicData } from '~/interfaces/clinic';
@@ -8,14 +9,48 @@ import type { ClinicData } from '~/interfaces/clinic';
 const props = defineProps<{
 	clinic: ClinicData;
 	priceInfo?: ClinicService;
-	linkable?: boolean;
 }>();
 
 defineEmits<{
 	(e: 'show-on-map'): void;
 }>();
 
-const { t, n, locale } = useI18n();
+const summaryI18n = {
+	'en': {
+		Contacts: 'Contacts',
+		LanguageAssistance: 'The clinic provides assistance in:',
+	},
+	'ru': {
+		Contacts: 'Контакты',
+		LanguageAssistance:
+			'В клинике предоставляется сопровождение на следующих языках:',
+	},
+	'de': {
+		Contacts: 'Kontakte',
+		LanguageAssistance: 'Die Klinik bietet Unterstützung in:',
+	},
+	'tr': {
+		Contacts: 'İletişim',
+		LanguageAssistance: 'Klinik aşağıdaki dillerde destek sunar:',
+	},
+	'sr': {
+		Contacts: 'Kontakti',
+		LanguageAssistance: 'Klinika pruža pomoć na sledećim jezicima:',
+	},
+	'sr-cyrl': {
+		Contacts: 'Контакти',
+		LanguageAssistance: 'Клиника пружа помоћ на следећим језицима:',
+	},
+};
+
+const { t, n, locale } = useI18n({
+	useScope: 'local',
+	messages: summaryI18n,
+});
+
+const localizedName = computed(() =>
+	getLocalizedName(props.clinic, locale.value),
+);
 
 const hasPrice = computed(() => {
 	return props.priceInfo?.price != null;
@@ -33,14 +68,9 @@ const clinicLink = computed(() => ({
 		<div class="location-wrapper">
 			<div class="location-info">
 				<div class="clinic-name-container">
-					<NuxtLink
-						v-if="linkable"
-						:to="clinicLink"
-						class="clinic-name clinic-name-link"
-					>
-						{{ clinic.name }}
+					<NuxtLink :to="clinicLink" class="clinic-name clinic-name-link">
+						{{ localizedName }}
 					</NuxtLink>
-					<span v-else class="clinic-name">{{ clinic.name }}</span>
 
 					<div v-if="hasPrice" class="price-badge">
 						<span class="price-value">{{
@@ -72,31 +102,6 @@ const clinicLink = computed(() => ({
 		</div>
 	</div>
 </template>
-
-<i18n lang="json">
-{
-	"en": {
-		"Contacts": "Contacts",
-		"LanguageAssistance": "The clinic provides assistance in:"
-	},
-	"ru": {
-		"Contacts": "Контакты",
-		"LanguageAssistance": "В клинике предоставляется сопровождение на следующих языках:"
-	},
-	"de": {
-		"Contacts": "Kontakte",
-		"LanguageAssistance": "Die Klinik bietet Unterstützung in:"
-	},
-	"tr": {
-		"Contacts": "İletişim",
-		"LanguageAssistance": "Klinik aşağıdaki dillerde destek sunar:"
-	},
-	"sr": {
-		"Contacts": "Kontakti",
-		"LanguageAssistance": "Klinika pruža pomoć na sledećim jezicima:"
-	}
-}
-</i18n>
 
 <style scoped lang="less">
 .clinic-summary {

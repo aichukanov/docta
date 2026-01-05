@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { SITE_URL } from '~/common/constants';
 import { getRegionalQuery } from '~/common/url-utils';
+import { getLocalizedName } from '~/common/utils';
 import {
 	buildBreadcrumbsSchema,
 	buildMedicalWebPageSchema,
@@ -58,7 +59,7 @@ const pageUrl = `${SITE_URL}/articles/russian-speaking-doctors-in-montenegro`;
 
 // 2. Fetch and prepare doctor data
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics();
+await clinicsStore.fetchClinics(locale.value);
 
 const { data: doctorsData } = await useFetch('/api/doctors/list', {
 	method: 'POST',
@@ -180,7 +181,8 @@ watchEffect(() => {
 									class="clinic-item"
 								>
 									<NuxtLink :to="getClinicUrl(clinic.id)" class="clinic-link">
-										{{ clinic.name }}, {{ t(`city_${clinic.cityId}`) }}
+										{{ getLocalizedName(clinic, locale) }},
+										{{ t(`city_${clinic.cityId}`) }}
 									</NuxtLink>
 								</li>
 							</ul>

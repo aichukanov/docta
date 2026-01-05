@@ -148,6 +148,15 @@ const isActiveSection = (section: string) => {
 		"Medications": "Lekovi",
 		"Articles": "Članci"
 	},
+	"sr-cyrl": {
+		"GoToMainPage": "Иди на почетну страницу",
+		"Doctors": "Лекари",
+		"Clinics": "Клинике",
+		"LabTests": "Анализе",
+		"MedicalServices": "Услуге",
+		"Medications": "Лекови",
+		"Articles": "Чланци"
+	},
 	"de": {
 		"GoToMainPage": "Zur Startseite gehen",
 		"Doctors": "Ärzte",

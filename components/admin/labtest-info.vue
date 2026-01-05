@@ -1,20 +1,13 @@
 <script setup lang="ts">
-import type { ClinicData } from '~/interfaces/clinic';
-
-interface LabTestListItem {
-	id: number;
-	name: string;
-}
-
-interface ClinicPrice {
-	clinicId: number;
-	price: number | null;
-	code: string | null;
-}
+import type {
+	ClinicData,
+	ClinicPrice,
+	LabTestListItem,
+} from '~/interfaces/clinic';
 
 interface LabTestAdminDetails {
 	id: number;
-	name: string;
+	name_en: string;
 	name_sr: string;
 	name_ru: string;
 	name_de: string;
@@ -80,7 +73,11 @@ const removeClinicPrice = (index: number) => {
 
 // Модифицированные поля
 const nameModified = computed(
-	() => originalLabTest.value?.name !== labTestModel.value?.name,
+	() => originalLabTest.value?.name_en !== labTestModel.value?.name_en,
+);
+const nameSrCyrlModified = computed(
+	() =>
+		originalLabTest.value?.name_sr_cyrl !== labTestModel.value?.name_sr_cyrl,
 );
 const nameSrModified = computed(
 	() => originalLabTest.value?.name_sr !== labTestModel.value?.name_sr,
@@ -119,6 +116,7 @@ const hasChanges = computed(
 	() =>
 		nameModified.value ||
 		nameSrModified.value ||
+		nameSrCyrlModified.value ||
 		nameRuModified.value ||
 		nameDeModified.value ||
 		nameTrModified.value ||
@@ -262,15 +260,21 @@ watch(labTestId, async (newId) => {
 		<div v-else-if="labTestModel" class="labtest-info">
 			<AdminEditableField
 				label="Название (EN)"
-				v-model:value="labTestModel.name"
+				v-model:value="labTestModel.name_en"
 				:modified="nameModified"
-				@reset="labTestModel.name = originalLabTest?.name || ''"
+				@reset="labTestModel.name_en = originalLabTest?.name_en || ''"
 			/>
 			<AdminEditableField
 				label="Название (SR)"
 				v-model:value="labTestModel.name_sr"
 				:modified="nameSrModified"
 				@reset="labTestModel.name_sr = originalLabTest?.name_sr || ''"
+			/>
+			<AdminEditableField
+				label="Название (SR-CYRL)"
+				v-model:value="labTestModel.name_sr_cyrl"
+				:modified="nameSrCyrlModified"
+				@reset="labTestModel.name_sr_cyrl = originalLabTest?.name_sr_cyrl || ''"
 			/>
 			<AdminEditableField
 				label="Название (RU)"

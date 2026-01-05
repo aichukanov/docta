@@ -31,6 +31,9 @@ const { t } = useI18n();
 	},
 	"tr": {
 		"Email": "Email"
+	},
+	"sr-cyrl": {
+		"Email": "Email"
 	}
 }
 </i18n>

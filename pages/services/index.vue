@@ -36,7 +36,7 @@ const { pending: isLoadingMedicalServices, data: medicalServicesList } =
 	});
 
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics();
+await clinicsStore.fetchClinics(locale.value);
 
 const clinicName = computed(() => {
 	if (clinicIds.value.length === 1) {

@@ -35,7 +35,7 @@ const { pending: isLoading, data: labTestData } = await useFetch(
 );
 
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics();
+await clinicsStore.fetchClinics(locale.value);
 
 const isFound = computed(() => labTestData.value?.id != null);
 

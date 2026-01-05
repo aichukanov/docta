@@ -1,19 +1,9 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
+import type { ClinicPrice, LabTestNames } from '~/interfaces/clinic';
 
-interface ClinicPrice {
-	clinicId: number;
-	price?: number | null;
-	code?: string | null;
-}
-
-interface UpdateLabTestBody {
+interface UpdateLabTestBody extends LabTestNames {
 	id: number;
-	name: string;
-	name_sr: string;
-	name_ru: string;
-	name_de: string;
-	name_tr: string;
 	categoryIds: number[];
 	clinicPrices: ClinicPrice[];
 	synonyms: { language: string; values: string[] }[];

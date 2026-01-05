@@ -30,6 +30,9 @@ const facebookUrl = computed(() => normalizeFacebookUrl(props.profile));
 	"sr": {
 		"Facebook": "Facebook"
 	},
+	"sr-cyrl": {
+		"Facebook": "Facebook"
+	},
 	"de": {
 		"Facebook": "Facebook"
 	},

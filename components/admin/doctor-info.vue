@@ -39,6 +39,10 @@ const nameRuModified = computed(
 	() => selectedDoctor.value?.name_ru !== doctorModel.value?.name_ru,
 );
 
+const nameSrCyrlModified = computed(
+	() => selectedDoctor.value?.name_sr_cyrl !== doctorModel.value?.name_sr_cyrl,
+);
+
 const professionalTitleModified = computed(
 	() =>
 		selectedDoctor.value?.professionalTitle !==
@@ -120,6 +124,7 @@ const languageIdsModified = computed(() => {
 const hasChanges = computed(() => {
 	return (
 		nameModified.value ||
+		nameSrCyrlModified.value ||
 		nameRuModified.value ||
 		professionalTitleModified.value ||
 		photoUrlModified.value ||
@@ -225,6 +230,12 @@ watch(selectedDoctor, (doctor) => {
 				v-model:value="doctorModel.name_ru"
 				:modified="nameRuModified"
 				@reset="doctorModel.name_ru = selectedDoctor?.name_ru"
+			/>
+			<AdminEditableField
+				label="Имя (SR кириллица)"
+				v-model:value="doctorModel.name_sr_cyrl"
+				:modified="nameSrCyrlModified"
+				@reset="doctorModel.name_sr_cyrl = selectedDoctor?.name_sr_cyrl"
 			/>
 			<AdminEditableField
 				label="Профессиональное звание"

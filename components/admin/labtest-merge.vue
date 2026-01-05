@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import type { ClinicData } from '~/interfaces/clinic';
-
-interface LabTestListItem {
-	id: number;
-	name: string;
-}
+import type { ClinicData, LabTestListItem } from '~/interfaces/clinic';
 
 const props = defineProps<{
 	labTests: LabTestListItem[];

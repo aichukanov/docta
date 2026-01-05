@@ -48,6 +48,9 @@ const googleMapsUrl = computed(() => {
 	},
 	"sr": {
 		"BuildRoute": "Napravi rutu"
+	},
+	"sr-cyrl": {
+		"BuildRoute": "Направи руту"
 	}
 }
 </i18n>

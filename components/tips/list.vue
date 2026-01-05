@@ -123,6 +123,10 @@ const { t } = useI18n({ useScope: 'local' });
 		"AriaTipsSection": "Korisni saveti",
 		"TipsTitle": "Korisni saveti"
 	},
+	"sr-cyrl": {
+		"AriaTipsSection": "Корисни савети",
+		"TipsTitle": "Корисни савети"
+	},
 	"de": {
 		"AriaTipsSection": "Nützliche Tipps",
 		"TipsTitle": "Nützliche Tipps"

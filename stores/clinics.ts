@@ -8,7 +8,7 @@ export const useClinicsStore = defineStore('clinics', () => {
 
 	const fetchPromise = ref<Promise<void> | null>(null);
 
-	const loadClinicsData = async () => {
+	const loadClinicsData = async (locale?: string) => {
 		isLoading.value = true;
 
 		fetchPromise.value = $fetch<{
@@ -16,6 +16,9 @@ export const useClinicsStore = defineStore('clinics', () => {
 			totalCount: number;
 		}>('/api/clinics/list', {
 			method: 'POST',
+			body: {
+				locale: locale || 'en',
+			},
 		}).catch((error) => {
 			console.error('Failed to fetch clinics:', error);
 			throw error;
@@ -28,7 +31,7 @@ export const useClinicsStore = defineStore('clinics', () => {
 		isLoading.value = false;
 	};
 
-	const fetchClinics = async () => {
+	const fetchClinics = async (locale?: string) => {
 		if (isLoaded.value) {
 			return;
 		}
@@ -36,14 +39,14 @@ export const useClinicsStore = defineStore('clinics', () => {
 		if (fetchPromise.value) {
 			await fetchPromise.value;
 		} else {
-			await loadClinicsData();
+			await loadClinicsData(locale);
 		}
 	};
 
-	const refresh = async () => {
+	const refresh = async (locale?: string) => {
 		fetchPromise.value = null;
 		isLoaded.value = false;
-		await loadClinicsData();
+		await loadClinicsData(locale);
 	};
 
 	/**

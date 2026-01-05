@@ -3,6 +3,7 @@ import { getRegionalQuery } from '~/common/url-utils';
 import labTestI18n from '~/i18n/labtest';
 import labTestCategoryI18n from '~/i18n/labtest-category';
 import { combineI18nMessages } from '~/i18n/utils';
+import { toCyrillic } from '~/common/serbian-transliteration';
 
 const props = defineProps<{
 	name: string;

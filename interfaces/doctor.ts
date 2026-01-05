@@ -6,6 +6,8 @@ export interface DoctorData extends ClinicServiceItem, ContactList {
 	languageIds: string;
 	professionalTitle: string;
 	photoUrl: string;
+	name_sr_cyrl?: string;
+	localName: string;
 }
 
 export interface DoctorList {

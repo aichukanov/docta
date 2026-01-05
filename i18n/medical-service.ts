@@ -100,5 +100,23 @@ export default {
 			MedicalServicesListDescriptionCity:
 				"{city}'de ada veya kliniğe göre tıbbi hizmetler arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
 		},
+		'sr-cyrl': {
+			ServiceName: 'Име услуге',
+			InsertServiceName: 'Унесите име услуге',
+			MedicalServices: 'Медицинске услуге у Црној Гори',
+			MedicalServicesCity: 'Медицинске услуге у {city}',
+			MedicalServicesClinic: 'Медицинске услуге у клиници {clinic} у Црној Гори',
+			MedicalServicesCityClinic: 'Медицинске услуге у клиници {clinic} у {city}',
+
+			LoadingMedicalServices: 'Учитавање услуга...',
+			NoMedicalServicesFound: 'Услуге нису пронађене',
+			ToSearchPage: 'На страницу претраге',
+			MedicalServiceDescriptionCity: '{name} — медицинска услуга у {city}',
+			MedicalServiceDescriptionDefault: '{name} — медицинска услуга у Црној Гори',
+			MedicalServicesListDescription:
+				'Пронађите медицинске услуге у Црној Гори по имену, граду или клиници. Упоредите цене и локације клиника на мапи.',
+			MedicalServicesListDescriptionCity:
+				'Медицинске услуге у {city} — претрага по имену или клиници. Упоредите цене и локације клиника на мапи.',
+		},
 	},
 };

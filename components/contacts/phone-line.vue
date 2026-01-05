@@ -28,6 +28,9 @@ const { t } = useI18n();
 	"sr": {
 		"Phone": "Broj telefona"
 	},
+	"sr-cyrl": {
+		"Phone": "Број телефона"
+	},
 	"de": {
 		"Phone": "Telefonnummer"
 	},

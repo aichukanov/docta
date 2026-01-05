@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { SITE_URL } from '~/common/constants';
 import { getRegionalQuery } from '~/common/url-utils';
+import { getLocalizedName } from '~/common/utils';
 import {
 	buildBreadcrumbsSchema,
 	buildCollectionPageSchemas,
@@ -53,7 +54,7 @@ const pageUrl = `${SITE_URL}/articles/clinics-with-language-support`;
 
 // 2. Fetch clinic data
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics();
+await clinicsStore.fetchClinics(locale.value);
 
 // Languages to display (excluding Serbian as it's the default)
 const displayLanguages = [
@@ -169,7 +170,9 @@ watchEffect(() => {
 							:to="getClinicUrl(clinic.id)"
 							class="clinic-card"
 						>
-							<span class="clinic-name">{{ clinic.name }}</span>
+							<span class="clinic-name">{{
+								getLocalizedName(clinic, locale)
+							}}</span>
 							<span class="clinic-city">{{ t(`city_${clinic.cityId}`) }}</span>
 						</NuxtLink>
 					</div>

@@ -30,6 +30,9 @@ const instagramUrl = computed(() => normalizeInstagramUrl(props.profile));
 	"sr": {
 		"Instagram": "Instagram"
 	},
+	"sr-cyrl": {
+		"Instagram": "Instagram"
+	},
 	"de": {
 		"Instagram": "Instagram"
 	},

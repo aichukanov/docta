@@ -1,4 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
 import type { DoctorList } from '~/interfaces/doctor';
 import {
 	validateBody,
@@ -50,9 +51,11 @@ export async function getDoctorList(
 		languageIds?: string[];
 		clinicIds?: number[];
 		onlyDoctorLanguages?: boolean;
+		locale?: string;
 	} = {},
 ) {
 	const whereFilters = [];
+	const locale = body.locale || 'en';
 
 	if (body.specialtyIds?.length > 0) {
 		whereFilters.push(`s.id IN (${body.specialtyIds.join(',')})`);
@@ -75,7 +78,7 @@ export async function getDoctorList(
 	}
 	if (body.name && validateName(body, 'api/doctors/list')) {
 		whereFilters.push(
-			`(d.name LIKE '%${body.name}%' OR d.name_ru LIKE '%${body.name}%')`,
+			`(d.name_sr LIKE '%${body.name}%' OR d.name_sr_cyrl LIKE '%${body.name}%' OR d.name_ru LIKE '%${body.name}%' OR d.name_en LIKE '%${body.name}%')`,
 		);
 	}
 
@@ -85,8 +88,10 @@ export async function getDoctorList(
 	const doctorsQuery = `
 			SELECT DISTINCT
 				d.id,
-				d.name,
+				d.name_sr,
+				d.name_sr_cyrl,
 				d.name_ru,
+				d.name_en,
 				d.professional_title as professionalTitle,
 				d.photo_url as photoUrl,
 				d.phone,
@@ -98,7 +103,7 @@ export async function getDoctorList(
 				d.viber,
 				d.website,
 				GROUP_CONCAT(DISTINCT s.id ORDER BY s.id) as specialtyIds,
-				GROUP_CONCAT(DISTINCT languages.id ORDER BY languages.id) as languageIds,   
+				GROUP_CONCAT(DISTINCT languages.id ORDER BY languages.id) as languageIds,
 				GROUP_CONCAT(DISTINCT dc.clinic_id ORDER BY dc.clinic_id) as clinicIds
 			FROM doctors d
 			LEFT JOIN doctor_specialties ds ON d.id = ds.doctor_id
@@ -110,15 +115,30 @@ export async function getDoctorList(
 			LEFT JOIN cities ON clinics.city_id = cities.id
 			LEFT JOIN clinic_languages ON dc.clinic_id = clinic_languages.clinic_id
 			${whereFiltersString}
-			GROUP BY d.id, d.name ORDER BY d.name ASC;
+			GROUP BY d.id, d.name_sr, d.name_sr_cyrl, d.name_ru, d.name_en ORDER BY d.name_sr ASC;
 		`;
 
 	const connection = await getConnection();
 	const [doctorRows] = await connection.execute(doctorsQuery);
 	await connection.end();
 
+	// Обрабатываем локализованные имена
+	const processedDoctors = doctorRows.map((doctor: any) => {
+		const { name, localName } = processLocalizedNameForClinicOrDoctor(
+			doctor,
+			locale,
+		);
+		// Удаляем избыточные поля локализации
+		const { name_sr, name_sr_cyrl, name_ru, name_en, ...rest } = doctor;
+		return {
+			...rest,
+			name,
+			localName,
+		};
+	});
+
 	return {
-		doctors: doctorRows,
-		totalCount: doctorRows.length,
+		doctors: processedDoctors,
+		totalCount: processedDoctors.length,
 	};
 }

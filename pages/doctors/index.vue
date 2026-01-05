@@ -41,12 +41,13 @@ const filterList = computed(() => ({
 	languageIds: languageIds.value,
 	clinicIds: clinicIds.value,
 	name: name.value,
+	locale: locale.value,
 }));
 
 const filterQuery = computed(() => getRouteParams().query);
 
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics();
+await clinicsStore.fetchClinics(locale.value);
 
 const clinicName = computed(() => {
 	if (clinicIds.value.length === 1) {

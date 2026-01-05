@@ -88,7 +88,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			if (secondaryLabTest?.name_sr) {
 				await connection.execute(
 					`INSERT IGNORE INTO lab_test_synonyms (lab_test_id, another_name, language)
-					 VALUES (?, ?, 'me')`,
+					 VALUES (?, ?, 'sr')`,
 					[body.primaryLabTestId, secondaryLabTest.name_sr],
 				);
 			}

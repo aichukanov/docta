@@ -14,16 +14,13 @@ export interface Coordinates {
 export interface ClinicData extends ContactList, Coordinates {
 	id: number;
 	name: string;
+	localName: string;
 	cityId: CityId;
 	address: string;
-	town?: string;
+	town: string;
 	postalCode?: string;
 	languageIds: string;
-	description_sr: string;
-	description_en: string;
-	description_ru: string;
-	description_de: string;
-	description_tr: string;
+	description: string;
 }
 
 export interface ClinicList {
@@ -49,7 +46,7 @@ export interface ClinicServiceWithPrices extends ClinicServiceItem {
 }
 
 export interface LabTestItem extends ClinicServiceWithPrices {
-	originalName?: string;
+	localName?: string;
 	synonyms?: string[];
 	categoryIds?: number[];
 }
@@ -57,6 +54,20 @@ export interface LabTestItem extends ClinicServiceWithPrices {
 export interface ClinicServiceList {
 	items: ClinicServiceWithPrices[];
 	totalCount: number;
+}
+
+export interface LabTestListItem {
+	id: number;
+	name: string;
+}
+
+export interface LabTestNames {
+	name: string;
+	name_sr: string;
+	name_sr_cyrl: string;
+	name_ru: string;
+	name_de: string;
+	name_tr: string;
 }
 
 export interface LabTestList {

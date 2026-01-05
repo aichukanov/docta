@@ -131,5 +131,31 @@ export default {
 				"{city}'de {category} — ada veya kliniğe göre arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
 			Synonyms: 'Ayrıca şu adla bilinir',
 		},
+		'sr-cyrl': {
+			LabTestName: 'Име анализе',
+			InsertLabTestName: 'Унесите име анализе',
+			LabTests: 'Лабораторијске анализе у Црној Гори',
+			LabTestsCity: 'Лабораторијске анализе у {city}',
+			LabTestsClinic: 'Лабораторијске анализе у клиници {clinic} у Црној Гори',
+			LabTestsCityClinic: 'Лабораторијске анализе у клиници {clinic} у {city}',
+			LabTestsCategory: '{category} у Црној Гори',
+			LabTestsCategoryCity: '{category} у {city}',
+			LabTestsCategoryClinic: '{category} у клиници {clinic} у Црној Гори',
+			LabTestsCategoryCityClinic: '{category} у клиници {clinic} у {city}',
+
+			LoadingLabTests: 'Учитавање анализа...',
+			NoLabTestsFound: 'Анализе нису пронађене',
+			LabTestDescriptionCity: '{name} — лабораторијска анализа у {city}',
+			LabTestDescriptionDefault: '{name} — лабораторијска анализа у Црној Гори',
+			LabTestsListDescription:
+				'Пронађите лабораторијске анализе у Црној Гори по имену, граду или клиници. Упоредите цене и локације клиника на мапи.',
+			LabTestsListDescriptionCity:
+				'Лабораторијске анализе у {city} — претрага по имену или клиници. Упоредите цене и локације клиника на мапи.',
+			LabTestsListDescriptionCategory:
+				'{category} у Црној Гори — претрага по имену или клиници. Упоредите цене и локације клиника на мапи.',
+			LabTestsListDescriptionCategoryCity:
+				'{category} у {city} — претрага по имену или клиници. Упоредите цене и локације клиника на мапи.',
+			Synonyms: 'Познато и као',
+		},
 	},
 };

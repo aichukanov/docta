@@ -38,6 +38,9 @@ const { t } = useI18n();
 	"sr": {
 		"Whatsapp": "Whatsapp"
 	},
+	"sr-cyrl": {
+		"Whatsapp": "Whatsapp"
+	},
 	"de": {
 		"Whatsapp": "Whatsapp"
 	},

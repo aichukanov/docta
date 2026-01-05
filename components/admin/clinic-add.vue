@@ -6,8 +6,10 @@ const emit = defineEmits<{
 const cityIds = ref<number[]>([]);
 const languageIds = ref<number[]>([1]);
 const clinicName = ref('');
-const clinicAddress = ref('');
-const clinicTown = ref('');
+const clinicAddressSr = ref('');
+const clinicAddressSrCyrl = ref('');
+const clinicTownSr = ref('');
+const clinicTownSrCyrl = ref('');
 const clinicPostalCode = ref('');
 const clinicPhone = ref('');
 const clinicEmail = ref('');
@@ -29,8 +31,10 @@ const clearFields = () => {
 	cityIds.value = [];
 	clinicName.value = '';
 	languageIds.value = [1];
-	clinicAddress.value = '';
-	clinicTown.value = '';
+	clinicAddressSr.value = '';
+	clinicAddressSrCyrl.value = '';
+	clinicTownSr.value = '';
+	clinicTownSrCyrl.value = '';
 	clinicPostalCode.value = '';
 	clinicLatitude.value = '';
 	clinicLongitude.value = '';
@@ -53,22 +57,24 @@ const addClinic = async () => {
 	if (
 		!clinicName.value ||
 		cityIds.value.length !== 1 ||
-		!clinicAddress.value ||
+		!clinicAddressSr.value ||
 		!clinicLatitude.value ||
 		!clinicLongitude.value
 	) {
-		alert('Нужно ввести название, город, адрес, широту и долготу');
+		alert('Нужно ввести название, город, адрес (SR), широту и долготу');
 		return;
 	}
 
 	await $fetch('/api/clinics/add', {
 		method: 'POST',
 		body: {
-			name: clinicName.value,
+			name_sr: clinicName.value,
 			cityId: cityIds.value[0],
 			languageIds: languageIds.value,
-			address: clinicAddress.value,
-			town: clinicTown.value,
+			address_sr: clinicAddressSr.value,
+			address_sr_cyrl: clinicAddressSrCyrl.value,
+			town_sr: clinicTownSr.value,
+			town_sr_cyrl: clinicTownSrCyrl.value,
 			postalCode: clinicPostalCode.value,
 			latitude: clinicLatitude.value,
 			longitude: clinicLongitude.value,
@@ -99,9 +105,17 @@ const addClinic = async () => {
 		<div class="clinic-add-form">
 			<FilterCitySelect v-model:value="cityIds" />
 
-			<AdminEditableField label="Название" v-model:value="clinicName" />
-			<AdminEditableField label="Адрес" v-model:value="clinicAddress" />
-			<AdminEditableField label="Town" v-model:value="clinicTown" />
+			<AdminEditableField label="Название (SR)" v-model:value="clinicName" />
+			<AdminEditableField label="Адрес (SR)" v-model:value="clinicAddressSr" />
+			<AdminEditableField
+				label="Адрес (SR-CYRL)"
+				v-model:value="clinicAddressSrCyrl"
+			/>
+			<AdminEditableField label="Town (SR)" v-model:value="clinicTownSr" />
+			<AdminEditableField
+				label="Town (SR-CYRL)"
+				v-model:value="clinicTownSrCyrl"
+			/>
 			<AdminEditableField
 				label="Postal code"
 				v-model:value="clinicPostalCode"

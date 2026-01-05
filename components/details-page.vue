@@ -85,7 +85,6 @@ const onMapReady = () => {
 								:key="clinic.id"
 								:clinic="clinic"
 								:priceInfo="getPriceInfo(clinic.id)"
-								linkable
 								@show-on-map="showClinicOnMap(clinic)"
 								role="listitem"
 							/>
@@ -256,6 +255,15 @@ const onMapReady = () => {
 		"AriaDetailsContent": "Detaljne informacije",
 		"AriaClinicsSection": "Dostupno u klinikama",
 		"AriaMapSection": "Mapa sa lokacijama"
+	},
+	"sr-cyrl": {
+		"ToSearchPage": "Назад на претрагу",
+		"AriaMainContent": "Главни садржај",
+		"AriaBackToSearch": "Назад на резултате претраге",
+		"AriaLoading": "Учитавање",
+		"AriaDetailsContent": "Детаљне информације",
+		"AriaClinicsSection": "Доступно у клиникама",
+		"AriaMapSection": "Мапа са локацијама"
 	}
 }
 </i18n>

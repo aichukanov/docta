@@ -169,6 +169,12 @@ function acceptCookies() {
 		"CookieDescription": "Kolačići su potrebni za ispravno funkcionisanje sajta i analitiku, trebalo bi da dozvolite njihovu upotrebu.",
 		"CookieDescription2": "Možete povući svoju saglasnost u bilo kom trenutku.",
 		"Accept": "Prihvati"
+	},
+	"sr-cyrl": {
+		"CookieTitle": "Колачићи",
+		"CookieDescription": "Колачићи су потребни за исправно функционисање сајта и аналитику, требало би да дозволите њихову употребу.",
+		"CookieDescription2": "Можете повнути своју сагласност у било ком тренутку.",
+		"Accept": "Прихвати"
 	}
 }
 </i18n>

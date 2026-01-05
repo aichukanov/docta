@@ -14,20 +14,23 @@ export default defineI18nConfig(() => ({
 		redirectOn: 'root',
 	},
 	messages: {
-		en: {
-			ApplicationName: `${SITE_NAME} | All doctors of Montenegro`,
+		'en': {
+			ApplicationName: `${SITE_NAME} | Medicine in Montenegro`,
 		},
-		ru: {
-			ApplicationName: `${SITE_NAME} | Все врачи Черногории`,
+		'ru': {
+			ApplicationName: `${SITE_NAME} | Медицина в Черногории`,
 		},
-		sr: {
-			ApplicationName: `${SITE_NAME} | Svi lekari Crne Gore`,
+		'sr': {
+			ApplicationName: `${SITE_NAME} | Medicina u Crnoj Gori`,
 		},
-		de: {
-			ApplicationName: `${SITE_NAME} | Alle Ärzte Montenegros`,
+		'de': {
+			ApplicationName: `${SITE_NAME} | Medizin in Montenegro`,
 		},
-		tr: {
-			ApplicationName: `${SITE_NAME} | Karadağ'ın tüm doktorları`,
+		'tr': {
+			ApplicationName: `${SITE_NAME} | Karadağ'da Tıp`,
+		},
+		'sr-cyrl': {
+			ApplicationName: `${SITE_NAME} | Медицина у Црној Гори`,
 		},
 	},
 }));

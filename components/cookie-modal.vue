@@ -420,6 +420,15 @@ function closeModal() {
 		"Required": "Obavezno",
 		"Accept": "Prihvati",
 		"Cancel": "Otkaži"
+	},
+	"sr-cyrl": {
+		"CookieSettings": "Информације о колачићима",
+		"CookieInfoDescription": "Користимо колачиће да побољшамо ваше искуство и анализирамо саобраћај на сајту. Сви колачићи су потребни за исправно функционисање сајта.",
+		"CookiesUsed": "Коришћени колачићи",
+		"MoreInfo": "Више информација",
+		"Required": "Обавезно",
+		"Accept": "Прихвати",
+		"Cancel": "Откажи"
 	}
 }
 </i18n>

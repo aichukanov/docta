@@ -41,6 +41,9 @@ const websiteUrlWithUtm = computed(() => {
 	"sr": {
 		"Website": "Oficijelni sajt"
 	},
+	"sr-cyrl": {
+		"Website": "Официјелни сајт"
+	},
 	"de": {
 		"Website": "Offizielle Website"
 	},

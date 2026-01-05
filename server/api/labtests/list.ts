@@ -2,7 +2,7 @@ import { getConnection } from '~/server/common/db-mysql';
 import {
 	parseClinicPricesData,
 	getPriceOrderBySQL,
-	getLocalizedNameField,
+	processLocalizedNameForLabTest,
 } from '~/server/common/utils';
 import type { LabTestList } from '~/interfaces/clinic';
 import {
@@ -43,7 +43,6 @@ export async function getLabTestList(
 ) {
 	const whereFilters = [];
 	const joins = [];
-	const nameField = getLocalizedNameField(body.locale);
 	const locale = body.locale || 'en';
 
 	if (body.categoryIds?.length > 0) {
@@ -72,7 +71,7 @@ export async function getLabTestList(
 			'LEFT JOIN lab_test_synonyms lts_search ON lt.id = lts_search.lab_test_id',
 		);
 		whereFilters.push(
-			`(lt.name LIKE '%${body.name}%' OR lt.${nameField} LIKE '%${body.name}%' OR lt.name_sr LIKE '%${body.name}%' OR lts_search.another_name LIKE '%${body.name}%')`,
+			`(lt.name_en LIKE '%${body.name}%' OR lt.${nameField} LIKE '%${body.name}%' OR lt.name_sr LIKE '%${body.name}%' OR lts_search.another_name LIKE '%${body.name}%')`,
 		);
 	}
 
@@ -84,8 +83,12 @@ export async function getLabTestList(
 	const labTestsQuery = `
 		SELECT DISTINCT
 			lt.id,
-			COALESCE(NULLIF(lt.${nameField}, ''), NULLIF(lt.name_sr, ''), lt.name) as name,
-			COALESCE(NULLIF(lt.name_sr, ''), lt.name) as originalName,
+			lt.name_en,
+			lt.name_sr,
+			lt.name_sr_cyrl,
+			lt.name_ru,
+			lt.name_de,
+			lt.name_tr,
 			GROUP_CONCAT(DISTINCT clt.clinic_id ORDER BY ${priceOrder}) as clinicIds,
 			GROUP_CONCAT(
 				DISTINCT CONCAT(clt.clinic_id, ':', COALESCE(clt.price, 0), ':', COALESCE(clt.code, ''))
@@ -100,15 +103,15 @@ export async function getLabTestList(
 		LEFT JOIN clinics ON clt.clinic_id = clinics.id
 		LEFT JOIN cities ON clinics.city_id = cities.id
 		${whereFiltersString}
-		GROUP BY lt.id, lt.${nameField}, lt.name_sr, lt.name
-		ORDER BY name ASC;
+		GROUP BY lt.id, lt.name_en, lt.name_sr, lt.name_sr_cyrl, lt.name_ru, lt.name_de, lt.name_tr
+		ORDER BY lt.name_en ASC;
 	`;
 
 	const connection = await getConnection();
 	const [labTestRows] = await connection.execute(labTestsQuery);
 
 	// Получаем синонимы для всех анализов на выбранном языке
-	const labTestIds = labTestRows.map((row: any) => row.id);
+	const labTestIds = labTestRows.map(({ id }: { id: number }) => id);
 	let synonymsMap: Record<number, string[]> = {};
 
 	if (labTestIds.length > 0) {
@@ -131,17 +134,20 @@ export async function getLabTestList(
 
 	await connection.end();
 
-	const items = labTestRows.map((row: any) => ({
-		id: row.id,
-		name: row.name,
-		originalName: row.originalName !== row.name ? row.originalName : undefined,
-		synonyms: synonymsMap[row.id] || [],
-		clinicIds: row.clinicIds,
-		clinicPrices: parseClinicPricesData(row.clinicPricesData),
-		categoryIds: row.categoryIds
-			? row.categoryIds.split(',').map(Number)
-			: undefined,
-	}));
+	const items = labTestRows.map((row: any) => {
+		const { name, originalName } = processLocalizedNameForLabTest(row, locale);
+		return {
+			id: row.id,
+			name,
+			originalName,
+			synonyms: synonymsMap[row.id] || [],
+			clinicIds: row.clinicIds,
+			clinicPrices: parseClinicPricesData(row.clinicPricesData),
+			categoryIds: row.categoryIds
+				? row.categoryIds.split(',').map(Number)
+				: undefined,
+		};
+	});
 
 	return {
 		items,

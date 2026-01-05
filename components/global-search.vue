@@ -4,13 +4,14 @@ import { DoctorSpecialty } from '~/enums/specialty';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
 import { getRegionalQuery } from '~/common/url-utils';
+import { getLocalizedName } from '~/common/utils';
 import type { DoctorData } from '~/interfaces/doctor';
 import type { MedicationData } from '~/interfaces/medication';
 import type { LabTestData } from '~/interfaces/lab-test';
 
 const globalSearchI18n = {
 	messages: {
-		en: {
+		'en': {
 			SearchPlaceholder: 'Search doctors, clinics, medications, tests',
 			Searching: 'Searching...',
 			NoResults: 'No results found',
@@ -24,7 +25,7 @@ const globalSearchI18n = {
 			MoreMedications: 'More medications ({count})',
 			MoreLabTests: 'More tests ({count})',
 		},
-		ru: {
+		'ru': {
 			SearchPlaceholder: 'Поиск врачей, клиник, лекарств, анализов',
 			Searching: 'Поиск...',
 			NoResults: 'Ничего не найдено',
@@ -38,7 +39,7 @@ const globalSearchI18n = {
 			MoreMedications: 'Ещё лекарства ({count})',
 			MoreLabTests: 'Ещё анализы ({count})',
 		},
-		sr: {
+		'sr': {
 			SearchPlaceholder: 'Pretraga lekara, klinika, lekova, analiza',
 			Searching: 'Pretraga...',
 			NoResults: 'Nema rezultata',
@@ -52,7 +53,21 @@ const globalSearchI18n = {
 			MoreMedications: 'Još lekova ({count})',
 			MoreLabTests: 'Još analiza ({count})',
 		},
-		de: {
+		'sr-cyrl': {
+			SearchPlaceholder: 'Претрага лекара, клиника, лекова, анализа',
+			Searching: 'Претрага...',
+			NoResults: 'Нема резултата',
+			Specialties: 'Специјалности',
+			Doctors: 'Лекари',
+			Clinics: 'Клинике',
+			Medications: 'Лекови',
+			LabTests: 'Анализе',
+			MoreDoctors: 'Још лекара ({count})',
+			MoreClinics: 'Још клиника ({count})',
+			MoreMedications: 'Још лекова ({count})',
+			MoreLabTests: 'Још анализа ({count})',
+		},
+		'de': {
 			SearchPlaceholder: 'Suche nach Ärzten, Kliniken, Medikamenten, Tests',
 			Searching: 'Suche...',
 			NoResults: 'Keine Ergebnisse gefunden',
@@ -66,7 +81,7 @@ const globalSearchI18n = {
 			MoreMedications: 'Mehr Medikamente ({count})',
 			MoreLabTests: 'Mehr Tests ({count})',
 		},
-		tr: {
+		'tr': {
 			SearchPlaceholder: 'Doktor, klinik, ilaç, test ara',
 			Searching: 'Aranıyor...',
 			NoResults: 'Sonuç bulunamadı',
@@ -96,7 +111,7 @@ const inputRef = ref<HTMLInputElement | null>(null);
 
 // Store клиник (загружается один раз)
 const clinicsStore = useClinicsStore();
-clinicsStore.fetchClinics();
+clinicsStore.fetchClinics(locale.value);
 
 // Полные результаты поиска
 const allFilteredSpecialties = ref<{ id: number; name: string }[]>([]);
@@ -157,8 +172,11 @@ function filterClinics(query: string) {
 	}
 	const lowerQuery = query.toLowerCase();
 	allFilteredClinics.value = clinicsStore.clinics
-		.filter((c) => c.name.toLowerCase().includes(lowerQuery))
-		.map((c) => ({ id: c.id, name: c.name }));
+		.filter((c) => {
+			const localizedClinicName = getLocalizedName(c, locale.value);
+			return localizedClinicName.toLowerCase().includes(lowerQuery);
+		})
+		.map((c) => ({ id: c.id, name: getLocalizedName(c, locale.value) }));
 }
 
 // AbortController для отмены предыдущих запросов

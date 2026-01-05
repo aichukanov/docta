@@ -7,12 +7,12 @@ const props = defineProps<{
 	clinic: Pick<ClinicData, 'address' | 'town' | 'postalCode' | 'cityId'>;
 }>();
 
-const { t: tCity } = useI18n(cityI18n);
+const { t } = useI18n(cityI18n);
 
 const addressLine = computed(() => {
 	return formatClinicAddressLine({
 		clinic: props.clinic,
-		cityName: tCity(`city_${props.clinic.cityId}`),
+		cityName: t(`city_${props.clinic.cityId}`),
 	});
 });
 </script>

@@ -90,5 +90,23 @@ export default {
 			MedicationsListDescriptionCity:
 				"{city}'de ada veya eczaneye göre ilaç arayın. Fiyatları ve konumları haritada karşılaştırın.",
 		},
+		'sr-cyrl': {
+			MedicationName: 'Име лијека',
+			InsertMedicationName: 'Унесите име лијека',
+			Medications: 'Лијекови у Црној Гори',
+			MedicationsCity: 'Лијекови у {city}',
+			MedicationsClinic: 'Лијекови у клиници {clinic} у Црној Гори',
+			MedicationsCityClinic: 'Лијекови у клиници {clinic} у {city}',
+
+			LoadingMedications: 'Учитавање лијекова...',
+			NoMedicationsFound: 'Лијекови нису пронађени',
+			ToSearchPage: 'На страницу претраге',
+			MedicationDescriptionCity: '{name} — доступно у {city}',
+			MedicationDescriptionDefault: '{name}',
+			MedicationsListDescription:
+				'Пронађите лекове у Црној Гори по имену, граду или апотеци. Упоредите цене и локације на мапи.',
+			MedicationsListDescriptionCity:
+				'Лекови у {city} — претрага по имену или апотеци. Упоредите цене и локације на мапи.',
+		},
 	},
 };

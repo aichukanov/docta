@@ -52,7 +52,7 @@ const { pending: isLoadingLabTests, data: labTestsList } = await useFetch(
 );
 
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics();
+await clinicsStore.fetchClinics(locale.value);
 
 const clinicName = computed(() => {
 	if (clinicIds.value.length === 1) {

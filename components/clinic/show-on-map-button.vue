@@ -29,6 +29,9 @@ const { t } = useI18n();
 	},
 	"tr": {
 		"ShowOnMap": "Haritada göster"
+	},
+	"sr-cyrl": {
+		"ShowOnMap": "Прикажи на мапи"
 	}
 }
 </i18n>

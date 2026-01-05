@@ -413,5 +413,142 @@ export default {
 			[`medication_${Medication.MORPHINE}`]: 'Morfin',
 			[`medication_${Medication.BACLOFEN}`]: 'Baklofen',
 		},
+		'sr-cyrl': {
+			// Обезболивающие и противовоспалительные
+			[`medication_${Medication.PARACETAMOL}`]: 'Парацетамол',
+			[`medication_${Medication.IBUPROFEN}`]: 'Ибупрофен',
+			[`medication_${Medication.ASPIRIN}`]: 'Аспирин',
+			[`medication_${Medication.DICLOFENAC}`]: 'Диклофенак',
+			[`medication_${Medication.KETOPROFEN}`]: 'Кетопрофен',
+			[`medication_${Medication.NAPROXEN}`]: 'Напроксен',
+			[`medication_${Medication.NIMESULIDE}`]: 'Нимесулид',
+			[`medication_${Medication.MELOXICAM}`]: 'Мелоксикам',
+
+			// Антибиотики
+			[`medication_${Medication.AMOXICILLIN}`]: 'Амоксицилин',
+			[`medication_${Medication.AZITHROMYCIN}`]: 'Азитромицин',
+			[`medication_${Medication.CIPROFLOXACIN}`]: 'Ципрофлоксацин',
+			[`medication_${Medication.CLARITHROMYCIN}`]: 'Кларитромицин',
+			[`medication_${Medication.DOXYCYCLINE}`]: 'Доксициклин',
+			[`medication_${Medication.CEPHALEXIN}`]: 'Цефалексин',
+			[`medication_${Medication.METRONIDAZOLE}`]: 'Метронидазол',
+			[`medication_${Medication.AMOXICILLIN_CLAVULANATE}`]:
+				'Амоксицилин + Клавуланат',
+
+			// Антигистаминные
+			[`medication_${Medication.LORATADINE}`]: 'Лоратадин',
+			[`medication_${Medication.CETIRIZINE}`]: 'Цетиризин',
+			[`medication_${Medication.DESLORATADINE}`]: 'Дезлоратадин',
+			[`medication_${Medication.FEXOFENADINE}`]: 'Фексофенадин',
+			[`medication_${Medication.LEVOCETIRIZINE}`]: 'Левоцетиризин',
+
+			// Препараты для ЖКТ
+			[`medication_${Medication.OMEPRAZOLE}`]: 'Омепразол',
+			[`medication_${Medication.PANTOPRAZOLE}`]: 'Пантопразол',
+			[`medication_${Medication.RANITIDINE}`]: 'Ранитидин',
+			[`medication_${Medication.DOMPERIDONE}`]: 'Домперидон',
+			[`medication_${Medication.METOCLOPRAMIDE}`]: 'Метоклопрамид',
+			[`medication_${Medication.LACTULOSE}`]: 'Лактулоза',
+			[`medication_${Medication.BISACODYL}`]: 'Бисакодил',
+			[`medication_${Medication.LOPERAMIDE}`]: 'Лоперамид',
+
+			// Сердечно-сосудистые препараты
+			[`medication_${Medication.AMLODIPINE}`]: 'Амлодипин',
+			[`medication_${Medication.ATENOLOL}`]: 'Атенолол',
+			[`medication_${Medication.BISOPROLOL}`]: 'Бизопролол',
+			[`medication_${Medication.ENALAPRIL}`]: 'Еналаприл',
+			[`medication_${Medication.LOSARTAN}`]: 'Лозартан',
+			[`medication_${Medication.VALSARTAN}`]: 'Валсартан',
+			[`medication_${Medication.ATORVASTATIN}`]: 'Аторвастатин',
+			[`medication_${Medication.ROSUVASTATIN}`]: 'Розувастатин',
+			[`medication_${Medication.SIMVASTATIN}`]: 'Симвастатин',
+			[`medication_${Medication.ASPIRIN_CARDIO}`]: 'Аспирин Кардио',
+			[`medication_${Medication.CLOPIDOGREL}`]: 'Клопидогрел',
+
+			// Препараты для дыхательной системы
+			[`medication_${Medication.SALBUTAMOL}`]: 'Салбутамол',
+			[`medication_${Medication.BUDESONIDE}`]: 'Будезонид',
+			[`medication_${Medication.FLUTICASONE}`]: 'Флутиказон',
+			[`medication_${Medication.AMBROXOL}`]: 'Амброксал',
+			[`medication_${Medication.BROMHEXINE}`]: 'Бромхексин',
+			[`medication_${Medication.ACETYLCYSTEINE}`]: 'Ацетилцистеин',
+
+			// Противодиабетические препараты
+			[`medication_${Medication.METFORMIN}`]: 'Метформин',
+			[`medication_${Medication.GLIBENCLAMIDE}`]: 'Глибенкламид',
+			[`medication_${Medication.GLICLAZIDE}`]: 'Гликлазид',
+			[`medication_${Medication.INSULIN_GLARGINE}`]: 'Инсулин Гларгин',
+			[`medication_${Medication.INSULIN_ASPART}`]: 'Инсулин Аспарт',
+
+			// Гормональные препараты
+			[`medication_${Medication.LEVOTHYROXINE}`]: 'Левотироксин',
+			[`medication_${Medication.PREDNISOLONE}`]: 'Преднизолон',
+			[`medication_${Medication.DEXAMETHASONE}`]: 'Дексаметазон',
+			[`medication_${Medication.HYDROCORTISONE}`]: 'Хидрокортизон',
+
+			// Витамины и минералы
+			[`medication_${Medication.VITAMIN_D3}`]: 'Витамин D3',
+			[`medication_${Medication.VITAMIN_B12}`]: 'Витамин B12',
+			[`medication_${Medication.FOLIC_ACID}`]: 'Фолна киселина',
+			[`medication_${Medication.IRON_SULFATE}`]: 'Сулфат гвожђа',
+			[`medication_${Medication.CALCIUM_CARBONATE}`]: 'Калцијум карбонат',
+			[`medication_${Medication.MAGNESIUM_B6}`]: 'Магнезијум B6',
+			[`medication_${Medication.MULTIVITAMIN}`]: 'Мултивитамин',
+
+			// Неврологические препараты
+			[`medication_${Medication.DIAZEPAM}`]: 'Диазепам',
+			[`medication_${Medication.ALPRAZOLAM}`]: 'Алпразолам',
+			[`medication_${Medication.GABAPENTIN}`]: 'Габапентин',
+			[`medication_${Medication.PREGABALIN}`]: 'Прегабалин',
+			[`medication_${Medication.CARBAMAZEPINE}`]: 'Карбамазепин',
+
+			// Антидепрессанты
+			[`medication_${Medication.SERTRALINE}`]: 'Сертралин',
+			[`medication_${Medication.ESCITALOPRAM}`]: 'Есциталопрам',
+			[`medication_${Medication.FLUOXETINE}`]: 'Флуоксетин',
+			[`medication_${Medication.VENLAFAXINE}`]: 'Венлафаксин',
+
+			// Противовирусные
+			[`medication_${Medication.ACYCLOVIR}`]: 'Ацикловир',
+			[`medication_${Medication.OSELTAMIVIR}`]: 'Осельтамивир',
+			[`medication_${Medication.VALACICLOVIR}`]: 'Валацикловир',
+
+			// Противогрибковые
+			[`medication_${Medication.FLUCONAZOLE}`]: 'Флуконазол',
+			[`medication_${Medication.CLOTRIMAZOLE}`]: 'Клотримазол',
+			[`medication_${Medication.TERBINAFINE}`]: 'Тербинафин',
+
+			// Препараты для мочеполовой системы
+			[`medication_${Medication.TAMSULOSIN}`]: 'Тамсулозин',
+			[`medication_${Medication.SILDENAFIL}`]: 'Силденафил',
+			[`medication_${Medication.TADALAFIL}`]: 'Тадалафил',
+			[`medication_${Medication.DROTAVERINE}`]: 'Дротаверин',
+
+			// Офтальмологические препараты
+			[`medication_${Medication.TIMOLOL}`]: 'Тимолол',
+			[`medication_${Medication.LATANOPROST}`]: 'Латанопрост',
+			[`medication_${Medication.ARTIFICIAL_TEARS}`]: 'Вјештачке сузе',
+
+			// Антисептики и дезинфицирующие средства
+			[`medication_${Medication.CHLORHEXIDINE}`]: 'Хлорхексидин',
+			[`medication_${Medication.HYDROGEN_PEROXIDE}`]: 'Водоник пероксид',
+			[`medication_${Medication.IODINE_SOLUTION}`]: 'Раствор јода',
+
+			// Другие препараты
+			[`medication_${Medication.INSULIN_NPH}`]: 'Инсулин NPH',
+			[`medication_${Medication.WARFARIN}`]: 'Варфарин',
+			[`medication_${Medication.ALLOPURINOL}`]: 'Алопуринол',
+			[`medication_${Medication.COLCHICINE}`]: 'Колхицин',
+			[`medication_${Medication.FUROSEMIDE}`]: 'Фуросемид',
+			[`medication_${Medication.SPIRONOLACTONE}`]: 'Спиронолактон',
+			[`medication_${Medication.DIGOXIN}`]: 'Дигоксин',
+			[`medication_${Medication.NITROGLYCERIN}`]: 'Нитроглицерин',
+			[`medication_${Medication.ISOSORBIDE_MONONITRATE}`]:
+				'Изосорбид мононитрат',
+			[`medication_${Medication.TRAMADOL}`]: 'Трамадол',
+			[`medication_${Medication.CODEINE}`]: 'Кодеин',
+			[`medication_${Medication.MORPHINE}`]: 'Морфин',
+			[`medication_${Medication.BACLOFEN}`]: 'Баклофен',
+		},
 	},
 };

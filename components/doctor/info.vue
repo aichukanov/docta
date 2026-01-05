@@ -16,38 +16,33 @@ const props = withDefaults(
 
 const { t, locale } = useI18n();
 
-const localizedName = computed(() => {
-	return props.service[`name_${locale.value}`] || props.service.name;
-});
-
-const originalName = computed(() => {
-	if (localizedName.value !== props.service.name) {
-		return props.service.name;
-	}
-	return null;
-});
-
 const doctorLink = computed(() => ({
 	name: 'doctors-doctorId',
 	params: { doctorId: props.service.id },
 	query: getRegionalQuery(locale.value),
 }));
+
+const avatarName = computed(() => {
+	return props.service.localName && props.service.localName.trim() !== ''
+		? props.service.localName
+		: props.service.name;
+});
 </script>
 
 <template>
 	<div class="doctor-wrapper" :class="{ 'doctor-wrapper__short': short }">
 		<DoctorAvatar
-			:name="props.service.name"
+			:name="avatarName"
 			:photoUrl="service.photoUrl"
 			:size="short ? 40 : 120"
 		/>
 		<div class="doctor-info">
 			<component :is="isMainHeading ? 'h1' : 'h3'" class="doctor-name">
 				<NuxtLink :to="doctorLink" class="doctor-name-link">
-					{{ localizedName }}
+					{{ service.name }}
 				</NuxtLink>
-				<div v-if="originalName && !short" class="doctor-original-name">
-					{{ originalName }}
+				<div v-if="service.localName && !short" class="doctor-original-name">
+					{{ service.localName }}
 				</div>
 				<div
 					v-if="service.professionalTitle && !short"
@@ -80,6 +75,9 @@ const doctorLink = computed(() => ({
 	},
 	"sr": {
 		"DoctorLanguages": "Doktor govori sledeće jezike:"
+	},
+	"sr-cyrl": {
+		"DoctorLanguages": "Доктор говори следеће језике:"
 	}
 }
 </i18n>

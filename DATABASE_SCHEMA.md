@@ -41,6 +41,8 @@ This file provides a structured reference of the MySQL database for the docta.me
 
 - `id` (int, PK, AI)
 - `name` (varchar(255))
+- `name_sr_cyrl` (varchar(255))
+- `name_ru` (varchar(255))
 - `city_id` (int, FK -> cities.id)
 - `address` (text)
 - `latitude` (decimal(10,8))
@@ -51,7 +53,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `instagram`, `facebook`, `whatsapp`, `telegram`, `viber` (varchar(255))
 - `town` (varchar(255))
 - `postal_code` (varchar(10))
-- `description_sr`, `description_ru`, `description_en`, `description_de`, `description_tr` (text): Localized descriptions.
+- `description_sr`, `description_ru`, `description_en`, `description_de`, `description_tr`, `description_sr_cyrl` (text): Localized descriptions.
 - `created_at`, `updated_at` (timestamp)
 
 ### `doctors`
@@ -68,8 +70,8 @@ This file provides a structured reference of the MySQL database for the docta.me
 ### `lab_tests`
 
 - `id` (int, PK, AI)
-- `name` (varchar(100), Unique): Test name in English (Key).
-- `name_sr`, `name_ru`, `name_de`, `name_tr` (varchar(255)): Localized names.
+- `name_en` (varchar(100), Unique): Test name in English (Key).
+- `name_sr`, `name_ru`, `name_de`, `name_tr`, `name_sr_cyrl` (varchar(255)): Localized names.
 - `created_at` (timestamp)
 
 ### `clinic_lab_tests`

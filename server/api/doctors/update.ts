@@ -50,7 +50,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 			const updateDoctorQuery = `
 				UPDATE doctors 
-				SET name = ?, name_ru = ?, professional_title = ?, email = ?, phone = ?, website = ?, 
+				SET name_sr = ?, name_ru = ?, professional_title = ?, email = ?, phone = ?, website = ?, 
 				    photo_url = ?, facebook = ?, instagram = ?, telegram = ?, whatsapp = ?, viber = ?
 				WHERE id = ?;
 			`;

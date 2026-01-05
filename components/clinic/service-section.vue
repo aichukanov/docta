@@ -81,6 +81,10 @@ const hasMoreItems = computed(() => totalCount.value > props.initialLimit);
 	"sr": {
 		"ShowMore": "Prikaži više ({count})",
 		"ShowLess": "Prikaži manje"
+	},
+	"sr-cyrl": {
+		"ShowMore": "Прикажи више ({count})",
+		"ShowLess": "Прикажи мање"
 	}
 }
 </i18n>

@@ -2,7 +2,7 @@ import { CityId } from '~/enums/cities';
 
 export default {
 	messages: {
-		en: {
+		'en': {
 			City: 'City',
 			AnyCity: 'Any city',
 			And: 'and',
@@ -25,7 +25,7 @@ export default {
 			[`city_${CityId.HERCEG_NOVI}`]: 'Herceg Novi',
 			[`city_${CityId.HERCEG_NOVI}_genitive`]: 'Herceg Novi',
 		},
-		ru: {
+		'ru': {
 			City: 'Город',
 			AnyCity: 'Любой город',
 			And: 'и',
@@ -48,7 +48,7 @@ export default {
 			[`city_${CityId.HERCEG_NOVI}`]: 'Херцег-Нови',
 			[`city_${CityId.HERCEG_NOVI}_genitive`]: 'Херцег-Нови',
 		},
-		sr: {
+		'sr': {
 			City: 'Grad',
 			AnyCity: 'Bilo koji grad',
 			And: 'i',
@@ -78,7 +78,7 @@ export default {
 			[`city_${CityId.HERCEG_NOVI}`]: 'Herceg Novi',
 			[`city_${CityId.HERCEG_NOVI}_genitive`]: 'Herceg Novi',
 		},
-		de: {
+		'de': {
 			City: 'Ort',
 			AnyCity: 'Beliebiger Ort',
 			And: 'und',
@@ -101,7 +101,7 @@ export default {
 			[`city_${CityId.HERCEG_NOVI}`]: 'Herceg Novi',
 			[`city_${CityId.HERCEG_NOVI}_genitive`]: 'Herceg Novi',
 		},
-		tr: {
+		'tr': {
 			City: 'Şehir',
 			AnyCity: 'Herhangi bir şehir',
 			And: 've',
@@ -123,6 +123,36 @@ export default {
 			[`city_${CityId.BAR}_genitive`]: "Bar'da",
 			[`city_${CityId.HERCEG_NOVI}`]: 'Herceg Novi',
 			[`city_${CityId.HERCEG_NOVI}_genitive`]: "Herceg Novi'de",
+		},
+		'sr-cyrl': {
+			City: 'Град',
+			AnyCity: 'Било који град',
+			And: 'и',
+			InMontenegro: 'Црна Гора',
+
+			[`city_${CityId.PODGORICA}`]: 'Подгорица',
+			[`city_${CityId.PODGORICA}_genitive`]: 'Подгорици',
+
+			[`city_${CityId.NIKSIC}`]: 'Никшић',
+			[`city_${CityId.NIKSIC}_genitive`]: 'Никшићу',
+
+			[`city_${CityId.BUDVA}`]: 'Будва',
+			[`city_${CityId.BUDVA}_genitive`]: 'Будви',
+
+			[`city_${CityId.TIVAT}`]: 'Тиват',
+			[`city_${CityId.TIVAT}_genitive`]: 'Тивту',
+
+			[`city_${CityId.ULCINJ}`]: 'Улцињ',
+			[`city_${CityId.ULCINJ}_genitive`]: 'Улцињу',
+
+			[`city_${CityId.KOTOR}`]: 'Котор',
+			[`city_${CityId.KOTOR}_genitive`]: 'Котору',
+
+			[`city_${CityId.BAR}`]: 'Бар',
+			[`city_${CityId.BAR}_genitive`]: 'Бару',
+
+			[`city_${CityId.HERCEG_NOVI}`]: 'Херцег Нови',
+			[`city_${CityId.HERCEG_NOVI}_genitive`]: 'Херцег Нови',
 		},
 	},
 };

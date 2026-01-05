@@ -1,18 +1,8 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { validateBody } from '~/common/validation';
+import type { ClinicPrice, LabTestNames } from '~/interfaces/clinic';
 
-interface ClinicPrice {
-	clinicId: number;
-	price?: number;
-	code?: string;
-}
-
-interface AddLabTestBody {
-	name: string;
-	name_sr: string;
-	name_ru?: string;
-	name_de?: string;
-	name_tr?: string;
+interface AddLabTestBody extends LabTestNames {
 	categoryIds?: number[];
 	clinicPrices?: ClinicPrice[];
 }

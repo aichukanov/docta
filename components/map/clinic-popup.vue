@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
+import { getLocalizedName } from '~/common/utils';
 import { hasContacts } from '../contacts/utils';
 import type { ClinicData, ClinicServiceItem } from '~/interfaces/clinic';
 
@@ -12,6 +13,10 @@ const { t, locale } = useI18n();
 const servicesListRef = ref<HTMLElement>();
 const pageNumber = ref(1);
 const PAGE_LIMIT = 20;
+
+const localizedName = computed(() =>
+	getLocalizedName(props.clinic, locale.value),
+);
 
 const clinicLink = computed(() => ({
 	name: 'clinics-clinicId',
@@ -37,7 +42,7 @@ watch(pageNumber, () => {
 	<div class="clinic-popup">
 		<div class="clinic-name-container">
 			<NuxtLink :to="clinicLink" class="clinic-name">
-				{{ clinic.name }}
+				{{ localizedName }}
 			</NuxtLink>
 		</div>
 
@@ -93,6 +98,10 @@ watch(pageNumber, () => {
 	"sr": {
 		"Contacts": "Kontakti",
 		"LanguageAssistance": "Klinika pruža pomoć na sledećim jezicima:"
+	},
+	"sr-cyrl": {
+		"Contacts": "Контакти",
+		"LanguageAssistance": "Клиника пружа помоћ на следећим језицима:"
 	}
 }
 </i18n>

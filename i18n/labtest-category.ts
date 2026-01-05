@@ -2,7 +2,7 @@ import { LabTestCategory } from '~/enums/labtest-category';
 
 export default {
 	messages: {
-		en: {
+		'en': {
 			Category: 'Category',
 			AnyCategory: 'Any category',
 			SearchCategory: 'Search category',
@@ -87,7 +87,7 @@ export default {
 			[`lab_test_category_${LabTestCategory.PROFILES_PANELS}_title`]:
 				'Test Profiles & Panels',
 		},
-		ru: {
+		'ru': {
 			Category: 'Категория',
 			AnyCategory: 'Любая категория',
 			SearchCategory: 'Поиск категории',
@@ -177,7 +177,7 @@ export default {
 			[`lab_test_category_${LabTestCategory.PROFILES_PANELS}_title`]:
 				'Профили и панели анализов',
 		},
-		sr: {
+		'sr': {
 			Category: 'Kategorija',
 			AnyCategory: 'Bilo koja kategorija',
 			SearchCategory: 'Pretraži kategoriju',
@@ -269,7 +269,7 @@ export default {
 			[`lab_test_category_${LabTestCategory.PROFILES_PANELS}_title`]:
 				'Profili i paneli analiza',
 		},
-		de: {
+		'de': {
 			Category: 'Kategorie',
 			AnyCategory: 'Beliebige Kategorie',
 			SearchCategory: 'Kategorie suchen',
@@ -354,7 +354,7 @@ export default {
 			[`lab_test_category_${LabTestCategory.PROFILES_PANELS}_title`]:
 				'Testprofile & Panels',
 		},
-		tr: {
+		'tr': {
 			Category: 'Kategori',
 			AnyCategory: 'Herhangi bir kategori',
 			SearchCategory: 'Kategori ara',
@@ -443,6 +443,147 @@ export default {
 				'Protein Elektroforezi Testleri',
 			[`lab_test_category_${LabTestCategory.PROFILES_PANELS}_title`]:
 				'Test Profilleri & Paneller',
+		},
+		'sr-cyrl': {
+			Category: 'Категорија',
+			AnyCategory: 'Било која категорија',
+			SearchCategory: 'Претражи категорију',
+			NotFound: 'Категорија није пронађена',
+
+			[`lab_test_category_${LabTestCategory.HEMATOLOGY}`]: 'Хематологија',
+			[`lab_test_category_${LabTestCategory.COAGULATION}`]: 'Коагулација',
+			[`lab_test_category_${LabTestCategory.BIOCHEMISTRY}`]: 'Биохемија',
+			[`lab_test_category_${LabTestCategory.ELECTROLYTES}`]: 'Електролити',
+			[`lab_test_category_${LabTestCategory.HORMONES}`]: 'Хормони',
+			[`lab_test_category_${LabTestCategory.TUMOR_MARKERS}`]:
+				'Туморски маркери',
+			[`lab_test_category_${LabTestCategory.INFLAMMATORY_MARKERS}`]:
+				'Маркери запаљења',
+			[`lab_test_category_${LabTestCategory.URINALYSIS}`]: 'Анализа урина',
+			[`lab_test_category_${LabTestCategory.STOOL_TESTS}`]: 'Анализа столице',
+			[`lab_test_category_${LabTestCategory.INFECTIOUS_DISEASES}`]:
+				'Инфективне болести',
+			[`lab_test_category_${LabTestCategory.DRUG_TESTING}`]:
+				'Тестирање на наркотике',
+			[`lab_test_category_${LabTestCategory.IMMUNOLOGY}`]: 'Имунологија',
+			[`lab_test_category_${LabTestCategory.ALLERGY_TESTS}`]:
+				'Алерголошки тестови',
+			[`lab_test_category_${LabTestCategory.AUTOIMMUNE_ANTIBODIES}`]:
+				'Аутоимуна антитела',
+			[`lab_test_category_${LabTestCategory.VITAMINS}`]: 'Витамини',
+			[`lab_test_category_${LabTestCategory.TRACE_ELEMENTS_HEAVY_METALS}`]:
+				'Олигоелементи и тешки метали',
+			[`lab_test_category_${LabTestCategory.THERAPEUTIC_DRUG_MONITORING}`]:
+				'Терапијско праћење лекова',
+			[`lab_test_category_${LabTestCategory.CARDIAC_MARKERS}`]:
+				'Срчани маркери',
+			[`lab_test_category_${LabTestCategory.PREGNANCY_FERTILITY}`]:
+				'Трудноћа и фертилитет',
+			[`lab_test_category_${LabTestCategory.GENETICS}`]: 'Генетика',
+			[`lab_test_category_${LabTestCategory.MICROBIOLOGY}`]: 'Микробиологија',
+			[`lab_test_category_${LabTestCategory.PCR_TESTS}`]: 'PCR тестови',
+			[`lab_test_category_${LabTestCategory.PROTEIN_ELECTROPHORESIS}`]:
+				'Електрофореза протеина',
+			[`lab_test_category_${LabTestCategory.PROFILES_PANELS}`]:
+				'Профили и панели',
+
+			// Полные формы для заголовков страниц
+			[`lab_test_category_${LabTestCategory.HEMATOLOGY}_title`]:
+				'Хематолошке анализе',
+			[`lab_test_category_${LabTestCategory.COAGULATION}_title`]:
+				'Анализе коагулације',
+			[`lab_test_category_${LabTestCategory.BIOCHEMISTRY}_title`]:
+				'Биохемијске анализе',
+			[`lab_test_category_${LabTestCategory.ELECTROLYTES}_title`]:
+				'Анализе електролита',
+			[`lab_test_category_${LabTestCategory.HORMONES}_title`]:
+				'Анализе хормона',
+			[`lab_test_category_${LabTestCategory.TUMOR_MARKERS}_title`]:
+				'Анализе туморских маркера',
+			[`lab_test_category_${LabTestCategory.INFLAMMATORY_MARKERS}_title`]:
+				'Анализе маркера запаљења',
+			[`lab_test_category_${LabTestCategory.URINALYSIS}_title`]:
+				'Анализе урина',
+			[`lab_test_category_${LabTestCategory.STOOL_TESTS}_title`]:
+				'Анализе столице',
+			[`lab_test_category_${LabTestCategory.INFECTIOUS_DISEASES}_title`]:
+				'Анализе инфективних болести',
+			[`lab_test_category_${LabTestCategory.DRUG_TESTING}_title`]:
+				'Тестирање на наркотике',
+			[`lab_test_category_${LabTestCategory.IMMUNOLOGY}_title`]:
+				'Имунолошке анализе',
+			[`lab_test_category_${LabTestCategory.ALLERGY_TESTS}_title`]:
+				'Алерголошки тестови',
+			[`lab_test_category_${LabTestCategory.AUTOIMMUNE_ANTIBODIES}_title`]:
+				'Анализе аутоимуних антитела',
+			[`lab_test_category_${LabTestCategory.VITAMINS}_title`]:
+				'Анализе витамина',
+			[`lab_test_category_${LabTestCategory.TRACE_ELEMENTS_HEAVY_METALS}_title`]:
+				'Анализе олигоелемената и тешких метала',
+			[`lab_test_category_${LabTestCategory.THERAPEUTIC_DRUG_MONITORING}_title`]:
+				'Терапијско праћење лекова',
+			[`lab_test_category_${LabTestCategory.CARDIAC_MARKERS}_title`]:
+				'Анализе срчаних маркера',
+			[`lab_test_category_${LabTestCategory.PREGNANCY_FERTILITY}_title`]:
+				'Анализе трудноће и фертилитета',
+			[`lab_test_category_${LabTestCategory.GENETICS}_title`]:
+				'Генетске анализе',
+			[`lab_test_category_${LabTestCategory.MICROBIOLOGY}_title`]:
+				'Микробиолошке анализе',
+			[`lab_test_category_${LabTestCategory.PCR_TESTS}_title`]: 'PCR тестови',
+			[`lab_test_category_${LabTestCategory.PROTEIN_ELECTROPHORESIS}_title`]:
+				'Анализе електрофорезе протеина',
+			[`lab_test_category_${LabTestCategory.PROFILES_PANELS}_title`]:
+				'Профили и панели анализа',
+
+			// Полные формы для заголовков страниц
+			[`lab_test_category_${LabTestCategory.HEMATOLOGY}_title`]:
+				'Хематолошке анализе',
+			[`lab_test_category_${LabTestCategory.COAGULATION}_title`]:
+				'Анализе коагулације',
+			[`lab_test_category_${LabTestCategory.BIOCHEMISTRY}_title`]:
+				'Биохемијске анализе',
+			[`lab_test_category_${LabTestCategory.ELECTROLYTES}_title`]:
+				'Анализе електролита',
+			[`lab_test_category_${LabTestCategory.HORMONES}_title`]:
+				'Анализе хормона',
+			[`lab_test_category_${LabTestCategory.TUMOR_MARKERS}_title`]:
+				'Анализе туморских маркера',
+			[`lab_test_category_${LabTestCategory.INFLAMMATORY_MARKERS}_title`]:
+				'Анализе маркера запаљења',
+			[`lab_test_category_${LabTestCategory.URINALYSIS}_title`]:
+				'Анализе урина',
+			[`lab_test_category_${LabTestCategory.STOOL_TESTS}_title`]:
+				'Анализе столице',
+			[`lab_test_category_${LabTestCategory.INFECTIOUS_DISEASES}_title`]:
+				'Анализе инфективних болести',
+			[`lab_test_category_${LabTestCategory.DRUG_TESTING}_title`]:
+				'Тестирање на наркотике',
+			[`lab_test_category_${LabTestCategory.IMMUNOLOGY}_title`]:
+				'Имунолошке анализе',
+			[`lab_test_category_${LabTestCategory.ALLERGY_TESTS}_title`]:
+				'Алерголошки тестови',
+			[`lab_test_category_${LabTestCategory.AUTOIMMUNE_ANTIBODIES}_title`]:
+				'Анализе аутоимуних антитела',
+			[`lab_test_category_${LabTestCategory.VITAMINS}_title`]:
+				'Анализе витамина',
+			[`lab_test_category_${LabTestCategory.TRACE_ELEMENTS_HEAVY_METALS}_title`]:
+				'Анализе олигоелемената и тешких метала',
+			[`lab_test_category_${LabTestCategory.THERAPEUTIC_DRUG_MONITORING}_title`]:
+				'Терапијско праћење лекова',
+			[`lab_test_category_${LabTestCategory.CARDIAC_MARKERS}_title`]:
+				'Анализе срчаних маркера',
+			[`lab_test_category_${LabTestCategory.PREGNANCY_FERTILITY}_title`]:
+				'Анализе трудноће и фертилитета',
+			[`lab_test_category_${LabTestCategory.GENETICS}_title`]:
+				'Анализе генетике',
+			[`lab_test_category_${LabTestCategory.MICROBIOLOGY}_title`]:
+				'Анализе микробиологије',
+			[`lab_test_category_${LabTestCategory.PCR_TESTS}_title`]: 'PCR тестови',
+			[`lab_test_category_${LabTestCategory.PROTEIN_ELECTROPHORESIS}_title`]:
+				'Анализе електрофорезе протеина',
+			[`lab_test_category_${LabTestCategory.PROFILES_PANELS}_title`]:
+				'Профили и панели анализа',
 		},
 	},
 };

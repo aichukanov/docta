@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { defaultLocale } from '~/composables/use-locale';
+import {
+	defaultLocale,
+	localeNames,
+	localeShortNames,
+} from '~/composables/use-locale';
 
 defineProps<{
 	smaller?: boolean;
@@ -55,7 +59,7 @@ function handleVisibleChange(visible: boolean) {
 			<el-option
 				v-for="value in locales"
 				:key="value"
-				:label="value.toUpperCase()"
+				:label="localeShortNames[value]"
 				:value="value"
 				role="option"
 				:aria-selected="locale === value"
@@ -86,6 +90,10 @@ function handleVisibleChange(visible: boolean) {
 	"sr": {
 		"LanguageSelector": "Izaberite jezik",
 		"Language": "Jezik"
+	},
+	"sr-cyrl": {
+		"LanguageSelector": "Изберете језик",
+		"Language": "Језик"
 	},
 	"de": {
 		"LanguageSelector": "Sprache auswählen",

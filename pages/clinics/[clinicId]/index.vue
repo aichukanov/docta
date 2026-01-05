@@ -12,6 +12,7 @@ import languageI18n from '~/i18n/language';
 import { combineI18nMessages } from '~/i18n/utils';
 import { LocationFilled } from '@element-plus/icons-vue';
 import { formatClinicAddressLine } from '~/common/clinic-address';
+import { getLocalizedName } from '~/common/utils';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -33,6 +34,7 @@ const { pending: isLoading, data: clinicData } = await useFetch(
 		method: 'POST',
 		body: computed(() => ({
 			clinicId: route.params.clinicId,
+			locale: locale.value,
 		})),
 	},
 );
@@ -63,6 +65,10 @@ const { data: medicalServicesList } = await useFetch('/api/services/list', {
 
 const isFound = computed(() => clinicData.value?.id != null);
 
+const localizedName = computed(() =>
+	getLocalizedName(clinicData.value, locale.value),
+);
+
 // Set HTTP 404 status for not found clinic
 if (import.meta.server && !isFound.value) {
 	setResponseStatus(useRequestEvent()!, 404);
@@ -73,8 +79,7 @@ const clinicDescription = computed(() => {
 		return '';
 	}
 
-	const desc = clinicData.value[`description_${locale.value}`];
-	return desc || clinicData.value.description_sr || '';
+	return clinicData.value.description || '';
 });
 
 const clinicDoctors = computed(() => doctorsList.value?.doctors || []);
@@ -99,7 +104,7 @@ const pageTitle = computed(() => {
 		return '';
 	}
 
-	return `${clinicData.value.name} | ${t(`city_${clinicData.value.cityId}`)}`;
+	return `${localizedName.value} | ${t(`city_${clinicData.value.cityId}`)}`;
 });
 
 const pageDescription = computed(() => {
@@ -107,7 +112,8 @@ const pageDescription = computed(() => {
 		return '';
 	}
 
-	const { name, languageIds } = clinicData.value;
+	const { languageIds } = clinicData.value;
+	const clinicName = localizedName.value;
 
 	const addressText = formatClinicAddressLine({
 		clinic: clinicData.value,
@@ -128,8 +134,8 @@ const pageDescription = computed(() => {
 		: '';
 
 	return addressText
-		? `${name}. ${addressText}.${languageInfo}`
-		: `${name}.${languageInfo}`;
+		? `${clinicName}. ${addressText}.${languageInfo}`
+		: `${clinicName}.${languageInfo}`;
 });
 
 function joinWithAnd(items: string[]): string {
@@ -210,7 +216,7 @@ watchEffect(() => {
 		<template #info="{ showClinicOnMap }">
 			<header v-if="clinicData" class="clinic-header">
 				<div class="clinic-main-info">
-					<h1 class="clinic-title">{{ clinicData.name }}</h1>
+					<h1 class="clinic-title">{{ localizedName }}</h1>
 
 					<address class="clinic-address">
 						<LocationFilled aria-hidden="true" />
@@ -470,6 +476,21 @@ watchEffect(() => {
 		"AriaShowOnMap": "Prikaži na mapi",
 		"AriaContactsSection": "Kontakti klinike",
 		"AriaClinicServices": "Usluge klinike"
+	},
+	"sr-cyrl": {
+		"ClinicLanguageAssistance": "Помоћ се пружа на {language} језику.",
+		"LanguageAssistance": "Клиника пружа помоћ на следећим језицима:",
+		"Contacts": "Контакти",
+		"MedicalServicesAtClinic": "Медицинске услуге",
+		"LabTestsAtClinic": "Лабораторијске анализе",
+		"MedicationsAtClinic": "Лекови",
+		"NoServicesAtClinic": "Тренутно немамо информације о услугама ове клинике",
+		"AriaClinicInfo": "Информације о клиници",
+		"AriaClinicAddress": "Адреса клинике",
+		"AriaClinicActions": "Акције клинике",
+		"AriaShowOnMap": "Прикажи на мапи",
+		"AriaContactsSection": "Контакти клинике",
+		"AriaClinicServices": "Услуге клинике"
 	}
 }
 </i18n>

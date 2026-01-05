@@ -8,6 +8,7 @@ export enum Language {
 	TR = 'tr',
 	IT = 'it',
 	FR = 'fr',
+	SR_CYRILLIC = 'sr-cyrl',
 }
 
 // ID из базы данных

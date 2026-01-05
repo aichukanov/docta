@@ -37,7 +37,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 		}
 
 		const addDoctorQuery = `
-			INSERT INTO doctors (name, name_ru, professional_title, email, phone, website, photo_url, facebook, instagram, telegram, whatsapp, viber)
+			INSERT INTO doctors (name_sr, name_ru, professional_title, email, phone, website, photo_url, facebook, instagram, telegram, whatsapp, viber)
 			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 		`;
 

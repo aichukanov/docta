@@ -34,6 +34,9 @@ const { t } = useI18n();
 	"sr": {
 		"Viber": "Viber"
 	},
+	"sr-cyrl": {
+		"Viber": "Viber"
+	},
 	"de": {
 		"Viber": "Viber"
 	},

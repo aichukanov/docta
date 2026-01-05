@@ -12,6 +12,8 @@
 </template>
 
 <script setup lang="ts">
+import { getLocalizedName } from '~/common/utils';
+
 const props = defineProps<{
 	value: number[];
 }>();
@@ -20,7 +22,7 @@ const emit = defineEmits<{
 	(e: 'update:value', value: number[]): void;
 }>();
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const clinicsStore = useClinicsStore();
 
@@ -33,7 +35,7 @@ const clinicIds = computed({
 
 const clinicOptions = computed(() => {
 	return clinicsStore.clinics.map((clinic) => ({
-		label: clinic.name,
+		label: getLocalizedName(clinic, locale.value),
 		value: clinic.id,
 	}));
 });
@@ -70,6 +72,12 @@ const clinicOptions = computed(() => {
 		"AnyClinic": "Bilo koja klinika",
 		"SearchClinic": "Unesite deo naziva klinike",
 		"NotFoundClinic": "Klinika nije pronađena"
+	},
+	"sr-cyrl": {
+		"Clinic": "Клиника",
+		"AnyClinic": "Било која клиника",
+		"SearchClinic": "Унесите део назива клинике",
+		"NotFoundClinic": "Клиника није пронађена"
 	}
 }
 </i18n>

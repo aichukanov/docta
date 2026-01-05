@@ -40,6 +40,9 @@ const { t } = useI18n();
 	"sr": {
 		"Telegram": "Telegram"
 	},
+	"sr-cyrl": {
+		"Telegram": "Telegram"
+	},
 	"de": {
 		"Telegram": "Telegram"
 	},

@@ -75,6 +75,10 @@ async function copyToClipboard(): Promise<void> {
 	"tr": {
 		"Copied": "Kopyalandı",
 		"CopyNumber": "Kopyala"
+	},
+	"sr-cyrl": {
+		"Copied": "Копирано",
+		"CopyNumber": "Копирај"
 	}
 }
 </i18n>

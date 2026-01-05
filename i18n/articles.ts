@@ -1,6 +1,6 @@
 export default {
 	messages: {
-		en: {
+		'en': {
 			Articles: 'Articles',
 			RussianSpeakingDoctorsTitle: 'Russian-speaking doctors in Montenegro',
 			RussianSpeakingDoctorsDescription:
@@ -10,7 +10,7 @@ export default {
 			ClinicsWithLanguageSupportDescription:
 				'A complete list of clinics in Montenegro offering consultations in different languages. Find a clinic with support in your native language.',
 		},
-		ru: {
+		'ru': {
 			Articles: 'Статьи',
 			RussianSpeakingDoctorsTitle: 'Русскоязычные врачи в Черногории',
 			RussianSpeakingDoctorsDescription:
@@ -20,7 +20,7 @@ export default {
 			ClinicsWithLanguageSupportDescription:
 				'Полный список клиник в Черногории с консультациями на разных языках. Найдите клинику с поддержкой на вашем родном языке.',
 		},
-		sr: {
+		'sr': {
 			Articles: 'Članci',
 			RussianSpeakingDoctorsTitle: 'Doktori koji govore ruski u Crnoj Gori',
 			RussianSpeakingDoctorsDescription:
@@ -30,7 +30,7 @@ export default {
 			ClinicsWithLanguageSupportDescription:
 				'Kompletan spisak klinika u Crnoj Gori koje nude konsultacije na različitim jezicima. Pronađite kliniku sa podrškom na vašem maternjem jeziku.',
 		},
-		de: {
+		'de': {
 			Articles: 'Artikel',
 			RussianSpeakingDoctorsTitle: 'Russischsprachige Ärzte in Montenegro',
 			RussianSpeakingDoctorsDescription:
@@ -40,7 +40,7 @@ export default {
 			ClinicsWithLanguageSupportDescription:
 				'Eine vollständige Liste der Kliniken in Montenegro, die Beratungen in verschiedenen Sprachen anbieten. Finden Sie eine Klinik mit Unterstützung in Ihrer Muttersprache.',
 		},
-		tr: {
+		'tr': {
 			Articles: 'Makaleler',
 			RussianSpeakingDoctorsTitle: "Karadağ'da Rusça konuşan doktorlar",
 			RussianSpeakingDoctorsDescription:
@@ -49,6 +49,16 @@ export default {
 				"Karadağ'da çok dilli destek sunan klinikler",
 			ClinicsWithLanguageSupportDescription:
 				"Karadağ'da farklı dillerde danışmanlık sunan kliniklerin tam listesi. Ana dilinizde destek sunan bir klinik bulun.",
+		},
+		'sr-cyrl': {
+			Articles: 'Чланци',
+			RussianSpeakingDoctorsTitle: 'Доктори који говоре руски у Црној Гори',
+			RussianSpeakingDoctorsDescription:
+				'Комплетан списак доктора у Црној Гори који говоре руски језик, груписан по медицинским специјалностима. Пронађите стручњака који говори руски у вашем граду.',
+			ClinicsWithLanguageSupportTitle:
+				'Клинике са вишејезичном подршком у Црној Гори',
+			ClinicsWithLanguageSupportDescription:
+				'Комплетан списак клиника у Црној Гори које нуде консултације на различитим језицима. Пронађите клинику са подршком на вашем матерњем језику.',
 		},
 	},
 };

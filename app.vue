@@ -9,7 +9,7 @@ import {
 } from './composables/use-locale';
 import { useSchemaOrgStore } from './stores/schema-org';
 import type { SchemaOrg } from './types/schema-org';
-import { SITE_URL, SITE_NAME } from './common/constants';
+import { SITE_URL, SITE_NAME, OG_IMAGE } from './common/constants';
 
 const { t, locale } = useI18n({ useScope: 'global' });
 const router = useRouter();
@@ -120,16 +120,14 @@ useHead({
 	link: alternateLinks,
 });
 
+const ogUrl = computed(() => `${SITE_URL}${route.fullPath}`);
+
 useSeoMeta({
-	title: () => t('ApplicationName'),
-	description: () => t('ApplicationName'),
 	applicationName: SITE_NAME,
-	viewport: 'width=device-width, initial-scale=1',
-	ogType: 'website',
 	ogSiteName: SITE_NAME,
-	ogLocale: () => locale.value,
-	ogUrl: () => `${SITE_URL}${route.fullPath}`,
-	ogImage: `${SITE_URL}/apple-touch-icon.png`,
+	ogLocale: locale,
+	ogUrl: ogUrl,
+	ogImage: OG_IMAGE,
 	twitterCard: 'summary',
 });
 </script>

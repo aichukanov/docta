@@ -32,7 +32,7 @@ export interface ClinicServiceItem {
 	id: number;
 	clinicIds: string;
 	name: string;
-	name_ru: string;
+	localName: string;
 }
 
 export interface ClinicPrice {
@@ -46,7 +46,7 @@ export interface ClinicServiceWithPrices extends ClinicServiceItem {
 }
 
 export interface LabTestItem extends ClinicServiceWithPrices {
-	localName?: string;
+	localName: string;
 	synonyms?: string[];
 	categoryIds?: number[];
 }

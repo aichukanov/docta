@@ -4,7 +4,7 @@ import {
 	buildClinicSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
-import { SITE_URL } from '~/common/constants';
+import { SITE_URL, OG_IMAGE } from '~/common/constants';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import clinicI18n from '~/i18n/clinic';
@@ -158,7 +158,6 @@ function joinWithAnd(items: string[]): string {
 
 const schemaOrgStore = useSchemaOrgStore();
 
-const ogImage = `${SITE_URL}/apple-touch-icon.png`;
 const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
 
 useSeoMeta({
@@ -166,12 +165,12 @@ useSeoMeta({
 	description: pageDescription,
 	ogTitle: pageTitle,
 	ogDescription: pageDescription,
-	ogImage: ogImage,
+	ogImage: OG_IMAGE,
 	ogType: 'business.business',
 	twitterCard: 'summary',
 	twitterTitle: pageTitle,
 	twitterDescription: pageDescription,
-	twitterImage: ogImage,
+	twitterImage: OG_IMAGE,
 	robots: robotsMeta,
 });
 

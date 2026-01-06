@@ -3,6 +3,7 @@ import { getRegionalQuery } from '~/common/url-utils';
 
 const props = defineProps<{
 	title?: string;
+	localName?: string;
 	itemId?: number;
 	clinicIds: string;
 	clinicPrices?: ClinicService[];
@@ -39,12 +40,17 @@ const detailsLink = computed(() => {
 <template>
 	<div class="list-card">
 		<slot>
-			<h3 v-if="title" class="list-card-header">
-				<NuxtLink v-if="detailsLink" :to="detailsLink" class="list-card-link">
-					{{ title }}
-				</NuxtLink>
-				<template v-else>{{ title }}</template>
-			</h3>
+			<div v-if="title" class="list-card-header-wrapper">
+				<h3 class="list-card-header">
+					<NuxtLink v-if="detailsLink" :to="detailsLink" class="list-card-link">
+						{{ title }}
+					</NuxtLink>
+					<template v-else>{{ title }}</template>
+				</h3>
+				<div v-if="localName" class="list-card-local-name">
+					{{ localName }}
+				</div>
+			</div>
 		</slot>
 
 		<div class="clinics-list">
@@ -69,6 +75,12 @@ const detailsLink = computed(() => {
 	transition: all var(--transition-base);
 	box-shadow: var(--shadow-xs);
 
+	.list-card-header-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-xs);
+	}
+
 	.list-card-header {
 		font-size: 1.25rem;
 		font-weight: 600;
@@ -85,6 +97,12 @@ const detailsLink = computed(() => {
 				text-decoration: underline;
 			}
 		}
+	}
+
+	.list-card-local-name {
+		font-size: var(--font-size-sm);
+		font-weight: var(--font-weight-medium);
+		color: var(--color-text-secondary);
 	}
 }
 

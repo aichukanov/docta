@@ -4,7 +4,7 @@ import {
 	buildDoctorSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
-import { SITE_URL } from '~/common/constants';
+import { SITE_URL, OG_IMAGE } from '~/common/constants';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import doctorI18n from '~/i18n/doctor';
@@ -32,12 +32,13 @@ const { pending: isLoading, data: doctorData } = await useFetch(
 		method: 'POST',
 		body: computed(() => ({
 			doctorId: route.params.doctorId,
+			locale: locale.value,
 		})),
 	},
 );
 
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics(locale.value);
+await clinicsStore.fetchClinics();
 
 const isFound = computed(() => doctorData.value?.id != null);
 
@@ -169,7 +170,7 @@ const ogImage = computed(() => {
 	if (doctorData.value?.photoUrl) {
 		return doctorData.value.photoUrl;
 	}
-	return `${SITE_URL}/apple-touch-icon.png`;
+	return OG_IMAGE;
 });
 
 const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));

@@ -1,5 +1,10 @@
 import { getConnection } from '~/server/common/db-mysql';
-import { parseClinicPricesData, getPriceOrderBySQL } from '~/server/common/utils';
+import {
+	parseClinicPricesData,
+	getPriceOrderBySQL,
+	processLocalizedNameForClinicOrDoctor,
+	getLocalizedNameField,
+} from '~/server/common/utils';
 import type { ClinicServiceList } from '~/interfaces/clinic';
 import {
 	validateBody,
@@ -32,9 +37,11 @@ export async function getMedicalServiceList(
 		clinicIds?: number[];
 		cityIds?: number[];
 		name?: string;
+		locale?: string;
 	} = {},
 ) {
 	const whereFilters = [];
+	const locale = body.locale || 'en';
 
 	if (body.clinicIds?.length > 0) {
 		whereFilters.push(`cms.clinic_id IN (${body.clinicIds.join(',')})`);
@@ -43,7 +50,10 @@ export async function getMedicalServiceList(
 		whereFilters.push(`cities.id IN (${body.cityIds.join(',')})`);
 	}
 	if (body.name && validateName(body, 'api/services/list')) {
-		whereFilters.push(`ms.name LIKE '%${body.name}%'`);
+		const nameField = getLocalizedNameField(locale) || 'name_en';
+		whereFilters.push(
+			`(ms.name_en LIKE '%${body.name}%' OR ms.${nameField} LIKE '%${body.name}%' OR ms.name_sr LIKE '%${body.name}%' OR ms.name_sr_cyrl LIKE '%${body.name}%' OR ms.name_ru LIKE '%${body.name}%' OR ms.name_de LIKE '%${body.name}%' OR ms.name_tr LIKE '%${body.name}%')`,
+		);
 	}
 
 	const whereFiltersString =
@@ -53,7 +63,12 @@ export async function getMedicalServiceList(
 	const medicalServicesQuery = `
 		SELECT DISTINCT
 			ms.id,
-			ms.name,
+			ms.name_en,
+			ms.name_sr,
+			ms.name_sr_cyrl,
+			ms.name_ru,
+			ms.name_de,
+			ms.name_tr,
 			GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${priceOrder}) as clinicIds,
 			GROUP_CONCAT(
 				DISTINCT CONCAT(cms.clinic_id, ':', COALESCE(cms.price, 0), ':', COALESCE(cms.code, ''))
@@ -64,20 +79,38 @@ export async function getMedicalServiceList(
 		LEFT JOIN clinics ON cms.clinic_id = clinics.id
 		LEFT JOIN cities ON clinics.city_id = cities.id
 		${whereFiltersString}
-		GROUP BY ms.id, ms.name 
-		ORDER BY ms.name ASC;
+		GROUP BY ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, ms.name_ru, ms.name_de, ms.name_tr 
+		ORDER BY ms.name_en ASC;
 	`;
 
 	const connection = await getConnection();
 	const [medicalServiceRows] = await connection.execute(medicalServicesQuery);
 	await connection.end();
 
-	const items = medicalServiceRows.map((row) => ({
-		id: row.id,
-		name: row.name,
-		clinicIds: row.clinicIds,
-		clinicPrices: parseClinicPricesData(row.clinicPricesData),
-	}));
+	const items = medicalServiceRows.map((row: any) => {
+		const { name, localName } = processLocalizedNameForClinicOrDoctor(
+			row,
+			locale,
+		);
+		// Удаляем избыточные поля локализации
+		const {
+			name_en,
+			name_sr,
+			name_sr_cyrl,
+			name_ru,
+			name_de,
+			name_tr,
+			...rest
+		} = row;
+		return {
+			...rest,
+			id: row.id,
+			name: name || '',
+			localName: localName || '',
+			clinicIds: row.clinicIds,
+			clinicPrices: parseClinicPricesData(row.clinicPricesData),
+		};
+	});
 
 	return {
 		items,

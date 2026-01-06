@@ -3,7 +3,7 @@ import {
 	buildDoctorListSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
-import { SITE_URL } from '~/common/constants';
+import { SITE_URL, OG_IMAGE } from '~/common/constants';
 import { combineI18nMessages } from '~/i18n/utils';
 
 import breadcrumbI18n from '~/i18n/breadcrumb';
@@ -47,7 +47,7 @@ const filterList = computed(() => ({
 const filterQuery = computed(() => getRouteParams().query);
 
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics(locale.value);
+await clinicsStore.fetchClinics();
 
 const clinicName = computed(() => {
 	if (clinicIds.value.length === 1) {
@@ -197,18 +197,16 @@ const pageDescription = computed(() => {
 const schemaOrgStore = useSchemaOrgStore();
 const route = useRoute();
 
-const ogImage = `${SITE_URL}/apple-touch-icon.png`;
-
 useSeoMeta({
 	title: pageTitleWithCount,
 	description: pageDescription,
 	ogTitle: pageTitleWithCount,
 	ogDescription: pageDescription,
-	ogImage: ogImage,
+	ogImage: OG_IMAGE,
 	twitterCard: 'summary',
 	twitterTitle: pageTitleWithCount,
 	twitterDescription: pageDescription,
-	twitterImage: ogImage,
+	twitterImage: OG_IMAGE,
 });
 const isFiltered = computed(() => {
 	return (

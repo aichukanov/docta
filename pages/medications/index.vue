@@ -4,13 +4,13 @@ import {
 	buildEntityListSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
-import { SITE_URL } from '~/common/constants';
+import { SITE_URL, OG_IMAGE } from '~/common/constants';
 
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import medicationI18n from '~/i18n/medication';
 
-const { t } = useI18n({
+const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([breadcrumbI18n, cityI18n, medicationI18n]),
 });
@@ -24,6 +24,7 @@ const filterList = computed(() => ({
 	cityIds: cityIds.value,
 	clinicIds: clinicIds.value,
 	name: name.value,
+	locale: locale.value,
 }));
 
 const filterQuery = computed(() => getRouteParams().query);
@@ -85,22 +86,19 @@ const pageDescription = computed(() => {
 });
 
 // Schema.org for medications list
-const { locale } = useI18n();
 const schemaOrgStore = useSchemaOrgStore();
 const route = useRoute();
-
-const ogImage = `${SITE_URL}/apple-touch-icon.png`;
 
 useSeoMeta({
 	title: pageTitleWithCount,
 	description: pageDescription,
 	ogTitle: pageTitleWithCount,
 	ogDescription: pageDescription,
-	ogImage: ogImage,
+	ogImage: OG_IMAGE,
 	twitterCard: 'summary',
 	twitterTitle: pageTitleWithCount,
 	twitterDescription: pageDescription,
-	twitterImage: ogImage,
+	twitterImage: OG_IMAGE,
 });
 const isFiltered = computed(() => {
 	return cityIds.value.length > 0 || clinicIds.value.length > 0 || !!name.value;

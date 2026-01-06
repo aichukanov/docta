@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
 import { buildBreadcrumbsSchema } from '~/common/schema-org-builders';
-import { PROJECT_CONTACTS, SITE_URL, SITE_NAME } from '~/common/constants';
+import {
+	PROJECT_CONTACTS,
+	SITE_URL,
+	SITE_NAME,
+	OG_IMAGE,
+} from '~/common/constants';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import { combineI18nMessages } from '~/i18n/utils';
 
@@ -17,13 +22,21 @@ const pageDescription = computed(() =>
 	t('Description', { siteName: SITE_NAME }),
 );
 
+const schemaOrgStore = useSchemaOrgStore();
+const aboutUrl = computed(() => `${SITE_URL}${route.path}`);
+
 useSeoMeta({
 	title: pageTitle,
 	description: pageDescription,
+	ogTitle: pageTitle,
+	ogDescription: pageDescription,
+	ogImage: OG_IMAGE,
+	ogUrl: aboutUrl,
+	twitterCard: 'summary',
+	twitterTitle: pageTitle,
+	twitterDescription: pageDescription,
+	twitterImage: OG_IMAGE,
 });
-
-const schemaOrgStore = useSchemaOrgStore();
-const aboutUrl = computed(() => `${SITE_URL}${route.path}`);
 
 watchEffect(() => {
 	schemaOrgStore.setSchemas([

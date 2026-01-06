@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SITE_URL } from '~/common/constants';
+import { SITE_URL, OG_IMAGE } from '~/common/constants';
 import { getRegionalQuery } from '~/common/url-utils';
 import { getLocalizedName } from '~/common/utils';
 import {
@@ -59,14 +59,15 @@ const pageUrl = `${SITE_URL}/articles/russian-speaking-doctors-in-montenegro`;
 
 // 2. Fetch and prepare doctor data
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics(locale.value);
+await clinicsStore.fetchClinics();
 
 const { data: doctorsData } = await useFetch('/api/doctors/list', {
 	method: 'POST',
-	body: {
+	body: computed(() => ({
 		languageIds: [String(LanguageId.RU)],
 		onlyDoctorLanguages: true,
-	},
+		locale: locale.value,
+	})),
 });
 
 const doctors = computed(() => doctorsData.value?.doctors || []);
@@ -103,13 +104,21 @@ const groupedDoctors = computed(() => {
 });
 
 // 3. Set SEO and Schema.org
+const pageTitle = computed(() => t('RussianSpeakingDoctorsTitle'));
+const pageDescription = computed(() => t('RussianSpeakingDoctorsDescription'));
+const articleImage = `${SITE_URL}/img/articles/russian-speaking-doctors.webp`;
+
 useSeoMeta({
-	title: t('RussianSpeakingDoctorsTitle'),
-	description: t('RussianSpeakingDoctorsDescription'),
-	ogTitle: t('RussianSpeakingDoctorsTitle'),
-	ogDescription: t('RussianSpeakingDoctorsDescription'),
-	twitterTitle: t('RussianSpeakingDoctorsTitle'),
-	twitterDescription: t('RussianSpeakingDoctorsDescription'),
+	title: pageTitle,
+	description: pageDescription,
+	ogTitle: pageTitle,
+	ogDescription: pageDescription,
+	ogImage: articleImage,
+	ogUrl: pageUrl,
+	twitterCard: 'summary',
+	twitterTitle: pageTitle,
+	twitterDescription: pageDescription,
+	twitterImage: articleImage,
 });
 
 watchEffect(() => {
@@ -120,7 +129,7 @@ watchEffect(() => {
 			locale: locale.value,
 			title: t('RussianSpeakingDoctorsTitle'),
 			description: t('RussianSpeakingDoctorsDescription'),
-			image: `${SITE_URL}/img/articles/russian-speaking-doctors.webp`,
+			image: articleImage,
 			datePublished: '2025-12-31',
 			dateModified: '2025-12-31',
 			lastReviewed: '2025-12-31',
@@ -168,11 +177,7 @@ watchEffect(() => {
 							class="doctor-item"
 						>
 							<NuxtLink :to="getDoctorUrl(doctor.id)" class="doctor-name">
-								{{
-									locale === 'ru' && doctor.name_ru
-										? doctor.name_ru
-										: doctor.name
-								}}
+								{{ getLocalizedName(doctor, locale) }}
 							</NuxtLink>
 							<ul class="clinics-list">
 								<li

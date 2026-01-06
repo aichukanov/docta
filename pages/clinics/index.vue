@@ -4,7 +4,7 @@ import {
 	buildEntityListSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
-import { SITE_URL } from '~/common/constants';
+import { SITE_URL, OG_IMAGE } from '~/common/constants';
 import { getLocalizedName } from '~/common/utils';
 import type { ClinicData } from '~/interfaces/clinic';
 
@@ -118,18 +118,16 @@ const pageDescription = computed(() => {
 const schemaOrgStore = useSchemaOrgStore();
 const route = useRoute();
 
-const ogImage = `${SITE_URL}/apple-touch-icon.png`;
-
 useSeoMeta({
 	title: pageTitleWithCount,
 	description: pageDescription,
 	ogTitle: pageTitleWithCount,
 	ogDescription: pageDescription,
-	ogImage: ogImage,
+	ogImage: OG_IMAGE,
 	twitterCard: 'summary',
 	twitterTitle: pageTitleWithCount,
 	twitterDescription: pageDescription,
-	twitterImage: ogImage,
+	twitterImage: OG_IMAGE,
 });
 const isFiltered = computed(() => {
 	return (

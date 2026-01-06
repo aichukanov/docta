@@ -647,7 +647,7 @@ export function buildMedicalTestSchema(options: {
 	siteUrl: string;
 	id: number;
 	name: string;
-	originalName?: string;
+	localName?: string;
 	synonyms?: string[];
 	locale: string;
 	pageTitle: string;
@@ -658,10 +658,10 @@ export function buildMedicalTestSchema(options: {
 }): SchemaOrg[] {
 	const testUrl = `${options.siteUrl}/labtests/${options.id}`;
 
-	// Build alternateName from originalName and synonyms
+	// Build alternateName from localName and synonyms
 	const alternateNames: string[] = [];
-	if (options.originalName && options.originalName !== options.name) {
-		alternateNames.push(options.originalName);
+	if (options.localName && options.localName !== options.name) {
+		alternateNames.push(options.localName);
 	}
 	if (options.synonyms?.length) {
 		alternateNames.push(...options.synonyms);

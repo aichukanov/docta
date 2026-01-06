@@ -111,7 +111,7 @@ const inputRef = ref<HTMLInputElement | null>(null);
 
 // Store клиник (загружается один раз)
 const clinicsStore = useClinicsStore();
-clinicsStore.fetchClinics(locale.value);
+clinicsStore.fetchClinics();
 
 // Полные результаты поиска
 const allFilteredSpecialties = ref<{ id: number; name: string }[]>([]);
@@ -127,12 +127,7 @@ const currentQuery = ref('');
 const shownSpecialties = computed(() =>
 	allFilteredSpecialties.value.slice(0, 5),
 );
-const shownDoctors = computed(() =>
-	allDoctors.value.slice(0, 5).map((d) => ({
-		id: d.id,
-		name: d[`name_${locale.value}`] || d.name,
-	})),
-);
+const shownDoctors = computed(() => allDoctors.value.slice(0, 5));
 const shownClinics = computed(() => allFilteredClinics.value.slice(0, 5));
 const shownMedications = computed(() =>
 	allMedications.value.slice(0, 5).map((m) => ({ id: m.id, name: m.name })),
@@ -207,12 +202,12 @@ async function searchEntities(query: string) {
 		const [doctorsRes, medicationsRes, labTestsRes] = await Promise.all([
 			$fetch('/api/doctors/list', {
 				method: 'POST',
-				body: { name: query },
+				body: { name: query, locale: locale.value },
 				signal,
 			}),
 			$fetch('/api/medications/list', {
 				method: 'POST',
-				body: { name: query },
+				body: { name: query, locale: locale.value },
 				signal,
 			}),
 			$fetch('/api/labtests/list', {

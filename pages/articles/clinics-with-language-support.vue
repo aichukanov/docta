@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SITE_URL } from '~/common/constants';
+import { SITE_URL, OG_IMAGE } from '~/common/constants';
 import { getRegionalQuery } from '~/common/url-utils';
 import { getLocalizedName } from '~/common/utils';
 import {
@@ -54,7 +54,7 @@ const pageUrl = `${SITE_URL}/articles/clinics-with-language-support`;
 
 // 2. Fetch clinic data
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics(locale.value);
+await clinicsStore.fetchClinics();
 
 // Languages to display (excluding Serbian as it's the default)
 const displayLanguages = [
@@ -102,13 +102,23 @@ const totalClinicsCount = computed(() => {
 });
 
 // 3. Set SEO and Schema.org
+const pageTitle = computed(() => t('ClinicsWithLanguageSupportTitle'));
+const pageDescription = computed(() =>
+	t('ClinicsWithLanguageSupportDescription'),
+);
+const articleImage = `${SITE_URL}/img/articles/clinics-with-language-support.webp`;
+
 useSeoMeta({
-	title: t('ClinicsWithLanguageSupportTitle'),
-	description: t('ClinicsWithLanguageSupportDescription'),
-	ogTitle: t('ClinicsWithLanguageSupportTitle'),
-	ogDescription: t('ClinicsWithLanguageSupportDescription'),
-	twitterTitle: t('ClinicsWithLanguageSupportTitle'),
-	twitterDescription: t('ClinicsWithLanguageSupportDescription'),
+	title: pageTitle,
+	description: pageDescription,
+	ogTitle: pageTitle,
+	ogDescription: pageDescription,
+	ogImage: articleImage,
+	ogUrl: pageUrl,
+	twitterCard: 'summary',
+	twitterTitle: pageTitle,
+	twitterDescription: pageDescription,
+	twitterImage: articleImage,
 });
 
 watchEffect(() => {

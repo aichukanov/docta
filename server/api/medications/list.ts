@@ -2,6 +2,8 @@ import { getConnection } from '~/server/common/db-mysql';
 import {
 	parseClinicPricesData,
 	getPriceOrderBySQL,
+	processLocalizedNameForClinicOrDoctor,
+	getLocalizedNameField,
 } from '~/server/common/utils';
 import type { ClinicServiceList } from '~/interfaces/clinic';
 import {
@@ -35,9 +37,11 @@ export async function getMedicationList(
 		clinicIds?: number[];
 		cityIds?: number[];
 		name?: string;
+		locale?: string;
 	} = {},
 ) {
 	const whereFilters = [];
+	const locale = body.locale || 'en';
 
 	if (body.clinicIds?.length > 0) {
 		whereFilters.push(`cm.clinic_id IN (${body.clinicIds.join(',')})`);
@@ -46,7 +50,10 @@ export async function getMedicationList(
 		whereFilters.push(`cities.id IN (${body.cityIds.join(',')})`);
 	}
 	if (body.name && validateName(body, 'api/medications/list')) {
-		whereFilters.push(`m.name LIKE '%${body.name}%'`);
+		const nameField = getLocalizedNameField(locale) || 'name_en';
+		whereFilters.push(
+			`(m.name_en LIKE '%${body.name}%' OR m.${nameField} LIKE '%${body.name}%' OR m.name_sr LIKE '%${body.name}%' OR m.name_sr_cyrl LIKE '%${body.name}%' OR m.name_ru LIKE '%${body.name}%' OR m.name_de LIKE '%${body.name}%' OR m.name_tr LIKE '%${body.name}%')`,
+		);
 	}
 
 	const whereFiltersString =
@@ -56,7 +63,12 @@ export async function getMedicationList(
 	const medicationsQuery = `
 		SELECT DISTINCT
 			m.id,
-			m.name,
+			m.name_en,
+			m.name_sr,
+			m.name_sr_cyrl,
+			m.name_ru,
+			m.name_de,
+			m.name_tr,
 			GROUP_CONCAT(DISTINCT cm.clinic_id ORDER BY ${priceOrder}) as clinicIds,
 			GROUP_CONCAT(
 				DISTINCT CONCAT(cm.clinic_id, ':', COALESCE(cm.price, 0), ':', COALESCE(cm.code, ''))
@@ -67,20 +79,38 @@ export async function getMedicationList(
 		LEFT JOIN clinics ON cm.clinic_id = clinics.id
 		LEFT JOIN cities ON clinics.city_id = cities.id
 		${whereFiltersString}
-		GROUP BY m.id, m.name 
-		ORDER BY m.name ASC;
+		GROUP BY m.id, m.name_en, m.name_sr, m.name_sr_cyrl, m.name_ru, m.name_de, m.name_tr 
+		ORDER BY m.name_en ASC;
 	`;
 
 	const connection = await getConnection();
 	const [medicationRows] = await connection.execute(medicationsQuery);
 	await connection.end();
 
-	const items = medicationRows.map((row) => ({
-		id: row.id,
-		name: row.name,
-		clinicIds: row.clinicIds,
-		clinicPrices: parseClinicPricesData(row.clinicPricesData),
-	}));
+	const items = medicationRows.map((row: any) => {
+		const { name, localName } = processLocalizedNameForClinicOrDoctor(
+			row,
+			locale,
+		);
+		// Удаляем избыточные поля локализации
+		const {
+			name_en,
+			name_sr,
+			name_sr_cyrl,
+			name_ru,
+			name_de,
+			name_tr,
+			...rest
+		} = row;
+		return {
+			...rest,
+			id: row.id,
+			name: name || '',
+			localName: localName || '',
+			clinicIds: row.clinicIds,
+			clinicPrices: parseClinicPricesData(row.clinicPricesData),
+		};
+	});
 
 	return {
 		items,

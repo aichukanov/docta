@@ -2026,10 +2026,10 @@ export default {
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Кардиолог',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Кардиолози',
 
-			[`specialty_${DoctorSpecialty.INTERNAL_MEDICINE}`]: 'Interna medicina',
-			[`doctor_${DoctorSpecialty.INTERNAL_MEDICINE}`]: 'Lekar interne medicine',
+			[`specialty_${DoctorSpecialty.INTERNAL_MEDICINE}`]: 'Интерна медицина',
+			[`doctor_${DoctorSpecialty.INTERNAL_MEDICINE}`]: 'Лекар интерне медицине',
 			[`doctors_${DoctorSpecialty.INTERNAL_MEDICINE}`]:
-				'Lekari interne medicine',
+				'Лекари интерне медицине',
 
 			[`doctor_${DoctorSpecialty.GENERAL_SURGERY}`]: 'Хирург',
 			[`doctors_${DoctorSpecialty.GENERAL_SURGERY}`]: 'Хирурзи',

@@ -7,7 +7,7 @@ import {
 	buildDrugSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
-import { SITE_URL } from '~/common/constants';
+import { SITE_URL, OG_IMAGE } from '~/common/constants';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -23,12 +23,13 @@ const { pending: isLoading, data: medicationData } = await useFetch(
 		method: 'POST',
 		body: computed(() => ({
 			medicationId: route.params.medicationId,
+			locale: locale.value,
 		})),
 	},
 );
 
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics(locale.value);
+await clinicsStore.fetchClinics();
 
 const isFound = computed(() => medicationData.value?.id != null);
 
@@ -95,7 +96,6 @@ const pageDescription = computed(() => {
 // Schema.org for medication details
 const schemaOrgStore = useSchemaOrgStore();
 
-const ogImage = `${SITE_URL}/apple-touch-icon.png`;
 const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
 
 useSeoMeta({
@@ -103,12 +103,12 @@ useSeoMeta({
 	description: pageDescription,
 	ogTitle: pageTitle,
 	ogDescription: pageDescription,
-	ogImage: ogImage,
+	ogImage: OG_IMAGE,
 	ogType: 'article',
 	twitterCard: 'summary',
 	twitterTitle: pageTitle,
 	twitterDescription: pageDescription,
-	twitterImage: ogImage,
+	twitterImage: OG_IMAGE,
 	robots: robotsMeta,
 });
 
@@ -157,6 +157,9 @@ watchEffect(() => {
 		<template #info v-if="medicationData">
 			<div class="medication-header">
 				<h1 class="medication-name">{{ medicationData.name }}</h1>
+				<div v-if="medicationData.localName" class="medication-local-name">
+					{{ medicationData.localName }}
+				</div>
 			</div>
 		</template>
 	</DetailsPage>
@@ -176,6 +179,13 @@ watchEffect(() => {
 		color: #1f2937;
 		margin: 0;
 		font-family: system-ui, -apple-system, sans-serif;
+	}
+
+	.medication-local-name {
+		font-size: var(--font-size-md);
+		font-weight: var(--font-weight-medium);
+		color: var(--color-text-secondary);
+		margin-top: var(--spacing-xs);
 	}
 }
 </style>

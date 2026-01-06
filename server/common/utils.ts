@@ -120,21 +120,26 @@ export function processLocalizedNameForClinicOrDoctor(
 export function processLocalizedNameForLabTest(
 	row: any,
 	locale?: string,
-): { name: string; localName?: string } {
+): { name: string; localName: string } {
 	const normalizedLocale = locale || 'en';
 
 	// Для сербской локали возвращаем только сербскую латиницу
 	if (normalizedLocale === 'sr') {
+		const name = row.name_sr || row.name_en || '';
 		return {
-			name: row.name_sr || row.name_en || '',
+			name,
+			localName: '',
 		};
 	}
 
 	// Для сербской кириллицы возвращаем только кириллицу
 	if (normalizedLocale === 'sr-cyrl') {
+		const localizedName = row.name_sr_cyrl || row.name_sr || row.name_en || '';
+		const localName = row.name_sr || row.name_en || '';
+
 		return {
-			name: row.name_sr_cyrl || row.name_sr || row.name_en || '',
-			localName: row.name_sr || row.name_en || undefined,
+			name: localizedName,
+			localName: localizedName !== localName && localName ? localName : '',
 		};
 	}
 
@@ -143,16 +148,9 @@ export function processLocalizedNameForLabTest(
 	let localizedName = row[nameField] || row.name_sr || row.name_en || '';
 	const localName = row.name_sr || row.name_en || '';
 
-	// Если локализованное имя отличается от оригинального, возвращаем оба
-	if (localizedName !== localName && localName) {
-		return {
-			name: localizedName,
-			localName: localName,
-		};
-	}
-
 	return {
 		name: localizedName,
+		localName: localizedName !== localName && localName ? localName : '',
 	};
 }
 

@@ -82,12 +82,12 @@ export default defineEventHandler(
 			const synonyms = (synonymRows as any[]).map((r) => r.another_name);
 
 			// Обрабатываем локализованные имена
-			const { name, originalName } = processLocalizedNameForLabTest(row, locale);
+			const { name, localName } = processLocalizedNameForLabTest(row, locale);
 
 			return {
 				id: row.id,
-				name,
-				originalName,
+				name: name || '',
+				localName: localName || '',
 				synonyms,
 				clinicIds: row.clinicIds,
 				clinicPrices: parseClinicPricesData(row.clinicPricesData),

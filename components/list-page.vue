@@ -7,7 +7,7 @@ import { LanguageId } from '~/enums/language';
 interface ListItem {
 	id: number;
 	name?: string;
-	originalName?: string;
+	localName?: string;
 	synonyms?: string[];
 	clinicIds?: string;
 	clinicPrices?: ClinicPrice[];
@@ -78,7 +78,7 @@ const robotsMeta = computed(() => {
 	return undefined;
 });
 
-await clinicsStore.fetchClinics(locale.value);
+await clinicsStore.fetchClinics();
 
 useSeoMeta({
 	title: props.pageTitle,
@@ -166,6 +166,7 @@ onMounted(async () => {
 								>
 									<ListCard
 										:title="item.name"
+										:localName="item.localName"
 										:itemId="item.id"
 										:clinicIds="item.clinicIds"
 										:clinicPrices="item.clinicPrices"

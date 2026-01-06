@@ -2,6 +2,7 @@ import { getConnection } from '~/server/common/db-mysql';
 import {
 	parseClinicPricesData,
 	getPriceOrderBySQL,
+	processLocalizedNameForClinicOrDoctor,
 } from '~/server/common/utils';
 import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
@@ -21,11 +22,18 @@ export default defineEventHandler(
 				return null;
 			}
 
+			const locale = body.locale || 'en';
+
 			const priceOrder = getPriceOrderBySQL();
 			const medicationQuery = `
 			SELECT DISTINCT
 				m.id,
-				m.name,
+				m.name_en,
+				m.name_sr,
+				m.name_sr_cyrl,
+				m.name_ru,
+				m.name_de,
+				m.name_tr,
 				(
 					SELECT GROUP_CONCAT(clinic_id ORDER BY ${priceOrder})
 					FROM clinic_medications
@@ -41,7 +49,7 @@ export default defineEventHandler(
 				) as clinicPricesData
 			FROM medications m
 			WHERE m.id = ?
-			GROUP BY m.id, m.name;
+			GROUP BY m.id, m.name_en, m.name_sr, m.name_sr_cyrl, m.name_ru, m.name_de, m.name_tr;
 		`;
 
 			const connection = await getConnection();
@@ -55,9 +63,27 @@ export default defineEventHandler(
 				return null;
 			}
 
+			// Обрабатываем локализованные имена
+			const { name, localName } = processLocalizedNameForClinicOrDoctor(
+				row,
+				locale,
+			);
+			// Удаляем избыточные поля локализации
+			const {
+				name_en,
+				name_sr,
+				name_sr_cyrl,
+				name_ru,
+				name_de,
+				name_tr,
+				...rest
+			} = row;
+
 			return {
+				...rest,
 				id: row.id,
-				name: row.name,
+				name,
+				localName,
 				clinicIds: row.clinicIds,
 				clinicPrices: parseClinicPricesData(row.clinicPricesData),
 			};

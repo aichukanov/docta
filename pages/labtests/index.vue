@@ -4,7 +4,7 @@ import {
 	buildEntityListSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
-import { SITE_URL } from '~/common/constants';
+import { SITE_URL, OG_IMAGE } from '~/common/constants';
 
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
@@ -52,7 +52,7 @@ const { pending: isLoadingLabTests, data: labTestsList } = await useFetch(
 );
 
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics(locale.value);
+await clinicsStore.fetchClinics();
 
 const clinicName = computed(() => {
 	if (clinicIds.value.length === 1) {
@@ -147,19 +147,18 @@ const pageDescription = computed(() => {
 const schemaOrgStore = useSchemaOrgStore();
 const route = useRoute();
 
-const ogImage = `${SITE_URL}/apple-touch-icon.png`;
-
 useSeoMeta({
 	title: pageTitleWithCount,
 	description: pageDescription,
 	ogTitle: pageTitleWithCount,
 	ogDescription: pageDescription,
-	ogImage: ogImage,
+	ogImage: OG_IMAGE,
 	twitterCard: 'summary',
 	twitterTitle: pageTitleWithCount,
 	twitterDescription: pageDescription,
-	twitterImage: ogImage,
+	twitterImage: OG_IMAGE,
 });
+
 const isFiltered = computed(() => {
 	return (
 		cityIds.value.length > 0 ||
@@ -168,9 +167,11 @@ const isFiltered = computed(() => {
 		!!name.value
 	);
 });
+
 watchEffect(() => {
 	if (labTestsList.value) {
 		const pageUrl = `${SITE_URL}${route.fullPath}`;
+
 		schemaOrgStore.setSchemas([
 			...buildEntityListSchema({
 				siteUrl: SITE_URL,
@@ -217,7 +218,7 @@ watchEffect(() => {
 		<template #item="{ item }">
 			<LabTestInfo
 				:name="item.name"
-				:originalName="item.originalName"
+				:localName="item.localName"
 				:synonyms="item.synonyms"
 				:categoryIds="item.categoryIds"
 				:itemId="item.id"

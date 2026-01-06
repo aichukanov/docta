@@ -6,7 +6,7 @@ const { isConsentGiven } = useCookieControl();
 const { t } = useI18n();
 const { locale } = useI18n({ useScope: 'global' });
 
-const years = computed(() => `2025`); //  - ${new Date().getFullYear()}
+const years = computed(() => `2025-${new Date().getFullYear()}`);
 
 const doctorsPageLink = computed(() => ({
 	name: 'doctors',

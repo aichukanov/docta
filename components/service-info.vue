@@ -25,6 +25,9 @@ const serviceLink = computed(() => ({
 					{{ service.name }}
 				</NuxtLink>
 			</h3>
+			<div v-if="service.localName" class="service-local-name">
+				{{ service.localName }}
+			</div>
 		</div>
 	</div>
 </template>
@@ -64,6 +67,13 @@ const serviceLink = computed(() => ({
 	.service-name-link:hover {
 		color: var(--color-primary-dark);
 		text-decoration: underline;
+	}
+
+	.service-local-name {
+		font-size: var(--font-size-sm);
+		font-weight: var(--font-weight-medium);
+		color: var(--color-text-secondary);
+		margin-top: var(--spacing-xs);
 	}
 }
 </style>

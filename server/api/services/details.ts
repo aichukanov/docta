@@ -1,5 +1,9 @@
 import { getConnection } from '~/server/common/db-mysql';
-import { parseClinicPricesData, getPriceOrderBySQL } from '~/server/common/utils';
+import {
+	parseClinicPricesData,
+	getPriceOrderBySQL,
+	processLocalizedNameForClinicOrDoctor,
+} from '~/server/common/utils';
 import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
@@ -18,11 +22,18 @@ export default defineEventHandler(
 				return null;
 			}
 
+			const locale = body.locale || 'en';
+
 			const priceOrder = getPriceOrderBySQL();
 			const medicalServiceQuery = `
 			SELECT DISTINCT
 				ms.id,
-				ms.name,
+				ms.name_en,
+				ms.name_sr,
+				ms.name_sr_cyrl,
+				ms.name_ru,
+				ms.name_de,
+				ms.name_tr,
 				(
 					SELECT GROUP_CONCAT(clinic_id ORDER BY ${priceOrder})
 					FROM clinic_medical_services
@@ -38,7 +49,7 @@ export default defineEventHandler(
 				) as clinicPricesData
 			FROM medical_services ms
 			WHERE ms.id = ?
-			GROUP BY ms.id, ms.name;
+			GROUP BY ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, ms.name_ru, ms.name_de, ms.name_tr;
 		`;
 
 			const connection = await getConnection();
@@ -53,9 +64,27 @@ export default defineEventHandler(
 				return null;
 			}
 
+			// Обрабатываем локализованные имена
+			const { name, localName } = processLocalizedNameForClinicOrDoctor(
+				row,
+				locale,
+			);
+			// Удаляем избыточные поля локализации
+			const {
+				name_en,
+				name_sr,
+				name_sr_cyrl,
+				name_ru,
+				name_de,
+				name_tr,
+				...rest
+			} = row;
+
 			return {
+				...rest,
 				id: row.id,
-				name: row.name,
+				name,
+				localName,
 				clinicIds: row.clinicIds,
 				clinicPrices: parseClinicPricesData(row.clinicPricesData),
 			};

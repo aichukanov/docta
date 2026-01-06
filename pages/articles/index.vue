@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SITE_URL } from '~/common/constants';
+import { SITE_URL, OG_IMAGE } from '~/common/constants';
 import { getRegionalQuery } from '~/common/url-utils';
 import {
 	buildBreadcrumbsSchema,
@@ -51,10 +51,19 @@ const schemaOrgStore = useSchemaOrgStore();
 const pageUrl = `${SITE_URL}/articles`;
 
 // 2. Then use it in effects/meta
+const pageTitle = computed(() => t('Articles'));
+const pageDescription = computed(() => t('ArticlesDescription'));
+
 useSeoMeta({
-	title: t('Articles'),
-	ogTitle: t('Articles'),
-	twitterTitle: t('Articles'),
+	title: pageTitle,
+	description: pageDescription,
+	ogTitle: pageTitle,
+	ogDescription: pageDescription,
+	ogImage: OG_IMAGE,
+	twitterCard: 'summary',
+	twitterTitle: pageTitle,
+	twitterDescription: pageDescription,
+	twitterImage: OG_IMAGE,
 });
 
 watchEffect(() => {

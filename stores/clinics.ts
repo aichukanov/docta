@@ -2,14 +2,18 @@ import { defineStore } from 'pinia';
 import type { ClinicData } from '~/interfaces/clinic';
 
 export const useClinicsStore = defineStore('clinics', () => {
+	const { locale } = useI18n();
+
 	const clinics = ref<ClinicData[]>([]);
 	const isLoading = ref(false);
 	const isLoaded = ref(false);
+	const currentLocale = ref<string | null>(null);
 
 	const fetchPromise = ref<Promise<void> | null>(null);
 
-	const loadClinicsData = async (locale?: string) => {
+	const loadClinicsData = async () => {
 		isLoading.value = true;
+		currentLocale.value = locale.value;
 
 		fetchPromise.value = $fetch<{
 			clinics: ClinicData[];
@@ -17,7 +21,7 @@ export const useClinicsStore = defineStore('clinics', () => {
 		}>('/api/clinics/list', {
 			method: 'POST',
 			body: {
-				locale: locale || 'en',
+				locale: locale.value || 'en',
 			},
 		}).catch((error) => {
 			console.error('Failed to fetch clinics:', error);
@@ -31,23 +35,30 @@ export const useClinicsStore = defineStore('clinics', () => {
 		isLoading.value = false;
 	};
 
-	const fetchClinics = async (locale?: string) => {
-		if (isLoaded.value) {
+	const fetchClinics = async () => {
+		if (isLoaded.value && currentLocale.value === locale.value) {
 			return;
 		}
 
-		if (fetchPromise.value) {
+		if (fetchPromise.value && currentLocale.value === locale.value) {
 			await fetchPromise.value;
 		} else {
-			await loadClinicsData(locale);
+			await loadClinicsData();
 		}
 	};
 
-	const refresh = async (locale?: string) => {
+	const refresh = async () => {
 		fetchPromise.value = null;
 		isLoaded.value = false;
-		await loadClinicsData(locale);
+		await loadClinicsData();
 	};
+
+	// Автоматически перезагружаем данные при смене языка
+	watch(locale, () => {
+		if (isLoaded.value) {
+			refresh();
+		}
+	});
 
 	/**
 	 * Получает клиники по строке ID, сохраняя порядок (для сортировки по цене)

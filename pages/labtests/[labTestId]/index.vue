@@ -8,7 +8,7 @@ import {
 	buildMedicalTestSchema,
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
-import { SITE_URL } from '~/common/constants';
+import { SITE_URL, OG_IMAGE } from '~/common/constants';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -35,7 +35,7 @@ const { pending: isLoading, data: labTestData } = await useFetch(
 );
 
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics(locale.value);
+await clinicsStore.fetchClinics();
 
 const isFound = computed(() => labTestData.value?.id != null);
 
@@ -85,9 +85,9 @@ const pageDescription = computed(() => {
 		return '';
 	}
 
-	const { name, originalName } = labTestData.value;
+	const { name, localName } = labTestData.value;
 	const displayName =
-		originalName && originalName !== name ? `${name} (${originalName})` : name;
+		localName && localName !== name ? `${name} (${localName})` : name;
 
 	const usedCities: { [key: string]: true } = {};
 	const citiesText = labTestClinics.value
@@ -110,7 +110,6 @@ const pageDescription = computed(() => {
 // Schema.org for lab test details
 const schemaOrgStore = useSchemaOrgStore();
 
-const ogImage = `${SITE_URL}/apple-touch-icon.png`;
 const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
 
 useSeoMeta({
@@ -118,12 +117,12 @@ useSeoMeta({
 	description: pageDescription,
 	ogTitle: pageTitle,
 	ogDescription: pageDescription,
-	ogImage: ogImage,
+	ogImage: OG_IMAGE,
 	ogType: 'article',
 	twitterCard: 'summary',
 	twitterTitle: pageTitle,
 	twitterDescription: pageDescription,
-	twitterImage: ogImage,
+	twitterImage: OG_IMAGE,
 	robots: robotsMeta,
 });
 
@@ -142,7 +141,7 @@ watchEffect(() => {
 				siteUrl: SITE_URL,
 				id: labTestData.value.id,
 				name: labTestData.value.name,
-				originalName: labTestData.value.originalName,
+				localName: labTestData.value.localName,
 				synonyms: labTestData.value.synonyms,
 				locale: locale.value,
 				pageTitle: pageTitle.value,
@@ -174,8 +173,8 @@ watchEffect(() => {
 		<template #info v-if="labTestData">
 			<div class="lab-test-header">
 				<h1 class="lab-test-name">{{ labTestData.name }}</h1>
-				<div v-if="labTestData.originalName" class="lab-test-original">
-					{{ labTestData.originalName }}
+				<div v-if="labTestData.localName" class="lab-test-original">
+					{{ labTestData.localName }}
 				</div>
 				<div v-if="labTestData.synonyms?.length" class="lab-test-synonyms">
 					<span class="synonyms-label">{{ t('Synonyms') }}:</span>

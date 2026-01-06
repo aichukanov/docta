@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
-import { SITE_URL, SITE_NAME } from '~/common/constants';
+import { SITE_URL, SITE_NAME, OG_IMAGE } from '~/common/constants';
 
 const { t, locale } = useI18n();
 
@@ -29,9 +29,20 @@ const medicationsPageLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
+const pageTitle = computed(() => t('MainPageTitle'));
+const pageDescription = computed(() => t('MainPageDescription'));
+
 useSeoMeta({
-	title: t('MainPageTitle'),
-	description: t('MainPageDescription'),
+	title: pageTitle,
+	description: pageDescription,
+	ogTitle: pageTitle,
+	ogDescription: pageDescription,
+	ogImage: OG_IMAGE,
+	ogUrl: SITE_URL,
+	twitterCard: 'summary',
+	twitterTitle: pageTitle,
+	twitterDescription: pageDescription,
+	twitterImage: OG_IMAGE,
 });
 
 // Schema.org for website home page
@@ -46,7 +57,10 @@ schemaOrgStore.setSchemas([
 		'url': SITE_URL,
 		'potentialAction': {
 			'@type': 'SearchAction',
-			'target': `${SITE_URL}/doctors?name={search_term_string}`,
+			'target': {
+				'@type': 'EntryPoint',
+				'urlTemplate': `${SITE_URL}/doctors?name={search_term_string}`,
+			},
 			'query-input': 'required name=search_term_string',
 		},
 	},

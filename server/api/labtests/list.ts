@@ -3,6 +3,7 @@ import {
 	parseClinicPricesData,
 	getPriceOrderBySQL,
 	processLocalizedNameForLabTest,
+	getLocalizedNameField,
 } from '~/server/common/utils';
 import type { LabTestList } from '~/interfaces/clinic';
 import {
@@ -70,6 +71,7 @@ export async function getLabTestList(
 		joins.push(
 			'LEFT JOIN lab_test_synonyms lts_search ON lt.id = lts_search.lab_test_id',
 		);
+		const nameField = getLocalizedNameField(locale) || 'name_en';
 		whereFilters.push(
 			`(lt.name_en LIKE '%${body.name}%' OR lt.${nameField} LIKE '%${body.name}%' OR lt.name_sr LIKE '%${body.name}%' OR lts_search.another_name LIKE '%${body.name}%')`,
 		);
@@ -135,11 +137,11 @@ export async function getLabTestList(
 	await connection.end();
 
 	const items = labTestRows.map((row: any) => {
-		const { name, originalName } = processLocalizedNameForLabTest(row, locale);
+		const { name, localName } = processLocalizedNameForLabTest(row, locale);
 		return {
 			id: row.id,
-			name,
-			originalName,
+			name: name || '',
+			localName: localName || '',
 			synonyms: synonymsMap[row.id] || [],
 			clinicIds: row.clinicIds,
 			clinicPrices: parseClinicPricesData(row.clinicPricesData),

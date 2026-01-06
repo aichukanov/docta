@@ -7,7 +7,7 @@ import { toCyrillic } from '~/common/serbian-transliteration';
 
 const props = defineProps<{
 	name: string;
-	originalName?: string;
+	localName?: string;
 	synonyms?: string[];
 	categoryIds?: number[];
 	short?: boolean;
@@ -41,8 +41,8 @@ const detailsLink = computed(() => {
 			</NuxtLink>
 			<template v-else>{{ name }}</template>
 		</h3>
-		<div v-if="originalName" class="lab-test-original">
-			{{ originalName }}
+		<div v-if="localName" class="lab-test-original">
+			{{ localName }}
 		</div>
 		<div v-if="!short && synonyms?.length" class="lab-test-synonyms">
 			<span class="synonyms-label">{{ t('Synonyms') }}:</span>

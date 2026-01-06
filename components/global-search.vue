@@ -281,7 +281,7 @@ const hasResults = computed(() => {
 function getSpecialtyLink(specialtyId: number) {
 	return {
 		name: 'doctors',
-		query: { ...getRegionalQuery(locale.value), specialty: specialtyId },
+		query: { specialtyIds: specialtyId, ...getRegionalQuery(locale.value) },
 	};
 }
 
@@ -321,28 +321,28 @@ function getLabTestLink(labTestId: number) {
 function getDoctorsListLink() {
 	return {
 		name: 'doctors',
-		query: { ...getRegionalQuery(locale.value), name: currentQuery.value },
+		query: { name: currentQuery.value, ...getRegionalQuery(locale.value) },
 	};
 }
 
 function getClinicsListLink() {
 	return {
 		name: 'clinics',
-		query: { ...getRegionalQuery(locale.value), name: currentQuery.value },
+		query: { name: currentQuery.value, ...getRegionalQuery(locale.value) },
 	};
 }
 
 function getMedicationsListLink() {
 	return {
 		name: 'medications',
-		query: { ...getRegionalQuery(locale.value), name: currentQuery.value },
+		query: { name: currentQuery.value, ...getRegionalQuery(locale.value) },
 	};
 }
 
 function getLabTestsListLink() {
 	return {
 		name: 'labtests',
-		query: { ...getRegionalQuery(locale.value), name: currentQuery.value },
+		query: { name: currentQuery.value, ...getRegionalQuery(locale.value) },
 	};
 }
 

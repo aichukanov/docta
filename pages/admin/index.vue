@@ -12,6 +12,7 @@ const { pending: isLoadingDoctors, data: doctorsList } = await useFetch(
 			specialtyIds: [],
 			cityIds: [],
 			languageIds: [],
+			includeAllLocales: true,
 			key: loadedDoctorsKey.value,
 		})),
 	},

@@ -52,6 +52,7 @@ export async function getDoctorList(
 		clinicIds?: number[];
 		onlyDoctorLanguages?: boolean;
 		locale?: string;
+		includeAllLocales?: boolean;
 	} = {},
 ) {
 	const whereFilters = [];
@@ -128,6 +129,14 @@ export async function getDoctorList(
 			doctor,
 			locale,
 		);
+		// Для админки сохраняем все поля локализации
+		if (body.includeAllLocales) {
+			return {
+				...doctor,
+				name,
+				localName,
+			};
+		}
 		// Удаляем избыточные поля локализации
 		const { name_sr, name_sr_cyrl, name_ru, name_en, ...rest } = doctor;
 		return {

@@ -6,7 +6,10 @@ export interface DoctorData extends ClinicServiceItem, ContactList {
 	languageIds: string;
 	professionalTitle: string;
 	photoUrl: string;
+	name_sr?: string;
 	name_sr_cyrl?: string;
+	name_ru?: string;
+	name_en?: string;
 	localName: string;
 }
 

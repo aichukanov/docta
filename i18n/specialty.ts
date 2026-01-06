@@ -1960,7 +1960,7 @@ export default {
 			[`specialty_${DoctorSpecialty.HEMATOLOGY}`]: 'Хематологија',
 			[`specialty_${DoctorSpecialty.RHEUMATOLOGY}`]: 'Реуматологија',
 			[`specialty_${DoctorSpecialty.ORTHOPEDICS_TRAUMATOLOGY}`]:
-				'Трауматологија и орпедија',
+				'Трауматологија и ортопедија',
 			[`specialty_${DoctorSpecialty.PLASTIC_SURGERY}`]: 'Пластична хирургија',
 			[`specialty_${DoctorSpecialty.ANESTHESIOLOGY}`]: 'Анестезиологија',
 			[`specialty_${DoctorSpecialty.FAMILY_MEDICINE}`]: 'Породична медицина',

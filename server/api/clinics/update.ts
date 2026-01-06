@@ -44,15 +44,17 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 			const updateClinicQuery = `
 				UPDATE clinics 
-				SET name_sr = ?, city_id = ?, address_sr = ?, address_sr_cyrl = ?, town_sr = ?, town_sr_cyrl = ?, postal_code = ?, latitude = ?, longitude = ?,
+				SET name_sr = ?, name_sr_cyrl = ?, name_ru = ?, city_id = ?, address_sr = ?, address_sr_cyrl = ?, town_sr = ?, town_sr_cyrl = ?, postal_code = ?, latitude = ?, longitude = ?,
 				    phone = ?, email = ?, website = ?, facebook = ?, instagram = ?, 
 				    telegram = ?, whatsapp = ?, viber = ?,
-				    description_sr = ?, description_en = ?, description_ru = ?, description_de = ?, description_tr = ?
+				    description_sr = ?, description_sr_cyrl = ?, description_en = ?, description_ru = ?, description_de = ?, description_tr = ?
 				WHERE id = ?;
 			`;
 
 			await connection.execute(updateClinicQuery, [
 				body.name_sr || body.name || '',
+				body.name_sr_cyrl || '',
+				body.name_ru || '',
 				body.cityId,
 				body.address_sr || body.address || '',
 				body.address_sr_cyrl || '',
@@ -70,6 +72,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				body.whatsapp || '',
 				body.viber || '',
 				body.description_sr || '',
+				body.description_sr_cyrl || '',
 				body.description_en || '',
 				body.description_ru || '',
 				body.description_de || '',

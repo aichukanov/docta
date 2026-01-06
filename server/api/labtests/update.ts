@@ -36,16 +36,18 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			// 1. Обновляем основные данные анализа
 			const updateQuery = `
 				UPDATE lab_tests SET
-					name = ?,
+					name_en = ?,
 					name_sr = ?,
+					name_sr_cyrl = ?,
 					name_ru = ?,
 					name_de = ?,
 					name_tr = ?
 				WHERE id = ?
 			`;
 			await connection.execute(updateQuery, [
-				body.name,
+				body.name_en,
 				body.name_sr,
+				body.name_sr_cyrl || '',
 				body.name_ru,
 				body.name_de,
 				body.name_tr,

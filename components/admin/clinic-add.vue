@@ -6,6 +6,8 @@ const emit = defineEmits<{
 const cityIds = ref<number[]>([]);
 const languageIds = ref<number[]>([1]);
 const clinicName = ref('');
+const clinicNameSrCyrl = ref('');
+const clinicNameRu = ref('');
 const clinicAddressSr = ref('');
 const clinicAddressSrCyrl = ref('');
 const clinicTownSr = ref('');
@@ -22,6 +24,7 @@ const clinicViber = ref('');
 const clinicLatitude = ref('');
 const clinicLongitude = ref('');
 const clinicDescriptionSr = ref('');
+const clinicDescriptionSrCyrl = ref('');
 const clinicDescriptionEn = ref('');
 const clinicDescriptionRu = ref('');
 const clinicDescriptionDe = ref('');
@@ -30,6 +33,8 @@ const clinicDescriptionTr = ref('');
 const clearFields = () => {
 	cityIds.value = [];
 	clinicName.value = '';
+	clinicNameSrCyrl.value = '';
+	clinicNameRu.value = '';
 	languageIds.value = [1];
 	clinicAddressSr.value = '';
 	clinicAddressSrCyrl.value = '';
@@ -47,6 +52,7 @@ const clearFields = () => {
 	clinicWhatsapp.value = '';
 	clinicViber.value = '';
 	clinicDescriptionSr.value = '';
+	clinicDescriptionSrCyrl.value = '';
 	clinicDescriptionEn.value = '';
 	clinicDescriptionRu.value = '';
 	clinicDescriptionDe.value = '';
@@ -69,6 +75,8 @@ const addClinic = async () => {
 		method: 'POST',
 		body: {
 			name_sr: clinicName.value,
+			name_sr_cyrl: clinicNameSrCyrl.value,
+			name_ru: clinicNameRu.value,
 			cityId: cityIds.value[0],
 			languageIds: languageIds.value,
 			address_sr: clinicAddressSr.value,
@@ -87,6 +95,7 @@ const addClinic = async () => {
 			whatsapp: clinicWhatsapp.value,
 			viber: clinicViber.value,
 			description_sr: clinicDescriptionSr.value,
+			description_sr_cyrl: clinicDescriptionSrCyrl.value,
 			description_en: clinicDescriptionEn.value,
 			description_ru: clinicDescriptionRu.value,
 			description_de: clinicDescriptionDe.value,
@@ -106,6 +115,11 @@ const addClinic = async () => {
 			<FilterCitySelect v-model:value="cityIds" />
 
 			<AdminEditableField label="Название (SR)" v-model:value="clinicName" />
+			<AdminEditableField
+				label="Название (SR-CYRL)"
+				v-model:value="clinicNameSrCyrl"
+			/>
+			<AdminEditableField label="Название (RU)" v-model:value="clinicNameRu" />
 			<AdminEditableField label="Адрес (SR)" v-model:value="clinicAddressSr" />
 			<AdminEditableField
 				label="Адрес (SR-CYRL)"
@@ -135,6 +149,11 @@ const addClinic = async () => {
 				label="Описание (SR)"
 				type="textarea"
 				v-model:value="clinicDescriptionSr"
+			/>
+			<AdminEditableField
+				label="Описание (SR-CYRL)"
+				type="textarea"
+				v-model:value="clinicDescriptionSrCyrl"
 			/>
 			<AdminEditableField
 				label="Описание (EN)"

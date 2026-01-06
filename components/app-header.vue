@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
 
-const { t } = useI18n();
-const { locale } = useI18n({ useScope: 'global' });
+const { t, locale } = useI18n();
 const route = useRoute();
 
 const indexPageLink = computed(() => ({

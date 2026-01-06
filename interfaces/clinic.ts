@@ -62,7 +62,7 @@ export interface LabTestListItem {
 }
 
 export interface LabTestNames {
-	name: string;
+	name_en: string;
 	name_sr: string;
 	name_sr_cyrl: string;
 	name_ru: string;

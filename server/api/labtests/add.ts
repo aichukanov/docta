@@ -33,12 +33,13 @@ export default defineEventHandler(async (event): Promise<number | null> => {
 
 			// 1. Создаём анализ
 			const insertQuery = `
-				INSERT INTO lab_tests (name, name_sr, name_ru, name_de, name_tr)
-				VALUES (?, ?, ?, ?, ?)
+				INSERT INTO lab_tests (name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr)
+				VALUES (?, ?, ?, ?, ?, ?)
 			`;
 			const [result]: any = await connection.execute(insertQuery, [
 				body.name,
 				body.name_sr,
+				body.name_sr_cyrl || '',
 				body.name_ru || '',
 				body.name_de || '',
 				body.name_tr || '',

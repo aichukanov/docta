@@ -7,6 +7,7 @@ interface DoctorAdminDetails extends ContactList {
 	name: string;
 	name_sr_cyrl: string;
 	name_ru: string;
+	name_en: string;
 	specialtyIds: number[];
 	languageIds: number[];
 	clinicIds: number[];
@@ -38,7 +39,7 @@ export default defineEventHandler(
 
 			// Получаем основные данные врача
 			const [doctorRows]: any = await connection.execute(
-				`SELECT id, name_sr, name_sr_cyrl, name_ru, professional_title, photo_url, phone, email, facebook, instagram, telegram, whatsapp, viber, website FROM doctors WHERE id = ?`,
+				`SELECT id, name_sr, name_sr_cyrl, name_ru, name_en, professional_title, photo_url, phone, email, facebook, instagram, telegram, whatsapp, viber, website FROM doctors WHERE id = ?`,
 				[body.doctorId],
 			);
 
@@ -74,6 +75,7 @@ export default defineEventHandler(
 				name: doctor.name_sr || '',
 				name_sr_cyrl: doctor.name_sr_cyrl || '',
 				name_ru: doctor.name_ru || '',
+				name_en: doctor.name_en || '',
 				specialtyIds: specialtyRows.map((r: any) => r.specialty_id),
 				languageIds: languageRows.map((r: any) => r.language_id),
 				clinicIds: clinicRows.map((r: any) => r.clinic_id),

@@ -37,13 +37,15 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 		}
 
 		const addDoctorQuery = `
-			INSERT INTO doctors (name_sr, name_ru, professional_title, email, phone, website, photo_url, facebook, instagram, telegram, whatsapp, viber)
-			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+			INSERT INTO doctors (name_sr, name_sr_cyrl, name_ru, name_en, professional_title, email, phone, website, photo_url, facebook, instagram, telegram, whatsapp, viber)
+			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 		`;
 
 		const addDoctorQueryParams = [
 			body.name,
+			body.name_sr_cyrl || '',
 			body.name_ru || '',
+			body.name_en || '',
 			body.professionalTitle,
 			body.email,
 			body.phone,

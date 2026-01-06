@@ -3,8 +3,7 @@ import { getRegionalQuery } from '~/common/url-utils';
 import { PROJECT_CONTACTS, SITE_NAME } from '~/common/constants';
 
 const { isConsentGiven } = useCookieControl();
-const { t } = useI18n();
-const { locale } = useI18n({ useScope: 'global' });
+const { t, locale } = useI18n();
 
 const years = computed(() => `2025-${new Date().getFullYear()}`);
 

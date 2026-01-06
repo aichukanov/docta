@@ -72,8 +72,13 @@ export async function getLabTestList(
 			'LEFT JOIN lab_test_synonyms lts_search ON lt.id = lts_search.lab_test_id',
 		);
 		const nameField = getLocalizedNameField(locale) || 'name_en';
+		// Для sr-cyrl ищем также по синонимам на кириллице
+		const synonymsFilter =
+			locale === 'sr-cyrl'
+				? `(lts_search.another_name LIKE '%${body.name}%' AND lts_search.language IN ('sr-cyrl', 'sr'))`
+				: `lts_search.another_name LIKE '%${body.name}%'`;
 		whereFilters.push(
-			`(lt.name_en LIKE '%${body.name}%' OR lt.${nameField} LIKE '%${body.name}%' OR lt.name_sr LIKE '%${body.name}%' OR lts_search.another_name LIKE '%${body.name}%')`,
+			`(lt.name_en LIKE '%${body.name}%' OR lt.${nameField} LIKE '%${body.name}%' OR lt.name_sr LIKE '%${body.name}%' OR lt.name_sr_cyrl LIKE '%${body.name}%' OR ${synonymsFilter})`,
 		);
 	}
 

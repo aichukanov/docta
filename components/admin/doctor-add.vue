@@ -11,6 +11,8 @@ const emit = defineEmits<{
 
 const doctorName = ref('');
 const doctorNameRu = ref('');
+const doctorNameSrCyrl = ref('');
+const doctorNameEn = ref('');
 const doctorProfessionalTitle = ref('');
 const doctorEmail = ref('');
 const doctorPhone = ref('');
@@ -29,6 +31,8 @@ const languageIds = ref<number[]>([1]);
 const clearFields = () => {
 	doctorName.value = '';
 	doctorNameRu.value = '';
+	doctorNameSrCyrl.value = '';
+	doctorNameEn.value = '';
 	doctorProfessionalTitle.value = '';
 	doctorEmail.value = '';
 	doctorPhone.value = '';
@@ -60,6 +64,8 @@ const addDoctor = async () => {
 		body: {
 			name: doctorName.value,
 			name_ru: doctorNameRu.value,
+			name_sr_cyrl: doctorNameSrCyrl.value,
+			name_en: doctorNameEn.value,
 			professionalTitle: doctorProfessionalTitle.value,
 			email: doctorEmail.value,
 			phone: doctorPhone.value,
@@ -86,6 +92,11 @@ const addDoctor = async () => {
 	<div class="doctor-add">
 		<AdminEditableField label="Имя" v-model:value="doctorName" />
 		<AdminEditableField label="Имя (RU)" v-model:value="doctorNameRu" />
+		<AdminEditableField
+			label="Имя (SR кириллица)"
+			v-model:value="doctorNameSrCyrl"
+		/>
+		<AdminEditableField label="Имя (EN)" v-model:value="doctorNameEn" />
 		<AdminEditableField
 			label="Профессиональное звание"
 			v-model:value="doctorProfessionalTitle"

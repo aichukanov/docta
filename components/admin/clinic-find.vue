@@ -4,11 +4,14 @@ import type { ClinicData } from '~/interfaces/clinic';
 
 interface ClinicAdminModel extends ClinicData {
 	name_sr: string;
+	name_sr_cyrl: string;
+	name_ru: string;
 	address_sr: string;
 	address_sr_cyrl: string;
 	town_sr: string;
 	town_sr_cyrl: string;
 	description_sr: string;
+	description_sr_cyrl: string;
 	description_en: string;
 	description_ru: string;
 	description_de: string;
@@ -55,6 +58,14 @@ const nameSrModified = computed(
 	() => selectedClinic.value?.name_sr !== clinicModel.value?.name_sr,
 );
 
+const nameSrCyrlModified = computed(
+	() => selectedClinic.value?.name_sr_cyrl !== clinicModel.value?.name_sr_cyrl,
+);
+
+const nameRuModified = computed(
+	() => selectedClinic.value?.name_ru !== clinicModel.value?.name_ru,
+);
+
 const addressSrModified = computed(
 	() => selectedClinic.value?.address_sr !== clinicModel.value?.address_sr,
 );
@@ -70,8 +81,7 @@ const townSrModified = computed(
 );
 
 const townSrCyrlModified = computed(
-	() =>
-		selectedClinic.value?.town_sr_cyrl !== clinicModel.value?.town_sr_cyrl,
+	() => selectedClinic.value?.town_sr_cyrl !== clinicModel.value?.town_sr_cyrl,
 );
 
 const postalCodeModified = computed(
@@ -147,6 +157,12 @@ const descriptionTrModified = computed(
 		selectedClinic.value?.description_tr !== clinicModel.value?.description_tr,
 );
 
+const descriptionSrCyrlModified = computed(
+	() =>
+		selectedClinic.value?.description_sr_cyrl !==
+		clinicModel.value?.description_sr_cyrl,
+);
+
 const languageIdsModified = computed(() => {
 	if (!selectedClinic.value || !clinicModel.value) {
 		return false;
@@ -162,6 +178,8 @@ const languageIdsModified = computed(() => {
 const hasChanges = computed(() => {
 	return (
 		nameSrModified.value ||
+		nameSrCyrlModified.value ||
+		nameRuModified.value ||
 		addressSrModified.value ||
 		addressSrCyrlModified.value ||
 		townSrModified.value ||
@@ -179,6 +197,7 @@ const hasChanges = computed(() => {
 		viberModified.value ||
 		cityIdModified.value ||
 		descriptionSrModified.value ||
+		descriptionSrCyrlModified.value ||
 		descriptionEnModified.value ||
 		descriptionRuModified.value ||
 		descriptionDeModified.value ||
@@ -210,6 +229,8 @@ const saveChanges = async () => {
 		body: {
 			id: clinicModel.value.id,
 			name_sr: clinicModel.value.name_sr,
+			name_sr_cyrl: clinicModel.value.name_sr_cyrl,
+			name_ru: clinicModel.value.name_ru,
 			cityId: clinicModel.value.cityId,
 			address_sr: clinicModel.value.address_sr,
 			address_sr_cyrl: clinicModel.value.address_sr_cyrl,
@@ -227,6 +248,7 @@ const saveChanges = async () => {
 			whatsapp: clinicModel.value.whatsapp,
 			viber: clinicModel.value.viber,
 			description_sr: clinicModel.value.description_sr,
+			description_sr_cyrl: clinicModel.value.description_sr_cyrl,
 			description_en: clinicModel.value.description_en,
 			description_ru: clinicModel.value.description_ru,
 			description_de: clinicModel.value.description_de,
@@ -276,11 +298,14 @@ watch(selectedClinic, async (clinic) => {
 			clinicModel.value = {
 				...clinic,
 				name_sr: adminData.name_sr || '',
+				name_sr_cyrl: adminData.name_sr_cyrl || '',
+				name_ru: adminData.name_ru || '',
 				address_sr: adminData.address_sr || '',
 				address_sr_cyrl: adminData.address_sr_cyrl || '',
 				town_sr: adminData.town_sr || '',
 				town_sr_cyrl: adminData.town_sr_cyrl || '',
 				description_sr: adminData.description_sr || '',
+				description_sr_cyrl: adminData.description_sr_cyrl || '',
 				description_en: adminData.description_en || '',
 				description_ru: adminData.description_ru || '',
 				description_de: adminData.description_de || '',
@@ -294,11 +319,14 @@ watch(selectedClinic, async (clinic) => {
 			clinicModel.value = {
 				...clinic,
 				name_sr: clinic.name || '',
+				name_sr_cyrl: '',
+				name_ru: '',
 				address_sr: clinic.address || '',
 				address_sr_cyrl: '',
 				town_sr: clinic.town || '',
 				town_sr_cyrl: '',
 				description_sr: clinic.description || '',
+				description_sr_cyrl: '',
 				description_en: '',
 				description_ru: '',
 				description_de: '',
@@ -326,28 +354,53 @@ watch(selectedClinic, async (clinic) => {
 				label="Название (SR)"
 				v-model:value="clinicModel.name_sr"
 				:modified="nameSrModified"
-				@reset="clinicModel.name_sr = selectedClinic?.name_sr || selectedClinic?.name || ''"
+				@reset="
+					clinicModel.name_sr =
+						selectedClinic?.name_sr || selectedClinic?.name || ''
+				"
+			/>
+			<AdminEditableField
+				label="Название (SR-CYRL)"
+				v-model:value="clinicModel.name_sr_cyrl"
+				:readonly="!editable"
+				:modified="nameSrCyrlModified"
+				@reset="clinicModel.name_sr_cyrl = selectedClinic?.name_sr_cyrl || ''"
+			/>
+			<AdminEditableField
+				label="Название (RU)"
+				v-model:value="clinicModel.name_ru"
+				:readonly="!editable"
+				:modified="nameRuModified"
+				@reset="clinicModel.name_ru = selectedClinic?.name_ru || ''"
 			/>
 			<AdminEditableField
 				label="Адрес (SR)"
 				v-model:value="clinicModel.address_sr"
 				:readonly="!editable"
 				:modified="addressSrModified"
-				@reset="clinicModel.address_sr = selectedClinic?.address_sr || selectedClinic?.address || ''"
+				@reset="
+					clinicModel.address_sr =
+						selectedClinic?.address_sr || selectedClinic?.address || ''
+				"
 			/>
 			<AdminEditableField
 				label="Адрес (SR-CYRL)"
 				v-model:value="clinicModel.address_sr_cyrl"
 				:readonly="!editable"
 				:modified="addressSrCyrlModified"
-				@reset="clinicModel.address_sr_cyrl = selectedClinic?.address_sr_cyrl || ''"
+				@reset="
+					clinicModel.address_sr_cyrl = selectedClinic?.address_sr_cyrl || ''
+				"
 			/>
 			<AdminEditableField
 				label="Town (SR)"
 				v-model:value="clinicModel.town_sr"
 				:readonly="!editable"
 				:modified="townSrModified"
-				@reset="clinicModel.town_sr = selectedClinic?.town_sr || selectedClinic?.town || ''"
+				@reset="
+					clinicModel.town_sr =
+						selectedClinic?.town_sr || selectedClinic?.town || ''
+				"
 			/>
 			<AdminEditableField
 				label="Town (SR-CYRL)"
@@ -441,6 +494,16 @@ watch(selectedClinic, async (clinic) => {
 				:readonly="!editable"
 				:modified="descriptionSrModified"
 				@reset="clinicModel.description_sr = selectedClinic?.description_sr"
+			/>
+			<AdminEditableField
+				label="Описание (SR-CYRL)"
+				type="textarea"
+				v-model:value="clinicModel.description_sr_cyrl"
+				:readonly="!editable"
+				:modified="descriptionSrCyrlModified"
+				@reset="
+					clinicModel.description_sr_cyrl = selectedClinic?.description_sr_cyrl
+				"
 			/>
 			<AdminEditableField
 				label="Описание (EN)"

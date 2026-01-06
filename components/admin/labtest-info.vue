@@ -134,15 +134,13 @@ const getSynonymsForLanguage = (lang: string) => {
 const setSynonymsForLanguage = (lang: string, value: string) => {
 	if (!labTestModel.value) return;
 
-	const values = value
-		.split('\n')
-		.map((s) => s.trim())
-		.filter(Boolean);
+	// Не фильтруем пустые строки при вводе, чтобы работали переносы строк
+	const values = value.split('\n');
 	const existing = labTestModel.value.synonyms.find((s) => s.language === lang);
 
 	if (existing) {
 		existing.values = values;
-	} else if (values.length > 0) {
+	} else {
 		labTestModel.value.synonyms.push({ language: lang, values });
 	}
 };
@@ -150,6 +148,10 @@ const setSynonymsForLanguage = (lang: string, value: string) => {
 const synonymsSR = computed({
 	get: () => getSynonymsForLanguage('sr'),
 	set: (v) => setSynonymsForLanguage('sr', v),
+});
+const synonymsSrCyrl = computed({
+	get: () => getSynonymsForLanguage('sr-cyrl'),
+	set: (v) => setSynonymsForLanguage('sr-cyrl', v),
 });
 const synonymsEN = computed({
 	get: () => getSynonymsForLanguage('en'),
@@ -200,9 +202,17 @@ const saveChanges = async () => {
 
 	if (!confirm('Сохранить изменения?')) return;
 
+	// Очищаем синонимы перед сохранением (trim и фильтр пустых строк)
+	const cleanedSynonyms = labTestModel.value.synonyms
+		.map((s) => ({
+			language: s.language,
+			values: s.values.map((v) => v.trim()).filter(Boolean),
+		}))
+		.filter((s) => s.values.length > 0);
+
 	await $fetch('/api/labtests/update', {
 		method: 'POST',
-		body: labTestModel.value,
+		body: { ...labTestModel.value, synonyms: cleanedSynonyms },
 	});
 
 	emit('updated');
@@ -354,6 +364,16 @@ watch(labTestId, async (newId) => {
 						type="textarea"
 						:autosize="{ minRows: 2, maxRows: 6 }"
 						placeholder="Один синоним на строку"
+					/>
+				</div>
+
+				<div class="field">
+					<label>Синонимы (SR-CYRL)</label>
+					<el-input
+						v-model="synonymsSrCyrl"
+						type="textarea"
+						:autosize="{ minRows: 2, maxRows: 6 }"
+						placeholder="Један синоним по реду"
 					/>
 				</div>
 

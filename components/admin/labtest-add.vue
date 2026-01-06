@@ -17,6 +17,7 @@ const emit = defineEmits<{
 
 const name = ref('');
 const nameSr = ref('');
+const nameSrCyrl = ref('');
 const nameRu = ref('');
 const nameDe = ref('');
 const nameTr = ref('');
@@ -41,6 +42,7 @@ const removeClinicPrice = (index: number) => {
 const clearFields = () => {
 	name.value = '';
 	nameSr.value = '';
+	nameSrCyrl.value = '';
 	nameRu.value = '';
 	nameDe.value = '';
 	nameTr.value = '';
@@ -67,6 +69,7 @@ const addLabTest = async () => {
 		body: {
 			name: name.value || nameSr.value,
 			name_sr: nameSr.value,
+			name_sr_cyrl: nameSrCyrl.value,
 			name_ru: nameRu.value,
 			name_de: nameDe.value,
 			name_tr: nameTr.value,
@@ -87,6 +90,10 @@ const addLabTest = async () => {
 	<div class="labtest-add">
 		<AdminEditableField label="Название (EN)" v-model:value="name" />
 		<AdminEditableField label="Название (SR)" v-model:value="nameSr" />
+		<AdminEditableField
+			label="Название (SR-CYRL)"
+			v-model:value="nameSrCyrl"
+		/>
 		<AdminEditableField label="Название (RU)" v-model:value="nameRu" />
 		<AdminEditableField label="Название (DE)" v-model:value="nameDe" />
 		<AdminEditableField label="Название (TR)" v-model:value="nameTr" />

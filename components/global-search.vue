@@ -8,6 +8,7 @@ import { getLocalizedName } from '~/common/utils';
 import type { DoctorData } from '~/interfaces/doctor';
 import type { MedicationData } from '~/interfaces/medication';
 import type { LabTestData } from '~/interfaces/lab-test';
+import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
 
 const globalSearchI18n = {
 	messages: {
@@ -18,10 +19,12 @@ const globalSearchI18n = {
 			Specialties: 'Specialties',
 			Doctors: 'Doctors',
 			Clinics: 'Clinics',
+			MedicalServices: 'Medical Services',
 			Medications: 'Medications',
 			LabTests: 'Lab Tests',
 			MoreDoctors: 'More doctors ({count})',
 			MoreClinics: 'More clinics ({count})',
+			MoreMedicalServices: 'More services ({count})',
 			MoreMedications: 'More medications ({count})',
 			MoreLabTests: 'More tests ({count})',
 		},
@@ -32,10 +35,12 @@ const globalSearchI18n = {
 			Specialties: 'Специальности',
 			Doctors: 'Врачи',
 			Clinics: 'Клиники',
+			MedicalServices: 'Медицинские услуги',
 			Medications: 'Лекарства',
 			LabTests: 'Анализы',
 			MoreDoctors: 'Ещё врачи ({count})',
 			MoreClinics: 'Ещё клиники ({count})',
+			MoreMedicalServices: 'Ещё услуги ({count})',
 			MoreMedications: 'Ещё лекарства ({count})',
 			MoreLabTests: 'Ещё анализы ({count})',
 		},
@@ -46,10 +51,12 @@ const globalSearchI18n = {
 			Specialties: 'Specijalnosti',
 			Doctors: 'Lekari',
 			Clinics: 'Klinike',
+			MedicalServices: 'Medicinske usluge',
 			Medications: 'Lekovi',
 			LabTests: 'Analize',
 			MoreDoctors: 'Još lekara ({count})',
 			MoreClinics: 'Još klinika ({count})',
+			MoreMedicalServices: 'Još usluga ({count})',
 			MoreMedications: 'Još lekova ({count})',
 			MoreLabTests: 'Još analiza ({count})',
 		},
@@ -60,10 +67,12 @@ const globalSearchI18n = {
 			Specialties: 'Специјалности',
 			Doctors: 'Лекари',
 			Clinics: 'Клинике',
+			MedicalServices: 'Медицинске услуге',
 			Medications: 'Лекови',
 			LabTests: 'Анализе',
 			MoreDoctors: 'Још лекара ({count})',
 			MoreClinics: 'Још клиника ({count})',
+			MoreMedicalServices: 'Још услуга ({count})',
 			MoreMedications: 'Још лекова ({count})',
 			MoreLabTests: 'Још анализа ({count})',
 		},
@@ -74,10 +83,12 @@ const globalSearchI18n = {
 			Specialties: 'Fachgebiete',
 			Doctors: 'Ärzte',
 			Clinics: 'Kliniken',
+			MedicalServices: 'Medizinische Leistungen',
 			Medications: 'Medikamente',
 			LabTests: 'Labortests',
 			MoreDoctors: 'Mehr Ärzte ({count})',
 			MoreClinics: 'Mehr Kliniken ({count})',
+			MoreMedicalServices: 'Mehr Leistungen ({count})',
 			MoreMedications: 'Mehr Medikamente ({count})',
 			MoreLabTests: 'Mehr Tests ({count})',
 		},
@@ -88,10 +99,12 @@ const globalSearchI18n = {
 			Specialties: 'Uzmanlıklar',
 			Doctors: 'Doktorlar',
 			Clinics: 'Klinikler',
+			MedicalServices: 'Tıbbi Hizmetler',
 			Medications: 'İlaçlar',
 			LabTests: 'Laboratuvar Testleri',
 			MoreDoctors: 'Daha fazla doktor ({count})',
 			MoreClinics: 'Daha fazla klinik ({count})',
+			MoreMedicalServices: 'Daha fazla hizmet ({count})',
 			MoreMedications: 'Daha fazla ilaç ({count})',
 			MoreLabTests: 'Daha fazla test ({count})',
 		},
@@ -117,6 +130,7 @@ clinicsStore.fetchClinics();
 const allFilteredSpecialties = ref<{ id: number; name: string }[]>([]);
 const allDoctors = ref<DoctorData[]>([]);
 const allFilteredClinics = ref<{ id: number; name: string }[]>([]);
+const allMedicalServices = ref<ClinicServiceWithPrices[]>([]);
 const allMedications = ref<MedicationData[]>([]);
 const allLabTests = ref<LabTestData[]>([]);
 
@@ -129,6 +143,9 @@ const shownSpecialties = computed(() =>
 );
 const shownDoctors = computed(() => allDoctors.value.slice(0, 5));
 const shownClinics = computed(() => allFilteredClinics.value.slice(0, 5));
+const shownMedicalServices = computed(() =>
+	allMedicalServices.value.slice(0, 5).map((s) => ({ id: s.id, name: s.name })),
+);
 const shownMedications = computed(() =>
 	allMedications.value.slice(0, 5).map((m) => ({ id: m.id, name: m.name })),
 );
@@ -186,6 +203,7 @@ async function searchEntities(query: string) {
 
 	if (!query.trim()) {
 		allDoctors.value = [];
+		allMedicalServices.value = [];
 		allMedications.value = [];
 		allLabTests.value = [];
 		return;
@@ -199,23 +217,29 @@ async function searchEntities(query: string) {
 	currentQuery.value = query;
 
 	try {
-		const [doctorsRes, medicationsRes, labTestsRes] = await Promise.all([
-			$fetch('/api/doctors/list', {
-				method: 'POST',
-				body: { name: query, locale: locale.value },
-				signal,
-			}),
-			$fetch('/api/medications/list', {
-				method: 'POST',
-				body: { name: query, locale: locale.value },
-				signal,
-			}),
-			$fetch('/api/labtests/list', {
-				method: 'POST',
-				body: { name: query, locale: locale.value },
-				signal,
-			}),
-		]);
+		const [doctorsRes, medicalServicesRes, medicationsRes, labTestsRes] =
+			await Promise.all([
+				$fetch('/api/doctors/list', {
+					method: 'POST',
+					body: { name: query, locale: locale.value },
+					signal,
+				}),
+				$fetch('/api/services/list', {
+					method: 'POST',
+					body: { name: query, locale: locale.value },
+					signal,
+				}),
+				$fetch('/api/medications/list', {
+					method: 'POST',
+					body: { name: query, locale: locale.value },
+					signal,
+				}),
+				$fetch('/api/labtests/list', {
+					method: 'POST',
+					body: { name: query, locale: locale.value },
+					signal,
+				}),
+			]);
 
 		// Проверяем что запрос не был отменён и query актуален
 		if (signal.aborted || query !== currentQuery.value) {
@@ -223,6 +247,7 @@ async function searchEntities(query: string) {
 		}
 
 		allDoctors.value = doctorsRes?.doctors || [];
+		allMedicalServices.value = medicalServicesRes?.items || [];
 		allMedications.value = medicationsRes?.items || [];
 		allLabTests.value = labTestsRes?.items || [];
 	} catch (error: any) {
@@ -261,6 +286,7 @@ watch(searchQuery, (value) => {
 		allFilteredSpecialties.value = [];
 		allDoctors.value = [];
 		allFilteredClinics.value = [];
+		allMedicalServices.value = [];
 		allMedications.value = [];
 		allLabTests.value = [];
 	}
@@ -272,6 +298,7 @@ const hasResults = computed(() => {
 		allFilteredSpecialties.value.length > 0 ||
 		allDoctors.value.length > 0 ||
 		allFilteredClinics.value.length > 0 ||
+		allMedicalServices.value.length > 0 ||
 		allMedications.value.length > 0 ||
 		allLabTests.value.length > 0
 	);
@@ -297,6 +324,14 @@ function getClinicLink(clinicId: number) {
 	return {
 		name: 'clinics-clinicId',
 		params: { clinicId },
+		query: getRegionalQuery(locale.value),
+	};
+}
+
+function getMedicalServiceLink(serviceId: number) {
+	return {
+		name: 'services-serviceId',
+		params: { serviceId },
 		query: getRegionalQuery(locale.value),
 	};
 }
@@ -328,6 +363,13 @@ function getDoctorsListLink() {
 function getClinicsListLink() {
 	return {
 		name: 'clinics',
+		query: { name: currentQuery.value, ...getRegionalQuery(locale.value) },
+	};
+}
+
+function getMedicalServicesListLink() {
+	return {
+		name: 'services',
 		query: { name: currentQuery.value, ...getRegionalQuery(locale.value) },
 	};
 }
@@ -457,6 +499,36 @@ onUnmounted(() => {
 							@click="handleResultClick"
 						>
 							{{ t('MoreClinics', { count: allFilteredClinics.length }) }}
+						</NuxtLink>
+					</div>
+
+					<!-- Медицинские услуги -->
+					<div
+						v-if="shownMedicalServices.length > 0"
+						class="global-search__group"
+					>
+						<div class="global-search__group-title">
+							<IconMedicalService :size="16" />
+							{{ t('MedicalServices') }}
+						</div>
+						<NuxtLink
+							v-for="service in shownMedicalServices"
+							:key="`service-${service.id}`"
+							:to="getMedicalServiceLink(service.id)"
+							class="global-search__item"
+							@click="handleResultClick"
+						>
+							{{ service.name }}
+						</NuxtLink>
+						<NuxtLink
+							v-if="allMedicalServices.length > 5"
+							:to="getMedicalServicesListLink()"
+							class="global-search__more"
+							@click="handleResultClick"
+						>
+							{{
+								t('MoreMedicalServices', { count: allMedicalServices.length })
+							}}
 						</NuxtLink>
 					</div>
 

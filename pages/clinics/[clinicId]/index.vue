@@ -42,25 +42,25 @@ const { pending: isLoading, data: clinicData } = await useFetch(
 const { data: doctorsList } = await useFetch('/api/doctors/list', {
 	key: `doctors-list-clinic-${route.params.clinicId}`,
 	method: 'POST',
-	body: { clinicIds: [clinicId.value] },
+	body: { clinicIds: [clinicId.value], locale: locale.value },
 });
 
 const { data: labTestsList } = await useFetch('/api/labtests/list', {
 	key: `labtests-list-clinic-${route.params.clinicId}`,
 	method: 'POST',
-	body: { clinicIds: [clinicId.value] },
+	body: { clinicIds: [clinicId.value], locale: locale.value },
 });
 
 const { data: medicationsList } = await useFetch('/api/medications/list', {
 	key: `medications-list-clinic-${route.params.clinicId}`,
 	method: 'POST',
-	body: { clinicIds: [clinicId.value] },
+	body: { clinicIds: [clinicId.value], locale: locale.value },
 });
 
 const { data: medicalServicesList } = await useFetch('/api/services/list', {
 	key: `services-list-clinic-${route.params.clinicId}`,
 	method: 'POST',
-	body: { clinicIds: [clinicId.value] },
+	body: { clinicIds: [clinicId.value], locale: locale.value },
 });
 
 const isFound = computed(() => clinicData.value?.id != null);

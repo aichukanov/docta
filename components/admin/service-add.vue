@@ -107,10 +107,7 @@ const addService = async () => {
 	<div class="service-add">
 		<AdminEditableField label="Название (EN)" v-model:value="name" />
 		<AdminEditableField label="Название (SR)" v-model:value="nameSr" />
-		<AdminEditableField
-			label="Название (SR-CYRL)"
-			v-model:value="nameSrCyrl"
-		/>
+		<AdminEditableField label="Название (SR-CYRL)" v-model:value="nameSrCyrl" />
 		<AdminEditableField label="Название (RU)" v-model:value="nameRu" />
 		<AdminEditableField label="Название (DE)" v-model:value="nameDe" />
 		<AdminEditableField label="Название (TR)" v-model:value="nameTr" />
@@ -133,7 +130,9 @@ const addService = async () => {
 					Сбросить
 				</el-button>
 			</div>
-			<span class="hint">1 = первый (Осмотр), 2 = второй (Повторный осмотр), пусто = по алфавиту</span>
+			<span class="hint">
+				1 = первый (Осмотр), 2 = второй (Повторный осмотр), пусто = по алфавиту
+			</span>
 		</div>
 
 		<div class="specialty-section">
@@ -275,4 +274,3 @@ const addService = async () => {
 	}
 }
 </style>
-

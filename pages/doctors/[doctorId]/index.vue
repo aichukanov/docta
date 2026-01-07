@@ -11,6 +11,7 @@ import doctorI18n from '~/i18n/doctor';
 import languageI18n from '~/i18n/language';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
+import type { ClinicServicesMap } from '~/server/api/clinics/services-by-specialties';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -39,6 +40,39 @@ const { pending: isLoading, data: doctorData } = await useFetch(
 
 const clinicsStore = useClinicsStore();
 await clinicsStore.fetchClinics();
+
+// Загружаем услуги для клиник по специальностям врача
+const clinicServicesData = ref<ClinicServicesMap>({});
+
+const fetchClinicServices = async () => {
+	if (!doctorData.value?.clinicIds || !doctorData.value?.specialtyIds) {
+		return;
+	}
+
+	const { data } = await useFetch<ClinicServicesMap>(
+		'/api/clinics/services-by-specialties',
+		{
+			key: `doctor-clinic-services-${route.params.doctorId}`,
+			method: 'POST',
+			body: {
+				clinicIds: doctorData.value.clinicIds.split(',').map(Number),
+				specialtyIds: doctorData.value.specialtyIds.split(',').map(Number),
+				locale: locale.value,
+			},
+		},
+	);
+
+	if (data.value) {
+		clinicServicesData.value = data.value;
+	}
+};
+
+// Загружаем услуги после получения данных врача
+await fetchClinicServices();
+
+const clinicServices = computed<ClinicServicesMap>(
+	() => clinicServicesData.value || {},
+);
 
 const isFound = computed(() => doctorData.value?.id != null);
 
@@ -247,5 +281,25 @@ watchEffect(() => {
 		<template #info>
 			<DoctorInfo v-if="doctorData" :service="doctorData" isMainHeading />
 		</template>
+		<template #clinics="{ showClinicOnMap }">
+			<section class="clinics-list" role="list">
+				<ClinicSummary
+					v-for="clinic in doctorClinics"
+					:key="clinic.id"
+					:clinic="clinic"
+					:services="clinicServices[clinic.id]"
+					@show-on-map="showClinicOnMap(clinic)"
+					role="listitem"
+				/>
+			</section>
+		</template>
 	</DetailsPage>
 </template>
+
+<style scoped lang="less">
+.clinics-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+}
+</style>

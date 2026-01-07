@@ -42,9 +42,9 @@ const itemLink = computed(() => {
 <style scoped lang="less">
 .item-card {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: var(--spacing-md);
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--spacing-sm);
 	padding: var(--spacing-md);
 	background: var(--color-surface-primary);
 	border: 1px solid var(--color-border-light);
@@ -60,7 +60,7 @@ const itemLink = computed(() => {
 	display: flex;
 	flex-direction: column;
 	gap: 2px;
-	min-width: 0;
+	flex: 1;
 }
 
 .item-name {
@@ -90,20 +90,8 @@ const itemLink = computed(() => {
 	background: var(--color-primary);
 	border-radius: var(--border-radius-sm);
 	color: white;
-	font-size: var(--font-size-md);
+	font-size: var(--font-size-sm);
 	font-weight: var(--font-weight-bold);
 	white-space: nowrap;
-}
-
-@media (max-width: 600px) {
-	.item-card {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: var(--spacing-sm);
-	}
-
-	.item-price {
-		align-self: flex-end;
-	}
 }
 </style>

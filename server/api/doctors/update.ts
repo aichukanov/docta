@@ -1,4 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { requireAdmin } from '~/server/common/auth';
 import type { DoctorData } from '~/interfaces/doctor';
 import {
 	validateBody,
@@ -10,13 +11,7 @@ import {
 
 export default defineEventHandler(async (event): Promise<boolean> => {
 	try {
-		const adminCookie = getCookie(event, 'adm');
-		if (adminCookie !== 'xpycm') {
-			throw createError({
-				statusCode: 404,
-				statusMessage: 'Not found',
-			});
-		}
+		requireAdmin(event);
 
 		const body = await readBody(event);
 

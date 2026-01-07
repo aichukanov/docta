@@ -1,5 +1,9 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
+import {
+	getServicesByClinicAndSpecialty,
+	type ClinicServicesMap,
+} from '~/server/common/services';
 import type { DoctorData } from '~/interfaces/doctor';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
@@ -18,6 +22,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 		}
 
 		const locale = body.locale || 'en';
+		const includeServices = body.includeServices || false;
 
 		const doctorsQuery = `
 			SELECT DISTINCT
@@ -50,18 +55,46 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 
 		const connection = await getConnection();
 		const [doctorRows] = await connection.execute(doctorsQuery);
-		await connection.end();
 
-		const doctor = doctorRows[0];
+		const doctor = (doctorRows as any[])[0];
 		if (!doctor) {
+			await connection.end();
 			return null;
 		}
+
+		// Загружаем услуги, если требуется
+		let clinicServices: ClinicServicesMap | undefined;
+		if (includeServices && doctor.clinicIds && doctor.specialtyIds) {
+			const clinicIds = doctor.clinicIds.split(',').map(Number);
+			const specialtyIds = doctor.specialtyIds.split(',').map(Number);
+			clinicServices = await getServicesByClinicAndSpecialty(
+				connection,
+				clinicIds,
+				specialtyIds,
+				locale,
+			);
+		}
+
+		await connection.end();
 
 		// Обрабатываем локализованные имена
 		const { name, localName } = processLocalizedNameForClinicOrDoctor(
 			doctor,
 			locale,
 		);
+
+		// Сортируем clinicIds по количеству услуг (больше услуг — выше)
+		let sortedClinicIds = doctor.clinicIds;
+		if (clinicServices && doctor.clinicIds) {
+			const clinicIdsList = doctor.clinicIds.split(',').map(Number);
+			clinicIdsList.sort((a: number, b: number) => {
+				const aCount = clinicServices[a]?.length || 0;
+				const bCount = clinicServices[b]?.length || 0;
+				return bCount - aCount;
+			});
+			sortedClinicIds = clinicIdsList.join(',');
+		}
+
 		// Удаляем избыточные поля локализации
 		const { name_sr, name_sr_cyrl, name_ru, name_en, ...rest } = doctor;
 
@@ -69,6 +102,8 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			...rest,
 			name,
 			localName,
+			clinicIds: sortedClinicIds,
+			clinicServices,
 		};
 	} catch (error) {
 		console.error('API Error - doctor data:', error);

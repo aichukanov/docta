@@ -1,5 +1,9 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
+import {
+	getServicesForDoctors,
+	type ClinicServicesMap,
+} from '~/server/common/services';
 import type { DoctorList } from '~/interfaces/doctor';
 import {
 	validateBody,
@@ -53,6 +57,7 @@ export async function getDoctorList(
 		onlyDoctorLanguages?: boolean;
 		locale?: string;
 		includeAllLocales?: boolean;
+		includeServices?: boolean;
 	} = {},
 ) {
 	const whereFilters = [];
@@ -121,20 +126,51 @@ export async function getDoctorList(
 
 	const connection = await getConnection();
 	const [doctorRows] = await connection.execute(doctorsQuery);
+
+	// Загружаем услуги для всех врачей, если нужно
+	let servicesMap: Map<string, ClinicServicesMap> | null = null;
+
+	if (body.includeServices && doctorRows.length > 0) {
+		servicesMap = await getServicesForDoctors(
+			connection,
+			doctorRows as any[],
+			locale,
+		);
+	}
+
 	await connection.end();
 
 	// Обрабатываем локализованные имена
-	const processedDoctors = doctorRows.map((doctor: any) => {
+	const processedDoctors = (doctorRows as any[]).map((doctor: any) => {
 		const { name, localName } = processLocalizedNameForClinicOrDoctor(
 			doctor,
 			locale,
 		);
+
+		// Получаем услуги для этого врача
+		const doctorKey = `${doctor.clinicIds}|${doctor.specialtyIds}`;
+		const clinicServices = servicesMap?.get(doctorKey) || undefined;
+
+		// Сортируем clinicIds по количеству услуг (больше услуг — выше)
+		let sortedClinicIds = doctor.clinicIds;
+		if (clinicServices && doctor.clinicIds) {
+			const clinicIdsList = doctor.clinicIds.split(',').map(Number);
+			clinicIdsList.sort((a: number, b: number) => {
+				const aCount = clinicServices[a]?.length || 0;
+				const bCount = clinicServices[b]?.length || 0;
+				return bCount - aCount;
+			});
+			sortedClinicIds = clinicIdsList.join(',');
+		}
+
 		// Для админки сохраняем все поля локализации
 		if (body.includeAllLocales) {
 			return {
 				...doctor,
 				name,
 				localName,
+				clinicIds: sortedClinicIds,
+				clinicServices,
 			};
 		}
 		// Удаляем избыточные поля локализации
@@ -143,6 +179,8 @@ export async function getDoctorList(
 			...rest,
 			name,
 			localName,
+			clinicIds: sortedClinicIds,
+			clinicServices,
 		};
 	});
 

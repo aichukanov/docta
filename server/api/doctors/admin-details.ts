@@ -1,4 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { requireAdmin } from '~/server/common/auth';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 import type { ContactList } from '~/interfaces/contacts';
 
@@ -18,10 +19,7 @@ interface DoctorAdminDetails extends ContactList {
 export default defineEventHandler(
 	async (event): Promise<DoctorAdminDetails | null> => {
 		try {
-			const adminCookie = getCookie(event, 'adm');
-			if (adminCookie !== 'xpycm') {
-				throw createError({ statusCode: 404, statusMessage: 'Not found' });
-			}
+			requireAdmin(event);
 
 			const body = await readBody(event);
 

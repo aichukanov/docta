@@ -4,7 +4,16 @@ import { CITY_COORDINATES } from '~/enums/cities';
 import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
 import { LanguageId } from '~/enums/language';
 
-import type { ClinicServicesMap } from '~/server/api/clinics/services-by-specialties';
+interface ClinicServiceItem {
+	id: number;
+	name: string;
+	localName: string;
+	price: number | null;
+}
+
+interface ClinicServicesMap {
+	[clinicId: number]: ClinicServiceItem[];
+}
 
 interface ListItem {
 	id: number;
@@ -13,7 +22,7 @@ interface ListItem {
 	synonyms?: string[];
 	clinicIds?: string;
 	clinicPrices?: ClinicPrice[];
-	specialtyIds?: string;
+	clinicServices?: ClinicServicesMap;
 }
 
 const props = defineProps<{
@@ -27,7 +36,6 @@ const props = defineProps<{
 	mapClinics?: ClinicData[];
 	detailsRouteName?: string;
 	detailsParamName?: string;
-	clinicServices?: ClinicServicesMap;
 }>();
 
 const { t, locale } = useI18n({ useScope: 'local' });
@@ -176,8 +184,7 @@ onMounted(async () => {
 										:clinicPrices="item.clinicPrices"
 										:detailsRouteName="detailsRouteName"
 										:detailsParamName="detailsParamName"
-										:clinicServices="clinicServices"
-										:specialtyIds="item.specialtyIds"
+										:clinicServices="item.clinicServices"
 										@show-on-map="showClinicOnMap($event)"
 									>
 										<slot name="item" :item="item" />

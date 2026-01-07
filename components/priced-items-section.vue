@@ -59,11 +59,11 @@ defineProps<{
 
 .items-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 	gap: var(--spacing-sm);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
 	.items-grid {
 		grid-template-columns: 1fr;
 	}

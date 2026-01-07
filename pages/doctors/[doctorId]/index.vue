@@ -11,7 +11,6 @@ import doctorI18n from '~/i18n/doctor';
 import languageI18n from '~/i18n/language';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
-import type { ClinicServicesMap } from '~/server/api/clinics/services-by-specialties';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -34,6 +33,7 @@ const { pending: isLoading, data: doctorData } = await useFetch(
 		body: computed(() => ({
 			doctorId: route.params.doctorId,
 			locale: locale.value,
+			includeServices: true,
 		})),
 	},
 );
@@ -41,38 +41,7 @@ const { pending: isLoading, data: doctorData } = await useFetch(
 const clinicsStore = useClinicsStore();
 await clinicsStore.fetchClinics();
 
-// Загружаем услуги для клиник по специальностям врача
-const clinicServicesData = ref<ClinicServicesMap>({});
-
-const fetchClinicServices = async () => {
-	if (!doctorData.value?.clinicIds || !doctorData.value?.specialtyIds) {
-		return;
-	}
-
-	const { data } = await useFetch<ClinicServicesMap>(
-		'/api/clinics/services-by-specialties',
-		{
-			key: `doctor-clinic-services-${route.params.doctorId}`,
-			method: 'POST',
-			body: {
-				clinicIds: doctorData.value.clinicIds.split(',').map(Number),
-				specialtyIds: doctorData.value.specialtyIds.split(',').map(Number),
-				locale: locale.value,
-			},
-		},
-	);
-
-	if (data.value) {
-		clinicServicesData.value = data.value;
-	}
-};
-
-// Загружаем услуги после получения данных врача
-await fetchClinicServices();
-
-const clinicServices = computed<ClinicServicesMap>(
-	() => clinicServicesData.value || {},
-);
+const clinicServices = computed(() => doctorData.value?.clinicServices || {});
 
 const isFound = computed(() => doctorData.value?.id != null);
 
@@ -88,22 +57,17 @@ if (import.meta.server && !isFound.value) {
 	setResponseStatus(useRequestEvent()!, 404);
 }
 
+// clinicIds уже отсортированы на бэкенде по количеству услуг
 const doctorClinics = computed(() => {
 	if (!isFound.value || !clinicsStore.clinics) {
 		return [];
 	}
 
 	const clinicIds = doctorData.value?.clinicIds.split(',').map(Number) || [];
-	const filteredClinics = clinicsStore.clinics.filter((clinic) =>
-		clinicIds.includes(clinic.id),
-	);
-
-	// Сортируем клиники по количеству услуг (больше услуг — выше)
-	return filteredClinics.sort((a, b) => {
-		const aServices = clinicServices.value[a.id]?.length || 0;
-		const bServices = clinicServices.value[b.id]?.length || 0;
-		return bServices - aServices;
-	});
+	// Сохраняем порядок из API
+	return clinicIds
+		.map((id) => clinicsStore.clinics.find((c) => c.id === id))
+		.filter(Boolean);
 });
 
 const pageTitle = computed(() => {

@@ -1,16 +1,10 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { requireAdmin } from '~/server/common/auth';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
 export default defineEventHandler(async (event): Promise<boolean> => {
 	try {
-		// Проверка админского доступа
-		const adminCookie = getCookie(event, 'adm');
-		if (adminCookie !== 'xpycm') {
-			throw createError({
-				statusCode: 404,
-				statusMessage: 'Not found',
-			});
-		}
+		requireAdmin(event);
 
 		const body = await readBody(event);
 

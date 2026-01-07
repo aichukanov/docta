@@ -1,28 +1,33 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
-import type { ClinicPrice, LabTestNames } from '~/interfaces/clinic';
+import type { ClinicPrice } from '~/interfaces/clinic';
 
-interface UpdateLabTestBody extends LabTestNames {
+interface UpdateServiceBody {
 	id: number;
-	categoryIds: number[];
+	name_en: string;
+	name_sr: string;
+	name_sr_cyrl?: string;
+	name_ru?: string;
+	name_de?: string;
+	name_tr?: string;
+	specialtyIds: number[];
 	clinicPrices: ClinicPrice[];
-	synonyms: { language: string; values: string[] }[];
 }
 
 export default defineEventHandler(async (event): Promise<boolean> => {
 	try {
 		requireAdmin(event);
 
-		const body: UpdateLabTestBody = await readBody(event);
+		const body: UpdateServiceBody = await readBody(event);
 
-		if (!validateBody(body, 'api/labtests/update')) {
+		if (!validateBody(body, 'api/services/update')) {
 			setResponseStatus(event, 400, 'Invalid parameters');
 			return false;
 		}
 
 		if (!validateNonNegativeInteger(body.id)) {
-			setResponseStatus(event, 400, 'Invalid lab test id');
+			setResponseStatus(event, 400, 'Invalid service id');
 			return false;
 		}
 
@@ -31,9 +36,9 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 		try {
 			await connection.beginTransaction();
 
-			// 1. Обновляем основные данные анализа
+			// 1. Обновляем основные данные услуги
 			const updateQuery = `
-				UPDATE lab_tests SET
+				UPDATE medical_services SET
 					name_en = ?,
 					name_sr = ?,
 					name_sr_cyrl = ?,
@@ -46,47 +51,48 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				body.name_en,
 				body.name_sr,
 				body.name_sr_cyrl || '',
-				body.name_ru,
-				body.name_de,
-				body.name_tr,
+				body.name_ru || '',
+				body.name_de || '',
+				body.name_tr || '',
 				body.id,
 			]);
 
-			// 2. Обновляем категории (только дифф)
-			const [existingCategories]: any = await connection.execute(
-				'SELECT category_id FROM lab_test_categories_relations WHERE lab_test_id = ?',
+			// 2. Обновляем специальности (только дифф)
+			const [existingSpecialties]: any = await connection.execute(
+				'SELECT specialty_id FROM medical_services_specialties WHERE medical_service_id = ?',
 				[body.id],
 			);
-			const existingCategoryIds = existingCategories.map(
-				(row: any) => row.category_id,
+			const existingSpecialtyIds = existingSpecialties.map(
+				(row: any) => row.specialty_id,
 			);
-			const newCategoryIds = body.categoryIds || [];
+			const newSpecialtyIds = body.specialtyIds || [];
 
-			const categoriesToRemove = existingCategoryIds.filter(
-				(id: number) => !newCategoryIds.includes(id),
+			const specialtiesToRemove = existingSpecialtyIds.filter(
+				(id: number) => !newSpecialtyIds.includes(id),
 			);
-			const categoriesToAdd = newCategoryIds.filter(
-				(id: number) => !existingCategoryIds.includes(id),
+			const specialtiesToAdd = newSpecialtyIds.filter(
+				(id: number) => !existingSpecialtyIds.includes(id),
 			);
 
-			if (categoriesToRemove.length > 0) {
-				const placeholders = categoriesToRemove.map(() => '?').join(',');
+			if (specialtiesToRemove.length > 0) {
+				const placeholders = specialtiesToRemove.map(() => '?').join(',');
 				await connection.execute(
-					`DELETE FROM lab_test_categories_relations WHERE lab_test_id = ? AND category_id IN (${placeholders})`,
-					[body.id, ...categoriesToRemove],
+					`DELETE FROM medical_services_specialties 
+					 WHERE medical_service_id = ? AND specialty_id IN (${placeholders})`,
+					[body.id, ...specialtiesToRemove],
 				);
 			}
 
-			for (const categoryId of categoriesToAdd) {
+			for (const specialtyId of specialtiesToAdd) {
 				await connection.execute(
-					'INSERT INTO lab_test_categories_relations (lab_test_id, category_id) VALUES (?, ?)',
-					[body.id, categoryId],
+					'INSERT INTO medical_services_specialties (medical_service_id, specialty_id) VALUES (?, ?)',
+					[body.id, specialtyId],
 				);
 			}
 
 			// 3. Обновляем цены клиник (только дифф)
 			const [existingClinicPrices]: any = await connection.execute(
-				'SELECT clinic_id, price, code FROM clinic_lab_tests WHERE lab_test_id = ?',
+				'SELECT clinic_id, price, code FROM clinic_medical_services WHERE medical_service_id = ?',
 				[body.id],
 			);
 			const existingClinicIds = existingClinicPrices.map(
@@ -102,7 +108,8 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			if (clinicsToRemove.length > 0) {
 				const placeholders = clinicsToRemove.map(() => '?').join(',');
 				await connection.execute(
-					`DELETE FROM clinic_lab_tests WHERE lab_test_id = ? AND clinic_id IN (${placeholders})`,
+					`DELETE FROM clinic_medical_services 
+					 WHERE medical_service_id = ? AND clinic_id IN (${placeholders})`,
 					[body.id, ...clinicsToRemove],
 				);
 			}
@@ -116,35 +123,18 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 					// Обновляем только если изменилось
 					if (existing.price !== cp.price || existing.code !== cp.code) {
 						await connection.execute(
-							'UPDATE clinic_lab_tests SET price = ?, code = ? WHERE lab_test_id = ? AND clinic_id = ?',
+							`UPDATE clinic_medical_services SET price = ?, code = ? 
+							 WHERE medical_service_id = ? AND clinic_id = ?`,
 							[cp.price || null, cp.code || null, body.id, cp.clinicId],
 						);
 					}
 				} else {
 					// Добавляем новую
 					await connection.execute(
-						'INSERT INTO clinic_lab_tests (lab_test_id, clinic_id, price, code) VALUES (?, ?, ?, ?)',
+						`INSERT INTO clinic_medical_services (medical_service_id, clinic_id, price, code) 
+						 VALUES (?, ?, ?, ?)`,
 						[body.id, cp.clinicId, cp.price || null, cp.code || null],
 					);
-				}
-			}
-
-			// 4. Обновляем синонимы
-			await connection.execute(
-				'DELETE FROM lab_test_synonyms WHERE lab_test_id = ?',
-				[body.id],
-			);
-
-			if (body.synonyms?.length > 0) {
-				for (const langSynonyms of body.synonyms) {
-					for (const synonym of langSynonyms.values) {
-						if (synonym.trim()) {
-							await connection.execute(
-								'INSERT INTO lab_test_synonyms (lab_test_id, another_name, language) VALUES (?, ?, ?)',
-								[body.id, synonym.trim(), langSynonyms.language],
-							);
-						}
-					}
 				}
 			}
 
@@ -158,10 +148,10 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			throw err;
 		}
 	} catch (error) {
-		console.error('API Error - lab test update:', error);
+		console.error('API Error - service update:', error);
 		throw createError({
 			statusCode: 500,
-			statusMessage: 'Failed to update lab test',
+			statusMessage: 'Failed to update service',
 		});
 	}
 });

@@ -158,6 +158,7 @@ const clinicLink = computed(() => ({
 
 	.clinic-actions {
 		flex-direction: row;
+		flex-wrap: wrap;
 		width: 100%;
 		min-width: unset;
 	}
@@ -169,4 +170,3 @@ const clinicLink = computed(() => ({
 	}
 }
 </style>
-

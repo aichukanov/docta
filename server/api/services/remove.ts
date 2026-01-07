@@ -8,13 +8,13 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 		const body = await readBody(event);
 
-		if (!validateBody(body, 'api/labtests/remove')) {
+		if (!validateBody(body, 'api/services/remove')) {
 			setResponseStatus(event, 400, 'Invalid parameters');
 			return false;
 		}
 
-		if (!validateNonNegativeInteger(body.labTestId)) {
-			setResponseStatus(event, 400, 'Invalid lab test id');
+		if (!validateNonNegativeInteger(body.serviceId)) {
+			setResponseStatus(event, 400, 'Invalid service id');
 			return false;
 		}
 
@@ -25,22 +25,18 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 			// Удаляем связи
 			await connection.execute(
-				'DELETE FROM clinic_lab_tests WHERE lab_test_id = ?',
-				[body.labTestId],
+				'DELETE FROM clinic_medical_services WHERE medical_service_id = ?',
+				[body.serviceId],
 			);
 			await connection.execute(
-				'DELETE FROM lab_test_categories_relations WHERE lab_test_id = ?',
-				[body.labTestId],
-			);
-			await connection.execute(
-				'DELETE FROM lab_test_synonyms WHERE lab_test_id = ?',
-				[body.labTestId],
+				'DELETE FROM medical_services_specialties WHERE medical_service_id = ?',
+				[body.serviceId],
 			);
 
-			// Удаляем анализ
+			// Удаляем услугу
 			const [result]: any = await connection.execute(
-				'DELETE FROM lab_tests WHERE id = ?',
-				[body.labTestId],
+				'DELETE FROM medical_services WHERE id = ?',
+				[body.serviceId],
 			);
 
 			await connection.commit();
@@ -53,10 +49,10 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			throw err;
 		}
 	} catch (error) {
-		console.error('API Error - lab test remove:', error);
+		console.error('API Error - service remove:', error);
 		throw createError({
 			statusCode: 500,
-			statusMessage: 'Failed to remove lab test',
+			statusMessage: 'Failed to remove service',
 		});
 	}
 });

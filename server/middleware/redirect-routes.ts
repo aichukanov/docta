@@ -3,6 +3,7 @@ import { checkLabTestRedirect } from '../common/redirect/lab-test-redirects';
 import { checkDoctorRedirect } from '../common/redirect/doctor-redirects';
 import { sendSitemap } from '../common/sitemap/utils';
 import { generateSitemapPage } from '../common/sitemap/sitemap';
+import { requireAdmin } from '../common/auth';
 
 export default defineEventHandler(async (event) => {
 	const { pathname, searchParams } = getRequestURL(event);
@@ -21,12 +22,7 @@ export default defineEventHandler(async (event) => {
 	) {
 		// ignore these calls
 	} else if (pathArray[0] === 'admin') {
-		const adminCookie = getCookie(event, 'adm');
-		if (adminCookie !== 'xpycm') {
-			throw createError({
-				statusCode: 404,
-			});
-		}
+		requireAdmin(event);
 	} else {
 		// Проверяем редиректы для объединённых сущностей
 		const labTestRedirect = await checkLabTestRedirect(event, pathArray);

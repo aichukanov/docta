@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
-import type { ClinicServicesMap } from '~/server/api/clinics/services-by-specialties';
+
+interface ClinicServiceItem {
+	id: number;
+	name: string;
+	localName: string;
+	price: number | null;
+}
+
+interface ClinicServicesMap {
+	[clinicId: number]: ClinicServiceItem[];
+}
 
 const props = defineProps<{
 	title?: string;
@@ -11,7 +21,6 @@ const props = defineProps<{
 	detailsRouteName?: string;
 	detailsParamName?: string;
 	clinicServices?: ClinicServicesMap;
-	specialtyIds?: string;
 }>();
 
 defineEmits<{
@@ -24,33 +33,12 @@ const clinicsStore = useClinicsStore();
 const getPriceInfo = (clinicId: number) =>
 	props.clinicPrices?.find((p) => p.clinicId === clinicId);
 
-// Фильтруем услуги по специальностям (если переданы)
-const getServices = (clinicId: number) => {
-	const services = props.clinicServices?.[clinicId];
-	if (!services || !props.specialtyIds) {
-		return services;
-	}
+const getServices = (clinicId: number) => props.clinicServices?.[clinicId];
 
-	const doctorSpecialtyIds = props.specialtyIds.split(',').map(Number);
-	return services.filter((service) =>
-		service.specialtyIds?.some((id) => doctorSpecialtyIds.includes(id)),
-	);
-};
-
-const sortedClinics = computed(() => {
-	const clinics = clinicsStore.getClinicsByIds(props.clinicIds);
-
-	// Сортируем клиники по количеству отфильтрованных услуг (больше услуг — выше)
-	if (props.clinicServices) {
-		return clinics.sort((a, b) => {
-			const aServices = getServices(a.id)?.length || 0;
-			const bServices = getServices(b.id)?.length || 0;
-			return bServices - aServices;
-		});
-	}
-
-	return clinics;
-});
+// clinicIds уже отсортированы на бэкенде по количеству услуг
+const sortedClinics = computed(() =>
+	clinicsStore.getClinicsByIds(props.clinicIds),
+);
 
 const detailsLink = computed(() => {
 	if (!props.detailsRouteName || !props.detailsParamName || !props.itemId) {

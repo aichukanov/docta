@@ -42,6 +42,7 @@ export async function getServicesByClinicAndSpecialty(
 			ms.name_ru,
 			ms.name_de,
 			ms.name_tr,
+			ms.sort_order,
 			cms.price,
 			GROUP_CONCAT(DISTINCT mss.specialty_id ORDER BY mss.specialty_id) as specialtyIds
 		FROM clinic_medical_services cms
@@ -50,8 +51,8 @@ export async function getServicesByClinicAndSpecialty(
 		WHERE cms.clinic_id IN (${clinicIdsStr})
 			AND mss.specialty_id IN (${specialtyIdsStr})
 		GROUP BY cms.clinic_id, ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, 
-			ms.name_ru, ms.name_de, ms.name_tr, cms.price
-		ORDER BY cms.clinic_id, ms.name_en ASC;
+			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price
+		ORDER BY cms.clinic_id, ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
 	`;
 
 	const [serviceRows] = await connection.execute(servicesQuery);
@@ -128,6 +129,7 @@ export async function getServicesForDoctors(
 			ms.name_ru,
 			ms.name_de,
 			ms.name_tr,
+			ms.sort_order,
 			cms.price,
 			GROUP_CONCAT(DISTINCT mss.specialty_id ORDER BY mss.specialty_id) as specialtyIds
 		FROM clinic_medical_services cms
@@ -136,8 +138,8 @@ export async function getServicesForDoctors(
 		WHERE cms.clinic_id IN (${clinicIdsStr})
 			AND mss.specialty_id IN (${specialtyIdsStr})
 		GROUP BY cms.clinic_id, ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, 
-			ms.name_ru, ms.name_de, ms.name_tr, cms.price
-		ORDER BY cms.clinic_id, ms.name_en ASC;
+			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price
+		ORDER BY cms.clinic_id, ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
 	`;
 
 	const [serviceRows] = await connection.execute(servicesQuery);
@@ -206,4 +208,3 @@ export async function getServicesForDoctors(
 
 	return result;
 }
-

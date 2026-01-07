@@ -69,6 +69,7 @@ export async function getMedicalServiceList(
 			ms.name_ru,
 			ms.name_de,
 			ms.name_tr,
+			ms.sort_order,
 			GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${priceOrder}) as clinicIds,
 			GROUP_CONCAT(
 				DISTINCT CONCAT(cms.clinic_id, ':', COALESCE(cms.price, 0), ':', COALESCE(cms.code, ''))
@@ -79,8 +80,8 @@ export async function getMedicalServiceList(
 		LEFT JOIN clinics ON cms.clinic_id = clinics.id
 		LEFT JOIN cities ON clinics.city_id = cities.id
 		${whereFiltersString}
-		GROUP BY ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, ms.name_ru, ms.name_de, ms.name_tr 
-		ORDER BY ms.name_en ASC;
+		GROUP BY ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order
+		ORDER BY ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
 	`;
 
 	const connection = await getConnection();

@@ -25,6 +25,7 @@ const nameSrCyrl = ref('');
 const nameRu = ref('');
 const nameDe = ref('');
 const nameTr = ref('');
+const sortOrder = ref<number | null>(null);
 const specialtyIds = ref<number[]>([]);
 const clinicPrices = ref<ClinicPriceEntry[]>([]);
 
@@ -60,6 +61,7 @@ const clearFields = () => {
 	nameRu.value = '';
 	nameDe.value = '';
 	nameTr.value = '';
+	sortOrder.value = null;
 	specialtyIds.value = [];
 	clinicPrices.value = [];
 };
@@ -87,6 +89,7 @@ const addService = async () => {
 			name_ru: nameRu.value,
 			name_de: nameDe.value,
 			name_tr: nameTr.value,
+			sort_order: sortOrder.value,
 			specialtyIds: specialtyIds.value,
 			clinicPrices: validClinicPrices,
 		},
@@ -111,6 +114,27 @@ const addService = async () => {
 		<AdminEditableField label="Название (RU)" v-model:value="nameRu" />
 		<AdminEditableField label="Название (DE)" v-model:value="nameDe" />
 		<AdminEditableField label="Название (TR)" v-model:value="nameTr" />
+
+		<div class="sort-order-section">
+			<label>Порядок сортировки</label>
+			<div class="sort-order-input">
+				<el-input-number
+					v-model="sortOrder"
+					:min="1"
+					:max="999"
+					placeholder="Без приоритета"
+					controls-position="right"
+				/>
+				<el-button
+					v-if="sortOrder !== null"
+					size="small"
+					@click="sortOrder = null"
+				>
+					Сбросить
+				</el-button>
+			</div>
+			<span class="hint">1 = первый (Осмотр), 2 = второй (Повторный осмотр), пусто = по алфавиту</span>
+		</div>
 
 		<div class="specialty-section">
 			<label>Специальности</label>
@@ -175,6 +199,28 @@ const addService = async () => {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-md);
+}
+
+.sort-order-section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+
+	& > label {
+		color: var(--color-text-secondary);
+		font-size: 14px;
+	}
+
+	.sort-order-input {
+		display: flex;
+		gap: var(--spacing-sm);
+		align-items: center;
+	}
+
+	.hint {
+		font-size: 12px;
+		color: var(--color-text-muted);
+	}
 }
 
 .specialty-section {

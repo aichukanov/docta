@@ -10,6 +10,7 @@ interface AddServiceBody {
 	name_ru?: string;
 	name_de?: string;
 	name_tr?: string;
+	sort_order?: number | null;
 	specialtyIds?: number[];
 	clinicPrices?: ClinicPrice[];
 }
@@ -37,8 +38,8 @@ export default defineEventHandler(async (event): Promise<number | null> => {
 
 			// 1. Создаём услугу
 			const insertQuery = `
-				INSERT INTO medical_services (name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr)
-				VALUES (?, ?, ?, ?, ?, ?)
+				INSERT INTO medical_services (name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr, sort_order)
+				VALUES (?, ?, ?, ?, ?, ?, ?)
 			`;
 			const [result]: any = await connection.execute(insertQuery, [
 				body.name,
@@ -47,6 +48,7 @@ export default defineEventHandler(async (event): Promise<number | null> => {
 				body.name_ru || '',
 				body.name_de || '',
 				body.name_tr || '',
+				body.sort_order ?? null,
 			]);
 
 			const serviceId = result.insertId;

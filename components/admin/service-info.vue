@@ -16,6 +16,7 @@ interface ServiceAdminDetails {
 	name_ru: string;
 	name_de: string;
 	name_tr: string;
+	sort_order: number | null;
 	specialtyIds: number[];
 	clinicPrices: ClinicPrice[];
 }
@@ -114,10 +115,14 @@ const clinicPricesModified = computed(() => {
 		JSON.stringify(serviceModel.value.clinicPrices)
 	);
 });
+const sortOrderModified = computed(
+	() => originalService.value?.sort_order !== serviceModel.value?.sort_order,
+);
 
 const hasChanges = computed(
 	() =>
 		nameModified.value ||
+		sortOrderModified.value ||
 		nameSrModified.value ||
 		nameSrCyrlModified.value ||
 		nameRuModified.value ||
@@ -254,6 +259,30 @@ watch(serviceId, async (newId) => {
 				@reset="serviceModel.name_tr = originalService?.name_tr || ''"
 			/>
 
+			<div class="sort-order-section" :class="{ modified: sortOrderModified }">
+				<label>Порядок сортировки</label>
+				<div class="sort-order-input">
+					<el-input-number
+						v-model="serviceModel.sort_order"
+						:min="1"
+						:max="999"
+						placeholder="Без приоритета"
+						controls-position="right"
+					/>
+					<el-button
+						v-if="serviceModel.sort_order !== null"
+						size="small"
+						@click="serviceModel.sort_order = null"
+					>
+						Сбросить
+					</el-button>
+				</div>
+				<span class="hint"
+					>1 = первый (Осмотр), 2 = второй (Повторный осмотр), пусто = по
+					алфавиту</span
+				>
+			</div>
+
 			<div
 				class="specialty-section"
 				:class="{ modified: specialtyIdsModified }"
@@ -345,6 +374,33 @@ watch(serviceId, async (newId) => {
 .loading {
 	padding: var(--spacing-lg);
 	color: var(--color-text-secondary);
+}
+
+.sort-order-section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+
+	& > label {
+		color: var(--color-text-secondary);
+		font-size: 14px;
+	}
+
+	&.modified > label {
+		color: #f59e0b;
+		font-weight: 500;
+	}
+
+	.sort-order-input {
+		display: flex;
+		gap: var(--spacing-sm);
+		align-items: center;
+	}
+
+	.hint {
+		font-size: 12px;
+		color: var(--color-text-muted);
+	}
 }
 
 .specialty-section {

@@ -11,6 +11,7 @@ interface UpdateServiceBody {
 	name_ru?: string;
 	name_de?: string;
 	name_tr?: string;
+	sort_order?: number | null;
 	specialtyIds: number[];
 	clinicPrices: ClinicPrice[];
 }
@@ -44,7 +45,8 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 					name_sr_cyrl = ?,
 					name_ru = ?,
 					name_de = ?,
-					name_tr = ?
+					name_tr = ?,
+					sort_order = ?
 				WHERE id = ?
 			`;
 			await connection.execute(updateQuery, [
@@ -54,6 +56,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				body.name_ru || '',
 				body.name_de || '',
 				body.name_tr || '',
+				body.sort_order ?? null,
 				body.id,
 			]);
 

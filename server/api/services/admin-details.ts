@@ -11,6 +11,7 @@ interface ServiceAdminDetails {
 	name_ru: string;
 	name_de: string;
 	name_tr: string;
+	sort_order: number | null;
 	specialtyIds: number[];
 	clinicPrices: ClinicPrice[];
 }
@@ -36,7 +37,7 @@ export default defineEventHandler(
 
 			// Получаем основные данные услуги
 			const [serviceRows]: any = await connection.execute(
-				`SELECT id, name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr 
+				`SELECT id, name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr, sort_order 
 				 FROM medical_services WHERE id = ?`,
 				[body.serviceId],
 			);
@@ -77,6 +78,7 @@ export default defineEventHandler(
 				name_ru: service.name_ru || '',
 				name_de: service.name_de || '',
 				name_tr: service.name_tr || '',
+				sort_order: service.sort_order,
 				specialtyIds: specialtyRows.map((r: any) => r.specialty_id),
 				clinicPrices,
 			};

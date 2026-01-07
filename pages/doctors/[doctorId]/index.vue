@@ -93,9 +93,17 @@ const doctorClinics = computed(() => {
 		return [];
 	}
 
-	return clinicsStore.clinics.filter((clinic) =>
-		doctorData.value?.clinicIds.split(',').map(Number).includes(clinic.id),
+	const clinicIds = doctorData.value?.clinicIds.split(',').map(Number) || [];
+	const filteredClinics = clinicsStore.clinics.filter((clinic) =>
+		clinicIds.includes(clinic.id),
 	);
+
+	// Сортируем клиники по количеству услуг (больше услуг — выше)
+	return filteredClinics.sort((a, b) => {
+		const aServices = clinicServices.value[a.id]?.length || 0;
+		const bServices = clinicServices.value[b.id]?.length || 0;
+		return bServices - aServices;
+	});
 });
 
 const pageTitle = computed(() => {

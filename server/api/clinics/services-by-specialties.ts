@@ -12,6 +12,7 @@ export interface ClinicServiceBySpecialty {
 	localName: string;
 	price: number | null;
 	code: string | null;
+	specialtyIds: number[];
 }
 
 export interface ClinicServicesMap {
@@ -60,7 +61,7 @@ export async function getClinicServicesBySpecialties(body: {
 	const specialtyIds = body.specialtyIds.join(',');
 
 	const query = `
-		SELECT DISTINCT
+		SELECT
 			cms.clinic_id as clinicId,
 			ms.id,
 			ms.name_en,
@@ -70,12 +71,15 @@ export async function getClinicServicesBySpecialties(body: {
 			ms.name_de,
 			ms.name_tr,
 			cms.price,
-			cms.code
+			cms.code,
+			GROUP_CONCAT(DISTINCT mss.specialty_id ORDER BY mss.specialty_id) as specialtyIds
 		FROM clinic_medical_services cms
 		INNER JOIN medical_services ms ON cms.medical_service_id = ms.id
 		INNER JOIN medical_services_specialties mss ON ms.id = mss.medical_service_id
 		WHERE cms.clinic_id IN (${clinicIds})
 			AND mss.specialty_id IN (${specialtyIds})
+		GROUP BY cms.clinic_id, ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, 
+			ms.name_ru, ms.name_de, ms.name_tr, cms.price, cms.code
 		ORDER BY cms.clinic_id, ms.name_en ASC;
 	`;
 
@@ -103,6 +107,9 @@ export async function getClinicServicesBySpecialties(body: {
 			localName: localName || '',
 			price: row.price ? Number(row.price) : null,
 			code: row.code || null,
+			specialtyIds: row.specialtyIds
+				? row.specialtyIds.split(',').map(Number)
+				: [],
 		});
 	}
 

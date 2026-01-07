@@ -5,6 +5,7 @@ import {
 } from '~/common/schema-org-builders';
 import { SITE_URL, OG_IMAGE } from '~/common/constants';
 import { combineI18nMessages } from '~/i18n/utils';
+import type { ClinicServicesMap } from '~/server/api/clinics/services-by-specialties';
 
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
@@ -66,6 +67,57 @@ const { pending: isLoadingDoctors, data: doctorsList } = await useFetch(
 		method: 'POST',
 		body: filterList,
 	},
+);
+
+// Собираем все уникальные clinicIds и specialtyIds для загрузки услуг
+const allClinicIds = computed(() => {
+	if (!doctorsList.value?.doctors) return [];
+	const ids = new Set<number>();
+	doctorsList.value.doctors.forEach((doctor) => {
+		doctor.clinicIds?.split(',').forEach((id: string) => ids.add(Number(id)));
+	});
+	return Array.from(ids);
+});
+
+const allSpecialtyIds = computed(() => {
+	if (!doctorsList.value?.doctors) return [];
+	const ids = new Set<number>();
+	doctorsList.value.doctors.forEach((doctor) => {
+		doctor.specialtyIds?.split(',').forEach((id: string) => ids.add(Number(id)));
+	});
+	return Array.from(ids);
+});
+
+// Загружаем услуги для всех клиник по всем специальностям врачей
+const clinicServicesData = ref<ClinicServicesMap>({});
+
+const fetchClinicServices = async () => {
+	if (allClinicIds.value.length === 0 || allSpecialtyIds.value.length === 0) {
+		return;
+	}
+
+	const { data } = await useFetch<ClinicServicesMap>(
+		'/api/clinics/services-by-specialties',
+		{
+			key: 'doctors-list-clinic-services',
+			method: 'POST',
+			body: {
+				clinicIds: allClinicIds.value,
+				specialtyIds: allSpecialtyIds.value,
+				locale: locale.value,
+			},
+		},
+	);
+
+	if (data.value) {
+		clinicServicesData.value = data.value;
+	}
+};
+
+await fetchClinicServices();
+
+const clinicServices = computed<ClinicServicesMap>(
+	() => clinicServicesData.value || {},
 );
 
 const pageTitle = computed(() => {
@@ -250,6 +302,7 @@ watchEffect(() => {
 		:isLoading="isLoadingDoctors"
 		:filterQuery="filterQuery"
 		:cityIds="cityIds"
+		:clinicServices="clinicServices"
 	>
 		<template #filters>
 			<FilterName

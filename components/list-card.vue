@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
+import type { ClinicServicesMap } from '~/server/api/clinics/services-by-specialties';
 
 const props = defineProps<{
 	title?: string;
@@ -9,6 +10,8 @@ const props = defineProps<{
 	clinicPrices?: ClinicService[];
 	detailsRouteName?: string;
 	detailsParamName?: string;
+	clinicServices?: ClinicServicesMap;
+	specialtyIds?: string;
 }>();
 
 defineEmits<{
@@ -21,9 +24,33 @@ const clinicsStore = useClinicsStore();
 const getPriceInfo = (clinicId: number) =>
 	props.clinicPrices?.find((p) => p.clinicId === clinicId);
 
-const sortedClinics = computed(() =>
-	clinicsStore.getClinicsByIds(props.clinicIds),
-);
+// Фильтруем услуги по специальностям (если переданы)
+const getServices = (clinicId: number) => {
+	const services = props.clinicServices?.[clinicId];
+	if (!services || !props.specialtyIds) {
+		return services;
+	}
+
+	const doctorSpecialtyIds = props.specialtyIds.split(',').map(Number);
+	return services.filter((service) =>
+		service.specialtyIds?.some((id) => doctorSpecialtyIds.includes(id)),
+	);
+};
+
+const sortedClinics = computed(() => {
+	const clinics = clinicsStore.getClinicsByIds(props.clinicIds);
+
+	// Сортируем клиники по количеству отфильтрованных услуг (больше услуг — выше)
+	if (props.clinicServices) {
+		return clinics.sort((a, b) => {
+			const aServices = getServices(a.id)?.length || 0;
+			const bServices = getServices(b.id)?.length || 0;
+			return bServices - aServices;
+		});
+	}
+
+	return clinics;
+});
 
 const detailsLink = computed(() => {
 	if (!props.detailsRouteName || !props.detailsParamName || !props.itemId) {
@@ -59,6 +86,7 @@ const detailsLink = computed(() => {
 				:key="clinic.id"
 				:clinic="clinic"
 				:price-info="getPriceInfo(clinic.id)"
+				:services="getServices(clinic.id)"
 				@show-on-map="$emit('show-on-map', clinic)"
 			/>
 		</div>

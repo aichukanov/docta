@@ -16,27 +16,27 @@ defineEmits<{
 const summaryI18n = {
 	'en': {
 		Contacts: 'Contacts',
-		AvailableServices: 'Services',
+		AvailableServices: 'Specialty services',
 	},
 	'ru': {
 		Contacts: 'Контакты',
-		AvailableServices: 'Услуги',
+		AvailableServices: 'Профильные услуги',
 	},
 	'de': {
 		Contacts: 'Kontakte',
-		AvailableServices: 'Leistungen',
+		AvailableServices: 'Fachleistungen',
 	},
 	'tr': {
 		Contacts: 'İletişim',
-		AvailableServices: 'Hizmetler',
+		AvailableServices: 'Uzmanlık hizmetleri',
 	},
 	'sr': {
 		Contacts: 'Kontakti',
-		AvailableServices: 'Usluge',
+		AvailableServices: 'Profilne usluge',
 	},
 	'sr-cyrl': {
 		Contacts: 'Контакти',
-		AvailableServices: 'Услуге',
+		AvailableServices: 'Профилне услуге',
 	},
 };
 
@@ -46,7 +46,10 @@ const { t } = useI18n({
 });
 
 const hasServices = computed(() => props.services && props.services.length > 0);
-const hasContent = computed(() => hasServices.value);
+const hasFooterContent = computed(() => hasServices.value || hasContacts);
+
+// Услуги открыты по умолчанию
+const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 </script>
 
 <template>
@@ -57,22 +60,30 @@ const hasContent = computed(() => hasServices.value);
 			@show-on-map="$emit('show-on-map')"
 		/>
 
-		<div v-if="hasContent" class="clinic-content">
-			<PricedItemsSection
-				v-if="hasServices"
-				:title="t('AvailableServices')"
-				:items="services"
-				routeName="services-serviceId"
-				routeParamName="serviceId"
-			/>
+		<footer v-if="hasFooterContent" class="clinic-footer">
+			<el-collapse v-model="activeCollapse" expand-icon-position="left">
+				<el-collapse-item v-if="hasServices" name="services">
+					<template #title>
+						<span class="collapse-title">
+							{{ t('AvailableServices') }}
+							<span class="collapse-count">({{ services.length }})</span>
+						</span>
+					</template>
+					<PricedItemsSection
+						:items="services"
+						routeName="services-serviceId"
+						routeParamName="serviceId"
+					/>
+				</el-collapse-item>
 
-			<!-- Слот для дополнительного контента (лекарства и т.д.) -->
-			<slot name="additional-content" />
-		</div>
+				<!-- Слот для дополнительного контента (лекарства и т.д.) -->
+				<slot name="additional-content" />
 
-		<footer v-if="hasContacts" class="clinic-footer">
-			<el-collapse expand-icon-position="left">
-				<el-collapse-item :title="t('Contacts')">
+				<el-collapse-item
+					v-if="hasContacts"
+					name="contacts"
+					:title="t('Contacts')"
+				>
 					<ContactsList :list="clinic" />
 				</el-collapse-item>
 			</el-collapse>
@@ -90,25 +101,22 @@ const hasContent = computed(() => hasServices.value);
 	overflow: hidden;
 }
 
-.clinic-content {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-lg);
-	padding: var(--spacing-lg) var(--spacing-xl);
-	background: var(--color-surface-secondary);
-	border-top: 1px solid var(--color-border-light);
-}
-
 .clinic-footer {
 	border-top: 1px solid var(--color-border-light);
 	padding: 0 var(--spacing-xl);
 }
 
-@media (max-width: 600px) {
-	.clinic-content {
-		padding: var(--spacing-md);
-	}
+.collapse-title {
+	font-weight: var(--font-weight-medium);
 
+	.collapse-count {
+		color: var(--color-text-muted);
+		font-weight: var(--font-weight-normal);
+		margin-left: var(--spacing-xs);
+	}
+}
+
+@media (max-width: 600px) {
 	.clinic-footer {
 		padding: 0 var(--spacing-md);
 	}

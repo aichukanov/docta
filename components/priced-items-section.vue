@@ -7,7 +7,7 @@ export interface PricedItem {
 }
 
 defineProps<{
-	title: string;
+	title?: string;
 	items: PricedItem[];
 	routeName?: string;
 	routeParamName?: string;
@@ -16,7 +16,7 @@ defineProps<{
 
 <template>
 	<section class="content-section">
-		<h4 class="section-title">{{ title }}</h4>
+		<h4 v-if="title" class="section-title">{{ title }}</h4>
 		<div class="items-grid">
 			<PricedItemCard
 				v-for="item in items"

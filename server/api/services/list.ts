@@ -72,7 +72,7 @@ export async function getMedicalServiceList(
 			ms.sort_order,
 			GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${priceOrder}) as clinicIds,
 			GROUP_CONCAT(
-				DISTINCT CONCAT(cms.clinic_id, ':', COALESCE(cms.price, 0), ':', COALESCE(cms.code, ''))
+				DISTINCT CONCAT(cms.clinic_id, ':', COALESCE(cms.price, 0), ':', COALESCE(cms.price_max, 0), ':', COALESCE(cms.code, ''))
 				ORDER BY ${priceOrder}
 			) as clinicPricesData
 		FROM medical_services ms

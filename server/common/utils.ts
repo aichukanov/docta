@@ -33,16 +33,17 @@ export function getPriceOrderBySQL(tableAlias: string = ''): string {
 
 export function parseClinicPricesData(
 	clinicPricesData: string | null,
-): Array<{ clinicId: number; price: number | null; code: string | null }> {
+): Array<{ clinicId: number; price: number | null; priceMax: number | null; code: string | null }> {
 	if (!clinicPricesData) {
 		return [];
 	}
 
 	return clinicPricesData.split(',').map((priceData) => {
-		const [clinicId, price, code] = priceData.split(':');
+		const [clinicId, price, priceMax, code] = priceData.split(':');
 		return {
 			clinicId: Number(clinicId),
-			price: Number(price) || null,
+			price: price && price !== '0' ? Number(price) : null,
+			priceMax: priceMax && priceMax !== '0' ? Number(priceMax) : null,
 			code: code || null,
 		};
 	});

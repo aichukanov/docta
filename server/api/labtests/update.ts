@@ -86,7 +86,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 			// 3. Обновляем цены клиник (только дифф)
 			const [existingClinicPrices]: any = await connection.execute(
-				'SELECT clinic_id, price, code FROM clinic_lab_tests WHERE lab_test_id = ?',
+				'SELECT clinic_id, price, price_max, code FROM clinic_lab_tests WHERE lab_test_id = ?',
 				[body.id],
 			);
 			const existingClinicIds = existingClinicPrices.map(
@@ -114,17 +114,17 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				);
 				if (existing) {
 					// Обновляем только если изменилось
-					if (existing.price !== cp.price || existing.code !== cp.code) {
+					if (existing.price !== cp.price || existing.price_max !== cp.priceMax || existing.code !== cp.code) {
 						await connection.execute(
-							'UPDATE clinic_lab_tests SET price = ?, code = ? WHERE lab_test_id = ? AND clinic_id = ?',
-							[cp.price || null, cp.code || null, body.id, cp.clinicId],
+							'UPDATE clinic_lab_tests SET price = ?, price_max = ?, code = ? WHERE lab_test_id = ? AND clinic_id = ?',
+							[cp.price || null, cp.priceMax || null, cp.code || null, body.id, cp.clinicId],
 						);
 					}
 				} else {
 					// Добавляем новую
 					await connection.execute(
-						'INSERT INTO clinic_lab_tests (lab_test_id, clinic_id, price, code) VALUES (?, ?, ?, ?)',
-						[body.id, cp.clinicId, cp.price || null, cp.code || null],
+						'INSERT INTO clinic_lab_tests (lab_test_id, clinic_id, price, price_max, code) VALUES (?, ?, ?, ?, ?)',
+						[body.id, cp.clinicId, cp.price || null, cp.priceMax || null, cp.code || null],
 					);
 				}
 			}

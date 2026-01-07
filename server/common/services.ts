@@ -5,6 +5,7 @@ export interface ClinicServiceItem {
 	name: string;
 	localName: string;
 	price: number | null;
+	priceMax: number | null;
 }
 
 export interface ClinicServicesMap {
@@ -44,6 +45,7 @@ export async function getServicesByClinicAndSpecialty(
 			ms.name_tr,
 			ms.sort_order,
 			cms.price,
+			cms.price_max,
 			GROUP_CONCAT(DISTINCT mss.specialty_id ORDER BY mss.specialty_id) as specialtyIds
 		FROM clinic_medical_services cms
 		INNER JOIN medical_services ms ON cms.medical_service_id = ms.id
@@ -51,7 +53,7 @@ export async function getServicesByClinicAndSpecialty(
 		WHERE cms.clinic_id IN (${clinicIdsStr})
 			AND mss.specialty_id IN (${specialtyIdsStr})
 		GROUP BY cms.clinic_id, ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, 
-			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price
+			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price, cms.price_max
 		ORDER BY cms.clinic_id, ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
 	`;
 
@@ -83,6 +85,7 @@ export async function getServicesByClinicAndSpecialty(
 			name: name || '',
 			localName: localName || '',
 			price: row.price ? Number(row.price) : null,
+			priceMax: row.price_max ? Number(row.price_max) : null,
 		});
 	}
 
@@ -131,6 +134,7 @@ export async function getServicesForDoctors(
 			ms.name_tr,
 			ms.sort_order,
 			cms.price,
+			cms.price_max,
 			GROUP_CONCAT(DISTINCT mss.specialty_id ORDER BY mss.specialty_id) as specialtyIds
 		FROM clinic_medical_services cms
 		INNER JOIN medical_services ms ON cms.medical_service_id = ms.id
@@ -138,7 +142,7 @@ export async function getServicesForDoctors(
 		WHERE cms.clinic_id IN (${clinicIdsStr})
 			AND mss.specialty_id IN (${specialtyIdsStr})
 		GROUP BY cms.clinic_id, ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, 
-			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price
+			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price, cms.price_max
 		ORDER BY cms.clinic_id, ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
 	`;
 
@@ -169,6 +173,7 @@ export async function getServicesForDoctors(
 			name: name || '',
 			localName: localName || '',
 			price: row.price ? Number(row.price) : null,
+			priceMax: row.price_max ? Number(row.price_max) : null,
 			specialtyIds,
 		});
 	}

@@ -41,7 +41,7 @@ export default defineEventHandler(
 				) as clinicIds,
 				(
 					SELECT GROUP_CONCAT(
-						CONCAT(clinic_id, ':', COALESCE(price, 0), ':', COALESCE(code, ''))
+						CONCAT(clinic_id, ':', COALESCE(price, 0), ':', COALESCE(price_max, 0), ':', COALESCE(code, ''))
 						ORDER BY ${priceOrder}
 					)
 					FROM clinic_medications

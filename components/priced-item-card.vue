@@ -6,6 +6,7 @@ const props = defineProps<{
 	name: string;
 	localName?: string;
 	price?: number | null;
+	priceMax?: number | null;
 	routeName?: string;
 	routeParamName?: string;
 }>();
@@ -22,6 +23,21 @@ const itemLink = computed(() => {
 		query: getRegionalQuery(locale.value),
 	};
 });
+
+// Форматирует цену с учетом диапазона
+const formattedPrice = computed(() => {
+	if (!props.price) return null;
+
+	const formatNumber = (num: number) =>
+		n(num, { style: 'currency', currency: 'EUR' });
+
+	// Диапазон показываем только если priceMax отличается от price
+	if (props.priceMax && props.priceMax !== props.price) {
+		return `${formatNumber(props.price)} - ${formatNumber(props.priceMax)}`;
+	}
+
+	return formatNumber(props.price);
+});
 </script>
 
 <template>
@@ -33,8 +49,8 @@ const itemLink = computed(() => {
 			<span v-else class="item-name">{{ name }}</span>
 			<span v-if="localName" class="item-local-name">{{ localName }}</span>
 		</div>
-		<div v-if="price" class="item-price">
-			{{ n(price, { style: 'currency', currency: 'EUR' }) }}
+		<div v-if="formattedPrice" class="item-price">
+			{{ formattedPrice }}
 		</div>
 	</div>
 </template>
@@ -64,9 +80,10 @@ const itemLink = computed(() => {
 }
 
 .item-name {
-	font-size: var(--font-size-md);
+	font-size: var(--font-size-lg);
 	font-weight: var(--font-weight-medium);
 	color: var(--color-text-primary);
+	line-height: 1.3;
 	overflow-wrap: break-word;
 
 	&.item-link {

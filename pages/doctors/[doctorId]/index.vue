@@ -222,6 +222,7 @@ watchEffect(() => {
 				specialtyIds,
 				languageIds,
 				clinics: doctorClinics.value,
+				clinicServices: clinicServices.value,
 				title: doctorData.value.professionalTitle,
 				locale: locale.value,
 				pageTitle: pageTitle.value,

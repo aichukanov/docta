@@ -10,7 +10,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-	initialLimit: 10,
+	initialLimit: 6,
 });
 
 const { t, locale } = useI18n();
@@ -19,9 +19,8 @@ const showAll = ref(false);
 
 const totalCount = computed(() => props.items.length);
 
-const visibleItems = computed(() =>
-	showAll.value ? props.items : props.items.slice(0, props.initialLimit),
-);
+const isHidden = (index: number) =>
+	!showAll.value && index >= props.initialLimit;
 
 const sectionLink = computed(() => ({
 	name: props.routeName,
@@ -44,7 +43,7 @@ const hasMoreItems = computed(() => totalCount.value > props.initialLimit);
 			<el-badge :value="totalCount" class="section-badge" />
 		</div>
 		<div class="section-content">
-			<slot :items="visibleItems" />
+			<slot :items="items" :isHidden="isHidden" />
 			<button
 				v-if="hasMoreItems"
 				class="show-more-button"

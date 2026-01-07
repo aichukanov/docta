@@ -59,8 +59,8 @@ export default defineEventHandler(async (event): Promise<number | null> => {
 			if (body.clinicPrices?.length > 0) {
 				for (const cp of body.clinicPrices) {
 					await connection.execute(
-						`INSERT INTO clinic_lab_tests (lab_test_id, clinic_id, price, code) VALUES (?, ?, ?, ?)`,
-						[labTestId, cp.clinicId, cp.price || null, cp.code || null],
+						`INSERT INTO clinic_lab_tests (lab_test_id, clinic_id, price, price_max, code) VALUES (?, ?, ?, ?, ?)`,
+						[labTestId, cp.clinicId, cp.price || null, cp.priceMax || null, cp.code || null],
 					);
 				}
 			}

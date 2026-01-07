@@ -337,6 +337,12 @@ watch(serviceId, async (newId) => {
 						type="number"
 						class="price-input"
 					/>
+					<el-input
+						v-model="cp.priceMax"
+						placeholder="Макс. цена"
+						type="number"
+						class="price-input"
+					/>
 					<el-input v-model="cp.code" placeholder="Код" class="code-input" />
 					<el-button
 						type="danger"
@@ -461,7 +467,7 @@ watch(serviceId, async (newId) => {
 
 		.price-input {
 			flex: 1;
-			max-width: 120px;
+			max-width: 150px;
 		}
 
 		.code-input {

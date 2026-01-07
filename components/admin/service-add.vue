@@ -6,6 +6,7 @@ import specialtyI18n from '~/i18n/specialty';
 interface ClinicPriceEntry {
 	clinicId: number | null;
 	price: string;
+	priceMax: string;
 	code: string;
 }
 
@@ -47,7 +48,12 @@ const specialtyOptions = computed(() =>
 );
 
 const addClinicPrice = () => {
-	clinicPrices.value.push({ clinicId: null, price: '', code: '' });
+	clinicPrices.value.push({
+		clinicId: null,
+		price: '',
+		priceMax: '',
+		code: '',
+	});
 };
 
 const removeClinicPrice = (index: number) => {
@@ -76,8 +82,9 @@ const addService = async () => {
 		.filter((cp) => cp.clinicId)
 		.map((cp) => ({
 			clinicId: cp.clinicId!,
-			price: cp.price ? parseFloat(cp.price) : undefined,
-			code: cp.code || undefined,
+			price: cp.price ? parseFloat(cp.price) : null,
+			priceMax: cp.priceMax ? parseFloat(cp.priceMax) : null,
+			code: cp.code || null,
 		}));
 
 	const serviceId = await $fetch<number | null>('/api/services/add', {
@@ -179,7 +186,18 @@ const addService = async () => {
 						:value="clinic.value"
 					/>
 				</el-select>
-				<el-input v-model="cp.price" placeholder="Цена" class="price-input" />
+				<el-input
+					v-model="cp.price"
+					placeholder="Цена"
+					type="number"
+					class="price-input"
+				/>
+				<el-input
+					v-model="cp.priceMax"
+					placeholder="Макс. цена"
+					type="number"
+					class="price-input"
+				/>
 				<el-input v-model="cp.code" placeholder="Код" class="code-input" />
 				<el-button type="danger" size="small" @click="removeClinicPrice(index)"
 					>×</el-button
@@ -264,7 +282,7 @@ const addService = async () => {
 
 		.price-input {
 			flex: 1;
-			max-width: 120px;
+			max-width: 150px;
 		}
 
 		.code-input {

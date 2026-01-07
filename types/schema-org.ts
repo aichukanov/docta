@@ -55,7 +55,7 @@ export interface MedicalOrganizationRef {
 	'email'?: string;
 	'url'?: string;
 	'sameAs'?: string[];
-	'knowsLanguage'?: string[];
+	'availableLanguage'?: string[];
 }
 
 export interface PhysicianSchema extends SchemaOrgBase {

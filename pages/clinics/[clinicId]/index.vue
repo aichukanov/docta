@@ -192,6 +192,8 @@ watchEffect(() => {
 				pageTitle: pageTitle.value,
 				pageDescription: pageDescription.value,
 				getCityName,
+				services: clinicMedicalServices.value,
+				doctors: clinicDoctors.value,
 			}),
 			buildBreadcrumbsSchema(clinicUrl, [
 				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
@@ -288,24 +290,20 @@ watchEffect(() => {
 					<template #icon>
 						<IconMedicalService />
 					</template>
-					<template #default="{ items }">
+					<template #default="{ items, isHidden }">
 						<div class="items-list">
-							<div v-for="service in items" :key="service.id" class="item-card">
-								<NuxtLink
-									:to="
-										getItemLink('services-serviceId', 'serviceId', service.id)
-									"
-									class="item-link"
-								>
-									{{ service.name }}
-								</NuxtLink>
-								<span
-									v-if="service.clinicPrices?.[0]?.price"
-									class="item-price"
-								>
-									{{ service.clinicPrices[0].price }} €
-								</span>
-							</div>
+							<PricedItemCard
+								v-for="(service, index) in items"
+								:key="service.id"
+								:id="service.id"
+								:name="service.name"
+								:localName="service.localName"
+								:price="service.clinicPrices?.[0]?.price"
+								:priceMax="service.clinicPrices?.[0]?.priceMax"
+								routeName="services-serviceId"
+								routeParamName="serviceId"
+								:class="{ hidden: isHidden(index) }"
+							/>
 						</div>
 					</template>
 				</ClinicServiceSection>
@@ -320,24 +318,20 @@ watchEffect(() => {
 					<template #icon>
 						<IconLabTest />
 					</template>
-					<template #default="{ items }">
+					<template #default="{ items, isHidden }">
 						<div class="items-list">
-							<div v-for="labTest in items" :key="labTest.id" class="item-card">
-								<NuxtLink
-									:to="
-										getItemLink('labtests-labTestId', 'labTestId', labTest.id)
-									"
-									class="item-link"
-								>
-									{{ labTest.name }}
-								</NuxtLink>
-								<span
-									v-if="labTest.clinicPrices?.[0]?.price"
-									class="item-price"
-								>
-									{{ labTest.clinicPrices[0].price }} €
-								</span>
-							</div>
+							<PricedItemCard
+								v-for="(labTest, index) in items"
+								:key="labTest.id"
+								:id="labTest.id"
+								:name="labTest.name"
+								:localName="labTest.localName"
+								:price="labTest.clinicPrices?.[0]?.price"
+								:priceMax="labTest.clinicPrices?.[0]?.priceMax"
+								routeName="labtests-labTestId"
+								routeParamName="labTestId"
+								:class="{ hidden: isHidden(index) }"
+							/>
 						</div>
 					</template>
 				</ClinicServiceSection>
@@ -352,32 +346,20 @@ watchEffect(() => {
 					<template #icon>
 						<IconMedication />
 					</template>
-					<template #default="{ items }">
+					<template #default="{ items, isHidden }">
 						<div class="items-list">
-							<div
-								v-for="medication in items"
+							<PricedItemCard
+								v-for="(medication, index) in items"
 								:key="medication.id"
-								class="item-card"
-							>
-								<NuxtLink
-									:to="
-										getItemLink(
-											'medications-medicationId',
-											'medicationId',
-											medication.id,
-										)
-									"
-									class="item-link"
-								>
-									{{ medication.name }}
-								</NuxtLink>
-								<span
-									v-if="medication.clinicPrices?.[0]?.price"
-									class="item-price"
-								>
-									{{ medication.clinicPrices[0].price }} €
-								</span>
-							</div>
+								:id="medication.id"
+								:name="medication.name"
+								:localName="medication.localName"
+								:price="medication.clinicPrices?.[0]?.price"
+								:priceMax="medication.clinicPrices?.[0]?.priceMax"
+								routeName="medications-medicationId"
+								routeParamName="medicationId"
+								:class="{ hidden: isHidden(index) }"
+							/>
 						</div>
 					</template>
 				</ClinicServiceSection>
@@ -579,38 +561,16 @@ watchEffect(() => {
 }
 
 .items-list {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-xs);
-}
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--spacing-sm);
 
-.item-card {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: var(--spacing-sm) var(--spacing-md);
-	background: var(--color-bg-secondary);
-	border-radius: var(--border-radius-sm);
-	transition: all var(--transition-base);
-
-	&:hover {
-		background: rgba(79, 70, 229, 0.06);
+	@media (max-width: 640px) {
+		grid-template-columns: 1fr;
 	}
-}
 
-.item-link {
-	color: var(--color-primary);
-	text-decoration: none;
-	font-weight: 500;
-
-	&:hover {
-		text-decoration: underline;
+	.hidden {
+		display: none;
 	}
-}
-
-.item-price {
-	font-weight: 600;
-	color: var(--color-text-primary);
-	white-space: nowrap;
 }
 </style>

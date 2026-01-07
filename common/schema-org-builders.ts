@@ -421,7 +421,7 @@ export function buildMedicalOrganizationRef(
 		telegram: clinic.telegram,
 	});
 
-	const knowsLanguage = clinic.languageIds
+	const availableLanguage = clinic.languageIds
 		?.split(',')
 		.map((id) => Number(id))
 		.map((id) => getLanguageCode(id))
@@ -435,9 +435,118 @@ export function buildMedicalOrganizationRef(
 		'email': splitContacts(clinic.email)[0] || undefined,
 		'sameAs': sameAs.length > 0 ? sameAs : undefined,
 		'address': buildClinicPostalAddress(clinic, getCityName),
-		'knowsLanguage':
-			knowsLanguage && knowsLanguage.length > 0 ? knowsLanguage : undefined,
+		'availableLanguage':
+			availableLanguage && availableLanguage.length > 0
+				? availableLanguage
+				: undefined,
 	};
+}
+
+/**
+ * Doctor service item for schema
+ */
+export interface DoctorServiceItem {
+	id: number;
+	name: string;
+	price: number | null;
+	priceMax?: number | null;
+}
+
+/**
+ * Doctor clinic services map
+ */
+export interface DoctorClinicServicesMap {
+	[clinicId: number]: DoctorServiceItem[];
+}
+
+/**
+ * Build hasOfferCatalog and knowsAbout for doctor services
+ * Uses @id references to clinics (defined in worksFor) to avoid duplication
+ */
+function buildDoctorServicesSchema(options: {
+	siteUrl: string;
+	clinicServices?: DoctorClinicServicesMap;
+}): { hasOfferCatalog?: object; knowsAbout?: object[] } {
+	if (!options.clinicServices) {
+		return {};
+	}
+
+	const offersWithPrice: object[] = [];
+	const servicesWithoutPrice: Map<number, { id: number; name: string }> =
+		new Map();
+
+	// Iterate through all clinics and their services
+	for (const [clinicIdStr, services] of Object.entries(
+		options.clinicServices,
+	)) {
+		const clinicId = Number(clinicIdStr);
+		const clinicRef = `${options.siteUrl}/clinics/${clinicId}#medicalorganization`;
+
+		for (const service of services) {
+			const serviceUrl = `${options.siteUrl}/services/${service.id}`;
+
+			if (service.price && service.price > 0) {
+				// Service with price → add to hasOfferCatalog
+				const hasPriceRange =
+					service.priceMax && service.priceMax !== service.price;
+
+				offersWithPrice.push({
+					'@type': 'Offer',
+					'itemOffered': {
+						'@type': 'MedicalProcedure',
+						'@id': `${serviceUrl}#medicalprocedure`,
+						'name': service.name,
+						'url': serviceUrl,
+					},
+					'price': hasPriceRange ? undefined : service.price.toFixed(2),
+					'priceSpecification': hasPriceRange
+						? {
+								'@type': 'PriceSpecification',
+								'minPrice': service.price.toFixed(2),
+								'maxPrice': service.priceMax!.toFixed(2),
+								'priceCurrency': 'EUR',
+						  }
+						: undefined,
+					'priceCurrency': 'EUR',
+					// Just reference to clinic @id (full data is in worksFor)
+					'offeredBy': { '@id': clinicRef },
+				});
+			} else {
+				// Service without price → add to knowsAbout (deduplicated)
+				if (!servicesWithoutPrice.has(service.id)) {
+					servicesWithoutPrice.set(service.id, {
+						id: service.id,
+						name: service.name,
+					});
+				}
+			}
+		}
+	}
+
+	const result: { hasOfferCatalog?: object; knowsAbout?: object[] } = {};
+
+	// Build hasOfferCatalog if there are offers with prices
+	if (offersWithPrice.length > 0) {
+		result.hasOfferCatalog = {
+			'@type': 'OfferCatalog',
+			'name': 'Medical Services',
+			'itemListElement': offersWithPrice,
+		};
+	}
+
+	// Build knowsAbout for services without prices
+	if (servicesWithoutPrice.size > 0) {
+		result.knowsAbout = Array.from(servicesWithoutPrice.values()).map(
+			(service) => ({
+				'@type': 'MedicalProcedure',
+				'@id': `${options.siteUrl}/services/${service.id}#medicalprocedure`,
+				'name': service.name,
+				'url': `${options.siteUrl}/services/${service.id}`,
+			}),
+		);
+	}
+
+	return result;
 }
 
 /**
@@ -451,6 +560,7 @@ export function buildDoctorSchema(options: {
 	specialtyIds?: number[];
 	languageIds?: number[];
 	clinics?: ClinicData[];
+	clinicServices?: DoctorClinicServicesMap;
 	title?: string;
 	locale: string;
 	pageTitle?: string;
@@ -489,6 +599,12 @@ export function buildDoctorSchema(options: {
 		instagram: options.instagram,
 	});
 
+	// Build services schema (hasOfferCatalog and knowsAbout)
+	const servicesSchema = buildDoctorServicesSchema({
+		siteUrl: options.siteUrl,
+		clinicServices: options.clinicServices,
+	});
+
 	const doctorSchema = {
 		...buildEntitySchemaBase({
 			url: doctorUrl,
@@ -503,9 +619,12 @@ export function buildDoctorSchema(options: {
 		jobTitle: jobTitles.length > 0 ? jobTitles : undefined,
 		knowsLanguage: languages,
 		sameAs: sameAs.length > 0 ? sameAs : undefined,
-		worksFor: options.clinics?.map((clinic) =>
-			buildMedicalOrganizationRef(clinic, options.getCityName),
-		),
+		worksFor: options.clinics?.map((clinic) => ({
+			...buildMedicalOrganizationRef(clinic, options.getCityName),
+			'@id': `${options.siteUrl}/clinics/${clinic.id}#medicalorganization`,
+		})),
+		hasOfferCatalog: servicesSchema.hasOfferCatalog,
+		knowsAbout: servicesSchema.knowsAbout,
 	};
 
 	const webPageSchema = buildWebPageSchema({
@@ -520,6 +639,93 @@ export function buildDoctorSchema(options: {
 }
 
 /**
+ * Service item for clinic offer catalog
+ */
+export interface ClinicServiceOffer {
+	id: number;
+	name: string;
+	clinicPrices?: ClinicPrice[];
+}
+
+/**
+ * Doctor item for clinic employee schema
+ */
+export interface ClinicDoctorItem {
+	id: number;
+	professionalTitle?: string;
+}
+
+/**
+ * Build employee references for clinic schema
+ */
+function buildEmployeeRefs(
+	doctors: ClinicDoctorItem[],
+	siteUrl: string,
+): Array<{ '@id': string }> {
+	return doctors.map((doctor) => {
+		const { fragment } = getSchemaType(doctor.professionalTitle?.trim());
+		return { '@id': `${siteUrl}/doctors/${doctor.id}#${fragment}` };
+	});
+}
+
+/**
+ * Build hasOfferCatalog schema for clinic services
+ */
+function buildOfferCatalogSchema(options: {
+	siteUrl: string;
+	clinicId: number;
+	services: ClinicServiceOffer[];
+}): object | undefined {
+	if (!options.services || options.services.length === 0) {
+		return undefined;
+	}
+
+	const offers = options.services
+		.map((service) => {
+			const priceInfo = service.clinicPrices?.find(
+				(p) => p.clinicId === options.clinicId,
+			);
+			if (!priceInfo?.price) return null;
+
+			const serviceUrl = `${options.siteUrl}/services/${service.id}`;
+			const hasPriceRange =
+				priceInfo.priceMax && priceInfo.priceMax !== priceInfo.price;
+
+			return {
+				'@type': 'Offer' as const,
+				'itemOffered': {
+					'@type': 'MedicalProcedure' as const,
+					'@id': `${serviceUrl}#medicalprocedure`,
+					'name': service.name,
+					'url': serviceUrl,
+				},
+				'price': hasPriceRange ? undefined : priceInfo.price.toFixed(2),
+				'priceSpecification': hasPriceRange
+					? {
+							'@type': 'PriceSpecification' as const,
+							'minPrice': priceInfo.price.toFixed(2),
+							'maxPrice': priceInfo.priceMax!.toFixed(2),
+							'priceCurrency': 'EUR',
+					  }
+					: undefined,
+				'priceCurrency': 'EUR',
+				'url': serviceUrl,
+			};
+		})
+		.filter(Boolean);
+
+	if (offers.length === 0) {
+		return undefined;
+	}
+
+	return {
+		'@type': 'OfferCatalog' as const,
+		'name': 'Medical Services',
+		'itemListElement': offers,
+	};
+}
+
+/**
  * Build clinic (medical organization) schema
  */
 export function buildClinicSchema(options: {
@@ -529,6 +735,8 @@ export function buildClinicSchema(options: {
 	pageTitle?: string;
 	pageDescription?: string;
 	getCityName: (id: number) => string | undefined;
+	services?: ClinicServiceOffer[];
+	doctors?: ClinicDoctorItem[];
 }): SchemaOrg[] {
 	const { siteUrl, clinic, locale, getCityName } = options;
 	const clinicUrl = `${siteUrl}/clinics/${clinic.id}`;
@@ -576,6 +784,15 @@ export function buildClinicSchema(options: {
 			availableLanguage && availableLanguage.length > 0
 				? availableLanguage
 				: undefined,
+		hasOfferCatalog: buildOfferCatalogSchema({
+			siteUrl,
+			clinicId: clinic.id,
+			services: options.services || [],
+		}),
+		employee:
+			options.doctors && options.doctors.length > 0
+				? buildEmployeeRefs(options.doctors, siteUrl)
+				: undefined,
 	};
 
 	const webPageSchema = buildWebPageSchema({
@@ -605,9 +822,16 @@ export function buildOffersSchema(options: {
 		return undefined;
 	}
 
-	const prices = validPrices.map((p) => p.price);
-	const lowPrice = Math.min(...prices);
-	const highPrice = Math.max(...prices);
+	// Собираем все цены (включая priceMax) для расчёта диапазона
+	const allPrices: number[] = [];
+	for (const p of validPrices) {
+		allPrices.push(p.price as number);
+		if (p.priceMax && p.priceMax > 0) {
+			allPrices.push(p.priceMax);
+		}
+	}
+	const lowPrice = Math.min(...allPrices);
+	const highPrice = Math.max(...allPrices);
 
 	return {
 		'@type': 'AggregateOffer' as const,
@@ -623,16 +847,29 @@ export function buildOffersSchema(options: {
 				if (!clinic) return null;
 
 				const clinicUrl = `${options.siteUrl}/clinics/${clinic.id}`;
+				const price = priceItem.price as number;
+				const priceMax = priceItem.priceMax;
+
+				// Если есть priceMax и он отличается от price — используем priceSpecification
+				const hasPriceRange = priceMax && priceMax !== price;
 
 				return {
 					'@type': 'Offer' as const,
-					'price': priceItem.price.toFixed(2),
-					'priceCurrency': 'EUR',
+					'price': hasPriceRange ? undefined : price.toFixed(2),
+					'priceCurrency': hasPriceRange ? undefined : 'EUR',
+					'priceSpecification': hasPriceRange
+						? {
+								'@type': 'PriceSpecification' as const,
+								'minPrice': price.toFixed(2),
+								'maxPrice': priceMax.toFixed(2),
+								'priceCurrency': 'EUR',
+						  }
+						: undefined,
 					'url': clinicUrl,
 					'seller': {
 						...buildMedicalOrganizationRef(clinic, options.getCityName),
 						'@id': `${clinicUrl}#medicalorganization`,
-						'url': clinicUrl, // Ссылка на страницу клиники на нашем сайте
+						'url': clinicUrl,
 					},
 				};
 			})

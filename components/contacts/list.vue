@@ -1,5 +1,31 @@
 <template>
 	<div class="contacts-list">
+		<!-- Прямая связь -->
+		<div v-if="hasDirectContacts" class="contacts-group">
+			<!-- Сгруппированные номера телефонов с каналами -->
+			<ContactsPhoneGroupLine
+				v-for="group in phoneGroups"
+				:key="group.phoneNumber"
+				:phoneNumber="group.phoneNumber"
+				:hasPhone="group.hasPhone"
+				:hasWhatsapp="group.hasWhatsapp"
+				:hasViber="group.hasViber"
+				:hasTelegram="group.hasTelegram"
+			/>
+
+			<!-- Telegram-контакты которые не являются номерами (юзернеймы) -->
+			<ContactsTelegramLine
+				v-for="contact in telegramUsernames"
+				:key="contact"
+				:contact="contact"
+			/>
+
+			<ContactsEmailLine
+				v-for="emailAddress in emailAddresses"
+				:key="emailAddress"
+				:emailAddress="emailAddress"
+			/>
+		</div>
 		<!-- Онлайн-присутствие -->
 		<div v-if="hasOnlinePresence" class="contacts-group">
 			<ContactsWebsiteLine
@@ -20,44 +46,20 @@
 				:profile="instagramProfile"
 			/>
 		</div>
-
-		<!-- Прямая связь -->
-		<div v-if="hasDirectContacts" class="contacts-group">
-			<ContactsEmailLine
-				v-for="emailAddress in emailAddresses"
-				:key="emailAddress"
-				:emailAddress="emailAddress"
-			/>
-
-			<ContactsPhoneLine
-				v-for="phoneNumber in phoneNumbers"
-				:key="phoneNumber"
-				:phoneNumber="phoneNumber"
-			/>
-			<ContactsWhatsappLine
-				v-for="contact in whatsappContacts"
-				:key="contact"
-				:contact="contact"
-			/>
-
-			<ContactsTelegramLine
-				v-for="contact in telegramContacts"
-				:key="contact"
-				:contact="contact"
-			/>
-
-			<ContactsViberLine
-				v-for="contact in viberContacts"
-				:key="contact"
-				:contact="contact"
-			/>
-		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { splitContacts } from './utils';
+import { splitContacts, isPhoneNumber } from './utils';
 import type { ContactList } from '~/interfaces/contacts';
+
+interface PhoneGroup {
+	phoneNumber: string;
+	hasPhone: boolean;
+	hasWhatsapp: boolean;
+	hasViber: boolean;
+	hasTelegram: boolean;
+}
 
 const props = defineProps<{
 	list: ContactList;
@@ -72,6 +74,35 @@ const facebookProfiles = computed(() => splitContacts(props.list.facebook));
 const instagramProfiles = computed(() => splitContacts(props.list.instagram));
 const websiteUrls = computed(() => splitContacts(props.list.website));
 
+// Группировка номеров телефонов с их каналами
+const phoneGroups = computed<PhoneGroup[]>(() => {
+	const phoneSet = new Set(phoneNumbers.value);
+	const whatsappSet = new Set(whatsappContacts.value.filter(isPhoneNumber));
+	const viberSet = new Set(viberContacts.value.filter(isPhoneNumber));
+	const telegramSet = new Set(telegramContacts.value.filter(isPhoneNumber));
+
+	// Собираем все уникальные номера
+	const allNumbers = new Set([
+		...phoneSet,
+		...whatsappSet,
+		...viberSet,
+		...telegramSet,
+	]);
+
+	return [...allNumbers].map((phoneNumber) => ({
+		phoneNumber,
+		hasPhone: phoneSet.has(phoneNumber),
+		hasWhatsapp: whatsappSet.has(phoneNumber),
+		hasViber: viberSet.has(phoneNumber),
+		hasTelegram: telegramSet.has(phoneNumber),
+	}));
+});
+
+// Telegram-контакты которые НЕ являются номерами телефона (юзернеймы)
+const telegramUsernames = computed(() =>
+	telegramContacts.value.filter((c) => !isPhoneNumber(c)),
+);
+
 const hasOnlinePresence = computed(
 	() =>
 		websiteUrls.value.length > 0 ||
@@ -81,11 +112,9 @@ const hasOnlinePresence = computed(
 
 const hasDirectContacts = computed(
 	() =>
-		phoneNumbers.value.length > 0 ||
+		phoneGroups.value.length > 0 ||
 		emailAddresses.value.length > 0 ||
-		whatsappContacts.value.length > 0 ||
-		telegramContacts.value.length > 0 ||
-		viberContacts.value.length > 0,
+		telegramUsernames.value.length > 0,
 );
 </script>
 

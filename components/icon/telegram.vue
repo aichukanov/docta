@@ -1,5 +1,11 @@
 <template>
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		:width="size"
+		:height="size"
+		viewBox="0 0 256 256"
+		:style="{ color }"
+	>
 		<rect width="256" height="256" fill="none" />
 		<path
 			d="M80,134.87,170.26,214a8,8,0,0,0,13.09-4.21L224,33.22a1,1,0,0,0-1.34-1.15L20,111.38A6.23,6.23,0,0,0,21,123.3Z"

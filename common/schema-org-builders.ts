@@ -613,6 +613,9 @@ export function buildDoctorSchema(options: {
 		}),
 		name: options.name,
 		description: options.pageDescription || undefined,
+		address: options.clinics
+			?.map((clinic) => buildClinicPostalAddress(clinic, options.getCityName))
+			.filter(Boolean),
 		image: options.photoUrl || undefined,
 		honorificPrefix,
 		medicalSpecialty: schemaType === 'Physician' ? specialties : undefined,

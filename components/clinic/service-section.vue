@@ -5,7 +5,6 @@ interface Props {
 	title: string;
 	items: unknown[];
 	routeName: string;
-	clinicId: number;
 	initialLimit?: number;
 }
 
@@ -21,7 +20,6 @@ const sectionLink = computed(() => ({
 	name: props.routeName,
 	query: {
 		...getRegionalQuery(locale.value),
-		clinicIds: props.clinicId,
 	},
 }));
 </script>

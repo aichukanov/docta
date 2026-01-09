@@ -3,7 +3,18 @@
 .contacts-list {
 	display: flex;
 	flex-direction: column;
+	gap: var(--spacing-md);
+}
+
+.contacts-group {
+	display: flex;
+	flex-direction: column;
 	gap: var(--spacing-xs);
+}
+
+.contacts-group + .contacts-group {
+	border-top: 1px solid var(--color-border-light);
+	padding-top: var(--spacing-md);
 }
 
 /* Дополнительные стили для мессенджеров */

@@ -263,7 +263,6 @@ watchEffect(() => {
 					:title="t('DoctorsAtClinic')"
 					:items="clinicDoctors"
 					routeName="doctors"
-					:clinicId="clinicId"
 				>
 					<template #icon>
 						<IconDoctor />
@@ -278,7 +277,6 @@ watchEffect(() => {
 					:title="t('MedicalServicesAtClinic')"
 					:items="clinicMedicalServices"
 					routeName="services"
-					:clinicId="clinicId"
 				>
 					<template #icon>
 						<IconMedicalService />
@@ -301,7 +299,6 @@ watchEffect(() => {
 					:title="t('LabTestsAtClinic')"
 					:items="clinicLabTests"
 					routeName="labtests"
-					:clinicId="clinicId"
 				>
 					<template #icon>
 						<IconLabTest />
@@ -324,7 +321,6 @@ watchEffect(() => {
 					:title="t('MedicationsAtClinic')"
 					:items="clinicMedications"
 					routeName="medications"
-					:clinicId="clinicId"
 				>
 					<template #icon>
 						<IconMedication />

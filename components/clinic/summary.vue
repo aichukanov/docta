@@ -69,15 +69,20 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 							<span class="collapse-count">({{ services.length }})</span>
 						</span>
 					</template>
-					<PricedItemsSection
-						:items="services"
-						routeName="services-serviceId"
-						routeParamName="serviceId"
-					/>
+					<ClinicServiceSectionContent :items="services" :initialLimit="2">
+						<template #default="{ item }">
+							<PricedItemCard
+								:id="item.id"
+								:name="item.name"
+								:localName="item.localName"
+								:price="item.price"
+								:priceMax="item.priceMax"
+								routeName="services-serviceId"
+								routeParamName="serviceId"
+							/>
+						</template>
+					</ClinicServiceSectionContent>
 				</el-collapse-item>
-
-				<!-- Слот для дополнительного контента (лекарства и т.д.) -->
-				<slot name="additional-content" />
 
 				<el-collapse-item
 					v-if="hasContacts"

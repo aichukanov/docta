@@ -11,7 +11,16 @@ const props = defineProps<{
 	routeParamName?: string;
 }>();
 
-const { n, locale } = useI18n();
+const { t, n, locale } = useI18n({
+	messages: {
+		'en': { PriceUnknown: 'Price not specified' },
+		'ru': { PriceUnknown: 'Цена не указана' },
+		'sr': { PriceUnknown: 'Cena nije navedena' },
+		'de': { PriceUnknown: 'Preis nicht angegeben' },
+		'tr': { PriceUnknown: 'Fiyat belirtilmedi' },
+		'sr-cyrl': { PriceUnknown: 'Цена није наведена' },
+	},
+});
 
 const itemLink = computed(() => {
 	if (!props.routeName || !props.routeParamName) {
@@ -24,19 +33,19 @@ const itemLink = computed(() => {
 	};
 });
 
-// Форматирует цену с учетом диапазона
+const isPriceUnknown = computed(() => props.price == null);
+
 const formattedPrice = computed(() => {
-	if (!props.price) return null;
+	if (isPriceUnknown.value) return null;
 
 	const formatNumber = (num: number) =>
 		n(num, { style: 'currency', currency: 'EUR' });
 
-	// Диапазон показываем только если priceMax отличается от price
 	if (props.priceMax && props.priceMax !== props.price) {
-		return `${formatNumber(props.price)} - ${formatNumber(props.priceMax)}`;
+		return `${formatNumber(props.price!)} - ${formatNumber(props.priceMax)}`;
 	}
 
-	return formatNumber(props.price);
+	return formatNumber(props.price!);
 });
 </script>
 
@@ -49,8 +58,9 @@ const formattedPrice = computed(() => {
 			<span v-else class="item-name">{{ name }}</span>
 			<span v-if="localName" class="item-local-name">{{ localName }}</span>
 		</div>
-		<div v-if="formattedPrice" class="item-price">
-			{{ formattedPrice }}
+		<div class="item-price" :class="{ 'item-price__unknown': isPriceUnknown }">
+			<template v-if="formattedPrice">{{ formattedPrice }}</template>
+			<template v-else>{{ t('PriceUnknown') }}</template>
 		</div>
 	</div>
 </template>
@@ -110,5 +120,12 @@ const formattedPrice = computed(() => {
 	font-size: var(--font-size-sm);
 	font-weight: var(--font-weight-bold);
 	white-space: nowrap;
+
+	&__unknown {
+		background: var(--color-surface-secondary);
+		color: var(--color-text-muted);
+		font-weight: var(--font-weight-normal);
+		font-style: italic;
+	}
 }
 </style>

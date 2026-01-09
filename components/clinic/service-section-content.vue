@@ -1,24 +1,12 @@
 <script setup lang="ts">
-export interface PricedItem {
-	id: number;
-	name: string;
-	localName?: string;
-	price?: number | null;
-	priceMax?: number | null;
+interface Props {
+	items: unknown[];
+	initialLimit?: number;
 }
 
-const props = withDefaults(
-	defineProps<{
-		title?: string;
-		items: PricedItem[];
-		routeName?: string;
-		routeParamName?: string;
-		initialLimit?: number;
-	}>(),
-	{
-		initialLimit: 6,
-	},
-);
+const props = withDefaults(defineProps<Props>(), {
+	initialLimit: 6,
+});
 
 const { t } = useI18n();
 
@@ -33,21 +21,15 @@ const isHidden = (index: number) =>
 </script>
 
 <template>
-	<section class="content-section">
-		<h4 v-if="title" class="section-title">{{ title }}</h4>
-		<div class="items-grid" :class="{ collapsed: !showAll }">
-			<PricedItemCard
+	<div v-if="items.length > 0" class="section-content">
+		<div class="items-grid">
+			<div
 				v-for="(item, index) in items"
-				:key="item.id"
-				:id="item.id"
-				:name="item.name"
-				:localName="item.localName"
-				:price="item.price"
-				:priceMax="item.priceMax"
-				:routeName="routeName"
-				:routeParamName="routeParamName"
+				:key="index"
 				:class="{ hidden: isHidden(index) }"
-			/>
+			>
+				<slot :item="item" />
+			</div>
 		</div>
 		<button
 			v-if="hasMoreItems"
@@ -56,7 +38,7 @@ const isHidden = (index: number) =>
 		>
 			{{ showAll ? t('ShowLess') : t('ShowMore', { count: hiddenCount }) }}
 		</button>
-	</section>
+	</div>
 </template>
 
 <i18n lang="json">
@@ -88,29 +70,11 @@ const isHidden = (index: number) =>
 }
 </i18n>
 
-<style scoped lang="less">
-.content-section {
+<style lang="less" scoped>
+.section-content {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-md);
-}
-
-.section-title {
-	margin: 0;
-	font-size: var(--font-size-md);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-primary);
-	display: flex;
-	align-items: center;
-	gap: var(--spacing-sm);
-
-	&::before {
-		content: '';
-		width: 3px;
-		height: 1em;
-		background: var(--color-primary);
-		border-radius: 2px;
-	}
 }
 
 .items-grid {

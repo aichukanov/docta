@@ -268,15 +268,8 @@ watchEffect(() => {
 					<template #icon>
 						<IconDoctor />
 					</template>
-					<template #default="{ items }">
-						<div class="doctors-list">
-							<DoctorInfo
-								v-for="doctor in items"
-								:key="doctor.id"
-								:service="doctor"
-								short
-							/>
-						</div>
+					<template #default="{ item }">
+						<DoctorInfo :service="item" short />
 					</template>
 				</ClinicServiceSection>
 
@@ -290,21 +283,16 @@ watchEffect(() => {
 					<template #icon>
 						<IconMedicalService />
 					</template>
-					<template #default="{ items, isHidden }">
-						<div class="items-list">
-							<PricedItemCard
-								v-for="(service, index) in items"
-								:key="service.id"
-								:id="service.id"
-								:name="service.name"
-								:localName="service.localName"
-								:price="service.clinicPrices?.[0]?.price"
-								:priceMax="service.clinicPrices?.[0]?.priceMax"
-								routeName="services-serviceId"
-								routeParamName="serviceId"
-								:class="{ hidden: isHidden(index) }"
-							/>
-						</div>
+					<template #default="{ item }">
+						<PricedItemCard
+							:id="item.id"
+							:name="item.name"
+							:localName="item.localName"
+							:price="item.clinicPrices?.[0]?.price"
+							:priceMax="item.clinicPrices?.[0]?.priceMax"
+							routeName="services-serviceId"
+							routeParamName="serviceId"
+						/>
 					</template>
 				</ClinicServiceSection>
 
@@ -318,21 +306,16 @@ watchEffect(() => {
 					<template #icon>
 						<IconLabTest />
 					</template>
-					<template #default="{ items, isHidden }">
-						<div class="items-list">
-							<PricedItemCard
-								v-for="(labTest, index) in items"
-								:key="labTest.id"
-								:id="labTest.id"
-								:name="labTest.name"
-								:localName="labTest.localName"
-								:price="labTest.clinicPrices?.[0]?.price"
-								:priceMax="labTest.clinicPrices?.[0]?.priceMax"
-								routeName="labtests-labTestId"
-								routeParamName="labTestId"
-								:class="{ hidden: isHidden(index) }"
-							/>
-						</div>
+					<template #default="{ item }">
+						<PricedItemCard
+							:id="item.id"
+							:name="item.name"
+							:localName="item.localName"
+							:price="item.clinicPrices?.[0]?.price"
+							:priceMax="item.clinicPrices?.[0]?.priceMax"
+							routeName="labtests-labTestId"
+							routeParamName="labTestId"
+						/>
 					</template>
 				</ClinicServiceSection>
 
@@ -346,21 +329,16 @@ watchEffect(() => {
 					<template #icon>
 						<IconMedication />
 					</template>
-					<template #default="{ items, isHidden }">
-						<div class="items-list">
-							<PricedItemCard
-								v-for="(medication, index) in items"
-								:key="medication.id"
-								:id="medication.id"
-								:name="medication.name"
-								:localName="medication.localName"
-								:price="medication.clinicPrices?.[0]?.price"
-								:priceMax="medication.clinicPrices?.[0]?.priceMax"
-								routeName="medications-medicationId"
-								routeParamName="medicationId"
-								:class="{ hidden: isHidden(index) }"
-							/>
-						</div>
+					<template #default="{ item }">
+						<PricedItemCard
+							:id="item.id"
+							:name="item.name"
+							:localName="item.localName"
+							:price="item.clinicPrices?.[0]?.price"
+							:priceMax="item.clinicPrices?.[0]?.priceMax"
+							routeName="medications-medicationId"
+							routeParamName="medicationId"
+						/>
 					</template>
 				</ClinicServiceSection>
 
@@ -552,25 +530,5 @@ watchEffect(() => {
 	text-align: center;
 	padding: 40px;
 	color: #6b7280;
-}
-
-.doctors-list {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-md);
-}
-
-.items-list {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: var(--spacing-sm);
-
-	@media (max-width: 640px) {
-		grid-template-columns: 1fr;
-	}
-
-	.hidden {
-		display: none;
-	}
 }
 </style>

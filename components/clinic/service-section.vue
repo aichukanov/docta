@@ -10,17 +10,12 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-	initialLimit: 6,
+	initialLimit: 10,
 });
 
-const { t, locale } = useI18n();
-
-const showAll = ref(false);
+const { locale } = useI18n();
 
 const totalCount = computed(() => props.items.length);
-
-const isHidden = (index: number) =>
-	!showAll.value && index >= props.initialLimit;
 
 const sectionLink = computed(() => ({
 	name: props.routeName,
@@ -29,8 +24,6 @@ const sectionLink = computed(() => ({
 		clinicIds: props.clinicId,
 	},
 }));
-
-const hasMoreItems = computed(() => totalCount.value > props.initialLimit);
 </script>
 
 <template>
@@ -40,53 +33,18 @@ const hasMoreItems = computed(() => totalCount.value > props.initialLimit);
 			<NuxtLink :to="sectionLink" class="section-title-link">
 				<h2 class="section-title">{{ title }}</h2>
 			</NuxtLink>
-			<el-badge :value="totalCount" class="section-badge" />
+			<el-badge :value="totalCount" type="primary" class="section-badge" />
 		</div>
-		<div class="section-content">
-			<slot :items="items" :isHidden="isHidden" />
-			<button
-				v-if="hasMoreItems"
-				class="show-more-button"
-				@click="showAll = !showAll"
-			>
-				{{
-					showAll
-						? t('ShowLess')
-						: t('ShowMore', { count: totalCount - initialLimit })
-				}}
-			</button>
+
+		<div class="section-body">
+			<ClinicServiceSectionContent :items="items" :initialLimit="initialLimit">
+				<template #default="{ item }">
+					<slot :item="item" />
+				</template>
+			</ClinicServiceSectionContent>
 		</div>
 	</div>
 </template>
-
-<i18n lang="json">
-{
-	"en": {
-		"ShowMore": "Show more ({count})",
-		"ShowLess": "Show less"
-	},
-	"ru": {
-		"ShowMore": "Показать ещё ({count})",
-		"ShowLess": "Свернуть"
-	},
-	"de": {
-		"ShowMore": "Mehr anzeigen ({count})",
-		"ShowLess": "Weniger anzeigen"
-	},
-	"tr": {
-		"ShowMore": "Daha fazla göster ({count})",
-		"ShowLess": "Daha az göster"
-	},
-	"sr": {
-		"ShowMore": "Prikaži više ({count})",
-		"ShowLess": "Prikaži manje"
-	},
-	"sr-cyrl": {
-		"ShowMore": "Прикажи више ({count})",
-		"ShowLess": "Прикажи мање"
-	}
-}
-</i18n>
 
 <style lang="less" scoped>
 .service-section {
@@ -103,13 +61,6 @@ const hasMoreItems = computed(() => totalCount.value > props.initialLimit);
 	padding: var(--spacing-lg) var(--spacing-xl);
 	background: linear-gradient(to right, rgba(79, 70, 229, 0.04), transparent);
 	border-bottom: 1px solid var(--color-border-light);
-}
-
-.section-header :slotted(svg) {
-	width: 24px;
-	height: 24px;
-	color: var(--color-primary);
-	flex-shrink: 0;
 }
 
 .section-title-link {
@@ -131,35 +82,7 @@ const hasMoreItems = computed(() => totalCount.value > props.initialLimit);
 	transition: color var(--transition-base);
 }
 
-.section-badge {
-	:deep(.el-badge__content) {
-		background: var(--color-primary);
-	}
-}
-
-.section-content {
+.section-body {
 	padding: var(--spacing-lg) var(--spacing-xl);
-}
-
-.show-more-button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	padding: var(--spacing-md);
-	margin-top: var(--spacing-md);
-	background: transparent;
-	border: 1px dashed var(--color-border-light);
-	border-radius: var(--border-radius-md);
-	color: var(--color-primary);
-	font-size: var(--font-size-sm);
-	font-weight: 500;
-	cursor: pointer;
-	transition: all var(--transition-base);
-
-	&:hover {
-		border-color: var(--color-primary);
-		background: rgba(79, 70, 229, 0.04);
-	}
 }
 </style>

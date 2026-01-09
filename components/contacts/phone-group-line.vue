@@ -1,49 +1,3 @@
-<template>
-	<div class="phone-group-item">
-		<div class="phone-header">
-			<span class="phone-number">{{ formattedNumber }}</span>
-			<ContactsCopyButton :value="phoneNumber" />
-		</div>
-
-		<div class="channel-buttons">
-			<a v-if="hasPhone" :href="`tel:${phoneNumber}`" class="channel-btn">
-				<IconPhone :size="20" />
-				<span>{{ t('Call') }}</span>
-			</a>
-
-			<a
-				v-if="hasWhatsapp"
-				:href="waUrl"
-				target="_blank"
-				class="channel-btn channel-whatsapp"
-			>
-				<IconWhatsapp :size="20" />
-				<span>WhatsApp</span>
-			</a>
-
-			<a
-				v-if="hasViber"
-				:href="viberUrl"
-				target="_blank"
-				class="channel-btn channel-viber"
-			>
-				<IconViber :size="20" />
-				<span>Viber</span>
-			</a>
-
-			<a
-				v-if="hasTelegram"
-				:href="telegramUrl"
-				target="_blank"
-				class="channel-btn channel-telegram"
-			>
-				<IconTelegram :size="20" />
-				<span>Telegram</span>
-			</a>
-		</div>
-	</div>
-</template>
-
 <script setup lang="ts">
 import { formatPhoneNumber } from './utils';
 
@@ -65,6 +19,52 @@ const waUrl = computed(() => `https://wa.me/${cleanNumber.value}`);
 const viberUrl = computed(() => `viber://chat?number=${cleanNumber.value}`);
 const telegramUrl = computed(() => `https://t.me/${cleanNumber.value}`);
 </script>
+
+<template>
+	<div class="phone-group-item">
+		<div class="phone-header">
+			<span class="phone-number">{{ formattedNumber }}</span>
+			<ContactsCopyButton :value="phoneNumber" />
+		</div>
+
+		<div class="channel-buttons">
+			<a v-if="hasPhone" :href="`tel:${phoneNumber}`" class="channel-btn">
+				<IconPhone :size="20" />
+				<span>{{ t('Call') }}</span>
+			</a>
+
+			<a
+				v-if="hasTelegram"
+				:href="telegramUrl"
+				target="_blank"
+				class="channel-btn channel-telegram"
+			>
+				<IconTelegram :size="20" />
+				<span>Telegram</span>
+			</a>
+
+			<a
+				v-if="hasWhatsapp"
+				:href="waUrl"
+				target="_blank"
+				class="channel-btn channel-whatsapp"
+			>
+				<IconWhatsapp :size="20" />
+				<span>WhatsApp</span>
+			</a>
+
+			<a
+				v-if="hasViber"
+				:href="viberUrl"
+				target="_blank"
+				class="channel-btn channel-viber"
+			>
+				<IconViber :size="20" />
+				<span>Viber</span>
+			</a>
+		</div>
+	</div>
+</template>
 
 <style scoped>
 .phone-group-item {

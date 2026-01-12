@@ -683,48 +683,74 @@ function buildOfferCatalogSchema(options: {
 		return undefined;
 	}
 
-	const offers = options.services
-		.map((service) => {
-			const priceInfo = service.clinicPrices?.find(
-				(p) => p.clinicId === options.clinicId,
-			);
-			if (!priceInfo?.price) return null;
+	const items = options.services.map((service) => {
+		const priceInfo = service.clinicPrices?.find(
+			(p) => p.clinicId === options.clinicId,
+		);
+		const serviceUrl = `${options.siteUrl}/services/${service.id}`;
 
-			const serviceUrl = `${options.siteUrl}/services/${service.id}`;
-			const hasPriceRange =
-				priceInfo.priceMax && priceInfo.priceMax !== priceInfo.price;
+		const hasPrice = priceInfo?.price != null || priceInfo?.priceMin != null;
 
+		// Услуга без цены → просто MedicalProcedure
+		if (!hasPrice) {
 			return {
-				'@type': 'Offer' as const,
-				'itemOffered': {
-					'@type': 'MedicalProcedure' as const,
-					'@id': `${serviceUrl}#medicalprocedure`,
-					'name': service.name,
-					'url': serviceUrl,
-				},
-				'price': hasPriceRange ? undefined : priceInfo.price.toFixed(2),
-				'priceSpecification': hasPriceRange
-					? {
-							'@type': 'PriceSpecification' as const,
-							'minPrice': priceInfo.price.toFixed(2),
-							'maxPrice': priceInfo.priceMax!.toFixed(2),
-							'priceCurrency': 'EUR',
-					  }
-					: undefined,
-				'priceCurrency': 'EUR',
+				'@type': 'MedicalProcedure' as const,
+				'@id': `${serviceUrl}#medicalprocedure`,
+				'name': service.name,
 				'url': serviceUrl,
 			};
-		})
-		.filter(Boolean);
+		}
 
-	if (offers.length === 0) {
+		// price + priceMax → диапазон "100-120 евро"
+		const hasPriceRange =
+			priceInfo!.price != null && priceInfo!.priceMax != null;
+		// priceMin (без priceMax) → "от 1200 евро"
+		const hasMinPriceOnly =
+			priceInfo!.priceMin != null && priceInfo!.priceMax == null;
+
+		let priceSpecification: object | undefined;
+		if (hasPriceRange) {
+			priceSpecification = {
+				'@type': 'PriceSpecification' as const,
+				'minPrice': priceInfo!.price!.toFixed(2),
+				'maxPrice': priceInfo!.priceMax!.toFixed(2),
+				'priceCurrency': 'EUR',
+			};
+		} else if (hasMinPriceOnly) {
+			priceSpecification = {
+				'@type': 'PriceSpecification' as const,
+				'minPrice': priceInfo!.priceMin!.toFixed(2),
+				'priceCurrency': 'EUR',
+			};
+		}
+
+		// Услуга с ценой → Offer
+		return {
+			'@type': 'Offer' as const,
+			'itemOffered': {
+				'@type': 'MedicalProcedure' as const,
+				'@id': `${serviceUrl}#medicalprocedure`,
+				'name': service.name,
+				'url': serviceUrl,
+			},
+			'price':
+				!hasPriceRange && !hasMinPriceOnly && priceInfo!.price
+					? priceInfo!.price.toFixed(2)
+					: undefined,
+			'priceSpecification': priceSpecification,
+			'priceCurrency': 'EUR',
+			'url': serviceUrl,
+		};
+	});
+
+	if (items.length === 0) {
 		return undefined;
 	}
 
 	return {
 		'@type': 'OfferCatalog' as const,
 		'name': 'Medical Services',
-		'itemListElement': offers,
+		'itemListElement': items,
 	};
 }
 

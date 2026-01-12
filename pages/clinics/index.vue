@@ -181,6 +181,7 @@ watchEffect(() => {
 		<template #card="{ item, showClinicOnMap }">
 			<ClinicSummary
 				:clinic="item as ClinicData"
+				:showPrice="false"
 				@show-on-map="showClinicOnMap(item)"
 			/>
 		</template>

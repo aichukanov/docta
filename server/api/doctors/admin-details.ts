@@ -3,6 +3,13 @@ import { requireAdmin } from '~/server/common/auth';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 import type { ContactList } from '~/interfaces/contacts';
 
+interface DoctorServicePrice {
+	clinicId: number;
+	serviceId: number;
+	price: number | null;
+	priceMax: number | null;
+}
+
 interface DoctorAdminDetails extends ContactList {
 	id: number;
 	name: string;
@@ -14,6 +21,7 @@ interface DoctorAdminDetails extends ContactList {
 	clinicIds: number[];
 	professionalTitle: string;
 	photoUrl: string;
+	servicePrices: DoctorServicePrice[];
 }
 
 export default defineEventHandler(
@@ -66,7 +74,25 @@ export default defineEventHandler(
 				[body.doctorId],
 			);
 
+			// Получаем услуги врача с ценами по клиникам
+			const [servicePriceRows]: any = await connection.execute(
+				`SELECT clinic_id, medical_service_id, price, price_max 
+				 FROM clinic_medical_service_doctors 
+				 WHERE doctor_id = ? 
+				 ORDER BY clinic_id, medical_service_id`,
+				[body.doctorId],
+			);
+
 			await connection.end();
+
+			const servicePrices: DoctorServicePrice[] = servicePriceRows.map(
+				(r: any) => ({
+					clinicId: r.clinic_id,
+					serviceId: r.medical_service_id,
+					price: r.price,
+					priceMax: r.price_max,
+				}),
+			);
 
 			return {
 				id: doctor.id,
@@ -87,6 +113,7 @@ export default defineEventHandler(
 				whatsapp: doctor.whatsapp || '',
 				viber: doctor.viber || '',
 				website: doctor.website || '',
+				servicePrices,
 			};
 		} catch (error) {
 			console.error('API Error - doctor admin details:', error);

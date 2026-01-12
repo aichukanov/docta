@@ -8,6 +8,13 @@ import {
 	validateClinicIds,
 } from '~/common/validation';
 
+interface DoctorServicePrice {
+	clinicId: number;
+	serviceId: number;
+	price: number | null;
+	priceMax: number | null;
+}
+
 export default defineEventHandler(async (event): Promise<DoctorData> => {
 	try {
 		requireAdmin(event);
@@ -90,6 +97,24 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 				`;
 				const clinicQueryParams = [doctorId, clinicId];
 				await connection.execute(clinicQuery, clinicQueryParams);
+			}
+
+			// Handle service prices (clinic_medical_service_doctors)
+			if (body.servicePrices && body.servicePrices.length > 0) {
+				for (const sp of body.servicePrices as DoctorServicePrice[]) {
+					await connection.execute(
+						`INSERT INTO clinic_medical_service_doctors 
+						 (doctor_id, clinic_id, medical_service_id, price, price_max, created_at) 
+						 VALUES (?, ?, ?, ?, ?, NOW())`,
+						[
+							doctorId,
+							sp.clinicId,
+							sp.serviceId,
+							sp.price || null,
+							sp.priceMax || null,
+						],
+					);
+				}
 			}
 
 			await connection.commit();

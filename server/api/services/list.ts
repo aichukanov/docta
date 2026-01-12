@@ -10,6 +10,7 @@ import {
 	validateBody,
 	validateName,
 	validateCityIds,
+	validateServiceCategoryIds,
 } from '~/common/validation';
 
 export default defineEventHandler(async (event): Promise<ClinicServiceList> => {
@@ -36,18 +37,32 @@ export async function getMedicalServiceList(
 	body: {
 		clinicIds?: number[];
 		cityIds?: number[];
+		serviceCategoryIds?: number[];
 		name?: string;
 		locale?: string;
 	} = {},
 ) {
 	const whereFilters = [];
 	const locale = body.locale || 'en';
+	let joinCategory = '';
 
 	if (body.clinicIds?.length > 0) {
 		whereFilters.push(`cms.clinic_id IN (${body.clinicIds.join(',')})`);
 	}
 	if (body.cityIds?.length > 0) {
 		whereFilters.push(`cities.id IN (${body.cityIds.join(',')})`);
+	}
+	if (
+		body.serviceCategoryIds?.length > 0 &&
+		validateServiceCategoryIds(body, 'api/services/list')
+	) {
+		joinCategory =
+			'LEFT JOIN medical_service_categories_relations mscr ON ms.id = mscr.medical_service_id';
+		whereFilters.push(
+			`mscr.medical_service_category_id IN (${body.serviceCategoryIds.join(
+				',',
+			)})`,
+		);
 	}
 	if (body.name && validateName(body, 'api/services/list')) {
 		const nameField = getLocalizedNameField(locale) || 'name_en';
@@ -70,15 +85,21 @@ export async function getMedicalServiceList(
 			ms.name_de,
 			ms.name_tr,
 			ms.sort_order,
-			GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${priceOrder}) as clinicIds,
+			COALESCE(GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${priceOrder}), '') as clinicIds,
 			GROUP_CONCAT(
-				DISTINCT CONCAT(cms.clinic_id, ':', COALESCE(cms.price, 0), ':', COALESCE(cms.price_max, 0), ':', COALESCE(cms.code, ''))
+				DISTINCT CONCAT(cms.clinic_id, ':', IFNULL(cms.price, ''), ':', IFNULL(cms.price_min, ''), ':', IFNULL(cms.price_max, ''), ':', COALESCE(cms.code, ''))
 				ORDER BY ${priceOrder}
-			) as clinicPricesData
+			) as clinicPricesData,
+			(
+				SELECT GROUP_CONCAT(DISTINCT mscr2.medical_service_category_id ORDER BY mscr2.medical_service_category_id)
+				FROM medical_service_categories_relations mscr2
+				WHERE mscr2.medical_service_id = ms.id
+			) as categoryIds
 		FROM medical_services ms
 		LEFT JOIN clinic_medical_services cms ON ms.id = cms.medical_service_id
 		LEFT JOIN clinics ON cms.clinic_id = clinics.id
 		LEFT JOIN cities ON clinics.city_id = cities.id
+		${joinCategory}
 		${whereFiltersString}
 		GROUP BY ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order
 		ORDER BY ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
@@ -110,6 +131,9 @@ export async function getMedicalServiceList(
 			localName: localName || '',
 			clinicIds: row.clinicIds,
 			clinicPrices: parseClinicPricesData(row.clinicPricesData),
+			categoryIds: row.categoryIds
+				? row.categoryIds.split(',').map(Number)
+				: [],
 		};
 	});
 

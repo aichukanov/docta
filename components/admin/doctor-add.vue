@@ -1,9 +1,27 @@
 <script setup lang="ts">
 import type { ClinicData } from '~/interfaces/clinic';
 
-const props = defineProps<{
-	clinics: ClinicData[];
-}>();
+interface ServiceListItem {
+	id: number;
+	name: string;
+}
+
+interface DoctorServicePrice {
+	clinicId: number;
+	serviceId: number;
+	price: number | null;
+	priceMax: number | null;
+}
+
+const props = withDefaults(
+	defineProps<{
+		clinics: ClinicData[];
+		services?: ServiceListItem[];
+	}>(),
+	{
+		services: () => [],
+	},
+);
 
 const emit = defineEmits<{
 	(e: 'updated'): void;
@@ -27,6 +45,34 @@ const doctorViber = ref('');
 const clinicIds = ref<number[]>([]);
 const specialtyIds = ref<number[]>([]);
 const languageIds = ref<number[]>([1]);
+const servicePrices = ref<DoctorServicePrice[]>([]);
+
+const clinicOptions = computed(() =>
+	props.clinics.map((c) => ({
+		label: c.name,
+		value: c.id,
+	})),
+);
+
+const serviceOptions = computed(() =>
+	props.services.map((s) => ({
+		label: s.name,
+		value: s.id,
+	})),
+);
+
+const addServicePrice = () => {
+	servicePrices.value.push({
+		clinicId: 0,
+		serviceId: 0,
+		price: null,
+		priceMax: null,
+	});
+};
+
+const removeServicePrice = (index: number) => {
+	servicePrices.value.splice(index, 1);
+};
 
 const clearFields = () => {
 	doctorName.value = '';
@@ -46,6 +92,7 @@ const clearFields = () => {
 	clinicIds.value = [];
 	specialtyIds.value = [];
 	languageIds.value = [1];
+	servicePrices.value = [];
 };
 
 const addDoctor = async () => {
@@ -79,6 +126,7 @@ const addDoctor = async () => {
 			clinicIds: clinicIds.value,
 			specialtyIds: specialtyIds.value,
 			languageIds: languageIds.value,
+			servicePrices: servicePrices.value,
 		},
 	});
 
@@ -119,16 +167,120 @@ const addDoctor = async () => {
 		<FilterSpecialtySelect v-model:value="specialtyIds" />
 		<FilterLanguageSelect v-model:value="languageIds" />
 
+		<div class="service-prices-section">
+			<div class="section-header">
+				<h4>Услуги врача (по клиникам с ценами)</h4>
+				<el-button size="small" @click="addServicePrice">+ Добавить</el-button>
+			</div>
+
+			<div
+				v-for="(sp, index) in servicePrices"
+				:key="index"
+				class="service-price-row"
+			>
+				<el-select
+					v-model="sp.clinicId"
+					filterable
+					placeholder="Клиника"
+					class="clinic-select"
+				>
+					<el-option
+						v-for="clinic in clinicOptions"
+						:key="clinic.value"
+						:label="clinic.label"
+						:value="clinic.value"
+					/>
+				</el-select>
+				<el-select
+					v-model="sp.serviceId"
+					filterable
+					placeholder="Услуга"
+					class="service-select"
+				>
+					<el-option
+						v-for="service in serviceOptions"
+						:key="service.value"
+						:label="service.label"
+						:value="service.value"
+					/>
+				</el-select>
+				<el-input
+					v-model="sp.price"
+					placeholder="Цена"
+					type="number"
+					class="price-input"
+				/>
+				<el-input
+					v-model="sp.priceMax"
+					placeholder="Макс. цена"
+					type="number"
+					class="price-input"
+				/>
+				<el-button type="danger" size="small" @click="removeServicePrice(index)"
+					>×</el-button
+				>
+			</div>
+
+			<div v-if="!servicePrices.length" class="no-services">
+				Нет привязанных услуг
+			</div>
+		</div>
+
 		<div>
 			<el-button type="primary" @click="addDoctor">Добавить врача</el-button>
 		</div>
 	</div>
 </template>
 
-<style scoped>
+<style scoped lang="less">
 .doctor-add {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-md);
+}
+
+.service-prices-section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-md);
+	background: var(--color-surface-secondary);
+	border-radius: var(--border-radius-md);
+	border: 1px solid var(--color-border-primary);
+
+	.section-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		h4 {
+			margin: 0;
+			color: var(--color-text-primary);
+		}
+	}
+
+	.service-price-row {
+		display: flex;
+		gap: var(--spacing-sm);
+		align-items: center;
+
+		.clinic-select {
+			flex: 1.5;
+		}
+
+		.service-select {
+			flex: 2;
+		}
+
+		.price-input {
+			flex: 1;
+			max-width: 120px;
+		}
+	}
+
+	.no-services {
+		color: var(--color-text-secondary);
+		font-style: italic;
+	}
 }
 </style>

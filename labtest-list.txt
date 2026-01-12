@@ -1,0 +1,1582 @@
+/**
+SELECT 
+    lab_test_categories.name as category_name,
+    lab_tests.id as service_id,
+    lab_tests.name_en as service_name
+FROM lab_tests
+JOIN lab_test_categories_relations ON lab_tests.id = lab_test_categories_relations.lab_test_id
+JOIN lab_test_categories ON lab_test_categories_relations.category_id = lab_test_categories.id
+ORDER BY lab_test_categories.id, lab_tests.name_en LIMIT 5000
+*/
+
+Hematology	15	Blood Count Selected Parameters
+Hematology	336	Blood Eosinophils
+Hematology	12	Blood Group
+Hematology	547	Blood Group and Rh Factor
+Hematology	549	Carboxyhemoglobin
+Hematology	1	Complete Blood Count
+Hematology	2	Complete Blood Count with Leukocyte Formula
+Hematology	338	Erythrocyte Resistance
+Hematology	4	Leukocyte Formula
+Hematology	337	Leukocytes
+Hematology	550	Methemoglobin
+Hematology	335	Nasal Eosinophils
+Hematology	551	Platelet Count Microscopic
+Hematology	13	Platelets
+Hematology	5	Reticulocytes
+Coagulation	9	Activated Partial Thromboplastin Time
+Coagulation	57	Antithrombin III
+Coagulation	577	APCR Resistance to Activated Protein C
+Coagulation	7	Bleeding Time
+Coagulation	561	Coagulation Factor II
+Coagulation	562	Coagulation Factor V
+Coagulation	16	Coagulation Factor VII
+Coagulation	563	Coagulation Factor VIII
+Coagulation	564	Coagulation Factor XIII
+Coagulation	8	Coagulation Time
+Coagulation	10	D-Dimer
+Coagulation	575	Euglobulin Fibrinolysis
+Coagulation	566	Factor IX
+Coagulation	565	Factor VII Proconvertin
+Coagulation	567	Factor X
+Coagulation	568	Factor XI
+Coagulation	569	Factor XII Hageman
+Coagulation	6	Fibrinogen
+Coagulation	560	Heparin Anti-Xa Activity
+Coagulation	14	INR
+Coagulation	559	Lupus Anticoagulant
+Coagulation	573	Protein C
+Coagulation	571	Protein S
+Coagulation	557	Prothrombin Time PT INR
+Coagulation	558	Thrombin Time
+Coagulation	543	Von Willebrand Factor Activity
+Coagulation	544	Von Willebrand Factor Antigen
+Biochemistry	55	ACE
+Biochemistry	79	Acid Phosphatase
+Biochemistry	32	Albumin
+Biochemistry	603	Albumin Globulin Index
+Biochemistry	615	Aldolase
+Biochemistry	40	Alkaline Phosphatase
+Biochemistry	609	Alkaline Phosphatase Isoenzymes
+Biochemistry	556	Alpha-1 Acid Glycoprotein
+Biochemistry	56	Alpha-1 Antitrypsin
+Biochemistry	686	Alpha-2 Macroglobulin
+Biochemistry	28	ALT
+Biochemistry	583	Ammonia NH3
+Biochemistry	37	Amylase
+Biochemistry	570	Amylase Total Alpha-Amylase
+Biochemistry	587	ApoA-I
+Biochemistry	589	ApoB
+Biochemistry	29	Apolipoprotein B
+Biochemistry	26	AST
+Biochemistry	210	Beta-2 Microglobulin
+Biochemistry	204	Beta-CrossLaps
+Biochemistry	1146	Biochemical Analysis Seminal Plasma
+Biochemistry	607	Bone Alkaline Phosphatase
+Biochemistry	362	Ceruloplasmin
+Biochemistry	586	Chitotriosidase
+Biochemistry	22	Cholesterol
+Biochemistry	18	Cholinesterase
+Biochemistry	613	Cholinesterase Pseudocholinesterase
+Biochemistry	38	CK
+Biochemistry	39	CK-MB
+Biochemistry	21	Creatinine
+Biochemistry	90	Creatinine Clearance
+Biochemistry	597	Cystatin C
+Biochemistry	588	Diamine Oxidase
+Biochemistry	585	Diamine Oxidase DAO Histamine
+Biochemistry	34	Direct Bilirubin
+Biochemistry	80	eGFR
+Biochemistry	87	eGFR Glomerular Filtration Rate
+Biochemistry	572	Erythrocyte Cholinesterase
+Biochemistry	54	Ferritin
+Biochemistry	71	Fructosamine
+Biochemistry	35	Gamma-GT
+Biochemistry	601	Globulins
+Biochemistry	17	Glucose
+Biochemistry	66	Glucose 17h
+Biochemistry	67	Glucose 20h
+Biochemistry	65	Glucose 240 min
+Biochemistry	64	Glucose 7h
+Biochemistry	77	Glucose After 180 min
+Biochemistry	78	Glucose After 30 min
+Biochemistry	580	Glucose Before and 2h After Meal
+Biochemistry	327	Glucose Before and After Meal
+Biochemistry	579	Glucose from Capillary Blood
+Biochemistry	591	Glucose-6-Phosphate Dehydrogenase
+Biochemistry	602	Glutathione S-Transferase
+Biochemistry	554	Haptoglobin
+Biochemistry	53	HbA1c
+Biochemistry	24	HDL Cholesterol
+Biochemistry	590	Histamine in Blood
+Biochemistry	208	Homocysteine
+Biochemistry	63	Indirect Bilirubin
+Biochemistry	41	Iron
+Biochemistry	582	Lactate
+Biochemistry	36	LDH
+Biochemistry	25	LDL Cholesterol
+Biochemistry	72	Lipase
+Biochemistry	27	Lipoprotein A
+Biochemistry	741	Melanin
+Biochemistry	891	Methylmalonic Acid
+Biochemistry	592	Non-Esterified Fatty Acids
+Biochemistry	205	Osteocalcin
+Biochemistry	20	Pancreatic Amylase
+Biochemistry	596	Phenylalanine
+Biochemistry	881	PIIINP
+Biochemistry	74	Prealbumin
+Biochemistry	882	Procollagen-1 Intact N-terminal
+Biochemistry	75	Prostatic Acid Phosphatase
+Biochemistry	552	Pyruvate
+Biochemistry	81	Serum Osmolality
+Biochemistry	600	TAS Total Antioxidant Status
+Biochemistry	42	TIBC
+Biochemistry	83	Total Bile Acids
+Biochemistry	33	Total Bilirubin
+Biochemistry	31	Total Protein
+Biochemistry	685	Total TAU Protein
+Biochemistry	44	Transferrin
+Biochemistry	45	Transferrin Saturation
+Biochemistry	23	Triglycerides
+Biochemistry	598	Tyrosine
+Biochemistry	43	UIBC
+Biochemistry	19	Urea
+Biochemistry	93	Urea Clearance
+Biochemistry	30	Uric Acid
+Biochemistry	73	VLDL
+Electrolytes	721	Bicarbonates
+Electrolytes	48	Calcium
+Electrolytes	68	Chloride
+Electrolytes	49	Ionized Calcium
+Electrolytes	51	Magnesium
+Electrolytes	50	Phosphorus
+Electrolytes	46	Potassium
+Electrolytes	47	Sodium
+Hormones	734	17-Hydroxyprogesterone
+Hormones	145	17-OH Progesterone
+Hormones	145	17-OH Progesterone
+Hormones	145	17-OH Progesterone
+Hormones	145	17-OH Progesterone
+Hormones	145	17-OH Progesterone
+Hormones	173	ACTH
+Hormones	173	ACTH
+Hormones	173	ACTH
+Hormones	173	ACTH
+Hormones	173	ACTH
+Hormones	725	ADH Antidiuretic Hormone
+Hormones	705	Adiponectin
+Hormones	184	Aldosterone
+Hormones	184	Aldosterone
+Hormones	184	Aldosterone
+Hormones	184	Aldosterone
+Hormones	184	Aldosterone
+Hormones	144	Androstenedione
+Hormones	144	Androstenedione
+Hormones	144	Androstenedione
+Hormones	144	Androstenedione
+Hormones	144	Androstenedione
+Hormones	148	Anti-Mullerian Hormone
+Hormones	148	Anti-Mullerian Hormone
+Hormones	148	Anti-Mullerian Hormone
+Hormones	148	Anti-Mullerian Hormone
+Hormones	148	Anti-Mullerian Hormone
+Hormones	149	Beta HCG
+Hormones	149	Beta HCG
+Hormones	149	Beta HCG
+Hormones	149	Beta HCG
+Hormones	149	Beta HCG
+Hormones	186	Bioavailable Testosterone
+Hormones	186	Bioavailable Testosterone
+Hormones	186	Bioavailable Testosterone
+Hormones	186	Bioavailable Testosterone
+Hormones	186	Bioavailable Testosterone
+Hormones	164	C-Peptide
+Hormones	164	C-Peptide
+Hormones	164	C-Peptide
+Hormones	164	C-Peptide
+Hormones	164	C-Peptide
+Hormones	170	C-Peptide After 120 min
+Hormones	170	C-Peptide After 120 min
+Hormones	170	C-Peptide After 120 min
+Hormones	170	C-Peptide After 120 min
+Hormones	170	C-Peptide After 120 min
+Hormones	171	C-Peptide After 150 min
+Hormones	171	C-Peptide After 150 min
+Hormones	171	C-Peptide After 150 min
+Hormones	171	C-Peptide After 150 min
+Hormones	171	C-Peptide After 150 min
+Hormones	172	C-Peptide After 180 min
+Hormones	172	C-Peptide After 180 min
+Hormones	172	C-Peptide After 180 min
+Hormones	172	C-Peptide After 180 min
+Hormones	172	C-Peptide After 180 min
+Hormones	166	C-Peptide After 30 min
+Hormones	166	C-Peptide After 30 min
+Hormones	166	C-Peptide After 30 min
+Hormones	166	C-Peptide After 30 min
+Hormones	166	C-Peptide After 30 min
+Hormones	168	C-Peptide After 60 min
+Hormones	168	C-Peptide After 60 min
+Hormones	168	C-Peptide After 60 min
+Hormones	168	C-Peptide After 60 min
+Hormones	168	C-Peptide After 60 min
+Hormones	169	C-Peptide After 90 min
+Hormones	169	C-Peptide After 90 min
+Hormones	169	C-Peptide After 90 min
+Hormones	169	C-Peptide After 90 min
+Hormones	169	C-Peptide After 90 min
+Hormones	133	Calcitonin
+Hormones	133	Calcitonin
+Hormones	133	Calcitonin
+Hormones	133	Calcitonin
+Hormones	133	Calcitonin
+Hormones	698	Catecholamines in Plasma
+Hormones	146	Cortisol
+Hormones	146	Cortisol
+Hormones	146	Cortisol
+Hormones	146	Cortisol
+Hormones	146	Cortisol
+Hormones	176	Cortisol 12h
+Hormones	176	Cortisol 12h
+Hormones	176	Cortisol 12h
+Hormones	176	Cortisol 12h
+Hormones	176	Cortisol 12h
+Hormones	175	Cortisol 17h
+Hormones	175	Cortisol 17h
+Hormones	175	Cortisol 17h
+Hormones	175	Cortisol 17h
+Hormones	175	Cortisol 17h
+Hormones	178	Cortisol 20h
+Hormones	178	Cortisol 20h
+Hormones	178	Cortisol 20h
+Hormones	178	Cortisol 20h
+Hormones	178	Cortisol 20h
+Hormones	147	Cortisol in Urine
+Hormones	147	Cortisol in Urine
+Hormones	147	Cortisol in Urine
+Hormones	147	Cortisol in Urine
+Hormones	147	Cortisol in Urine
+Hormones	723	Cortisol Morning 6-10h
+Hormones	142	DHEA-S
+Hormones	142	DHEA-S
+Hormones	142	DHEA-S
+Hormones	142	DHEA-S
+Hormones	142	DHEA-S
+Hormones	256	Dihydrotestosterone
+Hormones	581	Erythropoietin
+Hormones	139	Estradiol
+Hormones	139	Estradiol
+Hormones	139	Estradiol
+Hormones	139	Estradiol
+Hormones	139	Estradiol
+Hormones	153	Free Beta HCG
+Hormones	153	Free Beta HCG
+Hormones	153	Free Beta HCG
+Hormones	153	Free Beta HCG
+Hormones	153	Free Beta HCG
+Hormones	605	Free Cortisol in Urine
+Hormones	156	Free Estriol
+Hormones	156	Free Estriol
+Hormones	156	Free Estriol
+Hormones	156	Free Estriol
+Hormones	156	Free Estriol
+Hormones	190	Free Metanephrine
+Hormones	190	Free Metanephrine
+Hormones	190	Free Metanephrine
+Hormones	190	Free Metanephrine
+Hormones	190	Free Metanephrine
+Hormones	1359	Free Metanephrine in Plasma
+Hormones	128	Free T3
+Hormones	128	Free T3
+Hormones	128	Free T3
+Hormones	128	Free T3
+Hormones	128	Free T3
+Hormones	129	Free T4
+Hormones	129	Free T4
+Hormones	129	Free T4
+Hormones	129	Free T4
+Hormones	129	Free T4
+Hormones	187	Free T4 Index
+Hormones	187	Free T4 Index
+Hormones	187	Free T4 Index
+Hormones	187	Free T4 Index
+Hormones	187	Free T4 Index
+Hormones	174	Free Testosterone
+Hormones	174	Free Testosterone
+Hormones	174	Free Testosterone
+Hormones	174	Free Testosterone
+Hormones	174	Free Testosterone
+Hormones	733	Free Testosterone Calculated
+Hormones	134	FSH
+Hormones	134	FSH
+Hormones	134	FSH
+Hormones	134	FSH
+Hormones	134	FSH
+Hormones	738	Gastrin
+Hormones	593	Ghrelin
+Hormones	732	Glucagon
+Hormones	182	Growth Hormone
+Hormones	182	Growth Hormone
+Hormones	182	Growth Hormone
+Hormones	182	Growth Hormone
+Hormones	182	Growth Hormone
+Hormones	730	HOMA Insulin Resistance
+Hormones	843	Human Placental Lactogen
+Hormones	185	IGF-1
+Hormones	185	IGF-1
+Hormones	185	IGF-1
+Hormones	185	IGF-1
+Hormones	185	IGF-1
+Hormones	735	IGFBP-3
+Hormones	736	Inhibin A
+Hormones	157	Inhibin B
+Hormones	157	Inhibin B
+Hormones	157	Inhibin B
+Hormones	157	Inhibin B
+Hormones	157	Inhibin B
+Hormones	159	Insulin
+Hormones	159	Insulin
+Hormones	159	Insulin
+Hormones	159	Insulin
+Hormones	159	Insulin
+Hormones	162	Insulin After 120 min
+Hormones	162	Insulin After 120 min
+Hormones	162	Insulin After 120 min
+Hormones	162	Insulin After 120 min
+Hormones	162	Insulin After 120 min
+Hormones	165	Insulin After 180 min
+Hormones	165	Insulin After 180 min
+Hormones	165	Insulin After 180 min
+Hormones	165	Insulin After 180 min
+Hormones	165	Insulin After 180 min
+Hormones	167	Insulin After 240 min
+Hormones	167	Insulin After 240 min
+Hormones	167	Insulin After 240 min
+Hormones	167	Insulin After 240 min
+Hormones	167	Insulin After 240 min
+Hormones	160	Insulin After 30 min
+Hormones	160	Insulin After 30 min
+Hormones	160	Insulin After 30 min
+Hormones	160	Insulin After 30 min
+Hormones	160	Insulin After 30 min
+Hormones	161	Insulin After 60 min
+Hormones	161	Insulin After 60 min
+Hormones	161	Insulin After 60 min
+Hormones	161	Insulin After 60 min
+Hormones	161	Insulin After 60 min
+Hormones	163	Insulin After 90 min
+Hormones	163	Insulin After 90 min
+Hormones	163	Insulin After 90 min
+Hormones	163	Insulin After 90 min
+Hormones	163	Insulin After 90 min
+Hormones	713	Intact PTH
+Hormones	152	Leptin
+Hormones	152	Leptin
+Hormones	152	Leptin
+Hormones	152	Leptin
+Hormones	152	Leptin
+Hormones	135	LH
+Hormones	135	LH
+Hormones	135	LH
+Hormones	135	LH
+Hormones	135	LH
+Hormones	189	Macroprolactin
+Hormones	189	Macroprolactin
+Hormones	189	Macroprolactin
+Hormones	189	Macroprolactin
+Hormones	189	Macroprolactin
+Hormones	702	Melatonin
+Hormones	116	Metanephrines
+Hormones	116	Metanephrines
+Hormones	116	Metanephrines
+Hormones	116	Metanephrines
+Hormones	116	Metanephrines
+Hormones	697	Normetanephrine in Plasma
+Hormones	717	Oxytocin
+Hormones	737	Pregnenolone
+Hormones	140	Progesterone
+Hormones	140	Progesterone
+Hormones	140	Progesterone
+Hormones	140	Progesterone
+Hormones	140	Progesterone
+Hormones	136	Prolactin
+Hormones	136	Prolactin
+Hormones	136	Prolactin
+Hormones	136	Prolactin
+Hormones	136	Prolactin
+Hormones	180	Prolactin 10h
+Hormones	180	Prolactin 10h
+Hormones	180	Prolactin 10h
+Hormones	180	Prolactin 10h
+Hormones	180	Prolactin 10h
+Hormones	138	Prolactin 11h
+Hormones	138	Prolactin 11h
+Hormones	138	Prolactin 11h
+Hormones	138	Prolactin 11h
+Hormones	138	Prolactin 11h
+Hormones	179	Prolactin 13h
+Hormones	179	Prolactin 13h
+Hormones	179	Prolactin 13h
+Hormones	179	Prolactin 13h
+Hormones	179	Prolactin 13h
+Hormones	137	Prolactin 9h
+Hormones	137	Prolactin 9h
+Hormones	137	Prolactin 9h
+Hormones	137	Prolactin 9h
+Hormones	137	Prolactin 9h
+Hormones	158	PTH
+Hormones	158	PTH
+Hormones	158	PTH
+Hormones	158	PTH
+Hormones	158	PTH
+Hormones	740	PTHrP
+Hormones	177	Renin
+Hormones	177	Renin
+Hormones	177	Renin
+Hormones	177	Renin
+Hormones	177	Renin
+Hormones	700	Serotonin
+Hormones	143	SHBG
+Hormones	143	SHBG
+Hormones	143	SHBG
+Hormones	143	SHBG
+Hormones	143	SHBG
+Hormones	181	T-Uptake
+Hormones	181	T-Uptake
+Hormones	181	T-Uptake
+Hormones	181	T-Uptake
+Hormones	181	T-Uptake
+Hormones	126	T3
+Hormones	126	T3
+Hormones	126	T3
+Hormones	126	T3
+Hormones	126	T3
+Hormones	127	T4
+Hormones	127	T4
+Hormones	127	T4
+Hormones	127	T4
+Hormones	127	T4
+Hormones	712	TBG Thyroid Binding Globulin
+Hormones	141	Testosterone
+Hormones	141	Testosterone
+Hormones	141	Testosterone
+Hormones	141	Testosterone
+Hormones	141	Testosterone
+Hormones	131	Thyroglobulin
+Hormones	131	Thyroglobulin
+Hormones	131	Thyroglobulin
+Hormones	131	Thyroglobulin
+Hormones	131	Thyroglobulin
+Hormones	125	TSH
+Hormones	125	TSH
+Hormones	125	TSH
+Hormones	125	TSH
+Hormones	125	TSH
+Hormones	743	Vasoactive Intestinal Polypeptide
+Tumor Markers	150	AFP
+Tumor Markers	150	AFP
+Tumor Markers	150	AFP
+Tumor Markers	150	AFP
+Tumor Markers	150	AFP
+Tumor Markers	1416	ALK FISH
+Tumor Markers	196	CA 125
+Tumor Markers	196	CA 125
+Tumor Markers	196	CA 125
+Tumor Markers	196	CA 125
+Tumor Markers	196	CA 125
+Tumor Markers	195	CA 15-3
+Tumor Markers	195	CA 15-3
+Tumor Markers	195	CA 15-3
+Tumor Markers	195	CA 15-3
+Tumor Markers	195	CA 15-3
+Tumor Markers	197	CA 19-9
+Tumor Markers	197	CA 19-9
+Tumor Markers	197	CA 19-9
+Tumor Markers	197	CA 19-9
+Tumor Markers	197	CA 19-9
+Tumor Markers	200	CA 50
+Tumor Markers	200	CA 50
+Tumor Markers	200	CA 50
+Tumor Markers	200	CA 50
+Tumor Markers	200	CA 50
+Tumor Markers	198	CA 72-4
+Tumor Markers	198	CA 72-4
+Tumor Markers	198	CA 72-4
+Tumor Markers	198	CA 72-4
+Tumor Markers	198	CA 72-4
+Tumor Markers	194	CEA
+Tumor Markers	194	CEA
+Tumor Markers	194	CEA
+Tumor Markers	194	CEA
+Tumor Markers	194	CEA
+Tumor Markers	206	Chromogranin A
+Tumor Markers	202	CYFRA 21-1
+Tumor Markers	1414	EGF Epidermal Growth Factor
+Tumor Markers	192	Free PSA
+Tumor Markers	192	Free PSA
+Tumor Markers	192	Free PSA
+Tumor Markers	192	Free PSA
+Tumor Markers	192	Free PSA
+Tumor Markers	199	HE4
+Tumor Markers	199	HE4
+Tumor Markers	199	HE4
+Tumor Markers	199	HE4
+Tumor Markers	199	HE4
+Tumor Markers	1417	HER2 Estrogen Progesterone Receptors
+Tumor Markers	203	NSE
+Tumor Markers	1411	OncotypeDX
+Tumor Markers	1125	Ovarian Tumor Markers
+Tumor Markers	1353	PCA3 Score Prostate Cancer
+Tumor Markers	742	Protein S-100
+Tumor Markers	191	PSA
+Tumor Markers	191	PSA
+Tumor Markers	191	PSA
+Tumor Markers	191	PSA
+Tumor Markers	191	PSA
+Tumor Markers	193	PSA Plus Free PSA
+Tumor Markers	193	PSA Plus Free PSA
+Tumor Markers	193	PSA Plus Free PSA
+Tumor Markers	193	PSA Plus Free PSA
+Tumor Markers	193	PSA Plus Free PSA
+Tumor Markers	201	ROMA Index
+Tumor Markers	213	SCC Squamous Cell Carcinoma Antigen
+Tumor Markers	212	TATI
+Tumor Markers	211	TPA Tissue Polypeptide Antigen
+Tumor Markers	739	UBC
+Inflammatory Markers	52	C-Reactive Protein
+Inflammatory Markers	822	ECP Eosinophil Cationic Protein
+Inflammatory Markers	328	Erythrocyte Sedimentation Rate
+Inflammatory Markers	82	IL-6
+Inflammatory Markers	693	Interleukin-1 Beta
+Inflammatory Markers	555	Interleukin-6
+Inflammatory Markers	70	Procalcitonin
+Inflammatory Markers	3	Sedimentation Rate
+Inflammatory Markers	680	TNF-Alpha Tumor Necrosis Factor
+Urinalysis	1433	17-Ketosteroids
+Urinalysis	1435	17-OH Corticosteroids
+Urinalysis	105	5-HIAA
+Urinalysis	105	5-HIAA
+Urinalysis	105	5-HIAA
+Urinalysis	105	5-HIAA
+Urinalysis	105	5-HIAA
+Urinalysis	1430	5-HIAA in 24h Urine
+Urinalysis	1449	Aldosterone in 24h Urine
+Urinalysis	1452	Alpha-1 Microglobulin
+Urinalysis	1427	Alpha-Amylase in Urine
+Urinalysis	96	Amylase in Urine
+Urinalysis	115	Bence Jones Protein
+Urinalysis	115	Bence Jones Protein
+Urinalysis	115	Bence Jones Protein
+Urinalysis	115	Bence Jones Protein
+Urinalysis	115	Bence Jones Protein
+Urinalysis	1425	Beta-2 Microglobulin in Urine
+Urinalysis	1440	C-Peptide in Urine
+Urinalysis	1453	Cadmium in 24h Urine
+Urinalysis	100	Calcium in 24h Urine
+Urinalysis	99	Calcium in Urine
+Urinalysis	1439	Catecholamines in 24h Urine
+Urinalysis	1424	Chloride in 24h Urine
+Urinalysis	1447	Citrate in 24h Urine
+Urinalysis	1466	Cobalt in Urine
+Urinalysis	86	Complete Urinalysis
+Urinalysis	1436	Copper in 24h Urine
+Urinalysis	1461	Copper in Single Urine Sample
+Urinalysis	1441	Coproporphyrins
+Urinalysis	1432	Cortisol in 24h Urine
+Urinalysis	89	Creatinine in 24h Urine
+Urinalysis	679	Creatinine in First Morning Urine
+Urinalysis	88	Creatinine in Urine
+Urinalysis	1446	Cystine in 24h Urine
+Urinalysis	1442	Delta-Aminolevulinic Acid
+Urinalysis	1460	Free Cortisol in 24h Urine
+Urinalysis	1426	Free Kappa Light Chains in Urine
+Urinalysis	1429	Free Lambda Light Chains in Urine
+Urinalysis	112	Free Metanephrine in Urine
+Urinalysis	112	Free Metanephrine in Urine
+Urinalysis	112	Free Metanephrine in Urine
+Urinalysis	112	Free Metanephrine in Urine
+Urinalysis	112	Free Metanephrine in Urine
+Urinalysis	1467	Free Normetanephrine in 24h Urine
+Urinalysis	1462	Glucose in 24h Urine
+Urinalysis	610	Glucose in First Morning Urine
+Urinalysis	611	Glucose in Random Urine
+Urinalysis	604	Glucose in Urine
+Urinalysis	1444	Hippuric Acid
+Urinalysis	614	Histamine in Urine
+Urinalysis	113	Homovanillic Acid
+Urinalysis	113	Homovanillic Acid
+Urinalysis	113	Homovanillic Acid
+Urinalysis	113	Homovanillic Acid
+Urinalysis	113	Homovanillic Acid
+Urinalysis	1450	Homovanillic Acid in Urine
+Urinalysis	1451	Hydroxyproline
+Urinalysis	1459	Iodine in 24h Urine
+Urinalysis	1464	Lead in 24h Urine
+Urinalysis	334	Magnesium in 24h Urine
+Urinalysis	333	Magnesium in Urine
+Urinalysis	1423	Manganese in Urine
+Urinalysis	1455	Melanin in Urine
+Urinalysis	1456	Melatonin in Urine
+Urinalysis	1465	Mercury in 24h Urine
+Urinalysis	1463	Metanephrine in Urine
+Urinalysis	1457	Metanephrines in Urine
+Urinalysis	103	Microalbumin
+Urinalysis	103	Microalbumin
+Urinalysis	103	Microalbumin
+Urinalysis	103	Microalbumin
+Urinalysis	103	Microalbumin
+Urinalysis	104	Microalbumin 24h
+Urinalysis	104	Microalbumin 24h
+Urinalysis	104	Microalbumin 24h
+Urinalysis	104	Microalbumin 24h
+Urinalysis	104	Microalbumin 24h
+Urinalysis	1419	Microalbumin in 24h Urine
+Urinalysis	1420	Microalbumin in Urine
+Urinalysis	1454	NGAL in Urine
+Urinalysis	1445	Oxalate in 24h Urine
+Urinalysis	1434	Pancreatic Amylase in Urine
+Urinalysis	1443	Phenol in Urine
+Urinalysis	1421	Phosphate in 24h Urine
+Urinalysis	102	Phosphorus in 24h Urine
+Urinalysis	102	Phosphorus in 24h Urine
+Urinalysis	102	Phosphorus in 24h Urine
+Urinalysis	102	Phosphorus in 24h Urine
+Urinalysis	102	Phosphorus in 24h Urine
+Urinalysis	101	Phosphorus in Urine
+Urinalysis	101	Phosphorus in Urine
+Urinalysis	101	Phosphorus in Urine
+Urinalysis	101	Phosphorus in Urine
+Urinalysis	101	Phosphorus in Urine
+Urinalysis	110	Porphobilinogen
+Urinalysis	110	Porphobilinogen
+Urinalysis	110	Porphobilinogen
+Urinalysis	110	Porphobilinogen
+Urinalysis	110	Porphobilinogen
+Urinalysis	1448	Porphobilinogen in 24h Urine
+Urinalysis	546	Porphyrins in Urine
+Urinalysis	255	Post-Ejaculatory Urine
+Urinalysis	1422	Potassium in 24h Urine
+Urinalysis	95	Protein in 24h Urine
+Urinalysis	1431	Protein in Random Urine
+Urinalysis	94	Protein in Urine
+Urinalysis	1438	Serotonin in 24h Urine
+Urinalysis	114	Sodium in 24h Urine
+Urinalysis	114	Sodium in 24h Urine
+Urinalysis	114	Sodium in 24h Urine
+Urinalysis	114	Sodium in 24h Urine
+Urinalysis	114	Sodium in 24h Urine
+Urinalysis	253	Spermogram
+Urinalysis	92	Urea in 24h Urine
+Urinalysis	91	Urea in Urine
+Urinalysis	98	Uric Acid in 24h Urine
+Urinalysis	612	Uric Acid in First Morning Urine
+Urinalysis	97	Uric Acid in Urine
+Urinalysis	107	Urine First Stream
+Urinalysis	107	Urine First Stream
+Urinalysis	107	Urine First Stream
+Urinalysis	107	Urine First Stream
+Urinalysis	107	Urine First Stream
+Urinalysis	606	Urine Osmolality
+Urinalysis	108	Urine Second Stream
+Urinalysis	108	Urine Second Stream
+Urinalysis	108	Urine Second Stream
+Urinalysis	108	Urine Second Stream
+Urinalysis	108	Urine Second Stream
+Urinalysis	109	Urine Third Stream
+Urinalysis	109	Urine Third Stream
+Urinalysis	109	Urine Third Stream
+Urinalysis	109	Urine Third Stream
+Urinalysis	109	Urine Third Stream
+Urinalysis	111	VMA
+Urinalysis	111	VMA
+Urinalysis	111	VMA
+Urinalysis	111	VMA
+Urinalysis	111	VMA
+Urinalysis	1458	VMA HVA 5-HIAA
+Urinalysis	1428	VMA in Urine
+Urinalysis	1437	Zinc in 24h Urine
+Stool Tests	1119	Calprotectin
+Stool Tests	106	Fecal Occult Blood
+Stool Tests	106	Fecal Occult Blood
+Stool Tests	106	Fecal Occult Blood
+Stool Tests	106	Fecal Occult Blood
+Stool Tests	106	Fecal Occult Blood
+Stool Tests	1118	Food Digestibility
+Stool Tests	1120	Lactoferrin
+Stool Tests	1121	Pancreatic Elastase in Stool
+Infectious Diseases	1276	Adenovirus IgA
+Infectious Diseases	218	Adenovirus IgG
+Infectious Diseases	1292	Adenovirus IgG Avidity
+Infectious Diseases	217	Adenovirus IgM
+Infectious Diseases	1225	Adenovirus Rotavirus in Stool
+Infectious Diseases	233	Anti-HCV
+Infectious Diseases	247	Anti-SARS-CoV
+Infectious Diseases	870	ASTO
+Infectious Diseases	1267	Bartonella Henselae IgG
+Infectious Diseases	1266	Bartonella Henselae IgM
+Infectious Diseases	1269	Bartonella Quintana IgG
+Infectious Diseases	1268	Bartonella Quintana IgM
+Infectious Diseases	1263	Bordetella Pertussis IgA
+Infectious Diseases	1259	Bordetella Pertussis IgG
+Infectious Diseases	1257	Borrelia Burgdorferi IgG
+Infectious Diseases	1314	Borrelia Burgdorferi IgG Western Blot
+Infectious Diseases	1256	Borrelia Burgdorferi IgM
+Infectious Diseases	1315	Borrelia Burgdorferi IgM Western Blot
+Infectious Diseases	332	Brucella IgM
+Infectious Diseases	1230	Campylobacter IHT
+Infectious Diseases	1240	Candida IgG Antibodies
+Infectious Diseases	1238	Candida IgM Antibodies
+Infectious Diseases	1262	Chlamydia Pneumoniae IgG
+Infectious Diseases	1258	Chlamydia Pneumoniae IgM
+Infectious Diseases	1261	Chlamydia Trachomatis IgG
+Infectious Diseases	1260	Chlamydia Trachomatis IgM
+Infectious Diseases	1228	Chlamydia Trachomatis IHT
+Infectious Diseases	1288	CMV Avidity
+Infectious Diseases	322	COVID-19 Antigen Test
+Infectious Diseases	243	Coxsackie B IgG
+Infectious Diseases	242	Coxsackie B IgM
+Infectious Diseases	1275	Coxsackie Virus IgG
+Infectious Diseases	1274	Coxsackie Virus IgM
+Infectious Diseases	1224	Cysticercosis IgG
+Infectious Diseases	216	Cytomegalovirus IgG
+Infectious Diseases	214	Cytomegalovirus IgM
+Infectious Diseases	1231	Demodex Species
+Infectious Diseases	1248	Echinococcus IgG ELISA
+Infectious Diseases	1363	Echinococcus IgG Western Blot
+Infectious Diseases	1226	Entamoeba Histolytica IHT
+Infectious Diseases	1277	Epstein-Barr EBNA IgG
+Infectious Diseases	231	Epstein-Barr IgG
+Infectious Diseases	1287	Epstein-Barr IgG Avidity
+Infectious Diseases	230	Epstein-Barr IgM
+Infectious Diseases	1239	Galactomannan Test Aspergillus
+Infectious Diseases	1227	Giardia Lamblia IHT
+Infectious Diseases	1232	Gonococcus IHT
+Infectious Diseases	232	HAV IgM
+Infectious Diseases	330	HAV Total Antibodies
+Infectious Diseases	329	HBeAg
+Infectious Diseases	1296	HBsAb
+Infectious Diseases	234	HBsAg
+Infectious Diseases	1297	HCV Total Antibodies
+Infectious Diseases	215	Helicobacter Pylori
+Infectious Diseases	1233	Helicobacter Pylori Antigen in Feces
+Infectious Diseases	1252	Helicobacter Pylori IgA
+Infectious Diseases	1253	Helicobacter Pylori IgG
+Infectious Diseases	227	Herpes Simplex I IgG
+Infectious Diseases	225	Herpes Simplex I IgM
+Infectious Diseases	245	Herpes Simplex I Plus II IgG
+Infectious Diseases	229	Herpes Simplex II IgG
+Infectious Diseases	228	Herpes Simplex II IgM
+Infectious Diseases	246	HEV
+Infectious Diseases	321	HHV-6
+Infectious Diseases	1294	HIV 1 Plus 2 Ag Ab
+Infectious Diseases	235	HIV Ag-Ab
+Infectious Diseases	1291	HSV I IgG Avidity
+Infectious Diseases	1290	HSV II IgG Avidity
+Infectious Diseases	241	HSV1 IgG
+Infectious Diseases	240	HSV2 IgG
+Infectious Diseases	1357	Influenza A Plus B IHT
+Infectious Diseases	1293	Legionella Pneumophila Antigen Urine
+Infectious Diseases	1265	Legionella Pneumophila IgG
+Infectious Diseases	1264	Legionella Pneumophila IgM
+Infectious Diseases	1247	Leishmania IgM Antibodies
+Infectious Diseases	1273	Listeria Monocytogenes IgM
+Infectious Diseases	1234	Malaria
+Infectious Diseases	1279	Measles IgG
+Infectious Diseases	1278	Measles IgM
+Infectious Diseases	238	Monosticon
+Infectious Diseases	244	Mumps IgG
+Infectious Diseases	226	Mumps IgM
+Infectious Diseases	1281	Mumps Virus IgG
+Infectious Diseases	1280	Mumps Virus IgM
+Infectious Diseases	1255	Mycoplasma Pneumoniae IgG
+Infectious Diseases	1254	Mycoplasma Pneumoniae IgM
+Infectious Diseases	1285	Parvovirus B19 IgG
+Infectious Diseases	1284	Parvovirus B19 IgM
+Infectious Diseases	1223	Perianal Impression
+Infectious Diseases	365	QuantiFERON
+Infectious Diseases	1283	RSV IgG
+Infectious Diseases	1282	RSV IgM
+Infectious Diseases	224	Rubella IgG
+Infectious Diseases	1289	Rubella IgG Avidity
+Infectious Diseases	223	Rubella IgM
+Infectious Diseases	249	SARS-CoV IgG
+Infectious Diseases	1298	SARS-CoV-2 IgG Spike
+Infectious Diseases	251	SARS-CoV-2 IgG Spike Protein
+Infectious Diseases	250	SARS-CoV-2 IgM
+Infectious Diseases	248	SARS-CoV-Ab IgG Plus IgM
+Infectious Diseases	1222	Stool Parasites
+Infectious Diseases	1251	Strongyloides Stercoralis IgG
+Infectious Diseases	222	TORCH
+Infectious Diseases	1129	TORCH Panel
+Infectious Diseases	1242	Toxocara Canis IgG
+Infectious Diseases	1241	Toxocara Canis IgM Antibodies
+Infectious Diseases	221	Toxoplasma IgG
+Infectious Diseases	1250	Toxoplasma IgG Avidity
+Infectious Diseases	220	Toxoplasma IgM
+Infectious Diseases	219	TPHA Treponema Pallidum
+Infectious Diseases	325	Trichinella Spiralis IgG
+Infectious Diseases	1249	Trichinella Spiralis Total Antibodies
+Infectious Diseases	1270	Ureaplasma Urealyticum IgA
+Infectious Diseases	1272	Ureaplasma Urealyticum IgG
+Infectious Diseases	1271	Ureaplasma Urealyticum IgM
+Infectious Diseases	1286	Varicella Zoster IgG Avidity
+Infectious Diseases	237	Varicella Zoster Virus IgG
+Infectious Diseases	236	Varicella Zoster Virus IgM
+Infectious Diseases	239	VDRL
+Drug Testing	684	Alcohol in Blood
+Drug Testing	689	Alcohol in Urine
+Drug Testing	691	Amphetamine
+Drug Testing	706	Barbiturates
+Drug Testing	122	Benzodiazepines
+Drug Testing	122	Benzodiazepines
+Drug Testing	122	Benzodiazepines
+Drug Testing	122	Benzodiazepines
+Drug Testing	122	Benzodiazepines
+Drug Testing	608	Cannabinoids THC
+Drug Testing	119	Cocaine
+Drug Testing	119	Cocaine
+Drug Testing	119	Cocaine
+Drug Testing	119	Cocaine
+Drug Testing	119	Cocaine
+Drug Testing	707	Drug Panel 10 II
+Drug Testing	708	Drug Panel 5 New
+Drug Testing	124	Ecstasy
+Drug Testing	124	Ecstasy
+Drug Testing	124	Ecstasy
+Drug Testing	124	Ecstasy
+Drug Testing	124	Ecstasy
+Drug Testing	695	Ecstasy MDMA
+Drug Testing	120	Marijuana
+Drug Testing	120	Marijuana
+Drug Testing	120	Marijuana
+Drug Testing	120	Marijuana
+Drug Testing	120	Marijuana
+Drug Testing	699	Methadone
+Drug Testing	696	Methamphetamine
+Drug Testing	701	Methaqualone
+Drug Testing	121	Morphine
+Drug Testing	121	Morphine
+Drug Testing	121	Morphine
+Drug Testing	121	Morphine
+Drug Testing	121	Morphine
+Drug Testing	694	Opiates
+Drug Testing	123	Phencyclidine
+Drug Testing	123	Phencyclidine
+Drug Testing	123	Phencyclidine
+Drug Testing	123	Phencyclidine
+Drug Testing	123	Phencyclidine
+Drug Testing	687	Phencyclidine PCP
+Drug Testing	703	Propoxyphene
+Immunology	1114	Adalimumab Antibodies
+Immunology	11	Anti-Rh Antibodies
+Immunology	855	C1 Inactivator
+Immunology	853	C1 Inhibitor
+Immunology	688	C1q Immune Complexes
+Immunology	360	C3 Complement
+Immunology	361	C4 Complement
+Immunology	851	Cryoglobulins
+Immunology	545	Direct Coombs Test
+Immunology	312	HLA B27
+Immunology	1362	HLA B27 Antigen
+Immunology	1392	HLA B5701
+Immunology	314	HLA DQ 2-8
+Immunology	1388	HLA DQ2 DQ8 Typing
+Immunology	356	IgA
+Immunology	683	IgD
+Immunology	359	IgE
+Immunology	357	IgG
+Immunology	682	IgG Subclasses
+Immunology	358	IgM
+Immunology	854	Immune Complexes PEG
+Immunology	548	Indirect Coombs Test
+Immunology	1115	Infliximab Antibodies
+Immunology	826	Kappa Lambda Light Chain Index
+Immunology	363	Kappa Light Chain
+Immunology	364	Lambda Light Chain
+Immunology	553	Lymphocyte Subpopulations NK Cells
+Immunology	746	Platelet IgA IgM IgG Antibodies
+Immunology	595	Rh Antibodies
+Immunology	849	Spermatozoa Antibodies ASA
+Immunology	834	T-Lymphocytes CD4+
+Immunology	850	Total Complement CH50
+Allergy Tests	1070	0127
+Allergy Tests	355	10 Allergens
+Allergy Tests	1087	Acarus Siro IgE d2
+Allergy Tests	1054	Alder IgE t2
+Allergy Tests	342	Allergies
+Allergy Tests	353	Allergies 20 Allergens
+Allergy Tests	354	Allergies 6 Allergens
+Allergy Tests	948	Almond IgE f20
+Allergy Tests	905	Alpha-Lactalbumin IgE f76
+Allergy Tests	1004	Ambrosia Elatior IgE w1
+Allergy Tests	946	Anise IgE s1
+Allergy Tests	949	Apple IgE f49
+Allergy Tests	943	Apricot IgE f94
+Allergy Tests	1040	Ash IgE t15
+Allergy Tests	343	Atopy Screen Food Plus Inhalants
+Allergy Tests	927	Banana IgE f92
+Allergy Tests	998	Barley IgE f6
+Allergy Tests	965	Barley IgE g18
+Allergy Tests	945	Bay Leaf IgE f275
+Allergy Tests	958	Bean IgE f15
+Allergy Tests	1091	Bee IgE i1
+Allergy Tests	901	Beef IgE f27
+Allergy Tests	993	Beta-Lactoglobulin IgE f77
+Allergy Tests	1045	Birch IgE t3
+Allergy Tests	996	Black Pepper IgE s7
+Allergy Tests	983	Blackberry IgE f211
+Allergy Tests	982	Blueberry IgE f229
+Allergy Tests	992	Cabbage IgE f216
+Allergy Tests	1080	Canary IgE e9
+Allergy Tests	939	Carrot IgE f31
+Allergy Tests	909	Casein IgE f78
+Allergy Tests	987	Cashew Nut IgE f202
+Allergy Tests	1078	Cat Epithelium and Hair IgE e1
+Allergy Tests	1021	Cat Hair IgE g6
+Allergy Tests	940	Celery IgE f85
+Allergy Tests	915	Cheese IgE
+Allergy Tests	1009	Chenopodium Album IgE w10
+Allergy Tests	929	Cherry IgE
+Allergy Tests	917	Chicken Meat IgE f83
+Allergy Tests	933	Chocolate IgE f105
+Allergy Tests	1003	Cinnamon IgE s8
+Allergy Tests	1094	Cockroach IgE i6
+Allergy Tests	930	Cocoa IgE f93
+Allergy Tests	951	Cod IgE f3
+Allergy Tests	954	Coffee IgE f221
+Allergy Tests	907	Cooked Milk IgE f231
+Allergy Tests	973	Corn Flour IgE f8
+Allergy Tests	1027	Corn Pollen IgE g20
+Allergy Tests	1017	Cotton IgE k2
+Allergy Tests	1073	Cow Dander IgE e4
+Allergy Tests	346	Crab Allergy
+Allergy Tests	344	Crab F24
+Allergy Tests	961	Crab IgE f23
+Allergy Tests	984	Currant IgE f171
+Allergy Tests	1056	Cypress IgE t23
+Allergy Tests	1022	Dactylis Glomerata IgE g3
+Allergy Tests	1012	Dandelion IgE w8
+Allergy Tests	1099	Diclofenac IgE c281
+Allergy Tests	1076	Dog Epithelium IgE e2
+Allergy Tests	1084	Dog Hair IgE e2
+Allergy Tests	1001	Edam Cheese IgE f150
+Allergy Tests	880	Egg Mix RF245
+Allergy Tests	903	Egg White IgE e1
+Allergy Tests	904	Egg Yolk IgE e75
+Allergy Tests	1035	Elder IgE
+Allergy Tests	1036	Elm IgE t8
+Allergy Tests	1024	English Ryegrass IgE g5
+Allergy Tests	1049	Feather Mix ex71
+Allergy Tests	941	Fig IgE f328
+Allergy Tests	920	Fish Mix FP2
+Allergy Tests	898	Food Intolerance 108 Panel
+Allergy Tests	1023	Fragrance Mix IgE g1
+Allergy Tests	931	Garlic IgE f47
+Allergy Tests	902	Gluten IgE f79
+Allergy Tests	1013	Goosefoot IgE w15
+Allergy Tests	924	Grape IgE f50
+Allergy Tests	1050	Grass Pollen Mix gx1
+Allergy Tests	1060	Grass Pollen Mix gx2
+Allergy Tests	1061	Grass Pollen Mix gx3
+Allergy Tests	1062	Grass Pollen Mix gx4
+Allergy Tests	978	Green Bean IgE f132
+Allergy Tests	1071	Guinea Pig IgE e84
+Allergy Tests	1048	Hair Mix ex1
+Allergy Tests	985	Hake IgE f307
+Allergy Tests	1072	Hamster IgE e6
+Allergy Tests	937	Hazelnut IgE f17
+Allergy Tests	1038	Hazelnut Tree IgE t4
+Allergy Tests	970	Herring IgE f21
+Allergy Tests	956	Honey IgE f247
+Allergy Tests	988	Hops Humulus Lupulus IgE
+Allergy Tests	1093	Hornet IgE i75
+Allergy Tests	1074	Horse IgE e3
+Allergy Tests	1086	House Dust Mite IgE h1
+Allergy Tests	1085	House Dust Mite IgE h2
+Allergy Tests	1089	House Dust Mite IgE h3
+Allergy Tests	1063	House Dust Mix hx1
+Allergy Tests	1098	Ibuprofen IgE c286
+Allergy Tests	835	IgE Antibodies to Human Insulin
+Allergy Tests	341	Inhalant Allergens
+Allergy Tests	925	Kiwi IgE f84
+Allergy Tests	994	Lactose IgE b312
+Allergy Tests	900	Lactose Intolerance
+Allergy Tests	997	Lamb Meat IgE f88
+Allergy Tests	326	Latex
+Allergy Tests	1015	Latex IgE k82
+Allergy Tests	938	Lemon IgE f208
+Allergy Tests	980	Lentil IgE f65
+Allergy Tests	352	Lidocaine Xylocaine C232
+Allergy Tests	1042	Linden IgE t208
+Allergy Tests	348	Lobster F80
+Allergy Tests	972	Lobster IgE f80
+Allergy Tests	944	Lychee IgE f348
+Allergy Tests	969	Mackerel IgE f174
+Allergy Tests	995	Mandarin IgE f34
+Allergy Tests	1028	Meadow Fescue IgE g4
+Allergy Tests	1026	Meadow Grass IgE g8
+Allergy Tests	918	Meat Mix fx23
+Allergy Tests	906	Milk IgE f2
+Allergy Tests	908	Milk Powder IgE f228
+Allergy Tests	1081	Mink IgE e8
+Allergy Tests	1064	Mold Mix mx1
+Allergy Tests	1065	Mold Mix mx4
+Allergy Tests	1095	Mosquito IgE i71
+Allergy Tests	1008	Mugwort IgE w6
+Allergy Tests	1037	Mulberry IgE t70
+Allergy Tests	932	Mushroom IgE f127
+Allergy Tests	347	Mussel F37
+Allergy Tests	975	Mussel IgE f37
+Allergy Tests	947	Mustard IgE f89
+Allergy Tests	1011	Nettle IgE w20
+Allergy Tests	340	Nutritional Allergens
+Allergy Tests	1046	Oak Tree IgE t7
+Allergy Tests	999	Oat IgE f7
+Allergy Tests	349	Octopus IgE F59
+Allergy Tests	957	Olive IgE f342
+Allergy Tests	1044	Olive Tree IgE t9
+Allergy Tests	960	Onion IgE f48
+Allergy Tests	926	Orange IgE f33
+Allergy Tests	953	Paprika IgE f218
+Allergy Tests	1100	Paracetamol Acetaminophen IgE c2
+Allergy Tests	1075	Parrot IgE e213
+Allergy Tests	934	Pea IgE f287
+Allergy Tests	922	Peach IgE f95
+Allergy Tests	921	Peanut IgE f13
+Allergy Tests	974	Pear IgE f271
+Allergy Tests	350	Penicilloyl G HSA C1
+Allergy Tests	1096	Penicilloyl G IgE c1
+Allergy Tests	351	Penicilloyl V HSA C2
+Allergy Tests	1097	Penicilloyl V IgE c2
+Allergy Tests	1077	Pet Mix ex2
+Allergy Tests	1079	Pigeon IgE e11
+Allergy Tests	1039	Pine IgE t16
+Allergy Tests	1002	Pineapple IgE f72
+Allergy Tests	989	Pistachio IgE f203
+Allergy Tests	1058	Plane Tree IgE t11
+Allergy Tests	1007	Plantain IgE w9
+Allergy Tests	1055	Poplar IgE t14
+Allergy Tests	919	Pork IgE f26
+Allergy Tests	950	Potato IgE f35
+Allergy Tests	1029	Pyrethrum IgE g21
+Allergy Tests	1083	Rabbit IgE e82
+Allergy Tests	936	Raspberry IgE f156
+Allergy Tests	971	Redfish IgE f303
+Allergy Tests	1032	Reed IgE g7
+Allergy Tests	912	Rice IgE f9
+Allergy Tests	911	Rye Flour IgE f5
+Allergy Tests	913	Rye IgE f4
+Allergy Tests	1030	Rye Pollen IgE g14
+Allergy Tests	1031	Ryegrass IgE g12
+Allergy Tests	976	Salmon IgE f41
+Allergy Tests	990	Sardine IgE
+Allergy Tests	981	Sea Bass IgE
+Allergy Tests	942	Sea Bream IgE
+Allergy Tests	991	Sesame IgE f10
+Allergy Tests	1082	Sheep IgE e81
+Allergy Tests	979	Shrimp IgE
+Allergy Tests	1010	Sorrel IgE w19
+Allergy Tests	914	Soy IgE f14
+Allergy Tests	1090	Spider IgE 76
+Allergy Tests	935	Spinach IgE f214
+Allergy Tests	1043	Spruce IgE
+Allergy Tests	345	Squid IgE F258
+Allergy Tests	345	Squid IgE F258
+Allergy Tests	1088	Storage Mite IgE d1
+Allergy Tests	923	Strawberry IgE F44
+Allergy Tests	1005	Sunflower IgE w11
+Allergy Tests	1041	Sycamore Maple IgE t1
+Allergy Tests	1006	Tall Buttercup IgE
+Allergy Tests	1020	Timothy Grass IgE g16
+Allergy Tests	1025	Timothy IgE g2
+Allergy Tests	1016	Tobacco IgE 0201
+Allergy Tests	916	Tomato IgE f25
+Allergy Tests	1066	Tree Pollen Mix tx1
+Allergy Tests	1067	Tree Pollen Mix tx9
+Allergy Tests	964	Tuna IgE f40
+Allergy Tests	986	Tuna Meat IgE f40
+Allergy Tests	928	Turkey Meat IgE f284
+Allergy Tests	955	Vanilla IgE f234
+Allergy Tests	1047	Viburnum IgE t210
+Allergy Tests	1034	Walnut IgE f256
+Allergy Tests	1033	Walnut Tree IgE t10
+Allergy Tests	1092	Wasp IgE i3
+Allergy Tests	963	Watermelon IgE f239
+Allergy Tests	1069	Weed and Flower Pollen Mix WP
+Allergy Tests	1059	Weed Pollen Mix wx1
+Allergy Tests	1068	Weed Pollen Mix wx2
+Allergy Tests	910	Wheat Flour IgE f4
+Allergy Tests	1014	Wheat Pollen IgE g15
+Allergy Tests	1057	Willow IgE t12
+Allergy Tests	1018	Wool Processed IgE k20
+Allergy Tests	959	Yeast IgE f45
+Allergy Tests	1000	Yogurt IgE f69
+Autoimmune Antibodies	863	Acetylcholine Receptor Antibodies
+Autoimmune Antibodies	860	Adrenal Antibodies
+Autoimmune Antibodies	830	AMA Antimitochondrial M2
+Autoimmune Antibodies	876	ANA Antinuclear Antibodies
+Autoimmune Antibodies	1610	ANA ENA Profile 15 Antibodies
+Autoimmune Antibodies	1611	ANA ENA Profile 25 Antibodies
+Autoimmune Antibodies	874	ANA HEp-2
+Autoimmune Antibodies	828	ANCA-C Anti-PR3
+Autoimmune Antibodies	827	ANCA-P Anti-MPO
+Autoimmune Antibodies	873	Anti-C1q Antibodies
+Autoimmune Antibodies	842	Anti-Cardiac Antibodies
+Autoimmune Antibodies	745	Anti-CCP Antibodies
+Autoimmune Antibodies	829	Anti-GAD Antibodies
+Autoimmune Antibodies	836	Anti-Heart Antibodies ASA
+Autoimmune Antibodies	841	Anti-Insulin Antibodies
+Autoimmune Antibodies	820	Anti-Jo-1 Antibodies
+Autoimmune Antibodies	748	Anti-La SSB Antibodies
+Autoimmune Antibodies	838	Anti-Parietal Cell Antibodies APA
+Autoimmune Antibodies	749	Anti-Ro SSA Antibodies
+Autoimmune Antibodies	823	Anti-Scl-70 Antibodies
+Autoimmune Antibodies	877	Anti-SLA LP Antibodies
+Autoimmune Antibodies	824	Anti-SM Antibodies
+Autoimmune Antibodies	832	Anti-Smooth Muscle Antibodies ASMA
+Autoimmune Antibodies	709	Anti-Thyroglobulin Antibodies
+Autoimmune Antibodies	132	Anti-TPO
+Autoimmune Antibodies	132	Anti-TPO
+Autoimmune Antibodies	132	Anti-TPO
+Autoimmune Antibodies	132	Anti-TPO
+Autoimmune Antibodies	132	Anti-TPO
+Autoimmune Antibodies	209	Anti-TSHR
+Autoimmune Antibodies	711	Anti-TSHR Antibodies
+Autoimmune Antibodies	840	Anticardiolipin IgG
+Autoimmune Antibodies	839	Anticardiolipin IgM
+Autoimmune Antibodies	681	Aquaporin Antibodies
+Autoimmune Antibodies	869	Aquaporin-4 Antibodies
+Autoimmune Antibodies	867	ASCA IgA
+Autoimmune Antibodies	866	ASCA IgG
+Autoimmune Antibodies	847	Beta-2 Glycoprotein I IgG
+Autoimmune Antibodies	848	Beta-2 Glycoprotein I IgM
+Autoimmune Antibodies	837	Centromere Protein B Antibodies
+Autoimmune Antibodies	744	dsDNA Antibodies
+Autoimmune Antibodies	747	dsDNA IgG Antibodies
+Autoimmune Antibodies	862	Endomysial IgA Antibodies
+Autoimmune Antibodies	821	GBM Antibodies
+Autoimmune Antibodies	858	Gliadin IgA Antibodies
+Autoimmune Antibodies	859	Gliadin IgG Antibodies
+Autoimmune Antibodies	844	IA-2 Antibodies
+Autoimmune Antibodies	871	ICA Antibodies
+Autoimmune Antibodies	861	Intrinsic Factor Antibodies
+Autoimmune Antibodies	831	LKM-1 Antibodies
+Autoimmune Antibodies	878	LMA Antibodies
+Autoimmune Antibodies	879	Lupus Antibodies
+Autoimmune Antibodies	825	Lupus Cells
+Autoimmune Antibodies	833	MOG Myelin Oligodendrocyte Glycoprotein
+Autoimmune Antibodies	864	MUSK Antibodies
+Autoimmune Antibodies	1612	Myositis Profile
+Autoimmune Antibodies	865	Neuronal Antibodies
+Autoimmune Antibodies	692	NMDAR Antibodies in Serum
+Autoimmune Antibodies	690	Nucleosomal Antibodies
+Autoimmune Antibodies	852	Ovarian Antibodies
+Autoimmune Antibodies	846	Phospholipid IgG Antibodies
+Autoimmune Antibodies	845	Phospholipid IgM Antibodies
+Autoimmune Antibodies	868	Reticulin Antibodies
+Autoimmune Antibodies	872	Rheumatoid Factor
+Autoimmune Antibodies	130	Thyroglobulin Antibodies
+Autoimmune Antibodies	130	Thyroglobulin Antibodies
+Autoimmune Antibodies	130	Thyroglobulin Antibodies
+Autoimmune Antibodies	130	Thyroglobulin Antibodies
+Autoimmune Antibodies	130	Thyroglobulin Antibodies
+Autoimmune Antibodies	856	Transglutaminase IgA Antibodies
+Autoimmune Antibodies	857	Transglutaminase IgG Antibodies
+Autoimmune Antibodies	875	Waaler-Rose Test
+Vitamins	894	Beta-Carotene
+Vitamins	584	Coenzyme Q10
+Vitamins	69	Folic Acid
+Vitamins	897	Omega-6 Omega-3 Fatty Acids
+Vitamins	895	Vitamin 1,25 OH2 D
+Vitamins	896	Vitamin A
+Vitamins	885	Vitamin A Level
+Vitamins	889	Vitamin B1 Level
+Vitamins	883	Vitamin B12
+Vitamins	892	Vitamin B2
+Vitamins	887	Vitamin B6 Level
+Vitamins	888	Vitamin C Level
+Vitamins	884	Vitamin D 25-OH
+Vitamins	886	Vitamin E Level
+Vitamins	890	Vitamin H B7 Biotin Level
+Vitamins	893	Vitamin K1 Level
+Trace Elements & Heavy Metals	718	Aluminum
+Trace Elements & Heavy Metals	731	Aluminum in Urine
+Trace Elements & Heavy Metals	728	Antimony in Urine
+Trace Elements & Heavy Metals	719	Arsenic in Serum
+Trace Elements & Heavy Metals	617	Arsenic in Urine
+Trace Elements & Heavy Metals	599	Cadmium in Blood
+Trace Elements & Heavy Metals	722	Chromium in Blood
+Trace Elements & Heavy Metals	727	Cobalt in Serum
+Trace Elements & Heavy Metals	720	Copper in Serum
+Trace Elements & Heavy Metals	724	Iodine in Serum
+Trace Elements & Heavy Metals	726	Lead in Blood
+Trace Elements & Heavy Metals	729	Manganese in Blood
+Trace Elements & Heavy Metals	715	Mercury in Blood
+Trace Elements & Heavy Metals	616	Mercury in Urine
+Trace Elements & Heavy Metals	714	Nickel in Serum
+Trace Elements & Heavy Metals	618	Nickel in Urine
+Trace Elements & Heavy Metals	710	Selenium
+Trace Elements & Heavy Metals	716	Zinc in Serum
+Therapeutic Drug Monitoring	1112	Adalimumab Level
+Therapeutic Drug Monitoring	1109	Amiodarone Level
+Therapeutic Drug Monitoring	1102	Carbamazepine Level
+Therapeutic Drug Monitoring	1106	Cyclosporine Level
+Therapeutic Drug Monitoring	1104	Digoxin Level
+Therapeutic Drug Monitoring	1113	Infliximab Level
+Therapeutic Drug Monitoring	1105	Lamotrigine Level
+Therapeutic Drug Monitoring	1107	Levetiracetam Level
+Therapeutic Drug Monitoring	331	Lithium
+Therapeutic Drug Monitoring	1116	Oxcarbazepine Level
+Therapeutic Drug Monitoring	1103	Phenobarbital Level
+Therapeutic Drug Monitoring	1108	Sirolimus Level
+Therapeutic Drug Monitoring	1110	Tacrolimus Level
+Therapeutic Drug Monitoring	704	Tricyclic Antidepressants
+Therapeutic Drug Monitoring	58	Valproic Acid
+Therapeutic Drug Monitoring	1101	Valproic Acid Level
+Therapeutic Drug Monitoring	1111	Vancomycin Level
+Cardiac Markers	38	CK
+Cardiac Markers	39	CK-MB
+Cardiac Markers	578	Myoglobin
+Cardiac Markers	576	NT-proBNP
+Cardiac Markers	183	Pro-BNP
+Cardiac Markers	183	Pro-BNP
+Cardiac Markers	183	Pro-BNP
+Cardiac Markers	183	Pro-BNP
+Cardiac Markers	183	Pro-BNP
+Cardiac Markers	574	Troponin I
+Cardiac Markers	207	Troponin T HS
+Pregnancy & Fertility	150	AFP
+Pregnancy & Fertility	150	AFP
+Pregnancy & Fertility	150	AFP
+Pregnancy & Fertility	150	AFP
+Pregnancy & Fertility	150	AFP
+Pregnancy & Fertility	148	Anti-Mullerian Hormone
+Pregnancy & Fertility	148	Anti-Mullerian Hormone
+Pregnancy & Fertility	148	Anti-Mullerian Hormone
+Pregnancy & Fertility	148	Anti-Mullerian Hormone
+Pregnancy & Fertility	148	Anti-Mullerian Hormone
+Pregnancy & Fertility	149	Beta HCG
+Pregnancy & Fertility	149	Beta HCG
+Pregnancy & Fertility	149	Beta HCG
+Pregnancy & Fertility	149	Beta HCG
+Pregnancy & Fertility	149	Beta HCG
+Pregnancy & Fertility	155	Double Test
+Pregnancy & Fertility	155	Double Test
+Pregnancy & Fertility	155	Double Test
+Pregnancy & Fertility	155	Double Test
+Pregnancy & Fertility	155	Double Test
+Pregnancy & Fertility	153	Free Beta HCG
+Pregnancy & Fertility	153	Free Beta HCG
+Pregnancy & Fertility	153	Free Beta HCG
+Pregnancy & Fertility	153	Free Beta HCG
+Pregnancy & Fertility	153	Free Beta HCG
+Pregnancy & Fertility	156	Free Estriol
+Pregnancy & Fertility	156	Free Estriol
+Pregnancy & Fertility	156	Free Estriol
+Pregnancy & Fertility	156	Free Estriol
+Pregnancy & Fertility	156	Free Estriol
+Pregnancy & Fertility	151	PAPP-A
+Pregnancy & Fertility	151	PAPP-A
+Pregnancy & Fertility	151	PAPP-A
+Pregnancy & Fertility	151	PAPP-A
+Pregnancy & Fertility	151	PAPP-A
+Pregnancy & Fertility	1145	Preeclampsia Screening After 12 Weeks
+Pregnancy & Fertility	1144	Preeclampsia Screening Up to 12 Weeks
+Pregnancy & Fertility	1143	Quadruple Test
+Pregnancy & Fertility	154	Triple Test
+Pregnancy & Fertility	154	Triple Test
+Pregnancy & Fertility	154	Triple Test
+Pregnancy & Fertility	154	Triple Test
+Pregnancy & Fertility	154	Triple Test
+Genetics	594	21-Hydroxylase CYP21A2
+Genetics	1403	ALDH7A Gene
+Genetics	1340	Alpha-1 Antitrypsin Genotyping
+Genetics	1394	Amyotrophic Lateral Sclerosis
+Genetics	1344	Antigen D Genotyping RhD
+Genetics	1402	ARX Gene
+Genetics	1401	BCR ABL Molecular Detection
+Genetics	1400	Beta-Thalassemia PCR
+Genetics	1413	BRAF Mutation
+Genetics	1410	BRCA1 2 Somatic Mutations
+Genetics	1409	BRCA1 BRCA2
+Genetics	1385	Clinical Exome Sequencing
+Genetics	1338	Cystic Fibrosis 34 Mutations
+Genetics	1399	Dihydropyrimidine Dehydrogenase
+Genetics	257	DNA Fragmentation Index
+Genetics	309	DNA Test 2 Persons
+Genetics	310	DNA Test 3 Persons
+Genetics	1398	Duchenne Muscular Dystrophy
+Genetics	1397	DYT1
+Genetics	308	Factor II
+Genetics	307	Factor V
+Genetics	1324	Factor V 2 Loci
+Genetics	1318	Factor V HR2 Locus 4070
+Genetics	1319	Factor V Leiden Locus 1691
+Genetics	1323	Factor XIII Locus V34L
+Genetics	1387	Fragile X Syndrome Gene Analysis
+Genetics	1396	Friedreich Ataxia
+Genetics	1141	Genetic Analysis Stool
+Genetics	1395	Hemochromatosis PCR C282Y
+Genetics	1355	HerediGEN 33
+Genetics	1389	Huntington Disease Analysis
+Genetics	317	Karyotype
+Genetics	1346	Karyotype from Peripheral Blood
+Genetics	899	Lactose Intolerance PCR
+Genetics	1351	Microdeletion Syndromes Angelman
+Genetics	1345	Micronucleus Test
+Genetics	1350	Microsatellite Instability
+Genetics	305	MTHFR
+Genetics	1407	MTHFR 2 Loci
+Genetics	1321	MTHFR Locus 1298
+Genetics	1320	MTHFR Locus 677 PCR
+Genetics	313	NIPT Silver
+Genetics	1412	NRAS 2 Loci 12 13
+Genetics	1361	Numerical Aberration Analysis Chromosomes
+Genetics	306	PAI-1
+Genetics	1322	PAI-1 675 4G 5G
+Genetics	1341	Paternity Report
+Genetics	1348	Paternity Testing PCR
+Genetics	1142	Pharmacogenomic Test
+Genetics	1317	Prothrombin II Locus 20210 PCR
+Genetics	1393	Rett Syndrome Exons 3 and 4
+Genetics	1136	Sentis Panel BRCA 1-2
+Genetics	1135	Sentis Panel Hereditary Cancer
+Genetics	1138	Sentis Panel Hereditary Cardiomyopathy
+Genetics	1140	Sentis Panel Hereditary Epilepsy
+Genetics	1139	Sentis Panel Hereditary Kidney Disease
+Genetics	1137	Sentis Panel Hereditary Thrombophilia
+Genetics	1406	SMA SMN1 and SMN2 Copy Number
+Genetics	1404	SMA SMN1 Gene Copy Number
+Genetics	1391	Spinocerebellar Ataxias SCA
+Genetics	1405	SRY Gene PCR Detection
+Genetics	1343	Thrombophilia 3 Genes 3 Loci
+Genetics	1347	Thrombophilia 3 Genes 5 Loci
+Genetics	1354	Thrombophilia 4 Genes 6 Loci
+Genetics	1386	TPMT Gene Mutation Detection
+Genetics	1390	UGT1A1 Gilbert Syndrome
+Genetics	1360	Wilson Disease PCR
+Genetics	315	Y Chromosome Microdeletion
+Genetics	1349	Y Chromosome Microdeletion 11
+Microbiology	1155	Acne Fungi
+Microbiology	1166	Acne Swab Bacteria
+Microbiology	288	Amine Test
+Microbiology	299	Bacteriological Examination Abscess Content
+Microbiology	271	Bacteriological Examination Cervical Swab
+Microbiology	296	Bacteriological Examination Ear Swab
+Microbiology	290	Bacteriological Examination Lochia
+Microbiology	282	Bacteriological Examination Pharyngeal Swab
+Microbiology	281	Bacteriological Examination Semen
+Microbiology	284	Bacteriological Examination Throat Swab
+Microbiology	267	Bacteriological Examination Urethral Swab
+Microbiology	278	Bacteriological Examination Urine Culture
+Microbiology	268	Bacteriological Examination Vaginal Swab
+Microbiology	286	Bacteriological Examination Vulvar Swab
+Microbiology	298	Bacteriological Examination Wound Content
+Microbiology	1188	Bartholin Gland Swab Bacteria
+Microbiology	1206	Bartholin Gland Swab Fungi
+Microbiology	1199	Breast Milk Bacteria
+Microbiology	1200	Breast Milk Fungi
+Microbiology	302	Cervical Microscopic Preparation
+Microbiology	1178	Cervical Swab Bacteria
+Microbiology	1180	Cervical Swab Fungi
+Microbiology	273	Chlamydia ELISA Cervical
+Microbiology	276	Chlamydia ELISA Urethral
+Microbiology	1229	Clostridium Difficile Toxin A and B
+Microbiology	1236	Dermatophytes Nail Scraping
+Microbiology	1235	Dermatophytes Skin Scraping
+Microbiology	300	Direct Microscopic Preparation
+Microbiology	294	Direct Microscopic Preparation Cervical
+Microbiology	303	Direct Microscopic Preparation Swab
+Microbiology	295	Direct Microscopic Preparation Vaginal
+Microbiology	292	Endocervical Swab for Gonorrhea
+Microbiology	272	Fungal Examination Cervical Swab
+Microbiology	283	Fungal Examination Pharyngeal Swab
+Microbiology	285	Fungal Examination Throat Swab
+Microbiology	269	Fungal Examination Urethral Swab
+Microbiology	279	Fungal Examination Urine
+Microbiology	270	Fungal Examination Vaginal Swab
+Microbiology	287	Fungal Examination Vulvar Swab
+Microbiology	1173	GBS Culture
+Microbiology	277	Genital Mycoplasma Test Urethral
+Microbiology	274	Genital Mycoplasma Test Vaginal
+Microbiology	1191	Glans Swab Bacteria
+Microbiology	1192	Glans Swab Fungi
+Microbiology	1197	Gum Swab Bacteria
+Microbiology	1159	Gum Swab Fungi
+Microbiology	304	Immunochromatographic Test Detection
+Microbiology	1172	Left Ear Swab Bacteria
+Microbiology	1162	Left Ear Swab Fungi
+Microbiology	1168	Left Eye Swab
+Microbiology	1179	Left Eye Swab Fungi
+Microbiology	1176	Left Nipple Swab Bacteria
+Microbiology	1219	Monosticon Test
+Microbiology	1150	Mycoplasma Hominis Ureaplasma
+Microbiology	1169	Mycoplasma Hominis Ureaplasma Culture
+Microbiology	297	Mycoplasma Test Ear
+Microbiology	293	Mycoplasma Test Urine
+Microbiology	1237	Nail Scraping Fungi
+Microbiology	1217	Nail Swab Fungi
+Microbiology	1163	Nasopharyngeal Swab Bacteria
+Microbiology	1198	Nasopharyngeal Swab Fungi
+Microbiology	1205	Native Mycological Nail
+Microbiology	1204	Native Mycological Skin
+Microbiology	1201	Nipple Discharge Bacteria
+Microbiology	1202	Nipple Discharge Fungi
+Microbiology	1164	Nose Sinus Content Bacteria
+Microbiology	1158	Nose Swab Bacteria
+Microbiology	1161	Nose Swab Fungi
+Microbiology	1157	Oral Cavity Fungi
+Microbiology	1156	Oral Cavity Swab Bacteria
+Microbiology	1305	PAP Papanicolaou Test
+Microbiology	1151	Perianal Swab
+Microbiology	1218	Perianal Swab Fungi
+Microbiology	1053	Pityrosporum Orbiculare
+Microbiology	1418	Polyp Biopsy Cervical
+Microbiology	1193	Prepuce Swab Bacteria
+Microbiology	1194	Prepuce Swab Fungi
+Microbiology	1210	Prostatic Fluid Bacteria
+Microbiology	1211	Prostatic Fluid Fungi
+Microbiology	1160	Punctate Aerobic
+Microbiology	1148	Rapid Strep A
+Microbiology	1170	Right Ear Swab Bacteria
+Microbiology	1171	Right Ear Swab Fungi
+Microbiology	1165	Right Eye Swab Bacteria
+Microbiology	1167	Right Eye Swab Fungi
+Microbiology	1174	Right Nipple Swab Bacteria
+Microbiology	1175	Right Nipple Swab Fungi
+Microbiology	291	Seminal Fluid Fungal Test
+Microbiology	1203	Skin Scraping Fungi
+Microbiology	1212	Skin Swab Bacteria
+Microbiology	1177	Skin Swab Bacteria II
+Microbiology	1213	Skin Swab Fungi
+Microbiology	1208	Sperm Culture Bacteria
+Microbiology	1209	Sperm Culture Fungi
+Microbiology	1149	Sputum Bacteria
+Microbiology	1152	Sputum Fungi
+Microbiology	1052	Staphylococcal Enterotoxin A
+Microbiology	1051	Staphylococcal Enterotoxin B
+Microbiology	1154	Stool Culture
+Microbiology	1195	Stool Fungi
+Microbiology	1147	Throat Swab Bacteria
+Microbiology	1220	Throat Swab Bacteria Aerobic
+Microbiology	1196	Throat Swab Fungi
+Microbiology	1221	Throat Swab Fungi Culture
+Microbiology	1153	Tongue Swab Bacteria
+Microbiology	266	Trichomonas Test
+Microbiology	275	Trichomonas Test Urethral
+Microbiology	1117	Trichomonas Vaginalis IHT
+Microbiology	1190	Urethral Swab Bacteria
+Microbiology	289	Urethral Swab for Gonorrhea
+Microbiology	1207	Urethral Swab Fungi
+Microbiology	1182	Urine Culture
+Microbiology	1215	Urine Fungi
+Microbiology	301	Vaginal Microscopic Preparation
+Microbiology	1189	Vaginal Secretion
+Microbiology	280	Vaginal Secretion Group
+Microbiology	1181	Vaginal Swab Bacteria
+Microbiology	1183	Vaginal Swab Fungi
+Microbiology	1184	Vulvar Swab Bacteria
+Microbiology	1185	Vulvar Swab Fungi
+Microbiology	1216	Wound II Fungi
+Microbiology	1186	Wound Swab Bacteria
+Microbiology	1214	Wound Swab Fungi
+Microbiology	1187	Wound Swab II
+PCR Tests	1342	BK Virus PCR
+PCR Tests	1339	BK Virus PCR Urine
+PCR Tests	1408	Bordetella Pertussis PCR
+PCR Tests	1316	Borrelia Burgdorferi PCR
+PCR Tests	1325	Chlamydia Trachomatis PCR Urine
+PCR Tests	1326	Chlamydia Trachomatis Plus Ureaplasma
+PCR Tests	1352	COVID-19 PCR
+PCR Tests	1332	Gonococcus PCR Swab
+PCR Tests	316	HBV DNA Quantitative
+PCR Tests	1308	HBV PCR DNA Quantitative
+PCR Tests	311	HCV PCR Quantitative
+PCR Tests	1309	HCV PCR RNA Qualitative
+PCR Tests	1310	HCV PCR RNA Quantitative
+PCR Tests	1311	HCV RNA Genotyping
+PCR Tests	1356	Herpes Simplex Virus Type 1 2 PCR
+PCR Tests	1415	HIV HCV HBV PCR Qualitative
+PCR Tests	1307	HIV PCR RNA Quantitative
+PCR Tests	1330	HPV 14 Types PCR
+PCR Tests	1306	HPV 41 Genotypes PCR
+PCR Tests	1312	Human Herpesvirus 6 PCR
+PCR Tests	1313	Human Herpesvirus 8 PCR
+PCR Tests	1327	Mycoplasma Panel PCR
+PCR Tests	1331	Neisseria Gonorrhoeae PCR Urine
+PCR Tests	319	PCR CoV-2
+PCR Tests	324	PCR CoV-4
+PCR Tests	323	PCR Multiplex Influenza Plus SARS-CoV
+PCR Tests	320	STD 3 Mycoplasma Ureaplasma
+PCR Tests	318	STD 4 HPV Chlamydia
+PCR Tests	339	STD 7
+PCR Tests	1333	STD Large Panel PCR Swab
+PCR Tests	1335	STD Large Panel PCR Urine
+PCR Tests	1334	STD Medium Panel PCR Swab
+PCR Tests	1336	STD Medium Panel PCR Urine
+PCR Tests	1328	Ureaplasma Parvum PCR
+PCR Tests	1337	Ureaplasma Urealyticum PCR
+PCR Tests	1329	Ureaplasma Urealyticum PCR Urine
+PCR Tests	252	Urgent PCR
+Protein Electrophoresis	1299	Hemoglobin Electrophoresis
+Protein Electrophoresis	1302	Immunoelectrophoresis Protein Serum
+Protein Electrophoresis	1304	Immunoelectrophoresis Protein Urine
+Protein Electrophoresis	1303	Oligoclonal IgG Bands in Serum
+Protein Electrophoresis	1300	Protein Electrophoresis Serum
+Protein Electrophoresis	1301	Protein Electrophoresis Urine
+Profiles & Panels	1613	Acylcarnitine Profile
+Profiles & Panels	1610	ANA ENA Profile 15 Antibodies
+Profiles & Panels	1611	ANA ENA Profile 25 Antibodies
+Profiles & Panels	1122	Anemia Basic Panel
+Profiles & Panels	1123	Anemia Extended Panel
+Profiles & Panels	1614	Carnitine Acylcarnitine Profile
+Profiles & Panels	1605	Cortisol Profile
+Profiles & Panels	155	Double Test
+Profiles & Panels	155	Double Test
+Profiles & Panels	155	Double Test
+Profiles & Panels	155	Double Test
+Profiles & Panels	155	Double Test
+Profiles & Panels	707	Drug Panel 10 II
+Profiles & Panels	708	Drug Panel 5 New
+Profiles & Panels	1124	Executive Panel
+Profiles & Panels	1126	Female Hormone Panel
+Profiles & Panels	1127	Female Hormone Panel Extended
+Profiles & Panels	1132	Female Panel Basic
+Profiles & Panels	580	Glucose Before and 2h After Meal
+Profiles & Panels	327	Glucose Before and After Meal
+Profiles & Panels	61	Glucose Profile
+Profiles & Panels	1607	Glycemia Profile 7 9 12 17 21h
+Profiles & Panels	1606	Glycemia Profile 9 12 17h
+Profiles & Panels	1615	Hirsutism Profile
+Profiles & Panels	59	Lipid Profile
+Profiles & Panels	1130	Male Panel
+Profiles & Panels	1612	Myositis Profile
+Profiles & Panels	76	Oral Glucose Tolerance Test
+Profiles & Panels	1134	Osteoporosis Panel
+Profiles & Panels	1133	Osteoporosis Panel 2
+Profiles & Panels	1125	Ovarian Tumor Markers
+Profiles & Panels	1131	Pediatric Panel
+Profiles & Panels	1128	Pregnancy Panel
+Profiles & Panels	1608	Prolactin Profile
+Profiles & Panels	193	PSA Plus Free PSA
+Profiles & Panels	193	PSA Plus Free PSA
+Profiles & Panels	193	PSA Plus Free PSA
+Profiles & Panels	193	PSA Plus Free PSA
+Profiles & Panels	193	PSA Plus Free PSA
+Profiles & Panels	1609	PSA Profile
+Profiles & Panels	1143	Quadruple Test
+Profiles & Panels	320	STD 3 Mycoplasma Ureaplasma
+Profiles & Panels	318	STD 4 HPV Chlamydia
+Profiles & Panels	339	STD 7
+Profiles & Panels	1333	STD Large Panel PCR Swab
+Profiles & Panels	1335	STD Large Panel PCR Urine
+Profiles & Panels	1334	STD Medium Panel PCR Swab
+Profiles & Panels	1336	STD Medium Panel PCR Urine
+Profiles & Panels	222	TORCH
+Profiles & Panels	1129	TORCH Panel
+Profiles & Panels	154	Triple Test
+Profiles & Panels	154	Triple Test
+Profiles & Panels	154	Triple Test
+Profiles & Panels	154	Triple Test
+Profiles & Panels	154	Triple Test
+Profiles & Panels	280	Vaginal Secretion Group

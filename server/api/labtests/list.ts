@@ -98,7 +98,7 @@ export async function getLabTestList(
 			lt.name_tr,
 			GROUP_CONCAT(DISTINCT clt.clinic_id ORDER BY ${priceOrder}) as clinicIds,
 			GROUP_CONCAT(
-				DISTINCT CONCAT(clt.clinic_id, ':', COALESCE(clt.price, 0), ':', COALESCE(clt.price_max, 0), ':', COALESCE(clt.code, ''))
+				DISTINCT CONCAT(clt.clinic_id, ':', IFNULL(clt.price, ''), ':', '', ':', IFNULL(clt.price_max, ''), ':', COALESCE(clt.code, ''))
 				ORDER BY ${priceOrder}
 			) as clinicPricesData,
 			(SELECT GROUP_CONCAT(DISTINCT ltcr_cat.category_id ORDER BY ltcr_cat.category_id)

@@ -57,7 +57,7 @@ export default defineEventHandler(
 
 			// Получаем цены клиник
 			const [clinicPriceRows]: any = await connection.execute(
-				`SELECT clinic_id, price, price_max, code FROM clinic_medical_services 
+				`SELECT clinic_id, price, price_min, price_max, code FROM clinic_medical_services 
 				 WHERE medical_service_id = ? ORDER BY clinic_id`,
 				[body.serviceId],
 			);
@@ -67,6 +67,7 @@ export default defineEventHandler(
 			const clinicPrices: ClinicPrice[] = clinicPriceRows.map((r: any) => ({
 				clinicId: r.clinic_id,
 				price: r.price,
+				priceMin: r.price_min,
 				priceMax: r.price_max,
 				code: r.code,
 			}));

@@ -261,6 +261,8 @@ watchEffect(() => {
 					:key="clinic.id"
 					:clinic="clinic"
 					:services="clinicServices[clinic.id]"
+					:serviceLimit="10"
+					:showPrice="false"
 					@show-on-map="showClinicOnMap(clinic)"
 					role="listitem"
 				/>

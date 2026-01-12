@@ -6,6 +6,7 @@ const props = defineProps<{
 	name: string;
 	localName?: string;
 	price?: number | null;
+	priceMin?: number | null;
 	priceMax?: number | null;
 	routeName?: string;
 	routeParamName?: string;
@@ -13,12 +14,12 @@ const props = defineProps<{
 
 const { t, n, locale } = useI18n({
 	messages: {
-		'en': { PriceUnknown: 'Price not specified' },
-		'ru': { PriceUnknown: 'Цена не указана' },
-		'sr': { PriceUnknown: 'Cena nije navedena' },
-		'de': { PriceUnknown: 'Preis nicht angegeben' },
-		'tr': { PriceUnknown: 'Fiyat belirtilmedi' },
-		'sr-cyrl': { PriceUnknown: 'Цена није наведена' },
+		'en': { PriceUnknown: 'Price not specified', PriceFrom: 'from {price}' },
+		'ru': { PriceUnknown: 'Цена не указана', PriceFrom: 'от {price}' },
+		'sr': { PriceUnknown: 'Cena nije navedena', PriceFrom: 'od {price}' },
+		'de': { PriceUnknown: 'Preis nicht angegeben', PriceFrom: 'ab {price}' },
+		'tr': { PriceUnknown: 'Fiyat belirtilmedi', PriceFrom: '{price} başlayan' },
+		'sr-cyrl': { PriceUnknown: 'Цена није наведена', PriceFrom: 'од {price}' },
 	},
 });
 
@@ -33,7 +34,9 @@ const itemLink = computed(() => {
 	};
 });
 
-const isPriceUnknown = computed(() => props.price == null);
+const isPriceUnknown = computed(
+	() => props.price == null && props.priceMin == null,
+);
 
 const formattedPrice = computed(() => {
 	if (isPriceUnknown.value) return null;
@@ -41,6 +44,12 @@ const formattedPrice = computed(() => {
 	const formatNumber = (num: number) =>
 		n(num, { style: 'currency', currency: 'EUR' });
 
+	// Если есть priceMin - показываем "от X евро"
+	if (props.priceMin != null) {
+		return t('PriceFrom', { price: formatNumber(props.priceMin) });
+	}
+
+	// Если есть price и priceMax - показываем диапазон "X - Y евро"
 	if (props.priceMax && props.priceMax !== props.price) {
 		return `${formatNumber(props.price!)} - ${formatNumber(props.priceMax)}`;
 	}

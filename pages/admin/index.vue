@@ -94,6 +94,7 @@ const updateServices = () => {
 						<AdminDoctorInfo
 							:doctors="doctorsList.doctors"
 							:clinics="clinicsList.clinics"
+							:services="servicesForSelect"
 							editable
 							@updated="updateDoctors"
 						/>
@@ -102,6 +103,7 @@ const updateServices = () => {
 					<el-tab-pane label="Добавить">
 						<AdminDoctorAdd
 							:clinics="clinicsList.clinics"
+							:services="servicesForSelect"
 							@updated="updateDoctors"
 						/>
 					</el-tab-pane>

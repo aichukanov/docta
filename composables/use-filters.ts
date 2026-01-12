@@ -4,12 +4,14 @@ import {
 	validateCityIds,
 	validateClinicIds,
 	validateCategoryIds,
+	validateServiceCategoryIds,
 } from '~/common/validation';
 
 const specialtyIds = ref<number[]>([]);
 const languageIds = ref<number[]>([]);
 const cityIds = ref<number[]>([]);
 const categoryIds = ref<number[]>([]);
+const serviceCategoryIds = ref<number[]>([]);
 const name = ref<string>('');
 const clinicIds = ref<number[]>([]);
 
@@ -20,6 +22,7 @@ const getRouteParams = () => {
 			languageIds: languageIds.value,
 			cityIds: cityIds.value,
 			categoryIds: categoryIds.value,
+			serviceCategoryIds: serviceCategoryIds.value,
 			name: name.value || undefined,
 			clinicIds: clinicIds.value,
 		},
@@ -49,6 +52,12 @@ const updateFromRoute = (query: Record<string, string | string[]>) => {
 		? Array.isArray(query.categoryIds)
 			? query.categoryIds.map(Number)
 			: [+query.categoryIds]
+		: null;
+
+	const preparedServiceCategoryIds = query.serviceCategoryIds
+		? Array.isArray(query.serviceCategoryIds)
+			? query.serviceCategoryIds.map(Number)
+			: [+query.serviceCategoryIds]
 		: null;
 
 	const preparedClinicIds = query.clinicIds
@@ -99,6 +108,18 @@ const updateFromRoute = (query: Record<string, string | string[]>) => {
 	}
 
 	if (
+		preparedServiceCategoryIds &&
+		validateServiceCategoryIds(
+			{ serviceCategoryIds: preparedServiceCategoryIds },
+			'use-filters',
+		)
+	) {
+		serviceCategoryIds.value = preparedServiceCategoryIds;
+	} else {
+		serviceCategoryIds.value = [];
+	}
+
+	if (
 		preparedClinicIds &&
 		validateClinicIds({ clinicIds: preparedClinicIds }, 'use-filters')
 	) {
@@ -122,6 +143,7 @@ export const useFilters = () => {
 		languageIds,
 		cityIds,
 		categoryIds,
+		serviceCategoryIds,
 		clinicIds,
 		name,
 	};

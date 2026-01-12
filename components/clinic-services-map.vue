@@ -65,9 +65,10 @@ const clinicsWithMarkers = computed(() => {
 	);
 });
 
-const getClinicServices = (clinic: ClinicData): number[] => {
-	return props.services.filter(({ clinicIds }) =>
-		clinicIds.split(',').map(Number).includes(clinic.id),
+const getClinicServices = (clinic: ClinicData): ClinicServiceItem[] => {
+	return props.services.filter(
+		({ clinicIds }) =>
+			clinicIds && clinicIds.split(',').map(Number).includes(clinic.id),
 	);
 };
 

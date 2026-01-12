@@ -1,13 +1,20 @@
 <script setup lang="ts">
 import { hasContacts } from '../contacts/utils';
 import type { ClinicService, ClinicData } from '~/interfaces/clinic';
-import type { ClinicServiceBySpecialty } from '~/server/api/clinics/services-by-specialties';
 
-const props = defineProps<{
-	clinic: ClinicData;
-	priceInfo?: ClinicService;
-	services?: ClinicServiceBySpecialty[];
-}>();
+const props = withDefaults(
+	defineProps<{
+		clinic: ClinicData;
+		priceInfo?: ClinicService;
+		services?: unknown[];
+		serviceLimit?: number;
+		showPrice?: boolean;
+	}>(),
+	{
+		serviceLimit: 2,
+		showPrice: true,
+	},
+);
 
 defineEmits<{
 	(e: 'show-on-map'): void;
@@ -57,6 +64,9 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 		<ClinicSummaryHeader
 			:clinic="clinic"
 			:price="priceInfo?.price"
+			:priceMin="priceInfo?.priceMin"
+			:priceMax="priceInfo?.priceMax"
+			:showPrice="showPrice"
 			@show-on-map="$emit('show-on-map')"
 		/>
 
@@ -69,13 +79,17 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 							<span class="collapse-count">({{ services.length }})</span>
 						</span>
 					</template>
-					<ClinicServiceSectionContent :items="services" :initialLimit="2">
+					<ClinicServiceSectionContent
+						:items="services"
+						:initialLimit="serviceLimit"
+					>
 						<template #default="{ item }">
 							<PricedItemCard
 								:id="item.id"
 								:name="item.name"
 								:localName="item.localName"
 								:price="item.price"
+								:priceMin="item.priceMin"
 								:priceMax="item.priceMax"
 								routeName="services-serviceId"
 								routeParamName="serviceId"

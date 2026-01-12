@@ -9,19 +9,33 @@ import { SITE_URL, OG_IMAGE } from '~/common/constants';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import medicalServiceI18n from '~/i18n/medical-service';
+import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
+import { getRegionalQuery } from '~/common/url-utils';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([breadcrumbI18n, cityI18n, medicalServiceI18n]),
+	messages: combineI18nMessages([
+		breadcrumbI18n,
+		cityI18n,
+		medicalServiceI18n,
+		medicalServiceCategoryI18n,
+	]),
 });
 
-const { cityIds, clinicIds, name, updateFromRoute, getRouteParams } =
-	useFilters();
+const {
+	cityIds,
+	serviceCategoryIds,
+	clinicIds,
+	name,
+	updateFromRoute,
+	getRouteParams,
+} = useFilters();
 
 updateFromRoute(useRoute().query);
 
 const filterList = computed(() => ({
 	cityIds: cityIds.value,
+	serviceCategoryIds: serviceCategoryIds.value,
 	clinicIds: clinicIds.value,
 	name: name.value,
 	locale: locale.value,
@@ -49,7 +63,39 @@ const clinicName = computed(() => {
 	return '';
 });
 
+const categoryName = computed(() => {
+	if (serviceCategoryIds.value.length === 1) {
+		return t(`medical_service_category_${serviceCategoryIds.value[0]}`);
+	}
+	return '';
+});
+
 const pageTitle = computed(() => {
+	if (serviceCategoryIds.value.length === 1) {
+		if (cityIds.value.length === 1) {
+			if (clinicIds.value.length === 1) {
+				return t('MedicalServicesCategoryCityClinic', {
+					category: categoryName.value,
+					city: t(`city_${cityIds.value[0]}_genitive`),
+					clinic: clinicName.value,
+				});
+			}
+			return t('MedicalServicesCategoryCity', {
+				category: categoryName.value,
+				city: t(`city_${cityIds.value[0]}_genitive`),
+			});
+		}
+		if (clinicIds.value.length === 1) {
+			return t('MedicalServicesCategoryClinic', {
+				category: categoryName.value,
+				clinic: clinicName.value,
+			});
+		}
+		return t('MedicalServicesCategory', {
+			category: categoryName.value,
+		});
+	}
+
 	if (cityIds.value.length === 1) {
 		if (clinicIds.value.length === 1) {
 			return t('MedicalServicesCityClinic', {
@@ -76,6 +122,18 @@ const pageTitleWithCount = computed(() => {
 });
 
 const pageDescription = computed(() => {
+	if (serviceCategoryIds.value.length === 1) {
+		if (cityIds.value.length === 1) {
+			return t('MedicalServicesListDescriptionCategoryCity', {
+				category: categoryName.value,
+				city: t(`city_${cityIds.value[0]}_genitive`),
+			});
+		}
+		return t('MedicalServicesListDescriptionCategory', {
+			category: categoryName.value,
+		});
+	}
+
 	if (cityIds.value.length === 1) {
 		return t('MedicalServicesListDescriptionCity', {
 			city: t(`city_${cityIds.value[0]}_genitive`),
@@ -99,9 +157,16 @@ useSeoMeta({
 	twitterDescription: pageDescription,
 	twitterImage: OG_IMAGE,
 });
+
 const isFiltered = computed(() => {
-	return cityIds.value.length > 0 || clinicIds.value.length > 0 || !!name.value;
+	return (
+		cityIds.value.length > 0 ||
+		serviceCategoryIds.value.length > 0 ||
+		clinicIds.value.length > 0 ||
+		!!name.value
+	);
 });
+
 watchEffect(() => {
 	if (medicalServicesList.value) {
 		const pageUrl = `${SITE_URL}${route.fullPath}`;
@@ -144,7 +209,87 @@ watchEffect(() => {
 				:placeholder="t('InsertServiceName')"
 			/>
 			<FilterCitySelect v-model:value="cityIds" />
+			<FilterServiceCategorySelect v-model:value="serviceCategoryIds" />
 			<FilterClinicSelect v-model:value="clinicIds" />
+		</template>
+
+		<template #item="{ item }">
+			<div class="service-info">
+				<h3 class="service-name">
+					<NuxtLink
+						:to="{
+							name: 'services-serviceId',
+							params: { serviceId: item.id },
+							query: getRegionalQuery(locale),
+						}"
+						class="service-name-link"
+					>
+						{{ item.name }}
+					</NuxtLink>
+				</h3>
+				<div v-if="item.localName" class="service-local-name">
+					{{ item.localName }}
+				</div>
+				<div v-if="item.categoryIds?.length" class="service-categories">
+					<span
+						v-for="categoryId in item.categoryIds"
+						:key="categoryId"
+						class="category-tag"
+					>
+						{{ t(`medical_service_category_${categoryId}`) }}
+					</span>
+				</div>
+			</div>
 		</template>
 	</ListPage>
 </template>
+
+<style lang="less" scoped>
+.service-info {
+	padding: 0 var(--spacing-xs);
+
+	.service-name {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: #1f2937;
+		margin: 0;
+		font-family: system-ui, -apple-system, sans-serif;
+		word-break: break-word;
+
+		.service-name-link {
+			color: var(--color-primary);
+			text-decoration: none;
+
+			&:hover {
+				color: var(--color-primary-dark);
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.service-local-name {
+		font-size: 0.9rem;
+		color: #6b7280;
+		margin-top: var(--spacing-xs);
+		font-style: italic;
+		word-break: break-word;
+	}
+
+	.service-categories {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-xs);
+		margin-top: var(--spacing-sm);
+
+		.category-tag {
+			display: inline-block;
+			font-size: 0.75rem;
+			color: var(--color-primary);
+			background: rgba(79, 70, 229, 0.08);
+			padding: 2px 8px;
+			border-radius: 4px;
+			border: 1px solid rgba(79, 70, 229, 0.15);
+		}
+	}
+}
+</style>

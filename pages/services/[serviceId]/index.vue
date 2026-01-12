@@ -2,6 +2,7 @@
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import medicalServiceI18n from '~/i18n/medical-service';
+import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
 import { combineI18nMessages } from '~/i18n/utils';
 import {
 	buildMedicalProcedureSchema,
@@ -11,7 +12,12 @@ import { SITE_URL, OG_IMAGE } from '~/common/constants';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([breadcrumbI18n, medicalServiceI18n, cityI18n]),
+	messages: combineI18nMessages([
+		breadcrumbI18n,
+		medicalServiceI18n,
+		cityI18n,
+		medicalServiceCategoryI18n,
+	]),
 });
 
 const route = useRoute();
@@ -65,7 +71,13 @@ const pageTitle = computed(() => {
 			? t(`city_${uniqueCities[0]}`)
 			: t('InMontenegro');
 
-	return `${medicalServiceData.value?.name} | ${locationText}`;
+	const categoryText = medicalServiceData.value?.categoryIds?.length
+		? t(`medical_service_category_${medicalServiceData.value.categoryIds[0]}`)
+		: '';
+
+	return categoryText
+		? `${medicalServiceData.value?.name} | ${categoryText} | ${locationText}`
+		: `${medicalServiceData.value?.name} | ${locationText}`;
 });
 
 const pageDescription = computed(() => {
@@ -167,6 +179,18 @@ watchEffect(() => {
 				>
 					{{ medicalServiceData.localName }}
 				</div>
+				<div
+					v-if="medicalServiceData.categoryIds?.length"
+					class="medical-service-categories"
+				>
+					<span
+						v-for="categoryId in medicalServiceData.categoryIds"
+						:key="categoryId"
+						class="category-tag"
+					>
+						{{ t(`medical_service_category_${categoryId}`) }}
+					</span>
+				</div>
 			</div>
 		</template>
 	</DetailsPage>
@@ -186,13 +210,32 @@ watchEffect(() => {
 		color: #1f2937;
 		margin: 0;
 		font-family: system-ui, -apple-system, sans-serif;
+		word-break: break-word;
 	}
 
 	.medical-service-local-name {
-		font-size: var(--font-size-md);
-		font-weight: var(--font-weight-medium);
-		color: var(--color-text-secondary);
-		margin-top: var(--spacing-xs);
+		font-size: 1.1rem;
+		color: #6b7280;
+		margin-top: var(--spacing-sm);
+		font-style: italic;
+		word-break: break-word;
+	}
+
+	.medical-service-categories {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-xs);
+		margin-top: var(--spacing-md);
+
+		.category-tag {
+			display: inline-block;
+			font-size: 0.85rem;
+			color: var(--color-primary);
+			background: rgba(79, 70, 229, 0.08);
+			padding: 4px 12px;
+			border-radius: 4px;
+			border: 1px solid rgba(79, 70, 229, 0.15);
+		}
 	}
 }
 </style>

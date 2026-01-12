@@ -3,18 +3,25 @@ import { ArrowLeft } from '@element-plus/icons-vue';
 import { getRegionalQuery } from '~/common/url-utils';
 import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
 
-const props = defineProps<{
-	isLoading: boolean;
-	isFound: boolean;
-	backRouteName: string;
-	loadingText: string;
-	notFoundText: string;
-	clinics: ClinicData[];
-	clinicPrices?: ClinicPrice[];
-}>();
+const props = withDefaults(
+	defineProps<{
+		isLoading: boolean;
+		isFound: boolean;
+		backRouteName: string;
+		loadingText: string;
+		notFoundText: string;
+		clinics: ClinicData[];
+		clinicPrices?: ClinicPrice[];
+		showPrice?: boolean;
+	}>(),
+	{
+		showPrice: true,
+	},
+);
 
-const getPriceInfo = (clinicId: number) =>
-	props.clinicPrices?.find((p) => p.clinicId === clinicId);
+const getPriceInfo = (clinicId: number) => {
+	return props.clinicPrices?.find((p) => p.clinicId === clinicId);
+};
 
 const { t, locale } = useI18n({ useScope: 'local' });
 const router = useRouter();
@@ -85,6 +92,7 @@ const onMapReady = () => {
 								:key="clinic.id"
 								:clinic="clinic"
 								:priceInfo="getPriceInfo(clinic.id)"
+								:showPrice="showPrice"
 								@show-on-map="showClinicOnMap(clinic)"
 								role="listitem"
 							/>

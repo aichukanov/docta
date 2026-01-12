@@ -68,12 +68,13 @@ export default defineEventHandler(async (event): Promise<number | null> => {
 			if (body.clinicPrices?.length > 0) {
 				for (const cp of body.clinicPrices) {
 					await connection.execute(
-						`INSERT INTO clinic_medical_services (medical_service_id, clinic_id, price, price_max, code) 
-						 VALUES (?, ?, ?, ?, ?)`,
+						`INSERT INTO clinic_medical_services (medical_service_id, clinic_id, price, price_min, price_max, code) 
+						 VALUES (?, ?, ?, ?, ?, ?)`,
 						[
 							serviceId,
 							cp.clinicId,
 							cp.price || null,
+							cp.priceMin || null,
 							cp.priceMax || null,
 							cp.code || null,
 						],

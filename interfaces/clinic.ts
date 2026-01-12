@@ -3,6 +3,7 @@ import type { ContactList } from '~/interfaces/contacts';
 export interface ClinicService {
 	clinicId: number;
 	price: number | null;
+	priceMin: number | null;
 	priceMax: number | null;
 	code: string;
 }
@@ -39,6 +40,7 @@ export interface ClinicServiceItem {
 export interface ClinicPrice {
 	clinicId: number;
 	price: number | null;
+	priceMin?: number | null;
 	priceMax?: number | null;
 	code?: string;
 }

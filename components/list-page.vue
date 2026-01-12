@@ -25,18 +25,24 @@ interface ListItem {
 	clinicServices?: ClinicServicesMap;
 }
 
-const props = defineProps<{
-	list: ListItem[];
-	totalCount: number;
-	isLoading: boolean;
-	pageTitle: string;
-	pageDescription?: string;
-	filterQuery: Record<string, any>;
-	cityIds: number[];
-	mapClinics?: ClinicData[];
-	detailsRouteName?: string;
-	detailsParamName?: string;
-}>();
+const props = withDefaults(
+	defineProps<{
+		list: ListItem[];
+		totalCount: number;
+		isLoading: boolean;
+		pageTitle: string;
+		pageDescription?: string;
+		filterQuery: Record<string, any>;
+		cityIds: number[];
+		mapClinics?: ClinicData[];
+		detailsRouteName?: string;
+		detailsParamName?: string;
+		showPrice?: boolean;
+	}>(),
+	{
+		showPrice: true,
+	},
+);
 
 const { t, locale } = useI18n({ useScope: 'local' });
 
@@ -185,6 +191,7 @@ onMounted(async () => {
 										:detailsRouteName="detailsRouteName"
 										:detailsParamName="detailsParamName"
 										:clinicServices="item.clinicServices"
+										:showPrice="showPrice"
 										@show-on-map="showClinicOnMap($event)"
 									>
 										<slot name="item" :item="item" />

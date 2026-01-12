@@ -5,6 +5,7 @@ export interface ClinicServiceItem {
 	name: string;
 	localName: string;
 	price: number | null;
+	priceMin: number | null;
 	priceMax: number | null;
 }
 
@@ -13,11 +14,51 @@ export interface ClinicServicesMap {
 }
 
 /**
+ * Загружает индивидуальные цены врача из clinic_medical_service_doctors
+ * @returns Map<"clinicId_serviceId", {price, priceMax}>
+ */
+async function getDoctorServicePrices(
+	connection: any,
+	doctorId: number,
+	clinicIds: number[],
+): Promise<Map<string, { price: number | null; priceMin: number | null; priceMax: number | null }>> {
+	const result = new Map<
+		string,
+		{ price: number | null; priceMin: number | null; priceMax: number | null }
+	>();
+
+	if (clinicIds.length === 0) {
+		return result;
+	}
+
+	const clinicIdsStr = clinicIds.join(',');
+	const query = `
+		SELECT clinic_id, medical_service_id, price, price_max
+		FROM clinic_medical_service_doctors
+		WHERE doctor_id = ? AND clinic_id IN (${clinicIdsStr})
+	`;
+
+	const [rows] = await connection.execute(query, [doctorId]);
+
+	for (const row of rows as any[]) {
+		const key = `${row.clinic_id}_${row.medical_service_id}`;
+		result.set(key, {
+			price: row.price ? Number(row.price) : null,
+			priceMin: null, // В таблице clinic_medical_service_doctors нет поля price_min
+			priceMax: row.price_max ? Number(row.price_max) : null,
+		});
+	}
+
+	return result;
+}
+
+/**
  * Загружает услуги клиник по специальностям
  * @param connection - соединение с БД
  * @param clinicIds - массив ID клиник
  * @param specialtyIds - массив ID специальностей
  * @param locale - локаль для названий
+ * @param doctorId - опциональный ID врача для получения индивидуальных цен
  * @returns Карта услуг по clinicId
  */
 export async function getServicesByClinicAndSpecialty(
@@ -25,10 +66,16 @@ export async function getServicesByClinicAndSpecialty(
 	clinicIds: number[],
 	specialtyIds: number[],
 	locale: string,
+	doctorId?: number,
 ): Promise<ClinicServicesMap> {
 	if (clinicIds.length === 0 || specialtyIds.length === 0) {
 		return {};
 	}
+
+	// Загружаем индивидуальные цены врача, если передан doctorId
+	const doctorPrices = doctorId
+		? await getDoctorServicePrices(connection, doctorId, clinicIds)
+		: new Map<string, { price: number | null; priceMin: number | null; priceMax: number | null }>();
 
 	const clinicIdsStr = clinicIds.join(',');
 	const specialtyIdsStr = specialtyIds.join(',');
@@ -45,6 +92,7 @@ export async function getServicesByClinicAndSpecialty(
 			ms.name_tr,
 			ms.sort_order,
 			cms.price,
+			cms.price_min,
 			cms.price_max,
 			GROUP_CONCAT(DISTINCT mss.specialty_id ORDER BY mss.specialty_id) as specialtyIds
 		FROM clinic_medical_services cms
@@ -53,7 +101,7 @@ export async function getServicesByClinicAndSpecialty(
 		WHERE cms.clinic_id IN (${clinicIdsStr})
 			AND mss.specialty_id IN (${specialtyIdsStr})
 		GROUP BY cms.clinic_id, ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, 
-			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price, cms.price_max
+			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price, cms.price_min, cms.price_max
 		ORDER BY cms.clinic_id, ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
 	`;
 
@@ -63,6 +111,7 @@ export async function getServicesByClinicAndSpecialty(
 
 	for (const row of serviceRows as any[]) {
 		const clinicId = row.clinicId;
+		const serviceId = row.id;
 		const { name, localName } = processLocalizedNameForClinicOrDoctor(
 			row,
 			locale,
@@ -80,12 +129,37 @@ export async function getServicesByClinicAndSpecialty(
 			result[clinicId] = [];
 		}
 
+		// Проверяем, есть ли индивидуальная цена врача
+		const doctorPriceKey = `${clinicId}_${serviceId}`;
+		const doctorPrice = doctorPrices.get(doctorPriceKey);
+
+		// Если есть запись для врача - используем только её значения (без fallback на цены клиники)
+		const price =
+			doctorPrice !== undefined
+				? doctorPrice.price
+				: row.price
+				? Number(row.price)
+				: null;
+		const priceMin =
+			doctorPrice !== undefined
+				? doctorPrice.priceMin
+				: row.price_min
+				? Number(row.price_min)
+				: null;
+		const priceMax =
+			doctorPrice !== undefined
+				? doctorPrice.priceMax
+				: row.price_max
+				? Number(row.price_max)
+				: null;
+
 		result[clinicId].push({
-			id: row.id,
+			id: serviceId,
 			name: name || '',
 			localName: localName || '',
-			price: row.price ? Number(row.price) : null,
-			priceMax: row.price_max ? Number(row.price_max) : null,
+			price,
+			priceMin,
+			priceMax,
 		});
 	}
 
@@ -134,6 +208,7 @@ export async function getServicesForDoctors(
 			ms.name_tr,
 			ms.sort_order,
 			cms.price,
+			cms.price_min,
 			cms.price_max,
 			GROUP_CONCAT(DISTINCT mss.specialty_id ORDER BY mss.specialty_id) as specialtyIds
 		FROM clinic_medical_services cms
@@ -142,7 +217,7 @@ export async function getServicesForDoctors(
 		WHERE cms.clinic_id IN (${clinicIdsStr})
 			AND mss.specialty_id IN (${specialtyIdsStr})
 		GROUP BY cms.clinic_id, ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, 
-			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price, cms.price_max
+			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price, cms.price_min, cms.price_max
 		ORDER BY cms.clinic_id, ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
 	`;
 
@@ -173,6 +248,7 @@ export async function getServicesForDoctors(
 			name: name || '',
 			localName: localName || '',
 			price: row.price ? Number(row.price) : null,
+			priceMin: row.price_min ? Number(row.price_min) : null,
 			priceMax: row.price_max ? Number(row.price_max) : null,
 			specialtyIds,
 		});

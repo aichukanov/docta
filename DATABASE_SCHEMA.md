@@ -4,29 +4,32 @@ This file provides a structured reference of the MySQL database for the docta.me
 
 ## Tables Summary
 
-| Table                           | Description                                                    |
-| :------------------------------ | :------------------------------------------------------------- |
-| `cities`                        | List of cities with coordinates.                               |
-| `clinics`                       | Core clinic data, contacts, and multi-language descriptions.   |
-| `doctors`                       | Medical specialists, personal info, and professional titles.   |
-| `lab_tests`                     | Catalog of laboratory tests with localized names.              |
-| `medical_services`              | Catalog of general medical services (localized).               |
-| `medications`                   | Catalog of medications (localized).                            |
-| `specialties`                   | Medical specialties.                                           |
-| `languages`                     | Supported languages (codes and names).                         |
-| `clinic_lab_tests`              | Junction table: Clinic <-> Lab Test (includes pricing).        |
-| `clinic_medical_services`       | Junction table: Clinic <-> Medical Service (includes pricing). |
-| `clinic_medications`            | Junction table: Clinic <-> Medication (includes pricing).      |
-| `clinic_languages`              | Junction table: Clinic <-> Languages supported.                |
-| `doctor_clinics`                | Junction table: Doctor <-> Clinic (includes position).         |
-| `doctor_specialties`            | Junction table: Doctor <-> Specialty.                          |
-| `doctor_languages`              | Junction table: Doctor <-> Languages spoken.                   |
-| `medical_services_specialties`  | Junction table: Medical Service <-> Specialty.                 |
-| `lab_test_categories`           | Categories for lab tests.                                      |
-| `lab_test_categories_relations` | Junction table: Lab Test <-> Category.                         |
-| `lab_test_synonyms`             | Alternative names for lab tests for search optimization.       |
-| `doctor_redirects`              | Redirect map for merged doctor profiles.                       |
-| `lab_test_redirects`            | Redirect map for merged lab test records.                      |
+| Table                                  | Description                                                    |
+| :------------------------------------- | :------------------------------------------------------------- |
+| `cities`                               | List of cities with coordinates.                               |
+| `clinics`                              | Core clinic data, contacts, and multi-language descriptions.   |
+| `doctors`                              | Medical specialists, personal info, and professional titles.   |
+| `lab_tests`                            | Catalog of laboratory tests with localized names.              |
+| `medical_services`                     | Catalog of general medical services (localized).               |
+| `medications`                          | Catalog of medications (localized).                            |
+| `specialties`                          | Medical specialties.                                           |
+| `languages`                            | Supported languages (codes and names).                         |
+| `clinic_lab_tests`                     | Junction table: Clinic <-> Lab Test (includes pricing).        |
+| `clinic_medical_services`              | Junction table: Clinic <-> Medical Service (includes pricing). |
+| `clinic_medications`                   | Junction table: Clinic <-> Medication (includes pricing).      |
+| `clinic_languages`                     | Junction table: Clinic <-> Languages supported.                |
+| `clinic_medical_service_doctors`       | Junction table: Clinic <-> Medical Service <-> Doctor.         |
+| `doctor_clinics`                       | Junction table: Doctor <-> Clinic (includes position).         |
+| `doctor_specialties`                   | Junction table: Doctor <-> Specialty.                          |
+| `doctor_languages`                     | Junction table: Doctor <-> Languages spoken.                   |
+| `medical_services_specialties`         | Junction table: Medical Service <-> Specialty.                 |
+| `medical_service_categories`           | Categories for medical services.                               |
+| `medical_service_categories_relations` | Junction table: Medical Service <-> Category.                  |
+| `lab_test_categories`                  | Categories for lab tests.                                      |
+| `lab_test_categories_relations`        | Junction table: Lab Test <-> Category.                         |
+| `lab_test_synonyms`                    | Alternative names for lab tests for search optimization.       |
+| `doctor_redirects`                     | Redirect map for merged doctor profiles.                       |
+| `lab_test_redirects`                   | Redirect map for merged lab test records.                      |
 
 ## Detailed Table Definitions
 
@@ -124,6 +127,18 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `sort_order` (int): Display order.
 - `created_at` (timestamp)
 
+### `medical_service_categories`
+
+- `id` (int, PK, AI)
+- `name` (varchar(255)): Category name.
+- `created_at` (datetime)
+
+### `medical_service_categories_relations`
+
+- `id` (int, PK, AI)
+- `medical_service_id` (int): Medical Service ID.
+- `medical_service_category_id` (int): Medical Service Category ID.
+
 ### `medical_services_specialties`
 
 - `id` (int, PK, AI)
@@ -158,6 +173,17 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `price_max` (decimal(10,2)): Maximum price (for price ranges).
 - `created_at` (timestamp)
 - _Unique constraint_: (`clinic_id`, `medical_service_id`)
+
+### `clinic_medical_service_doctors`
+
+- `id` (int, PK, AI)
+- `clinic_id` (int): Clinic ID.
+- `medical_service_id` (int): Medical Service ID.
+- `doctor_id` (int): Doctor ID.
+- `price` (decimal(10,2)): Price of the service for this doctor.
+- `price_max` (decimal(10,2)): Maximum price (for price ranges).
+- `created_at` (datetime)
+- _Comment_: Links doctors to specific medical services within a clinic, with individual pricing.
 
 ### `clinic_medications`
 
@@ -238,4 +264,13 @@ This file provides a structured reference of the MySQL database for the docta.me
    - `doctor_redirects` and `lab_test_redirects` tables handle merged records for 301 redirects.
 
 7. **Service-Specialty Mapping**:
+
    - `medical_services_specialties` links medical services to relevant specialties for filtering.
+
+8. **Service-Category Mapping**:
+
+   - `medical_service_categories` and `medical_service_categories_relations` allow grouping medical services by categories.
+   - `lab_test_categories` and `lab_test_categories_relations` allow grouping lab tests by categories.
+
+9. **Doctor-Service Assignment**:
+   - `clinic_medical_service_doctors` enables assigning specific doctors to medical services within a clinic context.

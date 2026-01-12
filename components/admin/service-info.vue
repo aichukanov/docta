@@ -73,6 +73,7 @@ const addClinicPrice = () => {
 	serviceModel.value.clinicPrices.push({
 		clinicId: 0,
 		price: null,
+		priceMin: null,
 		code: null,
 	});
 };
@@ -338,8 +339,14 @@ watch(serviceId, async (newId) => {
 						class="price-input"
 					/>
 					<el-input
+						v-model="cp.priceMin"
+						placeholder="Мин. (от)"
+						type="number"
+						class="price-input"
+					/>
+					<el-input
 						v-model="cp.priceMax"
-						placeholder="Макс. цена"
+						placeholder="Макс."
 						type="number"
 						class="price-input"
 					/>

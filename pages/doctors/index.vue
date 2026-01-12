@@ -251,6 +251,7 @@ watchEffect(() => {
 		:isLoading="isLoadingDoctors"
 		:filterQuery="filterQuery"
 		:cityIds="cityIds"
+		:showPrice="false"
 	>
 		<template #filters>
 			<FilterName

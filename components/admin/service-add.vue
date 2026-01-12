@@ -6,6 +6,7 @@ import specialtyI18n from '~/i18n/specialty';
 interface ClinicPriceEntry {
 	clinicId: number | null;
 	price: string;
+	priceMin: string;
 	priceMax: string;
 	code: string;
 }
@@ -51,6 +52,7 @@ const addClinicPrice = () => {
 	clinicPrices.value.push({
 		clinicId: null,
 		price: '',
+		priceMin: '',
 		priceMax: '',
 		code: '',
 	});
@@ -83,6 +85,7 @@ const addService = async () => {
 		.map((cp) => ({
 			clinicId: cp.clinicId!,
 			price: cp.price ? parseFloat(cp.price) : null,
+			priceMin: cp.priceMin ? parseFloat(cp.priceMin) : null,
 			priceMax: cp.priceMax ? parseFloat(cp.priceMax) : null,
 			code: cp.code || null,
 		}));
@@ -193,8 +196,14 @@ const addService = async () => {
 					class="price-input"
 				/>
 				<el-input
+					v-model="cp.priceMin"
+					placeholder="Мин. (от)"
+					type="number"
+					class="price-input"
+				/>
+				<el-input
 					v-model="cp.priceMax"
-					placeholder="Макс. цена"
+					placeholder="Макс."
 					type="number"
 					class="price-input"
 				/>

@@ -3,6 +3,7 @@ import { Language, isDoctorLanguage } from '~/enums/language';
 import { DoctorSpecialty } from '~/enums/specialty';
 import { CityId } from '~/enums/cities';
 import { LabTestCategory } from '~/enums/labtest-category';
+import { MedicalServiceCategory } from '~/enums/medical-service-category';
 
 function showError(from: string, message: string) {
 	console.error('Error in ' + from + ';\n' + message);
@@ -155,6 +156,26 @@ export function validateCategoryIds(
 		)
 	) {
 		showError(from, 'Invalid lab test category: ' + categoryIds);
+		return false;
+	}
+
+	return true;
+}
+
+export function validateServiceCategoryIds(
+	{ serviceCategoryIds }: { serviceCategoryIds: unknown },
+	from: string,
+) {
+	if (
+		!Array.isArray(serviceCategoryIds) ||
+		serviceCategoryIds.some(
+			(category) =>
+				MedicalServiceCategory[
+					category as keyof typeof MedicalServiceCategory
+				] == null,
+		)
+	) {
+		showError(from, 'Invalid medical service category: ' + serviceCategoryIds);
 		return false;
 	}
 

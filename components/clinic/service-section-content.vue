@@ -1,12 +1,13 @@
 <script setup lang="ts">
-interface Props {
-	items: unknown[];
-	initialLimit?: number;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-	initialLimit: 6,
-});
+const props = withDefaults(
+	defineProps<{
+		items: unknown[];
+		initialLimit?: number;
+	}>(),
+	{
+		initialLimit: 6,
+	},
+);
 
 const { t } = useI18n();
 

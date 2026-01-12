@@ -288,6 +288,7 @@ watchEffect(() => {
 							:localName="item.localName"
 							:price="item.clinicPrices?.[0]?.price"
 							:priceMax="item.clinicPrices?.[0]?.priceMax"
+							:priceMin="item.clinicPrices?.[0]?.priceMin"
 							routeName="services-serviceId"
 							routeParamName="serviceId"
 						/>

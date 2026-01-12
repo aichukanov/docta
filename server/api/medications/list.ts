@@ -71,7 +71,7 @@ export async function getMedicationList(
 			m.name_tr,
 			GROUP_CONCAT(DISTINCT cm.clinic_id ORDER BY ${priceOrder}) as clinicIds,
 			GROUP_CONCAT(
-				DISTINCT CONCAT(cm.clinic_id, ':', COALESCE(cm.price, 0), ':', COALESCE(cm.price_max, 0), ':', COALESCE(cm.code, ''))
+				DISTINCT CONCAT(cm.clinic_id, ':', IFNULL(cm.price, ''), ':', '', ':', IFNULL(cm.price_max, ''), ':', COALESCE(cm.code, ''))
 				ORDER BY ${priceOrder}
 			) as clinicPricesData
 		FROM medications m

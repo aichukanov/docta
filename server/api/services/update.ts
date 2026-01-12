@@ -95,7 +95,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 			// 3. Обновляем цены клиник (только дифф)
 			const [existingClinicPrices]: any = await connection.execute(
-				'SELECT clinic_id, price, price_max, code FROM clinic_medical_services WHERE medical_service_id = ?',
+				'SELECT clinic_id, price, price_min, price_max, code FROM clinic_medical_services WHERE medical_service_id = ?',
 				[body.id],
 			);
 			const existingClinicIds = existingClinicPrices.map(
@@ -126,14 +126,16 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 					// Обновляем только если изменилось
 					if (
 						existing.price !== cp.price ||
+						existing.price_min !== cp.priceMin ||
 						existing.price_max !== cp.priceMax ||
 						existing.code !== cp.code
 					) {
 						await connection.execute(
-							`UPDATE clinic_medical_services SET price = ?, price_max = ?, code = ? 
+							`UPDATE clinic_medical_services SET price = ?, price_min = ?, price_max = ?, code = ? 
 							 WHERE medical_service_id = ? AND clinic_id = ?`,
 							[
 								cp.price || null,
+								cp.priceMin || null,
 								cp.priceMax || null,
 								cp.code || null,
 								body.id,
@@ -144,12 +146,13 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				} else {
 					// Добавляем новую
 					await connection.execute(
-						`INSERT INTO clinic_medical_services (medical_service_id, clinic_id, price, price_max, code) 
-						 VALUES (?, ?, ?, ?, ?)`,
+						`INSERT INTO clinic_medical_services (medical_service_id, clinic_id, price, price_min, price_max, code) 
+						 VALUES (?, ?, ?, ?, ?, ?)`,
 						[
 							body.id,
 							cp.clinicId,
 							cp.price || null,
+							cp.priceMin || null,
 							cp.priceMax || null,
 							cp.code || null,
 						],

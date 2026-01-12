@@ -72,6 +72,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 				clinicIds,
 				specialtyIds,
 				locale,
+				doctor.id, // Передаём ID врача для получения индивидуальных цен
 			);
 		}
 

@@ -12,16 +12,22 @@ interface ClinicServicesMap {
 	[clinicId: number]: ClinicServiceItem[];
 }
 
-const props = defineProps<{
-	title?: string;
-	localName?: string;
-	itemId?: number;
-	clinicIds: string;
-	clinicPrices?: ClinicService[];
-	detailsRouteName?: string;
-	detailsParamName?: string;
-	clinicServices?: ClinicServicesMap;
-}>();
+const props = withDefaults(
+	defineProps<{
+		title?: string;
+		localName?: string;
+		itemId?: number;
+		clinicIds: string;
+		clinicPrices?: ClinicService[];
+		detailsRouteName?: string;
+		detailsParamName?: string;
+		clinicServices?: ClinicServicesMap;
+		showPrice?: boolean;
+	}>(),
+	{
+		showPrice: true,
+	},
+);
 
 defineEmits<{
 	(e: 'show-on-map', clinic: ClinicData): void;
@@ -75,6 +81,7 @@ const detailsLink = computed(() => {
 				:clinic="clinic"
 				:price-info="getPriceInfo(clinic.id)"
 				:services="getServices(clinic.id)"
+				:showPrice="showPrice"
 				@show-on-map="$emit('show-on-map', clinic)"
 			/>
 		</div>

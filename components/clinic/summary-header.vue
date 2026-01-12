@@ -4,10 +4,18 @@ import { getRegionalQuery } from '~/common/url-utils';
 import { getLocalizedName } from '~/common/utils';
 import type { ClinicData } from '~/interfaces/clinic';
 
-const props = defineProps<{
-	clinic: ClinicData;
-	price?: number | null;
-}>();
+const props = withDefaults(
+	defineProps<{
+		clinic: ClinicData;
+		price?: number | null;
+		priceMin?: number | null;
+		priceMax?: number | null;
+		showPrice?: boolean;
+	}>(),
+	{
+		showPrice: true,
+	},
+);
 
 defineEmits<{
 	(e: 'show-on-map'): void;
@@ -16,22 +24,34 @@ defineEmits<{
 const headerI18n = {
 	'en': {
 		LanguageAssistance: 'The clinic provides assistance in:',
+		PriceUnknown: 'Price not specified',
+		PriceFrom: 'from {price}',
 	},
 	'ru': {
 		LanguageAssistance:
 			'В клинике предоставляется сопровождение на следующих языках:',
+		PriceUnknown: 'Цена не указана',
+		PriceFrom: 'от {price}',
 	},
 	'de': {
 		LanguageAssistance: 'Die Klinik bietet Unterstützung in:',
+		PriceUnknown: 'Preis nicht angegeben',
+		PriceFrom: 'ab {price}',
 	},
 	'tr': {
 		LanguageAssistance: 'Klinik aşağıdaki dillerde destek sunar:',
+		PriceUnknown: 'Fiyat belirtilmedi',
+		PriceFrom: '{price} başlayan',
 	},
 	'sr': {
 		LanguageAssistance: 'Klinika pruža pomoć na sledećim jezicima:',
+		PriceUnknown: 'Cena nije navedena',
+		PriceFrom: 'od {price}',
 	},
 	'sr-cyrl': {
 		LanguageAssistance: 'Клиника пружа помоћ на следећим језицима:',
+		PriceUnknown: 'Цена није наведена',
+		PriceFrom: 'од {price}',
 	},
 };
 
@@ -44,7 +64,29 @@ const localizedName = computed(() =>
 	getLocalizedName(props.clinic, locale.value),
 );
 
-const hasPrice = computed(() => props.price != null);
+const hasPrice = computed(() => props.price != null || props.priceMin != null);
+
+const formattedPrice = computed(() => {
+	const formatNumber = (num: number) =>
+		n(num, { style: 'currency', currency: 'EUR' });
+
+	// Если есть priceMin - показываем "от X евро"
+	if (props.priceMin != null) {
+		return t('PriceFrom', { price: formatNumber(props.priceMin) });
+	}
+
+	// Если есть price и priceMax - показываем диапазон "X - Y евро"
+	if (props.price != null && props.priceMax != null && props.priceMax !== props.price) {
+		return `${formatNumber(props.price)} - ${formatNumber(props.priceMax)}`;
+	}
+
+	// Если есть только price - показываем "X евро"
+	if (props.price != null) {
+		return formatNumber(props.price);
+	}
+
+	return null;
+});
 
 const clinicLink = computed(() => ({
 	name: 'clinics-clinicId',
@@ -60,8 +102,9 @@ const clinicLink = computed(() => ({
 				<NuxtLink :to="clinicLink" class="clinic-name">
 					{{ localizedName }}
 				</NuxtLink>
-				<div v-if="hasPrice" class="price-badge">
-					{{ n(price, { style: 'currency', currency: 'EUR' }) }}
+				<div v-if="showPrice" class="price-badge" :class="{ 'price-badge__unknown': !hasPrice }">
+					<template v-if="formattedPrice">{{ formattedPrice }}</template>
+					<template v-else>{{ t('PriceUnknown') }}</template>
 				</div>
 			</div>
 
@@ -128,6 +171,13 @@ const clinicLink = computed(() => ({
 	font-size: var(--font-size-lg);
 	font-weight: var(--font-weight-bold);
 	white-space: nowrap;
+
+	&__unknown {
+		background: var(--color-surface-secondary);
+		color: var(--color-text-muted);
+		font-weight: var(--font-weight-normal);
+		font-style: italic;
+	}
 }
 
 .clinic-address {

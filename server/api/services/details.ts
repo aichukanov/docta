@@ -41,12 +41,17 @@ export default defineEventHandler(
 				) as clinicIds,
 				(
 					SELECT GROUP_CONCAT(
-						CONCAT(clinic_id, ':', COALESCE(price, 0), ':', COALESCE(price_max, 0), ':', COALESCE(code, ''))
+						CONCAT(clinic_id, ':', IFNULL(price, ''), ':', IFNULL(price_min, ''), ':', IFNULL(price_max, ''), ':', COALESCE(code, ''))
 						ORDER BY ${priceOrder}
 					)
 					FROM clinic_medical_services
 					WHERE medical_service_id = ms.id
-				) as clinicPricesData
+				) as clinicPricesData,
+				(
+					SELECT GROUP_CONCAT(medical_service_category_id ORDER BY medical_service_category_id)
+					FROM medical_service_categories_relations
+					WHERE medical_service_id = ms.id
+				) as categoryIds
 			FROM medical_services ms
 			WHERE ms.id = ?
 			GROUP BY ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, ms.name_ru, ms.name_de, ms.name_tr;
@@ -87,6 +92,9 @@ export default defineEventHandler(
 				localName,
 				clinicIds: row.clinicIds,
 				clinicPrices: parseClinicPricesData(row.clinicPricesData),
+				categoryIds: row.categoryIds
+					? row.categoryIds.split(',').map(Number)
+					: [],
 			};
 		} catch (error) {
 			console.error('API Error - medical service data:', error);

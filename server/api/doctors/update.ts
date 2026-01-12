@@ -9,6 +9,13 @@ import {
 	validateNonNegativeInteger,
 } from '~/common/validation';
 
+interface DoctorServicePrice {
+	clinicId: number;
+	serviceId: number;
+	price: number | null;
+	priceMax: number | null;
+}
+
 export default defineEventHandler(async (event): Promise<boolean> => {
 	try {
 		requireAdmin(event);
@@ -161,6 +168,77 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 					'INSERT INTO doctor_clinics (doctor_id, clinic_id) VALUES (?, ?)',
 					[body.id, clinicId],
 				);
+			}
+
+			// Handle service prices (clinic_medical_service_doctors)
+			if (body.servicePrices) {
+				const [existingServicePrices]: any = await connection.execute(
+					'SELECT clinic_id, medical_service_id, price, price_max FROM clinic_medical_service_doctors WHERE doctor_id = ?',
+					[body.id],
+				);
+
+				const existingKeys = existingServicePrices.map(
+					(row: any) => `${row.clinic_id}_${row.medical_service_id}`,
+				);
+				const newServicePrices: DoctorServicePrice[] = body.servicePrices || [];
+				const newKeys = newServicePrices.map(
+					(sp) => `${sp.clinicId}_${sp.serviceId}`,
+				);
+
+				// Удаляем записи, которых больше нет
+				const keysToRemove = existingKeys.filter(
+					(key: string) => !newKeys.includes(key),
+				);
+				for (const key of keysToRemove) {
+					const [clinicId, serviceId] = key.split('_').map(Number);
+					await connection.execute(
+						'DELETE FROM clinic_medical_service_doctors WHERE doctor_id = ? AND clinic_id = ? AND medical_service_id = ?',
+						[body.id, clinicId, serviceId],
+					);
+				}
+
+				// Обновляем или добавляем записи
+				for (const sp of newServicePrices) {
+					const existing = existingServicePrices.find(
+						(e: any) =>
+							e.clinic_id === sp.clinicId &&
+							e.medical_service_id === sp.serviceId,
+					);
+					if (existing) {
+						// Обновляем только если изменилось
+						if (
+							existing.price !== sp.price ||
+							existing.price_max !== sp.priceMax
+						) {
+							await connection.execute(
+								`UPDATE clinic_medical_service_doctors 
+								 SET price = ?, price_max = ? 
+								 WHERE doctor_id = ? AND clinic_id = ? AND medical_service_id = ?`,
+								[
+									sp.price || null,
+									sp.priceMax || null,
+									body.id,
+									sp.clinicId,
+									sp.serviceId,
+								],
+							);
+						}
+					} else {
+						// Добавляем новую
+						await connection.execute(
+							`INSERT INTO clinic_medical_service_doctors 
+							 (doctor_id, clinic_id, medical_service_id, price, price_max, created_at) 
+							 VALUES (?, ?, ?, ?, ?, NOW())`,
+							[
+								body.id,
+								sp.clinicId,
+								sp.serviceId,
+								sp.price || null,
+								sp.priceMax || null,
+							],
+						);
+					}
+				}
 			}
 
 			await connection.commit();

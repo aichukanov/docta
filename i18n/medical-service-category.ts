@@ -70,6 +70,10 @@ export default {
 				'Wound Care',
 			[`medical_service_category_${MedicalServiceCategory.OPHTHALMIC_SURGERY}`]:
 				'Ophthalmic Surgery',
+			[`medical_service_category_${MedicalServiceCategory.ORTHODONTICS}`]:
+				'Orthodontics',
+			[`medical_service_category_${MedicalServiceCategory.PEDIATRIC_DENTISTRY}`]:
+				'Pediatric Dentistry',
 		},
 		'ru': {
 			ServiceCategory: 'Категория',
@@ -139,6 +143,10 @@ export default {
 				'Обработка ран',
 			[`medical_service_category_${MedicalServiceCategory.OPHTHALMIC_SURGERY}`]:
 				'Офтальмохирургия',
+			[`medical_service_category_${MedicalServiceCategory.ORTHODONTICS}`]:
+				'Ортодонтия',
+			[`medical_service_category_${MedicalServiceCategory.PEDIATRIC_DENTISTRY}`]:
+				'Детская стоматология',
 		},
 		'sr': {
 			ServiceCategory: 'Kategorija',
@@ -212,6 +220,10 @@ export default {
 				'Nega rana',
 			[`medical_service_category_${MedicalServiceCategory.OPHTHALMIC_SURGERY}`]:
 				'Oftalmološka hirurgija',
+			[`medical_service_category_${MedicalServiceCategory.ORTHODONTICS}`]:
+				'Ortodoncija',
+			[`medical_service_category_${MedicalServiceCategory.PEDIATRIC_DENTISTRY}`]:
+				'Dečja stomatologija',
 		},
 		'sr-cyrl': {
 			ServiceCategory: 'Категорија',
@@ -285,6 +297,10 @@ export default {
 				'Нега рана',
 			[`medical_service_category_${MedicalServiceCategory.OPHTHALMIC_SURGERY}`]:
 				'Офталмолошка хирургија',
+			[`medical_service_category_${MedicalServiceCategory.ORTHODONTICS}`]:
+				'Ортодонција',
+			[`medical_service_category_${MedicalServiceCategory.PEDIATRIC_DENTISTRY}`]:
+				'Дечја стоматологија',
 		},
 		'de': {
 			ServiceCategory: 'Kategorie',
@@ -355,6 +371,10 @@ export default {
 				'Wundversorgung',
 			[`medical_service_category_${MedicalServiceCategory.OPHTHALMIC_SURGERY}`]:
 				'Augenchirurgie',
+			[`medical_service_category_${MedicalServiceCategory.ORTHODONTICS}`]:
+				'Kieferorthopädie',
+			[`medical_service_category_${MedicalServiceCategory.PEDIATRIC_DENTISTRY}`]:
+				'Kinderzahnheilkunde',
 		},
 		'tr': {
 			ServiceCategory: 'Kategori',
@@ -424,6 +444,10 @@ export default {
 				'Yara Bakımı',
 			[`medical_service_category_${MedicalServiceCategory.OPHTHALMIC_SURGERY}`]:
 				'Göz Cerrahisi',
+			[`medical_service_category_${MedicalServiceCategory.ORTHODONTICS}`]:
+				'Ortodonti',
+			[`medical_service_category_${MedicalServiceCategory.PEDIATRIC_DENTISTRY}`]:
+				'Çocuk Diş Hekimliği',
 		},
 	},
 };

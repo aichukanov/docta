@@ -105,6 +105,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `id` (int, PK, AI)
 - `lab_test_id` (int): Lab Test ID.
 - `category_id` (int): Category ID.
+- _Unique constraint_: (`lab_test_id`, `category_id`)
 
 ### `lab_test_synonyms`
 
@@ -138,6 +139,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `id` (int, PK, AI)
 - `medical_service_id` (int): Medical Service ID.
 - `medical_service_category_id` (int): Medical Service Category ID.
+- _Unique constraint_: (`medical_service_id`, `medical_service_category_id`)
 
 ### `medical_services_specialties`
 

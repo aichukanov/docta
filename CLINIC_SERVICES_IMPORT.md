@@ -75,6 +75,12 @@ SET NAMES utf8mb4;
 SET CHARACTER SET utf8mb4;
 
 -- ═══════════════════════════════════════════════════════════════
+-- PART 0: ADD NEW CATEGORIES (if needed)
+-- ═══════════════════════════════════════════════════════════════
+
+-- Step 0.1: Insert new categories into medical_service_categories
+
+-- ═══════════════════════════════════════════════════════════════
 -- PART 1: MEDICAL SERVICES
 -- ═══════════════════════════════════════════════════════════════
 
@@ -82,7 +88,7 @@ SET CHARACTER SET utf8mb4;
 -- Step 1.2: Set variables
 -- Step 1.3: Insert clinic_medical_services (prices) — INSERT IGNORE
 -- Step 1.4: Insert category relations — INSERT IGNORE
--- Step 1.5: Insert specialty relations (optional) — INSERT IGNORE
+-- Step 1.5: Insert specialty relations — INSERT IGNORE (auto for matching categories)
 
 -- ═══════════════════════════════════════════════════════════════
 -- PART 2: LAB TESTS
@@ -94,6 +100,28 @@ SET CHARACTER SET utf8mb4;
 -- Step 2.4: Insert category relations — INSERT IGNORE
 -- Step 2.5: Insert synonyms — INSERT IGNORE
 ```
+
+---
+
+## PART 0: Новые категории (при необходимости)
+
+Если услуги требуют новую категорию, которой нет в `enums/medical-service-category.ts`:
+
+### 0.1 Добавление в базу данных
+
+```sql
+INSERT INTO medical_service_categories (id, name) VALUES 
+(34, 'Orthodontics'),
+(35, 'Pediatric Dentistry')
+ON DUPLICATE KEY UPDATE name = name;
+```
+
+### 0.2 Обновление кода
+
+После успешного импорта добавить категорию в:
+1. `enums/medical-service-category.ts` — enum
+2. `i18n/medical-service-category.ts` — переводы (все 6 языков)
+3. Этот документ — справочник категорий
 
 ---
 
@@ -112,10 +140,21 @@ ON DUPLICATE KEY UPDATE name_en = name_en;
 
 ```sql
 SET @clinic_id = {ID};
-SET @cat_general_medicine = 1;
-SET @cat_cardiology = 2;
+
+-- Категории услуг
+SET @cat_dentistry = 20;
+SET @cat_orthodontics = 34;
+SET @cat_pediatric_dentistry = 35;
 -- ... другие категории по необходимости
+
+-- Специальности врачей (для категорий, совпадающих со специальностями)
+SET @spec_dentistry = 78;
+SET @spec_orthodontist = 93;
+SET @spec_pediatric_dentistry = 87;
+-- ... другие специальности по необходимости
 ```
+
+> ⚡ Для категорий из таблицы соответствий (см. раздел 1.5) **обязательно** объявлять переменную специальности!
 
 ### 1.3 Цены для клиники — INSERT IGNORE
 
@@ -148,9 +187,9 @@ SELECT id, @cat_general_medicine FROM medical_services WHERE name_en IN (
 );
 ```
 
-### 1.5 Привязка к специальностям (опционально) — INSERT IGNORE
+### 1.5 Привязка к специальностям — INSERT IGNORE
 
-Связь услуги со специальностями врачей для фильтрации:
+Связь услуги со специальностями врачей для фильтрации. **Автоматически добавлять для категорий, совпадающих со специальностями!**
 
 ```sql
 INSERT IGNORE INTO medical_services_specialties (medical_service_id, specialty_id)
@@ -160,6 +199,36 @@ SELECT id, @spec_cardiology FROM medical_services WHERE name_en IN (
     'Echocardiography'
 );
 ```
+
+#### ⚡ Автоматическая привязка: категория → специальность
+
+Если услуга привязана к категории из таблицы ниже — **обязательно** привязать к соответствующей специальности:
+
+| Категория (Category)     | ID  | Специальность (Specialty)      | ID  |
+| ------------------------ | --- | ------------------------------ | --- |
+| CARDIOLOGY               | 8   | CARDIOLOGY                     | 1   |
+| GASTROENTEROLOGY         | 6   | GASTROENTEROLOGY               | 13  |
+| GYNECOLOGY               | 7   | GYNECOLOGY_OBSTETRICS          | 5   |
+| GENERAL_MEDICINE         | 9   | GENERAL_MEDICINE               | 45  |
+| ORTHOPEDICS              | 10  | ORTHOPEDICS_TRAUMATOLOGY       | 17  |
+| ENT                      | 11  | OTORHINOLARYNGOLOGY            | 11  |
+| PULMONOLOGY              | 12  | PULMONOLOGY                    | 14  |
+| NEUROLOGY                | 21  | NEUROLOGY                      | 8   |
+| UROLOGY                  | 22  | UROLOGY                        | 9   |
+| OPHTHALMOLOGY            | 23  | OPHTHALMOLOGY                  | 6   |
+| DERMATOLOGY              | 24  | DERMATOVENEROLOGY              | 7   |
+| PEDIATRICS               | 25  | PEDIATRICS                     | 4   |
+| ENDOCRINOLOGY            | 26  | ENDOCRINOLOGY                  | 12  |
+| ALLERGOLOGY              | 27  | ALLERGOLOGY                    | 79  |
+| DENTISTRY                | 20  | DENTISTRY                      | 78  |
+| ORTHODONTICS             | 34  | ORTHODONTIST                   | 93  |
+| PEDIATRIC_DENTISTRY      | 35  | PEDIATRIC_DENTISTRY            | 87  |
+| PLASTIC_SURGERY          | 18  | PLASTIC_SURGERY                | 18  |
+| GENERAL_SURGERY          | 17  | GENERAL_SURGERY                | 3   |
+| PHYSIOTHERAPY            | 5   | PHYSICAL_MEDICINE              | 42  |
+| OPHTHALMIC_SURGERY       | 33  | OPHTHALMIC_SURGERY             | 81  |
+
+**Пример:** все услуги с категорией DENTISTRY (20) → привязать к специальности DENTISTRY (78)
 
 #### Мульти-категории (добавлять во все подходящие!)
 
@@ -176,6 +245,9 @@ SELECT id, @spec_cardiology FROM medical_services WHERE name_en IN (
 | Урологические пластики         | PLASTIC_SURGERY + UROLOGY                  |
 | Эпидуральные инъекции          | PAIN_THERAPY + ORTHOPEDICS                 |
 | Забор крови, экспресс-тесты    | LABORATORY_SERVICES + INJECTIONS_INFUSIONS |
+| Детские стомат. услуги         | PEDIATRIC_DENTISTRY (не DENTISTRY + PEDIATRICS!) |
+| Ортодонтические услуги         | ORTHODONTICS (не DENTISTRY!)               |
+| Брекеты, ретейнеры, трейнеры   | ORTHODONTICS                               |
 
 ---
 
@@ -372,6 +444,8 @@ SELECT name_en, COUNT(*) as cnt FROM lab_tests GROUP BY name_en HAVING cnt > 1;
 
 ### Specialties (специальности врачей)
 
+Основные специальности, используемые при привязке услуг:
+
 ```
 1  = CARDIOLOGY
 2  = INTERNAL_MEDICINE
@@ -403,9 +477,15 @@ SELECT name_en, COUNT(*) as cnt FROM lab_tests GROUP BY name_en HAVING cnt > 1;
 47 = ONCOLOGY
 48 = EMERGENCY_MEDICINE
 52 = INFECTIOUS_DISEASES
+74 = ORAL_SURGERY
 75 = NEUROSURGERY
 78 = DENTISTRY
 79 = ALLERGOLOGY
+81 = OPHTHALMIC_SURGERY
+87 = PEDIATRIC_DENTISTRY
+91 = MAXILLOFACIAL_SURGERY
+92 = CARDIAC_SURGERY
+93 = ORTHODONTIST
 ```
 
 > Полный список: `enums/specialty.ts`
@@ -446,6 +526,8 @@ SELECT name_en, COUNT(*) as cnt FROM lab_tests GROUP BY name_en HAVING cnt > 1;
 31 = WOUND_CARE
 32 = ABDOMINAL_SURGERY
 33 = OPHTHALMIC_SURGERY
+34 = ORTHODONTICS
+35 = PEDIATRIC_DENTISTRY
 ```
 
 ### Lab Test Categories

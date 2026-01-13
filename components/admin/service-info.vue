@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
 import { DoctorSpecialty } from '~/enums/specialty';
+import { MedicalServiceCategory } from '~/enums/medical-service-category';
 import specialtyI18n from '~/i18n/specialty';
+import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
+import { combineI18nMessages } from '~/i18n/utils';
 
 interface ServiceListItem {
 	id: number;
@@ -18,6 +21,7 @@ interface ServiceAdminDetails {
 	name_tr: string;
 	sort_order: number | null;
 	specialtyIds: number[];
+	categoryIds: number[];
 	clinicPrices: ClinicPrice[];
 }
 
@@ -37,7 +41,10 @@ const emit = defineEmits<{
 	(e: 'updated'): void;
 }>();
 
-const { t } = useI18n(specialtyI18n);
+const { t } = useI18n({
+	useScope: 'local',
+	messages: combineI18nMessages([specialtyI18n, medicalServiceCategoryI18n]),
+});
 
 const serviceId = ref<number | null>(null);
 const serviceModel = ref<ServiceAdminDetails | null>(null);
@@ -63,6 +70,16 @@ const specialtyOptions = computed(() =>
 		.filter(Number)
 		.map((key) => ({
 			label: t(`specialty_${key}`),
+			value: key as number,
+		}))
+		.sort((a, b) => a.label.localeCompare(b.label)),
+);
+
+const categoryOptions = computed(() =>
+	Object.values(MedicalServiceCategory)
+		.filter(Number)
+		.map((key) => ({
+			label: t(`medical_service_category_${key}`),
 			value: key as number,
 		}))
 		.sort((a, b) => a.label.localeCompare(b.label)),
@@ -109,6 +126,12 @@ const specialtyIdsModified = computed(() => {
 	const model = [...serviceModel.value.specialtyIds].sort();
 	return JSON.stringify(orig) !== JSON.stringify(model);
 });
+const categoryIdsModified = computed(() => {
+	if (!originalService.value || !serviceModel.value) return false;
+	const orig = [...originalService.value.categoryIds].sort();
+	const model = [...serviceModel.value.categoryIds].sort();
+	return JSON.stringify(orig) !== JSON.stringify(model);
+});
 const clinicPricesModified = computed(() => {
 	if (!originalService.value || !serviceModel.value) return false;
 	return (
@@ -130,6 +153,7 @@ const hasChanges = computed(
 		nameDeModified.value ||
 		nameTrModified.value ||
 		specialtyIdsModified.value ||
+		categoryIdsModified.value ||
 		clinicPricesModified.value,
 );
 
@@ -285,26 +309,47 @@ watch(serviceId, async (newId) => {
 				>
 			</div>
 
-			<div
-				class="specialty-section"
-				:class="{ modified: specialtyIdsModified }"
+		<div
+			class="specialty-section"
+			:class="{ modified: specialtyIdsModified }"
+		>
+			<label>Специальности</label>
+			<el-select
+				v-model="serviceModel.specialtyIds"
+				filterable
+				multiple
+				placeholder="Выберите специальности"
+				class="specialty-select"
 			>
-				<label>Специальности</label>
-				<el-select
-					v-model="serviceModel.specialtyIds"
-					filterable
-					multiple
-					placeholder="Выберите специальности"
-					class="specialty-select"
-				>
-					<el-option
-						v-for="spec in specialtyOptions"
-						:key="spec.value"
-						:label="spec.label"
-						:value="spec.value"
-					/>
-				</el-select>
-			</div>
+				<el-option
+					v-for="spec in specialtyOptions"
+					:key="spec.value"
+					:label="spec.label"
+					:value="spec.value"
+				/>
+			</el-select>
+		</div>
+
+		<div
+			class="category-section"
+			:class="{ modified: categoryIdsModified }"
+		>
+			<label>Категории услуг</label>
+			<el-select
+				v-model="serviceModel.categoryIds"
+				filterable
+				multiple
+				placeholder="Выберите категории"
+				class="category-select"
+			>
+				<el-option
+					v-for="cat in categoryOptions"
+					:key="cat.value"
+					:label="cat.label"
+					:value="cat.value"
+				/>
+			</el-select>
+		</div>
 
 			<div
 				class="clinic-prices-section"
@@ -417,7 +462,8 @@ watch(serviceId, async (newId) => {
 	}
 }
 
-.specialty-section {
+.specialty-section,
+.category-section {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-xs);
@@ -435,7 +481,8 @@ watch(serviceId, async (newId) => {
 		font-size: 14px;
 	}
 
-	.specialty-select {
+	.specialty-select,
+	.category-select {
 		width: 100%;
 	}
 }

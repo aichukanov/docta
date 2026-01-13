@@ -143,6 +143,7 @@ const addDoctor = async () => {
 		<AdminEditableField
 			label="Имя (SR кириллица)"
 			v-model:value="doctorNameSrCyrl"
+			:translate-from="doctorName"
 		/>
 		<AdminEditableField label="Имя (EN)" v-model:value="doctorNameEn" />
 		<AdminEditableField

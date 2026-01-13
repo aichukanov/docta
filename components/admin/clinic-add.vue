@@ -118,17 +118,20 @@ const addClinic = async () => {
 			<AdminEditableField
 				label="Название (SR-CYRL)"
 				v-model:value="clinicNameSrCyrl"
+				:translate-from="clinicName"
 			/>
 			<AdminEditableField label="Название (RU)" v-model:value="clinicNameRu" />
 			<AdminEditableField label="Адрес (SR)" v-model:value="clinicAddressSr" />
 			<AdminEditableField
 				label="Адрес (SR-CYRL)"
 				v-model:value="clinicAddressSrCyrl"
+				:translate-from="clinicAddressSr"
 			/>
 			<AdminEditableField label="Town (SR)" v-model:value="clinicTownSr" />
 			<AdminEditableField
 				label="Town (SR-CYRL)"
 				v-model:value="clinicTownSrCyrl"
+				:translate-from="clinicTownSr"
 			/>
 			<AdminEditableField
 				label="Postal code"
@@ -154,6 +157,7 @@ const addClinic = async () => {
 				label="Описание (SR-CYRL)"
 				type="textarea"
 				v-model:value="clinicDescriptionSrCyrl"
+				:translate-from="clinicDescriptionSr"
 			/>
 			<AdminEditableField
 				label="Описание (EN)"

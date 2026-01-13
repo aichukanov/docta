@@ -33,7 +33,12 @@ const clinicOptions = computed(() =>
 );
 
 const addClinicPrice = () => {
-	clinicPrices.value.push({ clinicId: null, price: '', priceMax: '', code: '' });
+	clinicPrices.value.push({
+		clinicId: null,
+		price: '',
+		priceMax: '',
+		code: '',
+	});
 };
 
 const removeClinicPrice = (index: number) => {
@@ -95,6 +100,7 @@ const addLabTest = async () => {
 		<AdminEditableField
 			label="Название (SR-CYRL)"
 			v-model:value="nameSrCyrl"
+			:translate-from="nameSr"
 		/>
 		<AdminEditableField label="Название (RU)" v-model:value="nameRu" />
 		<AdminEditableField label="Название (DE)" v-model:value="nameDe" />
@@ -128,8 +134,18 @@ const addLabTest = async () => {
 						:value="clinic.value"
 					/>
 				</el-select>
-				<el-input v-model="cp.price" placeholder="Цена" type="number" class="price-input" />
-				<el-input v-model="cp.priceMax" placeholder="Макс. цена" type="number" class="price-input" />
+				<el-input
+					v-model="cp.price"
+					placeholder="Цена"
+					type="number"
+					class="price-input"
+				/>
+				<el-input
+					v-model="cp.priceMax"
+					placeholder="Макс. цена"
+					type="number"
+					class="price-input"
+				/>
 				<el-input v-model="cp.code" placeholder="Код" class="code-input" />
 				<el-button type="danger" size="small" @click="removeClinicPrice(index)"
 					>×</el-button

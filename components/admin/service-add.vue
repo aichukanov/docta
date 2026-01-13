@@ -117,7 +117,11 @@ const addService = async () => {
 	<div class="service-add">
 		<AdminEditableField label="Название (EN)" v-model:value="name" />
 		<AdminEditableField label="Название (SR)" v-model:value="nameSr" />
-		<AdminEditableField label="Название (SR-CYRL)" v-model:value="nameSrCyrl" />
+		<AdminEditableField
+			label="Название (SR-CYRL)"
+			v-model:value="nameSrCyrl"
+			:translate-from="nameSr"
+		/>
 		<AdminEditableField label="Название (RU)" v-model:value="nameRu" />
 		<AdminEditableField label="Название (DE)" v-model:value="nameDe" />
 		<AdminEditableField label="Название (TR)" v-model:value="nameTr" />

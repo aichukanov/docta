@@ -393,7 +393,7 @@ watch(labTestId, async (newId) => {
 							title="Перевести с латиницы на кириллицу"
 							class="translate-button"
 						>
-							A→Ћ
+							Č → Ч
 						</el-button>
 					</div>
 				</div>

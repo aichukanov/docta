@@ -364,6 +364,7 @@ watch(selectedClinic, async (clinic) => {
 				v-model:value="clinicModel.name_sr_cyrl"
 				:readonly="!editable"
 				:modified="nameSrCyrlModified"
+				:translate-from="clinicModel.name_sr"
 				@reset="clinicModel.name_sr_cyrl = selectedClinic?.name_sr_cyrl || ''"
 			/>
 			<AdminEditableField
@@ -388,6 +389,7 @@ watch(selectedClinic, async (clinic) => {
 				v-model:value="clinicModel.address_sr_cyrl"
 				:readonly="!editable"
 				:modified="addressSrCyrlModified"
+				:translate-from="clinicModel.address_sr"
 				@reset="
 					clinicModel.address_sr_cyrl = selectedClinic?.address_sr_cyrl || ''
 				"
@@ -407,6 +409,7 @@ watch(selectedClinic, async (clinic) => {
 				v-model:value="clinicModel.town_sr_cyrl"
 				:readonly="!editable"
 				:modified="townSrCyrlModified"
+				:translate-from="clinicModel.town_sr"
 				@reset="clinicModel.town_sr_cyrl = selectedClinic?.town_sr_cyrl || ''"
 			/>
 			<AdminEditableField
@@ -501,6 +504,7 @@ watch(selectedClinic, async (clinic) => {
 				v-model:value="clinicModel.description_sr_cyrl"
 				:readonly="!editable"
 				:modified="descriptionSrCyrlModified"
+				:translate-from="clinicModel.description_sr"
 				@reset="
 					clinicModel.description_sr_cyrl = selectedClinic?.description_sr_cyrl
 				"

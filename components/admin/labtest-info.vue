@@ -4,6 +4,7 @@ import type {
 	ClinicPrice,
 	LabTestListItem,
 } from '~/interfaces/clinic';
+import { toCyrillic } from '~/common/serbian-transliteration';
 
 interface LabTestAdminDetails {
 	id: number;
@@ -170,6 +171,10 @@ const synonymsTR = computed({
 	set: (v) => setSynonymsForLanguage('tr', v),
 });
 
+const translateSynonymsToCyrillic = () => {
+	synonymsSrCyrl.value = toCyrillic(synonymsSR.value);
+};
+
 const loadLabTestDetails = async (id: number) => {
 	isLoading.value = true;
 	try {
@@ -284,6 +289,7 @@ watch(labTestId, async (newId) => {
 				label="Название (SR-CYRL)"
 				v-model:value="labTestModel.name_sr_cyrl"
 				:modified="nameSrCyrlModified"
+				:translate-from="labTestModel.name_sr"
 				@reset="labTestModel.name_sr_cyrl = originalLabTest?.name_sr_cyrl || ''"
 			/>
 			<AdminEditableField
@@ -375,12 +381,21 @@ watch(labTestId, async (newId) => {
 
 				<div class="field">
 					<label>Синонимы (SR-CYRL)</label>
-					<el-input
-						v-model="synonymsSrCyrl"
-						type="textarea"
-						:autosize="{ minRows: 2, maxRows: 6 }"
-						placeholder="Један синоним по реду"
-					/>
+					<div class="textarea-with-button">
+						<el-input
+							v-model="synonymsSrCyrl"
+							type="textarea"
+							:autosize="{ minRows: 2, maxRows: 6 }"
+							placeholder="Један синоним по реду"
+						/>
+						<el-button
+							@click="translateSynonymsToCyrillic"
+							title="Перевести с латиницы на кириллицу"
+							class="translate-button"
+						>
+							A→Ћ
+						</el-button>
+					</div>
 				</div>
 
 				<div class="field">
@@ -462,6 +477,17 @@ watch(labTestId, async (newId) => {
 	&.modified > label {
 		color: #f59e0b;
 		font-weight: 500;
+	}
+
+	.textarea-with-button {
+		display: flex;
+		gap: var(--spacing-xs);
+		align-items: flex-start;
+	}
+
+	.translate-button {
+		font-weight: 600;
+		margin-top: 4px;
 	}
 }
 

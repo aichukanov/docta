@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RefreshLeft } from '@element-plus/icons-vue';
+import { toCyrillic } from '~/common/serbian-transliteration';
 
 const props = withDefaults(
 	defineProps<{
@@ -8,12 +9,15 @@ const props = withDefaults(
 		modified?: boolean;
 		type?: 'text' | 'photo' | 'textarea';
 		readonly?: boolean;
+		/** Текст на латинице для перевода в кириллицу */
+		translateFrom?: string | null;
 	}>(),
 	{
 		value: '',
 		type: 'text',
 		modified: false,
 		readonly: false,
+		translateFrom: null,
 	},
 );
 
@@ -26,6 +30,16 @@ const editableValue = computed({
 	get: () => props.value,
 	set: (value: string) => emit('update:value', value),
 });
+
+const translateToCyrillic = () => {
+	if (props.translateFrom) {
+		emit('update:value', toCyrillic(props.translateFrom));
+	}
+};
+
+const showTranslateButton = computed(
+	() => props.translateFrom !== null && props.translateFrom !== undefined,
+);
 </script>
 
 <template>
@@ -48,13 +62,37 @@ const editableValue = computed({
 				:autosize="{ minRows: 2, maxRows: 10 }"
 				:readonly="readonly"
 			/>
-			<div v-if="props.modified" class="reset-button">
-				<el-button :icon="RefreshLeft" @click="$emit('reset')" />
+			<div class="action-buttons">
+				<el-button
+					v-if="showTranslateButton"
+					@click="translateToCyrillic"
+					title="Перевести с латиницы на кириллицу"
+					class="translate-button"
+				>
+					Č → Ч
+				</el-button>
+				<el-button
+					v-if="props.modified"
+					:icon="RefreshLeft"
+					@click="$emit('reset')"
+				/>
 			</div>
 		</div>
 		<el-input v-else v-model="editableValue" :readonly="readonly">
-			<template #append v-if="props.modified">
-				<el-button :icon="RefreshLeft" @click="$emit('reset')" />
+			<template #append v-if="showTranslateButton || props.modified">
+				<el-button
+					v-if="showTranslateButton"
+					@click="translateToCyrillic"
+					title="Перевести с латиницы на кириллицу"
+					class="translate-button"
+				>
+					Č → Ч
+				</el-button>
+				<el-button
+					v-if="props.modified"
+					:icon="RefreshLeft"
+					@click="$emit('reset')"
+				/>
 			</template>
 		</el-input>
 	</div>
@@ -96,8 +134,15 @@ const editableValue = computed({
 	gap: var(--spacing-xs);
 	align-items: flex-start;
 
-	.reset-button {
+	.action-buttons {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-xs);
 		margin-top: 4px;
 	}
+}
+
+.translate-button {
+	font-weight: 600;
 }
 </style>

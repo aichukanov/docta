@@ -239,6 +239,7 @@ watch(serviceId, async (newId) => {
 				label="Название (SR-CYRL)"
 				v-model:value="serviceModel.name_sr_cyrl"
 				:modified="nameSrCyrlModified"
+				:translate-from="serviceModel.name_sr"
 				@reset="serviceModel.name_sr_cyrl = originalService?.name_sr_cyrl || ''"
 			/>
 			<AdminEditableField

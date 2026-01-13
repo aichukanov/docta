@@ -333,6 +333,7 @@ watch(doctorId, async (newDoctorId) => {
 				label="Имя (SR кириллица)"
 				v-model:value="doctorModel.name_sr_cyrl"
 				:modified="nameSrCyrlModified"
+				:translate-from="doctorModel.name"
 				@reset="doctorModel.name_sr_cyrl = originalDoctor?.name_sr_cyrl || ''"
 			/>
 			<AdminEditableField
@@ -348,7 +349,8 @@ watch(doctorId, async (newDoctorId) => {
 				:readonly="!editable"
 				:modified="professionalTitleModified"
 				@reset="
-					doctorModel.professionalTitle = originalDoctor?.professionalTitle || ''
+					doctorModel.professionalTitle =
+						originalDoctor?.professionalTitle || ''
 				"
 			/>
 			<AdminEditableField
@@ -430,7 +432,9 @@ watch(doctorId, async (newDoctorId) => {
 			>
 				<div class="section-header">
 					<h4>Услуги врача (по клиникам с ценами)</h4>
-					<el-button size="small" @click="addServicePrice">+ Добавить</el-button>
+					<el-button size="small" @click="addServicePrice"
+						>+ Добавить</el-button
+					>
 				</div>
 
 				<div

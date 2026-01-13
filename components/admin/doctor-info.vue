@@ -563,7 +563,6 @@ watch(doctorId, async (newDoctorId) => {
 
 	.no-services {
 		color: var(--color-text-secondary);
-		font-style: italic;
 	}
 }
 

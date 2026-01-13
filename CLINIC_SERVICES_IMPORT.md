@@ -127,6 +127,24 @@ ON DUPLICATE KEY UPDATE name = name;
 
 ## PART 1: Медицинские услуги
 
+### 1.0 sort_order для осмотров
+
+Поле `sort_order` в таблице `medical_services` используется для сортировки услуг внутри категории:
+
+| Тип осмотра               | sort_order |
+| ------------------------- | ---------- |
+| Первичный осмотр          | 1          |
+| Контрольный осмотр        | 2          |
+| Остальные услуги          | NULL       |
+
+```sql
+-- Устанавливать ПОСЛЕ INSERT INTO medical_services
+UPDATE medical_services SET sort_order = 1 WHERE name_en = 'First Gastroenterologist Examination';
+UPDATE medical_services SET sort_order = 2 WHERE name_en = 'Follow-up Gastroenterologist Examination';
+```
+
+> ⚠️ Ставить sort_order только для осмотров (Examination). Процедуры, операции и т.д. — оставлять NULL.
+
 ### 1.1 Новые услуги — все 6 языков
 
 ```sql
@@ -158,12 +176,15 @@ SET @spec_pediatric_dentistry = 87;
 
 ### 1.3 Цены для клиники — INSERT IGNORE
 
-| Ситуация               | price | price_min | price_max |
-| ---------------------- | ----- | --------- | --------- |
-| `100€` (фикс.)         | 100   | NULL      | NULL      |
-| `od 100€` (от)         | NULL  | 100       | NULL      |
-| `100-120€` (диапазон)  | 100   | NULL      | 120       |
-| `na upit` (по запросу) | NULL  | NULL      | NULL      |
+| Ситуация                              | price | price_min | price_max |
+| ------------------------------------- | ----- | --------- | --------- |
+| `100€` (фикс.)                        | 100   | NULL      | NULL      |
+| `od 100€` (от)                        | NULL  | 100       | NULL      |
+| `100-120€` (диапазон)                 | 100   | NULL      | 120       |
+| `na upit` (по запросу)                | NULL  | NULL      | NULL      |
+| **NULL по дизайну** (цена не указана) | NULL  | NULL      | NULL      |
+
+> 💡 **NULL по дизайну**: если пользователь явно говорит "цены не ставь" или "оставь NULL" — цены будут установлены позже вручную. Это отличается от "по запросу".
 
 ```sql
 INSERT IGNORE INTO clinic_medical_services (clinic_id, medical_service_id, price, price_min, price_max, code)
@@ -190,6 +211,8 @@ SELECT id, @cat_general_medicine FROM medical_services WHERE name_en IN (
 ### 1.5 Привязка к специальностям — INSERT IGNORE
 
 Связь услуги со специальностями врачей для фильтрации. **Автоматически добавлять для категорий, совпадающих со специальностями!**
+
+> **⚠️ PROCTOLOGY**: категория PROCTOLOGY = 33, специальность PROCTOLOGY = 14
 
 ```sql
 INSERT IGNORE INTO medical_services_specialties (medical_service_id, specialty_id)
@@ -226,7 +249,10 @@ SELECT id, @spec_cardiology FROM medical_services WHERE name_en IN (
 | PLASTIC_SURGERY          | 18  | PLASTIC_SURGERY                | 18  |
 | GENERAL_SURGERY          | 17  | GENERAL_SURGERY                | 3   |
 | PHYSIOTHERAPY            | 5   | PHYSICAL_MEDICINE              | 42  |
-| OPHTHALMIC_SURGERY       | 33  | OPHTHALMIC_SURGERY             | 81  |
+| OPHTHALMIC_SURGERY       | 36  | OPHTHALMIC_SURGERY             | 81  |
+| PROCTOLOGY               | 33  | PROCTOLOGY                     | 36  |
+| ABDOMINAL_SURGERY        | 32  | GASTROINTESTINAL_SURGERY       | 90  |
+| VASCULAR_SURGERY         | 22  | VASCULAR_SURGERY               | 34  |
 
 **Пример:** все услуги с категорией DENTISTRY (20) → привязать к специальности DENTISTRY (78)
 
@@ -248,6 +274,69 @@ SELECT id, @spec_cardiology FROM medical_services WHERE name_en IN (
 | Детские стомат. услуги         | PEDIATRIC_DENTISTRY (не DENTISTRY + PEDIATRICS!) |
 | Ортодонтические услуги         | ORTHODONTICS (не DENTISTRY!)               |
 | Брекеты, ретейнеры, трейнеры   | ORTHODONTICS                               |
+
+---
+
+## PART 1.6: Личные услуги врачей (clinic_medical_service_doctors)
+
+Когда у разных врачей **разные цены** на одну услугу — используем `clinic_medical_service_doctors`:
+
+```sql
+-- Структура таблицы
+clinic_medical_service_doctors (
+    clinic_medical_service_id,  -- ID из clinic_medical_services
+    doctor_id,
+    price,
+    price_min,
+    price_max
+)
+```
+
+### Сценарий: разные цены у врачей
+
+```sql
+-- 1. Услуга клиники с диапазоном цен (min-max от всех врачей)
+SET @cms_id = (SELECT id FROM clinic_medical_services 
+    WHERE clinic_id = @clinic_id 
+    AND medical_service_id = (SELECT id FROM medical_services WHERE name_en = 'Urologist Examination'));
+
+-- 2. Личная цена врача
+INSERT IGNORE INTO clinic_medical_service_doctors (clinic_medical_service_id, doctor_id, price, price_min, price_max)
+VALUES (@cms_id, @doctor_id, 40, NULL, NULL);
+```
+
+### Определение цены клиники при разных ценах врачей
+
+| Цены врачей     | clinic_medical_services.price | clinic_medical_services.price_max |
+| --------------- | ----------------------------- | --------------------------------- |
+| 40€, 60€        | 40 (min)                      | 60 (max)                          |
+| 50€, 50€        | 50 (фикс.)                    | NULL                              |
+| 40€, 50€, 60€   | 40 (min)                      | 60 (max)                          |
+
+---
+
+## PART 1.7: Сценарий "Только услуги" (врачи уже добавлены)
+
+Когда пользователь говорит "врачи уже добавлены, их не трогаем" — создаём упрощённый SQL:
+
+```sql
+-- Insert services for clinic ID = 68 (doctors already added)
+-- Run: mysql -u root -p --default-character-set=utf8mb4 docta_me < server/sql/insert-clinic-68-{category}.sql
+
+SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;
+SET CHARACTER SET utf8mb4;
+SET collation_connection = 'utf8mb4_unicode_ci';
+
+SET @clinic_id = 68;
+
+-- PART 1: INSERT NEW MEDICAL SERVICES
+-- PART 2: CATEGORY RELATIONS
+-- PART 3: SPECIALTY RELATIONS
+-- PART 4: ADD SERVICES TO CLINIC (clinic_medical_services)
+-- VERIFICATION
+```
+
+> ⚠️ **Не добавляем**: INSERT INTO doctors, doctor_specialties, doctor_languages, doctor_clinics, clinic_medical_service_doctors
 
 ---
 
@@ -470,6 +559,7 @@ SELECT name_en, COUNT(*) as cnt FROM lab_tests GROUP BY name_en HAVING cnt > 1;
 21 = PSYCHIATRY
 22 = PSYCHOLOGY
 34 = VASCULAR_SURGERY
+36 = PROCTOLOGY
 42 = PHYSICAL_MEDICINE
 44 = AESTHETIC_MEDICINE
 45 = GENERAL_MEDICINE
@@ -525,9 +615,10 @@ SELECT name_en, COUNT(*) as cnt FROM lab_tests GROUP BY name_en HAVING cnt > 1;
 30 = HOME_VISITS
 31 = WOUND_CARE
 32 = ABDOMINAL_SURGERY
-33 = OPHTHALMIC_SURGERY
+33 = PROCTOLOGY
 34 = ORTHODONTICS
 35 = PEDIATRIC_DENTISTRY
+36 = OPHTHALMIC_SURGERY
 ```
 
 ### Lab Test Categories

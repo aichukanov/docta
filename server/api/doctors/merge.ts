@@ -84,6 +84,18 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				body.secondaryDoctorId,
 			]);
 
+			// 3.1. Объединяем личные услуги врачей (без дублирования)
+			const mergeDoctorServicesQuery = `
+				INSERT IGNORE INTO clinic_medical_service_doctors (clinic_id, medical_service_id, doctor_id, price, price_max)
+				SELECT cmsd.clinic_id, cmsd.medical_service_id, ?, cmsd.price, cmsd.price_max
+				FROM clinic_medical_service_doctors cmsd 
+				WHERE cmsd.doctor_id = ?
+			`;
+			await connection.execute(mergeDoctorServicesQuery, [
+				body.primaryDoctorId,
+				body.secondaryDoctorId,
+			]);
+
 			// 4. Заполняем пустые поля первого врача данными из второго
 			const updateDoctorQuery = `
 				UPDATE doctors d1 
@@ -123,6 +135,12 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			const deleteSecondaryClinicsQuery =
 				'DELETE FROM doctor_clinics WHERE doctor_id = ?';
 			await connection.execute(deleteSecondaryClinicsQuery, [
+				body.secondaryDoctorId,
+			]);
+
+			const deleteSecondaryDoctorServicesQuery =
+				'DELETE FROM clinic_medical_service_doctors WHERE doctor_id = ?';
+			await connection.execute(deleteSecondaryDoctorServicesQuery, [
 				body.secondaryDoctorId,
 			]);
 

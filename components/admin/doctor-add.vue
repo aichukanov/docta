@@ -281,7 +281,6 @@ const addDoctor = async () => {
 
 	.no-services {
 		color: var(--color-text-secondary);
-		font-style: italic;
 	}
 }
 </style>

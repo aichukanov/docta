@@ -13,35 +13,41 @@ export interface ClinicServicesMap {
 	[clinicId: number]: ClinicServiceItem[];
 }
 
+interface DoctorPriceInfo {
+	price: number | null;
+	priceMin: number | null;
+	priceMax: number | null;
+}
+
 /**
- * Загружает индивидуальные цены врача из clinic_medical_service_doctors
- * @returns Map<"clinicId_serviceId", {price, priceMax}>
+ * Загружает индивидуальные цены врачей из clinic_medical_service_doctors
+ * @param doctorIds - массив ID врачей
+ * @param clinicIds - массив ID клиник
+ * @returns Map<"doctorId_clinicId_serviceId", {price, priceMin, priceMax}>
  */
 async function getDoctorServicePrices(
 	connection: any,
-	doctorId: number,
+	doctorIds: number[],
 	clinicIds: number[],
-): Promise<Map<string, { price: number | null; priceMin: number | null; priceMax: number | null }>> {
-	const result = new Map<
-		string,
-		{ price: number | null; priceMin: number | null; priceMax: number | null }
-	>();
+): Promise<Map<string, DoctorPriceInfo>> {
+	const result = new Map<string, DoctorPriceInfo>();
 
-	if (clinicIds.length === 0) {
+	if (doctorIds.length === 0 || clinicIds.length === 0) {
 		return result;
 	}
 
+	const doctorIdsStr = doctorIds.join(',');
 	const clinicIdsStr = clinicIds.join(',');
 	const query = `
-		SELECT clinic_id, medical_service_id, price, price_max
+		SELECT doctor_id, clinic_id, medical_service_id, price, price_max
 		FROM clinic_medical_service_doctors
-		WHERE doctor_id = ? AND clinic_id IN (${clinicIdsStr})
+		WHERE doctor_id IN (${doctorIdsStr}) AND clinic_id IN (${clinicIdsStr})
 	`;
 
-	const [rows] = await connection.execute(query, [doctorId]);
+	const [rows] = await connection.execute(query);
 
 	for (const row of rows as any[]) {
-		const key = `${row.clinic_id}_${row.medical_service_id}`;
+		const key = `${row.doctor_id}_${row.clinic_id}_${row.medical_service_id}`;
 		result.set(key, {
 			price: row.price ? Number(row.price) : null,
 			priceMin: null, // В таблице clinic_medical_service_doctors нет поля price_min
@@ -74,8 +80,8 @@ export async function getServicesByClinicAndSpecialty(
 
 	// Загружаем индивидуальные цены врача, если передан doctorId
 	const doctorPrices = doctorId
-		? await getDoctorServicePrices(connection, doctorId, clinicIds)
-		: new Map<string, { price: number | null; priceMin: number | null; priceMax: number | null }>();
+		? await getDoctorServicePrices(connection, [doctorId], clinicIds)
+		: new Map<string, DoctorPriceInfo>();
 
 	const clinicIdsStr = clinicIds.join(',');
 	const specialtyIdsStr = specialtyIds.join(',');
@@ -130,7 +136,7 @@ export async function getServicesByClinicAndSpecialty(
 		}
 
 		// Проверяем, есть ли индивидуальная цена врача
-		const doctorPriceKey = `${clinicId}_${serviceId}`;
+		const doctorPriceKey = `${doctorId}_${clinicId}_${serviceId}`;
 		const doctorPrice = doctorPrices.get(doctorPriceKey);
 
 		// Если есть запись для врача - используем только её значения (без fallback на цены клиники)
@@ -169,20 +175,22 @@ export async function getServicesByClinicAndSpecialty(
 /**
  * Загружает услуги для списка врачей (оптимизированно, одним запросом)
  * @param connection - соединение с БД
- * @param doctors - массив врачей с clinicIds и specialtyIds
+ * @param doctors - массив врачей с id, clinicIds и specialtyIds
  * @param locale - локаль для названий
  * @returns Map<doctorKey, ClinicServicesMap>
  */
 export async function getServicesForDoctors(
 	connection: any,
-	doctors: Array<{ clinicIds: string; specialtyIds: string }>,
+	doctors: Array<{ id: number; clinicIds: string; specialtyIds: string }>,
 	locale: string,
 ): Promise<Map<string, ClinicServicesMap>> {
 	// Собираем уникальные ID
+	const allDoctorIds = new Set<number>();
 	const allClinicIds = new Set<number>();
 	const allSpecialtyIds = new Set<number>();
 
 	doctors.forEach((doctor) => {
+		allDoctorIds.add(doctor.id);
 		doctor.clinicIds?.split(',').forEach((id) => allClinicIds.add(Number(id)));
 		doctor.specialtyIds
 			?.split(',')
@@ -195,6 +203,13 @@ export async function getServicesForDoctors(
 
 	const clinicIdsStr = Array.from(allClinicIds).join(',');
 	const specialtyIdsStr = Array.from(allSpecialtyIds).join(',');
+
+	// Загружаем индивидуальные цены для всех врачей
+	const doctorPrices = await getDoctorServicePrices(
+		connection,
+		Array.from(allDoctorIds),
+		Array.from(allClinicIds),
+	);
 
 	const servicesQuery = `
 		SELECT
@@ -223,10 +238,18 @@ export async function getServicesForDoctors(
 
 	const [serviceRows] = await connection.execute(servicesQuery);
 
-	// Группируем услуги по clinicId с сохранением specialtyIds
+	// Группируем услуги по clinicId с сохранением specialtyIds и базовых цен
 	const servicesByClinic: Map<
 		number,
-		Array<ClinicServiceItem & { specialtyIds: number[] }>
+		Array<{
+			id: number;
+			name: string;
+			localName: string;
+			price: number | null;
+			priceMin: number | null;
+			priceMax: number | null;
+			specialtyIds: number[];
+		}>
 	> = new Map();
 
 	for (const row of serviceRows as any[]) {
@@ -258,7 +281,7 @@ export async function getServicesForDoctors(
 	const result = new Map<string, ClinicServicesMap>();
 
 	for (const doctor of doctors) {
-		const doctorKey = `${doctor.clinicIds}|${doctor.specialtyIds}`;
+		const doctorKey = String(doctor.id);
 		const doctorSpecialtyIds = doctor.specialtyIds
 			? doctor.specialtyIds.split(',').map(Number)
 			: [];
@@ -270,12 +293,28 @@ export async function getServicesForDoctors(
 
 		for (const clinicId of doctorClinicIds) {
 			const allServices = servicesByClinic.get(clinicId) || [];
-			// Фильтруем услуги по специальностям врача
+			// Фильтруем услуги по специальностям врача и применяем индивидуальные цены
 			const filteredServices = allServices
 				.filter((service) =>
 					service.specialtyIds.some((id) => doctorSpecialtyIds.includes(id)),
 				)
-				.map(({ specialtyIds, ...rest }) => rest);
+				.map(({ specialtyIds, ...rest }) => {
+					// Проверяем, есть ли индивидуальная цена врача
+					const doctorPriceKey = `${doctor.id}_${clinicId}_${rest.id}`;
+					const doctorPrice = doctorPrices.get(doctorPriceKey);
+
+					// Если есть запись для врача - используем её значения
+					if (doctorPrice !== undefined) {
+						return {
+							...rest,
+							price: doctorPrice.price,
+							priceMin: doctorPrice.priceMin,
+							priceMax: doctorPrice.priceMax,
+						};
+					}
+
+					return rest;
+				});
 
 			if (filteredServices.length > 0) {
 				clinicServices[clinicId] = filteredServices;

@@ -148,8 +148,7 @@ export async function getDoctorList(
 		);
 
 		// Получаем услуги для этого врача
-		const doctorKey = `${doctor.clinicIds}|${doctor.specialtyIds}`;
-		const clinicServices = servicesMap?.get(doctorKey) || undefined;
+		const clinicServices = servicesMap?.get(String(doctor.id)) || undefined;
 
 		// Сортируем clinicIds по количеству услуг (больше услуг — выше)
 		let sortedClinicIds = doctor.clinicIds;

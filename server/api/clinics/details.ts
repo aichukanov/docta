@@ -51,9 +51,20 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 				c.description_ru,
 				c.description_de,
 				c.description_tr,
-				COALESCE(GROUP_CONCAT(DISTINCT cl.language_id ORDER BY cl.language_id), '1') as languageIds
+				COALESCE(GROUP_CONCAT(DISTINCT cl.language_id ORDER BY cl.language_id), '1') as languageIds,
+				COALESCE(
+					GROUP_CONCAT(DISTINCT bspi.service_id ORDER BY bspi.service_id),
+					''
+				) as features
 			FROM clinics c
 			LEFT JOIN clinic_languages cl ON c.id = cl.clinic_id
+			LEFT JOIN billing_clinic_service_purchases bscp
+				ON c.id = bscp.clinic_id
+				AND bscp.deleted = 0
+				AND bscp.purchased_at <= NOW()
+				AND bscp.valid_until >= NOW()
+			LEFT JOIN billing_clinic_service_purchase_items bspi
+				ON bscp.id = bspi.purchase_id
 			WHERE c.id = ?
 			GROUP BY c.id;
 		`;
@@ -81,6 +92,7 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 
 		// Обрабатываем локализованное description
 		const description = processLocalizedDescriptionForClinic(clinic, locale);
+		const features = clinic.features ? clinic.features.split(',').map(Number) : [];
 
 		return {
 			id: clinic.id,
@@ -98,6 +110,7 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 			website: clinic.website,
 			description,
 			languageIds: clinic.languageIds,
+			features,
 			name,
 			localName,
 			address,

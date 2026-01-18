@@ -1,4 +1,5 @@
 import type { ContactList } from '~/interfaces/contacts';
+import type { BillingService } from '~/enums/billing-service';
 
 export interface ClinicService {
 	clinicId: number;
@@ -23,6 +24,7 @@ export interface ClinicData extends ContactList, Coordinates {
 	postalCode?: string;
 	languageIds: string;
 	description: string;
+	features: BillingService[];
 }
 
 export interface ClinicList {

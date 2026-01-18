@@ -1,5 +1,5 @@
 <template>
-	<div class="contact-item phone-item">
+	<div class="contact-item">
 		<el-tooltip
 			:content="tooltip"
 			placement="bottom"
@@ -9,6 +9,7 @@
 			<a
 				v-if="link"
 				:href="value"
+				:rel="nofollow ? 'nofollow noopener' : 'noopener'"
 				class="contact-link messenger-link"
 				target="_blank"
 			>
@@ -24,11 +25,17 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
-	value: string;
-	tooltip: string;
-	link?: boolean;
-}>();
+withDefaults(
+	defineProps<{
+		value: string;
+		tooltip: string;
+		link?: boolean;
+		nofollow?: boolean;
+	}>(),
+	{
+		nofollow: true,
+	},
+);
 </script>
 
 <style scoped src="./style.css" />

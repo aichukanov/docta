@@ -1,0 +1,126 @@
+
+Поиск синонимов, совпадающих с основным названием
+```
+SELECT
+  s.id,
+  s.lab_test_id,
+  s.another_name,
+  s.language
+FROM lab_test_synonyms s
+JOIN lab_tests t ON t.id = s.lab_test_id
+WHERE s.another_name IS NOT NULL
+  AND s.another_name COLLATE utf8mb4_unicode_ci =
+      CASE s.language
+        WHEN 'en' THEN t.name_en
+        WHEN 'sr' THEN t.name_sr
+        WHEN 'ru' THEN t.name_ru
+        WHEN 'de' THEN t.name_de
+        WHEN 'tr' THEN t.name_tr
+        WHEN 'sr_cyrl' THEN t.name_sr_cyrl
+        ELSE NULL
+      END COLLATE utf8mb4_unicode_ci;
+```
+
+Удаление их
+```
+DELETE s
+FROM lab_test_synonyms s
+JOIN lab_tests t ON t.id = s.lab_test_id
+WHERE s.another_name IS NOT NULL
+  AND s.another_name COLLATE utf8mb4_unicode_ci =
+      CASE s.language
+        WHEN 'en' THEN t.name_en
+        WHEN 'sr' THEN t.name_sr
+        WHEN 'ru' THEN t.name_ru
+        WHEN 'de' THEN t.name_de
+        WHEN 'tr' THEN t.name_tr
+        WHEN 'sr_cyrl' THEN t.name_sr_cyrl
+        ELSE NULL
+      END COLLATE utf8mb4_unicode_ci;
+```
+
+------------------
+
+Поиск дублей среди синонимов
+```
+SELECT
+  s.lab_test_id,
+  s.language,
+  s.another_name COLLATE utf8mb4_unicode_ci AS another_name,
+  COUNT(*) AS cnt,
+  GROUP_CONCAT(s.id ORDER BY s.id) AS ids
+FROM lab_test_synonyms s
+WHERE s.another_name IS NOT NULL
+GROUP BY
+  s.lab_test_id,
+  s.language,
+  s.another_name COLLATE utf8mb4_unicode_ci
+HAVING COUNT(*) > 1;
+```
+Удаление их
+```
+DELETE s
+FROM lab_test_synonyms s
+JOIN (
+  SELECT
+    lab_test_id,
+    language,
+    another_name COLLATE utf8mb4_unicode_ci AS another_name,
+    MIN(id) AS keep_id
+  FROM lab_test_synonyms
+  WHERE another_name IS NOT NULL
+  GROUP BY lab_test_id, language, another_name COLLATE utf8mb4_unicode_ci
+  HAVING COUNT(*) > 1
+) d ON d.lab_test_id = s.lab_test_id
+   AND d.language = s.language
+   AND s.another_name COLLATE utf8mb4_unicode_ci = d.another_name
+   AND s.id <> d.keep_id;
+```
+
+
+------------------------
+найти одинаковые на разных языках анализы (кроме английского)
+```
+SELECT DISTINCT t.id, t.name_en, t.name_sr, t.name_ru, t.name_de, t.name_tr
+FROM lab_tests t
+JOIN (
+  SELECT 'sr' AS lang, name_sr COLLATE utf8mb4_unicode_ci AS name_dup
+  FROM lab_tests
+  WHERE name_sr IS NOT NULL
+  GROUP BY name_sr COLLATE utf8mb4_unicode_ci
+  HAVING COUNT(*) > 1
+
+  UNION ALL
+  SELECT 'ru', name_ru COLLATE utf8mb4_unicode_ci
+  FROM lab_tests
+  WHERE name_ru IS NOT NULL
+  GROUP BY name_ru COLLATE utf8mb4_unicode_ci
+  HAVING COUNT(*) > 1
+
+  UNION ALL
+  SELECT 'de', name_de COLLATE utf8mb4_unicode_ci
+  FROM lab_tests
+  WHERE name_de IS NOT NULL
+  GROUP BY name_de COLLATE utf8mb4_unicode_ci
+  HAVING COUNT(*) > 1
+
+  UNION ALL
+  SELECT 'tr', name_tr COLLATE utf8mb4_unicode_ci
+  FROM lab_tests
+  WHERE name_tr IS NOT NULL
+  GROUP BY name_tr COLLATE utf8mb4_unicode_ci
+  HAVING COUNT(*) > 1
+
+  UNION ALL
+  SELECT 'sr_cyrl', name_sr_cyrl COLLATE utf8mb4_unicode_ci
+  FROM lab_tests
+  WHERE name_sr_cyrl IS NOT NULL
+  GROUP BY name_sr_cyrl COLLATE utf8mb4_unicode_ci
+  HAVING COUNT(*) > 1
+) d
+  ON (d.lang = 'sr' AND t.name_sr COLLATE utf8mb4_unicode_ci = d.name_dup)
+  OR (d.lang = 'ru' AND t.name_ru COLLATE utf8mb4_unicode_ci = d.name_dup)
+  OR (d.lang = 'de' AND t.name_de COLLATE utf8mb4_unicode_ci = d.name_dup)
+  OR (d.lang = 'tr' AND t.name_tr COLLATE utf8mb4_unicode_ci = d.name_dup)
+  OR (d.lang = 'sr_cyrl' AND t.name_sr_cyrl COLLATE utf8mb4_unicode_ci = d.name_dup);
+```

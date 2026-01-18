@@ -19,6 +19,21 @@ interface ClinicAdminModel extends ClinicData {
 	languageIds: number[];
 }
 
+interface BillingService {
+	id: number;
+	name: string;
+}
+
+interface BillingPurchase {
+	id: number;
+	clinicId: number;
+	price: number;
+	purchasedAt: string;
+	validUntil: string;
+	serviceIds: number[];
+	deleted: boolean;
+}
+
 const props = withDefaults(
 	defineProps<{
 		clinics: ClinicData[];
@@ -36,6 +51,16 @@ const emit = defineEmits<{
 const clinicId = ref<number | null>(null);
 const clinicModel = ref<ClinicAdminModel | null>(null);
 const cityIds = ref<CityId[]>([]);
+const billingServices = ref<BillingService[]>([]);
+const billingPurchases = ref<BillingPurchase[]>([]);
+const isBillingLoading = ref(false);
+const billingPurchaseModel = ref({
+	serviceIds: [] as number[],
+	price: '',
+	purchasedAt: '',
+	validUntil: '',
+});
+const showOnlyActiveBilling = ref(true);
 
 const selectedClinic = computed(() => {
 	return props.clinics.find((clinic) => clinic.id === clinicId.value);
@@ -47,6 +72,156 @@ const clinicOptions = computed(() => {
 		value: clinic.id,
 	}));
 });
+
+const billingServiceOptions = computed(() =>
+	billingServices.value.map((service) => ({
+		label: service.name,
+		value: service.id,
+	})),
+);
+
+const billingServiceMap = computed(
+	() => new Map(billingServices.value.map((service) => [service.id, service.name])),
+);
+
+const formatDate = (value: string) => {
+	if (!value) return '';
+	const date = new Date(value);
+	if (Number.isNaN(date.getTime())) return value;
+	return date.toLocaleDateString('ru-RU');
+};
+
+const isExpired = (value: string) => {
+	if (!value) return false;
+	const date = new Date(value);
+	if (Number.isNaN(date.getTime())) return false;
+	return date.getTime() < Date.now();
+};
+
+const formatServices = (serviceIds: number[]) =>
+	serviceIds
+		.map((serviceId) => billingServiceMap.value.get(serviceId))
+		.filter(Boolean)
+		.join(', ');
+
+const filteredBillingPurchases = computed(() => {
+	if (!showOnlyActiveBilling.value) {
+		return billingPurchases.value;
+	}
+
+	return billingPurchases.value.filter(
+		(purchase) => !purchase.deleted && !isExpired(purchase.validUntil),
+	);
+});
+
+const loadBillingServices = async () => {
+	try {
+		const data = await $fetch<{ services: BillingService[] }>(
+			'/api/billing/services/list',
+			{
+				method: 'POST',
+				body: {},
+			},
+		);
+		billingServices.value = data?.services || [];
+	} catch (error) {
+		console.error('Failed to load billing services:', error);
+	}
+};
+
+const loadBillingPurchases = async () => {
+	if (!clinicId.value) {
+		billingPurchases.value = [];
+		return;
+	}
+	isBillingLoading.value = true;
+	try {
+		const data = await $fetch<{ purchases: BillingPurchase[] }>(
+			'/api/billing/clinic-purchases/list',
+			{
+				method: 'POST',
+				body: { clinicId: clinicId.value },
+			},
+		);
+		billingPurchases.value = data?.purchases || [];
+	} catch (error) {
+		console.error('Failed to load billing purchases:', error);
+	} finally {
+		isBillingLoading.value = false;
+	}
+};
+
+const resetBillingPurchase = () => {
+	billingPurchaseModel.value = {
+		serviceIds: [],
+		price: '',
+		purchasedAt: '',
+		validUntil: '',
+	};
+};
+
+const addBillingPurchase = async () => {
+	if (!clinicId.value) {
+		alert('Выберите клинику');
+		return;
+	}
+	if (
+		billingPurchaseModel.value.serviceIds.length === 0 ||
+		!billingPurchaseModel.value.price ||
+		!billingPurchaseModel.value.purchasedAt ||
+		!billingPurchaseModel.value.validUntil
+	) {
+		alert('Выберите услуги, цену и даты действия пакета');
+		return;
+	}
+
+	await $fetch('/api/billing/clinic-purchases/add', {
+		method: 'POST',
+		body: {
+			clinicId: clinicId.value,
+			serviceIds: billingPurchaseModel.value.serviceIds,
+			price: billingPurchaseModel.value.price,
+			purchasedAt: billingPurchaseModel.value.purchasedAt,
+			validUntil: billingPurchaseModel.value.validUntil,
+		},
+	});
+
+	resetBillingPurchase();
+	await loadBillingPurchases();
+	alert('Покупка добавлена');
+};
+
+const deleteBillingPurchase = async (purchaseId: number) => {
+	if (!confirm('Пометить покупку как удаленную?')) {
+		return;
+	}
+
+	await $fetch('/api/billing/clinic-purchases/delete', {
+		method: 'POST',
+		body: {
+			purchaseId,
+		},
+	});
+
+	await loadBillingPurchases();
+	alert('Покупка помечена как удаленная');
+};
+
+const restoreBillingPurchase = async (purchaseId: number) => {
+	if (!confirm('Восстановить покупку?')) {
+		return;
+	}
+
+	await $fetch('/api/billing/clinic-purchases/restore', {
+		method: 'POST',
+		body: {
+			purchaseId,
+		},
+	});
+
+	await loadBillingPurchases();
+	alert('Покупка восстановлена');
+};
 
 watch(cityIds, (newCityIds) => {
 	if (clinicModel.value && newCityIds.length > 0) {
@@ -286,6 +461,7 @@ const deleteClinic = async () => {
 
 watch(selectedClinic, async (clinic) => {
 	if (clinic) {
+		await loadBillingPurchases();
 		// Получаем полные данные клиники из админского API
 		const adminData = await $fetch('/api/clinics/admin-details', {
 			method: 'POST',
@@ -337,6 +513,10 @@ watch(selectedClinic, async (clinic) => {
 			cityIds.value = [clinic.cityId];
 		}
 	}
+});
+
+onMounted(async () => {
+	await loadBillingServices();
 });
 </script>
 
@@ -546,6 +726,111 @@ watch(selectedClinic, async (clinic) => {
 
 			<FilterLanguageSelect v-model:value="clinicModel.languageIds" />
 
+			<div class="billing-section">
+				<div class="section-header">
+					<h4>Платные услуги (пакеты)</h4>
+				</div>
+
+				<div class="billing-form">
+					<el-select
+						v-model="billingPurchaseModel.serviceIds"
+						filterable
+						multiple
+						placeholder="Выберите услуги"
+						class="billing-select"
+					>
+						<el-option
+							v-for="service in billingServiceOptions"
+							:key="service.value"
+							:label="service.label"
+							:value="service.value"
+						/>
+					</el-select>
+					<el-input
+						v-model="billingPurchaseModel.price"
+						placeholder="Цена (EUR)"
+						type="number"
+						class="billing-input"
+					/>
+					<el-input
+						v-model="billingPurchaseModel.purchasedAt"
+						placeholder="Дата покупки"
+						type="date"
+						class="billing-input"
+					/>
+					<el-input
+						v-model="billingPurchaseModel.validUntil"
+						placeholder="Дата окончания"
+						type="date"
+						class="billing-input"
+					/>
+					<el-button type="primary" @click="addBillingPurchase">
+						Добавить покупку
+					</el-button>
+				</div>
+
+				<div v-if="isBillingLoading" class="billing-loading">Загрузка...</div>
+				<div class="billing-filter">
+					<el-checkbox v-model="showOnlyActiveBilling">
+						Только активные услуги
+					</el-checkbox>
+				</div>
+
+				<div v-if="isBillingLoading" class="billing-loading">Загрузка...</div>
+				<div v-else class="billing-list">
+					<div
+						v-for="purchase in filteredBillingPurchases"
+						:key="purchase.id"
+						class="billing-item"
+						:class="{
+							deleted: purchase.deleted,
+							expired: !purchase.deleted && isExpired(purchase.validUntil),
+						}"
+					>
+						<div class="billing-item-title">
+							<span>Пакет #{{ purchase.id }}</span>
+							<span class="billing-item-price">{{ purchase.price }} €</span>
+						</div>
+						<div class="billing-item-meta">
+							<span>{{ formatDate(purchase.purchasedAt) }}</span>
+							<span>→</span>
+							<span>{{ formatDate(purchase.validUntil) }}</span>
+						</div>
+						<div v-if="purchase.deleted" class="billing-item-status">
+							Удалено
+						</div>
+						<div
+							v-else-if="isExpired(purchase.validUntil)"
+							class="billing-item-status"
+						>
+							Пакет закончился
+						</div>
+						<div class="billing-item-services">
+							{{ formatServices(purchase.serviceIds) || 'Без услуг' }}
+						</div>
+						<el-button
+							v-if="!purchase.deleted"
+							type="danger"
+							size="small"
+							@click="deleteBillingPurchase(purchase.id)"
+						>
+							Удалить
+						</el-button>
+						<el-button
+							v-else
+							type="primary"
+							size="small"
+							@click="restoreBillingPurchase(purchase.id)"
+						>
+							Восстановить
+						</el-button>
+					</div>
+					<div v-if="!filteredBillingPurchases.length" class="billing-empty">
+						Покупок пока нет
+					</div>
+				</div>
+			</div>
+
 			<div v-if="editable" class="button-group">
 				<el-button type="primary" @click="saveChanges" :disabled="!hasChanges">
 					Сохранить изменения
@@ -564,6 +849,121 @@ watch(selectedClinic, async (clinic) => {
 	margin-top: var(--spacing-lg);
 	border-top: 1px solid black;
 	padding-top: var(--spacing-lg);
+}
+
+.billing-section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-md);
+	background: var(--color-surface-secondary);
+	border-radius: var(--border-radius-md);
+	border: 1px solid var(--color-border-primary);
+}
+
+.section-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	h4 {
+		margin: 0;
+		color: var(--color-text-primary);
+	}
+}
+
+.billing-form {
+	display: grid;
+	grid-template-columns: minmax(180px, 1.4fr) repeat(3, minmax(140px, 1fr)) auto;
+	gap: var(--spacing-sm);
+	align-items: center;
+}
+
+.billing-select {
+	width: 100%;
+}
+
+.billing-input {
+	width: 100%;
+}
+
+.billing-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.billing-filter {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	color: var(--color-text-secondary);
+}
+
+.billing-item {
+	background: var(--color-surface-primary);
+	border: 1px solid var(--color-border-primary);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-sm);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.billing-item.deleted {
+	border-color: #ef4444;
+	background: #fef2f2;
+}
+
+.billing-item.expired {
+	border-color: #f59e0b;
+	background: #fff7ed;
+}
+
+.billing-item-title {
+	display: flex;
+	justify-content: space-between;
+	font-weight: 600;
+}
+
+.billing-item-price {
+	color: var(--color-text-primary);
+}
+
+.billing-item-meta {
+	display: flex;
+	gap: var(--spacing-xs);
+	color: var(--color-text-secondary);
+	font-size: 13px;
+}
+
+.billing-item-services {
+	color: var(--color-text-secondary);
+	font-size: 13px;
+}
+
+.billing-item-status {
+	font-size: 12px;
+	font-weight: 600;
+	color: #991b1b;
+}
+
+.billing-item.expired .billing-item-status {
+	color: #b45309;
+}
+
+.billing-empty,
+.billing-loading {
+	color: var(--color-text-secondary);
+	font-style: italic;
+}
+
+.billing-loading {
+	padding: var(--spacing-xs) 0;
+}
+
+.billing-empty {
+	padding: var(--spacing-xs) 0;
 }
 
 .button-group {

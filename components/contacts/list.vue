@@ -32,6 +32,7 @@
 				v-for="websiteUrl in websiteUrls"
 				:key="websiteUrl"
 				:websiteUrl="websiteUrl"
+				:nofollow="websiteNofollow"
 			/>
 
 			<ContactsFacebookLine
@@ -52,6 +53,7 @@
 <script setup lang="ts">
 import { splitContacts, isPhoneNumber } from './utils';
 import type { ContactList } from '~/interfaces/contacts';
+import { BillingService } from '~/enums/billing-service';
 
 interface PhoneGroup {
 	phoneNumber: string;
@@ -73,6 +75,10 @@ const viberContacts = computed(() => splitContacts(props.list.viber));
 const facebookProfiles = computed(() => splitContacts(props.list.facebook));
 const instagramProfiles = computed(() => splitContacts(props.list.instagram));
 const websiteUrls = computed(() => splitContacts(props.list.website));
+const hasDofollow = computed(() =>
+	props.list.features?.includes(BillingService.DOFOLLOW),
+);
+const websiteNofollow = computed(() => !hasDofollow.value);
 
 // Группировка номеров телефонов с их каналами
 const phoneGroups = computed<PhoneGroup[]>(() => {

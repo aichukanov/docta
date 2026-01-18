@@ -37,6 +37,15 @@ const aboutPageLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
+const svadLink = computed(() => {
+	const url = new URL('https://svad.net/');
+	const svadLocale = locale.value === 'sr-cyrl' ? 'sr' : locale.value;
+	url.searchParams.set('country', 'me');
+	url.searchParams.set('lang', svadLocale);
+	url.searchParams.set('currency', 'eur');
+	return url.toString();
+});
+
 watch(
 	isConsentGiven,
 	() => {
@@ -66,6 +75,19 @@ watch(
 						<div class="footer-brand__text">
 							<div class="footer-brand__name">{{ SITE_NAME }}</div>
 							<div class="footer-brand__tagline">{{ t('Tagline') }}</div>
+							<div class="footer-brand__partner">
+								<a
+									class="footer-brand__partner-link"
+									:href="svadLink"
+									target="_blank"
+									rel="noopener"
+								>
+									{{ t('SvadLinkLabel') }}
+								</a>
+								<span class="footer-brand__partner-note">
+									— {{ t('SvadLinkNote') }}
+								</span>
+							</div>
 						</div>
 					</div>
 
@@ -128,6 +150,17 @@ watch(
 						<span class="footer-bottom__muted">{{ t('DisclaimerShort') }}</span>
 					</div>
 				</div>
+				<div class="footer-partner footer-partner--mobile">
+					<a
+						class="footer-partner__link"
+						:href="svadLink"
+						target="_blank"
+						rel="noopener"
+					>
+						{{ t('SvadLinkLabel') }}
+					</a>
+					<span class="footer-partner__note">— {{ t('SvadLinkNote') }}</span>
+				</div>
 			</div>
 		</div>
 
@@ -142,7 +175,7 @@ watch(
 {
 	"en": {
 		"FooterNavLabel": "Footer navigation",
-		"Tagline": "Healthcare in Montenegro — in one place",
+		"Tagline": "Healthcare navigator for Montenegro",
 		"Doctors": "Doctors",
 		"Clinics": "Clinics",
 		"LabTests": "Lab Tests",
@@ -154,11 +187,13 @@ watch(
 		"DisclaimerShort": "Information only. Not medical advice.",
 		"ContactUs": "Contact us by email",
 		"NewsChannel": "Our news channel on Telegram",
-		"AboutProject": "About"
+		"AboutProject": "About",
+		"SvadLinkLabel": "svad.net",
+		"SvadLinkNote": "Aggregator of Montenegrin online shop products"
 	},
 	"ru": {
 		"FooterNavLabel": "Навигация в футере",
-		"Tagline": "Медицина в Черногории — в одном месте",
+		"Tagline": "Навигатор по медицине Черногории",
 		"Doctors": "Врачи",
 		"Clinics": "Клиники",
 		"LabTests": "Анализы",
@@ -170,11 +205,13 @@ watch(
 		"DisclaimerShort": "Справочная информация. Не является медрекомендациями.",
 		"ContactUs": "Связаться с нами по email",
 		"NewsChannel": "Наш канал новостей в Telegram",
-		"AboutProject": "О проекте"
+		"AboutProject": "О проекте",
+		"SvadLinkLabel": "svad.net",
+		"SvadLinkNote": "Агрегатор товаров из онлайн-магазинов Черногории"
 	},
 	"sr": {
 		"FooterNavLabel": "Navigacija u podnožju",
-		"Tagline": "Zdravstvo u Crnoj Gori — na jednom mjestu",
+		"Tagline": "Navigator za zdravstvo Crne Gore",
 		"Doctors": "Lekari",
 		"Clinics": "Klinike",
 		"LabTests": "Analize",
@@ -186,11 +223,13 @@ watch(
 		"DisclaimerShort": "Samo informativno. Nije medicinski savet.",
 		"ContactUs": "Kontaktirajte nas putem emaila",
 		"NewsChannel": "Naš kanal za vesti na Telegramu",
-		"AboutProject": "O projektu"
+		"AboutProject": "O projektu",
+		"SvadLinkLabel": "svad.net",
+		"SvadLinkNote": "Agregator proizvoda iz online prodavnica Crne Gore"
 	},
 	"sr-cyrl": {
 		"FooterNavLabel": "Навигација у подножју",
-		"Tagline": "Здравство у Црној Гори — на једном мјесту",
+		"Tagline": "Навигатор за здравство Црне Горе",
 		"Doctors": "Лекари",
 		"Clinics": "Клинике",
 		"LabTests": "Анализе",
@@ -202,11 +241,13 @@ watch(
 		"DisclaimerShort": "Само информативно. Није медицински савет.",
 		"ContactUs": "Контактирајте нас путем emaila",
 		"NewsChannel": "Наш канал за вести на Телеграму",
-		"AboutProject": "О пројекту"
+		"AboutProject": "О пројекту",
+		"SvadLinkLabel": "svad.net",
+		"SvadLinkNote": "Агрегатор производа из онлајн продавница Црне Горе"
 	},
 	"de": {
 		"FooterNavLabel": "Footer-Navigation",
-		"Tagline": "Gesundheit in Montenegro — an einem Ort",
+		"Tagline": "Gesundheitsnavigator für Montenegro",
 		"Doctors": "Ärzte",
 		"Clinics": "Kliniken",
 		"LabTests": "Labortests",
@@ -218,11 +259,13 @@ watch(
 		"DisclaimerShort": "Nur Information. Keine medizinische Beratung.",
 		"ContactUs": "Kontaktieren Sie uns per E-Mail",
 		"NewsChannel": "Unser Nachrichtenkanal auf Telegram",
-		"AboutProject": "Über"
+		"AboutProject": "Über",
+		"SvadLinkLabel": "svad.net",
+		"SvadLinkNote": "Aggregator für Produkte aus Online-Shops in Montenegro"
 	},
 	"tr": {
 		"FooterNavLabel": "Altbilgi gezinme",
-		"Tagline": "Karadağ'da sağlık — tek yerde",
+		"Tagline": "Karadağ sağlık rehberi",
 		"Doctors": "Doktorlar",
 		"Clinics": "Klinikler",
 		"LabTests": "Laboratuvar Testleri",
@@ -234,7 +277,9 @@ watch(
 		"DisclaimerShort": "Bilgilendirme amaçlıdır. Tıbbi tavsiye değildir.",
 		"ContactUs": "Bize e-posta ile ulaşın",
 		"NewsChannel": "Telegram'daki haber kanalımız",
-		"AboutProject": "Hakkında"
+		"AboutProject": "Hakkında",
+		"SvadLinkLabel": "svad.net",
+		"SvadLinkNote": "Karadağ çevrimiçi mağaza ürünleri toplayıcısı"
 	}
 }
 </i18n>
@@ -249,6 +294,7 @@ watch(
 	--color-primary-dark-green: #0a4210;
 	--color-secondary: #06b6d4;
 	--color-accent: #f59e0b;
+	--color-highlight-bg: rgba(245, 158, 11, 0.16);
 	--color-success: #10b981;
 
 	--color-text-heading: #0f172a;
@@ -423,6 +469,62 @@ body {
 				line-height: 1.4;
 				max-width: 360px;
 			}
+
+			&__partner {
+				margin-top: var(--spacing-md);
+				padding-top: var(--spacing-sm);
+				border-top: 1px solid var(--color-border-light);
+				display: flex;
+				flex-wrap: wrap;
+				gap: var(--spacing-xs);
+				font-size: var(--font-size-sm);
+				color: var(--color-text-light);
+				line-height: 1.4;
+			}
+
+			&__partner-link {
+				color: var(--color-text-muted);
+				text-decoration: none;
+
+				&:hover {
+					color: var(--color-primary);
+					text-decoration: underline;
+				}
+			}
+
+			&__partner-note {
+				color: var(--color-text-light);
+			}
+		}
+
+		.footer-partner {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--spacing-xs);
+			font-size: var(--font-size-sm);
+			color: var(--color-text-light);
+			line-height: 1.4;
+
+			&__link {
+				color: var(--color-text-muted);
+				text-decoration: none;
+
+				&:hover {
+					color: var(--color-primary);
+					text-decoration: underline;
+				}
+			}
+
+			&__note {
+				color: var(--color-text-light);
+			}
+
+			&--mobile {
+				display: none;
+				margin-top: var(--spacing-md);
+				padding-top: var(--spacing-sm);
+				border-top: 1px solid var(--color-border-light);
+			}
 		}
 
 		.footer-nav {
@@ -532,6 +634,14 @@ body {
 			.footer-bottom {
 				flex-direction: column;
 				align-items: flex-start;
+			}
+
+			.footer-brand__partner {
+				display: none;
+			}
+
+			.footer-partner--mobile {
+				display: flex;
 			}
 		}
 	}

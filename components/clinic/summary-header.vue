@@ -3,6 +3,7 @@ import { LocationFilled } from '@element-plus/icons-vue';
 import { getRegionalQuery } from '~/common/url-utils';
 import { getLocalizedName } from '~/common/utils';
 import type { ClinicData } from '~/interfaces/clinic';
+import { BillingService } from '~/enums/billing-service';
 
 const props = withDefaults(
 	defineProps<{
@@ -64,6 +65,10 @@ const localizedName = computed(() =>
 	getLocalizedName(props.clinic, locale.value),
 );
 
+const hasHighlight = computed(() =>
+	props.clinic.features?.includes(BillingService.HIGHLIGHT),
+);
+
 const hasPrice = computed(() => props.price != null || props.priceMin != null);
 
 const formattedPrice = computed(() => {
@@ -99,7 +104,7 @@ const clinicLink = computed(() => ({
 	<header class="clinic-header">
 		<div class="clinic-info">
 			<div class="clinic-name-row">
-				<NuxtLink :to="clinicLink" class="clinic-name">
+				<NuxtLink :to="clinicLink" class="clinic-name" :class="{ 'clinic-name--highlight': hasHighlight }">
 					{{ localizedName }}
 				</NuxtLink>
 				<div v-if="showPrice" class="price-badge" :class="{ 'price-badge__unknown': !hasPrice }">
@@ -161,6 +166,13 @@ const clinicLink = computed(() => ({
 		color: var(--color-primary-dark);
 		text-decoration: underline;
 	}
+}
+
+.clinic-name--highlight {
+	background: var(--color-highlight-bg);
+	border-radius: var(--border-radius-sm);
+	padding: 0 var(--spacing-xs);
+	box-decoration-break: clone;
 }
 
 .price-badge {

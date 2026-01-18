@@ -7,4 +7,5 @@ export interface ContactList {
 	telegram: string;
 	whatsapp: string;
 	viber: string;
+	features?: number[];
 }

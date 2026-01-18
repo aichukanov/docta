@@ -110,7 +110,7 @@ SET CHARACTER SET utf8mb4;
 ### 0.1 Добавление в базу данных
 
 ```sql
-INSERT INTO medical_service_categories (id, name) VALUES 
+INSERT INTO medical_service_categories (id, name) VALUES
 (34, 'Orthodontics'),
 (35, 'Pediatric Dentistry')
 ON DUPLICATE KEY UPDATE name = name;
@@ -119,6 +119,7 @@ ON DUPLICATE KEY UPDATE name = name;
 ### 0.2 Обновление кода
 
 После успешного импорта добавить категорию в:
+
 1. `enums/medical-service-category.ts` — enum
 2. `i18n/medical-service-category.ts` — переводы (все 6 языков)
 3. Этот документ — справочник категорий
@@ -131,11 +132,11 @@ ON DUPLICATE KEY UPDATE name = name;
 
 Поле `sort_order` в таблице `medical_services` используется для сортировки услуг внутри категории:
 
-| Тип осмотра               | sort_order |
-| ------------------------- | ---------- |
-| Первичный осмотр          | 1          |
-| Контрольный осмотр        | 2          |
-| Остальные услуги          | NULL       |
+| Тип осмотра        | sort_order |
+| ------------------ | ---------- |
+| Первичный осмотр   | 1          |
+| Контрольный осмотр | 2          |
+| Остальные услуги   | NULL       |
 
 ```sql
 -- Устанавливать ПОСЛЕ INSERT INTO medical_services
@@ -152,6 +153,55 @@ INSERT INTO medical_services (name_en, name_sr, name_sr_cyrl, name_ru, name_de, 
 ('English Name', 'Serbian Latin', 'Српски ћирилица', 'Русский', 'Deutsch', 'Türkçe'),
 ('Another Service', 'Druga usluga', 'Друга услуга', 'Другая услуга', 'Andere Dienstleistung', 'Başka Hizmet')
 ON DUPLICATE KEY UPDATE name_en = name_en;
+```
+
+#### Правила мультиязычных названий
+
+**1. Английское название (`name_en`) — использовать самые частотные медицинские термины:**
+
+- Избегать редких синонимов, выбирать стандартные названия
+- Альтернативные названия → добавлять в `lab_test_synonyms`
+
+**2. Латинские биологические названия — НЕ переводить:**
+
+- Названия микроорганизмов остаются на латинице во всех языках: `Mycoplasma`, `Chlamydia`, `Ureaplasma`, `Leishmania`, `Candida`, `Helicobacter`, `Borrelia`, `Toxoplasma` и т.д.
+- Пример: `Chlamydia trachomatis PCR` — одинаково на sr, sr_cyrl, ru, de, tr
+
+**3. Международные аббревиатуры — НЕ переводить:**
+
+| Аббревиатура | Значение                       | Оставлять как есть               |
+| ------------ | ------------------------------ | -------------------------------- |
+| NIPT         | Non-Invasive Prenatal Testing  | ✓ (не "НИПТ" для сербского)      |
+| PCR          | Polymerase Chain Reaction      | ✓ (только в русском можно "ПЦР") |
+| CRP          | C-Reactive Protein             | ✓                                |
+| MxA          | Myxovirus resistance protein A | ✓                                |
+| IHC          | Immunohistochemistry           | ✓ (в русском можно "ИГХ")        |
+| LEEP/LLETZ   | Loop Electrosurgical Excision  | ✓                                |
+| TUR/TRUS     | Трансуретральная резекция      | ✓                                |
+| A, B (грипп) | Типы вируса гриппа             | ✓ латинские (не "А, Б")          |
+
+**4. Немецкий и турецкий — ОБЯЗАТЕЛЬНО переводить:**
+
+- Нельзя копировать английское название
+- Немецкий: `Histopathologie Magenbiopsie`, не `Histopathology Stomach Biopsy`
+- Турецкий: `Histopatoloji mide biyopsisi`, не `Histopathology Stomach Biopsy`
+
+**5. Сербский кириллический — использовать сербские формы:**
+
+- `антитијела` (сербский), не `антитела` (русский)
+- `биопсија` (сербский), не `биопсия` (русский)
+
+**Примеры правильных названий:**
+
+```sql
+-- ✓ Правильно: латинские названия сохранены
+('Chlamydia Trachomatis PCR', 'Chlamydia trachomatis PCR', 'Chlamydia trachomatis PCR', 'Chlamydia trachomatis ПЦР', 'Chlamydia trachomatis PCR', 'Chlamydia trachomatis PCR')
+
+-- ✓ Правильно: немецкий и турецкий переведены
+('Histopathology Liver Biopsy', 'PH Biopsija jetre', 'ПХ биопсија јетре', 'Патогистологическое исследование биопсии печени', 'Histopathologie Leberbiopsie', 'Histopatoloji karaciğer biyopsisi')
+
+-- ✗ Неправильно: немецкий и турецкий скопированы с английского
+('Histopathology Liver Biopsy', '...', '...', '...', 'Histopathology Liver Biopsy', 'Histopathology Liver Biopsy')
 ```
 
 ### 1.2 Переменные
@@ -227,53 +277,53 @@ SELECT id, @spec_cardiology FROM medical_services WHERE name_en IN (
 
 Если услуга привязана к категории из таблицы ниже — **обязательно** привязать к соответствующей специальности:
 
-| Категория (Category)     | ID  | Специальность (Specialty)      | ID  |
-| ------------------------ | --- | ------------------------------ | --- |
-| CARDIOLOGY               | 8   | CARDIOLOGY                     | 1   |
-| GASTROENTEROLOGY         | 6   | GASTROENTEROLOGY               | 13  |
-| GYNECOLOGY               | 7   | GYNECOLOGY_OBSTETRICS          | 5   |
-| GENERAL_MEDICINE         | 9   | GENERAL_MEDICINE               | 45  |
-| ORTHOPEDICS              | 10  | ORTHOPEDICS_TRAUMATOLOGY       | 17  |
-| ENT                      | 11  | OTORHINOLARYNGOLOGY            | 11  |
-| PULMONOLOGY              | 12  | PULMONOLOGY                    | 14  |
-| NEUROLOGY                | 21  | NEUROLOGY                      | 8   |
-| UROLOGY                  | 22  | UROLOGY                        | 9   |
-| OPHTHALMOLOGY            | 23  | OPHTHALMOLOGY                  | 6   |
-| DERMATOLOGY              | 24  | DERMATOVENEROLOGY              | 7   |
-| PEDIATRICS               | 25  | PEDIATRICS                     | 4   |
-| ENDOCRINOLOGY            | 26  | ENDOCRINOLOGY                  | 12  |
-| ALLERGOLOGY              | 27  | ALLERGOLOGY                    | 79  |
-| DENTISTRY                | 20  | DENTISTRY                      | 78  |
-| ORTHODONTICS             | 34  | ORTHODONTIST                   | 93  |
-| PEDIATRIC_DENTISTRY      | 35  | PEDIATRIC_DENTISTRY            | 87  |
-| PLASTIC_SURGERY          | 18  | PLASTIC_SURGERY                | 18  |
-| GENERAL_SURGERY          | 17  | GENERAL_SURGERY                | 3   |
-| PHYSIOTHERAPY            | 5   | PHYSICAL_MEDICINE              | 42  |
-| OPHTHALMIC_SURGERY       | 36  | OPHTHALMIC_SURGERY             | 81  |
-| PROCTOLOGY               | 33  | PROCTOLOGY                     | 36  |
-| ABDOMINAL_SURGERY        | 32  | GASTROINTESTINAL_SURGERY       | 90  |
-| VASCULAR_SURGERY         | 22  | VASCULAR_SURGERY               | 34  |
+| Категория (Category) | ID  | Специальность (Specialty) | ID  |
+| -------------------- | --- | ------------------------- | --- |
+| CARDIOLOGY           | 8   | CARDIOLOGY                | 1   |
+| GASTROENTEROLOGY     | 6   | GASTROENTEROLOGY          | 13  |
+| GYNECOLOGY           | 7   | GYNECOLOGY_OBSTETRICS     | 5   |
+| GENERAL_MEDICINE     | 9   | GENERAL_MEDICINE          | 45  |
+| ORTHOPEDICS          | 10  | ORTHOPEDICS_TRAUMATOLOGY  | 17  |
+| ENT                  | 11  | OTORHINOLARYNGOLOGY       | 11  |
+| PULMONOLOGY          | 12  | PULMONOLOGY               | 14  |
+| NEUROLOGY            | 21  | NEUROLOGY                 | 8   |
+| UROLOGY              | 22  | UROLOGY                   | 9   |
+| OPHTHALMOLOGY        | 23  | OPHTHALMOLOGY             | 6   |
+| DERMATOLOGY          | 24  | DERMATOVENEROLOGY         | 7   |
+| PEDIATRICS           | 25  | PEDIATRICS                | 4   |
+| ENDOCRINOLOGY        | 26  | ENDOCRINOLOGY             | 12  |
+| ALLERGOLOGY          | 27  | ALLERGOLOGY               | 79  |
+| DENTISTRY            | 20  | DENTISTRY                 | 78  |
+| ORTHODONTICS         | 34  | ORTHODONTIST              | 93  |
+| PEDIATRIC_DENTISTRY  | 35  | PEDIATRIC_DENTISTRY       | 87  |
+| PLASTIC_SURGERY      | 18  | PLASTIC_SURGERY           | 18  |
+| GENERAL_SURGERY      | 17  | GENERAL_SURGERY           | 3   |
+| PHYSIOTHERAPY        | 5   | PHYSICAL_MEDICINE         | 42  |
+| OPHTHALMIC_SURGERY   | 36  | OPHTHALMIC_SURGERY        | 81  |
+| PROCTOLOGY           | 33  | PROCTOLOGY                | 36  |
+| ABDOMINAL_SURGERY    | 32  | GASTROINTESTINAL_SURGERY  | 90  |
+| VASCULAR_SURGERY     | 22  | VASCULAR_SURGERY          | 34  |
 
 **Пример:** все услуги с категорией DENTISTRY (20) → привязать к специальности DENTISTRY (78)
 
 #### Мульти-категории (добавлять во все подходящие!)
 
-| Услуга                         | Категории                                  |
-| ------------------------------ | ------------------------------------------ |
-| Ринопластика, отопластика      | PLASTIC_SURGERY + ENT                      |
-| Блефаропластика, птоз          | PLASTIC_SURGERY + OPHTHALMOLOGY            |
-| Ботокс, филлеры, дермабразия   | PLASTIC_SURGERY + DERMATOLOGY              |
-| Биопсии любые                  | основная + LABORATORY_SERVICES             |
-| Инъекции, инфузии, IV терапия  | основная + INJECTIONS_INFUSIONS            |
-| Перевязки, раны, снятие швов   | основная + WOUND_CARE                      |
-| Лапароскопические операции     | специализированная + GENERAL_SURGERY       |
-| Вагинопластика, гименопластика | PLASTIC_SURGERY + GYNECOLOGY               |
-| Урологические пластики         | PLASTIC_SURGERY + UROLOGY                  |
-| Эпидуральные инъекции          | PAIN_THERAPY + ORTHOPEDICS                 |
-| Забор крови, экспресс-тесты    | LABORATORY_SERVICES + INJECTIONS_INFUSIONS |
+| Услуга                         | Категории                                        |
+| ------------------------------ | ------------------------------------------------ |
+| Ринопластика, отопластика      | PLASTIC_SURGERY + ENT                            |
+| Блефаропластика, птоз          | PLASTIC_SURGERY + OPHTHALMOLOGY                  |
+| Ботокс, филлеры, дермабразия   | PLASTIC_SURGERY + DERMATOLOGY                    |
+| Биопсии любые                  | основная + LABORATORY_SERVICES                   |
+| Инъекции, инфузии, IV терапия  | основная + INJECTIONS_INFUSIONS                  |
+| Перевязки, раны, снятие швов   | основная + WOUND_CARE                            |
+| Лапароскопические операции     | специализированная + GENERAL_SURGERY             |
+| Вагинопластика, гименопластика | PLASTIC_SURGERY + GYNECOLOGY                     |
+| Урологические пластики         | PLASTIC_SURGERY + UROLOGY                        |
+| Эпидуральные инъекции          | PAIN_THERAPY + ORTHOPEDICS                       |
+| Забор крови, экспресс-тесты    | LABORATORY_SERVICES + INJECTIONS_INFUSIONS       |
 | Детские стомат. услуги         | PEDIATRIC_DENTISTRY (не DENTISTRY + PEDIATRICS!) |
-| Ортодонтические услуги         | ORTHODONTICS (не DENTISTRY!)               |
-| Брекеты, ретейнеры, трейнеры   | ORTHODONTICS                               |
+| Ортодонтические услуги         | ORTHODONTICS (не DENTISTRY!)                     |
+| Брекеты, ретейнеры, трейнеры   | ORTHODONTICS                                     |
 
 ---
 
@@ -296,8 +346,8 @@ clinic_medical_service_doctors (
 
 ```sql
 -- 1. Услуга клиники с диапазоном цен (min-max от всех врачей)
-SET @cms_id = (SELECT id FROM clinic_medical_services 
-    WHERE clinic_id = @clinic_id 
+SET @cms_id = (SELECT id FROM clinic_medical_services
+    WHERE clinic_id = @clinic_id
     AND medical_service_id = (SELECT id FROM medical_services WHERE name_en = 'Urologist Examination'));
 
 -- 2. Личная цена врача
@@ -307,11 +357,11 @@ VALUES (@cms_id, @doctor_id, 40, NULL, NULL);
 
 ### Определение цены клиники при разных ценах врачей
 
-| Цены врачей     | clinic_medical_services.price | clinic_medical_services.price_max |
-| --------------- | ----------------------------- | --------------------------------- |
-| 40€, 60€        | 40 (min)                      | 60 (max)                          |
-| 50€, 50€        | 50 (фикс.)                    | NULL                              |
-| 40€, 50€, 60€   | 40 (min)                      | 60 (max)                          |
+| Цены врачей   | clinic_medical_services.price | clinic_medical_services.price_max |
+| ------------- | ----------------------------- | --------------------------------- |
+| 40€, 60€      | 40 (min)                      | 60 (max)                          |
+| 50€, 50€      | 50 (фикс.)                    | NULL                              |
+| 40€, 50€, 60€ | 40 (min)                      | 60 (max)                          |
 
 ---
 
@@ -418,13 +468,31 @@ UNION ALL SELECT id, 'Kompletna krvna slika', 'sr' FROM lab_tests WHERE name_en 
 
 #### Когда добавлять синонимы:
 
-| Ситуация                   | Примеры                                       |
-| -------------------------- | --------------------------------------------- |
-| Аббревиатуры               | KKS, CBC, CRP, TSH, HbA1c, PSA                |
-| Сокращения                 | ОАК (общий анализ крови), БАК (биохимический) |
-| Альтернативные названия    | "Krvna slika" = "Complete Blood Count"        |
-| Локальные названия клиники | Если клиника использует своё название теста   |
-| Разные языки               | sr, en, ru, de, tr                            |
+| Ситуация                   | Примеры                                             |
+| -------------------------- | --------------------------------------------------- |
+| Аббревиатуры               | KKS, CBC, CRP, TSH, HbA1c, PSA, LBC, LEEP           |
+| Сокращения                 | ОАК (общий анализ крови), БАК (биохимический)       |
+| Альтернативные названия    | "Krvna slika" = "Complete Blood Count"              |
+| Бренды/торговые названия   | "ThinPrep" = "Liquid-Based Cytology"                |
+| Локальные названия клиники | Если клиника использует своё название теста         |
+| Разные языки               | sr, en, ru, de, tr                                  |
+| Менее частотные термины    | Если основное название заменено на более популярное |
+
+**Примеры синонимов для новых тестов:**
+
+```sql
+-- Liquid-Based Cytology (основное название)
+UNION ALL SELECT id, 'LBC', 'en' FROM lab_tests WHERE name_en = 'Liquid-Based Cytology'
+UNION ALL SELECT id, 'ThinPrep', 'en' FROM lab_tests WHERE name_en = 'Liquid-Based Cytology'
+UNION ALL SELECT id, 'Tečna PAPA', 'sr' FROM lab_tests WHERE name_en = 'Liquid-Based Cytology'
+
+-- LEEP Cervical Conization (основное название)
+UNION ALL SELECT id, 'LLETZ', 'en' FROM lab_tests WHERE name_en = 'LEEP Cervical Conization'
+UNION ALL SELECT id, 'Loop ekscizija', 'sr' FROM lab_tests WHERE name_en = 'LEEP Cervical Conization'
+
+-- NIPT тесты (Panorama — бренд)
+UNION ALL SELECT id, 'Panorama Basic', 'en' FROM lab_tests WHERE name_en = 'NIPT Panorama Basic'
+```
 
 #### Коды языков для синонимов:
 

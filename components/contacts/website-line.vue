@@ -1,5 +1,10 @@
 <template>
-	<ContactsLine :value="websiteUrlWithUtm" link :tooltip="t('Website')">
+	<ContactsLine
+		:value="websiteUrlWithUtm"
+		link
+		:tooltip="t('Website')"
+		:nofollow="nofollow"
+	>
 		<IconWebsite :size="20" class="messenger-icon" />
 		<span>{{ websiteUrl }}</span>
 	</ContactsLine>
@@ -9,9 +14,15 @@
 import { normalizeWebsiteUrl } from './utils';
 import { SITE_NAME } from '~/common/constants';
 
-const props = defineProps<{
-	websiteUrl: string;
-}>();
+const props = withDefaults(
+	defineProps<{
+		websiteUrl: string;
+		nofollow?: boolean;
+	}>(),
+	{
+		nofollow: true,
+	},
+);
 
 const { t } = useI18n();
 

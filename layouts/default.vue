@@ -294,7 +294,7 @@ watch(
 	--color-primary-dark-green: #0a4210;
 	--color-secondary: #06b6d4;
 	--color-accent: #f59e0b;
-	--color-highlight-bg: rgba(245, 158, 11, 0.16);
+	--color-highlight-bg: rgb(255 200 23 / 10%);
 	--color-success: #10b981;
 
 	--color-text-heading: #0f172a;

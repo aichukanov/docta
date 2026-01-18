@@ -101,7 +101,7 @@ const clinicLink = computed(() => ({
 </script>
 
 <template>
-	<header class="clinic-header">
+	<header class="clinic-header" :class="{ 'clinic-header--highlight': hasHighlight }">
 		<div class="clinic-info">
 			<div class="clinic-name-row">
 				<NuxtLink :to="clinicLink" class="clinic-name" :class="{ 'clinic-name--highlight': hasHighlight }">
@@ -168,11 +168,8 @@ const clinicLink = computed(() => ({
 	}
 }
 
-.clinic-name--highlight {
+.clinic-header--highlight {
 	background: var(--color-highlight-bg);
-	border-radius: var(--border-radius-sm);
-	padding: 0 var(--spacing-xs);
-	box-decoration-break: clone;
 }
 
 .price-badge {

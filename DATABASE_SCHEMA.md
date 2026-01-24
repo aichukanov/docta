@@ -28,6 +28,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `lab_test_categories`                  | Categories for lab tests.                                      |
 | `lab_test_categories_relations`        | Junction table: Lab Test <-> Category.                         |
 | `lab_test_synonyms`                    | Alternative names for lab tests for search optimization.       |
+| `medical_service_redirects`           | Redirect map for merged medical service records.               |
 | `doctor_redirects`                     | Redirect map for merged doctor profiles.                       |
 | `lab_test_redirects`                   | Redirect map for merged lab test records.                      |
 
@@ -119,6 +120,12 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `id` (int, PK, AI)
 - `old_id` (int): Old Lab Test ID.
 - `new_id` (int): New Lab Test ID (target).
+
+### `medical_service_redirects`
+
+- `id` (int, PK, AI)
+- `old_id` (int): Old Medical Service ID.
+- `new_id` (int): New Medical Service ID (target).
 
 ### `medical_services`
 
@@ -263,7 +270,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 
 6. **Redirects**:
 
-   - `doctor_redirects` and `lab_test_redirects` tables handle merged records for 301 redirects.
+   - `doctor_redirects`, `lab_test_redirects` and `medical_service_redirects` tables handle merged records for 301 redirects.
 
 7. **Service-Specialty Mapping**:
 

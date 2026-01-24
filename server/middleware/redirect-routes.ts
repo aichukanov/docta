@@ -1,6 +1,7 @@
 import { fixUrlRegionalParams } from '../common/redirect/regional-settings';
 import { checkLabTestRedirect } from '../common/redirect/lab-test-redirects';
 import { checkDoctorRedirect } from '../common/redirect/doctor-redirects';
+import { checkMedicalServiceRedirect } from '../common/redirect/medical-service-redirects';
 import { sendSitemap } from '../common/sitemap/utils';
 import { generateSitemapPage } from '../common/sitemap/sitemap';
 import { requireAdmin } from '../common/auth';
@@ -34,6 +35,19 @@ export default defineEventHandler(async (event) => {
 		const doctorRedirect = await checkDoctorRedirect(event, pathArray);
 		if (doctorRedirect) {
 			await sendRedirect(event, doctorRedirect.url, doctorRedirect.status);
+			return;
+		}
+
+		const medicalServiceRedirect = await checkMedicalServiceRedirect(
+			event,
+			pathArray,
+		);
+		if (medicalServiceRedirect) {
+			await sendRedirect(
+				event,
+				medicalServiceRedirect.url,
+				medicalServiceRedirect.status,
+			);
 			return;
 		}
 

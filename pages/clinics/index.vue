@@ -13,8 +13,6 @@ import cityI18n from '~/i18n/city';
 import clinicI18n from '~/i18n/clinic';
 import languageI18n from '~/i18n/language';
 
-definePageMeta({ keepalive: true });
-
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([

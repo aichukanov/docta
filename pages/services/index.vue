@@ -12,8 +12,6 @@ import medicalServiceI18n from '~/i18n/medical-service';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
 import { getRegionalQuery } from '~/common/url-utils';
 
-definePageMeta({ keepalive: true });
-
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([

@@ -12,8 +12,6 @@ import doctorI18n from '~/i18n/doctor';
 import languageI18n from '~/i18n/language';
 import specialtyI18n from '~/i18n/specialty';
 
-definePageMeta({ keepalive: true });
-
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([

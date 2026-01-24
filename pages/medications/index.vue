@@ -10,8 +10,6 @@ import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import medicationI18n from '~/i18n/medication';
 
-definePageMeta({ keepalive: true });
-
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([breadcrumbI18n, cityI18n, medicationI18n]),

@@ -11,8 +11,6 @@ import cityI18n from '~/i18n/city';
 import labTestI18n from '~/i18n/labtest';
 import labTestCategoryI18n from '~/i18n/labtest-category';
 
-definePageMeta({ keepalive: true });
-
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([

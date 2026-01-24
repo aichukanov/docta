@@ -4,8 +4,10 @@ import { getRegionalUrl } from '~/common/url-utils';
 import { SITE_URL } from '~/common/constants';
 import { getDoctorList } from '~/server/api/doctors/list';
 import { getLabTestList } from '~/server/api/labtests/list';
+import { getMedicalServiceList } from '~/server/api/services/list';
 import { getSitemapFilters as getDoctorSitemapFilters } from './filters/doctors';
 import { getSitemapFilters as getLabTestSitemapFilters } from './filters/labtests';
+import { getSitemapFilters as getMedicalServiceSitemapFilters } from './filters/services';
 import {
 	getSitemapFilters as getClinicSitemapFilters,
 	getClinicList,
@@ -116,6 +118,29 @@ export async function generateSitemapPage(sitemapIndex: number) {
 			}),
 		);
 
+	// === Medical Services ===
+	const { items: medicalServices } = await getMedicalServiceList();
+	const medicalServiceFilters = await getMedicalServiceSitemapFilters();
+
+	const medicalServicesPageLink: SitemapLink = menuItemToLinks('services');
+
+	const medicalServiceLinks: SitemapLink[] = medicalServices.map((service) =>
+		menuItemToLinks(`services-${service.id}`),
+	);
+
+	const medicalServiceCategoryLinks: SitemapLink[] =
+		medicalServiceFilters.categoryIds.map((categoryId) =>
+			menuItemToLinks('services', { serviceCategoryIds: categoryId }),
+		);
+
+	const medicalServiceCategoryCityLinks: SitemapLink[] =
+		medicalServiceFilters.categoryCityCombinations.map((combo) =>
+			menuItemToLinks('services', {
+				serviceCategoryIds: combo.categoryId,
+				cityIds: combo.cityId,
+			}),
+		);
+
 	// === Clinics ===
 	const clinics = await getClinicList();
 	const clinicFilters = await getClinicSitemapFilters();
@@ -145,13 +170,18 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		...specialtyLanguageLinks,
 		// Lab Tests: страницы + категории + категория+город
 		labTestsPageLink,
-		// ...labTestLinks, // todo: потом добавить, сразу не размывать бюджет
+		...labTestLinks,
 		...labTestCategoryLinks,
 		...labTestCategoryCityLinks,
+		// Medical Services: страницы + категории + категория+город
+		medicalServicesPageLink,
+		...medicalServiceLinks,
+		...medicalServiceCategoryLinks,
+		...medicalServiceCategoryCityLinks,
 		// Clinics: страницы + город
 		clinicsPageLink,
 		...clinicLinks,
-		// ...clinicCityLinks,
+		...clinicCityLinks,
 	]);
 }
 

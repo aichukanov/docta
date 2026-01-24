@@ -52,28 +52,20 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 			// 1. Переносим связи с клиниками (только те, которых ещё нет)
 			await connection.execute(
-				`INSERT INTO clinic_lab_tests (lab_test_id, clinic_id, price, code)
-				 SELECT ?, clinic_id, price, code
-				 FROM clinic_lab_tests src
-				 WHERE src.lab_test_id = ?
-				 AND NOT EXISTS (
-				   SELECT 1 FROM clinic_lab_tests dest
-				   WHERE dest.lab_test_id = ? AND dest.clinic_id = src.clinic_id
-				 )`,
-				[body.primaryLabTestId, body.secondaryLabTestId, body.primaryLabTestId],
+				`INSERT IGNORE INTO clinic_lab_tests (lab_test_id, clinic_id, price, price_max, code)
+				 SELECT ?, clinic_id, price, price_max, code
+				 FROM clinic_lab_tests
+				 WHERE lab_test_id = ?`,
+				[body.primaryLabTestId, body.secondaryLabTestId],
 			);
 
 			// 2. Переносим категории (только те, которых ещё нет)
 			await connection.execute(
-				`INSERT INTO lab_test_categories_relations (lab_test_id, category_id)
+				`INSERT IGNORE INTO lab_test_categories_relations (lab_test_id, category_id)
 				 SELECT ?, category_id
-				 FROM lab_test_categories_relations src
-				 WHERE src.lab_test_id = ?
-				 AND NOT EXISTS (
-				   SELECT 1 FROM lab_test_categories_relations dest
-				   WHERE dest.lab_test_id = ? AND dest.category_id = src.category_id
-				 )`,
-				[body.primaryLabTestId, body.secondaryLabTestId, body.primaryLabTestId],
+				 FROM lab_test_categories_relations
+				 WHERE lab_test_id = ?`,
+				[body.primaryLabTestId, body.secondaryLabTestId],
 			);
 
 			// 3. Переносим синонимы

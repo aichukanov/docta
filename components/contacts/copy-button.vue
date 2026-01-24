@@ -7,6 +7,7 @@
 	>
 		<el-button
 			:class="isCopied ? 'copy-button copied' : 'copy-button'"
+			:aria-label="isCopied ? t('Copied') : t('CopyNumber')"
 			@click="copyToClipboard"
 		>
 			<template #icon>

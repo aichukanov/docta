@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { getClinicMarkerId } from '~/common/utils';
 import type { ClinicData, ClinicServiceItem } from '~/interfaces/clinic';
+import { getLocalizedName } from '~/common/utils';
 
 const props = defineProps<{
 	clinics: ClinicData[];
@@ -14,7 +15,7 @@ const emit = defineEmits<{
 	(e: 'ready'): void;
 }>();
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const {
 	isLoading,
@@ -129,7 +130,9 @@ const syncMarkers = () => {
 	props.clinics.forEach((clinic) => {
 		const markerId = getClinicMarkerId(clinic.id);
 		if (!currentMarkerIds.has(markerId)) {
-			addMarker(markerId, clinic.latitude, clinic.longitude);
+			addMarker(markerId, clinic.latitude, clinic.longitude, {
+				title: getLocalizedName(clinic, locale.value),
+			});
 		}
 	});
 
@@ -146,6 +149,7 @@ onMounted(async () => {
 				getClinicMarkerId(clinic.id),
 				clinic.latitude,
 				clinic.longitude,
+				{ title: getLocalizedName(clinic, locale.value) },
 			);
 		});
 

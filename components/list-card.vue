@@ -62,12 +62,12 @@ const detailsLink = computed(() => {
 	<div class="list-card">
 		<slot>
 			<div v-if="title" class="list-card-header-wrapper">
-				<h3 class="list-card-header">
+				<h2 class="list-card-header">
 					<NuxtLink v-if="detailsLink" :to="detailsLink" class="list-card-link">
 						{{ title }}
 					</NuxtLink>
 					<template v-else>{{ title }}</template>
-				</h3>
+				</h2>
 				<div v-if="localName" class="list-card-local-name">
 					{{ localName }}
 				</div>

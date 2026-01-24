@@ -1,5 +1,5 @@
 <template>
-	<div class="clinic-service-marker" :class="{ 'is-icon': showIcon }">
+	<div class="clinic-service-marker" :class="{ 'is-icon': showIcon }" aria-hidden="true">
 		<div class="marker-inner-group">
 			<IconClinic v-if="showIcon" :size="20" color="white" />
 			<template v-else>{{ clinicServiceCount }}</template>

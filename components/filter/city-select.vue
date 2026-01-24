@@ -4,6 +4,7 @@
 			ref="selectRef"
 			v-model="cityIds"
 			:placeholder="t('AnyCity')"
+			:aria-label="t('City')"
 			size="large"
 			:multiple="multiple"
 			collapse-tags

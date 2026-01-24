@@ -55,40 +55,42 @@ export async function getLabTestList(
 		) {
 			return { items: [], totalCount: 0 };
 		}
-		joins.push(
-			'INNER JOIN lab_test_categories_relations ltcr ON lt.id = ltcr.lab_test_id',
+		const idList = body.categoryIds.join(',');
+		whereFilters.push(
+			`EXISTS (SELECT 1 FROM lab_test_categories_relations ltcr WHERE ltcr.lab_test_id = lt.id AND ltcr.category_id IN (${idList}))`,
 		);
-		whereFilters.push(`ltcr.category_id IN (${body.categoryIds.join(',')})`);
 	}
 
 	if (body.clinicIds?.length > 0) {
-		whereFilters.push(`clt.clinic_id IN (${body.clinicIds.join(',')})`);
+		const idList = body.clinicIds.join(',');
+		whereFilters.push(
+			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f WHERE clt_f.lab_test_id = lt.id AND clt_f.clinic_id IN (${idList}))`,
+		);
 	}
 	if (body.cityIds?.length > 0) {
-		whereFilters.push(`cities.id IN (${body.cityIds.join(',')})`);
+		const idList = body.cityIds.join(',');
+		whereFilters.push(
+			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f JOIN clinics c_f ON clt_f.clinic_id = c_f.id WHERE clt_f.lab_test_id = lt.id AND c_f.city_id IN (${idList}))`,
+		);
 	}
 	if (body.name && validateName(body, 'api/labtests/list')) {
-		joins.push(
-			'LEFT JOIN lab_test_synonyms lts_search ON lt.id = lts_search.lab_test_id',
-		);
 		const nameField = getLocalizedNameField(locale) || 'name_en';
 		// Для sr-cyrl ищем также по синонимам на кириллице
 		const synonymsFilter =
 			locale === 'sr-cyrl'
-				? `(lts_search.another_name LIKE '%${body.name}%' AND lts_search.language IN ('sr-cyrl', 'sr'))`
-				: `lts_search.another_name LIKE '%${body.name}%'`;
+				? `EXISTS (SELECT 1 FROM lab_test_synonyms lts_f WHERE lts_f.lab_test_id = lt.id AND lts_f.another_name LIKE '%${body.name}%' AND lts_f.language IN ('sr-cyrl', 'sr'))`
+				: `EXISTS (SELECT 1 FROM lab_test_synonyms lts_f WHERE lts_f.lab_test_id = lt.id AND lts_f.another_name LIKE '%${body.name}%')`;
 		whereFilters.push(
 			`(lt.name_en LIKE '%${body.name}%' OR lt.${nameField} LIKE '%${body.name}%' OR lt.name_sr LIKE '%${body.name}%' OR lt.name_sr_cyrl LIKE '%${body.name}%' OR ${synonymsFilter})`,
 		);
 	}
 
-	const joinsString = joins.join(' ');
 	const whereFiltersString =
 		whereFilters.length > 0 ? 'WHERE ' + whereFilters.join(' AND ') : '';
 
 	const priceOrder = getPriceOrderBySQL('clt');
 	const labTestsQuery = `
-		SELECT DISTINCT
+		SELECT
 			lt.id,
 			lt.name_en,
 			lt.name_sr,
@@ -96,21 +98,16 @@ export async function getLabTestList(
 			lt.name_ru,
 			lt.name_de,
 			lt.name_tr,
-			GROUP_CONCAT(DISTINCT clt.clinic_id ORDER BY ${priceOrder}) as clinicIds,
-			GROUP_CONCAT(
+			(SELECT GROUP_CONCAT(DISTINCT clt.clinic_id ORDER BY ${priceOrder}) FROM clinic_lab_tests clt WHERE clt.lab_test_id = lt.id) as clinicIds,
+			(SELECT GROUP_CONCAT(
 				DISTINCT CONCAT(clt.clinic_id, ':', IFNULL(clt.price, ''), ':', '', ':', IFNULL(clt.price_max, ''), ':', COALESCE(clt.code, ''))
 				ORDER BY ${priceOrder}
-			) as clinicPricesData,
+			) FROM clinic_lab_tests clt WHERE clt.lab_test_id = lt.id) as clinicPricesData,
 			(SELECT GROUP_CONCAT(DISTINCT ltcr_cat.category_id ORDER BY ltcr_cat.category_id)
 			 FROM lab_test_categories_relations ltcr_cat
 			 WHERE ltcr_cat.lab_test_id = lt.id) as categoryIds
 		FROM lab_tests lt
-		${joinsString}
-		LEFT JOIN clinic_lab_tests clt ON lt.id = clt.lab_test_id
-		LEFT JOIN clinics ON clt.clinic_id = clinics.id
-		LEFT JOIN cities ON clinics.city_id = cities.id
 		${whereFiltersString}
-		GROUP BY lt.id, lt.name_en, lt.name_sr, lt.name_sr_cyrl, lt.name_ru, lt.name_de, lt.name_tr
 		ORDER BY lt.name_en ASC;
 	`;
 

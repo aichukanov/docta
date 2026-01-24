@@ -4,6 +4,7 @@
 			ref="selectRef"
 			v-model="languageIds"
 			:placeholder="t('AnyLanguage')"
+			:aria-label="t('ConsultationLanguage')"
 			size="large"
 			multiple
 			collapse-tags

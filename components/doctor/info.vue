@@ -7,14 +7,21 @@ const props = withDefaults(
 		service: DoctorData;
 		short?: boolean;
 		isMainHeading?: boolean;
+		headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 	}>(),
 	{
 		short: false,
 		isMainHeading: false,
+		headingLevel: 'h2',
 	},
 );
 
 const { t, locale } = useI18n();
+
+const headingTag = computed(() => {
+	if (props.isMainHeading) return 'h1';
+	return props.headingLevel;
+});
 
 const doctorLink = computed(() => ({
 	name: 'doctors-doctorId',
@@ -37,7 +44,7 @@ const avatarName = computed(() => {
 			:size="short ? 40 : 120"
 		/>
 		<div class="doctor-info">
-			<component :is="isMainHeading ? 'h1' : 'h3'" class="doctor-name">
+			<component :is="headingTag" class="doctor-name">
 				<NuxtLink :to="doctorLink" class="doctor-name-link">
 					{{ service.name }}
 				</NuxtLink>

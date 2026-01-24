@@ -64,24 +64,39 @@ export async function getDoctorList(
 	const locale = body.locale || 'en';
 
 	if (body.specialtyIds?.length > 0) {
-		whereFilters.push(`s.id IN (${body.specialtyIds.join(',')})`);
+		const idList = body.specialtyIds.join(',');
+		whereFilters.push(
+			`EXISTS (SELECT 1 FROM doctor_specialties ds WHERE ds.doctor_id = d.id AND ds.specialty_id IN (${idList}))`,
+		);
 	}
+
 	if (body.cityIds?.length > 0) {
-		whereFilters.push(`cities.id IN (${body.cityIds.join(',')})`);
+		const idList = body.cityIds.join(',');
+		whereFilters.push(
+			`EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinics c ON dc.clinic_id = c.id WHERE dc.doctor_id = d.id AND c.city_id IN (${idList}))`,
+		);
 	}
+
 	if (body.languageIds?.length > 0) {
-		const languageList = body.languageIds.join(',');
+		const idList = body.languageIds.join(',');
 		if (body.onlyDoctorLanguages) {
-			whereFilters.push(`languages.id IN (${languageList})`);
+			whereFilters.push(
+				`EXISTS (SELECT 1 FROM doctor_languages dl WHERE dl.doctor_id = d.id AND dl.language_id IN (${idList}))`,
+			);
 		} else {
 			whereFilters.push(
-				`(languages.id IN (${languageList}) OR clinic_languages.language_id IN (${languageList}))`,
+				`(EXISTS (SELECT 1 FROM doctor_languages dl WHERE dl.doctor_id = d.id AND dl.language_id IN (${idList})) OR EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id WHERE dc.doctor_id = d.id AND cl.language_id IN (${idList})))`,
 			);
 		}
 	}
+
 	if (body.clinicIds?.length > 0) {
-		whereFilters.push(`clinics.id IN (${body.clinicIds.join(',')})`);
+		const idList = body.clinicIds.join(',');
+		whereFilters.push(
+			`EXISTS (SELECT 1 FROM doctor_clinics dc WHERE dc.doctor_id = d.id AND dc.clinic_id IN (${idList}))`,
+		);
 	}
+
 	if (body.name && validateName(body, 'api/doctors/list')) {
 		whereFilters.push(
 			`(d.name_sr LIKE '%${body.name}%' OR d.name_sr_cyrl LIKE '%${body.name}%' OR d.name_ru LIKE '%${body.name}%' OR d.name_en LIKE '%${body.name}%')`,
@@ -92,7 +107,7 @@ export async function getDoctorList(
 		whereFilters.length > 0 ? 'WHERE ' + whereFilters.join(' AND ') : '';
 
 	const doctorsQuery = `
-			SELECT DISTINCT
+			SELECT
 				d.id,
 				d.name_sr,
 				d.name_sr_cyrl,
@@ -108,20 +123,12 @@ export async function getDoctorList(
 				d.whatsapp,
 				d.viber,
 				d.website,
-				GROUP_CONCAT(DISTINCT s.id ORDER BY s.id) as specialtyIds,
-				GROUP_CONCAT(DISTINCT languages.id ORDER BY languages.id) as languageIds,
-				GROUP_CONCAT(DISTINCT dc.clinic_id ORDER BY dc.clinic_id) as clinicIds
+				(SELECT GROUP_CONCAT(DISTINCT ds.specialty_id ORDER BY ds.specialty_id) FROM doctor_specialties ds WHERE ds.doctor_id = d.id) as specialtyIds,
+				(SELECT GROUP_CONCAT(DISTINCT dl.language_id ORDER BY dl.language_id) FROM doctor_languages dl WHERE dl.doctor_id = d.id) as languageIds,
+				(SELECT GROUP_CONCAT(DISTINCT dc.clinic_id ORDER BY dc.clinic_id) FROM doctor_clinics dc WHERE dc.doctor_id = d.id) as clinicIds
 			FROM doctors d
-			LEFT JOIN doctor_specialties ds ON d.id = ds.doctor_id
-			LEFT JOIN specialties s ON ds.specialty_id = s.id
-			LEFT JOIN doctor_languages dl ON d.id = dl.doctor_id
-			LEFT JOIN languages ON dl.language_id = languages.id
-			LEFT JOIN doctor_clinics dc ON d.id = dc.doctor_id
-			LEFT JOIN clinics ON dc.clinic_id = clinics.id
-			LEFT JOIN cities ON clinics.city_id = cities.id
-			LEFT JOIN clinic_languages ON dc.clinic_id = clinic_languages.clinic_id
 			${whereFiltersString}
-			GROUP BY d.id, d.name_sr, d.name_sr_cyrl, d.name_ru, d.name_en ORDER BY d.name_sr ASC;
+			ORDER BY d.name_sr ASC;
 		`;
 
 	const connection = await getConnection();

@@ -57,7 +57,15 @@ const filterList = computed(() => ({
 const filterQuery = computed(() => getRouteParams().query);
 
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics();
+
+const [{ pending: isLoadingDoctors, data: doctorsList }] = await Promise.all([
+	useFetch('/api/doctors/list', {
+		key: 'doctors-list',
+		method: 'POST',
+		body: filterList,
+	}),
+	clinicsStore.fetchClinics(),
+]);
 
 const clinicName = computed(() => {
 	if (clinicIds.value.length === 1) {
@@ -68,15 +76,6 @@ const clinicName = computed(() => {
 	}
 	return '';
 });
-
-const { pending: isLoadingDoctors, data: doctorsList } = await useFetch(
-	'/api/doctors/list',
-	{
-		key: 'doctors-list',
-		method: 'POST',
-		body: filterList,
-	},
-);
 
 const pageTitle = computed(() => {
 	if (languageIds.value.length === 1) {

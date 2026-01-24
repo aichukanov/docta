@@ -268,7 +268,7 @@ watchEffect(() => {
 						<IconDoctor />
 					</template>
 					<template #default="{ item }">
-						<DoctorInfo :service="item" short />
+						<DoctorInfo :service="item" short headingLevel="h3" />
 					</template>
 				</ClinicServiceSection>
 

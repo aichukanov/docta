@@ -51,17 +51,16 @@ const filterList = computed(() => ({
 
 const filterQuery = computed(() => getRouteParams().query);
 
-const { pending: isLoadingLabTests, data: labTestsList } = await useFetch(
-	'/api/labtests/list',
-	{
+const clinicsStore = useClinicsStore();
+
+const [{ pending: isLoadingLabTests, data: labTestsList }] = await Promise.all([
+	useFetch('/api/labtests/list', {
 		key: 'labtests-list',
 		method: 'POST',
 		body: filterList,
-	},
-);
-
-const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics();
+	}),
+	clinicsStore.fetchClinics(),
+]);
 
 const clinicName = computed(() => {
 	if (clinicIds.value.length === 1) {

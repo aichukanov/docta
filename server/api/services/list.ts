@@ -47,21 +47,24 @@ export async function getMedicalServiceList(
 	let joinCategory = '';
 
 	if (body.clinicIds?.length > 0) {
-		whereFilters.push(`cms.clinic_id IN (${body.clinicIds.join(',')})`);
+		const idList = body.clinicIds.join(',');
+		whereFilters.push(
+			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f WHERE cms_f.medical_service_id = ms.id AND cms_f.clinic_id IN (${idList}))`,
+		);
 	}
 	if (body.cityIds?.length > 0) {
-		whereFilters.push(`cities.id IN (${body.cityIds.join(',')})`);
+		const idList = body.cityIds.join(',');
+		whereFilters.push(
+			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f JOIN clinics c_f ON cms_f.clinic_id = c_f.id WHERE cms_f.medical_service_id = ms.id AND c_f.city_id IN (${idList}))`,
+		);
 	}
 	if (
 		body.serviceCategoryIds?.length > 0 &&
 		validateServiceCategoryIds(body, 'api/services/list')
 	) {
-		joinCategory =
-			'LEFT JOIN medical_service_categories_relations mscr ON ms.id = mscr.medical_service_id';
+		const idList = body.serviceCategoryIds.join(',');
 		whereFilters.push(
-			`mscr.medical_service_category_id IN (${body.serviceCategoryIds.join(
-				',',
-			)})`,
+			`EXISTS (SELECT 1 FROM medical_service_categories_relations mscr_f WHERE mscr_f.medical_service_id = ms.id AND mscr_f.medical_service_category_id IN (${idList}))`,
 		);
 	}
 	if (body.name && validateName(body, 'api/services/list')) {
@@ -76,7 +79,7 @@ export async function getMedicalServiceList(
 
 	const priceOrder = getPriceOrderBySQL('cms');
 	const medicalServicesQuery = `
-		SELECT DISTINCT
+		SELECT
 			ms.id,
 			ms.name_en,
 			ms.name_sr,
@@ -85,23 +88,18 @@ export async function getMedicalServiceList(
 			ms.name_de,
 			ms.name_tr,
 			ms.sort_order,
-			COALESCE(GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${priceOrder}), '') as clinicIds,
-			GROUP_CONCAT(
+			(SELECT COALESCE(GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${priceOrder}), '') FROM clinic_medical_services cms WHERE cms.medical_service_id = ms.id) as clinicIds,
+			(SELECT GROUP_CONCAT(
 				DISTINCT CONCAT(cms.clinic_id, ':', IFNULL(cms.price, ''), ':', IFNULL(cms.price_min, ''), ':', IFNULL(cms.price_max, ''), ':', COALESCE(cms.code, ''))
 				ORDER BY ${priceOrder}
-			) as clinicPricesData,
+			) FROM clinic_medical_services cms WHERE cms.medical_service_id = ms.id) as clinicPricesData,
 			(
 				SELECT GROUP_CONCAT(DISTINCT mscr2.medical_service_category_id ORDER BY mscr2.medical_service_category_id)
 				FROM medical_service_categories_relations mscr2
 				WHERE mscr2.medical_service_id = ms.id
 			) as categoryIds
 		FROM medical_services ms
-		LEFT JOIN clinic_medical_services cms ON ms.id = cms.medical_service_id
-		LEFT JOIN clinics ON cms.clinic_id = clinics.id
-		LEFT JOIN cities ON clinics.city_id = cities.id
-		${joinCategory}
 		${whereFiltersString}
-		GROUP BY ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order
 		ORDER BY ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
 	`;
 

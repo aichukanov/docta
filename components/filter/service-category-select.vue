@@ -5,6 +5,7 @@
 			v-model:value="serviceCategoryIds"
 			:placeholder="t('AnyServiceCategory')"
 			:placeholderSearch="t('SearchServiceCategory')"
+			:ariaLabel="t('ServiceCategory')"
 			:noDataText="t('ServiceCategoryNotFound')"
 			multiple
 		/>

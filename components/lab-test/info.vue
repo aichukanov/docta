@@ -35,12 +35,12 @@ const detailsLink = computed(() => {
 
 <template>
 	<div class="lab-test-info">
-		<h3 class="lab-test-name">
+		<h2 class="lab-test-name">
 			<NuxtLink v-if="detailsLink" :to="detailsLink" class="lab-test-link">
 				{{ name }}
 			</NuxtLink>
 			<template v-else>{{ name }}</template>
-		</h3>
+		</h2>
 		<div v-if="localName" class="lab-test-original">
 			{{ localName }}
 		</div>

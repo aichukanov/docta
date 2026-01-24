@@ -52,15 +52,17 @@ const filterList = computed(() => ({
 
 const filterQuery = computed(() => getRouteParams().query);
 
-const { pending: isLoadingMedicalServices, data: medicalServicesList } =
-	await useFetch('/api/services/list', {
-		key: 'services-list',
-		method: 'POST',
-		body: filterList,
-	});
-
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics();
+
+const [{ pending: isLoadingMedicalServices, data: medicalServicesList }] =
+	await Promise.all([
+		useFetch('/api/services/list', {
+			key: 'services-list',
+			method: 'POST',
+			body: filterList,
+		}),
+		clinicsStore.fetchClinics(),
+	]);
 
 const clinicName = computed(() => {
 	if (clinicIds.value.length === 1) {
@@ -223,7 +225,7 @@ watchEffect(() => {
 
 		<template #item="{ item }">
 			<div class="service-info">
-				<h3 class="service-name">
+				<h2 class="service-name">
 					<NuxtLink
 						:to="{
 							name: 'services-serviceId',
@@ -234,7 +236,7 @@ watchEffect(() => {
 					>
 						{{ item.name }}
 					</NuxtLink>
-				</h3>
+				</h2>
 				<div v-if="item.localName" class="service-local-name">
 					{{ item.localName }}
 				</div>

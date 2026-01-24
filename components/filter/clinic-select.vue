@@ -6,6 +6,7 @@
 			multiple
 			:placeholder="t('AnyClinic')"
 			:placeholderSearch="t('SearchClinic')"
+			:ariaLabel="t('Clinic')"
 			:noDataText="t('NotFoundClinic')"
 		/>
 	</FilterWrapper>

@@ -5,6 +5,7 @@
 			v-model:value="specialtyIds"
 			:placeholder="t('AnySpecialty')"
 			:placeholderSearch="t('SearchSpecialty')"
+			:ariaLabel="t('Specialty')"
 			:noDataText="t('NotFound')"
 			multiple
 		/>

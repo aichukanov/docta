@@ -6,10 +6,19 @@ import {
 } from '~/server/common/utils';
 import type { ClinicList } from '~/interfaces/clinic';
 
+const clinicCache = new Map<string, { data: ClinicList; timestamp: number }>();
+const CACHE_TTL = 1000 * 60 * 10; // 10 minutes
+
 export default defineEventHandler(async (event): Promise<ClinicList> => {
 	try {
 		const body = await readBody(event);
 		const locale = body?.locale || 'en';
+
+		const cacheKey = `clinics_${locale}`;
+		const cached = clinicCache.get(cacheKey);
+		if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
+			return cached.data;
+		}
 
 		const clinicsQuery = `
 			SELECT
@@ -98,10 +107,14 @@ export default defineEventHandler(async (event): Promise<ClinicList> => {
 			};
 		});
 
-		return {
+		const result = {
 			clinics: processedClinics,
 			totalCount: processedClinics.length,
 		};
+
+		clinicCache.set(cacheKey, { data: result, timestamp: Date.now() });
+
+		return result;
 	} catch (error) {
 		console.error('API Error - clinics:', error);
 		throw createError({

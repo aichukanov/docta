@@ -121,7 +121,12 @@ export function useLeaflet() {
 		}
 	};
 
-	const addMarker = (id: string, lat: number, lng: number) => {
+	const addMarker = (
+		id: string,
+		lat: number,
+		lng: number,
+		options?: { title?: string; alt?: string },
+	) => {
 		if (!lat || !lng) {
 			console.error('Error adding marker:', id, lat, lng);
 		}
@@ -133,8 +138,19 @@ export function useLeaflet() {
 			iconAnchor: [20, 20],
 		});
 
-		const marker = window.L.marker([lat, lng], { icon });
+		const marker = window.L.marker([lat, lng], {
+			icon,
+			title: options?.title,
+			alt: options?.alt || options?.title,
+		});
+
 		marker.addTo(leafletMap);
+
+		const el = marker.getElement();
+		if (el && options?.title) {
+			el.setAttribute('aria-label', options.title);
+		}
+
 		markers.set(id, marker);
 	};
 

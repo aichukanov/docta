@@ -11,12 +11,14 @@ const props = withDefaults(
 		value: ValueType | ValueType[] | null;
 		placeholder?: string;
 		placeholderSearch?: string;
+		ariaLabel?: string;
 		noDataText?: string;
 		multiple?: boolean;
 	}>(),
 	{
 		placeholder: '',
 		placeholderSearch: '',
+		ariaLabel: '',
 		noDataText: '',
 		multiple: false,
 	},
@@ -55,6 +57,7 @@ const focusSearchItemNameInput = async (visible: boolean) => {
 		ref="selectRef"
 		v-model="value"
 		:placeholder="placeholder"
+		:aria-label="ariaLabel"
 		size="large"
 		:multiple="multiple"
 		:no-data-text="noDataText"
@@ -66,6 +69,7 @@ const focusSearchItemNameInput = async (visible: boolean) => {
 				ref="searchInput"
 				v-model="searchItemName"
 				:placeholder="placeholderSearch"
+				:aria-label="placeholderSearch"
 			/>
 		</template>
 		<el-option

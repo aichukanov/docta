@@ -38,6 +38,15 @@ export default defineNuxtConfig({
 	routeRules: {
 		'/**': { cors: true, ssr: true, prerender: false },
 		'/admin/**': { cors: true, ssr: false, prerender: false },
+		'/img/**': { headers: { 'Cache-Control': 'max-age=31536000, public, immutable' } },
+		'/photos/**': { headers: { 'Cache-Control': 'max-age=31536000, public, immutable' } },
+		'/favicon.ico': { headers: { 'Cache-Control': 'max-age=31536000, public, immutable' } },
+		'/*.png': { headers: { 'Cache-Control': 'max-age=31536000, public, immutable' } },
+		'/*.svg': { headers: { 'Cache-Control': 'max-age=31536000, public, immutable' } },
+		'/*.webp': { headers: { 'Cache-Control': 'max-age=31536000, public, immutable' } },
+		'/*.js': { headers: { 'Cache-Control': 'max-age=31536000, public, immutable' } },
+		'/_ca/**': { headers: { 'Cache-Control': 'max-age=31536000, public, immutable' } },
+		'/site.webmanifest': { headers: { 'Cache-Control': 'max-age=31536000, public, immutable' } },
 	},
 
 	devtools: { enabled: false },

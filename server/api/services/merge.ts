@@ -48,54 +48,38 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 			// 1. Переносим связи с клиниками (только те, которых ещё нет)
 			await connection.execute(
-				`INSERT INTO clinic_medical_services (medical_service_id, clinic_id, price, code)
-				 SELECT ?, clinic_id, price, code
-				 FROM clinic_medical_services src
-				 WHERE src.medical_service_id = ?
-				 AND NOT EXISTS (
-				   SELECT 1 FROM clinic_medical_services dest
-				   WHERE dest.medical_service_id = ? AND dest.clinic_id = src.clinic_id
-				 )`,
-				[body.primaryServiceId, body.secondaryServiceId, body.primaryServiceId],
+				`INSERT IGNORE INTO clinic_medical_services (medical_service_id, clinic_id, price, price_max, code)
+				 SELECT ?, clinic_id, price, price_max, code
+				 FROM clinic_medical_services
+				 WHERE medical_service_id = ?`,
+				[body.primaryServiceId, body.secondaryServiceId],
 			);
 
 			// 2. Переносим специальности (только те, которых ещё нет)
 			await connection.execute(
-				`INSERT INTO medical_services_specialties (medical_service_id, specialty_id)
+				`INSERT IGNORE INTO medical_services_specialties (medical_service_id, specialty_id)
 				 SELECT ?, specialty_id
-				 FROM medical_services_specialties src
-				 WHERE src.medical_service_id = ?
-				 AND NOT EXISTS (
-				   SELECT 1 FROM medical_services_specialties dest
-				   WHERE dest.medical_service_id = ? AND dest.specialty_id = src.specialty_id
-				 )`,
-				[body.primaryServiceId, body.secondaryServiceId, body.primaryServiceId],
+				 FROM medical_services_specialties
+				 WHERE medical_service_id = ?`,
+				[body.primaryServiceId, body.secondaryServiceId],
 			);
 
 			// 3. Переносим категории (только те, которых ещё нет)
 			await connection.execute(
-				`INSERT INTO medical_service_categories_relations (medical_service_id, medical_service_category_id)
+				`INSERT IGNORE INTO medical_service_categories_relations (medical_service_id, medical_service_category_id)
 				 SELECT ?, medical_service_category_id
-				 FROM medical_service_categories_relations src
-				 WHERE src.medical_service_id = ?
-				 AND NOT EXISTS (
-				   SELECT 1 FROM medical_service_categories_relations dest
-				   WHERE dest.medical_service_id = ? AND dest.medical_service_category_id = src.medical_service_category_id
-				 )`,
-				[body.primaryServiceId, body.secondaryServiceId, body.primaryServiceId],
+				 FROM medical_service_categories_relations
+				 WHERE medical_service_id = ?`,
+				[body.primaryServiceId, body.secondaryServiceId],
 			);
 
 			// 4. Переносим связь услуг с врачами в клиниках (только те, которых ещё нет)
 			await connection.execute(
-				`INSERT INTO clinic_medical_service_doctors (clinic_id, medical_service_id, doctor_id, price, price_max)
+				`INSERT IGNORE INTO clinic_medical_service_doctors (clinic_id, medical_service_id, doctor_id, price, price_max)
 				 SELECT clinic_id, ?, doctor_id, price, price_max
-				 FROM clinic_medical_service_doctors src
-				 WHERE src.medical_service_id = ?
-				 AND NOT EXISTS (
-				   SELECT 1 FROM clinic_medical_service_doctors dest
-				   WHERE dest.medical_service_id = ? AND dest.clinic_id = src.clinic_id AND dest.doctor_id = src.doctor_id
-				 )`,
-				[body.primaryServiceId, body.secondaryServiceId, body.primaryServiceId],
+				 FROM clinic_medical_service_doctors
+				 WHERE medical_service_id = ?`,
+				[body.primaryServiceId, body.secondaryServiceId],
 			);
 
 			// 5. Удаляем связи удаляемой услуги
@@ -126,7 +110,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				[body.secondaryServiceId, body.primaryServiceId],
 			);
 
-			// 6. Удаляем услугу
+			// 7. Удаляем услугу
 			const [result]: any = await connection.execute(
 				'DELETE FROM medical_services WHERE id = ?',
 				[body.secondaryServiceId],

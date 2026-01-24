@@ -52,6 +52,7 @@ const route = useRoute();
 const mapRef = ref<HTMLElement>();
 const PAGE_LIMIT = 20;
 const pageNumber = ref(+route.query.page || 1);
+const isSyncingFromRoute = ref(false);
 
 const clinicsStore = useClinicsStore();
 
@@ -71,6 +72,36 @@ const listOnPage = computed(() => {
 		pageNumber.value * PAGE_LIMIT,
 	);
 });
+
+const normalizeQuery = (query: Record<string, any>) => {
+	const normalized: Record<string, string | string[]> = {};
+	Object.keys(query)
+		.sort()
+		.forEach((key) => {
+			const value = query[key];
+			if (value == null || value === '') {
+				return;
+			}
+			if (Array.isArray(value)) {
+				normalized[key] = value.map(String);
+			} else {
+				normalized[key] = String(value);
+			}
+		});
+	return JSON.stringify(normalized);
+};
+
+const syncRoute = async (replace = false) => {
+	const target = routeWithParams.value;
+	if (normalizeQuery(route.query) === normalizeQuery(target.query)) {
+		return;
+	}
+	if (replace) {
+		await router.replace(target);
+		return;
+	}
+	await router.push(target);
+};
 
 const showClinicOnMap = (clinic: ClinicData) => {
 	mapRef.value.openClinicPopup(clinic);
@@ -104,21 +135,39 @@ useSeoMeta({
 	robots: robotsMeta,
 });
 
+watch(
+	() => route.query,
+	(query) => {
+		isSyncingFromRoute.value = true;
+		pageNumber.value = +query.page || 1;
+		nextTick(() => {
+			isSyncingFromRoute.value = false;
+		});
+	},
+	{ immediate: true },
+);
+
 onMounted(async () => {
 	await nextTick();
-	router.replace(routeWithParams.value);
+	await syncRoute(true);
 
 	watch(
 		() => props.filterQuery,
 		() => {
+			if (isSyncingFromRoute.value) {
+				return;
+			}
 			pageNumber.value = 1;
 
-			router.replace(routeWithParams.value);
+			syncRoute();
 		},
 	);
 
 	watch(pageNumber, () => {
-		router.replace(routeWithParams.value);
+		if (isSyncingFromRoute.value) {
+			return;
+		}
+		syncRoute();
 
 		window.scrollTo(0, 0);
 	});

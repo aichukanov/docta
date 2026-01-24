@@ -10,6 +10,8 @@ import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import medicationI18n from '~/i18n/medication';
 
+definePageMeta({ keepalive: true });
+
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([breadcrumbI18n, cityI18n, medicationI18n]),
@@ -18,7 +20,14 @@ const { t, locale } = useI18n({
 const { cityIds, clinicIds, name, updateFromRoute, getRouteParams } =
 	useFilters();
 
-updateFromRoute(useRoute().query);
+const route = useRoute();
+watch(
+	() => route.query,
+	(query) => {
+		updateFromRoute(query);
+	},
+	{ immediate: true },
+);
 
 const filterList = computed(() => ({
 	cityIds: cityIds.value,
@@ -87,7 +96,6 @@ const pageDescription = computed(() => {
 
 // Schema.org for medications list
 const schemaOrgStore = useSchemaOrgStore();
-const route = useRoute();
 
 useSeoMeta({
 	title: pageTitleWithCount,

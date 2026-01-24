@@ -12,6 +12,8 @@ import medicalServiceI18n from '~/i18n/medical-service';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
 import { getRegionalQuery } from '~/common/url-utils';
 
+definePageMeta({ keepalive: true });
+
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([
@@ -31,7 +33,14 @@ const {
 	getRouteParams,
 } = useFilters();
 
-updateFromRoute(useRoute().query);
+const route = useRoute();
+watch(
+	() => route.query,
+	(query) => {
+		updateFromRoute(query);
+	},
+	{ immediate: true },
+);
 
 const filterList = computed(() => ({
 	cityIds: cityIds.value,
@@ -144,7 +153,6 @@ const pageDescription = computed(() => {
 
 // Schema.org for medical services list
 const schemaOrgStore = useSchemaOrgStore();
-const route = useRoute();
 
 useSeoMeta({
 	title: pageTitleWithCount,

@@ -12,6 +12,8 @@ import doctorI18n from '~/i18n/doctor';
 import languageI18n from '~/i18n/language';
 import specialtyI18n from '~/i18n/specialty';
 
+definePageMeta({ keepalive: true });
+
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([
@@ -33,7 +35,14 @@ const {
 	getRouteParams,
 } = useFilters();
 
-updateFromRoute(useRoute().query);
+const route = useRoute();
+watch(
+	() => route.query,
+	(query) => {
+		updateFromRoute(query);
+	},
+	{ immediate: true },
+);
 
 const filterList = computed(() => ({
 	specialtyIds: specialtyIds.value,
@@ -196,7 +205,6 @@ const pageDescription = computed(() => {
 
 // Schema.org for doctors list
 const schemaOrgStore = useSchemaOrgStore();
-const route = useRoute();
 
 useSeoMeta({
 	title: pageTitleWithCount,

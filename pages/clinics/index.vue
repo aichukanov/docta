@@ -13,6 +13,8 @@ import cityI18n from '~/i18n/city';
 import clinicI18n from '~/i18n/clinic';
 import languageI18n from '~/i18n/language';
 
+definePageMeta({ keepalive: true });
+
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([
@@ -25,8 +27,15 @@ const { t, locale } = useI18n({
 
 const { cityIds, languageIds, name, updateFromRoute, getRouteParams } =
 	useFilters();
+const route = useRoute();
 
-updateFromRoute(useRoute().query);
+watch(
+	() => route.query,
+	(query) => {
+		updateFromRoute(query);
+	},
+	{ immediate: true },
+);
 
 const filterList = computed(() => ({
 	cityIds: cityIds.value,
@@ -116,7 +125,6 @@ const pageDescription = computed(() => {
 
 // Schema.org for clinics list
 const schemaOrgStore = useSchemaOrgStore();
-const route = useRoute();
 
 useSeoMeta({
 	title: pageTitleWithCount,

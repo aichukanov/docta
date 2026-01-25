@@ -187,20 +187,9 @@ onMounted(async () => {
 					:aria-label="t('AriaSearchResults')"
 					:aria-busy="isLoading || clinicsStore.isLoadingClinics"
 				>
-					<div
-						v-if="isLoading || clinicsStore.isLoadingClinics"
-						class="loading"
-						role="status"
-						aria-live="polite"
-						:aria-label="t('AriaLoadingResults')"
-					>
-						<div class="loading-spinner" aria-hidden="true"></div>
-						<p>{{ t('Loading') }}</p>
-					</div>
-
-					<div v-else class="list-wrapper">
+					<div class="list-wrapper">
 						<div
-							v-if="list.length === 0"
+							v-if="list.length === 0 && !isLoading"
 							class="empty-state"
 							role="status"
 							aria-live="polite"
@@ -244,6 +233,16 @@ onMounted(async () => {
 						</ul>
 
 						<slot name="tips" />
+					</div>
+
+					<div
+						v-if="isLoading || clinicsStore.isLoadingClinics"
+						class="loading-overlay"
+						role="status"
+						aria-live="polite"
+						:aria-label="t('AriaLoadingResults')"
+					>
+						<div class="loading-bar" aria-hidden="true"></div>
 					</div>
 
 					<nav :aria-label="t('AriaPagination')">
@@ -331,6 +330,7 @@ onMounted(async () => {
 		min-width: 0;
 		min-height: 400px;
 		box-sizing: border-box;
+		position: relative;
 	}
 }
 
@@ -359,26 +359,6 @@ onMounted(async () => {
 	box-sizing: border-box;
 }
 
-.loading {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 40px;
-	color: #6b7280;
-	min-height: 300px;
-}
-
-.loading-spinner {
-	width: 40px;
-	height: 40px;
-	border: 3px solid #e5e7eb;
-	border-top: 3px solid #4f46e5;
-	border-radius: 50%;
-	animation: spin 1s linear infinite;
-	margin-bottom: 16px;
-}
-
 @keyframes spin {
 	0% {
 		transform: rotate(0deg);
@@ -392,6 +372,37 @@ onMounted(async () => {
 	text-align: center;
 	padding: 40px;
 	color: #6b7280;
+}
+
+.loading-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(255, 255, 255, 0.4);
+	pointer-events: none;
+}
+
+.loading-bar {
+	height: 3px;
+	width: 100%;
+	background: linear-gradient(
+		90deg,
+		var(--color-primary) 0%,
+		var(--color-primary-light, #a5b4fc) 50%,
+		var(--color-primary) 100%
+	);
+	animation: loading-slide 0.8s linear infinite;
+}
+
+@keyframes loading-slide {
+	0% {
+		transform: translateX(-40%);
+	}
+	100% {
+		transform: translateX(40%);
+	}
 }
 
 .map-container {

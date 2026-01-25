@@ -109,7 +109,11 @@ export function useLeaflet() {
 		}
 
 		if (locations.length === 1) {
-			leafletMap.panTo(locations[0]);
+			leafletMap.setView(
+				locations[0],
+				MONTENEGRO_ZOOM_SETTINGS.cityZoom,
+				{ animate: true },
+			);
 			return;
 		}
 

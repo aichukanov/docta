@@ -23,6 +23,7 @@ export const MONTENEGRO_ZOOM_SETTINGS = {
 	minZoom: 7, // Минимальный зум - видна вся страна
 	maxZoom: 18, // Максимальный зум
 	defaultZoom: 9, // Зум по умолчанию
+	cityZoom: 13, // Зум для отображения города
 };
 
 // Данные сайта

@@ -114,17 +114,33 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				);
 				if (existing) {
 					// Обновляем только если изменилось
-					if (existing.price !== cp.price || existing.price_max !== cp.priceMax || existing.code !== cp.code) {
+					if (
+						existing.price !== cp.price ||
+						existing.price_max !== cp.priceMax ||
+						existing.code !== cp.code
+					) {
 						await connection.execute(
 							'UPDATE clinic_lab_tests SET price = ?, price_max = ?, code = ? WHERE lab_test_id = ? AND clinic_id = ?',
-							[cp.price || null, cp.priceMax || null, cp.code || null, body.id, cp.clinicId],
+							[
+								cp.price || null,
+								cp.priceMax || null,
+								cp.code || null,
+								body.id,
+								cp.clinicId,
+							],
 						);
 					}
 				} else {
 					// Добавляем новую
 					await connection.execute(
 						'INSERT INTO clinic_lab_tests (lab_test_id, clinic_id, price, price_max, code) VALUES (?, ?, ?, ?, ?)',
-						[body.id, cp.clinicId, cp.price || null, cp.priceMax || null, cp.code || null],
+						[
+							body.id,
+							cp.clinicId,
+							cp.price || null,
+							cp.priceMax || null,
+							cp.code || null,
+						],
 					);
 				}
 			}

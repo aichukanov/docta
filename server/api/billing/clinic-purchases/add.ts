@@ -36,7 +36,9 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			return false;
 		}
 
-		if (!body.serviceIds.every((id: string) => validateNonNegativeInteger(id))) {
+		if (
+			!body.serviceIds.every((id: string) => validateNonNegativeInteger(id))
+		) {
 			setResponseStatus(event, 400, 'Invalid service id value');
 			return false;
 		}

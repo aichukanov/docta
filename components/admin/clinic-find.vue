@@ -81,7 +81,8 @@ const billingServiceOptions = computed(() =>
 );
 
 const billingServiceMap = computed(
-	() => new Map(billingServices.value.map((service) => [service.id, service.name])),
+	() =>
+		new Map(billingServices.value.map((service) => [service.id, service.name])),
 );
 
 const formatDate = (value: string) => {

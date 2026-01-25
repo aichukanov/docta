@@ -81,7 +81,11 @@ const formattedPrice = computed(() => {
 	}
 
 	// Если есть price и priceMax - показываем диапазон "X - Y евро"
-	if (props.price != null && props.priceMax != null && props.priceMax !== props.price) {
+	if (
+		props.price != null &&
+		props.priceMax != null &&
+		props.priceMax !== props.price
+	) {
 		return `${formatNumber(props.price)} - ${formatNumber(props.priceMax)}`;
 	}
 
@@ -101,13 +105,24 @@ const clinicLink = computed(() => ({
 </script>
 
 <template>
-	<header class="clinic-header" :class="{ 'clinic-header--highlight': hasHighlight }">
+	<header
+		class="clinic-header"
+		:class="{ 'clinic-header--highlight': hasHighlight }"
+	>
 		<div class="clinic-info">
 			<div class="clinic-name-row">
-				<NuxtLink :to="clinicLink" class="clinic-name" :class="{ 'clinic-name--highlight': hasHighlight }">
+				<NuxtLink
+					:to="clinicLink"
+					class="clinic-name"
+					:class="{ 'clinic-name--highlight': hasHighlight }"
+				>
 					{{ localizedName }}
 				</NuxtLink>
-				<div v-if="showPrice" class="price-badge" :class="{ 'price-badge__unknown': !hasPrice }">
+				<div
+					v-if="showPrice"
+					class="price-badge"
+					:class="{ 'price-badge__unknown': !hasPrice }"
+				>
 					<template v-if="formattedPrice">{{ formattedPrice }}</template>
 					<template v-else>{{ t('PriceUnknown') }}</template>
 				</div>

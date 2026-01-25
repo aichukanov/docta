@@ -83,7 +83,14 @@ const updateServices = () => {
 
 <template>
 	<div class="admin-index">
-		<div v-if="isLoadingDoctors || isLoadingClinics || isLoadingLabTests || isLoadingServices">
+		<div
+			v-if="
+				isLoadingDoctors ||
+				isLoadingClinics ||
+				isLoadingLabTests ||
+				isLoadingServices
+			"
+		>
 			<div class="loading-spinner"></div>
 			<p>Загрузка данных...</p>
 		</div>

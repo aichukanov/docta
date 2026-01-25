@@ -78,31 +78,43 @@ export async function getDoctorList(
 
 	if (body.specialtyIds?.length > 0) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM doctor_specialties ds WHERE ds.doctor_id = d.id AND ds.specialty_id IN (${buildInPlaceholders(body.specialtyIds)}))`,
+			`EXISTS (SELECT 1 FROM doctor_specialties ds WHERE ds.doctor_id = d.id AND ds.specialty_id IN (${buildInPlaceholders(
+				body.specialtyIds,
+			)}))`,
 		);
 	}
 
 	if (body.cityIds?.length > 0) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinics c ON dc.clinic_id = c.id WHERE dc.doctor_id = d.id AND c.city_id IN (${buildInPlaceholders(body.cityIds)}))`,
+			`EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinics c ON dc.clinic_id = c.id WHERE dc.doctor_id = d.id AND c.city_id IN (${buildInPlaceholders(
+				body.cityIds,
+			)}))`,
 		);
 	}
 
 	if (body.languageIds?.length > 0) {
 		if (body.onlyDoctorLanguages) {
 			whereFilters.push(
-				`EXISTS (SELECT 1 FROM doctor_languages dl WHERE dl.doctor_id = d.id AND dl.language_id IN (${buildInPlaceholders(body.languageIds)}))`,
+				`EXISTS (SELECT 1 FROM doctor_languages dl WHERE dl.doctor_id = d.id AND dl.language_id IN (${buildInPlaceholders(
+					body.languageIds,
+				)}))`,
 			);
 		} else {
 			whereFilters.push(
-				`(EXISTS (SELECT 1 FROM doctor_languages dl WHERE dl.doctor_id = d.id AND dl.language_id IN (${buildInPlaceholders(body.languageIds)})) OR EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id WHERE dc.doctor_id = d.id AND cl.language_id IN (${buildInPlaceholders(body.languageIds)})))`,
+				`(EXISTS (SELECT 1 FROM doctor_languages dl WHERE dl.doctor_id = d.id AND dl.language_id IN (${buildInPlaceholders(
+					body.languageIds,
+				)})) OR EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id WHERE dc.doctor_id = d.id AND cl.language_id IN (${buildInPlaceholders(
+					body.languageIds,
+				)})))`,
 			);
 		}
 	}
 
 	if (body.clinicIds?.length > 0) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM doctor_clinics dc WHERE dc.doctor_id = d.id AND dc.clinic_id IN (${buildInPlaceholders(body.clinicIds)}))`,
+			`EXISTS (SELECT 1 FROM doctor_clinics dc WHERE dc.doctor_id = d.id AND dc.clinic_id IN (${buildInPlaceholders(
+				body.clinicIds,
+			)}))`,
 		);
 	}
 
@@ -154,10 +166,7 @@ export async function getDoctorList(
 	const connection = await getConnection();
 	let totalCount = 0;
 	if (usePagination) {
-		const [countRows] = await connection.execute(
-			totalCountQuery,
-			queryParams,
-		);
+		const [countRows] = await connection.execute(totalCountQuery, queryParams);
 		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
 	}
 	const [doctorRows] = await connection.execute(doctorsQuery, queryParams);

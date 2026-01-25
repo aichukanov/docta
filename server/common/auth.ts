@@ -12,4 +12,3 @@ export function requireAdmin(event: H3Event): void {
 		throw createError({ statusCode: 404, statusMessage: 'Not found' });
 	}
 }
-

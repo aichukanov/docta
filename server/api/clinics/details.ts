@@ -92,7 +92,9 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 
 		// Обрабатываем локализованное description
 		const description = processLocalizedDescriptionForClinic(clinic, locale);
-		const features = clinic.features ? clinic.features.split(',').map(Number) : [];
+		const features = clinic.features
+			? clinic.features.split(',').map(Number)
+			: [];
 
 		return {
 			id: clinic.id,

@@ -62,9 +62,7 @@ export async function getMedicationList(
 		);
 	}
 	if (body.cityIds?.length > 0) {
-		whereFilters.push(
-			`cities.id IN (${buildInPlaceholders(body.cityIds)})`,
-		);
+		whereFilters.push(`cities.id IN (${buildInPlaceholders(body.cityIds)})`);
 	}
 	if (body.name && validateName(body, 'api/medications/list')) {
 		const nameField = getLocalizedNameField(locale) || 'name_en';
@@ -125,10 +123,7 @@ export async function getMedicationList(
 	const connection = await getConnection();
 	let totalCount = 0;
 	if (usePagination) {
-		const [countRows] = await connection.execute(
-			totalCountQuery,
-			queryParams,
-		);
+		const [countRows] = await connection.execute(totalCountQuery, queryParams);
 		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
 	}
 	const [medicationRows] = await connection.execute(

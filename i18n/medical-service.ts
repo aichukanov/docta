@@ -1,6 +1,6 @@
 export default {
 	messages: {
-		en: {
+		'en': {
 			ServiceName: 'Service name',
 			InsertServiceName: 'Enter service name',
 			MedicalServices: 'Medical Services in Montenegro',
@@ -27,7 +27,7 @@ export default {
 			MedicalServicesListDescriptionCategoryCity:
 				'{category} services in {city} — search by name or clinic. Compare prices and clinic locations on the map.',
 		},
-		ru: {
+		'ru': {
 			ServiceName: 'Название услуги',
 			InsertServiceName: 'Введите название услуги',
 			MedicalServices: 'Медицинские услуги в Черногории',
@@ -36,8 +36,10 @@ export default {
 			MedicalServicesCityClinic: 'Медицинские услуги клиники {clinic} в {city}',
 			MedicalServicesCategory: '{category} в Черногории',
 			MedicalServicesCategoryCity: '{category} в {city}',
-			MedicalServicesCategoryClinic: '{category} в клинике {clinic} в Черногории',
-			MedicalServicesCategoryCityClinic: '{category} в клинике {clinic} в {city}',
+			MedicalServicesCategoryClinic:
+				'{category} в клинике {clinic} в Черногории',
+			MedicalServicesCategoryCityClinic:
+				'{category} в клинике {clinic} в {city}',
 
 			LoadingMedicalServices: 'Загрузка услуг...',
 			NoMedicalServicesFound: 'Услуги не найдены',
@@ -54,7 +56,7 @@ export default {
 			MedicalServicesListDescriptionCategoryCity:
 				'{category} в {city} — поиск по названию или клинике. Сравните цены и адреса клиник на карте.',
 		},
-		sr: {
+		'sr': {
 			ServiceName: 'Ime usluge',
 			InsertServiceName: 'Unesite ime usluge',
 			MedicalServices: 'Medicinske usluge u Crnoj Gori',
@@ -65,8 +67,10 @@ export default {
 				'Medicinske usluge u klinici {clinic} u {city}',
 			MedicalServicesCategory: '{category} u Crnoj Gori',
 			MedicalServicesCategoryCity: '{category} u {city}',
-			MedicalServicesCategoryClinic: '{category} u klinici {clinic} u Crnoj Gori',
-			MedicalServicesCategoryCityClinic: '{category} u klinici {clinic} u {city}',
+			MedicalServicesCategoryClinic:
+				'{category} u klinici {clinic} u Crnoj Gori',
+			MedicalServicesCategoryCityClinic:
+				'{category} u klinici {clinic} u {city}',
 
 			LoadingMedicalServices: 'Učitavanje usluga...',
 			NoMedicalServicesFound: 'Usluge nisu pronađene',
@@ -83,7 +87,7 @@ export default {
 			MedicalServicesListDescriptionCategoryCity:
 				'{category} u {city} — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
 		},
-		de: {
+		'de': {
 			ServiceName: 'Dienstleistungsname',
 			InsertServiceName: 'Dienstleistungsname eingeben',
 			MedicalServices: 'Medizinische Dienstleistungen in Montenegro',
@@ -113,7 +117,7 @@ export default {
 			MedicalServicesListDescriptionCategoryCity:
 				'{category} in {city} — Suche nach Name oder Klinik. Vergleichen Sie Preise und Klinikstandorte auf der Karte.',
 		},
-		tr: {
+		'tr': {
 			ServiceName: 'Hizmet adı',
 			InsertServiceName: 'Hizmet adını girin',
 			MedicalServices: "Karadağ'da Tıbbi Hizmetler",
@@ -123,7 +127,8 @@ export default {
 				'{city} şehrinde {clinic} kliniğinde Tıbbi Hizmetler',
 			MedicalServicesCategory: "Karadağ'da {category}",
 			MedicalServicesCategoryCity: "{city}'de {category}",
-			MedicalServicesCategoryClinic: "Karadağ'da {clinic} kliniğinde {category}",
+			MedicalServicesCategoryClinic:
+				"Karadağ'da {clinic} kliniğinde {category}",
 			MedicalServicesCategoryCityClinic:
 				"{city}'de {clinic} kliniğinde {category}",
 
@@ -146,18 +151,23 @@ export default {
 			InsertServiceName: 'Унесите име услуге',
 			MedicalServices: 'Медицинске услуге у Црној Гори',
 			MedicalServicesCity: 'Медицинске услуге у {city}',
-			MedicalServicesClinic: 'Медицинске услуге у клиници {clinic} у Црној Гори',
-			MedicalServicesCityClinic: 'Медицинске услуге у клиници {clinic} у {city}',
+			MedicalServicesClinic:
+				'Медицинске услуге у клиници {clinic} у Црној Гори',
+			MedicalServicesCityClinic:
+				'Медицинске услуге у клиници {clinic} у {city}',
 			MedicalServicesCategory: '{category} у Црној Гори',
 			MedicalServicesCategoryCity: '{category} у {city}',
-			MedicalServicesCategoryClinic: '{category} у клиници {clinic} у Црној Гори',
-			MedicalServicesCategoryCityClinic: '{category} у клиници {clinic} у {city}',
+			MedicalServicesCategoryClinic:
+				'{category} у клиници {clinic} у Црној Гори',
+			MedicalServicesCategoryCityClinic:
+				'{category} у клиници {clinic} у {city}',
 
 			LoadingMedicalServices: 'Учитавање услуга...',
 			NoMedicalServicesFound: 'Услуге нису пронађене',
 			ToSearchPage: 'На страницу претраге',
 			MedicalServiceDescriptionCity: '{name} — медицинска услуга у {city}',
-			MedicalServiceDescriptionDefault: '{name} — медицинска услуга у Црној Гори',
+			MedicalServiceDescriptionDefault:
+				'{name} — медицинска услуга у Црној Гори',
 			MedicalServicesListDescription:
 				'Пронађите медицинске услуге у Црној Гори по имену, граду или клиници. Упоредите цене и локације клиника на мапи.',
 			MedicalServicesListDescriptionCity:

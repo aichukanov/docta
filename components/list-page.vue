@@ -66,7 +66,6 @@ const routeWithParams = computed(() => {
 	};
 });
 
-
 const normalizeQuery = (query: Record<string, any>) => {
 	const normalized: Record<string, string | string[]> = {};
 	Object.keys(query)

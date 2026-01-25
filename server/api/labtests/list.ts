@@ -68,18 +68,24 @@ export async function getLabTestList(
 			return { items: [], totalCount: 0 };
 		}
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM lab_test_categories_relations ltcr WHERE ltcr.lab_test_id = lt.id AND ltcr.category_id IN (${buildInPlaceholders(body.categoryIds)}))`,
+			`EXISTS (SELECT 1 FROM lab_test_categories_relations ltcr WHERE ltcr.lab_test_id = lt.id AND ltcr.category_id IN (${buildInPlaceholders(
+				body.categoryIds,
+			)}))`,
 		);
 	}
 
 	if (body.clinicIds?.length > 0) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f WHERE clt_f.lab_test_id = lt.id AND clt_f.clinic_id IN (${buildInPlaceholders(body.clinicIds)}))`,
+			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f WHERE clt_f.lab_test_id = lt.id AND clt_f.clinic_id IN (${buildInPlaceholders(
+				body.clinicIds,
+			)}))`,
 		);
 	}
 	if (body.cityIds?.length > 0) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f JOIN clinics c_f ON clt_f.clinic_id = c_f.id WHERE clt_f.lab_test_id = lt.id AND c_f.city_id IN (${buildInPlaceholders(body.cityIds)}))`,
+			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f JOIN clinics c_f ON clt_f.clinic_id = c_f.id WHERE clt_f.lab_test_id = lt.id AND c_f.city_id IN (${buildInPlaceholders(
+				body.cityIds,
+			)}))`,
 		);
 	}
 	if (body.name && validateName(body, 'api/labtests/list')) {
@@ -140,10 +146,7 @@ export async function getLabTestList(
 	const connection = await getConnection();
 	let totalCount = 0;
 	if (usePagination) {
-		const [countRows] = await connection.execute(
-			totalCountQuery,
-			queryParams,
-		);
+		const [countRows] = await connection.execute(totalCountQuery, queryParams);
 		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
 	}
 	const [labTestRows] = await connection.execute(labTestsQuery, queryParams);

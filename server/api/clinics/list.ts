@@ -69,14 +69,14 @@ export async function getClinicList(
 	};
 
 	if (body.cityIds?.length > 0) {
-		whereFilters.push(
-			`c.city_id IN (${buildInPlaceholders(body.cityIds)})`,
-		);
+		whereFilters.push(`c.city_id IN (${buildInPlaceholders(body.cityIds)})`);
 	}
 
 	if (body.languageIds?.length > 0) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM clinic_languages cl_f WHERE cl_f.clinic_id = c.id AND cl_f.language_id IN (${buildInPlaceholders(body.languageIds)}))`,
+			`EXISTS (SELECT 1 FROM clinic_languages cl_f WHERE cl_f.clinic_id = c.id AND cl_f.language_id IN (${buildInPlaceholders(
+				body.languageIds,
+			)}))`,
 		);
 	}
 
@@ -150,10 +150,7 @@ export async function getClinicList(
 	const connection = await getConnection();
 	let totalCount = 0;
 	if (usePagination) {
-		const [countRows] = await connection.execute(
-			totalCountQuery,
-			queryParams,
-		);
+		const [countRows] = await connection.execute(totalCountQuery, queryParams);
 		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
 	}
 	const [clinics] = await connection.execute(clinicsQuery, queryParams);

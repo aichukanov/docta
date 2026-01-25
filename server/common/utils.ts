@@ -33,7 +33,13 @@ export function getPriceOrderBySQL(tableAlias: string = ''): string {
 
 export function parseClinicPricesData(
 	clinicPricesData: string | null,
-): Array<{ clinicId: number; price: number | null; priceMin: number | null; priceMax: number | null; code: string | null }> {
+): Array<{
+	clinicId: number;
+	price: number | null;
+	priceMin: number | null;
+	priceMax: number | null;
+	code: string | null;
+}> {
 	if (!clinicPricesData) {
 		return [];
 	}

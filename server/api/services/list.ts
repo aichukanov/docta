@@ -60,12 +60,16 @@ export async function getMedicalServiceList(
 
 	if (body.clinicIds?.length > 0) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f WHERE cms_f.medical_service_id = ms.id AND cms_f.clinic_id IN (${buildInPlaceholders(body.clinicIds)}))`,
+			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f WHERE cms_f.medical_service_id = ms.id AND cms_f.clinic_id IN (${buildInPlaceholders(
+				body.clinicIds,
+			)}))`,
 		);
 	}
 	if (body.cityIds?.length > 0) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f JOIN clinics c_f ON cms_f.clinic_id = c_f.id WHERE cms_f.medical_service_id = ms.id AND c_f.city_id IN (${buildInPlaceholders(body.cityIds)}))`,
+			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f JOIN clinics c_f ON cms_f.clinic_id = c_f.id WHERE cms_f.medical_service_id = ms.id AND c_f.city_id IN (${buildInPlaceholders(
+				body.cityIds,
+			)}))`,
 		);
 	}
 	if (
@@ -73,7 +77,9 @@ export async function getMedicalServiceList(
 		validateServiceCategoryIds(body, 'api/services/list')
 	) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM medical_service_categories_relations mscr_f WHERE mscr_f.medical_service_id = ms.id AND mscr_f.medical_service_category_id IN (${buildInPlaceholders(body.serviceCategoryIds)}))`,
+			`EXISTS (SELECT 1 FROM medical_service_categories_relations mscr_f WHERE mscr_f.medical_service_id = ms.id AND mscr_f.medical_service_category_id IN (${buildInPlaceholders(
+				body.serviceCategoryIds,
+			)}))`,
 		);
 	}
 	if (body.name && validateName(body, 'api/services/list')) {
@@ -134,10 +140,7 @@ export async function getMedicalServiceList(
 	const connection = await getConnection();
 	let totalCount = 0;
 	if (usePagination) {
-		const [countRows] = await connection.execute(
-			totalCountQuery,
-			queryParams,
-		);
+		const [countRows] = await connection.execute(totalCountQuery, queryParams);
 		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
 	}
 	const [medicalServiceRows] = await connection.execute(

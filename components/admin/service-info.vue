@@ -309,47 +309,44 @@ watch(serviceId, async (newId) => {
 				>
 			</div>
 
-		<div
-			class="specialty-section"
-			:class="{ modified: specialtyIdsModified }"
-		>
-			<label>Специальности</label>
-			<el-select
-				v-model="serviceModel.specialtyIds"
-				filterable
-				multiple
-				placeholder="Выберите специальности"
-				class="specialty-select"
+			<div
+				class="specialty-section"
+				:class="{ modified: specialtyIdsModified }"
 			>
-				<el-option
-					v-for="spec in specialtyOptions"
-					:key="spec.value"
-					:label="spec.label"
-					:value="spec.value"
-				/>
-			</el-select>
-		</div>
+				<label>Специальности</label>
+				<el-select
+					v-model="serviceModel.specialtyIds"
+					filterable
+					multiple
+					placeholder="Выберите специальности"
+					class="specialty-select"
+				>
+					<el-option
+						v-for="spec in specialtyOptions"
+						:key="spec.value"
+						:label="spec.label"
+						:value="spec.value"
+					/>
+				</el-select>
+			</div>
 
-		<div
-			class="category-section"
-			:class="{ modified: categoryIdsModified }"
-		>
-			<label>Категории услуг</label>
-			<el-select
-				v-model="serviceModel.categoryIds"
-				filterable
-				multiple
-				placeholder="Выберите категории"
-				class="category-select"
-			>
-				<el-option
-					v-for="cat in categoryOptions"
-					:key="cat.value"
-					:label="cat.label"
-					:value="cat.value"
-				/>
-			</el-select>
-		</div>
+			<div class="category-section" :class="{ modified: categoryIdsModified }">
+				<label>Категории услуг</label>
+				<el-select
+					v-model="serviceModel.categoryIds"
+					filterable
+					multiple
+					placeholder="Выберите категории"
+					class="category-select"
+				>
+					<el-option
+						v-for="cat in categoryOptions"
+						:key="cat.value"
+						:label="cat.label"
+						:value="cat.value"
+					/>
+				</el-select>
+			</div>
 
 			<div
 				class="clinic-prices-section"

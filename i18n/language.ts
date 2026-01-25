@@ -2,7 +2,7 @@ import { LanguageId } from '~/enums/language';
 
 export default {
 	messages: {
-		en: {
+		'en': {
 			ConsultationLanguage: 'Consultation Language',
 			Languages: 'Languages',
 			AnyLanguage: 'Any language',
@@ -29,7 +29,7 @@ export default {
 			[`language_${LanguageId.FR}_genitive`]: 'french',
 			[`language_${LanguageId.FR}_prepositional`]: 'French',
 		},
-		ru: {
+		'ru': {
 			ConsultationLanguage: 'Язык приема',
 			Languages: 'Языки',
 			AnyLanguage: 'Любой язык',
@@ -56,7 +56,7 @@ export default {
 			[`language_${LanguageId.FR}_genitive`]: 'французским',
 			[`language_${LanguageId.FR}_prepositional`]: 'французском',
 		},
-		sr: {
+		'sr': {
 			ConsultationLanguage: 'Jezik konsultacije',
 			Languages: 'Jezici',
 			AnyLanguage: 'Bilo koji jezik',
@@ -83,7 +83,7 @@ export default {
 			[`language_${LanguageId.FR}_genitive`]: 'francuski',
 			[`language_${LanguageId.FR}_prepositional`]: 'francuskom',
 		},
-		de: {
+		'de': {
 			ConsultationLanguage: 'Beratungssprache',
 			Languages: 'Sprachen',
 			AnyLanguage: 'Beliebiger Sprache',
@@ -110,7 +110,7 @@ export default {
 			[`language_${LanguageId.FR}_genitive`]: 'Französisch',
 			[`language_${LanguageId.FR}_prepositional`]: 'Französisch',
 		},
-		tr: {
+		'tr': {
 			ConsultationLanguage: 'Görüşme dili',
 			Languages: 'Diller',
 			AnyLanguage: 'Herhangi bir dil',

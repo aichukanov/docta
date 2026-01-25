@@ -57,4 +57,3 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 		});
 	}
 });
-

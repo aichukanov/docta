@@ -50,19 +50,19 @@ export default defineEventHandler(
 
 			const service = serviceRows[0];
 
-		// Получаем специальности
-		const [specialtyRows]: any = await connection.execute(
-			`SELECT specialty_id FROM medical_services_specialties WHERE medical_service_id = ?`,
-			[body.serviceId],
-		);
+			// Получаем специальности
+			const [specialtyRows]: any = await connection.execute(
+				`SELECT specialty_id FROM medical_services_specialties WHERE medical_service_id = ?`,
+				[body.serviceId],
+			);
 
-		// Получаем категории
-		const [categoryRows]: any = await connection.execute(
-			`SELECT medical_service_category_id FROM medical_service_categories_relations WHERE medical_service_id = ?`,
-			[body.serviceId],
-		);
+			// Получаем категории
+			const [categoryRows]: any = await connection.execute(
+				`SELECT medical_service_category_id FROM medical_service_categories_relations WHERE medical_service_id = ?`,
+				[body.serviceId],
+			);
 
-		// Получаем цены клиник
+			// Получаем цены клиник
 			const [clinicPriceRows]: any = await connection.execute(
 				`SELECT clinic_id, price, price_min, price_max, code FROM clinic_medical_services 
 				 WHERE medical_service_id = ? ORDER BY clinic_id`,
@@ -79,19 +79,21 @@ export default defineEventHandler(
 				code: r.code,
 			}));
 
-		return {
-			id: service.id,
-			name_en: service.name_en || '',
-			name_sr: service.name_sr || '',
-			name_sr_cyrl: service.name_sr_cyrl || '',
-			name_ru: service.name_ru || '',
-			name_de: service.name_de || '',
-			name_tr: service.name_tr || '',
-			sort_order: service.sort_order,
-			specialtyIds: specialtyRows.map((r: any) => r.specialty_id),
-			categoryIds: categoryRows.map((r: any) => r.medical_service_category_id),
-			clinicPrices,
-		};
+			return {
+				id: service.id,
+				name_en: service.name_en || '',
+				name_sr: service.name_sr || '',
+				name_sr_cyrl: service.name_sr_cyrl || '',
+				name_ru: service.name_ru || '',
+				name_de: service.name_de || '',
+				name_tr: service.name_tr || '',
+				sort_order: service.sort_order,
+				specialtyIds: specialtyRows.map((r: any) => r.specialty_id),
+				categoryIds: categoryRows.map(
+					(r: any) => r.medical_service_category_id,
+				),
+				clinicPrices,
+			};
 		} catch (error) {
 			console.error('API Error - service admin details:', error);
 			throw createError({

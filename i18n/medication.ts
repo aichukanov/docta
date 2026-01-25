@@ -1,6 +1,6 @@
 export default {
 	messages: {
-		en: {
+		'en': {
 			MedicationName: 'Medication name',
 			InsertMedicationName: 'Enter medication name',
 			Medications: 'Medications in Montenegro',
@@ -18,7 +18,7 @@ export default {
 			MedicationsListDescriptionCity:
 				'Medications in {city} — search by name or clinic. Compare prices and pharmacy locations on the map.',
 		},
-		ru: {
+		'ru': {
 			MedicationName: 'Название лекарства',
 			InsertMedicationName: 'Введите название лекарства',
 			Medications: 'Лекарства в Черногории',
@@ -36,7 +36,7 @@ export default {
 			MedicationsListDescriptionCity:
 				'Лекарства в {city} — поиск по названию или аптеке. Сравните цены и адреса на карте.',
 		},
-		sr: {
+		'sr': {
 			MedicationName: 'Ime lijeka',
 			InsertMedicationName: 'Unesite ime lijeka',
 			Medications: 'Lijekovi u Crnoj Gori',
@@ -54,7 +54,7 @@ export default {
 			MedicationsListDescriptionCity:
 				'Lekovi u {city} — pretraga po imenu ili apoteci. Uporedite cene i lokacije na mapi.',
 		},
-		de: {
+		'de': {
 			MedicationName: 'Medikamentenname',
 			InsertMedicationName: 'Medikamentenname eingeben',
 			Medications: 'Medikamente in Montenegro',
@@ -72,7 +72,7 @@ export default {
 			MedicationsListDescriptionCity:
 				'Medikamente in {city} — Suche nach Name oder Apotheke. Vergleichen Sie Preise und Standorte auf der Karte.',
 		},
-		tr: {
+		'tr': {
 			MedicationName: 'İlaç adı',
 			InsertMedicationName: 'İlaç adını girin',
 			Medications: "Karadağ'da İlaçlar",

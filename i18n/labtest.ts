@@ -1,6 +1,6 @@
 export default {
 	messages: {
-		en: {
+		'en': {
 			LabTestName: 'Test name',
 			InsertLabTestName: 'Enter test name',
 			LabTests: 'Laboratory Tests in Montenegro',
@@ -26,7 +26,7 @@ export default {
 				'{category} tests in {city} — search by name or clinic. Compare prices and clinic locations on the map.',
 			Synonyms: 'Also known as',
 		},
-		ru: {
+		'ru': {
 			LabTestName: 'Название анализа',
 			InsertLabTestName: 'Введите название анализа',
 			LabTests: 'Лабораторные анализы в Черногории',
@@ -52,7 +52,7 @@ export default {
 				'{category} в {city} — поиск по названию или клинике. Сравните цены и адреса клиник на карте.',
 			Synonyms: 'Также известен как',
 		},
-		sr: {
+		'sr': {
 			LabTestName: 'Ime analize',
 			InsertLabTestName: 'Unesite ime analize',
 			LabTests: 'Laboratorijske analize u Crnoj Gori',
@@ -78,7 +78,7 @@ export default {
 				'{category} u {city} — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
 			Synonyms: 'Poznato i kao',
 		},
-		de: {
+		'de': {
 			LabTestName: 'Testname',
 			InsertLabTestName: 'Testname eingeben',
 			LabTests: 'Laboruntersuchungen in Montenegro',
@@ -104,7 +104,7 @@ export default {
 				'{category} in {city} — Suche nach Name oder Klinik. Vergleichen Sie Preise und Klinikstandorte auf der Karte.',
 			Synonyms: 'Auch bekannt als',
 		},
-		tr: {
+		'tr': {
 			LabTestName: 'Test adı',
 			InsertLabTestName: 'Test adını girin',
 			LabTests: "Karadağ'da Laboratuvar Testleri",

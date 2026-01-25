@@ -87,47 +87,47 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				);
 			}
 
-		for (const specialtyId of specialtiesToAdd) {
-			await connection.execute(
-				'INSERT INTO medical_services_specialties (medical_service_id, specialty_id) VALUES (?, ?)',
-				[body.id, specialtyId],
+			for (const specialtyId of specialtiesToAdd) {
+				await connection.execute(
+					'INSERT INTO medical_services_specialties (medical_service_id, specialty_id) VALUES (?, ?)',
+					[body.id, specialtyId],
+				);
+			}
+
+			// 3. Обновляем категории (только дифф)
+			const [existingCategories]: any = await connection.execute(
+				'SELECT medical_service_category_id FROM medical_service_categories_relations WHERE medical_service_id = ?',
+				[body.id],
 			);
-		}
+			const existingCategoryIds = existingCategories.map(
+				(row: any) => row.medical_service_category_id,
+			);
+			const newCategoryIds = body.categoryIds || [];
 
-		// 3. Обновляем категории (только дифф)
-		const [existingCategories]: any = await connection.execute(
-			'SELECT medical_service_category_id FROM medical_service_categories_relations WHERE medical_service_id = ?',
-			[body.id],
-		);
-		const existingCategoryIds = existingCategories.map(
-			(row: any) => row.medical_service_category_id,
-		);
-		const newCategoryIds = body.categoryIds || [];
+			const categoriesToRemove = existingCategoryIds.filter(
+				(id: number) => !newCategoryIds.includes(id),
+			);
+			const categoriesToAdd = newCategoryIds.filter(
+				(id: number) => !existingCategoryIds.includes(id),
+			);
 
-		const categoriesToRemove = existingCategoryIds.filter(
-			(id: number) => !newCategoryIds.includes(id),
-		);
-		const categoriesToAdd = newCategoryIds.filter(
-			(id: number) => !existingCategoryIds.includes(id),
-		);
-
-		if (categoriesToRemove.length > 0) {
-			const placeholders = categoriesToRemove.map(() => '?').join(',');
-			await connection.execute(
-				`DELETE FROM medical_service_categories_relations 
+			if (categoriesToRemove.length > 0) {
+				const placeholders = categoriesToRemove.map(() => '?').join(',');
+				await connection.execute(
+					`DELETE FROM medical_service_categories_relations 
 				 WHERE medical_service_id = ? AND medical_service_category_id IN (${placeholders})`,
-				[body.id, ...categoriesToRemove],
-			);
-		}
+					[body.id, ...categoriesToRemove],
+				);
+			}
 
-		for (const categoryId of categoriesToAdd) {
-			await connection.execute(
-				'INSERT INTO medical_service_categories_relations (medical_service_id, medical_service_category_id) VALUES (?, ?)',
-				[body.id, categoryId],
-			);
-		}
+			for (const categoryId of categoriesToAdd) {
+				await connection.execute(
+					'INSERT INTO medical_service_categories_relations (medical_service_id, medical_service_category_id) VALUES (?, ?)',
+					[body.id, categoryId],
+				);
+			}
 
-		// 4. Обновляем цены клиник (только дифф)
+			// 4. Обновляем цены клиник (только дифф)
 			const [existingClinicPrices]: any = await connection.execute(
 				'SELECT clinic_id, price, price_min, price_max, code FROM clinic_medical_services WHERE medical_service_id = ?',
 				[body.id],

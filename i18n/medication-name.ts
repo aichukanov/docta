@@ -2,7 +2,7 @@ import { Medication } from '~/enums/medication';
 
 export default {
 	messages: {
-		en: {
+		'en': {
 			// Обезболивающие и противовоспалительные
 			[`medication_${Medication.PARACETAMOL}`]: 'Paracetamol',
 			[`medication_${Medication.IBUPROFEN}`]: 'Ibuprofen',
@@ -139,7 +139,7 @@ export default {
 			[`medication_${Medication.MORPHINE}`]: 'Morphine',
 			[`medication_${Medication.BACLOFEN}`]: 'Baclofen',
 		},
-		ru: {
+		'ru': {
 			// Обезболивающие и противовоспалительные
 			[`medication_${Medication.PARACETAMOL}`]: 'Парацетамол',
 			[`medication_${Medication.IBUPROFEN}`]: 'Ибупрофен',
@@ -276,7 +276,7 @@ export default {
 			[`medication_${Medication.MORPHINE}`]: 'Морфин',
 			[`medication_${Medication.BACLOFEN}`]: 'Баклофен',
 		},
-		sr: {
+		'sr': {
 			// Обезболивающие и противовоспалительные
 			[`medication_${Medication.PARACETAMOL}`]: 'Paracetamol',
 			[`medication_${Medication.IBUPROFEN}`]: 'Ibuprofen',

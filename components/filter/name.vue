@@ -1,6 +1,11 @@
 <template>
 	<FilterWrapper :label="label">
-		<el-input v-model="localName" :placeholder="placeholder" :aria-label="label" size="large" />
+		<el-input
+			v-model="localName"
+			:placeholder="placeholder"
+			:aria-label="label"
+			size="large"
+		/>
 	</FilterWrapper>
 </template>
 

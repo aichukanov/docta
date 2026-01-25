@@ -56,4 +56,3 @@ withDefaults(defineProps<Props>(), {
 	color: 'currentColor',
 });
 </script>
-

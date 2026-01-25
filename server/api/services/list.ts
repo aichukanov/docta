@@ -12,6 +12,7 @@ import {
 	validateCityIds,
 	validateServiceCategoryIds,
 } from '~/common/validation';
+import { LIST_PAGE_SIZE } from '~/common/constants';
 
 export default defineEventHandler(async (event): Promise<ClinicServiceList> => {
 	try {
@@ -40,44 +41,70 @@ export async function getMedicalServiceList(
 		serviceCategoryIds?: number[];
 		name?: string;
 		locale?: string;
+		page?: number;
 	} = {},
 ) {
-	const whereFilters = [];
+	const whereFilters: string[] = [];
+	const queryParams: Array<number | string> = [];
 	const locale = body.locale || 'en';
-	let joinCategory = '';
+	const usePagination = body.page != null;
+	const pageRaw = Number(body.page);
+	const pageSize = LIST_PAGE_SIZE;
+	const page = Math.max(Number.isFinite(pageRaw) ? pageRaw : 1, 1);
+	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
+
+	const buildInPlaceholders = (values: Array<number | string>) => {
+		queryParams.push(...values);
+		return values.map(() => '?').join(',');
+	};
 
 	if (body.clinicIds?.length > 0) {
-		const idList = body.clinicIds.join(',');
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f WHERE cms_f.medical_service_id = ms.id AND cms_f.clinic_id IN (${idList}))`,
+			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f WHERE cms_f.medical_service_id = ms.id AND cms_f.clinic_id IN (${buildInPlaceholders(body.clinicIds)}))`,
 		);
 	}
 	if (body.cityIds?.length > 0) {
-		const idList = body.cityIds.join(',');
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f JOIN clinics c_f ON cms_f.clinic_id = c_f.id WHERE cms_f.medical_service_id = ms.id AND c_f.city_id IN (${idList}))`,
+			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f JOIN clinics c_f ON cms_f.clinic_id = c_f.id WHERE cms_f.medical_service_id = ms.id AND c_f.city_id IN (${buildInPlaceholders(body.cityIds)}))`,
 		);
 	}
 	if (
 		body.serviceCategoryIds?.length > 0 &&
 		validateServiceCategoryIds(body, 'api/services/list')
 	) {
-		const idList = body.serviceCategoryIds.join(',');
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM medical_service_categories_relations mscr_f WHERE mscr_f.medical_service_id = ms.id AND mscr_f.medical_service_category_id IN (${idList}))`,
+			`EXISTS (SELECT 1 FROM medical_service_categories_relations mscr_f WHERE mscr_f.medical_service_id = ms.id AND mscr_f.medical_service_category_id IN (${buildInPlaceholders(body.serviceCategoryIds)}))`,
 		);
 	}
 	if (body.name && validateName(body, 'api/services/list')) {
 		const nameField = getLocalizedNameField(locale) || 'name_en';
+		const namePattern = `%${body.name}%`;
 		whereFilters.push(
-			`(ms.name_en LIKE '%${body.name}%' OR ms.${nameField} LIKE '%${body.name}%' OR ms.name_sr LIKE '%${body.name}%' OR ms.name_sr_cyrl LIKE '%${body.name}%' OR ms.name_ru LIKE '%${body.name}%' OR ms.name_de LIKE '%${body.name}%' OR ms.name_tr LIKE '%${body.name}%')`,
+			`(ms.name_en LIKE ? OR ms.${nameField} LIKE ? OR ms.name_sr LIKE ? OR ms.name_sr_cyrl LIKE ? OR ms.name_ru LIKE ? OR ms.name_de LIKE ? OR ms.name_tr LIKE ?)`,
+		);
+		queryParams.push(
+			namePattern,
+			namePattern,
+			namePattern,
+			namePattern,
+			namePattern,
+			namePattern,
+			namePattern,
 		);
 	}
 
 	const whereFiltersString =
 		whereFilters.length > 0 ? 'WHERE ' + whereFilters.join(' AND ') : '';
+	const paginationClause = usePagination
+		? `LIMIT ${pageSize} OFFSET ${offset}`
+		: '';
 
 	const priceOrder = getPriceOrderBySQL('cms');
+	const totalCountQuery = `
+		SELECT COUNT(DISTINCT ms.id) as totalCount
+		FROM medical_services ms
+		${whereFiltersString};
+	`;
 	const medicalServicesQuery = `
 		SELECT
 			ms.id,
@@ -100,11 +127,23 @@ export async function getMedicalServiceList(
 			) as categoryIds
 		FROM medical_services ms
 		${whereFiltersString}
-		ORDER BY ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
+		ORDER BY ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC
+		${paginationClause};
 	`;
 
 	const connection = await getConnection();
-	const [medicalServiceRows] = await connection.execute(medicalServicesQuery);
+	let totalCount = 0;
+	if (usePagination) {
+		const [countRows] = await connection.execute(
+			totalCountQuery,
+			queryParams,
+		);
+		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
+	}
+	const [medicalServiceRows] = await connection.execute(
+		medicalServicesQuery,
+		queryParams,
+	);
 	await connection.end();
 
 	const items = medicalServiceRows.map((row: any) => {
@@ -137,6 +176,6 @@ export async function getMedicalServiceList(
 
 	return {
 		items,
-		totalCount: items.length,
+		totalCount: usePagination ? totalCount : items.length,
 	};
 }

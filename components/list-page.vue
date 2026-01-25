@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
 import { CITY_COORDINATES } from '~/enums/cities';
+import { LIST_PAGE_SIZE } from '~/common/constants';
 import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
 import { LanguageId } from '~/enums/language';
 
@@ -50,7 +51,6 @@ const router = useRouter();
 const route = useRoute();
 
 const mapRef = ref<HTMLElement>();
-const PAGE_LIMIT = 20;
 const pageNumber = ref(+route.query.page || 1);
 const isSyncingFromRoute = ref(false);
 
@@ -66,12 +66,6 @@ const routeWithParams = computed(() => {
 	};
 });
 
-const listOnPage = computed(() => {
-	return props.list.slice(
-		(pageNumber.value - 1) * PAGE_LIMIT,
-		pageNumber.value * PAGE_LIMIT,
-	);
-});
 
 const normalizeQuery = (query: Record<string, any>) => {
 	const normalized: Record<string, string | string[]> = {};
@@ -221,7 +215,7 @@ onMounted(async () => {
 							:aria-label="t('AriaResultsList')"
 						>
 							<li
-								v-for="item in listOnPage"
+								v-for="item in list"
 								:key="item.id"
 								role="listitem"
 								class="results-list-item"
@@ -255,7 +249,7 @@ onMounted(async () => {
 					<nav :aria-label="t('AriaPagination')">
 						<Pagination
 							:total="totalCount"
-							:page-size="PAGE_LIMIT"
+							:page-size="LIST_PAGE_SIZE"
 							v-model:current-page="pageNumber"
 						/>
 					</nav>

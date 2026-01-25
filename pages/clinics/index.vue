@@ -5,7 +5,6 @@ import {
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
 import { SITE_URL, OG_IMAGE } from '~/common/constants';
-import { getLocalizedName } from '~/common/utils';
 import type { ClinicData } from '~/interfaces/clinic';
 
 import breadcrumbI18n from '~/i18n/breadcrumb';
@@ -26,6 +25,7 @@ const { t, locale } = useI18n({
 const { cityIds, languageIds, name, updateFromRoute, getRouteParams } =
 	useFilters();
 const route = useRoute();
+const pageNumber = computed(() => Number(route.query.page || 1));
 
 watch(
 	() => route.query,
@@ -40,6 +40,7 @@ const filterList = computed(() => ({
 	languageIds: languageIds.value,
 	name: name.value,
 	locale: locale.value,
+	page: pageNumber.value,
 }));
 
 const filterQuery = computed(() => getRouteParams().query);
@@ -52,39 +53,6 @@ const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
 		body: filterList,
 	},
 );
-
-const filteredClinics = computed(() => {
-	let filtered = clinicsList.value?.clinics || [];
-
-	// Filter by city
-	if (cityIds.value.length > 0) {
-		filtered = filtered.filter((clinic) =>
-			cityIds.value.includes(clinic.cityId),
-		);
-	}
-
-	// Filter by language
-	if (languageIds.value.length > 0) {
-		filtered = filtered.filter((clinic) => {
-			const clinicLanguageIds = clinic.languageIds
-				.split(',')
-				.map((id) => parseInt(id));
-			return languageIds.value.some((langId) =>
-				clinicLanguageIds.includes(langId),
-			);
-		});
-	}
-
-	// Filter by name
-	if (name.value) {
-		const searchTerm = name.value.toLowerCase();
-		filtered = filtered.filter((clinic) =>
-			getLocalizedName(clinic, locale.value).toLowerCase().includes(searchTerm),
-		);
-	}
-
-	return filtered;
-});
 
 const pageTitle = computed(() => {
 	if (languageIds.value.length === 1) {
@@ -109,7 +77,7 @@ const pageTitle = computed(() => {
 });
 
 const pageTitleWithCount = computed(() => {
-	return `${pageTitle.value} (${filteredClinics.value.length})`;
+	return `${pageTitle.value} (${clinicsList.value?.totalCount || 0})`;
 });
 
 const pageDescription = computed(() => {
@@ -141,7 +109,7 @@ const isFiltered = computed(() => {
 	);
 });
 watchEffect(() => {
-	if (filteredClinics.value) {
+	if (clinicsList.value) {
 		const pageUrl = `${SITE_URL}${route.fullPath}`;
 		schemaOrgStore.setSchemas([
 			...buildEntityListSchema({
@@ -150,8 +118,8 @@ watchEffect(() => {
 				locale: locale.value,
 				title: pageTitle.value,
 				description: pageDescription.value,
-				totalCount: filteredClinics.value.length,
-				items: filteredClinics.value,
+				totalCount: clinicsList.value.totalCount,
+				items: clinicsList.value.clinics,
 				buildPath: (clinic) => `/clinics/${clinic.id}`,
 				isFiltered: isFiltered.value,
 			}),
@@ -168,12 +136,12 @@ watchEffect(() => {
 	<ListPage
 		:pageTitle="pageTitleWithCount"
 		:pageDescription="pageDescription"
-		:list="filteredClinics"
-		:totalCount="filteredClinics.length"
+		:list="clinicsList?.clinics || []"
+		:totalCount="clinicsList?.totalCount || 0"
 		:isLoading="isLoadingClinics"
 		:filterQuery="filterQuery"
 		:cityIds="cityIds"
-		:mapClinics="filteredClinics"
+		:mapClinics="clinicsList?.clinics || []"
 	>
 		<template #filters>
 			<FilterName

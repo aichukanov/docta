@@ -32,6 +32,7 @@ const {
 } = useFilters();
 
 const route = useRoute();
+const pageNumber = computed(() => Number(route.query.page || 1));
 watch(
 	() => route.query,
 	(query) => {
@@ -46,6 +47,7 @@ const filterList = computed(() => ({
 	clinicIds: clinicIds.value,
 	name: name.value,
 	locale: locale.value,
+	page: pageNumber.value,
 }));
 
 const filterQuery = computed(() => getRouteParams().query);

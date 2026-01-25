@@ -12,6 +12,7 @@ import {
 	validateCategoryIds,
 	validateCityIds,
 } from '~/common/validation';
+import { LIST_PAGE_SIZE } from '~/common/constants';
 
 export default defineEventHandler(async (event): Promise<LabTestList> => {
 	try {
@@ -40,11 +41,22 @@ export async function getLabTestList(
 		categoryIds?: number[];
 		name?: string;
 		locale?: string;
+		page?: number;
 	} = {},
 ) {
-	const whereFilters = [];
-	const joins = [];
+	const whereFilters: string[] = [];
+	const queryParams: Array<number | string> = [];
 	const locale = body.locale || 'en';
+	const usePagination = body.page != null;
+	const pageRaw = Number(body.page);
+	const pageSize = LIST_PAGE_SIZE;
+	const page = Math.max(Number.isFinite(pageRaw) ? pageRaw : 1, 1);
+	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
+
+	const buildInPlaceholders = (values: Array<number | string>) => {
+		queryParams.push(...values);
+		return values.map(() => '?').join(',');
+	};
 
 	if (body.categoryIds?.length > 0) {
 		if (
@@ -55,40 +67,53 @@ export async function getLabTestList(
 		) {
 			return { items: [], totalCount: 0 };
 		}
-		const idList = body.categoryIds.join(',');
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM lab_test_categories_relations ltcr WHERE ltcr.lab_test_id = lt.id AND ltcr.category_id IN (${idList}))`,
+			`EXISTS (SELECT 1 FROM lab_test_categories_relations ltcr WHERE ltcr.lab_test_id = lt.id AND ltcr.category_id IN (${buildInPlaceholders(body.categoryIds)}))`,
 		);
 	}
 
 	if (body.clinicIds?.length > 0) {
-		const idList = body.clinicIds.join(',');
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f WHERE clt_f.lab_test_id = lt.id AND clt_f.clinic_id IN (${idList}))`,
+			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f WHERE clt_f.lab_test_id = lt.id AND clt_f.clinic_id IN (${buildInPlaceholders(body.clinicIds)}))`,
 		);
 	}
 	if (body.cityIds?.length > 0) {
-		const idList = body.cityIds.join(',');
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f JOIN clinics c_f ON clt_f.clinic_id = c_f.id WHERE clt_f.lab_test_id = lt.id AND c_f.city_id IN (${idList}))`,
+			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f JOIN clinics c_f ON clt_f.clinic_id = c_f.id WHERE clt_f.lab_test_id = lt.id AND c_f.city_id IN (${buildInPlaceholders(body.cityIds)}))`,
 		);
 	}
 	if (body.name && validateName(body, 'api/labtests/list')) {
 		const nameField = getLocalizedNameField(locale) || 'name_en';
+		const namePattern = `%${body.name}%`;
 		// Для sr-cyrl ищем также по синонимам на кириллице
 		const synonymsFilter =
 			locale === 'sr-cyrl'
-				? `EXISTS (SELECT 1 FROM lab_test_synonyms lts_f WHERE lts_f.lab_test_id = lt.id AND lts_f.another_name LIKE '%${body.name}%' AND lts_f.language IN ('sr-cyrl', 'sr'))`
-				: `EXISTS (SELECT 1 FROM lab_test_synonyms lts_f WHERE lts_f.lab_test_id = lt.id AND lts_f.another_name LIKE '%${body.name}%')`;
+				? `EXISTS (SELECT 1 FROM lab_test_synonyms lts_f WHERE lts_f.lab_test_id = lt.id AND lts_f.another_name LIKE ? AND lts_f.language IN ('sr-cyrl', 'sr'))`
+				: `EXISTS (SELECT 1 FROM lab_test_synonyms lts_f WHERE lts_f.lab_test_id = lt.id AND lts_f.another_name LIKE ?)`;
 		whereFilters.push(
-			`(lt.name_en LIKE '%${body.name}%' OR lt.${nameField} LIKE '%${body.name}%' OR lt.name_sr LIKE '%${body.name}%' OR lt.name_sr_cyrl LIKE '%${body.name}%' OR ${synonymsFilter})`,
+			`(lt.name_en LIKE ? OR lt.${nameField} LIKE ? OR lt.name_sr LIKE ? OR lt.name_sr_cyrl LIKE ? OR ${synonymsFilter})`,
+		);
+		queryParams.push(
+			namePattern,
+			namePattern,
+			namePattern,
+			namePattern,
+			namePattern,
 		);
 	}
 
 	const whereFiltersString =
 		whereFilters.length > 0 ? 'WHERE ' + whereFilters.join(' AND ') : '';
+	const paginationClause = usePagination
+		? `LIMIT ${pageSize} OFFSET ${offset}`
+		: '';
 
 	const priceOrder = getPriceOrderBySQL('clt');
+	const totalCountQuery = `
+		SELECT COUNT(DISTINCT lt.id) as totalCount
+		FROM lab_tests lt
+		${whereFiltersString};
+	`;
 	const labTestsQuery = `
 		SELECT
 			lt.id,
@@ -108,11 +133,20 @@ export async function getLabTestList(
 			 WHERE ltcr_cat.lab_test_id = lt.id) as categoryIds
 		FROM lab_tests lt
 		${whereFiltersString}
-		ORDER BY lt.name_en ASC;
+		ORDER BY lt.name_en ASC
+		${paginationClause};
 	`;
 
 	const connection = await getConnection();
-	const [labTestRows] = await connection.execute(labTestsQuery);
+	let totalCount = 0;
+	if (usePagination) {
+		const [countRows] = await connection.execute(
+			totalCountQuery,
+			queryParams,
+		);
+		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
+	}
+	const [labTestRows] = await connection.execute(labTestsQuery, queryParams);
 
 	// Получаем синонимы для всех анализов на выбранном языке
 	const labTestIds = labTestRows.map(({ id }: { id: number }) => id);
@@ -155,6 +189,6 @@ export async function getLabTestList(
 
 	return {
 		items,
-		totalCount: items.length,
+		totalCount: usePagination ? totalCount : items.length,
 	};
 }

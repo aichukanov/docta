@@ -34,6 +34,7 @@ const {
 } = useFilters();
 
 const route = useRoute();
+const pageNumber = computed(() => Number(route.query.page || 1));
 watch(
 	() => route.query,
 	(query) => {
@@ -50,6 +51,7 @@ const filterList = computed(() => ({
 	name: name.value,
 	locale: locale.value,
 	includeServices: true,
+	page: pageNumber.value,
 }));
 
 const filterQuery = computed(() => getRouteParams().query);
@@ -64,6 +66,14 @@ const [{ pending: isLoadingDoctors, data: doctorsList }] = await Promise.all([
 	}),
 	clinicsStore.fetchClinics(),
 ]);
+const doctorsData = computed(() => {
+	return (
+		doctorsList.value || {
+			doctors: [],
+			totalCount: 0,
+		}
+	);
+});
 
 const clinicName = computed(() => {
 	if (clinicIds.value.length === 1) {
@@ -180,11 +190,11 @@ const pageTitle = computed(() => {
 });
 
 const pageTitleWithCount = computed(() => {
-	return `${pageTitle.value} (${doctorsList.value?.totalCount})`;
+	return `${pageTitle.value} (${doctorsData.value.totalCount})`;
 });
 
 const pageDescription = computed(() => {
-	const count = doctorsList.value?.totalCount || 0;
+	const count = doctorsData.value.totalCount;
 	const hasFilters =
 		specialtyIds.value.length > 0 ||
 		cityIds.value.length > 0 ||
@@ -233,8 +243,8 @@ watchEffect(() => {
 				locale: locale.value,
 				title: pageTitle.value,
 				description: pageDescription.value,
-				totalCount: doctorsList.value.totalCount,
-				doctors: doctorsList.value.doctors,
+				totalCount: doctorsData.value.totalCount,
+				doctors: doctorsData.value.doctors,
 				isFiltered: isFiltered.value,
 				getSpecialtyName: (id) => t(`specialty_${id}`),
 			}),
@@ -251,8 +261,8 @@ watchEffect(() => {
 	<ListPage
 		:pageTitle="pageTitleWithCount"
 		:pageDescription="pageDescription"
-		:list="doctorsList.doctors"
-		:totalCount="doctorsList.totalCount"
+		:list="doctorsData.doctors"
+		:totalCount="doctorsData.totalCount"
 		:isLoading="isLoadingDoctors"
 		:filterQuery="filterQuery"
 		:cityIds="cityIds"
@@ -278,7 +288,7 @@ watchEffect(() => {
 		</template>
 
 		<template #tips>
-			<TipsList v-if="doctorsList.doctors.length <= 5">
+			<TipsList v-if="doctorsData.doctors.length <= 5">
 				<TipsDoctors :cityIds="cityIds" :specialtyIds="specialtyIds" />
 			</TipsList>
 		</template>

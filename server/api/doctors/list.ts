@@ -5,6 +5,7 @@ import {
 	type ClinicServicesMap,
 } from '~/server/common/services';
 import type { DoctorList } from '~/interfaces/doctor';
+import { LIST_PAGE_SIZE } from '~/common/constants';
 import {
 	validateBody,
 	validateSpecialtyIds,
@@ -19,22 +20,22 @@ export default defineEventHandler(async (event): Promise<DoctorList> => {
 
 		if (!validateBody(body, 'api/doctors/list')) {
 			setResponseStatus(event, 400, 'Invalid parameters');
-			return null;
+			return { doctors: [], totalCount: 0 };
 		}
 		if (body.specialtyIds && !validateSpecialtyIds(body, 'api/doctors/list')) {
 			setResponseStatus(event, 400, 'Invalid specialty');
-			return null;
+			return { doctors: [], totalCount: 0 };
 		}
 		if (body.cityIds && !validateCityIds(body, 'api/doctors/list')) {
 			setResponseStatus(event, 400, 'Invalid city');
-			return null;
+			return { doctors: [], totalCount: 0 };
 		}
 		if (
 			body.languageIds &&
 			!validateDoctorLanguageIds(body, 'api/doctors/list')
 		) {
 			setResponseStatus(event, 400, 'Invalid doctor language');
-			return null;
+			return { doctors: [], totalCount: 0 };
 		}
 
 		return getDoctorList(body);
@@ -58,54 +59,72 @@ export async function getDoctorList(
 		locale?: string;
 		includeAllLocales?: boolean;
 		includeServices?: boolean;
+		page?: number;
 	} = {},
 ) {
-	const whereFilters = [];
+	const whereFilters: string[] = [];
+	const queryParams: Array<number | string> = [];
 	const locale = body.locale || 'en';
+	const usePagination = body.page != null;
+	const pageRaw = Number(body.page);
+	const pageSize = LIST_PAGE_SIZE;
+	const page = Math.max(Number.isFinite(pageRaw) ? pageRaw : 1, 1);
+	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
+
+	const buildInPlaceholders = (values: Array<number | string>) => {
+		queryParams.push(...values);
+		return values.map(() => '?').join(',');
+	};
 
 	if (body.specialtyIds?.length > 0) {
-		const idList = body.specialtyIds.join(',');
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM doctor_specialties ds WHERE ds.doctor_id = d.id AND ds.specialty_id IN (${idList}))`,
+			`EXISTS (SELECT 1 FROM doctor_specialties ds WHERE ds.doctor_id = d.id AND ds.specialty_id IN (${buildInPlaceholders(body.specialtyIds)}))`,
 		);
 	}
 
 	if (body.cityIds?.length > 0) {
-		const idList = body.cityIds.join(',');
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinics c ON dc.clinic_id = c.id WHERE dc.doctor_id = d.id AND c.city_id IN (${idList}))`,
+			`EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinics c ON dc.clinic_id = c.id WHERE dc.doctor_id = d.id AND c.city_id IN (${buildInPlaceholders(body.cityIds)}))`,
 		);
 	}
 
 	if (body.languageIds?.length > 0) {
-		const idList = body.languageIds.join(',');
 		if (body.onlyDoctorLanguages) {
 			whereFilters.push(
-				`EXISTS (SELECT 1 FROM doctor_languages dl WHERE dl.doctor_id = d.id AND dl.language_id IN (${idList}))`,
+				`EXISTS (SELECT 1 FROM doctor_languages dl WHERE dl.doctor_id = d.id AND dl.language_id IN (${buildInPlaceholders(body.languageIds)}))`,
 			);
 		} else {
 			whereFilters.push(
-				`(EXISTS (SELECT 1 FROM doctor_languages dl WHERE dl.doctor_id = d.id AND dl.language_id IN (${idList})) OR EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id WHERE dc.doctor_id = d.id AND cl.language_id IN (${idList})))`,
+				`(EXISTS (SELECT 1 FROM doctor_languages dl WHERE dl.doctor_id = d.id AND dl.language_id IN (${buildInPlaceholders(body.languageIds)})) OR EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id WHERE dc.doctor_id = d.id AND cl.language_id IN (${buildInPlaceholders(body.languageIds)})))`,
 			);
 		}
 	}
 
 	if (body.clinicIds?.length > 0) {
-		const idList = body.clinicIds.join(',');
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM doctor_clinics dc WHERE dc.doctor_id = d.id AND dc.clinic_id IN (${idList}))`,
+			`EXISTS (SELECT 1 FROM doctor_clinics dc WHERE dc.doctor_id = d.id AND dc.clinic_id IN (${buildInPlaceholders(body.clinicIds)}))`,
 		);
 	}
 
 	if (body.name && validateName(body, 'api/doctors/list')) {
+		const namePattern = `%${body.name}%`;
 		whereFilters.push(
-			`(d.name_sr LIKE '%${body.name}%' OR d.name_sr_cyrl LIKE '%${body.name}%' OR d.name_ru LIKE '%${body.name}%' OR d.name_en LIKE '%${body.name}%')`,
+			`(d.name_sr LIKE ? OR d.name_sr_cyrl LIKE ? OR d.name_ru LIKE ? OR d.name_en LIKE ?)`,
 		);
+		queryParams.push(namePattern, namePattern, namePattern, namePattern);
 	}
 
 	const whereFiltersString =
 		whereFilters.length > 0 ? 'WHERE ' + whereFilters.join(' AND ') : '';
 
+	const paginationClause = usePagination
+		? `LIMIT ${pageSize} OFFSET ${offset}`
+		: '';
+	const totalCountQuery = `
+			SELECT COUNT(DISTINCT d.id) as totalCount
+			FROM doctors d
+			${whereFiltersString};
+		`;
 	const doctorsQuery = `
 			SELECT
 				d.id,
@@ -128,11 +147,20 @@ export async function getDoctorList(
 				(SELECT GROUP_CONCAT(DISTINCT dc.clinic_id ORDER BY dc.clinic_id) FROM doctor_clinics dc WHERE dc.doctor_id = d.id) as clinicIds
 			FROM doctors d
 			${whereFiltersString}
-			ORDER BY d.name_sr ASC;
+			ORDER BY d.name_sr ASC
+			${paginationClause};
 		`;
 
 	const connection = await getConnection();
-	const [doctorRows] = await connection.execute(doctorsQuery);
+	let totalCount = 0;
+	if (usePagination) {
+		const [countRows] = await connection.execute(
+			totalCountQuery,
+			queryParams,
+		);
+		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
+	}
+	const [doctorRows] = await connection.execute(doctorsQuery, queryParams);
 
 	// Загружаем услуги для всех врачей, если нужно
 	let servicesMap: Map<string, ClinicServicesMap> | null = null;
@@ -190,8 +218,12 @@ export async function getDoctorList(
 		};
 	});
 
+	if (!usePagination) {
+		totalCount = processedDoctors.length;
+	}
+
 	return {
 		doctors: processedDoctors,
-		totalCount: processedDoctors.length,
+		totalCount,
 	};
 }

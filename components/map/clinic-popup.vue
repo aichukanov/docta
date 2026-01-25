@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
 import { getLocalizedName } from '~/common/utils';
+import { LIST_PAGE_SIZE } from '~/common/constants';
 import { hasContacts } from '../contacts/utils';
 import type { ClinicData, ClinicServiceItem } from '~/interfaces/clinic';
 
@@ -12,7 +13,6 @@ const props = defineProps<{
 const { t, locale } = useI18n();
 const servicesListRef = ref<HTMLElement>();
 const pageNumber = ref(1);
-const PAGE_LIMIT = 20;
 
 const localizedName = computed(() =>
 	getLocalizedName(props.clinic, locale.value),
@@ -26,8 +26,8 @@ const clinicLink = computed(() => ({
 
 const servicesOnPage = computed(() => {
 	return props.services.slice(
-		(pageNumber.value - 1) * PAGE_LIMIT,
-		pageNumber.value * PAGE_LIMIT,
+		(pageNumber.value - 1) * LIST_PAGE_SIZE,
+		pageNumber.value * LIST_PAGE_SIZE,
 	);
 });
 
@@ -67,10 +67,10 @@ watch(pageNumber, () => {
 				<slot :service="service" />
 			</div>
 			<Pagination
-				v-if="services.length > PAGE_LIMIT"
+				v-if="services.length > LIST_PAGE_SIZE"
 				align="center"
 				:total="services.length"
-				:page-size="PAGE_LIMIT"
+				:page-size="LIST_PAGE_SIZE"
 				v-model:current-page="pageNumber"
 			/>
 		</div>

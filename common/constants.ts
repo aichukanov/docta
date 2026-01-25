@@ -35,3 +35,6 @@ export const PROJECT_CONTACTS = {
 	email: 'contact@svad.net',
 	telegram: 'https://t.me/svad_net',
 };
+
+// Размер страницы для списков
+export const LIST_PAGE_SIZE = 20;

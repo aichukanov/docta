@@ -113,26 +113,32 @@ const addClinic = async () => {
 	<div>
 		<div class="clinic-add-form">
 			<FilterCitySelect v-model:value="cityIds" />
+			<AdminFieldGroup title="Название">
+				<AdminEditableField label="Название (SR)" v-model:value="clinicName" />
+				<AdminEditableField
+					label="Название (SR-CYRL)"
+					v-model:value="clinicNameSrCyrl"
+					:translate-from="clinicName"
+				/>
+				<AdminEditableField label="Название (RU)" v-model:value="clinicNameRu" />
+			</AdminFieldGroup>
+			<AdminFieldGroup title="Адрес">
+				<AdminEditableField label="Адрес (SR)" v-model:value="clinicAddressSr" />
+				<AdminEditableField
+					label="Адрес (SR-CYRL)"
+					v-model:value="clinicAddressSrCyrl"
+					:translate-from="clinicAddressSr"
+				/>
+			</AdminFieldGroup>
+			<AdminFieldGroup title="Город">
+				<AdminEditableField label="Town (SR)" v-model:value="clinicTownSr" />
+				<AdminEditableField
+					label="Town (SR-CYRL)"
+					v-model:value="clinicTownSrCyrl"
+					:translate-from="clinicTownSr"
+				/>
+			</AdminFieldGroup>
 
-			<AdminEditableField label="Название (SR)" v-model:value="clinicName" />
-			<AdminEditableField
-				label="Название (SR-CYRL)"
-				v-model:value="clinicNameSrCyrl"
-				:translate-from="clinicName"
-			/>
-			<AdminEditableField label="Название (RU)" v-model:value="clinicNameRu" />
-			<AdminEditableField label="Адрес (SR)" v-model:value="clinicAddressSr" />
-			<AdminEditableField
-				label="Адрес (SR-CYRL)"
-				v-model:value="clinicAddressSrCyrl"
-				:translate-from="clinicAddressSr"
-			/>
-			<AdminEditableField label="Town (SR)" v-model:value="clinicTownSr" />
-			<AdminEditableField
-				label="Town (SR-CYRL)"
-				v-model:value="clinicTownSrCyrl"
-				:translate-from="clinicTownSr"
-			/>
 			<AdminEditableField
 				label="Postal code"
 				v-model:value="clinicPostalCode"
@@ -148,6 +154,7 @@ const addClinic = async () => {
 			<AdminEditableField label="Whatsapp" v-model:value="clinicWhatsapp" />
 			<AdminEditableField label="Viber" v-model:value="clinicViber" />
 
+			<AdminFieldGroup title="Описание">
 			<AdminEditableField
 				label="Описание (SR)"
 				type="textarea"
@@ -179,6 +186,7 @@ const addClinic = async () => {
 				type="textarea"
 				v-model:value="clinicDescriptionTr"
 			/>
+		</AdminFieldGroup>
 
 			<FilterLanguageSelect v-model:value="languageIds" />
 		</div>

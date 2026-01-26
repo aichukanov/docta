@@ -13,6 +13,7 @@ import { combineI18nMessages } from '~/i18n/utils';
 import { LocationFilled } from '@element-plus/icons-vue';
 import { formatClinicAddressLine } from '~/common/clinic-address';
 import { getLocalizedName } from '~/common/utils';
+import type { ClinicPrice } from '~/interfaces/clinic';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -88,6 +89,10 @@ const clinicMedications = computed(() => medicationsList.value?.items || []);
 const clinicMedicalServices = computed(
 	() => medicalServicesList.value?.items || [],
 );
+
+const getClinicPrice = (clinicPrices?: ClinicPrice[]) => {
+	return clinicPrices?.find((price) => price.clinicId === clinicId.value);
+};
 
 const clinicAsList = computed(() =>
 	isFound.value && clinicData.value ? [clinicData.value] : [],
@@ -286,9 +291,9 @@ watchEffect(() => {
 							:id="item.id"
 							:name="item.name"
 							:localName="item.localName"
-							:price="item.clinicPrices?.[0]?.price"
-							:priceMax="item.clinicPrices?.[0]?.priceMax"
-							:priceMin="item.clinicPrices?.[0]?.priceMin"
+							:price="getClinicPrice(item.clinicPrices)?.price"
+							:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
+							:priceMin="getClinicPrice(item.clinicPrices)?.priceMin"
 							routeName="services-serviceId"
 							routeParamName="serviceId"
 						/>
@@ -309,8 +314,8 @@ watchEffect(() => {
 							:id="item.id"
 							:name="item.name"
 							:localName="item.localName"
-							:price="item.clinicPrices?.[0]?.price"
-							:priceMax="item.clinicPrices?.[0]?.priceMax"
+							:price="getClinicPrice(item.clinicPrices)?.price"
+							:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
 							routeName="labtests-labTestId"
 							routeParamName="labTestId"
 						/>
@@ -331,8 +336,8 @@ watchEffect(() => {
 							:id="item.id"
 							:name="item.name"
 							:localName="item.localName"
-							:price="item.clinicPrices?.[0]?.price"
-							:priceMax="item.clinicPrices?.[0]?.priceMax"
+							:price="getClinicPrice(item.clinicPrices)?.price"
+							:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
 							routeName="medications-medicationId"
 							routeParamName="medicationId"
 						/>

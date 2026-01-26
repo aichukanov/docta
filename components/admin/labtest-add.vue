@@ -95,16 +95,18 @@ const addLabTest = async () => {
 
 <template>
 	<div class="labtest-add">
-		<AdminEditableField label="Название (EN)" v-model:value="name" />
-		<AdminEditableField label="Название (SR)" v-model:value="nameSr" />
-		<AdminEditableField
-			label="Название (SR-CYRL)"
-			v-model:value="nameSrCyrl"
-			:translate-from="nameSr"
-		/>
-		<AdminEditableField label="Название (RU)" v-model:value="nameRu" />
-		<AdminEditableField label="Название (DE)" v-model:value="nameDe" />
-		<AdminEditableField label="Название (TR)" v-model:value="nameTr" />
+		<AdminFieldGroup title="Название">
+			<AdminEditableField label="Название (EN)" v-model:value="name" />
+			<AdminEditableField label="Название (SR)" v-model:value="nameSr" />
+			<AdminEditableField
+				label="Название (SR-CYRL)"
+				v-model:value="nameSrCyrl"
+				:translate-from="nameSr"
+			/>
+			<AdminEditableField label="Название (RU)" v-model:value="nameRu" />
+			<AdminEditableField label="Название (DE)" v-model:value="nameDe" />
+			<AdminEditableField label="Название (TR)" v-model:value="nameTr" />
+		</AdminFieldGroup>
 
 		<FilterCategorySelect v-model:value="categoryIds" />
 

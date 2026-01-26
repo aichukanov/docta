@@ -531,30 +531,32 @@ onMounted(async () => {
 		/>
 
 		<div v-if="clinicModel" class="clinic-info">
-			<AdminEditableField
-				label="Название (SR)"
-				v-model:value="clinicModel.name_sr"
-				:modified="nameSrModified"
-				@reset="
-					clinicModel.name_sr =
-						selectedClinic?.name_sr || selectedClinic?.name || ''
-				"
-			/>
-			<AdminEditableField
-				label="Название (SR-CYRL)"
-				v-model:value="clinicModel.name_sr_cyrl"
-				:readonly="!editable"
-				:modified="nameSrCyrlModified"
-				:translate-from="clinicModel.name_sr"
-				@reset="clinicModel.name_sr_cyrl = selectedClinic?.name_sr_cyrl || ''"
-			/>
-			<AdminEditableField
-				label="Название (RU)"
-				v-model:value="clinicModel.name_ru"
-				:readonly="!editable"
-				:modified="nameRuModified"
-				@reset="clinicModel.name_ru = selectedClinic?.name_ru || ''"
-			/>
+			<AdminFieldGroup title="Название">
+				<AdminEditableField
+					label="Название (SR)"
+					v-model:value="clinicModel.name_sr"
+					:modified="nameSrModified"
+					@reset="
+						clinicModel.name_sr =
+							selectedClinic?.name_sr || selectedClinic?.name || ''
+					"
+				/>
+				<AdminEditableField
+					label="Название (SR-CYRL)"
+					v-model:value="clinicModel.name_sr_cyrl"
+					:readonly="!editable"
+					:modified="nameSrCyrlModified"
+					:translate-from="clinicModel.name_sr"
+					@reset="clinicModel.name_sr_cyrl = selectedClinic?.name_sr_cyrl || ''"
+				/>
+				<AdminEditableField
+					label="Название (RU)"
+					v-model:value="clinicModel.name_ru"
+					:readonly="!editable"
+					:modified="nameRuModified"
+					@reset="clinicModel.name_ru = selectedClinic?.name_ru || ''"
+				/>
+			</AdminFieldGroup>
 			<AdminEditableField
 				label="Адрес (SR)"
 				v-model:value="clinicModel.address_sr"

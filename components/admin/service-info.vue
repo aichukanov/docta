@@ -247,43 +247,45 @@ watch(serviceId, async (newId) => {
 		<div v-if="isLoading" class="loading">Загрузка...</div>
 
 		<div v-else-if="serviceModel" class="service-info">
-			<AdminEditableField
-				label="Название (EN)"
-				v-model:value="serviceModel.name_en"
-				:modified="nameModified"
-				@reset="serviceModel.name_en = originalService?.name_en || ''"
-			/>
-			<AdminEditableField
-				label="Название (SR)"
-				v-model:value="serviceModel.name_sr"
-				:modified="nameSrModified"
-				@reset="serviceModel.name_sr = originalService?.name_sr || ''"
-			/>
-			<AdminEditableField
-				label="Название (SR-CYRL)"
-				v-model:value="serviceModel.name_sr_cyrl"
-				:modified="nameSrCyrlModified"
-				:translate-from="serviceModel.name_sr"
-				@reset="serviceModel.name_sr_cyrl = originalService?.name_sr_cyrl || ''"
-			/>
-			<AdminEditableField
-				label="Название (RU)"
-				v-model:value="serviceModel.name_ru"
-				:modified="nameRuModified"
-				@reset="serviceModel.name_ru = originalService?.name_ru || ''"
-			/>
-			<AdminEditableField
-				label="Название (DE)"
-				v-model:value="serviceModel.name_de"
-				:modified="nameDeModified"
-				@reset="serviceModel.name_de = originalService?.name_de || ''"
-			/>
-			<AdminEditableField
-				label="Название (TR)"
-				v-model:value="serviceModel.name_tr"
-				:modified="nameTrModified"
-				@reset="serviceModel.name_tr = originalService?.name_tr || ''"
-			/>
+			<AdminFieldGroup title="Название">
+				<AdminEditableField
+					label="Название (EN)"
+					v-model:value="serviceModel.name_en"
+					:modified="nameModified"
+					@reset="serviceModel.name_en = originalService?.name_en || ''"
+				/>
+				<AdminEditableField
+					label="Название (SR)"
+					v-model:value="serviceModel.name_sr"
+					:modified="nameSrModified"
+					@reset="serviceModel.name_sr = originalService?.name_sr || ''"
+				/>
+				<AdminEditableField
+					label="Название (SR-CYRL)"
+					v-model:value="serviceModel.name_sr_cyrl"
+					:modified="nameSrCyrlModified"
+					:translate-from="serviceModel.name_sr"
+					@reset="serviceModel.name_sr_cyrl = originalService?.name_sr_cyrl || ''"
+				/>
+				<AdminEditableField
+					label="Название (RU)"
+					v-model:value="serviceModel.name_ru"
+					:modified="nameRuModified"
+					@reset="serviceModel.name_ru = originalService?.name_ru || ''"
+				/>
+				<AdminEditableField
+					label="Название (DE)"
+					v-model:value="serviceModel.name_de"
+					:modified="nameDeModified"
+					@reset="serviceModel.name_de = originalService?.name_de || ''"
+				/>
+				<AdminEditableField
+					label="Название (TR)"
+					v-model:value="serviceModel.name_tr"
+					:modified="nameTrModified"
+					@reset="serviceModel.name_tr = originalService?.name_tr || ''"
+				/>
+			</AdminFieldGroup>
 
 			<div class="sort-order-section" :class="{ modified: sortOrderModified }">
 				<label>Порядок сортировки</label>

@@ -273,43 +273,45 @@ watch(labTestId, async (newId) => {
 		<div v-if="isLoading" class="loading">Загрузка...</div>
 
 		<div v-else-if="labTestModel" class="labtest-info">
-			<AdminEditableField
-				label="Название (EN)"
-				v-model:value="labTestModel.name_en"
-				:modified="nameModified"
-				@reset="labTestModel.name_en = originalLabTest?.name_en || ''"
-			/>
-			<AdminEditableField
-				label="Название (SR)"
-				v-model:value="labTestModel.name_sr"
-				:modified="nameSrModified"
-				@reset="labTestModel.name_sr = originalLabTest?.name_sr || ''"
-			/>
-			<AdminEditableField
-				label="Название (SR-CYRL)"
-				v-model:value="labTestModel.name_sr_cyrl"
-				:modified="nameSrCyrlModified"
-				:translate-from="labTestModel.name_sr"
-				@reset="labTestModel.name_sr_cyrl = originalLabTest?.name_sr_cyrl || ''"
-			/>
-			<AdminEditableField
-				label="Название (RU)"
-				v-model:value="labTestModel.name_ru"
-				:modified="nameRuModified"
-				@reset="labTestModel.name_ru = originalLabTest?.name_ru || ''"
-			/>
-			<AdminEditableField
-				label="Название (DE)"
-				v-model:value="labTestModel.name_de"
-				:modified="nameDeModified"
-				@reset="labTestModel.name_de = originalLabTest?.name_de || ''"
-			/>
-			<AdminEditableField
-				label="Название (TR)"
-				v-model:value="labTestModel.name_tr"
-				:modified="nameTrModified"
-				@reset="labTestModel.name_tr = originalLabTest?.name_tr || ''"
-			/>
+			<AdminFieldGroup title="Название">
+				<AdminEditableField
+					label="Название (EN)"
+					v-model:value="labTestModel.name_en"
+					:modified="nameModified"
+					@reset="labTestModel.name_en = originalLabTest?.name_en || ''"
+				/>
+				<AdminEditableField
+					label="Название (SR)"
+					v-model:value="labTestModel.name_sr"
+					:modified="nameSrModified"
+					@reset="labTestModel.name_sr = originalLabTest?.name_sr || ''"
+				/>
+				<AdminEditableField
+					label="Название (SR-CYRL)"
+					v-model:value="labTestModel.name_sr_cyrl"
+					:modified="nameSrCyrlModified"
+					:translate-from="labTestModel.name_sr"
+					@reset="labTestModel.name_sr_cyrl = originalLabTest?.name_sr_cyrl || ''"
+				/>
+				<AdminEditableField
+					label="Название (RU)"
+					v-model:value="labTestModel.name_ru"
+					:modified="nameRuModified"
+					@reset="labTestModel.name_ru = originalLabTest?.name_ru || ''"
+				/>
+				<AdminEditableField
+					label="Название (DE)"
+					v-model:value="labTestModel.name_de"
+					:modified="nameDeModified"
+					@reset="labTestModel.name_de = originalLabTest?.name_de || ''"
+				/>
+				<AdminEditableField
+					label="Название (TR)"
+					v-model:value="labTestModel.name_tr"
+					:modified="nameTrModified"
+					@reset="labTestModel.name_tr = originalLabTest?.name_tr || ''"
+				/>
+			</AdminFieldGroup>
 
 			<FilterCategorySelect v-model:value="labTestModel.categoryIds" />
 

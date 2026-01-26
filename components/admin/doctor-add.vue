@@ -138,14 +138,16 @@ const addDoctor = async () => {
 
 <template>
 	<div class="doctor-add">
-		<AdminEditableField label="Имя" v-model:value="doctorName" />
-		<AdminEditableField label="Имя (RU)" v-model:value="doctorNameRu" />
-		<AdminEditableField
-			label="Имя (SR кириллица)"
-			v-model:value="doctorNameSrCyrl"
-			:translate-from="doctorName"
-		/>
-		<AdminEditableField label="Имя (EN)" v-model:value="doctorNameEn" />
+		<AdminFieldGroup title="Имя">
+			<AdminEditableField label="Имя" v-model:value="doctorName" />
+			<AdminEditableField label="Имя (RU)" v-model:value="doctorNameRu" />
+			<AdminEditableField
+				label="Имя (SR кириллица)"
+				v-model:value="doctorNameSrCyrl"
+				:translate-from="doctorName"
+			/>
+			<AdminEditableField label="Имя (EN)" v-model:value="doctorNameEn" />
+		</AdminFieldGroup>
 		<AdminEditableField
 			label="Профессиональное звание"
 			v-model:value="doctorProfessionalTitle"

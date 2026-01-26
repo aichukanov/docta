@@ -317,32 +317,34 @@ watch(doctorId, async (newDoctorId) => {
 		<div v-if="isLoading" class="loading">Загрузка...</div>
 
 		<div v-else-if="doctorModel" class="doctor-info">
-			<AdminEditableField
-				label="Имя"
-				v-model:value="doctorModel.name"
-				:modified="nameModified"
-				@reset="doctorModel.name = originalDoctor?.name || ''"
-			/>
-			<AdminEditableField
-				label="Имя (RU)"
-				v-model:value="doctorModel.name_ru"
-				:modified="nameRuModified"
-				@reset="doctorModel.name_ru = originalDoctor?.name_ru || ''"
-			/>
-			<AdminEditableField
-				label="Имя (SR кириллица)"
-				v-model:value="doctorModel.name_sr_cyrl"
-				:modified="nameSrCyrlModified"
-				:translate-from="doctorModel.name"
-				@reset="doctorModel.name_sr_cyrl = originalDoctor?.name_sr_cyrl || ''"
-			/>
-			<AdminEditableField
-				label="Имя (EN)"
-				v-model:value="doctorModel.name_en"
-				:readonly="!editable"
-				:modified="nameEnModified"
-				@reset="doctorModel.name_en = originalDoctor?.name_en || ''"
-			/>
+			<AdminFieldGroup title="Имя">
+				<AdminEditableField
+					label="Имя"
+					v-model:value="doctorModel.name"
+					:modified="nameModified"
+					@reset="doctorModel.name = originalDoctor?.name || ''"
+				/>
+				<AdminEditableField
+					label="Имя (RU)"
+					v-model:value="doctorModel.name_ru"
+					:modified="nameRuModified"
+					@reset="doctorModel.name_ru = originalDoctor?.name_ru || ''"
+				/>
+				<AdminEditableField
+					label="Имя (SR кириллица)"
+					v-model:value="doctorModel.name_sr_cyrl"
+					:modified="nameSrCyrlModified"
+					:translate-from="doctorModel.name"
+					@reset="doctorModel.name_sr_cyrl = originalDoctor?.name_sr_cyrl || ''"
+				/>
+				<AdminEditableField
+					label="Имя (EN)"
+					v-model:value="doctorModel.name_en"
+					:readonly="!editable"
+					:modified="nameEnModified"
+					@reset="doctorModel.name_en = originalDoctor?.name_en || ''"
+				/>
+			</AdminFieldGroup>
 			<AdminEditableField
 				label="Профессиональное звание"
 				v-model:value="doctorModel.professionalTitle"

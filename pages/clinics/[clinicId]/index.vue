@@ -222,7 +222,10 @@ watchEffect(() => {
 		<template #info="{ showClinicOnMap }">
 			<header v-if="clinicData" class="clinic-header">
 				<div class="clinic-main-info">
-					<h1 class="clinic-title">{{ localizedName }}</h1>
+					<div class="clinic-title-wrapper">
+						<h1 class="clinic-title">{{ localizedName }}</h1>
+						<ClinicApprovedBadge :clinic="clinicData" />
+					</div>
 
 					<address class="clinic-address">
 						<LocationFilled aria-hidden="true" />
@@ -471,6 +474,12 @@ watchEffect(() => {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-md);
+}
+
+.clinic-title-wrapper {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
 }
 
 .clinic-title {

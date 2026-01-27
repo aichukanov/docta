@@ -111,13 +111,16 @@ const clinicLink = computed(() => ({
 	>
 		<div class="clinic-info">
 			<div class="clinic-name-row">
-				<NuxtLink
-					:to="clinicLink"
-					class="clinic-name"
-					:class="{ 'clinic-name--highlight': hasHighlight }"
-				>
-					{{ localizedName }}
-				</NuxtLink>
+				<div class="clinic-name-wrapper">
+					<NuxtLink
+						:to="clinicLink"
+						class="clinic-name"
+						:class="{ 'clinic-name--highlight': hasHighlight }"
+					>
+						{{ localizedName }}
+					</NuxtLink>
+					<ClinicApprovedBadge :clinic="clinic" :small="true" />
+				</div>
 				<div
 					v-if="showPrice"
 					class="price-badge"
@@ -168,6 +171,12 @@ const clinicLink = computed(() => ({
 	align-items: center;
 	flex-wrap: wrap;
 	gap: var(--spacing-md);
+}
+
+.clinic-name-wrapper {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
 }
 
 .clinic-name {

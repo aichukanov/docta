@@ -265,7 +265,9 @@ watch(serviceId, async (newId) => {
 					v-model:value="serviceModel.name_sr_cyrl"
 					:modified="nameSrCyrlModified"
 					:translate-from="serviceModel.name_sr"
-					@reset="serviceModel.name_sr_cyrl = originalService?.name_sr_cyrl || ''"
+					@reset="
+						serviceModel.name_sr_cyrl = originalService?.name_sr_cyrl || ''
+					"
 				/>
 				<AdminEditableField
 					label="Название (RU)"

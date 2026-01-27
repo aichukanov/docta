@@ -68,7 +68,7 @@ const hasApproved = computed(() =>
 	color: var(--color-success);
 	font-size: var(--font-size-lg);
 	flex-shrink: 0;
-    margin-top: 4px;
+	margin-top: 2px;
 	margin-left: 2px;
 	cursor: help;
 

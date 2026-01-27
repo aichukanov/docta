@@ -120,10 +120,16 @@ const addClinic = async () => {
 					v-model:value="clinicNameSrCyrl"
 					:translate-from="clinicName"
 				/>
-				<AdminEditableField label="Название (RU)" v-model:value="clinicNameRu" />
+				<AdminEditableField
+					label="Название (RU)"
+					v-model:value="clinicNameRu"
+				/>
 			</AdminFieldGroup>
 			<AdminFieldGroup title="Адрес">
-				<AdminEditableField label="Адрес (SR)" v-model:value="clinicAddressSr" />
+				<AdminEditableField
+					label="Адрес (SR)"
+					v-model:value="clinicAddressSr"
+				/>
 				<AdminEditableField
 					label="Адрес (SR-CYRL)"
 					v-model:value="clinicAddressSrCyrl"
@@ -155,38 +161,38 @@ const addClinic = async () => {
 			<AdminEditableField label="Viber" v-model:value="clinicViber" />
 
 			<AdminFieldGroup title="Описание">
-			<AdminEditableField
-				label="Описание (SR)"
-				type="textarea"
-				v-model:value="clinicDescriptionSr"
-			/>
-			<AdminEditableField
-				label="Описание (SR-CYRL)"
-				type="textarea"
-				v-model:value="clinicDescriptionSrCyrl"
-				:translate-from="clinicDescriptionSr"
-			/>
-			<AdminEditableField
-				label="Описание (EN)"
-				type="textarea"
-				v-model:value="clinicDescriptionEn"
-			/>
-			<AdminEditableField
-				label="Описание (RU)"
-				type="textarea"
-				v-model:value="clinicDescriptionRu"
-			/>
-			<AdminEditableField
-				label="Описание (DE)"
-				type="textarea"
-				v-model:value="clinicDescriptionDe"
-			/>
-			<AdminEditableField
-				label="Описание (TR)"
-				type="textarea"
-				v-model:value="clinicDescriptionTr"
-			/>
-		</AdminFieldGroup>
+				<AdminEditableField
+					label="Описание (SR)"
+					type="textarea"
+					v-model:value="clinicDescriptionSr"
+				/>
+				<AdminEditableField
+					label="Описание (SR-CYRL)"
+					type="textarea"
+					v-model:value="clinicDescriptionSrCyrl"
+					:translate-from="clinicDescriptionSr"
+				/>
+				<AdminEditableField
+					label="Описание (EN)"
+					type="textarea"
+					v-model:value="clinicDescriptionEn"
+				/>
+				<AdminEditableField
+					label="Описание (RU)"
+					type="textarea"
+					v-model:value="clinicDescriptionRu"
+				/>
+				<AdminEditableField
+					label="Описание (DE)"
+					type="textarea"
+					v-model:value="clinicDescriptionDe"
+				/>
+				<AdminEditableField
+					label="Описание (TR)"
+					type="textarea"
+					v-model:value="clinicDescriptionTr"
+				/>
+			</AdminFieldGroup>
 
 			<FilterLanguageSelect v-model:value="languageIds" />
 		</div>

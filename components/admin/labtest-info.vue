@@ -291,7 +291,9 @@ watch(labTestId, async (newId) => {
 					v-model:value="labTestModel.name_sr_cyrl"
 					:modified="nameSrCyrlModified"
 					:translate-from="labTestModel.name_sr"
-					@reset="labTestModel.name_sr_cyrl = originalLabTest?.name_sr_cyrl || ''"
+					@reset="
+						labTestModel.name_sr_cyrl = originalLabTest?.name_sr_cyrl || ''
+					"
 				/>
 				<AdminEditableField
 					label="Название (RU)"

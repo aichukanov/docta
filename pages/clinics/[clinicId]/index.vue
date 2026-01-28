@@ -9,10 +9,12 @@ import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import clinicI18n from '~/i18n/clinic';
 import languageI18n from '~/i18n/language';
+import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
+import specialtyI18n from '~/i18n/specialty';
+import labTestCategoryI18n from '~/i18n/labtest-category';
 import { combineI18nMessages } from '~/i18n/utils';
-import { LocationFilled } from '@element-plus/icons-vue';
-import { formatClinicAddressLine } from '~/common/clinic-address';
 import { getLocalizedName } from '~/common/utils';
+import { formatClinicAddressLine } from '~/common/clinic-address';
 import type { ClinicPrice } from '~/interfaces/clinic';
 
 const { t, locale } = useI18n({
@@ -22,6 +24,9 @@ const { t, locale } = useI18n({
 		clinicI18n,
 		languageI18n,
 		cityI18n,
+		medicalServiceCategoryI18n,
+		specialtyI18n,
+		labTestCategoryI18n,
 	]),
 });
 
@@ -89,6 +94,65 @@ const clinicMedications = computed(() => medicationsList.value?.items || []);
 const clinicMedicalServices = computed(
 	() => medicalServicesList.value?.items || [],
 );
+
+// Группировка врачей по специальностям с переводами
+const clinicDoctorsBySpecialty = useItemsByCategory(clinicDoctors, (doctor) =>
+	doctor.specialtyIds?.split(',').map(Number).filter(Boolean),
+);
+
+const doctorCategoriesWithTitles = computed(() => ({
+	categories: clinicDoctorsBySpecialty.value.categories.map((cat) => ({
+		title: t(`specialty_${cat.categoryId}`),
+		items: cat.items,
+	})),
+	otherCategory:
+		clinicDoctorsBySpecialty.value.itemsWithoutCategory.length > 0
+			? {
+					title: t('OtherDoctors'),
+					items: clinicDoctorsBySpecialty.value.itemsWithoutCategory,
+			  }
+			: undefined,
+}));
+
+// Группировка медицинских услуг по категориям с переводами
+const clinicMedicalServicesByCategory = useItemsByCategory(
+	clinicMedicalServices,
+	(service) => service.categoryIds,
+);
+
+const serviceCategoriesWithTitles = computed(() => ({
+	categories: clinicMedicalServicesByCategory.value.categories.map((cat) => ({
+		title: t(`medical_service_category_${cat.categoryId}`),
+		items: cat.items,
+	})),
+	otherCategory:
+		clinicMedicalServicesByCategory.value.itemsWithoutCategory.length > 0
+			? {
+					title: t('OtherServices'),
+					items: clinicMedicalServicesByCategory.value.itemsWithoutCategory,
+			  }
+			: undefined,
+}));
+
+// Группировка анализов по категориям с переводами
+const clinicLabTestsByCategory = useItemsByCategory(
+	clinicLabTests,
+	(labTest) => labTest.categoryIds,
+);
+
+const labTestCategoriesWithTitles = computed(() => ({
+	categories: clinicLabTestsByCategory.value.categories.map((cat) => ({
+		title: t(`lab_test_category_${cat.categoryId}`),
+		items: cat.items,
+	})),
+	otherCategory:
+		clinicLabTestsByCategory.value.itemsWithoutCategory.length > 0
+			? {
+					title: t('OtherLabTests'),
+					items: clinicLabTestsByCategory.value.itemsWithoutCategory,
+			  }
+			: undefined,
+}));
 
 const getClinicPrice = (clinicPrices?: ClinicPrice[]) => {
 	return clinicPrices?.find((price) => price.clinicId === clinicId.value);
@@ -220,71 +284,43 @@ watchEffect(() => {
 		:notFoundText="t('ClinicNotFound')"
 	>
 		<template #info="{ showClinicOnMap }">
-			<header v-if="clinicData" class="clinic-header">
-				<div class="clinic-main-info">
-					<div class="clinic-title-wrapper">
-						<h1 class="clinic-title">{{ localizedName }}</h1>
-						<ClinicApprovedBadge :clinic="clinicData" />
-					</div>
-
-					<address class="clinic-address">
-						<LocationFilled aria-hidden="true" />
-						<span>{{
-							formatClinicAddressLine({
-								clinic: clinicData,
-								cityName: t(`city_${clinicData.cityId}`),
-							})
-						}}</span>
-					</address>
-
-					<ConsultationLanguages :languageIds="clinicData.languageIds">
-						{{ t('LanguageAssistance') }}
-					</ConsultationLanguages>
-
-					<div class="clinic-actions" role="group">
-						<ClinicShowOnMapButton
-							:clinic="clinicData"
-							:aria-label="t('AriaShowOnMap')"
-							@click="showClinicOnMap(clinicData)"
-						/>
-						<ClinicRouteButton :clinic="clinicData" />
-					</div>
-
-					<MarkedContent
-						v-if="clinicDescription"
-						:content="clinicDescription"
-						class="clinic-description-container"
-					/>
-				</div>
-
-				<section class="clinic-contacts" :aria-label="t('AriaContactsSection')">
-					<h2 class="contacts-title">{{ t('Contacts') }}</h2>
-					<ContactsList :list="clinicData" />
-				</section>
-			</header>
+			<ClinicHeader
+				v-if="clinicData"
+				:clinic="clinicData"
+				:cityName="t(`city_${clinicData.cityId}`)"
+				:description="clinicDescription"
+				:languageAssistanceLabel="t('LanguageAssistance')"
+				:contactsLabel="t('Contacts')"
+				:showOnMapLabel="t('AriaShowOnMap')"
+				@showOnMap="showClinicOnMap"
+			/>
 		</template>
 
 		<template #clinics>
 			<div class="clinic-services">
 				<!-- Врачи -->
-				<ClinicServiceSection
+				<ClinicCategorizedSection
 					:title="t('DoctorsAtClinic')"
-					:items="clinicDoctors"
+					:totalCount="clinicDoctors.length"
 					routeName="doctors"
+					:categories="doctorCategoriesWithTitles.categories"
+					:otherCategory="doctorCategoriesWithTitles.otherCategory"
 				>
 					<template #icon>
 						<IconDoctor />
 					</template>
 					<template #default="{ item }">
-						<DoctorInfo :service="item" short headingLevel="h3" />
+						<DoctorInfo :service="item" short headingLevel="h4" />
 					</template>
-				</ClinicServiceSection>
+				</ClinicCategorizedSection>
 
 				<!-- Медицинские услуги -->
-				<ClinicServiceSection
+				<ClinicCategorizedSection
 					:title="t('MedicalServicesAtClinic')"
-					:items="clinicMedicalServices"
+					:totalCount="clinicMedicalServices.length"
 					routeName="services"
+					:categories="serviceCategoriesWithTitles.categories"
+					:otherCategory="serviceCategoriesWithTitles.otherCategory"
 				>
 					<template #icon>
 						<IconMedicalService />
@@ -301,13 +337,15 @@ watchEffect(() => {
 							routeParamName="serviceId"
 						/>
 					</template>
-				</ClinicServiceSection>
+				</ClinicCategorizedSection>
 
 				<!-- Анализы -->
-				<ClinicServiceSection
+				<ClinicCategorizedSection
 					:title="t('LabTestsAtClinic')"
-					:items="clinicLabTests"
+					:totalCount="clinicLabTests.length"
 					routeName="labtests"
+					:categories="labTestCategoriesWithTitles.categories"
+					:otherCategory="labTestCategoriesWithTitles.otherCategory"
 				>
 					<template #icon>
 						<IconLabTest />
@@ -323,7 +361,7 @@ watchEffect(() => {
 							routeParamName="labTestId"
 						/>
 					</template>
-				</ClinicServiceSection>
+				</ClinicCategorizedSection>
 
 				<!-- Лекарства -->
 				<ClinicServiceSection
@@ -374,6 +412,9 @@ watchEffect(() => {
 		"LabTestsAtClinic": "Lab tests",
 		"MedicationsAtClinic": "Medications",
 		"NoServicesAtClinic": "Information about services at this clinic is not yet available",
+		"OtherServices": "Other services",
+		"OtherDoctors": "Other doctors",
+		"OtherLabTests": "Other lab tests",
 		"AriaClinicInfo": "Clinic information",
 		"AriaClinicAddress": "Clinic address",
 		"AriaClinicActions": "Clinic actions",
@@ -389,6 +430,9 @@ watchEffect(() => {
 		"LabTestsAtClinic": "Анализы",
 		"MedicationsAtClinic": "Лекарства",
 		"NoServicesAtClinic": "У нас пока нет информации об услугах этой клиники",
+		"OtherServices": "Другие услуги",
+		"OtherDoctors": "Другие врачи",
+		"OtherLabTests": "Другие анализы",
 		"AriaClinicInfo": "Информация о клинике",
 		"AriaClinicAddress": "Адрес клиники",
 		"AriaClinicActions": "Действия с клиникой",
@@ -404,6 +448,9 @@ watchEffect(() => {
 		"LabTestsAtClinic": "Laboruntersuchungen",
 		"MedicationsAtClinic": "Medikamente",
 		"NoServicesAtClinic": "Informationen über die Leistungen dieser Klinik sind noch nicht verfügbar",
+		"OtherServices": "Andere Dienstleistungen",
+		"OtherDoctors": "Andere Ärzte",
+		"OtherLabTests": "Andere Laboruntersuchungen",
 		"AriaClinicInfo": "Klinikinformationen",
 		"AriaClinicAddress": "Klinikadresse",
 		"AriaClinicActions": "Klinikaktionen",
@@ -419,6 +466,9 @@ watchEffect(() => {
 		"LabTestsAtClinic": "Laboratuvar testleri",
 		"MedicationsAtClinic": "İlaçlar",
 		"NoServicesAtClinic": "Bu kliniğin hizmetleri hakkında henüz bilgi bulunmamaktadır",
+		"OtherServices": "Diğer hizmetler",
+		"OtherDoctors": "Diğer doktorlar",
+		"OtherLabTests": "Diğer laboratuvar testleri",
 		"AriaClinicInfo": "Klinik bilgileri",
 		"AriaClinicAddress": "Klinik adresi",
 		"AriaClinicActions": "Klinik işlemleri",
@@ -434,6 +484,9 @@ watchEffect(() => {
 		"LabTestsAtClinic": "Laboratorijske analize",
 		"MedicationsAtClinic": "Lekovi",
 		"NoServicesAtClinic": "Trenutno nemamo informacije o uslugama ove klinike",
+		"OtherServices": "Ostale usluge",
+		"OtherDoctors": "Ostali lekari",
+		"OtherLabTests": "Ostale analize",
 		"AriaClinicInfo": "Informacije o klinici",
 		"AriaClinicAddress": "Adresa klinike",
 		"AriaClinicActions": "Akcije klinike",
@@ -449,6 +502,9 @@ watchEffect(() => {
 		"LabTestsAtClinic": "Лабораторијске анализе",
 		"MedicationsAtClinic": "Лекови",
 		"NoServicesAtClinic": "Тренутно немамо информације о услугама ове клинике",
+		"OtherServices": "Остале услуге",
+		"OtherDoctors": "Остали лекари",
+		"OtherLabTests": "Остале анализе",
 		"AriaClinicInfo": "Информације о клиници",
 		"AriaClinicAddress": "Адреса клинике",
 		"AriaClinicActions": "Акције клинике",
@@ -460,77 +516,6 @@ watchEffect(() => {
 </i18n>
 
 <style lang="less" scoped>
-.clinic-header {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-xl);
-	background: var(--color-surface-primary);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-md);
-	padding: var(--spacing-lg) var(--spacing-xl);
-}
-
-.clinic-main-info {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-md);
-}
-
-.clinic-title-wrapper {
-	display: flex;
-	align-items: center;
-	gap: var(--spacing-xs);
-}
-
-.clinic-title {
-	font-size: var(--font-size-2xl);
-	font-weight: 600;
-	color: var(--color-text-primary);
-	margin: 0;
-	font-family: system-ui, -apple-system, sans-serif;
-}
-
-.clinic-address {
-	display: flex;
-	align-items: center;
-	gap: var(--spacing-xs);
-	font-size: var(--font-size-md);
-	color: var(--color-text-secondary);
-	font-style: normal;
-
-	svg {
-		width: 18px;
-		height: 18px;
-		flex-shrink: 0;
-	}
-}
-
-.clinic-actions {
-	display: flex;
-	gap: var(--spacing-sm);
-	margin-top: var(--spacing-sm);
-}
-
-.clinic-description-container {
-	margin-top: var(--spacing-xs);
-}
-
-.clinic-contacts {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-md);
-	padding-top: var(--spacing-lg);
-	border-top: 1px solid var(--color-border-light);
-}
-
-.contacts-title {
-	font-size: var(--font-size-lg);
-	font-weight: 600;
-	color: var(--color-text-primary);
-	margin: 0;
-	font-family: system-ui, -apple-system, sans-serif;
-}
-
 .clinic-services {
 	display: flex;
 	flex-direction: column;

@@ -7,6 +7,10 @@ export enum CityId {
 	KOTOR = 6,
 	BAR = 7,
 	HERCEG_NOVI = 8,
+	BERANE = 9,
+	CETINJE = 10,
+	DANILOVGRAD = 11,
+	BELO_POLJE = 12,
 }
 
 export const CITY_COORDINATES = {
@@ -18,4 +22,8 @@ export const CITY_COORDINATES = {
 	[CityId.KOTOR]: [42.43204385, 18.76945397],
 	[CityId.BAR]: [42.0980602, 19.0948273],
 	[CityId.HERCEG_NOVI]: [42.4574182, 18.532135749],
+	[CityId.BERANE]: [42.8428, 19.8733],
+	[CityId.CETINJE]: [42.389, 18.924],
+	[CityId.DANILOVGRAD]: [42.5595, 19.0969],
+	[CityId.BELO_POLJE]: [43.0353, 19.7472],
 };

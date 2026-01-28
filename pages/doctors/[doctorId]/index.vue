@@ -57,6 +57,14 @@ if (import.meta.server && !isFound.value) {
 	setResponseStatus(useRequestEvent()!, 404);
 }
 
+const doctorDescription = computed(() => {
+	if (!isFound.value || !doctorData.value) {
+		return '';
+	}
+
+	return doctorData.value.description || '';
+});
+
 // clinicIds уже отсортированы на бэкенде по количеству услуг
 const doctorClinics = computed(() => {
 	if (!isFound.value || !clinicsStore.clinics) {
@@ -253,6 +261,10 @@ watchEffect(() => {
 	>
 		<template #info>
 			<DoctorInfo v-if="doctorData" :service="doctorData" isMainHeading />
+			<DoctorDescription
+				v-if="doctorData && doctorDescription"
+				:description="doctorDescription"
+			/>
 		</template>
 		<template #clinics="{ showClinicOnMap }">
 			<section class="clinics-list" role="list">

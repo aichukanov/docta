@@ -39,8 +39,10 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 		}
 
 		const addDoctorQuery = `
-			INSERT INTO doctors (name_sr, name_sr_cyrl, name_ru, name_en, professional_title, email, phone, website, photo_url, facebook, instagram, telegram, whatsapp, viber)
-			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+			INSERT INTO doctors (name_sr, name_sr_cyrl, name_ru, name_en, 
+			                     description_sr, description_sr_cyrl, description_ru, description_en, description_de, description_tr,
+			                     professional_title, email, phone, website, photo_url, facebook, instagram, telegram, whatsapp, viber)
+			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 		`;
 
 		const addDoctorQueryParams = [
@@ -48,6 +50,12 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			body.name_sr_cyrl || '',
 			body.name_ru || '',
 			body.name_en || '',
+			body.description_sr || '',
+			body.description_sr_cyrl || '',
+			body.description_ru || '',
+			body.description_en || '',
+			body.description_de || '',
+			body.description_tr || '',
 			body.professionalTitle,
 			body.email,
 			body.phone,

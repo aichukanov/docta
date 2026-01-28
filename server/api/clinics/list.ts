@@ -2,7 +2,7 @@ import { getConnection } from '~/server/common/db-mysql';
 import {
 	processLocalizedNameForClinicOrDoctor,
 	processLocalizedFieldForClinic,
-	processLocalizedDescriptionForClinic,
+	processLocalizedDescription,
 } from '~/server/common/utils';
 import type { ClinicList } from '~/interfaces/clinic';
 import {
@@ -164,7 +164,7 @@ export async function getClinicList(
 		);
 		const address = processLocalizedFieldForClinic(clinic, 'address', locale);
 		const town = processLocalizedFieldForClinic(clinic, 'town', locale);
-		const description = processLocalizedDescriptionForClinic(clinic, locale);
+		const description = processLocalizedDescription(clinic, locale);
 		const features = clinic.features
 			? clinic.features.split(',').map(Number)
 			: [];

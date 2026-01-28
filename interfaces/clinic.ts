@@ -49,6 +49,7 @@ export interface ClinicPrice {
 
 export interface ClinicServiceWithPrices extends ClinicServiceItem {
 	clinicPrices: ClinicPrice[];
+	categoryIds?: number[];
 }
 
 export interface LabTestItem extends ClinicServiceWithPrices {

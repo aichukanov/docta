@@ -1,5 +1,8 @@
 import { getConnection } from '~/server/common/db-mysql';
-import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
+import {
+	processLocalizedNameForClinicOrDoctor,
+	processLocalizedDescription,
+} from '~/server/common/utils';
 import {
 	getServicesByClinicAndSpecialty,
 	type ClinicServicesMap,
@@ -31,6 +34,12 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 				d.name_sr_cyrl,
 				d.name_ru,
 				d.name_en,
+				d.description_sr,
+				d.description_sr_cyrl,
+				d.description_ru,
+				d.description_en,
+				d.description_de,
+				d.description_tr,
 				d.professional_title as professionalTitle,
 				d.photo_url as photoUrl,
 				d.phone,
@@ -84,6 +93,9 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			locale,
 		);
 
+		// Обрабатываем локализованное описание
+		const description = processLocalizedDescription(doctor, locale);
+
 		// Сортируем clinicIds по количеству услуг (больше услуг — выше)
 		let sortedClinicIds = doctor.clinicIds;
 		if (clinicServices && doctor.clinicIds) {
@@ -97,12 +109,25 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 		}
 
 		// Удаляем избыточные поля локализации
-		const { name_sr, name_sr_cyrl, name_ru, name_en, ...rest } = doctor;
+		const {
+			name_sr,
+			name_sr_cyrl,
+			name_ru,
+			name_en,
+			description_sr,
+			description_sr_cyrl,
+			description_ru,
+			description_en,
+			description_de,
+			description_tr,
+			...rest
+		} = doctor;
 
 		return {
 			...rest,
 			name,
 			localName,
+			description,
 			clinicIds: sortedClinicIds,
 			clinicServices,
 		};

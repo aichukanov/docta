@@ -2,7 +2,7 @@ import { getConnection } from '~/server/common/db-mysql';
 import {
 	processLocalizedNameForClinicOrDoctor,
 	processLocalizedFieldForClinic,
-	processLocalizedDescriptionForClinic,
+	processLocalizedDescription,
 } from '~/server/common/utils';
 import type { ClinicData } from '~/interfaces/clinic';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
@@ -91,7 +91,7 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 		const town = processLocalizedFieldForClinic(clinic, 'town', locale);
 
 		// Обрабатываем локализованное description
-		const description = processLocalizedDescriptionForClinic(clinic, locale);
+		const description = processLocalizedDescription(clinic, locale);
 		const features = clinic.features
 			? clinic.features.split(',').map(Number)
 			: [];

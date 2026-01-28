@@ -31,9 +31,7 @@ export function getPriceOrderBySQL(tableAlias: string = ''): string {
 	return `CASE WHEN ${priceField} > 0 THEN 0 ELSE 1 END, CASE WHEN ${priceField} > 0 THEN ${priceField} ELSE 999999999 END`;
 }
 
-export function parseClinicPricesData(
-	clinicPricesData: string | null,
-): Array<{
+export function parseClinicPricesData(clinicPricesData: string | null): Array<{
 	clinicId: number;
 	price: number | null;
 	priceMin: number | null;
@@ -192,12 +190,12 @@ export function processLocalizedFieldForClinic(
 }
 
 /**
- * Обрабатывает локализованные значения для description клиник
+ * Обрабатывает локализованные значения для description клиник и врачей
  * Если locale = 'sr': возвращает только значение на сербской латинице
  * Если locale = 'sr-cyrl': возвращает значение на кириллице или латинице как fallback
  * Если другие локали: возвращает локализованное значение (если есть) или сербское (если нет)
  */
-export function processLocalizedDescriptionForClinic(
+export function processLocalizedDescription(
 	row: any,
 	locale?: string,
 ): string {
@@ -216,4 +214,15 @@ export function processLocalizedDescriptionForClinic(
 	// Для других локалей: локализованное значение (если есть) или сербское (если нет)
 	const descriptionField = `description_${normalizedLocale}`;
 	return row[descriptionField] || row.description_sr || '';
+}
+
+/**
+ * @deprecated Используйте processLocalizedDescription вместо этого
+ * Обрабатывает локализованные значения для description клиник
+ */
+export function processLocalizedDescriptionForClinic(
+	row: any,
+	locale?: string,
+): string {
+	return processLocalizedDescription(row, locale);
 }

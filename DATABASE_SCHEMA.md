@@ -73,6 +73,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `photo_url` (varchar(255))
 - `phone` (varchar(20))
 - `email`, `website`, `instagram`, `facebook`, `whatsapp`, `telegram`, `viber` (varchar(255))
+- `description_sr`, `description_sr_cyrl`, `description_ru`, `description_en`, `description_de`, `description_tr` (text): Localized descriptions.
 - `professional_title` (varchar(255))
 - `created_at`, `updated_at` (timestamp)
 

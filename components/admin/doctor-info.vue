@@ -19,6 +19,12 @@ interface DoctorAdminDetails {
 	name_sr_cyrl: string;
 	name_ru: string;
 	name_en: string;
+	description_sr: string;
+	description_sr_cyrl: string;
+	description_ru: string;
+	description_en: string;
+	description_de: string;
+	description_tr: string;
 	specialtyIds: number[];
 	languageIds: number[];
 	clinicIds: number[];
@@ -157,6 +163,37 @@ const viberModified = computed(
 	() => originalDoctor.value?.viber !== doctorModel.value?.viber,
 );
 
+const descriptionSrModified = computed(
+	() =>
+		originalDoctor.value?.description_sr !== doctorModel.value?.description_sr,
+);
+
+const descriptionSrCyrlModified = computed(
+	() =>
+		originalDoctor.value?.description_sr_cyrl !==
+		doctorModel.value?.description_sr_cyrl,
+);
+
+const descriptionRuModified = computed(
+	() =>
+		originalDoctor.value?.description_ru !== doctorModel.value?.description_ru,
+);
+
+const descriptionEnModified = computed(
+	() =>
+		originalDoctor.value?.description_en !== doctorModel.value?.description_en,
+);
+
+const descriptionDeModified = computed(
+	() =>
+		originalDoctor.value?.description_de !== doctorModel.value?.description_de,
+);
+
+const descriptionTrModified = computed(
+	() =>
+		originalDoctor.value?.description_tr !== doctorModel.value?.description_tr,
+);
+
 const clinicIdsModified = computed(() => {
 	if (!originalDoctor.value || !doctorModel.value) {
 		return false;
@@ -208,6 +245,12 @@ const hasChanges = computed(() => {
 		telegramModified.value ||
 		whatsappModified.value ||
 		viberModified.value ||
+		descriptionSrModified.value ||
+		descriptionSrCyrlModified.value ||
+		descriptionRuModified.value ||
+		descriptionEnModified.value ||
+		descriptionDeModified.value ||
+		descriptionTrModified.value ||
 		clinicIdsModified.value ||
 		specialtyIdsModified.value ||
 		languageIdsModified.value ||
@@ -418,6 +461,71 @@ watch(doctorId, async (newDoctorId) => {
 				:modified="viberModified"
 				@reset="doctorModel.viber = originalDoctor?.viber || ''"
 			/>
+
+			<AdminFieldGroup title="Описание">
+				<AdminEditableField
+					label="Описание (SR)"
+					type="textarea"
+					v-model:value="doctorModel.description_sr"
+					:readonly="!editable"
+					:modified="descriptionSrModified"
+					@reset="
+						doctorModel.description_sr = originalDoctor?.description_sr || ''
+					"
+				/>
+				<AdminEditableField
+					label="Описание (SR-CYRL)"
+					type="textarea"
+					v-model:value="doctorModel.description_sr_cyrl"
+					:readonly="!editable"
+					:modified="descriptionSrCyrlModified"
+					:translate-from="doctorModel.description_sr"
+					@reset="
+						doctorModel.description_sr_cyrl =
+							originalDoctor?.description_sr_cyrl || ''
+					"
+				/>
+				<AdminEditableField
+					label="Описание (EN)"
+					type="textarea"
+					v-model:value="doctorModel.description_en"
+					:readonly="!editable"
+					:modified="descriptionEnModified"
+					@reset="
+						doctorModel.description_en = originalDoctor?.description_en || ''
+					"
+				/>
+				<AdminEditableField
+					label="Описание (RU)"
+					type="textarea"
+					v-model:value="doctorModel.description_ru"
+					:readonly="!editable"
+					:modified="descriptionRuModified"
+					@reset="
+						doctorModel.description_ru = originalDoctor?.description_ru || ''
+					"
+				/>
+				<AdminEditableField
+					label="Описание (DE)"
+					type="textarea"
+					v-model:value="doctorModel.description_de"
+					:readonly="!editable"
+					:modified="descriptionDeModified"
+					@reset="
+						doctorModel.description_de = originalDoctor?.description_de || ''
+					"
+				/>
+				<AdminEditableField
+					label="Описание (TR)"
+					type="textarea"
+					v-model:value="doctorModel.description_tr"
+					:readonly="!editable"
+					:modified="descriptionTrModified"
+					@reset="
+						doctorModel.description_tr = originalDoctor?.description_tr || ''
+					"
+				/>
+			</AdminFieldGroup>
 
 			<FilterClinicSelect
 				:clinics="clinics"

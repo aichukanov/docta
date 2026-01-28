@@ -41,6 +41,12 @@ const doctorInstagram = ref('');
 const doctorTelegram = ref('');
 const doctorWhatsapp = ref('');
 const doctorViber = ref('');
+const doctorDescriptionSr = ref('');
+const doctorDescriptionSrCyrl = ref('');
+const doctorDescriptionRu = ref('');
+const doctorDescriptionEn = ref('');
+const doctorDescriptionDe = ref('');
+const doctorDescriptionTr = ref('');
 
 const clinicIds = ref<number[]>([]);
 const specialtyIds = ref<number[]>([]);
@@ -89,6 +95,12 @@ const clearFields = () => {
 	doctorTelegram.value = '';
 	doctorWhatsapp.value = '';
 	doctorViber.value = '';
+	doctorDescriptionSr.value = '';
+	doctorDescriptionSrCyrl.value = '';
+	doctorDescriptionRu.value = '';
+	doctorDescriptionEn.value = '';
+	doctorDescriptionDe.value = '';
+	doctorDescriptionTr.value = '';
 	clinicIds.value = [];
 	specialtyIds.value = [];
 	languageIds.value = [1];
@@ -123,6 +135,12 @@ const addDoctor = async () => {
 			telegram: doctorTelegram.value,
 			whatsapp: doctorWhatsapp.value,
 			viber: doctorViber.value,
+			description_sr: doctorDescriptionSr.value,
+			description_sr_cyrl: doctorDescriptionSrCyrl.value,
+			description_ru: doctorDescriptionRu.value,
+			description_en: doctorDescriptionEn.value,
+			description_de: doctorDescriptionDe.value,
+			description_tr: doctorDescriptionTr.value,
 			clinicIds: clinicIds.value,
 			specialtyIds: specialtyIds.value,
 			languageIds: languageIds.value,
@@ -165,6 +183,40 @@ const addDoctor = async () => {
 		<AdminEditableField label="Telegram" v-model:value="doctorTelegram" />
 		<AdminEditableField label="Whatsapp" v-model:value="doctorWhatsapp" />
 		<AdminEditableField label="Viber" v-model:value="doctorViber" />
+
+		<AdminFieldGroup title="Описание">
+			<AdminEditableField
+				label="Описание (SR)"
+				type="textarea"
+				v-model:value="doctorDescriptionSr"
+			/>
+			<AdminEditableField
+				label="Описание (SR-CYRL)"
+				type="textarea"
+				v-model:value="doctorDescriptionSrCyrl"
+				:translate-from="doctorDescriptionSr"
+			/>
+			<AdminEditableField
+				label="Описание (EN)"
+				type="textarea"
+				v-model:value="doctorDescriptionEn"
+			/>
+			<AdminEditableField
+				label="Описание (RU)"
+				type="textarea"
+				v-model:value="doctorDescriptionRu"
+			/>
+			<AdminEditableField
+				label="Описание (DE)"
+				type="textarea"
+				v-model:value="doctorDescriptionDe"
+			/>
+			<AdminEditableField
+				label="Описание (TR)"
+				type="textarea"
+				v-model:value="doctorDescriptionTr"
+			/>
+		</AdminFieldGroup>
 
 		<FilterClinicSelect :clinics="clinics" v-model:value="clinicIds" />
 		<FilterSpecialtySelect v-model:value="specialtyIds" />

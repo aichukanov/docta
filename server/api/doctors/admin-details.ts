@@ -16,6 +16,12 @@ interface DoctorAdminDetails extends ContactList {
 	name_sr_cyrl: string;
 	name_ru: string;
 	name_en: string;
+	description_sr: string;
+	description_sr_cyrl: string;
+	description_ru: string;
+	description_en: string;
+	description_de: string;
+	description_tr: string;
 	specialtyIds: number[];
 	languageIds: number[];
 	clinicIds: number[];
@@ -45,7 +51,10 @@ export default defineEventHandler(
 
 			// Получаем основные данные врача
 			const [doctorRows]: any = await connection.execute(
-				`SELECT id, name_sr, name_sr_cyrl, name_ru, name_en, professional_title, photo_url, phone, email, facebook, instagram, telegram, whatsapp, viber, website FROM doctors WHERE id = ?`,
+				`SELECT id, name_sr, name_sr_cyrl, name_ru, name_en, 
+				        description_sr, description_sr_cyrl, description_ru, description_en, description_de, description_tr,
+				        professional_title, photo_url, phone, email, facebook, instagram, telegram, whatsapp, viber, website 
+				 FROM doctors WHERE id = ?`,
 				[body.doctorId],
 			);
 
@@ -100,6 +109,12 @@ export default defineEventHandler(
 				name_sr_cyrl: doctor.name_sr_cyrl || '',
 				name_ru: doctor.name_ru || '',
 				name_en: doctor.name_en || '',
+				description_sr: doctor.description_sr || '',
+				description_sr_cyrl: doctor.description_sr_cyrl || '',
+				description_ru: doctor.description_ru || '',
+				description_en: doctor.description_en || '',
+				description_de: doctor.description_de || '',
+				description_tr: doctor.description_tr || '',
 				specialtyIds: specialtyRows.map((r: any) => r.specialty_id),
 				languageIds: languageRows.map((r: any) => r.language_id),
 				clinicIds: clinicRows.map((r: any) => r.clinic_id),

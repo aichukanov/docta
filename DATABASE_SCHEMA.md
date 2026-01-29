@@ -4,33 +4,36 @@ This file provides a structured reference of the MySQL database for the docta.me
 
 ## Tables Summary
 
-| Table                                  | Description                                                    |
-| :------------------------------------- | :------------------------------------------------------------- |
-| `cities`                               | List of cities with coordinates.                               |
-| `clinics`                              | Core clinic data, contacts, and multi-language descriptions.   |
-| `doctors`                              | Medical specialists, personal info, and professional titles.   |
-| `lab_tests`                            | Catalog of laboratory tests with localized names.              |
-| `medical_services`                     | Catalog of general medical services (localized).               |
-| `medications`                          | Catalog of medications (localized).                            |
-| `specialties`                          | Medical specialties.                                           |
-| `languages`                            | Supported languages (codes and names).                         |
-| `clinic_lab_tests`                     | Junction table: Clinic <-> Lab Test (includes pricing).        |
-| `clinic_medical_services`              | Junction table: Clinic <-> Medical Service (includes pricing). |
-| `clinic_medications`                   | Junction table: Clinic <-> Medication (includes pricing).      |
-| `clinic_languages`                     | Junction table: Clinic <-> Languages supported.                |
-| `clinic_medical_service_doctors`       | Junction table: Clinic <-> Medical Service <-> Doctor.         |
-| `doctor_clinics`                       | Junction table: Doctor <-> Clinic (includes position).         |
-| `doctor_specialties`                   | Junction table: Doctor <-> Specialty.                          |
-| `doctor_languages`                     | Junction table: Doctor <-> Languages spoken.                   |
-| `medical_services_specialties`         | Junction table: Medical Service <-> Specialty.                 |
-| `medical_service_categories`           | Categories for medical services.                               |
-| `medical_service_categories_relations` | Junction table: Medical Service <-> Category.                  |
-| `lab_test_categories`                  | Categories for lab tests.                                      |
-| `lab_test_categories_relations`        | Junction table: Lab Test <-> Category.                         |
-| `lab_test_synonyms`                    | Alternative names for lab tests for search optimization.       |
-| `medical_service_redirects`           | Redirect map for merged medical service records.               |
-| `doctor_redirects`                     | Redirect map for merged doctor profiles.                       |
-| `lab_test_redirects`                   | Redirect map for merged lab test records.                      |
+| Table                                   | Description                                                    |
+| :-------------------------------------- | :------------------------------------------------------------- |
+| `cities`                                | List of cities with coordinates.                               |
+| `clinics`                               | Core clinic data, contacts, and multi-language descriptions.   |
+| `doctors`                               | Medical specialists, personal info, and professional titles.   |
+| `lab_tests`                             | Catalog of laboratory tests with localized names.              |
+| `medical_services`                      | Catalog of general medical services (localized).               |
+| `medications`                           | Catalog of medications (localized).                            |
+| `specialties`                           | Medical specialties.                                           |
+| `languages`                             | Supported languages (codes and names).                         |
+| `clinic_lab_tests`                      | Junction table: Clinic <-> Lab Test (includes pricing).        |
+| `clinic_medical_services`               | Junction table: Clinic <-> Medical Service (includes pricing). |
+| `clinic_medications`                    | Junction table: Clinic <-> Medication (includes pricing).      |
+| `clinic_languages`                      | Junction table: Clinic <-> Languages supported.                |
+| `clinic_medical_service_doctors`        | Junction table: Clinic <-> Medical Service <-> Doctor.         |
+| `doctor_clinics`                        | Junction table: Doctor <-> Clinic (includes position).         |
+| `doctor_specialties`                    | Junction table: Doctor <-> Specialty.                          |
+| `doctor_languages`                      | Junction table: Doctor <-> Languages spoken.                   |
+| `medical_services_specialties`          | Junction table: Medical Service <-> Specialty.                 |
+| `medical_service_categories`            | Categories for medical services.                               |
+| `medical_service_categories_relations`  | Junction table: Medical Service <-> Category.                  |
+| `lab_test_categories`                   | Categories for lab tests.                                      |
+| `lab_test_categories_relations`         | Junction table: Lab Test <-> Category.                         |
+| `lab_test_synonyms`                     | Alternative names for lab tests for search optimization.       |
+| `medical_service_redirects`             | Redirect map for merged medical service records.               |
+| `doctor_redirects`                      | Redirect map for merged doctor profiles.                       |
+| `lab_test_redirects`                    | Redirect map for merged lab test records.                      |
+| `billing_paid_services`                 | Catalog of paid services available for clinics.                |
+| `billing_clinic_service_purchases`      | Purchase records of paid services by clinics.                  |
+| `billing_clinic_service_purchase_items` | Junction table: Purchase <-> Paid Service.                     |
 
 ## Detailed Table Definitions
 
@@ -244,6 +247,31 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `old_id` (int): Old Doctor ID.
 - `new_id` (int): New Doctor ID (target).
 
+### `billing_paid_services`
+
+- `id` (int, PK, AI)
+- `name` (varchar(255), NOT NULL): Service name (e.g., "dofollow", "highlight", "approved").
+- `description` (text): Service description.
+- `created_at` (timestamp)
+
+### `billing_clinic_service_purchases`
+
+- `id` (int, PK, AI)
+- `clinic_id` (int, FK -> clinics.id): Clinic that purchased services.
+- `price` (decimal(10,2)): Total price paid.
+- `purchased_at` (datetime): Purchase date.
+- `valid_until` (datetime): Expiration date of services.
+- `deleted` (boolean, default FALSE): Soft delete flag.
+- `created_at` (timestamp)
+
+### `billing_clinic_service_purchase_items`
+
+- `id` (int, PK, AI)
+- `purchase_id` (int, FK -> billing_clinic_service_purchases.id)
+- `service_id` (int, FK -> billing_paid_services.id)
+- `created_at` (timestamp)
+- _Relationship_: Links specific paid services to a purchase.
+
 ## Core Implementation Logic
 
 1. **I18n Strategy**:
@@ -283,4 +311,14 @@ This file provides a structured reference of the MySQL database for the docta.me
    - `lab_test_categories` and `lab_test_categories_relations` allow grouping lab tests by categories.
 
 9. **Doctor-Service Assignment**:
+
    - `clinic_medical_service_doctors` enables assigning specific doctors to medical services within a clinic context.
+
+10. **Paid Services (Billing)**:
+
+- `billing_paid_services` contains available paid services (dofollow, highlight, approved/verified).
+- `billing_clinic_service_purchases` tracks purchases made by clinics.
+- `billing_clinic_service_purchase_items` links purchases to specific services.
+- Prices are stored as `decimal(10,2)`.
+- `deleted` flag supports soft deletes for purchases.
+- Current available services: DOFOLLOW (dofollow links), HIGHLIGHT (featured in lists), APPROVED (verified badge).

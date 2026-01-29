@@ -6,7 +6,7 @@
 
 ## Цель
 
-Создать структуру БД для пользователей, OAuth, ролей и прав доступа.
+Создать структуру БД для базовой авторизации через OAuth и хранения сессий.
 
 ## Зависимости
 
@@ -14,61 +14,124 @@
 
 ## Задачи
 
-1. Создать SQL миграционный файл с новыми таблицами
-2. Создать SQL файл для изменения существующих таблиц (clinics, doctors)
-3. Добавить seed данные для тестирования (тестовый суперадмин)
+1. Создать SQL миграционный файл с 3 таблицами: users, oauth_accounts, sessions
+2. Создать SQL файл для отката (rollback)
+3. Создать seed данные для тестирования
 4. Документировать изменения в `DATABASE_SCHEMA.md`
+5. Протестировать миграции
 
 ## Технические детали
 
-### Создать файл: `server/sql/migrations/001_auth_system.sql`
+### Создать файл: `server/sql/migrations/001_auth_basic.sql`
 
-См. полную схему таблиц в [04-database.md](../04-database.md):
+См. полную схему SQL в [04-database.md](../04-database.md)
 
-- users
-- oauth_accounts
-- sessions
-- clinic_users
-- clinic_join_requests
-- audit_logs
-- clinic_verified_contacts
+**Таблицы:**
 
-### Создать файл: `server/sql/migrations/002_alter_existing_tables.sql`
+1. `users` - базовая информация пользователя (id, email, name, photo_url)
+2. `oauth_accounts` - привязки OAuth провайдеров
+3. `sessions` - сессии пользователей
+
+### Создать файл: `server/sql/migrations/001_auth_basic_rollback.sql`
 
 ```sql
--- Добавить статусы для клиник
-ALTER TABLE clinics ADD COLUMN status ENUM('draft', 'pending_verification', 'published', 'rejected')
-    NOT NULL DEFAULT 'draft' AFTER updated_at;
-
-ALTER TABLE clinics ADD COLUMN is_contact_verified BOOLEAN DEFAULT FALSE AFTER status;
-ALTER TABLE clinics ADD COLUMN created_by INT NULL AFTER is_contact_verified;
-ALTER TABLE clinics ADD FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE SET NULL;
-
--- Добавить флаг верификации для врачей
-ALTER TABLE doctors ADD COLUMN is_verified BOOLEAN DEFAULT FALSE AFTER updated_at;
-ALTER TABLE doctors ADD COLUMN user_id INT NULL AFTER is_verified;
-ALTER TABLE doctors ADD FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL;
+DROP TABLE IF EXISTS sessions;
+DROP TABLE IF EXISTS oauth_accounts;
+DROP TABLE IF EXISTS users;
 ```
+
+### Создать файл: `server/sql/seeds/001_auth_test_data.sql`
+
+Тестовый пользователь + OAuth аккаунт + сессия для локальной разработки.
 
 ### Обновить: `DATABASE_SCHEMA.md`
 
-Добавить описание новых таблиц в существующий файл DATABASE_SCHEMA.md
+Добавить описание 3 новых таблиц с их назначением.
 
 ## Критерии приемки
 
-- [ ] AC-1: Все таблицы созданы без ошибок
-- [ ] AC-2: Foreign keys настроены корректно
-- [ ] AC-3: Индексы созданы для часто запрашиваемых полей
+- [ ] AC-1: Все 3 таблицы созданы без ошибок
+- [ ] AC-2: Foreign keys настроены корректно (cascade delete)
+- [ ] AC-3: Индексы созданы для часто запрашиваемых полей (email, provider, expires_at)
 - [ ] AC-4: DATABASE_SCHEMA.md обновлен с новыми таблицами
-- [ ] AC-5: SQL файлы выполняются идемпотентно (можно запустить повторно)
+- [ ] AC-5: SQL миграции выполняются идемпотентно (можно запустить повторно)
+- [ ] AC-6: Rollback успешно удаляет все таблицы
+- [ ] AC-7: Seed данные успешно вставляются
+- [ ] AC-8: Constraint проверки работают (unique email, unique provider+account_id)
 
 ## Как проверить
 
-1. Запустить SQL миграции на тестовой БД
-2. Проверить наличие всех таблиц: `SHOW TABLES;`
-3. Проверить структуру каждой таблицы: `DESCRIBE users;` и т.д.
-4. Проверить foreign keys: `SHOW CREATE TABLE clinic_users;`
-5. Попробовать вставить тестовые данные и проверить связи
+1. **Запустить миграции на тестовой БД:**
+
+   ```sql
+   mysql -u root -p docta_test < server/sql/migrations/001_auth_basic.sql
+   ```
+
+2. **Проверить наличие всех таблиц:**
+
+   ```sql
+   SHOW TABLES;
+   -- Должно показать: users, oauth_accounts, sessions
+   ```
+
+3. **Проверить структуру каждой таблицы:**
+
+   ```sql
+   DESCRIBE users;
+   DESCRIBE oauth_accounts;
+   DESCRIBE sessions;
+   ```
+
+4. **Проверить foreign keys:**
+
+   ```sql
+   SHOW CREATE TABLE oauth_accounts;
+   SHOW CREATE TABLE sessions;
+   -- Должны быть FK на users(id) с ON DELETE CASCADE
+   ```
+
+5. **Проверить индексы:**
+
+   ```sql
+   SHOW INDEX FROM users;
+   SHOW INDEX FROM oauth_accounts;
+   SHOW INDEX FROM sessions;
+   ```
+
+6. **Попробовать вставить тестовые данные:**
+
+   ```sql
+   mysql -u root -p docta_test < server/sql/seeds/001_auth_test_data.sql
+   SELECT * FROM users;
+   SELECT * FROM oauth_accounts;
+   SELECT * FROM sessions;
+   ```
+
+7. **Проверить constraint'ы:**
+
+   ```sql
+   -- Попробовать вставить дубликат email - должна быть ошибка
+   INSERT INTO users (email, name) VALUES ('test@example.com', 'Duplicate');
+
+   -- Попробовать вставить OAuth с несуществующим user_id - должна быть ошибка
+   INSERT INTO oauth_accounts (user_id, provider, provider_account_id)
+   VALUES (999, 'google', 'test');
+   ```
+
+8. **Проверить rollback:**
+
+   ```sql
+   mysql -u root -p docta_test < server/sql/migrations/001_auth_basic_rollback.sql
+   SHOW TABLES;
+   -- Таблицы users, oauth_accounts, sessions должны исчезнуть
+   ```
+
+9. **Проверить повторное выполнение (идемпотентность):**
+   ```sql
+   -- Запустить миграцию 2 раза подряд - не должно быть ошибок
+   mysql -u root -p docta_test < server/sql/migrations/001_auth_basic.sql
+   mysql -u root -p docta_test < server/sql/migrations/001_auth_basic.sql
+   ```
 
 ## Статус
 

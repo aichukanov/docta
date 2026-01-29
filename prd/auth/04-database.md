@@ -14,13 +14,26 @@ CREATE TABLE users (
     email VARCHAR(255) UNIQUE NOT NULL,
     name VARCHAR(255),
     photo_url VARCHAR(500),
-    doctor_id INT NULL, -- FK к doctors.id (если пользователь является врачом)
-    is_superadmin BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (doctor_id) REFERENCES doctors(id) ON DELETE SET NULL
+    INDEX idx_email (email)
 );
 ```
+
+**Назначение:** Хранение базовой информации о пользователях.
+
+**Поля:**
+
+- `id` - уникальный идентификатор пользователя
+- `email` - email из OAuth (уникальный)
+- `name` - имя из OAuth
+- `photo_url` - URL фото из OAuth
+- `created_at` / `updated_at` - системные метки времени
+
+**Примечания:**
+
+- На этом этапе не добавляем поля `doctor_id`, `is_superadmin` и другие - они будут в других PRD
+- Базовая таблица, достаточная для OAuth авторизации
 
 ### oauth_accounts - OAuth аккаунты
 
@@ -36,9 +49,21 @@ CREATE TABLE oauth_accounts (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     UNIQUE KEY unique_provider_account (provider, provider_account_id),
+    INDEX idx_user_id (user_id),
+    INDEX idx_provider (provider, provider_account_id),
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 ```
+
+**Назначение:** Связь пользователей с OAuth провайдерами (поддержка нескольких провайдеров на одного пользователя).
+
+**Поля:**
+
+- `user_id` - ссылка на users.id
+- `provider` - название провайдера ('google', 'telegram')
+- `provider_account_id` - ID пользователя в системе провайдера
+- `access_token` / `refresh_token` - токены OAuth (опционально)
+- `expires_at` - время истечения токена
 
 ### sessions - Сессии
 
@@ -48,133 +73,41 @@ CREATE TABLE sessions (
     user_id INT NOT NULL,
     expires_at BIGINT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_user_id (user_id),
+    INDEX idx_expires_at (expires_at),
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 ```
 
-### clinic_users - Пользователи клиник
+**Назначение:** Хранение сессий пользователей (database-based sessions).
 
-```sql
-CREATE TABLE clinic_users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    clinic_id INT NOT NULL,
-    user_id INT NOT NULL,
-    role ENUM('admin', 'editor') NOT NULL DEFAULT 'editor',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    UNIQUE KEY unique_clinic_user (clinic_id, user_id),
-    FOREIGN KEY (clinic_id) REFERENCES clinics(id) ON DELETE CASCADE,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
-);
-```
+**Поля:**
 
-### clinic_join_requests - Запросы на присоединение
+- `id` - уникальный идентификатор сессии (обычно генерируется библиотекой auth)
+- `user_id` - ссылка на users.id
+- `expires_at` - время истечения сессии (UNIX timestamp)
 
-```sql
-CREATE TABLE clinic_join_requests (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    clinic_id INT NOT NULL,
-    user_id INT NOT NULL,
-    status ENUM('pending', 'approved', 'rejected') NOT NULL DEFAULT 'pending',
-    message TEXT, -- Сообщение от пользователя
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    reviewed_by INT, -- user_id который рассмотрел запрос
-    reviewed_at TIMESTAMP NULL,
-    UNIQUE KEY unique_pending_request (clinic_id, user_id, status),
-    FOREIGN KEY (clinic_id) REFERENCES clinics(id) ON DELETE CASCADE,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (reviewed_by) REFERENCES users(id) ON DELETE SET NULL
-);
-```
+**Примечания:**
 
-### audit_logs - Аудит лог
-
-```sql
-CREATE TABLE audit_logs (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    action VARCHAR(100) NOT NULL, -- 'clinic_created', 'clinic_verified', 'user_joined_clinic'
-    entity_type VARCHAR(50), -- 'clinic', 'doctor', 'user'
-    entity_id INT,
-    details JSON, -- Дополнительная информация
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
-);
-```
-
-### clinic_verified_contacts - Верификационные контакты
-
-```sql
-CREATE TABLE clinic_verified_contacts (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    clinic_id INT NOT NULL,
-    contact_type ENUM('email', 'phone', 'telegram', 'whatsapp', 'viber') NOT NULL,
-    contact_value VARCHAR(255) NOT NULL,
-    verified_by_user_id INT NOT NULL, -- Кто подтвердил доступ
-    verified_via_oauth_account_id INT NULL, -- Какой OAuth аккаунт использовался
-    verified_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    is_primary BOOLEAN DEFAULT FALSE, -- Основной контакт для верификации
-    UNIQUE KEY unique_clinic_contact (clinic_id, contact_type, contact_value),
-    INDEX idx_contact_value (contact_value),
-    FOREIGN KEY (clinic_id) REFERENCES clinics(id) ON DELETE CASCADE,
-    FOREIGN KEY (verified_by_user_id) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (verified_via_oauth_account_id) REFERENCES oauth_accounts(id) ON DELETE SET NULL
-);
-```
-
-## Изменения существующих таблиц
-
-### clinics - Добавление статусов и верификации
-
-```sql
--- Добавить статусы для клиник
-ALTER TABLE clinics ADD COLUMN status ENUM('draft', 'pending_verification', 'published', 'rejected')
-    NOT NULL DEFAULT 'draft' AFTER updated_at;
-
--- Флаг верификации через контакты
-ALTER TABLE clinics ADD COLUMN is_contact_verified BOOLEAN DEFAULT FALSE AFTER status;
-
--- Создатель клиники
-ALTER TABLE clinics ADD COLUMN created_by INT NULL AFTER is_contact_verified;
-ALTER TABLE clinics ADD FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE SET NULL;
-```
-
-### doctors - Добавление верификации и связи с пользователем
-
-```sql
--- Флаг верификации врача
-ALTER TABLE doctors ADD COLUMN is_verified BOOLEAN DEFAULT FALSE AFTER updated_at;
-
--- Связь с пользователем
-ALTER TABLE doctors ADD COLUMN user_id INT NULL AFTER is_verified;
-ALTER TABLE doctors ADD FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL;
-```
+- Index на `expires_at` для эффективной очистки истекших сессий
+- Можно использовать cron job для очистки: `DELETE FROM sessions WHERE expires_at < UNIX_TIMESTAMP()`
 
 ## Схема связей
 
 ```
 ┌─────────┐
-│  users  │◄────────┐
-└────┬────┘         │
-     │              │
-     │ 1            │ N
-     │              │
-     ▼              │
-┌──────────────┐   │
-│oauth_accounts│───┘
-└──────────────┘
-
-┌─────────┐     ┌──────────────┐     ┌─────────┐
-│  users  │────►│clinic_users  │◄────│ clinics │
-└────┬────┘  N  └──────────────┘  N  └────┬────┘
-     │                                      │
-     │ 0..1                                 │ 1
-     │                                      │
-     ▼                                      ▼
-┌─────────┐                         ┌──────────────────────┐
-│ doctors │                         │clinic_verified_contacts│
-└─────────┘                         └──────────────────────┘
+│  users  │
+└────┬────┘
+     │
+     │ 1:N
+     │
+     ├──────────────┬─────────────┐
+     │              │             │
+     ▼              ▼             ▼
+┌─────────────┐  ┌──────────┐  [Другие PRD]
+│oauth_accounts│  │ sessions │  - doctor_profile
+└──────────────┘  └──────────┘  - clinic_profile
+                                - permissions
 ```
 
 ## Индексы для производительности
@@ -183,24 +116,103 @@ ALTER TABLE doctors ADD FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET
 -- Частые запросы по email
 CREATE INDEX idx_users_email ON users(email);
 
--- Поиск OAuth аккаунтов
+-- Поиск OAuth аккаунтов по провайдеру
 CREATE INDEX idx_oauth_provider ON oauth_accounts(provider, provider_account_id);
+CREATE INDEX idx_oauth_user ON oauth_accounts(user_id);
 
--- Проверка прав доступа к клиникам
-CREATE INDEX idx_clinic_users_clinic ON clinic_users(clinic_id);
-CREATE INDEX idx_clinic_users_user ON clinic_users(user_id);
-
--- Фильтр запросов по статусу
-CREATE INDEX idx_join_requests_status ON clinic_join_requests(status);
-CREATE INDEX idx_join_requests_clinic ON clinic_join_requests(clinic_id, status);
-
--- Поиск по контактам
--- Уже создан: INDEX idx_contact_value ON clinic_verified_contacts(contact_value);
-
--- Фильтр клиник по статусу
-CREATE INDEX idx_clinics_status ON clinics(status);
-CREATE INDEX idx_clinics_created_by ON clinics(created_by);
+-- Поиск и очистка сессий
+CREATE INDEX idx_sessions_user ON sessions(user_id);
+CREATE INDEX idx_sessions_expires ON sessions(expires_at);
 ```
+
+## Миграции
+
+### Создание таблиц
+
+Файл: `server/sql/migrations/001_auth_basic.sql`
+
+```sql
+-- Создаем таблицу пользователей
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    name VARCHAR(255),
+    photo_url VARCHAR(500),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_email (email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Создаем таблицу OAuth аккаунтов
+CREATE TABLE IF NOT EXISTS oauth_accounts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    provider VARCHAR(50) NOT NULL,
+    provider_account_id VARCHAR(255) NOT NULL,
+    access_token TEXT,
+    refresh_token TEXT,
+    expires_at BIGINT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY unique_provider_account (provider, provider_account_id),
+    INDEX idx_user_id (user_id),
+    INDEX idx_provider (provider, provider_account_id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Создаем таблицу сессий
+CREATE TABLE IF NOT EXISTS sessions (
+    id VARCHAR(255) PRIMARY KEY,
+    user_id INT NOT NULL,
+    expires_at BIGINT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_user_id (user_id),
+    INDEX idx_expires_at (expires_at),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+```
+
+### Откат (Rollback)
+
+Файл: `server/sql/migrations/001_auth_basic_rollback.sql`
+
+```sql
+-- Удаляем таблицы в обратном порядке (учитываем FK)
+DROP TABLE IF EXISTS sessions;
+DROP TABLE IF EXISTS oauth_accounts;
+DROP TABLE IF EXISTS users;
+```
+
+## Seed данные для тестирования
+
+Файл: `server/sql/seeds/001_auth_test_data.sql`
+
+```sql
+-- Тестовый пользователь
+INSERT INTO users (email, name, photo_url) VALUES
+('test@example.com', 'Test User', 'https://via.placeholder.com/150');
+
+-- OAuth аккаунт для тестового пользователя
+INSERT INTO oauth_accounts (user_id, provider, provider_account_id) VALUES
+(1, 'google', 'google_test_id_123');
+
+-- Активная сессия для тестового пользователя (истекает через 30 дней)
+INSERT INTO sessions (id, user_id, expires_at) VALUES
+('test_session_123', 1, UNIX_TIMESTAMP(DATE_ADD(NOW(), INTERVAL 30 DAY)));
+```
+
+## Что НЕ включено в этот PRD
+
+Следующие таблицы будут созданы в других PRD:
+
+- `clinic_users`, `clinic_join_requests` → **clinic-profile**, **clinic-verification**
+- `audit_logs` → **permissions**
+- `clinic_verified_contacts` → **clinic-verification**
+
+Следующие изменения в таблицах `clinics`, `doctors` будут в других PRD:
+
+- Статусы клиник → **clinic-profile**
+- Верификация врачей → **doctor-profile**
 
 ---
 

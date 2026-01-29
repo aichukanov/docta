@@ -1,0 +1,209 @@
+# 3. Техническая архитектура
+
+[← Назад к оглавлению](index.md)
+
+---
+
+## 3.1 Стек технологий
+
+- **Playwright** - основной фреймворк для E2E тестирования
+- **TypeScript** - язык для написания тестов
+- **@playwright/test** - test runner
+- **Node.js** - среда выполнения
+
+## 3.2 Структура проекта
+
+```
+tests/
+├── e2e/                       # E2E тесты
+│   ├── home.spec.ts           # Тесты главной страницы
+│   ├── navigation.spec.ts     # Тесты хедера и футера
+│   ├── clinics.spec.ts        # Тесты страниц клиник
+│   ├── doctors.spec.ts        # Тесты страниц врачей
+│   ├── services.spec.ts       # Тесты страниц услуг
+│   ├── medicines.spec.ts      # Тесты страниц лекарств
+│   └── articles.spec.ts       # Тесты страниц статей
+│
+├── pages/                     # Page Object Model
+│   ├── base.page.ts           # Базовый класс страницы
+│   ├── home.page.ts           # Главная страница
+│   │
+│   ├── components/            # Общие компоненты
+│   │   ├── header.page.ts    # Хедер
+│   │   └── footer.page.ts    # Футер
+│   │
+│   ├── lists/                 # Страницы списков
+│   │   ├── list-base.page.ts # Базовый класс для списков
+│   │   ├── clinic-list.page.ts
+│   │   ├── doctor-list.page.ts
+│   │   ├── service-list.page.ts
+│   │   ├── medicine-list.page.ts
+│   │   └── article-list.page.ts
+│   │
+│   └── details/               # Детальные страницы
+│       ├── detail-base.page.ts # Базовый класс для детальных
+│       ├── clinic-detail.page.ts
+│       ├── doctor-detail.page.ts
+│       ├── service-detail.page.ts
+│       ├── medicine-detail.page.ts
+│       └── article-detail.page.ts
+│
+├── utils/                     # Утилиты
+│   ├── test-helpers.ts        # Вспомогательные функции
+│   └── constants.ts           # Константы (URL, селекторы)
+│
+└── fixtures/                  # Фикстуры (если нужно)
+
+playwright.config.ts           # Конфигурация Playwright
+```
+
+## 3.3 Конфигурация окружений
+
+В `playwright.config.ts` будут определены настройки для двух окружений:
+
+### Локальное окружение (по умолчанию)
+
+- **Base URL:** `http://localhost:3000`
+- **Использование:** постоянное тестирование во время разработки
+
+### Продакшн окружение
+
+- **Base URL:** `https://docta.me`
+- **Использование:** периодическая проверка работы на проде
+
+Переключение через переменную окружения:
+
+```bash
+# Локальное тестирование (по умолчанию)
+npm run test:e2e
+
+# Продакшн тестирование
+npm run test:e2e:prod
+# или
+BASE_URL=https://docta.me npm run test:e2e
+```
+
+## 3.4 Page Object Model (POM)
+
+### Иерархия классов
+
+```
+BasePage
+├── HomePage
+├── HeaderComponent
+├── FooterComponent
+│
+├── ListBasePage
+│   ├── ClinicListPage
+│   ├── DoctorListPage
+│   ├── ServiceListPage
+│   ├── MedicineListPage
+│   └── ArticleListPage
+│
+└── DetailBasePage
+    ├── ClinicDetailPage
+    ├── DoctorDetailPage
+    ├── ServiceDetailPage
+    ├── MedicineDetailPage
+    └── ArticleDetailPage
+```
+
+### Принципы POM
+
+- **Инкапсуляция:** Селекторы и логика страницы скрыты внутри Page Object
+- **Переиспользование:** Общая логика в базовых классах
+- **Читаемость:** Тесты выглядят как описание пользовательских сценариев
+- **Поддерживаемость:** Изменения UI требуют изменений только в Page Objects
+
+## 3.5 Конфигурация браузеров
+
+По умолчанию тесты будут запускаться в **Chromium**.
+
+Опционально можно включить Firefox и WebKit для кросс-браузерного тестирования.
+
+## 3.6 Отчетность
+
+- **HTML Report** - красивый интерактивный отчет
+- **Screenshots** - скриншоты при падении тестов
+- **Videos** - видео при первом retry (для отладки)
+- **Traces** - детальные трейсы для анализа проблем
+
+## 3.7 Диаграмма тестирования
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                   Playwright Tests                      │
+├─────────────────────────────────────────────────────────┤
+│                                                           │
+│  Test Specs                   Page Objects              │
+│  ┌─────────────┐              ┌──────────────┐          │
+│  │ home.spec   │──────────────│ HomePage     │          │
+│  └─────────────┘              └──────────────┘          │
+│                                                           │
+│  ┌─────────────┐              ┌──────────────┐          │
+│  │navigation   │──────────────│ Header/Footer│          │
+│  │.spec        │              │ Components   │          │
+│  └─────────────┘              └──────────────┘          │
+│                                                           │
+│  ┌─────────────┐              ┌──────────────┐          │
+│  │clinics.spec │──────────────│ ClinicList   │          │
+│  │             │              │ ClinicDetail │          │
+│  └─────────────┘              └──────────────┘          │
+│                                                           │
+│  ┌─────────────┐              ┌──────────────┐          │
+│  │doctors.spec │──────────────│ DoctorList   │          │
+│  │             │              │ DoctorDetail │          │
+│  └─────────────┘              └──────────────┘          │
+│                                                           │
+│  └─── и так далее для других сущностей ────┘            │
+│                                                           │
+│         │                           │                     │
+│         └───────────────┬───────────┘                     │
+│                         ▼                                 │
+│              ┌─────────────────────┐                     │
+│              │   Browser Engine    │                     │
+│              │     (Chromium)      │                     │
+│              └─────────────────────┘                     │
+│                         │                                 │
+│                         ▼                                 │
+│              ┌─────────────────────┐                     │
+│              │  localhost:3000     │                     │
+│              │  or                 │                     │
+│              │  https://docta.me   │                     │
+│              └─────────────────────┘                     │
+│                                                           │
+└─────────────────────────────────────────────────────────┘
+```
+
+## 3.8 Стратегия селекторов
+
+### Приоритет селекторов (от лучшего к худшему):
+
+1. **data-testid** - для критических элементов (кнопки, ссылки)
+
+   ```typescript
+   page.getByTestId('back-to-search-button');
+   ```
+
+2. **role + name** - семантические селекторы
+
+   ```typescript
+   page.getByRole('button', { name: 'К поиску' });
+   page.getByRole('link', { name: 'Клиники' });
+   ```
+
+3. **text** - для уникального текста
+
+   ```typescript
+   page.getByText('Список врачей');
+   ```
+
+4. **CSS selectors** - только когда другие варианты невозможны
+   ```typescript
+   page.locator('.clinic-card');
+   ```
+
+---
+
+**Предыдущий раздел:** [← 2. Требования](02-requirements.md)  
+**Следующий раздел:** [4. Риски и метрики →](04-risks-and-metrics.md)

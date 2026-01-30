@@ -379,7 +379,7 @@ test.describe('Articles List Page', () => {
 
 ## Статус
 
-**Not Started**
+**Completed**
 
 ---
 

@@ -373,7 +373,7 @@ test.describe('Doctor Detail Page', () => {
 
 ## Статус
 
-**Not Started**
+**Completed**
 
 ---
 

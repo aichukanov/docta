@@ -439,7 +439,7 @@ npm run test:e2e
 
 ## Статус
 
-**Not Started**
+**Completed**
 
 ---
 

@@ -68,7 +68,7 @@ watch(
 			<slot />
 		</div>
 
-		<div class="footer" :class="{ 'footer-tall': !isConsentGiven }">
+		<footer class="footer" :class="{ 'footer-tall': !isConsentGiven }">
 			<div class="footer-content">
 				<div class="footer-top">
 					<div class="footer-brand">
@@ -162,7 +162,7 @@ watch(
 					<span class="footer-partner__note">— {{ t('SvadLinkNote') }}</span>
 				</div>
 			</div>
-		</div>
+		</footer>
 
 		<ClientOnly>
 			<CookieBanner v-if="!isConsentGiven" />

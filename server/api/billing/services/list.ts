@@ -9,7 +9,7 @@ interface BillingService {
 export default defineEventHandler(
 	async (event): Promise<{ services: BillingService[] }> => {
 		try {
-			requireAdmin(event);
+			await requireAdmin(event);
 
 			const connection = await getConnection();
 			const [rows] = await connection.execute(

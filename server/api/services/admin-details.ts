@@ -20,7 +20,7 @@ interface ServiceAdminDetails {
 export default defineEventHandler(
 	async (event): Promise<ServiceAdminDetails | null> => {
 		try {
-			requireAdmin(event);
+			await requireAdmin(event);
 
 			const body = await readBody(event);
 

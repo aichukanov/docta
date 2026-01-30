@@ -14,26 +14,32 @@ CREATE TABLE users (
     email VARCHAR(255) UNIQUE NOT NULL,
     name VARCHAR(255),
     photo_url VARCHAR(500),
+    password_hash VARCHAR(255) NULL, -- Для админов с email/password авторизацией
+    is_admin BOOLEAN DEFAULT FALSE, -- Флаг администратора
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    INDEX idx_email (email)
+    INDEX idx_email (email),
+    INDEX idx_is_admin (is_admin)
 );
 ```
 
-**Назначение:** Хранение базовой информации о пользователях.
+**Назначение:** Хранение базовой информации о пользователях и администраторах.
 
 **Поля:**
 
 - `id` - уникальный идентификатор пользователя
-- `email` - email из OAuth (уникальный)
-- `name` - имя из OAuth
-- `photo_url` - URL фото из OAuth
+- `email` - email (уникальный)
+- `name` - имя пользователя
+- `photo_url` - URL фото (из OAuth или загруженное вручную)
+- `password_hash` - хешированный пароль (только для админов с email/password авторизацией, NULL для OAuth пользователей)
+- `is_admin` - флаг, указывающий что пользователь является администратором
 - `created_at` / `updated_at` - системные метки времени
 
 **Примечания:**
 
-- На этом этапе не добавляем поля `doctor_id`, `is_superadmin` и другие - они будут в других PRD
-- Базовая таблица, достаточная для OAuth авторизации
+- Администраторы создаются вручную в БД с `is_admin=true` и заполненным `password_hash`
+- OAuth пользователи имеют `password_hash=NULL` и `is_admin=false`
+- На этом этапе не добавляем поле `doctor_id` - оно будет в других PRD
 
 ### oauth_accounts - OAuth аккаунты
 
@@ -138,9 +144,12 @@ CREATE TABLE IF NOT EXISTS users (
     email VARCHAR(255) UNIQUE NOT NULL,
     name VARCHAR(255),
     photo_url VARCHAR(500),
+    password_hash VARCHAR(255) NULL,
+    is_admin BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    INDEX idx_email (email)
+    INDEX idx_email (email),
+    INDEX idx_is_admin (is_admin)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Создаем таблицу OAuth аккаунтов
@@ -188,17 +197,35 @@ DROP TABLE IF EXISTS users;
 Файл: `server/sql/seeds/001_auth_test_data.sql`
 
 ```sql
--- Тестовый пользователь
-INSERT INTO users (email, name, photo_url) VALUES
-('test@example.com', 'Test User', 'https://via.placeholder.com/150');
+-- Тестовый администратор
+-- Пароль: admin123 (хеш для bcrypt с cost=10)
+INSERT INTO users (email, name, password_hash, is_admin) VALUES
+('admin@docta.me', 'Admin User', '$2b$10$rKjHZpVqJYqZ1Y5KQx9D4OZ7qYJZXqVZkQbXqZkQbXqZkQbXqZkQb', TRUE);
+
+-- Тестовый OAuth пользователь
+INSERT INTO users (email, name, photo_url, is_admin) VALUES
+('user@example.com', 'Test User', 'https://via.placeholder.com/150', FALSE);
 
 -- OAuth аккаунт для тестового пользователя
 INSERT INTO oauth_accounts (user_id, provider, provider_account_id) VALUES
-(1, 'google', 'google_test_id_123');
+(2, 'google', 'google_test_id_123');
+
+-- Активная сессия для администратора (истекает через 30 дней)
+INSERT INTO sessions (id, user_id, expires_at) VALUES
+('admin_session_123', 1, UNIX_TIMESTAMP(DATE_ADD(NOW(), INTERVAL 30 DAY)));
 
 -- Активная сессия для тестового пользователя (истекает через 30 дней)
 INSERT INTO sessions (id, user_id, expires_at) VALUES
-('test_session_123', 1, UNIX_TIMESTAMP(DATE_ADD(NOW(), INTERVAL 30 DAY)));
+('user_session_456', 2, UNIX_TIMESTAMP(DATE_ADD(NOW(), INTERVAL 30 DAY)));
+```
+
+**Примечание:** Для создания реального хеша пароля используйте bcrypt:
+
+```javascript
+// Node.js пример
+const bcrypt = require('bcrypt');
+const hash = await bcrypt.hash('your_password', 10);
+console.log(hash);
 ```
 
 ## Что НЕ включено в этот PRD

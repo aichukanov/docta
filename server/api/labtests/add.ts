@@ -10,7 +10,7 @@ interface AddLabTestBody extends LabTestNames {
 
 export default defineEventHandler(async (event): Promise<number | null> => {
 	try {
-		requireAdmin(event);
+		await requireAdmin(event);
 
 		const body: AddLabTestBody = await readBody(event);
 

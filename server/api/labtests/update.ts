@@ -12,7 +12,7 @@ interface UpdateLabTestBody extends LabTestNames {
 
 export default defineEventHandler(async (event): Promise<boolean> => {
 	try {
-		requireAdmin(event);
+		await requireAdmin(event);
 
 		const body: UpdateLabTestBody = await readBody(event);
 

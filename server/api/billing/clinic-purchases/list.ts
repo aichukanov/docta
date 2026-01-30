@@ -15,7 +15,7 @@ interface BillingPurchase {
 export default defineEventHandler(
 	async (event): Promise<{ purchases: BillingPurchase[] }> => {
 		try {
-			requireAdmin(event);
+			await requireAdmin(event);
 
 			const body = await readBody(event);
 			if (!validateBody(body, 'api/billing/clinic-purchases/list')) {

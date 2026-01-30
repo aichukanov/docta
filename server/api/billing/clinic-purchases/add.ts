@@ -12,7 +12,7 @@ function isValidDate(value: string) {
 
 export default defineEventHandler(async (event): Promise<boolean> => {
 	try {
-		requireAdmin(event);
+		await requireAdmin(event);
 
 		const body = await readBody(event);
 

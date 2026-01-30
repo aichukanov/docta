@@ -19,7 +19,7 @@ interface UpdateServiceBody {
 
 export default defineEventHandler(async (event): Promise<boolean> => {
 	try {
-		requireAdmin(event);
+		await requireAdmin(event);
 
 		const body: UpdateServiceBody = await readBody(event);
 

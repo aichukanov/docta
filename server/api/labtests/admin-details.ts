@@ -19,7 +19,7 @@ interface LabTestAdminDetails {
 export default defineEventHandler(
 	async (event): Promise<LabTestAdminDetails | null> => {
 		try {
-			requireAdmin(event);
+			await requireAdmin(event);
 
 			const body = await readBody(event);
 

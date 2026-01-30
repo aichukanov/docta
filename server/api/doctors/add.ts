@@ -17,7 +17,7 @@ interface DoctorServicePrice {
 
 export default defineEventHandler(async (event): Promise<DoctorData> => {
 	try {
-		requireAdmin(event);
+		await requireAdmin(event);
 
 		const body = await readBody(event);
 

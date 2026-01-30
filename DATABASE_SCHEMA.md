@@ -6,6 +6,9 @@ This file provides a structured reference of the MySQL database for the docta.me
 
 | Table                                   | Description                                                    |
 | :-------------------------------------- | :------------------------------------------------------------- |
+| `users`                                 | User accounts (admins with email/password, OAuth users).       |
+| `oauth_accounts`                        | OAuth provider accounts linked to users.                       |
+| `sessions`                              | User sessions with expiration tracking.                        |
 | `cities`                                | List of cities with coordinates.                               |
 | `clinics`                               | Core clinic data, contacts, and multi-language descriptions.   |
 | `doctors`                               | Medical specialists, personal info, and professional titles.   |
@@ -36,6 +39,45 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `billing_clinic_service_purchase_items` | Junction table: Purchase <-> Paid Service.                     |
 
 ## Detailed Table Definitions
+
+### `users`
+
+- `id` (int, PK, AI)
+- `email` (varchar(255), Unique, NOT NULL): User email address.
+- `name` (varchar(255)): User's full name.
+- `photo_url` (varchar(500)): URL to user's profile photo.
+- `password_hash` (varchar(255), NULL): Bcrypt password hash (for admins with email/password login). NULL for OAuth users.
+- `is_admin` (boolean, default FALSE): Flag indicating administrator privileges.
+- `created_at` (timestamp)
+- `updated_at` (timestamp)
+- _Indexes_: `idx_email` (email), `idx_is_admin` (is_admin)
+- _Comment_: Stores both admin users (with password_hash) and OAuth users (without password_hash).
+
+### `oauth_accounts`
+
+- `id` (int, PK, AI)
+- `user_id` (int, FK -> users.id, NOT NULL): Reference to user account.
+- `provider` (varchar(50), NOT NULL): OAuth provider name (google, telegram).
+- `provider_account_id` (varchar(255), NOT NULL): User ID from OAuth provider.
+- `access_token` (text): OAuth access token (optional, encrypted).
+- `refresh_token` (text): OAuth refresh token (optional).
+- `expires_at` (bigint): Token expiration timestamp (UNIX).
+- `created_at` (timestamp)
+- `updated_at` (timestamp)
+- _Unique constraint_: (`provider`, `provider_account_id`)
+- _Indexes_: `idx_user_id` (user_id), `idx_provider` (provider, provider_account_id)
+- _Foreign Keys_: `user_id` -> `users.id` (ON DELETE CASCADE)
+- _Comment_: Supports multiple OAuth providers per user (e.g., one user can login via both Google and Telegram).
+
+### `sessions`
+
+- `id` (varchar(255), PK): Session ID (UUID).
+- `user_id` (int, FK -> users.id, NOT NULL): Reference to user account.
+- `expires_at` (bigint, NOT NULL): Session expiration timestamp (UNIX).
+- `created_at` (timestamp)
+- _Indexes_: `idx_user_id` (user_id), `idx_expires_at` (expires_at)
+- _Foreign Keys_: `user_id` -> `users.id` (ON DELETE CASCADE)
+- _Comment_: Database-based session storage. HTTPOnly cookies store session_id, actual session data is in DB.
 
 ### `cities`
 
@@ -274,47 +316,60 @@ This file provides a structured reference of the MySQL database for the docta.me
 
 ## Core Implementation Logic
 
-1. **I18n Strategy**:
+1. **Authentication Strategy**:
+
+   - **Admin users**: Use email + password authentication. `password_hash` is filled with bcrypt hash (cost=10), `is_admin=TRUE`.
+   - **Regular users**: Use OAuth (Google, Telegram). `password_hash=NULL`, `is_admin=FALSE`.
+   - **Session management**: Database-based sessions stored in `sessions` table with expiration tracking.
+   - **Security**: HTTPOnly cookies store `session_id`, actual session data (user_id, expires_at) is in DB.
+
+2. **User Account Types**:
+
+   - Admin accounts are created manually in the database (no public registration).
+   - OAuth users can self-register through OAuth providers.
+   - One user can have multiple OAuth providers linked via `oauth_accounts`.
+
+3. **I18n Strategy**:
 
    - Explicit columns with language suffixes (e.g., `name_sr`, `name_ru`, `description_en`) are used for localized content.
    - The `_sr` suffix denotes Serbian (Latin script), `_sr_cyrl` denotes Serbian (Cyrillic script).
    - For `specialties`, `languages`, and some reference tables, the `name` column acts as a key for lookup in `i18n/*.ts` files.
 
-2. **Pricing**:
+4. **Pricing**:
 
    - Prices are stored as `decimal(10,2)` in junction tables between clinics and services/tests/meds.
    - `price_max` field supports price ranges (e.g., "100-150 EUR").
 
-3. **Geo**:
+5. **Geo**:
 
    - Latitude uses `decimal(10,8)`, Longitude uses `decimal(11,8)` for high precision.
 
-4. **Referential Integrity**:
+6. **Referential Integrity**:
 
    - Most foreign keys use `ON DELETE CASCADE`.
 
-5. **Search**:
+7. **Search**:
 
    - Search should consider `lab_test_synonyms` and localized `name_*` columns.
 
-6. **Redirects**:
+8. **Redirects**:
 
    - `doctor_redirects`, `lab_test_redirects` and `medical_service_redirects` tables handle merged records for 301 redirects.
 
-7. **Service-Specialty Mapping**:
+9. **Service-Specialty Mapping**:
 
    - `medical_services_specialties` links medical services to relevant specialties for filtering.
 
-8. **Service-Category Mapping**:
+10. **Service-Category Mapping**:
 
    - `medical_service_categories` and `medical_service_categories_relations` allow grouping medical services by categories.
    - `lab_test_categories` and `lab_test_categories_relations` allow grouping lab tests by categories.
 
-9. **Doctor-Service Assignment**:
+11. **Doctor-Service Assignment**:
 
    - `clinic_medical_service_doctors` enables assigning specific doctors to medical services within a clinic context.
 
-10. **Paid Services (Billing)**:
+12. **Paid Services (Billing)**:
 
 - `billing_paid_services` contains available paid services (dofollow, highlight, approved/verified).
 - `billing_clinic_service_purchases` tracks purchases made by clinics.

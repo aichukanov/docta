@@ -33,7 +33,7 @@ interface DoctorAdminDetails extends ContactList {
 export default defineEventHandler(
 	async (event): Promise<DoctorAdminDetails | null> => {
 		try {
-			requireAdmin(event);
+			await requireAdmin(event);
 
 			const body = await readBody(event);
 

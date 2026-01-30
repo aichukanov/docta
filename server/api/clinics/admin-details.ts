@@ -35,7 +35,7 @@ interface ClinicAdminData {
 export default defineEventHandler(
 	async (event): Promise<ClinicAdminData | null> => {
 		try {
-			requireAdmin(event);
+			await requireAdmin(event);
 
 			const body = await readBody(event);
 

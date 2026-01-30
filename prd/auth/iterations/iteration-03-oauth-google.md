@@ -1,23 +1,24 @@
-# Итерация 2: OAuth через Google
+# Итерация 3: OAuth через Google
 
-[← К списку итераций](README.md) | [← Предыдущая](iteration-01-database.md) | [Следующая →](iteration-03-oauth-telegram.md)
+[← К списку итераций](README.md) | [← Предыдущая](iteration-02-admin-auth.md) | [Следующая →](iteration-04-oauth-telegram.md)
 
 ---
 
 ## Цель
 
-Настроить OAuth авторизацию через Google и базовую инфраструктуру для будущих провайдеров.
+Настроить OAuth авторизацию через Google для обычных пользователей.
 
 ## Зависимости
 
-Итерация 1 (таблицы users, oauth_accounts, sessions должны существовать)
+- Итерация 1 (таблицы users, oauth_accounts, sessions должны существовать)
+- Итерация 2 (базовая session инфраструктура готова)
 
 ## Задачи
 
 1. Установить `@sidebase/nuxt-auth` или альтернативу
 2. Настроить Google OAuth (получить credentials, настроить callback)
 3. Создать custom adapter для работы с MySQL
-4. Настроить session management
+4. Настроить session management для OAuth пользователей
 5. Создать базовые API endpoints для auth
 
 ## Ключевые файлы
@@ -35,6 +36,7 @@
 - [ ] AC-4: После входа пользователь редиректится на главную страницу
 - [ ] AC-5: Данные пользователя (email, name, photo) корректно сохраняются
 - [ ] AC-6: В таблице oauth_accounts создается запись с provider='google'
+- [ ] AC-7: OAuth пользователи имеют is_admin=false и password_hash=NULL
 
 ## Как проверить
 
@@ -43,7 +45,8 @@
 3. Нажать "Sign in with Google"
 4. Пройти OAuth flow
 5. Проверить создание записей в БД (users, oauth_accounts, sessions)
-6. Проверить что после logout и повторного login используется тот же user_id
+6. Убедиться что `is_admin=false` и `password_hash=NULL`
+7. Проверить что после logout и повторного login используется тот же user_id
 
 ## Статус
 
@@ -51,4 +54,4 @@
 
 ---
 
-**Следующая итерация:** [3. OAuth через Telegram →](iteration-03-oauth-telegram.md)
+**Следующая итерация:** [4. OAuth через Telegram →](iteration-04-oauth-telegram.md)

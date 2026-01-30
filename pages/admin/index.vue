@@ -1,54 +1,50 @@
 <script setup lang="ts">
-const loadedDoctorsKey = ref(0);
-const loadedClinicsKey = ref(0);
-const loadedLabTestsKey = ref(0);
-const loadedServicesKey = ref(0);
+// Проверка авторизации
+definePageMeta({
+	middleware: 'admin-auth',
+});
 
-const { pending: isLoadingDoctors, data: doctorsList } = await useFetch(
-	'/api/doctors/list',
-	{
-		key: `doctors-list`,
-		method: 'POST',
-		body: computed(() => ({
-			specialtyIds: [],
-			cityIds: [],
-			languageIds: [],
-			includeAllLocales: true,
-			key: loadedDoctorsKey.value,
-		})),
-	},
-);
+// Получаем данные текущего пользователя
+const { data: authData } = await useFetch('/api/admin/auth/me');
+const currentUser = computed(() => authData.value?.user);
 
-const { pending: isLoadingLabTests, data: labTestsList } = await useFetch(
-	'/api/labtests/list',
-	{
-		key: `labtests-list-admin`,
-		method: 'POST',
-		body: computed(() => ({
-			key: loadedLabTestsKey.value,
-		})),
-	},
-);
+async function handleLogout() {
+	try {
+		await $fetch('/api/admin/auth/logout', { method: 'POST' });
+		// Перенаправляем на страницу входа
+		navigateTo('/admin/login');
+	} catch (error) {
+		console.error('Logout error:', error);
+	}
+}
 
-const { pending: isLoadingServices, data: servicesList } = await useFetch(
-	'/api/services/list',
-	{
-		key: `services-list-admin`,
-		method: 'POST',
-		body: computed(() => ({
-			key: loadedServicesKey.value,
-		})),
-	},
-);
+// Активный таб
+const activeTab = ref('doctors');
 
+// Флаги загрузки данных для каждого таба
+const loadedTabs = ref({
+	doctors: false,
+	labtests: false,
+	services: false,
+	clinics: false,
+});
+
+// Состояние загрузки
+const isLoadingDoctors = ref(false);
+const isLoadingLabTests = ref(false);
+const isLoadingServices = ref(false);
+const isLoadingClinics = ref(false);
+
+// Данные
+const doctorsList = ref(null);
+const labTestsList = ref(null);
+const servicesList = ref(null);
 const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics();
 
 const clinicsList = computed(() => ({
 	clinics: clinicsStore.clinics,
 	totalCount: clinicsStore.clinics.length,
 }));
-const isLoadingClinics = computed(() => clinicsStore.isLoading);
 
 const labTestsForSelect = computed(() =>
 	(labTestsList.value?.items || []).map((lt) => ({
@@ -64,39 +60,146 @@ const servicesForSelect = computed(() =>
 	})),
 );
 
-const updateDoctors = () => {
-	loadedDoctorsKey.value++;
+// Загрузка данных по табам
+async function loadDoctorsData() {
+	if (loadedTabs.value.doctors) return;
+	
+	isLoadingDoctors.value = true;
+	try {
+		const data = await $fetch('/api/doctors/list', {
+			method: 'POST',
+			body: {
+				specialtyIds: [],
+				cityIds: [],
+				languageIds: [],
+				includeAllLocales: true,
+			},
+		});
+		doctorsList.value = data;
+		loadedTabs.value.doctors = true;
+	} catch (error) {
+		console.error('Failed to load doctors:', error);
+	} finally {
+		isLoadingDoctors.value = false;
+	}
+}
+
+async function loadLabTestsData() {
+	if (loadedTabs.value.labtests) return;
+	
+	isLoadingLabTests.value = true;
+	try {
+		const data = await $fetch('/api/labtests/list', {
+			method: 'POST',
+			body: {},
+		});
+		labTestsList.value = data;
+		loadedTabs.value.labtests = true;
+	} catch (error) {
+		console.error('Failed to load lab tests:', error);
+	} finally {
+		isLoadingLabTests.value = false;
+	}
+}
+
+async function loadServicesData() {
+	if (loadedTabs.value.services) return;
+	
+	isLoadingServices.value = true;
+	try {
+		const data = await $fetch('/api/services/list', {
+			method: 'POST',
+			body: {},
+		});
+		servicesList.value = data;
+		loadedTabs.value.services = true;
+	} catch (error) {
+		console.error('Failed to load services:', error);
+	} finally {
+		isLoadingServices.value = false;
+	}
+}
+
+async function loadClinicsData() {
+	if (loadedTabs.value.clinics) return;
+	
+	isLoadingClinics.value = true;
+	try {
+		await clinicsStore.fetchClinics();
+		loadedTabs.value.clinics = true;
+	} catch (error) {
+		console.error('Failed to load clinics:', error);
+	} finally {
+		isLoadingClinics.value = false;
+	}
+}
+
+// Отслеживание изменения активного таба
+watch(activeTab, async (newTab) => {
+	switch (newTab) {
+		case 'doctors':
+			await loadDoctorsData();
+			break;
+		case 'labtests':
+			await loadLabTestsData();
+			break;
+		case 'services':
+			await loadServicesData();
+			break;
+		case 'clinics':
+			await loadClinicsData();
+			break;
+	}
+});
+
+// Загружаем данные для первого таба
+onMounted(() => {
+	loadDoctorsData();
+});
+
+// Функции обновления данных
+const updateDoctors = async () => {
+	loadedTabs.value.doctors = false;
+	await loadDoctorsData();
 };
 
 const updateClinics = async () => {
-	await clinicsStore.refresh();
+	loadedTabs.value.clinics = false;
+	await loadClinicsData();
 };
 
-const updateLabTests = () => {
-	loadedLabTestsKey.value++;
+const updateLabTests = async () => {
+	loadedTabs.value.labtests = false;
+	await loadLabTestsData();
 };
 
-const updateServices = () => {
-	loadedServicesKey.value++;
+const updateServices = async () => {
+	loadedTabs.value.services = false;
+	await loadServicesData();
 };
 </script>
 
 <template>
 	<div class="admin-index">
-		<div
-			v-if="
-				isLoadingDoctors ||
-				isLoadingClinics ||
-				isLoadingLabTests ||
-				isLoadingServices
-			"
-		>
-			<div class="loading-spinner"></div>
-			<p>Загрузка данных...</p>
+		<div class="admin-header">
+			<h1>Админ-панель</h1>
+			<div class="admin-user-info">
+				<span v-if="currentUser" class="user-email">{{
+					currentUser.email
+				}}</span>
+				<el-button type="danger" size="small" @click="handleLogout">
+					Выйти
+				</el-button>
+			</div>
 		</div>
-		<el-tabs v-else type="border-card">
-			<el-tab-pane label="Врачи">
-				<el-tabs>
+
+		<el-tabs v-model="activeTab" type="border-card">
+			<el-tab-pane label="Врачи" name="doctors">
+				<div v-if="isLoadingDoctors" class="tab-loading">
+					<div class="loading-spinner"></div>
+					<p>Загрузка данных о врачах...</p>
+				</div>
+				<el-tabs v-else-if="doctorsList">
 					<el-tab-pane label="Найти">
 						<AdminDoctorInfo
 							:doctors="doctorsList.doctors"
@@ -125,8 +228,12 @@ const updateServices = () => {
 				</el-tabs>
 			</el-tab-pane>
 
-			<el-tab-pane label="Анализы">
-				<el-tabs>
+			<el-tab-pane label="Анализы" name="labtests">
+				<div v-if="isLoadingLabTests" class="tab-loading">
+					<div class="loading-spinner"></div>
+					<p>Загрузка данных об анализах...</p>
+				</div>
+				<el-tabs v-else-if="labTestsList">
 					<el-tab-pane label="Найти">
 						<AdminLabtestInfo
 							:labTests="labTestsForSelect"
@@ -153,8 +260,12 @@ const updateServices = () => {
 				</el-tabs>
 			</el-tab-pane>
 
-			<el-tab-pane label="Услуги">
-				<el-tabs>
+			<el-tab-pane label="Услуги" name="services">
+				<div v-if="isLoadingServices" class="tab-loading">
+					<div class="loading-spinner"></div>
+					<p>Загрузка данных об услугах...</p>
+				</div>
+				<el-tabs v-else-if="servicesList">
 					<el-tab-pane label="Найти">
 						<AdminServiceInfo
 							:services="servicesForSelect"
@@ -181,8 +292,12 @@ const updateServices = () => {
 				</el-tabs>
 			</el-tab-pane>
 
-			<el-tab-pane label="Клиники">
-				<el-tabs>
+			<el-tab-pane label="Клиники" name="clinics">
+				<div v-if="isLoadingClinics" class="tab-loading">
+					<div class="loading-spinner"></div>
+					<p>Загрузка данных о клиниках...</p>
+				</div>
+				<el-tabs v-else-if="clinicsList.clinics.length > 0 || loadedTabs.clinics">
 					<el-tab-pane label="Найти">
 						<AdminClinicFind
 							:clinics="clinicsList.clinics"
@@ -204,5 +319,57 @@ const updateServices = () => {
 .admin-index {
 	width: min(1000px, 100%);
 	margin: 0 auto;
+}
+
+.admin-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	padding: 16px 20px;
+	background: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-header h1 {
+	margin: 0;
+	font-size: 24px;
+	color: #2c3e50;
+}
+
+.admin-user-info {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.user-email {
+	font-size: 14px;
+	color: #7f8c8d;
+	font-weight: 500;
+}
+
+.tab-loading {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+	gap: 16px;
+}
+
+.loading-spinner {
+	width: 40px;
+	height: 40px;
+	border: 4px solid #f3f3f3;
+	border-top: 4px solid #409eff;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
 }
 </style>

@@ -7,6 +7,7 @@ export interface User {
 	id: number;
 	email: string;
 	name: string;
+	username: string | null;
 	photo_url: string | null;
 	is_admin: boolean;
 }
@@ -70,7 +71,7 @@ export async function getUserFromSession(
 	sessionId: string,
 ): Promise<User | null> {
 	const results = await executeQuery<User>(
-		`SELECT u.id, u.email, u.name, u.photo_url, u.is_admin 
+		`SELECT u.id, u.email, u.name, u.username, u.photo_url, u.is_admin 
      FROM users u
      JOIN sessions s ON u.id = s.user_id
      WHERE s.id = ? AND s.expires_at > UNIX_TIMESTAMP()`,

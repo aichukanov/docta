@@ -9,6 +9,7 @@ import {
 	createOAuthUser,
 	findUserByEmail,
 	linkOAuthAccount,
+	updateUserProfile,
 } from '~/server/utils/oauth';
 import { createSession, setSessionCookie } from '~/server/utils/session';
 
@@ -66,8 +67,11 @@ export default defineEventHandler(async (event) => {
 		const fullName = getTelegramFullName(telegramData);
 		const photoUrl = telegramData.photo_url || null;
 
+		const username = telegramData.username || null;
+
 		if (user) {
-			// Пользователь уже существует - используем его
+			// Пользователь уже существует - обновляем его профиль
+			await updateUserProfile(user.id, fullName, photoUrl, username);
 		} else {
 			// Проверяем есть ли текущая сессия (для привязки аккаунта)
 			const sessionId = getCookie(event, 'session_id');

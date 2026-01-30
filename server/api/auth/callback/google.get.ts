@@ -3,6 +3,7 @@ import {
 	findUserByOAuth,
 	createOAuthUser,
 	updateOAuthTokens,
+	updateUserProfile,
 } from '~/server/utils/oauth';
 import { createSession, setSessionCookie } from '~/server/utils/session';
 
@@ -49,12 +50,23 @@ export default defineEventHandler(async (event) => {
 		return sendRedirect(event, '/?error=state_mismatch');
 	}
 
-	// Очищаем state cookie
+	// Получаем сохраненный redirect_uri
+	const savedRedirectUri = getCookie(event, 'oauth_redirect_uri');
+
+	// Очищаем cookies
 	deleteCookie(event, 'oauth_state');
+	deleteCookie(event, 'oauth_redirect_uri');
 
 	try {
 		const config = getOAuthConfig();
 		const { google } = config;
+
+		// Используем сохраненный redirect_uri или определяем из текущего запроса
+		const host = getRequestHeader(event, 'host');
+		const protocol = getRequestHeader(event, 'x-forwarded-proto') || 'http';
+		const currentRedirectUri = savedRedirectUri || `${protocol}://${host}/api/auth/callback/google`;
+
+		console.log('[Google OAuth] Callback - using redirect_uri:', currentRedirectUri);
 
 		// 1. Обмениваем code на токены
 		const tokenResponse = await $fetch<GoogleTokenResponse>(
@@ -65,7 +77,7 @@ export default defineEventHandler(async (event) => {
 					code,
 					client_id: google.clientId,
 					client_secret: google.clientSecret,
-					redirect_uri: google.redirectUri,
+					redirect_uri: currentRedirectUri,
 					grant_type: 'authorization_code',
 				},
 			},
@@ -90,7 +102,7 @@ export default defineEventHandler(async (event) => {
 			: null;
 
 		if (user) {
-			// Пользователь существует - обновляем токены
+			// Пользователь существует - обновляем токены и профиль
 			await updateOAuthTokens(
 				'google',
 				userInfo.id,
@@ -98,6 +110,7 @@ export default defineEventHandler(async (event) => {
 				tokenResponse.refresh_token,
 				expiresAt,
 			);
+			await updateUserProfile(user.id, userInfo.name, userInfo.picture);
 		} else {
 			// Новый пользователь - создаем
 			const userId = await createOAuthUser(

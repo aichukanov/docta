@@ -105,3 +105,18 @@ export async function linkOAuthAccount(
 		[userId, provider, providerAccountId, accessToken, refreshToken, expiresAt],
 	);
 }
+
+/**
+ * Обновить профиль пользователя (имя, username и фото)
+ */
+export async function updateUserProfile(
+	userId: number,
+	name: string,
+	photoUrl: string | null,
+	username: string | null = null,
+): Promise<void> {
+	await executeQuery(
+		`UPDATE users SET name = ?, photo_url = COALESCE(?, photo_url), username = COALESCE(?, username) WHERE id = ?`,
+		[name, photoUrl, username, userId],
+	);
+}

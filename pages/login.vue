@@ -75,7 +75,7 @@ async function handleLogout() {
 						/>
 						<div class="user-details">
 							<h2>{{ currentUser?.name }}</h2>
-							<p>{{ currentUser?.email }}</p>
+							<p>{{ currentUser?.username ? `@${currentUser.username}` : currentUser?.email }}</p>
 							<el-tag v-if="currentUser?.is_admin" type="danger"
 								>Администратор</el-tag
 							>

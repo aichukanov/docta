@@ -4,13 +4,35 @@ definePageMeta({
 });
 
 // Проверяем авторизован ли пользователь
-const { data: authData } = await useFetch('/api/admin/auth/me');
+const { data: authData, refresh } = await useFetch('/api/admin/auth/me');
 const isAuthenticated = computed(() => authData.value?.authenticated);
 const currentUser = computed(() => authData.value?.user);
 
 // Проверяем ошибки OAuth
 const route = useRoute();
+const authError = ref<string | null>(null);
+
+// При монтировании проверяем авторизацию и ошибки
+onMounted(async () => {
+	// Обновляем данные о пользователе
+	await refresh();
+
+	// Проверяем cookie с ошибкой
+	const errorCookie = useCookie('auth_error');
+	if (errorCookie.value) {
+		authError.value = errorCookie.value as string;
+		// Удаляем cookie после прочтения
+		errorCookie.value = null;
+	}
+});
+
 const oauthError = computed(() => {
+	// Сначала проверяем flash сообщение из cookie
+	if (authError.value) {
+		return authError.value;
+	}
+
+	// Затем проверяем URL параметры (для Google OAuth)
 	const error = route.query.error as string;
 	if (!error) return null;
 
@@ -28,8 +50,8 @@ const oauthError = computed(() => {
 async function handleLogout() {
 	try {
 		await $fetch('/api/admin/auth/logout', { method: 'POST' });
-		// Перезагружаем страницу
-		window.location.reload();
+		// Обновляем данные
+		await refresh();
 	} catch (error) {
 		console.error('Logout error:', error);
 	}
@@ -82,7 +104,7 @@ async function handleLogout() {
 				<!-- Если пользователь не авторизован -->
 				<div v-else class="login-form">
 					<h1 class="login-title">Вход в docta.me</h1>
-					<p class="login-subtitle">Войдите с помощью Google</p>
+					<p class="login-subtitle">Выберите способ входа</p>
 
 					<el-alert
 						v-if="oauthError"
@@ -94,6 +116,12 @@ async function handleLogout() {
 
 					<div class="login-options">
 						<GoogleSignInButton />
+
+						<div class="divider">
+							<span>или</span>
+						</div>
+
+						<TelegramLoginButton />
 					</div>
 				</div>
 			</div>

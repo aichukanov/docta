@@ -10,11 +10,14 @@ export interface OAuthConfig {
 		userInfoUrl: string;
 		redirectUri: string;
 	};
+	telegram: {
+		botToken: string;
+		botUsername: string;
+	};
 }
 
 export function getOAuthConfig(): OAuthConfig {
-	const baseUrl =
-		process.env.BASE_URL || 'http://localhost:3000';
+	const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
 
 	return {
 		google: {
@@ -24,6 +27,10 @@ export function getOAuthConfig(): OAuthConfig {
 			tokenUrl: 'https://oauth2.googleapis.com/token',
 			userInfoUrl: 'https://www.googleapis.com/oauth2/v2/userinfo',
 			redirectUri: `${baseUrl}/api/auth/callback/google`,
+		},
+		telegram: {
+			botToken: process.env.TELEGRAM_BOT_TOKEN || '',
+			botUsername: process.env.TELEGRAM_BOT_USERNAME || '',
 		},
 	};
 }

@@ -3,6 +3,32 @@ export default defineNuxtConfig({
 
 	modules: ['nuxt-gtag', '@element-plus/nuxt', '@nuxtjs/i18n', '@pinia/nuxt'],
 
+	// Разрешаем ngrok домены
+	vite: {
+		server: {
+			hmr: false, // Отключаем HMR для ngrok
+		},
+	},
+
+	nitro: {
+		devProxy: {
+			'/__nuxt_devtools__': {
+				target: 'http://localhost:3000/__nuxt_devtools__',
+				changeOrigin: true,
+			},
+		},
+	},
+
+	devServer: {
+		host: '0.0.0.0',
+		port: 3000,
+		https: false,
+	},
+
+	app: {
+		baseURL: '/',
+	},
+
 	// gtag: {
 	// 	id: process.env.GTAG_ID,
 	// 	enabled: process.env.NODE_ENV === 'production',
@@ -27,6 +53,7 @@ export default defineNuxtConfig({
 		public: {
 			mixpanelToken: process.env.MIXPANEL_TOKEN,
 			cloudflareToken: process.env.CLOUDFLARE_TOKEN,
+			telegramBotUsername: process.env.TELEGRAM_BOT_USERNAME,
 			connection: {
 				host: process.env.DB_HOST,
 				user: process.env.DB_USER,

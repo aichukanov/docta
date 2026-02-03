@@ -1,4 +1,5 @@
 import { getOAuthConfig } from '~/server/utils/oauth-config';
+import { authLogger } from '~/server/utils/logger';
 
 export default defineEventHandler((event) => {
 	const config = getOAuthConfig();
@@ -10,9 +11,10 @@ export default defineEventHandler((event) => {
 	const currentOrigin = `${protocol}://${host}`;
 	const redirectUri = `${currentOrigin}/api/auth/callback/google`;
 
-	console.log('[Google OAuth] Starting auth flow');
-	console.log('[Google OAuth] Current origin:', currentOrigin);
-	console.log('[Google OAuth] Redirect URI:', redirectUri);
+	authLogger.debug('Starting Google OAuth flow', {
+		origin: currentOrigin,
+		redirectUri,
+	});
 
 	// Генерируем state для защиты от CSRF
 	const state = crypto.randomUUID();
@@ -34,6 +36,26 @@ export default defineEventHandler((event) => {
 		maxAge: 600,
 		path: '/',
 	});
+
+	// Проверяем и сохраняем redirect URL из referer
+	const referer = getRequestHeader(event, 'referer');
+	if (referer) {
+		try {
+			const refererUrl = new URL(referer);
+			const returnTo = refererUrl.pathname + refererUrl.search;
+			if (returnTo && returnTo !== '/login') {
+				setCookie(event, 'auth_redirect', returnTo, {
+					httpOnly: false, // Нужен доступ из браузера для sessionStorage
+					secure: protocol === 'https',
+					sameSite: 'lax',
+					maxAge: 600,
+					path: '/',
+				});
+			}
+		} catch (error) {
+			authLogger.error('Failed to parse referer', { error });
+		}
+	}
 
 	// Строим URL для авторизации
 	const params = new URLSearchParams({

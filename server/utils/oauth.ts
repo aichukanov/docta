@@ -18,8 +18,8 @@ export async function findUserByOAuth(
 	providerAccountId: string,
 ): Promise<any | null> {
 	const results = await executeQuery(
-		`SELECT u.* FROM users u
-     JOIN oauth_accounts oa ON u.id = oa.user_id
+		`SELECT u.* FROM auth_users u
+     JOIN auth_oauth_accounts oa ON u.id = oa.user_id
      WHERE oa.provider = ? AND oa.provider_account_id = ?`,
 		[provider, providerAccountId],
 	);
@@ -42,7 +42,7 @@ export async function createOAuthUser(
 ): Promise<number> {
 	// 1. Создать пользователя
 	const userResult = await executeQuery(
-		`INSERT INTO users (email, name, photo_url, is_admin, password_hash)
+		`INSERT INTO auth_users (email, name, photo_url, is_admin, password_hash)
      VALUES (?, ?, ?, FALSE, NULL)`,
 		[email, name, photoUrl],
 	);
@@ -51,7 +51,7 @@ export async function createOAuthUser(
 
 	// 2. Создать OAuth аккаунт
 	await executeQuery(
-		`INSERT INTO oauth_accounts (user_id, provider, provider_account_id, access_token, refresh_token, expires_at)
+		`INSERT INTO auth_oauth_accounts (user_id, provider, provider_account_id, access_token, refresh_token, expires_at)
      VALUES (?, ?, ?, ?, ?, ?)`,
 		[userId, provider, providerAccountId, accessToken, refreshToken, expiresAt],
 	);
@@ -70,7 +70,7 @@ export async function updateOAuthTokens(
 	expiresAt: number | null = null,
 ): Promise<void> {
 	await executeQuery(
-		`UPDATE oauth_accounts
+		`UPDATE auth_oauth_accounts
      SET access_token = ?, refresh_token = ?, expires_at = ?
      WHERE provider = ? AND provider_account_id = ?`,
 		[accessToken, refreshToken, expiresAt, provider, providerAccountId],
@@ -81,7 +81,7 @@ export async function updateOAuthTokens(
  * Проверить существует ли пользователь с таким email
  */
 export async function findUserByEmail(email: string): Promise<any | null> {
-	const results = await executeQuery('SELECT * FROM users WHERE email = ?', [
+	const results = await executeQuery('SELECT * FROM auth_users WHERE email = ?', [
 		email,
 	]);
 
@@ -100,7 +100,7 @@ export async function linkOAuthAccount(
 	expiresAt: number | null = null,
 ): Promise<void> {
 	await executeQuery(
-		`INSERT INTO oauth_accounts (user_id, provider, provider_account_id, access_token, refresh_token, expires_at)
+		`INSERT INTO auth_oauth_accounts (user_id, provider, provider_account_id, access_token, refresh_token, expires_at)
      VALUES (?, ?, ?, ?, ?, ?)`,
 		[userId, provider, providerAccountId, accessToken, refreshToken, expiresAt],
 	);
@@ -116,7 +116,7 @@ export async function updateUserProfile(
 	username: string | null = null,
 ): Promise<void> {
 	await executeQuery(
-		`UPDATE users SET name = ?, photo_url = COALESCE(?, photo_url), username = COALESCE(?, username) WHERE id = ?`,
+		`UPDATE auth_users SET name = ?, photo_url = COALESCE(?, photo_url), username = COALESCE(?, username) WHERE id = ?`,
 		[name, photoUrl, username, userId],
 	);
 }

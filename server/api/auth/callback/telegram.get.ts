@@ -11,11 +11,28 @@ import {
 	linkOAuthAccount,
 	updateUserProfile,
 } from '~/server/utils/oauth';
-import { createSession, setSessionCookie } from '~/server/utils/session';
+import {
+	getOAuthAccountId,
+	saveTelegramProfile,
+	setPrimaryOAuthProvider,
+} from '~/server/utils/oauth-profiles';
+import {
+	createSession,
+	setSessionCookie,
+	getUserFromSession,
+} from '~/server/utils/session';
+import { executeQuery } from '~/server/common/db-mysql';
+import { authLogger, logError } from '~/server/utils/logger';
+import { logSuccessfulLogin } from '~/server/utils/login-history';
 
 // Вспомогательная функция для очистки undefined строк
 function cleanValue(value: unknown): string | undefined {
-	if (value === undefined || value === null || value === 'undefined' || value === '') {
+	if (
+		value === undefined ||
+		value === null ||
+		value === 'undefined' ||
+		value === ''
+	) {
 		return undefined;
 	}
 	return String(value);
@@ -37,7 +54,7 @@ export default defineEventHandler(async (event) => {
 
 	// Проверяем обязательные поля
 	if (!telegramData.id || !telegramData.first_name || !telegramData.hash) {
-		console.error('Missing required Telegram data');
+		authLogger.error('Missing required Telegram data');
 		setCookie(event, 'auth_error', 'Некорректные данные от Telegram', {
 			maxAge: 10,
 			path: '/',
@@ -53,7 +70,7 @@ export default defineEventHandler(async (event) => {
 		const isValid = verifyTelegramAuth(telegramData, telegram.botToken);
 
 		if (!isValid) {
-			console.error('Invalid Telegram authentication');
+			authLogger.error('Invalid Telegram authentication');
 			setCookie(event, 'auth_error', 'Не удалось проверить данные Telegram', {
 				maxAge: 10,
 				path: '/',
@@ -72,15 +89,25 @@ export default defineEventHandler(async (event) => {
 		if (user) {
 			// Пользователь уже существует - обновляем его профиль
 			await updateUserProfile(user.id, fullName, photoUrl, username);
+
+			// Сохраняем полный Telegram профиль
+			const oauthAccountId = await getOAuthAccountId(user.id, 'telegram');
+			if (oauthAccountId) {
+				await saveTelegramProfile(oauthAccountId, {
+					id: telegramData.id,
+					first_name: telegramData.first_name,
+					last_name: telegramData.last_name,
+					username: telegramData.username,
+					photo_url: telegramData.photo_url,
+					auth_date: telegramData.auth_date,
+				});
+			}
 		} else {
 			// Проверяем есть ли текущая сессия (для привязки аккаунта)
 			const sessionId = getCookie(event, 'session_id');
 			let currentUserId: number | null = null;
 
 			if (sessionId) {
-				const { getUserFromSession } = await import(
-					'~/server/utils/session'
-				);
 				const currentUser = await getUserFromSession(sessionId);
 				if (currentUser) {
 					currentUserId = currentUser.id;
@@ -97,6 +124,33 @@ export default defineEventHandler(async (event) => {
 					null,
 					null,
 				);
+
+				// Сохраняем полный Telegram профиль
+				const oauthAccountId = await getOAuthAccountId(
+					currentUserId,
+					'telegram',
+				);
+				if (oauthAccountId) {
+					await saveTelegramProfile(oauthAccountId, {
+						id: telegramData.id,
+						first_name: telegramData.first_name,
+						last_name: telegramData.last_name,
+						username: telegramData.username,
+						photo_url: telegramData.photo_url,
+						auth_date: telegramData.auth_date,
+					});
+					// Если это первый OAuth, делаем его основным
+					const userResults = await executeQuery(
+						'SELECT primary_oauth_provider FROM auth_users WHERE id = ?',
+						[currentUserId],
+					);
+					if (
+						userResults.length > 0 &&
+						!(userResults[0] as any).primary_oauth_provider
+					) {
+						await setPrimaryOAuthProvider(currentUserId, 'telegram');
+					}
+				}
 
 				user = { id: currentUserId };
 			} else {
@@ -115,6 +169,19 @@ export default defineEventHandler(async (event) => {
 					null,
 				);
 
+				const oauthAccountId = await getOAuthAccountId(userId, 'telegram');
+				if (oauthAccountId) {
+					await saveTelegramProfile(oauthAccountId, {
+						id: telegramData.id,
+						first_name: telegramData.first_name,
+						last_name: telegramData.last_name,
+						username: telegramData.username,
+						photo_url: telegramData.photo_url,
+						auth_date: telegramData.auth_date,
+					});
+					await setPrimaryOAuthProvider(userId, 'telegram');
+				}
+
 				user = {
 					id: userId,
 					email,
@@ -129,14 +196,28 @@ export default defineEventHandler(async (event) => {
 		const sessionId = await createSession(user.id);
 		setSessionCookie(event, sessionId);
 
+		await logSuccessfulLogin(user.id, event, 'telegram');
+
+		// Проверяем есть ли сохраненный redirect URL
+		const redirectTo = getCookie(event, 'auth_redirect');
+		if (redirectTo && redirectTo !== '/login') {
+			deleteCookie(event, 'auth_redirect');
+			return sendRedirect(event, redirectTo);
+		}
+
 		// Редиректим на главную страницу
 		return sendRedirect(event, '/');
 	} catch (err) {
-		console.error('Telegram callback error:', err);
-		setCookie(event, 'auth_error', 'Произошла ошибка при входе через Telegram', {
-			maxAge: 10,
-			path: '/',
-		});
+		logError(authLogger, 'Telegram callback failed', err);
+		setCookie(
+			event,
+			'auth_error',
+			'Произошла ошибка при входе через Telegram',
+			{
+				maxAge: 10,
+				path: '/',
+			},
+		);
 		return sendRedirect(event, '/login');
 	}
 });

@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import { authLogger } from './logger';
 
 /**
  * Telegram Login Widget data
@@ -23,7 +24,7 @@ export function verifyTelegramAuth(
 ): boolean {
 	const { hash, ...checkData } = data;
 
-	console.log('[Telegram Auth] Received data:', {
+	authLogger.debug('Telegram auth data received', {
 		id: data.id,
 		first_name: data.first_name,
 		has_hash: !!hash,
@@ -37,7 +38,7 @@ export function verifyTelegramAuth(
 		.map((key) => `${key}=${checkData[key as keyof typeof checkData]}`)
 		.join('\n');
 
-	console.log('[Telegram Auth] Data check string:', dataCheckString);
+	authLogger.debug('Telegram data check string', { dataCheckString });
 
 	// Создаем секретный ключ из bot token
 	const secretKey = crypto.createHash('sha256').update(botToken).digest();
@@ -48,7 +49,7 @@ export function verifyTelegramAuth(
 		.update(dataCheckString)
 		.digest('hex');
 
-	console.log('[Telegram Auth] Hash comparison:', {
+	authLogger.debug('Telegram hash comparison', {
 		received: hash,
 		computed: computedHash,
 		match: computedHash === hash,
@@ -56,7 +57,7 @@ export function verifyTelegramAuth(
 
 	// Проверяем совпадение
 	if (computedHash !== hash) {
-		console.error('[Telegram Auth] Hash mismatch!');
+		authLogger.error('Telegram hash mismatch');
 		return false;
 	}
 
@@ -66,7 +67,7 @@ export function verifyTelegramAuth(
 	const maxAge = 86400; // 24 часа
 	const age = currentTime - authDate;
 
-	console.log('[Telegram Auth] Time check:', {
+	authLogger.debug('Telegram time check', {
 		auth_date: authDate,
 		current_time: currentTime,
 		age_seconds: age,
@@ -75,11 +76,11 @@ export function verifyTelegramAuth(
 	});
 
 	if (currentTime - authDate > maxAge) {
-		console.error('[Telegram Auth] Data too old!');
+		authLogger.error('Telegram data too old');
 		return false;
 	}
 
-	console.log('[Telegram Auth] ✅ Verification successful');
+	authLogger.debug('Telegram verification successful');
 	return true;
 }
 

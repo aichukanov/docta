@@ -22,7 +22,7 @@ export async function createSession(userId: number): Promise<string> {
 	const expiresAt = Math.floor(Date.now() / 1000) + SESSION_DURATION;
 
 	await executeQuery(
-		'INSERT INTO sessions (id, user_id, expires_at) VALUES (?, ?, ?)',
+		'INSERT INTO auth_sessions (id, user_id, expires_at) VALUES (?, ?, ?)',
 		[sessionId, userId, expiresAt],
 	);
 
@@ -49,7 +49,7 @@ export function setSessionCookie(event: H3Event, sessionId: string): void {
  * @param sessionId - ID сессии
  */
 export async function deleteSession(sessionId: string): Promise<void> {
-	await executeQuery('DELETE FROM sessions WHERE id = ?', [sessionId]);
+	await executeQuery('DELETE FROM auth_sessions WHERE id = ?', [sessionId]);
 }
 
 /**
@@ -72,8 +72,8 @@ export async function getUserFromSession(
 ): Promise<User | null> {
 	const results = await executeQuery<User>(
 		`SELECT u.id, u.email, u.name, u.username, u.photo_url, u.is_admin 
-     FROM users u
-     JOIN sessions s ON u.id = s.user_id
+     FROM auth_users u
+     JOIN auth_sessions s ON u.id = s.user_id
      WHERE s.id = ? AND s.expires_at > UNIX_TIMESTAMP()`,
 		[sessionId],
 	);
@@ -88,7 +88,7 @@ export async function getUserFromSession(
  */
 export async function getUserByEmail(email: string): Promise<any | null> {
 	const results = await executeQuery(
-		'SELECT * FROM users WHERE email = ?',
+		'SELECT * FROM auth_users WHERE email = ?',
 		[email],
 	);
 

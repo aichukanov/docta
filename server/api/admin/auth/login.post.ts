@@ -1,4 +1,4 @@
-import { comparePassword } from '~/server/utils/password';
+import { verifyPassword } from '~/server/utils/password';
 import {
 	createSession,
 	setSessionCookie,
@@ -44,7 +44,7 @@ export default defineEventHandler(async (event) => {
 	}
 
 	// 4. Сравнить пароль с хешем
-	const isPasswordValid = await comparePassword(password, user.password_hash);
+	const isPasswordValid = await verifyPassword(password, user.password_hash);
 
 	if (!isPasswordValid) {
 		throw createError({

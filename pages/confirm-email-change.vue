@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import { Loading } from '@element-plus/icons-vue';
 import confirmEmailChangeMessages from '~/i18n/confirm-email-change';
 
 definePageMeta({
-	layout: false,
+	layout: 'minimal',
 });
 
 const { t } = useI18n({
@@ -13,7 +14,7 @@ const { t } = useI18n({
 const route = useRoute();
 const router = useRouter();
 
-const token = ref(route.query.token as string || '');
+const token = ref((route.query.token as string) || '');
 const isLoading = ref(true);
 const success = ref(false);
 const error = ref<string | null>(null);
@@ -28,7 +29,7 @@ onMounted(async () => {
 	try {
 		await $fetch(`/api/auth/confirm-email-change?token=${token.value}`);
 		success.value = true;
-		
+
 		// Через 3 секунды редирект
 		setTimeout(() => {
 			router.push('/profile');
@@ -43,85 +44,54 @@ onMounted(async () => {
 </script>
 
 <template>
-	<div class="confirm-email-change-page">
-		<div class="confirm-email-change-container">
-		<el-card class="confirm-email-change-card">
-			<template #header>
-				<div class="card-header">
-					<h1>{{ t('pageTitle') }}</h1>
-				</div>
-			</template>
+	<div>
+		<h1 class="page-title">{{ t('pageTitle') }}</h1>
 
-			<!-- Загрузка -->
-			<div v-if="isLoading" class="loading-section">
-				<el-icon class="is-loading" :size="40" color="#667eea">
-					<Loading />
-				</el-icon>
-				<p>{{ t('processing') }}</p>
-			</div>
+		<!-- Загрузка -->
+		<div v-if="isLoading" class="loading-section">
+			<el-icon class="is-loading" :size="40" color="#667eea">
+				<Loading />
+			</el-icon>
+			<p>{{ t('processing') }}</p>
+		</div>
 
-			<!-- Успех -->
-			<div v-else-if="success" class="success-section">
-				<el-result
-					icon="success"
-					:title="t('successTitle')"
-					:sub-title="t('successDescription')"
-				>
-					<template #extra>
-						<el-button type="primary" @click="navigateTo('/profile')">
-							{{ t('btnGoToProfile') }}
-						</el-button>
-					</template>
-				</el-result>
-			</div>
+		<!-- Успех -->
+		<div v-else-if="success" class="success-section">
+			<el-result
+				icon="success"
+				:title="t('successTitle')"
+				:sub-title="t('successDescription')"
+			>
+				<template #extra>
+					<el-button type="primary" @click="navigateTo('/profile')">
+						{{ t('btnGoToProfile') }}
+					</el-button>
+				</template>
+			</el-result>
+		</div>
 
-			<!-- Ошибка -->
-			<div v-else-if="error" class="error-section">
-				<el-result
-					icon="error"
-					:title="t('errorTitle')"
-					:sub-title="error"
-				>
-					<template #extra>
-						<el-button type="primary" @click="navigateTo('/profile')">
-							{{ t('btnGoToProfile') }}
-						</el-button>
-						<el-button @click="navigateTo('/login')">
-							{{ t('btnHome') }}
-						</el-button>
-					</template>
-				</el-result>
-			</div>
-		</el-card>
+		<!-- Ошибка -->
+		<div v-else-if="error" class="error-section">
+			<el-result icon="error" :title="t('errorTitle')" :sub-title="error">
+				<template #extra>
+					<el-button type="primary" @click="navigateTo('/profile')">
+						{{ t('btnGoToProfile') }}
+					</el-button>
+					<el-button @click="navigateTo('/login')">
+						{{ t('btnHome') }}
+					</el-button>
+				</template>
+			</el-result>
 		</div>
 	</div>
 </template>
 
 <style scoped>
-.confirm-email-change-page {
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-	padding: 20px;
-}
-
-.confirm-email-change-container {
-	width: 100%;
-	max-width: 600px;
-}
-
-.confirm-email-change-card {
-	border-radius: 12px;
-	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-}
-
-.card-header h1 {
-	margin: 0;
+.page-title {
+	margin: 0 0 8px 0;
 	font-size: 24px;
 	font-weight: 600;
-	color: var(--el-text-color-primary);
+	color: #2c3e50;
 	text-align: center;
 }
 
@@ -141,11 +111,7 @@ onMounted(async () => {
 }
 
 @media (max-width: 480px) {
-	.confirm-email-change-card {
-		padding: 24px 16px;
-	}
-
-	.card-header h1 {
+	.page-title {
 		font-size: 20px;
 	}
 }

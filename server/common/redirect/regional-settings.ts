@@ -5,13 +5,15 @@ import {
 } from '~/composables/use-locale';
 import { getRegionalUrl } from '../../../common/url-utils';
 import { Language } from '~/enums/language';
+import { getUserLocale } from '~/server/utils/user-locale';
+import { getCurrentUser } from '~/server/common/auth';
 
-export function fixUrlRegionalParams(
+export async function fixUrlRegionalParams(
 	event: any,
-): { status: 301 | 302; url: string } | null {
+): Promise<{ status: 301 | 302; url: string } | null> {
 	const query = getQuery(event);
 
-	const localeData = getLocaleForQuery(event);
+	const localeData = await getLocaleForQuery(event);
 
 	if (localeData.redirectStatus) {
 		const { pathname } = getRequestURL(event);
@@ -34,12 +36,31 @@ export function fixUrlRegionalParams(
 	return null;
 }
 
-function getLocaleForQuery(event: any): {
+async function getLocaleForQuery(event: any): Promise<{
 	locale: Locale;
 	redirectStatus: 301 | 302 | null;
-} {
+}> {
 	const query = getQuery(event);
 
+	// 1. Проверяем локаль залогиненного пользователя (наивысший приоритет)
+	const user = await getCurrentUser(event);
+	if (user?.id) {
+		try {
+			const userLocale = await getUserLocale(user.id, event);
+			if (userLocale) {
+				// Если у пользователя установлена локаль в профиле, используем её
+				// и игнорируем cookie и query параметры
+				return {
+					locale: userLocale as Locale,
+					redirectStatus: null, // Не делаем редирект для залогиненных
+				};
+			}
+		} catch (error) {
+			// Игнорируем ошибки и продолжаем с другими источниками
+		}
+	}
+
+	// 2. Проверяем cookie
 	let cookieLocale: Locale | null = null;
 	const cookieValue = getCookie(event, 'locale');
 	if (cookieValue) {
@@ -50,6 +71,7 @@ function getLocaleForQuery(event: any): {
 		}
 	}
 
+	// 3. Проверяем query параметр
 	const queryLocale = query.lang
 		? getLocaleFromQuery(query.lang as string | string[])
 		: defaultLocale;

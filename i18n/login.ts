@@ -7,7 +7,7 @@ export default {
 	messages: {
 		'en': {
 			// Page titles
-			loginTitle: 'Login to docta.me',
+			loginTitle: 'Sign in',
 			registerTitle: 'Registration',
 			welcomeBack: 'Welcome back! 👋',
 
@@ -42,6 +42,7 @@ export default {
 
 			// Divider
 			or: 'or',
+			orContinueWith: 'or continue with',
 
 			// Validation errors
 			fillAllFields: 'Fill in all fields',
@@ -61,7 +62,7 @@ export default {
 
 		'ru': {
 			// Заголовки страницы
-			loginTitle: 'Вход в docta.me',
+			loginTitle: 'Вход',
 			registerTitle: 'Регистрация',
 			welcomeBack: 'Добро пожаловать! 👋',
 
@@ -96,6 +97,7 @@ export default {
 
 			// Разделитель
 			or: 'или',
+			orContinueWith: 'или войдите через',
 
 			// Ошибки валидации
 			fillAllFields: 'Заполните все поля',
@@ -115,7 +117,7 @@ export default {
 
 		'sr': {
 			// Naslovi stranice
-			loginTitle: 'Prijava na docta.me',
+			loginTitle: 'Prijava',
 			registerTitle: 'Registracija',
 			welcomeBack: 'Dobrodošli nazad! 👋',
 
@@ -150,6 +152,7 @@ export default {
 
 			// Separator
 			or: 'ili',
+			orContinueWith: 'ili nastavite sa',
 
 			// Greške validacije
 			fillAllFields: 'Popunite sva polja',
@@ -169,7 +172,7 @@ export default {
 
 		'de': {
 			// Seitentitel
-			loginTitle: 'Bei docta.me anmelden',
+			loginTitle: 'Anmelden',
 			registerTitle: 'Registrierung',
 			welcomeBack: 'Willkommen zurück! 👋',
 
@@ -204,6 +207,7 @@ export default {
 
 			// Trennzeichen
 			or: 'oder',
+			orContinueWith: 'oder fortfahren mit',
 
 			// Validierungsfehler
 			fillAllFields: 'Alle Felder ausfüllen',
@@ -224,7 +228,7 @@ export default {
 
 		'tr': {
 			// Sayfa başlıkları
-			loginTitle: "docta.me'ye giriş",
+			loginTitle: 'Giriş',
 			registerTitle: 'Kayıt',
 			welcomeBack: 'Tekrar hoş geldiniz! 👋',
 
@@ -259,6 +263,7 @@ export default {
 
 			// Ayırıcı
 			or: 'veya',
+			orContinueWith: 'veya ile devam edin',
 
 			// Doğrulama hataları
 			fillAllFields: 'Tüm alanları doldurun',
@@ -278,7 +283,7 @@ export default {
 
 		'sr-cyrl': {
 			// Наслови странице
-			loginTitle: 'Пријава на docta.me',
+			loginTitle: 'Пријава',
 			registerTitle: 'Регистрација',
 			welcomeBack: 'Добродошли назад! 👋',
 
@@ -313,6 +318,7 @@ export default {
 
 			// Сепаратор
 			or: 'или',
+			orContinueWith: 'или наставите са',
 
 			// Грешке валидације
 			fillAllFields: 'Попуните сва поља',

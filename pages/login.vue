@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import { Message, Lock, User } from '@element-plus/icons-vue';
 import loginMessages from '~/i18n/login';
 
 definePageMeta({
-	layout: false,
+	layout: 'minimal',
 });
 
 const { t } = useI18n({
@@ -162,9 +163,7 @@ function switchMode() {
 </script>
 
 <template>
-	<div class="login-page">
-		<div class="login-container">
-			<div class="login-card">
+	<div>
 			<!-- Если пользователь авторизован -->
 			<div v-if="isAuthenticated" class="user-info">
 				<h1>{{ t('welcomeBack') }}</h1>
@@ -356,7 +355,7 @@ function switchMode() {
 				</div>
 
 				<div class="divider">
-					<span>{{ t('or') }}</span>
+					<span>{{ t('orContinueWith') }}</span>
 				</div>
 
 					<!-- OAuth кнопки -->
@@ -367,34 +366,10 @@ function switchMode() {
 					</div>
 					</div>
 				</div>
-			</div>
-		</div>
 	</div>
 </template>
 
 <style scoped>
-.login-page {
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-	padding: 20px;
-}
-
-.login-container {
-	width: 100%;
-	max-width: 450px;
-}
-
-.login-card {
-	background: white;
-	border-radius: 12px;
-	padding: 40px 32px;
-	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-}
-
-/* Login form */
 .login-title {
 	font-size: 28px;
 	font-weight: 600;
@@ -432,28 +407,8 @@ function switchMode() {
 
 .oauth-buttons {
 	display: flex;
-	flex-direction: column;
-	gap: 12px;
-}
-
-.divider {
-	display: flex;
-	align-items: center;
-	text-align: center;
-	color: #95a5a6;
-	margin: 8px 0;
-}
-
-.divider::before,
-.divider::after {
-	content: '';
-	flex: 1;
-	border-bottom: 1px solid #ecf0f1;
-}
-
-.divider span {
-	padding: 0 12px;
-	font-size: 14px;
+	justify-content: center;
+	gap: 16px;
 }
 
 .divider {
@@ -529,10 +484,6 @@ function switchMode() {
 }
 
 @media (max-width: 480px) {
-	.login-card {
-		padding: 32px 24px;
-	}
-
 	.login-title {
 		font-size: 24px;
 	}

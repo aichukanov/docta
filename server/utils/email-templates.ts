@@ -1,7 +1,4 @@
-/**
- * Email templates with localization support
- */
-import type { Language } from '~/enums/language';
+import { Language } from '~/enums/language';
 
 export interface EmailTemplate {
 	subject: string;
@@ -191,7 +188,7 @@ const emailVerificationTemplates: Record<Language, EmailTemplate> = {
 			'Veya bağlantıyı tarayıcınıza kopyalayın:',
 			"docta.me'ye kaydolmadıysanız, bu e-postayı görmezden gelin.",
 		],
-		buttonText: "E-postayı Doğrula",
+		buttonText: 'E-postayı Doğrula',
 		footer: [],
 		copyright: '© 2026 docta.me - Tüm Hakları Saklıdır',
 	},
@@ -223,110 +220,112 @@ interface LoginNotificationTemplate {
 	copyright: string;
 }
 
-const loginNotificationTemplates: Record<Language, LoginNotificationTemplate> = {
-	[Language.SR]: {
-		subject: '🔔 Nova prijava na nalog docta.me',
-		heading: '🔔 Nova prijava na nalog',
-		greeting: (name) => `Zdravo, ${name}!`,
-		intro: 'Detektovali smo novu prijavu na vaš nalog na docta.me.',
-		infoLabels: {
-			time: 'Vreme:',
-			ip: 'IP adresa:',
-			device: 'Uređaj:',
-			location: 'Lokacija:',
+const loginNotificationTemplates: Record<Language, LoginNotificationTemplate> =
+	{
+		[Language.SR]: {
+			subject: '🔔 Nova prijava na nalog docta.me',
+			heading: '🔔 Nova prijava na nalog',
+			greeting: (name) => `Zdravo, ${name}!`,
+			intro: 'Detektovali smo novu prijavu na vaš nalog na docta.me.',
+			infoLabels: {
+				time: 'Vreme:',
+				ip: 'IP adresa:',
+				device: 'Uređaj:',
+				location: 'Lokacija:',
+			},
+			wasYou: 'Ako ste to bili vi, možete ignorisati ovu poruku.',
+			wasNotYou:
+				'<strong>Ako niste bili vi,</strong> preporučujemo da odmah promenite lozinku i završite sve aktivne sesije.',
+			buttonText: 'Promenite lozinku',
+			copyright: '© 2026 docta.me - Sva prava zadržana',
 		},
-		wasYou: 'Ako ste to bili vi, možete ignorisati ovu poruku.',
-		wasNotYou:
-			'<strong>Ako niste bili vi,</strong> preporučujemo da odmah promenite lozinku i završite sve aktivne sesije.',
-		buttonText: 'Promenite lozinku',
-		copyright: '© 2026 docta.me - Sva prava zadržana',
-	},
-	[Language.SR_CYRILLIC]: {
-		subject: '🔔 Нова пријава на налог docta.me',
-		heading: '🔔 Нова пријава на налог',
-		greeting: (name) => `Здраво, ${name}!`,
-		intro: 'Детектовали смо нову пријаву на ваш налог на docta.me.',
-		infoLabels: {
-			time: 'Време:',
-			ip: 'IP адреса:',
-			device: 'Уређај:',
-			location: 'Локација:',
+		[Language.SR_CYRILLIC]: {
+			subject: '🔔 Нова пријава на налог docta.me',
+			heading: '🔔 Нова пријава на налог',
+			greeting: (name) => `Здраво, ${name}!`,
+			intro: 'Детектовали смо нову пријаву на ваш налог на docta.me.',
+			infoLabels: {
+				time: 'Време:',
+				ip: 'IP адреса:',
+				device: 'Уређај:',
+				location: 'Локација:',
+			},
+			wasYou: 'Ако сте то били ви, можете игнорисати ову поруку.',
+			wasNotYou:
+				'<strong>Ако нисте били ви,</strong> препоручујемо да одмах промените лозинку и завршите све активне сесије.',
+			buttonText: 'Промените лозинку',
+			copyright: '© 2026 docta.me - Сва права задржана',
 		},
-		wasYou: 'Ако сте то били ви, можете игнорисати ову поруку.',
-		wasNotYou:
-			'<strong>Ако нисте били ви,</strong> препоручујемо да одмах промените лозинку и завршите све активне сесије.',
-		buttonText: 'Промените лозинку',
-		copyright: '© 2026 docta.me - Сва права задржана',
-	},
-	[Language.EN]: {
-		subject: '🔔 New login to docta.me account',
-		heading: '🔔 New Account Login',
-		greeting: (name) => `Hello, ${name}!`,
-		intro: 'We detected a new login to your account on docta.me.',
-		infoLabels: {
-			time: 'Time:',
-			ip: 'IP Address:',
-			device: 'Device:',
-			location: 'Location:',
+		[Language.EN]: {
+			subject: '🔔 New login to docta.me account',
+			heading: '🔔 New Account Login',
+			greeting: (name) => `Hello, ${name}!`,
+			intro: 'We detected a new login to your account on docta.me.',
+			infoLabels: {
+				time: 'Time:',
+				ip: 'IP Address:',
+				device: 'Device:',
+				location: 'Location:',
+			},
+			wasYou: 'If this was you, you can ignore this email.',
+			wasNotYou:
+				'<strong>If this was not you,</strong> we recommend immediately changing your password and terminating all active sessions.',
+			buttonText: 'Change Password',
+			copyright: '© 2026 docta.me - All Rights Reserved',
 		},
-		wasYou: 'If this was you, you can ignore this email.',
-		wasNotYou:
-			'<strong>If this was not you,</strong> we recommend immediately changing your password and terminating all active sessions.',
-		buttonText: 'Change Password',
-		copyright: '© 2026 docta.me - All Rights Reserved',
-	},
-	[Language.RU]: {
-		subject: '🔔 Новый вход в аккаунт docta.me',
-		heading: '🔔 Новый вход в аккаунт',
-		greeting: (name) => `Здравствуйте, ${name}!`,
-		intro: 'Мы обнаружили новый вход в ваш аккаунт на docta.me.',
-		infoLabels: {
-			time: 'Время:',
-			ip: 'IP адрес:',
-			device: 'Устройство:',
-			location: 'Местоположение:',
+		[Language.RU]: {
+			subject: '🔔 Новый вход в аккаунт docta.me',
+			heading: '🔔 Новый вход в аккаунт',
+			greeting: (name) => `Здравствуйте, ${name}!`,
+			intro: 'Мы обнаружили новый вход в ваш аккаунт на docta.me.',
+			infoLabels: {
+				time: 'Время:',
+				ip: 'IP адрес:',
+				device: 'Устройство:',
+				location: 'Местоположение:',
+			},
+			wasYou: 'Если это были вы, можете проигнорировать это письмо.',
+			wasNotYou:
+				'<strong>Если это были не вы,</strong> рекомендуем немедленно изменить пароль и завершить все активные сессии.',
+			buttonText: 'Изменить пароль',
+			copyright: '© 2026 docta.me - Все права защищены',
 		},
-		wasYou: 'Если это были вы, можете проигнорировать это письмо.',
-		wasNotYou:
-			'<strong>Если это были не вы,</strong> рекомендуем немедленно изменить пароль и завершить все активные сессии.',
-		buttonText: 'Изменить пароль',
-		copyright: '© 2026 docta.me - Все права защищены',
-	},
-	[Language.DE]: {
-		subject: '🔔 Neue Anmeldung bei docta.me-Konto',
-		heading: '🔔 Neue Kontoanmeldung',
-		greeting: (name) => `Hallo, ${name}!`,
-		intro: 'Wir haben eine neue Anmeldung bei Ihrem Konto auf docta.me festgestellt.',
-		infoLabels: {
-			time: 'Zeit:',
-			ip: 'IP-Adresse:',
-			device: 'Gerät:',
-			location: 'Standort:',
+		[Language.DE]: {
+			subject: '🔔 Neue Anmeldung bei docta.me-Konto',
+			heading: '🔔 Neue Kontoanmeldung',
+			greeting: (name) => `Hallo, ${name}!`,
+			intro:
+				'Wir haben eine neue Anmeldung bei Ihrem Konto auf docta.me festgestellt.',
+			infoLabels: {
+				time: 'Zeit:',
+				ip: 'IP-Adresse:',
+				device: 'Gerät:',
+				location: 'Standort:',
+			},
+			wasYou: 'Wenn Sie das waren, können Sie diese E-Mail ignorieren.',
+			wasNotYou:
+				'<strong>Wenn Sie das nicht waren,</strong> empfehlen wir, sofort Ihr Passwort zu ändern und alle aktiven Sitzungen zu beenden.',
+			buttonText: 'Passwort ändern',
+			copyright: '© 2026 docta.me - Alle Rechte vorbehalten',
 		},
-		wasYou: 'Wenn Sie das waren, können Sie diese E-Mail ignorieren.',
-		wasNotYou:
-			'<strong>Wenn Sie das nicht waren,</strong> empfehlen wir, sofort Ihr Passwort zu ändern und alle aktiven Sitzungen zu beenden.',
-		buttonText: 'Passwort ändern',
-		copyright: '© 2026 docta.me - Alle Rechte vorbehalten',
-	},
-	[Language.TR]: {
-		subject: '🔔 docta.me hesabına yeni giriş',
-		heading: '🔔 Yeni Hesap Girişi',
-		greeting: (name) => `Merhaba, ${name}!`,
-		intro: 'docta.me üzerindeki hesabınıza yeni bir giriş tespit ettik.',
-		infoLabels: {
-			time: 'Zaman:',
-			ip: 'IP Adresi:',
-			device: 'Cihaz:',
-			location: 'Konum:',
+		[Language.TR]: {
+			subject: '🔔 docta.me hesabına yeni giriş',
+			heading: '🔔 Yeni Hesap Girişi',
+			greeting: (name) => `Merhaba, ${name}!`,
+			intro: 'docta.me üzerindeki hesabınıza yeni bir giriş tespit ettik.',
+			infoLabels: {
+				time: 'Zaman:',
+				ip: 'IP Adresi:',
+				device: 'Cihaz:',
+				location: 'Konum:',
+			},
+			wasYou: 'Bu sizseniz, bu e-postayı görmezden gelebilirsiniz.',
+			wasNotYou:
+				'<strong>Bu siz değilseniz,</strong> hemen şifrenizi değiştirmenizi ve tüm aktif oturumları sonlandırmanızı öneririz.',
+			buttonText: 'Şifreyi Değiştir',
+			copyright: '© 2026 docta.me - Tüm Hakları Saklıdır',
 		},
-		wasYou: 'Bu sizseniz, bu e-postayı görmezden gelebilirsiniz.',
-		wasNotYou:
-			'<strong>Bu siz değilseniz,</strong> hemen şifrenizi değiştirmenizi ve tüm aktif oturumları sonlandırmanızı öneririz.',
-		buttonText: 'Şifreyi Değiştir',
-		copyright: '© 2026 docta.me - Tüm Hakları Saklıdır',
-	},
-};
+	};
 
 // === Email Change Notification Templates ===
 
@@ -403,8 +402,7 @@ const emailChangeNotificationTemplates: Record<
 		intro: "docta.me'deki e-posta adresiniz değiştirildi:",
 		oldEmailLabel: 'Eski e-posta:',
 		newEmailLabel: 'Yeni e-posta:',
-		warning:
-			'E-posta adresinizi değiştirmediyseniz, hemen desteğe başvurun.',
+		warning: 'E-posta adresinizi değiştirmediyseniz, hemen desteğe başvurun.',
 		copyright: '© 2026 docta.me - Tüm Hakları Saklıdır',
 	},
 };
@@ -479,7 +477,9 @@ export function getPasswordResetEmail(
 		template.copyright,
 	);
 
-	const text = `${template.heading}\n\n${template.greeting('')}\n\n${template.content[0]}\n\n${resetUrl}\n\n${template.content[3]}`;
+	const text = `${template.heading}\n\n${template.greeting('')}\n\n${
+		template.content[0]
+	}\n\n${resetUrl}\n\n${template.content[3]}`;
 
 	return {
 		subject: template.subject,
@@ -524,7 +524,9 @@ export function getEmailVerificationEmail(
 		template.copyright,
 	);
 
-	const text = `${template.heading}\n\n${template.greeting(userName)}\n\n${template.content[0]}\n\n${verificationUrl}`;
+	const text = `${template.heading}\n\n${template.greeting(userName)}\n\n${
+		template.content[0]
+	}\n\n${verificationUrl}`;
 
 	return {
 		subject: template.subject,
@@ -546,15 +548,37 @@ export function getLoginNotificationEmail(
     <p>${template.greeting(userName)}</p>
     <p>${template.intro}</p>
     <div class="info-box">
-      <div class="info-row"><span class="label">${template.infoLabels.time}</span> ${loginInfo.timestamp.toLocaleString(locale === Language.RU ? 'ru-RU' : locale === Language.EN ? 'en-US' : locale === Language.DE ? 'de-DE' : locale === Language.TR ? 'tr-TR' : 'sr-RS')}</div>
-      <div class="info-row"><span class="label">${template.infoLabels.ip}</span> ${loginInfo.ip}</div>
-      <div class="info-row"><span class="label">${template.infoLabels.device}</span> ${loginInfo.userAgent}</div>
-      ${loginInfo.location ? `<div class="info-row"><span class="label">${template.infoLabels.location}</span> ${loginInfo.location}</div>` : ''}
+      <div class="info-row"><span class="label">${
+				template.infoLabels.time
+			}</span> ${loginInfo.timestamp.toLocaleString(
+		locale === Language.RU
+			? 'ru-RU'
+			: locale === Language.EN
+			? 'en-US'
+			: locale === Language.DE
+			? 'de-DE'
+			: locale === Language.TR
+			? 'tr-TR'
+			: 'sr-RS',
+	)}</div>
+      <div class="info-row"><span class="label">${
+				template.infoLabels.ip
+			}</span> ${loginInfo.ip}</div>
+      <div class="info-row"><span class="label">${
+				template.infoLabels.device
+			}</span> ${loginInfo.userAgent}</div>
+      ${
+				loginInfo.location
+					? `<div class="info-row"><span class="label">${template.infoLabels.location}</span> ${loginInfo.location}</div>`
+					: ''
+			}
     </div>
     <p>${template.wasYou}</p>
     <p>${template.wasNotYou}</p>
     <p style="text-align: center;">
-      <a href="https://docta.me/profile" class="button button-danger">${template.buttonText}</a>
+      <a href="https://docta.me/profile" class="button button-danger">${
+				template.buttonText
+			}</a>
     </p>
   `;
 
@@ -564,7 +588,13 @@ export function getLoginNotificationEmail(
 		template.copyright,
 	);
 
-	const text = `${template.heading}\n\n${template.greeting(userName)}\n\n${template.intro}\n\n${template.infoLabels.time} ${loginInfo.timestamp.toLocaleString()}\n${template.infoLabels.ip} ${loginInfo.ip}\n${template.infoLabels.device} ${loginInfo.userAgent}\n\n${template.wasYou}\n\n${template.wasNotYou}\n\nhttps://docta.me/profile`;
+	const text = `${template.heading}\n\n${template.greeting(userName)}\n\n${
+		template.intro
+	}\n\n${template.infoLabels.time} ${loginInfo.timestamp.toLocaleString()}\n${
+		template.infoLabels.ip
+	} ${loginInfo.ip}\n${template.infoLabels.device} ${loginInfo.userAgent}\n\n${
+		template.wasYou
+	}\n\n${template.wasNotYou}\n\nhttps://docta.me/profile`;
 
 	return {
 		subject: template.subject,
@@ -597,7 +627,11 @@ export function getEmailChangeNotificationEmail(
 		template.copyright,
 	);
 
-	const text = `${template.heading}\n\n${template.greeting(userName)}\n\n${template.intro}\n\n${template.oldEmailLabel} ${oldEmail}\n${template.newEmailLabel} ${newEmail}\n\n${template.warning}`;
+	const text = `${template.heading}\n\n${template.greeting(userName)}\n\n${
+		template.intro
+	}\n\n${template.oldEmailLabel} ${oldEmail}\n${
+		template.newEmailLabel
+	} ${newEmail}\n\n${template.warning}`;
 
 	return {
 		subject: template.subject,

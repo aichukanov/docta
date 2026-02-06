@@ -4,6 +4,7 @@
 import { Language } from '~/enums/language';
 import { executeQuery } from '~/server/common/db-mysql';
 import type { H3Event } from 'h3';
+import { getHeader } from 'h3';
 
 /**
  * Получить предпочитаемую локаль пользователя из БД

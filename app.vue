@@ -62,6 +62,8 @@ watch(
 	{ immediate: true, deep: true },
 );
 
+// Локаль устанавливается в server middleware (regional-settings.ts)
+// и передаётся через query параметр ?lang=XX
 const queryLocale = getLocaleFromQuery(route.query.lang as string | string[]);
 locale.value = queryLocale || defaultLocale;
 

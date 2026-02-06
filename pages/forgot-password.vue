@@ -2,7 +2,7 @@
 import forgotPasswordMessages from '~/i18n/forgot-password';
 
 definePageMeta({
-	layout: false,
+	layout: 'minimal',
 });
 
 const { t } = useI18n({
@@ -47,14 +47,8 @@ async function handleSubmit() {
 </script>
 
 <template>
-	<div class="forgot-password-page">
-		<div class="forgot-password-container">
-		<el-card class="forgot-password-card">
-			<template #header>
-				<div class="card-header">
-					<h1>{{ t('pageTitle') }}</h1>
-				</div>
-			</template>
+	<div>
+			<h1 class="page-title">{{ t('pageTitle') }}</h1>
 
 			<div v-if="!success" class="form-section">
 				<p class="description">
@@ -132,36 +126,15 @@ async function handleSubmit() {
 					</el-alert>
 				</div>
 			</div>
-		</el-card>
-		</div>
 	</div>
 </template>
 
 <style scoped>
-.forgot-password-page {
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-	padding: 20px;
-}
-
-.forgot-password-container {
-	width: 100%;
-	max-width: 500px;
-}
-
-.forgot-password-card {
-	border-radius: 12px;
-	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-}
-
-.card-header h1 {
-	margin: 0;
+.page-title {
+	margin: 0 0 8px 0;
 	font-size: 24px;
 	font-weight: 600;
-	color: var(--el-text-color-primary);
+	color: #2c3e50;
 	text-align: center;
 }
 
@@ -195,11 +168,7 @@ async function handleSubmit() {
 }
 
 @media (max-width: 480px) {
-	.forgot-password-card {
-		padding: 24px 16px;
-	}
-
-	.card-header h1 {
+	.page-title {
 		font-size: 20px;
 	}
 }

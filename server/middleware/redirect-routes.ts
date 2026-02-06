@@ -51,7 +51,7 @@ export default defineEventHandler(async (event) => {
 			return;
 		}
 
-		const queryParamsRedirect = fixUrlRegionalParams(event);
+		const queryParamsRedirect = await fixUrlRegionalParams(event);
 		if (queryParamsRedirect) {
 			await sendRedirect(
 				event,

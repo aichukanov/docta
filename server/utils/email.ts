@@ -10,7 +10,7 @@ import {
 	getLoginNotificationEmail,
 	getEmailChangeNotificationEmail,
 } from './email-templates';
-import type { Language } from '~/enums/language';
+import { Language } from '~/enums/language';
 
 interface EmailOptions {
 	to: string;

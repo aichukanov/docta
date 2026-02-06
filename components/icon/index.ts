@@ -24,6 +24,7 @@ export { default as MapPinIcon } from './map-pin.vue';
 export { default as LanguageIcon } from './language.vue';
 export { default as LightbulbIcon } from './lightbulb.vue';
 export { default as AlertCircleIcon } from './alert-circle.vue';
+export { default as GoogleIcon } from './google.vue';
 
 // Type definitions for icon props
 export interface IconProps {

@@ -7,12 +7,6 @@ export default defineI18nConfig(() => ({
 	fallbackLocale: 'sr',
 	locale: defaultLocale,
 	legacy: false,
-	strategy: 'no_prefix',
-	detectBrowserLanguage: {
-		useCookie: true,
-		cookieKey: 'i18n_redirected',
-		redirectOn: 'root',
-	},
 	messages: {
 		'en': {
 			ApplicationName: `${SITE_NAME} | Medicine in Montenegro`,

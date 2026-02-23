@@ -9,7 +9,7 @@ import { getHeader } from 'h3';
 /**
  * Получить предпочитаемую локаль пользователя из БД
  */
-async function getUserPreferredLocale(
+export async function getUserPreferredLocale(
 	userId: number,
 ): Promise<Language | null> {
 	try {
@@ -105,6 +105,31 @@ function parseAcceptLanguage(acceptLanguage: string): Language | null {
 	}
 
 	return null;
+}
+
+/**
+ * Определить локаль из явного значения или Accept-Language header.
+ * Используется, когда пользователя ещё нет в БД (регистрация).
+ */
+export function getLocaleFromRequest(
+	explicitLocale: string | undefined,
+	event?: H3Event,
+): Language {
+	if (explicitLocale && Object.values(Language).includes(explicitLocale as Language)) {
+		return explicitLocale as Language;
+	}
+
+	if (event) {
+		const acceptLanguage = getHeader(event, 'accept-language');
+		if (acceptLanguage) {
+			const headerLocale = parseAcceptLanguage(acceptLanguage);
+			if (headerLocale) {
+				return headerLocale;
+			}
+		}
+	}
+
+	return Language.SR;
 }
 
 /**

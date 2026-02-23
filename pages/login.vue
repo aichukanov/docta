@@ -1,87 +1,64 @@
 <script setup lang="ts">
-import { Message, Lock, User } from '@element-plus/icons-vue';
 import loginMessages from '~/i18n/login';
+import { getRegionalQuery } from '~/common/url-utils';
+import { ERROR_CODES } from '~/server/utils/api-codes';
 
 definePageMeta({
 	layout: 'minimal',
 });
 
-const { t } = useI18n({
+const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: loginMessages.messages,
 });
 
-const { isAuthenticated, currentUser, fetchUser, logout, loginWithEmail, register } = useAuth();
+const regionalQuery = computed(() => getRegionalQuery(locale.value));
+
+const {
+	isAuthenticated,
+	currentUser,
+	fetchUser,
+	logout,
+	loginWithEmail,
+	register,
+} = useAuth();
 
 // Проверяем ошибки OAuth
 const route = useRoute();
 const router = useRouter();
-const authError = ref<string | null>(null);
+const authError = ref<ERROR_CODES | null>(null);
 
 // Режимы: 'login' | 'register'
 const authMode = ref<'login' | 'register'>('login');
 
-// Форма входа
-const loginForm = ref({
-	email: '',
-	password: '',
-});
-
-// Форма регистрации
-const registerForm = ref({
-	email: '',
-	password: '',
-	confirmPassword: '',
-	name: '',
-});
-
 const isLoading = ref(false);
-const formError = ref<string | null>(null);
+const formError = ref<ERROR_CODES | null>(null);
 
 // При монтировании проверяем авторизацию и ошибки
 onMounted(async () => {
-	// Обновляем данные о пользователе
 	await fetchUser();
 
-	// Если пользователь авторизован, проверяем редирект
 	if (isAuthenticated.value) {
 		const redirectTo = sessionStorage.getItem('auth_redirect');
 		if (redirectTo && redirectTo !== '/login') {
 			sessionStorage.removeItem('auth_redirect');
 			await router.push(redirectTo);
-			return;
+		} else {
+			await router.push({ path: '/profile', query: regionalQuery.value });
 		}
+		return;
 	}
 
-	// Проверяем cookie с ошибкой
 	const errorCookie = useCookie('auth_error');
 	if (errorCookie.value) {
-		authError.value = errorCookie.value as string;
-		// Удаляем cookie после прочтения
+		authError.value = errorCookie.value as ERROR_CODES;
 		errorCookie.value = null;
 	}
 });
 
+// Ошибка OAuth: из cookie или URL-параметра. Локализацию делает ApiErrorAlert.
 const oauthError = computed(() => {
-	// Сначала проверяем flash сообщение из cookie
-	if (authError.value) {
-		return authError.value;
-	}
-
-	// Затем проверяем URL параметры (для Google OAuth)
-	const error = route.query.error as string;
-	if (!error) return null;
-
-	const errorMessages: Record<string, string> = {
-		oauth_failed: t('oauthFailed'),
-		no_code: t('noCode'),
-		state_mismatch: t('stateMismatch'),
-		email_not_verified: t('emailNotVerified'),
-		email_not_provided: t('emailNotProvided'),
-		oauthCallbackFailed: t('oauthCallbackFailed'),
-	};
-
-	return errorMessages[error] || t('authError');
+	return authError.value || (route.query.error as ERROR_CODES) || null;
 });
 
 async function handleLogout() {
@@ -92,65 +69,64 @@ async function handleLogout() {
 	}
 }
 
-async function handleEmailLogin() {
+async function handleEmailLogin(payload: { email: string; password: string }) {
 	formError.value = null;
-	
-	if (!loginForm.value.email || !loginForm.value.password) {
-		formError.value = t('fillAllFields');
+
+	if (!payload.email || !payload.password) {
+		formError.value = ERROR_CODES.ALL_FIELDS_REQUIRED;
 		return;
 	}
 
 	try {
 		isLoading.value = true;
-		const response = await loginWithEmail(
-			loginForm.value.email,
-			loginForm.value.password
-		);
+		const response = await loginWithEmail(payload.email, payload.password);
 
-		// Редиректим
 		if (response.redirectTo) {
 			await router.push(response.redirectTo);
 		} else {
-			await router.push('/');
+			await router.push({ path: '/', query: regionalQuery.value });
 		}
 	} catch (error: any) {
 		console.error('Login error:', error);
-		formError.value = error.data?.statusMessage || t('errorLogin');
+		formError.value =
+			(error.data?.statusMessage as ERROR_CODES) ||
+			ERROR_CODES.ERROR_DURING_LOGIN;
 	} finally {
 		isLoading.value = false;
 	}
 }
 
-async function handleRegister() {
+async function handleRegister(payload: {
+	email: string;
+	password: string;
+	name?: string;
+}) {
 	formError.value = null;
 
-	if (!registerForm.value.email || !registerForm.value.password || !registerForm.value.name) {
-		formError.value = t('fillAllFields');
-		return;
-	}
-
-	if (registerForm.value.password !== registerForm.value.confirmPassword) {
-		formError.value = t('passwordsNotMatch');
+	if (!payload.email || !payload.password) {
+		formError.value = ERROR_CODES.ALL_FIELDS_REQUIRED;
 		return;
 	}
 
 	try {
 		isLoading.value = true;
 		const response = await register(
-			registerForm.value.email,
-			registerForm.value.password,
-			registerForm.value.name
+			payload.email,
+			payload.password,
+			payload.name || undefined,
+			locale.value,
 		);
 
-		// Редиректим
 		if (response.redirectTo) {
 			await router.push(response.redirectTo);
 		} else {
-			await router.push('/');
+			await router.push({ path: '/', query: regionalQuery.value });
 		}
 	} catch (error: any) {
 		console.error('Registration error:', error);
-		formError.value = error.data?.statusMessage || t('errorRegister');
+		formError.value =
+			(error.data?.statusMessage as ERROR_CODES) ||
+			ERROR_CODES.ERROR_CREATING_ACCOUNT;
 	} finally {
 		isLoading.value = false;
 	}
@@ -164,208 +140,58 @@ function switchMode() {
 
 <template>
 	<div>
-			<!-- Если пользователь авторизован -->
-			<div v-if="isAuthenticated" class="user-info">
-				<h1>{{ t('welcomeBack') }}</h1>
+		<LoginUserInfoCard
+			v-if="isAuthenticated && currentUser"
+			:user="currentUser"
+			:regional-query="regionalQuery"
+			@logout="handleLogout"
+		/>
 
-				<div class="user-card">
-					<img
-						v-if="currentUser?.photo_url"
-						:src="currentUser.photo_url"
-						:alt="currentUser.name"
-						class="user-avatar"
-					/>
-					<div class="user-details">
-						<h2>{{ currentUser?.name }}</h2>
-						<p>{{ currentUser?.username ? `@${currentUser.username}` : currentUser?.email }}</p>
-						<el-tag v-if="currentUser?.is_admin" type="danger">{{ t('administrator') }}</el-tag>
-						<el-tag v-else type="success">{{ t('user') }}</el-tag>
-					</div>
-				</div>
+		<div v-else class="login-form">
+			<h1 class="login-title">
+				{{ authMode === 'login' ? t('loginTitle') : t('registerTitle') }}
+			</h1>
+			<p class="login-subtitle">
+				{{
+					authMode === 'login' ? t('chooseLoginMethod') : t('createNewAccount')
+				}}
+			</p>
 
-				<div class="actions">
-					<el-button type="primary" size="large" @click="navigateTo('/')">
-						{{ t('btnHome') }}
-					</el-button>
-					<el-button
-						v-if="currentUser?.is_admin"
-						type="warning"
-						size="large"
-						@click="navigateTo('/admin')"
-					>
-						{{ t('btnAdminPanel') }}
-					</el-button>
-					<el-button type="default" size="large" @click="handleLogout">
-						{{ t('btnLogout') }}
-					</el-button>
-				</div>
-			</div>
+			<ApiErrorAlert :error="oauthError" style="margin-bottom: 24px" />
+			<ApiErrorAlert
+				:error="formError"
+				closable
+				style="margin-bottom: 24px"
+				@close="formError = null"
+			/>
 
-			<!-- Если пользователь не авторизован -->
-			<div v-else class="login-form">
-				<h1 class="login-title">
-					{{ authMode === 'login' ? t('loginTitle') : t('registerTitle') }}
-				</h1>
-				<p class="login-subtitle">
-					{{ authMode === 'login' ? t('chooseLoginMethod') : t('createNewAccount') }}
-				</p>
-
-					<el-alert
-						v-if="oauthError"
-						:title="oauthError"
-						type="error"
-						:closable="false"
-						style="margin-bottom: 24px"
-					/>
-
-					<el-alert
-						v-if="formError"
-						:title="formError"
-						type="error"
-						:closable="true"
-						@close="formError = null"
-						style="margin-bottom: 24px"
-					/>
-
-					<div class="login-options">
-						<!-- Форма входа по Email -->
-						<div v-if="authMode === 'login'" class="email-form">
-							<el-form @submit.prevent="handleEmailLogin">
-					<el-form-item>
-						<el-input
-							v-model="loginForm.email"
-							type="email"
-							:placeholder="t('email')"
-							size="large"
-							:disabled="isLoading"
-						>
-							<template #prefix>
-								<el-icon><Message /></el-icon>
-							</template>
-						</el-input>
-					</el-form-item>
-					<el-form-item>
-						<el-input
-							v-model="loginForm.password"
-							type="password"
-							:placeholder="t('password')"
-							size="large"
-							:disabled="isLoading"
-							show-password
-						>
-							<template #prefix>
-								<el-icon><Lock /></el-icon>
-							</template>
-						</el-input>
-					</el-form-item>
-					<el-button
-						type="primary"
-						size="large"
-						native-type="submit"
-						:loading="isLoading"
-						class="submit-button"
-					>
-						{{ t('btnLogin') }}
-					</el-button>
-							</el-form>
-
-					<div class="form-footer">
-						<el-button link type="primary" @click="navigateTo('/forgot-password')">
-							{{ t('forgotPassword') }}
-						</el-button>
-						<el-divider direction="vertical" />
-						<el-button link type="primary" @click="switchMode">
-							{{ t('noAccount') }}
-						</el-button>
-					</div>
-						</div>
-
-						<!-- Форма регистрации -->
-				<div v-else class="email-form">
-					<el-form @submit.prevent="handleRegister">
-						<el-form-item>
-							<el-input
-								v-model="registerForm.name"
-								:placeholder="t('name')"
-								size="large"
-								:disabled="isLoading"
-							>
-								<template #prefix>
-									<el-icon><User /></el-icon>
-								</template>
-							</el-input>
-						</el-form-item>
-						<el-form-item>
-							<el-input
-								v-model="registerForm.email"
-								type="email"
-								:placeholder="t('email')"
-								size="large"
-								:disabled="isLoading"
-							>
-								<template #prefix>
-									<el-icon><Message /></el-icon>
-								</template>
-							</el-input>
-						</el-form-item>
-						<el-form-item>
-							<el-input
-								v-model="registerForm.password"
-								type="password"
-								:placeholder="t('passwordPlaceholder')"
-								size="large"
-								:disabled="isLoading"
-								show-password
-							>
-								<template #prefix>
-									<el-icon><Lock /></el-icon>
-								</template>
-							</el-input>
-						</el-form-item>
-						<el-form-item>
-							<el-input
-								v-model="registerForm.confirmPassword"
-								type="password"
-								:placeholder="t('confirmPasswordPlaceholder')"
-								size="large"
-								:disabled="isLoading"
-								show-password
-							>
-								<template #prefix>
-									<el-icon><Lock /></el-icon>
-								</template>
-							</el-input>
-						</el-form-item>
-						<el-button
-							type="primary"
-							size="large"
-							native-type="submit"
-							:loading="isLoading"
-							class="submit-button"
-						>
-							{{ t('btnRegister') }}
-						</el-button>
-					</el-form>
-
-					<div class="form-footer">
-						<el-button link type="primary" @click="switchMode">
-							{{ t('haveAccount') }}
-						</el-button>
-					</div>
+			<div class="login-options">
+				<div class="oauth-buttons">
+					<LoginGoogleButton />
+					<LoginFacebookButton />
+					<LoginTelegramButton />
 				</div>
 
 				<div class="divider">
 					<span>{{ t('orContinueWith') }}</span>
 				</div>
 
-					<!-- OAuth кнопки -->
-					<div class="oauth-buttons">
-						<GoogleSignInButton />
-						<FacebookLoginButton />
-						<TelegramLoginButton />
-					</div>
-					</div>
-				</div>
+				<LoginEmailLoginForm
+					v-if="authMode === 'login'"
+					:loading="isLoading"
+					:regional-query="regionalQuery"
+					@submit="handleEmailLogin"
+					@switch-mode="switchMode"
+				/>
+
+				<LoginRegisterForm
+					v-else
+					:loading="isLoading"
+					@submit="handleRegister"
+					@switch-mode="switchMode"
+				/>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -389,20 +215,6 @@ function switchMode() {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
-}
-
-.email-form {
-	width: 100%;
-}
-
-.submit-button {
-	width: 100%;
-	margin-top: 8px;
-}
-
-.form-footer {
-	text-align: center;
-	margin-top: 16px;
 }
 
 .oauth-buttons {
@@ -429,58 +241,6 @@ function switchMode() {
 .divider span {
 	padding: 0 12px;
 	font-size: 14px;
-}
-
-/* User info */
-.user-info {
-	text-align: center;
-}
-
-.user-info h1 {
-	font-size: 28px;
-	margin: 0 0 24px 0;
-	color: #2c3e50;
-}
-
-.user-card {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 16px;
-	padding: 24px;
-	background: #f8f9fa;
-	border-radius: 8px;
-	margin-bottom: 24px;
-}
-
-.user-avatar {
-	width: 80px;
-	height: 80px;
-	border-radius: 50%;
-	border: 3px solid white;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.user-details {
-	text-align: center;
-}
-
-.user-details h2 {
-	font-size: 20px;
-	margin: 0 0 4px 0;
-	color: #2c3e50;
-}
-
-.user-details p {
-	font-size: 14px;
-	color: #7f8c8d;
-	margin: 0 0 8px 0;
-}
-
-.actions {
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
 }
 
 @media (max-width: 480px) {

@@ -1,10 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n();
-const { giveConsent } = useCookieControl();
-
-function acceptCookies() {
-	giveConsent();
-}
+const { giveConsent, declineConsent } = useCookieControl();
 </script>
 
 <template>
@@ -13,13 +9,17 @@ function acceptCookies() {
 			<div class="cookie-banner__content">
 				<h2 class="cookie-banner__title">{{ t('CookieTitle') }}</h2>
 				<p class="cookie-banner__description">{{ t('CookieDescription') }}</p>
-				<p class="cookie-banner__description-2">{{
-					t('CookieDescription2')
-				}}</p>
+				<p class="cookie-banner__description-2">
+					{{ t('CookieDescription2') }}
+					<NuxtLink to="/privacy" class="cookie-banner__privacy-link">{{ t('PrivacyLink') }}</NuxtLink>
+				</p>
 			</div>
 			<div class="cookie-banner__actions">
-				<button class="cookie-banner__button" @click="acceptCookies">
+				<button class="cookie-banner__button cookie-banner__button--accept" @click="giveConsent">
 					{{ t('Accept') }}
+				</button>
+				<button class="cookie-banner__button cookie-banner__button--decline" @click="declineConsent">
+					{{ t('Decline') }}
 				</button>
 			</div>
 		</div>
@@ -27,8 +27,6 @@ function acceptCookies() {
 </template>
 
 <style lang="less" scoped>
-@import url('~/assets/css/vars.less');
-
 .cookie-banner {
 	position: fixed;
 	bottom: 0;
@@ -87,9 +85,18 @@ function acceptCookies() {
 	gap: 10px;
 }
 
+.cookie-banner__privacy-link {
+	color: rgba(255, 255, 255, 0.7);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	white-space: nowrap;
+
+	&:hover {
+		color: white;
+	}
+}
+
 .cookie-banner__button {
-	background: white;
-	color: black;
 	border: none;
 	padding: 12px 24px;
 	border-radius: 4px;
@@ -100,9 +107,25 @@ function acceptCookies() {
 	margin-bottom: 30px;
 	transition: all 0.3s ease;
 
-	&:hover {
-		background: @primary-hover-color;
-		color: white;
+	&--accept {
+		background: white;
+		color: black;
+
+		&:hover {
+			background: var(--color-primary-dark);
+			color: white;
+		}
+	}
+
+	&--decline {
+		background: transparent;
+		color: rgba(255, 255, 255, 0.6);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+
+		&:hover {
+			color: white;
+			border-color: rgba(255, 255, 255, 0.7);
+		}
 	}
 }
 
@@ -128,11 +151,17 @@ function acceptCookies() {
 
 	.cookie-banner__actions {
 		width: 100%;
+		flex-direction: column;
 
 		.cookie-banner__button {
 			width: 100%;
 			min-width: auto;
 			padding: 14px 20px;
+			margin-bottom: 0;
+		}
+
+		.cookie-banner__button--accept {
+			margin-bottom: 0;
 		}
 	}
 }
@@ -143,38 +172,50 @@ function acceptCookies() {
 	"en": {
 		"CookieTitle": "Cookies",
 		"CookieDescription": "Cookies are needed for proper site functionality and analytics, you should allow their use.",
-		"CookieDescription2": "You can revoke your consent at any time.",
-		"Accept": "Accept"
+		"CookieDescription2": "You can revoke your consent at any time. ",
+		"PrivacyLink": "Privacy Policy",
+		"Accept": "Accept",
+		"Decline": "Decline"
 	},
 	"ru": {
 		"CookieTitle": "Cookies",
 		"CookieDescription": "Файлы cookie нужны для корректной работы сайта и аналитики, вам стоит разрешить их использование.",
-		"CookieDescription2": "Разрешение можно будет отозвать в любой момент.",
-		"Accept": "Принять"
+		"CookieDescription2": "Разрешение можно будет отозвать в любой момент. ",
+		"PrivacyLink": "Политика конфиденциальности",
+		"Accept": "Принять",
+		"Decline": "Отклонить"
 	},
 	"de": {
 		"CookieTitle": "Cookies",
 		"CookieDescription": "Cookies werden für die ordnungsgemäße Funktionalität der Website und Analysen benötigt, Sie sollten ihre Verwendung zulassen.",
-		"CookieDescription2": "Sie können Ihre Zustimmung jederzeit widerrufen.",
-		"Accept": "Akzeptieren"
+		"CookieDescription2": "Sie können Ihre Zustimmung jederzeit widerrufen. ",
+		"PrivacyLink": "Datenschutzerklärung",
+		"Accept": "Akzeptieren",
+		"Decline": "Ablehnen"
 	},
 	"tr": {
 		"CookieTitle": "Çerezler",
 		"CookieDescription": "Çerezler, sitenin düzgün çalışması ve analitik için gereklidir, kullanımlarına izin vermelisiniz.",
-		"CookieDescription2": "İzninizi istediğiniz zaman geri alabilirsiniz.",
-		"Accept": "Kabul Et"
+		"CookieDescription2": "İzninizi istediğiniz zaman geri alabilirsiniz. ",
+		"PrivacyLink": "Gizlilik Politikası",
+		"Accept": "Kabul Et",
+		"Decline": "Reddet"
 	},
 	"sr": {
 		"CookieTitle": "Kolačići",
 		"CookieDescription": "Kolačići su potrebni za ispravno funkcionisanje sajta i analitiku, trebalo bi da dozvolite njihovu upotrebu.",
-		"CookieDescription2": "Možete povući svoju saglasnost u bilo kom trenutku.",
-		"Accept": "Prihvati"
+		"CookieDescription2": "Možete povući svoju saglasnost u bilo kom trenutku. ",
+		"PrivacyLink": "Politika privatnosti",
+		"Accept": "Prihvati",
+		"Decline": "Odbij"
 	},
 	"sr-cyrl": {
 		"CookieTitle": "Колачићи",
 		"CookieDescription": "Колачићи су потребни за исправно функционисање сајта и аналитику, требало би да дозволите њихову употребу.",
-		"CookieDescription2": "Можете повнути своју сагласност у било ком тренутку.",
-		"Accept": "Прихвати"
+		"CookieDescription2": "Можете повући своју сагласност у било ком тренутку. ",
+		"PrivacyLink": "Политика приватности",
+		"Accept": "Прихвати",
+		"Decline": "Одбиј"
 	}
 }
 </i18n>

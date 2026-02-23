@@ -5,14 +5,23 @@ export default defineEventHandler((event) => {
 	const config = getOAuthConfig();
 	const { google } = config;
 
-	// Определяем текущий origin из запроса
-	const host = getRequestHeader(event, 'host');
-	const protocol = getRequestHeader(event, 'x-forwarded-proto') || 'http';
-	const currentOrigin = `${protocol}://${host}`;
-	const redirectUri = `${currentOrigin}/api/auth/callback/google`;
+	// Используем redirect URI из конфига (BASE_URL)
+	const redirectUri = google.redirectUri;
+	const redirectUrl = new URL(redirectUri);
+	const protocol = redirectUrl.protocol.replace(':', '');
+
+	// Если пользователь зашёл с другого хоста (напр. localhost вместо ngrok),
+	// перенаправляем на правильный хост, чтобы cookie сохранились на нужном домене
+	const requestHost = getRequestHeader(event, 'host') || '';
+	if (requestHost && requestHost !== redirectUrl.host) {
+		authLogger.debug('Redirecting to correct origin for OAuth', {
+			from: requestHost,
+			to: redirectUrl.host,
+		});
+		return sendRedirect(event, `${redirectUrl.origin}/api/auth/google`);
+	}
 
 	authLogger.debug('Starting Google OAuth flow', {
-		origin: currentOrigin,
 		redirectUri,
 	});
 

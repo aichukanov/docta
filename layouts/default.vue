@@ -2,7 +2,7 @@
 import { getRegionalQuery } from '~/common/url-utils';
 import { PROJECT_CONTACTS, SITE_NAME } from '~/common/constants';
 
-const { isConsentGiven } = useCookieControl();
+const { isConsentGiven, isConsentDecided } = useCookieControl();
 const { t, locale } = useI18n();
 
 const years = computed(() => `2025-${new Date().getFullYear()}`);
@@ -68,7 +68,7 @@ watch(
 			<slot />
 		</div>
 
-		<footer class="footer" :class="{ 'footer-tall': !isConsentGiven }">
+		<footer class="footer" :class="{ 'footer-tall': !isConsentDecided }">
 			<div class="footer-content">
 				<div class="footer-top">
 					<div class="footer-brand">
@@ -165,7 +165,7 @@ watch(
 		</footer>
 
 		<ClientOnly>
-			<CookieBanner v-if="!isConsentGiven" />
+			<CookieBanner v-if="!isConsentDecided" />
 			<CookieModal />
 		</ClientOnly>
 	</div>
@@ -285,111 +285,6 @@ watch(
 </i18n>
 
 <style lang="less">
-@import url('~/assets/css/vars.less');
-
-:root {
-	--color-primary: #4f46e5;
-	--color-primary-dark: #3730a3;
-	--color-primary-green: #0e5d14;
-	--color-primary-dark-green: #0a4210;
-	--color-secondary: #06b6d4;
-	--color-accent: #f59e0b;
-	--color-highlight-bg: rgb(255 200 23 / 10%);
-	--color-success: #10b981;
-
-	--color-text-heading: #0f172a;
-	--color-text-primary: #333333;
-	--color-text-secondary: #475569;
-	--color-text-muted: #64748b;
-	--color-text-light: #94a3b8;
-
-	--color-bg-primary: #ffffff;
-	--color-bg-secondary: #f8fafc;
-	--color-bg-tertiary: #f1f5f9;
-	--color-bg-muted: #e2e8f0;
-	--color-bg-soft: #fafbfc;
-	--color-bg-tips: linear-gradient(
-		135deg,
-		rgba(79, 70, 229, 0.04) 0%,
-		rgba(6, 182, 212, 0.04) 100%
-	);
-
-	--color-border-primary: #d1d5db;
-	--color-border-secondary: #e5e7eb;
-	--color-border-light: #f3f4f6;
-	--color-border-accent: rgba(79, 70, 229, 0.3);
-
-	--color-surface-primary: var(--color-bg-primary);
-	--color-surface-secondary: var(--color-bg-secondary);
-
-	/* === РАЗМЕРЫ === */
-	--spacing-xs: 0.25rem; /* 4px */
-	--spacing-sm: 0.5rem; /* 8px */
-	--spacing-md: 0.75rem; /* 12px */
-	--spacing-lg: 1rem; /* 16px */
-	--spacing-xl: 1.5rem; /* 24px */
-	--spacing-2xl: 2rem; /* 32px */
-	--spacing-3xl: 3rem; /* 48px */
-	--spacing-4xl: 4rem; /* 64px */
-
-	--font-size-xs: 0.7rem; /* 11.2px */
-	--font-size-sm: 0.8rem; /* 12.8px */
-	--font-size-base: 0.85rem; /* 13.6px */
-	--font-size-md: 0.9rem; /* 14.4px */
-	--font-size-lg: 0.95rem; /* 15.2px */
-	--font-size-xl: 1rem; /* 16px */
-	--font-size-2xl: 1.1rem; /* 17.6px */
-	--font-size-3xl: 1.2rem; /* 19.2px */
-	--font-size-4xl: 2rem; /* 32px */
-	--font-size-5xl: 3rem; /* 48px */
-
-	--font-weight-normal: 400;
-	--font-weight-medium: 500;
-	--font-weight-semibold: 600;
-	--font-weight-bold: 700;
-
-	--border-width-thin: 1px;
-	--border-width-thick: 3px;
-
-	--border-radius-sm: 4px;
-	--border-radius-md: 6px;
-	--border-radius-lg: 8px;
-	--border-radius-xl: 12px;
-	--border-radius-full: 50%;
-
-	/* === ТЕНИ === */
-	--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-	--shadow-md: 0 2px 6px rgba(0, 0, 0, 0.08);
-	--shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.1);
-	--shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.12);
-	--shadow-hover: 0 2px 8px rgba(79, 70, 229, 0.15);
-	--shadow-soft: 0 0 0 1px rgba(0, 0, 0, 0.06);
-
-	/* === ПЕРЕХОДЫ === */
-	--transition-fast: 0.1s ease;
-	--transition-base: 0.2s ease;
-
-	/* === Z-ИНДЕКСЫ === */
-	--z-base: 0;
-	--z-raised: 100;
-	--z-map: 1000;
-	--z-dropdown: 1100;
-	--z-header: 1200;
-	--z-header-dropdown: 1300;
-	--z-modal: 2000;
-	--z-cookie-consent: 2500;
-	--z-tooltip: 3000;
-
-	/* === СОВМЕСТИМОСТЬ С ELEMENT PLUS === */
-	--el-color-primary: var(--color-primary);
-	--el-color-primary-light-3: #6366f1;
-	--el-color-primary-light-5: #818cf8;
-	--el-color-primary-light-7: #a5b4fc;
-	--el-color-primary-light-8: #c7d2fe;
-	--el-color-primary-light-9: #e0e7ff;
-	--el-color-primary-dark-2: var(--color-primary-dark);
-}
-
 html,
 body {
 	margin: 0;

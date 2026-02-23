@@ -274,8 +274,6 @@ onMounted(async () => {
 </template>
 
 <style lang="less" scoped>
-@import url('~/assets/css/vars.less');
-
 .list-page {
 	display: flex;
 	min-height: calc(100vh - 120px);
@@ -312,7 +310,7 @@ onMounted(async () => {
 	font-size: 2rem;
 	font-weight: 600;
 	color: #1f2937;
-	margin: 0 0 @double-padding 0;
+	margin: 0 0 var(--spacing-2xl) 0;
 	font-family: system-ui, -apple-system, sans-serif;
 	word-wrap: break-word;
 }
@@ -336,7 +334,7 @@ onMounted(async () => {
 .list-wrapper {
 	display: flex;
 	flex-direction: column;
-	gap: @base-padding;
+	gap: var(--spacing-lg);
 	width: 100%;
 	box-sizing: border-box;
 }
@@ -347,7 +345,7 @@ onMounted(async () => {
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	gap: @base-padding;
+	gap: var(--spacing-lg);
 	width: 100%;
 	box-sizing: border-box;
 }

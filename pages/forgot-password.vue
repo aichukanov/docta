@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import forgotPasswordMessages from '~/i18n/forgot-password';
+import { Message } from '@element-plus/icons-vue';
+import { ERROR_CODES } from '~/server/utils/api-codes';
 
 definePageMeta({
 	layout: 'minimal',
@@ -12,15 +14,15 @@ const { t } = useI18n({
 
 const email = ref('');
 const isLoading = ref(false);
-const error = ref<string | null>(null);
+const error = ref<ERROR_CODES | null>(null);
 const success = ref(false);
 const resetUrl = ref<string | null>(null);
 
 async function handleSubmit() {
 	error.value = null;
-	
+
 	if (!email.value) {
-		error.value = t('enterEmail');
+		error.value = ERROR_CODES.EMAIL_REQUIRED;
 		return;
 	}
 
@@ -32,100 +34,105 @@ async function handleSubmit() {
 		});
 
 		success.value = true;
-		
+
 		// В development режиме показываем ссылку для тестирования
 		if (response.resetUrl) {
 			resetUrl.value = response.resetUrl;
 		}
 	} catch (err: any) {
 		console.error('Forgot password error:', err);
-		error.value = err.data?.statusMessage || t('errorSending');
+		error.value =
+			(err.data?.statusMessage as ERROR_CODES) ||
+			ERROR_CODES.ERROR_SENDING_EMAIL;
 	} finally {
 		isLoading.value = false;
 	}
 }
+
+const loginPageLink = computed(() => ({
+	name: 'login',
+	query: getRegionalQuery(locale.value),
+}));
 </script>
 
 <template>
 	<div>
-			<h1 class="page-title">{{ t('pageTitle') }}</h1>
+		<h1 class="page-title">{{ t('pageTitle') }}</h1>
 
-			<div v-if="!success" class="form-section">
-				<p class="description">
-					{{ t('description') }}
-				</p>
+		<div v-if="!success" class="form-section">
+			<p class="description">
+				{{ t('description') }}
+			</p>
 
-				<el-alert
-					v-if="error"
-					:title="error"
-					type="error"
-					:closable="true"
-					@close="error = null"
-					style="margin-bottom: 24px"
-				/>
+			<ApiErrorAlert
+				:error="error"
+				closable
+				style="margin-bottom: 24px"
+				@close="error = null"
+			/>
 
-				<el-form @submit.prevent="handleSubmit">
-					<el-form-item>
-						<el-input
-							v-model="email"
-							type="email"
-							:placeholder="t('email')"
-							size="large"
-							:disabled="isLoading"
-						>
-							<template #prefix>
-								<el-icon><Message /></el-icon>
-							</template>
-						</el-input>
-					</el-form-item>
-
-					<el-button
-						type="primary"
+			<el-form @submit.prevent="handleSubmit">
+				<el-form-item>
+					<el-input
+						v-model="email"
+						type="email"
+						:placeholder="t('email')"
 						size="large"
-						native-type="submit"
-						:loading="isLoading"
-						class="submit-button"
+						:disabled="isLoading"
 					>
-						{{ t('btnSendLink') }}
-					</el-button>
-				</el-form>
+						<template #prefix>
+							<el-icon><Message /></el-icon>
+						</template>
+					</el-input>
+				</el-form-item>
 
-				<div class="form-footer">
-					<el-button link type="primary" @click="navigateTo('/login')">
-						{{ t('btnBackToLogin') }}
-					</el-button>
-				</div>
-			</div>
-
-			<div v-else class="success-section">
-				<el-result
-					icon="success"
-					:title="t('requestSent')"
-					:sub-title="t('requestSentDescription')"
+				<el-button
+					type="primary"
+					size="large"
+					native-type="submit"
+					:loading="isLoading"
+					class="submit-button"
 				>
-					<template #extra>
-						<el-button type="primary" @click="navigateTo('/login')">
-							{{ t('btnBackToLoginSuccess') }}
-						</el-button>
-					</template>
-				</el-result>
+					{{ t('btnSendLink') }}
+				</el-button>
+			</el-form>
 
-				<!-- Для разработки показываем ссылку -->
-				<div v-if="resetUrl" class="dev-info">
-					<el-alert
-						:title="t('devMode')"
-						type="info"
-						:closable="false"
-					>
-						<p style="margin: 8px 0 0 0; font-size: 14px;">
-							{{ t('resetLinkLabel') }}<br>
-							<a :href="resetUrl" target="_blank" style="color: var(--el-color-primary)">
-								{{ resetUrl }}
-							</a>
-						</p>
-					</el-alert>
-				</div>
+			<div class="form-footer">
+				<el-button link type="primary" @click="navigateTo(loginPageLink)">
+					{{ t('btnBackToLogin') }}
+				</el-button>
 			</div>
+		</div>
+
+		<div v-else class="success-section">
+			<el-result
+				icon="success"
+				:title="t('requestSent')"
+				:sub-title="t('requestSentDescription')"
+			>
+				<template #extra>
+					<el-button type="primary" @click="navigateTo(loginPageLink)">
+						{{ t('btnBackToLoginSuccess') }}
+					</el-button>
+				</template>
+			</el-result>
+
+			<!-- Для разработки показываем ссылку -->
+			<div v-if="resetUrl" class="dev-info">
+				<el-alert :title="t('devMode')" type="info" :closable="false">
+					<p style="margin: 8px 0 0 0; font-size: 14px">
+						{{ t('resetLinkLabel') }}<br />
+						<a
+							:href="resetUrl"
+							target="_blank"
+							style="color: var(--el-color-primary)"
+						>
+							{{ resetUrl }}
+						</a>
+					</p>
+				</el-alert>
+			</div>
+		</div>
 	</div>
 </template>
 

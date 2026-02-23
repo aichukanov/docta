@@ -5,7 +5,7 @@ import {
 } from '~/composables/use-locale';
 import { getRegionalUrl } from '../../../common/url-utils';
 import { Language } from '~/enums/language';
-import { getUserLocale } from '~/server/utils/user-locale';
+import { getUserPreferredLocale } from '~/server/utils/user-locale';
 import { getCurrentUser } from '~/server/common/auth';
 
 export async function fixUrlRegionalParams(
@@ -42,17 +42,19 @@ async function getLocaleForQuery(event: any): Promise<{
 }> {
 	const query = getQuery(event);
 
-	// 1. Проверяем локаль залогиненного пользователя (наивысший приоритет)
+	// 1. Проверяем явно сохранённую локаль пользователя в БД (наивысший приоритет)
 	const user = await getCurrentUser(event);
 	if (user?.id) {
 		try {
-			const userLocale = await getUserLocale(user.id, event);
-			if (userLocale) {
-				// Если у пользователя установлена локаль в профиле, используем её
-				// и игнорируем cookie и query параметры
+			const preferredLocale = await getUserPreferredLocale(user.id);
+			if (preferredLocale) {
+				const queryLocale = query.lang
+					? getLocaleFromQuery(query.lang as string | string[])
+					: defaultLocale;
+
 				return {
-					locale: userLocale as Locale,
-					redirectStatus: null, // Не делаем редирект для залогиненных
+					locale: preferredLocale as Locale,
+					redirectStatus: preferredLocale !== queryLocale ? 302 : null,
 				};
 			}
 		} catch (error) {

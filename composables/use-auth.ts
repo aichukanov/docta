@@ -1,4 +1,5 @@
 import type { User } from '~/server/utils/session';
+import { getRegionalQuery } from '~/common/url-utils';
 
 export interface AuthState {
 	authenticated: boolean;
@@ -22,7 +23,8 @@ export function useAuth() {
 	const fetchUser = async () => {
 		authState.value.loading = true;
 		try {
-			const response = await $fetch('/api/admin/auth/me');
+			const headers = import.meta.server ? useRequestHeaders(['cookie']) : undefined;
+			const response = await $fetch('/api/admin/auth/me', { headers });
 			authState.value.authenticated = response.authenticated;
 			authState.value.user = response.user;
 		} catch (error) {
@@ -43,7 +45,7 @@ export function useAuth() {
 		if (returnTo && returnTo !== '/login') {
 			sessionStorage.setItem('auth_redirect', returnTo);
 		}
-		
+
 		window.location.href = '/api/auth/google';
 	};
 
@@ -70,11 +72,21 @@ export function useAuth() {
 	/**
 	 * Регистрация через Email и пароль
 	 */
-	const register = async (email: string, password: string, name: string) => {
+	const register = async (
+		email: string,
+		password: string,
+		name?: string,
+		locale?: string,
+	) => {
 		try {
 			const response = await $fetch('/api/auth/register', {
 				method: 'POST',
-				body: { email, password, name },
+				body: {
+					email,
+					password,
+					...(name ? { name } : {}),
+					...(locale ? { locale } : {}),
+				},
 			});
 
 			// Обновляем состояние
@@ -95,9 +107,12 @@ export function useAuth() {
 			await $fetch('/api/admin/auth/logout', { method: 'POST' });
 			authState.value.authenticated = false;
 			authState.value.user = null;
-			
-			// Редиректим на главную
-			await navigateTo('/');
+
+			const route = useRoute();
+			await navigateTo({
+				name: 'index',
+				query: getRegionalQuery(route.query.lang as string),
+			});
 		} catch (error) {
 			console.error('Logout error:', error);
 			throw error;
@@ -106,38 +121,41 @@ export function useAuth() {
 
 	/**
 	 * Проверить авторизацию (для middleware)
+	 * @param currentRoute - текущий маршрут (передать `to` из middleware, чтобы избежать useRoute внутри middleware)
 	 */
-	const requireAuth = async () => {
-		if (!authState.value.user && !authState.value.loading) {
-			await fetchUser();
-		}
+	const buildLoginRedirect = (route: ReturnType<typeof useRoute>) => {
+		return {
+			name: 'login',
+			query: getRegionalQuery(route.query.lang as string),
+		};
+	};
+
+	const requireAuth = async (currentRoute?: ReturnType<typeof useRoute>) => {
+		await fetchUser();
 
 		if (!authState.value.authenticated) {
-			// Сохраняем URL для редиректа после авторизации
-			const returnTo = useRoute().fullPath;
-			sessionStorage.setItem('auth_redirect', returnTo);
-			
-			await navigateTo('/login');
-			return false;
+			const route = currentRoute || useRoute();
+			if (import.meta.client) {
+				sessionStorage.setItem('auth_redirect', route.fullPath);
+			}
+			return buildLoginRedirect(route);
 		}
 
-		return true;
+		return null;
 	};
 
 	/**
 	 * Проверить права администратора (для middleware)
 	 */
-	const requireAdmin = async () => {
-		if (!authState.value.user && !authState.value.loading) {
-			await fetchUser();
-		}
+	const requireAdmin = async (currentRoute?: ReturnType<typeof useRoute>) => {
+		await fetchUser();
 
 		if (!authState.value.authenticated || !authState.value.user?.is_admin) {
-			await navigateTo('/login');
-			return false;
+			const route = currentRoute || useRoute();
+			return buildLoginRedirect(route);
 		}
 
-		return true;
+		return null;
 	};
 
 	// Computed свойства для удобства

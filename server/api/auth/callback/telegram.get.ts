@@ -24,6 +24,7 @@ import {
 import { executeQuery } from '~/server/common/db-mysql';
 import { authLogger, logError } from '~/server/utils/logger';
 import { logSuccessfulLogin } from '~/server/utils/login-history';
+import { ERROR_CODES } from '~/server/utils/api-codes';
 
 // Вспомогательная функция для очистки undefined строк
 function cleanValue(value: unknown): string | undefined {
@@ -55,7 +56,7 @@ export default defineEventHandler(async (event) => {
 	// Проверяем обязательные поля
 	if (!telegramData.id || !telegramData.first_name || !telegramData.hash) {
 		authLogger.error('Missing required Telegram data');
-		setCookie(event, 'auth_error', 'Некорректные данные от Telegram', {
+		setCookie(event, 'auth_error', ERROR_CODES.TELEGRAM_INVALID_DATA, {
 			maxAge: 10,
 			path: '/',
 		});
@@ -71,10 +72,10 @@ export default defineEventHandler(async (event) => {
 
 		if (!isValid) {
 			authLogger.error('Invalid Telegram authentication');
-			setCookie(event, 'auth_error', 'Не удалось проверить данные Telegram', {
-				maxAge: 10,
-				path: '/',
-			});
+		setCookie(event, 'auth_error', ERROR_CODES.TELEGRAM_VERIFICATION_FAILED, {
+			maxAge: 10,
+			path: '/',
+		});
 			return sendRedirect(event, '/login');
 		}
 
@@ -185,7 +186,7 @@ export default defineEventHandler(async (event) => {
 				user = {
 					id: userId,
 					email,
-					name: fullName,
+					name: fullName || email,
 					photo_url: photoUrl,
 					is_admin: false,
 				};
@@ -209,15 +210,10 @@ export default defineEventHandler(async (event) => {
 		return sendRedirect(event, '/');
 	} catch (err) {
 		logError(authLogger, 'Telegram callback failed', err);
-		setCookie(
-			event,
-			'auth_error',
-			'Произошла ошибка при входе через Telegram',
-			{
-				maxAge: 10,
-				path: '/',
-			},
-		);
+		setCookie(event, 'auth_error', ERROR_CODES.TELEGRAM_AUTH_ERROR, {
+			maxAge: 10,
+			path: '/',
+		});
 		return sendRedirect(event, '/login');
 	}
 });

@@ -95,10 +95,8 @@ useSeoMeta({
 </template>
 
 <style lang="less" scoped>
-@import url('~/assets/css/vars.less');
-
 .terms-page {
-	padding: var(--spacing-2xl) @base-padding;
+	padding: var(--spacing-2xl) var(--spacing-lg);
 	min-height: calc(100vh - 200px);
 }
 
@@ -227,7 +225,7 @@ useSeoMeta({
 
 @media (max-width: 640px) {
 	.terms-page {
-		padding: var(--spacing-xl) @base-offset;
+		padding: var(--spacing-xl) var(--spacing-sm);
 	}
 
 	.terms-card {

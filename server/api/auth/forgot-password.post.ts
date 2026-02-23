@@ -11,7 +11,7 @@ import {
 	createSuccessResponse,
 	createErrorResponse,
 } from '~/server/utils/api-codes';
-import { getBaseUrl } from '~/server/utils/base-url';
+import { getLocalizedUrl } from '~/server/utils/base-url';
 
 export default defineEventHandler(async (event) => {
 	const body = await readBody(event);
@@ -19,7 +19,7 @@ export default defineEventHandler(async (event) => {
 
 	// Валидация email
 	if (!email || !validateEmail(email)) {
-		createErrorResponse(400, ERROR_CODES.INVALID_EMAIL);
+		return createErrorResponse(400, ERROR_CODES.INVALID_EMAIL);
 	}
 
 	try {
@@ -35,28 +35,18 @@ export default defineEventHandler(async (event) => {
 			return createSuccessResponse(SUCCESS_CODES.PASSWORD_RESET_EMAIL_SENT);
 		}
 
-		// Проверяем есть ли у пользователя возможность входа по паролю
-		if (!user.password_hash) {
-			authLogger.debug('Password reset requested for user without password', {
-				userId: user.id,
-			});
-			// Все равно возвращаем успех для безопасности
-			return createSuccessResponse(SUCCESS_CODES.PASSWORD_RESET_EMAIL_SENT);
-		}
-
 		// Удаляем старые токены пользователя
 		await deleteUserPasswordResetTokens(user.id);
 
 		// Создаем новый токен
 		const token = await createPasswordResetToken(user.id);
 
-		// Формируем ссылку для сброса
-		const resetUrl = `${getBaseUrl()}/reset-password?token=${token}`;
-
 		// Отправляем email
 		const { sendPasswordResetEmail } = await import('~/server/utils/email');
 		const { getUserLocale } = await import('~/server/utils/user-locale');
 		const locale = await getUserLocale(user.id, event);
+		const resetUrl = getLocalizedUrl(`/reset-password?token=${token}`, locale);
+
 		await sendPasswordResetEmail(user.email, resetUrl, locale);
 
 		logOperation(authLogger, 'Password reset email sent', {
@@ -69,6 +59,6 @@ export default defineEventHandler(async (event) => {
 		});
 	} catch (error: any) {
 		logError(authLogger, 'Forgot password failed', error);
-		createErrorResponse(500, ERROR_CODES.ERROR_PROCESSING_REQUEST);
+		return createErrorResponse(500, ERROR_CODES.ERROR_PROCESSING_REQUEST);
 	}
 });

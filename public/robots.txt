@@ -1,4 +1,12 @@
 User-agent: *
 Disallow: /admin/
+Disallow: /login
+Disallow: /profile
+Disallow: /verify-email
+Disallow: /confirm-email-change
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /auth/
+Disallow: /dev/
 
 Sitemap: https://docta.me/sitemap.xml

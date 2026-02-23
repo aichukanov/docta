@@ -10,13 +10,13 @@ import {
 	createSuccessResponse,
 	createErrorResponse,
 } from '~/server/utils/api-codes';
-import { getBaseUrl } from '~/server/utils/base-url';
+import { getLocalizedUrl } from '~/server/utils/base-url';
 
 export default defineEventHandler(async (event) => {
 	const user = await getCurrentUser(event);
 
 	if (!user) {
-		createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
+		return createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
 	}
 
 	const body = await readBody(event);
@@ -24,32 +24,30 @@ export default defineEventHandler(async (event) => {
 
 	// Валидация
 	if (!newEmail || !validateEmail(newEmail)) {
-		createErrorResponse(400, ERROR_CODES.INVALID_EMAIL);
+		return createErrorResponse(400, ERROR_CODES.INVALID_EMAIL);
 	}
 
 	const normalizedEmail = newEmail.toLowerCase();
 
 	// Проверяем, не совпадает ли с текущим
 	if (normalizedEmail === user.email.toLowerCase()) {
-		createErrorResponse(400, ERROR_CODES.EMAIL_SAME_AS_CURRENT);
+		return createErrorResponse(400, ERROR_CODES.EMAIL_SAME_AS_CURRENT);
 	}
 
 	try {
 		// Проверяем, не занят ли email
 		const existingUser = await getUserByEmail(normalizedEmail);
 		if (existingUser && existingUser.id !== user.id) {
-			createErrorResponse(409, ERROR_CODES.EMAIL_ALREADY_IN_USE);
+			return createErrorResponse(409, ERROR_CODES.EMAIL_ALREADY_IN_USE);
 		}
 
 		// Создаем токен для подтверждения
 		const token = await createEmailChangeToken(user.id, normalizedEmail);
 
-		// Формируем ссылку
-		const confirmUrl = `${getBaseUrl()}/confirm-email-change?token=${token}`;
-
 		// Отправляем письмо на НОВЫЙ email
 		const { getUserLocale } = await import('~/server/utils/user-locale');
 		const locale = await getUserLocale(user.id, event);
+		const confirmUrl = getLocalizedUrl(`/confirm-email-change?token=${token}`, locale);
 		await sendEmailVerification(normalizedEmail, confirmUrl, user.name, locale);
 
 		logOperation(authLogger, 'Email change requested', {
@@ -69,6 +67,6 @@ export default defineEventHandler(async (event) => {
 		logError(authLogger, 'Request email change failed', error, {
 			userId: user.id,
 		});
-		createErrorResponse(500, ERROR_CODES.ERROR_REQUESTING_EMAIL_CHANGE);
+		return createErrorResponse(500, ERROR_CODES.ERROR_REQUESTING_EMAIL_CHANGE);
 	}
 });

@@ -19,6 +19,7 @@ export default {
 			email: 'Email',
 			password: 'Password',
 			name: 'Name',
+			nameOptional: 'Name (optional)',
 			confirmPassword: 'Confirm password',
 			passwordPlaceholder: 'Password (min. 8 characters)',
 			confirmPasswordPlaceholder: 'Repeat password',
@@ -28,7 +29,6 @@ export default {
 			btnRegister: 'Register',
 			btnLogout: 'Logout',
 			btnHome: 'Home',
-			btnAdminPanel: 'Admin Panel',
 			btnFacebook: 'Continue with Facebook',
 
 			// Links
@@ -42,22 +42,14 @@ export default {
 
 			// Divider
 			or: 'or',
-			orContinueWith: 'or continue with',
+			orContinueWith: 'or use email',
 
-			// Validation errors
-			fillAllFields: 'Fill in all fields',
-			passwordsNotMatch: 'Passwords do not match',
-			errorLogin: 'Error during login',
-			errorRegister: 'Error during registration',
+			// Registration consent
+			registerConsentBefore: 'By registering, you agree to our',
+			registerConsentTerms: 'Terms of Use',
+			registerConsentAnd: 'and',
+			registerConsentPrivacy: 'Privacy Policy',
 
-			// OAuth errors
-			oauthFailed: 'Failed to login via OAuth',
-			noCode: 'Authorization code not received',
-			stateMismatch: 'Security error (state mismatch)',
-			emailNotVerified: 'Email not verified',
-			emailNotProvided: 'Email not provided by provider',
-			oauthCallbackFailed: 'Error processing OAuth provider response',
-			authError: 'An error occurred during authentication',
 		},
 
 		'ru': {
@@ -74,6 +66,7 @@ export default {
 			email: 'Email',
 			password: 'Пароль',
 			name: 'Имя',
+			nameOptional: 'Имя (необязательно)',
 			confirmPassword: 'Повторите пароль',
 			passwordPlaceholder: 'Пароль (мин. 8 символов)',
 			confirmPasswordPlaceholder: 'Повторите пароль',
@@ -83,7 +76,6 @@ export default {
 			btnRegister: 'Зарегистрироваться',
 			btnLogout: 'Выйти',
 			btnHome: 'На главную',
-			btnAdminPanel: 'Админ-панель',
 			btnFacebook: 'Войти через Facebook',
 
 			// Ссылки
@@ -97,22 +89,14 @@ export default {
 
 			// Разделитель
 			or: 'или',
-			orContinueWith: 'или войдите через',
+			orContinueWith: 'или через email',
 
-			// Ошибки валидации
-			fillAllFields: 'Заполните все поля',
-			passwordsNotMatch: 'Пароли не совпадают',
-			errorLogin: 'Ошибка при входе',
-			errorRegister: 'Ошибка при регистрации',
+			// Согласие при регистрации
+			registerConsentBefore: 'Регистрируясь, вы принимаете',
+			registerConsentTerms: 'Условия использования',
+			registerConsentAnd: 'и',
+			registerConsentPrivacy: 'Политику конфиденциальности',
 
-			// Ошибки OAuth
-			oauthFailed: 'Не удалось выполнить вход через OAuth',
-			noCode: 'Код авторизации не получен',
-			stateMismatch: 'Ошибка безопасности (state mismatch)',
-			emailNotVerified: 'Email не подтвержден',
-			emailNotProvided: 'Email не предоставлен провайдером',
-			oauthCallbackFailed: 'Ошибка при обработке ответа от OAuth провайдера',
-			authError: 'Произошла ошибка при авторизации',
 		},
 
 		'sr': {
@@ -129,6 +113,7 @@ export default {
 			email: 'Email',
 			password: 'Lozinka',
 			name: 'Ime',
+			nameOptional: 'Ime (opciono)',
 			confirmPassword: 'Potvrdite lozinku',
 			passwordPlaceholder: 'Lozinka (min. 8 karaktera)',
 			confirmPasswordPlaceholder: 'Ponovite lozinku',
@@ -138,7 +123,6 @@ export default {
 			btnRegister: 'Registruj se',
 			btnLogout: 'Odjavi se',
 			btnHome: 'Početna',
-			btnAdminPanel: 'Admin panel',
 			btnFacebook: 'Nastavi sa Facebook-om',
 
 			// Linkovi
@@ -152,22 +136,14 @@ export default {
 
 			// Separator
 			or: 'ili',
-			orContinueWith: 'ili nastavite sa',
+			orContinueWith: 'ili preko email-a',
 
-			// Greške validacije
-			fillAllFields: 'Popunite sva polja',
-			passwordsNotMatch: 'Lozinke se ne poklapaju',
-			errorLogin: 'Greška pri prijavljivanju',
-			errorRegister: 'Greška pri registraciji',
+			// Saglasnost pri registraciji
+			registerConsentBefore: 'Registracijom prihvatate naše',
+			registerConsentTerms: 'Uslove korišćenja',
+			registerConsentAnd: 'i',
+			registerConsentPrivacy: 'Politiku privatnosti',
 
-			// OAuth greške
-			oauthFailed: 'Neuspešna prijava preko OAuth',
-			noCode: 'Kod autorizacije nije primljen',
-			stateMismatch: 'Sigurnosna greška (state mismatch)',
-			emailNotVerified: 'Email nije potvrđen',
-			emailNotProvided: 'Email nije dostavljen od provajdera',
-			oauthCallbackFailed: 'Greška pri obradi odgovora OAuth provajdera',
-			authError: 'Došlo je do greške pri autentifikaciji',
 		},
 
 		'de': {
@@ -184,6 +160,7 @@ export default {
 			email: 'E-Mail',
 			password: 'Passwort',
 			name: 'Name',
+			nameOptional: 'Name (optional)',
 			confirmPassword: 'Passwort bestätigen',
 			passwordPlaceholder: 'Passwort (mind. 8 Zeichen)',
 			confirmPasswordPlaceholder: 'Passwort wiederholen',
@@ -193,7 +170,6 @@ export default {
 			btnRegister: 'Registrieren',
 			btnLogout: 'Abmelden',
 			btnHome: 'Startseite',
-			btnAdminPanel: 'Admin-Panel',
 			btnFacebook: 'Mit Facebook fortfahren',
 
 			// Links
@@ -207,23 +183,14 @@ export default {
 
 			// Trennzeichen
 			or: 'oder',
-			orContinueWith: 'oder fortfahren mit',
+			orContinueWith: 'oder per E-Mail',
 
-			// Validierungsfehler
-			fillAllFields: 'Alle Felder ausfüllen',
-			passwordsNotMatch: 'Passwörter stimmen nicht überein',
-			errorLogin: 'Fehler bei der Anmeldung',
-			errorRegister: 'Fehler bei der Registrierung',
+			// Einwilligung bei der Registrierung
+			registerConsentBefore: 'Mit der Registrierung stimmen Sie unseren',
+			registerConsentTerms: 'Nutzungsbedingungen',
+			registerConsentAnd: 'und der',
+			registerConsentPrivacy: 'Datenschutzerklärung',
 
-			// OAuth-Fehler
-			oauthFailed: 'Anmeldung über OAuth fehlgeschlagen',
-			noCode: 'Autorisierungscode nicht erhalten',
-			stateMismatch: 'Sicherheitsfehler (State Mismatch)',
-			emailNotVerified: 'E-Mail nicht verifiziert',
-			emailNotProvided: 'E-Mail vom Anbieter nicht bereitgestellt',
-			oauthCallbackFailed:
-				'Fehler bei der Verarbeitung der OAuth-Anbieterantwort',
-			authError: 'Bei der Authentifizierung ist ein Fehler aufgetreten',
 		},
 
 		'tr': {
@@ -240,6 +207,7 @@ export default {
 			email: 'E-posta',
 			password: 'Şifre',
 			name: 'İsim',
+			nameOptional: 'İsim (isteğe bağlı)',
 			confirmPassword: 'Şifreyi onayla',
 			passwordPlaceholder: 'Şifre (en az 8 karakter)',
 			confirmPasswordPlaceholder: 'Şifreyi tekrarla',
@@ -249,7 +217,6 @@ export default {
 			btnRegister: 'Kayıt Ol',
 			btnLogout: 'Çıkış Yap',
 			btnHome: 'Ana Sayfa',
-			btnAdminPanel: 'Yönetici Paneli',
 			btnFacebook: 'Facebook ile devam et',
 
 			// Bağlantılar
@@ -263,22 +230,14 @@ export default {
 
 			// Ayırıcı
 			or: 'veya',
-			orContinueWith: 'veya ile devam edin',
+			orContinueWith: 'veya e-posta ile',
 
-			// Doğrulama hataları
-			fillAllFields: 'Tüm alanları doldurun',
-			passwordsNotMatch: 'Şifreler eşleşmiyor',
-			errorLogin: 'Giriş sırasında hata',
-			errorRegister: 'Kayıt sırasında hata',
+			// Kayıt sırasında onay
+			registerConsentBefore: 'Kaydolarak',
+			registerConsentTerms: 'Kullanım Koşullarımızı',
+			registerConsentAnd: 've',
+			registerConsentPrivacy: 'Gizlilik Politikamızı',
 
-			// OAuth hataları
-			oauthFailed: 'OAuth ile giriş başarısız oldu',
-			noCode: 'Yetkilendirme kodu alınamadı',
-			stateMismatch: 'Güvenlik hatası (state uyuşmazlığı)',
-			emailNotVerified: 'E-posta doğrulanmadı',
-			emailNotProvided: 'E-posta sağlayıcı tarafından verilmedi',
-			oauthCallbackFailed: 'OAuth sağlayıcı yanıtı işlenirken hata',
-			authError: 'Kimlik doğrulama sırasında bir hata oluştu',
 		},
 
 		'sr-cyrl': {
@@ -295,6 +254,7 @@ export default {
 			email: 'Емаил',
 			password: 'Лозинка',
 			name: 'Име',
+			nameOptional: 'Име (необавезно)',
 			confirmPassword: 'Потврдите лозинку',
 			passwordPlaceholder: 'Лозинка (мин. 8 карактера)',
 			confirmPasswordPlaceholder: 'Поновите лозинку',
@@ -304,7 +264,6 @@ export default {
 			btnRegister: 'Региструј се',
 			btnLogout: 'Одјави се',
 			btnHome: 'Почетна',
-			btnAdminPanel: 'Админ панел',
 			btnFacebook: 'Настави са Фацебоок-ом',
 
 			// Линкови
@@ -318,22 +277,14 @@ export default {
 
 			// Сепаратор
 			or: 'или',
-			orContinueWith: 'или наставите са',
+			orContinueWith: 'или преко емаила',
 
-			// Грешке валидације
-			fillAllFields: 'Попуните сва поља',
-			passwordsNotMatch: 'Лозинке се не поклапају',
-			errorLogin: 'Грешка при пријављивању',
-			errorRegister: 'Грешка при регистрацији',
+			// Сагласност при регистрацији
+			registerConsentBefore: 'Регистрацијом прихватате наше',
+			registerConsentTerms: 'Услове коришћења',
+			registerConsentAnd: 'и',
+			registerConsentPrivacy: 'Политику приватности',
 
-			// OAuth грешке
-			oauthFailed: 'Неуспешна пријава преко ОАутх',
-			noCode: 'Код ауторизације није примљен',
-			stateMismatch: 'Сигурносна грешка (стате мисматцх)',
-			emailNotVerified: 'Емаил није потврђен',
-			emailNotProvided: 'Емаил није достављен од провајдера',
-			oauthCallbackFailed: 'Грешка при обради одговора ОАутх провајдера',
-			authError: 'Дошло је до грешке при аутентификацији',
 		},
 	},
 };

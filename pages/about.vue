@@ -393,15 +393,13 @@ const breadcrumbItems = computed(() => [
 </i18n>
 
 <style lang="less" scoped>
-@import url('~/assets/css/vars.less');
-
 .about-page {
 	background: linear-gradient(
 		180deg,
 		var(--color-bg-soft) 0%,
 		var(--color-bg-secondary) 100%
 	);
-	padding: calc(var(--spacing-3xl)) @base-padding;
+	padding: calc(var(--spacing-3xl)) var(--spacing-lg);
 }
 
 .about-page__container {
@@ -539,7 +537,7 @@ const breadcrumbItems = computed(() => [
 
 @media (max-width: 640px) {
 	.about-page {
-		padding: var(--spacing-2xl) @base-offset;
+		padding: var(--spacing-2xl) var(--spacing-sm);
 	}
 
 	.about-card {

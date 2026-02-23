@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
 	const user = await getCurrentUser(event);
 
 	if (!user) {
-		createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
+		return createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
 	}
 
 	const body = await readBody(event);
@@ -26,17 +26,17 @@ export default defineEventHandler(async (event) => {
 
 	// Валидация входных данных
 	if (!newPassword || !confirmPassword) {
-		createErrorResponse(400, ERROR_CODES.NEW_PASSWORD_REQUIRED);
+		return createErrorResponse(400, ERROR_CODES.NEW_PASSWORD_REQUIRED);
 	}
 
 	if (newPassword !== confirmPassword) {
-		createErrorResponse(400, ERROR_CODES.PASSWORDS_DO_NOT_MATCH);
+		return createErrorResponse(400, ERROR_CODES.PASSWORDS_DO_NOT_MATCH);
 	}
 
 	// Валидация нового пароля
 	const passwordValidation = validatePassword(newPassword);
 	if (!passwordValidation.valid) {
-		createErrorResponse(
+		return createErrorResponse(
 			400,
 			passwordValidation.code,
 			passwordValidation.details,
@@ -48,13 +48,13 @@ export default defineEventHandler(async (event) => {
 		const fullUser = await getUserByEmail(user.email);
 
 		if (!fullUser) {
-			createErrorResponse(404, ERROR_CODES.USER_NOT_FOUND);
+			return createErrorResponse(404, ERROR_CODES.USER_NOT_FOUND);
 		}
 
 		// Если у пользователя уже есть пароль, проверяем текущий
 		if (fullUser.password_hash) {
 			if (!currentPassword) {
-				createErrorResponse(400, ERROR_CODES.CURRENT_PASSWORD_REQUIRED);
+				return createErrorResponse(400, ERROR_CODES.CURRENT_PASSWORD_REQUIRED);
 			}
 
 			const isPasswordValid = await verifyPassword(
@@ -63,7 +63,7 @@ export default defineEventHandler(async (event) => {
 			);
 
 			if (!isPasswordValid) {
-				createErrorResponse(401, ERROR_CODES.INVALID_CURRENT_PASSWORD);
+				return createErrorResponse(401, ERROR_CODES.INVALID_CURRENT_PASSWORD);
 			}
 		}
 
@@ -84,6 +84,6 @@ export default defineEventHandler(async (event) => {
 		}
 
 		logError(authLogger, 'Change password failed', error, { userId: user.id });
-		createErrorResponse(500, ERROR_CODES.ERROR_CHANGING_PASSWORD);
+		return createErrorResponse(500, ERROR_CODES.ERROR_CHANGING_PASSWORD);
 	}
 });

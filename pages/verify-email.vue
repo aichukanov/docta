@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import verifyEmailMessages from '~/i18n/verify-email';
+import { ERROR_CODES } from '~/server/utils/api-codes';
 
 definePageMeta({
 	layout: false,
@@ -16,11 +17,11 @@ const router = useRouter();
 const token = ref((route.query.token as string) || '');
 const isLoading = ref(true);
 const success = ref(false);
-const error = ref<string | null>(null);
+const error = ref<ERROR_CODES | null>(null);
 
 onMounted(async () => {
 	if (!token.value) {
-		error.value = t('tokenNotFound');
+		error.value = ERROR_CODES.TOKEN_NOT_FOUND;
 		isLoading.value = false;
 		return;
 	}
@@ -35,62 +36,78 @@ onMounted(async () => {
 		}, 3000);
 	} catch (err: any) {
 		console.error('Verification error:', err);
-		error.value = err.data?.statusMessage || t('errorVerifying');
+		error.value =
+			(err.data?.statusMessage as ERROR_CODES) ||
+			ERROR_CODES.ERROR_VERIFYING_EMAIL;
 	} finally {
 		isLoading.value = false;
 	}
 });
+
+const profilePageLink = computed(() => ({
+	name: 'profile',
+	query: getRegionalQuery(locale.value),
+}));
+
+const loginPageLink = computed(() => ({
+	name: 'login',
+	query: getRegionalQuery(locale.value),
+}));
 </script>
 
 <template>
 	<div class="verify-email-page">
 		<div class="verify-email-container">
-		<el-card class="verify-email-card">
-			<template #header>
-				<div class="card-header">
-					<h1>{{ t('pageTitle') }}</h1>
+			<el-card class="verify-email-card">
+				<template #header>
+					<div class="card-header">
+						<h1>{{ t('pageTitle') }}</h1>
+					</div>
+				</template>
+
+				<!-- Загрузка -->
+				<div v-if="isLoading" class="loading-section">
+					<el-icon class="is-loading" :size="40" color="#667eea">
+						<Loading />
+					</el-icon>
+					<p>{{ t('verifying') }}</p>
 				</div>
-			</template>
 
-			<!-- Загрузка -->
-			<div v-if="isLoading" class="loading-section">
-				<el-icon class="is-loading" :size="40" color="#667eea">
-					<Loading />
-				</el-icon>
-				<p>{{ t('verifying') }}</p>
-			</div>
+				<!-- Успех -->
+				<div v-else-if="success" class="success-section">
+					<el-result
+						icon="success"
+						:title="t('successTitle')"
+						:sub-title="t('successDescription')"
+					>
+						<template #extra>
+							<el-button type="primary" @click="navigateTo(profilePageLink)">
+								{{ t('btnGoToProfile') }}
+							</el-button>
+						</template>
+					</el-result>
+				</div>
 
-			<!-- Успех -->
-			<div v-else-if="success" class="success-section">
-				<el-result
-					icon="success"
-					:title="t('successTitle')"
-					:sub-title="t('successDescription')"
-				>
-					<template #extra>
-						<el-button type="primary" @click="navigateTo('/profile')">
-							{{ t('btnGoToProfile') }}
-						</el-button>
-					</template>
-				</el-result>
-			</div>
-
-			<!-- Ошибка -->
-			<div v-else-if="error" class="error-section">
-				<el-result
-					icon="error"
-					:title="t('errorTitle')"
-					:sub-title="error"
-				>
-					<template #extra>
-						<el-button type="primary" @click="navigateTo('/profile')">
-							{{ t('btnGoToProfile') }}
-						</el-button>
-						<el-button @click="navigateTo('/login')">{{ t('btnHome') }}</el-button>
-					</template>
-				</el-result>
-			</div>
-		</el-card>
+				<!-- Ошибка -->
+				<ApiErrorAlert v-else :error="error" v-slot="{ message }">
+					<div class="error-section">
+						<el-result
+							icon="error"
+							:title="t('errorTitle')"
+							:sub-title="message"
+						>
+							<template #extra>
+								<el-button type="primary" @click="navigateTo(profilePageLink)">
+									{{ t('btnGoToProfile') }}
+								</el-button>
+								<el-button @click="navigateTo(loginPageLink)">{{
+									t('btnHome')
+								}}</el-button>
+							</template>
+						</el-result>
+					</div>
+				</ApiErrorAlert>
+			</el-card>
 		</div>
 	</div>
 </template>

@@ -9,6 +9,7 @@ import {
 } from '~/server/utils/oauth';
 import { createSession, setSessionCookie } from '~/server/utils/session';
 import { authLogger, logError } from '~/server/utils/logger';
+import { ERROR_CODES } from '~/server/utils/api-codes';
 
 interface GoogleTokenResponse {
 	access_token: string;
@@ -38,19 +39,23 @@ export default defineEventHandler(async (event) => {
 	// Проверка на ошибку от Google
 	if (error) {
 		authLogger.error('OAuth error from Google', { error });
-		return sendRedirect(event, '/?error=oauth_failed');
+		return sendRedirect(event, `/login?error=${ERROR_CODES.OAUTH_FAILED}`);
 	}
 
 	// Проверка наличия code
 	if (!code) {
-		return sendRedirect(event, '/?error=no_code');
+		return sendRedirect(event, `/login?error=${ERROR_CODES.NO_CODE}`);
 	}
 
 	// Проверка state (защита от CSRF)
 	const savedState = getCookie(event, 'oauth_state');
 	if (!savedState || savedState !== state) {
-		authLogger.error('OAuth state mismatch');
-		return sendRedirect(event, '/?error=state_mismatch');
+		authLogger.error('OAuth state mismatch', {
+			hasSavedState: !!savedState,
+			hasQueryState: !!state,
+			requestHost: getRequestHeader(event, 'host'),
+		});
+		return sendRedirect(event, `/login?error=${ERROR_CODES.STATE_MISMATCH}`);
 	}
 
 	// Получаем сохраненный redirect_uri
@@ -64,11 +69,8 @@ export default defineEventHandler(async (event) => {
 		const config = getOAuthConfig();
 		const { google } = config;
 
-		// Используем сохраненный redirect_uri или определяем из текущего запроса
-		const host = getRequestHeader(event, 'host');
-		const protocol = getRequestHeader(event, 'x-forwarded-proto') || 'http';
-		const currentRedirectUri =
-			savedRedirectUri || `${protocol}://${host}/api/auth/callback/google`;
+		// Используем сохраненный redirect_uri или из конфига (BASE_URL)
+		const currentRedirectUri = savedRedirectUri || google.redirectUri;
 
 		authLogger.debug('Google OAuth callback', {
 			redirectUri: currentRedirectUri,
@@ -94,7 +96,7 @@ export default defineEventHandler(async (event) => {
 		});
 
 		if (!userInfo.email || !userInfo.verified_email) {
-			return sendRedirect(event, '/?error=email_not_verified');
+			return sendRedirect(event, `/login?error=${ERROR_CODES.EMAIL_NOT_VERIFIED}`);
 		}
 
 		// 3. Проверяем существует ли пользователь с этим Google аккаунтом
@@ -219,7 +221,7 @@ export default defineEventHandler(async (event) => {
 					user = {
 						id: userId,
 						email: userInfo.email,
-						name: userInfo.name,
+						name: userInfo.name || userInfo.email,
 						photo_url: userInfo.picture,
 						is_admin: false,
 					};
@@ -242,10 +244,10 @@ export default defineEventHandler(async (event) => {
 			return sendRedirect(event, redirectTo);
 		}
 
-		// 6. Редиректим на главную страницу
-		return sendRedirect(event, '/');
+		// 6. Редиректим на страницу профиля
+		return sendRedirect(event, '/profile');
 	} catch (err) {
 		logError(authLogger, 'OAuth callback failed', err);
-		return sendRedirect(event, '/?error=oauth_callback_failed');
+		return sendRedirect(event, `/login?error=${ERROR_CODES.OAUTH_CALLBACK_FAILED}`);
 	}
 });

@@ -41,8 +41,6 @@ defineProps<{
 </template>
 
 <style scoped lang="less">
-@import '~/assets/css/vars.less';
-
 .app-breadcrumbs {
 	display: flex;
 	align-items: center;

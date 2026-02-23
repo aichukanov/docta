@@ -11,13 +11,13 @@ import {
 	createSuccessResponse,
 	createErrorResponse,
 } from '~/server/utils/api-codes';
-import { getBaseUrl } from '~/server/utils/base-url';
+import { getLocalizedUrl } from '~/server/utils/base-url';
 
 export default defineEventHandler(async (event) => {
 	const user = await getCurrentUser(event);
 
 	if (!user) {
-		createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
+		return createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
 	}
 
 	try {
@@ -27,12 +27,10 @@ export default defineEventHandler(async (event) => {
 		// Создаем новый токен
 		const token = await createEmailVerificationToken(user.id, user.email);
 
-		// Формируем ссылку
-		const verificationUrl = `${getBaseUrl()}/verify-email?token=${token}`;
-
 		// Отправляем email
 		const { getUserLocale } = await import('~/server/utils/user-locale');
 		const locale = await getUserLocale(user.id, event);
+		const verificationUrl = getLocalizedUrl(`/verify-email?token=${token}`, locale);
 		await sendEmailVerification(user.email, verificationUrl, user.name, locale);
 
 		logOperation(authLogger, 'Verification email resent', {
@@ -46,6 +44,6 @@ export default defineEventHandler(async (event) => {
 		logError(authLogger, 'Resend verification failed', error, {
 			userId: user.id,
 		});
-		createErrorResponse(500, ERROR_CODES.ERROR_SENDING_EMAIL);
+		return createErrorResponse(500, ERROR_CODES.ERROR_SENDING_EMAIL);
 	}
 });

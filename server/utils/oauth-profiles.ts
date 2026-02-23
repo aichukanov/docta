@@ -29,11 +29,11 @@ export async function saveGoogleProfile(
 	googleData: {
 		id: string;
 		email: string;
-		name: string;
-		given_name: string;
-		family_name: string;
-		picture: string;
-		locale: string;
+		name?: string;
+		given_name?: string;
+		family_name?: string;
+		picture?: string;
+		locale?: string;
 		verified_email: boolean;
 	},
 ): Promise<void> {
@@ -58,11 +58,11 @@ export async function saveGoogleProfile(
 			googleData.id,
 			googleData.email,
 			googleData.verified_email ? 1 : 0,
-			googleData.name,
-			googleData.given_name,
-			googleData.family_name,
-			googleData.picture,
-			googleData.locale,
+			googleData.name || null,
+			googleData.given_name || null,
+			googleData.family_name || null,
+			googleData.picture || null,
+			googleData.locale || null,
 			JSON.stringify(googleData),
 		],
 	);
@@ -259,9 +259,7 @@ export async function getUserOAuthProfiles(
 /**
  * Получить приоритетный OAuth профиль
  */
-export async function getPrimaryOAuthProfile(
-	userId: number,
-): Promise<{
+export async function getPrimaryOAuthProfile(userId: number): Promise<{
 	provider: OAuthProvider;
 	profile: GoogleProfile | TelegramProfile | FacebookProfile;
 } | null> {

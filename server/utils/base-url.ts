@@ -1,3 +1,7 @@
+import { Language } from '~/enums/language';
+
+const DEFAULT_LOCALE = Language.SR;
+
 /**
  * Получает BASE_URL из переменных окружения с валидацией
  * @throws {Error} Если BASE_URL не установлен
@@ -10,4 +14,17 @@ export function getBaseUrl(): string {
 	}
 
 	return baseUrl;
+}
+
+/**
+ * Формирует локализованный URL с query-параметром lang=XX.
+ * Для дефолтной локали (sr) параметр не добавляется.
+ */
+export function getLocalizedUrl(path: string, locale: Language): string {
+	const base = getBaseUrl();
+	if (locale === DEFAULT_LOCALE) {
+		return `${base}${path}`;
+	}
+	const separator = path.includes('?') ? '&' : '?';
+	return `${base}${path}${separator}lang=${locale}`;
 }

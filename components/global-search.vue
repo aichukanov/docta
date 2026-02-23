@@ -596,8 +596,6 @@ onUnmounted(() => {
 </template>
 
 <style lang="less" scoped>
-@import url('~/assets/css/vars.less');
-
 .global-search {
 	position: relative;
 	width: 100%;

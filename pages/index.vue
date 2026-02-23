@@ -307,8 +307,6 @@ schemaOrgStore.setSchemas([
 </i18n>
 
 <style lang="less" scoped>
-@import url('~/assets/css/vars.less');
-
 .main-page {
 	min-height: calc(100vh - 320px);
 	background: linear-gradient(180deg, #fafbff 0%, #f0f4ff 100%);
@@ -316,7 +314,7 @@ schemaOrgStore.setSchemas([
 
 // Hero Section
 .hero {
-	padding: 60px @base-padding 40px;
+	padding: 60px var(--spacing-lg) 40px;
 	text-align: center;
 
 	&__content {
@@ -353,7 +351,7 @@ schemaOrgStore.setSchemas([
 	gap: 16px;
 	max-width: 900px;
 	margin: 0 auto;
-	padding: 0 @base-padding 60px;
+	padding: 0 var(--spacing-lg) 60px;
 
 	&__card {
 		position: relative;
@@ -514,7 +512,7 @@ schemaOrgStore.setSchemas([
 // Responsive
 @media (max-width: 640px) {
 	.hero {
-		padding: 40px @base-padding 24px;
+		padding: 40px var(--spacing-lg) 24px;
 
 		&__search {
 			margin-top: 24px;
@@ -523,7 +521,7 @@ schemaOrgStore.setSchemas([
 
 	.bento {
 		grid-template-columns: 1fr;
-		padding: 0 @base-offset 40px;
+		padding: 0 var(--spacing-sm) 40px;
 
 		&__card {
 			padding: 20px;

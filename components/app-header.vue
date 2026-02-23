@@ -3,6 +3,7 @@ import { getRegionalQuery } from '~/common/url-utils';
 
 const { t, locale } = useI18n();
 const route = useRoute();
+const { isAuthenticated, currentUser, isLoading } = useAuth();
 
 const indexPageLink = computed(() => ({
 	name: 'index',
@@ -39,9 +40,29 @@ const articlesPageLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
+const profilePageLink = computed(() => ({
+	path: '/profile',
+	query: getRegionalQuery(locale.value),
+}));
+
+const loginPageLink = computed(() => ({
+	path: '/login',
+	query: getRegionalQuery(locale.value),
+}));
+
 const isActiveSection = (section: string) => {
 	return route.path.startsWith(`/${section}`);
 };
+
+// Аватар пользователя
+
+const userDisplayName = computed(() => {
+	const user = currentUser.value;
+	if (!user) return '';
+	if (user.name) return user.name;
+	if (user.email) return user.email.split('@')[0];
+	return '';
+});
 </script>
 
 <template>
@@ -111,6 +132,38 @@ const isActiveSection = (section: string) => {
 				</nav>
 
 				<div class="app-header__actions">
+					<ClientOnly>
+						<template v-if="!isLoading">
+							<!-- Залогиненный пользователь -->
+							<NuxtLink
+								v-if="isAuthenticated && currentUser"
+								class="app-header__user"
+								:to="profilePageLink"
+								:aria-label="t('GoToProfile')"
+							>
+								<DoctorAvatar
+									:name="userDisplayName"
+									:photo-url="currentUser?.photo_url"
+									:size="32"
+								/>
+								<span class="app-header__user-name">{{ userDisplayName }}</span>
+							</NuxtLink>
+
+							<!-- Кнопка входа -->
+							<NuxtLink
+								v-else
+								class="app-header__login-btn"
+								:to="loginPageLink"
+							>
+								<IconUser
+									class="app-header__login-icon"
+									:size="16"
+								/>
+								<span>{{ t('Login') }}</span>
+							</NuxtLink>
+						</template>
+					</ClientOnly>
+
 					<LanguageSwitcher />
 				</div>
 			</div>
@@ -127,7 +180,9 @@ const isActiveSection = (section: string) => {
 		"LabTests": "Lab Tests",
 		"MedicalServices": "Medical Services",
 		"Medications": "Medications",
-		"Articles": "Articles"
+		"Articles": "Articles",
+		"Login": "Log in",
+		"GoToProfile": "Go to profile"
 	},
 	"ru": {
 		"GoToMainPage": "Перейти на главную страницу",
@@ -136,7 +191,9 @@ const isActiveSection = (section: string) => {
 		"LabTests": "Анализы",
 		"MedicalServices": "Услуги",
 		"Medications": "Лекарства",
-		"Articles": "Статьи"
+		"Articles": "Статьи",
+		"Login": "Войти",
+		"GoToProfile": "Перейти в профиль"
 	},
 	"sr": {
 		"GoToMainPage": "Idi na početnu stranicu",
@@ -145,7 +202,9 @@ const isActiveSection = (section: string) => {
 		"LabTests": "Analize",
 		"MedicalServices": "Usluge",
 		"Medications": "Lekovi",
-		"Articles": "Članci"
+		"Articles": "Članci",
+		"Login": "Prijavite se",
+		"GoToProfile": "Idite na profil"
 	},
 	"sr-cyrl": {
 		"GoToMainPage": "Иди на почетну страницу",
@@ -154,7 +213,9 @@ const isActiveSection = (section: string) => {
 		"LabTests": "Анализе",
 		"MedicalServices": "Услуге",
 		"Medications": "Лекови",
-		"Articles": "Чланци"
+		"Articles": "Чланци",
+		"Login": "Пријавите се",
+		"GoToProfile": "Идите на профил"
 	},
 	"de": {
 		"GoToMainPage": "Zur Startseite gehen",
@@ -163,7 +224,9 @@ const isActiveSection = (section: string) => {
 		"LabTests": "Labortests",
 		"MedicalServices": "Medizinische Dienstleistungen",
 		"Medications": "Medikamente",
-		"Articles": "Artikel"
+		"Articles": "Artikel",
+		"Login": "Anmelden",
+		"GoToProfile": "Zum Profil gehen"
 	},
 	"tr": {
 		"GoToMainPage": "Ana sayfaya git",
@@ -172,20 +235,20 @@ const isActiveSection = (section: string) => {
 		"LabTests": "Laboratuvar Testleri",
 		"MedicalServices": "Tıbbi Hizmetler",
 		"Medications": "İlaçlar",
-		"Articles": "Makaleler"
+		"Articles": "Makaleler",
+		"Login": "Giriş yap",
+		"GoToProfile": "Profile git"
 	}
 }
 </i18n>
 
 <style lang="less" scoped>
-@import url('~/assets/css/vars.less');
-
 .app-header {
 	position: sticky;
 	top: 0;
 	z-index: var(--z-header);
 	background: white;
-	border-bottom: 1px solid @light-gray-color;
+	border-bottom: 1px solid var(--color-bg-muted);
 	transition: all 0.3s ease;
 	box-sizing: border-box;
 	height: auto;
@@ -200,8 +263,8 @@ const isActiveSection = (section: string) => {
 		align-items: center;
 		justify-content: space-between;
 		min-height: 60px;
-		gap: @base-padding;
-		padding: 0 @base-padding;
+		gap: var(--spacing-lg);
+		padding: 0 var(--spacing-lg);
 		box-sizing: border-box;
 	}
 
@@ -271,7 +334,7 @@ const isActiveSection = (section: string) => {
 	&__nav-divider {
 		width: 1px;
 		height: 20px;
-		background-color: @light-gray-color;
+		background-color: var(--color-bg-muted);
 		margin: 0 var(--spacing-xs);
 		flex-shrink: 0;
 	}
@@ -279,7 +342,73 @@ const isActiveSection = (section: string) => {
 	&__actions {
 		display: flex;
 		align-items: center;
-		gap: @base-offset;
+		gap: var(--spacing-md);
+		flex-shrink: 0;
+	}
+
+	&__user {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-sm);
+		text-decoration: none;
+		color: var(--color-text-primary);
+		padding: 4px 10px 4px 4px;
+		border-radius: var(--border-radius-xl);
+		transition: all var(--transition-base);
+		cursor: pointer;
+
+		&:hover {
+			background: rgba(79, 70, 229, 0.06);
+			color: var(--color-primary);
+		}
+	}
+
+	&__user-avatar {
+		width: 32px;
+		height: 32px;
+		border-radius: var(--border-radius-full);
+		object-fit: cover;
+		flex-shrink: 0;
+		border: 2px solid var(--color-border-secondary);
+		transition: border-color var(--transition-base);
+
+		.app-header__user:hover & {
+			border-color: rgba(79, 70, 229, 0.3);
+		}
+	}
+
+	&__user-name {
+		font-size: var(--font-size-md);
+		font-weight: var(--font-weight-medium);
+		white-space: nowrap;
+		max-width: 120px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&__login-btn {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-xs);
+		font-size: var(--font-size-md);
+		font-weight: var(--font-weight-medium);
+		color: white;
+		background: var(--color-primary);
+		text-decoration: none;
+		padding: var(--spacing-sm) var(--spacing-lg);
+		border-radius: var(--border-radius-lg);
+		transition: all var(--transition-base);
+		white-space: nowrap;
+
+		&:hover {
+			background: var(--color-primary-dark);
+			box-shadow: var(--shadow-hover);
+		}
+	}
+
+	&__login-icon {
+		width: 16px;
+		height: 16px;
 		flex-shrink: 0;
 	}
 }
@@ -353,6 +482,19 @@ const isActiveSection = (section: string) => {
 
 		&__brand {
 			order: 1;
+		}
+
+		&__user-name {
+			display: none;
+		}
+
+		&__user {
+			padding: 2px;
+		}
+
+		&__login-btn {
+			padding: var(--spacing-sm) var(--spacing-md);
+			font-size: var(--font-size-sm);
 		}
 	}
 }

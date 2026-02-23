@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Loading } from '@element-plus/icons-vue';
 import confirmEmailChangeMessages from '~/i18n/confirm-email-change';
+import { ERROR_CODES } from '~/server/utils/api-codes';
 
 definePageMeta({
 	layout: 'minimal',
@@ -17,11 +18,11 @@ const router = useRouter();
 const token = ref((route.query.token as string) || '');
 const isLoading = ref(true);
 const success = ref(false);
-const error = ref<string | null>(null);
+const error = ref<ERROR_CODES | null>(null);
 
 onMounted(async () => {
 	if (!token.value) {
-		error.value = t('tokenNotFound');
+		error.value = ERROR_CODES.TOKEN_NOT_FOUND;
 		isLoading.value = false;
 		return;
 	}
@@ -36,7 +37,9 @@ onMounted(async () => {
 		}, 3000);
 	} catch (err: any) {
 		console.error('Email change confirmation error:', err);
-		error.value = err.data?.statusMessage || t('errorChanging');
+		error.value =
+			(err.data?.statusMessage as ERROR_CODES) ||
+			ERROR_CODES.ERROR_CHANGING_EMAIL;
 	} finally {
 		isLoading.value = false;
 	}
@@ -71,18 +74,27 @@ onMounted(async () => {
 		</div>
 
 		<!-- Ошибка -->
-		<div v-else-if="error" class="error-section">
-			<el-result icon="error" :title="t('errorTitle')" :sub-title="error">
-				<template #extra>
-					<el-button type="primary" @click="navigateTo('/profile')">
-						{{ t('btnGoToProfile') }}
-					</el-button>
-					<el-button @click="navigateTo('/login')">
-						{{ t('btnHome') }}
-					</el-button>
-				</template>
-			</el-result>
-		</div>
+		<ApiErrorAlert v-else :error="error" v-slot="{ message }">
+			<div class="error-section">
+				<el-result icon="error" :title="t('errorTitle')" :sub-title="message">
+					<template #extra>
+						<el-button type="primary" @click="navigateTo('/profile')">
+							{{ t('btnGoToProfile') }}
+						</el-button>
+						<el-button
+							@click="
+								navigateTo({
+									name: 'login',
+									query: getRegionalQuery(route.query.lang as string),
+								})
+							"
+						>
+							{{ t('btnHome') }}
+						</el-button>
+					</template>
+				</el-result>
+			</div>
+		</ApiErrorAlert>
 	</div>
 </template>
 

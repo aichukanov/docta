@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
 	const token = query.token as string;
 
 	if (!token) {
-		createErrorResponse(400, ERROR_CODES.TOKEN_NOT_FOUND);
+		return createErrorResponse(400, ERROR_CODES.TOKEN_NOT_FOUND);
 	}
 
 	try {
@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
 		const result = await validateAndApplyEmailChange(token);
 
 		if (!result.valid) {
-			createErrorResponse(400, result.code, result.details);
+			return createErrorResponse(400, result.code, result.details);
 		}
 
 		// Получаем обновленные данные пользователя
@@ -53,6 +53,6 @@ export default defineEventHandler(async (event) => {
 		}
 
 		logError(authLogger, 'Confirm email change failed', error);
-		createErrorResponse(500, ERROR_CODES.ERROR_CHANGING_EMAIL);
+		return createErrorResponse(500, ERROR_CODES.ERROR_CHANGING_EMAIL);
 	}
 });

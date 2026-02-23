@@ -11,14 +11,31 @@ export default defineEventHandler(async (event) => {
 		});
 	}
 
-	// Получаем все OAuth аккаунты пользователя
-	const accounts = await executeQuery(
-		`SELECT id, provider, provider_account_id, created_at 
-     FROM auth_oauth_accounts 
-     WHERE user_id = ?
-     ORDER BY created_at DESC`,
-		[user.id],
-	);
+	const [oauthAccounts, userRows] = await Promise.all([
+		executeQuery<{ id: number; provider: string; provider_account_id: string; created_at: string }>(
+			`SELECT id, provider, provider_account_id, created_at 
+			 FROM auth_oauth_accounts 
+			 WHERE user_id = ?
+			 ORDER BY created_at DESC`,
+			[user.id],
+		),
+		executeQuery<{ created_at: string; has_password: number }>(
+			`SELECT created_at, (password_hash IS NOT NULL) AS has_password
+			 FROM auth_users WHERE id = ?`,
+			[user.id],
+		),
+	]);
 
-	return accounts;
+	const result = [...oauthAccounts];
+
+	if (userRows[0]?.has_password) {
+		result.push({
+			id: 0,
+			provider: 'email',
+			provider_account_id: user.email,
+			created_at: userRows[0].created_at,
+		});
+	}
+
+	return result;
 });

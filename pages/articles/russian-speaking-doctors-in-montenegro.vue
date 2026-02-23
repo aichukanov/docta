@@ -200,8 +200,6 @@ watchEffect(() => {
 </template>
 
 <style scoped lang="less">
-@import '~/assets/css/vars.less';
-
 .article-detail-page {
 	padding: 24px 0 48px;
 

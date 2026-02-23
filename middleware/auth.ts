@@ -1,14 +1,9 @@
-/**
- * Middleware для защиты маршрутов, требующих авторизации
- * Проверяет, что пользователь авторизован
- */
-export default defineNuxtRouteMiddleware(async (to, from) => {
+export default defineNuxtRouteMiddleware(async (to) => {
 	const { requireAuth } = useAuth();
-	
-	const isAuthorized = await requireAuth();
-	
-	if (!isAuthorized) {
-		// requireAuth уже выполнит редирект
-		return;
+
+	const redirectTo = await requireAuth(to);
+
+	if (redirectTo) {
+		return navigateTo(redirectTo);
 	}
 });

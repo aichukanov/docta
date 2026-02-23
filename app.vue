@@ -16,6 +16,7 @@ const router = useRouter();
 const route = useRoute();
 const schemaOrgStore = useSchemaOrgStore();
 
+
 // Build JSON-LD from schemas
 const buildJsonLd = (schemas: SchemaOrg[]) => {
 	if (schemas.length === 0) {

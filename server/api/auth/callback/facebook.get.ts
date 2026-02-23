@@ -9,6 +9,7 @@ import {
 } from '~/server/utils/oauth';
 import { createSession, setSessionCookie } from '~/server/utils/session';
 import { authLogger, logError } from '~/server/utils/logger';
+import { ERROR_CODES } from '~/server/utils/api-codes';
 
 interface FacebookTokenResponse {
 	access_token: string;
@@ -39,19 +40,23 @@ export default defineEventHandler(async (event) => {
 	// Проверка на ошибку от Facebook
 	if (error) {
 		authLogger.error('OAuth error from Facebook', { error });
-		return sendRedirect(event, '/?error=oauth_failed');
+		return sendRedirect(event, `/login?error=${ERROR_CODES.OAUTH_FAILED}`);
 	}
 
 	// Проверка наличия code
 	if (!code) {
-		return sendRedirect(event, '/?error=no_code');
+		return sendRedirect(event, `/login?error=${ERROR_CODES.NO_CODE}`);
 	}
 
 	// Проверка state (защита от CSRF)
 	const savedState = getCookie(event, 'oauth_state');
 	if (!savedState || savedState !== state) {
-		authLogger.error('OAuth state mismatch');
-		return sendRedirect(event, '/?error=state_mismatch');
+		authLogger.error('OAuth state mismatch', {
+			hasSavedState: !!savedState,
+			hasQueryState: !!state,
+			requestHost: getRequestHeader(event, 'host'),
+		});
+		return sendRedirect(event, `/login?error=${ERROR_CODES.STATE_MISMATCH}`);
 	}
 
 	// Получаем сохраненный redirect_uri
@@ -65,11 +70,8 @@ export default defineEventHandler(async (event) => {
 		const config = getOAuthConfig();
 		const { facebook } = config;
 
-		// Используем сохраненный redirect_uri или определяем из текущего запроса
-		const host = getRequestHeader(event, 'host');
-		const protocol = getRequestHeader(event, 'x-forwarded-proto') || 'http';
-		const currentRedirectUri =
-			savedRedirectUri || `${protocol}://${host}/api/auth/callback/facebook`;
+		// Используем сохраненный redirect_uri или из конфига (BASE_URL)
+		const currentRedirectUri = savedRedirectUri || facebook.redirectUri;
 
 		authLogger.debug('Facebook OAuth callback', {
 			redirectUri: currentRedirectUri,
@@ -98,7 +100,7 @@ export default defineEventHandler(async (event) => {
 		});
 
 		if (!userInfo.email) {
-			return sendRedirect(event, '/?error=email_not_provided');
+			return sendRedirect(event, `/login?error=${ERROR_CODES.EMAIL_NOT_PROVIDED}`);
 		}
 
 		// Получаем URL фото
@@ -222,7 +224,7 @@ export default defineEventHandler(async (event) => {
 					user = {
 						id: userId,
 						email: userInfo.email,
-						name: userInfo.name,
+						name: userInfo.name || userInfo.email,
 						photo_url: photoUrl,
 						is_admin: false,
 					};
@@ -245,10 +247,10 @@ export default defineEventHandler(async (event) => {
 			return sendRedirect(event, redirectTo);
 		}
 
-		// 6. Редиректим на главную страницу
-		return sendRedirect(event, '/');
+		// 6. Редиректим на страницу профиля
+		return sendRedirect(event, '/profile');
 	} catch (err) {
 		logError(authLogger, 'OAuth callback failed', err);
-		return sendRedirect(event, '/?error=oauth_callback_failed');
+		return sendRedirect(event, `/login?error=${ERROR_CODES.OAUTH_CALLBACK_FAILED}`);
 	}
 });

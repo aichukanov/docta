@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
 	const user = await getCurrentUser(event);
 
 	if (!user) {
-		createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
+		return createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
 	}
 
 	// Получаем текущую сессию

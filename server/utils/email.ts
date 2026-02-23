@@ -4,6 +4,7 @@
 import Mailgun from 'mailgun.js';
 import formData from 'form-data';
 import { emailLogger, logError } from './logger';
+import { executeQuery } from '../common/db-mysql';
 import {
 	getPasswordResetEmail,
 	getEmailVerificationEmail,
@@ -19,19 +20,38 @@ interface EmailOptions {
 	text?: string;
 }
 
+type EmailLogStatus = 'sent' | 'failed' | 'dev';
+
+async function logEmail(
+	options: EmailOptions,
+	status: EmailLogStatus,
+	error?: string,
+): Promise<void> {
+	try {
+		await executeQuery(
+			`INSERT INTO auth_email_log (to_email, subject, html, text_body, status, error)
+			 VALUES (?, ?, ?, ?, ?, ?)`,
+			[options.to, options.subject, options.html, options.text ?? null, status, error ?? null],
+		);
+	} catch (err) {
+		logError(emailLogger, 'Failed to save email log to DB', err);
+	}
+}
+
 /**
  * Отправка email через Mailgun
  */
 export async function sendEmail(options: EmailOptions): Promise<boolean> {
 	const isDev = process.env.NODE_ENV === 'development';
 
-	// В development без настроенного Mailgun - выводим в консоль
+	// В development без настроенного Mailgun - выводим в консоль и сохраняем в БД
 	if (isDev) {
 		emailLogger.info('Email mock (dev mode)', {
 			to: options.to,
 			subject: options.subject,
 		});
 		emailLogger.debug('Email HTML content', { html: options.html });
+		await logEmail(options, 'dev');
 		return true;
 	}
 
@@ -69,11 +89,14 @@ export async function sendEmail(options: EmailOptions): Promise<boolean> {
 		});
 
 		emailLogger.info('Email sent successfully', { to: options.to });
+		await logEmail(options, 'sent');
 		return true;
 	} catch (error) {
 		logError(emailLogger, 'Failed to send email via Mailgun', error, {
 			to: options.to,
 		});
+		const errorMessage = error instanceof Error ? error.message : String(error);
+		await logEmail(options, 'failed', errorMessage);
 		return false;
 	}
 }

@@ -18,17 +18,17 @@ export default defineEventHandler(async (event) => {
 
 	// Валидация входных данных
 	if (!token || !password || !confirmPassword) {
-		createErrorResponse(400, ERROR_CODES.ALL_FIELDS_REQUIRED);
+		return createErrorResponse(400, ERROR_CODES.ALL_FIELDS_REQUIRED);
 	}
 
 	if (password !== confirmPassword) {
-		createErrorResponse(400, ERROR_CODES.PASSWORDS_DO_NOT_MATCH);
+		return createErrorResponse(400, ERROR_CODES.PASSWORDS_DO_NOT_MATCH);
 	}
 
 	// Валидация пароля
 	const passwordValidation = validatePassword(password);
 	if (!passwordValidation.valid) {
-		createErrorResponse(
+		return createErrorResponse(
 			400,
 			passwordValidation.code,
 			passwordValidation.details,
@@ -40,7 +40,7 @@ export default defineEventHandler(async (event) => {
 		const result = await validatePasswordResetToken(token);
 
 		if (!result.valid) {
-			createErrorResponse(400, result.code, result.details);
+			return createErrorResponse(400, result.code, result.details);
 		}
 
 		// Хешируем новый пароль
@@ -67,6 +67,6 @@ export default defineEventHandler(async (event) => {
 		}
 
 		logError(authLogger, 'Reset password failed', error);
-		createErrorResponse(500, ERROR_CODES.ERROR_RESETTING_PASSWORD);
+		return createErrorResponse(500, ERROR_CODES.ERROR_RESETTING_PASSWORD);
 	}
 });

@@ -19,12 +19,12 @@ export default defineEventHandler(async (event) => {
 
 	// Валидация входных данных
 	if (!email || !password) {
-		createErrorResponse(400, ERROR_CODES.EMAIL_REQUIRED);
+		return createErrorResponse(400, ERROR_CODES.EMAIL_REQUIRED);
 	}
 
 	// Валидация email
 	if (!validateEmail(email)) {
-		createErrorResponse(400, ERROR_CODES.INVALID_EMAIL);
+		return createErrorResponse(400, ERROR_CODES.INVALID_EMAIL);
 	}
 
 	try {
@@ -32,7 +32,7 @@ export default defineEventHandler(async (event) => {
 		const user = await getUserByEmail(email.toLowerCase());
 
 		if (!user || !user.password_hash) {
-			createErrorResponse(401, ERROR_CODES.INVALID_CREDENTIALS);
+			return createErrorResponse(401, ERROR_CODES.INVALID_CREDENTIALS);
 		}
 
 		// Проверяем пароль
@@ -42,7 +42,7 @@ export default defineEventHandler(async (event) => {
 			// Логируем неудачную попытку
 			await logFailedLogin(user.id, event, 'email', 'Invalid password');
 
-			createErrorResponse(401, ERROR_CODES.INVALID_CREDENTIALS);
+			return createErrorResponse(401, ERROR_CODES.INVALID_CREDENTIALS);
 		}
 
 		// Логируем успешный вход
@@ -62,7 +62,7 @@ export default defineEventHandler(async (event) => {
 			user: {
 				id: user.id,
 				email: user.email,
-				name: user.name,
+				name: user.name || user.email,
 				username: user.username,
 				photo_url: user.photo_url,
 				is_admin: user.is_admin,
@@ -76,6 +76,6 @@ export default defineEventHandler(async (event) => {
 		}
 
 		logError(authLogger, 'Login failed', error, { email });
-		createErrorResponse(500, ERROR_CODES.ERROR_DURING_LOGIN);
+		return createErrorResponse(500, ERROR_CODES.ERROR_DURING_LOGIN);
 	}
 });

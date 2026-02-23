@@ -33,7 +33,10 @@ async function handleLogin() {
 			errorMessage.value = 'Неверный email или пароль';
 		} else if (data.value?.success) {
 			// Успешный вход - перенаправляем на админку
-			navigateTo('/admin');
+			navigateTo({
+				name: 'admin-index',
+				query: getRegionalQuery(locale.value),
+			});
 		}
 	} catch (err) {
 		console.error('Login error:', err);
@@ -51,11 +54,7 @@ async function handleLogin() {
 				<h1 class="login-title">Вход для администраторов</h1>
 				<p class="login-subtitle">docta.me</p>
 
-				<el-form
-					@submit.prevent="handleLogin"
-					:model="form"
-					class="login-form"
-				>
+				<el-form @submit.prevent="handleLogin" :model="form" class="login-form">
 					<el-form-item>
 						<el-input
 							v-model="form.email"
@@ -99,9 +98,7 @@ async function handleLogin() {
 				</el-form>
 
 				<div class="login-footer">
-					<p class="info-text">
-						Доступ только для администраторов платформы
-					</p>
+					<p class="info-text"> Доступ только для администраторов платформы </p>
 				</div>
 			</div>
 		</div>

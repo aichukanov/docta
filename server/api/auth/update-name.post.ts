@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
 	const user = await getCurrentUser(event);
 
 	if (!user) {
-		createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
+		return createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
 	}
 
 	const body = await readBody(event);
@@ -20,11 +20,11 @@ export default defineEventHandler(async (event) => {
 
 	// Валидация
 	if (!name || name.trim().length === 0) {
-		createErrorResponse(400, ERROR_CODES.NAME_EMPTY);
+		return createErrorResponse(400, ERROR_CODES.NAME_EMPTY);
 	}
 
 	if (name.length > 255) {
-		createErrorResponse(400, ERROR_CODES.NAME_TOO_LONG);
+		return createErrorResponse(400, ERROR_CODES.NAME_TOO_LONG);
 	}
 
 	try {
@@ -44,6 +44,6 @@ export default defineEventHandler(async (event) => {
 		});
 	} catch (error: any) {
 		logError(authLogger, 'Update name failed', error, { userId: user.id });
-		createErrorResponse(500, ERROR_CODES.ERROR_UPDATING_NAME);
+		return createErrorResponse(500, ERROR_CODES.ERROR_UPDATING_NAME);
 	}
 });

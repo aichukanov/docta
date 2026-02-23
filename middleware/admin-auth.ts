@@ -1,14 +1,9 @@
-/**
- * Middleware для защиты админ-панели
- * Проверяет, что пользователь авторизован и является администратором
- */
-export default defineNuxtRouteMiddleware(async (to, from) => {
+export default defineNuxtRouteMiddleware(async (to) => {
 	const { requireAdmin } = useAuth();
-	
-	const isAuthorized = await requireAdmin();
-	
-	if (!isAuthorized) {
-		// requireAdmin уже выполнит редирект на /login
-		return;
+
+	const redirectTo = await requireAdmin(to);
+
+	if (redirectTo) {
+		return navigateTo(redirectTo);
 	}
 });

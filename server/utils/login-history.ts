@@ -104,12 +104,13 @@ export async function getUserLoginHistory(
 	userId: number,
 	limit: number = 50,
 ): Promise<LoginHistoryEntry[]> {
+	const safeLimit = Math.max(1, Math.min(Number(limit) || 50, 1000));
 	const results = await executeQuery<LoginHistoryEntry>(
 		`SELECT * FROM auth_login_history 
      WHERE user_id = ? AND success = TRUE
      ORDER BY created_at DESC 
-     LIMIT ?`,
-		[userId, limit],
+     LIMIT ${safeLimit}`,
+		[userId],
 	);
 
 	return results;

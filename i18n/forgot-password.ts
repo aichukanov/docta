@@ -26,9 +26,6 @@ export default {
 			devMode: 'Development Mode',
 			resetLinkLabel: 'Password reset link:',
 
-			// Errors
-			enterEmail: 'Enter email',
-			errorSending: 'Error sending request',
 		},
 
 		ru: {
@@ -52,9 +49,6 @@ export default {
 			devMode: 'Режим разработки',
 			resetLinkLabel: 'Ссылка для сброса пароля:',
 
-			// Ошибки
-			enterEmail: 'Введите email',
-			errorSending: 'Ошибка при отправке запроса',
 		},
 
 		sr: {
@@ -78,9 +72,6 @@ export default {
 			devMode: 'Razvojni režim',
 			resetLinkLabel: 'Link za resetovanje lozinke:',
 
-			// Greške
-			enterEmail: 'Unesite email',
-			errorSending: 'Greška pri slanju zahteva',
 		},
 
 		de: {
@@ -104,9 +95,6 @@ export default {
 			devMode: 'Entwicklungsmodus',
 			resetLinkLabel: 'Passwort-Zurücksetzungslink:',
 
-			// Fehler
-			enterEmail: 'E-Mail eingeben',
-			errorSending: 'Fehler beim Senden der Anfrage',
 		},
 
 		tr: {
@@ -130,9 +118,6 @@ export default {
 			devMode: 'Geliştirme Modu',
 			resetLinkLabel: 'Şifre sıfırlama bağlantısı:',
 
-			// Hatalar
-			enterEmail: 'E-posta girin',
-			errorSending: 'İstek gönderilirken hata',
 		},
 
 		'sr-cyrl': {
@@ -156,9 +141,6 @@ export default {
 			devMode: 'Развојни режим',
 			resetLinkLabel: 'Линк за ресетовање лозинке:',
 
-			// Грешке
-			enterEmail: 'Унесите емаил',
-			errorSending: 'Грешка при слању захтева',
 		},
 	},
 };

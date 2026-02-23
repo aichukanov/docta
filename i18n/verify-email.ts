@@ -12,8 +12,6 @@ export default {
 			btnGoToProfile: 'Go to Profile',
 			errorTitle: 'Verification Error',
 			btnHome: 'Home',
-			tokenNotFound: 'Token not found',
-			errorVerifying: 'Error verifying email',
 		},
 
 		ru: {
@@ -24,8 +22,6 @@ export default {
 			btnGoToProfile: 'Перейти в профиль',
 			errorTitle: 'Ошибка подтверждения',
 			btnHome: 'На главную',
-			tokenNotFound: 'Token not found',
-			errorVerifying: 'Error verifying email',
 		},
 
 		sr: {
@@ -36,8 +32,6 @@ export default {
 			btnGoToProfile: 'Idi na profil',
 			errorTitle: 'Greška verifikacije',
 			btnHome: 'Početna',
-			tokenNotFound: 'Token nije pronađen',
-			errorVerifying: 'Greška pri verifikaciji email-a',
 		},
 
 		de: {
@@ -48,8 +42,6 @@ export default {
 			btnGoToProfile: 'Zum Profil',
 			errorTitle: 'Verifizierungsfehler',
 			btnHome: 'Startseite',
-			tokenNotFound: 'Token nicht gefunden',
-			errorVerifying: 'Fehler beim Verifizieren der E-Mail',
 		},
 
 		tr: {
@@ -60,8 +52,6 @@ export default {
 			btnGoToProfile: 'Profile Git',
 			errorTitle: 'Doğrulama Hatası',
 			btnHome: 'Ana Sayfa',
-			tokenNotFound: 'Token bulunamadı',
-			errorVerifying: 'E-posta doğrulama hatası',
 		},
 
 		'sr-cyrl': {
@@ -72,8 +62,6 @@ export default {
 			btnGoToProfile: 'Иди на профил',
 			errorTitle: 'Грешка верификације',
 			btnHome: 'Почетна',
-			tokenNotFound: 'Токен није пронађен',
-			errorVerifying: 'Грешка при верификацији емаила',
 		},
 	},
 };

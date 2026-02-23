@@ -43,7 +43,7 @@ export function validatePassword(password: string): ApiResult {
 		errors.push(ERROR_CODES.PASSWORD_MISSING_DIGIT);
 	}
 
-	if (!/[a-zA-Z]/.test(password)) {
+	if (!/\p{L}/u.test(password)) {
 		errors.push(ERROR_CODES.PASSWORD_MISSING_LETTER);
 	}
 

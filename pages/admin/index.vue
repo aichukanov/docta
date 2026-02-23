@@ -12,7 +12,7 @@ async function handleLogout() {
 	try {
 		await $fetch('/api/admin/auth/logout', { method: 'POST' });
 		// Перенаправляем на страницу входа
-		navigateTo('/admin/login');
+		navigateTo({ name: 'admin-login', query: getRegionalQuery(locale.value) });
 	} catch (error) {
 		console.error('Logout error:', error);
 	}
@@ -63,7 +63,7 @@ const servicesForSelect = computed(() =>
 // Загрузка данных по табам
 async function loadDoctorsData() {
 	if (loadedTabs.value.doctors) return;
-	
+
 	isLoadingDoctors.value = true;
 	try {
 		const data = await $fetch('/api/doctors/list', {
@@ -86,7 +86,7 @@ async function loadDoctorsData() {
 
 async function loadLabTestsData() {
 	if (loadedTabs.value.labtests) return;
-	
+
 	isLoadingLabTests.value = true;
 	try {
 		const data = await $fetch('/api/labtests/list', {
@@ -104,7 +104,7 @@ async function loadLabTestsData() {
 
 async function loadServicesData() {
 	if (loadedTabs.value.services) return;
-	
+
 	isLoadingServices.value = true;
 	try {
 		const data = await $fetch('/api/services/list', {
@@ -122,7 +122,7 @@ async function loadServicesData() {
 
 async function loadClinicsData() {
 	if (loadedTabs.value.clinics) return;
-	
+
 	isLoadingClinics.value = true;
 	try {
 		await clinicsStore.fetchClinics();
@@ -297,7 +297,9 @@ const updateServices = async () => {
 					<div class="loading-spinner"></div>
 					<p>Загрузка данных о клиниках...</p>
 				</div>
-				<el-tabs v-else-if="clinicsList.clinics.length > 0 || loadedTabs.clinics">
+				<el-tabs
+					v-else-if="clinicsList.clinics.length > 0 || loadedTabs.clinics"
+				>
 					<el-tab-pane label="Найти">
 						<AdminClinicFind
 							:clinics="clinicsList.clinics"
@@ -369,7 +371,11 @@ const updateServices = async () => {
 }
 
 @keyframes spin {
-	0% { transform: rotate(0deg); }
-	100% { transform: rotate(360deg); }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 </style>

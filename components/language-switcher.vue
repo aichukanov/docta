@@ -11,7 +11,7 @@ defineProps<{
 
 const router = useRouter();
 const route = useRoute();
-const auth = useAuth();
+const { isAuthenticated, isLoading, fetchUser } = useAuth();
 
 const { locale } = useI18n({ useScope: 'global' });
 const { t } = useI18n();
@@ -26,8 +26,12 @@ async function updateLocale(value: string) {
 	locale.value = value;
 	cookieLocale.value = value;
 
-	// Если пользователь залогинен, сохраняем локаль в БД
-	if (auth.isAuthenticated.value) {
+	// Ждём завершения загрузки auth-стейта, чтобы не промахнуться мимо сессии
+	if (isLoading.value) {
+		await fetchUser();
+	}
+
+	if (isAuthenticated.value) {
 		try {
 			await $fetch('/api/auth/update-locale', {
 				method: 'POST',

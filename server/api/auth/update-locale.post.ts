@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
 	const user = await getCurrentUser(event);
 
 	if (!user) {
-		createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
+		return createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
 	}
 
 	const body = await readBody(event);
@@ -26,12 +26,12 @@ export default defineEventHandler(async (event) => {
 
 	// Валидация локали
 	if (!locale) {
-		createErrorResponse(400, ERROR_CODES.LOCALE_REQUIRED);
+		return createErrorResponse(400, ERROR_CODES.LOCALE_REQUIRED);
 	}
 
 	// Проверяем что локаль из поддерживаемых
 	if (!locales.includes(locale as Language)) {
-		createErrorResponse(400, ERROR_CODES.INVALID_LOCALE);
+		return createErrorResponse(400, ERROR_CODES.INVALID_LOCALE);
 	}
 
 	try {
@@ -54,6 +54,6 @@ export default defineEventHandler(async (event) => {
 		}
 
 		logError(authLogger, 'Update locale failed', error, { userId: user.id });
-		createErrorResponse(500, ERROR_CODES.ERROR_UPDATING_LOCALE);
+		return createErrorResponse(500, ERROR_CODES.ERROR_UPDATING_LOCALE);
 	}
 });

@@ -12,13 +12,13 @@ export default defineEventHandler(async (event) => {
 	const user = await getCurrentUser(event);
 
 	if (!user) {
-		createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
+		return createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
 	}
 
 	const sessionId = getRouterParam(event, 'sessionId');
 
 	if (!sessionId) {
-		createErrorResponse(400, ERROR_CODES.SESSION_ID_REQUIRED);
+		return createErrorResponse(400, ERROR_CODES.SESSION_ID_REQUIRED);
 	}
 
 	// Проверяем что сессия принадлежит текущему пользователю
@@ -28,11 +28,11 @@ export default defineEventHandler(async (event) => {
 	);
 
 	if (auth_sessions.length === 0) {
-		createErrorResponse(404, ERROR_CODES.SESSION_NOT_FOUND);
+		return createErrorResponse(404, ERROR_CODES.SESSION_NOT_FOUND);
 	}
 
 	if ((auth_sessions[0] as any).user_id !== user.id) {
-		createErrorResponse(403, ERROR_CODES.FORBIDDEN);
+		return createErrorResponse(403, ERROR_CODES.FORBIDDEN);
 	}
 
 	// Удаляем сессию

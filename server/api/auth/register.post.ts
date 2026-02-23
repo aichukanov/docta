@@ -12,26 +12,28 @@ import {
 	createSuccessResponse,
 	createErrorResponse,
 } from '~/server/utils/api-codes';
-import { getBaseUrl } from '~/server/utils/base-url';
+import { getLocalizedUrl } from '~/server/utils/base-url';
 
 export default defineEventHandler(async (event) => {
 	const body = await readBody(event);
-	const { email, password, name } = body;
+	const { email, password, name, locale: requestLocale } = body;
 
 	// Валидация входных данных
-	if (!email || !password || !name) {
-		createErrorResponse(400, ERROR_CODES.ALL_FIELDS_REQUIRED);
+	if (!email || !password) {
+		return createErrorResponse(400, ERROR_CODES.ALL_FIELDS_REQUIRED);
 	}
+
+	const trimmedName = name?.trim() || null;
 
 	// Валидация email
 	if (!validateEmail(email)) {
-		createErrorResponse(400, ERROR_CODES.INVALID_EMAIL);
+		return createErrorResponse(400, ERROR_CODES.INVALID_EMAIL);
 	}
 
 	// Валидация пароля
 	const passwordValidation = validatePassword(password);
 	if (!passwordValidation.valid) {
-		createErrorResponse(
+		return createErrorResponse(
 			400,
 			passwordValidation.code,
 			passwordValidation.details,
@@ -46,7 +48,7 @@ export default defineEventHandler(async (event) => {
 		);
 
 		if (existingUsers.length > 0) {
-			createErrorResponse(409, ERROR_CODES.USER_ALREADY_EXISTS);
+			return createErrorResponse(409, ERROR_CODES.USER_ALREADY_EXISTS);
 		}
 
 		// Хешируем пароль
@@ -56,7 +58,7 @@ export default defineEventHandler(async (event) => {
 		const result = await executeQuery(
 			`INSERT INTO auth_users (email, name, password_hash, is_admin, email_verified)
        VALUES (?, ?, ?, FALSE, FALSE)`,
-			[email.toLowerCase(), name, passwordHash],
+			[email.toLowerCase(), trimmedName, passwordHash],
 		);
 
 		const userId = (result as any).insertId;
@@ -70,16 +72,15 @@ export default defineEventHandler(async (event) => {
 			email.toLowerCase(),
 		);
 
-		// Отправляем email с подтверждением
-		const verificationUrl = `${getBaseUrl()}/verify-email?token=${verificationToken}`;
-
 		const { sendEmailVerification } = await import('~/server/utils/email');
-		const { getUserLocale } = await import('~/server/utils/user-locale');
-		const locale = await getUserLocale(userId, event);
+		const { getLocaleFromRequest } = await import('~/server/utils/user-locale');
+		const locale = getLocaleFromRequest(requestLocale, event);
+		const verificationUrl = getLocalizedUrl(`/verify-email?token=${verificationToken}`, locale);
+
 		await sendEmailVerification(
 			email.toLowerCase(),
 			verificationUrl,
-			name,
+			trimmedName || email,
 			locale,
 		);
 
@@ -102,7 +103,7 @@ export default defineEventHandler(async (event) => {
 			user: {
 				id: userId,
 				email: email.toLowerCase(),
-				name,
+				name: trimmedName || email.toLowerCase(),
 				is_admin: false,
 				email_verified: false,
 			},
@@ -117,6 +118,6 @@ export default defineEventHandler(async (event) => {
 		}
 
 		logError(authLogger, 'Registration failed', error, { email });
-		createErrorResponse(500, ERROR_CODES.ERROR_CREATING_ACCOUNT);
+		return createErrorResponse(500, ERROR_CODES.ERROR_CREATING_ACCOUNT);
 	}
 });

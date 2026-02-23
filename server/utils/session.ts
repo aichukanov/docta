@@ -1,7 +1,7 @@
 import type { H3Event } from 'h3';
 import { executeQuery } from '~/server/common/db-mysql';
 
-const SESSION_DURATION = 30 * 24 * 60 * 60; // 30 дней в секундах
+const SESSION_DURATION = 365 * 24 * 60 * 60; // 1 год в секундах
 
 export interface User {
 	id: number;
@@ -71,7 +71,7 @@ export async function getUserFromSession(
 	sessionId: string,
 ): Promise<User | null> {
 	const results = await executeQuery<User>(
-		`SELECT u.id, u.email, u.name, u.username, u.photo_url, u.is_admin 
+		`SELECT u.id, u.email, COALESCE(NULLIF(u.name, ''), u.email) AS name, u.username, u.photo_url, u.is_admin 
      FROM auth_users u
      JOIN auth_sessions s ON u.id = s.user_id
      WHERE s.id = ? AND s.expires_at > UNIX_TIMESTAMP()`,

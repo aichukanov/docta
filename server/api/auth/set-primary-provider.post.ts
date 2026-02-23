@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
 	const user = await getCurrentUser(event);
 
 	if (!user) {
-		createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
+		return createErrorResponse(401, ERROR_CODES.UNAUTHORIZED);
 	}
 
 	const body = await readBody(event);
@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
 
 	// Валидация провайдера
 	if (!isValidPrimaryProvider(provider)) {
-		createErrorResponse(400, ERROR_CODES.INVALID_PROVIDER);
+		return createErrorResponse(400, ERROR_CODES.INVALID_PROVIDER);
 	}
 
 	try {
@@ -32,6 +32,6 @@ export default defineEventHandler(async (event) => {
 		logError(authLogger, 'Set primary provider failed', error, {
 			userId: user.id,
 		});
-		createErrorResponse(500, ERROR_CODES.ERROR_UPDATING_PRIMARY_PROVIDER);
+		return createErrorResponse(500, ERROR_CODES.ERROR_UPDATING_PRIMARY_PROVIDER);
 	}
 });

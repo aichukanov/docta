@@ -15,7 +15,7 @@ export default defineEventHandler(async (event) => {
 	const token = query.token as string;
 
 	if (!token) {
-		createErrorResponse(400, ERROR_CODES.TOKEN_NOT_FOUND);
+		return createErrorResponse(400, ERROR_CODES.TOKEN_NOT_FOUND);
 	}
 
 	try {
@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
 		const result = await validateEmailVerificationToken(token);
 
 		if (!result.valid) {
-			createErrorResponse(400, result.code, result.details);
+			return createErrorResponse(400, result.code, result.details);
 		}
 
 		// Помечаем email как подтвержденный
@@ -41,6 +41,6 @@ export default defineEventHandler(async (event) => {
 		}
 
 		logError(authLogger, 'Email verification failed', error);
-		createErrorResponse(500, ERROR_CODES.ERROR_VERIFYING_EMAIL);
+		return createErrorResponse(500, ERROR_CODES.ERROR_VERIFYING_EMAIL);
 	}
 });

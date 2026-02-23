@@ -47,6 +47,8 @@ export default defineNuxtConfig({
 	// 		],
 	// 	],
 	// },
+	css: ['~/assets/css/design-tokens.css'],
+
 	components: ['~/components'],
 
 	runtimeConfig: {
@@ -54,6 +56,7 @@ export default defineNuxtConfig({
 			mixpanelToken: process.env.MIXPANEL_TOKEN,
 			cloudflareToken: process.env.CLOUDFLARE_TOKEN,
 			telegramBotUsername: process.env.TELEGRAM_BOT_USERNAME,
+			telegramBotId: process.env.TELEGRAM_BOT_TOKEN?.split(':')[0] || '',
 			connection: {
 				host: process.env.DB_HOST,
 				user: process.env.DB_USER,

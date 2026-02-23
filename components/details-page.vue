@@ -122,8 +122,6 @@ const onMapReady = () => {
 </template>
 
 <style lang="less" scoped>
-@import url('~/assets/css/vars.less');
-
 .details-page {
 	padding: var(--spacing-md);
 

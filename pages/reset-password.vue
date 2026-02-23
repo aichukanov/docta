@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Lock } from '@element-plus/icons-vue';
 import resetPasswordMessages from '~/i18n/reset-password';
+import { ERROR_CODES } from '~/server/utils/api-codes';
 
 definePageMeta({
 	layout: 'minimal',
@@ -18,23 +19,23 @@ const token = ref((route.query.token as string) || '');
 const password = ref('');
 const confirmPassword = ref('');
 const isLoading = ref(false);
-const error = ref<string | null>(null);
+const error = ref<ERROR_CODES | null>(null);
 const success = ref(false);
 
 if (!token.value) {
-	error.value = t('tokenNotFound');
+	error.value = ERROR_CODES.TOKEN_NOT_FOUND;
 }
 
 async function handleSubmit() {
 	error.value = null;
 
 	if (!password.value || !confirmPassword.value) {
-		error.value = t('fillAllFields');
+		error.value = ERROR_CODES.ALL_FIELDS_REQUIRED;
 		return;
 	}
 
 	if (password.value !== confirmPassword.value) {
-		error.value = t('passwordsNotMatch');
+		error.value = ERROR_CODES.PASSWORDS_DO_NOT_MATCH;
 		return;
 	}
 
@@ -57,11 +58,18 @@ async function handleSubmit() {
 		}, 3000);
 	} catch (err: any) {
 		console.error('Reset password error:', err);
-		error.value = err.data?.statusMessage || t('errorResetting');
+		error.value =
+			(err.data?.statusMessage as ERROR_CODES) ||
+			ERROR_CODES.ERROR_RESETTING_PASSWORD;
 	} finally {
 		isLoading.value = false;
 	}
 }
+
+const loginPageLink = computed(() => ({
+	name: 'login',
+	query: getRegionalQuery(locale.value),
+}));
 </script>
 
 <template>
@@ -73,14 +81,7 @@ async function handleSubmit() {
 				{{ t('description') }}
 			</p>
 
-			<el-alert
-				v-if="error"
-				:title="error"
-				type="error"
-				:closable="false"
-				@close="error = null"
-				style="margin-bottom: 24px"
-			/>
+			<ApiErrorAlert :error="error" style="margin-bottom: 24px" />
 
 			<el-form @submit.prevent="handleSubmit">
 				<el-form-item>
@@ -135,7 +136,7 @@ async function handleSubmit() {
 			</el-form>
 
 			<div class="form-footer">
-				<el-button link type="primary" @click="navigateTo('/login')">
+				<el-button link type="primary" @click="navigateTo(loginPageLink)">
 					{{ t('btnBackToLogin') }}
 				</el-button>
 			</div>
@@ -148,7 +149,7 @@ async function handleSubmit() {
 				:sub-title="t('successDescription')"
 			>
 				<template #extra>
-					<el-button type="primary" @click="navigateTo('/login')">
+					<el-button type="primary" @click="navigateTo(loginPageLink)">
 						{{ t('btnLoginNow') }}
 					</el-button>
 				</template>

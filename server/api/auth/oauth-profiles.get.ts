@@ -23,6 +23,7 @@ export default defineEventHandler(async (event) => {
 	return {
 		google: profiles.google,
 		telegram: profiles.telegram,
+		facebook: profiles.facebook,
 		primaryProvider: primaryProfile?.provider || null,
 	};
 });

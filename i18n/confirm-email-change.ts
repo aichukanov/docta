@@ -12,8 +12,6 @@ export default {
 			btnGoToProfile: 'Go to Profile',
 			errorTitle: 'Email Change Error',
 			btnHome: 'Home',
-			tokenNotFound: 'Token not found',
-			errorChanging: 'Error changing email',
 		},
 
 		ru: {
@@ -24,8 +22,6 @@ export default {
 			btnGoToProfile: 'Перейти в профиль',
 			errorTitle: 'Ошибка изменения email',
 			btnHome: 'На главную',
-			tokenNotFound: 'Токен не найден',
-			errorChanging: 'Ошибка при изменении email',
 		},
 
 		sr: {
@@ -36,8 +32,6 @@ export default {
 			btnGoToProfile: 'Idi na profil',
 			errorTitle: 'Greška promene email-a',
 			btnHome: 'Početna',
-			tokenNotFound: 'Token nije pronađen',
-			errorChanging: 'Greška pri promeni email-a',
 		},
 
 		de: {
@@ -48,8 +42,6 @@ export default {
 			btnGoToProfile: 'Zum Profil',
 			errorTitle: 'E-Mail-Änderungsfehler',
 			btnHome: 'Startseite',
-			tokenNotFound: 'Token nicht gefunden',
-			errorChanging: 'Fehler beim Ändern der E-Mail',
 		},
 
 		tr: {
@@ -60,8 +52,6 @@ export default {
 			btnGoToProfile: 'Profile Git',
 			errorTitle: 'E-posta Değişikliği Hatası',
 			btnHome: 'Ana Sayfa',
-			tokenNotFound: 'Token bulunamadı',
-			errorChanging: 'E-posta değiştirme hatası',
 		},
 
 		'sr-cyrl': {
@@ -72,8 +62,6 @@ export default {
 			btnGoToProfile: 'Иди на профил',
 			errorTitle: 'Грешка промене емаила',
 			btnHome: 'Почетна',
-			tokenNotFound: 'Токен није пронађен',
-			errorChanging: 'Грешка при промени емаила',
 		},
 	},
 };

@@ -11,14 +11,22 @@ const { giveConsent, declineConsent } = useCookieControl();
 				<p class="cookie-banner__description">{{ t('CookieDescription') }}</p>
 				<p class="cookie-banner__description-2">
 					{{ t('CookieDescription2') }}
-					<NuxtLink to="/privacy" class="cookie-banner__privacy-link">{{ t('PrivacyLink') }}</NuxtLink>
+					<NuxtLink to="/privacy" class="cookie-banner__privacy-link">{{
+						t('PrivacyLink')
+					}}</NuxtLink>
 				</p>
 			</div>
 			<div class="cookie-banner__actions">
-				<button class="cookie-banner__button cookie-banner__button--accept" @click="giveConsent">
+				<button
+					class="cookie-banner__button cookie-banner__button--accept"
+					@click="giveConsent"
+				>
 					{{ t('Accept') }}
 				</button>
-				<button class="cookie-banner__button cookie-banner__button--decline" @click="declineConsent">
+				<button
+					class="cookie-banner__button cookie-banner__button--decline"
+					@click="declineConsent"
+				>
 					{{ t('Decline') }}
 				</button>
 			</div>
@@ -104,7 +112,6 @@ const { giveConsent, declineConsent } = useCookieControl();
 	font-size: 14px;
 	font-weight: 500;
 	min-width: 120px;
-	margin-bottom: 30px;
 	transition: all 0.3s ease;
 
 	&--accept {

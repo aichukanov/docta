@@ -44,8 +44,12 @@ export class HeaderComponent {
 	 */
 	async getNavLinks(): Promise<string[]> {
 		const links = await this.page.locator('.app-header__nav-link').all();
-		const hrefs = await Promise.all(links.map((link) => link.getAttribute('href')));
-		return hrefs.filter((href) => href !== null && href.trim() !== '') as string[];
+		const hrefs = await Promise.all(
+			links.map((link) => link.getAttribute('href')),
+		);
+		return hrefs.filter(
+			(href) => href !== null && href.trim() !== '',
+		) as string[];
 	}
 
 	/**
@@ -77,7 +81,7 @@ export class HeaderComponent {
 	async openLanguageSwitcher() {
 		// Кликаем по input внутри el-select
 		await this.waitForCookieBanner();
-		await this.getLanguageSwitcher().locator('input').click();
+		await this.getLanguageSwitcher().click();
 		// Ждем появления выпадающего списка
 		await this.page.waitForTimeout(800);
 	}
@@ -92,7 +96,10 @@ export class HeaderComponent {
 		await dropdown.waitFor({ state: 'visible', timeout: 3000 });
 
 		// Ищем опцию по тексту в выпадающем списке
-		await dropdown.locator('.el-option').filter({ hasText: language }).click();
+		await dropdown
+			.locator('.el-select-dropdown__item')
+			.filter({ hasText: language })
+			.click();
 		await this.page.waitForLoadState('domcontentloaded');
 	}
 

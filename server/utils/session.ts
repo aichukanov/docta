@@ -71,10 +71,37 @@ export async function getUserFromSession(
 	sessionId: string,
 ): Promise<User | null> {
 	const results = await executeQuery<User>(
-		`SELECT u.id, u.email, COALESCE(NULLIF(u.name, ''), u.email) AS name, u.username, u.photo_url, u.is_admin 
-     FROM auth_users u
-     JOIN auth_sessions s ON u.id = s.user_id
-     WHERE s.id = ? AND s.expires_at > UNIX_TIMESTAMP()`,
+		`SELECT
+			u.id,
+			u.email,
+			COALESCE(
+				NULLIF(u.name, ''),
+				CASE u.primary_oauth_provider
+					WHEN 'google'    THEN gp.name
+					WHEN 'telegram'  THEN CONCAT(tp.first_name, IFNULL(CONCAT(' ', NULLIF(tp.last_name, '')), ''))
+					WHEN 'facebook'  THEN fp.name
+				END,
+				u.email
+			) AS name,
+			u.username,
+			COALESCE(
+				NULLIF(u.photo_url, ''),
+				CASE u.primary_oauth_provider
+					WHEN 'google'   THEN gp.picture
+					WHEN 'telegram' THEN tp.photo_url
+					WHEN 'facebook' THEN fp.picture_url
+				END
+			) AS photo_url,
+			u.is_admin
+		FROM auth_users u
+		JOIN auth_sessions s ON u.id = s.user_id
+		LEFT JOIN auth_oauth_accounts goa ON u.id = goa.user_id AND goa.provider = 'google'
+		LEFT JOIN auth_oauth_profiles_google gp ON goa.id = gp.oauth_account_id
+		LEFT JOIN auth_oauth_accounts toa ON u.id = toa.user_id AND toa.provider = 'telegram'
+		LEFT JOIN auth_oauth_profiles_telegram tp ON toa.id = tp.oauth_account_id
+		LEFT JOIN auth_oauth_accounts foa ON u.id = foa.user_id AND foa.provider = 'facebook'
+		LEFT JOIN auth_oauth_profiles_facebook fp ON foa.id = fp.oauth_account_id
+		WHERE s.id = ? AND s.expires_at > UNIX_TIMESTAMP()`,
 		[sessionId],
 	);
 

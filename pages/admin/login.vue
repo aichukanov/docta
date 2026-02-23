@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import { getRegionalQuery } from '~/common/url-utils';
+
 definePageMeta({
 	layout: false,
 });
+
+const { locale } = useI18n();
 
 const form = reactive({
 	email: '',

@@ -2,12 +2,13 @@
 import forgotPasswordMessages from '~/i18n/forgot-password';
 import { Message } from '@element-plus/icons-vue';
 import { ERROR_CODES } from '~/server/utils/api-codes';
+import { getRegionalQuery } from '~/common/url-utils';
 
 definePageMeta({
 	layout: 'minimal',
 });
 
-const { t } = useI18n({
+const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: forgotPasswordMessages.messages,
 });

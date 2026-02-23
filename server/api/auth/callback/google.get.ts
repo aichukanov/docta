@@ -3,7 +3,6 @@ import {
 	findUserByOAuth,
 	createOAuthUser,
 	updateOAuthTokens,
-	updateUserProfile,
 	findUserByEmail,
 	linkOAuthAccount,
 } from '~/server/utils/oauth';
@@ -96,7 +95,10 @@ export default defineEventHandler(async (event) => {
 		});
 
 		if (!userInfo.email || !userInfo.verified_email) {
-			return sendRedirect(event, `/login?error=${ERROR_CODES.EMAIL_NOT_VERIFIED}`);
+			return sendRedirect(
+				event,
+				`/login?error=${ERROR_CODES.EMAIL_NOT_VERIFIED}`,
+			);
 		}
 
 		// 3. Проверяем существует ли пользователь с этим Google аккаунтом
@@ -107,7 +109,7 @@ export default defineEventHandler(async (event) => {
 			: null;
 
 		if (user) {
-			// Пользователь существует - обновляем токены и профиль
+			// Пользователь существует - обновляем токены и профиль провайдера
 			await updateOAuthTokens(
 				'google',
 				userInfo.id,
@@ -115,7 +117,6 @@ export default defineEventHandler(async (event) => {
 				tokenResponse.refresh_token,
 				expiresAt,
 			);
-			await updateUserProfile(user.id, userInfo.name, userInfo.picture);
 
 			// Сохраняем полный Google профиль
 			const { getOAuthAccountId, saveGoogleProfile } = await import(
@@ -149,8 +150,26 @@ export default defineEventHandler(async (event) => {
 					expiresAt,
 				);
 
-				// Обновляем профиль
-				await updateUserProfile(currentUserId, userInfo.name, userInfo.picture);
+				// Сохраняем полный Google профиль
+				const {
+					getOAuthAccountId,
+					saveGoogleProfile,
+					setPrimaryOAuthProvider,
+				} = await import('~/server/utils/oauth-profiles');
+				const oauthAccountId = await getOAuthAccountId(currentUserId, 'google');
+				if (oauthAccountId) {
+					await saveGoogleProfile(oauthAccountId, userInfo);
+					// Если primary ещё не задан — назначаем Google
+					const userRow = await import('~/server/common/db-mysql').then((m) =>
+						m.executeQuery(
+							'SELECT primary_oauth_provider FROM auth_users WHERE id = ?',
+							[currentUserId],
+						),
+					);
+					if (!(userRow[0] as any)?.primary_oauth_provider) {
+						await setPrimaryOAuthProvider(currentUserId, 'google');
+					}
+				}
 
 				user = { id: currentUserId };
 			} else {
@@ -166,13 +185,6 @@ export default defineEventHandler(async (event) => {
 						tokenResponse.access_token,
 						tokenResponse.refresh_token,
 						expiresAt,
-					);
-
-					// Обновляем профиль
-					await updateUserProfile(
-						existingUser.id,
-						userInfo.name,
-						userInfo.picture,
 					);
 
 					// Сохраняем полный Google профиль
@@ -193,11 +205,11 @@ export default defineEventHandler(async (event) => {
 
 					user = existingUser;
 				} else {
-					// Новый пользователь - создаем
+					// Новый пользователь - создаем (name и photo_url не ставим — берутся из профиля провайдера)
 					const userId = await createOAuthUser(
 						userInfo.email,
-						userInfo.name,
-						userInfo.picture,
+						null,
+						null,
 						'google',
 						userInfo.id,
 						tokenResponse.access_token,
@@ -248,6 +260,9 @@ export default defineEventHandler(async (event) => {
 		return sendRedirect(event, '/profile');
 	} catch (err) {
 		logError(authLogger, 'OAuth callback failed', err);
-		return sendRedirect(event, `/login?error=${ERROR_CODES.OAUTH_CALLBACK_FAILED}`);
+		return sendRedirect(
+			event,
+			`/login?error=${ERROR_CODES.OAUTH_CALLBACK_FAILED}`,
+		);
 	}
 });

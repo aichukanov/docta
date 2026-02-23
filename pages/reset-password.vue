@@ -2,12 +2,13 @@
 import { Lock } from '@element-plus/icons-vue';
 import resetPasswordMessages from '~/i18n/reset-password';
 import { ERROR_CODES } from '~/server/utils/api-codes';
+import { getRegionalQuery } from '~/common/url-utils';
 
 definePageMeta({
 	layout: 'minimal',
 });
 
-const { t } = useI18n({
+const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: resetPasswordMessages.messages,
 });

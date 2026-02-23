@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { getRegionalQuery } from '~/common/url-utils';
+
 // Проверка авторизации
 definePageMeta({
 	middleware: 'admin-auth',
 });
+
+const { locale } = useI18n();
 
 // Получаем данные текущего пользователя
 const { data: authData } = await useFetch('/api/admin/auth/me');

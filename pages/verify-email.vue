@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import verifyEmailMessages from '~/i18n/verify-email';
 import { ERROR_CODES } from '~/server/utils/api-codes';
+import { getRegionalQuery } from '~/common/url-utils';
 
 definePageMeta({
 	layout: false,
 });
 
-const { t } = useI18n({
+const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: verifyEmailMessages.messages,
 });

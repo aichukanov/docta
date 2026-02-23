@@ -188,7 +188,6 @@ const emit = defineEmits<{
 	flex-direction: column;
 	gap: 6px;
 	padding: var(--spacing-md);
-	background: var(--color-bg-secondary);
 	border-radius: var(--border-radius-md);
 	margin-bottom: var(--spacing-md);
 }

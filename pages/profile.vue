@@ -152,34 +152,36 @@ function openEditEmail() {
 			</el-tabs>
 		</div>
 
-		<!-- Edit Name Dialog -->
-		<el-dialog
-			v-model="showEditNameDialog"
-			:title="t('editNameTitle')"
-			width="460px"
-			class="profile-dialog"
-			destroy-on-close
-		>
-			<ProfileEditNameDialog
-				:initial-name="userName"
-				@updated="showEditNameDialog = false"
-				@cancel="showEditNameDialog = false"
-			/>
-		</el-dialog>
+		<ClientOnly>
+			<!-- Edit Name Dialog -->
+			<el-dialog
+				v-model="showEditNameDialog"
+				:title="t('editNameTitle')"
+				width="460px"
+				class="profile-dialog"
+				destroy-on-close
+			>
+				<ProfileEditNameDialog
+					:initial-name="userName"
+					@updated="showEditNameDialog = false"
+					@cancel="showEditNameDialog = false"
+				/>
+			</el-dialog>
 
-		<!-- Edit Email Dialog -->
-		<el-dialog
-			v-model="showEditEmailDialog"
-			:title="t('editEmailTitle')"
-			width="460px"
-			class="profile-dialog"
-			destroy-on-close
-		>
-			<ProfileEditEmailDialog
-				@updated="showEditEmailDialog = false"
-				@cancel="showEditEmailDialog = false"
-			/>
-		</el-dialog>
+			<!-- Edit Email Dialog -->
+			<el-dialog
+				v-model="showEditEmailDialog"
+				:title="t('editEmailTitle')"
+				width="460px"
+				class="profile-dialog"
+				destroy-on-close
+			>
+				<ProfileEditEmailDialog
+					@updated="showEditEmailDialog = false"
+					@cancel="showEditEmailDialog = false"
+				/>
+			</el-dialog>
+		</ClientOnly>
 	</div>
 </template>
 

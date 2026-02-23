@@ -3,7 +3,6 @@ import {
 	findUserByOAuth,
 	createOAuthUser,
 	updateOAuthTokens,
-	updateUserProfile,
 	findUserByEmail,
 	linkOAuthAccount,
 } from '~/server/utils/oauth';
@@ -100,7 +99,10 @@ export default defineEventHandler(async (event) => {
 		});
 
 		if (!userInfo.email) {
-			return sendRedirect(event, `/login?error=${ERROR_CODES.EMAIL_NOT_PROVIDED}`);
+			return sendRedirect(
+				event,
+				`/login?error=${ERROR_CODES.EMAIL_NOT_PROVIDED}`,
+			);
 		}
 
 		// Получаем URL фото
@@ -114,15 +116,14 @@ export default defineEventHandler(async (event) => {
 			: null;
 
 		if (user) {
-			// Пользователь существует - обновляем токены и профиль
+			// Пользователь существует - обновляем токены и профиль провайдера
 			await updateOAuthTokens(
 				'facebook',
 				userInfo.id,
 				tokenResponse.access_token,
-				null, // Facebook не возвращает refresh_token
+				null,
 				expiresAt,
 			);
-			await updateUserProfile(user.id, userInfo.name, photoUrl);
 
 			// Сохраняем полный Facebook профиль
 			const { getOAuthAccountId, saveFacebookProfile } = await import(
@@ -156,8 +157,29 @@ export default defineEventHandler(async (event) => {
 					expiresAt,
 				);
 
-				// Обновляем профиль
-				await updateUserProfile(currentUserId, userInfo.name, photoUrl);
+				// Сохраняем полный Facebook профиль
+				const {
+					getOAuthAccountId,
+					saveFacebookProfile,
+					setPrimaryOAuthProvider,
+				} = await import('~/server/utils/oauth-profiles');
+				const oauthAccountId = await getOAuthAccountId(
+					currentUserId,
+					'facebook',
+				);
+				if (oauthAccountId) {
+					await saveFacebookProfile(oauthAccountId, userInfo);
+					// Если primary ещё не задан — назначаем Facebook
+					const userRow = await import('~/server/common/db-mysql').then((m) =>
+						m.executeQuery(
+							'SELECT primary_oauth_provider FROM auth_users WHERE id = ?',
+							[currentUserId],
+						),
+					);
+					if (!(userRow[0] as any)?.primary_oauth_provider) {
+						await setPrimaryOAuthProvider(currentUserId, 'facebook');
+					}
+				}
 
 				user = { id: currentUserId };
 			} else {
@@ -174,9 +196,6 @@ export default defineEventHandler(async (event) => {
 						null,
 						expiresAt,
 					);
-
-					// Обновляем профиль
-					await updateUserProfile(existingUser.id, userInfo.name, photoUrl);
 
 					// Сохраняем полный Facebook профиль
 					const {
@@ -196,11 +215,11 @@ export default defineEventHandler(async (event) => {
 
 					user = existingUser;
 				} else {
-					// Новый пользователь - создаем
+					// Новый пользователь - создаем (name и photo_url не ставим — берутся из профиля провайдера)
 					const userId = await createOAuthUser(
 						userInfo.email,
-						userInfo.name,
-						photoUrl,
+						null,
+						null,
 						'facebook',
 						userInfo.id,
 						tokenResponse.access_token,
@@ -251,6 +270,9 @@ export default defineEventHandler(async (event) => {
 		return sendRedirect(event, '/profile');
 	} catch (err) {
 		logError(authLogger, 'OAuth callback failed', err);
-		return sendRedirect(event, `/login?error=${ERROR_CODES.OAUTH_CALLBACK_FAILED}`);
+		return sendRedirect(
+			event,
+			`/login?error=${ERROR_CODES.OAUTH_CALLBACK_FAILED}`,
+		);
 	}
 });

@@ -62,7 +62,9 @@ function getDeviceInfo(userAgent: string): string {
 				class="stats-bar__item"
 			>
 				<span class="stats-bar__value">{{ count }}</span>
-				<span class="stats-bar__label">{{ formatLoginMethod(method as string) }}</span>
+				<span class="stats-bar__label">{{
+					formatLoginMethod(method as string)
+				}}</span>
 			</div>
 		</div>
 
@@ -103,44 +105,48 @@ function getDeviceInfo(userAgent: string): string {
 	</section>
 
 	<!-- Full History Dialog -->
-	<el-dialog
-		v-model="showLoginHistoryDialog"
-		:title="t('loginHistory')"
-		width="640px"
-		class="profile-dialog"
-	>
-		<div
-			v-if="loginHistory?.history && loginHistory.history.length > 0"
-			class="full-history"
+	<ClientOnly>
+		<el-dialog
+			v-model="showLoginHistoryDialog"
+			:title="t('loginHistory')"
+			width="640px"
+			class="profile-dialog"
 		>
 			<div
-				v-for="entry in loginHistory.history"
-				:key="entry.id"
-				class="full-history__item"
+				v-if="loginHistory?.history && loginHistory.history.length > 0"
+				class="full-history"
 			>
-				<div class="full-history__header">
-					<span class="full-history__method">{{
-						formatLoginMethod(entry.login_method)
-					}}</span>
-					<span class="full-history__time">{{
-						new Date(entry.created_at).toLocaleString()
-					}}</span>
+				<div
+					v-for="entry in loginHistory.history"
+					:key="entry.id"
+					class="full-history__item"
+				>
+					<div class="full-history__header">
+						<span class="full-history__method">{{
+							formatLoginMethod(entry.login_method)
+						}}</span>
+						<span class="full-history__time">{{
+							new Date(entry.created_at).toLocaleString()
+						}}</span>
+					</div>
+					<div class="full-history__details">
+						<span class="full-history__device">{{
+							getDeviceInfo(entry.user_agent)
+						}}</span>
+						<span v-if="entry.ip_address" class="full-history__ip">{{
+							entry.ip_address
+						}}</span>
+					</div>
+					<div v-if="entry.user_agent" class="full-history__ua">{{
+						entry.user_agent
+					}}</div>
 				</div>
-				<div class="full-history__details">
-					<span class="full-history__device">{{ getDeviceInfo(entry.user_agent) }}</span>
-					<span v-if="entry.ip_address" class="full-history__ip">{{
-						entry.ip_address
-					}}</span>
-				</div>
-				<div v-if="entry.user_agent" class="full-history__ua">{{
-					entry.user_agent
-				}}</div>
 			</div>
-		</div>
-		<div v-else class="profile-empty">
-			<p>{{ t('loginHistoryEmpty') }}</p>
-		</div>
-	</el-dialog>
+			<div v-else class="profile-empty">
+				<p>{{ t('loginHistoryEmpty') }}</p>
+			</div>
+		</el-dialog>
+	</ClientOnly>
 </template>
 
 <style scoped>

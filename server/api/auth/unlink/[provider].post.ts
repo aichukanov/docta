@@ -42,6 +42,28 @@ export default defineEventHandler(async (event) => {
 		[user.id, provider],
 	);
 
+	// Если отвязанный провайдер был основным — назначаем нового по приоритету
+	const userRow = await executeQuery(
+		'SELECT primary_oauth_provider FROM auth_users WHERE id = ?',
+		[user.id],
+	);
+	if ((userRow[0] as any)?.primary_oauth_provider === provider) {
+		const remaining = await executeQuery<{ provider: string }>(
+			'SELECT provider FROM auth_oauth_accounts WHERE user_id = ?',
+			[user.id],
+		);
+		const remainingProviders = remaining.map((r: any) => r.provider);
+
+		const priority = ['google', 'facebook', 'telegram'];
+		const newPrimary =
+			priority.find((p) => remainingProviders.includes(p)) ?? null;
+
+		await executeQuery(
+			'UPDATE auth_users SET primary_oauth_provider = ? WHERE id = ?',
+			[newPrimary, user.id],
+		);
+	}
+
 	return {
 		success: true,
 		message: `${provider} account unlinked successfully`,

@@ -43,7 +43,7 @@ async function unlinkAccount(provider: string) {
 	try {
 		isLoading.value = true;
 		await $fetch(`/api/auth/unlink/${provider}`, { method: 'POST' });
-		await refreshAccounts();
+		await Promise.all([refreshAccounts(), refreshOAuthProfiles()]);
 		ElMessage.success(t('accountUnlinked'));
 	} catch {
 		ElMessage.error(t('errorUnlinkAccount'));
@@ -118,7 +118,7 @@ function linkFacebook() {
 						  ]
 						: []
 				"
-				:verified-email="googleProfile?.verified_email"
+				:verified-email="!!googleProfile?.verified_email"
 				:is-loading="isLoading"
 				@unlink="unlinkAccount('google')"
 				@set-primary="setPrimaryProvider('google')"

@@ -1,15 +1,12 @@
 import { getOAuthConfig } from '~/server/utils/oauth-config';
 import {
 	verifyTelegramAuth,
-	getTelegramFullName,
 	type TelegramAuthData,
 } from '~/server/utils/telegram-auth';
 import {
 	findUserByOAuth,
 	createOAuthUser,
-	findUserByEmail,
 	linkOAuthAccount,
-	updateUserProfile,
 } from '~/server/utils/oauth';
 import {
 	getOAuthAccountId,
@@ -72,26 +69,18 @@ export default defineEventHandler(async (event) => {
 
 		if (!isValid) {
 			authLogger.error('Invalid Telegram authentication');
-		setCookie(event, 'auth_error', ERROR_CODES.TELEGRAM_VERIFICATION_FAILED, {
-			maxAge: 10,
-			path: '/',
-		});
+			setCookie(event, 'auth_error', ERROR_CODES.TELEGRAM_VERIFICATION_FAILED, {
+				maxAge: 10,
+				path: '/',
+			});
 			return sendRedirect(event, '/login');
 		}
 
 		// Проверяем существует ли пользователь с этим Telegram ID
 		let user = await findUserByOAuth('telegram', String(telegramData.id));
 
-		const fullName = getTelegramFullName(telegramData);
-		const photoUrl = telegramData.photo_url || null;
-
-		const username = telegramData.username || null;
-
 		if (user) {
-			// Пользователь уже существует - обновляем его профиль
-			await updateUserProfile(user.id, fullName, photoUrl, username);
-
-			// Сохраняем полный Telegram профиль
+			// Пользователь уже существует - обновляем профиль провайдера
 			const oauthAccountId = await getOAuthAccountId(user.id, 'telegram');
 			if (oauthAccountId) {
 				await saveTelegramProfile(oauthAccountId, {
@@ -155,14 +144,14 @@ export default defineEventHandler(async (event) => {
 
 				user = { id: currentUserId };
 			} else {
-				// Новый пользователь - создаем
+				// Новый пользователь - создаем (name и photo_url не ставим — берутся из профиля провайдера)
 				// Telegram не предоставляет email, используем telegram_id@telegram
 				const email = `telegram_${telegramData.id}@telegram.user`;
 
 				const userId = await createOAuthUser(
 					email,
-					fullName,
-					photoUrl,
+					null,
+					null,
 					'telegram',
 					String(telegramData.id),
 					null,
@@ -183,13 +172,7 @@ export default defineEventHandler(async (event) => {
 					await setPrimaryOAuthProvider(userId, 'telegram');
 				}
 
-				user = {
-					id: userId,
-					email,
-					name: fullName || email,
-					photo_url: photoUrl,
-					is_admin: false,
-				};
+				user = { id: userId };
 			}
 		}
 

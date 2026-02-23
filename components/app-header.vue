@@ -155,10 +155,7 @@ const userDisplayName = computed(() => {
 								class="app-header__login-btn"
 								:to="loginPageLink"
 							>
-								<IconUser
-									class="app-header__login-icon"
-									:size="16"
-								/>
+								<IconUser class="app-header__login-icon" :size="16" />
 								<span>{{ t('Login') }}</span>
 							</NuxtLink>
 						</template>

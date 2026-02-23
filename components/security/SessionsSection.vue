@@ -149,11 +149,13 @@ async function logoutAllOtherSessions() {
 		</div>
 	</section>
 
-	<SecurityChangePasswordDialog
-		v-model="showPasswordDialog"
-		:user-has-password="userHasPassword"
-		:user-email="currentUser?.email"
-	/>
+	<ClientOnly>
+		<SecurityChangePasswordDialog
+			v-model="showPasswordDialog"
+			:user-has-password="userHasPassword"
+			:user-email="currentUser?.email"
+		/>
+	</ClientOnly>
 </template>
 
 <style scoped>

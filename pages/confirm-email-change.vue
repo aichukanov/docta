@@ -2,12 +2,13 @@
 import { Loading } from '@element-plus/icons-vue';
 import confirmEmailChangeMessages from '~/i18n/confirm-email-change';
 import { ERROR_CODES } from '~/server/utils/api-codes';
+import { getRegionalQuery } from '~/common/url-utils';
 
 definePageMeta({
 	layout: 'minimal',
 });
 
-const { t } = useI18n({
+const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: confirmEmailChangeMessages.messages,
 });

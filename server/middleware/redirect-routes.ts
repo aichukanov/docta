@@ -4,7 +4,7 @@ import { checkDoctorRedirect } from '../common/redirect/doctor-redirects';
 import { checkMedicalServiceRedirect } from '../common/redirect/medical-service-redirects';
 import { sendSitemap } from '../common/sitemap/utils';
 import { generateSitemapPage } from '../common/sitemap/sitemap';
-import { requireAdmin } from '../common/auth';
+import { requireAdmin } from '~/server/common/auth';
 
 export default defineEventHandler(async (event) => {
 	const { pathname, searchParams } = getRequestURL(event);

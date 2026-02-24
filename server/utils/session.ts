@@ -83,7 +83,6 @@ export async function getUserFromSession(
 				END,
 				u.email
 			) AS name,
-			u.username,
 			COALESCE(
 				NULLIF(u.photo_url, ''),
 				CASE u.primary_oauth_provider
@@ -92,7 +91,9 @@ export async function getUserFromSession(
 					WHEN 'facebook' THEN fp.picture_url
 				END
 			) AS photo_url,
-			u.is_admin
+			u.is_admin,
+			u.preferred_locale,
+			u.email_verified
 		FROM auth_users u
 		JOIN auth_sessions s ON u.id = s.user_id
 		LEFT JOIN auth_oauth_accounts goa ON u.id = goa.user_id AND goa.provider = 'google'

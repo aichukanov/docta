@@ -6,7 +6,8 @@ definePageMeta({
 	layout: 'default',
 });
 
-const { currentUser, isAdmin, logout } = useAuth();
+const userStore = useUserStore();
+const { user, isAdmin, logout } = storeToRefs(userStore);
 const activeTab = ref('basic');
 
 const { t } = useI18n({
@@ -31,8 +32,8 @@ async function handleLogout() {
 }
 
 function openEditName() {
-	const name = currentUser.value?.name || '';
-	userName.value = name === currentUser.value?.email ? '' : name;
+	const name = user.value?.name || '';
+	userName.value = name === user.value?.email ? '' : name;
 	showEditNameDialog.value = true;
 }
 
@@ -49,8 +50,8 @@ function openEditEmail() {
 				<div class="profile-hero__content">
 					<div class="profile-hero__avatar-wrap">
 						<DoctorAvatar
-							:name="currentUser?.name ?? ''"
-							:photo-url="currentUser?.photo_url"
+							:name="user?.name ?? ''"
+							:photo-url="user?.photo_url"
 							:size="88"
 						/>
 						<span
@@ -68,7 +69,7 @@ function openEditEmail() {
 
 					<div class="profile-hero__info">
 						<div class="profile-hero__name-row">
-							<h1 class="profile-hero__name">{{ currentUser?.name }}</h1>
+							<h1 class="profile-hero__name">{{ user?.name }}</h1>
 							<button
 								class="profile-hero__edit-btn"
 								:title="t('editName')"
@@ -77,11 +78,11 @@ function openEditEmail() {
 								<IconEdit :size="16" />
 							</button>
 						</div>
-						<p v-if="currentUser?.username" class="profile-hero__username">
-							@{{ currentUser.username }}
+						<p v-if="user?.username" class="profile-hero__username">
+							@{{ user.username }}
 						</p>
 						<div class="profile-hero__email-row">
-							<span class="profile-hero__email">{{ currentUser?.email }}</span>
+							<span class="profile-hero__email">{{ user?.email }}</span>
 							<button
 								class="profile-hero__edit-btn"
 								:title="t('editEmail')"

@@ -6,6 +6,8 @@ import { executeQuery } from '~/server/common/db-mysql';
 import type { H3Event } from 'h3';
 import { getHeader } from 'h3';
 
+// todo: проверить, насколько это нужно, нельзя ли оперировать одним объектом пользователя
+
 /**
  * Получить предпочитаемую локаль пользователя из БД
  */
@@ -115,7 +117,10 @@ export function getLocaleFromRequest(
 	explicitLocale: string | undefined,
 	event?: H3Event,
 ): Language {
-	if (explicitLocale && Object.values(Language).includes(explicitLocale as Language)) {
+	if (
+		explicitLocale &&
+		Object.values(Language).includes(explicitLocale as Language)
+	) {
 		return explicitLocale as Language;
 	}
 

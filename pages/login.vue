@@ -12,51 +12,20 @@ const { t, locale } = useI18n({
 	messages: loginMessages.messages,
 });
 
-const regionalQuery = computed(() => getRegionalQuery(locale.value));
-
-const {
-	isAuthenticated,
-	currentUser,
-	fetchUser,
-	logout,
-	loginWithEmail,
-	register,
-} = useAuth();
-
-// Проверяем ошибки OAuth
+const userStore = useUserStore();
+const { user, isUserLoading, fetchUser, logout, loginWithEmail, register } =
+	storeToRefs(userStore);
 const route = useRoute();
 const router = useRouter();
 const authError = ref<ERROR_CODES | null>(null);
 
-// Режимы: 'login' | 'register'
 const authMode = ref<'login' | 'register'>('login');
 
 const isLoading = ref(false);
 const formError = ref<ERROR_CODES | null>(null);
 
-// При монтировании проверяем авторизацию и ошибки
-onMounted(async () => {
-	await fetchUser();
+const regionalQuery = computed(() => getRegionalQuery(locale.value));
 
-	if (isAuthenticated.value) {
-		const redirectTo = sessionStorage.getItem('auth_redirect');
-		if (redirectTo && redirectTo !== '/login') {
-			sessionStorage.removeItem('auth_redirect');
-			await router.push(redirectTo);
-		} else {
-			await router.push({ path: '/profile', query: regionalQuery.value });
-		}
-		return;
-	}
-
-	const errorCookie = useCookie('auth_error');
-	if (errorCookie.value) {
-		authError.value = errorCookie.value as ERROR_CODES;
-		errorCookie.value = null;
-	}
-});
-
-// Ошибка OAuth: из cookie или URL-параметра. Локализацию делает ApiErrorAlert.
 const oauthError = computed(() => {
 	return authError.value || (route.query.error as ERROR_CODES) || null;
 });
@@ -136,13 +105,34 @@ function switchMode() {
 	authMode.value = authMode.value === 'login' ? 'register' : 'login';
 	formError.value = null;
 }
+
+onMounted(async () => {
+	const user = await fetchUser();
+
+	if (user) {
+		const redirectTo = sessionStorage.getItem('auth_redirect');
+		if (redirectTo && redirectTo !== '/login') {
+			sessionStorage.removeItem('auth_redirect');
+			await router.push(redirectTo);
+		} else {
+			await router.push({ path: '/profile', query: regionalQuery.value });
+		}
+		return;
+	}
+
+	const errorCookie = useCookie('auth_error');
+	if (errorCookie.value) {
+		authError.value = errorCookie.value as ERROR_CODES;
+		errorCookie.value = null;
+	}
+});
 </script>
 
 <template>
 	<div>
 		<LoginUserInfoCard
-			v-if="isAuthenticated && currentUser"
-			:user="currentUser"
+			v-if="user"
+			:user="user"
 			:regional-query="regionalQuery"
 			@logout="handleLogout"
 		/>

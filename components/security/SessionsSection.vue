@@ -7,7 +7,8 @@ const { t } = useI18n({
 });
 const { d } = useI18n();
 
-const { currentUser } = useAuth();
+const userStore = useUserStore();
+const { user } = storeToRefs(userStore);
 const { data: oauthAccounts } = await useFetch('/api/auth/accounts');
 const { data: sessions, refresh: refreshSessions } = await useFetch(
 	'/api/auth/sessions',
@@ -153,7 +154,7 @@ async function logoutAllOtherSessions() {
 		<SecurityChangePasswordDialog
 			v-model="showPasswordDialog"
 			:user-has-password="userHasPassword"
-			:user-email="currentUser?.email"
+			:user-email="user?.email"
 		/>
 	</ClientOnly>
 </template>

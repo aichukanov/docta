@@ -53,10 +53,9 @@ export default defineNuxtConfig({
 
 	runtimeConfig: {
 		public: {
+			// todo: перенести process.env -> nuxt.config.ts
 			mixpanelToken: process.env.MIXPANEL_TOKEN,
 			cloudflareToken: process.env.CLOUDFLARE_TOKEN,
-			telegramBotUsername: process.env.TELEGRAM_BOT_USERNAME,
-			telegramBotId: process.env.TELEGRAM_BOT_TOKEN?.split(':')[0] || '',
 			connection: {
 				host: process.env.DB_HOST,
 				user: process.env.DB_USER,

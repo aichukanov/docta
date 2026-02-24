@@ -32,7 +32,7 @@ const sectionLink = computed(() => ({
 				<NuxtLink :to="sectionLink" class="section-title-link">
 					<h2 class="section-title">{{ title }}</h2>
 				</NuxtLink>
-				<el-badge :value="totalCount" type="primary" class="section-badge" />
+				<el-badge :value="totalCount" type="primary" />
 			</div>
 
 			<div class="section-body">

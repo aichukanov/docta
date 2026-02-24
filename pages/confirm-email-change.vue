@@ -15,6 +15,7 @@ const { t, locale } = useI18n({
 
 const route = useRoute();
 const router = useRouter();
+const userStore = useUserStore();
 
 const token = ref((route.query.token as string) || '');
 const isLoading = ref(true);
@@ -32,9 +33,11 @@ onMounted(async () => {
 		await $fetch(`/api/auth/confirm-email-change?token=${token.value}`);
 		success.value = true;
 
+		userStore.fetchUser(force);
+
 		// Через 3 секунды редирект
 		setTimeout(() => {
-			router.push('/profile');
+			router.push({ name: 'profile', query: getRegionalQuery(locale.value) });
 		}, 3000);
 	} catch (err: any) {
 		console.error('Email change confirmation error:', err);

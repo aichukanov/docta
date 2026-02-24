@@ -7,35 +7,35 @@ const emit = defineEmits<{ updated: []; cancel: [] }>();
 const { t } = useI18n({
 	useScope: 'local',
 	messages: {
-		en: {
+		'en': {
 			nameLabel: 'Name',
 			namePlaceholder: 'Enter new name',
 			cancel: 'Cancel',
 			save: 'Save',
 			nameUpdated: 'Name updated successfully',
 		},
-		ru: {
+		'ru': {
 			nameLabel: 'Имя',
 			namePlaceholder: 'Введите новое имя',
 			cancel: 'Отмена',
 			save: 'Сохранить',
 			nameUpdated: 'Имя успешно обновлено',
 		},
-		sr: {
+		'sr': {
 			nameLabel: 'Ime',
 			namePlaceholder: 'Unesite novo ime',
 			cancel: 'Otkaži',
 			save: 'Sačuvaj',
 			nameUpdated: 'Ime uspešno ažurirano',
 		},
-		de: {
+		'de': {
 			nameLabel: 'Name',
 			namePlaceholder: 'Neuen Namen eingeben',
 			cancel: 'Abbrechen',
 			save: 'Speichern',
 			nameUpdated: 'Name erfolgreich aktualisiert',
 		},
-		tr: {
+		'tr': {
 			nameLabel: 'İsim',
 			namePlaceholder: 'Yeni isim girin',
 			cancel: 'İptal',
@@ -52,7 +52,7 @@ const { t } = useI18n({
 	},
 });
 
-const { fetchUser } = useAuth();
+const { fetchUser } = useUserStore();
 
 const isLoading = ref(false);
 const error = ref<ERROR_CODES | null>(null);
@@ -71,11 +71,12 @@ async function handleSubmit() {
 			body: { name: name.value },
 		});
 		ElMessage.success(t('nameUpdated'));
-		await fetchUser();
+		await fetchUser(true);
 		emit('updated');
 	} catch (err: any) {
 		error.value =
-			(err.data?.statusMessage as ERROR_CODES) || ERROR_CODES.ERROR_UPDATING_NAME;
+			(err.data?.statusMessage as ERROR_CODES) ||
+			ERROR_CODES.ERROR_UPDATING_NAME;
 	} finally {
 		isLoading.value = false;
 	}

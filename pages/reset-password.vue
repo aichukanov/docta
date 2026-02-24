@@ -55,7 +55,7 @@ async function handleSubmit() {
 
 		// Через 3 секунды редирект на страницу входа
 		setTimeout(() => {
-			router.push('/login');
+			router.push(loginPageLink.value);
 		}, 3000);
 	} catch (err: any) {
 		console.error('Reset password error:', err);

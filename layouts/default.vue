@@ -285,6 +285,17 @@ watch(
 </i18n>
 
 <style lang="less">
+:root {
+	/* === СОВМЕСТИМОСТЬ С ELEMENT PLUS === */
+	--el-color-primary: var(--color-primary);
+	--el-color-primary-light-3: #6366f1;
+	--el-color-primary-light-5: #818cf8;
+	--el-color-primary-light-7: #a5b4fc;
+	--el-color-primary-light-8: #c7d2fe;
+	--el-color-primary-light-9: #e0e7ff;
+	--el-color-primary-dark-2: var(--color-primary-dark);
+}
+
 html,
 body {
 	margin: 0;

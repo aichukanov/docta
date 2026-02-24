@@ -16,7 +16,6 @@ const router = useRouter();
 const route = useRoute();
 const schemaOrgStore = useSchemaOrgStore();
 
-
 // Build JSON-LD from schemas
 const buildJsonLd = (schemas: SchemaOrg[]) => {
 	if (schemas.length === 0) {
@@ -133,6 +132,9 @@ useSeoMeta({
 	ogImage: OG_IMAGE,
 	twitterCard: 'summary',
 });
+
+const { fetchUser } = useUserStore();
+fetchUser();
 </script>
 
 <template>

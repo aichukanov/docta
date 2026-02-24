@@ -3,7 +3,8 @@ import { getRegionalQuery } from '~/common/url-utils';
 
 const { t, locale } = useI18n();
 const route = useRoute();
-const { isAuthenticated, currentUser, isLoading } = useAuth();
+const userStore = useUserStore();
+const { user, isUserLoading } = storeToRefs(userStore);
 
 const indexPageLink = computed(() => ({
 	name: 'index',
@@ -41,7 +42,7 @@ const articlesPageLink = computed(() => ({
 }));
 
 const profilePageLink = computed(() => ({
-	path: '/profile',
+	name: 'profile',
 	query: getRegionalQuery(locale.value),
 }));
 
@@ -54,13 +55,10 @@ const isActiveSection = (section: string) => {
 	return route.path.startsWith(`/${section}`);
 };
 
-// Аватар пользователя
-
 const userDisplayName = computed(() => {
-	const user = currentUser.value;
-	if (!user) return '';
-	if (user.name) return user.name;
-	if (user.email) return user.email.split('@')[0];
+	if (!user.value) return '';
+	if (user.value.name) return user.value.name;
+	if (user.value.email) return user.value.email.split('@')[0];
 	return '';
 });
 </script>
@@ -133,17 +131,17 @@ const userDisplayName = computed(() => {
 
 				<div class="app-header__actions">
 					<ClientOnly>
-						<template v-if="!isLoading">
+						<template v-if="!isUserLoading">
 							<!-- Залогиненный пользователь -->
 							<NuxtLink
-								v-if="isAuthenticated && currentUser"
+								v-if="user"
 								class="app-header__user"
 								:to="profilePageLink"
 								:aria-label="t('GoToProfile')"
 							>
 								<DoctorAvatar
 									:name="userDisplayName"
-									:photo-url="currentUser?.photo_url"
+									:photo-url="user?.photo_url"
 									:size="32"
 								/>
 								<span class="app-header__user-name">{{ userDisplayName }}</span>

@@ -1,9 +1,17 @@
 export default defineNuxtRouteMiddleware(async (to) => {
-	const { requireAdmin } = useAuth();
+	const { fetchUser } = useUserStore();
 
-	const redirectTo = await requireAdmin(to);
+	const user = await fetchUser();
 
-	if (redirectTo) {
-		return navigateTo(redirectTo);
+	if (!user?.is_admin) {
+		const { fullPath, query } = to;
+		if (import.meta.client) {
+			sessionStorage.setItem('auth_redirect', fullPath);
+		}
+
+		return navigateTo({
+			name: 'login',
+			query: getRegionalQuery(query.lang as string),
+		});
 	}
 });

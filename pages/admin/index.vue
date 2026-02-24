@@ -7,16 +7,14 @@ definePageMeta({
 });
 
 const { locale } = useI18n();
-
-// Получаем данные текущего пользователя
-const { data: authData } = await useFetch('/api/admin/auth/me');
-const currentUser = computed(() => authData.value?.user);
+const userStore = useUserStore();
+const { user } = storeToRefs(userStore);
 
 async function handleLogout() {
 	try {
-		await $fetch('/api/admin/auth/logout', { method: 'POST' });
+		await $fetch('/api/auth/logout', { method: 'POST' });
 		// Перенаправляем на страницу входа
-		navigateTo({ name: 'admin-login', query: getRegionalQuery(locale.value) });
+		navigateTo({ name: 'login', query: getRegionalQuery(locale.value) });
 	} catch (error) {
 		console.error('Logout error:', error);
 	}
@@ -188,9 +186,7 @@ const updateServices = async () => {
 		<div class="admin-header">
 			<h1>Админ-панель</h1>
 			<div class="admin-user-info">
-				<span v-if="currentUser" class="user-email">{{
-					currentUser.email
-				}}</span>
+				<span v-if="user" class="user-email">{{ user.email }}</span>
 				<el-button type="danger" size="small" @click="handleLogout">
 					Выйти
 				</el-button>

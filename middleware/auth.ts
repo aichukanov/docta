@@ -1,9 +1,18 @@
+import { getRegionalQuery } from '~/common/url-utils';
+
 export default defineNuxtRouteMiddleware(async (to) => {
-	const { requireAuth } = useAuth();
+	const { fetchUser } = useUserStore();
+	const user = await fetchUser();
 
-	const redirectTo = await requireAuth(to);
+	if (!user) {
+		const { fullPath, query } = to;
+		if (import.meta.client) {
+			sessionStorage.setItem('auth_redirect', fullPath);
+		}
 
-	if (redirectTo) {
-		return navigateTo(redirectTo);
+		return navigateTo({
+			name: 'login',
+			query: getRegionalQuery(query.lang as string),
+		});
 	}
 });

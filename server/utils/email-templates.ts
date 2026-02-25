@@ -110,7 +110,7 @@ const passwordResetTemplates: Record<Language, EmailTemplate> = {
 const emailVerificationTemplates: Record<Language, EmailTemplate> = {
 	[Language.SR]: {
 		subject: 'Potvrdite email na docta.me',
-		heading: 'Dobrodošli u docta.me! 👋',
+		heading: 'Dobrodošli u zajednicu docta.me! 👋',
 		greeting: (name) => `Zdravo, ${name}!`,
 		content: [
 			'Hvala vam što ste se registrovali na docta.me. Da biste završili registraciju, potvrdite svoju email adresu.',
@@ -124,7 +124,7 @@ const emailVerificationTemplates: Record<Language, EmailTemplate> = {
 	},
 	[Language.SR_CYRILLIC]: {
 		subject: 'Потврдите email на docta.me',
-		heading: 'Добродошли у docta.me! 👋',
+		heading: 'Добродошли у заједницу docta.me! 👋',
 		greeting: (name) => `Здраво, ${name}!`,
 		content: [
 			'Хвала вам што сте се регистровали на docta.me. Да бисте завршили регистрацију, потврдите своју email адресу.',
@@ -138,7 +138,7 @@ const emailVerificationTemplates: Record<Language, EmailTemplate> = {
 	},
 	[Language.EN]: {
 		subject: 'Verify your email on docta.me',
-		heading: 'Welcome to docta.me! 👋',
+		heading: 'Welcome to the docta.me community! 👋',
 		greeting: (name) => `Hello, ${name}!`,
 		content: [
 			'Thank you for signing up on docta.me. To complete your registration, please verify your email address.',
@@ -152,7 +152,7 @@ const emailVerificationTemplates: Record<Language, EmailTemplate> = {
 	},
 	[Language.RU]: {
 		subject: 'Подтвердите email на docta.me',
-		heading: 'Добро пожаловать в docta.me! 👋',
+		heading: 'Добро пожаловать в сообщество docta.me! 👋',
 		greeting: (name) => `Здравствуйте, ${name}!`,
 		content: [
 			'Спасибо за регистрацию на docta.me. Для завершения регистрации подтвердите свой email адрес.',
@@ -166,7 +166,7 @@ const emailVerificationTemplates: Record<Language, EmailTemplate> = {
 	},
 	[Language.DE]: {
 		subject: 'Bestätigen Sie Ihre E-Mail auf docta.me',
-		heading: 'Willkommen bei docta.me! 👋',
+		heading: 'Willkommen in der docta.me-Gemeinschaft! 👋',
 		greeting: (name) => `Hallo, ${name}!`,
 		content: [
 			'Vielen Dank für Ihre Anmeldung auf docta.me. Um Ihre Registrierung abzuschließen, bestätigen Sie bitte Ihre E-Mail-Adresse.',
@@ -180,7 +180,7 @@ const emailVerificationTemplates: Record<Language, EmailTemplate> = {
 	},
 	[Language.TR]: {
 		subject: 'docta.me üzerinde e-postanızı doğrulayın',
-		heading: "docta.me'ye Hoş Geldiniz! 👋",
+		heading: 'docta.me topluluğuna Hoş Geldiniz! 👋',
 		greeting: (name) => `Merhaba, ${name}!`,
 		content: [
 			"docta.me'ye kaydolduğunuz için teşekkür ederiz. Kaydınızı tamamlamak için lütfen e-posta adresinizi doğrulayın.",
@@ -422,9 +422,10 @@ function generateEmailHTML(
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
+    .header { background: #667eea; color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
+    .header a { color: white !important; text-decoration: none; }
     .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 8px 8px; }
-    .button { display: inline-block; background: #667eea; color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; margin: 20px 0; }
+    .button { display: inline-block; background: #667eea; color: white !important; padding: 12px 30px; text-decoration: none; border-radius: 6px; margin: 20px 0; }
     .button-danger { background: #dc3545; }
     .info-box { background: white; padding: 15px; border-radius: 6px; margin: 15px 0; }
     .info-row { margin: 8px 0; }
@@ -434,8 +435,8 @@ function generateEmailHTML(
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <h1>${heading}</h1>
+    <div class="header" style="background: #667eea; color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
+      <h1 style="color: white; margin: 0;">${heading.replace(/docta\.me/g, '<a href="https://docta.me" style="color: white !important; text-decoration: none;">docta.me</a>')}</h1>
     </div>
     <div class="content">
       ${contentHtml}
@@ -463,10 +464,10 @@ export function getPasswordResetEmail(
     <p>${template.content[0]}</p>
     <p>${template.content[1]}</p>
     <p style="text-align: center;">
-      <a href="${resetUrl}" class="button">${template.buttonText}</a>
+      <a href="${resetUrl}" class="button" style="display: inline-block; background: #667eea; color: white !important; padding: 12px 30px; text-decoration: none; border-radius: 6px;">${template.buttonText}</a>
     </p>
     <p>${template.content[2]}</p>
-    <p style="word-break: break-all; color: #667eea;">${resetUrl}</p>
+    <p style="word-break: break-all;"><a href="${resetUrl}" style="color: #333 !important; text-decoration: underline;">${resetUrl}</a></p>
     <p>${template.content[3]}</p>
     <p>${template.content[4]}</p>
   `;
@@ -504,12 +505,12 @@ export function getEmailVerificationEmail(
 				if (idx === 2) {
 					// Line with URL
 					return `<p>${line}</p>
-      <p style="word-break: break-all; color: #667eea;">${verificationUrl}</p>`;
+      <p style="word-break: break-all;"><a href="${verificationUrl}" style="color: #333 !important; text-decoration: underline;">${verificationUrl}</a></p>`;
 				}
 				if (idx === 1) {
 					// Button placement
 					return `<p style="text-align: center;">
-        <a href="${verificationUrl}" class="button">${template.buttonText}</a>
+        <a href="${verificationUrl}" class="button" style="display: inline-block; background: #667eea; color: white !important; padding: 12px 30px; text-decoration: none; border-radius: 6px;">${template.buttonText}</a>
       </p>`;
 				}
 				if (line === '') return '';
@@ -576,7 +577,7 @@ export function getLoginNotificationEmail(
     <p>${template.wasYou}</p>
     <p>${template.wasNotYou}</p>
     <p style="text-align: center;">
-      <a href="https://docta.me/profile" class="button button-danger">${
+      <a href="https://docta.me/profile" class="button button-danger" style="display: inline-block; background: #dc3545; color: white !important; padding: 12px 30px; text-decoration: none; border-radius: 6px;">${
 				template.buttonText
 			}</a>
     </p>

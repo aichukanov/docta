@@ -23,14 +23,14 @@ export default defineEventHandler(async (event) => {
 		const result = await validateEmailVerificationToken(token);
 
 		if (!result.valid) {
-			return createErrorResponse(400, result.code, result.details);
+			return createErrorResponse(400, result.error!);
 		}
 
 		// Помечаем email как подтвержденный
-		await markEmailAsVerified(result.data!.userId, result.data!.email);
+		await markEmailAsVerified(result.userId!, result.email!);
 
 		logOperation(authLogger, 'Email verified', {
-			userId: result.data!.userId,
+			userId: result.userId,
 		});
 
 		return createSuccessResponse(SUCCESS_CODES.EMAIL_VERIFIED);

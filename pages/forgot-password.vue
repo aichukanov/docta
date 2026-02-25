@@ -12,6 +12,11 @@ const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: forgotPasswordMessages.messages,
 });
+const { t: $t } = useI18n({ useScope: 'global' });
+
+useSeoMeta({
+	title: () => t('pageTitle') + ' | ' + $t('ApplicationName'),
+});
 
 const email = ref('');
 const isLoading = ref(false);

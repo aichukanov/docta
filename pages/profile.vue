@@ -14,6 +14,13 @@ const { t } = useI18n({
 	useScope: 'local',
 	messages: profileMessages.messages,
 });
+const { t: $t } = useI18n({ useScope: 'global' });
+
+const seoTitle = computed(() => t('profileTitle') + ' | ' + $t('ApplicationName'));
+
+useSeoMeta({
+	title: () => seoTitle.value,
+});
 
 const isLoading = ref(false);
 const showEditNameDialog = ref(false);

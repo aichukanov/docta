@@ -11,6 +11,15 @@ const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: loginMessages.messages,
 });
+const { t: $t } = useI18n({ useScope: 'global' });
+
+const seoTitle = computed(
+	() => t('loginTitle') + ' | ' + $t('ApplicationName'),
+);
+
+useSeoMeta({
+	title: () => seoTitle.value,
+});
 
 const userStore = useUserStore();
 const { user, isUserLoading } = storeToRefs(userStore);

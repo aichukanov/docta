@@ -11,6 +11,11 @@ const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: verifyEmailMessages.messages,
 });
+const { t: $t } = useI18n({ useScope: 'global' });
+
+useSeoMeta({
+	title: () => t('pageTitle') + ' | ' + $t('ApplicationName'),
+});
 
 const route = useRoute();
 const router = useRouter();

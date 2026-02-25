@@ -48,11 +48,9 @@ export default defineEventHandler((event) => {
 	// а сервер фрагменты не видит
 	const botId = telegram.botToken.split(':')[0];
 	const callbackUrl = `${baseUrl}/auth/telegram-callback`;
-	const origin = baseUrlObj.origin;
 
 	const params = new URLSearchParams({
 		bot_id: botId,
-		origin,
 		embed: '0',
 		request_access: 'write',
 		return_to: callbackUrl,

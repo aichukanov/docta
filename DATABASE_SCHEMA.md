@@ -6,9 +6,16 @@ This file provides a structured reference of the MySQL database for the docta.me
 
 | Table                                   | Description                                                    |
 | :-------------------------------------- | :------------------------------------------------------------- |
-| `users`                                 | User accounts (admins with email/password, OAuth users).       |
-| `oauth_accounts`                        | OAuth provider accounts linked to users.                       |
-| `sessions`                              | User sessions with expiration tracking.                        |
+| `auth_users`                            | User accounts (admins with email/password, OAuth users).       |
+| `auth_oauth_accounts`                   | OAuth provider accounts linked to users.                       |
+| `auth_oauth_profiles_google`            | Google OAuth profile data (email, name, locale, avatar).       |
+| `auth_oauth_profiles_telegram`          | Telegram OAuth profile data (name, username, avatar).          |
+| `auth_oauth_profiles_facebook`          | Facebook OAuth profile data (name, email, avatar).             |
+| `auth_sessions`                         | User sessions with expiration tracking.                        |
+| `auth_login_history`                    | Login attempt history (IP, user agent, method, success).       |
+| `auth_email_verification_tokens`        | Tokens for email verification flow.                            |
+| `auth_password_reset_tokens`            | Tokens for password reset flow.                                |
+| `auth_email_log`                        | Log of all sent email messages.                                |
 | `cities`                                | List of cities with coordinates.                               |
 | `clinics`                               | Core clinic data, contacts, and multi-language descriptions.   |
 | `doctors`                               | Medical specialists, personal info, and professional titles.   |
@@ -40,7 +47,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 
 ## Detailed Table Definitions
 
-### `users`
+### `auth_users`
 
 - `id` (int, PK, AI)
 - `email` (varchar(255), Unique, NOT NULL): User email address.
@@ -48,15 +55,18 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `photo_url` (varchar(500)): URL to user's profile photo.
 - `password_hash` (varchar(255), NULL): Bcrypt password hash (for admins with email/password login). NULL for OAuth users.
 - `is_admin` (boolean, default FALSE): Flag indicating administrator privileges.
+- `email_verified` (boolean, default FALSE): Whether the user's email is verified.
+- `primary_oauth_provider` (varchar(50), NULL): Primary OAuth provider for display (google, telegram, NULL for email).
+- `preferred_locale` (varchar(10), NULL): Preferred language: sr, sr-cyrl, en, ru, de, tr.
 - `created_at` (timestamp)
 - `updated_at` (timestamp)
-- _Indexes_: `idx_email` (email), `idx_is_admin` (is_admin)
+- _Indexes_: `idx_email`, `idx_is_admin`, `idx_email_verified`, `idx_primary_provider`, `idx_preferred_locale`
 - _Comment_: Stores both admin users (with password_hash) and OAuth users (without password_hash).
 
-### `oauth_accounts`
+### `auth_oauth_accounts`
 
 - `id` (int, PK, AI)
-- `user_id` (int, FK -> users.id, NOT NULL): Reference to user account.
+- `user_id` (int, FK -> auth_users.id, NOT NULL): Reference to user account.
 - `provider` (varchar(50), NOT NULL): OAuth provider name (google, telegram).
 - `provider_account_id` (varchar(255), NOT NULL): User ID from OAuth provider.
 - `access_token` (text): OAuth access token (optional, encrypted).
@@ -66,18 +76,112 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `updated_at` (timestamp)
 - _Unique constraint_: (`provider`, `provider_account_id`)
 - _Indexes_: `idx_user_id` (user_id), `idx_provider` (provider, provider_account_id)
-- _Foreign Keys_: `user_id` -> `users.id` (ON DELETE CASCADE)
+- _Foreign Keys_: `user_id` -> `auth_users.id` (ON DELETE CASCADE)
 - _Comment_: Supports multiple OAuth providers per user (e.g., one user can login via both Google and Telegram).
 
-### `sessions`
+### `auth_oauth_profiles_google`
+
+- `id` (int, PK, AI)
+- `oauth_account_id` (int, FK -> auth_oauth_accounts.id, NOT NULL, Unique)
+- `google_id` (varchar(255), NOT NULL): Google User ID.
+- `email` (varchar(255), NOT NULL): Email from Google.
+- `verified_email` (boolean, default FALSE): Whether Google verified the email.
+- `name` (varchar(255)): Full name.
+- `given_name` (varchar(255)): First name.
+- `family_name` (varchar(255)): Last name.
+- `picture` (text): Avatar URL.
+- `locale` (varchar(10)): Locale (ru, en, etc.).
+- `raw_data` (json): Full Google response.
+- `created_at`, `updated_at` (timestamp)
+- _Indexes_: `idx_google_id`, `idx_email`
+- _Foreign Keys_: `oauth_account_id` -> `auth_oauth_accounts.id` (ON DELETE CASCADE)
+
+### `auth_oauth_profiles_telegram`
+
+- `id` (int, PK, AI)
+- `oauth_account_id` (int, FK -> auth_oauth_accounts.id, NOT NULL, Unique)
+- `telegram_id` (bigint, NOT NULL): Telegram User ID.
+- `first_name` (varchar(255), NOT NULL)
+- `last_name` (varchar(255))
+- `username` (varchar(255)): Username without @.
+- `photo_url` (text): Avatar URL.
+- `auth_date` (bigint): Authorization date (UNIX timestamp).
+- `raw_data` (json): Full Telegram response.
+- `created_at`, `updated_at` (timestamp)
+- _Indexes_: `idx_telegram_id`, `idx_username`
+- _Foreign Keys_: `oauth_account_id` -> `auth_oauth_accounts.id` (ON DELETE CASCADE)
+
+### `auth_oauth_profiles_facebook`
+
+- `id` (int, PK, AI)
+- `oauth_account_id` (int, FK -> auth_oauth_accounts.id, NOT NULL, Unique)
+- `facebook_id` (varchar(255), NOT NULL, Unique)
+- `name` (varchar(255), NOT NULL)
+- `email` (varchar(255))
+- `picture_url` (text): Avatar URL.
+- `raw_data` (json): Full Facebook response.
+- `created_at`, `updated_at` (timestamp)
+- _Indexes_: `idx_email`
+- _Foreign Keys_: `oauth_account_id` -> `auth_oauth_accounts.id` (ON DELETE CASCADE)
+
+### `auth_sessions`
 
 - `id` (varchar(255), PK): Session ID (UUID).
-- `user_id` (int, FK -> users.id, NOT NULL): Reference to user account.
+- `user_id` (int, FK -> auth_users.id, NOT NULL): Reference to user account.
 - `expires_at` (bigint, NOT NULL): Session expiration timestamp (UNIX).
 - `created_at` (timestamp)
 - _Indexes_: `idx_user_id` (user_id), `idx_expires_at` (expires_at)
-- _Foreign Keys_: `user_id` -> `users.id` (ON DELETE CASCADE)
+- _Foreign Keys_: `user_id` -> `auth_users.id` (ON DELETE CASCADE)
 - _Comment_: Database-based session storage. HTTPOnly cookies store session_id, actual session data is in DB.
+
+### `auth_login_history`
+
+- `id` (int, PK, AI)
+- `user_id` (int, FK -> auth_users.id, NOT NULL)
+- `ip_address` (varchar(45)): IP address (IPv4 or IPv6).
+- `user_agent` (text)
+- `location` (varchar(255)): Geolocation (city, country).
+- `login_method` (varchar(50)): Login method: email, google, telegram.
+- `success` (boolean, default TRUE)
+- `failure_reason` (varchar(255)): Reason for failure (if success=false).
+- `created_at` (timestamp)
+- _Indexes_: `idx_user_id`, `idx_created_at`, `idx_success`, `idx_user_recent` (user_id, created_at DESC)
+- _Foreign Keys_: `user_id` -> `auth_users.id` (ON DELETE CASCADE)
+
+### `auth_email_verification_tokens`
+
+- `id` (int, PK, AI)
+- `user_id` (int, FK -> auth_users.id, NOT NULL)
+- `token` (varchar(255), Unique, NOT NULL): UUID token for email verification.
+- `email` (varchar(255), NOT NULL): Email to verify.
+- `expires_at` (bigint, NOT NULL): Token expiration (UNIX timestamp).
+- `verified` (boolean, default FALSE)
+- `created_at` (timestamp)
+- _Indexes_: `idx_token`, `idx_user_id`, `idx_expires_at`
+- _Foreign Keys_: `user_id` -> `auth_users.id` (ON DELETE CASCADE)
+
+### `auth_password_reset_tokens`
+
+- `id` (int, PK, AI)
+- `user_id` (int, FK -> auth_users.id, NOT NULL)
+- `token` (varchar(255), Unique, NOT NULL): UUID token for password reset.
+- `expires_at` (bigint, NOT NULL): Token expiration (UNIX timestamp).
+- `used` (boolean, default FALSE)
+- `created_at` (timestamp)
+- _Indexes_: `idx_token`, `idx_user_id`, `idx_expires_at`
+- _Foreign Keys_: `user_id` -> `auth_users.id` (ON DELETE CASCADE)
+
+### `auth_email_log`
+
+- `id` (int, PK, AI)
+- `to_email` (varchar(255), NOT NULL): Recipient address.
+- `subject` (varchar(500), NOT NULL): Email subject.
+- `html` (mediumtext, NOT NULL): HTML body.
+- `text_body` (text): Plain text body.
+- `status` (enum: 'sent', 'failed', 'dev', default 'sent')
+- `error` (text): Error message when status=failed.
+- `created_at` (timestamp)
+- _Indexes_: `idx_to_email`, `idx_status`, `idx_created_at`
 
 ### `cities`
 
@@ -292,9 +396,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 ### `billing_paid_services`
 
 - `id` (int, PK, AI)
-- `name` (varchar(255), NOT NULL): Service name (e.g., "dofollow", "highlight", "approved").
-- `description` (text): Service description.
-- `created_at` (timestamp)
+- `name` (varchar(50), Unique, NOT NULL): Service name (e.g., "dofollow", "highlight", "approved").
 
 ### `billing_clinic_service_purchases`
 
@@ -311,7 +413,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `id` (int, PK, AI)
 - `purchase_id` (int, FK -> billing_clinic_service_purchases.id)
 - `service_id` (int, FK -> billing_paid_services.id)
-- `created_at` (timestamp)
+- _Unique constraint_: (`purchase_id`, `service_id`)
 - _Relationship_: Links specific paid services to a purchase.
 
 ## Core Implementation Logic
@@ -320,14 +422,18 @@ This file provides a structured reference of the MySQL database for the docta.me
 
    - **Admin users**: Use email + password authentication. `password_hash` is filled with bcrypt hash (cost=10), `is_admin=TRUE`.
    - **Regular users**: Use OAuth (Google, Telegram). `password_hash=NULL`, `is_admin=FALSE`.
-   - **Session management**: Database-based sessions stored in `sessions` table with expiration tracking.
+   - **Session management**: Database-based sessions stored in `auth_sessions` table with expiration tracking.
    - **Security**: HTTPOnly cookies store `session_id`, actual session data (user_id, expires_at) is in DB.
+   - **Email verification**: Tokens stored in `auth_email_verification_tokens`, email log in `auth_email_log`.
+   - **Password reset**: Tokens stored in `auth_password_reset_tokens`.
+   - **Login history**: All login attempts tracked in `auth_login_history`.
 
 2. **User Account Types**:
 
    - Admin accounts are created manually in the database (no public registration).
    - OAuth users can self-register through OAuth providers.
-   - One user can have multiple OAuth providers linked via `oauth_accounts`.
+   - One user can have multiple OAuth providers linked via `auth_oauth_accounts`.
+   - OAuth profile data is stored in provider-specific tables (`auth_oauth_profiles_google`, `auth_oauth_profiles_telegram`, `auth_oauth_profiles_facebook`), linked via `oauth_account_id`.
 
 3. **I18n Strategy**:
 

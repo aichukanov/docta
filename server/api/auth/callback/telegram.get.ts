@@ -39,6 +39,14 @@ function cleanValue(value: unknown): string | undefined {
 export default defineEventHandler(async (event) => {
 	const query = getQuery(event);
 
+	authLogger.debug('Telegram callback received query params', {
+		url: getRequestURL(event).toString(),
+		queryKeys: Object.keys(query),
+		hasId: !!query.id,
+		hasHash: !!query.hash,
+		hasFirstName: !!query.first_name,
+	});
+
 	// Получаем данные от Telegram (фильтруем "undefined" строки)
 	const telegramData: TelegramAuthData = {
 		id: Number(query.id),
@@ -52,7 +60,14 @@ export default defineEventHandler(async (event) => {
 
 	// Проверяем обязательные поля
 	if (!telegramData.id || !telegramData.first_name || !telegramData.hash) {
-		authLogger.error('Missing required Telegram data');
+		authLogger.error('Missing required Telegram data', {
+			id: telegramData.id,
+			first_name: telegramData.first_name,
+			hasHash: !!telegramData.hash,
+			rawId: query.id,
+			rawFirstName: query.first_name,
+			rawHash: query.hash ? 'present' : 'missing',
+		});
 		setCookie(event, 'auth_error', ERROR_CODES.TELEGRAM_INVALID_DATA, {
 			maxAge: 10,
 			path: '/',

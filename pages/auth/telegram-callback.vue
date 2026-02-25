@@ -31,28 +31,36 @@ const error = ref<string | null>(null);
 onMounted(() => {
 	try {
 		const hash = window.location.hash;
+		const search = window.location.search;
+
+		console.log('[TG Callback] hash:', hash);
+		console.log('[TG Callback] search:', search);
+		console.log('[TG Callback] full URL:', window.location.href);
 
 		// Пробуем извлечь из фрагмента (#tgAuthResult=base64)
 		if (hash) {
 			const match = hash.match(/tgAuthResult=([^&]+)/);
 			if (match) {
 				const decoded = JSON.parse(atob(match[1]));
+				console.log('[TG Callback] decoded tgAuthResult:', decoded);
 				redirectToCallback(decoded);
 				return;
 			}
 		}
 
 		// Пробуем из query-параметров (на случай если Telegram отдал так)
-		const params = new URLSearchParams(window.location.search);
+		const params = new URLSearchParams(search);
 		if (params.get('id') && params.get('hash')) {
 			const callbackUrl = `/api/auth/callback/telegram?${params.toString()}`;
+			console.log('[TG Callback] redirecting with query params:', callbackUrl);
 			window.location.href = callbackUrl;
 			return;
 		}
 
+		console.error('[TG Callback] No tgAuthResult in hash and no id/hash in query');
 		error.value = t('errorNoData');
 	} catch (err) {
-		console.error('Telegram callback error:', err);
+		console.error('[TG Callback] Error:', err);
 		error.value = t('errorProcessing');
 	}
 });

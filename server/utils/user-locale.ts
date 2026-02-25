@@ -38,7 +38,10 @@ async function getUserLocaleFromGoogleProfile(
 ): Promise<Language | null> {
 	try {
 		const results = await executeQuery(
-			'SELECT locale FROM auth_oauth_profiles_google WHERE user_id = ?',
+			`SELECT gp.locale
+			 FROM auth_oauth_profiles_google gp
+			 JOIN auth_oauth_accounts oa ON oa.id = gp.oauth_account_id
+			 WHERE oa.user_id = ?`,
 			[userId],
 		);
 

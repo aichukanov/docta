@@ -1,11 +1,13 @@
 <script setup lang="ts">
-function signInWithTelegram() {
-	window.location.href = '/api/auth/telegram';
-}
+const { loading, openTelegramAuth } = useTelegramAuth();
 </script>
 
 <template>
-	<OAuthIconButton provider="telegram" @click="signInWithTelegram">
+	<OAuthIconButton
+		provider="telegram"
+		:disabled="loading"
+		@click="openTelegramAuth()"
+	>
 		<IconTelegram :size="20" color="white" />
 	</OAuthIconButton>
 </template>

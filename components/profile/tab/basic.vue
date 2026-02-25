@@ -73,9 +73,10 @@ function linkGoogle() {
 	window.location.href = '/api/auth/google';
 }
 
+const { openTelegramAuth } = useTelegramAuth();
+
 function linkTelegram() {
-	sessionStorage.setItem('auth_redirect', '/profile');
-	window.location.href = '/api/auth/telegram';
+	openTelegramAuth('/profile');
 }
 
 function linkFacebook() {

@@ -16,6 +16,37 @@ const { t } = useI18n({
 });
 const { t: $t } = useI18n({ useScope: 'global' });
 
+const isMobile = ref(false);
+let mql: MediaQueryList | null = null;
+
+function onMqlChange(e: MediaQueryListEvent | MediaQueryList) {
+	isMobile.value = e.matches;
+}
+
+onMounted(() => {
+	mql = window.matchMedia('(max-width: 768px)');
+	onMqlChange(mql);
+	mql.addEventListener('change', onMqlChange as EventListener);
+});
+
+onUnmounted(() => {
+	mql?.removeEventListener('change', onMqlChange as EventListener);
+});
+
+interface ProfileTab {
+	key: string;
+	icon: string;
+	label: string;
+	soon?: boolean;
+}
+
+const tabs = computed<ProfileTab[]>(() => [
+	{ key: 'basic', icon: 'user', label: t('tabBasic') },
+	{ key: 'security', icon: 'shield', label: t('tabSecurity') },
+	{ key: 'doctor', icon: 'doctor', label: t('tabDoctor'), soon: true },
+	{ key: 'clinics', icon: 'clinic', label: t('tabClinics'), soon: true },
+]);
+
 const seoTitle = computed(() => t('profileTitle') + ' | ' + $t('ApplicationName'));
 
 useSeoMeta({
@@ -63,14 +94,9 @@ function openEditEmail() {
 						/>
 						<span
 							v-if="isAdmin"
-							class="profile-hero__badge"
-							:class="
-								isAdmin
-									? 'profile-hero__badge--admin'
-									: 'profile-hero__badge--user'
-							"
+							class="profile-hero__badge profile-hero__badge--admin"
 						>
-							{{ isAdmin ? t('administrator') : t('user') }}
+							{{ t('administrator') }}
 						</span>
 					</div>
 
@@ -113,59 +139,54 @@ function openEditEmail() {
 				</div>
 			</section>
 
-			<!-- El-tabs with left nav -->
-			<el-tabs v-model="activeTab" tab-position="left" class="profile-el-tabs">
-				<el-tab-pane name="basic">
-					<template #label>
-						<div class="tab-label">
-							<IconUser :size="16" />
-							<span>{{ t('tabBasic') }}</span>
-						</div>
-					</template>
-					<ProfileTabBasic />
-				</el-tab-pane>
+			<!-- Tabs + Content -->
+			<div class="profile-body">
+				<!-- Sidebar nav (desktop) / Scrollable bar (mobile) -->
+				<nav class="profile-nav">
+					<div class="profile-nav__list">
+						<button
+							v-for="tab in tabs"
+							:key="tab.key"
+							class="profile-nav__item"
+							:class="{ 'profile-nav__item--active': activeTab === tab.key }"
+							@click="activeTab = tab.key"
+						>
+							<IconUser v-if="tab.icon === 'user'" :size="16" />
+							<IconShield v-else-if="tab.icon === 'shield'" :size="16" />
+							<IconDoctor v-else-if="tab.icon === 'doctor'" :size="16" />
+							<IconClinic v-else-if="tab.icon === 'clinic'" :size="16" />
+							<span class="profile-nav__label">{{ tab.label }}</span>
+							<span v-if="tab.soon" class="profile-nav__soon">
+								{{ t('comingSoon') }}
+							</span>
+						</button>
+					</div>
+				</nav>
 
-				<el-tab-pane name="security">
-					<template #label>
-						<div class="tab-label">
-							<IconShield :size="16" />
-							<span>{{ t('tabSecurity') }}</span>
-						</div>
+				<!-- Content -->
+				<div class="profile-content">
+					<template v-if="activeTab === 'basic'">
+						<ProfileTabBasic />
 					</template>
-					<SecuritySessionsSection />
-					<SecurityLoginHistorySection />
-				</el-tab-pane>
-
-				<el-tab-pane name="doctor">
-					<template #label>
-						<div class="tab-label">
-							<IconDoctor :size="16" />
-							<span>{{ t('tabDoctor') }}</span>
-							<span class="tab-label__soon">{{ t('comingSoon') }}</span>
-						</div>
+					<template v-else-if="activeTab === 'security'">
+						<SecuritySessionsSection />
+						<SecurityLoginHistorySection />
 					</template>
-					<ProfileTabDoctor />
-				</el-tab-pane>
-
-				<el-tab-pane name="clinics">
-					<template #label>
-						<div class="tab-label">
-							<IconClinic :size="16" />
-							<span>{{ t('tabClinics') }}</span>
-							<span class="tab-label__soon">{{ t('comingSoon') }}</span>
-						</div>
+					<template v-else-if="activeTab === 'doctor'">
+						<ProfileTabDoctor />
 					</template>
-					<ProfileTabClinics />
-				</el-tab-pane>
-			</el-tabs>
+					<template v-else-if="activeTab === 'clinics'">
+						<ProfileTabClinics />
+					</template>
+				</div>
+			</div>
 		</div>
 
 		<ClientOnly>
-			<!-- Edit Name Dialog -->
 			<el-dialog
 				v-model="showEditNameDialog"
 				:title="t('editNameTitle')"
-				width="460px"
+				:width="isMobile ? '92%' : '460px'"
 				class="profile-dialog"
 				destroy-on-close
 			>
@@ -176,11 +197,10 @@ function openEditEmail() {
 				/>
 			</el-dialog>
 
-			<!-- Edit Email Dialog -->
 			<el-dialog
 				v-model="showEditEmailDialog"
 				:title="t('editEmailTitle')"
-				width="460px"
+				:width="isMobile ? '92%' : '460px'"
 				class="profile-dialog"
 				destroy-on-close
 			>
@@ -192,67 +212,6 @@ function openEditEmail() {
 		</ClientOnly>
 	</div>
 </template>
-
-<style>
-/* ── El-tabs overrides (non-scoped, scoped by .profile-el-tabs) ── */
-
-.profile-el-tabs.el-tabs--left {
-	gap: var(--spacing-xl);
-}
-
-.profile-el-tabs.el-tabs--left > .el-tabs__header {
-	width: 220px;
-	flex-shrink: 0;
-	background: var(--color-bg-primary);
-	border-radius: var(--border-radius-xl);
-	border: 1px solid var(--color-border-secondary);
-	box-shadow: var(--shadow-sm);
-	border-right: none;
-	padding: var(--spacing-sm);
-	align-self: flex-start;
-}
-
-.profile-el-tabs.el-tabs--left > .el-tabs__header .el-tabs__nav-wrap::after {
-	display: none;
-}
-
-.profile-el-tabs.el-tabs--left > .el-tabs__header .el-tabs__active-bar {
-	display: none;
-}
-
-.profile-el-tabs.el-tabs--left > .el-tabs__header .el-tabs__item {
-	height: auto;
-	padding: var(--spacing-sm) var(--spacing-md);
-	border-radius: var(--border-radius-lg);
-	color: var(--color-text-secondary);
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
-	transition: all var(--transition-base);
-	text-align: left;
-	white-space: nowrap;
-	justify-content: flex-start;
-}
-
-.profile-el-tabs.el-tabs--left > .el-tabs__header .el-tabs__item:hover {
-	background: var(--color-bg-tertiary);
-	color: var(--color-text-primary);
-}
-
-.profile-el-tabs.el-tabs--left > .el-tabs__header .el-tabs__item.is-active {
-	background: var(--color-primary-bg);
-	color: var(--color-primary);
-}
-
-.profile-el-tabs.el-tabs--left > .el-tabs__content {
-	padding: 0;
-}
-
-.profile-el-tabs.el-tabs--left > .el-tabs__content .el-tab-pane {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-xl);
-}
-</style>
 
 <style scoped>
 .profile-page {
@@ -267,26 +226,6 @@ function openEditEmail() {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-xl);
-}
-
-/* ── Tab labels ──────────────────────────────── */
-
-.tab-label {
-	display: flex;
-	align-items: center;
-	gap: var(--spacing-sm);
-}
-
-.tab-label__soon {
-	margin-left: auto;
-	font-size: 10px;
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-muted);
-	background: var(--color-bg-tertiary);
-	padding: 1px 6px;
-	border-radius: 6px;
-	text-transform: uppercase;
-	letter-spacing: 0.3px;
 }
 
 /* ── Hero ────────────────────────────────────── */
@@ -402,6 +341,89 @@ function openEditEmail() {
 	color: var(--color-primary);
 }
 
+/* ── Body (sidebar + content) ────────────────── */
+
+.profile-body {
+	display: flex;
+	gap: var(--spacing-xl);
+	align-items: flex-start;
+}
+
+/* ── Nav (sidebar on desktop) ────────────────── */
+
+.profile-nav {
+	width: 220px;
+	flex-shrink: 0;
+	position: sticky;
+	top: calc(var(--spacing-2xl) + 60px);
+}
+
+.profile-nav__list {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	background: var(--color-bg-primary);
+	border-radius: var(--border-radius-xl);
+	border: 1px solid var(--color-border-secondary);
+	box-shadow: var(--shadow-sm);
+	padding: var(--spacing-sm);
+}
+
+.profile-nav__item {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-sm) var(--spacing-md);
+	border: none;
+	background: transparent;
+	border-radius: var(--border-radius-lg);
+	color: var(--color-text-secondary);
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-medium);
+	cursor: pointer;
+	transition: all var(--transition-base);
+	white-space: nowrap;
+	text-align: left;
+	width: 100%;
+}
+
+.profile-nav__item:hover {
+	background: var(--color-bg-tertiary);
+	color: var(--color-text-primary);
+}
+
+.profile-nav__item--active {
+	background: var(--color-primary-bg);
+	color: var(--color-primary);
+}
+
+.profile-nav__item--active:hover {
+	background: var(--color-primary-bg);
+	color: var(--color-primary);
+}
+
+.profile-nav__soon {
+	margin-left: auto;
+	font-size: 10px;
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-text-muted);
+	background: var(--color-bg-tertiary);
+	padding: 1px 6px;
+	border-radius: 6px;
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+}
+
+/* ── Content ─────────────────────────────────── */
+
+.profile-content {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xl);
+}
+
 /* ── Dialogs ─────────────────────────────────── */
 
 .profile-dialog__footer {
@@ -419,14 +441,29 @@ function openEditEmail() {
 
 /* ── Responsive ──────────────────────────────── */
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
 	.profile-page {
 		padding: var(--spacing-lg) var(--spacing-sm);
 	}
 
 	.profile-hero__content {
-		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
 		padding: var(--spacing-xl) var(--spacing-lg);
+		gap: var(--spacing-md);
+	}
+
+	.profile-hero__name {
+		font-size: var(--font-size-2xl);
+	}
+
+	.profile-hero__name-row {
+		justify-content: center;
+	}
+
+	.profile-hero__email-row {
+		justify-content: center;
 	}
 
 	.profile-hero__actions {
@@ -434,9 +471,38 @@ function openEditEmail() {
 		justify-content: center;
 	}
 
-	.profile-hero__avatar {
-		width: 76px;
-		height: 76px;
+	/* Nav becomes horizontal scrollable bar */
+	.profile-body {
+		flex-direction: column;
+		gap: var(--spacing-md);
+	}
+
+	.profile-content {
+		width: 100%;
+	}
+
+	.profile-nav {
+		width: 100%;
+		position: static;
+	}
+
+	.profile-nav__list {
+		flex-direction: row;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: thin;
+		gap: var(--spacing-xs);
+		padding: var(--spacing-xs);
+	}
+
+	.profile-nav__item {
+		flex-shrink: 0;
+		width: auto;
+		padding: var(--spacing-sm) var(--spacing-md);
+	}
+
+	.profile-nav__soon {
+		display: none;
 	}
 }
 </style>

@@ -65,6 +65,7 @@ export default defineNuxtConfig({
 		mailgunFromEmail: process.env.MAILGUN_FROM_EMAIL || '',
 		mailgunFromName: process.env.MAILGUN_FROM_NAME || '',
 		public: {
+			telegramBotId: (process.env.TELEGRAM_BOT_TOKEN || '').split(':')[0],
 			mixpanelToken: process.env.MIXPANEL_TOKEN,
 			cloudflareToken: process.env.CLOUDFLARE_TOKEN,
 			connection: {
@@ -77,6 +78,12 @@ export default defineNuxtConfig({
 
 	routeRules: {
 		'/**': { cors: true, ssr: true, prerender: false },
+		'/profile': { ssr: false },
+		'/login': { ssr: false },
+		'/reset-password': { ssr: false },
+		'/verify-email': { ssr: false },
+		'/forgot-password': { ssr: false },
+		'/confirm-email-change': { ssr: false },
 		'/admin/**': { cors: true, ssr: false, prerender: false },
 		'/img/**': {
 			headers: { 'Cache-Control': 'max-age=31536000, public, immutable' },

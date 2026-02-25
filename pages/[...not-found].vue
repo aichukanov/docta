@@ -5,7 +5,9 @@ const { t } = useI18n();
 
 <template>
 	<main class="not-found-page" role="main" :aria-label="t('AriaErrorMessage')">
-		<ErrorBlock :code="404" :title="t('Error404Title')" />
+		<ClientOnly>
+			<ErrorBlock :code="404" :title="t('Error404Title')" />
+		</ClientOnly>
 	</main>
 </template>
 

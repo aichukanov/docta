@@ -52,6 +52,7 @@ export default defineNuxtConfig({
 	components: ['~/components'],
 
 	runtimeConfig: {
+		baseUrl: process.env.BASE_URL || '',
 		public: {
 			// todo: перенести process.env -> nuxt.config.ts
 			mixpanelToken: process.env.MIXPANEL_TOKEN,

@@ -3,11 +3,13 @@ import { Language } from '~/enums/language';
 const DEFAULT_LOCALE = Language.SR;
 
 /**
- * Получает BASE_URL из переменных окружения с валидацией
+ * Получает BASE_URL через runtimeConfig (Nitro-совместимый способ).
+ * Fallback на process.env для обратной совместимости.
  * @throws {Error} Если BASE_URL не установлен
  */
 export function getBaseUrl(): string {
-	const baseUrl = process.env.BASE_URL || 'https://docta.me';
+	const config = useRuntimeConfig();
+	const baseUrl = config.baseUrl || process.env.BASE_URL;
 
 	if (!baseUrl) {
 		throw new Error('BASE_URL environment variable is required');

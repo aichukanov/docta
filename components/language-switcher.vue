@@ -12,7 +12,6 @@ defineProps<{
 const router = useRouter();
 const route = useRoute();
 const { fetchUser } = useUserStore();
-
 const { locale } = useI18n({ useScope: 'global' });
 const { t } = useI18n();
 

@@ -13,8 +13,7 @@ const { t, locale } = useI18n({
 });
 
 const userStore = useUserStore();
-const { user, isUserLoading, fetchUser, logout, loginWithEmail, register } =
-	storeToRefs(userStore);
+const { user, isUserLoading } = storeToRefs(userStore);
 const route = useRoute();
 const router = useRouter();
 const authError = ref<ERROR_CODES | null>(null);
@@ -32,7 +31,7 @@ const oauthError = computed(() => {
 
 async function handleLogout() {
 	try {
-		await logout();
+		await userStore.logout();
 	} catch (error) {
 		console.error('Logout error:', error);
 	}
@@ -48,7 +47,10 @@ async function handleEmailLogin(payload: { email: string; password: string }) {
 
 	try {
 		isLoading.value = true;
-		const response = await loginWithEmail(payload.email, payload.password);
+		const response = await userStore.loginWithEmail(
+			payload.email,
+			payload.password,
+		);
 
 		if (response.redirectTo) {
 			await router.push(response.redirectTo);
@@ -79,7 +81,7 @@ async function handleRegister(payload: {
 
 	try {
 		isLoading.value = true;
-		const response = await register(
+		const response = await userStore.register(
 			payload.email,
 			payload.password,
 			payload.name || undefined,
@@ -107,7 +109,7 @@ function switchMode() {
 }
 
 onMounted(async () => {
-	const user = await fetchUser();
+	const user = await userStore.fetchUser();
 
 	if (user) {
 		const redirectTo = sessionStorage.getItem('auth_redirect');

@@ -21,6 +21,7 @@ export default defineEventHandler(async (event) => {
 		});
 	}
 
+	// todo: нужно разрешать, если у пользователя есть пароль к почте - email - тоже метод
 	// Проверяем сколько аккаунтов привязано
 	const accounts = await executeQuery(
 		'SELECT COUNT(*) as count FROM auth_oauth_accounts WHERE user_id = ?',

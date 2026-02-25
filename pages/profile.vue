@@ -7,7 +7,7 @@ definePageMeta({
 });
 
 const userStore = useUserStore();
-const { user, isAdmin, logout } = storeToRefs(userStore);
+const { user, isAdmin } = storeToRefs(userStore);
 const activeTab = ref('basic');
 
 const { t } = useI18n({
@@ -23,7 +23,7 @@ const showEditEmailDialog = ref(false);
 async function handleLogout() {
 	try {
 		isLoading.value = true;
-		await logout();
+		await userStore.logout();
 	} catch (error) {
 		console.error('Logout error:', error);
 	} finally {

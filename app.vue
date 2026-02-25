@@ -133,8 +133,7 @@ useSeoMeta({
 	twitterCard: 'summary',
 });
 
-const { fetchUser } = useUserStore();
-fetchUser();
+useUserStore().fetchUser();
 </script>
 
 <template>

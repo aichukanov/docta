@@ -1,3 +1,4 @@
+import crypto from 'node:crypto';
 import { getOAuthConfig } from '~/server/utils/oauth-config';
 import { authLogger } from '~/server/utils/logger';
 

@@ -1,3 +1,4 @@
+import crypto from 'node:crypto';
 import type { H3Event } from 'h3';
 import { executeQuery } from '~/server/common/db-mysql';
 

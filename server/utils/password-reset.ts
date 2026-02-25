@@ -1,3 +1,4 @@
+import crypto from 'node:crypto';
 import { executeQuery } from '~/server/common/db-mysql';
 import {
 	ERROR_CODES,

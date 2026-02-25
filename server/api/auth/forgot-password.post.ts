@@ -55,7 +55,7 @@ export default defineEventHandler(async (event) => {
 
 		return createSuccessResponse(SUCCESS_CODES.PASSWORD_RESET_EMAIL_SENT, {
 			// В development режиме возвращаем токен для тестирования
-			...(process.env.NODE_ENV === 'development' && { resetUrl }),
+			...(import.meta.dev && { resetUrl }),
 		});
 	} catch (error: any) {
 		logError(authLogger, 'Forgot password failed', error);

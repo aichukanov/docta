@@ -7,7 +7,7 @@ import { createConsola } from 'consola';
 
 // Базовый логгер для всего приложения
 export const logger = createConsola({
-	level: process.env.NODE_ENV === 'production' ? 3 : 4, // info в prod, debug в dev
+	level: import.meta.dev ? 4 : 3, // debug в dev, info в prod
 	formatOptions: {
 		date: true,
 		colors: true,

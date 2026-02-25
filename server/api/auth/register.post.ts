@@ -109,7 +109,7 @@ export default defineEventHandler(async (event) => {
 			},
 			redirectTo: redirectTo || '/',
 			needsEmailVerification: true,
-			...(process.env.NODE_ENV === 'development' && { verificationUrl }),
+			...(import.meta.dev && { verificationUrl }),
 		});
 	} catch (error: any) {
 		// Если это уже наша ошибка, пробрасываем

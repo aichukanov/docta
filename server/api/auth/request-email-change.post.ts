@@ -56,7 +56,7 @@ export default defineEventHandler(async (event) => {
 		});
 
 		return createSuccessResponse(SUCCESS_CODES.EMAIL_CHANGE_CONFIRMATION_SENT, {
-			...(process.env.NODE_ENV === 'development' && { confirmUrl }),
+			...(import.meta.dev && { confirmUrl }),
 		});
 	} catch (error: any) {
 		// Если это уже наша ошибка, пробрасываем

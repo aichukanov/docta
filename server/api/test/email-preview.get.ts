@@ -18,8 +18,7 @@ import {
 } from '~/server/utils/email-templates';
 
 export default defineEventHandler(async (event) => {
-	// Только в development
-	if (process.env.NODE_ENV !== 'development') {
+	if (!import.meta.dev) {
 		throw createError({
 			statusCode: 404,
 			statusMessage: 'Not Found',

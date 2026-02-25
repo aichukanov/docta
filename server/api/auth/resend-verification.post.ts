@@ -38,7 +38,7 @@ export default defineEventHandler(async (event) => {
 		});
 
 		return createSuccessResponse(SUCCESS_CODES.VERIFICATION_EMAIL_SENT, {
-			...(process.env.NODE_ENV === 'development' && { verificationUrl }),
+			...(import.meta.dev && { verificationUrl }),
 		});
 	} catch (error: any) {
 		logError(authLogger, 'Resend verification failed', error, {

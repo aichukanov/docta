@@ -9,7 +9,7 @@ const DEFAULT_LOCALE = Language.SR;
  */
 export function getBaseUrl(): string {
 	const config = useRuntimeConfig();
-	const baseUrl = config.baseUrl || process.env.BASE_URL;
+	const baseUrl = config.baseUrl;
 
 	if (!baseUrl) {
 		throw new Error('BASE_URL environment variable is required');

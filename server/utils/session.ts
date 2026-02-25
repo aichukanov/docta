@@ -37,7 +37,7 @@ export async function createSession(userId: number): Promise<string> {
 export function setSessionCookie(event: H3Event, sessionId: string): void {
 	setCookie(event, 'session_id', sessionId, {
 		httpOnly: true,
-		secure: process.env.NODE_ENV === 'production',
+		secure: !import.meta.dev,
 		sameSite: 'lax',
 		maxAge: SESSION_DURATION,
 		path: '/',

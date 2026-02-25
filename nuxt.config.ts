@@ -53,8 +53,18 @@ export default defineNuxtConfig({
 
 	runtimeConfig: {
 		baseUrl: process.env.BASE_URL || '',
+		googleClientId: process.env.GOOGLE_CLIENT_ID || '',
+		googleClientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
+		facebookAppId: process.env.FACEBOOK_APP_ID || '',
+		facebookAppSecret: process.env.FACEBOOK_APP_SECRET || '',
+		telegramBotToken: process.env.TELEGRAM_BOT_TOKEN || '',
+		telegramBotUsername: process.env.TELEGRAM_BOT_USERNAME || '',
+		mailgunApiKey: process.env.MAILGUN_API_KEY || '',
+		mailgunApiUrl: process.env.MAILGUN_API_URL || '',
+		mailgunDomain: process.env.MAILGUN_DOMAIN || '',
+		mailgunFromEmail: process.env.MAILGUN_FROM_EMAIL || '',
+		mailgunFromName: process.env.MAILGUN_FROM_NAME || '',
 		public: {
-			// todo: перенести process.env -> nuxt.config.ts
 			mixpanelToken: process.env.MIXPANEL_TOKEN,
 			cloudflareToken: process.env.CLOUDFLARE_TOKEN,
 			connection: {

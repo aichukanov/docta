@@ -42,10 +42,7 @@ async function logEmail(
  * Отправка email через Mailgun
  */
 export async function sendEmail(options: EmailOptions): Promise<boolean> {
-	const isDev = process.env.NODE_ENV === 'development';
-
-	// В development без настроенного Mailgun - выводим в консоль и сохраняем в БД
-	if (isDev) {
+	if (import.meta.dev) {
 		emailLogger.info('Email mock (dev mode)', {
 			to: options.to,
 			subject: options.subject,
@@ -55,7 +52,9 @@ export async function sendEmail(options: EmailOptions): Promise<boolean> {
 		return true;
 	}
 
-	if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_API_URL) {
+	const config = useRuntimeConfig();
+
+	if (!config.mailgunApiKey || !config.mailgunApiUrl) {
 		emailLogger.warn(
 			'Mailgun not configured. Set MAILGUN_API_KEY and MAILGUN_API_URL environment variables.',
 		);
@@ -64,13 +63,13 @@ export async function sendEmail(options: EmailOptions): Promise<boolean> {
 
 	const client = new Mailgun(formData).client({
 		username: 'api',
-		key: process.env.MAILGUN_API_KEY,
-		url: process.env.MAILGUN_API_URL,
+		key: config.mailgunApiKey,
+		url: config.mailgunApiUrl,
 	});
 
-	const domain = process.env.MAILGUN_DOMAIN;
-	const fromEmail = process.env.MAILGUN_FROM_EMAIL;
-	const fromName = process.env.MAILGUN_FROM_NAME;
+	const domain = config.mailgunDomain;
+	const fromEmail = config.mailgunFromEmail;
+	const fromName = config.mailgunFromName;
 
 	if (!fromEmail || !fromName || !domain) {
 		emailLogger.warn(

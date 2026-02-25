@@ -8,7 +8,7 @@ export function useAnalytics() {
 	const initMixpanel = () => {
 		if (config.public.mixpanelToken && isConsentGiven.value) {
 			mixpanel.init(config.public.mixpanelToken, {
-				debug: process.env.NODE_ENV !== 'production',
+				debug: import.meta.dev,
 				track_pageview: true,
 				persistence: 'localStorage',
 				ignore_dnt: true,

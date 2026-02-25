@@ -42,24 +42,21 @@ export default defineEventHandler((event) => {
 		}
 	}
 
-	// Строим URL для Telegram OAuth
-	// return_to указывает на клиентскую страницу-посредник,
-	// т.к. Telegram отдаёт данные в URL-фрагменте (#tgAuthResult=base64),
-	// а сервер фрагменты не видит
+	// Строим URL для Telegram OAuth и редиректим на клиентскую страницу-посредник,
+	// которая загрузит oauth.telegram.org в iframe и будет слушать postMessage.
+	// Это необходимо, потому что на мобильных устройствах при redirect-авторизации
+	// пользователь переключается в ТГ-приложение для подтверждения, и браузерная
+	// вкладка с oauth.telegram.org уходит в фон — postMessage теряется.
 	const botId = telegram.botToken.split(':')[0];
-	const callbackUrl = `${baseUrl}/auth/telegram-callback`;
-	const origin = baseUrlObj.origin;
 
-	const params = new URLSearchParams({
+	const callbackParams = new URLSearchParams({
 		bot_id: botId,
-		origin,
-		embed: '0',
+		origin: baseUrlObj.origin,
 		request_access: 'write',
-		return_to: callbackUrl,
 	});
 
-	const authUrl = `https://oauth.telegram.org/auth?${params.toString()}`;
-
-	// Редиректим на Telegram OAuth
-	return sendRedirect(event, authUrl);
+	return sendRedirect(
+		event,
+		`/auth/telegram-callback?${callbackParams.toString()}`,
+	);
 });

@@ -2,12 +2,11 @@
 /**
  * Клиентская страница-посредник для Telegram OAuth.
  *
- * Telegram OAuth (oauth.telegram.org) доставляет данные тремя способами:
- * 1. postMessage — когда задан origin, Telegram шлёт {event:'auth_result', result:{...}}
- * 2. URL-фрагмент — #tgAuthResult=<base64_json>
- * 3. Query-параметры — ?id=...&hash=... (fallback)
- *
- * Эта страница слушает все три и перенаправляет на серверный callback.
+ * Загружает oauth.telegram.org в iframe и слушает postMessage с результатом.
+ * Это решает проблему на мобильных: при redirect-авторизации пользователь
+ * уходит в ТГ для подтверждения, браузер переходит в фон, и postMessage
+ * от oauth.telegram.org теряется. С iframe наша страница остаётся загруженной
+ * и гарантированно получает postMessage при возврате из ТГ.
  */
 
 import { getRegionalQuery } from '~/common/url-utils';
@@ -31,6 +30,7 @@ const profileLink = computed(() => ({
 }));
 
 const error = ref<string | null>(null);
+const iframeSrc = ref<string | null>(null);
 let redirected = false;
 
 function redirectToCallback(data: Record<string, unknown>) {
@@ -60,8 +60,6 @@ function handleTelegramMessage(evt: MessageEvent) {
 		parsed = evt.data;
 	}
 
-	console.log('[TG Callback] postMessage from Telegram:', parsed);
-
 	if (parsed?.event === 'auth_result' && parsed.result) {
 		redirectToCallback(parsed.result);
 	}
@@ -70,45 +68,24 @@ function handleTelegramMessage(evt: MessageEvent) {
 onMounted(() => {
 	window.addEventListener('message', handleTelegramMessage);
 
-	try {
-		const hash = window.location.hash;
-		const search = window.location.search;
+	const params = new URLSearchParams(window.location.search);
+	const botId = params.get('bot_id');
+	const origin = params.get('origin');
 
-		console.log('[TG Callback] hash:', hash);
-		console.log('[TG Callback] search:', search);
-		console.log('[TG Callback] full URL:', window.location.href);
-
-		// Способ 2: фрагмент (#tgAuthResult=base64)
-		if (hash) {
-			const match = hash.match(/tgAuthResult=([^&]+)/);
-			if (match) {
-				const decoded = JSON.parse(atob(match[1]));
-				console.log('[TG Callback] decoded tgAuthResult:', decoded);
-				redirectToCallback(decoded);
-				return;
-			}
-		}
-
-		// Способ 3: query-параметры
-		const params = new URLSearchParams(search);
-		if (params.get('id') && params.get('hash')) {
-			console.log('[TG Callback] redirecting with query params');
-			redirectToCallback(Object.fromEntries(params));
-			return;
-		}
-
-		// Даём время на получение postMessage (Telegram может слать с задержкой)
-		console.log('[TG Callback] Waiting for postMessage from Telegram...');
-		setTimeout(() => {
-			if (!redirected) {
-				console.error('[TG Callback] Timeout: no data received from Telegram');
-				error.value = t('errorNoData');
-			}
-		}, 5000);
-	} catch (err) {
-		console.error('[TG Callback] Error:', err);
-		error.value = t('errorProcessing');
+	if (!botId || !origin) {
+		error.value = t('errorNoData');
+		return;
 	}
+
+	const tgParams = new URLSearchParams({
+		bot_id: botId,
+		origin,
+		embed: '1',
+		request_access: 'write',
+		return_to: window.location.href,
+	});
+
+	iframeSrc.value = `https://oauth.telegram.org/auth?${tgParams.toString()}`;
 });
 
 onUnmounted(() => {
@@ -121,6 +98,13 @@ onUnmounted(() => {
 		<div v-if="error" class="telegram-callback__error">
 			<p>{{ error }}</p>
 			<NuxtLink :to="profileLink">{{ t('backToProfile') }}</NuxtLink>
+		</div>
+		<div v-else-if="iframeSrc" class="telegram-callback__frame-wrap">
+			<iframe
+				:src="iframeSrc"
+				class="telegram-callback__frame"
+				sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms allow-top-navigation-by-user-activation"
+			/>
 		</div>
 		<div v-else class="telegram-callback__loading">
 			<div class="telegram-callback__spinner"></div>
@@ -181,7 +165,7 @@ onUnmounted(() => {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 200px;
+	min-height: 400px;
 	text-align: center;
 	color: var(--color-text-secondary, #475569);
 	font-size: 15px;
@@ -195,6 +179,19 @@ onUnmounted(() => {
 
 .telegram-callback__error a {
 	color: var(--color-primary, #4f46e5);
+}
+
+.telegram-callback__frame-wrap {
+	width: 100%;
+	max-width: 460px;
+	margin: 0 auto;
+}
+
+.telegram-callback__frame {
+	width: 100%;
+	height: 360px;
+	border: none;
+	border-radius: 12px;
 }
 
 .telegram-callback__loading {

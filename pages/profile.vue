@@ -47,7 +47,9 @@ const tabs = computed<ProfileTab[]>(() => [
 	{ key: 'clinics', icon: 'clinic', label: t('tabClinics'), soon: true },
 ]);
 
-const seoTitle = computed(() => t('profileTitle') + ' | ' + $t('ApplicationName'));
+const seoTitle = computed(
+	() => t('profileTitle') + ' | ' + $t('ApplicationName'),
+);
 
 useSeoMeta({
 	title: () => seoTitle.value,

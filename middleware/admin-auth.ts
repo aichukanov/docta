@@ -1,3 +1,5 @@
+import { getRegionalQuery } from '~/common/url-utils';
+
 export default defineNuxtRouteMiddleware(async (to) => {
 	const { fetchUser } = useUserStore();
 

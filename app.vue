@@ -104,10 +104,6 @@ const alternateLinks = computed(() => {
 	for (let i = 0; i < locales.length; i++) {
 		const lang = locales[i];
 
-		if (lang === currentLocale) {
-			continue;
-		}
-
 		links.push({
 			rel: 'alternate',
 			href: getLangLink(mainUrl, lang),

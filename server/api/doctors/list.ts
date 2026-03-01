@@ -58,6 +58,7 @@ export async function getDoctorList(
 		onlyDoctorLanguages?: boolean;
 		locale?: string;
 		includeAllLocales?: boolean;
+		includeHidden?: boolean;
 		includeServices?: boolean;
 		page?: number;
 	} = {},
@@ -70,6 +71,11 @@ export async function getDoctorList(
 	const pageSize = LIST_PAGE_SIZE;
 	const page = Math.max(Number.isFinite(pageRaw) ? pageRaw : 1, 1);
 	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
+
+	if (!body.includeHidden) {
+		whereFilters.push('d.hidden = FALSE');
+		whereFilters.push('d.is_draft = FALSE');
+	}
 
 	const buildInPlaceholders = (values: Array<number | string>) => {
 		queryParams.push(...values);

@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { Briefcase } from '@element-plus/icons-vue';
 import profileMessages from '~/i18n/profile';
+import { getRegionalQuery } from '~/common/url-utils';
 
 definePageMeta({
 	middleware: 'auth',
@@ -8,13 +10,14 @@ definePageMeta({
 
 const userStore = useUserStore();
 const { user, isAdmin } = storeToRefs(userStore);
-const activeTab = ref('basic');
 
 const { t } = useI18n({
 	useScope: 'local',
 	messages: profileMessages.messages,
 });
-const { t: $t } = useI18n({ useScope: 'global' });
+const { t: $t, locale } = useI18n({ useScope: 'global' });
+
+const route = useRoute();
 
 const isMobile = ref(false);
 let mql: MediaQueryList | null = null;
@@ -43,9 +46,22 @@ interface ProfileTab {
 const tabs = computed<ProfileTab[]>(() => [
 	{ key: 'basic', icon: 'user', label: t('tabBasic') },
 	{ key: 'security', icon: 'shield', label: t('tabSecurity') },
-	{ key: 'doctor', icon: 'doctor', label: t('tabDoctor'), soon: true },
+	{ key: 'doctor', icon: 'doctor', label: t('tabDoctor') },
 	{ key: 'clinics', icon: 'clinic', label: t('tabClinics'), soon: true },
 ]);
+
+const activeTab = computed(() => {
+	const name = route.name as string;
+	const match = name?.match(/^profile-(.+)$/);
+	return match ? match[1] : 'basic';
+});
+
+function tabRoute(key: string) {
+	return {
+		name: `profile-${key}`,
+		query: getRegionalQuery(locale.value),
+	};
+}
 
 const seoTitle = computed(
 	() => t('profileTitle') + ' | ' + $t('ApplicationName'),
@@ -129,6 +145,14 @@ function openEditEmail() {
 					</div>
 
 					<div class="profile-hero__actions">
+						<NuxtLink
+							v-if="isAdmin"
+							:to="{ name: 'admin', query: getRegionalQuery(locale) }"
+						>
+							<el-button type="primary" plain :icon="Briefcase">
+								{{ t('adminPanel') }}
+							</el-button>
+						</NuxtLink>
 						<el-button
 							type="danger"
 							plain
@@ -146,12 +170,12 @@ function openEditEmail() {
 				<!-- Sidebar nav (desktop) / Scrollable bar (mobile) -->
 				<nav class="profile-nav">
 					<div class="profile-nav__list">
-						<button
+						<NuxtLink
 							v-for="tab in tabs"
 							:key="tab.key"
+							:to="tabRoute(tab.key)"
 							class="profile-nav__item"
 							:class="{ 'profile-nav__item--active': activeTab === tab.key }"
-							@click="activeTab = tab.key"
 						>
 							<IconUser v-if="tab.icon === 'user'" :size="16" />
 							<IconShield v-else-if="tab.icon === 'shield'" :size="16" />
@@ -161,25 +185,13 @@ function openEditEmail() {
 							<span v-if="tab.soon" class="profile-nav__soon">
 								{{ t('comingSoon') }}
 							</span>
-						</button>
+						</NuxtLink>
 					</div>
 				</nav>
 
 				<!-- Content -->
 				<div class="profile-content">
-					<template v-if="activeTab === 'basic'">
-						<ProfileTabBasic />
-					</template>
-					<template v-else-if="activeTab === 'security'">
-						<SecuritySessionsSection />
-						<SecurityLoginHistorySection />
-					</template>
-					<template v-else-if="activeTab === 'doctor'">
-						<ProfileTabDoctor />
-					</template>
-					<template v-else-if="activeTab === 'clinics'">
-						<ProfileTabClinics />
-					</template>
+					<NuxtPage />
 				</div>
 			</div>
 		</div>
@@ -267,15 +279,15 @@ function openEditEmail() {
 }
 
 .profile-hero__badge--user {
-	background: #ecfdf5;
-	color: #059669;
-	border: 1px solid #a7f3d0;
+	background: var(--color-success-bg);
+	color: var(--color-success-dark);
+	border: 1px solid var(--color-success-border);
 }
 
 .profile-hero__badge--admin {
-	background: #fef2f2;
-	color: #dc2626;
-	border: 1px solid #fecaca;
+	background: var(--color-danger-bg);
+	color: var(--color-danger);
+	border: 1px solid var(--color-danger-border);
 }
 
 .profile-hero__info {
@@ -386,7 +398,9 @@ function openEditEmail() {
 	transition: all var(--transition-base);
 	white-space: nowrap;
 	text-align: left;
+	text-decoration: none;
 	width: 100%;
+	box-sizing: border-box;
 }
 
 .profile-nav__item:hover {

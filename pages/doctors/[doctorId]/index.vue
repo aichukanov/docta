@@ -260,6 +260,7 @@ watchEffect(() => {
 		:notFoundText="t('DoctorNotFound')"
 	>
 		<template #info>
+			<DoctorOwnerBanner v-if="doctorData?.isOwner" />
 			<DoctorInfo v-if="doctorData" :service="doctorData" isMainHeading />
 			<DoctorDescription
 				v-if="doctorData && doctorDescription"

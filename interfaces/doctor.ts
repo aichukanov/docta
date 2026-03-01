@@ -12,9 +12,12 @@ export interface DoctorData extends ClinicServiceItem, ContactList {
 	name_en?: string;
 	localName: string;
 	description?: string;
+	isOwner?: boolean;
 }
 
 export interface DoctorList {
 	doctors: DoctorData[];
 	totalCount: number;
 }
+
+export type DoctorProfileStatus = 'draft' | 'public' | 'hidden';

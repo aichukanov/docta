@@ -75,6 +75,7 @@ async function loadDoctorsData() {
 				cityIds: [],
 				languageIds: [],
 				includeAllLocales: true,
+				includeHidden: true,
 			},
 		});
 		doctorsList.value = data;

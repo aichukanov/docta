@@ -1,5 +1,6 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
+import { syncDoctorRelation } from '~/server/common/doctor-relations';
 import type { DoctorData } from '~/interfaces/doctor';
 import {
 	validateBody,
@@ -54,7 +55,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				UPDATE doctors 
 				SET name_sr = ?, name_sr_cyrl = ?, name_ru = ?, name_en = ?, 
 				    description_sr = ?, description_sr_cyrl = ?, description_ru = ?, description_en = ?, description_de = ?, description_tr = ?,
-				    professional_title = ?, email = ?, phone = ?, website = ?, 
+				    professional_title = ?, hidden = ?, email = ?, phone = ?, website = ?, 
 				    photo_url = ?, facebook = ?, instagram = ?, telegram = ?, whatsapp = ?, viber = ?
 				WHERE id = ?;
 			`;
@@ -71,6 +72,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				body.description_de || '',
 				body.description_tr || '',
 				body.professionalTitle || '',
+				body.hidden ? 1 : 0,
 				body.email || '',
 				body.phone || '',
 				body.website || '',
@@ -83,100 +85,29 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				body.id,
 			]);
 
-			const [existingSpecialties]: any = await connection.execute(
-				'SELECT specialty_id FROM doctor_specialties WHERE doctor_id = ?',
-				[body.id],
-			);
-			const existingSpecialtyIds = existingSpecialties.map(
-				(row: any) => row.specialty_id,
-			);
-			const newSpecialtyIds = body.specialtyIds;
+			await syncDoctorRelation({
+				connection,
+				doctorId: body.id,
+				table: 'doctor_specialties',
+				column: 'specialty_id',
+				newIds: body.specialtyIds,
+			});
 
-			const specialtiesToRemove = existingSpecialtyIds.filter(
-				(id: number) => !newSpecialtyIds.includes(id),
-			);
-			const specialtiesToAdd = newSpecialtyIds.filter(
-				(id: number) => !existingSpecialtyIds.includes(id),
-			);
+			await syncDoctorRelation({
+				connection,
+				doctorId: body.id,
+				table: 'doctor_languages',
+				column: 'language_id',
+				newIds: body.languageIds,
+			});
 
-			if (specialtiesToRemove.length > 0) {
-				const placeholders = specialtiesToRemove.map(() => '?').join(',');
-				await connection.execute(
-					`DELETE FROM doctor_specialties WHERE doctor_id = ? AND specialty_id IN (${placeholders})`,
-					[body.id, ...specialtiesToRemove],
-				);
-			}
-
-			for (const specialtyId of specialtiesToAdd) {
-				await connection.execute(
-					'INSERT INTO doctor_specialties (doctor_id, specialty_id) VALUES (?, ?)',
-					[body.id, specialtyId],
-				);
-			}
-
-			// Handle languages
-			const [existingLanguages]: any = await connection.execute(
-				'SELECT language_id FROM doctor_languages WHERE doctor_id = ?',
-				[body.id],
-			);
-			const existingLanguageIds = existingLanguages.map(
-				(row: any) => row.language_id,
-			);
-			const newLanguageIds = body.languageIds;
-
-			const languagesToRemove = existingLanguageIds.filter(
-				(id: number) => !newLanguageIds.includes(id),
-			);
-			const languagesToAdd = newLanguageIds.filter(
-				(id: number) => !existingLanguageIds.includes(id),
-			);
-
-			if (languagesToRemove.length > 0) {
-				const placeholders = languagesToRemove.map(() => '?').join(',');
-				await connection.execute(
-					`DELETE FROM doctor_languages WHERE doctor_id = ? AND language_id IN (${placeholders})`,
-					[body.id, ...languagesToRemove],
-				);
-			}
-
-			for (const languageId of languagesToAdd) {
-				await connection.execute(
-					'INSERT INTO doctor_languages (doctor_id, language_id) VALUES (?, ?)',
-					[body.id, languageId],
-				);
-			}
-
-			// Handle clinics
-			const [existingClinics]: any = await connection.execute(
-				'SELECT clinic_id FROM doctor_clinics WHERE doctor_id = ?',
-				[body.id],
-			);
-			const existingClinicIds = existingClinics.map(
-				(row: any) => row.clinic_id,
-			);
-			const newClinicIds = body.clinicIds;
-
-			const clinicsToRemove = existingClinicIds.filter(
-				(id: number) => !newClinicIds.includes(id),
-			);
-			const clinicsToAdd = newClinicIds.filter(
-				(id: number) => !existingClinicIds.includes(id),
-			);
-
-			if (clinicsToRemove.length > 0) {
-				const placeholders = clinicsToRemove.map(() => '?').join(',');
-				await connection.execute(
-					`DELETE FROM doctor_clinics WHERE doctor_id = ? AND clinic_id IN (${placeholders})`,
-					[body.id, ...clinicsToRemove],
-				);
-			}
-
-			for (const clinicId of clinicsToAdd) {
-				await connection.execute(
-					'INSERT INTO doctor_clinics (doctor_id, clinic_id) VALUES (?, ?)',
-					[body.id, clinicId],
-				);
-			}
+			await syncDoctorRelation({
+				connection,
+				doctorId: body.id,
+				table: 'doctor_clinics',
+				column: 'clinic_id',
+				newIds: body.clinicIds,
+			});
 
 			// Handle service prices (clinic_medical_service_doctors)
 			if (body.servicePrices) {

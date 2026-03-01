@@ -12,6 +12,7 @@ interface DoctorServicePrice {
 
 interface DoctorAdminDetails extends ContactList {
 	id: number;
+	hidden: boolean;
 	name: string;
 	name_sr_cyrl: string;
 	name_ru: string;
@@ -51,7 +52,7 @@ export default defineEventHandler(
 
 			// Получаем основные данные врача
 			const [doctorRows]: any = await connection.execute(
-				`SELECT id, name_sr, name_sr_cyrl, name_ru, name_en, 
+				`SELECT id, hidden, name_sr, name_sr_cyrl, name_ru, name_en, 
 				        description_sr, description_sr_cyrl, description_ru, description_en, description_de, description_tr,
 				        professional_title, photo_url, phone, email, facebook, instagram, telegram, whatsapp, viber, website 
 				 FROM doctors WHERE id = ?`,
@@ -105,6 +106,7 @@ export default defineEventHandler(
 
 			return {
 				id: doctor.id,
+				hidden: Boolean(doctor.hidden),
 				name: doctor.name_sr || '',
 				name_sr_cyrl: doctor.name_sr_cyrl || '',
 				name_ru: doctor.name_ru || '',

@@ -35,6 +35,7 @@ export async function getSpecialtyCityCombinations() {
 		INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
 		INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 		INNER JOIN clinics ON dc.clinic_id = clinics.id
+		WHERE d.hidden = FALSE AND d.is_draft = FALSE
 		ORDER BY ds.specialty_id, clinics.city_id;
 	`;
 	const [rows] = await connection.execute<any[]>(query);
@@ -53,14 +54,14 @@ export async function getSpecialtyLanguageCombinations() {
 			FROM doctors d
 			INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
 			INNER JOIN doctor_languages dl ON d.id = dl.doctor_id
-			WHERE dl.language_id != 1
+			WHERE dl.language_id != 1 AND d.hidden = FALSE AND d.is_draft = FALSE
 			UNION
 			SELECT ds.specialty_id, cl.language_id as lang_id
 			FROM doctors d
 			INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
 			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			INNER JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id
-			WHERE cl.language_id != 1
+			WHERE cl.language_id != 1 AND d.hidden = FALSE AND d.is_draft = FALSE
 		) as combined
 		ORDER BY specialty_id, lang_id;
 	`;
@@ -81,14 +82,14 @@ export async function getLanguageCityCombinations() {
 			INNER JOIN doctor_languages dl ON d.id = dl.doctor_id
 			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			INNER JOIN clinics ON dc.clinic_id = clinics.id
-			WHERE dl.language_id != 1
+			WHERE dl.language_id != 1 AND d.hidden = FALSE AND d.is_draft = FALSE
 			UNION
 			SELECT cl.language_id as lang_id, clinics.city_id
 			FROM doctors d
 			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			INNER JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id
 			INNER JOIN clinics ON dc.clinic_id = clinics.id
-			WHERE cl.language_id != 1
+			WHERE cl.language_id != 1 AND d.hidden = FALSE AND d.is_draft = FALSE
 		) as combined
 		ORDER BY lang_id, city_id;
 	`;
@@ -110,7 +111,7 @@ export async function getSpecialtyLanguageCityCombinations() {
 			INNER JOIN doctor_languages dl ON d.id = dl.doctor_id
 			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			INNER JOIN clinics ON dc.clinic_id = clinics.id
-			WHERE dl.language_id != 1
+			WHERE dl.language_id != 1 AND d.hidden = FALSE AND d.is_draft = FALSE
 			UNION
 			SELECT ds.specialty_id, cl.language_id as lang_id, clinics.city_id
 			FROM doctors d
@@ -118,7 +119,7 @@ export async function getSpecialtyLanguageCityCombinations() {
 			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			INNER JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id
 			INNER JOIN clinics ON dc.clinic_id = clinics.id
-			WHERE cl.language_id != 1
+			WHERE cl.language_id != 1 AND d.hidden = FALSE AND d.is_draft = FALSE
 		) as combined
 		ORDER BY specialty_id, lang_id, city_id;
 	`;
@@ -139,6 +140,7 @@ export async function getClinicCombinations() {
 		SELECT DISTINCT dc.clinic_id as clinicId
 		FROM doctors d
 		INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
+		WHERE d.hidden = FALSE AND d.is_draft = FALSE
 		ORDER BY dc.clinic_id;
 	`;
 	const [rows] = await connection.execute<any[]>(query);
@@ -155,6 +157,7 @@ export async function getClinicSpecialtyCombinations() {
 		FROM doctors d
 		INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 		INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
+		WHERE d.hidden = FALSE AND d.is_draft = FALSE
 		ORDER BY dc.clinic_id, ds.specialty_id;
 	`;
 	const [rows] = await connection.execute<any[]>(query);
@@ -173,13 +176,13 @@ export async function getClinicLanguageCombinations() {
 			FROM doctors d
 			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			INNER JOIN doctor_languages dl ON d.id = dl.doctor_id
-			WHERE dl.language_id != 1
+			WHERE dl.language_id != 1 AND d.hidden = FALSE AND d.is_draft = FALSE
 			UNION
 			SELECT dc.clinic_id, cl.language_id as lang_id
 			FROM doctors d
 			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			INNER JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id
-			WHERE cl.language_id != 1
+			WHERE cl.language_id != 1 AND d.hidden = FALSE AND d.is_draft = FALSE
 		) as combined
 		ORDER BY clinic_id, lang_id;
 	`;
@@ -200,14 +203,14 @@ export async function getClinicSpecialtyLanguageCombinations() {
 			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
 			INNER JOIN doctor_languages dl ON d.id = dl.doctor_id
-			WHERE dl.language_id != 1
+			WHERE dl.language_id != 1 AND d.hidden = FALSE AND d.is_draft = FALSE
 			UNION
 			SELECT dc.clinic_id, ds.specialty_id, cl.language_id as lang_id
 			FROM doctors d
 			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
 			INNER JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id
-			WHERE cl.language_id != 1
+			WHERE cl.language_id != 1 AND d.hidden = FALSE AND d.is_draft = FALSE
 		) as combined
 		ORDER BY clinic_id, specialty_id, lang_id;
 	`;

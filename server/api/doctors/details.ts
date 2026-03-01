@@ -7,6 +7,7 @@ import {
 	getServicesByClinicAndSpecialty,
 	type ClinicServicesMap,
 } from '~/server/common/services';
+import { getCurrentUser } from '~/server/common/auth';
 import type { DoctorData } from '~/interfaces/doctor';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
@@ -30,6 +31,9 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 		const doctorsQuery = `
 			SELECT DISTINCT
 				d.id,
+				d.user_id,
+				d.hidden,
+				d.is_draft,
 				d.name_sr,
 				d.name_sr_cyrl,
 				d.name_ru,
@@ -66,7 +70,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 		const [doctorRows] = await connection.execute(doctorsQuery);
 
 		const doctor = (doctorRows as any[])[0];
-		if (!doctor) {
+		if (!doctor || doctor.hidden || doctor.is_draft) {
 			await connection.end();
 			return null;
 		}
@@ -108,8 +112,14 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			sortedClinicIds = clinicIdsList.join(',');
 		}
 
-		// Удаляем избыточные поля локализации
+		const currentUser = await getCurrentUser(event);
+		const isOwner =
+			!!currentUser && !!doctor.user_id && currentUser.id === doctor.user_id;
+
 		const {
+			hidden: _hidden,
+			is_draft: _isDraft,
+			user_id: _userId,
 			name_sr,
 			name_sr_cyrl,
 			name_ru,
@@ -130,6 +140,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			description,
 			clinicIds: sortedClinicIds,
 			clinicServices,
+			isOwner,
 		};
 	} catch (error) {
 		console.error('API Error - doctor data:', error);

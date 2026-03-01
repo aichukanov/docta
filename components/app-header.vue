@@ -42,7 +42,7 @@ const articlesPageLink = computed(() => ({
 }));
 
 const profilePageLink = computed(() => ({
-	name: 'profile',
+	name: 'profile-basic',
 	query: getRegionalQuery(locale.value),
 }));
 

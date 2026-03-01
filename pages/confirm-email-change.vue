@@ -42,7 +42,10 @@ onMounted(async () => {
 
 		// Через 3 секунды редирект
 		setTimeout(() => {
-			router.push({ name: 'profile', query: getRegionalQuery(locale.value) });
+			router.push({
+				name: 'profile-basic',
+				query: getRegionalQuery(locale.value),
+			});
 		}, 3000);
 	} catch (err: any) {
 		console.error('Email change confirmation error:', err);

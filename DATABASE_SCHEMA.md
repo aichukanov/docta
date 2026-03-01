@@ -215,6 +215,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 ### `doctors`
 
 - `id` (int, PK, AI)
+- `user_id` (int, Unique, NULL, FK -> auth_users.id): Owner user account. NULL for doctors created via admin panel.
 - `name_sr` (varchar(255)): Name in Serbian (Latin).
 - `name_sr_cyrl` (varchar(255)): Name in Serbian (Cyrillic).
 - `name_ru` (varchar(255)): Name in Russian.
@@ -224,7 +225,11 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `email`, `website`, `instagram`, `facebook`, `whatsapp`, `telegram`, `viber` (varchar(255))
 - `description_sr`, `description_sr_cyrl`, `description_ru`, `description_en`, `description_de`, `description_tr` (text): Localized descriptions.
 - `professional_title` (varchar(255))
+- `hidden` (boolean, default FALSE): When TRUE, the doctor is excluded from all public listings and their profile page returns 404.
+- `is_draft` (boolean, default FALSE): When TRUE, the profile is pending review and not yet published. Only admins can change this.
 - `created_at`, `updated_at` (timestamp)
+- _Indexes_: `idx_doctors_user_id` (user_id, UNIQUE), `idx_hidden`, `idx_doctors_is_draft`
+- _Foreign Keys_: `user_id` -> `auth_users.id` (ON DELETE SET NULL)
 
 ### `specialties`
 

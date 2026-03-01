@@ -1,64 +1,71 @@
 <script setup lang="ts">
+import doctorProfileI18n from '~/i18n/doctor-profile';
+import type { DoctorMyProfile } from '~/server/api/doctors/my-profile';
+import type { DoctorProfileStatus } from '~/interfaces/doctor';
+
 const { t } = useI18n({
 	useScope: 'local',
-	messages: {
-		en: { title: 'Doctor Profile', desc: 'This section is under development' },
-		ru: { title: 'Профиль врача', desc: 'Этот раздел находится в разработке' },
-		sr: { title: 'Profil lekara', desc: 'Ovaj odeljak je u razvoju' },
-		de: { title: 'Arztprofil', desc: 'Dieser Abschnitt ist in Entwicklung' },
-		tr: { title: 'Doktor Profili', desc: 'Bu bölüm geliştirme aşamasındadır' },
-		'sr-cyrl': { title: 'Профил лекара', desc: 'Овај одељак је у развоју' },
-	},
+	messages: doctorProfileI18n.messages,
 });
+
+const { data: doctor } = await useFetch<DoctorMyProfile | null>(
+	'/api/doctors/my-profile',
+	{ key: 'my-doctor-profile' },
+);
+
+const isToggling = ref(false);
+const isEditing = ref(false);
+
+const status = computed<DoctorProfileStatus | null>(() =>
+	doctor.value
+		? doctor.value.isDraft
+			? 'draft'
+			: doctor.value.hidden
+			? 'hidden'
+			: 'public'
+		: null,
+);
+
+async function toggleVisibility() {
+	if (!doctor.value) return;
+
+	const msg = doctor.value.hidden ? t('confirmShow') : t('confirmHide');
+	if (!confirm(msg)) return;
+
+	isToggling.value = true;
+	try {
+		const result = await $fetch('/api/doctors/toggle-visibility', {
+			method: 'POST',
+		});
+		doctor.value.hidden = result.hidden;
+		ElMessage.success(t('visibilityUpdated'));
+	} catch {
+		ElMessage.error(t('errorUpdating'));
+	} finally {
+		isToggling.value = false;
+	}
+}
+
+async function onSaved() {
+	isEditing.value = false;
+	await refreshNuxtData('my-doctor-profile');
+}
 </script>
 
 <template>
-	<div class="coming-soon-card">
-		<div class="coming-soon-card__icon">
-			<IconDoctor :size="40" />
-		</div>
-		<h2 class="coming-soon-card__title">{{ t('title') }}</h2>
-		<p class="coming-soon-card__desc">{{ t('desc') }}</p>
-	</div>
+	<ProfileDoctorEditForm
+		v-if="doctor && isEditing"
+		:doctor="doctor"
+		@saved="onSaved"
+		@cancel="isEditing = false"
+	/>
+	<ProfileDoctorCard
+		v-else-if="doctor && status"
+		:doctor="doctor"
+		:status="status"
+		:is-toggling="isToggling"
+		@toggle-visibility="toggleVisibility"
+		@edit="isEditing = true"
+	/>
+	<ProfileDoctorEmptyState v-else />
 </template>
-
-<style scoped>
-.coming-soon-card {
-	background: var(--color-bg-primary);
-	border-radius: var(--border-radius-xl);
-	border: 1px solid var(--color-border-secondary);
-	box-shadow: var(--shadow-sm);
-	padding: var(--spacing-3xl) var(--spacing-2xl);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: var(--spacing-lg);
-	text-align: center;
-	min-height: 280px;
-	justify-content: center;
-}
-
-.coming-soon-card__icon {
-	width: 80px;
-	height: 80px;
-	border-radius: var(--border-radius-full);
-	background: var(--color-primary-bg);
-	color: var(--color-primary);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.coming-soon-card__title {
-	font-size: var(--font-size-2xl);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
-	margin: 0;
-}
-
-.coming-soon-card__desc {
-	font-size: var(--font-size-md);
-	color: var(--color-text-muted);
-	margin: 0;
-}
-</style>

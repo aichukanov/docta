@@ -51,7 +51,7 @@ onMounted(async () => {
 });
 
 const profilePageLink = computed(() => ({
-	name: 'profile',
+	name: 'profile-basic',
 	query: getRegionalQuery(locale.value),
 }));
 

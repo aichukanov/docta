@@ -15,6 +15,7 @@ interface DoctorServicePrice {
 
 interface DoctorAdminDetails {
 	id: number;
+	hidden: boolean;
 	name: string;
 	name_sr_cyrl: string;
 	name_ru: string;
@@ -104,6 +105,10 @@ const removeServicePrice = (index: number) => {
 	if (!doctorModel.value) return;
 	doctorModel.value.servicePrices.splice(index, 1);
 };
+
+const hiddenModified = computed(
+	() => originalDoctor.value?.hidden !== doctorModel.value?.hidden,
+);
 
 const nameModified = computed(
 	() => originalDoctor.value?.name !== doctorModel.value?.name,
@@ -231,6 +236,7 @@ const servicePricesModified = computed(() => {
 
 const hasChanges = computed(() => {
 	return (
+		hiddenModified.value ||
 		nameModified.value ||
 		nameSrCyrlModified.value ||
 		nameRuModified.value ||
@@ -360,6 +366,21 @@ watch(doctorId, async (newDoctorId) => {
 		<div v-if="isLoading" class="loading">Загрузка...</div>
 
 		<div v-else-if="doctorModel" class="doctor-info">
+			<div
+				class="hidden-toggle"
+				:class="{ modified: hiddenModified, active: doctorModel.hidden }"
+			>
+				<el-switch
+					v-model="doctorModel.hidden"
+					active-text="Профиль скрыт"
+					inactive-text="Профиль виден"
+					:disabled="!editable"
+				/>
+				<span v-if="doctorModel.hidden" class="hidden-hint">
+					Врач не отображается в публичных списках, страница отдаёт 404
+				</span>
+			</div>
+
 			<AdminFieldGroup title="Имя">
 				<AdminEditableField
 					label="Имя"
@@ -638,7 +659,7 @@ watch(doctorId, async (newDoctorId) => {
 	border: 1px solid var(--color-border-primary);
 
 	&.modified {
-		border-color: #f59e0b;
+		border-color: var(--color-warning);
 	}
 
 	.section-header {
@@ -673,6 +694,30 @@ watch(doctorId, async (newDoctorId) => {
 
 	.no-services {
 		color: var(--color-text-secondary);
+	}
+}
+
+.hidden-toggle {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-md);
+	padding: var(--spacing-md);
+	border-radius: var(--border-radius-md);
+	border: 1px solid var(--color-border-primary);
+	background: var(--color-surface-secondary);
+
+	&.modified {
+		border-color: var(--color-warning);
+	}
+
+	&.active {
+		background: var(--color-danger-bg);
+		border-color: var(--color-danger-border);
+	}
+
+	.hidden-hint {
+		font-size: 0.85em;
+		color: var(--color-danger);
 	}
 }
 

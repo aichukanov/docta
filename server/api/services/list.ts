@@ -54,8 +54,9 @@ export async function getMedicalServiceList(
 	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
 
 	const buildInPlaceholders = (values: Array<number | string>) => {
-		queryParams.push(...values);
-		return values.map(() => '?').join(',');
+		const arr = Array.isArray(values) ? values : [values];
+		queryParams.push(...arr);
+		return arr.map(() => '?').join(',');
 	};
 
 	if (body.clinicIds?.length > 0) {

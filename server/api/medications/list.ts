@@ -10,6 +10,7 @@ import {
 	validateBody,
 	validateName,
 	validateCityIds,
+	validateClinicIds,
 } from '~/common/validation';
 import { LIST_PAGE_SIZE } from '~/common/constants';
 
@@ -23,6 +24,10 @@ export default defineEventHandler(async (event): Promise<ClinicServiceList> => {
 		}
 		if (body.cityIds && !validateCityIds(body, 'api/medications/list')) {
 			setResponseStatus(event, 400, 'Invalid city');
+			return { items: [], totalCount: 0 };
+		}
+		if (body.clinicIds && !validateClinicIds(body, 'api/medications/list')) {
+			setResponseStatus(event, 400, 'Invalid clinic ids');
 			return { items: [], totalCount: 0 };
 		}
 
@@ -52,8 +57,9 @@ export async function getMedicationList(
 	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
 
 	const buildInPlaceholders = (values: Array<number | string>) => {
-		queryParams.push(...values);
-		return values.map(() => '?').join(',');
+		const arr = Array.isArray(values) ? values : [values];
+		queryParams.push(...arr);
+		return arr.map(() => '?').join(',');
 	};
 
 	if (body.clinicIds?.length > 0) {

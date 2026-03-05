@@ -11,6 +11,7 @@ import {
 	validateName,
 	validateCategoryIds,
 	validateCityIds,
+	validateClinicIds,
 } from '~/common/validation';
 import { LIST_PAGE_SIZE } from '~/common/constants';
 
@@ -24,6 +25,10 @@ export default defineEventHandler(async (event): Promise<LabTestList> => {
 		}
 		if (body.cityIds && !validateCityIds(body, 'api/labtests/list')) {
 			setResponseStatus(event, 400, 'Invalid city');
+			return { items: [], totalCount: 0 };
+		}
+		if (body.clinicIds && !validateClinicIds(body, 'api/labtests/list')) {
+			setResponseStatus(event, 400, 'Invalid clinic ids');
 			return { items: [], totalCount: 0 };
 		}
 
@@ -54,8 +59,9 @@ export async function getLabTestList(
 	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
 
 	const buildInPlaceholders = (values: Array<number | string>) => {
-		queryParams.push(...values);
-		return values.map(() => '?').join(',');
+		const arr = Array.isArray(values) ? values : [values];
+		queryParams.push(...arr);
+		return arr.map(() => '?').join(',');
 	};
 
 	if (body.categoryIds?.length > 0) {

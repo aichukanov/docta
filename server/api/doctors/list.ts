@@ -78,8 +78,9 @@ export async function getDoctorList(
 	}
 
 	const buildInPlaceholders = (values: Array<number | string>) => {
-		queryParams.push(...values);
-		return values.map(() => '?').join(',');
+		const arr = Array.isArray(values) ? values : [values];
+		queryParams.push(...arr);
+		return arr.map(() => '?').join(',');
 	};
 
 	if (body.specialtyIds?.length > 0) {

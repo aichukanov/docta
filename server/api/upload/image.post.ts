@@ -1,4 +1,3 @@
-import { join } from 'node:path';
 import { unlink } from 'node:fs/promises';
 import { getCurrentUser } from '~/server/common/auth';
 import { executeQuery } from '~/server/common/db-mysql';
@@ -16,6 +15,7 @@ import {
 import {
 	validateImageFile,
 	processAndSaveImage,
+	resolveUploadPath,
 	VALID_CATEGORIES,
 	type ImageCategory,
 } from '~/server/utils/image-processing';
@@ -42,9 +42,10 @@ function getQueryConfig(category: ImageCategory, userId: number) {
 }
 
 async function deleteOldFile(photoUrl: string) {
-	if (!photoUrl || !photoUrl.startsWith('/uploads/')) return;
+	const filePath = resolveUploadPath(photoUrl);
+	if (!filePath) return;
 	try {
-		await unlink(join(process.cwd(), 'public', photoUrl));
+		await unlink(filePath);
 	} catch {
 		// файл не существует — ок
 	}

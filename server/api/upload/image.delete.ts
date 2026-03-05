@@ -1,4 +1,3 @@
-import { join } from 'node:path';
 import { unlink } from 'node:fs/promises';
 import { getCurrentUser } from '~/server/common/auth';
 import { executeQuery } from '~/server/common/db-mysql';
@@ -14,6 +13,7 @@ import {
 	logError,
 } from '~/server/utils/logger';
 import {
+	resolveUploadPath,
 	VALID_CATEGORIES,
 	type ImageCategory,
 } from '~/server/utils/image-processing';
@@ -44,9 +44,8 @@ function getPhotoUrlQuery(category: ImageCategory, userId: number) {
  * Внешние URL (OAuth-аватары и т.п.) не трогает.
  */
 async function deleteFileFromDisk(photoUrl: string) {
-	if (!photoUrl || !photoUrl.startsWith('/uploads/')) return;
-
-	const filePath = join(process.cwd(), 'public', photoUrl);
+	const filePath = resolveUploadPath(photoUrl);
+	if (!filePath) return;
 	try {
 		await unlink(filePath);
 	} catch {

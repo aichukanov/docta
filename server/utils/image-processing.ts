@@ -6,6 +6,14 @@ import { join } from 'node:path';
 const MAX_DIMENSION = 1600;
 const WEBP_QUALITY = 82;
 
+/**
+ * Корневая директория хранилища загрузок.
+ * В production — /home/docta/uploads (вне проекта, nginx отдаёт как /uploads/).
+ * В dev — public/uploads (для удобства, отдаётся Nuxt dev-сервером).
+ */
+export const UPLOADS_ROOT = process.env.UPLOADS_DIR
+	|| join(process.cwd(), 'public', 'uploads');
+
 const ALLOWED_MIME_TYPES = [
 	'image/jpeg',
 	'image/png',
@@ -36,6 +44,16 @@ export function validateImageFile(
 }
 
 /**
+ * Резолвит путь на диске по публичному URL (/uploads/avatars/xxx.webp).
+ * Возвращает null для внешних URL.
+ */
+export function resolveUploadPath(url: string): string | null {
+	if (!url || !url.startsWith('/uploads/')) return null;
+	const relative = url.replace(/^\/uploads\//, '');
+	return join(UPLOADS_ROOT, relative);
+}
+
+/**
  * Сжимает изображение до MAX_DIMENSION по большей стороне,
  * конвертирует в WebP, сохраняет на диск.
  * Возвращает публичный URL.
@@ -54,11 +72,10 @@ export async function processAndSaveImage(
 		.toBuffer();
 
 	const filename = `${randomUUID()}.webp`;
-	const relativeDir = join('uploads', category);
-	const publicDir = join(process.cwd(), 'public', relativeDir);
+	const categoryDir = join(UPLOADS_ROOT, category);
 
-	await mkdir(publicDir, { recursive: true });
-	await writeFile(join(publicDir, filename), processed);
+	await mkdir(categoryDir, { recursive: true });
+	await writeFile(join(categoryDir, filename), processed);
 
-	return `/${relativeDir}/${filename}`.replace(/\\/g, '/');
+	return `/uploads/${category}/${filename}`;
 }

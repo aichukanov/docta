@@ -26,6 +26,12 @@ export default {
 			// Profile editing
 			editName: 'Name',
 			editEmail: 'Email',
+			changePhoto: 'Change photo',
+			removePhoto: 'Remove photo',
+			oauthPhotoHint:
+				'Photo from your linked account. Upload your own to replace it.',
+			photoUpdated: 'Photo updated',
+			uploadError: 'Failed to upload photo',
 
 			// OAuth accounts
 			linkedAccounts: 'Linked Accounts',
@@ -85,6 +91,12 @@ export default {
 			// Редактирование профиля
 			editName: 'Имя',
 			editEmail: 'Email',
+			changePhoto: 'Изменить фото',
+			removePhoto: 'Удалить фото',
+			oauthPhotoHint:
+				'Фото из привязанного аккаунта. Загрузите своё, чтобы заменить.',
+			photoUpdated: 'Фото обновлено',
+			uploadError: 'Не удалось загрузить фото',
 
 			// OAuth аккаунты
 			linkedAccounts: 'Привязанные аккаунты',
@@ -143,6 +155,12 @@ export default {
 			// Uređivanje profila
 			editName: 'Ime',
 			editEmail: 'Email',
+			changePhoto: 'Promeni fotografiju',
+			removePhoto: 'Ukloni fotografiju',
+			oauthPhotoHint:
+				'Fotografija sa povezanog naloga. Otpremite svoju da je zamenite.',
+			photoUpdated: 'Fotografija ažurirana',
+			uploadError: 'Greška pri učitavanju fotografije',
 
 			// OAuth nalozi
 			linkedAccounts: 'Povezani nalozi',
@@ -202,6 +220,12 @@ export default {
 			// Profil bearbeiten
 			editName: 'Name',
 			editEmail: 'E-Mail',
+			changePhoto: 'Foto ändern',
+			removePhoto: 'Foto entfernen',
+			oauthPhotoHint:
+				'Foto aus Ihrem verknüpften Konto. Laden Sie ein eigenes hoch, um es zu ersetzen.',
+			photoUpdated: 'Foto aktualisiert',
+			uploadError: 'Foto konnte nicht hochgeladen werden',
 
 			// OAuth-Konten
 			linkedAccounts: 'Verknüpfte Konten',
@@ -258,6 +282,12 @@ export default {
 			// Profil düzenleme
 			editName: 'İsim',
 			editEmail: 'E-posta',
+			changePhoto: 'Fotoğrafı değiştir',
+			removePhoto: 'Fotoğrafı kaldır',
+			oauthPhotoHint:
+				'Bağlı hesabınızdaki fotoğraf. Değiştirmek için kendi fotoğrafınızı yükleyin.',
+			photoUpdated: 'Fotoğraf güncellendi',
+			uploadError: 'Fotoğraf yüklenemedi',
 
 			// OAuth hesapları
 			linkedAccounts: 'Bağlı Hesaplar',
@@ -317,6 +347,12 @@ export default {
 			// Уређивање профила
 			editName: 'Име',
 			editEmail: 'Емаил',
+			changePhoto: 'Промени фотографију',
+			removePhoto: 'Уклони фотографију',
+			oauthPhotoHint:
+				'Фотографија са повезаног налога. Отпремите своју да је замените.',
+			photoUpdated: 'Фотографија ажурирана',
+			uploadError: 'Грешка при учитавању фотографије',
 
 			// OAuth налози
 			linkedAccounts: 'Повезани налози',

@@ -96,6 +96,53 @@ function openEditName() {
 function openEditEmail() {
 	showEditEmailDialog.value = true;
 }
+
+// --- Avatar upload ---
+const avatarInput = ref<HTMLInputElement | null>(null);
+const {
+	isUploading,
+	isRemoving,
+	error: uploadError,
+	preview,
+	upload,
+	removePhoto,
+	setPreview,
+} = useImageUpload();
+
+function triggerAvatarUpload() {
+	avatarInput.value?.click();
+}
+
+async function onAvatarFileChange(e: Event) {
+	const file = (e.target as HTMLInputElement).files?.[0];
+	if (!file) return;
+
+	setPreview(file);
+	const url = await upload(file, 'avatars');
+
+	if (url) {
+		await userStore.fetchUser(true);
+	}
+
+	if (avatarInput.value) {
+		avatarInput.value.value = '';
+	}
+}
+
+async function removeAvatar() {
+	const ok = await removePhoto('avatars');
+	if (ok) {
+		await userStore.fetchUser(true);
+	}
+}
+
+const canRemoveAvatar = computed(
+	() => preview.value || user.value?.has_custom_photo,
+);
+const isOAuthPhoto = computed(
+	() => !user.value?.has_custom_photo && !!user.value?.photo_url,
+);
+const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 </script>
 
 <template>
@@ -105,17 +152,48 @@ function openEditEmail() {
 			<section class="profile-hero">
 				<div class="profile-hero__content">
 					<div class="profile-hero__avatar-wrap">
+						<el-tooltip
+							v-if="isOAuthPhoto"
+							:content="t('oauthPhotoHint')"
+							placement="bottom"
+						>
+							<DoctorAvatar
+								:name="user?.name ?? ''"
+								:photo-url="avatarDisplayUrl"
+								:size="88"
+							/>
+						</el-tooltip>
 						<DoctorAvatar
+							v-else
 							:name="user?.name ?? ''"
-							:photo-url="user?.photo_url"
+							:photo-url="avatarDisplayUrl"
 							:size="88"
 						/>
-						<span
-							v-if="isAdmin"
-							class="profile-hero__badge profile-hero__badge--admin"
+						<button
+							class="profile-hero__avatar-upload"
+							:title="t('changePhoto')"
+							:disabled="isUploading"
+							@click="triggerAvatarUpload"
 						>
-							{{ t('administrator') }}
-						</span>
+							<IconCamera v-if="!isUploading" :size="14" />
+							<span v-else class="profile-hero__avatar-spinner" />
+						</button>
+						<button
+							v-if="canRemoveAvatar"
+							class="profile-hero__avatar-remove"
+							:title="t('removePhoto')"
+							:disabled="isRemoving"
+							@click="removeAvatar"
+						>
+							<IconClose :size="10" />
+						</button>
+						<input
+							ref="avatarInput"
+							type="file"
+							accept="image/jpeg,image/png,image/webp,image/gif"
+							hidden
+							@change="onAvatarFileChange"
+						/>
 					</div>
 
 					<div class="profile-hero__info">
@@ -262,6 +340,77 @@ function openEditEmail() {
 .profile-hero__avatar-wrap {
 	position: relative;
 	flex-shrink: 0;
+}
+
+.profile-hero__avatar-upload {
+	position: absolute;
+	bottom: -2px;
+	right: -2px;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	border: 2px solid var(--color-bg-primary);
+	background: var(--color-primary);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all var(--transition-base);
+	padding: 0;
+}
+
+.profile-hero__avatar-upload:hover {
+	opacity: 0.9;
+	transform: scale(1.1);
+}
+
+.profile-hero__avatar-upload:disabled {
+	cursor: not-allowed;
+	opacity: 0.7;
+}
+
+.profile-hero__avatar-spinner {
+	width: 14px;
+	height: 14px;
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	border-top-color: #fff;
+	border-radius: 50%;
+	animation: avatar-spin 0.6s linear infinite;
+}
+
+.profile-hero__avatar-remove {
+	position: absolute;
+	top: -4px;
+	right: -4px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 2px solid var(--color-bg-primary);
+	background: var(--color-danger, #ef4444);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all var(--transition-base);
+	padding: 0;
+}
+
+.profile-hero__avatar-remove:hover {
+	background: var(--color-danger-dark, #dc2626);
+	transform: scale(1.1);
+}
+
+.profile-hero__avatar-remove:disabled {
+	cursor: not-allowed;
+	opacity: 0.7;
+}
+
+@keyframes avatar-spin {
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 .profile-hero__badge {

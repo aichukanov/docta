@@ -10,6 +10,7 @@ export interface User {
 	name: string;
 	username: string | null;
 	photo_url: string | null;
+	has_custom_photo: boolean;
 	is_admin: boolean;
 }
 
@@ -92,6 +93,7 @@ export async function getUserFromSession(
 					WHEN 'facebook' THEN fp.picture_url
 				END
 			) AS photo_url,
+			(NULLIF(u.photo_url, '') IS NOT NULL) AS has_custom_photo,
 			u.is_admin,
 			u.preferred_locale,
 			u.email_verified

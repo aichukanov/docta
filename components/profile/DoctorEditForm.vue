@@ -78,6 +78,49 @@ const descriptions = makeLocalizedComputed(
 	descriptionLanguages.map((l) => l.key),
 );
 
+const photoInput = ref<HTMLInputElement | null>(null);
+const { isUploading, isRemoving, preview, upload, removePhoto, setPreview } =
+	useImageUpload();
+const photoRemoved = ref(false);
+
+const photoDisplayUrl = computed(() => {
+	if (photoRemoved.value) return null;
+	return preview.value || props.doctor.photoUrl || null;
+});
+
+const canRemovePhoto = computed(
+	() =>
+		!photoRemoved.value &&
+		(preview.value || props.doctor.photoUrl?.startsWith('/uploads/')),
+);
+
+async function removeDoctorPhoto() {
+	const ok = await removePhoto('doctors');
+	if (ok) {
+		photoRemoved.value = true;
+	}
+}
+
+function triggerPhotoUpload() {
+	photoInput.value?.click();
+}
+
+async function onPhotoFileChange(e: Event) {
+	const file = (e.target as HTMLInputElement).files?.[0];
+	if (!file) return;
+
+	setPreview(file);
+	const url = await upload(file, 'doctors');
+
+	if (url) {
+		ElMessage.success(t('photoUpdated'));
+	}
+
+	if (photoInput.value) {
+		photoInput.value.value = '';
+	}
+}
+
 const isSaving = ref(false);
 
 function validate(): string | null {
@@ -131,6 +174,42 @@ async function save() {
 		<div class="edit-form__header">
 			<IconEdit :size="20" />
 			<h2 class="edit-form__title">{{ t('editProfile') }}</h2>
+		</div>
+
+		<div class="edit-form__photo-section">
+			<div class="edit-form__avatar-wrap">
+				<DoctorAvatar
+					:name="doctor.name"
+					:photo-url="photoDisplayUrl"
+					:size="80"
+				/>
+				<button
+					class="edit-form__avatar-upload"
+					:title="t('changePhoto')"
+					:disabled="isUploading"
+					@click="triggerPhotoUpload"
+				>
+					<IconCamera v-if="!isUploading" :size="14" />
+					<span v-else class="edit-form__avatar-spinner" />
+				</button>
+				<button
+					v-if="canRemovePhoto"
+					class="edit-form__avatar-remove"
+					:title="t('removePhoto')"
+					:disabled="isRemoving"
+					@click="removeDoctorPhoto"
+				>
+					<IconClose :size="10" />
+				</button>
+				<input
+					ref="photoInput"
+					type="file"
+					accept="image/jpeg,image/png,image/webp,image/gif"
+					hidden
+					@change="onPhotoFileChange"
+				/>
+			</div>
+			<div class="edit-form__photo-hint">{{ t('changePhoto') }}</div>
 		</div>
 
 		<div class="edit-form__fields">
@@ -199,6 +278,93 @@ async function save() {
 	font-weight: var(--font-weight-semibold);
 	color: var(--color-text-heading);
 	margin: 0;
+}
+
+.edit-form__photo-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-sm);
+}
+
+.edit-form__avatar-wrap {
+	position: relative;
+}
+
+.edit-form__avatar-upload {
+	position: absolute;
+	bottom: -2px;
+	right: -2px;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	border: 2px solid var(--color-bg-primary);
+	background: var(--color-primary);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all var(--transition-base);
+	padding: 0;
+}
+
+.edit-form__avatar-upload:hover {
+	background: var(--color-primary-dark, #3730a3);
+	transform: scale(1.1);
+}
+
+.edit-form__avatar-upload:disabled {
+	cursor: not-allowed;
+	opacity: 0.7;
+}
+
+.edit-form__avatar-spinner {
+	width: 14px;
+	height: 14px;
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	border-top-color: #fff;
+	border-radius: 50%;
+	animation: edit-avatar-spin 0.6s linear infinite;
+}
+
+.edit-form__avatar-remove {
+	position: absolute;
+	top: -4px;
+	right: -4px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 2px solid var(--color-bg-primary);
+	background: var(--color-danger, #ef4444);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all var(--transition-base);
+	padding: 0;
+}
+
+.edit-form__avatar-remove:hover {
+	background: var(--color-danger-dark, #dc2626);
+	transform: scale(1.1);
+}
+
+.edit-form__avatar-remove:disabled {
+	cursor: not-allowed;
+	opacity: 0.7;
+}
+
+@keyframes edit-avatar-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.edit-form__photo-hint {
+	font-size: var(--font-size-xs);
+	color: var(--color-text-muted);
 }
 
 .edit-form__fields {

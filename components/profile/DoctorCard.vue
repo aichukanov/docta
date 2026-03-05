@@ -15,6 +15,7 @@ const props = defineProps<{
 const emit = defineEmits<{
 	(e: 'toggle-visibility'): void;
 	(e: 'edit'): void;
+	(e: 'photo-updated', url: string): void;
 }>();
 
 const { t } = useI18n({
@@ -24,6 +25,45 @@ const { t } = useI18n({
 
 const clinicsStore = useClinicsStore();
 clinicsStore.fetchClinics();
+
+const photoInput = ref<HTMLInputElement | null>(null);
+const { isUploading, isRemoving, preview, upload, removePhoto, setPreview } =
+	useImageUpload();
+
+const photoDisplayUrl = computed(
+	() => preview.value || props.doctor.photoUrl || null,
+);
+
+const canRemovePhoto = computed(
+	() => preview.value || props.doctor.photoUrl?.startsWith('/uploads/'),
+);
+
+async function removeDoctorPhoto() {
+	const ok = await removePhoto('doctors');
+	if (ok) {
+		emit('photo-updated', '');
+	}
+}
+
+function triggerPhotoUpload() {
+	photoInput.value?.click();
+}
+
+async function onPhotoFileChange(e: Event) {
+	const file = (e.target as HTMLInputElement).files?.[0];
+	if (!file) return;
+
+	setPreview(file);
+	const url = await upload(file, 'doctors');
+
+	if (url) {
+		emit('photo-updated', url);
+	}
+
+	if (photoInput.value) {
+		photoInput.value.value = '';
+	}
+}
 
 const specialties = computed(() => {
 	if (!props.doctor.specialtyIds) return [];
@@ -48,11 +88,39 @@ const clinicNames = computed(() =>
 		</div>
 
 		<div class="doctor-card__profile">
-			<DoctorAvatar
-				:name="doctor.name"
-				:photo-url="doctor.photoUrl"
-				:size="72"
-			/>
+			<div class="doctor-card__avatar-wrap">
+				<DoctorAvatar
+					:name="doctor.name"
+					:photo-url="photoDisplayUrl"
+					:size="72"
+				/>
+				<button
+					v-if="status !== 'draft'"
+					class="doctor-card__avatar-upload"
+					:title="t('changePhoto')"
+					:disabled="isUploading"
+					@click="triggerPhotoUpload"
+				>
+					<IconCamera v-if="!isUploading" :size="12" />
+					<span v-else class="doctor-card__avatar-spinner" />
+				</button>
+				<button
+					v-if="canRemovePhoto && status !== 'draft'"
+					class="doctor-card__avatar-remove"
+					:title="t('removePhoto')"
+					:disabled="isRemoving"
+					@click="removeDoctorPhoto"
+				>
+					<IconClose :size="8" />
+				</button>
+				<input
+					ref="photoInput"
+					type="file"
+					accept="image/jpeg,image/png,image/webp,image/gif"
+					hidden
+					@change="onPhotoFileChange"
+				/>
+			</div>
 			<div class="doctor-card__info">
 				<div class="doctor-card__name">
 					{{ doctor.name }}
@@ -162,6 +230,82 @@ const clinicNames = computed(() =>
 	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
 	line-height: 1.4;
+}
+
+.doctor-card__avatar-wrap {
+	position: relative;
+	flex-shrink: 0;
+}
+
+.doctor-card__avatar-upload {
+	position: absolute;
+	bottom: -2px;
+	right: -2px;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	border: 2px solid var(--color-bg-primary);
+	background: var(--color-primary);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all var(--transition-base);
+	padding: 0;
+}
+
+.doctor-card__avatar-upload:hover {
+	background: var(--color-primary-dark, #3730a3);
+	transform: scale(1.1);
+}
+
+.doctor-card__avatar-upload:disabled {
+	cursor: not-allowed;
+	opacity: 0.7;
+}
+
+.doctor-card__avatar-spinner {
+	width: 12px;
+	height: 12px;
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	border-top-color: #fff;
+	border-radius: 50%;
+	animation: doctor-avatar-spin 0.6s linear infinite;
+}
+
+.doctor-card__avatar-remove {
+	position: absolute;
+	top: -4px;
+	right: -4px;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	border: 2px solid var(--color-bg-primary);
+	background: var(--color-danger, #ef4444);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all var(--transition-base);
+	padding: 0;
+}
+
+.doctor-card__avatar-remove:hover {
+	background: var(--color-danger-dark, #dc2626);
+	transform: scale(1.1);
+}
+
+.doctor-card__avatar-remove:disabled {
+	cursor: not-allowed;
+	opacity: 0.7;
+}
+
+@keyframes doctor-avatar-spin {
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 .doctor-card__edit {

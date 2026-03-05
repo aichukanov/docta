@@ -91,6 +91,9 @@ export default defineNuxtConfig({
 		'/photos/**': {
 			headers: { 'Cache-Control': 'max-age=31536000, public, immutable' },
 		},
+		'/uploads/**': {
+			headers: { 'Cache-Control': 'max-age=31536000, public, immutable' },
+		},
 		'/favicon.ico': {
 			headers: { 'Cache-Control': 'max-age=31536000, public, immutable' },
 		},

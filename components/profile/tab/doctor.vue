@@ -50,6 +50,12 @@ async function onSaved() {
 	isEditing.value = false;
 	await refreshNuxtData('my-doctor-profile');
 }
+
+function onPhotoUpdated(url: string) {
+	if (doctor.value) {
+		doctor.value.photoUrl = url;
+	}
+}
 </script>
 
 <template>
@@ -66,6 +72,7 @@ async function onSaved() {
 		:is-toggling="isToggling"
 		@toggle-visibility="toggleVisibility"
 		@edit="isEditing = true"
+		@photo-updated="onPhotoUpdated"
 	/>
 	<ProfileDoctorEmptyState v-else />
 </template>

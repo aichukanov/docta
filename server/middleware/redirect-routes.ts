@@ -15,6 +15,7 @@ export default defineEventHandler(async (event) => {
 		return sendSitemap(event, await generateSitemapPage());
 	} else if (
 		pathArray[0] === 'api' ||
+		pathArray[0] === 'uploads' ||
 		pathArray[0] === 'ads' ||
 		pathArray[0] === 'search' ||
 		pathArray[0].includes('a1b2c3d4e5f6789012345678901234567890abcd') ||

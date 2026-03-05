@@ -52,6 +52,7 @@ export default defineNuxtConfig({
 	components: ['~/components'],
 
 	runtimeConfig: {
+		uploadsDir: process.env.UPLOADS_DIR || '',
 		baseUrl: process.env.BASE_URL || '',
 		googleClientId: process.env.GOOGLE_CLIENT_ID || '',
 		googleClientSecret: process.env.GOOGLE_CLIENT_SECRET || '',

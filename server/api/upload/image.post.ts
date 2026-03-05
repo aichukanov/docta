@@ -60,6 +60,7 @@ export default defineEventHandler(async (event) => {
 
 	const formData = await readMultipartFormData(event);
 	if (!formData) {
+		uploadLogger.warn('readMultipartFormData returned null');
 		return createErrorResponse(400, ERROR_CODES.NO_FILE);
 	}
 
@@ -67,6 +68,14 @@ export default defineEventHandler(async (event) => {
 	const categoryField = formData.find((f) => f.name === 'category');
 
 	const category = categoryField?.data?.toString() as ImageCategory | undefined;
+
+	uploadLogger.debug('Upload request', {
+		fields: formData.map((f) => f.name),
+		category,
+		fileType: fileField?.type,
+		fileSize: fileField?.data?.length,
+	});
+
 	if (!category || !VALID_CATEGORIES.includes(category)) {
 		return createErrorResponse(400, ERROR_CODES.INVALID_FILE_TYPE);
 	}

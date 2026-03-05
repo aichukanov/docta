@@ -11,8 +11,10 @@ const WEBP_QUALITY = 82;
  * В production — /home/docta/uploads (вне проекта, nginx отдаёт как /uploads/).
  * В dev — public/uploads (для удобства, отдаётся Nuxt dev-сервером).
  */
-export const UPLOADS_ROOT = process.env.UPLOADS_DIR
-	|| join(process.cwd(), 'public', 'uploads');
+export function getUploadsRoot(): string {
+	const config = useRuntimeConfig();
+	return config.uploadsDir || join(process.cwd(), 'public', 'uploads');
+}
 
 const ALLOWED_MIME_TYPES = [
 	'image/jpeg',
@@ -50,7 +52,7 @@ export function validateImageFile(
 export function resolveUploadPath(url: string): string | null {
 	if (!url || !url.startsWith('/uploads/')) return null;
 	const relative = url.replace(/^\/uploads\//, '');
-	return join(UPLOADS_ROOT, relative);
+	return join(getUploadsRoot(), relative);
 }
 
 /**
@@ -72,10 +74,12 @@ export async function processAndSaveImage(
 		.toBuffer();
 
 	const filename = `${randomUUID()}.webp`;
-	const categoryDir = join(UPLOADS_ROOT, category);
+	const uploadsRoot = getUploadsRoot();
+	const categoryDir = join(uploadsRoot, category);
+	const filePath = join(categoryDir, filename);
 
 	await mkdir(categoryDir, { recursive: true });
-	await writeFile(join(categoryDir, filename), processed);
+	await writeFile(filePath, processed);
 
 	return `/uploads/${category}/${filename}`;
 }

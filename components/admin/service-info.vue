@@ -100,26 +100,17 @@ const removeClinicPrice = (index: number) => {
 	serviceModel.value.clinicPrices.splice(index, 1);
 };
 
+const fieldModified = (field: keyof ServiceAdminDetails) =>
+	originalService.value?.[field] !== serviceModel.value?.[field];
+
 // Модифицированные поля
-const nameModified = computed(
-	() => originalService.value?.name_en !== serviceModel.value?.name_en,
-);
-const nameSrModified = computed(
-	() => originalService.value?.name_sr !== serviceModel.value?.name_sr,
-);
-const nameSrCyrlModified = computed(
-	() =>
-		originalService.value?.name_sr_cyrl !== serviceModel.value?.name_sr_cyrl,
-);
-const nameRuModified = computed(
-	() => originalService.value?.name_ru !== serviceModel.value?.name_ru,
-);
-const nameDeModified = computed(
-	() => originalService.value?.name_de !== serviceModel.value?.name_de,
-);
-const nameTrModified = computed(
-	() => originalService.value?.name_tr !== serviceModel.value?.name_tr,
-);
+const nameModified = computed(() => fieldModified('name_en'));
+const nameSrModified = computed(() => fieldModified('name_sr'));
+const nameSrCyrlModified = computed(() => fieldModified('name_sr_cyrl'));
+const nameRuModified = computed(() => fieldModified('name_ru'));
+const nameDeModified = computed(() => fieldModified('name_de'));
+const nameTrModified = computed(() => fieldModified('name_tr'));
+
 const specialtyIdsModified = computed(() => {
 	if (!originalService.value || !serviceModel.value) return false;
 	const orig = [...originalService.value.specialtyIds].sort();

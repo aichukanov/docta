@@ -8,7 +8,11 @@ function signInWithGoogle() {
 </script>
 
 <template>
-	<OAuthIconButton provider="google" :disabled="loading" @click="signInWithGoogle">
+	<OAuthIconButton
+		provider="google"
+		:disabled="loading"
+		@click="signInWithGoogle"
+	>
 		<IconGoogle :size="20" />
 	</OAuthIconButton>
 </template>

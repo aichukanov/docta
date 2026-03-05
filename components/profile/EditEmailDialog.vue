@@ -6,7 +6,7 @@ const emit = defineEmits<{ updated: []; cancel: [] }>();
 const { t } = useI18n({
 	useScope: 'local',
 	messages: {
-		en: {
+		'en': {
 			note: 'A confirmation email will be sent to the new address. Email will change only after confirmation.',
 			newEmailLabel: 'New email',
 			newEmailPlaceholder: 'Enter new email',
@@ -14,7 +14,7 @@ const { t } = useI18n({
 			send: 'Send email',
 			emailChangeSent: 'Confirmation email sent to new address',
 		},
-		ru: {
+		'ru': {
 			note: 'На новый email будет отправлено письмо с подтверждением. Email изменится только после подтверждения.',
 			newEmailLabel: 'Новый email',
 			newEmailPlaceholder: 'Введите новый email',
@@ -22,7 +22,7 @@ const { t } = useI18n({
 			send: 'Отправить письмо',
 			emailChangeSent: 'Письмо с подтверждением отправлено на новый email',
 		},
-		sr: {
+		'sr': {
 			note: 'Email sa potvrdom će biti poslat na novu adresu. Email će se promeniti samo nakon potvrde.',
 			newEmailLabel: 'Novi email',
 			newEmailPlaceholder: 'Unesite novi email',
@@ -30,7 +30,7 @@ const { t } = useI18n({
 			send: 'Pošalji email',
 			emailChangeSent: 'Email sa potvrdom poslat na novu adresu',
 		},
-		de: {
+		'de': {
 			note: 'Eine Bestätigungs-E-Mail wird an die neue Adresse gesendet. Die E-Mail wird erst nach Bestätigung geändert.',
 			newEmailLabel: 'Neue E-Mail',
 			newEmailPlaceholder: 'Neue E-Mail eingeben',
@@ -38,7 +38,7 @@ const { t } = useI18n({
 			send: 'E-Mail senden',
 			emailChangeSent: 'Bestätigungs-E-Mail an neue Adresse gesendet',
 		},
-		tr: {
+		'tr': {
 			note: 'Yeni adrese bir onay e-postası gönderilecektir. E-posta sadece onaydan sonra değişecektir.',
 			newEmailLabel: 'Yeni e-posta',
 			newEmailPlaceholder: 'Yeni e-posta girin',

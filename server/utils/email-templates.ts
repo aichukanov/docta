@@ -436,7 +436,10 @@ function generateEmailHTML(
 <body>
   <div class="container">
     <div class="header" style="background: #667eea; color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
-      <h1 style="color: white; margin: 0;">${heading.replace(/docta\.me/g, '<a href="https://docta.me" style="color: white !important; text-decoration: none;">docta.me</a>')}</h1>
+      <h1 style="color: white; margin: 0;">${heading.replace(
+				/docta\.me/g,
+				'<a href="https://docta.me" style="color: white !important; text-decoration: none;">docta.me</a>',
+			)}</h1>
     </div>
     <div class="content">
       ${contentHtml}
@@ -464,7 +467,9 @@ export function getPasswordResetEmail(
     <p>${template.content[0]}</p>
     <p>${template.content[1]}</p>
     <p style="text-align: center;">
-      <a href="${resetUrl}" class="button" style="display: inline-block; background: #667eea; color: white !important; padding: 12px 30px; text-decoration: none; border-radius: 6px;">${template.buttonText}</a>
+      <a href="${resetUrl}" class="button" style="display: inline-block; background: #667eea; color: white !important; padding: 12px 30px; text-decoration: none; border-radius: 6px;">${
+		template.buttonText
+	}</a>
     </p>
     <p>${template.content[2]}</p>
     <p style="word-break: break-all;"><a href="${resetUrl}" style="color: #333 !important; text-decoration: underline;">${resetUrl}</a></p>

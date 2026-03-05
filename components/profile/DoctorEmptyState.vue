@@ -15,10 +15,7 @@ const { t } = useI18n({
 		</div>
 		<h2 class="empty-card__title">{{ t('noDoctorProfile') }}</h2>
 		<p class="empty-card__desc">{{ t('noDoctorProfileDesc') }}</p>
-		<a
-			class="empty-card__email"
-			:href="`mailto:${PROJECT_CONTACTS.email}`"
-		>
+		<a class="empty-card__email" :href="`mailto:${PROJECT_CONTACTS.email}`">
 			{{ PROJECT_CONTACTS.email }}
 		</a>
 	</div>

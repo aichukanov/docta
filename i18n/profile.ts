@@ -5,7 +5,7 @@
 
 export default {
 	messages: {
-		en: {
+		'en': {
 			// Headers and general
 			profileTitle: 'User Profile',
 			onMainPage: 'Home',
@@ -34,9 +34,12 @@ export default {
 			locale: 'Locale',
 
 			// Confirm modals
-			confirmUnlinkGoogle: 'Are you sure you want to unlink your Google account?',
-			confirmUnlinkTelegram: 'Are you sure you want to unlink your Telegram account?',
-			confirmUnlinkFacebook: 'Are you sure you want to unlink your Facebook account?',
+			confirmUnlinkGoogle:
+				'Are you sure you want to unlink your Google account?',
+			confirmUnlinkTelegram:
+				'Are you sure you want to unlink your Telegram account?',
+			confirmUnlinkFacebook:
+				'Are you sure you want to unlink your Facebook account?',
 			// Success messages
 			accountUnlinked: 'Account unlinked successfully',
 			primaryProviderUpdated: 'Primary profile updated',
@@ -54,13 +57,14 @@ export default {
 
 			// Email editing
 			editEmailTitle: 'Change Email',
-			emailChangeNote: 'A confirmation email will be sent to the new address. Email will change only after confirmation.',
+			emailChangeNote:
+				'A confirmation email will be sent to the new address. Email will change only after confirmation.',
 			newEmailLabel: 'New email',
 			newEmailPlaceholder: 'Enter new email',
 			sendEmail: 'Send email',
 		},
 
-		ru: {
+		'ru': {
 			// Заголовки и общее
 			profileTitle: 'Профиль пользователя',
 			onMainPage: 'На главную',
@@ -90,8 +94,10 @@ export default {
 
 			// Confirm модалки
 			confirmUnlinkGoogle: 'Вы уверены, что хотите отвязать Google аккаунт?',
-			confirmUnlinkTelegram: 'Вы уверены, что хотите отвязать Telegram аккаунт?',
-			confirmUnlinkFacebook: 'Вы уверены, что хотите отвязать Facebook аккаунт?',
+			confirmUnlinkTelegram:
+				'Вы уверены, что хотите отвязать Telegram аккаунт?',
+			confirmUnlinkFacebook:
+				'Вы уверены, что хотите отвязать Facebook аккаунт?',
 			// Сообщения успеха
 			accountUnlinked: 'Аккаунт успешно отвязан',
 			primaryProviderUpdated: 'Приоритетный профиль обновлен',
@@ -109,13 +115,14 @@ export default {
 
 			// Редактирование email
 			editEmailTitle: 'Изменить email',
-			emailChangeNote: 'На новый email будет отправлено письмо с подтверждением. Email изменится только после подтверждения.',
+			emailChangeNote:
+				'На новый email будет отправлено письмо с подтверждением. Email изменится только после подтверждения.',
 			newEmailLabel: 'Новый email',
 			newEmailPlaceholder: 'Введите новый email',
 			sendEmail: 'Отправить письмо',
 		},
 
-		sr: {
+		'sr': {
 			// Naslovi i opšte
 			profileTitle: 'Korisnički profil',
 			onMainPage: 'Početna',
@@ -144,9 +151,12 @@ export default {
 			locale: 'Jezik',
 
 			// Potvrde u modalima
-			confirmUnlinkGoogle: 'Da li ste sigurni da želite da odvojite Google nalog?',
-			confirmUnlinkTelegram: 'Da li ste sigurni da želite da odvojite Telegram nalog?',
-			confirmUnlinkFacebook: 'Da li ste sigurni da želite da odvojite Facebook nalog?',
+			confirmUnlinkGoogle:
+				'Da li ste sigurni da želite da odvojite Google nalog?',
+			confirmUnlinkTelegram:
+				'Da li ste sigurni da želite da odvojite Telegram nalog?',
+			confirmUnlinkFacebook:
+				'Da li ste sigurni da želite da odvojite Facebook nalog?',
 			// Poruke o uspehu
 			accountUnlinked: 'Nalog uspešno odvojen',
 			primaryProviderUpdated: 'Primarni profil ažuriran',
@@ -164,13 +174,14 @@ export default {
 
 			// Uređivanje email-a
 			editEmailTitle: 'Izmeni email',
-			emailChangeNote: 'Email sa potvrdom će biti poslat na novu adresu. Email će se promeniti samo nakon potvrde.',
+			emailChangeNote:
+				'Email sa potvrdom će biti poslat na novu adresu. Email će se promeniti samo nakon potvrde.',
 			newEmailLabel: 'Novi email',
 			newEmailPlaceholder: 'Unesite novi email',
 			sendEmail: 'Pošalji email',
 		},
 
-		de: {
+		'de': {
 			// Überschriften und Allgemeines
 			profileTitle: 'Benutzerprofil',
 			onMainPage: 'Startseite',
@@ -219,13 +230,14 @@ export default {
 
 			// E-Mail bearbeiten
 			editEmailTitle: 'E-Mail ändern',
-			emailChangeNote: 'Eine Bestätigungs-E-Mail wird an die neue Adresse gesendet. Die E-Mail wird erst nach Bestätigung geändert.',
+			emailChangeNote:
+				'Eine Bestätigungs-E-Mail wird an die neue Adresse gesendet. Die E-Mail wird erst nach Bestätigung geändert.',
 			newEmailLabel: 'Neue E-Mail',
 			newEmailPlaceholder: 'Neue E-Mail eingeben',
 			sendEmail: 'E-Mail senden',
 		},
 
-		tr: {
+		'tr': {
 			// Başlıklar ve genel
 			profileTitle: 'Kullanıcı Profili',
 			onMainPage: 'Ana Sayfa',
@@ -254,9 +266,12 @@ export default {
 			locale: 'Dil',
 
 			// Onay modalları
-			confirmUnlinkGoogle: 'Google hesabınızın bağlantısını kesmek istediğinizden emin misiniz?',
-			confirmUnlinkTelegram: 'Telegram hesabınızın bağlantısını kesmek istediğinizden emin misiniz?',
-			confirmUnlinkFacebook: 'Facebook hesabınızın bağlantısını kesmek istediğinizden emin misiniz?',
+			confirmUnlinkGoogle:
+				'Google hesabınızın bağlantısını kesmek istediğinizden emin misiniz?',
+			confirmUnlinkTelegram:
+				'Telegram hesabınızın bağlantısını kesmek istediğinizden emin misiniz?',
+			confirmUnlinkFacebook:
+				'Facebook hesabınızın bağlantısını kesmek istediğinizden emin misiniz?',
 			// Başarı mesajları
 			accountUnlinked: 'Hesap bağlantısı başarıyla kesildi',
 			primaryProviderUpdated: 'Birincil profil güncellendi',
@@ -274,7 +289,8 @@ export default {
 
 			// E-posta düzenleme
 			editEmailTitle: 'E-postayı Değiştir',
-			emailChangeNote: 'Yeni adrese bir onay e-postası gönderilecektir. E-posta sadece onaydan sonra değişecektir.',
+			emailChangeNote:
+				'Yeni adrese bir onay e-postası gönderilecektir. E-posta sadece onaydan sonra değişecektir.',
 			newEmailLabel: 'Yeni e-posta',
 			newEmailPlaceholder: 'Yeni e-posta girin',
 			sendEmail: 'E-posta gönder',
@@ -309,9 +325,12 @@ export default {
 			locale: 'Језик',
 
 			// Потврде у модалима
-			confirmUnlinkGoogle: 'Да ли сте сигурни да желите да одвојите Гоогле налог?',
-			confirmUnlinkTelegram: 'Да ли сте сигурни да желите да одвојите Телеграм налог?',
-			confirmUnlinkFacebook: 'Да ли сте сигурни да желите да одвојите Фејсбук налог?',
+			confirmUnlinkGoogle:
+				'Да ли сте сигурни да желите да одвојите Гоогле налог?',
+			confirmUnlinkTelegram:
+				'Да ли сте сигурни да желите да одвојите Телеграм налог?',
+			confirmUnlinkFacebook:
+				'Да ли сте сигурни да желите да одвојите Фејсбук налог?',
 			// Поруке о успеху
 			accountUnlinked: 'Налог успешно одвојен',
 			primaryProviderUpdated: 'Примарни профил ажуриран',
@@ -329,7 +348,8 @@ export default {
 
 			// Уређивање емаила
 			editEmailTitle: 'Измени емаил',
-			emailChangeNote: 'Емаил са потврдом ће бити послат на нову адресу. Емаил ће се променити само након потврде.',
+			emailChangeNote:
+				'Емаил са потврдом ће бити послат на нову адресу. Емаил ће се променити само након потврде.',
 			newEmailLabel: 'Нови емаил',
 			newEmailPlaceholder: 'Унесите нови емаил',
 			sendEmail: 'Пошаљи емаил',

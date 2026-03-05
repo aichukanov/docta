@@ -5,7 +5,7 @@
 
 export default {
 	messages: {
-		en: {
+		'en': {
 			pageTitle: 'New Password',
 			description: 'Enter a new password for your account',
 			newPassword: 'New password',
@@ -19,11 +19,12 @@ export default {
 			btnSetPassword: 'Set Password',
 			btnBackToLogin: 'Back to login',
 			successTitle: 'Password Changed',
-			successDescription: 'Your password has been successfully changed. You will now be redirected to the login page.',
+			successDescription:
+				'Your password has been successfully changed. You will now be redirected to the login page.',
 			btnLoginNow: 'Login Now',
 		},
 
-		ru: {
+		'ru': {
 			pageTitle: 'Новый пароль',
 			description: 'Введите новый пароль для вашего аккаунта',
 			newPassword: 'Новый пароль',
@@ -37,11 +38,12 @@ export default {
 			btnSetPassword: 'Установить пароль',
 			btnBackToLogin: 'Вернуться ко входу',
 			successTitle: 'Пароль изменен',
-			successDescription: 'Ваш пароль успешно изменен. Сейчас вы будете перенаправлены на страницу входа.',
+			successDescription:
+				'Ваш пароль успешно изменен. Сейчас вы будете перенаправлены на страницу входа.',
 			btnLoginNow: 'Войти сейчас',
 		},
 
-		sr: {
+		'sr': {
 			pageTitle: 'Nova lozinka',
 			description: 'Unesite novu lozinku za vaš nalog',
 			newPassword: 'Nova lozinka',
@@ -55,11 +57,12 @@ export default {
 			btnSetPassword: 'Postavi lozinku',
 			btnBackToLogin: 'Nazad na prijavu',
 			successTitle: 'Lozinka promenjena',
-			successDescription: 'Vaša lozinka je uspešno promenjena. Sada ćete biti preusmereni na stranicu za prijavu.',
+			successDescription:
+				'Vaša lozinka je uspešno promenjena. Sada ćete biti preusmereni na stranicu za prijavu.',
 			btnLoginNow: 'Prijavite se sada',
 		},
 
-		de: {
+		'de': {
 			pageTitle: 'Neues Passwort',
 			description: 'Geben Sie ein neues Passwort für Ihr Konto ein',
 			newPassword: 'Neues Passwort',
@@ -73,11 +76,12 @@ export default {
 			btnSetPassword: 'Passwort festlegen',
 			btnBackToLogin: 'Zurück zur Anmeldung',
 			successTitle: 'Passwort geändert',
-			successDescription: 'Ihr Passwort wurde erfolgreich geändert. Sie werden nun zur Anmeldeseite weitergeleitet.',
+			successDescription:
+				'Ihr Passwort wurde erfolgreich geändert. Sie werden nun zur Anmeldeseite weitergeleitet.',
 			btnLoginNow: 'Jetzt anmelden',
 		},
 
-		tr: {
+		'tr': {
 			pageTitle: 'Yeni Şifre',
 			description: 'Hesabınız için yeni bir şifre girin',
 			newPassword: 'Yeni şifre',
@@ -91,7 +95,8 @@ export default {
 			btnSetPassword: 'Şifreyi Ayarla',
 			btnBackToLogin: 'Girişe dön',
 			successTitle: 'Şifre Değiştirildi',
-			successDescription: 'Şifreniz başarıyla değiştirildi. Şimdi giriş sayfasına yönlendirileceksiniz.',
+			successDescription:
+				'Şifreniz başarıyla değiştirildi. Şimdi giriş sayfasına yönlendirileceksiniz.',
 			btnLoginNow: 'Şimdi Giriş Yap',
 		},
 
@@ -109,7 +114,8 @@ export default {
 			btnSetPassword: 'Постави лозинку',
 			btnBackToLogin: 'Назад на пријаву',
 			successTitle: 'Лозинка промењена',
-			successDescription: 'Ваша лозинка је успешно промењена. Сада ћете бити преусмерени на страницу за пријаву.',
+			successDescription:
+				'Ваша лозинка је успешно промењена. Сада ћете бити преусмерени на страницу за пријаву.',
 			btnLoginNow: 'Пријавите се сада',
 		},
 	},

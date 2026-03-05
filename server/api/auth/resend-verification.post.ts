@@ -30,7 +30,10 @@ export default defineEventHandler(async (event) => {
 		// Отправляем email
 		const { getUserLocale } = await import('~/server/utils/user-locale');
 		const locale = await getUserLocale(user.id, event);
-		const verificationUrl = getLocalizedUrl(`/verify-email?token=${token}`, locale);
+		const verificationUrl = getLocalizedUrl(
+			`/verify-email?token=${token}`,
+			locale,
+		);
 		await sendEmailVerification(user.email, verificationUrl, user.name, locale);
 
 		logOperation(authLogger, 'Verification email resent', {

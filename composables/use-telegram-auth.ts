@@ -75,7 +75,9 @@ export function useTelegramAuth() {
 			}
 
 			if (redirectTo) {
-				document.cookie = `auth_redirect=${encodeURIComponent(redirectTo)}; path=/; max-age=600; SameSite=Lax`;
+				document.cookie = `auth_redirect=${encodeURIComponent(
+					redirectTo,
+				)}; path=/; max-age=600; SameSite=Lax`;
 			}
 
 			window.Telegram.Login.auth(

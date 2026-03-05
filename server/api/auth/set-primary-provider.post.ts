@@ -32,6 +32,9 @@ export default defineEventHandler(async (event) => {
 		logError(authLogger, 'Set primary provider failed', error, {
 			userId: user.id,
 		});
-		return createErrorResponse(500, ERROR_CODES.ERROR_UPDATING_PRIMARY_PROVIDER);
+		return createErrorResponse(
+			500,
+			ERROR_CODES.ERROR_UPDATING_PRIMARY_PROVIDER,
+		);
 	}
 });

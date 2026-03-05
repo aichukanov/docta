@@ -5,12 +5,13 @@
 
 export default {
 	messages: {
-		en: {
+		'en': {
 			// Page title
 			pageTitle: 'Password Recovery',
 
 			// Description
-			description: 'Enter the email you used during registration. We will send you a password reset link.',
+			description:
+				'Enter the email you used during registration. We will send you a password reset link.',
 
 			// Form
 			email: 'Email',
@@ -19,21 +20,22 @@ export default {
 
 			// Success
 			requestSent: 'Request Sent',
-			requestSentDescription: 'If a user with this email exists, a password reset email will be sent',
+			requestSentDescription:
+				'If a user with this email exists, a password reset email will be sent',
 			btnBackToLoginSuccess: 'Back to login',
 
 			// Development mode
 			devMode: 'Development Mode',
 			resetLinkLabel: 'Password reset link:',
-
 		},
 
-		ru: {
+		'ru': {
 			// Заголовок страницы
 			pageTitle: 'Восстановление пароля',
 
 			// Описание
-			description: 'Введите email, который вы использовали при регистрации. Мы отправим на него ссылку для сброса пароля.',
+			description:
+				'Введите email, который вы использовали при регистрации. Мы отправим на него ссылку для сброса пароля.',
 
 			// Форма
 			email: 'Email',
@@ -42,21 +44,22 @@ export default {
 
 			// Успех
 			requestSent: 'Запрос отправлен',
-			requestSentDescription: 'Если пользователь с таким email существует, на него будет отправлено письмо с инструкциями',
+			requestSentDescription:
+				'Если пользователь с таким email существует, на него будет отправлено письмо с инструкциями',
 			btnBackToLoginSuccess: 'Вернуться ко входу',
 
 			// Режим разработки
 			devMode: 'Режим разработки',
 			resetLinkLabel: 'Ссылка для сброса пароля:',
-
 		},
 
-		sr: {
+		'sr': {
 			// Naslov stranice
 			pageTitle: 'Oporavak lozinke',
 
 			// Opis
-			description: 'Unesite email koji ste koristili pri registraciji. Poslaćemo vam link za resetovanje lozinke.',
+			description:
+				'Unesite email koji ste koristili pri registraciji. Poslaćemo vam link za resetovanje lozinke.',
 
 			// Forma
 			email: 'Email',
@@ -65,21 +68,22 @@ export default {
 
 			// Uspeh
 			requestSent: 'Zahtev poslat',
-			requestSentDescription: 'Ako korisnik sa ovim email-om postoji, biće poslat email sa instrukcijama',
+			requestSentDescription:
+				'Ako korisnik sa ovim email-om postoji, biće poslat email sa instrukcijama',
 			btnBackToLoginSuccess: 'Nazad na prijavu',
 
 			// Razvojni režim
 			devMode: 'Razvojni režim',
 			resetLinkLabel: 'Link za resetovanje lozinke:',
-
 		},
 
-		de: {
+		'de': {
 			// Seitentitel
 			pageTitle: 'Passwort-Wiederherstellung',
 
 			// Beschreibung
-			description: 'Geben Sie die E-Mail-Adresse ein, die Sie bei der Registrierung verwendet haben. Wir senden Ihnen einen Link zum Zurücksetzen des Passworts.',
+			description:
+				'Geben Sie die E-Mail-Adresse ein, die Sie bei der Registrierung verwendet haben. Wir senden Ihnen einen Link zum Zurücksetzen des Passworts.',
 
 			// Formular
 			email: 'E-Mail',
@@ -88,21 +92,22 @@ export default {
 
 			// Erfolg
 			requestSent: 'Anfrage gesendet',
-			requestSentDescription: 'Wenn ein Benutzer mit dieser E-Mail existiert, wird eine E-Mail zum Zurücksetzen des Passworts gesendet',
+			requestSentDescription:
+				'Wenn ein Benutzer mit dieser E-Mail existiert, wird eine E-Mail zum Zurücksetzen des Passworts gesendet',
 			btnBackToLoginSuccess: 'Zurück zur Anmeldung',
 
 			// Entwicklungsmodus
 			devMode: 'Entwicklungsmodus',
 			resetLinkLabel: 'Passwort-Zurücksetzungslink:',
-
 		},
 
-		tr: {
+		'tr': {
 			// Sayfa başlığı
 			pageTitle: 'Şifre Kurtarma',
 
 			// Açıklama
-			description: 'Kayıt sırasında kullandığınız e-postayı girin. Size şifre sıfırlama bağlantısı göndereceğiz.',
+			description:
+				'Kayıt sırasında kullandığınız e-postayı girin. Size şifre sıfırlama bağlantısı göndereceğiz.',
 
 			// Form
 			email: 'E-posta',
@@ -111,13 +116,13 @@ export default {
 
 			// Başarı
 			requestSent: 'İstek Gönderildi',
-			requestSentDescription: 'Bu e-posta ile bir kullanıcı varsa, şifre sıfırlama e-postası gönderilecektir',
+			requestSentDescription:
+				'Bu e-posta ile bir kullanıcı varsa, şifre sıfırlama e-postası gönderilecektir',
 			btnBackToLoginSuccess: 'Girişe dön',
 
 			// Geliştirme modu
 			devMode: 'Geliştirme Modu',
 			resetLinkLabel: 'Şifre sıfırlama bağlantısı:',
-
 		},
 
 		'sr-cyrl': {
@@ -125,7 +130,8 @@ export default {
 			pageTitle: 'Опоравак лозинке',
 
 			// Опис
-			description: 'Унесите емаил који сте користили при регистрацији. Послаћемо вам линк за ресетовање лозинке.',
+			description:
+				'Унесите емаил који сте користили при регистрацији. Послаћемо вам линк за ресетовање лозинке.',
 
 			// Форма
 			email: 'Емаил',
@@ -134,13 +140,13 @@ export default {
 
 			// Успех
 			requestSent: 'Захтев послат',
-			requestSentDescription: 'Ако корисник са овим емаилом постоји, биће послат емаил са инструкцијама',
+			requestSentDescription:
+				'Ако корисник са овим емаилом постоји, биће послат емаил са инструкцијама',
 			btnBackToLoginSuccess: 'Назад на пријаву',
 
 			// Развојни режим
 			devMode: 'Развојни режим',
 			resetLinkLabel: 'Линк за ресетовање лозинке:',
-
 		},
 	},
 };

@@ -117,9 +117,7 @@ test.describe('Doctor Detail Page', () => {
 
 	test('should have back to search button', async () => {
 		await doctorDetailPage.waitForBackToSearchReady();
-		await expect(
-			doctorDetailPage.getBackToSearchButtonLocator(),
-		).toBeVisible();
+		await expect(doctorDetailPage.getBackToSearchButtonLocator()).toBeVisible();
 	});
 
 	test('should navigate back to list when clicking back to search', async ({

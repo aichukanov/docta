@@ -1,12 +1,13 @@
 export default {
 	messages: {
-		en: {
+		'en': {
 			connected: 'Connected',
 			notConnected: 'Not connected',
 			primary: 'Primary',
 			primaryHint: 'Your name and photo are taken from this account',
 			setPrimary: 'Set as primary',
-			setPrimaryHint: 'Your name and photo from this account will be used as your profile info',
+			setPrimaryHint:
+				'Your name and photo from this account will be used as your profile info',
 			unlink: 'Unlink',
 			link: 'Link',
 			emailVerified: 'Email verified',
@@ -16,13 +17,14 @@ export default {
 			username: 'Username',
 			telegramId: 'ID',
 		},
-		ru: {
+		'ru': {
 			connected: 'Подключен',
 			notConnected: 'Не подключен',
 			primary: 'Основной',
 			primaryHint: 'Имя и фото берутся из этого аккаунта',
 			setPrimary: 'Сделать основным',
-			setPrimaryHint: 'Имя и фото из этого аккаунта будут использоваться в вашем профиле',
+			setPrimaryHint:
+				'Имя и фото из этого аккаунта будут использоваться в вашем профиле',
 			unlink: 'Отвязать',
 			link: 'Привязать',
 			emailVerified: 'Email подтвержден',
@@ -32,13 +34,14 @@ export default {
 			username: 'Username',
 			telegramId: 'ID',
 		},
-		sr: {
+		'sr': {
 			connected: 'Povezano',
 			notConnected: 'Nije povezano',
 			primary: 'Primarni',
 			primaryHint: 'Ime i slika se preuzimaju sa ovog naloga',
 			setPrimary: 'Postavi kao primarni',
-			setPrimaryHint: 'Ime i slika sa ovog naloga će biti korišćeni kao informacije vašeg profila',
+			setPrimaryHint:
+				'Ime i slika sa ovog naloga će biti korišćeni kao informacije vašeg profila',
 			unlink: 'Odvoji',
 			link: 'Poveži',
 			emailVerified: 'Email potvrđen',
@@ -48,13 +51,14 @@ export default {
 			username: 'Korisničko ime',
 			telegramId: 'ID',
 		},
-		de: {
+		'de': {
 			connected: 'Verbunden',
 			notConnected: 'Nicht verbunden',
 			primary: 'Primär',
 			primaryHint: 'Name und Foto werden von diesem Konto übernommen',
 			setPrimary: 'Als primär festlegen',
-			setPrimaryHint: 'Name und Foto von diesem Konto werden als Profilinformationen verwendet',
+			setPrimaryHint:
+				'Name und Foto von diesem Konto werden als Profilinformationen verwendet',
 			unlink: 'Trennen',
 			link: 'Verknüpfen',
 			emailVerified: 'E-Mail bestätigt',
@@ -64,13 +68,14 @@ export default {
 			username: 'Benutzername',
 			telegramId: 'ID',
 		},
-		tr: {
+		'tr': {
 			connected: 'Bağlı',
 			notConnected: 'Bağlı değil',
 			primary: 'Birincil',
 			primaryHint: 'İsim ve fotoğraf bu hesaptan alınıyor',
 			setPrimary: 'Birincil olarak ayarla',
-			setPrimaryHint: 'Bu hesaptaki isminiz ve fotoğrafınız profil bilgileriniz olarak kullanılacak',
+			setPrimaryHint:
+				'Bu hesaptaki isminiz ve fotoğrafınız profil bilgileriniz olarak kullanılacak',
 			unlink: 'Bağlantıyı Kes',
 			link: 'Bağla',
 			emailVerified: 'E-posta doğrulandı',
@@ -86,7 +91,8 @@ export default {
 			primary: 'Примарни',
 			primaryHint: 'Име и слика се преузимају са овог налога',
 			setPrimary: 'Постави као примарни',
-			setPrimaryHint: 'Име и слика са овог налога ће бити коришћени као информације вашег профила',
+			setPrimaryHint:
+				'Име и слика са овог налога ће бити коришћени као информације вашег профила',
 			unlink: 'Одвоји',
 			link: 'Повежи',
 			emailVerified: 'Емаил потврђен',

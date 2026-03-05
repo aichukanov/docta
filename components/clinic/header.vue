@@ -21,7 +21,9 @@ defineEmits<{
 
 const { locale } = useI18n();
 
-const localizedName = computed(() => getLocalizedName(props.clinic, locale.value));
+const localizedName = computed(() =>
+	getLocalizedName(props.clinic, locale.value),
+);
 </script>
 
 <template>

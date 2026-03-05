@@ -1,20 +1,26 @@
 export default {
 	messages: {
-		en: {
+		'en': {
 			doctorProfile: 'Doctor Profile',
 			noDoctorProfile: "You don't have a doctor profile yet",
-			noDoctorProfileDesc: 'To create a new doctor profile or link an existing one, contact us by email:',
+			noDoctorProfileDesc:
+				'To create a new doctor profile or link an existing one, contact us by email:',
 			viewProfile: 'View profile',
 			statusDraft: 'Under review',
-			statusDraftDesc: 'Your profile is being reviewed by the administrator. It will be visible to patients after approval.',
+			statusDraftDesc:
+				'Your profile is being reviewed by the administrator. It will be visible to patients after approval.',
 			statusPublic: 'Published',
-			statusPublicDesc: 'Your profile is visible to patients in search and on the doctor page.',
+			statusPublicDesc:
+				'Your profile is visible to patients in search and on the doctor page.',
 			statusHidden: 'Hidden',
-			statusHiddenDesc: 'Your profile is hidden from search and your page returns 404. You can make it visible again at any time.',
+			statusHiddenDesc:
+				'Your profile is hidden from search and your page returns 404. You can make it visible again at any time.',
 			hideProfile: 'Hide profile',
 			showProfile: 'Show profile',
-			confirmHide: "Are you sure you want to hide your profile? Patients won't be able to find you.",
-			confirmShow: 'Are you sure you want to show your profile? It will appear in search.',
+			confirmHide:
+				"Are you sure you want to hide your profile? Patients won't be able to find you.",
+			confirmShow:
+				'Are you sure you want to show your profile? It will appear in search.',
 			visibilityUpdated: 'Profile visibility updated',
 			errorUpdating: 'Failed to update visibility',
 			ownerBanner: 'This is your profile',
@@ -35,21 +41,27 @@ export default {
 			specialtiesRequired: 'Select at least one specialty',
 			languagesRequired: 'Select at least one language',
 		},
-		ru: {
+		'ru': {
 			doctorProfile: 'Профиль врача',
 			noDoctorProfile: 'У вас пока нет профиля врача',
-			noDoctorProfileDesc: 'Чтобы создать профиль врача или привязать существующий, напишите нам на почту:',
+			noDoctorProfileDesc:
+				'Чтобы создать профиль врача или привязать существующий, напишите нам на почту:',
 			viewProfile: 'Смотреть профиль',
 			statusDraft: 'На проверке',
-			statusDraftDesc: 'Ваш профиль проверяется администратором. После подтверждения он станет доступен пациентам.',
+			statusDraftDesc:
+				'Ваш профиль проверяется администратором. После подтверждения он станет доступен пациентам.',
 			statusPublic: 'Опубликован',
-			statusPublicDesc: 'Ваш профиль виден пациентам в поиске и на странице врача.',
+			statusPublicDesc:
+				'Ваш профиль виден пациентам в поиске и на странице врача.',
 			statusHidden: 'Скрыт',
-			statusHiddenDesc: 'Ваш профиль скрыт из поиска, страница отдаёт 404. Вы можете сделать его видимым в любой момент.',
+			statusHiddenDesc:
+				'Ваш профиль скрыт из поиска, страница отдаёт 404. Вы можете сделать его видимым в любой момент.',
 			hideProfile: 'Скрыть профиль',
 			showProfile: 'Показать профиль',
-			confirmHide: 'Вы уверены, что хотите скрыть профиль? Пациенты не смогут вас найти.',
-			confirmShow: 'Вы уверены, что хотите показать профиль? Он появится в поиске.',
+			confirmHide:
+				'Вы уверены, что хотите скрыть профиль? Пациенты не смогут вас найти.',
+			confirmShow:
+				'Вы уверены, что хотите показать профиль? Он появится в поиске.',
 			visibilityUpdated: 'Видимость профиля обновлена',
 			errorUpdating: 'Не удалось обновить видимость',
 			ownerBanner: 'Это ваш профиль',
@@ -64,27 +76,34 @@ export default {
 			cancel: 'Отмена',
 			profileSaved: 'Профиль обновлён',
 			errorSaving: 'Не удалось сохранить изменения',
-			descriptionMarkdownHint: 'Используйте панель кнопок для форматирования текста',
+			descriptionMarkdownHint:
+				'Используйте панель кнопок для форматирования текста',
 			descriptionSection: 'Описание',
 			nameRequired: 'Имя (SR) обязательно',
 			specialtiesRequired: 'Выберите хотя бы одну специальность',
 			languagesRequired: 'Выберите хотя бы один язык',
 		},
-		sr: {
+		'sr': {
 			doctorProfile: 'Profil lekara',
 			noDoctorProfile: 'Još nemate profil lekara',
-			noDoctorProfileDesc: 'Da biste kreirali profil lekara ili povezali postojeći, pišite nam na email:',
+			noDoctorProfileDesc:
+				'Da biste kreirali profil lekara ili povezali postojeći, pišite nam na email:',
 			viewProfile: 'Pogledaj profil',
 			statusDraft: 'Na proveri',
-			statusDraftDesc: 'Vaš profil pregleda administrator. Biće vidljiv pacijentima nakon odobrenja.',
+			statusDraftDesc:
+				'Vaš profil pregleda administrator. Biće vidljiv pacijentima nakon odobrenja.',
 			statusPublic: 'Objavljen',
-			statusPublicDesc: 'Vaš profil je vidljiv pacijentima u pretrazi i na stranici lekara.',
+			statusPublicDesc:
+				'Vaš profil je vidljiv pacijentima u pretrazi i na stranici lekara.',
 			statusHidden: 'Sakriven',
-			statusHiddenDesc: 'Vaš profil je sakriven iz pretrage, stranica vraća 404. Možete ga ponovo učiniti vidljivim u bilo kom trenutku.',
+			statusHiddenDesc:
+				'Vaš profil je sakriven iz pretrage, stranica vraća 404. Možete ga ponovo učiniti vidljivim u bilo kom trenutku.',
 			hideProfile: 'Sakrij profil',
 			showProfile: 'Prikaži profil',
-			confirmHide: 'Da li ste sigurni da želite da sakrijete profil? Pacijenti vas neće moći pronaći.',
-			confirmShow: 'Da li ste sigurni da želite da prikažete profil? Pojaviće se u pretrazi.',
+			confirmHide:
+				'Da li ste sigurni da želite da sakrijete profil? Pacijenti vas neće moći pronaći.',
+			confirmShow:
+				'Da li ste sigurni da želite da prikažete profil? Pojaviće se u pretrazi.',
 			visibilityUpdated: 'Vidljivost profila ažurirana',
 			errorUpdating: 'Nije uspelo ažuriranje vidljivosti',
 			ownerBanner: 'Ovo je vaš profil',
@@ -99,27 +118,34 @@ export default {
 			cancel: 'Otkaži',
 			profileSaved: 'Profil ažuriran',
 			errorSaving: 'Nije uspelo čuvanje promena',
-			descriptionMarkdownHint: 'Koristite dugmad na traci za formatiranje teksta',
+			descriptionMarkdownHint:
+				'Koristite dugmad na traci za formatiranje teksta',
 			descriptionSection: 'Opis',
 			nameRequired: 'Ime (SR) je obavezno',
 			specialtiesRequired: 'Izaberite najmanje jednu specijalnost',
 			languagesRequired: 'Izaberite najmanje jedan jezik',
 		},
-		de: {
+		'de': {
 			doctorProfile: 'Arztprofil',
 			noDoctorProfile: 'Sie haben noch kein Arztprofil',
-			noDoctorProfileDesc: 'Um ein neues Arztprofil zu erstellen oder ein bestehendes zu verknüpfen, schreiben Sie uns per E-Mail:',
+			noDoctorProfileDesc:
+				'Um ein neues Arztprofil zu erstellen oder ein bestehendes zu verknüpfen, schreiben Sie uns per E-Mail:',
 			viewProfile: 'Profil ansehen',
 			statusDraft: 'In Prüfung',
-			statusDraftDesc: 'Ihr Profil wird vom Administrator überprüft. Es wird nach der Genehmigung für Patienten sichtbar.',
+			statusDraftDesc:
+				'Ihr Profil wird vom Administrator überprüft. Es wird nach der Genehmigung für Patienten sichtbar.',
 			statusPublic: 'Veröffentlicht',
-			statusPublicDesc: 'Ihr Profil ist für Patienten in der Suche und auf der Arztseite sichtbar.',
+			statusPublicDesc:
+				'Ihr Profil ist für Patienten in der Suche und auf der Arztseite sichtbar.',
 			statusHidden: 'Versteckt',
-			statusHiddenDesc: 'Ihr Profil ist in der Suche versteckt, die Seite gibt 404 zurück. Sie können es jederzeit wieder sichtbar machen.',
+			statusHiddenDesc:
+				'Ihr Profil ist in der Suche versteckt, die Seite gibt 404 zurück. Sie können es jederzeit wieder sichtbar machen.',
 			hideProfile: 'Profil verstecken',
 			showProfile: 'Profil anzeigen',
-			confirmHide: 'Sind Sie sicher, dass Sie Ihr Profil verstecken möchten? Patienten können Sie nicht finden.',
-			confirmShow: 'Sind Sie sicher, dass Sie Ihr Profil anzeigen möchten? Es wird in der Suche erscheinen.',
+			confirmHide:
+				'Sind Sie sicher, dass Sie Ihr Profil verstecken möchten? Patienten können Sie nicht finden.',
+			confirmShow:
+				'Sind Sie sicher, dass Sie Ihr Profil anzeigen möchten? Es wird in der Suche erscheinen.',
 			visibilityUpdated: 'Profilsichtbarkeit aktualisiert',
 			errorUpdating: 'Sichtbarkeit konnte nicht aktualisiert werden',
 			ownerBanner: 'Dies ist Ihr Profil',
@@ -134,27 +160,34 @@ export default {
 			cancel: 'Abbrechen',
 			profileSaved: 'Profil aktualisiert',
 			errorSaving: 'Änderungen konnten nicht gespeichert werden',
-			descriptionMarkdownHint: 'Verwenden Sie die Symbolleiste zum Formatieren des Textes',
+			descriptionMarkdownHint:
+				'Verwenden Sie die Symbolleiste zum Formatieren des Textes',
 			descriptionSection: 'Beschreibung',
 			nameRequired: 'Name (SR) ist erforderlich',
 			specialtiesRequired: 'Wählen Sie mindestens ein Fachgebiet',
 			languagesRequired: 'Wählen Sie mindestens eine Sprache',
 		},
-		tr: {
+		'tr': {
 			doctorProfile: 'Doktor Profili',
 			noDoctorProfile: 'Henüz bir doktor profiliniz yok',
-			noDoctorProfileDesc: 'Yeni bir doktor profili oluşturmak veya mevcut bir profili bağlamak için bize e-posta yazın:',
+			noDoctorProfileDesc:
+				'Yeni bir doktor profili oluşturmak veya mevcut bir profili bağlamak için bize e-posta yazın:',
 			viewProfile: 'Profili görüntüle',
 			statusDraft: 'İnceleniyor',
-			statusDraftDesc: 'Profiliniz yönetici tarafından inceleniyor. Onaydan sonra hastalar tarafından görülebilecek.',
+			statusDraftDesc:
+				'Profiliniz yönetici tarafından inceleniyor. Onaydan sonra hastalar tarafından görülebilecek.',
 			statusPublic: 'Yayında',
-			statusPublicDesc: 'Profiliniz arama sonuçlarında ve doktor sayfasında hastalar tarafından görülebilir.',
+			statusPublicDesc:
+				'Profiliniz arama sonuçlarında ve doktor sayfasında hastalar tarafından görülebilir.',
 			statusHidden: 'Gizli',
-			statusHiddenDesc: 'Profiliniz aramadan gizlenmiştir, sayfa 404 döndürür. İstediğiniz zaman tekrar görünür yapabilirsiniz.',
+			statusHiddenDesc:
+				'Profiliniz aramadan gizlenmiştir, sayfa 404 döndürür. İstediğiniz zaman tekrar görünür yapabilirsiniz.',
 			hideProfile: 'Profili gizle',
 			showProfile: 'Profili göster',
-			confirmHide: 'Profilinizi gizlemek istediğinizden emin misiniz? Hastalar sizi bulamayacak.',
-			confirmShow: 'Profilinizi göstermek istediğinizden emin misiniz? Aramada görünecek.',
+			confirmHide:
+				'Profilinizi gizlemek istediğinizden emin misiniz? Hastalar sizi bulamayacak.',
+			confirmShow:
+				'Profilinizi göstermek istediğinizden emin misiniz? Aramada görünecek.',
 			visibilityUpdated: 'Profil görünürlüğü güncellendi',
 			errorUpdating: 'Görünürlük güncellenemedi',
 			ownerBanner: 'Bu sizin profiliniz',
@@ -169,7 +202,8 @@ export default {
 			cancel: 'İptal',
 			profileSaved: 'Profil güncellendi',
 			errorSaving: 'Değişiklikler kaydedilemedi',
-			descriptionMarkdownHint: 'Metni biçimlendirmek için araç çubuğu düğmelerini kullanın',
+			descriptionMarkdownHint:
+				'Metni biçimlendirmek için araç çubuğu düğmelerini kullanın',
 			descriptionSection: 'Açıklama',
 			nameRequired: 'Ad (SR) gereklidir',
 			specialtiesRequired: 'En az bir uzmanlık seçin',
@@ -178,18 +212,24 @@ export default {
 		'sr-cyrl': {
 			doctorProfile: 'Профил лекара',
 			noDoctorProfile: 'Још немате профил лекара',
-			noDoctorProfileDesc: 'Да бисте креирали профил лекара или повезали постојећи, пишите нам на имејл:',
+			noDoctorProfileDesc:
+				'Да бисте креирали профил лекара или повезали постојећи, пишите нам на имејл:',
 			viewProfile: 'Погледај профил',
 			statusDraft: 'На провери',
-			statusDraftDesc: 'Ваш профил прегледа администратор. Биће видљив пацијентима након одобрења.',
+			statusDraftDesc:
+				'Ваш профил прегледа администратор. Биће видљив пацијентима након одобрења.',
 			statusPublic: 'Објављен',
-			statusPublicDesc: 'Ваш профил је видљив пацијентима у претрази и на страници лекара.',
+			statusPublicDesc:
+				'Ваш профил је видљив пацијентима у претрази и на страници лекара.',
 			statusHidden: 'Сакривен',
-			statusHiddenDesc: 'Ваш профил је сакривен из претраге, страница враћа 404. Можете га поново учинити видљивим у било ком тренутку.',
+			statusHiddenDesc:
+				'Ваш профил је сакривен из претраге, страница враћа 404. Можете га поново учинити видљивим у било ком тренутку.',
 			hideProfile: 'Сакриј профил',
 			showProfile: 'Прикажи профил',
-			confirmHide: 'Да ли сте сигурни да желите да сакријете профил? Пацијенти вас неће моћи пронаћи.',
-			confirmShow: 'Да ли сте сигурни да желите да прикажете профил? Појавиће се у претрази.',
+			confirmHide:
+				'Да ли сте сигурни да желите да сакријете профил? Пацијенти вас неће моћи пронаћи.',
+			confirmShow:
+				'Да ли сте сигурни да желите да прикажете профил? Појавиће се у претрази.',
 			visibilityUpdated: 'Видљивост профила ажурирана',
 			errorUpdating: 'Није успело ажурирање видљивости',
 			ownerBanner: 'Ово је ваш профил',
@@ -204,7 +244,8 @@ export default {
 			cancel: 'Откажи',
 			profileSaved: 'Профил ажуриран',
 			errorSaving: 'Није успело чување промена',
-			descriptionMarkdownHint: 'Користите дугмад на траци за форматирање текста',
+			descriptionMarkdownHint:
+				'Користите дугмад на траци за форматирање текста',
 			descriptionSection: 'Опис',
 			nameRequired: 'Име (SR) је обавезно',
 			specialtiesRequired: 'Изаберите најмање једну специјалност',

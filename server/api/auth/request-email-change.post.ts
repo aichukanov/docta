@@ -47,7 +47,10 @@ export default defineEventHandler(async (event) => {
 		// Отправляем письмо на НОВЫЙ email
 		const { getUserLocale } = await import('~/server/utils/user-locale');
 		const locale = await getUserLocale(user.id, event);
-		const confirmUrl = getLocalizedUrl(`/confirm-email-change?token=${token}`, locale);
+		const confirmUrl = getLocalizedUrl(
+			`/confirm-email-change?token=${token}`,
+			locale,
+		);
 		await sendEmailVerification(normalizedEmail, confirmUrl, user.name, locale);
 
 		logOperation(authLogger, 'Email change requested', {

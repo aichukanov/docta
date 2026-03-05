@@ -108,7 +108,9 @@ test.describe('Navigation', () => {
 		test('should have contact links', async () => {
 			const contactLinks = await footer.getContactLinks();
 			expect(contactLinks.length).toBeGreaterThan(0);
-			expect(contactLinks.some((link) => link.startsWith('mailto:'))).toBeTruthy();
+			expect(
+				contactLinks.some((link) => link.startsWith('mailto:')),
+			).toBeTruthy();
 			expect(contactLinks.some((link) => link.includes('t.me'))).toBeTruthy();
 		});
 

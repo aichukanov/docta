@@ -75,7 +75,10 @@ export default defineEventHandler(async (event) => {
 		const { sendEmailVerification } = await import('~/server/utils/email');
 		const { getLocaleFromRequest } = await import('~/server/utils/user-locale');
 		const locale = getLocaleFromRequest(requestLocale, event);
-		const verificationUrl = getLocalizedUrl(`/verify-email?token=${verificationToken}`, locale);
+		const verificationUrl = getLocalizedUrl(
+			`/verify-email?token=${verificationToken}`,
+			locale,
+		);
 
 		await sendEmailVerification(
 			email.toLowerCase(),

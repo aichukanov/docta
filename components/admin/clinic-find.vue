@@ -230,113 +230,39 @@ watch(cityIds, (newCityIds) => {
 	}
 });
 
-const nameSrModified = computed(
-	() => selectedClinic.value?.name_sr !== clinicModel.value?.name_sr,
-);
+const fieldModified = (field: keyof ClinicAdminModel) =>
+	selectedClinic.value?.[field] !== clinicModel.value?.[field];
 
-const nameSrCyrlModified = computed(
-	() => selectedClinic.value?.name_sr_cyrl !== clinicModel.value?.name_sr_cyrl,
-);
+const nameSrModified = computed(() => fieldModified('name_sr'));
+const nameSrCyrlModified = computed(() => fieldModified('name_sr_cyrl'));
+const nameRuModified = computed(() => fieldModified('name_ru'));
 
-const nameRuModified = computed(
-	() => selectedClinic.value?.name_ru !== clinicModel.value?.name_ru,
-);
+const addressSrModified = computed(() => fieldModified('address_sr'));
+const addressSrCyrlModified = computed(() => fieldModified('address_sr_cyrl'));
+const townSrModified = computed(() => fieldModified('town_sr'));
+const townSrCyrlModified = computed(() => fieldModified('town_sr_cyrl'));
+const postalCodeModified = computed(() => fieldModified('postalCode'));
+const latitudeModified = computed(() => fieldModified('latitude'));
+const longitudeModified = computed(() => fieldModified('longitude'));
 
-const addressSrModified = computed(
-	() => selectedClinic.value?.address_sr !== clinicModel.value?.address_sr,
-);
+const phoneModified = computed(() => fieldModified('phone'));
+const emailModified = computed(() => fieldModified('email'));
+const websiteModified = computed(() => fieldModified('website'));
+const facebookModified = computed(() => fieldModified('facebook'));
+const instagramModified = computed(() => fieldModified('instagram'));
+const telegramModified = computed(() => fieldModified('telegram'));
+const whatsappModified = computed(() => fieldModified('whatsapp'));
+const viberModified = computed(() => fieldModified('viber'));
 
-const addressSrCyrlModified = computed(
-	() =>
-		selectedClinic.value?.address_sr_cyrl !==
-		clinicModel.value?.address_sr_cyrl,
-);
+const cityIdModified = computed(() => fieldModified('cityId'));
 
-const townSrModified = computed(
-	() => selectedClinic.value?.town_sr !== clinicModel.value?.town_sr,
-);
-
-const townSrCyrlModified = computed(
-	() => selectedClinic.value?.town_sr_cyrl !== clinicModel.value?.town_sr_cyrl,
-);
-
-const postalCodeModified = computed(
-	() => selectedClinic.value?.postalCode !== clinicModel.value?.postalCode,
-);
-
-const latitudeModified = computed(
-	() => selectedClinic.value?.latitude !== clinicModel.value?.latitude,
-);
-
-const longitudeModified = computed(
-	() => selectedClinic.value?.longitude !== clinicModel.value?.longitude,
-);
-
-const phoneModified = computed(
-	() => selectedClinic.value?.phone !== clinicModel.value?.phone,
-);
-
-const emailModified = computed(
-	() => selectedClinic.value?.email !== clinicModel.value?.email,
-);
-
-const websiteModified = computed(
-	() => selectedClinic.value?.website !== clinicModel.value?.website,
-);
-
-const facebookModified = computed(
-	() => selectedClinic.value?.facebook !== clinicModel.value?.facebook,
-);
-
-const instagramModified = computed(
-	() => selectedClinic.value?.instagram !== clinicModel.value?.instagram,
-);
-
-const telegramModified = computed(
-	() => selectedClinic.value?.telegram !== clinicModel.value?.telegram,
-);
-
-const whatsappModified = computed(
-	() => selectedClinic.value?.whatsapp !== clinicModel.value?.whatsapp,
-);
-
-const viberModified = computed(
-	() => selectedClinic.value?.viber !== clinicModel.value?.viber,
-);
-
-const cityIdModified = computed(
-	() => selectedClinic.value?.cityId !== clinicModel.value?.cityId,
-);
-
-const descriptionSrModified = computed(
-	() =>
-		selectedClinic.value?.description_sr !== clinicModel.value?.description_sr,
-);
-
-const descriptionEnModified = computed(
-	() =>
-		selectedClinic.value?.description_en !== clinicModel.value?.description_en,
-);
-
-const descriptionRuModified = computed(
-	() =>
-		selectedClinic.value?.description_ru !== clinicModel.value?.description_ru,
-);
-
-const descriptionDeModified = computed(
-	() =>
-		selectedClinic.value?.description_de !== clinicModel.value?.description_de,
-);
-
-const descriptionTrModified = computed(
-	() =>
-		selectedClinic.value?.description_tr !== clinicModel.value?.description_tr,
-);
-
-const descriptionSrCyrlModified = computed(
-	() =>
-		selectedClinic.value?.description_sr_cyrl !==
-		clinicModel.value?.description_sr_cyrl,
+const descriptionSrModified = computed(() => fieldModified('description_sr'));
+const descriptionEnModified = computed(() => fieldModified('description_en'));
+const descriptionRuModified = computed(() => fieldModified('description_ru'));
+const descriptionDeModified = computed(() => fieldModified('description_de'));
+const descriptionTrModified = computed(() => fieldModified('description_tr'));
+const descriptionSrCyrlModified = computed(() =>
+	fieldModified('description_sr_cyrl'),
 );
 
 const languageIdsModified = computed(() => {

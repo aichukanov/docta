@@ -38,7 +38,11 @@ watch(
 		if (val) {
 			forgotPasswordSent.value = false;
 			passwordErrors.value = [];
-			passwordForm.value = { currentPassword: '', newPassword: '', confirmPassword: '' };
+			passwordForm.value = {
+				currentPassword: '',
+				newPassword: '',
+				confirmPassword: '',
+			};
 		}
 	},
 );
@@ -118,8 +122,8 @@ async function handleForgotPassword() {
 					i === 0
 						? 'margin-bottom: 4px'
 						: i === passwordErrors.length - 1
-							? 'margin-bottom: 20px'
-							: 'margin-bottom: 4px'
+						? 'margin-bottom: 20px'
+						: 'margin-bottom: 4px'
 				"
 				@close="passwordErrors = []"
 			/>

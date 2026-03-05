@@ -13,8 +13,15 @@ interface DoctorServicePrice {
 	priceMax: number | null;
 }
 
+interface UserListItem {
+	id: number;
+	email: string;
+	name: string;
+}
+
 interface DoctorAdminDetails {
 	id: number;
+	userId: number | null;
 	hidden: boolean;
 	name: string;
 	name_sr_cyrl: string;
@@ -47,11 +54,13 @@ const props = withDefaults(
 		doctors: DoctorData[];
 		clinics: ClinicData[];
 		services?: ServiceListItem[];
+		users?: UserListItem[];
 		editable?: boolean;
 	}>(),
 	{
 		editable: false,
 		services: () => [],
+		users: () => [],
 	},
 );
 
@@ -90,6 +99,13 @@ const serviceOptions = computed(() =>
 	})),
 );
 
+const userOptions = computed(() =>
+	props.users.map((u) => ({
+		label: `id = "${u.id}" | email = "${u.email}" | name = "${u.name}"`,
+		value: u.id,
+	})),
+);
+
 // Услуги врача: управление
 const addServicePrice = () => {
 	if (!doctorModel.value) return;
@@ -106,98 +122,38 @@ const removeServicePrice = (index: number) => {
 	doctorModel.value.servicePrices.splice(index, 1);
 };
 
-const hiddenModified = computed(
-	() => originalDoctor.value?.hidden !== doctorModel.value?.hidden,
-);
+const fieldModified = (field: keyof DoctorAdminDetails) =>
+	originalDoctor.value?.[field] !== doctorModel.value?.[field];
 
-const nameModified = computed(
-	() => originalDoctor.value?.name !== doctorModel.value?.name,
-);
+const hiddenModified = computed(() => fieldModified('hidden'));
+const userIdModified = computed(() => fieldModified('userId'));
 
-const nameRuModified = computed(
-	() => originalDoctor.value?.name_ru !== doctorModel.value?.name_ru,
-);
+const nameModified = computed(() => fieldModified('name'));
+const nameRuModified = computed(() => fieldModified('name_ru'));
+const nameSrCyrlModified = computed(() => fieldModified('name_sr_cyrl'));
+const nameEnModified = computed(() => fieldModified('name_en'));
 
-const nameSrCyrlModified = computed(
-	() => originalDoctor.value?.name_sr_cyrl !== doctorModel.value?.name_sr_cyrl,
+const professionalTitleModified = computed(() =>
+	fieldModified('professionalTitle'),
 );
+const photoUrlModified = computed(() => fieldModified('photoUrl'));
+const emailModified = computed(() => fieldModified('email'));
+const phoneModified = computed(() => fieldModified('phone'));
+const websiteModified = computed(() => fieldModified('website'));
+const facebookModified = computed(() => fieldModified('facebook'));
+const instagramModified = computed(() => fieldModified('instagram'));
+const telegramModified = computed(() => fieldModified('telegram'));
+const whatsappModified = computed(() => fieldModified('whatsapp'));
+const viberModified = computed(() => fieldModified('viber'));
 
-const nameEnModified = computed(
-	() => originalDoctor.value?.name_en !== doctorModel.value?.name_en,
+const descriptionSrModified = computed(() => fieldModified('description_sr'));
+const descriptionSrCyrlModified = computed(() =>
+	fieldModified('description_sr_cyrl'),
 );
-
-const professionalTitleModified = computed(
-	() =>
-		originalDoctor.value?.professionalTitle !==
-		doctorModel.value?.professionalTitle,
-);
-
-const photoUrlModified = computed(
-	() => originalDoctor.value?.photoUrl !== doctorModel.value?.photoUrl,
-);
-
-const emailModified = computed(
-	() => originalDoctor.value?.email !== doctorModel.value?.email,
-);
-
-const phoneModified = computed(
-	() => originalDoctor.value?.phone !== doctorModel.value?.phone,
-);
-
-const websiteModified = computed(
-	() => originalDoctor.value?.website !== doctorModel.value?.website,
-);
-
-const facebookModified = computed(
-	() => originalDoctor.value?.facebook !== doctorModel.value?.facebook,
-);
-
-const instagramModified = computed(
-	() => originalDoctor.value?.instagram !== doctorModel.value?.instagram,
-);
-
-const telegramModified = computed(
-	() => originalDoctor.value?.telegram !== doctorModel.value?.telegram,
-);
-
-const whatsappModified = computed(
-	() => originalDoctor.value?.whatsapp !== doctorModel.value?.whatsapp,
-);
-
-const viberModified = computed(
-	() => originalDoctor.value?.viber !== doctorModel.value?.viber,
-);
-
-const descriptionSrModified = computed(
-	() =>
-		originalDoctor.value?.description_sr !== doctorModel.value?.description_sr,
-);
-
-const descriptionSrCyrlModified = computed(
-	() =>
-		originalDoctor.value?.description_sr_cyrl !==
-		doctorModel.value?.description_sr_cyrl,
-);
-
-const descriptionRuModified = computed(
-	() =>
-		originalDoctor.value?.description_ru !== doctorModel.value?.description_ru,
-);
-
-const descriptionEnModified = computed(
-	() =>
-		originalDoctor.value?.description_en !== doctorModel.value?.description_en,
-);
-
-const descriptionDeModified = computed(
-	() =>
-		originalDoctor.value?.description_de !== doctorModel.value?.description_de,
-);
-
-const descriptionTrModified = computed(
-	() =>
-		originalDoctor.value?.description_tr !== doctorModel.value?.description_tr,
-);
+const descriptionRuModified = computed(() => fieldModified('description_ru'));
+const descriptionEnModified = computed(() => fieldModified('description_en'));
+const descriptionDeModified = computed(() => fieldModified('description_de'));
+const descriptionTrModified = computed(() => fieldModified('description_tr'));
 
 const clinicIdsModified = computed(() => {
 	if (!originalDoctor.value || !doctorModel.value) {
@@ -237,6 +193,7 @@ const servicePricesModified = computed(() => {
 const hasChanges = computed(() => {
 	return (
 		hiddenModified.value ||
+		userIdModified.value ||
 		nameModified.value ||
 		nameSrCyrlModified.value ||
 		nameRuModified.value ||
@@ -379,6 +336,25 @@ watch(doctorId, async (newDoctorId) => {
 				<span v-if="doctorModel.hidden" class="hidden-hint">
 					Врач не отображается в публичных списках, страница отдаёт 404
 				</span>
+			</div>
+
+			<div class="user-link-section" :class="{ modified: userIdModified }">
+				<label class="user-link-label">Привязанный пользователь</label>
+				<el-select
+					v-model="doctorModel.userId"
+					filterable
+					clearable
+					placeholder="Не привязан"
+					:disabled="!editable"
+					class="user-link-select"
+				>
+					<el-option
+						v-for="user in userOptions"
+						:key="user.value"
+						:label="user.label"
+						:value="user.value"
+					/>
+				</el-select>
 			</div>
 
 			<AdminFieldGroup title="Имя">
@@ -718,6 +694,30 @@ watch(doctorId, async (newDoctorId) => {
 	.hidden-hint {
 		font-size: 0.85em;
 		color: var(--color-danger);
+	}
+}
+
+.user-link-section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-md);
+	background: var(--color-surface-secondary);
+	border-radius: var(--border-radius-md);
+	border: 1px solid var(--color-border-primary);
+
+	&.modified {
+		border-color: var(--color-warning);
+	}
+
+	.user-link-label {
+		font-weight: 500;
+		color: var(--color-text-primary);
+		font-size: 0.9em;
+	}
+
+	.user-link-select {
+		width: 100%;
 	}
 }
 

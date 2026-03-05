@@ -2,11 +2,14 @@
 const { t } = useI18n({
 	useScope: 'local',
 	messages: {
-		en: { title: 'My Clinics', desc: 'This section is under development' },
-		ru: { title: 'Мои клиники', desc: 'Этот раздел находится в разработке' },
-		sr: { title: 'Moje klinike', desc: 'Ovaj odeljak je u razvoju' },
-		de: { title: 'Meine Kliniken', desc: 'Dieser Abschnitt ist in Entwicklung' },
-		tr: { title: 'Kliniklerim', desc: 'Bu bölüm geliştirme aşamasındadır' },
+		'en': { title: 'My Clinics', desc: 'This section is under development' },
+		'ru': { title: 'Мои клиники', desc: 'Этот раздел находится в разработке' },
+		'sr': { title: 'Moje klinike', desc: 'Ovaj odeljak je u razvoju' },
+		'de': {
+			title: 'Meine Kliniken',
+			desc: 'Dieser Abschnitt ist in Entwicklung',
+		},
+		'tr': { title: 'Kliniklerim', desc: 'Bu bölüm geliştirme aşamasındadır' },
 		'sr-cyrl': { title: 'Моје клинике', desc: 'Овај одељак је у развоју' },
 	},
 });

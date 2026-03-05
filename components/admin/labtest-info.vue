@@ -72,26 +72,17 @@ const removeClinicPrice = (index: number) => {
 	labTestModel.value.clinicPrices.splice(index, 1);
 };
 
+const fieldModified = (field: keyof LabTestAdminDetails) =>
+	originalLabTest.value?.[field] !== labTestModel.value?.[field];
+
 // Модифицированные поля
-const nameModified = computed(
-	() => originalLabTest.value?.name_en !== labTestModel.value?.name_en,
-);
-const nameSrCyrlModified = computed(
-	() =>
-		originalLabTest.value?.name_sr_cyrl !== labTestModel.value?.name_sr_cyrl,
-);
-const nameSrModified = computed(
-	() => originalLabTest.value?.name_sr !== labTestModel.value?.name_sr,
-);
-const nameRuModified = computed(
-	() => originalLabTest.value?.name_ru !== labTestModel.value?.name_ru,
-);
-const nameDeModified = computed(
-	() => originalLabTest.value?.name_de !== labTestModel.value?.name_de,
-);
-const nameTrModified = computed(
-	() => originalLabTest.value?.name_tr !== labTestModel.value?.name_tr,
-);
+const nameModified = computed(() => fieldModified('name_en'));
+const nameSrCyrlModified = computed(() => fieldModified('name_sr_cyrl'));
+const nameSrModified = computed(() => fieldModified('name_sr'));
+const nameRuModified = computed(() => fieldModified('name_ru'));
+const nameDeModified = computed(() => fieldModified('name_de'));
+const nameTrModified = computed(() => fieldModified('name_tr'));
+
 const categoryIdsModified = computed(() => {
 	if (!originalLabTest.value || !labTestModel.value) return false;
 	const orig = [...originalLabTest.value.categoryIds].sort();

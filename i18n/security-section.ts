@@ -1,6 +1,6 @@
 export default {
 	messages: {
-		en: {
+		'en': {
 			security: 'Security',
 			securityDescription: 'Manage password and active sessions',
 			password: 'Password',
@@ -17,7 +17,8 @@ export default {
 			created: 'Created',
 			terminate: 'Terminate',
 			confirmDeleteSession: 'Are you sure you want to end this session?',
-			confirmLogoutAll: 'Are you sure you want to logout from all other devices?',
+			confirmLogoutAll:
+				'Are you sure you want to logout from all other devices?',
 			passwordChanged: 'Password changed successfully',
 			sessionDeleted: 'Session ended',
 			allSessionsDeleted: 'All other sessions ended',
@@ -31,7 +32,8 @@ export default {
 			confirmPasswordPlaceholder: 'Enter password again',
 			forgotPassword: 'Forgot password?',
 			forgotPasswordSentTitle: 'Check your email',
-			forgotPasswordSentSubtitle: 'We sent a password reset link to your email. Follow it to set a new password.',
+			forgotPasswordSentSubtitle:
+				'We sent a password reset link to your email. Follow it to set a new password.',
 			forgotPasswordError: 'Failed to send reset link',
 			cancel: 'Cancel',
 			save: 'Save',
@@ -54,7 +56,7 @@ export default {
 			telegramMethod: 'Telegram',
 			facebookMethod: 'Facebook',
 		},
-		ru: {
+		'ru': {
 			security: 'Безопасность',
 			securityDescription: 'Управление паролем и активными сессиями',
 			password: 'Пароль',
@@ -71,7 +73,8 @@ export default {
 			created: 'Создана',
 			terminate: 'Завершить',
 			confirmDeleteSession: 'Вы уверены, что хотите завершить эту сессию?',
-			confirmLogoutAll: 'Вы уверены, что хотите выйти из всех других устройств?',
+			confirmLogoutAll:
+				'Вы уверены, что хотите выйти из всех других устройств?',
 			passwordChanged: 'Пароль успешно изменен',
 			sessionDeleted: 'Сессия завершена',
 			allSessionsDeleted: 'Все остальные сессии завершены',
@@ -85,7 +88,8 @@ export default {
 			confirmPasswordPlaceholder: 'Введите пароль еще раз',
 			forgotPassword: 'Забыли пароль?',
 			forgotPasswordSentTitle: 'Проверьте почту',
-			forgotPasswordSentSubtitle: 'Мы отправили ссылку для сброса пароля на ваш email. Перейдите по ней, чтобы установить новый пароль.',
+			forgotPasswordSentSubtitle:
+				'Мы отправили ссылку для сброса пароля на ваш email. Перейдите по ней, чтобы установить новый пароль.',
 			forgotPasswordError: 'Не удалось отправить ссылку',
 			cancel: 'Отмена',
 			save: 'Сохранить',
@@ -108,7 +112,7 @@ export default {
 			telegramMethod: 'Telegram',
 			facebookMethod: 'Facebook',
 		},
-		sr: {
+		'sr': {
 			security: 'Bezbednost',
 			securityDescription: 'Upravljanje lozinkom i aktivnim sesijama',
 			password: 'Lozinka',
@@ -124,8 +128,10 @@ export default {
 			otherDevice: 'Drugi uređaj',
 			created: 'Kreirana',
 			terminate: 'Završi',
-			confirmDeleteSession: 'Da li ste sigurni da želite da završite ovu sesiju?',
-			confirmLogoutAll: 'Da li ste sigurni da želite da se odjavite sa svih drugih uređaja?',
+			confirmDeleteSession:
+				'Da li ste sigurni da želite da završite ovu sesiju?',
+			confirmLogoutAll:
+				'Da li ste sigurni da želite da se odjavite sa svih drugih uređaja?',
 			passwordChanged: 'Lozinka uspešno promenjena',
 			sessionDeleted: 'Sesija završena',
 			allSessionsDeleted: 'Sve ostale sesije završene',
@@ -139,7 +145,8 @@ export default {
 			confirmPasswordPlaceholder: 'Unesite lozinku ponovo',
 			forgotPassword: 'Zaboravili lozinku?',
 			forgotPasswordSentTitle: 'Proverite mejl',
-			forgotPasswordSentSubtitle: 'Poslali smo link za resetovanje lozinke na vaš mejl.',
+			forgotPasswordSentSubtitle:
+				'Poslali smo link za resetovanje lozinke na vaš mejl.',
 			forgotPasswordError: 'Neuspešno slanje linka',
 			cancel: 'Otkaži',
 			save: 'Sačuvaj',
@@ -162,7 +169,7 @@ export default {
 			telegramMethod: 'Telegram',
 			facebookMethod: 'Facebook',
 		},
-		de: {
+		'de': {
 			security: 'Sicherheit',
 			securityDescription: 'Passwort und aktive Sitzungen verwalten',
 			password: 'Passwort',
@@ -179,7 +186,8 @@ export default {
 			created: 'Erstellt',
 			terminate: 'Beenden',
 			confirmDeleteSession: 'Möchten Sie diese Sitzung wirklich beenden?',
-			confirmLogoutAll: 'Möchten Sie sich wirklich von allen anderen Geräten abmelden?',
+			confirmLogoutAll:
+				'Möchten Sie sich wirklich von allen anderen Geräten abmelden?',
 			passwordChanged: 'Passwort erfolgreich geändert',
 			sessionDeleted: 'Sitzung beendet',
 			allSessionsDeleted: 'Alle anderen Sitzungen beendet',
@@ -193,7 +201,8 @@ export default {
 			confirmPasswordPlaceholder: 'Passwort erneut eingeben',
 			forgotPassword: 'Passwort vergessen?',
 			forgotPasswordSentTitle: 'Überprüfen Sie Ihre E-Mail',
-			forgotPasswordSentSubtitle: 'Wir haben einen Link zum Zurücksetzen des Passworts an Ihre E-Mail gesendet.',
+			forgotPasswordSentSubtitle:
+				'Wir haben einen Link zum Zurücksetzen des Passworts an Ihre E-Mail gesendet.',
 			forgotPasswordError: 'Link konnte nicht gesendet werden',
 			cancel: 'Abbrechen',
 			save: 'Speichern',
@@ -216,7 +225,7 @@ export default {
 			telegramMethod: 'Telegram',
 			facebookMethod: 'Facebook',
 		},
-		tr: {
+		'tr': {
 			security: 'Güvenlik',
 			securityDescription: 'Şifre ve aktif oturumları yönet',
 			password: 'Şifre',
@@ -232,8 +241,10 @@ export default {
 			otherDevice: 'Diğer cihaz',
 			created: 'Oluşturuldu',
 			terminate: 'Sonlandır',
-			confirmDeleteSession: 'Bu oturumu sonlandırmak istediğinizden emin misiniz?',
-			confirmLogoutAll: 'Diğer tüm cihazlardan çıkış yapmak istediğinizden emin misiniz?',
+			confirmDeleteSession:
+				'Bu oturumu sonlandırmak istediğinizden emin misiniz?',
+			confirmLogoutAll:
+				'Diğer tüm cihazlardan çıkış yapmak istediğinizden emin misiniz?',
 			passwordChanged: 'Şifre başarıyla değiştirildi',
 			sessionDeleted: 'Oturum sonlandırıldı',
 			allSessionsDeleted: 'Diğer tüm oturumlar sonlandırıldı',
@@ -247,7 +258,8 @@ export default {
 			confirmPasswordPlaceholder: 'Şifreyi tekrar girin',
 			forgotPassword: 'Şifrenizi mi unuttunuz?',
 			forgotPasswordSentTitle: 'E-postanızı kontrol edin',
-			forgotPasswordSentSubtitle: 'Şifre sıfırlama bağlantısını e-postanıza gönderdik.',
+			forgotPasswordSentSubtitle:
+				'Şifre sıfırlama bağlantısını e-postanıza gönderdik.',
 			forgotPasswordError: 'Bağlantı gönderilemedi',
 			cancel: 'İptal',
 			save: 'Kaydet',
@@ -286,8 +298,10 @@ export default {
 			otherDevice: 'Други уређај',
 			created: 'Креирана',
 			terminate: 'Заврши',
-			confirmDeleteSession: 'Да ли сте сигурни да желите да завршите ову сесију?',
-			confirmLogoutAll: 'Да ли сте сигурни да желите да се одјавите са свих других уређаја?',
+			confirmDeleteSession:
+				'Да ли сте сигурни да желите да завршите ову сесију?',
+			confirmLogoutAll:
+				'Да ли сте сигурни да желите да се одјавите са свих других уређаја?',
 			passwordChanged: 'Лозинка успешно промењена',
 			sessionDeleted: 'Сесија завршена',
 			allSessionsDeleted: 'Све остале сесије завршене',
@@ -301,7 +315,8 @@ export default {
 			confirmPasswordPlaceholder: 'Унесите лозинку поново',
 			forgotPassword: 'Заборавили лозинку?',
 			forgotPasswordSentTitle: 'Проверите мејл',
-			forgotPasswordSentSubtitle: 'Послали смо линк за ресетовање лозинке на ваш мејл.',
+			forgotPasswordSentSubtitle:
+				'Послали смо линк за ресетовање лозинке на ваш мејл.',
 			forgotPasswordError: 'Неуспешно слање линка',
 			cancel: 'Откажи',
 			save: 'Сачувај',

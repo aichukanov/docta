@@ -4,6 +4,7 @@ import { syncDoctorRelation } from '~/server/common/doctor-relations';
 import {
 	validateSpecialtyIds,
 	validateDoctorLanguageIds,
+	validateClinicIds,
 } from '~/common/validation';
 import {
 	SUCCESS_CODES,
@@ -26,6 +27,7 @@ interface UpdateMyProfileBody {
 	descriptionTr: string;
 	specialtyIds: number[];
 	languageIds: number[];
+	clinicIds?: number[];
 }
 
 export default defineEventHandler(async (event) => {
@@ -43,6 +45,13 @@ export default defineEventHandler(async (event) => {
 	if (
 		!validateSpecialtyIds(body, 'api/doctors/update-my-profile') ||
 		!validateDoctorLanguageIds(body, 'api/doctors/update-my-profile')
+	) {
+		createErrorResponse(400, ERROR_CODES.DOCTOR_INVALID_DATA);
+	}
+
+	if (
+		body.clinicIds !== undefined &&
+		!validateClinicIds(body, 'api/doctors/update-my-profile')
 	) {
 		createErrorResponse(400, ERROR_CODES.DOCTOR_INVALID_DATA);
 	}
@@ -105,6 +114,16 @@ export default defineEventHandler(async (event) => {
 			column: 'language_id',
 			newIds: body.languageIds,
 		});
+
+		if (body.clinicIds) {
+			await syncDoctorRelation({
+				connection,
+				doctorId,
+				table: 'doctor_clinics',
+				column: 'clinic_id',
+				newIds: body.clinicIds,
+			});
+		}
 
 		await connection.commit();
 		return createSuccessResponse(SUCCESS_CODES.DOCTOR_PROFILE_UPDATED);

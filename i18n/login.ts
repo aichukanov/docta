@@ -49,7 +49,6 @@ export default {
 			registerConsentTerms: 'Terms of Use',
 			registerConsentAnd: 'and',
 			registerConsentPrivacy: 'Privacy Policy',
-
 		},
 
 		'ru': {
@@ -96,7 +95,6 @@ export default {
 			registerConsentTerms: 'Условия использования',
 			registerConsentAnd: 'и',
 			registerConsentPrivacy: 'Политику конфиденциальности',
-
 		},
 
 		'sr': {
@@ -143,7 +141,6 @@ export default {
 			registerConsentTerms: 'Uslove korišćenja',
 			registerConsentAnd: 'i',
 			registerConsentPrivacy: 'Politiku privatnosti',
-
 		},
 
 		'de': {
@@ -190,7 +187,6 @@ export default {
 			registerConsentTerms: 'Nutzungsbedingungen',
 			registerConsentAnd: 'und der',
 			registerConsentPrivacy: 'Datenschutzerklärung',
-
 		},
 
 		'tr': {
@@ -237,7 +233,6 @@ export default {
 			registerConsentTerms: 'Kullanım Koşullarımızı',
 			registerConsentAnd: 've',
 			registerConsentPrivacy: 'Gizlilik Politikamızı',
-
 		},
 
 		'sr-cyrl': {
@@ -284,7 +279,6 @@ export default {
 			registerConsentTerms: 'Услове коришћења',
 			registerConsentAnd: 'и',
 			registerConsentPrivacy: 'Политику приватности',
-
 		},
 	},
 };

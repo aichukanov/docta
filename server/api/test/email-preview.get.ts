@@ -1,7 +1,7 @@
 /**
  * Test endpoint для просмотра email шаблонов
  * Доступен только в development режиме
- * 
+ *
  * Usage:
  * GET /api/test/email-preview?type=password-reset&locale=ru
  * GET /api/test/email-preview?type=email-verification&locale=en
@@ -69,7 +69,8 @@ export default defineEventHandler(async (event) => {
 		default:
 			throw createError({
 				statusCode: 400,
-				statusMessage: 'Invalid type. Use: password-reset, email-verification, login-notification, email-change',
+				statusMessage:
+					'Invalid type. Use: password-reset, email-verification, login-notification, email-change',
 			});
 	}
 

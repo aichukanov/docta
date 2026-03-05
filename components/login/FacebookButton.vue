@@ -8,7 +8,11 @@ function signInWithFacebook() {
 </script>
 
 <template>
-	<OAuthIconButton provider="facebook" :disabled="loading" @click="signInWithFacebook">
+	<OAuthIconButton
+		provider="facebook"
+		:disabled="loading"
+		@click="signInWithFacebook"
+	>
 		<IconFacebook :size="20" color="white" />
 	</OAuthIconButton>
 </template>

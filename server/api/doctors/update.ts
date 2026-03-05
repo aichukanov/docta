@@ -52,13 +52,14 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			await connection.beginTransaction();
 
 			const updateDoctorQuery = `
-				UPDATE doctors 
-				SET name_sr = ?, name_sr_cyrl = ?, name_ru = ?, name_en = ?, 
-				    description_sr = ?, description_sr_cyrl = ?, description_ru = ?, description_en = ?, description_de = ?, description_tr = ?,
-				    professional_title = ?, hidden = ?, email = ?, phone = ?, website = ?, 
-				    photo_url = ?, facebook = ?, instagram = ?, telegram = ?, whatsapp = ?, viber = ?
-				WHERE id = ?;
-			`;
+			UPDATE doctors 
+			SET name_sr = ?, name_sr_cyrl = ?, name_ru = ?, name_en = ?, 
+			    description_sr = ?, description_sr_cyrl = ?, description_ru = ?, description_en = ?, description_de = ?, description_tr = ?,
+			    professional_title = ?, hidden = ?, email = ?, phone = ?, website = ?, 
+			    photo_url = ?, facebook = ?, instagram = ?, telegram = ?, whatsapp = ?, viber = ?,
+			    user_id = ?
+			WHERE id = ?;
+		`;
 
 			await connection.execute(updateDoctorQuery, [
 				body.name,
@@ -82,6 +83,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				body.telegram || '',
 				body.whatsapp || '',
 				body.viber || '',
+				body.userId || null,
 				body.id,
 			]);
 

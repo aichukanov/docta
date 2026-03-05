@@ -4,51 +4,56 @@
 
 export default {
 	messages: {
-		en: {
+		'en': {
 			pageTitle: 'Email Verification',
 			verifying: 'Verifying your email...',
 			successTitle: 'Email Verified! ✅',
-			successDescription: 'Your email has been successfully verified. You will now be redirected to your profile.',
+			successDescription:
+				'Your email has been successfully verified. You will now be redirected to your profile.',
 			btnGoToProfile: 'Go to Profile',
 			errorTitle: 'Verification Error',
 			btnHome: 'Home',
 		},
 
-		ru: {
+		'ru': {
 			pageTitle: 'Подтверждение email',
 			verifying: 'Проверяем ваш email...',
 			successTitle: 'Email подтвержден! ✅',
-			successDescription: 'Ваш email успешно подтвержден. Сейчас вы будете перенаправлены в профиль.',
+			successDescription:
+				'Ваш email успешно подтвержден. Сейчас вы будете перенаправлены в профиль.',
 			btnGoToProfile: 'Перейти в профиль',
 			errorTitle: 'Ошибка подтверждения',
 			btnHome: 'На главную',
 		},
 
-		sr: {
+		'sr': {
 			pageTitle: 'Verifikacija email-a',
 			verifying: 'Verifikujemo vaš email...',
 			successTitle: 'Email verifikovan! ✅',
-			successDescription: 'Vaš email je uspešno verifikovan. Sada ćete biti preusmereni na profil.',
+			successDescription:
+				'Vaš email je uspešno verifikovan. Sada ćete biti preusmereni na profil.',
 			btnGoToProfile: 'Idi na profil',
 			errorTitle: 'Greška verifikacije',
 			btnHome: 'Početna',
 		},
 
-		de: {
+		'de': {
 			pageTitle: 'E-Mail-Verifizierung',
 			verifying: 'Ihre E-Mail wird überprüft...',
 			successTitle: 'E-Mail verifiziert! ✅',
-			successDescription: 'Ihre E-Mail wurde erfolgreich verifiziert. Sie werden nun zu Ihrem Profil weitergeleitet.',
+			successDescription:
+				'Ihre E-Mail wurde erfolgreich verifiziert. Sie werden nun zu Ihrem Profil weitergeleitet.',
 			btnGoToProfile: 'Zum Profil',
 			errorTitle: 'Verifizierungsfehler',
 			btnHome: 'Startseite',
 		},
 
-		tr: {
+		'tr': {
 			pageTitle: 'E-posta Doğrulama',
 			verifying: 'E-postanız doğrulanıyor...',
 			successTitle: 'E-posta Doğrulandı! ✅',
-			successDescription: 'E-postanız başarıyla doğrulandı. Şimdi profilinize yönlendirileceksiniz.',
+			successDescription:
+				'E-postanız başarıyla doğrulandı. Şimdi profilinize yönlendirileceksiniz.',
 			btnGoToProfile: 'Profile Git',
 			errorTitle: 'Doğrulama Hatası',
 			btnHome: 'Ana Sayfa',
@@ -58,7 +63,8 @@ export default {
 			pageTitle: 'Верификација емаила',
 			verifying: 'Верификујемо ваш емаил...',
 			successTitle: 'Емаил верификован! ✅',
-			successDescription: 'Ваш емаил је успешно верификован. Сада ћете бити преусмерени на профил.',
+			successDescription:
+				'Ваш емаил је успешно верификован. Сада ћете бити преусмерени на профил.',
 			btnGoToProfile: 'Иди на профил',
 			errorTitle: 'Грешка верификације',
 			btnHome: 'Почетна',

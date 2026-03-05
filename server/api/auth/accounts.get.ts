@@ -12,7 +12,12 @@ export default defineEventHandler(async (event) => {
 	}
 
 	const [oauthAccounts, userRows] = await Promise.all([
-		executeQuery<{ id: number; provider: string; provider_account_id: string; created_at: string }>(
+		executeQuery<{
+			id: number;
+			provider: string;
+			provider_account_id: string;
+			created_at: string;
+		}>(
 			`SELECT id, provider, provider_account_id, created_at 
 			 FROM auth_oauth_accounts 
 			 WHERE user_id = ?

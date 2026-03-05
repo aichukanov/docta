@@ -34,7 +34,9 @@ export abstract class DetailBasePage extends BasePage {
 	}
 
 	async waitForBackToSearchReady(): Promise<void> {
-		await this.page.locator('.details-page-header').waitFor({ state: 'visible' });
+		await this.page
+			.locator('.details-page-header')
+			.waitFor({ state: 'visible' });
 	}
 
 	/**

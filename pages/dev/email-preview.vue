@@ -28,11 +28,7 @@
 		</div>
 
 		<div class="preview-container">
-			<iframe
-				:src="previewUrl"
-				frameborder="0"
-				class="email-iframe"
-			></iframe>
+			<iframe :src="previewUrl" frameborder="0" class="email-iframe"></iframe>
 		</div>
 	</div>
 </template>

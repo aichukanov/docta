@@ -31,7 +31,14 @@ async function logEmail(
 		await executeQuery(
 			`INSERT INTO auth_email_log (to_email, subject, html, text_body, status, error)
 			 VALUES (?, ?, ?, ?, ?, ?)`,
-			[options.to, options.subject, options.html, options.text ?? null, status, error ?? null],
+			[
+				options.to,
+				options.subject,
+				options.html,
+				options.text ?? null,
+				status,
+				error ?? null,
+			],
 		);
 	} catch (err) {
 		logError(emailLogger, 'Failed to save email log to DB', err);

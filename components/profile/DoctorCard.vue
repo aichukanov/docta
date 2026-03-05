@@ -22,6 +22,9 @@ const { t } = useI18n({
 	messages: combineI18nMessages([specialtyI18n, doctorProfileI18n]),
 });
 
+const clinicsStore = useClinicsStore();
+clinicsStore.fetchClinics();
+
 const specialties = computed(() => {
 	if (!props.doctor.specialtyIds) return [];
 	return props.doctor.specialtyIds
@@ -29,6 +32,10 @@ const specialties = computed(() => {
 		.map((id) => t(`specialty_${id}`))
 		.filter(Boolean);
 });
+
+const clinicNames = computed(() =>
+	clinicsStore.getClinicsByIds(props.doctor.clinicIds).map((c) => c.name),
+);
 </script>
 
 <template>
@@ -61,6 +68,9 @@ const specialties = computed(() => {
 				</div>
 				<div v-if="specialties.length" class="doctor-card__meta">
 					{{ specialties.join(', ') }}
+				</div>
+				<div v-if="clinicNames.length" class="doctor-card__meta">
+					{{ clinicNames.join(', ') }}
 				</div>
 			</div>
 		</div>

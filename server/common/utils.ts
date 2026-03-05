@@ -195,10 +195,7 @@ export function processLocalizedFieldForClinic(
  * Если locale = 'sr-cyrl': возвращает значение на кириллице или латинице как fallback
  * Если другие локали: возвращает локализованное значение (если есть) или сербское (если нет)
  */
-export function processLocalizedDescription(
-	row: any,
-	locale?: string,
-): string {
+export function processLocalizedDescription(row: any, locale?: string): string {
 	const normalizedLocale = locale || 'en';
 
 	// Для сербской локали возвращаем только сербское значение

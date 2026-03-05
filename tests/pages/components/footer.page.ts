@@ -45,17 +45,27 @@ export class FooterComponent {
 	 */
 	async getFooterNavLinks(): Promise<string[]> {
 		const links = await this.page.locator('.footer-nav .footer-link').all();
-		const hrefs = await Promise.all(links.map((link) => link.getAttribute('href')));
-		return hrefs.filter((href) => href !== null && href.trim() !== '') as string[];
+		const hrefs = await Promise.all(
+			links.map((link) => link.getAttribute('href')),
+		);
+		return hrefs.filter(
+			(href) => href !== null && href.trim() !== '',
+		) as string[];
 	}
 
 	/**
 	 * Получить все контактные ссылки
 	 */
 	async getContactLinks(): Promise<string[]> {
-		const links = await this.page.locator('.footer-contacts .footer-contact').all();
-		const hrefs = await Promise.all(links.map((link) => link.getAttribute('href')));
-		return hrefs.filter((href) => href !== null && href.trim() !== '') as string[];
+		const links = await this.page
+			.locator('.footer-contacts .footer-contact')
+			.all();
+		const hrefs = await Promise.all(
+			links.map((link) => link.getAttribute('href')),
+		);
+		return hrefs.filter(
+			(href) => href !== null && href.trim() !== '',
+		) as string[];
 	}
 
 	/**

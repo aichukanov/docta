@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import { DoctorSpecialty } from '~/enums/specialty';
-import { LanguageId } from '~/enums/language';
-import specialtyI18n from '~/i18n/specialty';
-import languageI18n from '~/i18n/language';
 import doctorProfileI18n from '~/i18n/doctor-profile';
-import { combineI18nMessages } from '~/i18n/utils';
 import type { DoctorMyProfile } from '~/server/api/doctors/my-profile';
 
 const props = defineProps<{
@@ -18,12 +13,11 @@ const emit = defineEmits<{
 
 const { t } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([
-		doctorProfileI18n,
-		specialtyI18n,
-		languageI18n,
-	]),
+	messages: doctorProfileI18n.messages,
 });
+
+const clinicsStore = useClinicsStore();
+clinicsStore.fetchClinics();
 
 const form = reactive({
 	nameSr: props.doctor.nameSr,
@@ -42,6 +36,9 @@ const form = reactive({
 		: [],
 	languageIds: props.doctor.languageIds
 		? props.doctor.languageIds.split(',').map(Number)
+		: [],
+	clinicIds: props.doctor.clinicIds
+		? props.doctor.clinicIds.split(',').map(Number)
 		: [],
 });
 
@@ -83,25 +80,6 @@ const descriptions = makeLocalizedComputed(
 
 const isSaving = ref(false);
 
-const specialtyOptions = computed(() =>
-	Object.values(DoctorSpecialty)
-		.filter(Number)
-		.map((key) => ({
-			label: t(`specialty_${key}`),
-			value: key as number,
-		}))
-		.sort((a, b) => a.label.localeCompare(b.label)),
-);
-
-const languageOptions = computed(() => [
-	{ label: t(`language_${LanguageId.SR}`), value: LanguageId.SR },
-	{ label: t(`language_${LanguageId.EN}`), value: LanguageId.EN },
-	{ label: t(`language_${LanguageId.RU}`), value: LanguageId.RU },
-	{ label: t(`language_${LanguageId.IT}`), value: LanguageId.IT },
-	{ label: t(`language_${LanguageId.FR}`), value: LanguageId.FR },
-	{ label: t(`language_${LanguageId.DE}`), value: LanguageId.DE },
-]);
-
 function validate(): string | null {
 	if (!form.nameSr.trim()) return t('nameRequired');
 	if (!form.specialtyIds.length) return t('specialtiesRequired');
@@ -134,6 +112,7 @@ async function save() {
 				descriptionTr: form.descriptionTr,
 				specialtyIds: form.specialtyIds,
 				languageIds: form.languageIds,
+				clinicIds: form.clinicIds,
 			},
 		});
 
@@ -157,50 +136,27 @@ async function save() {
 		<div class="edit-form__fields">
 			<div class="edit-form__field">
 				<label class="edit-form__label">{{ t('fieldName') }} *</label>
-				<LocalizedFieldEditor
-					:languages="nameLanguages"
-					v-model="names"
-				/>
+				<LocalizedFieldEditor :languages="nameLanguages" v-model="names" />
 			</div>
 
 			<div class="edit-form__field">
-				<label class="edit-form__label">{{ t('fieldProfessionalTitle') }}</label>
+				<label class="edit-form__label">{{
+					t('fieldProfessionalTitle')
+				}}</label>
 				<el-input v-model="form.professionalTitle" />
 			</div>
 
-			<div class="edit-form__field">
-				<label class="edit-form__label">{{ t('fieldSpecialties') }} *</label>
-				<FilterableSelect
-					:items="specialtyOptions"
-					v-model:value="form.specialtyIds"
-					:placeholder="t('fieldSpecialties')"
-					multiple
-				/>
-			</div>
-
-			<div class="edit-form__field">
-				<label class="edit-form__label">{{ t('fieldLanguages') }} *</label>
-				<el-select
-					v-model="form.languageIds"
-					multiple
-					collapse-tags
-					collapse-tags-tooltip
-					class="edit-form__select"
-				>
-					<el-option
-						v-for="lang in languageOptions"
-						:key="lang.value"
-						:label="lang.label"
-						:value="lang.value"
-					/>
-				</el-select>
-			</div>
+			<FilterSpecialtySelect v-model:value="form.specialtyIds" />
+			<FilterLanguageSelect v-model:value="form.languageIds" />
+			<FilterClinicSelect v-model:value="form.clinicIds" />
 		</div>
 
 		<div class="edit-form__description-section">
 			<div class="edit-form__section-header">
 				<h3 class="edit-form__section-title">{{ t('descriptionSection') }}</h3>
-				<span class="edit-form__markdown-hint">{{ t('descriptionMarkdownHint') }}</span>
+				<span class="edit-form__markdown-hint">{{
+					t('descriptionMarkdownHint')
+				}}</span>
 			</div>
 
 			<LocalizedFieldEditor
@@ -261,10 +217,6 @@ async function save() {
 	font-size: var(--font-size-sm);
 	font-weight: var(--font-weight-medium);
 	color: var(--color-text-secondary);
-}
-
-.edit-form__select {
-	width: 100%;
 }
 
 .edit-form__description-section {

@@ -41,6 +41,7 @@ const isLoadingClinics = ref(false);
 const doctorsList = ref(null);
 const labTestsList = ref(null);
 const servicesList = ref(null);
+const usersList = ref([]);
 const clinicsStore = useClinicsStore();
 
 const clinicsList = computed(() => ({
@@ -63,21 +64,33 @@ const servicesForSelect = computed(() =>
 );
 
 // Загрузка данных по табам
+async function loadUsersData() {
+	if (usersList.value.length) return;
+	try {
+		usersList.value = await $fetch('/api/users/list');
+	} catch (error) {
+		console.error('Failed to load users:', error);
+	}
+}
+
 async function loadDoctorsData() {
 	if (loadedTabs.value.doctors) return;
 
 	isLoadingDoctors.value = true;
 	try {
-		const data = await $fetch('/api/doctors/list', {
-			method: 'POST',
-			body: {
-				specialtyIds: [],
-				cityIds: [],
-				languageIds: [],
-				includeAllLocales: true,
-				includeHidden: true,
-			},
-		});
+		const [data] = await Promise.all([
+			$fetch('/api/doctors/list', {
+				method: 'POST',
+				body: {
+					specialtyIds: [],
+					cityIds: [],
+					languageIds: [],
+					includeAllLocales: true,
+					includeHidden: true,
+				},
+			}),
+			loadUsersData(),
+		]);
 		doctorsList.value = data;
 		loadedTabs.value.doctors = true;
 	} catch (error) {
@@ -137,6 +150,8 @@ async function loadClinicsData() {
 	}
 }
 
+loadClinicsData();
+
 // Отслеживание изменения активного таба
 watch(activeTab, async (newTab) => {
 	switch (newTab) {
@@ -148,9 +163,6 @@ watch(activeTab, async (newTab) => {
 			break;
 		case 'services':
 			await loadServicesData();
-			break;
-		case 'clinics':
-			await loadClinicsData();
 			break;
 	}
 });
@@ -206,6 +218,7 @@ const updateServices = async () => {
 							:doctors="doctorsList.doctors"
 							:clinics="clinicsList.clinics"
 							:services="servicesForSelect"
+							:users="usersList"
 							editable
 							@updated="updateDoctors"
 						/>

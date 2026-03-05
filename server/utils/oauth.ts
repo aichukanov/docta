@@ -81,9 +81,10 @@ export async function updateOAuthTokens(
  * Проверить существует ли пользователь с таким email
  */
 export async function findUserByEmail(email: string): Promise<any | null> {
-	const results = await executeQuery('SELECT * FROM auth_users WHERE email = ?', [
-		email,
-	]);
+	const results = await executeQuery(
+		'SELECT * FROM auth_users WHERE email = ?',
+		[email],
+	);
 
 	return results[0] || null;
 }

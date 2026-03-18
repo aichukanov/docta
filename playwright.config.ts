@@ -1,11 +1,14 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // const baseURL = 'https://docta.me';
 const baseURL = process.env.E2E_BASE_URL || 'http://localhost:3000';
 const isProduction = baseURL.includes('docta.me');
 
 export default defineConfig({
-	testDir: './tests/e2e',
+	testDir: './tests',
 
 	// Максимальное время выполнения одного теста
 	timeout: isProduction ? 60 * 1000 : 30 * 1000,
@@ -54,7 +57,17 @@ export default defineConfig({
 	projects: [
 		{
 			name: 'chromium',
+			testDir: './tests/e2e',
 			use: { ...devices['Desktop Chrome'] },
+		},
+
+		// Утилитарные скрипты (парсеры и т.д.)
+		{
+			name: 'scripts',
+			testDir: './tests/scripts',
+			timeout: 5 * 60 * 1000,
+			retries: 0,
+			use: {},
 		},
 
 		// Опционально: другие браузеры

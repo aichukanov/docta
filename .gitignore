@@ -1,4 +1,5 @@
 .vscode
+.claude
 
 # Nuxt dev/build outputs
 .output
@@ -30,3 +31,6 @@ public/uploads
 playwright-report
 test-results/
 playwright/.cache/
+
+# Raw parsed data
+data/google-places/

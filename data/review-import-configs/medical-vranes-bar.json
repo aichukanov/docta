@@ -1,0 +1,27 @@
+{
+  "jsonPath": "data/google-places/bar/medical-vranes.json",
+  "outputPath": "server/sql/insert-reviews-medical-vranes-bar.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 18,
+  "clinicName": "Medical Vraneš (Bar)",
+  "translationsDir": "data/review-translations/medical-vranes-bar/",
+  "doctors": [
+    {
+      "id": 309,
+      "varName": "milenka",
+      "patterns": [
+        "Milenk[aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Миленк[аеуой]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "[Dd]r\\.?\\s+Vrane[sš](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 310,
+      "varName": "natalija",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Natalij[aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Наталь[яеюией](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

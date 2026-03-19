@@ -1,0 +1,42 @@
+{
+	"jsonPath": "data/google-places/bar/buntic-stomatoloska-ordinacija.json",
+	"outputPath": "server/sql/insert-reviews-buntic.sql",
+	"clinicId": 60,
+	"clinicName": "Buntić - Stomatološka ordinacija (Bar)",
+	"doctors": [
+		{
+			"id": 686,
+			"varName": "berin",
+			"patterns": [
+				"Berin[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"[Dd]r\\.?\\s+Bunti[cć]",
+				"[Dd]r\\.?\\s+Buti[cć]"
+			]
+		},
+		{
+			"id": 687,
+			"varName": "jakup",
+			"patterns": [
+				"Jakup[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"Катана"
+			]
+		},
+		{
+			"id": 688,
+			"varName": "esad",
+			"patterns": [
+				"Esad[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"Kalezi[cć]"
+			]
+		},
+		{
+			"id": 689,
+			"varName": "jelena",
+			"patterns": [
+				"(?:Dr\\.?\\s+)?Jelen[aeiou]\\s+Lero",
+				"Lero\\s+Jelen[aeiou]",
+				"(?:Dr\\.?\\s+)Lero(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+			]
+		}
+	]
+}

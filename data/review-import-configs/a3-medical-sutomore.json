@@ -1,0 +1,102 @@
+{
+  "jsonPath": "data/google-places/bar/a3-medical.json",
+  "outputPath": "server/sql/insert-reviews-a3-medical-sutomore.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 15,
+  "clinicName": "A3 Medical (Sutomore)",
+  "translationsDir": "data/review-translations/a3-medical-sutomore/",
+  "doctors": [
+    {
+      "id": 649,
+      "varName": "vesna_colakovic",
+      "patterns": [
+        "Vesn[aeu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Весн[аеуой](?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "[ČC]olakovi[cć](?:[^a-zA-Z]|$)",
+        "Чолакович(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 646,
+      "varName": "zorica_vukcevic",
+      "patterns": [
+        "Zoric[aeu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Vuk[čc]evi[cć](?:[^a-zA-Z]|$)",
+        "Vukcevic(?:[^a-zA-Z]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Зориц[аеуой](?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Вукчевич(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 637,
+      "varName": "dragoslav_tomanovic",
+      "patterns": [
+        "Tomanovi[cć](?:[^a-zA-Z]|$)",
+        "Tomanovich(?:[^a-zA-Z]|$)",
+        "Томанович(?:[^а-яёА-ЯЁ]|$)",
+        "Драгослав[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Dragoslav(?:[^a-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 636,
+      "varName": "ranko_lazovic",
+      "patterns": [
+        "Lazovi[cć](?:[^a-zA-Z]|$)",
+        "Лазович(?:[^а-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Ранк[оу](?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Rank[ou](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 640,
+      "varName": "ognjenka_sarenac",
+      "patterns": [
+        "[ŠS]arenac(?:[^a-zA-Z]|$)",
+        "Шаренац(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 641,
+      "varName": "svetlana_vucetic",
+      "patterns": [
+        "Vu[čc]eti[cć](?:[^a-zA-Z]|$)",
+        "Вучетич(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 644,
+      "varName": "damir_muhovic",
+      "patterns": [
+        "Muhovi[cć](?:[^a-zA-Z]|$)",
+        "Мухович(?:[^а-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Дамир[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 654,
+      "varName": "emil_nasufovic",
+      "patterns": [
+        "Nasufovi[cć](?:[^a-zA-Z]|$)",
+        "Насуфович(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 917,
+      "varName": "dmitrij_dylinov",
+      "patterns": [
+        "Dylinov(?:[^a-zA-Z]|$)",
+        "Дылинов(?:[^а-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Дмитри[юяей](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 647,
+      "varName": "aleksandar_vujicic",
+      "patterns": [
+        "Vuji[čc]i[cć](?:[^a-zA-Z]|$)",
+        "Вујичич(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "jsonPath": "data/google-places/bar/stomatologi-just-dental-clinic.json",
+  "outputPath": "server/sql/insert-reviews-just-dental.sql",
+  "clinicId": 42,
+  "clinicName": "JUST Dental Clinic (Bar)",
+  "doctors": [
+    {
+      "id": 521,
+      "varName": "victoria",
+      "patterns": [
+        "Виктори[яюией]",
+        "Викари[яюией]"
+      ]
+    },
+    {
+      "id": 522,
+      "varName": "konstantin",
+      "patterns": [
+        "Константин[ауе]?(?:[^а-яёА-ЯЁ]|$)",
+        "Константину\\s+Алексеевичу",
+        "(?:^|[^а-яёА-ЯЁ])Кост[яеи](?:[^а-яёА-ЯЁ]|$)"
+      ]
+    }
+  ],
+  "childDentistDoctorVar": "victoria"
+}

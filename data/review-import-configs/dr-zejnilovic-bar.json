@@ -1,0 +1,96 @@
+{
+  "jsonPath": "data/google-places/bar/dr-zejnilovic.json",
+  "outputPath": "server/sql/insert-reviews-dr-zejnilovic.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 48,
+  "clinicName": "Dr Zejnilović — PZU Dnevna bolnica (Bar)",
+  "doctors": [
+    {
+      "id": 537,
+      "varName": "nihad",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Nihad[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Нихад[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "[Dd]r\\.?\\s+Zejnilovi[cć](?:\\s+(?:urolog|urologist))"
+      ]
+    },
+    {
+      "id": 539,
+      "varName": "munevera",
+      "patterns": [
+        "Munever[aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Муневер[аеуой]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 550,
+      "varName": "svetlana_scekic",
+      "patterns": [
+        "Šćeki[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Щекич(?:[^а-яёА-ЯЁ]|$)",
+        "Шчекич(?:[^а-яёА-ЯЁ]|$)",
+        "Scekic(?:[^a-zA-Z]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Светлан[аеуой](?:[^а-яёА-ЯЁa-zA-Z]|$)\\s+(?:Šćeki|Щеки|Шчеки)"
+      ]
+    },
+    {
+      "id": 459,
+      "varName": "srdan_medan",
+      "patterns": [
+        "Medan[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Медан[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Срђан[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 543,
+      "varName": "eco_sinan",
+      "patterns": [
+        "(?:Ećo|Eco)(?:[^a-zA-Z]|$)",
+        "Sinan[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Синан[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 545,
+      "varName": "cavic_milorad",
+      "patterns": [
+        "Čavi[cć](?:[^a-zA-Z]|$)",
+        "Чавич(?:[^а-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Милорад[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 546,
+      "varName": "marko_stoiljkov",
+      "patterns": [
+        "Stoiljkov[aeu]?(?:[^a-zA-Z]|$)",
+        "Стоиљков(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 549,
+      "varName": "sanja_borozan",
+      "patterns": [
+        "Borozan(?:[^a-zA-Z]|$)",
+        "Борозан(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 548,
+      "varName": "natasa_juskovic",
+      "patterns": [
+        "Juskovi[cć](?:[^a-zA-Z]|$)",
+        "Юскович(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 544,
+      "varName": "dragana_kastratovic",
+      "patterns": [
+        "Kastratovi[cć](?:[^a-zA-Z]|$)",
+        "Кастратович(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

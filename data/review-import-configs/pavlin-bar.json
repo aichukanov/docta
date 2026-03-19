@@ -1,0 +1,34 @@
+{
+	"jsonPath": "data/google-places/bar/family-dental-clinic-in-bar-dentistry-pavlin-with-dentist-so.json",
+	"outputPath": "server/sql/insert-reviews-pavlin.sql",
+	"clinicId": 20,
+	"clinicName": "Семейная стоматология Павлин (Bar)",
+	"doctors": [
+		{
+			"id": 523,
+			"varName": "irina",
+			"patterns": [
+				"Ирин[аеуыой]",
+				"Irina",
+				"Irine",
+				"Соболев[аойуые]",
+				"Ирин[аеуыой]\\s+Сергеевн[аеуыой]"
+			]
+		},
+		{
+			"id": 897,
+			"varName": "natalya",
+			"patterns": [
+				"Наталь[яюией]",
+				"Наталь[яюией]\\s+Анатольевн[аеуыой]"
+			]
+		},
+		{
+			"id": 522,
+			"varName": "konstantin",
+			"patterns": [
+				"Константин[ауе]?(?:[^а-яёА-ЯЁ]|$)"
+			]
+		}
+	]
+}

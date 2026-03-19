@@ -1,0 +1,23 @@
+{
+	"jsonPath": "data/google-places/bar/dental-esthetic-studio-dr-debelja.json",
+	"outputPath": "server/sql/insert-reviews-dental-esthetic-studio.sql",
+	"clinicId": 41,
+	"clinicName": "Dental & Esthetic Studio Dr Debelja (Bar)",
+	"doctors": [
+		{
+			"id": 981,
+			"varName": "tatyana",
+			"patterns": ["Татьян[аеуыой]", "Дроздов[аойуые]"]
+		},
+		{
+			"id": 520,
+			"varName": "mikhail",
+			"patterns": [
+				"Михаил[ауе]?(?:[^а-яёА-ЯЁ]|$)",
+				"Михайл[аоу]",
+				"Михаилу\\s+Александровичу",
+				"Михаила\\s+Александровича"
+			]
+		}
+	]
+}

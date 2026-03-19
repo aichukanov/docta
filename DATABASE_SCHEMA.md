@@ -41,6 +41,10 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `medical_service_redirects`             | Redirect map for merged medical service records.               |
 | `doctor_redirects`                      | Redirect map for merged doctor profiles.                       |
 | `lab_test_redirects`                    | Redirect map for merged lab test records.                      |
+| `reviews`                               | Polymorphic reviews for clinics, doctors, and services.        |
+| `review_replies`                        | Replies to reviews (one from clinic, one from doctor).         |
+| `review_likes`                          | Likes on reviews by registered users.                         |
+| `review_reply_likes`                    | Likes on review replies by registered users.                  |
 | `billing_paid_services`                 | Catalog of paid services available for clinics.                |
 | `billing_clinic_service_purchases`      | Purchase records of paid services by clinics.                  |
 | `billing_clinic_service_purchase_items` | Junction table: Purchase <-> Paid Service.                     |
@@ -50,18 +54,20 @@ This file provides a structured reference of the MySQL database for the docta.me
 ### `auth_users`
 
 - `id` (int, PK, AI)
-- `email` (varchar(255), Unique, NOT NULL): User email address.
+- `email` (varchar(255), Unique, NULL): User email address. NULL for phantom users from Google Maps (no email available).
 - `name` (varchar(255)): User's full name.
 - `photo_url` (varchar(500)): URL to user's profile photo.
+- `profile_url` (varchar(500), NULL): External profile link (Google Maps contributor URL, Facebook profile, etc.).
 - `password_hash` (varchar(255), NULL): Bcrypt password hash (for admins with email/password login). NULL for OAuth users.
 - `is_admin` (boolean, default FALSE): Flag indicating administrator privileges.
 - `email_verified` (boolean, default FALSE): Whether the user's email is verified.
+- `is_phantom` (boolean, default FALSE): Auto-created user from external review import. Flips to FALSE on first OAuth login.
 - `primary_oauth_provider` (varchar(50), NULL): Primary OAuth provider for display (google, telegram, NULL for email).
 - `preferred_locale` (varchar(10), NULL): Preferred language: sr, sr-cyrl, en, ru, de, tr.
 - `created_at` (timestamp)
 - `updated_at` (timestamp)
-- _Indexes_: `idx_email`, `idx_is_admin`, `idx_email_verified`, `idx_primary_provider`, `idx_preferred_locale`
-- _Comment_: Stores both admin users (with password_hash) and OAuth users (without password_hash).
+- _Indexes_: `idx_email`, `idx_is_admin`, `idx_email_verified`, `idx_is_phantom`, `idx_primary_provider`, `idx_preferred_locale`
+- _Comment_: Stores admin users (with password_hash), OAuth users (without password_hash), and phantom users (auto-created from review imports, is_phantom=TRUE).
 
 ### `auth_oauth_accounts`
 
@@ -194,6 +200,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 ### `clinics`
 
 - `id` (int, PK, AI)
+- `google_place_id` (varchar(255), NULL, Unique): Google Places ID for deduplication.
 - `city_id` (int, FK -> cities.id)
 - `name_sr` (varchar(255)): Name in Serbian (Latin).
 - `name_sr_cyrl` (varchar(255)): Name in Serbian (Cyrillic).
@@ -421,6 +428,69 @@ This file provides a structured reference of the MySQL database for the docta.me
 - _Unique constraint_: (`purchase_id`, `service_id`)
 - _Relationship_: Links specific paid services to a purchase.
 
+### `reviews`
+
+- `id` (int, PK, AI)
+- `user_id` (int, NULL, FK -> auth_users.id): Review author. Links to real or phantom user. ON DELETE SET NULL.
+- `clinic_id` (int, NULL, FK -> clinics.id): Review target: clinic.
+- `doctor_id` (int, NULL, FK -> doctors.id): Review target: doctor.
+- `medical_service_id` (int, NULL, FK -> medical_services.id): Review target: service.
+- `provider` (enum: 'google_maps', 'facebook', 'telegram', 'docta_me', NOT NULL): Source of the review.
+- `provider_review_id` (varchar(255), NULL): External ID for deduplication.
+- `rating` (tinyint unsigned, NULL): Rating 1-5.
+- `original_language` (varchar(10), NOT NULL, default 'sr'): Language code of the original review text (may be outside project languages, e.g., 'bs', 'me').
+- `original_text` (text, NULL): Original review text as written by the author (may be in any language).
+- `text_sr`, `text_sr_cyrl`, `text_en`, `text_ru`, `text_de`, `text_tr` (text, NULL): Localized/translated review texts.
+- `published_at` (datetime, NULL): When review was published on the platform.
+- `likes_count` (int unsigned, NOT NULL, default 0): Denormalized like counter for sorting.
+- `created_at`, `updated_at` (timestamp)
+- _Unique constraint_: (`provider`, `provider_review_id`)
+- _Indexes_: `idx_reviews_user_id`, `idx_clinic_id`, `idx_doctor_id`, `idx_medical_service_id`, `idx_provider`, `idx_rating`, `idx_reviews_likes_count` (likes_count DESC)
+- _Foreign Keys_: `user_id` -> `auth_users.id` (SET NULL), `clinic_id` -> `clinics.id` (CASCADE), `doctor_id` -> `doctors.id` (CASCADE), `medical_service_id` -> `medical_services.id` (CASCADE)
+- _Comment_: Polymorphic reviews — exactly one of clinic_id/doctor_id/medical_service_id must be NOT NULL. Author info (name, photo, profile link) is stored in `auth_users` — use JOIN by `user_id`.
+
+### `review_replies`
+
+- `id` (int, PK, AI)
+- `review_id` (int, FK -> reviews.id, NOT NULL): Parent review.
+- `responder_type` (enum: 'clinic', 'doctor', NOT NULL): Who is replying.
+- `clinic_id` (int, NULL, FK -> clinics.id): Clinic that replied (when responder_type='clinic').
+- `doctor_id` (int, NULL, FK -> doctors.id): Doctor that replied (when responder_type='doctor').
+- `user_id` (int, NULL, FK -> auth_users.id): User who posted the reply (clinic manager or doctor). ON DELETE SET NULL.
+- `original_text` (text, NOT NULL): Reply text as written.
+- `original_language` (varchar(10), NOT NULL, default 'sr'): Language code of the original reply.
+- `text_sr`, `text_sr_cyrl`, `text_en`, `text_ru`, `text_de`, `text_tr` (text, NULL): Localized/translated reply texts.
+- `provider` (enum: 'google_maps', 'facebook', 'telegram', 'docta_me', NOT NULL, default 'docta_me'): Source of the reply (imported or native).
+- `likes_count` (int unsigned, NOT NULL, default 0): Denormalized like counter.
+- `published_at` (datetime, NULL): When reply was published.
+- `created_at`, `updated_at` (timestamp)
+- _Unique constraint_: (`review_id`, `responder_type`) — at most one reply per responder type per review.
+- _Indexes_: `idx_review_replies_review_id`, `idx_review_replies_clinic_id`, `idx_review_replies_doctor_id`
+- _Foreign Keys_: `review_id` -> `reviews.id` (CASCADE), `clinic_id` -> `clinics.id` (CASCADE), `doctor_id` -> `doctors.id` (CASCADE), `user_id` -> `auth_users.id` (SET NULL)
+- _Comment_: Each review can have at most 2 replies: one from the clinic and one from the doctor. No threading. Exactly one of clinic_id/doctor_id must be NOT NULL (matches responder_type).
+
+### `review_likes`
+
+- `id` (int, PK, AI)
+- `review_id` (int, FK -> reviews.id, NOT NULL): Liked review.
+- `user_id` (int, FK -> auth_users.id, NOT NULL): User who liked.
+- `created_at` (timestamp)
+- _Unique constraint_: (`review_id`, `user_id`) — one like per user per review.
+- _Indexes_: `idx_review_likes_user_id`
+- _Foreign Keys_: `review_id` -> `reviews.id` (CASCADE), `user_id` -> `auth_users.id` (CASCADE)
+- _Comment_: Only authenticated (non-phantom) users can like. `reviews.likes_count` is updated via application logic on insert/delete.
+
+### `review_reply_likes`
+
+- `id` (int, PK, AI)
+- `reply_id` (int, FK -> review_replies.id, NOT NULL): Liked reply.
+- `user_id` (int, FK -> auth_users.id, NOT NULL): User who liked.
+- `created_at` (timestamp)
+- _Unique constraint_: (`reply_id`, `user_id`) — one like per user per reply.
+- _Indexes_: `idx_review_reply_likes_user_id`
+- _Foreign Keys_: `reply_id` -> `review_replies.id` (CASCADE), `user_id` -> `auth_users.id` (CASCADE)
+- _Comment_: Only authenticated (non-phantom) users can like. `review_replies.likes_count` is updated via application logic on insert/delete.
+
 ## Core Implementation Logic
 
 1. **Authentication Strategy**:
@@ -439,6 +509,7 @@ This file provides a structured reference of the MySQL database for the docta.me
    - OAuth users can self-register through OAuth providers.
    - One user can have multiple OAuth providers linked via `auth_oauth_accounts`.
    - OAuth profile data is stored in provider-specific tables (`auth_oauth_profiles_google`, `auth_oauth_profiles_telegram`, `auth_oauth_profiles_facebook`), linked via `oauth_account_id`.
+   - **Phantom users** (`is_phantom=TRUE`): auto-created during external review imports (Facebook, Telegram, Google Maps). When a phantom user authenticates via OAuth, `is_phantom` flips to `FALSE` and all their reviews are already linked via `user_id`. Google Maps phantom users cannot be auto-claimed (contributor ID ≠ OAuth ID).
 
 3. **I18n Strategy**:
 
@@ -480,7 +551,16 @@ This file provides a structured reference of the MySQL database for the docta.me
 
    - `clinic_medical_service_doctors` enables assigning specific doctors to medical services within a clinic context.
 
-12. **Paid Services (Billing)**:
+12. **Reviews, Replies & Likes**:
+
+   - Each review can have up to **2 replies**: one from the clinic (`responder_type='clinic'`) and one from the doctor (`responder_type='doctor'`). No threading — flat structure only.
+   - Replies are stored in `review_replies` with a unique constraint on (`review_id`, `responder_type`).
+   - Both reviews and replies can be liked by authenticated (non-phantom) users. One like per user per entity.
+   - `likes_count` is a denormalized counter on `reviews` and `review_replies` — updated by app logic on like/unlike (INSERT/DELETE into `review_likes` / `review_reply_likes`).
+   - Reviews are sorted by `likes_count DESC` by default (index `idx_reviews_likes_count`).
+   - Imported replies (from Google Maps, Facebook) use the `provider` field; native replies default to `docta_me`.
+
+13. **Paid Services (Billing)**:
 
 - `billing_paid_services` contains available paid services (dofollow, highlight, approved/verified).
 - `billing_clinic_service_purchases` tracks purchases made by clinics.

@@ -4,6 +4,7 @@ import { getRegionalQuery } from '~/common/url-utils';
 import { getLocalizedName } from '~/common/utils';
 import type { ClinicData } from '~/interfaces/clinic';
 import { BillingService } from '~/enums/billing-service';
+import RatingStars from '~/components/rating-stars.vue';
 
 const props = withDefaults(
 	defineProps<{
@@ -135,6 +136,11 @@ const clinicLink = computed(() => ({
 				<el-icon class="address-icon"><LocationFilled /></el-icon>
 				<ClinicLocationAddress :clinic="clinic" />
 			</div>
+
+			<RatingStars
+				v-if="clinic.rating && clinic.rating.averageRating"
+				:rating="clinic.rating.averageRating"
+			/>
 
 			<ConsultationLanguages :languageIds="clinic.languageIds">
 				{{ t('LanguageAssistance') }}

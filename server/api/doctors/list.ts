@@ -1,18 +1,18 @@
+import { LIST_PAGE_SIZE } from '~/common/constants';
+import {
+	validateBody,
+	validateCityIds,
+	validateDoctorLanguageIds,
+	validateName,
+	validateSpecialtyIds,
+} from '~/common/validation';
+import type { DoctorList } from '~/interfaces/doctor';
 import { getConnection } from '~/server/common/db-mysql';
-import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
 import {
 	getServicesForDoctors,
 	type ClinicServicesMap,
 } from '~/server/common/services';
-import type { DoctorList } from '~/interfaces/doctor';
-import { LIST_PAGE_SIZE } from '~/common/constants';
-import {
-	validateBody,
-	validateSpecialtyIds,
-	validateCityIds,
-	validateDoctorLanguageIds,
-	validateName,
-} from '~/common/validation';
+import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
 
 export default defineEventHandler(async (event): Promise<DoctorList> => {
 	try {
@@ -163,7 +163,9 @@ export async function getDoctorList(
 				d.website,
 				(SELECT GROUP_CONCAT(DISTINCT ds.specialty_id ORDER BY ds.specialty_id) FROM doctor_specialties ds WHERE ds.doctor_id = d.id) as specialtyIds,
 				(SELECT GROUP_CONCAT(DISTINCT dl.language_id ORDER BY dl.language_id) FROM doctor_languages dl WHERE dl.doctor_id = d.id) as languageIds,
-				(SELECT GROUP_CONCAT(DISTINCT dc.clinic_id ORDER BY dc.clinic_id) FROM doctor_clinics dc WHERE dc.doctor_id = d.id) as clinicIds
+				(SELECT GROUP_CONCAT(DISTINCT dc.clinic_id ORDER BY dc.clinic_id) FROM doctor_clinics dc WHERE dc.doctor_id = d.id) as clinicIds,
+				(SELECT ROUND(AVG(r.rating), 1) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL) as averageRating,
+				(SELECT COUNT(*) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL) as totalReviews
 			FROM doctors d
 			${whereFiltersString}
 			ORDER BY d.name_sr ASC
@@ -221,16 +223,36 @@ export async function getDoctorList(
 				localName,
 				clinicIds: sortedClinicIds,
 				clinicServices,
+				rating: doctor.averageRating
+					? {
+							averageRating: parseFloat(doctor.averageRating),
+							totalReviews: doctor.totalReviews,
+					  }
+					: undefined,
 			};
 		}
 		// Удаляем избыточные поля локализации
-		const { name_sr, name_sr_cyrl, name_ru, name_en, ...rest } = doctor;
+		const {
+			name_sr,
+			name_sr_cyrl,
+			name_ru,
+			name_en,
+			averageRating,
+			totalReviews,
+			...rest
+		} = doctor;
 		return {
 			...rest,
 			name,
 			localName,
 			clinicIds: sortedClinicIds,
 			clinicServices,
+			rating: averageRating
+				? {
+						averageRating: parseFloat(averageRating),
+						totalReviews,
+				  }
+				: undefined,
 		};
 	});
 

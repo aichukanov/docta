@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
 import type { DoctorData } from '~/interfaces/doctor';
+import RatingStars from '~/components/rating-stars.vue';
 
 const props = withDefaults(
 	defineProps<{
@@ -59,6 +60,10 @@ const avatarName = computed(() => {
 				</div>
 			</component>
 			<DoctorSpecialties :doctor="service" />
+			<RatingStars
+				v-if="service.rating && service.rating.averageRating"
+				:rating="service.rating.averageRating"
+			/>
 			<ConsultationLanguages v-if="!short" :languageIds="service.languageIds">
 				{{ t('DoctorLanguages') }}
 			</ConsultationLanguages>

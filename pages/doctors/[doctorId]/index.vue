@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import { LanguageId } from '~/enums/language';
+import { OG_IMAGE, SITE_URL } from '~/common/constants';
 import {
-	buildDoctorSchema,
 	buildBreadcrumbsSchema,
+	buildDoctorSchema,
 } from '~/common/schema-org-builders';
-import { SITE_URL, OG_IMAGE } from '~/common/constants';
+import { LanguageId } from '~/enums/language';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import doctorI18n from '~/i18n/doctor';
 import languageI18n from '~/i18n/language';
+import reviewsI18n from '~/i18n/reviews';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
 
@@ -20,6 +21,7 @@ const { t, locale } = useI18n({
 		specialtyI18n,
 		languageI18n,
 		cityI18n,
+		reviewsI18n,
 	]),
 });
 
@@ -237,6 +239,15 @@ watchEffect(() => {
 				pageDescription: pageDescription.value,
 				facebook: doctorData.value.facebook,
 				instagram: doctorData.value.instagram,
+				rating: doctorData.value.rating,
+				reviews: doctorData.value.reviews?.map((review) => ({
+					id: review.id,
+					text: review.text,
+					rating: review.rating,
+					author: review.author,
+					publishedAt: review.publishedAt,
+					provider: review.provider,
+				})),
 				getSpecialtyName,
 				getCityName,
 			}),
@@ -280,6 +291,13 @@ watchEffect(() => {
 					role="listitem"
 				/>
 			</section>
+		</template>
+		<template #reviews>
+			<DoctorReviews
+				v-if="doctorData"
+				:reviews="doctorData.reviews"
+				:rating="doctorData.rating"
+			/>
 		</template>
 	</DetailsPage>
 </template>

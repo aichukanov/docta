@@ -1,15 +1,15 @@
+import { validateBody, validateNonNegativeInteger } from '~/common/validation';
+import type { DoctorData } from '~/interfaces/doctor';
+import { getCurrentUser } from '~/server/common/auth';
 import { getConnection } from '~/server/common/db-mysql';
-import {
-	processLocalizedNameForClinicOrDoctor,
-	processLocalizedDescription,
-} from '~/server/common/utils';
 import {
 	getServicesByClinicAndSpecialty,
 	type ClinicServicesMap,
 } from '~/server/common/services';
-import { getCurrentUser } from '~/server/common/auth';
-import type { DoctorData } from '~/interfaces/doctor';
-import { validateBody, validateNonNegativeInteger } from '~/common/validation';
+import {
+	processLocalizedDescription,
+	processLocalizedNameForClinicOrDoctor,
+} from '~/server/common/utils';
 
 export default defineEventHandler(async (event): Promise<DoctorData> => {
 	try {
@@ -89,6 +89,97 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			);
 		}
 
+		// Загружаем рейтинг врача
+		const ratingQuery = `
+			SELECT
+				ROUND(AVG(rating), 1) as averageRating,
+				COUNT(*) as totalReviews
+			FROM reviews
+			WHERE doctor_id = ? AND rating IS NOT NULL
+		`;
+		const [ratingRows] = await connection.execute(ratingQuery, [body.doctorId]);
+		const rating = (ratingRows as any[])[0];
+
+		// Преобразуем строку в число
+		const processedRating = {
+			averageRating: rating.averageRating
+				? parseFloat(rating.averageRating)
+				: null,
+			totalReviews: rating.totalReviews || 0,
+		};
+
+		// Загружаем отзывы врача
+		const reviewsQuery = `
+			SELECT
+				r.id,
+				r.user_id as userId,
+				r.doctor_id as doctorId,
+				r.provider,
+				r.provider_review_id as providerReviewId,
+				r.rating,
+				r.original_language as originalLanguage,
+				r.original_text as originalText,
+				CASE
+					WHEN '${locale}' = 'sr' THEN COALESCE(r.text_sr, r.original_text)
+					WHEN '${locale}' = 'sr-cyrl' THEN COALESCE(r.text_sr_cyrl, r.original_text)
+					WHEN '${locale}' = 'en' THEN COALESCE(r.text_en, r.original_text)
+					WHEN '${locale}' = 'ru' THEN COALESCE(r.text_ru, r.original_text)
+					WHEN '${locale}' = 'de' THEN COALESCE(r.text_de, r.original_text)
+					WHEN '${locale}' = 'tr' THEN COALESCE(r.text_tr, r.original_text)
+					ELSE r.original_text
+				END as text,
+				r.published_at as publishedAt,
+				r.likes_count as likesCount,
+				r.created_at as createdAt,
+				r.updated_at as updatedAt,
+				u.name as authorName,
+				u.photo_url as authorPhotoUrl,
+				u.profile_url as authorProfileUrl
+			FROM reviews r
+			LEFT JOIN auth_users u ON r.user_id = u.id
+			WHERE r.doctor_id = ?
+			ORDER BY r.likes_count DESC, r.created_at DESC
+		`;
+		const [reviewsRows] = await connection.execute(reviewsQuery, [
+			body.doctorId,
+		]);
+
+		// Загружаем ответы на отзывы
+		const reviewIds = (reviewsRows as any[]).map((r) => r.id);
+		let replies: any[] = [];
+		if (reviewIds.length > 0) {
+			const repliesQuery = `
+				SELECT
+					rr.id,
+					rr.review_id as reviewId,
+					rr.responder_type as responderType,
+					rr.clinic_id as clinicId,
+					rr.doctor_id as doctorId,
+					rr.user_id as userId,
+					rr.original_text as originalText,
+					rr.original_language as originalLanguage,
+					CASE
+						WHEN '${locale}' = 'sr' THEN COALESCE(rr.text_sr, rr.original_text)
+						WHEN '${locale}' = 'sr-cyrl' THEN COALESCE(rr.text_sr_cyrl, rr.original_text)
+						WHEN '${locale}' = 'en' THEN COALESCE(rr.text_en, rr.original_text)
+						WHEN '${locale}' = 'ru' THEN COALESCE(rr.text_ru, rr.original_text)
+						WHEN '${locale}' = 'de' THEN COALESCE(rr.text_de, rr.original_text)
+						WHEN '${locale}' = 'tr' THEN COALESCE(rr.text_tr, rr.original_text)
+						ELSE rr.original_text
+					END as text,
+					rr.provider,
+					rr.likes_count as likesCount,
+					rr.published_at as publishedAt,
+					rr.created_at as createdAt,
+					rr.updated_at as updatedAt
+				FROM review_replies rr
+				WHERE rr.review_id IN (${reviewIds.map(() => '?').join(',')})
+				ORDER BY rr.created_at ASC
+			`;
+			const [repliesRows] = await connection.execute(repliesQuery, reviewIds);
+			replies = repliesRows as any[];
+		}
+
 		await connection.end();
 
 		// Обрабатываем локализованные имена
@@ -111,6 +202,30 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			});
 			sortedClinicIds = clinicIdsList.join(',');
 		}
+
+		// Обрабатываем отзывы
+		const reviews = (reviewsRows as any[]).map((review) => {
+			const reviewReplies = replies
+				.filter((r) => r.reviewId === review.id)
+				.map((reply) => ({
+					...reply,
+					originalText:
+						reply.originalText === reply.text ? null : reply.originalText,
+				}));
+			return {
+				...review,
+				originalText:
+					review.originalText === review.text ? null : review.originalText,
+				replies: reviewReplies,
+				author: review.userId
+					? {
+							name: review.authorName,
+							photoUrl: review.authorPhotoUrl,
+							profileUrl: review.authorProfileUrl,
+					  }
+					: undefined,
+			};
+		});
 
 		const currentUser = await getCurrentUser(event);
 		const isOwner =
@@ -141,6 +256,8 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			clinicIds: sortedClinicIds,
 			clinicServices,
 			isOwner,
+			rating: processedRating,
+			reviews,
 		};
 	} catch (error) {
 		console.error('API Error - doctor data:', error);

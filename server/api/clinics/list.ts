@@ -132,7 +132,9 @@ export async function getClinicList(
 				COALESCE(
 					GROUP_CONCAT(DISTINCT bspi.service_id ORDER BY bspi.service_id),
 					''
-				) as features
+				) as features,
+				(SELECT ROUND(AVG(r.rating), 1) FROM reviews r WHERE r.clinic_id = c.id AND r.rating IS NOT NULL) as averageRating,
+				(SELECT COUNT(*) FROM reviews r WHERE r.clinic_id = c.id AND r.rating IS NOT NULL) as totalReviews
 			FROM clinics c
 			LEFT JOIN clinic_languages cl ON c.id = cl.clinic_id
 			LEFT JOIN billing_clinic_service_purchases bscp
@@ -191,6 +193,12 @@ export async function getClinicList(
 			localName,
 			address,
 			town,
+			rating: clinic.averageRating
+				? {
+						averageRating: parseFloat(clinic.averageRating),
+						totalReviews: clinic.totalReviews,
+				  }
+				: undefined,
 		};
 	});
 

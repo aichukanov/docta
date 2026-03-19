@@ -1,5 +1,6 @@
 import type { ContactList } from '~/interfaces/contacts';
 import type { BillingService } from '~/enums/billing-service';
+import type { Rating, Review } from '~/interfaces/review';
 
 export interface ClinicService {
 	clinicId: number;
@@ -25,6 +26,8 @@ export interface ClinicData extends ContactList, Coordinates {
 	languageIds: string;
 	description: string;
 	features: BillingService[];
+	rating?: Rating;
+	reviews?: Review[];
 }
 
 export interface ClinicList {

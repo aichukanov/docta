@@ -58,6 +58,6 @@ npx playwright test --project=scripts -g "all cities"
 
 ### Отзывы
 
-- `text_sr_cyrl` — НЕ заполнять автоматически
-- `original_language` — язык оригинала отзыва
-- Остальные языки заполняются через LLM
+Импорт отзывов описан в отдельном документе: **`REVIEWS_IMPORT.md`**
+
+Вкратце: создаёшь конфиг в `data/review-import-configs/` → запускаешь `node scripts/generate-reviews-sql.mjs <config.json>` → получаешь SQL.

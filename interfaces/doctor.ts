@@ -1,5 +1,6 @@
 import type { ContactList } from '~/interfaces/contacts';
 import type { ClinicServiceItem } from '~/interfaces/clinic';
+import type { Review, Rating } from '~/interfaces/review';
 
 export interface DoctorData extends ClinicServiceItem, ContactList {
 	specialtyIds: string;
@@ -13,6 +14,8 @@ export interface DoctorData extends ClinicServiceItem, ContactList {
 	localName: string;
 	description?: string;
 	isOwner?: boolean;
+	rating?: Rating;
+	reviews?: Review[];
 }
 
 export interface DoctorList {

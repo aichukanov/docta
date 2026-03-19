@@ -23,7 +23,7 @@ const getPriceInfo = (clinicId: number) => {
 	return props.clinicPrices?.find((p) => p.clinicId === clinicId);
 };
 
-const { t, locale } = useI18n({ useScope: 'local' });
+const { t, locale } = useI18n();
 const router = useRouter();
 const { getRouteParams } = useFilters();
 
@@ -98,6 +98,7 @@ const onMapReady = () => {
 							/>
 						</section>
 					</slot>
+					<slot name="reviews" />
 				</article>
 				<aside class="map-container" :aria-label="t('AriaMapSection')">
 					<ClinicServicesMap

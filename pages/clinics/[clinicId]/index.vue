@@ -16,6 +16,7 @@ import { combineI18nMessages } from '~/i18n/utils';
 import { getLocalizedName } from '~/common/utils';
 import { formatClinicAddressLine } from '~/common/clinic-address';
 import type { ClinicPrice } from '~/interfaces/clinic';
+import reviewsI18n from '~/i18n/reviews';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -27,6 +28,7 @@ const { t, locale } = useI18n({
 		medicalServiceCategoryI18n,
 		specialtyI18n,
 		labTestCategoryI18n,
+		reviewsI18n,
 	]),
 });
 
@@ -263,6 +265,15 @@ watchEffect(() => {
 				getCityName,
 				services: clinicMedicalServices.value,
 				doctors: clinicDoctors.value,
+				rating: clinicData.value.rating,
+				reviews: clinicData.value.reviews?.map((review) => ({
+					id: review.id,
+					text: review.text,
+					rating: review.rating,
+					author: review.author,
+					publishedAt: review.publishedAt,
+					provider: review.provider,
+				})),
 			}),
 			buildBreadcrumbsSchema(clinicUrl, [
 				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
@@ -398,6 +409,14 @@ watchEffect(() => {
 					<p>{{ t('NoServicesAtClinic') }}</p>
 				</div>
 			</div>
+		</template>
+		<template #reviews>
+			<DoctorReviews
+				v-if="clinicData"
+				:reviews="clinicData.reviews"
+				:rating="clinicData.rating"
+				:noReviewsText="t('NoReviewsClinic')"
+			/>
 		</template>
 	</DetailsPage>
 </template>

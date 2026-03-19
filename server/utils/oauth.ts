@@ -24,7 +24,19 @@ export async function findUserByOAuth(
 		[provider, providerAccountId],
 	);
 
-	return results[0] || null;
+	const user = results[0] || null;
+
+	// Если фантомный пользователь (создан при импорте отзывов) авторизуется —
+	// снимаем флаг is_phantom, все его отзывы уже привязаны через user_id
+	if (user && user.is_phantom) {
+		await executeQuery(
+			'UPDATE auth_users SET is_phantom = FALSE WHERE id = ?',
+			[user.id],
+		);
+		user.is_phantom = false;
+	}
+
+	return user;
 }
 
 /**

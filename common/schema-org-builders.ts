@@ -567,6 +567,15 @@ export function buildDoctorSchema(options: {
 	pageDescription?: string;
 	facebook?: string | null;
 	instagram?: string | null;
+	rating?: { averageRating: number | null; totalReviews: number } | null;
+	reviews?: Array<{
+		id: number;
+		text: string;
+		rating?: number;
+		author?: { name: string; photoUrl?: string };
+		publishedAt?: string;
+		provider: string;
+	}>;
 	getSpecialtyName: (id: number) => string | undefined;
 	getCityName: (id: number) => string | undefined;
 }): SchemaOrg[] {
@@ -605,6 +614,36 @@ export function buildDoctorSchema(options: {
 		clinicServices: options.clinicServices,
 	});
 
+	// Build aggregate rating
+	let aggregateRating: object | undefined;
+	if (options.rating && options.rating.averageRating && options.rating.totalReviews > 0) {
+		aggregateRating = {
+			'@type': 'AggregateRating' as const,
+			'ratingValue': options.rating.averageRating.toFixed(1),
+			'reviewCount': options.rating.totalReviews,
+		};
+	}
+
+	// Build reviews
+	const reviews = options.reviews?.map((review) => ({
+		'@type': 'Review' as const,
+		'author': review.author ? {
+			'@type': 'Person' as const,
+			'name': review.author.name,
+			'image': review.author.photoUrl || undefined,
+		} : undefined,
+		'reviewRating': review.rating ? {
+			'@type': 'Rating' as const,
+			'ratingValue': review.rating,
+		} : undefined,
+		'reviewBody': review.text,
+		'datePublished': review.publishedAt || undefined,
+		'provider': {
+			'@type': 'Organization' as const,
+			'name': review.provider,
+		},
+	})).filter(Boolean);
+
 	const doctorSchema = {
 		...buildEntitySchemaBase({
 			url: doctorUrl,
@@ -628,6 +667,8 @@ export function buildDoctorSchema(options: {
 		})),
 		hasOfferCatalog: servicesSchema.hasOfferCatalog,
 		knowsAbout: servicesSchema.knowsAbout,
+		aggregateRating,
+		review: reviews && reviews.length > 0 ? reviews : undefined,
 	};
 
 	const webPageSchema = buildWebPageSchema({
@@ -766,6 +807,15 @@ export function buildClinicSchema(options: {
 	getCityName: (id: number) => string | undefined;
 	services?: ClinicServiceOffer[];
 	doctors?: ClinicDoctorItem[];
+	rating?: { averageRating: number | null; totalReviews: number } | null;
+	reviews?: Array<{
+		id: number;
+		text: string;
+		rating?: number;
+		author?: { name: string; photoUrl?: string };
+		publishedAt?: string;
+		provider: string;
+	}>;
 }): SchemaOrg[] {
 	const { siteUrl, clinic, locale, getCityName } = options;
 	const clinicUrl = `${siteUrl}/clinics/${clinic.id}`;
@@ -822,6 +872,35 @@ export function buildClinicSchema(options: {
 			options.doctors && options.doctors.length > 0
 				? buildEmployeeRefs(options.doctors, siteUrl)
 				: undefined,
+		aggregateRating:
+			options.rating && options.rating.averageRating && options.rating.totalReviews > 0
+				? {
+						'@type': 'AggregateRating' as const,
+						'ratingValue': options.rating.averageRating.toFixed(1),
+						'reviewCount': options.rating.totalReviews,
+				  }
+				: undefined,
+		review: (() => {
+			const reviews = options.reviews?.map((review) => ({
+				'@type': 'Review' as const,
+				'author': review.author ? {
+					'@type': 'Person' as const,
+					'name': review.author.name,
+					'image': review.author.photoUrl || undefined,
+				} : undefined,
+				'reviewRating': review.rating ? {
+					'@type': 'Rating' as const,
+					'ratingValue': review.rating,
+				} : undefined,
+				'reviewBody': review.text,
+				'datePublished': review.publishedAt || undefined,
+				'provider': {
+					'@type': 'Organization' as const,
+					'name': review.provider,
+				},
+			})).filter(Boolean);
+			return reviews && reviews.length > 0 ? reviews : undefined;
+		})(),
 	};
 
 	const webPageSchema = buildWebPageSchema({

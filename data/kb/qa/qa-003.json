@@ -1,0 +1,58 @@
+{
+  "id": "qa-003",
+  "type": "qa",
+  "status": "draft",
+  "tags": ["kardiologija", "city:podgorica", "city:tivat", "city:herceg-novi", "topic:uzi", "topic:ekg"],
+  "entities": [
+    {
+      "type": "clinic",
+      "id": 29,
+      "name": "Rezidencija zdravlja Kerber (Podgorica)"
+    },
+    {
+      "type": "clinic",
+      "id": 28,
+      "name": "Codra Hospital (Podgorica)"
+    },
+    {
+      "type": "clinic",
+      "id": 24,
+      "name": "DrViller Reheart (Tivat)"
+    },
+    {
+      "type": "clinic",
+      "id": 15,
+      "name": "A3 Medical (Sutomore)"
+    }
+  ],
+  "sourceMessages": [
+    {
+      "channelId": "1590026293",
+      "messageIds": [107875, 107876, 107877, 108244, 108245]
+    }
+  ],
+  "question": {
+    "text": "Где найти кардиолога и сделать УЗИ сердца (ЭхоКГ) в Черногории?",
+    "language": "ru",
+    "translations": {
+      "sr": "Gde pronaći kardiologa i uraditi ultrazvuk srca (ehokardiografiju) u Crnoj Gori?",
+      "sr_cyrl": "Где пронаћи кардиолога и урадити ултразвук срца (ехокардиографију) у Црној Гори?",
+      "en": "Where to find a cardiologist and get a cardiac ultrasound (echocardiography) in Montenegro?",
+      "ru": "Где найти кардиолога и сделать УЗИ сердца (ЭхоКГ) в Черногории?",
+      "de": "Wo findet man einen Kardiologen und kann eine Herzultraschalluntersuchung (Echokardiographie) in Montenegro durchführen lassen?",
+      "tr": "Karadağ'da kardiyolog nerede bulunur ve kalp ultrasonu (ekokardiyografi) nerede yaptırılır?"
+    }
+  },
+  "answer": {
+    "text": "Русскоязычных кардиологов в Подгорице нет, но можно обратиться в клиники с русскоязычным сопровождением: Kerber и Codra Hospital в Подгорице. Русскоговорящие кардиологи есть в Тивате (Александр Виллер, клиника DrViller Reheart) и в Херцег-Нови (Татьяна Хомякова). УЗИ сердца (ЭхоКГ) делают во многих клиниках: A3 Medical, Конзилиум, Милмедика, Натал.",
+    "language": "ru",
+    "translations": {
+      "sr": "U Podgorici nema kardiologa koji govore ruski, ali možete se obratiti klinikama sa podrškom na ruskom jeziku: Kerber i Codra Hospital u Podgorici. Kardiolozi koji govore ruski postoje u Tivtu (Aleksandar Viler, klinika DrViller Reheart) i u Herceg Novom (Tatjana Homjakova). Ultrazvuk srca (ehokardiografiju) rade u mnogim klinikama: A3 Medical, Konzilium, Milmedika, Natal.",
+      "sr_cyrl": "У Подгорици нема кардиолога који говоре руски, али можете се обратити клиникама са подршком на руском језику: Kerber и Codra Hospital у Подгорици. Кардиолози који говоре руски постоје у Тивту (Александар Вилер, клиника DrViller Reheart) и у Херцег Новом (Татјана Хомјакова). Ултразвук срца (ехокардиографију) раде у многим клиникама: A3 Medical, Конзилиум, Милмедика, Натал.",
+      "en": "There are no Russian-speaking cardiologists in Podgorica, but you can visit clinics with Russian-language support: Kerber and Codra Hospital in Podgorica. Russian-speaking cardiologists are available in Tivat (Aleksandr Viller, DrViller Reheart clinic) and in Herceg Novi (Tatyana Khomyakova). Cardiac ultrasound (echocardiography) is performed at many clinics: A3 Medical, Konzilium, Milmedika, Natal.",
+      "ru": "Русскоязычных кардиологов в Подгорице нет, но можно обратиться в клиники с русскоязычным сопровождением: Kerber и Codra Hospital в Подгорице. Русскоговорящие кардиологи есть в Тивате (Александр Виллер, клиника DrViller Reheart) и в Херцег-Нови (Татьяна Хомякова). УЗИ сердца (ЭхоКГ) делают во многих клиниках: A3 Medical, Конзилиум, Милмедика, Натал.",
+      "de": "In Podgorica gibt es keine russischsprachigen Kardiologen, aber Sie können Kliniken mit russischsprachiger Betreuung aufsuchen: Kerber und Codra Hospital in Podgorica. Russischsprachige Kardiologen gibt es in Tivat (Aleksandr Viller, Klinik DrViller Reheart) und in Herceg Novi (Tatyana Khomyakova). Herzultraschall (Echokardiographie) wird in vielen Kliniken durchgeführt: A3 Medical, Konzilium, Milmedika, Natal.",
+      "tr": "Podgorica'da Rusça konuşan kardiyolog bulunmamaktadır, ancak Rusça destek sunan kliniklere başvurabilirsiniz: Podgorica'da Kerber ve Codra Hospital. Rusça konuşan kardiyologlar Tivat'ta (Aleksandr Viller, DrViller Reheart kliniği) ve Herceg Novi'de (Tatyana Khomyakova) mevcuttur. Kalp ultrasonu (ekokardiyografi) birçok klinikte yapılmaktadır: A3 Medical, Konzilium, Milmedika, Natal."
+    }
+  }
+}

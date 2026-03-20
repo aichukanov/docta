@@ -1,0 +1,40 @@
+{
+  "id": "qa-011",
+  "type": "qa",
+  "status": "draft",
+  "tags": ["stomatologija", "city:podgorica", "city:bar", "city:budva", "city:kotor", "topic:lechenie-zubov"],
+  "entities": [
+    {"type": "clinic", "id": 19, "name": "Temel Dental (Podgorica)"},
+    {"type": "clinic", "id": 20, "name": "Pavlin Dental Clinic (Bar)"}
+  ],
+  "sourceMessages": [
+    {
+      "channelId": "1590026293",
+      "messageIds": [108102, 108103, 107891, 107892, 107893, 109055, 109056]
+    }
+  ],
+  "question": {
+    "text": "Где найти стоматолога в Черногории?",
+    "language": "ru",
+    "translations": {
+      "sr": "Gde pronaći stomatologa u Crnoj Gori?",
+      "sr_cyrl": "Где пронаћи стоматолога у Црној Гори?",
+      "en": "Where to find a dentist in Montenegro?",
+      "ru": "Где найти стоматолога в Черногории?",
+      "de": "Wo findet man einen Zahnarzt in Montenegro?",
+      "tr": "Karadağ'da diş hekimi nerede bulunur?"
+    }
+  },
+  "answer": {
+    "text": "Стоматологические клиники есть во всех крупных городах Черногории. В Подгорице работает стоматология Temel Dental (с сопровождением на русском, черногорском, английском и турецком, тел: +382 67 994 255). В Баре — Pavlin Dental Clinic. Для поиска русскоговорящего стоматолога в Будве и Которе рекомендуется уточнять актуальные контакты через медицинские сообщества, так как состав специалистов регулярно меняется. При необходимости детского стоматолога в Баре также можно обратиться в местные клиники.",
+    "language": "ru",
+    "translations": {
+      "sr": "Stomatološke klinike postoje u svim većim gradovima Crne Gore. U Podgorici radi stomatologija Temel Dental (sa podrškom na ruskom, crnogorskom, engleskom i turskom jeziku, tel: +382 67 994 255). U Baru — Pavlin Dental Clinic. Za pronalaženje stomatologa koji govori ruski u Budvi i Kotoru preporučuje se proveriti aktuelne kontakte preko medicinskih zajednica, jer se sastav specijalista redovno menja. Ukoliko je potreban dečji stomatolog u Baru, takođe se možete obratiti lokalnim klinikama.",
+      "sr_cyrl": "Стоматолошке клинике постоје у свим већим градовима Црне Горе. У Подгорици ради стоматологија Temel Dental (са подршком на руском, црногорском, енглеском и турском језику, тел: +382 67 994 255). У Бару — Pavlin Dental Clinic. За проналажење стоматолога који говори руски у Будви и Котору препоручује се проверити актуелне контакте преко медицинских заједница, јер се састав специјалиста редовно мења. Уколико је потребан дечји стоматолог у Бару, такође се можете обратити локалним клиникама.",
+      "en": "Dental clinics are available in all major cities of Montenegro. In Podgorica, Temel Dental operates with support in Russian, Montenegrin, English, and Turkish (tel: +382 67 994 255). In Bar — Pavlin Dental Clinic. To find a Russian-speaking dentist in Budva and Kotor, it is recommended to check current contacts through medical communities, as the roster of specialists changes regularly. If you need a pediatric dentist in Bar, you can also contact local clinics.",
+      "ru": "Стоматологические клиники есть во всех крупных городах Черногории. В Подгорице работает стоматология Temel Dental (с сопровождением на русском, черногорском, английском и турецком, тел: +382 67 994 255). В Баре — Pavlin Dental Clinic. Для поиска русскоговорящего стоматолога в Будве и Которе рекомендуется уточнять актуальные контакты через медицинские сообщества, так как состав специалистов регулярно меняется. При необходимости детского стоматолога в Баре также можно обратиться в местные клиники.",
+      "de": "Zahnkliniken gibt es in allen größeren Städten Montenegros. In Podgorica arbeitet die Zahnarztpraxis Temel Dental (mit Betreuung auf Russisch, Montenegrinisch, Englisch und Türkisch, Tel.: +382 67 994 255). In Bar — Pavlin Dental Clinic. Um einen russischsprachigen Zahnarzt in Budva und Kotor zu finden, empfiehlt es sich, aktuelle Kontakte über medizinische Gemeinschaften zu erfragen, da sich die Zusammensetzung der Fachärzte regelmäßig ändert. Bei Bedarf an einem Kinderzahnarzt in Bar können Sie sich ebenfalls an örtliche Kliniken wenden.",
+      "tr": "Karadağ'ın tüm büyük şehirlerinde diş klinikleri bulunmaktadır. Podgorica'da Temel Dental kliniği Rusça, Karadağca, İngilizce ve Türkçe destek ile hizmet vermektedir (tel: +382 67 994 255). Bar'da — Pavlin Dental Clinic. Budva ve Kotor'da Rusça konuşan bir diş hekimi bulmak için, uzman kadrosu düzenli olarak değiştiğinden, güncel iletişim bilgilerini tıbbi topluluklar aracılığıyla kontrol etmeniz önerilir. Bar'da çocuk diş hekimine ihtiyaç duyulması halinde de yerel kliniklere başvurabilirsiniz."
+    }
+  }
+}

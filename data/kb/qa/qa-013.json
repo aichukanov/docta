@@ -1,0 +1,41 @@
+{
+  "id": "qa-013",
+  "type": "qa",
+  "status": "draft",
+  "tags": ["topic:analizy", "city:bar", "city:budva", "endokrinologija"],
+  "entities": [
+    {"type": "clinic", "id": 15, "name": "A3 Medical (Sutomore)"},
+    {"type": "clinic", "id": 4, "name": "Milmedika (Budva)"},
+    {"type": "clinic", "id": 7, "name": "Moj Lab (Budva)"}
+  ],
+  "sourceMessages": [
+    {
+      "channelId": "1590026293",
+      "messageIds": [107786, 107787, 107788, 107792, 108960, 108961, 108962, 108963]
+    }
+  ],
+  "question": {
+    "text": "Где сдать анализы крови в Черногории и сколько это стоит?",
+    "language": "ru",
+    "translations": {
+      "sr": "Gde se mogu uraditi analize krvi u Crnoj Gori i koliko to košta?",
+      "sr_cyrl": "Где се могу урадити анализе крви у Црној Гори и колико то кошта?",
+      "en": "Where can you get blood tests done in Montenegro and how much does it cost?",
+      "ru": "Где сдать анализы крови в Черногории и сколько это стоит?",
+      "de": "Wo kann man in Montenegro Bluttests machen lassen und wie viel kostet das?",
+      "tr": "Karadağ'da kan tahlili nerede yaptırılır ve ne kadara mal olur?"
+    }
+  },
+  "answer": {
+    "text": "Сдать анализы крови можно в частных клиниках и в государственных домах здравља.\n\nВ Баре: клиника Novi Standard — общий анализ крови 5 евро, ЭКГ 5 евро, полное УЗИ для женщин 110 евро. Также в A3 Medical (Сутоморе) доступны чек-ап программы.\n\nВ Будве: лаборатория в доме здравља работает в будни, по субботам — только экстренно по направлению врача с пометкой «Cito!». Частные лаборатории принимают без ограничений.\n\nДля анализов на гормоны (ТТГ, Т3, Т4 и др.) обращайтесь в частные лаборатории — Милмедика, Moj Lab и другие работают по всей стране.",
+    "language": "ru",
+    "translations": {
+      "sr": "Analize krvi mogu se uraditi u privatnim klinikama i u državnim domovima zdravlja.\n\nU Baru: klinika Novi Standard — kompletna krvna slika 5 evra, EKG 5 evra, kompletan ultrazvuk za žene 110 evra. Takođe u A3 Medical (Sutomore) dostupni su čekap programi.\n\nU Budvi: laboratorija u domu zdravlja radi radnim danima, subotom — samo hitno po uputu lekara sa oznakom «Cito!». Privatne laboratorije primaju bez ograničenja.\n\nZa analize hormona (TSH, T3, T4 i dr.) obratite se privatnim laboratorijama — Milmedika, Moj Lab i druge rade širom zemlje.",
+      "sr_cyrl": "Анализе крви могу се урадити у приватним клиникама и у државним домовима здравља.\n\nУ Бару: клиника Novi Standard — комплетна крвна слика 5 евра, ЕКГ 5 евра, комплетан ултразвук за жене 110 евра. Такође у A3 Medical (Сутоморе) доступни су чекап програми.\n\nУ Будви: лабораторија у дому здравља ради радним данима, суботом — само хитно по упуту лекара са ознаком «Cito!». Приватне лабораторије примају без ограничења.\n\nЗа анализе хормона (TSH, T3, T4 и др.) обратите се приватним лабораторијама — Milmedika, Moj Lab и друге раде широм земље.",
+      "en": "Blood tests can be done at private clinics and at public health centers (dom zdravlja).\n\nIn Bar: Novi Standard clinic — complete blood count 5 euros, ECG 5 euros, full ultrasound for women 110 euros. A3 Medical (Sutomore) also offers check-up programs.\n\nIn Budva: the laboratory at the dom zdravlja operates on weekdays; on Saturdays — only emergencies with a doctor's referral marked «Cito!». Private laboratories accept patients without restrictions.\n\nFor hormone tests (TSH, T3, T4, etc.) contact private laboratories — Milmedika, Moj Lab, and others operate throughout the country.",
+      "ru": "Сдать анализы крови можно в частных клиниках и в государственных домах здравља.\n\nВ Баре: клиника Novi Standard — общий анализ крови 5 евро, ЭКГ 5 евро, полное УЗИ для женщин 110 евро. Также в A3 Medical (Сутоморе) доступны чек-ап программы.\n\nВ Будве: лаборатория в доме здравља работает в будни, по субботам — только экстренно по направлению врача с пометкой «Cito!». Частные лаборатории принимают без ограничений.\n\nДля анализов на гормоны (ТТГ, Т3, Т4 и др.) обращайтесь в частные лаборатории — Милмедика, Moj Lab и другие работают по всей стране.",
+      "de": "Bluttests können in Privatkliniken und in staatlichen Gesundheitshäusern (dom zdravlja) durchgeführt werden.\n\nIn Bar: Klinik Novi Standard — großes Blutbild 5 Euro, EKG 5 Euro, vollständiger Ultraschall für Frauen 110 Euro. In A3 Medical (Sutomore) sind ebenfalls Check-up-Programme verfügbar.\n\nIn Budva: Das Labor im dom zdravlja arbeitet werktags; samstags — nur in Notfällen mit ärztlicher Überweisung mit dem Vermerk «Cito!». Privatlabore nehmen ohne Einschränkungen an.\n\nFür Hormonuntersuchungen (TSH, T3, T4 u. a.) wenden Sie sich an Privatlabore — Milmedika, Moj Lab und andere sind landesweit tätig.",
+      "tr": "Kan tahlilleri özel kliniklerde ve devlet sağlık merkezlerinde (dom zdravlja) yaptırılabilir.\n\nBar'da: Novi Standard kliniği — tam kan sayımı 5 euro, EKG 5 euro, kadınlar için tam ultrason 110 euro. A3 Medical'de (Sutomore) check-up programları da mevcuttur.\n\nBudva'da: dom zdravlja'daki laboratuvar hafta içi çalışır; cumartesi günleri — yalnızca «Cito!» notu taşıyan doktor sevki ile acil durumlar için. Özel laboratuvarlar kısıtlama olmaksızın hasta kabul eder.\n\nHormon testleri (TSH, T3, T4 vb.) için özel laboratuvarlara başvurun — Milmedika, Moj Lab ve diğerleri ülke genelinde hizmet vermektedir."
+    }
+  }
+}

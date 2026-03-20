@@ -1,0 +1,41 @@
+{
+  "id": "qa-016",
+  "type": "qa",
+  "status": "draft",
+  "tags": ["hirurgija", "topic:ceny", "city:bar", "city:podgorica"],
+  "entities": [
+    {"type": "clinic", "id": 15, "name": "A3 Medical (Sutomore)"},
+    {"type": "clinic", "id": 23, "name": "Poliklinika Filipović (Podgorica)"},
+    {"type": "clinic", "id": 2, "name": "Milmedika (Nikšić)"}
+  ],
+  "sourceMessages": [
+    {
+      "channelId": "1590026293",
+      "messageIds": [108857, 108858, 108859, 108860, 108861, 108862, 108863]
+    }
+  ],
+  "question": {
+    "text": "Сколько стоят хирургические операции в Черногории?",
+    "language": "ru",
+    "translations": {
+      "sr": "Koliko koštaju hirurške operacije u Crnoj Gori?",
+      "sr_cyrl": "Колико коштају хируршке операције у Црној Гори?",
+      "en": "How much do surgical operations cost in Montenegro?",
+      "ru": "Сколько стоят хирургические операции в Черногории?",
+      "de": "Wie viel kosten chirurgische Eingriffe in Montenegro?",
+      "tr": "Karadağ'da cerrahi operasyonlar ne kadara mal olur?"
+    }
+  },
+  "answer": {
+    "text": "Стоимость сильно зависит от типа вмешательства и клиники:\n\n— Иссечение подкожного образования под общей анестезией — около 1500 евро (стандартная цена для операций под общим наркозом)\n— Иссечение под местной анестезией — значительно дешевле, уточняйте в клинике\n— Удаление вросшего ногтя — от 130 евро (A3 Medical, Сутоморе) до 200 евро (Poliklinika Filipović, Подгорица)\n\nЦены в Никшиче (Милмедика) обычно ниже, чем на побережье. Рекомендуется сравнивать прайсы нескольких клиник перед процедурой.",
+    "language": "ru",
+    "translations": {
+      "sr": "Cena u velikoj meri zavisi od vrste intervencije i klinike:\n\n— Ekscizija potkožne tvorevine pod opštom anestezijom — oko 1500 evra (standardna cena za operacije pod opštom anestezijom)\n— Ekscizija pod lokalnom anestezijom — znatno jeftinije, proverite u klinici\n— Uklanjanje uraslog nokta — od 130 evra (A3 Medical, Sutomore) do 200 evra (Poliklinika Filipović, Podgorica)\n\nCene u Nikšiću (Milmedika) su obično niže nego na primorju. Preporučuje se uporediti cenovnike nekoliko klinika pre procedure.",
+      "sr_cyrl": "Цена у великој мери зависи од врсте интервенције и клинике:\n\n— Ексцизија поткожне творевине под општом анестезијом — око 1500 евра (стандардна цена за операције под општом анестезијом)\n— Ексцизија под локалном анестезијом — знатно јефтиније, проверите у клиници\n— Уклањање урасног нокта — од 130 евра (A3 Medical, Сутоморе) до 200 евра (Poliklinika Filipović, Подгорица)\n\nЦене у Никшићу (Milmedika) су обично ниже него на приморју. Препоручује се упоредити ценовнике неколико клиника пре процедуре.",
+      "en": "The cost depends heavily on the type of procedure and the clinic:\n\n— Excision of a subcutaneous mass under general anesthesia — approximately 1500 euros (standard price for operations under general anesthesia)\n— Excision under local anesthesia — significantly cheaper, check with the clinic\n— Ingrown toenail removal — from 130 euros (A3 Medical, Sutomore) to 200 euros (Poliklinika Filipović, Podgorica)\n\nPrices in Nikšić (Milmedika) are usually lower than on the coast. It is recommended to compare price lists from several clinics before the procedure.",
+      "ru": "Стоимость сильно зависит от типа вмешательства и клиники:\n\n— Иссечение подкожного образования под общей анестезией — около 1500 евро (стандартная цена для операций под общим наркозом)\n— Иссечение под местной анестезией — значительно дешевле, уточняйте в клинике\n— Удаление вросшего ногтя — от 130 евро (A3 Medical, Сутоморе) до 200 евро (Poliklinika Filipović, Подгорица)\n\nЦены в Никшиче (Милмедика) обычно ниже, чем на побережье. Рекомендуется сравнивать прайсы нескольких клиник перед процедурой.",
+      "de": "Die Kosten hängen stark von der Art des Eingriffs und der Klinik ab:\n\n— Exzision einer subkutanen Raumforderung unter Vollnarkose — etwa 1500 Euro (Standardpreis für Operationen unter Vollnarkose)\n— Exzision unter Lokalanästhesie — deutlich günstiger, erkundigen Sie sich in der Klinik\n— Entfernung eines eingewachsenen Nagels — von 130 Euro (A3 Medical, Sutomore) bis 200 Euro (Poliklinika Filipović, Podgorica)\n\nDie Preise in Nikšić (Milmedika) sind in der Regel niedriger als an der Küste. Es empfiehlt sich, vor dem Eingriff die Preislisten mehrerer Kliniken zu vergleichen.",
+      "tr": "Maliyet, müdahalenin türüne ve kliniğe büyük ölçüde bağlıdır:\n\n— Genel anestezi altında cilt altı kitle eksizyonu — yaklaşık 1500 euro (genel anestezi altında yapılan operasyonlar için standart fiyat)\n— Lokal anestezi altında eksizyon — önemli ölçüde daha ucuz, kliniğe danışın\n— Batık tırnak çıkarma — 130 eurodan (A3 Medical, Sutomore) 200 euroya kadar (Poliklinika Filipović, Podgorica)\n\nNikšić'teki (Milmedika) fiyatlar genellikle sahil bölgesinden daha düşüktür. İşlem öncesinde birkaç kliniğin fiyat listelerini karşılaştırmanız tavsiye edilir."
+    }
+  }
+}

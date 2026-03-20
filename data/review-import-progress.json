@@ -1,0 +1,63 @@
+{
+  "description": "Прогресс обработки отзывов клиник. done = полностью обработана, partial = есть конфиг/переводы но не всё завершено",
+  "clinics": {
+    "just-dental-bar": {
+      "status": "done",
+      "clinicName": "JUST Dental Clinic (Bar)",
+      "configFile": "data/review-import-configs/just-dental-bar.json",
+      "sqlFile": "server/sql/insert-reviews-just-dental.sql",
+      "reviewsWithText": 104,
+      "note": "Обработана через старый пайплайн (flat translation files)"
+    },
+    "dental-esthetic-studio-bar": {
+      "status": "done",
+      "clinicName": "Dental & Esthetic Studio Dr Debelja (Bar)",
+      "configFile": "data/review-import-configs/dental-esthetic-studio-bar.json",
+      "sqlFile": "server/sql/insert-reviews-dental-esthetic-studio.sql",
+      "reviewsWithText": 26,
+      "note": "Обработана через старый пайплайн (flat translation files)"
+    },
+    "buntic-bar": {
+      "status": "done",
+      "clinicName": "Buntic - Stomatoloska ordinacija (Bar)",
+      "configFile": "data/review-import-configs/buntic-bar.json",
+      "sqlFile": "server/sql/insert-reviews-buntic.sql",
+      "reviewsWithText": 17,
+      "note": "Обработана через старый пайплайн (flat translation files)"
+    },
+    "pavlin-bar": {
+      "status": "done",
+      "clinicName": "Семейная стоматология Павлин (Bar)",
+      "configFile": "data/review-import-configs/pavlin-bar.json",
+      "sqlFile": "server/sql/insert-reviews-pavlin.sql",
+      "reviewsWithText": 55,
+      "note": "Обработана через старый пайплайн (flat translation files)"
+    },
+    "dr-zejnilovic-bar": {
+      "status": "done",
+      "clinicName": "Dr Zejnilović — PZU Dnevna bolnica (Bar)",
+      "configFile": "data/review-import-configs/dr-zejnilovic-bar.json",
+      "sqlFile": "server/sql/insert-reviews-dr-zejnilovic.sql",
+      "reviewsWithText": 61,
+      "note": "Обработана через старый пайплайн (flat translation files)"
+    },
+    "medical-vranes-bar": {
+      "status": "done",
+      "clinicName": "Medical Vranes (Bar)",
+      "configFile": "data/review-import-configs/medical-vranes-bar.json",
+      "sqlFile": "server/sql/insert-reviews-medical-vranes-bar.sql",
+      "reviewsWithText": 393,
+      "translationsDir": "data/review-translations/medical-vranes-bar/",
+      "translationsCount": 393
+    },
+    "a3-medical-sutomore": {
+      "status": "done",
+      "clinicName": "A3 Medical (Sutomore)",
+      "configFile": "data/review-import-configs/a3-medical-sutomore.json",
+      "sqlFile": "server/sql/insert-reviews-a3-medical-sutomore.sql",
+      "reviewsWithText": 105,
+      "translationsDir": "data/review-translations/a3-medical-sutomore/",
+      "translationsCount": 105
+    }
+  }
+}

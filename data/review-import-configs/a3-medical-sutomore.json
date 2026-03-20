@@ -42,7 +42,7 @@
       "id": 636,
       "varName": "ranko_lazovic",
       "patterns": [
-        "Lazovi[cć](?:[^a-zA-Z]|$)",
+        "Lazovi[cć][aeiou]?(?:[^a-zA-Z]|$)",
         "Лазович(?:[^а-яёА-ЯЁ]|$)",
         "(?:^|[^а-яёА-ЯЁa-zA-Z])Ранк[оу](?:[^а-яёА-ЯЁa-zA-Z]|$)",
         "Rank[ou](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
@@ -77,7 +77,7 @@
       "id": 654,
       "varName": "emil_nasufovic",
       "patterns": [
-        "Nasufovi[cć](?:[^a-zA-Z]|$)",
+        "Nasufovi[cć]\\w*(?:[^a-zA-Z]|$)",
         "Насуфович(?:[^а-яёА-ЯЁ]|$)"
       ]
     },

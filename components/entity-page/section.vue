@@ -30,5 +30,13 @@ defineProps<{
 	border: 1px solid var(--color-border-light);
 	border-radius: var(--border-radius-md);
 	padding: var(--spacing-xl);
+	overflow: hidden;
+}
+
+@media (max-width: 500px) {
+	.entity-section {
+		padding: var(--spacing-md);
+		border-radius: var(--border-radius-sm);
+	}
 }
 </style>

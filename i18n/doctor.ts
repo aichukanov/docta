@@ -43,6 +43,7 @@ export default {
 			DoctorsListDescriptionFiltered:
 				'Found {count}: {title}. Clinics, addresses, and contacts.',
 			And: 'and',
+			TabAbout: 'About',
 			TabClinics: 'Clinics',
 			TabReviews: 'Reviews',
 			TabMap: 'Location',
@@ -92,6 +93,7 @@ export default {
 			DoctorsListDescriptionFiltered:
 				'Найдено {count}: {title}. Клиники, адреса и контакты.',
 			And: 'и',
+			TabAbout: 'О враче',
 			TabClinics: 'Клиники',
 			TabReviews: 'Отзывы',
 			TabMap: 'На карте',
@@ -139,6 +141,7 @@ export default {
 			DoctorsListDescriptionFiltered:
 				'{count} bulundu: {title}. Klinikler, adresler ve iletişim bilgileri.',
 			And: 've',
+			TabAbout: 'Hakkında',
 			TabClinics: 'Klinikler',
 			TabReviews: 'Değerlendirmeler',
 			TabMap: 'Konum',
@@ -188,6 +191,7 @@ export default {
 			DoctorsListDescriptionFiltered:
 				'{count} gefunden: {title}. Kliniken, Adressen und Kontakte.',
 			And: 'und',
+			TabAbout: 'Über den Arzt',
 			TabClinics: 'Kliniken',
 			TabReviews: 'Bewertungen',
 			TabMap: 'Standort',
@@ -237,6 +241,7 @@ export default {
 			DoctorsListDescriptionFiltered:
 				'Pronađeno {count}: {title}. Klinike, adrese i kontakti.',
 			And: 'i',
+			TabAbout: 'O lekaru',
 			TabClinics: 'Klinike',
 			TabReviews: 'Recenzije',
 			TabMap: 'Lokacija',
@@ -286,6 +291,7 @@ export default {
 			DoctorsListDescriptionFiltered:
 				'Пронађено {count}: {title}. Клинике, адресе и контакти.',
 			And: 'и',
+			TabAbout: 'О лекару',
 			TabClinics: 'Клинике',
 			TabReviews: 'Рецензије',
 			TabMap: 'Локација',

@@ -70,6 +70,9 @@ const doctorDescription = computed(() => {
 
 const tabs = computed(() => {
 	const result = [];
+	if (doctorDescription.value) {
+		result.push({ id: 'about', label: t('TabAbout') });
+	}
 	if (doctorClinics.value.length > 0) {
 		result.push({ id: 'clinics', label: t('TabClinics') });
 	}
@@ -297,12 +300,21 @@ watchEffect(() => {
 			<DoctorHero
 				v-if="doctorData"
 				:doctor="doctorData"
-				:description="doctorDescription"
 				:isOwner="doctorData.isOwner"
 			/>
 		</template>
 
 		<template #sections>
+			<!-- About -->
+			<EntityPageSection
+				v-if="doctorDescription"
+				sectionId="about"
+				:title="t('TabAbout')"
+			>
+				<template #icon><IconInfo :size="20" /></template>
+				<MarkedContent :content="doctorDescription" />
+			</EntityPageSection>
+
 			<!-- Clinics -->
 			<EntityPageSection
 				v-if="doctorClinics.length > 0"

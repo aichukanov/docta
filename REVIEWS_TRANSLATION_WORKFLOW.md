@@ -134,6 +134,7 @@ node scripts/generate-reviews-sql.mjs data/review-import-configs/<slug>.json --e
 
 # 3. Сгенерировать SQL
 node scripts/generate-reviews-sql.mjs <config.json> --translations data/review-translations/<slug>-translations.json
+# → output goes to server/sql/reviews-google/<slug>.sql (per config)
 ```
 
 ### Вариант В: Автоматический (с API ключом)

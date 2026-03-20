@@ -80,6 +80,17 @@ const backToSearch = () => {
 	padding: var(--spacing-2xl) 0;
 }
 
+@media (max-width: 500px) {
+	.entity-page {
+		padding: 0 var(--spacing-sm);
+	}
+
+	.entity-page__body {
+		gap: var(--spacing-lg);
+		padding: var(--spacing-lg) 0;
+	}
+}
+
 .entity-page__loading {
 	display: flex;
 	flex-direction: column;

@@ -25,6 +25,8 @@ const htmlContent = computed(() => {
 	font-size: var(--font-size-md);
 	line-height: 1.6;
 	color: var(--color-text-primary);
+	overflow-wrap: break-word;
+	word-break: break-word;
 
 	p {
 		margin-bottom: var(--spacing-sm);

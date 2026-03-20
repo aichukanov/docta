@@ -16,7 +16,7 @@ JSON (Google Places) + config → generate-reviews-sql.mjs → SQL → mysql
 
 ```bash
 node scripts/generate-reviews-sql.mjs data/review-import-configs/<name>.json
-mysql -u root -p --default-character-set=utf8mb4 docta_me < server/sql/<output>.sql
+mysql -u root -p --default-character-set=utf8mb4 docta_me < server/sql/reviews-google/<slug>.sql
 ```
 
 ### Если нужно создать конфиг для новой клиники
@@ -79,6 +79,37 @@ mysql -u root -p --default-character-set=utf8mb4 docta_me < server/sql/<output>.
 | `doctors[].varName` | Имя SQL-переменной (латиница, snake_case) |
 | `doctors[].patterns` | Regex-паттерны для поиска упоминаний в тексте отзыва |
 | `childDentistDoctorVar` | `varName` детского стоматолога (опционально). Срабатывает на «детский стоматолог», «ребёнк» |
+
+### Пример сгенерированного SQL
+
+Для справки — формат SQL, который генерирует скрипт. Состоит из 4 частей:
+
+```sql
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
+
+-- PART 0: Find clinic by google_place_id
+SET @clinic_id = (SELECT id FROM clinics WHERE google_place_id = 'ChIJ3ykO5D_rTRMR-LFjQEKw2mU');
+
+-- PART 1: Create phantom users for review authors
+-- Google Maps contributor IDs ≠ Google OAuth IDs, so these
+-- phantom users cannot be auto-claimed via OAuth login.
+INSERT INTO auth_users (email, name, photo_url, profile_url, is_phantom) VALUES
+(NULL, 'Marko Milic', 'https://lh3.googleusercontent.com/a/ACg8ocI...=s128-c0x00000000-cc-rp-mo', 'https://www.google.com/maps/contrib/107191170081057832184/reviews', TRUE);
+
+-- PART 2: Set user_id variables (by profile_url for dedup)
+SET @user_marko = (SELECT id FROM auth_users WHERE profile_url = 'https://www.google.com/maps/contrib/107191170081057832184/reviews');
+
+-- PART 3: Insert reviews
+INSERT INTO reviews (user_id, clinic_id, provider, provider_review_id, rating, original_language, original_text, text_sr_cyrl, published_at) VALUES
+(@user_marko, @clinic_id, 'google_maps',
+    'places/ChIJ3ykO5D_rTRMR-LFjQEKw2mU/reviews/ChZDSUhNMG9nS0VJQ0FnTUN3eHY3X09BEAE',
+    5, 'bs',
+    'Labaratorija ovog Dom zdravlja je na visokom nivou.Sve preporuke.',
+    'Лабораторија овог Дома здравља је на високом нивоу. Све препоруке.',
+    '2025-03-18 13:30:38')
+ON DUPLICATE KEY UPDATE rating = VALUES(rating);
+```
 
 ### Если врачей нет
 
@@ -201,16 +232,21 @@ JSON может содержать дубли (один отзыв в API и HTM
 
 ```
 data/
-  google-places/<city>/<clinic>.json     ← входные данные (Google API + scraping)
-  review-import-configs/<slug>.json      ← конфиг генерации
+  google-places/<city>/<clinic>.json          ← входные данные (Google API + scraping)
+  review-import-configs/<slug>.json           ← конфиг генерации (Google + Telegram)
+  review-translations/                        ← переводы отзывов
 
 scripts/
-  generate-reviews-sql.mjs              ← универсальный генератор
+  generate-reviews-sql.mjs                   ← генератор SQL из Google Maps JSON
+  generate-telegram-reviews-sql.mjs          ← генератор SQL из Telegram-экспортов
 
 server/sql/
-  insert-reviews-<slug>.sql             ← сгенерированный SQL
   migrations/
-    add-review-replies-and-likes.sql    ← миграция схемы (запустить один раз)
+    deploy-reviews.sql                       ← миграция схемы (все таблицы, идемпотентно)
+  reviews-google/                            ← SQL с отзывами Google Maps
+    <clinic-slug>.sql
+  reviews-telegram/                          ← SQL с отзывами из Telegram
+    <channel-slug>.sql
 ```
 
 ---
@@ -306,7 +342,7 @@ node scripts/generate-reviews-sql.mjs <config.json> --translations data/review-t
 node scripts/generate-reviews-sql.mjs data/review-import-configs/<slug>.json
 
 # 2. Применить к БД
-mysql -u root -p --default-character-set=utf8mb4 docta_me < server/sql/insert-reviews-<slug>.sql
+mysql -u root -p --default-character-set=utf8mb4 docta_me < server/sql/reviews-google/<slug>.sql
 ```
 
 ⚠️ Флаг `--default-character-set=utf8mb4` обязателен для кириллицы!

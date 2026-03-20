@@ -1,0 +1,25 @@
+{
+  "jsonPath": "data/google-places/bar/dom-zdravlja-bar.json",
+  "outputPath": "server/sql/reviews-google/dom-zdravlja-bar.sql",
+  "dataCollectedDate": "2026-03-19",
+  "clinicId": 49,
+  "clinicName": "ZU Dom Zdravlja Bar",
+  "translationsDir": "data/review-translations/dom-zdravlja-bar/",
+  "doctors": [
+    {
+      "id": 553,
+      "varName": "hadija_mujevic_kurgas",
+      "patterns": [
+        "Mujevi[cć][-\\s]?Kurga[sš](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 563,
+      "varName": "irena_jelenic",
+      "patterns": [
+        "Jeleni[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Iren[aeu]?\\s+(?:Savic\\s+)?Jeleni[cć]"
+      ]
+    }
+  ]
+}

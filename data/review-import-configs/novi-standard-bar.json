@@ -1,0 +1,30 @@
+{
+  "jsonPath": "data/google-places/bar/novi-standard-poliklinika.json",
+  "outputPath": "server/sql/reviews-google/novi-standard-bar.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 64,
+  "clinicName": "Novi Standard Poliklinika (Bar)",
+  "translationsDir": "data/review-translations/novi-standard-bar/",
+  "doctors": [
+    {
+      "id": 340,
+      "varName": "tamara_miljenjka",
+      "patterns": [
+        "Тамар[аеуой]\\s+Миленьк",
+        "Миленьк[аойе](?:[^а-яёА-ЯЁ]|$)",
+        "[Dd]r\\.?\\s+Tamara(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "офтальмолог[ауе]?(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 708,
+      "varName": "ana_stankovic",
+      "patterns": [
+        "Stankovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Станкович(?:[^а-яёА-ЯЁ]|$)",
+        "[Dd]oktork[aue]\\s+An[aeu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "[Dd]r\\.?\\s+Ana(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

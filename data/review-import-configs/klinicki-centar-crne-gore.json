@@ -1,0 +1,49 @@
+{
+  "jsonPath": "data/google-places/podgorica/klinicki-centar-crne-gore.json",
+  "outputPath": "server/sql/insert-reviews-klinicki-centar-crne-gore.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 65,
+  "clinicName": "Klinički Centar Crne Gore (Podgorica)",
+  "translationsDir": "data/review-translations/klinicki-centar-crne-gore/",
+  "doctors": [
+    {
+      "id": 331,
+      "varName": "miljan_zindovic",
+      "patterns": [
+        "Zindovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Зиндович(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 450,
+      "varName": "marija_djurovic",
+      "patterns": [
+        "(?:Marij[aue]|Марий?[аеуой])\\s+(?:Đurovi[cć]|Djurovi[cć]|Đurovič|Джурович|Дьюрович)"
+      ]
+    },
+    {
+      "id": 735,
+      "varName": "dubravka_radonjic",
+      "patterns": [
+        "Radonji[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Радоньич(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 356,
+      "varName": "nenad_radovic",
+      "patterns": [
+        "Nenad[aeu]?\\s+Radovi[cć]",
+        "Ненад[ауе]?\\s+Радович"
+      ]
+    },
+    {
+      "id": 58,
+      "varName": "perica_maras",
+      "patterns": [
+        "Mara[sš](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Мараш(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

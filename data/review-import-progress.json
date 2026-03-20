@@ -58,6 +58,35 @@
       "reviewsWithText": 105,
       "translationsDir": "data/review-translations/a3-medical-sutomore/",
       "translationsCount": 105
+    },
+    "dom-zdravlja-bar": {
+      "status": "done",
+      "clinicName": "ZU Dom Zdravlja Bar",
+      "configFile": "data/review-import-configs/dom-zdravlja-bar.json",
+      "sqlFile": "server/sql/reviews-google/dom-zdravlja-bar.sql",
+      "reviewsWithText": 37,
+      "translationsDir": "data/review-translations/dom-zdravlja-bar/",
+      "translationsCount": 37,
+      "appliedToProduction": "2026-03-20"
+    },
+    "novi-standard-bar": {
+      "status": "done",
+      "clinicName": "Novi Standard Poliklinika (Bar)",
+      "configFile": "data/review-import-configs/novi-standard-bar.json",
+      "sqlFile": "server/sql/reviews-google/novi-standard-bar.sql",
+      "reviewsWithText": 52,
+      "translationsDir": "data/review-translations/novi-standard-bar/",
+      "translationsCount": 67,
+      "appliedToProduction": "2026-03-20"
+    },
+    "opsta-bolnica-bar": {
+      "status": "done",
+      "clinicName": "Opšta Bolnica Blažo Orlandić (Bar)",
+      "configFile": "data/review-import-configs/opsta-bolnica-bar.json",
+      "sqlFile": "server/sql/reviews-google/opsta-bolnica-bar.sql",
+      "reviewsWithText": 62,
+      "translationsDir": "data/review-translations/opsta-bolnica-bar/",
+      "translationsCount": 62
     }
   }
 }

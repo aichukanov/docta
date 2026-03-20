@@ -1,0 +1,40 @@
+{
+  "jsonPath": "data/google-places/bar/opsta-bolnica-blazo-orlandic.json",
+  "outputPath": "server/sql/reviews-google/opsta-bolnica-bar.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 92,
+  "clinicName": "Opšta Bolnica Blažo Orlandić (Bar)",
+  "translationsDir": "data/review-translations/opsta-bolnica-bar/",
+  "doctors": [
+    {
+      "id": 550,
+      "varName": "svetlana_scekic",
+      "patterns": [
+        "Šćeki[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Scekic(?:[^a-zA-Z]|$)",
+        "Щекич(?:[^а-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Светлан[аеуой](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 957,
+      "varName": "aziz_haliti",
+      "patterns": [
+        "Haliti(?:[^a-zA-Z]|$)",
+        "Халити(?:[^а-яёА-ЯЁ]|$)",
+        "Aziz[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Азиз[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 637,
+      "varName": "dragoslav_tomanovic",
+      "patterns": [
+        "Tomanovi[cć](?:[^a-zA-Z]|$)",
+        "Томанович(?:[^а-яёА-ЯЁ]|$)",
+        "Dragoslav[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Драгослав[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

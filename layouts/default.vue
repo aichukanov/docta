@@ -307,7 +307,12 @@ body {
 	font-family: system-ui;
 	overflow-x: hidden;
 	overflow-y: auto;
-	scrollbar-gutter: stable;
+}
+
+@media (min-width: 1025px) {
+	body {
+		scrollbar-gutter: stable;
+	}
 }
 
 .layout-wrapper {

@@ -26,6 +26,8 @@ export default {
 				'{category} services in Montenegro — search by name or clinic. Compare prices and clinic locations on the map.',
 			MedicalServicesListDescriptionCategoryCity:
 				'{category} services in {city} — search by name or clinic. Compare prices and clinic locations on the map.',
+			TabClinics: 'Clinics',
+			TabMap: 'Location',
 		},
 		'ru': {
 			ServiceName: 'Название услуги',
@@ -55,6 +57,8 @@ export default {
 				'{category} в Черногории — поиск по названию или клинике. Сравните цены и адреса клиник на карте.',
 			MedicalServicesListDescriptionCategoryCity:
 				'{category} в {city} — поиск по названию или клинике. Сравните цены и адреса клиник на карте.',
+			TabClinics: 'Клиники',
+			TabMap: 'На карте',
 		},
 		'sr': {
 			ServiceName: 'Ime usluge',
@@ -86,6 +90,8 @@ export default {
 				'{category} u Crnoj Gori — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
 			MedicalServicesListDescriptionCategoryCity:
 				'{category} u {city} — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
+			TabClinics: 'Klinike',
+			TabMap: 'Lokacija',
 		},
 		'de': {
 			ServiceName: 'Dienstleistungsname',
@@ -116,6 +122,8 @@ export default {
 				'{category} in Montenegro — Suche nach Name oder Klinik. Vergleichen Sie Preise und Klinikstandorte auf der Karte.',
 			MedicalServicesListDescriptionCategoryCity:
 				'{category} in {city} — Suche nach Name oder Klinik. Vergleichen Sie Preise und Klinikstandorte auf der Karte.',
+			TabClinics: 'Kliniken',
+			TabMap: 'Standort',
 		},
 		'tr': {
 			ServiceName: 'Hizmet adı',
@@ -145,6 +153,8 @@ export default {
 				"Karadağ'da {category} — ada veya kliniğe göre arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
 			MedicalServicesListDescriptionCategoryCity:
 				"{city}'de {category} — ada veya kliniğe göre arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
+			TabClinics: 'Klinikler',
+			TabMap: 'Konum',
 		},
 		'sr-cyrl': {
 			ServiceName: 'Име услуге',
@@ -176,6 +186,8 @@ export default {
 				'{category} у Црној Гори — претрага по имену или клиници. Упоредите цене и локације клиника на мапи.',
 			MedicalServicesListDescriptionCategoryCity:
 				'{category} у {city} — претрага по имену или клиници. Упоредите цене и локације клиника на мапи.',
+			TabClinics: 'Клинике',
+			TabMap: 'Локација',
 		},
 	},
 };

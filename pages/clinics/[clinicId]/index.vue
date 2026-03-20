@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import { getRegionalQuery } from '~/common/url-utils';
+import { formatClinicAddressLine } from '~/common/clinic-address';
+import { OG_IMAGE, SITE_URL } from '~/common/constants';
 import {
-	buildClinicSchema,
 	buildBreadcrumbsSchema,
+	buildClinicSchema,
 } from '~/common/schema-org-builders';
-import { SITE_URL, OG_IMAGE } from '~/common/constants';
+import { getRegionalQuery } from '~/common/url-utils';
+import { getLocalizedName } from '~/common/utils';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import clinicI18n from '~/i18n/clinic';
+import labTestCategoryI18n from '~/i18n/labtest-category';
 import languageI18n from '~/i18n/language';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
-import specialtyI18n from '~/i18n/specialty';
-import labTestCategoryI18n from '~/i18n/labtest-category';
-import { combineI18nMessages } from '~/i18n/utils';
-import { getLocalizedName } from '~/common/utils';
-import { formatClinicAddressLine } from '~/common/clinic-address';
-import type { ClinicPrice } from '~/interfaces/clinic';
 import reviewsI18n from '~/i18n/reviews';
+import specialtyI18n from '~/i18n/specialty';
+import { combineI18nMessages } from '~/i18n/utils';
+import type { ClinicPrice } from '~/interfaces/clinic';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -164,6 +164,60 @@ const clinicAsList = computed(() =>
 	isFound.value && clinicData.value ? [clinicData.value] : [],
 );
 
+const hasServices = computed(
+	() =>
+		clinicMedicalServices.value.length > 0 ||
+		clinicLabTests.value.length > 0 ||
+		clinicMedications.value.length > 0,
+);
+
+const totalServicesCount = computed(
+	() =>
+		clinicMedicalServices.value.length +
+		clinicLabTests.value.length +
+		clinicMedications.value.length,
+);
+
+const tabs = computed(() => {
+	const result = [];
+	if (clinicDescription.value) {
+		result.push({ id: 'about', label: t('TabAbout') });
+	}
+	result.push({ id: 'contacts', label: t('TabContacts') });
+	if (clinicDoctors.value.length > 0) {
+		result.push({
+			id: 'doctors',
+			label: `${t('TabDoctors')} (${clinicDoctors.value.length})`,
+		});
+	}
+	if (hasServices.value) {
+		result.push({
+			id: 'services',
+			label: `${t('TabServices')} (${totalServicesCount.value})`,
+		});
+	}
+	if (clinicData.value?.reviews?.length) {
+		result.push({
+			id: 'reviews',
+			label: `${t('TabReviews')} (${
+				clinicData.value.rating?.totalReviews || clinicData.value.reviews.length
+			})`,
+		});
+	}
+	result.push({ id: 'map', label: t('TabMap') });
+	return result;
+});
+
+const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
+
+const scrollToMap = () => {
+	const el = document.getElementById('map');
+	if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	if (clinicData.value) {
+		mapRef.value?.openClinicPopup(clinicData.value);
+	}
+};
+
 const getItemLink = (routeName: string, paramName: string, id: number) => ({
 	name: routeName,
 	params: { [paramName]: id },
@@ -286,30 +340,47 @@ watchEffect(() => {
 </script>
 
 <template>
-	<DetailsPage
+	<EntityPage
 		:isLoading="isLoading || false"
 		:isFound="isFound"
-		:clinics="clinicAsList"
 		backRouteName="clinics"
 		:loadingText="t('LoadingClinic')"
 		:notFoundText="t('ClinicNotFound')"
+		:tabs="tabs"
 	>
-		<template #info="{ showClinicOnMap }">
-			<ClinicHeader
+		<template #hero>
+			<ClinicHero
 				v-if="clinicData"
 				:clinic="clinicData"
 				:cityName="t(`city_${clinicData.cityId}`)"
-				:description="clinicDescription"
 				:languageAssistanceLabel="t('LanguageAssistance')"
-				:contactsLabel="t('Contacts')"
-				:showOnMapLabel="t('AriaShowOnMap')"
-				@showOnMap="showClinicOnMap"
+				@scrollToMap="scrollToMap"
 			/>
 		</template>
 
-		<template #clinics>
-			<div class="clinic-services">
-				<!-- Врачи -->
+		<template #sections>
+			<!-- About -->
+			<EntityPageSection
+				v-if="clinicDescription"
+				sectionId="about"
+				:title="t('TabAbout')"
+			>
+				<template #icon><IconInfo :size="20" /></template>
+				<MarkedContent :content="clinicDescription" />
+			</EntityPageSection>
+
+			<!-- Contacts -->
+			<EntityPageSection
+				v-if="clinicData"
+				sectionId="contacts"
+				:title="t('TabContacts')"
+			>
+				<template #icon><IconPhone :size="20" /></template>
+				<ContactsList :list="clinicData" />
+			</EntityPageSection>
+
+			<!-- Doctors -->
+			<EntityPageSection v-if="clinicDoctors.length > 0" sectionId="doctors">
 				<ClinicCategorizedSection
 					:title="t('DoctorsAtClinic')"
 					:totalCount="clinicDoctors.length"
@@ -324,101 +395,110 @@ watchEffect(() => {
 						<DoctorInfo :service="item" short headingLevel="h4" />
 					</template>
 				</ClinicCategorizedSection>
+			</EntityPageSection>
 
-				<!-- Медицинские услуги -->
-				<ClinicCategorizedSection
-					:title="t('MedicalServicesAtClinic')"
-					:totalCount="clinicMedicalServices.length"
-					routeName="services"
-					:categories="serviceCategoriesWithTitles.categories"
-					:otherCategory="serviceCategoriesWithTitles.otherCategory"
-				>
-					<template #icon>
-						<IconMedicalService />
-					</template>
-					<template #default="{ item }">
-						<PricedItemCard
-							:id="item.id"
-							:name="item.name"
-							:localName="item.localName"
-							:price="getClinicPrice(item.clinicPrices)?.price"
-							:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
-							:priceMin="getClinicPrice(item.clinicPrices)?.priceMin"
-							routeName="services-serviceId"
-							routeParamName="serviceId"
-						/>
-					</template>
-				</ClinicCategorizedSection>
+			<!-- Services -->
+			<EntityPageSection v-if="hasServices" sectionId="services">
+				<div class="clinic-services">
+					<ClinicCategorizedSection
+						:title="t('MedicalServicesAtClinic')"
+						:totalCount="clinicMedicalServices.length"
+						routeName="services"
+						:categories="serviceCategoriesWithTitles.categories"
+						:otherCategory="serviceCategoriesWithTitles.otherCategory"
+					>
+						<template #icon>
+							<IconMedicalService />
+						</template>
+						<template #default="{ item }">
+							<PricedItemCard
+								:id="item.id"
+								:name="item.name"
+								:localName="item.localName"
+								:price="getClinicPrice(item.clinicPrices)?.price"
+								:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
+								:priceMin="getClinicPrice(item.clinicPrices)?.priceMin"
+								routeName="services-serviceId"
+								routeParamName="serviceId"
+							/>
+						</template>
+					</ClinicCategorizedSection>
 
-				<!-- Анализы -->
-				<ClinicCategorizedSection
-					:title="t('LabTestsAtClinic')"
-					:totalCount="clinicLabTests.length"
-					routeName="labtests"
-					:categories="labTestCategoriesWithTitles.categories"
-					:otherCategory="labTestCategoriesWithTitles.otherCategory"
-				>
-					<template #icon>
-						<IconLabTest />
-					</template>
-					<template #default="{ item }">
-						<PricedItemCard
-							:id="item.id"
-							:name="item.name"
-							:localName="item.localName"
-							:price="getClinicPrice(item.clinicPrices)?.price"
-							:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
-							routeName="labtests-labTestId"
-							routeParamName="labTestId"
-						/>
-					</template>
-				</ClinicCategorizedSection>
+					<ClinicCategorizedSection
+						:title="t('LabTestsAtClinic')"
+						:totalCount="clinicLabTests.length"
+						routeName="labtests"
+						:categories="labTestCategoriesWithTitles.categories"
+						:otherCategory="labTestCategoriesWithTitles.otherCategory"
+					>
+						<template #icon>
+							<IconLabTest />
+						</template>
+						<template #default="{ item }">
+							<PricedItemCard
+								:id="item.id"
+								:name="item.name"
+								:localName="item.localName"
+								:price="getClinicPrice(item.clinicPrices)?.price"
+								:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
+								routeName="labtests-labTestId"
+								routeParamName="labTestId"
+							/>
+						</template>
+					</ClinicCategorizedSection>
 
-				<!-- Лекарства -->
-				<ClinicServiceSection
-					:title="t('MedicationsAtClinic')"
-					:items="clinicMedications"
-					routeName="medications"
-				>
-					<template #icon>
-						<IconMedication />
-					</template>
-					<template #default="{ item }">
-						<PricedItemCard
-							:id="item.id"
-							:name="item.name"
-							:localName="item.localName"
-							:price="getClinicPrice(item.clinicPrices)?.price"
-							:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
-							routeName="medications-medicationId"
-							routeParamName="medicationId"
-						/>
-					</template>
-				</ClinicServiceSection>
-
-				<!-- Если ничего нет -->
-				<div
-					v-if="
-						clinicDoctors.length === 0 &&
-						clinicMedicalServices.length === 0 &&
-						clinicLabTests.length === 0 &&
-						clinicMedications.length === 0
-					"
-					class="empty-state"
-				>
-					<p>{{ t('NoServicesAtClinic') }}</p>
+					<ClinicServiceSection
+						:title="t('MedicationsAtClinic')"
+						:items="clinicMedications"
+						routeName="medications"
+					>
+						<template #icon>
+							<IconMedication />
+						</template>
+						<template #default="{ item }">
+							<PricedItemCard
+								:id="item.id"
+								:name="item.name"
+								:localName="item.localName"
+								:price="getClinicPrice(item.clinicPrices)?.price"
+								:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
+								routeName="medications-medicationId"
+								routeParamName="medicationId"
+							/>
+						</template>
+					</ClinicServiceSection>
 				</div>
-			</div>
+			</EntityPageSection>
+
+			<!-- Reviews -->
+			<EntityPageSection
+				v-if="clinicData?.reviews?.length"
+				sectionId="reviews"
+				:title="t('TabReviews')"
+				:count="clinicData.rating?.totalReviews || clinicData.reviews.length"
+			>
+				<template #icon><IconStar :size="20" /></template>
+				<DoctorReviews
+					:reviews="clinicData.reviews"
+					:rating="clinicData.rating"
+					:noReviewsText="t('NoReviewsClinic')"
+				/>
+			</EntityPageSection>
+
+			<!-- Map -->
+			<EntityPageSection sectionId="map" :title="t('TabMap')">
+				<template #icon><IconMapPin :size="20" color="#ffffff" /></template>
+				<div class="clinic-map">
+					<ClinicServicesMap
+						ref="mapRef"
+						:services="[]"
+						:clinics="clinicAsList"
+						:showAllClinics="true"
+					/>
+				</div>
+			</EntityPageSection>
 		</template>
-		<template #reviews>
-			<DoctorReviews
-				v-if="clinicData"
-				:reviews="clinicData.reviews"
-				:rating="clinicData.rating"
-				:noReviewsText="t('NoReviewsClinic')"
-			/>
-		</template>
-	</DetailsPage>
+	</EntityPage>
 </template>
 
 <i18n lang="json">
@@ -434,12 +514,12 @@ watchEffect(() => {
 		"OtherServices": "Other services",
 		"OtherDoctors": "Other doctors",
 		"OtherLabTests": "Other lab tests",
-		"AriaClinicInfo": "Clinic information",
-		"AriaClinicAddress": "Clinic address",
-		"AriaClinicActions": "Clinic actions",
-		"AriaShowOnMap": "Show on map",
-		"AriaContactsSection": "Clinic contacts",
-		"AriaClinicServices": "Clinic services"
+		"TabAbout": "About",
+		"TabContacts": "Contacts",
+		"TabDoctors": "Doctors",
+		"TabServices": "Services",
+		"TabReviews": "Reviews",
+		"TabMap": "Location"
 	},
 	"ru": {
 		"ClinicLanguageAssistance": "Предоставляется сопровождение на {language} языке.",
@@ -452,12 +532,12 @@ watchEffect(() => {
 		"OtherServices": "Другие услуги",
 		"OtherDoctors": "Другие врачи",
 		"OtherLabTests": "Другие анализы",
-		"AriaClinicInfo": "Информация о клинике",
-		"AriaClinicAddress": "Адрес клиники",
-		"AriaClinicActions": "Действия с клиникой",
-		"AriaShowOnMap": "Показать на карте",
-		"AriaContactsSection": "Контакты клиники",
-		"AriaClinicServices": "Услуги клиники"
+		"TabAbout": "О клинике",
+		"TabContacts": "Контакты",
+		"TabDoctors": "Врачи",
+		"TabServices": "Услуги",
+		"TabReviews": "Отзывы",
+		"TabMap": "На карте"
 	},
 	"de": {
 		"ClinicLanguageAssistance": "Unterstützung wird in {language} bereitgestellt.",
@@ -470,12 +550,12 @@ watchEffect(() => {
 		"OtherServices": "Andere Dienstleistungen",
 		"OtherDoctors": "Andere Ärzte",
 		"OtherLabTests": "Andere Laboruntersuchungen",
-		"AriaClinicInfo": "Klinikinformationen",
-		"AriaClinicAddress": "Klinikadresse",
-		"AriaClinicActions": "Klinikaktionen",
-		"AriaShowOnMap": "Auf Karte anzeigen",
-		"AriaContactsSection": "Klinikkontakte",
-		"AriaClinicServices": "Klinikleistungen"
+		"TabAbout": "Über uns",
+		"TabContacts": "Kontakte",
+		"TabDoctors": "Ärzte",
+		"TabServices": "Leistungen",
+		"TabReviews": "Bewertungen",
+		"TabMap": "Standort"
 	},
 	"tr": {
 		"ClinicLanguageAssistance": "{language} dilinde destek sağlanır.",
@@ -488,12 +568,12 @@ watchEffect(() => {
 		"OtherServices": "Diğer hizmetler",
 		"OtherDoctors": "Diğer doktorlar",
 		"OtherLabTests": "Diğer laboratuvar testleri",
-		"AriaClinicInfo": "Klinik bilgileri",
-		"AriaClinicAddress": "Klinik adresi",
-		"AriaClinicActions": "Klinik işlemleri",
-		"AriaShowOnMap": "Haritada göster",
-		"AriaContactsSection": "Klinik iletişim",
-		"AriaClinicServices": "Klinik hizmetleri"
+		"TabAbout": "Hakkında",
+		"TabContacts": "İletişim",
+		"TabDoctors": "Doktorlar",
+		"TabServices": "Hizmetler",
+		"TabReviews": "Değerlendirmeler",
+		"TabMap": "Konum"
 	},
 	"sr": {
 		"ClinicLanguageAssistance": "Pomoć se pruža na {language} jeziku.",
@@ -506,12 +586,12 @@ watchEffect(() => {
 		"OtherServices": "Ostale usluge",
 		"OtherDoctors": "Ostali lekari",
 		"OtherLabTests": "Ostale analize",
-		"AriaClinicInfo": "Informacije o klinici",
-		"AriaClinicAddress": "Adresa klinike",
-		"AriaClinicActions": "Akcije klinike",
-		"AriaShowOnMap": "Prikaži na mapi",
-		"AriaContactsSection": "Kontakti klinike",
-		"AriaClinicServices": "Usluge klinike"
+		"TabAbout": "O klinici",
+		"TabContacts": "Kontakti",
+		"TabDoctors": "Lekari",
+		"TabServices": "Usluge",
+		"TabReviews": "Recenzije",
+		"TabMap": "Lokacija"
 	},
 	"sr-cyrl": {
 		"ClinicLanguageAssistance": "Помоћ се пружа на {language} језику.",
@@ -524,12 +604,12 @@ watchEffect(() => {
 		"OtherServices": "Остале услуге",
 		"OtherDoctors": "Остали лекари",
 		"OtherLabTests": "Остале анализе",
-		"AriaClinicInfo": "Информације о клиници",
-		"AriaClinicAddress": "Адреса клинике",
-		"AriaClinicActions": "Акције клинике",
-		"AriaShowOnMap": "Прикажи на мапи",
-		"AriaContactsSection": "Контакти клинике",
-		"AriaClinicServices": "Услуге клинике"
+		"TabAbout": "О клиници",
+		"TabContacts": "Контакти",
+		"TabDoctors": "Лекари",
+		"TabServices": "Услуге",
+		"TabReviews": "Рецензије",
+		"TabMap": "Локација"
 	}
 }
 </i18n>
@@ -539,6 +619,13 @@ watchEffect(() => {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-xl);
+}
+
+.clinic-map {
+	height: 400px;
+	border-radius: var(--border-radius-md);
+	overflow: hidden;
+	border: 1px solid var(--color-border-light);
 }
 
 .empty-state {

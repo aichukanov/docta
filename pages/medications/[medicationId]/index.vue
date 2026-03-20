@@ -1,13 +1,14 @@
 <script setup lang="ts">
+import { OG_IMAGE, SITE_URL } from '~/common/constants';
+import {
+	buildBreadcrumbsSchema,
+	buildDrugSchema,
+} from '~/common/schema-org-builders';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import medicationI18n from '~/i18n/medication';
 import { combineI18nMessages } from '~/i18n/utils';
-import {
-	buildDrugSchema,
-	buildBreadcrumbsSchema,
-} from '~/common/schema-org-builders';
-import { SITE_URL, OG_IMAGE } from '~/common/constants';
+import type { ClinicData } from '~/interfaces/clinic';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -43,6 +44,29 @@ const medicationClinics = computed(() =>
 		? clinicsStore.getClinicsByIds(medicationData.value?.clinicIds)
 		: [],
 );
+
+const getPriceInfo = (clinicId: number) => {
+	return medicationData.value?.clinicPrices?.find(
+		(p) => p.clinicId === clinicId,
+	);
+};
+
+const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
+
+const showClinicOnMap = (clinic: ClinicData) => {
+	const el = document.getElementById('map');
+	if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	mapRef.value?.openClinicPopup(clinic);
+};
+
+const tabs = computed(() => {
+	const result = [];
+	if (medicationClinics.value.length > 0) {
+		result.push({ id: 'clinics', label: t('TabClinics') });
+	}
+	result.push({ id: 'map', label: t('TabMap') });
+	return result;
+});
 
 const pageTitle = computed(() => {
 	if (!isFound.value) {
@@ -145,47 +169,89 @@ watchEffect(() => {
 </script>
 
 <template>
-	<DetailsPage
+	<EntityPage
 		:isLoading="isLoading || clinicsStore.isLoadingClinics || false"
 		:isFound="isFound"
-		:clinics="medicationClinics"
-		:clinicPrices="medicationData?.clinicPrices"
 		backRouteName="medications"
 		:loadingText="t('LoadingMedications')"
 		:notFoundText="t('NoMedicationsFound')"
+		:tabs="tabs"
 	>
-		<template #info v-if="medicationData">
-			<div class="medication-header">
+		<template #hero v-if="medicationData">
+			<div class="medication-hero">
 				<h1 class="medication-name">{{ medicationData.name }}</h1>
 				<div v-if="medicationData.localName" class="medication-local-name">
 					{{ medicationData.localName }}
 				</div>
 			</div>
 		</template>
-	</DetailsPage>
+
+		<template #sections>
+			<EntityPageSection
+				v-if="medicationClinics.length > 0"
+				sectionId="clinics"
+				:title="t('TabClinics')"
+				:count="medicationClinics.length"
+			>
+				<template #icon><IconClinic :size="20" /></template>
+				<div class="clinics-list">
+					<ClinicSummary
+						v-for="clinic in medicationClinics"
+						:key="clinic.id"
+						:clinic="clinic"
+						:priceInfo="getPriceInfo(clinic.id)"
+						:showPrice="true"
+						@show-on-map="showClinicOnMap(clinic)"
+					/>
+				</div>
+			</EntityPageSection>
+
+			<EntityPageSection sectionId="map" :title="t('TabMap')">
+				<template #icon><IconMapPin :size="20" color="#ffffff" /></template>
+				<div class="medication-map">
+					<ClinicServicesMap
+						ref="mapRef"
+						:services="[]"
+						:clinics="medicationClinics"
+						:showAllClinics="true"
+					/>
+				</div>
+			</EntityPageSection>
+		</template>
+	</EntityPage>
 </template>
 
 <style lang="less" scoped>
-.medication-header {
-	background: var(--color-surface-secondary);
-	border: 1px solid var(--color-border-primary);
-	border-radius: var(--border-radius-lg);
-	padding: var(--spacing-xl) var(--spacing-2xl);
-	box-shadow: var(--shadow-xs);
+.medication-hero {
+	padding: var(--spacing-xl) 0;
+}
 
-	.medication-name {
-		font-size: 2rem;
-		font-weight: 600;
-		color: #1f2937;
-		margin: 0;
-		font-family: system-ui, -apple-system, sans-serif;
-	}
+.medication-name {
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: var(--color-text-primary);
+	margin: 0;
+	font-family: system-ui, -apple-system, sans-serif;
+	line-height: 1.2;
+}
 
-	.medication-local-name {
-		font-size: var(--font-size-md);
-		font-weight: var(--font-weight-medium);
-		color: var(--color-text-secondary);
-		margin-top: var(--spacing-xs);
-	}
+.medication-local-name {
+	font-size: var(--font-size-md);
+	font-weight: var(--font-weight-medium);
+	color: var(--color-text-secondary);
+	margin-top: var(--spacing-xs);
+}
+
+.clinics-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+}
+
+.medication-map {
+	height: 400px;
+	border-radius: var(--border-radius-md);
+	overflow: hidden;
+	border: 1px solid var(--color-border-light);
 }
 </style>

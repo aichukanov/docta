@@ -1,7 +1,5 @@
 <template>
 	<div class="doctor-reviews">
-		<h2 class="reviews-title">{{ t('Title') }}</h2>
-
 		<!-- Рейтинг -->
 		<div class="rating-summary" v-if="rating && rating.totalReviews > 0">
 			<RatingStars :rating="rating.averageRating" :show-value="true" />
@@ -12,7 +10,7 @@
 
 		<!-- Список отзывов -->
 		<div class="reviews-list" v-if="reviews && reviews.length > 0">
-			<div v-for="review in reviews" :key="review.id" class="review-item">
+			<div v-for="review in visibleReviews" :key="review.id" class="review-item">
 				<div class="review-header">
 					<div class="review-author">
 						<div class="author-info">
@@ -23,10 +21,7 @@
 								<RatingStars v-if="review.rating" :rating="review.rating" />
 								<span class="review-date">{{
 									review.publishedAt
-										? formatReviewDate(
-												review.publishedAt,
-												review.provider,
-											)
+										? formatReviewDate(review.publishedAt, review.provider)
 										: ''
 								}}</span>
 								<span
@@ -78,7 +73,9 @@
 							<div class="reply-author">
 								{{ t(`Replier_${reply.responderType}`) }}
 							</div>
-							<div class="reply-date">{{ formatDate(reply.createdAt) }}</div>
+							<div class="reply-date" v-if="reply.publishedAt">{{
+								formatReviewDate(reply.publishedAt, reply.provider)
+							}}</div>
 						</div>
 						<div class="reply-content">
 							{{
@@ -105,8 +102,15 @@
 			</div>
 		</div>
 
+		<!-- Показать ещё -->
+		<ShowMoreButton
+			v-if="reviews && reviews.length > visibleCount"
+			:label="t('ShowMore', { count: nextPageSize, remaining: reviews.length - visibleCount })"
+			@click="showMore"
+		/>
+
 		<!-- Нет отзывов -->
-		<div class="no-reviews" v-else>
+		<div class="no-reviews" v-else-if="!reviews || reviews.length === 0">
 			{{ noReviewsText || t('NoReviews') }}
 		</div>
 	</div>
@@ -131,6 +135,21 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const { t, locale } = useI18n(reviewsI18n);
+
+const PAGE_SIZE = 5;
+const visibleCount = ref(PAGE_SIZE);
+
+const visibleReviews = computed(() =>
+	props.reviews?.slice(0, visibleCount.value) || [],
+);
+
+const nextPageSize = computed(() =>
+	Math.min(PAGE_SIZE, (props.reviews?.length || 0) - visibleCount.value),
+);
+
+const showMore = () => {
+	visibleCount.value += PAGE_SIZE;
+};
 
 const showingOriginal = ref(new Set<string>());
 
@@ -191,21 +210,15 @@ const formatReviewDate = (dateString: string, provider: string) => {
 
 <style scoped>
 .doctor-reviews {
-	margin-top: 2rem;
-}
-
-.reviews-title {
-	font-size: 1.5rem;
-	font-weight: 600;
-	margin-bottom: 1rem;
-	color: #333;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
 }
 
 .rating-summary {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
-	margin-bottom: 1.5rem;
 	padding: 1rem;
 	background: #f8f9fa;
 	border-radius: 8px;
@@ -353,4 +366,5 @@ const formatReviewDate = (dateString: string, provider: string) => {
 	color: #333;
 	white-space: pre-wrap;
 }
+
 </style>

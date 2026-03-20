@@ -32,13 +32,11 @@ const isHidden = (index: number) =>
 				<slot :item="item" />
 			</div>
 		</div>
-		<button
+		<ShowMoreButton
 			v-if="hasMoreItems"
-			class="show-more-button"
+			:label="showAll ? t('ShowLess') : t('ShowMore', { count: hiddenCount })"
 			@click="showAll = !showAll"
-		>
-			{{ showAll ? t('ShowLess') : t('ShowMore', { count: hiddenCount }) }}
-		</button>
+		/>
 	</div>
 </template>
 
@@ -92,24 +90,4 @@ const isHidden = (index: number) =>
 	}
 }
 
-.show-more-button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	padding: var(--spacing-md);
-	background: transparent;
-	border: 1px dashed var(--color-border-light);
-	border-radius: var(--border-radius-md);
-	color: var(--color-primary);
-	font-size: var(--font-size-sm);
-	font-weight: 500;
-	cursor: pointer;
-	transition: all var(--transition-base);
-
-	&:hover {
-		border-color: var(--color-primary);
-		background: rgba(79, 70, 229, 0.04);
-	}
-}
 </style>

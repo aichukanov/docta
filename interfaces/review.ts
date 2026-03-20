@@ -10,7 +10,6 @@ export interface ReviewReply {
 	provider: 'google_maps' | 'facebook' | 'telegram' | 'docta_me';
 	likesCount: number;
 	publishedAt?: string;
-	createdAt: string;
 	updatedAt: string;
 }
 
@@ -28,7 +27,6 @@ export interface Review {
 	text: string;
 	publishedAt?: string;
 	likesCount: number;
-	createdAt: string;
 	updatedAt: string;
 	replies?: ReviewReply[];
 	author?: {

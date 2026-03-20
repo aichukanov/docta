@@ -1,14 +1,15 @@
 <script setup lang="ts">
+import { OG_IMAGE, SITE_URL } from '~/common/constants';
+import {
+	buildBreadcrumbsSchema,
+	buildMedicalProcedureSchema,
+} from '~/common/schema-org-builders';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import medicalServiceI18n from '~/i18n/medical-service';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
 import { combineI18nMessages } from '~/i18n/utils';
-import {
-	buildMedicalProcedureSchema,
-	buildBreadcrumbsSchema,
-} from '~/common/schema-org-builders';
-import { SITE_URL, OG_IMAGE } from '~/common/constants';
+import type { ClinicData } from '~/interfaces/clinic';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -49,6 +50,29 @@ const medicalServiceClinics = computed(() =>
 		? clinicsStore.getClinicsByIds(medicalServiceData.value?.clinicIds)
 		: [],
 );
+
+const getPriceInfo = (clinicId: number) => {
+	return medicalServiceData.value?.clinicPrices?.find(
+		(p) => p.clinicId === clinicId,
+	);
+};
+
+const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
+
+const showClinicOnMap = (clinic: ClinicData) => {
+	const el = document.getElementById('map');
+	if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	mapRef.value?.openClinicPopup(clinic);
+};
+
+const tabs = computed(() => {
+	const result = [];
+	if (medicalServiceClinics.value.length > 0) {
+		result.push({ id: 'clinics', label: t('TabClinics') });
+	}
+	result.push({ id: 'map', label: t('TabMap') });
+	return result;
+});
 
 const pageTitle = computed(() => {
 	if (!isFound.value) {
@@ -161,17 +185,16 @@ watchEffect(() => {
 </script>
 
 <template>
-	<DetailsPage
+	<EntityPage
 		:isLoading="isLoading || clinicsStore.isLoadingClinics || false"
 		:isFound="isFound"
-		:clinics="medicalServiceClinics"
-		:clinicPrices="medicalServiceData?.clinicPrices"
 		backRouteName="services"
 		:loadingText="t('LoadingMedicalServices')"
 		:notFoundText="t('NoMedicalServicesFound')"
+		:tabs="tabs"
 	>
-		<template #info v-if="medicalServiceData">
-			<div class="medical-service-header">
+		<template #hero v-if="medicalServiceData">
+			<div class="medical-service-hero">
 				<h1 class="medical-service-name">{{ medicalServiceData.name }}</h1>
 				<div
 					v-if="medicalServiceData.localName"
@@ -193,49 +216,92 @@ watchEffect(() => {
 				</div>
 			</div>
 		</template>
-	</DetailsPage>
+
+		<template #sections>
+			<EntityPageSection
+				v-if="medicalServiceClinics.length > 0"
+				sectionId="clinics"
+				:title="t('TabClinics')"
+				:count="medicalServiceClinics.length"
+			>
+				<template #icon><IconClinic :size="20" /></template>
+				<div class="clinics-list">
+					<ClinicSummary
+						v-for="clinic in medicalServiceClinics"
+						:key="clinic.id"
+						:clinic="clinic"
+						:priceInfo="getPriceInfo(clinic.id)"
+						:showPrice="true"
+						@show-on-map="showClinicOnMap(clinic)"
+					/>
+				</div>
+			</EntityPageSection>
+
+			<EntityPageSection sectionId="map" :title="t('TabMap')">
+				<template #icon><IconMapPin :size="20" color="#ffffff" /></template>
+				<div class="service-map">
+					<ClinicServicesMap
+						ref="mapRef"
+						:services="[]"
+						:clinics="medicalServiceClinics"
+						:showAllClinics="true"
+					/>
+				</div>
+			</EntityPageSection>
+		</template>
+	</EntityPage>
 </template>
 
 <style lang="less" scoped>
-.medical-service-header {
-	background: var(--color-surface-secondary);
-	border: 1px solid var(--color-border-primary);
-	border-radius: var(--border-radius-lg);
-	padding: var(--spacing-xl) var(--spacing-2xl);
-	box-shadow: var(--shadow-xs);
+.medical-service-hero {
+	padding: var(--spacing-xl) 0;
+}
 
-	.medical-service-name {
-		font-size: 2rem;
-		font-weight: 600;
-		color: #1f2937;
-		margin: 0;
-		font-family: system-ui, -apple-system, sans-serif;
-		word-break: break-word;
+.medical-service-name {
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: var(--color-text-primary);
+	margin: 0;
+	font-family: system-ui, -apple-system, sans-serif;
+	word-break: break-word;
+	line-height: 1.2;
+}
+
+.medical-service-local-name {
+	font-size: 1.1rem;
+	color: var(--color-text-secondary);
+	margin-top: var(--spacing-sm);
+	font-style: italic;
+	word-break: break-word;
+}
+
+.medical-service-categories {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--spacing-xs);
+	margin-top: var(--spacing-md);
+
+	.category-tag {
+		display: inline-block;
+		font-size: 0.85rem;
+		color: var(--color-primary);
+		background: rgba(79, 70, 229, 0.08);
+		padding: 4px 12px;
+		border-radius: 4px;
+		border: 1px solid rgba(79, 70, 229, 0.15);
 	}
+}
 
-	.medical-service-local-name {
-		font-size: 1.1rem;
-		color: #6b7280;
-		margin-top: var(--spacing-sm);
-		font-style: italic;
-		word-break: break-word;
-	}
+.clinics-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+}
 
-	.medical-service-categories {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--spacing-xs);
-		margin-top: var(--spacing-md);
-
-		.category-tag {
-			display: inline-block;
-			font-size: 0.85rem;
-			color: var(--color-primary);
-			background: rgba(79, 70, 229, 0.08);
-			padding: 4px 12px;
-			border-radius: 4px;
-			border: 1px solid rgba(79, 70, 229, 0.15);
-		}
-	}
+.service-map {
+	height: 400px;
+	border-radius: var(--border-radius-md);
+	overflow: hidden;
+	border: 1px solid var(--color-border-light);
 }
 </style>

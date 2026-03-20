@@ -17,6 +17,8 @@ export default {
 				'Find medications in Montenegro by name, city, or clinic. Compare prices and pharmacy locations on the map.',
 			MedicationsListDescriptionCity:
 				'Medications in {city} — search by name or clinic. Compare prices and pharmacy locations on the map.',
+			TabClinics: 'Clinics',
+			TabMap: 'Location',
 		},
 		'ru': {
 			MedicationName: 'Название лекарства',
@@ -35,6 +37,8 @@ export default {
 				'Найдите лекарства в Черногории по названию, городу или аптеке. Сравните цены и адреса на карте.',
 			MedicationsListDescriptionCity:
 				'Лекарства в {city} — поиск по названию или аптеке. Сравните цены и адреса на карте.',
+			TabClinics: 'Клиники',
+			TabMap: 'На карте',
 		},
 		'sr': {
 			MedicationName: 'Ime lijeka',
@@ -53,6 +57,8 @@ export default {
 				'Pronađite lekove u Crnoj Gori po imenu, gradu ili apoteci. Uporedite cene i lokacije na mapi.',
 			MedicationsListDescriptionCity:
 				'Lekovi u {city} — pretraga po imenu ili apoteci. Uporedite cene i lokacije na mapi.',
+			TabClinics: 'Klinike',
+			TabMap: 'Lokacija',
 		},
 		'de': {
 			MedicationName: 'Medikamentenname',
@@ -71,6 +77,8 @@ export default {
 				'Finden Sie Medikamente in Montenegro nach Name, Stadt oder Apotheke. Vergleichen Sie Preise und Standorte auf der Karte.',
 			MedicationsListDescriptionCity:
 				'Medikamente in {city} — Suche nach Name oder Apotheke. Vergleichen Sie Preise und Standorte auf der Karte.',
+			TabClinics: 'Kliniken',
+			TabMap: 'Standort',
 		},
 		'tr': {
 			MedicationName: 'İlaç adı',
@@ -89,6 +97,8 @@ export default {
 				"Karadağ'da ada, şehre veya eczaneye göre ilaç bulun. Fiyatları ve konumları haritada karşılaştırın.",
 			MedicationsListDescriptionCity:
 				"{city}'de ada veya eczaneye göre ilaç arayın. Fiyatları ve konumları haritada karşılaştırın.",
+			TabClinics: 'Klinikler',
+			TabMap: 'Konum',
 		},
 		'sr-cyrl': {
 			MedicationName: 'Име лијека',
@@ -107,6 +117,8 @@ export default {
 				'Пронађите лекове у Црној Гори по имену, граду или апотеци. Упоредите цене и локације на мапи.',
 			MedicationsListDescriptionCity:
 				'Лекови у {city} — претрага по имену или апотеци. Упоредите цене и локације на мапи.',
+			TabClinics: 'Клинике',
+			TabMap: 'Локација',
 		},
 	},
 };

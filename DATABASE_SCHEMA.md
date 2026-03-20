@@ -48,6 +48,17 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `billing_paid_services`                 | Catalog of paid services available for clinics.                |
 | `billing_clinic_service_purchases`      | Purchase records of paid services by clinics.                  |
 | `billing_clinic_service_purchase_items` | Junction table: Purchase <-> Paid Service.                     |
+| `kb_sources`                            | Registry of imported channels/groups (Telegram, etc.).         |
+| `kb_messages`                           | Imported messages from community channels.                     |
+| `kb_tags`                               | Hierarchical tags/categories for KB content.                   |
+| `kb_message_tags`                       | Junction table: Message <-> Tag.                               |
+| `kb_threads`                            | Compiled Q&A entries (question + answer, 6 languages).         |
+| `kb_thread_tags`                        | Junction table: Thread <-> Tag.                                |
+| `kb_thread_sources`                     | Junction table: Thread <-> source Messages.                    |
+| `kb_articles`                           | Curated articles with localized content.                       |
+| `kb_article_tags`                       | Junction table: Article <-> Tag.                               |
+| `kb_article_sources`                    | Junction table: Article <-> source Messages.                   |
+| `kb_entity_links`                       | Generic polymorphic links to domain entities (doctor, clinic). |
 
 ## Detailed Table Definitions
 
@@ -491,6 +502,127 @@ This file provides a structured reference of the MySQL database for the docta.me
 - _Foreign Keys_: `reply_id` -> `review_replies.id` (CASCADE), `user_id` -> `auth_users.id` (CASCADE)
 - _Comment_: Only authenticated (non-phantom) users can like. `review_replies.likes_count` is updated via application logic on insert/delete.
 
+### `kb_sources`
+
+- `id` (int, PK, AI)
+- `provider` (varchar(50), NOT NULL): Source provider (telegram, whatsapp, viber).
+- `provider_source_id` (varchar(255), NOT NULL): Channel/group ID from provider.
+- `name` (varchar(255)): Channel name.
+- `url` (varchar(500)): Link to channel.
+- `metadata` (json): Additional data (type, member count, etc.).
+- `created_at` (timestamp)
+- _Unique constraint_: (`provider`, `provider_source_id`)
+
+### `kb_messages`
+
+- `id` (int, PK, AI)
+- `source_id` (int, FK -> kb_sources.id, NOT NULL): Source channel.
+- `user_id` (int, FK -> auth_users.id, NULL): Message author (phantom or real).
+- `provider_message_id` (varchar(255), NOT NULL): Message ID from export (for dedup).
+- `reply_to_id` (int, FK -> kb_messages.id, NULL): Self-reference for threading.
+- `message_type` (enum: 'question','answer','recommendation','info','other', default 'other'): Classification.
+- `original_text` (text): Plain text content.
+- `original_language` (varchar(10), default 'ru'): Source language.
+- `text_sr`, `text_sr_cyrl`, `text_en`, `text_ru`, `text_de`, `text_tr` (text, NULL): Localized texts.
+- `has_media` (boolean, default FALSE): Whether message has attachments.
+- `media_type` (varchar(50), NULL): Type of media (photo, video, document).
+- `published_at` (datetime): When message was posted in channel.
+- `raw_data` (json): Full original message object.
+- `is_duplicate` (boolean, default FALSE): Cross-channel duplicate flag.
+- `duplicate_of_id` (int, FK -> kb_messages.id, NULL): Reference to original.
+- `created_at`, `updated_at` (timestamp)
+- _Unique constraint_: (`source_id`, `provider_message_id`)
+- _Indexes_: `idx_kb_msg_user`, `idx_kb_msg_reply`, `idx_kb_msg_type`, `idx_kb_msg_published`, `idx_kb_msg_duplicate`
+- _Foreign Keys_: `source_id` -> `kb_sources.id` (CASCADE), `user_id` -> `auth_users.id` (SET NULL), `reply_to_id` -> `kb_messages.id` (SET NULL), `duplicate_of_id` -> `kb_messages.id` (SET NULL)
+
+### `kb_tags`
+
+- `id` (int, PK, AI)
+- `slug` (varchar(100), UNIQUE, NOT NULL): URL-friendly key, also i18n lookup key.
+- `parent_id` (int, FK -> kb_tags.id, NULL): Parent tag for hierarchy.
+- `sort_order` (int, default 0): Display order.
+- `created_at` (timestamp)
+- _Indexes_: `idx_kb_tags_parent`
+- _Foreign Keys_: `parent_id` -> `kb_tags.id` (SET NULL)
+- _Comment_: Tag names resolved via i18n files using slug as key. Hierarchy: e.g., `city` (parent) → `city:budva` (child).
+
+### `kb_message_tags`
+
+- `id` (int, PK, AI)
+- `message_id` (int, FK -> kb_messages.id, NOT NULL)
+- `tag_id` (int, FK -> kb_tags.id, NOT NULL)
+- _Unique constraint_: (`message_id`, `tag_id`)
+
+### `kb_threads`
+
+- `id` (int, PK, AI)
+- `root_message_id` (int, FK -> kb_messages.id, UNIQUE, NULL): Root message this Q&A was compiled from. NULL for fully curated Q&A.
+- `slug` (varchar(255), UNIQUE, NULL): URL slug for /qa/<slug>.
+- `status` (enum: 'draft','published','faq', default 'draft'): Publication status.
+- `title_sr`, `title_sr_cyrl`, `title_en`, `title_ru`, `title_de`, `title_tr` (varchar(500)): Localized question/title.
+- `answer_sr`, `answer_sr_cyrl`, `answer_en`, `answer_ru`, `answer_de`, `answer_tr` (text): Localized compiled answer.
+- `views_count` (int unsigned, default 0): View counter.
+- `published_at` (datetime, NULL)
+- `created_at`, `updated_at` (timestamp)
+- _Indexes_: `idx_kb_thread_status`, `idx_kb_thread_published`
+- _Foreign Keys_: `root_message_id` -> `kb_messages.id` (SET NULL)
+- _Comment_: Compiled from one or more message threads. Similar questions merged into one Q&A. Status `faq` = shown on FAQ page.
+
+### `kb_thread_tags`
+
+- `id` (int, PK, AI)
+- `thread_id` (int, FK -> kb_threads.id, NOT NULL)
+- `tag_id` (int, FK -> kb_tags.id, NOT NULL)
+- _Unique constraint_: (`thread_id`, `tag_id`)
+
+### `kb_thread_sources`
+
+- `id` (int, PK, AI)
+- `thread_id` (int, FK -> kb_threads.id, NOT NULL)
+- `message_id` (int, FK -> kb_messages.id, NOT NULL)
+- _Unique constraint_: (`thread_id`, `message_id`)
+- _Comment_: Links compiled Q&A back to the original messages it was derived from.
+
+### `kb_articles`
+
+- `id` (int, PK, AI)
+- `slug` (varchar(255), UNIQUE, NOT NULL): URL slug for /articles/<slug>.
+- `author_user_id` (int, FK -> auth_users.id, NULL): Article author.
+- `status` (enum: 'draft','published', default 'draft')
+- `title_sr`, `title_sr_cyrl`, `title_en`, `title_ru`, `title_de`, `title_tr` (varchar(500)): Localized titles.
+- `content_sr`, `content_sr_cyrl`, `content_en`, `content_ru`, `content_de`, `content_tr` (mediumtext): Localized content.
+- `views_count` (int unsigned, default 0)
+- `published_at` (datetime, NULL)
+- `created_at`, `updated_at` (timestamp)
+- _Indexes_: `idx_kb_article_status`
+- _Foreign Keys_: `author_user_id` -> `auth_users.id` (SET NULL)
+
+### `kb_article_tags`
+
+- `id` (int, PK, AI)
+- `article_id` (int, FK -> kb_articles.id, NOT NULL)
+- `tag_id` (int, FK -> kb_tags.id, NOT NULL)
+- _Unique constraint_: (`article_id`, `tag_id`)
+
+### `kb_article_sources`
+
+- `id` (int, PK, AI)
+- `article_id` (int, FK -> kb_articles.id, NOT NULL)
+- `message_id` (int, FK -> kb_messages.id, NOT NULL)
+- _Unique constraint_: (`article_id`, `message_id`)
+- _Comment_: Links articles back to the original messages that informed them.
+
+### `kb_entity_links`
+
+- `id` (int, PK, AI)
+- `linkable_type` (enum: 'message','thread','article', NOT NULL): Type of KB entity.
+- `linkable_id` (int, NOT NULL): ID of the KB entity.
+- `entity_type` (varchar(50), NOT NULL): Domain entity type (doctor, clinic, specialty, medical_service).
+- `entity_id` (int, NOT NULL): ID of the domain entity.
+- _Unique constraint_: (`linkable_type`, `linkable_id`, `entity_type`, `entity_id`)
+- _Indexes_: `idx_kb_entity_lookup` (entity_type, entity_id), `idx_kb_entity_linkable` (linkable_type, linkable_id)
+- _Comment_: Generic polymorphic table for linking KB content to domain entities. Designed for reuse across domains — `entity_type` can be any string (doctor, clinic, restaurant, hotel, etc.).
+
 ## Core Implementation Logic
 
 1. **Authentication Strategy**:
@@ -568,3 +700,15 @@ This file provides a structured reference of the MySQL database for the docta.me
 - Prices are stored as `decimal(10,2)`.
 - `deleted` flag supports soft deletes for purchases.
 - Current available services: DOFOLLOW (dofollow links), HIGHLIGHT (featured in lists), APPROVED (verified badge).
+
+14. **Knowledge Base (KB)**:
+
+- Imported from Telegram community channels via `kb_sources` → `kb_messages`.
+- Messages are classified (`question`, `answer`, `recommendation`, `info`, `other`) and threaded via `reply_to_id`.
+- **Phantom users**: message authors are auto-created as phantom users in `auth_users` with Telegram OAuth accounts, same pattern as review imports.
+- **Tags**: hierarchical tag system in `kb_tags` (slug-based, i18n via slug lookup). Tags have optional `parent_id` for hierarchy (e.g., `city:budva` → parent `city`).
+- **Q&A Threads** (`kb_threads`): compiled from message threads. Similar questions are merged into one Q&A with generalized question/answer in 6 languages. Status flow: `draft` → `published` / `faq`.
+- **Articles** (`kb_articles`): curated long-form content with localized title/content in 6 languages.
+- **Entity links** (`kb_entity_links`): generic polymorphic linking of KB content (messages, threads, articles) to domain entities (doctors, clinics, specialties, medical services). Reusable across domains.
+- **Deduplication**: UNIQUE constraint `(source_id, provider_message_id)` per channel; cross-channel dedup via `is_duplicate` + `duplicate_of_id`.
+- **Source tracing**: `kb_thread_sources` and `kb_article_sources` link compiled content back to original messages.

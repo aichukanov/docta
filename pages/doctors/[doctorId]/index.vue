@@ -12,6 +12,7 @@ import languageI18n from '~/i18n/language';
 import reviewsI18n from '~/i18n/reviews';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
+import type { ClinicData } from '~/interfaces/clinic';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -66,6 +67,28 @@ const doctorDescription = computed(() => {
 
 	return doctorData.value.description || '';
 });
+
+const tabs = computed(() => {
+	const result = [];
+	if (doctorClinics.value.length > 0) {
+		result.push({ id: 'clinics', label: t('TabClinics') });
+	}
+	if (doctorData.value?.reviews?.length) {
+		result.push({ id: 'reviews', label: t('TabReviews') });
+	}
+	if (doctorClinics.value.length > 0) {
+		result.push({ id: 'map', label: t('TabMap') });
+	}
+	return result;
+});
+
+const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
+
+const showClinicOnMap = (clinic: ClinicData) => {
+	const el = document.getElementById('map');
+	if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	mapRef.value?.openClinicPopup(clinic);
+};
 
 // clinicIds уже отсортированы на бэкенде по количеству услуг
 const doctorClinics = computed(() => {
@@ -262,44 +285,77 @@ watchEffect(() => {
 </script>
 
 <template>
-	<DetailsPage
+	<EntityPage
 		:isLoading="isLoading || clinicsStore.isLoadingClinics || false"
 		:isFound="isFound"
-		:clinics="doctorClinics"
 		backRouteName="doctors"
 		:loadingText="t('LoadingDoctor')"
 		:notFoundText="t('DoctorNotFound')"
+		:tabs="tabs"
 	>
-		<template #info>
-			<DoctorOwnerBanner v-if="doctorData?.isOwner" />
-			<DoctorInfo v-if="doctorData" :service="doctorData" isMainHeading />
-			<DoctorDescription
-				v-if="doctorData && doctorDescription"
-				:description="doctorDescription"
-			/>
-		</template>
-		<template #clinics="{ showClinicOnMap }">
-			<section class="clinics-list" role="list">
-				<ClinicSummary
-					v-for="clinic in doctorClinics"
-					:key="clinic.id"
-					:clinic="clinic"
-					:services="clinicServices[clinic.id]"
-					:serviceLimit="10"
-					:showPrice="false"
-					@show-on-map="showClinicOnMap(clinic)"
-					role="listitem"
-				/>
-			</section>
-		</template>
-		<template #reviews>
-			<DoctorReviews
+		<template #hero>
+			<DoctorHero
 				v-if="doctorData"
-				:reviews="doctorData.reviews"
-				:rating="doctorData.rating"
+				:doctor="doctorData"
+				:description="doctorDescription"
+				:isOwner="doctorData.isOwner"
 			/>
 		</template>
-	</DetailsPage>
+
+		<template #sections>
+			<!-- Clinics -->
+			<EntityPageSection
+				v-if="doctorClinics.length > 0"
+				sectionId="clinics"
+				:title="t('TabClinics')"
+				:count="doctorClinics.length"
+			>
+				<template #icon><IconClinic :size="20" /></template>
+				<div class="clinics-list">
+					<ClinicSummary
+						v-for="clinic in doctorClinics"
+						:key="clinic.id"
+						:clinic="clinic"
+						:services="clinicServices[clinic.id]"
+						:serviceLimit="10"
+						:showPrice="false"
+						@show-on-map="showClinicOnMap(clinic)"
+					/>
+				</div>
+			</EntityPageSection>
+
+			<!-- Reviews -->
+			<EntityPageSection
+				v-if="doctorData?.reviews?.length"
+				sectionId="reviews"
+				:title="t('TabReviews')"
+				:count="doctorData.rating?.totalReviews || doctorData.reviews.length"
+			>
+				<template #icon><IconStar :size="20" /></template>
+				<DoctorReviews
+					:reviews="doctorData.reviews"
+					:rating="doctorData.rating"
+				/>
+			</EntityPageSection>
+
+			<!-- Map -->
+			<EntityPageSection
+				v-if="doctorClinics.length > 0"
+				sectionId="map"
+				:title="t('TabMap')"
+			>
+				<template #icon><IconMapPin :size="20" color="#ffffff" /></template>
+				<div class="doctor-map">
+					<ClinicServicesMap
+						ref="mapRef"
+						:services="[]"
+						:clinics="doctorClinics"
+						:showAllClinics="true"
+					/>
+				</div>
+			</EntityPageSection>
+		</template>
+	</EntityPage>
 </template>
 
 <style scoped lang="less">
@@ -307,5 +363,12 @@ watchEffect(() => {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-lg);
+}
+
+.doctor-map {
+	height: 400px;
+	border-radius: var(--border-radius-md);
+	overflow: hidden;
+	border: 1px solid var(--color-border-light);
 }
 </style>

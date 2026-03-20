@@ -138,11 +138,12 @@ function serbianCyrillicToLatin(text) {
 // Translation via Anthropic API
 // ---------------------------------------------------------------------------
 
-const TARGET_LANGS = ['sr', 'sr_cyrl', 'en', 'de', 'tr']
+const TARGET_LANGS = ['sr', 'sr_cyrl', 'en', 'ru', 'de', 'tr']
 const LANG_NAMES = {
   sr: 'Serbian (Latin script, with diacritics č ć ž š đ)',
   sr_cyrl: 'Serbian (Cyrillic script)',
   en: 'English',
+  ru: 'Russian',
   de: 'German',
   tr: 'Turkish',
 }
@@ -164,7 +165,7 @@ RULES:
 - Do NOT add any commentary or explanation
 
 Return ONLY a JSON array where each element corresponds to a numbered input:
-[{"sr":"...","sr_cyrl":"...","en":"...","de":"...","tr":"..."}, ...]
+[{"sr":"...","sr_cyrl":"...","en":"...","ru":"...","de":"...","tr":"..."}, ...]
 
 TEXTS:
 ${numbered}`
@@ -319,6 +320,7 @@ for (const [reviewId, entry] of reviewMap) {
     originalText, originalLanguage, textSrCyrl,
     likesCount: html?.likesCount ?? api?.likesCount ?? 0,
     ownerReply: html?.ownerResponse?.text || api?._ownerReply || api?.ownerResponse?.text || null,
+    ownerReplyLanguage: html?.ownerResponse?.languageCode || api?.ownerResponse?.languageCode || 'sr',
     ownerReplyPublishTime: parseRelativeDate(
       html?.ownerResponse?.relativePublishTimeDescription || api?.ownerResponse?.relativePublishTimeDescription,
       DATA_COLLECTED_DATE
@@ -353,21 +355,22 @@ if (extractMode) {
   const extractPath = resolve(ROOT, `data/review-translations/${slug}-texts.json`)
 
   const textsToTranslate = {
-    _instructions: 'Translate each text into: sr (Serbian Latin with čćžšđ), sr_cyrl (Serbian Cyrillic), en (English), de (German), tr (Turkish). Return same structure with translations filled in.',
+    _instructions: 'Translate each text into: sr (Serbian Latin with čćžšđ), sr_cyrl (Serbian Cyrillic), en (English), ru (Russian), de (German), tr (Turkish). Return same structure with translations filled in.',
     reviews: mergedReviews
       .filter(r => r.originalText?.trim())
       .map(r => ({
         id: r.reviewId,
         original_language: r.originalLanguage,
         text: r.originalText,
-        translations: { sr: '', sr_cyrl: '', en: '', de: '', tr: '' },
+        translations: { sr: '', sr_cyrl: '', en: '', ru: '', de: '', tr: '' },
       })),
     replies: mergedReviews
       .filter(r => r.ownerReply?.trim())
       .map(r => ({
         review_id: r.reviewId,
+        original_language: r.ownerReplyLanguage,
         text: r.ownerReply,
-        translations: { sr: '', sr_cyrl: '', en: '', de: '', tr: '' },
+        translations: { sr: '', sr_cyrl: '', en: '', ru: '', de: '', tr: '' },
       })),
   }
 
@@ -430,6 +433,18 @@ if (tData) {
   }
 
   console.log(`✓ Loaded translations: ${reviewTransMap.size} reviews, ${replyTransMap.size} replies`)
+}
+
+// Fill obvious reply language fields (same logic as reviews)
+for (const r of mergedReviews) {
+  if (!r.ownerReply) continue
+  if (!r.replyTranslations) r.replyTranslations = {}
+  const t = r.replyTranslations, lang = r.ownerReplyLanguage
+  if (lang === 'ru' && !t.ru) t.ru = r.ownerReply
+  if (lang === 'en' && !t.en) t.en = r.ownerReply
+  if ((lang === 'sr' || lang === 'bs' || lang === 'hr') && !t.sr) t.sr = r.ownerReply
+  if (lang === 'de' && !t.de) t.de = r.ownerReply
+  if (lang === 'tr' && !t.tr) t.tr = r.ownerReply
 }
 
 // --- API TRANSLATIONS ---
@@ -577,8 +592,8 @@ if (repliedReviews.length > 0) {
     lines.push(`VALUES (`)
     lines.push(`  (SELECT id FROM reviews WHERE provider = 'google_maps' AND provider_review_id = '${pid}'),`)
     lines.push(`  'clinic', @clinic_id,`)
-    lines.push(`  ${sqlStr(r.ownerReply)}, 'ru',`)
-    lines.push(`  ${sqlStr(t.sr)}, ${sqlStr(t.sr_cyrl)}, ${sqlStr(t.en)}, ${sqlStr(r.ownerReply)}, ${sqlStr(t.de)}, ${sqlStr(t.tr)},`)
+    lines.push(`  ${sqlStr(r.ownerReply)}, ${sqlStr(r.ownerReplyLanguage)},`)
+    lines.push(`  ${sqlStr(t.sr)}, ${sqlStr(t.sr_cyrl)}, ${sqlStr(t.en)}, ${sqlStr(t.ru)}, ${sqlStr(t.de)}, ${sqlStr(t.tr)},`)
     const replyPublishedAt = r.ownerReplyPublishTime ? `'${r.ownerReplyPublishTime.replace('T', ' ').replace(/\.\d+Z$/, '').replace('Z', '')}'` : 'NULL'
     lines.push(`  'google_maps', ${replyPublishedAt})`)
     lines.push(`ON DUPLICATE KEY UPDATE

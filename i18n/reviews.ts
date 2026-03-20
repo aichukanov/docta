@@ -19,6 +19,7 @@ export default {
 			NoReviewsClinic: 'No reviews yet for this clinic.',
 			ShowOriginal: 'Show original ({lang})',
 			ShowTranslation: 'Show translation',
+			ShowMore: 'Show {count} more ({remaining} left)',
 		},
 		'ru': {
 			Title: 'Отзывы',
@@ -34,6 +35,7 @@ export default {
 			NoReviewsClinic: 'Пока нет отзывов об этой клинике.',
 			ShowOriginal: 'Показать оригинал ({lang})',
 			ShowTranslation: 'Показать перевод',
+			ShowMore: 'Показать ещё {count} (осталось {remaining})',
 		},
 		'de': {
 			Title: 'Bewertungen',
@@ -49,6 +51,7 @@ export default {
 			NoReviewsClinic: 'Noch keine Bewertungen für diese Klinik.',
 			ShowOriginal: 'Original anzeigen ({lang})',
 			ShowTranslation: 'Übersetzung anzeigen',
+			ShowMore: '{count} weitere anzeigen ({remaining} übrig)',
 		},
 		'tr': {
 			Title: 'Yorumlar',
@@ -64,6 +67,7 @@ export default {
 			NoReviewsClinic: 'Bu klinik için henüz yorum yok.',
 			ShowOriginal: 'Orijinali göster ({lang})',
 			ShowTranslation: 'Çeviriyi göster',
+			ShowMore: '{count} yorum daha göster ({remaining} kaldı)',
 		},
 		'sr': {
 			Title: 'Recenzije',
@@ -79,6 +83,7 @@ export default {
 			NoReviewsClinic: 'Još nema recenzija za ovu kliniku.',
 			ShowOriginal: 'Prikaži original ({lang})',
 			ShowTranslation: 'Prikaži prevod',
+			ShowMore: 'Prikaži još {count} ({remaining} preostalo)',
 		},
 		'sr-cyrl': {
 			Title: 'Рецензије',
@@ -94,6 +99,7 @@ export default {
 			NoReviewsClinic: 'Још нема рецензија за ову клинику.',
 			ShowOriginal: 'Прикажи оригинал ({lang})',
 			ShowTranslation: 'Прикажи превод',
+			ShowMore: 'Прикажи још {count} ({remaining} преостало)',
 		},
 	},
 };

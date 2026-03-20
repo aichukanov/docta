@@ -1,14 +1,15 @@
 <script setup lang="ts">
+import { OG_IMAGE, SITE_URL } from '~/common/constants';
+import {
+	buildBreadcrumbsSchema,
+	buildMedicalTestSchema,
+} from '~/common/schema-org-builders';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import labTestI18n from '~/i18n/labtest';
 import labTestCategoryI18n from '~/i18n/labtest-category';
 import { combineI18nMessages } from '~/i18n/utils';
-import {
-	buildMedicalTestSchema,
-	buildBreadcrumbsSchema,
-} from '~/common/schema-org-builders';
-import { SITE_URL, OG_IMAGE } from '~/common/constants';
+import type { ClinicData } from '~/interfaces/clinic';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -49,6 +50,27 @@ const labTestClinics = computed(() =>
 		? clinicsStore.getClinicsByIds(labTestData.value?.clinicIds)
 		: [],
 );
+
+const getPriceInfo = (clinicId: number) => {
+	return labTestData.value?.clinicPrices?.find((p) => p.clinicId === clinicId);
+};
+
+const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
+
+const showClinicOnMap = (clinic: ClinicData) => {
+	const el = document.getElementById('map');
+	if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	mapRef.value?.openClinicPopup(clinic);
+};
+
+const tabs = computed(() => {
+	const result = [];
+	if (labTestClinics.value.length > 0) {
+		result.push({ id: 'clinics', label: t('TabClinics') });
+	}
+	result.push({ id: 'map', label: t('TabMap') });
+	return result;
+});
 
 const pageTitle = computed(() => {
 	if (!isFound.value) {
@@ -161,17 +183,16 @@ watchEffect(() => {
 </script>
 
 <template>
-	<DetailsPage
+	<EntityPage
 		:isLoading="isLoading || clinicsStore.isLoadingClinics || false"
 		:isFound="isFound"
-		:clinics="labTestClinics"
-		:clinicPrices="labTestData?.clinicPrices"
 		backRouteName="labtests"
 		:loadingText="t('LoadingLabTests')"
 		:notFoundText="t('NoLabTestsFound')"
+		:tabs="tabs"
 	>
-		<template #info v-if="labTestData">
-			<div class="lab-test-header">
+		<template #hero v-if="labTestData">
+			<div class="lab-test-hero">
 				<h1 class="lab-test-name">{{ labTestData.name }}</h1>
 				<div v-if="labTestData.localName" class="lab-test-original">
 					{{ labTestData.localName }}
@@ -193,64 +214,103 @@ watchEffect(() => {
 				</div>
 			</div>
 		</template>
-	</DetailsPage>
+
+		<template #sections>
+			<EntityPageSection
+				v-if="labTestClinics.length > 0"
+				sectionId="clinics"
+				:title="t('TabClinics')"
+				:count="labTestClinics.length"
+			>
+				<template #icon><IconClinic :size="20" /></template>
+				<div class="clinics-list">
+					<ClinicSummary
+						v-for="clinic in labTestClinics"
+						:key="clinic.id"
+						:clinic="clinic"
+						:priceInfo="getPriceInfo(clinic.id)"
+						:showPrice="true"
+						@show-on-map="showClinicOnMap(clinic)"
+					/>
+				</div>
+			</EntityPageSection>
+
+			<EntityPageSection sectionId="map" :title="t('TabMap')">
+				<template #icon><IconMapPin :size="20" color="#ffffff" /></template>
+				<div class="labtest-map">
+					<ClinicServicesMap
+						ref="mapRef"
+						:services="[]"
+						:clinics="labTestClinics"
+						:showAllClinics="true"
+					/>
+				</div>
+			</EntityPageSection>
+		</template>
+	</EntityPage>
 </template>
 
 <style lang="less" scoped>
-.lab-test-header {
-	background: var(--color-surface-secondary);
-	border: 1px solid var(--color-border-primary);
-	border-radius: var(--border-radius-lg);
-	padding: var(--spacing-xl) var(--spacing-2xl);
-	box-shadow: var(--shadow-xs);
+.lab-test-hero {
+	padding: var(--spacing-xl) 0;
+}
 
-	.lab-test-name {
-		font-size: 2rem;
-		font-weight: 600;
-		color: #1f2937;
-		margin: 0;
-		font-family: system-ui, -apple-system, sans-serif;
-		word-break: break-word;
+.lab-test-name {
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: var(--color-text-primary);
+	margin: 0;
+	font-family: system-ui, -apple-system, sans-serif;
+	word-break: break-word;
+	line-height: 1.2;
+}
+
+.lab-test-original {
+	font-size: 1.1rem;
+	color: var(--color-text-secondary);
+	margin-top: var(--spacing-sm);
+	font-style: italic;
+	word-break: break-word;
+}
+
+.lab-test-categories {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--spacing-xs);
+	margin-top: var(--spacing-md);
+
+	.category-tag {
+		display: inline-block;
+		font-size: 0.85rem;
+		color: var(--color-primary);
+		background: rgba(79, 70, 229, 0.08);
+		padding: 4px 12px;
+		border-radius: 4px;
+		border: 1px solid rgba(79, 70, 229, 0.15);
 	}
+}
 
-	.lab-test-original {
-		font-size: 1.1rem;
-		color: #6b7280;
-		margin-top: var(--spacing-sm);
-		font-style: italic;
-		word-break: break-word;
+.lab-test-synonyms {
+	font-size: 0.95rem;
+	color: var(--color-text-secondary);
+	margin-top: var(--spacing-md);
+
+	.synonyms-label {
+		color: var(--color-text-muted);
+		margin-right: var(--spacing-xs);
 	}
+}
 
-	.lab-test-categories {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--spacing-xs);
-		margin-top: var(--spacing-md);
+.clinics-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+}
 
-		.category-tag {
-			display: inline-block;
-			font-size: 0.85rem;
-			color: var(--color-primary);
-			background: rgba(79, 70, 229, 0.08);
-			padding: 4px 12px;
-			border-radius: 4px;
-			border: 1px solid rgba(79, 70, 229, 0.15);
-		}
-	}
-
-	.lab-test-synonyms {
-		font-size: 0.95rem;
-		color: #6b7280;
-		margin-top: var(--spacing-md);
-
-		.synonyms-label {
-			color: #9ca3af;
-			margin-right: var(--spacing-xs);
-		}
-
-		.synonyms-list {
-			color: #6b7280;
-		}
-	}
+.labtest-map {
+	height: 400px;
+	border-radius: var(--border-radius-md);
+	overflow: hidden;
+	border: 1px solid var(--color-border-light);
 }
 </style>

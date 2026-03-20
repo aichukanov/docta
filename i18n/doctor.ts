@@ -43,6 +43,9 @@ export default {
 			DoctorsListDescriptionFiltered:
 				'Found {count}: {title}. Clinics, addresses, and contacts.',
 			And: 'and',
+			TabClinics: 'Clinics',
+			TabReviews: 'Reviews',
+			TabMap: 'Location',
 		},
 		'ru': {
 			DoctorName: 'Имя врача',
@@ -89,6 +92,9 @@ export default {
 			DoctorsListDescriptionFiltered:
 				'Найдено {count}: {title}. Клиники, адреса и контакты.',
 			And: 'и',
+			TabClinics: 'Клиники',
+			TabReviews: 'Отзывы',
+			TabMap: 'На карте',
 		},
 		'tr': {
 			DoctorName: 'Doktor adı',
@@ -133,6 +139,9 @@ export default {
 			DoctorsListDescriptionFiltered:
 				'{count} bulundu: {title}. Klinikler, adresler ve iletişim bilgileri.',
 			And: 've',
+			TabClinics: 'Klinikler',
+			TabReviews: 'Değerlendirmeler',
+			TabMap: 'Konum',
 		},
 		'de': {
 			DoctorName: 'Arztname',
@@ -179,6 +188,9 @@ export default {
 			DoctorsListDescriptionFiltered:
 				'{count} gefunden: {title}. Kliniken, Adressen und Kontakte.',
 			And: 'und',
+			TabClinics: 'Kliniken',
+			TabReviews: 'Bewertungen',
+			TabMap: 'Standort',
 		},
 		'sr': {
 			DoctorName: 'Ime lekara',
@@ -225,6 +237,9 @@ export default {
 			DoctorsListDescriptionFiltered:
 				'Pronađeno {count}: {title}. Klinike, adrese i kontakti.',
 			And: 'i',
+			TabClinics: 'Klinike',
+			TabReviews: 'Recenzije',
+			TabMap: 'Lokacija',
 		},
 		'sr-cyrl': {
 			DoctorName: 'Име лекара',
@@ -271,6 +286,9 @@ export default {
 			DoctorsListDescriptionFiltered:
 				'Пронађено {count}: {title}. Клинике, адресе и контакти.',
 			And: 'и',
+			TabClinics: 'Клинике',
+			TabReviews: 'Рецензије',
+			TabMap: 'Локација',
 		},
 	},
 };

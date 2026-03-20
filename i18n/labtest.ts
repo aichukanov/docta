@@ -25,6 +25,8 @@ export default {
 			LabTestsListDescriptionCategoryCity:
 				'{category} tests in {city} — search by name or clinic. Compare prices and clinic locations on the map.',
 			Synonyms: 'Also known as',
+			TabClinics: 'Clinics',
+			TabMap: 'Location',
 		},
 		'ru': {
 			LabTestName: 'Название анализа',
@@ -51,6 +53,8 @@ export default {
 			LabTestsListDescriptionCategoryCity:
 				'{category} в {city} — поиск по названию или клинике. Сравните цены и адреса клиник на карте.',
 			Synonyms: 'Также известен как',
+			TabClinics: 'Клиники',
+			TabMap: 'На карте',
 		},
 		'sr': {
 			LabTestName: 'Ime analize',
@@ -77,6 +81,8 @@ export default {
 			LabTestsListDescriptionCategoryCity:
 				'{category} u {city} — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
 			Synonyms: 'Poznato i kao',
+			TabClinics: 'Klinike',
+			TabMap: 'Lokacija',
 		},
 		'de': {
 			LabTestName: 'Testname',
@@ -103,6 +109,8 @@ export default {
 			LabTestsListDescriptionCategoryCity:
 				'{category} in {city} — Suche nach Name oder Klinik. Vergleichen Sie Preise und Klinikstandorte auf der Karte.',
 			Synonyms: 'Auch bekannt als',
+			TabClinics: 'Kliniken',
+			TabMap: 'Standort',
 		},
 		'tr': {
 			LabTestName: 'Test adı',
@@ -130,6 +138,8 @@ export default {
 			LabTestsListDescriptionCategoryCity:
 				"{city}'de {category} — ada veya kliniğe göre arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
 			Synonyms: 'Ayrıca şu adla bilinir',
+			TabClinics: 'Klinikler',
+			TabMap: 'Konum',
 		},
 		'sr-cyrl': {
 			LabTestName: 'Име анализе',
@@ -156,6 +166,8 @@ export default {
 			LabTestsListDescriptionCategoryCity:
 				'{category} у {city} — претрага по имену или клиници. Упоредите цене и локације клиника на мапи.',
 			Synonyms: 'Познато и као',
+			TabClinics: 'Клинике',
+			TabMap: 'Локација',
 		},
 	},
 };

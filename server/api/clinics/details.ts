@@ -119,7 +119,6 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 				END as text,
 				r.published_at as publishedAt,
 				r.likes_count as likesCount,
-				r.created_at as createdAt,
 				r.updated_at as updatedAt,
 				u.name as authorName,
 				u.photo_url as authorPhotoUrl,
@@ -159,7 +158,6 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 					rr.provider,
 					rr.likes_count as likesCount,
 					rr.published_at as publishedAt,
-					rr.created_at as createdAt,
 					rr.updated_at as updatedAt
 				FROM review_replies rr
 				WHERE rr.review_id IN (${reviewIds.map(() => '?').join(',')})

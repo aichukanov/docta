@@ -1,0 +1,79 @@
+{
+  "jsonPath": "data/google-places/podgorica/milmedika-podgorica.json",
+  "outputPath": "server/sql/reviews-google/milmedika-podgorica.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 1,
+  "clinicName": "Milmedika (Podgorica)",
+  "translationsDir": "data/review-translations/milmedika-podgorica/",
+  "doctors": [
+    {
+      "id": 601,
+      "varName": "natasa_vukotic",
+      "patterns": [
+        "Vukoti[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Djuri[cč]anin(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Đuričanin(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Вукотич(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 33,
+      "varName": "nenad_sorat",
+      "patterns": [
+        "Sorat(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Сорат(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 2,
+      "varName": "drago_albijanic",
+      "patterns": [
+        "Albijani[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Албиянич(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 18,
+      "varName": "rade_kaludjerovic",
+      "patterns": [
+        "Kalud?[jđ]erovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Калуджерович(?:[^а-яёА-ЯЁ]|$)",
+        "Калуђеровић(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 35,
+      "varName": "slobodan_vranjes",
+      "patterns": [
+        "Vranje[sš](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Враньеш(?:[^а-яёА-ЯЁ]|$)",
+        "Вранеш(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 40,
+      "varName": "mirko_sebek",
+      "patterns": [
+        "[SŠ][eе]bek(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Шебек(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 32,
+      "varName": "milena_sekulic",
+      "patterns": [
+        "Sekuli[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Секулич(?:[^а-яёА-ЯЁ]|$)",
+        "Секулович(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 3,
+      "varName": "dubravka_barovic",
+      "patterns": [
+        "Barovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Барович(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "jsonPath": "data/google-places/niksic/poliklinika-milmedika-niksic.json",
+  "outputPath": "server/sql/reviews-google/milmedika-niksic.sql",
+  "dataCollectedDate": "2026-03-23",
+  "clinicId": 2,
+  "clinicName": "Milmedika (Nikšić)",
+  "translationsDir": "data/review-translations/milmedika-niksic/",
+  "doctors": [
+    {
+      "id": 12,
+      "varName": "saska_grupkovic",
+      "patterns": ["Grupkovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)", "Sa[šs]k[aeuoi](?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 35,
+      "varName": "slobodan_vranjes",
+      "patterns": ["Vranje[šs](?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 69,
+      "varName": "vilma_pejakovic",
+      "patterns": ["Vilm[aeu](?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 78,
+      "varName": "marijana_veljovic",
+      "patterns": ["Veljovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)", "Вел[jј]ови"]
+    },
+    {
+      "id": 58,
+      "varName": "perica_maras",
+      "patterns": ["Mara[šs][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 10,
+      "varName": "tatjana_dzuver",
+      "patterns": ["[Dd][žz]uver(?:[^a-zA-Zа-яёА-ЯЁ]|$)", "[Dd]oktork[aeu]\\s+Tatjan[aeu]"]
+    }
+  ]
+}

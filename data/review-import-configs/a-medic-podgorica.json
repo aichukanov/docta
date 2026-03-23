@@ -1,0 +1,23 @@
+{
+  "jsonPath": "data/google-places/podgorica/a-medic-plasticna-i-estetska-hirurgija.json",
+  "outputPath": "server/sql/reviews-google/a-medic-podgorica.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 90,
+  "clinicName": "A Medic - Plastična i estetska hirurgija",
+  "translationsDir": "data/review-translations/a-medic-podgorica/",
+  "doctors": [
+    {
+      "id": 986,
+      "varName": "aleksandra_celebic",
+      "patterns": [
+        "Aleksandr[aeuoi](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Aleksandra(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:Č|C)elebi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Božovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Bozovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Bozovic(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Александр[аеуой](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

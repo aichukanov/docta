@@ -1,0 +1,68 @@
+{
+  "jsonPath": "data/google-places/tivat/dental-expert.json",
+  "outputPath": "server/sql/reviews-google/dental-expert-tivat.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 47,
+  "clinicName": "Dental Expert (Tivat)",
+  "translationsDir": "data/review-translations/dental-expert-tivat/",
+  "doctors": [
+    {
+      "id": 529,
+      "varName": "natalija_bobchenko",
+      "patterns": [
+        "Бобченко(?:[^а-яёА-ЯЁ]|$)",
+        "Наталь[яией](?:[^а-яёА-ЯЁ]|$)",
+        "Natali[ja](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 530,
+      "varName": "julija_guseva",
+      "patterns": [
+        "Юли[яией](?:[^а-яёА-ЯЁ]|$)",
+        "Гусев[аоуей]?(?:[^а-яёА-ЯЁ]|$)",
+        "Juli[ja](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 532,
+      "varName": "olga_baranova",
+      "patterns": [
+        "Ольг[аеуой](?:[^а-яёА-ЯЁ]|$)",
+        "Баранов[аоуей]?(?:[^а-яёА-ЯЁ]|$)",
+        "Olga(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Baranova(?:[^a-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 533,
+      "varName": "karen_saginjan",
+      "patterns": [
+        "Карен[ауе]?(?:[^а-яёА-ЯЁ]|$)",
+        "Эрикович(?:[^а-яёА-ЯЁ]|$)",
+        "Шагинян(?:[^а-яёА-ЯЁ]|$)",
+        "Erikovich(?:[^a-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 534,
+      "varName": "vitalii_stotsik",
+      "patterns": [
+        "Витали[йяею](?:[^а-яёА-ЯЁ]|$)",
+        "Стоцик(?:[^а-яёА-ЯЁ]|$)",
+        "Vitali[iy](?:[^a-zA-Z]|$)",
+        "Stotsik(?:[^a-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 536,
+      "varName": "kiril_poljakov",
+      "patterns": [
+        "Кирилл[ауе]?(?:[^а-яёА-ЯЁ]|$)",
+        "Поляков[ауе]?(?:[^а-яёА-ЯЁ]|$)",
+        "Kiril(?:[^a-zA-Z]|$)"
+      ]
+    }
+  ],
+  "childDentistDoctorVar": "natalija_bobchenko"
+}

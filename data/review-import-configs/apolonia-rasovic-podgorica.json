@@ -1,0 +1,28 @@
+{
+  "jsonPath": "data/google-places/podgorica/stomatoloska-ordinacija-apolonia-rasovic.json",
+  "outputPath": "server/sql/reviews-google/apolonia-rasovic-podgorica.sql",
+  "dataCollectedDate": "2026-03-20",
+  "clinicId": 46,
+  "clinicName": "Apolonia Rašović — stomatološka ordinacija (Podgorica)",
+  "translationsDir": "data/review-translations/apolonia-rasovic-podgorica/",
+  "doctors": [
+    {
+      "id": 528,
+      "varName": "marija_zakirova",
+      "patterns": [
+        "Мари[яюией](?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Закиров[ауой](?:[^а-яёА-ЯЁ]|$)",
+        "Marij[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 536,
+      "varName": "kiril_poljakov",
+      "patterns": [
+        "Кирилл[ауе]?(?:[^а-яёА-ЯЁ]|$)",
+        "Поляков[ауой]?(?:[^а-яёА-ЯЁ]|$)",
+        "Kiril[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

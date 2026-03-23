@@ -1,0 +1,21 @@
+{
+  "jsonPath": "data/google-places/podgorica/dnevna-bolnica-optimal.json",
+  "outputPath": "server/sql/reviews-google/dnevna-bolnica-optimal.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 25,
+  "clinicName": "Dnevna bolnica \"Optimal\" (Podgorica)",
+  "translationsDir": "data/review-translations/dnevna-bolnica-optimal/",
+  "doctors": [
+    {
+      "id": 319,
+      "varName": "sergej_alpatov",
+      "patterns": [
+        "Alpatov[aeiu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Алпатов[ауе]?(?:[^а-яёА-ЯЁ]|$)",
+        "Sergej[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Sergei(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Серге[йяюией](?:[^а-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

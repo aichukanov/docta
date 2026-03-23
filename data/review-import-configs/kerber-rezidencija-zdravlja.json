@@ -1,0 +1,95 @@
+{
+  "jsonPath": "data/google-places/podgorica/kerber-rezidencija-zdravlja.json",
+  "outputPath": "server/sql/reviews-google/kerber-rezidencija-zdravlja.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 29,
+  "clinicName": "Rezidencija zdravlja Kerber (Podgorica)",
+  "translationsDir": "data/review-translations/kerber-rezidencija-zdravlja/",
+  "doctors": [
+    {
+      "id": 219,
+      "varName": "milos_obradovic",
+      "patterns": [
+        "Obradovi[cć][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Обрадович(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 343,
+      "varName": "ljudmila_vorobjeva",
+      "patterns": [
+        "Воробь[её]в[аой]?(?:[^а-яёА-ЯЁ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Mila(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Мил[аеуой](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 344,
+      "varName": "tatjana_sosnovska",
+      "patterns": [
+        "Соснов[а-я]+(?:[^а-яёА-ЯЁ]|$)",
+        "Sosnovsk[aoi](?:[^a-zA-Z]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Татьян[аеуой](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 342,
+      "varName": "jelena_vasiljkova",
+      "patterns": [
+        "Васильков[аой]?(?:[^а-яёА-ЯЁ]|$)",
+        "Vasiljkov[aoi]?(?:[^a-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 443,
+      "varName": "dragomir_madzgalj",
+      "patterns": [
+        "Mad[zž]galj(?:[^a-zA-Z]|$)",
+        "Маджгаљ(?:[^а-яёА-ЯЁ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Dragomir[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 439,
+      "varName": "nebojsa_tasic",
+      "patterns": [
+        "Tasi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Тасич(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 450,
+      "varName": "marija_djurovic",
+      "patterns": [
+        "[DĐ][jđ]urovi[cć](?:[^a-zA-Z]|$)",
+        "Ђуровић(?:[^а-яёА-ЯЁ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Marij[aieu](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 462,
+      "varName": "zeljka_ralevic",
+      "patterns": [
+        "Ralevi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Ралевич(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 455,
+      "varName": "olivera_sekulic",
+      "patterns": [
+        "Sekuli[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Секулич(?:[^а-яёА-ЯЁ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Oliver[aieu](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 464,
+      "varName": "milos_stanojevic",
+      "patterns": [
+        "Stanojevi[cć][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Станојевич(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

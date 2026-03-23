@@ -1,0 +1,18 @@
+{
+  "jsonPath": "data/google-places/budva/svjetlost.json",
+  "outputPath": "server/sql/reviews-google/svjetlost-budva.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 26,
+  "clinicName": "Svjetlost Eye Clinic (Budva)",
+  "translationsDir": "data/review-translations/svjetlost-budva/",
+  "doctors": [
+    {
+      "id": 322,
+      "varName": "pasalic_adi",
+      "patterns": [
+        "Pa[sš]ali[cć][aeiouu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "[Dd]r\\.?\\s+Adi[ja]{0,2}(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "jsonPath": "data/google-places/podgorica/codra-hospital.json",
+  "outputPath": "server/sql/reviews-google/codra-hospital.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 28,
+  "clinicName": "Codra Hospital (Podgorica)",
+  "translationsDir": "data/review-translations/codra-hospital/",
+  "doctors": [
+    {
+      "id": 373,
+      "varName": "stanisic_nikola",
+      "patterns": [
+        "Stani[sš]i[cć][aeui]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 348,
+      "varName": "djurovic_dragan",
+      "patterns": [
+        "[DĐdđ][jž]urovi[cć][aeui]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 347,
+      "varName": "perovic_dragoljub",
+      "patterns": [
+        "Perovi[cć][aeui]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 5,
+      "varName": "brajovic_vladimir",
+      "patterns": [
+        "Brajovi[cć][aeui]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 339,
+      "varName": "zubenko_aleksandar",
+      "patterns": [
+        "Zubenk[oa](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 341,
+      "varName": "gogic_igor",
+      "patterns": [
+        "Gogi[cć][aeui]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 359,
+      "varName": "lamezevic_eldin",
+      "patterns": [
+        "Lame[zž]evi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 385,
+      "varName": "jovovic_predrag",
+      "patterns": [
+        "Jovovi[cć][aeui]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 349,
+      "varName": "zupancic_marko",
+      "patterns": [
+        "Zupan[cč]i[cć][aeui]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 360,
+      "varName": "burzan_dimitrije",
+      "patterns": [
+        "Burzan[aeui]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 250,
+      "varName": "milosevic_velimir",
+      "patterns": [
+        "Milo[sš]evi[cć][aeui]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 357,
+      "varName": "kastratovic_dragoljub",
+      "patterns": [
+        "Kastratovi[cć][aeui]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "jsonPath": "data/google-places/budva/bonomedica-budva.json",
+  "outputPath": "server/sql/reviews-google/bonomedica-budva.sql",
+  "dataCollectedDate": "2026-03-20",
+  "clinicId": 17,
+  "clinicName": "BonoMedica (Budva)",
+  "translationsDir": "data/review-translations/bonomedica-budva/",
+  "doctors": [
+    {
+      "id": 331,
+      "varName": "miljan_zindovic",
+      "patterns": [
+        "Zindovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Зин[жд]ович(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Mil[ij]an(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 335,
+      "varName": "lilija_halimonova",
+      "patterns": [
+        "Халимонов[ау](?:[^а-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁ])Лили[яюией](?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 336,
+      "varName": "dobrila_nikcevic",
+      "patterns": [
+        "Nik[cč]evi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Dobril[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 250,
+      "varName": "velimir_milosevic",
+      "patterns": [
+        "Milo[sš]evi[cć][uae]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

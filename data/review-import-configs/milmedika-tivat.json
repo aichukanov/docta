@@ -1,0 +1,39 @@
+{
+  "jsonPath": "data/google-places/tivat/poliklinika-milmedika-porto-montenegro.json",
+  "outputPath": "server/sql/reviews-google/milmedika-tivat.sql",
+  "dataCollectedDate": "2026-03-23",
+  "clinicId": 3,
+  "clinicName": "Milmedika (Tivat)",
+  "translationsDir": "data/review-translations/milmedika-tivat/",
+  "doctors": [
+    {
+      "id": 103,
+      "varName": "radmila_bulatovic",
+      "patterns": [
+        "Bulatovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Булатович(?:[^а-яёА-ЯЁ]|$)",
+        "Radmil[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Радмил[аеуой]?(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 601,
+      "varName": "natasa_vukotic",
+      "patterns": [
+        "Vukoti[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Вукотич(?:[^а-яёА-ЯЁ]|$)",
+        "Đuričanin(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Duričanin(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 51,
+      "varName": "ivan_ilic",
+      "patterns": [
+        "[Dd]r\\.?\\s+(?:Ivan\\s+)?Ili[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Prim\\.?\\s*[Dd]r\\.?\\s+Ivan(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Илич(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

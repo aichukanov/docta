@@ -1,0 +1,39 @@
+{
+  "jsonPath": "data/google-places/podgorica/klin-center-3.json",
+  "outputPath": "server/sql/reviews-google/klinicki-centar-3.sql",
+  "dataCollectedDate": "2026-03-23",
+  "clinicId": 65,
+  "clinicName": "Klinički Centar Crne Gore — Institut za bolesti djece (Podgorica)",
+  "translationsDir": "data/review-translations/klinicki-centar-3/",
+  "doctors": [
+    {
+      "id": 873,
+      "varName": "jelena_vukovic",
+      "patterns": [
+        "Vukovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Vuki[cć]evi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 872,
+      "varName": "zeljko_maras",
+      "patterns": [
+        "Mara[sš][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 244,
+      "varName": "irena_maric",
+      "patterns": [
+        "Mari[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 781,
+      "varName": "tea_dakic",
+      "patterns": [
+        "Daki[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

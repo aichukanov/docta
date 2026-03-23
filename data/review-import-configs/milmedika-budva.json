@@ -1,0 +1,49 @@
+{
+  "jsonPath": "data/google-places/budva/milmedika-budva.json",
+  "outputPath": "server/sql/reviews-google/milmedika-budva.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 4,
+  "clinicName": "Milmedika (Budva)",
+  "translationsDir": "data/review-translations/milmedika-budva/",
+  "doctors": [
+    {
+      "id": 15,
+      "varName": "ognjen_jovicevic",
+      "patterns": [
+        "Ognjen[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Jovi[cč]evi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 35,
+      "varName": "slobodan_vranjes",
+      "patterns": [
+        "Vranje[sš](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 91,
+      "varName": "ljiljana_krstajic",
+      "patterns": [
+        "Krstaji[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Ljiljan[aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 92,
+      "varName": "djuro_latkovic",
+      "patterns": [
+        "(?:Đuro|Duro|Djuro)(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Дуро(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 100,
+      "varName": "dragoje_cizmovic",
+      "patterns": [
+        "[ČčCc][iu][sz]movi[cć][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Чизмович[ауе]?(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

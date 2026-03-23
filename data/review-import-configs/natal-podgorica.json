@@ -1,0 +1,64 @@
+{
+  "jsonPath": "data/google-places/podgorica/natal.json",
+  "outputPath": "server/sql/reviews-google/natal-podgorica.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 54,
+  "clinicName": "Poliklinika Natal (Podgorica)",
+  "translationsDir": "data/review-translations/natal-podgorica/",
+  "doctors": [
+    {
+      "id": 503,
+      "varName": "aleksandar_boljevic",
+      "patterns": ["Boljevi[cć][aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 594,
+      "varName": "igor_jeremic",
+      "patterns": ["Jeremi[cć][aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 588,
+      "varName": "aleksandra_vuksanovic",
+      "patterns": ["Vuksanovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)", "Bo[zž]ari[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 600,
+      "varName": "dragana_bogdanovic",
+      "patterns": ["Bogdanovi[cć][aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 582,
+      "varName": "nadezda_basara",
+      "patterns": ["Basar[aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 601,
+      "varName": "natasa_vukotic",
+      "patterns": [
+        "Vukoti[cć][aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:Ð|Đ|Dj)uri[cč]anin(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Наташ[аеуиой](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 602,
+      "varName": "zeljko_mijuskovic",
+      "patterns": ["Miju[sš]kovi[cć][aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 599,
+      "varName": "katarina_kalezic",
+      "patterns": ["Kalezi[cć][aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 591,
+      "varName": "marija_djurovic",
+      "patterns": ["(?:Đ|Dj)urovi[cć][aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 595,
+      "varName": "zorica_corac",
+      "patterns": ["[CĆ]orac(?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    }
+  ]
+}

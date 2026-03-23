@@ -1,0 +1,34 @@
+{
+  "jsonPath": "data/google-places/podgorica/hipokrat-poliklinika-podgorica.json",
+  "outputPath": "server/sql/reviews-google/hipokrat-podgorica.sql",
+  "dataCollectedDate": "2026-03-23",
+  "clinicId": 70,
+  "clinicName": "Hipokrat Poliklinika (Podgorica)",
+  "translationsDir": "data/review-translations/hipokrat-podgorica/",
+  "doctors": [
+    {
+      "id": 942,
+      "varName": "ilija_stolic",
+      "patterns": [
+        "Ilij[aue](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Stoli[cć][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 926,
+      "varName": "andrija_mikulic",
+      "patterns": [
+        "Andrij[aeu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Mikuli[cć][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 752,
+      "varName": "nermin_abdic",
+      "patterns": [
+        "Nermin[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Abdi[cć][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

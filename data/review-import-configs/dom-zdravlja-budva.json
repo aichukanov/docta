@@ -1,0 +1,30 @@
+{
+  "jsonPath": "data/google-places/budva/budva-health-centre.json",
+  "outputPath": "server/sql/reviews-google/dom-zdravlja-budva.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 43,
+  "clinicName": "JZU Dom zdravlja Budva",
+  "translationsDir": "data/review-translations/dom-zdravlja-budva/",
+  "doctors": [
+    {
+      "id": 325,
+      "varName": "ivanova_nailja",
+      "patterns": [
+        "Иванов[аойуе](?:[^а-яёА-ЯЁ]|$)",
+        "Наил[яеиюй](?:[^а-яёА-ЯЁ]|$)",
+        "Ivanov[aeo]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Nail[aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 524,
+      "varName": "kiril_gorohov",
+      "patterns": [
+        "Городков(?:[^а-яёА-ЯЁ]|$)",
+        "Горохов(?:[^а-яёА-ЯЁ]|$)",
+        "Кирилл(?:[^а-яёА-ЯЁ]|$)",
+        "Gorohov(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

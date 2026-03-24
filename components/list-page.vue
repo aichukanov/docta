@@ -36,6 +36,7 @@ const props = withDefaults(
 		filterQuery: Record<string, any>;
 		cityIds: number[];
 		mapClinics?: ClinicData[];
+		clinicMode?: boolean;
 		detailsRouteName?: string;
 		detailsParamName?: string;
 		showPrice?: boolean;
@@ -258,9 +259,9 @@ onMounted(async () => {
 		<aside class="map-container" :aria-label="t('AriaMapSection')">
 			<ClinicServicesMap
 				ref="mapRef"
-				:services="mapClinics ? [] : list"
+				:services="(clinicMode || mapClinics) ? [] : list"
 				:clinics="mapClinics || clinicsStore.clinics"
-				:showAllClinics="!!mapClinics"
+				:showAllClinics="clinicMode || !!mapClinics"
 				:detailsRouteName="detailsRouteName"
 				:detailsParamName="detailsParamName"
 				@ready="onMapReady"

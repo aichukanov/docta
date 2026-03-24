@@ -141,7 +141,7 @@ watchEffect(() => {
 		:isLoading="isLoadingClinics"
 		:filterQuery="filterQuery"
 		:cityIds="cityIds"
-		:mapClinics="clinicsList?.clinics || []"
+		:clinicMode="true"
 	>
 		<template #filters>
 			<FilterName

@@ -29,6 +29,7 @@ const loadedTabs = ref({
 	labtests: false,
 	services: false,
 	clinics: false,
+	reviews: false,
 });
 
 // Состояние загрузки
@@ -36,11 +37,13 @@ const isLoadingDoctors = ref(false);
 const isLoadingLabTests = ref(false);
 const isLoadingServices = ref(false);
 const isLoadingClinics = ref(false);
+const isLoadingReviews = ref(false);
 
 // Данные
 const doctorsList = ref(null);
 const labTestsList = ref(null);
 const servicesList = ref(null);
+const reviewsList = ref([]);
 const usersList = ref([]);
 const clinicsStore = useClinicsStore();
 
@@ -150,6 +153,25 @@ async function loadClinicsData() {
 	}
 }
 
+async function loadReviewsData() {
+	if (loadedTabs.value.reviews) return;
+
+	isLoadingReviews.value = true;
+	try {
+		const [data] = await Promise.all([
+			$fetch('/api/reviews/list'),
+			loadDoctorsData(),
+			loadUsersData(),
+		]);
+		reviewsList.value = data;
+		loadedTabs.value.reviews = true;
+	} catch (error) {
+		console.error('Failed to load reviews:', error);
+	} finally {
+		isLoadingReviews.value = false;
+	}
+}
+
 loadClinicsData();
 
 // Отслеживание изменения активного таба
@@ -163,6 +185,9 @@ watch(activeTab, async (newTab) => {
 			break;
 		case 'services':
 			await loadServicesData();
+			break;
+		case 'reviews':
+			await loadReviewsData();
 			break;
 	}
 });
@@ -191,6 +216,11 @@ const updateLabTests = async () => {
 const updateServices = async () => {
 	loadedTabs.value.services = false;
 	await loadServicesData();
+};
+
+const updateReviews = async () => {
+	loadedTabs.value.reviews = false;
+	await loadReviewsData();
 };
 </script>
 
@@ -301,6 +331,25 @@ const updateServices = async () => {
 							:services="servicesForSelect"
 							:clinics="clinicsList.clinics"
 							@updated="updateServices"
+						/>
+					</el-tab-pane>
+				</el-tabs>
+			</el-tab-pane>
+
+			<el-tab-pane label="Отзывы" name="reviews">
+				<div v-if="isLoadingReviews" class="tab-loading">
+					<div class="loading-spinner"></div>
+					<p>Загрузка отзывов...</p>
+				</div>
+				<el-tabs v-else-if="loadedTabs.reviews">
+					<el-tab-pane label="Найти">
+						<AdminReviewInfo
+							:reviews="reviewsList"
+							:clinics="clinicsList.clinics"
+							:doctors="doctorsList?.doctors || []"
+							:users="usersList"
+							editable
+							@updated="updateReviews"
 						/>
 					</el-tab-pane>
 				</el-tabs>

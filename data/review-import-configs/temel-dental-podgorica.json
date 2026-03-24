@@ -1,0 +1,18 @@
+{
+  "jsonPath": "data/google-places/podgorica/temel-dental-policlinic-temel-dis-poliklinigi.json",
+  "outputPath": "server/sql/reviews-google/temel-dental-podgorica.sql",
+  "dataCollectedDate": "2026-03-24",
+  "clinicId": 19,
+  "clinicName": "Temel Dental (Podgorica)",
+  "translationsDir": "data/review-translations/temel-dental-podgorica/",
+  "doctors": [
+    {
+      "id": 492,
+      "varName": "kozlov_aleksej",
+      "patterns": [
+        "Алексе[юй](?:[^а-яёА-ЯЁ]|$)",
+        "Алекси[йяю](?:[^а-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

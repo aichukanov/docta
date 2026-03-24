@@ -56,6 +56,29 @@ export function resolveUploadPath(url: string): string | null {
 }
 
 /**
+ * Скачивает изображение по внешнему URL и сохраняет локально через processAndSaveImage.
+ * Возвращает публичный URL.
+ */
+export async function downloadAndSaveImage(
+	url: string,
+	category: ImageCategory,
+): Promise<string> {
+	const response = await fetch(url);
+	if (!response.ok) {
+		throw new Error(`Failed to download image from ${url}: ${response.status}`);
+	}
+	const arrayBuffer = await response.arrayBuffer();
+	return processAndSaveImage(Buffer.from(arrayBuffer), category);
+}
+
+/**
+ * Возвращает true если URL — внешний (http/https).
+ */
+export function isExternalUrl(url: string): boolean {
+	return url.startsWith('http://') || url.startsWith('https://');
+}
+
+/**
  * Сжимает изображение до MAX_DIMENSION по большей стороне,
  * конвертирует в WebP, сохраняет на диск.
  * Возвращает публичный URL.

@@ -2,6 +2,7 @@ import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
 import { syncDoctorRelation } from '~/server/common/doctor-relations';
 import type { DoctorData } from '~/interfaces/doctor';
+import { downloadAndSaveImage, isExternalUrl } from '~/server/utils/image-processing';
 import {
 	validateBody,
 	validateSpecialtyIds,
@@ -44,6 +45,10 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 		if (!validateClinicIds(body, 'api/doctors/update', true)) {
 			setResponseStatus(event, 400, 'Invalid clinic');
 			return null;
+		}
+
+		if (body.photoUrl && isExternalUrl(body.photoUrl)) {
+			body.photoUrl = await downloadAndSaveImage(body.photoUrl, 'doctors');
 		}
 
 		const connection = await getConnection();

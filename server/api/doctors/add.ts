@@ -1,6 +1,7 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
 import type { DoctorData } from '~/interfaces/doctor';
+import { downloadAndSaveImage, isExternalUrl } from '~/server/utils/image-processing';
 import {
 	validateBody,
 	validateSpecialtyIds,
@@ -36,6 +37,10 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 		if (!validateClinicIds(body, 'api/doctors/add', true)) {
 			setResponseStatus(event, 400, 'Invalid clinic');
 			return null;
+		}
+
+		if (body.photoUrl && isExternalUrl(body.photoUrl)) {
+			body.photoUrl = await downloadAndSaveImage(body.photoUrl, 'doctors');
 		}
 
 		const addDoctorQuery = `

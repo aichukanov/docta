@@ -321,6 +321,24 @@
       "reviewsWithText": 27,
       "translationsDir": "data/review-translations/moj-lab-dalmatinska-podgorica/",
       "translationsCount": 27
+    },
+    "cenex-medical-podgorica": {
+      "status": "done",
+      "clinicName": "Novi Cenex Medical (Podgorica)",
+      "configFile": "data/review-import-configs/cenex-medical-podgorica.json",
+      "sqlFile": "server/sql/reviews-google/cenex-medical-podgorica.sql",
+      "reviewsWithText": 16,
+      "translationsDir": "data/review-translations/cenex-medical-podgorica/",
+      "translationsCount": 16
+    },
+    "moj-lab-poliklinika-budva": {
+      "status": "done",
+      "clinicName": "Moj Lab (Budva)",
+      "configFile": "data/review-import-configs/moj-lab-poliklinika-budva.json",
+      "sqlFile": "server/sql/reviews-google/moj-lab-poliklinika-budva.sql",
+      "reviewsWithText": 113,
+      "translationsDir": "data/review-translations/moj-lab-poliklinika-budva/",
+      "translationsCount": 113
     }
   }
 }

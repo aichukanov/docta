@@ -1,0 +1,20 @@
+{
+  "jsonPath": "data/google-places/podgorica/cenex-medical.json",
+  "outputPath": "server/sql/reviews-google/cenex-medical-podgorica.sql",
+  "dataCollectedDate": "2026-03-24",
+  "clinicId": 59,
+  "clinicName": "Novi Cenex Medical (Podgorica)",
+  "translationsDir": "data/review-translations/cenex-medical-podgorica/",
+  "doctors": [
+    {
+      "id": 611,
+      "varName": "katarina_mitrovic",
+      "patterns": ["Katarin[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 660,
+      "varName": "zoran_terzic",
+      "patterns": ["Terzi[cć][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    }
+  ]
+}

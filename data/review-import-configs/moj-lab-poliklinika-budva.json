@@ -1,0 +1,41 @@
+{
+  "jsonPath": "data/google-places/budva/moj-lab-poliklinika-budva.json",
+  "outputPath": "server/sql/reviews-google/moj-lab-poliklinika-budva.sql",
+  "dataCollectedDate": "2026-03-24",
+  "clinicId": 7,
+  "clinicName": "Moj Lab (Budva)",
+  "translationsDir": "data/review-translations/moj-lab-poliklinika-budva/",
+  "doctors": [
+    {
+      "id": 112,
+      "varName": "marina_pejovic",
+      "patterns": [
+        "Pejovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 182,
+      "varName": "dragica_becic",
+      "patterns": [
+        "Be[cč]i[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Dragi[cč][ue]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 178,
+      "varName": "vesna_vucetic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Vesn[iuae](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 179,
+      "varName": "mladen_perisic",
+      "patterns": [
+        "Periši[cć][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Perisic[aeu]?(?:[^a-zA-Z]|$)",
+        "Mladen[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "jsonPath": "data/google-places/podgorica/moj-lab-pedijatrija.json",
+  "outputPath": "server/sql/reviews-google/moj-lab-pedijatrija-podgorica.sql",
+  "dataCollectedDate": "2026-03-24",
+  "clinicId": 9,
+  "clinicName": "Moj Lab Pedijatria (Podgorica)",
+  "translationsDir": "data/review-translations/moj-lab-pedijatrija-podgorica/",
+  "doctors": [
+    {
+      "id": 191,
+      "varName": "branka_samardzija",
+      "patterns": [
+        "Samar[dđ]?žij[ae](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 195,
+      "varName": "milica_sofranac",
+      "patterns": [
+        "[Dd]r\\.?\\s+Milic[ae](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 201,
+      "varName": "tanja_filipovic",
+      "patterns": [
+        "Filipovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

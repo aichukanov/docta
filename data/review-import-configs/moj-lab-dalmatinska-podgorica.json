@@ -1,0 +1,40 @@
+{
+  "jsonPath": "data/google-places/podgorica/moj-lab-dalmatinska.json",
+  "outputPath": "server/sql/reviews-google/moj-lab-dalmatinska-podgorica.sql",
+  "dataCollectedDate": "2026-03-24",
+  "clinicId": 5,
+  "clinicName": "Moj Lab (Podgorica 1)",
+  "translationsDir": "data/review-translations/moj-lab-dalmatinska-podgorica/",
+  "doctors": [
+    {
+      "id": 132,
+      "varName": "divanovic",
+      "patterns": [
+        "[Dd]ivanovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 135,
+      "varName": "damjanov",
+      "patterns": [
+        "[Dd]amjanov[аaиe]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 171,
+      "varName": "sanja_cejovic",
+      "patterns": [
+        "Сањ[уа]\\s+Чејовић",
+        "Sanj[ae]\\s+[Čč]ejovi[cć]"
+      ]
+    },
+    {
+      "id": 176,
+      "varName": "bojana_mijatovic",
+      "patterns": [
+        "Bojana\\s+Mijatovi[cć]",
+        "[Mm]ijatovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

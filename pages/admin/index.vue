@@ -222,6 +222,20 @@ const updateReviews = async () => {
 	loadedTabs.value.reviews = false;
 	await loadReviewsData();
 };
+
+const isRecalculatingRanks = ref(false);
+async function recalculateRankScores() {
+	isRecalculatingRanks.value = true;
+	try {
+		await $fetch('/api/admin/recalculate-rank-scores', { method: 'POST' });
+		ElMessage.success('Ранжирование пересчитано');
+	} catch (error) {
+		console.error('Failed to recalculate rank scores:', error);
+		ElMessage.error('Ошибка пересчёта ранжирования');
+	} finally {
+		isRecalculatingRanks.value = false;
+	}
+}
 </script>
 
 <template>
@@ -352,6 +366,18 @@ const updateReviews = async () => {
 							@updated="updateReviews"
 						/>
 					</el-tab-pane>
+					<el-tab-pane label="Ранжирование">
+						<div class="ranking-section">
+							<p>Пересчёт rank score для всех врачей и клиник. Автоматически выполняется каждые 6 часов.</p>
+							<el-button
+								type="primary"
+								:loading="isRecalculatingRanks"
+								@click="recalculateRankScores"
+							>
+								Пересчитать ранжирование
+							</el-button>
+						</div>
+					</el-tab-pane>
 				</el-tabs>
 			</el-tab-pane>
 
@@ -440,5 +466,19 @@ const updateReviews = async () => {
 	100% {
 		transform: rotate(360deg);
 	}
+}
+
+.ranking-section {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 16px;
+}
+
+.ranking-section p {
+	margin: 0;
+	color: #606266;
+	font-size: 14px;
 }
 </style>

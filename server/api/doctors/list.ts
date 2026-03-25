@@ -168,7 +168,7 @@ export async function getDoctorList(
 				(SELECT COUNT(*) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL) as totalReviews
 			FROM doctors d
 			${whereFiltersString}
-			ORDER BY d.name_sr ASC
+			ORDER BY d.rank_score DESC, d.name_sr ASC
 			${paginationClause};
 		`;
 

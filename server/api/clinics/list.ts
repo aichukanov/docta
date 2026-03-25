@@ -146,7 +146,7 @@ export async function getClinicList(
 				ON bscp.id = bspi.purchase_id
 			${whereFiltersString}
 			GROUP BY c.id
-			ORDER BY c.name_sr ASC
+			ORDER BY c.rank_score DESC, c.name_sr ASC
 			${paginationClause};
 		`;
 

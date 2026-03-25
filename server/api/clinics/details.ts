@@ -126,7 +126,7 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 			FROM reviews r
 			LEFT JOIN auth_users u ON r.user_id = u.id
 			WHERE r.clinic_id = ?
-			ORDER BY r.likes_count DESC, r.created_at DESC
+			ORDER BY r.created_at DESC
 		`;
 		const [reviewsRows] = await connection.execute(reviewsQuery, [
 			body.clinicId,
@@ -208,6 +208,8 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 					: undefined,
 			};
 		});
+
+		sortReviewsByRank(reviews);
 
 		return {
 			id: clinic.id,

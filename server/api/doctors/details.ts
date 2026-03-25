@@ -137,7 +137,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			FROM reviews r
 			LEFT JOIN auth_users u ON r.user_id = u.id
 			WHERE r.doctor_id = ?
-			ORDER BY r.likes_count DESC, r.created_at DESC
+			ORDER BY r.created_at DESC
 		`;
 		const [reviewsRows] = await connection.execute(reviewsQuery, [
 			body.doctorId,
@@ -224,6 +224,8 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 					: undefined,
 			};
 		});
+
+		sortReviewsByRank(reviews);
 
 		const currentUser = await getCurrentUser(event);
 		const isOwner =

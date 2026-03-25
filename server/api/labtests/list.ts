@@ -145,7 +145,7 @@ export async function getLabTestList(
 			 WHERE ltcr_cat.lab_test_id = lt.id) as categoryIds
 		FROM lab_tests lt
 		${whereFiltersString}
-		ORDER BY lt.name_en ASC
+		ORDER BY lt.rank_score DESC, lt.name_en ASC
 		${paginationClause};
 	`;
 

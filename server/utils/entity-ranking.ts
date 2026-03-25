@@ -123,7 +123,55 @@ function computeScore(
 }
 
 /**
- * Пересчитывает rank_score для всех врачей и клиник.
+ * Веса компонентов формулы ранжирования услуг.
+ *
+ * clinicCount (0.60): сколько клиник предлагают услугу — главный индикатор спроса.
+ *   Если 20 клиник предлагают УЗИ — это популярная услуга.
+ *   Логарифм выравнивает: разница между 5 и 50 клиниками не 10x.
+ *
+ * doctorCount (0.30): сколько врачей выполняют — дополняет спрос.
+ *   Много врачей = востребованная процедура.
+ *
+ * hasPricing (0.10): есть ли хотя бы одна цена — сигнал полезности.
+ *   Услуга с ценами полезнее для пользователя, чем без.
+ */
+const SW = {
+	clinicCount: 0.6,
+	doctorCount: 0.3,
+	hasPricing: 0.1,
+} as const;
+
+/**
+ * Потолки для нормализации количества клиник и врачей.
+ * 30 клиник / 50 врачей — практический максимум на платформе.
+ */
+const SERVICE_CLINIC_CAP = 30;
+const SERVICE_CLINIC_LOG_DIVISOR = Math.log2(1 + SERVICE_CLINIC_CAP);
+const SERVICE_DOCTOR_CAP = 50;
+const SERVICE_DOCTOR_LOG_DIVISOR = Math.log2(1 + SERVICE_DOCTOR_CAP);
+
+/**
+ * Веса компонентов формулы ранжирования анализов.
+ *
+ * У анализов нет врачей (в отличие от услуг), поэтому формула проще.
+ *
+ * clinicCount (0.80): сколько клиник предлагают анализ — основной сигнал спроса.
+ *   Общий анализ крови в 15 клиниках популярнее редкого маркера в 1 клинике.
+ *
+ * hasPricing (0.20): есть ли хотя бы одна цена — сигнал полезности.
+ *   Вес выше чем у услуг (10%), потому что для анализов цена — ключевой
+ *   фактор выбора (пользователи сравнивают цены между лабораториями).
+ */
+const LW = {
+	clinicCount: 0.8,
+	hasPricing: 0.2,
+} as const;
+
+const LAB_CLINIC_CAP = 20;
+const LAB_CLINIC_LOG_DIVISOR = Math.log2(1 + LAB_CLINIC_CAP);
+
+/**
+ * Пересчитывает rank_score для всех врачей, клиник, услуг и анализов.
  * Вызывается при старте сервера и по расписанию.
  */
 export async function recalculateEntityRankScores(): Promise<void> {
@@ -131,6 +179,8 @@ export async function recalculateEntityRankScores(): Promise<void> {
 	try {
 		await recalculateDoctorScores(connection);
 		await recalculateClinicScores(connection);
+		await recalculateServiceScores(connection);
+		await recalculateLabTestScores(connection);
 	} finally {
 		await connection.end();
 	}
@@ -245,6 +295,63 @@ async function recalculateClinicScores(connection: any): Promise<void> {
 		await connection.execute(
 			'UPDATE clinics SET rank_score = ? WHERE id = ?',
 			[Math.round(score * 10000) / 10000, clinic.id],
+		);
+	}
+}
+
+async function recalculateServiceScores(connection: any): Promise<void> {
+	const [rows] = await connection.execute(`
+		SELECT
+			ms.id,
+			(SELECT COUNT(DISTINCT cms.clinic_id) FROM clinic_medical_services cms WHERE cms.medical_service_id = ms.id) AS clinicCount,
+			(SELECT COUNT(DISTINCT cmsd.doctor_id) FROM clinic_medical_service_doctors cmsd WHERE cmsd.medical_service_id = ms.id) AS doctorCount,
+			EXISTS(
+				SELECT 1 FROM clinic_medical_services cms
+				WHERE cms.medical_service_id = ms.id AND cms.price IS NOT NULL
+			) AS hasPricing
+		FROM medical_services ms
+	`);
+
+	for (const row of rows as any[]) {
+		const clinicScore = Math.min(1, Math.log2(1 + Number(row.clinicCount)) / SERVICE_CLINIC_LOG_DIVISOR);
+		const doctorScore = Math.min(1, Math.log2(1 + Number(row.doctorCount)) / SERVICE_DOCTOR_LOG_DIVISOR);
+		const pricingScore = Number(row.hasPricing);
+
+		const score =
+			SW.clinicCount * clinicScore +
+			SW.doctorCount * doctorScore +
+			SW.hasPricing * pricingScore;
+
+		await connection.execute(
+			'UPDATE medical_services SET rank_score = ? WHERE id = ?',
+			[Math.round(score * 10000) / 10000, row.id],
+		);
+	}
+}
+
+async function recalculateLabTestScores(connection: any): Promise<void> {
+	const [rows] = await connection.execute(`
+		SELECT
+			lt.id,
+			(SELECT COUNT(DISTINCT clt.clinic_id) FROM clinic_lab_tests clt WHERE clt.lab_test_id = lt.id) AS clinicCount,
+			EXISTS(
+				SELECT 1 FROM clinic_lab_tests clt
+				WHERE clt.lab_test_id = lt.id AND clt.price IS NOT NULL
+			) AS hasPricing
+		FROM lab_tests lt
+	`);
+
+	for (const row of rows as any[]) {
+		const clinicScore = Math.min(1, Math.log2(1 + Number(row.clinicCount)) / LAB_CLINIC_LOG_DIVISOR);
+		const pricingScore = Number(row.hasPricing);
+
+		const score =
+			LW.clinicCount * clinicScore +
+			LW.hasPricing * pricingScore;
+
+		await connection.execute(
+			'UPDATE lab_tests SET rank_score = ? WHERE id = ?',
+			[Math.round(score * 10000) / 10000, row.id],
 		);
 	}
 }

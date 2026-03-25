@@ -134,7 +134,7 @@ export async function getMedicalServiceList(
 			) as categoryIds
 		FROM medical_services ms
 		${whereFiltersString}
-		ORDER BY ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC
+		ORDER BY ms.sort_order IS NULL, ms.sort_order ASC, ms.rank_score DESC, ms.name_en ASC
 		${paginationClause};
 	`;
 

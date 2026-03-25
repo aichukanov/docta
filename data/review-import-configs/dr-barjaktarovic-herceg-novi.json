@@ -1,0 +1,21 @@
+{
+  "jsonPath": "data/google-places/herceg-novi/dr-vukasin-barjaktarovic.json",
+  "outputPath": "server/sql/reviews-google/dr-barjaktarovic-herceg-novi.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 22,
+  "clinicName": "ORL Klinika dr Barjaktarović (Herceg Novi)",
+  "translationsDir": "data/review-translations/dr-barjaktarovic-herceg-novi/",
+  "doctors": [
+    {
+      "id": 308,
+      "varName": "vukasin_barjaktarovic",
+      "patterns": [
+        "Barjaktarovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Barjaktarevi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Барјактарови[чћ](?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Vuka[sš]in[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Вукашин[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

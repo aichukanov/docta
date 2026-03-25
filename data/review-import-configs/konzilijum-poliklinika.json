@@ -1,0 +1,30 @@
+{
+  "jsonPath": "data/google-places/podgorica/konzilijum-poliklinika.json",
+  "outputPath": "server/sql/reviews-google/konzilijum-poliklinika.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 68,
+  "clinicName": "Konzilijum — Poliklinika i bolnica (Podgorica)",
+  "translationsDir": "data/review-translations/konzilijum-poliklinika/",
+  "doctors": [
+    {
+      "id": 898,
+      "varName": "vlahovic",
+      "patterns": ["Vlahovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 715,
+      "varName": "kujovic",
+      "patterns": ["Kujovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 432,
+      "varName": "milacic",
+      "patterns": ["Mila[cč]i[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    },
+    {
+      "id": 256,
+      "varName": "cirkovic",
+      "patterns": ["[CĆcć]irkovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    }
+  ]
+}

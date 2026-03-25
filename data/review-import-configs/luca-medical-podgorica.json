@@ -1,0 +1,20 @@
+{
+  "jsonPath": "data/google-places/podgorica/luca-medical.json",
+  "outputPath": "server/sql/reviews-google/luca-medical-podgorica.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 82,
+  "clinicName": "Luča medical – Podgorica",
+  "translationsDir": "data/review-translations/luca-medical-podgorica/",
+  "doctors": [
+    {
+      "id": 960,
+      "varName": "vukmirovic",
+      "patterns": ["Vukmirovi[cć]", "Вукмирович"]
+    },
+    {
+      "id": 964,
+      "varName": "marina_ratkovic",
+      "patterns": ["Marina(?:[^a-zA-Zа-яёА-ЯЁ]|$)"]
+    }
+  ]
+}

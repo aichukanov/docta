@@ -1,0 +1,27 @@
+{
+  "jsonPath": "data/google-places/herceg-novi/normedica.json",
+  "outputPath": "server/sql/reviews-google/normedica-herceg-novi.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 27,
+  "clinicName": "Normedica (Herceg Novi)",
+  "translationsDir": "data/review-translations/normedica-herceg-novi/",
+  "doctors": [
+    {
+      "id": 919,
+      "varName": "goran_mandic",
+      "patterns": [
+        "Mandi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Manci[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Манди[чћ](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 920,
+      "varName": "dusan_mustur",
+      "patterns": [
+        "Mustur[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Мустур[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

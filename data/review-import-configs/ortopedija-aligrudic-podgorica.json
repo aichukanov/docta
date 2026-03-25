@@ -1,0 +1,17 @@
+{
+  "jsonPath": "data/google-places/podgorica/ortopedija-aligrudic.json",
+  "outputPath": "server/sql/reviews-google/ortopedija-aligrudic-podgorica.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 14,
+  "clinicName": "Ortopedija Aligrudić (Podgorica)",
+  "translationsDir": "data/review-translations/ortopedija-aligrudic-podgorica/",
+  "doctors": [
+    {
+      "id": 388,
+      "varName": "velisa_aligrudic",
+      "patterns": [
+        "[Dd]r\\.?\\s+Aligrud[ií][cć][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

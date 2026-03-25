@@ -492,6 +492,42 @@
       "reviewsWithText": 26,
       "translationsDir": "data/review-translations/imc-orl-podgorica/",
       "translationsCount": 28
+    },
+    "normedica-herceg-novi": {
+      "status": "done",
+      "clinicName": "Normedica (Herceg Novi)",
+      "configFile": "data/review-import-configs/normedica-herceg-novi.json",
+      "sqlFile": "server/sql/reviews-google/normedica-herceg-novi.sql",
+      "reviewsWithText": 10,
+      "translationsDir": "data/review-translations/normedica-herceg-novi/",
+      "translationsCount": 11
+    },
+    "medikid-podgorica": {
+      "status": "done",
+      "clinicName": "Medikid (Podgorica)",
+      "configFile": "data/review-import-configs/medikid-podgorica.json",
+      "sqlFile": "server/sql/reviews-google/medikid-podgorica.sql",
+      "reviewsWithText": 6,
+      "translationsDir": "data/review-translations/medikid-podgorica/",
+      "translationsCount": 6
+    },
+    "luca-medical-podgorica": {
+      "status": "done",
+      "clinicName": "Luča medical – Podgorica",
+      "configFile": "data/review-import-configs/luca-medical-podgorica.json",
+      "sqlFile": "server/sql/reviews-google/luca-medical-podgorica.sql",
+      "reviewsWithText": 13,
+      "translationsDir": "data/review-translations/luca-medical-podgorica/",
+      "translationsCount": 13
+    },
+    "ortopedija-aligrudic-podgorica": {
+      "status": "done",
+      "clinicName": "Ortopedija Aligrudić (Podgorica)",
+      "configFile": "data/review-import-configs/ortopedija-aligrudic-podgorica.json",
+      "sqlFile": "server/sql/reviews-google/ortopedija-aligrudic-podgorica.sql",
+      "reviewsWithText": 8,
+      "translationsDir": "data/review-translations/ortopedija-aligrudic-podgorica/",
+      "translationsCount": 8
     }
   }
 }

@@ -1,0 +1,18 @@
+{
+  "jsonPath": "data/google-places/bar/poliklinika-dr-masonicic.json",
+  "outputPath": "server/sql/reviews-google/poliklinika-dr-masonicic.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 58,
+  "clinicName": "Poliklinika \"Dr Masoničić\" (Bar)",
+  "translationsDir": "data/review-translations/poliklinika-dr-masonicic/",
+  "doctors": [
+    {
+      "id": 656,
+      "varName": "gina_masonicic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Gin(?:a|e|i|u|om)(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Гин(?:а|е|у|ой|ом)(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

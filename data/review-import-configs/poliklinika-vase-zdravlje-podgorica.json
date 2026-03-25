@@ -1,0 +1,18 @@
+{
+  "jsonPath": "data/google-places/podgorica/poliklinika-vase-zdravlje.json",
+  "outputPath": "server/sql/reviews-google/poliklinika-vase-zdravlje-podgorica.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 39,
+  "clinicName": "Vaše zdravlje (Podgorica)",
+  "translationsDir": "data/review-translations/poliklinika-vase-zdravlje-podgorica/",
+  "doctors": [
+    {
+      "id": 495,
+      "varName": "milenka_uscumlic",
+      "patterns": [
+        "Milank[aeiou]?(?:[^a-zA-Z\u0430-\u044f\u0451\u0410-\u042f\u0401]|$)",
+        "Milenk[aeiou]?(?:[^a-zA-Z\u0430-\u044f\u0451\u0410-\u042f\u0401]|$)"
+      ]
+    }
+  ]
+}

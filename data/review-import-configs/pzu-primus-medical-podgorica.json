@@ -1,0 +1,29 @@
+{
+  "jsonPath": "data/google-places/podgorica/pzu-primus-medical.json",
+  "outputPath": "server/sql/reviews-google/pzu-primus-medical-podgorica.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 40,
+  "clinicName": "Primus Medical (Podgorica)",
+  "translationsDir": "data/review-translations/pzu-primus-medical-podgorica/",
+  "doctors": [
+    {
+      "id": 515,
+      "varName": "dario_jocic",
+      "patterns": [
+        "Joci[cć][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Йоцич(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 519,
+      "varName": "natalija_tkac",
+      "patterns": [
+        "Наталь[яеиюей]",
+        "Натали[яюией]",
+        "Natali[aj](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Tkach(?:[^a-zA-Z]|$)",
+        "Tka[čc](?:[^a-zA-Z]|$)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "jsonPath": "data/google-places/podgorica/sumedica.json",
+  "outputPath": "server/sql/reviews-google/sumedica-podgorica.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 38,
+  "clinicName": "Sumedica (Podgorica)",
+  "translationsDir": "data/review-translations/sumedica-podgorica/",
+  "doctors": [
+    {
+      "id": 491,
+      "varName": "suzana_uskokovic",
+      "patterns": [
+        "Suzan[aeu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Uskokovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Сюзанн[аеуой](?:[^а-яёА-ЯЁ]|$)",
+        "Сузан[аеуой](?:[^а-яёА-ЯЁ]|$)",
+        "Ускокович(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

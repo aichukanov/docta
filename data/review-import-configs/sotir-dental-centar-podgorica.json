@@ -1,0 +1,29 @@
+{
+  "jsonPath": "data/google-places/podgorica/sotir-dental-centar.json",
+  "outputPath": "server/sql/reviews-google/sotir-dental-centar-podgorica.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 34,
+  "clinicName": "Sotir dental centar (Podgorica)",
+  "translationsDir": "data/review-translations/sotir-dental-centar-podgorica/",
+  "doctors": [
+    {
+      "id": 470,
+      "varName": "dijana_magdelinic",
+      "patterns": [
+        "Dijan[aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Magdelini[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 469,
+      "varName": "kristina_kramarcuk",
+      "patterns": [
+        "Кристин[аеуыой](?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Христин[аеуиой](?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "[Cc]hristin[ae]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "[Kk]ristin[ae]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ],
+  "childDentistDoctorVar": "kristina_kramarcuk"
+}

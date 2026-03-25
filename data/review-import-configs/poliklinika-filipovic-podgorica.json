@@ -1,0 +1,18 @@
+{
+  "jsonPath": "data/google-places/podgorica/poliklinika-filipovic.json",
+  "outputPath": "server/sql/reviews-google/poliklinika-filipovic-podgorica.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 23,
+  "clinicName": "Poliklinika Filipović (Podgorica)",
+  "translationsDir": "data/review-translations/poliklinika-filipovic-podgorica/",
+  "doctors": [
+    {
+      "id": 312,
+      "varName": "mladen_filipovic",
+      "patterns": [
+        "Mladen[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Младен[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

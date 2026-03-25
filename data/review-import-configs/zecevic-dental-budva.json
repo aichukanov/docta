@@ -1,0 +1,44 @@
+{
+  "jsonPath": "data/google-places/budva/zecevic-dental.json",
+  "outputPath": "server/sql/reviews-google/zecevic-dental-budva.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 56,
+  "clinicName": "Zečević Dental (Budva)",
+  "translationsDir": "data/review-translations/zecevic-dental-budva/",
+  "doctors": [
+    {
+      "id": 623,
+      "varName": "zeljko_zecevic",
+      "patterns": [
+        "[ZŽ]eljk[oau](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Желько"
+      ]
+    },
+    {
+      "id": 624,
+      "varName": "nemanja_bozovic",
+      "patterns": [
+        "Nemanj[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Bo[zž]ovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 625,
+      "varName": "jelena_milasinov",
+      "patterns": [
+        "Jelen[aeu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Mila[sš]inov",
+        "Јелен[аеу](?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 974,
+      "varName": "renata_khalikova",
+      "patterns": [
+        "Renat[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Khalikov[aou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Ренат[аеуой]?(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

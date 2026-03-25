@@ -1,0 +1,46 @@
+{
+  "jsonPath": "data/google-places/podgorica/smartmed-podgorica.json",
+  "outputPath": "server/sql/reviews-google/smartmed-podgorica.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 10,
+  "clinicName": "SmartMed (Podgorica)",
+  "translationsDir": "data/review-translations/smartmed-podgorica/",
+  "doctors": [
+    {
+      "id": 202,
+      "varName": "vojislav_miketic",
+      "patterns": [
+        "Miketi[cć][aueiom]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 84,
+      "varName": "ivan_djukic",
+      "patterns": [
+        "[ĐDđd]j?uki[cć][aueiom]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 203,
+      "varName": "emira_kalamperovic",
+      "patterns": [
+        "Kalamperovi[cć][aueiom]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 220,
+      "varName": "emilija_delevic",
+      "patterns": [
+        "Delevi[cć][aueiom]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 649,
+      "varName": "vesna_colakovic",
+      "patterns": [
+        "[ČCčc]olakovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "[Dd]r\\.?\\s+Vesn[aeu](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

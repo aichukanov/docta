@@ -1,0 +1,38 @@
+{
+  "jsonPath": "data/google-places/kotor/poliklinika-smart-med-kotor.json",
+  "outputPath": "server/sql/reviews-google/poliklinika-smart-med-kotor.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 12,
+  "clinicName": "SmartMed (Kotor)",
+  "translationsDir": "data/review-translations/poliklinika-smart-med-kotor/",
+  "doctors": [
+    {
+      "id": 80,
+      "varName": "snezana_vukadinovic",
+      "patterns": [
+        "Vukadinovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Вукадинович(?:[^а-яёА-ЯЁ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Sne[zž]an[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Снежан[аеуой](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 223,
+      "varName": "milica_vusurovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Milic[aieu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Милиц[аеуой](?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Vušurovi[cć](?:[^a-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 276,
+      "varName": "isidora_garovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Isidor[aeu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Garovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Исидор[аеуой](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

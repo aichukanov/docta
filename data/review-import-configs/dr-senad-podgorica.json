@@ -1,0 +1,19 @@
+{
+  "jsonPath": "data/google-places/podgorica/stomatoloska-ordinacija-dr-senad.json",
+  "outputPath": "server/sql/reviews-google/dr-senad-podgorica.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 32,
+  "clinicName": "Stomatoloska ordinacija Dr Senad (Podgorica)",
+  "translationsDir": "data/review-translations/dr-senad-podgorica/",
+  "doctors": [
+    {
+      "id": 466,
+      "varName": "svetlana_alpatova",
+      "patterns": [
+        "Алпатов[аой](?:[^а-яёА-ЯЁ]|$)",
+        "Alpatov[ae]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Светлан[аеуой](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

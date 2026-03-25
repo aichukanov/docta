@@ -1,0 +1,19 @@
+{
+  "jsonPath": "data/google-places/podgorica/vadis-stomatologija.json",
+  "outputPath": "server/sql/reviews-google/vadis-stomatologija-podgorica.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 33,
+  "clinicName": "VADIS Stomatologija (Podgorica)",
+  "translationsDir": "data/review-translations/vadis-stomatologija-podgorica/",
+  "doctors": [
+    {
+      "id": 467,
+      "varName": "bojana_ivanovic",
+      "patterns": [
+        "Боян[аеуой](?:[^а-яёА-ЯЁ]|$)",
+        "Bojana(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Ivanovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

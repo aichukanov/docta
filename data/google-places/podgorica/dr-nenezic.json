@@ -1,132 +1,926 @@
 {
-  "id": "ChIJfTiSfyDrTRMRfKN3EWS4Tjo",
-  "types": [
-    "hospital",
-    "health",
-    "service",
-    "point_of_interest",
-    "establishment"
-  ],
-  "internationalPhoneNumber": "+382 67 834 191",
-  "formattedAddress": "L3 9, Подгорица 81000, Црна Гора",
-  "location": {
-    "latitude": 42.4406567,
-    "longitude": 19.233795800000003
-  },
-  "rating": 4.6,
-  "googleMapsUri": "https://maps.google.com/?cid=4201498242312545148&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA",
-  "websiteUri": "http://www.drnenezic.me/",
-  "userRatingCount": 37,
-  "displayName": {
-    "text": "Dr NENEZIC",
-    "languageCode": "sr"
-  },
-  "reviews": [
-    {
-      "name": "places/ChIJfTiSfyDrTRMRfKN3EWS4Tjo/reviews/Ci9DQUlRQUNvZENodHljRjlvT21WNlJuQnRNMjlJYUdWd1NTMUtSR3N4T1hWZlYzYxAB",
-      "relativePublishTimeDescription": "пре 4 месеца",
-      "rating": 5,
-      "text": {
-        "text": "Дефинитивно најбољи!! Екипа је одлична, веома су љубазни и брижни!! Све похвале, штета што нема 10 звездица да се стави 😄",
-        "languageCode": "sr"
-      },
-      "originalText": {
-        "text": "Definitivno najbolji!! Ekipa je odlicna veoma su ljubazni i brizni!! Svaka pohvala,steta sto nema 10 zvezdica da se stavi 😄",
-        "languageCode": "bs"
-      },
-      "authorAttribution": {
-        "displayName": "Ivan Cetkovic",
-        "uri": "https://www.google.com/maps/contrib/103121449536780106462/reviews",
-        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocI3vtMpJa3lyQHUTfKKAqbE7sm9INv4AzZUbmSi_fJ3Ftn8FA=s128-c0x00000000-cc-rp-mo"
-      },
-      "publishTime": "2025-10-22T15:23:51.796932115Z",
-      "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21WNlJuQnRNMjlJYUdWd1NTMUtSR3N4T1hWZlYzYxAB&d=17924085&t=1",
-      "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21WNlJuQnRNMjlJYUdWd1NTMUtSR3N4T1hWZlYzYxAB!2m1!1s0x134deb207f92387d:0x3a4eb8641177a37c"
-    },
-    {
-      "name": "places/ChIJfTiSfyDrTRMRfKN3EWS4Tjo/reviews/Ci9DQUlRQUNvZENodHljRjlvT21kQkxVZHpWVFJzVERnMVQydG5OMFY1TkhSUWQwRRAB",
-      "relativePublishTimeDescription": "пре 8 месеци",
-      "rating": 5,
-      "text": {
-        "text": "Велико хвала тиму, они су професионалци и веома љубазни и пажљиви.\nУклонили смо бол након напрезања леђа и опустили напетост у мишићима.",
-        "languageCode": "sr"
-      },
-      "originalText": {
-        "text": "Hvala puno ekipo, profesionalce i vrlo su ljubazne i pazljive.\nUklonili smo bolove nakon opterećenja leđa i opustili smo napetost u mišićima.",
-        "languageCode": "hr"
-      },
-      "authorAttribution": {
-        "displayName": "ZetaFish ASK DOO",
-        "uri": "https://www.google.com/maps/contrib/112494622819879319681/reviews",
-        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWukUobDVSrIxY3uPwMLGtdWX5qAD81PSd94SXWwop9BUnurIi_=s128-c0x00000000-cc-rp-mo"
-      },
-      "publishTime": "2025-06-25T17:26:09.151200820Z",
-      "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21kQkxVZHpWVFJzVERnMVQydG5OMFY1TkhSUWQwRRAB&d=17924085&t=1",
-      "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21kQkxVZHpWVFJzVERnMVQydG5OMFY1TkhSUWQwRRAB!2m1!1s0x134deb207f92387d:0x3a4eb8641177a37c"
-    },
-    {
-      "name": "places/ChIJfTiSfyDrTRMRfKN3EWS4Tjo/reviews/ChZDSUhNMG9nS0VJQ0FnSURENGVDQmRREAE",
-      "relativePublishTimeDescription": "пре годину дана",
-      "rating": 5,
-      "text": {
-        "text": "Поред врхунске стручности, пријатна атмосфера и особље увек спремно да охрабри пацијента, посаветује, подучи, па чак и нашали се, свакако су оно што ме је привукло ординацији др Ненезића. Ванредни резултати које постижу када су у питању моје повреде чине ме срећним да их препоручим свима. И иако имају најмодерније апарате и тај нови „магични магнет“, ипак ми се посебно свиђа акупунктура коју доктор комбинује са другим техникама. Драги тиме ординације др Ненезића, хвала вам на свим мојим прошлим и будућим „брзим“ опоравцима!",
-        "languageCode": "sr"
-      },
-      "originalText": {
-        "text": "Osim vrhunske stručnosti, prijatna atmosfera i osoblje uvijek spremno da ohrabri pacijenta, posavjetuje, pouči ali i da se našali, sigurno je ono što me vezalo za ordinaciju Dr Nenezić. Izvanredni rezultati koje postižu kad su moje povrede u pitanju čine da ih sa zadovoljstvom preporučujem svima. A iako posjeduju najmodernije aparate i taj novi \"čarobni magnet\", meni i dalje ostaje posebno drago bockanje (akupunktura) koje doktor kombinuje sa ostalim tehnikama.\nDraga ekipo ordinacije Dr Nenezić, hvala vam za sve moje prošle i buduće \"brzinske\" oporavke!",
-        "languageCode": "bs"
-      },
-      "authorAttribution": {
-        "displayName": "Marija Jevric",
-        "uri": "https://www.google.com/maps/contrib/105059992537643556324/reviews",
-        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjU0OChMCJkFyyM4h4yjUlfBe7pfDLTrbS4i5g_oaybMcc0vEZPFSg=s128-c0x00000000-cc-rp-mo"
-      },
-      "publishTime": "2024-04-10T16:16:42.228168Z",
-      "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSURENGVDQmRREAE&d=17924085&t=1",
-      "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURENGVDQmRREAE!2m1!1s0x134deb207f92387d:0x3a4eb8641177a37c"
-    },
-    {
-      "name": "places/ChIJfTiSfyDrTRMRfKN3EWS4Tjo/reviews/ChZDSUhNMG9nS0VJQ0FnSURfX2JMcE1nEAE",
-      "relativePublishTimeDescription": "пре годину дана",
-      "rating": 1,
-      "text": {
-        "text": "Безобразлук на рецепцији када тражим појашњење шта тачно треба да платим. Нисам одбио да платим, само сам хтео да разјасним назив процедура. Узео сам курс са њима. Наравно, то ми није помогло, јер доктор није ни покушао да разуме мој проблем. Одмах ми је преписао све процедуре које имају. Током акупунктуре заборавио је да ме боли врат и једноставно ми је из навике забадао игле у леђа, очигледно на оним местима због којих пацијенти често долазе код њега. Морао сам да га подсетим. Трешња на торти је сублуксација атласа. Дошао сам са захтевом да то проверим. Наравно, није га било, али доктор то није рекао. Па, зашто не зарадити новац. На крају 150 евра за 4 минута, током којих се стварао привид рада.",
-        "languageCode": "sr"
-      },
-      "originalText": {
-        "text": "Хамство на ресепшене на уточняющий вопрос за что именно я должен заплатить. Я не отказывался от оплаты, просто хотел уточнить название процедур. Прошел у них курс. Естествнено мне это не помогло, т.к. доктор даже не стал разбираться в моей проблеме. Он сразу мне назначил все процедуры, которые у них есть. На иглоукалывании он забывал что у меня болит шея и просто по привычке вставлял иголки в спину, видимо в те места, с которыми часто обращаются пациенты. Проходилось напоминать. Вишенка на торте - это подвывих атланта. Я пришел с просьбой его проверить. Его естественно не было, но доктор этого не сказал. Ну как же, почему бы не заработать. В итоге 150 евро за 4 минуты, в течении которых было сделана видимость работы.",
-        "languageCode": "ru"
-      },
-      "authorAttribution": {
-        "displayName": "Clark Orro",
-        "uri": "https://www.google.com/maps/contrib/101942057080417773576/reviews",
-        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWN_dcUrFzX6_Fu__xrs55rvRvkxV99MngzFIsmS8UJ5h-gNqx3=s128-c0x00000000-cc-rp-mo-ba2"
-      },
-      "publishTime": "2025-01-26T13:31:23.028517Z",
-      "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSURfX2JMcE1nEAE&d=17924085&t=1",
-      "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURfX2JMcE1nEAE!2m1!1s0x134deb207f92387d:0x3a4eb8641177a37c"
-    },
-    {
-      "name": "places/ChIJfTiSfyDrTRMRfKN3EWS4Tjo/reviews/Ci9DQUlRQUNvZENodHljRjlvT21KTk5uWnZiVmM0TUU1S1RuUkNkbVIyUmpOQ2QwRRAB",
-      "relativePublishTimeDescription": "пре 8 месеци",
-      "rating": 5,
-      "text": {
-        "text": "Веома пријатна, пријатељска и висококвалитетна ординација за физиотерапију. Све тегобе су успешно лечене и дају добре препоруке.",
-        "languageCode": "sr"
-      },
-      "originalText": {
-        "text": "A very pleasant, friendly, and high-quality physiotherapy medical office. All complaints were treated successfully, and they give good recommendations.",
-        "languageCode": "en"
-      },
-      "authorAttribution": {
-        "displayName": "Jana Krolivets",
-        "uri": "https://www.google.com/maps/contrib/116413148137482798614/reviews",
-        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWldM4VvM8eL9TdyY-gJeY4GScWUWwHbDkNZIAe_lviDqWNPOwE=s128-c0x00000000-cc-rp-mo"
-      },
-      "publishTime": "2025-06-25T17:16:40.126856290Z",
-      "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21KTk5uWnZiVmM0TUU1S1RuUkNkbVIyUmpOQ2QwRRAB&d=17924085&t=1",
-      "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21KTk5uWnZiVmM0TUU1S1RuUkNkbVIyUmpOQ2QwRRAB!2m1!1s0x134deb207f92387d:0x3a4eb8641177a37c"
-    }
-  ],
-  "_searchType": "hospital"
+	"id": "ChIJfTiSfyDrTRMRfKN3EWS4Tjo",
+	"types": [
+		"hospital",
+		"health",
+		"service",
+		"point_of_interest",
+		"establishment"
+	],
+	"internationalPhoneNumber": "+382 67 834 191",
+	"formattedAddress": "L3 9, Подгорица 81000, Црна Гора",
+	"location": {
+		"latitude": 42.4406567,
+		"longitude": 19.233795800000003
+	},
+	"rating": 4.6,
+	"googleMapsUri": "https://maps.google.com/?cid=4201498242312545148&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA",
+	"websiteUri": "http://www.drnenezic.me/",
+	"userRatingCount": 37,
+	"displayName": {
+		"text": "Dr NENEZIC",
+		"languageCode": "sr"
+	},
+	"reviews": [
+		{
+			"name": "reviews/Ci9DQUlRQUNvZENodHljRjlvT2pNNFpVSmtTMHN3T0Y5R2RuRTFYMkZUVlU0MVRsRRAB",
+			"relativePublishTimeDescription": "2 недели назад",
+			"rating": 1,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Miljan Petrovic",
+				"uri": "https://www.google.com/maps/contrib/112773133013998064275/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJ1qHxUl-BvY6BpF9wSoPPzxqQBWWSH_8HPSjCY2fPzuVfLDg=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "Ci9DQUlRQUNvZENodHljRjlvT2pNNFpVSmtTMHN3T0Y5R2RuRTFYMkZUVlU0MVRsRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/Ci9DQUlRQUNvZENodHljRjlvT21WNlJuQnRNMjlJYUdWd1NTMUtSR3N4T1hWZlYzYxAB",
+			"relativePublishTimeDescription": "5 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "Definitivno najbolji!! Ekipa je odlicna veoma su ljubazni i brizni!! Svaka pohvala,steta sto nema 10 zvezdica da se stavi 😄 …",
+				"languageCode": "bs"
+			},
+			"originalText": {
+				"text": "Definitivno najbolji!! Ekipa je odlicna veoma su ljubazni i brizni!! Svaka pohvala,steta sto nema 10 zvezdica da se stavi 😄 …",
+				"languageCode": "bs"
+			},
+			"authorAttribution": {
+				"displayName": "Ivan Cetkovic",
+				"uri": "https://www.google.com/maps/contrib/103121449536780106462/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocI3vtMpJa3lyQHUTfKKAqbE7sm9INv4AzZUbmSi_fJ3Ftn8FA=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "Ci9DQUlRQUNvZENodHljRjlvT21WNlJuQnRNMjlJYUdWd1NTMUtSR3N4T1hWZlYzYxAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/Ci9DQUlRQUNvZENodHljRjlvT2psWVJXeHhUMWRJZVVOSk9WcE1abGxoUkdobkxWRRAB",
+			"relativePublishTimeDescription": "5 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "S B",
+				"uri": "https://www.google.com/maps/contrib/109046659203055689870/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocL8FUny44DselVmDcwBp8lhjwpPbbf6K1el12Y3ro9j6lmjVw=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "Ci9DQUlRQUNvZENodHljRjlvT2psWVJXeHhUMWRJZVVOSk9WcE1abGxoUkdobkxWRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/Ci9DQUlRQUNvZENodHljRjlvT2sxWVJIRnVibkpaVTNSUk1tRlRZVTFzUmpka1FuYxAB",
+			"relativePublishTimeDescription": "6 месяцев назад",
+			"rating": 1,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Božica Delić",
+				"uri": "https://www.google.com/maps/contrib/111558987677839799267/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKefXYnccF6M0Xgyl1BJwHbAlnkXeXyzb76Hs6qqfwmN0KRzA=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "Ci9DQUlRQUNvZENodHljRjlvT2sxWVJIRnVibkpaVTNSUk1tRlRZVTFzUmpka1FuYxAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/Ci9DQUlRQUNvZENodHljRjlvT2xOMVFqQkhja3RtYlhwSlMxbFlNbXhzWm14dFNXYxAB",
+			"relativePublishTimeDescription": "8 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "Great team, makes wonders. Experts in their field. They put me back on feet in no time...",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "Great team, makes wonders. Experts in their field. They put me back on feet in no time...",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "Marcel Djurickovic",
+				"uri": "https://www.google.com/maps/contrib/104040035668204929975/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLK14SWSgK5yKIum8dDWredIm7QbpNkyz6jTmZ8xcTuk42oCQ=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "Ci9DQUlRQUNvZENodHljRjlvT2xOMVFqQkhja3RtYlhwSlMxbFlNbXhzWm14dFNXYxAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/Ci9DQUlRQUNvZENodHljRjlvT2pSblUwVjJVMVJKVWpReGRtUnhUR2cwYjBRelRFRRAB",
+			"relativePublishTimeDescription": "8 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "darko bubanja",
+				"uri": "https://www.google.com/maps/contrib/112426780181506675268/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIlS4OlfF7W2y8fKtyMUCKbiCSVbSQRL3cVOFE5t3T3TfuMJw=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "Ci9DQUlRQUNvZENodHljRjlvT2pSblUwVjJVMVJKVWpReGRtUnhUR2cwYjBRelRFRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/Ci9DQUlRQUNvZENodHljRjlvT25OU1RHeHRaVUpIU0cxV1lURlNNMWRIUzA5dU5VRRAB",
+			"relativePublishTimeDescription": "8 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Natasa Raznatovic",
+				"uri": "https://www.google.com/maps/contrib/110006498989678913292/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLGCnn6NmDaX8GB0m1yR0aMJ-bo0OG1dEtrno5DXZAQdcrqYQ=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "Ci9DQUlRQUNvZENodHljRjlvT25OU1RHeHRaVUpIU0cxV1lURlNNMWRIUzA5dU5VRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/Ci9DQUlRQUNvZENodHljRjlvT21kQkxVZHpWVFJzVERnMVQydG5OMFY1TkhSUWQwRRAB",
+			"relativePublishTimeDescription": "8 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "Hvala puno ekipo, profesionalce i vrlo su ljubazne i pazljive.\nUklonili smo bolove nakon opterećenja leđa i opustili smo napetost u mišićima.",
+				"languageCode": "hr"
+			},
+			"originalText": {
+				"text": "Hvala puno ekipo, profesionalce i vrlo su ljubazne i pazljive.\nUklonili smo bolove nakon opterećenja leđa i opustili smo napetost u mišićima.",
+				"languageCode": "hr"
+			},
+			"authorAttribution": {
+				"displayName": "ZetaFish ASK DOO",
+				"uri": "https://www.google.com/maps/contrib/112494622819879319681/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWukUobDVSrIxY3uPwMLGtdWX5qAD81PSd94SXWwop9BUnurIi_=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "Ci9DQUlRQUNvZENodHljRjlvT21kQkxVZHpWVFJzVERnMVQydG5OMFY1TkhSUWQwRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/Ci9DQUlRQUNvZENodHljRjlvT21KTk5uWnZiVmM0TUU1S1RuUkNkbVIyUmpOQ2QwRRAB",
+			"relativePublishTimeDescription": "8 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "A very pleasant, friendly, and high-quality physiotherapy medical office. All complaints were treated successfully, and they give good recommendations.",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "A very pleasant, friendly, and high-quality physiotherapy medical office. All complaints were treated successfully, and they give good recommendations.",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "Jana Krolivets",
+				"uri": "https://www.google.com/maps/contrib/116413148137482798614/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWldM4VvM8eL9TdyY-gJeY4GScWUWwHbDkNZIAe_lviDqWNPOwE=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "Ci9DQUlRQUNvZENodHljRjlvT21KTk5uWnZiVmM0TUU1S1RuUkNkbVIyUmpOQ2QwRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnTUNZeUxqbWhnRRAB",
+			"relativePublishTimeDescription": "10 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Sofija Magovcevic",
+				"uri": "https://www.google.com/maps/contrib/117536701816435236819/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIRsNZEoYBedVlAf1Wd1tIIl7a7i1cZSsPzmyIU2NLzPmHRWQ=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnTUNZeUxqbWhnRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnTUNZaUo2ZUJREAE",
+			"relativePublishTimeDescription": "10 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Drago Dragovic",
+				"uri": "https://www.google.com/maps/contrib/108382225861608327701/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJhocw_8hzb30w9g3jObDdcyoR-N88srj-7ayUveB1jhhANMw=w36-h36-p-rp-mo-ba2-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnTUNZaUo2ZUJREAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnTUNvOExiNkVnEAE",
+			"relativePublishTimeDescription": "11 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Danilo Svitlica",
+				"uri": "https://www.google.com/maps/contrib/105493494130870600095/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKeUI6r5zwDcctJPnvKXJ3Ty7iO77y2XNsZmRjT51-HDbH8ug=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnTUNvOExiNkVnEAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnTUNvOE16YWpBRRAB",
+			"relativePublishTimeDescription": "11 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "Profesionalno i ljubazno osoblje",
+				"languageCode": "hr"
+			},
+			"originalText": {
+				"text": "Profesionalno i ljubazno osoblje",
+				"languageCode": "hr"
+			},
+			"authorAttribution": {
+				"displayName": "Milos Todorović",
+				"uri": "https://www.google.com/maps/contrib/118410284889406736998/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUNcC3g0NZpzx5w6VjSBMcDRODy3vrKgtfN9Yss3QeK4sIZ6KHN=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnTUNvOE16YWpBRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnTURJbVlMalR3EAE",
+			"relativePublishTimeDescription": "11 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "Profesionalni i ljubazni!Sve pohvale!!🙂 …",
+				"languageCode": "hr"
+			},
+			"originalText": {
+				"text": "Profesionalni i ljubazni!Sve pohvale!!🙂 …",
+				"languageCode": "hr"
+			},
+			"authorAttribution": {
+				"displayName": "Nikoleta Pejovic",
+				"uri": "https://www.google.com/maps/contrib/102716253074173849024/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWMneZBFBHqOuBfqb_3bF3x2HyxrOTT_O5Hvrk9PqczOq_dRmM=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnTURJbVlMalR3EAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnTURJdktlN2pnRRAB",
+			"relativePublishTimeDescription": "11 месяцев назад",
+			"rating": 1,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Mladen Milicic",
+				"uri": "https://www.google.com/maps/contrib/116939577505417993869/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKpLmJwzRr83o4tpBjrhTAlFrzknK_cwd_byCkG0ysLGNPZ4w=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnTURJdktlN2pnRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnTURRbS03Ti1BRRAB",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "Odlična zdravstvena ustanova, sa ljubaznim i kompetentnim osobljem. Imaju veoma lep i ljubazan odnos prema pacijentima. Sve pohvale za dr. Nenezića i njegov tim.",
+				"languageCode": "bs"
+			},
+			"originalText": {
+				"text": "Odlična zdravstvena ustanova, sa ljubaznim i kompetentnim osobljem. Imaju veoma lep i ljubazan odnos prema pacijentima. Sve pohvale za dr. Nenezića i njegov tim.",
+				"languageCode": "bs"
+			},
+			"authorAttribution": {
+				"displayName": "Bojan Tošić",
+				"uri": "https://www.google.com/maps/contrib/107873951775783332055/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUTGW1epx7byP0r5IIm0hg25BWIhn1h3NqJ5Tb0TMj0-CF16lQ5=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnTURRbS03Ti1BRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSURfX2JMcE1nEAE",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 1,
+			"text": {
+				"text": "Хамство на ресепшене на уточняющий вопрос за что именно я должен заплатить. Я не отказывался от оплаты, просто хотел уточнить название процедур. Прошел у них курс. Естествнено мне это не помогло, т.к. доктор даже не стал разбираться в моей проблеме. Он сразу мне назначил все процедуры, которые у них есть. На иглоукалывании он забывал что у меня болит шея и просто по привычке вставлял иголки в спину, видимо в те места, с которыми часто обращаются пациенты. Проходилось напоминать. Вишенка на торте - это подвывих атланта. Я пришел с просьбой его проверить. Его естественно не было, но доктор этого не сказал. Ну как же, почему бы не заработать. В итоге 150 евро за 4 минуты, в течении которых было сделана видимость работы.",
+				"languageCode": "ru"
+			},
+			"originalText": {
+				"text": "Хамство на ресепшене на уточняющий вопрос за что именно я должен заплатить. Я не отказывался от оплаты, просто хотел уточнить название процедур. Прошел у них курс. Естествнено мне это не помогло, т.к. доктор даже не стал разбираться в моей проблеме. Он сразу мне назначил все процедуры, которые у них есть. На иглоукалывании он забывал что у меня болит шея и просто по привычке вставлял иголки в спину, видимо в те места, с которыми часто обращаются пациенты. Проходилось напоминать. Вишенка на торте - это подвывих атланта. Я пришел с просьбой его проверить. Его естественно не было, но доктор этого не сказал. Ну как же, почему бы не заработать. В итоге 150 евро за 4 минуты, в течении которых было сделана видимость работы.",
+				"languageCode": "ru"
+			},
+			"authorAttribution": {
+				"displayName": "Clark Orro",
+				"uri": "https://www.google.com/maps/contrib/101942057080417773576/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWN_dcUrFzX6_Fu__xrs55rvRvkxV99MngzFIsmS8UJ5h-gNqx3=w36-h36-p-rp-mo-ba2-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSURfX2JMcE1nEAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false,
+			"_likesCount": 1
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSURQcTk3c3FnRRAB",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "Very good service. The doctor quickly identified my problem and completed a therapy with modern machines. Special thanks to Ania and Sasha, very kind and good professionals.\n\nMuchas gracias🦙.",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "Very good service. The doctor quickly identified my problem and completed a therapy with modern machines. Special thanks to Ania and Sasha, very kind and good professionals.\n\nMuchas gracias🦙.",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "Giancarlo Centeno",
+				"uri": "https://www.google.com/maps/contrib/100123996189474038203/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX7GKwPbPtMxkdxLkhU_A_PHKOpxy5D_EBa256l6EIgQMONFhnc=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSURQcTk3c3FnRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSUNqbmJ1NXNBRRAB",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "👍🏼👍🏼👍🏼 …",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "👍🏼👍🏼👍🏼 …",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "Milos Vukcevic",
+				"uri": "https://www.google.com/maps/contrib/115546561442990526728/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWy0pmmsCjrwR65EFmzyayzCTe7UcrBfDnR6tZozFC9WxpJS1s1=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSUNqbmJ1NXNBRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSUNqNHZTeGJ3EAE",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "Very good clinic, you are the best !!!\nThank you for all .",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "Very good clinic, you are the best !!!\nThank you for all .",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "Bakulo Dmytro",
+				"uri": "https://www.google.com/maps/contrib/109928012687994042310/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKlEH3XVII5bwEY_E_nFZGEp-lgOZzmS7CQl1xEGPCIOmYnZ-8=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSUNqNHZTeGJ3EAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSUNqakx1dzZnRRAB",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "Fabulous place ,I arrived with herniated discs and in a lot of pain ,Dr Nenezic was extremely understanding and very professional, staff were very attentive and looked after me fabulously, I arrived from ireland in pain and believe I was very lucky to find ,definetly recommend!!",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "Fabulous place ,I arrived with herniated discs and in a lot of pain ,Dr Nenezic was extremely understanding and very professional, staff were very attentive and looked after me fabulously, I arrived from ireland in pain and believe I was very lucky to find ,definetly recommend!!",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "John Mullen",
+				"uri": "https://www.google.com/maps/contrib/107823211924478598015/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKaI7xxHOSwIy4RUyLkpa3W0qTsT_Uv_lbnyNamkPjvQ9VMqw=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSUNqakx1dzZnRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSUREMWNqSlJ3EAE",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Nebojsa Nikolic",
+				"uri": "https://www.google.com/maps/contrib/108853125751389297840/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVQs1NjN1zVvr842-M89XLxaB-Xk3mf1k4T9h2QxJDXArmVKIIyUA=w36-h36-p-rp-mo-ba2-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSUREMWNqSlJ3EAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSUREMWJEUVdREAE",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Mar Sab",
+				"uri": "https://www.google.com/maps/contrib/111649964792420985123/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocItQkrWOpFqnfd7vSnmHSBYsceUmpKNmxmmCO5pnFFAS8jjAQ=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSUREMWJEUVdREAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSURENmRhRUlREAE",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "The team overall in polyclinic Nenezic they are very professional and well trained they know the job well and they do their best to help the clients to feel better they are friendly and passionate.\nThe clinic was always clean,timing of appointments was always well organized from their side...",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "The team overall in polyclinic Nenezic they are very professional and well trained they know the job well and they do their best to help the clients to feel better they are friendly and passionate.\nThe clinic was always clean,timing of appointments was always well organized from their side...",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "Artan Trcetic",
+				"uri": "https://www.google.com/maps/contrib/100102191644420791283/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVH1RHX_QSF_8qzbovQ-VJPHAjDF28Qd-PTb1n6Rfbv78tN-g=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSURENmRhRUlREAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSUREeVlENUJ3EAE",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "Profesionalnost na nivou!! Od doktora do osoblja, sve perfektno!!",
+				"languageCode": "bs"
+			},
+			"originalText": {
+				"text": "Profesionalnost na nivou!! Od doktora do osoblja, sve perfektno!!",
+				"languageCode": "bs"
+			},
+			"authorAttribution": {
+				"displayName": "Marko Savovic",
+				"uri": "https://www.google.com/maps/contrib/105069189976818848953/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJqyW9KCLCSNsdVQocWzlxu1-LcHIrVIu8yLbXFyxXKv1OiHg=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSUREeVlENUJ3EAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSURENFktLUtnEAE",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "Odlican strucnjak i cijela ekipa je sjajna! Svaki problem mogu da rijese♥️",
+				"languageCode": "bs"
+			},
+			"originalText": {
+				"text": "Odlican strucnjak i cijela ekipa je sjajna! Svaki problem mogu da rijese♥️",
+				"languageCode": "bs"
+			},
+			"authorAttribution": {
+				"displayName": "Masa Kljajevic",
+				"uri": "https://www.google.com/maps/contrib/104041454084731874019/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocK0TNS_i1Vgs2HVVq0DnA2azcLEQ77rgSO-qw5ONEmU4lU4QOw=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSURENFktLUtnEAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSURENFplTDZ3RRAB",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Danilo Janjusevic",
+				"uri": "https://www.google.com/maps/contrib/105040936224059386633/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLH7ipuGvn1TNNmihsSevV64zeN_WkbmGmeXqVtQMZbuASwVg=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSURENFplTDZ3RRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSURENGVDQmRREAE",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "Osim vrhunske stručnosti, prijatna atmosfera i osoblje uvijek spremno da ohrabri pacijenta, posavjetuje, pouči ali i da se našali, sigurno je ono što me vezalo za ordinaciju Dr Nenezić. Izvanredni rezultati koje postižu kad su moje povrede u pitanju čine da ih sa zadovoljstvom preporučujem svima. A iako posjeduju najmodernije aparate i taj novi \"čarobni magnet\", meni i dalje ostaje posebno drago bockanje (akupunktura) koje doktor kombinuje sa ostalim tehnikama.\nDraga ekipo ordinacije Dr Nenezić, hvala vam za sve moje prošle i buduće \"brzinske\" oporavke!",
+				"languageCode": "bs"
+			},
+			"originalText": {
+				"text": "Osim vrhunske stručnosti, prijatna atmosfera i osoblje uvijek spremno da ohrabri pacijenta, posavjetuje, pouči ali i da se našali, sigurno je ono što me vezalo za ordinaciju Dr Nenezić. Izvanredni rezultati koje postižu kad su moje povrede u pitanju čine da ih sa zadovoljstvom preporučujem svima. A iako posjeduju najmodernije aparate i taj novi \"čarobni magnet\", meni i dalje ostaje posebno drago bockanje (akupunktura) koje doktor kombinuje sa ostalim tehnikama.\nDraga ekipo ordinacije Dr Nenezić, hvala vam za sve moje prošle i buduće \"brzinske\" oporavke!",
+				"languageCode": "bs"
+			},
+			"authorAttribution": {
+				"displayName": "Marija Jevric",
+				"uri": "https://www.google.com/maps/contrib/105059992537643556324/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjU0OChMCJkFyyM4h4yjUlfBe7pfDLTrbS4i5g_oaybMcc0vEZPFSg=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSURENGVDQmRREAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSURENFpEY29nRRAB",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "Vrhunski i najbolji!!!!\n😍 …",
+				"languageCode": "hr"
+			},
+			"originalText": {
+				"text": "Vrhunski i najbolji!!!!\n😍 …",
+				"languageCode": "hr"
+			},
+			"authorAttribution": {
+				"displayName": "Dubravka Pešić",
+				"uri": "https://www.google.com/maps/contrib/108715680861716030616/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKrrNty_VcofdTo8uihwu_iM--Csb2Sng0cF9gS46phbbUsiA=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSURENFpEY29nRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSURENFpDNXRnRRAB",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "Divan prijatelj i jos bolji stručnjak!",
+				"languageCode": "hr"
+			},
+			"originalText": {
+				"text": "Divan prijatelj i jos bolji stručnjak!",
+				"languageCode": "hr"
+			},
+			"authorAttribution": {
+				"displayName": "Marjana Bošković",
+				"uri": "https://www.google.com/maps/contrib/114866982606653387124/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLTYrPcE-4V99jsGfhBw6l05FgLRh06WDi19yWfLncvXl6oqg=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSURENFpDNXRnRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSUREb1ktN0JnEAE",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Zoran Dragas",
+				"uri": "https://www.google.com/maps/contrib/111823237010310574996/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLlqWB1dK2MljknUk16FkgDvrQPVQ82kt49uOPINxPM_8UTrg=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSUREb1ktN0JnEAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSUREb2VlMGVnEAE",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Milo Raznatovic",
+				"uri": "https://www.google.com/maps/contrib/107747014840151656423/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJdzcJ9r2Si-ehbm9UeQmTqVy2_3Q8Z-x9VS8X7mbyJ0w3ETw=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSUREb2VlMGVnEAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSURPcnNXOW1RRRAB",
+			"relativePublishTimeDescription": "3 года назад",
+			"rating": 5,
+			"text": {
+				"text": "Vec 7 godina idem kod istog doktora (Nenezica), a o iskustvu sa njim govore pored mene hiljade zadovoljnih pacijenata. Kad drugi doktori nisu mogli.da rijese moje problem dr.Nenezic ih je rijesio i ucinio zivot normalnim. Veliko postovanje …",
+				"languageCode": "bs"
+			},
+			"originalText": {
+				"text": "Vec 7 godina idem kod istog doktora (Nenezica), a o iskustvu sa njim govore pored mene hiljade zadovoljnih pacijenata. Kad drugi doktori nisu mogli.da rijese moje problem dr.Nenezic ih je rijesio i ucinio zivot normalnim. Veliko postovanje …",
+				"languageCode": "bs"
+			},
+			"authorAttribution": {
+				"displayName": "Ivan Veljovic",
+				"uri": "https://www.google.com/maps/contrib/114899728269756436586/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKpqX03cEzQLTPBRjMAq7sFUqwudb5VerIZgz0ZGEwP_cqOLw=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSURPcnNXOW1RRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true,
+			"_likesCount": 2
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSUQyZ29TUlVnEAE",
+			"relativePublishTimeDescription": "3 года назад",
+			"rating": 5,
+			"text": {
+				"text": "The best physiatrist.",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "The best physiatrist.",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "Ananije Nenezic",
+				"uri": "https://www.google.com/maps/contrib/104487316775854409846/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXATT5ZhSfDqRV7BkQKZhXFGM2sOat8y1QGchfYmgCPlmPbi0eD=w36-h36-p-rp-mo-ba4-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"photos": [
+				{
+					"uri": "images/ChZDSUhNMG9nS0VJQ0Fn_0.jpg",
+					"originalUri": "https://lh3.googleusercontent.com/geougc-cs/ABOP9ptQ3LQHWCIIjJqmtXdiB-PuAE4msENsa1BBoYkk4CwhSe85PtmZyrbClupvtTuVxdUfApUHE8aSctUC9hilS9VngaGGWn9dCerzQmkC9R_2yXIdxWuEB6MgrwAegFG6R9N48DO9=w1600-h1200"
+				}
+			],
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSUQyZ29TUlVnEAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": true,
+			"_likesCount": 4
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSURHcGVfald3EAE",
+			"relativePublishTimeDescription": "4 года назад",
+			"rating": 5,
+			"text": {
+				"text": "Brzo, srdačno i profesionalno: godinama dolazim na terapije i dr. Nenezića samo mogu najtoplije preporučiti!",
+				"languageCode": "bs"
+			},
+			"originalText": {
+				"text": "Brzo, srdačno i profesionalno: godinama dolazim na terapije i dr. Nenezića samo mogu najtoplije preporučiti!",
+				"languageCode": "bs"
+			},
+			"authorAttribution": {
+				"displayName": "Vladimir Vlahovic",
+				"uri": "https://www.google.com/maps/contrib/100265130505750168346/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVusvMvfYOhBSmPOFI8rE4RLMo0_MV9dYuA2WH-84uvKNfCq-FJ=w36-h36-p-rp-mo-ba3-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSURHcGVfald3EAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": true,
+			"_likesCount": 2
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSURJdk9MaXhBRRAB",
+			"relativePublishTimeDescription": "7 лет назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Andrea Vulevic",
+				"uri": "https://www.google.com/maps/contrib/117239826012099775178/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUa7BlPfJAQMkdTpSsEbBHIn_lyyVpSzXjtkINbDTGh4iAhg1nj=w36-h36-p-rp-mo-ba3-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSURJdk9MaXhBRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSUNRbHE3N2J3EAE",
+			"relativePublishTimeDescription": "8 лет назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Mersiha Fetahovic",
+				"uri": "https://www.google.com/maps/contrib/111047558465871522888/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJZLdnAayEIHlclOMEoH5nbo9uRuttLwQ2OKduMrgIYNSKtdg=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSUNRbHE3N2J3EAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		}
+	],
+	"collectedAt": "2026-03-25T11:00:06.603Z",
+	"_searchType": "hospital"
 }

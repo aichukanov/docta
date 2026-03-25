@@ -1,0 +1,29 @@
+{
+  "jsonPath": "data/google-places/budva/humana-reprodukcija-privatna-ambulanta.json",
+  "outputPath": "server/sql/reviews-google/humana-reprodukcija-budva.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 36,
+  "clinicName": "Humana reprodukcija (Budva)",
+  "translationsDir": "data/review-translations/humana-reprodukcija-budva/",
+  "doctors": [
+    {
+      "id": 484,
+      "varName": "marija_petricevic",
+      "patterns": [
+        "[Mm]arij[aieu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "[Pp]etri[čc]evi[ćc](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Мари[яиейю](?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Петрович(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 483,
+      "varName": "tatjana_motrenko",
+      "patterns": [
+        "[Mm]otrenko(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "[Mm]ontrenko(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Мотренко(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

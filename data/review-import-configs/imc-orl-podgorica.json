@@ -1,0 +1,18 @@
+{
+  "jsonPath": "data/google-places/podgorica/orl-ambulanta-international-medical-center.json",
+  "outputPath": "server/sql/reviews-google/imc-orl-podgorica.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 78,
+  "clinicName": "IMC (International Medical Center) — ORL ambulanta (Podgorica)",
+  "translationsDir": "data/review-translations/imc-orl-podgorica/",
+  "doctors": [
+    {
+      "id": 675,
+      "varName": "vladan_knezevic",
+      "patterns": [
+        "Kne[zž]evi[cć][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Vladan[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

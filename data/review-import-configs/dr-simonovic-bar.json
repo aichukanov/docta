@@ -1,0 +1,18 @@
+{
+  "jsonPath": "data/google-places/bar/stomatoloska-ordinacija-dr-simonovic.json",
+  "outputPath": "server/sql/reviews-google/dr-simonovic-bar.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 61,
+  "clinicName": "Dr Simonović — Stomatološka Ordinacija (Bar)",
+  "translationsDir": "data/review-translations/dr-simonovic-bar/",
+  "doctors": [
+    {
+      "id": 690,
+      "varName": "milos_simonovic",
+      "patterns": [
+        "Milo[sš][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Мило[шс][ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

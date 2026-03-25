@@ -1,131 +1,894 @@
 {
-  "id": "ChIJR176vpfUTRMRr-6LbUyUW7Q",
-  "types": [
-    "doctor",
-    "health",
-    "point_of_interest",
-    "establishment"
-  ],
-  "internationalPhoneNumber": "+382 33 402 432",
-  "formattedAddress": "bb XVI Ulica, Budva 85310, Црна Гора",
-  "location": {
-    "latitude": 42.29279390000001,
-    "longitude": 18.8406344
-  },
-  "rating": 4.2,
-  "googleMapsUri": "https://maps.google.com/?cid=12996144205684010671&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA",
-  "websiteUri": "https://humanreproduction.com/",
-  "userRatingCount": 35,
-  "displayName": {
-    "text": "Humana Reprodukcija, privatna ambulanta",
-    "languageCode": "sr"
-  },
-  "reviews": [
-    {
-      "name": "places/ChIJR176vpfUTRMRr-6LbUyUW7Q/reviews/ChdDSUhNMG9nS0VJQ0FnSURiODhQZDVBRRAB",
-      "relativePublishTimeDescription": "пре годину дана",
-      "rating": 5,
-      "text": {
-        "text": "Топло препоручујем ову ординацију; рецепционарка је била веома љубазна, а и доктор је био веома фин. Била сам тамо на рутинском прегледу током трудноће. Мислим да је 70 евра више него разумно за преглед ултразвуком.",
-        "languageCode": "sr"
-      },
-      "originalText": {
-        "text": "Ich kann die Praxis nur empfehlen, sehr nette Dame am Empfang und die Ärztin war auch sehr nett. Ich war zu Routine Kontrolle in der Schwangerschaft hier. 70€ finde ich mehr als angemessen für eine Kontrolluntersuchung mit Ultraschall.",
-        "languageCode": "de"
-      },
-      "authorAttribution": {
-        "displayName": "Nelli Sommer",
-        "uri": "https://www.google.com/maps/contrib/114496439938143432351/reviews",
-        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIuni0Sc9llBlExSeO6LpjEE47r6unS8urZ2zyIjnSIkyzIBw=s128-c0x00000000-cc-rp-mo-ba2"
-      },
-      "publishTime": "2024-08-09T09:49:16.895091Z",
-      "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnSURiODhQZDVBRRAB&d=17924085&t=1",
-      "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURiODhQZDVBRRAB!2m1!1s0x134dd497befa5e47:0xb45b944c6d8beeaf"
-    },
-    {
-      "name": "places/ChIJR176vpfUTRMRr-6LbUyUW7Q/reviews/ChdDSUhNMG9nS0VJQ0FnSURQblBDYWtBRRAB",
-      "relativePublishTimeDescription": "пре годину дана",
-      "rating": 5,
-      "text": {
-        "text": "Дивна и удобна клиника. Рецепционарка је била веома љубазна и заиста љубазна. Велико хвала др Марији Петричевић на професионалном, безболном и удобном термину. Добио сам детаљан преглед и детаљне одговоре на сва моја питања. Цена консултација и процедура је више него разумна. Био сам заиста срећан што сам нашао тако професионално особље које говори енглески (па чак и руски). Хвала пуно!",
-        "languageCode": "sr"
-      },
-      "originalText": {
-        "text": "A wonderful and cozy clinic. The receptionist was very polite and really nice. Many thanks to Dr. Marija Petričević for a professional, painless, and comfortable appointment. I received a thorough examination and detailed answers to all my questions. The cost of the consultation and procedures is more than reasonable. I was really happy to find such a professional English (and even Russian) speaking staff. Hvala puno!",
-        "languageCode": "en"
-      },
-      "authorAttribution": {
-        "displayName": "Olga Meisner",
-        "uri": "https://www.google.com/maps/contrib/116917370298740313564/reviews",
-        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXyhLJ0-PCLd_S8FokQXm4_wmdcwvvUTov39vSxIEZwhaxNfrUS=s128-c0x00000000-cc-rp-mo-ba3"
-      },
-      "publishTime": "2024-11-30T00:08:27.940534Z",
-      "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnSURQblBDYWtBRRAB&d=17924085&t=1",
-      "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURQblBDYWtBRRAB!2m1!1s0x134dd497befa5e47:0xb45b944c6d8beeaf"
-    },
-    {
-      "name": "places/ChIJR176vpfUTRMRr-6LbUyUW7Q/reviews/ChdDSUhNMG9nS0VJQ0FnTUR3LTREd3pRRRAB",
-      "relativePublishTimeDescription": "пре 11 месеци",
-      "rating": 1,
-      "text": {
-        "text": "Долазите на време за свој термин и морате да чекате доктора 45 минута. Резултати анализе су дошли након 5 дана и нису садржали никакве податке, већ само општу реченицу која га чини бескорисним за дијагнозу. Услуга је ужасна, а квалификације доктора веома ниске.",
-        "languageCode": "sr"
-      },
-      "originalText": {
-        "text": "You come in time for your appointment and have to wait for the doctor for 45 minutes. The analyses results came after 5 days and contained no data at all, just a general sentence making it useless for the diagnosis. The service is awful, and the doctor qualifications very low.",
-        "languageCode": "en"
-      },
-      "authorAttribution": {
-        "displayName": "Luoyan",
-        "uri": "https://www.google.com/maps/contrib/117214584213419721466/reviews",
-        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUmlEZFz0Xgr7NugRG19lgQoIhHQRLbNQ64ep3M6T_YYyrZJ5gD=s128-c0x00000000-cc-rp-mo-ba3"
-      },
-      "publishTime": "2025-04-03T10:25:30.767115Z",
-      "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnTUR3LTREd3pRRRAB&d=17924085&t=1",
-      "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTUR3LTREd3pRRRAB!2m1!1s0x134dd497befa5e47:0xb45b944c6d8beeaf"
-    },
-    {
-      "name": "places/ChIJR176vpfUTRMRr-6LbUyUW7Q/reviews/ChdDSUhNMG9nS0VJQ0FnSURsZ2YyZzl3RRAB",
-      "relativePublishTimeDescription": "пре 2 године",
-      "rating": 5,
-      "text": {
-        "text": "Овде сам радио ЦТГ за труднице, све ми се допало. Особље је пажљиво и љубазно. Клиника је чиста и уредна.",
-        "languageCode": "sr"
-      },
-      "originalText": {
-        "text": "Делала здесь КТГ для беременных, всё понравилось. Внимательный и приветливый персонал. В клинике чисто и аккуратно.",
-        "languageCode": "ru"
-      },
-      "authorAttribution": {
-        "displayName": "Mira S.",
-        "uri": "https://www.google.com/maps/contrib/103744366385127970580/reviews",
-        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX99bpo5u6oqEKJzURBtv09yDlBV4HVF45reCKpIxh5sW653o7n=s128-c0x00000000-cc-rp-mo-ba2"
-      },
-      "publishTime": "2023-12-02T07:20:47.166067Z",
-      "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnSURsZ2YyZzl3RRAB&d=17924085&t=1",
-      "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURsZ2YyZzl3RRAB!2m1!1s0x134dd497befa5e47:0xb45b944c6d8beeaf"
-    },
-    {
-      "name": "places/ChIJR176vpfUTRMRr-6LbUyUW7Q/reviews/ChZDSUhNMG9nS0VJQ0FnSUNaMV9QcEh3EAE",
-      "relativePublishTimeDescription": "пре 2 године",
-      "rating": 5,
-      "text": {
-        "text": "Морам да напишем рецензију на основу лоших критика. Драге жене, др Монтренко и њене сестре нису обавезне да вас мазе по коси и лажу да ће све бити у реду.\nДокторка је темељна и дуги низ година ради свој посао како треба, јер успех говори сам за себе!\nШто се тиче плаћања, имате избор и он је велики.\nЗа свој новац можете бирати где ћете ићи! Лоше критике нису оправдане, ту си да се бориш као све друге жене и да покажеш поштовање, нико није плаћен да те третира као да си у хотелу!!!",
-        "languageCode": "sr"
-      },
-      "originalText": {
-        "text": "Moram da napisem kritiku na osnovu loših recenzija. Drage žene, doktorica Montrenko i sestre nisu dužne da vas maze po kosi i govore laži kako će sve biti u redu.\nDoktorica je detaljna i radi svoj posao dugo godina onako kako treba , jer uspijeh govori sam za sebe!\nŠto se tiče plaćanja imate izbor i veliki je.\nZa svoj novac mozete da birate dje cete ici! Loše kritike nisu opravdane, tu ste da se borite kao sve ostale žene i da pokažete poštovanje, niko nije plaćen da vas tretira kao da ste u hotel!!!",
-        "languageCode": "bs"
-      },
-      "authorAttribution": {
-        "displayName": "Ema Petrović Business",
-        "uri": "https://www.google.com/maps/contrib/105294101912983668644/reviews",
-        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLoKd3vTyOR3caX1VE-AAGsF_MPBJVsdfiCVzuI_UA0GZr1bg=s128-c0x00000000-cc-rp-mo-ba3"
-      },
-      "publishTime": "2023-09-20T08:10:34.150057Z",
-      "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSUNaMV9QcEh3EAE&d=17924085&t=1",
-      "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNaMV9QcEh3EAE!2m1!1s0x134dd497befa5e47:0xb45b944c6d8beeaf"
-    }
-  ],
-  "_searchType": "doctor"
+	"id": "ChIJR176vpfUTRMRr-6LbUyUW7Q",
+	"types": ["doctor", "health", "point_of_interest", "establishment"],
+	"internationalPhoneNumber": "+382 33 402 432",
+	"formattedAddress": "bb XVI Ulica, Budva 85310, Црна Гора",
+	"location": {
+		"latitude": 42.29279390000001,
+		"longitude": 18.8406344
+	},
+	"rating": 4.2,
+	"googleMapsUri": "https://maps.google.com/?cid=12996144205684010671&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA",
+	"websiteUri": "https://humanreproduction.com/",
+	"userRatingCount": 35,
+	"displayName": {
+		"text": "Humana Reprodukcija, privatna ambulanta",
+		"languageCode": "sr"
+	},
+	"reviews": [
+		{
+			"name": "reviews/Ci9DQUlRQUNvZENodHljRjlvT210Wll6QnFOVTh4VWxsNlp6aFNNbUpKVDBoalozYxAB",
+			"relativePublishTimeDescription": "неделю назад",
+			"rating": 5,
+			"text": {
+				"text": "Добрый день! Хочу пополнить отзыв на гинеколога из Humana Reprodukcija. Dr Marija Petričević\n\nЯ обратилась к ней с острой проблемой. Очень переживала по поводу сможем мы с ней изъясниться. Потому что когда я нервничаю, у меня все языки из головы выветриваются.\nПоэтому подготовила текст заранее на сербском. Но он не понадобился от слова совсем. Доктор очень неплохо говорит на русском, как мне известно она также хорошо говорит на английском.\nДоктор очень приятная, дружелюбная, открытая. Мы полностью изъяснялись на русском языке, все было понятно.\nНа рессепшене нужно было, конечно, с девушками говорить уже на сербском, но такой уровень языка у меня есть в наличии, поэтому проблем не возникло. Хотя и там девушки очень приятные.\n\nОсмотр был очень деликатен, прям умничка. Взяли анализы.\nЧто ещё хочется отметить, гинеколог не назначает лишних процедур, она может предложить какие-то дополнительные процедуры, но честно говорит: \"это для вашей проблемы не трубуется, если хотите можем сделать.\"\n\nЧерез несколько дней после приема я получила сообщение на WhatsApp со сканами моих анализов и назначением от врача.\n\nСтоимость: 40 прием+13 евро за анализ, всего 66 вышло.\n\nНа рессепшене я попросила все документы на возмещение в страховой, все подготовили в лучшем виде.\n\nВ общем, от души рекомендую.",
+				"languageCode": "ru"
+			},
+			"originalText": {
+				"text": "Добрый день! Хочу пополнить отзыв на гинеколога из Humana Reprodukcija. Dr Marija Petričević\n\nЯ обратилась к ней с острой проблемой. Очень переживала по поводу сможем мы с ней изъясниться. Потому что когда я нервничаю, у меня все языки из головы выветриваются.\nПоэтому подготовила текст заранее на сербском. Но он не понадобился от слова совсем. Доктор очень неплохо говорит на русском, как мне известно она также хорошо говорит на английском.\nДоктор очень приятная, дружелюбная, открытая. Мы полностью изъяснялись на русском языке, все было понятно.\nНа рессепшене нужно было, конечно, с девушками говорить уже на сербском, но такой уровень языка у меня есть в наличии, поэтому проблем не возникло. Хотя и там девушки очень приятные.\n\nОсмотр был очень деликатен, прям умничка. Взяли анализы.\nЧто ещё хочется отметить, гинеколог не назначает лишних процедур, она может предложить какие-то дополнительные процедуры, но честно говорит: \"это для вашей проблемы не трубуется, если хотите можем сделать.\"\n\nЧерез несколько дней после приема я получила сообщение на WhatsApp со сканами моих анализов и назначением от врача.\n\nСтоимость: 40 прием+13 евро за анализ, всего 66 вышло.\n\nНа рессепшене я попросила все документы на возмещение в страховой, все подготовили в лучшем виде.\n\nВ общем, от души рекомендую.",
+				"languageCode": "ru"
+			},
+			"authorAttribution": {
+				"displayName": "Мария",
+				"uri": "https://www.google.com/maps/contrib/108723140458034204265/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJ3E6INv_s_gUdIB1V5dOrdL6hJmis4Pcg_wQDrrxWZH169SA=w36-h36-p-rp-mo-ba3-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "Ci9DQUlRQUNvZENodHljRjlvT210Wll6QnFOVTh4VWxsNlp6aFNNbUpKVDBoalozYxAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/Ci9DQUlRQUNvZENodHljRjlvT2xkbk1teGZTa2szZEVKSVVITXdkMkZ2ZWxBM1oyYxAB",
+			"relativePublishTimeDescription": "5 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Ljudmila Kamberovic",
+				"uri": "https://www.google.com/maps/contrib/106514718856931556719/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX-f6HUNu5TQB-pQhR3Q07fvR2vT6c-YsoXwAa983SRlzjJpqF1=w36-h36-p-rp-mo-ba2-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "Ci9DQUlRQUNvZENodHljRjlvT2xkbk1teGZTa2szZEVKSVVITXdkMkZ2ZWxBM1oyYxAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/Ci9DQUlRQUNvZENodHljRjlvT2pkdlZWZEVWRVYxVTBzd1ZrOWFhRUpFZGtsWFNIYxAB",
+			"relativePublishTimeDescription": "8 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Sead Otovic",
+				"uri": "https://www.google.com/maps/contrib/116980904106088251677/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKzTx6HA5fBqNli7sbmWN910uPPKLFzhoYApMGQtoZX_UctCA=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "Ci9DQUlRQUNvZENodHljRjlvT2pkdlZWZEVWRVYxVTBzd1ZrOWFhRUpFZGtsWFNIYxAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/Ci9DQUlRQUNvZENodHljRjlvT2pCS1ZrMUJaa2RUYXkxbGJFRlRZMnB5UzJSNFYxRRAB",
+			"relativePublishTimeDescription": "9 месяцев назад",
+			"rating": 1,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Eydis",
+				"uri": "https://www.google.com/maps/contrib/100514771485292661519/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjV_FMFGb0vwDemvPElpwCpn_rRH-ranQ-2__aqxB1wQhBRZKE0=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "Ci9DQUlRQUNvZENodHljRjlvT2pCS1ZrMUJaa2RUYXkxbGJFRlRZMnB5UzJSNFYxRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnTURvcWFMbEdREAE",
+			"relativePublishTimeDescription": "10 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "Stručni, posvećeni, detaljni!\nZbog ovog tima su nam srca puna 🥰!. …",
+				"languageCode": "hr"
+			},
+			"originalText": {
+				"text": "Stručni, posvećeni, detaljni!\nZbog ovog tima su nam srca puna 🥰!. …",
+				"languageCode": "hr"
+			},
+			"authorAttribution": {
+				"displayName": "Nadica Ristic Simovic",
+				"uri": "https://www.google.com/maps/contrib/115573984239407488998/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocK1EYQ0K1VpGvOoGrMNpvg-1fywbDLsAEcxGgGUYFOrQX8eLg=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnTURvcWFMbEdREAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnTURvNHRyYTlRRRAB",
+			"relativePublishTimeDescription": "11 месяцев назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Radmila STANISIC",
+				"uri": "https://www.google.com/maps/contrib/110963681765020022601/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJtgyKdsDDmX8FQDJci2FXkgznFohRYpnVq5zk8Fhp8Bj8jjw=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnTURvNHRyYTlRRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnTUR3LTREd3pRRRAB",
+			"relativePublishTimeDescription": "Изменено 11 месяцев назад",
+			"rating": 1,
+			"text": {
+				"text": "You come in time for your appointment and have to wait for the doctor for 45 minutes. The analyses results came after 5 days and contained no data at all, just a general sentence making it useless for the diagnosis. The service is awful, and the doctor qualifications very low.",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "You come in time for your appointment and have to wait for the doctor for 45 minutes. The analyses results came after 5 days and contained no data at all, just a general sentence making it useless for the diagnosis. The service is awful, and the doctor qualifications very low.",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "Luoyan",
+				"uri": "https://www.google.com/maps/contrib/117214584213419721466/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUmlEZFz0Xgr7NugRG19lgQoIhHQRLbNQ64ep3M6T_YYyrZJ5gD=w36-h36-p-rp-mo-ba3-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnTUR3LTREd3pRRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnTUNnMnVhRmJnEAE",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Tijana Čupić",
+				"uri": "https://www.google.com/maps/contrib/108844742592168859274/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWKZzOa7ME3pyKEHOzFjQnq1skDVpF473jXq0hMIoeE9ZxaSXmk=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnTUNnMnVhRmJnEAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSURQblBDYWtBRRAB",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "A wonderful and cozy clinic. The receptionist was very polite and really nice. Many thanks to Dr. Marija Petričević for a professional, painless, and comfortable appointment. I received a thorough examination and detailed answers to all my questions. The cost of the consultation and procedures is more than reasonable. I was really happy to find such a professional English (and even Russian) speaking staff. Hvala puno!",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "A wonderful and cozy clinic. The receptionist was very polite and really nice. Many thanks to Dr. Marija Petričević for a professional, painless, and comfortable appointment. I received a thorough examination and detailed answers to all my questions. The cost of the consultation and procedures is more than reasonable. I was really happy to find such a professional English (and even Russian) speaking staff. Hvala puno!",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "Olga Meisner",
+				"uri": "https://www.google.com/maps/contrib/116917370298740313564/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXyhLJ0-PCLd_S8FokQXm4_wmdcwvvUTov39vSxIEZwhaxNfrUS=w36-h36-p-rp-mo-ba3-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"ownerResponse": {
+				"relativePublishTimeDescription": "год назад",
+				"text": "Hvala na lijepim komentarima, svako dobro Vam želimo.",
+				"languageCode": "hr"
+			},
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSURQblBDYWtBRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSUNQa3NXbG9RRRAB",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "Мне очень понравилось. Грамотная врач Мария и говорит немного по-русски. Дешевле, чем у единоросов в Сутоморе, А3.",
+				"languageCode": "ru"
+			},
+			"originalText": {
+				"text": "Мне очень понравилось. Грамотная врач Мария и говорит немного по-русски. Дешевле, чем у единоросов в Сутоморе, А3.",
+				"languageCode": "ru"
+			},
+			"authorAttribution": {
+				"displayName": "Chupic",
+				"uri": "https://www.google.com/maps/contrib/112511200202453900019/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLADVk3ObefETRMWzLNWaSiC3E4OhXNRxAdL4pmPt4-TL6QTQ=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSUNQa3NXbG9RRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSURiODhQZDVBRRAB",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "Ich kann die Praxis nur empfehlen, sehr nette Dame am Empfang und die Ärztin war auch sehr nett. Ich war zu Routine Kontrolle in der Schwangerschaft hier. 70€ finde ich mehr als angemessen für eine Kontrolluntersuchung mit Ultraschall.",
+				"languageCode": "de"
+			},
+			"originalText": {
+				"text": "Ich kann die Praxis nur empfehlen, sehr nette Dame am Empfang und die Ärztin war auch sehr nett. Ich war zu Routine Kontrolle in der Schwangerschaft hier. 70€ finde ich mehr als angemessen für eine Kontrolluntersuchung mit Ultraschall.",
+				"languageCode": "de"
+			},
+			"authorAttribution": {
+				"displayName": "Nelli Sommer",
+				"uri": "https://www.google.com/maps/contrib/114496439938143432351/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIuni0Sc9llBlExSeO6LpjEE47r6unS8urZ2zyIjnSIkyzIBw=w36-h36-p-rp-mo-ba2-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"photos": [
+				{
+					"uri": "images/ChdDSUhNMG9nS0VJQ0Fn_0.jpg",
+					"originalUri": "https://lh3.googleusercontent.com/geougc-cs/ABOP9ptkWg_J0YXKS2_rGF2t6bBgmPDHhr1PtvMvQuzr4DnbOe9nxRtmVsUyBn_6Kr95sfMT991sBb1s75angD2D1gFHIIW9xC7o-N3s_B5wvB6G2fIL0EGFLEUjCcmb2LxGrcwfzima=w1600-h1200"
+				}
+			],
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSURiODhQZDVBRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true,
+			"_likesCount": 1
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSUR6OWU2aUh3EAE",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "Divni, ljubazni, profesionalni. Doktorica Marija veoma posvecena, spremna da sve objasni i obrazlozi. Najtoplije preporuke.",
+				"languageCode": "bs"
+			},
+			"originalText": {
+				"text": "Divni, ljubazni, profesionalni. Doktorica Marija veoma posvecena, spremna da sve objasni i obrazlozi. Najtoplije preporuke.",
+				"languageCode": "bs"
+			},
+			"authorAttribution": {
+				"displayName": "olja janjusevic",
+				"uri": "https://www.google.com/maps/contrib/108925711044281699099/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUQ6jHvw57OtIidl2Gi4pfu33yI_txlXnwYY87HAbziOwdzswpD=w36-h36-p-rp-mo-ba4-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSUR6OWU2aUh3EAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": true
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSUR6d0tQanZRRRAB",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "marinela pejovic",
+				"uri": "https://www.google.com/maps/contrib/106888102663984697315/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWOhVjCJiLbPwQQN01-ag3A0tiTkB-I6ZT4P_ao_sbARHQBrP4=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSUR6d0tQanZRRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSUNUeXFYWjVRRRAB",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "Доктор Петрович очень приятная, была на узи и консультации, знает 3 языка, английский свободно, русский достаточно понятно, все не больно и сама очень грамотная, рекомендую . Узи и осмотр стоило 70 евро",
+				"languageCode": "ru"
+			},
+			"originalText": {
+				"text": "Доктор Петрович очень приятная, была на узи и консультации, знает 3 языка, английский свободно, русский достаточно понятно, все не больно и сама очень грамотная, рекомендую . Узи и осмотр стоило 70 евро",
+				"languageCode": "ru"
+			},
+			"authorAttribution": {
+				"displayName": "Alina. Vikto",
+				"uri": "https://www.google.com/maps/contrib/115012638987450681552/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUg4eOMzxxSmIDqhbi51-fAl3Eeb5epb3myHgrWZZXxXCH6Wo11pg=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSUNUeXFYWjVRRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSUNUeUtYRl9nRRAB",
+			"relativePublishTimeDescription": "год назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Natasa Radman Bovan",
+				"uri": "https://www.google.com/maps/contrib/102494092177128517866/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJT6riM4-U0A7K-JDReKtY-bvU81SmvBk0kZKWHvvgRoyONfA=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSUNUeUtYRl9nRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSURsZ2YyZzl3RRAB",
+			"relativePublishTimeDescription": "2 года назад",
+			"rating": 5,
+			"text": {
+				"text": "Делала здесь КТГ для беременных, всё понравилось. Внимательный и приветливый персонал. В клинике чисто и аккуратно.",
+				"languageCode": "ru"
+			},
+			"originalText": {
+				"text": "Делала здесь КТГ для беременных, всё понравилось. Внимательный и приветливый персонал. В клинике чисто и аккуратно.",
+				"languageCode": "ru"
+			},
+			"authorAttribution": {
+				"displayName": "Mira S.",
+				"uri": "https://www.google.com/maps/contrib/103744366385127970580/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX99bpo5u6oqEKJzURBtv09yDlBV4HVF45reCKpIxh5sW653o7n=w36-h36-p-rp-mo-ba2-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"photos": [
+				{
+					"uri": "images/ChdDSUhNMG9nS0VJQ0Fn_0.jpg",
+					"originalUri": "https://lh3.googleusercontent.com/geougc-cs/ABOP9pvuZFtahYyygw5ivAQ6PWH0jJG4WnY5P2JoJ2H4_2aRoS4CDHRBQ_ucWkSef9LecghD7KMs609Bl0Bq2jldv8oD1SKX8wT9rPzKOcOpEFK7_pAEMMiDMkEWc30jo6zoE5nPclBg=w1600-h1200"
+				}
+			],
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSURsZ2YyZzl3RRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSUNaMV9QcEh3EAE",
+			"relativePublishTimeDescription": "2 года назад",
+			"rating": 5,
+			"text": {
+				"text": "Moram da napisem kritiku na osnovu loših recenzija. Drage žene, doktorica Montrenko i sestre nisu dužne da vas maze po kosi i govore laži kako će sve biti u redu.\nDoktorica je detaljna i radi svoj posao dugo godina onako kako treba , jer uspijeh govori sam za sebe!\nŠto se tiče plaćanja imate izbor i veliki je.\nZa svoj novac mozete da birate dje cete ici! Loše kritike nisu opravdane, tu ste da se borite kao sve ostale žene i da pokažete poštovanje, niko nije plaćen da vas tretira kao da ste u hotel!!!",
+				"languageCode": "bs"
+			},
+			"originalText": {
+				"text": "Moram da napisem kritiku na osnovu loših recenzija. Drage žene, doktorica Montrenko i sestre nisu dužne da vas maze po kosi i govore laži kako će sve biti u redu.\nDoktorica je detaljna i radi svoj posao dugo godina onako kako treba , jer uspijeh govori sam za sebe!\nŠto se tiče plaćanja imate izbor i veliki je.\nZa svoj novac mozete da birate dje cete ici! Loše kritike nisu opravdane, tu ste da se borite kao sve ostale žene i da pokažete poštovanje, niko nije plaćen da vas tretira kao da ste u hotel!!!",
+				"languageCode": "bs"
+			},
+			"authorAttribution": {
+				"displayName": "Ema Petrović Business",
+				"uri": "https://www.google.com/maps/contrib/105294101912983668644/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLoKd3vTyOR3caX1VE-AAGsF_MPBJVsdfiCVzuI_UA0GZr1bg=w36-h36-p-rp-mo-ba3-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSUNaMV9QcEh3EAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": true,
+			"_likesCount": 2
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSURSd2VLNTFRRRAB",
+			"relativePublishTimeDescription": "2 года назад",
+			"rating": 2,
+			"text": {
+				"text": "Пришлось час ждать врача, хотя я пришла вовремя.\nЭто было самое болезненное обследование в моей жизни. Больше не пойду",
+				"languageCode": "ru"
+			},
+			"originalText": {
+				"text": "Пришлось час ждать врача, хотя я пришла вовремя.\nЭто было самое болезненное обследование в моей жизни. Больше не пойду",
+				"languageCode": "ru"
+			},
+			"authorAttribution": {
+				"displayName": "Belarusian Girl",
+				"uri": "https://www.google.com/maps/contrib/104210914345779598461/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXYw_n_kg1GM7bP6UpZqBHwJrJn8IOL5enDK3HVw2cLVxEltiE=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSURSd2VLNTFRRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false,
+			"_likesCount": 4
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSURScHNtNUxnEAE",
+			"relativePublishTimeDescription": "2 года назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Vasilisa Baletic",
+				"uri": "https://www.google.com/maps/contrib/105000597663900318461/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIf-WkiPUYobk8VSOKD14f9lsWkaxOnqdLI9HIc9MDrrHwzNCk=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSURScHNtNUxnEAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSURCMi1mdXJRRRAB",
+			"relativePublishTimeDescription": "3 года назад",
+			"rating": 1,
+			"text": {
+				"text": "Doktorka petričević je kasnila 2 sata.  U čekaonici bez grejanja.",
+				"languageCode": "bs"
+			},
+			"originalText": {
+				"text": "Doktorka petričević je kasnila 2 sata.  U čekaonici bez grejanja.",
+				"languageCode": "bs"
+			},
+			"authorAttribution": {
+				"displayName": "Iva Tri",
+				"uri": "https://www.google.com/maps/contrib/109594198894542991261/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLZDrWDXuM2a_K7fUKjRObyHV_y-7eoCJdfmJS_zWCU2TcFAw=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSURCMi1mdXJRRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true,
+			"_likesCount": 2
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSUMtemJqb1ZnEAE",
+			"relativePublishTimeDescription": "3 года назад",
+			"rating": 1,
+			"text": {
+				"text": "Rekla bih da doktorka vise paznje poklanja inostranoj klijenteli negi nama,običnim smrtnicima, ciji postupak drzava finansira.\nVrlo traljavo i nemarno uradjen postupak kod moje supruge.\nNego,sto rece jedan prethodnik ovdje,hvala joj, bar znamo da sada treba da potrazimo posvecene doktore.",
+				"languageCode": "bs"
+			},
+			"originalText": {
+				"text": "Rekla bih da doktorka vise paznje poklanja inostranoj klijenteli negi nama,običnim smrtnicima, ciji postupak drzava finansira.\nVrlo traljavo i nemarno uradjen postupak kod moje supruge.\nNego,sto rece jedan prethodnik ovdje,hvala joj, bar znamo da sada treba da potrazimo posvecene doktore.",
+				"languageCode": "bs"
+			},
+			"authorAttribution": {
+				"displayName": "Milos Maric",
+				"uri": "https://www.google.com/maps/contrib/104660295201500973288/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJrC4DbalkW2m1kQBzoTz20KJjx9nNkS_vKjfgSWREQw80EqA=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSUMtemJqb1ZnEAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": true,
+			"_likesCount": 10
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSUMtc00tbmpRRRAB",
+			"relativePublishTimeDescription": "3 года назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Dedic Sandra",
+				"uri": "https://www.google.com/maps/contrib/104620752311094326143/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjV_E-2gLcY0oTI8Tf6FFAloRG_YSyZV07FYRy8vjPG7vTDPhmnz=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSUMtc00tbmpRRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSUNPNUllcTBRRRAB",
+			"relativePublishTimeDescription": "3 года назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Ljubica Vukcevic",
+				"uri": "https://www.google.com/maps/contrib/110602212066209029740/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJejtvji_-Pg0ocTqOYuQZ4t1nB06t_MqVztYc9UioY4yejAg=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSUNPNUllcTBRRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSUQ2eFktYndBRRAB",
+			"relativePublishTimeDescription": "4 года назад",
+			"rating": 2,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Anita Petrovic",
+				"uri": "https://www.google.com/maps/contrib/108550893455508524396/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUJNG1Myb345fQ31wKjqZvW2CMKkczYeLNOMsQeZi_4nuRCFN7E=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSUQ2eFktYndBRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSUQ2LVl1WkhnEAE",
+			"relativePublishTimeDescription": "4 года назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Natasa Radman Bovan",
+				"uri": "https://www.google.com/maps/contrib/102642251241606453925/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLJS4VWDcQkiO06MAl6vZYaQi8eiPNVL5MaRncrBJ9NA7bpxQ=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSUQ2LVl1WkhnEAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSUNhbnV2ZU1BEAE",
+			"relativePublishTimeDescription": "4 года назад",
+			"rating": 1,
+			"text": {
+				"text": "Od države smo prije par godina dobili mogućnost za vještačku oplodnju. Kada smo došli prvi put u kliniku umjesto dobar dan tražili su nam prvo 50 eura. Kada je moja gospođa pregledana, doktorka je počela da nabraja svašta nešto što dodatno moramo da platimo, da je puno problema i da će to trajati mjesecima i bla bla. Zamoli smo državu da poništi voucher za našu humanu reprodukciju. Otišli smo u Prag kod pravih doktora, platili smo sve zajedno 2250 eur sa smještajem od 7 dana. Kod tih doktora nije bilo nikakvih problema, što su nam preko telefona rekli prvi put, tako je bilo i zadnji dan. Nakon 9 mjeseci smo dobili zdravo dijete poslije 10 godina braka. Ovim putem želim da se zahvalim doktorici Motrenko, jer nam je svojim nastupom omogućila da upoznamo prave doktore i naravno dobijemo dijete bez maltretiranja moje supruge i pražnjenja mog džepa.\nHvala",
+				"languageCode": "hr"
+			},
+			"originalText": {
+				"text": "Od države smo prije par godina dobili mogućnost za vještačku oplodnju. Kada smo došli prvi put u kliniku umjesto dobar dan tražili su nam prvo 50 eura. Kada je moja gospođa pregledana, doktorka je počela da nabraja svašta nešto što dodatno moramo da platimo, da je puno problema i da će to trajati mjesecima i bla bla. Zamoli smo državu da poništi voucher za našu humanu reprodukciju. Otišli smo u Prag kod pravih doktora, platili smo sve zajedno 2250 eur sa smještajem od 7 dana. Kod tih doktora nije bilo nikakvih problema, što su nam preko telefona rekli prvi put, tako je bilo i zadnji dan. Nakon 9 mjeseci smo dobili zdravo dijete poslije 10 godina braka. Ovim putem želim da se zahvalim doktorici Motrenko, jer nam je svojim nastupom omogućila da upoznamo prave doktore i naravno dobijemo dijete bez maltretiranja moje supruge i pražnjenja mog džepa.\nHvala",
+				"languageCode": "hr"
+			},
+			"authorAttribution": {
+				"displayName": "Rade Mudric",
+				"uri": "https://www.google.com/maps/contrib/113154447737793807222/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXP5vqFelzSUvM7mUk3q_CCjIyCYY14I0A6AlkzMEEyce1-9md0=w36-h36-p-rp-mo-ba3-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"photos": [
+				{
+					"uri": "images/ChZDSUhNMG9nS0VJQ0Fn_0.jpg",
+					"originalUri": "https://lh3.googleusercontent.com/geougc-cs/ABOP9pt8Q159_UwUr1NGp-0hk8pgK1jwwLf2mPw5JN9NUbHyvA4YlNcpFHWnCN12GMRB5nAo5CQ76LWd90cJ5QNI0Z-GcuisXaBNtNu4QAoPwZg7pPuxHSQRSpbCL1ms4iCZir8wc5aI=w1600-h1200"
+				}
+			],
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSUNhbnV2ZU1BEAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": true,
+			"_likesCount": 23
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSURxNXNhbUxnEAE",
+			"relativePublishTimeDescription": "4 года назад",
+			"rating": 5,
+			"text": {
+				"text": "Sve pohvale za kompletan tim Humane Reprodukcije Budva,necu nikoga izdvojiti jer su svi predivni,od sestara do doktora🌺\nLjubaznost,objasnjenja,za sve su tu i na raspolaganju.\nJa sam od onih zadovoljnih pacijenata,bez obzira na ishod❤️\nUpravo vam pisem sa stola i hvala im na svemu ❤️",
+				"languageCode": "bs"
+			},
+			"originalText": {
+				"text": "Sve pohvale za kompletan tim Humane Reprodukcije Budva,necu nikoga izdvojiti jer su svi predivni,od sestara do doktora🌺\nLjubaznost,objasnjenja,za sve su tu i na raspolaganju.\nJa sam od onih zadovoljnih pacijenata,bez obzira na ishod❤️\nUpravo vam pisem sa stola i hvala im na svemu ❤️",
+				"languageCode": "bs"
+			},
+			"authorAttribution": {
+				"displayName": "Dragana Sarbaic",
+				"uri": "https://www.google.com/maps/contrib/108483280552523991607/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIcSnMhmHh_Z3Ervpm3iX0tvFeGsmXC8vMDN37MOrn-WUblhQ=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSURxNXNhbUxnEAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": true,
+			"_likesCount": 1
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSUNxdWVDaXhBRRAB",
+			"relativePublishTimeDescription": "4 года назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Tanja 4",
+				"uri": "https://www.google.com/maps/contrib/108567918320699226676/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKlYFsRSbf1jo0f4mAaOEZj3vx3y0VPJlQxlI3-7Cqpzl7H4g=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSUNxdWVDaXhBRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSURTMV9teEpREAE",
+			"relativePublishTimeDescription": "5 лет назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "vesna popovac",
+				"uri": "https://www.google.com/maps/contrib/108353366826800826144/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLlJ_i83gi_YP1Xz2HWXsPubP0hSj2H-kCtNP8pvQ4U4xeNOw=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSURTMV9teEpREAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSUM4X3NYemZREAE",
+			"relativePublishTimeDescription": "5 лет назад",
+			"rating": 5,
+			"text": {
+				"text": "Dr. Motrenko is very professional. The staff are friendly. They are always 1 message away when I have questions.",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "Dr. Motrenko is very professional. The staff are friendly. They are always 1 message away when I have questions.",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "Carmela Oro",
+				"uri": "https://www.google.com/maps/contrib/106614871725428587202/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKihfMESxF8Pd-vsJlJf4_DWJWN5ta06_9pqCjD6WS8K-bXzKw=w36-h36-p-rp-mo-ba3-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSUM4X3NYemZREAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": true,
+			"_likesCount": 7
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSURjNnYyZEJnEAE",
+			"relativePublishTimeDescription": "5 лет назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Marija Tatar",
+				"uri": "https://www.google.com/maps/contrib/104302502566331567550/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVkH0SIUNCp79DC3iEjsndS2z2pcJgROMu97sgiuklftlSiWoc=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSURjNnYyZEJnEAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSURVMDZqSUt3EAE",
+			"relativePublishTimeDescription": "6 лет назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "nadja v",
+				"uri": "https://www.google.com/maps/contrib/112921229346467190542/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXuXw0la0Q_1feBTttxkWqkJ8J9W9dlaGCNqYGcvD5uRZ_JYA5Jsw=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSURVMDZqSUt3EAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSUQ0cHVxa0h3EAE",
+			"relativePublishTimeDescription": "6 лет назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Mladen Cecovic",
+				"uri": "https://www.google.com/maps/contrib/108272264188767360791/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVTgBPHnpAqkC9TlkgKxXDCpmkUB0QFWReJyf-PKqpZTAzozVdZ=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSUQ0cHVxa0h3EAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChZDSUhNMG9nS0VJQ0FnSURZbVBlLWN3EAE",
+			"relativePublishTimeDescription": "6 лет назад",
+			"rating": 5,
+			"text": {
+				"text": "",
+				"languageCode": ""
+			},
+			"originalText": {
+				"text": "",
+				"languageCode": ""
+			},
+			"authorAttribution": {
+				"displayName": "Dolores Orlando",
+				"uri": "https://www.google.com/maps/contrib/117730573765446494855/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIGG8lPwkJUB7iJxm3l4j2mWa_bhwnkD9pWH15sbMwkgfOlrQ=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChZDSUhNMG9nS0VJQ0FnSURZbVBlLWN3EAE",
+			"_isTextTruncated": false,
+			"_wasTranslated": false
+		},
+		{
+			"name": "reviews/ChdDSUhNMG9nS0VJQ0FnSUNnMHJHUV9nRRAB",
+			"relativePublishTimeDescription": "7 лет назад",
+			"rating": 2,
+			"text": {
+				"text": "Osoblje klinike, ukljucujuci i dr Motrenko, vrlo strucni  da vas finansijski izmuzu.  Ocekujte da racune (vrlo visoke ) dobijete sms porukom, ali ne ocekujte njihovu dovoljnu posvecenost. Dr Motrenko ne voli kada puno pitate i interesujete se za svoje zdravlje.  U slucaju neuspjeha,  ne ocekujte da ce vas neko kontaktirati  ili da ce se ponovo javiti na poziv.  Nadam se da ce ova kritika bii korisna i pacijentima i klinici.",
+				"languageCode": "bs"
+			},
+			"originalText": {
+				"text": "Osoblje klinike, ukljucujuci i dr Motrenko, vrlo strucni  da vas finansijski izmuzu.  Ocekujte da racune (vrlo visoke ) dobijete sms porukom, ali ne ocekujte njihovu dovoljnu posvecenost. Dr Motrenko ne voli kada puno pitate i interesujete se za svoje zdravlje.  U slucaju neuspjeha,  ne ocekujte da ce vas neko kontaktirati  ili da ce se ponovo javiti na poziv.  Nadam se da ce ova kritika bii korisna i pacijentima i klinici.",
+				"languageCode": "bs"
+			},
+			"authorAttribution": {
+				"displayName": "irina kolasin",
+				"uri": "https://www.google.com/maps/contrib/103421405037012876354/reviews?hl=ru",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWkm01wfXkjoxpFUAWdCThADRjuuaMFe9nP65mPlIKNra5gv84=w36-h36-p-rp-mo-br100"
+			},
+			"publishTime": null,
+			"flagContentUri": null,
+			"googleMapsUri": null,
+			"_reviewId": "ChdDSUhNMG9nS0VJQ0FnSUNnMHJHUV9nRRAB",
+			"_isTextTruncated": false,
+			"_wasTranslated": true,
+			"_likesCount": 26
+		}
+	],
+	"collectedAt": "2026-03-25T11:04:11.913Z",
+	"_searchType": "doctor"
 }

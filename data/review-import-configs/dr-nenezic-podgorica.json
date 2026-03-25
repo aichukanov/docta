@@ -1,0 +1,20 @@
+{
+  "jsonPath": "data/google-places/podgorica/dr-nenezic.json",
+  "outputPath": "server/sql/reviews-google/dr-nenezic-podgorica.sql",
+  "dataCollectedDate": "2026-03-25",
+  "clinicId": 63,
+  "clinicName": "Dr Nenezić (Podgorica)",
+  "translationsDir": "data/review-translations/dr-nenezic-podgorica/",
+  "doctors": [
+    {
+      "id": 703,
+      "varName": "dusan_nenezic",
+      "patterns": [
+        "[Dd]r\\.?\\s*Nenezi[cć]",
+        "doktor[aue]?\\s+.*?Nenezi[cć]",
+        "Dušan[aue]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Душан[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

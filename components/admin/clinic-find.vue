@@ -655,6 +655,11 @@ onMounted(async () => {
 
 			<FilterLanguageSelect v-model:value="clinicModel.languageIds" />
 
+			<AdminClinicWorkingHoursEditor
+				v-if="clinicModel"
+				:clinicId="clinicModel.id"
+			/>
+
 			<div class="billing-section">
 				<div class="section-header">
 					<h4>Платные услуги (пакеты)</h4>

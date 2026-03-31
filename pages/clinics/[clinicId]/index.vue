@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Clock } from '@element-plus/icons-vue';
 import { formatClinicAddressLine } from '~/common/clinic-address';
 import { OG_IMAGE, SITE_URL } from '~/common/constants';
 import {
@@ -15,8 +16,11 @@ import languageI18n from '~/i18n/language';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
 import reviewsI18n from '~/i18n/reviews';
 import specialtyI18n from '~/i18n/specialty';
+import workingHoursI18n from '~/i18n/working-hours';
 import { combineI18nMessages } from '~/i18n/utils';
 import type { ClinicPrice } from '~/interfaces/clinic';
+import type { WorkingHours } from '~/interfaces/clinic-working-hours';
+import { DAYS_OF_WEEK } from '~/interfaces/clinic-working-hours';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -29,6 +33,7 @@ const { t, locale } = useI18n({
 		specialtyI18n,
 		labTestCategoryI18n,
 		reviewsI18n,
+		workingHoursI18n,
 	]),
 });
 
@@ -69,6 +74,22 @@ const { data: medicalServicesList } = await useFetch('/api/services/list', {
 	key: `services-list-clinic-${route.params.clinicId}`,
 	method: 'POST',
 	body: computed(() => ({ clinicIds: [clinicId.value], locale: locale.value })),
+});
+
+const { data: workingHoursData } = await useFetch<WorkingHours>(
+	'/api/clinics/working-hours',
+	{
+		key: `clinic-wh-${route.params.clinicId}`,
+		method: 'POST',
+		body: { clinicId: route.params.clinicId },
+	},
+);
+
+const hasWorkingHours = computed(() => {
+	if (!workingHoursData.value) return false;
+	return DAYS_OF_WEEK.some(
+		(day) => workingHoursData.value![day]?.type !== 'not_specified',
+	);
 });
 
 const isFound = computed(() => clinicData.value?.id != null);
@@ -184,6 +205,9 @@ const tabs = computed(() => {
 		result.push({ id: 'about', label: t('TabAbout') });
 	}
 	result.push({ id: 'contacts', label: t('TabContacts') });
+	if (hasWorkingHours.value) {
+		result.push({ id: 'hours', label: t('WorkingHours') });
+	}
 	if (clinicDoctors.value.length > 0) {
 		result.push({
 			id: 'doctors',
@@ -319,6 +343,7 @@ watchEffect(() => {
 				getCityName,
 				services: clinicMedicalServices.value,
 				doctors: clinicDoctors.value,
+				workingHours: workingHoursData.value,
 				rating: clinicData.value.rating,
 				reviews: clinicData.value.reviews?.map((review) => ({
 					id: review.id,
@@ -377,6 +402,16 @@ watchEffect(() => {
 			>
 				<template #icon><IconPhone :size="20" /></template>
 				<ContactsList :list="clinicData" />
+			</EntityPageSection>
+
+			<!-- Working Hours -->
+			<EntityPageSection
+				v-if="hasWorkingHours"
+				sectionId="hours"
+				:title="t('WorkingHours')"
+			>
+				<template #icon><el-icon :size="20"><Clock /></el-icon></template>
+				<ClinicWorkingHours :clinicId="clinicId" />
 			</EntityPageSection>
 
 			<!-- Doctors -->

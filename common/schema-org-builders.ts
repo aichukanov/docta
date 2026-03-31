@@ -11,6 +11,8 @@ import type {
 	PersonSchemaType,
 } from '~/types/schema-org';
 import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
+import type { WorkingHours, DayOfWeek } from '~/interfaces/clinic-working-hours';
+import { DAYS_OF_WEEK } from '~/interfaces/clinic-working-hours';
 import { SITE_NAME } from '~/common/constants';
 import {
 	normalizeWebsiteUrl,
@@ -795,6 +797,43 @@ function buildOfferCatalogSchema(options: {
 	};
 }
 
+const SCHEMA_DAY_MAP: Record<DayOfWeek, string> = {
+	monday: 'Monday',
+	tuesday: 'Tuesday',
+	wednesday: 'Wednesday',
+	thursday: 'Thursday',
+	friday: 'Friday',
+	saturday: 'Saturday',
+	sunday: 'Sunday',
+};
+
+function buildOpeningHoursSpecification(workingHours: WorkingHours) {
+	const specs: any[] = [];
+
+	for (const day of DAYS_OF_WEEK) {
+		const ds = workingHours[day];
+		if (ds.type === '24/7') {
+			specs.push({
+				'@type': 'OpeningHoursSpecification',
+				'dayOfWeek': SCHEMA_DAY_MAP[day],
+				'opens': '00:00',
+				'closes': '23:59',
+			});
+		} else if (ds.type === 'regular' && ds.intervals?.length) {
+			for (const interval of ds.intervals) {
+				specs.push({
+					'@type': 'OpeningHoursSpecification',
+					'dayOfWeek': SCHEMA_DAY_MAP[day],
+					'opens': interval.start,
+					'closes': interval.end,
+				});
+			}
+		}
+	}
+
+	return specs.length > 0 ? specs : undefined;
+}
+
 /**
  * Build clinic (medical organization) schema
  */
@@ -807,6 +846,7 @@ export function buildClinicSchema(options: {
 	getCityName: (id: number) => string | undefined;
 	services?: ClinicServiceOffer[];
 	doctors?: ClinicDoctorItem[];
+	workingHours?: WorkingHours | null;
 	rating?: { averageRating: number | null; totalReviews: number } | null;
 	reviews?: Array<{
 		id: number;
@@ -863,6 +903,9 @@ export function buildClinicSchema(options: {
 			availableLanguage && availableLanguage.length > 0
 				? availableLanguage
 				: undefined,
+		openingHoursSpecification: options.workingHours
+			? buildOpeningHoursSpecification(options.workingHours)
+			: undefined,
 		hasOfferCatalog: buildOfferCatalogSchema({
 			siteUrl,
 			clinicId: clinic.id,

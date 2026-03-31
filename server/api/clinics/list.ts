@@ -145,6 +145,7 @@ export async function getClinicList(
 				c.description_ru,
 				c.description_de,
 				c.description_tr,
+				c.logo_url as logoUrl,
 				COALESCE(GROUP_CONCAT(DISTINCT cl.language_id ORDER BY cl.language_id), '1') as languageIds,
 				COALESCE(GROUP_CONCAT(DISTINCT cct.clinic_type_id ORDER BY cct.clinic_type_id), '') as clinicTypeIds,
 				COALESCE(
@@ -213,6 +214,7 @@ export async function getClinicList(
 			localName,
 			address,
 			town,
+			logoUrl: clinic.logoUrl || '',
 			rating: clinic.averageRating
 				? {
 						averageRating: parseFloat(clinic.averageRating),

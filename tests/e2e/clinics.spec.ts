@@ -133,4 +133,24 @@ test.describe('Clinic Detail Page', () => {
 		expect(url).toMatch(/clinics/);
 		expect(url).not.toMatch(/clinics\/\d+/);
 	});
+
+	test('working hours tab should display schedule if available', async ({
+		page,
+	}) => {
+		const hoursTab = page.locator('[data-section-id="hours"], #hours');
+		const hasHours = await hoursTab.isVisible().catch(() => false);
+		if (!hasHours) {
+			test.skip();
+			return;
+		}
+
+		// Если блок есть — проверяем что в нём 7 строк (дни недели)
+		const rows = page.locator('.working-hours__row');
+		const rowCount = await rows.count();
+		expect(rowCount).toBe(7);
+
+		// Проверяем что статус отображается
+		const statusEl = page.locator('.working-hours__status');
+		await expect(statusEl).toBeVisible();
+	});
 });

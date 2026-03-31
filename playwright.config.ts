@@ -61,6 +61,14 @@ export default defineConfig({
 			use: { ...devices['Desktop Chrome'] },
 		},
 
+		// Unit-тесты (без браузера)
+		{
+			name: 'unit',
+			testDir: './tests/unit',
+			retries: 0,
+			use: {},
+		},
+
 		// Утилитарные скрипты (парсеры и т.д.)
 		{
 			name: 'scripts',

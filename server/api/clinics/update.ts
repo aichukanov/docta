@@ -1,8 +1,10 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
+import { downloadAndSaveImage, isExternalUrl } from '~/server/utils/image-processing';
 import {
 	validateBody,
 	validateCityId,
+	validateClinicTypeIds,
 	validateDoctorLanguageIds,
 	validateNonNegativeInteger,
 } from '~/common/validation';
@@ -31,6 +33,17 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			setResponseStatus(event, 400, 'Invalid clinic language');
 			return null;
 		}
+		if (
+			body.clinicTypeIds &&
+			!validateClinicTypeIds(body, 'api/clinics/update')
+		) {
+			setResponseStatus(event, 400, 'Invalid clinic type');
+			return null;
+		}
+
+		if (body.logoUrl && isExternalUrl(body.logoUrl)) {
+			body.logoUrl = await downloadAndSaveImage(body.logoUrl, 'clinics');
+		}
 
 		const connection = await getConnection();
 
@@ -38,11 +51,12 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			await connection.beginTransaction();
 
 			const updateClinicQuery = `
-				UPDATE clinics 
+				UPDATE clinics
 				SET name_sr = ?, name_sr_cyrl = ?, name_ru = ?, city_id = ?, address_sr = ?, address_sr_cyrl = ?, town_sr = ?, town_sr_cyrl = ?, postal_code = ?, latitude = ?, longitude = ?,
-				    phone = ?, email = ?, website = ?, facebook = ?, instagram = ?, 
+				    phone = ?, email = ?, website = ?, facebook = ?, instagram = ?,
 				    telegram = ?, whatsapp = ?, viber = ?,
-				    description_sr = ?, description_sr_cyrl = ?, description_en = ?, description_ru = ?, description_de = ?, description_tr = ?
+				    description_sr = ?, description_sr_cyrl = ?, description_en = ?, description_ru = ?, description_de = ?, description_tr = ?,
+				    logo_url = ?
 				WHERE id = ?;
 			`;
 
@@ -72,6 +86,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				body.description_ru || '',
 				body.description_de || '',
 				body.description_tr || '',
+				body.logoUrl || '',
 				body.id,
 			]);
 
@@ -105,6 +120,40 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 					'INSERT INTO clinic_languages (clinic_id, language_id) VALUES (?, ?)',
 					[body.id, languageId],
 				);
+			}
+
+			// Handle clinic types
+			if (body.clinicTypeIds) {
+				const [existingTypes]: any = await connection.execute(
+					'SELECT clinic_type_id FROM clinic_clinic_types WHERE clinic_id = ?',
+					[body.id],
+				);
+				const existingTypeIds = existingTypes.map(
+					(row: any) => row.clinic_type_id,
+				);
+				const newTypeIds = body.clinicTypeIds;
+
+				const typesToRemove = existingTypeIds.filter(
+					(id: number) => !newTypeIds.includes(id),
+				);
+				const typesToAdd = newTypeIds.filter(
+					(id: number) => !existingTypeIds.includes(id),
+				);
+
+				if (typesToRemove.length > 0) {
+					const placeholders = typesToRemove.map(() => '?').join(',');
+					await connection.execute(
+						`DELETE FROM clinic_clinic_types WHERE clinic_id = ? AND clinic_type_id IN (${placeholders})`,
+						[body.id, ...typesToRemove],
+					);
+				}
+
+				for (const typeId of typesToAdd) {
+					await connection.execute(
+						'INSERT INTO clinic_clinic_types (clinic_id, clinic_type_id) VALUES (?, ?)',
+						[body.id, typeId],
+					);
+				}
 			}
 
 			await connection.commit();

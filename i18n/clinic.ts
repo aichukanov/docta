@@ -7,6 +7,10 @@ export default {
 			ClinicsCity: 'Clinics in {city}',
 			ClinicsLanguage: 'Clinics in Montenegro where they speak {language}',
 			ClinicsLanguageCity: 'Clinics in {city} where they speak {language}',
+			ClinicsType: '{type} in Montenegro',
+			ClinicsTypeCity: '{type} in {city}',
+			ClinicsTypeLanguage: '{type} in Montenegro where they speak {language}',
+			ClinicsTypeLanguageCity: '{type} in {city} where they speak {language}',
 
 			LoadingClinics: 'Loading clinics...',
 			NoClinicsFound: 'No clinics found',
@@ -26,8 +30,16 @@ export default {
 			InsertClinicName: 'Введите название клиники',
 			Clinics: 'Клиники в Черногории',
 			ClinicsCity: 'Клиники в {city}',
-			ClinicsLanguage: 'Клиники в Черногории, где говорят на {language} языке',
-			ClinicsLanguageCity: 'Клиники в {city}, где говорят на {language} языке',
+			ClinicsLanguage:
+				'Клиники в Черногории с сопровождением на {language} языке',
+			ClinicsLanguageCity:
+				'Клиники в {city} с сопровождением на {language} языке',
+			ClinicsType: '{type} в Черногории',
+			ClinicsTypeCity: '{type} в {city}',
+			ClinicsTypeLanguage:
+				'{type} в Черногории с сопровождением на {language} языке',
+			ClinicsTypeLanguageCity:
+				'{type} в {city} с сопровождением на {language} языке',
 
 			LoadingClinics: 'Загрузка клиник...',
 			NoClinicsFound: 'Клиники не найдены',
@@ -49,6 +61,10 @@ export default {
 			ClinicsCity: '{city} klinikleri',
 			ClinicsLanguage: "Karadağ'da {language} konuşulan klinikler",
 			ClinicsLanguageCity: '{city} {language} konuşulan klinikler',
+			ClinicsType: "Karadağ'daki {type}",
+			ClinicsTypeCity: "{city}'deki {type}",
+			ClinicsTypeLanguage: "Karadağ'da {language} konuşulan {type}",
+			ClinicsTypeLanguageCity: "{city}'de {language} konuşulan {type}",
 
 			LoadingClinics: 'Klinikler yükleniyor...',
 			NoClinicsFound: 'Klinik bulunamadı',
@@ -70,6 +86,12 @@ export default {
 			ClinicsCity: 'Kliniken in {city}',
 			ClinicsLanguage: 'Kliniken in Montenegro, wo {language} gesprochen wird',
 			ClinicsLanguageCity: 'Kliniken in {city}, wo {language} gesprochen wird',
+			ClinicsType: '{type} in Montenegro',
+			ClinicsTypeCity: '{type} in {city}',
+			ClinicsTypeLanguage:
+				'{type} in Montenegro, wo {language} gesprochen wird',
+			ClinicsTypeLanguageCity:
+				'{type} in {city}, wo {language} gesprochen wird',
 
 			LoadingClinics: 'Kliniken werden geladen...',
 			NoClinicsFound: 'Keine Kliniken gefunden',
@@ -89,8 +111,14 @@ export default {
 			InsertClinicName: 'Unesite ime klinike',
 			Clinics: 'Klinike u Crnoj Gori',
 			ClinicsCity: 'Klinike u {city}',
-			ClinicsLanguage: 'Klinike u Crnoj Gori gde govore {language} jezik',
-			ClinicsLanguageCity: 'Klinike u {city} gde govore {language} jezik',
+			ClinicsLanguage: 'Klinike u Crnoj Gori sa pratnjom na {language} jeziku',
+			ClinicsLanguageCity: 'Klinike u {city} sa pratnjom na {language} jeziku',
+			ClinicsType: '{type} u Crnoj Gori',
+			ClinicsTypeCity: '{type} u {city}',
+			ClinicsTypeLanguage:
+				'{type} u Crnoj Gori sa pratnjom na {language} jeziku',
+			ClinicsTypeLanguageCity:
+				'{type} u {city} sa pratnjom na {language} jeziku',
 
 			LoadingClinics: 'Učitava klinike...',
 			NoClinicsFound: 'Klinike nisu pronađene',
@@ -110,8 +138,14 @@ export default {
 			InsertClinicName: 'Унесите име клинике',
 			Clinics: 'Клинике у Црној Гори',
 			ClinicsCity: 'Клинике у {city}',
-			ClinicsLanguage: 'Клинике у Црној Гори где говоре {language} језик',
-			ClinicsLanguageCity: 'Клинике у {city} где говоре {language} језик',
+			ClinicsLanguage: 'Клинике у Црној Гори са пратњом на {language} језику',
+			ClinicsLanguageCity: 'Клинике у {city} са пратњом на {language} језику',
+			ClinicsType: '{type} у Црној Гори',
+			ClinicsTypeCity: '{type} у {city}',
+			ClinicsTypeLanguage:
+				'{type} у Црној Гори са пратњом на {language} језику',
+			ClinicsTypeLanguageCity:
+				'{type} у {city} са пратњом на {language} језику',
 
 			LoadingClinics: 'Учитава клинике...',
 			NoClinicsFound: 'Клинике нису пронађене',

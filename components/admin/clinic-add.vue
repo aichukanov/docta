@@ -4,6 +4,7 @@ const emit = defineEmits<{
 }>();
 
 const cityIds = ref<number[]>([]);
+const clinicTypeIds = ref<number[]>([1]);
 const languageIds = ref<number[]>([1]);
 const clinicName = ref('');
 const clinicNameSrCyrl = ref('');
@@ -29,9 +30,11 @@ const clinicDescriptionEn = ref('');
 const clinicDescriptionRu = ref('');
 const clinicDescriptionDe = ref('');
 const clinicDescriptionTr = ref('');
+const clinicLogoUrl = ref('');
 
 const clearFields = () => {
 	cityIds.value = [];
+	clinicTypeIds.value = [1];
 	clinicName.value = '';
 	clinicNameSrCyrl.value = '';
 	clinicNameRu.value = '';
@@ -57,6 +60,7 @@ const clearFields = () => {
 	clinicDescriptionRu.value = '';
 	clinicDescriptionDe.value = '';
 	clinicDescriptionTr.value = '';
+	clinicLogoUrl.value = '';
 };
 
 const addClinic = async () => {
@@ -78,6 +82,7 @@ const addClinic = async () => {
 			name_sr_cyrl: clinicNameSrCyrl.value,
 			name_ru: clinicNameRu.value,
 			cityId: cityIds.value[0],
+			clinicTypeIds: clinicTypeIds.value,
 			languageIds: languageIds.value,
 			address_sr: clinicAddressSr.value,
 			address_sr_cyrl: clinicAddressSrCyrl.value,
@@ -100,6 +105,7 @@ const addClinic = async () => {
 			description_ru: clinicDescriptionRu.value,
 			description_de: clinicDescriptionDe.value,
 			description_tr: clinicDescriptionTr.value,
+			logoUrl: clinicLogoUrl.value,
 		},
 	});
 
@@ -112,6 +118,13 @@ const addClinic = async () => {
 <template>
 	<div>
 		<div class="clinic-add-form">
+			<AdminEditableField
+				label="Логотип"
+				type="photo"
+				image-category="clinics"
+				v-model:value="clinicLogoUrl"
+			/>
+			<FilterClinicTypeSelect v-model:value="clinicTypeIds" />
 			<FilterCitySelect v-model:value="cityIds" />
 			<AdminFieldGroup title="Название">
 				<AdminEditableField label="Название (SR)" v-model:value="clinicName" />

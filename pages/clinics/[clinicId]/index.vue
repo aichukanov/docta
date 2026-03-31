@@ -11,6 +11,8 @@ import { getLocalizedName } from '~/common/utils';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import clinicI18n from '~/i18n/clinic';
+import clinicCommonI18n from '~/i18n/clinic-common';
+import clinicTypeI18n from '~/i18n/clinic-type';
 import labTestCategoryI18n from '~/i18n/labtest-category';
 import languageI18n from '~/i18n/language';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
@@ -27,6 +29,8 @@ const { t, locale } = useI18n({
 	messages: combineI18nMessages([
 		breadcrumbI18n,
 		clinicI18n,
+		clinicCommonI18n,
+		clinicTypeI18n,
 		languageI18n,
 		cityI18n,
 		medicalServiceCategoryI18n,
@@ -97,6 +101,15 @@ const isFound = computed(() => clinicData.value?.id != null);
 const localizedName = computed(() =>
 	getLocalizedName(clinicData.value, locale.value),
 );
+
+const clinicTypeNames = computed(() => {
+	if (!clinicData.value?.clinicTypeIds) return [];
+	return clinicData.value.clinicTypeIds
+		.split(',')
+		.map(Number)
+		.filter(Boolean)
+		.map((id) => t(`clinic_type_${id}`));
+});
 
 // Set HTTP 404 status for not found clinic
 if (import.meta.server && !isFound.value) {
@@ -379,6 +392,7 @@ watchEffect(() => {
 				:clinic="clinicData"
 				:cityName="t(`city_${clinicData.cityId}`)"
 				:languageAssistanceLabel="t('LanguageAssistance')"
+				:clinicTypeNames="clinicTypeNames"
 				@scrollToMap="scrollToMap"
 			/>
 		</template>
@@ -540,7 +554,6 @@ watchEffect(() => {
 {
 	"en": {
 		"ClinicLanguageAssistance": "Assistance is provided in {language}.",
-		"LanguageAssistance": "The clinic provides assistance in:",
 		"Contacts": "Contacts",
 		"MedicalServicesAtClinic": "Medical services",
 		"LabTestsAtClinic": "Lab tests",
@@ -558,7 +571,6 @@ watchEffect(() => {
 	},
 	"ru": {
 		"ClinicLanguageAssistance": "Предоставляется сопровождение на {language} языке.",
-		"LanguageAssistance": "В клинике предоставляется сопровождение на следующих языках:",
 		"Contacts": "Контакты",
 		"MedicalServicesAtClinic": "Медицинские услуги",
 		"LabTestsAtClinic": "Анализы",
@@ -576,7 +588,6 @@ watchEffect(() => {
 	},
 	"de": {
 		"ClinicLanguageAssistance": "Unterstützung wird in {language} bereitgestellt.",
-		"LanguageAssistance": "Die Klinik bietet Unterstützung in:",
 		"Contacts": "Kontakte",
 		"MedicalServicesAtClinic": "Medizinische Dienstleistungen",
 		"LabTestsAtClinic": "Laboruntersuchungen",
@@ -594,7 +605,6 @@ watchEffect(() => {
 	},
 	"tr": {
 		"ClinicLanguageAssistance": "{language} dilinde destek sağlanır.",
-		"LanguageAssistance": "Klinik aşağıdaki dillerde destek sunar:",
 		"Contacts": "İletişim",
 		"MedicalServicesAtClinic": "Tıbbi hizmetler",
 		"LabTestsAtClinic": "Laboratuvar testleri",
@@ -612,7 +622,6 @@ watchEffect(() => {
 	},
 	"sr": {
 		"ClinicLanguageAssistance": "Pomoć se pruža na {language} jeziku.",
-		"LanguageAssistance": "Klinika pruža pomoć na sledećim jezicima:",
 		"Contacts": "Kontakti",
 		"MedicalServicesAtClinic": "Medicinske usluge",
 		"LabTestsAtClinic": "Laboratorijske analize",
@@ -630,7 +639,6 @@ watchEffect(() => {
 	},
 	"sr-cyrl": {
 		"ClinicLanguageAssistance": "Помоћ се пружа на {language} језику.",
-		"LanguageAssistance": "Клиника пружа помоћ на следећим језицима:",
 		"Contacts": "Контакти",
 		"MedicalServicesAtClinic": "Медицинске услуге",
 		"LabTestsAtClinic": "Лабораторијске анализе",

@@ -228,6 +228,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `website` (varchar(255))
 - `instagram`, `facebook`, `whatsapp`, `telegram`, `viber` (varchar(255))
 - `description_sr`, `description_sr_cyrl`, `description_ru`, `description_en`, `description_de`, `description_tr` (text): Localized descriptions.
+- `logo_url` (varchar(500)): URL to clinic logo image.
 - `created_at`, `updated_at` (timestamp)
 
 ### `doctors`
@@ -377,6 +378,11 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `price_max` (decimal(10,2)): Maximum price (for price ranges).
 - `created_at` (timestamp)
 - _Unique constraint_: (`clinic_id`, `medication_id`)
+
+### `clinic_clinic_types`
+
+- `clinic_id` (int, PK, FK -> clinics.id ON DELETE CASCADE)
+- `clinic_type_id` (tinyint unsigned, PK): Clinic type. Values defined in `ClinicType` enum.
 
 ### `clinic_languages`
 

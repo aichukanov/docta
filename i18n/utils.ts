@@ -1,9 +1,10 @@
-import { locales, type Locale } from '~/composables/use-locale';
+import { locales } from '~/composables/use-locale';
 
-type MessageList = Record<Locale, Record<string, string>>;
+type Messages = Record<string, Record<string, string>>;
+type MessageList = { messages: Messages };
 
-export function combineI18nMessages(messageLists: MessageList[]): MessageList {
-	const combined: MessageList = Object.fromEntries(
+export function combineI18nMessages(messageLists: MessageList[]): Messages {
+	const combined: Messages = Object.fromEntries(
 		locales.map((locale) => [locale, {}]),
 	);
 

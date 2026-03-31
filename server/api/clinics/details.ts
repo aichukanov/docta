@@ -51,13 +51,16 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 				c.description_ru,
 				c.description_de,
 				c.description_tr,
+				c.logo_url as logoUrl,
 				COALESCE(GROUP_CONCAT(DISTINCT cl.language_id ORDER BY cl.language_id), '1') as languageIds,
+				COALESCE(GROUP_CONCAT(DISTINCT cct.clinic_type_id ORDER BY cct.clinic_type_id), '') as clinicTypeIds,
 				COALESCE(
 					GROUP_CONCAT(DISTINCT bspi.service_id ORDER BY bspi.service_id),
 					''
 				) as features
 			FROM clinics c
 			LEFT JOIN clinic_languages cl ON c.id = cl.clinic_id
+			LEFT JOIN clinic_clinic_types cct ON c.id = cct.clinic_id
 			LEFT JOIN billing_clinic_service_purchases bscp
 				ON c.id = bscp.clinic_id
 				AND bscp.deleted = 0
@@ -213,6 +216,7 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 
 		return {
 			id: clinic.id,
+			clinicTypeIds: clinic.clinicTypeIds || '',
 			cityId: clinic.cityId,
 			postalCode: clinic.postalCode,
 			latitude: clinic.latitude,
@@ -232,6 +236,7 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 			localName,
 			address,
 			town,
+			logoUrl: clinic.logoUrl || '',
 			rating,
 			reviews,
 		};

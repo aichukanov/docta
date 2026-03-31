@@ -48,7 +48,7 @@ export interface MedicalSpecialtySchema extends SchemaOrgBase {
 }
 
 export interface MedicalOrganizationRef {
-	'@type': 'MedicalOrganization';
+	'@type': MedicalOrganizationType;
 	'name': string;
 	'address'?: PostalAddressSchema;
 	'telephone'?: string;
@@ -76,8 +76,18 @@ export interface GeoCoordinatesSchema {
 	'longitude': number;
 }
 
+export type MedicalOrganizationType =
+	| 'MedicalOrganization'
+	| 'MedicalClinic'
+	| 'Dentist'
+	| 'Hospital'
+	| 'DiagnosticLab'
+	| 'Pharmacy'
+	| 'Optician'
+	| 'Physician';
+
 export interface MedicalOrganizationSchema extends SchemaOrgBase {
-	'@type': 'MedicalOrganization';
+	'@type': MedicalOrganizationType;
 	'name': string;
 	'image'?: string;
 	'address'?: PostalAddressSchema;
@@ -86,6 +96,7 @@ export interface MedicalOrganizationSchema extends SchemaOrgBase {
 	'url'?: string;
 	'sameAs'?: string[];
 	'geo'?: GeoCoordinatesSchema;
+	'medicalSpecialty'?: MedicalSpecialtySchema | MedicalSpecialtySchema[];
 	'openingHoursSpecification'?: {
 		'@type': 'OpeningHoursSpecification';
 		'dayOfWeek': string[];

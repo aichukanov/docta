@@ -10,6 +10,7 @@ import type { ClinicData } from '~/interfaces/clinic';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import clinicI18n from '~/i18n/clinic';
+import clinicTypeI18n from '~/i18n/clinic-type';
 import languageI18n from '~/i18n/language';
 
 const { t, locale } = useI18n({
@@ -17,12 +18,13 @@ const { t, locale } = useI18n({
 	messages: combineI18nMessages([
 		breadcrumbI18n,
 		clinicI18n,
+		clinicTypeI18n,
 		cityI18n,
 		languageI18n,
 	]),
 });
 
-const { cityIds, languageIds, name, updateFromRoute, getRouteParams } =
+const { cityIds, languageIds, clinicTypeIds, name, updateFromRoute, getRouteParams } =
 	useFilters();
 const route = useRoute();
 const pageNumber = computed(() => Number(route.query.page || 1));
@@ -38,6 +40,7 @@ watch(
 const filterList = computed(() => ({
 	cityIds: cityIds.value,
 	languageIds: languageIds.value,
+	clinicTypeIds: clinicTypeIds.value,
 	name: name.value,
 	locale: locale.value,
 	page: pageNumber.value,
@@ -54,23 +57,46 @@ const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
 	},
 );
 
+const clinicTypeName = computed(() => {
+	if (clinicTypeIds.value.length === 1) {
+		return t(`clinic_type_${clinicTypeIds.value[0]}_plural`);
+	}
+	return '';
+});
+
 const pageTitle = computed(() => {
-	if (languageIds.value.length === 1) {
-		if (cityIds.value.length === 1) {
-			return t('ClinicsLanguageCity', {
-				language: t(`language_${languageIds.value[0]}_genitive`),
-				city: t(`city_${cityIds.value[0]}_genitive`),
-			});
+	const hasType = clinicTypeIds.value.length === 1;
+	const hasLang = languageIds.value.length === 1;
+	const hasCity = cityIds.value.length === 1;
+
+	const type = clinicTypeName.value;
+	const language = hasLang
+		? t(`language_${languageIds.value[0]}_genitive`)
+		: '';
+	const city = hasCity ? t(`city_${cityIds.value[0]}_genitive`) : '';
+
+	if (hasType) {
+		if (hasLang) {
+			if (hasCity) {
+				return t('ClinicsTypeLanguageCity', { type, language, city });
+			}
+			return t('ClinicsTypeLanguage', { type, language });
 		}
-		return t('ClinicsLanguage', {
-			language: t(`language_${languageIds.value[0]}_genitive`),
-		});
+		if (hasCity) {
+			return t('ClinicsTypeCity', { type, city });
+		}
+		return t('ClinicsType', { type });
 	}
 
-	if (cityIds.value.length === 1) {
-		return t('ClinicsCity', {
-			city: t(`city_${cityIds.value[0]}_genitive`),
-		});
+	if (hasLang) {
+		if (hasCity) {
+			return t('ClinicsLanguageCity', { language, city });
+		}
+		return t('ClinicsLanguage', { language });
+	}
+
+	if (hasCity) {
+		return t('ClinicsCity', { city });
 	}
 
 	return t('Clinics');
@@ -105,7 +131,7 @@ useSeoMeta({
 });
 const isFiltered = computed(() => {
 	return (
-		cityIds.value.length > 0 || languageIds.value.length > 0 || !!name.value
+		cityIds.value.length > 0 || languageIds.value.length > 0 || clinicTypeIds.value.length > 0 || !!name.value
 	);
 });
 watchEffect(() => {
@@ -148,6 +174,7 @@ watchEffect(() => {
 				:label="t('ClinicName')"
 				:placeholder="t('InsertClinicName')"
 			/>
+			<FilterClinicTypeSelect v-model:value="clinicTypeIds" />
 			<FilterCitySelect v-model:value="cityIds" />
 			<FilterLanguageSelect v-model:value="languageIds" />
 		</template>
@@ -158,6 +185,12 @@ watchEffect(() => {
 				:showPrice="false"
 				@show-on-map="showClinicOnMap(item)"
 			/>
+		</template>
+
+		<template #tips>
+			<TipsList v-if="clinicTypeIds.length === 1">
+				<TipsClinics :clinicTypeIds="clinicTypeIds" :languageIds="languageIds" :cityIds="cityIds" />
+			</TipsList>
 		</template>
 	</ListPage>
 </template>

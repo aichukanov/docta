@@ -16,6 +16,8 @@ interface ClinicAdminModel extends ClinicData {
 	description_ru: string;
 	description_de: string;
 	description_tr: string;
+	logoUrl: string;
+	clinicTypeIds: number[];
 	languageIds: number[];
 }
 
@@ -253,6 +255,7 @@ const instagramModified = computed(() => fieldModified('instagram'));
 const telegramModified = computed(() => fieldModified('telegram'));
 const whatsappModified = computed(() => fieldModified('whatsapp'));
 const viberModified = computed(() => fieldModified('viber'));
+const logoUrlModified = computed(() => fieldModified('logoUrl'));
 
 const cityIdModified = computed(() => fieldModified('cityId'));
 
@@ -264,6 +267,21 @@ const descriptionTrModified = computed(() => fieldModified('description_tr'));
 const descriptionSrCyrlModified = computed(() =>
 	fieldModified('description_sr_cyrl'),
 );
+
+const clinicTypeIdsModified = computed(() => {
+	if (!selectedClinic.value || !clinicModel.value) {
+		return false;
+	}
+	const originalIds = selectedClinic.value.clinicTypeIds
+		? selectedClinic.value.clinicTypeIds
+				.split(',')
+				.map(Number)
+				.filter(Boolean)
+				.sort()
+		: [];
+	const modelIds = [...clinicModel.value.clinicTypeIds].sort();
+	return JSON.stringify(originalIds) !== JSON.stringify(modelIds);
+});
 
 const languageIdsModified = computed(() => {
 	if (!selectedClinic.value || !clinicModel.value) {
@@ -297,6 +315,7 @@ const hasChanges = computed(() => {
 		telegramModified.value ||
 		whatsappModified.value ||
 		viberModified.value ||
+		logoUrlModified.value ||
 		cityIdModified.value ||
 		descriptionSrModified.value ||
 		descriptionSrCyrlModified.value ||
@@ -304,6 +323,7 @@ const hasChanges = computed(() => {
 		descriptionRuModified.value ||
 		descriptionDeModified.value ||
 		descriptionTrModified.value ||
+		clinicTypeIdsModified.value ||
 		languageIdsModified.value
 	);
 });
@@ -355,6 +375,8 @@ const saveChanges = async () => {
 			description_ru: clinicModel.value.description_ru,
 			description_de: clinicModel.value.description_de,
 			description_tr: clinicModel.value.description_tr,
+			logoUrl: clinicModel.value.logoUrl,
+			clinicTypeIds: clinicModel.value.clinicTypeIds,
 			languageIds: clinicModel.value.languageIds,
 		},
 	});
@@ -413,7 +435,9 @@ watch(selectedClinic, async (clinic) => {
 				description_ru: adminData.description_ru || '',
 				description_de: adminData.description_de || '',
 				description_tr: adminData.description_tr || '',
+				logoUrl: adminData.logoUrl || '',
 				postalCode: adminData.postalCode || '',
+				clinicTypeIds: adminData.clinicTypeIds || [],
 				languageIds: adminData.languageIds,
 			};
 			cityIds.value = [adminData.cityId];
@@ -434,7 +458,11 @@ watch(selectedClinic, async (clinic) => {
 				description_ru: '',
 				description_de: '',
 				description_tr: '',
+				logoUrl: '',
 				postalCode: clinic.postalCode || '',
+				clinicTypeIds: clinic.clinicTypeIds
+					? clinic.clinicTypeIds.split(',').map(Number).filter(Boolean)
+					: [],
 				languageIds: clinic.languageIds.split(',').map(Number),
 			};
 			cityIds.value = [clinic.cityId];
@@ -457,6 +485,15 @@ onMounted(async () => {
 		/>
 
 		<div v-if="clinicModel" class="clinic-info">
+			<AdminEditableField
+				label="Логотип"
+				type="photo"
+				image-category="clinics"
+				v-model:value="clinicModel.logoUrl"
+				:readonly="!editable"
+				:modified="logoUrlModified"
+				@reset="clinicModel.logoUrl = selectedClinic?.logoUrl || ''"
+			/>
 			<AdminFieldGroup title="Название">
 				<AdminEditableField
 					label="Название (SR)"
@@ -650,6 +687,8 @@ onMounted(async () => {
 				:modified="descriptionTrModified"
 				@reset="clinicModel.description_tr = selectedClinic?.description_tr"
 			/>
+
+			<FilterClinicTypeSelect v-model:value="clinicModel.clinicTypeIds" />
 
 			<FilterCitySelect v-model:value="cityIds" />
 

@@ -7,6 +7,7 @@ import {
 import type { ClinicList } from '~/interfaces/clinic';
 import {
 	validateCityIds,
+	validateClinicTypeIds,
 	validateDoctorLanguageIds,
 	validateName,
 } from '~/common/validation';
@@ -34,6 +35,13 @@ export default defineEventHandler(async (event): Promise<ClinicList> => {
 			setResponseStatus(event, 400, 'Invalid name');
 			return { clinics: [], totalCount: 0 };
 		}
+		if (
+			body.clinicTypeIds &&
+			!validateClinicTypeIds(body, 'api/clinics/list')
+		) {
+			setResponseStatus(event, 400, 'Invalid clinic type');
+			return { clinics: [], totalCount: 0 };
+		}
 
 		return getClinicList(body);
 	} catch (error) {
@@ -49,6 +57,7 @@ export async function getClinicList(
 	body: {
 		cityIds?: number[];
 		languageIds?: number[];
+		clinicTypeIds?: number[];
 		name?: string;
 		locale?: string;
 		page?: number;
@@ -77,6 +86,14 @@ export async function getClinicList(
 		whereFilters.push(
 			`EXISTS (SELECT 1 FROM clinic_languages cl_f WHERE cl_f.clinic_id = c.id AND cl_f.language_id IN (${buildInPlaceholders(
 				body.languageIds,
+			)}))`,
+		);
+	}
+
+	if (body.clinicTypeIds?.length > 0) {
+		whereFilters.push(
+			`EXISTS (SELECT 1 FROM clinic_clinic_types cct_f WHERE cct_f.clinic_id = c.id AND cct_f.clinic_type_id IN (${buildInPlaceholders(
+				body.clinicTypeIds,
 			)}))`,
 		);
 	}
@@ -129,6 +146,7 @@ export async function getClinicList(
 				c.description_de,
 				c.description_tr,
 				COALESCE(GROUP_CONCAT(DISTINCT cl.language_id ORDER BY cl.language_id), '1') as languageIds,
+				COALESCE(GROUP_CONCAT(DISTINCT cct.clinic_type_id ORDER BY cct.clinic_type_id), '') as clinicTypeIds,
 				COALESCE(
 					GROUP_CONCAT(DISTINCT bspi.service_id ORDER BY bspi.service_id),
 					''
@@ -137,6 +155,7 @@ export async function getClinicList(
 				(SELECT COUNT(*) FROM reviews r WHERE r.clinic_id = c.id AND r.rating IS NOT NULL) as totalReviews
 			FROM clinics c
 			LEFT JOIN clinic_languages cl ON c.id = cl.clinic_id
+			LEFT JOIN clinic_clinic_types cct ON c.id = cct.clinic_id
 			LEFT JOIN billing_clinic_service_purchases bscp
 				ON c.id = bscp.clinic_id
 				AND bscp.deleted = 0
@@ -174,6 +193,7 @@ export async function getClinicList(
 
 		return {
 			id: clinic.id,
+			clinicTypeIds: clinic.clinicTypeIds || '',
 			cityId: clinic.cityId,
 			postalCode: clinic.postalCode,
 			latitude: clinic.latitude,

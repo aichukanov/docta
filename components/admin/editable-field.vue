@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RefreshLeft } from '@element-plus/icons-vue';
+import { RefreshLeft, Upload } from '@element-plus/icons-vue';
 import { toCyrillic } from '~/common/serbian-transliteration';
 
 const props = withDefaults(
@@ -9,6 +9,8 @@ const props = withDefaults(
 		modified?: boolean;
 		type?: 'text' | 'photo' | 'textarea';
 		readonly?: boolean;
+		/** Категория изображения для загрузки файлов (doctors, clinics, avatars) */
+		imageCategory?: string;
 		/** Текст на латинице для перевода в кириллицу */
 		translateFrom?: string | null;
 	}>(),
@@ -17,6 +19,7 @@ const props = withDefaults(
 		type: 'text',
 		modified: false,
 		readonly: false,
+		imageCategory: 'doctors',
 		translateFrom: null,
 	},
 );
@@ -30,6 +33,39 @@ const editableValue = computed({
 	get: () => props.value,
 	set: (value: string) => emit('update:value', value),
 });
+
+const isUploading = ref(false);
+const fileInputRef = ref<HTMLInputElement | null>(null);
+
+const triggerFileSelect = () => {
+	fileInputRef.value?.click();
+};
+
+const handleFileUpload = async (event: Event) => {
+	const input = event.target as HTMLInputElement;
+	const file = input.files?.[0];
+	if (!file) return;
+
+	isUploading.value = true;
+	try {
+		const formData = new FormData();
+		formData.append('file', file);
+		formData.append('category', props.imageCategory);
+
+		const result = await $fetch<{ url: string }>('/api/upload/admin-image', {
+			method: 'POST',
+			body: formData,
+		});
+
+		emit('update:value', result.url);
+	} catch (error) {
+		console.error('Upload failed:', error);
+		alert('Ошибка загрузки файла');
+	} finally {
+		isUploading.value = false;
+		input.value = '';
+	}
+};
 
 const translateToCyrillic = () => {
 	if (props.translateFrom) {
@@ -47,13 +83,37 @@ const showTranslateButton = computed(
 		<label>{{ props.label }}</label>
 
 		<div v-if="props.type === 'photo'" class="photo-container">
-			<img :src="editableValue" width="100" height="100" />
-			<el-input
-				v-model="editableValue"
-				type="textarea"
-				:rows="3"
-				:readonly="readonly"
-			/>
+			<img v-if="editableValue" :src="editableValue" width="100" height="100" />
+			<div class="photo-inputs">
+				<el-input
+					v-model="editableValue"
+					type="textarea"
+					:rows="3"
+					:readonly="readonly"
+					placeholder="Вставьте URL или загрузите файл"
+				/>
+				<div v-if="!readonly" class="photo-actions">
+					<el-button
+						:icon="Upload"
+						:loading="isUploading"
+						@click="triggerFileSelect"
+					>
+						Загрузить файл
+					</el-button>
+					<el-button
+						v-if="props.modified"
+						:icon="RefreshLeft"
+						@click="$emit('reset')"
+					/>
+				</div>
+				<input
+					ref="fileInputRef"
+					type="file"
+					accept="image/*"
+					class="hidden-file-input"
+					@change="handleFileUpload"
+				/>
+			</div>
 		</div>
 		<div v-else-if="props.type === 'textarea'" class="textarea-container">
 			<el-input
@@ -126,7 +186,24 @@ const showTranslateButton = computed(
 	& > img {
 		border-radius: 8px;
 		object-fit: cover;
+		flex-shrink: 0;
 	}
+}
+
+.photo-inputs {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+	flex: 1;
+}
+
+.photo-actions {
+	display: flex;
+	gap: var(--spacing-xs);
+}
+
+.hidden-file-input {
+	display: none;
 }
 
 .textarea-container {

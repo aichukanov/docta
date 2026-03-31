@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
+import clinicCommonI18n from '~/i18n/clinic-common';
 
 const props = defineProps<{
 	id: number;
@@ -13,14 +14,8 @@ const props = defineProps<{
 }>();
 
 const { t, n, locale } = useI18n({
-	messages: {
-		'en': { PriceUnknown: 'Price not specified', PriceFrom: 'from {price}' },
-		'ru': { PriceUnknown: 'Цена не указана', PriceFrom: 'от {price}' },
-		'sr': { PriceUnknown: 'Cena nije navedena', PriceFrom: 'od {price}' },
-		'de': { PriceUnknown: 'Preis nicht angegeben', PriceFrom: 'ab {price}' },
-		'tr': { PriceUnknown: 'Fiyat belirtilmedi', PriceFrom: '{price} başlayan' },
-		'sr-cyrl': { PriceUnknown: 'Цена није наведена', PriceFrom: 'од {price}' },
-	},
+	useScope: 'local',
+	messages: clinicCommonI18n.messages,
 });
 
 const itemLink = computed(() => {

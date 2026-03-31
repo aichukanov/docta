@@ -19,50 +19,12 @@ const { t } = useI18n({ useScope: 'local' });
 .tips-section {
 	margin-top: var(--spacing-3xl);
 	padding: var(--spacing-2xl);
-	background: linear-gradient(
-		135deg,
-		rgba(79, 70, 229, 0.03) 0%,
-		rgba(6, 182, 212, 0.02) 50%,
-		rgba(245, 158, 11, 0.02) 100%
-	);
 	border-radius: var(--border-radius-xl);
-	position: relative;
-	overflow: hidden;
 	box-sizing: border-box;
 
 	@media (max-width: 500px) {
 		padding: var(--spacing-lg);
 		margin-top: var(--spacing-xl);
-	}
-
-	&::before {
-		content: '';
-		position: absolute;
-		top: -50%;
-		right: -20%;
-		width: 300px;
-		height: 300px;
-		background: radial-gradient(
-			circle,
-			rgba(79, 70, 229, 0.04) 0%,
-			transparent 70%
-		);
-		pointer-events: none;
-	}
-
-	&::after {
-		content: '';
-		position: absolute;
-		bottom: -30%;
-		left: -10%;
-		width: 200px;
-		height: 200px;
-		background: radial-gradient(
-			circle,
-			rgba(6, 182, 212, 0.04) 0%,
-			transparent 70%
-		);
-		pointer-events: none;
 	}
 }
 
@@ -71,19 +33,12 @@ const { t } = useI18n({ useScope: 'local' });
 	align-items: center;
 	gap: var(--spacing-lg);
 	margin-bottom: var(--spacing-xl);
-	position: relative;
-	z-index: 1;
 }
 
 .tips-header-line {
 	flex: 1;
 	height: 1px;
-	background: linear-gradient(
-		90deg,
-		transparent 0%,
-		var(--color-border-secondary) 50%,
-		transparent 100%
-	);
+	background: var(--color-border-secondary);
 }
 
 .tips-title {
@@ -104,8 +59,6 @@ const { t } = useI18n({ useScope: 'local' });
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-md);
-	position: relative;
-	z-index: 1;
 }
 </style>
 

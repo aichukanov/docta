@@ -5,6 +5,7 @@ import type {
 	ItemListSchema,
 	WebPageSchema,
 	MedicalOrganizationRef,
+	MedicalOrganizationType,
 	MedicalSpecialtySchema,
 	BreadcrumbListSchema,
 	PersonListItemRef,
@@ -23,6 +24,11 @@ import {
 } from '~/common/contacts';
 import { Language, LanguageId } from '~/enums/language';
 import { getDoctorSpecialtySchemaOrgUrlById } from '~/common/schema-org-medical-specialty';
+import {
+	ClinicType,
+	CLINIC_TYPE_SCHEMA_ORG,
+	CLINIC_TYPE_MEDICAL_SPECIALTY,
+} from '~/enums/clinic-type';
 
 // Маппинг ID языков на ISO 639-1 коды
 const LANGUAGE_CODES: Record<number, string> = {
@@ -88,6 +94,37 @@ export function buildClinicPostalAddress(
 		'addressRegion': town ? cityName || undefined : undefined,
 		'postalCode': postalCode || undefined,
 	};
+}
+
+/**
+ * Get the primary Schema.org @type for a clinic based on its type IDs.
+ * Uses the first type ID for the primary @type.
+ */
+function getClinicSchemaOrgType(clinicTypeIds?: string): MedicalOrganizationType {
+	if (!clinicTypeIds) return 'MedicalOrganization';
+	const firstTypeId = Number(clinicTypeIds.split(',')[0]);
+	if (!firstTypeId) return 'MedicalOrganization';
+	return (CLINIC_TYPE_SCHEMA_ORG[firstTypeId as ClinicType] as MedicalOrganizationType) || 'MedicalOrganization';
+}
+
+/**
+ * Build medicalSpecialty array from clinic type IDs.
+ */
+function buildClinicMedicalSpecialties(clinicTypeIds?: string): MedicalSpecialtySchema[] | undefined {
+	if (!clinicTypeIds) return undefined;
+	const typeIds = clinicTypeIds.split(',').map(Number).filter(Boolean);
+	const specialties = typeIds
+		.map((id) => {
+			const specialty = CLINIC_TYPE_MEDICAL_SPECIALTY[id as ClinicType];
+			if (!specialty) return null;
+			return {
+				'@type': 'MedicalSpecialty' as const,
+				'@id': `https://schema.org/${specialty}`,
+				'name': specialty,
+			};
+		})
+		.filter(Boolean) as MedicalSpecialtySchema[];
+	return specialties.length > 0 ? specialties : undefined;
 }
 
 /**
@@ -430,7 +467,7 @@ export function buildMedicalOrganizationRef(
 		.filter(Boolean) as string[] | undefined;
 
 	return {
-		'@type': 'MedicalOrganization',
+		'@type': getClinicSchemaOrgType(clinic.clinicTypeIds),
 		'name': clinic.name,
 		'url': normalizeWebsiteUrl(clinic.website) || undefined,
 		'telephone': splitContacts(clinic.phone)[0] || undefined,
@@ -879,15 +916,21 @@ export function buildClinicSchema(options: {
 		.map((id) => getLanguageCode(id))
 		.filter(Boolean) as string[] | undefined;
 
+	const schemaOrgType = getClinicSchemaOrgType(clinic.clinicTypeIds);
+	const medicalSpecialties = buildClinicMedicalSpecialties(clinic.clinicTypeIds);
+
 	const clinicSchema = {
 		...buildEntitySchemaBase({
 			url: clinicUrl,
-			type: 'MedicalOrganization' as const,
-			fragment: 'medicalorganization',
+			type: schemaOrgType,
+			fragment: schemaOrgType.toLowerCase(),
 		}),
 		name: clinic.name,
+		image: clinic.logoUrl || undefined,
+		logo: clinic.logoUrl || undefined,
 		description: options.pageDescription || undefined,
 		address: buildClinicPostalAddress(clinic, getCityName),
+		medicalSpecialty: medicalSpecialties,
 		telephone: splitContacts(clinic.phone)[0] || undefined,
 		email: splitContacts(clinic.email)[0] || undefined,
 		sameAs: sameAs.length > 0 ? sameAs : undefined,

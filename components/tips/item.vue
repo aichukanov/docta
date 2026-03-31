@@ -48,34 +48,22 @@ withDefaults(
 
 	&--info {
 		&::before {
-			background: linear-gradient(
-				180deg,
-				var(--color-primary) 0%,
-				var(--color-secondary) 100%
-			);
+			background: var(--color-primary);
 		}
 
 		.tip-icon-wrapper {
-			background: linear-gradient(
-				135deg,
-				rgba(79, 70, 229, 0.12) 0%,
-				rgba(6, 182, 212, 0.08) 100%
-			);
+			background: rgba(79, 70, 229, 0.1);
 			color: var(--color-primary);
 		}
 	}
 
 	&--emergency {
 		&::before {
-			background: linear-gradient(180deg, #ef4444 0%, #f97316 100%);
+			background: #ef4444;
 		}
 
 		.tip-icon-wrapper {
-			background: linear-gradient(
-				135deg,
-				rgba(239, 68, 68, 0.12) 0%,
-				rgba(249, 115, 22, 0.08) 100%
-			);
+			background: rgba(239, 68, 68, 0.1);
 			color: #ef4444;
 		}
 	}

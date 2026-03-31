@@ -4,6 +4,7 @@ import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
 interface ClinicAdminData {
 	id: number;
+	clinicTypeIds: number[];
 	name_sr: string;
 	name_ru: string;
 	name_sr_cyrl: string;
@@ -29,6 +30,7 @@ interface ClinicAdminData {
 	description_ru: string;
 	description_de: string;
 	description_tr: string;
+	logoUrl: string;
 	languageIds: number[];
 }
 
@@ -79,9 +81,12 @@ export default defineEventHandler(
 					c.description_ru,
 					c.description_de,
 					c.description_tr,
-					COALESCE(GROUP_CONCAT(DISTINCT cl.language_id ORDER BY cl.language_id), '1') as languageIds
+					c.logo_url as logoUrl,
+					COALESCE(GROUP_CONCAT(DISTINCT cl.language_id ORDER BY cl.language_id), '1') as languageIds,
+					COALESCE(GROUP_CONCAT(DISTINCT cct.clinic_type_id ORDER BY cct.clinic_type_id), '') as clinicTypeIds
 				FROM clinics c
 				LEFT JOIN clinic_languages cl ON c.id = cl.clinic_id
+				LEFT JOIN clinic_clinic_types cct ON c.id = cct.clinic_id
 				WHERE c.id = ?
 				GROUP BY c.id;
 			`;
@@ -99,6 +104,9 @@ export default defineEventHandler(
 
 			return {
 				id: clinic.id,
+				clinicTypeIds: clinic.clinicTypeIds
+					? clinic.clinicTypeIds.split(',').map(Number)
+					: [],
 				name_sr: clinic.name_sr || '',
 				name_ru: clinic.name_ru || '',
 				name_sr_cyrl: clinic.name_sr_cyrl || '',
@@ -124,6 +132,7 @@ export default defineEventHandler(
 				description_ru: clinic.description_ru || '',
 				description_de: clinic.description_de || '',
 				description_tr: clinic.description_tr || '',
+				logoUrl: clinic.logoUrl || '',
 				languageIds: clinic.languageIds
 					? clinic.languageIds.split(',').map(Number)
 					: [1],

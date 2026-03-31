@@ -1,8 +1,10 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
+import { downloadAndSaveImage, isExternalUrl } from '~/server/utils/image-processing';
 import {
 	validateBody,
 	validateCityId,
+	validateClinicTypeIds,
 	validateDoctorLanguageIds,
 } from '~/common/validation';
 
@@ -24,10 +26,21 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			setResponseStatus(event, 400, 'Invalid clinic language');
 			return null;
 		}
+		if (
+			body.clinicTypeIds?.length > 0 &&
+			!validateClinicTypeIds(body, 'api/clinics/add')
+		) {
+			setResponseStatus(event, 400, 'Invalid clinic type');
+			return null;
+		}
+
+		if (body.logoUrl && isExternalUrl(body.logoUrl)) {
+			body.logoUrl = await downloadAndSaveImage(body.logoUrl, 'clinics');
+		}
 
 		const addClinicQuery = `
-			INSERT INTO clinics (name_sr, name_sr_cyrl, name_ru, city_id, address_sr, address_sr_cyrl, town_sr, town_sr_cyrl, postal_code, latitude, longitude, phone, email, website, facebook, instagram, telegram, whatsapp, viber, description_sr, description_sr_cyrl, description_en, description_ru, description_de, description_tr)
-			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+			INSERT INTO clinics (name_sr, name_sr_cyrl, name_ru, city_id, address_sr, address_sr_cyrl, town_sr, town_sr_cyrl, postal_code, latitude, longitude, phone, email, website, facebook, instagram, telegram, whatsapp, viber, description_sr, description_sr_cyrl, description_en, description_ru, description_de, description_tr, logo_url)
+			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 		`;
 
 		const addClinicQueryParams = [
@@ -56,6 +69,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			body.description_ru || '',
 			body.description_de || '',
 			body.description_tr || '',
+			body.logoUrl || '',
 		];
 
 		const connection = await getConnection();
@@ -77,6 +91,15 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				`;
 				const languageQueryParams = [clinicId, languageId];
 				await connection.execute(languageQuery, languageQueryParams);
+			}
+
+			if (body.clinicTypeIds?.length > 0) {
+				for (const typeId of body.clinicTypeIds) {
+					await connection.execute(
+						'INSERT INTO clinic_clinic_types (clinic_id, clinic_type_id) VALUES (?, ?)',
+						[clinicId, typeId],
+					);
+				}
 			}
 
 			await connection.commit();

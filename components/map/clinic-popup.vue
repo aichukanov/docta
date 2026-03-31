@@ -3,6 +3,7 @@ import { getRegionalQuery } from '~/common/url-utils';
 import { getLocalizedName } from '~/common/utils';
 import { LIST_PAGE_SIZE } from '~/common/constants';
 import { hasContacts } from '../contacts/utils';
+import clinicCommonI18n from '~/i18n/clinic-common';
 import type { ClinicData, ClinicServiceItem } from '~/interfaces/clinic';
 
 const props = defineProps<{
@@ -10,7 +11,10 @@ const props = defineProps<{
 	services: ClinicServiceItem[];
 }>();
 
-const { t, locale } = useI18n();
+const { t, locale } = useI18n({
+	useScope: 'local',
+	messages: clinicCommonI18n.messages,
+});
 const servicesListRef = ref<HTMLElement>();
 const pageNumber = ref(1);
 
@@ -79,30 +83,12 @@ watch(pageNumber, () => {
 
 <i18n lang="json">
 {
-	"en": {
-		"Contacts": "Contacts",
-		"LanguageAssistance": "The clinic provides assistance in:"
-	},
-	"ru": {
-		"Contacts": "Контакты",
-		"LanguageAssistance": "В клинике предоставляется сопровождение на следующих языках:"
-	},
-	"de": {
-		"Contacts": "Kontakte",
-		"LanguageAssistance": "Die Klinik bietet Unterstützung in:"
-	},
-	"tr": {
-		"Contacts": "İletişim",
-		"LanguageAssistance": "Klinik aşağıdaki dillerde destek sunar:"
-	},
-	"sr": {
-		"Contacts": "Kontakti",
-		"LanguageAssistance": "Klinika pruža pomoć na sledećim jezicima:"
-	},
-	"sr-cyrl": {
-		"Contacts": "Контакти",
-		"LanguageAssistance": "Клиника пружа помоћ на следећим језицима:"
-	}
+	"en": { "Contacts": "Contacts" },
+	"ru": { "Contacts": "Контакты" },
+	"de": { "Contacts": "Kontakte" },
+	"tr": { "Contacts": "İletişim" },
+	"sr": { "Contacts": "Kontakti" },
+	"sr-cyrl": { "Contacts": "Контакти" }
 }
 </i18n>
 

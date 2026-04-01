@@ -29,10 +29,7 @@ watch(
 </script>
 
 <template>
-	<div
-		class="clinic-logo"
-		:style="{ width: `${size}px`, height: `${size}px` }"
-	>
+	<div class="clinic-logo" :style="{ width: `${size}px`, height: `${size}px` }">
 		<img
 			v-if="hasLogo && !imgError"
 			:src="logoUrl!"
@@ -57,7 +54,6 @@ watch(
 	align-items: center;
 	justify-content: center;
 	background: var(--color-surface-secondary);
-	border: 1px solid var(--color-border-primary);
 }
 
 .clinic-logo__img {

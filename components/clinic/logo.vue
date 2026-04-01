@@ -53,7 +53,6 @@ watch(
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: var(--color-surface-secondary);
 }
 
 .clinic-logo__img {

@@ -23,11 +23,7 @@ const localizedName = computed(() =>
 <template>
 	<header class="clinic-hero">
 		<div class="clinic-hero__header">
-			<ClinicLogo
-				:logoUrl="clinic.logoUrl"
-				:name="localizedName"
-				:size="80"
-			/>
+			<ClinicLogo :logoUrl="clinic.logoUrl" :name="localizedName" :size="80" />
 			<div class="clinic-hero__header-info">
 				<div class="clinic-hero__title-row">
 					<h1 class="clinic-hero__name">{{ localizedName }}</h1>
@@ -39,7 +35,8 @@ const localizedName = computed(() =>
 						v-for="typeName in clinicTypeNames"
 						:key="typeName"
 						class="clinic-hero__type-tag"
-					>{{ typeName }}</span>
+						>{{ typeName }}</span
+					>
 				</div>
 
 				<address class="clinic-hero__address">
@@ -62,7 +59,6 @@ const localizedName = computed(() =>
 			<ClinicShowOnMapButton :clinic="clinic" @click="$emit('scrollToMap')" />
 			<ClinicRouteButton :clinic="clinic" />
 		</div>
-
 	</header>
 </template>
 

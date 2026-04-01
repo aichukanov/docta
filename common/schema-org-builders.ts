@@ -12,7 +12,10 @@ import type {
 	PersonSchemaType,
 } from '~/types/schema-org';
 import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
-import type { WorkingHours, DayOfWeek } from '~/interfaces/clinic-working-hours';
+import type {
+	WorkingHours,
+	DayOfWeek,
+} from '~/interfaces/clinic-working-hours';
 import { DAYS_OF_WEEK } from '~/interfaces/clinic-working-hours';
 import { SITE_NAME } from '~/common/constants';
 import {
@@ -100,17 +103,25 @@ export function buildClinicPostalAddress(
  * Get the primary Schema.org @type for a clinic based on its type IDs.
  * Uses the first type ID for the primary @type.
  */
-function getClinicSchemaOrgType(clinicTypeIds?: string): MedicalOrganizationType {
+function getClinicSchemaOrgType(
+	clinicTypeIds?: string,
+): MedicalOrganizationType {
 	if (!clinicTypeIds) return 'MedicalOrganization';
 	const firstTypeId = Number(clinicTypeIds.split(',')[0]);
 	if (!firstTypeId) return 'MedicalOrganization';
-	return (CLINIC_TYPE_SCHEMA_ORG[firstTypeId as ClinicType] as MedicalOrganizationType) || 'MedicalOrganization';
+	return (
+		(CLINIC_TYPE_SCHEMA_ORG[
+			firstTypeId as ClinicType
+		] as MedicalOrganizationType) || 'MedicalOrganization'
+	);
 }
 
 /**
  * Build medicalSpecialty array from clinic type IDs.
  */
-function buildClinicMedicalSpecialties(clinicTypeIds?: string): MedicalSpecialtySchema[] | undefined {
+function buildClinicMedicalSpecialties(
+	clinicTypeIds?: string,
+): MedicalSpecialtySchema[] | undefined {
 	if (!clinicTypeIds) return undefined;
 	const typeIds = clinicTypeIds.split(',').map(Number).filter(Boolean);
 	const specialties = typeIds
@@ -661,7 +672,11 @@ export function buildDoctorSchema(options: {
 
 	// Build aggregate rating
 	let aggregateRating: object | undefined;
-	if (options.rating && options.rating.averageRating && options.rating.totalReviews > 0) {
+	if (
+		options.rating &&
+		options.rating.averageRating &&
+		options.rating.totalReviews > 0
+	) {
 		aggregateRating = {
 			'@type': 'AggregateRating' as const,
 			'ratingValue': options.rating.averageRating.toFixed(1),
@@ -670,24 +685,30 @@ export function buildDoctorSchema(options: {
 	}
 
 	// Build reviews
-	const reviews = options.reviews?.map((review) => ({
-		'@type': 'Review' as const,
-		'author': review.author ? {
-			'@type': 'Person' as const,
-			'name': review.author.name,
-			'image': review.author.photoUrl || undefined,
-		} : undefined,
-		'reviewRating': review.rating ? {
-			'@type': 'Rating' as const,
-			'ratingValue': review.rating,
-		} : undefined,
-		'reviewBody': review.text,
-		'datePublished': review.publishedAt || undefined,
-		'provider': {
-			'@type': 'Organization' as const,
-			'name': review.provider,
-		},
-	})).filter(Boolean);
+	const reviews = options.reviews
+		?.map((review) => ({
+			'@type': 'Review' as const,
+			'author': review.author
+				? {
+						'@type': 'Person' as const,
+						'name': review.author.name,
+						'image': review.author.photoUrl || undefined,
+				  }
+				: undefined,
+			'reviewRating': review.rating
+				? {
+						'@type': 'Rating' as const,
+						'ratingValue': review.rating,
+				  }
+				: undefined,
+			'reviewBody': review.text,
+			'datePublished': review.publishedAt || undefined,
+			'provider': {
+				'@type': 'Organization' as const,
+				'name': review.provider,
+			},
+		}))
+		.filter(Boolean);
 
 	const doctorSchema = {
 		...buildEntitySchemaBase({
@@ -925,7 +946,9 @@ export function buildClinicSchema(options: {
 		.filter(Boolean) as string[] | undefined;
 
 	const schemaOrgType = getClinicSchemaOrgType(clinic.clinicTypeIds);
-	const medicalSpecialties = buildClinicMedicalSpecialties(clinic.clinicTypeIds);
+	const medicalSpecialties = buildClinicMedicalSpecialties(
+		clinic.clinicTypeIds,
+	);
 
 	const clinicSchema = {
 		...buildEntitySchemaBase({
@@ -967,7 +990,9 @@ export function buildClinicSchema(options: {
 				? buildEmployeeRefs(options.doctors, siteUrl)
 				: undefined,
 		aggregateRating:
-			options.rating && options.rating.averageRating && options.rating.totalReviews > 0
+			options.rating &&
+			options.rating.averageRating &&
+			options.rating.totalReviews > 0
 				? {
 						'@type': 'AggregateRating' as const,
 						'ratingValue': options.rating.averageRating.toFixed(1),
@@ -975,24 +1000,30 @@ export function buildClinicSchema(options: {
 				  }
 				: undefined,
 		review: (() => {
-			const reviews = options.reviews?.map((review) => ({
-				'@type': 'Review' as const,
-				'author': review.author ? {
-					'@type': 'Person' as const,
-					'name': review.author.name,
-					'image': review.author.photoUrl || undefined,
-				} : undefined,
-				'reviewRating': review.rating ? {
-					'@type': 'Rating' as const,
-					'ratingValue': review.rating,
-				} : undefined,
-				'reviewBody': review.text,
-				'datePublished': review.publishedAt || undefined,
-				'provider': {
-					'@type': 'Organization' as const,
-					'name': review.provider,
-				},
-			})).filter(Boolean);
+			const reviews = options.reviews
+				?.map((review) => ({
+					'@type': 'Review' as const,
+					'author': review.author
+						? {
+								'@type': 'Person' as const,
+								'name': review.author.name,
+								'image': review.author.photoUrl || undefined,
+						  }
+						: undefined,
+					'reviewRating': review.rating
+						? {
+								'@type': 'Rating' as const,
+								'ratingValue': review.rating,
+						  }
+						: undefined,
+					'reviewBody': review.text,
+					'datePublished': review.publishedAt || undefined,
+					'provider': {
+						'@type': 'Organization' as const,
+						'name': review.provider,
+					},
+				}))
+				.filter(Boolean);
 			return reviews && reviews.length > 0 ? reviews : undefined;
 		})(),
 	};

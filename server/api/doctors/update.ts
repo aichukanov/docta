@@ -2,7 +2,10 @@ import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
 import { syncDoctorRelation } from '~/server/common/doctor-relations';
 import type { DoctorData } from '~/interfaces/doctor';
-import { downloadAndSaveImage, isExternalUrl } from '~/server/utils/image-processing';
+import {
+	downloadAndSaveImage,
+	isExternalUrl,
+} from '~/server/utils/image-processing';
 import { generateSlug } from '~/common/slug-utils';
 import { ensureUniqueSlug, saveSlugRedirect } from '~/server/common/slug-db';
 import {

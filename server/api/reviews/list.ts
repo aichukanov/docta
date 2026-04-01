@@ -36,7 +36,9 @@ export default defineEventHandler(async (event): Promise<ReviewListItem[]> => {
 				r.rating ? `${r.rating}★` : '',
 				r.author_name,
 				r.clinic_name || r.doctor_name || '',
-				r.published_at ? new Date(r.published_at).toISOString().slice(0, 10) : '',
+				r.published_at
+					? new Date(r.published_at).toISOString().slice(0, 10)
+					: '',
 			].filter(Boolean);
 			return { id: r.id, label: parts.join(' | ') };
 		});

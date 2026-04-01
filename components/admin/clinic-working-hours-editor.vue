@@ -22,11 +22,11 @@ const DAY_TYPES: DayType[] = [
 ];
 
 const DAY_TYPE_LABELS: Record<DayType, string> = {
-	regular: 'Рабочий день',
+	'regular': 'Рабочий день',
 	'24/7': 'Круглосуточно',
-	closed: 'Выходной',
-	on_demand: 'По записи',
-	not_specified: 'Не указано',
+	'closed': 'Выходной',
+	'on_demand': 'По записи',
+	'not_specified': 'Не указано',
 };
 
 const DAY_LABELS: Record<DayOfWeek, string> = {
@@ -202,10 +202,7 @@ watch(
 					</div>
 				</div>
 
-				<div
-					v-if="schedule[day].type === 'regular'"
-					class="wh-intervals"
-				>
+				<div v-if="schedule[day].type === 'regular'" class="wh-intervals">
 					<div
 						v-for="(interval, idx) in schedule[day].intervals"
 						:key="idx"

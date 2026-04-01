@@ -4,16 +4,17 @@ import type { H3Event } from 'h3';
 /**
  * Entity type config for slug redirect lookups
  */
-const ENTITY_TYPES: Record<
-	string,
-	{ table: string; redirectTable?: string }
-> = {
-	clinics: { table: 'clinics' },
-	doctors: { table: 'doctors', redirectTable: 'doctor_redirects' },
-	services: { table: 'medical_services', redirectTable: 'medical_service_redirects' },
-	labtests: { table: 'lab_tests', redirectTable: 'lab_test_redirects' },
-	medications: { table: 'medications' },
-};
+const ENTITY_TYPES: Record<string, { table: string; redirectTable?: string }> =
+	{
+		clinics: { table: 'clinics' },
+		doctors: { table: 'doctors', redirectTable: 'doctor_redirects' },
+		services: {
+			table: 'medical_services',
+			redirectTable: 'medical_service_redirects',
+		},
+		labtests: { table: 'lab_tests', redirectTable: 'lab_test_redirects' },
+		medications: { table: 'medications' },
+	};
 
 /**
  * Checks if the URL needs a redirect:

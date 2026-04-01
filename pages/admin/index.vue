@@ -368,7 +368,10 @@ async function recalculateRankScores() {
 					</el-tab-pane>
 					<el-tab-pane label="Ранжирование">
 						<div class="ranking-section">
-							<p>Пересчёт rank score для всех врачей и клиник. Автоматически выполняется каждые 6 часов.</p>
+							<p
+								>Пересчёт rank score для всех врачей и клиник. Автоматически
+								выполняется каждые 6 часов.</p
+							>
 							<el-button
 								type="primary"
 								:loading="isRecalculatingRanks"

@@ -25,7 +25,11 @@ const serviceLink = computed(() => {
 	<div class="service-wrapper">
 		<div class="service-info">
 			<h3 class="service-name">
-				<NuxtLink v-if="serviceLink" :to="serviceLink" class="service-name-link">
+				<NuxtLink
+					v-if="serviceLink"
+					:to="serviceLink"
+					class="service-name-link"
+				>
 					{{ service.name }}
 				</NuxtLink>
 				<span v-else>{{ service.name }}</span>

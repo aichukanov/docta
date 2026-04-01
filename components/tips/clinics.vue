@@ -70,7 +70,8 @@ const localI18n = {
 			TipDoctors: 'Sie können auch einen Arzt suchen —',
 			TipDoctorsLink: 'Fachärzte für {specialty}{location}',
 			TipServices: 'Suchen Sie eine bestimmte Behandlung? Sehen Sie sich',
-			TipServicesLink: 'Leistungen im Bereich {specialty} mit Preisen{location}',
+			TipServicesLink:
+				'Leistungen im Bereich {specialty} mit Preisen{location}',
 			TipLabTests: 'Brauchen Sie eine Laboruntersuchung? Sehen Sie',
 			TipLabTestsLink: 'Laboruntersuchungen und Preise{location}',
 			LocationDefault: ' in Montenegro',
@@ -95,14 +96,22 @@ const localI18n = {
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([localI18n, specialtyI18n, clinicTypeI18n, cityI18n, languageI18n]),
+	messages: combineI18nMessages([
+		localI18n,
+		specialtyI18n,
+		clinicTypeI18n,
+		cityI18n,
+		languageI18n,
+	]),
 });
 
 const locationSuffix = computed(() => {
 	const hasCity = props.cityIds?.length === 1;
 	const hasLang = props.languageIds?.length === 1;
 	const city = hasCity ? t(`city_${props.cityIds![0]}_genitive`) : '';
-	const language = hasLang ? t(`language_${props.languageIds![0]}_genitive`) : '';
+	const language = hasLang
+		? t(`language_${props.languageIds![0]}_genitive`)
+		: '';
 
 	if (hasCity && hasLang) {
 		return t('LocationCityLanguage', { city, language });
@@ -247,10 +256,16 @@ const showLabTip = computed(
 );
 
 const doctorsLinkText = computed(() =>
-	t('TipDoctorsLink', { specialty: specialtyName.value, location: locationSuffix.value }),
+	t('TipDoctorsLink', {
+		specialty: specialtyName.value,
+		location: locationSuffix.value,
+	}),
 );
 const servicesLinkText = computed(() =>
-	t('TipServicesLink', { specialty: specialtyName.value, location: locationSuffix.value }),
+	t('TipServicesLink', {
+		specialty: specialtyName.value,
+		location: locationSuffix.value,
+	}),
 );
 const labTestsLinkText = computed(() =>
 	t('TipLabTestsLink', { location: locationSuffix.value }),
@@ -260,16 +275,19 @@ const labTestsLinkText = computed(() =>
 <template>
 	<TipsItem v-if="showDoctorsTip">
 		{{ t('TipDoctors') }}
-		<NuxtLink :to="doctorsLink!">{{ doctorsLinkText }}</NuxtLink>.
+		<NuxtLink :to="doctorsLink!">{{ doctorsLinkText }}</NuxtLink
+		>.
 	</TipsItem>
 
 	<TipsItem v-if="showServicesTip">
 		{{ t('TipServices') }}
-		<NuxtLink :to="servicesLink">{{ servicesLinkText }}</NuxtLink>.
+		<NuxtLink :to="servicesLink">{{ servicesLinkText }}</NuxtLink
+		>.
 	</TipsItem>
 
 	<TipsItem v-if="showLabTip">
 		{{ t('TipLabTests') }}
-		<NuxtLink :to="labTestsLink">{{ labTestsLinkText }}</NuxtLink>.
+		<NuxtLink :to="labTestsLink">{{ labTestsLinkText }}</NuxtLink
+		>.
 	</TipsItem>
 </template>

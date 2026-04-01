@@ -109,10 +109,7 @@ const addLabTest = async () => {
 			<AdminEditableField label="Название (DE)" v-model:value="nameDe" />
 			<AdminEditableField label="Название (TR)" v-model:value="nameTr" />
 		</AdminFieldGroup>
-		<AdminSlugField
-			v-model:value="slug"
-			:nameSource="name || nameSr"
-		/>
+		<AdminSlugField v-model:value="slug" :nameSource="name || nameSr" />
 
 		<FilterCategorySelect v-model:value="categoryIds" />
 

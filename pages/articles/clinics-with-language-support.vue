@@ -137,7 +137,9 @@ watchEffect(() => {
 			description: t('ClinicsWithLanguageSupportDescription'),
 			numberOfItems: totalClinicsCount.value,
 			itemListElement: buildTopListItemElements(
-				allClinics.slice(0, 20).map((c) => ({ id: c.id, slug: c.slug, name: c.name })),
+				allClinics
+					.slice(0, 20)
+					.map((c) => ({ id: c.id, slug: c.slug, name: c.name })),
 				{
 					baseUrl: SITE_URL,
 					buildPath: (c) => `/clinics/${c.slug}`,

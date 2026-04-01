@@ -89,5 +89,4 @@ const isHidden = (index: number) =>
 		display: none;
 	}
 }
-
 </style>

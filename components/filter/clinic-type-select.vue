@@ -61,11 +61,9 @@ const VISIBLE_TYPES: ClinicType[] = [
 ];
 
 const clinicTypes = computed(() =>
-	VISIBLE_TYPES
-		.map((key) => ({
-			text: t(`clinic_type_${key}`),
-			value: key,
-		}))
-		.sort((a, b) => a.text.localeCompare(b.text)),
+	VISIBLE_TYPES.map((key) => ({
+		text: t(`clinic_type_${key}`),
+		value: key,
+	})).sort((a, b) => a.text.localeCompare(b.text)),
 );
 </script>

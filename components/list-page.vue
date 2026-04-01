@@ -260,7 +260,7 @@ onMounted(async () => {
 		<aside class="map-container" :aria-label="t('AriaMapSection')">
 			<ClinicServicesMap
 				ref="mapRef"
-				:services="(clinicMode || mapClinics) ? [] : list"
+				:services="clinicMode || mapClinics ? [] : list"
 				:clinics="mapClinics || clinicsStore.clinics"
 				:showAllClinics="clinicMode || !!mapClinics"
 				:detailsRouteName="detailsRouteName"

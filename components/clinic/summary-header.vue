@@ -91,11 +91,7 @@ const clinicLink = computed(() => {
 		class="clinic-header"
 		:class="{ 'clinic-header--highlight': hasHighlight }"
 	>
-		<ClinicLogo
-			:logoUrl="clinic.logoUrl"
-			:name="localizedName"
-			:size="64"
-		/>
+		<ClinicLogo :logoUrl="clinic.logoUrl" :name="localizedName" :size="64" />
 		<div class="clinic-info">
 			<div class="clinic-name-row">
 				<div class="clinic-name-wrapper">

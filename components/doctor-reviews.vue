@@ -10,7 +10,11 @@
 
 		<!-- Список отзывов -->
 		<div class="reviews-list" v-if="reviews && reviews.length > 0">
-			<div v-for="review in visibleReviews" :key="review.id" class="review-item">
+			<div
+				v-for="review in visibleReviews"
+				:key="review.id"
+				class="review-item"
+			>
 				<div class="review-header">
 					<div class="review-author">
 						<div class="author-info">
@@ -105,7 +109,12 @@
 		<!-- Показать ещё -->
 		<ShowMoreButton
 			v-if="reviews && reviews.length > visibleCount"
-			:label="t('ShowMore', { count: nextPageSize, remaining: reviews.length - visibleCount })"
+			:label="
+				t('ShowMore', {
+					count: nextPageSize,
+					remaining: reviews.length - visibleCount,
+				})
+			"
 			@click="showMore"
 		/>
 
@@ -139,8 +148,8 @@ const { t, locale } = useI18n(reviewsI18n);
 const PAGE_SIZE = 5;
 const visibleCount = ref(PAGE_SIZE);
 
-const visibleReviews = computed(() =>
-	props.reviews?.slice(0, visibleCount.value) || [],
+const visibleReviews = computed(
+	() => props.reviews?.slice(0, visibleCount.value) || [],
 );
 
 const nextPageSize = computed(() =>
@@ -366,5 +375,4 @@ const formatReviewDate = (dateString: string, provider: string) => {
 	color: #333;
 	white-space: pre-wrap;
 }
-
 </style>

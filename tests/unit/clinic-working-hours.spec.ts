@@ -45,14 +45,18 @@ test.describe('getDayOfWeek', () => {
 
 test.describe('formatIntervals', () => {
 	test('formats single interval', () => {
-		expect(formatIntervals([{ start: '09:00', end: '18:00' }])).toBe('09:00–18:00');
+		expect(formatIntervals([{ start: '09:00', end: '18:00' }])).toBe(
+			'09:00–18:00',
+		);
 	});
 
 	test('formats multiple intervals', () => {
-		expect(formatIntervals([
-			{ start: '09:00', end: '13:00' },
-			{ start: '15:00', end: '19:00' },
-		])).toBe('09:00–13:00, 15:00–19:00');
+		expect(
+			formatIntervals([
+				{ start: '09:00', end: '13:00' },
+				{ start: '15:00', end: '19:00' },
+			]),
+		).toBe('09:00–13:00, 15:00–19:00');
 	});
 
 	test('returns empty string for empty array', () => {
@@ -67,10 +71,19 @@ function makeSchedule(override: Partial<WorkingHours> = {}): WorkingHours {
 		clinicId: 1,
 		monday: { type: 'regular', intervals: [{ start: '08:00', end: '20:00' }] },
 		tuesday: { type: 'regular', intervals: [{ start: '08:00', end: '20:00' }] },
-		wednesday: { type: 'regular', intervals: [{ start: '08:00', end: '20:00' }] },
-		thursday: { type: 'regular', intervals: [{ start: '08:00', end: '20:00' }] },
+		wednesday: {
+			type: 'regular',
+			intervals: [{ start: '08:00', end: '20:00' }],
+		},
+		thursday: {
+			type: 'regular',
+			intervals: [{ start: '08:00', end: '20:00' }],
+		},
 		friday: { type: 'regular', intervals: [{ start: '08:00', end: '20:00' }] },
-		saturday: { type: 'regular', intervals: [{ start: '09:00', end: '15:00' }] },
+		saturday: {
+			type: 'regular',
+			intervals: [{ start: '09:00', end: '15:00' }],
+		},
 		sunday: { type: 'closed' },
 	};
 	return { ...base, ...override };
@@ -79,7 +92,10 @@ function makeSchedule(override: Partial<WorkingHours> = {}): WorkingHours {
 test.describe('calculateStatus', () => {
 	test('open during working hours', () => {
 		// Monday 10:00
-		const result = calculateStatus(makeSchedule(), new Date('2026-03-30T10:00:00'));
+		const result = calculateStatus(
+			makeSchedule(),
+			new Date('2026-03-30T10:00:00'),
+		);
 		expect(result.isOpen).toBe(true);
 		expect(result.type).toBe('open_until');
 		expect(result.time).toBe('20:00');
@@ -87,7 +103,10 @@ test.describe('calculateStatus', () => {
 
 	test('closed after working hours, opens tomorrow', () => {
 		// Monday 21:00 → opens Tuesday 08:00
-		const result = calculateStatus(makeSchedule(), new Date('2026-03-30T21:00:00'));
+		const result = calculateStatus(
+			makeSchedule(),
+			new Date('2026-03-30T21:00:00'),
+		);
 		expect(result.isOpen).toBe(false);
 		expect(result.type).toBe('opens_day');
 		expect(result.offsetDays).toBe(1);
@@ -97,7 +116,10 @@ test.describe('calculateStatus', () => {
 
 	test('closed before working hours, opens today', () => {
 		// Monday 06:00 → opens at 08:00 today
-		const result = calculateStatus(makeSchedule(), new Date('2026-03-30T06:00:00'));
+		const result = calculateStatus(
+			makeSchedule(),
+			new Date('2026-03-30T06:00:00'),
+		);
 		expect(result.isOpen).toBe(false);
 		expect(result.type).toBe('opens_today');
 		expect(result.time).toBe('08:00');
@@ -105,7 +127,10 @@ test.describe('calculateStatus', () => {
 
 	test('closed on sunday, opens monday', () => {
 		// Sunday 12:00 → opens Monday 08:00
-		const result = calculateStatus(makeSchedule(), new Date('2026-03-29T12:00:00'));
+		const result = calculateStatus(
+			makeSchedule(),
+			new Date('2026-03-29T12:00:00'),
+		);
 		expect(result.isOpen).toBe(false);
 		expect(result.type).toBe('opens_day');
 		expect(result.offsetDays).toBe(1);
@@ -193,8 +218,14 @@ test.describe('calculateStatus', () => {
 test.describe('validateWorkingHoursData', () => {
 	test('valid schedule has no errors', () => {
 		const errors = validateWorkingHoursData({
-			monday: { type: 'regular', intervals: [{ start: '09:00', end: '18:00' }] },
-			tuesday: { type: 'regular', intervals: [{ start: '09:00', end: '18:00' }] },
+			monday: {
+				type: 'regular',
+				intervals: [{ start: '09:00', end: '18:00' }],
+			},
+			tuesday: {
+				type: 'regular',
+				intervals: [{ start: '09:00', end: '18:00' }],
+			},
 			wednesday: { type: 'closed' },
 			thursday: { type: '24/7' },
 			friday: { type: 'on_demand' },
@@ -246,7 +277,10 @@ test.describe('validateWorkingHoursData', () => {
 
 	test('start >= end returns error', () => {
 		const errors = validateWorkingHoursData({
-			monday: { type: 'regular', intervals: [{ start: '18:00', end: '09:00' }] },
+			monday: {
+				type: 'regular',
+				intervals: [{ start: '18:00', end: '09:00' }],
+			},
 			tuesday: { type: 'closed' },
 			wednesday: { type: 'closed' },
 			thursday: { type: 'closed' },
@@ -255,7 +289,9 @@ test.describe('validateWorkingHoursData', () => {
 			sunday: { type: 'closed' },
 		});
 		expect(errors.length).toBeGreaterThan(0);
-		expect(errors.some(e => e.includes('start must be before end'))).toBe(true);
+		expect(errors.some((e) => e.includes('start must be before end'))).toBe(
+			true,
+		);
 	});
 
 	test('overlapping intervals returns error', () => {
@@ -275,7 +311,7 @@ test.describe('validateWorkingHoursData', () => {
 			sunday: { type: 'closed' },
 		});
 		expect(errors.length).toBeGreaterThan(0);
-		expect(errors.some(e => e.includes('overlap'))).toBe(true);
+		expect(errors.some((e) => e.includes('overlap'))).toBe(true);
 	});
 
 	test('more than 3 intervals returns error', () => {
@@ -297,12 +333,15 @@ test.describe('validateWorkingHoursData', () => {
 			sunday: { type: 'closed' },
 		});
 		expect(errors.length).toBeGreaterThan(0);
-		expect(errors.some(e => e.includes('maximum'))).toBe(true);
+		expect(errors.some((e) => e.includes('maximum'))).toBe(true);
 	});
 
 	test('invalid time format returns error', () => {
 		const errors = validateWorkingHoursData({
-			monday: { type: 'regular', intervals: [{ start: '25:00', end: '18:00' }] },
+			monday: {
+				type: 'regular',
+				intervals: [{ start: '25:00', end: '18:00' }],
+			},
 			tuesday: { type: 'closed' },
 			wednesday: { type: 'closed' },
 			thursday: { type: 'closed' },
@@ -311,6 +350,6 @@ test.describe('validateWorkingHoursData', () => {
 			sunday: { type: 'closed' },
 		});
 		expect(errors.length).toBeGreaterThan(0);
-		expect(errors.some(e => e.includes('invalid format'))).toBe(true);
+		expect(errors.some((e) => e.includes('invalid format'))).toBe(true);
 	});
 });

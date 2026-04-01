@@ -21,5 +21,4 @@ defineProps<{
 	gap: var(--spacing-lg);
 	padding: var(--spacing-xl) 0;
 }
-
 </style>

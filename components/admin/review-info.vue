@@ -207,10 +207,7 @@ watch(reviewId, async (newId) => {
 			</div>
 
 			<!-- Привязка: пользователь -->
-			<div
-				class="association-section"
-				:class="{ modified: userIdModified }"
-			>
+			<div class="association-section" :class="{ modified: userIdModified }">
 				<label class="section-label">Автор (пользователь)</label>
 				<el-select
 					v-model="reviewModel.userId"
@@ -230,10 +227,7 @@ watch(reviewId, async (newId) => {
 			</div>
 
 			<!-- Привязка: клиника -->
-			<div
-				class="association-section"
-				:class="{ modified: clinicIdModified }"
-			>
+			<div class="association-section" :class="{ modified: clinicIdModified }">
 				<label class="section-label">Клиника</label>
 				<el-select
 					v-model="reviewModel.clinicId"
@@ -253,10 +247,7 @@ watch(reviewId, async (newId) => {
 			</div>
 
 			<!-- Привязка: врач -->
-			<div
-				class="association-section"
-				:class="{ modified: doctorIdModified }"
-			>
+			<div class="association-section" :class="{ modified: doctorIdModified }">
 				<label class="section-label">Врач</label>
 				<el-select
 					v-model="reviewModel.doctorId"
@@ -318,9 +309,7 @@ watch(reviewId, async (newId) => {
 					v-model:value="reviewModel.originalText"
 					:modified="originalTextModified"
 					:readonly="!editable"
-					@reset="
-						reviewModel.originalText = originalReview?.originalText || ''
-					"
+					@reset="reviewModel.originalText = originalReview?.originalText || ''"
 				/>
 			</AdminFieldGroup>
 
@@ -341,9 +330,7 @@ watch(reviewId, async (newId) => {
 					:modified="textSrCyrlModified"
 					:readonly="!editable"
 					:translate-from="reviewModel.text_sr"
-					@reset="
-						reviewModel.text_sr_cyrl = originalReview?.text_sr_cyrl || ''
-					"
+					@reset="reviewModel.text_sr_cyrl = originalReview?.text_sr_cyrl || ''"
 				/>
 				<AdminEditableField
 					label="EN"
@@ -384,7 +371,9 @@ watch(reviewId, async (newId) => {
 				<AdminFieldGroup
 					v-for="(reply, idx) in reviewModel.replies"
 					:key="reply.id"
-					:title="reply.responderType === 'clinic' ? 'Ответ клиники' : 'Ответ врача'"
+					:title="
+						reply.responderType === 'clinic' ? 'Ответ клиники' : 'Ответ врача'
+					"
 				>
 					<div class="reply-meta">
 						<span><strong>Источник:</strong> {{ reply.provider }}</span>
@@ -393,77 +382,116 @@ watch(reviewId, async (newId) => {
 					<AdminEditableField
 						label="Язык оригинала"
 						v-model:value="reviewModel.replies[idx].originalLanguage"
-						:modified="reply.originalLanguage !== originalReplyFor(reply.responderType)?.originalLanguage"
+						:modified="
+							reply.originalLanguage !==
+							originalReplyFor(reply.responderType)?.originalLanguage
+						"
 						:readonly="!editable"
-						@reset="reviewModel.replies[idx].originalLanguage = originalReplyFor(reply.responderType)?.originalLanguage || ''"
+						@reset="
+							reviewModel.replies[idx].originalLanguage =
+								originalReplyFor(reply.responderType)?.originalLanguage || ''
+						"
 					/>
 					<AdminEditableField
 						label="Текст оригинала"
 						type="textarea"
 						v-model:value="reviewModel.replies[idx].originalText"
-						:modified="reply.originalText !== originalReplyFor(reply.responderType)?.originalText"
+						:modified="
+							reply.originalText !==
+							originalReplyFor(reply.responderType)?.originalText
+						"
 						:readonly="!editable"
-						@reset="reviewModel.replies[idx].originalText = originalReplyFor(reply.responderType)?.originalText || ''"
+						@reset="
+							reviewModel.replies[idx].originalText =
+								originalReplyFor(reply.responderType)?.originalText || ''
+						"
 					/>
 					<AdminEditableField
 						label="SR (латиница)"
 						type="textarea"
 						v-model:value="reviewModel.replies[idx].text_sr"
-						:modified="reply.text_sr !== originalReplyFor(reply.responderType)?.text_sr"
+						:modified="
+							reply.text_sr !== originalReplyFor(reply.responderType)?.text_sr
+						"
 						:readonly="!editable"
-						@reset="reviewModel.replies[idx].text_sr = originalReplyFor(reply.responderType)?.text_sr || ''"
+						@reset="
+							reviewModel.replies[idx].text_sr =
+								originalReplyFor(reply.responderType)?.text_sr || ''
+						"
 					/>
 					<AdminEditableField
 						label="SR (кириллица)"
 						type="textarea"
 						v-model:value="reviewModel.replies[idx].text_sr_cyrl"
-						:modified="reply.text_sr_cyrl !== originalReplyFor(reply.responderType)?.text_sr_cyrl"
+						:modified="
+							reply.text_sr_cyrl !==
+							originalReplyFor(reply.responderType)?.text_sr_cyrl
+						"
 						:readonly="!editable"
 						:translate-from="reply.text_sr"
-						@reset="reviewModel.replies[idx].text_sr_cyrl = originalReplyFor(reply.responderType)?.text_sr_cyrl || ''"
+						@reset="
+							reviewModel.replies[idx].text_sr_cyrl =
+								originalReplyFor(reply.responderType)?.text_sr_cyrl || ''
+						"
 					/>
 					<AdminEditableField
 						label="EN"
 						type="textarea"
 						v-model:value="reviewModel.replies[idx].text_en"
-						:modified="reply.text_en !== originalReplyFor(reply.responderType)?.text_en"
+						:modified="
+							reply.text_en !== originalReplyFor(reply.responderType)?.text_en
+						"
 						:readonly="!editable"
-						@reset="reviewModel.replies[idx].text_en = originalReplyFor(reply.responderType)?.text_en || ''"
+						@reset="
+							reviewModel.replies[idx].text_en =
+								originalReplyFor(reply.responderType)?.text_en || ''
+						"
 					/>
 					<AdminEditableField
 						label="RU"
 						type="textarea"
 						v-model:value="reviewModel.replies[idx].text_ru"
-						:modified="reply.text_ru !== originalReplyFor(reply.responderType)?.text_ru"
+						:modified="
+							reply.text_ru !== originalReplyFor(reply.responderType)?.text_ru
+						"
 						:readonly="!editable"
-						@reset="reviewModel.replies[idx].text_ru = originalReplyFor(reply.responderType)?.text_ru || ''"
+						@reset="
+							reviewModel.replies[idx].text_ru =
+								originalReplyFor(reply.responderType)?.text_ru || ''
+						"
 					/>
 					<AdminEditableField
 						label="DE"
 						type="textarea"
 						v-model:value="reviewModel.replies[idx].text_de"
-						:modified="reply.text_de !== originalReplyFor(reply.responderType)?.text_de"
+						:modified="
+							reply.text_de !== originalReplyFor(reply.responderType)?.text_de
+						"
 						:readonly="!editable"
-						@reset="reviewModel.replies[idx].text_de = originalReplyFor(reply.responderType)?.text_de || ''"
+						@reset="
+							reviewModel.replies[idx].text_de =
+								originalReplyFor(reply.responderType)?.text_de || ''
+						"
 					/>
 					<AdminEditableField
 						label="TR"
 						type="textarea"
 						v-model:value="reviewModel.replies[idx].text_tr"
-						:modified="reply.text_tr !== originalReplyFor(reply.responderType)?.text_tr"
+						:modified="
+							reply.text_tr !== originalReplyFor(reply.responderType)?.text_tr
+						"
 						:readonly="!editable"
-						@reset="reviewModel.replies[idx].text_tr = originalReplyFor(reply.responderType)?.text_tr || ''"
+						@reset="
+							reviewModel.replies[idx].text_tr =
+								originalReplyFor(reply.responderType)?.text_tr || ''
+						"
 					/>
 				</AdminFieldGroup>
 			</template>
 			<div v-else class="no-replies">Ответов на этот отзыв нет</div>
 
 			<div v-if="editable" class="button-group">
-				<el-button
-					type="primary"
-					@click="saveChanges"
-					:disabled="!hasChanges"
-				>
+				<el-button type="primary" @click="saveChanges" :disabled="!hasChanges">
 					Сохранить изменения
 				</el-button>
 			</div>

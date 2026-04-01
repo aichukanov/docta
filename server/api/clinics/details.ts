@@ -74,9 +74,7 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 		`;
 
 		const connection = await getConnection();
-		const [clinicRows] = await connection.execute(clinicsQuery, [
-			body.slug,
-		]);
+		const [clinicRows] = await connection.execute(clinicsQuery, [body.slug]);
 
 		const clinic = clinicRows[0];
 		if (!clinic) {
@@ -132,9 +130,7 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 			WHERE r.clinic_id = ?
 			ORDER BY r.created_at DESC
 		`;
-		const [reviewsRows] = await connection.execute(reviewsQuery, [
-			clinic.id,
-		]);
+		const [reviewsRows] = await connection.execute(reviewsQuery, [clinic.id]);
 
 		// Загружаем ответы на отзывы
 		const reviewIds = (reviewsRows as any[]).map((r) => r.id);

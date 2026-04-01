@@ -168,10 +168,7 @@ const addDoctor = async () => {
 			/>
 			<AdminEditableField label="Имя (EN)" v-model:value="doctorNameEn" />
 		</AdminFieldGroup>
-		<AdminSlugField
-			v-model:value="doctorSlug"
-			:nameSource="doctorName"
-		/>
+		<AdminSlugField v-model:value="doctorSlug" :nameSource="doctorName" />
 		<AdminEditableField
 			label="Профессиональное звание"
 			v-model:value="doctorProfessionalTitle"

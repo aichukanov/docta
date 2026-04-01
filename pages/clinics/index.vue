@@ -24,8 +24,14 @@ const { t, locale } = useI18n({
 	]),
 });
 
-const { cityIds, languageIds, clinicTypeIds, name, updateFromRoute, getRouteParams } =
-	useFilters();
+const {
+	cityIds,
+	languageIds,
+	clinicTypeIds,
+	name,
+	updateFromRoute,
+	getRouteParams,
+} = useFilters();
 const route = useRoute();
 const pageNumber = computed(() => Number(route.query.page || 1));
 
@@ -131,7 +137,10 @@ useSeoMeta({
 });
 const isFiltered = computed(() => {
 	return (
-		cityIds.value.length > 0 || languageIds.value.length > 0 || clinicTypeIds.value.length > 0 || !!name.value
+		cityIds.value.length > 0 ||
+		languageIds.value.length > 0 ||
+		clinicTypeIds.value.length > 0 ||
+		!!name.value
 	);
 });
 watchEffect(() => {
@@ -189,7 +198,11 @@ watchEffect(() => {
 
 		<template #tips>
 			<TipsList v-if="clinicTypeIds.length === 1">
-				<TipsClinics :clinicTypeIds="clinicTypeIds" :languageIds="languageIds" :cityIds="cityIds" />
+				<TipsClinics
+					:clinicTypeIds="clinicTypeIds"
+					:languageIds="languageIds"
+					:cityIds="cityIds"
+				/>
 			</TipsList>
 		</template>
 	</ListPage>

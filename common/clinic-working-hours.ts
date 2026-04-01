@@ -79,9 +79,21 @@ function closedResult(
 		return { isOpen: false, type: 'closed' };
 	}
 	if (next.offsetDays === 1) {
-		return { isOpen: false, type: 'opens_day', time: next.time, day: next.day, offsetDays: 1 };
+		return {
+			isOpen: false,
+			type: 'opens_day',
+			time: next.time,
+			day: next.day,
+			offsetDays: 1,
+		};
 	}
-	return { isOpen: false, type: 'opens_day', time: next.time, day: next.day, offsetDays: next.offsetDays };
+	return {
+		isOpen: false,
+		type: 'opens_day',
+		time: next.time,
+		day: next.day,
+		offsetDays: next.offsetDays,
+	};
 }
 
 export function calculateStatus(
@@ -108,8 +120,7 @@ export function calculateStatus(
 	}
 
 	// type === 'regular'
-	const currentMinutes =
-		currentTime.getHours() * 60 + currentTime.getMinutes();
+	const currentMinutes = currentTime.getHours() * 60 + currentTime.getMinutes();
 
 	for (const interval of daySchedule.intervals || []) {
 		const startMinutes = timeToMinutes(interval.start);
@@ -170,9 +181,7 @@ export function validateWorkingHoursData(data: any): string[] {
 		const ds = data[day];
 
 		if (!ds.type || !VALID_DAY_TYPES.includes(ds.type)) {
-			errors.push(
-				`${day}.type must be one of: ${VALID_DAY_TYPES.join(', ')}`,
-			);
+			errors.push(`${day}.type must be one of: ${VALID_DAY_TYPES.join(', ')}`);
 			continue;
 		}
 
@@ -184,9 +193,7 @@ export function validateWorkingHoursData(data: any): string[] {
 		}
 
 		if (ds.intervals.length > MAX_INTERVALS_PER_DAY) {
-			errors.push(
-				`${day}: maximum ${MAX_INTERVALS_PER_DAY} intervals per day`,
-			);
+			errors.push(`${day}: maximum ${MAX_INTERVALS_PER_DAY} intervals per day`);
 		}
 
 		for (let i = 0; i < ds.intervals.length; i++) {
@@ -209,17 +216,13 @@ export function validateWorkingHoursData(data: any): string[] {
 			}
 
 			if (timeToMinutes(interval.start) >= timeToMinutes(interval.end)) {
-				errors.push(
-					`${day}.intervals[${i}]: start must be before end`,
-				);
+				errors.push(`${day}.intervals[${i}]: start must be before end`);
 			}
 
 			// Проверка пересечений
 			for (let j = i + 1; j < ds.intervals.length; j++) {
 				if (intervalsOverlap(interval, ds.intervals[j])) {
-					errors.push(
-						`${day}: intervals ${i + 1} and ${j + 1} overlap`,
-					);
+					errors.push(`${day}: intervals ${i + 1} and ${j + 1} overlap`);
 				}
 			}
 		}

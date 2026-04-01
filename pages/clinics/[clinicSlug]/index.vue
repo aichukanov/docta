@@ -60,25 +60,37 @@ const { pending: isLoading, data: clinicData } = await useFetch(
 const { data: doctorsList } = await useFetch('/api/doctors/list', {
 	key: `doctors-list-clinic-${clinicSlug.value}`,
 	method: 'POST',
-	body: computed(() => ({ clinicIds: clinicId.value ? [clinicId.value] : [], locale: locale.value })),
+	body: computed(() => ({
+		clinicIds: clinicId.value ? [clinicId.value] : [],
+		locale: locale.value,
+	})),
 });
 
 const { data: labTestsList } = await useFetch('/api/labtests/list', {
 	key: `labtests-list-clinic-${clinicSlug.value}`,
 	method: 'POST',
-	body: computed(() => ({ clinicIds: clinicId.value ? [clinicId.value] : [], locale: locale.value })),
+	body: computed(() => ({
+		clinicIds: clinicId.value ? [clinicId.value] : [],
+		locale: locale.value,
+	})),
 });
 
 const { data: medicationsList } = await useFetch('/api/medications/list', {
 	key: `medications-list-clinic-${clinicSlug.value}`,
 	method: 'POST',
-	body: computed(() => ({ clinicIds: clinicId.value ? [clinicId.value] : [], locale: locale.value })),
+	body: computed(() => ({
+		clinicIds: clinicId.value ? [clinicId.value] : [],
+		locale: locale.value,
+	})),
 });
 
 const { data: medicalServicesList } = await useFetch('/api/services/list', {
 	key: `services-list-clinic-${clinicSlug.value}`,
 	method: 'POST',
-	body: computed(() => ({ clinicIds: clinicId.value ? [clinicId.value] : [], locale: locale.value })),
+	body: computed(() => ({
+		clinicIds: clinicId.value ? [clinicId.value] : [],
+		locale: locale.value,
+	})),
 });
 
 const { data: workingHoursData } = await useFetch<WorkingHours>(
@@ -425,7 +437,9 @@ watchEffect(() => {
 				sectionId="hours"
 				:title="t('WorkingHours')"
 			>
-				<template #icon><el-icon :size="20"><Clock /></el-icon></template>
+				<template #icon
+					><el-icon :size="20"><Clock /></el-icon
+				></template>
 				<ClinicWorkingHours :clinicId="clinicId" />
 			</EntityPageSection>
 

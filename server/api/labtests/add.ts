@@ -28,11 +28,7 @@ export default defineEventHandler(async (event): Promise<number | null> => {
 
 		const connection = await getConnection();
 		const baseSlug = body.slug || generateSlug(body.name || 'labtest');
-		const slug = await ensureUniqueSlug(
-			connection,
-			'lab_tests',
-			baseSlug,
-		);
+		const slug = await ensureUniqueSlug(connection, 'lab_tests', baseSlug);
 
 		try {
 			await connection.beginTransaction();

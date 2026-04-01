@@ -54,10 +54,7 @@ function regenerate() {
 		<label>Slug (URL)</label>
 		<el-input v-model="editableValue">
 			<template #append>
-				<el-button
-					title="Сгенерировать из названия"
-					@click="regenerate"
-				>
+				<el-button title="Сгенерировать из названия" @click="regenerate">
 					↻ Auto
 				</el-button>
 				<el-button

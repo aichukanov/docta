@@ -144,13 +144,19 @@ const shownSpecialties = computed(() =>
 const shownDoctors = computed(() => allDoctors.value.slice(0, 5));
 const shownClinics = computed(() => allFilteredClinics.value.slice(0, 5));
 const shownMedicalServices = computed(() =>
-	allMedicalServices.value.slice(0, 5).map((s) => ({ id: s.id, slug: s.slug, name: s.name })),
+	allMedicalServices.value
+		.slice(0, 5)
+		.map((s) => ({ id: s.id, slug: s.slug, name: s.name })),
 );
 const shownMedications = computed(() =>
-	allMedications.value.slice(0, 5).map((m) => ({ id: m.id, slug: m.slug, name: m.name })),
+	allMedications.value
+		.slice(0, 5)
+		.map((m) => ({ id: m.id, slug: m.slug, name: m.name })),
 );
 const shownLabTests = computed(() =>
-	allLabTests.value.slice(0, 5).map((lt) => ({ id: lt.id, slug: lt.slug, name: lt.name })),
+	allLabTests.value
+		.slice(0, 5)
+		.map((lt) => ({ id: lt.id, slug: lt.slug, name: lt.name })),
 );
 
 // Все специальности с локализованными названиями
@@ -188,7 +194,11 @@ function filterClinics(query: string) {
 			const localizedClinicName = getLocalizedName(c, locale.value);
 			return localizedClinicName.toLowerCase().includes(lowerQuery);
 		})
-		.map((c) => ({ id: c.id, slug: c.slug, name: getLocalizedName(c, locale.value) }));
+		.map((c) => ({
+			id: c.id,
+			slug: c.slug,
+			name: getLocalizedName(c, locale.value),
+		}));
 }
 
 // AbortController для отмены предыдущих запросов

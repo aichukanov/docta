@@ -56,9 +56,7 @@ export default defineEventHandler(
 		`;
 
 			const connection = await getConnection();
-			const [labTestRows] = await connection.execute(labTestQuery, [
-				body.slug,
-			]);
+			const [labTestRows] = await connection.execute(labTestQuery, [body.slug]);
 
 			const row = (labTestRows as any[])[0];
 			if (!row) {

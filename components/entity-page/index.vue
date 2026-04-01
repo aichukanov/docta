@@ -32,7 +32,12 @@ const backToSearch = () => {
 			</el-button>
 		</nav>
 
-		<div v-if="isLoading" class="entity-page__loading" role="status" aria-live="polite">
+		<div
+			v-if="isLoading"
+			class="entity-page__loading"
+			role="status"
+			aria-live="polite"
+		>
 			<div class="entity-page__spinner" aria-hidden="true"></div>
 			<p>{{ loadingText }}</p>
 		</div>

@@ -57,7 +57,9 @@ export const CLINIC_TYPE_SCHEMA_ORG: Record<ClinicType, string> = {
  * Maps ClinicType → Schema.org MedicalSpecialty URL suffix
  * Only for types that have a specific medical specialty
  */
-export const CLINIC_TYPE_MEDICAL_SPECIALTY: Partial<Record<ClinicType, string>> = {
+export const CLINIC_TYPE_MEDICAL_SPECIALTY: Partial<
+	Record<ClinicType, string>
+> = {
 	[ClinicType.DENTAL_CLINIC]: 'Dentistry',
 	[ClinicType.OPTICAL_CLINIC]: 'Optometric',
 	[ClinicType.GYNECOLOGICAL_CLINIC]: 'Gynecologic',

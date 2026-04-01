@@ -23,84 +23,126 @@ enum PlaceType {
 }
 
 // ─── Города с точками поиска (основная + доп. населённые пункты) ───
-interface SearchPoint { lat: number; lng: number; radius: number; label?: string }
-interface CityConfig { name: string; points: SearchPoint[] }
+interface SearchPoint {
+	lat: number;
+	lng: number;
+	radius: number;
+	label?: string;
+}
+interface CityConfig {
+	name: string;
+	points: SearchPoint[];
+}
 
 const CITIES: Record<number, CityConfig> = {
 	// ─── Подгорица: сетка 2km кругов, покрывает ~12x8 км городской территории ───
-	[CityId.PODGORICA]: { name: 'Podgorica', points: [
-		{ lat: 42.455, lng: 19.230, radius: 2000, label: 'PG severozapad' },
-		{ lat: 42.455, lng: 19.260, radius: 2000, label: 'PG sever-centar' },
-		{ lat: 42.455, lng: 19.290, radius: 2000, label: 'PG severoistok' },
-		{ lat: 42.440, lng: 19.230, radius: 2000, label: 'PG zapad' },
-		{ lat: 42.440, lng: 19.260, radius: 2000, label: 'PG centar' },
-		{ lat: 42.440, lng: 19.290, radius: 2000, label: 'PG istok' },
-		{ lat: 42.425, lng: 19.230, radius: 2000, label: 'PG jugozapad' },
-		{ lat: 42.425, lng: 19.260, radius: 2000, label: 'PG jug-centar' },
-		{ lat: 42.425, lng: 19.290, radius: 2000, label: 'PG jugoistok' },
-		{ lat: 42.410, lng: 19.260, radius: 2500, label: 'PG krajnji jug' },
-		{ lat: 42.470, lng: 19.260, radius: 2500, label: 'PG krajnji sever' },
-		{ lat: 42.490, lng: 19.180, radius: 3000, label: 'Tuzi' },
-		{ lat: 42.370, lng: 19.310, radius: 3000, label: 'Golubovci' },
-	] },
+	[CityId.PODGORICA]: {
+		name: 'Podgorica',
+		points: [
+			{ lat: 42.455, lng: 19.23, radius: 2000, label: 'PG severozapad' },
+			{ lat: 42.455, lng: 19.26, radius: 2000, label: 'PG sever-centar' },
+			{ lat: 42.455, lng: 19.29, radius: 2000, label: 'PG severoistok' },
+			{ lat: 42.44, lng: 19.23, radius: 2000, label: 'PG zapad' },
+			{ lat: 42.44, lng: 19.26, radius: 2000, label: 'PG centar' },
+			{ lat: 42.44, lng: 19.29, radius: 2000, label: 'PG istok' },
+			{ lat: 42.425, lng: 19.23, radius: 2000, label: 'PG jugozapad' },
+			{ lat: 42.425, lng: 19.26, radius: 2000, label: 'PG jug-centar' },
+			{ lat: 42.425, lng: 19.29, radius: 2000, label: 'PG jugoistok' },
+			{ lat: 42.41, lng: 19.26, radius: 2500, label: 'PG krajnji jug' },
+			{ lat: 42.47, lng: 19.26, radius: 2500, label: 'PG krajnji sever' },
+			{ lat: 42.49, lng: 19.18, radius: 3000, label: 'Tuzi' },
+			{ lat: 42.37, lng: 19.31, radius: 3000, label: 'Golubovci' },
+		],
+	},
 	// ─── Никшич: 3 круга по 2.5km ───
-	[CityId.NIKSIC]: { name: 'Nikšić', points: [
-		{ lat: 42.773, lng: 18.944, radius: 2500, label: 'Nikšić centar' },
-		{ lat: 42.773, lng: 18.910, radius: 2500, label: 'Nikšić zapad' },
-		{ lat: 42.773, lng: 18.980, radius: 2500, label: 'Nikšić istok' },
-	] },
+	[CityId.NIKSIC]: {
+		name: 'Nikšić',
+		points: [
+			{ lat: 42.773, lng: 18.944, radius: 2500, label: 'Nikšić centar' },
+			{ lat: 42.773, lng: 18.91, radius: 2500, label: 'Nikšić zapad' },
+			{ lat: 42.773, lng: 18.98, radius: 2500, label: 'Nikšić istok' },
+		],
+	},
 	// ─── Будва: побережье + Бечичи/Рафаиловичи + Петровац ───
-	[CityId.BUDVA]: { name: 'Budva', points: [
-		{ lat: 42.291, lng: 18.838, radius: 2000, label: 'Budva centar' },
-		{ lat: 42.281, lng: 18.855, radius: 2000, label: 'Budva-Bečići' },
-		{ lat: 42.268, lng: 18.870, radius: 2500, label: 'Rafailovići-Pržno' },
-		{ lat: 42.250, lng: 18.873, radius: 3000, label: 'Petrovac' },
-	] },
+	[CityId.BUDVA]: {
+		name: 'Budva',
+		points: [
+			{ lat: 42.291, lng: 18.838, radius: 2000, label: 'Budva centar' },
+			{ lat: 42.281, lng: 18.855, radius: 2000, label: 'Budva-Bečići' },
+			{ lat: 42.268, lng: 18.87, radius: 2500, label: 'Rafailovići-Pržno' },
+			{ lat: 42.25, lng: 18.873, radius: 3000, label: 'Petrovac' },
+		],
+	},
 	// ─── Тиват: город + аэропорт ───
-	[CityId.TIVAT]: { name: 'Tivat', points: [
-		{ lat: 42.437, lng: 18.700, radius: 2500, label: 'Tivat centar' },
-		{ lat: 42.420, lng: 18.720, radius: 2500, label: 'Tivat jug' },
-	] },
+	[CityId.TIVAT]: {
+		name: 'Tivat',
+		points: [
+			{ lat: 42.437, lng: 18.7, radius: 2500, label: 'Tivat centar' },
+			{ lat: 42.42, lng: 18.72, radius: 2500, label: 'Tivat jug' },
+		],
+	},
 	// ─── Улцинь: город + Велика плажа ───
-	[CityId.ULCINJ]: { name: 'Ulcinj', points: [
-		{ lat: 41.930, lng: 19.210, radius: 2500, label: 'Ulcinj centar' },
-		{ lat: 41.910, lng: 19.230, radius: 2500, label: 'Ulcinj jug' },
-	] },
+	[CityId.ULCINJ]: {
+		name: 'Ulcinj',
+		points: [
+			{ lat: 41.93, lng: 19.21, radius: 2500, label: 'Ulcinj centar' },
+			{ lat: 41.91, lng: 19.23, radius: 2500, label: 'Ulcinj jug' },
+		],
+	},
 	// ─── Котор: Старый город + Доброта + Рисан ───
-	[CityId.KOTOR]: { name: 'Kotor', points: [
-		{ lat: 42.425, lng: 18.770, radius: 2500, label: 'Kotor centar' },
-		{ lat: 42.450, lng: 18.760, radius: 2500, label: 'Dobrota' },
-		{ lat: 42.510, lng: 18.695, radius: 3000, label: 'Risan' },
-	] },
+	[CityId.KOTOR]: {
+		name: 'Kotor',
+		points: [
+			{ lat: 42.425, lng: 18.77, radius: 2500, label: 'Kotor centar' },
+			{ lat: 42.45, lng: 18.76, radius: 2500, label: 'Dobrota' },
+			{ lat: 42.51, lng: 18.695, radius: 3000, label: 'Risan' },
+		],
+	},
 	// ─── Бар: город + Сутоморе + Стари Бар ───
-	[CityId.BAR]: { name: 'Bar', points: [
-		{ lat: 42.093, lng: 19.100, radius: 2500, label: 'Bar centar' },
-		{ lat: 42.080, lng: 19.110, radius: 2500, label: 'Bar jug' },
-		{ lat: 42.141, lng: 18.975, radius: 3000, label: 'Sutomore' },
-		{ lat: 42.095, lng: 19.130, radius: 2000, label: 'Stari Bar' },
-	] },
+	[CityId.BAR]: {
+		name: 'Bar',
+		points: [
+			{ lat: 42.093, lng: 19.1, radius: 2500, label: 'Bar centar' },
+			{ lat: 42.08, lng: 19.11, radius: 2500, label: 'Bar jug' },
+			{ lat: 42.141, lng: 18.975, radius: 3000, label: 'Sutomore' },
+			{ lat: 42.095, lng: 19.13, radius: 2000, label: 'Stari Bar' },
+		],
+	},
 	// ─── Херцег-Нови: город + Игало + Мелине/Каменари ───
-	[CityId.HERCEG_NOVI]: { name: 'Herceg Novi', points: [
-		{ lat: 42.453, lng: 18.538, radius: 2500, label: 'Herceg Novi centar' },
-		{ lat: 42.460, lng: 18.510, radius: 2500, label: 'Igalo' },
-		{ lat: 42.470, lng: 18.580, radius: 2500, label: 'Meljine-Zelenika' },
-	] },
+	[CityId.HERCEG_NOVI]: {
+		name: 'Herceg Novi',
+		points: [
+			{ lat: 42.453, lng: 18.538, radius: 2500, label: 'Herceg Novi centar' },
+			{ lat: 42.46, lng: 18.51, radius: 2500, label: 'Igalo' },
+			{ lat: 42.47, lng: 18.58, radius: 2500, label: 'Meljine-Zelenika' },
+		],
+	},
 	// ─── Беране ───
-	[CityId.BERANE]: { name: 'Berane', points: [
-		{ lat: 42.843, lng: 19.870, radius: 3000, label: 'Berane centar' },
-	] },
+	[CityId.BERANE]: {
+		name: 'Berane',
+		points: [{ lat: 42.843, lng: 19.87, radius: 3000, label: 'Berane centar' }],
+	},
 	// ─── Цетинье ───
-	[CityId.CETINJE]: { name: 'Cetinje', points: [
-		{ lat: 42.389, lng: 18.924, radius: 3000, label: 'Cetinje centar' },
-	] },
+	[CityId.CETINJE]: {
+		name: 'Cetinje',
+		points: [
+			{ lat: 42.389, lng: 18.924, radius: 3000, label: 'Cetinje centar' },
+		],
+	},
 	// ─── Даниловград ───
-	[CityId.DANILOVGRAD]: { name: 'Danilovgrad', points: [
-		{ lat: 42.559, lng: 19.097, radius: 3000, label: 'Danilovgrad centar' },
-	] },
+	[CityId.DANILOVGRAD]: {
+		name: 'Danilovgrad',
+		points: [
+			{ lat: 42.559, lng: 19.097, radius: 3000, label: 'Danilovgrad centar' },
+		],
+	},
 	// ─── Бело Поле ───
-	[CityId.BELO_POLJE]: { name: 'Bijelo Polje', points: [
-		{ lat: 43.035, lng: 19.747, radius: 3000, label: 'Bijelo Polje centar' },
-	] },
+	[CityId.BELO_POLJE]: {
+		name: 'Bijelo Polje',
+		points: [
+			{ lat: 43.035, lng: 19.747, radius: 3000, label: 'Bijelo Polje centar' },
+		],
+	},
 };
 
 // ─── Helpers ───────────────────────────────────────────────────────
@@ -145,15 +187,18 @@ async function searchPlaces(
 		body.pageToken = pageToken;
 	}
 
-	const res = await fetch('https://places.googleapis.com/v1/places:searchNearby', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-			'X-Goog-Api-Key': getApiKey(),
-			'X-Goog-FieldMask': FIELDS,
+	const res = await fetch(
+		'https://places.googleapis.com/v1/places:searchNearby',
+		{
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'X-Goog-Api-Key': getApiKey(),
+				'X-Goog-FieldMask': FIELDS,
+			},
+			body: JSON.stringify(body),
 		},
-		body: JSON.stringify(body),
-	});
+	);
 
 	if (!res.ok) {
 		const text = await res.text();
@@ -173,12 +218,21 @@ const OUT_DIR = path.resolve(__dirname, '../../data/google-places');
  * Собирает сырые данные для одного города.
  * Возвращает массив сырых place-объектов как их отдал Google.
  */
-async function fetchPointRaw(placeType: PlaceType, point: SearchPoint): Promise<any[]> {
+async function fetchPointRaw(
+	placeType: PlaceType,
+	point: SearchPoint,
+): Promise<any[]> {
 	const allPlaces: any[] = [];
 	let pageToken: string | undefined;
 
 	do {
-		const data = await searchPlaces(placeType, point.lat, point.lng, point.radius, pageToken);
+		const data = await searchPlaces(
+			placeType,
+			point.lat,
+			point.lng,
+			point.radius,
+			pageToken,
+		);
 		allPlaces.push(...(data.places || []));
 		pageToken = data.nextPageToken;
 		if (pageToken) await sleep(500);
@@ -187,7 +241,10 @@ async function fetchPointRaw(placeType: PlaceType, point: SearchPoint): Promise<
 	return allPlaces;
 }
 
-async function fetchCityRaw(placeType: PlaceType, cityId: CityId): Promise<any[]> {
+async function fetchCityRaw(
+	placeType: PlaceType,
+	cityId: CityId,
+): Promise<any[]> {
 	const cityInfo = CITIES[cityId];
 	if (!cityInfo) return [];
 
@@ -267,13 +324,13 @@ test.describe('Google Places — fetch raw data', () => {
 		// Недостающие муниципалитеты, не входящие в CITIES
 		const EXTRA_POINTS: SearchPoint[] = [
 			{ lat: 43.357, lng: 19.357, radius: 3000, label: 'Pljevlja' },
-			{ lat: 42.840, lng: 20.165, radius: 3000, label: 'Rožaje' },
+			{ lat: 42.84, lng: 20.165, radius: 3000, label: 'Rožaje' },
 			{ lat: 42.826, lng: 19.514, radius: 3000, label: 'Kolašin' },
 			{ lat: 43.155, lng: 19.118, radius: 3000, label: 'Žabljak' },
 			{ lat: 42.962, lng: 19.582, radius: 3000, label: 'Mojkovac' },
 			{ lat: 42.597, lng: 19.945, radius: 3000, label: 'Plav' },
-			{ lat: 42.735, lng: 19.790, radius: 2500, label: 'Andrijevica' },
-			{ lat: 42.960, lng: 19.090, radius: 2500, label: 'Šavnik' },
+			{ lat: 42.735, lng: 19.79, radius: 2500, label: 'Andrijevica' },
+			{ lat: 42.96, lng: 19.09, radius: 2500, label: 'Šavnik' },
 			{ lat: 42.596, lng: 19.965, radius: 2500, label: 'Gusinje' },
 			{ lat: 42.894, lng: 20.028, radius: 2500, label: 'Petnjica' },
 		];
@@ -281,17 +338,17 @@ test.describe('Google Places — fetch raw data', () => {
 		// Широкие точки — сетка 30km кругов для покрытия всей территории МЕ
 		const WIDE_POINTS: SearchPoint[] = [
 			// Юг (побережье)
-			{ lat: 42.10, lng: 19.10, radius: 30000, label: 'Юг-центр' },
-			{ lat: 42.30, lng: 18.85, radius: 30000, label: 'Юг-побережье' },
+			{ lat: 42.1, lng: 19.1, radius: 30000, label: 'Юг-центр' },
+			{ lat: 42.3, lng: 18.85, radius: 30000, label: 'Юг-побережье' },
 			// Центр
-			{ lat: 42.45, lng: 18.70, radius: 30000, label: 'Центр-запад (Бока)' },
+			{ lat: 42.45, lng: 18.7, radius: 30000, label: 'Центр-запад (Бока)' },
 			{ lat: 42.45, lng: 19.25, radius: 30000, label: 'Центр (Подгорица)' },
 			{ lat: 42.55, lng: 19.55, radius: 30000, label: 'Центр-восток' },
 			// Север-запад
-			{ lat: 42.80, lng: 18.95, radius: 30000, label: 'Северо-запад (Никшич)' },
-			{ lat: 43.10, lng: 19.10, radius: 30000, label: 'Северо-запад (Жабляк)' },
+			{ lat: 42.8, lng: 18.95, radius: 30000, label: 'Северо-запад (Никшич)' },
+			{ lat: 43.1, lng: 19.1, radius: 30000, label: 'Северо-запад (Жабляк)' },
 			// Север-центр
-			{ lat: 42.85, lng: 19.50, radius: 30000, label: 'Север-центр (Колашин)' },
+			{ lat: 42.85, lng: 19.5, radius: 30000, label: 'Север-центр (Колашин)' },
 			{ lat: 43.05, lng: 19.75, radius: 30000, label: 'Север (Бело Поле)' },
 			// Северо-восток
 			{ lat: 43.35, lng: 19.35, radius: 30000, label: 'Северо-запад (Плевля)' },
@@ -417,38 +474,70 @@ test.describe('Google Places — fetch raw data', () => {
 		const allPlaces: any[] = JSON.parse(fs.readFileSync(srcFile, 'utf-8'));
 
 		// Slug-карта городов + координаты центров для определения ближайшего
-		const CITY_SLUGS: { cityId?: CityId; slug: string; lat: number; lng: number }[] = [
-			{ cityId: CityId.PODGORICA, slug: 'podgorica', lat: 42.442574, lng: 19.268646 },
+		const CITY_SLUGS: {
+			cityId?: CityId;
+			slug: string;
+			lat: number;
+			lng: number;
+		}[] = [
+			{
+				cityId: CityId.PODGORICA,
+				slug: 'podgorica',
+				lat: 42.442574,
+				lng: 19.268646,
+			},
 			{ cityId: CityId.NIKSIC, slug: 'niksic', lat: 42.771059, lng: 18.947681 },
 			{ cityId: CityId.BUDVA, slug: 'budva', lat: 42.2864, lng: 18.84 },
-			{ cityId: CityId.TIVAT, slug: 'tivat', lat: 42.434981, lng: 18.706640 },
+			{ cityId: CityId.TIVAT, slug: 'tivat', lat: 42.434981, lng: 18.70664 },
 			{ cityId: CityId.ULCINJ, slug: 'ulcinj', lat: 41.9297, lng: 19.2142 },
 			{ cityId: CityId.KOTOR, slug: 'kotor', lat: 42.432044, lng: 18.769454 },
-			{ cityId: CityId.BAR, slug: 'bar', lat: 42.098060, lng: 19.094827 },
-			{ cityId: CityId.HERCEG_NOVI, slug: 'herceg-novi', lat: 42.457418, lng: 18.532136 },
+			{ cityId: CityId.BAR, slug: 'bar', lat: 42.09806, lng: 19.094827 },
+			{
+				cityId: CityId.HERCEG_NOVI,
+				slug: 'herceg-novi',
+				lat: 42.457418,
+				lng: 18.532136,
+			},
 			{ cityId: CityId.BERANE, slug: 'berane', lat: 42.8428, lng: 19.8733 },
 			{ cityId: CityId.CETINJE, slug: 'cetinje', lat: 42.389, lng: 18.924 },
-			{ cityId: CityId.DANILOVGRAD, slug: 'danilovgrad', lat: 42.5595, lng: 19.0969 },
-			{ cityId: CityId.BELO_POLJE, slug: 'bijelo-polje', lat: 43.0353, lng: 19.7472 },
+			{
+				cityId: CityId.DANILOVGRAD,
+				slug: 'danilovgrad',
+				lat: 42.5595,
+				lng: 19.0969,
+			},
+			{
+				cityId: CityId.BELO_POLJE,
+				slug: 'bijelo-polje',
+				lat: 43.0353,
+				lng: 19.7472,
+			},
 			// Доп. муниципалитеты (нет в CityId)
 			{ slug: 'pljevlja', lat: 43.357, lng: 19.357 },
-			{ slug: 'rozaje', lat: 42.840, lng: 20.165 },
+			{ slug: 'rozaje', lat: 42.84, lng: 20.165 },
 			{ slug: 'kolasin', lat: 42.826, lng: 19.514 },
 			{ slug: 'zabljak', lat: 43.155, lng: 19.118 },
 			{ slug: 'mojkovac', lat: 42.962, lng: 19.582 },
 			{ slug: 'plav', lat: 42.597, lng: 19.945 },
-			{ slug: 'andrijevica', lat: 42.735, lng: 19.790 },
-			{ slug: 'savnik', lat: 42.960, lng: 19.090 },
+			{ slug: 'andrijevica', lat: 42.735, lng: 19.79 },
+			{ slug: 'savnik', lat: 42.96, lng: 19.09 },
 			{ slug: 'gusinje', lat: 42.596, lng: 19.965 },
 			{ slug: 'petnjica', lat: 42.894, lng: 20.028 },
 		];
 
-		function haversine(lat1: number, lng1: number, lat2: number, lng2: number): number {
+		function haversine(
+			lat1: number,
+			lng1: number,
+			lat2: number,
+			lng2: number,
+		): number {
 			const R = 6371;
-			const toRad = (d: number) => d * Math.PI / 180;
+			const toRad = (d: number) => (d * Math.PI) / 180;
 			const dLat = toRad(lat2 - lat1);
 			const dLng = toRad(lng2 - lng1);
-			const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2;
+			const a =
+				Math.sin(dLat / 2) ** 2 +
+				Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2;
 			return 2 * R * Math.asin(Math.sqrt(a));
 		}
 
@@ -457,7 +546,10 @@ test.describe('Google Places — fetch raw data', () => {
 			let bestDist = Infinity;
 			for (const c of CITY_SLUGS) {
 				const d = haversine(lat, lng, c.lat, c.lng);
-				if (d < bestDist) { bestDist = d; best = c; }
+				if (d < bestDist) {
+					bestDist = d;
+					best = c;
+				}
 			}
 			return best;
 		}
@@ -465,7 +557,8 @@ test.describe('Google Places — fetch raw data', () => {
 		function toSlug(name: string): string {
 			return toLatin(name)
 				.toLowerCase()
-				.normalize('NFD').replace(/[\u0300-\u036f]/g, '') // убирает диакритики (š→s, ć→c, ë→e...)
+				.normalize('NFD')
+				.replace(/[\u0300-\u036f]/g, '') // убирает диакритики (š→s, ć→c, ë→e...)
 				.replace(/đ/g, 'dj')
 				.replace(/[^a-z0-9]+/g, '-')
 				.replace(/^-|-$/g, '')
@@ -475,14 +568,17 @@ test.describe('Google Places — fetch raw data', () => {
 		const MNE_KEYWORDS = ['Црна Гора', 'Montenegro', 'Crna Gora'];
 		function isMontenegro(place: any): boolean {
 			const addr = place.formattedAddress || '';
-			return MNE_KEYWORDS.some(kw => addr.includes(kw));
+			return MNE_KEYWORDS.some((kw) => addr.includes(kw));
 		}
 
 		const stats: Record<string, number> = {};
 		let skipped = 0;
 
 		for (const p of allPlaces) {
-			if (!isMontenegro(p)) { skipped++; continue; }
+			if (!isMontenegro(p)) {
+				skipped++;
+				continue;
+			}
 
 			const lat = p.location?.latitude;
 			const lng = p.location?.longitude;
@@ -502,9 +598,13 @@ test.describe('Google Places — fetch raw data', () => {
 		}
 
 		console.log('\nРаспределение по городам:');
-		for (const [slug, count] of Object.entries(stats).sort((a, b) => b[1] - a[1])) {
+		for (const [slug, count] of Object.entries(stats).sort(
+			(a, b) => b[1] - a[1],
+		)) {
 			console.log(`  ${slug}: ${count}`);
 		}
-		console.log(`\nВсего: ${allPlaces.length - skipped} (пропущено ${skipped} не-МЕ)`);
+		console.log(
+			`\nВсего: ${allPlaces.length - skipped} (пропущено ${skipped} не-МЕ)`,
+		);
 	});
 });

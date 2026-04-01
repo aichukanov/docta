@@ -73,10 +73,17 @@ function reviewRankScore(review: Review): number {
 	const recency = Math.exp(-DECAY_LAMBDA * Math.max(0, daysOld));
 	// text — всегда заполнен (локализованный или оригинальный),
 	// а originalText может быть null после обработки в эндпоинте
-	const textQuality = Math.min(1, (review.text?.length ?? 0) / TEXT_PLATEAU_LENGTH);
-	const likes = Math.min(1, Math.log2(1 + review.likesCount) / LIKES_LOG_DIVISOR);
+	const textQuality = Math.min(
+		1,
+		(review.text?.length ?? 0) / TEXT_PLATEAU_LENGTH,
+	);
+	const likes = Math.min(
+		1,
+		Math.log2(1 + review.likesCount) / LIKES_LOG_DIVISOR,
+	);
 	const hasRating = review.rating != null ? 1 : 0;
-	const providerTrust = PROVIDER_TRUST[review.provider] ?? DEFAULT_PROVIDER_TRUST;
+	const providerTrust =
+		PROVIDER_TRUST[review.provider] ?? DEFAULT_PROVIDER_TRUST;
 	const replyBonus = (review.replies?.length ?? 0) > 0 ? REPLY_BONUS : 0;
 
 	return (

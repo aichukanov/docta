@@ -47,7 +47,14 @@ export interface WorkingHours {
 
 export interface WorkingHoursStatus {
 	isOpen: boolean;
-	type: 'open_24_7' | 'open_until' | 'opens_today' | 'opens_day' | 'on_demand' | 'not_specified' | 'closed';
+	type:
+		| 'open_24_7'
+		| 'open_until'
+		| 'opens_today'
+		| 'opens_day'
+		| 'on_demand'
+		| 'not_specified'
+		| 'closed';
 	time?: string; // HH:mm — время открытия/закрытия
 	day?: DayOfWeek; // день открытия (для opens_day)
 	offsetDays?: number; // 1 = завтра

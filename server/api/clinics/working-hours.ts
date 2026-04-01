@@ -1,7 +1,10 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 import type { WorkingHours } from '~/interfaces/clinic-working-hours';
-import { DEFAULT_WORKING_HOURS, DAYS_OF_WEEK } from '~/interfaces/clinic-working-hours';
+import {
+	DEFAULT_WORKING_HOURS,
+	DAYS_OF_WEEK,
+} from '~/interfaces/clinic-working-hours';
 
 export default defineEventHandler(
 	async (event): Promise<WorkingHours | null> => {
@@ -39,13 +42,28 @@ export default defineEventHandler(
 
 			const workingHours: WorkingHours = {
 				clinicId: body.clinicId,
-				monday: typeof row.monday === 'string' ? JSON.parse(row.monday) : row.monday,
-				tuesday: typeof row.tuesday === 'string' ? JSON.parse(row.tuesday) : row.tuesday,
-				wednesday: typeof row.wednesday === 'string' ? JSON.parse(row.wednesday) : row.wednesday,
-				thursday: typeof row.thursday === 'string' ? JSON.parse(row.thursday) : row.thursday,
-				friday: typeof row.friday === 'string' ? JSON.parse(row.friday) : row.friday,
-				saturday: typeof row.saturday === 'string' ? JSON.parse(row.saturday) : row.saturday,
-				sunday: typeof row.sunday === 'string' ? JSON.parse(row.sunday) : row.sunday,
+				monday:
+					typeof row.monday === 'string' ? JSON.parse(row.monday) : row.monday,
+				tuesday:
+					typeof row.tuesday === 'string'
+						? JSON.parse(row.tuesday)
+						: row.tuesday,
+				wednesday:
+					typeof row.wednesday === 'string'
+						? JSON.parse(row.wednesday)
+						: row.wednesday,
+				thursday:
+					typeof row.thursday === 'string'
+						? JSON.parse(row.thursday)
+						: row.thursday,
+				friday:
+					typeof row.friday === 'string' ? JSON.parse(row.friday) : row.friday,
+				saturday:
+					typeof row.saturday === 'string'
+						? JSON.parse(row.saturday)
+						: row.saturday,
+				sunday:
+					typeof row.sunday === 'string' ? JSON.parse(row.sunday) : row.sunday,
 			};
 
 			return workingHours;

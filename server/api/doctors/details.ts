@@ -141,9 +141,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			WHERE r.doctor_id = ?
 			ORDER BY r.created_at DESC
 		`;
-		const [reviewsRows] = await connection.execute(reviewsQuery, [
-			doctor.id,
-		]);
+		const [reviewsRows] = await connection.execute(reviewsQuery, [doctor.id]);
 
 		// Загружаем ответы на отзывы
 		const reviewIds = (reviewsRows as any[]).map((r) => r.id);

@@ -140,10 +140,7 @@ const addClinic = async () => {
 					v-model:value="clinicNameRu"
 				/>
 			</AdminFieldGroup>
-			<AdminSlugField
-				v-model:value="clinicSlug"
-				:nameSource="clinicName"
-			/>
+			<AdminSlugField v-model:value="clinicSlug" :nameSource="clinicName" />
 			<AdminFieldGroup title="Адрес">
 				<AdminEditableField
 					label="Адрес (SR)"

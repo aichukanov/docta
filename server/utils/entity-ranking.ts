@@ -86,9 +86,14 @@ interface ClinicProfile {
 	hasDoctor: boolean;
 }
 
-function bayesianRating(avgRating: number | null, totalReviews: number): number {
+function bayesianRating(
+	avgRating: number | null,
+	totalReviews: number,
+): number {
 	const avg = avgRating ?? BAYESIAN_M;
-	const bayesian = (BAYESIAN_C * BAYESIAN_M + totalReviews * avg) / (BAYESIAN_C + totalReviews);
+	const bayesian =
+		(BAYESIAN_C * BAYESIAN_M + totalReviews * avg) /
+		(BAYESIAN_C + totalReviews);
 	// Нормализация 1-5 → 0-1
 	return (bayesian - 1) / 4;
 }
@@ -112,7 +117,12 @@ function computeScore(
 	stats: ReviewStats | undefined,
 	completeness: number,
 ): number {
-	const s = stats ?? { totalReviews: 0, avgRating: null, latestReviewAt: null, reviewsWithReply: 0 };
+	const s = stats ?? {
+		totalReviews: 0,
+		avgRating: null,
+		latestReviewAt: null,
+		reviewsWithReply: 0,
+	};
 	return (
 		W.bayesianRating * bayesianRating(s.avgRating, s.totalReviews) +
 		W.reviewVolume * reviewVolume(s.totalReviews) +
@@ -229,15 +239,19 @@ async function recalculateDoctorScores(connection: any): Promise<void> {
 	`);
 
 	for (const doc of profileRows as DoctorProfile[]) {
-		const filled = Number(doc.hasPhoto) + Number(doc.hasDescription) +
-			Number(doc.hasSpecialty) + Number(doc.hasContact) + Number(doc.hasClinic);
+		const filled =
+			Number(doc.hasPhoto) +
+			Number(doc.hasDescription) +
+			Number(doc.hasSpecialty) +
+			Number(doc.hasContact) +
+			Number(doc.hasClinic);
 		const completeness = filled / 5;
 		const score = computeScore(statsMap.get(doc.id), completeness);
 
-		await connection.execute(
-			'UPDATE doctors SET rank_score = ? WHERE id = ?',
-			[Math.round(score * 10000) / 10000, doc.id],
-		);
+		await connection.execute('UPDATE doctors SET rank_score = ? WHERE id = ?', [
+			Math.round(score * 10000) / 10000,
+			doc.id,
+		]);
 	}
 }
 
@@ -287,15 +301,19 @@ async function recalculateClinicScores(connection: any): Promise<void> {
 	`);
 
 	for (const clinic of profileRows as ClinicProfile[]) {
-		const filled = Number(clinic.hasDescription) + Number(clinic.hasAddress) +
-			Number(clinic.hasContact) + Number(clinic.hasService) + Number(clinic.hasDoctor);
+		const filled =
+			Number(clinic.hasDescription) +
+			Number(clinic.hasAddress) +
+			Number(clinic.hasContact) +
+			Number(clinic.hasService) +
+			Number(clinic.hasDoctor);
 		const completeness = filled / 5;
 		const score = computeScore(statsMap.get(clinic.id), completeness);
 
-		await connection.execute(
-			'UPDATE clinics SET rank_score = ? WHERE id = ?',
-			[Math.round(score * 10000) / 10000, clinic.id],
-		);
+		await connection.execute('UPDATE clinics SET rank_score = ? WHERE id = ?', [
+			Math.round(score * 10000) / 10000,
+			clinic.id,
+		]);
 	}
 }
 
@@ -313,8 +331,14 @@ async function recalculateServiceScores(connection: any): Promise<void> {
 	`);
 
 	for (const row of rows as any[]) {
-		const clinicScore = Math.min(1, Math.log2(1 + Number(row.clinicCount)) / SERVICE_CLINIC_LOG_DIVISOR);
-		const doctorScore = Math.min(1, Math.log2(1 + Number(row.doctorCount)) / SERVICE_DOCTOR_LOG_DIVISOR);
+		const clinicScore = Math.min(
+			1,
+			Math.log2(1 + Number(row.clinicCount)) / SERVICE_CLINIC_LOG_DIVISOR,
+		);
+		const doctorScore = Math.min(
+			1,
+			Math.log2(1 + Number(row.doctorCount)) / SERVICE_DOCTOR_LOG_DIVISOR,
+		);
 		const pricingScore = Number(row.hasPricing);
 
 		const score =
@@ -342,12 +366,13 @@ async function recalculateLabTestScores(connection: any): Promise<void> {
 	`);
 
 	for (const row of rows as any[]) {
-		const clinicScore = Math.min(1, Math.log2(1 + Number(row.clinicCount)) / LAB_CLINIC_LOG_DIVISOR);
+		const clinicScore = Math.min(
+			1,
+			Math.log2(1 + Number(row.clinicCount)) / LAB_CLINIC_LOG_DIVISOR,
+		);
 		const pricingScore = Number(row.hasPricing);
 
-		const score =
-			LW.clinicCount * clinicScore +
-			LW.hasPricing * pricingScore;
+		const score = LW.clinicCount * clinicScore + LW.hasPricing * pricingScore;
 
 		await connection.execute(
 			'UPDATE lab_tests SET rank_score = ? WHERE id = ?',

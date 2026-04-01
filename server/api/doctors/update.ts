@@ -3,6 +3,8 @@ import { requireAdmin } from '~/server/common/auth';
 import { syncDoctorRelation } from '~/server/common/doctor-relations';
 import type { DoctorData } from '~/interfaces/doctor';
 import { downloadAndSaveImage, isExternalUrl } from '~/server/utils/image-processing';
+import { generateSlug } from '~/common/slug-utils';
+import { ensureUniqueSlug, saveSlugRedirect } from '~/server/common/slug-db';
 import {
 	validateBody,
 	validateSpecialtyIds,
@@ -56,17 +58,29 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 		try {
 			await connection.beginTransaction();
 
+			const doctorName = body.name || body.name_en || 'doctor';
+			const baseSlug = body.slug || generateSlug(doctorName);
+			const slug = await ensureUniqueSlug(
+				connection,
+				'doctors',
+				baseSlug,
+				body.id,
+			);
+
+			await saveSlugRedirect(connection, 'doctors', body.id, slug);
+
 			const updateDoctorQuery = `
-			UPDATE doctors 
-			SET name_sr = ?, name_sr_cyrl = ?, name_ru = ?, name_en = ?, 
+			UPDATE doctors
+			SET slug = ?, name_sr = ?, name_sr_cyrl = ?, name_ru = ?, name_en = ?,
 			    description_sr = ?, description_sr_cyrl = ?, description_ru = ?, description_en = ?, description_de = ?, description_tr = ?,
-			    professional_title = ?, hidden = ?, email = ?, phone = ?, website = ?, 
+			    professional_title = ?, hidden = ?, email = ?, phone = ?, website = ?,
 			    photo_url = ?, facebook = ?, instagram = ?, telegram = ?, whatsapp = ?, viber = ?,
 			    user_id = ?
 			WHERE id = ?;
 		`;
 
 			await connection.execute(updateDoctorQuery, [
+				slug,
 				body.name,
 				body.name_sr_cyrl || '',
 				body.name_ru || '',

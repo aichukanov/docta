@@ -86,13 +86,14 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 						<template #default="{ item }">
 							<PricedItemCard
 								:id="item.id"
+								:slug="item.slug"
 								:name="item.name"
 								:localName="item.localName"
 								:price="item.price"
 								:priceMin="item.priceMin"
 								:priceMax="item.priceMax"
-								routeName="services-serviceId"
-								routeParamName="serviceId"
+								routeName="services-serviceSlug"
+								routeParamName="serviceSlug"
 							/>
 						</template>
 					</ClinicServiceSectionContent>

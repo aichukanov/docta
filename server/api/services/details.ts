@@ -5,7 +5,7 @@ import {
 	processLocalizedNameForClinicOrDoctor,
 } from '~/server/common/utils';
 import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
-import { validateBody, validateNonNegativeInteger } from '~/common/validation';
+import { validateBody } from '~/common/validation';
 
 export default defineEventHandler(
 	async (event): Promise<ClinicServiceWithPrices> => {
@@ -17,8 +17,8 @@ export default defineEventHandler(
 				return null;
 			}
 
-			if (!validateNonNegativeInteger(body.serviceId)) {
-				setResponseStatus(event, 400, 'Invalid medical service id');
+			if (!body.slug || typeof body.slug !== 'string') {
+				setResponseStatus(event, 400, 'Invalid medical service slug');
 				return null;
 			}
 
@@ -28,6 +28,7 @@ export default defineEventHandler(
 			const medicalServiceQuery = `
 			SELECT DISTINCT
 				ms.id,
+				ms.slug,
 				ms.name_en,
 				ms.name_sr,
 				ms.name_sr_cyrl,
@@ -53,14 +54,14 @@ export default defineEventHandler(
 					WHERE medical_service_id = ms.id
 				) as categoryIds
 			FROM medical_services ms
-			WHERE ms.id = ?
-			GROUP BY ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, ms.name_ru, ms.name_de, ms.name_tr;
+			WHERE ms.slug = ?
+			GROUP BY ms.id, ms.slug, ms.name_en, ms.name_sr, ms.name_sr_cyrl, ms.name_ru, ms.name_de, ms.name_tr;
 		`;
 
 			const connection = await getConnection();
 			const [medicalServiceRows] = await connection.execute(
 				medicalServiceQuery,
-				[body.serviceId],
+				[body.slug],
 			);
 			await connection.end();
 

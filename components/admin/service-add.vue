@@ -21,6 +21,7 @@ const emit = defineEmits<{
 
 const { t } = useI18n(specialtyI18n);
 
+const slug = ref('');
 const name = ref('');
 const nameSr = ref('');
 const nameSrCyrl = ref('');
@@ -93,6 +94,7 @@ const addService = async () => {
 	const serviceId = await $fetch<number | null>('/api/services/add', {
 		method: 'POST',
 		body: {
+			slug: slug.value,
 			name: name.value || nameSr.value,
 			name_sr: nameSr.value,
 			name_sr_cyrl: nameSrCyrl.value,
@@ -127,6 +129,10 @@ const addService = async () => {
 			<AdminEditableField label="Название (DE)" v-model:value="nameDe" />
 			<AdminEditableField label="Название (TR)" v-model:value="nameTr" />
 		</AdminFieldGroup>
+		<AdminSlugField
+			v-model:value="slug"
+			:nameSource="name || nameSr"
+		/>
 
 		<div class="sort-order-section">
 			<label>Порядок сортировки</label>

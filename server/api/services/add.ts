@@ -1,6 +1,8 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
 import { validateBody } from '~/common/validation';
+import { generateSlug } from '~/common/slug-utils';
+import { ensureUniqueSlug } from '~/server/common/slug-db';
 import type { ClinicPrice } from '~/interfaces/clinic';
 
 interface AddServiceBody {
@@ -32,16 +34,23 @@ export default defineEventHandler(async (event): Promise<number | null> => {
 		}
 
 		const connection = await getConnection();
+		const baseSlug = body.slug || generateSlug(body.name || 'service');
+		const slug = await ensureUniqueSlug(
+			connection,
+			'medical_services',
+			baseSlug,
+		);
 
 		try {
 			await connection.beginTransaction();
 
 			// 1. Создаём услугу
 			const insertQuery = `
-				INSERT INTO medical_services (name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr, sort_order)
-				VALUES (?, ?, ?, ?, ?, ?, ?)
+				INSERT INTO medical_services (slug, name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr, sort_order)
+				VALUES (?, ?, ?, ?, ?, ?, ?, ?)
 			`;
 			const [result]: any = await connection.execute(insertQuery, [
+				slug,
 				body.name,
 				body.name_sr,
 				body.name_sr_cyrl || '',

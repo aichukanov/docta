@@ -10,20 +10,25 @@ const props = defineProps<{
 
 const { t, locale } = useI18n();
 
-const serviceLink = computed(() => ({
-	name: props.detailsRouteName || 'services-serviceId',
-	params: { [props.detailsParamName || 'serviceId']: props.service.id },
-	query: getRegionalQuery(locale.value),
-}));
+const serviceLink = computed(() => {
+	const slug = props.service.slug;
+	if (!slug) return null;
+	return {
+		name: props.detailsRouteName || 'services-serviceSlug',
+		params: { [props.detailsParamName || 'serviceSlug']: slug },
+		query: getRegionalQuery(locale.value),
+	};
+});
 </script>
 
 <template>
 	<div class="service-wrapper">
 		<div class="service-info">
 			<h3 class="service-name">
-				<NuxtLink :to="serviceLink" class="service-name-link">
+				<NuxtLink v-if="serviceLink" :to="serviceLink" class="service-name-link">
 					{{ service.name }}
 				</NuxtLink>
+				<span v-else>{{ service.name }}</span>
 			</h3>
 			<div v-if="service.localName" class="service-local-name">
 				{{ service.localName }}

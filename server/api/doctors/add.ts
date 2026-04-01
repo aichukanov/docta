@@ -2,6 +2,8 @@ import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
 import type { DoctorData } from '~/interfaces/doctor';
 import { downloadAndSaveImage, isExternalUrl } from '~/server/utils/image-processing';
+import { generateSlug } from '~/common/slug-utils';
+import { ensureUniqueSlug } from '~/server/common/slug-db';
 import {
 	validateBody,
 	validateSpecialtyIds,
@@ -43,14 +45,24 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			body.photoUrl = await downloadAndSaveImage(body.photoUrl, 'doctors');
 		}
 
+		const connection = await getConnection();
+		const doctorName = body.name || body.name_en || 'doctor';
+		const baseSlug = body.slug || generateSlug(doctorName);
+		const slug = await ensureUniqueSlug(
+			connection,
+			'doctors',
+			baseSlug,
+		);
+
 		const addDoctorQuery = `
-			INSERT INTO doctors (name_sr, name_sr_cyrl, name_ru, name_en, 
+			INSERT INTO doctors (slug, name_sr, name_sr_cyrl, name_ru, name_en,
 			                     description_sr, description_sr_cyrl, description_ru, description_en, description_de, description_tr,
 			                     professional_title, email, phone, website, photo_url, facebook, instagram, telegram, whatsapp, viber)
-			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 		`;
 
 		const addDoctorQueryParams = [
+			slug,
 			body.name,
 			body.name_sr_cyrl || '',
 			body.name_ru || '',
@@ -72,8 +84,6 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			body.whatsapp,
 			body.viber,
 		];
-
-		const connection = await getConnection();
 
 		try {
 			await connection.beginTransaction();

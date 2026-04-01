@@ -73,7 +73,7 @@ export async function generateSitemapPage(sitemapIndex: number) {
 	const doctorsPageLink: SitemapLink = menuItemToLinks('doctors');
 
 	const doctorLinks: SitemapLink[] = doctors.map((doctor) =>
-		menuItemToLinks(`doctors-${doctor.id}`),
+		menuItemToLinks(`${SITE_URL}/doctors/${doctor.slug}`, {}, true),
 	);
 
 	const specialtyLinks: SitemapLink[] = doctorFilters.specialtyIds.map(
@@ -103,7 +103,7 @@ export async function generateSitemapPage(sitemapIndex: number) {
 	const labTestsPageLink: SitemapLink = menuItemToLinks('labtests');
 
 	const labTestLinks: SitemapLink[] = labTests.map((labTest) =>
-		menuItemToLinks(`labtests-${labTest.id}`),
+		menuItemToLinks(`${SITE_URL}/labtests/${labTest.slug}`, {}, true),
 	);
 
 	const labTestCategoryLinks: SitemapLink[] = labTestFilters.categoryIds.map(
@@ -125,7 +125,7 @@ export async function generateSitemapPage(sitemapIndex: number) {
 	const medicalServicesPageLink: SitemapLink = menuItemToLinks('services');
 
 	const medicalServiceLinks: SitemapLink[] = medicalServices.map((service) =>
-		menuItemToLinks(`services-${service.id}`),
+		menuItemToLinks(`${SITE_URL}/services/${service.slug}`, {}, true),
 	);
 
 	const medicalServiceCategoryLinks: SitemapLink[] =
@@ -148,7 +148,7 @@ export async function generateSitemapPage(sitemapIndex: number) {
 	const clinicsPageLink: SitemapLink = menuItemToLinks('clinics');
 
 	const clinicLinks: SitemapLink[] = clinics.map((clinic) =>
-		menuItemToLinks(`clinics-${clinic.id}`),
+		menuItemToLinks(`${SITE_URL}/clinics/${clinic.slug}`, {}, true),
 	);
 
 	const clinicCityLinks: SitemapLink[] = clinicFilters.cityIds.map((city) =>

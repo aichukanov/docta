@@ -42,15 +42,15 @@ const breadcrumbItems = computed(() => [
 	{ label: t('RussianSpeakingDoctorsTitle') },
 ]);
 
-const getDoctorUrl = (id: number) => ({
-	name: 'doctors-doctorId',
-	params: { doctorId: id },
+const getDoctorUrl = (slug: string) => ({
+	name: 'doctors-doctorSlug',
+	params: { doctorSlug: slug },
 	query: getRegionalQuery(locale.value),
 });
 
-const getClinicUrl = (id: number) => ({
-	name: 'clinics-clinicId',
-	params: { clinicId: id },
+const getClinicUrl = (slug: string) => ({
+	name: 'clinics-clinicSlug',
+	params: { clinicSlug: slug },
 	query: getRegionalQuery(locale.value),
 });
 
@@ -176,7 +176,7 @@ watchEffect(() => {
 							:key="doctor.id"
 							class="doctor-item"
 						>
-							<NuxtLink :to="getDoctorUrl(doctor.id)" class="doctor-name">
+							<NuxtLink :to="getDoctorUrl(doctor.slug)" class="doctor-name">
 								{{ getLocalizedName(doctor, locale) }}
 							</NuxtLink>
 							<ul class="clinics-list">
@@ -185,7 +185,7 @@ watchEffect(() => {
 									:key="clinic.id"
 									class="clinic-item"
 								>
-									<NuxtLink :to="getClinicUrl(clinic.id)" class="clinic-link">
+									<NuxtLink :to="getClinicUrl(clinic.slug)" class="clinic-link">
 										{{ getLocalizedName(clinic, locale) }},
 										{{ t(`city_${clinic.cityId}`) }}
 									</NuxtLink>

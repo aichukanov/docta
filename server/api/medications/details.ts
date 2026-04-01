@@ -5,7 +5,7 @@ import {
 	processLocalizedNameForClinicOrDoctor,
 } from '~/server/common/utils';
 import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
-import { validateBody, validateNonNegativeInteger } from '~/common/validation';
+import { validateBody } from '~/common/validation';
 
 export default defineEventHandler(
 	async (event): Promise<ClinicServiceWithPrices> => {
@@ -17,8 +17,8 @@ export default defineEventHandler(
 				return null;
 			}
 
-			if (!validateNonNegativeInteger(body.medicationId)) {
-				setResponseStatus(event, 400, 'Invalid medication id');
+			if (!body.slug || typeof body.slug !== 'string') {
+				setResponseStatus(event, 400, 'Invalid medication slug');
 				return null;
 			}
 
@@ -28,6 +28,7 @@ export default defineEventHandler(
 			const medicationQuery = `
 			SELECT DISTINCT
 				m.id,
+				m.slug,
 				m.name_en,
 				m.name_sr,
 				m.name_sr_cyrl,
@@ -48,13 +49,13 @@ export default defineEventHandler(
 					WHERE medication_id = m.id
 				) as clinicPricesData
 			FROM medications m
-			WHERE m.id = ?
-			GROUP BY m.id, m.name_en, m.name_sr, m.name_sr_cyrl, m.name_ru, m.name_de, m.name_tr;
+			WHERE m.slug = ?
+			GROUP BY m.id, m.slug, m.name_en, m.name_sr, m.name_sr_cyrl, m.name_ru, m.name_de, m.name_tr;
 		`;
 
 			const connection = await getConnection();
 			const [medicationRows] = await connection.execute(medicationQuery, [
-				body.medicationId,
+				body.slug,
 			]);
 			await connection.end();
 

@@ -6,6 +6,7 @@ import type { DoctorProfileStatus } from '~/interfaces/doctor';
 const props = defineProps<{
 	status: DoctorProfileStatus;
 	doctorId: number;
+	doctorSlug: string;
 	isToggling: boolean;
 }>();
 
@@ -37,8 +38,8 @@ const statusDesc = computed(() => {
 });
 
 const doctorLink = computed(() => ({
-	name: 'doctors-doctorId',
-	params: { doctorId: props.doctorId },
+	name: 'doctors-doctorSlug',
+	params: { doctorSlug: props.doctorSlug },
 	query: getRegionalQuery(locale.value),
 }));
 </script>

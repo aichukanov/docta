@@ -129,6 +129,7 @@ export async function getLabTestList(
 	const labTestsQuery = `
 		SELECT
 			lt.id,
+			lt.slug,
 			lt.name_en,
 			lt.name_sr,
 			lt.name_sr_cyrl,
@@ -185,6 +186,7 @@ export async function getLabTestList(
 		const { name, localName } = processLocalizedNameForLabTest(row, locale);
 		return {
 			id: row.id,
+			slug: row.slug,
 			name: name || '',
 			localName: localName || '',
 			synonyms: synonymsMap[row.id] || [],

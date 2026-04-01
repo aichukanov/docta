@@ -235,6 +235,7 @@ watch(cityIds, (newCityIds) => {
 const fieldModified = (field: keyof ClinicAdminModel) =>
 	selectedClinic.value?.[field] !== clinicModel.value?.[field];
 
+const slugModified = computed(() => fieldModified('slug'));
 const nameSrModified = computed(() => fieldModified('name_sr'));
 const nameSrCyrlModified = computed(() => fieldModified('name_sr_cyrl'));
 const nameRuModified = computed(() => fieldModified('name_ru'));
@@ -297,6 +298,7 @@ const languageIdsModified = computed(() => {
 
 const hasChanges = computed(() => {
 	return (
+		slugModified.value ||
 		nameSrModified.value ||
 		nameSrCyrlModified.value ||
 		nameRuModified.value ||
@@ -350,6 +352,8 @@ const saveChanges = async () => {
 		method: 'POST',
 		body: {
 			id: clinicModel.value.id,
+			clinicId: clinicModel.value.id,
+			slug: clinicModel.value.slug,
 			name_sr: clinicModel.value.name_sr,
 			name_sr_cyrl: clinicModel.value.name_sr_cyrl,
 			name_ru: clinicModel.value.name_ru,
@@ -520,6 +524,12 @@ onMounted(async () => {
 					@reset="clinicModel.name_ru = selectedClinic?.name_ru || ''"
 				/>
 			</AdminFieldGroup>
+			<AdminSlugField
+				v-model:value="clinicModel.slug"
+				:nameSource="clinicModel.name_sr"
+				:modified="slugModified"
+				@reset="clinicModel.slug = selectedClinic?.slug || ''"
+			/>
 			<AdminEditableField
 				label="Адрес (SR)"
 				v-model:value="clinicModel.address_sr"

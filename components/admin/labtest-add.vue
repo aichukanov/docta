@@ -16,6 +16,7 @@ const emit = defineEmits<{
 	(e: 'updated'): void;
 }>();
 
+const slug = ref('');
 const name = ref('');
 const nameSr = ref('');
 const nameSrCyrl = ref('');
@@ -74,6 +75,7 @@ const addLabTest = async () => {
 	const labTestId = await $fetch<number | null>('/api/labtests/add', {
 		method: 'POST',
 		body: {
+			slug: slug.value,
 			name: name.value || nameSr.value,
 			name_sr: nameSr.value,
 			name_sr_cyrl: nameSrCyrl.value,
@@ -107,6 +109,10 @@ const addLabTest = async () => {
 			<AdminEditableField label="Название (DE)" v-model:value="nameDe" />
 			<AdminEditableField label="Название (TR)" v-model:value="nameTr" />
 		</AdminFieldGroup>
+		<AdminSlugField
+			v-model:value="slug"
+			:nameSource="name || nameSr"
+		/>
 
 		<FilterCategorySelect v-model:value="categoryIds" />
 

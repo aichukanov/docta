@@ -115,6 +115,7 @@ export async function getMedicalServiceList(
 	const medicalServicesQuery = `
 		SELECT
 			ms.id,
+			ms.slug,
 			ms.name_en,
 			ms.name_sr,
 			ms.name_sr_cyrl,

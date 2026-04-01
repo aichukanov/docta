@@ -24,14 +24,14 @@ export async function getClinicList() {
 	const connection = await getConnection();
 
 	const query = `
-		SELECT c.id, c.city_id as cityId
+		SELECT c.id, c.slug, c.city_id as cityId
 		FROM clinics c
 		ORDER BY c.id;
 	`;
 	const [rows] = await connection.execute<any[]>(query);
 	await connection.end();
 
-	return rows as Array<{ id: number; cityId: number }>;
+	return rows as Array<{ id: number; slug: string; cityId: number }>;
 }
 
 // === Фильтры для Sitemap (только ценные, без thin pages) ===

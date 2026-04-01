@@ -188,7 +188,7 @@ watchEffect(() => {
 				description: pageDescription.value,
 				totalCount: labTestsList.value.totalCount,
 				items: labTestsList.value.items,
-				buildPath: (test) => `/labtests/${test.id}`,
+				buildPath: (test) => `/labtests/${test.slug}`,
 				isFiltered: isFiltered.value,
 			}),
 			buildBreadcrumbsSchema(pageUrl, [
@@ -209,8 +209,8 @@ watchEffect(() => {
 		:isLoading="isLoadingLabTests"
 		:filterQuery="filterQuery"
 		:cityIds="cityIds"
-		detailsRouteName="labtests-labTestId"
-		detailsParamName="labTestId"
+		detailsRouteName="labtests-labTestSlug"
+		detailsParamName="labTestSlug"
 	>
 		<template #filters>
 			<FilterName
@@ -229,8 +229,9 @@ watchEffect(() => {
 				:synonyms="item.synonyms"
 				:categoryIds="item.categoryIds"
 				:itemId="item.id"
-				detailsRouteName="labtests-labTestId"
-				detailsParamName="labTestId"
+				:itemSlug="item.slug"
+				detailsRouteName="labtests-labTestSlug"
+				detailsParamName="labTestSlug"
 			/>
 		</template>
 	</ListPage>

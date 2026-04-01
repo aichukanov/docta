@@ -1,6 +1,8 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
 import { downloadAndSaveImage, isExternalUrl } from '~/server/utils/image-processing';
+import { generateSlug } from '~/common/slug-utils';
+import { ensureUniqueSlug, saveSlugRedirect } from '~/server/common/slug-db';
 import {
 	validateBody,
 	validateCityId,
@@ -50,9 +52,20 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 		try {
 			await connection.beginTransaction();
 
+			const clinicName = body.name_sr || body.name || '';
+			const baseSlug = body.slug || generateSlug(clinicName || 'clinic');
+			const slug = await ensureUniqueSlug(
+				connection,
+				'clinics',
+				baseSlug,
+				body.clinicId,
+			);
+
+			await saveSlugRedirect(connection, 'clinics', body.clinicId, slug);
+
 			const updateClinicQuery = `
 				UPDATE clinics
-				SET name_sr = ?, name_sr_cyrl = ?, name_ru = ?, city_id = ?, address_sr = ?, address_sr_cyrl = ?, town_sr = ?, town_sr_cyrl = ?, postal_code = ?, latitude = ?, longitude = ?,
+				SET slug = ?, name_sr = ?, name_sr_cyrl = ?, name_ru = ?, city_id = ?, address_sr = ?, address_sr_cyrl = ?, town_sr = ?, town_sr_cyrl = ?, postal_code = ?, latitude = ?, longitude = ?,
 				    phone = ?, email = ?, website = ?, facebook = ?, instagram = ?,
 				    telegram = ?, whatsapp = ?, viber = ?,
 				    description_sr = ?, description_sr_cyrl = ?, description_en = ?, description_ru = ?, description_de = ?, description_tr = ?,
@@ -61,6 +74,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			`;
 
 			await connection.execute(updateClinicQuery, [
+				slug,
 				body.name_sr || body.name || '',
 				body.name_sr_cyrl || '',
 				body.name_ru || '',

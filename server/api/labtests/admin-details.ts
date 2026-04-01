@@ -37,7 +37,7 @@ export default defineEventHandler(
 
 			// Получаем основные данные анализа
 			const [labTestRows]: any = await connection.execute(
-				`SELECT id, name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr FROM lab_tests WHERE id = ?`,
+				`SELECT id, slug, name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr FROM lab_tests WHERE id = ?`,
 				[body.labTestId],
 			);
 
@@ -93,6 +93,7 @@ export default defineEventHandler(
 
 			return {
 				id: labTest.id,
+				slug: labTest.slug || '',
 				name_en: labTest.name_en || '',
 				name_sr: labTest.name_sr || '',
 				name_sr_cyrl: labTest.name_sr_cyrl || '',

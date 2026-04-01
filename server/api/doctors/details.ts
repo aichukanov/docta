@@ -1,4 +1,4 @@
-import { validateBody, validateNonNegativeInteger } from '~/common/validation';
+import { validateBody } from '~/common/validation';
 import type { DoctorData } from '~/interfaces/doctor';
 import { getCurrentUser } from '~/server/common/auth';
 import { getConnection } from '~/server/common/db-mysql';
@@ -20,8 +20,8 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			return null;
 		}
 
-		if (!validateNonNegativeInteger(body.doctorId)) {
-			setResponseStatus(event, 400, 'Invalid doctor id');
+		if (!body.slug || typeof body.slug !== 'string') {
+			setResponseStatus(event, 400, 'Invalid doctor slug');
 			return null;
 		}
 
@@ -31,6 +31,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 		const doctorsQuery = `
 			SELECT DISTINCT
 				d.id,
+				d.slug,
 				d.user_id,
 				d.hidden,
 				d.is_draft,
@@ -63,11 +64,12 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			LEFT JOIN doctor_languages dl ON d.id = dl.doctor_id
 			LEFT JOIN languages ON dl.language_id = languages.id
 			LEFT JOIN doctor_clinics dc ON d.id = dc.doctor_id
-			WHERE d.id = "${body.doctorId}";
+			WHERE d.slug = ?
+			GROUP BY d.id;
 		`;
 
 		const connection = await getConnection();
-		const [doctorRows] = await connection.execute(doctorsQuery);
+		const [doctorRows] = await connection.execute(doctorsQuery, [body.slug]);
 
 		const doctor = (doctorRows as any[])[0];
 		if (!doctor || doctor.hidden || doctor.is_draft) {
@@ -97,7 +99,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			FROM reviews
 			WHERE doctor_id = ? AND rating IS NOT NULL
 		`;
-		const [ratingRows] = await connection.execute(ratingQuery, [body.doctorId]);
+		const [ratingRows] = await connection.execute(ratingQuery, [doctor.id]);
 		const rating = (ratingRows as any[])[0];
 
 		// Преобразуем строку в число
@@ -140,7 +142,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			ORDER BY r.created_at DESC
 		`;
 		const [reviewsRows] = await connection.execute(reviewsQuery, [
-			body.doctorId,
+			doctor.id,
 		]);
 
 		// Загружаем ответы на отзывы

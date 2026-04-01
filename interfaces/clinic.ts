@@ -17,6 +17,7 @@ export interface Coordinates {
 
 export interface ClinicData extends ContactList, Coordinates {
 	id: number;
+	slug: string;
 	clinicTypeIds: string;
 	name: string;
 	localName: string;
@@ -39,6 +40,7 @@ export interface ClinicList {
 
 export interface ClinicServiceItem {
 	id: number;
+	slug: string;
 	clinicIds: string;
 	name: string;
 	localName: string;

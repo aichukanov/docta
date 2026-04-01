@@ -42,7 +42,8 @@ const { t, locale } = useI18n({
 });
 
 const route = useRoute();
-const clinicId = computed(() => Number(route.params.clinicId));
+const clinicSlug = computed(() => route.params.clinicSlug as string);
+const clinicId = computed(() => clinicData.value?.id);
 
 const { pending: isLoading, data: clinicData } = await useFetch(
 	'/api/clinics/details',
@@ -50,42 +51,42 @@ const { pending: isLoading, data: clinicData } = await useFetch(
 		key: 'clinic-details',
 		method: 'POST',
 		body: computed(() => ({
-			clinicId: route.params.clinicId,
+			slug: clinicSlug.value,
 			locale: locale.value,
 		})),
 	},
 );
 
 const { data: doctorsList } = await useFetch('/api/doctors/list', {
-	key: `doctors-list-clinic-${route.params.clinicId}`,
+	key: `doctors-list-clinic-${clinicSlug.value}`,
 	method: 'POST',
-	body: computed(() => ({ clinicIds: [clinicId.value], locale: locale.value })),
+	body: computed(() => ({ clinicIds: clinicId.value ? [clinicId.value] : [], locale: locale.value })),
 });
 
 const { data: labTestsList } = await useFetch('/api/labtests/list', {
-	key: `labtests-list-clinic-${route.params.clinicId}`,
+	key: `labtests-list-clinic-${clinicSlug.value}`,
 	method: 'POST',
-	body: computed(() => ({ clinicIds: [clinicId.value], locale: locale.value })),
+	body: computed(() => ({ clinicIds: clinicId.value ? [clinicId.value] : [], locale: locale.value })),
 });
 
 const { data: medicationsList } = await useFetch('/api/medications/list', {
-	key: `medications-list-clinic-${route.params.clinicId}`,
+	key: `medications-list-clinic-${clinicSlug.value}`,
 	method: 'POST',
-	body: computed(() => ({ clinicIds: [clinicId.value], locale: locale.value })),
+	body: computed(() => ({ clinicIds: clinicId.value ? [clinicId.value] : [], locale: locale.value })),
 });
 
 const { data: medicalServicesList } = await useFetch('/api/services/list', {
-	key: `services-list-clinic-${route.params.clinicId}`,
+	key: `services-list-clinic-${clinicSlug.value}`,
 	method: 'POST',
-	body: computed(() => ({ clinicIds: [clinicId.value], locale: locale.value })),
+	body: computed(() => ({ clinicIds: clinicId.value ? [clinicId.value] : [], locale: locale.value })),
 });
 
 const { data: workingHoursData } = await useFetch<WorkingHours>(
 	'/api/clinics/working-hours',
 	{
-		key: `clinic-wh-${route.params.clinicId}`,
+		key: `clinic-wh-${clinicSlug.value}`,
 		method: 'POST',
-		body: { clinicId: route.params.clinicId },
+		body: computed(() => ({ clinicId: clinicId.value })),
 	},
 );
 
@@ -344,7 +345,7 @@ const getCityName = (id: number): string | undefined => {
 
 watchEffect(() => {
 	if (clinicData.value && isFound.value) {
-		const clinicUrl = `${SITE_URL}/clinics/${clinicData.value.id}`;
+		const clinicUrl = `${SITE_URL}/clinics/${clinicData.value.slug}`;
 
 		schemaOrgStore.setSchemas([
 			...buildClinicSchema({
@@ -462,13 +463,14 @@ watchEffect(() => {
 						<template #default="{ item }">
 							<PricedItemCard
 								:id="item.id"
+								:slug="item.slug"
 								:name="item.name"
 								:localName="item.localName"
 								:price="getClinicPrice(item.clinicPrices)?.price"
 								:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
 								:priceMin="getClinicPrice(item.clinicPrices)?.priceMin"
-								routeName="services-serviceId"
-								routeParamName="serviceId"
+								routeName="services-serviceSlug"
+								routeParamName="serviceSlug"
 							/>
 						</template>
 					</ClinicCategorizedSection>
@@ -486,12 +488,13 @@ watchEffect(() => {
 						<template #default="{ item }">
 							<PricedItemCard
 								:id="item.id"
+								:slug="item.slug"
 								:name="item.name"
 								:localName="item.localName"
 								:price="getClinicPrice(item.clinicPrices)?.price"
 								:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
-								routeName="labtests-labTestId"
-								routeParamName="labTestId"
+								routeName="labtests-labTestSlug"
+								routeParamName="labTestSlug"
 							/>
 						</template>
 					</ClinicCategorizedSection>
@@ -507,12 +510,13 @@ watchEffect(() => {
 						<template #default="{ item }">
 							<PricedItemCard
 								:id="item.id"
+								:slug="item.slug"
 								:name="item.name"
 								:localName="item.localName"
 								:price="getClinicPrice(item.clinicPrices)?.price"
 								:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
-								routeName="medications-medicationId"
-								routeParamName="medicationId"
+								routeName="medications-medicationSlug"
+								routeParamName="medicationSlug"
 							/>
 						</template>
 					</ClinicServiceSection>

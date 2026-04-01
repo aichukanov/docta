@@ -1,6 +1,8 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
+import { generateSlug } from '~/common/slug-utils';
+import { ensureUniqueSlug, saveSlugRedirect } from '~/server/common/slug-db';
 import type { ClinicPrice, LabTestNames } from '~/interfaces/clinic';
 
 interface UpdateLabTestBody extends LabTestNames {
@@ -32,8 +34,19 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			await connection.beginTransaction();
 
 			// 1. Обновляем основные данные анализа
+			const baseSlug = body.slug || generateSlug(body.name_en || 'labtest');
+			const slug = await ensureUniqueSlug(
+				connection,
+				'lab_tests',
+				baseSlug,
+				body.id,
+			);
+
+			await saveSlugRedirect(connection, 'lab_tests', body.id, slug);
+
 			const updateQuery = `
 				UPDATE lab_tests SET
+					slug = ?,
 					name_en = ?,
 					name_sr = ?,
 					name_sr_cyrl = ?,
@@ -43,6 +56,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				WHERE id = ?
 			`;
 			await connection.execute(updateQuery, [
+				slug,
 				body.name_en,
 				body.name_sr,
 				body.name_sr_cyrl || '',

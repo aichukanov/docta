@@ -1,7 +1,5 @@
 import { fixUrlRegionalParams } from '../common/redirect/regional-settings';
-import { checkLabTestRedirect } from '../common/redirect/lab-test-redirects';
-import { checkDoctorRedirect } from '../common/redirect/doctor-redirects';
-import { checkMedicalServiceRedirect } from '../common/redirect/medical-service-redirects';
+import { checkSlugRedirect } from '../common/redirect/slug-redirects';
 import { sendSitemap } from '../common/sitemap/utils';
 import { generateSitemapPage } from '../common/sitemap/sitemap';
 import { requireAdmin } from '~/server/common/auth';
@@ -26,29 +24,10 @@ export default defineEventHandler(async (event) => {
 	} else if (pathArray[0] === 'admin') {
 		requireAdmin(event);
 	} else {
-		// Проверяем редиректы для объединённых сущностей
-		const labTestRedirect = await checkLabTestRedirect(event, pathArray);
-		if (labTestRedirect) {
-			await sendRedirect(event, labTestRedirect.url, labTestRedirect.status);
-			return;
-		}
-
-		const doctorRedirect = await checkDoctorRedirect(event, pathArray);
-		if (doctorRedirect) {
-			await sendRedirect(event, doctorRedirect.url, doctorRedirect.status);
-			return;
-		}
-
-		const medicalServiceRedirect = await checkMedicalServiceRedirect(
-			event,
-			pathArray,
-		);
-		if (medicalServiceRedirect) {
-			await sendRedirect(
-				event,
-				medicalServiceRedirect.url,
-				medicalServiceRedirect.status,
-			);
+		// Редирект с числовых ID на slug-ссылки (включая объединённые сущности)
+		const slugRedirect = await checkSlugRedirect(event, pathArray);
+		if (slugRedirect) {
+			await sendRedirect(event, slugRedirect.url, slugRedirect.status);
 			return;
 		}
 

@@ -120,6 +120,7 @@ export async function getClinicList(
 	const clinicsQuery = `
 			SELECT
 				c.id,
+				c.slug,
 				c.name_sr,
 				c.name_ru,
 				c.name_sr_cyrl,
@@ -194,6 +195,7 @@ export async function getClinicList(
 
 		return {
 			id: clinic.id,
+			slug: clinic.slug,
 			clinicTypeIds: clinic.clinicTypeIds || '',
 			cityId: clinic.cityId,
 			postalCode: clinic.postalCode,

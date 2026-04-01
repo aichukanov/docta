@@ -152,6 +152,7 @@ const clinicNames = computed(() =>
 		<ProfileDoctorStatusBlock
 			:status="status"
 			:doctor-id="doctor.id"
+			:doctor-slug="doctor.slug"
 			:is-toggling="isToggling"
 			@toggle-visibility="emit('toggle-visibility')"
 		/>

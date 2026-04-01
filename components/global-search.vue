@@ -144,13 +144,13 @@ const shownSpecialties = computed(() =>
 const shownDoctors = computed(() => allDoctors.value.slice(0, 5));
 const shownClinics = computed(() => allFilteredClinics.value.slice(0, 5));
 const shownMedicalServices = computed(() =>
-	allMedicalServices.value.slice(0, 5).map((s) => ({ id: s.id, name: s.name })),
+	allMedicalServices.value.slice(0, 5).map((s) => ({ id: s.id, slug: s.slug, name: s.name })),
 );
 const shownMedications = computed(() =>
-	allMedications.value.slice(0, 5).map((m) => ({ id: m.id, name: m.name })),
+	allMedications.value.slice(0, 5).map((m) => ({ id: m.id, slug: m.slug, name: m.name })),
 );
 const shownLabTests = computed(() =>
-	allLabTests.value.slice(0, 5).map((lt) => ({ id: lt.id, name: lt.name })),
+	allLabTests.value.slice(0, 5).map((lt) => ({ id: lt.id, slug: lt.slug, name: lt.name })),
 );
 
 // Все специальности с локализованными названиями
@@ -188,7 +188,7 @@ function filterClinics(query: string) {
 			const localizedClinicName = getLocalizedName(c, locale.value);
 			return localizedClinicName.toLowerCase().includes(lowerQuery);
 		})
-		.map((c) => ({ id: c.id, name: getLocalizedName(c, locale.value) }));
+		.map((c) => ({ id: c.id, slug: c.slug, name: getLocalizedName(c, locale.value) }));
 }
 
 // AbortController для отмены предыдущих запросов
@@ -312,42 +312,42 @@ function getSpecialtyLink(specialtyId: number) {
 	};
 }
 
-function getDoctorLink(doctorId: number) {
+function getDoctorLink(slug: string) {
 	return {
-		name: 'doctors-doctorId',
-		params: { doctorId },
+		name: 'doctors-doctorSlug',
+		params: { doctorSlug: slug },
 		query: getRegionalQuery(locale.value),
 	};
 }
 
-function getClinicLink(clinicId: number) {
+function getClinicLink(slug: string) {
 	return {
-		name: 'clinics-clinicId',
-		params: { clinicId },
+		name: 'clinics-clinicSlug',
+		params: { clinicSlug: slug },
 		query: getRegionalQuery(locale.value),
 	};
 }
 
-function getMedicalServiceLink(serviceId: number) {
+function getMedicalServiceLink(slug: string) {
 	return {
-		name: 'services-serviceId',
-		params: { serviceId },
+		name: 'services-serviceSlug',
+		params: { serviceSlug: slug },
 		query: getRegionalQuery(locale.value),
 	};
 }
 
-function getMedicationLink(medicationId: number) {
+function getMedicationLink(slug: string) {
 	return {
-		name: 'medications-medicationId',
-		params: { medicationId },
+		name: 'medications-medicationSlug',
+		params: { medicationSlug: slug },
 		query: getRegionalQuery(locale.value),
 	};
 }
 
-function getLabTestLink(labTestId: number) {
+function getLabTestLink(slug: string) {
 	return {
-		name: 'labtests-labTestId',
-		params: { labTestId },
+		name: 'labtests-labTestSlug',
+		params: { labTestSlug: slug },
 		query: getRegionalQuery(locale.value),
 	};
 }
@@ -461,7 +461,7 @@ onUnmounted(() => {
 						<NuxtLink
 							v-for="doctor in shownDoctors"
 							:key="`doctor-${doctor.id}`"
-							:to="getDoctorLink(doctor.id)"
+							:to="getDoctorLink(doctor.slug)"
 							class="global-search__item"
 							@click="handleResultClick"
 						>
@@ -486,7 +486,7 @@ onUnmounted(() => {
 						<NuxtLink
 							v-for="clinic in shownClinics"
 							:key="`clinic-${clinic.id}`"
-							:to="getClinicLink(clinic.id)"
+							:to="getClinicLink(clinic.slug)"
 							class="global-search__item"
 							@click="handleResultClick"
 						>
@@ -514,7 +514,7 @@ onUnmounted(() => {
 						<NuxtLink
 							v-for="service in shownMedicalServices"
 							:key="`service-${service.id}`"
-							:to="getMedicalServiceLink(service.id)"
+							:to="getMedicalServiceLink(service.slug)"
 							class="global-search__item"
 							@click="handleResultClick"
 						>
@@ -541,7 +541,7 @@ onUnmounted(() => {
 						<NuxtLink
 							v-for="medication in shownMedications"
 							:key="`medication-${medication.id}`"
-							:to="getMedicationLink(medication.id)"
+							:to="getMedicationLink(medication.slug)"
 							class="global-search__item"
 							@click="handleResultClick"
 						>
@@ -566,7 +566,7 @@ onUnmounted(() => {
 						<NuxtLink
 							v-for="labTest in shownLabTests"
 							:key="`labtest-${labTest.id}`"
-							:to="getLabTestLink(labTest.id)"
+							:to="getLabTestLink(labTest.slug)"
 							class="global-search__item"
 							@click="handleResultClick"
 						>

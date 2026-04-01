@@ -34,7 +34,7 @@ const { pending: isLoading, data: doctorData } = await useFetch(
 		key: 'doctor-details',
 		method: 'POST',
 		body: computed(() => ({
-			doctorId: route.params.doctorId,
+			slug: route.params.doctorSlug,
 			locale: locale.value,
 			includeServices: true,
 		})),
@@ -247,12 +247,13 @@ watchEffect(() => {
 	if (doctorData.value && isFound.value) {
 		const specialtyIds = doctorData.value.specialtyIds?.split(',').map(Number);
 		const languageIds = doctorData.value.languageIds?.split(',').map(Number);
-		const doctorUrl = `${SITE_URL}/doctors/${doctorData.value.id}`;
+		const doctorUrl = `${SITE_URL}/doctors/${doctorData.value.slug}`;
 
 		schemaOrgStore.setSchemas([
 			...buildDoctorSchema({
 				siteUrl: SITE_URL,
 				id: doctorData.value.id,
+				slug: doctorData.value.slug,
 				name: localizedName.value,
 				photoUrl: doctorData.value.photoUrl,
 				specialtyIds,

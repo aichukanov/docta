@@ -105,6 +105,7 @@ export async function getMedicationList(
 	const medicationsQuery = `
 		SELECT DISTINCT
 			m.id,
+			m.slug,
 			m.name_en,
 			m.name_sr,
 			m.name_sr_cyrl,

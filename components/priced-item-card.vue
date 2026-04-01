@@ -4,6 +4,7 @@ import clinicCommonI18n from '~/i18n/clinic-common';
 
 const props = defineProps<{
 	id: number;
+	slug: string;
 	name: string;
 	localName?: string;
 	price?: number | null;
@@ -19,12 +20,12 @@ const { t, n, locale } = useI18n({
 });
 
 const itemLink = computed(() => {
-	if (!props.routeName || !props.routeParamName) {
+	if (!props.routeName || !props.routeParamName || !props.slug) {
 		return null;
 	}
 	return {
 		name: props.routeName,
-		params: { [props.routeParamName]: props.id },
+		params: { [props.routeParamName]: props.slug },
 		query: getRegionalQuery(locale.value),
 	};
 });

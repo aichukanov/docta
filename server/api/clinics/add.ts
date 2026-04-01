@@ -1,6 +1,8 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
 import { downloadAndSaveImage, isExternalUrl } from '~/server/utils/image-processing';
+import { generateSlug } from '~/common/slug-utils';
+import { ensureUniqueSlug } from '~/server/common/slug-db';
 import {
 	validateBody,
 	validateCityId,
@@ -38,12 +40,22 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			body.logoUrl = await downloadAndSaveImage(body.logoUrl, 'clinics');
 		}
 
+		const connection = await getConnection();
+		const clinicName = body.name_sr || body.name || '';
+		const baseSlug = body.slug || generateSlug(clinicName || 'clinic');
+		const slug = await ensureUniqueSlug(
+			connection,
+			'clinics',
+			baseSlug,
+		);
+
 		const addClinicQuery = `
-			INSERT INTO clinics (name_sr, name_sr_cyrl, name_ru, city_id, address_sr, address_sr_cyrl, town_sr, town_sr_cyrl, postal_code, latitude, longitude, phone, email, website, facebook, instagram, telegram, whatsapp, viber, description_sr, description_sr_cyrl, description_en, description_ru, description_de, description_tr, logo_url)
-			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+			INSERT INTO clinics (slug, name_sr, name_sr_cyrl, name_ru, city_id, address_sr, address_sr_cyrl, town_sr, town_sr_cyrl, postal_code, latitude, longitude, phone, email, website, facebook, instagram, telegram, whatsapp, viber, description_sr, description_sr_cyrl, description_en, description_ru, description_de, description_tr, logo_url)
+			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 		`;
 
 		const addClinicQueryParams = [
+			slug,
 			body.name_sr || body.name || '',
 			body.name_sr_cyrl || '',
 			body.name_ru || '',
@@ -71,8 +83,6 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			body.description_tr || '',
 			body.logoUrl || '',
 		];
-
-		const connection = await getConnection();
 
 		try {
 			await connection.beginTransaction();

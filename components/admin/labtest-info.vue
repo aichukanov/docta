@@ -8,6 +8,7 @@ import { toCyrillic } from '~/common/serbian-transliteration';
 
 interface LabTestAdminDetails {
 	id: number;
+	slug: string;
 	name_en: string;
 	name_sr: string;
 	name_ru: string;
@@ -76,6 +77,7 @@ const fieldModified = (field: keyof LabTestAdminDetails) =>
 	originalLabTest.value?.[field] !== labTestModel.value?.[field];
 
 // Модифицированные поля
+const slugModified = computed(() => fieldModified('slug'));
 const nameModified = computed(() => fieldModified('name_en'));
 const nameSrCyrlModified = computed(() => fieldModified('name_sr_cyrl'));
 const nameSrModified = computed(() => fieldModified('name_sr'));
@@ -106,6 +108,7 @@ const synonymsModified = computed(() => {
 
 const hasChanges = computed(
 	() =>
+		slugModified.value ||
 		nameModified.value ||
 		nameSrModified.value ||
 		nameSrCyrlModified.value ||
@@ -305,6 +308,12 @@ watch(labTestId, async (newId) => {
 					@reset="labTestModel.name_tr = originalLabTest?.name_tr || ''"
 				/>
 			</AdminFieldGroup>
+			<AdminSlugField
+				v-model:value="labTestModel.slug"
+				:nameSource="labTestModel.name_en"
+				:modified="slugModified"
+				@reset="labTestModel.slug = originalLabTest?.slug || ''"
+			/>
 
 			<FilterCategorySelect v-model:value="labTestModel.categoryIds" />
 

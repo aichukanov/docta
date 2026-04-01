@@ -27,6 +27,7 @@ const emit = defineEmits<{
 	(e: 'updated'): void;
 }>();
 
+const doctorSlug = ref('');
 const doctorName = ref('');
 const doctorNameRu = ref('');
 const doctorNameSrCyrl = ref('');
@@ -121,6 +122,7 @@ const addDoctor = async () => {
 	await $fetch('/api/doctors/add', {
 		method: 'POST',
 		body: {
+			slug: doctorSlug.value,
 			name: doctorName.value,
 			name_ru: doctorNameRu.value,
 			name_sr_cyrl: doctorNameSrCyrl.value,
@@ -166,6 +168,10 @@ const addDoctor = async () => {
 			/>
 			<AdminEditableField label="Имя (EN)" v-model:value="doctorNameEn" />
 		</AdminFieldGroup>
+		<AdminSlugField
+			v-model:value="doctorSlug"
+			:nameSource="doctorName"
+		/>
 		<AdminEditableField
 			label="Профессиональное звание"
 			v-model:value="doctorProfessionalTitle"

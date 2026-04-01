@@ -29,7 +29,7 @@ const { pending: isLoading, data: medicalServiceData } = await useFetch(
 		key: 'service-details',
 		method: 'POST',
 		body: computed(() => ({
-			serviceId: route.params.serviceId,
+			slug: route.params.serviceSlug,
 			locale: locale.value,
 		})),
 	},
@@ -160,12 +160,13 @@ const getCityName = (id: number): string | undefined => {
 
 watchEffect(() => {
 	if (medicalServiceData.value && isFound.value) {
-		const serviceUrl = `${SITE_URL}/services/${medicalServiceData.value.id}`;
+		const serviceUrl = `${SITE_URL}/services/${medicalServiceData.value.slug}`;
 
 		schemaOrgStore.setSchemas([
 			...buildMedicalProcedureSchema({
 				siteUrl: SITE_URL,
 				id: medicalServiceData.value.id,
+				slug: medicalServiceData.value.slug,
 				name: medicalServiceData.value.name,
 				locale: locale.value,
 				pageTitle: pageTitle.value,

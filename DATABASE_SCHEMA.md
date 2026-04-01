@@ -41,6 +41,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `medical_service_redirects`             | Redirect map for merged medical service records.               |
 | `doctor_redirects`                      | Redirect map for merged doctor profiles.                       |
 | `lab_test_redirects`                    | Redirect map for merged lab test records.                      |
+| `slug_redirects`                        | Redirect map for renamed slugs (old slug → entity id).         |
 | `reviews`                               | Polymorphic reviews for clinics, doctors, and services.        |
 | `review_replies`                        | Replies to reviews (one from clinic, one from doctor).         |
 | `review_likes`                          | Likes on reviews by registered users.                         |
@@ -211,6 +212,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 ### `clinics`
 
 - `id` (int, PK, AI)
+- `slug` (varchar(280), Unique, NOT NULL): URL-safe slug generated from name_sr. Used for human-readable URLs.
 - `google_place_id` (varchar(255), NULL, Unique): Google Places ID for deduplication.
 - `city_id` (int, FK -> cities.id)
 - `name_sr` (varchar(255)): Name in Serbian (Latin).
@@ -234,6 +236,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 ### `doctors`
 
 - `id` (int, PK, AI)
+- `slug` (varchar(280), Unique, NOT NULL): URL-safe slug generated from name_sr. Used for human-readable URLs.
 - `user_id` (int, Unique, NULL, FK -> auth_users.id): Owner user account. NULL for doctors created via admin panel.
 - `name_sr` (varchar(255)): Name in Serbian (Latin).
 - `name_sr_cyrl` (varchar(255)): Name in Serbian (Cyrillic).
@@ -266,6 +269,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 ### `lab_tests`
 
 - `id` (int, PK, AI)
+- `slug` (varchar(280), Unique, NOT NULL): URL-safe slug generated from name_en. Used for human-readable URLs.
 - `name_en` (varchar(255), Unique): Test name in English (Key).
 - `name_sr`, `name_sr_cyrl`, `name_ru`, `name_de`, `name_tr` (varchar(255)): Localized names.
 - `created_at` (timestamp)
@@ -301,9 +305,19 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `old_id` (int): Old Medical Service ID.
 - `new_id` (int): New Medical Service ID (target).
 
+### `slug_redirects`
+
+- `id` (int, PK, AI)
+- `entity_type` (varchar(50), NOT NULL): Entity type: clinics, doctors, services, labtests, medications.
+- `old_slug` (varchar(280), NOT NULL): Previous slug value.
+- `entity_id` (int, NOT NULL): ID of the entity the old slug should redirect to.
+- `created_at` (timestamp)
+- _Unique constraint_: (`entity_type`, `old_slug`)
+
 ### `medical_services`
 
 - `id` (int, PK, AI)
+- `slug` (varchar(280), Unique, NOT NULL): URL-safe slug generated from name_en. Used for human-readable URLs.
 - `name_en` (varchar(255), Unique): Service name in English (Key).
 - `name_sr`, `name_sr_cyrl`, `name_ru`, `name_de`, `name_tr` (varchar(255)): Localized names.
 - `sort_order` (int): Display order.
@@ -331,6 +345,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 ### `medications`
 
 - `id` (int, PK, AI)
+- `slug` (varchar(280), Unique, NOT NULL): URL-safe slug generated from name_en. Used for human-readable URLs.
 - `name_en` (varchar(255), Unique): Medication name in English (Key).
 - `name_sr`, `name_sr_cyrl`, `name_ru`, `name_de`, `name_tr` (varchar(255)): Localized names.
 - `created_at` (timestamp)

@@ -17,6 +17,7 @@ const props = withDefaults(
 		title?: string;
 		localName?: string;
 		itemId?: number;
+		itemSlug?: string;
 		clinicIds: string;
 		clinicPrices?: ClinicService[];
 		detailsRouteName?: string;
@@ -47,12 +48,12 @@ const sortedClinics = computed(() =>
 );
 
 const detailsLink = computed(() => {
-	if (!props.detailsRouteName || !props.detailsParamName || !props.itemId) {
+	if (!props.detailsRouteName || !props.detailsParamName || !props.itemSlug) {
 		return null;
 	}
 	return {
 		name: props.detailsRouteName,
-		params: { [props.detailsParamName]: props.itemId },
+		params: { [props.detailsParamName]: props.itemSlug },
 		query: getRegionalQuery(locale.value),
 	};
 });

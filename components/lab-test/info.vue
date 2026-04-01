@@ -12,6 +12,7 @@ const props = defineProps<{
 	categoryIds?: number[];
 	short?: boolean;
 	itemId?: number;
+	itemSlug?: string;
 	detailsRouteName?: string;
 	detailsParamName?: string;
 }>();
@@ -22,12 +23,12 @@ const { t, locale } = useI18n({
 });
 
 const detailsLink = computed(() => {
-	if (!props.detailsRouteName || !props.detailsParamName || !props.itemId) {
+	if (!props.detailsRouteName || !props.detailsParamName || !props.itemSlug) {
 		return null;
 	}
 	return {
 		name: props.detailsRouteName,
-		params: { [props.detailsParamName]: props.itemId },
+		params: { [props.detailsParamName]: props.itemSlug },
 		query: getRegionalQuery(locale.value),
 	};
 });

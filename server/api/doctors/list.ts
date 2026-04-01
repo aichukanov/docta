@@ -147,6 +147,7 @@ export async function getDoctorList(
 	const doctorsQuery = `
 			SELECT
 				d.id,
+				d.slug,
 				d.name_sr,
 				d.name_sr_cyrl,
 				d.name_ru,

@@ -2,6 +2,7 @@ import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
 
 export interface ClinicServiceItem {
 	id: number;
+	slug: string;
 	name: string;
 	localName: string;
 	price: number | null;
@@ -90,6 +91,7 @@ export async function getServicesByClinicAndSpecialty(
 		SELECT
 			cms.clinic_id as clinicId,
 			ms.id,
+			ms.slug,
 			ms.name_en,
 			ms.name_sr,
 			ms.name_sr_cyrl,
@@ -106,7 +108,7 @@ export async function getServicesByClinicAndSpecialty(
 		INNER JOIN medical_services_specialties mss ON ms.id = mss.medical_service_id
 		WHERE cms.clinic_id IN (${clinicIdsStr})
 			AND mss.specialty_id IN (${specialtyIdsStr})
-		GROUP BY cms.clinic_id, ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, 
+		GROUP BY cms.clinic_id, ms.id, ms.slug, ms.name_en, ms.name_sr, ms.name_sr_cyrl,
 			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price, cms.price_min, cms.price_max
 		ORDER BY cms.clinic_id, ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
 	`;
@@ -161,6 +163,7 @@ export async function getServicesByClinicAndSpecialty(
 
 		result[clinicId].push({
 			id: serviceId,
+			slug: row.slug || '',
 			name: name || '',
 			localName: localName || '',
 			price,
@@ -215,6 +218,7 @@ export async function getServicesForDoctors(
 		SELECT
 			cms.clinic_id as clinicId,
 			ms.id,
+			ms.slug,
 			ms.name_en,
 			ms.name_sr,
 			ms.name_sr_cyrl,
@@ -231,7 +235,7 @@ export async function getServicesForDoctors(
 		INNER JOIN medical_services_specialties mss ON ms.id = mss.medical_service_id
 		WHERE cms.clinic_id IN (${clinicIdsStr})
 			AND mss.specialty_id IN (${specialtyIdsStr})
-		GROUP BY cms.clinic_id, ms.id, ms.name_en, ms.name_sr, ms.name_sr_cyrl, 
+		GROUP BY cms.clinic_id, ms.id, ms.slug, ms.name_en, ms.name_sr, ms.name_sr_cyrl,
 			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price, cms.price_min, cms.price_max
 		ORDER BY cms.clinic_id, ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
 	`;
@@ -243,6 +247,7 @@ export async function getServicesForDoctors(
 		number,
 		Array<{
 			id: number;
+			slug: string;
 			name: string;
 			localName: string;
 			price: number | null;
@@ -268,6 +273,7 @@ export async function getServicesForDoctors(
 
 		servicesByClinic.get(clinicId)!.push({
 			id: row.id,
+			slug: row.slug || '',
 			name: name || '',
 			localName: localName || '',
 			price: row.price ? Number(row.price) : null,

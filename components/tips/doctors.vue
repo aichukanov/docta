@@ -10,14 +10,15 @@ const props = defineProps<{
 
 const { t, locale } = useI18n({ useScope: 'local' });
 
-// Clinic IDs
-const CLINIC_DOM_ZDRAVLJA_BUDVA = 43;
-const CLINIC_CLINICAL_CENTER_PODGORICA = 65;
+// Clinic slugs
+const CLINIC_DOM_ZDRAVLJA_BUDVA_SLUG = 'jzu-dom-zdravlja-budva';
+const CLINIC_CLINICAL_CENTER_PODGORICA_SLUG =
+	'klinicki-centar-crne-gore-podgorica';
 
 // Clinic links
-const clinicLink = (clinicId: number) => ({
-	name: 'clinics-clinicId',
-	params: { clinicId: String(clinicId) },
+const clinicLink = (clinicSlug: string) => ({
+	name: 'clinics-clinicSlug',
+	params: { clinicSlug },
 	query: getRegionalQuery(locale.value),
 });
 
@@ -27,10 +28,10 @@ const cityClinicLink = (cityId: number) => ({
 });
 
 const domZdravljaBudvaLink = computed(() =>
-	clinicLink(CLINIC_DOM_ZDRAVLJA_BUDVA),
+	clinicLink(CLINIC_DOM_ZDRAVLJA_BUDVA_SLUG),
 );
 const clinicalCenterLink = computed(() =>
-	clinicLink(CLINIC_CLINICAL_CENTER_PODGORICA),
+	clinicLink(CLINIC_CLINICAL_CENTER_PODGORICA_SLUG),
 );
 const barClinicsLink = computed(() => cityClinicLink(CityId.BAR));
 

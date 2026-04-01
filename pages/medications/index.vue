@@ -123,7 +123,7 @@ watchEffect(() => {
 				description: pageDescription.value,
 				totalCount: medicationsList.value.totalCount,
 				items: medicationsList.value.items,
-				buildPath: (medication) => `/medications/${medication.id}`,
+				buildPath: (medication) => `/medications/${medication.slug}`,
 				isFiltered: isFiltered.value,
 			}),
 			buildBreadcrumbsSchema(pageUrl, [
@@ -144,8 +144,8 @@ watchEffect(() => {
 		:isLoading="isLoadingMedications"
 		:filterQuery="filterQuery"
 		:cityIds="cityIds"
-		detailsRouteName="medications-medicationId"
-		detailsParamName="medicationId"
+		detailsRouteName="medications-medicationSlug"
+		detailsParamName="medicationSlug"
 	>
 		<template #filters>
 			<FilterName

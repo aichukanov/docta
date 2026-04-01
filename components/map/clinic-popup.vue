@@ -22,11 +22,14 @@ const localizedName = computed(() =>
 	getLocalizedName(props.clinic, locale.value),
 );
 
-const clinicLink = computed(() => ({
-	name: 'clinics-clinicId',
-	params: { clinicId: props.clinic.id },
-	query: getRegionalQuery(locale.value),
-}));
+const clinicLink = computed(() => {
+	if (!props.clinic.slug) return null;
+	return {
+		name: 'clinics-clinicSlug',
+		params: { clinicSlug: props.clinic.slug },
+		query: getRegionalQuery(locale.value),
+	};
+});
 
 const servicesOnPage = computed(() => {
 	return props.services.slice(
@@ -45,9 +48,10 @@ watch(pageNumber, () => {
 <template>
 	<div class="clinic-popup">
 		<div class="clinic-name-container">
-			<NuxtLink :to="clinicLink" class="clinic-name">
+			<NuxtLink v-if="clinicLink" :to="clinicLink" class="clinic-name">
 				{{ localizedName }}
 			</NuxtLink>
+			<span v-else class="clinic-name">{{ localizedName }}</span>
 		</div>
 
 		<ClinicRouteButton :clinic="clinic">

@@ -21,6 +21,7 @@ interface UserListItem {
 
 interface DoctorAdminDetails {
 	id: number;
+	slug: string;
 	userId: number | null;
 	hidden: boolean;
 	name: string;
@@ -128,6 +129,7 @@ const fieldModified = (field: keyof DoctorAdminDetails) =>
 const hiddenModified = computed(() => fieldModified('hidden'));
 const userIdModified = computed(() => fieldModified('userId'));
 
+const slugModified = computed(() => fieldModified('slug'));
 const nameModified = computed(() => fieldModified('name'));
 const nameRuModified = computed(() => fieldModified('name_ru'));
 const nameSrCyrlModified = computed(() => fieldModified('name_sr_cyrl'));
@@ -194,6 +196,7 @@ const hasChanges = computed(() => {
 	return (
 		hiddenModified.value ||
 		userIdModified.value ||
+		slugModified.value ||
 		nameModified.value ||
 		nameSrCyrlModified.value ||
 		nameRuModified.value ||
@@ -385,6 +388,12 @@ watch(doctorId, async (newDoctorId) => {
 					@reset="doctorModel.name_en = originalDoctor?.name_en || ''"
 				/>
 			</AdminFieldGroup>
+			<AdminSlugField
+				v-model:value="doctorModel.slug"
+				:nameSource="doctorModel.name"
+				:modified="slugModified"
+				@reset="doctorModel.slug = originalDoctor?.slug || ''"
+			/>
 			<AdminEditableField
 				label="Профессиональное звание"
 				v-model:value="doctorModel.professionalTitle"

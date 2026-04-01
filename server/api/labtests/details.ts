@@ -5,7 +5,7 @@ import {
 	processLocalizedNameForLabTest,
 } from '~/server/common/utils';
 import type { LabTestItem } from '~/interfaces/clinic';
-import { validateBody, validateNonNegativeInteger } from '~/common/validation';
+import { validateBody } from '~/common/validation';
 
 export default defineEventHandler(
 	async (event): Promise<LabTestItem | null> => {
@@ -17,8 +17,8 @@ export default defineEventHandler(
 				return null;
 			}
 
-			if (!validateNonNegativeInteger(body.labTestId)) {
-				setResponseStatus(event, 400, 'Invalid lab test id');
+			if (!body.slug || typeof body.slug !== 'string') {
+				setResponseStatus(event, 400, 'Invalid lab test slug');
 				return null;
 			}
 
@@ -28,6 +28,7 @@ export default defineEventHandler(
 			const labTestQuery = `
 			SELECT DISTINCT
 				lt.id,
+				lt.slug,
 				lt.name_en,
 				lt.name_sr,
 				lt.name_sr_cyrl,
@@ -51,12 +52,12 @@ export default defineEventHandler(
 				 FROM lab_test_categories_relations ltcr
 				 WHERE ltcr.lab_test_id = lt.id) as categoryIds
 			FROM lab_tests lt
-			WHERE lt.id = ?;
+			WHERE lt.slug = ?;
 		`;
 
 			const connection = await getConnection();
 			const [labTestRows] = await connection.execute(labTestQuery, [
-				body.labTestId,
+				body.slug,
 			]);
 
 			const row = (labTestRows as any[])[0];
@@ -74,7 +75,7 @@ export default defineEventHandler(
 				ORDER BY another_name ASC
 			`;
 			const [synonymRows] = await connection.execute(synonymsQuery, [
-				body.labTestId,
+				row.id,
 				locale,
 			]);
 			await connection.end();
@@ -86,6 +87,7 @@ export default defineEventHandler(
 
 			return {
 				id: row.id,
+				slug: row.slug,
 				name: name || '',
 				localName: localName || '',
 				synonyms,

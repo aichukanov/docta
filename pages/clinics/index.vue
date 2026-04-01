@@ -146,7 +146,7 @@ watchEffect(() => {
 				description: pageDescription.value,
 				totalCount: clinicsList.value.totalCount,
 				items: clinicsList.value.clinics,
-				buildPath: (clinic) => `/clinics/${clinic.id}`,
+				buildPath: (clinic) => `/clinics/${clinic.slug}`,
 				isFiltered: isFiltered.value,
 			}),
 			buildBreadcrumbsSchema(pageUrl, [

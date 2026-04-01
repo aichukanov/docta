@@ -29,7 +29,7 @@ const { pending: isLoading, data: labTestData } = await useFetch(
 		key: 'labtest-details',
 		method: 'POST',
 		body: computed(() => ({
-			labTestId: route.params.labTestId,
+			slug: route.params.labTestSlug,
 			locale: locale.value,
 		})),
 	},
@@ -156,12 +156,13 @@ const getCityName = (id: number): string | undefined => {
 
 watchEffect(() => {
 	if (labTestData.value && isFound.value) {
-		const testUrl = `${SITE_URL}/labtests/${labTestData.value.id}`;
+		const testUrl = `${SITE_URL}/labtests/${labTestData.value.slug}`;
 
 		schemaOrgStore.setSchemas([
 			...buildMedicalTestSchema({
 				siteUrl: SITE_URL,
 				id: labTestData.value.id,
+				slug: labTestData.value.slug,
 				name: labTestData.value.name,
 				localName: labTestData.value.localName,
 				synonyms: labTestData.value.synonyms,

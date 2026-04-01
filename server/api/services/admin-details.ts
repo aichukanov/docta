@@ -38,7 +38,7 @@ export default defineEventHandler(
 
 			// Получаем основные данные услуги
 			const [serviceRows]: any = await connection.execute(
-				`SELECT id, name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr, sort_order 
+				`SELECT id, slug, name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr, sort_order
 				 FROM medical_services WHERE id = ?`,
 				[body.serviceId],
 			);
@@ -81,6 +81,7 @@ export default defineEventHandler(
 
 			return {
 				id: service.id,
+				slug: service.slug || '',
 				name_en: service.name_en || '',
 				name_sr: service.name_sr || '',
 				name_sr_cyrl: service.name_sr_cyrl || '',

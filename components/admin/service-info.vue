@@ -13,6 +13,7 @@ interface ServiceListItem {
 
 interface ServiceAdminDetails {
 	id: number;
+	slug: string;
 	name_en: string;
 	name_sr: string;
 	name_sr_cyrl: string;
@@ -104,6 +105,7 @@ const fieldModified = (field: keyof ServiceAdminDetails) =>
 	originalService.value?.[field] !== serviceModel.value?.[field];
 
 // Модифицированные поля
+const slugModified = computed(() => fieldModified('slug'));
 const nameModified = computed(() => fieldModified('name_en'));
 const nameSrModified = computed(() => fieldModified('name_sr'));
 const nameSrCyrlModified = computed(() => fieldModified('name_sr_cyrl'));
@@ -136,6 +138,7 @@ const sortOrderModified = computed(
 
 const hasChanges = computed(
 	() =>
+		slugModified.value ||
 		nameModified.value ||
 		sortOrderModified.value ||
 		nameSrModified.value ||
@@ -279,6 +282,12 @@ watch(serviceId, async (newId) => {
 					@reset="serviceModel.name_tr = originalService?.name_tr || ''"
 				/>
 			</AdminFieldGroup>
+			<AdminSlugField
+				v-model:value="serviceModel.slug"
+				:nameSource="serviceModel.name_en"
+				:modified="slugModified"
+				@reset="serviceModel.slug = originalService?.slug || ''"
+			/>
 
 			<div class="sort-order-section" :class="{ modified: sortOrderModified }">
 				<label>Порядок сортировки</label>

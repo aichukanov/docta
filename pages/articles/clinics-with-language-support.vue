@@ -43,9 +43,9 @@ const breadcrumbItems = computed(() => [
 	{ label: t('ClinicsWithLanguageSupportTitle') },
 ]);
 
-const getClinicUrl = (id: number) => ({
-	name: 'clinics-clinicId',
-	params: { clinicId: id },
+const getClinicUrl = (slug: string) => ({
+	name: 'clinics-clinicSlug',
+	params: { clinicSlug: slug },
 	query: getRegionalQuery(locale.value),
 });
 
@@ -137,10 +137,10 @@ watchEffect(() => {
 			description: t('ClinicsWithLanguageSupportDescription'),
 			numberOfItems: totalClinicsCount.value,
 			itemListElement: buildTopListItemElements(
-				allClinics.slice(0, 20).map((c) => ({ id: c.id, name: c.name })),
+				allClinics.slice(0, 20).map((c) => ({ id: c.id, slug: c.slug, name: c.name })),
 				{
 					baseUrl: SITE_URL,
-					buildPath: (c) => `/clinics/${c.id}`,
+					buildPath: (c) => `/clinics/${c.slug}`,
 				},
 			),
 		}),
@@ -177,7 +177,7 @@ watchEffect(() => {
 						<NuxtLink
 							v-for="clinic in group.clinics"
 							:key="clinic.id"
-							:to="getClinicUrl(clinic.id)"
+							:to="getClinicUrl(clinic.slug)"
 							class="clinic-card"
 						>
 							<span class="clinic-name">{{

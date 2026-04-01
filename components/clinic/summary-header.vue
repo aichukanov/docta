@@ -76,11 +76,14 @@ const clinicTypeNames = computed(() => {
 		.map((id) => t(`clinic_type_${id}`));
 });
 
-const clinicLink = computed(() => ({
-	name: 'clinics-clinicId',
-	params: { clinicId: props.clinic.id },
-	query: getRegionalQuery(locale.value),
-}));
+const clinicLink = computed(() => {
+	if (!props.clinic.slug) return null;
+	return {
+		name: 'clinics-clinicSlug',
+		params: { clinicSlug: props.clinic.slug },
+		query: getRegionalQuery(locale.value),
+	};
+});
 </script>
 
 <template>
@@ -97,12 +100,14 @@ const clinicLink = computed(() => ({
 			<div class="clinic-name-row">
 				<div class="clinic-name-wrapper">
 					<NuxtLink
+						v-if="clinicLink"
 						:to="clinicLink"
 						class="clinic-name"
 						:class="{ 'clinic-name--highlight': hasHighlight }"
 					>
 						{{ localizedName }}
 					</NuxtLink>
+					<span v-else class="clinic-name">{{ localizedName }}</span>
 					<ClinicApprovedBadge :clinic="clinic" :small="true" />
 				</div>
 				<div

@@ -218,6 +218,7 @@ onMounted(async () => {
 										:title="item.name"
 										:localName="item.localName"
 										:itemId="item.id"
+										:itemSlug="item.slug"
 										:clinicIds="item.clinicIds"
 										:clinicPrices="item.clinicPrices"
 										:detailsRouteName="detailsRouteName"

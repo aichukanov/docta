@@ -6,6 +6,7 @@ const emit = defineEmits<{
 const cityIds = ref<number[]>([]);
 const clinicTypeIds = ref<number[]>([1]);
 const languageIds = ref<number[]>([1]);
+const clinicSlug = ref('');
 const clinicName = ref('');
 const clinicNameSrCyrl = ref('');
 const clinicNameRu = ref('');
@@ -78,6 +79,7 @@ const addClinic = async () => {
 	await $fetch('/api/clinics/add', {
 		method: 'POST',
 		body: {
+			slug: clinicSlug.value,
 			name_sr: clinicName.value,
 			name_sr_cyrl: clinicNameSrCyrl.value,
 			name_ru: clinicNameRu.value,
@@ -138,6 +140,10 @@ const addClinic = async () => {
 					v-model:value="clinicNameRu"
 				/>
 			</AdminFieldGroup>
+			<AdminSlugField
+				v-model:value="clinicSlug"
+				:nameSource="clinicName"
+			/>
 			<AdminFieldGroup title="Адрес">
 				<AdminEditableField
 					label="Адрес (SR)"

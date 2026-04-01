@@ -189,7 +189,7 @@ watchEffect(() => {
 				description: pageDescription.value,
 				totalCount: medicalServicesList.value.totalCount,
 				items: medicalServicesList.value.items,
-				buildPath: (service) => `/services/${service.id}`,
+				buildPath: (service) => `/services/${service.slug}`,
 				isFiltered: isFiltered.value,
 			}),
 			buildBreadcrumbsSchema(pageUrl, [
@@ -210,8 +210,8 @@ watchEffect(() => {
 		:isLoading="isLoadingMedicalServices"
 		:filterQuery="filterQuery"
 		:cityIds="cityIds"
-		detailsRouteName="services-serviceId"
-		detailsParamName="serviceId"
+		detailsRouteName="services-serviceSlug"
+		detailsParamName="serviceSlug"
 	>
 		<template #filters>
 			<FilterName
@@ -228,8 +228,8 @@ watchEffect(() => {
 				<h2 class="service-name">
 					<NuxtLink
 						:to="{
-							name: 'services-serviceId',
-							params: { serviceId: item.id },
+							name: 'services-serviceSlug',
+							params: { serviceSlug: item.slug },
 							query: getRegionalQuery(locale),
 						}"
 						class="service-name-link"

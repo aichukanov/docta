@@ -56,6 +56,7 @@ export default defineEventHandler(
 			const clinicsQuery = `
 				SELECT
 					c.id,
+					c.slug,
 					c.name_sr,
 					c.name_ru,
 					c.name_sr_cyrl,
@@ -104,6 +105,7 @@ export default defineEventHandler(
 
 			return {
 				id: clinic.id,
+				slug: clinic.slug || '',
 				clinicTypeIds: clinic.clinicTypeIds
 					? clinic.clinicTypeIds.split(',').map(Number)
 					: [],

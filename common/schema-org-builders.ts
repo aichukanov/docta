@@ -201,6 +201,7 @@ export function buildTopListItemElements<
  */
 export interface DoctorSchemaData {
 	id: number;
+	slug: string;
 	name: string;
 	photoUrl?: string;
 	professionalTitle?: string;
@@ -243,7 +244,7 @@ export function buildPersonSchemaRef(
 		getSpecialtyName: (id: number) => string | undefined;
 	},
 ): PersonListItemRef {
-	const url = `${options.siteUrl}/doctors/${doctor.id}`;
+	const url = `${options.siteUrl}/doctors/${doctor.slug}`;
 	const { schemaType, fragment } = getSchemaType(
 		doctor.professionalTitle?.trim(),
 	);
@@ -486,6 +487,7 @@ export function buildMedicalOrganizationRef(
  */
 export interface DoctorServiceItem {
 	id: number;
+	slug: string;
 	name: string;
 	price: number | null;
 	priceMax?: number | null;
@@ -505,6 +507,7 @@ export interface DoctorClinicServicesMap {
 function buildDoctorServicesSchema(options: {
 	siteUrl: string;
 	clinicServices?: DoctorClinicServicesMap;
+	getClinicSlug?: (id: number) => string | undefined;
 }): { hasOfferCatalog?: object; knowsAbout?: object[] } {
 	if (!options.clinicServices) {
 		return {};
@@ -519,10 +522,11 @@ function buildDoctorServicesSchema(options: {
 		options.clinicServices,
 	)) {
 		const clinicId = Number(clinicIdStr);
-		const clinicRef = `${options.siteUrl}/clinics/${clinicId}#medicalorganization`;
+		const clinicSlug = options.getClinicSlug?.(clinicId) || String(clinicId);
+		const clinicRef = `${options.siteUrl}/clinics/${clinicSlug}#medicalorganization`;
 
 		for (const service of services) {
-			const serviceUrl = `${options.siteUrl}/services/${service.id}`;
+			const serviceUrl = `${options.siteUrl}/services/${service.slug}`;
 
 			if (service.price && service.price > 0) {
 				// Service with price → add to hasOfferCatalog
@@ -578,9 +582,9 @@ function buildDoctorServicesSchema(options: {
 		result.knowsAbout = Array.from(servicesWithoutPrice.values()).map(
 			(service) => ({
 				'@type': 'MedicalProcedure',
-				'@id': `${options.siteUrl}/services/${service.id}#medicalprocedure`,
+				'@id': `${options.siteUrl}/services/${service.slug}#medicalprocedure`,
 				'name': service.name,
-				'url': `${options.siteUrl}/services/${service.id}`,
+				'url': `${options.siteUrl}/services/${service.slug}`,
 			}),
 		);
 	}
@@ -594,6 +598,7 @@ function buildDoctorServicesSchema(options: {
 export function buildDoctorSchema(options: {
 	siteUrl: string;
 	id: number;
+	slug: string;
 	name: string;
 	photoUrl?: string;
 	specialtyIds?: number[];
@@ -618,7 +623,7 @@ export function buildDoctorSchema(options: {
 	getSpecialtyName: (id: number) => string | undefined;
 	getCityName: (id: number) => string | undefined;
 }): SchemaOrg[] {
-	const doctorUrl = `${options.siteUrl}/doctors/${options.id}`;
+	const doctorUrl = `${options.siteUrl}/doctors/${options.slug}`;
 	const honorificPrefix = options.title?.trim() || undefined;
 	const { schemaType, fragment } = getSchemaType(honorificPrefix);
 
@@ -651,6 +656,7 @@ export function buildDoctorSchema(options: {
 	const servicesSchema = buildDoctorServicesSchema({
 		siteUrl: options.siteUrl,
 		clinicServices: options.clinicServices,
+		getClinicSlug: (id) => options.clinics?.find((c) => c.id === id)?.slug,
 	});
 
 	// Build aggregate rating
@@ -702,7 +708,7 @@ export function buildDoctorSchema(options: {
 		sameAs: sameAs.length > 0 ? sameAs : undefined,
 		worksFor: options.clinics?.map((clinic) => ({
 			...buildMedicalOrganizationRef(clinic, options.getCityName),
-			'@id': `${options.siteUrl}/clinics/${clinic.id}#medicalorganization`,
+			'@id': `${options.siteUrl}/clinics/${clinic.slug}#medicalorganization`,
 		})),
 		hasOfferCatalog: servicesSchema.hasOfferCatalog,
 		knowsAbout: servicesSchema.knowsAbout,
@@ -726,6 +732,7 @@ export function buildDoctorSchema(options: {
  */
 export interface ClinicServiceOffer {
 	id: number;
+	slug: string;
 	name: string;
 	clinicPrices?: ClinicPrice[];
 }
@@ -735,6 +742,7 @@ export interface ClinicServiceOffer {
  */
 export interface ClinicDoctorItem {
 	id: number;
+	slug: string;
 	professionalTitle?: string;
 }
 
@@ -747,7 +755,7 @@ function buildEmployeeRefs(
 ): Array<{ '@id': string }> {
 	return doctors.map((doctor) => {
 		const { fragment } = getSchemaType(doctor.professionalTitle?.trim());
-		return { '@id': `${siteUrl}/doctors/${doctor.id}#${fragment}` };
+		return { '@id': `${siteUrl}/doctors/${doctor.slug}#${fragment}` };
 	});
 }
 
@@ -767,7 +775,7 @@ function buildOfferCatalogSchema(options: {
 		const priceInfo = service.clinicPrices?.find(
 			(p) => p.clinicId === options.clinicId,
 		);
-		const serviceUrl = `${options.siteUrl}/services/${service.id}`;
+		const serviceUrl = `${options.siteUrl}/services/${service.slug}`;
 
 		const hasPrice = priceInfo?.price != null || priceInfo?.priceMin != null;
 
@@ -895,7 +903,7 @@ export function buildClinicSchema(options: {
 	}>;
 }): SchemaOrg[] {
 	const { siteUrl, clinic, locale, getCityName } = options;
-	const clinicUrl = `${siteUrl}/clinics/${clinic.id}`;
+	const clinicUrl = `${siteUrl}/clinics/${clinic.slug}`;
 
 	const socialLinks = buildSameAs({
 		facebook: clinic.facebook,
@@ -1040,7 +1048,7 @@ export function buildOffersSchema(options: {
 				);
 				if (!clinic) return null;
 
-				const clinicUrl = `${options.siteUrl}/clinics/${clinic.id}`;
+				const clinicUrl = `${options.siteUrl}/clinics/${clinic.slug}`;
 				const price = priceItem.price as number;
 				const priceMax = priceItem.priceMax;
 
@@ -1077,6 +1085,7 @@ export function buildOffersSchema(options: {
 export function buildMedicalTestSchema(options: {
 	siteUrl: string;
 	id: number;
+	slug: string;
 	name: string;
 	localName?: string;
 	synonyms?: string[];
@@ -1087,7 +1096,7 @@ export function buildMedicalTestSchema(options: {
 	clinicPrices?: ClinicPrice[];
 	getCityName: (id: number) => string | undefined;
 }): SchemaOrg[] {
-	const testUrl = `${options.siteUrl}/labtests/${options.id}`;
+	const testUrl = `${options.siteUrl}/labtests/${options.slug}`;
 
 	// Build alternateName from localName and synonyms
 	const alternateNames: string[] = [];
@@ -1137,6 +1146,7 @@ export function buildMedicalTestSchema(options: {
 export function buildDrugSchema(options: {
 	siteUrl: string;
 	id: number;
+	slug: string;
 	name: string;
 	locale: string;
 	pageTitle: string;
@@ -1145,7 +1155,7 @@ export function buildDrugSchema(options: {
 	clinicPrices?: ClinicPrice[];
 	getCityName: (id: number) => string | undefined;
 }): SchemaOrg[] {
-	const drugUrl = `${options.siteUrl}/medications/${options.id}`;
+	const drugUrl = `${options.siteUrl}/medications/${options.slug}`;
 
 	const drugSchema = {
 		...buildEntitySchemaBase({
@@ -1184,6 +1194,7 @@ export function buildDrugSchema(options: {
 export function buildMedicalProcedureSchema(options: {
 	siteUrl: string;
 	id: number;
+	slug: string;
 	name: string;
 	locale: string;
 	pageTitle: string;
@@ -1192,7 +1203,7 @@ export function buildMedicalProcedureSchema(options: {
 	clinicPrices?: ClinicPrice[];
 	getCityName: (id: number) => string | undefined;
 }): SchemaOrg[] {
-	const procedureUrl = `${options.siteUrl}/services/${options.id}`;
+	const procedureUrl = `${options.siteUrl}/services/${options.slug}`;
 
 	const procedureSchema = {
 		...buildEntitySchemaBase({

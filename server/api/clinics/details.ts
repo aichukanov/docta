@@ -5,7 +5,7 @@ import {
 	processLocalizedDescription,
 } from '~/server/common/utils';
 import type { ClinicData } from '~/interfaces/clinic';
-import { validateBody, validateNonNegativeInteger } from '~/common/validation';
+import { validateBody } from '~/common/validation';
 
 export default defineEventHandler(async (event): Promise<ClinicData> => {
 	try {
@@ -16,8 +16,8 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 			return null;
 		}
 
-		if (!validateNonNegativeInteger(body.clinicId)) {
-			setResponseStatus(event, 400, 'Invalid clinic id');
+		if (!body.slug || typeof body.slug !== 'string') {
+			setResponseStatus(event, 400, 'Invalid clinic slug');
 			return null;
 		}
 
@@ -26,6 +26,7 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 		const clinicsQuery = `
 			SELECT
 				c.id,
+				c.slug,
 				c.name_sr,
 				c.name_ru,
 				c.name_sr_cyrl,
@@ -68,13 +69,13 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 				AND bscp.valid_until >= NOW()
 			LEFT JOIN billing_clinic_service_purchase_items bspi
 				ON bscp.id = bspi.purchase_id
-			WHERE c.id = ?
+			WHERE c.slug = ?
 			GROUP BY c.id;
 		`;
 
 		const connection = await getConnection();
 		const [clinicRows] = await connection.execute(clinicsQuery, [
-			body.clinicId,
+			body.slug,
 		]);
 
 		const clinic = clinicRows[0];
@@ -91,7 +92,7 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 			FROM reviews
 			WHERE clinic_id = ? AND rating IS NOT NULL
 		`;
-		const [ratingRows] = await connection.execute(ratingQuery, [body.clinicId]);
+		const [ratingRows] = await connection.execute(ratingQuery, [clinic.id]);
 		const ratingRow = (ratingRows as any[])[0];
 		const rating = {
 			averageRating: ratingRow.averageRating
@@ -132,7 +133,7 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 			ORDER BY r.created_at DESC
 		`;
 		const [reviewsRows] = await connection.execute(reviewsQuery, [
-			body.clinicId,
+			clinic.id,
 		]);
 
 		// Загружаем ответы на отзывы
@@ -216,6 +217,7 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 
 		return {
 			id: clinic.id,
+			slug: clinic.slug,
 			clinicTypeIds: clinic.clinicTypeIds || '',
 			cityId: clinic.cityId,
 			postalCode: clinic.postalCode,

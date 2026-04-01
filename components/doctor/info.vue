@@ -24,11 +24,14 @@ const headingTag = computed(() => {
 	return props.headingLevel;
 });
 
-const doctorLink = computed(() => ({
-	name: 'doctors-doctorId',
-	params: { doctorId: props.service.id },
-	query: getRegionalQuery(locale.value),
-}));
+const doctorLink = computed(() => {
+	if (!props.service.slug) return null;
+	return {
+		name: 'doctors-doctorSlug',
+		params: { doctorSlug: props.service.slug },
+		query: getRegionalQuery(locale.value),
+	};
+});
 
 const avatarName = computed(() => {
 	return props.service.localName && props.service.localName.trim() !== ''
@@ -46,9 +49,10 @@ const avatarName = computed(() => {
 		/>
 		<div class="doctor-info">
 			<component :is="headingTag" class="doctor-name">
-				<NuxtLink :to="doctorLink" class="doctor-name-link">
+				<NuxtLink v-if="doctorLink" :to="doctorLink" class="doctor-name-link">
 					{{ service.name }}
 				</NuxtLink>
+				<span v-else>{{ service.name }}</span>
 				<div v-if="service.localName && !short" class="doctor-original-name">
 					{{ service.localName }}
 				</div>

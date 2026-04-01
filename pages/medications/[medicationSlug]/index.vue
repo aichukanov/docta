@@ -23,7 +23,7 @@ const { pending: isLoading, data: medicationData } = await useFetch(
 		key: 'medication-details',
 		method: 'POST',
 		body: computed(() => ({
-			medicationId: route.params.medicationId,
+			slug: route.params.medicationSlug,
 			locale: locale.value,
 		})),
 	},
@@ -144,12 +144,13 @@ const getCityName = (id: number): string | undefined => {
 
 watchEffect(() => {
 	if (medicationData.value && isFound.value) {
-		const medicationUrl = `${SITE_URL}/medications/${medicationData.value.id}`;
+		const medicationUrl = `${SITE_URL}/medications/${medicationData.value.slug}`;
 
 		schemaOrgStore.setSchemas([
 			...buildDrugSchema({
 				siteUrl: SITE_URL,
 				id: medicationData.value.id,
+				slug: medicationData.value.slug,
 				name: medicationData.value.name,
 				locale: locale.value,
 				pageTitle: pageTitle.value,

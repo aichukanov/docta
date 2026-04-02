@@ -1,3 +1,99 @@
+<script setup lang="ts">
+import RatingStars from '~/components/rating-stars.vue';
+import ReviewProviderIcon from '~/components/review-provider-icon.vue';
+import { getRegionalQuery } from '~/common/url-utils';
+import reviewsI18n from '~/i18n/reviews';
+import type { Rating, Review } from '~/interfaces/review';
+
+const props = withDefaults(
+	defineProps<{
+		reviews?: Review[];
+		rating?: Rating;
+		noReviewsText?: string;
+		clinicInfo?: Record<number, { name: string; slug: string }>;
+	}>(),
+	{
+		reviews: () => [],
+		rating: undefined,
+		noReviewsText: undefined,
+		clinicInfo: () => ({}),
+	},
+);
+
+const { t, locale } = useI18n(reviewsI18n);
+
+const PAGE_SIZE = 5;
+const visibleCount = ref(PAGE_SIZE);
+
+const visibleReviews = computed(
+	() => props.reviews?.slice(0, visibleCount.value) || [],
+);
+
+const nextPageSize = computed(() =>
+	Math.min(PAGE_SIZE, (props.reviews?.length || 0) - visibleCount.value),
+);
+
+const showMore = () => {
+	visibleCount.value += PAGE_SIZE;
+};
+
+const showingOriginal = ref(new Set<string>());
+
+const isShowingOriginal = (key: string) => showingOriginal.value.has(key);
+
+const toggleOriginal = (key: string) => {
+	const next = new Set(showingOriginal.value);
+	if (next.has(key)) {
+		next.delete(key);
+	} else {
+		next.add(key);
+	}
+	showingOriginal.value = next;
+};
+
+const getLangName = (langCode?: string) => {
+	if (!langCode) return '';
+	return langCode.replace(/-.*$/, '').toUpperCase();
+};
+
+const formatDate = (dateString: string) => {
+	const date = new Date(dateString);
+	return date.toLocaleDateString(locale.value, {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	});
+};
+
+const formatRelativeDate = (dateString: string) => {
+	const now = Date.now();
+	const diff = now - new Date(dateString).getTime();
+	const seconds = Math.floor(diff / 1000);
+	const minutes = Math.floor(seconds / 60);
+	const hours = Math.floor(minutes / 60);
+	const days = Math.floor(hours / 24);
+	const weeks = Math.floor(days / 7);
+	const months = Math.floor(days / 30);
+	const years = Math.floor(days / 365);
+
+	const rtf = new Intl.RelativeTimeFormat(locale.value, { numeric: 'auto' });
+
+	if (years > 0) return rtf.format(-years, 'year');
+	if (months > 0) return rtf.format(-months, 'month');
+	if (weeks > 0) return rtf.format(-weeks, 'week');
+	if (days > 0) return rtf.format(-days, 'day');
+	if (hours > 0) return rtf.format(-hours, 'hour');
+	if (minutes > 0) return rtf.format(-minutes, 'minute');
+	return rtf.format(-seconds, 'second');
+};
+
+const formatReviewDate = (dateString: string, provider: string) => {
+	return provider === 'google_maps'
+		? formatRelativeDate(dateString)
+		: formatDate(dateString);
+};
+</script>
+
 <template>
 	<div class="doctor-reviews">
 		<!-- Рейтинг -->
@@ -35,6 +131,17 @@
 									<ReviewProviderIcon :provider="review.provider" />
 									{{ t(`Provider_${review.provider}`) }}
 								</span>
+								<NuxtLink
+									class="review-clinic"
+									v-if="review.clinicId && clinicInfo[review.clinicId]"
+									:to="{
+										name: 'clinics-clinicSlug',
+										params: { clinicSlug: clinicInfo[review.clinicId].slug },
+										query: getRegionalQuery(locale),
+									}"
+								>
+									{{ clinicInfo[review.clinicId].name }}
+								</NuxtLink>
 							</div>
 						</div>
 					</div>
@@ -124,98 +231,6 @@
 		</div>
 	</div>
 </template>
-
-<script setup lang="ts">
-import RatingStars from '~/components/rating-stars.vue';
-import ReviewProviderIcon from '~/components/review-provider-icon.vue';
-import reviewsI18n from '~/i18n/reviews';
-import type { Rating, Review } from '~/interfaces/review';
-
-interface Props {
-	reviews?: Review[];
-	rating?: Rating;
-	noReviewsText?: string;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-	reviews: () => [],
-	rating: undefined,
-	noReviewsText: undefined,
-});
-
-const { t, locale } = useI18n(reviewsI18n);
-
-const PAGE_SIZE = 5;
-const visibleCount = ref(PAGE_SIZE);
-
-const visibleReviews = computed(
-	() => props.reviews?.slice(0, visibleCount.value) || [],
-);
-
-const nextPageSize = computed(() =>
-	Math.min(PAGE_SIZE, (props.reviews?.length || 0) - visibleCount.value),
-);
-
-const showMore = () => {
-	visibleCount.value += PAGE_SIZE;
-};
-
-const showingOriginal = ref(new Set<string>());
-
-const isShowingOriginal = (key: string) => showingOriginal.value.has(key);
-
-const toggleOriginal = (key: string) => {
-	const next = new Set(showingOriginal.value);
-	if (next.has(key)) {
-		next.delete(key);
-	} else {
-		next.add(key);
-	}
-	showingOriginal.value = next;
-};
-
-const getLangName = (langCode?: string) => {
-	if (!langCode) return '';
-	return langCode.replace(/-.*$/, '').toUpperCase();
-};
-
-const formatDate = (dateString: string) => {
-	const date = new Date(dateString);
-	return date.toLocaleDateString(locale.value, {
-		year: 'numeric',
-		month: 'long',
-		day: 'numeric',
-	});
-};
-
-const formatRelativeDate = (dateString: string) => {
-	const now = Date.now();
-	const diff = now - new Date(dateString).getTime();
-	const seconds = Math.floor(diff / 1000);
-	const minutes = Math.floor(seconds / 60);
-	const hours = Math.floor(minutes / 60);
-	const days = Math.floor(hours / 24);
-	const weeks = Math.floor(days / 7);
-	const months = Math.floor(days / 30);
-	const years = Math.floor(days / 365);
-
-	const rtf = new Intl.RelativeTimeFormat(locale.value, { numeric: 'auto' });
-
-	if (years > 0) return rtf.format(-years, 'year');
-	if (months > 0) return rtf.format(-months, 'month');
-	if (weeks > 0) return rtf.format(-weeks, 'week');
-	if (days > 0) return rtf.format(-days, 'day');
-	if (hours > 0) return rtf.format(-hours, 'hour');
-	if (minutes > 0) return rtf.format(-minutes, 'minute');
-	return rtf.format(-seconds, 'second');
-};
-
-const formatReviewDate = (dateString: string, provider: string) => {
-	return provider === 'google_maps'
-		? formatRelativeDate(dateString)
-		: formatDate(dateString);
-};
-</script>
 
 <style scoped>
 .doctor-reviews {
@@ -311,6 +326,16 @@ const formatReviewDate = (dateString: string, provider: string) => {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.25rem;
+}
+
+.review-clinic {
+	font-size: 0.85rem;
+	color: #007bff;
+	text-decoration: none;
+}
+
+.review-clinic:hover {
+	text-decoration: underline;
 }
 
 .review-content {

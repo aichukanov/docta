@@ -116,6 +116,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 				r.id,
 				r.user_id as userId,
 				r.doctor_id as doctorId,
+				r.clinic_id as clinicId,
 				r.provider,
 				r.provider_review_id as providerReviewId,
 				r.rating,

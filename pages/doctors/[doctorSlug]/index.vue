@@ -77,7 +77,12 @@ const tabs = computed(() => {
 		result.push({ id: 'clinics', label: t('TabClinics') });
 	}
 	if (doctorData.value?.reviews?.length) {
-		result.push({ id: 'reviews', label: t('TabReviews') });
+		result.push({
+			id: 'reviews',
+			label: `${t('TabReviews')} (${
+				doctorData.value.rating?.totalReviews || doctorData.value.reviews.length
+			})`,
+		});
 	}
 	if (doctorClinics.value.length > 0) {
 		result.push({ id: 'map', label: t('TabMap') });
@@ -104,6 +109,14 @@ const doctorClinics = computed(() => {
 	return clinicIds
 		.map((id) => clinicsStore.clinics.find((c) => c.id === id))
 		.filter(Boolean);
+});
+
+const clinicInfoMap = computed(() => {
+	const map: Record<number, { name: string; slug: string }> = {};
+	for (const clinic of doctorClinics.value) {
+		if (clinic) map[clinic.id] = { name: clinic.localName || clinic.name, slug: clinic.slug };
+	}
+	return map;
 });
 
 const pageTitle = computed(() => {
@@ -348,6 +361,7 @@ watchEffect(() => {
 				<DoctorReviews
 					:reviews="doctorData.reviews"
 					:rating="doctorData.rating"
+					:clinicInfo="clinicInfoMap"
 				/>
 			</EntityPageSection>
 

@@ -180,6 +180,21 @@ watchEffect(() => {
 	]);
 });
 
+const currentSort = computed(
+	() => (route.query.sort as string) || 'rank',
+);
+
+const onSortChange = (sort: string) => {
+	router.push({
+		query: {
+			...route.query,
+			sort: sort !== 'rank' ? sort : undefined,
+			page: undefined, // reset to page 1
+		},
+	});
+	window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 const onPageChange = (page: number) => {
 	router.push({
 		query: {
@@ -223,6 +238,21 @@ const onPageChange = (page: number) => {
 		<!-- Badges (specialties, clinic types, etc.) -->
 		<div v-if="$slots.badges" class="reviews-page-badges">
 			<slot name="badges" />
+		</div>
+
+		<!-- Sort -->
+		<div class="reviews-sort">
+			<el-select
+				:modelValue="currentSort"
+				@update:modelValue="onSortChange"
+				size="default"
+			>
+				<el-option value="rank" :label="t('SortRank')" />
+				<el-option value="newest" :label="t('SortNewest')" />
+				<el-option value="oldest" :label="t('SortOldest')" />
+				<el-option value="rating_high" :label="t('SortRatingHigh')" />
+				<el-option value="rating_low" :label="t('SortRatingLow')" />
+			</el-select>
 		</div>
 
 		<!-- Reviews -->
@@ -289,6 +319,12 @@ const onPageChange = (page: number) => {
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--spacing-xs);
-	margin-bottom: var(--spacing-xl);
+	margin-bottom: var(--spacing-lg);
+}
+
+.reviews-sort {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: var(--spacing-lg);
 }
 </style>

@@ -17,6 +17,7 @@ const { data: reviewsData } = await useFetch('/api/clinics/reviews', {
 		slug: clinicSlug.value,
 		locale: locale.value,
 		page: currentPage.value,
+		sort: route.query.sort || 'rank',
 	})),
 });
 

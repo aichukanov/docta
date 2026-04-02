@@ -19,6 +19,7 @@ const { data: reviewsData } = await useFetch('/api/doctors/reviews', {
 		slug: doctorSlug.value,
 		locale: locale.value,
 		page: currentPage.value,
+		sort: route.query.sort || 'rank',
 	})),
 });
 

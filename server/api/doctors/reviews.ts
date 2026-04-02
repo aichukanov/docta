@@ -2,7 +2,7 @@ import { validateBody } from '~/common/validation';
 import { REVIEWS_PAGE_SIZE, REVIEWS_THRESHOLD } from '~/common/constants';
 import { getConnection } from '~/server/common/db-mysql';
 import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
-import { fetchRating, fetchReviews } from '~/server/common/reviews';
+import { fetchRating, fetchReviews, isValidSort } from '~/server/common/reviews';
 import type { Rating } from '~/interfaces/review';
 
 export default defineEventHandler(async (event) => {
@@ -21,6 +21,7 @@ export default defineEventHandler(async (event) => {
 
 		const locale = body.locale || 'en';
 		const page = Math.max(1, parseInt(body.page) || 1);
+		const sort = isValidSort(body.sort) ? body.sort : 'rank';
 		const pageSize = REVIEWS_PAGE_SIZE;
 		const offset = (page - 1) * pageSize;
 
@@ -69,6 +70,7 @@ export default defineEventHandler(async (event) => {
 			'doctor',
 			doctor.id,
 			locale,
+			sort,
 		);
 
 		await connection.end();

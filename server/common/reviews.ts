@@ -1,6 +1,54 @@
 import type { Connection } from 'mysql2/promise';
 import type { Rating, Review } from '~/interfaces/review';
 
+export type ReviewSort =
+	| 'rank'
+	| 'newest'
+	| 'oldest'
+	| 'rating_high'
+	| 'rating_low';
+
+const VALID_SORTS: ReviewSort[] = [
+	'rank',
+	'newest',
+	'oldest',
+	'rating_high',
+	'rating_low',
+];
+
+export function isValidSort(value: unknown): value is ReviewSort {
+	return typeof value === 'string' && VALID_SORTS.includes(value as ReviewSort);
+}
+
+function applySorting(reviews: Review[], sort: ReviewSort): void {
+	switch (sort) {
+		case 'newest':
+			reviews.sort(
+				(a, b) =>
+					new Date(b.publishedAt || 0).getTime() -
+					new Date(a.publishedAt || 0).getTime(),
+			);
+			break;
+		case 'oldest':
+			reviews.sort(
+				(a, b) =>
+					new Date(a.publishedAt || 0).getTime() -
+					new Date(b.publishedAt || 0).getTime(),
+			);
+			break;
+		case 'rating_high':
+			reviews.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+			break;
+		case 'rating_low':
+			reviews.sort((a, b) => (a.rating || 0) - (b.rating || 0));
+			break;
+		case 'rank':
+		default:
+			sortReviewsByRank(reviews);
+			break;
+	}
+}
+
 /**
  * Build CASE expression for localized text field.
  * Used for reviews and review replies.
@@ -54,6 +102,7 @@ export async function fetchReviews(
 	entityType: 'doctor' | 'clinic',
 	entityId: number,
 	locale: string,
+	sort: ReviewSort = 'rank',
 ): Promise<Review[]> {
 	const column = entityType === 'doctor' ? 'doctor_id' : 'clinic_id';
 
@@ -133,7 +182,7 @@ export async function fetchReviews(
 		};
 	});
 
-	sortReviewsByRank(reviews);
+	applySorting(reviews, sort);
 
 	return reviews;
 }

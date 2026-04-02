@@ -2,7 +2,11 @@
  * Schema.org types for structured data
  */
 
-export type PersonSchemaType = 'Physician' | 'Pharmacist' | 'Person';
+export type PersonSchemaType =
+	| 'Physician'
+	| 'Pharmacist'
+	| 'ProfessionalService'
+	| 'Person';
 
 export interface SchemaOrgBase {
 	'@context'?: string;
@@ -59,7 +63,7 @@ export interface MedicalOrganizationRef {
 }
 
 export interface PhysicianSchema extends SchemaOrgBase {
-	'@type': 'Physician' | 'Person';
+	'@type': 'Physician' | 'ProfessionalService' | 'Person';
 	'name': string;
 	'url'?: string;
 	'image'?: string;

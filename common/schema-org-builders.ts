@@ -1,37 +1,37 @@
-import type {
-	SchemaOrg,
-	PostalAddressSchema,
-	ListItemSchema,
-	ItemListSchema,
-	WebPageSchema,
-	MedicalOrganizationRef,
-	MedicalOrganizationType,
-	MedicalSpecialtySchema,
-	BreadcrumbListSchema,
-	PersonListItemRef,
-	PersonSchemaType,
-} from '~/types/schema-org';
-import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
-import type {
-	WorkingHours,
-	DayOfWeek,
-} from '~/interfaces/clinic-working-hours';
-import { DAYS_OF_WEEK } from '~/interfaces/clinic-working-hours';
 import { SITE_NAME } from '~/common/constants';
 import {
-	normalizeWebsiteUrl,
-	splitContacts,
 	normalizeFacebookUrl,
 	normalizeInstagramUrl,
 	normalizeTelegramUrl,
+	normalizeWebsiteUrl,
+	splitContacts,
 } from '~/common/contacts';
-import { Language, LanguageId } from '~/enums/language';
 import { getDoctorSpecialtySchemaOrgUrlById } from '~/common/schema-org-medical-specialty';
 import {
-	ClinicType,
-	CLINIC_TYPE_SCHEMA_ORG,
 	CLINIC_TYPE_MEDICAL_SPECIALTY,
+	CLINIC_TYPE_SCHEMA_ORG,
+	ClinicType,
 } from '~/enums/clinic-type';
+import { Language, LanguageId } from '~/enums/language';
+import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
+import type {
+	DayOfWeek,
+	WorkingHours,
+} from '~/interfaces/clinic-working-hours';
+import { DAYS_OF_WEEK } from '~/interfaces/clinic-working-hours';
+import type {
+	BreadcrumbListSchema,
+	ItemListSchema,
+	ListItemSchema,
+	MedicalOrganizationRef,
+	MedicalOrganizationType,
+	MedicalSpecialtySchema,
+	PersonListItemRef,
+	PersonSchemaType,
+	PostalAddressSchema,
+	SchemaOrg,
+	WebPageSchema,
+} from '~/types/schema-org';
 
 // Маппинг ID языков на ISO 639-1 коды
 const LANGUAGE_CODES: Record<number, string> = {
@@ -225,16 +225,16 @@ function getSchemaType(professionalTitle: string): {
 } {
 	if (!professionalTitle) {
 		return {
-			schemaType: 'Person',
-			fragment: 'person',
+			schemaType: 'ProfessionalService',
+			fragment: 'professionalservice',
 		};
 	} else if (professionalTitle === 'mr ph') {
 		return {
-			schemaType: 'Person',
-			fragment: 'person',
 			// это только для аптекарей
 			// schemaType: 'Pharmacist',
 			// fragment: 'pharmacist',
+			schemaType: 'ProfessionalService',
+			fragment: 'professionalservice',
 		};
 	} else {
 		return {
@@ -640,7 +640,7 @@ export function buildDoctorSchema(options: {
 
 	// Build job titles for Person type
 	const jobTitles =
-		schemaType === 'Person' || schemaType === 'Pharmacist'
+		schemaType === 'ProfessionalService' || schemaType === 'Pharmacist'
 			? options.specialtyIds
 					?.map((id) => options.getSpecialtyName(id))
 					.filter(isNonEmptyString)

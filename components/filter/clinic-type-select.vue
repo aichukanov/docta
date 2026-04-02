@@ -58,6 +58,19 @@ const VISIBLE_TYPES: ClinicType[] = [
 	ClinicType.ENT_CLINIC,
 	ClinicType.ORTHOPEDIC_CLINIC,
 	ClinicType.DIAGNOSTIC_LAB,
+	ClinicType.PEDIATRIC_CLINIC,
+	ClinicType.SURGICAL_CENTER,
+	ClinicType.DERMATOLOGY_CLINIC,
+	ClinicType.AESTHETIC_CLINIC,
+	// ClinicType.PHARMACY,
+	// ClinicType.OPTICAL_CLINIC,
+	// ClinicType.REHABILITATION_CENTER,
+	// ClinicType.PSYCHIATRIC_CLINIC,
+	// ClinicType.ONCOLOGY_CLINIC,
+	// ClinicType.NEUROLOGY_CLINIC,
+	// ClinicType.ENDOCRINOLOGY_CLINIC,
+	// ClinicType.GASTROENTEROLOGY_CLINIC,
+	// ClinicType.PULMONOLOGY_CLINIC,
 ];
 
 const clinicTypes = computed(() =>

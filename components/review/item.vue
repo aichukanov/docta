@@ -100,6 +100,8 @@ const clinic = computed(() => {
 
 <style scoped>
 .review-item {
+	width: 100%;
+	box-sizing: border-box;
 	padding: 1.5rem;
 	border: 1px solid #e9ecef;
 	border-radius: 12px;

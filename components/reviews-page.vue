@@ -278,8 +278,11 @@ const onPageChange = (page: number) => {
 <style scoped>
 .reviews-page {
 	max-width: 800px;
+	min-width: 0;
+	width: 100%;
 	margin: 0 auto;
 	padding: var(--spacing-lg);
+	box-sizing: border-box;
 }
 
 .breadcrumbs {

@@ -39,3 +39,8 @@ export const PROJECT_CONTACTS = {
 
 // Размер страницы для списков
 export const LIST_PAGE_SIZE = 20;
+
+// Порог для создания отдельной страницы отзывов
+// Если отзывов > REVIEWS_THRESHOLD, создаётся /reviews/ подстраница
+export const REVIEWS_THRESHOLD = 5;
+export const REVIEWS_PAGE_SIZE = 10;

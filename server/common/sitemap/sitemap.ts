@@ -1,7 +1,7 @@
 import { SitemapLink } from './utils';
 import { locales } from '~/composables/use-locale';
 import { getRegionalUrl } from '~/common/url-utils';
-import { SITE_URL } from '~/common/constants';
+import { SITE_URL, REVIEWS_THRESHOLD } from '~/common/constants';
 import { getDoctorList } from '~/server/api/doctors/list';
 import { getLabTestList } from '~/server/api/labtests/list';
 import { getMedicalServiceList } from '~/server/api/services/list';
@@ -12,6 +12,7 @@ import {
 	getSitemapFilters as getClinicSitemapFilters,
 	getClinicList,
 } from './filters/clinics';
+import { getConnection } from '~/server/common/db-mysql';
 
 export function menuItemToLinks(
 	routeName: string,
@@ -48,6 +49,39 @@ export function menuItemToLinks(
 		lastmod: new Date(),
 		changefreq: 'weekly',
 		alternatives: linksWithParams,
+	};
+}
+
+async function getEntitiesWithReviews(): Promise<{
+	doctorSlugs: string[];
+	clinicSlugs: string[];
+}> {
+	const connection = await getConnection();
+
+	const [doctorRows] = await connection.execute(
+		`SELECT d.slug
+		FROM doctors d
+		JOIN reviews r ON r.doctor_id = d.id AND r.rating IS NOT NULL
+		WHERE d.hidden = 0 AND d.is_draft = 0
+		GROUP BY d.id
+		HAVING COUNT(*) > ?`,
+		[REVIEWS_THRESHOLD],
+	);
+
+	const [clinicRows] = await connection.execute(
+		`SELECT c.slug
+		FROM clinics c
+		JOIN reviews r ON r.clinic_id = c.id AND r.rating IS NOT NULL
+		GROUP BY c.id
+		HAVING COUNT(*) > ?`,
+		[REVIEWS_THRESHOLD],
+	);
+
+	await connection.end();
+
+	return {
+		doctorSlugs: (doctorRows as any[]).map((r) => r.slug),
+		clinicSlugs: (clinicRows as any[]).map((r) => r.slug),
 	};
 }
 
@@ -141,6 +175,18 @@ export async function generateSitemapPage(sitemapIndex: number) {
 			}),
 		);
 
+	// === Reviews pages ===
+	const { doctorSlugs: doctorsWithReviews, clinicSlugs: clinicsWithReviews } =
+		await getEntitiesWithReviews();
+
+	const doctorReviewLinks: SitemapLink[] = doctorsWithReviews.map((slug) =>
+		menuItemToLinks(`${SITE_URL}/doctors/${slug}/reviews`, {}, true),
+	);
+
+	const clinicReviewLinks: SitemapLink[] = clinicsWithReviews.map((slug) =>
+		menuItemToLinks(`${SITE_URL}/clinics/${slug}/reviews`, {}, true),
+	);
+
 	// === Clinics ===
 	const clinics = await getClinicList();
 	const clinicFilters = await getClinicSitemapFilters();
@@ -165,6 +211,7 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		// Doctors: страницы + специальность + специальность+город + специальность+язык
 		doctorsPageLink,
 		...doctorLinks,
+		...doctorReviewLinks,
 		...specialtyLinks,
 		...specialtyCityLinks,
 		...specialtyLanguageLinks,
@@ -181,6 +228,7 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		// Clinics: страницы + город
 		clinicsPageLink,
 		...clinicLinks,
+		...clinicReviewLinks,
 		...clinicCityLinks,
 	]);
 }

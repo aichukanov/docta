@@ -122,12 +122,13 @@ const clinicLink = computed(() => {
 			</div>
 
 			<div v-if="clinicTypeNames.length" class="clinic-types">
-				<span
+				<el-tag
 					v-for="typeName in clinicTypeNames"
 					:key="typeName"
-					class="clinic-type-tag"
-					>{{ typeName }}</span
-				>
+					type="info"
+					effect="plain"
+					round
+				>{{ typeName }}</el-tag>
 			</div>
 
 			<RatingStars
@@ -231,14 +232,6 @@ const clinicLink = computed(() => {
 	gap: var(--spacing-xs);
 }
 
-.clinic-type-tag {
-	display: inline-block;
-	padding: 1px var(--spacing-sm);
-	background: var(--color-surface-secondary);
-	border-radius: var(--border-radius-sm);
-	font-size: var(--font-size-xs);
-	color: var(--color-text-secondary);
-}
 
 .clinic-actions {
 	display: flex;

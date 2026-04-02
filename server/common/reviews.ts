@@ -1,0 +1,139 @@
+import type { Connection } from 'mysql2/promise';
+import type { Rating, Review } from '~/interfaces/review';
+
+/**
+ * Build CASE expression for localized text field.
+ * Used for reviews and review replies.
+ */
+function localizedTextField(
+	locale: string,
+	tableAlias: string,
+	fallbackField = 'original_text',
+): string {
+	return `CASE
+		WHEN '${locale}' = 'sr' THEN COALESCE(${tableAlias}.text_sr, ${tableAlias}.${fallbackField})
+		WHEN '${locale}' = 'sr-cyrl' THEN COALESCE(${tableAlias}.text_sr_cyrl, ${tableAlias}.${fallbackField})
+		WHEN '${locale}' = 'en' THEN COALESCE(${tableAlias}.text_en, ${tableAlias}.${fallbackField})
+		WHEN '${locale}' = 'ru' THEN COALESCE(${tableAlias}.text_ru, ${tableAlias}.${fallbackField})
+		WHEN '${locale}' = 'de' THEN COALESCE(${tableAlias}.text_de, ${tableAlias}.${fallbackField})
+		WHEN '${locale}' = 'tr' THEN COALESCE(${tableAlias}.text_tr, ${tableAlias}.${fallbackField})
+		ELSE ${tableAlias}.${fallbackField}
+	END`;
+}
+
+/**
+ * Fetch rating for a doctor or clinic.
+ */
+export async function fetchRating(
+	connection: Connection,
+	entityType: 'doctor' | 'clinic',
+	entityId: number,
+): Promise<Rating> {
+	const column = entityType === 'doctor' ? 'doctor_id' : 'clinic_id';
+	const query = `
+		SELECT
+			ROUND(AVG(rating), 1) as averageRating,
+			COUNT(*) as totalReviews
+		FROM reviews
+		WHERE ${column} = ? AND rating IS NOT NULL
+	`;
+	const [rows] = await connection.execute(query, [entityId]);
+	const row = (rows as any[])[0];
+	return {
+		averageRating: row.averageRating ? parseFloat(row.averageRating) : null,
+		totalReviews: row.totalReviews || 0,
+	};
+}
+
+/**
+ * Fetch reviews and their replies for a doctor or clinic.
+ * Returns processed reviews with replies attached, sorted by rank.
+ */
+export async function fetchReviews(
+	connection: Connection,
+	entityType: 'doctor' | 'clinic',
+	entityId: number,
+	locale: string,
+): Promise<Review[]> {
+	const column = entityType === 'doctor' ? 'doctor_id' : 'clinic_id';
+
+	const reviewsQuery = `
+		SELECT
+			r.id,
+			r.user_id as userId,
+			r.doctor_id as doctorId,
+			r.clinic_id as clinicId,
+			r.provider,
+			r.provider_review_id as providerReviewId,
+			r.rating,
+			r.original_language as originalLanguage,
+			r.original_text as originalText,
+			${localizedTextField(locale, 'r')} as text,
+			r.published_at as publishedAt,
+			r.likes_count as likesCount,
+			r.updated_at as updatedAt,
+			u.name as authorName,
+			u.photo_url as authorPhotoUrl,
+			u.profile_url as authorProfileUrl
+		FROM reviews r
+		LEFT JOIN auth_users u ON r.user_id = u.id
+		WHERE r.${column} = ?
+		ORDER BY r.created_at DESC
+	`;
+	const [reviewsRows] = await connection.execute(reviewsQuery, [entityId]);
+
+	// Fetch replies
+	const reviewIds = (reviewsRows as any[]).map((r) => r.id);
+	let replies: any[] = [];
+	if (reviewIds.length > 0) {
+		const repliesQuery = `
+			SELECT
+				rr.id,
+				rr.review_id as reviewId,
+				rr.responder_type as responderType,
+				rr.clinic_id as clinicId,
+				rr.doctor_id as doctorId,
+				rr.user_id as userId,
+				rr.original_text as originalText,
+				rr.original_language as originalLanguage,
+				${localizedTextField(locale, 'rr')} as text,
+				rr.provider,
+				rr.likes_count as likesCount,
+				rr.published_at as publishedAt,
+				rr.updated_at as updatedAt
+			FROM review_replies rr
+			WHERE rr.review_id IN (${reviewIds.map(() => '?').join(',')})
+			ORDER BY rr.created_at ASC
+		`;
+		const [repliesRows] = await connection.execute(repliesQuery, reviewIds);
+		replies = repliesRows as any[];
+	}
+
+	// Process: attach replies, clean originalText
+	const reviews = (reviewsRows as any[]).map((review) => {
+		const reviewReplies = replies
+			.filter((r) => r.reviewId === review.id)
+			.map((reply) => ({
+				...reply,
+				originalText:
+					reply.originalText === reply.text ? null : reply.originalText,
+			}));
+		return {
+			...review,
+			originalText:
+				review.originalText === review.text ? null : review.originalText,
+			replies: reviewReplies,
+			author: review.userId
+				? {
+						name: review.authorName,
+						photoUrl: review.authorPhotoUrl,
+						profileUrl: review.authorProfileUrl,
+				  }
+				: undefined,
+		};
+	});
+
+	sortReviewsByRank(reviews);
+
+	return reviews;
+}

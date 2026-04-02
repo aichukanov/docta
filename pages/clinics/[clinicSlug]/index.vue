@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Clock } from '@element-plus/icons-vue';
 import { formatClinicAddressLine } from '~/common/clinic-address';
-import { OG_IMAGE, SITE_URL } from '~/common/constants';
+import { OG_IMAGE, SITE_URL, REVIEWS_THRESHOLD } from '~/common/constants';
 import {
 	buildBreadcrumbsSchema,
 	buildClinicSchema,
@@ -331,6 +331,28 @@ function joinWithAnd(items: string[]): string {
 	);
 }
 
+const hasSeparateReviewsPage = computed(() => {
+	const total = clinicData.value?.rating?.totalReviews || clinicData.value?.reviews?.length || 0;
+	return total > REVIEWS_THRESHOLD;
+});
+
+const displayedReviews = computed(() => {
+	if (!clinicData.value?.reviews) return [];
+	if (hasSeparateReviewsPage.value) {
+		return clinicData.value.reviews.slice(0, REVIEWS_THRESHOLD);
+	}
+	return clinicData.value.reviews;
+});
+
+const allReviewsLink = computed(() => {
+	if (!hasSeparateReviewsPage.value) return undefined;
+	return {
+		name: 'clinics-clinicSlug-reviews',
+		params: { clinicSlug: clinicSlug.value },
+		query: getRegionalQuery(locale.value),
+	};
+});
+
 const schemaOrgStore = useSchemaOrgStore();
 
 const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
@@ -371,7 +393,7 @@ watchEffect(() => {
 				doctors: clinicDoctors.value,
 				workingHours: workingHoursData.value,
 				rating: clinicData.value.rating,
-				reviews: clinicData.value.reviews?.map((review) => ({
+				reviews: displayedReviews.value.map((review) => ({
 					id: review.id,
 					text: review.text,
 					rating: review.rating,
@@ -546,9 +568,10 @@ watchEffect(() => {
 			>
 				<template #icon><IconStar :size="20" /></template>
 				<DoctorReviews
-					:reviews="clinicData.reviews"
+					:reviews="displayedReviews"
 					:rating="clinicData.rating"
 					:noReviewsText="t('NoReviewsClinic')"
+					:allReviewsLink="allReviewsLink"
 				/>
 			</EntityPageSection>
 

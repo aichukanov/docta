@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { OG_IMAGE, SITE_URL } from '~/common/constants';
+import { OG_IMAGE, SITE_URL, REVIEWS_THRESHOLD } from '~/common/constants';
+import { getRegionalQuery } from '~/common/url-utils';
 import {
 	buildBreadcrumbsSchema,
 	buildDoctorSchema,
@@ -219,6 +220,28 @@ function joinWithAnd(items: string[]): string {
 	);
 }
 
+const hasSeperateReviewsPage = computed(() => {
+	const total = doctorData.value?.rating?.totalReviews || doctorData.value?.reviews?.length || 0;
+	return total > REVIEWS_THRESHOLD;
+});
+
+const displayedReviews = computed(() => {
+	if (!doctorData.value?.reviews) return [];
+	if (hasSeperateReviewsPage.value) {
+		return doctorData.value.reviews.slice(0, REVIEWS_THRESHOLD);
+	}
+	return doctorData.value.reviews;
+});
+
+const allReviewsLink = computed(() => {
+	if (!hasSeperateReviewsPage.value) return undefined;
+	return {
+		name: 'doctors-doctorSlug-reviews',
+		params: { doctorSlug: route.params.doctorSlug },
+		query: getRegionalQuery(locale.value),
+	};
+});
+
 const schemaOrgStore = useSchemaOrgStore();
 
 const ogImage = computed(() => {
@@ -280,7 +303,7 @@ watchEffect(() => {
 				facebook: doctorData.value.facebook,
 				instagram: doctorData.value.instagram,
 				rating: doctorData.value.rating,
-				reviews: doctorData.value.reviews?.map((review) => ({
+				reviews: displayedReviews.value.map((review) => ({
 					id: review.id,
 					text: review.text,
 					rating: review.rating,
@@ -359,9 +382,10 @@ watchEffect(() => {
 			>
 				<template #icon><IconStar :size="20" /></template>
 				<DoctorReviews
-					:reviews="doctorData.reviews"
+					:reviews="displayedReviews"
 					:rating="doctorData.rating"
 					:clinicInfo="clinicInfoMap"
+					:allReviewsLink="allReviewsLink"
 				/>
 			</EntityPageSection>
 

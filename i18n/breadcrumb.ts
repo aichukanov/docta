@@ -9,6 +9,7 @@ export default {
 			BreadcrumbServices: 'Medical Services',
 			BreadcrumbAbout: 'About',
 			BreadcrumbArticles: 'Articles',
+			BreadcrumbReviews: 'Reviews',
 		},
 		'ru': {
 			BreadcrumbHome: 'Главная',
@@ -19,6 +20,7 @@ export default {
 			BreadcrumbServices: 'Медицинские услуги',
 			BreadcrumbAbout: 'О проекте',
 			BreadcrumbArticles: 'Статьи',
+			BreadcrumbReviews: 'Отзывы',
 		},
 		'sr': {
 			BreadcrumbHome: 'Početna',
@@ -29,6 +31,7 @@ export default {
 			BreadcrumbServices: 'Medicinske usluge',
 			BreadcrumbAbout: 'O projektu',
 			BreadcrumbArticles: 'Članci',
+			BreadcrumbReviews: 'Recenzije',
 		},
 		'de': {
 			BreadcrumbHome: 'Startseite',
@@ -39,6 +42,7 @@ export default {
 			BreadcrumbServices: 'Medizinische Dienstleistungen',
 			BreadcrumbAbout: 'Über',
 			BreadcrumbArticles: 'Artikel',
+			BreadcrumbReviews: 'Bewertungen',
 		},
 		'tr': {
 			BreadcrumbHome: 'Ana sayfa',
@@ -49,6 +53,7 @@ export default {
 			BreadcrumbServices: 'Tıbbi Hizmetler',
 			BreadcrumbAbout: 'Hakkında',
 			BreadcrumbArticles: 'Makaleler',
+			BreadcrumbReviews: 'Değerlendirmeler',
 		},
 		'sr-cyrl': {
 			BreadcrumbHome: 'Почетна',
@@ -59,6 +64,7 @@ export default {
 			BreadcrumbServices: 'Медицинске услуге',
 			BreadcrumbAbout: 'О пројекту',
 			BreadcrumbArticles: 'Чланци',
+			BreadcrumbReviews: 'Рецензије',
 		},
 	},
 };

@@ -53,13 +53,9 @@ export interface MedicalSpecialtySchema extends SchemaOrgBase {
 
 export interface MedicalOrganizationRef {
 	'@type': MedicalOrganizationType;
+	'@id'?: string;
 	'name': string;
-	'address'?: PostalAddressSchema;
-	'telephone'?: string;
-	'email'?: string;
 	'url'?: string;
-	'sameAs'?: string[];
-	'availableLanguage'?: string[];
 }
 
 export interface PhysicianSchema extends SchemaOrgBase {

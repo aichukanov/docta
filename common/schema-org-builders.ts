@@ -460,36 +460,17 @@ export function buildMedicalSpecialtySchema(
 }
 
 /**
- * Build medical organization reference from clinic data
+ * Build minimal medical organization reference from clinic data.
+ * Full clinic details live on the clinic's own page — here we only
+ * provide enough context for search engines to identify the entity.
  */
 export function buildMedicalOrganizationRef(
 	clinic: ClinicData,
-	getCityName: (id: number) => string | undefined,
 ): MedicalOrganizationRef {
-	const sameAs = buildSameAs({
-		facebook: clinic.facebook,
-		instagram: clinic.instagram,
-		telegram: clinic.telegram,
-	});
-
-	const availableLanguage = clinic.languageIds
-		?.split(',')
-		.map((id) => Number(id))
-		.map((id) => getLanguageCode(id))
-		.filter(Boolean) as string[] | undefined;
-
 	return {
 		'@type': getClinicSchemaOrgType(clinic.clinicTypeIds),
 		'name': clinic.name,
 		'url': normalizeWebsiteUrl(clinic.website) || undefined,
-		'telephone': splitContacts(clinic.phone)[0] || undefined,
-		'email': splitContacts(clinic.email)[0] || undefined,
-		'sameAs': sameAs.length > 0 ? sameAs : undefined,
-		'address': buildClinicPostalAddress(clinic, getCityName),
-		'availableLanguage':
-			availableLanguage && availableLanguage.length > 0
-				? availableLanguage
-				: undefined,
 	};
 }
 
@@ -728,7 +709,7 @@ export function buildDoctorSchema(options: {
 		knowsLanguage: languages,
 		sameAs: sameAs.length > 0 ? sameAs : undefined,
 		worksFor: options.clinics?.map((clinic) => ({
-			...buildMedicalOrganizationRef(clinic, options.getCityName),
+			...buildMedicalOrganizationRef(clinic),
 			'@id': `${options.siteUrl}/clinics/${clinic.slug}#medicalorganization`,
 		})),
 		hasOfferCatalog: servicesSchema.hasOfferCatalog,
@@ -1100,7 +1081,7 @@ export function buildOffersSchema(options: {
 						: undefined,
 					'url': clinicUrl,
 					'seller': {
-						...buildMedicalOrganizationRef(clinic, options.getCityName),
+						...buildMedicalOrganizationRef(clinic),
 						'@id': `${clinicUrl}#medicalorganization`,
 						'url': clinicUrl,
 					},
@@ -1150,7 +1131,7 @@ export function buildMedicalTestSchema(options: {
 			alternateNames.length > 0 ? alternateNames.join(', ') : undefined,
 		// Use availableAt to specify where the test is available
 		availableAt: options.clinics?.map((clinic) =>
-			buildMedicalOrganizationRef(clinic, options.getCityName),
+			buildMedicalOrganizationRef(clinic),
 		),
 		offers: buildOffersSchema({
 			siteUrl: options.siteUrl,
@@ -1198,7 +1179,7 @@ export function buildDrugSchema(options: {
 		description: options.pageDescription || undefined,
 		// Use availableAt to specify pharmacies/clinics where drug is available
 		availableAt: options.clinics?.map((clinic) =>
-			buildMedicalOrganizationRef(clinic, options.getCityName),
+			buildMedicalOrganizationRef(clinic),
 		),
 		offers: buildOffersSchema({
 			siteUrl: options.siteUrl,
@@ -1246,7 +1227,7 @@ export function buildMedicalProcedureSchema(options: {
 		description: options.pageDescription || undefined,
 		// Use availableAt to specify clinics where procedure is performed
 		availableAt: options.clinics?.map((clinic) =>
-			buildMedicalOrganizationRef(clinic, options.getCityName),
+			buildMedicalOrganizationRef(clinic),
 		),
 		offers: buildOffersSchema({
 			siteUrl: options.siteUrl,

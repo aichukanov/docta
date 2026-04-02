@@ -91,9 +91,27 @@ useSeoMeta({
 	twitterImage: OG_IMAGE,
 });
 
-useHead({
-	link: [{ rel: 'canonical', href: canonicalUrl }],
+const headLinks = computed(() => {
+	const links: Array<{ rel: string; href: string }> = [
+		{ rel: 'canonical', href: canonicalUrl.value },
+	];
+	if (props.pagination.page > 1) {
+		const prev =
+			props.pagination.page === 2
+				? reviewsUrl.value
+				: `${reviewsUrl.value}?page=${props.pagination.page - 1}`;
+		links.push({ rel: 'prev', href: prev });
+	}
+	if (props.pagination.page < props.pagination.totalPages) {
+		links.push({
+			rel: 'next',
+			href: `${reviewsUrl.value}?page=${props.pagination.page + 1}`,
+		});
+	}
+	return links;
 });
+
+useHead({ link: headLinks });
 
 // Schema.org
 const schemaOrgStore = useSchemaOrgStore();

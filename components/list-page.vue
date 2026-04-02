@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
 import { CITY_COORDINATES } from '~/enums/cities';
-import { LIST_PAGE_SIZE } from '~/common/constants';
+import { LIST_PAGE_SIZE, SITE_URL } from '~/common/constants';
 import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
 import { LanguageId } from '~/enums/language';
 
@@ -128,6 +128,44 @@ useSeoMeta({
 	description: props.pageDescription,
 	robots: robotsMeta,
 });
+
+const totalPages = computed(() =>
+	Math.ceil(props.totalCount / LIST_PAGE_SIZE),
+);
+
+const paginationLinks = computed(() => {
+	const links: Array<{ rel: string; href: string }> = [];
+	const baseUrl = `${SITE_URL}${route.path}`;
+	const query = {
+		...props.filterQuery,
+		...getRegionalQuery(locale.value),
+	} as Record<string, string | string[]>;
+
+	const buildUrl = (p: number) => {
+		const pageQuery = p > 1 ? { ...query, page: String(p) } : { ...query };
+		const params = new URLSearchParams();
+		for (const [key, value] of Object.entries(pageQuery)) {
+			if (value == null || value === '') continue;
+			if (Array.isArray(value)) {
+				value.forEach((v) => params.append(key, String(v)));
+			} else {
+				params.set(key, String(value));
+			}
+		}
+		const qs = params.toString();
+		return qs ? `${baseUrl}?${qs}` : baseUrl;
+	};
+
+	if (pageNumber.value > 1) {
+		links.push({ rel: 'prev', href: buildUrl(pageNumber.value - 1) });
+	}
+	if (pageNumber.value < totalPages.value) {
+		links.push({ rel: 'next', href: buildUrl(pageNumber.value + 1) });
+	}
+	return links;
+});
+
+useHead({ link: paginationLinks });
 
 watch(
 	() => route.query,

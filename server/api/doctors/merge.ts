@@ -163,6 +163,19 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				body.primaryDoctorId,
 			]);
 
+			// 6.1 Сохраняем слаг удаляемого врача в slug_redirects
+			const [slugRows]: any = await connection.execute(
+				'SELECT slug FROM doctors WHERE id = ?',
+				[body.secondaryDoctorId],
+			);
+			const oldSlug = slugRows[0]?.slug;
+			if (oldSlug) {
+				await connection.execute(
+					`INSERT IGNORE INTO slug_redirects (entity_type, old_slug, entity_id) VALUES ('doctors', ?, ?)`,
+					[oldSlug, body.primaryDoctorId],
+				);
+			}
+
 			// 7. Удаляем второго врача
 			const deleteSecondaryDoctorQuery = 'DELETE FROM doctors WHERE id = ?';
 			const [result]: any = await connection.execute(

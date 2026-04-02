@@ -110,6 +110,24 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				[body.secondaryServiceId, body.primaryServiceId],
 			);
 
+			// 6.1 Сохраняем слаг удаляемой услуги в slug_redirects
+			const secondaryService = serviceRows.find(
+				(s: any) => s.id === body.secondaryServiceId,
+			);
+			if (secondaryService) {
+				const [slugRows]: any = await connection.execute(
+					'SELECT slug FROM medical_services WHERE id = ?',
+					[body.secondaryServiceId],
+				);
+				const oldSlug = slugRows[0]?.slug;
+				if (oldSlug) {
+					await connection.execute(
+						`INSERT IGNORE INTO slug_redirects (entity_type, old_slug, entity_id) VALUES ('services', ?, ?)`,
+						[oldSlug, body.primaryServiceId],
+					);
+				}
+			}
+
 			// 7. Удаляем услугу
 			const [result]: any = await connection.execute(
 				'DELETE FROM medical_services WHERE id = ?',

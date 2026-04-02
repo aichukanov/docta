@@ -103,6 +103,19 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				[body.secondaryLabTestId, body.primaryLabTestId],
 			);
 
+			// 6.1 Сохраняем слаг удаляемого анализа в slug_redirects
+			const [slugRows]: any = await connection.execute(
+				'SELECT slug FROM lab_tests WHERE id = ?',
+				[body.secondaryLabTestId],
+			);
+			const oldSlug = slugRows[0]?.slug;
+			if (oldSlug) {
+				await connection.execute(
+					`INSERT IGNORE INTO slug_redirects (entity_type, old_slug, entity_id) VALUES ('labtests', ?, ?)`,
+					[oldSlug, body.primaryLabTestId],
+				);
+			}
+
 			// 7. Удаляем анализ
 			const [result]: any = await connection.execute(
 				'DELETE FROM lab_tests WHERE id = ?',

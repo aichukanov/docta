@@ -466,11 +466,14 @@ export function buildMedicalSpecialtySchema(
  */
 export function buildMedicalOrganizationRef(
 	clinic: ClinicData,
+	siteUrl: string,
 ): MedicalOrganizationRef {
+	const website = normalizeWebsiteUrl(clinic.website);
 	return {
 		'@type': getClinicSchemaOrgType(clinic.clinicTypeIds),
 		'name': clinic.name,
-		'url': normalizeWebsiteUrl(clinic.website) || undefined,
+		'url': `${siteUrl}/clinics/${clinic.slug}`,
+		'sameAs': website ? [website] : undefined,
 	};
 }
 
@@ -709,7 +712,7 @@ export function buildDoctorSchema(options: {
 		knowsLanguage: languages,
 		sameAs: sameAs.length > 0 ? sameAs : undefined,
 		worksFor: options.clinics?.map((clinic) => ({
-			...buildMedicalOrganizationRef(clinic),
+			...buildMedicalOrganizationRef(clinic, options.siteUrl),
 			'@id': `${options.siteUrl}/clinics/${clinic.slug}#medicalorganization`,
 		})),
 		hasOfferCatalog: servicesSchema.hasOfferCatalog,
@@ -1081,7 +1084,7 @@ export function buildOffersSchema(options: {
 						: undefined,
 					'url': clinicUrl,
 					'seller': {
-						...buildMedicalOrganizationRef(clinic),
+						...buildMedicalOrganizationRef(clinic, options.siteUrl),
 						'@id': `${clinicUrl}#medicalorganization`,
 						'url': clinicUrl,
 					},
@@ -1131,7 +1134,7 @@ export function buildMedicalTestSchema(options: {
 			alternateNames.length > 0 ? alternateNames.join(', ') : undefined,
 		// Use availableAt to specify where the test is available
 		availableAt: options.clinics?.map((clinic) =>
-			buildMedicalOrganizationRef(clinic),
+			buildMedicalOrganizationRef(clinic, options.siteUrl),
 		),
 		offers: buildOffersSchema({
 			siteUrl: options.siteUrl,
@@ -1179,7 +1182,7 @@ export function buildDrugSchema(options: {
 		description: options.pageDescription || undefined,
 		// Use availableAt to specify pharmacies/clinics where drug is available
 		availableAt: options.clinics?.map((clinic) =>
-			buildMedicalOrganizationRef(clinic),
+			buildMedicalOrganizationRef(clinic, options.siteUrl),
 		),
 		offers: buildOffersSchema({
 			siteUrl: options.siteUrl,
@@ -1227,7 +1230,7 @@ export function buildMedicalProcedureSchema(options: {
 		description: options.pageDescription || undefined,
 		// Use availableAt to specify clinics where procedure is performed
 		availableAt: options.clinics?.map((clinic) =>
-			buildMedicalOrganizationRef(clinic),
+			buildMedicalOrganizationRef(clinic, options.siteUrl),
 		),
 		offers: buildOffersSchema({
 			siteUrl: options.siteUrl,

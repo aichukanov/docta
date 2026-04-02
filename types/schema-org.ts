@@ -56,6 +56,7 @@ export interface MedicalOrganizationRef {
 	'@id'?: string;
 	'name': string;
 	'url'?: string;
+	'sameAs'?: string[];
 }
 
 export interface PhysicianSchema extends SchemaOrgBase {

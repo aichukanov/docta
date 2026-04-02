@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { getClinicSchemaOrgType } from '~/common/schema-org-builders';
 import clinicTypeI18n from '~/i18n/clinic-type';
 import { combineI18nMessages } from '~/i18n/utils';
 
@@ -54,6 +55,11 @@ const clinicName = computed(() => {
 	return c.localName || c.name;
 });
 
+const clinicSchemaOrgType = computed(() => {
+	const ids = (data.value as any)?.clinic?.clinicTypeIds;
+	return getClinicSchemaOrgType(ids);
+});
+
 const clinicTypeNames = computed(() => {
 	const ids = (data.value as any)?.clinic?.clinicTypeIds;
 	if (!ids) return [];
@@ -74,8 +80,8 @@ const clinicTypeNames = computed(() => {
 		:rating="data.rating"
 		:reviews="data.reviews"
 		:pagination="data.pagination"
-		schemaOrgType="MedicalOrganization"
-		schemaOrgFragment="medicalorganization"
+		:schemaOrgType="clinicSchemaOrgType"
+		:schemaOrgFragment="clinicSchemaOrgType.toLowerCase()"
 		breadcrumbParentKey="BreadcrumbClinics"
 		parentListRouteName="clinics"
 		entityRouteName="clinics-clinicSlug"

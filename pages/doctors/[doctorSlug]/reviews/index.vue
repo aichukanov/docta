@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { getSchemaType } from '~/common/schema-org-builders';
 import specialtyI18n from '~/i18n/specialty';
 import reviewsI18n from '~/i18n/reviews';
 import { combineI18nMessages } from '~/i18n/utils';
@@ -57,6 +58,11 @@ const doctorName = computed(() => {
 	return title + (d.localName || d.name);
 });
 
+const doctorSchema = computed(() => {
+	const title = (data.value as any)?.doctor?.professionalTitle?.trim() || '';
+	return getSchemaType(title);
+});
+
 const specialtyNames = computed(() => {
 	const ids = (data.value as any)?.doctor?.specialtyIds;
 	if (!ids) return [];
@@ -92,8 +98,8 @@ const clinicInfoMap = computed(() => {
 		:rating="data.rating"
 		:reviews="data.reviews"
 		:pagination="data.pagination"
-		schemaOrgType="Physician"
-		schemaOrgFragment="physician"
+		:schemaOrgType="doctorSchema.schemaType"
+		:schemaOrgFragment="doctorSchema.fragment"
 		breadcrumbParentKey="BreadcrumbDoctors"
 		parentListRouteName="doctors"
 		entityRouteName="doctors-doctorSlug"

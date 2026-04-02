@@ -103,7 +103,7 @@ export function buildClinicPostalAddress(
  * Get the primary Schema.org @type for a clinic based on its type IDs.
  * Uses the first type ID for the primary @type.
  */
-function getClinicSchemaOrgType(
+export function getClinicSchemaOrgType(
 	clinicTypeIds?: string,
 ): MedicalOrganizationType {
 	if (!clinicTypeIds) return 'MedicalOrganization';
@@ -219,7 +219,7 @@ export interface DoctorSchemaData {
 	specialtyIds?: number[];
 }
 
-function getSchemaType(professionalTitle: string): {
+export function getSchemaType(professionalTitle: string): {
 	schemaType: PersonSchemaType;
 	fragment: string;
 } {
@@ -668,9 +668,10 @@ export function buildDoctorSchema(options: {
 		};
 	}
 
-	// Build reviews
+	// Build reviews (skip reviews without text — they still count in AggregateRating)
 	const reviews = options.reviews
-		?.map((review) => ({
+		?.filter((review) => review.text)
+		.map((review) => ({
 			'@type': 'Review' as const,
 			'author': review.author
 				? {
@@ -985,7 +986,8 @@ export function buildClinicSchema(options: {
 				: undefined,
 		review: (() => {
 			const reviews = options.reviews
-				?.map((review) => ({
+				?.filter((review) => review.text)
+				.map((review) => ({
 					'@type': 'Review' as const,
 					'author': review.author
 						? {

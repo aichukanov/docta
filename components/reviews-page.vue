@@ -119,7 +119,7 @@ const schemaOrgStore = useSchemaOrgStore();
 watchEffect(() => {
 	if (!props.reviews?.length) return;
 
-	const reviewSchemas = props.reviews.map((review) => ({
+	const reviewSchemas = props.reviews.filter((r) => r.text).map((review) => ({
 		'@type': 'Review' as const,
 		'author': review.author
 			? {
@@ -154,6 +154,7 @@ watchEffect(() => {
 	const reviewedEntity = {
 		'@type': props.schemaOrgType,
 		'@id': `${entityUrl.value}#${props.schemaOrgFragment}`,
+		'mainEntityOfPage': entityUrl.value,
 		'name': props.entityName,
 		aggregateRating,
 		'review': reviewSchemas.length > 0 ? reviewSchemas : undefined,

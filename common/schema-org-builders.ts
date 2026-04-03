@@ -677,7 +677,6 @@ export function buildDoctorSchema(options: {
 				? {
 						'@type': 'Person' as const,
 						'name': review.author.name,
-						'image': review.author.photoUrl || undefined,
 				  }
 				: undefined,
 			'reviewRating': review.rating
@@ -993,7 +992,6 @@ export function buildClinicSchema(options: {
 						? {
 								'@type': 'Person' as const,
 								'name': review.author.name,
-								'image': review.author.photoUrl || undefined,
 						  }
 						: undefined,
 					'reviewRating': review.rating

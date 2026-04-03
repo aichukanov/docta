@@ -31,12 +31,11 @@ const localizedName = computed(() =>
 				</div>
 
 				<div v-if="clinicTypeNames?.length" class="clinic-hero__types">
-					<span
+					<CategoryTag
 						v-for="typeName in clinicTypeNames"
 						:key="typeName"
-						class="clinic-hero__type-tag"
-						>{{ typeName }}</span
-					>
+						small
+					>{{ typeName }}</CategoryTag>
 				</div>
 
 				<address class="clinic-hero__address">
@@ -109,14 +108,6 @@ const localizedName = computed(() =>
 	gap: var(--spacing-xs);
 }
 
-.clinic-hero__type-tag {
-	display: inline-block;
-	padding: 2px var(--spacing-sm);
-	background: var(--color-surface-secondary);
-	border-radius: var(--border-radius-sm);
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
-}
 
 .clinic-hero__address {
 	display: flex;

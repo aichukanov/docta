@@ -64,9 +64,9 @@ watch(
 	<div class="layout-wrapper">
 		<AppHeader />
 
-		<div class="layout-body">
+		<main class="layout-body">
 			<slot />
-		</div>
+		</main>
 
 		<footer class="footer" :class="{ 'footer-tall': !isConsentDecided }">
 			<div class="footer-content">

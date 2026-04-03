@@ -51,11 +51,18 @@ const entityUrl = computed(
 	() => `${SITE_URL}/${props.entityType}s/${props.entitySlug}`,
 );
 const reviewsUrl = computed(() => `${entityUrl.value}/reviews`);
-const canonicalUrl = computed(() =>
-	props.pagination.page > 1
-		? `${reviewsUrl.value}?page=${props.pagination.page}`
-		: reviewsUrl.value,
-);
+const langQuery = computed(() => {
+	const q = getRegionalQuery(locale.value);
+	return q.lang ? `lang=${q.lang}` : '';
+});
+
+const canonicalUrl = computed(() => {
+	const params = [
+		langQuery.value,
+		props.pagination.page > 1 ? `page=${props.pagination.page}` : '',
+	].filter(Boolean).join('&');
+	return params ? `${reviewsUrl.value}?${params}` : reviewsUrl.value;
+});
 
 const pageTitle = computed(() => {
 	const title = t('ReviewsPageTitle', { name: props.entityName });
@@ -91,21 +98,28 @@ useSeoMeta({
 	twitterImage: OG_IMAGE,
 });
 
+const buildReviewsLink = (page?: number) => {
+	const params = [
+		langQuery.value,
+		page && page > 1 ? `page=${page}` : '',
+	].filter(Boolean).join('&');
+	return params ? `${reviewsUrl.value}?${params}` : reviewsUrl.value;
+};
+
 const headLinks = computed(() => {
-	const links: Array<{ rel: string; href: string }> = [
-		{ rel: 'canonical', href: canonicalUrl.value },
+	const links: Array<{ key?: string; rel: string; href: string }> = [
+		{ key: 'canonical', rel: 'canonical', href: canonicalUrl.value },
 	];
 	if (props.pagination.page > 1) {
-		const prev =
-			props.pagination.page === 2
-				? reviewsUrl.value
-				: `${reviewsUrl.value}?page=${props.pagination.page - 1}`;
-		links.push({ rel: 'prev', href: prev });
+		links.push({
+			rel: 'prev',
+			href: buildReviewsLink(props.pagination.page - 1),
+		});
 	}
 	if (props.pagination.page < props.pagination.totalPages) {
 		links.push({
 			rel: 'next',
-			href: `${reviewsUrl.value}?page=${props.pagination.page + 1}`,
+			href: buildReviewsLink(props.pagination.page + 1),
 		});
 	}
 	return links;
@@ -246,6 +260,7 @@ const onPageChange = (page: number) => {
 				:modelValue="currentSort"
 				@update:modelValue="onSortChange"
 				size="default"
+				:aria-label="t('SortLabel')"
 			>
 				<el-option value="rank" :label="t('SortRank')" />
 				<el-option value="newest" :label="t('SortNewest')" />
@@ -287,35 +302,37 @@ const onPageChange = (page: number) => {
 .breadcrumbs {
 	display: flex;
 	align-items: center;
-	gap: 0.5rem;
-	font-size: 0.85rem;
-	color: #666;
+	gap: var(--spacing-sm);
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
 	margin-bottom: var(--spacing-lg);
 	flex-wrap: wrap;
 }
 
 .breadcrumbs a {
-	color: #007bff;
+	color: var(--color-text-muted);
 	text-decoration: none;
 }
 
 .breadcrumbs a:hover {
+	color: var(--color-primary);
 	text-decoration: underline;
 }
 
 .breadcrumbs .separator {
-	color: #ccc;
+	color: var(--color-text-light);
 }
 
 .breadcrumbs .current {
-	color: #333;
+	color: var(--color-text-secondary);
+	font-weight: var(--font-weight-medium);
 }
 
 .reviews-page-title {
 	font-size: 1.5rem;
-	font-weight: 700;
+	font-weight: var(--font-weight-bold);
 	margin-bottom: var(--spacing-sm);
-	color: #333;
+	color: var(--color-text-heading);
 }
 
 .reviews-page-badges {

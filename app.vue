@@ -86,11 +86,13 @@ const alternateLinks = computed(() => {
 	const currentLocale = locale.value;
 
 	const links: Array<{
+		key?: string;
 		rel: string;
 		href: string;
 		hreflang?: string;
 	}> = [
 		{
+			key: 'canonical',
 			rel: 'canonical',
 			href: getLangLink(mainUrl, currentLocale),
 		},

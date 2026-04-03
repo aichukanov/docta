@@ -80,7 +80,7 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside));
 		<button
 			class="language-switcher__trigger"
 			type="button"
-			:aria-label="t('LanguageSelector')"
+			:aria-label="`${localeShortNames[locale as Locale]} — ${t('LanguageSelector')}`"
 			:aria-expanded="isExpanded"
 			aria-haspopup="menu"
 			@click="toggle"

@@ -258,7 +258,7 @@ const tabs = computed(() => {
 	return result;
 });
 
-const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
+const mapRef = ref<InstanceType<typeof LazyClinicServicesMap> | null>(null);
 
 const scrollToMap = () => {
 	const el = document.getElementById('map');
@@ -579,7 +579,7 @@ watchEffect(() => {
 			<EntityPageSection sectionId="map" :title="t('TabMap')">
 				<template #icon><IconMapPin :size="20" color="#ffffff" /></template>
 				<div class="clinic-map">
-					<ClinicServicesMap
+					<LazyClinicServicesMap
 						ref="mapRef"
 						:services="[]"
 						:clinics="clinicAsList"

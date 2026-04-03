@@ -55,7 +55,7 @@ const getPriceInfo = (clinicId: number) => {
 	return labTestData.value?.clinicPrices?.find((p) => p.clinicId === clinicId);
 };
 
-const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
+const mapRef = ref<InstanceType<typeof LazyClinicServicesMap> | null>(null);
 
 const showClinicOnMap = (clinic: ClinicData) => {
 	const el = document.getElementById('map');
@@ -239,7 +239,7 @@ watchEffect(() => {
 			<EntityPageSection sectionId="map" :title="t('TabMap')">
 				<template #icon><IconMapPin :size="20" color="#ffffff" /></template>
 				<div class="labtest-map">
-					<ClinicServicesMap
+					<LazyClinicServicesMap
 						ref="mapRef"
 						:services="[]"
 						:clinics="labTestClinics"

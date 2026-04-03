@@ -91,7 +91,7 @@ const tabs = computed(() => {
 	return result;
 });
 
-const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
+const mapRef = ref<InstanceType<typeof LazyClinicServicesMap> | null>(null);
 
 const showClinicOnMap = (clinic: ClinicData) => {
 	const el = document.getElementById('map');
@@ -397,7 +397,7 @@ watchEffect(() => {
 			>
 				<template #icon><IconMapPin :size="20" color="#ffffff" /></template>
 				<div class="doctor-map">
-					<ClinicServicesMap
+					<LazyClinicServicesMap
 						ref="mapRef"
 						:services="[]"
 						:clinics="doctorClinics"

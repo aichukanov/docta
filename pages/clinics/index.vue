@@ -34,10 +34,11 @@ const {
 } = useFilters();
 const route = useRoute();
 const pageNumber = computed(() => Number(route.query.page || 1));
-
+const routeName = route.name;
 watch(
 	() => route.query,
 	(query) => {
+		if (route.name !== routeName) return;
 		updateFromRoute(query);
 	},
 	{ immediate: true },

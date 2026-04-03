@@ -36,6 +36,13 @@ export const useClinicsStore = defineStore('clinics', () => {
 	};
 
 	const fetchClinics = async () => {
+		// After SSR hydration, Pinia restores clinics but isLoaded/currentLocale reset
+		if (clinics.value.length > 0 && !currentLocale.value) {
+			currentLocale.value = locale.value;
+			isLoaded.value = true;
+			return;
+		}
+
 		if (isLoaded.value && currentLocale.value === locale.value) {
 			return;
 		}

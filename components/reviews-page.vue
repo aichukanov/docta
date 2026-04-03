@@ -125,7 +125,6 @@ watchEffect(() => {
 			? {
 					'@type': 'Person' as const,
 					'name': review.author.name,
-					'image': review.author.photoUrl || undefined,
 			  }
 			: undefined,
 		'reviewRating': review.rating

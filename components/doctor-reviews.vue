@@ -73,38 +73,38 @@ const { t } = useI18n({
 .rating-summary {
 	display: flex;
 	align-items: center;
-	gap: 0.5rem;
-	padding: 1rem;
-	background: #f8f9fa;
-	border-radius: 8px;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-lg);
+	background: var(--color-bg-secondary);
+	border-radius: var(--border-radius-lg);
 }
 
 .reviews-count {
-	font-size: 0.9rem;
-	color: #666;
+	font-size: var(--font-size-md);
+	color: var(--color-text-muted);
 }
 
 .reviews-list {
 	display: flex;
 	flex-direction: column;
-	gap: 1.5rem;
+	gap: var(--spacing-xl);
 }
 
 .all-reviews-link {
 	display: inline-flex;
 	align-items: center;
-	padding: 0.75rem 1.5rem;
-	background: #007bff;
-	color: #fff;
-	border-radius: 8px;
+	padding: var(--spacing-md) var(--spacing-xl);
+	background: var(--color-primary);
+	color: var(--color-bg-primary);
+	border-radius: var(--border-radius-lg);
 	text-decoration: none;
-	font-weight: 600;
-	font-size: 0.95rem;
-	transition: background-color 0.2s;
+	font-weight: var(--font-weight-semibold);
+	font-size: var(--font-size-lg);
+	transition: background-color var(--transition-base);
 	align-self: center;
 }
 
 .all-reviews-link:hover {
-	background: #0056b3;
+	background: var(--color-primary-dark);
 }
 </style>

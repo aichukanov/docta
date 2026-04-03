@@ -45,17 +45,21 @@ const clinic = computed(() => {
 </script>
 
 <template>
-	<div class="review-item">
+	<article class="review-item">
 		<!-- Header -->
-		<div class="review-header">
+		<header class="review-header">
 			<div class="author-name">
 				{{ review.author?.name || t('Anonymous') }}
 			</div>
 			<div class="review-meta">
 				<RatingStars v-if="review.rating" :rating="review.rating" />
-				<span class="review-date" v-if="review.publishedAt">
+				<time
+					class="review-date"
+					v-if="review.publishedAt"
+					:datetime="review.publishedAt"
+				>
 					{{ formatReviewDate(review.publishedAt, review.provider) }}
-				</span>
+				</time>
 				<span
 					class="review-provider"
 					v-if="review.provider && review.provider !== 'docta_me'"
@@ -75,7 +79,7 @@ const clinic = computed(() => {
 					{{ clinic.name }}
 				</NuxtLink>
 			</div>
-		</div>
+		</header>
 
 		<!-- Text -->
 		<ReviewText
@@ -95,57 +99,57 @@ const clinic = computed(() => {
 				:reply="reply"
 			/>
 		</div>
-	</div>
+	</article>
 </template>
 
 <style scoped>
 .review-item {
 	width: 100%;
 	box-sizing: border-box;
-	padding: 1.5rem;
-	border: 1px solid #e9ecef;
-	border-radius: 12px;
-	background: #fff;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	padding: var(--spacing-xl);
+	border: var(--border-width-thin) solid var(--color-border-secondary);
+	border-radius: var(--border-radius-xl);
+	background: var(--color-bg-primary);
+	box-shadow: var(--shadow-sm);
 }
 
 .review-header {
-	margin-bottom: 1rem;
+	margin-bottom: var(--spacing-lg);
 }
 
 .author-name {
-	font-weight: 600;
-	color: #333;
-	margin-bottom: 0.25rem;
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-text-primary);
+	margin-bottom: var(--spacing-xs);
 }
 
 .review-meta {
 	display: flex;
 	align-items: center;
-	gap: 0.75rem;
-	font-size: 0.85rem;
-	color: #666;
+	gap: var(--spacing-md);
+	font-size: var(--font-size-base);
+	color: var(--color-text-muted);
 }
 
 .review-date {
-	font-size: 0.85rem;
-	color: #666;
+	font-size: var(--font-size-base);
+	color: var(--color-text-muted);
 }
 
 .review-provider {
-	font-size: 0.8rem;
-	color: #007bff;
-	background: #e7f3ff;
+	font-size: var(--font-size-sm);
+	color: var(--color-primary);
+	background: var(--color-primary-bg);
 	padding: 0.2rem 0.5rem;
-	border-radius: 4px;
+	border-radius: var(--border-radius-sm);
 	display: inline-flex;
 	align-items: center;
-	gap: 0.25rem;
+	gap: var(--spacing-xs);
 }
 
 .review-clinic {
-	font-size: 0.85rem;
-	color: #007bff;
+	font-size: var(--font-size-base);
+	color: var(--color-primary);
 	text-decoration: none;
 }
 
@@ -154,8 +158,8 @@ const clinic = computed(() => {
 }
 
 .review-replies {
-	border-top: 1px solid #e9ecef;
-	padding-top: 1rem;
-	margin-top: 1rem;
+	border-top: var(--border-width-thin) solid var(--color-border-secondary);
+	padding-top: var(--spacing-lg);
+	margin-top: var(--spacing-lg);
 }
 </style>

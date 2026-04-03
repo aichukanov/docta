@@ -36,46 +36,49 @@ const formatReviewDate = (dateString: string, provider: string) => {
 </script>
 
 <template>
-	<div class="reply-item">
-		<div class="reply-header">
-			<div class="reply-author">
+	<aside class="reply-item">
+		<header class="reply-header">
+			<strong class="reply-author">
 				{{ t(`Replier_${reply.responderType}`) }}
-			</div>
-			<div class="reply-date" v-if="reply.publishedAt">
+			</strong>
+			<time
+				class="reply-date"
+				v-if="reply.publishedAt"
+				:datetime="reply.publishedAt"
+			>
 				{{ formatReviewDate(reply.publishedAt, reply.provider) }}
-			</div>
-		</div>
+			</time>
+		</header>
 		<ReviewText
 			:text="reply.text"
 			:originalText="reply.originalText"
 			:originalLanguage="reply.originalLanguage"
 		/>
-	</div>
+	</aside>
 </template>
 
 <style scoped>
 .reply-item {
-	padding: 1rem;
-	background: #f8f9fa;
-	border-radius: 8px;
-	margin-top: 0.5rem;
+	padding: var(--spacing-lg);
+	background: var(--color-bg-secondary);
+	border-radius: var(--border-radius-lg);
+	margin-top: var(--spacing-sm);
 }
 
 .reply-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 0.5rem;
+	margin-bottom: var(--spacing-sm);
 }
 
 .reply-author {
-	font-weight: 600;
-	color: #007bff;
-	font-size: 0.9rem;
+	color: var(--color-primary);
+	font-size: var(--font-size-md);
 }
 
 .reply-date {
-	font-size: 0.8rem;
-	color: #666;
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
 }
 </style>

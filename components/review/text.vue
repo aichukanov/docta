@@ -47,18 +47,18 @@ const langName = computed(() => {
 <style scoped>
 .review-text {
 	line-height: 1.6;
-	color: #333;
+	color: var(--color-text-primary);
 	white-space: pre-wrap;
 }
 
 .toggle-original-btn {
 	display: inline-block;
-	margin-top: 0.5rem;
+	margin-top: var(--spacing-sm);
 	padding: 0;
 	border: none;
 	background: none;
-	color: #007bff;
-	font-size: 0.85rem;
+	color: var(--color-primary);
+	font-size: var(--font-size-base);
 	cursor: pointer;
 	text-decoration: none;
 }

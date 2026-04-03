@@ -52,6 +52,7 @@ const router = useRouter();
 const route = useRoute();
 
 const mapRef = ref<HTMLElement>();
+const { target: mapSentinel, hasBeenVisible: isMapVisible } = useInViewport();
 const pageNumber = ref(+route.query.page || 1);
 const isSyncingFromRoute = ref(false);
 
@@ -97,11 +98,23 @@ const syncRoute = async (replace = false) => {
 	await router.push(target);
 };
 
+const pendingMapAction = ref<(() => void) | null>(null);
+
 const showClinicOnMap = (clinic: ClinicData) => {
-	mapRef.value.openClinicPopup(clinic);
+	const action = () => mapRef.value?.openClinicPopup(clinic);
+	if (mapRef.value) {
+		action();
+	} else {
+		pendingMapAction.value = action;
+		isMapVisible.value = true;
+	}
 };
 
 const onMapReady = () => {
+	if (pendingMapAction.value) {
+		pendingMapAction.value();
+		pendingMapAction.value = null;
+	}
 	watch(
 		() => props.cityIds,
 		() => {
@@ -295,8 +308,9 @@ onMounted(async () => {
 			</div>
 		</div>
 
-		<aside class="map-container" :aria-label="t('AriaMapSection')">
+		<aside ref="mapSentinel" class="map-container" :aria-label="t('AriaMapSection')">
 			<ClinicServicesMap
+				v-if="isMapVisible"
 				ref="mapRef"
 				:services="clinicMode || mapClinics ? [] : list"
 				:clinics="mapClinics || clinicsStore.clinics"

@@ -211,20 +211,6 @@ const clinicAsList = computed(() =>
 	isFound.value && clinicData.value ? [clinicData.value] : [],
 );
 
-const hasServices = computed(
-	() =>
-		clinicMedicalServices.value.length > 0 ||
-		clinicLabTests.value.length > 0 ||
-		clinicMedications.value.length > 0,
-);
-
-const totalServicesCount = computed(
-	() =>
-		clinicMedicalServices.value.length +
-		clinicLabTests.value.length +
-		clinicMedications.value.length,
-);
-
 const tabs = computed(() => {
 	const result = [];
 	if (clinicDescription.value) {
@@ -240,10 +226,22 @@ const tabs = computed(() => {
 			label: `${t('TabDoctors')} (${clinicDoctors.value.length})`,
 		});
 	}
-	if (hasServices.value) {
+	if (clinicMedicalServices.value.length > 0) {
 		result.push({
 			id: 'services',
-			label: `${t('TabServices')} (${totalServicesCount.value})`,
+			label: `${t('TabServices')} (${clinicMedicalServices.value.length})`,
+		});
+	}
+	if (clinicLabTests.value.length > 0) {
+		result.push({
+			id: 'labtests',
+			label: `${t('TabLabTests')} (${clinicLabTests.value.length})`,
+		});
+	}
+	if (clinicMedications.value.length > 0) {
+		result.push({
+			id: 'medications',
+			label: `${t('TabMedications')} (${clinicMedications.value.length})`,
 		});
 	}
 	if (clinicData.value?.reviews?.length) {
@@ -258,13 +256,30 @@ const tabs = computed(() => {
 	return result;
 });
 
-const mapRef = ref<InstanceType<typeof LazyClinicServicesMap> | null>(null);
+const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
+const { target: mapSentinel, hasBeenVisible: isMapVisible } = useInViewport();
+const pendingMapAction = ref<(() => void) | null>(null);
+
+const onMapReady = () => {
+	if (pendingMapAction.value) {
+		pendingMapAction.value();
+		pendingMapAction.value = null;
+	}
+};
 
 const scrollToMap = () => {
 	const el = document.getElementById('map');
 	if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-	if (clinicData.value) {
-		mapRef.value?.openClinicPopup(clinicData.value);
+	const action = () => {
+		if (clinicData.value) {
+			mapRef.value?.openClinicPopup(clinicData.value);
+		}
+	};
+	if (mapRef.value) {
+		action();
+	} else {
+		pendingMapAction.value = action;
+		isMapVisible.value = true;
 	}
 };
 
@@ -484,79 +499,92 @@ watchEffect(() => {
 			</EntityPageSection>
 
 			<!-- Services -->
-			<EntityPageSection v-if="hasServices" sectionId="services">
-				<div class="clinic-services">
-					<ClinicCategorizedSection
-						:title="t('MedicalServicesAtClinic')"
-						:totalCount="clinicMedicalServices.length"
-						routeName="services"
-						:categories="serviceCategoriesWithTitles.categories"
-						:otherCategory="serviceCategoriesWithTitles.otherCategory"
-					>
-						<template #icon>
-							<IconMedicalService />
-						</template>
-						<template #default="{ item }">
-							<PricedItemCard
-								:id="item.id"
-								:slug="item.slug"
-								:name="item.name"
-								:localName="item.localName"
-								:price="getClinicPrice(item.clinicPrices)?.price"
-								:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
-								:priceMin="getClinicPrice(item.clinicPrices)?.priceMin"
-								routeName="services-serviceSlug"
-								routeParamName="serviceSlug"
-							/>
-						</template>
-					</ClinicCategorizedSection>
+			<EntityPageSection
+				v-if="clinicMedicalServices.length > 0"
+				sectionId="services"
+			>
+				<ClinicCategorizedSection
+					:title="t('MedicalServicesAtClinic')"
+					:totalCount="clinicMedicalServices.length"
+					routeName="services"
+					:categories="serviceCategoriesWithTitles.categories"
+					:otherCategory="serviceCategoriesWithTitles.otherCategory"
+				>
+					<template #icon>
+						<IconMedicalService />
+					</template>
+					<template #default="{ item }">
+						<PricedItemCard
+							:id="item.id"
+							:slug="item.slug"
+							:name="item.name"
+							:localName="item.localName"
+							:price="getClinicPrice(item.clinicPrices)?.price"
+							:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
+							:priceMin="getClinicPrice(item.clinicPrices)?.priceMin"
+							routeName="services-serviceSlug"
+							routeParamName="serviceSlug"
+						/>
+					</template>
+				</ClinicCategorizedSection>
+			</EntityPageSection>
 
-					<ClinicCategorizedSection
-						:title="t('LabTestsAtClinic')"
-						:totalCount="clinicLabTests.length"
-						routeName="labtests"
-						:categories="labTestCategoriesWithTitles.categories"
-						:otherCategory="labTestCategoriesWithTitles.otherCategory"
-					>
-						<template #icon>
-							<IconLabTest />
-						</template>
-						<template #default="{ item }">
-							<PricedItemCard
-								:id="item.id"
-								:slug="item.slug"
-								:name="item.name"
-								:localName="item.localName"
-								:price="getClinicPrice(item.clinicPrices)?.price"
-								:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
-								routeName="labtests-labTestSlug"
-								routeParamName="labTestSlug"
-							/>
-						</template>
-					</ClinicCategorizedSection>
+			<!-- Lab Tests -->
+			<EntityPageSection
+				v-if="clinicLabTests.length > 0"
+				sectionId="labtests"
+			>
+				<ClinicCategorizedSection
+					:title="t('LabTestsAtClinic')"
+					:totalCount="clinicLabTests.length"
+					routeName="labtests"
+					:categories="labTestCategoriesWithTitles.categories"
+					:otherCategory="labTestCategoriesWithTitles.otherCategory"
+				>
+					<template #icon>
+						<IconLabTest />
+					</template>
+					<template #default="{ item }">
+						<PricedItemCard
+							:id="item.id"
+							:slug="item.slug"
+							:name="item.name"
+							:localName="item.localName"
+							:price="getClinicPrice(item.clinicPrices)?.price"
+							:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
+							routeName="labtests-labTestSlug"
+							routeParamName="labTestSlug"
+						/>
+					</template>
+				</ClinicCategorizedSection>
+			</EntityPageSection>
 
-					<ClinicServiceSection
-						:title="t('MedicationsAtClinic')"
-						:items="clinicMedications"
-						routeName="medications"
-					>
-						<template #icon>
-							<IconMedication />
-						</template>
-						<template #default="{ item }">
-							<PricedItemCard
-								:id="item.id"
-								:slug="item.slug"
-								:name="item.name"
-								:localName="item.localName"
-								:price="getClinicPrice(item.clinicPrices)?.price"
-								:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
-								routeName="medications-medicationSlug"
-								routeParamName="medicationSlug"
-							/>
-						</template>
-					</ClinicServiceSection>
-				</div>
+			<!-- Medications -->
+			<EntityPageSection
+				v-if="clinicMedications.length > 0"
+				sectionId="medications"
+			>
+				<ClinicServiceSection
+					:title="t('MedicationsAtClinic')"
+					:items="clinicMedications"
+					routeName="medications"
+				>
+					<template #icon>
+						<IconMedication />
+					</template>
+					<template #default="{ item }">
+						<PricedItemCard
+							:id="item.id"
+							:slug="item.slug"
+							:name="item.name"
+							:localName="item.localName"
+							:price="getClinicPrice(item.clinicPrices)?.price"
+							:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
+							routeName="medications-medicationSlug"
+							routeParamName="medicationSlug"
+						/>
+					</template>
+				</ClinicServiceSection>
 			</EntityPageSection>
 
 			<!-- Reviews -->
@@ -578,12 +606,14 @@ watchEffect(() => {
 			<!-- Map -->
 			<EntityPageSection sectionId="map" :title="t('TabMap')">
 				<template #icon><IconMapPin :size="20" color="#ffffff" /></template>
-				<div class="clinic-map">
+				<div ref="mapSentinel" class="clinic-map">
 					<LazyClinicServicesMap
+						v-if="isMapVisible"
 						ref="mapRef"
 						:services="[]"
 						:clinics="clinicAsList"
 						:showAllClinics="true"
+						@ready="onMapReady"
 					/>
 				</div>
 			</EntityPageSection>
@@ -607,6 +637,8 @@ watchEffect(() => {
 		"TabContacts": "Contacts",
 		"TabDoctors": "Doctors",
 		"TabServices": "Services",
+		"TabLabTests": "Lab tests",
+		"TabMedications": "Medications",
 		"TabReviews": "Reviews",
 		"TabMap": "Location"
 	},
@@ -624,6 +656,8 @@ watchEffect(() => {
 		"TabContacts": "Контакты",
 		"TabDoctors": "Врачи",
 		"TabServices": "Услуги",
+		"TabLabTests": "Анализы",
+		"TabMedications": "Лекарства",
 		"TabReviews": "Отзывы",
 		"TabMap": "На карте"
 	},
@@ -641,6 +675,8 @@ watchEffect(() => {
 		"TabContacts": "Kontakte",
 		"TabDoctors": "Ärzte",
 		"TabServices": "Leistungen",
+		"TabLabTests": "Laboruntersuchungen",
+		"TabMedications": "Medikamente",
 		"TabReviews": "Bewertungen",
 		"TabMap": "Standort"
 	},
@@ -658,6 +694,8 @@ watchEffect(() => {
 		"TabContacts": "İletişim",
 		"TabDoctors": "Doktorlar",
 		"TabServices": "Hizmetler",
+		"TabLabTests": "Laboratuvar testleri",
+		"TabMedications": "İlaçlar",
 		"TabReviews": "Değerlendirmeler",
 		"TabMap": "Konum"
 	},
@@ -675,6 +713,8 @@ watchEffect(() => {
 		"TabContacts": "Kontakti",
 		"TabDoctors": "Lekari",
 		"TabServices": "Usluge",
+		"TabLabTests": "Analize",
+		"TabMedications": "Lekovi",
 		"TabReviews": "Recenzije",
 		"TabMap": "Lokacija"
 	},
@@ -692,6 +732,8 @@ watchEffect(() => {
 		"TabContacts": "Контакти",
 		"TabDoctors": "Лекари",
 		"TabServices": "Услуге",
+		"TabLabTests": "Анализе",
+		"TabMedications": "Лекови",
 		"TabReviews": "Рецензије",
 		"TabMap": "Локација"
 	}

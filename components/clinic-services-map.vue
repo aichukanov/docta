@@ -19,6 +19,7 @@ const { t, locale } = useI18n();
 
 const {
 	isLoading,
+	isInitialized,
 	initializeMap,
 	addMarker,
 	removeMarker,
@@ -95,7 +96,21 @@ const scrollToMap = () => {
 	}
 };
 
+const waitForInit = () => {
+	if (isInitialized.value) return Promise.resolve();
+	return new Promise<void>((resolve) => {
+		const stop = watch(isInitialized, (v) => {
+			if (v) {
+				stop();
+				resolve();
+			}
+		});
+	});
+};
+
 const openClinicPopup = async (clinic: ClinicData) => {
+	await waitForInit();
+
 	selectedClinic.value = null;
 	await nextTick();
 
@@ -105,7 +120,8 @@ const openClinicPopup = async (clinic: ClinicData) => {
 	scrollToMap();
 };
 
-const centerOnClinics = (clinics: ClinicData[]) => {
+const centerOnClinics = async (clinics: ClinicData[]) => {
+	await waitForInit();
 	centerOnLocations(
 		clinics.map((clinic) => [clinic.latitude, clinic.longitude]),
 	);

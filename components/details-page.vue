@@ -35,9 +35,17 @@ const mapRef = ref<
 		centerOnLocations: (locations: Array<[number, number]>) => void;
 	}
 >();
+const { target: mapSentinel, hasBeenVisible: isMapVisible } = useInViewport();
+const pendingMapAction = ref<(() => void) | null>(null);
 
 const showClinicOnMap = (clinic: ClinicData) => {
-	mapRef.value?.centerOnClinics([clinic]);
+	const action = () => mapRef.value?.centerOnClinics([clinic]);
+	if (mapRef.value) {
+		action();
+	} else {
+		pendingMapAction.value = action;
+		isMapVisible.value = true;
+	}
 };
 
 const backToSearch = () => {
@@ -48,8 +56,11 @@ const backToSearch = () => {
 };
 
 const onMapReady = () => {
+	if (pendingMapAction.value) {
+		pendingMapAction.value();
+		pendingMapAction.value = null;
+	}
 	if (props.clinics.length > 0) {
-		// Используем centerOnLocations напрямую, чтобы не скроллить к карте при загрузке
 		mapRef.value?.centerOnLocations(
 			props.clinics.map((clinic) => [clinic.latitude, clinic.longitude]),
 		);
@@ -100,8 +111,9 @@ const onMapReady = () => {
 					</slot>
 					<slot name="reviews" />
 				</article>
-				<aside class="map-container" :aria-label="t('AriaMapSection')">
+				<aside ref="mapSentinel" class="map-container" :aria-label="t('AriaMapSection')">
 					<ClinicServicesMap
+						v-if="isMapVisible"
 						ref="mapRef"
 						:services="[]"
 						:clinics="props.clinics"

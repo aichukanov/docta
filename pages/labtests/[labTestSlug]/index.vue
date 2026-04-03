@@ -55,12 +55,27 @@ const getPriceInfo = (clinicId: number) => {
 	return labTestData.value?.clinicPrices?.find((p) => p.clinicId === clinicId);
 };
 
-const mapRef = ref<InstanceType<typeof LazyClinicServicesMap> | null>(null);
+const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
+const { target: mapSentinel, hasBeenVisible: isMapVisible } = useInViewport();
+const pendingMapAction = ref<(() => void) | null>(null);
+
+const onMapReady = () => {
+	if (pendingMapAction.value) {
+		pendingMapAction.value();
+		pendingMapAction.value = null;
+	}
+};
 
 const showClinicOnMap = (clinic: ClinicData) => {
 	const el = document.getElementById('map');
 	if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-	mapRef.value?.openClinicPopup(clinic);
+	const action = () => mapRef.value?.openClinicPopup(clinic);
+	if (mapRef.value) {
+		action();
+	} else {
+		pendingMapAction.value = action;
+		isMapVisible.value = true;
+	}
 };
 
 const tabs = computed(() => {
@@ -238,12 +253,14 @@ watchEffect(() => {
 
 			<EntityPageSection sectionId="map" :title="t('TabMap')">
 				<template #icon><IconMapPin :size="20" color="#ffffff" /></template>
-				<div class="labtest-map">
+				<div ref="mapSentinel" class="labtest-map">
 					<LazyClinicServicesMap
+						v-if="isMapVisible"
 						ref="mapRef"
 						:services="[]"
 						:clinics="labTestClinics"
 						:showAllClinics="true"
+						@ready="onMapReady"
 					/>
 				</div>
 			</EntityPageSection>

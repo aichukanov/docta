@@ -104,7 +104,7 @@ tests/
 - ✅ Производительность (CLS, время загрузки)
 - 🔄 Залогиненные пользователи (требует auth фикстур)
 
-📖 **Документация:** См. `docs/LOCALE_ARCHITECTURE.md` для деталей
+📖 **Документация:** См. `docs/rules/LOCALE_ARCHITECTURE.md` для деталей
 
 ## Troubleshooting
 

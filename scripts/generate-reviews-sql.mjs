@@ -11,7 +11,7 @@
  *   node scripts/generate-reviews-sql.mjs <config.json> --translations <translations.json>
  *   # → generates SQL with translations included
  *
- * See REVIEWS_IMPORT.md for full docs.
+ * See docs/import/REVIEWS_IMPORT.md for full docs.
  */
 
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs'

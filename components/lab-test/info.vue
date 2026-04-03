@@ -50,13 +50,13 @@ const detailsLink = computed(() => {
 			<span class="synonyms-list">{{ synonyms.join(', ') }}</span>
 		</div>
 		<div v-if="categoryIds?.length" class="lab-test-categories">
-			<span
+			<CategoryTag
 				v-for="categoryId in categoryIds"
 				:key="categoryId"
-				class="category-tag"
+				small
 			>
 				{{ t(`lab_test_category_${categoryId}`) }}
-			</span>
+			</CategoryTag>
 		</div>
 	</div>
 </template>
@@ -98,15 +98,6 @@ const detailsLink = computed(() => {
 		gap: var(--spacing-xs);
 		margin-top: var(--spacing-sm);
 
-		.category-tag {
-			display: inline-block;
-			font-size: 0.75rem;
-			color: var(--color-primary);
-			background: rgba(79, 70, 229, 0.08);
-			padding: 2px 8px;
-			border-radius: 4px;
-			border: 1px solid rgba(79, 70, 229, 0.15);
-		}
 	}
 
 	.lab-test-synonyms {

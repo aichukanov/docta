@@ -241,13 +241,13 @@ watchEffect(() => {
 					{{ item.localName }}
 				</div>
 				<div v-if="item.categoryIds?.length" class="service-categories">
-					<span
+					<CategoryTag
 						v-for="categoryId in item.categoryIds"
 						:key="categoryId"
-						class="category-tag"
+						small
 					>
 						{{ t(`medical_service_category_${categoryId}`) }}
-					</span>
+					</CategoryTag>
 				</div>
 			</div>
 		</template>
@@ -291,15 +291,6 @@ watchEffect(() => {
 		gap: var(--spacing-xs);
 		margin-top: var(--spacing-sm);
 
-		.category-tag {
-			display: inline-block;
-			font-size: 0.75rem;
-			color: var(--color-primary);
-			background: rgba(79, 70, 229, 0.08);
-			padding: 2px 8px;
-			border-radius: 4px;
-			border: 1px solid rgba(79, 70, 229, 0.15);
-		}
 	}
 }
 </style>

@@ -88,13 +88,10 @@ const clinicTypeNames = computed(() => {
 		entityRouteParam="clinicSlug"
 	>
 		<template #badges>
-			<el-tag
+			<CategoryTag
 				v-for="name in clinicTypeNames"
 				:key="name"
-				type="info"
-				effect="plain"
-				round
-			>{{ name }}</el-tag>
+			>{{ name }}</CategoryTag>
 		</template>
 	</ReviewsPage>
 </template>

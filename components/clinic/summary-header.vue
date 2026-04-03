@@ -122,13 +122,11 @@ const clinicLink = computed(() => {
 			</div>
 
 			<div v-if="clinicTypeNames.length" class="clinic-types">
-				<el-tag
+				<CategoryTag
 					v-for="typeName in clinicTypeNames"
 					:key="typeName"
-					type="info"
-					effect="plain"
-					round
-				>{{ typeName }}</el-tag>
+					small
+				>{{ typeName }}</CategoryTag>
 			</div>
 
 			<RatingStars

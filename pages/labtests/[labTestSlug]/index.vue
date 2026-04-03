@@ -220,13 +220,12 @@ watchEffect(() => {
 					}}</span>
 				</div>
 				<div v-if="labTestData.categoryIds?.length" class="lab-test-categories">
-					<span
+					<CategoryTag
 						v-for="categoryId in labTestData.categoryIds"
 						:key="categoryId"
-						class="category-tag"
 					>
 						{{ t(`lab_test_category_${categoryId}`) }}
-					</span>
+					</CategoryTag>
 				</div>
 			</div>
 		</template>
@@ -297,15 +296,6 @@ watchEffect(() => {
 	gap: var(--spacing-xs);
 	margin-top: var(--spacing-md);
 
-	.category-tag {
-		display: inline-block;
-		font-size: 0.85rem;
-		color: var(--color-primary);
-		background: rgba(79, 70, 229, 0.08);
-		padding: 4px 12px;
-		border-radius: 4px;
-		border: 1px solid rgba(79, 70, 229, 0.15);
-	}
 }
 
 .lab-test-synonyms {

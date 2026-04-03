@@ -107,13 +107,10 @@ const clinicInfoMap = computed(() => {
 		:clinicInfo="clinicInfoMap"
 	>
 		<template #badges>
-			<el-tag
+			<CategoryTag
 				v-for="name in specialtyNames"
 				:key="name"
-				type="info"
-				effect="plain"
-				round
-			>{{ name }}</el-tag>
+			>{{ name }}</CategoryTag>
 		</template>
 	</ReviewsPage>
 </template>

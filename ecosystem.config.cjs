@@ -4,6 +4,7 @@ module.exports = {
 	apps: [
 		{
 			name: 'docta',
+			cwd: __dirname,
 			port: '3001',
 			exec_mode: 'cluster',
 			instances: 'max',

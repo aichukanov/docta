@@ -46,11 +46,12 @@ const svadLink = computed(() => {
 	return url.toString();
 });
 
+const { initMixpanel, initCloudflare, initGTag } = useAnalytics();
+
 watch(
 	isConsentGiven,
 	() => {
 		if (isConsentGiven.value) {
-			const { initMixpanel, initCloudflare, initGTag } = useAnalytics();
 			initMixpanel();
 			initCloudflare();
 			initGTag();

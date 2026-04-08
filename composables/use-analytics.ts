@@ -6,6 +6,7 @@ export function useAnalytics() {
 	const { isConsentGiven } = useCookieControl();
 
 	const initMixpanel = () => {
+		if (!import.meta.client) return;
 		if (config.public.mixpanelToken && isConsentGiven.value) {
 			mixpanel.init(config.public.mixpanelToken, {
 				debug: import.meta.dev,

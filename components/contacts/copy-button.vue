@@ -24,6 +24,7 @@ const props = defineProps<{
 }>();
 
 const { t } = useI18n();
+const { trackEvent } = useAnalytics();
 
 const isCopied = ref(false);
 
@@ -31,6 +32,7 @@ async function copyToClipboard(): Promise<void> {
 	try {
 		await navigator.clipboard.writeText(props.value);
 		isCopied.value = true;
+		trackEvent('contact_copied', { value: props.value });
 
 		setTimeout(() => {
 			isCopied.value = false;

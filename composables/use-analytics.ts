@@ -13,6 +13,7 @@ export function useAnalytics() {
 				track_pageview: true,
 				persistence: 'localStorage',
 				ignore_dnt: true,
+				api_host: 'https://api-eu.mixpanel.com',
 			});
 		}
 	};

@@ -1,14 +1,7 @@
 export default defineNuxtConfig({
-	compatibilityDate: '2025-11-23',
+	compatibilityDate: '2026-04-06',
 
 	modules: ['nuxt-gtag', '@element-plus/nuxt', '@nuxtjs/i18n', '@pinia/nuxt'],
-
-	// Разрешаем ngrok домены
-	vite: {
-		server: {
-			hmr: false, // Отключаем HMR для ngrok
-		},
-	},
 
 	nitro: {
 		devProxy: {
@@ -17,12 +10,6 @@ export default defineNuxtConfig({
 				changeOrigin: true,
 			},
 		},
-	},
-
-	devServer: {
-		host: '0.0.0.0',
-		port: 3000,
-		https: false,
 	},
 
 	app: {

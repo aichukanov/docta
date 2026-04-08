@@ -38,6 +38,8 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `lab_test_categories`                   | Categories for lab tests.                                      |
 | `lab_test_categories_relations`         | Junction table: Lab Test <-> Category.                         |
 | `lab_test_synonyms`                     | Alternative names for lab tests for search optimization.       |
+| `lab_test_sample_types`                 | Lookup table for sample collection types (venous_blood, urine, …). Maps to LabTestSampleType enum. |
+| `lab_test_info`                         | Structured metadata for lab tests: preparation, turnaround, parameters, localized summaries. |
 | `medical_service_redirects`             | Redirect map for merged medical service records.               |
 | `doctor_redirects`                      | Redirect map for merged doctor profiles.                       |
 | `lab_test_redirects`                    | Redirect map for merged lab test records.                      |

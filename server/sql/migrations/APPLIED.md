@@ -1,5 +1,15 @@
 # Applied Migrations Log
 
+## Pending: create-labtest-info.sql
+
+Schema change: creates `lab_test_info` table.
+Data populated via `scripts/generate-labtest-info-sql.mjs` + `server/sql/insert-labtest-info.sql`.
+
+Apply:
+```bash
+mysql -u root -p --default-character-set=utf8mb4 docta_me < server/sql/migrations/create-labtest-info.sql
+```
+
 ## 2026-03-20: deploy-reviews.sql
 
 Deployed reviews system to production. Applied by docta_admin on 89.116.111.68.

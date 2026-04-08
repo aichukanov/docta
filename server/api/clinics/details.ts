@@ -1,3 +1,4 @@
+import { getCurrentUser } from '~/server/common/auth';
 import { getConnection } from '~/server/common/db-mysql';
 import { fetchRating, fetchReviews } from '~/server/common/reviews';
 import {
@@ -83,9 +84,11 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 			return null;
 		}
 
+		const currentUser = await getCurrentUser(event);
+
 		// Загружаем рейтинг и отзывы клиники
 		const rating = await fetchRating(connection, 'clinic', clinic.id);
-		const reviews = await fetchReviews(connection, 'clinic', clinic.id, locale);
+		const reviews = await fetchReviews(connection, 'clinic', clinic.id, locale, 'rank', currentUser?.id);
 
 		await connection.end();
 

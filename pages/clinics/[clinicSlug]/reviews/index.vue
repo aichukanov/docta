@@ -49,19 +49,32 @@ const data = computed(() => {
 	return v;
 });
 
+const clinic = computed(() => data.value?.clinic ?? null);
+
 const clinicName = computed(() => {
-	const c = (data.value as any)?.clinic;
+	const c = clinic.value;
 	if (!c) return '';
-	return c.localName || c.name;
+	return c.name || c.localName;
 });
 
+const { data: doctorsList } = await useFetch('/api/doctors/list', {
+	key: `doctors-list-clinic-reviews-${clinicSlug.value}`,
+	method: 'POST',
+	body: computed(() => ({
+		clinicIds: clinic.value?.id ? [clinic.value.id] : [],
+		locale: locale.value,
+	})),
+});
+
+const clinicDoctors = computed(() => doctorsList.value?.doctors || []);
+
 const clinicSchemaOrgType = computed(() => {
-	const ids = (data.value as any)?.clinic?.clinicTypeIds;
+	const ids = clinic.value?.clinicTypeIds;
 	return getClinicSchemaOrgType(ids);
 });
 
 const clinicTypeNames = computed(() => {
-	const ids = (data.value as any)?.clinic?.clinicTypeIds;
+	const ids = clinic.value?.clinicTypeIds;
 	if (!ids) return [];
 	return ids
 		.split(',')
@@ -86,6 +99,9 @@ const clinicTypeNames = computed(() => {
 		parentListRouteName="clinics"
 		entityRouteName="clinics-clinicSlug"
 		entityRouteParam="clinicSlug"
+		:entityId="clinic?.id"
+		:ownReview="data.ownReview"
+		:relatedEntities="clinicDoctors.map(d => ({ id: d.id, name: d.name }))"
 	>
 		<template #badges>
 			<CategoryTag

@@ -159,5 +159,6 @@ useUserStore().fetchUser();
 		<NuxtLayout>
 			<NuxtPage />
 		</NuxtLayout>
+		<ConfirmProvider />
 	</Html>
 </template>

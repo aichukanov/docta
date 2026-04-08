@@ -244,12 +244,11 @@ const tabs = computed(() => {
 			label: `${t('TabMedications')} (${clinicMedications.value.length})`,
 		});
 	}
-	if (clinicData.value?.reviews?.length) {
+	if (clinicData.value) {
+		const reviewCount = clinicData.value.rating?.totalReviews || clinicData.value.reviews?.length || 0;
 		result.push({
 			id: 'reviews',
-			label: `${t('TabReviews')} (${
-				clinicData.value.rating?.totalReviews || clinicData.value.reviews.length
-			})`,
+			label: reviewCount > 0 ? `${t('TabReviews')} (${reviewCount})` : t('TabReviews'),
 		});
 	}
 	result.push({ id: 'map', label: t('TabMap') });
@@ -351,13 +350,37 @@ const hasSeparateReviewsPage = computed(() => {
 	return total > REVIEWS_THRESHOLD;
 });
 
-const displayedReviews = computed(() => {
+const allClinicReviews = computed(() => {
 	if (!clinicData.value?.reviews) return [];
-	if (hasSeparateReviewsPage.value) {
-		return clinicData.value.reviews.slice(0, REVIEWS_THRESHOLD);
-	}
 	return clinicData.value.reviews;
 });
+
+const localOwnReview = ref<any>(null);
+const ownReviewDeleted = ref(false);
+const showReviewDialog = ref(false);
+
+const ownReview = computed(() => {
+	if (ownReviewDeleted.value) return null;
+	return localOwnReview.value || allClinicReviews.value.find((r) => r.isOwn) || null;
+});
+const otherReviews = computed(() => allClinicReviews.value.filter((r) => !r.isOwn));
+
+const displayedReviews = computed(() => {
+	if (hasSeparateReviewsPage.value) {
+		return otherReviews.value.slice(0, REVIEWS_THRESHOLD);
+	}
+	return otherReviews.value;
+});
+
+const onReviewSubmitted = (review: any) => {
+	localOwnReview.value = review;
+	ownReviewDeleted.value = false;
+};
+
+const onReviewDeleted = () => {
+	localOwnReview.value = null;
+	ownReviewDeleted.value = true;
+};
 
 const allReviewsLink = computed(() => {
 	if (!hasSeparateReviewsPage.value) return undefined;
@@ -589,17 +612,45 @@ watchEffect(() => {
 
 			<!-- Reviews -->
 			<EntityPageSection
-				v-if="clinicData?.reviews?.length"
+				v-if="clinicData"
 				sectionId="reviews"
 				:title="t('TabReviews')"
-				:count="clinicData.rating?.totalReviews || clinicData.reviews.length"
+				:count="clinicData.rating?.totalReviews || clinicData.reviews?.length || 0"
 			>
 				<template #icon><IconStar :size="20" /></template>
-				<DoctorReviews
-					:reviews="displayedReviews"
-					:rating="clinicData.rating"
-					:noReviewsText="t('NoReviewsClinic')"
-					:allReviewsLink="allReviewsLink"
+				<div class="reviews-content">
+					<RatingSummary
+						v-if="clinicData.rating && clinicData.rating.totalReviews > 0"
+						:rating="clinicData.rating"
+						:hideWriteButton="!!ownReview"
+						@writeReview="showReviewDialog = true"
+					/>
+					<ReviewItem
+						v-if="ownReview"
+						:review="ownReview"
+						@updated="(r) => localOwnReview = r"
+						@deleted="onReviewDeleted"
+					/>
+					<DoctorReviews
+						:reviews="displayedReviews"
+						:noReviewsText="t('NoReviewsClinic')"
+					/>
+					<NuxtLink
+						v-if="allReviewsLink && clinicData.rating"
+						class="all-reviews-link"
+						:to="allReviewsLink"
+					>
+						{{ t('AllReviews', { count: clinicData.rating.totalReviews }) }}
+					</NuxtLink>
+				</div>
+				<ReviewForm
+					v-if="clinicData.id"
+					v-model="showReviewDialog"
+					entityType="clinic"
+					:entityId="clinicData.id"
+					:entityName="localizedName"
+					:relatedEntities="clinicDoctors.map(d => ({ id: d.id, name: d.name }))"
+					@submitted="onReviewSubmitted"
 				/>
 			</EntityPageSection>
 
@@ -745,6 +796,31 @@ watchEffect(() => {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-xl);
+}
+
+.reviews-content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+	margin-top: var(--spacing-lg);
+}
+
+.all-reviews-link {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--spacing-md) var(--spacing-xl);
+	background: var(--color-primary);
+	color: var(--color-bg-primary);
+	border-radius: var(--border-radius-lg);
+	text-decoration: none;
+	font-weight: var(--font-weight-semibold);
+	font-size: var(--font-size-lg);
+	transition: background-color var(--transition-base);
+	align-self: center;
+
+	&:hover {
+		background: var(--color-primary-dark);
+	}
 }
 
 .clinic-map {

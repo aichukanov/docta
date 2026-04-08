@@ -51,20 +51,22 @@ const data = computed(() => {
 	return v;
 });
 
+const doctor = computed(() => data.value?.doctor ?? null);
+
 const doctorName = computed(() => {
-	const d = (data.value as any)?.doctor;
+	const d = doctor.value;
 	if (!d) return '';
 	const title = d.professionalTitle ? d.professionalTitle + ' ' : '';
-	return title + (d.localName || d.name);
+	return title + d.name;
 });
 
 const doctorSchema = computed(() => {
-	const title = (data.value as any)?.doctor?.professionalTitle?.trim() || '';
+	const title = doctor.value?.professionalTitle?.trim() || '';
 	return getSchemaType(title);
 });
 
 const specialtyNames = computed(() => {
-	const ids = (data.value as any)?.doctor?.specialtyIds;
+	const ids = doctor.value?.specialtyIds;
 	if (!ids) return [];
 	return ids.split(',').map((id: string) => t(`specialty_${id}`));
 });
@@ -72,12 +74,18 @@ const specialtyNames = computed(() => {
 const clinicsStore = useClinicsStore();
 await clinicsStore.fetchClinics();
 
+const doctorClinics = computed(() => {
+	const clinicIds = doctor.value?.clinicIds;
+	const allClinics = clinicsStore.clinics;
+	if (!clinicIds || !allClinics) return [];
+	return clinicIds.split(',').map(Number)
+		.map((id) => allClinics.find((c) => c.id === id))
+		.filter((c) => !!c);
+});
+
 const clinicInfoMap = computed(() => {
 	const map: Record<number, { name: string; slug: string }> = {};
-	const clinicIds = (data.value as any)?.doctor?.clinicIds;
-	if (!clinicIds || !clinicsStore.clinics) return map;
-	for (const id of clinicIds.split(',').map(Number)) {
-		const clinic = clinicsStore.clinics.find((c) => c.id === id);
+	for (const clinic of doctorClinics.value) {
 		if (clinic) {
 			map[clinic.id] = {
 				name: clinic.localName || clinic.name,
@@ -105,6 +113,9 @@ const clinicInfoMap = computed(() => {
 		entityRouteName="doctors-doctorSlug"
 		entityRouteParam="doctorSlug"
 		:clinicInfo="clinicInfoMap"
+		:entityId="doctor?.id"
+		:ownReview="data.ownReview"
+		:relatedEntities="doctorClinics.map(c => ({ id: c.id, name: c.name }))"
 	>
 		<template #badges>
 			<CategoryTag

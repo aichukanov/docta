@@ -77,12 +77,11 @@ const tabs = computed(() => {
 	if (doctorClinics.value.length > 0) {
 		result.push({ id: 'clinics', label: t('TabClinics') });
 	}
-	if (doctorData.value?.reviews?.length) {
+	if (doctorData.value) {
+		const reviewCount = doctorData.value.rating?.totalReviews || doctorData.value.reviews?.length || 0;
 		result.push({
 			id: 'reviews',
-			label: `${t('TabReviews')} (${
-				doctorData.value.rating?.totalReviews || doctorData.value.reviews.length
-			})`,
+			label: reviewCount > 0 ? `${t('TabReviews')} (${reviewCount})` : t('TabReviews'),
 		});
 	}
 	if (doctorClinics.value.length > 0) {
@@ -240,13 +239,37 @@ const hasSeperateReviewsPage = computed(() => {
 	return total > REVIEWS_THRESHOLD;
 });
 
-const displayedReviews = computed(() => {
+const allReviews = computed(() => {
 	if (!doctorData.value?.reviews) return [];
-	if (hasSeperateReviewsPage.value) {
-		return doctorData.value.reviews.slice(0, REVIEWS_THRESHOLD);
-	}
 	return doctorData.value.reviews;
 });
+
+const localOwnReview = ref<any>(null);
+const ownReviewDeleted = ref(false);
+const showReviewDialog = ref(false);
+
+const ownReview = computed(() => {
+	if (ownReviewDeleted.value) return null;
+	return localOwnReview.value || allReviews.value.find((r) => r.isOwn) || null;
+});
+const otherReviews = computed(() => allReviews.value.filter((r) => !r.isOwn));
+
+const displayedReviews = computed(() => {
+	if (hasSeperateReviewsPage.value) {
+		return otherReviews.value.slice(0, REVIEWS_THRESHOLD);
+	}
+	return otherReviews.value;
+});
+
+const onReviewSubmitted = (review: any) => {
+	localOwnReview.value = review;
+	ownReviewDeleted.value = false;
+};
+
+const onReviewDeleted = () => {
+	localOwnReview.value = null;
+	ownReviewDeleted.value = true;
+};
 
 const allReviewsLink = computed(() => {
 	if (!hasSeperateReviewsPage.value) return undefined;
@@ -390,17 +413,45 @@ watchEffect(() => {
 
 			<!-- Reviews -->
 			<EntityPageSection
-				v-if="doctorData?.reviews?.length"
+				v-if="doctorData"
 				sectionId="reviews"
 				:title="t('TabReviews')"
-				:count="doctorData.rating?.totalReviews || doctorData.reviews.length"
+				:count="doctorData.rating?.totalReviews || doctorData.reviews?.length || 0"
 			>
 				<template #icon><IconStar :size="20" /></template>
-				<DoctorReviews
-					:reviews="displayedReviews"
-					:rating="doctorData.rating"
-					:clinicInfo="clinicInfoMap"
-					:allReviewsLink="allReviewsLink"
+				<div class="reviews-content">
+					<RatingSummary
+						v-if="doctorData.rating && doctorData.rating.totalReviews > 0"
+						:rating="doctorData.rating"
+						:hideWriteButton="!!ownReview"
+						@writeReview="showReviewDialog = true"
+					/>
+					<ReviewItem
+						v-if="ownReview"
+						:review="ownReview"
+						@updated="(r) => localOwnReview = r"
+						@deleted="onReviewDeleted"
+					/>
+					<DoctorReviews
+						:reviews="displayedReviews"
+						:clinicInfo="clinicInfoMap"
+					/>
+					<NuxtLink
+						v-if="allReviewsLink && doctorData.rating"
+						class="all-reviews-link"
+						:to="allReviewsLink"
+					>
+						{{ t('AllReviews', { count: doctorData.rating.totalReviews }) }}
+					</NuxtLink>
+				</div>
+				<ReviewForm
+					v-if="doctorData.id"
+					v-model="showReviewDialog"
+					entityType="doctor"
+					:entityId="doctorData.id"
+					:entityName="localizedName"
+					:relatedEntities="doctorClinics.map(c => ({ id: c.id, name: c.name }))"
+					@submitted="onReviewSubmitted"
 				/>
 			</EntityPageSection>
 
@@ -431,6 +482,31 @@ watchEffect(() => {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-lg);
+}
+
+.reviews-content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+	margin-top: var(--spacing-lg);
+}
+
+.all-reviews-link {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--spacing-md) var(--spacing-xl);
+	background: var(--color-primary);
+	color: var(--color-bg-primary);
+	border-radius: var(--border-radius-lg);
+	text-decoration: none;
+	font-weight: var(--font-weight-semibold);
+	font-size: var(--font-size-lg);
+	transition: background-color var(--transition-base);
+	align-self: center;
+
+	&:hover {
+		background: var(--color-primary-dark);
+	}
 }
 
 .doctor-map {

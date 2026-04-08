@@ -1,5 +1,6 @@
 import { validateBody } from '~/common/validation';
 import { REVIEWS_PAGE_SIZE, REVIEWS_THRESHOLD } from '~/common/constants';
+import { getCurrentUser } from '~/server/common/auth';
 import { getConnection } from '~/server/common/db-mysql';
 import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
 import { fetchRating, fetchReviews, isValidSort } from '~/server/common/reviews';
@@ -7,6 +8,7 @@ import type { Rating } from '~/interfaces/review';
 
 export default defineEventHandler(async (event) => {
 	try {
+		const currentUser = await getCurrentUser(event);
 		const body = await readBody(event);
 
 		if (!validateBody(body, 'api/clinics/reviews')) {
@@ -65,13 +67,18 @@ export default defineEventHandler(async (event) => {
 			clinic.id,
 			locale,
 			sort,
+			currentUser?.id,
 		);
 
 		await connection.end();
 
-		// Пагинация после ранжирования
-		const paginatedReviews = allReviews.slice(offset, offset + pageSize);
-		const totalPages = Math.ceil(allReviews.length / pageSize);
+		// Отделяем свой отзыв от общего списка
+		const ownReview = allReviews.find((r: any) => r.isOwn) || null;
+		const otherReviews = allReviews.filter((r: any) => !r.isOwn);
+
+		// Пагинация только чужих отзывов
+		const paginatedReviews = otherReviews.slice(offset, offset + pageSize);
+		const totalPages = Math.ceil(otherReviews.length / pageSize) || 1;
 
 		const { name, localName } = processLocalizedNameForClinicOrDoctor(
 			clinic,
@@ -91,10 +98,11 @@ export default defineEventHandler(async (event) => {
 			},
 			rating,
 			reviews: paginatedReviews,
+			ownReview,
 			pagination: {
 				page,
 				pageSize,
-				totalReviews: allReviews.length,
+				totalReviews: otherReviews.length,
 				totalPages,
 			},
 		};

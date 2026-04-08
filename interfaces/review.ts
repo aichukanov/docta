@@ -34,6 +34,8 @@ export interface Review {
 		photoUrl?: string;
 		profileUrl?: string;
 	};
+	/** true if this review belongs to the currently logged-in user */
+	isOwn?: boolean;
 }
 
 export interface Rating {

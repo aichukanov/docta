@@ -92,9 +92,11 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			);
 		}
 
+		const currentUser = await getCurrentUser(event);
+
 		// Загружаем рейтинг и отзывы врача
 		const processedRating = await fetchRating(connection, 'doctor', doctor.id);
-		const reviewsRows = await fetchReviews(connection, 'doctor', doctor.id, locale);
+		const reviewsRows = await fetchReviews(connection, 'doctor', doctor.id, locale, 'rank', currentUser?.id);
 
 		await connection.end();
 
@@ -118,8 +120,6 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			});
 			sortedClinicIds = clinicIdsList.join(',');
 		}
-
-		const currentUser = await getCurrentUser(event);
 		const isOwner =
 			!!currentUser && !!doctor.user_id && currentUser.id === doctor.user_id;
 

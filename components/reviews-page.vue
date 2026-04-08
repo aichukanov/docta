@@ -5,6 +5,7 @@ import {
 	buildWebPageSchema,
 } from '~/common/schema-org-builders';
 import { getRegionalQuery } from '~/common/url-utils';
+import type { ReviewFormEntity } from '~/components/review/form.vue';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import reviewsI18n from '~/i18n/reviews';
 import { combineI18nMessages } from '~/i18n/utils';
@@ -36,7 +37,32 @@ const props = defineProps<{
 	/** Route param name, e.g. 'doctorSlug' */
 	entityRouteParam: string;
 	clinicInfo?: Record<number, { name: string; slug: string }>;
+	/** Database ID of the entity, for review form */
+	entityId?: number;
+	/** User's own review, returned separately from paginated list */
+	ownReview?: Review | null;
+	/** Related entities for review form selector */
+	relatedEntities?: ReviewFormEntity[];
 }>();
+
+const localOwnReview = ref<Review | null>(null);
+const ownReviewDeleted = ref(false);
+const showReviewDialog = ref(false);
+
+const currentOwnReview = computed(() => {
+	if (ownReviewDeleted.value) return null;
+	return localOwnReview.value || props.ownReview || null;
+});
+
+const onReviewSubmitted = (review: Review) => {
+	localOwnReview.value = review;
+	ownReviewDeleted.value = false;
+};
+
+const onReviewDeleted = () => {
+	localOwnReview.value = null;
+	ownReviewDeleted.value = true;
+};
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -60,7 +86,9 @@ const canonicalUrl = computed(() => {
 	const params = [
 		langQuery.value,
 		props.pagination.page > 1 ? `page=${props.pagination.page}` : '',
-	].filter(Boolean).join('&');
+	]
+		.filter(Boolean)
+		.join('&');
 	return params ? `${reviewsUrl.value}?${params}` : reviewsUrl.value;
 });
 
@@ -99,10 +127,9 @@ useSeoMeta({
 });
 
 const buildReviewsLink = (page?: number) => {
-	const params = [
-		langQuery.value,
-		page && page > 1 ? `page=${page}` : '',
-	].filter(Boolean).join('&');
+	const params = [langQuery.value, page && page > 1 ? `page=${page}` : '']
+		.filter(Boolean)
+		.join('&');
 	return params ? `${reviewsUrl.value}?${params}` : reviewsUrl.value;
 };
 
@@ -133,27 +160,29 @@ const schemaOrgStore = useSchemaOrgStore();
 watchEffect(() => {
 	if (!props.reviews?.length) return;
 
-	const reviewSchemas = props.reviews.filter((r) => r.text).map((review) => ({
-		'@type': 'Review' as const,
-		'author': review.author
-			? {
-					'@type': 'Person' as const,
-					'name': review.author.name,
-			  }
-			: undefined,
-		'reviewRating': review.rating
-			? {
-					'@type': 'Rating' as const,
-					'ratingValue': review.rating,
-			  }
-			: undefined,
-		'reviewBody': review.text,
-		'datePublished': review.publishedAt || undefined,
-		'provider': {
-			'@type': 'Organization' as const,
-			'name': review.provider,
-		},
-	}));
+	const reviewSchemas = props.reviews
+		.filter((r) => r.text)
+		.map((review) => ({
+			'@type': 'Review' as const,
+			'author': review.author
+				? {
+						'@type': 'Person' as const,
+						'name': review.author.name,
+				  }
+				: undefined,
+			'reviewRating': review.rating
+				? {
+						'@type': 'Rating' as const,
+						'ratingValue': review.rating,
+				  }
+				: undefined,
+			'reviewBody': review.text,
+			'datePublished': review.publishedAt || undefined,
+			'provider': {
+				'@type': 'Organization' as const,
+				'name': review.provider,
+			},
+		}));
 
 	const aggregateRating =
 		props.rating && props.rating.averageRating && props.rating.totalReviews > 0
@@ -194,9 +223,7 @@ watchEffect(() => {
 	]);
 });
 
-const currentSort = computed(
-	() => (route.query.sort as string) || 'rank',
-);
+const currentSort = computed(() => (route.query.sort as string) || 'rank');
 
 const onSortChange = (sort: string) => {
 	router.push({
@@ -254,27 +281,52 @@ const onPageChange = (page: number) => {
 			<slot name="badges" />
 		</div>
 
-		<!-- Sort -->
-		<div class="reviews-sort">
-			<el-select
-				:modelValue="currentSort"
-				@update:modelValue="onSortChange"
-				size="default"
-				:aria-label="t('SortLabel')"
-			>
-				<el-option value="rank" :label="t('SortRank')" />
-				<el-option value="newest" :label="t('SortNewest')" />
-				<el-option value="oldest" :label="t('SortOldest')" />
-				<el-option value="rating_high" :label="t('SortRatingHigh')" />
-				<el-option value="rating_low" :label="t('SortRatingLow')" />
-			</el-select>
-		</div>
-
-		<!-- Reviews -->
-		<DoctorReviews
-			:reviews="reviews"
+		<!-- Rating summary + write button -->
+		<RatingSummary
+			v-if="rating && rating.totalReviews > 0"
 			:rating="rating"
-			:clinicInfo="clinicInfo"
+			:hideWriteButton="!!currentOwnReview"
+			@writeReview="showReviewDialog = true"
+		/>
+
+		<!-- Own review (pinned, outside pagination) -->
+		<section v-if="currentOwnReview" class="own-review-section">
+			<ReviewItem
+				:review="currentOwnReview"
+				@updated="(r) => localOwnReview = r"
+				@deleted="onReviewDeleted"
+			/>
+		</section>
+
+		<!-- Other reviews -->
+		<section class="other-reviews-section">
+			<div class="reviews-sort">
+				<el-select
+					:modelValue="currentSort"
+					@update:modelValue="onSortChange"
+					size="default"
+					:aria-label="t('SortLabel')"
+				>
+					<el-option value="rank" :label="t('SortRank')" />
+					<el-option value="newest" :label="t('SortNewest')" />
+					<el-option value="oldest" :label="t('SortOldest')" />
+					<el-option value="rating_high" :label="t('SortRatingHigh')" />
+					<el-option value="rating_low" :label="t('SortRatingLow')" />
+				</el-select>
+			</div>
+
+			<DoctorReviews :reviews="reviews" :clinicInfo="clinicInfo" />
+		</section>
+
+		<!-- Review form dialog -->
+		<ReviewForm
+			v-if="entityId"
+			v-model="showReviewDialog"
+			:entityType="entityType as 'doctor' | 'clinic'"
+			:entityId="entityId"
+			:entityName="entityName"
+			:relatedEntities="relatedEntities"
+			@submitted="onReviewSubmitted"
 		/>
 
 		<!-- Pagination -->
@@ -291,6 +343,9 @@ const onPageChange = (page: number) => {
 
 <style scoped>
 .reviews-page {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
 	max-width: 800px;
 	min-width: 0;
 	width: 100%;
@@ -305,7 +360,6 @@ const onPageChange = (page: number) => {
 	gap: var(--spacing-sm);
 	font-size: var(--font-size-sm);
 	color: var(--color-text-muted);
-	margin-bottom: var(--spacing-lg);
 	flex-wrap: wrap;
 }
 
@@ -331,7 +385,6 @@ const onPageChange = (page: number) => {
 .reviews-page-title {
 	font-size: 1.5rem;
 	font-weight: var(--font-weight-bold);
-	margin-bottom: var(--spacing-sm);
 	color: var(--color-text-heading);
 }
 
@@ -339,12 +392,21 @@ const onPageChange = (page: number) => {
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--spacing-xs);
-	margin-bottom: var(--spacing-lg);
+}
+
+.own-review-section {
+	padding-bottom: var(--spacing-lg);
+	border-bottom: var(--border-width-thin) solid var(--color-border-secondary);
+}
+
+.other-reviews-section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
 }
 
 .reviews-sort {
 	display: flex;
 	justify-content: flex-end;
-	margin-bottom: var(--spacing-lg);
 }
 </style>

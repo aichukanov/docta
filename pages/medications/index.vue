@@ -19,12 +19,13 @@ const { cityIds, clinicIds, name, updateFromRoute, getRouteParams } =
 	useFilters();
 
 const route = useRoute();
-const pageNumber = computed(() => Number(route.query.page || 1));
+const pageNumber = ref(Number(route.query.page || 1));
 const routeName = route.name;
 watch(
 	() => route.query,
 	(query) => {
 		if (route.name !== routeName) return;
+		pageNumber.value = Number(query.page || 1);
 		updateFromRoute(query);
 	},
 	{ immediate: true },

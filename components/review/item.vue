@@ -11,10 +11,83 @@ const props = defineProps<{
 	clinicInfo?: Record<number, { name: string; slug: string }>;
 }>();
 
+const emit = defineEmits<{
+	updated: [review: Review];
+	deleted: [];
+}>();
+
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([reviewsI18n]),
 });
+
+const { confirm } = useConfirm();
+
+const isEditing = ref(false);
+const editRating = ref(0);
+const editText = ref('');
+const isSaving = ref(false);
+const isDeleting = ref(false);
+
+const startEdit = () => {
+	editRating.value = props.review.rating || 0;
+	editText.value = props.review.text;
+	isEditing.value = true;
+};
+
+const cancelEdit = () => {
+	isEditing.value = false;
+};
+
+const saveEdit = async () => {
+	if (!editRating.value) return;
+	try {
+		isSaving.value = true;
+		await $fetch('/api/reviews/edit', {
+			method: 'POST',
+			body: {
+				reviewId: props.review.id,
+				rating: editRating.value,
+				text: editText.value.trim(),
+				locale: locale.value,
+			},
+		});
+		isEditing.value = false;
+		emit('updated', {
+			...props.review,
+			rating: editRating.value,
+			text: editText.value.trim(),
+			updatedAt: new Date().toISOString(),
+		});
+	} catch {
+		// error handling can be added later
+	} finally {
+		isSaving.value = false;
+	}
+};
+
+const handleDelete = async () => {
+	const confirmed = await confirm({
+		title: t('DeleteReview'),
+		message: t('ConfirmDeleteReview'),
+		confirmText: t('DeleteReview'),
+		cancelText: t('CancelEdit'),
+		confirmType: 'danger',
+	});
+	if (!confirmed) return;
+	try {
+		isDeleting.value = true;
+		await $fetch('/api/reviews/delete', {
+			method: 'POST',
+			body: { reviewId: props.review.id },
+		});
+		emit('deleted');
+	} catch {
+		// error handling can be added later
+	} finally {
+		isDeleting.value = false;
+	}
+};
 
 const formatReviewDate = (dateString: string, provider: string) => {
 	if (provider === 'google_maps') {
@@ -45,14 +118,17 @@ const clinic = computed(() => {
 </script>
 
 <template>
-	<article class="review-item">
+	<article class="review-item" :class="{ 'is-own': review.isOwn }">
 		<!-- Header -->
 		<header class="review-header">
-			<div class="author-name">
-				{{ review.author?.name || t('Anonymous') }}
+			<div class="author-info">
+				<span class="author-name">
+					{{ review.author?.name || t('Anonymous') }}
+				</span>
+				<span v-if="review.isOwn" class="own-badge">{{ t('YourReviewLabel') }}</span>
 			</div>
 			<div class="review-meta">
-				<RatingStars v-if="review.rating" :rating="review.rating" />
+				<RatingStars v-if="review.rating && !isEditing" :rating="review.rating" />
 				<time
 					class="review-date"
 					v-if="review.publishedAt"
@@ -81,24 +157,65 @@ const clinic = computed(() => {
 			</div>
 		</header>
 
-		<!-- Text -->
-		<ReviewText
-			:text="review.text"
-			:originalText="review.originalText"
-			:originalLanguage="review.originalLanguage"
-		/>
+		<!-- Edit mode -->
+		<template v-if="isEditing">
+			<div class="edit-form">
+				<ReviewRatingInput v-model="editRating" />
+				<el-input
+					v-model="editText"
+					type="textarea"
+					:rows="4"
+					:maxlength="5000"
+					show-word-limit
+				/>
+				<div class="edit-actions">
+					<el-button type="primary" size="small" :loading="isSaving" @click="saveEdit">
+						{{ t('SaveReview') }}
+					</el-button>
+					<el-button size="small" @click="cancelEdit">
+						{{ t('CancelEdit') }}
+					</el-button>
+				</div>
+			</div>
+		</template>
 
-		<!-- Replies -->
-		<div
-			class="review-replies"
-			v-if="review.replies && review.replies.length > 0"
-		>
-			<ReviewReply
-				v-for="reply in review.replies"
-				:key="reply.id"
-				:reply="reply"
+		<!-- View mode -->
+		<template v-else>
+			<!-- Text -->
+			<ReviewText
+				:text="review.text"
+				:originalText="review.originalText"
+				:originalLanguage="review.originalLanguage"
 			/>
-		</div>
+
+			<!-- Replies -->
+			<div
+				class="review-replies"
+				v-if="review.replies && review.replies.length > 0"
+			>
+				<ReviewReply
+					v-for="reply in review.replies"
+					:key="reply.id"
+					:reply="reply"
+				/>
+			</div>
+
+			<!-- Own review actions -->
+			<div v-if="review.isOwn" class="own-actions">
+				<el-button size="small" @click="startEdit">
+					{{ t('EditReview') }}
+				</el-button>
+				<el-button
+					size="small"
+					type="danger"
+					plain
+					:loading="isDeleting"
+					@click="handleDelete"
+				>
+					{{ t('DeleteReview') }}
+				</el-button>
+			</div>
+		</template>
 	</article>
 </template>
 
@@ -113,14 +230,33 @@ const clinic = computed(() => {
 	box-shadow: var(--shadow-sm);
 }
 
+.review-item.is-own {
+	border-color: var(--color-primary);
+}
+
 .review-header {
 	margin-bottom: var(--spacing-lg);
+}
+
+.author-info {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	margin-bottom: var(--spacing-xs);
 }
 
 .author-name {
 	font-weight: var(--font-weight-semibold);
 	color: var(--color-text-primary);
-	margin-bottom: var(--spacing-xs);
+}
+
+.own-badge {
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-medium);
+	color: var(--color-primary);
+	background: var(--color-primary-bg);
+	padding: 0.1rem 0.5rem;
+	border-radius: var(--border-radius-sm);
 }
 
 .review-meta {
@@ -161,5 +297,22 @@ const clinic = computed(() => {
 	border-top: var(--border-width-thin) solid var(--color-border-secondary);
 	padding-top: var(--spacing-lg);
 	margin-top: var(--spacing-lg);
+}
+
+.own-actions {
+	display: flex;
+	gap: var(--spacing-sm);
+	margin-top: var(--spacing-lg);
+}
+
+.edit-form {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-md);
+}
+
+.edit-actions {
+	display: flex;
+	gap: var(--spacing-sm);
 }
 </style>

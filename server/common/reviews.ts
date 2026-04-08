@@ -103,6 +103,7 @@ export async function fetchReviews(
 	entityId: number,
 	locale: string,
 	sort: ReviewSort = 'rank',
+	currentUserId?: number,
 ): Promise<Review[]> {
 	const column = entityType === 'doctor' ? 'doctor_id' : 'clinic_id';
 
@@ -121,11 +122,32 @@ export async function fetchReviews(
 			r.published_at as publishedAt,
 			r.likes_count as likesCount,
 			r.updated_at as updatedAt,
-			u.name as authorName,
-			u.photo_url as authorPhotoUrl,
+			COALESCE(
+				NULLIF(u.name, ''),
+				CASE u.primary_oauth_provider
+					WHEN 'google'   THEN gp.name
+					WHEN 'telegram' THEN CONCAT(tp.first_name, IFNULL(CONCAT(' ', NULLIF(tp.last_name, '')), ''))
+					WHEN 'facebook' THEN fp.name
+				END,
+				u.email
+			) as authorName,
+			COALESCE(
+				NULLIF(u.photo_url, ''),
+				CASE u.primary_oauth_provider
+					WHEN 'google'   THEN gp.picture
+					WHEN 'telegram' THEN tp.photo_url
+					WHEN 'facebook' THEN fp.picture_url
+				END
+			) as authorPhotoUrl,
 			u.profile_url as authorProfileUrl
 		FROM reviews r
 		LEFT JOIN auth_users u ON r.user_id = u.id
+		LEFT JOIN auth_oauth_accounts goa ON u.id = goa.user_id AND goa.provider = 'google'
+		LEFT JOIN auth_oauth_profiles_google gp ON goa.id = gp.oauth_account_id
+		LEFT JOIN auth_oauth_accounts toa ON u.id = toa.user_id AND toa.provider = 'telegram'
+		LEFT JOIN auth_oauth_profiles_telegram tp ON toa.id = tp.oauth_account_id
+		LEFT JOIN auth_oauth_accounts foa ON u.id = foa.user_id AND foa.provider = 'facebook'
+		LEFT JOIN auth_oauth_profiles_facebook fp ON foa.id = fp.oauth_account_id
 		WHERE r.${column} = ?
 		ORDER BY r.created_at DESC
 	`;
@@ -179,10 +201,18 @@ export async function fetchReviews(
 						profileUrl: review.authorProfileUrl,
 				  }
 				: undefined,
+			isOwn: currentUserId ? review.userId === currentUserId : undefined,
 		};
 	});
 
 	applySorting(reviews, sort);
+
+	// Move user's own reviews to the top
+	if (currentUserId) {
+		const own = reviews.filter((r) => r.isOwn);
+		const rest = reviews.filter((r) => !r.isOwn);
+		return [...own, ...rest];
+	}
 
 	return reviews;
 }

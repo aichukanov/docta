@@ -16,24 +16,24 @@ export default defineNuxtConfig({
 		baseURL: '/',
 	},
 
-	// gtag: {
-	// 	id: process.env.GTAG_ID,
-	// 	enabled: process.env.NODE_ENV === 'production',
-	// 	loadingStrategy: 'async',
-	// 	initCommands: [
-	// 		[
-	// 			'consent',
-	// 			'default',
-	// 			{
-	// 				ad_user_data: 'denied',
-	// 				ad_personalization: 'denied',
-	// 				ad_storage: 'denied',
-	// 				analytics_storage: 'denied',
-	// 				wait_for_update: 500,
-	// 			},
-	// 		],
-	// 	],
-	// },
+	gtag: {
+		id: process.env.GTAG_ID,
+		enabled: process.env.NODE_ENV === 'production',
+		loadingStrategy: 'async',
+		initCommands: [
+			[
+				'consent',
+				'default',
+				{
+					ad_user_data: 'denied',
+					ad_personalization: 'denied',
+					ad_storage: 'denied',
+					analytics_storage: 'denied',
+					wait_for_update: 500,
+				},
+			],
+		],
+	},
 	css: ['~/assets/css/design-tokens.css'],
 
 	components: ['~/components'],

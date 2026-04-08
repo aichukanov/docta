@@ -17,7 +17,7 @@ export default defineNuxtConfig({
 	},
 
 	gtag: {
-		id: process.env.GTAG_ID,
+		id: process.env.GTAG_ID || 'G-CN6LNPX9NF',
 		enabled: process.env.NODE_ENV === 'production',
 		loadingStrategy: 'async',
 		initCommands: [
@@ -52,15 +52,13 @@ export default defineNuxtConfig({
 		mailgunDomain: process.env.MAILGUN_DOMAIN || '',
 		mailgunFromEmail: process.env.MAILGUN_FROM_EMAIL || '',
 		mailgunFromName: process.env.MAILGUN_FROM_NAME || '',
+		dbHost: process.env.DB_HOST || '',
+		dbUser: process.env.DB_USER || '',
+		dbPassword: process.env.DB_PASSWORD || '',
 		public: {
 			telegramBotId: (process.env.TELEGRAM_BOT_TOKEN || '').split(':')[0],
 			mixpanelToken: process.env.MIXPANEL_TOKEN,
 			cloudflareToken: process.env.CLOUDFLARE_TOKEN,
-			connection: {
-				host: process.env.DB_HOST,
-				user: process.env.DB_USER,
-				password: process.env.DB_PASSWORD,
-			},
 		},
 	},
 

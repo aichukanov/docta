@@ -5,7 +5,7 @@ let pool: mysql.Pool | null = null;
 export async function getConnection() {
 	try {
 		const config = useRuntimeConfig();
-		const { host, user, password } = config.public.connection;
+		const { dbHost: host, dbUser: user, dbPassword: password } = config;
 
 		if (!pool) {
 			pool = mysql.createPool({

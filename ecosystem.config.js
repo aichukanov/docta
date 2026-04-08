@@ -9,7 +9,7 @@ module.exports = {
 			instances: 'max',
 			script: './.output/server/index.mjs',
 			env: {
-				...process.env,
+				MIXPANEL_TOKEN: process.env.MIXPANEL_TOKEN,
 				NODE_ENV: 'production',
 			},
 		},

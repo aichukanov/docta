@@ -6,7 +6,7 @@ const { state, handleConfirm, handleCancel } = useConfirm();
 
 <template>
 	<ConfirmDialog
-		:visible="state.visible"
+		v-model="state.visible"
 		:title="state.title"
 		:confirmText="state.confirmText"
 		:cancelText="state.cancelText"

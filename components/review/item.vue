@@ -141,7 +141,7 @@ const clinic = computed(() => {
 					v-if="review.provider && review.provider !== 'docta_me'"
 				>
 					<ReviewProviderIcon :provider="review.provider" />
-					{{ t(`Provider_${review.provider}`) }}
+					<span class="provider-name">{{ t(`Provider_${review.provider}`) }}</span>
 				</span>
 				<NuxtLink
 					v-if="clinic"
@@ -262,6 +262,7 @@ const clinic = computed(() => {
 .review-meta {
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
 	gap: var(--spacing-md);
 	font-size: var(--font-size-base);
 	color: var(--color-text-muted);
@@ -291,6 +292,12 @@ const clinic = computed(() => {
 
 .review-clinic:hover {
 	text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+	.provider-name {
+		display: none;
+	}
 }
 
 .review-replies {

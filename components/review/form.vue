@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { QuestionFilled } from '@element-plus/icons-vue';
 import reviewsI18n from '~/i18n/reviews';
 import { combineI18nMessages } from '~/i18n/utils';
 import type { Review } from '~/interfaces/review';
@@ -90,34 +89,23 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-	<el-dialog
-		v-model="visible"
-		:title="t('WriteReview')"
-		width="600px"
-		destroy-on-close
-	>
+	<AppDialog v-model="visible" :title="t('WriteReview')" width="560px">
 		<ReviewLoginPrompt v-if="!user" />
 
-		<el-form
-			v-else
-			@submit.prevent="handleSubmit"
-			label-position="top"
-		>
+		<form v-else class="review-form" @submit.prevent="handleSubmit">
 			<!-- Primary entity (read-only) -->
-			<el-form-item
-				:label="entityType === 'clinic' ? t('ReviewClinic') : t('ReviewDoctor')"
-			>
+			<div class="form-field">
+				<label class="form-label">
+					{{ entityType === 'clinic' ? t('ReviewClinic') : t('ReviewDoctor') }}
+				</label>
 				<span class="entity-name">{{ entityName }}</span>
-			</el-form-item>
+			</div>
 
 			<!-- Related entity selector -->
-			<el-form-item v-if="relatedEntities && relatedEntities.length > 0">
-				<template #label>
+			<div v-if="relatedEntities && relatedEntities.length > 0" class="form-field">
+				<label class="form-label">
 					{{ entityType === 'clinic' ? t('ReviewDoctor') : t('ReviewClinic') }}
-					<el-tooltip :content="relatedHint" placement="top">
-						<el-icon class="hint-icon"><QuestionFilled /></el-icon>
-					</el-tooltip>
-				</template>
+				</label>
 				<el-select
 					v-model="selectedRelatedId"
 					clearable
@@ -130,15 +118,17 @@ const handleSubmit = async () => {
 						:label="entity.name"
 					/>
 				</el-select>
-			</el-form-item>
+			</div>
 
 			<!-- Rating -->
-			<el-form-item :label="t('YourRating')">
+			<div class="form-field">
+				<label class="form-label">{{ t('YourRating') }}</label>
 				<ReviewRatingInput v-model="rating" />
-			</el-form-item>
+			</div>
 
 			<!-- Text -->
-			<el-form-item :label="t('YourReview')">
+			<div class="form-field">
+				<label class="form-label">{{ t('YourReview') }}</label>
 				<el-input
 					v-model="reviewText"
 					type="textarea"
@@ -147,7 +137,7 @@ const handleSubmit = async () => {
 					show-word-limit
 					:placeholder="t('ReviewPlaceholder')"
 				/>
-			</el-form-item>
+			</div>
 
 			<el-alert
 				v-if="error"
@@ -155,24 +145,35 @@ const handleSubmit = async () => {
 				:title="error"
 				:closable="false"
 				show-icon
-				style="margin-bottom: 16px"
 			/>
 			<el-button type="primary" native-type="submit" :loading="isSubmitting">
 				{{ t('SubmitReview') }}
 			</el-button>
-		</el-form>
-	</el-dialog>
+		</form>
+	</AppDialog>
 </template>
 
 <style scoped>
+.review-form {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+}
+
+.form-field {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.form-label {
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-medium);
+	color: var(--color-text-secondary);
+}
+
 .entity-name {
 	font-weight: var(--font-weight-semibold);
 	color: var(--color-text-primary);
-}
-
-.hint-icon {
-	margin-left: 4px;
-	color: var(--color-text-light);
-	cursor: help;
 }
 </style>

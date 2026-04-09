@@ -106,11 +106,10 @@ async function handleForgotPassword() {
 </script>
 
 <template>
-	<el-dialog
+	<AppDialog
 		v-model="show"
 		:title="userHasPassword ? t('changePasswordTitle') : t('setPasswordTitle')"
 		width="460px"
-		class="profile-dialog"
 	>
 		<template v-if="passwordErrors.length">
 			<ApiErrorAlert
@@ -181,21 +180,19 @@ async function handleForgotPassword() {
 		</template>
 
 		<template #footer>
-			<div class="profile-dialog__footer">
-				<el-button :disabled="isLoading" @click="show = false">
-					{{ t('cancel') }}
-				</el-button>
-				<el-button
-					v-if="!forgotPasswordSent"
-					type="primary"
-					:loading="isLoading"
-					@click="handleChangePassword"
-				>
-					{{ t('save') }}
-				</el-button>
-			</div>
+			<el-button :disabled="isLoading" @click="show = false">
+				{{ t('cancel') }}
+			</el-button>
+			<el-button
+				v-if="!forgotPasswordSent"
+				type="primary"
+				:loading="isLoading"
+				@click="handleChangePassword"
+			>
+				{{ t('save') }}
+			</el-button>
 		</template>
-	</el-dialog>
+	</AppDialog>
 </template>
 
 <style scoped>

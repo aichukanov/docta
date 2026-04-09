@@ -106,11 +106,10 @@ function getDeviceInfo(userAgent: string): string {
 
 	<!-- Full History Dialog -->
 	<ClientOnly>
-		<el-dialog
+		<AppDialog
 			v-model="showLoginHistoryDialog"
 			:title="t('loginHistory')"
 			width="640px"
-			class="profile-dialog"
 		>
 			<div
 				v-if="loginHistory?.history && loginHistory.history.length > 0"
@@ -145,7 +144,7 @@ function getDeviceInfo(userAgent: string): string {
 			<div v-else class="profile-empty">
 				<p>{{ t('loginHistoryEmpty') }}</p>
 			</div>
-		</el-dialog>
+		</AppDialog>
 	</ClientOnly>
 </template>
 

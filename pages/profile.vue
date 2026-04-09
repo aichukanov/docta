@@ -275,32 +275,28 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 		</div>
 
 		<ClientOnly>
-			<el-dialog
+			<AppDialog
 				v-model="showEditNameDialog"
 				:title="t('editNameTitle')"
-				:width="isMobile ? '92%' : '460px'"
-				class="profile-dialog"
-				destroy-on-close
+				width="460px"
 			>
 				<ProfileEditNameDialog
 					:initial-name="userName"
 					@updated="showEditNameDialog = false"
 					@cancel="showEditNameDialog = false"
 				/>
-			</el-dialog>
+			</AppDialog>
 
-			<el-dialog
+			<AppDialog
 				v-model="showEditEmailDialog"
 				:title="t('editEmailTitle')"
-				:width="isMobile ? '92%' : '460px'"
-				class="profile-dialog"
-				destroy-on-close
+				width="460px"
 			>
 				<ProfileEditEmailDialog
 					@updated="showEditEmailDialog = false"
 					@cancel="showEditEmailDialog = false"
 				/>
-			</el-dialog>
+			</AppDialog>
 		</ClientOnly>
 	</div>
 </template>

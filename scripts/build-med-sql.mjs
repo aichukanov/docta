@@ -70,7 +70,7 @@ console.log(`✓ ${subsPath} (${subs.length} substances)`);
 
 // --- Countries ---
 const countries = loadSingleJson('data/med-translations/countries.json');
-const countriesSql = generateSQL('med_countries', countries, 'Countries with translations (55 entries, 6 languages)');
+const countriesSql = generateSQL('countries', countries, 'Countries with translations (55 entries, 6 languages)');
 const countriesPath = resolve(ROOT, 'server/sql/migrations/insert-med-countries.sql');
 writeFileSync(countriesPath, countriesSql, 'utf-8');
 console.log(`✓ ${countriesPath} (${countries.length} countries)`);
@@ -82,9 +82,3 @@ const modesPath = resolve(ROOT, 'server/sql/migrations/insert-med-dispensing-mod
 writeFileSync(modesPath, modesSql, 'utf-8');
 console.log(`✓ ${modesPath} (${modes.length} modes)`);
 
-// --- Advertising manners ---
-const ads = loadSingleJson('data/med-translations/advertising-manners.json');
-const adsSql = generateSQL('med_advertising_manners', ads, 'Advertising manners with translations (2 entries, 6 languages)');
-const adsPath = resolve(ROOT, 'server/sql/migrations/insert-med-advertising-manners.sql');
-writeFileSync(adsPath, adsSql, 'utf-8');
-console.log(`✓ ${adsPath} (${ads.length} manners)`);

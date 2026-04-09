@@ -30,6 +30,10 @@ function loadAllBatches(dir) {
   return all;
 }
 
+function loadSingleJson(path) {
+  return JSON.parse(readFileSync(resolve(ROOT, path), 'utf-8'));
+}
+
 function generateSQL(table, items, header) {
   const lines = [
     `-- ${header}`,
@@ -63,3 +67,24 @@ const subsSql = generateSQL('med_substances', subs, 'Active substances (INN) wit
 const subsPath = resolve(ROOT, 'server/sql/migrations/insert-med-substances.sql');
 writeFileSync(subsPath, subsSql, 'utf-8');
 console.log(`✓ ${subsPath} (${subs.length} substances)`);
+
+// --- Countries ---
+const countries = loadSingleJson('data/med-translations/countries.json');
+const countriesSql = generateSQL('med_countries', countries, 'Countries with translations (55 entries, 6 languages)');
+const countriesPath = resolve(ROOT, 'server/sql/migrations/insert-med-countries.sql');
+writeFileSync(countriesPath, countriesSql, 'utf-8');
+console.log(`✓ ${countriesPath} (${countries.length} countries)`);
+
+// --- Dispensing modes ---
+const modes = loadSingleJson('data/med-translations/dispensing-modes.json');
+const modesSql = generateSQL('med_dispensing_modes', modes, 'Dispensing modes with translations (9 modes, 6 languages)');
+const modesPath = resolve(ROOT, 'server/sql/migrations/insert-med-dispensing-modes.sql');
+writeFileSync(modesPath, modesSql, 'utf-8');
+console.log(`✓ ${modesPath} (${modes.length} modes)`);
+
+// --- Advertising manners ---
+const ads = loadSingleJson('data/med-translations/advertising-manners.json');
+const adsSql = generateSQL('med_advertising_manners', ads, 'Advertising manners with translations (2 entries, 6 languages)');
+const adsPath = resolve(ROOT, 'server/sql/migrations/insert-med-advertising-manners.sql');
+writeFileSync(adsPath, adsSql, 'utf-8');
+console.log(`✓ ${adsPath} (${ads.length} manners)`);

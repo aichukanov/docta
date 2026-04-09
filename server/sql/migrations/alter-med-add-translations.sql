@@ -27,3 +27,39 @@ ALTER TABLE `med_pharma_forms`
   ADD COLUMN `name_ru`      VARCHAR(255) DEFAULT NULL AFTER `name_sr_cyrl`,
   ADD COLUMN `name_de`      VARCHAR(255) DEFAULT NULL AFTER `name_ru`,
   ADD COLUMN `name_tr`      VARCHAR(255) DEFAULT NULL AFTER `name_de`;
+
+-- ---------------------------------------------------------------------------
+-- med_countries: add translation columns
+-- ---------------------------------------------------------------------------
+
+ALTER TABLE `med_countries`
+  ADD COLUMN `name_en`      VARCHAR(100) DEFAULT NULL AFTER `name`,
+  ADD COLUMN `name_sr`      VARCHAR(100) DEFAULT NULL AFTER `name_en`,
+  ADD COLUMN `name_sr_cyrl` VARCHAR(100) DEFAULT NULL AFTER `name_sr`,
+  ADD COLUMN `name_ru`      VARCHAR(100) DEFAULT NULL AFTER `name_sr_cyrl`,
+  ADD COLUMN `name_de`      VARCHAR(100) DEFAULT NULL AFTER `name_ru`,
+  ADD COLUMN `name_tr`      VARCHAR(100) DEFAULT NULL AFTER `name_de`;
+
+-- ---------------------------------------------------------------------------
+-- med_dispensing_modes: add translation columns
+-- ---------------------------------------------------------------------------
+
+ALTER TABLE `med_dispensing_modes`
+  ADD COLUMN `name_en`      VARCHAR(255) DEFAULT NULL AFTER `name`,
+  ADD COLUMN `name_sr`      VARCHAR(255) DEFAULT NULL AFTER `name_en`,
+  ADD COLUMN `name_sr_cyrl` VARCHAR(255) DEFAULT NULL AFTER `name_sr`,
+  ADD COLUMN `name_ru`      VARCHAR(255) DEFAULT NULL AFTER `name_sr_cyrl`,
+  ADD COLUMN `name_de`      VARCHAR(255) DEFAULT NULL AFTER `name_ru`,
+  ADD COLUMN `name_tr`      VARCHAR(255) DEFAULT NULL AFTER `name_de`;
+
+-- ---------------------------------------------------------------------------
+-- med_advertising_manners: add translation columns
+-- ---------------------------------------------------------------------------
+
+ALTER TABLE `med_advertising_manners`
+  ADD COLUMN `name_en`      VARCHAR(255) DEFAULT NULL AFTER `name`,
+  ADD COLUMN `name_sr`      VARCHAR(255) DEFAULT NULL AFTER `name_en`,
+  ADD COLUMN `name_sr_cyrl` VARCHAR(255) DEFAULT NULL AFTER `name_sr`,
+  ADD COLUMN `name_ru`      VARCHAR(255) DEFAULT NULL AFTER `name_sr_cyrl`,
+  ADD COLUMN `name_de`      VARCHAR(255) DEFAULT NULL AFTER `name_ru`,
+  ADD COLUMN `name_tr`      VARCHAR(255) DEFAULT NULL AFTER `name_de`;

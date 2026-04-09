@@ -42,6 +42,7 @@ const { t } = useI18n({
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	gap: var(--spacing-md);
 	padding: var(--spacing-lg);
 	background: var(--color-bg-secondary);
@@ -51,6 +52,7 @@ const { t } = useI18n({
 .rating-info {
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
 	gap: var(--spacing-sm);
 }
 

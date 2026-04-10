@@ -12,6 +12,8 @@ import {
 	getSitemapFilters as getClinicSitemapFilters,
 	getClinicList,
 } from './filters/clinics';
+import { getMedicineList } from '~/server/api/medicines/list';
+import { getSitemapFilters as getMedicineSitemapFilters } from './filters/medicines';
 import { getConnection } from '~/server/common/db-mysql';
 
 export function menuItemToLinks(
@@ -187,6 +189,29 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		menuItemToLinks(`${SITE_URL}/clinics/${slug}/reviews`, {}, true),
 	);
 
+	// === Medicines ===
+	const { items: medicines } = await getMedicineList({ activeOnly: true });
+	const medicineFilters = await getMedicineSitemapFilters();
+
+	const medicinesPageLink: SitemapLink = menuItemToLinks('medicines');
+
+	const medicineLinks: SitemapLink[] = medicines.map((medicine) =>
+		menuItemToLinks(`${SITE_URL}/medicines/${medicine.slug}`, {}, true),
+	);
+
+	const medicineAtcGroupLinks: SitemapLink[] =
+		medicineFilters.atcGroupIds.map((atcGroupId) =>
+			menuItemToLinks('medicines', { atcGroupIds: atcGroupId }),
+		);
+
+	const medicineSubstanceAtcLinks: SitemapLink[] =
+		medicineFilters.substanceAtcCombinations.map((combo) =>
+			menuItemToLinks('medicines', {
+				substanceIds: combo.substanceId,
+				atcGroupIds: combo.atcGroupId,
+			}),
+		);
+
 	// === Clinics ===
 	const clinics = await getClinicList();
 	const clinicFilters = await getClinicSitemapFilters();
@@ -225,6 +250,11 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		...medicalServiceLinks,
 		...medicalServiceCategoryLinks,
 		...medicalServiceCategoryCityLinks,
+		// Medicines: страницы + ATC группа + вещество+ATC
+		medicinesPageLink,
+		...medicineLinks,
+		...medicineAtcGroupLinks,
+		...medicineSubstanceAtcLinks,
 		// Clinics: страницы + город
 		clinicsPageLink,
 		...clinicLinks,

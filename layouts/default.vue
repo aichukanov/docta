@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { getRegionalQuery } from '~/common/url-utils';
 import { PROJECT_CONTACTS, SITE_NAME } from '~/common/constants';
+import { getRegionalQuery } from '~/common/url-utils';
 
 const { isConsentGiven, isConsentDecided } = useCookieControl();
 const { t, locale } = useI18n();
@@ -28,7 +28,7 @@ const medicalServicesPageLink = computed(() => ({
 }));
 
 const medicationsPageLink = computed(() => ({
-	name: 'medications',
+	name: 'medicines',
 	query: getRegionalQuery(locale.value),
 }));
 

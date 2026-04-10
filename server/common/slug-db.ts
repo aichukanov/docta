@@ -4,6 +4,7 @@ const TABLE_TO_ENTITY_TYPE: Record<string, string> = {
 	medical_services: 'services',
 	lab_tests: 'labtests',
 	medications: 'medications',
+	med_medicines: 'medicines',
 };
 
 /**

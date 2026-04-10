@@ -1204,6 +1204,85 @@ export function buildDrugSchema(options: {
 }
 
 /**
+ * Build Drug schema for /medicines/ detail pages (CInMED register)
+ */
+export function buildMedicineSchema(options: {
+	siteUrl: string;
+	slug: string;
+	name: string;
+	locale: string;
+	pageTitle: string;
+	pageDescription?: string;
+	substances?: string[];
+	pharmaForm?: string | null;
+	strength?: string | null;
+	manufacturer?: string | null;
+	country?: string | null;
+	dispensingMode?: string | null;
+	atcCode?: string | null;
+	isActive?: boolean;
+	detailUrl?: string | null;
+}): SchemaOrg[] {
+	const medicineUrl = `${options.siteUrl}/medicines/${options.slug}`;
+
+	const medicineSchema: Record<string, unknown> = {
+		...buildEntitySchemaBase({
+			url: medicineUrl,
+			type: 'Drug',
+			fragment: 'drug',
+		}),
+		name: options.name,
+		description: options.pageDescription || undefined,
+	};
+
+	if (options.substances?.length) {
+		medicineSchema.activeIngredient = options.substances.join(', ');
+	}
+	if (options.pharmaForm) {
+		medicineSchema.dosageForm = options.pharmaForm;
+	}
+	if (options.strength) {
+		medicineSchema.doseSchedule = {
+			'@type': 'DoseSchedule',
+			doseValue: options.strength,
+		};
+	}
+	if (options.manufacturer) {
+		medicineSchema.manufacturer = {
+			'@type': 'Organization',
+			name: options.manufacturer,
+			...(options.country ? { address: { '@type': 'PostalAddress', addressCountry: options.country } } : {}),
+		};
+	}
+	if (options.dispensingMode) {
+		medicineSchema.prescriptionStatus = options.dispensingMode;
+	}
+	if (options.atcCode) {
+		medicineSchema.code = {
+			'@type': 'MedicalCode',
+			codingSystem: 'ATC',
+			codeValue: options.atcCode,
+		};
+	}
+	if (options.isActive != null) {
+		medicineSchema.legalStatus = options.isActive ? 'ActivelyMarketed' : 'WithdrawnFromMarket';
+	}
+	if (options.detailUrl) {
+		medicineSchema.sameAs = options.detailUrl;
+	}
+
+	const webPageSchema = buildWebPageSchema({
+		url: medicineUrl,
+		locale: options.locale,
+		name: options.pageTitle,
+		description: options.pageDescription,
+		mainEntityId: medicineSchema['@id'] as string,
+	});
+
+	return [webPageSchema, medicineSchema];
+}
+
+/**
  * Build MedicalProcedure schema for medical service pages
  */
 export function buildMedicalProcedureSchema(options: {

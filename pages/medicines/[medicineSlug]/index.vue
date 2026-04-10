@@ -1,6 +1,9 @@
 <script setup lang="ts">
-import { SITE_URL, OG_IMAGE } from '~/common/constants';
-import { buildBreadcrumbsSchema } from '~/common/schema-org-builders';
+import { OG_IMAGE, SITE_URL } from '~/common/constants';
+import {
+	buildBreadcrumbsSchema,
+	buildMedicineSchema,
+} from '~/common/schema-org-builders';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import medicineI18n from '~/i18n/medicine';
 import { combineI18nMessages } from '~/i18n/utils';
@@ -36,8 +39,8 @@ const isOTC = computed(() => {
 	return /bez|OTC|Без рецепта|Rezeptfrei|Reçetesiz/i.test(dm);
 });
 
-const substanceNames = computed(() =>
-	med.value?.substances?.map((s: any) => s.name).join(', ') || '',
+const substanceNames = computed(
+	() => med.value?.substances?.map((s: any) => s.name).join(', ') || '',
 );
 
 const pageTitle = computed(() => {
@@ -51,7 +54,10 @@ const pageDescription = computed(() => {
 	if (!isFound.value || !med.value) return '';
 	const sub = substanceNames.value;
 	if (sub && isOTC.value) {
-		return t('MedicineDescriptionOTC', { name: med.value.name, substance: sub });
+		return t('MedicineDescriptionOTC', {
+			name: med.value.name,
+			substance: sub,
+		});
 	}
 	if (sub) {
 		return t('MedicineDescriptionRx', { name: med.value.name, substance: sub });
@@ -81,6 +87,23 @@ watchEffect(() => {
 	if (med.value && isFound.value) {
 		const url = `${SITE_URL}/medicines/${med.value.slug}`;
 		schemaOrgStore.setSchemas([
+			...buildMedicineSchema({
+				siteUrl: SITE_URL,
+				slug: med.value.slug,
+				name: med.value.name,
+				locale: locale.value,
+				pageTitle: pageTitle.value,
+				pageDescription: pageDescription.value,
+				substances: med.value.substances?.map((s: any) => s.name),
+				pharmaForm: med.value.pharmaForm,
+				strength: med.value.strength,
+				manufacturer: med.value.manufacturer,
+				country: med.value.country,
+				dispensingMode: med.value.dispensingMode,
+				atcCode: med.value.atcCode,
+				isActive: med.value.isActive,
+				detailUrl: med.value.detailUrl,
+			}),
 			buildBreadcrumbsSchema(url, [
 				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
 				{ name: t('BreadcrumbMedicines'), url: `${SITE_URL}/medicines` },
@@ -119,7 +142,10 @@ const tabs = computed(() => {
 					<span class="badge" :class="isOTC ? 'badge-otc' : 'badge-rx'">
 						{{ isOTC ? t('OTC') : t('Prescription') }}
 					</span>
-					<span class="badge" :class="med.isActive ? 'badge-active' : 'badge-expired'">
+					<span
+						class="badge"
+						:class="med.isActive ? 'badge-active' : 'badge-expired'"
+					>
 						{{ med.isActive ? t('ActiveLicense') : t('ExpiredLicense') }}
 					</span>
 				</div>
@@ -134,7 +160,11 @@ const tabs = computed(() => {
 				:title="t('ActiveSubstance')"
 			>
 				<div class="substance-list">
-					<span v-for="sub in med.substances" :key="sub.id" class="substance-tag">
+					<span
+						v-for="sub in med.substances"
+						:key="sub.id"
+						class="substance-tag"
+					>
 						{{ sub.name }}
 					</span>
 				</div>
@@ -157,7 +187,12 @@ const tabs = computed(() => {
 					</div>
 					<div v-if="med.manufacturer" class="detail-row">
 						<span class="detail-label">{{ t('Manufacturer') }}</span>
-						<span>{{ med.manufacturer }}<template v-if="med.country">, {{ med.country }}</template></span>
+						<span
+							>{{ med.manufacturer
+							}}<template v-if="med.country"
+								>, {{ med.country }}</template
+							></span
+						>
 					</div>
 					<div v-if="med.dispensingMode" class="detail-row">
 						<span class="detail-label">{{ t('DispensingMode') }}</span>
@@ -173,7 +208,12 @@ const tabs = computed(() => {
 					</div>
 					<div v-if="med.authorizationDate" class="detail-row">
 						<span class="detail-label">{{ t('AuthorizationDate') }}</span>
-						<span>{{ new Date(med.authorizationDate).toLocaleDateString(locale === 'sr-cyrl' ? 'sr-Cyrl' : locale, { year: 'numeric', month: 'long', day: 'numeric' }) }}</span>
+						<span>{{
+							new Date(med.authorizationDate).toLocaleDateString(
+								locale === 'sr-cyrl' ? 'sr-Cyrl' : locale,
+								{ year: 'numeric', month: 'long', day: 'numeric' },
+							)
+						}}</span>
 					</div>
 				</div>
 			</EntityPageSection>
@@ -190,7 +230,10 @@ const tabs = computed(() => {
 					<NuxtLink
 						v-for="analog in med.analogs"
 						:key="analog.id"
-						:to="{ name: 'medicines-medicineSlug', params: { medicineSlug: analog.slug } }"
+						:to="{
+							name: 'medicines-medicineSlug',
+							params: { medicineSlug: analog.slug },
+						}"
 						class="analog-card"
 					>
 						<div class="analog-header">
@@ -198,14 +241,26 @@ const tabs = computed(() => {
 							<span
 								v-if="analog.dispensingMode"
 								class="badge"
-								:class="(/bez|OTC|Без рецепта/i).test(analog.dispensingMode) ? 'badge-otc' : 'badge-rx'"
+								:class="
+									/bez|OTC|Без рецепта/i.test(analog.dispensingMode)
+										? 'badge-otc'
+										: 'badge-rx'
+								"
 							>
-								{{ (/bez|OTC|Без рецепта/i).test(analog.dispensingMode) ? t('OTC') : t('Prescription') }}
+								{{
+									/bez|OTC|Без рецепта/i.test(analog.dispensingMode)
+										? t('OTC')
+										: t('Prescription')
+								}}
 							</span>
 						</div>
 						<span class="analog-details">
-							<template v-if="analog.pharmaForm">{{ analog.pharmaForm }}</template>
-							<template v-if="analog.strength">, {{ analog.strength }}</template>
+							<template v-if="analog.pharmaForm">{{
+								analog.pharmaForm
+							}}</template>
+							<template v-if="analog.strength"
+								>, {{ analog.strength }}</template
+							>
 						</span>
 						<span class="analog-meta">{{ analog.manufacturer }}</span>
 					</NuxtLink>
@@ -213,10 +268,11 @@ const tabs = computed(() => {
 			</EntityPageSection>
 
 			<!-- Source -->
-			<div v-if="med.detailUrl" class="medicine-source">
-				<a :href="med.detailUrl" target="_blank" rel="noopener">
+			<div class="medicine-source">
+				{{ t('SourceCInMED') }}
+				<!-- <a :href="med.detailUrl" target="_blank" rel="noopener">
 					{{ t('SourceCInMED') }} ↗
-				</a>
+				</a> -->
 			</div>
 		</template>
 	</EntityPage>
@@ -254,10 +310,22 @@ const tabs = computed(() => {
 	border-radius: 16px;
 }
 
-.badge-otc { background: #e8f5e9; color: #2e7d32; }
-.badge-rx { background: #fff3e0; color: #e65100; }
-.badge-active { background: #e3f2fd; color: #1565c0; }
-.badge-expired { background: #fce4ec; color: #c62828; }
+.badge-otc {
+	background: #e8f5e9;
+	color: #2e7d32;
+}
+.badge-rx {
+	background: #fff3e0;
+	color: #e65100;
+}
+.badge-active {
+	background: #e3f2fd;
+	color: #1565c0;
+}
+.badge-expired {
+	background: #fce4ec;
+	color: #c62828;
+}
 
 .substance-list {
 	display: flex;
@@ -365,7 +433,9 @@ const tabs = computed(() => {
 	a {
 		color: var(--color-text-tertiary);
 		text-decoration: none;
-		&:hover { color: var(--color-primary); }
+		&:hover {
+			color: var(--color-primary);
+		}
 	}
 }
 </style>

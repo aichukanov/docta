@@ -32,7 +32,7 @@ const medicalServicesPageLink = computed(() => ({
 }));
 
 const medicationsPageLink = computed(() => ({
-	name: 'medications',
+	name: 'medicines',
 	query: getRegionalQuery(locale.value),
 }));
 
@@ -110,7 +110,7 @@ const userDisplayName = computed(() => {
 					</NuxtLink>
 					<NuxtLink
 						class="app-header__nav-link"
-						:class="{ 'is-active': isActiveSection('medications') }"
+						:class="{ 'is-active': isActiveSection('medicines') }"
 						:to="medicationsPageLink"
 					>
 						<IconMedication class="nav-icon" />

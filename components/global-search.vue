@@ -6,7 +6,6 @@ import { combineI18nMessages } from '~/i18n/utils';
 import { getRegionalQuery } from '~/common/url-utils';
 import { getLocalizedName } from '~/common/utils';
 import type { DoctorData } from '~/interfaces/doctor';
-import type { MedicationData } from '~/interfaces/medication';
 import type { LabTestData } from '~/interfaces/lab-test';
 import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
 
@@ -131,7 +130,7 @@ const allFilteredSpecialties = ref<{ id: number; name: string }[]>([]);
 const allDoctors = ref<DoctorData[]>([]);
 const allFilteredClinics = ref<{ id: number; name: string }[]>([]);
 const allMedicalServices = ref<ClinicServiceWithPrices[]>([]);
-const allMedications = ref<MedicationData[]>([]);
+const allMedications = ref<{ id: number; slug: string; name: string }[]>([]);
 const allLabTests = ref<LabTestData[]>([]);
 
 // Текущий поисковый запрос для ссылок
@@ -148,11 +147,7 @@ const shownMedicalServices = computed(() =>
 		.slice(0, 5)
 		.map((s) => ({ id: s.id, slug: s.slug, name: s.name })),
 );
-const shownMedications = computed(() =>
-	allMedications.value
-		.slice(0, 5)
-		.map((m) => ({ id: m.id, slug: m.slug, name: m.name })),
-);
+const shownMedications = computed(() => allMedications.value.slice(0, 5));
 const shownLabTests = computed(() =>
 	allLabTests.value
 		.slice(0, 5)
@@ -239,7 +234,7 @@ async function searchEntities(query: string) {
 					body: { name: query, locale: locale.value },
 					signal,
 				}),
-				$fetch('/api/medications/list', {
+				$fetch('/api/medicines/list', {
 					method: 'POST',
 					body: { name: query, locale: locale.value },
 					signal,
@@ -348,8 +343,8 @@ function getMedicalServiceLink(slug: string) {
 
 function getMedicationLink(slug: string) {
 	return {
-		name: 'medications-medicationSlug',
-		params: { medicationSlug: slug },
+		name: 'medicines-medicineSlug',
+		params: { medicineSlug: slug },
 		query: getRegionalQuery(locale.value),
 	};
 }
@@ -386,7 +381,7 @@ function getMedicalServicesListLink() {
 
 function getMedicationsListLink() {
 	return {
-		name: 'medications',
+		name: 'medicines',
 		query: { name: currentQuery.value, ...getRegionalQuery(locale.value) },
 	};
 }

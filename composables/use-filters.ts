@@ -6,6 +6,7 @@ import {
 	validateClinicTypeIds,
 	validateCategoryIds,
 	validateServiceCategoryIds,
+	validateNonNegativeIntegerArray,
 } from '~/common/validation';
 
 const specialtyIds = ref<number[]>([]);
@@ -16,6 +17,10 @@ const serviceCategoryIds = ref<number[]>([]);
 const clinicTypeIds = ref<number[]>([]);
 const name = ref<string>('');
 const clinicIds = ref<number[]>([]);
+const atcGroupIds = ref<number[]>([]);
+const substanceIds = ref<number[]>([]);
+const pharmaFormIds = ref<number[]>([]);
+const manufacturerIds = ref<number[]>([]);
 
 const getRouteParams = () => {
 	return {
@@ -28,6 +33,10 @@ const getRouteParams = () => {
 			clinicTypeIds: clinicTypeIds.value,
 			name: name.value || undefined,
 			clinicIds: clinicIds.value,
+			atcGroupIds: atcGroupIds.value,
+			substanceIds: substanceIds.value,
+			pharmaFormIds: pharmaFormIds.value,
+			manufacturerIds: manufacturerIds.value,
 		},
 	};
 };
@@ -73,6 +82,30 @@ const updateFromRoute = (query: Record<string, string | string[]>) => {
 		? Array.isArray(query.clinicIds)
 			? query.clinicIds.map(Number)
 			: [+query.clinicIds]
+		: null;
+
+	const preparedAtcGroupIds = query.atcGroupIds
+		? Array.isArray(query.atcGroupIds)
+			? query.atcGroupIds.map(Number)
+			: [+query.atcGroupIds]
+		: null;
+
+	const preparedSubstanceIds = query.substanceIds
+		? Array.isArray(query.substanceIds)
+			? query.substanceIds.map(Number)
+			: [+query.substanceIds]
+		: null;
+
+	const preparedPharmaFormIds = query.pharmaFormIds
+		? Array.isArray(query.pharmaFormIds)
+			? query.pharmaFormIds.map(Number)
+			: [+query.pharmaFormIds]
+		: null;
+
+	const preparedManufacturerIds = query.manufacturerIds
+		? Array.isArray(query.manufacturerIds)
+			? query.manufacturerIds.map(Number)
+			: [+query.manufacturerIds]
 		: null;
 
 	const preparedName = query.name ? query.name : null;
@@ -149,6 +182,42 @@ const updateFromRoute = (query: Record<string, string | string[]>) => {
 		clinicIds.value = [];
 	}
 
+	if (
+		preparedAtcGroupIds &&
+		validateNonNegativeIntegerArray(preparedAtcGroupIds.map(String))
+	) {
+		atcGroupIds.value = preparedAtcGroupIds;
+	} else {
+		atcGroupIds.value = [];
+	}
+
+	if (
+		preparedSubstanceIds &&
+		validateNonNegativeIntegerArray(preparedSubstanceIds.map(String))
+	) {
+		substanceIds.value = preparedSubstanceIds;
+	} else {
+		substanceIds.value = [];
+	}
+
+	if (
+		preparedPharmaFormIds &&
+		validateNonNegativeIntegerArray(preparedPharmaFormIds.map(String))
+	) {
+		pharmaFormIds.value = preparedPharmaFormIds;
+	} else {
+		pharmaFormIds.value = [];
+	}
+
+	if (
+		preparedManufacturerIds &&
+		validateNonNegativeIntegerArray(preparedManufacturerIds.map(String))
+	) {
+		manufacturerIds.value = preparedManufacturerIds;
+	} else {
+		manufacturerIds.value = [];
+	}
+
 	if (preparedName) {
 		name.value = preparedName;
 	} else {
@@ -168,5 +237,9 @@ export const useFilters = () => {
 		clinicTypeIds,
 		clinicIds,
 		name,
+		atcGroupIds,
+		substanceIds,
+		pharmaFormIds,
+		manufacturerIds,
 	};
 };

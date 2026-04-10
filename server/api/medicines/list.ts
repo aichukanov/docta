@@ -39,11 +39,14 @@ export default defineEventHandler(
 	},
 );
 
-async function getMedicineList(
+export async function getMedicineList(
 	body: {
 		name?: string;
 		dispensingMode?: 'otc' | 'prescription' | 'all';
-		atcGroupId?: number;
+		atcGroupIds?: number[];
+		substanceIds?: number[];
+		pharmaFormIds?: number[];
+		manufacturerIds?: number[];
 		activeOnly?: boolean;
 		locale?: string;
 		page?: number;
@@ -57,6 +60,12 @@ async function getMedicineList(
 	const pageSize = LIST_PAGE_SIZE;
 	const page = Math.max(Number.isFinite(pageRaw) ? pageRaw : 1, 1);
 	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
+
+	const buildInPlaceholders = (values: Array<number | string>) => {
+		const arr = Array.isArray(values) ? values : [values];
+		queryParams.push(...arr);
+		return arr.map(() => '?').join(',');
+	};
 
 	// Active only (default: true)
 	if (body.activeOnly !== false) {
@@ -75,13 +84,35 @@ async function getMedicineList(
 	}
 
 	// ATC group filter
-	if (body.atcGroupId) {
-		whereFilters.push('m.atc_group_id = ?');
-		queryParams.push(body.atcGroupId);
+	if (body.atcGroupIds?.length) {
+		whereFilters.push(
+			`m.atc_group_id IN (${buildInPlaceholders(body.atcGroupIds)})`,
+		);
+	}
+
+	// Substance filter
+	if (body.substanceIds?.length) {
+		whereFilters.push(
+			`EXISTS (SELECT 1 FROM med_medicine_substances mms WHERE mms.medicine_id = m.id AND mms.substance_id IN (${buildInPlaceholders(body.substanceIds)}))`,
+		);
+	}
+
+	// Pharmaceutical form filter
+	if (body.pharmaFormIds?.length) {
+		whereFilters.push(
+			`m.pharmaceutical_form_id IN (${buildInPlaceholders(body.pharmaFormIds)})`,
+		);
+	}
+
+	// Manufacturer filter
+	if (body.manufacturerIds?.length) {
+		whereFilters.push(
+			`m.manufacturer_id IN (${buildInPlaceholders(body.manufacturerIds)})`,
+		);
 	}
 
 	// Name search — search in medicine name + substance names across all languages
-	if (body.name && validateName(body, 'api/medicines/list')) {
+	if (body.name && validateName(body as { name: unknown }, 'api/medicines/list')) {
 		const nameField = getLocalizedNameField(locale) || 'name_en';
 		const p = `%${body.name}%`;
 		whereFilters.push(`(

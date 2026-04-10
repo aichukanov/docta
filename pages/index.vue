@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { getRegionalQuery } from '~/common/url-utils';
 import {
-	SITE_URL,
-	SITE_NAME,
+	LEGAL_ENTITY,
 	OG_IMAGE,
 	PROJECT_CONTACTS,
-	LEGAL_ENTITY,
+	SITE_NAME,
+	SITE_URL,
 } from '~/common/constants';
+import { getRegionalQuery } from '~/common/url-utils';
 
 const { t, locale } = useI18n();
 
@@ -31,7 +31,7 @@ const medicalServicesPageLink = computed(() => ({
 }));
 
 const medicationsPageLink = computed(() => ({
-	name: 'medications',
+	name: 'medicines',
 	query: getRegionalQuery(locale.value),
 }));
 
@@ -200,8 +200,8 @@ schemaOrgStore.setSchemas([
 		"LabTestsDescription": "Information about laboratory tests and services",
 		"MedicalServices": "Medical Services",
 		"MedicalServicesDescription": "Healthcare services and procedures available in Montenegro",
-		"Medications": "Medications",
-		"MedicationsDescription": "Find pharmacies and where to buy medications",
+		"Medications": "Medicines",
+		"MedicationsDescription": "Official register of approved medicines: search by substance, check prescription status",
 		"AriaMainContent": "Main content",
 		"AriaHeroSection": "Welcome section",
 		"AriaNavigationCards": "Navigation to site sections",
@@ -223,7 +223,7 @@ schemaOrgStore.setSchemas([
 		"MedicalServices": "Медицинские услуги",
 		"MedicalServicesDescription": "Медицинские услуги и процедуры, доступные в Черногории",
 		"Medications": "Лекарства",
-		"MedicationsDescription": "Найдите аптеки и где купить лекарства",
+		"MedicationsDescription": "Реестр одобренных лекарств: поиск по веществу, проверка рецептурности, аналоги",
 		"AriaMainContent": "Основное содержимое",
 		"AriaHeroSection": "Приветственный раздел",
 		"AriaNavigationCards": "Навигация по разделам сайта",
@@ -244,8 +244,8 @@ schemaOrgStore.setSchemas([
 		"LabTestsDescription": "Informacije o laboratorijskim testovima i uslugama",
 		"MedicalServices": "Medicinske usluge",
 		"MedicalServicesDescription": "Medicinske usluge i procedure dostupne u Crnoj Gori",
-		"Medications": "Lekovi",
-		"MedicationsDescription": "Pronađite apoteke i gde kupiti lekove",
+		"Medications": "Lijekovi",
+		"MedicationsDescription": "Registar odobrenih lijekova: pretraga po supstanci, režim izdavanja, analozi",
 		"AriaMainContent": "Glavni sadržaj",
 		"AriaHeroSection": "Sekcija dobrodošlice",
 		"AriaNavigationCards": "Navigacija do sekcija sajta",
@@ -266,8 +266,8 @@ schemaOrgStore.setSchemas([
 		"LabTestsDescription": "Informationen über Labortests und Dienstleistungen",
 		"MedicalServices": "Medizinische Dienstleistungen",
 		"MedicalServicesDescription": "Medizinische Dienstleistungen und Verfahren in Montenegro",
-		"Medications": "Medikamente",
-		"MedicationsDescription": "Finden Sie Apotheken und wo Sie Medikamente kaufen können",
+		"Medications": "Arzneimittel",
+		"MedicationsDescription": "Register zugelassener Arzneimittel: Suche nach Wirkstoff, Rezeptpflicht, Analoga",
 		"AriaMainContent": "Hauptinhalt",
 		"AriaHeroSection": "Willkommensbereich",
 		"AriaNavigationCards": "Navigation zu Websitebereichen",
@@ -289,7 +289,7 @@ schemaOrgStore.setSchemas([
 		"MedicalServices": "Tıbbi Hizmetler",
 		"MedicalServicesDescription": "Karadağ'da mevcut tıbbi hizmetler ve prosedürler",
 		"Medications": "İlaçlar",
-		"MedicationsDescription": "Eczaneleri ve ilaçları nereden alacağınızı bulun",
+		"MedicationsDescription": "Onaylı ilaç kaydı: etken maddeye göre arama, reçete durumu, analoglar",
 		"AriaMainContent": "Ana içerik",
 		"AriaHeroSection": "Karşılama bölümü",
 		"AriaNavigationCards": "Site bölümlerine navigasyon",
@@ -310,8 +310,8 @@ schemaOrgStore.setSchemas([
 		"LabTestsDescription": "Информације о лабораторијским тестовима и услугама",
 		"MedicalServices": "Медицинске услуге",
 		"MedicalServicesDescription": "Медицинске услуге и процедуре доступне у Црној Гори",
-		"Medications": "Лекови",
-		"MedicationsDescription": "Пронађите аптеке и где купити лекове",
+		"Medications": "Лијекови",
+		"MedicationsDescription": "Регистар одобрених лијекова: претрага по супстанци, режим издавања, аналози",
 		"AriaMainContent": "Главни садржај",
 		"AriaHeroSection": "Секција добродошлице",
 		"AriaNavigationCards": "Навигација до секција сајта",

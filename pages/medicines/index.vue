@@ -14,7 +14,13 @@ const { t, locale } = useI18n({
 	messages: combineI18nMessages([breadcrumbI18n, medicineI18n]),
 });
 
-const { name, updateFromRoute, getRouteParams } = useFilters();
+const { name, atcGroupIds, substanceIds, pharmaFormIds, manufacturerIds, updateFromRoute, getRouteParams } = useFilters();
+
+const { data: filterOptions } = await useFetch('/api/medicines/filter-options', {
+	key: 'medicine-filter-options',
+	method: 'POST',
+	body: computed(() => ({ locale: locale.value })),
+});
 
 const route = useRoute();
 const pageNumber = ref(Number(route.query.page || 1));
@@ -35,6 +41,10 @@ watch(
 const filterList = computed(() => ({
 	name: name.value,
 	dispensingMode: dispensingMode.value,
+	atcGroupIds: atcGroupIds.value.length ? atcGroupIds.value : undefined,
+	substanceIds: substanceIds.value.length ? substanceIds.value : undefined,
+	pharmaFormIds: pharmaFormIds.value.length ? pharmaFormIds.value : undefined,
+	manufacturerIds: manufacturerIds.value.length ? manufacturerIds.value : undefined,
 	activeOnly: true,
 	locale: locale.value,
 	page: pageNumber.value,
@@ -55,11 +65,65 @@ const { pending: isLoading, data: medicinesList } = await useFetch(
 	},
 );
 
-const pageTitleWithCount = computed(() => {
-	return `${t('Medicines')} (${medicinesList.value?.totalCount || 0})`;
+const getFilterLabel = (items: { value: number; label: string }[], ids: number[]) => {
+	if (ids.length !== 1) return null;
+	return items.find((item) => item.value === ids[0])?.label || null;
+};
+
+const pageTitle = computed(() => {
+	const opts = filterOptions.value;
+	const substanceLabel = getFilterLabel(opts?.substances || [], substanceIds.value);
+	const isOtc = dispensingMode.value === 'otc';
+	const isRx = dispensingMode.value === 'prescription';
+
+	// Base title: dispensing mode ± substance (natural phrasing)
+	let base: string;
+	if (substanceLabel) {
+		if (isOtc) base = t('TitleOTCSubstance', { substance: substanceLabel });
+		else if (isRx) base = t('TitleRxSubstance', { substance: substanceLabel });
+		else base = t('TitleSubstance', { substance: substanceLabel });
+	} else if (isOtc) {
+		base = t('TitleOTC');
+	} else if (isRx) {
+		base = t('TitleRx');
+	} else {
+		base = t('Medicines');
+	}
+
+	// Additional filter suffixes
+	const suffixes: string[] = [];
+	const atcLabel = getFilterLabel(opts?.atcGroups || [], atcGroupIds.value);
+	if (atcLabel) suffixes.push(atcLabel);
+	const formLabel = getFilterLabel(opts?.pharmaForms || [], pharmaFormIds.value);
+	if (formLabel) suffixes.push(formLabel);
+	const mfgLabel = getFilterLabel(opts?.manufacturers || [], manufacturerIds.value);
+	if (mfgLabel) suffixes.push(mfgLabel);
+
+	if (suffixes.length > 0) {
+		return `${base} — ${suffixes.join(' — ')}`;
+	}
+	return base;
 });
 
-const pageDescription = computed(() => t('MedicinesDescription'));
+const pageTitleWithCount = computed(() => {
+	return `${pageTitle.value} (${medicinesList.value?.totalCount || 0})`;
+});
+
+const isFiltered = computed(() => {
+	return !!name.value || dispensingMode.value !== 'all' ||
+		atcGroupIds.value.length > 0 || substanceIds.value.length > 0 ||
+		pharmaFormIds.value.length > 0 || manufacturerIds.value.length > 0;
+});
+
+const pageDescription = computed(() => {
+	if (isFiltered.value) {
+		return t('MedicinesDescriptionFiltered', {
+			count: medicinesList.value?.totalCount || 0,
+			title: pageTitle.value,
+		});
+	}
+	return t('MedicinesDescription');
+});
 
 const schemaOrgStore = useSchemaOrgStore();
 
@@ -75,10 +139,6 @@ useSeoMeta({
 	twitterImage: OG_IMAGE,
 });
 
-const isFiltered = computed(() => {
-	return !!name.value || dispensingMode.value !== 'all';
-});
-
 watchEffect(() => {
 	if (medicinesList.value) {
 		const pageUrl = `${SITE_URL}${route.fullPath}`;
@@ -87,7 +147,7 @@ watchEffect(() => {
 				siteUrl: SITE_URL,
 				pageUrl,
 				locale: locale.value,
-				title: t('Medicines'),
+				title: pageTitle.value,
 				description: pageDescription.value,
 				totalCount: medicinesList.value.totalCount,
 				items: medicinesList.value.items,
@@ -138,6 +198,10 @@ watchEffect(() => {
 					@click="dispensingMode = 'prescription'"
 				>{{ t('FilterPrescription') }}</button>
 			</div>
+			<FilterMedicineAtcGroupSelect v-model:value="atcGroupIds" :items="filterOptions?.atcGroups || []" />
+			<FilterMedicineSubstanceSelect v-model:value="substanceIds" :items="filterOptions?.substances || []" />
+			<FilterMedicinePharmaFormSelect v-model:value="pharmaFormIds" :items="filterOptions?.pharmaForms || []" />
+			<FilterMedicineManufacturerSelect v-model:value="manufacturerIds" :items="filterOptions?.manufacturers || []" />
 		</template>
 
 		<template #card="{ item }">

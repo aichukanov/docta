@@ -37,6 +37,16 @@ const aboutPageLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
+const privacyPageLink = computed(() => ({
+	name: 'privacy',
+	query: getRegionalQuery(locale.value),
+}));
+
+const termsPageLink = computed(() => ({
+	name: 'terms',
+	query: getRegionalQuery(locale.value),
+}));
+
 const svadLink = computed(() => {
 	const url = new URL('https://svad.net/');
 	const svadLocale = locale.value === 'sr-cyrl' ? 'sr' : locale.value;
@@ -114,6 +124,18 @@ watch(
 						>
 							{{ t('AboutProject') }}
 						</NuxtLink>
+						<NuxtLink
+							class="footer-link footer-link--muted"
+							:to="privacyPageLink"
+						>
+							{{ t('PrivacyPolicy') }}
+						</NuxtLink>
+						<NuxtLink
+							class="footer-link footer-link--muted"
+							:to="termsPageLink"
+						>
+							{{ t('TermsOfService') }}
+						</NuxtLink>
 					</nav>
 
 					<div class="footer-contacts">
@@ -190,7 +212,9 @@ watch(
 		"NewsChannel": "Our news channel on Telegram",
 		"AboutProject": "About",
 		"SvadLinkLabel": "svad.net",
-		"SvadLinkNote": "Aggregator of Montenegrin online shop products"
+		"SvadLinkNote": "Aggregator of Montenegrin online shop products",
+		"PrivacyPolicy": "Privacy",
+		"TermsOfService": "Terms"
 	},
 	"ru": {
 		"FooterNavLabel": "Навигация в футере",
@@ -208,7 +232,9 @@ watch(
 		"NewsChannel": "Наш канал новостей в Telegram",
 		"AboutProject": "О проекте",
 		"SvadLinkLabel": "svad.net",
-		"SvadLinkNote": "Агрегатор товаров из онлайн-магазинов Черногории"
+		"SvadLinkNote": "Агрегатор товаров из онлайн-магазинов Черногории",
+		"PrivacyPolicy": "Конфиденциальность",
+		"TermsOfService": "Условия"
 	},
 	"sr": {
 		"FooterNavLabel": "Navigacija u podnožju",
@@ -226,7 +252,9 @@ watch(
 		"NewsChannel": "Naš kanal za vesti na Telegramu",
 		"AboutProject": "O projektu",
 		"SvadLinkLabel": "svad.net",
-		"SvadLinkNote": "Agregator proizvoda iz online prodavnica Crne Gore"
+		"SvadLinkNote": "Agregator proizvoda iz online prodavnica Crne Gore",
+		"PrivacyPolicy": "Privatnost",
+		"TermsOfService": "Uslovi"
 	},
 	"sr-cyrl": {
 		"FooterNavLabel": "Навигација у подножју",
@@ -244,7 +272,9 @@ watch(
 		"NewsChannel": "Наш канал за вести на Телеграму",
 		"AboutProject": "О пројекту",
 		"SvadLinkLabel": "svad.net",
-		"SvadLinkNote": "Агрегатор производа из онлајн продавница Црне Горе"
+		"SvadLinkNote": "Агрегатор производа из онлајн продавница Црне Горе",
+		"PrivacyPolicy": "Приватност",
+		"TermsOfService": "Услови"
 	},
 	"de": {
 		"FooterNavLabel": "Footer-Navigation",
@@ -262,7 +292,9 @@ watch(
 		"NewsChannel": "Unser Nachrichtenkanal auf Telegram",
 		"AboutProject": "Über",
 		"SvadLinkLabel": "svad.net",
-		"SvadLinkNote": "Aggregator für Produkte aus Online-Shops in Montenegro"
+		"SvadLinkNote": "Aggregator für Produkte aus Online-Shops in Montenegro",
+		"PrivacyPolicy": "Datenschutz",
+		"TermsOfService": "Nutzungsbedingungen"
 	},
 	"tr": {
 		"FooterNavLabel": "Altbilgi gezinme",
@@ -280,7 +312,9 @@ watch(
 		"NewsChannel": "Telegram'daki haber kanalımız",
 		"AboutProject": "Hakkında",
 		"SvadLinkLabel": "svad.net",
-		"SvadLinkNote": "Karadağ çevrimiçi mağaza ürünleri toplayıcısı"
+		"SvadLinkNote": "Karadağ çevrimiçi mağaza ürünleri toplayıcısı",
+		"PrivacyPolicy": "Gizlilik",
+		"TermsOfService": "Koşullar"
 	}
 }
 </i18n>

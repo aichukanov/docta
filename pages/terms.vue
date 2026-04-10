@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { SITE_URL, OG_IMAGE, PROJECT_CONTACTS } from '~/common/constants';
+import {
+	SITE_URL,
+	OG_IMAGE,
+	PROJECT_CONTACTS,
+	LEGAL_ENTITY,
+} from '~/common/constants';
 
 const { t } = useI18n();
 const { t: $t } = useI18n({ useScope: 'global' });
@@ -33,6 +38,11 @@ useSeoMeta({
 				<section class="terms-card terms-card--highlight">
 					<h2 class="terms-card__title">{{ t('WhatWeAreTitle') }}</h2>
 					<p class="terms-card__text">{{ t('WhatWeAreText') }}</p>
+				</section>
+
+				<section class="terms-card">
+					<h2 class="terms-card__title">{{ t('OperatorTitle') }}</h2>
+					<p class="terms-card__text">{{ t('OperatorText', { registrationNumber: LEGAL_ENTITY.registrationNumber }) }}</p>
 				</section>
 
 				<section class="terms-card terms-card--warning">
@@ -271,7 +281,9 @@ useSeoMeta({
 		"ChangesTitle": "Changes to terms",
 		"ChangesText": "We may update these terms at any time. Continued use of the service after changes constitutes acceptance of the new terms. We will notify you of significant changes.",
 		"ContactTitle": "Questions?",
-		"ContactText": "If you have questions about these terms, contact us:"
+		"ContactText": "If you have questions about these terms, contact us:",
+		"OperatorTitle": "Service operator",
+		"OperatorText": "docta.me is operated by an Individual Entrepreneur registered in the Republic of Armenia (state registration number: {registrationNumber})."
 	},
 	"ru": {
 		"TermsPageTitle": "Условия использования",
@@ -298,7 +310,9 @@ useSeoMeta({
 		"ChangesTitle": "Изменения условий",
 		"ChangesText": "Мы можем обновлять эти условия в любое время. Продолжение использования сервиса после изменений означает принятие новых условий. Мы уведомим вас о существенных изменениях.",
 		"ContactTitle": "Вопросы?",
-		"ContactText": "Если есть вопросы по условиям использования, свяжитесь с нами:"
+		"ContactText": "Если есть вопросы по условиям использования, свяжитесь с нами:",
+		"OperatorTitle": "Оператор сервиса",
+		"OperatorText": "Сервис docta.me управляется индивидуальным предпринимателем, зарегистрированным в Республике Армения (ОГРН: {registrationNumber})."
 	},
 	"sr": {
 		"TermsPageTitle": "Uslovi korištenja",
@@ -325,7 +339,9 @@ useSeoMeta({
 		"ChangesTitle": "Promjene uslova",
 		"ChangesText": "Možemo ažurirati ove uslove u bilo koje vrijeme. Nastavak korištenja servisa nakon promjena znači prihvatanje novih uslova. Obavijestićemo vas o značajnim promjenama.",
 		"ContactTitle": "Pitanja?",
-		"ContactText": "Ako imate pitanja o ovim uslovima, kontaktirajte nas:"
+		"ContactText": "Ako imate pitanja o ovim uslovima, kontaktirajte nas:",
+		"OperatorTitle": "Operater servisa",
+		"OperatorText": "Servis docta.me vodi individualni preduzetnik registrovan u Republici Jermeniji (registracioni broj: {registrationNumber})."
 	},
 	"de": {
 		"TermsPageTitle": "Nutzungsbedingungen",
@@ -352,7 +368,9 @@ useSeoMeta({
 		"ChangesTitle": "Änderungen der Bedingungen",
 		"ChangesText": "Wir können diese Bedingungen jederzeit aktualisieren. Die weitere Nutzung des Dienstes nach Änderungen gilt als Annahme der neuen Bedingungen. Wir werden Sie über wesentliche Änderungen informieren.",
 		"ContactTitle": "Fragen?",
-		"ContactText": "Wenn Sie Fragen zu diesen Bedingungen haben, kontaktieren Sie uns:"
+		"ContactText": "Wenn Sie Fragen zu diesen Bedingungen haben, kontaktieren Sie uns:",
+		"OperatorTitle": "Dienstanbieter",
+		"OperatorText": "docta.me wird von einem Einzelunternehmer betrieben, registriert in der Republik Armenien (Registrierungsnummer: {registrationNumber})."
 	},
 	"tr": {
 		"TermsPageTitle": "Kullanım Koşulları",
@@ -379,7 +397,9 @@ useSeoMeta({
 		"ChangesTitle": "Koşullarda değişiklikler",
 		"ChangesText": "Bu koşulları istediğimiz zaman güncelleyebiliriz. Değişikliklerden sonra hizmeti kullanmaya devam etmeniz yeni koşulları kabul ettiğiniz anlamına gelir. Önemli değişiklikler hakkında sizi bilgilendireceğiz.",
 		"ContactTitle": "Sorular?",
-		"ContactText": "Bu koşullar hakkında sorularınız varsa bizimle iletişime geçin:"
+		"ContactText": "Bu koşullar hakkında sorularınız varsa bizimle iletişime geçin:",
+		"OperatorTitle": "Hizmet sağlayıcı",
+		"OperatorText": "docta.me, Ermenistan Cumhuriyeti'nde kayıtlı bireysel girişimci tarafından işletilmektedir (kayıt numarası: {registrationNumber})."
 	}
 }
 </i18n>

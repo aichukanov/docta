@@ -3,6 +3,7 @@ import { getRegionalQuery } from '~/common/url-utils';
 import { buildBreadcrumbsSchema } from '~/common/schema-org-builders';
 import {
 	PROJECT_CONTACTS,
+	LEGAL_ENTITY,
 	SITE_URL,
 	SITE_NAME,
 	OG_IMAGE,
@@ -56,6 +57,13 @@ watchEffect(() => {
 				'@type': 'MedicalBusiness',
 				'name': SITE_NAME,
 				'url': SITE_URL,
+				'email': PROJECT_CONTACTS.email,
+				'sameAs': [PROJECT_CONTACTS.telegram],
+				'identifier': {
+					'@type': 'PropertyValue',
+					'name': 'State Registration Number (Armenia)',
+					'value': LEGAL_ENTITY.registrationNumber,
+				},
 			},
 		},
 		buildBreadcrumbsSchema(aboutUrl.value, [
@@ -144,6 +152,11 @@ const breadcrumbItems = computed(() => [
 					<p class="about-card__text">{{ t('ResponsibilityP2') }}</p>
 				</section>
 
+				<section class="about-card">
+					<h2 class="about-card__title">{{ t('LegalTitle') }}</h2>
+					<p class="about-card__text">{{ t('LegalText', { registrationNumber: LEGAL_ENTITY.registrationNumber }) }}</p>
+				</section>
+
 				<section class="about-card about-card--contact">
 					<h2 class="about-card__title">{{ t('ContactTitle') }}</h2>
 					<p class="about-card__text">{{ t('ContactIntro') }}</p>
@@ -207,7 +220,9 @@ const breadcrumbItems = computed(() => [
 		"TelegramChannel": "Telegram channel",
 		"AriaMainContent": "Main content",
 		"AriaBreadcrumbs": "Page navigation path",
-		"AriaAboutContent": "Information about the project"
+		"AriaAboutContent": "Information about the project",
+		"LegalTitle": "Legal information",
+		"LegalText": "docta.me is operated by an Individual Entrepreneur registered in the Republic of Armenia (state registration number: {registrationNumber})."
 	},
 	"ru": {
 		"Title": "О проекте",
@@ -243,7 +258,9 @@ const breadcrumbItems = computed(() => [
 		"TelegramChannel": "Telegram-канал",
 		"AriaMainContent": "Основное содержимое",
 		"AriaBreadcrumbs": "Навигационная цепочка",
-		"AriaAboutContent": "Информация о проекте"
+		"AriaAboutContent": "Информация о проекте",
+		"LegalTitle": "Юридическая информация",
+		"LegalText": "Сервис docta.me управляется индивидуальным предпринимателем, зарегистрированным в Республике Армения (ОГРН: {registrationNumber})."
 	},
 	"sr": {
 		"Title": "O projektu",
@@ -279,7 +296,9 @@ const breadcrumbItems = computed(() => [
 		"TelegramChannel": "Telegram kanal",
 		"AriaMainContent": "Glavni sadržaj",
 		"AriaBreadcrumbs": "Navigaciona putanja",
-		"AriaAboutContent": "Informacije o projektu"
+		"AriaAboutContent": "Informacije o projektu",
+		"LegalTitle": "Pravne informacije",
+		"LegalText": "Servis docta.me vodi individualni preduzetnik registrovan u Republici Jermeniji (registracioni broj: {registrationNumber})."
 	},
 	"sr-cyrl": {
 		"Title": "О пројекту",
@@ -315,7 +334,9 @@ const breadcrumbItems = computed(() => [
 		"TelegramChannel": "Telegram канал",
 		"AriaMainContent": "Главни садржај",
 		"AriaBreadcrumbs": "Навигациона путања",
-		"AriaAboutContent": "Информације о пројекту"
+		"AriaAboutContent": "Информације о пројекту",
+		"LegalTitle": "Правне информације",
+		"LegalText": "Сервис docta.me води индивидуални предузетник регистрован у Републици Јерменији (регистрациони број: {registrationNumber})."
 	},
 	"de": {
 		"Title": "Über das Projekt",
@@ -351,7 +372,9 @@ const breadcrumbItems = computed(() => [
 		"TelegramChannel": "Telegram-Kanal",
 		"AriaMainContent": "Hauptinhalt",
 		"AriaBreadcrumbs": "Navigationspfad",
-		"AriaAboutContent": "Informationen über das Projekt"
+		"AriaAboutContent": "Informationen über das Projekt",
+		"LegalTitle": "Rechtliche Informationen",
+		"LegalText": "docta.me wird von einem Einzelunternehmer betrieben, der in der Republik Armenien registriert ist (Registrierungsnummer: {registrationNumber})."
 	},
 	"tr": {
 		"Title": "Proje hakkında",
@@ -387,7 +410,9 @@ const breadcrumbItems = computed(() => [
 		"TelegramChannel": "Telegram kanalı",
 		"AriaMainContent": "Ana içerik",
 		"AriaBreadcrumbs": "Navigasyon yolu",
-		"AriaAboutContent": "Proje hakkında bilgi"
+		"AriaAboutContent": "Proje hakkında bilgi",
+		"LegalTitle": "Yasal bilgiler",
+		"LegalText": "docta.me, Ermenistan Cumhuriyeti'nde kayıtlı bireysel girişimci tarafından işletilmektedir (kayıt numarası: {registrationNumber})."
 	}
 }
 </i18n>

@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { SITE_URL, OG_IMAGE, PROJECT_CONTACTS } from '~/common/constants';
+import {
+	SITE_URL,
+	OG_IMAGE,
+	PROJECT_CONTACTS,
+	LEGAL_ENTITY,
+} from '~/common/constants';
 
 const { t } = useI18n();
 const { t: $t } = useI18n({ useScope: 'global' });
@@ -30,6 +35,10 @@ useSeoMeta({
 			</header>
 
 			<article class="privacy-page__grid">
+				<section class="privacy-card">
+					<h2 class="privacy-card__title">{{ t('DataControllerTitle') }}</h2>
+					<p class="privacy-card__text">{{ t('DataControllerText', { registrationNumber: LEGAL_ENTITY.registrationNumber }) }}</p>
+				</section>
 				<section class="privacy-card">
 					<h2 class="privacy-card__title">{{ t('WhatWeCollectTitle') }}</h2>
 					<p class="privacy-card__text">{{ t('WhatWeCollectText') }}</p>
@@ -289,7 +298,9 @@ useSeoMeta({
 		"YourRightsTitle": "Your rights",
 		"YourRightsText": "You have the right to access, correct, or delete your personal data at any time. You can also request a copy of all data we have about you.",
 		"QuestionsTitle": "Questions?",
-		"QuestionsText": "If you have questions about privacy or your data, contact us:"
+		"QuestionsText": "If you have questions about privacy or your data, contact us:",
+		"DataControllerTitle": "Data controller",
+		"DataControllerText": "The data controller for docta.me is an Individual Entrepreneur registered in the Republic of Armenia (state registration number: {registrationNumber}). For any data-related inquiries, contact us at contact{'@'}svad.net."
 	},
 	"ru": {
 		"PrivacyPageTitle": "Политика конфиденциальности",
@@ -320,7 +331,9 @@ useSeoMeta({
 		"YourRightsTitle": "Ваши права",
 		"YourRightsText": "Вы имеете право на доступ, исправление или удаление ваших личных данных в любое время. Вы также можете запросить копию всех данных о вас.",
 		"QuestionsTitle": "Вопросы?",
-		"QuestionsText": "Если есть вопросы о конфиденциальности или ваших данных, свяжитесь с нами:"
+		"QuestionsText": "Если есть вопросы о конфиденциальности или ваших данных, свяжитесь с нами:",
+		"DataControllerTitle": "Оператор данных",
+		"DataControllerText": "Оператором персональных данных на docta.me является индивидуальный предприниматель, зарегистрированный в Республике Армения (ОГРН: {registrationNumber}). По вопросам обработки данных: contact{'@'}svad.net."
 	},
 	"sr": {
 		"PrivacyPageTitle": "Politika privatnosti",
@@ -351,7 +364,9 @@ useSeoMeta({
 		"YourRightsTitle": "Vaša prava",
 		"YourRightsText": "Imate pravo na pristup, ispravku ili brisanje vaših ličnih podataka u bilo koje vrijeme. Takođe možete zatražiti kopiju svih podataka o vama.",
 		"QuestionsTitle": "Pitanja?",
-		"QuestionsText": "Ako imate pitanja o privatnosti ili vašim podacima, kontaktirajte nas:"
+		"QuestionsText": "Ako imate pitanja o privatnosti ili vašim podacima, kontaktirajte nas:",
+		"DataControllerTitle": "Kontrolor podataka",
+		"DataControllerText": "Kontrolor podataka za docta.me je individualni preduzetnik registrovan u Republici Jermeniji (registracioni broj: {registrationNumber}). Za pitanja u vezi sa podacima: contact{'@'}svad.net."
 	},
 	"de": {
 		"PrivacyPageTitle": "Datenschutzerklärung",
@@ -382,7 +397,9 @@ useSeoMeta({
 		"YourRightsTitle": "Ihre Rechte",
 		"YourRightsText": "Sie haben jederzeit das Recht auf Zugang, Berichtigung oder Löschung Ihrer persönlichen Daten. Sie können auch eine Kopie aller Daten über Sie anfordern.",
 		"QuestionsTitle": "Fragen?",
-		"QuestionsText": "Wenn Sie Fragen zum Datenschutz oder Ihren Daten haben, kontaktieren Sie uns:"
+		"QuestionsText": "Wenn Sie Fragen zum Datenschutz oder Ihren Daten haben, kontaktieren Sie uns:",
+		"DataControllerTitle": "Datenverantwortlicher",
+		"DataControllerText": "Der Datenverantwortliche für docta.me ist ein Einzelunternehmer, registriert in der Republik Armenien (Registrierungsnummer: {registrationNumber}). Bei Fragen zu Ihren Daten: contact{'@'}svad.net."
 	},
 	"tr": {
 		"PrivacyPageTitle": "Gizlilik Politikası",
@@ -413,7 +430,9 @@ useSeoMeta({
 		"YourRightsTitle": "Haklarınız",
 		"YourRightsText": "Kişisel verilerinize istediğiniz zaman erişme, düzeltme veya silme hakkınız var. Ayrıca hakkınızdaki tüm verilerin bir kopyasını talep edebilirsiniz.",
 		"QuestionsTitle": "Sorular?",
-		"QuestionsText": "Gizlilik veya verileriniz hakkında sorularınız varsa, bizimle iletişime geçin:"
+		"QuestionsText": "Gizlilik veya verileriniz hakkında sorularınız varsa, bizimle iletişime geçin:",
+		"DataControllerTitle": "Veri sorumlusu",
+		"DataControllerText": "docta.me için veri sorumlusu, Ermenistan Cumhuriyeti'nde kayıtlı bireysel girişimcidir (kayıt numarası: {registrationNumber}). Veri ile ilgili sorularınız için: contact{'@'}svad.net."
 	}
 }
 </i18n>

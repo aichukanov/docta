@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
-import { SITE_URL, SITE_NAME, OG_IMAGE } from '~/common/constants';
+import {
+	SITE_URL,
+	SITE_NAME,
+	OG_IMAGE,
+	PROJECT_CONTACTS,
+	LEGAL_ENTITY,
+} from '~/common/constants';
 
 const { t, locale } = useI18n();
 
@@ -70,9 +76,21 @@ schemaOrgStore.setSchemas([
 		'name': SITE_NAME,
 		'url': SITE_URL,
 		'description': t('MainPageDescription'),
+		'email': PROJECT_CONTACTS.email,
+		'sameAs': [PROJECT_CONTACTS.telegram],
 		'address': {
 			'@type': 'PostalAddress',
 			'addressCountry': 'ME',
+		},
+		'identifier': {
+			'@type': 'PropertyValue',
+			'name': 'State Registration Number (Armenia)',
+			'value': LEGAL_ENTITY.registrationNumber,
+		},
+		'contactPoint': {
+			'@type': 'ContactPoint',
+			'email': PROJECT_CONTACTS.email,
+			'contactType': 'customer service',
 		},
 	},
 ]);

@@ -37,6 +37,12 @@ export const PROJECT_CONTACTS = {
 	telegram: 'https://t.me/svad_net',
 };
 
+// Юридическая информация (ИП, Армения)
+export const LEGAL_ENTITY = {
+	registrationNumber: '286.1553510',
+	country: 'Armenia',
+};
+
 // Размер страницы для списков
 export const LIST_PAGE_SIZE = 20;
 

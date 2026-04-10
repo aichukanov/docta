@@ -1,5 +1,5 @@
 -- ATC therapeutic groups with translations (14 groups, 6 languages)
--- Generated: 2026-04-09T17:12:25.356Z
+-- Generated: 2026-04-10T07:24:41.450Z
 -- Source: data/med-translations/atc-groups.json
 
 SET NAMES utf8mb4;

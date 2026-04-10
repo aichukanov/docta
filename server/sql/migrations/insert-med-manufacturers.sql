@@ -1,5 +1,5 @@
 -- Manufacturers (423 companies)
--- Generated: 2026-04-09T17:12:25.402Z
+-- Generated: 2026-04-10T07:24:41.498Z
 
 SET NAMES utf8mb4;
 

@@ -1,5 +1,5 @@
 -- Active substances (INN) with translations (932 substances, 6 languages)
--- Generated: 2026-04-09T17:12:25.348Z
+-- Generated: 2026-04-10T07:24:41.444Z
 -- Source: data/med-translations/
 
 SET NAMES utf8mb4;

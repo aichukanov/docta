@@ -1,5 +1,5 @@
 -- Authorization holders (46 legal entities in Montenegro)
--- Generated: 2026-04-09T17:12:25.388Z
+-- Generated: 2026-04-10T07:24:41.484Z
 
 SET NAMES utf8mb4;
 

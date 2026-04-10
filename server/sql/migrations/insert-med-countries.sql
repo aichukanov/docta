@@ -1,5 +1,5 @@
 -- Countries with translations (55 entries, 6 languages)
--- Generated: 2026-04-09T17:12:25.354Z
+-- Generated: 2026-04-10T07:24:41.449Z
 -- Source: data/med-translations/
 
 SET NAMES utf8mb4;

@@ -8,11 +8,11 @@ SET NAMES utf8mb4;
 -- Справочники (lookup tables)
 -- ---------------------------------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS `med_countries` (
+CREATE TABLE IF NOT EXISTS `countries` (
   `id`   SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `uq_med_countries_name` (`name`)
+  UNIQUE KEY `uq_countries_name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `med_dispensing_modes` (
@@ -20,13 +20,6 @@ CREATE TABLE IF NOT EXISTS `med_dispensing_modes` (
   `name` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uq_med_dispensing_modes_name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-CREATE TABLE IF NOT EXISTS `med_advertising_manners` (
-  `id`   TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uq_med_advertising_manners_name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `med_pharma_forms` (
@@ -52,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `med_manufacturers` (
   UNIQUE KEY `uq_med_manufacturers_name` (`name`(400)),
   KEY `idx_med_manufacturers_country` (`country_id`),
   CONSTRAINT `fk_med_manufacturers_country` FOREIGN KEY (`country_id`)
-    REFERENCES `med_countries` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+    REFERENCES `countries` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------------------------------------------------------------------------
@@ -83,7 +76,6 @@ CREATE TABLE IF NOT EXISTS `med_medicines` (
   `authorization_number`   VARCHAR(100) DEFAULT NULL,
   `authorization_date`     DATE DEFAULT NULL,
   `dispensing_mode_id`     TINYINT UNSIGNED DEFAULT NULL,
-  `advertising_manner_id`  TINYINT UNSIGNED DEFAULT NULL,
   `atc_code`               VARCHAR(10) DEFAULT NULL COMMENT 'ATC classification code',
   `is_active`              TINYINT(1) NOT NULL DEFAULT 1 COMMENT '1=active license, 0=expired',
   `detail_url`             VARCHAR(500) DEFAULT NULL,
@@ -105,8 +97,6 @@ CREATE TABLE IF NOT EXISTS `med_medicines` (
     REFERENCES `med_auth_holders` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_med_medicines_dispensing` FOREIGN KEY (`dispensing_mode_id`)
     REFERENCES `med_dispensing_modes` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  CONSTRAINT `fk_med_medicines_advertising` FOREIGN KEY (`advertising_manner_id`)
-    REFERENCES `med_advertising_manners` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------------------------------------------------------------------------
@@ -124,17 +114,3 @@ CREATE TABLE IF NOT EXISTS `med_medicine_substances` (
     REFERENCES `med_substances` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- ---------------------------------------------------------------------------
--- Документы (SPC, PIL)
--- ---------------------------------------------------------------------------
-
-CREATE TABLE IF NOT EXISTS `med_documents` (
-  `id`          INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `medicine_id` INT UNSIGNED NOT NULL,
-  `url`         VARCHAR(500) NOT NULL,
-  `label`       VARCHAR(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `idx_med_documents_medicine` (`medicine_id`),
-  CONSTRAINT `fk_med_documents_medicine` FOREIGN KEY (`medicine_id`)
-    REFERENCES `med_medicines` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

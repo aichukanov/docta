@@ -1,5 +1,5 @@
 -- Dispensing modes with translations (9 modes, 6 languages)
--- Generated: 2026-04-09T11:27:36.855Z
+-- Generated: 2026-04-09T17:12:25.355Z
 -- Source: data/med-translations/
 
 SET NAMES utf8mb4;

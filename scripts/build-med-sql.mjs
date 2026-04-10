@@ -82,3 +82,64 @@ const modesPath = resolve(ROOT, 'server/sql/migrations/insert-med-dispensing-mod
 writeFileSync(modesPath, modesSql, 'utf-8');
 console.log(`✓ ${modesPath} (${modes.length} modes)`);
 
+// --- ATC groups ---
+const atcGroups = loadSingleJson('data/med-translations/atc-groups.json');
+const atcLines = [
+  '-- ATC therapeutic groups with translations (14 groups, 6 languages)',
+  `-- Generated: ${new Date().toISOString()}`,
+  '-- Source: data/med-translations/atc-groups.json',
+  '',
+  'SET NAMES utf8mb4;',
+  '',
+];
+for (const r of atcGroups) {
+  atcLines.push(`INSERT INTO \`med_atc_groups\` (code, name, name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr)`);
+  atcLines.push(`VALUES (${esc(r.src)}, ${esc(r.en)}, ${esc(r.en)}, ${esc(r.sr)}, ${esc(r.sr_cyrl)}, ${esc(r.ru)}, ${esc(r.de)}, ${esc(r.tr)})`);
+  atcLines.push(`ON DUPLICATE KEY UPDATE name=VALUES(name), name_en=VALUES(name_en), name_sr=VALUES(name_sr), name_sr_cyrl=VALUES(name_sr_cyrl), name_ru=VALUES(name_ru), name_de=VALUES(name_de), name_tr=VALUES(name_tr);`);
+  atcLines.push('');
+}
+const atcPath = resolve(ROOT, 'server/sql/migrations/insert-med-atc-groups.sql');
+writeFileSync(atcPath, atcLines.join('\n'), 'utf-8');
+console.log(`✓ ${atcPath} (${atcGroups.length} groups)`);
+
+// --- Auth holders & Manufacturers (from medicines.json, no translations) ---
+const medicines = JSON.parse(readFileSync(resolve(ROOT, 'data/medicines.json'), 'utf-8')).medicines;
+
+// Auth holders
+const holders = [...new Set(medicines.map(x => x.authorization_holder).filter(Boolean))].sort();
+const holdersLines = [
+  '-- Authorization holders (46 legal entities in Montenegro)',
+  `-- Generated: ${new Date().toISOString()}`,
+  '', 'SET NAMES utf8mb4;', '',
+];
+for (const h of holders) {
+  holdersLines.push(`INSERT INTO \`med_auth_holders\` (name) VALUES (${esc(h)}) ON DUPLICATE KEY UPDATE name=VALUES(name);`);
+}
+const holdersPath = resolve(ROOT, 'server/sql/migrations/insert-med-auth-holders.sql');
+writeFileSync(holdersPath, holdersLines.join('\n'), 'utf-8');
+console.log(`✓ ${holdersPath} (${holders.length} holders)`);
+
+// Manufacturers (name + full_address + country_id via subquery)
+const mfgMap = new Map();
+medicines.forEach(x => {
+  if (!x.manufacturer) return;
+  if (!mfgMap.has(x.manufacturer)) {
+    mfgMap.set(x.manufacturer, { name: x.manufacturer, full_address: x.detail_manufacturer || null, country: x.country || null });
+  }
+});
+const mfgs = [...mfgMap.values()].sort((a, b) => a.name.localeCompare(b.name));
+const mfgLines = [
+  `-- Manufacturers (${mfgs.length} companies)`,
+  `-- Generated: ${new Date().toISOString()}`,
+  '', 'SET NAMES utf8mb4;', '',
+];
+for (const m of mfgs) {
+  const countryRef = m.country
+    ? `(SELECT id FROM \`countries\` WHERE name = ${esc(m.country)} LIMIT 1)`
+    : 'NULL';
+  mfgLines.push(`INSERT INTO \`med_manufacturers\` (name, full_address, country_id) VALUES (${esc(m.name)}, ${esc(m.full_address)}, ${countryRef}) ON DUPLICATE KEY UPDATE full_address=VALUES(full_address), country_id=VALUES(country_id);`);
+}
+const mfgPath = resolve(ROOT, 'server/sql/migrations/insert-med-manufacturers.sql');
+writeFileSync(mfgPath, mfgLines.join('\n'), 'utf-8');
+console.log(`✓ ${mfgPath} (${mfgs.length} manufacturers)`);
+

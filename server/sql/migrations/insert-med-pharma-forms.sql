@@ -1,5 +1,5 @@
 -- Pharmaceutical forms with translations (148 forms, 6 languages)
--- Generated: 2026-04-09T09:09:49.735Z
+-- Generated: 2026-04-09T17:12:25.333Z
 -- Source: data/med-translations/
 
 SET NAMES utf8mb4;

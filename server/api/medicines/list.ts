@@ -11,7 +11,7 @@ interface MedicineListItem {
 	pharmaForm: string | null;
 	manufacturer: string | null;
 	country: string | null;
-	dispensingMode: string | null;
+	dispensingModeId: number | null;
 	isActive: boolean;
 	atcCode: string | null;
 }
@@ -42,7 +42,7 @@ export default defineEventHandler(
 export async function getMedicineList(
 	body: {
 		name?: string;
-		dispensingMode?: 'otc' | 'prescription' | 'all';
+		dispensingModeIds?: number[];
 		atcGroupIds?: number[];
 		substanceIds?: number[];
 		pharmaFormIds?: number[];
@@ -73,13 +73,9 @@ export async function getMedicineList(
 	}
 
 	// Dispensing mode filter
-	if (body.dispensingMode === 'otc') {
+	if (body.dispensingModeIds?.length) {
 		whereFilters.push(
-			`m.dispensing_mode_id = (SELECT id FROM med_dispensing_modes WHERE name LIKE '%bez ljekarskog recepta%' LIMIT 1)`,
-		);
-	} else if (body.dispensingMode === 'prescription') {
-		whereFilters.push(
-			`m.dispensing_mode_id != (SELECT id FROM med_dispensing_modes WHERE name LIKE '%bez ljekarskog recepta%' LIMIT 1)`,
+			`m.dispensing_mode_id IN (${buildInPlaceholders(body.dispensingModeIds)})`,
 		);
 	}
 
@@ -159,13 +155,11 @@ export async function getMedicineList(
 			mfg.name as manufacturer,
 			c.${nameField} as country,
 			c.name_en as countryEn,
-			dm.${nameField} as dispensingMode,
-			dm.name_en as dispensingModeEn
+			m.dispensing_mode_id
 		FROM med_medicines m
 		LEFT JOIN med_pharma_forms pf ON pf.id = m.pharmaceutical_form_id
 		LEFT JOIN med_manufacturers mfg ON mfg.id = m.manufacturer_id
 		LEFT JOIN countries c ON c.id = mfg.country_id
-		LEFT JOIN med_dispensing_modes dm ON dm.id = m.dispensing_mode_id
 		${where}
 		ORDER BY m.is_active DESC, m.name ASC
 		${pagination};
@@ -191,7 +185,7 @@ export async function getMedicineList(
 		manufacturer: row.manufacturer || null,
 		country: row.country || row.countryEn || null,
 		substances: row.substances || null,
-		dispensingMode: row.dispensingMode || row.dispensingModeEn || null,
+		dispensingModeId: row.dispensing_mode_id || null,
 		isActive: !!row.is_active,
 		atcCode: row.atc_code,
 	}));

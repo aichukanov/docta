@@ -8,13 +8,14 @@ import { SITE_URL, OG_IMAGE } from '~/common/constants';
 
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import medicineI18n from '~/i18n/medicine';
+import dispensingModeI18n from '~/i18n/dispensing-mode';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([breadcrumbI18n, medicineI18n]),
+	messages: combineI18nMessages([breadcrumbI18n, medicineI18n, dispensingModeI18n]),
 });
 
-const { name, atcGroupIds, substanceIds, pharmaFormIds, manufacturerIds, updateFromRoute, getRouteParams } = useFilters();
+const { name, dispensingModeIds, atcGroupIds, substanceIds, pharmaFormIds, manufacturerIds, updateFromRoute, getRouteParams } = useFilters();
 
 const { data: filterOptions } = await useFetch('/api/medicines/filter-options', {
 	key: 'medicine-filter-options',
@@ -25,14 +26,12 @@ const { data: filterOptions } = await useFetch('/api/medicines/filter-options', 
 const route = useRoute();
 const pageNumber = ref(Number(route.query.page || 1));
 const routeName = route.name;
-const dispensingMode = ref<string>((route.query.mode as string) || 'all');
 
 watch(
 	() => route.query,
 	(query) => {
 		if (route.name !== routeName) return;
 		pageNumber.value = Number(query.page || 1);
-		dispensingMode.value = (query.mode as string) || 'all';
 		updateFromRoute(query);
 	},
 	{ immediate: true },
@@ -40,7 +39,7 @@ watch(
 
 const filterList = computed(() => ({
 	name: name.value,
-	dispensingMode: dispensingMode.value,
+	dispensingModeIds: dispensingModeIds.value.length ? dispensingModeIds.value : undefined,
 	atcGroupIds: atcGroupIds.value.length ? atcGroupIds.value : undefined,
 	substanceIds: substanceIds.value.length ? substanceIds.value : undefined,
 	pharmaFormIds: pharmaFormIds.value.length ? pharmaFormIds.value : undefined,
@@ -51,9 +50,7 @@ const filterList = computed(() => ({
 }));
 
 const filterQuery = computed(() => {
-	const q = getRouteParams().query;
-	if (dispensingMode.value !== 'all') q.mode = dispensingMode.value;
-	return q;
+	return getRouteParams().query;
 });
 
 const { pending: isLoading, data: medicinesList } = await useFetch(
@@ -73,25 +70,23 @@ const getFilterLabel = (items: { value: number; label: string }[], ids: number[]
 const pageTitle = computed(() => {
 	const opts = filterOptions.value;
 	const substanceLabel = getFilterLabel(opts?.substances || [], substanceIds.value);
-	const isOtc = dispensingMode.value === 'otc';
-	const isRx = dispensingMode.value === 'prescription';
 
-	// Base title: dispensing mode ± substance (natural phrasing)
+	// Dispensing mode label for single selection
+	const dmLabel = dispensingModeIds.value.length === 1
+		? t(`dm_${dispensingModeIds.value[0]}`)
+		: null;
+
+	// Base title: substance has priority for natural phrasing
 	let base: string;
 	if (substanceLabel) {
-		if (isOtc) base = t('TitleOTCSubstance', { substance: substanceLabel });
-		else if (isRx) base = t('TitleRxSubstance', { substance: substanceLabel });
-		else base = t('TitleSubstance', { substance: substanceLabel });
-	} else if (isOtc) {
-		base = t('TitleOTC');
-	} else if (isRx) {
-		base = t('TitleRx');
+		base = t('TitleSubstance', { substance: substanceLabel });
 	} else {
 		base = t('Medicines');
 	}
 
-	// Additional filter suffixes
+	// Collect suffix parts
 	const suffixes: string[] = [];
+	if (dmLabel) suffixes.push(dmLabel);
 	const atcLabel = getFilterLabel(opts?.atcGroups || [], atcGroupIds.value);
 	if (atcLabel) suffixes.push(atcLabel);
 	const formLabel = getFilterLabel(opts?.pharmaForms || [], pharmaFormIds.value);
@@ -110,7 +105,7 @@ const pageTitleWithCount = computed(() => {
 });
 
 const isFiltered = computed(() => {
-	return !!name.value || dispensingMode.value !== 'all' ||
+	return !!name.value || dispensingModeIds.value.length > 0 ||
 		atcGroupIds.value.length > 0 || substanceIds.value.length > 0 ||
 		pharmaFormIds.value.length > 0 || manufacturerIds.value.length > 0;
 });
@@ -181,23 +176,7 @@ watchEffect(() => {
 				:label="t('MedicineName')"
 				:placeholder="t('InsertMedicineName')"
 			/>
-			<div class="dispensing-filter">
-				<button
-					class="dispensing-btn"
-					:class="{ active: dispensingMode === 'all' }"
-					@click="dispensingMode = 'all'"
-				>{{ t('FilterAll') }}</button>
-				<button
-					class="dispensing-btn"
-					:class="{ active: dispensingMode === 'otc' }"
-					@click="dispensingMode = 'otc'"
-				>{{ t('FilterOTC') }}</button>
-				<button
-					class="dispensing-btn"
-					:class="{ active: dispensingMode === 'prescription' }"
-					@click="dispensingMode = 'prescription'"
-				>{{ t('FilterPrescription') }}</button>
-			</div>
+			<FilterMedicineDispensingModeSelect v-model:value="dispensingModeIds" />
 			<FilterMedicineAtcGroupSelect v-model:value="atcGroupIds" :items="filterOptions?.atcGroups || []" />
 			<FilterMedicineSubstanceSelect v-model:value="substanceIds" :items="filterOptions?.substances || []" />
 			<FilterMedicinePharmaFormSelect v-model:value="pharmaFormIds" :items="filterOptions?.pharmaForms || []" />
@@ -211,13 +190,7 @@ watchEffect(() => {
 			>
 				<div class="medicine-name">{{ item.name }}</div>
 				<div v-if="item.substances" class="medicine-substances">{{ item.substances }}</div>
-				<span
-					v-if="item.dispensingMode"
-					class="medicine-badge"
-					:class="(/bez|OTC|Без рецепта|Rezeptfrei|Reçetesiz/i).test(item.dispensingMode) ? 'badge-otc' : 'badge-rx'"
-				>
-					{{ item.dispensingMode }}
-				</span>
+				<MedicineBadge :dispensingModeId="item.dispensingModeId" />
 				<div class="medicine-card-details">
 					<span v-if="item.pharmaForm">{{ item.pharmaForm }}</span>
 					<span v-if="item.strength">, {{ item.strength }}</span>
@@ -232,34 +205,6 @@ watchEffect(() => {
 </template>
 
 <style lang="less" scoped>
-.dispensing-filter {
-	display: flex;
-	gap: var(--spacing-xs);
-	flex-wrap: wrap;
-}
-
-.dispensing-btn {
-	padding: 6px 16px;
-	border: 1px solid var(--color-border-light);
-	border-radius: 20px;
-	background: var(--color-bg-primary);
-	cursor: pointer;
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
-	transition: all 0.15s;
-
-	&:hover {
-		border-color: var(--color-primary);
-		color: var(--color-primary);
-	}
-
-	&.active {
-		background: var(--color-primary);
-		color: #fff;
-		border-color: var(--color-primary);
-	}
-}
-
 .medicine-card {
 	display: block;
 	padding: 16px 20px;
@@ -286,26 +231,6 @@ watchEffect(() => {
 	color: var(--color-text-secondary);
 	margin-top: 4px;
 	font-style: italic;
-}
-
-.medicine-badge {
-	display: inline-block;
-	margin-top: 8px;
-	font-size: 0.75rem;
-	font-weight: 500;
-	padding: 3px 10px;
-	border-radius: 12px;
-	white-space: nowrap;
-}
-
-.badge-otc {
-	background: #e8f5e9;
-	color: #2e7d32;
-}
-
-.badge-rx {
-	background: #fff3e0;
-	color: #e65100;
 }
 
 .medicine-card-details {

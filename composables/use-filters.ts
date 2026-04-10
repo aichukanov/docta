@@ -17,6 +17,7 @@ const serviceCategoryIds = ref<number[]>([]);
 const clinicTypeIds = ref<number[]>([]);
 const name = ref<string>('');
 const clinicIds = ref<number[]>([]);
+const dispensingModeIds = ref<number[]>([]);
 const atcGroupIds = ref<number[]>([]);
 const substanceIds = ref<number[]>([]);
 const pharmaFormIds = ref<number[]>([]);
@@ -33,6 +34,7 @@ const getRouteParams = () => {
 			clinicTypeIds: clinicTypeIds.value,
 			name: name.value || undefined,
 			clinicIds: clinicIds.value,
+			dispensingModeIds: dispensingModeIds.value,
 			atcGroupIds: atcGroupIds.value,
 			substanceIds: substanceIds.value,
 			pharmaFormIds: pharmaFormIds.value,
@@ -82,6 +84,12 @@ const updateFromRoute = (query: Record<string, string | string[]>) => {
 		? Array.isArray(query.clinicIds)
 			? query.clinicIds.map(Number)
 			: [+query.clinicIds]
+		: null;
+
+	const preparedDispensingModeIds = query.dispensingModeIds
+		? Array.isArray(query.dispensingModeIds)
+			? query.dispensingModeIds.map(Number)
+			: [+query.dispensingModeIds]
 		: null;
 
 	const preparedAtcGroupIds = query.atcGroupIds
@@ -183,6 +191,15 @@ const updateFromRoute = (query: Record<string, string | string[]>) => {
 	}
 
 	if (
+		preparedDispensingModeIds &&
+		validateNonNegativeIntegerArray(preparedDispensingModeIds.map(String))
+	) {
+		dispensingModeIds.value = preparedDispensingModeIds;
+	} else {
+		dispensingModeIds.value = [];
+	}
+
+	if (
 		preparedAtcGroupIds &&
 		validateNonNegativeIntegerArray(preparedAtcGroupIds.map(String))
 	) {
@@ -237,6 +254,7 @@ export const useFilters = () => {
 		clinicTypeIds,
 		clinicIds,
 		name,
+		dispensingModeIds,
 		atcGroupIds,
 		substanceIds,
 		pharmaFormIds,

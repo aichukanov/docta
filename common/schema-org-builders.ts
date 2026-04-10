@@ -1218,7 +1218,7 @@ export function buildMedicineSchema(options: {
 	strength?: string | null;
 	manufacturer?: string | null;
 	country?: string | null;
-	dispensingMode?: string | null;
+	dispensingModeId?: number | null;
 	atcCode?: string | null;
 	isActive?: boolean;
 	detailUrl?: string | null;
@@ -1254,8 +1254,9 @@ export function buildMedicineSchema(options: {
 			...(options.country ? { address: { '@type': 'PostalAddress', addressCountry: options.country } } : {}),
 		};
 	}
-	if (options.dispensingMode) {
-		medicineSchema.prescriptionStatus = options.dispensingMode;
+	if (options.dispensingModeId) {
+		medicineSchema.prescriptionStatus = options.dispensingModeId === 2
+			? 'OTC' : 'PrescriptionOnly';
 	}
 	if (options.atcCode) {
 		medicineSchema.code = {

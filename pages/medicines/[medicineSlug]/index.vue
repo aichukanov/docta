@@ -33,11 +33,7 @@ if (import.meta.server && !isFound.value) {
 	setResponseStatus(useRequestEvent()!, 404);
 }
 
-const isOTC = computed(() => {
-	const dm = med.value?.dispensingMode;
-	if (!dm) return false;
-	return /bez|OTC|Без рецепта|Rezeptfrei|Reçetesiz/i.test(dm);
-});
+const isOTC = computed(() => med.value?.dispensingModeId === 2);
 
 const substanceNames = computed(
 	() => med.value?.substances?.map((s: any) => s.name).join(', ') || '',
@@ -99,7 +95,7 @@ watchEffect(() => {
 				strength: med.value.strength,
 				manufacturer: med.value.manufacturer,
 				country: med.value.country,
-				dispensingMode: med.value.dispensingMode,
+				dispensingModeId: med.value.dispensingModeId,
 				atcCode: med.value.atcCode,
 				isActive: med.value.isActive,
 				detailUrl: med.value.detailUrl,
@@ -139,9 +135,7 @@ const tabs = computed(() => {
 					<span v-if="med.strength">, {{ med.strength }}</span>
 				</div>
 				<div class="medicine-badges">
-					<span class="badge" :class="isOTC ? 'badge-otc' : 'badge-rx'">
-						{{ isOTC ? t('OTC') : t('Prescription') }}
-					</span>
+					<MedicineBadge :dispensingModeId="med.dispensingModeId" />
 					<span
 						class="badge"
 						:class="med.isActive ? 'badge-active' : 'badge-expired'"
@@ -194,10 +188,6 @@ const tabs = computed(() => {
 							></span
 						>
 					</div>
-					<div v-if="med.dispensingMode" class="detail-row">
-						<span class="detail-label">{{ t('DispensingMode') }}</span>
-						<span>{{ med.dispensingMode }}</span>
-					</div>
 					<div v-if="med.atcGroup" class="detail-row">
 						<span class="detail-label">{{ t('AtcGroup') }}</span>
 						<span>{{ med.atcGroup }} ({{ med.atcCode }})</span>
@@ -238,21 +228,7 @@ const tabs = computed(() => {
 					>
 						<div class="analog-header">
 							<span class="analog-name">{{ analog.name }}</span>
-							<span
-								v-if="analog.dispensingMode"
-								class="badge"
-								:class="
-									/bez|OTC|Без рецепта/i.test(analog.dispensingMode)
-										? 'badge-otc'
-										: 'badge-rx'
-								"
-							>
-								{{
-									/bez|OTC|Без рецепта/i.test(analog.dispensingMode)
-										? t('OTC')
-										: t('Prescription')
-								}}
-							</span>
+							<MedicineBadge :dispensingModeId="analog.dispensingModeId" />
 						</div>
 						<span class="analog-details">
 							<template v-if="analog.pharmaForm">{{
@@ -310,14 +286,6 @@ const tabs = computed(() => {
 	border-radius: 16px;
 }
 
-.badge-otc {
-	background: #e8f5e9;
-	color: #2e7d32;
-}
-.badge-rx {
-	background: #fff3e0;
-	color: #e65100;
-}
 .badge-active {
 	background: #e3f2fd;
 	color: #1565c0;

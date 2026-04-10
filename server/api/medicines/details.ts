@@ -45,9 +45,7 @@ export default defineEventHandler(async (event) => {
 				c.${nameField} as country,
 				c.name_en as countryEn,
 				ah.name as authorizationHolder,
-				dm.name as dispensingModeSrc,
-				dm.${nameField} as dispensingMode,
-				dm.name_en as dispensingModeEn,
+				m.dispensing_mode_id,
 				ag.${nameField} as atcGroup,
 				ag.name_en as atcGroupEn,
 				ag.code as atcGroupCode
@@ -56,7 +54,6 @@ export default defineEventHandler(async (event) => {
 			LEFT JOIN med_manufacturers mfg ON mfg.id = m.manufacturer_id
 			LEFT JOIN countries c ON c.id = mfg.country_id
 			LEFT JOIN med_auth_holders ah ON ah.id = m.authorization_holder_id
-			LEFT JOIN med_dispensing_modes dm ON dm.id = m.dispensing_mode_id
 			LEFT JOIN med_atc_groups ag ON ag.id = m.atc_group_id
 			WHERE m.slug = ?
 			LIMIT 1
@@ -101,13 +98,11 @@ export default defineEventHandler(async (event) => {
 					m2.strength,
 					pf2.${nameField} as pharmaForm,
 					pf2.name_en as pharmaFormEn,
-					dm2.${nameField} as dispensingMode,
-					dm2.name_en as dispensingModeEn,
+					m2.dispensing_mode_id,
 					mfg2.name as manufacturer
 				FROM med_medicine_substances mms2
 				JOIN med_medicines m2 ON m2.id = mms2.medicine_id
 				LEFT JOIN med_pharma_forms pf2 ON pf2.id = m2.pharmaceutical_form_id
-				LEFT JOIN med_dispensing_modes dm2 ON dm2.id = m2.dispensing_mode_id
 				LEFT JOIN med_manufacturers mfg2 ON mfg2.id = m2.manufacturer_id
 				WHERE mms2.substance_id IN (${placeholders})
 					AND m2.id != ?
@@ -123,7 +118,7 @@ export default defineEventHandler(async (event) => {
 				name: row.name,
 				strength: row.strength,
 				pharmaForm: row.pharmaForm || row.pharmaFormEn || null,
-				dispensingMode: row.dispensingMode || row.dispensingModeEn || null,
+				dispensingModeId: row.dispensing_mode_id || null,
 				manufacturer: row.manufacturer,
 			}));
 		}
@@ -148,7 +143,7 @@ export default defineEventHandler(async (event) => {
 			manufacturerAddress: med.manufacturerAddress,
 			country: med.country || med.countryEn || null,
 			authorizationHolder: med.authorizationHolder,
-			dispensingMode: med.dispensingMode || med.dispensingModeEn || null,
+			dispensingModeId: med.dispensing_mode_id || null,
 			atcGroup: med.atcGroup || med.atcGroupEn || null,
 			atcGroupCode: med.atcGroupCode,
 			substances: substances.map((s: any) => ({

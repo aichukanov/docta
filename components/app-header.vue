@@ -432,15 +432,15 @@ const userDisplayName = computed(() => {
 
 		&__nav-link {
 			font-size: var(--font-size-sm);
-			padding: var(--spacing-sm) var(--spacing-md);
+			padding: var(--spacing-sm) var(--spacing-xs);
 			background: var(--color-bg-secondary);
 			border: 1px solid var(--color-border-secondary);
 			flex-direction: column;
 			gap: 4px;
-			min-width: 90px;
+			min-width: 20px;
+			flex: 1 1 auto;
 			align-items: center;
 			justify-content: center;
-			flex-shrink: 0;
 
 			.nav-icon {
 				width: 20px;
@@ -451,6 +451,7 @@ const userDisplayName = computed(() => {
 				font-size: 10px;
 				text-transform: uppercase;
 				letter-spacing: 0.5px;
+				word-break: break-all;
 			}
 
 			&:hover {
@@ -498,6 +499,10 @@ const userDisplayName = computed(() => {
 	.app-header {
 		&__main-content {
 			padding: var(--spacing-sm) var(--spacing-sm);
+		}
+
+		&__nav-link span {
+			display: none;
 		}
 	}
 }

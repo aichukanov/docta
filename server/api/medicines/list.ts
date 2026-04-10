@@ -118,6 +118,11 @@ async function getMedicineList(
 			m.strength,
 			m.is_active,
 			m.atc_code,
+			(SELECT GROUP_CONCAT(COALESCE(s.${nameField}, s.name_en, s.name) SEPARATOR ', ')
+			 FROM med_medicine_substances mms
+			 JOIN med_substances s ON s.id = mms.substance_id
+			 WHERE mms.medicine_id = m.id
+			) as substances,
 			pf.${nameField} as pharmaForm,
 			pf.name_en as pharmaFormEn,
 			mfg.name as manufacturer,
@@ -154,6 +159,7 @@ async function getMedicineList(
 		pharmaForm: row.pharmaForm || row.pharmaFormEn || null,
 		manufacturer: row.manufacturer || null,
 		country: row.country || row.countryEn || null,
+		substances: row.substances || null,
 		dispensingMode: row.dispensingMode || row.dispensingModeEn || null,
 		isActive: !!row.is_active,
 		atcCode: row.atc_code,

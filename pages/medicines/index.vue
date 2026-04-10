@@ -145,16 +145,15 @@ watchEffect(() => {
 				:to="{ name: 'medicines-medicineSlug', params: { medicineSlug: item.slug } }"
 				class="medicine-card"
 			>
-				<div class="medicine-card-header">
-					<span class="medicine-name">{{ item.name }}</span>
-					<span
-						v-if="item.dispensingMode"
-						class="medicine-badge"
-						:class="item.dispensingMode.includes('OTC') || item.dispensingMode.includes('без') || item.dispensingMode.includes('bez') || item.dispensingMode === 'Rezeptfrei' || item.dispensingMode === 'Reçetesiz' ? 'badge-otc' : 'badge-rx'"
-					>
-						{{ item.dispensingMode }}
-					</span>
-				</div>
+				<div class="medicine-name">{{ item.name }}</div>
+				<div v-if="item.substances" class="medicine-substances">{{ item.substances }}</div>
+				<span
+					v-if="item.dispensingMode"
+					class="medicine-badge"
+					:class="(/bez|OTC|Без рецепта|Rezeptfrei|Reçetesiz/i).test(item.dispensingMode) ? 'badge-otc' : 'badge-rx'"
+				>
+					{{ item.dispensingMode }}
+				</span>
 				<div class="medicine-card-details">
 					<span v-if="item.pharmaForm">{{ item.pharmaForm }}</span>
 					<span v-if="item.strength">, {{ item.strength }}</span>
@@ -176,13 +175,19 @@ watchEffect(() => {
 }
 
 .dispensing-btn {
-	padding: var(--spacing-xs) var(--spacing-md);
+	padding: 6px 16px;
 	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-sm);
+	border-radius: 20px;
 	background: var(--color-bg-primary);
 	cursor: pointer;
 	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
+	transition: all 0.15s;
+
+	&:hover {
+		border-color: var(--color-primary);
+		color: var(--color-primary);
+	}
 
 	&.active {
 		background: var(--color-primary);
@@ -193,34 +198,39 @@ watchEffect(() => {
 
 .medicine-card {
 	display: block;
-	padding: var(--spacing-md);
+	padding: 16px 20px;
 	border: 1px solid var(--color-border-light);
 	border-radius: var(--border-radius-md);
 	text-decoration: none;
 	color: inherit;
-	transition: border-color 0.15s;
+	transition: border-color 0.15s, box-shadow 0.15s;
 
 	&:hover {
 		border-color: var(--color-primary);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 	}
-}
-
-.medicine-card-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: var(--spacing-sm);
 }
 
 .medicine-name {
 	font-weight: 600;
-	font-size: var(--font-size-md);
+	font-size: 1rem;
+	line-height: 1.3;
+}
+
+.medicine-substances {
+	font-size: 0.875rem;
+	color: var(--color-text-secondary);
+	margin-top: 4px;
+	font-style: italic;
 }
 
 .medicine-badge {
-	font-size: var(--font-size-xs);
-	padding: 2px var(--spacing-xs);
-	border-radius: var(--border-radius-sm);
+	display: inline-block;
+	margin-top: 8px;
+	font-size: 0.75rem;
+	font-weight: 500;
+	padding: 3px 10px;
+	border-radius: 12px;
 	white-space: nowrap;
 }
 
@@ -235,14 +245,16 @@ watchEffect(() => {
 }
 
 .medicine-card-details {
-	margin-top: var(--spacing-xs);
-	font-size: var(--font-size-sm);
+	margin-top: 10px;
+	padding-top: 8px;
+	border-top: 1px solid var(--color-border-light);
+	font-size: 0.875rem;
 	color: var(--color-text-secondary);
 }
 
 .medicine-card-meta {
-	margin-top: var(--spacing-xs);
-	font-size: var(--font-size-xs);
+	margin-top: 4px;
+	font-size: 0.8rem;
 	color: var(--color-text-tertiary);
 }
 

@@ -15,7 +15,7 @@ const route = useRoute();
 const { pending: isLoading, data: med } = await useFetch(
 	'/api/medicines/details',
 	{
-		key: 'medicine-details',
+		key: `medicine-details-${route.params.medicineSlug}`,
 		method: 'POST',
 		body: computed(() => ({
 			slug: route.params.medicineSlug,
@@ -173,7 +173,7 @@ const tabs = computed(() => {
 					</div>
 					<div v-if="med.authorizationDate" class="detail-row">
 						<span class="detail-label">{{ t('AuthorizationDate') }}</span>
-						<span>{{ med.authorizationDate }}</span>
+						<span>{{ new Date(med.authorizationDate).toLocaleDateString(locale === 'sr-cyrl' ? 'sr-Cyrl' : locale, { year: 'numeric', month: 'long', day: 'numeric' }) }}</span>
 					</div>
 				</div>
 			</EntityPageSection>
@@ -193,13 +193,8 @@ const tabs = computed(() => {
 						:to="{ name: 'medicines-medicineSlug', params: { medicineSlug: analog.slug } }"
 						class="analog-card"
 					>
-						<span class="analog-name">{{ analog.name }}</span>
-						<span class="analog-details">
-							<template v-if="analog.pharmaForm">{{ analog.pharmaForm }}</template>
-							<template v-if="analog.strength">, {{ analog.strength }}</template>
-						</span>
-						<span class="analog-meta">
-							{{ analog.manufacturer }}
+						<div class="analog-header">
+							<span class="analog-name">{{ analog.name }}</span>
 							<span
 								v-if="analog.dispensingMode"
 								class="badge"
@@ -207,7 +202,12 @@ const tabs = computed(() => {
 							>
 								{{ (/bez|OTC|Без рецепта/i).test(analog.dispensingMode) ? t('OTC') : t('Prescription') }}
 							</span>
+						</div>
+						<span class="analog-details">
+							<template v-if="analog.pharmaForm">{{ analog.pharmaForm }}</template>
+							<template v-if="analog.strength">, {{ analog.strength }}</template>
 						</span>
+						<span class="analog-meta">{{ analog.manufacturer }}</span>
 					</NuxtLink>
 				</div>
 			</EntityPageSection>
@@ -224,11 +224,11 @@ const tabs = computed(() => {
 
 <style lang="less" scoped>
 .medicine-hero {
-	padding: var(--spacing-xl) 0;
+	padding: var(--spacing-xl) 0 var(--spacing-lg);
 }
 
 .medicine-name {
-	font-size: 1.75rem;
+	font-size: 2rem;
 	font-weight: 700;
 	color: var(--color-text-primary);
 	margin: 0;
@@ -236,21 +236,22 @@ const tabs = computed(() => {
 }
 
 .medicine-subtitle {
-	font-size: var(--font-size-md);
+	font-size: 1rem;
 	color: var(--color-text-secondary);
-	margin-top: var(--spacing-xs);
+	margin-top: 6px;
 }
 
 .medicine-badges {
 	display: flex;
-	gap: var(--spacing-xs);
-	margin-top: var(--spacing-sm);
+	gap: 8px;
+	margin-top: 12px;
 }
 
 .badge {
-	font-size: var(--font-size-sm);
-	padding: 2px var(--spacing-sm);
-	border-radius: var(--border-radius-sm);
+	font-size: 0.8rem;
+	font-weight: 500;
+	padding: 4px 12px;
+	border-radius: 16px;
 }
 
 .badge-otc { background: #e8f5e9; color: #2e7d32; }
@@ -261,26 +262,29 @@ const tabs = computed(() => {
 .substance-list {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--spacing-xs);
+	gap: 8px;
 }
 
 .substance-tag {
-	background: var(--color-bg-secondary);
-	padding: var(--spacing-xs) var(--spacing-sm);
-	border-radius: var(--border-radius-sm);
-	font-size: var(--font-size-sm);
+	background: #f0f4ff;
+	color: #3b5998;
+	padding: 6px 14px;
+	border-radius: 16px;
+	font-size: 0.9rem;
+	font-weight: 500;
 }
 
 .details-grid {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
+	gap: 12px;
 }
 
 .detail-row {
 	display: flex;
 	gap: var(--spacing-md);
-	font-size: var(--font-size-sm);
+	font-size: 0.9rem;
+	line-height: 1.5;
 
 	@media (max-width: 600px) {
 		flex-direction: column;
@@ -289,51 +293,74 @@ const tabs = computed(() => {
 }
 
 .detail-label {
-	min-width: 180px;
-	color: var(--color-text-secondary);
+	min-width: 200px;
+	color: var(--color-text-tertiary);
 	flex-shrink: 0;
+	font-size: 0.85rem;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
 }
 
 .section-hint {
-	font-size: var(--font-size-sm);
+	font-size: 0.875rem;
 	color: var(--color-text-secondary);
-	margin: 0 0 var(--spacing-md);
+	margin: 0 0 16px;
 }
 
 .analogs-list {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: 8px;
 }
 
 .analog-card {
 	display: flex;
 	flex-direction: column;
-	padding: var(--spacing-sm) var(--spacing-md);
+	gap: 2px;
+	padding: 12px 16px;
 	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-sm);
+	border-radius: var(--border-radius-md);
 	text-decoration: none;
 	color: inherit;
-	transition: border-color 0.15s;
+	transition: border-color 0.15s, box-shadow 0.15s;
 
-	&:hover { border-color: var(--color-primary); }
+	&:hover {
+		border-color: var(--color-primary);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+	}
 }
 
-.analog-name { font-weight: 600; font-size: var(--font-size-sm); }
-.analog-details { font-size: var(--font-size-xs); color: var(--color-text-secondary); }
+.analog-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+}
+
+.analog-name {
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+
+.analog-details {
+	font-size: 0.8rem;
+	color: var(--color-text-secondary);
+}
+
 .analog-meta {
-	font-size: var(--font-size-xs);
+	font-size: 0.8rem;
 	color: var(--color-text-tertiary);
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
+	gap: 8px;
+	margin-top: 2px;
 }
 
 .medicine-source {
-	margin-top: var(--spacing-xl);
+	margin-top: var(--spacing-2xl);
 	padding-top: var(--spacing-md);
 	border-top: 1px solid var(--color-border-light);
-	font-size: var(--font-size-xs);
+	font-size: 0.8rem;
 
 	a {
 		color: var(--color-text-tertiary);

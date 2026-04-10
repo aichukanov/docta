@@ -31,9 +31,9 @@ if (import.meta.server && !isFound.value) {
 }
 
 const isOTC = computed(() => {
-	const m = med.value?.dispensingMode;
-	if (!m) return false;
-	return m.includes('bez') || m.includes('OTC') || m === 'Без рецепта' || m === 'Rezeptfrei' || m === 'Reçetesiz';
+	const dm = med.value?.dispensingMode;
+	if (!dm) return false;
+	return /bez|OTC|Без рецепта|Rezeptfrei|Reçetesiz/i.test(dm);
 });
 
 const substanceNames = computed(() =>
@@ -75,7 +75,6 @@ useSeoMeta({
 	robots: robotsMeta,
 });
 
-// Schema.org
 const schemaOrgStore = useSchemaOrgStore();
 
 watchEffect(() => {
@@ -90,115 +89,108 @@ watchEffect(() => {
 		]);
 	}
 });
+
+const tabs = computed(() => {
+	const result = [{ id: 'info', label: t('PharmaForm') }];
+	if (med.value?.analogs?.length) {
+		result.push({ id: 'analogs', label: t('AnalogsTitle') });
+	}
+	return result;
+});
 </script>
 
 <template>
-	<div class="medicine-page">
-		<div v-if="isLoading" class="medicine-loading">
-			{{ t('LoadingMedicines') }}
-		</div>
-
-		<div v-else-if="!isFound" class="medicine-not-found">
-			<p>{{ t('NoMedicinesFound') }}</p>
-			<NuxtLink to="/medicines" class="back-link">
-				{{ t('ToSearchPage') }}
-			</NuxtLink>
-		</div>
-
-		<template v-else-if="med">
-			<!-- Header -->
-			<div class="medicine-header">
-				<NuxtLink to="/medicines" class="breadcrumb-back">
-					← {{ t('BreadcrumbMedicines') }}
-				</NuxtLink>
+	<EntityPage
+		:isLoading="isLoading || false"
+		:isFound="isFound"
+		backRouteName="medicines"
+		:loadingText="t('LoadingMedicines')"
+		:notFoundText="t('NoMedicinesFound')"
+		:tabs="tabs"
+	>
+		<template #hero v-if="med">
+			<div class="medicine-hero">
 				<h1 class="medicine-name">{{ med.name }}</h1>
 				<div class="medicine-subtitle">
 					<span v-if="med.pharmaForm">{{ med.pharmaForm }}</span>
 					<span v-if="med.strength">, {{ med.strength }}</span>
 				</div>
-				<div class="medicine-status">
-					<span
-						class="status-badge"
-						:class="isOTC ? 'badge-otc' : 'badge-rx'"
-					>
+				<div class="medicine-badges">
+					<span class="badge" :class="isOTC ? 'badge-otc' : 'badge-rx'">
 						{{ isOTC ? t('OTC') : t('Prescription') }}
 					</span>
-					<span
-						class="status-badge"
-						:class="med.isActive ? 'badge-active' : 'badge-expired'"
-					>
+					<span class="badge" :class="med.isActive ? 'badge-active' : 'badge-expired'">
 						{{ med.isActive ? t('ActiveLicense') : t('ExpiredLicense') }}
 					</span>
 				</div>
 			</div>
+		</template>
 
-			<!-- Active substance -->
-			<section v-if="med.substances?.length" class="medicine-section">
-				<h2 class="section-title">{{ t('ActiveSubstance') }}</h2>
+		<template #sections v-if="med">
+			<!-- Substances -->
+			<EntityPageSection
+				v-if="med.substances?.length"
+				sectionId="substances"
+				:title="t('ActiveSubstance')"
+			>
 				<div class="substance-list">
-					<span
-						v-for="sub in med.substances"
-						:key="sub.id"
-						class="substance-tag"
-					>
+					<span v-for="sub in med.substances" :key="sub.id" class="substance-tag">
 						{{ sub.name }}
 					</span>
 				</div>
-			</section>
+			</EntityPageSection>
 
 			<!-- Details -->
-			<section class="medicine-section">
+			<EntityPageSection sectionId="info" :title="t('PharmaForm')">
 				<div class="details-grid">
 					<div v-if="med.pharmaForm" class="detail-row">
 						<span class="detail-label">{{ t('PharmaForm') }}</span>
-						<span class="detail-value">{{ med.pharmaForm }}</span>
+						<span>{{ med.pharmaForm }}</span>
 					</div>
 					<div v-if="med.strength" class="detail-row">
 						<span class="detail-label">{{ t('Strength') }}</span>
-						<span class="detail-value">{{ med.strength }}</span>
+						<span>{{ med.strength }}</span>
 					</div>
 					<div v-if="med.detailPackaging || med.packaging" class="detail-row">
 						<span class="detail-label">{{ t('Packaging') }}</span>
-						<span class="detail-value">{{ med.detailPackaging || med.packaging }}</span>
+						<span>{{ med.detailPackaging || med.packaging }}</span>
 					</div>
 					<div v-if="med.manufacturer" class="detail-row">
 						<span class="detail-label">{{ t('Manufacturer') }}</span>
-						<span class="detail-value">
-							{{ med.manufacturer }}<template v-if="med.country">, {{ med.country }}</template>
-						</span>
+						<span>{{ med.manufacturer }}<template v-if="med.country">, {{ med.country }}</template></span>
 					</div>
 					<div v-if="med.dispensingMode" class="detail-row">
 						<span class="detail-label">{{ t('DispensingMode') }}</span>
-						<span class="detail-value">{{ med.dispensingMode }}</span>
+						<span>{{ med.dispensingMode }}</span>
 					</div>
 					<div v-if="med.atcGroup" class="detail-row">
 						<span class="detail-label">{{ t('AtcGroup') }}</span>
-						<span class="detail-value">{{ med.atcGroup }} ({{ med.atcCode }})</span>
+						<span>{{ med.atcGroup }} ({{ med.atcCode }})</span>
 					</div>
 					<div v-if="med.authorizationHolder" class="detail-row">
 						<span class="detail-label">{{ t('AuthorizationHolder') }}</span>
-						<span class="detail-value">{{ med.authorizationHolder }}</span>
+						<span>{{ med.authorizationHolder }}</span>
 					</div>
 					<div v-if="med.authorizationDate" class="detail-row">
 						<span class="detail-label">{{ t('AuthorizationDate') }}</span>
-						<span class="detail-value">{{ med.authorizationDate }}</span>
-					</div>
-					<div v-if="med.authorizationNumber" class="detail-row">
-						<span class="detail-label">{{ t('AuthorizationNumber') }}</span>
-						<span class="detail-value">{{ med.authorizationNumber }}</span>
+						<span>{{ med.authorizationDate }}</span>
 					</div>
 				</div>
-			</section>
+			</EntityPageSection>
 
 			<!-- Analogs -->
-			<section v-if="med.analogs?.length" class="medicine-section">
-				<h2 class="section-title">{{ t('AnalogsTitle') }}</h2>
-				<p class="section-subtitle">{{ t('AnalogsDescription') }}</p>
+			<EntityPageSection
+				v-if="med.analogs?.length"
+				sectionId="analogs"
+				:title="t('AnalogsTitle')"
+				:count="med.analogs.length"
+			>
+				<p class="section-hint">{{ t('AnalogsDescription') }}</p>
 				<div class="analogs-list">
 					<NuxtLink
 						v-for="analog in med.analogs"
 						:key="analog.id"
-						:to="`/medicines/${analog.slug}`"
+						:to="{ name: 'medicines-medicineSlug', params: { medicineSlug: analog.slug } }"
 						class="analog-card"
 					>
 						<span class="analog-name">{{ analog.name }}</span>
@@ -210,15 +202,15 @@ watchEffect(() => {
 							{{ analog.manufacturer }}
 							<span
 								v-if="analog.dispensingMode"
-								class="analog-badge"
-								:class="analog.dispensingMode.includes('bez') || analog.dispensingMode.includes('OTC') || analog.dispensingMode === 'Без рецепта' ? 'badge-otc' : 'badge-rx'"
+								class="badge"
+								:class="(/bez|OTC|Без рецепта/i).test(analog.dispensingMode) ? 'badge-otc' : 'badge-rx'"
 							>
-								{{ analog.dispensingMode.includes('bez') || analog.dispensingMode.includes('OTC') || analog.dispensingMode === 'Без рецепта' ? t('OTC') : t('Prescription') }}
+								{{ (/bez|OTC|Без рецепта/i).test(analog.dispensingMode) ? t('OTC') : t('Prescription') }}
 							</span>
 						</span>
 					</NuxtLink>
 				</div>
-			</section>
+			</EntityPageSection>
 
 			<!-- Source -->
 			<div v-if="med.detailUrl" class="medicine-source">
@@ -227,45 +219,19 @@ watchEffect(() => {
 				</a>
 			</div>
 		</template>
-	</div>
+	</EntityPage>
 </template>
 
 <style lang="less" scoped>
-.medicine-page {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: var(--spacing-lg);
-}
-
-.medicine-loading,
-.medicine-not-found {
-	text-align: center;
-	padding: var(--spacing-2xl);
-	color: var(--color-text-secondary);
-}
-
-.back-link {
-	color: var(--color-primary);
-}
-
-.breadcrumb-back {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
-	text-decoration: none;
-
-	&:hover {
-		color: var(--color-primary);
-	}
-}
-
-.medicine-header {
-	margin-bottom: var(--spacing-xl);
+.medicine-hero {
+	padding: var(--spacing-xl) 0;
 }
 
 .medicine-name {
 	font-size: 1.75rem;
 	font-weight: 700;
-	margin: var(--spacing-sm) 0 0;
+	color: var(--color-text-primary);
+	margin: 0;
 	line-height: 1.2;
 }
 
@@ -275,13 +241,13 @@ watchEffect(() => {
 	margin-top: var(--spacing-xs);
 }
 
-.medicine-status {
+.medicine-badges {
 	display: flex;
 	gap: var(--spacing-xs);
 	margin-top: var(--spacing-sm);
 }
 
-.status-badge {
+.badge {
 	font-size: var(--font-size-sm);
 	padding: 2px var(--spacing-sm);
 	border-radius: var(--border-radius-sm);
@@ -291,22 +257,6 @@ watchEffect(() => {
 .badge-rx { background: #fff3e0; color: #e65100; }
 .badge-active { background: #e3f2fd; color: #1565c0; }
 .badge-expired { background: #fce4ec; color: #c62828; }
-
-.medicine-section {
-	margin-bottom: var(--spacing-xl);
-}
-
-.section-title {
-	font-size: 1.1rem;
-	font-weight: 600;
-	margin: 0 0 var(--spacing-sm);
-}
-
-.section-subtitle {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
-	margin: 0 0 var(--spacing-md);
-}
 
 .substance-list {
 	display: flex;
@@ -330,6 +280,7 @@ watchEffect(() => {
 .detail-row {
 	display: flex;
 	gap: var(--spacing-md);
+	font-size: var(--font-size-sm);
 
 	@media (max-width: 600px) {
 		flex-direction: column;
@@ -339,13 +290,14 @@ watchEffect(() => {
 
 .detail-label {
 	min-width: 180px;
-	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
 	flex-shrink: 0;
 }
 
-.detail-value {
+.section-hint {
 	font-size: var(--font-size-sm);
+	color: var(--color-text-secondary);
+	margin: 0 0 var(--spacing-md);
 }
 
 .analogs-list {
@@ -364,33 +316,17 @@ watchEffect(() => {
 	color: inherit;
 	transition: border-color 0.15s;
 
-	&:hover {
-		border-color: var(--color-primary);
-	}
+	&:hover { border-color: var(--color-primary); }
 }
 
-.analog-name {
-	font-weight: 600;
-	font-size: var(--font-size-sm);
-}
-
-.analog-details {
-	font-size: var(--font-size-xs);
-	color: var(--color-text-secondary);
-}
-
+.analog-name { font-weight: 600; font-size: var(--font-size-sm); }
+.analog-details { font-size: var(--font-size-xs); color: var(--color-text-secondary); }
 .analog-meta {
 	font-size: var(--font-size-xs);
 	color: var(--color-text-tertiary);
 	display: flex;
 	align-items: center;
 	gap: var(--spacing-xs);
-}
-
-.analog-badge {
-	font-size: 10px;
-	padding: 1px var(--spacing-xs);
-	border-radius: var(--border-radius-sm);
 }
 
 .medicine-source {

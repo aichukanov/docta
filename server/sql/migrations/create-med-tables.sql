@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `med_medicines` (
   `cinmed_id`              INT UNSIGNED NOT NULL COMMENT 'CInMED internal ID',
   `name`                   VARCHAR(500) NOT NULL COMMENT 'Brand name',
   `pharmaceutical_form_id` SMALLINT UNSIGNED DEFAULT NULL,
-  `strength`               VARCHAR(255) DEFAULT NULL,
+  `strength`               VARCHAR(500) DEFAULT NULL,
   `packaging`              VARCHAR(500) DEFAULT NULL,
   `detail_packaging`       VARCHAR(1000) DEFAULT NULL,
   `manufacturer_id`        SMALLINT UNSIGNED DEFAULT NULL,

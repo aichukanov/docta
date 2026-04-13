@@ -245,10 +245,28 @@ const tabs = computed(() => {
 
 			<!-- Source -->
 			<div class="medicine-source">
-				{{ t('SourceCInMED') }}
-				<!-- <a :href="med.detailUrl" target="_blank" rel="noopener">
-					{{ t('SourceCInMED') }} ↗
-				</a> -->
+				<div class="source-text">
+					{{ t('SourceCInMED') }}
+					—
+					<a
+						href="https://www.cinmed.me"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="source-link"
+					>
+						{{ t('SourceCInMEDSite') }}&nbsp;&nearr;
+					</a>
+				</div>
+				<div v-if="med.updatedAt" class="source-updated">
+					{{
+						t('SourceCInMEDUpdated', {
+							date: new Date(med.updatedAt).toLocaleDateString(
+								locale === 'sr-cyrl' ? 'sr-Cyrl' : locale,
+								{ year: 'numeric', month: 'long' },
+							),
+						})
+					}}
+				</div>
 			</div>
 		</template>
 	</EntityPage>
@@ -394,16 +412,33 @@ const tabs = computed(() => {
 
 .medicine-source {
 	margin-top: var(--spacing-2xl);
-	padding-top: var(--spacing-md);
-	border-top: 1px solid var(--color-border-light);
-	font-size: 0.8rem;
+	padding: var(--spacing-md) var(--spacing-lg);
+	background: #f8f9fb;
+	border-radius: var(--border-radius-md);
+	border: 1px solid var(--color-border-light);
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
 
-	a {
-		color: var(--color-text-tertiary);
-		text-decoration: none;
-		&:hover {
-			color: var(--color-primary);
-		}
+.source-text {
+	font-size: 0.85rem;
+	color: var(--color-text-secondary);
+	line-height: 1.4;
+}
+
+.source-link {
+	color: var(--color-primary);
+	text-decoration: none;
+	font-weight: 500;
+
+	&:hover {
+		text-decoration: underline;
 	}
+}
+
+.source-updated {
+	font-size: 0.8rem;
+	color: var(--color-text-tertiary);
 }
 </style>

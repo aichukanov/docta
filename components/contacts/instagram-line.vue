@@ -1,5 +1,5 @@
 <template>
-	<ContactsLine :value="instagramUrl" link :tooltip="t('Instagram')">
+	<ContactsLine :value="instagramUrl" link :tooltip="t('Instagram')" nofollow>
 		<IconInstagram :size="20" class="messenger-icon" />
 		<span>{{ profile }}</span>
 	</ContactsLine>

@@ -20,7 +20,7 @@ const props = withDefaults(
 		nofollow?: boolean;
 	}>(),
 	{
-		nofollow: true,
+		nofollow: false,
 	},
 );
 

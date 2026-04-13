@@ -9,7 +9,7 @@
 			<a
 				v-if="link"
 				:href="value"
-				:rel="nofollow ? 'nofollow noopener' : 'noopener'"
+				:rel="nofollow ? 'nofollow noopener noreferrer' : 'noopener noreferrer'"
 				class="contact-link messenger-link"
 				target="_blank"
 			>
@@ -33,7 +33,7 @@ withDefaults(
 		nofollow?: boolean;
 	}>(),
 	{
-		nofollow: true,
+		nofollow: false,
 	},
 );
 </script>

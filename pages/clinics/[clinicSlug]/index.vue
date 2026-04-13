@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Clock } from '@element-plus/icons-vue';
 import { formatClinicAddressLine } from '~/common/clinic-address';
-import { OG_IMAGE, SITE_URL, REVIEWS_THRESHOLD } from '~/common/constants';
+import { OG_IMAGE, REVIEWS_THRESHOLD, SITE_URL } from '~/common/constants';
 import {
 	buildBreadcrumbsSchema,
 	buildClinicSchema,
@@ -18,8 +18,8 @@ import languageI18n from '~/i18n/language';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
 import reviewsI18n from '~/i18n/reviews';
 import specialtyI18n from '~/i18n/specialty';
-import workingHoursI18n from '~/i18n/working-hours';
 import { combineI18nMessages } from '~/i18n/utils';
+import workingHoursI18n from '~/i18n/working-hours';
 import type { ClinicPrice } from '~/interfaces/clinic';
 import type { WorkingHours } from '~/interfaces/clinic-working-hours';
 import { DAYS_OF_WEEK } from '~/interfaces/clinic-working-hours';
@@ -245,10 +245,16 @@ const tabs = computed(() => {
 		});
 	}
 	if (clinicData.value) {
-		const reviewCount = clinicData.value.rating?.totalReviews || clinicData.value.reviews?.length || 0;
+		const reviewCount =
+			clinicData.value.rating?.totalReviews ||
+			clinicData.value.reviews?.length ||
+			0;
 		result.push({
 			id: 'reviews',
-			label: reviewCount > 0 ? `${t('TabReviews')} (${reviewCount})` : t('TabReviews'),
+			label:
+				reviewCount > 0
+					? `${t('TabReviews')} (${reviewCount})`
+					: t('TabReviews'),
 		});
 	}
 	result.push({ id: 'map', label: t('TabMap') });
@@ -281,12 +287,6 @@ const scrollToMap = () => {
 		isMapVisible.value = true;
 	}
 };
-
-const getItemLink = (routeName: string, paramName: string, id: number) => ({
-	name: routeName,
-	params: { [paramName]: id },
-	query: getRegionalQuery(locale.value),
-});
 
 const pageTitle = computed(() => {
 	if (!isFound.value) {
@@ -346,7 +346,10 @@ function joinWithAnd(items: string[]): string {
 }
 
 const hasSeparateReviewsPage = computed(() => {
-	const total = clinicData.value?.rating?.totalReviews || clinicData.value?.reviews?.length || 0;
+	const total =
+		clinicData.value?.rating?.totalReviews ||
+		clinicData.value?.reviews?.length ||
+		0;
 	return total > REVIEWS_THRESHOLD;
 });
 
@@ -361,9 +364,13 @@ const showReviewDialog = ref(false);
 
 const ownReview = computed(() => {
 	if (ownReviewDeleted.value) return null;
-	return localOwnReview.value || allClinicReviews.value.find((r) => r.isOwn) || null;
+	return (
+		localOwnReview.value || allClinicReviews.value.find((r) => r.isOwn) || null
+	);
 });
-const otherReviews = computed(() => allClinicReviews.value.filter((r) => !r.isOwn));
+const otherReviews = computed(() =>
+	allClinicReviews.value.filter((r) => !r.isOwn),
+);
 
 const displayedReviews = computed(() => {
 	if (hasSeparateReviewsPage.value) {
@@ -497,9 +504,9 @@ watchEffect(() => {
 				sectionId="hours"
 				:title="t('WorkingHours')"
 			>
-				<template #icon
-					><el-icon :size="20"><Clock /></el-icon
-				></template>
+				<template #icon>
+					<el-icon :size="20"><Clock /></el-icon>
+				</template>
 				<ClinicWorkingHours :clinicId="clinicId" />
 			</EntityPageSection>
 
@@ -553,10 +560,7 @@ watchEffect(() => {
 			</EntityPageSection>
 
 			<!-- Lab Tests -->
-			<EntityPageSection
-				v-if="clinicLabTests.length > 0"
-				sectionId="labtests"
-			>
+			<EntityPageSection v-if="clinicLabTests.length > 0" sectionId="labtests">
 				<ClinicCategorizedSection
 					:title="t('LabTestsAtClinic')"
 					:totalCount="clinicLabTests.length"
@@ -615,7 +619,9 @@ watchEffect(() => {
 				v-if="clinicData"
 				sectionId="reviews"
 				:title="t('TabReviews')"
-				:count="clinicData.rating?.totalReviews || clinicData.reviews?.length || 0"
+				:count="
+					clinicData.rating?.totalReviews || clinicData.reviews?.length || 0
+				"
 			>
 				<template #icon><IconStar :size="20" /></template>
 				<div class="reviews-content">
@@ -628,7 +634,7 @@ watchEffect(() => {
 					<ReviewItem
 						v-if="ownReview"
 						:review="ownReview"
-						@updated="(r) => localOwnReview = r"
+						@updated="(r) => (localOwnReview = r)"
 						@deleted="onReviewDeleted"
 					/>
 					<DoctorReviews
@@ -649,7 +655,9 @@ watchEffect(() => {
 					entityType="clinic"
 					:entityId="clinicData.id"
 					:entityName="localizedName"
-					:relatedEntities="clinicDoctors.map(d => ({ id: d.id, name: d.name }))"
+					:relatedEntities="
+						clinicDoctors.map((d) => ({ id: d.id, name: d.name }))
+					"
 					@submitted="onReviewSubmitted"
 				/>
 			</EntityPageSection>

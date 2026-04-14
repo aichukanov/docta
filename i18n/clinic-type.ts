@@ -116,8 +116,7 @@ export default {
 			[`clinic_type_${ClinicType.ORTHOPEDIC_CLINIC}`]: 'Ортопедическая клиника',
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]:
 				'Пульмонологическая клиника',
-			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]:
-				'Физиотерапевтический кабинет',
+			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]: 'Физиотерапия',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Поликлиники',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]: 'Стоматологии',
@@ -159,8 +158,7 @@ export default {
 				'Ортопедические клиники',
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}_plural`]:
 				'Пульмонологические клиники',
-			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]:
-				'Физиотерапевтические кабинеты',
+			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]: 'Физиотерапия',
 		},
 		'sr': {
 			ClinicType: 'Tip klinike',

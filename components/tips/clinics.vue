@@ -142,6 +142,7 @@ const CLINIC_TYPE_TO_SERVICE_CATEGORY: Partial<Record<ClinicType, number>> = {
 	[ClinicType.GASTROENTEROLOGY_CLINIC]: MedicalServiceCategory.GASTROENTEROLOGY,
 	[ClinicType.ENDOCRINOLOGY_CLINIC]: MedicalServiceCategory.ENDOCRINOLOGY,
 	[ClinicType.PULMONOLOGY_CLINIC]: MedicalServiceCategory.PULMONOLOGY,
+	[ClinicType.PHYSIOTHERAPY_CLINIC]: MedicalServiceCategory.PHYSIOTHERAPY,
 };
 
 /**
@@ -172,6 +173,7 @@ const CLINIC_TYPE_TO_SPECIALTY: Partial<Record<ClinicType, number>> = {
 	[ClinicType.PULMONOLOGY_CLINIC]: DoctorSpecialty.PULMONOLOGY,
 	[ClinicType.PSYCHIATRIC_CLINIC]: DoctorSpecialty.PSYCHIATRY,
 	[ClinicType.ONCOLOGY_CLINIC]: DoctorSpecialty.ONCOLOGY,
+	[ClinicType.PHYSIOTHERAPY_CLINIC]: DoctorSpecialty.PHYSICAL_MEDICINE,
 };
 
 const selectedTypeId = computed(() => {

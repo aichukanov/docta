@@ -64,7 +64,9 @@ export default {
 				'Clinical Biochemistry',
 			[`specialty_${DoctorSpecialty.MICROBIOLOGY}`]: 'Microbiology',
 			[`specialty_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Molecular Biology',
-			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Physical Medicine',
+			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Physical Medicine and Rehabilitation',
+			[`specialty_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Physiotherapy',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
 				'Pediatric Physical Medicine',
 			[`specialty_${DoctorSpecialty.AESTHETIC_MEDICINE}`]: 'Aesthetic Medicine',
@@ -86,8 +88,6 @@ export default {
 			[`specialty_${DoctorSpecialty.PERINATOLOGY}`]: 'Perinatology',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
 				'Pediatric Plastic Surgery',
-			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Physical Medicine and Rehabilitation',
 			[`specialty_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oral Surgery',
 			[`specialty_${DoctorSpecialty.MAMMOLOGY}`]: 'Mammology',
 			[`specialty_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Oncologic Surgery',
@@ -268,8 +268,13 @@ export default {
 			[`doctor_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Molecular Biologist',
 			[`doctors_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Molecular Biologists',
 
-			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Physiatrist',
-			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Physiatrists',
+			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Physiatrist',
+			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Physiatrists',
+
+			[`doctor_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Physiotherapist',
+			[`doctors_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Physiotherapists',
 
 			[`doctor_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
 				'Pediatric Physiatrist',
@@ -333,11 +338,6 @@ export default {
 				'Pediatric Plastic Surgeon',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
 				'Pediatric Plastic Surgeons',
-
-			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Physical Medicine and Rehabilitation Doctor',
-			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Physical Medicine and Rehabilitation Doctors',
 
 			[`doctor_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oral Surgeon',
 			[`doctors_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oral Surgeons',
@@ -611,9 +611,16 @@ export default {
 			[`doctor_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Молекулярный биолог',
 			[`doctors_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Молекулярные биологи',
 
-			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Физиатрия',
-			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Физиолог',
-			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Физиологи',
+			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Физикальная медицина и реабилитация',
+			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Реабилитолог',
+			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Реабилитологи',
+
+			[`specialty_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Физиотерапия',
+			[`doctor_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Физиотерапевт',
+			[`doctors_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Физиотерапевты',
 
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
 				'Детская физиатрия',
@@ -701,13 +708,6 @@ export default {
 				'Детский пластический хирург',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
 				'Детские пластические хирурги',
-
-			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Физикальная медицина и реабилитация',
-			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Физиотерапевт',
-			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Физиотерапевты',
 
 			[`specialty_${DoctorSpecialty.ORAL_SURGERY}`]:
 				'Хирургическая стоматология',
@@ -859,7 +859,9 @@ export default {
 			[`specialty_${DoctorSpecialty.MICROBIOLOGY}`]: 'Mikrobiologija',
 			[`specialty_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]:
 				'Molekularna biologija',
-			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Fizijatrija',
+			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Fizikalna medicina i rehabilitacija',
+			[`specialty_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Fizioterapija',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
 				'Dečja fizijatrija',
 			[`specialty_${DoctorSpecialty.AESTHETIC_MEDICINE}`]: 'Estetska medicina',
@@ -880,8 +882,6 @@ export default {
 			[`specialty_${DoctorSpecialty.PERINATOLOGY}`]: 'Perinatologija',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
 				'Dečja plastična hirurgija',
-			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Fizikalna medicina i rehabilitacija',
 			[`specialty_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralna hirurgija',
 
 			[`specialty_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologija',
@@ -1022,8 +1022,13 @@ export default {
 			[`doctor_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Molekularni biolog',
 			[`doctors_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Molekularni biolozi',
 
-			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Fizijatar',
-			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Fizijatri',
+			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Fizijatar',
+			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Fizijatri',
+
+			[`doctor_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Fizioterapeut',
+			[`doctors_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Fizioterapeuti',
 
 			[`doctor_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
 				'Dečji fizijatar',
@@ -1085,11 +1090,6 @@ export default {
 				'Dečji plastični hirurg',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
 				'Dečji plastični hirurzi',
-
-			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Fizijatar',
-			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Fizijatri',
 
 			[`doctor_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralni hirurg',
 			[`doctors_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralni hirurzi',
@@ -1241,8 +1241,9 @@ export default {
 				'Klinische Biochemie',
 			[`specialty_${DoctorSpecialty.MICROBIOLOGY}`]: 'Mikrobiologie',
 			[`specialty_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Molekularbiologie',
-			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE}`]:
-				'Physikalische Medizin',
+			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Physikalische Medizin und Rehabilitation',
+			[`specialty_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Physiotherapie',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
 				'Kinderphysikalische Medizin',
 			[`specialty_${DoctorSpecialty.AESTHETIC_MEDICINE}`]:
@@ -1263,8 +1264,6 @@ export default {
 			[`specialty_${DoctorSpecialty.PERINATOLOGY}`]: 'Perinatologie',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
 				'Kinderplastische Chirurgie',
-			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Physikalische Medizin und Rehabilitation',
 			[`specialty_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralchirurgie',
 			[`specialty_${DoctorSpecialty.MAMMOLOGY}`]: 'Mammologie',
 			[`specialty_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]:
@@ -1428,10 +1427,13 @@ export default {
 			[`doctor_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Molekularbiologe',
 			[`doctors_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Molekularbiologen',
 
-			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE}`]:
+			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
 				'Physikalischer Mediziner',
-			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE}`]:
+			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
 				'Physikalische Mediziner',
+
+			[`doctor_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Physiotherapeut',
+			[`doctors_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Physiotherapeuten',
 
 			[`doctor_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
 				'Kinderphysikalischer Mediziner',
@@ -1487,11 +1489,6 @@ export default {
 				'Kinderplastischer Chirurg',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
 				'Kinderplastische Chirurgen',
-
-			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Physikalischer Mediziner und Rehabilitationsarzt',
-			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Physikalische Mediziner und Rehabilitationsärzte',
 
 			[`doctor_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralchirurg',
 			[`doctors_${DoctorSpecialty.ORAL_SURGERY}`]: 'Oralchirurgen',
@@ -1612,7 +1609,9 @@ export default {
 			[`specialty_${DoctorSpecialty.CLINICAL_BIOCHEMISTRY}`]: 'Tıbbi Biyokimya',
 			[`specialty_${DoctorSpecialty.MICROBIOLOGY}`]: 'Mikrobiyoloji',
 			[`specialty_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Moleküler Biyoloji',
-			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Fizik Tedavi',
+			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Fiziksel Tıp ve Rehabilitasyon',
+			[`specialty_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Fizyoterapi',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
 				'Çocuk Fizik Tedavisi',
 			[`specialty_${DoctorSpecialty.AESTHETIC_MEDICINE}`]: 'Estetik Tıp',
@@ -1634,8 +1633,6 @@ export default {
 			[`specialty_${DoctorSpecialty.PERINATOLOGY}`]: 'Perinatoloji',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
 				'Çocuk Plastik Cerrahisi',
-			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Fiziksel Tıp ve Rehabilitasyon',
 			[`specialty_${DoctorSpecialty.ORAL_SURGERY}`]: 'Ağız Cerrahisi',
 			[`specialty_${DoctorSpecialty.MAMMOLOGY}`]: 'Mamoloji',
 			[`specialty_${DoctorSpecialty.ONCOLOGIC_SURGERY}`]: 'Onkolojik Cerrahi',
@@ -1806,9 +1803,13 @@ export default {
 			[`doctor_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Moleküler Biyolog',
 			[`doctors_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Moleküler Biyologlar',
 
-			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Fizik Tedavi Doktoru',
-			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE}`]:
-				'Fizik Tedavi Doktorları',
+			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Fiziksel Tıp Doktoru',
+			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Fiziksel Tıp Doktorları',
+
+			[`doctor_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Fizyoterapist',
+			[`doctors_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Fizyoterapistler',
 
 			[`doctor_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
 				'Çocuk Fizik Tedavi Doktoru',
@@ -1868,11 +1869,6 @@ export default {
 				'Çocuk Plastik Cerrahı',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
 				'Çocuk Plastik Cerrahları',
-
-			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Fiziksel Tıp ve Rehabilitasyon Doktoru',
-			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Fiziksel Tıp ve Rehabilitasyon Doktorları',
 
 			[`doctor_${DoctorSpecialty.ORAL_SURGERY}`]: 'Ağız Cerrahı',
 			[`doctors_${DoctorSpecialty.ORAL_SURGERY}`]: 'Ağız Cerrahları',
@@ -1997,7 +1993,9 @@ export default {
 			[`specialty_${DoctorSpecialty.MICROBIOLOGY}`]: 'Микробиологија',
 			[`specialty_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]:
 				'Молекуларна биологија',
-			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Физијатрија',
+			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Физикална медицина и рехабилитација',
+			[`specialty_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Физиотерапија',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
 				'Дечја физијатрија',
 			[`specialty_${DoctorSpecialty.AESTHETIC_MEDICINE}`]: 'Естетска медицина',
@@ -2018,8 +2016,6 @@ export default {
 			[`specialty_${DoctorSpecialty.PERINATOLOGY}`]: 'Перинатологија',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
 				'Дечја пластична хирургија',
-			[`specialty_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Физикална медицина и рехабилитација',
 			[`specialty_${DoctorSpecialty.ORAL_SURGERY}`]: 'Орална хирургија',
 
 			[`specialty_${DoctorSpecialty.CARDIOLOGY}`]: 'Кардиологија',
@@ -2160,8 +2156,13 @@ export default {
 			[`doctor_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Молекуларни биолог',
 			[`doctors_${DoctorSpecialty.MOLECULAR_BIOLOGY}`]: 'Молекуларни биолози',
 
-			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Физијатар',
-			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE}`]: 'Физијатри',
+			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Физијатар',
+			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
+				'Физијатри',
+
+			[`doctor_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Физиотерапеут',
+			[`doctors_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Физиотерапеути',
 
 			[`doctor_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
 				'Дечји физијатар',
@@ -2223,11 +2224,6 @@ export default {
 				'Дечји пластични хирург',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_PLASTIC_SURGERY}`]:
 				'Дечји пластични хирурзи',
-
-			[`doctor_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Физијатар',
-			[`doctors_${DoctorSpecialty.PHYSICAL_MEDICINE_REHABILITATION}`]:
-				'Физијатри',
 
 			[`doctor_${DoctorSpecialty.ORAL_SURGERY}`]: 'Орални хирург',
 			[`doctors_${DoctorSpecialty.ORAL_SURGERY}`]: 'Орални хирурзи',

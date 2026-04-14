@@ -25,6 +25,7 @@ const localI18n = {
 			TipServicesLink: '{specialty} services with prices{location}',
 			TipLabTests: 'Need to get tested? See',
 			TipLabTestsLink: 'lab tests and prices{location}',
+			TipRelatedClinics: 'Also see',
 			LocationDefault: ' in Montenegro',
 			LocationCity: ' in {city}',
 			LocationLanguage: ' ({language}-speaking)',
@@ -37,6 +38,7 @@ const localI18n = {
 			TipServicesLink: 'услуги по направлению «{specialty}» с ценами{location}',
 			TipLabTests: 'Нужно сдать анализы? Посмотрите',
 			TipLabTestsLink: 'лабораторные исследования и цены{location}',
+			TipRelatedClinics: 'Посмотрите также',
 			LocationDefault: ' в Черногории',
 			LocationCity: ' в {city}',
 			LocationLanguage: ' с сопровождением на {language} языке',
@@ -49,6 +51,7 @@ const localI18n = {
 			TipServicesLink: 'usluge iz oblasti „{specialty}" sa cenama{location}',
 			TipLabTests: 'Treba vam laboratorijska analiza? Pogledajte',
 			TipLabTestsLink: 'laboratorijske analize i cene{location}',
+			TipRelatedClinics: 'Pogledajte takođe',
 			LocationDefault: ' u Crnoj Gori',
 			LocationCity: ' u {city}',
 			LocationLanguage: ' sa pratnjom na {language} jeziku',
@@ -61,6 +64,7 @@ const localI18n = {
 			TipServicesLink: 'услуге из области „{specialty}" са ценама{location}',
 			TipLabTests: 'Треба вам лабораторијска анализа? Погледајте',
 			TipLabTestsLink: 'лабораторијске анализе и цене{location}',
+			TipRelatedClinics: 'Погледајте такође',
 			LocationDefault: ' у Црној Гори',
 			LocationCity: ' у {city}',
 			LocationLanguage: ' са пратњом на {language} језику',
@@ -74,6 +78,7 @@ const localI18n = {
 				'Leistungen im Bereich {specialty} mit Preisen{location}',
 			TipLabTests: 'Brauchen Sie eine Laboruntersuchung? Sehen Sie',
 			TipLabTestsLink: 'Laboruntersuchungen und Preise{location}',
+			TipRelatedClinics: 'Sehen Sie auch',
 			LocationDefault: ' in Montenegro',
 			LocationCity: ' in {city}',
 			LocationLanguage: ' ({language}-sprachig)',
@@ -86,6 +91,7 @@ const localI18n = {
 			TipServicesLink: '{specialty} alanındaki fiyatlı hizmetler{location}',
 			TipLabTests: 'Test yaptırmanız mı gerekiyor?',
 			TipLabTestsLink: 'Laboratuvar testleri ve fiyatlar{location}',
+			TipRelatedClinics: 'Ayrıca bakın',
 			LocationDefault: " Karadağ'da",
 			LocationCity: " {city}'de",
 			LocationLanguage: ' ({language} konuşulan)',
@@ -173,7 +179,25 @@ const CLINIC_TYPE_TO_SPECIALTY: Partial<Record<ClinicType, number>> = {
 	[ClinicType.PULMONOLOGY_CLINIC]: DoctorSpecialty.PULMONOLOGY,
 	[ClinicType.PSYCHIATRIC_CLINIC]: DoctorSpecialty.PSYCHIATRY,
 	[ClinicType.ONCOLOGY_CLINIC]: DoctorSpecialty.ONCOLOGY,
-	[ClinicType.PHYSIOTHERAPY_CLINIC]: DoctorSpecialty.PHYSICAL_MEDICINE,
+	[ClinicType.PHYSIOTHERAPY_CLINIC]: DoctorSpecialty.PHYSIOTHERAPY,
+};
+
+/**
+ * Maps clinic type → related clinic types for cross-links
+ */
+const CLINIC_TYPE_RELATED: Partial<Record<ClinicType, ClinicType[]>> = {
+	[ClinicType.PHYSIOTHERAPY_CLINIC]: [
+		ClinicType.ORTHOPEDIC_CLINIC,
+		ClinicType.REHABILITATION_CENTER,
+	],
+	[ClinicType.ORTHOPEDIC_CLINIC]: [
+		ClinicType.PHYSIOTHERAPY_CLINIC,
+		ClinicType.REHABILITATION_CENTER,
+	],
+	[ClinicType.REHABILITATION_CENTER]: [
+		ClinicType.PHYSIOTHERAPY_CLINIC,
+		ClinicType.ORTHOPEDIC_CLINIC,
+	],
 };
 
 const selectedTypeId = computed(() => {
@@ -248,6 +272,26 @@ const labTestsLink = computed(() => ({
 	},
 }));
 
+const relatedClinicTypes = computed(() => {
+	if (!selectedTypeId.value) return [];
+	return CLINIC_TYPE_RELATED[selectedTypeId.value] || [];
+});
+
+const relatedClinicLinks = computed(() =>
+	relatedClinicTypes.value.map((typeId) => ({
+		typeId,
+		name: t(`clinic_type_${typeId}_plural`),
+		to: {
+			name: 'clinics',
+			query: {
+				...getRegionalQuery(locale.value),
+				...sharedFilters.value,
+				clinicTypeIds: String(typeId),
+			},
+		},
+	})),
+);
+
 const showDoctorsTip = computed(() => !!doctorsLink.value);
 const showServicesTip = computed(() => !!relatedSpecialtyId.value);
 const showLabTip = computed(
@@ -290,6 +334,15 @@ const labTestsLinkText = computed(() =>
 	<TipsItem v-if="showLabTip">
 		{{ t('TipLabTests') }}
 		<NuxtLink :to="labTestsLink">{{ labTestsLinkText }}</NuxtLink
+		>.
+	</TipsItem>
+
+	<TipsItem v-if="relatedClinicLinks.length">
+		{{ t('TipRelatedClinics') }}
+		<template v-for="(link, i) in relatedClinicLinks" :key="link.typeId">
+			<template v-if="i > 0">, </template>
+			<NuxtLink :to="link.to">{{ link.name.toLowerCase() }}</NuxtLink>
+		</template
 		>.
 	</TipsItem>
 </template>

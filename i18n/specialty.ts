@@ -68,7 +68,7 @@ export default {
 				'Physical Medicine and Rehabilitation',
 			[`specialty_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Physiotherapy',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Pediatric Physical Medicine',
+				'Pediatric Rehabilitation Medicine',
 			[`specialty_${DoctorSpecialty.AESTHETIC_MEDICINE}`]: 'Aesthetic Medicine',
 			[`specialty_${DoctorSpecialty.GENERAL_MEDICINE}`]: 'General Medicine',
 			[`specialty_${DoctorSpecialty.NEPHROLOGY}`]: 'Nephrology',
@@ -277,9 +277,9 @@ export default {
 			[`doctors_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Physiotherapists',
 
 			[`doctor_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Pediatric Physiatrist',
+				'Pediatric Rehabilitation Specialist',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Pediatric Physiatrists',
+				'Pediatric Rehabilitation Specialists',
 
 			[`doctor_${DoctorSpecialty.AESTHETIC_MEDICINE}`]:
 				'Aesthetic Medicine Doctor',
@@ -623,11 +623,11 @@ export default {
 			[`doctors_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Физиотерапевты',
 
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Детская физиатрия',
+				'Детская реабилитация',
 			[`doctor_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Детский физиолог',
+				'Детский реабилитолог',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Детские физиологи',
+				'Детские реабилитологи',
 
 			[`specialty_${DoctorSpecialty.AESTHETIC_MEDICINE}`]:
 				'Эстетическая медицина',
@@ -863,7 +863,7 @@ export default {
 				'Fizikalna medicina i rehabilitacija',
 			[`specialty_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Fizioterapija',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Dečja fizijatrija',
+				'Dečja rehabilitacija',
 			[`specialty_${DoctorSpecialty.AESTHETIC_MEDICINE}`]: 'Estetska medicina',
 			[`specialty_${DoctorSpecialty.GENERAL_MEDICINE}`]: 'Opšta medicina',
 			[`specialty_${DoctorSpecialty.NEPHROLOGY}`]: 'Nefrologija',
@@ -1031,9 +1031,9 @@ export default {
 			[`doctors_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Fizioterapeuti',
 
 			[`doctor_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Dečji fizijatar',
+				'Dečji rehabilitolog',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Dečji fizijatri',
+				'Dečji rehabilitolozi',
 
 			[`doctor_${DoctorSpecialty.AESTHETIC_MEDICINE}`]:
 				'Lekar estetske medicine',
@@ -1245,7 +1245,7 @@ export default {
 				'Physikalische Medizin und Rehabilitation',
 			[`specialty_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Physiotherapie',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Kinderphysikalische Medizin',
+				'Kinderrehabilitationsmedizin',
 			[`specialty_${DoctorSpecialty.AESTHETIC_MEDICINE}`]:
 				'Ästhetische Medizin',
 			[`specialty_${DoctorSpecialty.GENERAL_MEDICINE}`]: 'Allgemeine Medizin',
@@ -1436,9 +1436,9 @@ export default {
 			[`doctors_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Physiotherapeuten',
 
 			[`doctor_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Kinderphysikalischer Mediziner',
+				'Kinderrehabilitationsmediziner',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Kinderphysikalische Mediziner',
+				'Kinderrehabilitationsmediziner',
 
 			[`doctor_${DoctorSpecialty.AESTHETIC_MEDICINE}`]:
 				'Ästhetischer Mediziner',
@@ -1613,7 +1613,7 @@ export default {
 				'Fiziksel Tıp ve Rehabilitasyon',
 			[`specialty_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Fizyoterapi',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Çocuk Fizik Tedavisi',
+				'Çocuk Rehabilitasyon',
 			[`specialty_${DoctorSpecialty.AESTHETIC_MEDICINE}`]: 'Estetik Tıp',
 			[`specialty_${DoctorSpecialty.GENERAL_MEDICINE}`]: 'Genel Tıp',
 			[`specialty_${DoctorSpecialty.NEPHROLOGY}`]: 'Nefroloji',
@@ -1812,9 +1812,9 @@ export default {
 			[`doctors_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Fizyoterapistler',
 
 			[`doctor_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Çocuk Fizik Tedavi Doktoru',
+				'Çocuk Rehabilitasyon Uzmanı',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Çocuk Fizik Tedavi Doktorları',
+				'Çocuk Rehabilitasyon Uzmanları',
 
 			[`doctor_${DoctorSpecialty.AESTHETIC_MEDICINE}`]: 'Estetik Tıp Doktoru',
 			[`doctors_${DoctorSpecialty.AESTHETIC_MEDICINE}`]:
@@ -1997,7 +1997,7 @@ export default {
 				'Физикална медицина и рехабилитација',
 			[`specialty_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Физиотерапија',
 			[`specialty_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Дечја физијатрија',
+				'Дечја рехабилитација',
 			[`specialty_${DoctorSpecialty.AESTHETIC_MEDICINE}`]: 'Естетска медицина',
 			[`specialty_${DoctorSpecialty.GENERAL_MEDICINE}`]: 'Општа медицина',
 			[`specialty_${DoctorSpecialty.NEPHROLOGY}`]: 'Нефрологија',
@@ -2165,9 +2165,9 @@ export default {
 			[`doctors_${DoctorSpecialty.PHYSIOTHERAPY}`]: 'Физиотерапеути',
 
 			[`doctor_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Дечји физијатар',
+				'Дечји рехабилитолог',
 			[`doctors_${DoctorSpecialty.PEDIATRIC_PHYSICAL_MEDICINE}`]:
-				'Дечји физијатри',
+				'Дечји рехабилитолози',
 
 			[`doctor_${DoctorSpecialty.AESTHETIC_MEDICINE}`]:
 				'Лекар естетске медицине',

@@ -699,6 +699,24 @@
       "reviewsWithText": 28,
       "translationsDir": "data/review-translations/oftalmoloski-centar-dr-raonic/",
       "translationsCount": 28
+    },
+    "teo-med-podgorica": {
+      "status": "done",
+      "clinicName": "Teo Med — Pedijatrijska ambulanta (Podgorica)",
+      "configFile": "data/review-import-configs/teo-med-podgorica.json",
+      "sqlFile": "server/sql/reviews-google/teo-med-podgorica.sql",
+      "reviewsWithText": 24,
+      "translationsDir": "data/review-translations/teo-med-podgorica/",
+      "translationsCount": 24
+    },
+    "dr-filimanovic-podgorica": {
+      "status": "done",
+      "clinicName": "Dr Filimanović - stomatološka ordinacija (Podgorica)",
+      "configFile": "data/review-import-configs/dr-filimanovic-podgorica.json",
+      "sqlFile": "server/sql/reviews-google/dr-filimanovic-podgorica.sql",
+      "reviewsWithText": 173,
+      "translationsDir": "data/review-translations/dr-filimanovic-podgorica/",
+      "translationsCount": 346
     }
   }
 }

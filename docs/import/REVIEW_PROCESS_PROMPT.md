@@ -55,11 +55,11 @@
 }
 ```
 
-### 4. Переведи отзывы — по одному
+### 4. Переведи отзывы
 
 Создай папку `data/review-translations/<slug>/`.
 
-Для каждого отзыва с непустым `originalText.text` — переведи на 6 языков и **сразу сохрани в отдельный файл**:
+#### Формат файлов
 
 `data/review-translations/<slug>/review-<NNN>.json` (NNN — порядковый номер 001, 002, ...)
 
@@ -89,11 +89,54 @@
 }
 ```
 
-**Важно**: переводи и сохраняй каждый отзыв по одному, не накапливай. Так прогресс не потеряется при сбое.
+#### Способ: выбери по количеству отзывов
+
+**До ~30 отзывов** — переводи и сохраняй каждый отзыв по одному (Write tool). Так прогресс не потеряется при сбое.
+
+**Больше ~30 отзывов** — используй пакетный режим со вспомогательными скриптами:
+
+1. Извлеки сырые данные:
+```bash
+node -e "
+  const d = require('./<google-places-file>.json');
+  const r = d.reviews.filter(r => r.originalText?.text?.trim()).map((r, i) => ({
+    idx: i+1,
+    id: r._reviewId || r.name.split('/reviews/')[1],
+    lang: r.originalText.languageCode || 'sr',
+    text: r.originalText.text,
+    hasReply: !!(r.ownerResponse?.text?.trim()),
+    replyLang: r.ownerResponse?.languageCode || 'sr',
+    replyText: r.ownerResponse?.text || ''
+  }));
+  require('fs').writeFileSync('data/review-translations/<slug>-raw.json', JSON.stringify(r, null, 2));
+"
+```
+
+2. Создай скелеты файлов (копирует оригинал в нужное поле, остальные — пустые):
+```bash
+node scripts/generate-translation-files.mjs data/review-translations/<slug>-raw.json data/review-translations/<slug>/
+```
+
+3. Переводи пакетами — создай JSON-файл с переводами и влей:
+```bash
+node scripts/merge-translations.mjs data/review-translations/<slug>/ <batch-file>.json
+```
+
+Формат batch-файла:
+```json
+{
+  "review-001": { "sr_cyrl": "...", "en": "...", "ru": "...", "de": "...", "tr": "..." },
+  "reply-001": { "sr_cyrl": "...", "en": "...", "ru": "...", "de": "...", "tr": "..." },
+  ...
+}
+```
+
+4. Удали временные файлы (`<slug>-raw.json`, batch-файлы) после завершения.
 
 #### Правила перевода:
 - Если `original_language` совпадает с целевым — скопируй оригинал
 - Если `text.languageCode` = `"sr"` и текст кириллицей — используй для `sr_cyrl`, транслитерируй для `sr`
+- **sr_cyrl** — переводи вручную, наивная транслитерация ненадёжна (имена, бренды, иностранные слова не транслитерируются)
 - Сохраняй тон, стиль, эмодзи
 - Имена врачей и клиник НЕ переводи
 - Пропускай отзывы без текста

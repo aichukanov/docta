@@ -1,0 +1,46 @@
+{
+  "jsonPath": "data/google-places/podgorica/stomatoloska-ordinacija-dr-filimanovic-city-kvart-podgorica.json",
+  "outputPath": "server/sql/reviews-google/dr-filimanovic-podgorica.sql",
+  "dataCollectedDate": "2026-04-14",
+  "clinicId": 95,
+  "clinicName": "Dr Filimanović - stomatološka ordinacija (Podgorica)",
+  "translationsDir": "data/review-translations/dr-filimanovic-podgorica/",
+  "doctors": [
+    {
+      "id": 995,
+      "varName": "sladjana_filimanovic",
+      "patterns": [
+        "Sla[đdj]+an[aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 996,
+      "varName": "ivan_kecina",
+      "patterns": [
+        "Ke[čc]in[aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 997,
+      "varName": "natasa_ruzic",
+      "patterns": [
+        "Ru[žz]i[cćs](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Nata[šs][aeiou](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 998,
+      "varName": "sandra_djaletic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Sandr[aeiou](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 999,
+      "varName": "ivan_soc",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])[ŠS]o[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "jsonPath": "data/google-places/podgorica/ordinacija-fizikalmed.json",
+  "outputPath": "server/sql/reviews-google/ordinacija-fizikalmed.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 96,
+  "clinicName": "Ordinacija Fizikalmed (Podgorica)",
+  "translationsDir": "data/review-translations/ordinacija-fizikalmed/",
+  "doctors": [
+    {
+      "id": 1006,
+      "varName": "aleksandar_vidic",
+      "patterns": [
+        "Aleksand[ae]?r[aeou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Vidi[cć](?:em|[aeu])?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

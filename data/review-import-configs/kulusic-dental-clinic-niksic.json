@@ -1,0 +1,30 @@
+{
+  "jsonPath": "data/google-places/niksic/kulusic-dental-clinic.json",
+  "outputPath": "server/sql/reviews-google/kulusic-dental-clinic-niksic.sql",
+  "dataCollectedDate": "2026-03-18",
+  "clinicId": 99,
+  "clinicName": "Kulušić Dental Clinic (Nikšić)",
+  "translationsDir": "data/review-translations/kulusic-dental-clinic-niksic/",
+  "doctors": [
+    {
+      "id": 1009,
+      "varName": "stevan_kulusic",
+      "patterns": [
+        "Stevan[aou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Стеван[ауое]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 1010,
+      "varName": "zorka_vaskovic",
+      "patterns": [
+        "Zork[aeiou](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Vaskovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Vaskov(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Зорк[аеиоу](?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Васков(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Zok[aeiou](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

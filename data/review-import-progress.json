@@ -717,6 +717,69 @@
       "reviewsWithText": 173,
       "translationsDir": "data/review-translations/dr-filimanovic-podgorica/",
       "translationsCount": 346
+    },
+    "ordinacija-fizikalmed": {
+      "status": "done",
+      "clinicName": "Ordinacija Fizikalmed (Podgorica)",
+      "configFile": "data/review-import-configs/ordinacija-fizikalmed.json",
+      "sqlFile": "server/sql/reviews-google/ordinacija-fizikalmed.sql",
+      "translationsDir": "data/review-translations/ordinacija-fizikalmed/",
+      "reviewsWithText": 136,
+      "replies": 0,
+      "doctorMatches": {
+        "aleksandar_vidic": 34
+      }
+    },
+    "dental-studio-gacina-bar": {
+      "status": "done",
+      "clinicName": "Dental studio Gaćina (Bar)",
+      "configFile": "data/review-import-configs/dental-studio-gacina-bar.json",
+      "sqlFile": "server/sql/reviews-google/dental-studio-gacina-bar.sql",
+      "translationsDir": "data/review-translations/dental-studio-gacina-bar/",
+      "reviewsWithText": 82,
+      "replies": 23,
+      "doctorMatches": {
+        "nikola": 36
+      }
+    },
+    "extradent-podgorica": {
+      "status": "done",
+      "clinicName": "Extradent — stomatološka ordinacija (Podgorica)",
+      "configFile": "data/review-import-configs/extradent-podgorica.json",
+      "sqlFile": "server/sql/reviews-google/extradent-podgorica.sql",
+      "reviewsWithText": 68,
+      "totalReviews": 154,
+      "replies": 0,
+      "doctorMatches": {
+        "ivana_pejovic": 21
+      },
+      "languages": {
+        "bs": 16,
+        "hr": 32,
+        "en": 18,
+        "bg": 1,
+        "sr": 1
+      }
+    },
+    "kulusic-dental-clinic-niksic": {
+      "status": "done",
+      "clinicName": "Kulušić Dental Clinic (Nikšić)",
+      "configFile": "data/review-import-configs/kulusic-dental-clinic-niksic.json",
+      "sqlFile": "server/sql/reviews-google/kulusic-dental-clinic-niksic.sql",
+      "reviewsWithText": 67,
+      "totalReviews": 93,
+      "replies": 6,
+      "doctorMatches": {
+        "stevan_kulusic": 4,
+        "zorka_vaskovic": 22
+      },
+      "languages": {
+        "hr": 32,
+        "bs": 25,
+        "en": 6,
+        "sr": 3,
+        "de": 1
+      }
     }
   }
 }

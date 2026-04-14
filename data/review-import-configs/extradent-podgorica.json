@@ -1,0 +1,19 @@
+{
+  "jsonPath": "data/google-places/podgorica/stomatoloska-ordinacija-extradent.json",
+  "outputPath": "server/sql/reviews-google/extradent-podgorica.sql",
+  "dataCollectedDate": "2026-04-14",
+  "clinicId": 98,
+  "clinicName": "Extradent — stomatološka ordinacija (Podgorica)",
+  "translationsDir": "data/review-translations/extradent-podgorica/",
+  "doctors": [
+    {
+      "id": 1008,
+      "varName": "ivana_pejovic",
+      "patterns": [
+        "Ivan[aeiou](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Pejovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Иван[аеуий](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

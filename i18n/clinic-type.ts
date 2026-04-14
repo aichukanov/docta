@@ -34,6 +34,8 @@ export default {
 				'Gastroenterology Clinic',
 			[`clinic_type_${ClinicType.ORTHOPEDIC_CLINIC}`]: 'Orthopedic Clinic',
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]: 'Pulmonology Clinic',
+			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]:
+				'Physiotherapy Clinic',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Polyclinics',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]: 'Dental Clinics',
@@ -73,6 +75,8 @@ export default {
 				'Orthopedic Clinics',
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}_plural`]:
 				'Pulmonology Clinics',
+			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]:
+				'Physiotherapy Clinics',
 		},
 		'ru': {
 			ClinicType: 'Тип клиники',
@@ -112,6 +116,8 @@ export default {
 			[`clinic_type_${ClinicType.ORTHOPEDIC_CLINIC}`]: 'Ортопедическая клиника',
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]:
 				'Пульмонологическая клиника',
+			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]:
+				'Физиотерапевтический кабинет',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Поликлиники',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]: 'Стоматологии',
@@ -153,6 +159,8 @@ export default {
 				'Ортопедические клиники',
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}_plural`]:
 				'Пульмонологические клиники',
+			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]:
+				'Физиотерапевтические кабинеты',
 		},
 		'sr': {
 			ClinicType: 'Tip klinike',
@@ -188,6 +196,8 @@ export default {
 				'Gastroenterološka klinika',
 			[`clinic_type_${ClinicType.ORTHOPEDIC_CLINIC}`]: 'Ortopedska klinika',
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]: 'Pulmološka klinika',
+			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]:
+				'Fizioterapeutska ordinacija',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Poliklinike',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]:
@@ -228,6 +238,8 @@ export default {
 				'Ortopedske klinike',
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}_plural`]:
 				'Pulmološke klinike',
+			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]:
+				'Fizioterapeutske ordinacije',
 		},
 		'sr-cyrl': {
 			ClinicType: 'Тип клинике',
@@ -263,6 +275,8 @@ export default {
 				'Гастроентеролошка клиника',
 			[`clinic_type_${ClinicType.ORTHOPEDIC_CLINIC}`]: 'Ортопедска клиника',
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]: 'Пулмолошка клиника',
+			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]:
+				'Физиотерапеутска ординација',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Поликлинике',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]:
@@ -303,6 +317,8 @@ export default {
 				'Ортопедске клинике',
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}_plural`]:
 				'Пулмолошке клинике',
+			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]:
+				'Физиотерапеутске ординације',
 		},
 		'de': {
 			ClinicType: 'Kliniktyp',
@@ -337,6 +353,8 @@ export default {
 				'Gastroenterologische Klinik',
 			[`clinic_type_${ClinicType.ORTHOPEDIC_CLINIC}`]: 'Orthopädische Klinik',
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]: 'Pneumologische Klinik',
+			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]:
+				'Physiotherapie-Praxis',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Polikliniken',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]: 'Zahnarztpraxen',
@@ -376,6 +394,8 @@ export default {
 				'Orthopädische Kliniken',
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}_plural`]:
 				'Pneumologische Kliniken',
+			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]:
+				'Physiotherapie-Praxen',
 		},
 		'tr': {
 			ClinicType: 'Klinik tipi',
@@ -408,6 +428,8 @@ export default {
 			[`clinic_type_${ClinicType.ORTHOPEDIC_CLINIC}`]: 'Ortopedi kliniği',
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]:
 				'Göğüs hastalıkları kliniği',
+			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]:
+				'Fizyoterapi kliniği',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Poliklinikler',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]: 'Diş klinikleri',
@@ -447,6 +469,8 @@ export default {
 				'Ortopedi klinikleri',
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}_plural`]:
 				'Göğüs hastalıkları klinikleri',
+			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]:
+				'Fizyoterapi klinikleri',
 		},
 	},
 };

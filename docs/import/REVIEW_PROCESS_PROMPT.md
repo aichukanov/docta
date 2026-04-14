@@ -118,5 +118,5 @@ node scripts/generate-reviews-sql.mjs data/review-import-configs/<slug>.json
 4. **SQL**: результат работы скрипта
 5. **Команда запуска**:
 ```
-mysql -u root -p --default-character-set=utf8mb4 docta_me < d:/pet/docta.me/nuxt/server/sql/insert-reviews-<slug>.sql
+mysql -u root -p --default-character-set=utf8mb4 docta_me < e:/pet/docta.me/nuxt/server/sql/insert-reviews-<slug>.sql
 ```

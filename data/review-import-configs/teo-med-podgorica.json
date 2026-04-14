@@ -1,0 +1,40 @@
+{
+  "jsonPath": "data/google-places/podgorica/pedijatrijska-ambulanta-teo-med.json",
+  "outputPath": "server/sql/reviews-google/teo-med-podgorica.sql",
+  "dataCollectedDate": "2026-04-14",
+  "clinicId": 94,
+  "clinicName": "Teo Med — Pedijatrijska ambulanta (Podgorica)",
+  "translationsDir": "data/review-translations/teo-med-podgorica/",
+  "doctors": [
+    {
+      "id": 992,
+      "varName": "danojla_dakic",
+      "patterns": [
+        "Daki[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Danojl[aeiou](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 993,
+      "varName": "jelica_stanisic",
+      "patterns": [
+        "Stani[sš]i[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Jelic[aeiou](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 994,
+      "varName": "zeljka_cvorovic",
+      "patterns": [
+        "[ČC]vorovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 863,
+      "varName": "zeljka_rogac",
+      "patterns": [
+        "Roga[cč](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

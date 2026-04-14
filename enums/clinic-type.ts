@@ -22,6 +22,7 @@ export enum ClinicType {
 	GASTROENTEROLOGY_CLINIC = 21,
 	ORTHOPEDIC_CLINIC = 22,
 	PULMONOLOGY_CLINIC = 23,
+	PHYSIOTHERAPY_CLINIC = 24,
 }
 
 /**
@@ -51,6 +52,7 @@ export const CLINIC_TYPE_SCHEMA_ORG: Record<ClinicType, string> = {
 	[ClinicType.GASTROENTEROLOGY_CLINIC]: 'MedicalClinic',
 	[ClinicType.ORTHOPEDIC_CLINIC]: 'MedicalClinic',
 	[ClinicType.PULMONOLOGY_CLINIC]: 'MedicalClinic',
+	[ClinicType.PHYSIOTHERAPY_CLINIC]: 'MedicalClinic',
 };
 
 /**
@@ -79,4 +81,5 @@ export const CLINIC_TYPE_MEDICAL_SPECIALTY: Partial<
 	[ClinicType.GASTROENTEROLOGY_CLINIC]: 'Gastroenterologic',
 	[ClinicType.ORTHOPEDIC_CLINIC]: 'Musculoskeletal',
 	[ClinicType.PULMONOLOGY_CLINIC]: 'Pulmonary',
+	[ClinicType.PHYSIOTHERAPY_CLINIC]: 'Physiotherapy',
 };

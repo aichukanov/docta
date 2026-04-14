@@ -1,0 +1,16 @@
+SELECT JSON_ARRAYAGG(
+  JSON_OBJECT(
+    'id', d.id,
+    'name', d.name_sr,
+    'specialties', COALESCE(specs.arr, JSON_ARRAY())
+  )
+) AS result
+FROM doctors d
+JOIN doctor_clinics dc ON dc.doctor_id = d.id AND dc.clinic_id = 95
+LEFT JOIN (
+  SELECT ds.doctor_id, JSON_ARRAYAGG(s.name) AS arr
+  FROM doctor_specialties ds
+  JOIN specialties s ON s.id = ds.specialty_id
+  GROUP BY ds.doctor_id
+) specs ON specs.doctor_id = d.id
+WHERE d.hidden = 0;

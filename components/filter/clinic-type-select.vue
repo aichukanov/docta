@@ -62,6 +62,7 @@ const VISIBLE_TYPES: ClinicType[] = [
 	ClinicType.SURGICAL_CENTER,
 	ClinicType.DERMATOLOGY_CLINIC,
 	ClinicType.AESTHETIC_CLINIC,
+	ClinicType.PHYSIOTHERAPY_CLINIC,
 	// ClinicType.PHARMACY,
 	// ClinicType.OPTICAL_CLINIC,
 	// ClinicType.REHABILITATION_CENTER,

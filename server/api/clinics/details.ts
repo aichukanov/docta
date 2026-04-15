@@ -1,3 +1,4 @@
+import { REVIEWS_THRESHOLD } from '~/common/constants';
 import { getCurrentUser } from '~/server/common/auth';
 import { getConnection } from '~/server/common/db-mysql';
 import { fetchRating, fetchReviews } from '~/server/common/reviews';
@@ -88,7 +89,18 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 
 		// Загружаем рейтинг и отзывы клиники
 		const rating = await fetchRating(connection, 'clinic', clinic.id);
-		const reviews = await fetchReviews(connection, 'clinic', clinic.id, locale, 'rank', currentUser?.id);
+		const { reviews, ownReview } = await fetchReviews(
+			connection,
+			'clinic',
+			clinic.id,
+			locale,
+			{
+				boostMinRating: 4,
+				limit: REVIEWS_THRESHOLD,
+				currentUserId: currentUser?.id,
+			},
+		);
+		const allReviews = ownReview ? [ownReview, ...reviews] : reviews;
 
 		await connection.end();
 
@@ -133,7 +145,7 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 			town,
 			logoUrl: clinic.logoUrl || '',
 			rating,
-			reviews,
+			reviews: allReviews,
 		};
 	} catch (error) {
 		console.error('API Error - clinic data:', error);

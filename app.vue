@@ -41,26 +41,20 @@ const buildJsonLd = (schemas: SchemaOrg[]) => {
 		  };
 };
 
-// Watch schema changes and update head
-watch(
-	() => schemaOrgStore.schemas,
-	(schemas) => {
-		const jsonLd = buildJsonLd(schemas);
-		if (jsonLd) {
-			useHead({
-				script: [
-					{
-						type: 'application/ld+json',
-						key: 'schema-org-jsonld',
-						tagDuplicateStrategy: 'replace',
-						innerHTML: JSON.stringify(jsonLd),
-					},
-				],
-			});
-		}
-	},
-	{ immediate: true, deep: true },
-);
+// Reactive head for schema.org JSON-LD (works with SSR)
+useHead(() => {
+	const jsonLd = buildJsonLd(schemaOrgStore.schemas);
+	if (!jsonLd) return {};
+	return {
+		script: [
+			{
+				type: 'application/ld+json',
+				key: 'schema-org-jsonld',
+				innerHTML: JSON.stringify(jsonLd),
+			},
+		],
+	};
+});
 
 // Локаль устанавливается в server middleware (regional-settings.ts)
 // и передаётся через query параметр ?lang=XX

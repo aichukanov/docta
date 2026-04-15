@@ -63,9 +63,9 @@ export async function getDoctorList(
 		page?: number;
 	} = {},
 ) {
+	const locale = body.locale || 'en';
 	const whereFilters: string[] = [];
 	const queryParams: Array<number | string> = [];
-	const locale = body.locale || 'en';
 	const usePagination = body.page != null;
 	const pageRaw = Number(body.page);
 	const pageSize = LIST_PAGE_SIZE;

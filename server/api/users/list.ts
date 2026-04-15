@@ -11,11 +11,29 @@ export default defineEventHandler(async (event): Promise<UserListItem[]> => {
 	try {
 		await requireAdmin(event);
 
+		const body = await readBody(event).catch(() => null);
+		const query = (body?.query || '').trim();
+
 		const connection = await getConnection();
 
-		const [rows]: any = await connection.execute(
-			`SELECT id, email, COALESCE(name, '') as name FROM auth_users ORDER BY id`,
-		);
+		let rows: any[];
+		if (query) {
+			// Remote search: по id, email или имени, LIMIT 20
+			const isNumeric = /^\d+$/.test(query);
+			const pattern = `%${query}%`;
+			const [result]: any = await connection.execute(
+				`SELECT id, email, COALESCE(name, '') as name FROM auth_users
+				WHERE ${isNumeric ? 'id = ? OR' : ''} email LIKE ? OR name LIKE ?
+				ORDER BY id LIMIT 20`,
+				isNumeric ? [Number(query), pattern, pattern] : [pattern, pattern],
+			);
+			rows = result;
+		} else {
+			const [result]: any = await connection.execute(
+				`SELECT id, email, COALESCE(name, '') as name FROM auth_users ORDER BY id`,
+			);
+			rows = result;
+		}
 
 		await connection.end();
 

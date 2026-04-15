@@ -20,35 +20,6 @@ export function isValidSort(value: unknown): value is ReviewSort {
 	return typeof value === 'string' && VALID_SORTS.includes(value as ReviewSort);
 }
 
-function applySorting(reviews: Review[], sort: ReviewSort): void {
-	switch (sort) {
-		case 'newest':
-			reviews.sort(
-				(a, b) =>
-					new Date(b.publishedAt || 0).getTime() -
-					new Date(a.publishedAt || 0).getTime(),
-			);
-			break;
-		case 'oldest':
-			reviews.sort(
-				(a, b) =>
-					new Date(a.publishedAt || 0).getTime() -
-					new Date(b.publishedAt || 0).getTime(),
-			);
-			break;
-		case 'rating_high':
-			reviews.sort((a, b) => (b.rating || 0) - (a.rating || 0));
-			break;
-		case 'rating_low':
-			reviews.sort((a, b) => (a.rating || 0) - (b.rating || 0));
-			break;
-		case 'rank':
-		default:
-			sortReviewsByRank(reviews);
-			break;
-	}
-}
-
 /**
  * Build CASE expression for localized text field.
  * Used for reviews and review replies.
@@ -67,6 +38,35 @@ function localizedTextField(
 		WHEN '${locale}' = 'tr' THEN COALESCE(${tableAlias}.text_tr, ${tableAlias}.${fallbackField})
 		ELSE ${tableAlias}.${fallbackField}
 	END`;
+}
+
+function buildOrderByClause(sort: ReviewSort, textExpr: string): string {
+	switch (sort) {
+		case 'newest':
+			return 'r.published_at DESC';
+		case 'oldest':
+			return 'r.published_at ASC';
+		case 'rating_high':
+			return 'r.rating DESC, r.published_at DESC';
+		case 'rating_low':
+			return 'r.rating ASC, r.published_at DESC';
+		case 'rank':
+		default:
+			return `(
+				0.30 * EXP(-(LN(2)/365) * GREATEST(0, DATEDIFF(NOW(), COALESCE(r.published_at, DATE_SUB(NOW(), INTERVAL 730 DAY))))) +
+				0.30 * LEAST(1.0, CHAR_LENGTH(COALESCE(${textExpr}, '')) / 300.0) +
+				0.20 * LEAST(1.0, LOG2(1 + COALESCE(r.likes_count, 0)) / 5.0) +
+				0.10 * IF(r.rating IS NOT NULL, 1.0, 0.0) +
+				0.10 * CASE r.provider
+					WHEN 'docta_me' THEN 1.0
+					WHEN 'facebook' THEN 0.9
+					WHEN 'telegram' THEN 0.85
+					WHEN 'google_maps' THEN 0.75
+					ELSE 0.7
+				END +
+				IF(EXISTS(SELECT 1 FROM review_replies rr WHERE rr.review_id = r.id), 0.03, 0.0)
+			) DESC`;
+	}
 }
 
 /**
@@ -93,68 +93,154 @@ export async function fetchRating(
 	};
 }
 
+export interface FetchReviewsOptions {
+	sort?: ReviewSort;
+	limit?: number;
+	offset?: number;
+	minRating?: number;
+	/** Мягкий приоритет: отзывы с рейтингом >= boostMinRating идут первыми, но остальные не скрываются */
+	boostMinRating?: number;
+	currentUserId?: number;
+}
+
+export interface FetchReviewsResult {
+	reviews: Review[];
+	ownReview: Review | null;
+	totalCount: number;
+}
+
+const reviewSelectFields = (textExpr: string) => `
+	r.id,
+	r.user_id as userId,
+	r.doctor_id as doctorId,
+	r.clinic_id as clinicId,
+	r.provider,
+	r.provider_review_id as providerReviewId,
+	r.rating,
+	r.original_language as originalLanguage,
+	r.original_text as originalText,
+	${textExpr} as text,
+	r.published_at as publishedAt,
+	r.likes_count as likesCount,
+	r.updated_at as updatedAt,
+	COALESCE(
+		NULLIF(u.name, ''),
+		CASE u.primary_oauth_provider
+			WHEN 'google'   THEN gp.name
+			WHEN 'telegram' THEN CONCAT(tp.first_name, IFNULL(CONCAT(' ', NULLIF(tp.last_name, '')), ''))
+			WHEN 'facebook' THEN fp.name
+		END,
+		u.email
+	) as authorName,
+	COALESCE(
+		NULLIF(u.photo_url, ''),
+		CASE u.primary_oauth_provider
+			WHEN 'google'   THEN gp.picture
+			WHEN 'telegram' THEN tp.photo_url
+			WHEN 'facebook' THEN fp.picture_url
+		END
+	) as authorPhotoUrl,
+	u.profile_url as authorProfileUrl
+`;
+
+const REVIEW_JOINS = `
+	FROM reviews r
+	LEFT JOIN auth_users u ON r.user_id = u.id
+	LEFT JOIN auth_oauth_accounts goa ON u.id = goa.user_id AND goa.provider = 'google'
+	LEFT JOIN auth_oauth_profiles_google gp ON goa.id = gp.oauth_account_id
+	LEFT JOIN auth_oauth_accounts toa ON u.id = toa.user_id AND toa.provider = 'telegram'
+	LEFT JOIN auth_oauth_profiles_telegram tp ON toa.id = tp.oauth_account_id
+	LEFT JOIN auth_oauth_accounts foa ON u.id = foa.user_id AND foa.provider = 'facebook'
+	LEFT JOIN auth_oauth_profiles_facebook fp ON foa.id = fp.oauth_account_id
+`;
+
 /**
- * Fetch reviews and their replies for a doctor or clinic.
- * Returns processed reviews with replies attached, sorted by rank.
+ * Fetch reviews for a doctor or clinic with SQL-level sorting, pagination, and filtering.
+ * Own review (if currentUserId provided) is fetched separately and unaffected by minRating/pagination.
  */
 export async function fetchReviews(
 	connection: Connection,
 	entityType: 'doctor' | 'clinic',
 	entityId: number,
 	locale: string,
-	sort: ReviewSort = 'rank',
-	currentUserId?: number,
-): Promise<Review[]> {
+	options: FetchReviewsOptions = {},
+): Promise<FetchReviewsResult> {
+	const {
+		sort = 'rank',
+		limit,
+		offset = 0,
+		minRating = 0,
+		boostMinRating,
+		currentUserId,
+	} = options;
 	const column = entityType === 'doctor' ? 'doctor_id' : 'clinic_id';
+	const textExpr = localizedTextField(locale, 'r');
+	const replyTextExpr = localizedTextField(locale, 'rr');
+	const selectFields = reviewSelectFields(textExpr);
 
-	const reviewsQuery = `
-		SELECT
-			r.id,
-			r.user_id as userId,
-			r.doctor_id as doctorId,
-			r.clinic_id as clinicId,
-			r.provider,
-			r.provider_review_id as providerReviewId,
-			r.rating,
-			r.original_language as originalLanguage,
-			r.original_text as originalText,
-			${localizedTextField(locale, 'r')} as text,
-			r.published_at as publishedAt,
-			r.likes_count as likesCount,
-			r.updated_at as updatedAt,
-			COALESCE(
-				NULLIF(u.name, ''),
-				CASE u.primary_oauth_provider
-					WHEN 'google'   THEN gp.name
-					WHEN 'telegram' THEN CONCAT(tp.first_name, IFNULL(CONCAT(' ', NULLIF(tp.last_name, '')), ''))
-					WHEN 'facebook' THEN fp.name
-				END,
-				u.email
-			) as authorName,
-			COALESCE(
-				NULLIF(u.photo_url, ''),
-				CASE u.primary_oauth_provider
-					WHEN 'google'   THEN gp.picture
-					WHEN 'telegram' THEN tp.photo_url
-					WHEN 'facebook' THEN fp.picture_url
-				END
-			) as authorPhotoUrl,
-			u.profile_url as authorProfileUrl
-		FROM reviews r
-		LEFT JOIN auth_users u ON r.user_id = u.id
-		LEFT JOIN auth_oauth_accounts goa ON u.id = goa.user_id AND goa.provider = 'google'
-		LEFT JOIN auth_oauth_profiles_google gp ON goa.id = gp.oauth_account_id
-		LEFT JOIN auth_oauth_accounts toa ON u.id = toa.user_id AND toa.provider = 'telegram'
-		LEFT JOIN auth_oauth_profiles_telegram tp ON toa.id = tp.oauth_account_id
-		LEFT JOIN auth_oauth_accounts foa ON u.id = foa.user_id AND foa.provider = 'facebook'
-		LEFT JOIN auth_oauth_profiles_facebook fp ON foa.id = fp.oauth_account_id
-		WHERE r.${column} = ?
-		ORDER BY r.created_at DESC
+	// Build WHERE for other reviews (excluding own)
+	const conditions = [`r.${column} = ?`];
+	const params: any[] = [entityId];
+
+	if (minRating > 0) {
+		conditions.push('r.rating >= ?');
+		params.push(minRating);
+	}
+
+	if (currentUserId) {
+		conditions.push('(r.user_id != ? OR r.user_id IS NULL)');
+		params.push(currentUserId);
+	}
+
+	const whereClause = conditions.join(' AND ');
+
+	// Count query (total other reviews matching filters)
+	const [countRows] = await connection.execute(
+		`SELECT COUNT(*) as total FROM reviews r WHERE ${whereClause}`,
+		params,
+	);
+	const totalCount = (countRows as any[])[0].total;
+
+	// Main query with sorting and pagination
+	const boostPrefix =
+		boostMinRating != null
+			? `IF(r.rating >= ${Math.floor(Number(boostMinRating))}, 0, 1), `
+			: '';
+	const orderBy = boostPrefix + buildOrderByClause(sort, textExpr);
+	const limitClause =
+		limit != null
+			? `LIMIT ${Math.max(0, Math.floor(Number(limit)))} OFFSET ${Math.max(0, Math.floor(Number(offset)))}`
+			: '';
+
+	const mainQuery = `
+		SELECT ${selectFields}
+		${REVIEW_JOINS}
+		WHERE ${whereClause}
+		ORDER BY ${orderBy}
+		${limitClause}
 	`;
-	const [reviewsRows] = await connection.execute(reviewsQuery, [entityId]);
+	const [reviewsRows] = await connection.execute(mainQuery, params);
 
-	// Fetch replies
-	const reviewIds = (reviewsRows as any[]).map((r) => r.id);
+	// Own review (separate query, no minRating/pagination)
+	let ownReviewRow: any = null;
+	if (currentUserId) {
+		const ownQuery = `
+			SELECT ${selectFields}
+			${REVIEW_JOINS}
+			WHERE r.${column} = ? AND r.user_id = ?
+		`;
+		const [ownRows] = await connection.execute(ownQuery, [
+			entityId,
+			currentUserId,
+		]);
+		ownReviewRow = (ownRows as any[])[0] || null;
+	}
+
+	// Fetch replies for all fetched reviews
+	const allRows = [...(reviewsRows as any[])];
+	if (ownReviewRow) allRows.push(ownReviewRow);
+
+	const reviewIds = allRows.map((r) => r.id);
 	let replies: any[] = [];
 	if (reviewIds.length > 0) {
 		const repliesQuery = `
@@ -167,7 +253,7 @@ export async function fetchReviews(
 				rr.user_id as userId,
 				rr.original_text as originalText,
 				rr.original_language as originalLanguage,
-				${localizedTextField(locale, 'rr')} as text,
+				${replyTextExpr} as text,
 				rr.provider,
 				rr.likes_count as likesCount,
 				rr.published_at as publishedAt,
@@ -180,8 +266,8 @@ export async function fetchReviews(
 		replies = repliesRows as any[];
 	}
 
-	// Process: attach replies, clean originalText
-	const reviews = (reviewsRows as any[]).map((review) => {
+	// Process review row into Review object
+	const processReview = (review: any): Review => {
 		const reviewReplies = replies
 			.filter((r) => r.reviewId === review.id)
 			.map((reply) => ({
@@ -199,20 +285,14 @@ export async function fetchReviews(
 						name: review.authorName,
 						photoUrl: review.authorPhotoUrl,
 						profileUrl: review.authorProfileUrl,
-				  }
+					}
 				: undefined,
 			isOwn: currentUserId ? review.userId === currentUserId : undefined,
 		};
-	});
+	};
 
-	applySorting(reviews, sort);
+	const reviews = (reviewsRows as any[]).map(processReview);
+	const ownReview = ownReviewRow ? processReview(ownReviewRow) : null;
 
-	// Move user's own reviews to the top
-	if (currentUserId) {
-		const own = reviews.filter((r) => r.isOwn);
-		const rest = reviews.filter((r) => !r.isOwn);
-		return [...own, ...rest];
-	}
-
-	return reviews;
+	return { reviews, ownReview, totalCount };
 }

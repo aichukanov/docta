@@ -29,6 +29,9 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `clinic_medications`                    | Junction table: Clinic <-> Medication (includes pricing).      |
 | `clinic_languages`                      | Junction table: Clinic <-> Languages supported.                |
 | `clinic_medical_service_doctors`        | Junction table: Clinic <-> Medical Service <-> Doctor.         |
+| `clinic_types`                          | Reference table of clinic types (e.g. hospital, lab, pharmacy).|
+| `clinic_clinic_types`                   | Junction table: Clinic <-> Clinic Type.                        |
+| `clinic_working_hours`                  | Working hours per clinic (JSON per weekday).                   |
 | `doctor_clinics`                        | Junction table: Doctor <-> Clinic (includes position).         |
 | `doctor_specialties`                    | Junction table: Doctor <-> Specialty.                          |
 | `doctor_languages`                      | Junction table: Doctor <-> Languages spoken.                   |
@@ -49,17 +52,6 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `billing_paid_services`                 | Catalog of paid services available for clinics.                |
 | `billing_clinic_service_purchases`      | Purchase records of paid services by clinics.                  |
 | `billing_clinic_service_purchase_items` | Junction table: Purchase <-> Paid Service.                     |
-| `kb_sources`                            | Registry of imported channels/groups (Telegram, etc.).         |
-| `kb_messages`                           | Imported messages from community channels.                     |
-| `kb_tags`                               | Hierarchical tags/categories for KB content.                   |
-| `kb_message_tags`                       | Junction table: Message <-> Tag.                               |
-| `kb_threads`                            | Compiled Q&A entries (question + answer, 6 languages).         |
-| `kb_thread_tags`                        | Junction table: Thread <-> Tag.                                |
-| `kb_thread_sources`                     | Junction table: Thread <-> source Messages.                    |
-| `kb_articles`                           | Curated articles with localized content.                       |
-| `kb_article_tags`                       | Junction table: Article <-> Tag.                               |
-| `kb_article_sources`                    | Junction table: Article <-> source Messages.                   |
-| `kb_entity_links`                       | Generic polymorphic links to domain entities (doctor, clinic). |
 | `countries`                             | Shared country table with 6-language translations.             |
 | `med_dispensing_modes`                  | Medicine dispensing modes (prescription/OTC) with translations.|
 | `med_pharma_forms`                      | Pharmaceutical dosage forms with translations.                 |
@@ -240,7 +232,9 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `instagram`, `facebook`, `whatsapp`, `telegram`, `viber` (varchar(255))
 - `description_sr`, `description_sr_cyrl`, `description_ru`, `description_en`, `description_de`, `description_tr` (text): Localized descriptions.
 - `logo_url` (varchar(500)): URL to clinic logo image.
+- `rank_score` (decimal(5,4), NOT NULL, default 0.0000): Computed ranking score for sort ordering.
 - `created_at`, `updated_at` (timestamp)
+- _Indexes_: `idx_clinics_slug` (slug, UNIQUE), `uq_clinics_google_place_id` (google_place_id, UNIQUE), `idx_city`, `idx_location` (latitude, longitude), `idx_name` (name_sr), `idx_clinics_rank_score` (rank_score DESC)
 
 ### `doctors`
 
@@ -258,8 +252,9 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `professional_title` (varchar(255))
 - `hidden` (boolean, default FALSE): When TRUE, the doctor is excluded from all public listings and their profile page returns 404.
 - `is_draft` (boolean, default FALSE): When TRUE, the profile is pending review and not yet published. Only admins can change this.
+- `rank_score` (decimal(5,4), NOT NULL, default 0.0000): Computed ranking score for sort ordering.
 - `created_at`, `updated_at` (timestamp)
-- _Indexes_: `idx_doctors_user_id` (user_id, UNIQUE), `idx_hidden`, `idx_doctors_is_draft`
+- _Indexes_: `idx_doctors_user_id` (user_id, UNIQUE), `idx_hidden`, `idx_doctors_is_draft`, `idx_doctors_rank_score` (rank_score DESC)
 - _Foreign Keys_: `user_id` -> `auth_users.id` (ON DELETE SET NULL)
 
 ### `specialties`
@@ -281,7 +276,9 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `slug` (varchar(280), Unique, NOT NULL): URL-safe slug generated from name_en. Used for human-readable URLs.
 - `name_en` (varchar(255), Unique): Test name in English (Key).
 - `name_sr`, `name_sr_cyrl`, `name_ru`, `name_de`, `name_tr` (varchar(255)): Localized names.
+- `rank_score` (decimal(5,4), NOT NULL, default 0.0000): Computed ranking score for sort ordering.
 - `created_at` (timestamp)
+- _Indexes_: `idx_lab_tests_slug` (slug, UNIQUE), `idx_lab_tests_rank_score` (rank_score DESC)
 
 ### `lab_test_categories`
 
@@ -330,7 +327,9 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `name_en` (varchar(255), Unique): Service name in English (Key).
 - `name_sr`, `name_sr_cyrl`, `name_ru`, `name_de`, `name_tr` (varchar(255)): Localized names.
 - `sort_order` (int): Display order.
+- `rank_score` (decimal(5,4), NOT NULL, default 0.0000): Computed ranking score for sort ordering.
 - `created_at` (timestamp)
+- _Indexes_: `idx_medical_services_slug` (slug, UNIQUE), `idx_medical_services_rank_score` (rank_score DESC), `idx_ms_sort_order` (sort_order, rank_score DESC)
 
 ### `medical_service_categories`
 
@@ -378,6 +377,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `code` (varchar(50)): Clinic-specific service code.
 - `price` (decimal(10,2))
 - `price_max` (decimal(10,2)): Maximum price (for price ranges).
+- `price_min` (decimal(10,2)): Minimum price (for price ranges).
 - `created_at` (timestamp)
 - _Unique constraint_: (`clinic_id`, `medical_service_id`)
 
@@ -403,10 +403,23 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `created_at` (timestamp)
 - _Unique constraint_: (`clinic_id`, `medication_id`)
 
+### `clinic_types`
+
+- `id` (tinyint unsigned, PK): Not auto-increment — values set manually.
+- `name` (varchar(100), NOT NULL): English canonical name (e.g. "hospital", "laboratory", "pharmacy").
+
 ### `clinic_clinic_types`
 
 - `clinic_id` (int, PK, FK -> clinics.id ON DELETE CASCADE)
-- `clinic_type_id` (tinyint unsigned, PK): Clinic type. Values defined in `ClinicType` enum.
+- `clinic_type_id` (tinyint unsigned, PK, FK -> clinic_types.id ON DELETE CASCADE)
+- _Comment_: Junction table linking clinics to their types. A clinic can have multiple types.
+
+### `clinic_working_hours`
+
+- `id` (int, PK, AI)
+- `clinic_id` (int, Unique, FK -> clinics.id ON DELETE CASCADE): One record per clinic.
+- `monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`, `sunday` (json, NOT NULL): Working hours per day.
+- `created_at`, `updated_at` (timestamp)
 
 ### `clinic_languages`
 
@@ -486,7 +499,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `likes_count` (int unsigned, NOT NULL, default 0): Denormalized like counter for sorting.
 - `created_at`, `updated_at` (timestamp)
 - _Unique constraint_: (`provider`, `provider_review_id`)
-- _Indexes_: `idx_reviews_user_id`, `idx_clinic_id`, `idx_doctor_id`, `idx_medical_service_id`, `idx_provider`, `idx_rating`, `idx_reviews_likes_count` (likes_count DESC)
+- _Indexes_: `idx_reviews_user_id`, `idx_reviews_clinic_rating` (clinic_id, rating), `idx_reviews_doctor_rating` (doctor_id, rating), `idx_reviews_clinic_user` (clinic_id, user_id), `idx_reviews_doctor_user` (doctor_id, user_id), `idx_medical_service_id`, `idx_provider`, `idx_rating`, `idx_reviews_likes_count` (likes_count DESC)
 - _Foreign Keys_: `user_id` -> `auth_users.id` (SET NULL), `clinic_id` -> `clinics.id` (CASCADE), `doctor_id` -> `doctors.id` (CASCADE), `medical_service_id` -> `medical_services.id` (CASCADE)
 - _Comment_: Polymorphic reviews — exactly one of clinic_id/doctor_id/medical_service_id must be NOT NULL. Author info (name, photo, profile link) is stored in `auth_users` — use JOIN by `user_id`.
 
@@ -532,127 +545,6 @@ This file provides a structured reference of the MySQL database for the docta.me
 - _Foreign Keys_: `reply_id` -> `review_replies.id` (CASCADE), `user_id` -> `auth_users.id` (CASCADE)
 - _Comment_: Only authenticated (non-phantom) users can like. `review_replies.likes_count` is updated via application logic on insert/delete.
 
-### `kb_sources`
-
-- `id` (int, PK, AI)
-- `provider` (varchar(50), NOT NULL): Source provider (telegram, whatsapp, viber).
-- `provider_source_id` (varchar(255), NOT NULL): Channel/group ID from provider.
-- `name` (varchar(255)): Channel name.
-- `url` (varchar(500)): Link to channel.
-- `metadata` (json): Additional data (type, member count, etc.).
-- `created_at` (timestamp)
-- _Unique constraint_: (`provider`, `provider_source_id`)
-
-### `kb_messages`
-
-- `id` (int, PK, AI)
-- `source_id` (int, FK -> kb_sources.id, NOT NULL): Source channel.
-- `user_id` (int, FK -> auth_users.id, NULL): Message author (phantom or real).
-- `provider_message_id` (varchar(255), NOT NULL): Message ID from export (for dedup).
-- `reply_to_id` (int, FK -> kb_messages.id, NULL): Self-reference for threading.
-- `message_type` (enum: 'question','answer','recommendation','info','other', default 'other'): Classification.
-- `original_text` (text): Plain text content.
-- `original_language` (varchar(10), default 'ru'): Source language.
-- `text_sr`, `text_sr_cyrl`, `text_en`, `text_ru`, `text_de`, `text_tr` (text, NULL): Localized texts.
-- `has_media` (boolean, default FALSE): Whether message has attachments.
-- `media_type` (varchar(50), NULL): Type of media (photo, video, document).
-- `published_at` (datetime): When message was posted in channel.
-- `raw_data` (json): Full original message object.
-- `is_duplicate` (boolean, default FALSE): Cross-channel duplicate flag.
-- `duplicate_of_id` (int, FK -> kb_messages.id, NULL): Reference to original.
-- `created_at`, `updated_at` (timestamp)
-- _Unique constraint_: (`source_id`, `provider_message_id`)
-- _Indexes_: `idx_kb_msg_user`, `idx_kb_msg_reply`, `idx_kb_msg_type`, `idx_kb_msg_published`, `idx_kb_msg_duplicate`
-- _Foreign Keys_: `source_id` -> `kb_sources.id` (CASCADE), `user_id` -> `auth_users.id` (SET NULL), `reply_to_id` -> `kb_messages.id` (SET NULL), `duplicate_of_id` -> `kb_messages.id` (SET NULL)
-
-### `kb_tags`
-
-- `id` (int, PK, AI)
-- `slug` (varchar(100), UNIQUE, NOT NULL): URL-friendly key, also i18n lookup key.
-- `parent_id` (int, FK -> kb_tags.id, NULL): Parent tag for hierarchy.
-- `sort_order` (int, default 0): Display order.
-- `created_at` (timestamp)
-- _Indexes_: `idx_kb_tags_parent`
-- _Foreign Keys_: `parent_id` -> `kb_tags.id` (SET NULL)
-- _Comment_: Tag names resolved via i18n files using slug as key. Hierarchy: e.g., `city` (parent) → `city:budva` (child).
-
-### `kb_message_tags`
-
-- `id` (int, PK, AI)
-- `message_id` (int, FK -> kb_messages.id, NOT NULL)
-- `tag_id` (int, FK -> kb_tags.id, NOT NULL)
-- _Unique constraint_: (`message_id`, `tag_id`)
-
-### `kb_threads`
-
-- `id` (int, PK, AI)
-- `root_message_id` (int, FK -> kb_messages.id, UNIQUE, NULL): Root message this Q&A was compiled from. NULL for fully curated Q&A.
-- `slug` (varchar(255), UNIQUE, NULL): URL slug for /qa/<slug>.
-- `status` (enum: 'draft','published','faq', default 'draft'): Publication status.
-- `title_sr`, `title_sr_cyrl`, `title_en`, `title_ru`, `title_de`, `title_tr` (varchar(500)): Localized question/title.
-- `answer_sr`, `answer_sr_cyrl`, `answer_en`, `answer_ru`, `answer_de`, `answer_tr` (text): Localized compiled answer.
-- `views_count` (int unsigned, default 0): View counter.
-- `published_at` (datetime, NULL)
-- `created_at`, `updated_at` (timestamp)
-- _Indexes_: `idx_kb_thread_status`, `idx_kb_thread_published`
-- _Foreign Keys_: `root_message_id` -> `kb_messages.id` (SET NULL)
-- _Comment_: Compiled from one or more message threads. Similar questions merged into one Q&A. Status `faq` = shown on FAQ page.
-
-### `kb_thread_tags`
-
-- `id` (int, PK, AI)
-- `thread_id` (int, FK -> kb_threads.id, NOT NULL)
-- `tag_id` (int, FK -> kb_tags.id, NOT NULL)
-- _Unique constraint_: (`thread_id`, `tag_id`)
-
-### `kb_thread_sources`
-
-- `id` (int, PK, AI)
-- `thread_id` (int, FK -> kb_threads.id, NOT NULL)
-- `message_id` (int, FK -> kb_messages.id, NOT NULL)
-- _Unique constraint_: (`thread_id`, `message_id`)
-- _Comment_: Links compiled Q&A back to the original messages it was derived from.
-
-### `kb_articles`
-
-- `id` (int, PK, AI)
-- `slug` (varchar(255), UNIQUE, NOT NULL): URL slug for /articles/<slug>.
-- `author_user_id` (int, FK -> auth_users.id, NULL): Article author.
-- `status` (enum: 'draft','published', default 'draft')
-- `title_sr`, `title_sr_cyrl`, `title_en`, `title_ru`, `title_de`, `title_tr` (varchar(500)): Localized titles.
-- `content_sr`, `content_sr_cyrl`, `content_en`, `content_ru`, `content_de`, `content_tr` (mediumtext): Localized content.
-- `views_count` (int unsigned, default 0)
-- `published_at` (datetime, NULL)
-- `created_at`, `updated_at` (timestamp)
-- _Indexes_: `idx_kb_article_status`
-- _Foreign Keys_: `author_user_id` -> `auth_users.id` (SET NULL)
-
-### `kb_article_tags`
-
-- `id` (int, PK, AI)
-- `article_id` (int, FK -> kb_articles.id, NOT NULL)
-- `tag_id` (int, FK -> kb_tags.id, NOT NULL)
-- _Unique constraint_: (`article_id`, `tag_id`)
-
-### `kb_article_sources`
-
-- `id` (int, PK, AI)
-- `article_id` (int, FK -> kb_articles.id, NOT NULL)
-- `message_id` (int, FK -> kb_messages.id, NOT NULL)
-- _Unique constraint_: (`article_id`, `message_id`)
-- _Comment_: Links articles back to the original messages that informed them.
-
-### `kb_entity_links`
-
-- `id` (int, PK, AI)
-- `linkable_type` (enum: 'message','thread','article', NOT NULL): Type of KB entity.
-- `linkable_id` (int, NOT NULL): ID of the KB entity.
-- `entity_type` (varchar(50), NOT NULL): Domain entity type (doctor, clinic, specialty, medical_service).
-- `entity_id` (int, NOT NULL): ID of the domain entity.
-- _Unique constraint_: (`linkable_type`, `linkable_id`, `entity_type`, `entity_id`)
-- _Indexes_: `idx_kb_entity_lookup` (entity_type, entity_id), `idx_kb_entity_linkable` (linkable_type, linkable_id)
-- _Comment_: Generic polymorphic table for linking KB content to domain entities. Designed for reuse across domains — `entity_type` can be any string (doctor, clinic, restaurant, hotel, etc.).
-
 ## Core Implementation Logic
 
 1. **Authentication Strategy**:
@@ -683,67 +575,67 @@ This file provides a structured reference of the MySQL database for the docta.me
 
    - Prices are stored as `decimal(10,2)` in junction tables between clinics and services/tests/meds.
    - `price_max` field supports price ranges (e.g., "100-150 EUR").
+   - `clinic_medical_services` also has `price_min` for three-tier price ranges.
 
-5. **Geo**:
+5. **Ranking**:
+
+   - `clinics`, `doctors`, `lab_tests`, and `medical_services` all have a `rank_score` column (decimal(5,4), default 0) used for default sort ordering.
+   - Each table has a DESC index on `rank_score` for efficient sorted queries.
+
+6. **Geo**:
 
    - Latitude uses `decimal(10,8)`, Longitude uses `decimal(11,8)` for high precision.
 
-6. **Referential Integrity**:
+7. **Referential Integrity**:
 
    - Most foreign keys use `ON DELETE CASCADE`.
 
-7. **Search**:
+8. **Search**:
 
    - Search should consider `lab_test_synonyms` and localized `name_*` columns.
 
-8. **Redirects**:
+9. **Redirects**:
 
    - `doctor_redirects`, `lab_test_redirects` and `medical_service_redirects` tables handle merged records for 301 redirects.
 
-9. **Service-Specialty Mapping**:
+10. **Service-Specialty Mapping**:
 
-   - `medical_services_specialties` links medical services to relevant specialties for filtering.
+    - `medical_services_specialties` links medical services to relevant specialties for filtering.
 
-10. **Service-Category Mapping**:
+11. **Service-Category Mapping**:
 
-   - `medical_service_categories` and `medical_service_categories_relations` allow grouping medical services by categories.
-   - `lab_test_categories` and `lab_test_categories_relations` allow grouping lab tests by categories.
+    - `medical_service_categories` and `medical_service_categories_relations` allow grouping medical services by categories.
+    - `lab_test_categories` and `lab_test_categories_relations` allow grouping lab tests by categories.
 
-11. **Doctor-Service Assignment**:
+12. **Doctor-Service Assignment**:
 
-   - `clinic_medical_service_doctors` enables assigning specific doctors to medical services within a clinic context.
+    - `clinic_medical_service_doctors` enables assigning specific doctors to medical services within a clinic context.
 
-12. **Reviews, Replies & Likes**:
+13. **Reviews, Replies & Likes**:
 
-   - Each review can have up to **2 replies**: one from the clinic (`responder_type='clinic'`) and one from the doctor (`responder_type='doctor'`). No threading — flat structure only.
-   - Replies are stored in `review_replies` with a unique constraint on (`review_id`, `responder_type`).
-   - Both reviews and replies can be liked by authenticated (non-phantom) users. One like per user per entity.
-   - `likes_count` is a denormalized counter on `reviews` and `review_replies` — updated by app logic on like/unlike (INSERT/DELETE into `review_likes` / `review_reply_likes`).
-   - Reviews are sorted by `likes_count DESC` by default (index `idx_reviews_likes_count`).
-   - Imported replies (from Google Maps, Facebook) use the `provider` field; native replies default to `docta_me`.
+    - Each review can have up to **2 replies**: one from the clinic (`responder_type='clinic'`) and one from the doctor (`responder_type='doctor'`). No threading — flat structure only.
+    - Replies are stored in `review_replies` with a unique constraint on (`review_id`, `responder_type`).
+    - Both reviews and replies can be liked by authenticated (non-phantom) users. One like per user per entity.
+    - `likes_count` is a denormalized counter on `reviews` and `review_replies` — updated by app logic on like/unlike (INSERT/DELETE into `review_likes` / `review_reply_likes`).
+    - Reviews are sorted by `likes_count DESC` by default (index `idx_reviews_likes_count`).
+    - Imported replies (from Google Maps, Facebook) use the `provider` field; native replies default to `docta_me`.
 
-13. **Paid Services (Billing)**:
+14. **Paid Services (Billing)**:
 
-- `billing_paid_services` contains available paid services (dofollow, highlight, approved/verified).
-- `billing_clinic_service_purchases` tracks purchases made by clinics.
-- `billing_clinic_service_purchase_items` links purchases to specific services.
-- Prices are stored as `decimal(10,2)`.
-- `deleted` flag supports soft deletes for purchases.
-- Current available services: DOFOLLOW (dofollow links), HIGHLIGHT (featured in lists), APPROVED (verified badge).
+    - `billing_paid_services` contains available paid services (dofollow, highlight, approved/verified).
+    - `billing_clinic_service_purchases` tracks purchases made by clinics.
+    - `billing_clinic_service_purchase_items` links purchases to specific services.
+    - Prices are stored as `decimal(10,2)`.
+    - `deleted` flag supports soft deletes for purchases.
+    - Current available services: DOFOLLOW (dofollow links), HIGHLIGHT (featured in lists), APPROVED (verified badge).
 
-14. **Knowledge Base (KB)**:
+15. **Clinic Types & Working Hours**:
 
-- Imported from Telegram community channels via `kb_sources` → `kb_messages`.
-- Messages are classified (`question`, `answer`, `recommendation`, `info`, `other`) and threaded via `reply_to_id`.
-- **Phantom users**: message authors are auto-created as phantom users in `auth_users` with Telegram OAuth accounts, same pattern as review imports.
-- **Tags**: hierarchical tag system in `kb_tags` (slug-based, i18n via slug lookup). Tags have optional `parent_id` for hierarchy (e.g., `city:budva` → parent `city`).
-- **Q&A Threads** (`kb_threads`): compiled from message threads. Similar questions are merged into one Q&A with generalized question/answer in 6 languages. Status flow: `draft` → `published` / `faq`.
-- **Articles** (`kb_articles`): curated long-form content with localized title/content in 6 languages.
-- **Entity links** (`kb_entity_links`): generic polymorphic linking of KB content (messages, threads, articles) to domain entities (doctors, clinics, specialties, medical services). Reusable across domains.
-- **Deduplication**: UNIQUE constraint `(source_id, provider_message_id)` per channel; cross-channel dedup via `is_duplicate` + `duplicate_of_id`.
-- **Source tracing**: `kb_thread_sources` and `kb_article_sources` link compiled content back to original messages.
+    - `clinic_types` is a reference table of clinic types (hospital, laboratory, pharmacy, etc.).
+    - `clinic_clinic_types` links clinics to one or more types.
+    - `clinic_working_hours` stores working hours per weekday as JSON (one row per clinic).
 
-15. **Medicine Register (CInMED)**:
+16. **Medicine Register (CInMED)**:
 
 - Source: [cinmed.me](https://cinmed.me/en/register-of-medicines-for-human-use/) — Montenegro Ministry of Health.
 - Scraped via `scripts/scrape-medicines.mjs`, raw data in `data/medicines.json`.
@@ -806,6 +698,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `id` (int unsigned, PK, AI)
 - `cinmed_id` (int unsigned, Unique): CInMED internal ID — stable across re-scrapes.
 - `name` (varchar(500)): Brand name (e.g. "ASPIRIN® PROTECT").
+- `slug` (varchar(600), Unique(400), NOT NULL): URL-safe slug for human-readable URLs.
 - `pharmaceutical_form_id` (smallint unsigned, FK → `med_pharma_forms.id`)
 - `strength` (varchar(500)): Dosage strength (e.g. "100mg", "500mg+25mg"). Can be long for vaccines.
 - `packaging` (varchar(500)): Short packaging from list (e.g. "Blister, 30 tbl").

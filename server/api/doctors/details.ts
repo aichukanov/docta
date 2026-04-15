@@ -96,7 +96,13 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 
 		// Загружаем рейтинг и отзывы врача
 		const processedRating = await fetchRating(connection, 'doctor', doctor.id);
-		const reviewsRows = await fetchReviews(connection, 'doctor', doctor.id, locale, 'rank', currentUser?.id);
+		const { reviews: reviewsRows, ownReview: ownDoctorReview } = await fetchReviews(
+			connection,
+			'doctor',
+			doctor.id,
+			locale,
+			{ currentUserId: currentUser?.id },
+		);
 
 		await connection.end();
 
@@ -149,7 +155,7 @@ export default defineEventHandler(async (event): Promise<DoctorData> => {
 			clinicServices,
 			isOwner,
 			rating: processedRating,
-			reviews: reviewsRows,
+			reviews: ownDoctorReview ? [ownDoctorReview, ...reviewsRows] : reviewsRows,
 		};
 	} catch (error) {
 		console.error('API Error - doctor data:', error);

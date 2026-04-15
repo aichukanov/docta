@@ -55,13 +55,11 @@ const props = withDefaults(
 		doctors: DoctorData[];
 		clinics: ClinicData[];
 		services?: ServiceListItem[];
-		users?: UserListItem[];
 		editable?: boolean;
 	}>(),
 	{
 		editable: false,
 		services: () => [],
-		users: () => [],
 	},
 );
 
@@ -100,12 +98,48 @@ const serviceOptions = computed(() =>
 	})),
 );
 
-const userOptions = computed(() =>
-	props.users.map((u) => ({
-		label: `id = "${u.id}" | email = "${u.email}" | name = "${u.name}"`,
-		value: u.id,
-	})),
-);
+// Remote search для пользователей — не рендерим тысячи el-option разом
+const userSearchResults = ref<{ label: string; value: number }[]>([]);
+const isSearchingUsers = ref(false);
+
+const formatUserOption = (u: UserListItem) => ({
+	label: `id = "${u.id}" | email = "${u.email}" | name = "${u.name}"`,
+	value: u.id,
+});
+
+const searchUsers = async (query: string) => {
+	if (!query || query.length < 2) {
+		userSearchResults.value = [];
+		return;
+	}
+	isSearchingUsers.value = true;
+	try {
+		const users = await $fetch<UserListItem[]>('/api/users/list', {
+			method: 'POST',
+			body: { query },
+		});
+		userSearchResults.value = users.map(formatUserOption);
+	} catch (e) {
+		console.error('Failed to search users:', e);
+	} finally {
+		isSearchingUsers.value = false;
+	}
+};
+
+// Подгрузить текущего привязанного пользователя при загрузке врача
+const loadCurrentUser = async (userId: number) => {
+	try {
+		const users = await $fetch<UserListItem[]>('/api/users/list', {
+			method: 'POST',
+			body: { query: String(userId) },
+		});
+		if (users.length > 0) {
+			userSearchResults.value = users.map(formatUserOption);
+		}
+	} catch (e) {
+		console.error('Failed to load current user:', e);
+	}
+};
 
 // Услуги врача: управление
 const addServicePrice = () => {
@@ -238,6 +272,11 @@ const loadDoctorDetails = async (id: number) => {
 		if (data) {
 			originalDoctor.value = JSON.parse(JSON.stringify(data));
 			doctorModel.value = data;
+			if (data.userId) {
+				loadCurrentUser(data.userId);
+			} else {
+				userSearchResults.value = [];
+			}
 		}
 	} catch (e) {
 		console.error('Failed to load doctor details:', e);
@@ -346,13 +385,16 @@ watch(doctorId, async (newDoctorId) => {
 				<el-select
 					v-model="doctorModel.userId"
 					filterable
+					remote
 					clearable
+					:remote-method="searchUsers"
+					:loading="isSearchingUsers"
 					placeholder="Не привязан"
 					:disabled="!editable"
 					class="user-link-select"
 				>
 					<el-option
-						v-for="user in userOptions"
+						v-for="user in userSearchResults"
 						:key="user.value"
 						:label="user.label"
 						:value="user.value"

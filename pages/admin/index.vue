@@ -81,19 +81,10 @@ async function loadDoctorsData() {
 
 	isLoadingDoctors.value = true;
 	try {
-		const [data] = await Promise.all([
-			$fetch('/api/doctors/list', {
-				method: 'POST',
-				body: {
-					specialtyIds: [],
-					cityIds: [],
-					languageIds: [],
-					includeAllLocales: true,
-					includeHidden: true,
-				},
-			}),
-			loadUsersData(),
-		]);
+		const data = await $fetch('/api/doctors/admin-list', {
+			method: 'POST',
+			body: {},
+		});
 		doctorsList.value = data;
 		loadedTabs.value.doctors = true;
 	} catch (error) {
@@ -262,7 +253,6 @@ async function recalculateRankScores() {
 							:doctors="doctorsList.doctors"
 							:clinics="clinicsList.clinics"
 							:services="servicesForSelect"
-							:users="usersList"
 							editable
 							@updated="updateDoctors"
 						/>

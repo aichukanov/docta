@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { combineI18nMessages } from '~/i18n/utils';
+import { OG_IMAGE, SITE_URL } from '~/common/constants';
 import {
-	buildEntityListSchema,
 	buildBreadcrumbsSchema,
+	buildEntityListSchema,
 } from '~/common/schema-org-builders';
-import { SITE_URL, OG_IMAGE } from '~/common/constants';
+import { combineI18nMessages } from '~/i18n/utils';
 import type { ClinicData } from '~/interfaces/clinic';
 
 import breadcrumbI18n from '~/i18n/breadcrumb';
@@ -137,6 +137,7 @@ useSeoMeta({
 	twitterDescription: pageDescription,
 	twitterImage: OG_IMAGE,
 });
+
 const isFiltered = computed(() => {
 	return (
 		cityIds.value.length > 0 ||
@@ -145,6 +146,7 @@ const isFiltered = computed(() => {
 		!!name.value
 	);
 });
+
 watchEffect(() => {
 	if (clinicsList.value) {
 		const pageUrl = `${SITE_URL}${route.fullPath}`;

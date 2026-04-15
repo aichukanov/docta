@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { Clock } from '@element-plus/icons-vue';
 import { formatClinicAddressLine } from '~/common/clinic-address';
-import { OG_IMAGE, REVIEWS_THRESHOLD, SITE_URL } from '~/common/constants';
+import {
+	OG_IMAGE,
+	REVIEWS_THRESHOLD,
+	SITE_NAME,
+	SITE_URL,
+} from '~/common/constants';
 import {
 	buildBreadcrumbsSchema,
 	buildClinicSchema,
@@ -293,7 +298,24 @@ const pageTitle = computed(() => {
 		return '';
 	}
 
-	return `${localizedName.value} | ${t(`city_${clinicData.value.cityId}`)}`;
+	const clinicName = localizedName.value;
+	const city = t(`city_${clinicData.value.cityId}`);
+	const doctorCount = clinicDoctors.value.length;
+	const serviceCount = clinicMedicalServices.value.length;
+
+	const statsParts: string[] = [];
+	if (doctorCount > 0) {
+		statsParts.push(t('SeoTitleDoctors', { count: doctorCount }));
+	}
+	if (serviceCount > 0) {
+		statsParts.push(t('SeoTitleServices', { count: serviceCount }));
+	}
+
+	if (statsParts.length > 0) {
+		return `${clinicName} ${city} — ${statsParts.join(', ')} | ${SITE_NAME}`;
+	}
+
+	return `${clinicName} | ${city}`;
 });
 
 const pageDescription = computed(() => {
@@ -301,49 +323,62 @@ const pageDescription = computed(() => {
 		return '';
 	}
 
-	const { languageIds } = clinicData.value;
 	const clinicName = localizedName.value;
+	const cityGenitive = t(`city_${clinicData.value.cityId}_genitive`);
 
-	const addressText = formatClinicAddressLine({
-		clinic: clinicData.value,
-		cityName: t(`city_${clinicData.value.cityId}`),
-	});
+	const segments: string[] = [];
 
-	const languagesText =
-		languageIds === '1'
-			? null
-			: joinWithAnd(
-					languageIds
-						.split(',')
-						.map((language) => t(`language_${language}_prepositional`)),
-			  );
+	// Specialties (top 3 by doctor count)
+	const specialtyCategories = [
+		...clinicDoctorsBySpecialty.value.categories,
+	].sort((a, b) => b.items.length - a.items.length);
 
-	const languageInfo = languagesText
-		? ` ${t('ClinicLanguageAssistance', { language: languagesText })}`
-		: '';
+	if (specialtyCategories.length > 0) {
+		const topSpecialties = specialtyCategories
+			.slice(0, 3)
+			.map((cat) => t(`specialty_${cat.categoryId}`).toLowerCase());
 
-	return addressText
-		? `${clinicName}. ${addressText}.${languageInfo}`
-		: `${clinicName}.${languageInfo}`;
+		if (specialtyCategories.length > 3) {
+			segments.push(
+				t('SeoDescMoreSpecialties', {
+					specialties: topSpecialties.join(', '),
+					count: specialtyCategories.length - 3,
+				}),
+			);
+		} else {
+			segments.push(topSpecialties.join(', '));
+		}
+	}
+
+	// Min price across all services
+	const allPrices = clinicMedicalServices.value
+		.flatMap((s) => s.clinicPrices)
+		.filter((p) => p.clinicId === clinicData.value!.id)
+		.map((p) => p.price ?? p.priceMin)
+		.filter((p): p is number => p != null && p > 0);
+
+	if (allPrices.length > 0) {
+		const minPrice = Math.min(...allPrices);
+		segments.push(t('SeoDescPriceFrom', { price: minPrice }));
+	}
+
+	// Rating & reviews
+	const rating = clinicData.value.rating;
+	if (rating?.averageRating && rating.totalReviews > 0) {
+		segments.push(
+			t('SeoDescRating', {
+				rating: rating.averageRating.toFixed(1),
+				count: rating.totalReviews,
+			}),
+		);
+	}
+
+	// CTA
+	segments.push(t('SeoDescCta'));
+
+	const intro = t('SeoDescIntro', { name: clinicName, city: cityGenitive });
+	return `${intro} ${segments.join('. ')}.`;
 });
-
-function joinWithAnd(items: string[]): string {
-	if (items.length === 0) {
-		return '';
-	}
-
-	if (items.length === 1) {
-		return items[0];
-	}
-
-	return (
-		items.slice(0, -1).join(', ') +
-		' ' +
-		t('And') +
-		' ' +
-		items[items.length - 1]
-	);
-}
 
 const hasSeparateReviewsPage = computed(() => {
 	const total =
@@ -699,7 +734,14 @@ watchEffect(() => {
 		"TabLabTests": "Lab tests",
 		"TabMedications": "Medications",
 		"TabReviews": "Reviews",
-		"TabMap": "Location"
+		"TabMap": "Location",
+		"SeoTitleDoctors": "{count} doctors",
+		"SeoTitleServices": "{count} services",
+		"SeoDescIntro": "{name} in {city}:",
+		"SeoDescMoreSpecialties": "{specialties} and {count}+ more specialties",
+		"SeoDescPriceFrom": "Services from {price}€",
+		"SeoDescRating": "Rating {rating} ★ ({count} reviews)",
+		"SeoDescCta": "Find a doctor on Docta.me"
 	},
 	"ru": {
 		"ClinicLanguageAssistance": "Предоставляется сопровождение на {language} языке.",
@@ -718,7 +760,14 @@ watchEffect(() => {
 		"TabLabTests": "Анализы",
 		"TabMedications": "Лекарства",
 		"TabReviews": "Отзывы",
-		"TabMap": "На карте"
+		"TabMap": "На карте",
+		"SeoTitleDoctors": "{count} врачей",
+		"SeoTitleServices": "{count} услуг",
+		"SeoDescIntro": "{name} в {city}:",
+		"SeoDescMoreSpecialties": "{specialties} и ещё {count}+ специальностей",
+		"SeoDescPriceFrom": "Цены на услуги от {price}€",
+		"SeoDescRating": "Оценка {rating} ★ ({count} отзывов)",
+		"SeoDescCta": "Найдите врача на Docta.me"
 	},
 	"de": {
 		"ClinicLanguageAssistance": "Unterstützung wird in {language} bereitgestellt.",
@@ -737,7 +786,14 @@ watchEffect(() => {
 		"TabLabTests": "Laboruntersuchungen",
 		"TabMedications": "Medikamente",
 		"TabReviews": "Bewertungen",
-		"TabMap": "Standort"
+		"TabMap": "Standort",
+		"SeoTitleDoctors": "{count} Ärzte",
+		"SeoTitleServices": "{count} Leistungen",
+		"SeoDescIntro": "{name} in {city}:",
+		"SeoDescMoreSpecialties": "{specialties} und {count}+ weitere Fachgebiete",
+		"SeoDescPriceFrom": "Leistungen ab {price}€",
+		"SeoDescRating": "Bewertung {rating} ★ ({count} Bewertungen)",
+		"SeoDescCta": "Finden Sie einen Arzt auf Docta.me"
 	},
 	"tr": {
 		"ClinicLanguageAssistance": "{language} dilinde destek sağlanır.",
@@ -756,7 +812,14 @@ watchEffect(() => {
 		"TabLabTests": "Laboratuvar testleri",
 		"TabMedications": "İlaçlar",
 		"TabReviews": "Değerlendirmeler",
-		"TabMap": "Konum"
+		"TabMap": "Konum",
+		"SeoTitleDoctors": "{count} doktor",
+		"SeoTitleServices": "{count} hizmet",
+		"SeoDescIntro": "{name} {city}:",
+		"SeoDescMoreSpecialties": "{specialties} ve {count}+ uzmanlık alanı daha",
+		"SeoDescPriceFrom": "Hizmetler {price}€'dan başlayan fiyatlarla",
+		"SeoDescRating": "Puan {rating} ★ ({count} değerlendirme)",
+		"SeoDescCta": "Docta.me'de doktor bulun"
 	},
 	"sr": {
 		"ClinicLanguageAssistance": "Pomoć se pruža na {language} jeziku.",
@@ -775,7 +838,14 @@ watchEffect(() => {
 		"TabLabTests": "Analize",
 		"TabMedications": "Lekovi",
 		"TabReviews": "Recenzije",
-		"TabMap": "Lokacija"
+		"TabMap": "Lokacija",
+		"SeoTitleDoctors": "{count} ljekara",
+		"SeoTitleServices": "{count} usluga",
+		"SeoDescIntro": "{name} u {city}:",
+		"SeoDescMoreSpecialties": "{specialties} i još {count}+ specijalnosti",
+		"SeoDescPriceFrom": "Cijene usluga od {price}€",
+		"SeoDescRating": "Ocjena {rating} ★ ({count} recenzija)",
+		"SeoDescCta": "Pronađite ljekara na Docta.me"
 	},
 	"sr-cyrl": {
 		"ClinicLanguageAssistance": "Помоћ се пружа на {language} језику.",
@@ -794,7 +864,14 @@ watchEffect(() => {
 		"TabLabTests": "Анализе",
 		"TabMedications": "Лекови",
 		"TabReviews": "Рецензије",
-		"TabMap": "Локација"
+		"TabMap": "Локација",
+		"SeoTitleDoctors": "{count} лекара",
+		"SeoTitleServices": "{count} услуга",
+		"SeoDescIntro": "{name} у {city}:",
+		"SeoDescMoreSpecialties": "{specialties} и још {count}+ специјалности",
+		"SeoDescPriceFrom": "Цијене услуга од {price}€",
+		"SeoDescRating": "Оцјена {rating} ★ ({count} рецензија)",
+		"SeoDescCta": "Пронађите лекара на Docta.me"
 	}
 }
 </i18n>

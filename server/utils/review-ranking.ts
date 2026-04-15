@@ -95,12 +95,3 @@ function reviewRankScore(review: Review): number {
 		replyBonus
 	);
 }
-
-/**
- * Сортирует отзывы по composite rank score (по убыванию).
- * Мутирует исходный массив — отдельная копия не нужна,
- * т.к. массив создаётся при каждом API-запросе.
- */
-export function sortReviewsByRank(reviews: Review[]): Review[] {
-	return reviews.sort((a, b) => reviewRankScore(b) - reviewRankScore(a));
-}

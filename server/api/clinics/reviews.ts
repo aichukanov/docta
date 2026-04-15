@@ -61,24 +61,22 @@ export default defineEventHandler(async (event) => {
 			return { shouldRedirect: true as const, slug: clinic.slug as string };
 		}
 
-		const allReviews = await fetchReviews(
+		const { reviews, ownReview, totalCount } = await fetchReviews(
 			connection,
 			'clinic',
 			clinic.id,
 			locale,
-			sort,
-			currentUser?.id,
+			{
+				sort,
+				limit: pageSize,
+				offset,
+				currentUserId: currentUser?.id,
+			},
 		);
 
 		await connection.end();
 
-		// Отделяем свой отзыв от общего списка
-		const ownReview = allReviews.find((r: any) => r.isOwn) || null;
-		const otherReviews = allReviews.filter((r: any) => !r.isOwn);
-
-		// Пагинация только чужих отзывов
-		const paginatedReviews = otherReviews.slice(offset, offset + pageSize);
-		const totalPages = Math.ceil(otherReviews.length / pageSize) || 1;
+		const totalPages = Math.ceil(totalCount / pageSize) || 1;
 
 		const { name, localName } = processLocalizedNameForClinicOrDoctor(
 			clinic,
@@ -97,12 +95,12 @@ export default defineEventHandler(async (event) => {
 				clinicTypeIds: clinic.clinicTypeIds as string,
 			},
 			rating,
-			reviews: paginatedReviews,
+			reviews,
 			ownReview,
 			pagination: {
 				page,
 				pageSize,
-				totalReviews: otherReviews.length,
+				totalReviews: totalCount,
 				totalPages,
 			},
 		};

@@ -485,7 +485,7 @@ watchEffect(() => {
 			buildBreadcrumbsSchema(clinicUrl, [
 				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
 				{ name: t('BreadcrumbClinics'), url: `${SITE_URL}/clinics` },
-				{ name: pageTitle.value },
+				{ name: localizedName.value },
 			]),
 		]);
 	}

@@ -776,7 +776,22 @@ function buildOfferCatalogSchema(options: {
 		return undefined;
 	}
 
-	const items = options.services.map((service) => {
+	// Limit to 10 services, prioritizing ones with prices
+	const sortedServices = [...options.services].sort((a, b) => {
+		const aPrice = a.clinicPrices?.find(
+			(p) => p.clinicId === options.clinicId,
+		);
+		const bPrice = b.clinicPrices?.find(
+			(p) => p.clinicId === options.clinicId,
+		);
+		const aHasPrice = aPrice?.price != null || aPrice?.priceMin != null;
+		const bHasPrice = bPrice?.price != null || bPrice?.priceMin != null;
+		if (aHasPrice !== bHasPrice) return aHasPrice ? -1 : 1;
+		return 0;
+	});
+	const limitedServices = sortedServices.slice(0, 10);
+
+	const items = limitedServices.map((service) => {
 		const priceInfo = service.clinicPrices?.find(
 			(p) => p.clinicId === options.clinicId,
 		);

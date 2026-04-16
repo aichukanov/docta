@@ -46,6 +46,7 @@ const avatarName = computed(() => {
 			:name="avatarName"
 			:photoUrl="service.photoUrl"
 			:size="short ? 40 : 120"
+			:zoomable="!short"
 		/>
 		<div class="doctor-info">
 			<component :is="headingTag" class="doctor-name">

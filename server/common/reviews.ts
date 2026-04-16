@@ -52,7 +52,7 @@ function buildOrderByClause(sort: ReviewSort, textExpr: string): string {
 			return 'r.rating ASC, r.published_at DESC';
 		case 'rank':
 		default:
-			return `(
+			return `IF(CHAR_LENGTH(COALESCE(${textExpr}, '')) > 0, 0, 1), (
 				0.30 * EXP(-(LN(2)/365) * GREATEST(0, DATEDIFF(NOW(), COALESCE(r.published_at, DATE_SUB(NOW(), INTERVAL 730 DAY))))) +
 				0.30 * LEAST(1.0, CHAR_LENGTH(COALESCE(${textExpr}, '')) / 300.0) +
 				0.20 * LEAST(1.0, LOG2(1 + COALESCE(r.likes_count, 0)) / 5.0) +

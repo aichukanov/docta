@@ -6,10 +6,12 @@ const props = withDefaults(
 		logoUrl?: string | null;
 		name: string;
 		size?: number;
+		zoomable?: boolean;
 	}>(),
 	{
 		logoUrl: null,
 		size: 80,
+		zoomable: false,
 	},
 );
 
@@ -26,10 +28,20 @@ watch(
 		imgError.value = false;
 	},
 );
+
+const canZoom = computed(
+	() => props.zoomable && hasLogo.value && !imgError.value,
+);
+const zoomed = ref(false);
 </script>
 
 <template>
-	<div class="clinic-logo" :style="{ width: `${size}px`, height: `${size}px` }">
+	<div
+		class="clinic-logo"
+		:class="{ 'clinic-logo--zoomable': canZoom }"
+		:style="{ width: `${size}px`, height: `${size}px` }"
+		@click="canZoom && (zoomed = true)"
+	>
 		<img
 			v-if="hasLogo && !imgError"
 			:src="logoUrl!"
@@ -43,6 +55,7 @@ watch(
 			<OfficeBuilding />
 		</el-icon>
 	</div>
+	<ImageZoomOverlay v-model="zoomed" :src="logoUrl!" :alt="name" />
 </template>
 
 <style scoped lang="less">
@@ -53,6 +66,10 @@ watch(
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.clinic-logo--zoomable {
+	cursor: zoom-in;
 }
 
 .clinic-logo__img {

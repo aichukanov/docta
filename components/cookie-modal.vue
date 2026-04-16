@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n();
-const { isModalActive, giveConsent } = useCookieControl();
+const { isModalActive, isConsentGiven, giveConsent, declineConsent } =
+	useCookieControl();
 
 const cookieData = [
 	{
@@ -46,6 +47,11 @@ const cookieData = [
 
 function acceptCookies() {
 	giveConsent();
+	isModalActive.value = false;
+}
+
+function revokeCookies() {
+	declineConsent();
 	isModalActive.value = false;
 }
 
@@ -119,6 +125,14 @@ function closeModal() {
 					{{ t('Cancel') }}
 				</button>
 				<button
+					v-if="isConsentGiven"
+					class="cookie-modal__button cookie-modal__button--secondary"
+					@click="revokeCookies"
+				>
+					{{ t('Revoke') }}
+				</button>
+				<button
+					v-else
 					class="cookie-modal__button cookie-modal__button--primary"
 					@click="acceptCookies"
 				>
@@ -383,6 +397,7 @@ function closeModal() {
 		"MoreInfo": "More information",
 		"Required": "Required",
 		"Accept": "Accept",
+		"Revoke": "Revoke consent",
 		"Cancel": "Cancel"
 	},
 	"ru": {
@@ -392,6 +407,7 @@ function closeModal() {
 		"MoreInfo": "Подробнее",
 		"Required": "Обязательно",
 		"Accept": "Принять",
+		"Revoke": "Отозвать согласие",
 		"Cancel": "Отмена"
 	},
 	"de": {
@@ -401,6 +417,7 @@ function closeModal() {
 		"MoreInfo": "Weitere Informationen",
 		"Required": "Erforderlich",
 		"Accept": "Akzeptieren",
+		"Revoke": "Einwilligung widerrufen",
 		"Cancel": "Abbrechen"
 	},
 	"tr": {
@@ -410,6 +427,7 @@ function closeModal() {
 		"MoreInfo": "Daha fazla bilgi",
 		"Required": "Gerekli",
 		"Accept": "Kabul Et",
+		"Revoke": "Onayı geri çek",
 		"Cancel": "İptal"
 	},
 	"sr": {
@@ -419,6 +437,7 @@ function closeModal() {
 		"MoreInfo": "Više informacija",
 		"Required": "Obavezno",
 		"Accept": "Prihvati",
+		"Revoke": "Povuci saglasnost",
 		"Cancel": "Otkaži"
 	},
 	"sr-cyrl": {
@@ -428,6 +447,7 @@ function closeModal() {
 		"MoreInfo": "Више информација",
 		"Required": "Обавезно",
 		"Accept": "Прихвати",
+		"Revoke": "Повуци сагласност",
 		"Cancel": "Откажи"
 	}
 }

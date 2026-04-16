@@ -2,7 +2,8 @@
 import { PROJECT_CONTACTS, SITE_NAME } from '~/common/constants';
 import { getRegionalQuery } from '~/common/url-utils';
 
-const { isConsentGiven, isConsentDecided } = useCookieControl();
+const { isConsentGiven, isConsentDecided, isModalActive } =
+	useCookieControl();
 const { t, locale } = useI18n();
 
 const years = computed(() => `2025-${new Date().getFullYear()}`);
@@ -79,7 +80,7 @@ watch(
 			<slot />
 		</main>
 
-		<footer class="footer" :class="{ 'footer-tall': !isConsentDecided }">
+		<footer class="footer">
 			<div class="footer-content">
 				<div class="footer-top">
 					<div class="footer-brand">
@@ -168,6 +169,12 @@ watch(
 						<span class="footer-bottom__muted"
 							>© {{ years }} {{ SITE_NAME }}</span
 						>
+						<button
+							class="footer-bottom__cookie-link"
+							@click="isModalActive = true"
+						>
+							{{ t('CookieSettings') }}
+						</button>
 					</div>
 					<div class="footer-bottom__right">
 						<span class="footer-bottom__muted">{{ t('DisclaimerShort') }}</span>
@@ -214,7 +221,8 @@ watch(
 		"SvadLinkLabel": "svad.net",
 		"SvadLinkNote": "Aggregator of Montenegrin online shop products",
 		"PrivacyPolicy": "Privacy",
-		"TermsOfService": "Terms"
+		"TermsOfService": "Terms",
+		"CookieSettings": "Cookie settings"
 	},
 	"ru": {
 		"FooterNavLabel": "Навигация в футере",
@@ -234,7 +242,8 @@ watch(
 		"SvadLinkLabel": "svad.net",
 		"SvadLinkNote": "Агрегатор товаров из онлайн-магазинов Черногории",
 		"PrivacyPolicy": "Конфиденциальность",
-		"TermsOfService": "Условия"
+		"TermsOfService": "Условия",
+		"CookieSettings": "Настройки cookies"
 	},
 	"sr": {
 		"FooterNavLabel": "Navigacija u podnožju",
@@ -254,7 +263,8 @@ watch(
 		"SvadLinkLabel": "svad.net",
 		"SvadLinkNote": "Agregator proizvoda iz online prodavnica Crne Gore",
 		"PrivacyPolicy": "Privatnost",
-		"TermsOfService": "Uslovi"
+		"TermsOfService": "Uslovi",
+		"CookieSettings": "Podešavanja kolačića"
 	},
 	"sr-cyrl": {
 		"FooterNavLabel": "Навигација у подножју",
@@ -274,7 +284,8 @@ watch(
 		"SvadLinkLabel": "svad.net",
 		"SvadLinkNote": "Агрегатор производа из онлајн продавница Црне Горе",
 		"PrivacyPolicy": "Приватност",
-		"TermsOfService": "Услови"
+		"TermsOfService": "Услови",
+		"CookieSettings": "Подешавања колачића"
 	},
 	"de": {
 		"FooterNavLabel": "Footer-Navigation",
@@ -294,7 +305,8 @@ watch(
 		"SvadLinkLabel": "svad.net",
 		"SvadLinkNote": "Aggregator für Produkte aus Online-Shops in Montenegro",
 		"PrivacyPolicy": "Datenschutz",
-		"TermsOfService": "Nutzungsbedingungen"
+		"TermsOfService": "Nutzungsbedingungen",
+		"CookieSettings": "Cookie-Einstellungen"
 	},
 	"tr": {
 		"FooterNavLabel": "Altbilgi gezinme",
@@ -314,7 +326,8 @@ watch(
 		"SvadLinkLabel": "svad.net",
 		"SvadLinkNote": "Karadağ çevrimiçi mağaza ürünleri toplayıcısı",
 		"PrivacyPolicy": "Gizlilik",
-		"TermsOfService": "Koşullar"
+		"TermsOfService": "Koşullar",
+		"CookieSettings": "Çerez ayarları"
 	}
 }
 </i18n>
@@ -360,10 +373,6 @@ body {
 .footer {
 	width: 100%;
 	margin-top: 16px;
-
-	&.footer-tall {
-		margin-bottom: 80vh;
-	}
 
 	.footer-content {
 		box-sizing: border-box;
@@ -554,10 +563,31 @@ body {
 			padding-top: var(--spacing-lg);
 			border-top: 1px solid var(--color-border-light);
 
+			&__left {
+				display: flex;
+				align-items: center;
+				gap: var(--spacing-lg);
+			}
+
 			&__muted {
 				color: var(--color-text-light);
 				font-size: var(--font-size-sm);
 				line-height: 1.4;
+			}
+
+			&__cookie-link {
+				background: none;
+				border: none;
+				padding: 0;
+				color: var(--color-text-light);
+				font-size: var(--font-size-sm);
+				cursor: pointer;
+				text-decoration: underline;
+				text-underline-offset: 2px;
+
+				&:hover {
+					color: var(--color-primary);
+				}
 			}
 		}
 	}

@@ -780,6 +780,25 @@
         "sr": 3,
         "de": 1
       }
+    },
+    "dr-boskovic-bijelo-polje": {
+      "status": "done",
+      "clinicName": "Dr Bošković — ginekološko-akušerska ordinacija (Bijelo Polje)",
+      "configFile": "data/review-import-configs/dr-boskovic-bijelo-polje.json",
+      "sqlFile": "server/sql/reviews-google/dr-boskovic-bijelo-polje.sql",
+      "reviewsWithText": 3,
+      "totalReviews": 19,
+      "replies": 1,
+      "translationsDir": "data/review-translations/dr-boskovic-bijelo-polje/",
+      "translationsCount": 4,
+      "doctorMatches": {
+        "ivan_boskovic": 1
+      },
+      "languages": {
+        "bs": 1,
+        "en": 1,
+        "hr": 1
+      }
     }
   }
 }

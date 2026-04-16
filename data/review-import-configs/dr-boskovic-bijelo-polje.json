@@ -1,0 +1,21 @@
+{
+  "jsonPath": "data/google-places/bijelo-polje/pzu-dr-boskovic-ginekolosko-akuserska-ordinacija.json",
+  "outputPath": "server/sql/reviews-google/dr-boskovic-bijelo-polje.sql",
+  "dataCollectedDate": "2026-04-16",
+  "clinicId": 100,
+  "clinicName": "Dr Bošković — ginekološko-akušerska ordinacija (Bijelo Polje)",
+  "translationsDir": "data/review-translations/dr-boskovic-bijelo-polje/",
+  "doctors": [
+    {
+      "id": 1022,
+      "varName": "ivan_boskovic",
+      "patterns": [
+        "Boškov",
+        "Boskovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Бошкович(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Ivan[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Иван[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

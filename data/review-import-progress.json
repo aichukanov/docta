@@ -799,6 +799,33 @@
         "en": 1,
         "hr": 1
       }
+    },
+    "nova-medic-podgorica": {
+      "status": "done",
+      "clinicName": "Nova Medic Poliklinika (Podgorica)",
+      "configFile": "data/review-import-configs/nova-medic-podgorica.json",
+      "sqlFile": "server/sql/reviews-google/nova-medic-podgorica.sql",
+      "reviewsWithText": 67,
+      "totalReviews": 156,
+      "replies": 58,
+      "translationsDir": "data/review-translations/nova-medic-podgorica/",
+      "translationsCount": 125,
+      "doctorMatches": {
+        "borislav_mandic": 3,
+        "dragan_lagator": 4,
+        "vladan_boskovic": 2,
+        "milos_kuzmanovic": 7,
+        "milena_markovic": 0,
+        "anja_asanovic": 2
+      },
+      "languages": {
+        "hr": 31,
+        "bs": 26,
+        "en": 7,
+        "sl": 1,
+        "ru": 1,
+        "bg": 1
+      }
     }
   }
 }

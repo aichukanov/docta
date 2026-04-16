@@ -826,6 +826,27 @@
         "ru": 1,
         "bg": 1
       }
+    },
+    "dr-raznatovic-podgorica": {
+      "status": "done",
+      "clinicName": "Dr Ražnatović — stomatološka ordinacija (Podgorica)",
+      "configFile": "data/review-import-configs/dr-raznatovic-podgorica.json",
+      "sqlFile": "server/sql/reviews-google/dr-raznatovic-podgorica.sql",
+      "reviewsWithText": 12,
+      "totalReviews": 21,
+      "replies": 6,
+      "translationsDir": "data/review-translations/dr-raznatovic-podgorica/",
+      "translationsCount": 18,
+      "doctorMatches": {
+        "boris_raznatovic": 2,
+        "zorica_raznatovic": 0,
+        "nina_djurovic": 0
+      },
+      "languages": {
+        "en": 10,
+        "hr": 1,
+        "bs": 1
+      }
     }
   }
 }

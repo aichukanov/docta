@@ -59,12 +59,16 @@ const svadLink = computed(() => {
 
 const { initMixpanel, initCloudflare, initGTag } = useAnalytics();
 
+// Cloudflare Web Analytics is cookie-free and doesn't collect personal data — no consent required
+if (import.meta.client) {
+	initCloudflare();
+}
+
 watch(
 	isConsentGiven,
 	() => {
 		if (isConsentGiven.value) {
 			initMixpanel();
-			initCloudflare();
 			initGTag();
 		}
 	},

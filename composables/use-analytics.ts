@@ -19,7 +19,7 @@ export function useAnalytics() {
 	};
 
 	const initCloudflare = () => {
-		if (typeof window === 'undefined' || !isConsentGiven.value) {
+		if (typeof window === 'undefined') {
 			return;
 		}
 

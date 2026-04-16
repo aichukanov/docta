@@ -1,0 +1,35 @@
+{
+  "jsonPath": "data/google-places/podgorica/stomatoloska-ordinacija-dr-raznatovic.json",
+  "outputPath": "server/sql/reviews-google/dr-raznatovic-podgorica.sql",
+  "dataCollectedDate": "2026-04-16",
+  "clinicId": 102,
+  "clinicName": "Dr Ražnatović — stomatološka ordinacija (Podgorica)",
+  "translationsDir": "data/review-translations/dr-raznatovic-podgorica/",
+  "doctors": [
+    {
+      "id": 1032,
+      "varName": "boris_raznatovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Boris[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Борис[аеуой]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 1034,
+      "varName": "zorica_raznatovic",
+      "patterns": [
+        "Zoric[aeiou](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Зорице?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 1035,
+      "varName": "nina_djurovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Nin[aeiou](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "[ĐDdđ]jurovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Đurovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

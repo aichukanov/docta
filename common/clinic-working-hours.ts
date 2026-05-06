@@ -7,22 +7,39 @@ import type {
 } from '~/interfaces/clinic-working-hours';
 import { DAYS_OF_WEEK } from '~/interfaces/clinic-working-hours';
 
+// Clinics are always in Podgorica, regardless of where the server or the
+// viewer's browser is. All schedule comparisons must use this timezone so SSR
+// (Cloudflare Workers, UTC) and client agree.
+const CLINIC_TIMEZONE = 'Europe/Podgorica';
+
 export function timeToMinutes(time: string): number {
 	const [hours, minutes] = time.split(':').map(Number);
 	return hours * 60 + minutes;
 }
 
-export function getDayOfWeek(date: Date): DayOfWeek {
-	const days: DayOfWeek[] = [
-		'sunday',
-		'monday',
-		'tuesday',
-		'wednesday',
-		'thursday',
-		'friday',
-		'saturday',
-	];
-	return days[date.getDay()];
+interface ClinicLocalTime {
+	dayOfWeek: DayOfWeek;
+	minutesOfDay: number;
+}
+
+function getClinicLocalTime(date: Date = new Date()): ClinicLocalTime {
+	const parts = new Intl.DateTimeFormat('en-US', {
+		timeZone: CLINIC_TIMEZONE,
+		weekday: 'long',
+		hour: '2-digit',
+		minute: '2-digit',
+		hour12: false,
+	}).formatToParts(date);
+	const get = (type: string) => parts.find((p) => p.type === type)!.value;
+
+	return {
+		dayOfWeek: get('weekday').toLowerCase() as DayOfWeek,
+		minutesOfDay: (Number(get('hour')) % 24) * 60 + Number(get('minute')),
+	};
+}
+
+export function getCurrentClinicDay(): DayOfWeek {
+	return getClinicLocalTime().dayOfWeek;
 }
 
 function findNextInterval(
@@ -47,7 +64,9 @@ function findNextOpenTime(
 	schedule: WorkingHours,
 	currentTime: Date,
 ): NextOpen | null {
-	const currentDayIndex = DAYS_OF_WEEK.indexOf(getDayOfWeek(currentTime));
+	const currentDayIndex = DAYS_OF_WEEK.indexOf(
+		getClinicLocalTime(currentTime).dayOfWeek,
+	);
 
 	for (let offset = 1; offset <= 7; offset++) {
 		const nextIndex = (currentDayIndex + offset) % 7;
@@ -100,7 +119,8 @@ export function calculateStatus(
 	schedule: WorkingHours,
 	currentTime: Date = new Date(),
 ): WorkingHoursStatus {
-	const dayOfWeek = getDayOfWeek(currentTime);
+	const { dayOfWeek, minutesOfDay: currentMinutes } =
+		getClinicLocalTime(currentTime);
 	const daySchedule = schedule[dayOfWeek];
 
 	if (daySchedule.type === '24/7') {
@@ -118,9 +138,6 @@ export function calculateStatus(
 	if (daySchedule.type === 'not_specified') {
 		return { isOpen: false, type: 'not_specified' };
 	}
-
-	// type === 'regular'
-	const currentMinutes = currentTime.getHours() * 60 + currentTime.getMinutes();
 
 	for (const interval of daySchedule.intervals || []) {
 		const startMinutes = timeToMinutes(interval.start);

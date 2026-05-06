@@ -2,7 +2,7 @@
 import {
 	calculateStatus,
 	formatIntervals,
-	getDayOfWeek,
+	getCurrentClinicDay,
 } from '~/common/clinic-working-hours';
 import workingHoursI18n from '~/i18n/working-hours';
 import type {
@@ -35,7 +35,7 @@ const hasSchedule = computed(() => {
 	);
 });
 
-const currentDay = computed(() => getDayOfWeek(new Date()));
+const currentDay = getCurrentClinicDay();
 
 const status = computed(() => {
 	if (!schedule.value) return null;

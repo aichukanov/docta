@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test';
 import {
 	calculateStatus,
 	timeToMinutes,
-	getDayOfWeek,
 	formatIntervals,
 	validateWorkingHoursData,
 } from '../../common/clinic-working-hours';
@@ -22,22 +21,6 @@ test.describe('timeToMinutes', () => {
 
 	test('converts 23:59', () => {
 		expect(timeToMinutes('23:59')).toBe(1439);
-	});
-});
-
-// --- getDayOfWeek ---
-
-test.describe('getDayOfWeek', () => {
-	test('returns monday for 2026-03-30', () => {
-		expect(getDayOfWeek(new Date('2026-03-30T12:00:00'))).toBe('monday');
-	});
-
-	test('returns sunday for 2026-03-29', () => {
-		expect(getDayOfWeek(new Date('2026-03-29T12:00:00'))).toBe('sunday');
-	});
-
-	test('returns wednesday for 2026-04-01', () => {
-		expect(getDayOfWeek(new Date('2026-04-01T12:00:00'))).toBe('wednesday');
 	});
 });
 
@@ -89,12 +72,14 @@ function makeSchedule(override: Partial<WorkingHours> = {}): WorkingHours {
 	return { ...base, ...override };
 }
 
+// Dates use explicit Podgorica offset (+02:00 during DST, +01:00 otherwise)
+// so the test is deterministic regardless of the test runner's local timezone.
 test.describe('calculateStatus', () => {
 	test('open during working hours', () => {
-		// Monday 10:00
+		// Monday 10:00 Podgorica
 		const result = calculateStatus(
 			makeSchedule(),
-			new Date('2026-03-30T10:00:00'),
+			new Date('2026-03-30T10:00:00+02:00'),
 		);
 		expect(result.isOpen).toBe(true);
 		expect(result.type).toBe('open_until');
@@ -102,10 +87,10 @@ test.describe('calculateStatus', () => {
 	});
 
 	test('closed after working hours, opens tomorrow', () => {
-		// Monday 21:00 → opens Tuesday 08:00
+		// Monday 21:00 Podgorica → opens Tuesday 08:00
 		const result = calculateStatus(
 			makeSchedule(),
-			new Date('2026-03-30T21:00:00'),
+			new Date('2026-03-30T21:00:00+02:00'),
 		);
 		expect(result.isOpen).toBe(false);
 		expect(result.type).toBe('opens_day');
@@ -115,10 +100,10 @@ test.describe('calculateStatus', () => {
 	});
 
 	test('closed before working hours, opens today', () => {
-		// Monday 06:00 → opens at 08:00 today
+		// Monday 06:00 Podgorica → opens at 08:00 today
 		const result = calculateStatus(
 			makeSchedule(),
-			new Date('2026-03-30T06:00:00'),
+			new Date('2026-03-30T06:00:00+02:00'),
 		);
 		expect(result.isOpen).toBe(false);
 		expect(result.type).toBe('opens_today');
@@ -126,10 +111,10 @@ test.describe('calculateStatus', () => {
 	});
 
 	test('closed on sunday, opens monday', () => {
-		// Sunday 12:00 → opens Monday 08:00
+		// Sunday 12:00 Podgorica → opens Monday 08:00
 		const result = calculateStatus(
 			makeSchedule(),
-			new Date('2026-03-29T12:00:00'),
+			new Date('2026-03-29T12:00:00+02:00'),
 		);
 		expect(result.isOpen).toBe(false);
 		expect(result.type).toBe('opens_day');
@@ -143,21 +128,30 @@ test.describe('calculateStatus', () => {
 		for (const day of DAYS_OF_WEEK) {
 			schedule[day] = { type: '24/7' };
 		}
-		const result = calculateStatus(schedule, new Date('2026-03-30T03:00:00'));
+		const result = calculateStatus(
+			schedule,
+			new Date('2026-03-30T03:00:00+02:00'),
+		);
 		expect(result.isOpen).toBe(true);
 		expect(result.type).toBe('open_24_7');
 	});
 
 	test('on_demand returns on_demand', () => {
 		const schedule = makeSchedule({ monday: { type: 'on_demand' } });
-		const result = calculateStatus(schedule, new Date('2026-03-30T10:00:00'));
+		const result = calculateStatus(
+			schedule,
+			new Date('2026-03-30T10:00:00+02:00'),
+		);
 		expect(result.isOpen).toBe(false);
 		expect(result.type).toBe('on_demand');
 	});
 
 	test('not_specified returns not_specified', () => {
 		const schedule = makeSchedule({ monday: { type: 'not_specified' } });
-		const result = calculateStatus(schedule, new Date('2026-03-30T10:00:00'));
+		const result = calculateStatus(
+			schedule,
+			new Date('2026-03-30T10:00:00+02:00'),
+		);
 		expect(result.isOpen).toBe(false);
 		expect(result.type).toBe('not_specified');
 	});
@@ -173,8 +167,11 @@ test.describe('calculateStatus', () => {
 			},
 		});
 
-		// Monday 14:00 - during lunch break
-		const result = calculateStatus(schedule, new Date('2026-03-30T14:00:00'));
+		// Monday 14:00 Podgorica - during lunch break
+		const result = calculateStatus(
+			schedule,
+			new Date('2026-03-30T14:00:00+02:00'),
+		);
 		expect(result.isOpen).toBe(false);
 		expect(result.type).toBe('opens_today');
 		expect(result.time).toBe('15:00');
@@ -191,8 +188,11 @@ test.describe('calculateStatus', () => {
 			},
 		});
 
-		// Monday 16:00
-		const result = calculateStatus(schedule, new Date('2026-03-30T16:00:00'));
+		// Monday 16:00 Podgorica
+		const result = calculateStatus(
+			schedule,
+			new Date('2026-03-30T16:00:00+02:00'),
+		);
 		expect(result.isOpen).toBe(true);
 		expect(result.type).toBe('open_until');
 		expect(result.time).toBe('19:00');
@@ -204,8 +204,11 @@ test.describe('calculateStatus', () => {
 			sunday: { type: 'closed' },
 		});
 
-		// Saturday 12:00 → opens Monday (2 days)
-		const result = calculateStatus(schedule, new Date('2026-03-28T12:00:00'));
+		// Saturday 12:00 Podgorica (before DST start) → opens Monday (2 days)
+		const result = calculateStatus(
+			schedule,
+			new Date('2026-03-28T12:00:00+01:00'),
+		);
 		expect(result.isOpen).toBe(false);
 		expect(result.type).toBe('opens_day');
 		expect(result.offsetDays).toBe(2);

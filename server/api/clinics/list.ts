@@ -5,6 +5,15 @@ import {
 	processLocalizedDescription,
 } from '~/server/common/utils';
 import type { ClinicList } from '~/interfaces/clinic';
+import type {
+	DaySchedule,
+	WorkingHours,
+} from '~/interfaces/clinic-working-hours';
+import {
+	DAYS_OF_WEEK,
+	DEFAULT_DAY_SCHEDULE,
+} from '~/interfaces/clinic-working-hours';
+import { calculateStatus } from '~/common/clinic-working-hours';
 import {
 	validateCityIds,
 	validateClinicTypeIds,
@@ -12,6 +21,35 @@ import {
 	validateName,
 } from '~/common/validation';
 import { LIST_PAGE_SIZE } from '~/common/constants';
+
+function parseDaySchedule(value: unknown): DaySchedule {
+	if (!value) return DEFAULT_DAY_SCHEDULE;
+	if (typeof value === 'string') {
+		try {
+			return JSON.parse(value) as DaySchedule;
+		} catch {
+			return DEFAULT_DAY_SCHEDULE;
+		}
+	}
+	return value as DaySchedule;
+}
+
+function buildWorkingHours(
+	row: any,
+): Omit<WorkingHours, 'clinicId'> | undefined {
+	if (!row) return undefined;
+	const hasAnyDay = DAYS_OF_WEEK.some((day) => row[day] != null);
+	if (!hasAnyDay) return undefined;
+	return {
+		monday: parseDaySchedule(row.monday),
+		tuesday: parseDaySchedule(row.tuesday),
+		wednesday: parseDaySchedule(row.wednesday),
+		thursday: parseDaySchedule(row.thursday),
+		friday: parseDaySchedule(row.friday),
+		saturday: parseDaySchedule(row.saturday),
+		sunday: parseDaySchedule(row.sunday),
+	};
+}
 
 export default defineEventHandler(async (event): Promise<ClinicList> => {
 	try {
@@ -61,16 +99,22 @@ export async function getClinicList(
 		name?: string;
 		locale?: string;
 		page?: number;
+		openNow?: boolean;
 	} = {},
 ) {
 	const whereFilters: string[] = [];
 	const queryParams: Array<number | string> = [];
 	const locale = body.locale || 'en';
 	const usePagination = body.page != null;
+	const openNow = body.openNow === true;
 	const pageRaw = Number(body.page);
 	const pageSize = LIST_PAGE_SIZE;
 	const page = Math.max(Number.isFinite(pageRaw) ? pageRaw : 1, 1);
 	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
+	// `openNow` filter requires evaluating each clinic's schedule in JS
+	// (timezone-aware calculation), which can't be expressed in SQL — paginate
+	// in-memory afterwards.
+	const useDbPagination = usePagination && !openNow;
 
 	const buildInPlaceholders = (values: Array<number | string>) => {
 		const arr = Array.isArray(values) ? values : [values];
@@ -108,7 +152,7 @@ export async function getClinicList(
 
 	const whereFiltersString =
 		whereFilters.length > 0 ? 'WHERE ' + whereFilters.join(' AND ') : '';
-	const paginationClause = usePagination
+	const paginationClause = useDbPagination
 		? `LIMIT ${pageSize} OFFSET ${offset}`
 		: '';
 
@@ -147,6 +191,13 @@ export async function getClinicList(
 				c.description_de,
 				c.description_tr,
 				c.logo_url as logoUrl,
+				ANY_VALUE(cwh.monday) as monday,
+				ANY_VALUE(cwh.tuesday) as tuesday,
+				ANY_VALUE(cwh.wednesday) as wednesday,
+				ANY_VALUE(cwh.thursday) as thursday,
+				ANY_VALUE(cwh.friday) as friday,
+				ANY_VALUE(cwh.saturday) as saturday,
+				ANY_VALUE(cwh.sunday) as sunday,
 				COALESCE(GROUP_CONCAT(DISTINCT cl.language_id ORDER BY cl.language_id), '1') as languageIds,
 				COALESCE(GROUP_CONCAT(DISTINCT cct.clinic_type_id ORDER BY cct.clinic_type_id), '') as clinicTypeIds,
 				COALESCE(
@@ -158,6 +209,7 @@ export async function getClinicList(
 			FROM clinics c
 			LEFT JOIN clinic_languages cl ON c.id = cl.clinic_id
 			LEFT JOIN clinic_clinic_types cct ON c.id = cct.clinic_id
+			LEFT JOIN clinic_working_hours cwh ON c.id = cwh.clinic_id
 			LEFT JOIN billing_clinic_service_purchases bscp
 				ON c.id = bscp.clinic_id
 				AND bscp.deleted = 0
@@ -173,7 +225,7 @@ export async function getClinicList(
 
 	const connection = await getConnection();
 	let totalCount = 0;
-	if (usePagination) {
+	if (useDbPagination) {
 		const [countRows] = await connection.execute(totalCountQuery, queryParams);
 		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
 	}
@@ -181,7 +233,7 @@ export async function getClinicList(
 	await connection.end();
 
 	// Обрабатываем локализованные имена, town, address и description
-	const processedClinics = (clinics as any[]).map((clinic: any) => {
+	let processedClinics = (clinics as any[]).map((clinic: any) => {
 		const { name, localName } = processLocalizedNameForClinicOrDoctor(
 			clinic,
 			locale,
@@ -223,10 +275,21 @@ export async function getClinicList(
 						totalReviews: clinic.totalReviews,
 					}
 				: undefined,
+			workingHours: buildWorkingHours(clinic),
 		};
 	});
 
-	if (!usePagination) {
+	if (openNow) {
+		processedClinics = processedClinics.filter((c) =>
+			c.workingHours
+				? calculateStatus({ clinicId: c.id, ...c.workingHours }).isOpen
+				: false,
+		);
+		totalCount = processedClinics.length;
+		if (usePagination) {
+			processedClinics = processedClinics.slice(offset, offset + pageSize);
+		}
+	} else if (!usePagination) {
 		totalCount = processedClinics.length;
 	}
 

@@ -157,11 +157,13 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 							:content="t('oauthPhotoHint')"
 							placement="bottom"
 						>
-							<DoctorAvatar
-								:name="user?.name ?? ''"
-								:photo-url="avatarDisplayUrl"
-								:size="88"
-							/>
+							<span class="profile-hero__avatar-trigger">
+								<DoctorAvatar
+									:name="user?.name ?? ''"
+									:photo-url="avatarDisplayUrl"
+									:size="88"
+								/>
+							</span>
 						</el-tooltip>
 						<DoctorAvatar
 							v-else
@@ -336,6 +338,10 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 .profile-hero__avatar-wrap {
 	position: relative;
 	flex-shrink: 0;
+}
+
+.profile-hero__avatar-trigger {
+	display: inline-flex;
 }
 
 .profile-hero__avatar-upload {

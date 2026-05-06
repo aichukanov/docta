@@ -121,6 +121,8 @@ const clinicLink = computed(() => {
 				<ClinicLocationAddress :clinic="clinic" />
 			</div>
 
+			<ClinicWorkingStatusBadge :workingHours="clinic.workingHours" />
+
 			<div v-if="clinicTypeNames.length" class="clinic-types">
 				<CategoryTag
 					v-for="typeName in clinicTypeNames"

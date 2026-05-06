@@ -22,6 +22,7 @@ const atcGroupIds = ref<number[]>([]);
 const substanceIds = ref<number[]>([]);
 const pharmaFormIds = ref<number[]>([]);
 const manufacturerIds = ref<number[]>([]);
+const openNow = ref<boolean>(false);
 
 const getRouteParams = () => {
 	return {
@@ -39,6 +40,7 @@ const getRouteParams = () => {
 			substanceIds: substanceIds.value,
 			pharmaFormIds: pharmaFormIds.value,
 			manufacturerIds: manufacturerIds.value,
+			openNow: openNow.value ? 'true' : undefined,
 		},
 	};
 };
@@ -240,6 +242,8 @@ const updateFromRoute = (query: Record<string, string | string[]>) => {
 	} else {
 		name.value = undefined;
 	}
+
+	openNow.value = query.openNow === 'true' || query.openNow === '1';
 };
 
 export const useFilters = () => {
@@ -259,5 +263,6 @@ export const useFilters = () => {
 		substanceIds,
 		pharmaFormIds,
 		manufacturerIds,
+		openNow,
 	};
 };

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {
-	calculateStatus,
 	formatIntervals,
 	getCurrentClinicDay,
 } from '~/common/clinic-working-hours';
@@ -37,11 +36,6 @@ const hasSchedule = computed(() => {
 
 const currentDay = getCurrentClinicDay();
 
-const status = computed(() => {
-	if (!schedule.value) return null;
-	return calculateStatus(schedule.value);
-});
-
 const DAY_NAME_KEYS: Record<DayOfWeek, string> = {
 	monday: 'Monday',
 	tuesday: 'Tuesday',
@@ -60,55 +54,11 @@ const formatDayHours = (ds: DaySchedule): string => {
 	if (ds.type === 'on_demand') return t('OnDemand');
 	return t('NotSpecified');
 };
-
-const ON_DAY_KEYS: Record<DayOfWeek, string> = {
-	monday: 'OnDayMonday',
-	tuesday: 'OnDayTuesday',
-	wednesday: 'OnDayWednesday',
-	thursday: 'OnDayThursday',
-	friday: 'OnDayFriday',
-	saturday: 'OnDaySaturday',
-	sunday: 'OnDaySunday',
-};
-
-const statusText = computed(() => {
-	const s = status.value;
-	if (!s) return '';
-	switch (s.type) {
-		case 'open_24_7':
-			return t('Open24_7');
-		case 'open_until':
-			return t('OpenUntil', { time: s.time });
-		case 'opens_today':
-			return t('OpensAt', { time: s.time });
-		case 'opens_day':
-			if (s.offsetDays === 1) {
-				return t('OpensTomorrow', { time: s.time });
-			}
-			return t('OpensOnDay', { day: t(ON_DAY_KEYS[s.day!]), time: s.time });
-		case 'on_demand':
-			return t('OnDemand');
-		case 'not_specified':
-			return t('NotSpecified');
-		default:
-			return '';
-	}
-});
 </script>
 
 <template>
 	<div v-if="hasSchedule" class="working-hours">
-		<div
-			class="working-hours__status"
-			:class="{ 'working-hours__status--open': status?.isOpen }"
-		>
-			<span class="working-hours__dot" />
-			<span>{{ status?.isOpen ? t('OpenNow') : t('ClosedNow') }}</span>
-			<template v-if="statusText">
-				<span class="working-hours__status-detail">·</span>
-				<span class="working-hours__status-detail">{{ statusText }}</span>
-			</template>
-		</div>
+		<ClinicWorkingStatusBadge :workingHours="schedule" />
 
 		<div class="working-hours__grid">
 			<div
@@ -131,32 +81,6 @@ const statusText = computed(() => {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-sm);
-}
-
-.working-hours__status {
-	display: flex;
-	align-items: baseline;
-	gap: var(--spacing-sm);
-	font-size: var(--font-size-md);
-	color: #dc2626;
-	font-weight: 500;
-}
-
-.working-hours__status--open {
-	color: #16a34a;
-}
-
-.working-hours__dot {
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	background: currentColor;
-	flex-shrink: 0;
-}
-
-.working-hours__status-detail {
-	color: var(--color-text-secondary);
-	font-weight: 400;
 }
 
 .working-hours__grid {

@@ -12,6 +12,7 @@ import cityI18n from '~/i18n/city';
 import clinicI18n from '~/i18n/clinic';
 import clinicTypeI18n from '~/i18n/clinic-type';
 import languageI18n from '~/i18n/language';
+import workingHoursI18n from '~/i18n/working-hours';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -21,6 +22,7 @@ const { t, locale } = useI18n({
 		clinicTypeI18n,
 		cityI18n,
 		languageI18n,
+		workingHoursI18n,
 	]),
 });
 
@@ -29,6 +31,7 @@ const {
 	languageIds,
 	clinicTypeIds,
 	name,
+	openNow,
 	updateFromRoute,
 	getRouteParams,
 } = useFilters();
@@ -50,6 +53,7 @@ const filterList = computed(() => ({
 	languageIds: languageIds.value,
 	clinicTypeIds: clinicTypeIds.value,
 	name: name.value,
+	openNow: openNow.value,
 	locale: locale.value,
 	page: pageNumber.value,
 }));
@@ -143,7 +147,8 @@ const isFiltered = computed(() => {
 		cityIds.value.length > 0 ||
 		languageIds.value.length > 0 ||
 		clinicTypeIds.value.length > 0 ||
-		!!name.value
+		!!name.value ||
+		openNow.value
 	);
 });
 
@@ -190,6 +195,7 @@ watchEffect(() => {
 			<FilterClinicTypeSelect v-model:value="clinicTypeIds" />
 			<FilterCitySelect v-model:value="cityIds" />
 			<FilterLanguageSelect v-model:value="languageIds" />
+			<FilterOpenNow :label="t('OpenNow')" />
 		</template>
 
 		<template #card="{ item, showClinicOnMap }">

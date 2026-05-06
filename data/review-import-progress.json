@@ -1010,6 +1010,29 @@
         "en": 3,
         "de": 1
       }
+    },
+    "mansa-medica-tivat": {
+      "status": "done",
+      "clinicName": "Mansa Medica Tivat",
+      "configFile": "data/review-import-configs/mansa-medica-tivat.json",
+      "sqlFile": "server/sql/reviews-google/mansa-medica-tivat.sql",
+      "reviewsWithText": 42,
+      "totalReviews": 92,
+      "replies": 0,
+      "translationsDir": "data/review-translations/mansa-medica-tivat/",
+      "translationsCount": 42,
+      "doctorMatches": {
+        "petar_matijevic": 4,
+        "jovan_raicevic": 3
+      },
+      "languages": {
+        "hr": 10,
+        "bs": 11,
+        "en": 12,
+        "ru": 5,
+        "sr": 3,
+        "de": 1
+      }
     }
   }
 }

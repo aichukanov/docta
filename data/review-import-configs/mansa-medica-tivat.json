@@ -1,0 +1,34 @@
+{
+  "jsonPath": "data/google-places/tivat/mansa-medica-tivat.json",
+  "outputPath": "server/sql/reviews-google/mansa-medica-tivat.sql",
+  "dataCollectedDate": "2026-05-06",
+  "clinicId": 118,
+  "clinicName": "Mansa Medica Tivat",
+  "translationsDir": "data/review-translations/mansa-medica-tivat/",
+  "doctors": [
+    {
+      "id": 1100,
+      "varName": "petar_matijevic",
+      "patterns": [
+        "Matijevi[cć][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Матијеви[ћц][ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Матиевич[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Petar[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Петар[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Пер[оае](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 1101,
+      "varName": "jovan_raicevic",
+      "patterns": [
+        "Rai[cč]evi[cć][aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Раичеви[ћц][ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Jovan[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Йован[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Јован[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Јово(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

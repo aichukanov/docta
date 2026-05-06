@@ -543,7 +543,7 @@ function buildDoctorServicesSchema(options: {
 								'minPrice': service.price.toFixed(2),
 								'maxPrice': service.priceMax!.toFixed(2),
 								'priceCurrency': 'EUR',
-						  }
+							}
 						: undefined,
 					'priceCurrency': 'EUR',
 					// Just reference to clinic @id (full data is in worksFor)
@@ -677,13 +677,13 @@ export function buildDoctorSchema(options: {
 				? {
 						'@type': 'Person' as const,
 						'name': review.author.name,
-				  }
+					}
 				: undefined,
 			'reviewRating': review.rating
 				? {
 						'@type': 'Rating' as const,
 						'ratingValue': review.rating,
-				  }
+					}
 				: undefined,
 			'reviewBody': review.text,
 			'datePublished': review.publishedAt || undefined,
@@ -778,12 +778,8 @@ function buildOfferCatalogSchema(options: {
 
 	// Limit to 10 services, prioritizing ones with prices
 	const sortedServices = [...options.services].sort((a, b) => {
-		const aPrice = a.clinicPrices?.find(
-			(p) => p.clinicId === options.clinicId,
-		);
-		const bPrice = b.clinicPrices?.find(
-			(p) => p.clinicId === options.clinicId,
-		);
+		const aPrice = a.clinicPrices?.find((p) => p.clinicId === options.clinicId);
+		const bPrice = b.clinicPrices?.find((p) => p.clinicId === options.clinicId);
 		const aHasPrice = aPrice?.price != null || aPrice?.priceMin != null;
 		const bHasPrice = bPrice?.price != null || bPrice?.priceMin != null;
 		if (aHasPrice !== bHasPrice) return aHasPrice ? -1 : 1;
@@ -970,7 +966,7 @@ export function buildClinicSchema(options: {
 						'@type': 'GeoCoordinates' as const,
 						'latitude': clinic.latitude,
 						'longitude': clinic.longitude,
-				  }
+					}
 				: undefined,
 		availableLanguage:
 			availableLanguage && availableLanguage.length > 0
@@ -996,7 +992,7 @@ export function buildClinicSchema(options: {
 						'@type': 'AggregateRating' as const,
 						'ratingValue': options.rating.averageRating.toFixed(1),
 						'reviewCount': options.rating.totalReviews,
-				  }
+					}
 				: undefined,
 		review: (() => {
 			const reviews = options.reviews
@@ -1007,13 +1003,13 @@ export function buildClinicSchema(options: {
 						? {
 								'@type': 'Person' as const,
 								'name': review.author.name,
-						  }
+							}
 						: undefined,
 					'reviewRating': review.rating
 						? {
 								'@type': 'Rating' as const,
 								'ratingValue': review.rating,
-						  }
+							}
 						: undefined,
 					'reviewBody': review.text,
 					'datePublished': review.publishedAt || undefined,
@@ -1095,7 +1091,7 @@ export function buildOffersSchema(options: {
 								'minPrice': price.toFixed(2),
 								'maxPrice': priceMax.toFixed(2),
 								'priceCurrency': 'EUR',
-						  }
+							}
 						: undefined,
 					'url': clinicUrl,
 					'seller': {
@@ -1259,29 +1255,38 @@ export function buildMedicineSchema(options: {
 	if (options.strength) {
 		medicineSchema.doseSchedule = {
 			'@type': 'DoseSchedule',
-			doseValue: options.strength,
+			'doseValue': options.strength,
 		};
 	}
 	if (options.manufacturer) {
 		medicineSchema.manufacturer = {
 			'@type': 'Organization',
-			name: options.manufacturer,
-			...(options.country ? { address: { '@type': 'PostalAddress', addressCountry: options.country } } : {}),
+			'name': options.manufacturer,
+			...(options.country
+				? {
+						address: {
+							'@type': 'PostalAddress',
+							'addressCountry': options.country,
+						},
+					}
+				: {}),
 		};
 	}
 	if (options.dispensingModeId) {
-		medicineSchema.prescriptionStatus = options.dispensingModeId === 2
-			? 'OTC' : 'PrescriptionOnly';
+		medicineSchema.prescriptionStatus =
+			options.dispensingModeId === 2 ? 'OTC' : 'PrescriptionOnly';
 	}
 	if (options.atcCode) {
 		medicineSchema.code = {
 			'@type': 'MedicalCode',
-			codingSystem: 'ATC',
-			codeValue: options.atcCode,
+			'codingSystem': 'ATC',
+			'codeValue': options.atcCode,
 		};
 	}
 	if (options.isActive != null) {
-		medicineSchema.legalStatus = options.isActive ? 'ActivelyMarketed' : 'WithdrawnFromMarket';
+		medicineSchema.legalStatus = options.isActive
+			? 'ActivelyMarketed'
+			: 'WithdrawnFromMarket';
 	}
 	if (options.detailUrl) {
 		medicineSchema.sameAs = options.detailUrl;

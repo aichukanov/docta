@@ -36,28 +36,32 @@ const isSubmitting = ref(false);
 const error = ref('');
 
 const relatedHint = computed(() =>
-	props.entityType === 'clinic'
-		? t('ReviewDoctorHint')
-		: t('ReviewClinicHint'),
+	props.entityType === 'clinic' ? t('ReviewDoctorHint') : t('ReviewClinicHint'),
 );
 
 const handleSubmit = async () => {
 	error.value = '';
-	if (!rating.value) { error.value = t('RatingRequired'); return; }
+	if (!rating.value) {
+		error.value = t('RatingRequired');
+		return;
+	}
 
 	try {
 		isSubmitting.value = true;
-		const response = await $fetch<{ data?: { id?: number } }>('/api/reviews/create', {
-			method: 'POST',
-			body: {
-				entityType: props.entityType,
-				entityId: props.entityId,
-				relatedEntityId: selectedRelatedId.value || undefined,
-				rating: rating.value,
-				text: reviewText.value.trim(),
-				locale: locale.value,
+		const response = await $fetch<{ data?: { id?: number } }>(
+			'/api/reviews/create',
+			{
+				method: 'POST',
+				body: {
+					entityType: props.entityType,
+					entityId: props.entityId,
+					relatedEntityId: selectedRelatedId.value || undefined,
+					rating: rating.value,
+					text: reviewText.value.trim(),
+					locale: locale.value,
+				},
 			},
-		});
+		);
 		const review: Review = {
 			id: response?.data?.id || 0,
 			provider: 'docta_me',
@@ -75,8 +79,11 @@ const handleSubmit = async () => {
 		visible.value = false;
 		emit('submitted', review);
 	} catch (e: unknown) {
-		const err = e as { data?: { statusMessage?: string; data?: { code?: string } } };
-		const code = err.data?.data?.code || err.data?.statusMessage || 'INTERNAL_ERROR';
+		const err = e as {
+			data?: { statusMessage?: string; data?: { code?: string } };
+		};
+		const code =
+			err.data?.data?.code || err.data?.statusMessage || 'INTERNAL_ERROR';
 		const errorMessages: Record<string, string> = {
 			REVIEW_DUPLICATE: t('ReviewDuplicate'),
 			REVIEW_INVALID_RATING: t('RatingRequired'),
@@ -102,14 +109,21 @@ const handleSubmit = async () => {
 			</div>
 
 			<!-- Related entity selector -->
-			<div v-if="relatedEntities && relatedEntities.length > 0" class="form-field">
+			<div
+				v-if="relatedEntities && relatedEntities.length > 0"
+				class="form-field"
+			>
 				<label class="form-label">
 					{{ entityType === 'clinic' ? t('ReviewDoctor') : t('ReviewClinic') }}
 				</label>
 				<el-select
 					v-model="selectedRelatedId"
 					clearable
-					:placeholder="entityType === 'clinic' ? t('ReviewSelectDoctor') : t('ReviewSelectClinic')"
+					:placeholder="
+						entityType === 'clinic'
+							? t('ReviewSelectDoctor')
+							: t('ReviewSelectClinic')
+					"
 				>
 					<el-option
 						v-for="entity in relatedEntities"

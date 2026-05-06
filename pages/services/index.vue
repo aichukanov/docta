@@ -266,7 +266,10 @@ watchEffect(() => {
 		font-weight: 600;
 		color: #1f2937;
 		margin: 0;
-		font-family: system-ui, -apple-system, sans-serif;
+		font-family:
+			system-ui,
+			-apple-system,
+			sans-serif;
 		word-break: break-word;
 
 		.service-name-link {
@@ -293,7 +296,6 @@ watchEffect(() => {
 		flex-wrap: wrap;
 		gap: var(--spacing-xs);
 		margin-top: var(--spacing-sm);
-
 	}
 }
 </style>

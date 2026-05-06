@@ -2,8 +2,7 @@
 import { PROJECT_CONTACTS, SITE_NAME } from '~/common/constants';
 import { getRegionalQuery } from '~/common/url-utils';
 
-const { isConsentGiven, isConsentDecided, isModalActive } =
-	useCookieControl();
+const { isConsentGiven, isConsentDecided, isModalActive } = useCookieControl();
 const { t, locale } = useI18n();
 
 const years = computed(() => `2025-${new Date().getFullYear()}`);

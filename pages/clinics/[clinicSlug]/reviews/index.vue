@@ -101,13 +101,12 @@ const clinicTypeNames = computed(() => {
 		entityRouteParam="clinicSlug"
 		:entityId="clinic?.id"
 		:ownReview="data.ownReview"
-		:relatedEntities="clinicDoctors.map(d => ({ id: d.id, name: d.name }))"
+		:relatedEntities="clinicDoctors.map((d) => ({ id: d.id, name: d.name }))"
 	>
 		<template #badges>
-			<CategoryTag
-				v-for="name in clinicTypeNames"
-				:key="name"
-			>{{ name }}</CategoryTag>
+			<CategoryTag v-for="name in clinicTypeNames" :key="name">{{
+				name
+			}}</CategoryTag>
 		</template>
 	</ReviewsPage>
 </template>

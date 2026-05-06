@@ -126,9 +126,8 @@ export default defineEventHandler(async (event) => {
 			);
 
 			// Сохраняем полный Facebook профиль
-			const { getOAuthAccountId, saveFacebookProfile } = await import(
-				'~/server/utils/oauth-profiles'
-			);
+			const { getOAuthAccountId, saveFacebookProfile } =
+				await import('~/server/utils/oauth-profiles');
 			const oauthAccountId = await getOAuthAccountId(user.id, 'facebook');
 			if (oauthAccountId) {
 				await saveFacebookProfile(oauthAccountId, userInfo);

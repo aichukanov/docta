@@ -40,13 +40,14 @@ export default defineEventHandler(async (event) => {
 			'SELECT id FROM doctors WHERE id = ? AND hidden = 0',
 			[entityId],
 		);
-		if (rows.length === 0) createErrorResponse(400, ERROR_CODES.REVIEW_INVALID_ENTITY);
+		if (rows.length === 0)
+			createErrorResponse(400, ERROR_CODES.REVIEW_INVALID_ENTITY);
 	} else {
-		const rows = await executeQuery(
-			'SELECT id FROM clinics WHERE id = ?',
-			[entityId],
-		);
-		if (rows.length === 0) createErrorResponse(400, ERROR_CODES.REVIEW_INVALID_ENTITY);
+		const rows = await executeQuery('SELECT id FROM clinics WHERE id = ?', [
+			entityId,
+		]);
+		if (rows.length === 0)
+			createErrorResponse(400, ERROR_CODES.REVIEW_INVALID_ENTITY);
 	}
 
 	// Determine doctor_id and clinic_id based on entityType + optional related entity
@@ -111,7 +112,15 @@ export default defineEventHandler(async (event) => {
 		`INSERT INTO reviews
 			(user_id, doctor_id, clinic_id, provider, rating, original_language, original_text, ${textColumn}, published_at, likes_count, created_at, updated_at)
 		VALUES (?, ?, ?, 'docta_me', ?, ?, ?, ?, NOW(), 0, NOW(), NOW())`,
-		[user!.id, doctorId, clinicId, rating, originalLanguage, trimmedText, trimmedText],
+		[
+			user!.id,
+			doctorId,
+			clinicId,
+			rating,
+			originalLanguage,
+			trimmedText,
+			trimmedText,
+		],
 	);
 
 	const insertId = (rows as any).insertId;

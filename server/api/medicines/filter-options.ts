@@ -21,13 +21,23 @@ export default defineEventHandler(
 
 			if (!validateBody(body, 'api/medicines/filter-options')) {
 				setResponseStatus(event, 400, 'Invalid parameters');
-				return { atcGroups: [], substances: [], pharmaForms: [], manufacturers: [] };
+				return {
+					atcGroups: [],
+					substances: [],
+					pharmaForms: [],
+					manufacturers: [],
+				};
 			}
 
 			return getFilterOptions(body);
 		} catch (error) {
 			console.error('API Error - medicine filter-options:', error);
-			return { atcGroups: [], substances: [], pharmaForms: [], manufacturers: [] };
+			return {
+				atcGroups: [],
+				substances: [],
+				pharmaForms: [],
+				manufacturers: [],
+			};
 		}
 	},
 );

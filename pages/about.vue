@@ -154,7 +154,11 @@ const breadcrumbItems = computed(() => [
 
 				<section class="about-card">
 					<h2 class="about-card__title">{{ t('LegalTitle') }}</h2>
-					<p class="about-card__text">{{ t('LegalText', { registrationNumber: LEGAL_ENTITY.registrationNumber }) }}</p>
+					<p class="about-card__text">{{
+						t('LegalText', {
+							registrationNumber: LEGAL_ENTITY.registrationNumber,
+						})
+					}}</p>
 				</section>
 
 				<section class="about-card about-card--contact">

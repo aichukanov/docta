@@ -88,7 +88,10 @@ const toggleShowAll = () => {
 	margin: 0;
 	padding-bottom: var(--spacing-xs);
 	border-bottom: 1px solid var(--color-border-light);
-	font-family: system-ui, -apple-system, sans-serif;
+	font-family:
+		system-ui,
+		-apple-system,
+		sans-serif;
 }
 
 .items-grid {

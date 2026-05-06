@@ -111,7 +111,11 @@ const onMapReady = () => {
 					</slot>
 					<slot name="reviews" />
 				</article>
-				<aside ref="mapSentinel" class="map-container" :aria-label="t('AriaMapSection')">
+				<aside
+					ref="mapSentinel"
+					class="map-container"
+					:aria-label="t('AriaMapSection')"
+				>
 					<ClinicServicesMap
 						v-if="isMapVisible"
 						ref="mapRef"

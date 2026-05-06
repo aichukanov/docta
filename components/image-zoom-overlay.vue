@@ -29,17 +29,8 @@ onBeforeUnmount(() => {
 <template>
 	<Teleport to="body">
 		<Transition name="image-zoom">
-			<div
-				v-if="visible"
-				class="image-zoom-overlay"
-				@click="visible = false"
-			>
-				<img
-					:src="src"
-					:alt="alt"
-					class="image-zoom-image"
-					@click.stop
-				/>
+			<div v-if="visible" class="image-zoom-overlay" @click="visible = false">
+				<img :src="src" :alt="alt" class="image-zoom-image" @click.stop />
 			</div>
 		</Transition>
 	</Teleport>

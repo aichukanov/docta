@@ -3,7 +3,11 @@ import { REVIEWS_PAGE_SIZE, REVIEWS_THRESHOLD } from '~/common/constants';
 import { getCurrentUser } from '~/server/common/auth';
 import { getConnection } from '~/server/common/db-mysql';
 import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
-import { fetchRating, fetchReviews, isValidSort } from '~/server/common/reviews';
+import {
+	fetchRating,
+	fetchReviews,
+	isValidSort,
+} from '~/server/common/reviews';
 import type { Rating } from '~/interfaces/review';
 
 export default defineEventHandler(async (event) => {

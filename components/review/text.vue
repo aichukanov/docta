@@ -16,9 +16,7 @@ const { t } = useI18n({
 const showingOriginal = ref(false);
 
 const displayText = computed(() =>
-	showingOriginal.value && props.originalText
-		? props.originalText
-		: props.text,
+	showingOriginal.value && props.originalText ? props.originalText : props.text,
 );
 
 const langName = computed(() => {

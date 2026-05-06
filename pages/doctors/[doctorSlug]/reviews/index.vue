@@ -78,7 +78,9 @@ const doctorClinics = computed(() => {
 	const clinicIds = doctor.value?.clinicIds;
 	const allClinics = clinicsStore.clinics;
 	if (!clinicIds || !allClinics) return [];
-	return clinicIds.split(',').map(Number)
+	return clinicIds
+		.split(',')
+		.map(Number)
 		.map((id) => allClinics.find((c) => c.id === id))
 		.filter((c) => !!c);
 });
@@ -115,13 +117,12 @@ const clinicInfoMap = computed(() => {
 		:clinicInfo="clinicInfoMap"
 		:entityId="doctor?.id"
 		:ownReview="data.ownReview"
-		:relatedEntities="doctorClinics.map(c => ({ id: c.id, name: c.name }))"
+		:relatedEntities="doctorClinics.map((c) => ({ id: c.id, name: c.name }))"
 	>
 		<template #badges>
-			<CategoryTag
-				v-for="name in specialtyNames"
-				:key="name"
-			>{{ name }}</CategoryTag>
+			<CategoryTag v-for="name in specialtyNames" :key="name">{{
+				name
+			}}</CategoryTag>
 		</template>
 	</ReviewsPage>
 </template>

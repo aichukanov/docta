@@ -42,7 +42,11 @@ useSeoMeta({
 
 				<section class="terms-card">
 					<h2 class="terms-card__title">{{ t('OperatorTitle') }}</h2>
-					<p class="terms-card__text">{{ t('OperatorText', { registrationNumber: LEGAL_ENTITY.registrationNumber }) }}</p>
+					<p class="terms-card__text">{{
+						t('OperatorText', {
+							registrationNumber: LEGAL_ENTITY.registrationNumber,
+						})
+					}}</p>
 				</section>
 
 				<section class="terms-card terms-card--warning">

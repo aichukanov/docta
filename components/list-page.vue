@@ -142,9 +142,7 @@ useSeoMeta({
 	robots: robotsMeta,
 });
 
-const totalPages = computed(() =>
-	Math.ceil(props.totalCount / LIST_PAGE_SIZE),
-);
+const totalPages = computed(() => Math.ceil(props.totalCount / LIST_PAGE_SIZE));
 
 const paginationLinks = computed(() => {
 	const links: Array<{ rel: string; href: string }> = [];
@@ -308,7 +306,11 @@ onMounted(async () => {
 			</div>
 		</div>
 
-		<aside ref="mapSentinel" class="map-container" :aria-label="t('AriaMapSection')">
+		<aside
+			ref="mapSentinel"
+			class="map-container"
+			:aria-label="t('AriaMapSection')"
+		>
 			<ClinicServicesMap
 				v-if="isMapVisible"
 				ref="mapRef"
@@ -365,7 +367,10 @@ onMounted(async () => {
 	font-weight: 600;
 	color: #1f2937;
 	margin: 0 0 var(--spacing-2xl) 0;
-	font-family: system-ui, -apple-system, sans-serif;
+	font-family:
+		system-ui,
+		-apple-system,
+		sans-serif;
 	word-wrap: break-word;
 }
 

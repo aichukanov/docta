@@ -78,10 +78,16 @@ const tabs = computed(() => {
 		result.push({ id: 'clinics', label: t('TabClinics') });
 	}
 	if (doctorData.value) {
-		const reviewCount = doctorData.value.rating?.totalReviews || doctorData.value.reviews?.length || 0;
+		const reviewCount =
+			doctorData.value.rating?.totalReviews ||
+			doctorData.value.reviews?.length ||
+			0;
 		result.push({
 			id: 'reviews',
-			label: reviewCount > 0 ? `${t('TabReviews')} (${reviewCount})` : t('TabReviews'),
+			label:
+				reviewCount > 0
+					? `${t('TabReviews')} (${reviewCount})`
+					: t('TabReviews'),
 		});
 	}
 	if (doctorClinics.value.length > 0) {
@@ -129,7 +135,11 @@ const doctorClinics = computed(() => {
 const clinicInfoMap = computed(() => {
 	const map: Record<number, { name: string; slug: string }> = {};
 	for (const clinic of doctorClinics.value) {
-		if (clinic) map[clinic.id] = { name: clinic.localName || clinic.name, slug: clinic.slug };
+		if (clinic)
+			map[clinic.id] = {
+				name: clinic.localName || clinic.name,
+				slug: clinic.slug,
+			};
 	}
 	return map;
 });
@@ -182,7 +192,7 @@ const pageDescription = computed(() => {
 					languageIds
 						.split(',')
 						.map((language) => t(`language_${language}_prepositional`)),
-			  );
+				);
 
 	const usedCities: { [key: string]: true } = {};
 	const citiesText = joinWithAnd(
@@ -203,12 +213,12 @@ const pageDescription = computed(() => {
 			? t('VisitLanguageCity', {
 					language: languagesText,
 					city: citiesText,
-			  })
+				})
 			: citiesText
-			? t('VisitCity', { city: citiesText })
-			: languagesText
-			? t('VisitLanguage', { language: languagesText })
-			: t('Visit');
+				? t('VisitCity', { city: citiesText })
+				: languagesText
+					? t('VisitLanguage', { language: languagesText })
+					: t('Visit');
 
 	const doctorNameFull =
 		(professionalTitle ? professionalTitle + ' ' : '') + localizedName.value;
@@ -235,7 +245,10 @@ function joinWithAnd(items: string[]): string {
 }
 
 const hasSeperateReviewsPage = computed(() => {
-	const total = doctorData.value?.rating?.totalReviews || doctorData.value?.reviews?.length || 0;
+	const total =
+		doctorData.value?.rating?.totalReviews ||
+		doctorData.value?.reviews?.length ||
+		0;
 	return total > REVIEWS_THRESHOLD;
 });
 
@@ -416,7 +429,9 @@ watchEffect(() => {
 				v-if="doctorData"
 				sectionId="reviews"
 				:title="t('TabReviews')"
-				:count="doctorData.rating?.totalReviews || doctorData.reviews?.length || 0"
+				:count="
+					doctorData.rating?.totalReviews || doctorData.reviews?.length || 0
+				"
 			>
 				<template #icon><IconStar :size="20" /></template>
 				<div class="reviews-content">
@@ -429,7 +444,7 @@ watchEffect(() => {
 					<ReviewItem
 						v-if="ownReview"
 						:review="ownReview"
-						@updated="(r) => localOwnReview = r"
+						@updated="(r) => (localOwnReview = r)"
 						@deleted="onReviewDeleted"
 					/>
 					<DoctorReviews
@@ -450,7 +465,9 @@ watchEffect(() => {
 					entityType="doctor"
 					:entityId="doctorData.id"
 					:entityName="localizedName"
-					:relatedEntities="doctorClinics.map(c => ({ id: c.id, name: c.name }))"
+					:relatedEntities="
+						doctorClinics.map((c) => ({ id: c.id, name: c.name }))
+					"
 					@submitted="onReviewSubmitted"
 				/>
 			</EntityPageSection>

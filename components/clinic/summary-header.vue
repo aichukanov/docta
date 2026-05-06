@@ -126,7 +126,8 @@ const clinicLink = computed(() => {
 					v-for="typeName in clinicTypeNames"
 					:key="typeName"
 					small
-				>{{ typeName }}</CategoryTag>
+					>{{ typeName }}</CategoryTag
+				>
 			</div>
 
 			<RatingStars
@@ -229,7 +230,6 @@ const clinicLink = computed(() => {
 	flex-wrap: wrap;
 	gap: var(--spacing-xs);
 }
-
 
 .clinic-actions {
 	display: flex;

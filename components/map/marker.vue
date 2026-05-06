@@ -57,7 +57,10 @@ defineProps<{
 	width: 100%;
 	height: 100%;
 	color: var(--color-bg-primary);
-	font-family: system-ui, -apple-system, sans-serif;
+	font-family:
+		system-ui,
+		-apple-system,
+		sans-serif;
 }
 
 .marker-inner-group {

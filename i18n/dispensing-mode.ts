@@ -6,11 +6,14 @@ export default {
 			[`dm_${DispensingMode.PRESCRIPTION}`]: 'Prescription only',
 			[`dm_${DispensingMode.OTC}`]: 'Over-the-counter (OTC)',
 			[`dm_${DispensingMode.HOSPITAL_ONLY}`]: 'Hospital use only',
-			[`dm_${DispensingMode.HOSPITAL_OR_PRESCRIPTION}`]: 'Hospital; exceptionally by prescription',
+			[`dm_${DispensingMode.HOSPITAL_OR_PRESCRIPTION}`]:
+				'Hospital; exceptionally by prescription',
 			[`dm_${DispensingMode.HEALTHCARE_FACILITY}`]: 'Healthcare facility only',
-			[`dm_${DispensingMode.SINGLE_USE_PRESCRIPTION}`]: 'Non-renewable prescription',
+			[`dm_${DispensingMode.SINGLE_USE_PRESCRIPTION}`]:
+				'Non-renewable prescription',
 			[`dm_${DispensingMode.RENEWABLE_PRESCRIPTION}`]: 'Renewable prescription',
-			[`dm_${DispensingMode.RESTRICTED_PRESCRIPTION}`]: 'Restricted prescription',
+			[`dm_${DispensingMode.RESTRICTED_PRESCRIPTION}`]:
+				'Restricted prescription',
 			[`dm_${DispensingMode.SPECIAL_PRESCRIPTION}`]: 'Special prescription',
 			dm_badge_otc: 'OTC',
 			dm_badge_rx: 'Rx',
@@ -21,7 +24,8 @@ export default {
 			[`dm_${DispensingMode.PRESCRIPTION}`]: 'Только по рецепту',
 			[`dm_${DispensingMode.OTC}`]: 'Без рецепта',
 			[`dm_${DispensingMode.HOSPITAL_ONLY}`]: 'Только в стационаре',
-			[`dm_${DispensingMode.HOSPITAL_OR_PRESCRIPTION}`]: 'Стационар; в исключительных случаях — по рецепту',
+			[`dm_${DispensingMode.HOSPITAL_OR_PRESCRIPTION}`]:
+				'Стационар; в исключительных случаях — по рецепту',
 			[`dm_${DispensingMode.HEALTHCARE_FACILITY}`]: 'Только в мед. учреждении',
 			[`dm_${DispensingMode.SINGLE_USE_PRESCRIPTION}`]: 'Однократный рецепт',
 			[`dm_${DispensingMode.RENEWABLE_PRESCRIPTION}`]: 'Многократный рецепт',
@@ -36,8 +40,10 @@ export default {
 			[`dm_${DispensingMode.PRESCRIPTION}`]: 'Samo na recept',
 			[`dm_${DispensingMode.OTC}`]: 'Bez recepta',
 			[`dm_${DispensingMode.HOSPITAL_ONLY}`]: 'Samo u bolnici',
-			[`dm_${DispensingMode.HOSPITAL_OR_PRESCRIPTION}`]: 'Bolnica; izuzetno na recept',
-			[`dm_${DispensingMode.HEALTHCARE_FACILITY}`]: 'Samo u zdravstvenoj ustanovi',
+			[`dm_${DispensingMode.HOSPITAL_OR_PRESCRIPTION}`]:
+				'Bolnica; izuzetno na recept',
+			[`dm_${DispensingMode.HEALTHCARE_FACILITY}`]:
+				'Samo u zdravstvenoj ustanovi',
 			[`dm_${DispensingMode.SINGLE_USE_PRESCRIPTION}`]: 'Jednokratni recept',
 			[`dm_${DispensingMode.RENEWABLE_PRESCRIPTION}`]: 'Višekratni recept',
 			[`dm_${DispensingMode.RESTRICTED_PRESCRIPTION}`]: 'Ograničen recept',
@@ -51,11 +57,15 @@ export default {
 			[`dm_${DispensingMode.PRESCRIPTION}`]: 'Verschreibungspflichtig',
 			[`dm_${DispensingMode.OTC}`]: 'Rezeptfrei',
 			[`dm_${DispensingMode.HOSPITAL_ONLY}`]: 'Nur stationär',
-			[`dm_${DispensingMode.HOSPITAL_OR_PRESCRIPTION}`]: 'Stationär; ausnahmsweise auf Rezept',
-			[`dm_${DispensingMode.HEALTHCARE_FACILITY}`]: 'Nur in Gesundheitseinrichtungen',
-			[`dm_${DispensingMode.SINGLE_USE_PRESCRIPTION}`]: 'Nicht verlängerbares Rezept',
+			[`dm_${DispensingMode.HOSPITAL_OR_PRESCRIPTION}`]:
+				'Stationär; ausnahmsweise auf Rezept',
+			[`dm_${DispensingMode.HEALTHCARE_FACILITY}`]:
+				'Nur in Gesundheitseinrichtungen',
+			[`dm_${DispensingMode.SINGLE_USE_PRESCRIPTION}`]:
+				'Nicht verlängerbares Rezept',
 			[`dm_${DispensingMode.RENEWABLE_PRESCRIPTION}`]: 'Verlängerbares Rezept',
-			[`dm_${DispensingMode.RESTRICTED_PRESCRIPTION}`]: 'Eingeschränktes Rezept',
+			[`dm_${DispensingMode.RESTRICTED_PRESCRIPTION}`]:
+				'Eingeschränktes Rezept',
 			[`dm_${DispensingMode.SPECIAL_PRESCRIPTION}`]: 'Sonderrezept',
 			dm_badge_otc: 'Rezeptfrei',
 			dm_badge_rx: 'Rezeptpflichtig',
@@ -66,9 +76,12 @@ export default {
 			[`dm_${DispensingMode.PRESCRIPTION}`]: 'Yalnızca reçete ile',
 			[`dm_${DispensingMode.OTC}`]: 'Reçetesiz',
 			[`dm_${DispensingMode.HOSPITAL_ONLY}`]: 'Yalnızca hastanede',
-			[`dm_${DispensingMode.HOSPITAL_OR_PRESCRIPTION}`]: 'Hastane; istisnai olarak reçete ile',
-			[`dm_${DispensingMode.HEALTHCARE_FACILITY}`]: 'Yalnızca sağlık kuruluşlarında',
-			[`dm_${DispensingMode.SINGLE_USE_PRESCRIPTION}`]: 'Tek kullanımlık reçete',
+			[`dm_${DispensingMode.HOSPITAL_OR_PRESCRIPTION}`]:
+				'Hastane; istisnai olarak reçete ile',
+			[`dm_${DispensingMode.HEALTHCARE_FACILITY}`]:
+				'Yalnızca sağlık kuruluşlarında',
+			[`dm_${DispensingMode.SINGLE_USE_PRESCRIPTION}`]:
+				'Tek kullanımlık reçete',
 			[`dm_${DispensingMode.RENEWABLE_PRESCRIPTION}`]: 'Yenilenebilir reçete',
 			[`dm_${DispensingMode.RESTRICTED_PRESCRIPTION}`]: 'Kısıtlı reçete',
 			[`dm_${DispensingMode.SPECIAL_PRESCRIPTION}`]: 'Özel reçete',
@@ -81,8 +94,10 @@ export default {
 			[`dm_${DispensingMode.PRESCRIPTION}`]: 'Само на рецепт',
 			[`dm_${DispensingMode.OTC}`]: 'Без рецепта',
 			[`dm_${DispensingMode.HOSPITAL_ONLY}`]: 'Само у болници',
-			[`dm_${DispensingMode.HOSPITAL_OR_PRESCRIPTION}`]: 'Болница; изузетно на рецепт',
-			[`dm_${DispensingMode.HEALTHCARE_FACILITY}`]: 'Само у здравственој установи',
+			[`dm_${DispensingMode.HOSPITAL_OR_PRESCRIPTION}`]:
+				'Болница; изузетно на рецепт',
+			[`dm_${DispensingMode.HEALTHCARE_FACILITY}`]:
+				'Само у здравственој установи',
 			[`dm_${DispensingMode.SINGLE_USE_PRESCRIPTION}`]: 'Једнократни рецепт',
 			[`dm_${DispensingMode.RENEWABLE_PRESCRIPTION}`]: 'Вишекратни рецепт',
 			[`dm_${DispensingMode.RESTRICTED_PRESCRIPTION}`]: 'Ограничен рецепт',

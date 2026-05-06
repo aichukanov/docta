@@ -23,7 +23,12 @@ const localizedName = computed(() =>
 <template>
 	<header class="clinic-hero">
 		<div class="clinic-hero__header">
-			<ClinicLogo :logoUrl="clinic.logoUrl" :name="localizedName" :size="80" zoomable />
+			<ClinicLogo
+				:logoUrl="clinic.logoUrl"
+				:name="localizedName"
+				:size="80"
+				zoomable
+			/>
 			<div class="clinic-hero__header-info">
 				<div class="clinic-hero__title-row">
 					<h1 class="clinic-hero__name">{{ localizedName }}</h1>
@@ -35,7 +40,8 @@ const localizedName = computed(() =>
 						v-for="typeName in clinicTypeNames"
 						:key="typeName"
 						small
-					>{{ typeName }}</CategoryTag>
+						>{{ typeName }}</CategoryTag
+					>
 				</div>
 
 				<address class="clinic-hero__address">
@@ -93,7 +99,10 @@ const localizedName = computed(() =>
 	font-weight: 700;
 	color: var(--color-text-primary);
 	margin: 0;
-	font-family: system-ui, -apple-system, sans-serif;
+	font-family:
+		system-ui,
+		-apple-system,
+		sans-serif;
 	line-height: 1.2;
 }
 
@@ -107,7 +116,6 @@ const localizedName = computed(() =>
 	flex-wrap: wrap;
 	gap: var(--spacing-xs);
 }
-
 
 .clinic-hero__address {
 	display: flex;

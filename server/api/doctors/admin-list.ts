@@ -21,7 +21,10 @@ export default defineEventHandler(async (event) => {
 	await connection.end();
 
 	const doctors = (rows as any[]).map((d: any) => {
-		const { name, localName } = processLocalizedNameForClinicOrDoctor(d, locale);
+		const { name, localName } = processLocalizedNameForClinicOrDoctor(
+			d,
+			locale,
+		);
 		return { id: d.id, name, localName };
 	});
 

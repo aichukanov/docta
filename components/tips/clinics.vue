@@ -341,8 +341,9 @@ const labTestsLinkText = computed(() =>
 		{{ t('TipRelatedClinics') }}
 		<template v-for="(link, i) in relatedClinicLinks" :key="link.typeId">
 			<template v-if="i > 0">, </template>
-			<NuxtLink :to="link.to">{{ link.name.toLowerCase() }}</NuxtLink>
-		</template
+			<NuxtLink :to="link.to">{{
+				link.name.toLowerCase()
+			}}</NuxtLink> </template
 		>.
 	</TipsItem>
 </template>

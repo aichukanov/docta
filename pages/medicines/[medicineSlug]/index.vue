@@ -376,7 +376,9 @@ const tabs = computed(() => {
 	border-radius: var(--border-radius-md);
 	text-decoration: none;
 	color: inherit;
-	transition: border-color 0.15s, box-shadow 0.15s;
+	transition:
+		border-color 0.15s,
+		box-shadow 0.15s;
 
 	&:hover {
 		border-color: var(--color-primary);

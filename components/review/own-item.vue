@@ -49,8 +49,14 @@ const cancelEdit = () => {
 
 const saveEdit = async () => {
 	error.value = '';
-	if (!editRating.value) { error.value = t('RatingRequired'); return; }
-	if (!editText.value.trim()) { error.value = t('ReviewTextRequired'); return; }
+	if (!editRating.value) {
+		error.value = t('RatingRequired');
+		return;
+	}
+	if (!editText.value.trim()) {
+		error.value = t('ReviewTextRequired');
+		return;
+	}
 
 	try {
 		isSaving.value = true;
@@ -85,7 +91,9 @@ const saveEdit = async () => {
 		<template v-if="!isEditing">
 			<ReviewItem :review="review" :clinicInfo="clinicInfo" />
 			<div class="own-actions">
-				<el-button size="small" @click="startEdit">{{ t('EditReview') }}</el-button>
+				<el-button size="small" @click="startEdit">{{
+					t('EditReview')
+				}}</el-button>
 			</div>
 			<el-alert
 				v-if="successMsg"

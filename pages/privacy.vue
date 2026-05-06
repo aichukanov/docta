@@ -38,7 +38,11 @@ useSeoMeta({
 			<article class="privacy-page__grid">
 				<section class="privacy-card">
 					<h2 class="privacy-card__title">{{ t('DataControllerTitle') }}</h2>
-					<p class="privacy-card__text">{{ t('DataControllerText', { registrationNumber: LEGAL_ENTITY.registrationNumber }) }}</p>
+					<p class="privacy-card__text">{{
+						t('DataControllerText', {
+							registrationNumber: LEGAL_ENTITY.registrationNumber,
+						})
+					}}</p>
 				</section>
 				<section class="privacy-card">
 					<h2 class="privacy-card__title">{{ t('WhatWeCollectTitle') }}</h2>
@@ -74,9 +78,18 @@ useSeoMeta({
 					<h2 class="privacy-card__title">{{ t('LegalBasisTitle') }}</h2>
 					<p class="privacy-card__text">{{ t('LegalBasisText') }}</p>
 					<ul class="privacy-card__list">
-						<li><strong>{{ t('LegalBasisConsent') }}</strong> — {{ t('LegalBasisConsentDesc') }}</li>
-						<li><strong>{{ t('LegalBasisContract') }}</strong> — {{ t('LegalBasisContractDesc') }}</li>
-						<li><strong>{{ t('LegalBasisLegitimate') }}</strong> — {{ t('LegalBasisLegitimateDesc') }}</li>
+						<li
+							><strong>{{ t('LegalBasisConsent') }}</strong> —
+							{{ t('LegalBasisConsentDesc') }}</li
+						>
+						<li
+							><strong>{{ t('LegalBasisContract') }}</strong> —
+							{{ t('LegalBasisContractDesc') }}</li
+						>
+						<li
+							><strong>{{ t('LegalBasisLegitimate') }}</strong> —
+							{{ t('LegalBasisLegitimateDesc') }}</li
+						>
 					</ul>
 				</section>
 
@@ -84,15 +97,24 @@ useSeoMeta({
 					<h2 class="privacy-card__title">{{ t('ThirdPartyTitle') }}</h2>
 					<p class="privacy-card__text">{{ t('ThirdPartyText') }}</p>
 					<ul class="privacy-card__list">
-						<li><strong>Google Analytics</strong> — {{ t('ThirdPartyGoogle') }}</li>
+						<li
+							><strong>Google Analytics</strong> —
+							{{ t('ThirdPartyGoogle') }}</li
+						>
 						<li><strong>Mixpanel</strong> — {{ t('ThirdPartyMixpanel') }}</li>
-						<li><strong>Cloudflare</strong> — {{ t('ThirdPartyCloudflare') }}</li>
+						<li
+							><strong>Cloudflare</strong> — {{ t('ThirdPartyCloudflare') }}</li
+						>
 					</ul>
 				</section>
 
 				<section class="privacy-card">
-					<h2 class="privacy-card__title">{{ t('InternationalTransfersTitle') }}</h2>
-					<p class="privacy-card__text">{{ t('InternationalTransfersText') }}</p>
+					<h2 class="privacy-card__title">{{
+						t('InternationalTransfersTitle')
+					}}</h2>
+					<p class="privacy-card__text">{{
+						t('InternationalTransfersText')
+					}}</p>
 				</section>
 
 				<section class="privacy-card">
@@ -102,7 +124,10 @@ useSeoMeta({
 						<li><strong>ncc_c</strong> — {{ t('CookieNcc') }}</li>
 						<li><strong>_ga, _gid, _gat</strong> — {{ t('CookieGa') }}</li>
 						<li><strong>mp_*</strong> — {{ t('CookieMixpanel') }}</li>
-						<li><strong>__cf_bm, __cflb</strong> — {{ t('CookieCloudflare') }}</li>
+						<li
+							><strong>__cf_bm, __cflb</strong> —
+							{{ t('CookieCloudflare') }}</li
+						>
 					</ul>
 					<p class="privacy-card__text">{{ t('CookiesWithdraw') }}</p>
 				</section>

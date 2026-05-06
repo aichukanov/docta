@@ -249,7 +249,10 @@ watchEffect(() => {
 	font-weight: 700;
 	color: var(--color-text-primary);
 	margin: 0;
-	font-family: system-ui, -apple-system, sans-serif;
+	font-family:
+		system-ui,
+		-apple-system,
+		sans-serif;
 	line-height: 1.2;
 }
 

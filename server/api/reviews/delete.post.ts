@@ -33,7 +33,9 @@ export default defineEventHandler(async (event) => {
 	}
 
 	// Delete replies first, then the review
-	await executeQuery('DELETE FROM review_replies WHERE review_id = ?', [reviewId]);
+	await executeQuery('DELETE FROM review_replies WHERE review_id = ?', [
+		reviewId,
+	]);
 	await executeQuery('DELETE FROM reviews WHERE id = ?', [reviewId]);
 
 	return createSuccessResponse(SUCCESS_CODES.REVIEW_DELETED);

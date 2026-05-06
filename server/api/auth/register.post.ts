@@ -64,9 +64,8 @@ export default defineEventHandler(async (event) => {
 		const userId = (result as any).insertId;
 
 		// Создаем токен для подтверждения email
-		const { createEmailVerificationToken } = await import(
-			'~/server/utils/email-verification'
-		);
+		const { createEmailVerificationToken } =
+			await import('~/server/utils/email-verification');
 		const verificationToken = await createEmailVerificationToken(
 			userId,
 			email.toLowerCase(),

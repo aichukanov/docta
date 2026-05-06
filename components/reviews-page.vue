@@ -168,13 +168,13 @@ watchEffect(() => {
 				? {
 						'@type': 'Person' as const,
 						'name': review.author.name,
-				  }
+					}
 				: undefined,
 			'reviewRating': review.rating
 				? {
 						'@type': 'Rating' as const,
 						'ratingValue': review.rating,
-				  }
+					}
 				: undefined,
 			'reviewBody': review.text,
 			'datePublished': review.publishedAt || undefined,
@@ -190,7 +190,7 @@ watchEffect(() => {
 					'@type': 'AggregateRating' as const,
 					'ratingValue': props.rating.averageRating.toFixed(1),
 					'reviewCount': props.rating.totalReviews,
-			  }
+				}
 			: undefined;
 
 	const reviewedEntity = {
@@ -293,7 +293,7 @@ const onPageChange = (page: number) => {
 		<section v-if="currentOwnReview" class="own-review-section">
 			<ReviewItem
 				:review="currentOwnReview"
-				@updated="(r) => localOwnReview = r"
+				@updated="(r) => (localOwnReview = r)"
 				@deleted="onReviewDeleted"
 			/>
 		</section>

@@ -98,7 +98,7 @@ async function getLocaleForQuery(event: any): Promise<{
 		)
 			? 301
 			: cookieLocale != null && cookieLocale !== queryLocale
-			? 302
-			: null,
+				? 302
+				: null,
 	};
 }

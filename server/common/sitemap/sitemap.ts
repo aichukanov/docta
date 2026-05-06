@@ -199,10 +199,9 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		menuItemToLinks(`${SITE_URL}/medicines/${medicine.slug}`, {}, true),
 	);
 
-	const medicineAtcGroupLinks: SitemapLink[] =
-		medicineFilters.atcGroupIds.map((atcGroupId) =>
-			menuItemToLinks('medicines', { atcGroupIds: atcGroupId }),
-		);
+	const medicineAtcGroupLinks: SitemapLink[] = medicineFilters.atcGroupIds.map(
+		(atcGroupId) => menuItemToLinks('medicines', { atcGroupIds: atcGroupId }),
+	);
 
 	const medicineSubstanceAtcLinks: SitemapLink[] =
 		medicineFilters.substanceAtcCombinations.map((combo) =>

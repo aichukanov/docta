@@ -24,7 +24,9 @@ const BADGE_TYPE_MAP: Record<number, BadgeType> = {
 	[DispensingMode.SPECIAL_PRESCRIPTION]: 'restricted',
 };
 
-export function getBadgeType(dispensingModeId: number | null | undefined): BadgeType {
+export function getBadgeType(
+	dispensingModeId: number | null | undefined,
+): BadgeType {
 	if (!dispensingModeId) return 'rx';
 	return BADGE_TYPE_MAP[dispensingModeId] || 'rx';
 }

@@ -279,7 +279,10 @@ watchEffect(() => {
 	font-weight: 700;
 	color: var(--color-text-primary);
 	margin: 0;
-	font-family: system-ui, -apple-system, sans-serif;
+	font-family:
+		system-ui,
+		-apple-system,
+		sans-serif;
 	word-break: break-word;
 	line-height: 1.2;
 }
@@ -297,7 +300,6 @@ watchEffect(() => {
 	flex-wrap: wrap;
 	gap: var(--spacing-xs);
 	margin-top: var(--spacing-md);
-
 }
 
 .clinics-list {

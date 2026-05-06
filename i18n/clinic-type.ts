@@ -426,8 +426,7 @@ export default {
 			[`clinic_type_${ClinicType.ORTHOPEDIC_CLINIC}`]: 'Ortopedi kliniği',
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]:
 				'Göğüs hastalıkları kliniği',
-			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]:
-				'Fizyoterapi kliniği',
+			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]: 'Fizyoterapi kliniği',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Poliklinikler',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]: 'Diş klinikleri',

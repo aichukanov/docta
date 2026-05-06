@@ -12,16 +12,32 @@ import dispensingModeI18n from '~/i18n/dispensing-mode';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([breadcrumbI18n, medicineI18n, dispensingModeI18n]),
+	messages: combineI18nMessages([
+		breadcrumbI18n,
+		medicineI18n,
+		dispensingModeI18n,
+	]),
 });
 
-const { name, dispensingModeIds, atcGroupIds, substanceIds, pharmaFormIds, manufacturerIds, updateFromRoute, getRouteParams } = useFilters();
+const {
+	name,
+	dispensingModeIds,
+	atcGroupIds,
+	substanceIds,
+	pharmaFormIds,
+	manufacturerIds,
+	updateFromRoute,
+	getRouteParams,
+} = useFilters();
 
-const { data: filterOptions } = await useFetch('/api/medicines/filter-options', {
-	key: 'medicine-filter-options',
-	method: 'POST',
-	body: computed(() => ({ locale: locale.value })),
-});
+const { data: filterOptions } = await useFetch(
+	'/api/medicines/filter-options',
+	{
+		key: 'medicine-filter-options',
+		method: 'POST',
+		body: computed(() => ({ locale: locale.value })),
+	},
+);
 
 const route = useRoute();
 const pageNumber = ref(Number(route.query.page || 1));
@@ -39,11 +55,15 @@ watch(
 
 const filterList = computed(() => ({
 	name: name.value,
-	dispensingModeIds: dispensingModeIds.value.length ? dispensingModeIds.value : undefined,
+	dispensingModeIds: dispensingModeIds.value.length
+		? dispensingModeIds.value
+		: undefined,
 	atcGroupIds: atcGroupIds.value.length ? atcGroupIds.value : undefined,
 	substanceIds: substanceIds.value.length ? substanceIds.value : undefined,
 	pharmaFormIds: pharmaFormIds.value.length ? pharmaFormIds.value : undefined,
-	manufacturerIds: manufacturerIds.value.length ? manufacturerIds.value : undefined,
+	manufacturerIds: manufacturerIds.value.length
+		? manufacturerIds.value
+		: undefined,
 	activeOnly: true,
 	locale: locale.value,
 	page: pageNumber.value,
@@ -62,19 +82,26 @@ const { pending: isLoading, data: medicinesList } = await useFetch(
 	},
 );
 
-const getFilterLabel = (items: { value: number; label: string }[], ids: number[]) => {
+const getFilterLabel = (
+	items: { value: number; label: string }[],
+	ids: number[],
+) => {
 	if (ids.length !== 1) return null;
 	return items.find((item) => item.value === ids[0])?.label || null;
 };
 
 const pageTitle = computed(() => {
 	const opts = filterOptions.value;
-	const substanceLabel = getFilterLabel(opts?.substances || [], substanceIds.value);
+	const substanceLabel = getFilterLabel(
+		opts?.substances || [],
+		substanceIds.value,
+	);
 
 	// Dispensing mode label for single selection
-	const dmLabel = dispensingModeIds.value.length === 1
-		? t(`dm_${dispensingModeIds.value[0]}`)
-		: null;
+	const dmLabel =
+		dispensingModeIds.value.length === 1
+			? t(`dm_${dispensingModeIds.value[0]}`)
+			: null;
 
 	// Base title: substance has priority for natural phrasing
 	let base: string;
@@ -89,9 +116,15 @@ const pageTitle = computed(() => {
 	if (dmLabel) suffixes.push(dmLabel);
 	const atcLabel = getFilterLabel(opts?.atcGroups || [], atcGroupIds.value);
 	if (atcLabel) suffixes.push(atcLabel);
-	const formLabel = getFilterLabel(opts?.pharmaForms || [], pharmaFormIds.value);
+	const formLabel = getFilterLabel(
+		opts?.pharmaForms || [],
+		pharmaFormIds.value,
+	);
 	if (formLabel) suffixes.push(formLabel);
-	const mfgLabel = getFilterLabel(opts?.manufacturers || [], manufacturerIds.value);
+	const mfgLabel = getFilterLabel(
+		opts?.manufacturers || [],
+		manufacturerIds.value,
+	);
 	if (mfgLabel) suffixes.push(mfgLabel);
 
 	if (suffixes.length > 0) {
@@ -105,9 +138,14 @@ const pageTitleWithCount = computed(() => {
 });
 
 const isFiltered = computed(() => {
-	return !!name.value || dispensingModeIds.value.length > 0 ||
-		atcGroupIds.value.length > 0 || substanceIds.value.length > 0 ||
-		pharmaFormIds.value.length > 0 || manufacturerIds.value.length > 0;
+	return (
+		!!name.value ||
+		dispensingModeIds.value.length > 0 ||
+		atcGroupIds.value.length > 0 ||
+		substanceIds.value.length > 0 ||
+		pharmaFormIds.value.length > 0 ||
+		manufacturerIds.value.length > 0
+	);
 });
 
 const pageDescription = computed(() => {
@@ -177,19 +215,36 @@ watchEffect(() => {
 				:placeholder="t('InsertMedicineName')"
 			/>
 			<FilterMedicineDispensingModeSelect v-model:value="dispensingModeIds" />
-			<FilterMedicineAtcGroupSelect v-model:value="atcGroupIds" :items="filterOptions?.atcGroups || []" />
-			<FilterMedicineSubstanceSelect v-model:value="substanceIds" :items="filterOptions?.substances || []" />
-			<FilterMedicinePharmaFormSelect v-model:value="pharmaFormIds" :items="filterOptions?.pharmaForms || []" />
-			<FilterMedicineManufacturerSelect v-model:value="manufacturerIds" :items="filterOptions?.manufacturers || []" />
+			<FilterMedicineAtcGroupSelect
+				v-model:value="atcGroupIds"
+				:items="filterOptions?.atcGroups || []"
+			/>
+			<FilterMedicineSubstanceSelect
+				v-model:value="substanceIds"
+				:items="filterOptions?.substances || []"
+			/>
+			<FilterMedicinePharmaFormSelect
+				v-model:value="pharmaFormIds"
+				:items="filterOptions?.pharmaForms || []"
+			/>
+			<FilterMedicineManufacturerSelect
+				v-model:value="manufacturerIds"
+				:items="filterOptions?.manufacturers || []"
+			/>
 		</template>
 
 		<template #card="{ item }">
 			<NuxtLink
-				:to="{ name: 'medicines-medicineSlug', params: { medicineSlug: item.slug } }"
+				:to="{
+					name: 'medicines-medicineSlug',
+					params: { medicineSlug: item.slug },
+				}"
 				class="medicine-card"
 			>
 				<div class="medicine-name">{{ item.name }}</div>
-				<div v-if="item.substances" class="medicine-substances">{{ item.substances }}</div>
+				<div v-if="item.substances" class="medicine-substances">{{
+					item.substances
+				}}</div>
 				<MedicineBadge :dispensingModeId="item.dispensingModeId" />
 				<div class="medicine-card-details">
 					<span v-if="item.pharmaForm">{{ item.pharmaForm }}</span>
@@ -212,7 +267,9 @@ watchEffect(() => {
 	border-radius: var(--border-radius-md);
 	text-decoration: none;
 	color: inherit;
-	transition: border-color 0.15s, box-shadow 0.15s;
+	transition:
+		border-color 0.15s,
+		box-shadow 0.15s;
 
 	&:hover {
 		border-color: var(--color-primary);

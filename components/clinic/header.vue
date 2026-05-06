@@ -99,7 +99,10 @@ const localizedName = computed(() =>
 	font-weight: 600;
 	color: var(--color-text-primary);
 	margin: 0;
-	font-family: system-ui, -apple-system, sans-serif;
+	font-family:
+		system-ui,
+		-apple-system,
+		sans-serif;
 }
 
 .clinic-address {
@@ -140,6 +143,9 @@ const localizedName = computed(() =>
 	font-weight: 600;
 	color: var(--color-text-primary);
 	margin: 0;
-	font-family: system-ui, -apple-system, sans-serif;
+	font-family:
+		system-ui,
+		-apple-system,
+		sans-serif;
 }
 </style>

@@ -164,7 +164,7 @@ const doctorCategoriesWithTitles = computed(() => ({
 			? {
 					title: t('OtherDoctors'),
 					items: clinicDoctorsBySpecialty.value.itemsWithoutCategory,
-			  }
+				}
 			: undefined,
 }));
 
@@ -184,7 +184,7 @@ const serviceCategoriesWithTitles = computed(() => ({
 			? {
 					title: t('OtherServices'),
 					items: clinicMedicalServicesByCategory.value.itemsWithoutCategory,
-			  }
+				}
 			: undefined,
 }));
 
@@ -204,7 +204,7 @@ const labTestCategoriesWithTitles = computed(() => ({
 			? {
 					title: t('OtherLabTests'),
 					items: clinicLabTestsByCategory.value.itemsWithoutCategory,
-			  }
+				}
 			: undefined,
 }));
 

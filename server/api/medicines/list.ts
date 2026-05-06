@@ -108,7 +108,10 @@ export async function getMedicineList(
 	}
 
 	// Name search — search in medicine name + substance names across all languages
-	if (body.name && validateName(body as { name: unknown }, 'api/medicines/list')) {
+	if (
+		body.name &&
+		validateName(body as { name: unknown }, 'api/medicines/list')
+	) {
 		const nameField = getLocalizedNameField(locale) || 'name_en';
 		const p = `%${body.name}%`;
 		whereFilters.push(`(
@@ -127,9 +130,7 @@ export async function getMedicineList(
 
 	const where =
 		whereFilters.length > 0 ? 'WHERE ' + whereFilters.join(' AND ') : '';
-	const pagination = usePagination
-		? `LIMIT ${pageSize} OFFSET ${offset}`
-		: '';
+	const pagination = usePagination ? `LIMIT ${pageSize} OFFSET ${offset}` : '';
 
 	const nameField = getLocalizedNameField(locale) || 'name_en';
 

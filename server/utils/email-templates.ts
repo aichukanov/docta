@@ -468,8 +468,8 @@ export function getPasswordResetEmail(
     <p>${template.content[1]}</p>
     <p style="text-align: center;">
       <a href="${resetUrl}" class="button" style="display: inline-block; background: #667eea; color: white !important; padding: 12px 30px; text-decoration: none; border-radius: 6px;">${
-		template.buttonText
-	}</a>
+				template.buttonText
+			}</a>
     </p>
     <p>${template.content[2]}</p>
     <p style="word-break: break-all;"><a href="${resetUrl}" style="color: #333 !important; text-decoration: underline;">${resetUrl}</a></p>
@@ -557,16 +557,16 @@ export function getLoginNotificationEmail(
       <div class="info-row"><span class="label">${
 				template.infoLabels.time
 			}</span> ${loginInfo.timestamp.toLocaleString(
-		locale === Language.RU
-			? 'ru-RU'
-			: locale === Language.EN
-			? 'en-US'
-			: locale === Language.DE
-			? 'de-DE'
-			: locale === Language.TR
-			? 'tr-TR'
-			: 'sr-RS',
-	)}</div>
+				locale === Language.RU
+					? 'ru-RU'
+					: locale === Language.EN
+						? 'en-US'
+						: locale === Language.DE
+							? 'de-DE'
+							: locale === Language.TR
+								? 'tr-TR'
+								: 'sr-RS',
+			)}</div>
       <div class="info-row"><span class="label">${
 				template.infoLabels.ip
 			}</span> ${loginInfo.ip}</div>

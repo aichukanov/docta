@@ -4,7 +4,8 @@ export default {
 			MedicineName: 'Medicine or substance name',
 			InsertMedicineName: 'e.g. Aspirin, paracetamol, ibuprofen',
 			Medicines: 'Approved medicines in Montenegro',
-			MedicinesDescription: 'Official register of medicines approved by CInMED. Search by name or active ingredient, check prescription requirements, find analogs.',
+			MedicinesDescription:
+				'Official register of medicines approved by CInMED. Search by name or active ingredient, check prescription requirements, find analogs.',
 			LoadingMedicines: 'Loading medicines...',
 			NoMedicinesFound: 'No medicines found in the register',
 			ToSearchPage: 'Search medicines',
@@ -26,7 +27,8 @@ export default {
 			AuthorizationDate: 'Authorization date',
 			AtcGroup: 'Therapeutic group',
 			DispensingMode: 'Dispensing mode',
-			SourceCInMED: 'Data obtained from the official medicines registry of the CInMED Agency of Montenegro',
+			SourceCInMED:
+				'Data obtained from the official medicines registry of the CInMED Agency of Montenegro',
 			SourceCInMEDSite: 'cinmed.me',
 			SourceCInMEDUpdated: 'Data updated: {date}',
 			AnalogsTitle: 'Analogs in Montenegro',
@@ -57,15 +59,18 @@ export default {
 			TitleOTCSubstance: 'OTC medicines with {substance}',
 			TitleRxSubstance: 'Prescription medicines with {substance}',
 			MedicinesDescriptionFiltered: '{count} medicines found — {title}',
-			MedicineDescriptionOTC: '{name} ({substance}) — available without prescription in Montenegro',
-			MedicineDescriptionRx: '{name} ({substance}) — available by prescription in Montenegro',
+			MedicineDescriptionOTC:
+				'{name} ({substance}) — available without prescription in Montenegro',
+			MedicineDescriptionRx:
+				'{name} ({substance}) — available by prescription in Montenegro',
 			MedicineDescriptionDefault: '{name} — registered medicine in Montenegro',
 		},
 		'ru': {
 			MedicineName: 'Название лекарства или вещества',
 			InsertMedicineName: 'напр. Aspirin, Brufen, Amoksiklav',
 			Medicines: 'Реестр лекарств Черногории',
-			MedicinesDescription: 'Официальный реестр одобренных лекарств CInMED. Поиск по названию или действующему веществу, проверка рецептурности, аналоги.',
+			MedicinesDescription:
+				'Официальный реестр одобренных лекарств CInMED. Поиск по названию или действующему веществу, проверка рецептурности, аналоги.',
 			LoadingMedicines: 'Загрузка лекарств...',
 			NoMedicinesFound: 'Лекарства не найдены в реестре',
 			ToSearchPage: 'Поиск лекарств',
@@ -87,7 +92,8 @@ export default {
 			AuthorizationDate: 'Дата разрешения',
 			AtcGroup: 'Терапевтическая группа',
 			DispensingMode: 'Режим отпуска',
-			SourceCInMED: 'Данные получены из официального реестра лекарственных средств Агентства CInMED Черногории',
+			SourceCInMED:
+				'Данные получены из официального реестра лекарственных средств Агентства CInMED Черногории',
 			SourceCInMEDSite: 'cinmed.me',
 			SourceCInMEDUpdated: 'Данные обновлены: {date}',
 			AnalogsTitle: 'Аналоги в Черногории',
@@ -118,15 +124,19 @@ export default {
 			TitleOTCSubstance: 'Лекарства без рецепта с веществом {substance}',
 			TitleRxSubstance: 'Лекарства по рецепту с веществом {substance}',
 			MedicinesDescriptionFiltered: 'Найдено {count} лекарств — {title}',
-			MedicineDescriptionOTC: '{name} ({substance}) — продаётся без рецепта в Черногории',
-			MedicineDescriptionRx: '{name} ({substance}) — продаётся по рецепту в Черногории',
-			MedicineDescriptionDefault: '{name} — зарегистрированное лекарство в Черногории',
+			MedicineDescriptionOTC:
+				'{name} ({substance}) — продаётся без рецепта в Черногории',
+			MedicineDescriptionRx:
+				'{name} ({substance}) — продаётся по рецепту в Черногории',
+			MedicineDescriptionDefault:
+				'{name} — зарегистрированное лекарство в Черногории',
 		},
 		'sr': {
 			MedicineName: 'Ime lijeka ili supstance',
 			InsertMedicineName: 'npr. Aspirin, paracetamol, ibuprofen',
 			Medicines: 'Registar lijekova Crne Gore',
-			MedicinesDescription: 'Zvanični registar odobrenih lijekova CInMED. Pretraga po imenu ili aktivnoj supstanci, provjera režima izdavanja, analozi.',
+			MedicinesDescription:
+				'Zvanični registar odobrenih lijekova CInMED. Pretraga po imenu ili aktivnoj supstanci, provjera režima izdavanja, analozi.',
 			LoadingMedicines: 'Učitavanje lijekova...',
 			NoMedicinesFound: 'Lijekovi nisu pronađeni u registru',
 			ToSearchPage: 'Pretraga lijekova',
@@ -148,7 +158,8 @@ export default {
 			AuthorizationDate: 'Datum dozvole',
 			AtcGroup: 'Terapijska grupa',
 			DispensingMode: 'Režim izdavanja',
-			SourceCInMED: 'Podaci preuzeti iz zvaničnog registra lijekova Agencije CInMED Crne Gore',
+			SourceCInMED:
+				'Podaci preuzeti iz zvaničnog registra lijekova Agencije CInMED Crne Gore',
 			SourceCInMEDSite: 'cinmed.me',
 			SourceCInMEDUpdated: 'Podaci ažurirani: {date}',
 			AnalogsTitle: 'Analozi u Crnoj Gori',
@@ -179,15 +190,18 @@ export default {
 			TitleOTCSubstance: 'Lijekovi bez recepta sa supstancom {substance}',
 			TitleRxSubstance: 'Lijekovi na recept sa supstancom {substance}',
 			MedicinesDescriptionFiltered: 'Pronađeno {count} lijekova — {title}',
-			MedicineDescriptionOTC: '{name} ({substance}) — dostupno bez recepta u Crnoj Gori',
-			MedicineDescriptionRx: '{name} ({substance}) — dostupno na recept u Crnoj Gori',
+			MedicineDescriptionOTC:
+				'{name} ({substance}) — dostupno bez recepta u Crnoj Gori',
+			MedicineDescriptionRx:
+				'{name} ({substance}) — dostupno na recept u Crnoj Gori',
 			MedicineDescriptionDefault: '{name} — registrovani lijek u Crnoj Gori',
 		},
 		'de': {
 			MedicineName: 'Arzneimittel- oder Wirkstoffname',
 			InsertMedicineName: 'z.B. Aspirin, Paracetamol, Ibuprofen',
 			Medicines: 'Arzneimittelregister von Montenegro',
-			MedicinesDescription: 'Offizielles Register der von CInMED zugelassenen Arzneimittel. Suche nach Name oder Wirkstoff, Rezeptpflicht prüfen, Analoga finden.',
+			MedicinesDescription:
+				'Offizielles Register der von CInMED zugelassenen Arzneimittel. Suche nach Name oder Wirkstoff, Rezeptpflicht prüfen, Analoga finden.',
 			LoadingMedicines: 'Arzneimittel werden geladen...',
 			NoMedicinesFound: 'Keine Arzneimittel im Register gefunden',
 			ToSearchPage: 'Arzneimittelsuche',
@@ -209,7 +223,8 @@ export default {
 			AuthorizationDate: 'Zulassungsdatum',
 			AtcGroup: 'Therapeutische Gruppe',
 			DispensingMode: 'Abgabemodus',
-			SourceCInMED: 'Daten aus dem offiziellen Arzneimittelregister der CInMED-Agentur Montenegros',
+			SourceCInMED:
+				'Daten aus dem offiziellen Arzneimittelregister der CInMED-Agentur Montenegros',
 			SourceCInMEDSite: 'cinmed.me',
 			SourceCInMEDUpdated: 'Daten aktualisiert: {date}',
 			AnalogsTitle: 'Analoga in Montenegro',
@@ -240,15 +255,19 @@ export default {
 			TitleOTCSubstance: 'Rezeptfreie Arzneimittel mit {substance}',
 			TitleRxSubstance: 'Verschreibungspflichtige Arzneimittel mit {substance}',
 			MedicinesDescriptionFiltered: '{count} Arzneimittel gefunden — {title}',
-			MedicineDescriptionOTC: '{name} ({substance}) — rezeptfrei in Montenegro erhältlich',
-			MedicineDescriptionRx: '{name} ({substance}) — verschreibungspflichtig in Montenegro',
-			MedicineDescriptionDefault: '{name} — zugelassenes Arzneimittel in Montenegro',
+			MedicineDescriptionOTC:
+				'{name} ({substance}) — rezeptfrei in Montenegro erhältlich',
+			MedicineDescriptionRx:
+				'{name} ({substance}) — verschreibungspflichtig in Montenegro',
+			MedicineDescriptionDefault:
+				'{name} — zugelassenes Arzneimittel in Montenegro',
 		},
 		'tr': {
 			MedicineName: 'İlaç veya etken madde adı',
 			InsertMedicineName: 'örn. Aspirin, parasetamol, ibuprofen',
-			Medicines: "Karadağ İlaç Kayıt Defteri",
-			MedicinesDescription: "CInMED tarafından onaylanan ilaçların resmi kaydı. İsme veya etken maddeye göre arama yapın, reçete durumunu kontrol edin.",
+			Medicines: 'Karadağ İlaç Kayıt Defteri',
+			MedicinesDescription:
+				'CInMED tarafından onaylanan ilaçların resmi kaydı. İsme veya etken maddeye göre arama yapın, reçete durumunu kontrol edin.',
 			LoadingMedicines: 'İlaçlar yükleniyor...',
 			NoMedicinesFound: 'Kayıtta ilaç bulunamadı',
 			ToSearchPage: 'İlaç arama',
@@ -270,7 +289,8 @@ export default {
 			AuthorizationDate: 'Ruhsat tarihi',
 			AtcGroup: 'Terapötik grup',
 			DispensingMode: 'Dağıtım modu',
-			SourceCInMED: 'Veriler Karadağ CInMED Ajansının resmi ilaç kayıt defterinden alınmıştır',
+			SourceCInMED:
+				'Veriler Karadağ CInMED Ajansının resmi ilaç kayıt defterinden alınmıştır',
 			SourceCInMEDSite: 'cinmed.me',
 			SourceCInMEDUpdated: 'Veriler güncellendi: {date}',
 			AnalogsTitle: "Karadağ'daki analoglar",
@@ -301,15 +321,18 @@ export default {
 			TitleOTCSubstance: '{substance} etken maddeli reçetesiz ilaçlar',
 			TitleRxSubstance: '{substance} etken maddeli reçeteli ilaçlar',
 			MedicinesDescriptionFiltered: '{count} ilaç bulundu — {title}',
-			MedicineDescriptionOTC: "{name} ({substance}) — Karadağ'da reçetesiz satılır",
-			MedicineDescriptionRx: "{name} ({substance}) — Karadağ'da reçeteyle satılır",
+			MedicineDescriptionOTC:
+				"{name} ({substance}) — Karadağ'da reçetesiz satılır",
+			MedicineDescriptionRx:
+				"{name} ({substance}) — Karadağ'da reçeteyle satılır",
 			MedicineDescriptionDefault: "{name} — Karadağ'da kayıtlı ilaç",
 		},
 		'sr-cyrl': {
 			MedicineName: 'Име лијека или супстанце',
 			InsertMedicineName: 'нпр. Aspirin, Brufen, Amoksiklav',
 			Medicines: 'Регистар лијекова Црне Горе',
-			MedicinesDescription: 'Званични регистар одобрених лијекова CInMED. Претрага по имену или активној супстанци, провјера режима издавања, аналози.',
+			MedicinesDescription:
+				'Званични регистар одобрених лијекова CInMED. Претрага по имену или активној супстанци, провјера режима издавања, аналози.',
 			LoadingMedicines: 'Учитавање лијекова...',
 			NoMedicinesFound: 'Лијекови нису пронађени у регистру',
 			ToSearchPage: 'Претрага лијекова',
@@ -331,7 +354,8 @@ export default {
 			AuthorizationDate: 'Датум дозволе',
 			AtcGroup: 'Терапијска група',
 			DispensingMode: 'Режим издавања',
-			SourceCInMED: 'Подаци преузети из званичног регистра лијекова Агенције CInMED Црне Горе',
+			SourceCInMED:
+				'Подаци преузети из званичног регистра лијекова Агенције CInMED Црне Горе',
 			SourceCInMEDSite: 'cinmed.me',
 			SourceCInMEDUpdated: 'Подаци ажурирани: {date}',
 			AnalogsTitle: 'Аналози у Црној Гори',
@@ -362,8 +386,10 @@ export default {
 			TitleOTCSubstance: 'Лијекови без рецепта са супстанцом {substance}',
 			TitleRxSubstance: 'Лијекови на рецепт са супстанцом {substance}',
 			MedicinesDescriptionFiltered: 'Пронађено {count} лијекова — {title}',
-			MedicineDescriptionOTC: '{name} ({substance}) — доступно без рецепта у Црној Гори',
-			MedicineDescriptionRx: '{name} ({substance}) — доступно на рецепт у Црној Гори',
+			MedicineDescriptionOTC:
+				'{name} ({substance}) — доступно без рецепта у Црној Гори',
+			MedicineDescriptionRx:
+				'{name} ({substance}) — доступно на рецепт у Црној Гори',
 			MedicineDescriptionDefault: '{name} — регистровани лијек у Црној Гори',
 		},
 	},

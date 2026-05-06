@@ -29,7 +29,9 @@ defineEmits<{
 	font-family: inherit;
 	font-weight: 500;
 	cursor: pointer;
-	transition: border-color 0.15s ease, background 0.15s ease;
+	transition:
+		border-color 0.15s ease,
+		background 0.15s ease;
 
 	&:hover {
 		border-color: var(--color-primary);

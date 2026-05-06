@@ -228,7 +228,7 @@ export async function getDoctorList(
 					? {
 							averageRating: parseFloat(doctor.averageRating),
 							totalReviews: doctor.totalReviews,
-					  }
+						}
 					: undefined,
 			};
 		}
@@ -252,7 +252,7 @@ export async function getDoctorList(
 				? {
 						averageRating: parseFloat(averageRating),
 						totalReviews,
-				  }
+					}
 				: undefined,
 		};
 	});

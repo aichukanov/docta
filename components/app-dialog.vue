@@ -26,12 +26,21 @@ onBeforeUnmount(() => setAppInert(false));
 	<Teleport to="body">
 		<Transition name="app-dialog">
 			<div v-if="visible" class="dialog-overlay" @click.self="visible = false">
-				<div class="dialog-panel" :style="{ maxWidth: width }" role="dialog" aria-modal="true">
+				<div
+					class="dialog-panel"
+					:style="{ maxWidth: width }"
+					role="dialog"
+					aria-modal="true"
+				>
 					<header v-if="title || $slots.header" class="dialog-header">
 						<slot name="header">
 							<h3 class="dialog-title">{{ title }}</h3>
 						</slot>
-						<button class="dialog-close" @click="visible = false" aria-label="Close">
+						<button
+							class="dialog-close"
+							@click="visible = false"
+							aria-label="Close"
+						>
 							&times;
 						</button>
 					</header>

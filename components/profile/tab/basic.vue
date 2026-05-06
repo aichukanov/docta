@@ -8,9 +8,8 @@ const { t } = useI18n({
 	messages: combineI18nMessages([profileMessages, accountCardMessages]),
 });
 
-const { data: oauthAccounts, refresh: refreshAccounts } = await useFetch(
-	'/api/auth/accounts',
-);
+const { data: oauthAccounts, refresh: refreshAccounts } =
+	await useFetch('/api/auth/accounts');
 const { data: oauthProfiles, refresh: refreshOAuthProfiles } = await useFetch(
 	'/api/auth/oauth-profiles',
 );
@@ -116,7 +115,7 @@ function linkFacebook() {
 								...(googleProfile.email
 									? [{ label: t('email'), value: googleProfile.email }]
 									: []),
-						  ]
+							]
 						: []
 				"
 				:verified-email="!!googleProfile?.verified_email"
@@ -141,7 +140,7 @@ function linkFacebook() {
 												label: t('firstName'),
 												value: telegramProfile.first_name,
 											},
-									  ]
+										]
 									: []),
 								...(telegramProfile.last_name
 									? [{ label: t('lastName'), value: telegramProfile.last_name }]
@@ -152,13 +151,13 @@ function linkFacebook() {
 												label: t('username'),
 												value: `@${telegramProfile.username}`,
 											},
-									  ]
+										]
 									: []),
 								{
 									label: t('telegramId'),
 									value: String(telegramProfile.telegram_id),
 								},
-						  ]
+							]
 						: []
 				"
 				:is-loading="isLoading"
@@ -182,7 +181,7 @@ function linkFacebook() {
 								...(facebookProfile.email
 									? [{ label: t('email'), value: facebookProfile.email }]
 									: []),
-						  ]
+							]
 						: []
 				"
 				:is-loading="isLoading"

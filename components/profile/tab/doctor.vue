@@ -21,8 +21,8 @@ const status = computed<DoctorProfileStatus | null>(() =>
 		? doctor.value.isDraft
 			? 'draft'
 			: doctor.value.hidden
-			? 'hidden'
-			: 'public'
+				? 'hidden'
+				: 'public'
 		: null,
 );
 

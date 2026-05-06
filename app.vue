@@ -34,11 +34,11 @@ const buildJsonLd = (schemas: SchemaOrg[]) => {
 		? {
 				'@context': 'https://schema.org',
 				...normalizeNode(schemas[0]),
-		  }
+			}
 		: {
 				'@context': 'https://schema.org',
 				'@graph': schemas.map(normalizeNode),
-		  };
+			};
 };
 
 // Reactive head for schema.org JSON-LD (works with SSR)

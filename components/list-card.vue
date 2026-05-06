@@ -110,7 +110,10 @@ const detailsLink = computed(() => {
 		font-weight: 600;
 		color: #1f2937;
 		margin: 0;
-		font-family: system-ui, -apple-system, sans-serif;
+		font-family:
+			system-ui,
+			-apple-system,
+			sans-serif;
 
 		.list-card-link {
 			color: var(--color-primary);

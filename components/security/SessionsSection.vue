@@ -10,9 +10,8 @@ const { d } = useI18n();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
 const { data: oauthAccounts } = await useFetch('/api/auth/accounts');
-const { data: sessions, refresh: refreshSessions } = await useFetch(
-	'/api/auth/sessions',
-);
+const { data: sessions, refresh: refreshSessions } =
+	await useFetch('/api/auth/sessions');
 
 const userHasPassword = computed(
 	() =>

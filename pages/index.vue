@@ -381,7 +381,9 @@ schemaOrgStore.setSchemas([
 		text-decoration: none;
 		color: inherit;
 		border: 1px solid rgba(0, 0, 0, 0.04);
-		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.04);
+		box-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.04),
+			0 4px 16px rgba(0, 0, 0, 0.04);
 		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 		overflow: hidden;
 
@@ -400,7 +402,8 @@ schemaOrgStore.setSchemas([
 
 		&:hover {
 			transform: translateY(-4px);
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04),
+			box-shadow:
+				0 4px 8px rgba(0, 0, 0, 0.04),
 				0 12px 32px rgba(79, 70, 229, 0.12);
 			border-color: rgba(79, 70, 229, 0.2);
 
@@ -455,7 +458,8 @@ schemaOrgStore.setSchemas([
 			}
 
 			&:hover {
-				box-shadow: 0 8px 16px rgba(79, 70, 229, 0.3),
+				box-shadow:
+					0 8px 16px rgba(79, 70, 229, 0.3),
 					0 16px 48px rgba(79, 70, 229, 0.2);
 			}
 		}
@@ -472,7 +476,8 @@ schemaOrgStore.setSchemas([
 
 			&:hover {
 				border-color: rgba(34, 197, 94, 0.4);
-				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04),
+				box-shadow:
+					0 4px 8px rgba(0, 0, 0, 0.04),
 					0 12px 32px rgba(34, 197, 94, 0.15);
 			}
 		}

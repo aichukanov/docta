@@ -221,7 +221,7 @@ export async function getClinicList(
 				? {
 						averageRating: parseFloat(clinic.averageRating),
 						totalReviews: clinic.totalReviews,
-				  }
+					}
 				: undefined,
 		};
 	});

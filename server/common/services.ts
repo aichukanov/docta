@@ -146,20 +146,20 @@ export async function getServicesByClinicAndSpecialty(
 			doctorPrice !== undefined
 				? doctorPrice.price
 				: row.price
-				? Number(row.price)
-				: null;
+					? Number(row.price)
+					: null;
 		const priceMin =
 			doctorPrice !== undefined
 				? doctorPrice.priceMin
 				: row.price_min
-				? Number(row.price_min)
-				: null;
+					? Number(row.price_min)
+					: null;
 		const priceMax =
 			doctorPrice !== undefined
 				? doctorPrice.priceMax
 				: row.price_max
-				? Number(row.price_max)
-				: null;
+					? Number(row.price_max)
+					: null;
 
 		result[clinicId].push({
 			id: serviceId,

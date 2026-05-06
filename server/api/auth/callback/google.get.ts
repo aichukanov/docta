@@ -119,9 +119,8 @@ export default defineEventHandler(async (event) => {
 			);
 
 			// Сохраняем полный Google профиль
-			const { getOAuthAccountId, saveGoogleProfile } = await import(
-				'~/server/utils/oauth-profiles'
-			);
+			const { getOAuthAccountId, saveGoogleProfile } =
+				await import('~/server/utils/oauth-profiles');
 			const oauthAccountId = await getOAuthAccountId(user.id, 'google');
 			if (oauthAccountId) {
 				await saveGoogleProfile(oauthAccountId, userInfo);

@@ -36,7 +36,9 @@ const displayRating = computed(() => hoverRating.value || rating.value);
 	color: #ddd;
 	padding: 0;
 	line-height: 1;
-	transition: color 0.15s, transform 0.15s;
+	transition:
+		color 0.15s,
+		transform 0.15s;
 }
 
 .star-btn:hover {

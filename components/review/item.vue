@@ -125,10 +125,15 @@ const clinic = computed(() => {
 				<span class="author-name">
 					{{ review.author?.name || t('Anonymous') }}
 				</span>
-				<span v-if="review.isOwn" class="own-badge">{{ t('YourReviewLabel') }}</span>
+				<span v-if="review.isOwn" class="own-badge">{{
+					t('YourReviewLabel')
+				}}</span>
 			</div>
 			<div class="review-meta">
-				<RatingStars v-if="review.rating && !isEditing" :rating="review.rating" />
+				<RatingStars
+					v-if="review.rating && !isEditing"
+					:rating="review.rating"
+				/>
 				<time
 					class="review-date"
 					v-if="review.publishedAt"
@@ -141,7 +146,9 @@ const clinic = computed(() => {
 					v-if="review.provider && review.provider !== 'docta_me'"
 				>
 					<ReviewProviderIcon :provider="review.provider" />
-					<span class="provider-name">{{ t(`Provider_${review.provider}`) }}</span>
+					<span class="provider-name">{{
+						t(`Provider_${review.provider}`)
+					}}</span>
 				</span>
 				<NuxtLink
 					v-if="clinic"
@@ -169,7 +176,12 @@ const clinic = computed(() => {
 					show-word-limit
 				/>
 				<div class="edit-actions">
-					<el-button type="primary" size="small" :loading="isSaving" @click="saveEdit">
+					<el-button
+						type="primary"
+						size="small"
+						:loading="isSaving"
+						@click="saveEdit"
+					>
 						{{ t('SaveReview') }}
 					</el-button>
 					<el-button size="small" @click="cancelEdit">

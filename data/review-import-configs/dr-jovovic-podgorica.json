@@ -1,0 +1,45 @@
+{
+	"jsonPath": "data/google-places/podgorica/dr-jovovic.json",
+	"outputPath": "server/sql/reviews-google/dr-jovovic-podgorica.sql",
+	"dataCollectedDate": "2026-04-24",
+	"clinicId": 115,
+	"clinicName": "Dr. Jovović — oftalmološka ordinacija (Podgorica)",
+	"doctors": [
+		{
+			"id": 1082,
+			"varName": "biljana",
+			"patterns": [
+				"[Dd]r\\.?\\s+[Jj]ovovi[cć]",
+				"[Dd]oktor[a-zščć]*\\s+[Jj]ovovi[cć]",
+				"Biljan[aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"Bilijan[aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+			]
+		},
+		{
+			"id": 1083,
+			"varName": "nada",
+			"patterns": [
+				"Nad[aeiu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"Mi[sš]oli[cć]"
+			]
+		},
+		{
+			"id": 809,
+			"varName": "danijela",
+			"patterns": [
+				"Danijel[aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"[ĐD]jurovi[cć]\\s+Raoni[cć]",
+				"[ĐD]urovi[cć]\\s+Raoni[cć]",
+				"Raoni[cć]"
+			]
+		},
+		{
+			"id": 1084,
+			"varName": "vladan",
+			"patterns": [
+				"Vladan[auei]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"Barovi[cć][aueom]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+			]
+		}
+	]
+}

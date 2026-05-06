@@ -1,0 +1,36 @@
+{
+  "jsonPath": "data/google-places/podgorica/ordinacija-barovic.json",
+  "outputPath": "server/sql/reviews-google/ordinacija-barovic.sql",
+  "dataCollectedDate": "2026-04-17",
+  "clinicId": 107,
+  "clinicName": "Barović — Aesthetic & Dental centar (Podgorica)",
+  "translationsDir": "data/review-translations/ordinacija-barovic/",
+  "doctors": [
+    {
+      "id": 1045,
+      "varName": "nikola_barovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])[Nn]ikol[aueoi]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Никол[ауеоий]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "[Dd]r\\.?\\s+Barovi[cć]",
+        "Baroviću|Barovića|Barovicu"
+      ]
+    },
+    {
+      "id": 1046,
+      "varName": "bojan_komatina",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])[Bb]ojan[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Komatin[aeuoi]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 998,
+      "varName": "sandra_djaletic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])[Ss]andr[aueoi]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:Đ|Dj|dj)aleti[cć]"
+      ]
+    }
+  ]
+}

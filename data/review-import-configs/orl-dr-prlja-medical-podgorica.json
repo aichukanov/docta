@@ -1,0 +1,26 @@
+{
+  "jsonPath": "data/google-places/podgorica/orl-ordinacija-dr-prlja-medical-podgorica.json",
+  "outputPath": "server/sql/reviews-google/orl-dr-prlja-medical-podgorica.sql",
+  "dataCollectedDate": "2026-04-20",
+  "clinicId": 109,
+  "clinicName": "ORL Ordinacija Dr Prlja Medical (Podgorica)",
+  "doctors": [
+    {
+      "id": 1048,
+      "varName": "svjetlana_prlja",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])[Ss]vjetlan[aueoi](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Свјетлан[ауеоий](?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Светлан[ауеоий](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 1049,
+      "varName": "vladimir_prlja",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])[Vv]ladimir[aueoi]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Владимир[ауеоий]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

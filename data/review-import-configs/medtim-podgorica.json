@@ -1,0 +1,49 @@
+{
+  "jsonPath": "data/google-places/podgorica/specijalna-bolnica-dr-medtim.json",
+  "outputPath": "server/sql/reviews-google/medtim-podgorica.sql",
+  "dataCollectedDate": "2026-04-24",
+  "clinicId": 114,
+  "clinicName": "Specijalna bolnica Dr MedTIM (Podgorica)",
+  "doctors": [
+    {
+      "id": 1077,
+      "varName": "svetlana_vucekovic",
+      "patterns": [
+        "Svetlan[aueoi](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Svetlanom(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Vu[cč]ekovi[cć]"
+      ]
+    },
+    {
+      "id": 1071,
+      "varName": "zoran_popovic",
+      "patterns": [
+        "Popovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Popovi[cć][aueom](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Поповић(?:[^а-яёА-ЯЁ]|$)",
+        "Поповиц[ауеом]?(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 1075,
+      "varName": "momir_sarac",
+      "patterns": [
+        "Момир[ауеом]?(?:[^а-яёА-ЯЁ]|$)",
+        "Шарац(?:[^а-яёА-ЯЁ]|$)",
+        "Шарц[ауеом](?:[^а-яёА-ЯЁ]|$)",
+        "Momir[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "[ŠS]arac(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "[ŠS]arc[auem](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": 49,
+      "varName": "milomir_gacevic",
+      "patterns": [
+        "Ga[cč]evi[cć]",
+        "Гачевић",
+        "Гачеви[цч][ауеом]"
+      ]
+    }
+  ]
+}

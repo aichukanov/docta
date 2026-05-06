@@ -413,7 +413,7 @@ if (tData) {
   for (const rt of (tData.reviews || [])) reviewTransMap.set(rt.id, rt.translations)
 
   const replyTransMap = new Map()
-  for (const rt of (tData.replies || [])) replyTransMap.set(rt.review_id, rt.translations)
+  for (const rt of (tData.replies || [])) replyTransMap.set(rt.review_id || rt.id, rt.translations)
 
   for (const r of mergedReviews) {
     const t = reviewTransMap.get(r.reviewId)

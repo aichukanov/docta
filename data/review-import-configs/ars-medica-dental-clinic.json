@@ -1,0 +1,48 @@
+{
+	"jsonPath": "data/google-places/podgorica/ars-medica-dental-clinic.json",
+	"outputPath": "server/sql/reviews-google/ars-medica-dental-clinic.sql",
+	"dataCollectedDate": "2026-04-24",
+	"clinicId": 117,
+	"clinicName": "Ars Medica Dental Clinic (Podgorica)",
+	"doctors": [
+		{
+			"id": 1085,
+			"varName": "milija",
+			"patterns": [
+				"Milij[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+			]
+		},
+		{
+			"id": 1086,
+			"varName": "filip",
+			"patterns": [
+				"Filip[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"Filip\\s+[ŠS]ukovi[cć]"
+			]
+		},
+		{
+			"id": 1087,
+			"varName": "jelena",
+			"patterns": [
+				"Jelen[aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"Rute[sš]i[cć]"
+			]
+		},
+		{
+			"id": 1088,
+			"varName": "vanja",
+			"patterns": [
+				"Vanj[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"Matanovi[cć]"
+			]
+		},
+		{
+			"id": 1089,
+			"varName": "zoran",
+			"patterns": [
+				"Zoran[aueom]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"Mirkovi[cć]"
+			]
+		}
+	]
+}

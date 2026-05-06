@@ -1,0 +1,128 @@
+{
+	"jsonPath": "data/google-places/podgorica/specialized-hospital-ars-medica.json",
+	"outputPath": "server/sql/reviews-google/ars-medica-bolnica-podgorica.sql",
+	"dataCollectedDate": "2026-04-24",
+	"clinicId": 116,
+	"clinicName": "Ars Medica — specijalna bolnica (Podgorica)",
+	"doctors": [
+		{
+			"id": 1090,
+			"varName": "borislav_colakovic",
+			"patterns": [
+				"Borislav[aueom]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"[ČC]olakovi[cć]"
+			]
+		},
+		{
+			"id": 1091,
+			"varName": "snezana_crnogorac",
+			"patterns": [
+				"Sne[žz]an[aueoi]?\\s+Crnogor",
+				"Crnogor[a-z]+\\s+Sne[žz]an"
+			]
+		},
+		{
+			"id": 1092,
+			"varName": "vladimir_janjic",
+			"patterns": [
+				"[Jj]anj?i[cć][aueom]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"Vladimir[aueom]?\\s+[Jj]anj?i[cć]"
+			]
+		},
+		{
+			"id": 1093,
+			"varName": "milutin_mitrovic",
+			"patterns": [
+				"Milutin[aueom]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"Mitrovi[cć][aueom]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+			]
+		},
+		{
+			"id": 1094,
+			"varName": "danijela_cabarkapa",
+			"patterns": [
+				"Danijel[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"[ČC]abarkap"
+			]
+		},
+		{
+			"id": 1095,
+			"varName": "ana_music",
+			"patterns": [
+				"An[aeu]\\s+Musi?[cć]",
+				"An[aeu]?\\s+Musi[cć][aueom]?",
+				"Musi[cć]\\s+An[aeu]"
+			]
+		},
+		{
+			"id": 1096,
+			"varName": "sinisa_glumicic",
+			"patterns": [
+				"Glumi[cč]i[cć]",
+				"Sini[šs]a(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+			]
+		},
+		{
+			"id": 1097,
+			"varName": "srecko_budi",
+			"patterns": [
+				"Sre[ćc]k[aueo]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+			]
+		},
+		{
+			"id": 970,
+			"varName": "miodrag_pavlicic",
+			"patterns": [
+				"Miodrag[aueom]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"Pavli[cč]i[cć][aueom]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+			]
+		},
+		{
+			"id": 46,
+			"varName": "vladimir_dobricanin",
+			"patterns": [
+				"Dobri[cč]anin",
+				"Vladimir[aueom]?\\s+Dobri[cč]anin"
+			]
+		},
+		{
+			"id": 971,
+			"varName": "nebojsa_crnogorac",
+			"patterns": [
+				"Neboj[šs][aueom]?\\s+Crnogor",
+				"Crnogor[a-z]+\\s+Neboj[šs]"
+			]
+		},
+		{
+			"id": 436,
+			"varName": "branko_campar",
+			"patterns": [
+				"[ČC]ampar",
+				"Brank[oue]?\\s+[ČC]ampar"
+			]
+		},
+		{
+			"id": 2,
+			"varName": "drago_albijanic",
+			"patterns": [
+				"Albijani[cć]"
+			]
+		},
+		{
+			"id": 1098,
+			"varName": "dusan_babic",
+			"patterns": [
+				"Du[sš]an[aueom]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"Babi[cć][aueom]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+			]
+		},
+		{
+			"id": 62,
+			"varName": "andrijana_mirkovic_kostic",
+			"patterns": [
+				"Andrijan[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"Mirkovi[cć][\\-\\s]+Kosti[cć]"
+			]
+		}
+	]
+}

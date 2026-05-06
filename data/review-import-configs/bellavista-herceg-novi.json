@@ -1,0 +1,19 @@
+{
+  "jsonPath": "data/google-places/herceg-novi/stomatoloska-ordinacija-bellavista.json",
+  "outputPath": "server/sql/reviews-google/bellavista-herceg-novi.sql",
+  "dataCollectedDate": "2026-04-20",
+  "clinicId": 110,
+  "clinicName": "Stomatološka ordinacija Bellavista (Herceg Novi)",
+  "doctors": [
+    {
+      "id": 1050,
+      "varName": "ivan_konjevic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])[Ii]van[aueoi]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Иван[ауеоий]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Konjevi[cć][aueoi]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Коњеви[цћ][ауеоий]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

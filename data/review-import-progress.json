@@ -847,6 +847,169 @@
         "hr": 1,
         "bs": 1
       }
+    },
+    "endorfin-fizio-centar-niksic": {
+      "status": "done",
+      "clinicName": "Endorfin Fizio Centar Nikšić",
+      "configFile": "data/review-import-configs/endorfin-fizio-centar-niksic.json",
+      "sqlFile": "server/sql/reviews-google/endorfin-fizio-centar-niksic.sql",
+      "reviewsWithText": 6,
+      "totalReviews": 24,
+      "replies": 6,
+      "translationsDir": "data/review-translations/endorfin-fizio-centar-niksic/",
+      "translationsCount": 12,
+      "doctorMatches": {},
+      "languages": {
+        "hr": 4,
+        "en": 1,
+        "bs": 1
+      }
+    },
+    "endorfin-fizio-centar-radanovici": {
+      "status": "done",
+      "clinicName": "Endorfin Fizio Centar Radanovići",
+      "configFile": "data/review-import-configs/endorfin-fizio-centar-radanovici.json",
+      "sqlFile": "server/sql/reviews-google/endorfin-fizio-centar-radanovici.sql",
+      "reviewsWithText": 1,
+      "totalReviews": 16,
+      "replies": 0,
+      "translationsDir": "data/review-translations/endorfin-fizio-centar-radanovici/",
+      "translationsCount": 1,
+      "doctorMatches": {
+        "milic_raickovic": 1
+      },
+      "languages": {
+        "bs": 1
+      }
+    },
+    "endorfin-medical-center": {
+      "status": "done",
+      "clinicName": "Endorfin Medical Centar Podgorica",
+      "configFile": "data/review-import-configs/endorfin-medical-center.json",
+      "sqlFile": "server/sql/reviews-google/endorfin-medical-center.sql",
+      "reviewsWithText": 7,
+      "totalReviews": 14,
+      "replies": 7,
+      "translationsDir": "data/review-translations/endorfin-medical-center/",
+      "translationsCount": 14,
+      "doctorMatches": {
+        "janko_stojovic": 1
+      },
+      "languages": {
+        "bs": 4,
+        "sr": 1,
+        "hr": 1,
+        "en": 1
+      }
+    },
+    "fizio-centar-endorfin": {
+      "status": "done",
+      "clinicName": "Endorfin Fizio Centar Podgorica",
+      "configFile": "data/review-import-configs/fizio-centar-endorfin.json",
+      "sqlFile": "server/sql/reviews-google/fizio-centar-endorfin.sql",
+      "reviewsWithText": 32,
+      "totalReviews": 115,
+      "replies": 30,
+      "translationsDir": "data/review-translations/fizio-centar-endorfin/",
+      "translationsCount": 62,
+      "doctorMatches": {
+        "milic_raickovic": 6
+      },
+      "languages": {
+        "bs": 12,
+        "hr": 11,
+        "en": 9
+      }
+    },
+    "ordinacija-barovic": {
+      "status": "done",
+      "clinicName": "Barović — Aesthetic & Dental centar (Podgorica)",
+      "configFile": "data/review-import-configs/ordinacija-barovic.json",
+      "sqlFile": "server/sql/reviews-google/ordinacija-barovic.sql",
+      "reviewsWithText": 57,
+      "totalReviews": 102,
+      "replies": 7,
+      "translationsDir": "data/review-translations/ordinacija-barovic/",
+      "translationsCount": 64,
+      "doctorMatches": {
+        "nikola_barovic": 17,
+        "bojan_komatina": 0,
+        "sandra_djaletic": 2
+      },
+      "languages": {
+        "en": 19,
+        "hr": 17,
+        "bs": 18,
+        "ru": 1,
+        "sl": 2
+      }
+    },
+    "aesthetic-medical-centar-barovic": {
+      "status": "done",
+      "clinicName": "Aesthetic Medical Centar Barović - Dr Aleksandra Barović (Podgorica)",
+      "configFile": "data/review-import-configs/aesthetic-medical-centar-barovic.json",
+      "sqlFile": "server/sql/reviews-google/aesthetic-medical-centar-barovic.sql",
+      "reviewsWithText": 131,
+      "totalReviews": 185,
+      "replies": 15,
+      "translationsDir": "data/review-translations/aesthetic-medical-centar-barovic/",
+      "translationsCount": 146,
+      "doctorMatches": {
+        "aleksandra_barovic": 59
+      },
+      "languages": {
+        "hr": 59,
+        "bs": 60,
+        "en": 8,
+        "de": 2,
+        "it": 1,
+        "fr": 1
+      }
+    },
+    "orl-dr-prlja-medical-podgorica": {
+      "status": "done",
+      "clinicName": "ORL Ordinacija Dr Prlja Medical (Podgorica)",
+      "configFile": "data/review-import-configs/orl-dr-prlja-medical-podgorica.json",
+      "sqlFile": "server/sql/reviews-google/orl-dr-prlja-medical-podgorica.sql",
+      "reviewsWithText": 10,
+      "totalReviews": 51,
+      "replies": 0,
+      "translationsFile": "data/review-translations/orl-dr-prlja-medical-podgorica-translations.json",
+      "translationsCount": 10,
+      "doctorMatches": {
+        "svjetlana_prlja": 1,
+        "vladimir_prlja": 1
+      },
+      "languages": {
+        "hr": 1,
+        "de": 1,
+        "fr": 1,
+        "bs": 4,
+        "ru": 1,
+        "sr": 1,
+        "en": 1
+      }
+    },
+    "bellavista-herceg-novi": {
+      "status": "done",
+      "clinicName": "Stomatološka ordinacija Bellavista (Herceg Novi)",
+      "configFile": "data/review-import-configs/bellavista-herceg-novi.json",
+      "sqlFile": "server/sql/reviews-google/bellavista-herceg-novi.sql",
+      "reviewsWithText": 12,
+      "totalReviews": 13,
+      "replies": 0,
+      "translationsFile": "data/review-translations/bellavista-herceg-novi-translations.json",
+      "translationsCount": 12,
+      "doctorMatches": {
+        "ivan_konjevic": 1
+      },
+      "languages": {
+        "hr": 3,
+        "bs": 3,
+        "ru": 2,
+        "en": 3,
+        "de": 1
+      }
     }
   }
 }

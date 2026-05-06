@@ -1,0 +1,17 @@
+{
+  "jsonPath": "data/google-places/herceg-novi/stomatoloska-ordinacija-dr-kukoljac.json",
+  "outputPath": "server/sql/reviews-google/dr-kukoljac-herceg-novi.sql",
+  "dataCollectedDate": "2026-04-24",
+  "clinicId": 111,
+  "clinicName": "Dr Kukoljac — stomatološka ordinacija (Herceg Novi)",
+  "doctors": [
+    {
+      "id": 1055,
+      "varName": "georg",
+      "patterns": [
+        "[Gg]eorg[aou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Георг[ауое]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "jsonPath": "data/google-places/podgorica/fizio-centar-endorfin.json",
+  "outputPath": "server/sql/reviews-google/fizio-centar-endorfin.sql",
+  "dataCollectedDate": "2026-04-16",
+  "clinicId": 103,
+  "clinicName": "Endorfin Fizio Centar Podgorica",
+  "translationsDir": "data/review-translations/fizio-centar-endorfin/",
+  "doctors": [
+    {
+      "id": 1039,
+      "varName": "milic_raickovic",
+      "patterns": [
+        "Mili+[cć](?:[aeuo]|em)?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Rai[čc]kovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+      ]
+    }
+  ]
+}

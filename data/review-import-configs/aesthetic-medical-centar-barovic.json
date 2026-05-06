@@ -1,0 +1,21 @@
+{
+  "jsonPath": "data/google-places/podgorica/aesthetic-medical-centar-barovic-dr-aleksandra-barovic.json",
+  "outputPath": "server/sql/reviews-google/aesthetic-medical-centar-barovic.sql",
+  "dataCollectedDate": "2026-04-17",
+  "clinicId": 108,
+  "clinicName": "Aesthetic Medical Centar Barović - Dr Aleksandra Barović (Podgorica)",
+  "translationsDir": "data/review-translations/aesthetic-medical-centar-barovic/",
+  "doctors": [
+    {
+      "id": 1047,
+      "varName": "aleksandra_barovic",
+      "patterns": [
+        "Aleksandr[aeuoi](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Alexandra(?:[^a-zA-Z]|$)",
+        "[Dd]r\\.?\\s+Barovi[cć]",
+        "(?:doktor(?:ka|ica)?|Doktorka|Frau\\s+Doktor)\\s+Barovi[cć]",
+        "(?:Doktorka|[Dd]r\\.?)\\s+Sandra(?:[^a-zA-Z]|$)"
+      ]
+    }
+  ]
+}

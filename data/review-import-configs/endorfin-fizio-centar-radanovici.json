@@ -1,0 +1,18 @@
+{
+  "jsonPath": "data/google-places/kotor/endorfin-fizio-centar-radanovici.json",
+  "outputPath": "server/sql/reviews-google/endorfin-fizio-centar-radanovici.sql",
+  "dataCollectedDate": "2026-04-16",
+  "clinicId": 105,
+  "clinicName": "Endorfin Fizio Centar Radanovići",
+  "translationsDir": "data/review-translations/endorfin-fizio-centar-radanovici/",
+  "doctors": [
+    {
+      "id": 1039,
+      "varName": "milic_raickovic",
+      "patterns": [
+        "Mili[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Мили[чћ](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

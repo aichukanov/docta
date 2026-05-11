@@ -1,0 +1,466 @@
+{
+  "batch_id": "batch-02-mojkovac-drg-hospitalization",
+  "clinic_id": 127,
+  "source": "Mojkovac PDF page 22 - ZDRAVSTVENE USLUGE AKUTNOG BOLNIČKOG LIJEČENJA PO DRG",
+  "items_total": 24,
+  "notes": "DRG (Diagnostic-Related Groups) inpatient acute care codes. Used right column (Cijena × 2.5 = self-pay). KK = komplikacije i komorbiditeti.",
+  "items": [
+    {
+      "code": "MO_DRG_B67B",
+      "drg_code": "B67B",
+      "src": "Degenerativni poremećaji nervnog sistema sa umjerenim KK",
+      "price_eur": 3192.75,
+      "name_en": "Hospitalization for Degenerative Nervous System Disorders with Moderate CC",
+      "slug": "hospitalization-for-degenerative-nervous-system-disorders-with-moderate-cc",
+      "name_sr": "Degenerativni poremećaji nervnog sistema sa umjerenim KK",
+      "name_sr_cyrl": "Дегенеративни поремећаји нервног система са умјереним КК",
+      "name_ru": "Госпитализация: дегенеративные расстройства нервной системы с умеренными ОО",
+      "name_de": "Stationäre Behandlung: Degenerative Nervensystemerkrankungen mit moderaten KK",
+      "name_tr": "Yatış: Orta dereceli CC ile dejeneratif sinir sistemi bozuklukları",
+      "categories": [
+        21
+      ],
+      "specialties": [
+        8
+      ]
+    },
+    {
+      "code": "MO_DRG_D63Z",
+      "drg_code": "D63Z",
+      "src": "Zapaljenje srednjeg uha i infekcija gornjih respiratornih puteva",
+      "price_eur": 969.23,
+      "name_en": "Hospitalization for Otitis Media and Upper Respiratory Tract Infection",
+      "slug": "hospitalization-for-otitis-media-and-upper-respiratory-tract-infection",
+      "name_sr": "Zapaljenje srednjeg uha i infekcija gornjih respiratornih puteva",
+      "name_sr_cyrl": "Запаљење средњег уха и инфекција горњих респираторних путева",
+      "name_ru": "Госпитализация: средний отит и инфекция верхних дыхательных путей",
+      "name_de": "Stationäre Behandlung: Otitis media und obere Atemwegsinfektion",
+      "name_tr": "Yatış: Orta kulak iltihabı ve üst solunum yolu enfeksiyonu",
+      "categories": [
+        11
+      ],
+      "specialties": [
+        11
+      ]
+    },
+    {
+      "code": "MO_DRG_D64Z",
+      "drg_code": "D64Z",
+      "src": "Laringotreitis i epiglotitis",
+      "price_eur": 703.18,
+      "name_en": "Hospitalization for Laryngotracheitis and Epiglottitis",
+      "slug": "hospitalization-for-laryngotracheitis-and-epiglottitis",
+      "name_sr": "Laringotreitis i epiglotitis",
+      "name_sr_cyrl": "Ларинготреитис и епиглотитис",
+      "name_ru": "Госпитализация: ларинготрахеит и эпиглоттит",
+      "name_de": "Stationäre Behandlung: Laryngotracheitis und Epiglottitis",
+      "name_tr": "Yatış: Larengotrakeit ve epiglottit",
+      "categories": [
+        11
+      ],
+      "specialties": [
+        11
+      ]
+    },
+    {
+      "code": "MO_DRG_E62C",
+      "drg_code": "E62C",
+      "src": "Respiratorne infekcije bez KK",
+      "price_eur": 1539.38,
+      "name_en": "Hospitalization for Respiratory Infections without CC",
+      "slug": "hospitalization-for-respiratory-infections-without-cc",
+      "name_sr": "Respiratorne infekcije bez KK",
+      "name_sr_cyrl": "Респираторне инфекције без КК",
+      "name_ru": "Госпитализация: респираторные инфекции без ОО",
+      "name_de": "Stationäre Behandlung: Atemwegsinfektionen ohne KK",
+      "name_tr": "Yatış: CC olmadan solunum yolu enfeksiyonları",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_DRG_E69B",
+      "drg_code": "E69B",
+      "src": "Bronhitis i astma bez KK",
+      "price_eur": 969.23,
+      "name_en": "Hospitalization for Bronchitis and Asthma without CC",
+      "slug": "hospitalization-for-bronchitis-and-asthma-without-cc",
+      "name_sr": "Bronhitis i astma bez KK",
+      "name_sr_cyrl": "Бронхитис и астма без КК",
+      "name_ru": "Госпитализация: бронхит и астма без ОО",
+      "name_de": "Stationäre Behandlung: Bronchitis und Asthma ohne KK",
+      "name_tr": "Yatış: CC olmadan bronşit ve astım",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_DRG_E62B",
+      "drg_code": "E62B",
+      "src": "Respiratorne infekcije sa teškim ili umjerenim KK",
+      "price_eur": 2793.65,
+      "name_en": "Hospitalization for Respiratory Infections with Severe or Moderate CC",
+      "slug": "hospitalization-for-respiratory-infections-with-severe-or-moderate-cc",
+      "name_sr": "Respiratorne infekcije sa teškim ili umjerenim KK",
+      "name_sr_cyrl": "Респираторне инфекције са тешким или умјереним КК",
+      "name_ru": "Госпитализация: респираторные инфекции с тяжёлыми или умеренными ОО",
+      "name_de": "Stationäre Behandlung: Atemwegsinfektionen mit schweren oder moderaten KK",
+      "name_tr": "Yatış: Şiddetli veya orta CC ile solunum yolu enfeksiyonları",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_DRG_E65B",
+      "drg_code": "E65B",
+      "src": "Hronična opstruktivna bolest respiratornih puteva bez vrlo teških ili teških KK",
+      "price_eur": 2318.55,
+      "name_en": "Hospitalization for COPD without Very Severe or Severe CC",
+      "slug": "hospitalization-for-copd-without-very-severe-or-severe-cc",
+      "name_sr": "Hronična opstruktivna bolest respiratornih puteva bez vrlo teških ili teških KK",
+      "name_sr_cyrl": "Хронична опструктивна болест респираторних путева без врло тешких или тешких КК",
+      "name_ru": "Госпитализация: ХОБЛ без очень тяжёлых или тяжёлых ОО",
+      "name_de": "Stationäre Behandlung: COPD ohne sehr schwere oder schwere KK",
+      "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan KOAH",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_DRG_E69A",
+      "drg_code": "E69A",
+      "src": "Bronhitis i astma sa KK",
+      "price_eur": 2128.5,
+      "name_en": "Hospitalization for Bronchitis and Asthma with CC",
+      "slug": "hospitalization-for-bronchitis-and-asthma-with-cc",
+      "name_sr": "Bronhitis i astma sa KK",
+      "name_sr_cyrl": "Бронхитис и астма са КК",
+      "name_ru": "Госпитализация: бронхит и астма с ОО",
+      "name_de": "Stationäre Behandlung: Bronchitis und Asthma mit KK",
+      "name_tr": "Yatış: CC ile bronşit ve astım",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_DRG_E71A",
+      "drg_code": "E71A",
+      "src": "Respiratorne neoplazme sa vrlo teškim KK",
+      "price_eur": 4390.05,
+      "name_en": "Hospitalization for Respiratory Neoplasms with Very Severe CC",
+      "slug": "hospitalization-for-respiratory-neoplasms-with-very-severe-cc",
+      "name_sr": "Respiratorne neoplazme sa vrlo teškim KK",
+      "name_sr_cyrl": "Респираторне неоплазме са врло тешким КК",
+      "name_ru": "Госпитализация: новообразования дыхательной системы с очень тяжёлыми ОО",
+      "name_de": "Stationäre Behandlung: Atemwegsneoplasien mit sehr schweren KK",
+      "name_tr": "Yatış: Çok şiddetli CC ile solunum yolu neoplazmları",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_DRG_E71B",
+      "drg_code": "E71B",
+      "src": "Respiratorne neoplazme bez vrlo teških KK",
+      "price_eur": 2223.53,
+      "name_en": "Hospitalization for Respiratory Neoplasms without Very Severe CC",
+      "slug": "hospitalization-for-respiratory-neoplasms-without-very-severe-cc",
+      "name_sr": "Respiratorne neoplazme bez vrlo teških KK",
+      "name_sr_cyrl": "Респираторне неоплазме без врло тешких КК",
+      "name_ru": "Госпитализация: новообразования дыхательной системы без очень тяжёлых ОО",
+      "name_de": "Stationäre Behandlung: Atemwegsneoplasien ohne sehr schwere KK",
+      "name_tr": "Yatış: Çok şiddetli CC olmadan solunum yolu neoplazmları",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_DRG_G63Z",
+      "drg_code": "G63Z",
+      "src": "Nekomplikovani peptički ulkus",
+      "price_eur": 817.2,
+      "name_en": "Hospitalization for Uncomplicated Peptic Ulcer",
+      "slug": "hospitalization-for-uncomplicated-peptic-ulcer",
+      "name_sr": "Nekomplikovani peptički ulkus",
+      "name_sr_cyrl": "Некомпликовани пептички улкус",
+      "name_ru": "Госпитализация: неосложнённая пептическая язва",
+      "name_de": "Stationäre Behandlung: Unkomplizierte Magengeschwür",
+      "name_tr": "Yatış: Komplikasyonsuz peptik ülser",
+      "categories": [
+        6
+      ],
+      "specialties": [
+        13
+      ]
+    },
+    {
+      "code": "MO_DRG_H64B",
+      "drg_code": "H64B",
+      "src": "Poremećaji bilijarnog sistema bez KK",
+      "price_eur": 1064.25,
+      "name_en": "Hospitalization for Biliary System Disorders without CC",
+      "slug": "hospitalization-for-biliary-system-disorders-without-cc",
+      "name_sr": "Poremećaji bilijarnog sistema bez KK",
+      "name_sr_cyrl": "Поремећаји билијарног система без КК",
+      "name_ru": "Госпитализация: расстройства билиарной системы без ОО",
+      "name_de": "Stationäre Behandlung: Erkrankungen des Gallensystems ohne KK",
+      "name_tr": "Yatış: CC olmadan biliyer sistem bozuklukları",
+      "categories": [
+        6
+      ],
+      "specialties": [
+        13
+      ]
+    },
+    {
+      "code": "MO_DRG_J67A",
+      "drg_code": "J67A",
+      "src": "Manji poremećaji na koži",
+      "price_eur": 1729.4,
+      "name_en": "Hospitalization for Minor Skin Disorders",
+      "slug": "hospitalization-for-minor-skin-disorders",
+      "name_sr": "Manji poremećaji na koži",
+      "name_sr_cyrl": "Мањи поремећаји на кожи",
+      "name_ru": "Госпитализация: незначительные кожные заболевания",
+      "name_de": "Stationäre Behandlung: Leichte Hauterkrankungen",
+      "name_tr": "Yatış: Minör cilt bozuklukları",
+      "categories": [
+        24
+      ],
+      "specialties": [
+        7
+      ]
+    },
+    {
+      "code": "MO_DRG_J68B",
+      "drg_code": "J68B",
+      "src": "Veći poremećaji na koži bez vrlo teških ili teških KK",
+      "price_eur": 2356.55,
+      "name_en": "Hospitalization for Major Skin Disorders without Very Severe or Severe CC",
+      "slug": "hospitalization-for-major-skin-disorders-without-very-severe-or-severe-cc",
+      "name_sr": "Veći poremećaji na koži bez vrlo teških ili teških KK",
+      "name_sr_cyrl": "Већи поремећаји на кожи без врло тешких или тешких КК",
+      "name_ru": "Госпитализация: тяжёлые кожные заболевания без очень тяжёлых или тяжёлых ОО",
+      "name_de": "Stationäre Behandlung: Schwere Hauterkrankungen ohne sehr schwere oder schwere KK",
+      "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan büyük cilt bozuklukları",
+      "categories": [
+        24
+      ],
+      "specialties": [
+        7
+      ]
+    },
+    {
+      "code": "MO_DRG_J60B",
+      "drg_code": "J60B",
+      "src": "Ulkus kože bez vrlo teških KK",
+      "price_eur": 3591.85,
+      "name_en": "Hospitalization for Skin Ulcer without Very Severe CC",
+      "slug": "hospitalization-for-skin-ulcer-without-very-severe-cc",
+      "name_sr": "Ulkus kože bez vrlo teških KK",
+      "name_sr_cyrl": "Улкус коже без врло тешких КК",
+      "name_ru": "Госпитализация: язва кожи без очень тяжёлых ОО",
+      "name_de": "Stationäre Behandlung: Hautulkus ohne sehr schwere KK",
+      "name_tr": "Yatış: Çok şiddetli CC olmadan cilt ülseri",
+      "categories": [
+        24,
+        31
+      ],
+      "specialties": [
+        7
+      ]
+    },
+    {
+      "code": "MO_DRG_J68C",
+      "drg_code": "J68C",
+      "src": "Veći poremećaji na koži, istog dana",
+      "price_eur": 437.1,
+      "name_en": "Hospitalization for Major Skin Disorders Same Day",
+      "slug": "hospitalization-for-major-skin-disorders-same-day",
+      "name_sr": "Veći poremećaji na koži, istog dana",
+      "name_sr_cyrl": "Већи поремећаји на кожи, истог дана",
+      "name_ru": "Госпитализация одного дня: тяжёлые кожные заболевания",
+      "name_de": "Tagesklinische Behandlung: Schwere Hauterkrankungen",
+      "name_tr": "Aynı gün yatış: Büyük cilt bozuklukları",
+      "categories": [
+        24
+      ],
+      "specialties": [
+        7
+      ]
+    },
+    {
+      "code": "MO_DRG_J69A",
+      "drg_code": "J69A",
+      "src": "Maligne promjene na koži sa vrlo teškim KK",
+      "price_eur": 5302.25,
+      "name_en": "Hospitalization for Malignant Skin Lesions with Very Severe CC",
+      "slug": "hospitalization-for-malignant-skin-lesions-with-very-severe-cc",
+      "name_sr": "Maligne promjene na koži sa vrlo teškim KK",
+      "name_sr_cyrl": "Малигне промјене на кожи са врло тешким КК",
+      "name_ru": "Госпитализация: злокачественные изменения кожи с очень тяжёлыми ОО",
+      "name_de": "Stationäre Behandlung: Maligne Hautläsionen mit sehr schweren KK",
+      "name_tr": "Yatış: Çok şiddetli CC ile malign cilt lezyonları",
+      "categories": [
+        24
+      ],
+      "specialties": [
+        7
+      ]
+    },
+    {
+      "code": "MO_DRG_K60B",
+      "drg_code": "K60B",
+      "src": "Dijabetes bez vrlo teških ili teških KK",
+      "price_eur": 1786.43,
+      "name_en": "Hospitalization for Diabetes without Very Severe or Severe CC",
+      "slug": "hospitalization-for-diabetes-without-very-severe-or-severe-cc",
+      "name_sr": "Dijabetes bez vrlo teških ili teških KK",
+      "name_sr_cyrl": "Дијабетес без врло тешких или тешких КК",
+      "name_ru": "Госпитализация: сахарный диабет без очень тяжёлых или тяжёлых ОО",
+      "name_de": "Stationäre Behandlung: Diabetes ohne sehr schwere oder schwere KK",
+      "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan diyabet",
+      "categories": [
+        26
+      ],
+      "specialties": [
+        12
+      ]
+    },
+    {
+      "code": "MO_DRG_L63B",
+      "drg_code": "L63B",
+      "src": "Infekcija bubrega i urinarnog sistema bez vrlo teških ili teških KK",
+      "price_eur": 1368.33,
+      "name_en": "Hospitalization for Kidney and Urinary Tract Infection without Very Severe or Severe CC",
+      "slug": "hospitalization-for-kidney-and-urinary-tract-infection-without-very-severe-or-severe-cc",
+      "name_sr": "Infekcija bubrega i urinarnog sistema bez vrlo teških ili teških KK",
+      "name_sr_cyrl": "Инфекција бубрега и уринарног система без врло тешких или тешких КК",
+      "name_ru": "Госпитализация: инфекция почек и мочевыводящих путей без очень тяжёлых или тяжёлых ОО",
+      "name_de": "Stationäre Behandlung: Nieren- und Harnwegsinfekt ohne sehr schwere oder schwere KK",
+      "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan böbrek ve idrar yolu enfeksiyonu",
+      "categories": [
+        22
+      ],
+      "specialties": [
+        9
+      ]
+    },
+    {
+      "code": "MO_DRG_L67B",
+      "drg_code": "L67B",
+      "src": "Ostali poremećaji bubrega i urinarnog sistema bez vrlo teških ili teških KK",
+      "price_eur": 874.2,
+      "name_en": "Hospitalization for Other Kidney and Urinary System Disorders without Very Severe or Severe CC",
+      "slug": "hospitalization-for-other-kidney-and-urinary-system-disorders-without-very-severe-or-sever",
+      "name_sr": "Ostali poremećaji bubrega i urinarnog sistema bez vrlo teških ili teških KK",
+      "name_sr_cyrl": "Остали поремећаји бубрега и уринарног система без врло тешких или тешких КК",
+      "name_ru": "Госпитализация: прочие расстройства почек и мочевыделительной системы без очень тяжёлых или тяжёлых ОО",
+      "name_de": "Stationäre Behandlung: Sonstige Nieren- und Harnsystemerkrankungen ohne sehr schwere oder schwere KK",
+      "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan diğer böbrek ve idrar sistemi bozuklukları",
+      "categories": [
+        22
+      ],
+      "specialties": [
+        9
+      ]
+    },
+    {
+      "code": "MO_DRG_M60A",
+      "drg_code": "M60A",
+      "src": "Maligna bolest muškog reproduktivnog sistema sa vrlo teškim ili teškim KK",
+      "price_eur": 3230.78,
+      "name_en": "Hospitalization for Male Reproductive System Malignancy with Very Severe or Severe CC",
+      "slug": "hospitalization-for-male-reproductive-system-malignancy-with-very-severe-or-severe-cc",
+      "name_sr": "Maligna bolest muškog reproduktivnog sistema sa vrlo teškim ili teškim KK",
+      "name_sr_cyrl": "Малигна болест мушког репродуктивног система са врло тешким или тешким КК",
+      "name_ru": "Госпитализация: злокачественное заболевание мужской репродуктивной системы с очень тяжёлыми или тяжёлыми ОО",
+      "name_de": "Stationäre Behandlung: Maligne Erkrankung des männlichen Fortpflanzungssystems mit sehr schweren oder schweren KK",
+      "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile erkek üreme sistemi malignitesi",
+      "categories": [
+        22
+      ],
+      "specialties": [
+        9
+      ]
+    },
+    {
+      "code": "MO_DRG_N62Z",
+      "drg_code": "N62Z",
+      "src": "Menstrualni i drugi poremećaji ženskog reproduktivnog sistema",
+      "price_eur": 627.15,
+      "name_en": "Hospitalization for Menstrual and Other Female Reproductive Disorders",
+      "slug": "hospitalization-for-menstrual-and-other-female-reproductive-disorders",
+      "name_sr": "Menstrualni i drugi poremećaji ženskog reproduktivnog sistema",
+      "name_sr_cyrl": "Менструални и други поремећаји женског репродуктивног система",
+      "name_ru": "Госпитализация: менструальные и другие расстройства женской репродуктивной системы",
+      "name_de": "Stationäre Behandlung: Menstruelle und sonstige Erkrankungen des weiblichen Fortpflanzungssystems",
+      "name_tr": "Yatış: Adet ve diğer kadın üreme sistemi bozuklukları",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_DRG_N61Z",
+      "drg_code": "N61Z",
+      "src": "Infekcije ženskog reproduktivnog sistema",
+      "price_eur": 1159.28,
+      "name_en": "Hospitalization for Female Reproductive System Infections",
+      "slug": "hospitalization-for-female-reproductive-system-infections",
+      "name_sr": "Infekcije ženskog reproduktivnog sistema",
+      "name_sr_cyrl": "Инфекције женског репродуктивног система",
+      "name_ru": "Госпитализация: инфекции женской репродуктивной системы",
+      "name_de": "Stationäre Behandlung: Infektionen des weiblichen Fortpflanzungssystems",
+      "name_tr": "Yatış: Kadın üreme sistemi enfeksiyonları",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_DRG_T62B",
+      "drg_code": "T62B",
+      "src": "Febrilno stanje nejasnog porijekla bez KK",
+      "price_eur": 1083.25,
+      "name_en": "Hospitalization for Fever of Unknown Origin without CC",
+      "slug": "hospitalization-for-fever-of-unknown-origin-without-cc",
+      "name_sr": "Febrilno stanje nejasnog porijekla bez KK",
+      "name_sr_cyrl": "Фебрилно стање нејасног поријекла без КК",
+      "name_ru": "Госпитализация: лихорадка неясного происхождения без ОО",
+      "name_de": "Stationäre Behandlung: Fieber unklarer Genese ohne KK",
+      "name_tr": "Yatış: CC olmadan nedeni bilinmeyen ateş",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    }
+  ]
+}

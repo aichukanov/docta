@@ -5,12 +5,12 @@
   "source_pdf": "02.10.2025.pdf (23 pages)",
   "ocr_method": "pypdfium2 + multimodal Read",
   "items_total": 282,
-  "notes": "Same Cetinje code system as HN DZ. Reused HN DZ translations; substituted Mojkovac prices (regular Cijena column, not the X3 'non-insured' multiplier). All codes prefixed with MO_ in clinic_medical_services.code so the same medical_service can be referenced cleanly.",
+  "notes": "Same Cetinje code system as HN DZ. Reused HN DZ translations; used the X3 (non-insured) column — Mojkovac base prices multiplied by 3, since the regular column is for insured patients who pay via state fund. All codes prefixed with MO_ in clinic_medical_services.code so the same medical_service can be referenced cleanly.",
   "items": [
     {
       "code": "MO_A01001",
       "src": "Preventivni pregled u dobi do 1. godine života",
-      "price_eur": 17.92,
+      "price_eur": 53.76,
       "name_en": "Preventive Examination Up to Age 1",
       "slug": "preventive-examination-up-to-age-1",
       "name_sr": "Preventivni pregled u dobi do 1. godine života",
@@ -28,7 +28,7 @@
     {
       "code": "MO_A01002",
       "src": "Preventivni pregled djece u 2. godini života",
-      "price_eur": 17.92,
+      "price_eur": 53.76,
       "name_en": "Preventive Examination at Age 2",
       "slug": "preventive-examination-at-age-2",
       "name_sr": "Preventivni pregled djece u 2. godini života",
@@ -46,7 +46,7 @@
     {
       "code": "MO_A01003",
       "src": "Preventivni pregled djece u 4. godini života",
-      "price_eur": 17.92,
+      "price_eur": 53.76,
       "name_en": "Preventive Examination at Age 4",
       "slug": "preventive-examination-at-age-4",
       "name_sr": "Preventivni pregled djece u 4. godini života",
@@ -64,7 +64,7 @@
     {
       "code": "MO_A01004",
       "src": "Preventivni pregled pred polazak u osnovnu školu",
-      "price_eur": 21.5,
+      "price_eur": 64.5,
       "name_en": "Preventive Examination Before Primary School",
       "slug": "preventive-examination-before-primary-school",
       "name_sr": "Preventivni pregled pred polazak u osnovnu školu",
@@ -82,7 +82,7 @@
     {
       "code": "MO_A01005",
       "src": "Preventivni pregled u osnovnoj školi (2, 4, 6 i poslednji razred)",
-      "price_eur": 16.49,
+      "price_eur": 49.47,
       "name_en": "Primary School Preventive Examination",
       "slug": "primary-school-preventive-examination",
       "name_sr": "Preventivni pregled u osnovnoj školi (2, 4, 6 i poslednji razred)",
@@ -100,7 +100,7 @@
     {
       "code": "MO_A01006",
       "src": "Preventivni sistematski pregled učenika u prvom i trećem razredu srednje škole",
-      "price_eur": 16.49,
+      "price_eur": 49.47,
       "name_en": "Secondary School Preventive Systematic Examination",
       "slug": "secondary-school-preventive-systematic-examination",
       "name_sr": "Preventivni sistematski pregled učenika u prvom i trećem razredu srednje škole",
@@ -118,7 +118,7 @@
     {
       "code": "MO_A01007",
       "src": "Preventivni sistematski pregled studenata na prvoj i trećoj godini studija",
-      "price_eur": 16.49,
+      "price_eur": 49.47,
       "name_en": "Student Systematic Preventive Examination",
       "slug": "student-systematic-preventive-examination",
       "name_sr": "Preventivni sistematski pregled studenata na prvoj i trećoj godini studija",
@@ -136,7 +136,7 @@
     {
       "code": "MO_A01008",
       "src": "Preventivni sistematski pregled osoba starijih od 65 godina",
-      "price_eur": 16.49,
+      "price_eur": 49.47,
       "name_en": "Systematic Preventive Examination for Patients Over 65",
       "slug": "systematic-preventive-examination-for-patients-over-65",
       "name_sr": "Preventivni sistematski pregled osoba starijih od 65 godina",
@@ -154,7 +154,7 @@
     {
       "code": "MO_A01009",
       "src": "Kontrolni pregled nakon preventivnog pregleda",
-      "price_eur": 10.75,
+      "price_eur": 32.25,
       "name_en": "Follow-up Examination After Preventive Examination",
       "slug": "follow-up-examination-after-preventive-examination",
       "name_sr": "Kontrolni pregled nakon preventivnog pregleda",
@@ -172,7 +172,7 @@
     {
       "code": "MO_A01010",
       "src": "Preventivni pregled trudnice po kalendaru",
-      "price_eur": 16.49,
+      "price_eur": 49.47,
       "name_en": "Pregnancy Preventive Examination by Calendar",
       "slug": "pregnancy-preventive-examination-by-calendar",
       "name_sr": "Preventivni pregled trudnice po kalendaru",
@@ -190,7 +190,7 @@
     {
       "code": "MO_A01011",
       "src": "Vakcinacija i revakcinacija djece i omladine po kalendaru vakcinacije",
-      "price_eur": 5.02,
+      "price_eur": 15.06,
       "name_en": "Pediatric Vaccination and Revaccination by Schedule",
       "slug": "pediatric-vaccination-and-revaccination-by-schedule",
       "name_sr": "Vakcinacija i revakcinacija djece i omladine po kalendaru vakcinacije",
@@ -209,7 +209,7 @@
     {
       "code": "MO_A01012",
       "src": "Vakcinacija starijih od 65 godina protiv gripa",
-      "price_eur": 5.02,
+      "price_eur": 15.06,
       "name_en": "Influenza Vaccination for Patients Over 65",
       "slug": "influenza-vaccination-for-patients-over-65",
       "name_sr": "Vakcinacija starijih od 65 godina protiv gripa",
@@ -227,7 +227,7 @@
     {
       "code": "MO_A01013",
       "src": "Imunoprofilaksa, imunoprofilaksa sa serumom i hemoprofilaksa za sprečavanje zaraznih bolesti",
-      "price_eur": 5.02,
+      "price_eur": 15.06,
       "name_en": "Immunoprophylaxis and Chemoprophylaxis for Infectious Disease Prevention",
       "slug": "immunoprophylaxis-and-chemoprophylaxis-for-infectious-disease-prevention",
       "name_sr": "Imunoprofilaksa, imunoprofilaksa sa serumom i hemoprofilaksa za sprečavanje zaraznih bolesti",
@@ -245,7 +245,7 @@
     {
       "code": "MO_A01014",
       "src": "Preventivni pregled muškaraca nakon 40. godine i žena nakon 45. godine za rano otkrivanje povišenog krvnog pritiska, holesterola, triglicerida i rizika kardiovaskularnih bolesti",
-      "price_eur": 10.75,
+      "price_eur": 32.25,
       "name_en": "Cardiovascular Risk Preventive Examination Adults Over 40",
       "slug": "cardiovascular-risk-preventive-examination-adults-over-40",
       "name_sr": "Preventivni pregled muškaraca nakon 40. godine i žena nakon 45. godine za rano otkrivanje povišenog krvnog pritiska, holesterola, triglicerida i rizika kardiovaskularnih bolesti",
@@ -263,7 +263,7 @@
     {
       "code": "MO_A01015",
       "src": "Pregled za rano otkrivanje raka dojke",
-      "price_eur": 10.75,
+      "price_eur": 32.25,
       "name_en": "Breast Cancer Early Detection Examination",
       "slug": "breast-cancer-early-detection-examination",
       "name_sr": "Pregled za rano otkrivanje raka dojke",
@@ -277,7 +277,7 @@
     {
       "code": "MO_A02001",
       "src": "Prvi kurativni pregled",
-      "price_eur": 10.75,
+      "price_eur": 32.25,
       "name_en": "First Curative Examination",
       "slug": "first-curative-examination",
       "name_sr": "Prvi kurativni pregled",
@@ -295,7 +295,7 @@
     {
       "code": "MO_A02002",
       "src": "Ponovni kurativni pregled (kontrolni)",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Follow-up Curative Examination",
       "slug": "follow-up-curative-examination",
       "name_sr": "Ponovni kurativni pregled (kontrolni)",
@@ -313,7 +313,7 @@
     {
       "code": "MO_A02003",
       "src": "Pregled pacijenta koji se ambulantno sprovodi za operacije u opštoj anesteziji",
-      "price_eur": 17.92,
+      "price_eur": 53.76,
       "name_en": "Pre-Operative Outpatient Examination General Anesthesia",
       "slug": "pre-operative-outpatient-examination-general-anesthesia",
       "name_sr": "Pregled pacijenta koji se ambulantno sprovodi za operacije u opštoj anesteziji",
@@ -331,7 +331,7 @@
     {
       "code": "MO_A02004",
       "src": "Kratka posjeta doktoru bez pregleda",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Brief Doctor Visit Without Examination",
       "slug": "brief-doctor-visit-without-examination",
       "name_sr": "Kratka posjeta doktoru bez pregleda",
@@ -349,7 +349,7 @@
     {
       "code": "MO_A02005",
       "src": "Prvi kurativni pregled u kući osiguranika do 5 km od ambulante",
-      "price_eur": 25.09,
+      "price_eur": 75.27,
       "name_en": "Home Visit First Curative Examination Up to 5 km",
       "slug": "home-visit-first-curative-examination-up-to-5-km",
       "name_sr": "Prvi kurativni pregled u kući osiguranika do 5 km od ambulante",
@@ -367,7 +367,7 @@
     {
       "code": "MO_A02006",
       "src": "Prvi kurativni pregled u kući osiguranika 5-15 km od ambulante",
-      "price_eur": 32.26,
+      "price_eur": 96.78,
       "name_en": "Home Visit First Curative Examination 5 to 15 km",
       "slug": "home-visit-first-curative-examination-5-to-15-km",
       "name_sr": "Prvi kurativni pregled u kući osiguranika 5-15 km od ambulante",
@@ -385,7 +385,7 @@
     {
       "code": "MO_A02007",
       "src": "Prvi kurativni pregled u kući osiguranika preko 15 km od ambulante",
-      "price_eur": 39.42,
+      "price_eur": 118.26,
       "name_en": "Home Visit First Curative Examination Over 15 km",
       "slug": "home-visit-first-curative-examination-over-15-km",
       "name_sr": "Prvi kurativni pregled u kući osiguranika preko 15 km od ambulante",
@@ -403,7 +403,7 @@
     {
       "code": "MO_A02008",
       "src": "Kratka posjeta doktoru u kući osiguranika do 5 km od ambulante",
-      "price_eur": 21.5,
+      "price_eur": 64.5,
       "name_en": "Home Visit Brief Doctor Visit Up to 5 km",
       "slug": "home-visit-brief-doctor-visit-up-to-5-km",
       "name_sr": "Kratka posjeta doktoru u kući osiguranika do 5 km od ambulante",
@@ -421,7 +421,7 @@
     {
       "code": "MO_A02009",
       "src": "Ponovni kurativni pregled u kući osiguranika 5-15 km od ambulante",
-      "price_eur": 28.67,
+      "price_eur": 86.01,
       "name_en": "Home Visit Follow-up Curative Examination 5 to 15 km",
       "slug": "home-visit-follow-up-curative-examination-5-to-15-km",
       "name_sr": "Ponovni kurativni pregled u kući osiguranika 5-15 km od ambulante",
@@ -439,7 +439,7 @@
     {
       "code": "MO_A02010",
       "src": "Ponovni kurativni pregled u kući osiguranika preko 15 km od ambulante",
-      "price_eur": 35.84,
+      "price_eur": 107.52,
       "name_en": "Home Visit Follow-up Curative Examination Over 15 km",
       "slug": "home-visit-follow-up-curative-examination-over-15-km",
       "name_sr": "Ponovni kurativni pregled u kući osiguranika preko 15 km od ambulante",
@@ -457,7 +457,7 @@
     {
       "code": "MO_A02011",
       "src": "Posjeta doktoru radi obrade za IPK",
-      "price_eur": 17.02,
+      "price_eur": 51.06,
       "name_en": "Doctor Visit for IPK Workup",
       "slug": "doctor-visit-for-ipk-workup",
       "name_sr": "Posjeta doktoru radi obrade za IPK",
@@ -475,7 +475,7 @@
     {
       "code": "MO_HN_X01001",
       "src": "Odstranjivanje stranog tijela iz uha",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Foreign Body Removal from Ear",
       "slug": "foreign-body-removal-from-ear",
       "name_sr": "Odstranjivanje stranog tijela iz uha",
@@ -493,7 +493,7 @@
     {
       "code": "MO_HN_X01002",
       "src": "Odstranjivanje stranog tijela iz grla",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Foreign Body Removal from Throat",
       "slug": "foreign-body-removal-from-throat",
       "name_sr": "Odstranjivanje stranog tijela iz grla",
@@ -511,7 +511,7 @@
     {
       "code": "MO_HN_X01003",
       "src": "Odstranjivanje stranog tijela iz nosa",
-      "price_eur": 3.58,
+      "price_eur": 10.74,
       "name_en": "Foreign Body Removal from Nose",
       "slug": "foreign-body-removal-from-nose",
       "name_sr": "Odstranjivanje stranog tijela iz nosa",
@@ -529,7 +529,7 @@
     {
       "code": "MO_HN_X01004",
       "src": "Davanje lokalne anestezije",
-      "price_eur": 3.58,
+      "price_eur": 10.74,
       "name_en": "Local Anesthesia Administration",
       "slug": "local-anesthesia-administration",
       "name_sr": "Davanje lokalne anestezije",
@@ -547,7 +547,7 @@
     {
       "code": "MO_HN_X01005",
       "src": "Ispiranje cerumena iz uha",
-      "price_eur": 3.58,
+      "price_eur": 10.74,
       "name_en": "Ear Cerumen Irrigation",
       "slug": "ear-cerumen-irrigation",
       "name_sr": "Ispiranje cerumena iz uha",
@@ -565,7 +565,7 @@
     {
       "code": "MO_HN_X01006",
       "src": "Davanje klistira",
-      "price_eur": 1.79,
+      "price_eur": 5.37,
       "name_en": "Enema Administration",
       "slug": "enema-administration",
       "name_sr": "Davanje klistira",
@@ -581,7 +581,7 @@
     {
       "code": "MO_HN_X01007",
       "src": "Uzimanje brisova za rutinsku analizu",
-      "price_eur": 3.58,
+      "price_eur": 10.74,
       "name_en": "Routine Swab Sample Collection",
       "slug": "routine-swab-sample-collection",
       "name_sr": "Uzimanje brisova za rutinsku analizu",
@@ -597,7 +597,7 @@
     {
       "code": "MO_HN_X01010",
       "src": "Davanje inhalacije",
-      "price_eur": 1.79,
+      "price_eur": 5.37,
       "name_en": "Inhalation Administration",
       "slug": "inhalation-administration",
       "name_sr": "Davanje inhalacije",
@@ -613,7 +613,7 @@
     {
       "code": "MO_HN_X01011",
       "src": "Punkcija prednjih hematoma",
-      "price_eur": 1.58,
+      "price_eur": 4.74,
       "name_en": "Anterior Hematoma Puncture",
       "slug": "anterior-hematoma-puncture",
       "name_sr": "Punkcija prednjih hematoma",
@@ -627,7 +627,7 @@
     {
       "code": "MO_HN_X01012",
       "src": "Toaleta gastrostome",
-      "price_eur": 1.79,
+      "price_eur": 5.37,
       "name_en": "Gastrostomy Site Care",
       "slug": "gastrostomy-site-care",
       "name_sr": "Toaleta gastrostome",
@@ -643,7 +643,7 @@
     {
       "code": "MO_HN_X01013",
       "src": "Toaleta vještačkog anusa",
-      "price_eur": 1.79,
+      "price_eur": 5.37,
       "name_en": "Colostomy Site Care",
       "slug": "colostomy-site-care",
       "name_sr": "Toaleta vještačkog anusa",
@@ -659,7 +659,7 @@
     {
       "code": "MO_HN_X01014",
       "src": "Obrađivanje rane bez šivanja",
-      "price_eur": 3.58,
+      "price_eur": 10.74,
       "name_en": "Wound Care Without Suturing",
       "slug": "wound-care-without-suturing",
       "name_sr": "Obrađivanje rane bez šivanja",
@@ -675,7 +675,7 @@
     {
       "code": "MO_HN_X01015",
       "src": "Skidanje hirurških konaca",
-      "price_eur": 1.58,
+      "price_eur": 4.74,
       "name_en": "Surgical Suture Removal",
       "slug": "surgical-suture-removal",
       "name_sr": "Skidanje hirurških konaca",
@@ -691,7 +691,7 @@
     {
       "code": "MO_HN_X01018",
       "src": "Fiksacioni zavoj",
-      "price_eur": 1.58,
+      "price_eur": 4.74,
       "name_en": "Fixation Bandage",
       "slug": "fixation-bandage",
       "name_sr": "Fiksacioni zavoj",
@@ -709,7 +709,7 @@
     {
       "code": "MO_HN_X01019",
       "src": "Imobilizacija",
-      "price_eur": 1.58,
+      "price_eur": 4.74,
       "name_en": "Immobilization",
       "slug": "immobilization",
       "name_sr": "Imobilizacija",
@@ -727,7 +727,7 @@
     {
       "code": "MO_HN_X01020",
       "src": "Fiksacija",
-      "price_eur": 0.9,
+      "price_eur": 2.7,
       "name_en": "Fixation",
       "slug": "fixation",
       "name_sr": "Fiksacija",
@@ -745,7 +745,7 @@
     {
       "code": "MO_HN_X01021",
       "src": "Lokalno apliciranje lijeka subkutano i intramuskularno",
-      "price_eur": 0.9,
+      "price_eur": 2.7,
       "name_en": "Local Drug Application Subcutaneous and Intramuscular",
       "slug": "local-drug-application-subcutaneous-and-intramuscular",
       "name_sr": "Lokalno apliciranje lijeka subkutano i intramuskularno",
@@ -761,7 +761,7 @@
     {
       "code": "MO_HN_X02002",
       "src": "Obrada opekotina",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Burn Wound Care",
       "slug": "burn-wound-care",
       "name_sr": "Obrada opekotina",
@@ -777,7 +777,7 @@
     {
       "code": "MO_HN_X02003",
       "src": "Incizija apscesa",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Abscess Incision",
       "slug": "abscess-incision",
       "name_sr": "Incizija apscesa",
@@ -793,7 +793,7 @@
     {
       "code": "MO_HN_X02004",
       "src": "Odstranjivanje stranog tijela iz oka (rožnjača)",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Eye Foreign Body Removal Cornea",
       "slug": "eye-foreign-body-removal-cornea",
       "name_sr": "Odstranjivanje stranog tijela iz oka (rožnjača)",
@@ -811,7 +811,7 @@
     {
       "code": "MO_HN_X02005",
       "src": "Prednja tamponada nosa",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Anterior Nasal Packing",
       "slug": "anterior-nasal-packing",
       "name_sr": "Prednja tamponada nosa",
@@ -829,7 +829,7 @@
     {
       "code": "MO_HN_X02006",
       "src": "Kateterizacija mokraćne bešike",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Bladder Catheterization",
       "slug": "bladder-catheterization",
       "name_sr": "Kateterizacija mokraćne bešike",
@@ -847,7 +847,7 @@
     {
       "code": "MO_HN_X02007",
       "src": "Davanje klizme (srednja)",
-      "price_eur": 2.69,
+      "price_eur": 8.07,
       "name_en": "Enema Administration Medium",
       "slug": "enema-administration-medium",
       "name_sr": "Davanje klizme (srednja)",
@@ -863,7 +863,7 @@
     {
       "code": "MO_HN_X02008",
       "src": "Sondiranje i ispiranje želuca",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Gastric Sounding and Lavage",
       "slug": "gastric-sounding-and-lavage",
       "name_sr": "Sondiranje i ispiranje želuca",
@@ -879,7 +879,7 @@
     {
       "code": "MO_HN_X02009",
       "src": "Namještanje trajnog katetera",
-      "price_eur": 1.79,
+      "price_eur": 5.37,
       "name_en": "Indwelling Catheter Placement",
       "slug": "indwelling-catheter-placement",
       "name_sr": "Namještanje trajnog katetera",
@@ -897,7 +897,7 @@
     {
       "code": "MO_HN_X02010",
       "src": "Postavljanje kanile u venu",
-      "price_eur": 4.48,
+      "price_eur": 13.44,
       "name_en": "Intravenous Cannula Placement",
       "slug": "intravenous-cannula-placement",
       "name_sr": "Postavljanje kanile u venu",
@@ -913,7 +913,7 @@
     {
       "code": "MO_HN_X02011",
       "src": "Snimanje i očitavanje EKG",
-      "price_eur": 4.48,
+      "price_eur": 13.44,
       "name_en": "ECG Recording and Interpretation",
       "slug": "ecg-recording-and-interpretation",
       "name_sr": "Snimanje i očitavanje EKG",
@@ -931,7 +931,7 @@
     {
       "code": "MO_HN_X02012",
       "src": "Snimanje i čitanje spirometrije",
-      "price_eur": 4.48,
+      "price_eur": 13.44,
       "name_en": "Spirometry Recording and Reading",
       "slug": "spirometry-recording-and-reading",
       "name_sr": "Snimanje i čitanje spirometrije",
@@ -949,7 +949,7 @@
     {
       "code": "MO_HN_X02014",
       "src": "Repozicija paraphimose",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Paraphimosis Reduction",
       "slug": "paraphimosis-reduction",
       "name_sr": "Repozicija paraphimose",
@@ -967,7 +967,7 @@
     {
       "code": "MO_HN_X02015",
       "src": "Repozicija uklještene kile",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Reduction of Incarcerated Hernia",
       "slug": "reduction-of-incarcerated-hernia",
       "name_sr": "Repozicija uklještene kile",
@@ -981,7 +981,7 @@
     {
       "code": "MO_HN_X02021",
       "src": "Ekstirpacija ateroma, ciste ili manjeg benignog tumora",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Atheroma Cyst or Benign Tumor Excision",
       "slug": "atheroma-cyst-or-benign-tumor-excision",
       "name_sr": "Ekstirpacija ateroma, ciste ili manjeg benignog tumora",
@@ -997,7 +997,7 @@
     {
       "code": "MO_HN_X03001",
       "src": "Obrada rane sa šivanjem uz lokalnu anesteziju",
-      "price_eur": 10.75,
+      "price_eur": 32.25,
       "name_en": "Wound Suturing Under Local Anesthesia",
       "slug": "wound-suturing-under-local-anesthesia",
       "name_sr": "Obrada rane sa šivanjem uz lokalnu anesteziju",
@@ -1013,7 +1013,7 @@
     {
       "code": "MO_HN_X03002",
       "src": "Defibrilacija",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Defibrillation",
       "slug": "defibrillation",
       "name_sr": "Defibrilacija",
@@ -1031,7 +1031,7 @@
     {
       "code": "MO_HN_X03003",
       "src": "Intubacija",
-      "price_eur": 17.02,
+      "price_eur": 51.06,
       "name_en": "Endotracheal Intubation",
       "slug": "endotracheal-intubation",
       "name_sr": "Intubacija",
@@ -1047,7 +1047,7 @@
     {
       "code": "MO_HN_X03004",
       "src": "Ispiranje želuca",
-      "price_eur": 10.75,
+      "price_eur": 32.25,
       "name_en": "Gastric Lavage",
       "slug": "gastric-lavage",
       "name_sr": "Ispiranje želuca",
@@ -1063,7 +1063,7 @@
     {
       "code": "MO_C01001",
       "src": "Preventivni pregled u toku trudnoće (I trimestar)",
-      "price_eur": 17.92,
+      "price_eur": 53.76,
       "name_en": "Pregnancy Preventive Examination First Trimester",
       "slug": "pregnancy-preventive-examination-first-trimester",
       "name_sr": "Preventivni pregled u toku trudnoće (I trimestar)",
@@ -1081,7 +1081,7 @@
     {
       "code": "MO_C01002",
       "src": "Preventivni odlazak ginekologu kod žena u četvrtoj godini ili bez trudnoće sa 35+",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Gynecological Preventive Visit",
       "slug": "gynecological-preventive-visit",
       "name_sr": "Preventivni odlazak ginekologu kod žena u četvrtoj godini ili bez trudnoće sa 35+",
@@ -1099,7 +1099,7 @@
     {
       "code": "MO_C01003",
       "src": "Ultrazvučni pregled u toku trudnoće",
-      "price_eur": 14.34,
+      "price_eur": 43.02,
       "name_en": "Pregnancy Ultrasound Examination",
       "slug": "pregnancy-ultrasound-examination",
       "name_sr": "Ultrazvučni pregled u toku trudnoće",
@@ -1117,7 +1117,7 @@
     {
       "code": "MO_C01004",
       "src": "Pregled i savjetovanje 6 nedjelja nakon porođaja",
-      "price_eur": 10.75,
+      "price_eur": 32.25,
       "name_en": "Postpartum Examination at 6 Weeks",
       "slug": "postpartum-examination-at-6-weeks",
       "name_sr": "Pregled i savjetovanje 6 nedjelja nakon porođaja",
@@ -1135,7 +1135,7 @@
     {
       "code": "MO_C01005",
       "src": "Pregled i savjetovanje nakon spontanog ili induciranog abortusa",
-      "price_eur": 10.75,
+      "price_eur": 32.25,
       "name_en": "Post-Abortion Examination and Counseling",
       "slug": "post-abortion-examination-and-counseling",
       "name_sr": "Pregled i savjetovanje nakon spontanog ili induciranog abortusa",
@@ -1153,7 +1153,7 @@
     {
       "code": "MO_C01006",
       "src": "Pregled i savjetovanje nakon ekstrauterine gravidarne",
-      "price_eur": 10.75,
+      "price_eur": 32.25,
       "name_en": "Post-Ectopic Pregnancy Examination and Counseling",
       "slug": "post-ectopic-pregnancy-examination-and-counseling",
       "name_sr": "Pregled i savjetovanje nakon ekstrauterine gravidarne",
@@ -1171,7 +1171,7 @@
     {
       "code": "MO_C01007",
       "src": "Preventivni pregled žena u reproduktivnom dobu PAP test",
-      "price_eur": 14.34,
+      "price_eur": 43.02,
       "name_en": "Reproductive Age Women Preventive Examination with PAP Test",
       "slug": "reproductive-age-women-preventive-examination-with-pap-test",
       "name_sr": "Preventivni pregled žena u reproduktivnom dobu PAP test",
@@ -1189,7 +1189,7 @@
     {
       "code": "MO_C02001",
       "src": "Prvi kurativni pregled žena specijalistički",
-      "price_eur": 10.75,
+      "price_eur": 32.25,
       "name_en": "First Specialist Curative Gynecological Examination",
       "slug": "first-specialist-curative-gynecological-examination",
       "name_sr": "Prvi kurativni pregled žena specijalistički",
@@ -1207,7 +1207,7 @@
     {
       "code": "MO_C02002",
       "src": "Ponovni kurativni pregled žena kontrolni specijalistički",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Follow-up Specialist Curative Gynecological Examination",
       "slug": "follow-up-specialist-curative-gynecological-examination",
       "name_sr": "Ponovni kurativni pregled žena kontrolni specijalistički",
@@ -1225,7 +1225,7 @@
     {
       "code": "MO_C02003",
       "src": "Kratka posjeta ginekologu bez ponovnog pregleda",
-      "price_eur": 3.58,
+      "price_eur": 10.74,
       "name_en": "Brief Gynecologist Visit Without Examination",
       "slug": "brief-gynecologist-visit-without-examination",
       "name_sr": "Kratka posjeta ginekologu bez ponovnog pregleda",
@@ -1243,7 +1243,7 @@
     {
       "code": "MO_HN_GX01017",
       "src": "Kontrola maternalnog kontraceptivnog sredstva",
-      "price_eur": 1.79,
+      "price_eur": 5.37,
       "name_en": "Contraceptive Device Check",
       "slug": "contraceptive-device-check",
       "name_sr": "Kontrola maternalnog kontraceptivnog sredstva",
@@ -1261,7 +1261,7 @@
     {
       "code": "MO_HN_GX01023",
       "src": "Lokalno apliciranje lijeka vaginalete",
-      "price_eur": 3.58,
+      "price_eur": 10.74,
       "name_en": "Vaginal Suppository Application",
       "slug": "vaginal-suppository-application",
       "name_sr": "Lokalno apliciranje lijeka vaginalete",
@@ -1279,7 +1279,7 @@
     {
       "code": "MO_HN_GX01024",
       "src": "Lokalno apliciranje lijeka cervikalno",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Cervical Drug Application",
       "slug": "cervical-drug-application",
       "name_sr": "Lokalno apliciranje lijeka cervikalno",
@@ -1297,7 +1297,7 @@
     {
       "code": "MO_HN_GX01025",
       "src": "Postavljanje IUD",
-      "price_eur": 3.58,
+      "price_eur": 10.74,
       "name_en": "Intrauterine Device Insertion",
       "slug": "intrauterine-device-insertion",
       "name_sr": "Postavljanje IUD",
@@ -1315,7 +1315,7 @@
     {
       "code": "MO_HN_GX01026",
       "src": "Skidanje IUD",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Intrauterine Device Removal",
       "slug": "intrauterine-device-removal",
       "name_sr": "Skidanje IUD",
@@ -1333,7 +1333,7 @@
     {
       "code": "MO_HN_GX02016",
       "src": "Kolposkopski pregled",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Colposcopy Examination",
       "slug": "colposcopy-examination",
       "name_sr": "Kolposkopski pregled",
@@ -1351,7 +1351,7 @@
     {
       "code": "MO_HN_GX02017",
       "src": "Incizija i drenaža Bartolinijeve žljezde i vulve",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Bartholin Gland and Vulva Incision and Drainage",
       "slug": "bartholin-gland-and-vulva-incision-and-drainage",
       "name_sr": "Incizija i drenaža Bartolinijeve žljezde i vulve",
@@ -1369,7 +1369,7 @@
     {
       "code": "MO_HN_GX02018",
       "src": "Abrazija kondiloma vulve i vagine",
-      "price_eur": 7.17,
+      "price_eur": 21.51,
       "name_en": "Vulva and Vagina Condyloma Removal",
       "slug": "vulva-and-vagina-condyloma-removal",
       "name_sr": "Abrazija kondiloma vulve i vagine",
@@ -1387,7 +1387,7 @@
     {
       "code": "MO_HN_GX03005",
       "src": "Uzimanje biopsije vulve sa slanjem na analizu",
-      "price_eur": 8.6,
+      "price_eur": 25.8,
       "name_en": "Vulva Biopsy with Lab Analysis",
       "slug": "vulva-biopsy-with-lab-analysis",
       "name_sr": "Uzimanje biopsije vulve sa slanjem na analizu",
@@ -1406,7 +1406,7 @@
     {
       "code": "MO_HN_GX03006",
       "src": "Uzimanje biopsije cerviksa sa slanjem na analizu",
-      "price_eur": 8.6,
+      "price_eur": 25.8,
       "name_en": "Cervical Biopsy with Lab Analysis",
       "slug": "cervical-biopsy-with-lab-analysis",
       "name_sr": "Uzimanje biopsije cerviksa sa slanjem na analizu",
@@ -1425,7 +1425,7 @@
     {
       "code": "MO_HN_GX03007",
       "src": "Uzimanje biopsije endometrijuma sa slanjem na analizu",
-      "price_eur": 8.6,
+      "price_eur": 25.8,
       "name_en": "Endometrial Biopsy with Lab Analysis",
       "slug": "endometrial-biopsy-with-lab-analysis",
       "name_sr": "Uzimanje biopsije endometrijuma sa slanjem na analizu",
@@ -1444,7 +1444,7 @@
     {
       "code": "MO_HN_GX03008",
       "src": "Polipektomija (gribica materice ili kavum uteri)",
-      "price_eur": 8.6,
+      "price_eur": 25.8,
       "name_en": "Cervical or Uterine Polypectomy",
       "slug": "cervical-or-uterine-polypectomy",
       "name_sr": "Polipektomija (gribica materice ili kavum uteri)",
@@ -1462,7 +1462,7 @@
     {
       "code": "MO_HN_GX03009",
       "src": "Amnioskopija",
-      "price_eur": 8.6,
+      "price_eur": 25.8,
       "name_en": "Amnioscopy",
       "slug": "amnioscopy",
       "name_sr": "Amnioskopija",
@@ -1480,7 +1480,7 @@
     {
       "code": "MO_HN_GX03010",
       "src": "Ultrazvučni pregled dojke",
-      "price_eur": 14.34,
+      "price_eur": 43.02,
       "name_en": "Breast Ultrasound Examination",
       "slug": "breast-ultrasound-examination",
       "name_sr": "Ultrazvučni pregled dojke",
@@ -1496,7 +1496,7 @@
     {
       "code": "MO_HN_GX03013",
       "src": "CTG kardiotokografija",
-      "price_eur": 8.6,
+      "price_eur": 25.8,
       "name_en": "Cardiotocography CTG",
       "slug": "cardiotocography-ctg",
       "name_sr": "CTG kardiotokografija",
@@ -1514,7 +1514,7 @@
     {
       "code": "MO_G01001",
       "src": "Tuberkulinsko testiranje",
-      "price_eur": 3.78,
+      "price_eur": 11.34,
       "name_en": "Tuberculin Skin Test",
       "slug": "tuberculin-skin-test",
       "name_sr": "Tuberkulinsko testiranje",
@@ -1532,7 +1532,7 @@
     {
       "code": "MO_G01002",
       "src": "Pregled odraslih po registrovanim TBC",
-      "price_eur": 15.11,
+      "price_eur": 45.33,
       "name_en": "Adult Examination for Registered TB",
       "slug": "adult-examination-for-registered-tb",
       "name_sr": "Pregled odraslih po registrovanim TBC",
@@ -1550,7 +1550,7 @@
     {
       "code": "MO_G01003",
       "src": "Pregled osoba u kontaktu sa TBC",
-      "price_eur": 15.11,
+      "price_eur": 45.33,
       "name_en": "TB Contact Tracing Examination",
       "slug": "tb-contact-tracing-examination",
       "name_sr": "Pregled osoba u kontaktu sa TBC",
@@ -1568,7 +1568,7 @@
     {
       "code": "MO_G01004",
       "src": "Pregled bolesnika sa hemoprofilaksom",
-      "price_eur": 15.11,
+      "price_eur": 45.33,
       "name_en": "Patient Examination with Chemoprophylaxis",
       "slug": "patient-examination-with-chemoprophylaxis",
       "name_sr": "Pregled bolesnika sa hemoprofilaksom",
@@ -1586,7 +1586,7 @@
     {
       "code": "MO_G02001",
       "src": "Prvi kurativni pregled pulmolog specijalistički",
-      "price_eur": 15.11,
+      "price_eur": 45.33,
       "name_en": "First Pulmonologist Curative Examination",
       "slug": "first-pulmonologist-curative-examination",
       "name_sr": "Prvi kurativni pregled pulmolog specijalistički",
@@ -1604,7 +1604,7 @@
     {
       "code": "MO_G02002",
       "src": "Ponovni kurativni pregled pulmolog specijalistički",
-      "price_eur": 11.34,
+      "price_eur": 34.02,
       "name_en": "Follow-up Pulmonologist Curative Examination",
       "slug": "follow-up-pulmonologist-curative-examination",
       "name_sr": "Ponovni kurativni pregled pulmolog specijalistički",
@@ -1622,7 +1622,7 @@
     {
       "code": "MO_HN_TBCX01008",
       "src": "Uzimanje sputuma za analizu na bakterije i gljivice",
-      "price_eur": 0.92,
+      "price_eur": 2.76,
       "name_en": "Sputum Collection for Bacterial and Fungal Analysis",
       "slug": "sputum-collection-for-bacterial-and-fungal-analysis",
       "name_sr": "Uzimanje sputuma za analizu na bakterije i gljivice",
@@ -1640,7 +1640,7 @@
     {
       "code": "MO_HN_TBCX01009",
       "src": "Davanje inhalacije (TBC)",
-      "price_eur": 1.83,
+      "price_eur": 5.49,
       "name_en": "Inhalation TB Center",
       "slug": "inhalation-tb-center",
       "name_sr": "Davanje inhalacije (TBC)",
@@ -1658,7 +1658,7 @@
     {
       "code": "MO_X01022",
       "src": "Direktno opservirana terapija za TBC (DOTs)",
-      "price_eur": 0.92,
+      "price_eur": 2.76,
       "name_en": "Directly Observed Treatment for TB DOTS",
       "slug": "directly-observed-treatment-for-tb-dots",
       "name_sr": "Direktno opservirana terapija za TBC (DOTs)",
@@ -1676,7 +1676,7 @@
     {
       "code": "MO_HN_TBCX02001",
       "src": "Ispitivanje kožne preosjetljivosti na inhalacione alergene",
-      "price_eur": 12.82,
+      "price_eur": 38.46,
       "name_en": "Inhalation Allergen Skin Prick Test",
       "slug": "inhalation-allergen-skin-prick-test",
       "name_sr": "Ispitivanje kožne preosjetljivosti na inhalacione alergene",
@@ -1694,7 +1694,7 @@
     {
       "code": "MO_HN_TBCX02013D",
       "src": "Dijaskopski (fluo) pregled",
-      "price_eur": 4.58,
+      "price_eur": 13.74,
       "name_en": "Fluoroscopy Examination",
       "slug": "fluoroscopy-examination",
       "name_sr": "Dijaskopski (fluo) pregled",
@@ -1712,7 +1712,7 @@
     {
       "code": "MO_HN_TBCX02013P",
       "src": "Dijagnostička punkcija pleure",
-      "price_eur": 14.66,
+      "price_eur": 43.98,
       "name_en": "Diagnostic Pleural Puncture",
       "slug": "diagnostic-pleural-puncture",
       "name_sr": "Dijagnostička punkcija pleure",
@@ -1730,7 +1730,7 @@
     {
       "code": "MO_HN_TBCX03011",
       "src": "Uzimanje sputuma na citološku analizu",
-      "price_eur": 0.92,
+      "price_eur": 2.76,
       "name_en": "Sputum Cytology Collection",
       "slug": "sputum-cytology-collection",
       "name_sr": "Uzimanje sputuma na citološku analizu",
@@ -1748,7 +1748,7 @@
     {
       "code": "MO_H01001",
       "src": "Prvi pregled psihijatra",
-      "price_eur": 27.18,
+      "price_eur": 81.54,
       "name_en": "First Psychiatrist Examination",
       "slug": "first-psychiatrist-examination",
       "name_sr": "Prvi pregled psihijatra",
@@ -1764,7 +1764,7 @@
     {
       "code": "MO_H01002",
       "src": "Ponovni pregled psihijatra",
-      "price_eur": 18.12,
+      "price_eur": 54.36,
       "name_en": "Follow-up Psychiatrist Examination",
       "slug": "follow-up-psychiatrist-examination",
       "name_sr": "Ponovni pregled psihijatra",
@@ -1780,7 +1780,7 @@
     {
       "code": "MO_H01003",
       "src": "Kratka posjeta psihijatru bez ponovnog pregleda",
-      "price_eur": 9.06,
+      "price_eur": 27.18,
       "name_en": "Brief Psychiatrist Visit Without Examination",
       "slug": "brief-psychiatrist-visit-without-examination",
       "name_sr": "Kratka posjeta psihijatru bez ponovnog pregleda",
@@ -1796,7 +1796,7 @@
     {
       "code": "MO_H01004",
       "src": "Individualna terapija savjeti psihijatra",
-      "price_eur": 18.12,
+      "price_eur": 54.36,
       "name_en": "Individual Psychiatric Therapy Counseling",
       "slug": "individual-psychiatric-therapy-counseling",
       "name_sr": "Individualna terapija savjeti psihijatra",
@@ -1812,7 +1812,7 @@
     {
       "code": "MO_H01005",
       "src": "Dodatna individualna terapija (verzodvalna)",
-      "price_eur": 27.18,
+      "price_eur": 81.54,
       "name_en": "Additional Individual Therapy",
       "slug": "additional-individual-therapy",
       "name_sr": "Dodatna individualna terapija (verzodvalna)",
@@ -1828,7 +1828,7 @@
     {
       "code": "MO_H01006",
       "src": "Grupna psihoterapija psihodinamičkih i sociodinamičkih konflikata",
-      "price_eur": 72.47,
+      "price_eur": 217.41,
       "name_en": "Group Psychodynamic and Sociodynamic Therapy",
       "slug": "group-psychodynamic-and-sociodynamic-therapy",
       "name_sr": "Grupna psihoterapija psihodinamičkih i sociodinamičkih konflikata",
@@ -1844,7 +1844,7 @@
     {
       "code": "MO_H01007",
       "src": "Grupna psihoterapija kod osoba sa bolestima zavisnosti",
-      "price_eur": 72.47,
+      "price_eur": 217.41,
       "name_en": "Addiction Group Psychotherapy",
       "slug": "addiction-group-psychotherapy",
       "name_sr": "Grupna psihoterapija kod osoba sa bolestima zavisnosti",
@@ -1860,7 +1860,7 @@
     {
       "code": "MO_H01008",
       "src": "Porodična psihoterapija (terapija bračnih i drugih parova)",
-      "price_eur": 54.35,
+      "price_eur": 163.05,
       "name_en": "Family and Couples Psychotherapy",
       "slug": "family-and-couples-psychotherapy",
       "name_sr": "Porodična psihoterapija (terapija bračnih i drugih parova)",
@@ -1876,7 +1876,7 @@
     {
       "code": "MO_H01009",
       "src": "Analitički sumnjivni razgovor",
-      "price_eur": 36.23,
+      "price_eur": 108.69,
       "name_en": "Analytical Therapy Session",
       "slug": "analytical-therapy-session",
       "name_sr": "Analitički sumnjivni razgovor",
@@ -1892,7 +1892,7 @@
     {
       "code": "MO_H01010",
       "src": "Psihoterapija ponašanja",
-      "price_eur": 36.23,
+      "price_eur": 108.69,
       "name_en": "Behavioral Psychotherapy",
       "slug": "behavioral-psychotherapy",
       "name_sr": "Psihoterapija ponašanja",
@@ -1908,7 +1908,7 @@
     {
       "code": "MO_H01011",
       "src": "Tehnika relaksacije",
-      "price_eur": 30.2,
+      "price_eur": 90.6,
       "name_en": "Relaxation Technique",
       "slug": "relaxation-technique",
       "name_sr": "Tehnika relaksacije",
@@ -1924,7 +1924,7 @@
     {
       "code": "MO_H01012",
       "src": "Kraći psihodijagnostički intervju",
-      "price_eur": 9.06,
+      "price_eur": 27.18,
       "name_en": "Brief Psychodiagnostic Interview",
       "slug": "brief-psychodiagnostic-interview",
       "name_sr": "Kraći psihodijagnostički intervju",
@@ -1940,7 +1940,7 @@
     {
       "code": "MO_H01013",
       "src": "Procjena psihomotornog razvoja djeteta",
-      "price_eur": 72.47,
+      "price_eur": 217.41,
       "name_en": "Pediatric Psychomotor Development Assessment",
       "slug": "pediatric-psychomotor-development-assessment",
       "name_sr": "Procjena psihomotornog razvoja djeteta",
@@ -1958,7 +1958,7 @@
     {
       "code": "MO_H01014",
       "src": "Kratki klinički test procjene intelektualnog statusa djece do 15 godina",
-      "price_eur": 27.18,
+      "price_eur": 81.54,
       "name_en": "Brief Pediatric Intellectual Status Test Under 15",
       "slug": "brief-pediatric-intellectual-status-test-under-15",
       "name_sr": "Kratki klinički test procjene intelektualnog statusa djece do 15 godina",
@@ -1976,7 +1976,7 @@
     {
       "code": "MO_H01015",
       "src": "Kratki klinički test procjene intelektualnog statusa odraslih",
-      "price_eur": 18.12,
+      "price_eur": 54.36,
       "name_en": "Brief Adult Intellectual Status Test",
       "slug": "brief-adult-intellectual-status-test",
       "name_sr": "Kratki klinički test procjene intelektualnog statusa odraslih",
@@ -1992,7 +1992,7 @@
     {
       "code": "MO_H01016",
       "src": "Procjena strukture ličnosti djece do 15 godina",
-      "price_eur": 48.31,
+      "price_eur": 144.93,
       "name_en": "Pediatric Personality Structure Assessment Under 15",
       "slug": "pediatric-personality-structure-assessment-under-15",
       "name_sr": "Procjena strukture ličnosti djece do 15 godina",
@@ -2010,7 +2010,7 @@
     {
       "code": "MO_H01017",
       "src": "Procjena strukture ličnosti odraslih",
-      "price_eur": 30.2,
+      "price_eur": 90.6,
       "name_en": "Adult Personality Structure Assessment",
       "slug": "adult-personality-structure-assessment",
       "name_sr": "Procjena strukture ličnosti odraslih",
@@ -2026,7 +2026,7 @@
     {
       "code": "MO_H01018",
       "src": "Kliničko ispitivanje pojedinačnih funkcija djece do 15 godina",
-      "price_eur": 15.1,
+      "price_eur": 45.3,
       "name_en": "Pediatric Individual Function Clinical Testing Under 15",
       "slug": "pediatric-individual-function-clinical-testing-under-15",
       "name_sr": "Kliničko ispitivanje pojedinačnih funkcija djece do 15 godina",
@@ -2044,7 +2044,7 @@
     {
       "code": "MO_H01019",
       "src": "Kliničko ispitivanje pojedinačnih funkcija odraslih",
-      "price_eur": 8.56,
+      "price_eur": 25.68,
       "name_en": "Adult Individual Function Clinical Testing",
       "slug": "adult-individual-function-clinical-testing",
       "name_sr": "Kliničko ispitivanje pojedinačnih funkcija odraslih",
@@ -2060,7 +2060,7 @@
     {
       "code": "MO_H01020",
       "src": "Obrada rezultata, integracija i pisanje nalaza",
-      "price_eur": 72.47,
+      "price_eur": 217.41,
       "name_en": "Results Processing Integration and Report Writing",
       "slug": "results-processing-integration-and-report-writing",
       "name_sr": "Obrada rezultata, integracija i pisanje nalaza",
@@ -2076,7 +2076,7 @@
     {
       "code": "MO_H01021",
       "src": "Heteroanamneza",
-      "price_eur": 9.06,
+      "price_eur": 27.18,
       "name_en": "Hetero-anamnesis",
       "slug": "hetero-anamnesis",
       "name_sr": "Heteroanamneza",
@@ -2092,7 +2092,7 @@
     {
       "code": "MO_H01022",
       "src": "Savjet roditeljima i članovima porodice",
-      "price_eur": 9.06,
+      "price_eur": 27.18,
       "name_en": "Family Counseling",
       "slug": "family-counseling",
       "name_sr": "Savjet roditeljima i članovima porodice",
@@ -2108,7 +2108,7 @@
     {
       "code": "MO_H01023",
       "src": "Konsultacija stručnog tima o pacijentu",
-      "price_eur": 18.12,
+      "price_eur": 54.36,
       "name_en": "Multidisciplinary Team Patient Consultation",
       "slug": "multidisciplinary-team-patient-consultation",
       "name_sr": "Konsultacija stručnog tima o pacijentu",
@@ -2124,7 +2124,7 @@
     {
       "code": "MO_H02001",
       "src": "Anamneza dijagnostički intervju",
-      "price_eur": 13.18,
+      "price_eur": 39.54,
       "name_en": "Anamnesis Diagnostic Interview",
       "slug": "anamnesis-diagnostic-interview",
       "name_sr": "Anamneza dijagnostički intervju",
@@ -2140,7 +2140,7 @@
     {
       "code": "MO_H02002",
       "src": "Prikupljanje podataka psihološkim testovima kategorije A",
-      "price_eur": 13.18,
+      "price_eur": 39.54,
       "name_en": "Psychological Test Data Collection Category A",
       "slug": "psychological-test-data-collection-category-a",
       "name_sr": "Prikupljanje podataka psihološkim testovima kategorije A",
@@ -2156,7 +2156,7 @@
     {
       "code": "MO_H02003",
       "src": "Prikupljanje podataka psihološkim testovima kategorije B",
-      "price_eur": 21.96,
+      "price_eur": 65.88,
       "name_en": "Psychological Test Data Collection Category B",
       "slug": "psychological-test-data-collection-category-b",
       "name_sr": "Prikupljanje podataka psihološkim testovima kategorije B",
@@ -2172,7 +2172,7 @@
     {
       "code": "MO_H02004",
       "src": "Prikupljanje podataka psihološkim testovima kategorije C",
-      "price_eur": 35.14,
+      "price_eur": 105.42,
       "name_en": "Psychological Test Data Collection Category C",
       "slug": "psychological-test-data-collection-category-c",
       "name_sr": "Prikupljanje podataka psihološkim testovima kategorije C",
@@ -2188,7 +2188,7 @@
     {
       "code": "MO_H02005",
       "src": "Prikupljanje podataka psihološkim testovima kategorije D",
-      "price_eur": 52.7,
+      "price_eur": 158.1,
       "name_en": "Psychological Test Data Collection Category D",
       "slug": "psychological-test-data-collection-category-d",
       "name_sr": "Prikupljanje podataka psihološkim testovima kategorije D",
@@ -2204,7 +2204,7 @@
     {
       "code": "MO_H02006",
       "src": "Procjena organicnosti",
-      "price_eur": 52.7,
+      "price_eur": 158.1,
       "name_en": "Organicity Assessment",
       "slug": "organicity-assessment",
       "name_sr": "Procjena organicnosti",
@@ -2220,7 +2220,7 @@
     {
       "code": "MO_H02007",
       "src": "Dijagnostički intervju djeteta sa posebnim potrebama",
-      "price_eur": 26.35,
+      "price_eur": 79.05,
       "name_en": "Special Needs Child Diagnostic Interview",
       "slug": "special-needs-child-diagnostic-interview",
       "name_sr": "Dijagnostički intervju djeteta sa posebnim potrebama",
@@ -2238,7 +2238,7 @@
     {
       "code": "MO_H02008",
       "src": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Goodenough test",
-      "price_eur": 9.88,
+      "price_eur": 29.64,
       "name_en": "Goodenough Intelligence Test for Special Needs Children Under 14",
       "slug": "goodenough-intelligence-test-for-special-needs-children-under-14",
       "name_sr": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Goodenough test",
@@ -2256,7 +2256,7 @@
     {
       "code": "MO_H02009",
       "src": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Binet-Simon",
-      "price_eur": 12.63,
+      "price_eur": 37.89,
       "name_en": "Binet-Simon Intelligence Test for Special Needs Children Under 14",
       "slug": "binet-simon-intelligence-test-for-special-needs-children-under-14",
       "name_sr": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Binet-Simon",
@@ -2274,7 +2274,7 @@
     {
       "code": "MO_H02010",
       "src": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Progresivne matrice",
-      "price_eur": 11.25,
+      "price_eur": 33.75,
       "name_en": "Progressive Matrices Test for Special Needs Children Under 14",
       "slug": "progressive-matrices-test-for-special-needs-children-under-14",
       "name_sr": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Progresivne matrice",
@@ -2292,7 +2292,7 @@
     {
       "code": "MO_H02011",
       "src": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Viti test",
-      "price_eur": 15.37,
+      "price_eur": 46.11,
       "name_en": "Viti Test for Special Needs Children Under 14",
       "slug": "viti-test-for-special-needs-children-under-14",
       "name_sr": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Viti test",
@@ -2310,7 +2310,7 @@
     {
       "code": "MO_H02012",
       "src": "Procjena intelektualnih sposobnosti djeteta SPP preko 14 godina W-B skala",
-      "price_eur": 12.63,
+      "price_eur": 37.89,
       "name_en": "Wechsler-Bellevue Test for Special Needs Children Over 14",
       "slug": "wechsler-bellevue-test-for-special-needs-children-over-14",
       "name_sr": "Procjena intelektualnih sposobnosti djeteta SPP preko 14 godina W-B skala",
@@ -2328,7 +2328,7 @@
     {
       "code": "MO_H02013",
       "src": "Procjena intelektualnih sposobnosti djeteta SPP preko 14 godina W-B skala (alt)",
-      "price_eur": 12.63,
+      "price_eur": 37.89,
       "name_en": "Wechsler-Bellevue Test Variant for Special Needs Over 14",
       "slug": "wechsler-bellevue-test-variant-for-special-needs-over-14",
       "name_sr": "Procjena intelektualnih sposobnosti djeteta SPP preko 14 godina W-B skala (alt)",
@@ -2346,7 +2346,7 @@
     {
       "code": "MO_H02014",
       "src": "Procjena psihomotornog razvoja djeteta sa posebnim potrebama",
-      "price_eur": 11.25,
+      "price_eur": 33.75,
       "name_en": "Special Needs Child Psychomotor Development Assessment",
       "slug": "special-needs-child-psychomotor-development-assessment",
       "name_sr": "Procjena psihomotornog razvoja djeteta sa posebnim potrebama",
@@ -2364,7 +2364,7 @@
     {
       "code": "MO_H02015",
       "src": "Procjena socijalne zrelosti djeteta sa posebnim potrebama",
-      "price_eur": 9.88,
+      "price_eur": 29.64,
       "name_en": "Special Needs Child Social Maturity Assessment",
       "slug": "special-needs-child-social-maturity-assessment",
       "name_sr": "Procjena socijalne zrelosti djeteta sa posebnim potrebama",
@@ -2382,7 +2382,7 @@
     {
       "code": "MO_H02016",
       "src": "Timska obrada pacijenta sa smetnjama u razvoju",
-      "price_eur": 14.0,
+      "price_eur": 42.0,
       "name_en": "Multidisciplinary Developmental Disorder Patient Workup",
       "slug": "multidisciplinary-developmental-disorder-patient-workup",
       "name_sr": "Timska obrada pacijenta sa smetnjama u razvoju",
@@ -2400,7 +2400,7 @@
     {
       "code": "MO_H02017",
       "src": "Dijagnostika igrom",
-      "price_eur": 9.88,
+      "price_eur": 29.64,
       "name_en": "Play Diagnostic Assessment",
       "slug": "play-diagnostic-assessment",
       "name_sr": "Dijagnostika igrom",
@@ -2418,7 +2418,7 @@
     {
       "code": "MO_H02018",
       "src": "Testovi ličnosti djeteta SPP - testovi nedovoljno razloženi",
-      "price_eur": 12.63,
+      "price_eur": 37.89,
       "name_en": "Special Needs Child Personality Tests Underdeveloped",
       "slug": "special-needs-child-personality-tests-underdeveloped",
       "name_sr": "Testovi ličnosti djeteta SPP - testovi nedovoljno razloženi",
@@ -2436,7 +2436,7 @@
     {
       "code": "MO_H02019",
       "src": "Testovi ličnosti djeteta SPP - Crteži porodice",
-      "price_eur": 9.88,
+      "price_eur": 29.64,
       "name_en": "Special Needs Child Family Drawing Test",
       "slug": "special-needs-child-family-drawing-test",
       "name_sr": "Testovi ličnosti djeteta SPP - Crteži porodice",
@@ -2454,7 +2454,7 @@
     {
       "code": "MO_H02020",
       "src": "Testovi ličnosti djeteta SPP - Test ego percepcije",
-      "price_eur": 12.63,
+      "price_eur": 37.89,
       "name_en": "Special Needs Child Ego Perception Test",
       "slug": "special-needs-child-ego-perception-test",
       "name_sr": "Testovi ličnosti djeteta SPP - Test ego percepcije",
@@ -2472,7 +2472,7 @@
     {
       "code": "MO_H02021",
       "src": "Savjetodavni rad sa roditeljima",
-      "price_eur": 14.0,
+      "price_eur": 42.0,
       "name_en": "Parental Counseling Work",
       "slug": "parental-counseling-work",
       "name_sr": "Savjetodavni rad sa roditeljima",
@@ -2488,7 +2488,7 @@
     {
       "code": "MO_H02022",
       "src": "Savjet pedagoga škole ili vrtića",
-      "price_eur": 7.14,
+      "price_eur": 21.42,
       "name_en": "School or Kindergarten Pedagogue Counseling",
       "slug": "school-or-kindergarten-pedagogue-counseling",
       "name_sr": "Savjet pedagoga škole ili vrtića",
@@ -2504,7 +2504,7 @@
     {
       "code": "MO_H02023",
       "src": "Obrada podataka",
-      "price_eur": 9.88,
+      "price_eur": 29.64,
       "name_en": "Data Processing",
       "slug": "data-processing",
       "name_sr": "Obrada podataka",
@@ -2520,7 +2520,7 @@
     {
       "code": "MO_H02024",
       "src": "Obrada rezultata integracija i pisanje nalaza",
-      "price_eur": 52.7,
+      "price_eur": 158.1,
       "name_en": "Results Integration and Report Writing",
       "slug": "results-integration-and-report-writing",
       "name_sr": "Obrada rezultata integracija i pisanje nalaza",
@@ -2536,7 +2536,7 @@
     {
       "code": "MO_H02025",
       "src": "Individualna preventivna terapija",
-      "price_eur": 14.0,
+      "price_eur": 42.0,
       "name_en": "Individual Preventive Therapy",
       "slug": "individual-preventive-therapy",
       "name_sr": "Individualna preventivna terapija",
@@ -2552,7 +2552,7 @@
     {
       "code": "MO_H09001",
       "src": "Prva posjeta otpustnog tima u kući osiguranika do 5 km od Doma zdravlja",
-      "price_eur": 74.94,
+      "price_eur": 224.82,
       "name_en": "First Discharge Team Home Visit Up to 5 km",
       "slug": "first-discharge-team-home-visit-up-to-5-km",
       "name_sr": "Prva posjeta otpustnog tima u kući osiguranika do 5 km od Doma zdravlja",
@@ -2566,7 +2566,7 @@
     {
       "code": "MO_H09002",
       "src": "Prva posjeta otpustnog tima 5-15 km od Doma zdravlja",
-      "price_eur": 86.47,
+      "price_eur": 259.41,
       "name_en": "First Discharge Team Home Visit 5 to 15 km",
       "slug": "first-discharge-team-home-visit-5-to-15-km",
       "name_sr": "Prva posjeta otpustnog tima 5-15 km od Doma zdravlja",
@@ -2580,7 +2580,7 @@
     {
       "code": "MO_H09003",
       "src": "Prva posjeta otpustnog tima preko 15 km od Doma zdravlja",
-      "price_eur": 98.0,
+      "price_eur": 294.0,
       "name_en": "First Discharge Team Home Visit Over 15 km",
       "slug": "first-discharge-team-home-visit-over-15-km",
       "name_sr": "Prva posjeta otpustnog tima preko 15 km od Doma zdravlja",
@@ -2594,7 +2594,7 @@
     {
       "code": "MO_H09004",
       "src": "Ponovna posjeta otpustnog tima do 5 km od Doma zdravlja",
-      "price_eur": 57.65,
+      "price_eur": 172.95,
       "name_en": "Follow-up Discharge Team Home Visit Up to 5 km",
       "slug": "follow-up-discharge-team-home-visit-up-to-5-km",
       "name_sr": "Ponovna posjeta otpustnog tima do 5 km od Doma zdravlja",
@@ -2608,7 +2608,7 @@
     {
       "code": "MO_H09005",
       "src": "Ponovna posjeta otpustnog tima 5-15 km od Doma zdravlja",
-      "price_eur": 69.18,
+      "price_eur": 207.54,
       "name_en": "Follow-up Discharge Team Home Visit 5 to 15 km",
       "slug": "follow-up-discharge-team-home-visit-5-to-15-km",
       "name_sr": "Ponovna posjeta otpustnog tima 5-15 km od Doma zdravlja",
@@ -2622,7 +2622,7 @@
     {
       "code": "MO_H09006",
       "src": "Ponovna posjeta otpustnog tima preko 15 km od Doma zdravlja",
-      "price_eur": 80.7,
+      "price_eur": 242.1,
       "name_en": "Follow-up Discharge Team Home Visit Over 15 km",
       "slug": "follow-up-discharge-team-home-visit-over-15-km",
       "name_sr": "Ponovna posjeta otpustnog tima preko 15 km od Doma zdravlja",
@@ -2636,7 +2636,7 @@
     {
       "code": "MO_HN_J01001",
       "src": "Prvi specijalistički pregled radiologa",
-      "price_eur": 4.58,
+      "price_eur": 13.74,
       "name_en": "First Radiologist Specialist Examination",
       "slug": "first-radiologist-specialist-examination",
       "name_sr": "Prvi specijalistički pregled radiologa",
@@ -2650,7 +2650,7 @@
     {
       "code": "MO_HN_J06001",
       "src": "Snimanje skeleta lobanje i lica za svaki snimak",
-      "price_eur": 2.58,
+      "price_eur": 7.74,
       "name_en": "Skull and Face X-Ray per Image",
       "slug": "skull-and-face-x-ray-per-image",
       "name_sr": "Snimanje skeleta lobanje i lica za svaki snimak",
@@ -2664,7 +2664,7 @@
     {
       "code": "MO_HN_J06002",
       "src": "Snimanje pojedinih dijelova lobanje za svaki snimak",
-      "price_eur": 2.58,
+      "price_eur": 7.74,
       "name_en": "Targeted Skull Region X-Ray per Image",
       "slug": "targeted-skull-region-x-ray-per-image",
       "name_sr": "Snimanje pojedinih dijelova lobanje za svaki snimak",
@@ -2678,7 +2678,7 @@
     {
       "code": "MO_HN_J06003",
       "src": "Snimanje paranazalnih sinusa za svaki snimak",
-      "price_eur": 2.58,
+      "price_eur": 7.74,
       "name_en": "Paranasal Sinus X-Ray per Image",
       "slug": "paranasal-sinus-x-ray-per-image",
       "name_sr": "Snimanje paranazalnih sinusa za svaki snimak",
@@ -2696,7 +2696,7 @@
     {
       "code": "MO_HN_J06004",
       "src": "Lokalizacija stranog tijela u bilo kom organu",
-      "price_eur": 2.58,
+      "price_eur": 7.74,
       "name_en": "Foreign Body Localization Imaging",
       "slug": "foreign-body-localization-imaging",
       "name_sr": "Lokalizacija stranog tijela u bilo kom organu",
@@ -2710,7 +2710,7 @@
     {
       "code": "MO_HN_J06005",
       "src": "Snimanje ekstremiteta za svaki snimak",
-      "price_eur": 2.58,
+      "price_eur": 7.74,
       "name_en": "Extremity X-Ray per Image",
       "slug": "extremity-x-ray-per-image",
       "name_sr": "Snimanje ekstremiteta za svaki snimak",
@@ -2728,7 +2728,7 @@
     {
       "code": "MO_HN_J06006",
       "src": "Snimanje toraksa rebra ili sternuma za svaku projekciju",
-      "price_eur": 0.86,
+      "price_eur": 2.58,
       "name_en": "Chest Ribs or Sternum X-Ray per View",
       "slug": "chest-ribs-or-sternum-x-ray-per-view",
       "name_sr": "Snimanje toraksa rebra ili sternuma za svaku projekciju",
@@ -2742,7 +2742,7 @@
     {
       "code": "MO_HN_J06007",
       "src": "Fluoroskopija pluća",
-      "price_eur": 1.72,
+      "price_eur": 5.16,
       "name_en": "Pulmonary Fluoroscopy",
       "slug": "pulmonary-fluoroscopy",
       "name_sr": "Fluoroskopija pluća",
@@ -2760,7 +2760,7 @@
     {
       "code": "MO_HN_J06008",
       "src": "Snimanje pluća",
-      "price_eur": 2.58,
+      "price_eur": 7.74,
       "name_en": "Chest X-Ray Lungs",
       "slug": "chest-x-ray-lungs",
       "name_sr": "Snimanje pluća",
@@ -2778,7 +2778,7 @@
     {
       "code": "MO_HN_J06009",
       "src": "Snimanje medijastinuma",
-      "price_eur": 2.58,
+      "price_eur": 7.74,
       "name_en": "Mediastinum X-Ray",
       "slug": "mediastinum-x-ray",
       "name_sr": "Snimanje medijastinuma",
@@ -2796,7 +2796,7 @@
     {
       "code": "MO_HN_J06010",
       "src": "Telekardiografija",
-      "price_eur": 2.58,
+      "price_eur": 7.74,
       "name_en": "Telecardiography",
       "slug": "telecardiography",
       "name_sr": "Telekardiografija",
@@ -2814,7 +2814,7 @@
     {
       "code": "MO_HN_J06011",
       "src": "Snimanje hepatobiliarnog trakta",
-      "price_eur": 2.58,
+      "price_eur": 7.74,
       "name_en": "Hepatobiliary X-Ray",
       "slug": "hepatobiliary-x-ray",
       "name_sr": "Snimanje hepatobiliarnog trakta",
@@ -2830,7 +2830,7 @@
     {
       "code": "MO_HN_J06012",
       "src": "Snimanje urotrakta",
-      "price_eur": 2.58,
+      "price_eur": 7.74,
       "name_en": "Urinary Tract X-Ray",
       "slug": "urinary-tract-x-ray",
       "name_sr": "Snimanje urotrakta",
@@ -2848,7 +2848,7 @@
     {
       "code": "MO_HN_J06013",
       "src": "Nativni snimak urotrakta",
-      "price_eur": 1.72,
+      "price_eur": 5.16,
       "name_en": "Plain Urinary Tract X-Ray",
       "slug": "plain-urinary-tract-x-ray",
       "name_sr": "Nativni snimak urotrakta",
@@ -2866,7 +2866,7 @@
     {
       "code": "MO_HN_J06014",
       "src": "Mamografija",
-      "price_eur": 2.58,
+      "price_eur": 7.74,
       "name_en": "Mammography",
       "slug": "mammography",
       "name_sr": "Mamografija",
@@ -2882,7 +2882,7 @@
     {
       "code": "MO_HN_J06015",
       "src": "Nativni snimak abdomena",
-      "price_eur": 2.58,
+      "price_eur": 7.74,
       "name_en": "Plain Abdominal X-Ray",
       "slug": "plain-abdominal-x-ray",
       "name_sr": "Nativni snimak abdomena",
@@ -2898,7 +2898,7 @@
     {
       "code": "MO_HN_J07001",
       "src": "UZ gornjeg abdomena (jetra, žučne ceste, pankreas, slezena)",
-      "price_eur": 13.94,
+      "price_eur": 41.82,
       "name_en": "Upper Abdomen Ultrasound",
       "slug": "upper-abdomen-ultrasound",
       "name_sr": "UZ gornjeg abdomena (jetra, žučne ceste, pankreas, slezena)",
@@ -2914,7 +2914,7 @@
     {
       "code": "MO_HN_J07002",
       "src": "UZ donjeg abdomena (mokraćna bešika, prostata, retroperitoneum, bubrezi, nadbubrežne žljezde)",
-      "price_eur": 13.94,
+      "price_eur": 41.82,
       "name_en": "Lower Abdomen Ultrasound",
       "slug": "lower-abdomen-ultrasound",
       "name_sr": "UZ donjeg abdomena (mokraćna bešika, prostata, retroperitoneum, bubrezi, nadbubrežne žljezde)",
@@ -2930,7 +2930,7 @@
     {
       "code": "MO_HN_J07003",
       "src": "UZ testisa kod muškaraca",
-      "price_eur": 13.94,
+      "price_eur": 41.82,
       "name_en": "Testicular Ultrasound",
       "slug": "testicular-ultrasound",
       "name_sr": "UZ testisa kod muškaraca",
@@ -2948,7 +2948,7 @@
     {
       "code": "MO_HN_J07004",
       "src": "UZ kukova kod odojčadi",
-      "price_eur": 13.94,
+      "price_eur": 41.82,
       "name_en": "Infant Hip Ultrasound",
       "slug": "infant-hip-ultrasound",
       "name_sr": "UZ kukova kod odojčadi",
@@ -2966,7 +2966,7 @@
     {
       "code": "MO_HN_J07005",
       "src": "UZ pregled zglobova i mekih tkiva",
-      "price_eur": 13.94,
+      "price_eur": 41.82,
       "name_en": "Joint and Soft Tissue Ultrasound",
       "slug": "joint-and-soft-tissue-ultrasound",
       "name_sr": "UZ pregled zglobova i mekih tkiva",
@@ -2984,7 +2984,7 @@
     {
       "code": "MO_HN_J07006",
       "src": "UZ pregled limfnih žljezda",
-      "price_eur": 13.94,
+      "price_eur": 41.82,
       "name_en": "Lymph Node Ultrasound",
       "slug": "lymph-node-ultrasound",
       "name_sr": "UZ pregled limfnih žljezda",
@@ -2998,7 +2998,7 @@
     {
       "code": "MO_HN_J07007",
       "src": "UZ štitne i paratireoidnih žljezda",
-      "price_eur": 13.94,
+      "price_eur": 41.82,
       "name_en": "Thyroid and Parathyroid Ultrasound",
       "slug": "thyroid-and-parathyroid-ultrasound",
       "name_sr": "UZ štitne i paratireoidnih žljezda",
@@ -3014,7 +3014,7 @@
     {
       "code": "MO_HN_J07008",
       "src": "UZ pregled dojki",
-      "price_eur": 13.94,
+      "price_eur": 41.82,
       "name_en": "Breast Ultrasound",
       "slug": "breast-ultrasound",
       "name_sr": "UZ pregled dojki",
@@ -3028,7 +3028,7 @@
     {
       "code": "MO_HN_J11001",
       "src": "Panoramska dentalna radiografija",
-      "price_eur": 1.31,
+      "price_eur": 3.93,
       "name_en": "Panoramic Dental Radiography",
       "slug": "panoramic-dental-radiography",
       "name_sr": "Panoramska dentalna radiografija",
@@ -3046,7 +3046,7 @@
     {
       "code": "MO_HN_J11002",
       "src": "Obični intraoralni snimak zuba",
-      "price_eur": 1.31,
+      "price_eur": 3.93,
       "name_en": "Standard Intraoral Dental Radiograph",
       "slug": "standard-intraoral-dental-radiograph",
       "name_sr": "Obični intraoralni snimak zuba",
@@ -3064,7 +3064,7 @@
     {
       "code": "MO_HN_J11003",
       "src": "Ortopantomografski snimak",
-      "price_eur": 10.46,
+      "price_eur": 31.38,
       "name_en": "Orthopantomography",
       "slug": "orthopantomography",
       "name_sr": "Ortopantomografski snimak",
@@ -3082,7 +3082,7 @@
     {
       "code": "MO_HN_L01001",
       "src": "Patronažna posjeta novorođenčetu i porodici",
-      "price_eur": 11.12,
+      "price_eur": 33.36,
       "name_en": "Newborn and Family Home Patronage Visit",
       "slug": "newborn-and-family-home-patronage-visit",
       "name_sr": "Patronažna posjeta novorođenčetu i porodici",
@@ -3098,7 +3098,7 @@
     {
       "code": "MO_HN_L01002",
       "src": "Patronažna posjeta djetetu u drugoj godini života",
-      "price_eur": 11.12,
+      "price_eur": 33.36,
       "name_en": "Home Patronage Visit Child Age 2",
       "slug": "home-patronage-visit-child-age-2",
       "name_sr": "Patronažna posjeta djetetu u drugoj godini života",
@@ -3114,7 +3114,7 @@
     {
       "code": "MO_HN_L01003",
       "src": "Patronažna posjeta djetetu u četvrtoj godini života",
-      "price_eur": 11.12,
+      "price_eur": 33.36,
       "name_en": "Home Patronage Visit Child Age 4",
       "slug": "home-patronage-visit-child-age-4",
       "name_sr": "Patronažna posjeta djetetu u četvrtoj godini života",
@@ -3130,7 +3130,7 @@
     {
       "code": "MO_HN_L01007",
       "src": "Patronažna posjeta trudnici za pripremu na porod i njegu novorođenčeta",
-      "price_eur": 11.12,
+      "price_eur": 33.36,
       "name_en": "Pregnancy Patronage Visit Birth and Newborn Care Preparation",
       "slug": "pregnancy-patronage-visit-birth-and-newborn-care-preparation",
       "name_sr": "Patronažna posjeta trudnici za pripremu na porod i njegu novorođenčeta",
@@ -3144,7 +3144,7 @@
     {
       "code": "MO_HN_L01008",
       "src": "Patronažna posjeta babinjari",
-      "price_eur": 11.12,
+      "price_eur": 33.36,
       "name_en": "Postpartum Patronage Visit",
       "slug": "postpartum-patronage-visit",
       "name_sr": "Patronažna posjeta babinjari",
@@ -3160,7 +3160,7 @@
     {
       "code": "MO_HN_L01009",
       "src": "Patronažna posjeta ženama koje 3 godine nisu bile kod ginekologa",
-      "price_eur": 11.12,
+      "price_eur": 33.36,
       "name_en": "Patronage Visit for Women Without Gynecological Visit 3 Years",
       "slug": "patronage-visit-for-women-without-gynecological-visit-3-years",
       "name_sr": "Patronažna posjeta ženama koje 3 godine nisu bile kod ginekologa",
@@ -3176,7 +3176,7 @@
     {
       "code": "MO_HN_L01012",
       "src": "Patronažna posjeta osobama starijim od 65 godina",
-      "price_eur": 11.12,
+      "price_eur": 33.36,
       "name_en": "Senior Patronage Visit Over 65",
       "slug": "senior-patronage-visit-over-65",
       "name_sr": "Patronažna posjeta osobama starijim od 65 godina",
@@ -3190,7 +3190,7 @@
     {
       "code": "MO_HN_L02001",
       "src": "Patronažna posjeta hroničnom bolesniku",
-      "price_eur": 11.12,
+      "price_eur": 33.36,
       "name_en": "Chronic Patient Patronage Visit",
       "slug": "chronic-patient-patronage-visit",
       "name_sr": "Patronažna posjeta hroničnom bolesniku",
@@ -3204,7 +3204,7 @@
     {
       "code": "MO_HN_L02002",
       "src": "Patronažna posjeta lica sa aktivnom TBC",
-      "price_eur": 11.12,
+      "price_eur": 33.36,
       "name_en": "Active TB Patient Patronage Visit",
       "slug": "active-tb-patient-patronage-visit",
       "name_sr": "Patronažna posjeta lica sa aktivnom TBC",
@@ -3222,7 +3222,7 @@
     {
       "code": "MO_HN_L02003",
       "src": "Patronažna posjeta osobi nepokretnoj",
-      "price_eur": 11.12,
+      "price_eur": 33.36,
       "name_en": "Immobile Patient Patronage Visit",
       "slug": "immobile-patient-patronage-visit",
       "name_sr": "Patronažna posjeta osobi nepokretnoj",
@@ -3236,7 +3236,7 @@
     {
       "code": "MO_HN_L02004",
       "src": "Patronažna posjeta porodici sa zdravstveno-socijalnim problemima",
-      "price_eur": 11.12,
+      "price_eur": 33.36,
       "name_en": "Family Health-Social Problem Patronage Visit",
       "slug": "family-health-social-problem-patronage-visit",
       "name_sr": "Patronažna posjeta porodici sa zdravstveno-socijalnim problemima",
@@ -3250,7 +3250,7 @@
     {
       "code": "MO_HN_L02005",
       "src": "Patronažna posjeta porodici sa staroj ili invalidnoj osobi",
-      "price_eur": 11.12,
+      "price_eur": 33.36,
       "name_en": "Family with Elderly or Disabled Member Patronage Visit",
       "slug": "family-with-elderly-or-disabled-member-patronage-visit",
       "name_sr": "Patronažna posjeta porodici sa staroj ili invalidnoj osobi",
@@ -3264,7 +3264,7 @@
     {
       "code": "MO_HN_L03001",
       "src": "Posjeta patronažne sestre za tretman do 5 km od Doma zdravlja",
-      "price_eur": 7.42,
+      "price_eur": 22.26,
       "name_en": "Patronage Nurse Treatment Visit Up to 5 km",
       "slug": "patronage-nurse-treatment-visit-up-to-5-km",
       "name_sr": "Posjeta patronažne sestre za tretman do 5 km od Doma zdravlja",
@@ -3278,7 +3278,7 @@
     {
       "code": "MO_HN_L03002",
       "src": "Posjeta patronažne sestre 5-15 km od Doma zdravlja",
-      "price_eur": 9.27,
+      "price_eur": 27.81,
       "name_en": "Patronage Nurse Treatment Visit 5 to 15 km",
       "slug": "patronage-nurse-treatment-visit-5-to-15-km",
       "name_sr": "Posjeta patronažne sestre 5-15 km od Doma zdravlja",
@@ -3292,7 +3292,7 @@
     {
       "code": "MO_HN_L03003",
       "src": "Posjeta patronažne sestre preko 15 km od Doma zdravlja",
-      "price_eur": 11.12,
+      "price_eur": 33.36,
       "name_en": "Patronage Nurse Treatment Visit Over 15 km",
       "slug": "patronage-nurse-treatment-visit-over-15-km",
       "name_sr": "Posjeta patronažne sestre preko 15 km od Doma zdravlja",
@@ -3306,7 +3306,7 @@
     {
       "code": "MO_HN_L03004",
       "src": "Posjeta patronažne sestre za infuziju do 5 km",
-      "price_eur": 11.12,
+      "price_eur": 33.36,
       "name_en": "Patronage Nurse Infusion Visit Up to 5 km",
       "slug": "patronage-nurse-infusion-visit-up-to-5-km",
       "name_sr": "Posjeta patronažne sestre za infuziju do 5 km",
@@ -3322,7 +3322,7 @@
     {
       "code": "MO_HN_L03005",
       "src": "Posjeta patronažne sestre za infuziju 5-15 km",
-      "price_eur": 12.98,
+      "price_eur": 38.94,
       "name_en": "Patronage Nurse Infusion Visit 5 to 15 km",
       "slug": "patronage-nurse-infusion-visit-5-to-15-km",
       "name_sr": "Posjeta patronažne sestre za infuziju 5-15 km",
@@ -3338,7 +3338,7 @@
     {
       "code": "MO_HN_L03006",
       "src": "Posjeta patronažne sestre za infuziju preko 15 km",
-      "price_eur": 14.83,
+      "price_eur": 44.49,
       "name_en": "Patronage Nurse Infusion Visit Over 15 km",
       "slug": "patronage-nurse-infusion-visit-over-15-km",
       "name_sr": "Posjeta patronažne sestre za infuziju preko 15 km",
@@ -3354,7 +3354,7 @@
     {
       "code": "MO_HN_L04001",
       "src": "Uključivanje u preventivne akcije",
-      "price_eur": 22.25,
+      "price_eur": 66.75,
       "name_en": "Preventive Action Participation",
       "slug": "preventive-action-participation",
       "name_sr": "Uključivanje u preventivne akcije",
@@ -3368,7 +3368,7 @@
     {
       "code": "MO_HN_L04002",
       "src": "Zdravstveno vaspitni grupni rad",
-      "price_eur": 22.25,
+      "price_eur": 66.75,
       "name_en": "Health Education Group Work",
       "slug": "health-education-group-work",
       "name_sr": "Zdravstveno vaspitni grupni rad",
@@ -3382,7 +3382,7 @@
     {
       "code": "MO_HN_L04003",
       "src": "Zdravstveno vaspitni rad sa hroničnim bolesnicima",
-      "price_eur": 22.25,
+      "price_eur": 66.75,
       "name_en": "Chronic Patient Health Education",
       "slug": "chronic-patient-health-education",
       "name_sr": "Zdravstveno vaspitni rad sa hroničnim bolesnicima",
@@ -3396,7 +3396,7 @@
     {
       "code": "MO_HN_M01001",
       "src": "Manuelna segmentna masaža",
-      "price_eur": 3.44,
+      "price_eur": 10.32,
       "name_en": "Manual Segmental Massage",
       "slug": "manual-segmental-massage",
       "name_sr": "Manuelna segmentna masaža",
@@ -3414,7 +3414,7 @@
     {
       "code": "MO_HN_M01002",
       "src": "Manuelna limfna drenaža",
-      "price_eur": 3.44,
+      "price_eur": 10.32,
       "name_en": "Manual Lymphatic Drainage",
       "slug": "manual-lymphatic-drainage",
       "name_sr": "Manuelna limfna drenaža",
@@ -3432,7 +3432,7 @@
     {
       "code": "MO_HN_M01003",
       "src": "Aparaturna masaža",
-      "price_eur": 2.29,
+      "price_eur": 6.87,
       "name_en": "Mechanical Apparatus Massage",
       "slug": "mechanical-apparatus-massage",
       "name_sr": "Aparaturna masaža",
@@ -3450,7 +3450,7 @@
     {
       "code": "MO_HN_M01004",
       "src": "Krioterapija i kriomasaža",
-      "price_eur": 3.44,
+      "price_eur": 10.32,
       "name_en": "Cryotherapy and Cryomassage",
       "slug": "cryotherapy-and-cryomassage",
       "name_sr": "Krioterapija i kriomasaža",
@@ -3468,7 +3468,7 @@
     {
       "code": "MO_HN_M01005",
       "src": "Manuelni mišićni test po ekstremitetu",
-      "price_eur": 2.29,
+      "price_eur": 6.87,
       "name_en": "Manual Muscle Test per Extremity",
       "slug": "manual-muscle-test-per-extremity",
       "name_sr": "Manuelni mišićni test po ekstremitetu",
@@ -3486,7 +3486,7 @@
     {
       "code": "MO_HN_M01006",
       "src": "Tretman ultraljubičastom i biogenom lampom",
-      "price_eur": 3.44,
+      "price_eur": 10.32,
       "name_en": "Ultraviolet and Biogenic Lamp Treatment",
       "slug": "ultraviolet-and-biogenic-lamp-treatment",
       "name_sr": "Tretman ultraljubičastom i biogenom lampom",
@@ -3504,7 +3504,7 @@
     {
       "code": "MO_HN_M01007",
       "src": "Parafin i fango terapija",
-      "price_eur": 2.29,
+      "price_eur": 6.87,
       "name_en": "Paraffin and Mud Therapy",
       "slug": "paraffin-and-mud-therapy",
       "name_sr": "Parafin i fango terapija",
@@ -3522,7 +3522,7 @@
     {
       "code": "MO_HN_M01008",
       "src": "Galvanizacija",
-      "price_eur": 4.58,
+      "price_eur": 13.74,
       "name_en": "Galvanic Therapy",
       "slug": "galvanic-therapy",
       "name_sr": "Galvanizacija",
@@ -3540,7 +3540,7 @@
     {
       "code": "MO_HN_M01009",
       "src": "Elektroforeza",
-      "price_eur": 3.44,
+      "price_eur": 10.32,
       "name_en": "Electrophoresis Therapy",
       "slug": "electrophoresis-therapy",
       "name_sr": "Elektroforeza",
@@ -3558,7 +3558,7 @@
     {
       "code": "MO_HN_M01010",
       "src": "Dijadinamičke struje",
-      "price_eur": 3.44,
+      "price_eur": 10.32,
       "name_en": "Diadynamic Currents",
       "slug": "diadynamic-currents",
       "name_sr": "Dijadinamičke struje",
@@ -3576,7 +3576,7 @@
     {
       "code": "MO_HN_M01011",
       "src": "Transkutana nervna stimulacija TENS",
-      "price_eur": 4.58,
+      "price_eur": 13.74,
       "name_en": "Transcutaneous Electrical Nerve Stimulation TENS",
       "slug": "transcutaneous-electrical-nerve-stimulation-tens",
       "name_sr": "Transkutana nervna stimulacija TENS",
@@ -3594,7 +3594,7 @@
     {
       "code": "MO_HN_M01012",
       "src": "KTD diatermija",
-      "price_eur": 4.58,
+      "price_eur": 13.74,
       "name_en": "KTD Diathermy",
       "slug": "ktd-diathermy",
       "name_sr": "KTD diatermija",
@@ -3612,7 +3612,7 @@
     {
       "code": "MO_HN_M01013",
       "src": "Mikrotalasna dijatermija",
-      "price_eur": 3.44,
+      "price_eur": 10.32,
       "name_en": "Microwave Diathermy",
       "slug": "microwave-diathermy",
       "name_sr": "Mikrotalasna dijatermija",
@@ -3630,7 +3630,7 @@
     {
       "code": "MO_HN_M01014",
       "src": "Sonoforeza",
-      "price_eur": 3.44,
+      "price_eur": 10.32,
       "name_en": "Sonophoresis",
       "slug": "sonophoresis",
       "name_sr": "Sonoforeza",
@@ -3648,7 +3648,7 @@
     {
       "code": "MO_HN_M01015",
       "src": "Elektrostimulacija mišića",
-      "price_eur": 4.58,
+      "price_eur": 13.74,
       "name_en": "Muscle Electrical Stimulation",
       "slug": "muscle-electrical-stimulation",
       "name_sr": "Elektrostimulacija mišića",
@@ -3666,7 +3666,7 @@
     {
       "code": "MO_HN_M01016",
       "src": "Uvježbavanje aktivnosti svakodnevnog života",
-      "price_eur": 4.58,
+      "price_eur": 13.74,
       "name_en": "Activities of Daily Living Training",
       "slug": "activities-of-daily-living-training",
       "name_sr": "Uvježbavanje aktivnosti svakodnevnog života",
@@ -3684,7 +3684,7 @@
     {
       "code": "MO_HN_M01017",
       "src": "Vježba leđa",
-      "price_eur": 3.44,
+      "price_eur": 10.32,
       "name_en": "Back Exercises",
       "slug": "back-exercises",
       "name_sr": "Vježba leđa",
@@ -3702,7 +3702,7 @@
     {
       "code": "MO_HN_M01018",
       "src": "Obuka hoda sa pomagalom",
-      "price_eur": 4.58,
+      "price_eur": 13.74,
       "name_en": "Gait Training with Walking Aid",
       "slug": "gait-training-with-walking-aid",
       "name_sr": "Obuka hoda sa pomagalom",
@@ -3720,7 +3720,7 @@
     {
       "code": "MO_HN_M01019",
       "src": "Vježbe koordinacije i balansa",
-      "price_eur": 4.58,
+      "price_eur": 13.74,
       "name_en": "Coordination and Balance Exercises",
       "slug": "coordination-and-balance-exercises",
       "name_sr": "Vježbe koordinacije i balansa",
@@ -3738,7 +3738,7 @@
     {
       "code": "MO_HN_M01020",
       "src": "Grupne vježbe (tip A)",
-      "price_eur": 3.44,
+      "price_eur": 10.32,
       "name_en": "Group Exercises Type A",
       "slug": "group-exercises-type-a",
       "name_sr": "Grupne vježbe (tip A)",
@@ -3756,7 +3756,7 @@
     {
       "code": "MO_HN_M01021",
       "src": "Grupne vježbe (tip B)",
-      "price_eur": 0.69,
+      "price_eur": 2.07,
       "name_en": "Group Exercises Type B",
       "slug": "group-exercises-type-b",
       "name_sr": "Grupne vježbe (tip B)",
@@ -3774,7 +3774,7 @@
     {
       "code": "MO_HN_M01022",
       "src": "Stimulativne vježbe za rizičnu bebu",
-      "price_eur": 10.31,
+      "price_eur": 30.93,
       "name_en": "High-Risk Infant Stimulation Exercises",
       "slug": "high-risk-infant-stimulation-exercises",
       "name_sr": "Stimulativne vježbe za rizičnu bebu",
@@ -3793,7 +3793,7 @@
     {
       "code": "MO_HN_M01023",
       "src": "Terapija igrom za djecu",
-      "price_eur": 6.87,
+      "price_eur": 20.61,
       "name_en": "Pediatric Play Therapy",
       "slug": "pediatric-play-therapy",
       "name_sr": "Terapija igrom za djecu",
@@ -3812,7 +3812,7 @@
     {
       "code": "MO_HN_M01024",
       "src": "Pasivne i potpomognute vježbe",
-      "price_eur": 4.58,
+      "price_eur": 13.74,
       "name_en": "Passive and Assisted Exercises",
       "slug": "passive-and-assisted-exercises",
       "name_sr": "Pasivne i potpomognute vježbe",
@@ -3830,7 +3830,7 @@
     {
       "code": "MO_HN_M01025",
       "src": "Aktivne vježbe i vježbe protiv otpora",
-      "price_eur": 4.58,
+      "price_eur": 13.74,
       "name_en": "Active and Resistance Exercises",
       "slug": "active-and-resistance-exercises",
       "name_sr": "Aktivne vježbe i vježbe protiv otpora",
@@ -3848,7 +3848,7 @@
     {
       "code": "MO_HN_M01026",
       "src": "Izokinetičke vježbe segmentne",
-      "price_eur": 3.44,
+      "price_eur": 10.32,
       "name_en": "Segmental Isokinetic Exercises",
       "slug": "segmental-isokinetic-exercises",
       "name_sr": "Izokinetičke vježbe segmentne",
@@ -3866,7 +3866,7 @@
     {
       "code": "MO_HN_M01027",
       "src": "Kineziterapija kod deformiteta kičme",
-      "price_eur": 6.87,
+      "price_eur": 20.61,
       "name_en": "Kinesiotherapy for Spine Deformities",
       "slug": "kinesiotherapy-for-spine-deformities",
       "name_sr": "Kineziterapija kod deformiteta kičme",
@@ -3885,7 +3885,7 @@
     {
       "code": "MO_HN_M01028",
       "src": "Stimulacija senzomotornog razvoja CNS specifične metode",
-      "price_eur": 9.16,
+      "price_eur": 27.48,
       "name_en": "CNS Sensorimotor Development Stimulation",
       "slug": "cns-sensorimotor-development-stimulation",
       "name_sr": "Stimulacija senzomotornog razvoja CNS specifične metode",
@@ -3904,7 +3904,7 @@
     {
       "code": "MO_HN_M01029",
       "src": "Test aktivnosti svakodnevnog života ADL",
-      "price_eur": 6.87,
+      "price_eur": 20.61,
       "name_en": "Activities of Daily Living ADL Test",
       "slug": "activities-of-daily-living-adl-test",
       "name_sr": "Test aktivnosti svakodnevnog života ADL",
@@ -3922,7 +3922,7 @@
     {
       "code": "MO_HN_M01030",
       "src": "Obuka pacijenta zaštitnim položajima tijela",
-      "price_eur": 6.87,
+      "price_eur": 20.61,
       "name_en": "Patient Body Posture Training",
       "slug": "patient-body-posture-training",
       "name_sr": "Obuka pacijenta zaštitnim položajima tijela",
@@ -3940,7 +3940,7 @@
     {
       "code": "MO_HN_M01031",
       "src": "Interferentne struje",
-      "price_eur": 4.58,
+      "price_eur": 13.74,
       "name_en": "Interferential Currents",
       "slug": "interferential-currents",
       "name_sr": "Interferentne struje",
@@ -3958,7 +3958,7 @@
     {
       "code": "MO_HN_M01032",
       "src": "Kućna posjeta fizioterapeuta do 5 km",
-      "price_eur": 11.45,
+      "price_eur": 34.35,
       "name_en": "Physiotherapist Home Visit Up to 5 km",
       "slug": "physiotherapist-home-visit-up-to-5-km",
       "name_sr": "Kućna posjeta fizioterapeuta do 5 km",
@@ -3976,7 +3976,7 @@
     {
       "code": "MO_HN_M01033",
       "src": "Kućna posjeta fizioterapeuta 5-15 km",
-      "price_eur": 13.74,
+      "price_eur": 41.22,
       "name_en": "Physiotherapist Home Visit 5 to 15 km",
       "slug": "physiotherapist-home-visit-5-to-15-km",
       "name_sr": "Kućna posjeta fizioterapeuta 5-15 km",
@@ -3994,7 +3994,7 @@
     {
       "code": "MO_HN_M01034",
       "src": "Kućna posjeta fizioterapeuta preko 15 km",
-      "price_eur": 16.03,
+      "price_eur": 48.09,
       "name_en": "Physiotherapist Home Visit Over 15 km",
       "slug": "physiotherapist-home-visit-over-15-km",
       "name_sr": "Kućna posjeta fizioterapeuta preko 15 km",
@@ -4012,7 +4012,7 @@
     {
       "code": "MO_HN_M02008",
       "src": "Magnetoterapija",
-      "price_eur": 4.17,
+      "price_eur": 12.51,
       "name_en": "Magnetotherapy",
       "slug": "magnetotherapy",
       "name_sr": "Magnetoterapija",
@@ -4030,7 +4030,7 @@
     {
       "code": "MO_HN_M02009",
       "src": "Terapija ultrazvukom",
-      "price_eur": 2.61,
+      "price_eur": 7.83,
       "name_en": "Ultrasound Therapy",
       "slug": "ultrasound-therapy",
       "name_sr": "Terapija ultrazvukom",
@@ -4048,7 +4048,7 @@
     {
       "code": "MO_HN_M02010",
       "src": "Terapija ultrazvukom u vodi",
-      "price_eur": 3.34,
+      "price_eur": 10.02,
       "name_en": "Underwater Ultrasound Therapy",
       "slug": "underwater-ultrasound-therapy",
       "name_sr": "Terapija ultrazvukom u vodi",
@@ -4066,7 +4066,7 @@
     {
       "code": "MO_HN_M02011",
       "src": "Laser terapija",
-      "price_eur": 4.17,
+      "price_eur": 12.51,
       "name_en": "Laser Therapy",
       "slug": "laser-therapy",
       "name_sr": "Laser terapija",
@@ -4084,7 +4084,7 @@
     {
       "code": "MO_HN_Z01003",
       "src": "KKS sa diferencijalnom krvnom slikom (CBC + DIF)",
-      "price_eur": 1.27,
+      "price_eur": 3.81,
       "name_en": "Complete Blood Count with Differential",
       "slug": "complete-blood-count-with-differential",
       "name_sr": "KKS sa diferencijalnom krvnom slikom (CBC + DIF)",
@@ -4100,7 +4100,7 @@
     {
       "code": "MO_HN_Z01006",
       "src": "Diferencijalna krvna slika",
-      "price_eur": 4.02,
+      "price_eur": 12.06,
       "name_en": "Differential Blood Count",
       "slug": "differential-blood-count",
       "name_sr": "Diferencijalna krvna slika",
@@ -4132,7 +4132,7 @@
     {
       "code": "MO_HN_Z01008",
       "src": "Sedimentacija eritrocita SE",
-      "price_eur": 1.77,
+      "price_eur": 5.31,
       "name_en": "Erythrocyte Sedimentation Rate",
       "slug": "erythrocyte-sedimentation-rate",
       "name_sr": "Sedimentacija eritrocita SE",
@@ -4148,7 +4148,7 @@
     {
       "code": "MO_HN_Z01009",
       "src": "Određivanje protrombinskog vremena",
-      "price_eur": 3.49,
+      "price_eur": 10.47,
       "name_en": "Prothrombin Time PT",
       "slug": "prothrombin-time-pt",
       "name_sr": "Određivanje protrombinskog vremena",
@@ -4164,7 +4164,7 @@
     {
       "code": "MO_HN_Z01010",
       "src": "Određivanje vremena krvarenja",
-      "price_eur": 2.89,
+      "price_eur": 8.67,
       "name_en": "Bleeding Time",
       "slug": "bleeding-time",
       "name_sr": "Određivanje vremena krvarenja",
@@ -4180,7 +4180,7 @@
     {
       "code": "MO_HN_Z01011",
       "src": "Određivanje vremena koagulacije",
-      "price_eur": 5.23,
+      "price_eur": 15.69,
       "name_en": "Coagulation Time",
       "slug": "coagulation-time",
       "name_sr": "Određivanje vremena koagulacije",
@@ -4196,7 +4196,7 @@
     {
       "code": "MO_HN_Z01012",
       "src": "Određivanje fibrinogena",
-      "price_eur": 4.42,
+      "price_eur": 13.26,
       "name_en": "Fibrinogen",
       "slug": "fibrinogen",
       "name_sr": "Određivanje fibrinogena",
@@ -4212,7 +4212,7 @@
     {
       "code": "MO_HN_Z01032",
       "src": "Kalijum K u serumu",
-      "price_eur": 1.26,
+      "price_eur": 3.78,
       "name_en": "Serum Potassium K",
       "slug": "serum-potassium-k",
       "name_sr": "Kalijum K u serumu",
@@ -4228,7 +4228,7 @@
     {
       "code": "MO_HN_Z01097",
       "src": "Natrijum Na u serumu",
-      "price_eur": 1.26,
+      "price_eur": 3.78,
       "name_en": "Serum Sodium Na",
       "slug": "serum-sodium-na",
       "name_sr": "Natrijum Na u serumu",
@@ -4244,7 +4244,7 @@
     {
       "code": "MO_HN_Z01098",
       "src": "Hloridi Cl u serumu",
-      "price_eur": 1.26,
+      "price_eur": 3.78,
       "name_en": "Serum Chloride Cl",
       "slug": "serum-chloride-cl",
       "name_sr": "Hloridi Cl u serumu",
@@ -4260,7 +4260,7 @@
     {
       "code": "MO_HN_Z01099",
       "src": "Kalcijum Ca u serumu",
-      "price_eur": 2.73,
+      "price_eur": 8.19,
       "name_en": "Serum Calcium Ca",
       "slug": "serum-calcium-ca",
       "name_sr": "Kalcijum Ca u serumu",
@@ -4276,7 +4276,7 @@
     {
       "code": "MO_HN_Z01103F",
       "src": "Hemoglobin u fecesu kvalitativno",
-      "price_eur": 1.74,
+      "price_eur": 5.22,
       "name_en": "Fecal Occult Blood Qualitative",
       "slug": "fecal-occult-blood-qualitative",
       "name_sr": "Hemoglobin u fecesu kvalitativno",
@@ -4292,7 +4292,7 @@
     {
       "code": "MO_HN_Z01014",
       "src": "Ukupni proteini u serumu",
-      "price_eur": 1.15,
+      "price_eur": 3.45,
       "name_en": "Serum Total Protein",
       "slug": "serum-total-protein",
       "name_sr": "Ukupni proteini u serumu",
@@ -4308,7 +4308,7 @@
     {
       "code": "MO_HN_Z01015",
       "src": "Ukupni bilirubin u serumu",
-      "price_eur": 1.18,
+      "price_eur": 3.54,
       "name_en": "Serum Total Bilirubin",
       "slug": "serum-total-bilirubin",
       "name_sr": "Ukupni bilirubin u serumu",
@@ -4324,7 +4324,7 @@
     {
       "code": "MO_HN_Z01016",
       "src": "Glukoza u serumu",
-      "price_eur": 1.16,
+      "price_eur": 3.48,
       "name_en": "Serum Glucose",
       "slug": "serum-glucose",
       "name_sr": "Glukoza u serumu",
@@ -4340,7 +4340,7 @@
     {
       "code": "MO_HN_Z01017",
       "src": "Oralni glukoza tolerans test OGTT",
-      "price_eur": 4.2,
+      "price_eur": 12.6,
       "name_en": "Oral Glucose Tolerance Test OGTT",
       "slug": "oral-glucose-tolerance-test-ogtt",
       "name_sr": "Oralni glukoza tolerans test OGTT",
@@ -4356,7 +4356,7 @@
     {
       "code": "MO_HN_Z01018",
       "src": "Trigliceridi u serumu",
-      "price_eur": 1.36,
+      "price_eur": 4.08,
       "name_en": "Serum Triglycerides",
       "slug": "serum-triglycerides",
       "name_sr": "Trigliceridi u serumu",
@@ -4372,7 +4372,7 @@
     {
       "code": "MO_HN_Z01019",
       "src": "Holesterol u serumu",
-      "price_eur": 1.24,
+      "price_eur": 3.72,
       "name_en": "Serum Cholesterol",
       "slug": "serum-cholesterol",
       "name_sr": "Holesterol u serumu",
@@ -4388,7 +4388,7 @@
     {
       "code": "MO_HN_Z01021",
       "src": "Aktivnost alkalne fosfataze",
-      "price_eur": 1.26,
+      "price_eur": 3.78,
       "name_en": "Alkaline Phosphatase Activity",
       "slug": "alkaline-phosphatase-activity",
       "name_sr": "Aktivnost alkalne fosfataze",
@@ -4404,7 +4404,7 @@
     {
       "code": "MO_HN_Z01023",
       "src": "Aktivnost AST",
-      "price_eur": 1.28,
+      "price_eur": 3.84,
       "name_en": "AST Activity",
       "slug": "ast-activity",
       "name_sr": "Aktivnost AST",
@@ -4420,7 +4420,7 @@
     {
       "code": "MO_HN_Z01096",
       "src": "Aktivnost ALT",
-      "price_eur": 1.28,
+      "price_eur": 3.84,
       "name_en": "ALT Activity",
       "slug": "alt-activity",
       "name_sr": "Aktivnost ALT",
@@ -4436,7 +4436,7 @@
     {
       "code": "MO_HN_Z01037",
       "src": "Kapacitet vezivanja gvožđa TIBC",
-      "price_eur": 0.98,
+      "price_eur": 2.94,
       "name_en": "Total Iron Binding Capacity TIBC",
       "slug": "total-iron-binding-capacity-tibc",
       "name_sr": "Kapacitet vezivanja gvožđa TIBC",
@@ -4452,7 +4452,7 @@
     {
       "code": "MO_HN_Z01066",
       "src": "Slobodni kapacitet vezivanja gvožđa UIBC",
-      "price_eur": 1.38,
+      "price_eur": 4.14,
       "name_en": "Unsaturated Iron Binding Capacity UIBC",
       "slug": "unsaturated-iron-binding-capacity-uibc",
       "name_sr": "Slobodni kapacitet vezivanja gvožđa UIBC",
@@ -4468,7 +4468,7 @@
     {
       "code": "MO_HN_Z01104",
       "src": "Aktivnost laktat dehidrogenaze LDH",
-      "price_eur": 1.27,
+      "price_eur": 3.81,
       "name_en": "LDH Activity",
       "slug": "ldh-activity",
       "name_sr": "Aktivnost laktat dehidrogenaze LDH",
@@ -4484,7 +4484,7 @@
     {
       "code": "MO_HN_Z01025",
       "src": "Aktivnost CK-MB",
-      "price_eur": 8.6,
+      "price_eur": 25.8,
       "name_en": "CK-MB Activity",
       "slug": "ck-mb-activity",
       "name_sr": "Aktivnost CK-MB",
@@ -4500,7 +4500,7 @@
     {
       "code": "MO_HN_Z01026",
       "src": "Aktivnost CK",
-      "price_eur": 1.56,
+      "price_eur": 4.68,
       "name_en": "CK Activity",
       "slug": "ck-activity",
       "name_sr": "Aktivnost CK",
@@ -4516,7 +4516,7 @@
     {
       "code": "MO_HN_Z01027",
       "src": "Aktivnost gama glutamil transferaza GGT",
-      "price_eur": 1.81,
+      "price_eur": 5.43,
       "name_en": "GGT Activity",
       "slug": "ggt-activity",
       "name_sr": "Aktivnost gama glutamil transferaza GGT",
@@ -4532,7 +4532,7 @@
     {
       "code": "MO_HN_Z01028",
       "src": "Aktivnost alfa amilaze",
-      "price_eur": 1.34,
+      "price_eur": 4.02,
       "name_en": "Alpha Amylase Activity",
       "slug": "alpha-amylase-activity",
       "name_sr": "Aktivnost alfa amilaze",
@@ -4548,7 +4548,7 @@
     {
       "code": "MO_HN_Z01108S",
       "src": "Urea u serumu kinetički",
-      "price_eur": 1.24,
+      "price_eur": 3.72,
       "name_en": "Serum Urea Kinetic",
       "slug": "serum-urea-kinetic",
       "name_sr": "Urea u serumu kinetički",
@@ -4564,7 +4564,7 @@
     {
       "code": "MO_HN_Z01038",
       "src": "Kreatinin u serumu",
-      "price_eur": 1.19,
+      "price_eur": 3.57,
       "name_en": "Serum Creatinine",
       "slug": "serum-creatinine",
       "name_sr": "Kreatinin u serumu",
@@ -4580,7 +4580,7 @@
     {
       "code": "MO_HN_Z01040S",
       "src": "C-reaktivni protein CRP",
-      "price_eur": 3.44,
+      "price_eur": 10.32,
       "name_en": "C-Reactive Protein CRP",
       "slug": "c-reactive-protein-crp",
       "name_sr": "C-reaktivni protein CRP",
@@ -4596,7 +4596,7 @@
     {
       "code": "MO_HN_Z01031",
       "src": "Mokraćna kiselina u serumu",
-      "price_eur": 1.4,
+      "price_eur": 4.2,
       "name_en": "Serum Uric Acid",
       "slug": "serum-uric-acid",
       "name_sr": "Mokraćna kiselina u serumu",
@@ -4612,7 +4612,7 @@
     {
       "code": "MO_HN_Z01100",
       "src": "Klirens kreatinina",
-      "price_eur": 1.4,
+      "price_eur": 4.2,
       "name_en": "Creatinine Clearance",
       "slug": "creatinine-clearance",
       "name_sr": "Klirens kreatinina",
@@ -4628,7 +4628,7 @@
     {
       "code": "MO_HN_Z01039",
       "src": "Ispitivanje urina test traka i sediment mikroskopski",
-      "price_eur": 2.94,
+      "price_eur": 8.82,
       "name_en": "Urinalysis with Sediment Microscopy",
       "slug": "urinalysis-with-sediment-microscopy",
       "name_sr": "Ispitivanje urina test traka i sediment mikroskopski",
@@ -4644,7 +4644,7 @@
     {
       "code": "MO_HN_Z01109",
       "src": "Proteini u urinu kvalitativno",
-      "price_eur": 0.7,
+      "price_eur": 2.1,
       "name_en": "Urine Protein Qualitative",
       "slug": "urine-protein-qualitative",
       "name_sr": "Proteini u urinu kvalitativno",
@@ -4660,7 +4660,7 @@
     {
       "code": "MO_HN_Z01042",
       "src": "Bilirubin u urinu",
-      "price_eur": 0.7,
+      "price_eur": 2.1,
       "name_en": "Urine Bilirubin",
       "slug": "urine-bilirubin",
       "name_sr": "Bilirubin u urinu",
@@ -4676,7 +4676,7 @@
     {
       "code": "MO_HN_Z01101",
       "src": "Urobilinogen u urinu",
-      "price_eur": 0.7,
+      "price_eur": 2.1,
       "name_en": "Urine Urobilinogen",
       "slug": "urine-urobilinogen",
       "name_sr": "Urobilinogen u urinu",
@@ -4692,7 +4692,7 @@
     {
       "code": "MO_HN_Z01063",
       "src": "Alfa amilaza u urinu",
-      "price_eur": 1.81,
+      "price_eur": 5.43,
       "name_en": "Urine Alpha Amylase",
       "slug": "urine-alpha-amylase",
       "name_sr": "Alfa amilaza u urinu",
@@ -4708,7 +4708,7 @@
     {
       "code": "MO_HN_Z01072",
       "src": "hCG u urinu test traka",
-      "price_eur": 3.5,
+      "price_eur": 10.5,
       "name_en": "Urine hCG Strip Test",
       "slug": "urine-hcg-strip-test",
       "name_sr": "hCG u urinu test traka",
@@ -4724,7 +4724,7 @@
     {
       "code": "MO_HN_Z01084",
       "src": "Ispitivanje urina sa flow citometrijom",
-      "price_eur": 3.75,
+      "price_eur": 11.25,
       "name_en": "Urinalysis with Flow Cytometry",
       "slug": "urinalysis-with-flow-cytometry",
       "name_sr": "Ispitivanje urina sa flow citometrijom",
@@ -4740,7 +4740,7 @@
     {
       "code": "MO_HN_K01002",
       "src": "Prijem materijala i davanje sterilnih posuda",
-      "price_eur": 0.54,
+      "price_eur": 1.62,
       "name_en": "Sample Receipt and Sterile Container Issue",
       "slug": "sample-receipt-and-sterile-container-issue",
       "name_sr": "Prijem materijala i davanje sterilnih posuda",
@@ -4756,7 +4756,7 @@
     {
       "code": "MO_HN_K01003",
       "src": "Uzimanje uzorka",
-      "price_eur": 0.9,
+      "price_eur": 2.7,
       "name_en": "Sample Collection",
       "slug": "sample-collection",
       "name_sr": "Uzimanje uzorka",

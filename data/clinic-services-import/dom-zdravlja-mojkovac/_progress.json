@@ -1,6 +1,6 @@
 {
   "clinic_name": "Dom Zdravlja Bosko Dedejic Mojkovac",
-  "clinic_id": "<TO_BE_FILLED_AFTER_CLINIC_CREATION>",
+  "clinic_id": 127,
   "source_pdf": "02.10.2025.pdf",
   "source_pdf_path": "E:/pet/docta.me/прейскуранты/mojkovac dz/02.10.2025.pdf",
   "started": "2026-05-09",
@@ -27,9 +27,9 @@
   },
 
   "code_strategy": {
-    "approach": "Mojkovac uses identical Cetinje code system as HN DZ (clinic 80). Reused HN DZ translations and substituted Mojkovac prices (regular Cijena column, not the X3 'non-insured' multiplier).",
+    "approach": "Mojkovac uses identical Cetinje code system as HN DZ (clinic 80). Reused HN DZ translations and used the X3 (non-insured patients) column. Insured patients pay through the state fund FZOCG and don't see prices on the public site — the X3 column is what self-paying users actually pay.",
     "code_prefix": "All clinic_medical_services.code values prefixed with MO_ to keep distinct.",
-    "price_observation": "Mojkovac base prices are 30-40% of HN DZ prices for equivalent codes (e.g. A01001: HN=39.00 EUR vs Mojkovac=17.92 EUR). The 'X3' column in PDF is for non-insured patients; we used the standard column."
+    "price_observation": "Used Cijena × 3 column. After multiplier, A01001 = €53.76 (vs HN DZ €39.00). Mojkovac X3 prices are similar order-of-magnitude to HN DZ prices."
   },
 
   "batches": [

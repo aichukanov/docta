@@ -1,0 +1,65 @@
+{
+  "clinic_id": 80,
+  "clinic_name": "Dom Zdravlja Herceg Novi",
+  "source_pdf": "CJENOVNIK.pdf",
+  "source_pdf_path": "E:/pet/docta.me/прейскуранты/herceg novi dz/CJENOVNIK.pdf",
+  "started": "2026-05-09",
+  "completed": "2026-05-09",
+  "status": "COMPLETE",
+
+  "pdf_summary": {
+    "pages": 21,
+    "pdf_type": "scanned image PDF (no extractable text via pdftotext)",
+    "ocr_method": "pypdfium2 render @ scale=2.0 + multimodal Read tool (Claude vision)",
+    "total_items_extracted": 475,
+    "sections_covered": [
+      "Usluge izabranog doktora (A01 preventive, A02 curative, X01-X03 interventions)",
+      "Usluge izabranog ginekologa (C01 preventive, C02 curative, X01-X03 gyn interventions)",
+      "Centar za plućne bolesti i TBC (G01, G02, X01-X03 TBC)",
+      "Centar za mentalno zdravlje (H01 psihijatra, H02 psihologa, H04 socijalnog radnika, H09 mobilni tim)",
+      "Centar za djecu sa posebnim potrebama (I01 preventive, I02 kurative, I03 defektolog/logoped)",
+      "Centar za dijagnostiku - RTG i UZ (J01 radiologa, J06 radiology, J07 ultrasound, J11 stomatološki RTG)",
+      "Mikrobiološka dijagnostika (K01, K02, hepatitis tests)",
+      "Laboratorijska dijagnostika (Z01 primarna, Z02 sekundarna)",
+      "Patronaža (L01, L02, L03, L04)",
+      "Fizikalna medicina (M01, M02)",
+      "Sanitetski prevoz, Specijalističke ambulante, Hemodijaliza",
+      "Medicina rada i sportska medicina (MR1-MR22)",
+      "BES vakcinacije i sanitarni pregledi (17 stavki)"
+    ]
+  },
+
+  "code_strategy": {
+    "code_collision_avoidance": "PDF uses A01XXX, X01XXX etc. that collide with the Cetinje state nomenclature already imported for clinic 88. Since clinic_medical_services is keyed by (clinic_id, ...), the codes themselves do not conflict at the database level. To keep services semantically distinct in medical_services, item names in EN are differentiated where Cetinje had different services for the same code prefix.",
+    "prefix_HN_": "Codes that would mismatch the Cetinje meaning are stored with HN_ prefix in clinic_medical_services.code (e.g., HN_X01001 for Foreign Body Removal from Ear). Original codes preserved where unambiguous."
+  },
+
+  "batches": [
+    {
+      "id": "batch-01-hn-dz-cjenovnik",
+      "items_total": 475,
+      "translations_file": "translations/batch-01-hn-dz-cjenovnik.json",
+      "sql_file": "server/sql/insert-clinic-80-services-batch-01-hn-dz-cjenovnik.sql",
+      "category_relations": 384,
+      "specialty_relations": 199,
+      "notes": "Single batch consolidation. All 475 OCR-extracted items consolidated. INSERT IGNORE handles dedupe with services already in medical_services from prior clinic imports."
+    }
+  ],
+
+  "category_assignments": {
+    "Pediatric items (preventive child exams, special needs)": "PEDIATRICS (25) + PEDIATRICS (4)",
+    "Gynecological items (C01, C02, gyn X)": "GYNECOLOGY (7) + GYNECOLOGY_OBSTETRICS (5)",
+    "TBC/Pulmonology items (G01, G02, TBC X)": "PULMONOLOGY (12) + PULMONOLOGY (14)",
+    "Psychiatry/Psychology items (H01, H02)": "spec PSYCHIATRY (21) / PSYCHOLOGY (22)",
+    "Speech therapy/defectology (I03)": "PEDIATRICS (25)",
+    "Radiology and ultrasound": "specialty-specific (e.g. cardiology for echo, ENT for sinus, peds for hip)",
+    "Microbiology/Lab (K, Z)": "LABORATORY_SERVICES (28)",
+    "Physiotherapy (M01, M02)": "PHYSIOTHERAPY (5) + PHYSICAL_MEDICINE (42)",
+    "Vaccinations (BES, A01011-A01013)": "INJECTIONS_INFUSIONS (29)",
+    "Dental RTG (J11)": "DENTISTRY (20) + DENTISTRY (78)",
+    "Wound care": "WOUND_CARE (31)",
+    "ECG/Echo/Holter": "CARDIOLOGY (8) + CARDIOLOGY (1)"
+  },
+
+  "command_to_apply": "mysql -u root -p --default-character-set=utf8mb4 docta_me < server/sql/insert-clinic-80-services-batch-01-hn-dz-cjenovnik.sql"
+}

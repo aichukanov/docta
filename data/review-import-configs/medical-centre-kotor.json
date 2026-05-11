@@ -1,0 +1,25 @@
+{
+  "jsonPath": "data/google-places/kotor/medical-centre-kotor.json",
+  "outputPath": "server/sql/reviews-google/medical-centre-kotor.sql",
+  "dataCollectedDate": "2026-05-08",
+  "clinicId": 126,
+  "clinicName": "Dom zdravlja Kotor (Medical Centre Kotor)",
+  "doctors": [
+    {
+      "id": 1149,
+      "varName": "gordana_popovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Gordan(?:a|e|i|u|om)?\\s+Popovi[cć]",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Гордан[аеиуой]?(?:ом)?\\s+Поповић"
+      ]
+    },
+    {
+      "id": 1133,
+      "varName": "natasa_djonovic",
+      "patterns": [
+        "[ĐD]j?onovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "[ЂД]ј?оновић(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

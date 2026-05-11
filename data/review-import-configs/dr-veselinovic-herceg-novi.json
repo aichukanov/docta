@@ -1,0 +1,37 @@
+{
+  "jsonPath": "data/google-places/herceg-novi/dr-veselinovic.json",
+  "outputPath": "server/sql/reviews-google/dr-veselinovic-herceg-novi.sql",
+  "dataCollectedDate": "2026-05-07",
+  "clinicId": 125,
+  "clinicName": "Dr Veselinović — Stomatološka klinika (Herceg Novi)",
+  "translationsDir": "data/review-translations/dr-veselinovic-herceg-novi/",
+  "doctors": [
+    {
+      "id": 1116,
+      "varName": "ilija_veselinovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Ilij[aeiou]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Илиј[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Или[яе][уе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 1117,
+      "varName": "jasna_veselinovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Jasn[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Јасн[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Ясн[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 1119,
+      "varName": "ljubica_veselinovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Ljubic[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Љубиц[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Любиц[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

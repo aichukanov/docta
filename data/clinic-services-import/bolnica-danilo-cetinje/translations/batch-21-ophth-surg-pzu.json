@@ -1,0 +1,112 @@
+{
+  "batch_id": "batch-21-ophth-surg-pzu",
+  "clinic_id": 88,
+  "subsections": [
+    "D07"
+  ],
+  "items_total": 10,
+  "items_new": 4,
+  "items_existing": 6,
+  "items": [
+    {
+      "code": "D07001",
+      "src": "ULTRA B2",
+      "price_eur": 1260.0,
+      "status": "new",
+      "name_en": "Ultra B2 Procedure",
+      "slug": "ultra-b2-procedure",
+      "name_sr": "Ultra B2",
+      "name_sr_cyrl": "Ultra B2",
+      "name_ru": "Процедура Ultra B2",
+      "name_de": "Ultra B2",
+      "name_tr": "Ultra B2"
+    },
+    {
+      "code": "D07002",
+      "src": "SEKUNDARNA IMPLANTACIJA IOL",
+      "price_eur": 1890.0,
+      "status": "existing",
+      "existing_id": 3647,
+      "existing_name_en": "Secondary IOL Implantation"
+    },
+    {
+      "code": "D07003",
+      "src": "KERATOPLASTIKA",
+      "price_eur": 7140.0,
+      "status": "new",
+      "name_en": "Keratoplasty",
+      "slug": "keratoplasty",
+      "name_sr": "Keratoplastika",
+      "name_sr_cyrl": "Кератопластика",
+      "name_ru": "Кератопластика",
+      "name_de": "Keratoplastik",
+      "name_tr": "Keratoplasti"
+    },
+    {
+      "code": "D07004",
+      "src": "INTACS - INTRAOKULARNI PRSTEN",
+      "price_eur": 2730.0,
+      "status": "new",
+      "name_en": "INTACS Intracorneal Ring",
+      "slug": "intacs-intracorneal-ring",
+      "name_sr": "INTACS — intraokularni prsten",
+      "name_sr_cyrl": "INTACS — интраокуларни прстен",
+      "name_ru": "INTACS интракорнеальное кольцо",
+      "name_de": "INTACS — Intrakornealring",
+      "name_tr": "INTACS intrakorneal halka"
+    },
+    {
+      "code": "D07005",
+      "src": "VAĐENJE PLOMBE SA PLASTIKOM KONJUNKTIVE",
+      "price_eur": 840.0,
+      "status": "new",
+      "name_en": "Scleral Buckle Removal with Conjunctival Plasty",
+      "slug": "scleral-buckle-removal-with-conjunctival-plasty",
+      "name_sr": "Vađenje plombe sa plastikom konjunktive",
+      "name_sr_cyrl": "Вађење пломбе са пластиком конјунктиве",
+      "name_ru": "Удаление склеральной пломбы с конъюнктивальной пластикой",
+      "name_de": "Plombenentfernung mit Konjunktivalplastik",
+      "name_tr": "Konjonktiva plasti ile sklera plombu çıkarımı"
+    },
+    {
+      "code": "D07006",
+      "src": "EVAKUACIJA SILIKONSKOG ULJA",
+      "price_eur": 1890.0,
+      "status": "existing",
+      "existing_id": 3658,
+      "existing_name_en": "Silicone Oil Removal"
+    },
+    {
+      "code": "D07007",
+      "src": "ZAMJENA SILIKONSKOG ULJA",
+      "price_eur": 2520.0,
+      "status": "existing",
+      "existing_id": 3657,
+      "existing_name_en": "Silicone Oil Exchange"
+    },
+    {
+      "code": "D07008",
+      "src": "OPERACIJA ABLACIJE MREŽNJAČE",
+      "price_eur": 3750.0,
+      "status": "existing",
+      "existing_id": 3659,
+      "existing_name_en": "Episcleral Retinal Detachment Surgery"
+    },
+    {
+      "code": "D07009",
+      "src": "VITREKTOMIJA",
+      "price_eur": 5010.0,
+      "status": "existing",
+      "existing_id": 3654,
+      "existing_name_en": "Vitrectomy Category I"
+    },
+    {
+      "code": "D07011",
+      "src": "VITREKTOMIJA SA KATARAKTOM",
+      "price_eur": 6330.0,
+      "status": "existing",
+      "existing_id": 4301,
+      "existing_name_en": "Phaco-Vitrectomy"
+    }
+  ]
+}

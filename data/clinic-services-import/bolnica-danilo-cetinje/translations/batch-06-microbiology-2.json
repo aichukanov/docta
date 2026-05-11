@@ -1,0 +1,2630 @@
+{
+  "batch_id": "batch-06-microbiology-2",
+  "clinic_id": 88,
+  "subsections": [
+    "K03"
+  ],
+  "total_items": 163,
+  "summary": {
+    "existing_lab_match": 21,
+    "duplicate_with_batch_05": 2,
+    "new_lab_tests": 140
+  },
+  "items": [
+    {
+      "code": "K03004",
+      "name_sr_lat_pdf": "SPERMOKULTURA",
+      "price_eur": 24.69,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 1208,
+      "name_en": "Sperm Culture Bacteria"
+    },
+    {
+      "code": "K03005",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE KRVI - AEROBNO",
+      "price_eur": 24.69,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Blood Culture Aerobic",
+      "slug": "blood-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje krvi - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање крви - аеробно",
+      "name_ru": "Бактериологическое исследование крови - аэробное",
+      "name_de": "Bakteriologische Blutuntersuchung - aerob",
+      "name_tr": "Kan bakteriyolojik incelemesi - aerob",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03006",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE LIKVORA - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "CSF Culture Aerobic",
+      "slug": "csf-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje likvora - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање ликвора - аеробно",
+      "name_ru": "Бактериологическое исследование ликвора - аэробное",
+      "name_de": "Bakteriologische Liquoruntersuchung - aerob",
+      "name_tr": "BOS bakteriyolojik incelemesi - aerob",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03009",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE ŽUČI - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Bile Culture Aerobic",
+      "slug": "bile-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje žuči - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање жучи - аеробно",
+      "name_ru": "Бактериологическое исследование жёлчи - аэробное",
+      "name_de": "Bakteriologische Galleuntersuchung - aerob",
+      "name_tr": "Safra bakteriyolojik incelemesi - aerob",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03010",
+      "name_sr_lat_pdf": "KULTURA NA UREAPLAZMA UREALITICUM",
+      "price_eur": 17.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Ureaplasma Urealyticum Culture",
+      "slug": "ureaplasma-urealyticum-culture",
+      "name_sr": "Kultura na Ureaplasma urealyticum",
+      "name_sr_cyrl": "Култура на Ureaplasma urealyticum",
+      "name_ru": "Культура на Ureaplasma urealyticum",
+      "name_de": "Kultur auf Ureaplasma urealyticum",
+      "name_tr": "Ureaplasma urealyticum kültürü",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03011",
+      "name_sr_lat_pdf": "KULTURA NA CHLAMYDIA TRACHOMATIS",
+      "price_eur": 37.02,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Chlamydia Trachomatis Culture",
+      "slug": "chlamydia-trachomatis-culture",
+      "name_sr": "Kultura na Chlamydia trachomatis",
+      "name_sr_cyrl": "Култура на Chlamydia trachomatis",
+      "name_ru": "Культура на Chlamydia trachomatis",
+      "name_de": "Kultur auf Chlamydia trachomatis",
+      "name_tr": "Chlamydia trachomatis kültürü",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03012",
+      "name_sr_lat_pdf": "KULTURA NA MYCOPLAZMA HOMINIS",
+      "price_eur": 17.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Mycoplasma Hominis Culture",
+      "slug": "mycoplasma-hominis-culture",
+      "name_sr": "Kultura na Mycoplasma hominis",
+      "name_sr_cyrl": "Култура на Mycoplasma hominis",
+      "name_ru": "Культура на Mycoplasma hominis",
+      "name_de": "Kultur auf Mycoplasma hominis",
+      "name_tr": "Mycoplasma hominis kültürü",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03013",
+      "name_sr_lat_pdf": "KULTURA NA GONOCOCCUS",
+      "price_eur": 17.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Gonococcus Culture",
+      "slug": "gonococcus-culture",
+      "name_sr": "Kultura na Gonococcus",
+      "name_sr_cyrl": "Култура на Gonococcus",
+      "name_ru": "Культура на Gonococcus (Neisseria gonorrhoeae)",
+      "name_de": "Kultur auf Gonokokken",
+      "name_tr": "Gonokok kültürü",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03019",
+      "name_sr_lat_pdf": "KULTURA NA CAMPYLOBACTER",
+      "price_eur": 24.69,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Campylobacter Culture",
+      "slug": "campylobacter-culture",
+      "name_sr": "Kultura na Campylobacter",
+      "name_sr_cyrl": "Култура на Campylobacter",
+      "name_ru": "Культура на Campylobacter",
+      "name_de": "Kultur auf Campylobacter",
+      "name_tr": "Campylobacter kültürü",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03020",
+      "name_sr_lat_pdf": "ELISA ANTI-HELICOBACTER PYLORI",
+      "price_eur": 22.11,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 215,
+      "name_en": "Helicobacter Pylori"
+    },
+    {
+      "code": "K03021",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE DUBOKOG BRISA GRLA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Deep Throat Swab Culture Aerobic",
+      "slug": "deep-throat-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje dubokog brisa grla - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање дубоког бриса грла - аеробно",
+      "name_ru": "Бактериологическое исследование глубокого зева - аэробное",
+      "name_de": "Bakteriologische Untersuchung tiefer rachenabstrich - aerob",
+      "name_tr": "Derin boğaz sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03022",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA KRVI - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Blood Swab Culture Aerobic",
+      "slug": "blood-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa krvi - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса крви - аеробно",
+      "name_ru": "Бактериологическое исследование мазка крови - аэробное",
+      "name_de": "Bakteriologische Untersuchung blutabstrich - aerob",
+      "name_tr": "Kan sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03023",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA ULAZNOG MJESTA CENTRALNOG VENSKOG KATETERA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Central Venous Catheter Entry Site Swab Culture Aerobic",
+      "slug": "central-venous-catheter-entry-site-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa ulaznog mjesta centralnog venskog katetera - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса улазног места централног венског катетера - аеробно",
+      "name_ru": "Бактериологическое исследование мазка с места входа центрального венозного катетера - аэробное",
+      "name_de": "Bakteriologische Untersuchung eintrittsstelle des zentralen venenkatheters - aerob",
+      "name_tr": "Santral venöz kateter giriş yeri sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03024",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA VRHA URINARNOG KATETERA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Urinary Catheter Tip Swab Culture Aerobic",
+      "slug": "urinary-catheter-tip-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa vrha urinarnog katetera - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса врха уринарног катетера - аеробно",
+      "name_ru": "Бактериологическое исследование кончика мочевого катетера - аэробное",
+      "name_de": "Bakteriologische Untersuchung spitze des harnwegskatheters - aerob",
+      "name_tr": "İdrar kateter ucu sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03025",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA SWAN-GANZ KATETERA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Swan-Ganz Catheter Swab Culture Aerobic",
+      "slug": "swan-ganz-catheter-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa swan-ganz katetera - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса swan-ganz катетера - аеробно",
+      "name_ru": "Бактериологическое исследование катетера свана-ганца - аэробное",
+      "name_de": "Bakteriologische Untersuchung swan-ganz-katheter - aerob",
+      "name_tr": "Swan-Ganz kateter sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03026",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA TANKOG CRIJEVA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Small Intestine Swab Culture Aerobic",
+      "slug": "small-intestine-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa tankog crijeva - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса танког црева - аеробно",
+      "name_ru": "Бактериологическое исследование тонкой кишки - аэробное",
+      "name_de": "Bakteriologische Untersuchung dünndarmabstrich - aerob",
+      "name_tr": "İnce bağırsak sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03027",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA TORAKALNOG DRENA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Thoracic Drain Swab Culture Aerobic",
+      "slug": "thoracic-drain-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa torakalnog drena - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса торакалног дрена - аеробно",
+      "name_ru": "Бактериологическое исследование торакального дренажа - аэробное",
+      "name_de": "Bakteriologische Untersuchung thoraxdrainage-abstrich - aerob",
+      "name_tr": "Toraks dren sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03028",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA TRAHEO-BRONHIJALNOG STABLA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Tracheobronchial Tree Swab Culture Aerobic",
+      "slug": "tracheobronchial-tree-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa traheo-bronhijalnog stabla - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса трахео-бронхијалног стабла - аеробно",
+      "name_ru": "Бактериологическое исследование трахеобронхиального дерева - аэробное",
+      "name_de": "Bakteriologische Untersuchung tracheo-bronchialbaum-abstrich - aerob",
+      "name_tr": "Trakeo-bronşial ağaç sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03029",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA TRAHEOFLEKSA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Tracheoflex Swab Culture Aerobic",
+      "slug": "tracheoflex-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa traheofleksa - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса трахеофлекса - аеробно",
+      "name_ru": "Бактериологическое исследование трахеофлекса - аэробное",
+      "name_de": "Bakteriologische Untersuchung tracheoflex-abstrich - aerob",
+      "name_tr": "Trakeofleks sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03030",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA TUBUSA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Endotracheal Tube Swab Culture Aerobic",
+      "slug": "endotracheal-tube-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa tubusa - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса тубуса - аеробно",
+      "name_ru": "Бактериологическое исследование эндотрахеальной трубки - аэробное",
+      "name_de": "Bakteriologische Untersuchung tubus-abstrich - aerob",
+      "name_tr": "Tubus sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03031",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA ŽELUDAČNOG SADRŽAJA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Gastric Content Swab Culture Aerobic",
+      "slug": "gastric-content-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa želudačnog sadržaja - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса желудачног садржаја - аеробно",
+      "name_ru": "Бактериологическое исследование содержимого желудка - аэробное",
+      "name_de": "Bakteriologische Untersuchung mageninhalt-abstrich - aerob",
+      "name_tr": "Mide içeriği sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03032",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRONHOALVEOLARNOG ISPIRKA - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Bronchoalveolar Lavage Culture Aerobic",
+      "slug": "bronchoalveolar-lavage-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje bronhoalveolarnog ispirka - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бронхоалвеоларног испирка - аеробно",
+      "name_ru": "Бактериологическое исследование бронхоальвеолярного лаважа - аэробное",
+      "name_de": "Bakteriologische Untersuchung bronchoalveoläre lavage - aerob",
+      "name_tr": "Bronkoalveolar lavaj - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03033",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA KANILE - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Cannula Swab Culture Aerobic",
+      "slug": "cannula-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa kanile - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса каниле - аеробно",
+      "name_ru": "Бактериологическое исследование канюли - аэробное",
+      "name_de": "Bakteriologische Untersuchung kanülen-abstrich - aerob",
+      "name_tr": "Kanül sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03034",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA ROŽNJAČE - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Cornea Swab Culture Aerobic",
+      "slug": "cornea-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa rožnjače - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса рожњаче - аеробно",
+      "name_ru": "Бактериологическое исследование роговицы - аэробное",
+      "name_de": "Bakteriologische Untersuchung hornhautabstrich - aerob",
+      "name_tr": "Kornea sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03035",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA LOHIJA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Lochia Swab Culture Aerobic",
+      "slug": "lochia-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa lohija - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса лохија - аеробно",
+      "name_ru": "Бактериологическое исследование лохий - аэробное",
+      "name_de": "Bakteriologische Untersuchung lochien-abstrich - aerob",
+      "name_tr": "Lohia sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03036",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA NEFROSTOME - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Nephrostomy Swab Culture Aerobic",
+      "slug": "nephrostomy-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa nefrostome - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса нефростоме - аеробно",
+      "name_ru": "Бактериологическое исследование нефростомы - аэробное",
+      "name_de": "Bakteriologische Untersuchung nephrostomieabstrich - aerob",
+      "name_tr": "Nefrostomi sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03037",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA OKOLINE CENTRALNOG VENSKOG KATETERA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Central Venous Catheter Surrounding Skin Swab Culture Aerobic",
+      "slug": "central-venous-catheter-surrounding-skin-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa okoline centralnog venskog katetera - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса околине централног венског катетера - аеробно",
+      "name_ru": "Бактериологическое исследование кожи вокруг центрального венозного катетера - аэробное",
+      "name_de": "Bakteriologische Untersuchung umgebung des zentralen venenkatheters - aerob",
+      "name_tr": "Santral venöz kateter çevresi sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03038",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA OKOLINE FIKSATORA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "External Fixator Surrounding Skin Swab Culture Aerobic",
+      "slug": "external-fixator-surrounding-skin-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa okoline fiksatora - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса околине фиксатора - аеробно",
+      "name_ru": "Бактериологическое исследование кожи вокруг фиксатора - аэробное",
+      "name_de": "Bakteriologische Untersuchung umgebung des fixateurs - aerob",
+      "name_tr": "Fiksatör çevresi sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03039",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA OVOJNICE CRIJEVA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Intestinal Serosa Swab Culture Aerobic",
+      "slug": "intestinal-serosa-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa ovojnice crijeva - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса овојнице црева - аеробно",
+      "name_ru": "Бактериологическое исследование серозы кишечника - аэробное",
+      "name_de": "Bakteriologische Untersuchung darmserosa-abstrich - aerob",
+      "name_tr": "Bağırsak serozası sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03040",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA PERITONEUMA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Peritoneum Swab Culture Aerobic",
+      "slug": "peritoneum-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa peritoneuma - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса перитонеума - аеробно",
+      "name_ru": "Бактериологическое исследование брюшины - аэробное",
+      "name_de": "Bakteriologische Untersuchung peritoneum-abstrich - aerob",
+      "name_tr": "Periton sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03041",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA PLEURE - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Pleura Swab Culture Aerobic",
+      "slug": "pleura-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa pleure - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса плеуре - аеробно",
+      "name_ru": "Бактериологическое исследование плевры - аэробное",
+      "name_de": "Bakteriologische Untersuchung pleura-abstrich - aerob",
+      "name_tr": "Plevra sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03042",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA ABDOMINALNOG DRENA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Abdominal Drain Swab Culture Aerobic",
+      "slug": "abdominal-drain-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa abdominalnog drena - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса абдоминалног дрена - аеробно",
+      "name_ru": "Бактериологическое исследование абдоминального дренажа - аэробное",
+      "name_de": "Bakteriologische Untersuchung bauchdrainage-abstrich - aerob",
+      "name_tr": "Karın dreni sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03043",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA AKSILARNE REGIJE - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Axillary Region Swab Culture Aerobic",
+      "slug": "axillary-region-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa aksilarne regije - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса аксиларне регије - аеробно",
+      "name_ru": "Бактериологическое исследование подмышечной области - аэробное",
+      "name_de": "Bakteriologische Untersuchung axillarregion-abstrich - aerob",
+      "name_tr": "Aksiller bölge sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03044",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA AORTNE VALVULE - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Aortic Valve Swab Culture Aerobic",
+      "slug": "aortic-valve-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa aortne valvule - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса аортне валвуле - аеробно",
+      "name_ru": "Бактериологическое исследование аортального клапана - аэробное",
+      "name_de": "Bakteriologische Untersuchung aortenklappen-abstrich - aerob",
+      "name_tr": "Aort kapakçığı sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03045",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA ARTERIJSKOG KATETERA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Arterial Catheter Swab Culture Aerobic",
+      "slug": "arterial-catheter-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa arterijskog katetera - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса артеријског катетера - аеробно",
+      "name_ru": "Бактериологическое исследование артериального катетера - аэробное",
+      "name_de": "Bakteriologische Untersuchung arterieller katheter-abstrich - aerob",
+      "name_tr": "Arteriyel kateter sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03046",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA ASPIRACIONE SONDE - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Aspiration Probe Swab Culture Aerobic",
+      "slug": "aspiration-probe-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa aspiracione sonde - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса аспирационе сонде - аеробно",
+      "name_ru": "Бактериологическое исследование аспирационного зонда - аэробное",
+      "name_de": "Bakteriologische Untersuchung absaugkatheter-abstrich - aerob",
+      "name_tr": "Aspirasyon sondası sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03047",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE VRHA INTRAVASKULARNOG KATETERA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Intravascular Catheter Tip Swab Culture Aerobic",
+      "slug": "intravascular-catheter-tip-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje vrha intravaskularnog katetera - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање врха интраваскуларног катетера - аеробно",
+      "name_ru": "Бактериологическое исследование кончика интраваскулярного катетера - аэробное",
+      "name_de": "Bakteriologische Untersuchung spitze des intravaskulären katheters - aerob",
+      "name_tr": "İntravasküler kateter ucu sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03048",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA BUKALNE SLUZNICE - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Buccal Mucosa Swab Culture Aerobic",
+      "slug": "buccal-mucosa-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa bukalne sluznice - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса букалне слузнице - аеробно",
+      "name_ru": "Бактериологическое исследование слизистой щеки - аэробное",
+      "name_de": "Bakteriologische Untersuchung wangenschleimhaut-abstrich - aerob",
+      "name_tr": "Bukkal mukoza sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03049",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA CENTRALNOG VENSKOG KATETERA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Central Venous Catheter Swab Culture Aerobic",
+      "slug": "central-venous-catheter-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa centralnog venskog katetera - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса централног венског катетера - аеробно",
+      "name_ru": "Бактериологическое исследование центрального венозного катетера - аэробное",
+      "name_de": "Bakteriologische Untersuchung zentraler venenkatheter-abstrich - aerob",
+      "name_tr": "Santral venöz kateter sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03050",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA DEBELOG CRIJEVA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Colon Swab Culture Aerobic",
+      "slug": "colon-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa debelog crijeva - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса дебелог црева - аеробно",
+      "name_ru": "Бактериологическое исследование толстой кишки - аэробное",
+      "name_de": "Bakteriologische Untersuchung dickdarm-abstrich - aerob",
+      "name_tr": "Kalın bağırsak sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03051",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA INGVINALNE REGIJE - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Inguinal Region Swab Culture Aerobic",
+      "slug": "inguinal-region-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa ingvinalne regije - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса ингвиналне регије - аеробно",
+      "name_ru": "Бактериологическое исследование паховой области - аэробное",
+      "name_de": "Bakteriologische Untersuchung leistenregion-abstrich - aerob",
+      "name_tr": "İnguinal bölge sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03052",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA INTRAVASKULARNOG KATETERA (ŠITA) - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Intravascular Catheter (Sheath) Swab Culture Aerobic",
+      "slug": "intravascular-catheter-sheath-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa intravaskularnog katetera (šita) - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса интраваскуларног катетера (шита) - аеробно",
+      "name_ru": "Бактериологическое исследование интраваскулярного катетера (интродьюсера) - аэробное",
+      "name_de": "Bakteriologische Untersuchung intravaskulärer katheter (schleuse) - aerob",
+      "name_tr": "İntravasküler kateter (sheath) sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03053",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA IZ CAVUM UTERUSA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Uterine Cavity Swab Culture Aerobic",
+      "slug": "uterine-cavity-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa iz cavum uterusa - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса из cavum uterusa - аеробно",
+      "name_ru": "Бактериологическое исследование полости матки - аэробное",
+      "name_de": "Bakteriologische Untersuchung uterushöhlen-abstrich - aerob",
+      "name_tr": "Uterus kavitesi sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03054",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE EKSPRIMATA PROSTATE - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Prostatic Expressate Culture Aerobic",
+      "slug": "prostatic-expressate-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje eksprimata prostate - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање експримата простате - аеробно",
+      "name_ru": "Бактериологическое исследование экспрессата простаты - аэробное",
+      "name_de": "Bakteriologische Untersuchung prostataexprimat - aerob",
+      "name_tr": "Prostat ekspriması - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03055",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE LAVATA NAZOGASTRIČNE SONDE - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Nasogastric Tube Lavage Culture Aerobic",
+      "slug": "nasogastric-tube-lavage-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje lavata nazogastrične sonde - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање лавата назогастричне сонде - аеробно",
+      "name_ru": "Бактериологическое исследование лавата назогастрального зонда - аэробное",
+      "name_de": "Bakteriologische Untersuchung nasogastrische-sonden-lavage - aerob",
+      "name_tr": "Nazogastrik sonda lavajı - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03056",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE PERIKARDIJALNE TEČNOSTI - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Pericardial Fluid Culture Aerobic",
+      "slug": "pericardial-fluid-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje perikardijalne tečnosti - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање перикардијалне течности - аеробно",
+      "name_ru": "Бактериологическое исследование перикардиальной жидкости - аэробное",
+      "name_de": "Bakteriologische Untersuchung perikardflüssigkeit - aerob",
+      "name_tr": "Perikardiyal sıvı - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03057",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE PERITONEALNE TEČNOSTI - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Peritoneal Fluid Culture Aerobic",
+      "slug": "peritoneal-fluid-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje peritonealne tečnosti - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање перитонеалне течности - аеробно",
+      "name_ru": "Бактериологическое исследование перитонеальной жидкости - аэробное",
+      "name_de": "Bakteriologische Untersuchung peritonealflüssigkeit - aerob",
+      "name_tr": "Peritoneal sıvı - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03058",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE SADRŽAJA ADNEKSA - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Adnexal Content Culture Aerobic",
+      "slug": "adnexal-content-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje sadržaja adneksa - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање садржаја аднекса - аеробно",
+      "name_ru": "Бактериологическое исследование содержимого придатков - аэробное",
+      "name_de": "Bakteriologische Untersuchung adnex-inhalt - aerob",
+      "name_tr": "Adneks içeriği - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03059",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE SADRŽAJA DRENA - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Drain Content Culture Aerobic",
+      "slug": "drain-content-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje sadržaja drena - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање садржаја дрена - аеробно",
+      "name_ru": "Бактериологическое исследование содержимого дренажа - аэробное",
+      "name_de": "Bakteriologische Untersuchung draininhalt - aerob",
+      "name_tr": "Dren içeriği - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03060",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE SEKRETA IZ SREDNJEG UVA - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Middle Ear Secretion Culture Aerobic",
+      "slug": "middle-ear-secretion-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje sekreta iz srednjeg uva - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање секрета из средњег ува - аеробно",
+      "name_ru": "Бактериологическое исследование секрета среднего уха - аэробное",
+      "name_de": "Bakteriologische Untersuchung mittelohrsekret - aerob",
+      "name_tr": "Orta kulak salgısı - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03061",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE URETROPROSTATIČNOG SEKRETA - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Urethroprostatic Secretion Culture Aerobic",
+      "slug": "urethroprostatic-secretion-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje uretroprostatičnog sekreta - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање уретропростатичног секрета - аеробно",
+      "name_ru": "Бактериологическое исследование уретропростатического секрета - аэробное",
+      "name_de": "Bakteriologische Untersuchung urethroprostatisches sekret - aerob",
+      "name_tr": "Üretroprostatik salgı - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03062",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE URINA (NEFROSTOME) - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Nephrostomy Urine Culture Aerobic",
+      "slug": "nephrostomy-urine-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje urina (nefrostome) - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање урина (нефростоме) - аеробно",
+      "name_ru": "Бактериологическое исследование мочи (нефростомы) - аэробное",
+      "name_de": "Bakteriologische Untersuchung nephrostomieurin - aerob",
+      "name_tr": "Nefrostomi idrarı - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03063",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE VRHA ARTERIJSKOG KATETERA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Arterial Catheter Tip Culture Aerobic",
+      "slug": "arterial-catheter-tip-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje vrha arterijskog katetera - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање врха артеријског катетера - аеробно",
+      "name_ru": "Бактериологическое исследование кончика артериального катетера - аэробное",
+      "name_de": "Bakteriologische Untersuchung spitze des arteriellen katheters - aerob",
+      "name_tr": "Arteriyel kateter ucu - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03064",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE VRHA ASPIRACIONOG KATETERA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Aspiration Catheter Tip Culture Aerobic",
+      "slug": "aspiration-catheter-tip-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje vrha aspiracionog katetera - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање врха аспирационог катетера - аеробно",
+      "name_ru": "Бактериологическое исследование кончика аспирационного катетера - аэробное",
+      "name_de": "Bakteriologische Untersuchung spitze des absaugkatheters - aerob",
+      "name_tr": "Aspirasyon kateter ucu - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03065",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA BRONHOSKOPA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Bronchoscope Swab Culture Aerobic",
+      "slug": "bronchoscope-swab-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa bronhoskopa - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса бронхоскопа - аеробно",
+      "name_ru": "Бактериологическое исследование мазка с бронхоскопа - аэробное",
+      "name_de": "Bakteriologische Untersuchung bronchoskop-abstrich - aerob",
+      "name_tr": "Bronkoskop sürüntüsü - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03066",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE VRHA CENTRALNOG VENSKOG KATETERA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Central Venous Catheter Tip Culture Aerobic",
+      "slug": "central-venous-catheter-tip-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje vrha centralnog venskog katetera - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање врха централног венског катетера - аеробно",
+      "name_ru": "Бактериологическое исследование кончика центрального венозного катетера - аэробное",
+      "name_de": "Bakteriologische Untersuchung spitze des zentralen venenkatheters - aerob",
+      "name_tr": "Santral venöz kateter ucu - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03067",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE ŽELUDAČNOG SADRŽAJA - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Gastric Content Culture Aerobic",
+      "slug": "gastric-content-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje želudačnog sadržaja - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање желудачног садржаја - аеробно",
+      "name_ru": "Бактериологическое исследование содержимого желудка - аэробное",
+      "name_de": "Bakteriologische Untersuchung mageninhalt - aerob",
+      "name_tr": "Mide içeriği - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03068",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE SINOVIJALNE TEČNOSTI - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Synovial Fluid Culture Aerobic",
+      "slug": "synovial-fluid-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje sinovijalne tečnosti - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање синовијалне течности - аеробно",
+      "name_ru": "Бактериологическое исследование синовиальной жидкости - аэробное",
+      "name_de": "Bakteriologische Untersuchung synovialflüssigkeit - aerob",
+      "name_tr": "Sinovyal sıvı - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03069",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE OTVORA KANILE - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Cannula Opening Culture Aerobic",
+      "slug": "cannula-opening-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje otvora kanile - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање отвора каниле - аеробно",
+      "name_ru": "Бактериологическое исследование отверстия канюли - аэробное",
+      "name_de": "Bakteriologische Untersuchung kanülenöffnung - aerob",
+      "name_tr": "Kanül açıklığı - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03070",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE DIJALIZNE TEČNOSTI - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Dialysis Fluid Culture Aerobic",
+      "slug": "dialysis-fluid-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje dijalizne tečnosti - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање дијализне течности - аеробно",
+      "name_ru": "Бактериологическое исследование диализной жидкости - аэробное",
+      "name_de": "Bakteriologische Untersuchung dialyseflüssigkeit - aerob",
+      "name_tr": "Diyaliz sıvısı - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03071",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE ISJEČKA TKIVA - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Tissue Biopsy Culture Aerobic",
+      "slug": "tissue-biopsy-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje isječka tkiva - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање исечка ткива - аеробно",
+      "name_ru": "Бактериологическое исследование кусочка ткани - аэробное",
+      "name_de": "Bakteriologische Untersuchung gewebeprobe - aerob",
+      "name_tr": "Doku biyopsisi - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03072",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE TKIVA POSTELJICE - AEROBNO",
+      "price_eur": 20.73,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Placental Tissue Culture Aerobic",
+      "slug": "placental-tissue-culture-aerobic",
+      "name_sr": "Bakteriološko ispitivanje tkiva posteljice - aerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање ткива постељице - аеробно",
+      "name_ru": "Бактериологическое исследование ткани плаценты - аэробное",
+      "name_de": "Bakteriologische Untersuchung plazentagewebe - aerob",
+      "name_tr": "Plasenta dokusu - aerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03073",
+      "name_sr_lat_pdf": "ISPIT.PRIS. BORDATEL.PERTUS. IZ BRISA NAZOFARINKSA - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Bordetella Pertussis Nasopharyngeal Swab Culture Aerobic",
+      "slug": "bordetella-pertussis-nasopharyngeal-swab-culture-aerobic",
+      "name_sr": "Bordetella pertussis iz brisa nazofarinksa - aerobno",
+      "name_sr_cyrl": "Bordetella pertussis из бриса назофаринкса - аеробно",
+      "name_ru": "Bordetella pertussis из назофарингеального мазка - аэробное",
+      "name_de": "Bordetella pertussis im Nasopharynxabstrich - aerob",
+      "name_tr": "Nazofaringeal sürüntüden Bordetella pertussis - aerob",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03074",
+      "name_sr_lat_pdf": "ISPIT.PRIS. SOLUBILN. BAKT.ANTIG. U LIKVORU - LATEX AGLUTIN.",
+      "price_eur": 4.29,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Soluble Bacterial Antigens in CSF (Latex Agglutination)",
+      "slug": "soluble-bacterial-antigens-in-csf-latex-agglutination",
+      "name_sr": "Solubilni bakterijski antigeni u likvoru - latex aglutinacija",
+      "name_sr_cyrl": "Солубилни бактеријски антигени у ликвору - латекс аглутинација",
+      "name_ru": "Растворимые бактериальные антигены в ликворе - латекс-агглютинация",
+      "name_de": "Lösliche bakterielle Antigene im Liquor - Latex-Agglutination",
+      "name_tr": "BOS'ta çözünür bakteriyel antijenler - lateks aglütinasyon",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03075",
+      "name_sr_lat_pdf": "ISPITIVANJE PRISUSTVA VIBRIO CHOLLERAE - AEROBNO",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_in_batch": "batch-05",
+      "name_en": "Vibrio Cholerae Culture",
+      "note": "Используется уже созданный сервис из batch-05: Vibrio Cholerae Culture"
+    },
+    {
+      "code": "K03076",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA TANKOG CRIJEVA - ANAEROBNO",
+      "price_eur": 17.31,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Small Intestine Swab Culture Anaerobic",
+      "slug": "small-intestine-swab-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa tankog crijeva - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса танког црева - анаеробно",
+      "name_ru": "Бактериологическое исследование тонкой кишки - анаэробное",
+      "name_de": "Bakteriologische Untersuchung dünndarm-abstrich - anaerob",
+      "name_tr": "İnce bağırsak sürüntüsü - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03077",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA TORAKALNOG DRENA - ANAEROBNO",
+      "price_eur": 17.31,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Thoracic Drain Swab Culture Anaerobic",
+      "slug": "thoracic-drain-swab-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa torakalnog drena - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса торакалног дрена - анаеробно",
+      "name_ru": "Бактериологическое исследование торакального дренажа - анаэробное",
+      "name_de": "Bakteriologische Untersuchung thoraxdrainage-abstrich - anaerob",
+      "name_tr": "Toraks dren sürüntüsü - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03078",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA OVOJNICE CRIJEVA - ANAEROBNO",
+      "price_eur": 17.31,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Intestinal Serosa Swab Culture Anaerobic",
+      "slug": "intestinal-serosa-swab-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa ovojnice crijeva - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса овојнице црева - анаеробно",
+      "name_ru": "Бактериологическое исследование серозы кишечника - анаэробное",
+      "name_de": "Bakteriologische Untersuchung darmserosa-abstrich - anaerob",
+      "name_tr": "Bağırsak serozası sürüntüsü - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03079",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA PERITONEUMA - ANAEROBNO",
+      "price_eur": 17.31,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Peritoneum Swab Culture Anaerobic",
+      "slug": "peritoneum-swab-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa peritoneuma - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса перитонеума - анаеробно",
+      "name_ru": "Бактериологическое исследование брюшины - анаэробное",
+      "name_de": "Bakteriologische Untersuchung peritoneum-abstrich - anaerob",
+      "name_tr": "Periton sürüntüsü - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03080",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA ABDOMINALNOG DRENA - ANAEROBNO",
+      "price_eur": 17.31,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Abdominal Drain Swab Culture Anaerobic",
+      "slug": "abdominal-drain-swab-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa abdominalnog drena - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса абдоминалног дрена - анаеробно",
+      "name_ru": "Бактериологическое исследование абдоминального дренажа - анаэробное",
+      "name_de": "Bakteriologische Untersuchung bauchdrainage-abstrich - anaerob",
+      "name_tr": "Karın dreni sürüntüsü - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03081",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA RANE - ANAEROBNO",
+      "price_eur": 17.31,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Wound Swab Culture Anaerobic",
+      "slug": "wound-swab-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa rane - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса ране - анаеробно",
+      "name_ru": "Бактериологическое исследование раны - анаэробное",
+      "name_de": "Bakteriologische Untersuchung wundabstrich - anaerob",
+      "name_tr": "Yara sürüntüsü - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03082",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE SADRŽAJA ABSCESA - ANAEROBNO",
+      "price_eur": 24.63,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Abscess Content Culture Anaerobic",
+      "slug": "abscess-content-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje sadržaja abscesa - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање садржаја апсцеса - анаеробно",
+      "name_ru": "Бактериологическое исследование содержимого абсцесса - анаэробное",
+      "name_de": "Bakteriologische Untersuchung abszessinhalt - anaerob",
+      "name_tr": "Apse içeriği - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03083",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA IZ CAVUM UTERUSA - ANAEROBNO",
+      "price_eur": 17.31,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Uterine Cavity Swab Culture Anaerobic",
+      "slug": "uterine-cavity-swab-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa iz cavum uterusa - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса из cavum uterusa - анаеробно",
+      "name_ru": "Бактериологическое исследование полости матки - анаэробное",
+      "name_de": "Bakteriologische Untersuchung uterushöhlen-abstrich - anaerob",
+      "name_tr": "Uterus kavitesi sürüntüsü - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03084",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE SADRŽAJA ADNEKSA - ANAEROBNO",
+      "price_eur": 24.63,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Adnexal Content Culture Anaerobic",
+      "slug": "adnexal-content-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje sadržaja adneksa - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање садржаја аднекса - анаеробно",
+      "name_ru": "Бактериологическое исследование содержимого придатков - анаэробное",
+      "name_de": "Bakteriologische Untersuchung adnex-inhalt - anaerob",
+      "name_tr": "Adneks içeriği - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03085",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE KRVI - ANAEROBNO",
+      "price_eur": 17.31,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Blood Culture Anaerobic",
+      "slug": "blood-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje krvi - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање крви - анаеробно",
+      "name_ru": "Бактериологическое исследование крови - анаэробное",
+      "name_de": "Bakteriologische Untersuchung blut - anaerob",
+      "name_tr": "Kan - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03086",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE ISJEČKA TKIVA - ANAEROBNO",
+      "price_eur": 24.63,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Tissue Biopsy Culture Anaerobic",
+      "slug": "tissue-biopsy-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje isječka tkiva - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање исечка ткива - анаеробно",
+      "name_ru": "Бактериологическое исследование кусочка ткани - анаэробное",
+      "name_de": "Bakteriologische Untersuchung gewebeprobe - anaerob",
+      "name_tr": "Doku biyopsisi - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03087",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE ISJEČKA POSTELJICE - ANAEROBNO",
+      "price_eur": 24.63,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Placental Tissue Biopsy Culture Anaerobic",
+      "slug": "placental-tissue-biopsy-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje isječka posteljice - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање исечка постељице - анаеробно",
+      "name_ru": "Бактериологическое исследование кусочка плаценты - анаэробное",
+      "name_de": "Bakteriologische Untersuchung plazentagewebe - anaerob",
+      "name_tr": "Plasenta dokusu - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03088",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA KRVI - ANAEROBNO",
+      "price_eur": 17.31,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Blood Swab Culture Anaerobic",
+      "slug": "blood-swab-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa krvi - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса крви - анаеробно",
+      "name_ru": "Бактериологическое исследование мазка крови - анаэробное",
+      "name_de": "Bakteriologische Untersuchung blutabstrich - anaerob",
+      "name_tr": "Kan sürüntüsü - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03089",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE BRISA DEBELOG CRIJEVA - ANAEROBNO",
+      "price_eur": 17.31,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Colon Swab Culture Anaerobic",
+      "slug": "colon-swab-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje brisa debelog crijeva - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање бриса дебелог црева - анаеробно",
+      "name_ru": "Бактериологическое исследование толстой кишки - анаэробное",
+      "name_de": "Bakteriologische Untersuchung dickdarm-abstrich - anaerob",
+      "name_tr": "Kalın bağırsak sürüntüsü - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03090",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE PERITONEALNE TEČNOSTI - ANAEROBNO",
+      "price_eur": 24.63,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Peritoneal Fluid Culture Anaerobic",
+      "slug": "peritoneal-fluid-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje peritonealne tečnosti - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање перитонеалне течности - анаеробно",
+      "name_ru": "Бактериологическое исследование перитонеальной жидкости - анаэробное",
+      "name_de": "Bakteriologische Untersuchung peritonealflüssigkeit - anaerob",
+      "name_tr": "Peritoneal sıvı - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03091",
+      "name_sr_lat_pdf": "BAKTERIOLOŠKO ISPITIVANJE SADRŽAJA DRENA - ANAEROBNO",
+      "price_eur": 24.63,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Drain Content Culture Anaerobic",
+      "slug": "drain-content-culture-anaerobic",
+      "name_sr": "Bakteriološko ispitivanje sadržaja drena - anaerobno",
+      "name_sr_cyrl": "Бактериолошко испитивање садржаја дрена - анаеробно",
+      "name_ru": "Бактериологическое исследование содержимого дренажа - анаэробное",
+      "name_de": "Bakteriologische Untersuchung draininhalt - anaerob",
+      "name_tr": "Dren içeriği - anaerob bakteriyolojik inceleme",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03092",
+      "name_sr_lat_pdf": "ISPITIVANJE PRISUSTVA ECHINOCOCCUS SPP. - BOJENI PREPARAT",
+      "price_eur": 12.93,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Echinococcus Detection - Stained Preparation",
+      "slug": "echinococcus-detection-stained-preparation",
+      "name_sr": "Ispitivanje prisustva Echinococcus spp. - bojeni preparat",
+      "name_sr_cyrl": "Испитивање присуства Echinococcus spp. - бојени препарат",
+      "name_ru": "Обнаружение Echinococcus spp. - окрашенный препарат",
+      "name_de": "Echinococcus spp. Nachweis - gefärbtes Präparat",
+      "name_tr": "Echinococcus spp. tespiti - boyalı preparat",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03093",
+      "name_sr_lat_pdf": "ISPITIVANJE PRISUSTVA ECHINOCOCCUS SPP. - NATIVNI PREPARAT",
+      "price_eur": 12.93,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Echinococcus Detection - Native Preparation",
+      "slug": "echinococcus-detection-native-preparation",
+      "name_sr": "Ispitivanje prisustva Echinococcus spp. - nativni preparat",
+      "name_sr_cyrl": "Испитивање присуства Echinococcus spp. - нативни препарат",
+      "name_ru": "Обнаружение Echinococcus spp. - нативный препарат",
+      "name_de": "Echinococcus spp. Nachweis - natives Präparat",
+      "name_tr": "Echinococcus spp. tespiti - nativ preparat",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03094",
+      "name_sr_lat_pdf": "ISPITIV. PRISUST. BABESIA SPP. - BOJENI PREPARAT GUSTE KAPI",
+      "price_eur": 33.3,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Babesia Detection - Stained Thick Drop Preparation",
+      "slug": "babesia-detection-stained-thick-drop-preparation",
+      "name_sr": "Ispitivanje prisustva Babesia spp. - bojeni preparat guste kapi",
+      "name_sr_cyrl": "Испитивање присуства Babesia spp. - бојени препарат густе капи",
+      "name_ru": "Обнаружение Babesia spp. - окрашенный препарат толстой капли",
+      "name_de": "Babesia spp. Nachweis - gefärbter Dicker-Tropfen-Ausstrich",
+      "name_tr": "Babesia spp. tespiti - boyalı kalın damla preparat",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03095",
+      "name_sr_lat_pdf": "ISPITIV. PRIS. BABESIA SPP. - BOJENI PREPARAT KRVNOG RAZMAZA",
+      "price_eur": 33.3,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Babesia Detection - Stained Blood Smear",
+      "slug": "babesia-detection-stained-blood-smear",
+      "name_sr": "Ispitivanje prisustva Babesia spp. - bojeni preparat krvnog razmaza",
+      "name_sr_cyrl": "Испитивање присуства Babesia spp. - бојени препарат крвног размаза",
+      "name_ru": "Обнаружение Babesia spp. - окрашенный мазок крови",
+      "name_de": "Babesia spp. Nachweis - gefärbter Blutausstrich",
+      "name_tr": "Babesia spp. tespiti - boyalı kan yayması",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03096",
+      "name_sr_lat_pdf": "ISPITIVANJE PRISUSTVA CRYPTOCOCCUS SPP. - KULTIVACIJA",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Cryptococcus Detection - Cultivation",
+      "slug": "cryptococcus-detection-cultivation",
+      "name_sr": "Ispitivanje prisustva Cryptococcus spp. - kultivacija",
+      "name_sr_cyrl": "Испитивање присуства Cryptococcus spp. - култивација",
+      "name_ru": "Обнаружение Cryptococcus spp. - культивирование",
+      "name_de": "Cryptococcus spp. Nachweis - Kultivierung",
+      "name_tr": "Cryptococcus spp. tespiti - kültür",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03097",
+      "name_sr_lat_pdf": "ISPITIVANJE PRISUSTVA CRYPTOCOCCUS SPP. - BOJENI PREPARAT",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Cryptococcus Detection - Stained Preparation",
+      "slug": "cryptococcus-detection-stained-preparation",
+      "name_sr": "Ispitivanje prisustva Cryptococcus spp. - bojeni preparat",
+      "name_sr_cyrl": "Испитивање присуства Cryptococcus spp. - бојени препарат",
+      "name_ru": "Обнаружение Cryptococcus spp. - окрашенный препарат",
+      "name_de": "Cryptococcus spp. Nachweis - gefärbtes Präparat",
+      "name_tr": "Cryptococcus spp. tespiti - boyalı preparat",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03098",
+      "name_sr_lat_pdf": "ISPITIVANJE PRISUSTVA CRYPTOCOCCUS SPP. - TUŠ PREPARAT",
+      "price_eur": 13.32,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Cryptococcus Detection - India Ink Preparation",
+      "slug": "cryptococcus-detection-india-ink-preparation",
+      "name_sr": "Ispitivanje prisustva Cryptococcus spp. - tuš preparat",
+      "name_sr_cyrl": "Испитивање присуства Cryptococcus spp. - туш препарат",
+      "name_ru": "Обнаружение Cryptococcus spp. - препарат с тушью",
+      "name_de": "Cryptococcus spp. Nachweis - Tuschepräparat",
+      "name_tr": "Cryptococcus spp. tespiti - çini mürekkebi preparat",
+      "categories": [
+        "MICROBIOLOGY"
+      ]
+    },
+    {
+      "code": "K03099",
+      "name_sr_lat_pdf": "ISPIT.PRIS. KRV. I TKIVNIH PARAZITA - BOJENI PREP. GUST.KAPI",
+      "price_eur": 33.3,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Blood and Tissue Parasite Detection - Stained Thick Drop",
+      "slug": "blood-and-tissue-parasite-detection-stained-thick-drop",
+      "name_sr": "Ispitivanje prisustva krvnih i tkivnih parazita - bojeni preparat guste kapi",
+      "name_sr_cyrl": "Испитивање присуства крвних и ткивних паразита - бојени препарат густе капи",
+      "name_ru": "Обнаружение кровяных и тканевых паразитов - окрашенный препарат толстой капли",
+      "name_de": "Blut- und Gewebeparasiten Nachweis - gefärbter Dicker-Tropfen-Ausstrich",
+      "name_tr": "Kan ve doku parazitleri tespiti - boyalı kalın damla preparat",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03100",
+      "name_sr_lat_pdf": "ISPIT.PRIS. KRVN. I TKIVN. PARAZITA-BOJENI PREP.KRVN.RAZMAZA",
+      "price_eur": 33.3,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Blood and Tissue Parasite Detection - Stained Blood Smear",
+      "slug": "blood-and-tissue-parasite-detection-stained-blood-smear",
+      "name_sr": "Ispitivanje prisustva krvnih i tkivnih parazita - bojeni preparat krvnog razmaza",
+      "name_sr_cyrl": "Испитивање присуства крвних и ткивних паразита - бојени препарат крвног размаза",
+      "name_ru": "Обнаружение кровяных и тканевых паразитов - окрашенный мазок крови",
+      "name_de": "Blut- und Gewebeparasiten Nachweis - gefärbter Blutausstrich",
+      "name_tr": "Kan ve doku parazitleri tespiti - boyalı kan yayması",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03101",
+      "name_sr_lat_pdf": "ISPITIV. PRISUST. KRVNIH I TKIVNIH PARAZITA-NATIVNI PREPARAT",
+      "price_eur": 33.3,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Blood and Tissue Parasite Detection - Native Preparation",
+      "slug": "blood-and-tissue-parasite-detection-native-preparation",
+      "name_sr": "Ispitivanje prisustva krvnih i tkivnih parazita - nativni preparat",
+      "name_sr_cyrl": "Испитивање присуства крвних и ткивних паразита - нативни препарат",
+      "name_ru": "Обнаружение кровяных и тканевых паразитов - нативный препарат",
+      "name_de": "Blut- und Gewebeparasiten Nachweis - natives Präparat",
+      "name_tr": "Kan ve doku parazitleri tespiti - nativ preparat",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03102",
+      "name_sr_lat_pdf": "ISPIT.PRIS. LEISCHMANIA SPP.-BOJENI PREPARAT PUNKT.KOŠT.SRŽI",
+      "price_eur": 30.84,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Leishmania Detection - Stained Bone Marrow Aspirate",
+      "slug": "leishmania-detection-stained-bone-marrow-aspirate",
+      "name_sr": "Ispitivanje prisustva Leishmania spp. - bojeni preparat punktata koštane srži",
+      "name_sr_cyrl": "Испитивање присуства Leishmania spp. - бојени препарат пунктата коштане сржи",
+      "name_ru": "Обнаружение Leishmania spp. - окрашенный препарат пунктата костного мозга",
+      "name_de": "Leishmania spp. Nachweis - gefärbtes Knochenmarkpunktat",
+      "name_tr": "Leishmania spp. tespiti - boyalı kemik iliği aspirası preparatı",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03103",
+      "name_sr_lat_pdf": "ISPIT.PRISUST. PLASMODIUM SPP. - BOJENI PREPARAT GUSTE KAPI",
+      "price_eur": 33.3,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Plasmodium Detection - Stained Thick Drop",
+      "slug": "plasmodium-detection-stained-thick-drop",
+      "name_sr": "Ispitivanje prisustva Plasmodium spp. - bojeni preparat guste kapi",
+      "name_sr_cyrl": "Испитивање присуства Plasmodium spp. - бојени препарат густе капи",
+      "name_ru": "Обнаружение Plasmodium spp. - окрашенный препарат толстой капли",
+      "name_de": "Plasmodium spp. Nachweis - gefärbter Dicker-Tropfen-Ausstrich",
+      "name_tr": "Plasmodium spp. tespiti - boyalı kalın damla preparat",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03104",
+      "name_sr_lat_pdf": "ISPIT.PRIS. PLASMODIUM SPP.-BOJENI PREPAR. KRVN.RAZMAZA",
+      "price_eur": 33.3,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Plasmodium Detection - Stained Blood Smear",
+      "slug": "plasmodium-detection-stained-blood-smear",
+      "name_sr": "Ispitivanje prisustva Plasmodium spp. - bojeni preparat krvnog razmaza",
+      "name_sr_cyrl": "Испитивање присуства Plasmodium spp. - бојени препарат крвног размаза",
+      "name_ru": "Обнаружение Plasmodium spp. - окрашенный мазок крови",
+      "name_de": "Plasmodium spp. Nachweis - gefärbter Blutausstrich",
+      "name_tr": "Plasmodium spp. tespiti - boyalı kan yayması",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03105",
+      "name_sr_lat_pdf": "ISPITIVANJE PRISUSTVA TOXOPLASMA GONDII - BOJENI PREPARAT",
+      "price_eur": 18.57,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Toxoplasma Gondii Detection - Stained Preparation",
+      "slug": "toxoplasma-gondii-detection-stained-preparation",
+      "name_sr": "Ispitivanje prisustva Toxoplasma gondii - bojeni preparat",
+      "name_sr_cyrl": "Испитивање присуства Toxoplasma gondii - бојени препарат",
+      "name_ru": "Обнаружение Toxoplasma gondii - окрашенный препарат",
+      "name_de": "Toxoplasma gondii Nachweis - gefärbtes Präparat",
+      "name_tr": "Toxoplasma gondii tespiti - boyalı preparat",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03106",
+      "name_sr_lat_pdf": "ISPITIVANJE PRISUSTVA CRYPTOSPORIDIUM SPP. - BOJENI PREPARAT",
+      "price_eur": 12.36,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_in_batch": "batch-05",
+      "name_en": "Cryptosporidium in Stool (Ziehl-Neelsen)",
+      "note": "Используется уже созданный сервис из batch-05: Cryptosporidium in Stool (Ziehl-Neelsen)"
+    },
+    {
+      "code": "K03107",
+      "name_sr_lat_pdf": "ANTI BOR.BURGD. IGG ANTITIJELA-POTVRD.TEST-VESTERN BLOT",
+      "price_eur": 42.24,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 1314,
+      "name_en": "Borrelia Burgdorferi IgG Western Blot"
+    },
+    {
+      "code": "K03108",
+      "name_sr_lat_pdf": "ANTI BORR.BURGD. IGM ANTITIJELA-POTVRDNI TEST-VESTERN BLOT",
+      "price_eur": 42.24,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 1315,
+      "name_en": "Borrelia Burgdorferi IgM Western Blot"
+    },
+    {
+      "code": "K03109",
+      "name_sr_lat_pdf": "ANTI BRUCELLA ABORTUS ANTITIJELA - AGLUTINACIJA",
+      "price_eur": 4.29,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Brucella Abortus Antibodies (Agglutination)",
+      "slug": "brucella-abortus-antibodies-agglutination",
+      "name_sr": "Anti Brucella abortus antitijela - aglutinacija",
+      "name_sr_cyrl": "Anti Brucella abortus антитела - аглутинација",
+      "name_ru": "Антитела к Brucella abortus - агглютинация",
+      "name_de": "Anti-Brucella abortus Antikörper - Agglutination",
+      "name_tr": "Brucella abortus antikorları - aglütinasyon",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03110",
+      "name_sr_lat_pdf": "ANTI BRUCELLA MELITENSIS ANTITIJELA - AGLUTINACIJA",
+      "price_eur": 4.29,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Brucella Melitensis Antibodies (Agglutination)",
+      "slug": "brucella-melitensis-antibodies-agglutination",
+      "name_sr": "Anti Brucella melitensis antitijela - aglutinacija",
+      "name_sr_cyrl": "Anti Brucella melitensis антитела - аглутинација",
+      "name_ru": "Антитела к Brucella melitensis - агглютинация",
+      "name_de": "Anti-Brucella melitensis Antikörper - Agglutination",
+      "name_tr": "Brucella melitensis antikorları - aglütinasyon",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03111",
+      "name_sr_lat_pdf": "ANTI BRUCELLA IGM ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 332,
+      "name_en": "Brucella IgM"
+    },
+    {
+      "code": "K03112",
+      "name_sr_lat_pdf": "ANTI BRUCELLA IGG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Brucella IgG ELISA",
+      "slug": "brucella-igg-elisa",
+      "name_sr": "Anti Brucella IgG antitijela - ELISA",
+      "name_sr_cyrl": "Anti Brucella IgG антитела - ELISA",
+      "name_ru": "Антитела к Brucella IgG - ИФА",
+      "name_de": "Anti-Brucella IgG ELISA",
+      "name_tr": "Brucella IgG antikorları - ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03113",
+      "name_sr_lat_pdf": "ANTI BRUCELLA IGA ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Brucella IgA ELISA",
+      "slug": "brucella-iga-elisa",
+      "name_sr": "Anti Brucella IgA antitijela - ELISA",
+      "name_sr_cyrl": "Anti Brucella IgA антитела - ELISA",
+      "name_ru": "Антитела к Brucella IgA - ИФА",
+      "name_de": "Anti-Brucella IgA ELISA",
+      "name_tr": "Brucella IgA antikorları - ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03114",
+      "name_sr_lat_pdf": "ANTI COXIELLA BURNETII IGG ANTITIJELA FAZA 1 - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Coxiella Burnetii IgG Phase 1 ELISA",
+      "slug": "coxiella-burnetii-igg-phase-1-elisa",
+      "name_sr": "Anti Coxiella burnetii IgG faza 1 - ELISA",
+      "name_sr_cyrl": "Anti Coxiella burnetii IgG фаза 1 - ELISA",
+      "name_ru": "Антитела к Coxiella burnetii IgG фаза 1 - ИФА",
+      "name_de": "Anti-Coxiella burnetii IgG Phase 1 ELISA",
+      "name_tr": "Coxiella burnetii IgG faz 1 ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03115",
+      "name_sr_lat_pdf": "ANTI COXIELLA BURNETII IGA ANTITIJELA FAZA 1 - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Coxiella Burnetii IgA Phase 1 ELISA",
+      "slug": "coxiella-burnetii-iga-phase-1-elisa",
+      "name_sr": "Anti Coxiella burnetii IgA faza 1 - ELISA",
+      "name_sr_cyrl": "Anti Coxiella burnetii IgA фаза 1 - ELISA",
+      "name_ru": "Антитела к Coxiella burnetii IgA фаза 1 - ИФА",
+      "name_de": "Anti-Coxiella burnetii IgA Phase 1 ELISA",
+      "name_tr": "Coxiella burnetii IgA faz 1 ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03116",
+      "name_sr_lat_pdf": "ANTI COXIELLA BURNETII IGM ANTITIJELA FAZA 2 - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Coxiella Burnetii IgM Phase 2 ELISA",
+      "slug": "coxiella-burnetii-igm-phase-2-elisa",
+      "name_sr": "Anti Coxiella burnetii IgM faza 2 - ELISA",
+      "name_sr_cyrl": "Anti Coxiella burnetii IgM фаза 2 - ELISA",
+      "name_ru": "Антитела к Coxiella burnetii IgM фаза 2 - ИФА",
+      "name_de": "Anti-Coxiella burnetii IgM Phase 2 ELISA",
+      "name_tr": "Coxiella burnetii IgM faz 2 ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03117",
+      "name_sr_lat_pdf": "ANTI COXIELLA BURNETII IGG ANTITIJELA FAZA 2 - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Coxiella Burnetii IgG Phase 2 ELISA",
+      "slug": "coxiella-burnetii-igg-phase-2-elisa",
+      "name_sr": "Anti Coxiella burnetii IgG faza 2 - ELISA",
+      "name_sr_cyrl": "Anti Coxiella burnetii IgG фаза 2 - ELISA",
+      "name_ru": "Антитела к Coxiella burnetii IgG фаза 2 - ИФА",
+      "name_de": "Anti-Coxiella burnetii IgG Phase 2 ELISA",
+      "name_tr": "Coxiella burnetii IgG faz 2 ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03118",
+      "name_sr_lat_pdf": "ANTI COXSACKIE B VIRUS IGM ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 242,
+      "name_en": "Coxsackie B IgM"
+    },
+    {
+      "code": "K03119",
+      "name_sr_lat_pdf": "ANTI COXSACKIE B VIRUS IGG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 243,
+      "name_en": "Coxsackie B IgG"
+    },
+    {
+      "code": "K03120",
+      "name_sr_lat_pdf": "ANTI COXSACKIE VIRUS IGM ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Coxsackie Virus IgM ELISA",
+      "slug": "coxsackie-virus-igm-elisa",
+      "name_sr": "Anti Coxsackie virus IgM - ELISA",
+      "name_sr_cyrl": "Anti Coxsackie virus IgM - ELISA",
+      "name_ru": "Антитела к Coxsackie virus IgM - ИФА",
+      "name_de": "Anti-Coxsackie-Virus IgM ELISA",
+      "name_tr": "Coxsackie virüs IgM ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03121",
+      "name_sr_lat_pdf": "ANTI COXSACKIE VIRUS IGG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Coxsackie Virus IgG ELISA",
+      "slug": "coxsackie-virus-igg-elisa",
+      "name_sr": "Anti Coxsackie virus IgG - ELISA",
+      "name_sr_cyrl": "Anti Coxsackie virus IgG - ELISA",
+      "name_ru": "Антитела к Coxsackie virus IgG - ИФА",
+      "name_de": "Anti-Coxsackie-Virus IgG ELISA",
+      "name_tr": "Coxsackie virüs IgG ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03122",
+      "name_sr_lat_pdf": "ANTI ECHINOCOCCUS GRANULOSUS IGG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 1248,
+      "name_en": "Echinococcus IgG ELISA"
+    },
+    {
+      "code": "K03123",
+      "name_sr_lat_pdf": "ANTI ECHINOCOCCUS GRANULOSUS ANTITIJELA-INDIR.HEMAGLUT.",
+      "price_eur": 25.98,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Echinococcus Granulosus Antibodies (Indirect Hemagglutination)",
+      "slug": "echinococcus-granulosus-antibodies-indirect-hemagglutination",
+      "name_sr": "Anti Echinococcus granulosus antitijela - indirektna hemaglutinacija",
+      "name_sr_cyrl": "Anti Echinococcus granulosus антитела - индиректна хемаглутинација",
+      "name_ru": "Антитела к Echinococcus granulosus - непрямая гемагглютинация",
+      "name_de": "Anti-Echinococcus granulosus - indirekte Hämagglutination",
+      "name_tr": "Echinococcus granulosus antikorları - indirekt hemaglütinasyon",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03124",
+      "name_sr_lat_pdf": "ANTI HANTA VIRUS IGM ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Hantavirus IgM ELISA",
+      "slug": "hantavirus-igm-elisa",
+      "name_sr": "Anti Hanta virus IgM - ELISA",
+      "name_sr_cyrl": "Anti Hanta virus IgM - ELISA",
+      "name_ru": "Антитела к Hantavirus IgM - ИФА",
+      "name_de": "Anti-Hantavirus IgM ELISA",
+      "name_tr": "Hantavirus IgM ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03125",
+      "name_sr_lat_pdf": "ANTI HANTA VIRUS IGG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Hantavirus IgG ELISA",
+      "slug": "hantavirus-igg-elisa",
+      "name_sr": "Anti Hanta virus IgG - ELISA",
+      "name_sr_cyrl": "Anti Hanta virus IgG - ELISA",
+      "name_ru": "Антитела к Hantavirus IgG - ИФА",
+      "name_de": "Anti-Hantavirus IgG ELISA",
+      "name_tr": "Hantavirus IgG ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03126",
+      "name_sr_lat_pdf": "ANTI HBC ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Anti-HBc Total ELISA",
+      "slug": "anti-hbc-total-elisa",
+      "name_sr": "Anti HBc antitijela - ELISA",
+      "name_sr_cyrl": "Anti HBc антитела - ELISA",
+      "name_ru": "Антитела к HBc (Anti-HBc) - ИФА",
+      "name_de": "Anti-HBc Antikörper ELISA",
+      "name_tr": "Anti-HBc antikorları - ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03127",
+      "name_sr_lat_pdf": "ANTI HBC IGM ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Anti-HBc IgM ELISA",
+      "slug": "anti-hbc-igm-elisa",
+      "name_sr": "Anti HBc IgM antitijela - ELISA",
+      "name_sr_cyrl": "Anti HBc IgM антитела - ELISA",
+      "name_ru": "Антитела к HBc IgM (Anti-HBc IgM) - ИФА",
+      "name_de": "Anti-HBc IgM ELISA",
+      "name_tr": "Anti-HBc IgM antikorları - ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03128",
+      "name_sr_lat_pdf": "ANTI HBEAG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Anti-HBe ELISA",
+      "slug": "anti-hbe-elisa",
+      "name_sr": "Anti HBe antitijela - ELISA",
+      "name_sr_cyrl": "Anti HBe антитела - ELISA",
+      "name_ru": "Антитела к HBeAg (Anti-HBe) - ИФА",
+      "name_de": "Anti-HBe Antikörper ELISA",
+      "name_tr": "Anti-HBe antikorları - ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03129",
+      "name_sr_lat_pdf": "ANTI HBSAG ANTITIJELA - ELISA",
+      "price_eur": 31.62,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 1296,
+      "name_en": "HBsAb"
+    },
+    {
+      "code": "K03130",
+      "name_sr_lat_pdf": "ANTI HEPATITIS C VIRUS ANTITIJELA - IMUNO BLOT",
+      "price_eur": 42.24,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Anti-HCV Antibodies (Immunoblot)",
+      "slug": "anti-hcv-antibodies-immunoblot",
+      "name_sr": "Anti hepatitis C virus antitijela - imuno blot",
+      "name_sr_cyrl": "Anti hepatitis C virus антитела - имуно блот",
+      "name_ru": "Антитела к HCV - иммуноблот",
+      "name_de": "Anti-Hepatitis-C-Virus Antikörper - Immunoblot",
+      "name_tr": "Anti-HCV antikorları - immunoblot",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03131",
+      "name_sr_lat_pdf": "ANTI HEPATITIS A VIRUS IGM ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 232,
+      "name_en": "HAV IgM"
+    },
+    {
+      "code": "K03132",
+      "name_sr_lat_pdf": "ANTI HEPATITIS A VIRUS IGG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 330,
+      "name_en": "HAV Total Antibodies"
+    },
+    {
+      "code": "K03133",
+      "name_sr_lat_pdf": "ANTI HEPATITIS E VIRUS IGM ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Anti-HEV IgM ELISA",
+      "slug": "anti-hev-igm-elisa",
+      "name_sr": "Anti hepatitis E virus IgM - ELISA",
+      "name_sr_cyrl": "Anti hepatitis E virus IgM - ELISA",
+      "name_ru": "Антитела к HEV IgM - ИФА",
+      "name_de": "Anti-Hepatitis-E-Virus IgM ELISA",
+      "name_tr": "Anti-HEV IgM ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03134",
+      "name_sr_lat_pdf": "ANTI HEPATITIS E VIRUS IGG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Anti-HEV IgG ELISA",
+      "slug": "anti-hev-igg-elisa",
+      "name_sr": "Anti hepatitis E virus IgG - ELISA",
+      "name_sr_cyrl": "Anti hepatitis E virus IgG - ELISA",
+      "name_ru": "Антитела к HEV IgG - ИФА",
+      "name_de": "Anti-Hepatitis-E-Virus IgG ELISA",
+      "name_tr": "Anti-HEV IgG ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03135",
+      "name_sr_lat_pdf": "ANTI HIV 1 ANTITIJELA - POTVRDNI TEST - VESTERN BLOT",
+      "price_eur": 42.24,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Anti-HIV 1 Western Blot Confirmation",
+      "slug": "anti-hiv-1-western-blot-confirmation",
+      "name_sr": "Anti HIV 1 antitijela - potvrdni test - western blot",
+      "name_sr_cyrl": "Anti HIV 1 антитела - потврдни тест - western blot",
+      "name_ru": "Антитела к HIV-1 - подтверждающий тест Вестерн-блот",
+      "name_de": "Anti-HIV-1 Antikörper - Bestätigungstest Western Blot",
+      "name_tr": "Anti-HIV-1 antikorları - doğrulama testi Western Blot",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03136",
+      "name_sr_lat_pdf": "ANTI HIV 2 ANTITIJELA-POTVRDNI TEST - VESTERN BLOT",
+      "price_eur": 42.24,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Anti-HIV 2 Western Blot Confirmation",
+      "slug": "anti-hiv-2-western-blot-confirmation",
+      "name_sr": "Anti HIV 2 antitijela - potvrdni test - western blot",
+      "name_sr_cyrl": "Anti HIV 2 антитела - потврдни тест - western blot",
+      "name_ru": "Антитела к HIV-2 - подтверждающий тест Вестерн-блот",
+      "name_de": "Anti-HIV-2 Antikörper - Bestätigungstest Western Blot",
+      "name_tr": "Anti-HIV-2 antikorları - doğrulama testi Western Blot",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03137",
+      "name_sr_lat_pdf": "ANTI INFLUENZA B VIRUS IGM ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Influenza B Virus IgM ELISA",
+      "slug": "influenza-b-virus-igm-elisa",
+      "name_sr": "Anti influenza B virus IgM - ELISA",
+      "name_sr_cyrl": "Anti influenza B virus IgM - ELISA",
+      "name_ru": "Антитела к Influenza B virus IgM - ИФА",
+      "name_de": "Anti-Influenza-B-Virus IgM ELISA",
+      "name_tr": "İnfluenza B virüs IgM ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03138",
+      "name_sr_lat_pdf": "ANTI INFLUENZA B VIRUS IGG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Influenza B Virus IgG ELISA",
+      "slug": "influenza-b-virus-igg-elisa",
+      "name_sr": "Anti influenza B virus IgG - ELISA",
+      "name_sr_cyrl": "Anti influenza B virus IgG - ELISA",
+      "name_ru": "Антитела к Influenza B virus IgG - ИФА",
+      "name_de": "Anti-Influenza-B-Virus IgG ELISA",
+      "name_tr": "İnfluenza B virüs IgG ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03139",
+      "name_sr_lat_pdf": "ANTI INFULENZA A VIRUS IGM ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Influenza A Virus IgM ELISA",
+      "slug": "influenza-a-virus-igm-elisa",
+      "name_sr": "Anti influenza A virus IgM - ELISA",
+      "name_sr_cyrl": "Anti influenza A virus IgM - ELISA",
+      "name_ru": "Антитела к Influenza A virus IgM - ИФА",
+      "name_de": "Anti-Influenza-A-Virus IgM ELISA",
+      "name_tr": "İnfluenza A virüs IgM ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03140",
+      "name_sr_lat_pdf": "ANTI INFULENZA A VIRUS IGG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Influenza A Virus IgG ELISA",
+      "slug": "influenza-a-virus-igg-elisa",
+      "name_sr": "Anti influenza A virus IgG - ELISA",
+      "name_sr_cyrl": "Anti influenza A virus IgG - ELISA",
+      "name_ru": "Антитела к Influenza A virus IgG - ИФА",
+      "name_de": "Anti-Influenza-A-Virus IgG ELISA",
+      "name_tr": "İnfluenza A virüs IgG ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03141",
+      "name_sr_lat_pdf": "ANTI LEGIONELLA PNEUMOPHILA IGM ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 1264,
+      "name_en": "Legionella Pneumophila IgM"
+    },
+    {
+      "code": "K03142",
+      "name_sr_lat_pdf": "ANTI LEGIONELLA PNEUMOPHILA IGG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 1265,
+      "name_en": "Legionella Pneumophila IgG"
+    },
+    {
+      "code": "K03143",
+      "name_sr_lat_pdf": "ANTI LEGIONELLA PNEUMOPHILA IGA ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Legionella Pneumophila IgA ELISA",
+      "slug": "legionella-pneumophila-iga-elisa",
+      "name_sr": "Anti Legionella pneumophila IgA - ELISA",
+      "name_sr_cyrl": "Anti Legionella pneumophila IgA - ELISA",
+      "name_ru": "Антитела к Legionella pneumophila IgA - ИФА",
+      "name_de": "Anti-Legionella pneumophila IgA ELISA",
+      "name_tr": "Legionella pneumophila IgA ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03144",
+      "name_sr_lat_pdf": "ANTI LEISCHMANIA DONOVANI IGG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Leishmania Donovani IgG ELISA",
+      "slug": "leishmania-donovani-igg-elisa",
+      "name_sr": "Anti Leishmania donovani IgG - ELISA",
+      "name_sr_cyrl": "Anti Leishmania donovani IgG - ELISA",
+      "name_ru": "Антитела к Leishmania donovani IgG - ИФА",
+      "name_de": "Anti-Leishmania donovani IgG ELISA",
+      "name_tr": "Leishmania donovani IgG ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03145",
+      "name_sr_lat_pdf": "ANTI LEISCHMANIA DONOVANI ANTITIJELA-INDIREK.HEMAGLUT.",
+      "price_eur": 25.98,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Leishmania Donovani Antibodies (Indirect Hemagglutination)",
+      "slug": "leishmania-donovani-antibodies-indirect-hemagglutination",
+      "name_sr": "Anti Leishmania donovani antitijela - indirektna hemaglutinacija",
+      "name_sr_cyrl": "Anti Leishmania donovani антитела - индиректна хемаглутинација",
+      "name_ru": "Антитела к Leishmania donovani - непрямая гемагглютинация",
+      "name_de": "Anti-Leishmania donovani - indirekte Hämagglutination",
+      "name_tr": "Leishmania donovani antikorları - indirekt hemaglütinasyon",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03146",
+      "name_sr_lat_pdf": "ANTI LEPTOSPIRA IGM ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Leptospira IgM ELISA",
+      "slug": "leptospira-igm-elisa",
+      "name_sr": "Anti Leptospira IgM - ELISA",
+      "name_sr_cyrl": "Anti Leptospira IgM - ELISA",
+      "name_ru": "Антитела к Leptospira IgM - ИФА",
+      "name_de": "Anti-Leptospira IgM ELISA",
+      "name_tr": "Leptospira IgM ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03147",
+      "name_sr_lat_pdf": "ANTI LEPTOSPIRA IGG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Leptospira IgG ELISA",
+      "slug": "leptospira-igg-elisa",
+      "name_sr": "Anti Leptospira IgG - ELISA",
+      "name_sr_cyrl": "Anti Leptospira IgG - ELISA",
+      "name_ru": "Антитела к Leptospira IgG - ИФА",
+      "name_de": "Anti-Leptospira IgG ELISA",
+      "name_tr": "Leptospira IgG ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03148",
+      "name_sr_lat_pdf": "ANTI RUBELLA VIRUS IGG ANTITIJELA - VESTERN BLOT",
+      "price_eur": 42.24,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Rubella IgG Western Blot",
+      "slug": "rubella-igg-western-blot",
+      "name_sr": "Anti rubella virus IgG - Western Blot",
+      "name_sr_cyrl": "Anti rubella virus IgG - Western Blot",
+      "name_ru": "Антитела к Rubella virus IgG - Вестерн-блот",
+      "name_de": "Anti-Rötelnvirus IgG Western Blot",
+      "name_tr": "Rubella virüs IgG Western Blot",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03149",
+      "name_sr_lat_pdf": "ANTI SALMONELLA GR.A, H ANTITIJELA (VIDAL) - AGLUTINACIJA",
+      "price_eur": 16.83,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Salmonella Group A, H Antibodies (Widal Agglutination)",
+      "slug": "salmonella-group-a-h-antibodies-widal-agglutination",
+      "name_sr": "Anti Salmonella gr.A, H antitijela (Vidal) - aglutinacija",
+      "name_sr_cyrl": "Anti Salmonella гр.A, H антитела (Vidal) - аглутинација",
+      "name_ru": "Антитела к Salmonella гр.A, H (реакция Видаля)",
+      "name_de": "Anti-Salmonella Gr.A, H Antikörper (Widal)",
+      "name_tr": "Salmonella Grup A, H antikorları (Widal aglütinasyon)",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03150",
+      "name_sr_lat_pdf": "ANTI SALMONELLA GR.A, O ANTITIJELA (VIDAL) - AGLUTINACIJA",
+      "price_eur": 16.83,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Salmonella Group A, O Antibodies (Widal Agglutination)",
+      "slug": "salmonella-group-a-o-antibodies-widal-agglutination",
+      "name_sr": "Anti Salmonella gr.A, O antitijela (Vidal) - aglutinacija",
+      "name_sr_cyrl": "Anti Salmonella гр.A, O антитела (Vidal) - аглутинација",
+      "name_ru": "Антитела к Salmonella гр.A, O (реакция Видаля)",
+      "name_de": "Anti-Salmonella Gr.A, O Antikörper (Widal)",
+      "name_tr": "Salmonella Grup A, O antikorları (Widal aglütinasyon)",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03151",
+      "name_sr_lat_pdf": "ANTI SALMONELLA GR.B, H ANTITIJELA (VIDAL) - AGLUTINACIJA",
+      "price_eur": 16.83,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Salmonella Group B, H Antibodies (Widal Agglutination)",
+      "slug": "salmonella-group-b-h-antibodies-widal-agglutination",
+      "name_sr": "Anti Salmonella gr.B, H antitijela (Vidal) - aglutinacija",
+      "name_sr_cyrl": "Anti Salmonella гр.B, H антитела (Vidal) - аглутинација",
+      "name_ru": "Антитела к Salmonella гр.B, H (реакция Видаля)",
+      "name_de": "Anti-Salmonella Gr.B, H Antikörper (Widal)",
+      "name_tr": "Salmonella Grup B, H antikorları (Widal aglütinasyon)",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03152",
+      "name_sr_lat_pdf": "ANTI SALMONELLA GR.B, O ANTITIJELA (VIDAL) - AGLUTINACIJA",
+      "price_eur": 16.83,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Salmonella Group B, O Antibodies (Widal Agglutination)",
+      "slug": "salmonella-group-b-o-antibodies-widal-agglutination",
+      "name_sr": "Anti Salmonella gr.B, O antitijela (Vidal) - aglutinacija",
+      "name_sr_cyrl": "Anti Salmonella гр.B, O антитела (Vidal) - аглутинација",
+      "name_ru": "Антитела к Salmonella гр.B, O (реакция Видаля)",
+      "name_de": "Anti-Salmonella Gr.B, O Antikörper (Widal)",
+      "name_tr": "Salmonella Grup B, O antikorları (Widal aglütinasyon)",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03153",
+      "name_sr_lat_pdf": "ANTI SALMONELLA GR.C, H ANTITIJELA (VIDAL) - AGLUTINACIJA",
+      "price_eur": 16.83,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Salmonella Group C, H Antibodies (Widal Agglutination)",
+      "slug": "salmonella-group-c-h-antibodies-widal-agglutination",
+      "name_sr": "Anti Salmonella gr.C, H antitijela (Vidal) - aglutinacija",
+      "name_sr_cyrl": "Anti Salmonella гр.C, H антитела (Vidal) - аглутинација",
+      "name_ru": "Антитела к Salmonella гр.C, H (реакция Видаля)",
+      "name_de": "Anti-Salmonella Gr.C, H Antikörper (Widal)",
+      "name_tr": "Salmonella Grup C, H antikorları (Widal aglütinasyon)",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03154",
+      "name_sr_lat_pdf": "ANTI SALMONELLA GR.C, O ANTITIJELA (VIDAL) - AGLUTINACIJA",
+      "price_eur": 16.83,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Salmonella Group C, O Antibodies (Widal Agglutination)",
+      "slug": "salmonella-group-c-o-antibodies-widal-agglutination",
+      "name_sr": "Anti Salmonella gr.C, O antitijela (Vidal) - aglutinacija",
+      "name_sr_cyrl": "Anti Salmonella гр.C, O антитела (Vidal) - аглутинација",
+      "name_ru": "Антитела к Salmonella гр.C, O (реакция Видаля)",
+      "name_de": "Anti-Salmonella Gr.C, O Antikörper (Widal)",
+      "name_tr": "Salmonella Grup C, O antikorları (Widal aglütinasyon)",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03155",
+      "name_sr_lat_pdf": "ANTI SALMONELLA GR.D, H ANTITIJELA (VIDAL) - AGLUTINACIJA",
+      "price_eur": 16.83,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Salmonella Group D, H Antibodies (Widal Agglutination)",
+      "slug": "salmonella-group-d-h-antibodies-widal-agglutination",
+      "name_sr": "Anti Salmonella gr.D, H antitijela (Vidal) - aglutinacija",
+      "name_sr_cyrl": "Anti Salmonella гр.D, H антитела (Vidal) - аглутинација",
+      "name_ru": "Антитела к Salmonella гр.D, H (реакция Видаля)",
+      "name_de": "Anti-Salmonella Gr.D, H Antikörper (Widal)",
+      "name_tr": "Salmonella Grup D, H antikorları (Widal aglütinasyon)",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03156",
+      "name_sr_lat_pdf": "ANTI SALMONELLA GR.D, O ANTITIJELA (VIDAL) - AGLUTINACIJA",
+      "price_eur": 16.83,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Salmonella Group D, O Antibodies (Widal Agglutination)",
+      "slug": "salmonella-group-d-o-antibodies-widal-agglutination",
+      "name_sr": "Anti Salmonella gr.D, O antitijela (Vidal) - aglutinacija",
+      "name_sr_cyrl": "Anti Salmonella гр.D, O антитела (Vidal) - аглутинација",
+      "name_ru": "Антитела к Salmonella гр.D, O (реакция Видаля)",
+      "name_de": "Anti-Salmonella Gr.D, O Antikörper (Widal)",
+      "name_tr": "Salmonella Grup D, O antikorları (Widal aglütinasyon)",
+      "categories": [
+        "MICROBIOLOGY",
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03157",
+      "name_sr_lat_pdf": "ANTI TOXOCARA CANIS IGG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 1242,
+      "name_en": "Toxocara Canis IgG"
+    },
+    {
+      "code": "K03158",
+      "name_sr_lat_pdf": "ANTI TRICHINELLA SPIRALIS IGG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 325,
+      "name_en": "Trichinella Spiralis IgG"
+    },
+    {
+      "code": "K03159",
+      "name_sr_lat_pdf": "ANTI TRICHINELLA SPIRALIS ANTITIJELA-INDIR.IMUNOFLOR.",
+      "price_eur": 21.42,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Trichinella Spiralis Antibodies (Indirect Immunofluorescence)",
+      "slug": "trichinella-spiralis-antibodies-indirect-immunofluorescence",
+      "name_sr": "Anti Trichinella spiralis antitijela - indirektna imunofluorescencija",
+      "name_sr_cyrl": "Anti Trichinella spiralis антитела - индиректна имунофлуоресценција",
+      "name_ru": "Антитела к Trichinella spiralis - непрямая иммунофлуоресценция",
+      "name_de": "Anti-Trichinella spiralis - indirekte Immunfluoreszenz",
+      "name_tr": "Trichinella spiralis antikorları - indirekt immünofluoresan",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03160",
+      "name_sr_lat_pdf": "ANTI WEST NILE VIRUS IGM ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "West Nile Virus IgM ELISA",
+      "slug": "west-nile-virus-igm-elisa",
+      "name_sr": "Anti West Nile virus IgM - ELISA",
+      "name_sr_cyrl": "Anti West Nile virus IgM - ELISA",
+      "name_ru": "Антитела к West Nile virus IgM - ИФА",
+      "name_de": "Anti-West-Nile-Virus IgM ELISA",
+      "name_tr": "Batı Nil virüs IgM ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03161",
+      "name_sr_lat_pdf": "ANTI WEST NILE VIRUS IGG ANTITIJELA - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "West Nile Virus IgG ELISA",
+      "slug": "west-nile-virus-igg-elisa",
+      "name_sr": "Anti West Nile virus IgG - ELISA",
+      "name_sr_cyrl": "Anti West Nile virus IgG - ELISA",
+      "name_ru": "Антитела к West Nile virus IgG - ИФА",
+      "name_de": "Anti-West-Nile-Virus IgG ELISA",
+      "name_tr": "Batı Nil virüs IgG ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03162",
+      "name_sr_lat_pdf": "AVIDITET ANTI CYTOMEGALOVIRUS IGG ANTITIJELA - ELISA/ELFA",
+      "price_eur": 24.75,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 1288,
+      "name_en": "CMV Avidity"
+    },
+    {
+      "code": "K03163",
+      "name_sr_lat_pdf": "AVIDITET ANTI RUBELLA VIRUS IGG ANTITIJELA - ELISA",
+      "price_eur": 24.75,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 1289,
+      "name_en": "Rubella IgG Avidity"
+    },
+    {
+      "code": "K03164",
+      "name_sr_lat_pdf": "AVIDITET ANTI TOXOPLASMA GONDII IGG ANTITIJELA - ELISA",
+      "price_eur": 24.75,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 1250,
+      "name_en": "Toxoplasma IgG Avidity"
+    },
+    {
+      "code": "K03165",
+      "name_sr_lat_pdf": "ISPITIV.PRIS. CLOSTRIDIUM DIFFICILE TOXINA A&B-ELISA/ELFA",
+      "price_eur": 36.42,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 1229,
+      "name_en": "Clostridium Difficile Toxin A and B"
+    },
+    {
+      "code": "K03166",
+      "name_sr_lat_pdf": "ISPITIV.PRIS. CYTOMEGALOVIRUS-A - INDIR.IMUNOFLUORESC.",
+      "price_eur": 21.42,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Cytomegalovirus Antigen (Indirect Immunofluorescence)",
+      "slug": "cytomegalovirus-antigen-indirect-immunofluorescence",
+      "name_sr": "Ispitivanje prisustva Cytomegalovirus antigena - indirektna imunofluorescencija",
+      "name_sr_cyrl": "Испитивање присуства Cytomegalovirus антигена - индиректна имунофлуоресценција",
+      "name_ru": "Обнаружение антигена Cytomegalovirus - непрямая иммунофлуоресценция",
+      "name_de": "Cytomegalievirus-Antigen-Nachweis - indirekte Immunfluoreszenz",
+      "name_tr": "Cytomegalovirus antijen tespiti - indirekt immünofluoresan",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03167",
+      "name_sr_lat_pdf": "ISPITIVANJE PRISUSTVA HBE ANTIGENA - ELISA/ANTIGEN",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 329,
+      "name_en": "HBeAg"
+    },
+    {
+      "code": "K03168",
+      "name_sr_lat_pdf": "ISPITIVANJE PRISUSTVA HBS ANTIGENA - ELISA/ANTIGEN",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "existing",
+      "existing_id": 234,
+      "name_en": "HBsAg"
+    },
+    {
+      "code": "K03169",
+      "name_sr_lat_pdf": "ISPITIVANJE PRISUSTVA HBS ANTIGENA - POTVRDNI TEST - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "HBsAg Confirmation Test ELISA",
+      "slug": "hbsag-confirmation-test-elisa",
+      "name_sr": "Ispitivanje prisustva HBs antigena - potvrdni test - ELISA",
+      "name_sr_cyrl": "Испитивање присуства HBs антигена - потврдни тест - ELISA",
+      "name_ru": "Подтверждающий тест на HBsAg - ИФА",
+      "name_de": "HBsAg-Bestätigungstest - ELISA",
+      "name_tr": "HBsAg doğrulama testi - ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03170",
+      "name_sr_lat_pdf": "ISPIT.PRIS. HERPES SIMPLEX VIRUSA TIP 1 -DIREKT.IMUNOFLUOR.",
+      "price_eur": 21.42,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Herpes Simplex Virus Type 1 (Direct Immunofluorescence)",
+      "slug": "herpes-simplex-virus-type-1-direct-immunofluorescence",
+      "name_sr": "Ispitivanje prisustva Herpes simplex virusa tip 1 - direktna imunofluorescencija",
+      "name_sr_cyrl": "Испитивање присуства Herpes simplex virusa тип 1 - директна имунофлуоресценција",
+      "name_ru": "Обнаружение Herpes simplex virus тип 1 - прямая иммунофлуоресценция",
+      "name_de": "Herpes-simplex-Virus Typ 1 Nachweis - direkte Immunfluoreszenz",
+      "name_tr": "Herpes simpleks virüs tip 1 tespiti - direkt immünofluoresan",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03171",
+      "name_sr_lat_pdf": "ISPIT.PRIS. HERPES SIMPLEX VIRUSA TIP 2 - DIREKT.IMUNOFLUOR.",
+      "price_eur": 21.42,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "Herpes Simplex Virus Type 2 (Direct Immunofluorescence)",
+      "slug": "herpes-simplex-virus-type-2-direct-immunofluorescence",
+      "name_sr": "Ispitivanje prisustva Herpes simplex virusa tip 2 - direktna imunofluorescencija",
+      "name_sr_cyrl": "Испитивање присуства Herpes simplex virusa тип 2 - директна имунофлуоресценција",
+      "name_ru": "Обнаружение Herpes simplex virus тип 2 - прямая иммунофлуоресценция",
+      "name_de": "Herpes-simplex-Virus Typ 2 Nachweis - direkte Immunfluoreszenz",
+      "name_tr": "Herpes simpleks virüs tip 2 tespiti - direkt immünofluoresan",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03172",
+      "name_sr_lat_pdf": "ISPITIVANJE PRISUSTVA P24 ANTIGENA - ELISA/ANTIGEN",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "HIV p24 Antigen ELISA",
+      "slug": "hiv-p24-antigen-elisa",
+      "name_sr": "Ispitivanje prisustva p24 antigena - ELISA",
+      "name_sr_cyrl": "Испитивање присуства p24 антигена - ELISA",
+      "name_ru": "Обнаружение p24 антигена ВИЧ - ИФА",
+      "name_de": "HIV-p24-Antigen-Nachweis - ELISA",
+      "name_tr": "HIV p24 antijen tespiti - ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    },
+    {
+      "code": "K03173",
+      "name_sr_lat_pdf": "ISPITIVANJE PRISUSTVA P24 ANTIGENA-POTVRDNI TEST - ELISA",
+      "price_eur": 14.28,
+      "kind": "lab_test",
+      "status": "new",
+      "name_en": "HIV p24 Antigen Confirmation ELISA",
+      "slug": "hiv-p24-antigen-confirmation-elisa",
+      "name_sr": "Ispitivanje prisustva p24 antigena - potvrdni test - ELISA",
+      "name_sr_cyrl": "Испитивање присуства p24 антигена - потврдни тест - ELISA",
+      "name_ru": "Обнаружение p24 антигена - подтверждающий тест ИФА",
+      "name_de": "HIV-p24-Antigen-Bestätigungstest - ELISA",
+      "name_tr": "HIV p24 antijen doğrulama testi - ELISA",
+      "categories": [
+        "INFECTIOUS_DISEASES"
+      ]
+    }
+  ]
+}

@@ -25,16 +25,46 @@
 
 ---
 
+## Фотографии врачей
+
+> ⚠️ **Правило**: в скриптах импорта в `doctors.photo_url` пишем **внешний
+> оригинальный URL** (как в источнике). Не скачиваем картинки локально.
+>
+> Так проще синхронизировать локальную БД с продом: файлы не нужно копировать
+> на прод-сервер вместе с дампом, внешний URL работает одинаково везде.
+
+### Как админка обрабатывает фото
+
+В админке (`components/admin/editable-field.vue`, `type="photo"`) есть
+**два** способа задать фото:
+
+1. **Вставить URL** — внешний URL пишется в БД как есть.
+2. **Загрузить файл** — файл идёт в `POST /api/upload/admin-image`
+   (`server/api/upload/admin-image.post.ts`), там
+   `processAndSaveImage()` (`server/utils/image-processing.ts`) жмёт через
+   `sharp` до 1600px по большей стороне, конвертирует в WebP (q=82),
+   складывает в `${UPLOADS_DIR}/doctors/<uuid>.webp` и возвращает локальный
+   публичный URL `/uploads/doctors/<uuid>.webp`. Этот URL и попадает в БД.
+
+В импорте используем способ 1 — пишем внешний URL. Способ 2 — это сценарий,
+когда админ заливает файл из своего компьютера, у нас в импорте такого нет.
+
+---
+
 ## Структура базы данных
 
 ```
-doctors (id, name_sr, name_sr_cyrl, name_ru, name_en, professional_title, photo_url,
+doctors (id, slug, name_sr, name_sr_cyrl, name_ru, name_en, professional_title, photo_url,
          phone, email, website, facebook, instagram, telegram, whatsapp, viber)
 
 doctor_specialties (doctor_id, specialty_id)  -- специальности врача
 doctor_clinics (doctor_id, clinic_id, position)  -- привязка к клиникам
 doctor_languages (doctor_id, language_id)  -- языки консультаций
 ```
+
+> ⚠️ `doctors.slug` — `NOT NULL UNIQUE`. Генерируется из `name_sr` через
+> `common/slug-utils.ts:generateSlug()`: транслитерация диакритики (č→c, ć→c,
+> š→s, ž→z, đ→dj), lowercase, не-`[a-z0-9]` → `-`. Пример: `Aleksandra Laković-Tatar` → `aleksandra-lakovic-tatar`.
 
 ---
 
@@ -71,9 +101,11 @@ SET CHARACTER SET utf8mb4;
 SET @doctor_id = (SELECT id FROM doctors WHERE name_sr = 'Ime Prezime' LIMIT 1);
 -- Если не найден — поиск по перевёрнутому имени (Фамилия Имя)
 SET @doctor_id = COALESCE(@doctor_id, (SELECT id FROM doctors WHERE name_sr = 'Prezime Ime' LIMIT 1));
--- Если всё равно не найден — создаём нового
-INSERT INTO doctors (name_sr, name_sr_cyrl, name_ru, name_en, professional_title, photo_url, created_at)
-SELECT 'Ime Prezime', 'Име Презиме', '', '', 'Dr', 'https://example.com/photo.png', NOW()
+-- Если не найден — поиск по slug (нормализует диакритику и пробелы/дефисы)
+SET @doctor_id = COALESCE(@doctor_id, (SELECT id FROM doctors WHERE slug = 'ime-prezime' LIMIT 1));
+-- Если всё равно не найден — создаём нового (slug NOT NULL UNIQUE!)
+INSERT INTO doctors (slug, name_sr, name_sr_cyrl, name_ru, name_en, professional_title, photo_url, created_at)
+SELECT 'ime-prezime', 'Ime Prezime', 'Име Презиме', '', '', 'Dr', 'https://example.com/photo.png', NOW()
 FROM dual WHERE @doctor_id IS NULL;
 SET @doctor_id = COALESCE(@doctor_id, LAST_INSERT_ID());
 INSERT IGNORE INTO doctor_specialties (doctor_id, specialty_id) VALUES (@doctor_id, {SPECIALTY_ID});
@@ -85,10 +117,13 @@ INSERT IGNORE INTO doctor_clinics (doctor_id, clinic_id) VALUES (@doctor_id, 70)
 
 1. **Поиск по имени**: ищем врача по `name_sr` (Имя Фамилия)
 2. **Поиск по перевёрнутому имени**: если не найден — ищем по "Фамилия Имя"
-3. **Создание**: если не найден — `INSERT ... SELECT ... FROM dual WHERE @doctor_id IS NULL`
-4. **ID**: `COALESCE(@doctor_id, LAST_INSERT_ID())` — существующий или новый
-5. **Связи**: `INSERT IGNORE` предотвращает дубликаты
-6. **Язык**: сербский (`language_id = 1`) добавляется **всем** врачам, остальные — только если указано
+3. **Поиск по slug**: если не найден — ищем по slug. Это ловит случаи, когда в БД имя записано без диакритики (`Aleksandra Lakovic Tatar`) или с другими разделителями, а в источнике с диакритикой (`Aleksandra Laković-Tatar`) — оба дают slug `aleksandra-lakovic-tatar`.
+4. **Создание**: если не найден — `INSERT ... SELECT ... FROM dual WHERE @doctor_id IS NULL`. **Не забыть `slug`** (NOT NULL UNIQUE).
+5. **ID**: `COALESCE(@doctor_id, LAST_INSERT_ID())` — существующий или новый
+6. **Связи**: `INSERT IGNORE` предотвращает дубликаты
+7. **Язык**: сербский (`language_id = 1`) добавляется **всем** врачам, остальные — только если указано
+8. **Photo URL**: внешний оригинальный URL из источника (см. раздел "Фотографии врачей" выше). Локально не скачиваем.
+9. **Slug**: `generateSlug(name_sr)` из `common/slug-utils.ts` — используем для сохранения нового врача и для поиска существующего по slug.
 
 > ⚠️ **Важно**: в БД врачи могут быть записаны как "Ime Prezime" или "Prezime Ime". Всегда проверять оба варианта!
 

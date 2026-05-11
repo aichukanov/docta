@@ -1,0 +1,1779 @@
+{
+  "batch_id": "batch-29-bolnicko-additions",
+  "clinic_id": 88,
+  "subsections": [
+    "G06",
+    "Y01",
+    "Y02",
+    "Y03",
+    "Y04",
+    "Y05",
+    "Y06",
+    "Y07",
+    "Y08",
+    "Y09",
+    "Y10",
+    "Y11",
+    "Y12"
+  ],
+  "source_pdf": "BOLNICKO-LIJECENJErwservlet.pdf",
+  "items_total": 105,
+  "items_new": 105,
+  "items_existing": 0,
+  "notes": "Truly-new items not present in SPECIJALISTICKE PDF batches 01-28. Existing-code overlap (2576 codes) skipped via prior INSERT IGNORE.",
+  "items": [
+    {
+      "code": "G06001",
+      "src": "JED.CIJELE KRVI - RHD POZITIVNA JEDINICA",
+      "price_eur": 190.55,
+      "status": "new",
+      "name_en": "Whole Blood Unit Rh Positive",
+      "slug": "whole-blood-unit-rh-positive",
+      "name_sr": "Jedinica cijele krvi - Rh pozitivna",
+      "name_sr_cyrl": "Јединица цијеле крви - Rh позитивна",
+      "name_ru": "Единица цельной крови Rh-положительная",
+      "name_de": "Vollblut-Einheit Rh-positiv",
+      "name_tr": "Tam kan ünitesi Rh pozitif",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "G06002",
+      "src": "JED.CIJELE KRVI - RHD NEGATIVNA JEDINICA",
+      "price_eur": 206.0,
+      "status": "new",
+      "name_en": "Whole Blood Unit Rh Negative",
+      "slug": "whole-blood-unit-rh-negative",
+      "name_sr": "Jedinica cijele krvi - Rh negativna",
+      "name_sr_cyrl": "Јединица цијеле крви - Rh негативна",
+      "name_ru": "Единица цельной крови Rh-отрицательная",
+      "name_de": "Vollblut-Einheit Rh-negativ",
+      "name_tr": "Tam kan ünitesi Rh negatif",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "G06003",
+      "src": "JED.DEPLAZMATISANIH ERITROCITA - RHD POZITIVNA JEDINICA",
+      "price_eur": 190.55,
+      "status": "new",
+      "name_en": "Packed Red Blood Cells Unit Rh Positive",
+      "slug": "packed-red-blood-cells-unit-rh-positive",
+      "name_sr": "Jedinica deplazmatisanih eritrocita - Rh pozitivna",
+      "name_sr_cyrl": "Јединица деплазматисаних еритроцита - Rh позитивна",
+      "name_ru": "Единица отмытых эритроцитов Rh-положительная",
+      "name_de": "Erythrozytenkonzentrat-Einheit Rh-positiv",
+      "name_tr": "Yıkanmış eritrosit ünitesi Rh pozitif",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "G06004",
+      "src": "JED.DEPLAZMATISANIH ERITROCITA - RHD NEGATIVNA JEDINICA",
+      "price_eur": 206.0,
+      "status": "new",
+      "name_en": "Packed Red Blood Cells Unit Rh Negative",
+      "slug": "packed-red-blood-cells-unit-rh-negative",
+      "name_sr": "Jedinica deplazmatisanih eritrocita - Rh negativna",
+      "name_sr_cyrl": "Јединица деплазматисаних еритроцита - Rh негативна",
+      "name_ru": "Единица отмытых эритроцитов Rh-отрицательная",
+      "name_de": "Erythrozytenkonzentrat-Einheit Rh-negativ",
+      "name_tr": "Yıkanmış eritrosit ünitesi Rh negatif",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "G06005",
+      "src": "JED.PLAZME - RHD POZITIVNA JEDNICA",
+      "price_eur": 119.1,
+      "status": "new",
+      "name_en": "Plasma Unit Rh Positive",
+      "slug": "plasma-unit-rh-positive",
+      "name_sr": "Jedinica plazme - Rh pozitivna",
+      "name_sr_cyrl": "Јединица плазме - Rh позитивна",
+      "name_ru": "Единица плазмы Rh-положительная",
+      "name_de": "Plasma-Einheit Rh-positiv",
+      "name_tr": "Plazma ünitesi Rh pozitif",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "G06006",
+      "src": "JED.PLAZME - RHD NEGATIVNA JEDNICA",
+      "price_eur": 126.05,
+      "status": "new",
+      "name_en": "Plasma Unit Rh Negative",
+      "slug": "plasma-unit-rh-negative",
+      "name_sr": "Jedinica plazme - Rh negativna",
+      "name_sr_cyrl": "Јединица плазме - Rh негативна",
+      "name_ru": "Единица плазмы Rh-отрицательная",
+      "name_de": "Plasma-Einheit Rh-negativ",
+      "name_tr": "Plazma ünitesi Rh negatif",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "G06007",
+      "src": "JED.STAND.TROMBOCITNIH KONCENTRATA - RHD POZITIVNA JEDNICA",
+      "price_eur": 90.53,
+      "status": "new",
+      "name_en": "Standard Platelet Concentrate Unit Rh Positive",
+      "slug": "standard-platelet-concentrate-unit-rh-positive",
+      "name_sr": "Jedinica standardnog trombocitnog koncentrata - Rh pozitivna",
+      "name_sr_cyrl": "Јединица стандардног тромбоцитног концентрата - Rh позитивна",
+      "name_ru": "Единица стандартного тромбоцитного концентрата Rh-положительная",
+      "name_de": "Standard-Thrombozytenkonzentrat-Einheit Rh-positiv",
+      "name_tr": "Standart trombosit konsantresi ünitesi Rh pozitif",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "G06008",
+      "src": "JED.STAND.TROMBOCITNIH KONCENTRATA - RHD NEGATIVNA JEDNICA",
+      "price_eur": 95.15,
+      "status": "new",
+      "name_en": "Standard Platelet Concentrate Unit Rh Negative",
+      "slug": "standard-platelet-concentrate-unit-rh-negative",
+      "name_sr": "Jedinica standardnog trombocitnog koncentrata - Rh negativna",
+      "name_sr_cyrl": "Јединица стандардног тромбоцитног концентрата - Rh негативна",
+      "name_ru": "Единица стандартного тромбоцитного концентрата Rh-отрицательная",
+      "name_de": "Standard-Thrombozytenkonzentrat-Einheit Rh-negativ",
+      "name_tr": "Standart trombosit konsantresi ünitesi Rh negatif",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "G06009",
+      "src": "JED.KRIOPRECIPITATA - RHD POZITIVNA JEDNICA",
+      "price_eur": 107.58,
+      "status": "new",
+      "name_en": "Cryoprecipitate Unit Rh Positive",
+      "slug": "cryoprecipitate-unit-rh-positive",
+      "name_sr": "Jedinica krioprecipitata - Rh pozitivna",
+      "name_sr_cyrl": "Јединица криопреципитата - Rh позитивна",
+      "name_ru": "Единица криопреципитата Rh-положительная",
+      "name_de": "Kryopräzipitat-Einheit Rh-positiv",
+      "name_tr": "Kriyopresipitat ünitesi Rh pozitif",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "G06010",
+      "src": "JED.KRIOPRECIPITATA - RHD NEGATIVNA JEDNICA",
+      "price_eur": 112.2,
+      "status": "new",
+      "name_en": "Cryoprecipitate Unit Rh Negative",
+      "slug": "cryoprecipitate-unit-rh-negative",
+      "name_sr": "Jedinica krioprecipitata - Rh negativna",
+      "name_sr_cyrl": "Јединица криопреципитата - Rh негативна",
+      "name_ru": "Единица криопреципитата Rh-отрицательная",
+      "name_de": "Kryopräzipitat-Einheit Rh-negativ",
+      "name_tr": "Kriyopresipitat ünitesi Rh negatif",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01001",
+      "src": "POČETNA BOLNIČKA OBRADA",
+      "price_eur": 6.5,
+      "status": "new",
+      "name_en": "Initial Hospital Workup",
+      "slug": "initial-hospital-workup",
+      "name_sr": "Početna bolnička obrada",
+      "name_sr_cyrl": "Почетна болничка обрада",
+      "name_ru": "Первичная больничная обработка",
+      "name_de": "Erstaufnahme-Untersuchung im Krankenhaus",
+      "name_tr": "Hastane ilk yatış değerlendirmesi",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01002",
+      "src": "DALJA BOLNIČKA OBRADA (VIZITA)",
+      "price_eur": 3.25,
+      "status": "new",
+      "name_en": "Follow-up Hospital Round",
+      "slug": "follow-up-hospital-round",
+      "name_sr": "Dalja bolnička obrada (vizita)",
+      "name_sr_cyrl": "Даља болничка обрада (визита)",
+      "name_ru": "Дальнейший больничный обход (визит)",
+      "name_de": "Stationäre Visite",
+      "name_tr": "Hastane takip viziti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01003",
+      "src": "OTPUSNO PISMO",
+      "price_eur": 19.5,
+      "status": "new",
+      "name_en": "Hospital Discharge Letter",
+      "slug": "hospital-discharge-letter",
+      "name_sr": "Otpusno pismo",
+      "name_sr_cyrl": "Отпусно писмо",
+      "name_ru": "Выписной эпикриз",
+      "name_de": "Krankenhaus-Entlassungsbericht",
+      "name_tr": "Hastane taburcu mektubu",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01004",
+      "src": "KONSULTATIVNI PREGLED SPECIJALISTE",
+      "price_eur": 6.5,
+      "status": "new",
+      "name_en": "Specialist Consultative Examination",
+      "slug": "specialist-consultative-examination",
+      "name_sr": "Konsultativni pregled specijaliste",
+      "name_sr_cyrl": "Консултативни преглед специјалисте",
+      "name_ru": "Консультативный осмотр специалиста",
+      "name_de": "Konsiliarische Facharzt-Untersuchung",
+      "name_tr": "Uzman konsültasyon muayenesi",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01005",
+      "src": "KONSULTATIVNI PREGLED PROFESORA",
+      "price_eur": 19.5,
+      "status": "new",
+      "name_en": "Professor Consultative Examination",
+      "slug": "professor-consultative-examination",
+      "name_sr": "Konsultativni pregled profesora",
+      "name_sr_cyrl": "Консултативни преглед професора",
+      "name_ru": "Консультативный осмотр профессора",
+      "name_de": "Konsiliarische Untersuchung durch einen Professor",
+      "name_tr": "Profesör konsültasyon muayenesi",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01006",
+      "src": "OTPUSNO PISMO ZDRAVSTVENE NJEGE",
+      "price_eur": 13.0,
+      "status": "new",
+      "name_en": "Nursing Care Discharge Letter",
+      "slug": "nursing-care-discharge-letter",
+      "name_sr": "Otpusno pismo zdravstvene njege",
+      "name_sr_cyrl": "Отпусно писмо здравствене његе",
+      "name_ru": "Выписное письмо медицинского ухода",
+      "name_de": "Pflege-Entlassungsbericht",
+      "name_tr": "Hemşirelik bakımı taburcu mektubu",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01007",
+      "src": "OTPUST NOVOROĐENČETA",
+      "price_eur": 9.75,
+      "status": "new",
+      "name_en": "Newborn Discharge",
+      "slug": "newborn-discharge",
+      "name_sr": "Otpust novorođenčeta",
+      "name_sr_cyrl": "Отпуст новорођенчета",
+      "name_ru": "Выписка новорождённого",
+      "name_de": "Neugeborenen-Entlassung",
+      "name_tr": "Yenidoğan taburculuğu",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01019",
+      "src": "POČETNA BOLNIČKA OBRADA NOVOROĐENČETA",
+      "price_eur": 6.5,
+      "status": "new",
+      "name_en": "Newborn Initial Hospital Workup",
+      "slug": "newborn-initial-hospital-workup",
+      "name_sr": "Početna bolnička obrada novorođenčeta",
+      "name_sr_cyrl": "Почетна болничка обрада новорођенчета",
+      "name_ru": "Первичная больничная обработка новорождённого",
+      "name_de": "Erstaufnahme-Untersuchung des Neugeborenen",
+      "name_tr": "Yenidoğan ilk hastane değerlendirmesi",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01020",
+      "src": "POČETNA BOLNIČKA OBRADA ODOJČETA",
+      "price_eur": 6.5,
+      "status": "new",
+      "name_en": "Infant Initial Hospital Workup",
+      "slug": "infant-initial-hospital-workup",
+      "name_sr": "Početna bolnička obrada odojčeta",
+      "name_sr_cyrl": "Почетна болничка обрада одојчета",
+      "name_ru": "Первичная больничная обработка грудного ребёнка",
+      "name_de": "Erstaufnahme-Untersuchung des Säuglings",
+      "name_tr": "Bebek ilk hastane değerlendirmesi",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01021",
+      "src": "POČETNA BOLNIČKA OBRADA DJETETA",
+      "price_eur": 6.5,
+      "status": "new",
+      "name_en": "Child Initial Hospital Workup",
+      "slug": "child-initial-hospital-workup",
+      "name_sr": "Početna bolnička obrada djeteta",
+      "name_sr_cyrl": "Почетна болничка обрада дјетета",
+      "name_ru": "Первичная больничная обработка ребёнка",
+      "name_de": "Erstaufnahme-Untersuchung des Kindes",
+      "name_tr": "Çocuk ilk hastane değerlendirmesi",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01022",
+      "src": "POČETNA BOLNIČKA OBRADA PRISILNO HOSPITALIZOVANOG PACIJENTA",
+      "price_eur": 6.5,
+      "status": "new",
+      "name_en": "Initial Hospital Workup of Involuntarily Hospitalized Patient",
+      "slug": "initial-hospital-workup-of-involuntarily-hospitalized-patient",
+      "name_sr": "Početna bolnička obrada prisilno hospitalizovanog pacijenta",
+      "name_sr_cyrl": "Почетна болничка обрада присилно хоспитализованог пацијента",
+      "name_ru": "Первичная больничная обработка принудительно госпитализированного пациента",
+      "name_de": "Erstaufnahme-Untersuchung eines zwangseingewiesenen Patienten",
+      "name_tr": "Zorunlu yatırılmış hasta ilk hastane değerlendirmesi",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01023",
+      "src": "DALJA BOLNIČKA OBRADA NOVOROĐENČETA",
+      "price_eur": 3.25,
+      "status": "new",
+      "name_en": "Newborn Follow-up Hospital Round",
+      "slug": "newborn-follow-up-hospital-round",
+      "name_sr": "Dalja bolnička obrada novorođenčeta",
+      "name_sr_cyrl": "Даља болничка обрада новорођенчета",
+      "name_ru": "Дальнейший больничный обход новорождённого",
+      "name_de": "Stationäre Visite des Neugeborenen",
+      "name_tr": "Yenidoğan takip viziti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01024",
+      "src": "DALJA BOLNIČKA OBRADA ODOJČETA",
+      "price_eur": 3.25,
+      "status": "new",
+      "name_en": "Infant Follow-up Hospital Round",
+      "slug": "infant-follow-up-hospital-round",
+      "name_sr": "Dalja bolnička obrada odojčeta",
+      "name_sr_cyrl": "Даља болничка обрада одојчета",
+      "name_ru": "Дальнейший больничный обход грудного ребёнка",
+      "name_de": "Stationäre Visite des Säuglings",
+      "name_tr": "Bebek takip viziti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01025",
+      "src": "DALJA BOLNIČKA OBRADA DJETETA",
+      "price_eur": 3.25,
+      "status": "new",
+      "name_en": "Child Follow-up Hospital Round",
+      "slug": "child-follow-up-hospital-round",
+      "name_sr": "Dalja bolnička obrada djeteta",
+      "name_sr_cyrl": "Даља болничка обрада дјетета",
+      "name_ru": "Дальнейший больничный обход ребёнка",
+      "name_de": "Stationäre Visite des Kindes",
+      "name_tr": "Çocuk takip viziti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01026",
+      "src": "BOLNIČ OBRADA PRISILNO HOSPITALIZ PACIJ I PACIJ SA IZREČENOM",
+      "price_eur": 3.25,
+      "status": "new",
+      "name_en": "Hospital Care for Involuntarily Hospitalized Patient",
+      "slug": "hospital-care-for-involuntarily-hospitalized-patient",
+      "name_sr": "Bolnička obrada prisilno hospitalizovanog pacijenta",
+      "name_sr_cyrl": "Болничка обрада присилно хоспитализованог пацијента",
+      "name_ru": "Больничная обработка принудительно госпитализированного пациента",
+      "name_de": "Stationäre Betreuung eines zwangseingewiesenen Patienten",
+      "name_tr": "Zorunlu yatırılmış hasta hastane bakımı",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y01027",
+      "src": "KONZILIJARNI PREGLED",
+      "price_eur": 19.5,
+      "status": "new",
+      "name_en": "Consilium Medical Examination",
+      "slug": "consilium-medical-examination",
+      "name_sr": "Konzilijarni pregled",
+      "name_sr_cyrl": "Конзилијарни преглед",
+      "name_ru": "Консилиумный осмотр",
+      "name_de": "Konsilium-Untersuchung",
+      "name_tr": "Konsültasyon muayenesi",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y02001",
+      "src": "INTENZIVNA NJEGA ZA DIJETE OD 1 MJESECA DO 7 GODINA",
+      "price_eur": 114.87,
+      "status": "new",
+      "name_en": "Intensive Nursing Care for Children 1 Month to 7 Years",
+      "slug": "intensive-nursing-care-for-children-1-month-to-7-years",
+      "name_sr": "Intenzivna njega za dijete od 1 mjeseca do 7 godina",
+      "name_sr_cyrl": "Интензивна њега за дијете од 1 мјесеца до 7 година",
+      "name_ru": "Интенсивный уход за ребёнком от 1 месяца до 7 лет",
+      "name_de": "Intensivpflege für Kinder von 1 Monat bis 7 Jahren",
+      "name_tr": "1 ay-7 yaş çocuk yoğun bakım hemşireliği",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y02002",
+      "src": "INTENZIVNA NJEGA ZA STARIJE OD 7 GODINA",
+      "price_eur": 76.58,
+      "status": "new",
+      "name_en": "Intensive Nursing Care for Patients Over 7 Years",
+      "slug": "intensive-nursing-care-for-patients-over-7-years",
+      "name_sr": "Intenzivna njega za starije od 7 godina",
+      "name_sr_cyrl": "Интензивна њега за старије од 7 година",
+      "name_ru": "Интенсивный уход за пациентами старше 7 лет",
+      "name_de": "Intensivpflege für Patienten über 7 Jahren",
+      "name_tr": "7 yaş üstü yoğun bakım hemşireliği",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y02003",
+      "src": "POLUINTENZIVNA NJEGA ZA DIJETE OD 1 MJESECA DO 7 GODINA",
+      "price_eur": 35.32,
+      "status": "new",
+      "name_en": "Semi-Intensive Nursing Care for Children 1 Month to 7 Years",
+      "slug": "semi-intensive-nursing-care-for-children-1-month-to-7-years",
+      "name_sr": "Poluintenzivna njega za dijete od 1 mjeseca do 7 godina",
+      "name_sr_cyrl": "Полуинтензивна њега за дијете од 1 мјесеца до 7 година",
+      "name_ru": "Полуинтенсивный уход за ребёнком от 1 месяца до 7 лет",
+      "name_de": "Halbintensivpflege für Kinder von 1 Monat bis 7 Jahren",
+      "name_tr": "1 ay-7 yaş çocuk yarı yoğun bakım hemşireliği",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y02004",
+      "src": "POLUINTENZIVNA NJEGA ZA STARIJE OD 7 GODINA",
+      "price_eur": 26.41,
+      "status": "new",
+      "name_en": "Semi-Intensive Nursing Care for Patients Over 7 Years",
+      "slug": "semi-intensive-nursing-care-for-patients-over-7-years",
+      "name_sr": "Poluintenzivna njega za starije od 7 godina",
+      "name_sr_cyrl": "Полуинтензивна њега за старије од 7 година",
+      "name_ru": "Полуинтенсивный уход за пациентами старше 7 лет",
+      "name_de": "Halbintensivpflege für Patienten über 7 Jahren",
+      "name_tr": "7 yaş üstü yarı yoğun bakım hemşireliği",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y02005",
+      "src": "OBIČNA NJEGA ZA STARIJE OD 7 GODINA",
+      "price_eur": 12.11,
+      "status": "new",
+      "name_en": "Standard Nursing Care for Patients Over 7 Years",
+      "slug": "standard-nursing-care-for-patients-over-7-years",
+      "name_sr": "Obična njega za starije od 7 godina",
+      "name_sr_cyrl": "Обична њега за старије од 7 година",
+      "name_ru": "Обычный уход за пациентами старше 7 лет",
+      "name_de": "Standardpflege für Patienten über 7 Jahren",
+      "name_tr": "7 yaş üstü standart hemşirelik bakımı",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y02009",
+      "src": "NJEGA NOVOROĐENČETA - OBIČNA NJEGA",
+      "price_eur": 35.32,
+      "status": "new",
+      "name_en": "Newborn Standard Nursing Care",
+      "slug": "newborn-standard-nursing-care",
+      "name_sr": "Njega novorođenčeta - obična njega",
+      "name_sr_cyrl": "Њега новорођенчета - обична њега",
+      "name_ru": "Уход за новорождённым - обычный",
+      "name_de": "Neugeborenen-Standardpflege",
+      "name_tr": "Yenidoğan standart hemşirelik bakımı",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y02010",
+      "src": "NJEGA NOVOROĐENČETA - INKUBATOR - POLUINTENZIVNA NJEGA",
+      "price_eur": 76.58,
+      "status": "new",
+      "name_en": "Newborn Incubator Semi-Intensive Care",
+      "slug": "newborn-incubator-semi-intensive-care",
+      "name_sr": "Njega novorođenčeta - inkubator - poluintenzivna njega",
+      "name_sr_cyrl": "Њега новорођенчета - инкубатор - полуинтензивна њега",
+      "name_ru": "Уход за новорождённым - инкубатор - полуинтенсивный",
+      "name_de": "Neugeborenen-Inkubator-Halbintensivpflege",
+      "name_tr": "Yenidoğan inkübatör yarı yoğun bakım",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y02012",
+      "src": "NJEGA HRONIČARA",
+      "price_eur": 7.45,
+      "status": "new",
+      "name_en": "Chronic Patient Nursing Care",
+      "slug": "chronic-patient-nursing-care",
+      "name_sr": "Njega hroničara",
+      "name_sr_cyrl": "Њега хроничара",
+      "name_ru": "Уход за хроническим больным",
+      "name_de": "Pflege chronisch Kranker",
+      "name_tr": "Kronik hasta hemşirelik bakımı",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y03001",
+      "src": "UPOTREBA POROĐAJNE SALE PO POROĐAJU",
+      "price_eur": 26.63,
+      "status": "new",
+      "name_en": "Delivery Room Usage Per Birth",
+      "slug": "delivery-room-usage-per-birth",
+      "name_sr": "Upotreba porođajne sale po porođaju",
+      "name_sr_cyrl": "Употреба порођајне сале по порођају",
+      "name_ru": "Использование родильного зала за роды",
+      "name_de": "Nutzung des Kreißsaals pro Geburt",
+      "name_tr": "Doğum başına doğum salonu kullanımı",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "Y04001",
+      "src": "TROŠKOVI ISHRANE DJECE DO 1 GODINE",
+      "price_eur": 2.88,
+      "status": "new",
+      "name_en": "Food Costs for Children Under 1 Year",
+      "slug": "food-costs-for-children-under-1-year",
+      "name_sr": "Troškovi ishrane djece do 1 godine",
+      "name_sr_cyrl": "Трошкови исхране дјеце до 1 године",
+      "name_ru": "Расходы на питание детей до 1 года",
+      "name_de": "Verpflegungskosten für Kinder unter 1 Jahr",
+      "name_tr": "1 yaş altı çocuk beslenme maliyeti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y04002",
+      "src": "TROŠKOVI ISHRANE ZA STARIJE OD 1 GODINE",
+      "price_eur": 5.75,
+      "status": "new",
+      "name_en": "Food Costs for Patients Over 1 Year",
+      "slug": "food-costs-for-patients-over-1-year",
+      "name_sr": "Troškovi ishrane za starije od 1 godine",
+      "name_sr_cyrl": "Трошкови исхране за старије од 1 године",
+      "name_ru": "Расходы на питание пациентов старше 1 года",
+      "name_de": "Verpflegungskosten für Patienten über 1 Jahr",
+      "name_tr": "1 yaş üstü beslenme maliyeti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y04003",
+      "src": "NEMEDICINSKI DIO BO DANA - OPŠTE I SPECIJALNE BOLNICE",
+      "price_eur": 26.18,
+      "status": "new",
+      "name_en": "Non-Medical Bed-Day Cost General and Special Hospitals",
+      "slug": "non-medical-bed-day-cost-general-and-special-hospitals",
+      "name_sr": "Nemedicinski dio bolničkog dana - opšte i specijalne bolnice",
+      "name_sr_cyrl": "Немедицински дио болничког дана - опште и специјалне болнице",
+      "name_ru": "Немедицинская часть койко-дня - общие и специальные больницы",
+      "name_de": "Nichtmedizinischer Anteil Bett-Tag - Allgemein- und Spezialkrankenhäuser",
+      "name_tr": "Genel ve özel hastane gayri-tıbbi yatak günü maliyeti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y04004",
+      "src": "NEMED DIO B.O. DANA U INTENZ. NJEZI, KOR. JED I NEONAT.",
+      "price_eur": 52.36,
+      "status": "new",
+      "name_en": "Non-Medical Bed-Day Cost Intensive Coronary and Neonatal",
+      "slug": "non-medical-bed-day-cost-intensive-coronary-and-neonatal",
+      "name_sr": "Nemedicinski dio bolničkog dana u intenzivnoj njezi, koronarnoj jedinici i neonatologiji",
+      "name_sr_cyrl": "Немедицински дио болничког дана у интензивној њези, коронарној јединици и неонатологији",
+      "name_ru": "Немедицинская часть койко-дня в реанимации, кардиоблоке и неонатологии",
+      "name_de": "Nichtmedizinischer Anteil Bett-Tag Intensiv, Koronar und Neonatologie",
+      "name_tr": "Yoğun bakım koroner ve neonatal gayri-tıbbi yatak günü maliyeti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y04005",
+      "src": "PANSION PRATIOCA - OPŠTE I SPECIJALNE BOLNICE",
+      "price_eur": 31.93,
+      "status": "new",
+      "name_en": "Companion Boarding General and Special Hospitals",
+      "slug": "companion-boarding-general-and-special-hospitals",
+      "name_sr": "Pansion pratioca - opšte i specijalne bolnice",
+      "name_sr_cyrl": "Пансион пратиоца - опште и специјалне болнице",
+      "name_ru": "Пансион сопровождающего - общие и специальные больницы",
+      "name_de": "Begleiter-Verpflegung - Allgemein- und Spezialkrankenhäuser",
+      "name_tr": "Refakatçi pansiyon genel ve özel hastane",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y05001",
+      "src": "OPERACIJE OD 5 DO 20 BODOVA (OD 6,50 DO 26,00 €)",
+      "price_eur": 13.35,
+      "status": "new",
+      "name_en": "Operating Theatre Costs Tier I 5 to 20 Points",
+      "slug": "operating-theatre-costs-tier-i-5-to-20-points",
+      "name_sr": "Troškovi operacione sale tier I 5-20 bodova",
+      "name_sr_cyrl": "Трошкови операционе сале tier I 5-20 бодова",
+      "name_ru": "Расходы операционной зала тариф I 5-20 баллов",
+      "name_de": "Operationssaal-Kosten Stufe I 5-20 Punkte",
+      "name_tr": "Ameliyathane maliyeti Tier I 5-20 puan",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y05002",
+      "src": "OPERACIJE OD 21 DO 50 BODOVA (OD 27,30 DO 65,00 €)",
+      "price_eur": 26.63,
+      "status": "new",
+      "name_en": "Operating Theatre Costs Tier I 21 to 50 Points",
+      "slug": "operating-theatre-costs-tier-i-21-to-50-points",
+      "name_sr": "Troškovi operacione sale tier I 21-50 bodova",
+      "name_sr_cyrl": "Трошкови операционе сале tier I 21-50 бодова",
+      "name_ru": "Расходы операционной зала тариф I 21-50 баллов",
+      "name_de": "Operationssaal-Kosten Stufe I 21-50 Punkte",
+      "name_tr": "Ameliyathane maliyeti Tier I 21-50 puan",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y05003",
+      "src": "OPERACIJE OD 51 DO 120 BODOVA (OD 66,30 DO 156,00 €",
+      "price_eur": 53.33,
+      "status": "new",
+      "name_en": "Operating Theatre Costs Tier I 51 to 120 Points",
+      "slug": "operating-theatre-costs-tier-i-51-to-120-points",
+      "name_sr": "Troškovi operacione sale tier I 51-120 bodova",
+      "name_sr_cyrl": "Трошкови операционе сале tier I 51-120 бодова",
+      "name_ru": "Расходы операционной зала тариф I 51-120 баллов",
+      "name_de": "Operationssaal-Kosten Stufe I 51-120 Punkte",
+      "name_tr": "Ameliyathane maliyeti Tier I 51-120 puan",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y05004",
+      "src": "OPERACIJE OD 121 DO 180 BODOVA (OD 157,30 DO 234,00 €)",
+      "price_eur": 79.95,
+      "status": "new",
+      "name_en": "Operating Theatre Costs Tier I 121 to 180 Points",
+      "slug": "operating-theatre-costs-tier-i-121-to-180-points",
+      "name_sr": "Troškovi operacione sale tier I 121-180 bodova",
+      "name_sr_cyrl": "Трошкови операционе сале tier I 121-180 бодова",
+      "name_ru": "Расходы операционной зала тариф I 121-180 баллов",
+      "name_de": "Operationssaal-Kosten Stufe I 121-180 Punkte",
+      "name_tr": "Ameliyathane maliyeti Tier I 121-180 puan",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y05005",
+      "src": "OPERACIJE PREKO 180 BODOVA (PREKO 234,00 €)",
+      "price_eur": 106.63,
+      "status": "new",
+      "name_en": "Operating Theatre Costs Tier I Over 180 Points",
+      "slug": "operating-theatre-costs-tier-i-over-180-points",
+      "name_sr": "Troškovi operacione sale tier I preko 180 bodova",
+      "name_sr_cyrl": "Трошкови операционе сале tier I преко 180 бодова",
+      "name_ru": "Расходы операционной зала тариф I свыше 180 баллов",
+      "name_de": "Operationssaal-Kosten Stufe I über 180 Punkte",
+      "name_tr": "Ameliyathane maliyeti Tier I 180+ puan",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y05006",
+      "src": "OPERACIJE OD 5 DO 20 BODOVA (OD 6,50 DO 26,00€)",
+      "price_eur": 14.25,
+      "status": "new",
+      "name_en": "Operating Theatre Costs Tier II 5 to 20 Points",
+      "slug": "operating-theatre-costs-tier-ii-5-to-20-points",
+      "name_sr": "Troškovi operacione sale tier II 5-20 bodova",
+      "name_sr_cyrl": "Трошкови операционе сале tier II 5-20 бодова",
+      "name_ru": "Расходы операционной зала тариф II 5-20 баллов",
+      "name_de": "Operationssaal-Kosten Stufe II 5-20 Punkte",
+      "name_tr": "Ameliyathane maliyeti Tier II 5-20 puan",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y05007",
+      "src": "OPERACIJE OD 21 DO 50 BODOVA (27,30 DO 65,00€)",
+      "price_eur": 28.48,
+      "status": "new",
+      "name_en": "Operating Theatre Costs Tier II 21 to 50 Points",
+      "slug": "operating-theatre-costs-tier-ii-21-to-50-points",
+      "name_sr": "Troškovi operacione sale tier II 21-50 bodova",
+      "name_sr_cyrl": "Трошкови операционе сале tier II 21-50 бодова",
+      "name_ru": "Расходы операционной зала тариф II 21-50 баллов",
+      "name_de": "Operationssaal-Kosten Stufe II 21-50 Punkte",
+      "name_tr": "Ameliyathane maliyeti Tier II 21-50 puan",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y05008",
+      "src": "OPERACIJE OD 51 DO 120 BODOVA (OD 66,30 DO 156,00€)",
+      "price_eur": 56.95,
+      "status": "new",
+      "name_en": "Operating Theatre Costs Tier II 51 to 120 Points",
+      "slug": "operating-theatre-costs-tier-ii-51-to-120-points",
+      "name_sr": "Troškovi operacione sale tier II 51-120 bodova",
+      "name_sr_cyrl": "Трошкови операционе сале tier II 51-120 бодова",
+      "name_ru": "Расходы операционной зала тариф II 51-120 баллов",
+      "name_de": "Operationssaal-Kosten Stufe II 51-120 Punkte",
+      "name_tr": "Ameliyathane maliyeti Tier II 51-120 puan",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y05009",
+      "src": "OPERACIJE OD 121 DO 180 BODOVA (OD 157,30 DO 234,00€)",
+      "price_eur": 85.45,
+      "status": "new",
+      "name_en": "Operating Theatre Costs Tier II 121 to 180 Points",
+      "slug": "operating-theatre-costs-tier-ii-121-to-180-points",
+      "name_sr": "Troškovi operacione sale tier II 121-180 bodova",
+      "name_sr_cyrl": "Трошкови операционе сале tier II 121-180 бодова",
+      "name_ru": "Расходы операционной зала тариф II 121-180 баллов",
+      "name_de": "Operationssaal-Kosten Stufe II 121-180 Punkte",
+      "name_tr": "Ameliyathane maliyeti Tier II 121-180 puan",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y05010",
+      "src": "OPERACIJE PREKO 180 BODOVA (PREKO 234,00€)",
+      "price_eur": 157.3,
+      "status": "new",
+      "name_en": "Operating Theatre Costs Tier II Over 180 Points",
+      "slug": "operating-theatre-costs-tier-ii-over-180-points",
+      "name_sr": "Troškovi operacione sale tier II preko 180 bodova",
+      "name_sr_cyrl": "Трошкови операционе сале tier II преко 180 бодова",
+      "name_ru": "Расходы операционной зала тариф II свыше 180 баллов",
+      "name_de": "Operationssaal-Kosten Stufe II über 180 Punkte",
+      "name_tr": "Ameliyathane maliyeti Tier II 180+ puan",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y06001",
+      "src": "JEDAN DAN BORAVKA U PORODILIŠTU ZA PRVIH 6 DANA POSLIJE PORO",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Maternity Ward Stay First 6 Days After Birth",
+      "slug": "maternity-ward-stay-first-6-days-after-birth",
+      "name_sr": "Boravak u porodilištu - prvih 6 dana poslije porođaja",
+      "name_sr_cyrl": "Боравак у породилишту - првих 6 дана послије порођаја",
+      "name_ru": "Пребывание в родильном отделении - первые 6 дней после родов",
+      "name_de": "Aufenthalt auf der Entbindungsstation - erste 6 Tage nach der Geburt",
+      "name_tr": "Doğumdan sonra ilk 6 gün doğum servisi yatışı",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y06002",
+      "src": "JEDAN DAN BORAVKA U BOKSU ZA NOVOROĐENČAD ZA PRVIH 6 DANA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Newborn Box Stay First 6 Days",
+      "slug": "newborn-box-stay-first-6-days",
+      "name_sr": "Boravak u boksu za novorođenčad - prvih 6 dana",
+      "name_sr_cyrl": "Боравак у боксу за новорођенчад - првих 6 дана",
+      "name_ru": "Пребывание в боксе для новорождённых - первые 6 дней",
+      "name_de": "Aufenthalt in der Neugeborenenbox - erste 6 Tage",
+      "name_tr": "Yenidoğan boks yatışı ilk 6 gün",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y06003",
+      "src": "JEDAN DAN BORAVKA U INTENZIVNOJ NJEZI",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Intensive Care Bed-Day",
+      "slug": "intensive-care-bed-day",
+      "name_sr": "Boravak u intenzivnoj njezi",
+      "name_sr_cyrl": "Боравак у интензивној његи",
+      "name_ru": "Пребывание в интенсивной терапии",
+      "name_de": "Intensivpflege Bett-Tag",
+      "name_tr": "Yoğun bakım yatak günü",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y06004",
+      "src": "JEDAN DAN BORAVKA U POLUINTENZIVNOJ NJEZI",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Semi-Intensive Care Bed-Day",
+      "slug": "semi-intensive-care-bed-day",
+      "name_sr": "Boravak u poluintenzivnoj njezi",
+      "name_sr_cyrl": "Боравак у полуинтензивној његи",
+      "name_ru": "Пребывание в полуинтенсивной терапии",
+      "name_de": "Halbintensivpflege Bett-Tag",
+      "name_tr": "Yarı yoğun bakım yatak günü",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y06005",
+      "src": "JEDAN DAN BORAVKA U OBIČNOJ NJEZI",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Standard Care Bed-Day",
+      "slug": "standard-care-bed-day",
+      "name_sr": "Boravak u običnoj njezi",
+      "name_sr_cyrl": "Боравак у обичној његи",
+      "name_ru": "Пребывание в обычном уходе",
+      "name_de": "Standardpflege Bett-Tag",
+      "name_tr": "Standart bakım yatak günü",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y06006",
+      "src": "ABORTUS NA ODJELJENJU",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Inpatient Abortion Procedure",
+      "slug": "inpatient-abortion-procedure",
+      "name_sr": "Abortus na odjeljenju",
+      "name_sr_cyrl": "Абортус на одјељењу",
+      "name_ru": "Аборт в отделении",
+      "name_de": "Stationärer Schwangerschaftsabbruch",
+      "name_tr": "Servis abortus işlemi",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y07001",
+      "src": "MALI ZAVOJ I",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Operation Small Dressing I",
+      "slug": "operation-small-dressing-i",
+      "name_sr": "Mali zavoj I (operativni)",
+      "name_sr_cyrl": "Мали завој I (оперативни)",
+      "name_ru": "Малая операционная повязка I",
+      "name_de": "Kleiner Verband I (Operation)",
+      "name_tr": "Küçük operasyon pansumanı I",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "Y07002",
+      "src": "MALI ZAVOJ II",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Operation Small Dressing II",
+      "slug": "operation-small-dressing-ii",
+      "name_sr": "Mali zavoj II (operativni)",
+      "name_sr_cyrl": "Мали завој II (оперативни)",
+      "name_ru": "Малая операционная повязка II",
+      "name_de": "Kleiner Verband II (Operation)",
+      "name_tr": "Küçük operasyon pansumanı II",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "Y07003",
+      "src": "SREDNJI ZAVOJ I",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Operation Medium Dressing I",
+      "slug": "operation-medium-dressing-i",
+      "name_sr": "Srednji zavoj I (operativni)",
+      "name_sr_cyrl": "Средњи завој I (оперативни)",
+      "name_ru": "Средняя операционная повязка I",
+      "name_de": "Mittlerer Verband I (Operation)",
+      "name_tr": "Orta operasyon pansumanı I",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "Y07004",
+      "src": "SREDNJI ZAVOJ II",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Operation Medium Dressing II",
+      "slug": "operation-medium-dressing-ii",
+      "name_sr": "Srednji zavoj II (operativni)",
+      "name_sr_cyrl": "Средњи завој II (оперативни)",
+      "name_ru": "Средняя операционная повязка II",
+      "name_de": "Mittlerer Verband II (Operation)",
+      "name_tr": "Orta operasyon pansumanı II",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "Y07005",
+      "src": "VELIKI ZAVOJ",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Operation Large Dressing",
+      "slug": "operation-large-dressing",
+      "name_sr": "Veliki zavoj (operativni)",
+      "name_sr_cyrl": "Велики завој (оперативни)",
+      "name_ru": "Большая операционная повязка",
+      "name_de": "Großer Verband (Operation)",
+      "name_tr": "Büyük operasyon pansumanı",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "Y08001",
+      "src": "UTROŠAK MATERIJALA KOD DAVANJA SVIH VRSTA INJEKCIJA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Injection Materials Consumption",
+      "slug": "injection-materials-consumption",
+      "name_sr": "Utrošak materijala kod davanja injekcija",
+      "name_sr_cyrl": "Утрошак материјала код давања ињекција",
+      "name_ru": "Расход материалов при инъекциях",
+      "name_de": "Materialverbrauch bei Injektionen",
+      "name_tr": "Enjeksiyon malzeme tüketimi",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "code": "Y09001",
+      "src": "MALI ZAVOJ",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Ambulatory Small Dressing",
+      "slug": "ambulatory-small-dressing",
+      "name_sr": "Mali zavoj (ambulantni)",
+      "name_sr_cyrl": "Мали завој (амбулантни)",
+      "name_ru": "Малая амбулаторная повязка",
+      "name_de": "Kleiner Verband (ambulant)",
+      "name_tr": "Küçük ambulans pansumanı",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "Y09002",
+      "src": "SREDNJI ZAVOJ",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Ambulatory Medium Dressing",
+      "slug": "ambulatory-medium-dressing",
+      "name_sr": "Srednji zavoj (ambulantni)",
+      "name_sr_cyrl": "Средњи завој (амбулантни)",
+      "name_ru": "Средняя амбулаторная повязка",
+      "name_de": "Mittlerer Verband (ambulant)",
+      "name_tr": "Orta ambulans pansumanı",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "Y09003",
+      "src": "VELIKI ZAVOJ",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Ambulatory Large Dressing",
+      "slug": "ambulatory-large-dressing",
+      "name_sr": "Veliki zavoj (ambulantni)",
+      "name_sr_cyrl": "Велики завој (амбулантни)",
+      "name_ru": "Большая амбулаторная повязка",
+      "name_de": "Großer Verband (ambulant)",
+      "name_tr": "Büyük ambulans pansumanı",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "Y10001",
+      "src": "GIPSANI ŽAKET ZA TIJELO UKLJUČUJUĆI GLAVU",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Plaster Body Jacket Including Head",
+      "slug": "plaster-body-jacket-including-head",
+      "name_sr": "Gipsani žaket za tijelo uključujući glavu",
+      "name_sr_cyrl": "Гипсани жакет за тијело укључујући главу",
+      "name_ru": "Гипсовый корсет на туловище включая голову",
+      "name_de": "Gips-Rumpfkorsett mit Kopf",
+      "name_tr": "Baş dahil gövde alçı ceketi",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10002",
+      "src": "GIPSANI ZAVOJ RAMENA ISPOD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Shoulder Plaster Cast Under 10 Years",
+      "slug": "shoulder-plaster-cast-under-10-years",
+      "name_sr": "Gipsani zavoj ramena ispod 10 godina",
+      "name_sr_cyrl": "Гипсани завој рамена испод 10 година",
+      "name_ru": "Гипсовая повязка на плечо до 10 лет",
+      "name_de": "Schulter-Gipsverband unter 10 Jahren",
+      "name_tr": "10 yaş altı omuz alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10003",
+      "src": "GIPSANI ZAVOJ RAMENA IZNAD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Shoulder Plaster Cast Over 10 Years",
+      "slug": "shoulder-plaster-cast-over-10-years",
+      "name_sr": "Gipsani zavoj ramena iznad 10 godina",
+      "name_sr_cyrl": "Гипсани завој рамена изнад 10 година",
+      "name_ru": "Гипсовая повязка на плечо старше 10 лет",
+      "name_de": "Schulter-Gipsverband über 10 Jahren",
+      "name_tr": "10 yaş üstü omuz alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10004",
+      "src": "GIPSANI ZAVOJ OD RAMENA DO PRSTIJU - ISPOD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Shoulder to Fingers Plaster Cast Under 10 Years",
+      "slug": "shoulder-to-fingers-plaster-cast-under-10-years",
+      "name_sr": "Gipsani zavoj od ramena do prstiju ispod 10 godina",
+      "name_sr_cyrl": "Гипсани завој од рамена до прстију испод 10 година",
+      "name_ru": "Гипсовая повязка от плеча до пальцев до 10 лет",
+      "name_de": "Gipsverband Schulter bis Finger unter 10 Jahren",
+      "name_tr": "10 yaş altı omuzdan parmaklara alçı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10005",
+      "src": "GIPSANI ZAVOJ OD RAMENA DO PRSTIJU IZNAD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Shoulder to Fingers Plaster Cast Over 10 Years",
+      "slug": "shoulder-to-fingers-plaster-cast-over-10-years",
+      "name_sr": "Gipsani zavoj od ramena do prstiju iznad 10 godina",
+      "name_sr_cyrl": "Гипсани завој од рамена до прстију изнад 10 година",
+      "name_ru": "Гипсовая повязка от плеча до пальцев старше 10 лет",
+      "name_de": "Gipsverband Schulter bis Finger über 10 Jahren",
+      "name_tr": "10 yaş üstü omuzdan parmaklara alçı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10006",
+      "src": "GIPSANI ZAVOJ LAKTA - ISPOD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Elbow Plaster Cast Under 10 Years",
+      "slug": "elbow-plaster-cast-under-10-years",
+      "name_sr": "Gipsani zavoj lakta ispod 10 godina",
+      "name_sr_cyrl": "Гипсани завој лакта испод 10 година",
+      "name_ru": "Гипсовая повязка на локоть до 10 лет",
+      "name_de": "Ellbogen-Gipsverband unter 10 Jahren",
+      "name_tr": "10 yaş altı dirsek alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10007",
+      "src": "GIPSANI ZAVOJ LAKTA - IZNAD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Elbow Plaster Cast Over 10 Years",
+      "slug": "elbow-plaster-cast-over-10-years",
+      "name_sr": "Gipsani zavoj lakta iznad 10 godina",
+      "name_sr_cyrl": "Гипсани завој лакта изнад 10 година",
+      "name_ru": "Гипсовая повязка на локоть старше 10 лет",
+      "name_de": "Ellbogen-Gipsverband über 10 Jahren",
+      "name_tr": "10 yaş üstü dirsek alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10008",
+      "src": "GIPSANI ZAVOJ PODLAKTICE I ŠAKE - ISPOD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Forearm and Hand Plaster Cast Under 10 Years",
+      "slug": "forearm-and-hand-plaster-cast-under-10-years",
+      "name_sr": "Gipsani zavoj podlaktice i šake ispod 10 godina",
+      "name_sr_cyrl": "Гипсани завој подлактице и шаке испод 10 година",
+      "name_ru": "Гипсовая повязка предплечья и кисти до 10 лет",
+      "name_de": "Unterarm-Hand-Gipsverband unter 10 Jahren",
+      "name_tr": "10 yaş altı önkol ve el alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10009",
+      "src": "GIPSANI ZAVOJ PODLAKTICE I ŠAKE - IZNAD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Forearm and Hand Plaster Cast Over 10 Years",
+      "slug": "forearm-and-hand-plaster-cast-over-10-years",
+      "name_sr": "Gipsani zavoj podlaktice i šake iznad 10 godina",
+      "name_sr_cyrl": "Гипсани завој подлактице и шаке изнад 10 година",
+      "name_ru": "Гипсовая повязка предплечья и кисти старше 10 лет",
+      "name_de": "Unterarm-Hand-Gipsverband über 10 Jahren",
+      "name_tr": "10 yaş üstü önkol ve el alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10010",
+      "src": "LONGETA - RUKE OD RAMENA DO ŠAKE - ISPOD 10 GOD.",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Arm Splint Shoulder to Hand Under 10 Years",
+      "slug": "arm-splint-shoulder-to-hand-under-10-years",
+      "name_sr": "Longeta ruke od ramena do šake ispod 10 godina",
+      "name_sr_cyrl": "Лонгета руке од рамена до шаке испод 10 година",
+      "name_ru": "Лонгета руки от плеча до кисти до 10 лет",
+      "name_de": "Armschiene Schulter bis Hand unter 10 Jahren",
+      "name_tr": "10 yaş altı omuzdan ele kol ateli",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10011",
+      "src": "LONGETA - RUKE OD RAMENA DO ŠAKE - IZNAD 10 GOD.",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Arm Splint Shoulder to Hand Over 10 Years",
+      "slug": "arm-splint-shoulder-to-hand-over-10-years",
+      "name_sr": "Longeta ruke od ramena do šake iznad 10 godina",
+      "name_sr_cyrl": "Лонгета руке од рамена до шаке изнад 10 година",
+      "name_ru": "Лонгета руки от плеча до кисти старше 10 лет",
+      "name_de": "Armschiene Schulter bis Hand über 10 Jahren",
+      "name_tr": "10 yaş üstü omuzdan ele kol ateli",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10012",
+      "src": "LONGETA PODLAKTICE I ŠAKE ISPOD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Forearm and Hand Splint Under 10 Years",
+      "slug": "forearm-and-hand-splint-under-10-years",
+      "name_sr": "Longeta podlaktice i šake ispod 10 godina",
+      "name_sr_cyrl": "Лонгета подлактице и шаке испод 10 година",
+      "name_ru": "Лонгета предплечья и кисти до 10 лет",
+      "name_de": "Unterarm-Hand-Schiene unter 10 Jahren",
+      "name_tr": "10 yaş altı önkol ve el ateli",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10013",
+      "src": "LONGETA PODLAKTICE I ŠAKE IZNAD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Forearm and Hand Splint Over 10 Years",
+      "slug": "forearm-and-hand-splint-over-10-years",
+      "name_sr": "Longeta podlaktice i šake iznad 10 godina",
+      "name_sr_cyrl": "Лонгета подлактице и шаке изнад 10 година",
+      "name_ru": "Лонгета предплечья и кисти старше 10 лет",
+      "name_de": "Unterarm-Hand-Schiene über 10 Jahren",
+      "name_tr": "10 yaş üstü önkol ve el ateli",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10014",
+      "src": "FIKSACIONI ZAVOJ TORAKSA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Thorax Fixation Cast",
+      "slug": "thorax-fixation-cast",
+      "name_sr": "Fiksacioni zavoj toraksa",
+      "name_sr_cyrl": "Фиксациони завој торакса",
+      "name_ru": "Фиксирующая повязка грудной клетки",
+      "name_de": "Thorax-Fixationsverband",
+      "name_tr": "Toraks fiksasyon bandajı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10015",
+      "src": "FIKSACIONI ZAVOJ KARLICE",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Pelvis Fixation Cast",
+      "slug": "pelvis-fixation-cast",
+      "name_sr": "Fiksacioni zavoj karlice",
+      "name_sr_cyrl": "Фиксациони завој карлице",
+      "name_ru": "Фиксирующая повязка таза",
+      "name_de": "Becken-Fixationsverband",
+      "name_tr": "Pelvis fiksasyon bandajı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10016",
+      "src": "FIKSACIONI ZAVOJ RAMENA (VELPOV)",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Shoulder Velpeau Fixation Cast",
+      "slug": "shoulder-velpeau-fixation-cast",
+      "name_sr": "Fiksacioni zavoj ramena (Velpov)",
+      "name_sr_cyrl": "Фиксациони завој рамена (Велпов)",
+      "name_ru": "Фиксирующая повязка плеча (Вельпо)",
+      "name_de": "Velpeau-Schulter-Fixationsverband",
+      "name_tr": "Velpeau omuz fiksasyon bandajı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10017",
+      "src": "FIKSACIONI ZAVOJ LAKTA ILI ZGLOBA RUČJA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Elbow or Wrist Joint Fixation Cast",
+      "slug": "elbow-or-wrist-joint-fixation-cast",
+      "name_sr": "Fiksacioni zavoj lakta ili zgloba ručja",
+      "name_sr_cyrl": "Фиксациони завој лакта или зглоба ручја",
+      "name_ru": "Фиксирующая повязка локтя или запястья",
+      "name_de": "Ellbogen- oder Handgelenk-Fixationsverband",
+      "name_tr": "Dirsek veya el bileği fiksasyon bandajı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10018",
+      "src": "FIKSACIONI ZAVOJ KUKA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Hip Fixation Cast",
+      "slug": "hip-fixation-cast",
+      "name_sr": "Fiksacioni zavoj kuka",
+      "name_sr_cyrl": "Фиксациони завој кука",
+      "name_ru": "Фиксирующая повязка тазобедренного сустава",
+      "name_de": "Hüft-Fixationsverband",
+      "name_tr": "Kalça fiksasyon bandajı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10019",
+      "src": "FIKSACIONI ZAVOJ KOLJENA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Knee Fixation Cast",
+      "slug": "knee-fixation-cast",
+      "name_sr": "Fiksacioni zavoj koljena",
+      "name_sr_cyrl": "Фиксациони завој кољена",
+      "name_ru": "Фиксирующая повязка колена",
+      "name_de": "Knie-Fixationsverband",
+      "name_tr": "Diz fiksasyon bandajı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10020",
+      "src": "FIKSACIONI ZAVOJ GLEŽNJA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Ankle Fixation Cast",
+      "slug": "ankle-fixation-cast",
+      "name_sr": "Fiksacioni zavoj gležnja",
+      "name_sr_cyrl": "Фиксациони завој гležnja",
+      "name_ru": "Фиксирующая повязка голеностопа",
+      "name_de": "Sprunggelenk-Fixationsverband",
+      "name_tr": "Ayak bileği fiksasyon bandajı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10021",
+      "src": "GIPSANI ZAVOJ KUKA UNILATERALNI - ISPOD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Unilateral Hip Plaster Cast Under 10 Years",
+      "slug": "unilateral-hip-plaster-cast-under-10-years",
+      "name_sr": "Gipsani zavoj kuka unilateralni ispod 10 godina",
+      "name_sr_cyrl": "Гипсани завој кука унилатерални испод 10 година",
+      "name_ru": "Односторонняя гипсовая повязка тазобедренного сустава до 10 лет",
+      "name_de": "Einseitiger Hüft-Gipsverband unter 10 Jahren",
+      "name_tr": "10 yaş altı tek taraflı kalça alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10022",
+      "src": "GIPSANI ZAVOJ KUKA UNILATERALNI - IZNAD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Unilateral Hip Plaster Cast Over 10 Years",
+      "slug": "unilateral-hip-plaster-cast-over-10-years",
+      "name_sr": "Gipsani zavoj kuka unilateralni iznad 10 godina",
+      "name_sr_cyrl": "Гипсани завој кука унилатерални изнад 10 година",
+      "name_ru": "Односторонняя гипсовая повязка тазобедренного сустава старше 10 лет",
+      "name_de": "Einseitiger Hüft-Gipsverband über 10 Jahren",
+      "name_tr": "10 yaş üstü tek taraflı kalça alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10023",
+      "src": "GIPSANI ZAVOJ KUKA BILATERALNI - ISPOD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Bilateral Hip Plaster Cast Under 10 Years",
+      "slug": "bilateral-hip-plaster-cast-under-10-years",
+      "name_sr": "Gipsani zavoj kuka bilateralni ispod 10 godina",
+      "name_sr_cyrl": "Гипсани завој кука билатерални испод 10 година",
+      "name_ru": "Двусторонняя гипсовая повязка тазобедренного сустава до 10 лет",
+      "name_de": "Beidseitiger Hüft-Gipsverband unter 10 Jahren",
+      "name_tr": "10 yaş altı çift taraflı kalça alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10024",
+      "src": "GIPSANI ZAVOJ KUKA BILATERALNI - IZNAD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Bilateral Hip Plaster Cast Over 10 Years",
+      "slug": "bilateral-hip-plaster-cast-over-10-years",
+      "name_sr": "Gipsani zavoj kuka bilateralni iznad 10 godina",
+      "name_sr_cyrl": "Гипсани завој кука билатерални изнад 10 година",
+      "name_ru": "Двусторонняя гипсовая повязка тазобедренного сустава старше 10 лет",
+      "name_de": "Beidseitiger Hüft-Gipsverband über 10 Jahren",
+      "name_tr": "10 yaş üstü çift taraflı kalça alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10025",
+      "src": "GIPSANI ZAVOJ NOGE (OD KUKA DO PRSTIJU) - ISPOD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Leg Plaster Cast Hip to Toes Under 10 Years",
+      "slug": "leg-plaster-cast-hip-to-toes-under-10-years",
+      "name_sr": "Gipsani zavoj noge od kuka do prstiju ispod 10 godina",
+      "name_sr_cyrl": "Гипсани завој ноге од кука до прстију испод 10 година",
+      "name_ru": "Гипсовая повязка ноги от бедра до пальцев до 10 лет",
+      "name_de": "Bein-Gipsverband Hüfte bis Zehen unter 10 Jahren",
+      "name_tr": "10 yaş altı kalçadan parmaklara bacak alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10026",
+      "src": "GIPSANI ZAVOJ NOGE (OD KUKA DO PRSTIJU) - IZNAD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Leg Plaster Cast Hip to Toes Over 10 Years",
+      "slug": "leg-plaster-cast-hip-to-toes-over-10-years",
+      "name_sr": "Gipsani zavoj noge od kuka do prstiju iznad 10 godina",
+      "name_sr_cyrl": "Гипсани завој ноге од кука до прстију изнад 10 година",
+      "name_ru": "Гипсовая повязка ноги от бедра до пальцев старше 10 лет",
+      "name_de": "Bein-Gipsverband Hüfte bis Zehen über 10 Jahren",
+      "name_tr": "10 yaş üstü kalçadan parmaklara bacak alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10027",
+      "src": "GIPSANI CILINDAR (OD KUKA DO GLEŽNJA) - ISPOD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Plaster Cylinder Hip to Ankle Under 10 Years",
+      "slug": "plaster-cylinder-hip-to-ankle-under-10-years",
+      "name_sr": "Gipsani cilindar od kuka do gležnja ispod 10 godina",
+      "name_sr_cyrl": "Гипсани цилиндар од кука до гležnja испод 10 година",
+      "name_ru": "Гипсовый цилиндр от бедра до голеностопа до 10 лет",
+      "name_de": "Gips-Zylinder Hüfte bis Sprunggelenk unter 10 Jahren",
+      "name_tr": "10 yaş altı kalçadan ayak bileğine alçı silindiri",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10028",
+      "src": "GIPSANI CILINDAR (OD KUKA DO GLEŽNJA) - IZNAD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Plaster Cylinder Hip to Ankle Over 10 Years",
+      "slug": "plaster-cylinder-hip-to-ankle-over-10-years",
+      "name_sr": "Gipsani cilindar od kuka do gležnja iznad 10 godina",
+      "name_sr_cyrl": "Гипсани цилиндар од кука до гležnja изнад 10 година",
+      "name_ru": "Гипсовый цилиндр от бедра до голеностопа старше 10 лет",
+      "name_de": "Gips-Zylinder Hüfte bis Sprunggelenk über 10 Jahren",
+      "name_tr": "10 yaş üstü kalçadan ayak bileğine alçı silindiri",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10029",
+      "src": "GIPS POTKOLJENICE (OD KOLJENA DO PRSTIJU) - ISPOD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Lower Leg Plaster Knee to Toes Under 10 Years",
+      "slug": "lower-leg-plaster-knee-to-toes-under-10-years",
+      "name_sr": "Gips potkoljenice od koljena do prstiju ispod 10 godina",
+      "name_sr_cyrl": "Гипс потколјенице од кољена до прстију испод 10 година",
+      "name_ru": "Гипс голени от колена до пальцев до 10 лет",
+      "name_de": "Unterschenkel-Gips Knie bis Zehen unter 10 Jahren",
+      "name_tr": "10 yaş altı dizden parmaklara baldır alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10030",
+      "src": "GIPS POTKOLJENICE (OD KOLJENA DO PRSTIJU) - IZNAD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Lower Leg Plaster Knee to Toes Over 10 Years",
+      "slug": "lower-leg-plaster-knee-to-toes-over-10-years",
+      "name_sr": "Gips potkoljenice od koljena do prstiju iznad 10 godina",
+      "name_sr_cyrl": "Гипс потколјенице од кољена до прстију изнад 10 година",
+      "name_ru": "Гипс голени от колена до пальцев старше 10 лет",
+      "name_de": "Unterschenkel-Gips Knie bis Zehen über 10 Jahren",
+      "name_tr": "10 yaş üstü dizden parmaklara baldır alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10031",
+      "src": "OBLIK ZA KRETANJE ILI AMBULATORNI GIPS - ISPOD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Walking or Ambulatory Plaster Cast Under 10 Years",
+      "slug": "walking-or-ambulatory-plaster-cast-under-10-years",
+      "name_sr": "Oblik za kretanje ili ambulantni gips ispod 10 godina",
+      "name_sr_cyrl": "Облик за кретање или амбулантни гипс испод 10 година",
+      "name_ru": "Гипс для ходьбы или амбулаторный до 10 лет",
+      "name_de": "Gehgips oder ambulanter Gips unter 10 Jahren",
+      "name_tr": "10 yaş altı yürüyüş veya ambulans alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10032",
+      "src": "OBLIK ZA KRETANJE ILI AMBULATORNI GIPS - IZNAD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Walking or Ambulatory Plaster Cast Over 10 Years",
+      "slug": "walking-or-ambulatory-plaster-cast-over-10-years",
+      "name_sr": "Oblik za kretanje ili ambulantni gips iznad 10 godina",
+      "name_sr_cyrl": "Облик за кретање или амбулантни гипс изнад 10 година",
+      "name_ru": "Гипс для ходьбы или амбулаторный старше 10 лет",
+      "name_de": "Gehgips oder ambulanter Gips über 10 Jahren",
+      "name_tr": "10 yaş üstü yürüyüş veya ambulans alçısı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10033",
+      "src": "GIPSANE LONGETE OD KUKA DO GLEŽNJA I PRSTIJU - ISPOD 10 GOD.",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Plaster Splint Hip to Ankle and Toes Under 10 Years",
+      "slug": "plaster-splint-hip-to-ankle-and-toes-under-10-years",
+      "name_sr": "Gipsane longete od kuka do gležnja i prstiju ispod 10 godina",
+      "name_sr_cyrl": "Гипсане лонгете од кука до гležnja и прстију испод 10 година",
+      "name_ru": "Гипсовые лонгеты от бедра до голеностопа и пальцев до 10 лет",
+      "name_de": "Gipsschienen Hüfte bis Sprunggelenk und Zehen unter 10 Jahren",
+      "name_tr": "10 yaş altı kalçadan ayak bileği ve parmaklara alçı ateli",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10034",
+      "src": "GIPSANE LONGETE OD KUKA DO GLEŽNJA I PRSTIJU - IZNAD 10 GODI",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Plaster Splint Hip to Ankle and Toes Over 10 Years",
+      "slug": "plaster-splint-hip-to-ankle-and-toes-over-10-years",
+      "name_sr": "Gipsane longete od kuka do gležnja i prstiju iznad 10 godina",
+      "name_sr_cyrl": "Гипсане лонгете од кука до гležnja и прстију изнад 10 година",
+      "name_ru": "Гипсовые лонгеты от бедра до голеностопа и пальцев старше 10 лет",
+      "name_de": "Gipsschienen Hüfte bis Sprunggelenk und Zehen über 10 Jahren",
+      "name_tr": "10 yaş üstü kalçadan ayak bileği ve parmaklara alçı ateli",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10035",
+      "src": "GIPSANA LONGETA POTKOLJENICE OD STOPALA - ISPOD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Lower Leg to Foot Plaster Splint Under 10 Years",
+      "slug": "lower-leg-to-foot-plaster-splint-under-10-years",
+      "name_sr": "Gipsana longeta potkoljenice do stopala ispod 10 godina",
+      "name_sr_cyrl": "Гипсана лонгета потколјенице до стопала испод 10 година",
+      "name_ru": "Гипсовая лонгета голени до стопы до 10 лет",
+      "name_de": "Unterschenkel-Fuß-Gipsschiene unter 10 Jahren",
+      "name_tr": "10 yaş altı baldırdan ayağa alçı ateli",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10036",
+      "src": "GIPSANA LONGETA POTKOLJENICE DO STOPALA - IZNAD 10 GODINA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Lower Leg to Foot Plaster Splint Over 10 Years",
+      "slug": "lower-leg-to-foot-plaster-splint-over-10-years",
+      "name_sr": "Gipsana longeta potkoljenice do stopala iznad 10 godina",
+      "name_sr_cyrl": "Гипсана лонгета потколјенице до стопала изнад 10 година",
+      "name_ru": "Гипсовая лонгета голени до стопы старше 10 лет",
+      "name_de": "Unterschenkel-Fuß-Gipsschiene über 10 Jahren",
+      "name_tr": "10 yaş üstü baldırdan ayağa alçı ateli",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10037",
+      "src": "GIPSANI ŽAKET ZA TIJELO",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Plaster Body Jacket",
+      "slug": "plaster-body-jacket",
+      "name_sr": "Gipsani žaket za tijelo",
+      "name_sr_cyrl": "Гипсани жакет за тијело",
+      "name_ru": "Гипсовый корсет на туловище",
+      "name_de": "Gips-Rumpfkorsett",
+      "name_tr": "Gövde alçı ceketi",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y10038",
+      "src": "GIPSANI ZAVOJ OD RAMENA DO KUKA",
+      "price_eur": 0.0,
+      "status": "new",
+      "name_en": "Shoulder to Hip Plaster Cast",
+      "slug": "shoulder-to-hip-plaster-cast",
+      "name_sr": "Gipsani zavoj od ramena do kuka",
+      "name_sr_cyrl": "Гипсани завој од рамена до кука",
+      "name_ru": "Гипсовая повязка от плеча до бедра",
+      "name_de": "Gipsverband Schulter bis Hüfte",
+      "name_tr": "Omuzdan kalçaya alçı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "Y11001",
+      "src": "SPECIJALISTIČKI PREGLED DEŽURNOG LJEKARA",
+      "price_eur": 4.88,
+      "status": "new",
+      "name_en": "On-Call Doctor Specialist Examination",
+      "slug": "on-call-doctor-specialist-examination",
+      "name_sr": "Specijalistički pregled dežurnog ljekara",
+      "name_sr_cyrl": "Специјалистички преглед дежурног љекара",
+      "name_ru": "Специалистический осмотр дежурного врача",
+      "name_de": "Facharzt-Untersuchung des Bereitschaftsarztes",
+      "name_tr": "Nöbetçi doktor uzman muayenesi",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "Y12001",
+      "src": "BO DANI KARDILOŠKE REHABILITACIJE",
+      "price_eur": 85.75,
+      "status": "new",
+      "name_en": "Cardiac Rehabilitation Bed-Day",
+      "slug": "cardiac-rehabilitation-bed-day",
+      "name_sr": "Bolnički dan kardiološke rehabilitacije",
+      "name_sr_cyrl": "Болнички дан кардиолошке рехабилитације",
+      "name_ru": "Койко-день кардиологической реабилитации",
+      "name_de": "Bett-Tag kardiologische Rehabilitation",
+      "name_tr": "Kardiyak rehabilitasyon yatak günü",
+      "categories": [
+        8
+      ],
+      "specialties": [
+        1
+      ]
+    }
+  ]
+}

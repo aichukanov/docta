@@ -1,0 +1,32 @@
+{
+  "jsonPath": "data/google-places/budva/laserfocus-ophthalmology-center.json",
+  "outputPath": "server/sql/reviews-google/laserfocus-budva.sql",
+  "dataCollectedDate": "2026-05-07",
+  "clinicId": 119,
+  "clinicName": "LaserFocus — Centar za mikrohirurgiju oka (Budva)",
+  "translationsDir": "data/review-translations/laserfocus-budva/",
+  "doctors": [
+    {
+      "id": 1104,
+      "varName": "borka_miljkovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Bork[uae](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Miljkovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Борк[ауе](?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Миљкови[ћц](?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Милькович(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 1106,
+      "varName": "mirko_jankov",
+      "patterns": [
+        "Jankov[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Mirk[ou](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Јанков[аеу]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Янков[аеу]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Мирко(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

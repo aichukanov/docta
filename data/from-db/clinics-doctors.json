@@ -7564,6 +7564,219 @@
 	{
 		"id": 118,
 		"name": "Mansa Medica Tivat",
-		"doctors": [{"id": 1100, "name": "Petar Matijević", "specialties": ["pediatrics"]}, {"id": 1101, "name": "Jovan Raičević", "specialties": ["pediatrics"]}, {"id": 1102, "name": "Radmila Starčević", "specialties": ["internal_medicine"]}, {"id": 1103, "name": "Ina Frlan", "specialties": ["pediatric_dentistry"]}]
+		"doctors": [
+			{ "id": 1100, "name": "Petar Matijević", "specialties": ["pediatrics"] },
+			{ "id": 1101, "name": "Jovan Raičević", "specialties": ["pediatrics"] },
+			{
+				"id": 1102,
+				"name": "Radmila Starčević",
+				"specialties": ["internal_medicine"]
+			},
+			{
+				"id": 1103,
+				"name": "Ina Frlan",
+				"specialties": ["pediatric_dentistry"]
+			}
+		]
+	},
+	{
+		"id": 119,
+		"name": "LaserFocus — Centar za mikrohirurgiju oka",
+		"doctors": [
+			{
+				"id": 1104,
+				"name": "Borka Miljković",
+				"specialties": ["ophthalmology"]
+			},
+			{
+				"id": 1106,
+				"name": "Mirko Jankov",
+				"specialties": ["ophtalmic_surgery"]
+			}
+		]
+	},
+	{
+		"id": 120,
+		"name": "Ortho Centar",
+		"doctors": [
+			{
+				"id": 1107,
+				"name": "Tamara Bošković-Brkanović",
+				"specialties": ["orthodontist"]
+			},
+			{
+				"id": 1108,
+				"name": "Nikolina Majstorović-Milović",
+				"specialties": ["dentistry"]
+			}
+		]
+	},
+	{
+		"id": 122,
+		"name": "Dental Studio Vučetić",
+		"doctors": [
+			{ "id": 1109, "name": "Jelena Vučetić", "specialties": ["dentistry"] },
+			{ "id": 1110, "name": "Zoran Vučetić", "specialties": ["dentistry"] },
+			{ "id": 1111, "name": "Jelena Savković", "specialties": ["orthodontist"] }
+		]
+	},
+	{
+		"id": 123,
+		"name": "Dental Clinic Kovačević",
+		"doctors": [
+			{ "id": 1112, "name": "Krsto Kovačević", "specialties": ["dentistry"] },
+			{
+				"id": 1113,
+				"name": "Nikola Kovačević",
+				"specialties": ["oral_surgery"]
+			},
+			{
+				"id": 1114,
+				"name": "Sanja Kovačević-Ožegović",
+				"specialties": ["dentistry"]
+			}
+		]
+	},
+	{
+		"id": 124,
+		"name": "Dr Ćetković — Stomatološka ordinacija",
+		"doctors": [
+			{ "id": 1115, "name": "Branko Ćetković", "specialties": ["oral_surgery"] }
+		]
+	},
+	{
+		"id": 125,
+		"name": "Dr Veselinović — Stomatološka klinika",
+		"doctors": [
+			{
+				"id": 1116,
+				"name": "Ilija Veselinović",
+				"specialties": ["oral_surgery"]
+			},
+			{
+				"id": 1117,
+				"name": "Jasna Veselinović",
+				"specialties": ["orthodontist"]
+			},
+			{
+				"id": 1118,
+				"name": "Milan Veselinović",
+				"specialties": ["oral_surgery"]
+			},
+			{
+				"id": 1119,
+				"name": "Ljubica Veselinović",
+				"specialties": ["oral_surgery"]
+			}
+		]
+	},
+	{
+		"id": 126,
+		"name": "Dom zdravlja Kotor",
+		"doctors": [
+			{
+				"id": 1132,
+				"name": "Nada Božović",
+				"specialties": ["occupational_medicine"]
+			},
+			{
+				"id": 1133,
+				"name": "Nataša Đonović",
+				"specialties": ["general_medicine"]
+			},
+			{
+				"id": 1134,
+				"name": "Veselinka Maslovar",
+				"specialties": ["general_medicine", "rheumatology"]
+			},
+			{
+				"id": 1135,
+				"name": "Tatjana Radošević Hajtnik",
+				"specialties": ["general_medicine"]
+			},
+			{
+				"id": 1136,
+				"name": "Sandra Perović",
+				"specialties": ["general_medicine"]
+			},
+			{ "id": 1137, "name": "Stojanka Čelebić", "specialties": ["pediatrics"] },
+			{ "id": 1138, "name": "Biljana Đurović", "specialties": ["pediatrics"] },
+			{ "id": 237, "name": "Vladimir Dedović", "specialties": ["pediatrics"] },
+			{
+				"id": 213,
+				"name": "Tamara Radoman",
+				"specialties": ["gynecology_obstetrics"]
+			},
+			{
+				"id": 215,
+				"name": "Bojan Vučetić",
+				"specialties": ["gynecology_obstetrics"]
+			},
+			{
+				"id": 1139,
+				"name": "Danijela Mirović",
+				"specialties": ["internal_medicine", "pulmonology"]
+			},
+			{ "id": 1140, "name": "Aleksandar Mačić", "specialties": ["psychiatry"] },
+			{ "id": 1141, "name": "Andrija Ćetković", "specialties": ["psychiatry"] },
+			{ "id": 1142, "name": "Branka Mitrić", "specialties": ["psychology"] },
+			{ "id": 1143, "name": "Jovan Đedović", "specialties": ["psychiatry"] },
+			{
+				"id": 1144,
+				"name": "Tatjana Lalović",
+				"specialties": ["infectious_diseases"]
+			},
+			{ "id": 1145, "name": "Slavica Dašić", "specialties": ["microbiology"] },
+			{
+				"id": 1146,
+				"name": "Silvana Bjelanović",
+				"specialties": ["Physiotherapy"]
+			},
+			{
+				"id": 1147,
+				"name": "Dragana Nikaljević",
+				"specialties": ["Physiotherapy"]
+			},
+			{
+				"id": 1148,
+				"name": "Kaća Tomčuk",
+				"specialties": ["Physical Medicine and Rehabilitation"]
+			},
+			{
+				"id": 1149,
+				"name": "Gordana Popović",
+				"specialties": ["occupational_medicine"]
+			},
+			{
+				"id": 1150,
+				"name": "Aleksandra Jokmanović Spasić",
+				"specialties": ["gynecology_obstetrics"]
+			},
+			{
+				"id": 1151,
+				"name": "Marijana Vučetić",
+				"specialties": ["family_medicine"]
+			},
+			{
+				"id": 1152,
+				"name": "Dejana Ašanin",
+				"specialties": ["internal_medicine"]
+			},
+			{
+				"id": 1153,
+				"name": "Milica Krivokapić",
+				"specialties": ["family_medicine"]
+			},
+			{
+				"id": 609,
+				"name": "Nenad Todorović",
+				"specialties": ["aesthetic_medicine", "ophthalmology"]
+			},
+			{
+				"id": 1154,
+				"name": "Ana Bakić",
+				"specialties": ["occupational_medicine"]
+			}
+		]
 	}
 ]

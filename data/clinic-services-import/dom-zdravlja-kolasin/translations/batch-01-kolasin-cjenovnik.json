@@ -1,0 +1,453 @@
+{
+  "batch_id": "batch-01-kolasin-cjenovnik",
+  "clinic_id": "<TO_BE_FILLED_AFTER_CLINIC_CREATION>",
+  "clinic_name": "Dom Zdravlja Kolasin",
+  "source_pdf": "Cjenovnik-licima-koja-nisu-osiguranici.pdf (2 pages)",
+  "ocr_method": "pypdfium2 + multimodal Read",
+  "items_total": 26,
+  "notes": "26 service rows (some combo names split into discrete items).",
+  "items": [
+    {
+      "code": "A02001",
+      "src": "Ljekarski pregled ID za odrasle",
+      "price_eur": 23.64,
+      "name_en": "First Curative Examination",
+      "slug": "first-curative-examination",
+      "name_sr": "Ljekarski pregled ID za odrasle",
+      "name_sr_cyrl": "Љекарски преглед ИД за одрасле",
+      "name_ru": "Первичный лечебный осмотр",
+      "name_de": "Erste kurative Untersuchung",
+      "name_tr": "İlk küratif muayene",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "C02001_KO",
+      "src": "Ljekarski pregled ID za žene",
+      "price_eur": 23.64,
+      "name_en": "First Specialist Curative Gynecological Examination",
+      "slug": "first-specialist-curative-gynecological-examination",
+      "name_sr": "Ljekarski pregled ID za žene",
+      "name_sr_cyrl": "Љекарски преглед ИД за жене",
+      "name_ru": "Первичный лечебный гинекологический осмотр",
+      "name_de": "Erste fachärztliche kurative gynäkologische Untersuchung",
+      "name_tr": "İlk uzman küratif jinekolojik muayene",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "PED_KO",
+      "src": "Ljekarski pregled ID za djecu",
+      "price_eur": 23.64,
+      "name_en": "First Pediatric Curative Examination",
+      "slug": "first-pediatric-curative-examination",
+      "name_sr": "Ljekarski pregled ID za djecu",
+      "name_sr_cyrl": "Љекарски преглед ИД за дјецу",
+      "name_ru": "Первичный лечебный осмотр педиатра",
+      "name_de": "Erste pädiatrische kurative Untersuchung",
+      "name_tr": "İlk pediatri küratif muayenesi",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        4
+      ]
+    },
+    {
+      "code": "X02011_KO",
+      "src": "Snimanje i očitavanje EKG",
+      "price_eur": 10.44,
+      "name_en": "ECG Recording and Interpretation",
+      "slug": "ecg-recording-and-interpretation",
+      "name_sr": "Snimanje i očitavanje EKG",
+      "name_sr_cyrl": "Снимање и очитавање ЕКГ",
+      "name_ru": "Запись и интерпретация ЭКГ",
+      "name_de": "EKG-Aufzeichnung und -Auswertung",
+      "name_tr": "EKG çekimi ve yorumlanması",
+      "categories": [
+        8
+      ],
+      "specialties": [
+        1
+      ]
+    },
+    {
+      "code": "X02012_KO",
+      "src": "Snimanje i čitanje spirometrije",
+      "price_eur": 7.89,
+      "name_en": "Spirometry Recording and Reading",
+      "slug": "spirometry-recording-and-reading",
+      "name_sr": "Snimanje i čitanje spirometrije",
+      "name_sr_cyrl": "Снимање и читање спирометрије",
+      "name_ru": "Запись и интерпретация спирометрии",
+      "name_de": "Spirometrie-Aufzeichnung und -Auswertung",
+      "name_tr": "Spirometri çekimi ve yorumu",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "X03001_KO",
+      "src": "Zbrinjavanje rane sa ušivanjem",
+      "price_eur": 23.64,
+      "name_en": "Wound Suturing Under Local Anesthesia",
+      "slug": "wound-suturing-under-local-anesthesia",
+      "name_sr": "Zbrinjavanje rane sa ušivanjem",
+      "name_sr_cyrl": "Збрињавање ране са ушивањем",
+      "name_ru": "Обработка раны с ушиванием под местной анестезией",
+      "name_de": "Wundnaht in Lokalanästhesie",
+      "name_tr": "Lokal anestezi altında yara dikişi",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "X02002_KO",
+      "src": "Obrada opekotina",
+      "price_eur": 15.75,
+      "name_en": "Burn Wound Care",
+      "slug": "burn-wound-care",
+      "name_sr": "Obrada opekotina",
+      "name_sr_cyrl": "Обрада опекотина",
+      "name_ru": "Обработка ожогов",
+      "name_de": "Brandwundenversorgung",
+      "name_tr": "Yanık bakımı",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "X02007_KO",
+      "src": "Davanje klizme",
+      "price_eur": 7.89,
+      "name_en": "Enema Administration Medium",
+      "slug": "enema-administration-medium",
+      "name_sr": "Davanje klizme",
+      "name_sr_cyrl": "Давање клизме",
+      "name_ru": "Постановка клизмы (средняя)",
+      "name_de": "Einlauf (mittel)",
+      "name_tr": "Lavman uygulaması (orta)",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "code": "X01003_KO",
+      "src": "Vađenje stranog tijela iz nosa",
+      "price_eur": 15.75,
+      "name_en": "Foreign Body Removal from Nose",
+      "slug": "foreign-body-removal-from-nose",
+      "name_sr": "Vađenje stranog tijela iz nosa",
+      "name_sr_cyrl": "Вађење страног тијела из носа",
+      "name_ru": "Удаление инородного тела из носа",
+      "name_de": "Fremdkörperentfernung aus der Nase",
+      "name_tr": "Burundan yabancı cisim çıkarma",
+      "categories": [
+        11
+      ],
+      "specialties": [
+        11
+      ]
+    },
+    {
+      "code": "X01011_KO",
+      "src": "Punkcija potkožnih hematoma",
+      "price_eur": 7.89,
+      "name_en": "Anterior Hematoma Puncture",
+      "slug": "anterior-hematoma-puncture",
+      "name_sr": "Punkcija potkožnih hematoma",
+      "name_sr_cyrl": "Пункција поткожних хематома",
+      "name_ru": "Пункция передней гематомы",
+      "name_de": "Punktion vorderer Hämatome",
+      "name_tr": "Ön hematom ponksiyonu",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "X02006_KO",
+      "src": "Stavljanje katetera",
+      "price_eur": 15.75,
+      "name_en": "Bladder Catheterization",
+      "slug": "bladder-catheterization",
+      "name_sr": "Stavljanje katetera",
+      "name_sr_cyrl": "Стављање катетера",
+      "name_ru": "Катетеризация мочевого пузыря",
+      "name_de": "Blasenkatheterisierung",
+      "name_tr": "Mesane kateterizasyonu",
+      "categories": [
+        22
+      ],
+      "specialties": [
+        9
+      ]
+    },
+    {
+      "code": "X01005_KO",
+      "src": "Ispiranje uha",
+      "price_eur": 10.44,
+      "name_en": "Ear Cerumen Irrigation",
+      "slug": "ear-cerumen-irrigation",
+      "name_sr": "Ispiranje uha",
+      "name_sr_cyrl": "Испирање уха",
+      "name_ru": "Промывание серы из уха",
+      "name_de": "Ohrenschmalzentfernung durch Spülung",
+      "name_tr": "Kulak buşonu yıkama",
+      "categories": [
+        11
+      ],
+      "specialties": [
+        11
+      ]
+    },
+    {
+      "code": "X01015_KO",
+      "src": "Skidanje hirurških konaca",
+      "price_eur": 7.89,
+      "name_en": "Surgical Suture Removal",
+      "slug": "surgical-suture-removal",
+      "name_sr": "Skidanje hirurških konaca",
+      "name_sr_cyrl": "Скидање хируршких конаца",
+      "name_ru": "Снятие хирургических швов",
+      "name_de": "Entfernung chirurgischer Fäden",
+      "name_tr": "Cerrahi sütür alınması",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "X01018_KO",
+      "src": "Fiksacioni zavoj",
+      "price_eur": 7.89,
+      "name_en": "Fixation Bandage",
+      "slug": "fixation-bandage",
+      "name_sr": "Fiksacioni zavoj",
+      "name_sr_cyrl": "Фиксациони завој",
+      "name_ru": "Фиксирующая повязка",
+      "name_de": "Fixationsverband",
+      "name_tr": "Fiksasyon bandajı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "X01019M_KO",
+      "src": "Imobilizacija (mala)",
+      "price_eur": 7.89,
+      "name_en": "Immobilization",
+      "slug": "immobilization",
+      "name_sr": "Imobilizacija (mala)",
+      "name_sr_cyrl": "Имобилизација (мала)",
+      "name_ru": "Иммобилизация",
+      "name_de": "Ruhigstellung",
+      "name_tr": "İmmobilizasyon",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "KO_INJ_IV",
+      "src": "Davanje injekcije i.v.",
+      "price_eur": 5.1,
+      "name_en": "Intravenous Injection Administration",
+      "slug": "intravenous-injection-administration",
+      "name_sr": "Davanje injekcije i.v.",
+      "name_sr_cyrl": "Давање ињекције и.в.",
+      "name_ru": "Внутривенная инъекция",
+      "name_de": "Intravenöse Injektion",
+      "name_tr": "İntravenöz enjeksiyon",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "code": "KO_INJ_IM",
+      "src": "Davanje injekcije i.m.",
+      "price_eur": 5.1,
+      "name_en": "Intramuscular Injection Administration",
+      "slug": "intramuscular-injection-administration",
+      "name_sr": "Davanje injekcije i.m.",
+      "name_sr_cyrl": "Давање ињекције и.м.",
+      "name_ru": "Внутримышечная инъекция",
+      "name_de": "Intramuskuläre Injektion",
+      "name_tr": "İntramüsküler enjeksiyon",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "code": "KO_INJ_SC",
+      "src": "Davanje injekcije s.c.",
+      "price_eur": 5.1,
+      "name_en": "Subcutaneous Injection Administration",
+      "slug": "subcutaneous-injection-administration",
+      "name_sr": "Davanje injekcije s.c.",
+      "name_sr_cyrl": "Давање ињекције с.ц.",
+      "name_ru": "Подкожная инъекция",
+      "name_de": "Subkutane Injektion",
+      "name_tr": "Subkütan enjeksiyon",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "code": "HN_X01010_KO",
+      "src": "Davanje inhalacije",
+      "price_eur": 5.1,
+      "name_en": "Inhalation Administration",
+      "slug": "inhalation-administration",
+      "name_sr": "Davanje inhalacije",
+      "name_sr_cyrl": "Давање инхалације",
+      "name_ru": "Ингаляция",
+      "name_de": "Inhalationsverabreichung",
+      "name_tr": "İnhalasyon uygulaması",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "code": "X02003_KO",
+      "src": "Incizija abscesa",
+      "price_eur": 15.75,
+      "name_en": "Abscess Incision",
+      "slug": "abscess-incision",
+      "name_sr": "Incizija abscesa",
+      "name_sr_cyrl": "Инцизија абсцеса",
+      "name_ru": "Вскрытие абсцесса",
+      "name_de": "Abszessinzision",
+      "name_tr": "Apse insizyonu",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "KO_RP_REC",
+      "src": "Izdavanje recepta i sl. spata",
+      "price_eur": 15.75,
+      "name_en": "Prescription and Referral Issue",
+      "slug": "prescription-and-referral-issue",
+      "name_sr": "Izdavanje recepta i sl. spata",
+      "name_sr_cyrl": "Издавање рецепта и сл. спата",
+      "name_ru": "Выписка рецепта и направления",
+      "name_de": "Rezeptausstellung und Überweisung",
+      "name_tr": "Reçete ve sevk düzenleme",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "KO_OXYG",
+      "src": "Davanje kiseonika",
+      "price_eur": 5.1,
+      "name_en": "Oxygen Administration",
+      "slug": "oxygen-administration",
+      "name_sr": "Davanje kiseonika",
+      "name_sr_cyrl": "Давање кисеоника",
+      "name_ru": "Подача кислорода",
+      "name_de": "Sauerstoffgabe",
+      "name_tr": "Oksijen uygulaması",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "code": "HN_GX01024_KO",
+      "src": "Lokalno apliciranje lijeka (vaginalno i cervikalno)",
+      "price_eur": 15.75,
+      "name_en": "Cervical Drug Application",
+      "slug": "cervical-drug-application",
+      "name_sr": "Lokalno apliciranje lijeka (vaginalno i cervikalno)",
+      "name_sr_cyrl": "Локално аплицирање лијека (вагинално и цервикално)",
+      "name_ru": "Цервикальное введение препарата",
+      "name_de": "Zervikale Arzneimittelapplikation",
+      "name_tr": "Servikal ilaç uygulaması",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "HN_GX03010_KO",
+      "src": "Ultrazvučni pregled žene",
+      "price_eur": 31.53,
+      "name_en": "Breast Ultrasound Examination",
+      "slug": "breast-ultrasound-examination",
+      "name_sr": "Ultrazvučni pregled žene",
+      "name_sr_cyrl": "Ултразвучни преглед жене",
+      "name_ru": "УЗИ молочной железы",
+      "name_de": "Brustultraschalluntersuchung",
+      "name_tr": "Meme ultrason muayenesi",
+      "categories": [
+        7
+      ],
+      "specialties": []
+    },
+    {
+      "code": "HN_J06003_KO",
+      "src": "Snimanje pojedinih dijelova skeleta (ekstremiteta, kičme)",
+      "price_eur": 7.5,
+      "name_en": "Paranasal Sinus X-Ray per Image",
+      "slug": "paranasal-sinus-x-ray-per-image",
+      "name_sr": "Snimanje pojedinih dijelova skeleta (ekstremiteta, kičme)",
+      "name_sr_cyrl": "Снимање појединих дијелова скелета (екстремитета, кичме)",
+      "name_ru": "Рентген околоносовых пазух за снимок",
+      "name_de": "Nebenhöhlen-Röntgenaufnahme",
+      "name_tr": "Paranazal sinüs röntgeni",
+      "categories": [
+        11
+      ],
+      "specialties": [
+        11
+      ]
+    },
+    {
+      "code": "HN_J06008_KO",
+      "src": "Snimanje pluća za svaki pravac",
+      "price_eur": 7.5,
+      "name_en": "Chest X-Ray Lungs",
+      "slug": "chest-x-ray-lungs",
+      "name_sr": "Snimanje pluća za svaki pravac",
+      "name_sr_cyrl": "Снимање плућа за сваки правац",
+      "name_ru": "Рентген лёгких",
+      "name_de": "Lungen-Röntgenaufnahme",
+      "name_tr": "Akciğer röntgeni",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    }
+  ]
+}

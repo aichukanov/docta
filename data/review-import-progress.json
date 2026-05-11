@@ -1033,6 +1033,142 @@
         "sr": 3,
         "de": 1
       }
+    },
+    "laserfocus-budva": {
+      "status": "done",
+      "clinicName": "LaserFocus — Centar za mikrohirurgiju oka (Budva)",
+      "configFile": "data/review-import-configs/laserfocus-budva.json",
+      "sqlFile": "server/sql/reviews-google/laserfocus-budva.sql",
+      "reviewsWithText": 24,
+      "totalReviews": 41,
+      "replies": 0,
+      "translationsDir": "data/review-translations/laserfocus-budva/",
+      "translationsCount": 24,
+      "doctorMatches": {
+        "borka_miljkovic": 7,
+        "mirko_jankov": 1
+      },
+      "languages": {
+        "bs": 8,
+        "en": 7,
+        "hr": 4,
+        "ru": 4,
+        "he": 1
+      }
+    },
+    "ortho-centar-kotor": {
+      "status": "done",
+      "clinicName": "Ortho Centar (Kotor)",
+      "configFile": "data/review-import-configs/ortho-centar-kotor.json",
+      "sqlFile": "server/sql/reviews-google/ortho-centar-kotor.sql",
+      "reviewsWithText": 38,
+      "totalReviews": 69,
+      "replies": 0,
+      "translationsDir": "data/review-translations/ortho-centar-kotor/",
+      "translationsCount": 38,
+      "doctorMatches": {
+        "tamara_boskovic_brkanovic": 16,
+        "nikolina_majstorovic_milovic": 3
+      },
+      "languages": {
+        "en": 17,
+        "hr": 11,
+        "bs": 8,
+        "ru": 2
+      }
+    },
+    "dental-studio-vucetic-kotor": {
+      "status": "done",
+      "clinicName": "Dental Studio Vučetić (Kotor)",
+      "configFile": "data/review-import-configs/dental-studio-vucetic-kotor.json",
+      "sqlFile": "server/sql/reviews-google/dental-studio-vucetic-kotor.sql",
+      "reviewsWithText": 64,
+      "totalReviews": 78,
+      "replies": 0,
+      "translationsDir": "data/review-translations/dental-studio-vucetic-kotor/",
+      "translationsCount": 64,
+      "doctorMatches": {
+        "zoran_vucetic": 36
+      },
+      "languages": {
+        "en": 49,
+        "hr": 5,
+        "ru": 3,
+        "de": 3,
+        "bs": 2,
+        "fr": 1,
+        "nl": 1
+      }
+    },
+    "dental-clinic-kovacevic-herceg-novi": {
+      "status": "done",
+      "clinicName": "Dental Clinic Kovačević (Herceg Novi)",
+      "configFile": "data/review-import-configs/dental-clinic-kovacevic-herceg-novi.json",
+      "sqlFile": "server/sql/reviews-google/dental-clinic-kovacevic-herceg-novi.sql",
+      "reviewsWithText": 35,
+      "totalReviews": 44,
+      "replies": 0,
+      "translationsDir": "data/review-translations/dental-clinic-kovacevic-herceg-novi/",
+      "translationsCount": 35,
+      "doctorMatches": {
+        "krsto_kovacevic": 0,
+        "nikola_kovacevic": 1,
+        "sanja_kovacevic_ozegovic": 3
+      },
+      "languages": {
+        "en": 13,
+        "bs": 10,
+        "hr": 9,
+        "ru": 2,
+        "no": 1
+      }
+    },
+    "dr-cetkovic-kotor": {
+      "status": "done",
+      "clinicName": "Dr Ćetković — Stomatološka ordinacija (Kotor)",
+      "configFile": "data/review-import-configs/dr-cetkovic-kotor.json",
+      "sqlFile": "server/sql/reviews-google/dr-cetkovic-kotor.sql",
+      "reviewsWithText": 10,
+      "totalReviews": 29,
+      "replies": 0,
+      "translationsDir": "data/review-translations/dr-cetkovic-kotor/",
+      "translationsCount": 10,
+      "doctorMatches": {
+        "branko_cetkovic": 1
+      },
+      "languages": {
+        "en": 3,
+        "bs": 3,
+        "de": 1,
+        "sr": 1,
+        "ru": 1,
+        "hr": 1
+      }
+    },
+    "dr-veselinovic-herceg-novi": {
+      "status": "done",
+      "clinicName": "Dr Veselinović — Stomatološka klinika (Herceg Novi)",
+      "configFile": "data/review-import-configs/dr-veselinovic-herceg-novi.json",
+      "sqlFile": "server/sql/reviews-google/dr-veselinovic-herceg-novi.sql",
+      "reviewsWithText": 46,
+      "totalReviews": 65,
+      "replies": 62,
+      "translationsDir": "data/review-translations/dr-veselinovic-herceg-novi/",
+      "translationsCount": 108,
+      "doctorMatches": {
+        "ilija_veselinovic": 3,
+        "jasna_veselinovic": 0,
+        "ljubica_veselinovic": 5
+      },
+      "languages": {
+        "bs": 15,
+        "hr": 13,
+        "en": 10,
+        "ru": 4,
+        "de": 2,
+        "sr": 1,
+        "it": 1
+      }
     }
   }
 }

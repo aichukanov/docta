@@ -1,0 +1,820 @@
+[
+	{
+		"id": 50,
+		"slug": "dental-studio-dr-zejak-bar",
+		"name": "Dr. Zejak — Dental Studio",
+		"cityId": 7,
+		"reason": "all_not_specified",
+		"placeId": "ChIJSb1s6FBzThMRhvotkEb7F_I",
+		"placeIdSource": "bar/dental-studio-dr-zejak.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 75,
+		"slug": "in-vitro-z-podgorica",
+		"name": "In Vitro Z",
+		"cityId": 1,
+		"reason": "all_not_specified",
+		"placeId": null
+	},
+	{
+		"id": 37,
+		"slug": "ginekoloska-ordinacija-dr-soc-podgorica",
+		"name": "Dr Šoć — ginekološka ordinacija",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": null,
+		"placeIdSource": "podgorica/l.json",
+		"matchedBy": "name-fuzzy",
+		"fuzzyCandidates": [
+			{
+				"file": "podgorica/dr-erdal-hacioglu-ambulanta-ordinacija.json",
+				"name": "Dr Erdal Hacioglu ambulanta ordinacija",
+				"placeId": "ChIJteEbAcLrTRMRH5LOUL1uaeQ",
+				"score": 2
+			},
+			{
+				"file": "podgorica/ginekoloska-ordinacija-hera.json",
+				"name": "Ginekološka ordinacija Hera",
+				"placeId": "ChIJTVwF9UHrTRMR6aRiJvy1258",
+				"score": 2
+			},
+			{
+				"file": "podgorica/ordinacija-dr-jankovic.json",
+				"name": "Ordinacija Dr Janković",
+				"placeId": "ChIJlytQ7C7rTRMRDPUgGS8McXQ",
+				"score": 2
+			},
+			{
+				"file": "podgorica/ordinacija-dr-kaludjerovic.json",
+				"name": "ORDINACIJA DR KALUDJEROVIC",
+				"placeId": "ChIJuQhy-znrTRMRvowiO4-vZg0",
+				"score": 2
+			},
+			{
+				"file": "podgorica/ordinacija-za-ultrazvucnu-dijagnostiku-dr-loncarevic.json",
+				"name": "Ordinacija za ultrazvučnu dijagnostiku Dr Lončarević",
+				"placeId": "ChIJpT2Xoq2VTRMRenOxxd96j0o",
+				"score": 2
+			}
+		]
+	},
+	{
+		"id": 90,
+		"slug": "a-medic-plasticna-i-estetska-hirurgija",
+		"name": "A Medic - Plastična i estetska hirurgija",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJf4tB9nvrTRMRPE_1iP76aB8",
+		"placeIdSource": "podgorica/a-medic-plasticna-i-estetska-hirurgija.json",
+		"matchedBy": "slug-exact"
+	},
+	{
+		"id": 15,
+		"slug": "a3-medical-sutomore",
+		"name": "A3 Medical",
+		"cityId": 7,
+		"reason": "no_row",
+		"placeId": "ChIJ8zs3bO53ThMRKe1739qfOGU",
+		"placeIdSource": "bar/a3-medical.json",
+		"matchedBy": "name-exact"
+	},
+	{
+		"id": 16,
+		"slug": "alpha-gr-ordinacija-za-bolesti-uha-grla-i-nosa-bar",
+		"name": "Alpha G.R. Ordinacija za bolesti uha, grla i nosa",
+		"cityId": 7,
+		"reason": "no_row",
+		"placeId": "ChIJEfmlOwF0ThMRS9FFOACk7-Y",
+		"placeIdSource": "bar/dr-mr-zlatica-popivoda-eskulap-ginekoloska-ordinacija-i-ultr.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 44,
+		"slug": "altabella-health-beauty-studio-budva",
+		"name": "Altabella Health & Beauty Studio",
+		"cityId": 3,
+		"reason": "no_row",
+		"placeId": null
+	},
+	{
+		"id": 46,
+		"slug": "apolonia-rasovic-stomatoloska-ordinacija-podgorica",
+		"name": "Apolonia Rašović — stomatološka ordinacija (Podgorica)",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJu2Ar1kjrTRMRGTw646r7k2U",
+		"placeIdSource": "podgorica/stomatoloska-ordinacija-apolonia-rasovic.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 110,
+		"slug": "bellavista-stomatoloska-ordinacija",
+		"name": "Bellavista — stomatološka ordinacija",
+		"cityId": 8,
+		"reason": "no_row",
+		"placeId": "ChIJQ7U8PH87TBMRt6b1Cxyj0ZU",
+		"placeIdSource": "herceg-novi/stomatoloska-ordinacija-bellavista.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 55,
+		"slug": "body-balance-studio-bar",
+		"name": "Body Balance Studio",
+		"cityId": 7,
+		"reason": "no_row",
+		"placeId": null
+	},
+	{
+		"id": 88,
+		"slug": "bolnica-danilo-i-cetinje",
+		"name": "Bolnica Danilo I Cetinje",
+		"cityId": 10,
+		"reason": "no_row",
+		"placeId": "ChIJgZ3IPF7OTRMR5SQzbqvKTPI",
+		"placeIdSource": "cetinje/bolnica-danilo-prvi-cetinje.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 79,
+		"slug": "bolnica-meljine-herceg-novi",
+		"name": "Bolnica Meljine",
+		"cityId": 8,
+		"reason": "no_row",
+		"placeId": "ChIJcW_zxAg7TBMRpf-5dcGFxVU",
+		"placeIdSource": "herceg-novi/meljine-hospital.json",
+		"matchedBy": "override"
+	},
+	{
+		"id": 67,
+		"slug": "bona-lab-prima-podgorica",
+		"name": "Bona-lab prima",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": null,
+		"placeIdSource": "podgorica/l.json",
+		"matchedBy": "name-fuzzy"
+	},
+	{
+		"id": 17,
+		"slug": "bonomedica-budva",
+		"name": "BonoMedica",
+		"cityId": 3,
+		"reason": "no_row",
+		"placeId": "ChIJ655v-VzVTRMRq8OGU_bGuPQ",
+		"placeIdSource": "budva/bonomedica-budva.json",
+		"matchedBy": "slug-exact"
+	},
+	{
+		"id": 60,
+		"slug": "buntic-stomatoloska-ordinacija-bar",
+		"name": "Buntić - stomatološka ordinacija",
+		"cityId": 7,
+		"reason": "no_row",
+		"placeId": "ChIJd4vJErFzThMRE1QbgSVdvyY",
+		"placeIdSource": "bar/buntic-stomatoloska-ordinacija.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 28,
+		"slug": "codra-hospital-podgorica",
+		"name": "Codra Hospital",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJh9GNyhXrTRMRpAcKDQoHEyk",
+		"placeIdSource": "podgorica/codra-hospital.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 87,
+		"slug": "dom-zdravlja-bijelo-polje",
+		"name": "Dom zdravlja Bijelo Polje",
+		"cityId": 12,
+		"reason": "no_row",
+		"placeId": "ChIJ1ecnXmmjUhMRgtW5MQZvaLo",
+		"placeIdSource": "bijelo-polje/dom-zdravlja-bijelo-polje.json",
+		"matchedBy": "slug-exact"
+	},
+	{
+		"id": 85,
+		"slug": "dom-zdravlja-dimitrije-dika-marenic-danilovgrad",
+		"name": "Dom zdravlja Danilovgrad „Dimitrije-Dika Marenić\"",
+		"cityId": 11,
+		"reason": "no_row",
+		"placeId": "ChIJ_XG8kae-TRMRHI6dcF5XJTg",
+		"placeIdSource": "danilovgrad/dom-zdravlja-dimitrije-dika-marenic.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 80,
+		"slug": "dom-zdravlja-herceg-novi",
+		"name": "Dom zdravlja Herceg Novi",
+		"cityId": 8,
+		"reason": "no_row",
+		"placeId": "ChIJCX7eO387TBMR90KjubLQqCY",
+		"placeIdSource": "herceg-novi/health-centre-herceg-novi.json",
+		"matchedBy": "override"
+	},
+	{
+		"id": 22,
+		"slug": "orl-klinika-dr-barjaktarovic-herceg-novi",
+		"name": "Dr Barjaktarović — ORL Klinika",
+		"cityId": 8,
+		"reason": "no_row",
+		"placeId": "ChIJM1Ol0k49TBMREle_5hdokrY",
+		"placeIdSource": "herceg-novi/pzu-orl-doktor-barjaktarovic.json",
+		"matchedBy": "override"
+	},
+	{
+		"id": 83,
+		"slug": "hirurgija-dr-eli-podgorica",
+		"name": "Dr Eli — Hirurgija",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJA_Lh-JHrTRMRR79x3vcFnik",
+		"placeIdSource": "podgorica/hirurgija-dr-eli.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 58,
+		"slug": "poliklinika-dr-masonicic-bar",
+		"name": "Dr Masoničić — poliklinika",
+		"cityId": 7,
+		"reason": "no_row",
+		"placeId": "ChIJK0Kdbf9zThMRoqQF55RWJNI",
+		"placeIdSource": "bar/poliklinika-dr-masonicic.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 63,
+		"slug": "dr-nenezic-podgorica",
+		"name": "Dr Nenezić",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJfTiSfyDrTRMRfKN3EWS4Tjo",
+		"placeIdSource": "podgorica/dr-nenezic.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 13,
+		"slug": "uroloska-ordinacija-drorkina-elena-bar",
+		"name": "Dr Orkina Elena — uroloska ordinacija",
+		"cityId": 7,
+		"reason": "no_row",
+		"placeId": "ChIJfTyXKAR0ThMRwszedOAJXTE",
+		"placeIdSource": "bar/dr-orkina-orkina-uroloska-ordinacija.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 32,
+		"slug": "stomatoloska-ordinacija-dr-senad-podgorica",
+		"name": "Dr Senad — stomatoloska ordinacija",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJf5NqqmzrTRMRQkScWKNAdX8",
+		"placeIdSource": "podgorica/stomatoloska-ordinacija-dr-senad.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 61,
+		"slug": "dr-simonovic-stomatoloska-ordinacija-bar",
+		"name": "Dr Simonović — Stomatološka Ordinacija",
+		"cityId": 7,
+		"reason": "no_row",
+		"placeId": "ChIJw_DVY4l1ThMRFlGjAkUawxs",
+		"placeIdSource": "bar/stomatoloska-ordinacija-dr-simonovic.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 48,
+		"slug": "dr-zejnilovic-pzu-dnevna-bolnica-bar",
+		"name": "Dr Zejnilović — PZU Dnevna bolnica",
+		"cityId": 7,
+		"reason": "no_row",
+		"placeId": "ChIJ1VDBD_9zThMR0tu4ByXuOkE",
+		"placeIdSource": "bar/dr-zejnilovic.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 51,
+		"slug": "dental-clinic-dr-bajagic-bar",
+		"name": "Dr. Bajagic — Dental Clinic",
+		"cityId": 7,
+		"reason": "no_row",
+		"placeId": "ChIJ64zllP9zThMRSXXzaUrPyqw",
+		"placeIdSource": "bar/dental-clinic-dr-bajagic.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 24,
+		"slug": "drviller-reheart-tivat",
+		"name": "DrViller Reheart",
+		"cityId": 4,
+		"reason": "no_row",
+		"placeId": null
+	},
+	{
+		"id": 45,
+		"slug": "dukley-dental-clinic-budva",
+		"name": "Dukley Dental Clinic",
+		"cityId": 3,
+		"reason": "no_row",
+		"placeId": "ChIJoQN3o6LVTRMREgYIplJkmVY",
+		"placeIdSource": "budva/dukley-dental-clinic.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 77,
+		"slug": "gea-medical-ginekoloska-ordinacija",
+		"name": "Gea Medical — ginekološka ordinacija",
+		"cityId": 7,
+		"reason": "no_row",
+		"placeId": "ChIJE6oSOAB0ThMRbsxHBjzJFeY",
+		"placeIdSource": "bar/gea-medical-dr-fetahovic.json",
+		"matchedBy": "override"
+	},
+	{
+		"id": 30,
+		"slug": "health-clinic-cg-podgorica",
+		"name": "Health clinic CG",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": null,
+		"placeIdSource": "podgorica/l.json",
+		"matchedBy": "name-fuzzy"
+	},
+	{
+		"id": 72,
+		"slug": "hipokrat-poliklinika-niksic",
+		"name": "Hipokrat Poliklinika Nikšić",
+		"cityId": 2,
+		"reason": "no_row",
+		"placeId": "ChIJZWDFenKpTRMROihODjme6c8",
+		"placeIdSource": "niksic/hipokrat-poliklinika-niksic.json",
+		"matchedBy": "slug-exact"
+	},
+	{
+		"id": 70,
+		"slug": "hipokrat-poliklinika-podgorica",
+		"name": "Hipokrat Poliklinika Podgorica",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJmc8bX7yUTRMRUe_vGsDdkSc",
+		"placeIdSource": "podgorica/hipokrat-poliklinika-podgorica.json",
+		"matchedBy": "slug-exact"
+	},
+	{
+		"id": 71,
+		"slug": "hipokrat-poliklinika-radanovici",
+		"name": "Hipokrat Poliklinika Radanovići",
+		"cityId": 6,
+		"reason": "no_row",
+		"placeId": "ChIJc6Z8s0ktTBMR5MmgCfG8VIU",
+		"placeIdSource": "kotor/hipokrat-poliklinika-radanovici-kotor.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 36,
+		"slug": "humana-reprodukcija-budva",
+		"name": "Humana reprodukcija",
+		"cityId": 3,
+		"reason": "no_row",
+		"placeId": "ChIJR176vpfUTRMRr-6LbUyUW7Q",
+		"placeIdSource": "budva/humana-reprodukcija-privatna-ambulanta.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 78,
+		"slug": "imc-international-medical-center-orl-ambulanta",
+		"name": "IMC (International Medical Center) — ORL ambulanta",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJeXPEeiLrTRMRwHYLQnqUlP4",
+		"placeIdSource": "podgorica/orl-ambulanta-international-medical-center.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 73,
+		"slug": "in-vitro-podgorica",
+		"name": "In Vitro",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": null
+	},
+	{
+		"id": 74,
+		"slug": "in-vitro-plus-podgorica",
+		"name": "In Vitro plus",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": null,
+		"placeIdSource": "podgorica/l.json",
+		"matchedBy": "name-fuzzy"
+	},
+	{
+		"id": 52,
+		"slug": "jovetic-dent-bar",
+		"name": "Jovetić dent",
+		"cityId": 7,
+		"reason": "no_row",
+		"placeId": "ChIJE_UW1QF1ThMRAHhN76mLBr8",
+		"placeIdSource": "bar/jovetic-dent.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 43,
+		"slug": "jzu-dom-zdravlja-budva",
+		"name": "JZU Dom zdravlja Budva",
+		"cityId": 3,
+		"reason": "no_row",
+		"placeId": "ChIJAdz_Ti7WTRMR9ECeCKczv5k",
+		"placeIdSource": "budva/dom-zdravlja-ambulanta-petrovac.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 65,
+		"slug": "klinicki-centar-crne-gore-podgorica",
+		"name": "Klinički Centar Crne Gore",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJn5PmYSPrTRMR1bfj5M6l8J8",
+		"placeIdSource": "podgorica/klinicki-centar-crne-gore.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 68,
+		"slug": "konzilijum-poliklinika-i-bolnica-podgorica",
+		"name": "Konzilijum — Poliklinika i bolnica",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJg0x9d_zrTRMRFannRP3pXOM",
+		"placeIdSource": "podgorica/konzilijum-poliklinika.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 76,
+		"slug": "lab-medical-laboratorija-podgorica",
+		"name": "Lab Medical Laboratorija",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJeTqm7EjrTRMRwOE9-ehR6jo",
+		"placeIdSource": "podgorica/internos-medical-laboratorija.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 82,
+		"slug": "luca-medical-podgorica",
+		"name": "Luča medical",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJY0-noTTrTRMR77jlRYZ5ZR8",
+		"placeIdSource": "podgorica/luca-medical.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 66,
+		"slug": "malbaski-podgorica",
+		"name": "Malbaški",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJ6x5i00PrTRMReKiljcEjOO8",
+		"placeIdSource": "podgorica/ordinacija-malbaski.json",
+		"matchedBy": "override"
+	},
+	{
+		"id": 57,
+		"slug": "medical-centar-budva",
+		"name": "Medical Centar Budva",
+		"cityId": 3,
+		"reason": "no_row",
+		"placeId": "ChIJxdCsTHHUTRMR_nb_CFvki-o",
+		"placeIdSource": "budva/medical-centar-budva.json",
+		"matchedBy": "slug-exact"
+	},
+	{
+		"id": 89,
+		"slug": "medikid-podgorica",
+		"name": "Medikid",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJs1OD_cLrTRMRUH1qmE2sRVU",
+		"placeIdSource": "podgorica/medikid.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 4,
+		"slug": "milmedika-budva",
+		"name": "Milmedika Budva",
+		"cityId": 3,
+		"reason": "no_row",
+		"placeId": "ChIJuxjlT4PUTRMRicGlnIKLGxA",
+		"placeIdSource": "budva/milmedika-budva.json",
+		"matchedBy": "slug-exact"
+	},
+	{
+		"id": 2,
+		"slug": "milmedika-niksic",
+		"name": "Milmedika Nikšić",
+		"cityId": 2,
+		"reason": "no_row",
+		"placeId": "ChIJbwnSK6ypTRMRjr12aGQ_2BE",
+		"placeIdSource": "niksic/poliklinika-milmedika-niksic.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 3,
+		"slug": "milmedika-tivat",
+		"name": "Milmedika Tivat",
+		"cityId": 4,
+		"reason": "no_row",
+		"placeId": "ChIJ24AT6zwxTBMRTJ_DTbDN1oc",
+		"placeIdSource": "tivat/poliklinika-milmedika-porto-montenegro.json",
+		"matchedBy": "override"
+	},
+	{
+		"id": 7,
+		"slug": "moj-lab-budva",
+		"name": "Moj Lab Budva",
+		"cityId": 3,
+		"reason": "no_row",
+		"placeId": "ChIJHfFt8SHVTRMR6W1Pm-V3v7A",
+		"placeIdSource": "budva/moj-lab-poliklinika-budva.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 9,
+		"slug": "moj-lab-pedijatria-podgorica",
+		"name": "Moj Lab Pedijatria Podgorica",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJAxnHJSXrTRMRvjMVcWtNhfI",
+		"placeIdSource": "podgorica/moj-lab-pedijatrija.json",
+		"matchedBy": "override"
+	},
+	{
+		"id": 5,
+		"slug": "moj-lab-podgorica-1",
+		"name": "Moj Lab Podgorica 1",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJBeEfLNrrTRMRiG0OMAIiOAw",
+		"placeIdSource": "podgorica/moj-lab.json",
+		"matchedBy": "override"
+	},
+	{
+		"id": 6,
+		"slug": "moj-lab-podgorica-2",
+		"name": "Moj Lab Podgorica 2",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJBylDTw_rTRMRI9d21sskRh0",
+		"placeIdSource": "podgorica/moj-lab-magnetna-rezonanca-ginekologija-ivf.json",
+		"matchedBy": "override"
+	},
+	{
+		"id": 8,
+		"slug": "moj-lab-ulcinj",
+		"name": "Moj Lab Ulcinj",
+		"cityId": 5,
+		"reason": "no_row",
+		"placeId": "ChIJwT5VzoQTThMRvDr3HmXNgKg",
+		"placeIdSource": "ulcinj/moj-lab-poliklinika-ulcinj.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 35,
+		"slug": "nasa-medicina-podgorica",
+		"name": "Naša medicina",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJn8uW797rTRMRrS2RaFjJif0",
+		"placeIdSource": "podgorica/nasa-medicina.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 27,
+		"slug": "normedica-herceg-novi",
+		"name": "Normedica",
+		"cityId": 8,
+		"reason": "no_row",
+		"placeId": "ChIJv2nyGno7TBMR5_ZrJ7sObI0",
+		"placeIdSource": "herceg-novi/normedica.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 59,
+		"slug": "novi-cenex-medical-podgorica",
+		"name": "Novi Cenex Medical",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJo4WevlXrTRMR0YZi_iBQNAE",
+		"placeIdSource": "podgorica/cenex-medical.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 92,
+		"slug": "opsta-bolnica-blazo-orlandic",
+		"name": "Opšta Bolnica Bar „Blažo Orlandić\"",
+		"cityId": 7,
+		"reason": "no_row",
+		"placeId": "ChIJv1fqrodzThMRdUMJBlwBlv4",
+		"placeIdSource": "bar/opsta-bolnica-blazo-orlandic.json",
+		"matchedBy": "override"
+	},
+	{
+		"id": 69,
+		"slug": "ordinacija-balans-niksic",
+		"name": "Ordinacija Balans",
+		"cityId": 2,
+		"reason": "no_row",
+		"placeId": "ChIJA7RZIkupTRMRwa2rXB1YXuk",
+		"placeIdSource": "niksic/privtna-zdravstvena-ustanova-balans.json",
+		"matchedBy": "override"
+	},
+	{
+		"id": 14,
+		"slug": "ortopedija-aligrudic-podgorica",
+		"name": "Ortopedija Aligrudić",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJxc_K492VTRMROvaROWL-gd4",
+		"placeIdSource": "podgorica/ortopedija-aligrudic.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 62,
+		"slug": "poliklinika-diagnostica-podgorica",
+		"name": "Poliklinika Diagnostica",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJh1wi0CvrTRMRKmTGxLL4UOo",
+		"placeIdSource": "podgorica/diagnostica.json",
+		"matchedBy": "name-fuzzy-only"
+	},
+	{
+		"id": 23,
+		"slug": "poliklinika-filipovic-podgorica",
+		"name": "Poliklinika Filipović",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJj2hxcxHrTRMR1zLZhqCl24Q",
+		"placeIdSource": "podgorica/poliklinika-filipovic.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 54,
+		"slug": "poliklinika-natal-podgorica",
+		"name": "Poliklinika Natal",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": null,
+		"placeIdSource": "podgorica/l.json",
+		"matchedBy": "name-fuzzy"
+	},
+	{
+		"id": 40,
+		"slug": "primus-medical-podgorica",
+		"name": "Primus Medical",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": null,
+		"placeIdSource": "podgorica/l.json",
+		"matchedBy": "name-fuzzy"
+	},
+	{
+		"id": 91,
+		"slug": "redent-budva",
+		"name": "ReDent",
+		"cityId": 3,
+		"reason": "no_row",
+		"placeId": "ChIJNa_fRQDVTRMRr4z7kShiiuM",
+		"placeIdSource": "budva/redent.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 29,
+		"slug": "rezidencija-zdravlja-kerber-podgorica",
+		"name": "Rezidencija zdravlja Kerber",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": null,
+		"placeIdSource": "podgorica/l.json",
+		"matchedBy": "name-fuzzy"
+	},
+	{
+		"id": 12,
+		"slug": "smartmed-kotor",
+		"name": "SmartMed Kotor",
+		"cityId": 6,
+		"reason": "no_row",
+		"placeId": null
+	},
+	{
+		"id": 10,
+		"slug": "smartmed-podgorica",
+		"name": "SmartMed Podgorica",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": null,
+		"placeIdSource": "podgorica/podgorica.json",
+		"matchedBy": "name-fuzzy"
+	},
+	{
+		"id": 34,
+		"slug": "sotir-dental-centar-podgorica",
+		"name": "Sotir dental centar",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJVxUfJDrrTRMRNi3b97o5FNs",
+		"placeIdSource": "podgorica/sotir-dental-centar.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 53,
+		"slug": "stomatologija-cicmil-bar",
+		"name": "Stomatologija Cicmil",
+		"cityId": 7,
+		"reason": "no_row",
+		"placeId": "ChIJiSEoryd1ThMRV5jLtfwTgok",
+		"placeIdSource": "bar/stomatologija-cicmil.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 38,
+		"slug": "sumedica-podgorica",
+		"name": "Sumedica",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": null
+	},
+	{
+		"id": 26,
+		"slug": "svjetlost-eye-clinic-budva",
+		"name": "Svjetlost Eye Clinic",
+		"cityId": 3,
+		"reason": "no_row",
+		"placeId": "ChIJP2VNRrfVTRMRqUEW_MS0ApI",
+		"placeIdSource": "budva/svjetlost.json",
+		"matchedBy": "name-fuzzy-only"
+	},
+	{
+		"id": 19,
+		"slug": "temel-dental-podgorica",
+		"name": "Temel Dental",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJreSV2_frTRMR8ouwS60TQbI",
+		"placeIdSource": "podgorica/temel-dental-policlinic-temel-dis-poliklinigi.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 86,
+		"slug": "tesla-medical-berane",
+		"name": "Tesla Medical",
+		"cityId": 9,
+		"reason": "no_row",
+		"placeId": "ChIJGXmR2tqTUhMRPcx4Phw7Wic",
+		"placeIdSource": "berane/tesla-medical.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 33,
+		"slug": "vadis-stomatologija-podgorica",
+		"name": "VADIS Stomatologija",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJN8PkKDDrTRMRLAzaf93ccec",
+		"placeIdSource": "podgorica/vadis-stomatologija.json",
+		"matchedBy": "slug-no-city"
+	},
+	{
+		"id": 39,
+		"slug": "vase-zdravlje-podgorica",
+		"name": "Vaše zdravlje",
+		"cityId": 1,
+		"reason": "no_row",
+		"placeId": "ChIJkbPYnEbrTRMRbQutt9SyKBY",
+		"placeIdSource": "podgorica/poliklinika-vase-zdravlje.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 49,
+		"slug": "zu-dom-zdravlja-bar",
+		"name": "ZU Dom Zdravlja Bar",
+		"cityId": 7,
+		"reason": "no_row",
+		"placeId": "ChIJG4V5C7Z1ThMR7x2Wnk-FQjQ",
+		"placeIdSource": "bar/apoteka-benu-bar-dom-zdravlja.json",
+		"matchedBy": "name-fuzzy-best"
+	},
+	{
+		"id": 41,
+		"slug": "dental-esthetic-studio-dr-debelja",
+		"name": "Dr Debelja — Dental & Esthetic studio",
+		"cityId": 7,
+		"reason": "no_row",
+		"placeId": "ChIJV3iA6p9zThMRwdG_kpLyhWk",
+		"placeIdSource": "bar/dental-esthetic-studio-dr-debelja.json",
+		"matchedBy": "override-manual"
+	}
+]

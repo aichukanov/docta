@@ -1,0 +1,58 @@
+{
+  "clinic_id": 88,
+  "clinic_name": "Bolnica Danilo I Cetinje",
+  "source_pdf": "BOLNICKO-LIJECENJErwservlet.pdf",
+  "source_pdf_path": "E:/pet/docta.me/прейскуранты/danilo prvi/BOLNICKO-LIJECENJErwservlet.pdf",
+  "complementary_to": "SPECIJALISTICKE-AMBULANTErwservlet.pdf (already imported batches 01-28)",
+  "started": "2026-05-09",
+  "completed": "2026-05-09",
+  "status": "COMPLETE",
+
+  "pdf_summary": {
+    "total_items_in_pdf": 2775,
+    "subsections": 95,
+    "sections": 24,
+    "items_already_imported_via_specijalisticke": 2576,
+    "items_truly_new": 199,
+    "items_truly_new_after_lab_correction": 105,
+    "note": "After correctly counting prior batches' lab_items + svc_items fields, only 105 codes are new. The other 94 'apparent new' codes (X12, X13, X14, X15) were processed in batch-18 of the SPECIJALISTICKE import."
+  },
+
+  "price_observation": {
+    "overlapping_codes_with_different_prices": 2576,
+    "interpretation": "BOLNICKO PDF lists ~58% lower prices than SPECIJALISTICKE PDF for identical codes (e.g. A01001: 25.02 vs 9.75 EUR). Per same-bod system, BOLNICKO uses inpatient discount tariffs while SPECIJALISTICKE is outpatient.",
+    "decision": "Keep existing SPECIJALISTICKE prices. INSERT IGNORE silently skips 2576 duplicates. Only 105 truly-new BOLNICKO codes are inserted with their bolnicko prices."
+  },
+
+  "batches": [
+    {
+      "id": "batch-29-bolnicko-additions",
+      "subsections": ["G06", "Y01", "Y02", "Y03", "Y04", "Y05", "Y06", "Y07", "Y08", "Y09", "Y10", "Y11", "Y12"],
+      "items_total": 105,
+      "items_new": 105,
+      "items_existing": 0,
+      "translations_file": "translations/batch-29-bolnicko-additions.json",
+      "sql_file": "server/sql/insert-clinic-88-services-batch-29-bolnicko-additions.sql",
+      "category_relations": 49,
+      "specialty_relations": 40,
+      "notes": "Single-batch consolidation. G06=blood units (10), Y01=hospital workup (16), Y02=nursing intensity (8), Y03=delivery room (1), Y04=food costs (5), Y05=operating-theatre tier I/II (10), Y06=bed-day stays (6), Y07=op dressings (5), Y08=injection materials (1), Y09=ambulatory dressings (3), Y10=plaster casts (38), Y11=on-call exam (1), Y12=cardiac rehab (1)."
+    }
+  ],
+
+  "category_assignments": {
+    "Y03 (delivery room)": "GYNECOLOGY (7) + spec GYNECOLOGY_OBSTETRICS (5)",
+    "Y07 (operation dressings)": "WOUND_CARE (31)",
+    "Y08 (injection materials)": "INJECTIONS_INFUSIONS (29)",
+    "Y09 (ambulatory dressings)": "WOUND_CARE (31)",
+    "Y10 (plaster casts)": "ORTHOPEDICS (10) + spec ORTHOPEDICS_TRAUMATOLOGY (17)",
+    "Y12 (cardiac rehab)": "CARDIOLOGY (8) + spec CARDIOLOGY (1)",
+    "G06, Y01, Y02, Y04, Y05, Y06, Y11": "no clean category match — left without category/specialty (administrative/billing line items or general nursing care)"
+  },
+
+  "name_collision_handling": {
+    "Y07 vs Y09 dressings": "Y07 has prefix 'Operation' (Operation Small Dressing I/II...), Y09 has prefix 'Ambulatory' (Ambulatory Small Dressing...) to avoid name_en collisions.",
+    "Y05 tier I vs II": "Y05001-Y05005 (Tier I) and Y05006-Y05010 (Tier II) — same Serbian name with whitespace diff, distinguished in EN by Tier I/II based on price differential."
+  },
+
+  "command_to_apply": "mysql -u root -p --default-character-set=utf8mb4 docta_me < server/sql/insert-clinic-88-services-batch-29-bolnicko-additions.sql"
+}

@@ -1,0 +1,20 @@
+{
+  "jsonPath": "data/google-places/kotor/dental-studio-vucetic.json",
+  "outputPath": "server/sql/reviews-google/dental-studio-vucetic-kotor.sql",
+  "dataCollectedDate": "2026-05-07",
+  "clinicId": 122,
+  "clinicName": "Dental Studio Vučetić (Kotor)",
+  "translationsDir": "data/review-translations/dental-studio-vucetic-kotor/",
+  "doctors": [
+    {
+      "id": 1110,
+      "varName": "zoran_vucetic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Zoran[aeu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Vu[cč]eti[cć](?:[aeu]|om)?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Зоран[ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Вучети[ћц](?:[аеу]|ом)?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "clinic_name": "Dom Zdravlja Kolasin",
+  "clinic_id": "<TO_BE_FILLED_AFTER_CLINIC_CREATION>",
+  "source_pdf": "Cjenovnik-licima-koja-nisu-osiguranici.pdf",
+  "source_pdf_path": "E:/pet/docta.me/прейскуранты/kolasin dz/Cjenovnik-licima-koja-nisu-osiguranici.pdf",
+  "started": "2026-05-09",
+  "completed": "2026-05-09",
+  "status": "PREPARED — awaiting clinic creation",
+
+  "pdf_summary": {
+    "pages": 2,
+    "pdf_type": "scanned image PDF (no extractable text)",
+    "ocr_method": "pypdfium2 + multimodal Read tool (Claude vision)",
+    "items_extracted": 26,
+    "items_after_dedupe": 26,
+    "notes": "Very compact pricelist - 26 services covering general doctor exams, EKG/spirometry, basic interventions (wound care, immobilization, injections), gyn ultrasound, basic radiology (skeleton, lungs)."
+  },
+
+  "code_strategy": {
+    "approach": "Codes mostly reuse Cetinje state nomenclature shared with HN DZ. Items prefix _KO suffix on clinic_medical_services.code to keep them distinct from HN DZ codes. Items unique to Kolasin (recipe issuance, oxygen, IV/IM/SC injections) get KO_ prefix and inline translations.",
+    "matched_against_HN_DZ": 21,
+    "new_translations": 5
+  },
+
+  "batches": [
+    {
+      "id": "batch-01-kolasin-cjenovnik",
+      "items_total": 26,
+      "translations_file": "translations/batch-01-kolasin-cjenovnik.json",
+      "sql_file": "server/sql/insert-clinic-dom-zdravlja-kolasin-batch-01-kolasin-cjenovnik.sql",
+      "category_relations": 25,
+      "specialty_relations": 14
+    }
+  ],
+
+  "application_steps": [
+    "1. Create the clinic row in DB (INSERT INTO clinics ...) and obtain its id",
+    "2. Edit server/sql/insert-clinic-dom-zdravlja-kolasin-batch-01-kolasin-cjenovnik.sql",
+    "3. Replace 'SET @clinic_id := 0;' with the actual clinic_id",
+    "4. Apply: mysql -u root -p --default-character-set=utf8mb4 docta_me < server/sql/insert-clinic-dom-zdravlja-kolasin-batch-01-kolasin-cjenovnik.sql"
+  ]
+}

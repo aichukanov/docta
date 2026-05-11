@@ -1,0 +1,18 @@
+{
+  "jsonPath": "data/google-places/kotor/stomatoloska-ordinacija-dr-cetkovic.json",
+  "outputPath": "server/sql/reviews-google/dr-cetkovic-kotor.sql",
+  "dataCollectedDate": "2026-05-07",
+  "clinicId": 124,
+  "clinicName": "Dr Ćetković — Stomatološka ordinacija (Kotor)",
+  "translationsDir": "data/review-translations/dr-cetkovic-kotor/",
+  "doctors": [
+    {
+      "id": 1115,
+      "varName": "branko_cetkovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Brank[oeuai](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Бранк[оауе](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

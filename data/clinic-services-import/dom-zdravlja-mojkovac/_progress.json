@@ -1,0 +1,52 @@
+{
+  "clinic_name": "Dom Zdravlja Bosko Dedejic Mojkovac",
+  "clinic_id": "<TO_BE_FILLED_AFTER_CLINIC_CREATION>",
+  "source_pdf": "02.10.2025.pdf",
+  "source_pdf_path": "E:/pet/docta.me/прейскуранты/mojkovac dz/02.10.2025.pdf",
+  "started": "2026-05-09",
+  "completed": "2026-05-09",
+  "status": "PREPARED — awaiting clinic creation",
+
+  "pdf_summary": {
+    "pages": 23,
+    "pdf_type": "scanned image PDF (no extractable text)",
+    "ocr_method": "pypdfium2 render @ scale=2.0 + multimodal Read tool (Claude vision)",
+    "items_extracted": 282,
+    "sections_covered": [
+      "Usluge izabranog doktora (A01 preventive, A02 curative, X01-X03 interventions)",
+      "Usluge izabranog ginekologa (C01 preventive, C02 curative, X01-X03 gyn)",
+      "Centar za plućne bolesti i TBC (G01, G02, X01-X03 TBC)",
+      "Centar za mentalno zdravlje (H01 psihijatra, H02 psihologa, H09 mobile team)",
+      "Centar za dijagnostiku - RTG i UZ (J01, J06, J07, J11)",
+      "Patronaža (L01-L04)",
+      "Fizikalna medicina (M01, M02)",
+      "Laboratorijska dijagnostika (Z01)",
+      "Mikrobiologija (K01, partial)"
+    ],
+    "skipped_pages": "Page 21 (sanitetski prevoz - single unclear row), Page 22 (DRG hospital codes - not applicable to a primary-care house), Pages 1, 23 (cover/signature pages)"
+  },
+
+  "code_strategy": {
+    "approach": "Mojkovac uses identical Cetinje code system as HN DZ (clinic 80). Reused HN DZ translations and substituted Mojkovac prices (regular Cijena column, not the X3 'non-insured' multiplier).",
+    "code_prefix": "All clinic_medical_services.code values prefixed with MO_ to keep distinct.",
+    "price_observation": "Mojkovac base prices are 30-40% of HN DZ prices for equivalent codes (e.g. A01001: HN=39.00 EUR vs Mojkovac=17.92 EUR). The 'X3' column in PDF is for non-insured patients; we used the standard column."
+  },
+
+  "batches": [
+    {
+      "id": "batch-01-mojkovac-cjenovnik",
+      "items_total": 282,
+      "translations_file": "translations/batch-01-mojkovac-cjenovnik.json",
+      "sql_file": "server/sql/insert-clinic-dom-zdravlja-mojkovac-batch-01-mojkovac-cjenovnik.sql",
+      "category_relations": 232,
+      "specialty_relations": 179
+    }
+  ],
+
+  "application_steps": [
+    "1. Create the clinic row in DB (INSERT INTO clinics ...) and obtain its id",
+    "2. Edit server/sql/insert-clinic-dom-zdravlja-mojkovac-batch-01-mojkovac-cjenovnik.sql",
+    "3. Replace 'SET @clinic_id := 0;' with the actual clinic_id",
+    "4. Apply: mysql -u root -p --default-character-set=utf8mb4 docta_me < server/sql/insert-clinic-dom-zdravlja-mojkovac-batch-01-mojkovac-cjenovnik.sql"
+  ]
+}

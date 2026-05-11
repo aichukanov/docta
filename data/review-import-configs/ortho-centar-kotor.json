@@ -1,0 +1,28 @@
+{
+  "jsonPath": "data/google-places/kotor/ortho-centar.json",
+  "outputPath": "server/sql/reviews-google/ortho-centar-kotor.sql",
+  "dataCollectedDate": "2026-05-07",
+  "clinicId": 120,
+  "clinicName": "Ortho Centar (Kotor)",
+  "translationsDir": "data/review-translations/ortho-centar-kotor/",
+  "doctors": [
+    {
+      "id": 1107,
+      "varName": "tamara_boskovic_brkanovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Tamar(?:a|e|i|u|om)?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Brkanovi[cć][aeuom]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Тамар[аеиуой]?(?:ом)?(?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "Брканови[ћц][аеуом]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 1108,
+      "varName": "nikolina_majstorovic_milovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Nikolin(?:a|e|i|u|om)?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Николин[аеиуой]?(?:ом)?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

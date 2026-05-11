@@ -1,0 +1,4773 @@
+{
+  "batch_id": "batch-01-mojkovac-cjenovnik",
+  "clinic_id": "<TO_BE_FILLED_AFTER_CLINIC_CREATION>",
+  "clinic_name": "Dom Zdravlja Mojkovac (Bosko Dedejic)",
+  "source_pdf": "02.10.2025.pdf (23 pages)",
+  "ocr_method": "pypdfium2 + multimodal Read",
+  "items_total": 282,
+  "notes": "Same Cetinje code system as HN DZ. Reused HN DZ translations; substituted Mojkovac prices (regular Cijena column, not the X3 'non-insured' multiplier). All codes prefixed with MO_ in clinic_medical_services.code so the same medical_service can be referenced cleanly.",
+  "items": [
+    {
+      "code": "MO_A01001",
+      "src": "Preventivni pregled u dobi do 1. godine života",
+      "price_eur": 17.92,
+      "name_en": "Preventive Examination Up to Age 1",
+      "slug": "preventive-examination-up-to-age-1",
+      "name_sr": "Preventivni pregled u dobi do 1. godine života",
+      "name_sr_cyrl": "Превентивни преглед у доби до 1. године живота",
+      "name_ru": "Профилактический осмотр до 1 года",
+      "name_de": "Vorsorgeuntersuchung bis Alter 1",
+      "name_tr": "1 yaş altı koruyucu muayene",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        4
+      ]
+    },
+    {
+      "code": "MO_A01002",
+      "src": "Preventivni pregled djece u 2. godini života",
+      "price_eur": 17.92,
+      "name_en": "Preventive Examination at Age 2",
+      "slug": "preventive-examination-at-age-2",
+      "name_sr": "Preventivni pregled djece u 2. godini života",
+      "name_sr_cyrl": "Превентивни преглед дјеце у 2. години живота",
+      "name_ru": "Профилактический осмотр в 2 года",
+      "name_de": "Vorsorgeuntersuchung mit 2 Jahren",
+      "name_tr": "2 yaş koruyucu muayene",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        4
+      ]
+    },
+    {
+      "code": "MO_A01003",
+      "src": "Preventivni pregled djece u 4. godini života",
+      "price_eur": 17.92,
+      "name_en": "Preventive Examination at Age 4",
+      "slug": "preventive-examination-at-age-4",
+      "name_sr": "Preventivni pregled djece u 4. godini života",
+      "name_sr_cyrl": "Превентивни преглед дјеце у 4. години живота",
+      "name_ru": "Профилактический осмотр в 4 года",
+      "name_de": "Vorsorgeuntersuchung mit 4 Jahren",
+      "name_tr": "4 yaş koruyucu muayene",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        4
+      ]
+    },
+    {
+      "code": "MO_A01004",
+      "src": "Preventivni pregled pred polazak u osnovnu školu",
+      "price_eur": 21.5,
+      "name_en": "Preventive Examination Before Primary School",
+      "slug": "preventive-examination-before-primary-school",
+      "name_sr": "Preventivni pregled pred polazak u osnovnu školu",
+      "name_sr_cyrl": "Превентивни преглед пред полазак у основну школу",
+      "name_ru": "Профилактический осмотр перед школой",
+      "name_de": "Vorsorgeuntersuchung vor der Einschulung",
+      "name_tr": "İlkokul öncesi koruyucu muayene",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        4
+      ]
+    },
+    {
+      "code": "MO_A01005",
+      "src": "Preventivni pregled u osnovnoj školi (2, 4, 6 i poslednji razred)",
+      "price_eur": 16.49,
+      "name_en": "Primary School Preventive Examination",
+      "slug": "primary-school-preventive-examination",
+      "name_sr": "Preventivni pregled u osnovnoj školi (2, 4, 6 i poslednji razred)",
+      "name_sr_cyrl": "Превентивни преглед у основној школи (2, 4, 6 и последњи разред)",
+      "name_ru": "Профилактический осмотр в начальной школе",
+      "name_de": "Vorsorgeuntersuchung in der Grundschule",
+      "name_tr": "İlkokul koruyucu muayenesi",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        4
+      ]
+    },
+    {
+      "code": "MO_A01006",
+      "src": "Preventivni sistematski pregled učenika u prvom i trećem razredu srednje škole",
+      "price_eur": 16.49,
+      "name_en": "Secondary School Preventive Systematic Examination",
+      "slug": "secondary-school-preventive-systematic-examination",
+      "name_sr": "Preventivni sistematski pregled učenika u prvom i trećem razredu srednje škole",
+      "name_sr_cyrl": "Превентивни систематски преглед ученика у првом и трећем разреду средње школе",
+      "name_ru": "Профилактический систематический осмотр в средней школе",
+      "name_de": "Systematische Vorsorgeuntersuchung in der weiterführenden Schule",
+      "name_tr": "Lise koruyucu sistematik muayenesi",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        4
+      ]
+    },
+    {
+      "code": "MO_A01007",
+      "src": "Preventivni sistematski pregled studenata na prvoj i trećoj godini studija",
+      "price_eur": 16.49,
+      "name_en": "Student Systematic Preventive Examination",
+      "slug": "student-systematic-preventive-examination",
+      "name_sr": "Preventivni sistematski pregled studenata na prvoj i trećoj godini studija",
+      "name_sr_cyrl": "Превентивни систематски преглед студената на првој и трећој години студија",
+      "name_ru": "Профилактический систематический осмотр студентов",
+      "name_de": "Systematische Vorsorgeuntersuchung für Studenten",
+      "name_tr": "Üniversite öğrencisi sistematik koruyucu muayene",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "MO_A01008",
+      "src": "Preventivni sistematski pregled osoba starijih od 65 godina",
+      "price_eur": 16.49,
+      "name_en": "Systematic Preventive Examination for Patients Over 65",
+      "slug": "systematic-preventive-examination-for-patients-over-65",
+      "name_sr": "Preventivni sistematski pregled osoba starijih od 65 godina",
+      "name_sr_cyrl": "Превентивни систематски преглед особа старијих од 65 година",
+      "name_ru": "Систематический профилактический осмотр старше 65 лет",
+      "name_de": "Systematische Vorsorgeuntersuchung über 65 Jahre",
+      "name_tr": "65 yaş üstü sistematik koruyucu muayene",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "MO_A01009",
+      "src": "Kontrolni pregled nakon preventivnog pregleda",
+      "price_eur": 10.75,
+      "name_en": "Follow-up Examination After Preventive Examination",
+      "slug": "follow-up-examination-after-preventive-examination",
+      "name_sr": "Kontrolni pregled nakon preventivnog pregleda",
+      "name_sr_cyrl": "Контролни преглед након превентивног прегледа",
+      "name_ru": "Контрольный осмотр после профилактического",
+      "name_de": "Nachuntersuchung nach Vorsorgeuntersuchung",
+      "name_tr": "Koruyucu muayene sonrası kontrol",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "MO_A01010",
+      "src": "Preventivni pregled trudnice po kalendaru",
+      "price_eur": 16.49,
+      "name_en": "Pregnancy Preventive Examination by Calendar",
+      "slug": "pregnancy-preventive-examination-by-calendar",
+      "name_sr": "Preventivni pregled trudnice po kalendaru",
+      "name_sr_cyrl": "Превентивни преглед труднице по календару",
+      "name_ru": "Профилактический осмотр беременной по календарю",
+      "name_de": "Vorsorgeuntersuchung der Schwangeren nach Kalender",
+      "name_tr": "Gebelik takvim koruyucu muayenesi",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_A01011",
+      "src": "Vakcinacija i revakcinacija djece i omladine po kalendaru vakcinacije",
+      "price_eur": 5.02,
+      "name_en": "Pediatric Vaccination and Revaccination by Schedule",
+      "slug": "pediatric-vaccination-and-revaccination-by-schedule",
+      "name_sr": "Vakcinacija i revakcinacija djece i omladine po kalendaru vakcinacije",
+      "name_sr_cyrl": "Вакцинација и ревакцинација дјеце и омладине по календару вакцинације",
+      "name_ru": "Вакцинация и ревакцинация детей по календарю",
+      "name_de": "Impfung und Auffrischung von Kindern nach Impfkalender",
+      "name_tr": "Çocuk ve gençlere takvim aşılama ve rapel",
+      "categories": [
+        25,
+        29
+      ],
+      "specialties": [
+        4
+      ]
+    },
+    {
+      "code": "MO_A01012",
+      "src": "Vakcinacija starijih od 65 godina protiv gripa",
+      "price_eur": 5.02,
+      "name_en": "Influenza Vaccination for Patients Over 65",
+      "slug": "influenza-vaccination-for-patients-over-65",
+      "name_sr": "Vakcinacija starijih od 65 godina protiv gripa",
+      "name_sr_cyrl": "Вакцинација старијих од 65 година против грипа",
+      "name_ru": "Вакцинация против гриппа старше 65 лет",
+      "name_de": "Grippeschutzimpfung über 65 Jahre",
+      "name_tr": "65 yaş üstü grip aşısı",
+      "categories": [
+        29
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "MO_A01013",
+      "src": "Imunoprofilaksa, imunoprofilaksa sa serumom i hemoprofilaksa za sprečavanje zaraznih bolesti",
+      "price_eur": 5.02,
+      "name_en": "Immunoprophylaxis and Chemoprophylaxis for Infectious Disease Prevention",
+      "slug": "immunoprophylaxis-and-chemoprophylaxis-for-infectious-disease-prevention",
+      "name_sr": "Imunoprofilaksa, imunoprofilaksa sa serumom i hemoprofilaksa za sprečavanje zaraznih bolesti",
+      "name_sr_cyrl": "Имунопрофилакса, имунопрофилакса са серумом и хемопрофилакса за спречавање заразних болести",
+      "name_ru": "Иммунопрофилактика и химиопрофилактика инфекционных болезней",
+      "name_de": "Immunprophylaxe und Chemoprophylaxe gegen Infektionskrankheiten",
+      "name_tr": "Bulaşıcı hastalık immünoprofilaksi ve kemoprofilaksi",
+      "categories": [
+        29
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "MO_A01014",
+      "src": "Preventivni pregled muškaraca nakon 40. godine i žena nakon 45. godine za rano otkrivanje povišenog krvnog pritiska, holesterola, triglicerida i rizika kardiovaskularnih bolesti",
+      "price_eur": 10.75,
+      "name_en": "Cardiovascular Risk Preventive Examination Adults Over 40",
+      "slug": "cardiovascular-risk-preventive-examination-adults-over-40",
+      "name_sr": "Preventivni pregled muškaraca nakon 40. godine i žena nakon 45. godine za rano otkrivanje povišenog krvnog pritiska, holesterola, triglicerida i rizika kardiovaskularnih bolesti",
+      "name_sr_cyrl": "Превентивни преглед мушкараца након 40. године и жена након 45. године за рано откривање повишеног крвног притиска, холестерола, триглицерида и ризика кардиоваскуларних болести",
+      "name_ru": "Профилактический осмотр взрослых старше 40 для ССЗ",
+      "name_de": "Vorsorgeuntersuchung Erwachsener über 40 zur Herz-Kreislauf-Risikobewertung",
+      "name_tr": "40+ yaş kardiyovasküler risk koruyucu muayene",
+      "categories": [
+        8
+      ],
+      "specialties": [
+        1
+      ]
+    },
+    {
+      "code": "MO_A01015",
+      "src": "Pregled za rano otkrivanje raka dojke",
+      "price_eur": 10.75,
+      "name_en": "Breast Cancer Early Detection Examination",
+      "slug": "breast-cancer-early-detection-examination",
+      "name_sr": "Pregled za rano otkrivanje raka dojke",
+      "name_sr_cyrl": "Преглед за рано откривање рака дојке",
+      "name_ru": "Осмотр на раннее выявление рака молочной железы",
+      "name_de": "Untersuchung zur Früherkennung von Brustkrebs",
+      "name_tr": "Meme kanseri erken tanı muayenesi",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_A02001",
+      "src": "Prvi kurativni pregled",
+      "price_eur": 10.75,
+      "name_en": "First Curative Examination",
+      "slug": "first-curative-examination",
+      "name_sr": "Prvi kurativni pregled",
+      "name_sr_cyrl": "Први куративни преглед",
+      "name_ru": "Первичный лечебный осмотр",
+      "name_de": "Erste kurative Untersuchung",
+      "name_tr": "İlk küratif muayene",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "MO_A02002",
+      "src": "Ponovni kurativni pregled (kontrolni)",
+      "price_eur": 7.17,
+      "name_en": "Follow-up Curative Examination",
+      "slug": "follow-up-curative-examination",
+      "name_sr": "Ponovni kurativni pregled (kontrolni)",
+      "name_sr_cyrl": "Поновни куративни преглед (контролни)",
+      "name_ru": "Повторный лечебный осмотр",
+      "name_de": "Kurative Folgeuntersuchung",
+      "name_tr": "Tekrar küratif muayene",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "MO_A02003",
+      "src": "Pregled pacijenta koji se ambulantno sprovodi za operacije u opštoj anesteziji",
+      "price_eur": 17.92,
+      "name_en": "Pre-Operative Outpatient Examination General Anesthesia",
+      "slug": "pre-operative-outpatient-examination-general-anesthesia",
+      "name_sr": "Pregled pacijenta koji se ambulantno sprovodi za operacije u opštoj anesteziji",
+      "name_sr_cyrl": "Преглед пацијента који се амбулантно спроводи за операције у општој анестезији",
+      "name_ru": "Амбулаторный осмотр перед операцией под общей анестезией",
+      "name_de": "Ambulante präoperative Untersuchung Vollnarkose",
+      "name_tr": "Genel anestezi öncesi ayaktan muayene",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        19
+      ]
+    },
+    {
+      "code": "MO_A02004",
+      "src": "Kratka posjeta doktoru bez pregleda",
+      "price_eur": 7.17,
+      "name_en": "Brief Doctor Visit Without Examination",
+      "slug": "brief-doctor-visit-without-examination",
+      "name_sr": "Kratka posjeta doktoru bez pregleda",
+      "name_sr_cyrl": "Кратка посјета доктору без прегледа",
+      "name_ru": "Краткий визит к врачу без осмотра",
+      "name_de": "Kurzer Arztbesuch ohne Untersuchung",
+      "name_tr": "Muayenesiz kısa doktor ziyareti",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "MO_A02005",
+      "src": "Prvi kurativni pregled u kući osiguranika do 5 km od ambulante",
+      "price_eur": 25.09,
+      "name_en": "Home Visit First Curative Examination Up to 5 km",
+      "slug": "home-visit-first-curative-examination-up-to-5-km",
+      "name_sr": "Prvi kurativni pregled u kući osiguranika do 5 km od ambulante",
+      "name_sr_cyrl": "Први куративни преглед у кући осигураника до 5 км од амбуланте",
+      "name_ru": "Первичный лечебный осмотр на дому до 5 км",
+      "name_de": "Erste kurative Hausuntersuchung bis 5 km",
+      "name_tr": "5 km'ye kadar evde ilk küratif muayene",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "MO_A02006",
+      "src": "Prvi kurativni pregled u kući osiguranika 5-15 km od ambulante",
+      "price_eur": 32.26,
+      "name_en": "Home Visit First Curative Examination 5 to 15 km",
+      "slug": "home-visit-first-curative-examination-5-to-15-km",
+      "name_sr": "Prvi kurativni pregled u kući osiguranika 5-15 km od ambulante",
+      "name_sr_cyrl": "Први куративни преглед у кући осигураника 5-15 км од амбуланте",
+      "name_ru": "Первичный лечебный осмотр на дому 5-15 км",
+      "name_de": "Erste kurative Hausuntersuchung 5-15 km",
+      "name_tr": "5-15 km arası evde ilk küratif muayene",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "MO_A02007",
+      "src": "Prvi kurativni pregled u kući osiguranika preko 15 km od ambulante",
+      "price_eur": 39.42,
+      "name_en": "Home Visit First Curative Examination Over 15 km",
+      "slug": "home-visit-first-curative-examination-over-15-km",
+      "name_sr": "Prvi kurativni pregled u kući osiguranika preko 15 km od ambulante",
+      "name_sr_cyrl": "Први куративни преглед у кући осигураника преко 15 км од амбуланте",
+      "name_ru": "Первичный лечебный осмотр на дому свыше 15 км",
+      "name_de": "Erste kurative Hausuntersuchung über 15 km",
+      "name_tr": "15 km üzeri evde ilk küratif muayene",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "MO_A02008",
+      "src": "Kratka posjeta doktoru u kući osiguranika do 5 km od ambulante",
+      "price_eur": 21.5,
+      "name_en": "Home Visit Brief Doctor Visit Up to 5 km",
+      "slug": "home-visit-brief-doctor-visit-up-to-5-km",
+      "name_sr": "Kratka posjeta doktoru u kući osiguranika do 5 km od ambulante",
+      "name_sr_cyrl": "Кратка посјета доктору у кући осигураника до 5 км од амбуланте",
+      "name_ru": "Краткий визит к врачу на дом до 5 км",
+      "name_de": "Kurzer Hausbesuch des Arztes bis 5 km",
+      "name_tr": "5 km'ye kadar evde kısa doktor ziyareti",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "MO_A02009",
+      "src": "Ponovni kurativni pregled u kući osiguranika 5-15 km od ambulante",
+      "price_eur": 28.67,
+      "name_en": "Home Visit Follow-up Curative Examination 5 to 15 km",
+      "slug": "home-visit-follow-up-curative-examination-5-to-15-km",
+      "name_sr": "Ponovni kurativni pregled u kući osiguranika 5-15 km od ambulante",
+      "name_sr_cyrl": "Поновни куративни преглед у кући осигураника 5-15 км од амбуланте",
+      "name_ru": "Повторный лечебный осмотр на дому 5-15 км",
+      "name_de": "Kurative Folge-Hausuntersuchung 5-15 km",
+      "name_tr": "5-15 km arası evde tekrar küratif muayene",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "MO_A02010",
+      "src": "Ponovni kurativni pregled u kući osiguranika preko 15 km od ambulante",
+      "price_eur": 35.84,
+      "name_en": "Home Visit Follow-up Curative Examination Over 15 km",
+      "slug": "home-visit-follow-up-curative-examination-over-15-km",
+      "name_sr": "Ponovni kurativni pregled u kući osiguranika preko 15 km od ambulante",
+      "name_sr_cyrl": "Поновни куративни преглед у кући осигураника преко 15 км од амбуланте",
+      "name_ru": "Повторный лечебный осмотр на дому свыше 15 км",
+      "name_de": "Kurative Folge-Hausuntersuchung über 15 km",
+      "name_tr": "15 km üzeri evde tekrar küratif muayene",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "MO_A02011",
+      "src": "Posjeta doktoru radi obrade za IPK",
+      "price_eur": 17.02,
+      "name_en": "Doctor Visit for IPK Workup",
+      "slug": "doctor-visit-for-ipk-workup",
+      "name_sr": "Posjeta doktoru radi obrade za IPK",
+      "name_sr_cyrl": "Посјета доктору ради обраде за ИПК",
+      "name_ru": "Визит к врачу для подготовки IPK",
+      "name_de": "Arztbesuch zur IPK-Vorbereitung",
+      "name_tr": "IPK hazırlığı için doktor ziyareti",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ]
+    },
+    {
+      "code": "MO_HN_X01001",
+      "src": "Odstranjivanje stranog tijela iz uha",
+      "price_eur": 7.17,
+      "name_en": "Foreign Body Removal from Ear",
+      "slug": "foreign-body-removal-from-ear",
+      "name_sr": "Odstranjivanje stranog tijela iz uha",
+      "name_sr_cyrl": "Одстрањивање страног тијела из уха",
+      "name_ru": "Удаление инородного тела из уха",
+      "name_de": "Fremdkörperentfernung aus dem Ohr",
+      "name_tr": "Kulaktan yabancı cisim çıkarma",
+      "categories": [
+        11
+      ],
+      "specialties": [
+        11
+      ]
+    },
+    {
+      "code": "MO_HN_X01002",
+      "src": "Odstranjivanje stranog tijela iz grla",
+      "price_eur": 7.17,
+      "name_en": "Foreign Body Removal from Throat",
+      "slug": "foreign-body-removal-from-throat",
+      "name_sr": "Odstranjivanje stranog tijela iz grla",
+      "name_sr_cyrl": "Одстрањивање страног тијела из грла",
+      "name_ru": "Удаление инородного тела из горла",
+      "name_de": "Fremdkörperentfernung aus dem Rachen",
+      "name_tr": "Boğazdan yabancı cisim çıkarma",
+      "categories": [
+        11
+      ],
+      "specialties": [
+        11
+      ]
+    },
+    {
+      "code": "MO_HN_X01003",
+      "src": "Odstranjivanje stranog tijela iz nosa",
+      "price_eur": 3.58,
+      "name_en": "Foreign Body Removal from Nose",
+      "slug": "foreign-body-removal-from-nose",
+      "name_sr": "Odstranjivanje stranog tijela iz nosa",
+      "name_sr_cyrl": "Одстрањивање страног тијела из носа",
+      "name_ru": "Удаление инородного тела из носа",
+      "name_de": "Fremdkörperentfernung aus der Nase",
+      "name_tr": "Burundan yabancı cisim çıkarma",
+      "categories": [
+        11
+      ],
+      "specialties": [
+        11
+      ]
+    },
+    {
+      "code": "MO_HN_X01004",
+      "src": "Davanje lokalne anestezije",
+      "price_eur": 3.58,
+      "name_en": "Local Anesthesia Administration",
+      "slug": "local-anesthesia-administration",
+      "name_sr": "Davanje lokalne anestezije",
+      "name_sr_cyrl": "Давање локалне анестезије",
+      "name_ru": "Местная анестезия",
+      "name_de": "Lokalanästhesie",
+      "name_tr": "Lokal anestezi uygulaması",
+      "categories": [
+        29
+      ],
+      "specialties": [
+        19
+      ]
+    },
+    {
+      "code": "MO_HN_X01005",
+      "src": "Ispiranje cerumena iz uha",
+      "price_eur": 3.58,
+      "name_en": "Ear Cerumen Irrigation",
+      "slug": "ear-cerumen-irrigation",
+      "name_sr": "Ispiranje cerumena iz uha",
+      "name_sr_cyrl": "Испирање церумена из уха",
+      "name_ru": "Промывание серы из уха",
+      "name_de": "Ohrenschmalzentfernung durch Spülung",
+      "name_tr": "Kulak buşonu yıkama",
+      "categories": [
+        11
+      ],
+      "specialties": [
+        11
+      ]
+    },
+    {
+      "code": "MO_HN_X01006",
+      "src": "Davanje klistira",
+      "price_eur": 1.79,
+      "name_en": "Enema Administration",
+      "slug": "enema-administration",
+      "name_sr": "Davanje klistira",
+      "name_sr_cyrl": "Давање клистира",
+      "name_ru": "Постановка клизмы",
+      "name_de": "Einlauf verabreichen",
+      "name_tr": "Lavman uygulaması",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X01007",
+      "src": "Uzimanje brisova za rutinsku analizu",
+      "price_eur": 3.58,
+      "name_en": "Routine Swab Sample Collection",
+      "slug": "routine-swab-sample-collection",
+      "name_sr": "Uzimanje brisova za rutinsku analizu",
+      "name_sr_cyrl": "Узимање брисова за рутинску анализу",
+      "name_ru": "Взятие мазка для рутинного анализа",
+      "name_de": "Abstrich-Probenentnahme für Routineanalyse",
+      "name_tr": "Rutin analiz için sürüntü alma",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X01010",
+      "src": "Davanje inhalacije",
+      "price_eur": 1.79,
+      "name_en": "Inhalation Administration",
+      "slug": "inhalation-administration",
+      "name_sr": "Davanje inhalacije",
+      "name_sr_cyrl": "Давање инхалације",
+      "name_ru": "Ингаляция",
+      "name_de": "Inhalationsverabreichung",
+      "name_tr": "İnhalasyon uygulaması",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X01011",
+      "src": "Punkcija prednjih hematoma",
+      "price_eur": 1.58,
+      "name_en": "Anterior Hematoma Puncture",
+      "slug": "anterior-hematoma-puncture",
+      "name_sr": "Punkcija prednjih hematoma",
+      "name_sr_cyrl": "Пункција предњих хематома",
+      "name_ru": "Пункция передней гематомы",
+      "name_de": "Punktion vorderer Hämatome",
+      "name_tr": "Ön hematom ponksiyonu",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X01012",
+      "src": "Toaleta gastrostome",
+      "price_eur": 1.79,
+      "name_en": "Gastrostomy Site Care",
+      "slug": "gastrostomy-site-care",
+      "name_sr": "Toaleta gastrostome",
+      "name_sr_cyrl": "Тоалета гастростоме",
+      "name_ru": "Уход за гастростомой",
+      "name_de": "Pflege der Gastrostomie",
+      "name_tr": "Gastrostomi bakımı",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X01013",
+      "src": "Toaleta vještačkog anusa",
+      "price_eur": 1.79,
+      "name_en": "Colostomy Site Care",
+      "slug": "colostomy-site-care",
+      "name_sr": "Toaleta vještačkog anusa",
+      "name_sr_cyrl": "Тоалета вјештачког ануса",
+      "name_ru": "Уход за колостомой",
+      "name_de": "Pflege des künstlichen Darmausgangs",
+      "name_tr": "Kolostomi bakımı",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X01014",
+      "src": "Obrađivanje rane bez šivanja",
+      "price_eur": 3.58,
+      "name_en": "Wound Care Without Suturing",
+      "slug": "wound-care-without-suturing",
+      "name_sr": "Obrađivanje rane bez šivanja",
+      "name_sr_cyrl": "Обрађивање ране без шивања",
+      "name_ru": "Обработка раны без ушивания",
+      "name_de": "Wundversorgung ohne Naht",
+      "name_tr": "Sütürsüz yara bakımı",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X01015",
+      "src": "Skidanje hirurških konaca",
+      "price_eur": 1.58,
+      "name_en": "Surgical Suture Removal",
+      "slug": "surgical-suture-removal",
+      "name_sr": "Skidanje hirurških konaca",
+      "name_sr_cyrl": "Скидање хируршких конаца",
+      "name_ru": "Снятие хирургических швов",
+      "name_de": "Entfernung chirurgischer Fäden",
+      "name_tr": "Cerrahi sütür alınması",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X01018",
+      "src": "Fiksacioni zavoj",
+      "price_eur": 1.58,
+      "name_en": "Fixation Bandage",
+      "slug": "fixation-bandage",
+      "name_sr": "Fiksacioni zavoj",
+      "name_sr_cyrl": "Фиксациони завој",
+      "name_ru": "Фиксирующая повязка",
+      "name_de": "Fixationsverband",
+      "name_tr": "Fiksasyon bandajı",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "MO_HN_X01019",
+      "src": "Imobilizacija",
+      "price_eur": 1.58,
+      "name_en": "Immobilization",
+      "slug": "immobilization",
+      "name_sr": "Imobilizacija",
+      "name_sr_cyrl": "Имобилизација",
+      "name_ru": "Иммобилизация",
+      "name_de": "Ruhigstellung",
+      "name_tr": "İmmobilizasyon",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "MO_HN_X01020",
+      "src": "Fiksacija",
+      "price_eur": 0.9,
+      "name_en": "Fixation",
+      "slug": "fixation",
+      "name_sr": "Fiksacija",
+      "name_sr_cyrl": "Фиксација",
+      "name_ru": "Фиксация",
+      "name_de": "Fixation",
+      "name_tr": "Fiksasyon",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "MO_HN_X01021",
+      "src": "Lokalno apliciranje lijeka subkutano i intramuskularno",
+      "price_eur": 0.9,
+      "name_en": "Local Drug Application Subcutaneous and Intramuscular",
+      "slug": "local-drug-application-subcutaneous-and-intramuscular",
+      "name_sr": "Lokalno apliciranje lijeka subkutano i intramuskularno",
+      "name_sr_cyrl": "Локално аплицирање лијека субкутано и интрамускуларно",
+      "name_ru": "Местное введение препарата подкожно и внутримышечно",
+      "name_de": "Lokale Arzneimittelverabreichung subkutan und intramuskulär",
+      "name_tr": "Subkutan ve intramusküler ilaç uygulaması",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X02002",
+      "src": "Obrada opekotina",
+      "price_eur": 7.17,
+      "name_en": "Burn Wound Care",
+      "slug": "burn-wound-care",
+      "name_sr": "Obrada opekotina",
+      "name_sr_cyrl": "Обрада опекотина",
+      "name_ru": "Обработка ожогов",
+      "name_de": "Brandwundenversorgung",
+      "name_tr": "Yanık bakımı",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X02003",
+      "src": "Incizija apscesa",
+      "price_eur": 7.17,
+      "name_en": "Abscess Incision",
+      "slug": "abscess-incision",
+      "name_sr": "Incizija apscesa",
+      "name_sr_cyrl": "Инцизија апсцеса",
+      "name_ru": "Вскрытие абсцесса",
+      "name_de": "Abszessinzision",
+      "name_tr": "Apse insizyonu",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X02004",
+      "src": "Odstranjivanje stranog tijela iz oka (rožnjača)",
+      "price_eur": 7.17,
+      "name_en": "Eye Foreign Body Removal Cornea",
+      "slug": "eye-foreign-body-removal-cornea",
+      "name_sr": "Odstranjivanje stranog tijela iz oka (rožnjača)",
+      "name_sr_cyrl": "Одстрањивање страног тијела из ока (рожњача)",
+      "name_ru": "Удаление инородного тела из глаза (роговица)",
+      "name_de": "Fremdkörperentfernung aus dem Auge (Hornhaut)",
+      "name_tr": "Gözden yabancı cisim çıkarma (kornea)",
+      "categories": [
+        23
+      ],
+      "specialties": [
+        6
+      ]
+    },
+    {
+      "code": "MO_HN_X02005",
+      "src": "Prednja tamponada nosa",
+      "price_eur": 7.17,
+      "name_en": "Anterior Nasal Packing",
+      "slug": "anterior-nasal-packing",
+      "name_sr": "Prednja tamponada nosa",
+      "name_sr_cyrl": "Предња тампонада носа",
+      "name_ru": "Передняя тампонада носа",
+      "name_de": "Vordere Nasentamponade",
+      "name_tr": "Ön burun tamponu",
+      "categories": [
+        11
+      ],
+      "specialties": [
+        11
+      ]
+    },
+    {
+      "code": "MO_HN_X02006",
+      "src": "Kateterizacija mokraćne bešike",
+      "price_eur": 7.17,
+      "name_en": "Bladder Catheterization",
+      "slug": "bladder-catheterization",
+      "name_sr": "Kateterizacija mokraćne bešike",
+      "name_sr_cyrl": "Катетеризација мокраћне бешике",
+      "name_ru": "Катетеризация мочевого пузыря",
+      "name_de": "Blasenkatheterisierung",
+      "name_tr": "Mesane kateterizasyonu",
+      "categories": [
+        22
+      ],
+      "specialties": [
+        9
+      ]
+    },
+    {
+      "code": "MO_HN_X02007",
+      "src": "Davanje klizme (srednja)",
+      "price_eur": 2.69,
+      "name_en": "Enema Administration Medium",
+      "slug": "enema-administration-medium",
+      "name_sr": "Davanje klizme (srednja)",
+      "name_sr_cyrl": "Давање клизме (средња)",
+      "name_ru": "Постановка клизмы (средняя)",
+      "name_de": "Einlauf (mittel)",
+      "name_tr": "Lavman uygulaması (orta)",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X02008",
+      "src": "Sondiranje i ispiranje želuca",
+      "price_eur": 7.17,
+      "name_en": "Gastric Sounding and Lavage",
+      "slug": "gastric-sounding-and-lavage",
+      "name_sr": "Sondiranje i ispiranje želuca",
+      "name_sr_cyrl": "Сондирање и испирање желуца",
+      "name_ru": "Зондирование и промывание желудка",
+      "name_de": "Magensondierung und -spülung",
+      "name_tr": "Mide sondalama ve lavajı",
+      "categories": [
+        13
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X02009",
+      "src": "Namještanje trajnog katetera",
+      "price_eur": 1.79,
+      "name_en": "Indwelling Catheter Placement",
+      "slug": "indwelling-catheter-placement",
+      "name_sr": "Namještanje trajnog katetera",
+      "name_sr_cyrl": "Намјештање трајног катетера",
+      "name_ru": "Установка постоянного катетера",
+      "name_de": "Einlage eines Dauerkatheters",
+      "name_tr": "Kalıcı kateter takılması",
+      "categories": [
+        22
+      ],
+      "specialties": [
+        9
+      ]
+    },
+    {
+      "code": "MO_HN_X02010",
+      "src": "Postavljanje kanile u venu",
+      "price_eur": 4.48,
+      "name_en": "Intravenous Cannula Placement",
+      "slug": "intravenous-cannula-placement",
+      "name_sr": "Postavljanje kanile u venu",
+      "name_sr_cyrl": "Постављање каниле у вену",
+      "name_ru": "Установка венозной канюли",
+      "name_de": "Legen einer Venenkanüle",
+      "name_tr": "Damar yolu açma",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X02011",
+      "src": "Snimanje i očitavanje EKG",
+      "price_eur": 4.48,
+      "name_en": "ECG Recording and Interpretation",
+      "slug": "ecg-recording-and-interpretation",
+      "name_sr": "Snimanje i očitavanje EKG",
+      "name_sr_cyrl": "Снимање и очитавање ЕКГ",
+      "name_ru": "Запись и интерпретация ЭКГ",
+      "name_de": "EKG-Aufzeichnung und -Auswertung",
+      "name_tr": "EKG çekimi ve yorumlanması",
+      "categories": [
+        8
+      ],
+      "specialties": [
+        1
+      ]
+    },
+    {
+      "code": "MO_HN_X02012",
+      "src": "Snimanje i čitanje spirometrije",
+      "price_eur": 4.48,
+      "name_en": "Spirometry Recording and Reading",
+      "slug": "spirometry-recording-and-reading",
+      "name_sr": "Snimanje i čitanje spirometrije",
+      "name_sr_cyrl": "Снимање и читање спирометрије",
+      "name_ru": "Запись и интерпретация спирометрии",
+      "name_de": "Spirometrie-Aufzeichnung und -Auswertung",
+      "name_tr": "Spirometri çekimi ve yorumu",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_HN_X02014",
+      "src": "Repozicija paraphimose",
+      "price_eur": 7.17,
+      "name_en": "Paraphimosis Reduction",
+      "slug": "paraphimosis-reduction",
+      "name_sr": "Repozicija paraphimose",
+      "name_sr_cyrl": "Репозиција парапхимосе",
+      "name_ru": "Вправление парафимоза",
+      "name_de": "Reposition einer Paraphimose",
+      "name_tr": "Parafimoz redüksiyonu",
+      "categories": [
+        22
+      ],
+      "specialties": [
+        9
+      ]
+    },
+    {
+      "code": "MO_HN_X02015",
+      "src": "Repozicija uklještene kile",
+      "price_eur": 7.17,
+      "name_en": "Reduction of Incarcerated Hernia",
+      "slug": "reduction-of-incarcerated-hernia",
+      "name_sr": "Repozicija uklještene kile",
+      "name_sr_cyrl": "Репозиција укљештене киле",
+      "name_ru": "Вправление ущемлённой грыжи",
+      "name_de": "Reposition einer eingeklemmten Hernie",
+      "name_tr": "Boğulmuş fıtık redüksiyonu",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X02021",
+      "src": "Ekstirpacija ateroma, ciste ili manjeg benignog tumora",
+      "price_eur": 7.17,
+      "name_en": "Atheroma Cyst or Benign Tumor Excision",
+      "slug": "atheroma-cyst-or-benign-tumor-excision",
+      "name_sr": "Ekstirpacija ateroma, ciste ili manjeg benignog tumora",
+      "name_sr_cyrl": "Екстирпација атерома, цисте или мањег бенигног тумора",
+      "name_ru": "Удаление атеромы, кисты или доброкачественной опухоли",
+      "name_de": "Exzision von Atherom, Zyste oder gutartigem Tumor",
+      "name_tr": "Aterom kist veya benign tümör eksizyonu",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X03001",
+      "src": "Obrada rane sa šivanjem uz lokalnu anesteziju",
+      "price_eur": 10.75,
+      "name_en": "Wound Suturing Under Local Anesthesia",
+      "slug": "wound-suturing-under-local-anesthesia",
+      "name_sr": "Obrada rane sa šivanjem uz lokalnu anesteziju",
+      "name_sr_cyrl": "Обрада ране са шивањем уз локалну анестезију",
+      "name_ru": "Обработка раны с ушиванием под местной анестезией",
+      "name_de": "Wundnaht in Lokalanästhesie",
+      "name_tr": "Lokal anestezi altında yara dikişi",
+      "categories": [
+        31
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_X03002",
+      "src": "Defibrilacija",
+      "price_eur": 7.17,
+      "name_en": "Defibrillation",
+      "slug": "defibrillation",
+      "name_sr": "Defibrilacija",
+      "name_sr_cyrl": "Дефибрилација",
+      "name_ru": "Дефибрилляция",
+      "name_de": "Defibrillation",
+      "name_tr": "Defibrilasyon",
+      "categories": [
+        8
+      ],
+      "specialties": [
+        1
+      ]
+    },
+    {
+      "code": "MO_HN_X03003",
+      "src": "Intubacija",
+      "price_eur": 17.02,
+      "name_en": "Endotracheal Intubation",
+      "slug": "endotracheal-intubation",
+      "name_sr": "Intubacija",
+      "name_sr_cyrl": "Интубација",
+      "name_ru": "Интубация трахеи",
+      "name_de": "Endotracheale Intubation",
+      "name_tr": "Endotrakeal entübasyon",
+      "categories": [],
+      "specialties": [
+        19
+      ]
+    },
+    {
+      "code": "MO_HN_X03004",
+      "src": "Ispiranje želuca",
+      "price_eur": 10.75,
+      "name_en": "Gastric Lavage",
+      "slug": "gastric-lavage",
+      "name_sr": "Ispiranje želuca",
+      "name_sr_cyrl": "Испирање желуца",
+      "name_ru": "Промывание желудка",
+      "name_de": "Magenspülung",
+      "name_tr": "Mide yıkaması",
+      "categories": [
+        13
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_C01001",
+      "src": "Preventivni pregled u toku trudnoće (I trimestar)",
+      "price_eur": 17.92,
+      "name_en": "Pregnancy Preventive Examination First Trimester",
+      "slug": "pregnancy-preventive-examination-first-trimester",
+      "name_sr": "Preventivni pregled u toku trudnoće (I trimestar)",
+      "name_sr_cyrl": "Превентивни преглед у току трудноће (И триместар)",
+      "name_ru": "Профилактический осмотр в I триместре беременности",
+      "name_de": "Schwangerschafts-Vorsorgeuntersuchung im I. Trimester",
+      "name_tr": "1. trimester gebelik koruyucu muayenesi",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_C01002",
+      "src": "Preventivni odlazak ginekologu kod žena u četvrtoj godini ili bez trudnoće sa 35+",
+      "price_eur": 7.17,
+      "name_en": "Gynecological Preventive Visit",
+      "slug": "gynecological-preventive-visit",
+      "name_sr": "Preventivni odlazak ginekologu kod žena u četvrtoj godini ili bez trudnoće sa 35+",
+      "name_sr_cyrl": "Превентивни одлазак гинекологу код жена у четвртој години или без трудноће са 35+",
+      "name_ru": "Гинекологический профилактический визит",
+      "name_de": "Gynäkologischer Vorsorgebesuch",
+      "name_tr": "Jinekolojik koruyucu muayene",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_C01003",
+      "src": "Ultrazvučni pregled u toku trudnoće",
+      "price_eur": 14.34,
+      "name_en": "Pregnancy Ultrasound Examination",
+      "slug": "pregnancy-ultrasound-examination",
+      "name_sr": "Ultrazvučni pregled u toku trudnoće",
+      "name_sr_cyrl": "Ултразвучни преглед у току трудноће",
+      "name_ru": "УЗИ при беременности",
+      "name_de": "Ultraschalluntersuchung in der Schwangerschaft",
+      "name_tr": "Gebelik ultrason muayenesi",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_C01004",
+      "src": "Pregled i savjetovanje 6 nedjelja nakon porođaja",
+      "price_eur": 10.75,
+      "name_en": "Postpartum Examination at 6 Weeks",
+      "slug": "postpartum-examination-at-6-weeks",
+      "name_sr": "Pregled i savjetovanje 6 nedjelja nakon porođaja",
+      "name_sr_cyrl": "Преглед и савјетовање 6 недјеља након порођаја",
+      "name_ru": "Осмотр и консультация через 6 недель после родов",
+      "name_de": "Untersuchung und Beratung 6 Wochen nach der Geburt",
+      "name_tr": "Doğum sonrası 6. hafta muayenesi",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_C01005",
+      "src": "Pregled i savjetovanje nakon spontanog ili induciranog abortusa",
+      "price_eur": 10.75,
+      "name_en": "Post-Abortion Examination and Counseling",
+      "slug": "post-abortion-examination-and-counseling",
+      "name_sr": "Pregled i savjetovanje nakon spontanog ili induciranog abortusa",
+      "name_sr_cyrl": "Преглед и савјетовање након спонтаног или индуцираног абортуса",
+      "name_ru": "Осмотр и консультация после аборта",
+      "name_de": "Untersuchung und Beratung nach Abort",
+      "name_tr": "Düşük sonrası muayene ve danışma",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_C01006",
+      "src": "Pregled i savjetovanje nakon ekstrauterine gravidarne",
+      "price_eur": 10.75,
+      "name_en": "Post-Ectopic Pregnancy Examination and Counseling",
+      "slug": "post-ectopic-pregnancy-examination-and-counseling",
+      "name_sr": "Pregled i savjetovanje nakon ekstrauterine gravidarne",
+      "name_sr_cyrl": "Преглед и савјетовање након екстраутерине гравидарне",
+      "name_ru": "Осмотр и консультация после внематочной беременности",
+      "name_de": "Untersuchung und Beratung nach Eileiterschwangerschaft",
+      "name_tr": "Ektopik gebelik sonrası muayene",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_C01007",
+      "src": "Preventivni pregled žena u reproduktivnom dobu PAP test",
+      "price_eur": 14.34,
+      "name_en": "Reproductive Age Women Preventive Examination with PAP Test",
+      "slug": "reproductive-age-women-preventive-examination-with-pap-test",
+      "name_sr": "Preventivni pregled žena u reproduktivnom dobu PAP test",
+      "name_sr_cyrl": "Превентивни преглед жена у репродуктивном добу ПАП тест",
+      "name_ru": "Профилактический осмотр женщин репродуктивного возраста с PAP",
+      "name_de": "Vorsorgeuntersuchung von Frauen im gebärfähigen Alter mit PAP-Test",
+      "name_tr": "Üreme çağı kadın koruyucu muayene PAP",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_C02001",
+      "src": "Prvi kurativni pregled žena specijalistički",
+      "price_eur": 10.75,
+      "name_en": "First Specialist Curative Gynecological Examination",
+      "slug": "first-specialist-curative-gynecological-examination",
+      "name_sr": "Prvi kurativni pregled žena specijalistički",
+      "name_sr_cyrl": "Први куративни преглед жена специјалистички",
+      "name_ru": "Первичный лечебный гинекологический осмотр",
+      "name_de": "Erste fachärztliche kurative gynäkologische Untersuchung",
+      "name_tr": "İlk uzman küratif jinekolojik muayene",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_C02002",
+      "src": "Ponovni kurativni pregled žena kontrolni specijalistički",
+      "price_eur": 7.17,
+      "name_en": "Follow-up Specialist Curative Gynecological Examination",
+      "slug": "follow-up-specialist-curative-gynecological-examination",
+      "name_sr": "Ponovni kurativni pregled žena kontrolni specijalistički",
+      "name_sr_cyrl": "Поновни куративни преглед жена контролни специјалистички",
+      "name_ru": "Повторный лечебный гинекологический осмотр",
+      "name_de": "Fachärztliche kurative gynäkologische Folgeuntersuchung",
+      "name_tr": "Tekrar uzman küratif jinekolojik muayene",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_C02003",
+      "src": "Kratka posjeta ginekologu bez ponovnog pregleda",
+      "price_eur": 3.58,
+      "name_en": "Brief Gynecologist Visit Without Examination",
+      "slug": "brief-gynecologist-visit-without-examination",
+      "name_sr": "Kratka posjeta ginekologu bez ponovnog pregleda",
+      "name_sr_cyrl": "Кратка посјета гинекологу без поновног прегледа",
+      "name_ru": "Краткий визит к гинекологу без осмотра",
+      "name_de": "Kurzer Gynäkologenbesuch ohne Untersuchung",
+      "name_tr": "Muayenesiz kısa jinekolog ziyareti",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_HN_GX01017",
+      "src": "Kontrola maternalnog kontraceptivnog sredstva",
+      "price_eur": 1.79,
+      "name_en": "Contraceptive Device Check",
+      "slug": "contraceptive-device-check",
+      "name_sr": "Kontrola maternalnog kontraceptivnog sredstva",
+      "name_sr_cyrl": "Контрола матерналног контрацептивног средства",
+      "name_ru": "Контроль внутриматочного контрацептива",
+      "name_de": "Kontrolle des Verhütungsmittels",
+      "name_tr": "Doğum kontrol cihazı kontrolü",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_HN_GX01023",
+      "src": "Lokalno apliciranje lijeka vaginalete",
+      "price_eur": 3.58,
+      "name_en": "Vaginal Suppository Application",
+      "slug": "vaginal-suppository-application",
+      "name_sr": "Lokalno apliciranje lijeka vaginalete",
+      "name_sr_cyrl": "Локално аплицирање лијека вагиналете",
+      "name_ru": "Местное введение вагинальной свечи",
+      "name_de": "Vaginale Zäpfchen-Applikation",
+      "name_tr": "Vajinal supozituvar uygulaması",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_HN_GX01024",
+      "src": "Lokalno apliciranje lijeka cervikalno",
+      "price_eur": 7.17,
+      "name_en": "Cervical Drug Application",
+      "slug": "cervical-drug-application",
+      "name_sr": "Lokalno apliciranje lijeka cervikalno",
+      "name_sr_cyrl": "Локално аплицирање лијека цервикално",
+      "name_ru": "Цервикальное введение препарата",
+      "name_de": "Zervikale Arzneimittelapplikation",
+      "name_tr": "Servikal ilaç uygulaması",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_HN_GX01025",
+      "src": "Postavljanje IUD",
+      "price_eur": 3.58,
+      "name_en": "Intrauterine Device Insertion",
+      "slug": "intrauterine-device-insertion",
+      "name_sr": "Postavljanje IUD",
+      "name_sr_cyrl": "Постављање ИУД",
+      "name_ru": "Установка ВМС",
+      "name_de": "Einlegen einer Spirale",
+      "name_tr": "Rahim içi araç takılması",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_HN_GX01026",
+      "src": "Skidanje IUD",
+      "price_eur": 7.17,
+      "name_en": "Intrauterine Device Removal",
+      "slug": "intrauterine-device-removal",
+      "name_sr": "Skidanje IUD",
+      "name_sr_cyrl": "Скидање ИУД",
+      "name_ru": "Удаление ВМС",
+      "name_de": "Entfernung einer Spirale",
+      "name_tr": "Rahim içi araç çıkarılması",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_HN_GX02016",
+      "src": "Kolposkopski pregled",
+      "price_eur": 7.17,
+      "name_en": "Colposcopy Examination",
+      "slug": "colposcopy-examination",
+      "name_sr": "Kolposkopski pregled",
+      "name_sr_cyrl": "Колпоскопски преглед",
+      "name_ru": "Кольпоскопия",
+      "name_de": "Kolposkopie",
+      "name_tr": "Kolposkopi muayenesi",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_HN_GX02017",
+      "src": "Incizija i drenaža Bartolinijeve žljezde i vulve",
+      "price_eur": 7.17,
+      "name_en": "Bartholin Gland and Vulva Incision and Drainage",
+      "slug": "bartholin-gland-and-vulva-incision-and-drainage",
+      "name_sr": "Incizija i drenaža Bartolinijeve žljezde i vulve",
+      "name_sr_cyrl": "Инцизија и дренажа Бартолинијеве жљезде и вулве",
+      "name_ru": "Вскрытие и дренаж бартолиновой железы",
+      "name_de": "Inzision und Drainage der Bartholin-Drüse",
+      "name_tr": "Bartolin bezi insizyon ve drenajı",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_HN_GX02018",
+      "src": "Abrazija kondiloma vulve i vagine",
+      "price_eur": 7.17,
+      "name_en": "Vulva and Vagina Condyloma Removal",
+      "slug": "vulva-and-vagina-condyloma-removal",
+      "name_sr": "Abrazija kondiloma vulve i vagine",
+      "name_sr_cyrl": "Абразија кондилома вулве и вагине",
+      "name_ru": "Удаление кондилом вульвы и влагалища",
+      "name_de": "Abrasion von Kondylomen an Vulva und Vagina",
+      "name_tr": "Vulva ve vajina kondilom abrazyonu",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_HN_GX03005",
+      "src": "Uzimanje biopsije vulve sa slanjem na analizu",
+      "price_eur": 8.6,
+      "name_en": "Vulva Biopsy with Lab Analysis",
+      "slug": "vulva-biopsy-with-lab-analysis",
+      "name_sr": "Uzimanje biopsije vulve sa slanjem na analizu",
+      "name_sr_cyrl": "Узимање биопсије вулве са слањем на анализу",
+      "name_ru": "Биопсия вульвы с отправкой на анализ",
+      "name_de": "Vulvabiopsie mit Laboranalyse",
+      "name_tr": "Vulva biyopsisi laboratuvar analizi",
+      "categories": [
+        7,
+        28
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_HN_GX03006",
+      "src": "Uzimanje biopsije cerviksa sa slanjem na analizu",
+      "price_eur": 8.6,
+      "name_en": "Cervical Biopsy with Lab Analysis",
+      "slug": "cervical-biopsy-with-lab-analysis",
+      "name_sr": "Uzimanje biopsije cerviksa sa slanjem na analizu",
+      "name_sr_cyrl": "Узимање биопсије цервикса са слањем на анализу",
+      "name_ru": "Биопсия шейки матки с отправкой на анализ",
+      "name_de": "Zervixbiopsie mit Laboranalyse",
+      "name_tr": "Serviks biyopsisi laboratuvar analizi",
+      "categories": [
+        7,
+        28
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_HN_GX03007",
+      "src": "Uzimanje biopsije endometrijuma sa slanjem na analizu",
+      "price_eur": 8.6,
+      "name_en": "Endometrial Biopsy with Lab Analysis",
+      "slug": "endometrial-biopsy-with-lab-analysis",
+      "name_sr": "Uzimanje biopsije endometrijuma sa slanjem na analizu",
+      "name_sr_cyrl": "Узимање биопсије ендометријума са слањем на анализу",
+      "name_ru": "Биопсия эндометрия с отправкой на анализ",
+      "name_de": "Endometriumbiopsie mit Laboranalyse",
+      "name_tr": "Endometrium biyopsisi laboratuvar analizi",
+      "categories": [
+        7,
+        28
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_HN_GX03008",
+      "src": "Polipektomija (gribica materice ili kavum uteri)",
+      "price_eur": 8.6,
+      "name_en": "Cervical or Uterine Polypectomy",
+      "slug": "cervical-or-uterine-polypectomy",
+      "name_sr": "Polipektomija (gribica materice ili kavum uteri)",
+      "name_sr_cyrl": "Полипектомија (грибица материце или кавум утери)",
+      "name_ru": "Полипэктомия шейки или полости матки",
+      "name_de": "Zervix- oder Uterus-Polypektomie",
+      "name_tr": "Serviks veya uterus polipektomisi",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_HN_GX03009",
+      "src": "Amnioskopija",
+      "price_eur": 8.6,
+      "name_en": "Amnioscopy",
+      "slug": "amnioscopy",
+      "name_sr": "Amnioskopija",
+      "name_sr_cyrl": "Амниоскопија",
+      "name_ru": "Амниоскопия",
+      "name_de": "Amnioskopie",
+      "name_tr": "Amniyoskopi",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_HN_GX03010",
+      "src": "Ultrazvučni pregled dojke",
+      "price_eur": 14.34,
+      "name_en": "Breast Ultrasound Examination",
+      "slug": "breast-ultrasound-examination",
+      "name_sr": "Ultrazvučni pregled dojke",
+      "name_sr_cyrl": "Ултразвучни преглед дојке",
+      "name_ru": "УЗИ молочной железы",
+      "name_de": "Brustultraschalluntersuchung",
+      "name_tr": "Meme ultrason muayenesi",
+      "categories": [
+        7
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_GX03013",
+      "src": "CTG kardiotokografija",
+      "price_eur": 8.6,
+      "name_en": "Cardiotocography CTG",
+      "slug": "cardiotocography-ctg",
+      "name_sr": "CTG kardiotokografija",
+      "name_sr_cyrl": "ЦТГ кардиотокографија",
+      "name_ru": "Кардиотокография КТГ",
+      "name_de": "Kardiotokographie",
+      "name_tr": "Kardiyotokografi CTG",
+      "categories": [
+        7
+      ],
+      "specialties": [
+        5
+      ]
+    },
+    {
+      "code": "MO_G01001",
+      "src": "Tuberkulinsko testiranje",
+      "price_eur": 3.78,
+      "name_en": "Tuberculin Skin Test",
+      "slug": "tuberculin-skin-test",
+      "name_sr": "Tuberkulinsko testiranje",
+      "name_sr_cyrl": "Туберкулинско тестирање",
+      "name_ru": "Туберкулиновая проба",
+      "name_de": "Tuberkulinhauttest",
+      "name_tr": "Tüberkülin cilt testi",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_G01002",
+      "src": "Pregled odraslih po registrovanim TBC",
+      "price_eur": 15.11,
+      "name_en": "Adult Examination for Registered TB",
+      "slug": "adult-examination-for-registered-tb",
+      "name_sr": "Pregled odraslih po registrovanim TBC",
+      "name_sr_cyrl": "Преглед одраслих по регистрованим ТБЦ",
+      "name_ru": "Осмотр взрослых по зарегистрированному ТБ",
+      "name_de": "Untersuchung Erwachsener bei registrierter TB",
+      "name_tr": "Kayıtlı TB için yetişkin muayenesi",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_G01003",
+      "src": "Pregled osoba u kontaktu sa TBC",
+      "price_eur": 15.11,
+      "name_en": "TB Contact Tracing Examination",
+      "slug": "tb-contact-tracing-examination",
+      "name_sr": "Pregled osoba u kontaktu sa TBC",
+      "name_sr_cyrl": "Преглед особа у контакту са ТБЦ",
+      "name_ru": "Осмотр контактных лиц по ТБ",
+      "name_de": "TB-Kontaktuntersuchung",
+      "name_tr": "TB temaslı muayenesi",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_G01004",
+      "src": "Pregled bolesnika sa hemoprofilaksom",
+      "price_eur": 15.11,
+      "name_en": "Patient Examination with Chemoprophylaxis",
+      "slug": "patient-examination-with-chemoprophylaxis",
+      "name_sr": "Pregled bolesnika sa hemoprofilaksom",
+      "name_sr_cyrl": "Преглед болесника са хемопрофилаксом",
+      "name_ru": "Осмотр пациента с химиопрофилактикой",
+      "name_de": "Untersuchung mit Chemoprophylaxe",
+      "name_tr": "Kemoprofilaksili hasta muayenesi",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_G02001",
+      "src": "Prvi kurativni pregled pulmolog specijalistički",
+      "price_eur": 15.11,
+      "name_en": "First Pulmonologist Curative Examination",
+      "slug": "first-pulmonologist-curative-examination",
+      "name_sr": "Prvi kurativni pregled pulmolog specijalistički",
+      "name_sr_cyrl": "Први куративни преглед пулмолог специјалистички",
+      "name_ru": "Первичный лечебный осмотр пульмонолога",
+      "name_de": "Erste kurative Pneumologen-Untersuchung",
+      "name_tr": "İlk küratif pnömoloji muayenesi",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_G02002",
+      "src": "Ponovni kurativni pregled pulmolog specijalistički",
+      "price_eur": 11.34,
+      "name_en": "Follow-up Pulmonologist Curative Examination",
+      "slug": "follow-up-pulmonologist-curative-examination",
+      "name_sr": "Ponovni kurativni pregled pulmolog specijalistički",
+      "name_sr_cyrl": "Поновни куративни преглед пулмолог специјалистички",
+      "name_ru": "Повторный лечебный осмотр пульмонолога",
+      "name_de": "Kurative Pneumologen-Folgeuntersuchung",
+      "name_tr": "Tekrar pnömoloji muayenesi",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_HN_TBCX01008",
+      "src": "Uzimanje sputuma za analizu na bakterije i gljivice",
+      "price_eur": 0.92,
+      "name_en": "Sputum Collection for Bacterial and Fungal Analysis",
+      "slug": "sputum-collection-for-bacterial-and-fungal-analysis",
+      "name_sr": "Uzimanje sputuma za analizu na bakterije i gljivice",
+      "name_sr_cyrl": "Узимање спутума за анализу на бактерије и гљивице",
+      "name_ru": "Сбор мокроты для анализа на бактерии и грибы",
+      "name_de": "Sputumprobe für Bakterien- und Pilzanalyse",
+      "name_tr": "Bakteri ve mantar analizi için balgam toplama",
+      "categories": [
+        28
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_HN_TBCX01009",
+      "src": "Davanje inhalacije (TBC)",
+      "price_eur": 1.83,
+      "name_en": "Inhalation TB Center",
+      "slug": "inhalation-tb-center",
+      "name_sr": "Davanje inhalacije (TBC)",
+      "name_sr_cyrl": "Давање инхалације (ТБЦ)",
+      "name_ru": "Ингаляция (TB)",
+      "name_de": "Inhalation TB-Zentrum",
+      "name_tr": "İnhalasyon TB merkezi",
+      "categories": [
+        29
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_X01022",
+      "src": "Direktno opservirana terapija za TBC (DOTs)",
+      "price_eur": 0.92,
+      "name_en": "Directly Observed Treatment for TB DOTS",
+      "slug": "directly-observed-treatment-for-tb-dots",
+      "name_sr": "Direktno opservirana terapija za TBC (DOTs)",
+      "name_sr_cyrl": "Директно опсервирана терапија за ТБЦ (ДОТс)",
+      "name_ru": "Терапия под прямым наблюдением для ТБ (DOTs)",
+      "name_de": "Direkt überwachte TB-Therapie (DOTs)",
+      "name_tr": "Doğrudan gözetimli TB tedavisi DOTs",
+      "categories": [
+        29
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_HN_TBCX02001",
+      "src": "Ispitivanje kožne preosjetljivosti na inhalacione alergene",
+      "price_eur": 12.82,
+      "name_en": "Inhalation Allergen Skin Prick Test",
+      "slug": "inhalation-allergen-skin-prick-test",
+      "name_sr": "Ispitivanje kožne preosjetljivosti na inhalacione alergene",
+      "name_sr_cyrl": "Испитивање кожне преосјетљивости на инхалационе алергене",
+      "name_ru": "Кожная проба на ингаляционные аллергены",
+      "name_de": "Allergie-Pricktest auf Inhalationsallergene",
+      "name_tr": "İnhalasyon alerjeni cilt prick testi",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_HN_TBCX02013D",
+      "src": "Dijaskopski (fluo) pregled",
+      "price_eur": 4.58,
+      "name_en": "Fluoroscopy Examination",
+      "slug": "fluoroscopy-examination",
+      "name_sr": "Dijaskopski (fluo) pregled",
+      "name_sr_cyrl": "Дијаскопски (флуо) преглед",
+      "name_ru": "Рентгеноскопическое исследование",
+      "name_de": "Durchleuchtungsuntersuchung",
+      "name_tr": "Floroskopik muayene",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_HN_TBCX02013P",
+      "src": "Dijagnostička punkcija pleure",
+      "price_eur": 14.66,
+      "name_en": "Diagnostic Pleural Puncture",
+      "slug": "diagnostic-pleural-puncture",
+      "name_sr": "Dijagnostička punkcija pleure",
+      "name_sr_cyrl": "Дијагностичка пункција плеуре",
+      "name_ru": "Диагностическая плевральная пункция",
+      "name_de": "Diagnostische Pleurapunktion",
+      "name_tr": "Tanısal plevral ponksiyon",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_HN_TBCX03011",
+      "src": "Uzimanje sputuma na citološku analizu",
+      "price_eur": 0.92,
+      "name_en": "Sputum Cytology Collection",
+      "slug": "sputum-cytology-collection",
+      "name_sr": "Uzimanje sputuma na citološku analizu",
+      "name_sr_cyrl": "Узимање спутума на цитолошку анализу",
+      "name_ru": "Сбор мокроты для цитологии",
+      "name_de": "Sputumprobe für Zytologie",
+      "name_tr": "Sitoloji için balgam toplama",
+      "categories": [
+        28
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_H01001",
+      "src": "Prvi pregled psihijatra",
+      "price_eur": 27.18,
+      "name_en": "First Psychiatrist Examination",
+      "slug": "first-psychiatrist-examination",
+      "name_sr": "Prvi pregled psihijatra",
+      "name_sr_cyrl": "Први преглед психијатра",
+      "name_ru": "Первичный осмотр психиатра",
+      "name_de": "Erste psychiatrische Untersuchung",
+      "name_tr": "İlk psikiyatri muayenesi",
+      "categories": [],
+      "specialties": [
+        21
+      ]
+    },
+    {
+      "code": "MO_H01002",
+      "src": "Ponovni pregled psihijatra",
+      "price_eur": 18.12,
+      "name_en": "Follow-up Psychiatrist Examination",
+      "slug": "follow-up-psychiatrist-examination",
+      "name_sr": "Ponovni pregled psihijatra",
+      "name_sr_cyrl": "Поновни преглед психијатра",
+      "name_ru": "Повторный осмотр психиатра",
+      "name_de": "Psychiatrische Folgeuntersuchung",
+      "name_tr": "Tekrar psikiyatri muayenesi",
+      "categories": [],
+      "specialties": [
+        21
+      ]
+    },
+    {
+      "code": "MO_H01003",
+      "src": "Kratka posjeta psihijatru bez ponovnog pregleda",
+      "price_eur": 9.06,
+      "name_en": "Brief Psychiatrist Visit Without Examination",
+      "slug": "brief-psychiatrist-visit-without-examination",
+      "name_sr": "Kratka posjeta psihijatru bez ponovnog pregleda",
+      "name_sr_cyrl": "Кратка посјета психијатру без поновног прегледа",
+      "name_ru": "Краткий визит к психиатру",
+      "name_de": "Kurzer Psychiaterbesuch",
+      "name_tr": "Muayenesiz kısa psikiyatri ziyareti",
+      "categories": [],
+      "specialties": [
+        21
+      ]
+    },
+    {
+      "code": "MO_H01004",
+      "src": "Individualna terapija savjeti psihijatra",
+      "price_eur": 18.12,
+      "name_en": "Individual Psychiatric Therapy Counseling",
+      "slug": "individual-psychiatric-therapy-counseling",
+      "name_sr": "Individualna terapija savjeti psihijatra",
+      "name_sr_cyrl": "Индивидуална терапија савјети психијатра",
+      "name_ru": "Индивидуальная психиатрическая терапия",
+      "name_de": "Individuelle psychiatrische Therapie",
+      "name_tr": "Bireysel psikiyatrik terapi",
+      "categories": [],
+      "specialties": [
+        21
+      ]
+    },
+    {
+      "code": "MO_H01005",
+      "src": "Dodatna individualna terapija (verzodvalna)",
+      "price_eur": 27.18,
+      "name_en": "Additional Individual Therapy",
+      "slug": "additional-individual-therapy",
+      "name_sr": "Dodatna individualna terapija (verzodvalna)",
+      "name_sr_cyrl": "Додатна индивидуална терапија (верзодвална)",
+      "name_ru": "Дополнительная индивидуальная терапия",
+      "name_de": "Zusätzliche Einzeltherapie",
+      "name_tr": "Ek bireysel terapi",
+      "categories": [],
+      "specialties": [
+        21
+      ]
+    },
+    {
+      "code": "MO_H01006",
+      "src": "Grupna psihoterapija psihodinamičkih i sociodinamičkih konflikata",
+      "price_eur": 72.47,
+      "name_en": "Group Psychodynamic and Sociodynamic Therapy",
+      "slug": "group-psychodynamic-and-sociodynamic-therapy",
+      "name_sr": "Grupna psihoterapija psihodinamičkih i sociodinamičkih konflikata",
+      "name_sr_cyrl": "Групна психотерапија психодинамичких и социодинамичких конфликата",
+      "name_ru": "Групповая психодинамическая терапия",
+      "name_de": "Psychodynamische und soziodynamische Gruppentherapie",
+      "name_tr": "Grup psikodinamik terapi",
+      "categories": [],
+      "specialties": [
+        21
+      ]
+    },
+    {
+      "code": "MO_H01007",
+      "src": "Grupna psihoterapija kod osoba sa bolestima zavisnosti",
+      "price_eur": 72.47,
+      "name_en": "Addiction Group Psychotherapy",
+      "slug": "addiction-group-psychotherapy",
+      "name_sr": "Grupna psihoterapija kod osoba sa bolestima zavisnosti",
+      "name_sr_cyrl": "Групна психотерапија код особа са болестима зависности",
+      "name_ru": "Групповая психотерапия зависимостей",
+      "name_de": "Sucht-Gruppentherapie",
+      "name_tr": "Bağımlılık grup terapisi",
+      "categories": [],
+      "specialties": [
+        21
+      ]
+    },
+    {
+      "code": "MO_H01008",
+      "src": "Porodična psihoterapija (terapija bračnih i drugih parova)",
+      "price_eur": 54.35,
+      "name_en": "Family and Couples Psychotherapy",
+      "slug": "family-and-couples-psychotherapy",
+      "name_sr": "Porodična psihoterapija (terapija bračnih i drugih parova)",
+      "name_sr_cyrl": "Породична психотерапија (терапија брачних и других парова)",
+      "name_ru": "Семейная и парная психотерапия",
+      "name_de": "Familien- und Paartherapie",
+      "name_tr": "Aile ve çift psikoterapisi",
+      "categories": [],
+      "specialties": [
+        21
+      ]
+    },
+    {
+      "code": "MO_H01009",
+      "src": "Analitički sumnjivni razgovor",
+      "price_eur": 36.23,
+      "name_en": "Analytical Therapy Session",
+      "slug": "analytical-therapy-session",
+      "name_sr": "Analitički sumnjivni razgovor",
+      "name_sr_cyrl": "Аналитички сумњивни разговор",
+      "name_ru": "Аналитическая беседа",
+      "name_de": "Analytisches Gespräch",
+      "name_tr": "Analitik görüşme",
+      "categories": [],
+      "specialties": [
+        21
+      ]
+    },
+    {
+      "code": "MO_H01010",
+      "src": "Psihoterapija ponašanja",
+      "price_eur": 36.23,
+      "name_en": "Behavioral Psychotherapy",
+      "slug": "behavioral-psychotherapy",
+      "name_sr": "Psihoterapija ponašanja",
+      "name_sr_cyrl": "Психотерапија понашања",
+      "name_ru": "Поведенческая психотерапия",
+      "name_de": "Verhaltenspsychotherapie",
+      "name_tr": "Davranış psikoterapisi",
+      "categories": [],
+      "specialties": [
+        21
+      ]
+    },
+    {
+      "code": "MO_H01011",
+      "src": "Tehnika relaksacije",
+      "price_eur": 30.2,
+      "name_en": "Relaxation Technique",
+      "slug": "relaxation-technique",
+      "name_sr": "Tehnika relaksacije",
+      "name_sr_cyrl": "Техника релаксације",
+      "name_ru": "Техника релаксации",
+      "name_de": "Entspannungstechnik",
+      "name_tr": "Gevşeme tekniği",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H01012",
+      "src": "Kraći psihodijagnostički intervju",
+      "price_eur": 9.06,
+      "name_en": "Brief Psychodiagnostic Interview",
+      "slug": "brief-psychodiagnostic-interview",
+      "name_sr": "Kraći psihodijagnostički intervju",
+      "name_sr_cyrl": "Краћи психодијагностички интервју",
+      "name_ru": "Короткое психодиагностическое интервью",
+      "name_de": "Kurzes psychodiagnostisches Interview",
+      "name_tr": "Kısa psikotanı görüşmesi",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H01013",
+      "src": "Procjena psihomotornog razvoja djeteta",
+      "price_eur": 72.47,
+      "name_en": "Pediatric Psychomotor Development Assessment",
+      "slug": "pediatric-psychomotor-development-assessment",
+      "name_sr": "Procjena psihomotornog razvoja djeteta",
+      "name_sr_cyrl": "Процјена психомоторног развоја дјетета",
+      "name_ru": "Оценка психомоторного развития ребёнка",
+      "name_de": "Beurteilung der psychomotorischen Entwicklung des Kindes",
+      "name_tr": "Çocuk psikomotor gelişim değerlendirmesi",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H01014",
+      "src": "Kratki klinički test procjene intelektualnog statusa djece do 15 godina",
+      "price_eur": 27.18,
+      "name_en": "Brief Pediatric Intellectual Status Test Under 15",
+      "slug": "brief-pediatric-intellectual-status-test-under-15",
+      "name_sr": "Kratki klinički test procjene intelektualnog statusa djece do 15 godina",
+      "name_sr_cyrl": "Кратки клинички тест процјене интелектуалног статуса дјеце до 15 година",
+      "name_ru": "Краткий тест интеллектуального статуса детей до 15",
+      "name_de": "Kurzer klinischer Test zur Beurteilung des intellektuellen Status (unter 15)",
+      "name_tr": "15 yaş altı kısa entelektüel durum testi",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H01015",
+      "src": "Kratki klinički test procjene intelektualnog statusa odraslih",
+      "price_eur": 18.12,
+      "name_en": "Brief Adult Intellectual Status Test",
+      "slug": "brief-adult-intellectual-status-test",
+      "name_sr": "Kratki klinički test procjene intelektualnog statusa odraslih",
+      "name_sr_cyrl": "Кратки клинички тест процјене интелектуалног статуса одраслих",
+      "name_ru": "Краткий тест интеллектуального статуса взрослых",
+      "name_de": "Kurzer klinischer Test zur Beurteilung des intellektuellen Status (Erwachsene)",
+      "name_tr": "Yetişkin kısa entelektüel durum testi",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H01016",
+      "src": "Procjena strukture ličnosti djece do 15 godina",
+      "price_eur": 48.31,
+      "name_en": "Pediatric Personality Structure Assessment Under 15",
+      "slug": "pediatric-personality-structure-assessment-under-15",
+      "name_sr": "Procjena strukture ličnosti djece do 15 godina",
+      "name_sr_cyrl": "Процјена структуре личности дјеце до 15 година",
+      "name_ru": "Оценка структуры личности детей до 15",
+      "name_de": "Beurteilung der Persönlichkeitsstruktur (unter 15)",
+      "name_tr": "15 yaş altı kişilik yapısı değerlendirmesi",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H01017",
+      "src": "Procjena strukture ličnosti odraslih",
+      "price_eur": 30.2,
+      "name_en": "Adult Personality Structure Assessment",
+      "slug": "adult-personality-structure-assessment",
+      "name_sr": "Procjena strukture ličnosti odraslih",
+      "name_sr_cyrl": "Процјена структуре личности одраслих",
+      "name_ru": "Оценка структуры личности взрослых",
+      "name_de": "Beurteilung der Persönlichkeitsstruktur Erwachsener",
+      "name_tr": "Yetişkin kişilik yapısı değerlendirmesi",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H01018",
+      "src": "Kliničko ispitivanje pojedinačnih funkcija djece do 15 godina",
+      "price_eur": 15.1,
+      "name_en": "Pediatric Individual Function Clinical Testing Under 15",
+      "slug": "pediatric-individual-function-clinical-testing-under-15",
+      "name_sr": "Kliničko ispitivanje pojedinačnih funkcija djece do 15 godina",
+      "name_sr_cyrl": "Клиничко испитивање појединачних функција дјеце до 15 година",
+      "name_ru": "Клиническое тестирование функций детей до 15",
+      "name_de": "Klinische Untersuchung einzelner Funktionen (unter 15)",
+      "name_tr": "15 yaş altı bireysel fonksiyon klinik testi",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H01019",
+      "src": "Kliničko ispitivanje pojedinačnih funkcija odraslih",
+      "price_eur": 8.56,
+      "name_en": "Adult Individual Function Clinical Testing",
+      "slug": "adult-individual-function-clinical-testing",
+      "name_sr": "Kliničko ispitivanje pojedinačnih funkcija odraslih",
+      "name_sr_cyrl": "Клиничко испитивање појединачних функција одраслих",
+      "name_ru": "Клиническое тестирование функций взрослых",
+      "name_de": "Klinische Untersuchung einzelner Funktionen Erwachsener",
+      "name_tr": "Yetişkin bireysel fonksiyon klinik testi",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H01020",
+      "src": "Obrada rezultata, integracija i pisanje nalaza",
+      "price_eur": 72.47,
+      "name_en": "Results Processing Integration and Report Writing",
+      "slug": "results-processing-integration-and-report-writing",
+      "name_sr": "Obrada rezultata, integracija i pisanje nalaza",
+      "name_sr_cyrl": "Обрада резултата, интеграција и писање налаза",
+      "name_ru": "Обработка и интеграция результатов, написание заключения",
+      "name_de": "Ergebnisverarbeitung, Integration und Befundschreiben",
+      "name_tr": "Sonuç işleme, entegrasyon ve rapor yazımı",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H01021",
+      "src": "Heteroanamneza",
+      "price_eur": 9.06,
+      "name_en": "Hetero-anamnesis",
+      "slug": "hetero-anamnesis",
+      "name_sr": "Heteroanamneza",
+      "name_sr_cyrl": "Хетероанамнеза",
+      "name_ru": "Гетероанамнез",
+      "name_de": "Heteroanamnese",
+      "name_tr": "Heteroanamnez",
+      "categories": [],
+      "specialties": [
+        21
+      ]
+    },
+    {
+      "code": "MO_H01022",
+      "src": "Savjet roditeljima i članovima porodice",
+      "price_eur": 9.06,
+      "name_en": "Family Counseling",
+      "slug": "family-counseling",
+      "name_sr": "Savjet roditeljima i članovima porodice",
+      "name_sr_cyrl": "Савјет родитељима и члановима породице",
+      "name_ru": "Консультация родителей и членов семьи",
+      "name_de": "Beratung von Eltern und Familienangehörigen",
+      "name_tr": "Aile danışmanlığı",
+      "categories": [],
+      "specialties": [
+        21
+      ]
+    },
+    {
+      "code": "MO_H01023",
+      "src": "Konsultacija stručnog tima o pacijentu",
+      "price_eur": 18.12,
+      "name_en": "Multidisciplinary Team Patient Consultation",
+      "slug": "multidisciplinary-team-patient-consultation",
+      "name_sr": "Konsultacija stručnog tima o pacijentu",
+      "name_sr_cyrl": "Консултација стручног тима о пацијенту",
+      "name_ru": "Консультация команды специалистов о пациенте",
+      "name_de": "Konsultation des Fachteams zum Patienten",
+      "name_tr": "Uzman ekip hasta konsültasyonu",
+      "categories": [],
+      "specialties": [
+        21
+      ]
+    },
+    {
+      "code": "MO_H02001",
+      "src": "Anamneza dijagnostički intervju",
+      "price_eur": 13.18,
+      "name_en": "Anamnesis Diagnostic Interview",
+      "slug": "anamnesis-diagnostic-interview",
+      "name_sr": "Anamneza dijagnostički intervju",
+      "name_sr_cyrl": "Анамнеза дијагностички интервју",
+      "name_ru": "Анамнез и диагностическое интервью",
+      "name_de": "Anamnese-Diagnoseinterview",
+      "name_tr": "Anamnez tanı görüşmesi",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02002",
+      "src": "Prikupljanje podataka psihološkim testovima kategorije A",
+      "price_eur": 13.18,
+      "name_en": "Psychological Test Data Collection Category A",
+      "slug": "psychological-test-data-collection-category-a",
+      "name_sr": "Prikupljanje podataka psihološkim testovima kategorije A",
+      "name_sr_cyrl": "Прикупљање података психолошким тестовима категорије А",
+      "name_ru": "Сбор данных психологическими тестами категории A",
+      "name_de": "Datenerhebung mit psychologischen Tests Kategorie A",
+      "name_tr": "Psikolojik test kategori A veri toplama",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02003",
+      "src": "Prikupljanje podataka psihološkim testovima kategorije B",
+      "price_eur": 21.96,
+      "name_en": "Psychological Test Data Collection Category B",
+      "slug": "psychological-test-data-collection-category-b",
+      "name_sr": "Prikupljanje podataka psihološkim testovima kategorije B",
+      "name_sr_cyrl": "Прикупљање података психолошким тестовима категорије Б",
+      "name_ru": "Сбор данных психологическими тестами категории B",
+      "name_de": "Datenerhebung mit psychologischen Tests Kategorie B",
+      "name_tr": "Psikolojik test kategori B veri toplama",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02004",
+      "src": "Prikupljanje podataka psihološkim testovima kategorije C",
+      "price_eur": 35.14,
+      "name_en": "Psychological Test Data Collection Category C",
+      "slug": "psychological-test-data-collection-category-c",
+      "name_sr": "Prikupljanje podataka psihološkim testovima kategorije C",
+      "name_sr_cyrl": "Прикупљање података психолошким тестовима категорије Ц",
+      "name_ru": "Сбор данных психологическими тестами категории C",
+      "name_de": "Datenerhebung mit psychologischen Tests Kategorie C",
+      "name_tr": "Psikolojik test kategori C veri toplama",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02005",
+      "src": "Prikupljanje podataka psihološkim testovima kategorije D",
+      "price_eur": 52.7,
+      "name_en": "Psychological Test Data Collection Category D",
+      "slug": "psychological-test-data-collection-category-d",
+      "name_sr": "Prikupljanje podataka psihološkim testovima kategorije D",
+      "name_sr_cyrl": "Прикупљање података психолошким тестовима категорије Д",
+      "name_ru": "Сбор данных психологическими тестами категории D",
+      "name_de": "Datenerhebung mit psychologischen Tests Kategorie D",
+      "name_tr": "Psikolojik test kategori D veri toplama",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02006",
+      "src": "Procjena organicnosti",
+      "price_eur": 52.7,
+      "name_en": "Organicity Assessment",
+      "slug": "organicity-assessment",
+      "name_sr": "Procjena organicnosti",
+      "name_sr_cyrl": "Процјена органицности",
+      "name_ru": "Оценка органичности",
+      "name_de": "Organizitätsbeurteilung",
+      "name_tr": "Organisite değerlendirmesi",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02007",
+      "src": "Dijagnostički intervju djeteta sa posebnim potrebama",
+      "price_eur": 26.35,
+      "name_en": "Special Needs Child Diagnostic Interview",
+      "slug": "special-needs-child-diagnostic-interview",
+      "name_sr": "Dijagnostički intervju djeteta sa posebnim potrebama",
+      "name_sr_cyrl": "Дијагностички интервју дјетета са посебним потребама",
+      "name_ru": "Диагностическое интервью ребёнка с особыми потребностями",
+      "name_de": "Diagnoseinterview Kind mit besonderen Bedürfnissen",
+      "name_tr": "Özel gereksinimli çocuk tanı görüşmesi",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02008",
+      "src": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Goodenough test",
+      "price_eur": 9.88,
+      "name_en": "Goodenough Intelligence Test for Special Needs Children Under 14",
+      "slug": "goodenough-intelligence-test-for-special-needs-children-under-14",
+      "name_sr": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Goodenough test",
+      "name_sr_cyrl": "Процјена интелектуалних способности дјетета СПП до 14 година Гооденоугх тест",
+      "name_ru": "Тест интеллекта Гуденафа SPP до 14 лет",
+      "name_de": "Goodenough-Intelligenztest für SPP unter 14",
+      "name_tr": "Goodenough zekâ testi 14 yaş altı SPP",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02009",
+      "src": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Binet-Simon",
+      "price_eur": 12.63,
+      "name_en": "Binet-Simon Intelligence Test for Special Needs Children Under 14",
+      "slug": "binet-simon-intelligence-test-for-special-needs-children-under-14",
+      "name_sr": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Binet-Simon",
+      "name_sr_cyrl": "Процјена интелектуалних способности дјетета СПП до 14 година Бинет-Симон",
+      "name_ru": "Тест Бине-Симона SPP до 14 лет",
+      "name_de": "Binet-Simon-Test für SPP unter 14",
+      "name_tr": "Binet-Simon testi 14 yaş altı SPP",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02010",
+      "src": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Progresivne matrice",
+      "price_eur": 11.25,
+      "name_en": "Progressive Matrices Test for Special Needs Children Under 14",
+      "slug": "progressive-matrices-test-for-special-needs-children-under-14",
+      "name_sr": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Progresivne matrice",
+      "name_sr_cyrl": "Процјена интелектуалних способности дјетета СПП до 14 година Прогресивне матрице",
+      "name_ru": "Прогрессивные матрицы SPP до 14 лет",
+      "name_de": "Progressive Matrizen für SPP unter 14",
+      "name_tr": "Progresif matris testi 14 yaş altı SPP",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02011",
+      "src": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Viti test",
+      "price_eur": 15.37,
+      "name_en": "Viti Test for Special Needs Children Under 14",
+      "slug": "viti-test-for-special-needs-children-under-14",
+      "name_sr": "Procjena intelektualnih sposobnosti djeteta SPP do 14 godina Viti test",
+      "name_sr_cyrl": "Процјена интелектуалних способности дјетета СПП до 14 година Вити тест",
+      "name_ru": "Тест Вити SPP до 14 лет",
+      "name_de": "Viti-Test für SPP unter 14",
+      "name_tr": "Viti testi 14 yaş altı SPP",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02012",
+      "src": "Procjena intelektualnih sposobnosti djeteta SPP preko 14 godina W-B skala",
+      "price_eur": 12.63,
+      "name_en": "Wechsler-Bellevue Test for Special Needs Children Over 14",
+      "slug": "wechsler-bellevue-test-for-special-needs-children-over-14",
+      "name_sr": "Procjena intelektualnih sposobnosti djeteta SPP preko 14 godina W-B skala",
+      "name_sr_cyrl": "Процјена интелектуалних способности дјетета СПП преко 14 година W-Б скала",
+      "name_ru": "Шкала Векслера-Беллевю SPP старше 14",
+      "name_de": "Wechsler-Bellevue-Skala für SPP über 14",
+      "name_tr": "Wechsler-Bellevue ölçeği 14 yaş üstü SPP",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02013",
+      "src": "Procjena intelektualnih sposobnosti djeteta SPP preko 14 godina W-B skala (alt)",
+      "price_eur": 12.63,
+      "name_en": "Wechsler-Bellevue Test Variant for Special Needs Over 14",
+      "slug": "wechsler-bellevue-test-variant-for-special-needs-over-14",
+      "name_sr": "Procjena intelektualnih sposobnosti djeteta SPP preko 14 godina W-B skala (alt)",
+      "name_sr_cyrl": "Процјена интелектуалних способности дјетета СПП преко 14 година W-Б скала (алт)",
+      "name_ru": "Шкала Векслера-Беллевю вариант",
+      "name_de": "Wechsler-Bellevue-Variante",
+      "name_tr": "Wechsler-Bellevue varyantı",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02014",
+      "src": "Procjena psihomotornog razvoja djeteta sa posebnim potrebama",
+      "price_eur": 11.25,
+      "name_en": "Special Needs Child Psychomotor Development Assessment",
+      "slug": "special-needs-child-psychomotor-development-assessment",
+      "name_sr": "Procjena psihomotornog razvoja djeteta sa posebnim potrebama",
+      "name_sr_cyrl": "Процјена психомоторног развоја дјетета са посебним потребама",
+      "name_ru": "Оценка психомоторного развития ребёнка SPP",
+      "name_de": "Psychomotorische Entwicklungsbeurteilung SPP",
+      "name_tr": "SPP çocuk psikomotor gelişim değerlendirmesi",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02015",
+      "src": "Procjena socijalne zrelosti djeteta sa posebnim potrebama",
+      "price_eur": 9.88,
+      "name_en": "Special Needs Child Social Maturity Assessment",
+      "slug": "special-needs-child-social-maturity-assessment",
+      "name_sr": "Procjena socijalne zrelosti djeteta sa posebnim potrebama",
+      "name_sr_cyrl": "Процјена социјалне зрелости дјетета са посебним потребама",
+      "name_ru": "Оценка социальной зрелости SPP",
+      "name_de": "Beurteilung sozialer Reife SPP",
+      "name_tr": "SPP çocuk sosyal olgunluk değerlendirmesi",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02016",
+      "src": "Timska obrada pacijenta sa smetnjama u razvoju",
+      "price_eur": 14.0,
+      "name_en": "Multidisciplinary Developmental Disorder Patient Workup",
+      "slug": "multidisciplinary-developmental-disorder-patient-workup",
+      "name_sr": "Timska obrada pacijenta sa smetnjama u razvoju",
+      "name_sr_cyrl": "Тимска обрада пацијента са сметњама у развоју",
+      "name_ru": "Командная обработка пациента с нарушениями развития",
+      "name_de": "Interdisziplinäre Aufarbeitung bei Entwicklungsstörung",
+      "name_tr": "Gelişimsel bozukluk multidisipliner değerlendirme",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02017",
+      "src": "Dijagnostika igrom",
+      "price_eur": 9.88,
+      "name_en": "Play Diagnostic Assessment",
+      "slug": "play-diagnostic-assessment",
+      "name_sr": "Dijagnostika igrom",
+      "name_sr_cyrl": "Дијагностика игром",
+      "name_ru": "Игровая диагностика",
+      "name_de": "Spieldiagnostik",
+      "name_tr": "Oyun ile tanı",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02018",
+      "src": "Testovi ličnosti djeteta SPP - testovi nedovoljno razloženi",
+      "price_eur": 12.63,
+      "name_en": "Special Needs Child Personality Tests Underdeveloped",
+      "slug": "special-needs-child-personality-tests-underdeveloped",
+      "name_sr": "Testovi ličnosti djeteta SPP - testovi nedovoljno razloženi",
+      "name_sr_cyrl": "Тестови личности дјетета СПП - тестови недовољно разложени",
+      "name_ru": "Тесты личности ребёнка SPP",
+      "name_de": "Persönlichkeitstests Kind SPP",
+      "name_tr": "Çocuk SPP kişilik testleri",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02019",
+      "src": "Testovi ličnosti djeteta SPP - Crteži porodice",
+      "price_eur": 9.88,
+      "name_en": "Special Needs Child Family Drawing Test",
+      "slug": "special-needs-child-family-drawing-test",
+      "name_sr": "Testovi ličnosti djeteta SPP - Crteži porodice",
+      "name_sr_cyrl": "Тестови личности дјетета СПП - Цртежи породице",
+      "name_ru": "Рисунок семьи SPP",
+      "name_de": "Familienzeichnung SPP",
+      "name_tr": "Aile çizimi testi SPP",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02020",
+      "src": "Testovi ličnosti djeteta SPP - Test ego percepcije",
+      "price_eur": 12.63,
+      "name_en": "Special Needs Child Ego Perception Test",
+      "slug": "special-needs-child-ego-perception-test",
+      "name_sr": "Testovi ličnosti djeteta SPP - Test ego percepcije",
+      "name_sr_cyrl": "Тестови личности дјетета СПП - Тест его перцепције",
+      "name_ru": "Тест восприятия эго SPP",
+      "name_de": "Ego-Wahrnehmungstest SPP",
+      "name_tr": "Ego algı testi SPP",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02021",
+      "src": "Savjetodavni rad sa roditeljima",
+      "price_eur": 14.0,
+      "name_en": "Parental Counseling Work",
+      "slug": "parental-counseling-work",
+      "name_sr": "Savjetodavni rad sa roditeljima",
+      "name_sr_cyrl": "Савјетодавни рад са родитељима",
+      "name_ru": "Консультативная работа с родителями",
+      "name_de": "Beratungsarbeit mit Eltern",
+      "name_tr": "Ebeveynlerle danışmanlık çalışması",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02022",
+      "src": "Savjet pedagoga škole ili vrtića",
+      "price_eur": 7.14,
+      "name_en": "School or Kindergarten Pedagogue Counseling",
+      "slug": "school-or-kindergarten-pedagogue-counseling",
+      "name_sr": "Savjet pedagoga škole ili vrtića",
+      "name_sr_cyrl": "Савјет педагога школе или вртића",
+      "name_ru": "Консультация педагога школы или сада",
+      "name_de": "Beratung durch Schul- oder Kindergartenpädagogen",
+      "name_tr": "Okul veya anaokulu pedagog danışmanlığı",
+      "categories": [
+        25
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_H02023",
+      "src": "Obrada podataka",
+      "price_eur": 9.88,
+      "name_en": "Data Processing",
+      "slug": "data-processing",
+      "name_sr": "Obrada podataka",
+      "name_sr_cyrl": "Обрада података",
+      "name_ru": "Обработка данных",
+      "name_de": "Datenverarbeitung",
+      "name_tr": "Veri işleme",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02024",
+      "src": "Obrada rezultata integracija i pisanje nalaza",
+      "price_eur": 52.7,
+      "name_en": "Results Integration and Report Writing",
+      "slug": "results-integration-and-report-writing",
+      "name_sr": "Obrada rezultata integracija i pisanje nalaza",
+      "name_sr_cyrl": "Обрада резултата интеграција и писање налаза",
+      "name_ru": "Обработка результатов, интеграция и заключение",
+      "name_de": "Ergebnisintegration und Befundschreiben",
+      "name_tr": "Sonuç entegrasyonu ve rapor yazımı",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H02025",
+      "src": "Individualna preventivna terapija",
+      "price_eur": 14.0,
+      "name_en": "Individual Preventive Therapy",
+      "slug": "individual-preventive-therapy",
+      "name_sr": "Individualna preventivna terapija",
+      "name_sr_cyrl": "Индивидуална превентивна терапија",
+      "name_ru": "Индивидуальная профилактическая терапия",
+      "name_de": "Individuelle präventive Therapie",
+      "name_tr": "Bireysel koruyucu terapi",
+      "categories": [],
+      "specialties": [
+        22
+      ]
+    },
+    {
+      "code": "MO_H09001",
+      "src": "Prva posjeta otpustnog tima u kući osiguranika do 5 km od Doma zdravlja",
+      "price_eur": 74.94,
+      "name_en": "First Discharge Team Home Visit Up to 5 km",
+      "slug": "first-discharge-team-home-visit-up-to-5-km",
+      "name_sr": "Prva posjeta otpustnog tima u kući osiguranika do 5 km od Doma zdravlja",
+      "name_sr_cyrl": "Прва посјета отпустног тима у кући осигураника до 5 км од Дома здравља",
+      "name_ru": "Первичный визит выписной команды до 5 км",
+      "name_de": "Erster Hausbesuch Entlassungsteam bis 5 km",
+      "name_tr": "5 km'ye kadar ilk taburculuk ekibi ev ziyareti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_H09002",
+      "src": "Prva posjeta otpustnog tima 5-15 km od Doma zdravlja",
+      "price_eur": 86.47,
+      "name_en": "First Discharge Team Home Visit 5 to 15 km",
+      "slug": "first-discharge-team-home-visit-5-to-15-km",
+      "name_sr": "Prva posjeta otpustnog tima 5-15 km od Doma zdravlja",
+      "name_sr_cyrl": "Прва посјета отпустног тима 5-15 км од Дома здравља",
+      "name_ru": "Первичный визит выписной команды 5-15 км",
+      "name_de": "Erster Hausbesuch Entlassungsteam 5-15 km",
+      "name_tr": "5-15 km arası ilk taburculuk ekibi ev ziyareti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_H09003",
+      "src": "Prva posjeta otpustnog tima preko 15 km od Doma zdravlja",
+      "price_eur": 98.0,
+      "name_en": "First Discharge Team Home Visit Over 15 km",
+      "slug": "first-discharge-team-home-visit-over-15-km",
+      "name_sr": "Prva posjeta otpustnog tima preko 15 km od Doma zdravlja",
+      "name_sr_cyrl": "Прва посјета отпустног тима преко 15 км од Дома здравља",
+      "name_ru": "Первичный визит выписной команды свыше 15 км",
+      "name_de": "Erster Hausbesuch Entlassungsteam über 15 km",
+      "name_tr": "15 km üzeri ilk taburculuk ekibi ev ziyareti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_H09004",
+      "src": "Ponovna posjeta otpustnog tima do 5 km od Doma zdravlja",
+      "price_eur": 57.65,
+      "name_en": "Follow-up Discharge Team Home Visit Up to 5 km",
+      "slug": "follow-up-discharge-team-home-visit-up-to-5-km",
+      "name_sr": "Ponovna posjeta otpustnog tima do 5 km od Doma zdravlja",
+      "name_sr_cyrl": "Поновна посјета отпустног тима до 5 км од Дома здравља",
+      "name_ru": "Повторный визит выписной команды до 5 км",
+      "name_de": "Folgehausbesuch Entlassungsteam bis 5 km",
+      "name_tr": "5 km'ye kadar tekrar taburculuk ekibi ev ziyareti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_H09005",
+      "src": "Ponovna posjeta otpustnog tima 5-15 km od Doma zdravlja",
+      "price_eur": 69.18,
+      "name_en": "Follow-up Discharge Team Home Visit 5 to 15 km",
+      "slug": "follow-up-discharge-team-home-visit-5-to-15-km",
+      "name_sr": "Ponovna posjeta otpustnog tima 5-15 km od Doma zdravlja",
+      "name_sr_cyrl": "Поновна посјета отпустног тима 5-15 км од Дома здравља",
+      "name_ru": "Повторный визит выписной команды 5-15 км",
+      "name_de": "Folgehausbesuch Entlassungsteam 5-15 km",
+      "name_tr": "5-15 km arası tekrar taburculuk ekibi ev ziyareti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_H09006",
+      "src": "Ponovna posjeta otpustnog tima preko 15 km od Doma zdravlja",
+      "price_eur": 80.7,
+      "name_en": "Follow-up Discharge Team Home Visit Over 15 km",
+      "slug": "follow-up-discharge-team-home-visit-over-15-km",
+      "name_sr": "Ponovna posjeta otpustnog tima preko 15 km od Doma zdravlja",
+      "name_sr_cyrl": "Поновна посјета отпустног тима преко 15 км од Дома здравља",
+      "name_ru": "Повторный визит выписной команды свыше 15 км",
+      "name_de": "Folgehausbesuch Entlassungsteam über 15 km",
+      "name_tr": "15 km üzeri tekrar taburculuk ekibi ev ziyareti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_J01001",
+      "src": "Prvi specijalistički pregled radiologa",
+      "price_eur": 4.58,
+      "name_en": "First Radiologist Specialist Examination",
+      "slug": "first-radiologist-specialist-examination",
+      "name_sr": "Prvi specijalistički pregled radiologa",
+      "name_sr_cyrl": "Први специјалистички преглед радиолога",
+      "name_ru": "Первичный осмотр радиолога",
+      "name_de": "Erste fachärztliche radiologische Untersuchung",
+      "name_tr": "İlk radyoloji uzman muayenesi",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_J06001",
+      "src": "Snimanje skeleta lobanje i lica za svaki snimak",
+      "price_eur": 2.58,
+      "name_en": "Skull and Face X-Ray per Image",
+      "slug": "skull-and-face-x-ray-per-image",
+      "name_sr": "Snimanje skeleta lobanje i lica za svaki snimak",
+      "name_sr_cyrl": "Снимање скелета лобање и лица за сваки снимак",
+      "name_ru": "Рентген черепа и лица за снимок",
+      "name_de": "Schädel- und Gesichtsröntgen pro Aufnahme",
+      "name_tr": "Kafatası ve yüz röntgeni başına",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_J06002",
+      "src": "Snimanje pojedinih dijelova lobanje za svaki snimak",
+      "price_eur": 2.58,
+      "name_en": "Targeted Skull Region X-Ray per Image",
+      "slug": "targeted-skull-region-x-ray-per-image",
+      "name_sr": "Snimanje pojedinih dijelova lobanje za svaki snimak",
+      "name_sr_cyrl": "Снимање појединих дијелова лобање за сваки снимак",
+      "name_ru": "Рентген отдельных частей черепа за снимок",
+      "name_de": "Gezielte Schädel-Röntgenaufnahme",
+      "name_tr": "Hedefli kafatası bölgesi röntgeni",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_J06003",
+      "src": "Snimanje paranazalnih sinusa za svaki snimak",
+      "price_eur": 2.58,
+      "name_en": "Paranasal Sinus X-Ray per Image",
+      "slug": "paranasal-sinus-x-ray-per-image",
+      "name_sr": "Snimanje paranazalnih sinusa za svaki snimak",
+      "name_sr_cyrl": "Снимање параназалних синуса за сваки снимак",
+      "name_ru": "Рентген околоносовых пазух за снимок",
+      "name_de": "Nebenhöhlen-Röntgenaufnahme",
+      "name_tr": "Paranazal sinüs röntgeni",
+      "categories": [
+        11
+      ],
+      "specialties": [
+        11
+      ]
+    },
+    {
+      "code": "MO_HN_J06004",
+      "src": "Lokalizacija stranog tijela u bilo kom organu",
+      "price_eur": 2.58,
+      "name_en": "Foreign Body Localization Imaging",
+      "slug": "foreign-body-localization-imaging",
+      "name_sr": "Lokalizacija stranog tijela u bilo kom organu",
+      "name_sr_cyrl": "Локализација страног тијела у било ком органу",
+      "name_ru": "Локализация инородного тела рентгенологически",
+      "name_de": "Fremdkörperlokalisation Bildgebung",
+      "name_tr": "Yabancı cisim radyolojik lokalizasyonu",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_J06005",
+      "src": "Snimanje ekstremiteta za svaki snimak",
+      "price_eur": 2.58,
+      "name_en": "Extremity X-Ray per Image",
+      "slug": "extremity-x-ray-per-image",
+      "name_sr": "Snimanje ekstremiteta za svaki snimak",
+      "name_sr_cyrl": "Снимање екстремитета за сваки снимак",
+      "name_ru": "Рентген конечности за снимок",
+      "name_de": "Extremitäten-Röntgenaufnahme",
+      "name_tr": "Ekstremite röntgeni başına",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "MO_HN_J06006",
+      "src": "Snimanje toraksa rebra ili sternuma za svaku projekciju",
+      "price_eur": 0.86,
+      "name_en": "Chest Ribs or Sternum X-Ray per View",
+      "slug": "chest-ribs-or-sternum-x-ray-per-view",
+      "name_sr": "Snimanje toraksa rebra ili sternuma za svaku projekciju",
+      "name_sr_cyrl": "Снимање торакса ребра или стернума за сваку пројекцију",
+      "name_ru": "Рентген грудной клетки рёбра или грудины за проекцию",
+      "name_de": "Thorax-Rippen/Sternum-Röntgen pro Projektion",
+      "name_tr": "Toraks kaburga sternum röntgeni",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_J06007",
+      "src": "Fluoroskopija pluća",
+      "price_eur": 1.72,
+      "name_en": "Pulmonary Fluoroscopy",
+      "slug": "pulmonary-fluoroscopy",
+      "name_sr": "Fluoroskopija pluća",
+      "name_sr_cyrl": "Флуороскопија плућа",
+      "name_ru": "Флюороскопия лёгких",
+      "name_de": "Lungen-Durchleuchtung",
+      "name_tr": "Akciğer floroskopisi",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_HN_J06008",
+      "src": "Snimanje pluća",
+      "price_eur": 2.58,
+      "name_en": "Chest X-Ray Lungs",
+      "slug": "chest-x-ray-lungs",
+      "name_sr": "Snimanje pluća",
+      "name_sr_cyrl": "Снимање плућа",
+      "name_ru": "Рентген лёгких",
+      "name_de": "Lungen-Röntgenaufnahme",
+      "name_tr": "Akciğer röntgeni",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_HN_J06009",
+      "src": "Snimanje medijastinuma",
+      "price_eur": 2.58,
+      "name_en": "Mediastinum X-Ray",
+      "slug": "mediastinum-x-ray",
+      "name_sr": "Snimanje medijastinuma",
+      "name_sr_cyrl": "Снимање медијастинума",
+      "name_ru": "Рентген средостения",
+      "name_de": "Mediastinum-Röntgen",
+      "name_tr": "Mediastinum röntgeni",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_HN_J06010",
+      "src": "Telekardiografija",
+      "price_eur": 2.58,
+      "name_en": "Telecardiography",
+      "slug": "telecardiography",
+      "name_sr": "Telekardiografija",
+      "name_sr_cyrl": "Телекардиографија",
+      "name_ru": "Телекардиография",
+      "name_de": "Telekardiographie",
+      "name_tr": "Telekardiyografi",
+      "categories": [
+        8
+      ],
+      "specialties": [
+        1
+      ]
+    },
+    {
+      "code": "MO_HN_J06011",
+      "src": "Snimanje hepatobiliarnog trakta",
+      "price_eur": 2.58,
+      "name_en": "Hepatobiliary X-Ray",
+      "slug": "hepatobiliary-x-ray",
+      "name_sr": "Snimanje hepatobiliarnog trakta",
+      "name_sr_cyrl": "Снимање хепатобилиарног тракта",
+      "name_ru": "Рентген гепатобилиарной системы",
+      "name_de": "Hepatobiliäres Röntgen",
+      "name_tr": "Hepatobiliyer röntgen",
+      "categories": [
+        13
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_J06012",
+      "src": "Snimanje urotrakta",
+      "price_eur": 2.58,
+      "name_en": "Urinary Tract X-Ray",
+      "slug": "urinary-tract-x-ray",
+      "name_sr": "Snimanje urotrakta",
+      "name_sr_cyrl": "Снимање уротракта",
+      "name_ru": "Рентген мочевыводящих путей",
+      "name_de": "Harntrakt-Röntgen",
+      "name_tr": "İdrar yolu röntgeni",
+      "categories": [
+        22
+      ],
+      "specialties": [
+        9
+      ]
+    },
+    {
+      "code": "MO_HN_J06013",
+      "src": "Nativni snimak urotrakta",
+      "price_eur": 1.72,
+      "name_en": "Plain Urinary Tract X-Ray",
+      "slug": "plain-urinary-tract-x-ray",
+      "name_sr": "Nativni snimak urotrakta",
+      "name_sr_cyrl": "Нативни снимак уротракта",
+      "name_ru": "Обзорная рентгенография мочевыводящих путей",
+      "name_de": "Leerröntgen Harntrakt",
+      "name_tr": "Üriner sistem direkt grafisi",
+      "categories": [
+        22
+      ],
+      "specialties": [
+        9
+      ]
+    },
+    {
+      "code": "MO_HN_J06014",
+      "src": "Mamografija",
+      "price_eur": 2.58,
+      "name_en": "Mammography",
+      "slug": "mammography",
+      "name_sr": "Mamografija",
+      "name_sr_cyrl": "Мамографија",
+      "name_ru": "Маммография",
+      "name_de": "Mammographie",
+      "name_tr": "Mamografi",
+      "categories": [
+        7
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_J06015",
+      "src": "Nativni snimak abdomena",
+      "price_eur": 2.58,
+      "name_en": "Plain Abdominal X-Ray",
+      "slug": "plain-abdominal-x-ray",
+      "name_sr": "Nativni snimak abdomena",
+      "name_sr_cyrl": "Нативни снимак абдомена",
+      "name_ru": "Обзорная рентгенография брюшной полости",
+      "name_de": "Leerröntgen Abdomen",
+      "name_tr": "Karın direkt grafisi",
+      "categories": [
+        13
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_J07001",
+      "src": "UZ gornjeg abdomena (jetra, žučne ceste, pankreas, slezena)",
+      "price_eur": 13.94,
+      "name_en": "Upper Abdomen Ultrasound",
+      "slug": "upper-abdomen-ultrasound",
+      "name_sr": "UZ gornjeg abdomena (jetra, žučne ceste, pankreas, slezena)",
+      "name_sr_cyrl": "УЗ горњег абдомена (јетра, жучне цесте, панкреас, слезена)",
+      "name_ru": "УЗИ верхних отделов брюшной полости",
+      "name_de": "Ultraschall Oberbauch",
+      "name_tr": "Üst karın ultrasonu",
+      "categories": [
+        13
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_J07002",
+      "src": "UZ donjeg abdomena (mokraćna bešika, prostata, retroperitoneum, bubrezi, nadbubrežne žljezde)",
+      "price_eur": 13.94,
+      "name_en": "Lower Abdomen Ultrasound",
+      "slug": "lower-abdomen-ultrasound",
+      "name_sr": "UZ donjeg abdomena (mokraćna bešika, prostata, retroperitoneum, bubrezi, nadbubrežne žljezde)",
+      "name_sr_cyrl": "УЗ доњег абдомена (мокраћна бешика, простата, ретроперитонеум, бубрези, надбубрежне жљезде)",
+      "name_ru": "УЗИ нижних отделов брюшной полости",
+      "name_de": "Ultraschall Unterbauch",
+      "name_tr": "Alt karın ultrasonu",
+      "categories": [
+        22
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_J07003",
+      "src": "UZ testisa kod muškaraca",
+      "price_eur": 13.94,
+      "name_en": "Testicular Ultrasound",
+      "slug": "testicular-ultrasound",
+      "name_sr": "UZ testisa kod muškaraca",
+      "name_sr_cyrl": "УЗ тестиса код мушкараца",
+      "name_ru": "УЗИ яичек",
+      "name_de": "Hodensonographie",
+      "name_tr": "Testis ultrasonu",
+      "categories": [
+        22
+      ],
+      "specialties": [
+        9
+      ]
+    },
+    {
+      "code": "MO_HN_J07004",
+      "src": "UZ kukova kod odojčadi",
+      "price_eur": 13.94,
+      "name_en": "Infant Hip Ultrasound",
+      "slug": "infant-hip-ultrasound",
+      "name_sr": "UZ kukova kod odojčadi",
+      "name_sr_cyrl": "УЗ кукова код одојчади",
+      "name_ru": "УЗИ тазобедренных суставов младенцев",
+      "name_de": "Säuglings-Hüftsonographie",
+      "name_tr": "Bebek kalça ultrasonu",
+      "categories": [
+        25
+      ],
+      "specialties": [
+        4
+      ]
+    },
+    {
+      "code": "MO_HN_J07005",
+      "src": "UZ pregled zglobova i mekih tkiva",
+      "price_eur": 13.94,
+      "name_en": "Joint and Soft Tissue Ultrasound",
+      "slug": "joint-and-soft-tissue-ultrasound",
+      "name_sr": "UZ pregled zglobova i mekih tkiva",
+      "name_sr_cyrl": "УЗ преглед зглобова и меких ткива",
+      "name_ru": "УЗИ суставов и мягких тканей",
+      "name_de": "Sonographie Gelenke und Weichteile",
+      "name_tr": "Eklem ve yumuşak doku ultrasonu",
+      "categories": [
+        10
+      ],
+      "specialties": [
+        17
+      ]
+    },
+    {
+      "code": "MO_HN_J07006",
+      "src": "UZ pregled limfnih žljezda",
+      "price_eur": 13.94,
+      "name_en": "Lymph Node Ultrasound",
+      "slug": "lymph-node-ultrasound",
+      "name_sr": "UZ pregled limfnih žljezda",
+      "name_sr_cyrl": "УЗ преглед лимфних жљезда",
+      "name_ru": "УЗИ лимфатических узлов",
+      "name_de": "Sonographie Lymphknoten",
+      "name_tr": "Lenf bezi ultrasonu",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_J07007",
+      "src": "UZ štitne i paratireoidnih žljezda",
+      "price_eur": 13.94,
+      "name_en": "Thyroid and Parathyroid Ultrasound",
+      "slug": "thyroid-and-parathyroid-ultrasound",
+      "name_sr": "UZ štitne i paratireoidnih žljezda",
+      "name_sr_cyrl": "УЗ штитне и паратиреоидних жљезда",
+      "name_ru": "УЗИ щитовидной и паращитовидных желёз",
+      "name_de": "Schilddrüsen- und Nebenschilddrüsen-Sonographie",
+      "name_tr": "Tiroid ve paratiroid ultrasonu",
+      "categories": [
+        26
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_J07008",
+      "src": "UZ pregled dojki",
+      "price_eur": 13.94,
+      "name_en": "Breast Ultrasound",
+      "slug": "breast-ultrasound",
+      "name_sr": "UZ pregled dojki",
+      "name_sr_cyrl": "УЗ преглед дојки",
+      "name_ru": "УЗИ молочных желёз",
+      "name_de": "Brustsonographie",
+      "name_tr": "Meme ultrasonu",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_J11001",
+      "src": "Panoramska dentalna radiografija",
+      "price_eur": 1.31,
+      "name_en": "Panoramic Dental Radiography",
+      "slug": "panoramic-dental-radiography",
+      "name_sr": "Panoramska dentalna radiografija",
+      "name_sr_cyrl": "Панорамска дентална радиографија",
+      "name_ru": "Панорамный рентген зубов",
+      "name_de": "Panorama-Zahnaufnahme",
+      "name_tr": "Panoramik diş röntgeni",
+      "categories": [
+        20
+      ],
+      "specialties": [
+        78
+      ]
+    },
+    {
+      "code": "MO_HN_J11002",
+      "src": "Obični intraoralni snimak zuba",
+      "price_eur": 1.31,
+      "name_en": "Standard Intraoral Dental Radiograph",
+      "slug": "standard-intraoral-dental-radiograph",
+      "name_sr": "Obični intraoralni snimak zuba",
+      "name_sr_cyrl": "Обични интраорални снимак зуба",
+      "name_ru": "Стандартный внутриротовой снимок зуба",
+      "name_de": "Intraorale Zahnaufnahme",
+      "name_tr": "Standart intraoral diş röntgeni",
+      "categories": [
+        20
+      ],
+      "specialties": [
+        78
+      ]
+    },
+    {
+      "code": "MO_HN_J11003",
+      "src": "Ortopantomografski snimak",
+      "price_eur": 10.46,
+      "name_en": "Orthopantomography",
+      "slug": "orthopantomography",
+      "name_sr": "Ortopantomografski snimak",
+      "name_sr_cyrl": "Ортопантомографски снимак",
+      "name_ru": "Ортопантомограмма",
+      "name_de": "Orthopantomographie",
+      "name_tr": "Ortopantomografi",
+      "categories": [
+        20
+      ],
+      "specialties": [
+        78
+      ]
+    },
+    {
+      "code": "MO_HN_L01001",
+      "src": "Patronažna posjeta novorođenčetu i porodici",
+      "price_eur": 11.12,
+      "name_en": "Newborn and Family Home Patronage Visit",
+      "slug": "newborn-and-family-home-patronage-visit",
+      "name_sr": "Patronažna posjeta novorođenčetu i porodici",
+      "name_sr_cyrl": "Патронажна посјета новорођенчету и породици",
+      "name_ru": "Патронажный визит к новорождённому и семье",
+      "name_de": "Hauspflege-Besuch Neugeborenes und Familie",
+      "name_tr": "Yenidoğan ve aile patronaj ziyareti",
+      "categories": [
+        25
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L01002",
+      "src": "Patronažna posjeta djetetu u drugoj godini života",
+      "price_eur": 11.12,
+      "name_en": "Home Patronage Visit Child Age 2",
+      "slug": "home-patronage-visit-child-age-2",
+      "name_sr": "Patronažna posjeta djetetu u drugoj godini života",
+      "name_sr_cyrl": "Патронажна посјета дјетету у другој години живота",
+      "name_ru": "Патронажный визит ребёнку 2 года",
+      "name_de": "Hauspflegebesuch Kind 2 Jahre",
+      "name_tr": "2 yaş çocuk patronaj ziyareti",
+      "categories": [
+        25
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L01003",
+      "src": "Patronažna posjeta djetetu u četvrtoj godini života",
+      "price_eur": 11.12,
+      "name_en": "Home Patronage Visit Child Age 4",
+      "slug": "home-patronage-visit-child-age-4",
+      "name_sr": "Patronažna posjeta djetetu u četvrtoj godini života",
+      "name_sr_cyrl": "Патронажна посјета дјетету у четвртој години живота",
+      "name_ru": "Патронажный визит ребёнку 4 года",
+      "name_de": "Hauspflegebesuch Kind 4 Jahre",
+      "name_tr": "4 yaş çocuk patronaj ziyareti",
+      "categories": [
+        25
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L01007",
+      "src": "Patronažna posjeta trudnici za pripremu na porod i njegu novorođenčeta",
+      "price_eur": 11.12,
+      "name_en": "Pregnancy Patronage Visit Birth and Newborn Care Preparation",
+      "slug": "pregnancy-patronage-visit-birth-and-newborn-care-preparation",
+      "name_sr": "Patronažna posjeta trudnici za pripremu na porod i njegu novorođenčeta",
+      "name_sr_cyrl": "Патронажна посјета трудници за припрему на пород и његу новорођенчета",
+      "name_ru": "Патронажный визит беременной для подготовки к родам",
+      "name_de": "Hauspflegebesuch Schwangere zur Geburts- und Neugeborenenpflege",
+      "name_tr": "Doğum ve yenidoğan bakım hazırlığı için gebe patronaj ziyareti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L01008",
+      "src": "Patronažna posjeta babinjari",
+      "price_eur": 11.12,
+      "name_en": "Postpartum Patronage Visit",
+      "slug": "postpartum-patronage-visit",
+      "name_sr": "Patronažna posjeta babinjari",
+      "name_sr_cyrl": "Патронажна посјета бабињари",
+      "name_ru": "Патронажный визит роженице",
+      "name_de": "Hauspflegebesuch Wöchnerin",
+      "name_tr": "Doğum sonrası patronaj ziyareti",
+      "categories": [
+        7
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L01009",
+      "src": "Patronažna posjeta ženama koje 3 godine nisu bile kod ginekologa",
+      "price_eur": 11.12,
+      "name_en": "Patronage Visit for Women Without Gynecological Visit 3 Years",
+      "slug": "patronage-visit-for-women-without-gynecological-visit-3-years",
+      "name_sr": "Patronažna posjeta ženama koje 3 godine nisu bile kod ginekologa",
+      "name_sr_cyrl": "Патронажна посјета женама које 3 године нису биле код гинеколога",
+      "name_ru": "Патронажный визит женщинам, не посещавшим гинеколога 3 года",
+      "name_de": "Hauspflegebesuch für Frauen ohne gynäkologische Untersuchung seit 3 Jahren",
+      "name_tr": "3 yıldır jinekolog görmemiş kadın patronaj ziyareti",
+      "categories": [
+        7
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L01012",
+      "src": "Patronažna posjeta osobama starijim od 65 godina",
+      "price_eur": 11.12,
+      "name_en": "Senior Patronage Visit Over 65",
+      "slug": "senior-patronage-visit-over-65",
+      "name_sr": "Patronažna posjeta osobama starijim od 65 godina",
+      "name_sr_cyrl": "Патронажна посјета особама старијим од 65 година",
+      "name_ru": "Патронажный визит лицам старше 65",
+      "name_de": "Hauspflegebesuch Senioren über 65",
+      "name_tr": "65 yaş üstü patronaj ziyareti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L02001",
+      "src": "Patronažna posjeta hroničnom bolesniku",
+      "price_eur": 11.12,
+      "name_en": "Chronic Patient Patronage Visit",
+      "slug": "chronic-patient-patronage-visit",
+      "name_sr": "Patronažna posjeta hroničnom bolesniku",
+      "name_sr_cyrl": "Патронажна посјета хроничном болеснику",
+      "name_ru": "Патронажный визит хроническому больному",
+      "name_de": "Hauspflegebesuch chronisch Kranke",
+      "name_tr": "Kronik hasta patronaj ziyareti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L02002",
+      "src": "Patronažna posjeta lica sa aktivnom TBC",
+      "price_eur": 11.12,
+      "name_en": "Active TB Patient Patronage Visit",
+      "slug": "active-tb-patient-patronage-visit",
+      "name_sr": "Patronažna posjeta lica sa aktivnom TBC",
+      "name_sr_cyrl": "Патронажна посјета лица са активном ТБЦ",
+      "name_ru": "Патронажный визит активного ТБ пациента",
+      "name_de": "Hauspflegebesuch aktive TB-Patienten",
+      "name_tr": "Aktif TB hasta patronaj ziyareti",
+      "categories": [
+        12
+      ],
+      "specialties": [
+        14
+      ]
+    },
+    {
+      "code": "MO_HN_L02003",
+      "src": "Patronažna posjeta osobi nepokretnoj",
+      "price_eur": 11.12,
+      "name_en": "Immobile Patient Patronage Visit",
+      "slug": "immobile-patient-patronage-visit",
+      "name_sr": "Patronažna posjeta osobi nepokretnoj",
+      "name_sr_cyrl": "Патронажна посјета особи непокретној",
+      "name_ru": "Патронажный визит немобильному пациенту",
+      "name_de": "Hauspflegebesuch immobile Patienten",
+      "name_tr": "Hareketsiz hasta patronaj ziyareti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L02004",
+      "src": "Patronažna posjeta porodici sa zdravstveno-socijalnim problemima",
+      "price_eur": 11.12,
+      "name_en": "Family Health-Social Problem Patronage Visit",
+      "slug": "family-health-social-problem-patronage-visit",
+      "name_sr": "Patronažna posjeta porodici sa zdravstveno-socijalnim problemima",
+      "name_sr_cyrl": "Патронажна посјета породици са здравствено-социјалним проблемима",
+      "name_ru": "Патронажный визит семье с проблемами",
+      "name_de": "Hauspflegebesuch Familie mit Problemen",
+      "name_tr": "Sağlık-sosyal sorunlu aile patronaj ziyareti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L02005",
+      "src": "Patronažna posjeta porodici sa staroj ili invalidnoj osobi",
+      "price_eur": 11.12,
+      "name_en": "Family with Elderly or Disabled Member Patronage Visit",
+      "slug": "family-with-elderly-or-disabled-member-patronage-visit",
+      "name_sr": "Patronažna posjeta porodici sa staroj ili invalidnoj osobi",
+      "name_sr_cyrl": "Патронажна посјета породици са старој или инвалидној особи",
+      "name_ru": "Патронажный визит семье с пожилым или инвалидом",
+      "name_de": "Hauspflegebesuch Familie mit Senior oder Behindertem",
+      "name_tr": "Yaşlı veya engelli üyeli aile patronaj ziyareti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L03001",
+      "src": "Posjeta patronažne sestre za tretman do 5 km od Doma zdravlja",
+      "price_eur": 7.42,
+      "name_en": "Patronage Nurse Treatment Visit Up to 5 km",
+      "slug": "patronage-nurse-treatment-visit-up-to-5-km",
+      "name_sr": "Posjeta patronažne sestre za tretman do 5 km od Doma zdravlja",
+      "name_sr_cyrl": "Посјета патронажне сестре за третман до 5 км од Дома здравља",
+      "name_ru": "Визит патронажной сестры до 5 км",
+      "name_de": "Hauspflegekraft-Behandlungsbesuch bis 5 km",
+      "name_tr": "5 km'ye kadar patronaj hemşire tedavi ziyareti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L03002",
+      "src": "Posjeta patronažne sestre 5-15 km od Doma zdravlja",
+      "price_eur": 9.27,
+      "name_en": "Patronage Nurse Treatment Visit 5 to 15 km",
+      "slug": "patronage-nurse-treatment-visit-5-to-15-km",
+      "name_sr": "Posjeta patronažne sestre 5-15 km od Doma zdravlja",
+      "name_sr_cyrl": "Посјета патронажне сестре 5-15 км од Дома здравља",
+      "name_ru": "Визит патронажной сестры 5-15 км",
+      "name_de": "Hauspflegekraft-Besuch 5-15 km",
+      "name_tr": "5-15 km arası patronaj hemşire ziyareti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L03003",
+      "src": "Posjeta patronažne sestre preko 15 km od Doma zdravlja",
+      "price_eur": 11.12,
+      "name_en": "Patronage Nurse Treatment Visit Over 15 km",
+      "slug": "patronage-nurse-treatment-visit-over-15-km",
+      "name_sr": "Posjeta patronažne sestre preko 15 km od Doma zdravlja",
+      "name_sr_cyrl": "Посјета патронажне сестре преко 15 км од Дома здравља",
+      "name_ru": "Визит патронажной сестры свыше 15 км",
+      "name_de": "Hauspflegekraft-Besuch über 15 km",
+      "name_tr": "15 km üzeri patronaj hemşire ziyareti",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L03004",
+      "src": "Posjeta patronažne sestre za infuziju do 5 km",
+      "price_eur": 11.12,
+      "name_en": "Patronage Nurse Infusion Visit Up to 5 km",
+      "slug": "patronage-nurse-infusion-visit-up-to-5-km",
+      "name_sr": "Posjeta patronažne sestre za infuziju do 5 km",
+      "name_sr_cyrl": "Посјета патронажне сестре за инфузију до 5 км",
+      "name_ru": "Визит патронажной сестры для инфузии до 5 км",
+      "name_de": "Hauspflegekraft-Infusionsbesuch bis 5 km",
+      "name_tr": "5 km'ye kadar patronaj hemşire infüzyon ziyareti",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L03005",
+      "src": "Posjeta patronažne sestre za infuziju 5-15 km",
+      "price_eur": 12.98,
+      "name_en": "Patronage Nurse Infusion Visit 5 to 15 km",
+      "slug": "patronage-nurse-infusion-visit-5-to-15-km",
+      "name_sr": "Posjeta patronažne sestre za infuziju 5-15 km",
+      "name_sr_cyrl": "Посјета патронажне сестре за инфузију 5-15 км",
+      "name_ru": "Визит патронажной сестры для инфузии 5-15 км",
+      "name_de": "Hauspflegekraft-Infusionsbesuch 5-15 km",
+      "name_tr": "5-15 km arası infüzyon ziyareti",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L03006",
+      "src": "Posjeta patronažne sestre za infuziju preko 15 km",
+      "price_eur": 14.83,
+      "name_en": "Patronage Nurse Infusion Visit Over 15 km",
+      "slug": "patronage-nurse-infusion-visit-over-15-km",
+      "name_sr": "Posjeta patronažne sestre za infuziju preko 15 km",
+      "name_sr_cyrl": "Посјета патронажне сестре за инфузију преко 15 км",
+      "name_ru": "Визит патронажной сестры для инфузии свыше 15 км",
+      "name_de": "Hauspflegekraft-Infusionsbesuch über 15 km",
+      "name_tr": "15 km üzeri infüzyon ziyareti",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L04001",
+      "src": "Uključivanje u preventivne akcije",
+      "price_eur": 22.25,
+      "name_en": "Preventive Action Participation",
+      "slug": "preventive-action-participation",
+      "name_sr": "Uključivanje u preventivne akcije",
+      "name_sr_cyrl": "Укључивање у превентивне акције",
+      "name_ru": "Участие в профилактических акциях",
+      "name_de": "Teilnahme an Präventionsaktionen",
+      "name_tr": "Koruyucu eylem katılımı",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L04002",
+      "src": "Zdravstveno vaspitni grupni rad",
+      "price_eur": 22.25,
+      "name_en": "Health Education Group Work",
+      "slug": "health-education-group-work",
+      "name_sr": "Zdravstveno vaspitni grupni rad",
+      "name_sr_cyrl": "Здравствено васпитни групни рад",
+      "name_ru": "Санитарно-просветительная групповая работа",
+      "name_de": "Gesundheitserziehung Gruppenarbeit",
+      "name_tr": "Grup sağlık eğitim çalışması",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_L04003",
+      "src": "Zdravstveno vaspitni rad sa hroničnim bolesnicima",
+      "price_eur": 22.25,
+      "name_en": "Chronic Patient Health Education",
+      "slug": "chronic-patient-health-education",
+      "name_sr": "Zdravstveno vaspitni rad sa hroničnim bolesnicima",
+      "name_sr_cyrl": "Здравствено васпитни рад са хроничним болесницима",
+      "name_ru": "Санитарно-просветительная работа с хроническими",
+      "name_de": "Gesundheitserziehung mit chronisch Kranken",
+      "name_tr": "Kronik hasta sağlık eğitimi",
+      "categories": [],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_M01001",
+      "src": "Manuelna segmentna masaža",
+      "price_eur": 3.44,
+      "name_en": "Manual Segmental Massage",
+      "slug": "manual-segmental-massage",
+      "name_sr": "Manuelna segmentna masaža",
+      "name_sr_cyrl": "Мануелна сегментна масажа",
+      "name_ru": "Сегментарный массаж",
+      "name_de": "Manuelle Segmentmassage",
+      "name_tr": "Manuel segmental masaj",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01002",
+      "src": "Manuelna limfna drenaža",
+      "price_eur": 3.44,
+      "name_en": "Manual Lymphatic Drainage",
+      "slug": "manual-lymphatic-drainage",
+      "name_sr": "Manuelna limfna drenaža",
+      "name_sr_cyrl": "Мануелна лимфна дренажа",
+      "name_ru": "Ручной лимфодренаж",
+      "name_de": "Manuelle Lymphdrainage",
+      "name_tr": "Manuel lenf drenajı",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01003",
+      "src": "Aparaturna masaža",
+      "price_eur": 2.29,
+      "name_en": "Mechanical Apparatus Massage",
+      "slug": "mechanical-apparatus-massage",
+      "name_sr": "Aparaturna masaža",
+      "name_sr_cyrl": "Апаратурна масажа",
+      "name_ru": "Аппаратный массаж",
+      "name_de": "Apparate-Massage",
+      "name_tr": "Aparatlı masaj",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01004",
+      "src": "Krioterapija i kriomasaža",
+      "price_eur": 3.44,
+      "name_en": "Cryotherapy and Cryomassage",
+      "slug": "cryotherapy-and-cryomassage",
+      "name_sr": "Krioterapija i kriomasaža",
+      "name_sr_cyrl": "Криотерапија и криомасажа",
+      "name_ru": "Криотерапия и криомассаж",
+      "name_de": "Kryotherapie und Kryomassage",
+      "name_tr": "Kriyoterapi ve kriyomasaj",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01005",
+      "src": "Manuelni mišićni test po ekstremitetu",
+      "price_eur": 2.29,
+      "name_en": "Manual Muscle Test per Extremity",
+      "slug": "manual-muscle-test-per-extremity",
+      "name_sr": "Manuelni mišićni test po ekstremitetu",
+      "name_sr_cyrl": "Мануелни мишићни тест по екстремитету",
+      "name_ru": "Мануальный мышечный тест по конечности",
+      "name_de": "Manueller Muskeltest pro Extremität",
+      "name_tr": "Ekstremiteye göre manuel kas testi",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01006",
+      "src": "Tretman ultraljubičastom i biogenom lampom",
+      "price_eur": 3.44,
+      "name_en": "Ultraviolet and Biogenic Lamp Treatment",
+      "slug": "ultraviolet-and-biogenic-lamp-treatment",
+      "name_sr": "Tretman ultraljubičastom i biogenom lampom",
+      "name_sr_cyrl": "Третман ултраљубичастом и биогеном лампом",
+      "name_ru": "Лечение УФ и биогенной лампой",
+      "name_de": "UV- und biogene Lampentherapie",
+      "name_tr": "UV ve biyojenik lamba tedavisi",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01007",
+      "src": "Parafin i fango terapija",
+      "price_eur": 2.29,
+      "name_en": "Paraffin and Mud Therapy",
+      "slug": "paraffin-and-mud-therapy",
+      "name_sr": "Parafin i fango terapija",
+      "name_sr_cyrl": "Парафин и фанго терапија",
+      "name_ru": "Парафинотерапия и фанготерапия",
+      "name_de": "Paraffin- und Fango-Therapie",
+      "name_tr": "Parafin ve çamur tedavisi",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01008",
+      "src": "Galvanizacija",
+      "price_eur": 4.58,
+      "name_en": "Galvanic Therapy",
+      "slug": "galvanic-therapy",
+      "name_sr": "Galvanizacija",
+      "name_sr_cyrl": "Галванизација",
+      "name_ru": "Гальванизация",
+      "name_de": "Galvanisation",
+      "name_tr": "Galvanoterapi",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01009",
+      "src": "Elektroforeza",
+      "price_eur": 3.44,
+      "name_en": "Electrophoresis Therapy",
+      "slug": "electrophoresis-therapy",
+      "name_sr": "Elektroforeza",
+      "name_sr_cyrl": "Електрофореза",
+      "name_ru": "Электрофорез",
+      "name_de": "Elektrophorese",
+      "name_tr": "Elektroforez",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01010",
+      "src": "Dijadinamičke struje",
+      "price_eur": 3.44,
+      "name_en": "Diadynamic Currents",
+      "slug": "diadynamic-currents",
+      "name_sr": "Dijadinamičke struje",
+      "name_sr_cyrl": "Дијадинамичке струје",
+      "name_ru": "Диадинамические токи",
+      "name_de": "Diadynamische Ströme",
+      "name_tr": "Diyadinamik akımlar",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01011",
+      "src": "Transkutana nervna stimulacija TENS",
+      "price_eur": 4.58,
+      "name_en": "Transcutaneous Electrical Nerve Stimulation TENS",
+      "slug": "transcutaneous-electrical-nerve-stimulation-tens",
+      "name_sr": "Transkutana nervna stimulacija TENS",
+      "name_sr_cyrl": "Транскутана нервна стимулација ТЕНС",
+      "name_ru": "Чрескожная электронейростимуляция ЧЭНС",
+      "name_de": "Transkutane elektrische Nervenstimulation TENS",
+      "name_tr": "Transkütan elektriksel sinir stimülasyonu TENS",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01012",
+      "src": "KTD diatermija",
+      "price_eur": 4.58,
+      "name_en": "KTD Diathermy",
+      "slug": "ktd-diathermy",
+      "name_sr": "KTD diatermija",
+      "name_sr_cyrl": "КТД диатермија",
+      "name_ru": "Диатермия КТД",
+      "name_de": "KTD-Diathermie",
+      "name_tr": "KTD diyatermi",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01013",
+      "src": "Mikrotalasna dijatermija",
+      "price_eur": 3.44,
+      "name_en": "Microwave Diathermy",
+      "slug": "microwave-diathermy",
+      "name_sr": "Mikrotalasna dijatermija",
+      "name_sr_cyrl": "Микроталасна дијатермија",
+      "name_ru": "Микроволновая диатермия",
+      "name_de": "Mikrowellen-Diathermie",
+      "name_tr": "Mikrodalga diyatermi",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01014",
+      "src": "Sonoforeza",
+      "price_eur": 3.44,
+      "name_en": "Sonophoresis",
+      "slug": "sonophoresis",
+      "name_sr": "Sonoforeza",
+      "name_sr_cyrl": "Сонофореза",
+      "name_ru": "Сонофорез",
+      "name_de": "Sonophorese",
+      "name_tr": "Sonoforez",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01015",
+      "src": "Elektrostimulacija mišića",
+      "price_eur": 4.58,
+      "name_en": "Muscle Electrical Stimulation",
+      "slug": "muscle-electrical-stimulation",
+      "name_sr": "Elektrostimulacija mišića",
+      "name_sr_cyrl": "Електростимулација мишића",
+      "name_ru": "Электростимуляция мышц",
+      "name_de": "Muskel-Elektrostimulation",
+      "name_tr": "Kas elektriksel stimülasyonu",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01016",
+      "src": "Uvježbavanje aktivnosti svakodnevnog života",
+      "price_eur": 4.58,
+      "name_en": "Activities of Daily Living Training",
+      "slug": "activities-of-daily-living-training",
+      "name_sr": "Uvježbavanje aktivnosti svakodnevnog života",
+      "name_sr_cyrl": "Увјежбавање активности свакодневног живота",
+      "name_ru": "Тренировка активностей повседневной жизни",
+      "name_de": "Training Aktivitäten des täglichen Lebens",
+      "name_tr": "Günlük yaşam aktivite eğitimi",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01017",
+      "src": "Vježba leđa",
+      "price_eur": 3.44,
+      "name_en": "Back Exercises",
+      "slug": "back-exercises",
+      "name_sr": "Vježba leđa",
+      "name_sr_cyrl": "Вјежба леђа",
+      "name_ru": "Упражнения для спины",
+      "name_de": "Rückenübungen",
+      "name_tr": "Sırt egzersizleri",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01018",
+      "src": "Obuka hoda sa pomagalom",
+      "price_eur": 4.58,
+      "name_en": "Gait Training with Walking Aid",
+      "slug": "gait-training-with-walking-aid",
+      "name_sr": "Obuka hoda sa pomagalom",
+      "name_sr_cyrl": "Обука хода са помагалом",
+      "name_ru": "Обучение ходьбе с приспособлением",
+      "name_de": "Gangtraining mit Hilfsmittel",
+      "name_tr": "Yardımcı ile yürüme eğitimi",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01019",
+      "src": "Vježbe koordinacije i balansa",
+      "price_eur": 4.58,
+      "name_en": "Coordination and Balance Exercises",
+      "slug": "coordination-and-balance-exercises",
+      "name_sr": "Vježbe koordinacije i balansa",
+      "name_sr_cyrl": "Вјежбе координације и баланса",
+      "name_ru": "Упражнения координации и баланса",
+      "name_de": "Koordinations- und Balanceübungen",
+      "name_tr": "Koordinasyon ve denge egzersizleri",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01020",
+      "src": "Grupne vježbe (tip A)",
+      "price_eur": 3.44,
+      "name_en": "Group Exercises Type A",
+      "slug": "group-exercises-type-a",
+      "name_sr": "Grupne vježbe (tip A)",
+      "name_sr_cyrl": "Групне вјежбе (тип А)",
+      "name_ru": "Групповые упражнения тип A",
+      "name_de": "Gruppentraining Typ A",
+      "name_tr": "Grup egzersizi tip A",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01021",
+      "src": "Grupne vježbe (tip B)",
+      "price_eur": 0.69,
+      "name_en": "Group Exercises Type B",
+      "slug": "group-exercises-type-b",
+      "name_sr": "Grupne vježbe (tip B)",
+      "name_sr_cyrl": "Групне вјежбе (тип Б)",
+      "name_ru": "Групповые упражнения тип B",
+      "name_de": "Gruppentraining Typ B",
+      "name_tr": "Grup egzersizi tip B",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01022",
+      "src": "Stimulativne vježbe za rizičnu bebu",
+      "price_eur": 10.31,
+      "name_en": "High-Risk Infant Stimulation Exercises",
+      "slug": "high-risk-infant-stimulation-exercises",
+      "name_sr": "Stimulativne vježbe za rizičnu bebu",
+      "name_sr_cyrl": "Стимулативне вјежбе за ризичну бебу",
+      "name_ru": "Стимулирующие упражнения для риска младенца",
+      "name_de": "Stimulationsübungen Risikosäugling",
+      "name_tr": "Riskli bebek uyarıcı egzersizleri",
+      "categories": [
+        5,
+        25
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01023",
+      "src": "Terapija igrom za djecu",
+      "price_eur": 6.87,
+      "name_en": "Pediatric Play Therapy",
+      "slug": "pediatric-play-therapy",
+      "name_sr": "Terapija igrom za djecu",
+      "name_sr_cyrl": "Терапија игром за дјецу",
+      "name_ru": "Игровая терапия для детей",
+      "name_de": "Spieltherapie für Kinder",
+      "name_tr": "Çocuk için oyun terapisi",
+      "categories": [
+        5,
+        25
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01024",
+      "src": "Pasivne i potpomognute vježbe",
+      "price_eur": 4.58,
+      "name_en": "Passive and Assisted Exercises",
+      "slug": "passive-and-assisted-exercises",
+      "name_sr": "Pasivne i potpomognute vježbe",
+      "name_sr_cyrl": "Пасивне и потпомогнуте вјежбе",
+      "name_ru": "Пассивные и ассистированные упражнения",
+      "name_de": "Passive und assistierte Übungen",
+      "name_tr": "Pasif ve yardımlı egzersizler",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01025",
+      "src": "Aktivne vježbe i vježbe protiv otpora",
+      "price_eur": 4.58,
+      "name_en": "Active and Resistance Exercises",
+      "slug": "active-and-resistance-exercises",
+      "name_sr": "Aktivne vježbe i vježbe protiv otpora",
+      "name_sr_cyrl": "Активне вјежбе и вјежбе против отпора",
+      "name_ru": "Активные упражнения и упражнения с сопротивлением",
+      "name_de": "Aktive und Widerstandsübungen",
+      "name_tr": "Aktif ve dirençli egzersizler",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01026",
+      "src": "Izokinetičke vježbe segmentne",
+      "price_eur": 3.44,
+      "name_en": "Segmental Isokinetic Exercises",
+      "slug": "segmental-isokinetic-exercises",
+      "name_sr": "Izokinetičke vježbe segmentne",
+      "name_sr_cyrl": "Изокинетичке вјежбе сегментне",
+      "name_ru": "Изокинетические сегментарные упражнения",
+      "name_de": "Segmentale isokinetische Übungen",
+      "name_tr": "Segmental izokinetik egzersiz",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01027",
+      "src": "Kineziterapija kod deformiteta kičme",
+      "price_eur": 6.87,
+      "name_en": "Kinesiotherapy for Spine Deformities",
+      "slug": "kinesiotherapy-for-spine-deformities",
+      "name_sr": "Kineziterapija kod deformiteta kičme",
+      "name_sr_cyrl": "Кинезитерапија код деформитета кичме",
+      "name_ru": "Кинезиотерапия деформаций позвоночника",
+      "name_de": "Bewegungstherapie bei Wirbelsäulendeformitäten",
+      "name_tr": "Omurga deformite kinezyoterapisi",
+      "categories": [
+        5,
+        10
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01028",
+      "src": "Stimulacija senzomotornog razvoja CNS specifične metode",
+      "price_eur": 9.16,
+      "name_en": "CNS Sensorimotor Development Stimulation",
+      "slug": "cns-sensorimotor-development-stimulation",
+      "name_sr": "Stimulacija senzomotornog razvoja CNS specifične metode",
+      "name_sr_cyrl": "Стимулација сензомоторног развоја ЦНС специфичне методе",
+      "name_ru": "Стимуляция сенсомоторного развития ЦНС",
+      "name_de": "Sensomotorische Entwicklungsförderung ZNS",
+      "name_tr": "MSS sensorimotor gelişim uyarımı",
+      "categories": [
+        5,
+        25
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01029",
+      "src": "Test aktivnosti svakodnevnog života ADL",
+      "price_eur": 6.87,
+      "name_en": "Activities of Daily Living ADL Test",
+      "slug": "activities-of-daily-living-adl-test",
+      "name_sr": "Test aktivnosti svakodnevnog života ADL",
+      "name_sr_cyrl": "Тест активности свакодневног живота АДЛ",
+      "name_ru": "Тест активностей повседневной жизни ADL",
+      "name_de": "ADL-Aktivitätstest",
+      "name_tr": "Günlük yaşam aktivitesi ADL testi",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01030",
+      "src": "Obuka pacijenta zaštitnim položajima tijela",
+      "price_eur": 6.87,
+      "name_en": "Patient Body Posture Training",
+      "slug": "patient-body-posture-training",
+      "name_sr": "Obuka pacijenta zaštitnim položajima tijela",
+      "name_sr_cyrl": "Обука пацијента заштитним положајима тијела",
+      "name_ru": "Обучение пациента защитным позам тела",
+      "name_de": "Patientenschulung Körperhaltungen",
+      "name_tr": "Hasta vücut postür eğitimi",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01031",
+      "src": "Interferentne struje",
+      "price_eur": 4.58,
+      "name_en": "Interferential Currents",
+      "slug": "interferential-currents",
+      "name_sr": "Interferentne struje",
+      "name_sr_cyrl": "Интерферентне струје",
+      "name_ru": "Интерференционные токи",
+      "name_de": "Interferenzstrom",
+      "name_tr": "İnterferansiyel akım",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01032",
+      "src": "Kućna posjeta fizioterapeuta do 5 km",
+      "price_eur": 11.45,
+      "name_en": "Physiotherapist Home Visit Up to 5 km",
+      "slug": "physiotherapist-home-visit-up-to-5-km",
+      "name_sr": "Kućna posjeta fizioterapeuta do 5 km",
+      "name_sr_cyrl": "Кућна посјета физиотерапеута до 5 км",
+      "name_ru": "Визит физиотерапевта до 5 км",
+      "name_de": "Physiotherapeuten-Hausbesuch bis 5 km",
+      "name_tr": "5 km'ye kadar fizyoterapist ev ziyareti",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01033",
+      "src": "Kućna posjeta fizioterapeuta 5-15 km",
+      "price_eur": 13.74,
+      "name_en": "Physiotherapist Home Visit 5 to 15 km",
+      "slug": "physiotherapist-home-visit-5-to-15-km",
+      "name_sr": "Kućna posjeta fizioterapeuta 5-15 km",
+      "name_sr_cyrl": "Кућна посјета физиотерапеута 5-15 км",
+      "name_ru": "Визит физиотерапевта 5-15 км",
+      "name_de": "Physiotherapeuten-Hausbesuch 5-15 km",
+      "name_tr": "5-15 km arası fizyoterapist ev ziyareti",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M01034",
+      "src": "Kućna posjeta fizioterapeuta preko 15 km",
+      "price_eur": 16.03,
+      "name_en": "Physiotherapist Home Visit Over 15 km",
+      "slug": "physiotherapist-home-visit-over-15-km",
+      "name_sr": "Kućna posjeta fizioterapeuta preko 15 km",
+      "name_sr_cyrl": "Кућна посјета физиотерапеута преко 15 км",
+      "name_ru": "Визит физиотерапевта свыше 15 км",
+      "name_de": "Physiotherapeuten-Hausbesuch über 15 km",
+      "name_tr": "15 km üzeri fizyoterapist ev ziyareti",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M02008",
+      "src": "Magnetoterapija",
+      "price_eur": 4.17,
+      "name_en": "Magnetotherapy",
+      "slug": "magnetotherapy",
+      "name_sr": "Magnetoterapija",
+      "name_sr_cyrl": "Магнетотерапија",
+      "name_ru": "Магнитотерапия",
+      "name_de": "Magnetfeldtherapie",
+      "name_tr": "Manyetoterapi",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M02009",
+      "src": "Terapija ultrazvukom",
+      "price_eur": 2.61,
+      "name_en": "Ultrasound Therapy",
+      "slug": "ultrasound-therapy",
+      "name_sr": "Terapija ultrazvukom",
+      "name_sr_cyrl": "Терапија ултразвуком",
+      "name_ru": "Ультразвуковая терапия",
+      "name_de": "Ultraschalltherapie",
+      "name_tr": "Ultrason terapisi",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M02010",
+      "src": "Terapija ultrazvukom u vodi",
+      "price_eur": 3.34,
+      "name_en": "Underwater Ultrasound Therapy",
+      "slug": "underwater-ultrasound-therapy",
+      "name_sr": "Terapija ultrazvukom u vodi",
+      "name_sr_cyrl": "Терапија ултразвуком у води",
+      "name_ru": "Ультразвуковая терапия в воде",
+      "name_de": "Ultraschalltherapie im Wasser",
+      "name_tr": "Su altı ultrason terapisi",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_M02011",
+      "src": "Laser terapija",
+      "price_eur": 4.17,
+      "name_en": "Laser Therapy",
+      "slug": "laser-therapy",
+      "name_sr": "Laser terapija",
+      "name_sr_cyrl": "Ласер терапија",
+      "name_ru": "Лазерная терапия",
+      "name_de": "Lasertherapie",
+      "name_tr": "Lazer terapisi",
+      "categories": [
+        5
+      ],
+      "specialties": [
+        42
+      ]
+    },
+    {
+      "code": "MO_HN_Z01003",
+      "src": "KKS sa diferencijalnom krvnom slikom (CBC + DIF)",
+      "price_eur": 1.27,
+      "name_en": "Complete Blood Count with Differential",
+      "slug": "complete-blood-count-with-differential",
+      "name_sr": "KKS sa diferencijalnom krvnom slikom (CBC + DIF)",
+      "name_sr_cyrl": "ККС са диференцијалном крвном сликом (ЦБЦ + ДИФ)",
+      "name_ru": "Общий анализ крови с лейкоформулой",
+      "name_de": "Großes Blutbild mit Differenzierung",
+      "name_tr": "Hemogram diferansiyel",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01006",
+      "src": "Diferencijalna krvna slika",
+      "price_eur": 4.02,
+      "name_en": "Differential Blood Count",
+      "slug": "differential-blood-count",
+      "name_sr": "Diferencijalna krvna slika",
+      "name_sr_cyrl": "Диференцијална крвна слика",
+      "name_ru": "Лейкоцитарная формула",
+      "name_de": "Differentialblutbild",
+      "name_tr": "Diferansiyel kan sayımı",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01103",
+      "src": "Retikulociti citohemija",
+      "price_eur": 0.0,
+      "name_en": "Reticulocyte Cytochemistry",
+      "slug": "reticulocyte-cytochemistry",
+      "name_sr": "Retikulociti citohemija",
+      "name_sr_cyrl": "Ретикулоцити цитохемија",
+      "name_ru": "Ретикулоциты цитохимия",
+      "name_de": "Retikulozyten-Zytochemie",
+      "name_tr": "Retikülosit sitokimya",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01008",
+      "src": "Sedimentacija eritrocita SE",
+      "price_eur": 1.77,
+      "name_en": "Erythrocyte Sedimentation Rate",
+      "slug": "erythrocyte-sedimentation-rate",
+      "name_sr": "Sedimentacija eritrocita SE",
+      "name_sr_cyrl": "Седиментација еритроцита СЕ",
+      "name_ru": "СОЭ",
+      "name_de": "Blutsenkungsgeschwindigkeit",
+      "name_tr": "Sedimantasyon hızı",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01009",
+      "src": "Određivanje protrombinskog vremena",
+      "price_eur": 3.49,
+      "name_en": "Prothrombin Time PT",
+      "slug": "prothrombin-time-pt",
+      "name_sr": "Određivanje protrombinskog vremena",
+      "name_sr_cyrl": "Одређивање протромбинског времена",
+      "name_ru": "Протромбиновое время",
+      "name_de": "Prothrombinzeit",
+      "name_tr": "Protrombin zamanı",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01010",
+      "src": "Određivanje vremena krvarenja",
+      "price_eur": 2.89,
+      "name_en": "Bleeding Time",
+      "slug": "bleeding-time",
+      "name_sr": "Određivanje vremena krvarenja",
+      "name_sr_cyrl": "Одређивање времена крварења",
+      "name_ru": "Время кровотечения",
+      "name_de": "Blutungszeit",
+      "name_tr": "Kanama zamanı",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01011",
+      "src": "Određivanje vremena koagulacije",
+      "price_eur": 5.23,
+      "name_en": "Coagulation Time",
+      "slug": "coagulation-time",
+      "name_sr": "Određivanje vremena koagulacije",
+      "name_sr_cyrl": "Одређивање времена коагулације",
+      "name_ru": "Время свёртывания",
+      "name_de": "Gerinnungszeit",
+      "name_tr": "Pıhtılaşma zamanı",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01012",
+      "src": "Određivanje fibrinogena",
+      "price_eur": 4.42,
+      "name_en": "Fibrinogen",
+      "slug": "fibrinogen",
+      "name_sr": "Određivanje fibrinogena",
+      "name_sr_cyrl": "Одређивање фибриногена",
+      "name_ru": "Фибриноген",
+      "name_de": "Fibrinogen",
+      "name_tr": "Fibrinojen",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01032",
+      "src": "Kalijum K u serumu",
+      "price_eur": 1.26,
+      "name_en": "Serum Potassium K",
+      "slug": "serum-potassium-k",
+      "name_sr": "Kalijum K u serumu",
+      "name_sr_cyrl": "Калијум К у серуму",
+      "name_ru": "Калий K сыворотки",
+      "name_de": "Serum-Kalium K",
+      "name_tr": "Serum potasyum K",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01097",
+      "src": "Natrijum Na u serumu",
+      "price_eur": 1.26,
+      "name_en": "Serum Sodium Na",
+      "slug": "serum-sodium-na",
+      "name_sr": "Natrijum Na u serumu",
+      "name_sr_cyrl": "Натријум На у серуму",
+      "name_ru": "Натрий Na сыворотки",
+      "name_de": "Serum-Natrium Na",
+      "name_tr": "Serum sodyum Na",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01098",
+      "src": "Hloridi Cl u serumu",
+      "price_eur": 1.26,
+      "name_en": "Serum Chloride Cl",
+      "slug": "serum-chloride-cl",
+      "name_sr": "Hloridi Cl u serumu",
+      "name_sr_cyrl": "Хлориди Цл у серуму",
+      "name_ru": "Хлор Cl сыворотки",
+      "name_de": "Serum-Chlorid Cl",
+      "name_tr": "Serum klor Cl",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01099",
+      "src": "Kalcijum Ca u serumu",
+      "price_eur": 2.73,
+      "name_en": "Serum Calcium Ca",
+      "slug": "serum-calcium-ca",
+      "name_sr": "Kalcijum Ca u serumu",
+      "name_sr_cyrl": "Калцијум Ца у серуму",
+      "name_ru": "Кальций Ca сыворотки",
+      "name_de": "Serum-Calcium Ca",
+      "name_tr": "Serum kalsiyum Ca",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01103F",
+      "src": "Hemoglobin u fecesu kvalitativno",
+      "price_eur": 1.74,
+      "name_en": "Fecal Occult Blood Qualitative",
+      "slug": "fecal-occult-blood-qualitative",
+      "name_sr": "Hemoglobin u fecesu kvalitativno",
+      "name_sr_cyrl": "Хемоглобин у фецесу квалитативно",
+      "name_ru": "Кал на скрытую кровь качественно",
+      "name_de": "Okkultes Blut im Stuhl qualitativ",
+      "name_tr": "Gaita gizli kan kalitatif",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01014",
+      "src": "Ukupni proteini u serumu",
+      "price_eur": 1.15,
+      "name_en": "Serum Total Protein",
+      "slug": "serum-total-protein",
+      "name_sr": "Ukupni proteini u serumu",
+      "name_sr_cyrl": "Укупни протеини у серуму",
+      "name_ru": "Общий белок сыворотки",
+      "name_de": "Gesamteiweiß im Serum",
+      "name_tr": "Serum total protein",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01015",
+      "src": "Ukupni bilirubin u serumu",
+      "price_eur": 1.18,
+      "name_en": "Serum Total Bilirubin",
+      "slug": "serum-total-bilirubin",
+      "name_sr": "Ukupni bilirubin u serumu",
+      "name_sr_cyrl": "Укупни билирубин у серуму",
+      "name_ru": "Общий билирубин сыворотки",
+      "name_de": "Gesamtbilirubin im Serum",
+      "name_tr": "Serum total bilirubin",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01016",
+      "src": "Glukoza u serumu",
+      "price_eur": 1.16,
+      "name_en": "Serum Glucose",
+      "slug": "serum-glucose",
+      "name_sr": "Glukoza u serumu",
+      "name_sr_cyrl": "Глукоза у серуму",
+      "name_ru": "Глюкоза сыворотки",
+      "name_de": "Serum-Glucose",
+      "name_tr": "Serum glukoz",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01017",
+      "src": "Oralni glukoza tolerans test OGTT",
+      "price_eur": 4.2,
+      "name_en": "Oral Glucose Tolerance Test OGTT",
+      "slug": "oral-glucose-tolerance-test-ogtt",
+      "name_sr": "Oralni glukoza tolerans test OGTT",
+      "name_sr_cyrl": "Орални глукоза толеранс тест ОГТТ",
+      "name_ru": "Пероральный тест толерантности к глюкозе",
+      "name_de": "Oraler Glucose-Toleranztest",
+      "name_tr": "Oral glukoz tolerans testi",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01018",
+      "src": "Trigliceridi u serumu",
+      "price_eur": 1.36,
+      "name_en": "Serum Triglycerides",
+      "slug": "serum-triglycerides",
+      "name_sr": "Trigliceridi u serumu",
+      "name_sr_cyrl": "Триглицериди у серуму",
+      "name_ru": "Триглицериды сыворотки",
+      "name_de": "Triglyceride im Serum",
+      "name_tr": "Serum trigliserid",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01019",
+      "src": "Holesterol u serumu",
+      "price_eur": 1.24,
+      "name_en": "Serum Cholesterol",
+      "slug": "serum-cholesterol",
+      "name_sr": "Holesterol u serumu",
+      "name_sr_cyrl": "Холестерол у серуму",
+      "name_ru": "Холестерин сыворотки",
+      "name_de": "Cholesterin im Serum",
+      "name_tr": "Serum kolesterol",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01021",
+      "src": "Aktivnost alkalne fosfataze",
+      "price_eur": 1.26,
+      "name_en": "Alkaline Phosphatase Activity",
+      "slug": "alkaline-phosphatase-activity",
+      "name_sr": "Aktivnost alkalne fosfataze",
+      "name_sr_cyrl": "Активност алкалне фосфатазе",
+      "name_ru": "Щелочная фосфатаза",
+      "name_de": "Alkalische Phosphatase Aktivität",
+      "name_tr": "Alkalen fosfataz aktivitesi",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01023",
+      "src": "Aktivnost AST",
+      "price_eur": 1.28,
+      "name_en": "AST Activity",
+      "slug": "ast-activity",
+      "name_sr": "Aktivnost AST",
+      "name_sr_cyrl": "Активност АСТ",
+      "name_ru": "АСТ",
+      "name_de": "AST-Aktivität",
+      "name_tr": "AST aktivitesi",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01096",
+      "src": "Aktivnost ALT",
+      "price_eur": 1.28,
+      "name_en": "ALT Activity",
+      "slug": "alt-activity",
+      "name_sr": "Aktivnost ALT",
+      "name_sr_cyrl": "Активност АЛТ",
+      "name_ru": "АЛТ",
+      "name_de": "ALT-Aktivität",
+      "name_tr": "ALT aktivitesi",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01037",
+      "src": "Kapacitet vezivanja gvožđa TIBC",
+      "price_eur": 0.98,
+      "name_en": "Total Iron Binding Capacity TIBC",
+      "slug": "total-iron-binding-capacity-tibc",
+      "name_sr": "Kapacitet vezivanja gvožđa TIBC",
+      "name_sr_cyrl": "Капацитет везивања гвожђа ТИБЦ",
+      "name_ru": "Общая железосвязывающая способность TIBC",
+      "name_de": "Gesamt-Eisenbindungskapazität TIBC",
+      "name_tr": "Total demir bağlama kapasitesi TIBC",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01066",
+      "src": "Slobodni kapacitet vezivanja gvožđa UIBC",
+      "price_eur": 1.38,
+      "name_en": "Unsaturated Iron Binding Capacity UIBC",
+      "slug": "unsaturated-iron-binding-capacity-uibc",
+      "name_sr": "Slobodni kapacitet vezivanja gvožđa UIBC",
+      "name_sr_cyrl": "Слободни капацитет везивања гвожђа УИБЦ",
+      "name_ru": "Ненасыщенная железосвязывающая способность UIBC",
+      "name_de": "Ungesättigte Eisenbindungskapazität UIBC",
+      "name_tr": "Doymamış demir bağlama kapasitesi UIBC",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01104",
+      "src": "Aktivnost laktat dehidrogenaze LDH",
+      "price_eur": 1.27,
+      "name_en": "LDH Activity",
+      "slug": "ldh-activity",
+      "name_sr": "Aktivnost laktat dehidrogenaze LDH",
+      "name_sr_cyrl": "Активност лактат дехидрогеназе ЛДХ",
+      "name_ru": "Лактатдегидрогеназа ЛДГ",
+      "name_de": "Laktatdehydrogenase LDH",
+      "name_tr": "Laktat dehidrojenaz LDH",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01025",
+      "src": "Aktivnost CK-MB",
+      "price_eur": 8.6,
+      "name_en": "CK-MB Activity",
+      "slug": "ck-mb-activity",
+      "name_sr": "Aktivnost CK-MB",
+      "name_sr_cyrl": "Активност ЦК-МБ",
+      "name_ru": "КФК-МВ",
+      "name_de": "CK-MB-Aktivität",
+      "name_tr": "CK-MB aktivitesi",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01026",
+      "src": "Aktivnost CK",
+      "price_eur": 1.56,
+      "name_en": "CK Activity",
+      "slug": "ck-activity",
+      "name_sr": "Aktivnost CK",
+      "name_sr_cyrl": "Активност ЦК",
+      "name_ru": "КФК",
+      "name_de": "CK-Aktivität",
+      "name_tr": "CK aktivitesi",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01027",
+      "src": "Aktivnost gama glutamil transferaza GGT",
+      "price_eur": 1.81,
+      "name_en": "GGT Activity",
+      "slug": "ggt-activity",
+      "name_sr": "Aktivnost gama glutamil transferaza GGT",
+      "name_sr_cyrl": "Активност гама глутамил трансфераза ГГТ",
+      "name_ru": "ГГТ",
+      "name_de": "GGT-Aktivität",
+      "name_tr": "GGT aktivitesi",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01028",
+      "src": "Aktivnost alfa amilaze",
+      "price_eur": 1.34,
+      "name_en": "Alpha Amylase Activity",
+      "slug": "alpha-amylase-activity",
+      "name_sr": "Aktivnost alfa amilaze",
+      "name_sr_cyrl": "Активност алфа амилазе",
+      "name_ru": "Альфа-амилаза",
+      "name_de": "Alpha-Amylase-Aktivität",
+      "name_tr": "Alfa amilaz aktivitesi",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01108S",
+      "src": "Urea u serumu kinetički",
+      "price_eur": 1.24,
+      "name_en": "Serum Urea Kinetic",
+      "slug": "serum-urea-kinetic",
+      "name_sr": "Urea u serumu kinetički",
+      "name_sr_cyrl": "Уреа у серуму кинетички",
+      "name_ru": "Мочевина сыворотки кинетика",
+      "name_de": "Serum-Harnstoff kinetisch",
+      "name_tr": "Serum üre kinetik",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01038",
+      "src": "Kreatinin u serumu",
+      "price_eur": 1.19,
+      "name_en": "Serum Creatinine",
+      "slug": "serum-creatinine",
+      "name_sr": "Kreatinin u serumu",
+      "name_sr_cyrl": "Креатинин у серуму",
+      "name_ru": "Креатинин сыворотки",
+      "name_de": "Serum-Kreatinin",
+      "name_tr": "Serum kreatinin",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01040S",
+      "src": "C-reaktivni protein CRP",
+      "price_eur": 3.44,
+      "name_en": "C-Reactive Protein CRP",
+      "slug": "c-reactive-protein-crp",
+      "name_sr": "C-reaktivni protein CRP",
+      "name_sr_cyrl": "Ц-реактивни протеин ЦРП",
+      "name_ru": "С-реактивный белок CRP",
+      "name_de": "C-reaktives Protein",
+      "name_tr": "C-reaktif protein CRP",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01031",
+      "src": "Mokraćna kiselina u serumu",
+      "price_eur": 1.4,
+      "name_en": "Serum Uric Acid",
+      "slug": "serum-uric-acid",
+      "name_sr": "Mokraćna kiselina u serumu",
+      "name_sr_cyrl": "Мокраћна киселина у серуму",
+      "name_ru": "Мочевая кислота сыворотки",
+      "name_de": "Serum-Harnsäure",
+      "name_tr": "Serum ürik asit",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01100",
+      "src": "Klirens kreatinina",
+      "price_eur": 1.4,
+      "name_en": "Creatinine Clearance",
+      "slug": "creatinine-clearance",
+      "name_sr": "Klirens kreatinina",
+      "name_sr_cyrl": "Клиренс креатинина",
+      "name_ru": "Клиренс креатинина",
+      "name_de": "Kreatinin-Clearance",
+      "name_tr": "Kreatinin klirensi",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01039",
+      "src": "Ispitivanje urina test traka i sediment mikroskopski",
+      "price_eur": 2.94,
+      "name_en": "Urinalysis with Sediment Microscopy",
+      "slug": "urinalysis-with-sediment-microscopy",
+      "name_sr": "Ispitivanje urina test traka i sediment mikroskopski",
+      "name_sr_cyrl": "Испитивање урина тест трака и седимент микроскопски",
+      "name_ru": "Анализ мочи с микроскопией осадка",
+      "name_de": "Urinanalyse mit Sedimentmikroskopie",
+      "name_tr": "İdrar tahlili sediment mikroskopisi",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01109",
+      "src": "Proteini u urinu kvalitativno",
+      "price_eur": 0.7,
+      "name_en": "Urine Protein Qualitative",
+      "slug": "urine-protein-qualitative",
+      "name_sr": "Proteini u urinu kvalitativno",
+      "name_sr_cyrl": "Протеини у урину квалитативно",
+      "name_ru": "Белок мочи качественно",
+      "name_de": "Urin-Protein qualitativ",
+      "name_tr": "İdrar protein kalitatif",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01042",
+      "src": "Bilirubin u urinu",
+      "price_eur": 0.7,
+      "name_en": "Urine Bilirubin",
+      "slug": "urine-bilirubin",
+      "name_sr": "Bilirubin u urinu",
+      "name_sr_cyrl": "Билирубин у урину",
+      "name_ru": "Билирубин мочи",
+      "name_de": "Bilirubin im Urin",
+      "name_tr": "İdrar bilirubin",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01101",
+      "src": "Urobilinogen u urinu",
+      "price_eur": 0.7,
+      "name_en": "Urine Urobilinogen",
+      "slug": "urine-urobilinogen",
+      "name_sr": "Urobilinogen u urinu",
+      "name_sr_cyrl": "Уробилиноген у урину",
+      "name_ru": "Уробилиноген мочи",
+      "name_de": "Urobilinogen im Urin",
+      "name_tr": "İdrar ürobilinojen",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01063",
+      "src": "Alfa amilaza u urinu",
+      "price_eur": 1.81,
+      "name_en": "Urine Alpha Amylase",
+      "slug": "urine-alpha-amylase",
+      "name_sr": "Alfa amilaza u urinu",
+      "name_sr_cyrl": "Алфа амилаза у урину",
+      "name_ru": "Альфа-амилаза мочи",
+      "name_de": "Alpha-Amylase im Urin",
+      "name_tr": "İdrar alfa amilaz",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01072",
+      "src": "hCG u urinu test traka",
+      "price_eur": 3.5,
+      "name_en": "Urine hCG Strip Test",
+      "slug": "urine-hcg-strip-test",
+      "name_sr": "hCG u urinu test traka",
+      "name_sr_cyrl": "хЦГ у урину тест трака",
+      "name_ru": "ХГЧ мочи тест-полоска",
+      "name_de": "Urin-hCG-Streifentest",
+      "name_tr": "İdrar hCG strip testi",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_Z01084",
+      "src": "Ispitivanje urina sa flow citometrijom",
+      "price_eur": 3.75,
+      "name_en": "Urinalysis with Flow Cytometry",
+      "slug": "urinalysis-with-flow-cytometry",
+      "name_sr": "Ispitivanje urina sa flow citometrijom",
+      "name_sr_cyrl": "Испитивање урина са флоw цитометријом",
+      "name_ru": "Анализ мочи с проточной цитометрией",
+      "name_de": "Urinanalyse mit Durchflusszytometrie",
+      "name_tr": "Akış sitometrisi ile idrar tahlili",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_K01002",
+      "src": "Prijem materijala i davanje sterilnih posuda",
+      "price_eur": 0.54,
+      "name_en": "Sample Receipt and Sterile Container Issue",
+      "slug": "sample-receipt-and-sterile-container-issue",
+      "name_sr": "Prijem materijala i davanje sterilnih posuda",
+      "name_sr_cyrl": "Пријем материјала и давање стерилних посуда",
+      "name_ru": "Приём материала и выдача стерильных контейнеров",
+      "name_de": "Materialannahme und sterile Behälterausgabe",
+      "name_tr": "Numune kabulü ve steril kap verme",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_HN_K01003",
+      "src": "Uzimanje uzorka",
+      "price_eur": 0.9,
+      "name_en": "Sample Collection",
+      "slug": "sample-collection",
+      "name_sr": "Uzimanje uzorka",
+      "name_sr_cyrl": "Узимање узорка",
+      "name_ru": "Взятие образца",
+      "name_de": "Probenentnahme",
+      "name_tr": "Numune alma",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    }
+  ]
+}

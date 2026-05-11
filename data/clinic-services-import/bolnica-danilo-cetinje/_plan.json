@@ -1,0 +1,111 @@
+{
+  "purpose": "Оптимальный план перевода 2790 услуг прейскуранта Bolnica Danilo I Cetinje (clinic_id=88) пакетами.",
+  "principles": [
+    "Сначала диагностика и лабы — высокий процент matches с существующими (мало переводить).",
+    "Потом мелкие разнородные подразделы — быстро доделать хвосты.",
+    "Потом крупные процедуры (X*) и операции (D*) — самое долгое.",
+    "Y* пропустить — административные позиции, не клинические услуги.",
+    "Размер пакета 30-100 пунктов — оптимум между скоростью и качеством перевода.",
+    "Подразделы внутри одной волны не пересекаются — можно гонять несколько агентов параллельно."
+  ],
+  "totals": {
+    "total_pdf_items": 2790,
+    "skip_admin_y": 95,
+    "skip_blood_sets_g06": 10,
+    "to_import": 2685,
+    "completed": 49,
+    "remaining": 2636
+  },
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Диагностика и лабораторные тесты (высокий match с DB)",
+      "rationale": "Самые шаблонные позиции: CT/MR/UZV/Rtg, биохимия, ОАК, серология. Большинство уже есть в service-list.txt и labtest-list.txt — переводить нужно мало. Дает максимум value (диагностика — самый востребованный поиск пациентов) при минимуме работы.",
+      "batches": [
+        {"id": "batch-02-imaging-ct-mr-us", "subsections": ["J08", "J09", "J07"], "kind": "service", "items": 83, "match_expected": "high", "parallel_group": "A"},
+        {"id": "batch-03-imaging-rtg", "subsections": ["J01", "J06", "J11"], "kind": "service", "items": 70, "match_expected": "high", "parallel_group": "A"},
+        {"id": "batch-04-lab-biochem-hematology", "subsections": ["Z01", "Z02", "Z03", "Z04"], "kind": "lab_test", "items": 124, "match_expected": "high", "parallel_group": "B"},
+        {"id": "batch-05-microbiology-1", "subsections": ["K01", "K02"], "kind": "mixed", "items": 79, "match_expected": "medium", "parallel_group": "B", "note": "K01 содержит и процедуры (взятие материала) и тесты — разделить на service vs lab_test"},
+        {"id": "batch-06-microbiology-2", "subsections": ["K03"], "kind": "lab_test", "items": 163, "match_expected": "medium", "parallel_group": "C"},
+        {"id": "batch-07-pathology-histology", "subsections": ["L01"], "kind": "lab_test", "items": 156, "match_expected": "medium", "parallel_group": "C", "note": "В основном пат-гистологические исследования биопсий — все lab_tests"}
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "Мелкие специализированные подразделы",
+      "rationale": "Малые подразделы 1-30 пунктов: завершить узкие специальности до перехода к большим операциям. Покрывает физиотерапию, психиатрию, неврологию, гемодиализ, ЭКО, родзал и т.д.",
+      "batches": [
+        {"id": "batch-08-physiotherapy", "subsections": ["M02", "M03"], "kind": "service", "items": 72, "match_expected": "medium", "parallel_group": "D"},
+        {"id": "batch-09-psych-neuro", "subsections": ["H01", "H02", "H04", "H05", "H13"], "kind": "service", "items": 49, "match_expected": "medium", "parallel_group": "D"},
+        {"id": "batch-10-misc-small", "subsections": ["A01-skip-done", "F01", "G05", "G09", "V01", "W04", "D22", "S03", "S04", "S07", "D09"], "kind": "service", "items": 73, "match_expected": "medium", "parallel_group": "E", "note": "Родзал + трансфузия + гипербарика + гемодиализ + ЭКО + стоматология + хирургические консультации"}
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "Процедуры и интервенции (X*)",
+      "rationale": "718 пунктов, разбиты по специальностям. Процедуры менее частотны чем операции, но все еще важны для поиска по клинике. Можно гнать 3-4 пакета параллельно (разные специальности не пересекаются).",
+      "batches": [
+        {"id": "batch-11-x-zahvati", "subsections": ["X01", "X02", "X03"], "kind": "service", "items": 140, "match_expected": "low", "parallel_group": "F", "note": "Малые/средние/сложные общие zahvati"},
+        {"id": "batch-12-x-gynecology", "subsections": ["X04"], "kind": "service", "items": 61, "match_expected": "medium", "parallel_group": "F"},
+        {"id": "batch-13-x-ophthalmology", "subsections": ["X06", "X26"], "kind": "service", "items": 97, "match_expected": "medium", "parallel_group": "G"},
+        {"id": "batch-14-x-ent", "subsections": ["X07"], "kind": "service", "items": 111, "match_expected": "medium", "parallel_group": "G"},
+        {"id": "batch-15-x-derm-ortho-gen", "subsections": ["X08", "X09", "X10"], "kind": "service", "items": 114, "match_expected": "medium", "parallel_group": "H"},
+        {"id": "batch-16-x-uro-cardio-endo-anest", "subsections": ["X11", "X14", "X15", "X19"], "kind": "service", "items": 92, "match_expected": "medium", "parallel_group": "H"},
+        {"id": "batch-17-x-transfusion-misc", "subsections": ["X12", "X13", "X16", "X17", "X18", "X20", "X23", "X24", "X27", "X34"], "kind": "service", "items": 103, "match_expected": "low", "parallel_group": "I"}
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "Хирургические операции (D*)",
+      "rationale": "1074 пункта — самый объемный фрагмент. Конкретные операционные термины с латынью. Низкий match (мало готовых записей). Делим большие подразделы пополам, чтобы пакеты не превышали ~120 пунктов.",
+      "batches": [
+        {"id": "batch-18-d-gyn-ops", "subsections": ["D01"], "kind": "service", "items": 63, "match_expected": "low", "parallel_group": "J"},
+        {"id": "batch-19a-d-general-surgery-1", "subsections": ["D02"], "kind": "service", "items": 116, "match_expected": "low", "parallel_group": "J", "split": "1/2", "split_notes": "First 116 items of D02 (codes D02001-D02116 approx)"},
+        {"id": "batch-19b-d-general-surgery-2", "subsections": ["D02"], "kind": "service", "items": 116, "match_expected": "low", "parallel_group": "K", "split": "2/2"},
+        {"id": "batch-20a-d-urology-ops-1", "subsections": ["D03"], "kind": "service", "items": 78, "match_expected": "low", "parallel_group": "K", "split": "1/2"},
+        {"id": "batch-20b-d-urology-ops-2", "subsections": ["D03"], "kind": "service", "items": 78, "match_expected": "low", "parallel_group": "L", "split": "2/2"},
+        {"id": "batch-21-d-ent-ops", "subsections": ["D04"], "kind": "service", "items": 80, "match_expected": "low", "parallel_group": "L"},
+        {"id": "batch-22a-d-orthopedic-ops-1", "subsections": ["D05"], "kind": "service", "items": 74, "match_expected": "low", "parallel_group": "M", "split": "1/2"},
+        {"id": "batch-22b-d-orthopedic-ops-2", "subsections": ["D05"], "kind": "service", "items": 74, "match_expected": "low", "parallel_group": "M", "split": "2/2"},
+        {"id": "batch-23-d-ophthalmic-ops", "subsections": ["D06", "D07"], "kind": "service", "items": 84, "match_expected": "low", "parallel_group": "N"},
+        {"id": "batch-24a-d-vascular-1", "subsections": ["D26"], "kind": "service", "items": 73, "match_expected": "low", "parallel_group": "N", "split": "1/2"},
+        {"id": "batch-24b-d-vascular-2", "subsections": ["D26"], "kind": "service", "items": 72, "match_expected": "low", "parallel_group": "O", "split": "2/2"},
+        {"id": "batch-25-d-neurosurgery", "subsections": ["D27"], "kind": "service", "items": 65, "match_expected": "low", "parallel_group": "O"},
+        {"id": "batch-26-d-thoracic", "subsections": ["D28"], "kind": "service", "items": 94, "match_expected": "low", "parallel_group": "P"}
+      ]
+    }
+  ],
+  "process_per_batch": [
+    "1. Загрузить items из data/clinic-services-import/bolnica-danilo-cetinje/by-subsection/<code>-*.json",
+    "2. Для каждого item: pre-translate name_sr_lat → name_en (на английский, минимально, для поиска).",
+    "3. Сматчить против service-list.txt (для services) или labtest-list.txt (для lab_tests). Фаззи-матч + точное сравнение.",
+    "4. Заполнить translations/<batch-id>.json: status='existing' + existing_id для совпадений; status='new' + полный перевод (sr/sr_cyrl/ru/de/tr) + slug для остальных.",
+    "5. Сгенерировать SQL: server/sql/insert-clinic-88-services-<batch-id>.sql.",
+    "6. Обновить _progress.json (статус подразделов done; добавить batch в batches[]).",
+    "7. Дать сводку юзеру: items_total/new/existing, list of named services (если есть)."
+  ],
+  "parallel_strategy": {
+    "description": "Внутри одной волны (parallel_group) пакеты не пересекаются по подразделам — можно гонять параллельно через Agent (general-purpose). Каждый агент берет свой batch: читает by-subsection JSON, матчит существующие, переводит новые, генерит SQL.",
+    "recommended_concurrency": "2-3 агента параллельно. Больше — риск рассогласования/конфликтов в общих файлах (_progress.json).",
+    "shared_files": [
+      "data/clinic-services-import/bolnica-danilo-cetinje/_progress.json — обновлять последовательно (не параллельно)"
+    ],
+    "isolated_files": [
+      "translations/<batch-id>.json — изолирован",
+      "server/sql/insert-clinic-88-services-<batch-id>.sql — изолирован"
+    ]
+  },
+  "estimated_effort": {
+    "phase_1_diagnostics_labs": "~675 items, ~30-40% existing match → ~450 new translations. 6 пакетов.",
+    "phase_2_misc": "~194 items, ~20% match → ~155 new translations. 3 пакета.",
+    "phase_3_procedures": "~718 items, ~10% match → ~650 new translations. 7 пакетов.",
+    "phase_4_operations": "~1074 items, ~5% match → ~1020 new translations. 13 пакетов.",
+    "total_new_translations_estimate": "~2275 новых услуг для перевода на 6 языков."
+  },
+  "cancel_or_modify": {
+    "stop_after_phase_1": "Если только диагностика+лабы нужны — стоп после batch-07. ~675 услуг в системе.",
+    "stop_after_phase_2": "+мелкие специальности — стоп после batch-10. ~870 услуг.",
+    "stop_after_phase_3": "+процедуры — стоп после batch-17. ~1590 услуг.",
+    "full_scope": "Все 4 фазы. ~2685 услуг."
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "jsonPath": "data/google-places/herceg-novi/dental-clinic-kovacevic.json",
+  "outputPath": "server/sql/reviews-google/dental-clinic-kovacevic-herceg-novi.sql",
+  "dataCollectedDate": "2026-05-07",
+  "clinicId": 123,
+  "clinicName": "Dental Clinic Kovačević (Herceg Novi)",
+  "translationsDir": "data/review-translations/dental-clinic-kovacevic-herceg-novi/",
+  "doctors": [
+    {
+      "id": 1112,
+      "varName": "krsto_kovacevic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Krst[oeuai](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Крст[оауе](?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    },
+    {
+      "id": 1113,
+      "varName": "nikola_kovacevic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Nikol[aeu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Никол[ауе](?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "\\bN\\.\\s*Kova[čc]evi[ćc]"
+      ]
+    },
+    {
+      "id": 1114,
+      "varName": "sanja_kovacevic_ozegovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁ])Sanj[aeu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "O[zž]egovi[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Сањ[ауе](?:[^а-яёА-ЯЁa-zA-Z]|$)",
+        "(?:^|[^а-яёА-ЯЁa-zA-Z])Сан[ьяь][ауе]?(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+      ]
+    }
+  ]
+}

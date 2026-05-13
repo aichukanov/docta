@@ -1,0 +1,3905 @@
+{
+  "batch": "base-7",
+  "pdf_pages": "102-118",
+  "doc_pages": "99-115",
+  "sections": [
+    "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+    "50. USLUGE ASISTIRANE REPRODUKCIJE (VANTJELESNE OPLODNJE)",
+    "51. PORODAJNA SALA",
+    "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+    "53. DJEČIJA GASTROENTEROHEPATOLOGIJA",
+    "54. DJEČIJA PULMOLOGIJA",
+    "55. DJEČIJA ALERGOLOGIJA",
+    "56. DJEČIJA HEMATOLOGIJA I ONKOLOGIJA",
+    "57. DJEČIJA KARDIOLOGIJA",
+    "58. DJEČIJA NEUROLOGIJA",
+    "59. ONKOLOGIJA I RADIOTERAPIJA",
+    "60. NUKLEARNA MEDICINA",
+    "61. PSIHOLOGIJA",
+    "62. USLUGE SOCIJALNOG RADNIKA",
+    "63. EPIDEMIOLOGIJA",
+    "64. HIGIJENA",
+    "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+    "66. URGENTNA MEDICINA",
+    "67. STOMATOLOGIJA"
+  ],
+  "notes": [
+    "Section 49 (operacije) source table has 3 price columns: Operacija | Opšta anestezija | Ukupno (Ukupno = Operacija + Anestezija). The Ukupno value is stored in price_odjeljenje_eur; price_ambulanta_eur=null.",
+    "Sections 50, 51, 62, 63, 64, 67 have a single CIJENA column. The value is stored in price_odjeljenje_eur; price_ambulanta_eur=null.",
+    "Section 67 STOMATOLOGIJA has six subsections: Oralna hirurgija (D20xxx), Parodontologija sa oralnom medicinom (D21xxx), Bolesti zuba sa endodoncijom (D22xxx), Dječja preventivna stomatologija (D23xxx), Ortopedija vilica sa laboratorijom (D24xxx), Stomatološka protetika (D25xxx).",
+    "Sections 53–58, 60, 66 'pregled' rows have only Ambulanta filled (Odjeljenje null). Intervencije rows in those sections have both.",
+    "Section 65 — M03xxx 'pregled' rows only Ambulanta; M02xxx intervencije have both columns.",
+    "Section 67 / Dječja preventivna stomatologija: NAPOMENA in source — 'Sve intervencije kod djece sa posebnim potrebama uvećavaju se 100%.' (footnote, not an item)",
+    "Section 63/64 source has tercijarni-nivo subsection without specific items (only descriptive text 'usluge ostvaruju se kroz programe na tercijarnom nivou').",
+    "Data ends at p.116-bot (D25038 — Klinička funkcijska analiza). PDF pages 117-118 contain Član 7-12 articles and signature page (not items)."
+  ],
+  "items_count": 483,
+  "items": [
+    {
+      "code": "D01013",
+      "name_sr_latin": "Abdominalna histerektomija post partum kod atoničnog krvarenja",
+      "price_odjeljenje_eur": 187.2,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01024",
+      "name_sr_latin": "Kolpokleiza",
+      "price_odjeljenje_eur": 54.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01025",
+      "name_sr_latin": "Jednostrana ovariektomija",
+      "price_odjeljenje_eur": 48.1,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01026",
+      "name_sr_latin": "Obostrana ovariektomija",
+      "price_odjeljenje_eur": 67.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01027",
+      "name_sr_latin": "Jednostrana adneksektomija",
+      "price_odjeljenje_eur": 54.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01070",
+      "name_sr_latin": "Donja središnja eksplorativna laparotomija",
+      "price_odjeljenje_eur": 74.1,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01028",
+      "name_sr_latin": "Histerorafija: sutura ruptura uterusa (neakušerskih)",
+      "price_odjeljenje_eur": 93.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01029",
+      "name_sr_latin": "Ekstirpacija intraligamentarne ciste",
+      "price_odjeljenje_eur": 156,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01030",
+      "name_sr_latin": "Histeroskopija dijagnostička",
+      "price_odjeljenje_eur": 19.5,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01031",
+      "name_sr_latin": "Histeroskopska polipektomija",
+      "price_odjeljenje_eur": 32.5,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01032",
+      "name_sr_latin": "Histeroskopska adhezioliza",
+      "price_odjeljenje_eur": 32.5,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01033",
+      "name_sr_latin": "Laparoskopska eksploracija male karlice",
+      "price_odjeljenje_eur": 48.1,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01034",
+      "name_sr_latin": "Sterilisatio abdominalis",
+      "price_odjeljenje_eur": 54.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01071",
+      "name_sr_latin": "Sterilisatio abdominalis laparoskopski",
+      "price_odjeljenje_eur": 54.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01035",
+      "name_sr_latin": "Totalna jednostrana salpingektomija-laparoskopska",
+      "price_odjeljenje_eur": 54.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01036",
+      "name_sr_latin": "Histeroskopska resekcija uterusnog septuma",
+      "price_odjeljenje_eur": 54.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01037",
+      "name_sr_latin": "Histeroskopska miomektomija",
+      "price_odjeljenje_eur": 54.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01038",
+      "name_sr_latin": "Ovarijalni drilling",
+      "price_odjeljenje_eur": 54.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01040",
+      "name_sr_latin": "Laparoskopska resekcija ovarijuma",
+      "price_odjeljenje_eur": 67.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01041",
+      "name_sr_latin": "Laparoskopska cistektomija ovarijuma jednostrana",
+      "price_odjeljenje_eur": 67.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01042",
+      "name_sr_latin": "Oslobađanje adhezija jajnika i tube",
+      "price_odjeljenje_eur": 74.1,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01043",
+      "name_sr_latin": "Laparoskopska cistektomija ovarijuma obostrana",
+      "price_odjeljenje_eur": 74.1,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01044",
+      "name_sr_latin": "Totalna obostrana salpingektomija-laparoskopska",
+      "price_odjeljenje_eur": 74.1,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01072",
+      "name_sr_latin": "Linearna salpingotomija, segmentna ekscizija i fimbrijalna ekspresija-klasična",
+      "price_odjeljenje_eur": 54.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01073",
+      "name_sr_latin": "Linearna salpingotomija, segmentna ekscizija i fimbrijalna ekspresija-laparoskopska",
+      "price_odjeljenje_eur": 54.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01074",
+      "name_sr_latin": "Resutura dehiscirane rane prednjeg trbušnog zida ili vagine",
+      "price_odjeljenje_eur": 48.1,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01045",
+      "name_sr_latin": "Suprapubična suspenzija uretre (Marshal Marchetti metoda)",
+      "price_odjeljenje_eur": 93.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01046",
+      "name_sr_latin": "Endoskopska (laparoskopska) korektivna operacija tuba, salpingentomija, kornualna resekcija, fimbriektomija, kauterizacija, grav EU",
+      "price_odjeljenje_eur": 93.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01048",
+      "name_sr_latin": "Laparoskopska miomektomija",
+      "price_odjeljenje_eur": 156,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01050",
+      "name_sr_latin": "Totalna vaginalna histerektomija",
+      "price_odjeljenje_eur": 187.2,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01051",
+      "name_sr_latin": "Serklaž (Cerclage)",
+      "price_odjeljenje_eur": 19.5,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01052",
+      "name_sr_latin": "Sectio Caesarea parva",
+      "price_odjeljenje_eur": 74.1,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01053",
+      "name_sr_latin": "Niski, istmični carski rez (sa vođenjem porođaja)",
+      "price_odjeljenje_eur": 156,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01054",
+      "name_sr_latin": "Amputacija cervixa",
+      "price_odjeljenje_eur": 42.9,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01055",
+      "name_sr_latin": "Trachelectomia",
+      "price_odjeljenje_eur": 48.1,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01056",
+      "name_sr_latin": "Vulvektomia simplex",
+      "price_odjeljenje_eur": 61.1,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01057",
+      "name_sr_latin": "Plastika trbušnog zida",
+      "price_odjeljenje_eur": 67.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01058",
+      "name_sr_latin": "Marsupijalizacija ciste",
+      "price_odjeljenje_eur": 124.8,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01075",
+      "name_sr_latin": "Reparacija vulve i perineuma",
+      "price_odjeljenje_eur": 74.1,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01059",
+      "name_sr_latin": "Histerepeksija sa skraćivanjem oblih veza (lig.rotunda)",
+      "price_odjeljenje_eur": 124.8,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01060",
+      "name_sr_latin": "Supracervikalna histerektomija, subtotalna histerektomija",
+      "price_odjeljenje_eur": 171.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01076",
+      "name_sr_latin": "Subtotalna abdominalna histerektomija sa konzervacijom adneksa",
+      "price_odjeljenje_eur": 171.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01077",
+      "name_sr_latin": "Totalna abdominalna histerektomija sa konzervacijom adneksa",
+      "price_odjeljenje_eur": 202.8,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01061",
+      "name_sr_latin": "Radikalna histerektomija sa Wertheim Meigs",
+      "price_odjeljenje_eur": 312,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01062",
+      "name_sr_latin": "Resekcija tube (stomatoplastika) obostrana",
+      "price_odjeljenje_eur": 93.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": null
+    },
+    {
+      "code": "D01101",
+      "name_sr_latin": "Radikalna vaginalna histerektomija (Shauta-Stockelova)",
+      "price_odjeljenje_eur": 187.2,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": "TERCIJARNA ZDRAVSTVENA ZAŠTITA GINEKOLOGIJA i AKUŠERSTVO"
+    },
+    {
+      "code": "D01102",
+      "name_sr_latin": "Klasična histerektomija i limfadenektomija",
+      "price_odjeljenje_eur": 312,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": "TERCIJARNA ZDRAVSTVENA ZAŠTITA GINEKOLOGIJA i AKUŠERSTVO"
+    },
+    {
+      "code": "D01103",
+      "name_sr_latin": "Laparoskopska histerektomija sa konzervacijom adneksa ili ne",
+      "price_odjeljenje_eur": 202.8,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": "TERCIJARNA ZDRAVSTVENA ZAŠTITA GINEKOLOGIJA i AKUŠERSTVO"
+    },
+    {
+      "code": "D01104",
+      "name_sr_latin": "Laparoskopska asistirana vaginalna histerektomija",
+      "price_odjeljenje_eur": 187.2,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": "TERCIJARNA ZDRAVSTVENA ZAŠTITA GINEKOLOGIJA i AKUŠERSTVO"
+    },
+    {
+      "code": "D01105",
+      "name_sr_latin": "Reparacija tube, anastomoza, implantacija u uterus, salpingoforostomija sa transplantacijom ili protezom, rekonstrukcija",
+      "price_odjeljenje_eur": 187.2,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": "TERCIJARNA ZDRAVSTVENA ZAŠTITA GINEKOLOGIJA i AKUŠERSTVO"
+    },
+    {
+      "code": "D01106",
+      "name_sr_latin": "Rekonstrukcija vagine sa transplantacijom kože",
+      "price_odjeljenje_eur": 93.6,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": "TERCIJARNA ZDRAVSTVENA ZAŠTITA GINEKOLOGIJA i AKUŠERSTVO"
+    },
+    {
+      "code": "D01107",
+      "name_sr_latin": "Radikalna vulvektomija",
+      "price_odjeljenje_eur": 280.8,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": "TERCIJARNA ZDRAVSTVENA ZAŠTITA GINEKOLOGIJA i AKUŠERSTVO"
+    },
+    {
+      "code": "D01108",
+      "name_sr_latin": "Amnioredukcija",
+      "price_odjeljenje_eur": 32.5,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": "TERCIJARNA ZDRAVSTVENA ZAŠTITA GINEKOLOGIJA i AKUŠERSTVO"
+    },
+    {
+      "code": "D01109",
+      "name_sr_latin": "Embrioredukcija",
+      "price_odjeljenje_eur": 32.5,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": "TERCIJARNA ZDRAVSTVENA ZAŠTITA GINEKOLOGIJA i AKUŠERSTVO"
+    },
+    {
+      "code": "D01110",
+      "name_sr_latin": "Reparacija fistule uretero-vaginalis, vesicovaginalis, vesicocervicalis, vesico-uterina",
+      "price_odjeljenje_eur": 156,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": "TERCIJARNA ZDRAVSTVENA ZAŠTITA GINEKOLOGIJA i AKUŠERSTVO"
+    },
+    {
+      "code": "D01111",
+      "name_sr_latin": "Reparacija fistule uretero-vaginalis bilateralis",
+      "price_odjeljenje_eur": 156,
+      "price_ambulanta_eur": null,
+      "section": "49. OPERACIJE - GINEKOLOGIJA i AKUŠERSTVO",
+      "subsection": "TERCIJARNA ZDRAVSTVENA ZAŠTITA GINEKOLOGIJA i AKUŠERSTVO"
+    },
+    {
+      "code": "W04001",
+      "name_sr_latin": "Folikulometrija",
+      "price_odjeljenje_eur": 111.82,
+      "price_ambulanta_eur": null,
+      "section": "50. USLUGE ASISTIRANE REPRODUKCIJE (VANTJELESNE OPLODNJE)",
+      "subsection": null
+    },
+    {
+      "code": "W04002",
+      "name_sr_latin": "Aspiracija folikula",
+      "price_odjeljenje_eur": 135.65,
+      "price_ambulanta_eur": null,
+      "section": "50. USLUGE ASISTIRANE REPRODUKCIJE (VANTJELESNE OPLODNJE)",
+      "subsection": null
+    },
+    {
+      "code": "W04003",
+      "name_sr_latin": "Anestezija",
+      "price_odjeljenje_eur": 49.3,
+      "price_ambulanta_eur": null,
+      "section": "50. USLUGE ASISTIRANE REPRODUKCIJE (VANTJELESNE OPLODNJE)",
+      "subsection": null
+    },
+    {
+      "code": "W04004",
+      "name_sr_latin": "Laboratorija - IVF",
+      "price_odjeljenje_eur": 588.9,
+      "price_ambulanta_eur": null,
+      "section": "50. USLUGE ASISTIRANE REPRODUKCIJE (VANTJELESNE OPLODNJE)",
+      "subsection": null
+    },
+    {
+      "code": "W04005",
+      "name_sr_latin": "Laboratorija - ICSI",
+      "price_odjeljenje_eur": 761.46,
+      "price_ambulanta_eur": null,
+      "section": "50. USLUGE ASISTIRANE REPRODUKCIJE (VANTJELESNE OPLODNJE)",
+      "subsection": null
+    },
+    {
+      "code": "W04006",
+      "name_sr_latin": "Embriotransfer",
+      "price_odjeljenje_eur": 73.46,
+      "price_ambulanta_eur": null,
+      "section": "50. USLUGE ASISTIRANE REPRODUKCIJE (VANTJELESNE OPLODNJE)",
+      "subsection": null
+    },
+    {
+      "code": "W04007",
+      "name_sr_latin": "Intrauterina inseminacija - IUI",
+      "price_odjeljenje_eur": 91.24,
+      "price_ambulanta_eur": null,
+      "section": "50. USLUGE ASISTIRANE REPRODUKCIJE (VANTJELESNE OPLODNJE)",
+      "subsection": null
+    },
+    {
+      "code": "F01001",
+      "name_sr_latin": "Vođenje porođaja (prednji potiljačni stav)",
+      "price_odjeljenje_eur": 26,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01002",
+      "name_sr_latin": "Vođenje porođaja (defleksioni stavovi, nepravilne rotacije, karlični stav, gemeli)",
+      "price_odjeljenje_eur": 39,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01004",
+      "name_sr_latin": "Vođenje indukovanog porođaja",
+      "price_odjeljenje_eur": 13,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01005",
+      "name_sr_latin": "Epiziotomija i šav",
+      "price_odjeljenje_eur": 13,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01006",
+      "name_sr_latin": "Revizija duplje materice - manuelna",
+      "price_odjeljenje_eur": 19.5,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01031",
+      "name_sr_latin": "Reviso cavi uteri instrumentalis",
+      "price_odjeljenje_eur": 13,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01007",
+      "name_sr_latin": "Manuelna ekstrakcija posteljice",
+      "price_odjeljenje_eur": 19.5,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01032",
+      "name_sr_latin": "Operacije na pliodu radi olakšanja porođaja",
+      "price_odjeljenje_eur": 65,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01009",
+      "name_sr_latin": "Zbrinjavanje rupture međice prvog stepena",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01010",
+      "name_sr_latin": "Zbrinjavanje rupture međice drugog stepena",
+      "price_odjeljenje_eur": 19.5,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01011",
+      "name_sr_latin": "Zbrinjavanje rupture vaginalnih zidova",
+      "price_odjeljenje_eur": 19.5,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01012",
+      "name_sr_latin": "Zbrinjavanje rupture grlića materice",
+      "price_odjeljenje_eur": 13,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01013",
+      "name_sr_latin": "Imobilizacija dijastaze simfize",
+      "price_odjeljenje_eur": 13,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01014",
+      "name_sr_latin": "Zbrinjavanje rupture materice i šoka u porođaju",
+      "price_odjeljenje_eur": 13,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01015",
+      "name_sr_latin": "Druge produžene operacije (evakuacija hematoma vulve, incizija cerviksa, tamponada uterusa u toku porođaja itd.)",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01019",
+      "name_sr_latin": "Prekid visoke trudnoće - (preko 12 nedjelja) intramnijalnom instilacijom",
+      "price_odjeljenje_eur": 32.5,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01020",
+      "name_sr_latin": "Aplikacija vakuma u porodjaju",
+      "price_odjeljenje_eur": 45.5,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01022",
+      "name_sr_latin": "Aplikacija forcepsa na izlazu karlice i ekstrakcija ploda (sa vođenjem porodjaja)",
+      "price_odjeljenje_eur": 45.5,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01024",
+      "name_sr_latin": "Unutrašnji okret sa ekstrakcijom ploda",
+      "price_odjeljenje_eur": 52,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01025",
+      "name_sr_latin": "Ručna pomoć po Brachtu (sa vođenjem porođaja)",
+      "price_odjeljenje_eur": 52,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01026",
+      "name_sr_latin": "Ručna pomoć sa Smellie-Veit-u (sa vođenjem porođaja)",
+      "price_odjeljenje_eur": 52,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01027",
+      "name_sr_latin": "Zbrinjavanje pukotine uterusa",
+      "price_odjeljenje_eur": 52,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01028",
+      "name_sr_latin": "Zbrinjavanje rupture međice trećeg stepena",
+      "price_odjeljenje_eur": 65,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "F01017",
+      "name_sr_latin": "CTG kontinuirano u porodjaju",
+      "price_odjeljenje_eur": 15.6,
+      "price_ambulanta_eur": null,
+      "section": "51. PORODAJNA SALA",
+      "subsection": null
+    },
+    {
+      "code": "B01005",
+      "name_sr_latin": "Prvi pregled odojčeta - pedijatar",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": null
+    },
+    {
+      "code": "B01001",
+      "name_sr_latin": "Prvi pregled dijeteta - pedijatar",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": null,
+      "note": "OCR_FIX: code corrected B01003→B01001 per base PDF scan (p.105 area, section 52 OPŠTA PEDIJATRIJA)"
+    },
+    {
+      "code": "B01006",
+      "name_sr_latin": "Prvi pregled novorođenčeta - neonatolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": null
+    },
+    {
+      "code": "B01007",
+      "name_sr_latin": "Ponovni (kontrolni) pregled odojčeta - pedijatar",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": null
+    },
+    {
+      "code": "B01002",
+      "name_sr_latin": "Ponovni (kontrolni) pregled djeteta - pedijatar",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": null
+    },
+    {
+      "code": "B01008",
+      "name_sr_latin": "Ponovni (kontrolni) pregled novorođenčeta - neonatolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": null
+    },
+    {
+      "code": "X16001",
+      "name_sr_latin": "Vakcinacija novorođenčeta",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE PEDIJATRIJA"
+    },
+    {
+      "code": "X16003",
+      "name_sr_latin": "Toaleta nosa i nosne duplje sa evakuacijom sekreta",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE PEDIJATRIJA"
+    },
+    {
+      "code": "X16006",
+      "name_sr_latin": "Lapsiranje granuloma pupka",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE PEDIJATRIJA"
+    },
+    {
+      "code": "X16007",
+      "name_sr_latin": "Obrada kože novorođenčeta",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE PEDIJATRIJA"
+    },
+    {
+      "code": "X16009",
+      "name_sr_latin": "Aspiriranje sekreta kod dojenčadi i male djece",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE PEDIJATRIJA"
+    },
+    {
+      "code": "X29001",
+      "name_sr_latin": "Mehanička ventilacija novorođenčeta",
+      "price_odjeljenje_eur": 10.4,
+      "price_ambulanta_eur": 22.24,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE NEONATOLOGIJA"
+    },
+    {
+      "code": "X29002",
+      "name_sr_latin": "Visokofrekventna oscilatorna ventilacija novorođenčeta",
+      "price_odjeljenje_eur": 10.4,
+      "price_ambulanta_eur": 22.24,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE NEONATOLOGIJA"
+    },
+    {
+      "code": "X29003",
+      "name_sr_latin": "Primjena Kontinuirajućeg pozitivnog pritiska u disajnim putevima - CPAP",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE NEONATOLOGIJA"
+    },
+    {
+      "code": "X29004",
+      "name_sr_latin": "Primjena azot oksida (NO)",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE NEONATOLOGIJA"
+    },
+    {
+      "code": "X29005",
+      "name_sr_latin": "Primjena surfaktanta kod novorođenčadi",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE NEONATOLOGIJA"
+    },
+    {
+      "code": "X29006",
+      "name_sr_latin": "Oksigenoterapija kod novorođenčeta",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE NEONATOLOGIJA"
+    },
+    {
+      "code": "X29007",
+      "name_sr_latin": "Kateterizacija umbilikalne vene",
+      "price_odjeljenje_eur": 16.9,
+      "price_ambulanta_eur": 36.14,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE NEONATOLOGIJA"
+    },
+    {
+      "code": "X29008",
+      "name_sr_latin": "Eksangvinotransfuzija",
+      "price_odjeljenje_eur": 19.5,
+      "price_ambulanta_eur": 41.7,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE NEONATOLOGIJA"
+    },
+    {
+      "code": "X29009",
+      "name_sr_latin": "Enteralna ishrana",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE NEONATOLOGIJA"
+    },
+    {
+      "code": "X29010",
+      "name_sr_latin": "Totalna parenteralna ishrana (TPI)",
+      "price_odjeljenje_eur": 1.95,
+      "price_ambulanta_eur": 4.17,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE NEONATOLOGIJA"
+    },
+    {
+      "code": "X29011",
+      "name_sr_latin": "Aspiracija disajnih puteva pod laringoskopskom kontrolom",
+      "price_odjeljenje_eur": 10.4,
+      "price_ambulanta_eur": 22.24,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE NEONATOLOGIJA"
+    },
+    {
+      "code": "X29012",
+      "name_sr_latin": "Ultrazvuk CNS",
+      "price_odjeljenje_eur": 5.2,
+      "price_ambulanta_eur": 11.12,
+      "section": "52. OPŠTA PEDIJATRIJA SA NEONATOLOGIJOM",
+      "subsection": "INTERVENCIJE I PROCEDURE NEONATOLOGIJA"
+    },
+    {
+      "code": "S10001",
+      "name_sr_latin": "Prvi pregled odojčeta - dječji gastroenterohepatolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "53. DJEČIJA GASTROENTEROHEPATOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S10002",
+      "name_sr_latin": "Prvi pregled djeteta - dječji gastroenterohepatolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "53. DJEČIJA GASTROENTEROHEPATOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S10003",
+      "name_sr_latin": "Ponovni (kontrolni) pregled odojčeta - dječji gastroenterohepatolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "53. DJEČIJA GASTROENTEROHEPATOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S10004",
+      "name_sr_latin": "Ponovni (kontrolni) pregled djeteta - dječji gastroenterohepatolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "53. DJEČIJA GASTROENTEROHEPATOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S11001",
+      "name_sr_latin": "Prvi pregled odojčeta - dječji pulmolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "54. DJEČIJA PULMOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S11002",
+      "name_sr_latin": "Prvi pregled djeteta - dječji pulmolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "54. DJEČIJA PULMOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S11003",
+      "name_sr_latin": "Ponovni (kontrolni) pregled odojčeta - dječji pulmolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "54. DJEČIJA PULMOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S11004",
+      "name_sr_latin": "Ponovni (kontrolni) pregled djeteta - dječji pulmolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "54. DJEČIJA PULMOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S12001",
+      "name_sr_latin": "Prvi pregled odojčeta - dječji alergolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "55. DJEČIJA ALERGOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S12002",
+      "name_sr_latin": "Prvi pregled djeteta - dječji alergolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "55. DJEČIJA ALERGOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S12003",
+      "name_sr_latin": "Ponovni (kontrolni) pregled odojčeta - dječji alergolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "55. DJEČIJA ALERGOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S12004",
+      "name_sr_latin": "Ponovni (kontrolni) pregled djeteta - dječji alergolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "55. DJEČIJA ALERGOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "X30001",
+      "name_sr_latin": "Hiposenzibilizacija kod djece koja su uspješno alergijske reakcije na vakcine",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "55. DJEČIJA ALERGOLOGIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE DJEČIJA ALERGOLOGIJA"
+    },
+    {
+      "code": "S13001",
+      "name_sr_latin": "Prvi pregled odojčeta - dječji hematolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "56. DJEČIJA HEMATOLOGIJA I ONKOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S13002",
+      "name_sr_latin": "Prvi pregled djeteta - dječji hematolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "56. DJEČIJA HEMATOLOGIJA I ONKOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S13003",
+      "name_sr_latin": "Ponovni (kontrolni) pregled odojčeta - dječji hematolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "56. DJEČIJA HEMATOLOGIJA I ONKOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S13004",
+      "name_sr_latin": "Ponovni (kontrolni) pregled djeteta - dječji hematolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "56. DJEČIJA HEMATOLOGIJA I ONKOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S14001",
+      "name_sr_latin": "Prvi pregled odojčeta - dječji kardiolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "57. DJEČIJA KARDIOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S14002",
+      "name_sr_latin": "Prvi pregled djeteta - dječji kardiolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "57. DJEČIJA KARDIOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S14003",
+      "name_sr_latin": "Ponovni (kontrolni) pregled odojčeta - dječji kardiolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "57. DJEČIJA KARDIOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S14004",
+      "name_sr_latin": "Ponovni (kontrolni) pregled djeteta - dječji kardiolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "57. DJEČIJA KARDIOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S15001",
+      "name_sr_latin": "Prvi pregled odojčeta - dječji neurolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "58. DJEČIJA NEUROLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S15002",
+      "name_sr_latin": "Prvi pregled djeteta - dječji neurolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "58. DJEČIJA NEUROLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S15003",
+      "name_sr_latin": "Ponovni (kontrolni) pregled odojčeta - dječji neurolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "58. DJEČIJA NEUROLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "S15004",
+      "name_sr_latin": "Ponovni (kontrolni) pregled djeteta - dječji neurolog",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "58. DJEČIJA NEUROLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "X31001",
+      "name_sr_latin": "Neurofiziološka evaluacija",
+      "price_odjeljenje_eur": 10.4,
+      "price_ambulanta_eur": 22.24,
+      "section": "58. DJEČIJA NEUROLOGIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE DJEČIJA NEUROLOGIJA"
+    },
+    {
+      "code": "X31002",
+      "name_sr_latin": "Neurofiziološka evaluacija i terapija spastičnosti kod novorođenčeta",
+      "price_odjeljenje_eur": 14.3,
+      "price_ambulanta_eur": 30.58,
+      "section": "58. DJEČIJA NEUROLOGIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE DJEČIJA NEUROLOGIJA"
+    },
+    {
+      "code": "Q02001",
+      "name_sr_latin": "Prvi pregled - radiolog - radioterapeut",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": null
+    },
+    {
+      "code": "Q02002",
+      "name_sr_latin": "Ponovni (kontrolni) pregled - radiolog - radioterapeut",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": null
+    },
+    {
+      "code": "X32001",
+      "name_sr_latin": "Timska obrada na CT simulatoru i imobilizacija pacijenta",
+      "price_odjeljenje_eur": 104,
+      "price_ambulanta_eur": 222.4,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X32002",
+      "name_sr_latin": "Kompjutersko planiranje u teleterapiji 3D konformalnom tehnikom",
+      "price_odjeljenje_eur": 85.8,
+      "price_ambulanta_eur": 183.48,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X32003",
+      "name_sr_latin": "Korekcije tkivnih nehomogenosti pomoću kompjuterizovane tomografije",
+      "price_odjeljenje_eur": 65,
+      "price_ambulanta_eur": 139,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X32004",
+      "name_sr_latin": "Planiranje radijacije iregularnih polja",
+      "price_odjeljenje_eur": 75.4,
+      "price_ambulanta_eur": 161.24,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X32005",
+      "name_sr_latin": "Timska obrada prvog postavljanja pacijenta te provjera i kontrola polja zračenja, sa PORTALOM (jedanput nedjeljno)",
+      "price_odjeljenje_eur": 87.1,
+      "price_ambulanta_eur": 186.26,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X32006",
+      "name_sr_latin": "Zračenje 2D metodom isocentra",
+      "price_odjeljenje_eur": 49.4,
+      "price_ambulanta_eur": 105.64,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X32007",
+      "name_sr_latin": "Timska obrada na Rtg simulatoru",
+      "price_odjeljenje_eur": 57.2,
+      "price_ambulanta_eur": 122.32,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X32008",
+      "name_sr_latin": "Manuelna dozimetrija",
+      "price_odjeljenje_eur": 409.5,
+      "price_ambulanta_eur": 875.7,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X32009",
+      "name_sr_latin": "Kompjuterizovana dozimetrija u teleterapiji",
+      "price_odjeljenje_eur": 478.4,
+      "price_ambulanta_eur": 1023.04,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X32010",
+      "name_sr_latin": "Izrada blokova za zaštitu kritičnih organa",
+      "price_odjeljenje_eur": 53.3,
+      "price_ambulanta_eur": 113.98,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X32011",
+      "name_sr_latin": "Izrada blokova za zaštitu kritičnih organa kod iregularnih polja",
+      "price_odjeljenje_eur": 85.8,
+      "price_ambulanta_eur": 183.48,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X32012",
+      "name_sr_latin": "Simulacija zračenja sa rtg filmovima",
+      "price_odjeljenje_eur": 21.45,
+      "price_ambulanta_eur": 45.87,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X32013",
+      "name_sr_latin": "Elektronsko zračenje",
+      "price_odjeljenje_eur": 0.23,
+      "price_ambulanta_eur": 0.5,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X32014",
+      "name_sr_latin": "Fotonsko zračenje",
+      "price_odjeljenje_eur": 0.16,
+      "price_ambulanta_eur": 0.33,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X32015",
+      "name_sr_latin": "Ozračivanje komponenata krvi",
+      "price_odjeljenje_eur": 0.13,
+      "price_ambulanta_eur": 0.27,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA",
+      "note": "VERIFY: ambulanta value low-resolution"
+    },
+    {
+      "code": "X32016",
+      "name_sr_latin": "Primjena radiosenzitora u radijaciji",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X32017",
+      "name_sr_latin": "Primjena radioprotektora u radijaciji",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - RADIOTERAPIJA"
+    },
+    {
+      "code": "X33001",
+      "name_sr_latin": "Brahiterapija ginekoloških regije",
+      "price_odjeljenje_eur": 162.5,
+      "price_ambulanta_eur": 347.5,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - BRAHITERAPIJA"
+    },
+    {
+      "code": "X33002",
+      "name_sr_latin": "Brahiterapija Tu bronha",
+      "price_odjeljenje_eur": 182,
+      "price_ambulanta_eur": 389.2,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - BRAHITERAPIJA"
+    },
+    {
+      "code": "X33003",
+      "name_sr_latin": "Brahiterapija Tu kože",
+      "price_odjeljenje_eur": 175.5,
+      "price_ambulanta_eur": 375.3,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - BRAHITERAPIJA"
+    },
+    {
+      "code": "X33004",
+      "name_sr_latin": "CT bazirana 3D brahiterapija",
+      "price_odjeljenje_eur": 85.8,
+      "price_ambulanta_eur": 183.48,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - BRAHITERAPIJA"
+    },
+    {
+      "code": "X33005",
+      "name_sr_latin": "Kompjuterizovana izrada izodoza zračenja sa rtg filmovima kod brahiterapije (C-arm)",
+      "price_odjeljenje_eur": 65,
+      "price_ambulanta_eur": 139,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - BRAHITERAPIJA"
+    },
+    {
+      "code": "X33006",
+      "name_sr_latin": "Metoda transplodirajućeg planiranja brahiterapije",
+      "price_odjeljenje_eur": 75.4,
+      "price_ambulanta_eur": 161.24,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - BRAHITERAPIJA"
+    },
+    {
+      "code": "X33007",
+      "name_sr_latin": "Korekcije tkivnih nehomogenosti pomoću kompjuterizovane tomografije",
+      "price_odjeljenje_eur": 65,
+      "price_ambulanta_eur": 139,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - BRAHITERAPIJA"
+    },
+    {
+      "code": "X33008",
+      "name_sr_latin": "Gama terapija",
+      "price_odjeljenje_eur": 29.9,
+      "price_ambulanta_eur": 63.94,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - BRAHITERAPIJA"
+    },
+    {
+      "code": "X34001",
+      "name_sr_latin": "Prvi pregled - onkolog",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - HEMOTERAPIJA"
+    },
+    {
+      "code": "X34002",
+      "name_sr_latin": "Ponovni (kontrolni) pregled - onkolog",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - HEMOTERAPIJA"
+    },
+    {
+      "code": "X34003",
+      "name_sr_latin": "Aplikacija hemoterapije",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "59. ONKOLOGIJA I RADIOTERAPIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE - HEMOTERAPIJA"
+    },
+    {
+      "code": "Q03001",
+      "name_sr_latin": "Prvi pregled - specijalista nuklearne medicine",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": null
+    },
+    {
+      "code": "Q03002",
+      "name_sr_latin": "Ponovni (kontrolni) pregled - specijalista nuklearne medicine",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": null
+    },
+    {
+      "code": "X35001",
+      "name_sr_latin": "WB scintigrafija kostiju",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35002",
+      "name_sr_latin": "3F scintigrafija kostiju",
+      "price_odjeljenje_eur": 26,
+      "price_ambulanta_eur": 55.6,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35003",
+      "name_sr_latin": "Dinamska scintigrafija bubrega",
+      "price_odjeljenje_eur": 19.5,
+      "price_ambulanta_eur": 41.7,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35004",
+      "name_sr_latin": "Dinamska scintigrafija bubrega sa diuretskom stimulacijom",
+      "price_odjeljenje_eur": 19.5,
+      "price_ambulanta_eur": 41.7,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35005",
+      "name_sr_latin": "Dinamska scintigrafija bubrega sa Kaptoprilskim testom",
+      "price_odjeljenje_eur": 19.5,
+      "price_ambulanta_eur": 41.7,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35006",
+      "name_sr_latin": "Dinamska scintigrafija transplantiranog bubrega",
+      "price_odjeljenje_eur": 19.5,
+      "price_ambulanta_eur": 41.7,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35007",
+      "name_sr_latin": "Statička scintigrafija bubrega",
+      "price_odjeljenje_eur": 15.6,
+      "price_ambulanta_eur": 33.36,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35008",
+      "name_sr_latin": "Dinamska scintigrafija pljuvačnih žlijezda",
+      "price_odjeljenje_eur": 13,
+      "price_ambulanta_eur": 27.8,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35009",
+      "name_sr_latin": "Dinamska scintigrafija štitaste žlijezde",
+      "price_odjeljenje_eur": 9.1,
+      "price_ambulanta_eur": 19.46,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35010",
+      "name_sr_latin": "Scintigrafija paratiroidnih žlijezda",
+      "price_odjeljenje_eur": 13,
+      "price_ambulanta_eur": 27.8,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35011",
+      "name_sr_latin": "Koloidna scintigrafija jetre",
+      "price_odjeljenje_eur": 26,
+      "price_ambulanta_eur": 55.6,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35012",
+      "name_sr_latin": "Scintigrafija krvnih prostora jetre tzv. 'blood pool' jetre",
+      "price_odjeljenje_eur": 26,
+      "price_ambulanta_eur": 55.6,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35013",
+      "name_sr_latin": "Perfuziona scintigrafija pluća",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35014",
+      "name_sr_latin": "Perfuziona scintigrafija srca",
+      "price_odjeljenje_eur": 16.9,
+      "price_ambulanta_eur": 36.14,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35015",
+      "name_sr_latin": "Scintigrafija Meckelovog divertikuluma",
+      "price_odjeljenje_eur": 16.9,
+      "price_ambulanta_eur": 36.14,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35016",
+      "name_sr_latin": "WB scintigrafija sa I-131",
+      "price_odjeljenje_eur": 26,
+      "price_ambulanta_eur": 55.6,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35017",
+      "name_sr_latin": "Test fiksacije I-131 u štitastoj žlijezdi",
+      "price_odjeljenje_eur": 9.1,
+      "price_ambulanta_eur": 19.46,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35018",
+      "name_sr_latin": "Radionuklidna terapija",
+      "price_odjeljenje_eur": 39,
+      "price_ambulanta_eur": 83.4,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35019",
+      "name_sr_latin": "Liječenje hipertireoidnih pacijenata terapijskom dozom I-131",
+      "price_odjeljenje_eur": 26,
+      "price_ambulanta_eur": 55.6,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35020",
+      "name_sr_latin": "Radionuklidna sinovektomija sa Y-90",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35021",
+      "name_sr_latin": "Postoperativno liječenje DTK terapijskom dozom I-131",
+      "price_odjeljenje_eur": 39,
+      "price_ambulanta_eur": 83.4,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35022",
+      "name_sr_latin": "Palijativna terapija koštanih metastaza sa Sm-153",
+      "price_odjeljenje_eur": 39,
+      "price_ambulanta_eur": 83.4,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35023",
+      "name_sr_latin": "Terapija neuroblastoma i feohromocitoma sa MIBI-I-131",
+      "price_odjeljenje_eur": 39,
+      "price_ambulanta_eur": 83.4,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "X35024",
+      "name_sr_latin": "Terapija radioobeleženim analozima somatostatina",
+      "price_odjeljenje_eur": 39,
+      "price_ambulanta_eur": 83.4,
+      "section": "60. NUKLEARNA MEDICINA",
+      "subsection": "INTERVENCIJE I PROCEDURE NUKLEARNA MEDICINA"
+    },
+    {
+      "code": "H02001",
+      "name_sr_latin": "Intervju psihologa",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "61. PSIHOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "H02002",
+      "name_sr_latin": "Prikupljanje podataka sa psihološkim testovima i metodom kategorije A (testovi:P, TRL, BTI, DAT, TMO, SPP3)",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "61. PSIHOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "H02003",
+      "name_sr_latin": "Prikupljanje podataka sa psihološkim testovima i metodom kategorije B (testovi: D-48, LB, PM, AV, DAT, EOV)",
+      "price_odjeljenje_eur": 3.25,
+      "price_ambulanta_eur": 6.95,
+      "section": "61. PSIHOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "H02004",
+      "name_sr_latin": "Prikupljanje podataka sa psihološkim testovima i metodom kategorije C (testovi: WB, WISC, OI, FPI, APQ, PIE)",
+      "price_odjeljenje_eur": 4.55,
+      "price_ambulanta_eur": 9.73,
+      "section": "61. PSIHOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "H02005",
+      "name_sr_latin": "Prikupljanje podataka sa psihološkim testovima i metodom (Rošahov dijagnostički test, PPM, usmjereni dijagnostički intervju, neuropsihološka analiza)",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "61. PSIHOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "H02025",
+      "name_sr_latin": "Individualna povratna terapija",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "61. PSIHOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "H02026",
+      "name_sr_latin": "Analitički usmjerena psihoterapija",
+      "price_odjeljenje_eur": 5.2,
+      "price_ambulanta_eur": 11.12,
+      "section": "61. PSIHOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "H02027",
+      "name_sr_latin": "Psihološki tretman porodice",
+      "price_odjeljenje_eur": 10.4,
+      "price_ambulanta_eur": 22.24,
+      "section": "61. PSIHOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "H02029",
+      "name_sr_latin": "Ekspertiza psihološkog stanja kod djece sa posebnim potrebama",
+      "price_odjeljenje_eur": 16.9,
+      "price_ambulanta_eur": 36.14,
+      "section": "61. PSIHOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "H04002",
+      "name_sr_latin": "Intervju socijalnog radnika - socijalna anamneza",
+      "price_odjeljenje_eur": 5.42,
+      "price_ambulanta_eur": null,
+      "section": "62. USLUGE SOCIJALNOG RADNIKA",
+      "subsection": null
+    },
+    {
+      "code": "H04003",
+      "name_sr_latin": "Ekspertiza socijalnog radnika",
+      "price_odjeljenje_eur": 5.42,
+      "price_ambulanta_eur": null,
+      "section": "62. USLUGE SOCIJALNOG RADNIKA",
+      "subsection": null
+    },
+    {
+      "code": "H06001",
+      "name_sr_latin": "Prvi pregled - epidemiolog",
+      "price_odjeljenje_eur": 8.34,
+      "price_ambulanta_eur": null,
+      "section": "63. EPIDEMIOLOGIJA",
+      "subsection": "SEKUNDARNA ZDRAVSTVENA ZAŠTITA - EPIDEMIOLOGIJA"
+    },
+    {
+      "code": "H06002",
+      "name_sr_latin": "Ponovni (kontrolni) pregled - epidemiolog",
+      "price_odjeljenje_eur": 2.78,
+      "price_ambulanta_eur": null,
+      "section": "63. EPIDEMIOLOGIJA",
+      "subsection": "SEKUNDARNA ZDRAVSTVENA ZAŠTITA - EPIDEMIOLOGIJA"
+    },
+    {
+      "code": "H06003",
+      "name_sr_latin": "Specijalistički pregled lica u međunarodnom transportu",
+      "price_odjeljenje_eur": 8.34,
+      "price_ambulanta_eur": null,
+      "section": "63. EPIDEMIOLOGIJA",
+      "subsection": "SEKUNDARNA ZDRAVSTVENA ZAŠTITA - EPIDEMIOLOGIJA"
+    },
+    {
+      "code": "H06004",
+      "name_sr_latin": "Specijalistički pregled lica u međunarodnom transportu prilikom povratka u zemlju",
+      "price_odjeljenje_eur": 8.34,
+      "price_ambulanta_eur": null,
+      "section": "63. EPIDEMIOLOGIJA",
+      "subsection": "SEKUNDARNA ZDRAVSTVENA ZAŠTITA - EPIDEMIOLOGIJA"
+    },
+    {
+      "code": "H06005",
+      "name_sr_latin": "Specijalistički pregled lica - epidemiologija u specijalističkoj ambulanti za praćenje kliconoštva",
+      "price_odjeljenje_eur": 8.34,
+      "price_ambulanta_eur": null,
+      "section": "63. EPIDEMIOLOGIJA",
+      "subsection": "SEKUNDARNA ZDRAVSTVENA ZAŠTITA - EPIDEMIOLOGIJA"
+    },
+    {
+      "code": "H06006",
+      "name_sr_latin": "Ponovni (kontrolni) pregled - epidemiolog za praćenje kliconoštva",
+      "price_odjeljenje_eur": 2.78,
+      "price_ambulanta_eur": null,
+      "section": "63. EPIDEMIOLOGIJA",
+      "subsection": "SEKUNDARNA ZDRAVSTVENA ZAŠTITA - EPIDEMIOLOGIJA"
+    },
+    {
+      "code": "H07001",
+      "name_sr_latin": "Prvi pregled - specijalista higijene",
+      "price_odjeljenje_eur": 8.34,
+      "price_ambulanta_eur": null,
+      "section": "64. HIGIJENA",
+      "subsection": "SEKUNDARNA ZDRAVSTVENA ZAŠTITA - HIGIJENA"
+    },
+    {
+      "code": "H07002",
+      "name_sr_latin": "Prvi pregled - specijalista higijene - nutricionista",
+      "price_odjeljenje_eur": 8.34,
+      "price_ambulanta_eur": null,
+      "section": "64. HIGIJENA",
+      "subsection": "SEKUNDARNA ZDRAVSTVENA ZAŠTITA - HIGIJENA"
+    },
+    {
+      "code": "H07003",
+      "name_sr_latin": "Ponovni (kontrolni) pregled specijaliste higijene",
+      "price_odjeljenje_eur": 2.78,
+      "price_ambulanta_eur": null,
+      "section": "64. HIGIJENA",
+      "subsection": "SEKUNDARNA ZDRAVSTVENA ZAŠTITA - HIGIJENA"
+    },
+    {
+      "code": "H07004",
+      "name_sr_latin": "Ponovni (kontrolni) pregled specijaliste higijene - nutricionista",
+      "price_odjeljenje_eur": 2.78,
+      "price_ambulanta_eur": null,
+      "section": "64. HIGIJENA",
+      "subsection": "SEKUNDARNA ZDRAVSTVENA ZAŠTITA - HIGIJENA"
+    },
+    {
+      "code": "H07005",
+      "name_sr_latin": "Programiranje dijetetskog programa - individualno",
+      "price_odjeljenje_eur": 5.16,
+      "price_ambulanta_eur": null,
+      "section": "64. HIGIJENA",
+      "subsection": "SEKUNDARNA ZDRAVSTVENA ZAŠTITA - HIGIJENA"
+    },
+    {
+      "code": "H07006",
+      "name_sr_latin": "Programiranje dijetetskog programa - kolektivna ishrana",
+      "price_odjeljenje_eur": 5.16,
+      "price_ambulanta_eur": null,
+      "section": "64. HIGIJENA",
+      "subsection": "SEKUNDARNA ZDRAVSTVENA ZAŠTITA - HIGIJENA"
+    },
+    {
+      "code": "M03001",
+      "name_sr_latin": "Prvi pregled - fizijatar",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": null
+    },
+    {
+      "code": "M03002",
+      "name_sr_latin": "Ponovni (kontrolni) pregled - fizijatar",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": null
+    },
+    {
+      "code": "M03003",
+      "name_sr_latin": "Prvi pregled djece sa posebnim potrebama - fizijatar",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": null
+    },
+    {
+      "code": "M03004",
+      "name_sr_latin": "Kontrolni pregled djece sa posebnim potrebama (fizijatar)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 4.17,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": null
+    },
+    {
+      "code": "M02001",
+      "name_sr_latin": "Manuelna segmentna masaža",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02002",
+      "name_sr_latin": "Manuelna limfna drenaža",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02003",
+      "name_sr_latin": "Aparaturna masaža",
+      "price_odjeljenje_eur": 0.87,
+      "price_ambulanta_eur": 1.86,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02004",
+      "name_sr_latin": "Krioterapija i kriomasaža",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02017",
+      "name_sr_latin": "Manuelni mišićni test, po ekstremitetu",
+      "price_odjeljenje_eur": 0.87,
+      "price_ambulanta_eur": 1.86,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02018",
+      "name_sr_latin": "Zračenje infracrvenim, ultravioletnim i bioptron lampom",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02019",
+      "name_sr_latin": "Parafin i tango terapija",
+      "price_odjeljenje_eur": 0.87,
+      "price_ambulanta_eur": 1.86,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02021",
+      "name_sr_latin": "Elektroforeza",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02022",
+      "name_sr_latin": "Dijadinamske struje",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02023",
+      "name_sr_latin": "Transkutana nervna stimulacija",
+      "price_odjeljenje_eur": 1.73,
+      "price_ambulanta_eur": 3.7,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02024",
+      "name_sr_latin": "KTD",
+      "price_odjeljenje_eur": 1.73,
+      "price_ambulanta_eur": 3.7,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02025",
+      "name_sr_latin": "Mikrotalasna diatermija",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02026",
+      "name_sr_latin": "Sonoforeza",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02028",
+      "name_sr_latin": "Uvježbavanje aktivnosti svakodnevnog života prema patološkim stanjima",
+      "price_odjeljenje_eur": 1.73,
+      "price_ambulanta_eur": 3.7,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02029",
+      "name_sr_latin": "Vježbe hoda",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02030",
+      "name_sr_latin": "Obuka hoda sa pomagalima",
+      "price_odjeljenje_eur": 1.73,
+      "price_ambulanta_eur": 3.7,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02031",
+      "name_sr_latin": "Vježbe koordinacije, korekcije i automatizacije balansa hoda",
+      "price_odjeljenje_eur": 1.73,
+      "price_ambulanta_eur": 3.7,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02032",
+      "name_sr_latin": "Vježbe disanja",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02034",
+      "name_sr_latin": "Stimulativne vježbe kod rizičnih beba",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02036",
+      "name_sr_latin": "Pasivne i potpomognute vježbe",
+      "price_odjeljenje_eur": 1.73,
+      "price_ambulanta_eur": 3.7,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02038",
+      "name_sr_latin": "Aktivne vježbe i vježbe protiv otpora",
+      "price_odjeljenje_eur": 1.73,
+      "price_ambulanta_eur": 3.7,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02041",
+      "name_sr_latin": "Izometrijske vježbe - segmentne",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02044",
+      "name_sr_latin": "Test aktivnosti svakodnevnog života",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02045",
+      "name_sr_latin": "Obuka pacijenta specifičnom zaštitom položajima tijela",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02046",
+      "name_sr_latin": "Interferentne struje",
+      "price_odjeljenje_eur": 1.73,
+      "price_ambulanta_eur": 3.7,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02063",
+      "name_sr_latin": "Dinamometrijska ekstremiteta",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02005",
+      "name_sr_latin": "Visokofrekventne struje",
+      "price_odjeljenje_eur": 1.95,
+      "price_ambulanta_eur": 4.17,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02008",
+      "name_sr_latin": "Magnetoterapija",
+      "price_odjeljenje_eur": 1.95,
+      "price_ambulanta_eur": 4.17,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02009",
+      "name_sr_latin": "Terapija ultrazvukom",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02010",
+      "name_sr_latin": "Terapija ultrazvukom u vodi",
+      "price_odjeljenje_eur": 1.56,
+      "price_ambulanta_eur": 3.34,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02011",
+      "name_sr_latin": "Laser terapija",
+      "price_odjeljenje_eur": 1.95,
+      "price_ambulanta_eur": 4.17,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02013",
+      "name_sr_latin": "Podvodna masaža vodenim mlazom",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02014",
+      "name_sr_latin": "Terapija biserim kupkama",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02015",
+      "name_sr_latin": "Četvoroćelijske kupke",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02020",
+      "name_sr_latin": "Terapija galvanskom strujom u vodi",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02064",
+      "name_sr_latin": "Terapija ultrakratkim talasima",
+      "price_odjeljenje_eur": 1.95,
+      "price_ambulanta_eur": 4.17,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02027",
+      "name_sr_latin": "Ispitivanje električnih podražljivosti živaca i mišića primjenom faradske i galvanske struje",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02033",
+      "name_sr_latin": "Grupne vježbe, po osobi u korektivnoj gipsu za skoliozu, u Milwauki mideru, kod Becthterevljeve bolesti i po Reganu",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02039",
+      "name_sr_latin": "Vježbe na spravama: Pulli aparat, ergosklet, kinetička šina, suspenzija, švedske ljestve, kosa ravan, razboj, supinator, točak, pokretna traka, vesla",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02040",
+      "name_sr_latin": "Mjerenje obima pokreta pojedinih zglobova po jednom paru ekstremiteta",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02042",
+      "name_sr_latin": "Trakcija kičmenog stuba na aparatu",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02047",
+      "name_sr_latin": "Vakum masaža",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02048",
+      "name_sr_latin": "Posturalna drenaža u postelji",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02049",
+      "name_sr_latin": "Vježbe ravnoteže sjedećeg ili stojećeg stava",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02053",
+      "name_sr_latin": "Vježbe koordinacije gornjih ekstremiteta",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02054",
+      "name_sr_latin": "Vježbe koordinacije donjih ekstremiteta",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02055",
+      "name_sr_latin": "Vježbe koordinacije pokreta ekstremiteta i balansa hoda",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02056",
+      "name_sr_latin": "Potpomognute segmentne vježbe",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02057",
+      "name_sr_latin": "Progresivne vježbe sa otporom",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02058",
+      "name_sr_latin": "Aktivne segmentne vježbe sa doziranim opterećenjem",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02061",
+      "name_sr_latin": "Vježbe za korekcije deformiteta gornjih i donjih ekstremiteta",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02062",
+      "name_sr_latin": "Posturalne vježbe",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02065",
+      "name_sr_latin": "Hronaksimetrija senzitivnih i motornih živaca",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02066",
+      "name_sr_latin": "Određivanje krive I/T",
+      "price_odjeljenje_eur": 5.2,
+      "price_ambulanta_eur": 11.12,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02067",
+      "name_sr_latin": "Dermatotermometrija kontaktna i bezkontaktna",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02068",
+      "name_sr_latin": "Aktivno potpomognute vježbe u vodi",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02069",
+      "name_sr_latin": "Progresivne vježbe sa otporom na kvadriceps aparatu",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02070",
+      "name_sr_latin": "Mehanoterapija na aparatu",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02071",
+      "name_sr_latin": "Blokada simpatičkih ganglija DD strujama",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02072",
+      "name_sr_latin": "Elektrostimulacija mokraćnog mjehura",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02073",
+      "name_sr_latin": "Stabilna faradizacija",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02074",
+      "name_sr_latin": "Fonoforeza",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02075",
+      "name_sr_latin": "Terapija sa CO2 kupkama",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "M02076",
+      "name_sr_latin": "Terapija hidrokolatorom",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "65. FIZIKALNA MEDICINA I REHABILITACIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE FIZIKALNA MEDICINA I REHABILITACIJA"
+    },
+    {
+      "code": "H08001",
+      "name_sr_latin": "Prvi pregled - specijalista urgentne medicine",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "66. URGENTNA MEDICINA",
+      "subsection": null
+    },
+    {
+      "code": "D20001",
+      "name_sr_latin": "Prvi specijalistički pregled",
+      "price_odjeljenje_eur": 4.13,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20002",
+      "name_sr_latin": "Ponovni specijalistički pregled",
+      "price_odjeljenje_eur": 2.4,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20003",
+      "name_sr_latin": "Konzilijarni i konsultativni specijalistički pregled",
+      "price_odjeljenje_eur": 6.88,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20004",
+      "name_sr_latin": "Resekcija-Apikotomija jednokorijenog zuba",
+      "price_odjeljenje_eur": 17.24,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20005",
+      "name_sr_latin": "Resekcija-Apikotomija višekorjenog zuba",
+      "price_odjeljenje_eur": 17.24,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20006",
+      "name_sr_latin": "Ekstrakcija stranog tijela iz mekih i koštanih struktura",
+      "price_odjeljenje_eur": 17.24,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20007",
+      "name_sr_latin": "Hirurška ekstrakcija zaostalog korijena",
+      "price_odjeljenje_eur": 17.24,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20008",
+      "name_sr_latin": "Hirurška ekstrakcija zuba i operativni zahvati kod pacijenata-rizika",
+      "price_odjeljenje_eur": 10.32,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20009",
+      "name_sr_latin": "Ekstraoralna incizija abscesa",
+      "price_odjeljenje_eur": 5.16,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20010",
+      "name_sr_latin": "Frenektomija i uklanjanje lateralnih plika",
+      "price_odjeljenje_eur": 6.88,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20011",
+      "name_sr_latin": "Uklanjanje hipertrofične (hiperplastične) mukoze",
+      "price_odjeljenje_eur": 15.09,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20012",
+      "name_sr_latin": "Hirurška ekstrakcija impaktiranog, retiniranog, prekobrojnog ili malponiranog zuba",
+      "price_odjeljenje_eur": 25.88,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20013",
+      "name_sr_latin": "Hirurško ortodontski tretman retiniranog zuba sa postavljanjem ligature ili prstena",
+      "price_odjeljenje_eur": 19.22,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20014",
+      "name_sr_latin": "Lokalna anestezija",
+      "price_odjeljenje_eur": 4.03,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20015",
+      "name_sr_latin": "Komplikovano vađenje zuba",
+      "price_odjeljenje_eur": 6.88,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20016",
+      "name_sr_latin": "Kortikotomija",
+      "price_odjeljenje_eur": 26.39,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20017",
+      "name_sr_latin": "Hirurška obrada rane",
+      "price_odjeljenje_eur": 5.16,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20018",
+      "name_sr_latin": "Ekstirpacija viličnih cista-Cystectomia",
+      "price_odjeljenje_eur": 21.57,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20019",
+      "name_sr_latin": "Uklanjanje benignih tumora-epulus, fibroma, papiloma i manjih tumora oralne sluzokože",
+      "price_odjeljenje_eur": 8.59,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20020",
+      "name_sr_latin": "Operacija retencione ciste na usni",
+      "price_odjeljenje_eur": 21.57,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20021",
+      "name_sr_latin": "Nivelacija alveolarnog grebena-Alveoloplastika",
+      "price_odjeljenje_eur": 12.09,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20022",
+      "name_sr_latin": "Hirurško zatvaranje-PrimarnaPlastika oroantralne komunikacije",
+      "price_odjeljenje_eur": 21.57,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20023",
+      "name_sr_latin": "Hirurško zatvaranje sekundarnoPlastikom oroantralne komunikacije sa vađenjem stranog tijela iz sinusne šupljine",
+      "price_odjeljenje_eur": 34.51,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20024",
+      "name_sr_latin": "Tuberoplastika,toroplastika",
+      "price_odjeljenje_eur": 36.95,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20025",
+      "name_sr_latin": "Repozicija luksiranog viličnog zgloba",
+      "price_odjeljenje_eur": 5.16,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20026",
+      "name_sr_latin": "Terapija traumatiziranih zuba-Replantacija zuba",
+      "price_odjeljenje_eur": 25.88,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20027",
+      "name_sr_latin": "Konzervativni tretman oroantralne komunikacije nakon ekstrakcije zuba",
+      "price_odjeljenje_eur": 21.57,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20028",
+      "name_sr_latin": "Ukazivanje prve pomoći",
+      "price_odjeljenje_eur": 4.03,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20029",
+      "name_sr_latin": "Solux-Zračenje infracrvenim zracima",
+      "price_odjeljenje_eur": 3.43,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20030",
+      "name_sr_latin": "Fenekcija kortina (kosa sa otrgrtnim punjenjem (punjenjem kanala korijena u toku operacije)",
+      "price_odjeljenje_eur": 21.57,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20031",
+      "name_sr_latin": "Uklanjanje konaca",
+      "price_odjeljenje_eur": 3.43,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20032",
+      "name_sr_latin": "Intraoralna incizija abscesa",
+      "price_odjeljenje_eur": 3.43,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20033",
+      "name_sr_latin": "Analiza RTG snimaka",
+      "price_odjeljenje_eur": 1.12,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20034",
+      "name_sr_latin": "Lokalna savjeta i instruktcija",
+      "price_odjeljenje_eur": 3.43,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20035",
+      "name_sr_latin": "Zaustavljanje krvarenja poslije vađenja zuba biološkim, hemijskim i fizičkim sredstvima",
+      "price_odjeljenje_eur": 6.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20036",
+      "name_sr_latin": "Zaustavljanje krvarenja hirurškim putem",
+      "price_odjeljenje_eur": 6.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20037",
+      "name_sr_latin": "Vađenje zuba sa anestezijom",
+      "price_odjeljenje_eur": 5.16,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20038",
+      "name_sr_latin": "Davanje injekcija u terapeutske svrhe",
+      "price_odjeljenje_eur": 2.76,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20039",
+      "name_sr_latin": "Circumcizija ili ekscizija sluzokože",
+      "price_odjeljenje_eur": 12.04,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20040",
+      "name_sr_latin": "Liječenje alveolita",
+      "price_odjeljenje_eur": 5.16,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20041",
+      "name_sr_latin": "Biopsija",
+      "price_odjeljenje_eur": 5.16,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D20042",
+      "name_sr_latin": "Liječenje idiopatske trigeminalne neuralgije-blokada",
+      "price_odjeljenje_eur": 4.98,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORALNA HIRURGIJA"
+    },
+    {
+      "code": "D21001",
+      "name_sr_latin": "Prvi specijalistički pregled",
+      "price_odjeljenje_eur": 7.47,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21002",
+      "name_sr_latin": "Ponovni specijalistički pregled",
+      "price_odjeljenje_eur": 6.05,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21003",
+      "name_sr_latin": "Specijalistički konsultativni pregled",
+      "price_odjeljenje_eur": 7.47,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21004",
+      "name_sr_latin": "Savjetovanje u ordinaciji",
+      "price_odjeljenje_eur": 1.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21005",
+      "name_sr_latin": "Biopsija oralne sluznice",
+      "price_odjeljenje_eur": 1.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21006",
+      "name_sr_latin": "Dijagnostika oralnih fokusa (laboratorijski nalazi, blokirajući testovi)",
+      "price_odjeljenje_eur": 1.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21007",
+      "name_sr_latin": "Frenectomija",
+      "price_odjeljenje_eur": 7.47,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21008",
+      "name_sr_latin": "Korekcija plica",
+      "price_odjeljenje_eur": 7.47,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21009",
+      "name_sr_latin": "Gingivektomija sa gingivalnim plastikom",
+      "price_odjeljenje_eur": 18.66,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21010",
+      "name_sr_latin": "Hirurški tretman recidivirajućeg parodontalnog abscesa",
+      "price_odjeljenje_eur": 17.24,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21011",
+      "name_sr_latin": "Liječenje sistematskih obolenja sa oralnim manifestacijama",
+      "price_odjeljenje_eur": 33.57,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21012",
+      "name_sr_latin": "Režanj-flap operacija",
+      "price_odjeljenje_eur": 26.1,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21013",
+      "name_sr_latin": "Uzimanje materijala za laboratorijske pretrage",
+      "price_odjeljenje_eur": 1.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21014",
+      "name_sr_latin": "Incizija i drenaža parodontalnog abscesa",
+      "price_odjeljenje_eur": 5.51,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21015",
+      "name_sr_latin": "Uklanjanje mekih naslaga sa zuba (po zubu)",
+      "price_odjeljenje_eur": 1.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21016",
+      "name_sr_latin": "Uklanjanje konkremenata sa zuba (po zubu) CZK",
+      "price_odjeljenje_eur": 1.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21017",
+      "name_sr_latin": "Kiretaža i duboko ispiranje parodontalnog džepa",
+      "price_odjeljenje_eur": 1.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21018",
+      "name_sr_latin": "Tuširanje gingive",
+      "price_odjeljenje_eur": 2.98,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21019",
+      "name_sr_latin": "Pakovanje desni",
+      "price_odjeljenje_eur": 5.61,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21020",
+      "name_sr_latin": "Ukazivanje prve pomoći",
+      "price_odjeljenje_eur": 3.72,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21021",
+      "name_sr_latin": "Lokalna anestezija",
+      "price_odjeljenje_eur": 4.03,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D21022",
+      "name_sr_latin": "Analiza RTG snimaka",
+      "price_odjeljenje_eur": 1.12,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "PARODONTOLOGIJA SA ORALNOM MEDICINOM"
+    },
+    {
+      "code": "D22001",
+      "name_sr_latin": "Prvi specijalistički pregled",
+      "price_odjeljenje_eur": 3.72,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22002",
+      "name_sr_latin": "Ponovni specijalistički pregled",
+      "price_odjeljenje_eur": 6.05,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22003",
+      "name_sr_latin": "Specijalistički konsultativni pregled",
+      "price_odjeljenje_eur": 7.47,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22004",
+      "name_sr_latin": "Savjetovanje u ordinaciji",
+      "price_odjeljenje_eur": 1.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22005",
+      "name_sr_latin": "Lokalna injekciona anestezija",
+      "price_odjeljenje_eur": 4.03,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22006",
+      "name_sr_latin": "Lokalna aplikacija lijeka",
+      "price_odjeljenje_eur": 3.72,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22007",
+      "name_sr_latin": "Drenaža zuba",
+      "price_odjeljenje_eur": 3.72,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22008",
+      "name_sr_latin": "Ukazivanje mekih naslaga sa zuba",
+      "price_odjeljenje_eur": 7.47,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22009",
+      "name_sr_latin": "Analiza RTG snimka (na 22)",
+      "price_odjeljenje_eur": 1.12,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22010",
+      "name_sr_latin": "Ukazivanje prve pomoći",
+      "price_odjeljenje_eur": 3.72,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22011",
+      "name_sr_latin": "Ispitivanje vitaliteta zuba",
+      "price_odjeljenje_eur": 1.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22012",
+      "name_sr_latin": "Ispun od fosfatnog cementa",
+      "price_odjeljenje_eur": 5.61,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22013",
+      "name_sr_latin": "Ispun na I površini",
+      "price_odjeljenje_eur": 9.33,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22014",
+      "name_sr_latin": "Ispun na II površini",
+      "price_odjeljenje_eur": 14.91,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22015",
+      "name_sr_latin": "Ispun na III površini",
+      "price_odjeljenje_eur": 18.66,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22016",
+      "name_sr_latin": "Nadogradnja zuba",
+      "price_odjeljenje_eur": 22.38,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22017",
+      "name_sr_latin": "Prekrivanje pulpe",
+      "price_odjeljenje_eur": 3.5,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22018",
+      "name_sr_latin": "Kauterizacija pulpe i gingive",
+      "price_odjeljenje_eur": 3.72,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22019",
+      "name_sr_latin": "Mortalna amputacija",
+      "price_odjeljenje_eur": 10.08,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22020",
+      "name_sr_latin": "Mortalna ekstirpacija",
+      "price_odjeljenje_eur": 14.91,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22021",
+      "name_sr_latin": "Vitalna ekstirpacija",
+      "price_odjeljenje_eur": 14.91,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22022",
+      "name_sr_latin": "Liječenje gangrene zuba",
+      "price_odjeljenje_eur": 22.38,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22023",
+      "name_sr_latin": "Punjenje kanala korijena zuba",
+      "price_odjeljenje_eur": 5.61,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22024",
+      "name_sr_latin": "Vađenje starog punjenja iz kanala korijena zuba",
+      "price_odjeljenje_eur": 9.33,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22025",
+      "name_sr_latin": "Uklanjanje zalomljenog instrumenta iz kanala korijena",
+      "price_odjeljenje_eur": 20.16,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D22026",
+      "name_sr_latin": "Postavljanje kompozitnog splinta",
+      "price_odjeljenje_eur": 4.56,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "BOLESTI ZUBA SA ENDODONCIJOM"
+    },
+    {
+      "code": "D23001",
+      "name_sr_latin": "Prvi specijalistički pregled",
+      "price_odjeljenje_eur": 3.72,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23002",
+      "name_sr_latin": "Ponovni specijalistički pregled",
+      "price_odjeljenje_eur": 6.05,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23003",
+      "name_sr_latin": "Konsultativni ili konzilijarni specijalistički pregled",
+      "price_odjeljenje_eur": 7.47,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23004",
+      "name_sr_latin": "Savjetovanje u ordinaciji",
+      "price_odjeljenje_eur": 1.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23005",
+      "name_sr_latin": "Lokalna aplikacija koncentrovanih fluorida",
+      "price_odjeljenje_eur": 1.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23006",
+      "name_sr_latin": "Ispitivanje vitaliteta zuba",
+      "price_odjeljenje_eur": 1.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23007",
+      "name_sr_latin": "Ukazivanje prve pomoći",
+      "price_odjeljenje_eur": 3.72,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23008",
+      "name_sr_latin": "Preventivni ispun",
+      "price_odjeljenje_eur": 8.06,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23009",
+      "name_sr_latin": "Zalivanje fisura",
+      "price_odjeljenje_eur": 8.06,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23010",
+      "name_sr_latin": "Terapija dubokog karijesa",
+      "price_odjeljenje_eur": 22.38,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23011",
+      "name_sr_latin": "Ispun na jednoj površini",
+      "price_odjeljenje_eur": 13.05,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23012",
+      "name_sr_latin": "Ispun na dvije površine",
+      "price_odjeljenje_eur": 16.8,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23013",
+      "name_sr_latin": "Ispun na tri površine",
+      "price_odjeljenje_eur": 21.01,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23014",
+      "name_sr_latin": "Nadogradnja frakturiranog zuba",
+      "price_odjeljenje_eur": 20.52,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23015",
+      "name_sr_latin": "Indirektno i direktno prekrivanje pulpe",
+      "price_odjeljenje_eur": 10.26,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23016",
+      "name_sr_latin": "Glasjonomerni ispun",
+      "price_odjeljenje_eur": 8.4,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23017",
+      "name_sr_latin": "Kauterizacija pulpe i gingive",
+      "price_odjeljenje_eur": 4.66,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23018",
+      "name_sr_latin": "Vitalna amputacija",
+      "price_odjeljenje_eur": 16.79,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23019",
+      "name_sr_latin": "Vitalna ekstirpacija",
+      "price_odjeljenje_eur": 18.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23020",
+      "name_sr_latin": "Mortalna amputacija",
+      "price_odjeljenje_eur": 18.66,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23021",
+      "name_sr_latin": "Mortalna ekstirpacija",
+      "price_odjeljenje_eur": 14.92,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23022",
+      "name_sr_latin": "Liječenje gangrene",
+      "price_odjeljenje_eur": 26.1,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23023",
+      "name_sr_latin": "Punjenje kanala korijena",
+      "price_odjeljenje_eur": 4.66,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23024",
+      "name_sr_latin": "Uklanjanje zalomljenog instrumenta iz kanala korijena",
+      "price_odjeljenje_eur": 10.26,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23025",
+      "name_sr_latin": "Lokalna anestezija",
+      "price_odjeljenje_eur": 3.72,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23026",
+      "name_sr_latin": "Vađenje zuba",
+      "price_odjeljenje_eur": 6.54,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23027",
+      "name_sr_latin": "Komplikovano vađenje zuba",
+      "price_odjeljenje_eur": 14.92,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23028",
+      "name_sr_latin": "Zaustavljanje krvarenja",
+      "price_odjeljenje_eur": 9.33,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23029",
+      "name_sr_latin": "Liječenje alveolitisa",
+      "price_odjeljenje_eur": 5.81,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23030",
+      "name_sr_latin": "Intraoralna incizija",
+      "price_odjeljenje_eur": 6.54,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23031",
+      "name_sr_latin": "Liječenje zuba u terapeutske svrhe",
+      "price_odjeljenje_eur": 2.24,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23032",
+      "name_sr_latin": "Analiza RTG snimka",
+      "price_odjeljenje_eur": 1.12,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23033",
+      "name_sr_latin": "Kompozicni splint",
+      "price_odjeljenje_eur": 27.26,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23034",
+      "name_sr_latin": "Estetske korekcije anomalije razvoja zuba",
+      "price_odjeljenje_eur": 24.24,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23035",
+      "name_sr_latin": "Vađenje zuba kod djece sa posebnim potrebama",
+      "price_odjeljenje_eur": 13.07,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23036",
+      "name_sr_latin": "Drenaža zuba",
+      "price_odjeljenje_eur": 8.06,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23037",
+      "name_sr_latin": "Lokalna aplikacija lijeka",
+      "price_odjeljenje_eur": 12.09,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23038",
+      "name_sr_latin": "Ispun od fosfat cementa",
+      "price_odjeljenje_eur": 8.06,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23039",
+      "name_sr_latin": "Kiretaža gingivalnog džepa",
+      "price_odjeljenje_eur": 1.86,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23040",
+      "name_sr_latin": "Privremeno punjenje kanala",
+      "price_odjeljenje_eur": 5.81,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23041",
+      "name_sr_latin": "Savjetovanje u ordinaciji",
+      "price_odjeljenje_eur": 3.72,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23042",
+      "name_sr_latin": "Uklanjanje starog ispuna",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23043",
+      "name_sr_latin": "Nadogradnja sa fiberglas kočićem",
+      "price_odjeljenje_eur": 19.59,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23044",
+      "name_sr_latin": "Liječenje pulpe na nezavršenim rastom korena",
+      "price_odjeljenje_eur": 67.14,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23045",
+      "name_sr_latin": "Zbrinjavanje povrede zuba kod djece",
+      "price_odjeljenje_eur": 3.72,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D23046",
+      "name_sr_latin": "Replantacija stalnih zuba",
+      "price_odjeljenje_eur": 12.04,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA"
+    },
+    {
+      "code": "D24001",
+      "name_sr_latin": "Prvi specijalistički pregled",
+      "price_odjeljenje_eur": 3.72,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24002",
+      "name_sr_latin": "Ponovni specijalistički pregled - kontrola",
+      "price_odjeljenje_eur": 6.05,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24003",
+      "name_sr_latin": "Konzilijarni pregled",
+      "price_odjeljenje_eur": 16.12,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24004",
+      "name_sr_latin": "Savjetovanje u ordinaciji",
+      "price_odjeljenje_eur": 5.61,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24005",
+      "name_sr_latin": "Terapeutska readaptacija funkcionalnog ortodontskog aparata",
+      "price_odjeljenje_eur": 14.46,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24006",
+      "name_sr_latin": "Reparatura ortodontskog aparata sa otiskom",
+      "price_odjeljenje_eur": 14.46,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24007",
+      "name_sr_latin": "Fiksni ortodontski aparat",
+      "price_odjeljenje_eur": 88.24,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24008",
+      "name_sr_latin": "Ponovno lijepljenje ili zamjena bravica",
+      "price_odjeljenje_eur": 11.08,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24009",
+      "name_sr_latin": "Zamjena i adaptacija luka u fiksnom aparatu",
+      "price_odjeljenje_eur": 22.16,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24010",
+      "name_sr_latin": "Skidanje fiksnog aparata",
+      "price_odjeljenje_eur": 22.16,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24011",
+      "name_sr_latin": "Podvez brade",
+      "price_odjeljenje_eur": 24.26,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24012",
+      "name_sr_latin": "Brušenje zuba u terapeutske svrhe",
+      "price_odjeljenje_eur": 2.24,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24013",
+      "name_sr_latin": "Ortodontska terapija retiniranih stalnih zuba",
+      "price_odjeljenje_eur": 110.76,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24014",
+      "name_sr_latin": "Zamjena prstena u fiksnom aparatu",
+      "price_odjeljenje_eur": 9.33,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24015",
+      "name_sr_latin": "Čitanje RTG snimka zuba",
+      "price_odjeljenje_eur": 1.12,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24016",
+      "name_sr_latin": "Tendgen maxile i mandibule",
+      "price_odjeljenje_eur": 7.47,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24017",
+      "name_sr_latin": "Aktivni ortodontski aparat monoblok",
+      "price_odjeljenje_eur": 88.24,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24018",
+      "name_sr_latin": "Funkcionalna analiza orofacijalne regije",
+      "price_odjeljenje_eur": 7.4,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24019",
+      "name_sr_latin": "Izrada studijskog modela",
+      "price_odjeljenje_eur": 16.33,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24020",
+      "name_sr_latin": "Tele-rendgen čitanje nalaza",
+      "price_odjeljenje_eur": 14.91,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24021",
+      "name_sr_latin": "Planiranje ortodontske terapije",
+      "price_odjeljenje_eur": 8.26,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24022",
+      "name_sr_latin": "Aktivni pokretni ortodontski aparat",
+      "price_odjeljenje_eur": 67.23,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24023",
+      "name_sr_latin": "Ekstraoralni luk",
+      "price_odjeljenje_eur": 6.65,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D24024",
+      "name_sr_latin": "Maska po Delaere-u",
+      "price_odjeljenje_eur": 41.04,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "ORTOPEDIJA VILICA SA LABORATORIJOM"
+    },
+    {
+      "code": "D25001",
+      "name_sr_latin": "Prvi specijalistički pregled",
+      "price_odjeljenje_eur": 3.72,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25002",
+      "name_sr_latin": "Ponovni specijalistički pregled",
+      "price_odjeljenje_eur": 2.98,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25003",
+      "name_sr_latin": "Izdavanje ljekarskog uvjerenja i mišljenja i davanje savjeta",
+      "price_odjeljenje_eur": 5.61,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25004",
+      "name_sr_latin": "Konsultativni ili konzilijarni specijalistički pregled",
+      "price_odjeljenje_eur": 16.12,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25005",
+      "name_sr_latin": "Izrada i analiza studijskog modela",
+      "price_odjeljenje_eur": 15.85,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25006",
+      "name_sr_latin": "Analiza RTG snimka",
+      "price_odjeljenje_eur": 1.12,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25007",
+      "name_sr_latin": "Skidanje kruna",
+      "price_odjeljenje_eur": 5.61,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25008",
+      "name_sr_latin": "Cementiranje stare krunice ili nadogradnje",
+      "price_odjeljenje_eur": 5.61,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25009",
+      "name_sr_latin": "Totalna akrilatna proteza",
+      "price_odjeljenje_eur": 79.81,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25010",
+      "name_sr_latin": "Parcijalna akrilatna (pločasta) proteza",
+      "price_odjeljenje_eur": 79.81,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25011",
+      "name_sr_latin": "Individualna kašika od akrilata",
+      "price_odjeljenje_eur": 15.16,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25012",
+      "name_sr_latin": "Ugradnja zuba u proteznu ploču",
+      "price_odjeljenje_eur": 2.05,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25013",
+      "name_sr_latin": "Izrada žicane kukice",
+      "price_odjeljenje_eur": 3.61,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25014",
+      "name_sr_latin": "Ugradnja veznog elementa u proteznu ploču",
+      "price_odjeljenje_eur": 3.5,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25015",
+      "name_sr_latin": "Podlaganje proteze-direktno",
+      "price_odjeljenje_eur": 24.13,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25016",
+      "name_sr_latin": "Podlaganje proteze-indirektno",
+      "price_odjeljenje_eur": 37.81,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25017",
+      "name_sr_latin": "Zamjena protezne baze",
+      "price_odjeljenje_eur": 54.16,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25018",
+      "name_sr_latin": "Imedijatna proteza",
+      "price_odjeljenje_eur": 94.76,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25019",
+      "name_sr_latin": "Terapeutska adaptacija",
+      "price_odjeljenje_eur": 15.5,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25020",
+      "name_sr_latin": "Korektura proteze",
+      "price_odjeljenje_eur": 4.31,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25021",
+      "name_sr_latin": "Livena nadogradnja",
+      "price_odjeljenje_eur": 37.32,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25022",
+      "name_sr_latin": "Privremena kruna",
+      "price_odjeljenje_eur": 11.19,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25023",
+      "name_sr_latin": "Izrada modela antagonista",
+      "price_odjeljenje_eur": 6.66,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25024",
+      "name_sr_latin": "Metalokeramička kruna (mkk)",
+      "price_odjeljenje_eur": 86.34,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25025",
+      "name_sr_latin": "Keramička kruna",
+      "price_odjeljenje_eur": 86.34,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25026",
+      "name_sr_latin": "Metalokeramički član mosta",
+      "price_odjeljenje_eur": 32.7,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25027",
+      "name_sr_latin": "Parcijalna skeletirana proteza - PSP",
+      "price_odjeljenje_eur": 114.37,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25028",
+      "name_sr_latin": "Ugradnja atecmena",
+      "price_odjeljenje_eur": 3.5,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25029",
+      "name_sr_latin": "Teleskop kruna-unutrašnja-spoljašnja",
+      "price_odjeljenje_eur": 52.27,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25030",
+      "name_sr_latin": "Individualna frezovana precka",
+      "price_odjeljenje_eur": 16.35,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25031",
+      "name_sr_latin": "Namjenske krunice/frezovane",
+      "price_odjeljenje_eur": 7.02,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25032",
+      "name_sr_latin": "Reparatura fasete",
+      "price_odjeljenje_eur": 11.19,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25033",
+      "name_sr_latin": "Reparatura proteze",
+      "price_odjeljenje_eur": 12.13,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25034",
+      "name_sr_latin": "Reparatura kukice",
+      "price_odjeljenje_eur": 12.13,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25035",
+      "name_sr_latin": "Reparatura zuba",
+      "price_odjeljenje_eur": 12.13,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25036",
+      "name_sr_latin": "Totalna proteza u uslovima disgnatija vilica",
+      "price_odjeljenje_eur": 364.03,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25037",
+      "name_sr_latin": "Reokludacija i reartikulacija",
+      "price_odjeljenje_eur": 11.19,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    },
+    {
+      "code": "D25038",
+      "name_sr_latin": "Klinička funkcijska analiza",
+      "price_odjeljenje_eur": 15.85,
+      "price_ambulanta_eur": null,
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "STOMATOLOŠKA PROTETIKA"
+    }
+  ]
+}

@@ -1,0 +1,5063 @@
+{
+  "batch": "base-2",
+  "pdf_pages": "22-39",
+  "doc_pages": "19-36",
+  "sections": [
+    "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+    "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+    "6. RADIOLOŠKA DIJAGNOSTIKA",
+    "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI"
+  ],
+  "table_structure_notes": [
+    "Sections 4, 5, 6 have a SINGLE 'CIJENA' column (not Odjeljenje | Ambulanta). For these sections the value is placed in price_ambulanta_eur and price_odjeljenje_eur is null. The 'note: single_cijena_column' marker is on the first item of each affected section/subsection where the header was confirmed.",
+    "Section 7 has dual CIJENA subcolumns: Odjeljenje | Ambulanta — both extracted.",
+    "Section 4 contains an unmarked GENETIKA part (codes K05xxx) and an explicit IMUNOLOGIJA subsection starting at K06001.",
+    "Section 6 contains the following subsection headers in source: RENTGEN DIJAGNOSTIKA (J01xxx), RADIOLOGIJA (J06xxx), ULTRAZVUČNA DIJAGNOSTIKA (J07xxx), CT DIJAGNOSTIKA (J08xxx), MR DIJAGNOSTIKA (J09xxx), INTERVENTNA RADIOLOGIJA (J10xxx), STOMATOLOŠKE RTG PRETRAGE (J11xxx).",
+    "Section 7 contains subsection headers: MALI ZAHVATI (X01xxx), SREDNJE VELIKI ZAHVATI (X02xxx), SLOŽENI ZAHVATI (X03xxx)."
+  ],
+  "items": [
+    {
+      "code": "K05019",
+      "name_sr_latin": "Kultivacija ćelija amnionske tečnosti",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 60.12,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null,
+      "note": "single_cijena_column"
+    },
+    {
+      "code": "K05020",
+      "name_sr_latin": "Kultura limfocita fetalne krvi",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.02,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05021",
+      "name_sr_latin": "Kultivacija limfocita periferne krvi za SCE",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 15.36,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05022",
+      "name_sr_latin": "Kultivacija ćelija kosne srži - direktna metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.68,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05023",
+      "name_sr_latin": "Kultivacija ćelija kosne srži",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 12.02,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05024",
+      "name_sr_latin": "Kultivacija limfocita nestimulisane periferne krvi - direktna metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.68,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05025",
+      "name_sr_latin": "Kultivacija limfocita nestimulisane periferne krvi 72h",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 12.02,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05026",
+      "name_sr_latin": "Metotreksatom sinhronizovana kultivacija ćelija krvi ili kostne srži",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 18.04,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05027",
+      "name_sr_latin": "Preparacija i citogenetička analiza: kultivisani limfociti periferne krvi - tehnika G traka -30 metafaza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 74.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05028",
+      "name_sr_latin": "Preparacija i citogenetička analiza: kultivisani limfociti periferne krvi - fragilna mjesta - tehnika G traka -30 metafaza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 117.63,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05029",
+      "name_sr_latin": "Preparacija i citogenetička analiza: kultivisani fibroblasti kože - tehnika G traka -30 metafaza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 74.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05030",
+      "name_sr_latin": "Preparacija i citogenetička analiza: kultivisane ćelije, ćelija prod. konc. tehnika G traka -30 metafaza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 74.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05031",
+      "name_sr_latin": "Preparacija i citogenetička analiza: kultivisane ćelije horionskih čupica – kratkotrajna kultura - tehnika G traka – raspoloživi broj metafaza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 74.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05032",
+      "name_sr_latin": "Preparacija i citogenetička analiza: kultivisane ćelije horionskih čupica – dugotrajna kultura - tehnika G traka -30 metafaza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 74.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05033",
+      "name_sr_latin": "Preparacija i citogenetička analiza: kultivisane ćelije amniona tehnika G traka -30 metafaza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 74.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05034",
+      "name_sr_latin": "Preparacija i citogenetička analiza: kultivisane ćelije fetalne krvi - tehnika G traka -30 metafaza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 74.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05035",
+      "name_sr_latin": "Preparacija i citogenetička analiza hromozomskih mozaika i - tehnika G traka -100 metafaza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 199.94,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05036",
+      "name_sr_latin": "Preparacija i citogenetička analiza: biodozimetrija - tehnika G traka -100 metafaza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 199.94,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05037",
+      "name_sr_latin": "Preparacija i citogenetička analiza: kultivisane ćelije kostne (72h) srži tehnika G traka -30 metafaza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 74.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05038",
+      "name_sr_latin": "Preparacija i citogenetička analiza: kultivisane ćelije kosne srži-direktna metoda, tehnika G traka -30 metafaza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 74.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05039",
+      "name_sr_latin": "Preparacija i citogenetička analiza: nestim. periferne krvi (72h) tehnika G traka -30 metafaza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 74.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05040",
+      "name_sr_latin": "Preparacija i citogenetička analiza: nestim. periferne krvi (direktna metoda) tehnika G traka -30 metafaza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 74.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05041",
+      "name_sr_latin": "Preparacija i citogenetička analiza: tehnika Q traka",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 76.25,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05042",
+      "name_sr_latin": "Preparacija i citogenetička analiza: tehnika R traka",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 76.25,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05043",
+      "name_sr_latin": "Preparacija i citogenetička analiza: tehnika C traka",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 34.09,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05044",
+      "name_sr_latin": "Preparacija i citogenetička analiza: tehnika autoradiografije",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 68.18,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05045",
+      "name_sr_latin": "Preparacija i citogenetička analiza: NOR tehnika",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 68.18,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05046",
+      "name_sr_latin": "Preparacija i citogenetička analiza: SCE tehnika (100 – 300 metafaza)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 94.21,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05047",
+      "name_sr_latin": "Određivanje X- Hromatina (Barrov telešce)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.02,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05048",
+      "name_sr_latin": "Određivanje Y- Hromatina",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 17.05,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05049",
+      "name_sr_latin": "CCD mikroskopija, fotometrijska analiza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 14.05,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05050",
+      "name_sr_latin": "Hibridizacija \"in situ\" DNK Metafazna citogenetika",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 15.86,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05051",
+      "name_sr_latin": "Hibridizacija \"in situ\" Interfazna citogenetika",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 46.84,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05052",
+      "name_sr_latin": "DNK izolacija iz periferne krvi",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 22.46,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05053",
+      "name_sr_latin": "DNK izolacija - mikrometoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 22.46,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05054",
+      "name_sr_latin": "DNK izolacija iz sasušenih kapi krvi",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 22.46,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05055",
+      "name_sr_latin": "DNK izolacija iz limfocita periferne krvi i ćelijskih kultura",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 22.46,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05056",
+      "name_sr_latin": "DNK izolacija iz parafinskih kalupa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 14.05,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05057",
+      "name_sr_latin": "DNK izolacija iz tkiva (solidni tumori, horionske čupice, ćelije amniona, kože...)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 14.05,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05058",
+      "name_sr_latin": "DNK izolacija iz limfocita periferne krvi i ćelijskih kultura",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 22.46,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null,
+      "note": "VERIFY: duplicate name with K05055, possibly different method"
+    },
+    {
+      "code": "K05059",
+      "name_sr_latin": "RNK izolacija iz tkiva i parafinskih kalupa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 22.46,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05060",
+      "name_sr_latin": "Bisulfitna modifikacija DNK",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 14.05,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05061",
+      "name_sr_latin": "PCR umnožavanje DNK i alel specifični multipleks PCR",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 14.05,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05062",
+      "name_sr_latin": "Alel specifični PCR",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 14.05,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05063",
+      "name_sr_latin": "PCR umnožavanje DNK: \"Nested\" PCR",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 96.56,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05064",
+      "name_sr_latin": "Multipleks PCR metoda umnožavanja DNK",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 99.78,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05065",
+      "name_sr_latin": "RT–PCR (polimeraza lančana reakcija sa reverznom transkriptazom)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 80,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05066",
+      "name_sr_latin": "Metilacionо specifični PCR",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 14.05,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05067",
+      "name_sr_latin": "Spektrofotometrijska analiza DNK, RNK i PCR produkata",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 14.05,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05068",
+      "name_sr_latin": "Analiza DNK, RNK i PCR produkata horizontalnom elektroforezom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 35.13,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05069",
+      "name_sr_latin": "Analiza PCR produkata vertikalnom elektroforezom na poliakril amidnom gelu",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 43.44,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05070",
+      "name_sr_latin": "Analiza PCR fragmenata nakon restrikcione digestije (PCR-RFLP)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 77.2,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05071",
+      "name_sr_latin": "SSCP analiza konformacionog polimorfizma jednolančane DNK – detekcija mutacija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 61.16,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05072",
+      "name_sr_latin": "Heterodupleksna analiza za detekciju mutacija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 61.16,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05073",
+      "name_sr_latin": "\"Dot blot\" DNK analiza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 77.2,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05074",
+      "name_sr_latin": "Northern \"dot-blot\" RNK analiza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 77.2,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05075",
+      "name_sr_latin": "Detekcija polimorfizama gena i mutacija RealTime PCR metodom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 49.02,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05076",
+      "name_sr_latin": "Određivanje ekspresije gena RealTime PCR Syber Green metodom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 49.02,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05077",
+      "name_sr_latin": "Određivanje ekspresije gena RealTime PCR PCR metodom sa obilježenom probom (TaqMan)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 49.02,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05078",
+      "name_sr_latin": "Sekvenciranje DNK",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.84,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05079",
+      "name_sr_latin": "Analiza DNK fragmenata metodom kapilarne elektroforeze",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 28.29,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05080",
+      "name_sr_latin": "Analiza strukturnih promjena DNK »microarray« metodom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 28.29,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05081",
+      "name_sr_latin": "Analiza ekspresije gena »microarray« metodom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 28.29,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K05082",
+      "name_sr_latin": "Timska analiza mutacija/polimorfizama (ili ekspresije gena) i opis dobijenih rezultata",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 35.36,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "K06001",
+      "name_sr_latin": "Prvi pregled imunologa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA",
+      "note": "single_cijena_column"
+    },
+    {
+      "code": "K06002",
+      "name_sr_latin": "Inhibitor C1 esteraze - nefelometrijska metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 12.6,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06003",
+      "name_sr_latin": "CRP - nefelometrijska metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 12.6,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06004",
+      "name_sr_latin": "Reumatoidni faktor (RF, IgM) - nefelometrijska metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 12.6,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06005",
+      "name_sr_latin": "Potklasa 1 IgA (IgA 1) - nefelometrijska metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 12.6,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06006",
+      "name_sr_latin": "Potklasa 2 IgA (IgA 2) - nefelometrijska metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 12.6,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06007",
+      "name_sr_latin": "CH50",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 5.25,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06008",
+      "name_sr_latin": "Krioglobulini",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 4.2,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06009",
+      "name_sr_latin": "Cirkulišući imunokompleksi IK (C1q) - nefelometrijska metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 12.6,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06010",
+      "name_sr_latin": "Prokalcitonin - nefelometrijska metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 17.5,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06011",
+      "name_sr_latin": "Antinuklearna antitijela Hep2 (ANA screen) - IIF metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 17.65,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06012",
+      "name_sr_latin": "Anti ds DNA antitijela (Cr. Lucillae) - IIF metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 17.65,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06013",
+      "name_sr_latin": "Antiglatkomišićna antitijela - IIF metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 17.65,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06014",
+      "name_sr_latin": "Antiparijetalna antitijela - IIF metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 17.65,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06015",
+      "name_sr_latin": "Antitijela specifična za endomizijum - IIF metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 17.65,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06016",
+      "name_sr_latin": "Antitijela specifična za dvolančanu DNK (anti dsDNA At) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.7,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06017",
+      "name_sr_latin": "Antitijela specifična za Sm antigen (Sm) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.7,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06018",
+      "name_sr_latin": "Antitijela specifična za RNP antigene (RNP) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.7,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06019",
+      "name_sr_latin": "Antitijela specifična za Ro antigene (SS-A) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.7,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06020",
+      "name_sr_latin": "Antitijela specifična za La antigene (SS-B) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.7,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06021",
+      "name_sr_latin": "Antitijela specifična za DNK topoizomerazu I (Scl-70) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.7,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06022",
+      "name_sr_latin": "Antitijela specifična za centromerne antigene (CenpB) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.7,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06023",
+      "name_sr_latin": "Antitijela specifična za histidil tRNK sintetazu (Jo-1) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.7,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06024",
+      "name_sr_latin": "Antitijela specifična za ribozome (RibP) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.7,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06025",
+      "name_sr_latin": "Antitijela specifična za nukleozome (Nukleo) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.7,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06026",
+      "name_sr_latin": "Antitijela specifična za kompleks histona (Histon C) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.7,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06027",
+      "name_sr_latin": "Antitijela specifična za proteinazu 3 (PR3 - cANCA) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.7,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06028",
+      "name_sr_latin": "Antitijela specifična za mijeloperoksidazu (MPO - pANCA) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.7,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06029",
+      "name_sr_latin": "Vaskulitis Screen - kvantitativna kombinovana detekcija antitijela spec. za 7 antigena antitijela istovremeno - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 14.6,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06030",
+      "name_sr_latin": "ANCA profil - semikvantitativna detekcija antitijela spec. za 7 antigena citoplazme neutrofila (MPO, PR3, neutrofilna elastaza, katepsin G, laktoferin, lizozim, BPI) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 45.99,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06031",
+      "name_sr_latin": "Anti kardiolipinska antitijela (ACA) IgG - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.45,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06032",
+      "name_sr_latin": "Anti kardiolipinska antitijela (ACA) IgM - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.45,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06033",
+      "name_sr_latin": "Anti kardiolipinska antitijela (ACA) IgA - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.45,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06034",
+      "name_sr_latin": "Antitijela specifična za beta 2 glikoprotein I (B2GPI) IgG ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.43,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06035",
+      "name_sr_latin": "Antitijela specifična za beta 2 glikoprotein I (B2GPI) IgM ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.43,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06036",
+      "name_sr_latin": "Antitijela specifična za beta 2 glikoprotein I (B2GPI) IgA ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.43,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06037",
+      "name_sr_latin": "Antitijela specifična za protrombin (Protrombin) IgG - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 16.67,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06038",
+      "name_sr_latin": "Antitijela specifična za protrombin (Protrombin) IgM - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 16.67,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06039",
+      "name_sr_latin": "Antitijela specifična za protrombin (Protrombin) IgA - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 16.67,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06040",
+      "name_sr_latin": "Antitijela specifična za anexin V (Anexin V) IgG - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 16.67,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06041",
+      "name_sr_latin": "Antitijela specifična za anexin V (Anexin V) IgM - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 16.67,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06042",
+      "name_sr_latin": "Antitijela specifična za tireoglobulin (TG) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.5,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06043",
+      "name_sr_latin": "Antitijela specifična za tireoperoksidazu (TPO) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.5,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06044",
+      "name_sr_latin": "Antitijela specifična za TSH receptor (TSHR) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.5,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06045",
+      "name_sr_latin": "Antitijela specifična za glijadin (Glij IgG) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 12.98,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06046",
+      "name_sr_latin": "Antitijela specifična za glijadin (Glij IgA) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 12.98,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06047",
+      "name_sr_latin": "Antitijela specifična za tkivnu transglutaminazu (Ttg IgG) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 12.98,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06048",
+      "name_sr_latin": "Antitijela specifična za tkivnu transglutaminazu (Ttg IgA) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 12.98,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06049",
+      "name_sr_latin": "Antitijela specifična za M2 antigen mitohondrija (AMA M2) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 12.57,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06050",
+      "name_sr_latin": "Antitijela specifična za LKM-1 antigen (LKM-1) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 14.28,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06051",
+      "name_sr_latin": "Antitijela specifična za SLA antigen (SLA/LP) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 14.28,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06052",
+      "name_sr_latin": "Antitijela specifična za LC antigen (LC) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 9.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06053",
+      "name_sr_latin": "Antitijela specifična za asijaloglikoprotein receptor (ASGPR) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 9.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06054",
+      "name_sr_latin": "Antitijela specifična za C1q komponentu komplementa (C1q) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 9.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06055",
+      "name_sr_latin": "Antitijela specifična za glomerulsku bazalnu membranu (GBM) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 9.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06056",
+      "name_sr_latin": "Antitijela specifična za alfa fodrin (alfa-fodrin IgA) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 9.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06057",
+      "name_sr_latin": "Cirkulišući imunski kompleksi (CIC C1q) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 9.17,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06058",
+      "name_sr_latin": "Antitijela specifična za ciklični citrulirani peptid (CCP) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.67,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06059",
+      "name_sr_latin": "Reumatoidni faktor (RF) IgG klase - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 4.79,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06060",
+      "name_sr_latin": "Reumatoidni faktor (RF) IgA klase - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 4.79,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06061",
+      "name_sr_latin": "IgE - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.5,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06062",
+      "name_sr_latin": "Antinuklearna antitijela (ANA Screen) - ELISA metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.56,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06063",
+      "name_sr_latin": "Antitijela specifična za ekstraktibilne nuklearne antigene (ENA Screen) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 35,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06064",
+      "name_sr_latin": "Antitijela specifična za antigene spermatozoida (Sperm) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 21,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06065",
+      "name_sr_latin": "Antitijela specifična za fosfatidnu kiselinu (PhA) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.43,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06066",
+      "name_sr_latin": "Antitijela specifična za fosfatidil inozitol (PhI) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.43,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06067",
+      "name_sr_latin": "Antitijela specifična za fosfatidil serin (PhS) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.43,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06068",
+      "name_sr_latin": "Antitijela specifična za fosfatidil etanolamin (PhE) - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.43,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06069",
+      "name_sr_latin": "C3d komponenta komplementa - ELISA",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 4.2,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06070",
+      "name_sr_latin": "Antigeni jezre - imunoblot metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 14.08,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "K06071",
+      "name_sr_latin": "Hep2 ćelijski antigeni - imunoblot metoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 14.08,
+      "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
+      "subsection": "IMUNOLOGIJA"
+    },
+    {
+      "code": "L01090",
+      "name_sr_latin": "Pregled PAPA brisa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.34,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "note": "single_cijena_column"
+    },
+    {
+      "code": "L01001",
+      "name_sr_latin": "Pregled amputiranog apendiksa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01002",
+      "name_sr_latin": "Pregled endoskopske biopsije kolona",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01003",
+      "name_sr_latin": "Pregled biopsije labium oris",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01004",
+      "name_sr_latin": "Pregled endoskopske biopsije sluznice želuca",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01005",
+      "name_sr_latin": "Cystes dentogenes (dentogene ciste)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01006",
+      "name_sr_latin": "Pregled endoskopske biopsije jednjaka",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01007",
+      "name_sr_latin": "Pregled hemoroidektomije",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01008",
+      "name_sr_latin": "Pregled endoskopske resekcije polipa kolona",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01091",
+      "name_sr_latin": "Pregled endoskopske resekcije polipa želuca",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01009",
+      "name_sr_latin": "Pregled parcijalne resekcije želuca sa ulkusom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01092",
+      "name_sr_latin": "Pregled parcijalne resekcije želuca sa tumorom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01010",
+      "name_sr_latin": "Resekovano tanko crijevo (resectio intestini tenuis)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01011",
+      "name_sr_latin": "Ciste labialne",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01012",
+      "name_sr_latin": "Pregled mioma",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01013",
+      "name_sr_latin": "Pregled polipa cerviksa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01014",
+      "name_sr_latin": "Resectio ovarii partialis",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01015",
+      "name_sr_latin": "Pregled jajovoda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01016",
+      "name_sr_latin": "Pregled biopsije vagine",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01017",
+      "name_sr_latin": "Glandulae digestoriae et lacrimales",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01018",
+      "name_sr_latin": "Pregled ehinokoks jetre",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01019",
+      "name_sr_latin": "Pregled biopsije konjunktive",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01020",
+      "name_sr_latin": "Pregled promjene iz ušnog kanala",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01021",
+      "name_sr_latin": "Pregled biopsije kože",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01022",
+      "name_sr_latin": "Pregled biopsije mukoze usta i farinksa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01023",
+      "name_sr_latin": "Pregled parcijalne resekcije tankog crijeva, fisura i fistula",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01024",
+      "name_sr_latin": "Tumor vagine (Extrpato tumoris vaginae)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01025",
+      "name_sr_latin": "Pregled odstranjene žučne kese",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01026",
+      "name_sr_latin": "Pregled tumora pljuvačne žlijezde",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01093",
+      "name_sr_latin": "Pregled tumora pljuvačnih žlijezda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01027",
+      "name_sr_latin": "Pregled piloidnog sinusa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01028",
+      "name_sr_latin": "Pregled biopsije mišića",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01029",
+      "name_sr_latin": "Pregled tumora subkutisa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01030",
+      "name_sr_latin": "Pregled biopsije larinksa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01031",
+      "name_sr_latin": "Pregled biopsije traheje / bronha",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01032",
+      "name_sr_latin": "Pleuralni i abdominalni punktat (citološka analiza)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01033",
+      "name_sr_latin": "Tumor farinksa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01034",
+      "name_sr_latin": "Pregled totalne resekcije larinksa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01035",
+      "name_sr_latin": "Pregled polipa larinksa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01036",
+      "name_sr_latin": "Pregled sputuma",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01037",
+      "name_sr_latin": "Pregled subtotalne resekcije štitne žlijezde",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01038",
+      "name_sr_latin": "Pregled biopsije penisa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01094",
+      "name_sr_latin": "Pregled resekcije penisa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 22.24,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01095",
+      "name_sr_latin": "Pregled biopsije prostate",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01039",
+      "name_sr_latin": "Pregled biopsije trbušne maramice",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01040",
+      "name_sr_latin": "Dentes (zubi)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01041",
+      "name_sr_latin": "Tumor iz usne duplje",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01042",
+      "name_sr_latin": "Operatio aures medii (granulacije ili polipozne mase iz srednjeg uha)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01043",
+      "name_sr_latin": "Pregled biopsije cerviksa uterusa sa endocervikalnom kiretažom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01096",
+      "name_sr_latin": "Pregled kiretaže endometrijuma",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01097",
+      "name_sr_latin": "Pregled frakcione kiretaže uterusa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01044",
+      "name_sr_latin": "Pregled biopsije limfnog čvora",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01045",
+      "name_sr_latin": "Pregled biopsije jetre",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01098",
+      "name_sr_latin": "Pregled parcijalne resekcije jetre",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01046",
+      "name_sr_latin": "Pregled aneurizme aorte",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01047",
+      "name_sr_latin": "Pregled resektata jednjaka",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01048",
+      "name_sr_latin": "Pregled jajnika sa jajovodom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01099",
+      "name_sr_latin": "Pregled biopsije jajnika",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01050",
+      "name_sr_latin": "Pregled ciste vrata",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01051",
+      "name_sr_latin": "Naevus",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01052",
+      "name_sr_latin": "Pregled kiretaže kosti",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01053",
+      "name_sr_latin": "Pregled polipa iz nosa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01054",
+      "name_sr_latin": "Pregled tonzilektomije",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01100",
+      "name_sr_latin": "Pregled biopsije tonzile",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01055",
+      "name_sr_latin": "Pregled transuretralne resekcije tumora mokraćne bešike",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01101",
+      "name_sr_latin": "Pregled transuretralne resekcije sluznice mokraćne bešike / prostate",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01056",
+      "name_sr_latin": "Pregled biopsije nerva",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01057",
+      "name_sr_latin": "Pregled parcijalne resekcije debelog crijeva",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 16.68,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01058",
+      "name_sr_latin": "Pregled biopsije testisa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 16.68,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01102",
+      "name_sr_latin": "Pregled preparata orhiektomije",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01059",
+      "name_sr_latin": "Spermogram",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 18.07,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01103",
+      "name_sr_latin": "Pregled punktata dojke",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01104",
+      "name_sr_latin": "Pregled punktata štitne žlijezde",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01105",
+      "name_sr_latin": "Pregled punktata limfnog čvora",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01106",
+      "name_sr_latin": "Pregled punktata pljuvačne žlijezde",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01107",
+      "name_sr_latin": "Citološki pregled bronhijalnog lavata",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01108",
+      "name_sr_latin": "Citološki pregled aspirata",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01109",
+      "name_sr_latin": "Pregled punktata tumora",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01061",
+      "name_sr_latin": "Pregled tumora dojke",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01062",
+      "name_sr_latin": "Pregled ciste / tumora jajnika",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01063",
+      "name_sr_latin": "Pregled slezine",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01064",
+      "name_sr_latin": "Pregled resektata mandibule / maxile",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01081",
+      "name_sr_latin": "Pregled totalne resekcije želuca",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 33.36,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01066",
+      "name_sr_latin": "Pregled grupe limfnih čvorova",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01067",
+      "name_sr_latin": "Pregled tumora kosti",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01068",
+      "name_sr_latin": "Pregled totalne resekcije štitne žlijezde",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01069",
+      "name_sr_latin": "Pregled konizata cerviksa uterusa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 22.24,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01071",
+      "name_sr_latin": "Pregled uterusa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 22.24,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01072",
+      "name_sr_latin": "Pregled biopsije koštane srži",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 22.24,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01073",
+      "name_sr_latin": "Pregled uterusa sa adneksima",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 27.8,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01074",
+      "name_sr_latin": "Histopatološka dijagnostika (Ex tempore)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 27.8,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01076",
+      "name_sr_latin": "Pregled očne jabučice",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 27.8,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01077",
+      "name_sr_latin": "Pregled tumora pluća",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 27.8,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01078",
+      "name_sr_latin": "Pregled totalne resekcije bubrega",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 27.8,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01110",
+      "name_sr_latin": "Pregled biopsije bubrega",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01111",
+      "name_sr_latin": "Pregled parcijalne resekcije bubrega",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01112",
+      "name_sr_latin": "Pregled nadbubrežne žlijezde",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 16.68,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01079",
+      "name_sr_latin": "Pregled totalne ekstirpacije mokraćne bešike",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 27.8,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01080",
+      "name_sr_latin": "Pregled totalne resekcije želuca sa omentumom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 27.8,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01082",
+      "name_sr_latin": "Pregled totalne resekcije želuca sa omentumom i slezinom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 33.36,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01083",
+      "name_sr_latin": "Pregled radikalne mastektomije",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.7,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01084",
+      "name_sr_latin": "Pregled atheroma, veruka, papiloma, kondiloma, ksantelazmi i drugih benignih lezija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.7,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01086",
+      "name_sr_latin": "Pregled blok resekcije crijeva",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.7,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01088",
+      "name_sr_latin": "Pregled blok resekcije vrata",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.7,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01089",
+      "name_sr_latin": "Klinička obdukcija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 444.8,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01114",
+      "name_sr_latin": "Klinička obdukcija - balsamacija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 444.8,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01115",
+      "name_sr_latin": "Pregled biopsije krvnog suda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01116",
+      "name_sr_latin": "Pregled biopsije miokarda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01117",
+      "name_sr_latin": "Pregled tumora srca",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01118",
+      "name_sr_latin": "Pregled srčanog zaliska",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01119",
+      "name_sr_latin": "Pregled resekcije anusa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01120",
+      "name_sr_latin": "Pregled endoskopske biopsije duodenuma i tankog crijeva",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 22.24,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01121",
+      "name_sr_latin": "Pregled resektata duodenuma",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01122",
+      "name_sr_latin": "Pregled resektata duodenuma i pankreasa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01123",
+      "name_sr_latin": "Pregled biopsije pankreasa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01124",
+      "name_sr_latin": "Pregled resektata pankreasa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01125",
+      "name_sr_latin": "Pregled igene biopsije jetre",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01126",
+      "name_sr_latin": "Pregled biopsije cervikalne uterusa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01127",
+      "name_sr_latin": "Pregled polipa endometrijuma",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01128",
+      "name_sr_latin": "Pregled uterusa sa adneksima i regionalnim limfnim čvorovima",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.7,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01129",
+      "name_sr_latin": "Pregled biopsije vulve",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01130",
+      "name_sr_latin": "Pregled vulvektomije",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01131",
+      "name_sr_latin": "Pregled posteljice",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01132",
+      "name_sr_latin": "Pregled igene biopsije dojke",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01133",
+      "name_sr_latin": "Pregled biopsije dojke",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01134",
+      "name_sr_latin": "Pregled kvadrantektomije dojke",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01135",
+      "name_sr_latin": "Pregled parcijalne mastektomije",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01136",
+      "name_sr_latin": "Pregled biopsije pluća",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01137",
+      "name_sr_latin": "Pregled resekcije lobusa pluća",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01138",
+      "name_sr_latin": "Pregled lobektomije pluća",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 27.8,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01139",
+      "name_sr_latin": "Pregled plućnog krila",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 27.8,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01140",
+      "name_sr_latin": "Pregled biopsije pleure",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01141",
+      "name_sr_latin": "Pregled ehinokoka pluća",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01142",
+      "name_sr_latin": "Pregled tumora i cisti timusa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01143",
+      "name_sr_latin": "Pregled tumora medijastinuma",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01144",
+      "name_sr_latin": "Pregled biopsije farinksa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01145",
+      "name_sr_latin": "Pregled biopsije sinusa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01146",
+      "name_sr_latin": "Pregled parcijalne resekcije larinksa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 11.12,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01147",
+      "name_sr_latin": "Pregled tumora kože",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.7,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01148",
+      "name_sr_latin": "Pregled tumora mozga",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01149",
+      "name_sr_latin": "Pregled resekovanog režnja mozga",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01150",
+      "name_sr_latin": "Pregled tumora retroperitoneuma",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01151",
+      "name_sr_latin": "Pregled tumora mekog tkiva",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01152",
+      "name_sr_latin": "Pregled amputiranog ekstremiteta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 55.6,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01153",
+      "name_sr_latin": "Histohemijske metode bojenja",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.9,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01154",
+      "name_sr_latin": "Imunohistohemijska analiza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 27.8,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01155",
+      "name_sr_latin": "In situ hibridizacija (Chromogena)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 27.8,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01156",
+      "name_sr_latin": "Imunofluorescentna analiza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 27.8,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01157",
+      "name_sr_latin": "KRAS analiza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 83.4,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01158",
+      "name_sr_latin": "PCR analiza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 83.4,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01060",
+      "name_sr_latin": "Amputirani rektum",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01065",
+      "name_sr_latin": "Totalna gastrektomija (Gastrectomia totalis)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 19.46,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01070",
+      "name_sr_latin": "Uterus sa jednim jajovodom i jajnikom (Hysterectomia cum adnexectomiam unilateralis)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 22.24,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01075",
+      "name_sr_latin": "Jednjak i želudac (Oesophagogastrectomia)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 27.8,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "L01085",
+      "name_sr_latin": "Resekovano crijevo kod Whipple-ove bolesti",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.7,
+      "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null
+    },
+    {
+      "code": "J01001",
+      "name_sr_latin": "Prvi specijalistički pregled (radiolog)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 3.33,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RENTGEN DIJAGNOSTIKA",
+      "note": "single_cijena_column; footnote: Uz svaki pregled RTG usluga fakturišu se i prvi pregled radiologa"
+    },
+    {
+      "code": "J06015",
+      "name_sr_latin": "Rentgenoskopija abdomena nativno",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06016",
+      "name_sr_latin": "Histerosalpingografija - kompletan pregled",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 14.37,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06017",
+      "name_sr_latin": "Intravenska holangiholecistografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06042",
+      "name_sr_latin": "Peroralna holecistografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06043",
+      "name_sr_latin": "Infuziona holecistografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06118",
+      "name_sr_latin": "Irigoskopija i irigografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 7.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06019",
+      "name_sr_latin": "Irigoskopija i irigografija sa duplim kontrastom po Fileru",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 1.25,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06020",
+      "name_sr_latin": "Jednjak, želudac, duodenum, crijeva - ciljano snimanje po svakom snimku",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 1.25,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06021",
+      "name_sr_latin": "Pasaža crijeva",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 7.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06044",
+      "name_sr_latin": "Minutna urografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 4.93,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06045",
+      "name_sr_latin": "Pregled debelog crijeva kroz stomu",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 7.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06046",
+      "name_sr_latin": "Retrogradna urografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 14.37,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06022",
+      "name_sr_latin": "Intravenozna urografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 4.93,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06001",
+      "name_sr_latin": "Snimanje skeleta lobanje i lica-za svaki snimak",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06002",
+      "name_sr_latin": "Snimanje pojedinih dijelova kičme i sakroilijačne regije-za svaki snimak",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06003",
+      "name_sr_latin": "Snimanje pojedinih dijelova skeleta, ekstremiteta i karlice-za svaki snimak",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06004",
+      "name_sr_latin": "Lokalizacija stranog tijela u bilo kojem organu (osim oka)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06005",
+      "name_sr_latin": "Snimanje ždrijela i grkljana",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06006",
+      "name_sr_latin": "Snimanje toraksa (rebra, sternum)-za svaki pravac",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 0.83,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06007",
+      "name_sr_latin": "Fluorogram pluća",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 1.66,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06008",
+      "name_sr_latin": "Radiografija pluća",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06009",
+      "name_sr_latin": "Snimanje medijastinuma",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06010",
+      "name_sr_latin": "Teleradiografija srca-za svaki pravac",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06011",
+      "name_sr_latin": "Snimanje hepatobilijarnog trakta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06012",
+      "name_sr_latin": "Snimanje urogenitalnog trakta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06014",
+      "name_sr_latin": "Mamografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06023",
+      "name_sr_latin": "Mikciona cistografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 5.94,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06024",
+      "name_sr_latin": "Infuziona urografija sa descedentnom cistografijom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.13,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06025",
+      "name_sr_latin": "Očni bulbus (Vogt)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 3.76,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06026",
+      "name_sr_latin": "Lokalizacija stranog tijela u oku uz RTGsk kontrolu",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 5.01,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06027",
+      "name_sr_latin": "Radioskopija i snimanje stranog tijela",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 5.01,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06047",
+      "name_sr_latin": "Snimanje ždrijela i grkljana sa RTGsk",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 5.01,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06048",
+      "name_sr_latin": "Snimanje mekog tkiva vrata",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06049",
+      "name_sr_latin": "Radioskopija pluća",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06050",
+      "name_sr_latin": "Radioskopija srca",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06051",
+      "name_sr_latin": "Teleradiografija pluća i srca bez RTGsk",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06052",
+      "name_sr_latin": "Teleradiografija pluća i srca uz RTGsk",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 5.01,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06028",
+      "name_sr_latin": "Intervencijska holangiografija kroz T dren",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 7.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06053",
+      "name_sr_latin": "Radioskopija jednjaka, želuca i duodenuma",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 5.01,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06054",
+      "name_sr_latin": "Radioskopija želuca i duodenuma sa dvostrukim kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 5.01,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06055",
+      "name_sr_latin": "Hipotona duodenografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 5.01,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06056",
+      "name_sr_latin": "Pregled batrljka želuca sa kateterom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 5.01,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06057",
+      "name_sr_latin": "Pregled gastroduodenuma kroz stomu",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 7.5,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06058",
+      "name_sr_latin": "Tanko crijevo, standardna RTGski pasaža",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 5.01,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06059",
+      "name_sr_latin": "Cistografija (uretrocistografija) standardna",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 5.94,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06030",
+      "name_sr_latin": "Perkutana urografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 50.46,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J08080",
+      "name_sr_latin": "Perkutana nefrostomija (do 10F)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 98.02,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06031",
+      "name_sr_latin": "Perkutana sklerotizacija ciste bubrega",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 84.1,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06032",
+      "name_sr_latin": "Kontrola drenaže patoloških tečnih kolekcija, bilijarnih puteva, nefrostome",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 12.67,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA",
+      "note": "VERIFY: price 12.67 is lower than surrounding entries"
+    },
+    {
+      "code": "J06033",
+      "name_sr_latin": "Anterogradna urografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 84.1,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06034",
+      "name_sr_latin": "Punkcija ciste pod kontrolom UZ",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 84.1,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06035",
+      "name_sr_latin": "Punkciona biopsija pod kontrolom UZ",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 12.55,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06036",
+      "name_sr_latin": "Drenaža tečnih kolekcija iz torakalne šupljine pod kontrolom UZ",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 25.11,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06037",
+      "name_sr_latin": "Drenaža tečnih kolekcija iz abdominalne šupljine pod kontrolom UZ",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 25.11,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06038",
+      "name_sr_latin": "Perkutana nefrostomija pod kontrolom UZ",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 98.02,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06039",
+      "name_sr_latin": "Fistulografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 5.94,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06120",
+      "name_sr_latin": "Pregledni snimak abdomena nativno sa karlicom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 1.66,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06013",
+      "name_sr_latin": "Nativni snimak urotrakta uz RTGsk",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 1.66,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06040",
+      "name_sr_latin": "Snimak paranazalnih šupljina",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 4.18,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06062",
+      "name_sr_latin": "Ciljani snimak zuba",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 1.14,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06063",
+      "name_sr_latin": "Sijalografija jedne pljuvačne žlijezde na jednoj strani, kompletan pregled",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 6.33,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06064",
+      "name_sr_latin": "Sijalografija pljuvačne žlijezde na obje strane, kompletan pregled",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.44,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06065",
+      "name_sr_latin": "Artografija temporomandibularnog zgloba, kompletan pregled",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.44,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J06066",
+      "name_sr_latin": "Bronhografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 27.8,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "RADIOLOGIJA"
+    },
+    {
+      "code": "J07009",
+      "name_sr_latin": "Doppler sonografija vrata",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA",
+      "note": "single_cijena_column"
+    },
+    {
+      "code": "J07010",
+      "name_sr_latin": "Doppler sonografija gornjih ekstremiteta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+    },
+    {
+      "code": "J07011",
+      "name_sr_latin": "Doppler sonografija donjih ekstremiteta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+    },
+    {
+      "code": "J07012",
+      "name_sr_latin": "Doppler sonografija velikih krvnih sudova",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+    },
+    {
+      "code": "J07013",
+      "name_sr_latin": "Transkranijalna doppler sonografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+    },
+    {
+      "code": "J07001",
+      "name_sr_latin": "Ultrazvuk gornjeg abdomena (žučne kese, žučnih puteva, jetre, gušterače i slezine)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+    },
+    {
+      "code": "J07002",
+      "name_sr_latin": "Ultrazvuk donjeg abdomena i retroperitoneuma: bubrega, nadbubrega, mokraćne bešike, prostate, retroperitoneum",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+    },
+    {
+      "code": "J07003",
+      "name_sr_latin": "Ultrazvuk testisa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+    },
+    {
+      "code": "J07004",
+      "name_sr_latin": "Ultrazvuk kukova kod odojčadi",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+    },
+    {
+      "code": "J07005",
+      "name_sr_latin": "Ultrazvuk mekih tkiva i limfnih žlijezda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+    },
+    {
+      "code": "J07006",
+      "name_sr_latin": "Ultrazvuk abdominalnih krvnih sudova i/ili limfnih žlijezda",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+    },
+    {
+      "code": "J07008",
+      "name_sr_latin": "Ultrazvuk pregled dojki",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+    },
+    {
+      "code": "J07007",
+      "name_sr_latin": "Ultrazvuk štitne i paraštitne žlijezde",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA",
+      "note": "OCR_FIX: code corrected J07014→J07007 per PDF p.29 (J07014 does not exist in source; sequence is non-linear: J07009-J07013, J07001-J07006, J07008, J07007, J07015-J07018)"
+    },
+    {
+      "code": "J07015",
+      "name_sr_latin": "Ultrazvuk pregled vrata (pljuvačne žlijezde i meka tkiva)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+    },
+    {
+      "code": "J07016",
+      "name_sr_latin": "Ultrazvuk pregled plućnih baza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+    },
+    {
+      "code": "J07017",
+      "name_sr_latin": "Ultrazvuk sinusa",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+    },
+    {
+      "code": "J07018",
+      "name_sr_latin": "Mjerenje indeksa sistolnog pritiska ultrazvučnim stetoskopom po Doppleru",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 10.73,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08015",
+      "name_sr_latin": "Kompjuterizovana tomografija bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.52,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA",
+      "note": "single_cijena_column"
+    },
+    {
+      "code": "J08016",
+      "name_sr_latin": "Kompjuterizovana tomografija sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 62.29,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08001",
+      "name_sr_latin": "MSCT bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.52,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08002",
+      "name_sr_latin": "MSCT sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 62.29,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08003",
+      "name_sr_latin": "MSCT koronarografija bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.52,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08004",
+      "name_sr_latin": "MSCT koronarografija sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 62.29,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08005",
+      "name_sr_latin": "MSCT angiografija vrata i mozga bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.52,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08006",
+      "name_sr_latin": "MSCT angiografija vrata i mozga sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 62.29,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08007",
+      "name_sr_latin": "MSCT angiografija aorte bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.52,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08008",
+      "name_sr_latin": "MSCT angiografija aorte sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 62.29,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08009",
+      "name_sr_latin": "MSCT angiografija ekstremiteta bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.52,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08010",
+      "name_sr_latin": "MSCT angiografija ekstremiteta sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 62.29,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08011",
+      "name_sr_latin": "MSCT virtuelna kolonoskopija bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.52,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08012",
+      "name_sr_latin": "MSCT virtuelna kolonoskopija sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 62.29,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08013",
+      "name_sr_latin": "MSCT virtuelna bronhoskopija bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 41.52,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08014",
+      "name_sr_latin": "MSCT virtuelna bronhoskopija sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 62.29,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08017",
+      "name_sr_latin": "Perkutana aspiraciona biopsija (PAB) pod kontrolom CT-a: pluća, medijastinuma, bubrega, jetre, pankreasa, retroperitonealnog prostora i limfnih žlijezda sukcesivno (1 - 6 lokalizacija i kosti)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 43.26,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08018",
+      "name_sr_latin": "Drenaža bilijarnog sistema pod kontrolom CT-a",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 111.35,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08019",
+      "name_sr_latin": "Perkutano-transhepatalno odstranjivanje žučnih konkremenata (dormia košarićem)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 167.03,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08020",
+      "name_sr_latin": "Nadomještanje ispalog T-drena pod kontrolom CT-a",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 167.03,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08021",
+      "name_sr_latin": "Uklanjanje barijera u začepljenom T drenu",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 167.03,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08022",
+      "name_sr_latin": "Dilatacija strukture žučnih puteva",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 167.03,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08023",
+      "name_sr_latin": "Postoperativna biopsija ekstrahepatičnih žučnih vodova",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 167.03,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08024",
+      "name_sr_latin": "Punkcija i evakuacija bubrežnih cista pod kontrolom CT-a",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 84.1,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08025",
+      "name_sr_latin": "Perkutana nefrostomija pod kontrolom CT-a",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 98.02,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08026",
+      "name_sr_latin": "Rekanalizacija uretera perkutano",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 236.63,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08027",
+      "name_sr_latin": "Perkutano začepljenje uretera",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 167.03,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08028",
+      "name_sr_latin": "Perkutana drenaža jetrenog abscesa pod kontrolom CT-a",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 167.03,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08029",
+      "name_sr_latin": "Perikardiocenteza i drenaža kateterom pod kontrolom CT-a",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 167.03,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08030",
+      "name_sr_latin": "Selektivna arterijska infuzija vazopresina za zaustavljanje krvarenja kod: čira želuca, duodenuma, na anastomozi, hemoragičnog gastritisa, krvarenja debelog crijeva (divertikli, tumori), krvarenja iz varikoziteta želuca, ezofagusa...",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08031",
+      "name_sr_latin": "Selektivna arterijska infuzija vazopresina, prostaglandina u crijevne arterije kod: neokluzivne mezenterijalne ishemije (stanje niskog protoka)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08032",
+      "name_sr_latin": "Transkateterska terapijska embolizacija (TTE) RTG: arterijskog i venskog krvarenja u probavnom traktu (TTE), krvarenja zbog: povreda, arteriovenskih fistula, aneurizmi, malignih tumora (preoperativno ili palijativno)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 236.63,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08033",
+      "name_sr_latin": "Kateterska ektomija organa (embolizacija dovodne arterije)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 236.63,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08034",
+      "name_sr_latin": "Transkateterska elektrokoagulacija krvnih sudova tumora",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 236.63,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08035",
+      "name_sr_latin": "Okluzija intrakranijalnih aneurizmi sa balonskim kateterom ili drugim okluzivnim materijalom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 96.71,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08036",
+      "name_sr_latin": "Atrioseptotomija sa balonskim kateterom (po Ruskind-u)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 250.55,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08037",
+      "name_sr_latin": "Zatvaranje otvorenog ductus Botali (po Portsmann-u)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 250.55,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08038",
+      "name_sr_latin": "Perkutana transluminalna angioplastika dilatacija krvnih sudova (PTA) kod: ateromatoznih suženja arterija, stenoza zbog fibromuskularne displazije krvnih sudova, suženja arterija transplantiranih bubrega",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 233.55,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08039",
+      "name_sr_latin": "Odstranjivanje stranih tijela iz krvnih sudova (ekstra ili intraluminalni ulomci katetera, žica vodilja, instrumentalnih djelova kao grupe novih jatrogenih komplikacija)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 233.55,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J08040",
+      "name_sr_latin": "Mijelografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 18.66,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "CT DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09001",
+      "name_sr_latin": "MR pregled mozga - glave bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 140,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA",
+      "note": "single_cijena_column"
+    },
+    {
+      "code": "J09002",
+      "name_sr_latin": "MR pregled mozga - glave sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 180,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09003",
+      "name_sr_latin": "MR vratne kičme - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 140,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09004",
+      "name_sr_latin": "MR vratne kičme - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 180,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09005",
+      "name_sr_latin": "MR torakalne kičme - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 140,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09006",
+      "name_sr_latin": "MR torakalne kičme - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 180,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09007",
+      "name_sr_latin": "MR lumbosakralne kičme - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 140,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09008",
+      "name_sr_latin": "MR lumbosakralne kičme - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 180,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09009",
+      "name_sr_latin": "MR karlice sa kukovima - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 140,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09010",
+      "name_sr_latin": "MR karlice sa kukovima - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 180,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09011",
+      "name_sr_latin": "MR osteomuskularnog sistema - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 140,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09012",
+      "name_sr_latin": "MR osteomuskularnog sistema - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 180,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09013",
+      "name_sr_latin": "MR krvnih sudova vrata i mozga - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 140,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09014",
+      "name_sr_latin": "MR krvnih sudova vrata i mozga - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 180,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09015",
+      "name_sr_latin": "MR abdomena - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 140,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09016",
+      "name_sr_latin": "MR abdomena - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 180,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09017",
+      "name_sr_latin": "MR male karlice - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 140,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09018",
+      "name_sr_latin": "MR male karlice - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 180,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09019",
+      "name_sr_latin": "MR hipofize - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 140,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09020",
+      "name_sr_latin": "MR hipofize - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 180,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09021",
+      "name_sr_latin": "MR vrata - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 180,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA",
+      "note": "VERIFY: only 'sa kontrastom' row visible; 'bez kontrasta' variant may exist but not seen"
+    },
+    {
+      "code": "J09022",
+      "name_sr_latin": "MRCP - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 140,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09023",
+      "name_sr_latin": "MRCP - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 180,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09024",
+      "name_sr_latin": "MR dojke - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 140,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09025",
+      "name_sr_latin": "MR dojke - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 180,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09026",
+      "name_sr_latin": "MR toraksa/medijastinuma - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 140,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J09027",
+      "name_sr_latin": "MR toraksa/medijastinuma - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 180,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "MR DIJAGNOSTIKA"
+    },
+    {
+      "code": "J10015",
+      "name_sr_latin": "Aortografije: - torakalne aorte - abdominalne aorte",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 153.11,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA",
+      "note": "single_cijena_column"
+    },
+    {
+      "code": "J10008",
+      "name_sr_latin": "Kavografije: - vene cave superior - vene cave inferior",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 125.27,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10024",
+      "name_sr_latin": "Galaktografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 22.91,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10025",
+      "name_sr_latin": "Transkateterska ugradnja kava-filtera",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 125.27,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10026",
+      "name_sr_latin": "Splenoportografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 125.27,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10009",
+      "name_sr_latin": "Transkutana ili transhepatalna holegrafija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10002",
+      "name_sr_latin": "Flebografije: - selektivna - subselektivna",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 46.72,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10027",
+      "name_sr_latin": "Arteriografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 8.44,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10011",
+      "name_sr_latin": "Cerebralna angiografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10028",
+      "name_sr_latin": "Vertebralna angiografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 125.1,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10029",
+      "name_sr_latin": "Selektivna arteriografija (arterije celijake, mezenterike superior, inferior, arterije renalis...)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10030",
+      "name_sr_latin": "Subselektivna arteriografija (arterije hepatike, lijenalis, gastrike)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10031",
+      "name_sr_latin": "Selektivna arteriografija (arterije hepatika proprije, gastroduodenalis, jejunalis...)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10032",
+      "name_sr_latin": "Limfomografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10033",
+      "name_sr_latin": "Perkutana nefrostomija pod kontrolom rtg-skopskog aparata",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 98.02,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10003",
+      "name_sr_latin": "Pneumoangiografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA",
+      "note": "VERIFY: source code looks like 'J10015' but J10015 already assigned to Aortografije; using J10003 as best guess based on order"
+    },
+    {
+      "code": "J10034",
+      "name_sr_latin": "Adrenalna flebografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 69.8,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10035",
+      "name_sr_latin": "I.V. urografija sa punkcijom bubrega",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 111.35,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10036",
+      "name_sr_latin": "Transvenozna holegrafija sa biopsijom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 111.35,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10037",
+      "name_sr_latin": "Karotidna angiografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 125.1,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10038",
+      "name_sr_latin": "Elektrofiziološko ispitivanje",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 577,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10005",
+      "name_sr_latin": "Implantacija veštačkih vodiča srčanog ritma - pejsmejkera i kardioverter defibrilatora, kao i loop-recordera",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 97.43,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10039",
+      "name_sr_latin": "Reimplantacija pejsmejkera, (antibradikardnih, resinhronizacionih defibrilatora)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 97.43,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10040",
+      "name_sr_latin": "Implantacija loop recordera",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 97.43,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10041",
+      "name_sr_latin": "Implantacija elektrode privremenog pejsmejkera",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.71,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10042",
+      "name_sr_latin": "Ugradnja ili zamjena intravenske endokardijalne elektrode",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 299.58,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10043",
+      "name_sr_latin": "Zamjena subkutanog pace-makera",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 185.44,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10014",
+      "name_sr_latin": "Popravak endokardijalne elektrode",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.71,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10012",
+      "name_sr_latin": "Kateterizacija desnog i/ili lijevog srca",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10006",
+      "name_sr_latin": "Koronarografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 167.03,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10010",
+      "name_sr_latin": "Ventrikulografija lijevog srca",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10023",
+      "name_sr_latin": "Perkutana transluminalna koronarna intervencija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 250.55,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10045",
+      "name_sr_latin": "Rotabalator",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 250.55,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10046",
+      "name_sr_latin": "Određivanje značajnosti graničnih lezija na koronarnim krvnim sudovima (Flow fraction reserve-FFR i intravaskularni ultrazvuk- IVUS)",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 45.76,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10047",
+      "name_sr_latin": "Transezofagealna ehokardiografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 86.16,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10048",
+      "name_sr_latin": "Kateterizacija plućnog krvotoka sa mjerenjem pritiska",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10049",
+      "name_sr_latin": "Kateterizacija plućnog krvotoka i aorte sa venepunkcijom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10050",
+      "name_sr_latin": "Kateterizacija plućnog krvotoka i aorte sa 3 katetera",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10051",
+      "name_sr_latin": "Kateterizacija plućnog krvotoka i aorte sa mjerenjem pritiska u mirovanju i pod opterećenjem",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10052",
+      "name_sr_latin": "Kateterizacija lijeve predkomore i aorte sa perkutanim pritiskom preko femoralne arterije sa mjerenjem pritiska",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10053",
+      "name_sr_latin": "Kateterizacija lijeve predkomore i aorte sa mikrotransducerima i perkutanim pritiskom preko femoralne arterije po modifikovanoj Seldinger-ovoj metodi",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10054",
+      "name_sr_latin": "Kateterizacija lijeve predkomore i aorte sa preparirane brahijalne arterije sa mjerenjem pritiska",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10055",
+      "name_sr_latin": "Kateterizacija lijeve predkomore preko preparirane brahijalne arterije sa mjerenjem pritiska pod opterećenjem na ergometru",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10056",
+      "name_sr_latin": "Transeptalna kateterizacija lijeve predkomore",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10057",
+      "name_sr_latin": "Farmakodinamski testovi kod kateterizacije srca",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10058",
+      "name_sr_latin": "Transkubitalna kateterizacija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 139.19,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J10059",
+      "name_sr_latin": "Kateterizacija krvnog suda i lokalna fibrinoliza",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 77.94,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "INTERVENTNA RADIOLOGIJA"
+    },
+    {
+      "code": "J11001",
+      "name_sr_latin": "Panoramska dentalna radiografija",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 1.14,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "STOMATOLOŠKE RTG PRETRAGE",
+      "note": "single_cijena_column"
+    },
+    {
+      "code": "J11002",
+      "name_sr_latin": "Obični intraoralni snimak zuba",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 1.14,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "STOMATOLOŠKE RTG PRETRAGE"
+    },
+    {
+      "code": "J11003",
+      "name_sr_latin": "Ortopantomografski snimak",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 9.12,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "STOMATOLOŠKE RTG PRETRAGE"
+    },
+    {
+      "code": "J11004",
+      "name_sr_latin": "Telerentgenski snimak glave",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 1.14,
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "STOMATOLOŠKE RTG PRETRAGE"
+    },
+    {
+      "code": "X01004",
+      "name_sr_latin": "Lokalna anestezija - površinska",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01005",
+      "name_sr_latin": "Ekstrakcija cerumena iz uha",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01006",
+      "name_sr_latin": "Davanje klizme za ispiranje",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01007",
+      "name_sr_latin": "Uzimanje brisova sa sluznice na analizu",
+      "price_odjeljenje_eur": 0.26,
+      "price_ambulanta_eur": 0.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01008",
+      "name_sr_latin": "Uzimanje sputuma za analizu na bakterije i gljivice",
+      "price_odjeljenje_eur": 0.26,
+      "price_ambulanta_eur": 0.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01009",
+      "name_sr_latin": "Pulsna oksimetrija",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01010",
+      "name_sr_latin": "Tuberkulinsko testiranje",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01011",
+      "name_sr_latin": "Inhalaciona terapija",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01012",
+      "name_sr_latin": "Aspiraciona punkcija abscesa ili hematoma",
+      "price_odjeljenje_eur": 1.95,
+      "price_ambulanta_eur": 4.17,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01013",
+      "name_sr_latin": "Toaleta i održavanje stome",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01014",
+      "name_sr_latin": "Toaleta vještačkog anusa",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01015",
+      "name_sr_latin": "Primarna obrada rane (bez šavova)",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01016",
+      "name_sr_latin": "Svođenje hirurških konaca",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI",
+      "note": "VERIFY: source shows duplicate code X01015 for both rows; using X01016 as likely correct code"
+    },
+    {
+      "code": "X01021",
+      "name_sr_latin": "Davanje subkutanih i intramuskularnih injekcija",
+      "price_odjeljenje_eur": 0.13,
+      "price_ambulanta_eur": 0.28,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01023",
+      "name_sr_latin": "Plasiranje/evakuacija nazogastrične ili orogastrične sonde",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01024",
+      "name_sr_latin": "Pregled, kontrola i previjanje - nekomplikovani",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01025",
+      "name_sr_latin": "Ekstirpacija ili biopsija limfne žlijezde",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01026",
+      "name_sr_latin": "Davanje intravenskih injekcija",
+      "price_odjeljenje_eur": 0.26,
+      "price_ambulanta_eur": 0.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01032",
+      "name_sr_latin": "Uzimanje sputuma za citološku analizu",
+      "price_odjeljenje_eur": 0.26,
+      "price_ambulanta_eur": 0.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01033",
+      "name_sr_latin": "Kateterizacija mokraćne bešike kod žene sa ili bez ispiranja",
+      "price_odjeljenje_eur": 0.55,
+      "price_ambulanta_eur": 1.39,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01034",
+      "name_sr_latin": "Postavljanje kanile i uključivanje infuzije",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01035",
+      "name_sr_latin": "Određivanje glikemije glukometrom",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01036",
+      "name_sr_latin": "Kateterizacija mokraćne bešike kod muškarca sa ili bez ispiranja",
+      "price_odjeljenje_eur": 1.04,
+      "price_ambulanta_eur": 2.22,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01038",
+      "name_sr_latin": "Punkciona biopsija štitne žlijezde",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01039",
+      "name_sr_latin": "Provođenje klizme za čišćenje",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01040",
+      "name_sr_latin": "Snimanje i očitavanje EKG (6 ili 12 odvoda) elektrokardiograma",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01041",
+      "name_sr_latin": "Kateterizacija mokraćne bešike, uvođenje trajnog katetera ili zamjena trajnog katetera kod žene",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01042",
+      "name_sr_latin": "Kateterizacija mokraćne bešike, uvođenje trajnog katetera ili zamjena trajnog katetera kod muškarca",
+      "price_odjeljenje_eur": 1.95,
+      "price_ambulanta_eur": 4.17,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01046",
+      "name_sr_latin": "Endotrahealna intubacija",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01047",
+      "name_sr_latin": "Hirurško zbrinjavanje uraslog nokta",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01049",
+      "name_sr_latin": "Punkcija u terapijske ili dijagnostičke svrhe",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01050",
+      "name_sr_latin": "Toaleta veće rane mokrim oblogama, jedan dnevno",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI",
+      "note": "VERIFY: source row partially overlapped; name approximated"
+    },
+    {
+      "code": "X01051",
+      "name_sr_latin": "Lokalna anestezija - regionalna",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI",
+      "note": "VERIFY: name approximated"
+    },
+    {
+      "code": "X01055",
+      "name_sr_latin": "Lokalna anestezija",
+      "price_odjeljenje_eur": 1.95,
+      "price_ambulanta_eur": 4.17,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01058",
+      "name_sr_latin": "Plasiranje/evakuacija nazogastrične ili orogastrične sonde sa ispiranjem",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01059",
+      "name_sr_latin": "Postavljanje kanile za testiranje katetera",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01108",
+      "name_sr_latin": "Lokalna anestezija - manja",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01069",
+      "name_sr_latin": "Odstranjivanje stranog tijela iz slušnog kanala, nosne šupljine i orofarinksa",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01061",
+      "name_sr_latin": "Uzimanje guste kapi i perifernog razmaza",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01062",
+      "name_sr_latin": "Skidanje ixodes ricinusa sa kože",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01044",
+      "name_sr_latin": "Termografija",
+      "price_odjeljenje_eur": 1.95,
+      "price_ambulanta_eur": 4.17,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01064",
+      "name_sr_latin": "Okluzivna pletismografija arterijskog ili venskog protoka",
+      "price_odjeljenje_eur": 5.2,
+      "price_ambulanta_eur": 11.12,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01065",
+      "name_sr_latin": "Fotopletismografija",
+      "price_odjeljenje_eur": 5.2,
+      "price_ambulanta_eur": 11.12,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01066",
+      "name_sr_latin": "Reografija gornjih ili donjih ekstremiteta",
+      "price_odjeljenje_eur": 5.2,
+      "price_ambulanta_eur": 11.12,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01067",
+      "name_sr_latin": "Mjerenje pritiska površinskih vena",
+      "price_odjeljenje_eur": 1.95,
+      "price_ambulanta_eur": 4.17,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01068",
+      "name_sr_latin": "Intraarterijska aplikacija terapije perfuzorom",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01070",
+      "name_sr_latin": "Piroterapija",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X01071",
+      "name_sr_latin": "Terapija febrolnat aparatom",
+      "price_odjeljenje_eur": 1.95,
+      "price_ambulanta_eur": 4.17,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI",
+      "note": "VERIFY: device name 'febrolnat' likely OCR error"
+    },
+    {
+      "code": "X01073",
+      "name_sr_latin": "Terapija fototron aparatom",
+      "price_odjeljenje_eur": 1.95,
+      "price_ambulanta_eur": 4.17,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI"
+    },
+    {
+      "code": "X02201",
+      "name_sr_latin": "Ispitivanje kožne preosjetljivosti na inhalacione alergene (alergološko prick - testiranje)",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI",
+      "note": "VERIFY: source code looks like X02201, may be X02001"
+    },
+    {
+      "code": "X02002",
+      "name_sr_latin": "Incizija i drenaža većeg kožnog ili potkožnog abscesa, karbunkula, flegmone ili hematoma",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02005",
+      "name_sr_latin": "Prednja tamponada nosa",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02011",
+      "name_sr_latin": "Snimanje i čitanje spirometrije",
+      "price_odjeljenje_eur": 5.2,
+      "price_ambulanta_eur": 11.12,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02012",
+      "name_sr_latin": "Bronhodilatatorni test",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02246",
+      "name_sr_latin": "Nespecifični bronhoprovokacioni test",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02013",
+      "name_sr_latin": "Dijagnostička punkcija pleure",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02014",
+      "name_sr_latin": "Evakuaciona punkcija pleure",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02015",
+      "name_sr_latin": "Evakuaciona punkcija pleure sa lavažom",
+      "price_odjeljenje_eur": 5.2,
+      "price_ambulanta_eur": 11.12,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02019",
+      "name_sr_latin": "Repozicija parafimoze",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02020",
+      "name_sr_latin": "Repozicija ukliještene kile",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02021",
+      "name_sr_latin": "Ekstirpacija ateroma, ciste, ksantoma ili manjeg benignog tumora",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02026",
+      "name_sr_latin": "Lumbalna punkcija",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02027",
+      "name_sr_latin": "Rektoskopija sa uzimanjem isječka",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02028",
+      "name_sr_latin": "Rektoskopija",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02029",
+      "name_sr_latin": "Rektosigmoidoskopija",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02030",
+      "name_sr_latin": "Sternalna punkcija",
+      "price_odjeljenje_eur": 3.25,
+      "price_ambulanta_eur": 6.95,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02031",
+      "name_sr_latin": "Kauterizacija, elektrokauterizacija ili kriokauterizacija benignih ili premalignih lezija kože i sluznica, sa ili bez odstranjivanja, jedna lezija",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02032",
+      "name_sr_latin": "Kauterizacija, elektrokauterizacija ili kriokauterizacija benignih ili premalignih lezija kože i sluznica, sa ili bez odstranjivanja, dvije lezije",
+      "price_odjeljenje_eur": 5.85,
+      "price_ambulanta_eur": 12.51,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02033",
+      "name_sr_latin": "Odstranjivanje stranog tijela iz kože i potkožnog tkiva",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02034",
+      "name_sr_latin": "Ekscizija biopsija kože, potkožnog tkiva i sluznice sa direktnom suturom rane",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02035",
+      "name_sr_latin": "Obrada stomačnog soka mikroskopska",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02036",
+      "name_sr_latin": "Primarna obrada rane (sa šavovima)",
+      "price_odjeljenje_eur": 5.2,
+      "price_ambulanta_eur": 11.12,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02037",
+      "name_sr_latin": "Uzimanje krvi i određivanje pH arterijske krvi",
+      "price_odjeljenje_eur": 5.2,
+      "price_ambulanta_eur": 11.12,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02038",
+      "name_sr_latin": "Ekscizija manjih benignih multiroznih ožiljaka, fibroznih, cističnih kongenitalnih lezija i sluznica, potkožnog tkiva sa direktnom suturom rane",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02039",
+      "name_sr_latin": "Sekundarna obrada rane",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02040",
+      "name_sr_latin": "Perkutana biopsija jetre",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02041",
+      "name_sr_latin": "Lokalna anestezija - veća",
+      "price_odjeljenje_eur": 5.2,
+      "price_ambulanta_eur": 11.12,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02042",
+      "name_sr_latin": "Ispiranje želuca",
+      "price_odjeljenje_eur": 2.6,
+      "price_ambulanta_eur": 5.56,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02043",
+      "name_sr_latin": "Kauterizacija, elektrokauterizacija ili kriokauterizacija benignih ili premalignih lezija kože i sluznica, sa ili bez odstranjivanja, tri lezije",
+      "price_odjeljenje_eur": 7.8,
+      "price_ambulanta_eur": 16.68,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02044",
+      "name_sr_latin": "Kauterizacija, elektrokauterizacija ili kriokauterizacija benignih ili premalignih lezija kože i sluznica, sa ili bez odstranjivanja, četiri lezije",
+      "price_odjeljenje_eur": 9.75,
+      "price_ambulanta_eur": 20.85,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X02045",
+      "name_sr_latin": "Kauterizacija, elektrokauterizacija ili kriokauterizacija benignih ili premalignih lezija kože i sluznica, sa ili bez odstranjivanja, pet i više lezija",
+      "price_odjeljenje_eur": 10.4,
+      "price_ambulanta_eur": 22.24,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SREDNJE VELIKI ZAHVATI"
+    },
+    {
+      "code": "X03002",
+      "name_sr_latin": "Spoljašnja defibrilacija srca",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03012",
+      "name_sr_latin": "DXA (osteodenzitometrija)",
+      "price_odjeljenje_eur": 32.79,
+      "price_ambulanta_eur": 32.79,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03039",
+      "name_sr_latin": "DXA - Vertebromorfometrija",
+      "price_odjeljenje_eur": 18.59,
+      "price_ambulanta_eur": 18.59,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03014",
+      "name_sr_latin": "Cistoskopija kod žene (uračunato ispiranje bešike)",
+      "price_odjeljenje_eur": 7.8,
+      "price_ambulanta_eur": 16.68,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03015",
+      "name_sr_latin": "Cistoskopija kod muškarca ili djeteta (uračunato ispiranje bešike)",
+      "price_odjeljenje_eur": 9.1,
+      "price_ambulanta_eur": 19.46,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03018",
+      "name_sr_latin": "Elektrokoagulacija ili ekscizija condilomata acuminata bez obzira na lokalizaciju",
+      "price_odjeljenje_eur": 7.8,
+      "price_ambulanta_eur": 16.68,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03019",
+      "name_sr_latin": "Primarna, primarno odložena ili sekundarna obrada opekotina, koje zahvataju do 10% površine tijela, a tretiraju se ambulantno",
+      "price_odjeljenje_eur": 7.8,
+      "price_ambulanta_eur": 16.68,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03020",
+      "name_sr_latin": "Ezofagogastroduodenoskopija sa injekcionom hemostazom",
+      "price_odjeljenje_eur": 7.8,
+      "price_ambulanta_eur": 16.68,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03040",
+      "name_sr_latin": "Ezofagogastroduodenoskopija sa mehaničkom (hemoklips) hemostazom",
+      "price_odjeljenje_eur": 7.8,
+      "price_ambulanta_eur": 16.68,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03021",
+      "name_sr_latin": "Ekscizija i direktna sutura benignih lezija kože, lezija dijametra preko 4 cm",
+      "price_odjeljenje_eur": 9.1,
+      "price_ambulanta_eur": 19.46,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03026",
+      "name_sr_latin": "Ezofagogastroduodenoskopija sa biopsijom",
+      "price_odjeljenje_eur": 27.3,
+      "price_ambulanta_eur": 58.38,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03027",
+      "name_sr_latin": "Ezofagogastroduodenoskopija",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03028",
+      "name_sr_latin": "Kolonoskopija bez biopsije",
+      "price_odjeljenje_eur": 26,
+      "price_ambulanta_eur": 55.6,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03041",
+      "name_sr_latin": "Kolonoskopija sa ili bez terminalne ileoskopije sa i bez biopsije",
+      "price_odjeljenje_eur": 26,
+      "price_ambulanta_eur": 55.6,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03029",
+      "name_sr_latin": "Kolonoskopija sa biopsijom sa kolona i/ili terminalnog ileuma",
+      "price_odjeljenje_eur": 29.9,
+      "price_ambulanta_eur": 63.94,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03042",
+      "name_sr_latin": "Kolonoskopija sa elektrokauterizacijom polipa",
+      "price_odjeljenje_eur": 32.5,
+      "price_ambulanta_eur": 69.5,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03043",
+      "name_sr_latin": "Kolonoskopija sa polipektomijom i postavljanjem endo klipsa",
+      "price_odjeljenje_eur": 36.4,
+      "price_ambulanta_eur": 77.84,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03044",
+      "name_sr_latin": "Kolonoskopija sa mukozektomijom",
+      "price_odjeljenje_eur": 29.9,
+      "price_ambulanta_eur": 63.94,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03045",
+      "name_sr_latin": "Kolonoskopija sa injekcionom hemostazom",
+      "price_odjeljenje_eur": 33.8,
+      "price_ambulanta_eur": 72.28,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03046",
+      "name_sr_latin": "Kolonoskopija sa mehaničkom (hemoklips) hemostazom",
+      "price_odjeljenje_eur": 33.8,
+      "price_ambulanta_eur": 72.28,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03047",
+      "name_sr_latin": "Kolonoskopija sa dilatacijom",
+      "price_odjeljenje_eur": 33.8,
+      "price_ambulanta_eur": 72.28,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03030",
+      "name_sr_latin": "Ezofagogastroduodenoskopija sa Helicobacter pylori testom",
+      "price_odjeljenje_eur": 27.3,
+      "price_ambulanta_eur": 58.38,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03031",
+      "name_sr_latin": "Ezofagogastroduodenoskopija sa ekstrakcijom stranog tijela",
+      "price_odjeljenje_eur": 28.6,
+      "price_ambulanta_eur": 61.16,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03048",
+      "name_sr_latin": "Ezofagogastroduodenoskopija sa plasiranjem/vađenjem PEG-a",
+      "price_odjeljenje_eur": 28.6,
+      "price_ambulanta_eur": 61.16,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03049",
+      "name_sr_latin": "Ezofagogastroduodenoskopija sa dilatacijom",
+      "price_odjeljenje_eur": 28.6,
+      "price_ambulanta_eur": 61.16,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03032",
+      "name_sr_latin": "Ezofagogastroduodenoskopija sa polipektomijom",
+      "price_odjeljenje_eur": 32.5,
+      "price_ambulanta_eur": 69.5,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03050",
+      "name_sr_latin": "Ezofagogastroduodenoskopija sa mukozektomijom",
+      "price_odjeljenje_eur": 28.6,
+      "price_ambulanta_eur": 61.16,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03033",
+      "name_sr_latin": "Ezofagogastroduodenoskopija sa plasiranjem band ligature",
+      "price_odjeljenje_eur": 39,
+      "price_ambulanta_eur": 83.4,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03051",
+      "name_sr_latin": "Plasiranje/evakuacija Sengstaken-Blakemor sonde",
+      "price_odjeljenje_eur": 39,
+      "price_ambulanta_eur": 83.4,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03052",
+      "name_sr_latin": "Plasiranje/evakuacija nazo-jejunalne sonde",
+      "price_odjeljenje_eur": 39,
+      "price_ambulanta_eur": 83.4,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03053",
+      "name_sr_latin": "Bronhoskopija rigidna",
+      "price_odjeljenje_eur": 19.5,
+      "price_ambulanta_eur": 41.7,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03054",
+      "name_sr_latin": "Bronhoskopija fleksibilna sa aspiracijom i/ili lavažom",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03055",
+      "name_sr_latin": "Peribronhijalna aspiracijska biopsija",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03056",
+      "name_sr_latin": "Četkanje-struganje bronha (braš biopsija)",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03057",
+      "name_sr_latin": "Bronhoskopija fleksibilna sa lavažom",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03058",
+      "name_sr_latin": "Bronhoskopija rigidna sa lavažom",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03059",
+      "name_sr_latin": "Injekciona i/ili mehanička hemostaza ampularne regije",
+      "price_odjeljenje_eur": 13,
+      "price_ambulanta_eur": 27.8,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03060",
+      "name_sr_latin": "APC koagulacija pri ezofagogastroduodenoskopiji",
+      "price_odjeljenje_eur": 16.9,
+      "price_ambulanta_eur": 36.14,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03061",
+      "name_sr_latin": "APC koagulacija tankog crijeva",
+      "price_odjeljenje_eur": 16.9,
+      "price_ambulanta_eur": 36.14,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03062",
+      "name_sr_latin": "APC koagulacija kolona",
+      "price_odjeljenje_eur": 16.9,
+      "price_ambulanta_eur": 36.14,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03063",
+      "name_sr_latin": "Endoskopska ultrasonografija gornjeg GI trakta",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03064",
+      "name_sr_latin": "Endoskopska ultrasonografija rektuma",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03065",
+      "name_sr_latin": "Endoskopska ultrasonografija sa biopsijom",
+      "price_odjeljenje_eur": 27.3,
+      "price_ambulanta_eur": 58.38,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03066",
+      "name_sr_latin": "DBE (double balloon endoskopija) tankog crijeva",
+      "price_odjeljenje_eur": 32.5,
+      "price_ambulanta_eur": 69.5,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03067",
+      "name_sr_latin": "Kapilaroskopija",
+      "price_odjeljenje_eur": 7.8,
+      "price_ambulanta_eur": 16.68,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03068",
+      "name_sr_latin": "Ekscizija lezije bronha sa bronhoskopijom",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03069",
+      "name_sr_latin": "Traheotomija",
+      "price_odjeljenje_eur": 39,
+      "price_ambulanta_eur": 83.4,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03070",
+      "name_sr_latin": "Traheotomija sa odstranjenjem stranog tijela iz traheje",
+      "price_odjeljenje_eur": 39,
+      "price_ambulanta_eur": 83.4,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03071",
+      "name_sr_latin": "Endoskopsko odstranjenje stranog tijela iz traheje",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03072",
+      "name_sr_latin": "Endoskopska ekscizija promjena na zidu traheje",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03073",
+      "name_sr_latin": "Endoskopska elektrokoagulacija lezija na traheji",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03074",
+      "name_sr_latin": "Endoskopska laser resekcija promjena na traheji",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03075",
+      "name_sr_latin": "Endoskopska dilatacija stenoze traheje",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03076",
+      "name_sr_latin": "Traheobronhoskopija sa odstranjivanjem stranog tijela kod djece (do 10 godina)",
+      "price_odjeljenje_eur": 26,
+      "price_ambulanta_eur": 55.6,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03077",
+      "name_sr_latin": "Traheobronhoskopija sa odstranjivanjem stranog tijela kod odraslih",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03078",
+      "name_sr_latin": "Traheobronhoskopija donje - kroz vještački otvor",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    },
+    {
+      "code": "X03079",
+      "name_sr_latin": "Proktosigmoidoskopija, dijagnostička sa odstranjivanjem papiloma ili polipa",
+      "price_odjeljenje_eur": 13,
+      "price_ambulanta_eur": 27.8,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "SLOŽENI ZAHVATI"
+    }
+  ]
+}

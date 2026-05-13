@@ -1,0 +1,118 @@
+{
+  "batch_id": "batch-03-mojkovac-missed-items",
+  "clinic_id": 127,
+  "notes": "Missed items from batch-01 + GGT/Alpha-Amylase price correction. Run after batch-01.",
+  "items_total": 6,
+  "items": [
+    {
+      "code": "MO_J11004_TELE",
+      "src": "Telerentgenografski snimak glave",
+      "price_eur": 5.88,
+      "name_en": "Cephalometric Head Radiograph",
+      "slug": "cephalometric-head-radiograph",
+      "name_sr": "Telerentgenografski snimak glave",
+      "name_sr_cyrl": "Телерентгенографски снимак главе",
+      "name_ru": "Телерентгенограмма головы (цефалометрия)",
+      "name_de": "Telerentgenaufnahme des Kopfes (Fernröntgen)",
+      "name_tr": "Sefalometrik kafa röntgeni",
+      "categories": [
+        20
+      ],
+      "specialties": [
+        78
+      ]
+    },
+    {
+      "code": "MO_Z01033",
+      "src": "Određivanje ukupnih kalcijuma u serumu",
+      "price_eur": 3.54,
+      "name_en": "Total Serum Calcium",
+      "slug": "total-serum-calcium",
+      "name_sr": "Određivanje ukupnih kalcijuma u serumu",
+      "name_sr_cyrl": "Одређивање укупних калцијума у серуму",
+      "name_ru": "Общий кальций сыворотки",
+      "name_de": "Gesamtcalcium im Serum",
+      "name_tr": "Serum total kalsiyum",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_Z01035",
+      "src": "Određivanje gvožđa u serumu",
+      "price_eur": 4.11,
+      "name_en": "Serum Iron",
+      "slug": "serum-iron",
+      "name_sr": "Određivanje gvožđa u serumu",
+      "name_sr_cyrl": "Одређивање гвожђа у серуму",
+      "name_ru": "Железо сыворотки",
+      "name_de": "Serum-Eisen",
+      "name_tr": "Serum demir",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_Z01064",
+      "src": "Određivanje direktnog bilirubina u serumu",
+      "price_eur": 3.54,
+      "name_en": "Direct Bilirubin in Serum",
+      "slug": "direct-bilirubin-in-serum",
+      "name_sr": "Određivanje direktnog bilirubina u serumu",
+      "name_sr_cyrl": "Одређивање директног билирубина у серуму",
+      "name_ru": "Прямой билирубин сыворотки",
+      "name_de": "Direktes Bilirubin im Serum",
+      "name_tr": "Serum direkt bilirubin",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_Z01090",
+      "src": "Određivanje hemoglobina kvalitativno u fecesu",
+      "price_eur": 5.22,
+      "name_en": "Fecal Occult Blood Qualitative",
+      "slug": "fecal-occult-blood-qualitative",
+      "name_sr": "Određivanje hemoglobina kvalitativno u fecesu",
+      "name_sr_cyrl": "Одређивање хемоглобина квалитативно у фецесу",
+      "name_ru": "Кал на скрытую кровь качественно",
+      "name_de": "Okkultes Blut im Stuhl qualitativ",
+      "name_tr": "Gaita gizli kan kalitatif",
+      "categories": [
+        28
+      ],
+      "specialties": []
+    },
+    {
+      "code": "MO_SANTRANS_KM",
+      "src": "Sanitetski prevoz bolesnika (po pređenom kilometru)",
+      "price_eur": 1.5,
+      "name_en": "Sanitary Patient Transport per Kilometer",
+      "slug": "sanitary-patient-transport-per-kilometer",
+      "name_sr": "Sanitetski prevoz bolesnika (po pređenom kilometru)",
+      "name_sr_cyrl": "Санитетски превоз болесника (по пређеном километру)",
+      "name_ru": "Санитарная перевозка больного за пройденный километр",
+      "name_de": "Krankentransport pro gefahrenem Kilometer",
+      "name_tr": "Hasta sanitar nakil km başına",
+      "categories": [],
+      "specialties": []
+    }
+  ],
+  "price_corrections": [
+    {
+      "code": "MO_HN_Z01027",
+      "old_price": 5.43,
+      "new_price": 4.02,
+      "reason": "GGT was incorrectly assigned alfa amilaze price"
+    },
+    {
+      "code": "MO_HN_Z01028",
+      "old_price": 4.02,
+      "new_price": 5.43,
+      "reason": "Alpha Amylase was incorrectly assigned GGT price"
+    }
+  ]
+}

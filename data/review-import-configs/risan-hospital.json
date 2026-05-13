@@ -1,0 +1,102 @@
+{
+	"jsonPath": "data/google-places/tivat/risan-hospital.json",
+	"outputPath": "server/sql/reviews-google/risan-hospital.sql",
+	"clinicId": 131,
+	"clinicName": "Specijalna bolnica Vaso Ćuković - Risan",
+	"dataCollectedDate": "2026-05-13",
+	"doctors": [
+		{
+			"id": 1256,
+			"varName": "oliver_adrovic",
+			"patterns": [
+				"Adrovi[cć]",
+				"Адрови[чћ]"
+			]
+		},
+		{
+			"id": 1262,
+			"varName": "anika_dajevic",
+			"patterns": [
+				"Anika",
+				"Аника",
+				"Dajevi[cć]"
+			]
+		},
+		{
+			"id": 943,
+			"varName": "vlado_popovic",
+			"patterns": [
+				"Vlad[uoea]\\s+Popo",
+				"Влад[уоеа]\\s+Попо"
+			]
+		},
+		{
+			"id": 1251,
+			"varName": "dino_pagnacco",
+			"patterns": [
+				"Pagnacco",
+				"Пагнакко"
+			]
+		},
+		{
+			"id": 938,
+			"varName": "drasko_vukovic",
+			"patterns": [
+				"Drasko\\s+Vukovi[cć]",
+				"Draško\\s+Vukovi[cć]",
+				"Драшк[оа]\\s+Вукович"
+			]
+		},
+		{
+			"id": 1271,
+			"varName": "nebojsa_gulic",
+			"patterns": [
+				"[Dd]r\\.?\\s*Guli[cć]",
+				"Guli[cć](?:[^a-zA-Zа-яёА-ЯЁ]|$)"
+			]
+		},
+		{
+			"id": 1265,
+			"varName": "nebojsa_seratlic",
+			"patterns": [
+				"Сератли[ћč]",
+				"Seratli[cć]"
+			]
+		},
+		{
+			"id": 1260,
+			"varName": "lazar_malesevic",
+			"patterns": [
+				"Maleševi[cć]",
+				"Malesevi[cć]",
+				"Малешеви[чћ]"
+			]
+		},
+		{
+			"id": 1258,
+			"varName": "gezim_cobaj",
+			"patterns": [
+				"Čobaj",
+				"Cobaj",
+				"Чобај"
+			]
+		},
+		{
+			"id": 302,
+			"varName": "slavojka_jovanov",
+			"patterns": [
+				"Jovanov(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+				"Јованов(?:[^а-яёА-ЯЁa-zA-Z]|$)"
+			]
+		},
+		{
+			"id": 303,
+			"varName": "rade_scekic",
+			"patterns": [
+				"Rad[uea]\\s+Šćeki",
+				"Rad[uea]\\s+Sceki",
+				"Рад[уеа]\\s+Шћеки"
+			]
+		}
+	]
+}

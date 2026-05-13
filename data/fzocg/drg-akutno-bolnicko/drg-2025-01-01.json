@@ -1,0 +1,4924 @@
+{
+  "source_pdf": "Cjenovnik-zdravstvenih-usluga-po-DRG-od-01.01.2025.g.pdf",
+  "issuer": "Fond za zdravstveno osiguranje Crne Gore (FZOCG)",
+  "level": "sekundarna i tercijarna zdravstvena zaštita – akutno bolničko liječenje (DRG)",
+  "effective_from": "2025-01-01",
+  "extracted_date": "2026-05-12",
+  "extracted_via": "pypdfium2 render @ scale=3.0 split top/bot + multimodal Read (vision OCR), 4 parallel batches",
+  "ocr_quality": "high — clean scan with clear tables, split-page rendering used for dense data",
+  "pdf_pages_total": 26,
+  "data_pages": "2..22 (page 1 = title, pages 22 bot..25 = articles/Obrazloženje/blank)",
+  "table_columns": [
+    "DRG code",
+    "Opis (description, sr-Latn)",
+    "Koeficijent",
+    "Cijena u € (price)"
+  ],
+  "base_coefficient_eur": 760.18,
+  "signed": {
+    "city": "Podgorica",
+    "date": "2024-12-09",
+    "number": "01-11057",
+    "signatory": "Marko Tomašević, Predsjednik Upravnog odbora"
+  },
+  "notes": [
+    "DRG = Diagnosis Related Groups — coefficient × base rate = price",
+    "Base coefficient (vrijednost osnovnog koeficijenta) = 760,18 € (per Član 4)",
+    "Items grouped by MDC (Major Diagnostic Category) sections",
+    "Pre-MDC contains transplants, ECMO, and similar high-complexity procedures",
+    "Same item often appears in multiple severity variants (e.g. A06A/B/C/D for varying KK complications)",
+    "Final section 'Nepovezani sa DRG' (codes 801A/B/C) = procedures unrelated to principal diagnosis (AR-DRG MDC 24)",
+    "Document replaces Cjenovnik br. 01-9124 of 25.12.2018 and amendments br. 01-6106 of 20.09.2019 (per Član 7)",
+    "Applies to: Klinički centar CG, KBC Berane, KB Kotor, opšte bolnice, SB Vaso Čuković Risan, stacionari domova zdravlja (per Član 6)"
+  ],
+  "items_total": 693,
+  "sections": {
+    "Pre-MDC": 17,
+    "MDC 01": 61,
+    "MDC 02": 19,
+    "MDC 03": 27,
+    "MDC 04": 47,
+    "MDC 05": 80,
+    "MDC 06": 46,
+    "MDC 07": 28,
+    "MDC 08": 82,
+    "MDC 09": 34,
+    "MDC 10": 28,
+    "MDC 11": 36,
+    "MDC 12": 16,
+    "MDC 13": 18,
+    "MDC 14": 14,
+    "MDC 15": 25,
+    "MDC 16": 9,
+    "MDC 17": 18,
+    "MDC 18": 18,
+    "MDC 19": 11,
+    "MDC 20": 6,
+    "MDC 21": 29,
+    "MDC 22": 8,
+    "MDC 23": 13,
+    "Nepovezani sa DRG": 3
+  },
+  "items": [
+    {
+      "code": "A01Z",
+      "name_sr_latin": "Transplantacija jetre",
+      "coefficient": 30.76,
+      "price_eur": 23383.14,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A05A",
+      "name_sr_latin": "Transplantacija pluća ili srca/pluća",
+      "coefficient": 28.82,
+      "price_eur": 21908.39,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A05Z",
+      "name_sr_latin": "Transplantacija srca",
+      "coefficient": 43.11,
+      "price_eur": 32771.36,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A06A",
+      "name_sr_latin": "Traheostomija sa ventilacijom > 95 sati sa vrlo teškim KK",
+      "coefficient": 38.5,
+      "price_eur": 29266.89,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A06B",
+      "name_sr_latin": "Traheostomija sa ventilacijom >95 sati bez vrlo teškim KK ili Trah/Vent >95 sa teškim KK",
+      "coefficient": 20.12,
+      "price_eur": 15294.82,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A06C",
+      "name_sr_latin": "Ventilacija >95 sati bez vrlo teškim KK",
+      "coefficient": 15.22,
+      "price_eur": 11569.94,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A06D",
+      "name_sr_latin": "Traheostomija bez vrlo teškim KK",
+      "coefficient": 9.4,
+      "price_eur": 7145.69,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A07Z",
+      "name_sr_latin": "Alogenetska transplantacija koštane srži",
+      "coefficient": 21.32,
+      "price_eur": 16207.8,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A08A",
+      "name_sr_latin": "Autologna transplantacija koštane srži sa vrlo teškim KK",
+      "coefficient": 10.43,
+      "price_eur": 7928.68,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A08B",
+      "name_sr_latin": "Autologna transplantacija koštane srži bez vrlo teškim KK",
+      "coefficient": 3.8,
+      "price_eur": 2888.68,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A09A",
+      "name_sr_latin": "Transplantacija bubrega sa transplantacijom pankreasa ili sa vrlo teškim KK",
+      "coefficient": 11.88,
+      "price_eur": 9030.94,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A09B",
+      "name_sr_latin": "Transplantacija bubrega bez transplantacije pankreasa bez vrlo teškim KK",
+      "coefficient": 7.41,
+      "price_eur": 5632.93,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A10Z",
+      "name_sr_latin": "Ugradnja uređaja za ventrikularnu asistenciju",
+      "coefficient": 69.29,
+      "price_eur": 52672.87,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A11A",
+      "name_sr_latin": "Ugradnja implantabilnog uređaja za spinalnu infuziju sa vrlo teškim KK",
+      "coefficient": 8.28,
+      "price_eur": 6294.29,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A11B",
+      "name_sr_latin": "Ugradnja implantabilnog uređaja za spinalnu infuziju bez vrlo teškim KK",
+      "coefficient": 4.13,
+      "price_eur": 3139.54,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A12Z",
+      "name_sr_latin": "Ugradnja neurostimulatora",
+      "coefficient": 3.72,
+      "price_eur": 2827.87,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "A40Z",
+      "name_sr_latin": "Ekstrakorporalna membranska oksigenacija (EKMO) bez operacije srca",
+      "coefficient": 34.22,
+      "price_eur": 26013.36,
+      "section": "Pre-MDC"
+    },
+    {
+      "code": "B01A",
+      "name_sr_latin": "Revizija ventrikularnog šanta sa vrlo teškim ili teškim KK",
+      "coefficient": 3.35,
+      "price_eur": 2546.6,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B01B",
+      "name_sr_latin": "Revizija ventrikularnog šanta bez vrlo teškim ili teškim KK",
+      "coefficient": 2.38,
+      "price_eur": 1809.23,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B02A",
+      "name_sr_latin": "Kraniotomija sa vrlo teškim KK",
+      "coefficient": 9.48,
+      "price_eur": 7206.51,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B02B",
+      "name_sr_latin": "Kraniotomija sa teškim KK",
+      "coefficient": 5.73,
+      "price_eur": 4355.83,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B02C",
+      "name_sr_latin": "Kraniotomija bez vrlo teškim ili teškim KK",
+      "coefficient": 4.23,
+      "price_eur": 3215.56,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B03A",
+      "name_sr_latin": "Zahvati na kičmenom stubu sa vrlo teškim ili teškim KK",
+      "coefficient": 6.77,
+      "price_eur": 5146.42,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B03B",
+      "name_sr_latin": "Zahvati na kičmenom stubu bez vrlo teškim ili teškim KK",
+      "coefficient": 3.21,
+      "price_eur": 2440.18,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B04A",
+      "name_sr_latin": "Ekstrakranijalni zahvati na krvnim sudovima sa vrlo teškim ili teškim KK",
+      "coefficient": 5.45,
+      "price_eur": 4142.98,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B04B",
+      "name_sr_latin": "Ekstrakranijalni zahvati na krvnim sudovima bez vrlo teškim ili teškim KK",
+      "coefficient": 2.7,
+      "price_eur": 2052.49,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B05Z",
+      "name_sr_latin": "Operacija karpalnog kanala",
+      "coefficient": 0.43,
+      "price_eur": 326.88,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B06A",
+      "name_sr_latin": "Zahvati zbog cerebralne paralize, mišićne distrofije, neuropatije sa KK",
+      "coefficient": 4.91,
+      "price_eur": 3732.48,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B06B",
+      "name_sr_latin": "Zahvati zbog cerebralne paralize, mišićne distrofije, neuropatije bez KK",
+      "coefficient": 1.09,
+      "price_eur": 828.6,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B07A",
+      "name_sr_latin": "Zahvati na perifernim i kranijalnim nervima i ostali zahvati na nervnom sistemu sa KK",
+      "coefficient": 3.44,
+      "price_eur": 2615.02,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B07B",
+      "name_sr_latin": "Zahvati na perifernim i kranijalnim nervima i ostali zahvati na nervnom sistemu bez KK",
+      "coefficient": 1.21,
+      "price_eur": 919.82,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B40Z",
+      "name_sr_latin": "Plazmafereza kod neuroloških bolesti, istog dana",
+      "coefficient": 0.21,
+      "price_eur": 159.64,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B41Z",
+      "name_sr_latin": "Telemetrijski EEG monitoring",
+      "coefficient": 1.71,
+      "price_eur": 1299.91,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B42A",
+      "name_sr_latin": "Dijagnostika nervnog sistema sa ventilacijskom podrškom sa vrlo teškim KK",
+      "coefficient": 6.52,
+      "price_eur": 4956.37,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B42B",
+      "name_sr_latin": "Dijagnostika nervnog sistema sa ventilacijskom podrškom bez vrlo teškim KK",
+      "coefficient": 4.25,
+      "price_eur": 3230.77,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B60A",
+      "name_sr_latin": "Akutna paraplegija/kvadriplegija sa ili bez operativnog zahvata sa vrlo teškim KK",
+      "coefficient": 9.36,
+      "price_eur": 7115.28,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B60B",
+      "name_sr_latin": "Akutna paraplegija/kvadriplegija sa ili bez operativnog zahvata bez vrlo teškim KK",
+      "coefficient": 3.31,
+      "price_eur": 2516.2,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B61A",
+      "name_sr_latin": "Stanja kičmene moždine sa ili bez operativnog zahvata sa vrlo teškim ili teškim KK",
+      "coefficient": 6.62,
+      "price_eur": 5032.39,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B61B",
+      "name_sr_latin": "Stanja kičmene moždine sa ili bez operativnog zahvata bez vrlo teškim ili teškim KK",
+      "coefficient": 2.34,
+      "price_eur": 1778.82,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B62Z",
+      "name_sr_latin": "Prijem zbog afereze",
+      "coefficient": 0.26,
+      "price_eur": 197.65,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B63Z",
+      "name_sr_latin": "Demencije i ostali hronični poremećaji funkcije mozga",
+      "coefficient": 2.71,
+      "price_eur": 2060.09,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B64A",
+      "name_sr_latin": "Delirijum sa vrlo teškim KK",
+      "coefficient": 3.07,
+      "price_eur": 2333.75,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B64B",
+      "name_sr_latin": "Delirijum bez vrlo teškim KK",
+      "coefficient": 1.49,
+      "price_eur": 1132.67,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B65Z",
+      "name_sr_latin": "Cerebralna paraliza",
+      "coefficient": 0.62,
+      "price_eur": 471.31,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B66A",
+      "name_sr_latin": "Neoplazme (tumori) nervnog sistema sa vrlo teškim ili teškim KK",
+      "coefficient": 2.65,
+      "price_eur": 2014.48,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B66B",
+      "name_sr_latin": "Neoplazme (tumori) nervnog sistema bez vrlo teškim ili teškim KK",
+      "coefficient": 1.12,
+      "price_eur": 851.4,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B67A",
+      "name_sr_latin": "Degenerativni poremećaji nervnog sistema sa vrlo teškim ili teškim KK",
+      "coefficient": 3.25,
+      "price_eur": 2470.59,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B67B",
+      "name_sr_latin": "Degenerativni poremećaji nervnog sistema sa umjerenim KK",
+      "coefficient": 1.68,
+      "price_eur": 1277.1,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B67C",
+      "name_sr_latin": "Degenerativni poremećaji nervnog sistema bez vrlo teškim KK",
+      "coefficient": 0.62,
+      "price_eur": 471.31,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B68A",
+      "name_sr_latin": "Multipla skleroza i cerebralna ataksija sa vrlo teškim ili teškim KK",
+      "coefficient": 2.45,
+      "price_eur": 1862.44,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B68B",
+      "name_sr_latin": "Multipla skleroza i cerebralna ataksija bez KK",
+      "coefficient": 0.45,
+      "price_eur": 342.08,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B69A",
+      "name_sr_latin": "TIA i precerebralna okluzija sa vrlo teškim ili teškim KK",
+      "coefficient": 1.58,
+      "price_eur": 1201.08,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B69B",
+      "name_sr_latin": "TIA i precerebralna okluzija bez vrlo teškim ili teškim KK",
+      "coefficient": 0.7,
+      "price_eur": 532.13,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B70A",
+      "name_sr_latin": "Moždani udar i drugi cerebrovaskularni poremećaji sa vrlo teškim KK",
+      "coefficient": 4.38,
+      "price_eur": 3329.59,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B70B",
+      "name_sr_latin": "Moždani udar i drugi cerebrovaskularni poremećaji sa teškim KK",
+      "coefficient": 2.39,
+      "price_eur": 1816.83,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B70C",
+      "name_sr_latin": "Moždani udar i drugi cerebrovaskularni poremećaji bez vrlo teškim ili teškim KK",
+      "coefficient": 1.53,
+      "price_eur": 1163.08,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B70D",
+      "name_sr_latin": "Moždani udar i drugi cerebrovaskularni poremećaji, smrtni ishod ili premještanje u drugu ustanovu, boravak < 5 dana",
+      "coefficient": 0.54,
+      "price_eur": 410.5,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B71A",
+      "name_sr_latin": "Poremećaji kranijalnih i perifernih nerava sa KK",
+      "coefficient": 1.94,
+      "price_eur": 1474.75,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B71B",
+      "name_sr_latin": "Poremećaji kranijalnih i perifernih nerava bez KK",
+      "coefficient": 0.36,
+      "price_eur": 273.66,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B72A",
+      "name_sr_latin": "Infekcija nervnog sistema osim virusnog meningitisa sa vrlo teškim ili teškim KK",
+      "coefficient": 4.08,
+      "price_eur": 3101.53,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B72B",
+      "name_sr_latin": "Infekcija nervnog sistema osim virusnog meningitisa bez vrlo teškim ili teškim KK",
+      "coefficient": 1.52,
+      "price_eur": 1155.47,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B73Z",
+      "name_sr_latin": "Virusni meningitis",
+      "coefficient": 0.95,
+      "price_eur": 722.17,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B74A",
+      "name_sr_latin": "Netraumatski stupor i koma sa KK",
+      "coefficient": 1.3,
+      "price_eur": 988.23,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B74B",
+      "name_sr_latin": "Netraumatski stupor i koma bez KK",
+      "coefficient": 0.48,
+      "price_eur": 364.89,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B75Z",
+      "name_sr_latin": "Febrilne konvulzije",
+      "coefficient": 0.45,
+      "price_eur": 342.08,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B76A",
+      "name_sr_latin": "Epi napad sa vrlo teškim ili teškim KK",
+      "coefficient": 1.91,
+      "price_eur": 1451.94,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B76B",
+      "name_sr_latin": "Epi napad bez vrlo teškim ili teškim KK",
+      "coefficient": 0.62,
+      "price_eur": 471.31,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B77Z",
+      "name_sr_latin": "Glavobolja",
+      "coefficient": 0.43,
+      "price_eur": 326.88,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B78A",
+      "name_sr_latin": "Intrakranijalna povreda sa vrlo teškim ili teškim KK",
+      "coefficient": 2.99,
+      "price_eur": 2272.94,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B78B",
+      "name_sr_latin": "Intrakranijalna povreda bez vrlo teškim ili teškim KK",
+      "coefficient": 1.13,
+      "price_eur": 859.0,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B79A",
+      "name_sr_latin": "Fraktura lobanje sa vrlo teškim ili teškim KK",
+      "coefficient": 1.7,
+      "price_eur": 1292.31,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B79B",
+      "name_sr_latin": "Fraktura lobanje bez vrlo teškim ili teškim KK",
+      "coefficient": 0.69,
+      "price_eur": 524.52,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B80Z",
+      "name_sr_latin": "Druge povrede glave",
+      "coefficient": 0.35,
+      "price_eur": 266.06,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B81A",
+      "name_sr_latin": "Drugi poremećaji nervnog sistema sa vrlo teškim ili teškim KK",
+      "coefficient": 2.36,
+      "price_eur": 1794.02,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B81B",
+      "name_sr_latin": "Drugi poremećaji nervnog sistema bez vrlo teškim ili teškim KK",
+      "coefficient": 0.89,
+      "price_eur": 676.56,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B82A",
+      "name_sr_latin": "Hronična i neodređena paraplegija/kvadriplegija sa ili bez operativnog zahvata sa vrlo teškim/teškim KK",
+      "coefficient": 7.46,
+      "price_eur": 5670.94,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B82B",
+      "name_sr_latin": "Hronična i neoznačena paraplegija/kvadriplegija sa ili bez operativnog zahvata sa teškim KK",
+      "coefficient": 3.18,
+      "price_eur": 2417.37,
+      "section": "MDC 01"
+    },
+    {
+      "code": "B82C",
+      "name_sr_latin": "Hronična i neoznačena paraplegija/kvadriplegija sa ili bez operativnog zahvata bez vrlo teškim/teškim KK",
+      "coefficient": 1.82,
+      "price_eur": 1383.53,
+      "section": "MDC 01"
+    },
+    {
+      "code": "C01Z",
+      "name_sr_latin": "Zahvati zbog penetrantne povrede oka",
+      "coefficient": 1.9,
+      "price_eur": 1444.34,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C02Z",
+      "name_sr_latin": "Enukleacija i zahvati na orbiti",
+      "coefficient": 2.0,
+      "price_eur": 1520.36,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C03Z",
+      "name_sr_latin": "Zahvati na mrežnjači",
+      "coefficient": 0.91,
+      "price_eur": 691.76,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C04Z",
+      "name_sr_latin": "Veliki zahvati na rožnjači, beonjači i konjuktivi",
+      "coefficient": 1.54,
+      "price_eur": 1170.68,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C05Z",
+      "name_sr_latin": "Dakriocistorinostomija",
+      "coefficient": 0.98,
+      "price_eur": 744.98,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C10Z",
+      "name_sr_latin": "Zahvati zbog strabizma",
+      "coefficient": 0.76,
+      "price_eur": 577.74,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C11Z",
+      "name_sr_latin": "Zahvati na kapcima",
+      "coefficient": 0.74,
+      "price_eur": 562.53,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C12Z",
+      "name_sr_latin": "Drugi zahvati na rožnjači, beonjači i konjuktivi",
+      "coefficient": 0.7,
+      "price_eur": 532.13,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C13Z",
+      "name_sr_latin": "Zahvati na suznom aparatu",
+      "coefficient": 0.45,
+      "price_eur": 342.08,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C14Z",
+      "name_sr_latin": "Drugi zahvati na oku",
+      "coefficient": 0.54,
+      "price_eur": 410.5,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C15A",
+      "name_sr_latin": "Glaukom i složeni zahvati zbog katarakte",
+      "coefficient": 1.3,
+      "price_eur": 988.23,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C15B",
+      "name_sr_latin": "Glaukom i složeni zahvati zbog katarakte, isti dan",
+      "coefficient": 0.66,
+      "price_eur": 501.72,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C16Z",
+      "name_sr_latin": "Zahvati na sočivu",
+      "coefficient": 0.58,
+      "price_eur": 440.9,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C60A",
+      "name_sr_latin": "Akutne i velike infekcije oka sa KK",
+      "coefficient": 2.39,
+      "price_eur": 1816.83,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C60B",
+      "name_sr_latin": "Akutne i velike infekcije oka bez KK",
+      "coefficient": 1.33,
+      "price_eur": 1011.04,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C61A",
+      "name_sr_latin": "Neurološki poremećaji i poremećaji krvnih sudova oka sa KK",
+      "coefficient": 1.2,
+      "price_eur": 912.22,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C61B",
+      "name_sr_latin": "Neurološki poremećaji i poremećaji krvnih sudova oka bez KK",
+      "coefficient": 0.62,
+      "price_eur": 471.31,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C62Z",
+      "name_sr_latin": "Hifema i medicinski oslabljeno oko",
+      "coefficient": 0.42,
+      "price_eur": 319.28,
+      "section": "MDC 02"
+    },
+    {
+      "code": "C63Z",
+      "name_sr_latin": "Drugi poremećaji oka",
+      "coefficient": 0.54,
+      "price_eur": 410.5,
+      "section": "MDC 02"
+    },
+    {
+      "code": "D01Z",
+      "name_sr_latin": "Ugradnja kohlearnog implantata",
+      "coefficient": 8.02,
+      "price_eur": 6096.64,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D02A",
+      "name_sr_latin": "Zahvati na glavi i vratu sa vrlo teškim ili teškim KK",
+      "coefficient": 6.71,
+      "price_eur": 5100.81,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D02B",
+      "name_sr_latin": "Zahvati na glavi i vratu, sa malignom bolešću, ili sa umjerenim KK",
+      "coefficient": 2.93,
+      "price_eur": 2227.33,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D02C",
+      "name_sr_latin": "Zahvati na glavi i vratu, bez maligne bolesti, bez KK",
+      "coefficient": 1.73,
+      "price_eur": 1315.11,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D03Z",
+      "name_sr_latin": "Hirurški zahvat kod rascijepa usne ili nepca",
+      "coefficient": 1.67,
+      "price_eur": 1269.5,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D04A",
+      "name_sr_latin": "Operacija maksilarne regije sa KK",
+      "coefficient": 2.77,
+      "price_eur": 2105.7,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D04B",
+      "name_sr_latin": "Operacija maksilarne regije bez KK",
+      "coefficient": 1.72,
+      "price_eur": 1307.51,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D05Z",
+      "name_sr_latin": "Zahvati na parotidnoj žljezdi",
+      "coefficient": 2.05,
+      "price_eur": 1558.37,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D06Z",
+      "name_sr_latin": "Zahvati na sinusima i složeni zahvati na srednjem uhu",
+      "coefficient": 1.22,
+      "price_eur": 927.42,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D10Z",
+      "name_sr_latin": "Zahvati na nosu",
+      "coefficient": 0.88,
+      "price_eur": 668.96,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D11Z",
+      "name_sr_latin": "Tonzilektomija i/ili adenoidektomija",
+      "coefficient": 0.67,
+      "price_eur": 509.32,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D12Z",
+      "name_sr_latin": "Drugi zahvati na uhu, nosu, usnoj šupljini i grlu",
+      "coefficient": 1.04,
+      "price_eur": 790.59,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D13Z",
+      "name_sr_latin": "Miringotomija sa ugradnjom cjevčice",
+      "coefficient": 0.41,
+      "price_eur": 311.67,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D14Z",
+      "name_sr_latin": "Zahvati na usnoj šupljini i pljuvačnim žljezdama",
+      "coefficient": 0.89,
+      "price_eur": 676.56,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D15Z",
+      "name_sr_latin": "Vađenje i nadoknada zuba",
+      "coefficient": 2.26,
+      "price_eur": 1718.01,
+      "section": "MDC 03",
+      "note": "VERIFY: coefficient seems high for tooth extraction — confirm code/name match in source"
+    },
+    {
+      "code": "D40Z",
+      "name_sr_latin": "Vađenje i nadoknada zuba",
+      "coefficient": 0.64,
+      "price_eur": 486.52,
+      "section": "MDC 03",
+      "note": "VERIFY: duplicate label with D15Z, one of them likely differs in source"
+    },
+    {
+      "code": "D60A",
+      "name_sr_latin": "Maligna bolest uha, nosa, usne šupljine i grla sa vrlo teškim ili teškim KK",
+      "coefficient": 2.94,
+      "price_eur": 2234.93,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D60B",
+      "name_sr_latin": "Maligna bolest uha, nosa, usne šupljine i grla bez vrlo teškim ili teškim KK",
+      "coefficient": 0.77,
+      "price_eur": 585.34,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D61Z",
+      "name_sr_latin": "Gubitak ravnoteže",
+      "coefficient": 0.57,
+      "price_eur": 433.3,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D62Z",
+      "name_sr_latin": "Krvarenje iz nosa - Epistaxis",
+      "coefficient": 0.46,
+      "price_eur": 349.68,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D63Z",
+      "name_sr_latin": "Zapaljenje srednjeg uha i infekcija gornjih respiratornih puteva",
+      "coefficient": 0.51,
+      "price_eur": 387.69,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D64Z",
+      "name_sr_latin": "Laringotraheitis i epiglotitis",
+      "coefficient": 0.37,
+      "price_eur": 281.27,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D65Z",
+      "name_sr_latin": "Trauma i deformacija nosa",
+      "coefficient": 0.41,
+      "price_eur": 311.67,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D66A",
+      "name_sr_latin": "Druge dijagnoze uha, nosa, usne šupljine i grla sa KK",
+      "coefficient": 1.23,
+      "price_eur": 935.02,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D66B",
+      "name_sr_latin": "Druge dijagnoze kod uha, nosa, usne šupljine i grla bez KK",
+      "coefficient": 0.38,
+      "price_eur": 288.87,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D67A",
+      "name_sr_latin": "Poremećaji usne šupljine i zuba, osim vađenja i nadoknade zuba",
+      "coefficient": 0.85,
+      "price_eur": 646.15,
+      "section": "MDC 03"
+    },
+    {
+      "code": "D67B",
+      "name_sr_latin": "Poremećaji usne šupljine i zuba, osim vađenja i nadoknade zuba, isti dan",
+      "coefficient": 0.23,
+      "price_eur": 174.84,
+      "section": "MDC 03"
+    },
+    {
+      "code": "E01A",
+      "name_sr_latin": "Veliki zahvati na grudnom košu sa vrlo teškim KK",
+      "coefficient": 6.2,
+      "price_eur": 4713.12,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E01B",
+      "name_sr_latin": "Veliki zahvati na grudnom košu bez vrlo teškim KK",
+      "coefficient": 3.47,
+      "price_eur": 2637.82,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E02A",
+      "name_sr_latin": "Drugi operativni zahvati na respiratornom sistemu sa vrlo teškim KK",
+      "coefficient": 5.58,
+      "price_eur": 4241.8,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E02B",
+      "name_sr_latin": "Drugi operativni zahvati na respiratornom sistemu sa teškim ili umjerenim KK",
+      "coefficient": 2.2,
+      "price_eur": 1672.4,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E02C",
+      "name_sr_latin": "Druge bolesti ili operativni zahvati na respiratornom sistemu bez KK",
+      "coefficient": 0.86,
+      "price_eur": 653.75,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E40A",
+      "name_sr_latin": "Bolesti respiratornog sistema sa ventilacijskom podrškom sa vrlo teškim KK",
+      "coefficient": 6.52,
+      "price_eur": 4956.37,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E40B",
+      "name_sr_latin": "Bolesti respiratornog sistema sa ventilacijskom podrškom bez vrlo teškim KK",
+      "coefficient": 5.0,
+      "price_eur": 3800.9,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E41Z",
+      "name_sr_latin": "Bolest respiratornog sistema sa neinvazivnom ventilacijom",
+      "coefficient": 4.91,
+      "price_eur": 3732.48,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E42A",
+      "name_sr_latin": "Bronhoskopija sa vrlo teškim KK",
+      "coefficient": 5.12,
+      "price_eur": 3892.12,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E42B",
+      "name_sr_latin": "Bronhoskopija bez vrlo teškim KK",
+      "coefficient": 2.31,
+      "price_eur": 1756.02,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E42C",
+      "name_sr_latin": "Bronhoskopija, istog dana",
+      "coefficient": 0.43,
+      "price_eur": 326.88,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E60A",
+      "name_sr_latin": "Cistična fibroza sa vrlo teškim ili teškim KK",
+      "coefficient": 4.75,
+      "price_eur": 3610.86,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E60B",
+      "name_sr_latin": "Cistična fibroza bez vrlo teškim ili teškim KK",
+      "coefficient": 3.39,
+      "price_eur": 2577.01,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E61A",
+      "name_sr_latin": "Plućna embolija sa vrlo teškim KK",
+      "coefficient": 2.81,
+      "price_eur": 2136.11,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E61B",
+      "name_sr_latin": "Plućna embolija bez vrlo teškim KK",
+      "coefficient": 1.33,
+      "price_eur": 1011.04,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E62A",
+      "name_sr_latin": "Respiratorne infekcije sa vrlo teškim KK",
+      "coefficient": 2.49,
+      "price_eur": 1892.85,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E62B",
+      "name_sr_latin": "Respiratorne infekcije sa teškim ili umjerenim KK",
+      "coefficient": 1.47,
+      "price_eur": 1117.46,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E62C",
+      "name_sr_latin": "Respiratorne infekcije bez KK",
+      "coefficient": 0.81,
+      "price_eur": 615.75,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E63Z",
+      "name_sr_latin": "Apneja u spavanju",
+      "coefficient": 0.41,
+      "price_eur": 311.67,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E64A",
+      "name_sr_latin": "Edem pluća i respiratorna insuficijencija sa vrlo teškim KK",
+      "coefficient": 2.34,
+      "price_eur": 1778.82,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E64B",
+      "name_sr_latin": "Edem pluća i respiratorna insuficijencija bez vrlo teškim KK",
+      "coefficient": 1.22,
+      "price_eur": 927.42,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E65A",
+      "name_sr_latin": "Hronična opstruktivna bolest respiratornih puteva sa vrlo teškim ili teškim KK",
+      "coefficient": 2.27,
+      "price_eur": 1725.61,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E65B",
+      "name_sr_latin": "Hronična opstruktivna bolest respiratornih puteva bez vrlo teškim ili teškim KK",
+      "coefficient": 1.22,
+      "price_eur": 927.42,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E66A",
+      "name_sr_latin": "Velika trauma grudnog koša sa vrlo teškim KK",
+      "coefficient": 3.17,
+      "price_eur": 2409.77,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E66B",
+      "name_sr_latin": "Velika trauma grudnog koša sa teškim ili umjerenim KK",
+      "coefficient": 1.51,
+      "price_eur": 1147.87,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E66C",
+      "name_sr_latin": "Velika trauma grudnog koša bez KK",
+      "coefficient": 0.78,
+      "price_eur": 592.94,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E67A",
+      "name_sr_latin": "Respiratorni znaci i simptomi sa vrlo teškim ili teškim KK",
+      "coefficient": 1.11,
+      "price_eur": 843.8,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E67B",
+      "name_sr_latin": "Respiratorni znaci i simptomi bez vrlo teškim ili teškim KK",
+      "coefficient": 0.45,
+      "price_eur": 342.08,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E68A",
+      "name_sr_latin": "Pneumotoraks sa KK",
+      "coefficient": 1.77,
+      "price_eur": 1345.52,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E68B",
+      "name_sr_latin": "Pneumotoraks bez KK",
+      "coefficient": 0.8,
+      "price_eur": 608.14,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E69A",
+      "name_sr_latin": "Bronhitis i astma sa KK",
+      "coefficient": 1.12,
+      "price_eur": 851.4,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E69B",
+      "name_sr_latin": "Bronhitis i astma bez KK",
+      "coefficient": 0.51,
+      "price_eur": 387.69,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E70A",
+      "name_sr_latin": "Veliki kašalj i akutni bronhiolitis sa KK",
+      "coefficient": 1.71,
+      "price_eur": 1299.91,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E70B",
+      "name_sr_latin": "Veliki kašalj i akutni bronhiolitis bez KK",
+      "coefficient": 0.78,
+      "price_eur": 592.94,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E71A",
+      "name_sr_latin": "Respiratorne neoplazme sa vrlo teškim KK",
+      "coefficient": 2.31,
+      "price_eur": 1756.02,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E71B",
+      "name_sr_latin": "Respiratorne neoplazme bez vrlo teškim KK",
+      "coefficient": 1.17,
+      "price_eur": 889.41,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E72Z",
+      "name_sr_latin": "Respiratorni problemi koji potiču iz neonatalnog perioda",
+      "coefficient": 1.35,
+      "price_eur": 1026.24,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E73A",
+      "name_sr_latin": "Pleuralni izliv sa vrlo teškim KK",
+      "coefficient": 2.6,
+      "price_eur": 1976.47,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E73B",
+      "name_sr_latin": "Pleuralni izliv sa teškim ili umjerenim KK",
+      "coefficient": 1.34,
+      "price_eur": 1018.64,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E73C",
+      "name_sr_latin": "Pleuralni izliv bez KK",
+      "coefficient": 0.78,
+      "price_eur": 592.94,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E74A",
+      "name_sr_latin": "Intersticijalna bolest pluća sa vrlo teškim KK",
+      "coefficient": 2.54,
+      "price_eur": 1930.86,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E74B",
+      "name_sr_latin": "Intersticijalna bolest pluća sa teškim ili umjerenim KK",
+      "coefficient": 1.79,
+      "price_eur": 1360.72,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E74C",
+      "name_sr_latin": "Intersticijalna bolest pluća bez KK",
+      "coefficient": 0.82,
+      "price_eur": 623.35,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E75A",
+      "name_sr_latin": "Druge bolesti respiratornog sistema sa vrlo teškim KK",
+      "coefficient": 2.0,
+      "price_eur": 1520.36,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E75B",
+      "name_sr_latin": "Druge bolesti respiratornog sistema sa teškim ili umjerenim KK",
+      "coefficient": 1.25,
+      "price_eur": 950.23,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E75C",
+      "name_sr_latin": "Druge bolesti respiratornog sistema bez KK",
+      "coefficient": 0.61,
+      "price_eur": 463.71,
+      "section": "MDC 04"
+    },
+    {
+      "code": "E76Z",
+      "name_sr_latin": "Tuberkuloza respiratornog trakta",
+      "coefficient": 3.1,
+      "price_eur": 2356.56,
+      "section": "MDC 04"
+    },
+    {
+      "code": "F01A",
+      "name_sr_latin": "Implantacija ili zamjena AICD, potpuni sistem, sa vrlo teškim KK",
+      "coefficient": 9.38,
+      "price_eur": 7130.49,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F01B",
+      "name_sr_latin": "Implantacija ili zamjena AICD, potpuni sistem, bez vrlo teškim KK",
+      "coefficient": 5.46,
+      "price_eur": 4150.58,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F02Z",
+      "name_sr_latin": "Druge AICD procedure",
+      "coefficient": 2.36,
+      "price_eur": 1794.02,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F03A",
+      "name_sr_latin": "Zahvati na srčanim zaliscima sa primjenom ekstrakorporalne cirkulacije, sa invazivnom dijagnostikom na srcu sa vrlo teškim KK",
+      "coefficient": 14.03,
+      "price_eur": 10665.33,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F03B",
+      "name_sr_latin": "Zahvati na srčanim zaliscima sa primjenom ekstrakorporalne cirkulacije, sa invazivnom dijagnostikom na srcu bez vrlo teškim KK",
+      "coefficient": 9.3,
+      "price_eur": 7069.67,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F04A",
+      "name_sr_latin": "Zahvati na srčanim zaliscima sa primjenom ekstrakorporalne cirkulacije, bez invazivne dijagnostike na srcu sa vrlo teškim KK",
+      "coefficient": 11.1,
+      "price_eur": 8438.0,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F04B",
+      "name_sr_latin": "Zahvati na srčanim zaliscima sa primjenom ekstrakorporalne cirkulacije, bez invazivne dijagnostike na srcu bez vrlo teškim KK",
+      "coefficient": 7.25,
+      "price_eur": 5511.31,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F05A",
+      "name_sr_latin": "Koronarni bajpas sa invazivnom dijagnostikom na srcu sa ponovnom operacijom ili sa vrlo teškim KK",
+      "coefficient": 10.98,
+      "price_eur": 8346.78,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F05B",
+      "name_sr_latin": "Koronarni bajpas sa invazivnom dijagnostikom na srcu bez ponovne operacije bez vrlo teškim KK",
+      "coefficient": 8.08,
+      "price_eur": 6142.25,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F06A",
+      "name_sr_latin": "Koronarni bajpas bez invazivne dijagnostike na srcu sa ponovnom operacijom ili sa vrlo teškim ili teškim KK",
+      "coefficient": 7.37,
+      "price_eur": 5602.53,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F06B",
+      "name_sr_latin": "Koronarni bajpas bez invazivne dijagnostike na srcu bez ponovne operacije bez vrlo teškim ili teškim KK",
+      "coefficient": 5.32,
+      "price_eur": 4044.16,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F07A",
+      "name_sr_latin": "Drugi kardiotorakalni/vaskularni zahvati sa primjenom ekstrakorporalne cirkulacije (CPB pumpa) sa vrlo teškim KK",
+      "coefficient": 10.97,
+      "price_eur": 8339.17,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F07B",
+      "name_sr_latin": "Drugi kardiotorakalni/vaskularni zahvati sa primjenom ekstrakorporalne cirkulacije (CPB pumpa) sa teškim ili umjerenim KK",
+      "coefficient": 7.54,
+      "price_eur": 5731.76,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F07C",
+      "name_sr_latin": "Drugi kardiotorakalni/vaskularni zahvati sa primjenom ekstrakorporalne cirkulacije (CPB pumpa) bez KK",
+      "coefficient": 5.92,
+      "price_eur": 4500.27,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F08A",
+      "name_sr_latin": "Veliki rekonstruktivni zahvati na vaskularnom sistemu bez primjene ekstrakorporalne cirkulacije (CPB pumpa) sa vrlo teškim KK",
+      "coefficient": 8.98,
+      "price_eur": 6826.42,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F08B",
+      "name_sr_latin": "Veliki rekonstruktivni zahvati na vaskularnom sistemu bez primjene ekstrakorporalne cirkulacije (CPB pumpa) bez vrlo teškim KK",
+      "coefficient": 4.6,
+      "price_eur": 3496.83,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F09A",
+      "name_sr_latin": "Drugi kardiotorakalni zahvati bez primjene ekstrakorporalne cirkulacije (CPB pumpa) sa vrlo teškim KK",
+      "coefficient": 6.39,
+      "price_eur": 4857.55,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F09B",
+      "name_sr_latin": "Drugi kardiotorakalni zahvati bez primjene ekstrakorporalne cirkulacije (CPB pumpa) sa teškim ili umjerenim KK",
+      "coefficient": 3.94,
+      "price_eur": 2995.11,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F09C",
+      "name_sr_latin": "Drugi kardiotorakalni zahvati bez primjene ekstrakorp. cirkulacije (CPB pumpa) bez KK",
+      "coefficient": 2.74,
+      "price_eur": 2082.89,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F10A",
+      "name_sr_latin": "Interventni koronarni zahvat sa akutnim infarktom miokarda sa vrlo teškim KK",
+      "coefficient": 4.17,
+      "price_eur": 3169.95,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F10B",
+      "name_sr_latin": "Interventni koronarni zahvat sa akutnim infarktom miokarda bez vrlo teškim KK",
+      "coefficient": 2.36,
+      "price_eur": 1794.02,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F11A",
+      "name_sr_latin": "Amputacija zbog poremećaja cirkulatornog sistema, osim gornjeg ekstremiteta i prstiju na nozi, sa vrlo teškim KK",
+      "coefficient": 9.37,
+      "price_eur": 7122.89,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F11B",
+      "name_sr_latin": "Amputacija zbog poremećaja cirkulatornog sistema, osim gornjeg ekstremiteta i prstiju na nozi, bez vrlo teškim KK",
+      "coefficient": 4.98,
+      "price_eur": 3785.7,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F12A",
+      "name_sr_latin": "Ugradnja ili zamjena pejsmejkera, potpuni sistem sa vrlo teškim KK",
+      "coefficient": 4.82,
+      "price_eur": 3664.07,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F12B",
+      "name_sr_latin": "Ugradnja ili zamjena pejsmejkera, potpuni sistem bez vrlo teškim KK",
+      "coefficient": 2.38,
+      "price_eur": 1809.23,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F13A",
+      "name_sr_latin": "Amputacija gornjeg ekstremiteta i prstiju na nozi zbog poremećaja cirkulatornog sistema sa vrlo teškim ili teškim KK",
+      "coefficient": 5.1,
+      "price_eur": 3876.92,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F13B",
+      "name_sr_latin": "Amputacija gornjeg ekstremiteta i prstiju na nozi zbog poremećaja cirkulatornog sistema bez vrlo teškim ili teškim KK",
+      "coefficient": 2.4,
+      "price_eur": 1824.43,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F14A",
+      "name_sr_latin": "Zahvati na kardiovaskularnom sistemu, osim velike rekonstrukcije, bez primjene ekstrakorporalne cirkulacije (CPB pumpa) sa vrlo teškim KK",
+      "coefficient": 4.72,
+      "price_eur": 3588.05,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F14B",
+      "name_sr_latin": "Zahvati na kardiovaskularnom sistemu, osim velike rekonstrukcije, bez primjene ekstrakorporalne cirkulacije (CPB pumpa) sa teškim ili umjerenim KK",
+      "coefficient": 2.27,
+      "price_eur": 1725.61,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F14C",
+      "name_sr_latin": "Zahvati na kardiovaskularnom sistemu, osim velike rekonstrukcije, bez primjene ekstrakorporalne cirkulacije (CPB pumpa) bez KK",
+      "coefficient": 1.4,
+      "price_eur": 1064.25,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F15A",
+      "name_sr_latin": "Interventni koronarni zahvati, bez akutnog infarkta miokarda, sa ugradnjom stenta sa KK",
+      "coefficient": 2.42,
+      "price_eur": 1839.64,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F15B",
+      "name_sr_latin": "Interventni koronarni zahvati, bez akutnog infarkta miokarda, sa ugradnjom stenta bez KK",
+      "coefficient": 1.6,
+      "price_eur": 1216.29,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F16A",
+      "name_sr_latin": "Interventni koronarni zahvati, bez akutnog infarkta miokarda, bez ugradnje stenta sa KK",
+      "coefficient": 1.75,
+      "price_eur": 1330.32,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F16B",
+      "name_sr_latin": "Interventni koronarni zahvati, bez akutnog infarkta miokarda, bez ugradnje stenta bez KK",
+      "coefficient": 1.31,
+      "price_eur": 995.84,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F17A",
+      "name_sr_latin": "Ugradnja ili zamjena generator pejsmejkera sa vrlo teškim ili teškim KK",
+      "coefficient": 2.26,
+      "price_eur": 1718.01,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F17B",
+      "name_sr_latin": "Ugradnja ili zamjena generator pejsmejkera bez vrlo teškim ili teškim KK",
+      "coefficient": 1.41,
+      "price_eur": 1071.85,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F18A",
+      "name_sr_latin": "Drugi zahvati sa pejsmejkerom sa KK",
+      "coefficient": 2.82,
+      "price_eur": 2143.71,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F18B",
+      "name_sr_latin": "Drugi zahvati sa pejsmejkerom bez KK",
+      "coefficient": 1.3,
+      "price_eur": 988.23,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F19Z",
+      "name_sr_latin": "Transvaskularne perkutane intervencije na srcu",
+      "coefficient": 2.58,
+      "price_eur": 1961.26,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F20Z",
+      "name_sr_latin": "Postavljanje ligature na venu i njeno uklanjanje (stripping)",
+      "coefficient": 0.87,
+      "price_eur": 661.36,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F21A",
+      "name_sr_latin": "Drugi operativni zahvati na cirkulatornom sistemu sa vrlo teškim KK",
+      "coefficient": 5.15,
+      "price_eur": 3914.93,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F21B",
+      "name_sr_latin": "Drugi operativni zahvati na cirkulatornom sistemu bez vrlo teškim KK",
+      "coefficient": 1.85,
+      "price_eur": 1406.33,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F40A",
+      "name_sr_latin": "Dijagnoza cirkulatornog sistema sa ventilacijskom podrškom sa vrlo teškim KK",
+      "coefficient": 6.72,
+      "price_eur": 5108.41,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F40B",
+      "name_sr_latin": "Dijagnoza cirkulatornog sistema sa ventilacijskom podrškom bez vrlo teškim KK",
+      "coefficient": 4.54,
+      "price_eur": 3451.22,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F41A",
+      "name_sr_latin": "Poremećaji cirkulacije sa akutnim infarktom miokarda, sa invazivnom dijagnostikom na srcu, sa vrlo teškim ili teškim KK",
+      "coefficient": 2.88,
+      "price_eur": 2189.32,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F41B",
+      "name_sr_latin": "Poremećaji cirkulacije sa akutnim infarktom miokarda, sa invazivnom dijagnostikom na srcu, bez vrlo teškim ili teškim KK",
+      "coefficient": 1.6,
+      "price_eur": 1216.29,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F42A",
+      "name_sr_latin": "Poremećaji cirkulacije bez akutnog infarkta miokarda, sa invazivnom dijagnostikom na srcu, sa vrlo teškim KK",
+      "coefficient": 2.65,
+      "price_eur": 2014.48,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F42B",
+      "name_sr_latin": "Poremećaji cirkulacije bez akutnog infarkta miokarda, sa invazivnom dijagnostikom na srcu, bez vrlo teškim KK",
+      "coefficient": 1.4,
+      "price_eur": 1064.25,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F42C",
+      "name_sr_latin": "Poremećaji cirkulacije bez akutnog infarkta miokarda, sa invazivnom dijagnostikom na srcu, istog dana",
+      "coefficient": 0.62,
+      "price_eur": 471.31,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F43Z",
+      "name_sr_latin": "Dijagnostika cirkulatornog sistema sa ne-invazivnom ventilacijom",
+      "coefficient": 4.5,
+      "price_eur": 3420.81,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F60A",
+      "name_sr_latin": "Poremećaji cirkulacije sa akutnim infarktom miokarda, bez invazivne dijagnostike na srcu, sa vrlo teškim ili teškim KK",
+      "coefficient": 2.57,
+      "price_eur": 1953.66,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F60B",
+      "name_sr_latin": "Poremećaji cirkulacije sa akutnim infarktom miokarda, bez invazivne dijagnostike na srcu, bez vrlo teškim ili teškim KK",
+      "coefficient": 1.02,
+      "price_eur": 775.38,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F61A",
+      "name_sr_latin": "Infektivni endokarditis sa vrlo teškim KK",
+      "coefficient": 6.17,
+      "price_eur": 4690.31,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F61B",
+      "name_sr_latin": "Infektivni endokarditis bez vrlo teškim KK",
+      "coefficient": 3.08,
+      "price_eur": 2341.35,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F62A",
+      "name_sr_latin": "Insuficijencija srca i šok sa vrlo teškim KK",
+      "coefficient": 2.64,
+      "price_eur": 2006.88,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F62B",
+      "name_sr_latin": "Insuficijencija srca i šok bez vrlo teškim KK",
+      "coefficient": 1.2,
+      "price_eur": 912.22,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F63A",
+      "name_sr_latin": "Venska tromboza sa vrlo teškim ili teškim KK",
+      "coefficient": 1.89,
+      "price_eur": 1436.74,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F63B",
+      "name_sr_latin": "Venska tromboza bez vrlo teškim ili teškim KK",
+      "coefficient": 0.86,
+      "price_eur": 653.75,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F64A",
+      "name_sr_latin": "Čir (ulkus) kože zbog poremećaja cirkulacije sa vrlo teškim ili teškim KK",
+      "coefficient": 2.87,
+      "price_eur": 2181.72,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F64B",
+      "name_sr_latin": "Čir (ulkus) kože zbog poremećaja cirkulacije bez vrlo teškim ili teškim KK",
+      "coefficient": 1.26,
+      "price_eur": 957.83,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F65A",
+      "name_sr_latin": "Poremećaji perifernih krvnih sudova sa vrlo teškim ili teškim KK",
+      "coefficient": 1.93,
+      "price_eur": 1467.15,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F65B",
+      "name_sr_latin": "Poremećaji perifernih krvnih sudova bez vrlo teškim ili teškim KK",
+      "coefficient": 0.67,
+      "price_eur": 509.32,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F66A",
+      "name_sr_latin": "Ateroskleroza koronarnih krvnih sudova sa vrlo teškim ili teškim KK",
+      "coefficient": 1.23,
+      "price_eur": 935.02,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F66B",
+      "name_sr_latin": "Ateroskleroza koronarnih krvnih sudova bez vrlo teškim ili teškim KK",
+      "coefficient": 0.48,
+      "price_eur": 364.89,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F67A",
+      "name_sr_latin": "Hipertenzija sa vrlo teškim ili teškim KK",
+      "coefficient": 1.54,
+      "price_eur": 1170.68,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F67B",
+      "name_sr_latin": "Hipertenzija bez vrlo teškim ili teškim KK",
+      "coefficient": 0.59,
+      "price_eur": 448.51,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F68A",
+      "name_sr_latin": "Kongenitalna bolest srca sa vrlo teškim ili teškim KK",
+      "coefficient": 1.65,
+      "price_eur": 1254.3,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F68B",
+      "name_sr_latin": "Kongenitalna bolest srca bez KK",
+      "coefficient": 0.8,
+      "price_eur": 608.14,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F69A",
+      "name_sr_latin": "Poremećaji zalistaka srca sa vrlo teškim ili teškim KK",
+      "coefficient": 1.63,
+      "price_eur": 1239.09,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F69B",
+      "name_sr_latin": "Poremećaji zalistaka srca bez vrlo teškim ili teškim KK",
+      "coefficient": 0.42,
+      "price_eur": 319.28,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F72A",
+      "name_sr_latin": "Nestabilna angina pectoris sa vrlo teškim ili teškim KK",
+      "coefficient": 1.21,
+      "price_eur": 919.82,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F72B",
+      "name_sr_latin": "Nestabilna angina pectoris bez vrlo teškim ili teškim KK",
+      "coefficient": 0.6,
+      "price_eur": 456.11,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F73A",
+      "name_sr_latin": "Sinkopa i kolaps sa vrlo teškim ili teškim KK",
+      "coefficient": 1.43,
+      "price_eur": 1087.06,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F73B",
+      "name_sr_latin": "Sinkopa i kolaps bez vrlo teškim ili teškim KK",
+      "coefficient": 0.51,
+      "price_eur": 387.69,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F74Z",
+      "name_sr_latin": "Bol u grudima",
+      "coefficient": 0.4,
+      "price_eur": 304.07,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F75A",
+      "name_sr_latin": "Druge bolesti cirkulatornog sistema sa vrlo teškim KK",
+      "coefficient": 3.12,
+      "price_eur": 2371.76,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F75B",
+      "name_sr_latin": "Druge bolesti cirkulatornog sistema sa teškim ili umjerenim KK",
+      "coefficient": 1.31,
+      "price_eur": 995.84,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F75C",
+      "name_sr_latin": "Druge bolesti cirkulatornog sistema bez KK",
+      "coefficient": 0.67,
+      "price_eur": 509.32,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F76A",
+      "name_sr_latin": "Aritmije, srčani zastoj i poremećaji provodljivosti sa vrlo teškim ili teškim KK",
+      "coefficient": 1.6,
+      "price_eur": 1216.29,
+      "section": "MDC 05"
+    },
+    {
+      "code": "F76B",
+      "name_sr_latin": "Aritmije, srčani zastoj i poremećaji provodljivosti bez vrlo teškim ili teškim KK",
+      "coefficient": 0.57,
+      "price_eur": 433.3,
+      "section": "MDC 05"
+    },
+    {
+      "code": "G01A",
+      "name_sr_latin": "Resekcija rektuma sa vrlo teškim KK",
+      "coefficient": 7.82,
+      "price_eur": 5944.61,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G01B",
+      "name_sr_latin": "Resekcija rektuma bez vrlo teškim KK",
+      "coefficient": 4.38,
+      "price_eur": 3329.59,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G02A",
+      "name_sr_latin": "Veliki zahvati na tankom i debelom crijevu sa vrlo teškim KK",
+      "coefficient": 7.17,
+      "price_eur": 5450.49,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G02B",
+      "name_sr_latin": "Veliki zahvati na tankom i debelom crijevu bez vrlo teškim KK",
+      "coefficient": 3.47,
+      "price_eur": 2637.82,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G03A",
+      "name_sr_latin": "Zahvati na želucu, jednjaku i dvanaestopalačnom crijevu sa malignom bolešću ili sa vrlo teškim KK",
+      "coefficient": 8.1,
+      "price_eur": 6157.46,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G03B",
+      "name_sr_latin": "Zahvati na želucu, jednjaku i dvanaestopalačnom crijevu, bez maligne bolesti, sa teškim ili umjerenim KK",
+      "coefficient": 3.57,
+      "price_eur": 2713.84,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G03C",
+      "name_sr_latin": "Zahvati na želucu, jednjaku i dvanaestopalačnom crijevu, bez maligne bolesti, bez KK",
+      "coefficient": 2.16,
+      "price_eur": 1641.99,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G04A",
+      "name_sr_latin": "Adhezioliza peritoneuma sa vrlo teškim KK",
+      "coefficient": 6.4,
+      "price_eur": 4865.15,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G04B",
+      "name_sr_latin": "Adhezioliza peritoneuma sa teškim ili umjerenim KK",
+      "coefficient": 3.58,
+      "price_eur": 2721.44,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G04C",
+      "name_sr_latin": "Adhezioliza peritoneuma bez KK",
+      "coefficient": 1.96,
+      "price_eur": 1489.95,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G05A",
+      "name_sr_latin": "Manji zahvati na tankom i debelom crijevu sa vrlo teškim KK",
+      "coefficient": 4.73,
+      "price_eur": 3595.65,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G05B",
+      "name_sr_latin": "Manji zahvati na tankom i debelom crijevu sa teškim ili umjerenim KK",
+      "coefficient": 2.79,
+      "price_eur": 2120.9,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G05C",
+      "name_sr_latin": "Manji zahvati na tankom i debelom crijevu bez KK",
+      "coefficient": 1.77,
+      "price_eur": 1345.52,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G06Z",
+      "name_sr_latin": "Pilorotomija",
+      "coefficient": 1.77,
+      "price_eur": 1345.52,
+      "section": "MDC 06",
+      "note": "VERIFY: source spelling 'Pilorotomija' (medical term usually 'Piloromiotomija')"
+    },
+    {
+      "code": "G07A",
+      "name_sr_latin": "Apendektomija sa malignim oboljenjem ili peritonitisom ili sa vrlo teškim ili teškim KK",
+      "coefficient": 2.27,
+      "price_eur": 1725.61,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G07B",
+      "name_sr_latin": "Apendektomija bez malignog oboljenja ili peritonitisa bez vrlo teškim ili teškim KK",
+      "coefficient": 1.31,
+      "price_eur": 995.84,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G10A",
+      "name_sr_latin": "Zahvati zbog hernije sa KK",
+      "coefficient": 2.16,
+      "price_eur": 1641.99,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G10B",
+      "name_sr_latin": "Zahvati zbog hernije bez KK",
+      "coefficient": 0.92,
+      "price_eur": 699.37,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G11Z",
+      "name_sr_latin": "Zahvati na anusu i stomi",
+      "coefficient": 0.69,
+      "price_eur": 524.52,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G12A",
+      "name_sr_latin": "Ostali operativni zahvati na gastrointestinalnom sistemu sa vrlo teškim KK",
+      "coefficient": 5.76,
+      "price_eur": 4378.64,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G12B",
+      "name_sr_latin": "Ostali operativni zahvati na gastrointestinalnom sistemu sa teškim ili umjerenim KK",
+      "coefficient": 2.75,
+      "price_eur": 2090.96,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G12C",
+      "name_sr_latin": "Ostali operativni zahvati na gastrointestinalnom sistemu bez KK",
+      "coefficient": 1.4,
+      "price_eur": 1064.25,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G46A",
+      "name_sr_latin": "Složena gastroskopija sa vrlo teškim KK",
+      "coefficient": 4.29,
+      "price_eur": 3261.17,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G46B",
+      "name_sr_latin": "Složena gastroskopija sa teškim ili umjerenim KK",
+      "coefficient": 1.6,
+      "price_eur": 1216.29,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G46C",
+      "name_sr_latin": "Složena gastroskopija, isti dan",
+      "coefficient": 0.38,
+      "price_eur": 288.87,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G47A",
+      "name_sr_latin": "Ostale gastroskopije sa vrlo teškim KK",
+      "coefficient": 3.24,
+      "price_eur": 2462.98,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G47B",
+      "name_sr_latin": "Ostale gastroskopije bez vrlo teškim KK",
+      "coefficient": 1.27,
+      "price_eur": 965.43,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G47C",
+      "name_sr_latin": "Ostale gastroskopije, isti dan",
+      "coefficient": 0.32,
+      "price_eur": 243.26,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G48A",
+      "name_sr_latin": "Kolonoskopija sa vrlo teškim ili teškim KK",
+      "coefficient": 2.65,
+      "price_eur": 2014.48,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G48B",
+      "name_sr_latin": "Kolonoskopija bez vrlo teškim ili teškim KK",
+      "coefficient": 1.12,
+      "price_eur": 851.4,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G48C",
+      "name_sr_latin": "Kolonoskopija, isti dan",
+      "coefficient": 0.34,
+      "price_eur": 258.46,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G60A",
+      "name_sr_latin": "Maligna bolest gastrointestinalnog sistema sa vrlo teškim KK",
+      "coefficient": 2.15,
+      "price_eur": 1634.39,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G60B",
+      "name_sr_latin": "Maligna bolest gastrointestinalnog sistema bez vrlo teškim KK",
+      "coefficient": 0.87,
+      "price_eur": 661.36,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G61A",
+      "name_sr_latin": "Krvarenje iz gastrointestinalnog sistema sa vrlo teškim ili teškim KK",
+      "coefficient": 1.32,
+      "price_eur": 1003.44,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G61B",
+      "name_sr_latin": "Krvarenje iz gastrointestinalnog sistema bez vrlo teškim ili teškim KK",
+      "coefficient": 0.53,
+      "price_eur": 402.9,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G62Z",
+      "name_sr_latin": "Komplikovani peptički ulkus",
+      "coefficient": 1.41,
+      "price_eur": 1071.85,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G63Z",
+      "name_sr_latin": "Nekomplikovani peptički ulkus",
+      "coefficient": 0.43,
+      "price_eur": 326.88,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G64A",
+      "name_sr_latin": "Zapaljenska bolest crijeva sa KK",
+      "coefficient": 1.41,
+      "price_eur": 1071.85,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G64B",
+      "name_sr_latin": "Zapaljenska bolest crijeva bez KK",
+      "coefficient": 0.7,
+      "price_eur": 532.13,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G65A",
+      "name_sr_latin": "Opstrukcija gastrointestinalnog sistema sa vrlo teškim ili teškim KK",
+      "coefficient": 1.72,
+      "price_eur": 1307.51,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G65B",
+      "name_sr_latin": "Opstrukcija gastrointestinalnog sistema bez vrlo teškim ili teškim KK",
+      "coefficient": 0.8,
+      "price_eur": 608.14,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G66Z",
+      "name_sr_latin": "Bol u abdomenu ili mezenterijumski adenitis",
+      "coefficient": 0.42,
+      "price_eur": 319.28,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G67A",
+      "name_sr_latin": "Ezofagitis i gastroenteritis sa vrlo teškim ili teškim KK",
+      "coefficient": 1.44,
+      "price_eur": 1094.66,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G67B",
+      "name_sr_latin": "Ezofagitis i gastroenteritis bez vrlo teškim ili teškim KK",
+      "coefficient": 0.43,
+      "price_eur": 326.88,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G70A",
+      "name_sr_latin": "Druge bolesti gastrointestinalnog sistema sa vrlo teškim ili teškim KK",
+      "coefficient": 1.46,
+      "price_eur": 1109.86,
+      "section": "MDC 06"
+    },
+    {
+      "code": "G70B",
+      "name_sr_latin": "Druge bolesti gastrointestinalnog sistema bez vrlo teškim ili teškim KK",
+      "coefficient": 0.48,
+      "price_eur": 364.89,
+      "section": "MDC 06"
+    },
+    {
+      "code": "H01A",
+      "name_sr_latin": "Zahvati na pankreasu, jetri i šantovima sa vrlo teškim KK",
+      "coefficient": 8.68,
+      "price_eur": 6598.36,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H01B",
+      "name_sr_latin": "Zahvati na pankreasu, jetri i šantovima bez vrlo teškim KK",
+      "coefficient": 3.88,
+      "price_eur": 2949.5,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H02A",
+      "name_sr_latin": "Veliki zahvati na bilijarnom traktu sa vrlo teškim KK",
+      "coefficient": 6.63,
+      "price_eur": 5039.99,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H02B",
+      "name_sr_latin": "Veliki zahvati na bilijarnom traktu sa teškim KK",
+      "coefficient": 3.56,
+      "price_eur": 2706.24,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H02C",
+      "name_sr_latin": "Veliki zahvati na bilijarnom traktu bez vrlo teškim ili teškim KK",
+      "coefficient": 2.75,
+      "price_eur": 2090.5,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H05A",
+      "name_sr_latin": "Dijagnostički zahvati na hepatobilijarnom sistemu sa vrlo teškim KK",
+      "coefficient": 6.26,
+      "price_eur": 4758.73,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H05B",
+      "name_sr_latin": "Dijagnostički zahvati na hepatobilijarnom sistemu bez vrlo teškim KK",
+      "coefficient": 1.87,
+      "price_eur": 1421.54,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H06A",
+      "name_sr_latin": "Ostali operativni zahvati na hepatobilijarnom sistemu i pankreasu sa vrlo teškim KK",
+      "coefficient": 5.97,
+      "price_eur": 4538.27,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H06B",
+      "name_sr_latin": "Ostali operativni zahvati na hepatobilijarnom sistemu i pankreasu bez vrlo teškim KK",
+      "coefficient": 2.0,
+      "price_eur": 1520.36,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H07A",
+      "name_sr_latin": "Otvorena holecistektomija sa zatvorenim ispitivanjem prohodnosti duktusa holedohusa sa vrlo teškim KK",
+      "coefficient": 5.68,
+      "price_eur": 4317.82,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H07B",
+      "name_sr_latin": "Otvorena holecistektomija sa zatvorenim ispitivanjem prohodnosti duktusa holedohusa, bez vrlo teškim KK",
+      "coefficient": 2.62,
+      "price_eur": 1991.67,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H08A",
+      "name_sr_latin": "Laparoskopska holecistektomija sa zatvorenim ispitivanjem prohodnosti duktusa holedohusa, ili sa vrlo teškim KK",
+      "coefficient": 2.77,
+      "price_eur": 2105.7,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H08B",
+      "name_sr_latin": "Laparoskopska holecistektomija sa zatvorenim ispitivanjem prohodnosti duktusa holedohusa, ili bez vrlo teškim KK",
+      "coefficient": 1.42,
+      "price_eur": 1079.46,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H40A",
+      "name_sr_latin": "Endoskopske procedure zbog krvarenja iz ezofagealnih varikoziteta sa vrlo teškim KK",
+      "coefficient": 4.4,
+      "price_eur": 3344.79,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H40B",
+      "name_sr_latin": "Endoskopske procedure zbog krvarenja iz ezofagealnih varikoziteta bez vrlo teškim KK",
+      "coefficient": 2.07,
+      "price_eur": 1573.57,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H43A",
+      "name_sr_latin": "Složeni terapijski postupci pomoću endoskopske retrogradne holangiopankreatografije (ERCP) sa vrlo teškim ili teškim KK",
+      "coefficient": 3.28,
+      "price_eur": 2493.39,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H43B",
+      "name_sr_latin": "Složeni terapijski zahvati pomoću endoskopske retrogradne holangiopankreatografije (ERCP) bez vrlo teškim ili teškim KK",
+      "coefficient": 1.01,
+      "price_eur": 767.78,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H60A",
+      "name_sr_latin": "Ciroza i alkoholni hepatitis sa vrlo teškim KK",
+      "coefficient": 3.41,
+      "price_eur": 2592.21,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H60B",
+      "name_sr_latin": "Ciroza i alkoholni hepatitis sa teškim ili umjerenim KK",
+      "coefficient": 1.24,
+      "price_eur": 942.62,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H60C",
+      "name_sr_latin": "Ciroza i alkoholni hepatitis bez KK",
+      "coefficient": 0.47,
+      "price_eur": 357.28,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H61A",
+      "name_sr_latin": "Maligna bolest hepatobilijarnog sistema i pankreasa sa vrlo teškim KK",
+      "coefficient": 2.48,
+      "price_eur": 1885.25,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H61B",
+      "name_sr_latin": "Maligna bolest hepatobilijarnog sistema i pankreasa bez vrlo teškim KK",
+      "coefficient": 1.12,
+      "price_eur": 851.4,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H62A",
+      "name_sr_latin": "Poremećaji pankreasa, osim maligne bolesti, sa vrlo teškim ili teškim KK",
+      "coefficient": 2.49,
+      "price_eur": 1892.85,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H62B",
+      "name_sr_latin": "Poremećaji pankreasa, osim maligne bolesti, bez vrlo teškim ili teškim KK",
+      "coefficient": 0.91,
+      "price_eur": 691.76,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H63A",
+      "name_sr_latin": "Poremećaji jetre, osim maligne bolesti, ciroze i alkoholnog hepatitisa, sa vrlo teškim ili teškim KK",
+      "coefficient": 2.33,
+      "price_eur": 1771.22,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H63B",
+      "name_sr_latin": "Poremećaji jetre, osim maligne bolesti, ciroze i alk. hepatitisa, bez vrlo teškim ili teškim KK",
+      "coefficient": 0.67,
+      "price_eur": 509.32,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H64A",
+      "name_sr_latin": "Poremećaji bilijarnog sistema sa KK",
+      "coefficient": 1.54,
+      "price_eur": 1170.68,
+      "section": "MDC 07"
+    },
+    {
+      "code": "H64B",
+      "name_sr_latin": "Poremećaji bilijarnog sistema bez KK",
+      "coefficient": 0.56,
+      "price_eur": 425.7,
+      "section": "MDC 07"
+    },
+    {
+      "code": "I01A",
+      "name_sr_latin": "Obostrani ili višestruki veliki zahvati na zglobovima donjih ekstremiteta sa revizijom ili sa vrlo teškim KK",
+      "coefficient": 10.77,
+      "price_eur": 8187.14,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I01B",
+      "name_sr_latin": "Obostrani ili višestruki veliki zahvati na zglobovima donjih ekstremiteta bez revizije ili bez vrlo teškim KK",
+      "coefficient": 5.7,
+      "price_eur": 4333.03,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I02A",
+      "name_sr_latin": "Mikrovaskularni prenos tkiva ili režnja kože sa vrlo teškim KK, isključujući šaku",
+      "coefficient": 11.15,
+      "price_eur": 8476.01,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I02B",
+      "name_sr_latin": "Presađivanje kože, isključujući šaku, sa vrlo teškim ili teškim KK",
+      "coefficient": 3.83,
+      "price_eur": 2911.49,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I03A",
+      "name_sr_latin": "Zamjena kuka sa vrlo teškim KK",
+      "coefficient": 5.98,
+      "price_eur": 4545.88,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I03B",
+      "name_sr_latin": "Zamjena kuka bez vrlo teškim KK",
+      "coefficient": 4.26,
+      "price_eur": 3238.37,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I04A",
+      "name_sr_latin": "Zamjena koljena sa vrlo teškim ili teškim KK",
+      "coefficient": 4.76,
+      "price_eur": 3618.46,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I04B",
+      "name_sr_latin": "Zamjena koljena bez vrlo teškim ili teškim KK",
+      "coefficient": 4.07,
+      "price_eur": 3093.93,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I05A",
+      "name_sr_latin": "Zamjene ostalih zglobova sa vrlo teškim ili teškim KK",
+      "coefficient": 5.48,
+      "price_eur": 4165.79,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I05B",
+      "name_sr_latin": "Zamjene ostalih zglobova bez vrlo teškim ili teškim KK",
+      "coefficient": 3.66,
+      "price_eur": 2782.26,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I06Z",
+      "name_sr_latin": "Spinalna fuzija sa deformitetom",
+      "coefficient": 11.67,
+      "price_eur": 8871.3,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I07Z",
+      "name_sr_latin": "Amputacija",
+      "coefficient": 7.15,
+      "price_eur": 5435.29,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I08A",
+      "name_sr_latin": "Ostali zahvati na kuku i femuru sa vrlo teškim KK",
+      "coefficient": 5.78,
+      "price_eur": 4393.84,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I08B",
+      "name_sr_latin": "Ostali zahvati na kuku i femuru bez vrlo teškim KK",
+      "coefficient": 3.44,
+      "price_eur": 2615.02,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I09A",
+      "name_sr_latin": "Spinalna fuzija sa vrlo teškim KK",
+      "coefficient": 10.67,
+      "price_eur": 8111.12,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I09B",
+      "name_sr_latin": "Spinalna fuzija bez vrlo teškim KK",
+      "coefficient": 5.85,
+      "price_eur": 4447.05,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I10A",
+      "name_sr_latin": "Ostali zahvati na leđima i vratu sa vrlo teškim ili teškim KK",
+      "coefficient": 4.29,
+      "price_eur": 3261.17,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I10B",
+      "name_sr_latin": "Ostali zahvati na leđima i vratu bez vrlo teškim ili teškim KK",
+      "coefficient": 2.08,
+      "price_eur": 1581.17,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I11Z",
+      "name_sr_latin": "Zahvati radi produženja ekstremiteta",
+      "coefficient": 3.07,
+      "price_eur": 2333.75,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I12A",
+      "name_sr_latin": "Infekcija/upala kostiju i zglobova sa raznim zahvatima na mišićno-skeletnom sistemu sa vrlo teškim KK",
+      "coefficient": 7.04,
+      "price_eur": 5351.67,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I12B",
+      "name_sr_latin": "Infekcija/upala kostiju i zglobova sa raznim zahvatima na mišićno-skeletnom sistemu sa teškim ili umjerenim KK",
+      "coefficient": 4.17,
+      "price_eur": 3169.95,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I12C",
+      "name_sr_latin": "Infekcija/upala kostiju i zglobova sa raznim zahvatima na mišićno-skeletnom sistemu bez KK",
+      "coefficient": 2.05,
+      "price_eur": 1558.37,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I13A",
+      "name_sr_latin": "Zahvati na humerusu, tibiji, fibuli i skočnom zglobu sa KK",
+      "coefficient": 4.4,
+      "price_eur": 3344.79,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I13B",
+      "name_sr_latin": "Zahvati na humerusu, tibiji, fibuli i skočnom zglobu bez KK",
+      "coefficient": 2.07,
+      "price_eur": 1573.57,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I15Z",
+      "name_sr_latin": "Kraniofacijalni hirurški zahvati",
+      "coefficient": 3.79,
+      "price_eur": 2881.08,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I16Z",
+      "name_sr_latin": "Ostali zahvati na ramenu",
+      "coefficient": 1.42,
+      "price_eur": 1079.46,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I17A",
+      "name_sr_latin": "Maksilofacijalni hirurški zahvati sa KK",
+      "coefficient": 2.57,
+      "price_eur": 1953.66,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I17B",
+      "name_sr_latin": "Maksilofacijalni hirurški zahvati bez KK",
+      "coefficient": 1.63,
+      "price_eur": 1239.09,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I18Z",
+      "name_sr_latin": "Ostali zahvati na koljenu",
+      "coefficient": 0.78,
+      "price_eur": 592.94,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I19A",
+      "name_sr_latin": "Ostali zahvati na laktu i podlaktici sa KK",
+      "coefficient": 2.85,
+      "price_eur": 2166.51,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I19B",
+      "name_sr_latin": "Ostali zahvati na laktu i podlaktici bez KK",
+      "coefficient": 1.59,
+      "price_eur": 1208.69,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I20Z",
+      "name_sr_latin": "Ostali zahvati na stopalu",
+      "coefficient": 1.34,
+      "price_eur": 1018.64,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I21Z",
+      "name_sr_latin": "Lokalna ekscizija i odstranjenje unutrašnjeg fiksatora kuka i femura",
+      "coefficient": 1.17,
+      "price_eur": 889.41,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I22Z",
+      "name_sr_latin": "Lokalna ekscizija i odstranjenje unutrašnjeg fiksatora, osim za kuk i femur",
+      "coefficient": 0.75,
+      "price_eur": 570.14,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I24Z",
+      "name_sr_latin": "Artroskopija",
+      "coefficient": 3.68,
+      "price_eur": 2797.46,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I25Z",
+      "name_sr_latin": "Dijagnostičke procedure na kostima i zglobovima uključujući biopsiju",
+      "coefficient": 1.4,
+      "price_eur": 1064.25,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I27A",
+      "name_sr_latin": "Zahvati na mekom tkivu sa KK",
+      "coefficient": 3.22,
+      "price_eur": 2447.78,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I27B",
+      "name_sr_latin": "Zahvati na mekom tkivu bez KK",
+      "coefficient": 1.02,
+      "price_eur": 775.38,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I28A",
+      "name_sr_latin": "Ostali zahvati na mišićno-skeletnom sistemu sa KK",
+      "coefficient": 3.64,
+      "price_eur": 2767.06,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I28B",
+      "name_sr_latin": "Ostali zahvati na mišićno-skeletnom sistemu bez KK",
+      "coefficient": 1.35,
+      "price_eur": 1026.24,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I29Z",
+      "name_sr_latin": "Rekonstrukcija ili revizija koljena",
+      "coefficient": 1.6,
+      "price_eur": 1216.29,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I30Z",
+      "name_sr_latin": "Zahvati na šaci",
+      "coefficient": 0.88,
+      "price_eur": 668.96,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I31A",
+      "name_sr_latin": "Revizija kuka sa vrlo teškim KK",
+      "coefficient": 10.0,
+      "price_eur": 7601.8,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I31B",
+      "name_sr_latin": "Revizija kuka bez vrlo teškim KK",
+      "coefficient": 5.99,
+      "price_eur": 4553.49,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I32A",
+      "name_sr_latin": "Revizija koljena sa vrlo teškim KK",
+      "coefficient": 11.3,
+      "price_eur": 8590.03,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I32B",
+      "name_sr_latin": "Revizija koljena sa teškim KK",
+      "coefficient": 6.46,
+      "price_eur": 4910.76,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I32C",
+      "name_sr_latin": "Revizija koljena bez vrlo teškim ili teškim KK",
+      "coefficient": 5.75,
+      "price_eur": 4371.04,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I60Z",
+      "name_sr_latin": "Prelom tijela femura",
+      "coefficient": 2.21,
+      "price_eur": 1680.0,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I61A",
+      "name_sr_latin": "Prelom donjeg dijela femura sa KK",
+      "coefficient": 2.84,
+      "price_eur": 2158.91,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I61B",
+      "name_sr_latin": "Prelom donjeg dijela femura bez KK",
+      "coefficient": 1.1,
+      "price_eur": 836.2,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I63A",
+      "name_sr_latin": "Uganuće, istegnuće i iščašenje u području kuka, karlice i femura sa KK",
+      "coefficient": 1.54,
+      "price_eur": 1170.68,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I63B",
+      "name_sr_latin": "Uganuće, istegnuće i iščašenje u području kuka, karlice i femura bez KK",
+      "coefficient": 0.57,
+      "price_eur": 433.3,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I64A",
+      "name_sr_latin": "Osteomijelitis sa vrlo teškim ili teškim KK",
+      "coefficient": 3.43,
+      "price_eur": 2607.42,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I64B",
+      "name_sr_latin": "Osteomijelitis bez vrlo teškim ili teškim KK",
+      "coefficient": 1.51,
+      "price_eur": 1147.87,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I65A",
+      "name_sr_latin": "Maligne neoplazme mišićno-skeletnog sistema sa vrlo teškim ili teškim KK",
+      "coefficient": 3.29,
+      "price_eur": 2500.99,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I65B",
+      "name_sr_latin": "Maligne neoplazme mišićno-skeletnog sistema bez vrlo teškim ili teškim KK",
+      "coefficient": 1.57,
+      "price_eur": 1193.48,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I66A",
+      "name_sr_latin": "Zapaljenski poremećaji mišićno-skeletnog sistema sa vrlo teškim ili teškim KK",
+      "coefficient": 3.13,
+      "price_eur": 2379.36,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I66B",
+      "name_sr_latin": "Zapaljenski poremećaji mišićno-skeletnog sistema bez vrlo teškim ili teškim KK",
+      "coefficient": 0.51,
+      "price_eur": 387.69,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I67A",
+      "name_sr_latin": "Septički artritis sa vrlo teškim ili teškim KK",
+      "coefficient": 3.12,
+      "price_eur": 2371.76,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I67B",
+      "name_sr_latin": "Septički artritis bez vrlo teškim ili teškim KK",
+      "coefficient": 1.28,
+      "price_eur": 973.03,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I68A",
+      "name_sr_latin": "Nehirurški poremećaji kičme sa KK",
+      "coefficient": 2.2,
+      "price_eur": 1672.4,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I68B",
+      "name_sr_latin": "Nehirurški poremećaji kičme bez KK",
+      "coefficient": 0.94,
+      "price_eur": 714.57,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I68C",
+      "name_sr_latin": "Nehirurški poremećaji kičme, isti dan",
+      "coefficient": 0.24,
+      "price_eur": 182.44,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I69A",
+      "name_sr_latin": "Bolesti kostiju i artropatije sa vrlo teškim ili teškim KK",
+      "coefficient": 1.97,
+      "price_eur": 1497.55,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I69B",
+      "name_sr_latin": "Bolesti kostiju i artropatije bez vrlo teškim ili teškim KK",
+      "coefficient": 0.55,
+      "price_eur": 418.1,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I71A",
+      "name_sr_latin": "Ostali mišićno-tetivni poremećaji, sa vrlo teškim ili teškim KK",
+      "coefficient": 1.7,
+      "price_eur": 1292.31,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I71B",
+      "name_sr_latin": "Ostali mišićno-tetivni poremećaji, bez vrlo teškim ili teškim KK",
+      "coefficient": 0.52,
+      "price_eur": 395.29,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I72A",
+      "name_sr_latin": "Specifični mišićno-tetivni poremećaji, sa vrlo teškim ili teškim KK",
+      "coefficient": 2.16,
+      "price_eur": 1641.99,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I72B",
+      "name_sr_latin": "Specifični mišićno-tetivni poremećaji, bez vrlo teškim ili teškim KK",
+      "coefficient": 0.63,
+      "price_eur": 478.91,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I73A",
+      "name_sr_latin": "Naknadna njega dijela tijela sa mišićno-skeletnim implantatom/protezom, sa vrlo teškim ili teškim KK",
+      "coefficient": 2.89,
+      "price_eur": 2196.92,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I73B",
+      "name_sr_latin": "Naknadna njega dijela tijela sa mišićno-skeletnim implantatom/protezom, bez vrlo teškim ili teškim KK",
+      "coefficient": 0.75,
+      "price_eur": 570.14,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I74Z",
+      "name_sr_latin": "Povreda podlaktice, ručnog zgloba, šake ili stopala",
+      "coefficient": 0.45,
+      "price_eur": 342.08,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I75A",
+      "name_sr_latin": "Povreda ramena, nadlaktice, lakta, koljena, potkoljenice ili gležnja, sa KK",
+      "coefficient": 1.87,
+      "price_eur": 1421.54,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I75B",
+      "name_sr_latin": "Povreda ramena, nadlaktice, lakta, koljena, potkoljenice ili gležnja, bez KK",
+      "coefficient": 0.52,
+      "price_eur": 395.29,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I76A",
+      "name_sr_latin": "Drugi mišićno-skeletni poremećaji, sa vrlo teškim ili teškim KK",
+      "coefficient": 1.66,
+      "price_eur": 1261.9,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I76B",
+      "name_sr_latin": "Drugi mišićno-skeletni poremećaji, bez vrlo teškim ili teškim KK",
+      "coefficient": 0.5,
+      "price_eur": 380.09,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I77A",
+      "name_sr_latin": "Prelom karlice sa vrlo teškim ili teškim KK",
+      "coefficient": 2.9,
+      "price_eur": 2204.52,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I77B",
+      "name_sr_latin": "Prelom karlice bez vrlo teškim ili teškim KK",
+      "coefficient": 1.36,
+      "price_eur": 1033.84,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I78A",
+      "name_sr_latin": "Prelom vrata femura sa vrlo teškim ili teškim KK",
+      "coefficient": 1.88,
+      "price_eur": 1429.14,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I78B",
+      "name_sr_latin": "Prelom vrata femura bez vrlo teškim ili teškim KK",
+      "coefficient": 0.61,
+      "price_eur": 463.71,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I79A",
+      "name_sr_latin": "Patološka fraktura sa vrlo teškim KK",
+      "coefficient": 3.78,
+      "price_eur": 2873.48,
+      "section": "MDC 08"
+    },
+    {
+      "code": "I79B",
+      "name_sr_latin": "Patološka fraktura bez vrlo teškim KK",
+      "coefficient": 1.76,
+      "price_eur": 1337.92,
+      "section": "MDC 08"
+    },
+    {
+      "code": "J01A",
+      "name_sr_latin": "Mikrovaskularni prenos tkiva zbog poremećaja kože, potkožnog tkiva ili dojke sa vrlo teškim ili teškim KK",
+      "coefficient": 9.58,
+      "price_eur": 7282.52,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J01B",
+      "name_sr_latin": "Mikrovaskularni prenos tkiva zbog poremećaja kože, potkožnog tkiva ili dojke bez vrlo teškim ili teškim KK",
+      "coefficient": 6.59,
+      "price_eur": 5009.59,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J06Z",
+      "name_sr_latin": "Veliki zahvati zbog stanja dojke",
+      "coefficient": 1.67,
+      "price_eur": 1269.5,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J07Z",
+      "name_sr_latin": "Manji zahvati zbog stanja dojke",
+      "coefficient": 0.69,
+      "price_eur": 524.52,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J08A",
+      "name_sr_latin": "Ostala presađivanja kože i/ili zahvati debridmana sa KK",
+      "coefficient": 3.42,
+      "price_eur": 2599.82,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J08B",
+      "name_sr_latin": "Ostala presađivanja kože i/ili zahvati debridmana bez KK",
+      "coefficient": 0.94,
+      "price_eur": 714.57,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J09Z",
+      "name_sr_latin": "Perianalni i pilonidalni zahvati",
+      "coefficient": 0.91,
+      "price_eur": 691.76,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J10Z",
+      "name_sr_latin": "Plastično-hirurški operativni zahvati na koži, potkožnom tkivu i dojci",
+      "coefficient": 0.72,
+      "price_eur": 547.33,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J11Z",
+      "name_sr_latin": "Ostali zahvati na koži, potkožnom tkivu i dojci",
+      "coefficient": 0.46,
+      "price_eur": 349.68,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J12A",
+      "name_sr_latin": "Zahvati na donjim ekstremitetima sa ulkusom/celulitisom sa vrlo teškim KK",
+      "coefficient": 6.26,
+      "price_eur": 4758.73,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J12B",
+      "name_sr_latin": "Zahvati na donjim ekstremitetima sa ulkusom/celulitisom, sa popravkom pomoću presađivanja/režnja kože, bez vrlo teškim KK",
+      "coefficient": 3.98,
+      "price_eur": 3025.52,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J12C",
+      "name_sr_latin": "Zahvati na donjim ekstremitetima sa ulkusom/celulitisom, bez popravke pomoću presađivanja/režnja kože",
+      "coefficient": 2.28,
+      "price_eur": 1733.21,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J13A",
+      "name_sr_latin": "Zahvati na donjim ekstremitetima bez ulkusa/celulitisa, sa presađivanjem kože, sa vrlo teškim ili teškim KK",
+      "coefficient": 3.67,
+      "price_eur": 2789.86,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J13B",
+      "name_sr_latin": "Zahvati na donjim ekstremitetima bez ulkusa/celulitisa, bez presađivanja kože, bez vrlo teškim ili teškim KK",
+      "coefficient": 1.37,
+      "price_eur": 1041.45,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J14Z",
+      "name_sr_latin": "Velika rekonstrukcija dojke",
+      "coefficient": 4.77,
+      "price_eur": 3626.06,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J60A",
+      "name_sr_latin": "Ulkus kože sa vrlo teškim KK",
+      "coefficient": 3.43,
+      "price_eur": 2607.42,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J60B",
+      "name_sr_latin": "Ulkus kože sa teškim ili umjerenim KK",
+      "coefficient": 1.89,
+      "price_eur": 1436.74,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J60C",
+      "name_sr_latin": "Ulkus kože, isti dan",
+      "coefficient": 0.22,
+      "price_eur": 167.24,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J62A",
+      "name_sr_latin": "Maligna bolest dojke sa KK",
+      "coefficient": 1.24,
+      "price_eur": 942.62,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J62B",
+      "name_sr_latin": "Maligna bolest dojke bez KK",
+      "coefficient": 0.53,
+      "price_eur": 402.9,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J63A",
+      "name_sr_latin": "Nemaligna bolest dojke sa KK",
+      "coefficient": 1.24,
+      "price_eur": 942.62,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J63B",
+      "name_sr_latin": "Nemaligna bolest dojke bez KK",
+      "coefficient": 0.47,
+      "price_eur": 357.28,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J64A",
+      "name_sr_latin": "Celulitis sa vrlo teškim ili teškim KK",
+      "coefficient": 2.08,
+      "price_eur": 1581.17,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J64B",
+      "name_sr_latin": "Celulitis bez vrlo teškim ili teškim KK",
+      "coefficient": 1.03,
+      "price_eur": 782.99,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J65A",
+      "name_sr_latin": "Trauma kože, potkožnog tkiva i dojke sa vrlo teškim ili teškim KK",
+      "coefficient": 1.42,
+      "price_eur": 1079.46,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J65B",
+      "name_sr_latin": "Trauma kože, potkožnog tkiva i dojke bez vrlo teškim ili teškim KK",
+      "coefficient": 0.45,
+      "price_eur": 342.08,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J67A",
+      "name_sr_latin": "Manji poremećaji na koži",
+      "coefficient": 0.91,
+      "price_eur": 691.76,
+      "section": "MDC 09",
+      "note": "VERIFY: no KK qualifier visible in source; J67B is 'isti dan' variant"
+    },
+    {
+      "code": "J67B",
+      "name_sr_latin": "Manji poremećaji na koži, isti dan",
+      "coefficient": 0.25,
+      "price_eur": 190.05,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J68A",
+      "name_sr_latin": "Veći poremećaji na koži sa vrlo teškim ili teškim KK",
+      "coefficient": 2.53,
+      "price_eur": 1923.26,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J68B",
+      "name_sr_latin": "Veći poremećaji na koži bez vrlo teškim ili teškim KK",
+      "coefficient": 1.24,
+      "price_eur": 942.62,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J68C",
+      "name_sr_latin": "Veći poremećaji na koži, istog dana",
+      "coefficient": 0.23,
+      "price_eur": 174.84,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J69A",
+      "name_sr_latin": "Maligne promjene na koži sa vrlo teškim KK",
+      "coefficient": 2.79,
+      "price_eur": 2120.99,
+      "section": "MDC 09",
+      "note": "VERIFY: continuation from batch 2; row label appears to start with J69; cross-check with batch 2 last code"
+    },
+    {
+      "code": "J69B",
+      "name_sr_latin": "Maligne promjene na koži bez vrlo teškim KK",
+      "coefficient": 1.77,
+      "price_eur": 1345.52,
+      "section": "MDC 09"
+    },
+    {
+      "code": "J69C",
+      "name_sr_latin": "Maligne promjene na koži, istog dana",
+      "coefficient": 0.2,
+      "price_eur": 152.04,
+      "section": "MDC 09"
+    },
+    {
+      "code": "K01A",
+      "name_sr_latin": "Operativni zahvati radi komplikacija dijabetesa sa vrlo teškim KK",
+      "coefficient": 7.97,
+      "price_eur": 6058.69,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K01B",
+      "name_sr_latin": "Operativni zahvati radi komplikacija dijabetesa bez vrlo teškim KK",
+      "coefficient": 3.6,
+      "price_eur": 2736.65,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K02A",
+      "name_sr_latin": "Zahvati na hipofizi sa KK",
+      "coefficient": 5.93,
+      "price_eur": 4507.87,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K02B",
+      "name_sr_latin": "Zahvati na hipofizi bez KK",
+      "coefficient": 3.75,
+      "price_eur": 2850.68,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K03Z",
+      "name_sr_latin": "Zahvati na nadbubrežnim žlijezdama",
+      "coefficient": 3.83,
+      "price_eur": 2911.49,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K04A",
+      "name_sr_latin": "Veliki zahvati zbog gojaznosti sa KK",
+      "coefficient": 4.06,
+      "price_eur": 3086.33,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K04B",
+      "name_sr_latin": "Veliki zahvati zbog gojaznosti bez KK",
+      "coefficient": 1.87,
+      "price_eur": 1421.54,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K05A",
+      "name_sr_latin": "Zahvati na paratireoidnoj žlijezdi sa vrlo teškim ili teškim KK",
+      "coefficient": 3.41,
+      "price_eur": 2592.21,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K05B",
+      "name_sr_latin": "Zahvati na paratireoidnoj žlijezdi bez vrlo teškim ili teškim KK",
+      "coefficient": 1.34,
+      "price_eur": 1018.64,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K06A",
+      "name_sr_latin": "Zahvati na štitnoj žlijezdi sa vrlo teškim ili teškim KK",
+      "coefficient": 2.98,
+      "price_eur": 2265.34,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K06B",
+      "name_sr_latin": "Zahvati na štitnoj žlijezdi bez vrlo teškim ili teškim KK",
+      "coefficient": 1.7,
+      "price_eur": 1292.31,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K07Z",
+      "name_sr_latin": "Ostali zahvati zbog gojaznosti",
+      "coefficient": 1.7,
+      "price_eur": 1292.31,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K08Z",
+      "name_sr_latin": "Zahvati na tiroglosalnom kanalu (tiroglosalne ciste)",
+      "coefficient": 1.08,
+      "price_eur": 820.99,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K09A",
+      "name_sr_latin": "Ostali operativni zahvati zbog endokrinih, nutricionih ili metabol. uzroka sa vrlo tešk. KK",
+      "coefficient": 6.29,
+      "price_eur": 4781.53,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K09B",
+      "name_sr_latin": "Ostali operativni zahvati zbog endokrinih, nutricionih ili metaboličkih uzroka sa teškim KK ili umjerenim KK",
+      "coefficient": 2.7,
+      "price_eur": 2052.49,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K09C",
+      "name_sr_latin": "Ostali operativni zahvati zbog endokrinih, nutricionih ili metaboličkih uzroka bez KK",
+      "coefficient": 1.9,
+      "price_eur": 1444.34,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K40A",
+      "name_sr_latin": "Endoskopski ili dijagnostički zahvati zbog metaboličkih poremećaja sa vrlo teškim KK",
+      "coefficient": 5.52,
+      "price_eur": 4196.19,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K40B",
+      "name_sr_latin": "Endoskopski ili dijagnostički zahvati zbog metaboličkih poremećaja bez vrlo teškim KK",
+      "coefficient": 2.03,
+      "price_eur": 1543.17,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K40C",
+      "name_sr_latin": "Endoskopski ili dijagnostički zahvati zbog metaboličkih poremećaja, istog dana",
+      "coefficient": 0.37,
+      "price_eur": 281.27,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K60A",
+      "name_sr_latin": "Dijabetes sa vrlo teškim ili teškim KK",
+      "coefficient": 2.23,
+      "price_eur": 1695.2,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K60B",
+      "name_sr_latin": "Dijabetes bez vrlo teškim ili teškim KK",
+      "coefficient": 0.94,
+      "price_eur": 714.57,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K61Z",
+      "name_sr_latin": "Teški poremećaji ishrane",
+      "coefficient": 3.34,
+      "price_eur": 2539.0,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K62A",
+      "name_sr_latin": "Razni metabolički poremećaji sa vrlo teškim ili teškim KK",
+      "coefficient": 1.79,
+      "price_eur": 1360.72,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K62B",
+      "name_sr_latin": "Razni metabolički poremećaji bez vrlo teškim ili teškim KK",
+      "coefficient": 0.62,
+      "price_eur": 471.31,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K63A",
+      "name_sr_latin": "Urođeni poremećaji metabolizma sa KK",
+      "coefficient": 1.38,
+      "price_eur": 1049.05,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K63B",
+      "name_sr_latin": "Urođeni poremećaji metabolizma bez KK",
+      "coefficient": 0.52,
+      "price_eur": 395.29,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K64A",
+      "name_sr_latin": "Endokrinološki poremećaji sa vrlo teškim ili teškim KK",
+      "coefficient": 2.35,
+      "price_eur": 1786.42,
+      "section": "MDC 10"
+    },
+    {
+      "code": "K64B",
+      "name_sr_latin": "Endokrinološki poremećaji bez vrlo teškim ili teškim KK",
+      "coefficient": 0.86,
+      "price_eur": 653.75,
+      "section": "MDC 10"
+    },
+    {
+      "code": "L02A",
+      "name_sr_latin": "Operativno postavljanje peritonealnog katetera zbog dijalize sa vrlo teškim ili teškim KK",
+      "coefficient": 4.15,
+      "price_eur": 3154.75,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L02B",
+      "name_sr_latin": "Operativno postavljanje peritonealnog katetera zbog dijalize bez vrlo teškim ili teškim KK",
+      "coefficient": 1.28,
+      "price_eur": 973.03,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L03A",
+      "name_sr_latin": "Veliki zahvati zbog neoplazme (tumora) bubrega, uretera i mokr. bešike sa vrlo teškim KK",
+      "coefficient": 7.67,
+      "price_eur": 5830.58,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L03B",
+      "name_sr_latin": "Veliki zahvati zbog neoplazme (tumora) bubrega, uretera i mokr. bešike bez vrlo teškim KK",
+      "coefficient": 4.99,
+      "price_eur": 3793.3,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L03C",
+      "name_sr_latin": "Veliki zahvati zbog neoplazme (tumora) bubrega, uretera i mokraćne bešike bez vrlo teškim ili teškim KK",
+      "coefficient": 3.37,
+      "price_eur": 2561.81,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L04A",
+      "name_sr_latin": "Veliki zahvati na bubregu, ureteru i mokraćnoj bešici, osim zbog neoplazme (tumora), sa vrlo teškim KK",
+      "coefficient": 5.78,
+      "price_eur": 4393.84,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L04B",
+      "name_sr_latin": "Veliki postupci na bubregu, ureteru i mokraćnoj bešici, osim zbog neoplazme (tumora), sa teškim KK",
+      "coefficient": 3.05,
+      "price_eur": 2318.55,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L04C",
+      "name_sr_latin": "Veliki postupci na bubregu, ureteru i mokraćnoj bešici, osim zbog neoplazme (tumora), bez vrlo teškim ili teškim KK",
+      "coefficient": 1.84,
+      "price_eur": 1398.73,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L05A",
+      "name_sr_latin": "Transuretralna prostatektomija sa vrlo teškim ili teškim KK",
+      "coefficient": 3.66,
+      "price_eur": 2782.26,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L05B",
+      "name_sr_latin": "Transuretralna prostatektomija bez vrlo teškim ili teškim KK",
+      "coefficient": 1.34,
+      "price_eur": 1018.64,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L06A",
+      "name_sr_latin": "Manji zahvati na mokraćnoj bešici sa vrlo teškim ili teškim KK",
+      "coefficient": 3.06,
+      "price_eur": 2326.15,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L06B",
+      "name_sr_latin": "Manji zahvati na mokraćnoj bešici bez vrlo teškim ili teškim KK",
+      "coefficient": 1.03,
+      "price_eur": 782.99,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L07A",
+      "name_sr_latin": "Transuretralni zahvati, osim prostatektomije, sa KK",
+      "coefficient": 1.8,
+      "price_eur": 1368.32,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L07B",
+      "name_sr_latin": "Transuretralni zahvati, osim prostatektomije, bez KK",
+      "coefficient": 0.8,
+      "price_eur": 608.14,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L08A",
+      "name_sr_latin": "Zahvati na uretri sa KK",
+      "coefficient": 1.78,
+      "price_eur": 1353.12,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L08B",
+      "name_sr_latin": "Zahvati na uretri bez KK",
+      "coefficient": 0.77,
+      "price_eur": 585.34,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L09A",
+      "name_sr_latin": "Ostali zahvati zbog poremećaja bubrega i urinarnog sistema sa vrlo teškim KK",
+      "coefficient": 6.47,
+      "price_eur": 4918.36,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L09B",
+      "name_sr_latin": "Ostali zahvati zbog poremećaja bubrega i urinarnog sistema sa teškim KK",
+      "coefficient": 2.19,
+      "price_eur": 1664.79,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L09C",
+      "name_sr_latin": "Ostali zahvati zbog poremećaja bubrega i urinarnog sistema bez vrlo teškim ili teškim KK",
+      "coefficient": 1.11,
+      "price_eur": 843.8,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L40Z",
+      "name_sr_latin": "Ureteroskopija",
+      "coefficient": 0.89,
+      "price_eur": 676.56,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L41Z",
+      "name_sr_latin": "Cistouretroskopija, isti dan",
+      "coefficient": 0.27,
+      "price_eur": 205.25,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L42Z",
+      "name_sr_latin": "ESWL (litotripsija) zbog urinarnih konkremenata",
+      "coefficient": 0.6,
+      "price_eur": 456.11,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L60A",
+      "name_sr_latin": "Insuficijencija bubrega sa vrlo teškim KK",
+      "coefficient": 3.77,
+      "price_eur": 2865.88,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L60B",
+      "name_sr_latin": "Insuficijencija bubrega sa teškim KK",
+      "coefficient": 1.67,
+      "price_eur": 1269.5,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L60C",
+      "name_sr_latin": "Insuficijencija bubrega bez vrlo teškim ili teškim KK",
+      "coefficient": 0.75,
+      "price_eur": 570.14,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L62A",
+      "name_sr_latin": "Neoplazma (tumor) bubrega i urinarnog sistema sa vrlo teškim ili teškim KK",
+      "coefficient": 1.89,
+      "price_eur": 1436.74,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L62B",
+      "name_sr_latin": "Neoplazma (tumor) bubrega i urinarnog sistema bez vrlo teškim ili teškim KK",
+      "coefficient": 0.7,
+      "price_eur": 532.13,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L63A",
+      "name_sr_latin": "Infekcija bubrega i urinarnog sistema sa vrlo teškim ili teškim KK",
+      "coefficient": 2.01,
+      "price_eur": 1527.96,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L63B",
+      "name_sr_latin": "Infekcija bubrega i urinarnog sistema bez vrlo teškim ili teškim KK",
+      "coefficient": 0.72,
+      "price_eur": 547.33,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L64Z",
+      "name_sr_latin": "Urinarni konkremenati i opstrukcija",
+      "coefficient": 0.5,
+      "price_eur": 380.09,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L65A",
+      "name_sr_latin": "Znakovi i simptomi povezani sa bubregom i urin. sistemom sa vrlo teškim ili teškim KK",
+      "coefficient": 1.45,
+      "price_eur": 1102.26,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L65B",
+      "name_sr_latin": "Znakovi i simptomi povezani sa bubregom i urin. sistemom bez vrlo teškim ili teškim KK",
+      "coefficient": 0.52,
+      "price_eur": 395.29,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L66Z",
+      "name_sr_latin": "Striktura uretre",
+      "coefficient": 0.64,
+      "price_eur": 486.52,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L67A",
+      "name_sr_latin": "Ostale bolesti bubrega i urinarnog sistema sa vrlo teškim ili teškim KK",
+      "coefficient": 2.15,
+      "price_eur": 1634.39,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L67B",
+      "name_sr_latin": "Ostali poremećaji bubrega i urinarnog sistema bez vrlo teškim ili teškim KK",
+      "coefficient": 0.46,
+      "price_eur": 349.68,
+      "section": "MDC 11"
+    },
+    {
+      "code": "L68Z",
+      "name_sr_latin": "Peritonealna dijaliza",
+      "coefficient": 0.31,
+      "price_eur": 235.66,
+      "section": "MDC 11"
+    },
+    {
+      "code": "M01A",
+      "name_sr_latin": "Veliki zahvati na muškoj karlici sa vrlo teškim ili teškim KK",
+      "coefficient": 4.35,
+      "price_eur": 3306.78,
+      "section": "MDC 12"
+    },
+    {
+      "code": "M01B",
+      "name_sr_latin": "Veliki zahvati na muškoj karlici bez vrlo teškim ili teškim KK",
+      "coefficient": 3.1,
+      "price_eur": 2356.59,
+      "section": "MDC 12"
+    },
+    {
+      "code": "M02A",
+      "name_sr_latin": "Transuretralna prostatektomija sa vrlo teškim ili teškim KK",
+      "coefficient": 2.59,
+      "price_eur": 1968.87,
+      "section": "MDC 12"
+    },
+    {
+      "code": "M02B",
+      "name_sr_latin": "Transuretralna prostatektomija bez vrlo teškim ili teškim KK",
+      "coefficient": 1.33,
+      "price_eur": 1011.04,
+      "section": "MDC 12"
+    },
+    {
+      "code": "M03Z",
+      "name_sr_latin": "Zahvati na penisu",
+      "coefficient": 0.89,
+      "price_eur": 676.56,
+      "section": "MDC 12"
+    },
+    {
+      "code": "M04Z",
+      "name_sr_latin": "Zahvati na testisima",
+      "coefficient": 0.77,
+      "price_eur": 585.34,
+      "section": "MDC 12"
+    },
+    {
+      "code": "M05Z",
+      "name_sr_latin": "Obrezivanje (cirkumcizija)",
+      "coefficient": 0.51,
+      "price_eur": 387.69,
+      "section": "MDC 12"
+    },
+    {
+      "code": "M06A",
+      "name_sr_latin": "Ostali operativni zahvati na muškom reproduktivnom sistemu sa KK",
+      "coefficient": 2.43,
+      "price_eur": 1847.24,
+      "section": "MDC 12"
+    },
+    {
+      "code": "M06B",
+      "name_sr_latin": "Ostali operativni zahvati na muškom reproduktivnom sistemu bez KK",
+      "coefficient": 1.54,
+      "price_eur": 1170.69,
+      "section": "MDC 12"
+    },
+    {
+      "code": "M40Z",
+      "name_sr_latin": "Cistouretroskopija, istog dana",
+      "coefficient": 0.27,
+      "price_eur": 205.25,
+      "section": "MDC 12"
+    },
+    {
+      "code": "M60A",
+      "name_sr_latin": "Maligna bolest muškog reproduktivnog sistema sa vrlo teškim ili teškim KK",
+      "coefficient": 1.7,
+      "price_eur": 1292.31,
+      "section": "MDC 12"
+    },
+    {
+      "code": "M60B",
+      "name_sr_latin": "Maligna bolest muškog reproduktivnog sistema bez vrlo teškim ili teškim KK",
+      "coefficient": 0.5,
+      "price_eur": 380.09,
+      "section": "MDC 12"
+    },
+    {
+      "code": "M61Z",
+      "name_sr_latin": "Benigna hipertrofija prostate",
+      "coefficient": 0.59,
+      "price_eur": 448.51,
+      "section": "MDC 12"
+    },
+    {
+      "code": "M62Z",
+      "name_sr_latin": "Zapaljenje muškog reproduktivnog sistema",
+      "coefficient": 0.7,
+      "price_eur": 532.13,
+      "section": "MDC 12"
+    },
+    {
+      "code": "M63Z",
+      "name_sr_latin": "Sterilizacija muškarca",
+      "coefficient": 0.36,
+      "price_eur": 273.66,
+      "section": "MDC 12"
+    },
+    {
+      "code": "M64Z",
+      "name_sr_latin": "Ostale bolesti muškog reproduktivnog sistema",
+      "coefficient": 0.38,
+      "price_eur": 288.87,
+      "section": "MDC 12"
+    },
+    {
+      "code": "N01Z",
+      "name_sr_latin": "Evisceracija karlice i radikalna vulvektomija",
+      "coefficient": 3.77,
+      "price_eur": 2865.88,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N04A",
+      "name_sr_latin": "Histerektomija zbog nemalignih uzroka sa vrlo teškim ili teškim KK",
+      "coefficient": 2.74,
+      "price_eur": 2082.89,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N04B",
+      "name_sr_latin": "Histerektomija zbog nemalignih uzroka bez vrlo teškim ili teškim KK",
+      "coefficient": 1.91,
+      "price_eur": 1451.94,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N05A",
+      "name_sr_latin": "Ovarijektomija i složeni zahvati na jajovodu zbog nemalignih uzroka sa vrlo teškim ili teškim KK",
+      "coefficient": 2.89,
+      "price_eur": 2196.92,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N05B",
+      "name_sr_latin": "Ovarijektomija i složeni zahvati na jajovodu zbog nemalignih uzroka bez vrlo teškim ili teškim KK",
+      "coefficient": 1.63,
+      "price_eur": 1239.09,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N06A",
+      "name_sr_latin": "Rekonstruktivni zahvati na ženskom reproduktivnom sistemu sa vrlo tešk. ili teškim KK",
+      "coefficient": 2.06,
+      "price_eur": 1565.97,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N06B",
+      "name_sr_latin": "Rekonstruktivni zahvati na ženskom reproduktivnom sistemu bez vrlo teš. ili teškim KK",
+      "coefficient": 1.43,
+      "price_eur": 1087.06,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N07Z",
+      "name_sr_latin": "Ostali zahvati na materici i adneksima zbog nemalignih uzroka",
+      "coefficient": 0.85,
+      "price_eur": 646.15,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N08Z",
+      "name_sr_latin": "Endoskopski i laparoskopski zahvati na ženskom reproduktivnom sistemu",
+      "coefficient": 0.75,
+      "price_eur": 570.14,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N09Z",
+      "name_sr_latin": "Konizacija, zahvati na grliću materice, vagini i vulvi",
+      "coefficient": 0.5,
+      "price_eur": 380.09,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N10Z",
+      "name_sr_latin": "Dijagnostička kiretaža ili dijagnostička histeroskopija",
+      "coefficient": 0.45,
+      "price_eur": 342.08,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N11Z",
+      "name_sr_latin": "Ostali operativni zahvati na ženskom reproduktivnom sistemu",
+      "coefficient": 0.96,
+      "price_eur": 729.77,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N12A",
+      "name_sr_latin": "Zahvati na materici i adneksima zbog malignih uzroka sa vrlo teškim KK",
+      "coefficient": 4.78,
+      "price_eur": 3633.66,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N12B",
+      "name_sr_latin": "Zahvati na materici i adneksima zbog malignih uzroka bez vrlo teškim KK",
+      "coefficient": 2.54,
+      "price_eur": 1930.86,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N60A",
+      "name_sr_latin": "Maligna bolest ženskog reproduktivnog sistema sa vrlo teškim KK",
+      "coefficient": 2.53,
+      "price_eur": 1923.26,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N60B",
+      "name_sr_latin": "Maligna bolest ženskog reproduktivnog sistema bez vrlo teškim KK",
+      "coefficient": 0.97,
+      "price_eur": 737.37,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N61Z",
+      "name_sr_latin": "Infekcije ženskog reproduktivnog sistema",
+      "coefficient": 0.61,
+      "price_eur": 463.71,
+      "section": "MDC 13"
+    },
+    {
+      "code": "N62Z",
+      "name_sr_latin": "Menstrualni i drugi poremećaji ženskog reproduktivnog sistema",
+      "coefficient": 0.33,
+      "price_eur": 250.86,
+      "section": "MDC 13"
+    },
+    {
+      "code": "O01A",
+      "name_sr_latin": "Porođaj carskim rezom sa vrlo teškim ili teškim KK",
+      "coefficient": 2.79,
+      "price_eur": 2120.9,
+      "section": "MDC 14"
+    },
+    {
+      "code": "O01B",
+      "name_sr_latin": "Porođaj carskim rezom bez vrlo teškim ili teškim KK",
+      "coefficient": 1.98,
+      "price_eur": 1505.16,
+      "section": "MDC 14"
+    },
+    {
+      "code": "O02A",
+      "name_sr_latin": "Vaginalni porođaj sa operativnim zahvatima sa vrlo teškim ili teškim KK",
+      "coefficient": 2.24,
+      "price_eur": 1702.8,
+      "section": "MDC 14"
+    },
+    {
+      "code": "O02B",
+      "name_sr_latin": "Vaginalni porođaj sa operativnim zahvatima bez vrlo teškim ili teškim KK",
+      "coefficient": 1.51,
+      "price_eur": 1147.87,
+      "section": "MDC 14"
+    },
+    {
+      "code": "O03A",
+      "name_sr_latin": "Ektopična trudnoća sa KK",
+      "coefficient": 1.67,
+      "price_eur": 1269.5,
+      "section": "MDC 14"
+    },
+    {
+      "code": "O03B",
+      "name_sr_latin": "Ektopična trudnoća bez KK",
+      "coefficient": 1.14,
+      "price_eur": 866.61,
+      "section": "MDC 14"
+    },
+    {
+      "code": "O04A",
+      "name_sr_latin": "Period nakon porođaja i nakon abortusa sa operat. zahvatom sa vrlo teškim ili teškim KK",
+      "coefficient": 2.54,
+      "price_eur": 1930.86,
+      "section": "MDC 14"
+    },
+    {
+      "code": "O04B",
+      "name_sr_latin": "Period nakon porođaja i nakon abortusa sa operat. zahvatom bez vrlo teškim ili teškim KK",
+      "coefficient": 0.8,
+      "price_eur": 608.14,
+      "section": "MDC 14"
+    },
+    {
+      "code": "O05Z",
+      "name_sr_latin": "Abortus sa operativnim zahvatom",
+      "coefficient": 0.42,
+      "price_eur": 319.28,
+      "section": "MDC 14"
+    },
+    {
+      "code": "O60Z",
+      "name_sr_latin": "Vaginalni porođaj",
+      "coefficient": 1.12,
+      "price_eur": 851.4,
+      "section": "MDC 14"
+    },
+    {
+      "code": "O61Z",
+      "name_sr_latin": "Period nakon porođaja i nakon abortusa bez operativnog zahvata",
+      "coefficient": 0.54,
+      "price_eur": 410.5,
+      "section": "MDC 14"
+    },
+    {
+      "code": "O63Z",
+      "name_sr_latin": "Abortus bez operativnog zahvata",
+      "coefficient": 0.34,
+      "price_eur": 258.46,
+      "section": "MDC 14"
+    },
+    {
+      "code": "O65Z",
+      "name_sr_latin": "Lažni trudovi",
+      "coefficient": 0.37,
+      "price_eur": 281.27,
+      "section": "MDC 14"
+    },
+    {
+      "code": "O66Z",
+      "name_sr_latin": "Prenatalni ili drugi akušerski prijem",
+      "coefficient": 0.33,
+      "price_eur": 250.86,
+      "section": "MDC 14"
+    },
+    {
+      "code": "P01Z",
+      "name_sr_latin": "Novorođenče, smrtni ishod ili premješteno u drugu ustanovu boravak <5 dana, sa značajnim operativnim zahvatom",
+      "coefficient": 1.29,
+      "price_eur": 980.63,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P02Z",
+      "name_sr_latin": "Kardiotorakalni zahvati/zahvati na velikim sudovima kod novorođenčeta",
+      "coefficient": 21.67,
+      "price_eur": 16473.1,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P03Z",
+      "name_sr_latin": "Novorođenče, masa pri prijemu 1000-1499 g, sa značajnim operativnim zahvatom",
+      "coefficient": 17.17,
+      "price_eur": 13052.29,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P04Z",
+      "name_sr_latin": "Novorođenče, masa pri prijemu 1500-1999 g, sa značajnim operativnim zahvatom",
+      "coefficient": 12.35,
+      "price_eur": 9388.22,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P05Z",
+      "name_sr_latin": "Novorođenče, masa pri prijemu 2000-2499 g, sa značajnim operativnim zahvatom",
+      "coefficient": 11.9,
+      "price_eur": 9046.14,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P06A",
+      "name_sr_latin": "Novorođenče, masa pri prijemu > 2499 g, sa značajnim operativnim zahvatom i sa višestrukim velikim poremećajima",
+      "coefficient": 16.15,
+      "price_eur": 12276.91,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P06B",
+      "name_sr_latin": "Novorođenče, masa pri prijemu > 2499 g, sa značajnim operativnim zahvatom, bez višestrukih velikih poremećaja",
+      "coefficient": 5.7,
+      "price_eur": 4333.03,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P60A",
+      "name_sr_latin": "Novorođenče, smrtni ishod ili premješteno u drugu ustanovu < 5 dana od prijema, bez značajnog operativnog zahvata",
+      "coefficient": 0.38,
+      "price_eur": 288.87,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P60B",
+      "name_sr_latin": "Novorođenče, smrtni ishod ili premješteno u drugu ustanovu < 5 dana od prijema, bez značajnog operativnog zahvata, nije novorođeno",
+      "coefficient": 0.67,
+      "price_eur": 509.32,
+      "section": "MDC 15",
+      "note": "VERIFY: description tail 'nije novorođeno' unusual; row text partially obscured by header"
+    },
+    {
+      "code": "P61Z",
+      "name_sr_latin": "Novorođenče, masa pri prijemu < 750 g",
+      "coefficient": 39.14,
+      "price_eur": 29753.45,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P62Z",
+      "name_sr_latin": "Novorođenče, masa pri prijemu 750-999 g",
+      "coefficient": 29.33,
+      "price_eur": 22296.08,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P63Z",
+      "name_sr_latin": "Novorođenče, masa pri prijemu 1000-1249 g, bez značajnog operativnog zahvata",
+      "coefficient": 7.95,
+      "price_eur": 6043.49,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P64Z",
+      "name_sr_latin": "Novorođenče, masa pri prijemu 1250-1499 g, bez značajnog operativnog zahvata",
+      "coefficient": 7.28,
+      "price_eur": 5534.11,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P65A",
+      "name_sr_latin": "Novorođenče, masa pri prijemu 1500-1999 g, sa višestrukim velikim poremećajima",
+      "coefficient": 7.03,
+      "price_eur": 5344.07,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P65B",
+      "name_sr_latin": "Novorođenče, masa pri prijemu 1500-1999 g, sa velikim poremećajima",
+      "coefficient": 5.41,
+      "price_eur": 4112.57,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P65C",
+      "name_sr_latin": "Novorođenče, masa pri prijemu 1500-1999 g, sa ostalim poremećajima",
+      "coefficient": 4.35,
+      "price_eur": 3306.78,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P65D",
+      "name_sr_latin": "Novorođenče, masa pri prijemu 1500-1999 g, bez poremećaja",
+      "coefficient": 3.4,
+      "price_eur": 2584.61,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P66A",
+      "name_sr_latin": "Novorođenče, masa pri prijemu 2000-2499 g, sa višestrukim velikim poremećajima",
+      "coefficient": 4.64,
+      "price_eur": 3527.24,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P66B",
+      "name_sr_latin": "Novorođenče, masa pri prijemu 2000-2499 g, sa velikim poremećajima",
+      "coefficient": 3.24,
+      "price_eur": 2462.98,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P66C",
+      "name_sr_latin": "Novorođenče, masa pri prijemu 2000-2499 g, sa ostalim poremećajima",
+      "coefficient": 2.54,
+      "price_eur": 1930.86,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P66D",
+      "name_sr_latin": "Novorođenče, masa pri prijemu 2000-2499 g, bez poremećaja",
+      "coefficient": 0.92,
+      "price_eur": 699.37,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P67A",
+      "name_sr_latin": "Novorođenče, masa pri prijemu > 2499 g, bez značajnog operativnog postupka, sa višestrukim velikim poremećajima",
+      "coefficient": 4.15,
+      "price_eur": 3154.75,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P67B",
+      "name_sr_latin": "Novorođenče, masa pri prij. > 2499 g bez znač. operat. zahvata, sa velikim poremećajima",
+      "coefficient": 1.97,
+      "price_eur": 1497.55,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P67C",
+      "name_sr_latin": "Novorođenče, masa pri prijemu > 2499 g bez značajnog operativnog zahvata, sa ostalim poremećajima",
+      "coefficient": 1.18,
+      "price_eur": 897.01,
+      "section": "MDC 15"
+    },
+    {
+      "code": "P67D",
+      "name_sr_latin": "Novorođenče, masa pri prijemu > 2499 g, bez značajnog operativnog zahvata, bez poremećaja",
+      "coefficient": 0.55,
+      "price_eur": 418.1,
+      "section": "MDC 15"
+    },
+    {
+      "code": "Q01Z",
+      "name_sr_latin": "Splenektomija",
+      "coefficient": 3.98,
+      "price_eur": 3025.52,
+      "section": "MDC 16"
+    },
+    {
+      "code": "Q02A",
+      "name_sr_latin": "Ostali operativni zahvati zbog bolesti krvi i krvotvornih organa sa vrlo tešk. ili teškim KK",
+      "coefficient": 5.49,
+      "price_eur": 4173.39,
+      "section": "MDC 16"
+    },
+    {
+      "code": "Q02B",
+      "name_sr_latin": "Ostali operativni zahvati zbog bolesti krvi i krvotvornih organa bez vrlo tešk. ili teškim KK",
+      "coefficient": 1.09,
+      "price_eur": 828.6,
+      "section": "MDC 16",
+      "note": "VERIFY: row visually reads similar to Q02A 'sa'; inferred 'bez' from coefficient pattern and A/B convention"
+    },
+    {
+      "code": "Q60A",
+      "name_sr_latin": "Retikuloendoteleni i poremećaji imuniteta sa vrlo teškim ili teškim KK",
+      "coefficient": 2.5,
+      "price_eur": 1900.45,
+      "section": "MDC 16"
+    },
+    {
+      "code": "Q60B",
+      "name_sr_latin": "Retikuloendoteleni i poremećaji imuniteta sa malignom bolešću, bez vrlo teškim ili teškim KK",
+      "coefficient": 1.01,
+      "price_eur": 767.78,
+      "section": "MDC 16"
+    },
+    {
+      "code": "Q60C",
+      "name_sr_latin": "Retikuloendoteleni i poremećaji imuniteta, bez maligne bolesti, bez vrlo teškim ili teškim KK",
+      "coefficient": 0.33,
+      "price_eur": 250.86,
+      "section": "MDC 16"
+    },
+    {
+      "code": "Q61A",
+      "name_sr_latin": "Poremećaji eritrocita sa vrlo teškim ili teškim KK",
+      "coefficient": 1.46,
+      "price_eur": 1109.86,
+      "section": "MDC 16"
+    },
+    {
+      "code": "Q61B",
+      "name_sr_latin": "Poremećaji eritrocita bez vrlo teškim ili teškim KK",
+      "coefficient": 0.37,
+      "price_eur": 281.27,
+      "section": "MDC 16"
+    },
+    {
+      "code": "Q62Z",
+      "name_sr_latin": "Poremećaji koagulacije krvi",
+      "coefficient": 0.66,
+      "price_eur": 501.72,
+      "section": "MDC 16"
+    },
+    {
+      "code": "R01A",
+      "name_sr_latin": "Limfom i leukemija sa velikim operativnim zahvatima sa vrlo teškim ili teškim KK",
+      "coefficient": 9.96,
+      "price_eur": 7571.39,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R01B",
+      "name_sr_latin": "Limfom i leukemija sa velikim operativnim zahvatima, bez vrlo teškim ili teškim KK",
+      "coefficient": 2.73,
+      "price_eur": 2075.29,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R02A",
+      "name_sr_latin": "Ostali neoplastični poremećaji sa velikim operativnim zahvatima sa vrlo teškim KK",
+      "coefficient": 7.35,
+      "price_eur": 5587.32,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R02B",
+      "name_sr_latin": "Ostali neoplastični poremećaji sa velikim operativnim zahvatima sa teškim ili umjerenim KK",
+      "coefficient": 3.73,
+      "price_eur": 2835.47,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R02C",
+      "name_sr_latin": "Ostali neoplastični poremećaji sa velikim operativnim zahvatima, bez KK",
+      "coefficient": 2.43,
+      "price_eur": 1847.24,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R03A",
+      "name_sr_latin": "Limfom i leukemija sa ostalim operativnim zahvatima sa vrlo teškim ili teškim KK",
+      "coefficient": 7.26,
+      "price_eur": 5518.91,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R03B",
+      "name_sr_latin": "Limfom i leukemija sa ostalim operativnim zahvatima, bez vrlo teškim ili teškim KK",
+      "coefficient": 1.35,
+      "price_eur": 1026.24,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R04A",
+      "name_sr_latin": "Ostali neoplastični poremećaji sa ostalim operativnim zahvatima, sa KK",
+      "coefficient": 2.52,
+      "price_eur": 1915.65,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R04B",
+      "name_sr_latin": "Ostali neoplastični poremećaji sa ostalim operativnim zahvatima, bez KK",
+      "coefficient": 1.25,
+      "price_eur": 950.23,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R60A",
+      "name_sr_latin": "Akutna leukemija sa vrlo teškim KK",
+      "coefficient": 7.1,
+      "price_eur": 5397.28,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R60B",
+      "name_sr_latin": "Akutna leukemija bez vrlo teškim KK",
+      "coefficient": 1.07,
+      "price_eur": 813.39,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R61A",
+      "name_sr_latin": "Limfom i ne-akutna leukemija sa vrlo teškim KK",
+      "coefficient": 4.86,
+      "price_eur": 3694.47,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R61B",
+      "name_sr_latin": "Limfom i ne-akutna leukemija sa teškim KK",
+      "coefficient": 1.83,
+      "price_eur": 1391.13,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R61C",
+      "name_sr_latin": "Limfom i ne-akutna leukemija, isti dan",
+      "coefficient": 0.25,
+      "price_eur": 190.05,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R62A",
+      "name_sr_latin": "Ostali neoplastični poremećaji sa KK",
+      "coefficient": 1.61,
+      "price_eur": 1223.89,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R62B",
+      "name_sr_latin": "Ostali neoplastični poremećaji bez KK",
+      "coefficient": 0.82,
+      "price_eur": 623.35,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R63Z",
+      "name_sr_latin": "Hemoterapija",
+      "coefficient": 0.33,
+      "price_eur": 250.86,
+      "section": "MDC 17"
+    },
+    {
+      "code": "R64Z",
+      "name_sr_latin": "Radioterapija",
+      "coefficient": 0.48,
+      "price_eur": 364.89,
+      "section": "MDC 17"
+    },
+    {
+      "code": "S60Z",
+      "name_sr_latin": "HIV, isti dan",
+      "coefficient": 0.36,
+      "price_eur": 273.66,
+      "section": "MDC 18",
+      "note": "VERIFY: section header on PDF reads 'MDC Infektivne i parazitarne bolesti' without number; assumed 18 by sequence"
+    },
+    {
+      "code": "S65A",
+      "name_sr_latin": "Bolesti povezane sa HIV-om sa vrlo teškim KK",
+      "coefficient": 9.51,
+      "price_eur": 7229.31,
+      "section": "MDC 18"
+    },
+    {
+      "code": "S65B",
+      "name_sr_latin": "Bolesti povezane sa HIV-om sa teškim KK",
+      "coefficient": 3.92,
+      "price_eur": 2979.91,
+      "section": "MDC 18"
+    },
+    {
+      "code": "S65C",
+      "name_sr_latin": "Bolesti povezane sa HIV-om bez vrlo teškim ili teškim KK",
+      "coefficient": 2.75,
+      "price_eur": 2090.5,
+      "section": "MDC 18"
+    },
+    {
+      "code": "T01A",
+      "name_sr_latin": "Operativni zahvati zbog infektivnih i parazitarnih bolesti sa vrlo teškim KK",
+      "coefficient": 8.7,
+      "price_eur": 6613.57,
+      "section": "MDC 18"
+    },
+    {
+      "code": "T01B",
+      "name_sr_latin": "Operativni zahvati zbog infektivnih i parazitarnih bolesti sa teškim ili umjerenim KK",
+      "coefficient": 3.8,
+      "price_eur": 2888.68,
+      "section": "MDC 18"
+    },
+    {
+      "code": "T01C",
+      "name_sr_latin": "Operativni zahvati zbog infektivnih ili parazitarnih bolesti bez KK",
+      "coefficient": 2.11,
+      "price_eur": 1603.98,
+      "section": "MDC 18"
+    },
+    {
+      "code": "T40Z",
+      "name_sr_latin": "Infektivne i parazitarne bolesti sa ventilacijskom podrškom",
+      "coefficient": 6.57,
+      "price_eur": 4994.38,
+      "section": "MDC 18"
+    },
+    {
+      "code": "T60A",
+      "name_sr_latin": "Septikemija sa vrlo teškim KK",
+      "coefficient": 3.23,
+      "price_eur": 2455.38,
+      "section": "MDC 18"
+    },
+    {
+      "code": "T60B",
+      "name_sr_latin": "Septikemija bez vrlo teškim KK",
+      "coefficient": 1.62,
+      "price_eur": 1231.49,
+      "section": "MDC 18"
+    },
+    {
+      "code": "T61A",
+      "name_sr_latin": "Postoperativne i posttraumatske infekcije sa vrlo teškim ili teškim KK",
+      "coefficient": 2.0,
+      "price_eur": 1520.36,
+      "section": "MDC 18"
+    },
+    {
+      "code": "T61B",
+      "name_sr_latin": "Postoperativne i posttraumatske infekcije bez vrlo teškim ili teškim KK",
+      "coefficient": 1.0,
+      "price_eur": 760.18,
+      "section": "MDC 18"
+    },
+    {
+      "code": "T62A",
+      "name_sr_latin": "Febrilno stanje nejasnog porijekla sa KK",
+      "coefficient": 1.42,
+      "price_eur": 1079.46,
+      "section": "MDC 18"
+    },
+    {
+      "code": "T62B",
+      "name_sr_latin": "Febrilno stanje nejasnog porijekla bez KK",
+      "coefficient": 0.57,
+      "price_eur": 433.3,
+      "section": "MDC 18"
+    },
+    {
+      "code": "T63Z",
+      "name_sr_latin": "Virusna bolest",
+      "coefficient": 0.55,
+      "price_eur": 418.1,
+      "section": "MDC 18"
+    },
+    {
+      "code": "T64A",
+      "name_sr_latin": "Druge infektivne i parazitarne bolesti sa vrlo teškim KK",
+      "coefficient": 4.49,
+      "price_eur": 3413.21,
+      "section": "MDC 18"
+    },
+    {
+      "code": "T64B",
+      "name_sr_latin": "Druge infektivne i parazitarne bolesti sa teškim ili umjerenim KK",
+      "coefficient": 1.8,
+      "price_eur": 1368.32,
+      "section": "MDC 18"
+    },
+    {
+      "code": "T64C",
+      "name_sr_latin": "Druge infektivne i parazitarne bolesti bez KK",
+      "coefficient": 0.8,
+      "price_eur": 608.14,
+      "section": "MDC 18"
+    },
+    {
+      "code": "U40Z",
+      "name_sr_latin": "Liječenje mentalnog zdravlja, isti dan, sa elektrokonvulzivnom terapijom",
+      "coefficient": 0.2,
+      "price_eur": 152.04,
+      "section": "MDC 19"
+    },
+    {
+      "code": "U60Z",
+      "name_sr_latin": "Liječenje mentalnog zdravlja, isti dan, bez elektrokonvulzivne terapije",
+      "coefficient": 0.18,
+      "price_eur": 136.83,
+      "section": "MDC 19"
+    },
+    {
+      "code": "U61Z",
+      "name_sr_latin": "Šizofreni poremećaji",
+      "coefficient": 3.94,
+      "price_eur": 2995.11,
+      "section": "MDC 19"
+    },
+    {
+      "code": "U62A",
+      "name_sr_latin": "Paranoja i akutni psihotični poremećaji sa vrlo teškim KK ili sa legalnim statusom mentalnog zdravlja",
+      "coefficient": 4.2,
+      "price_eur": 3192.76,
+      "section": "MDC 19"
+    },
+    {
+      "code": "U62B",
+      "name_sr_latin": "Paranoja i akutni psihotični poremećaji bez vrlo teškim ili teškim KK bez legalnog statusa mentalnog zdravlja",
+      "coefficient": 1.71,
+      "price_eur": 1299.91,
+      "section": "MDC 19"
+    },
+    {
+      "code": "U63Z",
+      "name_sr_latin": "Veliki afektivni poremećaji",
+      "coefficient": 3.3,
+      "price_eur": 2508.59,
+      "section": "MDC 19"
+    },
+    {
+      "code": "U64Z",
+      "name_sr_latin": "Ostali afektivni i somatoformni poremećaji",
+      "coefficient": 1.48,
+      "price_eur": 1125.07,
+      "section": "MDC 19"
+    },
+    {
+      "code": "U65Z",
+      "name_sr_latin": "Anksiozni poremećaji",
+      "coefficient": 1.24,
+      "price_eur": 942.62,
+      "section": "MDC 19"
+    },
+    {
+      "code": "U66Z",
+      "name_sr_latin": "Poremećaji hranjenja i opsesivno-kompulzivni poremećaji",
+      "coefficient": 5.36,
+      "price_eur": 4074.56,
+      "section": "MDC 19"
+    },
+    {
+      "code": "U67Z",
+      "name_sr_latin": "Poremećaji ličnosti i akutne reakcije",
+      "coefficient": 1.56,
+      "price_eur": 1185.88,
+      "section": "MDC 19"
+    },
+    {
+      "code": "U68Z",
+      "name_sr_latin": "Mentalni poremećaji u dječijem uzrastu",
+      "coefficient": 4.19,
+      "price_eur": 3185.15,
+      "section": "MDC 19"
+    },
+    {
+      "code": "V60Z",
+      "name_sr_latin": "Intoksikacija alkoholom i apstinencija",
+      "coefficient": 0.47,
+      "price_eur": 357.28,
+      "section": "MDC 20"
+    },
+    {
+      "code": "V61Z",
+      "name_sr_latin": "Intoksikacija lijekovima (drogama) i apstinencija",
+      "coefficient": 1.4,
+      "price_eur": 1064.25,
+      "section": "MDC 20"
+    },
+    {
+      "code": "V62A",
+      "name_sr_latin": "Poremećaji i zavisnost zbog upotrebe alkohola",
+      "coefficient": 1.17,
+      "price_eur": 889.41,
+      "section": "MDC 20"
+    },
+    {
+      "code": "V62B",
+      "name_sr_latin": "Poremećaji i zavisnost zbog upotrebe alkohola, isti dan",
+      "coefficient": 0.47,
+      "price_eur": 357.28,
+      "section": "MDC 20"
+    },
+    {
+      "code": "V63Z",
+      "name_sr_latin": "Poremećaji i zavisnost zbog upotrebe opijata",
+      "coefficient": 0.74,
+      "price_eur": 562.53,
+      "section": "MDC 20"
+    },
+    {
+      "code": "V64Z",
+      "name_sr_latin": "Poremećaji i zavisnost zbog ostalih lijekova",
+      "coefficient": 0.77,
+      "price_eur": 585.34,
+      "section": "MDC 20"
+    },
+    {
+      "code": "W01Z",
+      "name_sr_latin": "Zahvati ventilacije i kraniotomije usljed politraume",
+      "coefficient": 13.04,
+      "price_eur": 9912.75,
+      "section": "MDC 21"
+    },
+    {
+      "code": "W02A",
+      "name_sr_latin": "Zahvati na kuku, femuru i ekstremitetima zbog politraume, uključujući primjenu implantata sa vrlo teškim/teškim KK",
+      "coefficient": 10.56,
+      "price_eur": 8027.5,
+      "section": "MDC 21"
+    },
+    {
+      "code": "W02B",
+      "name_sr_latin": "Postupci na kuku, femuru i ekstremitetima zbog politraume, uključujući primjenu implantata bez vrlo teškim ili teškim KK",
+      "coefficient": 8.45,
+      "price_eur": 6423.52,
+      "section": "MDC 21"
+    },
+    {
+      "code": "W03Z",
+      "name_sr_latin": "Zahvati na abdomenu zbog politraume",
+      "coefficient": 6.74,
+      "price_eur": 5123.61,
+      "section": "MDC 21"
+    },
+    {
+      "code": "W04A",
+      "name_sr_latin": "Ostali operativni zahvati zbog politraume sa vrlo teškim/teškim KK",
+      "coefficient": 10.38,
+      "price_eur": 7890.67,
+      "section": "MDC 21"
+    },
+    {
+      "code": "W04B",
+      "name_sr_latin": "Ostali operativni zahvati zbog politraume bez vrlo teškim ili teškim KK",
+      "coefficient": 6.19,
+      "price_eur": 4705.51,
+      "section": "MDC 21"
+    },
+    {
+      "code": "W60Z",
+      "name_sr_latin": "Politrauma, smrtni ishod ili premještaj u drugu ustanovu za intenz. njegu, boravak <5 dana",
+      "coefficient": 1.55,
+      "price_eur": 1178.28,
+      "section": "MDC 21"
+    },
+    {
+      "code": "W61A",
+      "name_sr_latin": "Politrauma bez značajnih zahvata sa vrlo teškim ili teškim KK",
+      "coefficient": 4.7,
+      "price_eur": 3572.85,
+      "section": "MDC 21"
+    },
+    {
+      "code": "W61B",
+      "name_sr_latin": "Politrauma bez značajnih zahvata bez vrlo teškim ili teškim KK",
+      "coefficient": 2.42,
+      "price_eur": 1839.64,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X02A",
+      "name_sr_latin": "Mikrovaskularni prenos tkiva ili (presađivanje kože sa vrlo teškim/teškim KK) zbog povrede šake",
+      "coefficient": 2.77,
+      "price_eur": 2105.7,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X02B",
+      "name_sr_latin": "Presađivanje kože zbog povrede šake bez vrlo teškim ili teškim KK",
+      "coefficient": 0.94,
+      "price_eur": 714.57,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X04A",
+      "name_sr_latin": "Ostali zahvati zbog povrede donjeg ekstremiteta sa vrlo teškim ili teškim KK",
+      "coefficient": 3.95,
+      "price_eur": 3002.71,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X04B",
+      "name_sr_latin": "Ostali zahvati zbog povrede donjeg ekstremiteta bez vrlo teškim ili teškim KK",
+      "coefficient": 1.17,
+      "price_eur": 889.41,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X05A",
+      "name_sr_latin": "Ostali zahvati zbog povrede šake sa KK",
+      "coefficient": 1.7,
+      "price_eur": 1292.31,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X05B",
+      "name_sr_latin": "Ostali zahvati zbog povrede šake bez KK",
+      "coefficient": 0.81,
+      "price_eur": 615.75,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X06A",
+      "name_sr_latin": "Ostali zahvati ostalih povreda sa vrlo teškim ili teškim KK",
+      "coefficient": 3.34,
+      "price_eur": 2539.0,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X06B",
+      "name_sr_latin": "Ostali zahvati ostalih povreda bez vrlo teškim ili teškim KK",
+      "coefficient": 1.06,
+      "price_eur": 805.79,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X07A",
+      "name_sr_latin": "Presađivanja kože zbog povrede, osim povrede šake, sa mikrovaskularnim prenosom tkiva ili sa vrlo teškim/teškim KK",
+      "coefficient": 5.52,
+      "price_eur": 4196.19,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X07B",
+      "name_sr_latin": "Presađivanja kože zbog povrede, osim povrede šake, bez mikrovaskularnog prenosa tkiva, bez vrlo teškim ili teškim KK",
+      "coefficient": 2.26,
+      "price_eur": 1718.01,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X40Z",
+      "name_sr_latin": "Povrede, trovanja i toksična dejstva lijekova sa ventilacijskom podrškom",
+      "coefficient": 4.09,
+      "price_eur": 3109.14,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X60A",
+      "name_sr_latin": "Povrede sa vrlo teškim ili teškim KK",
+      "coefficient": 1.47,
+      "price_eur": 1117.46,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X60B",
+      "name_sr_latin": "Povrede bez vrlo teškim ili teškim KK",
+      "coefficient": 0.37,
+      "price_eur": 281.27,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X61Z",
+      "name_sr_latin": "Alergijske reakcije",
+      "coefficient": 0.36,
+      "price_eur": 273.66,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X62A",
+      "name_sr_latin": "Trovanje/toksično dejstvo lijekova ili drugih supstanci, sa vrlo teškim ili teškim KK",
+      "coefficient": 1.52,
+      "price_eur": 1155.47,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X62B",
+      "name_sr_latin": "Trovanje/toksično dejstvo lijekova ili drugih supstanci, bez vrlo teškim ili teškim KK",
+      "coefficient": 0.48,
+      "price_eur": 364.89,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X63A",
+      "name_sr_latin": "Posljedice liječenja sa vrlo teškim ili teškim KK",
+      "coefficient": 1.6,
+      "price_eur": 1216.29,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X63B",
+      "name_sr_latin": "Posljedice liječenja bez vrlo teškim ili teškim KK",
+      "coefficient": 0.65,
+      "price_eur": 494.12,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X64A",
+      "name_sr_latin": "Ostale dijagnoze povreda, trovanja i toksičnih dejstava lijekova sa vrlo tešk. ili teškim KK",
+      "coefficient": 1.49,
+      "price_eur": 1132.67,
+      "section": "MDC 21"
+    },
+    {
+      "code": "X64B",
+      "name_sr_latin": "Ostale dijagnoze povreda, trovanja i toksičnih dejstava lijekova bez vrlo tešk. ili teškim KK",
+      "coefficient": 0.39,
+      "price_eur": 296.47,
+      "section": "MDC 21"
+    },
+    {
+      "code": "Y01Z",
+      "name_sr_latin": "Ventilacija radi opekotina i teških opekotina pune debljine",
+      "coefficient": 29.5,
+      "price_eur": 22425.31,
+      "section": "MDC 22"
+    },
+    {
+      "code": "Y02A",
+      "name_sr_latin": "Ostale opekotine sa presađivanjem kože, sa KK",
+      "coefficient": 7.66,
+      "price_eur": 5822.98,
+      "section": "MDC 22"
+    },
+    {
+      "code": "Y02B",
+      "name_sr_latin": "Ostale opekotine sa presađivanjem kože, bez KK",
+      "coefficient": 2.54,
+      "price_eur": 1930.86,
+      "section": "MDC 22"
+    },
+    {
+      "code": "Y03Z",
+      "name_sr_latin": "Ostali operativni zahvati zbog opekotina",
+      "coefficient": 1.85,
+      "price_eur": 1406.33,
+      "section": "MDC 22"
+    },
+    {
+      "code": "Y60Z",
+      "name_sr_latin": "Opekotine, premještanje u drugu ustanovu za intenzivnu njegu, boravak < 5 dana",
+      "coefficient": 0.31,
+      "price_eur": 235.66,
+      "section": "MDC 22"
+    },
+    {
+      "code": "Y61Z",
+      "name_sr_latin": "Teške opekotine",
+      "coefficient": 1.09,
+      "price_eur": 828.6,
+      "section": "MDC 22"
+    },
+    {
+      "code": "Y62A",
+      "name_sr_latin": "Opekotine sa KK",
+      "coefficient": 1.5,
+      "price_eur": 1140.27,
+      "section": "MDC 22"
+    },
+    {
+      "code": "Y62B",
+      "name_sr_latin": "Ostale opekotine, bez KK",
+      "coefficient": 0.51,
+      "price_eur": 387.69,
+      "section": "MDC 22"
+    },
+    {
+      "code": "Z01A",
+      "name_sr_latin": "Operativni zahvati za dijagnozama ostalih kontakata sa zdravstvenom službom sa vrlo teškim ili teškim KK",
+      "coefficient": 2.17,
+      "price_eur": 1649.89,
+      "section": "MDC 23"
+    },
+    {
+      "code": "Z01B",
+      "name_sr_latin": "Operativni zahvati za dijagnozama ostalih kontakata sa zdravstvenom službom bez vrlo teškim ili teškim KK",
+      "coefficient": 0.66,
+      "price_eur": 501.72,
+      "section": "MDC 23"
+    },
+    {
+      "code": "Z40Z",
+      "name_sr_latin": "Endoskopija za dijagnozama ostalih kontakata sa zdravstvenom službom, isti dan",
+      "coefficient": 0.28,
+      "price_eur": 212.85,
+      "section": "MDC 23"
+    },
+    {
+      "code": "Z60A",
+      "name_sr_latin": "Rehabilitacija sa vrlo teškim KK",
+      "coefficient": 3.49,
+      "price_eur": 2653.03,
+      "section": "MDC 23",
+      "note": "VERIFY: last visible row on page 21; MDC 23 likely continues into batch 4"
+    },
+    {
+      "code": "Z60B",
+      "name_sr_latin": "Rehabilitacija bez vrlo teškim KK",
+      "coefficient": 2.26,
+      "price_eur": 1718.01,
+      "section": "MDC 23"
+    },
+    {
+      "code": "Z60C",
+      "name_sr_latin": "Rehabilitacija, isti dan",
+      "coefficient": 1.2,
+      "price_eur": 912.22,
+      "section": "MDC 23"
+    },
+    {
+      "code": "Z61A",
+      "name_sr_latin": "Znakovi i simptomi",
+      "coefficient": 1.14,
+      "price_eur": 866.61,
+      "section": "MDC 23"
+    },
+    {
+      "code": "Z61B",
+      "name_sr_latin": "Znakovi i simptomi, isti dan",
+      "coefficient": 0.26,
+      "price_eur": 197.65,
+      "section": "MDC 23"
+    },
+    {
+      "code": "Z63A",
+      "name_sr_latin": "Ostalo praćenje i njega nakon operacije sa vrlo teškim KK",
+      "coefficient": 2.62,
+      "price_eur": 1991.67,
+      "section": "MDC 23"
+    },
+    {
+      "code": "Z63B",
+      "name_sr_latin": "Ostalo praćenje i njega nakon operacije bez vrlo teškim KK",
+      "coefficient": 1.09,
+      "price_eur": 828.6,
+      "section": "MDC 23"
+    },
+    {
+      "code": "Z64A",
+      "name_sr_latin": "Ostali faktori koji utiču na zdravstveno stanje",
+      "coefficient": 0.99,
+      "price_eur": 752.58,
+      "section": "MDC 23"
+    },
+    {
+      "code": "Z64B",
+      "name_sr_latin": "Ostali faktori koji utiču na zdravstveno stanje, isti dan",
+      "coefficient": 0.22,
+      "price_eur": 167.24,
+      "section": "MDC 23"
+    },
+    {
+      "code": "Z65Z",
+      "name_sr_latin": "Kongenitalne anomalije i problem koji potiču iz neonatalnog perioda",
+      "coefficient": 1.39,
+      "price_eur": 1056.65,
+      "section": "MDC 23"
+    },
+    {
+      "code": "801A",
+      "name_sr_latin": "Operativni zahvati nepovezani sa glavnom dijagnozom sa vrlo teškim KK",
+      "coefficient": 7.94,
+      "price_eur": 6035.83,
+      "section": "Nepovezani sa DRG"
+    },
+    {
+      "code": "801B",
+      "name_sr_latin": "Operativni zahvati nepovezani sa glavnom dijagnozom sa teškim ili umjerenim KK",
+      "coefficient": 3.63,
+      "price_eur": 2759.45,
+      "section": "Nepovezani sa DRG"
+    },
+    {
+      "code": "801C",
+      "name_sr_latin": "Operativni zahvati nepovezani sa glavnom dijagnozom bez KK",
+      "coefficient": 1.48,
+      "price_eur": 1125.07,
+      "section": "Nepovezani sa DRG"
+    }
+  ]
+}

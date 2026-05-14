@@ -1,0 +1,6431 @@
+{
+  "source_paddle_json": "data\\fzocg\\drg-akutno-bolnicko\\paddleocr\\Cjenovnik-zdravstvenih-usluga-po-DRG-od-01.01.2025.g.json",
+  "items_total": 641,
+  "stats": {
+    "table_blocks": 21,
+    "data_rows": 641,
+    "header_rows": 0,
+    "section_rows": 0,
+    "price_dropped": 1,
+    "scheme_unknown": 1,
+    "detected_section_pages": 0
+  },
+  "by_scheme": {
+    "unknown": 1,
+    "dual": 640
+  },
+  "sections": {
+    "null": 641
+  },
+  "items": [
+    {
+      "code": "A07Z",
+      "name": "A06D A06C",
+      "section": null,
+      "page": 2,
+      "scheme": "unknown",
+      "cols": 12,
+      "single_eur": null
+    },
+    {
+      "code": "A08A",
+      "name": "Autologna transplantacija kostane srzi sa vrlo teskim KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 10.43,
+      "ambulanta_eur": 7928.68
+    },
+    {
+      "code": "A08B",
+      "name": "Autologna transplantacija kostane srzi bez vrlo teskih KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.8,
+      "ambulanta_eur": 2888.68
+    },
+    {
+      "code": "A09A",
+      "name": "Transplantacija bubrega sa transplantacijom pankreasa ili sa vrlo tekim KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 11.88,
+      "ambulanta_eur": 9030.94
+    },
+    {
+      "code": "A09B",
+      "name": "Transplantacija bubrega bez transplantacije pankreasa bez vrlo tekih KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.41,
+      "ambulanta_eur": 5632.93
+    },
+    {
+      "code": "A10Z",
+      "name": "Ugradnja uredaja za ventrikularnu asistenciju",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 69.29,
+      "ambulanta_eur": 52672.87
+    },
+    {
+      "code": "A12Z",
+      "name": "Ugradnja neurostimulatora",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.72,
+      "ambulanta_eur": 2827.87
+    },
+    {
+      "code": "A40Z",
+      "name": "Ekstrakorporalna membranska oksigenacija (EKMO) bez operacije srca",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 34.22,
+      "ambulanta_eur": 26013.36
+    },
+    {
+      "code": "B01A",
+      "name": "Revizija ventrikularnog santa sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.35,
+      "ambulanta_eur": 2546.6
+    },
+    {
+      "code": "B01B",
+      "name": "Revizija ventrikularnog santa bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.38,
+      "ambulanta_eur": 1809.23
+    },
+    {
+      "code": "B02A",
+      "name": "Kraniotomija sa vrlo teškim KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 9.48,
+      "ambulanta_eur": 7206.51
+    },
+    {
+      "code": "B02B",
+      "name": "Kraniotomija sa teskim KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.73,
+      "ambulanta_eur": 4355.83
+    },
+    {
+      "code": "B02C",
+      "name": "Kraniotomija bez vrlo tekih ili teskih KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.23,
+      "ambulanta_eur": 3215.56
+    },
+    {
+      "code": "B03A",
+      "name": "Zahvati na kičmenom stubu sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.77,
+      "ambulanta_eur": 5146.42
+    },
+    {
+      "code": "B03B",
+      "name": "Zahvati na kičmenom stubu bez vrlo teških ili teskih KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.21,
+      "ambulanta_eur": 2440.18
+    },
+    {
+      "code": "B04A",
+      "name": "Ekstrakranijalni zahvati na krvnim sudovima sa vrlo teškim ili teskim KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.45,
+      "ambulanta_eur": 4142.98
+    },
+    {
+      "code": "B04B",
+      "name": "Ekstrakranijalni zahvati na krvnim sudovima bez vrlo tekih ili teskih KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.7,
+      "ambulanta_eur": 2052.49
+    },
+    {
+      "code": "B05Z",
+      "name": "Operacija karpalnog kanala",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.43,
+      "ambulanta_eur": 326.88
+    },
+    {
+      "code": "B06A",
+      "name": "Zahvati zbog cerebralne paralize, misicne distrofije, neuropatije sa KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.91,
+      "ambulanta_eur": 3732.48
+    },
+    {
+      "code": "B06B",
+      "name": "Zahvati zbog cerebralne paralize,misićne distrofije,neuropatije ez K",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.09,
+      "ambulanta_eur": 828.6
+    },
+    {
+      "code": "B07A",
+      "name": "Zahvati na perifernim i kranijalnim nervima i ostali zahvati na nervnom sistemu sa KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.44,
+      "ambulanta_eur": 2615.02
+    },
+    {
+      "code": "B07B",
+      "name": "Zahvati na perifernim i kranijalnim nervimai ostali zahvati na nervnom sistemu bez KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.21,
+      "ambulanta_eur": 919.82
+    },
+    {
+      "code": "B40Z",
+      "name": "Plazmafereza kod neuroloske bolesti, istog dana",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.21,
+      "ambulanta_eur": 159.64
+    },
+    {
+      "code": "B41Z",
+      "name": "Telemetrijski EEG monitoring",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.71,
+      "ambulanta_eur": 1299.91
+    },
+    {
+      "code": "B42A",
+      "name": "Dijagnostika nervnog sistema sa ventilacijskom podrkom sa vrlo teskim KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.52,
+      "ambulanta_eur": 4956.37
+    },
+    {
+      "code": "B42B",
+      "name": "Dijagnostika nervnog sistema sa ventilacijskom podrkom bez vrlo teskih KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.25,
+      "ambulanta_eur": 3230.77
+    },
+    {
+      "code": "B60A",
+      "name": "Akutna paraplegija/kvadriplegija sa ili bez operativnog zahvata sa vrlo tekim KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 9.36,
+      "ambulanta_eur": 7115.28
+    },
+    {
+      "code": "B60B",
+      "name": "Akutna paraplegija/kvadriplegija sa ili bez operativnog zahvata bez vrlo teskih KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.31,
+      "ambulanta_eur": 2516.2
+    },
+    {
+      "code": "B61A",
+      "name": "Stanja kičmene mozdine sa ili bez operativnog zahvata sa vrlo teškim ili tekim KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.62,
+      "ambulanta_eur": 5032.39
+    },
+    {
+      "code": "B61B",
+      "name": "Stanja kiěmene mozdine sa ili bez operativnog zahvata bez vrlo teških ili teških KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.34,
+      "ambulanta_eur": 1778.82
+    },
+    {
+      "code": "B62Z",
+      "name": "Prijem zbog afereze",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.26,
+      "ambulanta_eur": 197.65
+    },
+    {
+      "code": "B63Z",
+      "name": "Demencija i ostali hronieni poremecaji funkcije mozga",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.71,
+      "ambulanta_eur": 2060.09
+    },
+    {
+      "code": "B64A",
+      "name": "Delirijum sa vrlo teskim KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.07,
+      "ambulanta_eur": 2333.75
+    },
+    {
+      "code": "B64B",
+      "name": "Delirijum bez vrlo teskih KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.49,
+      "ambulanta_eur": 1132.67
+    },
+    {
+      "code": "B65Z",
+      "name": "Cerebralna paraliza",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.62,
+      "ambulanta_eur": 471.31
+    },
+    {
+      "code": "B66A",
+      "name": "Neoplazme (tumori) nervnog sistema sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.65,
+      "ambulanta_eur": 2014.48
+    },
+    {
+      "code": "B66B",
+      "name": "Neoplazme (tumori) nervnog sistema bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 3,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.12,
+      "ambulanta_eur": 851.4
+    },
+    {
+      "code": "B67A",
+      "name": "Degenerativni poremecaji nervnog sistema sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.25,
+      "ambulanta_eur": 2470.59
+    },
+    {
+      "code": "B67B",
+      "name": "Degenerativni poremecaji nervnog sistema sa umjerenim KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.68,
+      "ambulanta_eur": 1277.1
+    },
+    {
+      "code": "B67C",
+      "name": "Degenerativni poremecaj nervnog sistema bez vrlo tekih KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.62,
+      "ambulanta_eur": 471.31
+    },
+    {
+      "code": "B68A",
+      "name": "Multipla skleroza i cerebelarna ataksija sa KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.45,
+      "ambulanta_eur": 1862.44
+    },
+    {
+      "code": "B68B",
+      "name": "Multipla skleroza i cerebelarna ataksija bez KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.45,
+      "ambulanta_eur": 342.08
+    },
+    {
+      "code": "B69A",
+      "name": "TIAi precerebralna okluzija sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.58,
+      "ambulanta_eur": 1201.08
+    },
+    {
+      "code": "B69B",
+      "name": "TIAiprecerebralna okluzija bez vrlo tekih ili teki KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.7,
+      "ambulanta_eur": 532.13
+    },
+    {
+      "code": "B70A",
+      "name": "Mozdani udar i drugi cerebovaskularni poremecaji sa vrlo tekim KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.38,
+      "ambulanta_eur": 3329.59
+    },
+    {
+      "code": "B70B",
+      "name": "Mozdani udar i drugi cerebovaskularni poremeaji sa teskim KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.39,
+      "ambulanta_eur": 1816.83
+    },
+    {
+      "code": "B70C",
+      "name": "Mozdani udar idrugi cerebrovaskularni poremecaji bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.53,
+      "ambulanta_eur": 1163.08
+    },
+    {
+      "code": "B70D",
+      "name": "Mozdani udar idrugi cerebrovaskularni poremeaji,smrtni ishod ili premjestanje u drugu ustanovu, boravak<5 dana",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.54,
+      "ambulanta_eur": 410.5
+    },
+    {
+      "code": "B71A",
+      "name": "Poremecaji kranijalnih i perifernih nerava sa KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.94,
+      "ambulanta_eur": 1474.75
+    },
+    {
+      "code": "B71B",
+      "name": "Poremecaj kranijalnih i perifernih nerava bez KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.36,
+      "ambulanta_eur": 273.66
+    },
+    {
+      "code": "B72A",
+      "name": "Infekcija nervnog sistema osim virusnog meningitisa sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.08,
+      "ambulanta_eur": 3101.53
+    },
+    {
+      "code": "B72B",
+      "name": "Infekcija nervnog sistema osim virusnog meningitisa bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.52,
+      "ambulanta_eur": 1155.47
+    },
+    {
+      "code": "B73Z",
+      "name": "Virusni meningitis",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.95,
+      "ambulanta_eur": 722.17
+    },
+    {
+      "code": "B74A",
+      "name": "Netraumatski stupor i koma sa KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.3,
+      "ambulanta_eur": 988.23
+    },
+    {
+      "code": "B74B",
+      "name": "Netraumatski stupor i koma bez KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.48,
+      "ambulanta_eur": 364.89
+    },
+    {
+      "code": "B75Z",
+      "name": "Febrilne konvulzije",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.45,
+      "ambulanta_eur": 342.08
+    },
+    {
+      "code": "B76A",
+      "name": "Epi napad sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.91,
+      "ambulanta_eur": 1451.94
+    },
+    {
+      "code": "B76B",
+      "name": "Epi napad bez vrlo tekih ili teskih KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.62,
+      "ambulanta_eur": 471.31
+    },
+    {
+      "code": "B77Z",
+      "name": "Glavobolja",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.43,
+      "ambulanta_eur": 326.88
+    },
+    {
+      "code": "B78A",
+      "name": "Intrakranijalna povreda sa vrlo teskim ili tekim KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.99,
+      "ambulanta_eur": 2272.94
+    },
+    {
+      "code": "B78B",
+      "name": "Intrakranijalna povreda bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.13,
+      "ambulanta_eur": 859.0
+    },
+    {
+      "code": "B79A",
+      "name": "Fraktura lobanje sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.7,
+      "ambulanta_eur": 1292.31
+    },
+    {
+      "code": "B79B",
+      "name": "Fraktura lobanje bez vrlo teških ili teskih KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.69,
+      "ambulanta_eur": 524.52
+    },
+    {
+      "code": "B80Z",
+      "name": "Druge povrede glave",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.35,
+      "ambulanta_eur": 266.06
+    },
+    {
+      "code": "B81A",
+      "name": "Drugi poremecaji nervnog sistema sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.36,
+      "ambulanta_eur": 1794.02
+    },
+    {
+      "code": "B81B",
+      "name": "Drugi poremecaji nervnog sistema bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.89,
+      "ambulanta_eur": 676.56
+    },
+    {
+      "code": "B82A",
+      "name": "Hroninaineodredena paraplegija/kvadriplegija sa ili bez operativnog zahvata sa vrlo teškim KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.46,
+      "ambulanta_eur": 5670.94
+    },
+    {
+      "code": "B82B",
+      "name": "Hroninaineoznaena paraplegija/kvadriplegija sa ili bez operativnog zahvata sa tekim KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.18,
+      "ambulanta_eur": 2417.37
+    },
+    {
+      "code": "B82C",
+      "name": "Hroninaineoznaena paraplegija/kvadriplegija sa ili bez operativnog zahvata bez vrlo teskih /teskih KK",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.82,
+      "ambulanta_eur": 1383.53
+    },
+    {
+      "code": "C01Z",
+      "name": "Zahvati zbog penetrantne povrede oka",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.9,
+      "ambulanta_eur": 1444.34
+    },
+    {
+      "code": "C02Z",
+      "name": "Enukleacija i zahvati na orbiti",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.0,
+      "ambulanta_eur": 1520.36
+    },
+    {
+      "code": "C03Z",
+      "name": "Zahvati na mreznjaci",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.91,
+      "ambulanta_eur": 691.76
+    },
+    {
+      "code": "C04Z",
+      "name": "Veliki zahvati na ronjai,beonjaii konjunktivi",
+      "section": null,
+      "page": 4,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.54,
+      "ambulanta_eur": 1170.68
+    },
+    {
+      "code": "C05Z",
+      "name": "Dakriocistorinostomija",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.98,
+      "ambulanta_eur": 744.98
+    },
+    {
+      "code": "C10Z",
+      "name": "Zahvati zbog strabizma",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.76,
+      "ambulanta_eur": 577.74
+    },
+    {
+      "code": "C11Z",
+      "name": "Zahvati na kapcima",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.74,
+      "ambulanta_eur": 562.53
+    },
+    {
+      "code": "C12Z",
+      "name": "Drugi zahvati na roznjaci, beonjaci i konjnktivi",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.7,
+      "ambulanta_eur": 532.13
+    },
+    {
+      "code": "C13Z",
+      "name": "Zahvati na suznom aparatu",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.45,
+      "ambulanta_eur": 342.08
+    },
+    {
+      "code": "C14Z",
+      "name": "Drugi zahvati na oku",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.54,
+      "ambulanta_eur": 410.5
+    },
+    {
+      "code": "C15A",
+      "name": "Glaukom i slozeni zahvati zbog katarakte",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.3,
+      "ambulanta_eur": 988.23
+    },
+    {
+      "code": "C15B",
+      "name": "Glaukom i slozeni zahvati zbog katarakte, isti dan",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.66,
+      "ambulanta_eur": 501.72
+    },
+    {
+      "code": "C16Z",
+      "name": "Zahvati na socivu",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.58,
+      "ambulanta_eur": 440.9
+    },
+    {
+      "code": "C60A",
+      "name": "Akutnei velike infekcije oka sa KK",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.39,
+      "ambulanta_eur": 1816.83
+    },
+    {
+      "code": "C60B",
+      "name": "Akutneivelike infekcije oka bez KK",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.33,
+      "ambulanta_eur": 1011.04
+    },
+    {
+      "code": "C61A",
+      "name": "Neurološki poremecajii poremecaji krvnih sudova oka sa KK",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.2,
+      "ambulanta_eur": 912.22
+    },
+    {
+      "code": "C61B",
+      "name": "Neuroloski poremecaji i poremećaji krvnih sudova oka bez KK",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.62,
+      "ambulanta_eur": 471.31
+    },
+    {
+      "code": "C62Z",
+      "name": "Hifemai medicinski obradena trauma oka",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.42,
+      "ambulanta_eur": 319.28
+    },
+    {
+      "code": "C63Z",
+      "name": "Drugi poremecaji oka",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.54,
+      "ambulanta_eur": 410.5
+    },
+    {
+      "code": "D01Z",
+      "name": "Ugradnja kohlearnog implantata",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 8.02,
+      "ambulanta_eur": 6096.64
+    },
+    {
+      "code": "D02A",
+      "name": "Zahvati na glavi i vratu sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.71,
+      "ambulanta_eur": 5100.81
+    },
+    {
+      "code": "D02B",
+      "name": "Zahvati na glavii vratu, sa malignom bolecuili sa umjerenim KK",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.93,
+      "ambulanta_eur": 2227.33
+    },
+    {
+      "code": "D02C",
+      "name": "Zahvati na glavi i vratu, bez maligne bolesti, bez KK",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.73,
+      "ambulanta_eur": 1315.11
+    },
+    {
+      "code": "D03Z",
+      "name": "Hirurski zahvat kod rascijepa usne ili nepca",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.67,
+      "ambulanta_eur": 1269.5
+    },
+    {
+      "code": "D04A",
+      "name": "Operacija maksilarne regije sa KK",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.77,
+      "ambulanta_eur": 2105.7
+    },
+    {
+      "code": "D04B",
+      "name": "Operacija maksilarne regije bez KK",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.72,
+      "ambulanta_eur": 1307.51
+    },
+    {
+      "code": "D05Z",
+      "name": "Zahvati na parotidnoj zlijezdi",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.05,
+      "ambulanta_eur": 1558.37
+    },
+    {
+      "code": "D06Z",
+      "name": "Zahvati na sinusima i slozeni zahvati na srednjem uhu",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.22,
+      "ambulanta_eur": 927.42
+    },
+    {
+      "code": "D10Z",
+      "name": "Zahvati na nosu",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.88,
+      "ambulanta_eur": 668.96
+    },
+    {
+      "code": "D11Z",
+      "name": "Tonzilektomija i/ili adenoidektomija",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.67,
+      "ambulanta_eur": 509.32
+    },
+    {
+      "code": "D12Z",
+      "name": "Drugi zahvati na uhu, nosu, usnoj supljini i grlu",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.04,
+      "ambulanta_eur": 790.59
+    },
+    {
+      "code": "D13Z",
+      "name": "Miringotomija sa ugradnjom cjevcice",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.41,
+      "ambulanta_eur": 311.67
+    },
+    {
+      "code": "D14Z",
+      "name": "Zahvati na usnoj supljini i pljuvanim lijezdama",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.89,
+      "ambulanta_eur": 676.56
+    },
+    {
+      "code": "D15Z",
+      "name": "Zahvati na mastoidu",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.26,
+      "ambulanta_eur": 1718.01
+    },
+    {
+      "code": "D40Z",
+      "name": "Vadenje i nadoknada zuba",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.64,
+      "ambulanta_eur": 486.52
+    },
+    {
+      "code": "D60A",
+      "name": "Maligna bolest uha,nosa, usne supljine i grla sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.94,
+      "ambulanta_eur": 2234.93
+    },
+    {
+      "code": "D60B",
+      "name": "Maligna bolest uha,nosause upljineigrla bevrlotekihilitk",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.77,
+      "ambulanta_eur": 585.34
+    },
+    {
+      "code": "D61Z",
+      "name": "Gubitak ravnoteze",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.57,
+      "ambulanta_eur": 433.3
+    },
+    {
+      "code": "D62Z",
+      "name": "Krvarenje iz nosa -Epistaxis",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.46,
+      "ambulanta_eur": 349.68
+    },
+    {
+      "code": "D63Z",
+      "name": "Zapaljenje srednjeg uha i infekcija gornjih respiratornih puteva",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.51,
+      "ambulanta_eur": 387.69
+    },
+    {
+      "code": "D64Z",
+      "name": "Laringotraheitis i epiglotitis",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.37,
+      "ambulanta_eur": 281.27
+    },
+    {
+      "code": "D65Z",
+      "name": "Trauma i deformacija nosa",
+      "section": null,
+      "page": 5,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.41,
+      "ambulanta_eur": 311.67
+    },
+    {
+      "code": "D66A",
+      "name": "Druge dijagnoze uha, nosa, usne supljine i grla sa KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.23,
+      "ambulanta_eur": 935.02
+    },
+    {
+      "code": "D66B",
+      "name": "Druge dijagnoze kod uha, nosa, usne supljine igrla ez KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.38,
+      "ambulanta_eur": 288.87
+    },
+    {
+      "code": "D67A",
+      "name": "Poremeaji usne supljine i zuba, osim vadenja i nadoknade zuba",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.85,
+      "ambulanta_eur": 646.15
+    },
+    {
+      "code": "D67B",
+      "name": "Poremećaji usne upljinei zuba,osim vadenjai nadoknade zuba,isti dan",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.23,
+      "ambulanta_eur": 174.84
+    },
+    {
+      "code": "E01A",
+      "name": "Veliki zahvati na grudnom kosu sa vrlo teskim KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.2,
+      "ambulanta_eur": 4713.12
+    },
+    {
+      "code": "E01B",
+      "name": "Veliki zahvati na grudnom kosu bez vrlo teskih KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.47,
+      "ambulanta_eur": 2637.82
+    },
+    {
+      "code": "E02A",
+      "name": "Drugi operativni zahvati na respiratornom sistemu sa vrlo teskim KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.58,
+      "ambulanta_eur": 4241.8
+    },
+    {
+      "code": "E02B",
+      "name": "Drugi operativni zahvati na respiratornom sistemu sa teskim ili umjereim KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.2,
+      "ambulanta_eur": 1672.4
+    },
+    {
+      "code": "E02C",
+      "name": "Drugi bolesti ili operativni zahvati na respiratornom sistemu bez KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.86,
+      "ambulanta_eur": 653.75
+    },
+    {
+      "code": "E40A",
+      "name": "Bolesti respiratornog sistema sa ventilacijskom podrkom sa vrlo tekim KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.52,
+      "ambulanta_eur": 4956.37
+    },
+    {
+      "code": "E40B",
+      "name": "Bolesti respiratornog sistema sa ventilacijskom podrskom bez vrlo tekih KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.0,
+      "ambulanta_eur": 3800.9
+    },
+    {
+      "code": "E41Z",
+      "name": "Bolest respiratornog sistema sa neinvazivnom ventilacijom",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.91,
+      "ambulanta_eur": 3732.48
+    },
+    {
+      "code": "E42A",
+      "name": "Bronhoskopija sa vrlo teskim KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.12,
+      "ambulanta_eur": 3892.12
+    },
+    {
+      "code": "E42B",
+      "name": "Bronhoskopija bez vrlo teških KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.31,
+      "ambulanta_eur": 1756.02
+    },
+    {
+      "code": "E42C",
+      "name": "Bronhoskopija, istog dana",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.43,
+      "ambulanta_eur": 326.88
+    },
+    {
+      "code": "E60A",
+      "name": "Cistična fibroza sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.75,
+      "ambulanta_eur": 3610.86
+    },
+    {
+      "code": "E60B",
+      "name": "Cistična fibroza bez vrlo teških ili teskih KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.39,
+      "ambulanta_eur": 2577.01
+    },
+    {
+      "code": "E61A",
+      "name": "Plucna embolija sa vrlo teskim KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.81,
+      "ambulanta_eur": 2136.11
+    },
+    {
+      "code": "E61B",
+      "name": "Pluéna embolija bez vrlo teskih KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.33,
+      "ambulanta_eur": 1011.04
+    },
+    {
+      "code": "E62A",
+      "name": "Respiratorne infekcije sa vrlo teskim KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.49,
+      "ambulanta_eur": 1892.85
+    },
+    {
+      "code": "E62B",
+      "name": "Respiratorne infekcije sa teskim ili umjerenim KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.47,
+      "ambulanta_eur": 1117.46
+    },
+    {
+      "code": "E62C",
+      "name": "Respiratorne infekcije bez KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.81,
+      "ambulanta_eur": 615.75
+    },
+    {
+      "code": "E63Z",
+      "name": "Apneja u spavanju",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.41,
+      "ambulanta_eur": 311.67
+    },
+    {
+      "code": "E64A",
+      "name": "Edem pluća irespiratorna insuficijencija sa vrlo tekim KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.34,
+      "ambulanta_eur": 1778.82
+    },
+    {
+      "code": "E64B",
+      "name": "Edem pluca irespiratorna insuficijencija bez vrlo teskih KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.22,
+      "ambulanta_eur": 927.42
+    },
+    {
+      "code": "E65A",
+      "name": "Hroniena opstruktivna bolest respiratornih puteva sa vrlo teskim ili teškim KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.27,
+      "ambulanta_eur": 1725.61
+    },
+    {
+      "code": "E65B",
+      "name": "Hronina opstruktivna bolest respiratorih puteva bez vrlo tekih ili tek K",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.22,
+      "ambulanta_eur": 927.42
+    },
+    {
+      "code": "E66A",
+      "name": "Velika trauma grudnog koa sa vrlo teskim KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.17,
+      "ambulanta_eur": 2409.77
+    },
+    {
+      "code": "E66B",
+      "name": "Velika trauma grudnog kosa sa teškim ili umjerenim KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.51,
+      "ambulanta_eur": 1147.87
+    },
+    {
+      "code": "E66C",
+      "name": "Velika trauma grudnog koa bez KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.78,
+      "ambulanta_eur": 592.94
+    },
+    {
+      "code": "E67A",
+      "name": "Respiratorni znaci i simptomi sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.11,
+      "ambulanta_eur": 843.8
+    },
+    {
+      "code": "E67B",
+      "name": "Respiratorni znaci i simptomi bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.45,
+      "ambulanta_eur": 342.08
+    },
+    {
+      "code": "E68A",
+      "name": "Pneumotoraks sa KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.77,
+      "ambulanta_eur": 1345.52
+    },
+    {
+      "code": "E68B",
+      "name": "Pneumotoraks bez KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.8,
+      "ambulanta_eur": 608.14
+    },
+    {
+      "code": "E69A",
+      "name": "Bronhitis i astma sa KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.12,
+      "ambulanta_eur": 851.4
+    },
+    {
+      "code": "E69B",
+      "name": "Bronhitis i astma bez KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.51,
+      "ambulanta_eur": 387.69
+    },
+    {
+      "code": "E70A",
+      "name": "Veliki kaalj i akutni bronhiolitis sa KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.71,
+      "ambulanta_eur": 1299.91
+    },
+    {
+      "code": "E70B",
+      "name": "Veliki kaalj i akutni bronhiolitis bez KK",
+      "section": null,
+      "page": 6,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.78,
+      "ambulanta_eur": 592.94
+    },
+    {
+      "code": "E71A",
+      "name": "Respiratorne neoplazme sa vrlo teskim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.31,
+      "ambulanta_eur": 1756.02
+    },
+    {
+      "code": "E71B",
+      "name": "Respiratorne neoplazme bez vrlo teskih KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.17,
+      "ambulanta_eur": 889.41
+    },
+    {
+      "code": "E72Z",
+      "name": "Respiratorni problemi koji poticu iz neonatalnog perioda",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.35,
+      "ambulanta_eur": 1026.24
+    },
+    {
+      "code": "E73A",
+      "name": "Pleuralni izliv sa vrlo teskim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.6,
+      "ambulanta_eur": 1976.47
+    },
+    {
+      "code": "E73B",
+      "name": "Pleuralni izliv sa teskim ili umjerenim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.34,
+      "ambulanta_eur": 1018.64
+    },
+    {
+      "code": "E73C",
+      "name": "Pleuralni izliv bez KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.78,
+      "ambulanta_eur": 592.94
+    },
+    {
+      "code": "E74A",
+      "name": "Intersticijalna bolest pluca sa vrlo teskim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.54,
+      "ambulanta_eur": 1930.86
+    },
+    {
+      "code": "E74B",
+      "name": "Intersticijalna bolest pluca sa teskim ili umjerenim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.79,
+      "ambulanta_eur": 1360.72
+    },
+    {
+      "code": "E74C",
+      "name": "lntersticijalna bolest pluca bez KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.82,
+      "ambulanta_eur": 623.35
+    },
+    {
+      "code": "E75A",
+      "name": "Druge bolesti respiratornog sistema sa vrlo teškim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.0,
+      "ambulanta_eur": 1520.36
+    },
+    {
+      "code": "E75B",
+      "name": "Druge bolesti respiratornog sistema sa teskim ili umjerenim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.25,
+      "ambulanta_eur": 950.23
+    },
+    {
+      "code": "E75C",
+      "name": "Druge bolesti respiratornog sistema bez KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.61,
+      "ambulanta_eur": 463.71
+    },
+    {
+      "code": "F01A",
+      "name": "Implantacija ili zamjena AICD, potpuni sistem, sa vrlo teskim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 9.38,
+      "ambulanta_eur": 7130.49
+    },
+    {
+      "code": "F01B",
+      "name": "Implantacija ili zamjena AICD, potpuni sistem, bez vrlo teskih KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.46,
+      "ambulanta_eur": null
+    },
+    {
+      "code": "F02Z",
+      "name": "Druge AICD procedure",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.36,
+      "ambulanta_eur": 1794.02
+    },
+    {
+      "code": "F03A",
+      "name": "Zahvati na srcanim zaliscima sa primjenom ekstrakorporalne cirkulacije, sa invazivnom dijagnostikom na srcu sa vrlo teskim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 14.03,
+      "ambulanta_eur": 10665.33
+    },
+    {
+      "code": "F03B",
+      "name": "Zahvati na sranim zaliscima sa primjenom ekstrakorporalne cirkulacije, sa invazivnom dijagnostikom na srcu bez vrlo teskih KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 9.3,
+      "ambulanta_eur": 7069.67
+    },
+    {
+      "code": "F04A",
+      "name": "Zahvati na sranim zaliscima sa primjenom ekstrakorporalne cirkulacije, bez invazivne dijagnostike na srcu, sa vrlo teskim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 11.1,
+      "ambulanta_eur": 8438.0
+    },
+    {
+      "code": "F04B",
+      "name": "Zahvati na sranim zaliscima sa primjenom ekstrakorporalne cirkulaije, bez invazivne dijagnostike na srcu, bez vrlo teskih KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.25,
+      "ambulanta_eur": 5511.31
+    },
+    {
+      "code": "F05A",
+      "name": "Koronarni bajpas sa invazivnom dijagnostikom na srcu sa ponovnom operacijom ili sa vrlo te\\kim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 10.98,
+      "ambulanta_eur": 8346.78
+    },
+    {
+      "code": "F05B",
+      "name": "Koronarni bajpas sa invazivnom dijagnostikom na srcu bez ponovne operacije bez vrlo teskih KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 8.08,
+      "ambulanta_eur": 6142.25
+    },
+    {
+      "code": "F06A",
+      "name": "Koronarni bajpas bez invazivne dijagnostike na srcu sa ponovnom operacijom ili sa vlo teskim ili teskim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.37,
+      "ambulanta_eur": 5602.53
+    },
+    {
+      "code": "F06B",
+      "name": "Koronarni bajpas bez invazivne dijagnostike na srcu bez ponovne operacije bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.32,
+      "ambulanta_eur": 4044.16
+    },
+    {
+      "code": "F07A",
+      "name": "Drugi kardiotorakalni/vaskularni zahvati sa primjenom ekstrakorporalne cirkulacie (CPB pumpa) sa vrlo teskim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 10.97,
+      "ambulanta_eur": 8339.17
+    },
+    {
+      "code": "F07B",
+      "name": "Drugi kardiotorakalni/vaskularni zahvati sa primjenom ekstrakorporalne cirkulacie (CPB pumpa) sa teškim ili umjerenim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.54,
+      "ambulanta_eur": 5731.76
+    },
+    {
+      "code": "F07C",
+      "name": "Drugi kardiotorakalni/vaskularni zahvati sa primjenom ekstrakorporalne cirkulacije (CPB pumpa) bez KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.92,
+      "ambulanta_eur": 4500.27
+    },
+    {
+      "code": "F08A",
+      "name": "Veliki rekonstruktivni zahvati na vaskularnom sistemu bez primjene ekstrakorporalne cirkulacije (CPB pumpa) sa vrlo teškim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 8.98,
+      "ambulanta_eur": 6826.42
+    },
+    {
+      "code": "F08B",
+      "name": "Veliki rekonstruktivni zahvati na vaskularnom sistemu bez primjene ekstrakorporalne cirkulacije (CPB pumpa) bez vrlo teskih KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.6,
+      "ambulanta_eur": 3496.83
+    },
+    {
+      "code": "F09A",
+      "name": "Drugi kardiotorakalni zahvati bez primjene ekstrakorporalne cirkulacije (CPB pumpa) sa vrlo teskim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.39,
+      "ambulanta_eur": 4857.55
+    },
+    {
+      "code": "F09B",
+      "name": "Drugi kardiotorakalni zahvati bez primjene ekstrakorporalne cirkulacije (CPB pumpa) sa teskim ili umjerenim KK",
+      "section": null,
+      "page": 7,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.94,
+      "ambulanta_eur": 2995.11
+    },
+    {
+      "code": "F09C",
+      "name": "Drugi kardiotorakalni zahvati bez primjene ekstrakorp. cirkulacije (CPB pumpa) bez KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.74,
+      "ambulanta_eur": 2082.89
+    },
+    {
+      "code": "F10A",
+      "name": "Interventni koronarni zahvat sa akutnim infarktom miokarda sa vrlo teškim KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.17,
+      "ambulanta_eur": 3169.95
+    },
+    {
+      "code": "F10B",
+      "name": "Interventni koronarni zahvat sa akutnim infarktom miokarda bez vrlo teskih KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.36,
+      "ambulanta_eur": 1794.02
+    },
+    {
+      "code": "F11A",
+      "name": "Amputacija zbog poremecaja cirkulatornog sistema, osim gornjeg ekstremiteta i prstiju na nozi sa vrlo teskim KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 9.37,
+      "ambulanta_eur": 7122.89
+    },
+    {
+      "code": "F11B",
+      "name": "Amputacija zbog poremecaja cirkulatornog sistema, osim gornjeg ekstremitetai prstiju na nozi, bez vrlo tekih KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.98,
+      "ambulanta_eur": 3785.7
+    },
+    {
+      "code": "F12A",
+      "name": "Ugradnja ili zamjena pejsmejkera, potpuni sistem sa vrlo tekim KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.82,
+      "ambulanta_eur": 3664.07
+    },
+    {
+      "code": "F12B",
+      "name": "Ugradnja ili zamjena pejsmejkera, potpuni sistem bez vrlo teških KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.38,
+      "ambulanta_eur": 1809.23
+    },
+    {
+      "code": "F13A",
+      "name": "Amputacija gornjeg ekstremiteta i prstiju na nozi zbog poremecaja cirkulatornog sistema sa vrlo tekim ili teškim KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.1,
+      "ambulanta_eur": 3876.92
+    },
+    {
+      "code": "F13B",
+      "name": "Amputacija gornjeg ekstremiteta i prstiju na nozi zbog poremecaja cirkulatornog sistema bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.4,
+      "ambulanta_eur": 1824.43
+    },
+    {
+      "code": "F14A",
+      "name": "Zahvati na kardiovaskularnom sistemu, osim velike rekonstrukcije, bez primjene ekstrakorporalne cirkulacije (CPB pumpa) sa vrlo teškim KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.72,
+      "ambulanta_eur": 3588.05
+    },
+    {
+      "code": "F14B",
+      "name": "Zahvati na kardiovaskularnom sistemu, osim velike rekonstrukcije, bez primjene ekstrakorporalne cirkulacije (CPB pumpa) sa teskim ili umjerenim KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.27,
+      "ambulanta_eur": 1725.61
+    },
+    {
+      "code": "F14C",
+      "name": "Zahvati na kardiovaskularnom sistemu, osim velike rekonstrukcije, bez primjene ekstrakorporalne cirkulacije (CPB pumpa) bez KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.4,
+      "ambulanta_eur": 1064.25
+    },
+    {
+      "code": "F15A",
+      "name": "Interventni koronarni zahvati, bez akutnog infarkta miokarda, sa ugradnjom stenta sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.42,
+      "ambulanta_eur": 1839.64
+    },
+    {
+      "code": "F15B",
+      "name": "Interventni koronarni zahvati, bez akutnog infarkta miokarda, sa ugradnjom stenta bez teških ili vrlo teskih KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.6,
+      "ambulanta_eur": 1216.29
+    },
+    {
+      "code": "F16A",
+      "name": "Interventni koronarni zahvati, bez akutnog infarkta miokarda, bez ugradnje stenta sa KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.75,
+      "ambulanta_eur": 1330.32
+    },
+    {
+      "code": "F16B",
+      "name": "Interventni koronarni zahvati, bez akutnog infarkta miokarda, bez ugradnje stenta bez KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.31,
+      "ambulanta_eur": 995.84
+    },
+    {
+      "code": "F17A",
+      "name": "Ugradnja ili zamjena generator pejsmejkera sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.26,
+      "ambulanta_eur": 1718.01
+    },
+    {
+      "code": "F17B",
+      "name": "Ugradnja ili zamjena generator pejsmejkera bez vrlo tekih ili teskih KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.41,
+      "ambulanta_eur": 1071.85
+    },
+    {
+      "code": "F18A",
+      "name": "Drugi zahvati sa pejsmejkerom sa KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.82,
+      "ambulanta_eur": 2143.71
+    },
+    {
+      "code": "F18B",
+      "name": "Drugi zahvati sa pejsmejkerom bez KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.3,
+      "ambulanta_eur": 988.23
+    },
+    {
+      "code": "F19Z",
+      "name": "Transvaskularne perkutane intervencije na srcu",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.58,
+      "ambulanta_eur": 1961.26
+    },
+    {
+      "code": "F20Z",
+      "name": "Postavljanje ligature na venuinjeno uklanjanje (stripping)",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.87,
+      "ambulanta_eur": 661.36
+    },
+    {
+      "code": "F21A",
+      "name": "Drugi operativni zahvati na cirkulatornom sistemu sa vrlo tekim KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.15,
+      "ambulanta_eur": 3914.93
+    },
+    {
+      "code": "F21B",
+      "name": "Drugi operativni zahvati na cirkulatornom sistemu bez vrlo teških KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.85,
+      "ambulanta_eur": 1406.33
+    },
+    {
+      "code": "F40A",
+      "name": "Dijagnoza cirkulatornog sistema sa ventilacijskom podrkom sa vrlo tekim KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.72,
+      "ambulanta_eur": 5108.41
+    },
+    {
+      "code": "F40B",
+      "name": "Dijagnoza cirkulatornog sistema sa ventilacijskom podrskom bez vrlo teskih KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.54,
+      "ambulanta_eur": 3451.22
+    },
+    {
+      "code": "F41A",
+      "name": "Poremecaj cirkulacije sa akutnim infarktom miokarda, sa invazivnom dijagnostikom na srcu, sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.88,
+      "ambulanta_eur": 2189.32
+    },
+    {
+      "code": "F41B",
+      "name": "Poremecaj cirkulacije sa akutnim infarktom miokarda, sa invazivnom dijagnostikom na srcu, bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.6,
+      "ambulanta_eur": 1216.29
+    },
+    {
+      "code": "F42A",
+      "name": "Poremecaj cirkulacije bez akutnog infarkta miokarda,sa invazivnom dijagnostikom na srcu, sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.65,
+      "ambulanta_eur": 2014.48
+    },
+    {
+      "code": "F42B",
+      "name": "Poremecaj cirkulacije bez akutnog infarkta miokarda, sa invazivnom dijagnostikom na srcu, bez vrlo teških ili teških KK",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.4,
+      "ambulanta_eur": 1064.25
+    },
+    {
+      "code": "F42C",
+      "name": "Poremecaj cirkulacije bez akutnog infarkta miokarda, sa invazivnom dijagnostikom na srcu, istog dana",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.62,
+      "ambulanta_eur": 471.31
+    },
+    {
+      "code": "F43Z",
+      "name": "Dijagnostika cirkulatornog sistema sa ne-invazivnom ventilacijom",
+      "section": null,
+      "page": 8,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.5,
+      "ambulanta_eur": 3420.81
+    },
+    {
+      "code": "F60A",
+      "name": "Poremecaj cirkulacije sa akutnim infarktom miokarda, bez invazivne dijagnostike na srcu, sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.57,
+      "ambulanta_eur": 1953.66
+    },
+    {
+      "code": "F60B",
+      "name": "Poremećaj cirkulacije sa akutnim infarktom miokarda, bez invazivne dijagnostike na srcu, bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.02,
+      "ambulanta_eur": 775.38
+    },
+    {
+      "code": "F61A",
+      "name": "Infektivni endokarditis sa vrlo teskim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.17,
+      "ambulanta_eur": 4690.31
+    },
+    {
+      "code": "F61B",
+      "name": "Infektivni endokarditis bez vrlo teskih KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.08,
+      "ambulanta_eur": 2341.35
+    },
+    {
+      "code": "F62A",
+      "name": "Insuficijencija srca i sok sa vrlo teskim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.64,
+      "ambulanta_eur": 2006.88
+    },
+    {
+      "code": "F62B",
+      "name": "Insuficijencija srca i sok bez vrlo teskih KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.2,
+      "ambulanta_eur": 912.22
+    },
+    {
+      "code": "F63A",
+      "name": "Venska tromboza sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.89,
+      "ambulanta_eur": 1436.74
+    },
+    {
+      "code": "F63B",
+      "name": "Venska tromboza bez vrlo teskih illi teskih KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.86,
+      "ambulanta_eur": 653.75
+    },
+    {
+      "code": "F64A",
+      "name": "Cir (ulkus) koe zbog poremeaja cirkulacije sa vrlo tekim ili tekim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.87,
+      "ambulanta_eur": 2181.72
+    },
+    {
+      "code": "F64B",
+      "name": "Cir (ulkus) koe zbog poremecaja cirkulacije bez vrlo teskih ili tekih KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.26,
+      "ambulanta_eur": 957.83
+    },
+    {
+      "code": "F65A",
+      "name": "Poremecaj perifernih krvnih sudova sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.93,
+      "ambulanta_eur": 1467.15
+    },
+    {
+      "code": "F65B",
+      "name": "Poremecai perifernih krvnih sudova bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.67,
+      "ambulanta_eur": 509.32
+    },
+    {
+      "code": "F66A",
+      "name": "Ateroskleroza koronarnih krvnih sudova sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.23,
+      "ambulanta_eur": 935.02
+    },
+    {
+      "code": "F66B",
+      "name": "Ateroskleroza koronarnih krvnih sudova bez vrlo teških ili teških KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.48,
+      "ambulanta_eur": 364.89
+    },
+    {
+      "code": "F67A",
+      "name": "Hipertenzija sa vrlo teskim ili teškim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.54,
+      "ambulanta_eur": 1170.68
+    },
+    {
+      "code": "F67B",
+      "name": "Hipertenzija bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.59,
+      "ambulanta_eur": 448.51
+    },
+    {
+      "code": "F68A",
+      "name": "Kongenitalna bolest srca sa KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.65,
+      "ambulanta_eur": 1254.3
+    },
+    {
+      "code": "F68B",
+      "name": "Kongenitalna bolest srca bez KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.8,
+      "ambulanta_eur": 608.14
+    },
+    {
+      "code": "F69A",
+      "name": "Poremecaji zalistaka srca sa vrlo teskim ili teškim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.63,
+      "ambulanta_eur": 1239.09
+    },
+    {
+      "code": "F69B",
+      "name": "Poremecaji zalistaka srca bez vrlo teskih ili tekih KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.42,
+      "ambulanta_eur": 319.28
+    },
+    {
+      "code": "F72A",
+      "name": "Nestabilna angina pectoris sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.21,
+      "ambulanta_eur": 919.82
+    },
+    {
+      "code": "F72B",
+      "name": "Nestabilna angina pectoris bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.6,
+      "ambulanta_eur": 456.11
+    },
+    {
+      "code": "F73A",
+      "name": "Sinkopa i kolaps sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.43,
+      "ambulanta_eur": 1087.06
+    },
+    {
+      "code": "F73B",
+      "name": "Sinkopa i kolaps bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.51,
+      "ambulanta_eur": 387.69
+    },
+    {
+      "code": "F74Z",
+      "name": "Bol u grudima",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.4,
+      "ambulanta_eur": 304.07
+    },
+    {
+      "code": "F75A",
+      "name": "Druge bolesti cirkulatornog sistema sa vrlo teskim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.12,
+      "ambulanta_eur": 2371.76
+    },
+    {
+      "code": "F75B",
+      "name": "Druge bolesti cirkulatornog sistema sa teskim ili umjerenim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.31,
+      "ambulanta_eur": 995.84
+    },
+    {
+      "code": "F75C",
+      "name": "Druge bolesti cirkulatornog sistema ez KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.67,
+      "ambulanta_eur": 509.32
+    },
+    {
+      "code": "F76A",
+      "name": "Aritmije,srani zastoji poremeaji provodljivosti sa vrlo tekim ili tekim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.6,
+      "ambulanta_eur": 1216.29
+    },
+    {
+      "code": "F76B",
+      "name": "Aritmije, sreani zastoj i poremecaji provodljivosti bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.57,
+      "ambulanta_eur": 433.3
+    },
+    {
+      "code": "G01A",
+      "name": "Resekcija rektuma sa vrlo teškim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.82,
+      "ambulanta_eur": 5944.61
+    },
+    {
+      "code": "G01B",
+      "name": "Resekcija rektuma bez vrlo teskih KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.38,
+      "ambulanta_eur": 3329.59
+    },
+    {
+      "code": "G02A",
+      "name": "Veliki zahvati na tankom i debelom crijevu sa vrlo tekim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.17,
+      "ambulanta_eur": 5450.49
+    },
+    {
+      "code": "G02B",
+      "name": "Veliki zahvati na tankom i debelom crijevu bez vrlo tekih KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.47,
+      "ambulanta_eur": 2637.82
+    },
+    {
+      "code": "G03A",
+      "name": "Zahvati na elucu,jednjaku i dvanaestopalanom crijevu sa malignom bolecu ili sa vrlo teskim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 8.1,
+      "ambulanta_eur": 6157.46
+    },
+    {
+      "code": "G03B",
+      "name": "Zahvati na elucu,jednjakuidvanaestopalanom crijevu, bez maligne bolesti,sa tekim ili umjerenim KK",
+      "section": null,
+      "page": 9,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.57,
+      "ambulanta_eur": 2713.84
+    },
+    {
+      "code": "G03C",
+      "name": "Zahvati na elucu,jednjakuidvanaestopalanom crijevu, bez maligne bolesti,bez KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.16,
+      "ambulanta_eur": 1641.99
+    },
+    {
+      "code": "G04A",
+      "name": "Adhezioliza peritoneuma sa vrlo teskim KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.4,
+      "ambulanta_eur": 4865.15
+    },
+    {
+      "code": "G04B",
+      "name": "Adhezioliza peritoneuma sa teškim ili umjerenim KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.58,
+      "ambulanta_eur": 2721.44
+    },
+    {
+      "code": "G04C",
+      "name": "Adhezioliza peritoneuma bez KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.96,
+      "ambulanta_eur": 1489.95
+    },
+    {
+      "code": "G05A",
+      "name": "Manji zahvati na tankom i debelom crijevu sa vrlo tekim KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.73,
+      "ambulanta_eur": 3595.65
+    },
+    {
+      "code": "G05B",
+      "name": "Manji zahvati na tankom i debelom crijevu sa tekim ili umjerenim KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.79,
+      "ambulanta_eur": 2120.9
+    },
+    {
+      "code": "G05C",
+      "name": "Manji zahvati na tankom i debelom crijevu bez KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.77,
+      "ambulanta_eur": 1345.52
+    },
+    {
+      "code": "G06Z",
+      "name": "Pilorotomija",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.77,
+      "ambulanta_eur": 1345.52
+    },
+    {
+      "code": "G07A",
+      "name": "Apendektomija sa malignim oboljenjem ili peritonitisom ili sa vrlo teskim ili tekim KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.27,
+      "ambulanta_eur": 1725.61
+    },
+    {
+      "code": "G07B",
+      "name": "Apendektomija bez malignog oboljenja ili peritonitisa bez vrlo tekih ili tekih KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.31,
+      "ambulanta_eur": 995.84
+    },
+    {
+      "code": "G10A",
+      "name": "Zahvati zbog hernije sa KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.16,
+      "ambulanta_eur": 1641.99
+    },
+    {
+      "code": "G10B",
+      "name": "Zahvati zbog hernije bez KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.92,
+      "ambulanta_eur": 699.37
+    },
+    {
+      "code": "G11Z",
+      "name": "Zahvati na anusu i stomi",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.69,
+      "ambulanta_eur": 524.52
+    },
+    {
+      "code": "G12A",
+      "name": "Ostali operativni zahvati na gastrointestinalnom sistemu sa vrlo tekim KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.76,
+      "ambulanta_eur": 4378.64
+    },
+    {
+      "code": "G12B",
+      "name": "Ostali operativni zahvati na gastrointestinalnom sistemu sa tekim ili umjerenim KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.75,
+      "ambulanta_eur": 2090.5
+    },
+    {
+      "code": "G12C",
+      "name": "Ostali operativni zahvati na gastrointestinalnom sistemu bez KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.4,
+      "ambulanta_eur": 1064.25
+    },
+    {
+      "code": "G46A",
+      "name": "Slozena gastroskopija sa vrlo teskim KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.29,
+      "ambulanta_eur": 3261.17
+    },
+    {
+      "code": "G46B",
+      "name": "Slozena gastroskopija bez vrlo teskih KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.6,
+      "ambulanta_eur": 1216.29
+    },
+    {
+      "code": "G46C",
+      "name": "Slozena gastroskopija, isti dan",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.38,
+      "ambulanta_eur": 288.87
+    },
+    {
+      "code": "G47A",
+      "name": "Ostale gastroskopije sa vrlo teskim KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.24,
+      "ambulanta_eur": 2462.98
+    },
+    {
+      "code": "G47B",
+      "name": "Ostale gastroskopije bez vrlo teskih KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.27,
+      "ambulanta_eur": 965.43
+    },
+    {
+      "code": "G47C",
+      "name": "Ostale gastroskopije, isti dan",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.32,
+      "ambulanta_eur": 243.26
+    },
+    {
+      "code": "G48A",
+      "name": "Kolonoskopija sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.65,
+      "ambulanta_eur": 2014.48
+    },
+    {
+      "code": "G48B",
+      "name": "Kolonoskopija bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.12,
+      "ambulanta_eur": 851.4
+    },
+    {
+      "code": "G48C",
+      "name": "Kolonoskopija, isti dan",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.34,
+      "ambulanta_eur": 258.46
+    },
+    {
+      "code": "G60A",
+      "name": "Maligna bolest gastrointestinalnog sistema sa vrlo teskim KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.15,
+      "ambulanta_eur": 1634.39
+    },
+    {
+      "code": "G60B",
+      "name": "Maligna bolest gastrointestinalnog sistema bez vrlo teskih KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.87,
+      "ambulanta_eur": 661.36
+    },
+    {
+      "code": "G61A",
+      "name": "Krvarenje iz gastrointestinalnog sistema sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.32,
+      "ambulanta_eur": 1003.44
+    },
+    {
+      "code": "G61B",
+      "name": "Krvarenje iz gastrointestinalnog sistema bez vrlo tekih ili teskih KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.53,
+      "ambulanta_eur": 402.9
+    },
+    {
+      "code": "G62Z",
+      "name": "Komplikovani peptički ulkus",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.41,
+      "ambulanta_eur": 1071.85
+    },
+    {
+      "code": "G63Z",
+      "name": "Nekomplikovani peptički ulkus",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.43,
+      "ambulanta_eur": 326.88
+    },
+    {
+      "code": "G64A",
+      "name": "Zapaljenska bolest crijeva sa KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.41,
+      "ambulanta_eur": 1071.85
+    },
+    {
+      "code": "G64B",
+      "name": "Zapaljenska bolest crijeva bez KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.7,
+      "ambulanta_eur": 532.13
+    },
+    {
+      "code": "G65A",
+      "name": "Opstrukcija gastrointestinalnog sistema sa vrlo teskim ili tekim KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.72,
+      "ambulanta_eur": 1307.51
+    },
+    {
+      "code": "G65B",
+      "name": "Opstrukcija gastrointestinalnog sistema bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.8,
+      "ambulanta_eur": 608.14
+    },
+    {
+      "code": "G66Z",
+      "name": "Bol u abdomenu ili mezenterijumski adenitis",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.42,
+      "ambulanta_eur": 319.28
+    },
+    {
+      "code": "G67A",
+      "name": "Ezofagitis i gastroenteritis sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.44,
+      "ambulanta_eur": 1094.66
+    },
+    {
+      "code": "G67B",
+      "name": "Ezofagitis i gastroenteritis bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.43,
+      "ambulanta_eur": 326.88
+    },
+    {
+      "code": "G70A",
+      "name": "Druge bolesti gastrointestinalnog sistema sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 10,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.46,
+      "ambulanta_eur": 1109.86
+    },
+    {
+      "code": "G70B",
+      "name": "Druge bolesti gastrointestinalnog sistema bez vrlo tekih ili teskih KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.48,
+      "ambulanta_eur": 364.89
+    },
+    {
+      "code": "H01A",
+      "name": "Zahvati na pankreasu, jetri i antovima sa vrlo teskim KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 8.68,
+      "ambulanta_eur": 6598.36
+    },
+    {
+      "code": "H01B",
+      "name": "Zahvati na pankreasu, jetri i santovima bez vrlo tekih KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.88,
+      "ambulanta_eur": 2949.5
+    },
+    {
+      "code": "H02A",
+      "name": "Veliki zahvati na bilijarnom traktu sa vrlo teskim KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.63,
+      "ambulanta_eur": 5039.99
+    },
+    {
+      "code": "H02B",
+      "name": "Veliki zahvati na bilijarnom traktu sa teskim KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.56,
+      "ambulanta_eur": 2706.24
+    },
+    {
+      "code": "H02C",
+      "name": "Veliki zahvatina bilijarnom traktu be vrlo tekih ili tekih KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.75,
+      "ambulanta_eur": 2090.5
+    },
+    {
+      "code": "H05A",
+      "name": "Dijagnosticki zahvati na hepatobilijarnom sistemu sa vrlo teskim KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.26,
+      "ambulanta_eur": 4758.73
+    },
+    {
+      "code": "H05B",
+      "name": "Dijagnosticki zahvati na hepatobilijarnom sistemu bez vrlo teških KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.87,
+      "ambulanta_eur": 1421.54
+    },
+    {
+      "code": "H06A",
+      "name": "Ostali operativni zahvati na hepatobilijarnom sistemu i pankreasu sa vrlo tekim KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.97,
+      "ambulanta_eur": 4538.27
+    },
+    {
+      "code": "H06B",
+      "name": "Ostali operativni zahvati na hepatobilijarnom sistemuipankreasu bez vrlo tekih KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.0,
+      "ambulanta_eur": 1520.36
+    },
+    {
+      "code": "H07A",
+      "name": "Otvorena holecistektomija sa zatvorenim ispitivanjem prohodnosti duktusa holedohusa ili sa vrlo teškim KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.68,
+      "ambulanta_eur": 4317.82
+    },
+    {
+      "code": "H07B",
+      "name": "Otvorena holecistektomija, bez zatvorenog ispitivanja prohodnosti duktusa holedohusa, bez vrlo teskih KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.62,
+      "ambulanta_eur": 1991.67
+    },
+    {
+      "code": "H08A",
+      "name": "Laparoskopska holecistektomija sa zatvorenim ispitivanjem prohodnosti duktusa holedohusa, ili sa (vrlo teskim ili teskim KK)",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.77,
+      "ambulanta_eur": 2105.7
+    },
+    {
+      "code": "H08B",
+      "name": "Laparoskopska holecistektomija, bez zatvorenog ispitivanja prohodnosti duktusa holedohusa, bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.42,
+      "ambulanta_eur": 1079.46
+    },
+    {
+      "code": "H40A",
+      "name": "Endoskopske procedure zbog krvarenja iz ezofagealnih varicesa sa vrlo teškim KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.4,
+      "ambulanta_eur": 3344.79
+    },
+    {
+      "code": "H40B",
+      "name": "Endoskopske procedure zbog krvarenja iz ezofagealnih varicesa bez vrlo teskih KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.07,
+      "ambulanta_eur": 1573.57
+    },
+    {
+      "code": "H43A",
+      "name": "Slozeni terapijski postupci pomocu endoskopske retrogradne holangiopankreatografije (ERCP) sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.28,
+      "ambulanta_eur": 2493.39
+    },
+    {
+      "code": "H43B",
+      "name": "Slozeni terapijski zahvati pomoću endoskopske retrogradne holangiopankreatografije (ERCP) bez vrlo teskih ili teških KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.01,
+      "ambulanta_eur": 767.78
+    },
+    {
+      "code": "H60A",
+      "name": "Ciroza i alkoholni hepatitis sa vrlo teskim KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.41,
+      "ambulanta_eur": 2592.21
+    },
+    {
+      "code": "H60B",
+      "name": "Ciroza i alkoholni hepatitis sa teskim ili umjerenim KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.24,
+      "ambulanta_eur": 942.62
+    },
+    {
+      "code": "H60C",
+      "name": "Ciroza i alkoholni hepatitis bez KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.47,
+      "ambulanta_eur": 357.28
+    },
+    {
+      "code": "H61A",
+      "name": "Maligna bolest hepatobilijarnog sistema i pankreasa sa vrlo tekim KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.48,
+      "ambulanta_eur": 1885.25
+    },
+    {
+      "code": "H61B",
+      "name": "Maligna bolest hepatobilijarnog sistemai pankreasa bez vrlo teskih KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.12,
+      "ambulanta_eur": 851.4
+    },
+    {
+      "code": "H62A",
+      "name": "Poremecaji pankreasa,osim maligne bolesti,sa vrlo teskim ili tekim KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.49,
+      "ambulanta_eur": 1892.85
+    },
+    {
+      "code": "H62B",
+      "name": "Poremecaji pankreasa,osim maligne bolesti, bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.91,
+      "ambulanta_eur": 691.76
+    },
+    {
+      "code": "H63A",
+      "name": "Poremeaji jetreosim maligne bolesticirozeialkoolnog hepatitisas vrlo tekimili teškim KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.33,
+      "ambulanta_eur": 1771.22
+    },
+    {
+      "code": "H63B",
+      "name": "Poremecaji jetre,osim maligne bolesti,cirozei alk.hepatitisabez vrlo tek.ili tekih KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.67,
+      "ambulanta_eur": 509.32
+    },
+    {
+      "code": "H64A",
+      "name": "Poremećaji bilijarnog sistema sa KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.54,
+      "ambulanta_eur": 1170.68
+    },
+    {
+      "code": "H64B",
+      "name": "Poremecaji bilijarnog sistema bez KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.56,
+      "ambulanta_eur": 425.7
+    },
+    {
+      "code": "I01A",
+      "name": "Obostrani ili visestruki veliki zahvati na zglobovima donjih ekstremiteta sa revizijom ili sa vrlo teskim KK",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 10.77,
+      "ambulanta_eur": 8187.14
+    },
+    {
+      "code": "I02B",
+      "name": "Presadivanje koe,iskljuujui akubez vrlo tekiili tk",
+      "section": null,
+      "page": 11,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.83,
+      "ambulanta_eur": 2911.49
+    },
+    {
+      "code": "I04B",
+      "name": "Zamjena koljena bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.07,
+      "ambulanta_eur": 3093.93
+    },
+    {
+      "code": "I05A",
+      "name": "Zamjene ostalih zglobova sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.48,
+      "ambulanta_eur": 4165.79
+    },
+    {
+      "code": "I08A",
+      "name": "Ostali zahvati na kuku i femuru sa vrlo teskim KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.78,
+      "ambulanta_eur": 4393.84
+    },
+    {
+      "code": "I09B",
+      "name": "Spinalna fuzija bez vrlo teskih KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.85,
+      "ambulanta_eur": 4447.05
+    },
+    {
+      "code": "I10A",
+      "name": "Ostali zahvati na ledima i vratu sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.29,
+      "ambulanta_eur": 3261.17
+    },
+    {
+      "code": "I10B",
+      "name": "Ostali zahvati na ledimai vratu bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.08,
+      "ambulanta_eur": 1581.17
+    },
+    {
+      "code": "I11Z",
+      "name": "Zahvati radi produzenja ekstremiteta",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.07,
+      "ambulanta_eur": 2333.75
+    },
+    {
+      "code": "I12A",
+      "name": "Infekcija/upala kostiju i zglobova sa raznim zahvatima na misićno-skeletnom sistemu sa vrlo teskim KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.04,
+      "ambulanta_eur": 5351.67
+    },
+    {
+      "code": "I12B",
+      "name": "Infekcija/upala kostijui zglobova sa raznim zahvatima na misino-skeletnom sistemu sa teškim ili umjerenim KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.17,
+      "ambulanta_eur": 3169.95
+    },
+    {
+      "code": "I12C",
+      "name": "Infekcija/upala kostiju i zglobova sa raznim zahvatima na misicno-skeletnom sistemu bez KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.05,
+      "ambulanta_eur": 1558.37
+    },
+    {
+      "code": "I13B",
+      "name": "Zahvati na humerusu, tibiji,fibuli i skoenom zglobu bez KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.07,
+      "ambulanta_eur": 1573.57
+    },
+    {
+      "code": "I15Z",
+      "name": "Kraniofacijalni hirurski zahvati",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.79,
+      "ambulanta_eur": 2881.08
+    },
+    {
+      "code": "I16Z",
+      "name": "Ostali zahvati na ramenu",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.42,
+      "ambulanta_eur": 1079.46
+    },
+    {
+      "code": "I17A",
+      "name": "Maksilofacijalni hirurski zahvati sa KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.57,
+      "ambulanta_eur": 1953.66
+    },
+    {
+      "code": "I18Z",
+      "name": "Ostali zahvati na koljenu",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.78,
+      "ambulanta_eur": 592.94
+    },
+    {
+      "code": "I19A",
+      "name": "Ostali zahvati na laktu i podlaktici sa KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.85,
+      "ambulanta_eur": 2166.51
+    },
+    {
+      "code": "I19B",
+      "name": "Ostali zahvati na laktu i podlaktici bez KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.59,
+      "ambulanta_eur": 1208.69
+    },
+    {
+      "code": "I20Z",
+      "name": "Ostali zahvati na stopalu",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.34,
+      "ambulanta_eur": 1018.64
+    },
+    {
+      "code": "I23Z",
+      "name": "Lokalna ekscizija i odstranjenje unutrasnjeg fiksatora, osim za kuk i femur",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.65,
+      "ambulanta_eur": 494.12
+    },
+    {
+      "code": "I24Z",
+      "name": "Artroskopija",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.75,
+      "ambulanta_eur": 570.14
+    },
+    {
+      "code": "I25A",
+      "name": "Dijagnosticke procedure na kostima i zglobovima ukljucujuci biopsiju sa KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.68,
+      "ambulanta_eur": 2797.46
+    },
+    {
+      "code": "I25B",
+      "name": "Dijagnosticke procedure na kostima i zglobovima ukljuujuci biopsiju bez KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.4,
+      "ambulanta_eur": 1064.25
+    },
+    {
+      "code": "I28A",
+      "name": "Ostali zahvati na misićno-skeletalnom sistemu sa KK",
+      "section": null,
+      "page": 12,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.64,
+      "ambulanta_eur": 2767.06
+    },
+    {
+      "code": "I29Z",
+      "name": "Rekonstrukcija ili revizija koljena",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.6,
+      "ambulanta_eur": 1216.29
+    },
+    {
+      "code": "I30Z",
+      "name": "Zahvati na Saci",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.88,
+      "ambulanta_eur": 668.96
+    },
+    {
+      "code": "I31A",
+      "name": "Revizija kuka sa vrlo teškim KK",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 10.0,
+      "ambulanta_eur": 7601.8
+    },
+    {
+      "code": "I31B",
+      "name": "Revizija kuka bez vrlo teških KK",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.99,
+      "ambulanta_eur": 4553.48
+    },
+    {
+      "code": "I32A",
+      "name": "Revizija koljena sa vrlo teskim KK",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 11.3,
+      "ambulanta_eur": 8590.03
+    },
+    {
+      "code": "I32B",
+      "name": "Revizija koljena sa teškim KK",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.46,
+      "ambulanta_eur": 4910.76
+    },
+    {
+      "code": "I60Z",
+      "name": "Prelom tijela femura",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.21,
+      "ambulanta_eur": 1680.0
+    },
+    {
+      "code": "I61A",
+      "name": "Prelom donjeg dijela femura sa KK",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.84,
+      "ambulanta_eur": 2158.91
+    },
+    {
+      "code": "I61B",
+      "name": "Prelom donjeg dijela femura bez KK",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.1,
+      "ambulanta_eur": 836.2
+    },
+    {
+      "code": "I64A",
+      "name": "Osteomijelitis sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.43,
+      "ambulanta_eur": 2607.42
+    },
+    {
+      "code": "I67B",
+      "name": "Septički artritis bez vrlo teških ili teških KK",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.28,
+      "ambulanta_eur": 973.03
+    },
+    {
+      "code": "I71B",
+      "name": "Ostali misićno-tetivni poremecaji, bez vrlo tekih ili teskih KK",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.52,
+      "ambulanta_eur": 395.29
+    },
+    {
+      "code": "I72B",
+      "name": "Specifieni misićno-tetivni poremecaji, bez vrlo teskih ili tekih KK",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.63,
+      "ambulanta_eur": 478.91
+    },
+    {
+      "code": "I73A",
+      "name": "Naknadna njega dijela tijela sa miino-skeletnom implantatom/protezoms vrlotekim ili teskim KK",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.89,
+      "ambulanta_eur": 2196.92
+    },
+    {
+      "code": "I74Z",
+      "name": "Povreda podlaktice, ruenog zgloba, sake ili stopala",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.45,
+      "ambulanta_eur": 342.08
+    },
+    {
+      "code": "I75A",
+      "name": "Povredaameaalakticelatakoljeapokojeiceiliglja,",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.87,
+      "ambulanta_eur": 1421.54
+    },
+    {
+      "code": "I76B",
+      "name": "Drugii misicno-skeletni poremecaji, bez vrlo tekih ili tekih KK",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.5,
+      "ambulanta_eur": 380.09
+    },
+    {
+      "code": "I77A",
+      "name": "Prelom karlice sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.9,
+      "ambulanta_eur": 2204.52
+    },
+    {
+      "code": "I77B",
+      "name": "Prelom karlice bez vrlo tekih ili teskih KK",
+      "section": null,
+      "page": 13,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.36,
+      "ambulanta_eur": 1033.84
+    },
+    {
+      "code": "I78A",
+      "name": "Prelom vrata femura sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.88,
+      "ambulanta_eur": 1429.14
+    },
+    {
+      "code": "I79B",
+      "name": "Patoloska fraktura bez vrlo teških KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.76,
+      "ambulanta_eur": 1337.92
+    },
+    {
+      "code": "J01A",
+      "name": "Mikrovaskularni prenos tkiva zbog poremecaja koze, potkoznog tkiva ili dojke sa vrlo teskim/teškim KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 9.58,
+      "ambulanta_eur": 7282.52
+    },
+    {
+      "code": "J01B",
+      "name": "Mikrovaskularni prenos tkiva zbog poremecaja koze, potkoznog tkiva ili dojke bez vrlo teskih/teskih KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.59,
+      "ambulanta_eur": 5009.59
+    },
+    {
+      "code": "J06Z",
+      "name": "Veliki zahvati zbog stanja dojke",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.67,
+      "ambulanta_eur": 1269.5
+    },
+    {
+      "code": "J07Z",
+      "name": "Manji zahvati zbog stanja dojke",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.69,
+      "ambulanta_eur": 524.52
+    },
+    {
+      "code": "J08A",
+      "name": "Ostala presadivanja koze i/ili zahvati debridmana sa KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.42,
+      "ambulanta_eur": 2599.82
+    },
+    {
+      "code": "J08B",
+      "name": "Ostala presadivanja koze i/ili zahvati debridmana bez KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.94,
+      "ambulanta_eur": 714.57
+    },
+    {
+      "code": "J09Z",
+      "name": "Perianalnii pilonidalni zahvati",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.91,
+      "ambulanta_eur": 691.76
+    },
+    {
+      "code": "J10Z",
+      "name": "Plastično-hirurski operativni zahvati na kozi, potkoznom tkivu i dojci",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.72,
+      "ambulanta_eur": 547.33
+    },
+    {
+      "code": "J11Z",
+      "name": "Ostali zahvati na kozi, potkoznom tkivu i dojci",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.46,
+      "ambulanta_eur": 349.68
+    },
+    {
+      "code": "J12A",
+      "name": "Zahvati na donjim ekstremitetima sa ulkusom/celulitisom sa vrlo teskim KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.26,
+      "ambulanta_eur": 4758.73
+    },
+    {
+      "code": "J12B",
+      "name": "Zahvati na donjim ekstremitetima sa ulkusom /celulitisom,sa popravkom pomocu presadivanja/reznja koze, bez vrlo teskih KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.98,
+      "ambulanta_eur": 3025.52
+    },
+    {
+      "code": "J12C",
+      "name": "Zahvati na ekstremitetima sa ulkusom /celulitisom, bez popravka pomocu presadivanja/reznja koze, bez vrlo teskih KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.28,
+      "ambulanta_eur": 1733.21
+    },
+    {
+      "code": "J13A",
+      "name": "Zahvati na donjim ekstremitetima bez ulcusa/celulitisa, sa presadivanjem koze, sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.67,
+      "ambulanta_eur": 2789.86
+    },
+    {
+      "code": "J13B",
+      "name": "Zahvati na donjim ekstremitetima bez ulkusa/celulitisa, bez presadivanja koze, bez vrlo teskih ili tekih KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.37,
+      "ambulanta_eur": 1041.45
+    },
+    {
+      "code": "J14Z",
+      "name": "Velika rekonstrukcija dojke",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.77,
+      "ambulanta_eur": 3626.06
+    },
+    {
+      "code": "J60A",
+      "name": "Ulkus koze sa vrlo teškim KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.43,
+      "ambulanta_eur": 2607.42
+    },
+    {
+      "code": "J60B",
+      "name": "Ulkus koze bez vrlo teških KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.89,
+      "ambulanta_eur": 1436.74
+    },
+    {
+      "code": "J60C",
+      "name": "Ulkus koze, isti dan",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.22,
+      "ambulanta_eur": 167.24
+    },
+    {
+      "code": "J62A",
+      "name": "Maligna bolest dojke sa KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.24,
+      "ambulanta_eur": 942.62
+    },
+    {
+      "code": "J62B",
+      "name": "Maligna bolest dojke bez KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.53,
+      "ambulanta_eur": 402.9
+    },
+    {
+      "code": "J63A",
+      "name": "Nemaligna bolest dojke sa KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.24,
+      "ambulanta_eur": 942.62
+    },
+    {
+      "code": "J63B",
+      "name": "Nemaligna bolest dojke bez KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.47,
+      "ambulanta_eur": 357.28
+    },
+    {
+      "code": "J64A",
+      "name": "Celulitis sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.08,
+      "ambulanta_eur": 1581.17
+    },
+    {
+      "code": "J64B",
+      "name": "Celulitis bez vrlo teških ili teskih KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.03,
+      "ambulanta_eur": 782.99
+    },
+    {
+      "code": "J65A",
+      "name": "Trauma koze, potkoznog tkiva i dojke sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.42,
+      "ambulanta_eur": 1079.46
+    },
+    {
+      "code": "J65B",
+      "name": "Trauma koze, potkoznog tkiva i dojke bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.45,
+      "ambulanta_eur": 342.08
+    },
+    {
+      "code": "J67A",
+      "name": "Manji poremecaji na koi",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.91,
+      "ambulanta_eur": 691.76
+    },
+    {
+      "code": "J67B",
+      "name": "Manji poremeaji na kozi, isti dan",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.25,
+      "ambulanta_eur": 190.05
+    },
+    {
+      "code": "J68A",
+      "name": "Veci poremecaji na kozi sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.53,
+      "ambulanta_eur": 1923.26
+    },
+    {
+      "code": "J68B",
+      "name": "Veci poremećaji na kozi bez vrlo tekih ili tekih KK",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.24,
+      "ambulanta_eur": 942.62
+    },
+    {
+      "code": "J68C",
+      "name": "Veci poremecaji na kozi, istog dana",
+      "section": null,
+      "page": 14,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.23,
+      "ambulanta_eur": 174.84
+    },
+    {
+      "code": "J69A",
+      "name": "Maligne promjene na kozi sa vrlo teskim KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.79,
+      "ambulanta_eur": 2120.9
+    },
+    {
+      "code": "J69B",
+      "name": "Maligne promjene na kozi bez vrlo teskih KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.77,
+      "ambulanta_eur": 1345.52
+    },
+    {
+      "code": "J69C",
+      "name": "Maligne promjene na kozi, istog dana",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.2,
+      "ambulanta_eur": 152.04
+    },
+    {
+      "code": "K01A",
+      "name": "Operativni zahvati radi komplikacija dijabetesa sa vrlo teskim KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.97,
+      "ambulanta_eur": 6058.63
+    },
+    {
+      "code": "K01B",
+      "name": "Operativni zahvati radi komplikacija dijabetesa bez vrlo teskih KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.6,
+      "ambulanta_eur": 2736.65
+    },
+    {
+      "code": "K02A",
+      "name": "Zahvati na hipofizi sa KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.93,
+      "ambulanta_eur": 4507.87
+    },
+    {
+      "code": "K02B",
+      "name": "Zahvati na hipofizi bez KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.75,
+      "ambulanta_eur": 2850.68
+    },
+    {
+      "code": "K03Z",
+      "name": "Zahvati na nadbubreznim Zlijezdama",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.83,
+      "ambulanta_eur": 2911.49
+    },
+    {
+      "code": "K04A",
+      "name": "Veliki zahvati zbog gojaznosti sa KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.06,
+      "ambulanta_eur": 3086.33
+    },
+    {
+      "code": "K04B",
+      "name": "Veliki zahvati zbog gojaznosti bez KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.87,
+      "ambulanta_eur": 1421.54
+    },
+    {
+      "code": "K05A",
+      "name": "Zahvati na paratireoidnoj zlijezdi sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.41,
+      "ambulanta_eur": 2592.21
+    },
+    {
+      "code": "K05B",
+      "name": "Zahvati na paratireoidnoj zlijezdi bez vrlo teskih ili tekih KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.34,
+      "ambulanta_eur": 1018.64
+    },
+    {
+      "code": "K06A",
+      "name": "Zahvati na titnoj Zlijezdi sa vrlo teškim ili teskim KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.98,
+      "ambulanta_eur": 2265.34
+    },
+    {
+      "code": "K06B",
+      "name": "Zahvati na stitnoj Zlijezdi bez vrlo teskih ili teških KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.7,
+      "ambulanta_eur": 1292.31
+    },
+    {
+      "code": "K07Z",
+      "name": "Ostali zahvati zbog gojaznosti",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.7,
+      "ambulanta_eur": 1292.31
+    },
+    {
+      "code": "K08Z",
+      "name": "Zahvati na tiroglosalnom kanalu (tiroglosalne ciste)",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.08,
+      "ambulanta_eur": 820.99
+    },
+    {
+      "code": "K09A",
+      "name": "Ostali operativni zahvati zbog endokrinih, nutricionih ili metabol. uzroka sa vrlo tesk.KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.29,
+      "ambulanta_eur": 4781.53
+    },
+    {
+      "code": "K09B",
+      "name": "Ostali operativni zahvati zbog endokrinih,,nutricionih ili metabolikih uzroka sa teskim ili umjerenim KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.7,
+      "ambulanta_eur": 2052.49
+    },
+    {
+      "code": "K09C",
+      "name": "Ostali operativni zahvati zbog endokrinih,,nutricionih ili metabolickih uzroka bez KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.9,
+      "ambulanta_eur": 1444.34
+    },
+    {
+      "code": "K40A",
+      "name": "Endoskopski ili dijagnostiki zahvati zbog metabolikih poremecaja sa vrlo tekim KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.52,
+      "ambulanta_eur": 4196.19
+    },
+    {
+      "code": "K40B",
+      "name": "Endoskopski ili dijagnostiki zahvati zbog metabolikih poremeaja bez vrlo tekih KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.03,
+      "ambulanta_eur": 1543.17
+    },
+    {
+      "code": "K40C",
+      "name": "Endoskopski ili dijagnosticki zahvati zbog metabolickih poremecaja, istog dana",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.37,
+      "ambulanta_eur": 281.27
+    },
+    {
+      "code": "K60A",
+      "name": "Dijabetes sa vrlo teškim ili teškim KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.23,
+      "ambulanta_eur": 1695.2
+    },
+    {
+      "code": "K60B",
+      "name": "Dijabetes bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.94,
+      "ambulanta_eur": 714.57
+    },
+    {
+      "code": "K61Z",
+      "name": "Teski poremecaji ishrane",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.34,
+      "ambulanta_eur": 2539.0
+    },
+    {
+      "code": "K62A",
+      "name": "Razni metabolicki poremecaji sa vrlo tekim ili tekim KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.79,
+      "ambulanta_eur": 1360.72
+    },
+    {
+      "code": "K62B",
+      "name": "Razni metabolicki poremećaji bez vrlo tekih ili tekih KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.62,
+      "ambulanta_eur": 471.31
+    },
+    {
+      "code": "K63A",
+      "name": "Urodeni poremecaji metabolizma sa KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.38,
+      "ambulanta_eur": 1049.05
+    },
+    {
+      "code": "K63B",
+      "name": "Urodeni poremecaji metabolizma bez KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.52,
+      "ambulanta_eur": 395.29
+    },
+    {
+      "code": "K64A",
+      "name": "Endokrinološki poremecaji sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.35,
+      "ambulanta_eur": 1786.42
+    },
+    {
+      "code": "K64B",
+      "name": "Endokrinoloki poremecaji bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.86,
+      "ambulanta_eur": 653.75
+    },
+    {
+      "code": "L02A",
+      "name": "Operativno postavljanje peritonealnog katetera zbog dijalize sa vrlo teškim ili teskim KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.15,
+      "ambulanta_eur": 3154.75
+    },
+    {
+      "code": "L02B",
+      "name": "Operativno postavljanje peritonealnog katetera zbog dijalize bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.28,
+      "ambulanta_eur": 973.03
+    },
+    {
+      "code": "L03A",
+      "name": "Veliki zahvati zbog neoplazme (tumora) bubrega,ureterai mokr. besike sa vrlo tesk.KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.67,
+      "ambulanta_eur": 5830.58
+    },
+    {
+      "code": "L03B",
+      "name": "Veliki zahvati zbog neoplazme (tumora) bubrega, ureterai mokr. besike sa teskim KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.99,
+      "ambulanta_eur": 3793.3
+    },
+    {
+      "code": "L03C",
+      "name": "Veliki zahvati zbog neoplazme (tumora) bubrega, uretera i mokracne besike bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 15,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.37,
+      "ambulanta_eur": 2561.81
+    },
+    {
+      "code": "L04A",
+      "name": "Veliki zahvati na bubregu, ureteru i mokracnoj besici, osim zbog neoplazme (tumora), sa vrlo teškim KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.78,
+      "ambulanta_eur": 4393.84
+    },
+    {
+      "code": "L04B",
+      "name": "Veliki postupci na bubregu, ureteru i mokracnoj besici, osim zbog neoplazme (tumora), sa teskim KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.05,
+      "ambulanta_eur": 2318.55
+    },
+    {
+      "code": "L04C",
+      "name": "Veliki postupci na bubregu, ureteru i mokracnoj besici, osim zbog neoplazme (tumora), bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.84,
+      "ambulanta_eur": 1398.73
+    },
+    {
+      "code": "L05A",
+      "name": "Transuretralna prostatektomija sa vrlo teskim ili teškim KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.66,
+      "ambulanta_eur": 2782.26
+    },
+    {
+      "code": "L05B",
+      "name": "Transuretralna prostatektomija bez vrlo teskih ili tekih KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.34,
+      "ambulanta_eur": 1018.64
+    },
+    {
+      "code": "L06A",
+      "name": "Manji zahvati na mokraćnoj besici sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.06,
+      "ambulanta_eur": 2326.15
+    },
+    {
+      "code": "L06B",
+      "name": "Manji zahvati na mokracnoj besici bez vrlo tekih ili teskih KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.03,
+      "ambulanta_eur": 782.99
+    },
+    {
+      "code": "L07A",
+      "name": "Transuretralni zahvati, osim prostatektomije, sa KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.8,
+      "ambulanta_eur": 1368.32
+    },
+    {
+      "code": "L07B",
+      "name": "Transuretralni zahvati, osim prostatektomije, bez KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.8,
+      "ambulanta_eur": 608.14
+    },
+    {
+      "code": "L08A",
+      "name": "Zahvati na uretri sa KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.78,
+      "ambulanta_eur": 1353.12
+    },
+    {
+      "code": "L08B",
+      "name": "Zahvati na uretri bez KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.77,
+      "ambulanta_eur": 585.34
+    },
+    {
+      "code": "L09A",
+      "name": "Ostali zahvati zbog poremecaja bubrega i urinarnog sistema sa vrlo teskim KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.47,
+      "ambulanta_eur": 4918.36
+    },
+    {
+      "code": "L09B",
+      "name": "Ostali zahvati zbog poremecaja bubrega i urinarnog sistema sa teskim KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.19,
+      "ambulanta_eur": 1664.79
+    },
+    {
+      "code": "L09C",
+      "name": "Ostali zahvatizbog poremeaja bubregaiurinarnog sistema bez vrlo tekihiliteki",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.11,
+      "ambulanta_eur": 843.8
+    },
+    {
+      "code": "L40Z",
+      "name": "Ureteroskopija",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.89,
+      "ambulanta_eur": 676.56
+    },
+    {
+      "code": "L41Z",
+      "name": "Cistouretroskopija,isti dan",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.27,
+      "ambulanta_eur": 205.25
+    },
+    {
+      "code": "L42Z",
+      "name": "ESWL (litotripsija) zbog urinarnih konkremenata",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.6,
+      "ambulanta_eur": 456.11
+    },
+    {
+      "code": "L60A",
+      "name": "Insuficijencija bubrega sa vrlo tešskim KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.77,
+      "ambulanta_eur": 2865.88
+    },
+    {
+      "code": "L60B",
+      "name": "Insuficijencija bubrega sa teskim KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.67,
+      "ambulanta_eur": 1269.5
+    },
+    {
+      "code": "L60C",
+      "name": "Insuficijencija bubrega bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.75,
+      "ambulanta_eur": 570.14
+    },
+    {
+      "code": "L62A",
+      "name": "Neoplazma (tumor) bubrega i urinarnog sistema sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.89,
+      "ambulanta_eur": 1436.74
+    },
+    {
+      "code": "L62B",
+      "name": "Neoplazma (tumor) bubrega i urinarnog sistema bez vrlo tekih ili teskih KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.7,
+      "ambulanta_eur": 532.13
+    },
+    {
+      "code": "L63A",
+      "name": "Infekcija bubrega i urinarnog sistema sa vrlo teškim ili teškim KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.01,
+      "ambulanta_eur": 1527.96
+    },
+    {
+      "code": "L63B",
+      "name": "Infekcija bubrega i urinarnog sistema bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.72,
+      "ambulanta_eur": 547.33
+    },
+    {
+      "code": "L64Z",
+      "name": "Urinarni konkrementi i opstrukcija",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.5,
+      "ambulanta_eur": 380.09
+    },
+    {
+      "code": "L65A",
+      "name": "Znakovi i simptomi povezani sa bubregom i urin. sistemom sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.45,
+      "ambulanta_eur": 1102.26
+    },
+    {
+      "code": "L65B",
+      "name": "Znakovii simptomi povezani sa bubregom i urin. sistemom bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.52,
+      "ambulanta_eur": 395.29
+    },
+    {
+      "code": "L66Z",
+      "name": "Striktura uretre",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.64,
+      "ambulanta_eur": 486.52
+    },
+    {
+      "code": "L67A",
+      "name": "Ostale bolesti bubregai urinarnog sistema sa vrlo tekim ili tekim KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.15,
+      "ambulanta_eur": 1634.39
+    },
+    {
+      "code": "L67B",
+      "name": "Ostali poremecaji bubregai urinarnog sistema bez vrlo teških ili teskih KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.46,
+      "ambulanta_eur": 349.68
+    },
+    {
+      "code": "L68Z",
+      "name": "Peritonealna dijaliza",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.31,
+      "ambulanta_eur": 235.66
+    },
+    {
+      "code": "M01A",
+      "name": "Veliki zahvati na muskoj karlici sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.35,
+      "ambulanta_eur": 3306.78
+    },
+    {
+      "code": "M01B",
+      "name": "Veliki zahvati na muškoj karlici bez vrlo teških ili tekih KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.1,
+      "ambulanta_eur": 2356.56
+    },
+    {
+      "code": "M02A",
+      "name": "Transuretralna prostatektomija sa vrlo teškim ili teskim KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.59,
+      "ambulanta_eur": 1968.87
+    },
+    {
+      "code": "M02B",
+      "name": "Transuretralna prostatektomija bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.33,
+      "ambulanta_eur": 1011.04
+    },
+    {
+      "code": "M03Z",
+      "name": "Zahvati na penisu",
+      "section": null,
+      "page": 16,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.89,
+      "ambulanta_eur": 676.56
+    },
+    {
+      "code": "M04Z",
+      "name": "Zahvati na testisima",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.77,
+      "ambulanta_eur": 585.34
+    },
+    {
+      "code": "M05Z",
+      "name": "Obrezivanje (cirkumcizija)",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.51,
+      "ambulanta_eur": 387.69
+    },
+    {
+      "code": "M06A",
+      "name": "Ostali operativni zahvati na muskom reproduktivnom sistemu sa KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.43,
+      "ambulanta_eur": 1847.24
+    },
+    {
+      "code": "M06B",
+      "name": "Ostali operativni zahvati na muškom reproduktivnom sistemu bez KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.54,
+      "ambulanta_eur": 1170.68
+    },
+    {
+      "code": "M40Z",
+      "name": "Cistouretroskopija, istog dana",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.27,
+      "ambulanta_eur": 205.25
+    },
+    {
+      "code": "M60A",
+      "name": "Maligna bolest mukog reproduktivnog sistema sa vrlo teškim ili teskim KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.7,
+      "ambulanta_eur": 1292.31
+    },
+    {
+      "code": "M60B",
+      "name": "Maligna bolest muškog reproduktivnog sistema bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.5,
+      "ambulanta_eur": 380.09
+    },
+    {
+      "code": "M61Z",
+      "name": "Benigna hipertrofija prostate",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.59,
+      "ambulanta_eur": 448.51
+    },
+    {
+      "code": "M62Z",
+      "name": "Zapaljenje muškog reproduktivnog sistema",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.7,
+      "ambulanta_eur": 532.13
+    },
+    {
+      "code": "M63Z",
+      "name": "Sterilizacija muškarca",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.36,
+      "ambulanta_eur": 273.66
+    },
+    {
+      "code": "M64Z",
+      "name": "Ostale bolesti muškog reproduktivnog sistema",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.38,
+      "ambulanta_eur": 288.87
+    },
+    {
+      "code": "N01Z",
+      "name": "Evisceracija karlice i radikalna vulvektomija",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.77,
+      "ambulanta_eur": 2865.88
+    },
+    {
+      "code": "N04A",
+      "name": "Histerektomija zbog nemalignih uzroka sa vrlo teškim ili teškim KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.74,
+      "ambulanta_eur": 2082.89
+    },
+    {
+      "code": "N04B",
+      "name": "Histerektomija zbog nemalignih uzroka bez vrlo teskih ili teških KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.91,
+      "ambulanta_eur": 1451.94
+    },
+    {
+      "code": "N05A",
+      "name": "Ovarijektomijai slozeni zahvati na jajovodu zbog nemalignih uzroka sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.89,
+      "ambulanta_eur": 2196.92
+    },
+    {
+      "code": "N05B",
+      "name": "Ovarijektomija i slozeni zahvati na jajovodu zbog nemalignih uzroka bez vrlo teskih ili teških KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.63,
+      "ambulanta_eur": 1239.09
+    },
+    {
+      "code": "N06A",
+      "name": "Rekonstruktivni zahvati na zenskom reproduktivnom sistemu sa vrlo tesk. ili teskim KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.06,
+      "ambulanta_eur": 1565.97
+    },
+    {
+      "code": "N06B",
+      "name": "Rekonstruktivni zahvati na enskom reproduktivnom sistemu bez vrlo tek. ili tekih KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.43,
+      "ambulanta_eur": 1087.06
+    },
+    {
+      "code": "N07Z",
+      "name": "Ostali zahvati na materici i adneksima zbog nemalignih uzroka",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.85,
+      "ambulanta_eur": 646.15
+    },
+    {
+      "code": "N08Z",
+      "name": "Endoskopski i laparoskopski zahvati na Zenskom reproduktivnom sistemu",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.75,
+      "ambulanta_eur": 570.14
+    },
+    {
+      "code": "N09Z",
+      "name": "Konizacija, zahvati na grliću materice,vagini I vulvi",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.5,
+      "ambulanta_eur": 380.09
+    },
+    {
+      "code": "N10Z",
+      "name": "Dijagnostička kiretaza ili dijagnosticka histeroskopija",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.45,
+      "ambulanta_eur": 342.08
+    },
+    {
+      "code": "N12A",
+      "name": "Zahvati na materici i adneksima zbog malignih uzroka sa vrlo tekim KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.78,
+      "ambulanta_eur": 3633.66
+    },
+    {
+      "code": "N12B",
+      "name": "Zahvati na materici i adneksima zbog malignih uzroka bez vrlo tekih KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.54,
+      "ambulanta_eur": 1930.86
+    },
+    {
+      "code": "N60A",
+      "name": "Maligna bolest Zenskog reproduktivnog sistema sa vrlo teskim KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.53,
+      "ambulanta_eur": 1923.26
+    },
+    {
+      "code": "N60B",
+      "name": "Maligna bolest Zenskog reproduktivnog sistema bez vrlo teskih KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.97,
+      "ambulanta_eur": 737.37
+    },
+    {
+      "code": "N61Z",
+      "name": "Infekcije Zenskog reproduktivnog sistema",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.61,
+      "ambulanta_eur": 463.71
+    },
+    {
+      "code": "N62Z",
+      "name": "Menstrualni i drugi poremecaji Zenskog reproduktivnog sistema",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.33,
+      "ambulanta_eur": 250.86
+    },
+    {
+      "code": "O01A",
+      "name": "Porodaj carskim rezom sa vrlo tekim ili tekim KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.79,
+      "ambulanta_eur": 2120.9
+    },
+    {
+      "code": "O01B",
+      "name": "Porodaj carskim rezom bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.98,
+      "ambulanta_eur": 1505.16
+    },
+    {
+      "code": "O02A",
+      "name": "Vaginalni porodaj sa operativnim zahvatom sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.24,
+      "ambulanta_eur": 1702.8
+    },
+    {
+      "code": "O02B",
+      "name": "Vaginalni porodaj sa operativnim zahvatom bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.51,
+      "ambulanta_eur": 1147.87
+    },
+    {
+      "code": "O03A",
+      "name": "Ektopična trudnoca sa KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.67,
+      "ambulanta_eur": 1269.5
+    },
+    {
+      "code": "O03B",
+      "name": "Ektopična trudnoća bez KK",
+      "section": null,
+      "page": 17,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": null,
+      "ambulanta_eur": 866.61
+    },
+    {
+      "code": "O04B",
+      "name": "Period nakon porodaja i nakon abortusa sa operat. zahvatom bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.8,
+      "ambulanta_eur": 608.14
+    },
+    {
+      "code": "O05Z",
+      "name": "Abortus sa operativnim zahvatom",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.42,
+      "ambulanta_eur": 319.28
+    },
+    {
+      "code": "O60Z",
+      "name": "Vaginalni porodaj",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.12,
+      "ambulanta_eur": 851.4
+    },
+    {
+      "code": "O61Z",
+      "name": "Period nakon porodaja i nakon abortusa bez operativnog zahvata",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.54,
+      "ambulanta_eur": 410.5
+    },
+    {
+      "code": "O63Z",
+      "name": "Abortus bez operativnog zahvata",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.34,
+      "ambulanta_eur": 258.46
+    },
+    {
+      "code": "O64Z",
+      "name": "Lažni trudovi",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.37,
+      "ambulanta_eur": 281.27
+    },
+    {
+      "code": "O66Z",
+      "name": "Prenatalni ili drugi akuserski prijem",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.33,
+      "ambulanta_eur": 250.86
+    },
+    {
+      "code": "P01Z",
+      "name": "Novorodenee, smrtni ishod ili premjesteno u drugu ustanovu boravak <5 dana, sa znacajnim operativnim zahvatom",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.29,
+      "ambulanta_eur": 980.63
+    },
+    {
+      "code": "P02Z",
+      "name": "Kardiotorakalni zahvati/zahvati na krvnim sudovima kod novorodenčeta",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 21.67,
+      "ambulanta_eur": 16473.1
+    },
+    {
+      "code": "P03Z",
+      "name": "Novorodene, masa pri prijemu 1000-1499 g, sa znaajnim operativnim zahvatom",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 17.17,
+      "ambulanta_eur": 13052.29
+    },
+    {
+      "code": "P04Z",
+      "name": "Novorodenče, masa pri prijemu 1500-1999 g, sa znaajnim operativnim zahvatom",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 12.35,
+      "ambulanta_eur": 9388.22
+    },
+    {
+      "code": "P05Z",
+      "name": "Novorodence, masa pri prijemu 2000-2499 g, sa znacajnim operativnim zahvatom",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 11.9,
+      "ambulanta_eur": 9046.14
+    },
+    {
+      "code": "P06A",
+      "name": "Novorodene, masa pri prijemu > 2499 g, sa znaajnim operativnim zahvatom i sa visestrukim velikim poremecajima",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 16.15,
+      "ambulanta_eur": 12276.91
+    },
+    {
+      "code": "P06B",
+      "name": "Novorodenče, masa pri prijemu > 2499 g, sa znaajnim operativnim zahvatom, bez visestrukih velikih poremecaja",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.7,
+      "ambulanta_eur": 4333.03
+    },
+    {
+      "code": "P60A",
+      "name": "Novorodenče, smrtni ishod ili premjesteno u drugu ustanovu <5 dana od prijema, bez značajnog operativnog zahvata, novorodeno",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.38,
+      "ambulanta_eur": 288.87
+    },
+    {
+      "code": "P60B",
+      "name": "Novorodence, smrtni ishod ili premjesteno u drugu ustanovu <5 dana od prijema, bez znacajnog operativnog zahvata, nije novorodeno",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.67,
+      "ambulanta_eur": 509.32
+    },
+    {
+      "code": "P61Z",
+      "name": "Novorodenče, masa pri prijemu < 750 g",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 39.14,
+      "ambulanta_eur": 29753.45
+    },
+    {
+      "code": "P62Z",
+      "name": "Novorodence, masa pri prijemu 750-999 g",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 29.33,
+      "ambulanta_eur": 22296.08
+    },
+    {
+      "code": "P63Z",
+      "name": "Novorodene, masa pri prijemu 1000-1249 g, bez znaajnog operativnog zahvata",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.95,
+      "ambulanta_eur": 6043.43
+    },
+    {
+      "code": "P64Z",
+      "name": "Novorodene, masa pri prijemu 1250 -1499 g, bez značajnog operativnog zahvata",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.28,
+      "ambulanta_eur": 5534.11
+    },
+    {
+      "code": "P65A",
+      "name": "Novorodenče, masa pri prijemu 1500-199 g, bez znaajnog operativnog zahvata, sa visestrukim velikim poremecajima",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.03,
+      "ambulanta_eur": 5344.07
+    },
+    {
+      "code": "P65B",
+      "name": "Novorodene, masa pri prijemu 1500-199 g, bez znaajnog operativnog zahvata, sa velikim poremecajima",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.41,
+      "ambulanta_eur": 4112.57
+    },
+    {
+      "code": "P65C",
+      "name": "Novorodenče, masa pri prijemu 1500-199 g, bez znaajnog operativnog zahvata, sa ostalim poremecajima",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.35,
+      "ambulanta_eur": 3306.78
+    },
+    {
+      "code": "P65D",
+      "name": "Novorodene, masa pri prijemu 1500-199 g, bez znaajnog operativnog zahvata, bez poremecaja",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.4,
+      "ambulanta_eur": 2584.61
+    },
+    {
+      "code": "P66A",
+      "name": "Novorodene, masa pri prijemu 2000-249 g, bez znaajnog operativnog zahvata, sa visestrukim velikim poremecajima",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.64,
+      "ambulanta_eur": 3527.24
+    },
+    {
+      "code": "P66B",
+      "name": "Novorodene, masa pri prijemu 2000-2499 g, bez znaajnog operativnog zahvata, sa velikim poremecajima",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.24,
+      "ambulanta_eur": 2462.98
+    },
+    {
+      "code": "P66C",
+      "name": "Novorodenee, masa pri prijemu 2000-2499 g, bez znaajnog operativnog zahvata, sa ostalim poremecajima",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.54,
+      "ambulanta_eur": 1930.86
+    },
+    {
+      "code": "P66D",
+      "name": "Novorodene,masa pri prijemu 200-249 g, bez znaajnog operativnog zahvata,z poremecaja",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.92,
+      "ambulanta_eur": 699.37
+    },
+    {
+      "code": "P67A",
+      "name": "Novorodence, masa pri prijemu > 2499 g, bez znacajnog operativnog postupka, sa visestrukim velikim poremećajima",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.15,
+      "ambulanta_eur": 3154.75
+    },
+    {
+      "code": "P67B",
+      "name": "Novorodene, masa pri prij.> 2499 g bez zna. operat. zahvata, sa velikim poremecajima",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.97,
+      "ambulanta_eur": 1497.55
+    },
+    {
+      "code": "P67C",
+      "name": "Novorodene, masa pri prijemu > 2499 g, bez znaajnog operativnog zahvata, sa ostalim poremecajima",
+      "section": null,
+      "page": 18,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.18,
+      "ambulanta_eur": 897.01
+    },
+    {
+      "code": "P67D",
+      "name": "Novorodene, masa pri prijemu >2499 g, bez znaajnog operativnog zahvata, bez poremecaja",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.55,
+      "ambulanta_eur": 418.1
+    },
+    {
+      "code": "Q01Z",
+      "name": "Splenektomija",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.98,
+      "ambulanta_eur": 3025.52
+    },
+    {
+      "code": "Q02A",
+      "name": "Ostalioperativnizahvati zbog bolesti krvi ili krvotvornih organa sa vrlo tek.ili tek.KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.49,
+      "ambulanta_eur": 4173.39
+    },
+    {
+      "code": "Q02B",
+      "name": "Ostali operativni zahvati zbog bolesti krvi ili krvotvornih organa bez vrlo tesk.ili tesk.KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.09,
+      "ambulanta_eur": 828.6
+    },
+    {
+      "code": "Q60A",
+      "name": "Retikuloendotelni i poremecaji imuniteta sa vrlo tekim ili tekim KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.5,
+      "ambulanta_eur": 1900.45
+    },
+    {
+      "code": "Q60B",
+      "name": "Retikuloendotelnii poremeaji imuniteta sa malignom bolecu,bez vrlo tek.ili tekih KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.01,
+      "ambulanta_eur": 767.78
+    },
+    {
+      "code": "Q60C",
+      "name": "Retikuloendotelnii poremeaji imuniteta, bez maligne bolesti,bez vrlo tek.ili teskih KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.33,
+      "ambulanta_eur": 250.86
+    },
+    {
+      "code": "Q61A",
+      "name": "Poremecaji eritrocita sa vrlo teškim ili teškim KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.46,
+      "ambulanta_eur": 1109.86
+    },
+    {
+      "code": "Q61B",
+      "name": "Poremećaji eritrocita bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.37,
+      "ambulanta_eur": 281.27
+    },
+    {
+      "code": "Q62Z",
+      "name": "Poremecaji koagulacije krvi",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.66,
+      "ambulanta_eur": 501.72
+    },
+    {
+      "code": "R01A",
+      "name": "Limfom i leukemija sa velikim operativnim zahvatimai sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 9.96,
+      "ambulanta_eur": 7571.39
+    },
+    {
+      "code": "R01B",
+      "name": "Limfomi leukemija sa velikim operativnim zahvatimabezvrlo tekiili tekih KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.73,
+      "ambulanta_eur": 2075.29
+    },
+    {
+      "code": "R02A",
+      "name": "Ostali neoplastični poremecaji sa velikim operativnim zahvatima sa vrlo tekim KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.35,
+      "ambulanta_eur": 5587.32
+    },
+    {
+      "code": "R02B",
+      "name": "Ostali neoplastini poremeaji sa velikim operativnim zahvatima sa tekim ili umjerenim KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.73,
+      "ambulanta_eur": 2835.47
+    },
+    {
+      "code": "R02C",
+      "name": "Ostali neoplastični poremecaji sa velikim operativnim zahvatima, bez KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.43,
+      "ambulanta_eur": 1847.24
+    },
+    {
+      "code": "R03A",
+      "name": "Limfom i leukemija sa ostalim operativnim zahvatima sa vrlo tekim ili teskim KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.26,
+      "ambulanta_eur": 5518.91
+    },
+    {
+      "code": "R03B",
+      "name": "Limfomi leukemija sa ostalim operativnim zahvatimabez vrlo teskih ilitekih K",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.35,
+      "ambulanta_eur": 1026.24
+    },
+    {
+      "code": "R04A",
+      "name": "Ostali neoplastieni poremecaji sa ostalim operativnim zahvatima, sa KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.52,
+      "ambulanta_eur": 1915.65
+    },
+    {
+      "code": "R04B",
+      "name": "Ostali neoplastični poremecaji sa ostalim operativnim zahvatima, bez KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.25,
+      "ambulanta_eur": 950.23
+    },
+    {
+      "code": "R60A",
+      "name": "Akutna leukemija sa vrlo teškim KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.1,
+      "ambulanta_eur": 5397.28
+    },
+    {
+      "code": "R60B",
+      "name": "Akutna leukemija bez vrlo teskih KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.07,
+      "ambulanta_eur": 813.39
+    },
+    {
+      "code": "R61A",
+      "name": "Limfom i ne-akutna leukemija sa vrlo tekim KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.86,
+      "ambulanta_eur": 3694.47
+    },
+    {
+      "code": "R61B",
+      "name": "Limfom i ne-akutna leukemija bez vrlo teskih KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.83,
+      "ambulanta_eur": 1391.13
+    },
+    {
+      "code": "R61C",
+      "name": "Limfom i ne-akutna leukemija, isti dan",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.25,
+      "ambulanta_eur": 190.05
+    },
+    {
+      "code": "R62A",
+      "name": "Ostali neoplastični poremecaji sa KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.61,
+      "ambulanta_eur": 1223.89
+    },
+    {
+      "code": "R62B",
+      "name": "Ostali neoplastični poremecaji bez KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.82,
+      "ambulanta_eur": 623.35
+    },
+    {
+      "code": "R63Z",
+      "name": "Hemoterapija",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.33,
+      "ambulanta_eur": 250.86
+    },
+    {
+      "code": "R64Z",
+      "name": "Radioterapija",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.48,
+      "ambulanta_eur": 364.89
+    },
+    {
+      "code": "S60Z",
+      "name": "HIV, isti dan",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.36,
+      "ambulanta_eur": 273.66
+    },
+    {
+      "code": "S65A",
+      "name": "Bolesti povezane sa HIV-om sa vrlo teskim KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 9.51,
+      "ambulanta_eur": 7229.31
+    },
+    {
+      "code": "S65B",
+      "name": "Bolesti povezane sa HIV-om sa teskim KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.92,
+      "ambulanta_eur": 2979.91
+    },
+    {
+      "code": "S65C",
+      "name": "Bolesti povezane sa HIV-om bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.75,
+      "ambulanta_eur": 2090.5
+    },
+    {
+      "code": "T01A",
+      "name": "Operativni zahvati zbog infektivnih i parazitarnih bolesti sa vrlo tekim KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 8.7,
+      "ambulanta_eur": 6613.57
+    },
+    {
+      "code": "T01B",
+      "name": "Operativni ahvati zboginfektivnihiparaitarnihbolestisatekimili umjerenim KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.8,
+      "ambulanta_eur": 2888.68
+    },
+    {
+      "code": "T01C",
+      "name": "Operativni zahvati zbog infektivnih ili parazitarnih bolesti bez KK",
+      "section": null,
+      "page": 19,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.11,
+      "ambulanta_eur": 1603.98
+    },
+    {
+      "code": "T40Z",
+      "name": "Infektivnei paraziarne bolesti sa ventilacijskom podrškom",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.57,
+      "ambulanta_eur": 4994.38
+    },
+    {
+      "code": "T60A",
+      "name": "Septikemija sa vrlo tekim KK",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.23,
+      "ambulanta_eur": 2455.38
+    },
+    {
+      "code": "T60B",
+      "name": "Septikemija bez vrlo teskih KK",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.62,
+      "ambulanta_eur": 1231.49
+    },
+    {
+      "code": "T61A",
+      "name": "Postoperativnei postraumatske infekcije sa vrlo tekim ili tekim KK",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.0,
+      "ambulanta_eur": 1520.36
+    },
+    {
+      "code": "T61B",
+      "name": "Postoperativne i posttraumatske infekcije bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.0,
+      "ambulanta_eur": 760.18
+    },
+    {
+      "code": "T62A",
+      "name": "Febrilno stanje nejasnog porijekla sa KK",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.42,
+      "ambulanta_eur": 1079.46
+    },
+    {
+      "code": "T62B",
+      "name": "Febrilno stanje nejasnog porijekla bez KK",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.57,
+      "ambulanta_eur": 433.3
+    },
+    {
+      "code": "T63Z",
+      "name": "Virusna bolest",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.55,
+      "ambulanta_eur": 418.1
+    },
+    {
+      "code": "T64A",
+      "name": "Druge infektivne i parazitarne bolesti sa vrlo teskim KK",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.49,
+      "ambulanta_eur": 3413.21
+    },
+    {
+      "code": "T64B",
+      "name": "Druge infektivnei parazitarne bolesti sa tekim ili umjerenim KK",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.8,
+      "ambulanta_eur": 1368.32
+    },
+    {
+      "code": "T64C",
+      "name": "Druge infektivne i parazitarne bolesti bez KK",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.8,
+      "ambulanta_eur": 608.14
+    },
+    {
+      "code": "U40Z",
+      "name": "Lijeenje mentalnog zdravlja, isti dan, sa elektrokonvulzivnom terapijom",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.2,
+      "ambulanta_eur": 152.04
+    },
+    {
+      "code": "U60Z",
+      "name": "Lijecenje mentalnog zdravlja, isti dan, bez elektrokonvulzivne terapije",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.18,
+      "ambulanta_eur": 136.83
+    },
+    {
+      "code": "U61Z",
+      "name": "Sizofreni poremecaji",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.94,
+      "ambulanta_eur": 2995.11
+    },
+    {
+      "code": "U62A",
+      "name": "Paranoja i akutni psihotieni poremecaj sa vrlo tekim ili teskim KK ii sa legalnim statusom mentalnog zdravlia",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.2,
+      "ambulanta_eur": 3192.76
+    },
+    {
+      "code": "U62B",
+      "name": "Paranojai akutni psihotini poremeaj bez vrlo tekih ili tekih KK bez legalnog stausa mentalnog zdravlja",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.71,
+      "ambulanta_eur": 1299.91
+    },
+    {
+      "code": "U63Z",
+      "name": "Veliki afektivni poremecaji",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.3,
+      "ambulanta_eur": 2508.59
+    },
+    {
+      "code": "U64Z",
+      "name": "Ostali afektivni i somatoformni poremecaji",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.48,
+      "ambulanta_eur": 1125.07
+    },
+    {
+      "code": "U65Z",
+      "name": "Anksiozni poremecaji",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.24,
+      "ambulanta_eur": 942.62
+    },
+    {
+      "code": "U66Z",
+      "name": "Poremecaji hranjenja i opsesivno-kompulzivni poremecaji",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.36,
+      "ambulanta_eur": 4074.56
+    },
+    {
+      "code": "U67Z",
+      "name": "Poremećaji ličnosti i akutne reakcije",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.56,
+      "ambulanta_eur": 1185.88
+    },
+    {
+      "code": "V60Z",
+      "name": "Intoksikacija alkoholom i apstinencija",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.47,
+      "ambulanta_eur": 357.28
+    },
+    {
+      "code": "V61Z",
+      "name": "Intoksikacija lijekovima (drogama) i apstinencija",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.4,
+      "ambulanta_eur": 1064.25
+    },
+    {
+      "code": "V62A",
+      "name": "Poremecaji i zavisnost zbog upotrebe alkohola",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.17,
+      "ambulanta_eur": 889.41
+    },
+    {
+      "code": "V62B",
+      "name": "Poremecaji i zavisnost zbog upotrebe alkohola, isti dan",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.47,
+      "ambulanta_eur": 357.28
+    },
+    {
+      "code": "V63Z",
+      "name": "Poremecaji i zavisnost zbog upotrebe opijata",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.74,
+      "ambulanta_eur": 562.53
+    },
+    {
+      "code": "V64Z",
+      "name": "Poremecaji i zavisnost zbog upotrebe ostalih lijekova",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.77,
+      "ambulanta_eur": 585.34
+    },
+    {
+      "code": "W01Z",
+      "name": "Zahvati ventilacije i kraniotomije usljed politraume",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 13.04,
+      "ambulanta_eur": 9912.75
+    },
+    {
+      "code": "W02A",
+      "name": "Zahvati na kuku, femuru i ekstremitetima zbog politraume,ukljuujuci primjenu implantata sa vrlo tekim/teskim KK",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 10.56,
+      "ambulanta_eur": 8027.5
+    },
+    {
+      "code": "W02B",
+      "name": "Postupci na kuku,femuru i ekstremitetima zbog politraume,ukljuujuci primjenu implantata bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 8.45,
+      "ambulanta_eur": 6423.52
+    },
+    {
+      "code": "W03Z",
+      "name": "Zahvati na abdomenu zbog politraume",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.74,
+      "ambulanta_eur": 5123.61
+    },
+    {
+      "code": "W04A",
+      "name": "Ostali operativni zahvati zbog politraume sa vrlo teskim/teskim KK",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 10.38,
+      "ambulanta_eur": 7890.67
+    },
+    {
+      "code": "W04B",
+      "name": "Ostali operativni zahvati zbog politraume bez vrlo teskih ili tekih KK",
+      "section": null,
+      "page": 20,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 6.19,
+      "ambulanta_eur": 4705.51
+    },
+    {
+      "code": "W60Z",
+      "name": "Politrauma,smrni ishod ili premjetaj u drugu ustanovu za intenz.njegu,boravak < dana",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.55,
+      "ambulanta_eur": 1178.28
+    },
+    {
+      "code": "W61A",
+      "name": "Politrauma bez znaajnih zahvata sa vrlo teskim illi tekim KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.7,
+      "ambulanta_eur": 3572.85
+    },
+    {
+      "code": "W61B",
+      "name": "Politrauma bez znaajnih zahvata bez vrlo teskih ili teških KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.42,
+      "ambulanta_eur": 1839.64
+    },
+    {
+      "code": "X02A",
+      "name": "Mikrovaskularni prenos tkivaili(presadivanjekoe sa vrlotekim/tekim KK)zbog povrede sake",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.77,
+      "ambulanta_eur": 2105.7
+    },
+    {
+      "code": "X02B",
+      "name": "Presadivanje koze zbog povrede sake bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.94,
+      "ambulanta_eur": 714.57
+    },
+    {
+      "code": "X04A",
+      "name": "Ostali zahvati zbog povrede donjeg ekstremiteta sa vrlo tekim ili teškim KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.95,
+      "ambulanta_eur": 3002.71
+    },
+    {
+      "code": "X04B",
+      "name": "Ostali zahvati zbog povrede donjeg ekstremiteta bez vrlo tekih ili tekih KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.17,
+      "ambulanta_eur": 889.41
+    },
+    {
+      "code": "X05A",
+      "name": "Ostali zahvati zbog povrede sake sa KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.7,
+      "ambulanta_eur": 1292.31
+    },
+    {
+      "code": "X05B",
+      "name": "Ostali zahvati zbog povrede sake bez KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.81,
+      "ambulanta_eur": 615.75
+    },
+    {
+      "code": "X06A",
+      "name": "Ostali zahvati zbog ostalih povreda sa vrlo tekim ili tekim KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.34,
+      "ambulanta_eur": 2539.0
+    },
+    {
+      "code": "X06B",
+      "name": "Ostali zahvati zbog ostalih povreda bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.06,
+      "ambulanta_eur": 805.79
+    },
+    {
+      "code": "X07A",
+      "name": "Presadivanja koze zbog povrede, osim povrede ake, sa mikrovaskularnim prenosom tkiva ili sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 5.52,
+      "ambulanta_eur": 4196.19
+    },
+    {
+      "code": "X07B",
+      "name": "Presadivanja koze zbog povrede, osim povrede sake, bez mikrovaskularog prenosa tkiva, bez vrlo tekih ili teških KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.26,
+      "ambulanta_eur": 1718.01
+    },
+    {
+      "code": "X40Z",
+      "name": "Povrede, trovanja i toksiena dejstva lijekova sa ventilacijskom podrskom",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 4.09,
+      "ambulanta_eur": 3109.14
+    },
+    {
+      "code": "X60A",
+      "name": "Povrede sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.47,
+      "ambulanta_eur": 1117.46
+    },
+    {
+      "code": "X60B",
+      "name": "Povrede bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.37,
+      "ambulanta_eur": 281.27
+    },
+    {
+      "code": "X61Z",
+      "name": "Alergijske reakcije",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.36,
+      "ambulanta_eur": 273.66
+    },
+    {
+      "code": "X62A",
+      "name": "Trovanje/toksino dejstvo lijekova ili drugih supstanci, sa vrlo teskim ili teskim KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.52,
+      "ambulanta_eur": 1155.47
+    },
+    {
+      "code": "X62B",
+      "name": "Trovanje/toksično dejstvo lijekova ili drugih supstanci,bez vrlo tekih ili teskih KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.48,
+      "ambulanta_eur": 364.89
+    },
+    {
+      "code": "X63A",
+      "name": "Posljedice liječenja sa vrlo teškim ili teskim KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.6,
+      "ambulanta_eur": 1216.29
+    },
+    {
+      "code": "X63B",
+      "name": "Posljedice liječenja bez vrlo teskih ili tekih KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.65,
+      "ambulanta_eur": 494.12
+    },
+    {
+      "code": "X64A",
+      "name": "Ostale dijagnoze povreda,trovanjaitoksinih dejstava lijekova sa vrlotek.ili tek.K",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.49,
+      "ambulanta_eur": 1132.67
+    },
+    {
+      "code": "X64B",
+      "name": "Ostale dijagnoze povreda,trovanjaitoksienih dejstava lijekova bez vrlo tek.ili teskih KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.39,
+      "ambulanta_eur": 296.47
+    },
+    {
+      "code": "Y01Z",
+      "name": "Ventilacija radi opekotina i teskih opekotina pune debljine",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 29.5,
+      "ambulanta_eur": 22425.31
+    },
+    {
+      "code": "Y02A",
+      "name": "Ostale opekotine sa presadivanjem koze, sa KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 7.66,
+      "ambulanta_eur": 5822.98
+    },
+    {
+      "code": "Y02B",
+      "name": "Ostale opekotine sa presadivanjem koze, bez KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.54,
+      "ambulanta_eur": 1930.86
+    },
+    {
+      "code": "Y03Z",
+      "name": "Ostali operativni zahvati zbog ostalih opekotina",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.85,
+      "ambulanta_eur": 1406.33
+    },
+    {
+      "code": "Y60Z",
+      "name": "Opekotine, premjestanje u drugu ustanovu za intenzivnu njegu, boravak<5 dana",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.31,
+      "ambulanta_eur": 235.66
+    },
+    {
+      "code": "Y61Z",
+      "name": "Teške opekotine",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.09,
+      "ambulanta_eur": 828.6
+    },
+    {
+      "code": "Y62A",
+      "name": "Ostale opekotine, sa KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.5,
+      "ambulanta_eur": 1140.27
+    },
+    {
+      "code": "Y62B",
+      "name": "Ostale opekotine, bez KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.51,
+      "ambulanta_eur": 387.69
+    },
+    {
+      "code": "Z01A",
+      "name": "Operativni zahvati sa dijagnozama ostalih kontakata sa zdravstvenom sluzbom sa vrlo teskim ili teškim KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.17,
+      "ambulanta_eur": 1649.59
+    },
+    {
+      "code": "Z01B",
+      "name": "Operativni zahvati sa dijagnozama ostalih kontakata sa zdravstvenom sluzbom bez vrlo teskih ili teskih KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.66,
+      "ambulanta_eur": 501.72
+    },
+    {
+      "code": "Z40Z",
+      "name": "Endoskopija sa dijagnozama ostalih kontakata sa zdravstvenom sluzbom,isti dan",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.28,
+      "ambulanta_eur": 212.85
+    },
+    {
+      "code": "Z60A",
+      "name": "Rehabilitacija sa vrlo teskim KK",
+      "section": null,
+      "page": 21,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 3.49,
+      "ambulanta_eur": 2653.03
+    },
+    {
+      "code": "Z60B",
+      "name": "Rehabilitacija bez vrlo teskih KK",
+      "section": null,
+      "page": 22,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.26,
+      "ambulanta_eur": 1718.01
+    },
+    {
+      "code": "Z60C",
+      "name": "Rehabilitacija, isti dan",
+      "section": null,
+      "page": 22,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.2,
+      "ambulanta_eur": 912.22
+    },
+    {
+      "code": "Z61A",
+      "name": "Znakovi i simptomi",
+      "section": null,
+      "page": 22,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.14,
+      "ambulanta_eur": 866.61
+    },
+    {
+      "code": "Z61B",
+      "name": "Znakovii simptomi, isti dan",
+      "section": null,
+      "page": 22,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.26,
+      "ambulanta_eur": 197.65
+    },
+    {
+      "code": "Z63A",
+      "name": "Ostalo pracenje i njega nakon operacije sa vrlo tekim KK",
+      "section": null,
+      "page": 22,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 2.62,
+      "ambulanta_eur": 1991.67
+    },
+    {
+      "code": "Z63B",
+      "name": "Ostalo pracenje i njega nakon operacije bez vrlo tekih KK",
+      "section": null,
+      "page": 22,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.09,
+      "ambulanta_eur": 828.6
+    },
+    {
+      "code": "Z64A",
+      "name": "Ostali faktori koji utiu na zdravstveno stanje",
+      "section": null,
+      "page": 22,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.99,
+      "ambulanta_eur": 752.58
+    },
+    {
+      "code": "Z64B",
+      "name": "Ostali faktori koji uticu na zdravstveno stanje, isti dan",
+      "section": null,
+      "page": 22,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 0.22,
+      "ambulanta_eur": 167.24
+    },
+    {
+      "code": "Z65Z",
+      "name": "Kongenitalne anomalije i problem koji poticu iz neonatalnog perioda",
+      "section": null,
+      "page": 22,
+      "scheme": "dual",
+      "cols": 4,
+      "odjeljenje_eur": 1.39,
+      "ambulanta_eur": 1056.65
+    }
+  ]
+}

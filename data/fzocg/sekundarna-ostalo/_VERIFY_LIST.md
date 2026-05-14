@@ -1,203 +1,307 @@
-# SEKUNDARNA OSTALO — Verification checklist
+# Pricelist OCR — сводный VERIFY checklist
 
-Источник: [sekundarna-ostalo-LATEST.json](sekundarna-ostalo-LATEST.json) (3941 позиций)
+Документ покрывает **все** прайслисты (FZOCG + KBKotor), не только SEKUNDARNA OSTALO. Обновлён после paddle-merge всех документов (2026-05-13).
 
-**Уже проверено пользователем**: 48 (`manually_reviewed: "2026-05-13"`)
-**Осталось проверить**: 132 (`note: "VERIFY: ..."`)
+**Где смотреть PDF-источники:**
+- FZOCG: `e:/pet/docta.me/прейскуранты/fzocg/<категория>/`
+- KBKotor: `e:/pet/docta.me/прейскуранты/kbkotor/`
 
----
+**Где смотреть JSON-результаты:**
+- `data/fzocg/<категория>/<категория>-FINAL.json`
+- `data/kbkotor/<slug>/<slug>-FINAL.json`
 
-## Где искать
+В каждом item:
+- `_sources` — откуда взяты name/price/section (paddle / llm-* / paddle-as-*-via-llm-hint / llm-fallback / llm-only / paddle-single-rescue / llm-substantive)
+- `_review` — флаг подозрительности (на сегодня используется только в DRG: `"suspicious-llm-drift"`)
+- `name_paddle` — присутствует когда LLM и paddle дали разные имена (substantive)
 
-- **База (PDF)**: `e:/pet/docta.me/прейскуранты/fzocg/SEKUNDARNA.../15846071842.-Cjenovnik-...pdf`
-- **Картинки**: `e:/tmp/fzocg_pages/sekundarna_ostalo/base/page-NNN-top.png` и `-bot.png`
-- **Поправки**: `e:/tmp/fzocg_pages/sekundarna_ostalo/Odluka-*/`
-- **Маппинг секций**: [_SECTIONS.md](_SECTIONS.md)
-
----
-
-## A.0 ⚠ Конфликты дубликатов (приоритет)
-
-Найдено: **2** кодов. Один из двух экземпляров уже user-verified — реши со вторым.
-
-### `X01059` — 2 вхождения
-
-**•** `X01059` "Postavljanje kanile za testiranje katetera"
-   - Цены: `odj=2.6 / amb=5.56`  scheme=`dual`
-   - Секция: 7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTIT  → subsection: `MALI ZAHVATI`
-   - **Где смотреть:** base PDF p.36+
-   - Note: `VERIFY: code X01059 also used for user-verified "Odstranjivanje stranog tijela". Source PDF page 36+ may have actual duplicate, or this item's code is OCR error.`
-
-**•** `X01059` "Odstranjivanje stranog tijela iz slušnog kanala, nosne šupljine i orofarinksa"
-   - Цены: `odj=3.9 / amb=8.34`  scheme=`dual`
-   - Секция: 7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTIT  → subsection: `MALI ZAHVATI`
-   - **Где смотреть:** base PDF p.36+
-   - Note: `VERIFY: code X01069 also used for "Piroterapija" (user-verified). Source PDF appears to have a real duplicate code — pick one to renumber.`
-
-### `Z02098` — 2 вхождения
-
-**•** `Z02098` "Proteini urina (kvantitativno)" ✅ user-verified
-   - Цены: `amb=2.24`  scheme=`single_ambulanta`
-   - Секция: 2. BIOHEMIJSKO-HEMATOLOŠKA I IMUNOLOŠKA LABORATORIJSKA DIJAGNOSTIKA  → subsection: `SEKUNDARNA ZDRAVSTVENA ZAŠTITA - BIOHEMIJSKA LABORATORIJSKA DIJAGNOSTIKA`
-   - **Где смотреть:** base PDF p.8+
-
-**•** `Z02098` "Osmotska rezistencija eritrocita"
-   - Цены: `amb=8.63`  scheme=`single_ambulanta`
-   - Секция: 2. BIOHEMIJSKO-HEMATOLOŠKA I IMUNOLOŠKA LABORATORIJSKA DIJAGNOSTIKA  → subsection: `HEMATOLOGIJA I KOAGULACIJA - LABORATORIJSKA DIJAGNOSTIKA`
-   - **Где смотреть:** base PDF p.8+
-   - Note: `VERIFY: code Z02098 also used for user-verified "Proteini urina". Source PDF page 8+ may have actual duplicate, or this item's code is OCR error.`
+Легенда:
+- 🔴 **HIGH** — реальные дыры в данных или конфликты, требуют сверки с PDF
+- 🟡 **MED** — нужна выборочная сверка (1-2 примеров на категорию)
+- 🟢 **INFO** — расхождения зафиксированы, но один из источников выбран канонически
 
 ---
 
-## C. OCR-неуверенность
+## 1. SEKUNDARNA OSTALO
 
-Найдено: **16**
+**Файл:** [sekundarna-ostalo-FINAL.json](sekundarna-ostalo-FINAL.json) (4031 items, 14 поправок применены хронологически)
+**LLM-источник:** [sekundarna-ostalo-LATEST.json](sekundarna-ostalo-LATEST.json) (3941 items с user-fixes)
 
-| Код | Услуга | Где смотреть | Note |
+### 🔴 HIGH: 3 items без цены
+
+| Код | Имя | Секция | Откуда |
 |---|---|---|---|
-| `J07007` | Ultrazvuk štitne i paraštitne žlijezde | base PDF p.30+ | OCR_FIX: code corrected J07014→J07007 per PDF p.29 (J07014 does not exist in source; sequence is non-linear: J07009-J07013, J07001-J07006, J07008, J07 |
-| `X04055` | Uklanjanje tumora vaginalnog zida | base PDF p.57+ | VERIFY: возможно 'vaginalnog zica' (OCR неясно) |
-| `X04060` | Citološki bris po Papanikolau | base PDF p.57+ | VERIFY: имя может быть 'Citološka iglica na Papanikolau' (OCR неясно) |
-| `X04065` | Uklanjanje vaginalnih septuma | base PDF p.57+ | VERIFY: код может быть X04055 (OCR неясно), но это привело бы к дубликату с предыдущим |
-| `D02091` | Enteroliza | base PDF p.60+ | VERIFY: имя процедуры (OCR неясно) |
-| `D02212` | Dvotrebna resekcija želuca-laparoskopska op. | base PDF p.60+ | VERIFY: имя 'Dvotrebna' / 'Dvotrečna' / 'Dvotrebna resekcija' — OCR неясно |
-| `D02255` | Lijeva hemikolektomija sa anastomozom | base PDF p.60+ | VERIFY: на изображении название может быть 'sa formiranjem stome' (OCR показал то же что и D02256) |
-| `D10014` | Reparacija defectus septi atriorum primum | base PDF p.68+ | VERIFY: имя могло быть 'septi atriorum trivum' (OCR неясно) |
-| `D26144` | Endovaskularna procedura plasiranja stent grafta u popliteal | base PDF p.69+ | VERIFY: имя в OCR показано как 'popšiteainu' — корректно 'poplitealnu' |
-| `D03055` | Ekscizija spermatokele sa epididimektomijom | base PDF p.88+ | VERIFY: OCR read 94,50 for operacija but 94.50+16.90≠101.40; value 84.50 would match the sum |
-| `D03064` | Cistektomija parcijalna bez resekcije ušća | base PDF p.88+ | VERIFY: OCR shows 'C-stektomija parcijalna'; likely 'Cistektomija parcijalna' |
-| `D03124` | Simfiziotomija potkovičastog bubrega | base PDF p.88+ | VERIFY: OCR showed code 'D03125' twice; first row reassigned to D03124 based on sequence |
-| `D05068` | Fasciotomija, parcijalno ekscizija ciste ili benignih tumora | base PDF p.97+ | VERIFY: OCR text 'Fasciotomija, palmarna, subkutana (kod Dupuytren-ove kontrakture), otvorena' partially appears; name reconstructed |
-| `D05077` | Metakarpalna fraktura - zatvorena ili otvorena (složena) rep | base PDF p.97+ | VERIFY: name OCR ambiguous |
-| `D05083` | Fraktura tarzalnih kostiju - zatvorena ili otvorena (složena | base PDF p.97+ | VERIFY: same name as D05082 in OCR — likely subtle wording difference in source |
-| `B01001` | Prvi pregled dijeteta - pedijatar | base PDF p.105+ | OCR_FIX: code corrected B01003→B01001 per base PDF scan (p.105 area, section 52 OPŠTA PEDIJATRIJA) |
+| `D02241` | Desna lobektomija jetre - laparoskopska op. | 36. OPERACIJE - HIRURGIJA | base PDF p.60+ |
+| `D02252` | Izvođenje derivacione stome kolona bez resekcije | 36. OPERACIJE - HIRURGIJA | base PDF p.60+ |
+| `D05065` | Fraktura distalne epifize radiusa - otvorena/zatvorena, manipulativna | 48. OPERACIJE - ORTOPEDIJA | base PDF p.97+ |
+
+Paddle scheme=unknown для всех трёх. LLM (LATEST) их не имеет. Найти в PDF, дописать цену вручную.
+
+### 🟡 MED: 91 paddle-only код (paddle нашёл, LLM пропустил)
+
+Топ-секций:
+
+| #  | Секция |
+|----|----|
+| 18 | 41. OPERACIJE - NEUROHIRURGIJA |
+| 18 | 49. OPERACIJE - GINEKOLOGIJA I AKUŠERSTVO |
+| 9  | 7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ |
+| 8  | 36. OPERACIJE - HIRURGIJA |
+| 6  | 30. OTORINOLARINGOLOGIJA |
+| 4  | 31. OFTALMOLOGIJA, 48. OPERACIJE - ORTOPEDIJA |
+
+Полный список: `merge_info.paddle_only_codes`. Имена без диакритики (paddle). Проверить выборочно 3-5 кодов из каждой большой секции по PDF.
+
+### 🟢 INFO: 172 LLM-only код (LLM нашёл, paddle пропустил)
+
+В основном — amendment-introduced услуги (W04001-W04007 reproduction, K03181 PCR, D07001-D07011 oftalmologija, D24025 stomatologija). Имена и цены из LLM. См. `merge_info.llm_only_codes`.
+
+### 🟢 INFO: 1765 name disagreements
+
+Paddle и LLM дали разные имена. В 99% случаев — paddle пропустил диакритику (š/č/ć/ž/đ), LLM имя принято как канон. Paddle-имя сохранено в поле `name_paddle` где есть substantive разница.
+
+### 🟢 INFO: ранее в этом списке (resolved by paddle pipeline)
+
+Резолюции старых VERIFY-items:
+- `X01059`, `Z02098` дубликаты — paddle подтвердил оба varianta в base PDF (источник действительно содержит дубликаты). Только 1 instance в FINAL.
+- `J07007←J07014`, `B01001←B01003` OCR_FIX — paddle подтвердил оригинальные коды (resolved).
+- `Y04010` vs `Y04014` — оба найдены paddle как разные коды.
+- `W04001-W04007` reproduction services — теперь имеют цены через llm-fallback.
+- `D07001-D07011` ophthalmology amendments — теперь имеют scheme=ambulanta через LLM hint.
+- `D24025` — имеет цену 43.29 EUR amb.
+- `J09001-J09003` MR — теперь correctly в Odjeljenje column для амендмента 2023-12-01.
+- 16 paddle base дубликатов автоматически dedup'нуто.
 
 ---
 
-## D. Цена под сомнением
+## 2. PZZ (primarna-zdravstvena-zastita)
 
-Найдено: **33**
+**Файл:** [../primarna-zdravstvena-zastita/primarna-zdravstvena-zastita-FINAL.json](../primarna-zdravstvena-zastita/primarna-zdravstvena-zastita-FINAL.json) (492 items)
 
-| Код | Услуга | Цены | Где смотреть | Note |
+### 🔴 HIGH: 2 paddle-conflicting кода (один и тот же код встречается с разными ценами)
+
+| Код | Имя | Цены paddle base |
+|---|---|---|
+| `X01021` | Lokalno apliciranje lijeka (subkutano i intramuskularno) | 1.03, 1.03, garbage "cYantaGYlo 15,05" |
+| `X01022` | Direktno opservirana terapija za TBC (DOTs) | 1.03 vs 0.9 |
+
+X01021 — третий instance явный paddle-парсинг-фейл (garbage row). Реальный конфликт только в X01022. Сверить с PDF p.5+.
+
+### 🟢 INFO: 18 paddle базовых дубликатов автоматически удалены
+
+Paddle прочитал одну и ту же строку несколько раз через page breaks (resolved).
+
+### 🟡 MED: 92 LLM-only кода — amendment-introduced или paddle missed
+
+См. `merge_info.llm_only_codes`. Большая часть — LLM enriched data.
+
+### 🟢 INFO: 145 name disagreements
+
+Diacritics. Paddle name в `name_paddle`.
+
+---
+
+## 3. DRG (akutno bolničko)
+
+**Файл:** [../drg-akutno-bolnicko/drg-akutno-bolnicko-FINAL.json](../drg-akutno-bolnicko/drg-akutno-bolnicko-FINAL.json) (697 items)
+**Cross-validation:** все 697 проходят `coefficient × 760.18 ≈ price_eur`.
+
+### 🔴 HIGH: 1 numeric disagreement
+
+| Код | Имя | Paddle | LLM | Решение |
 |---|---|---|---|---|
-| `Z01097` | Određivanje Na+ u serumu | amb=1.26 | base PDF p.8+ | VERIFY: price partly clipped at page bottom, assumed 1.26 from neighbouring rows |
-| `J06032` | Kontrola drenaže patoloških tečnih kolekcija, bili | amb=12.67 | base PDF p.30+ | VERIFY: price 12.67 is lower than surrounding entries |
-| `V01001` | Intermitentna zamjena bubrežne funkcije - Hronična | odj=36.92, amb=36.92 | base PDF p.41+ | VERIFY: single merged price cell |
-| `V01002` | Funkcionalno ispitivanje bubrežne funkcije | odj=5.56, amb=5.56 | base PDF p.41+ | VERIFY: single merged price cell in PDF — applied to both columns |
-| `V01003` | Ispitivanje tubulskih funkcija | odj=5.56, amb=5.56 | base PDF p.41+ | VERIFY: single merged price cell |
-| `V01004` | Testovi opterećenja kod sumnje na renalnu tubulsku | odj=5.56, amb=5.56 | base PDF p.41+ | VERIFY: single merged price cell |
-| `V01005` | Test koncentracione sposobnosti bubrega | odj=5.56, amb=5.56 | base PDF p.41+ | VERIFY: single merged price cell |
-| `V01006` | Kontinuirana zamjena bubrežne funkcije (CRRT) | odj=36.92, amb=36.92 | base PDF p.41+ | VERIFY: single merged price cell |
-| `V01007` | Intermitentna zamjena bubrežne funkcije - Urgentna | odj=36.92, amb=36.92 | base PDF p.41+ | VERIFY: single merged price cell |
-| `V01008` | Intermitentna zamjena bubrežne funkcije - Peritone | odj=36.92, amb=36.92 | base PDF p.41+ | VERIFY: single merged price cell |
-| `X20001` | ERCP (duodenoskopija sa kanulacijom papille Vateri | odj=55.68 | base PDF p.42+ | VERIFY: single price column shown |
-| `X20002` | ERCP sa EPT | odj=87.25 | base PDF p.42+ | VERIFY: single price column |
-| `X20003` | ERCP sa ekstrakcijom kalkulusa | odj=104.7 | base PDF p.42+ | VERIFY: single price column |
-| `X20004` | ERCP sa plasiranjem plastičnog stenta | odj=104.7 | base PDF p.42+ | VERIFY: single price column |
-| `X20005` | ERCP sa plasiranjem metalnog stenta | odj=104.7 | base PDF p.42+ | VERIFY: single price column |
-| `X20006` | ERCP sa balon dilatacijom žučnih vodova | odj=104.7 | base PDF p.42+ | VERIFY: single price column |
-| `X20007` | ERCP sa mehaničkom dilatacijom žučnih vodova | odj=104.7 | base PDF p.42+ | VERIFY: single price column |
-| `X20008` | ERCP sa biopsijom papile | odj=64 | base PDF p.42+ | VERIFY: single price column |
-| `X20009` | ERCP sa plasiranjem nazobilijarnog katetera | odj=64 | base PDF p.42+ | VERIFY: single price column |
-| `X20010` | Bežična video kapsula (za tanko crijevo) | odj=51.91 | base PDF p.42+ | VERIFY: single price column |
-| `X20011` | C13 urea izdisajni test na H. Pylori | odj=13.85 | base PDF p.42+ | VERIFY: single price column |
-| `H14001` | Izoelektrično fokusiranje likvora i seruma (IEFL) | odj=20.54, amb=20.54 | base PDF p.44+ | VERIFY: single merged price cell |
-| `D07001` | Ultra B2 | amb=336 | ? | VERIFY AMEND 2017-01-01: scheme=unknown, single price applied to ambulanta |
-| `D07002` | Sekundarna implantacija IOL | amb=567 | ? | VERIFY AMEND 2017-01-01: scheme=unknown, single price applied to ambulanta |
-| `D07003` | Keratoplastika | amb=2142 | ? | VERIFY AMEND 2017-01-01: scheme=unknown, single price applied to ambulanta |
-| `D07004` | INTACS - intraokularni prsten | amb=728 | ? | VERIFY AMEND 2017-01-01: scheme=unknown, single price applied to ambulanta |
-| `D07005` | Vađenje plombe sa plastikom konjuktive | amb=238 | ? | VERIFY AMEND 2017-01-01: scheme=unknown, single price applied to ambulanta |
-| `D07006` | Evakuacija silikonskog ulja | amb=498 | ? | VERIFY AMEND 2017-01-01: scheme=unknown, single price applied to ambulanta |
-| `D07007` | Zamjena silikonskog ulja | amb=672 | ? | VERIFY AMEND 2017-01-01: scheme=unknown, single price applied to ambulanta |
-| `D07008` | Operacija ablacije mrežnjače | amb=1125 | ? | VERIFY AMEND 2017-01-01: scheme=unknown, single price applied to ambulanta |
-| `D07009` | Vitrektomija | amb=1355 | ? | VERIFY AMEND 2017-01-01: scheme=unknown, single price applied to ambulanta |
-| `D07011` | Vitrektomija sa kataraktom | amb=1610 | ? | VERIFY AMEND 2017-04-01: scheme=unknown, single price applied to ambulanta |
-| `D24025` | Izrada retencionog aparata | amb=43.29 | ? | VERIFY AMEND 2021-01-01: scheme=unknown, single price applied to ambulanta |
+| `I24Z` | Artroskopija | coef=0.75 / price=570.14 | coef=3.68 / price=2797.46 | Paddle победил (LLM имел row shift в I20-I25 области) |
+
+Сверить с DRG PDF в области MDC 08 (musculoskeletal).
+
+### 🟡 MED: 13 high-confidence "suspicious LLM-only" кодов
+
+LLM нашёл код, paddle нет — но цены и имя дублируют ближайший paddle-код. Помечены `_review: "suspicious-llm-drift"`:
+
+| LLM код | возможный = paddle | имя |
+|---|---|---|
+| `I01B` | paddle I01A | Obostrani ili višestruki veliki zahvati na zglobovima |
+| `I05B` | paddle I05A | Zamjene ostalih zglobova bez vrlo teškim KK |
+| `I08B` | paddle I08A | Ostali zahvati na kuku i femuru bez vrlo teškim KK |
+| `I13A` | paddle I13B | Zahvati na humerusu, tibiji, fibuli i skočnom zglobu |
+| `I17B` | paddle I17A | Maksilofacijalni hirurški zahvati bez KK |
+| **`I21Z`** | **paddle I23Z** | Lokalna ekscizija i odstranjenje unutrašnjeg fiksatora — **NOT a real DRG code** |
+| **`I22Z`** | **paddle I23Z** | Same name — **NOT a real DRG code** |
+| **`I25Z`** | paddle I25A | Dijagnostičke procedure na kostima i zglobovima — возможно реальный code (no-severity-split вариант) |
+| `I28B` | paddle I28A | Ostali zahvati na mišićno-skeletnom sistemu bez KK |
+| `I71A` | paddle I71B | Ostali mišićno-tetivni poremećaji |
+| `I73B` | paddle I73A | Naknadna njega dijela tijela sa mišićno-skeletnim implantatom |
+| `O04A` | paddle O04B | Period nakon porođaja sa operat. zahvatom |
+| **`O65Z`** | paddle O64Z | Lažni trudovi — **NOT a real DRG code** |
+
+I21Z, I22Z, O65Z — не существуют в AR-DRG standard, вероятно LLM hallucinations от row shift. Жирным выделены наиболее уверенные drift-кандидаты для удаления.
+
+Остальные 15 (из 28 общих) suspicious — имена правдоподобные, цена совпадает случайно с другим кодом (общие DRG-коэффициенты повторяются). См. `merge_info.suspicious_llm_only_details`.
+
+### 🟡 MED: 4 paddle-only кода — реальные находки
+
+| Код | Имя | Секция |
+|---|---|---|
+| `I23Z` | Lokalna ekscizija i odstranjenje unutrašnjeg fiksatora | MDC 08 (inferred) |
+| `I25A` | Dijagnostičke procedure na kostima i zglobovima | MDC 08 |
+| `I25B` | Same | MDC 08 |
+| `O64Z` | Lažni trudovi | MDC 14 |
+
+Paddle нашёл реальные DRG-коды которые LLM пропустил.
+
+### 🟢 INFO: 332 name disagreements
+
+Diacritics. См. `merge_info.name_disagreement_codes`.
 
 ---
 
-## F. Прочее
+## 4. TRANSFUZIOLOGIJA
 
-Найдено: **79**
+**Файл:** [../transfuziologija/transfuziologija-FINAL.json](../transfuziologija/transfuziologija-FINAL.json) (67 items)
 
-| Код | Услуга | Где смотреть | Note |
-|---|---|---|---|
-| `Y04010` | Nemedicinski dio BO dana u intenzivnoj njezi, koro | base PDF p.5+ | VERIFY: code Y04010 appears twice on page-005-bot; second instance may be Y04014 |
-| `Y04014` | Nemedicinski dio BO dana - za kardiohirurgiju | base PDF p.5+ | VERIFY: code may be Y04010 (read as duplicate); guessed Y04014 to disambiguate |
-| `Z01023` | Određivanje aktivnosti AST | base PDF p.8+ | VERIFY: duplicate code Z01023 across base (instances: 2) |
-| `Z01024` | Određivanje aktivnosti CK | base PDF p.8+ | VERIFY: code Z01024 duplicates earlier entry (direktnog bilirubina) - likely OCR misread \| VERIFY: duplicate code Z01024 across base (instances: 2) |
-| `Z01025` | Određivanje aktivnosti CK-MB | base PDF p.8+ | VERIFY: code Z01025 duplicates earlier entry (gvožđa) - likely OCR misread \| VERIFY: duplicate code Z01025 across base (instances: 2) |
-| `Z01108` | Određivanje kalcijuma u urinu | base PDF p.8+ | VERIFY: code may be Z01106 (duplicate with uree u urinu) |
-| `Z01110` | Određivanje kirensa kreatinina | base PDF p.8+ | VERIFY: code may be Z01100 (read may conflict with LDH code) |
-| `Z02029` | Progesteron | base PDF p.8+ | VERIFY: code Z02029 duplicates earlier C-peptid \| VERIFY: duplicate code Z02029 across base (instances: 2) |
-| `Z02038` | PSA - slobodni | base PDF p.8+ | VERIFY: code Z02038 may duplicate Z02208 'PSA - slobodni' |
-| `Z02039` | Beta HCG | base PDF p.8+ | VERIFY: code may differ - Z02039 appears twice \| VERIFY: duplicate code Z02039 across base (instances: 2) |
-| `Z02204` | PSA - ukupni | base PDF p.8+ | VERIFY: code Z02204 may duplicate Z02034 'PSA - ukupni' |
-| `Z03082` | IgA na tkivnu transglutaminazu | base PDF p.8+ | VERIFY: code Z03082 duplicates earlier 'Biohemijski pregled likvora' \| VERIFY: duplicate code Z03082 across base (instances: 2) |
-| `Z03087` | Vitamin B6 | base PDF p.8+ | VERIFY: name duplicates previous Vitamin B6 row |
-| `K02008` | Detekcija antimikrobnih antitijela latex aglutinac | base PDF p.15+ | VERIFY: name duplicates K02007 |
-| `K03056b` | Bakteriološko ispitivanje perikardijalne tečnosti  | base PDF p.15+ | VERIFY: code K03056 appears twice in source (likvora and perikardijalne tečnosti); appended 'b' to disambiguate |
-| `K03068b` | Bakteriološko ispitivanje sinovijalne tečnosti - a | base PDF p.15+ | VERIFY: code K03068 appears twice in source; appended 'b' to disambiguate |
-| `K03088` | Bakteriološko ispitivanje krvi - anaerobno | base PDF p.15+ | VERIFY: name duplicates K03085 |
-| `K03180` | Ispitivanje prisustva Influenza A subtipa H1 - RT- | base PDF p.15+ | VERIFY: name duplicates K03179 - subtype may differ in source |
-| `K05001` | Prvi pregled - klinički genetičar | base PDF p.22+ | single_cijena_column |
-| `K05019` | Kultivacija ćelija amnionske tečnosti | base PDF p.22+ | single_cijena_column |
-| `K05058` | DNK izolacija iz limfocita periferne krvi i ćelijs | base PDF p.22+ | VERIFY: duplicate name with K05055, possibly different method |
-| `K06001` | Prvi pregled imunologa | base PDF p.22+ | single_cijena_column |
-| `L01090` | Pregled PAPA brisa | base PDF p.26+ | single_cijena_column |
-| `J01001` | Prvi specijalistički pregled (radiolog) | base PDF p.30+ | single_cijena_column; footnote: Uz svaki pregled RTG usluga fakturišu se i prvi pregled radiologa |
-| `J07009` | Doppler sonografija vrata | base PDF p.30+ | single_cijena_column |
-| `J08015` | Kompjuterizovana tomografija bez kontrasta | base PDF p.30+ | single_cijena_column |
-| `J09001` | MR pregled mozga - glave bez kontrasta | base PDF p.30+ | single_cijena_column |
-| `J09021` | MR vrata - sa kontrastom | base PDF p.30+ | VERIFY: only 'sa kontrastom' row visible; 'bez kontrasta' variant may exist but not seen |
-| `J10003` | Pneumoangiografija | base PDF p.30+ | VERIFY: source code looks like 'J10015' but J10015 already assigned to Aortografije; using J10003 as best guess based on order |
-| `J10015` | Aortografije: - torakalne aorte - abdominalne aort | base PDF p.30+ | single_cijena_column |
-| `J11001` | Panoramska dentalna radiografija | base PDF p.30+ | single_cijena_column |
-| `X01016` | Svođenje hirurških konaca | base PDF p.36+ | VERIFY: source shows duplicate code X01015 for both rows; using X01016 as likely correct code |
-| `X01050` | Toaleta veće rane mokrim oblogama, jedan dnevno | base PDF p.36+ | VERIFY: source row partially overlapped; name approximated |
-| `X01051` | Lokalna anestezija - regionalna | base PDF p.36+ | VERIFY: name approximated |
-| `X02201` | Ispitivanje kožne preosjetljivosti na inhalacione  | base PDF p.36+ | VERIFY: source code looks like X02201, may be X02001 |
-| `E08002` | Ponovni (kontrolni) pregled - endokrinolog | base PDF p.40+ | VERIFY: section number inferred — header not on page 40 |
-| `X19002` | Izvođenje dinamskih testova HHN | base PDF p.40+ | VERIFY: name abbreviation (HHN vs HHO) unclear in image |
-| `X19007` | Davanje insulinske terapije | base PDF p.40+ | VERIFY: code may be X19006 or X19007 |
-| `E09004` | Ponovni (kontrolni) pregled odojčeta - dječiji nef | base PDF p.41+ | VERIFY: code E09004 inferred from sequence; image partially blurred |
-| `E09006` | Ponovni (kontrolni) pregled djeteta - dječiji nefr | base PDF p.41+ | VERIFY: code E09006 inferred |
-| `X10054` | Hirurško zbrinjavanje kondiloma analne regije | base PDF p.45+ | VERIFY: duplicate code X10054 across base (instances: 2) |
-| `G09001` | Prvi pregled ljekara specijaliste - HBO | base PDF p.46+ | VERIFY: HIPERBARIČNA section uses single CIJENA column — placed in ambulanta |
-| `G09002` | Kontrolni pregled ljekara specijaliste - HBO | base PDF p.46+ | VERIFY: single CIJENA column |
-| `G09003` | Hiperbarična oksigena terapija (HBO) | base PDF p.46+ | VERIFY: single CIJENA column |
-| `X07022` | Pozicioni test | base PDF p.51+ | VERIFY: code X07022 name from page-051-top |
-| `X07039` | Akumetrijska ispitivanja | base PDF p.51+ | VERIFY: X07038 vs X07039 names similar |
-| `X07070` | Epifaringoskopija sa biopsijom | base PDF p.51+ | VERIFY: code X07070 inferred |
-| `X07072` | Otvorena repozicija svježih preloma nosnih kostiju | base PDF p.51+ | VERIFY: code X07072 inferred |
-| `X07083` | Detamponaca nosa | base PDF p.51+ | VERIFY: code X07083 inferred |
-| `X07091` | Vestibulokalorički testovi | base PDF p.51+ | VERIFY: code inferred |
-| `X07097` | Repozicija svježeg preloma nosnih kostiju sa imobi | base PDF p.51+ | VERIFY: code X07097 inferred from sequence |
-| `X07098` | Endoskopski pregled nosa | base PDF p.51+ | VERIFY: code X07098 inferred from sequence |
-| `X07116` | Ezofagoskopija sa biopsijom, odstranjenjem tumora  | base PDF p.51+ | VERIFY: code X07116 (was X07114 on page-053-top) |
-| `X07117` | Retrogradna ezofagoskopija po Tucker-u | base PDF p.51+ | VERIFY: code X07117 (was X07115) |
-| `X07120` | Vježbe fonacije | base PDF p.51+ | VERIFY: code X07120 inferred — name 'Vježbe fonacije' appeared twice |
-| `X07125` | Vježbe artikulacije | base PDF p.51+ | VERIFY: code |
-| `X07126` | Uvjetovanje ezofagusnog govora | base PDF p.51+ | VERIFY: code X07125 or X07126 |
-| `X06058` | Određivanje naočara na široku zjenicu bez astigmat | base PDF p.54+ | VERIFY: X06057 vs X06058 — one is usku, the other inferred as široku |
-| `X06074` | Ekzoftalmo chalazionis kod djece | base PDF p.54+ | VERIFY: code (image showed X06073 row but X06073 was used earlier) |
-| `X06076` | Određivanje i propisivanje naočara kod astigmatizm | base PDF p.54+ | VERIFY: code X06076 (image showed X06078) |
-| `X06078` | Oftalmološki pregled biomikroskopom | base PDF p.54+ | VERIFY: code (saw X06079) |
-| `X06079` | OCT (optička koherentna tomografija) | base PDF p.54+ | VERIFY: code (saw X06080) |
-| `X06080` | Skijaskopija kod djece | base PDF p.54+ | VERIFY: code |
-| `X06081` | Ispitivanje osjetljivosti na boje pomoću anomalosk | base PDF p.54+ | VERIFY: only ambulanta column visible |
-| `D02048` | Transrektalna drenaža pelvičnog abscesa | base PDF p.60+ | VERIFY: Ukupno 32.50 не сходится с Operacija 19.50 + Anestezija 6.50 = 26.00 |
-| `D02205` | Hernija TEP femoralna bilateralna | base PDF p.60+ | VERIFY: на изображении название может быть 'Hernija TAPP femoralna bilateralna' (дубликат с D02204) |
-| `D02222` | Hemikolektomija lijeva laparoskopska sa kolorekto  | base PDF p.60+ | VERIFY: дубликат имени с D02221 — возможно одно из них имеет 'sa formiranjem stome' |
-| `D02263` | Supraselektivna vagotomija-laparoskopska op. | base PDF p.60+ | VERIFY: код в источнике мог быть D02216, но D02216 уже занят 'Vađenje stranog tijela...' — присвоен временный код D02263 |
-| `D02264` | Veća resekcija vene saphene externe i susjednih ve | base PDF p.60+ | VERIFY: код в источнике мог быть D02003 (дубликат с D02003 Splenektomija), присвоен временный D02264 |
-| `D02265` | Cefalična duodenopankreatektomija (Whipplae) - lap | base PDF p.60+ | VERIFY: код в источнике может быть D02222 (дубликат), присвоен временный D02265 |
-| `D02267` | Kolektomija sa totalnom proktektomijom i ileostomi | base PDF p.60+ | VERIFY: код в источнике может быть D02216 (дубликат), присвоен временный D02267 |
-| `D02268` | Ekscizija komplikovane analne fistule | base PDF p.60+ | VERIFY: код в источнике может быть D02094 (дубликат с D02094 Laparoskopska eksploracija trbušne duplje), присвоен временный D02268 |
-| `D26066` | Resekcija i anastomoza aorte (EKC) | base PDF p.69+ | VERIFY: 'EKC' возможно 'ekstrakorporalna cirkulacija' |
-| `D29156` | Ekscizija ekstenzorne aponeuroze | base PDF p.77+ | VERIFY: same description as D29124, possible duplicate in source |
-| `D30100` | Mandibula/parcijalna resekcija/replantacija | base PDF p.84+ | VERIFY: code not clearly visible in scan, inferred from sequential numbering between D30099 and D30101 |
-| `D03010` | Cistolitotomija (samo patrijak) | base PDF p.88+ | VERIFY: 'samo patrijak' may be 'samo punktirajem' or similar |
-| `D03081` | Uretrektomija (samo patrijak) | base PDF p.88+ | VERIFY: 'samo patrijak' may be 'samo punktirajem' or similar |
-| `X32015` | Ozračivanje komponenata krvi | base PDF p.107+ | VERIFY: ambulanta value low-resolution |
-| `J07014` | Ultrazvuk pregled vrata | ? | NEW_FROM_AMENDMENT_NO_BASE: izmjena 01-5113 for code not present in base |
+### 🟡 MED: 9 name disagreements
+
+Коды: G05005, X12050, X12051, X12053, X12021, X12026, X12060, X12042, X12066
+
+Paddle и LLM расходятся по имени — выборочно проверить. См. `name_paddle` поле.
+
+---
+
+## 5. APOTEKARSKA DJELATNOST
+
+**Файл:** [../apotekarska-djelatnost/apotekarska-djelatnost-FINAL.json](../apotekarska-djelatnost/apotekarska-djelatnost-FINAL.json) (37 items)
+**LLM-источник:** нет (paddle-only).
+
+### 🔴 HIGH: 1 conflicting код "50"
+
+В paddle 2 разных услуги с code "50":
+- "Izdavanje medicinskog pomagala" — price 0.67 (kept in FINAL)
+- "Mjerenje jedne supstance do 100g" — price 0.64 (dropped as conflicting)
+
+Скорее всего одно из имён имеет реальный другой код (paddle прочитал "50" вместо настоящего). Сверить с PDF.
+
+### 🟡 MED: все 37 items — paddle-only
+
+Имена без диакритики. Если важна Serbian-Latin корректность — пройти LLM-fallback.
+
+---
+
+## 6. MEDICINSKO POMAGALA
+
+**Файл:** [../medicinsko-pomagala/medicinsko-pomagala-FINAL.json](../medicinsko-pomagala/medicinsko-pomagala-FINAL.json) (415 items)
+**LLM-источник:** нет.
+
+### 🔴 HIGH: 10 items без цены
+
+| Код | Имя |
+|---|---|
+| `AA1201` | Lezište proteze za šaku, mehaničke |
+| `AA1204` | Lezište za pasivnu podlakatnu protezu, plastično |
+| `AA2813` | Zamjena zgloba kuka / Zamjena dezartikulacionog koljena |
+| `AB3111` | Aparat za Pectus carinatum |
+| `AC1110` | (paddle прочитал "142,10" в name) |
+| `AC1112` | Ortopedske cipele za deformaciju stopala |
+| `DA1101` | Vještački nos |
+| `DA1102` | Vještačka ušna školjka |
+| `DA1103` | Naočare za retenciju vještačkog nosa |
+| `DA1104` | Vještački dio lica |
+
+Paddle scheme=single но `single_eur=None`. Найти в PDF.
+
+### 🟡 MED: все 415 items — paddle-only
+
+---
+
+## 7. VAN MREŽE
+
+**Файл:** [../van-mreze/van-mreze-FINAL.json](../van-mreze/van-mreze-FINAL.json) (81 items, 3 поправки применены)
+**LLM-источник:** нет.
+
+### 🔴 HIGH: 4 items без цены
+
+| Код | Имя | Заметка |
+|---|---|---|
+| `J09007` | MR pregled lumbosakralne kičme - bez kontrasta | paddle scheme=dual, оба столбца None |
+| `J09026` | (paddle прочитал "J09025" в name) | paddle row mangled |
+| `D07012` | (paddle прочитал "D07011" в name) | section 4 OFTALMOLOGIJA |
+| `X04042` | (paddle прочитал "L01059" в name) | section 9 USLUGE ASISTIRANE REPRODUKCIJE |
+
+Все 4 — paddle parse errors (row mangled, или scheme misclassified). Найти в исходных PDF (base + 3 амендмента).
+
+### 🟡 MED: все 81 items — paddle-only
+
+---
+
+## 8. KBKotor / Specijalna bolnica Risan — ambulanta (treca lica)
+
+**Файл:** [../../kbkotor/ambulanta-treca-lica/ambulanta-treca-lica-FINAL.json](../../kbkotor/ambulanta-treca-lica/ambulanta-treca-lica-FINAL.json) (368 items)
+**Базовое правило:** KBKotor price ≈ FZOCG sekundarna ambulanta × 3.0 (приказ Минздрава 011-25/2019-2 от 14.02.2019).
+
+### 🟡 MED: 8 кодов не в FZOCG sekundarna
+
+`I03017`, `I03018`, `I03019`, `I03020`, `I03021`, `I03022` — секция "USLUGE DEFEKTOLOGA-LOGOPEDA". Возможно эти коды есть в FZOCG, но paddle их пропустил при OCR sekundarna базы.
+
+`X01063`, `X02046` — изолированные коды.
+
+### 🟢 INFO: 81 xval mismatch
+
+KBKotor's цена ≠ FZOCG × 3.0 в пределах допуска. В основном — FZOCG поправлен после 2022-03-01 (KBKotor effective date — он frozen на 2022-03-01). См. `merge_info.xval_mismatch_sample`. Не требует исправления.
+
+---
+
+## 9. KBKotor / Specijalna bolnica Risan — odjeljenja (treca lica)
+
+**Файл:** [../../kbkotor/odjeljenja-treca-lica/odjeljenja-treca-lica-FINAL.json](../../kbkotor/odjeljenja-treca-lica/odjeljenja-treca-lica-FINAL.json) (773 items)
+**Базовое правило:** KBKotor price ≈ FZOCG sekundarna odjeljenje × 2.5.
+
+### 🟡 MED: 30 кодов не в FZOCG sekundarna
+
+Список: `D26146`, `I03001-I03022` (8 кодов defektolog-logoped), `J06060`, `J10013`, `J10016`, `J10044`, `X09007`, `X12063-X12065`, `X13002-X13004`, `Y12001`, `Y13002`, `Y13003`, `Z02054`, `Z02055`, `Z02085`, `Z02086`
+
+Эти коды паркуются в `name_kbkotor_paddle` form (без диакритики). Если найти их в FZOCG sekundarna PDF в секциях которые paddle пропустил — можно обогатить.
+
+### 🟢 INFO: 96 xval mismatch — same as ambulanta (FZOCG amended после 2022-03-01).
+
+---
+
+## Команды для проверки
+
+```powershell
+# Items без цены в категории
+$f = Get-Content data/fzocg/sekundarna-ostalo/sekundarna-ostalo-FINAL.json | ConvertFrom-Json
+$f.items | Where-Object { -not ($_.price_eur -or $_.price_odjeljenje_eur -or $_.price_ambulanta_eur -or $_.price_operacija_eur) } | Format-Table code, name
+
+# DRG items с _review флагом
+$d = Get-Content data/fzocg/drg-akutno-bolnicko/drg-akutno-bolnicko-FINAL.json | ConvertFrom-Json
+$d.items | Where-Object { $_._review } | Format-Table code, name, _review
+
+# Все merge_info по категории
+(Get-Content data/fzocg/<кат>/<кат>-FINAL.json | ConvertFrom-Json).merge_info
+```
+
+или bash:
+
+```bash
+jq '.items[] | select((.price_eur // .price_odjeljenje_eur // .price_ambulanta_eur // .price_operacija_eur) == null)' data/fzocg/sekundarna-ostalo/sekundarna-ostalo-FINAL.json
+jq '.items[] | select(._review)' data/fzocg/drg-akutno-bolnicko/drg-akutno-bolnicko-FINAL.json
+jq '.merge_info' data/fzocg/<кат>/<кат>-FINAL.json
+```
+
+---
+
+## Сводка по всем категориям
+
+| Категория | Items | 🔴 HIGH | 🟡 MED | Примечание |
+|---|---|---|---|---|
+| **sekundarna-ostalo** | 4031 | 3 no-price | 91 paddle-only, 172 llm-only | LLM-fallback вылечил W04xxx, D07xxx |
+| **primarna-zdravstvena (PZZ)** | 492 | 1 real conflict (X01022) | 92 llm-only, 145 name disagree | 18 paddle base dups auto-dedup'нуто |
+| **DRG** | 697 | 1 numeric disagree (I24Z), 3 likely-hallucination (I21Z/I22Z/O65Z) | 13 suspicious-drift, 4 paddle-only finds | All 697 pass coef×base xval |
+| **transfuziologija** | 67 | — | 9 name disagree | clean |
+| **apotekarska** | 37 | 1 conflict (code "50") | all paddle-only | без LLM |
+| **medicinsko-pomagala** | 415 | 10 no-price | all paddle-only | без LLM |
+| **van-mreze** | 81 | 4 no-price | all paddle-only | без LLM |
+| **kbkotor ambulanta** | 368 | — | 8 not-in-FZOCG | 260/341 xval matches |
+| **kbkotor odjeljenja** | 773 | — | 30 not-in-FZOCG | 377/473 xval matches |
+| **ИТОГО** | **6961** | **19 high** | **~1100 informational** | |
+
+Старый LLM-OCR список из 132 верификационных items — почти все resolved через paddle pipeline (см. §1 → 🟢 INFO).

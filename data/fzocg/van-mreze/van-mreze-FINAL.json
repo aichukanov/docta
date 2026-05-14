@@ -1,0 +1,1162 @@
+{
+  "category": "van-mreze",
+  "level": "ZU van zdravstvene mreže (institutions outside the health network)",
+  "issuer": "Fond za zdravstveno osiguranje Crne Gore (FZOCG)",
+  "price_columns": "single",
+  "effective_from": null,
+  "source_pdf": null,
+  "signed": null,
+  "supersedes": null,
+  "merge_info": {
+    "merge_date": "2026-05-13",
+    "paddle_engine": "paddleocr 3.5.0 / PP-StructureV3",
+    "paddle_items": 74,
+    "llm_items": 0,
+    "final_items": 81,
+    "codes_only_in_paddle": 74,
+    "codes_only_in_llm": 0,
+    "name_disagreements": 0,
+    "ocr_aliases_resolved": 0,
+    "name_resolved": 0,
+    "amendments_applied": [
+      {
+        "file": "Odluka-o-izmjeni-Cjenovnika-ZU-van-Mreze-od-26.12.2022-1.items.json",
+        "effective_from": "2023-01-03",
+        "items_changed": 0,
+        "items_added": 6
+      },
+      {
+        "file": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json",
+        "effective_from": "2023-12-01",
+        "items_changed": 19,
+        "items_added": 0
+      },
+      {
+        "file": "Odluka-o-izmjeni-Cjenovnika-ZU-van-Mreze-od-01.03.2025.items.json",
+        "effective_from": "2025-03-09",
+        "items_changed": 2,
+        "items_added": 1
+      }
+    ],
+    "paddle_only_codes": [
+      "N01001",
+      "N01002",
+      "X06001",
+      "X06075",
+      "X06014",
+      "X06087",
+      "X06080",
+      "J09001",
+      "J09002",
+      "J09003",
+      "J09004",
+      "J09005",
+      "J09006",
+      "J09007",
+      "J09008",
+      "J09009",
+      "J09010",
+      "J09011",
+      "J09012",
+      "J09013",
+      "J09014",
+      "J09015",
+      "J09016",
+      "J09017",
+      "J09018",
+      "J09019",
+      "J09020",
+      "J09021",
+      "J09022",
+      "J09023",
+      "J09024",
+      "J09025",
+      "J09026",
+      "L01090",
+      "L01001",
+      "L01002",
+      "L01003",
+      "L01004",
+      "L01006",
+      "L01008",
+      "L01012",
+      "L01013",
+      "L01014",
+      "L01015",
+      "L01018",
+      "L01021",
+      "L01023",
+      "L01025",
+      "L01027",
+      "L01030",
+      "L01031",
+      "L01032",
+      "L01035",
+      "L01036",
+      "L01037",
+      "L01038",
+      "L01039",
+      "L01041",
+      "L01043",
+      "L01051",
+      "L01053",
+      "L01054",
+      "L01055",
+      "L01057",
+      "L01058",
+      "L01059",
+      "L01062",
+      "L01063",
+      "L01069",
+      "L01071",
+      "L01073",
+      "L01084",
+      "D07012",
+      "X04042"
+    ]
+  },
+  "items_total": 81,
+  "items": [
+    {
+      "code": "21",
+      "name": "Ree-oeee-pee ree",
+      "price_eur": 100000.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-Cjenovnika-ZU-van-Mreze-od-01.03.2025.items.json"
+      },
+      "amended_from": "2025-03-09"
+    },
+    {
+      "code": "J09001",
+      "name": "MR pregled mozga - glave bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 80.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09002",
+      "name": "MR pregled mozga - glave sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 107.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09003",
+      "name": "MR pregled vraine kieme - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 80.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09004",
+      "name": "MR pregled vratne kieme - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 107.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09005",
+      "name": "MR pregled torakalne kicme - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 80.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09006",
+      "name": "MR pregled torakalne kicme - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 107.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09007",
+      "name": "MR pregled lumbosakralne kieme - bez kontrasta",
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09008",
+      "name": "MR pregled lumbosakralne kieme - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 107.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09009",
+      "name": "MR pregled karlice sa kukovima - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 80.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09010",
+      "name": "MR pregled karlice sa kukovima - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 107.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09011",
+      "name": "MR pregled osteomuskularnog sistema -bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 80.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09012",
+      "name": "MR pregled osteomuskularnog sistema -sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 107.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09013",
+      "name": "MR pregled krvnih sudova vrata i mozga - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 80.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09014",
+      "name": "MR pregled krvnih sudova vrala i mozga - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 107.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09015",
+      "name": "MR pregled abdomena - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 80.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09016",
+      "name": "MR pregled abdomena - sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 107.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09017",
+      "name": "MR pregled male karlice - bez kontrasta",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 80.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09018",
+      "name": "MR pregled male karlice -sa kontrastom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 107.0,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "J09026",
+      "name": "J09025",
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-ZU-van-Mreze-od-23.11.2023.g.items.json"
+      },
+      "amended_from": "2023-12-01"
+    },
+    {
+      "code": "N01001",
+      "name": "Prvi pregled - oftalmolog",
+      "price_eur": 11.12,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-Cjenovnika-ZU-van-Mreze-od-01.03.2025.items.json"
+      },
+      "amended_from": "2025-03-09"
+    },
+    {
+      "code": "N01002",
+      "name": "Ponovni (kontrolni) pregled - oftalmolog",
+      "price_eur": 5.56,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-Cjenovnika-ZU-van-Mreze-od-01.03.2025.items.json"
+      },
+      "amended_from": "2025-03-09"
+    },
+    {
+      "code": "W04001",
+      "name": "Folikulometrija",
+      "price_eur": 130.83,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single-rescue",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-Cjenovnika-ZU-van-Mreze-od-26.12.2022-1.items.json"
+      },
+      "amended_from": "2023-01-03"
+    },
+    {
+      "code": "W04002",
+      "name": "Aspiracija folikula",
+      "price_eur": 137.6,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single-rescue",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-Cjenovnika-ZU-van-Mreze-od-26.12.2022-1.items.json"
+      },
+      "amended_from": "2023-01-03"
+    },
+    {
+      "code": "W04003",
+      "name": "Anestezija",
+      "price_eur": 57.15,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single-rescue",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-Cjenovnika-ZU-van-Mreze-od-26.12.2022-1.items.json"
+      },
+      "amended_from": "2023-01-03"
+    },
+    {
+      "code": "W04004",
+      "name": "Laboratorija - IVF",
+      "price_eur": 725.93,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single-rescue",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-Cjenovnika-ZU-van-Mreze-od-26.12.2022-1.items.json"
+      },
+      "amended_from": "2023-01-03"
+    },
+    {
+      "code": "W04005",
+      "name": "Laboratorija - ICSI",
+      "price_eur": 953.3,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single-rescue",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-Cjenovnika-ZU-van-Mreze-od-26.12.2022-1.items.json"
+      },
+      "amended_from": "2023-01-03"
+    },
+    {
+      "code": "W04006",
+      "name": "Embriotransfer",
+      "price_eur": 86.72,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single-rescue",
+        "section": "paddle",
+        "amendment": "Odluka-o-izmjeni-Cjenovnika-ZU-van-Mreze-od-26.12.2022-1.items.json"
+      },
+      "amended_from": "2023-01-03"
+    },
+    {
+      "code": "X06001",
+      "name": "Odredivanje i propisivanje naočara za odrasle",
+      "price_eur": 2.78,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "X06014",
+      "name": "Ultrazvuk u oftalmologiji (A-scan i B-scan)",
+      "price_eur": 33.36,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "X06075",
+      "name": "Odredivanje i propisivanje naočara za djecu",
+      "price_eur": 2.78,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "X06080",
+      "name": "oCT (opticka koherentna tomografija)",
+      "price_eur": 30.58,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "X06087",
+      "name": "Perimetrija -statičko odredivanje centralnog vidnog polja (KVP)",
+      "price_eur": 16.68,
+      "section": null,
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "J09019",
+      "name": "MR pregled hipofize - sa kontrastom",
+      "price_eur": 117.0,
+      "section": "2. RADIOLOSKA DIJAGNOSTIKA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "J09020",
+      "name": "MR pregled vrata - bez kontrasta",
+      "price_eur": 90.0,
+      "section": "2. RADIOLOSKA DIJAGNOSTIKA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "J09021",
+      "name": "MR pregled vrata - sa kontrastom",
+      "price_eur": 117.0,
+      "section": "2. RADIOLOSKA DIJAGNOSTIKA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "J09022",
+      "name": "MRCP - bez kontrasta",
+      "price_eur": 90.0,
+      "section": "2. RADIOLOSKA DIJAGNOSTIKA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "J09023",
+      "name": "MRCP -sa kontrastom",
+      "price_eur": 117.0,
+      "section": "2. RADIOLOSKA DIJAGNOSTIKA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "J09024",
+      "name": "MR dojke - sa kontrastom",
+      "price_eur": 135.0,
+      "section": "2. RADIOLOSKA DIJAGNOSTIKA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "J09025",
+      "name": "MR toraksa/medijastinuma - bez kontrasta",
+      "price_eur": 90.0,
+      "section": "2. RADIOLOSKA DIJAGNOSTIKA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01001",
+      "name": "Pregled amputiranog apendiksa",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01002",
+      "name": "Pregled endoskopske biopsije kolona",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01003",
+      "name": "Pregled biopsije labium oris",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01004",
+      "name": "Pregled endoskopske biopsije sluznice Zeluca",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01006",
+      "name": "Pregled endoskopske biopsije jednjaka",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01008",
+      "name": "Pregled endoskopski reseciranog polipa kolona",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01012",
+      "name": "Pregled mioma",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01013",
+      "name": "Pregled polipa cerviksa",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01014",
+      "name": "Resectio ovarii partialis",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01015",
+      "name": "Pregled jajovoda",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01018",
+      "name": "Pregled ehinokoka jetre",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01021",
+      "name": "Pregled biopsije koze",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01023",
+      "name": "Pregled parcijalne resekcije tankog crijeva, fisura i fistula",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01025",
+      "name": "Pregled odstranjene Zučne kese",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01027",
+      "name": "Pregled pilonidalnog sinusa",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01030",
+      "name": "Pregled biopsije larinksa",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01031",
+      "name": "Pregled biopsije traheje /bronha",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01032",
+      "name": "Pleuralni i abdominalni punktat (cistoloska analiza)",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01035",
+      "name": "Pregled polipa larinksa",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01036",
+      "name": "Pregled sputuma",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01037",
+      "name": "Pregled subtotalne resekcije stitne Zlijezde",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01038",
+      "name": "Pregled biopsije penisa",
+      "price_eur": 11.12,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01039",
+      "name": "Pregled biopsije trbusne maramice",
+      "price_eur": 13.9,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01041",
+      "name": "Tumor iz usne duplje",
+      "price_eur": 13.9,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01043",
+      "name": "cYanetl ta_0",
+      "price_eur": 13.9,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01051",
+      "name": "Naevus",
+      "price_eur": 13.9,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01053",
+      "name": "Pregled polipa iz nosa",
+      "price_eur": 13.9,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01054",
+      "name": "Pregled tonzilektomije",
+      "price_eur": 13.9,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01055",
+      "name": "Pregled transuretralne resekcije tumora mokracne bešike",
+      "price_eur": 13.9,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01057",
+      "name": "Pregled parcijalne resekcije debelog crijeva",
+      "price_eur": 16.68,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01058",
+      "name": "Pregled biopsije testisa",
+      "price_eur": 16.68,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01059",
+      "name": "Spermogram",
+      "price_eur": 18.07,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01062",
+      "name": "Pregled ciste /tumora jajnika",
+      "price_eur": 19.46,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01063",
+      "name": "Pregled slezine",
+      "price_eur": 19.46,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01069",
+      "name": "Pregled konizata cerviksa uterusa",
+      "price_eur": 22.24,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01071",
+      "name": "Pregled uterusa",
+      "price_eur": 22.24,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01073",
+      "name": "Pregled uterusa sa adneksima",
+      "price_eur": 27.8,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01084",
+      "name": "Pregled ateroma, veruka, papiloma, kondiloma, ksantelazmi i drugih benignih lezija",
+      "price_eur": 41.7,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "L01090",
+      "name": "Pregled PAPA brisa",
+      "price_eur": 8.34,
+      "section": "3. PATOLOSKA ANATOMIJA I HISTOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle-single",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "D07012",
+      "name": "D07011",
+      "section": "4. OPERACLTE-OFTALMOLOGIJA",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle"
+      }
+    },
+    {
+      "code": "X04042",
+      "name": "L01059",
+      "section": "9. USLUGE ASISTIRANE REPRODUKCIJE (VANTJELESNE OPLODNJE)",
+      "subsection": null,
+      "_sources": {
+        "name": "paddle-only",
+        "price": "paddle",
+        "section": "paddle"
+      }
+    }
+  ]
+}

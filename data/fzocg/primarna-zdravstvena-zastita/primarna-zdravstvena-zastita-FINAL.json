@@ -1,0 +1,6412 @@
+{
+  "category": "primarna-zdravstvena-zastita",
+  "level": "primarna zdravstvena zaštita (PZZ)",
+  "issuer": "Fond za zdravstveno osiguranje Crne Gore (FZOCG)",
+  "price_columns": "single",
+  "effective_from": "2026-05-01",
+  "source_pdf": "Cjenovnik-zdravstvenih-usluga-na-primarnom-nivou-zdravstvene-zastite-PZZ-od-01.05.2026.pdf",
+  "signed": null,
+  "supersedes": null,
+  "merge_info": {
+    "merge_date": "2026-05-13",
+    "paddle_engine": "paddleocr 3.5.0 / PP-StructureV3",
+    "paddle_items": 420,
+    "llm_items": 492,
+    "final_items": 492,
+    "codes_only_in_paddle": 0,
+    "codes_only_in_llm": 92,
+    "name_disagreements": 145,
+    "ocr_aliases_resolved": 16,
+    "name_resolved": 1,
+    "amendments_applied": [],
+    "ocr_alias_pairs": [
+      {
+        "paddle": "101002",
+        "llm": "I01002"
+      },
+      {
+        "paddle": "101003",
+        "llm": "I01003"
+      },
+      {
+        "paddle": "101005",
+        "llm": "I01005"
+      },
+      {
+        "paddle": "101006",
+        "llm": "I01006"
+      },
+      {
+        "paddle": "101007",
+        "llm": "I01007"
+      },
+      {
+        "paddle": "101008",
+        "llm": "I01008"
+      },
+      {
+        "paddle": "101009",
+        "llm": "I01009"
+      },
+      {
+        "paddle": "102004",
+        "llm": "I02004"
+      },
+      {
+        "paddle": "103002",
+        "llm": "I03002"
+      },
+      {
+        "paddle": "103005",
+        "llm": "I03005"
+      },
+      {
+        "paddle": "103006",
+        "llm": "I03006"
+      },
+      {
+        "paddle": "103009",
+        "llm": "I03009"
+      },
+      {
+        "paddle": "103012",
+        "llm": "I03012"
+      },
+      {
+        "paddle": "103015",
+        "llm": "I03015"
+      },
+      {
+        "paddle": "103020",
+        "llm": "I03020"
+      },
+      {
+        "paddle": "103022",
+        "llm": "I03022"
+      }
+    ],
+    "name_resolved_pairs": [
+      {
+        "paddle": "X02013",
+        "llm": "X02013_DIAG"
+      }
+    ],
+    "name_disagreement_codes": [
+      "A01001",
+      "A01002",
+      "A01003",
+      "A01005",
+      "A01006",
+      "A01010",
+      "A01011",
+      "A01013",
+      "A01014",
+      "A01015",
+      "A02003",
+      "A02005",
+      "A02011",
+      "X01004",
+      "X02006",
+      "X02009",
+      "C01003",
+      "C01004",
+      "C01006",
+      "C01007",
+      "X02017",
+      "X03005",
+      "X03006",
+      "X03007",
+      "X03008",
+      "D11002",
+      "D11003",
+      "D11004",
+      "D11005",
+      "D11006",
+      "D12001",
+      "D12002",
+      "D13001",
+      "D13002",
+      "D13003",
+      "D13004",
+      "D13008",
+      "D13009",
+      "D13010",
+      "D13011",
+      "D13012",
+      "D13013",
+      "D13014",
+      "D13015",
+      "D13016",
+      "D13017",
+      "D13020",
+      "D13021",
+      "D13024",
+      "D13025",
+      "D13026",
+      "D13030",
+      "D13034",
+      "D13037",
+      "D13043",
+      "D13049",
+      "D13052",
+      "D13053",
+      "D13054",
+      "D14002",
+      "D14004",
+      "D14005",
+      "D14006",
+      "D14007",
+      "D14008",
+      "D14010",
+      "G01004",
+      "X02001",
+      "H01001",
+      "H01002",
+      "H01003",
+      "H01004",
+      "H01005",
+      "H01006",
+      "H01007",
+      "H01008",
+      "H01009",
+      "H01010",
+      "H01011",
+      "H01012",
+      "H01013",
+      "H01014",
+      "H01015",
+      "H01016",
+      "H01017",
+      "H01018",
+      "H01019",
+      "H01020",
+      "H01021",
+      "H01022",
+      "H01023",
+      "H02001",
+      "H02002",
+      "H02004",
+      "H02005",
+      "H02006",
+      "H02012",
+      "H02013",
+      "H02014",
+      "H02018",
+      "H02019",
+      "H02020",
+      "H02021",
+      "H02022",
+      "I01002",
+      "I01008",
+      "I02005",
+      "I03004",
+      "I03011",
+      "I03012",
+      "I03014",
+      "I03016",
+      "I03020",
+      "J01001",
+      "J06002",
+      "J06003",
+      "J06011",
+      "J07001",
+      "J07002",
+      "J07004",
+      "J07006",
+      "J07007",
+      "K01003",
+      "K01053",
+      "K01054",
+      "K01056",
+      "K02004",
+      "K02008",
+      "K02009",
+      "L01001",
+      "L01002",
+      "L01003",
+      "L01007",
+      "L01008",
+      "L01009",
+      "L02001",
+      "L02002",
+      "L02003",
+      "L04001",
+      "L04002",
+      "L04003",
+      "L03001",
+      "L03002",
+      "L03006",
+      "M01007"
+    ],
+    "paddle_duplicates_dropped": [
+      "X01004",
+      "X01006",
+      "X01007",
+      "X01014",
+      "X01015",
+      "X01020",
+      "X01021",
+      "X02003",
+      "X02006",
+      "X02007",
+      "X02009",
+      "X02010",
+      "X02021",
+      "X03001",
+      "X01006",
+      "X01007",
+      "X01010",
+      "X02011"
+    ],
+    "paddle_duplicates_conflicting": [
+      "X01021",
+      "X01022"
+    ],
+    "llm_only_codes": [
+      "X01004_GYN",
+      "X01006_GYN",
+      "X01007_GYN",
+      "X01014_GYN",
+      "X01015_GYN",
+      "X01020_GYN",
+      "X01021_GYN",
+      "X02003_GYN",
+      "X02006_GYN",
+      "X02007_GYN",
+      "X02009_GYN",
+      "X02010_GYN",
+      "X02021_GYN",
+      "X03001_GYN",
+      "D15010",
+      "D15011",
+      "D15012",
+      "D15013",
+      "D17001",
+      "D17002",
+      "D17003",
+      "D17004",
+      "D17005",
+      "D17006",
+      "D18001",
+      "D18002",
+      "D18003",
+      "D18004",
+      "D18005",
+      "D18006",
+      "D18007",
+      "D18008",
+      "D18009",
+      "D18010",
+      "D18011",
+      "X01006_TBC",
+      "X01007_TBC",
+      "X01010_TBC",
+      "X01021_TBC",
+      "X02011_TBC",
+      "K01023",
+      "K01024",
+      "K01025",
+      "K01026",
+      "K01027",
+      "K01028",
+      "K01029",
+      "K01030",
+      "K01031",
+      "K01032",
+      "K01033",
+      "K01034",
+      "K01035",
+      "K01036",
+      "K01037",
+      "K01038",
+      "K01039",
+      "K01040",
+      "K01041",
+      "K01042",
+      "K01043",
+      "K01044",
+      "K01045",
+      "K01046",
+      "K01047",
+      "K01048",
+      "K01049",
+      "K01050",
+      "K01051",
+      "K01052",
+      "X01022_PATR",
+      "M01018",
+      "M01019",
+      "M01020",
+      "M01021",
+      "M01022",
+      "M01023",
+      "M01024",
+      "M01025",
+      "M01026",
+      "M01027",
+      "M01028",
+      "M01029",
+      "M01030",
+      "M01031",
+      "M01032",
+      "M01033",
+      "M01034",
+      "M02008",
+      "M02009",
+      "M02010",
+      "M02011"
+    ]
+  },
+  "items_total": 492,
+  "items": [
+    {
+      "code": "J01001",
+      "name": "Prvi specijalistički pregled (radiolog)",
+      "price_eur": 4.58,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "name_paddle": "Prvi specijalisticki pregled",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J06001",
+      "name": "Snimanje skeleta lobanje i lica-za svaki snimak",
+      "price_eur": 2.87,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J06002",
+      "name": "Snimanje pojedinih dijelova kičme i sakroilijačne regije-za svaki snimak",
+      "price_eur": 2.87,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "name_paddle": "Snimanje pojedinih dijelova kieme i sakroilijane regije-za svaki snimak",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J06003",
+      "name": "Snimanje pojedinih djelova skeleta, ekstremiteta i karlice za svaki snimak -ekspozicija",
+      "price_eur": 2.87,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "name_paddle": "Snimanje pojedinih djelova skeleta, ekstremiteta i karlice za svaki snimak -ekspoziciju",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J06004",
+      "name": "Lokalizacija stranog tijela u bilo kojem organu",
+      "price_eur": 2.87,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J06005",
+      "name": "Snimanje ždrijela i grkljana",
+      "price_eur": 2.87,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J06006",
+      "name": "Snimanje toraksa (rebra, sternum) -za svaku projekciju",
+      "price_eur": 0.96,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J06007",
+      "name": "Fluorogram pluća",
+      "price_eur": 1.91,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J06008",
+      "name": "Snimanje pluća za svaki pravac",
+      "price_eur": 2.87,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J06009",
+      "name": "Snimak medijastinuma",
+      "price_eur": 2.87,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J06010",
+      "name": "Teleradiografija srca",
+      "price_eur": 2.87,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J06011",
+      "name": "Snimanje hepatobiljarnog trakta",
+      "price_eur": 2.87,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "name_paddle": "Snimanje hepatobilijarnog trakta",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J06012",
+      "name": "Snimanje urogenitalnog trakta",
+      "price_eur": 2.87,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J06013",
+      "name": "Nativni snimak urotrakta, sa snimkom male karlice",
+      "price_eur": 1.91,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J06014",
+      "name": "Mamografija",
+      "price_eur": 2.87,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J06015",
+      "name": "Nativni snimak abdomena za svaki pravac",
+      "price_eur": 2.87,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J07001",
+      "name": "UZ gornjeg abdomena: žučne kese, žučnih puteva, jetre, gušterače i slezine",
+      "price_eur": 14.5,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "name_paddle": "UZ gornjeg abdomena:zucne kese,zuenih puteva, jetre, gusterace i slezine",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J07002",
+      "name": "UZ donjeg abdomena: mokraćne bešike i prostate, retroperitoneuma: bubrega, nadbubrežnih žljezda",
+      "price_eur": 14.5,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "name_paddle": "UZ donjega abdomena: mokracne besike i prostate, retroperitoneuma: bubrega, nadbubreznih zljezda",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J07003",
+      "name": "UZ testisa kod muškaraca",
+      "price_eur": 14.5,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J07005",
+      "name": "UZ ciljani pregled zglobova i mekih tkiva",
+      "price_eur": 14.5,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J07006",
+      "name": "UZ pregled limfnih žljezda",
+      "price_eur": 14.5,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "name_paddle": "UZ pregled limfnih Zlijezda",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J07007",
+      "name": "UZ štitne i paraštitne žljezde",
+      "price_eur": 14.5,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "name_paddle": "UZ stitne i parastitne lijezde",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J07008",
+      "name": "UZ pregled dojki",
+      "price_eur": 14.5,
+      "section": "Centar za dijagnostiku - RTG i UZ",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01001",
+      "name": "Prvi specijalistički pregled",
+      "price_eur": 4.8,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01002",
+      "name": "Prijem materijala i davanje sterilnih posuda za urin, sputum, stolicu i dr.",
+      "price_eur": 0.6,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01003",
+      "name": "Uzimanje uzorka",
+      "price_eur": 1.0,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "name_paddle": "Uzimanje uzoraka",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01004",
+      "name": "Pregled preparata uretralnog, vaginalnog ili cervikalnog brisa na gonoreju",
+      "price_eur": 6.0,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01005",
+      "name": "Aminski test",
+      "price_eur": 1.0,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01006",
+      "name": "Mikroskopski pregled na Treponema pallidum",
+      "price_eur": 6.0,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01007",
+      "name": "Bris ždrijela",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01008",
+      "name": "Bris usne duplje",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01009",
+      "name": "Bris jezika",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01010",
+      "name": "Bris nosa",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01011",
+      "name": "Bris oka",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01012",
+      "name": "Bris uha",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01013",
+      "name": "Bris rane",
+      "price_eur": 7.8,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01014",
+      "name": "Bris pupka",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01015",
+      "name": "Bris kože",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01016",
+      "name": "Bris dojke",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01017",
+      "name": "Bris vagine",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01018",
+      "name": "Bris vulve",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01019",
+      "name": "Bris glansa",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01020",
+      "name": "Bris prepucijuma",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01021",
+      "name": "Bris uretre",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01022",
+      "name": "Urinokultura",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01023",
+      "name": "Koprokultura",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01024",
+      "name": "Bris žmara",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01025",
+      "name": "Kultura na Vibrio kolera",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01026",
+      "name": "Sputum kultura",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01027",
+      "name": "Cervikalna kultura",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01028",
+      "name": "Izrada antibiograma (radi se po potrebi)",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 3.6
+    },
+    {
+      "code": "K01029",
+      "name": "Kultivacija Mycoplasma sa izradom antibiograma",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 7.04
+    },
+    {
+      "code": "K01030",
+      "name": "Pregled preparata na dermatomikoze nokta",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 8.4
+    },
+    {
+      "code": "K01031",
+      "name": "Pregled preparata na dermatomikoze kože",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 8.4
+    },
+    {
+      "code": "K01032",
+      "name": "Pregled preparata na dermatomikoze dlake",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 8.4
+    },
+    {
+      "code": "K01033",
+      "name": "Kultura brisa kože na gljivice",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01034",
+      "name": "Kultura brisa dlake na gljivice",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01035",
+      "name": "Kultura brisa nokta na gljivice",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01036",
+      "name": "Kultura vaginalnog sekreta na gljivice",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01037",
+      "name": "Kultura brisa vulve na gljivice",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01038",
+      "name": "Kultura brisa glansa na gljivice",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01039",
+      "name": "Kultura brisa prepucijuma na gljivice",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01040",
+      "name": "Kultura uretralnog sekreta na gljivice",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01041",
+      "name": "Kultura stolice na gljivice",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01042",
+      "name": "Kultura urina na gljivice",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01043",
+      "name": "Kultura brisa nosa na gljivice",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01044",
+      "name": "Kultura sputuma na gljivice",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01045",
+      "name": "Kultura brisa grla na gljivice",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01046",
+      "name": "Kultura brisa nepca na gljivice",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.24
+    },
+    {
+      "code": "K01047",
+      "name": "Kultura brisa rane na gljivice",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 7.8
+    },
+    {
+      "code": "K01048",
+      "name": "Identifikacija gljivica",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 10.4
+    },
+    {
+      "code": "K01049",
+      "name": "Izrada antimikograma",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 5.6
+    },
+    {
+      "code": "K01050",
+      "name": "Pregled preparata uretralnog ili vaginalnog brisa na Trichomonas vaginalis (stepen)",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.0
+    },
+    {
+      "code": "K01051",
+      "name": "Mikroskopski pregled stolice na helminte (ljepljivim celofanom)",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 5.04
+    },
+    {
+      "code": "K01052",
+      "name": "Mikroskopski pregled stolice na helminte (metoda koncentracije)",
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 8.0
+    },
+    {
+      "code": "K01053",
+      "name": "Mikroskopski pregled stolice na protozoe (metoda koncentracije)",
+      "price_eur": 8.0,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "name_paddle": "cYaGntaYYeYYllow 16,40",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01054",
+      "name": "Nativni mikroskopski preparat na amebe sa provokacijom",
+      "price_eur": 6.0,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "name_paddle": "aiv 5,40",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01055",
+      "name": "Parazitološki pregled stolice na Cryptosporidium vrste (Ziehl-Neelsen)",
+      "price_eur": 6.0,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01056",
+      "name": "Mikroskopski preparat i pregled na malariju",
+      "price_eur": 16.4,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "name_paddle": "Mikroskopski preparat i pregled na malartiju",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01057",
+      "name": "Pregled i identifikacija ektoparazita kože (larva, lutka ili adult)",
+      "price_eur": 5.4,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01058",
+      "name": "Uzimanje i pregled otiska kože na Demodex vrste",
+      "price_eur": 6.0,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01059",
+      "name": "CRP-LATEX",
+      "price_eur": 3.6,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01060",
+      "name": "VDRL",
+      "price_eur": 3.6,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01061",
+      "name": "ASTO-LATEX",
+      "price_eur": 4.4,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01062",
+      "name": "Paul Bunel-ova reakcija (monostikon test)",
+      "price_eur": 4.4,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01063",
+      "name": "TPHA",
+      "price_eur": 4.4,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01064",
+      "name": "Mikroskopsko citološki pregled (stepen)",
+      "price_eur": 6.0,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01065",
+      "name": "CRP-TURBIDOMETRIJA",
+      "price_eur": 3.6,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01066",
+      "name": "ASTO-TURBIDOMETRIJA",
+      "price_eur": 4.4,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01067",
+      "name": "REUMA FAKTOR (RF)-LATEX",
+      "price_eur": 4.4,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01068",
+      "name": "REUMA FAKTOR (RF)-TURBIDOMETRIJA",
+      "price_eur": 4.4,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01069",
+      "name": "WAALER-ROSE TEST",
+      "price_eur": 4.4,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K01070",
+      "name": "Kultura brisa jezika na gljivice",
+      "price_eur": 6.24,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K02001",
+      "name": "Detekcija antimikrobnih antitijela ELISA-testom",
+      "price_eur": 6.4,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K02002",
+      "name": "Detekcija mikrobnih antigena ELISA-testom",
+      "price_eur": 6.4,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K02003",
+      "name": "Detekcija antimikrobnih antitijela indirektnom imunofluorescencijom",
+      "price_eur": 10.2,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K02004",
+      "name": "Detekcija mikrobnih antigena direktnom imunofluorescencijom",
+      "price_eur": 10.2,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "name_paddle": "ro 1,96",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K02005",
+      "name": "Detekcija antimikrobnih antitijela reakcijom vezivanja komplementa",
+      "price_eur": 6.4,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K02006",
+      "name": "Detekcija antimikrobnih antitijela - testom hemaglutinacije",
+      "price_eur": 6.4,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K02007",
+      "name": "Detekcija antimikrobnih antitijela latex aglutinacionim testom",
+      "price_eur": 1.96,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K02008",
+      "name": "Detekcija mikrobnih antigena latex aglutinacionim testom",
+      "price_eur": 1.96,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "name_paddle": "Detekcija antimikrobnih antigena latex aglutinacionim testom",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "K02009",
+      "name": "Detekcija mikrobnih nukleinskih kiselina testom hibridizacije nukleinskih kiselina",
+      "price_eur": 21.6,
+      "section": "Centar za dijagnostiku - mikrobiološka dijagnostika",
+      "subsection": null,
+      "name_paddle": "Detekcija mikrobnih nukleinskih kisjelina testom hibridizacije nukleinskih kisjelina",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I01001",
+      "name": "Preventivni pregled rizičnog neonatusa i odojčeta",
+      "price_eur": 36.31,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I01002",
+      "name": "Kontrolni preventivni pregled rizičnog neonatusa i odojčeta",
+      "price_eur": 18.16,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "name_paddle": "Kontrolni preventivni pregled rizičnog neonatusai odojeta",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I01003",
+      "name": "Preventivni pregled rizične djece",
+      "price_eur": 27.23,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I01004",
+      "name": "Kontrolni preventivni pregled rizične djece",
+      "price_eur": 18.16,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I01005",
+      "name": "Preventivni pregled djeteta sa smetnjama u razvoju",
+      "price_eur": 36.31,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I01006",
+      "name": "Kontrolni preventivni pregled djeteta sa smetnjama u razvoju",
+      "price_eur": 18.16,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I01007",
+      "name": "Zdravstveno-vaspitni rad sa pojedincem (roditelj, vaspitač, nastavnik)",
+      "price_eur": 27.23,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I01008",
+      "name": "Obuka roditelja za stimulativni tretman",
+      "price_eur": 9.08,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "name_paddle": "Obuka roditelja za stimulativni tretman.",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I01009",
+      "name": "Zdravstveno-vaspitni rad sa grupom",
+      "price_eur": 36.31,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I01010",
+      "name": "Posjeta objektima za kolektivni smještaj predškolske djece i školama",
+      "price_eur": 27.23,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I02001",
+      "name": "Prvi kurativni pregled",
+      "price_eur": 18.16,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I02004",
+      "name": "Timska obrada pacijenta sa smetnjama u razvoju",
+      "price_eur": 14.6,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I02005",
+      "name": "Savjet pedagoga škole ili vrtića",
+      "price_eur": 14.6,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "name_paddle": "Savjet pedagogu skole ili vrtica",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03001",
+      "name": "Logopedska procjena artikulacionih sposobnosti djeteta",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03002",
+      "name": "Logopedska procjena stepena i težine mucanja",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03003",
+      "name": "Logopedska procjena govorne razvijenosti",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03004",
+      "name": "Logopedska procjena specifičnih poremećaja učenja",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "name_paddle": "Logopedska procjena specifienih poremecaja uenja",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03005",
+      "name": "Logopedska, somatopedska i oligofrenološka procjena psihomotorne sposobnosti",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03006",
+      "name": "Defektološko ispitivanje malog djeteta",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03007",
+      "name": "Defektološko ispitivanje školskog djeteta",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03008",
+      "name": "Logopedski tretman poremećaja u artikulaciji i motorici",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03009",
+      "name": "Logopedski tretman mucanja i motorike",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03010",
+      "name": "Logopedski tretman djeteta sa nerazvijenim govorom",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03011",
+      "name": "Defektološki/logopedski individualni tretman djeteta sa povišenom impulsivnošću",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "name_paddle": "Defektoloki,logopedski individualni tretman djeteta sa povisenom impulsivnoscu",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03012",
+      "name": "Defektološki ili logopedski individualni tretman djeteta sa psihomotornom nestabilnošću",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "name_paddle": "Defektoloski ili logopedski tretman djeteta sa psihomotornom nestabilnošcu",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03013",
+      "name": "Grupni rad defektologa sa roditeljima i djecom",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03014",
+      "name": "Defektološki individualni tretman malog djeteta",
+      "price_eur": 12.02,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "name_paddle": "Defektoloki individualni tretman malog djeteta",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03015",
+      "name": "Defektološki grupni tretman malog djeteta",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03016",
+      "name": "Defektološki individualni tretman školskog djeteta",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "name_paddle": "Defektoloski individualni tretman kolskog djeteta",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03017",
+      "name": "Defektološki grupni tretman školskog djeteta",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03018",
+      "name": "Savjeti roditeljima",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03019",
+      "name": "Nalaz i mišljenje defektologa",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03020",
+      "name": "Savjet pedagoga škole ili vrtića",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "name_paddle": "Savjet pedagogu skole ili vrtica",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03021",
+      "name": "Timska obrada pacijenta",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "I03022",
+      "name": "Defektološko-logopedski tretman djetata sa smetnjama u učenju",
+      "price_eur": 13.8,
+      "section": "Centar za djecu sa posebnim potrebama",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01001",
+      "name": "Prvi pregled (specijalistički)",
+      "price_eur": 18.77,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Ponovni pregled (kontrolni specijalisticki)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01002",
+      "name": "Ponovni pregled (kontrolni specijalistički)",
+      "price_eur": 9.38,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Kratka posjeta doktoru bez ponovnog pregleda",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01003",
+      "name": "Kratka posjeta doktoru bez ponovnog pregleda",
+      "price_eur": 18.77,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Povrsna individualna terapija (savjeti pacijentu)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01004",
+      "name": "Površna individualna terapija (savjeti pacijentu)",
+      "price_eur": 28.15,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Dubinska individualna terapija (savjetodavna terapija)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01005",
+      "name": "Dubinska individualna terapija (savjetodavna terapija)",
+      "price_eur": 75.07,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Grupna psihoterapija psihodinamskih i sociodinamskih kinflikata (grupa sa najmanje 6 osoba)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01006",
+      "name": "Grupna psihoterapija psihodinamskih i sociodinamskih kinflikata (grupa sa najmanje 6 osoba)",
+      "price_eur": 75.07,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Grupna psihoterapija kod lica sa bolestima zavisnosti (grupa sa najmanje 6 osoba)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01007",
+      "name": "Grupna psihoterapija kod lica sa bolestima zavisnosti (grupa sa najmanje 6 osoba)",
+      "price_eur": 56.3,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Porodiena psihoterapija (terapija branih i drugih parova)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01008",
+      "name": "Porodična psihoterapija (terapija bračnih i drugih parova)",
+      "price_eur": 37.54,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Analiticki usmjerena terapija",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01009",
+      "name": "Analitički usmjerena terapija",
+      "price_eur": 37.54,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Psihoterpija ponasanja",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01010",
+      "name": "Psihoterpija ponašanja",
+      "price_eur": 31.28,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Tehnika relaksacije",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01011",
+      "name": "Tehnika relaksacije",
+      "price_eur": 9.38,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Kraci psihodijagnosticki intervju",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01012",
+      "name": "Kraći psihodijagnostički intervju",
+      "price_eur": 56.3,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Procjena psihomotornog razvoja djeteteta",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01013",
+      "name": "Procjena psihomotornog razvoja djeteta",
+      "price_eur": 28.15,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Kratki klinicki test procjene intelektualnog statusa djece do 15 godina",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01014",
+      "name": "Kratki klinički test procjene intelektualnog statusa djece do 15 godina",
+      "price_eur": 18.77,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "cYamaGnGYtYlow 8,8",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01015",
+      "name": "Kratki klinički test procjene intelektualnog statusa za odrasle",
+      "price_eur": 50.05,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "cYanaGneYYYYYYl 75,07",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01016",
+      "name": "Procjena strukture ličnosti (eksploracija) djece do 15 godina",
+      "price_eur": 31.28,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Procjena strukture linosti (eksploracija) za odrasle",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01017",
+      "name": "Procjena strukture ličnosti (eksploracija) za odrasle",
+      "price_eur": 15.64,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "cYnmanGetYYelo 9,38",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01018",
+      "name": "Kliničko ispitivanje pojedinačnih funkcija djece do 15 godina",
+      "price_eur": 8.83,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Klinicko ispitivanje pojedinanih funkcija za odrasle",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01019",
+      "name": "Kliničko ispitivanje pojedinačnih funkcija za odrasle",
+      "price_eur": 75.07,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Obrada rezultata, integracija rezultata,pisanje nalaza",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01020",
+      "name": "Obrada rezultata, integracija rezultata, pisanje nalaza",
+      "price_eur": 9.38,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Heteroanamneza",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01021",
+      "name": "Heteroanamneza",
+      "price_eur": 9.38,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Savjet roditeljima i clanovima porodice",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01022",
+      "name": "Savjet roditeljima i članovima porodice",
+      "price_eur": 18.77,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Konsultacija struenog tima o pacijentu",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H01023",
+      "name": "Konsultacija stručnog tima o pacijentu",
+      "price_eur": 18.77,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "USLUGE PSIHOLOGA",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "llm-fallback",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02001",
+      "name": "Anamneza, dijagnostički intervju",
+      "price_eur": 13.8,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Prikupljanje podataka sa psiholoskim testovima i metodama kategorije A(testovi:P, TRL, BTI, DAT, TMO, SPP3)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02002",
+      "name": "Prikupljanje podataka sa psihološkim testovima i metodama kategorije A(testovi:P, TRL, BTI, DAT, TMO, SPP3)",
+      "price_eur": 13.8,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "llm-fallback",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02003",
+      "name": "Prikupljanje podataka sa psihološkim testovima i metodama kategorije B (testovi: D-48, LB, PM, AV, DAT, EOV)",
+      "price_eur": 23.0,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02004",
+      "name": "Prikupljanje podataka sa psihološkim testovima i metodama kategorije C (testovi: WB, WISC, OL, FPI, APQ, PIE)",
+      "price_eur": 36.8,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Prikupljanje podataka sa psiholoskim testovima i metodama kategorije C (testovi: WB, WISC, OI, FPI, APQ, PIE)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02005",
+      "name": "Prikupljanje podataka sa psihološkim testovima i metodama kategorije D (Rošahov dijagnostički test, PPM, usmjereni dijagnostički intrevju, neuropsihološka anliza)",
+      "price_eur": 55.2,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Prikupljanje podataka sa psiholoskim testovima i metodama kategorije D (Roahov dijagnosticki test, PPM, usmjereni dijagnostiki intrevju,neuropsiholoka anliza)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02006",
+      "name": "Procjena organicnosti",
+      "price_eur": 55.2,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Procjena organiciteta",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02007",
+      "name": "Prvi intervju-Dijagnostički intervju djeteta sa posebnim potrebama",
+      "price_eur": 27.6,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02008",
+      "name": "Procjena intelektualnih sposobnosti djeteta sa posebnim potrebama do 14 g.-Gudinaf-ov test",
+      "price_eur": 10.12,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02009",
+      "name": "Procjena intelektualnih sposobnosti djeteta sa posebnim potrebama do 14 g.-Bine-Simonova skala",
+      "price_eur": 12.88,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02010",
+      "name": "Procjena intelektualnih sposobnosti djeteta sa posebnim potrebama do 14 godina-Revisk",
+      "price_eur": 11.5,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02011",
+      "name": "Procjena intelektualnih sposobnosti djeteta sa posebnim potrebama do 14 g.-Progresivne matrice",
+      "price_eur": 15.64,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02012",
+      "name": "Procjena intelektualnih sposobnosti djeteta sa posebnim potrebama preko14 godina-W-B skala",
+      "price_eur": 12.88,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Procjena intelektualnih sposobnosti djeteta sa posebnim potrebama prekol4 godina-Viti test",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02013",
+      "name": "Procjena intelektualnih sposobnosti djeteta sa posebnim potrebama preko14 godina-W-B skala (alt)",
+      "price_eur": 12.88,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Procjena intelektualnih sposobnosti djeteta sa posebnim potrebama preko14 godina-W-B skala",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02014",
+      "name": "Procjena psihomotornog razvoja djeteta sa posebnim potrebama",
+      "price_eur": 11.5,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "10,12",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02015",
+      "name": "Procjena socijalne zrelosti djeteta sa posebnim potrebama",
+      "price_eur": 10.12,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02016",
+      "name": "Timska obrada pacijenta sa smetnjama u razvoju",
+      "price_eur": 14.26,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02017",
+      "name": "Dijagnostika igrom",
+      "price_eur": 10.12,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02018",
+      "name": "Testovi ličnosti djeteta sa posebnim potrebama-Testovi nedovršenih rečenica",
+      "price_eur": 12.88,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Testovi linosti djeteta sa posebnim potrebama-Testovi nedovršenih rečenica",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02019",
+      "name": "Testovi ličnosti djeteta sa posebnim potrebama-Crtež porodice",
+      "price_eur": 10.12,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "cYaGenmGetaYlo 7.36 c)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02020",
+      "name": "Testovi ličnosti djeteta sa posebnim potrebama - Test ego percepcije",
+      "price_eur": 12.88,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Testovi lienosti djeteta sa posebnim potrebama - Test ego percepcije",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02021",
+      "name": "Savjetodavan rad sa roditeljima",
+      "price_eur": 14.26,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Savjetodavan rad sa roditeljem",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02022",
+      "name": "Savjet pedagoga škole ili vrtića",
+      "price_eur": 7.36,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "name_paddle": "Savjet pedagogu skole ili vrtica",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02023",
+      "name": "Obrada podataka",
+      "price_eur": 10.12,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02024",
+      "name": "Obrada rezultata, integracija rezultata, pisanje nalaza",
+      "price_eur": 55.2,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H02025",
+      "name": "Individualna površna terapija",
+      "price_eur": 14.26,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H04001",
+      "name": "Socijalni radnik, nalaz i mišljenje",
+      "price_eur": 8.28,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H04002",
+      "name": "Socijalni radnik-intervju",
+      "price_eur": 8.28,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H04003",
+      "name": "Socijalna anamneza na terenu",
+      "price_eur": 12.42,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H04004",
+      "name": "Socio terapija-liječeni pacijenti",
+      "price_eur": 16.56,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H04005",
+      "name": "Socio tretman-bračni",
+      "price_eur": 12.42,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H04006",
+      "name": "Socio tretman-član porodice",
+      "price_eur": 12.42,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H04007",
+      "name": "Socio tretman- porodica-teren",
+      "price_eur": 16.56,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H04008",
+      "name": "Socio terapija-individualna seansa",
+      "price_eur": 12.42,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H04009",
+      "name": "Socio tretman- radna organizacija",
+      "price_eur": 16.56,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H04010",
+      "name": "Vještačenje zakonske odgovornosti",
+      "price_eur": 12.42,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H04011",
+      "name": "Saradnja sa službama socijalne zaštite i drugim zdravstvenim ustanovama",
+      "price_eur": 12.42,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H09001",
+      "name": "Prva posjeta asertivnog tima u kući osiguranika na udaljenosti do 5 km od Doma zdravlja",
+      "price_eur": 76.54,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H09002",
+      "name": "Prva posjeta asertivnog tima u kući osiguranika na udaljenosti od 5-15 km od Doma zdravlja",
+      "price_eur": 88.32,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H09003",
+      "name": "Prva posjeta asertivnog tima u kući osiguranika na udaljenosti preko 15 km od Doma zdravlja",
+      "price_eur": 100.1,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H09004",
+      "name": "Ponovna posjeta asertivnog tima u kući osiguranika na udaljenosti do 5 km od Doma zdravlja",
+      "price_eur": 58.88,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H09005",
+      "name": "Ponovna posjeta asertivnog tima u kući osiguranika na udaljenosti od 5-15 km od Doma zdravlja",
+      "price_eur": 70.66,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "H09006",
+      "name": "Ponovna posjeta asertivnog tima u kući osiguranika na udaljenosti preko 15 km od Doma zdravlja",
+      "price_eur": 82.43,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01023",
+      "name": "Davanje metadona",
+      "price_eur": 1.84,
+      "section": "Centar za mentalno zdravlje",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "G01001",
+      "name": "Tuberkulinsko testiranje",
+      "price_eur": 3.88,
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "G01002",
+      "name": "Pregled osoba sa registrovanom TBC",
+      "price_eur": 15.5,
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "G01003",
+      "name": "Pregled osoba iz kontakta",
+      "price_eur": 15.5,
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "G01004",
+      "name": "Pregled i praćenje lica pod hemioprofilaksom",
+      "price_eur": 15.5,
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "name_paddle": "Pregled i pracenje lica pod hemioprofilaksom.",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "G02001",
+      "name": "Prvi kurativni pregled (specijalistički)",
+      "price_eur": 15.5,
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "G02002",
+      "name": "Ponovni kurativni pregled (kontrolni specijalistički)",
+      "price_eur": 11.63,
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01006_TBC",
+      "name": "Davanje kiseonika (TBC)",
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 2.05
+    },
+    {
+      "code": "X01007_TBC",
+      "name": "Uzimanje briseva sa slanjem na analizu (TBC)",
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 3.76
+    },
+    {
+      "code": "X01008",
+      "name": "Uzimanje sputuma za analizu na bakterije i gljivice",
+      "price_eur": 1.03,
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01010_TBC",
+      "name": "Davanje inhalacije (TBC)",
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 2.05
+    },
+    {
+      "code": "X01021_TBC",
+      "name": "Lokalno apliciranje lijeka (subkutano i intramuskularno) (TBC)",
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 1.03
+    },
+    {
+      "code": "X01022",
+      "name": "Direktno opservirana terapija za TBC (DOTs)",
+      "price_eur": 1.03,
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02001",
+      "name": "Ispitivanje kožne preosjetljivosti na inhalacione alergene (alergološko prick - testiranje)",
+      "price_eur": 13.0,
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "name_paddle": "Ispitivanje kozne preosetljivosti na inhalacione alergene (alergolosko prick - testiranje)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02011_TBC",
+      "name": "Snimanje i čitanje spirometrije (TBC)",
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 4.79
+    },
+    {
+      "code": "X02012",
+      "name": "Bronhodilatacijski testovi",
+      "price_eur": 4.79,
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02013_DIAG",
+      "name": "Dijagnostička punkcija pleure",
+      "price_eur": 15.05,
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02014",
+      "name": "Terapijska punkcija pleure",
+      "price_eur": 15.05,
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02015",
+      "name": "Evakuaciona punkcija pleure",
+      "price_eur": 15.05,
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X03011",
+      "name": "Uzimanje sputuma za citološku analizu",
+      "price_eur": 1.03,
+      "section": "Centar za plućne bolesti i TBC",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01001",
+      "name": "Manuelna segmentna masaža",
+      "price_eur": 3.47,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01002",
+      "name": "Manuelna limfna drenaža",
+      "price_eur": 3.47,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01003",
+      "name": "Aparaturna masaža",
+      "price_eur": 2.31,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01004",
+      "name": "Krioterapija i kriomasaža",
+      "price_eur": 3.47,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01005",
+      "name": "Manuelni mišični test, po ekstremitetu",
+      "price_eur": 2.31,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01006",
+      "name": "Zračenje infracrvenim, ultravioletnim i bioptrom lampom",
+      "price_eur": 3.47,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01007",
+      "name": "Parafin i fango terapija",
+      "price_eur": 2.31,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "name_paddle": "Parafin i fango terapiija",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01008",
+      "name": "Galvanizacija",
+      "price_eur": 4.62,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01009",
+      "name": "Elektroforeza",
+      "price_eur": 3.47,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01010",
+      "name": "Diadinamske struje",
+      "price_eur": 3.47,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01011",
+      "name": "Transkutana nervna stimulacija",
+      "price_eur": 4.62,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01012",
+      "name": "KTD",
+      "price_eur": 4.62,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01013",
+      "name": "Mikrotalasna diatermija",
+      "price_eur": 3.47,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01014",
+      "name": "Sonoforeza",
+      "price_eur": 3.47,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01015",
+      "name": "Elektrostimulacija mišića",
+      "price_eur": 4.62,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01016",
+      "name": "Uvježbavanje aktivnosti svakodnevnog života prema patološkim stanjima",
+      "price_eur": 4.62,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01017",
+      "name": "Vježba hoda",
+      "price_eur": 3.47,
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "M01018",
+      "name": "Obuka hoda sa pomagalom",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 4.62
+    },
+    {
+      "code": "M01019",
+      "name": "Vježbe koordinacije, korekcije i automatizacije balansa hoda",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 4.62
+    },
+    {
+      "code": "M01020",
+      "name": "Vježbe disanja",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 3.47
+    },
+    {
+      "code": "M01021",
+      "name": "Grupne vježbe, po osobi",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 0.69
+    },
+    {
+      "code": "M01022",
+      "name": "Stimulativne vježbe kod riziko beba",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 10.4
+    },
+    {
+      "code": "M01023",
+      "name": "Terapija igrom sa djecom i vježbe na spravama",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.93
+    },
+    {
+      "code": "M01024",
+      "name": "Pasivne i potpomognute vježbe",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 4.62
+    },
+    {
+      "code": "M01025",
+      "name": "Aktivne vježbe i vježbe protiv otpora",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 4.62
+    },
+    {
+      "code": "M01026",
+      "name": "Izometrijske vježbe - segmentne",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 3.47
+    },
+    {
+      "code": "M01027",
+      "name": "Kineziterapija kod djece sa deformacijama kičmenog stuba i grudnog koša ili sa deformacijama ekstremiteta",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.93
+    },
+    {
+      "code": "M01028",
+      "name": "Stimulacija senzomotornog razvoja i oštećenih funkcija CNS specifičnim tehnikama: Vojta, Bobath, Kabath i dr.",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 9.24
+    },
+    {
+      "code": "M01029",
+      "name": "Test aktivnosti svakodnevnog života",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.93
+    },
+    {
+      "code": "M01030",
+      "name": "Obuka pacijenta specifičnim zaštitnim položajima tijela",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 6.93
+    },
+    {
+      "code": "M01031",
+      "name": "Interferentne struje",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 4.62
+    },
+    {
+      "code": "M01032",
+      "name": "Posjeta fizioterapeuta zbog sprovođenja fizikalne terapije kod nepokretnih ili teško pokretnih bolesnika po nalogu izabranog doktora na udaljenosti do 5 km od Doma zdravlja",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 11.55
+    },
+    {
+      "code": "M01033",
+      "name": "Posjeta fizioterapeuta zbog sprovođenja fizikalne terapije kod nepokretnih ili teško pokretnih bolesnika po nalogu izabranog doktora na udaljenosti od 5 do 15 km od Doma zdravlja",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 13.86
+    },
+    {
+      "code": "M01034",
+      "name": "Posjeta fizioterapeuta zbog sprovođenja fizikalne terapije kod nepokretnih ili teško pokretnih bolesnika po nalogu izabranog doktora na udaljenosti više od 15 km od Doma zdravlja",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 16.17
+    },
+    {
+      "code": "M02008",
+      "name": "Magnetoterapija",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 4.17
+    },
+    {
+      "code": "M02009",
+      "name": "Terapija ultrazvukom",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 2.78
+    },
+    {
+      "code": "M02010",
+      "name": "Terapija ultrazvukom u vodi",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 3.34
+    },
+    {
+      "code": "M02011",
+      "name": "Laser terapija",
+      "section": "Fizikalna medicina",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 4.17
+    },
+    {
+      "code": "L01001",
+      "name": "Patronažna posjeta djeteta u prvoj godini života na zdravstvenom vaspitanju majke i porodice",
+      "price_eur": 12.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "name_paddle": "Patronazna posjeta djeteta u prvoj godini Zivota sa zdravstvenim vaspitanjem majke i porodice",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L01002",
+      "name": "Patronažna posjeta kod djeteta u drugoj godini života",
+      "price_eur": 12.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "name_paddle": "Patronazna posjeta kod djeteta u drugoj godini ivota",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L01003",
+      "name": "Patronažna posjeta kod djeteta u četvrtoj godini života",
+      "price_eur": 12.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "name_paddle": "Patronazna posjeta kod djeteta u ertvrtoj godini ivota",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L01007",
+      "name": "Patronažna posjeta trudnica sa zdravstvenim vaspitanjem (savjetovanje u trudnoći i pripremi za porođaj, o dojenju, pravilnoj ishrani i njezi novorođenčeta (odojčeta))",
+      "price_eur": 12.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "name_paddle": "Patronazna posjeta trudnici sa zdravstvenim vaspitanjem (savjetovanje o trudnoci i pripremi za porodaj,o dojenju, pravilnoj ishrani i njezi novorodenceta (odojeta))",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L01008",
+      "name": "Patronažna posjeta kod babinjara sa zdravstvenim vaspitanjem",
+      "price_eur": 12.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "name_paddle": "Patronazna posjeta kod babinjare sa zdravstvenim vaspitanjem",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L01009",
+      "name": "Patronažna posjeta kod žena koje više od 3. godine nisu bile kod ginekologa",
+      "price_eur": 12.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "name_paddle": "Patronazna posjeta kod Zena koje vie od 3.godine nisu bile kod ginekologa",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L01012",
+      "name": "Patronažna posjeta osoba starijih od 65 godina, koje tokom kalendarske godine nisu bile kod svog izabranog doktora",
+      "price_eur": 12.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L02001",
+      "name": "Patronažna posjeta hroničnom bolesniku (oboljelom od urođenog poremećaja zgrušavanja krvi, šećerne bolesti, duševnih bolesti, malignih bolesti i na peritonealnoj dijalizi), osobi sa bolestima zavisnosti i invalidnoj osobi po nalogu ID",
+      "price_eur": 12.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "name_paddle": "Patronazne posjete hronienom bolesniku (oboljelom od urodenog poremecaja zgrusavanja krvi, secerne bolesti, dusevnih bolesti, malignih bolestiina peritonealnoj dijalizi, osobi sa bolestima zavisnosti i invalidnoj osobi po nalogu ID",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L02002",
+      "name": "Patronažna posjeta lica sa aktivnom TB",
+      "price_eur": 12.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "name_paddle": "Patronazne posjete kod lica sa aktivnom TBC",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L02003",
+      "name": "Patronažna posjeta bolesniku kome je potrebna djelimična ili potpuna pomoć kod izvođenja osnovnih životnih aktivnosti zbog bolesti ili starosti (nepokretnim ili ograničeno pokretnim, vezan za kolica ili krevet ili hoda uz pomoć druge osobe i pomagala)(oboljelom od distrofije, multiple skleroze, cer.paralize)",
+      "price_eur": 12.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "name_paddle": "Patronazne posjeta bolesniku kome je potrebna djelimina ili potpuna pomoc kod izvodenja osnovnih zivotnih aktivnosti zbog bolesti illi starosti (nepokretan ili ograničeno pokretan, vezan za kolica ili krevet ili hoda uz pomoć druge osobe i pomagala)(oboljelom od distrofije, mult.skleroze, cer.paralize)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L02004",
+      "name": "Patronažna posjeta porodici u kojoj postoje zdravstveno-socijalni problemi",
+      "price_eur": 12.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L02005",
+      "name": "Patronažna posjeta porodici koja se brine o invalidnoj osobi, teškom bolesniku ili o staroj osobi",
+      "price_eur": 12.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L03001",
+      "name": "Posjeta patronažne sestre zbog tretmana i postupaka kod nepokretnih ili teško pokretnih bolesnika po nalogu izabranog doktora na udaljenosti do 5 km od Doma zdravlja",
+      "price_eur": 8.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "name_paddle": "Posjeta patronazne sestre zbog tretmana i postupaka kod nepokretnih ili tesko pokretnih bolesnika po nalogu izabranog doktora na udaljenosti do 5 km od Doma zdravlja.",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L03002",
+      "name": "Posjeta patronažne sestre zbog tretmana i postupaka kod nepokretnih ili teško pokretnih bolesnika po nalogu izabranog doktora na udaljenosti od 5 do15 km od Doma zdravlja",
+      "price_eur": 10.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "name_paddle": "Posjeta patronazne sestre zbog tretmanai postupaka kod nepokretnih ili tesko pokretnih bolesnika po nalogu izabranog doktora na udaljenosti od 5 do15 km od Doma zdravlja",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L03003",
+      "name": "Posjeta patronažne sestre zbog tretmana i postupaka kod nepokretnih ili teško pokretnih bolesnika po nalogu izabranog doktora na udaljenosti više od 15 km od Doma zdravlja",
+      "price_eur": 12.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L03004",
+      "name": "Posjeta patronažne sestre zbog davanja infuzije po nalogu izabranog doktora na udaljenosti do 5 km od Doma zdravlja",
+      "price_eur": 12.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L03005",
+      "name": "Posjeta patronažne sestre zbog davanja infuzije po nalogu izabranog doktora na udaljenosti od 5do15 km od Doma zdravlja",
+      "price_eur": 14.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L03006",
+      "name": "Posjeta patronažne sestre zbog davanja infuzije po nalogu izabranog doktora na udaljenosti više od 15 km od Doma zdravlja",
+      "price_eur": 16.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "name_paddle": "cYanmaGtow 0,90 izabranog doktora na udaljenosti vise od 15 km od Doma zdravlja",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L04001",
+      "name": "Uključivanje u preventivne akcije po vodećim javnozdravstvenim problema",
+      "price_eur": 24.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "name_paddle": "Ukljuivanje u preventivne akcije kod vodecih javnozdravstvenih problema",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L04002",
+      "name": "Zdravstveno vaspitni i promotivni programi-grupni rad",
+      "price_eur": 24.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "name_paddle": "Zdravstveno vaspitnii promotivni programi-grupni rad Zdravstveno vaspitni rad sa hroničnim bolesnicima",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "L04003",
+      "name": "Zdravstveno vaspitni rad sa hroničnim bolesnicima",
+      "price_eur": 24.0,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "name_paddle": "24,00",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "llm-fallback",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01022_PATR",
+      "name": "Direktno opservirana terapija za TBC (DOTs) - patronaža",
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 0.9
+    },
+    {
+      "code": "D11001",
+      "name": "Prvi stomatološki pregled predškolske djece (serijski stomatološki pregled predškolske djece)",
+      "price_eur": 4.55,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D11002",
+      "name": "Prvi stomatološki pregled školske djece (serijski stomatološki pregled školske djece)",
+      "price_eur": 3.64,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Prvi stomatoloki pregled skolske djece (serijski stomatološki pregled skolske djece)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D11003",
+      "name": "Topikalna aplikacija fluorida (premazima, lakom, gelom, kod djece u vrtićima i školske djece) u cilju zaštite zuba ako je samo po završenom saniranju zuba ili na zdravim zubima",
+      "price_eur": 9.11,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Topikalna aplikacija fluorida (premazima, lakom, gelom, kod djece u vrticima i skolske djece) u oba zubna luka. Obavlja se samo po završenom saniranju zuba ili na zdravim zubima",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D11004",
+      "name": "Fluoridacija ispiranjem na nisko-koncentrovanim fluoridnim rastvorima kod grupe od najmanje pet osoba, kod predškolske djece ili djece u osnovnoj školi. Fluoridacija četkanjem na fluoridnim pastama, jetkanje i nanošenje zalivača, i kontrola zagriza",
+      "price_eur": 0.42,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Fluoridacija ispiranjem sa nisko-koncentrovanim fluoridnim rastvorima kod grupe od najmanje pet osoba, kod predskolske djece ili djece u osnovnoj skoli. Fluoridacija etkanjem sa visokokonc. fluoridnim pastama kod grupe od najm. petoro djece",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D11005",
+      "name": "Zalijevanje fisura na zubima, po zubu uključuje: čišćenje zuba četkom i pastom, jetkanje i nanošenje zalivača",
+      "price_eur": 6.83,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Zalijevanje fisura na zubima, po zubu uključuje: ciscenje zuba cetkomi pastom,jetkanje inanosenje zalivaa,i kontrola zagriza",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D11006",
+      "name": "Stomatološko-zdravstveni odgoj",
+      "price_eur": 4.55,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Stomatoloko-zdravstveni odgoj",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D11007",
+      "name": "Kontrola plaka sa bojom i određivanje indeksa, uklanjanje plaka sa zuba i čišćenje zubnih lukova",
+      "price_eur": 11.38,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D12001",
+      "name": "Sistematski stomatološki pregled trudnica, stomatološko-zdravstveni odgoj, fluoridacija i prevencija karijesa (sanacija zuba)",
+      "price_eur": 13.66,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Sistematski stomatološki pregled trudnice: stomatolosko- zdravstveni odgoj, bioloska prevencija karijesa",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D12002",
+      "name": "Ponovni pregled trudnice (6 mjeseci nakon prve posjete, odnosno sanacija zuba)",
+      "price_eur": 3.64,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Ponovni pregled trudnice (6 mjeseci nakon prve posjete, odnosno sanacije zuba)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13001",
+      "name": "Prvi kurativni stomatološki pregled (prva posjeta u vezi stomatološkog pregleda)",
+      "price_eur": 3.64,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Prvi stomatološki pregled (prva posjeta u vezi stomatoloskog pregleda)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13002",
+      "name": "Konsultacija kod stomatologa-znači pismeni savjet ili pisano mišljenje o ocjeni stanja pacijenta koje daje stomatolog ili specijalista druge struke na zahtjev stomatologa, odnosno korisnika, koji liječi pacijenta. Ne smije se obračunavati ako konsultovani stomatolog preuzme pacijenta na liječenje",
+      "price_eur": 3.19,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Konsultacija kod stomatologa-znai pisani savjet ili pisano",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13003",
+      "name": "Prvi kratki stomatološki pregled (osnovni stomatološki pregled, kratki kontrolni pregled)",
+      "price_eur": 2.28,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Prvi kratki stomatoloki pregled (osnovni stomatoloki pregled, kratki kontrolni pregled)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13004",
+      "name": "Selektivno brušenje po pulpi ukljucuje: brušenje u artikulaciji, odstranjivanje kliznih prepreka, selektivno brušenje po zubu. Isključuje se brušenje kod usklađivanja na novu izradu protetskih radova. Obračunava se samo jednom bez obzira na broj posjeta",
+      "price_eur": 2.28,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Selektivno brusenje po zubu ukljuěuje: brusenje u artikulaciji, odstranjivanje kliznih prepreka, selektivno brušenje po zubu. Iskljuuje se brusenje kod uskladivanja za novu izradu protetskih radova. Obračunava se samo jedan put bez obzira na broj posjeta",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13005",
+      "name": "Čitanje običnog intraoralnog snimka zuba",
+      "price_eur": 0.94,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13006",
+      "name": "Čitanje ortopantomografskog snimka",
+      "price_eur": 1.57,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13007",
+      "name": "Čitanje snimka panoramske dentalne radiografije",
+      "price_eur": 1.57,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13008",
+      "name": "Termokauterizacija, elektrokauterizacija (odstranjivanje polipa pulpe ili gingive). Kireta džepova po zubu. Medikamentozna terapija",
+      "price_eur": 2.28,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "atitau.drauiiatitru 2,28 pulpe ili gingive). Kiretaza dzepova po zubu. Medikamentozna terapija",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13009",
+      "name": "Liječenje desni ili liječenje bolesti usta po posjeti",
+      "price_eur": 6.83,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Lijeenje desni ili lijeenje bolesti usta po posjeti",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13010",
+      "name": "Impregnacija ili zaštita zuba. Podrazumij. i zaštitu brušenih zuba",
+      "price_eur": 2.28,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Impregnacija ili zastita zuba. Podrazumij.i zastitu brusenih zuba",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13011",
+      "name": "Desenzibilizacija pulpnih vratova po posjeti",
+      "price_eur": 4.55,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Desenzibilizacija zubnih vratova po kvadrantu",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13012",
+      "name": "Jednopovršinska plomba predškolske djece. Isključuje privremeni ispun",
+      "price_eur": 11.38,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Jednopovrsinska plomba kod predskolske djece. Iskljuuje privremeni ispun.",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13013",
+      "name": "Dvopovršinska plomba kod predškolske djece. Isključuje privremeni ispun",
+      "price_eur": 15.94,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Dvopovrsinska plomba kod predskolske djece. Iskljuuje privremeni ispun.",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13014",
+      "name": "Tropovršinska plomba ili nadogradnja traumatizovane krune zuba, kod i zuba sa strukturnim anomalijama kod predškolske djece. Isključuje privremeni ispun",
+      "price_eur": 22.77,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Tropovršinska plomba ili nadogradnja traumatizovane krune zuba, kao i zuba sa strukturnim anomalijama kod predskolske djece. Iskljucuje privremeni ispun.",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13015",
+      "name": "Jednopovršinska plomba kod školske djece do 15-te god. Isključuje privremeni ispun",
+      "price_eur": 9.11,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Jednopovrsinska plomba kod skolske djece do 15-te god. Isključuje privremeni ispun.",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13016",
+      "name": "Dvopovršinska plomba kod školske djece do 15-te god. Isključuje privremeni ispun",
+      "price_eur": 11.38,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Dvopovrsinska plomba kod skolske djece do 15-te god. Iskljucuje privremeni ispun.",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13017",
+      "name": "Tropovršinska ili višepovršinska plomba ili dogradjivanje krune sa dentinskim viljkom ili sa krunom zuba ili sa obručem, kod školske djece do 15 god. Isključuje privremeni ispun",
+      "price_eur": 20.49,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Tropovrsinska ili visepovrsinska plomba ili dogradivanje krune sa dentinskim vijkom ili sa obruem, kod kolske djece do 15 god. Iskljucuje privremeni ispun",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13018",
+      "name": "Jednopovršinski ispun",
+      "price_eur": 6.83,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13019",
+      "name": "Dvopovršinski ispun",
+      "price_eur": 9.11,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13020",
+      "name": "Tropovršinski ili višepovršinski ispun ili nadograd. krune zuba",
+      "price_eur": 18.21,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "cYantaGYYetYlowl 2,73",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13021",
+      "name": "Poliranje plombe obuhvata: glačanje ispuna, odstranj. izbočina i slično sa polimim trakama i drugim instrumentima za poliranje",
+      "price_eur": 1.37,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Poliranje plombe obuhvata: glaanje ispuna, odstranj. izboina i slično sa polirnim trakamai drugim instrumentima za poliranje",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13022",
+      "name": "Jetkanje cakline",
+      "price_eur": 2.28,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13023",
+      "name": "Direktno ili indirektno prekrivanje pulpe",
+      "price_eur": 2.73,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13024",
+      "name": "Kontrola vitaliteta zuba, po zubu. Postupak se ne može obračunati dodatno pregledno",
+      "price_eur": 1.37,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Kontrola vitaliteta zuba, po zubu. Postupak se ne moe obracunati dodatno pregledu",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13025",
+      "name": "Mortalna amputacija mliječnog zuba",
+      "price_eur": 13.66,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Mortalna amputacija mlijenog zuba",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13026",
+      "name": "Mortalna ekstirpacija kod djece predškolskog i školskog uzrasta",
+      "price_eur": 18.21,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Mortalna ekstirpacija kod djece predskolskog i kolskog uzrasta",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13027",
+      "name": "Vitalna ekstirpacija pulpe i punjenje korjenskog kanala kod predškolskog djeteta",
+      "price_eur": 22.77,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13028",
+      "name": "Vitalna ekstirpacija pulpe i punjenje korjenskog kanala kod školske djece",
+      "price_eur": 18.21,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13029",
+      "name": "Liječenje gangrene i punjenje korjenskog kanala kod predškolskog djeteta",
+      "price_eur": 31.87,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13030",
+      "name": "Liječenje gangrene i punjenje korjenskog kanala kod školske djece do 15-te godine starosti",
+      "price_eur": 27.32,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Liječenje gangrene i punjenje korjenskog kanala kod kolske djece do 15-te godine starosti",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13031",
+      "name": "Mortalna ekstirpacija i punjenje kanala",
+      "price_eur": 15.94,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13032",
+      "name": "Vitalna ekstirpacija i punjenje kanala",
+      "price_eur": 15.94,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13033",
+      "name": "Liječenje gangrene i punjenje kanala",
+      "price_eur": 22.77,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13034",
+      "name": "Ponovljeno endodontsko liječenje uključujuće odstranjivanje starog neodgovarajućeg punjenja iz korjenskih kanala, instrumentaciju i druga prijepreka iz korjenskih kanala u jednoj posjeti",
+      "price_eur": 9.11,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Ponovljeno endodontsko lijeenje:ukljucuje odstranjivanje starog neodgovarajuceg punjenja i zalomljenih instrumenata i drugih cYanmaGntaYloY 1,37",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13035",
+      "name": "Incizija submukoznih apscesa (parulisa, parodontalnog) u usnoj šupljini i drenaža",
+      "price_eur": 2.28,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13036",
+      "name": "Trepanacija kanala pulpe",
+      "price_eur": 6.83,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13037",
+      "name": "Površinska, kontaktna anestezija",
+      "price_eur": 1.37,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Površinska, lokalna anestezija",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13038",
+      "name": "Lokalna infiltracijska, odnosno sprovodna anestezija",
+      "price_eur": 2.28,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13039",
+      "name": "Ekstrakcija jednokorjenog mliječnog zuba",
+      "price_eur": 2.28,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13040",
+      "name": "Ekstrakcija višekorjenog mliječnog zuba",
+      "price_eur": 3.19,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13041",
+      "name": "Ekstrakcija jednokorjenog zuba",
+      "price_eur": 3.19,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13042",
+      "name": "Ekstrakcija višekorjenog zuba",
+      "price_eur": 4.1,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13043",
+      "name": "Komplikovano vađenje zuba - odstranjivanje slomljenih ili zaostalih korjena na separacijom korjena sa eventual. šavom i sl.",
+      "price_eur": 9.11,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Komplikovano vadenje zuba - odstanjivanje slomljenog ili cnG 4,",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13044",
+      "name": "Ekstrakcija zuba kod rizičnih bolesnika",
+      "price_eur": 13.66,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13045",
+      "name": "Replantacija zuba",
+      "price_eur": 25.04,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13046",
+      "name": "Splint od kompozita",
+      "price_eur": 40.98,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13047",
+      "name": "Uklanjanje splinta od kompozita",
+      "price_eur": 6.83,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13048",
+      "name": "Previjanje gingive po kvadrantu",
+      "price_eur": 3.64,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13049",
+      "name": "Liječenje postekstrakcionih komplikacija (bol post ex, alveolitis, orijantacija komunikacija itd)",
+      "price_eur": 3.19,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Lijecenje postekstrakcionih komplikacija (bol post ex, alveolitis, oroantralna komunikacija itd)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13050",
+      "name": "Zaustavljanje krvarenja nakon ekstrakcije zuba",
+      "price_eur": 6.83,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13051",
+      "name": "Privremeni ispun od cementa kod djece do 15-te godine. Može se ponovo obračunati 6 mjeseci nakon stavljanja prvog ispuna",
+      "price_eur": 4.55,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13052",
+      "name": "Privremeno zatvaranje zuba i lijek kod prve pomoći. Isključuje: prekrivanje pulpe, amputaciju, ekstirpaciju",
+      "price_eur": 4.55,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Privremeno zatvaranje zuba + lijek kod prve pomoci. Iskljucuje: prekrivanje pulpe, amputaciju, ekstirpaciju",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13053",
+      "name": "Propisivanje lijekova na recept ili izdavanje uputa. Postupci se obračunavaju samo jednom bez obzira na broj posjeta. Obavezno je evidentnirati propisane recepte i upute u zdrav. karton",
+      "price_eur": 1.37,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "cYanaGnaYlow 1,57 obracunavaju samo jednom bez obzira na broj recepata. Obavezno je evident. propisane recepte i upute u zdrav. karton",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13054",
+      "name": "Trajno cementiranje ili skidanje stare krunice ili člana mosta",
+      "price_eur": 2.73,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "name_paddle": "Trajno cementiranje ili skidanje stare krunice ili mosta",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13055",
+      "name": "Izdavanje ljekarske potvrde",
+      "price_eur": 1.57,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D13056",
+      "name": "Izdavanje ljekarskog opravdanja",
+      "price_eur": 1.57,
+      "section": "OSNOVNA STOMATOLOŠKA ZAŠTITA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D18001",
+      "name": "Laboratorijska izrada livene metalne krunice",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABORATORIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 11.3
+    },
+    {
+      "code": "D18002",
+      "name": "Laboratorijska izrada livenog člana u mostu",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABORATORIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 9.89
+    },
+    {
+      "code": "D18003",
+      "name": "Laboratorijska izrada livene cijele krunice",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABORATORIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 18.37
+    },
+    {
+      "code": "D18004",
+      "name": "Laboratorijska izrada livene fasetirane krunice",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABORATORIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 28.26
+    },
+    {
+      "code": "D18005",
+      "name": "Laboratorijska izrada livene fasetiranog međučlana",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABORATORIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 21.2
+    },
+    {
+      "code": "D18006",
+      "name": "Laboratorijska izrada punog međučlana",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABORATORIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 11.3
+    },
+    {
+      "code": "D18007",
+      "name": "Zagrizni šablon kod fiksne protetike",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABORATORIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 2.83
+    },
+    {
+      "code": "D18008",
+      "name": "Laboratorijska izrada parcijalne proteze od akrilata sa bazom do deset elemenata",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABORATORIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 35.33
+    },
+    {
+      "code": "D18009",
+      "name": "Laboratorijska izrada parcijalne proteze od akrilata sa bazom preko deset elemenata",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABORATORIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 38.15
+    },
+    {
+      "code": "D18010",
+      "name": "Laboratorijska izrada totalne polimer proteze s metalnom bazom",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABORATORIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 110.21
+    },
+    {
+      "code": "D18011",
+      "name": "Laboratorijska izrada livene metalne proteze. Sadrži livene elemente parcij. proteze sa livenom bazom (parc. skel. proteza)",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABORATORIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 104.56
+    },
+    {
+      "code": "D18012",
+      "name": "Laboratorijska izrada totalne proteze",
+      "price_eur": 49.46,
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABORATORIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D18013",
+      "name": "Akrilatna individualna kašika",
+      "price_eur": 2.83,
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABORATORIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D17001",
+      "name": "Laboratorijska izrada studijskog modela oba zubna luka i arhiviranje modela",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABU ZA ORTODONCIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 7.07
+    },
+    {
+      "code": "D17002",
+      "name": "Laboratorijska izrada podbradne kape, izrada kosine",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABU ZA ORTODONCIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 5.65
+    },
+    {
+      "code": "D17003",
+      "name": "Laboratorijska izrada mobilnog ortodontskog aparata, izrađenog bez konstrukcijskog zagriza do uključeno 4 elementa pored baze",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABU ZA ORTODONCIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 38.15
+    },
+    {
+      "code": "D17004",
+      "name": "Laboratorijska izrada mobilnog ortodontskog aparata, izrađenog na podlozi konstrukcijskog zagriza sa najviše četiri elementa pored baze",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABU ZA ORTODONCIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 38.15
+    },
+    {
+      "code": "D17005",
+      "name": "Laboratorijska izrada mobilnog ortodontskog aparata bez konstr. zagriza sa pet ili više elemenata pored baze izrađenog na podlozi konstr. zagriza",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABU ZA ORTODONCIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 35.33
+    },
+    {
+      "code": "D17006",
+      "name": "Laboratorijska izrada mobilnog ortodontskog aparata sa pet ili više elemenata pored baze izrađenog na podlozi konstr. zagriza",
+      "section": "POPIS POSTUPAKA U ZUBO-TEHNIČKOM LABU ZA ORTODONCIJU",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 40.98
+    },
+    {
+      "code": "J11001",
+      "name": "Panoramska dentalna radiografija",
+      "price_eur": 1.41,
+      "section": "STOMATOLOŠKE RTG PRETRAGE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J11002",
+      "name": "Obični intraoralni snimak zuba",
+      "price_eur": 1.41,
+      "section": "STOMATOLOŠKE RTG PRETRAGE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J11003",
+      "name": "Ortopantomografski snimak",
+      "price_eur": 10.46,
+      "section": "STOMATOLOŠKE RTG PRETRAGE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J11004",
+      "name": "Telerentgenski snimak glave",
+      "price_eur": 2.12,
+      "section": "STOMATOLOŠKE RTG PRETRAGE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A01001",
+      "name": "Preventivni pregled djece u 1. godini života",
+      "price_eur": 18.81,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Preventivni pregledi djece u 1.godini Zivota",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A01002",
+      "name": "Preventivni pregled djece u 2. godini života",
+      "price_eur": 18.81,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Preventivni pregled djece u 2.godini Zivota",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A01003",
+      "name": "Preventivni pregled djece u 4. godini života",
+      "price_eur": 18.81,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Preventivni pregled djece u 4.godini Zivota",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A01004",
+      "name": "Preventivni pregled pred polazak u osnovnu školu",
+      "price_eur": 22.57,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A01005",
+      "name": "Preventivni (sistematski) pregled u osnovnoj školi (2, 4, 6 i poslednji razred osnovne škole)",
+      "price_eur": 17.31,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Preventivni preglediuosnovnoj koli(2,4,6iposljednji razred osnovne skole)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A01006",
+      "name": "Preventivni (sistematski) pregled učenika u prvom i trećem razredu srednje škole",
+      "price_eur": 17.31,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Preventivni (sistematski) pregled uenika u prvom i trećem razredu srednje skole",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A01007",
+      "name": "Preventivni (sistematski) pregled studenata na prvoj i trećoj godini studija",
+      "price_eur": 17.31,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A01008",
+      "name": "Preventivni (sistematski) pregled lica starijih od 65 godina",
+      "price_eur": 17.31,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A01009",
+      "name": "Kontrolni pregled nakon preventivnog pregleda",
+      "price_eur": 11.29,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A01010",
+      "name": "Preventivni pregled djece do 15 godina u slučaju epidemije neke od zaraznih bolesti",
+      "price_eur": 17.31,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Preventivni pregled djece do 15 godina u sluaju epidemije neke od zaraznih bolesti",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A01011",
+      "name": "Vakcinacija i revakcinacija djece i omladine po kalend. vakcinac.",
+      "price_eur": 5.27,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Vakcinacijairevakcinacija djece i omladine po kalend. vakcinac.",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A01012",
+      "name": "Vakcinacija starijih od 65 godina protiv gripe",
+      "price_eur": 5.27,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A01013",
+      "name": "Imunoprofilaksa, imunoprofilaksa sa serumom i hemoprofilaksa za sprječavanje zaraznih bolesti u skladu sa zakonom",
+      "price_eur": 5.27,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Imunoprofilaksa, imunoprofilaksa sa serumom i hemioprofilaksa za spriječavanje zaraznih bolesti u skladu sa zakonom",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A01014",
+      "name": "Preventivni pregled muškaraca nakon 40 godine života i žena nakon 45.godine života zbog otkrivanja povišenog krvnog pritiska, holesterola i triglicerida i riziko faktora za pojavu bolesti srca i krvnih sudova i to svakih 5 godina jedanput",
+      "price_eur": 11.29,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Preventivni pregled muskaraca nakon 40 godine Zivota,i Zena nakon 45.godine zivota zbog ranog otkrivanje povisenog krvnog pritiska, holesterolaitrigliceridairiziko faktora za pojavu bolesti srcaikrvnih sudova ito svakih 5 godina jedanput",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A01015",
+      "name": "Pregled za rano otkrivanje raka dojke kod žena i to jedanput na 3 godine. Kod žena u rizičnoj grupi (sa rakom dojke kod majke, sestre, kćerke) pregledi se obavljaju svake godine",
+      "price_eur": 11.29,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Pregledi za rano otkrivanje raka dojke kod Zena i to jedanput na 3 godine. Kod zena u rizienoj grupi (sa rakom dojke kod majke, sestre, kcerke) pregledi se obavljaju svake godine",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A02001",
+      "name": "Prvi kurativni pregled",
+      "price_eur": 11.29,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A02002",
+      "name": "Ponovni kurativni pregled (kontrolni)",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A02003",
+      "name": "Pregled pacijenata koji se ambulantno spremaju za operacije u opštoj anesteziji",
+      "price_eur": 18.81,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Pregled pacijenata koji se ambulantno spremaju za operaciju u opstoj anasteziji",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A02004",
+      "name": "Kratka posjeta doktoru (posjeta bez pregleda doktora)",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A02005",
+      "name": "Prvi kurativni pregled u kući osiguranika na udaljenosti do 5 km od ambulante izabranog doktora",
+      "price_eur": 26.33,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Prvi kurativni pregledukui osiguranika na udaljenosti dokm od ambulante izabranog doktora",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A02006",
+      "name": "Prvi kurativni pregled u kući osiguranika na udaljenosti od 5-15 km od ambulante ID, ili teško dostupnim krajevima",
+      "price_eur": 33.86,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A02007",
+      "name": "Prvi kurativni pregled u kući osiguranika na udaljenosti više od 15 km od ambulante ID, ili teško dostupnim krajevima",
+      "price_eur": 41.38,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A02008",
+      "name": "Ponovni kurativni pregled (kontrolni) u kući osiguranika na udaljenosti do 5 km od ambulante izabranog doktora",
+      "price_eur": 22.57,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A02009",
+      "name": "Ponovni kurativni pregled (kontrolni) u kući osiguranika na udaljenosti od 5-15 km od ambulante izabranog doktora, ili teško dostupnim krajevima",
+      "price_eur": 30.1,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A02010",
+      "name": "Ponovni kurativni pregled (kontrolni) u kući osiguranika na udaljenosti više od 15 km od ambulante izabranog doktora, ili teško dostupnim krajevima",
+      "price_eur": 37.62,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "A02011",
+      "name": "Posjeta doktora radi obrade za IPK",
+      "price_eur": 17.44,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Posjeta doktoru radi obrade za IPK",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "J07004",
+      "name": "UZ kukova kod odojčadi",
+      "price_eur": 14.5,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "UZ kukova kod odojeadi",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01001",
+      "name": "Odstranjivanje stranog tijela iz uha",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01002",
+      "name": "Odstranjivanje stranog tijela iz grla",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01003",
+      "name": "Odstranjivanje stranog tijela iz kože",
+      "price_eur": 3.76,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01004",
+      "name": "Davanje lokalne anestezije",
+      "price_eur": 3.76,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Davanje lokalne anastezije",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01005",
+      "name": "Ispiranje cerumena iz uha",
+      "price_eur": 3.76,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01006",
+      "name": "Davanje kiseonika",
+      "price_eur": 2.05,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01007",
+      "name": "Uzimanje briseva sa slanjem na analizu",
+      "price_eur": 3.76,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01010",
+      "name": "Davanje inhalacije",
+      "price_eur": 2.05,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01011",
+      "name": "Punkcija potkožnih hematoma",
+      "price_eur": 3.76,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01012",
+      "name": "Toaleta gastrostome",
+      "price_eur": 2.05,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01013",
+      "name": "Toaleta vještačkog anusa",
+      "price_eur": 2.05,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01014",
+      "name": "Zbrinjavanje rane bez šivanja",
+      "price_eur": 3.76,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01015",
+      "name": "Skidanje hirurških konaca",
+      "price_eur": 2.05,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01018",
+      "name": "Fiksacioni zavoj",
+      "price_eur": 2.05,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01019",
+      "name": "Imobilizacija",
+      "price_eur": 3.76,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01020",
+      "name": "Frikcije",
+      "price_eur": 2.05,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01021",
+      "name": "Lokalno apliciranje lijeka (subkutano i intramuskularno)",
+      "price_eur": 1.03,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02002",
+      "name": "Obrada opekotina",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02003",
+      "name": "Incizija abscesa",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02004",
+      "name": "Odstranjivanje stranog tijela iz oka (rožnjače)",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02005",
+      "name": "Prednja tamponada nosa",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02006",
+      "name": "Kateterizacija mokraćne bešike sa ili bez ispiranja",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Kateterizacija mokracne besike sa ili bez ispiranja,",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02007",
+      "name": "Davanje klizme",
+      "price_eur": 3.08,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02008",
+      "name": "Namještanje trajnog katetera",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02009",
+      "name": "Postavljanje kanile u venu ili uključivanje infuzije",
+      "price_eur": 2.05,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "name_paddle": "Postavljanje kanile u venu ili ukljuivanje infuzije",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02010",
+      "name": "Snimanje i očitavanje EKG",
+      "price_eur": 4.79,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02011",
+      "name": "Snimanje i čitanje spirometrije",
+      "price_eur": 4.79,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02019",
+      "name": "Repozicija parafimoze",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02020",
+      "name": "Repozicija uklještene kile",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02021",
+      "name": "Ekstirpac. ateroma, ciste ili manjeg benin. tumora",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X03001",
+      "name": "Obrada rane sa šivanjem uz lokalnu anesteziju",
+      "price_eur": 11.29,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X03002",
+      "name": "Defibrilacija",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X03003",
+      "name": "Intubacija",
+      "price_eur": 18.47,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X03004",
+      "name": "Ispiranje želuca",
+      "price_eur": 11.29,
+      "section": "USLUGE IZABRANOG DOKTORA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "C01001",
+      "name": "Preventivni pregled u toku trudnoće (pregled trudnice u I trimestru trudnoće i četiri kontrolna pregleda trudnoće)",
+      "price_eur": 18.81,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "C01002",
+      "name": "Prenatalno određivanje kariotipa fetusa iz ćelija plodove vode kod svih trudnica sa 35 i više godina pri začeću",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "C01003",
+      "name": "Ultrazvučni pregled u toku trudnoće (prvi do 16. nedjelje trudnoće, drugi do 26. nedjelje trudnoće i treći do 34. ili 35. nedjelje trudnoće), a kod rizičnih trudnoća prema indikacijama",
+      "price_eur": 15.05,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "name_paddle": "Ultrazvueni pregled u toku trudnoce (prvi do 16.nedjelje trudnoce,drugi do 26.nedjelje trudnoce i treci do 34.ili 35.",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "C01004",
+      "name": "Pregled i savjetovanje 6 nedjelja nakon porođaja",
+      "price_eur": 11.29,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "name_paddle": "nedjelje trudnoce), a kod rizienih trudnoca prema indikacijama Pregled i savjetovanje 6 nedjelja nakon porodaja",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "C01005",
+      "name": "Pregled i savjetovanje 3 nedjelje nakon spontanog ili dozv.abortusa",
+      "price_eur": 11.29,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "C01006",
+      "name": "Pregled i savjetovanje 3 nedjelje nakon ekstrauterinog graviditeta. Pregled je kombinovan sa PAP testom, potrebnim labor. pretragama, savjetovanjem i odred. metode kontracepc.",
+      "price_eur": 11.29,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "name_paddle": "Pregled i savjetovanje 3 nedjelje nakon ekstrauterinog graviditeta. Pregled je kombinovan sa PAP testom, potrebnim laborat. pretragama, savjetovanjem i odred. metode kontracepc.",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "C01007",
+      "name": "Preventivni pregled za savjetovanjem žena u reproduktivnom dobu, pregled za otkrivanje raka na reproduktivnim organima žena i to na 3 godine jedanput u životnoj dobi od 20. do 75. god. starosti (osim ako izabr.ginekolog ne utvrdi drugačiju dinamiku)",
+      "price_eur": 15.05,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "name_paddle": "Preventivni pregled sa savjetovanjem Zena u reproduktivnom cYamaen taYnYYtll 11,29 i to na 3 godine jedanput u Zivotnoj dobi od 20.do 75.god. starosti (osim ako izabr.ginekolog ne utvrdi drugaciju dinamiku)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "C02001",
+      "name": "Prvi kurativni pregled žena (specijalistički)",
+      "price_eur": 11.29,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "C02002",
+      "name": "Ponovni kurativni pregled žena (kontrolni specijalistički)",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "C02003",
+      "name": "Kratka posjeta doktoru bez ponovnog pregleda",
+      "price_eur": 3.76,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01004_GYN",
+      "name": "Davanje lokalne anestezije (gyn)",
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 3.76
+    },
+    {
+      "code": "X01006_GYN",
+      "name": "Davanje kiseonika (gyn)",
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 2.05
+    },
+    {
+      "code": "X01007_GYN",
+      "name": "Uzimanje briseva sa slanjem na analizu (gyn)",
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 3.76
+    },
+    {
+      "code": "X01014_GYN",
+      "name": "Zbrinjavanje rane bez šivanja (gyn)",
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 3.76
+    },
+    {
+      "code": "X01015_GYN",
+      "name": "Skidanje hirurških konaca (gyn)",
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 2.05
+    },
+    {
+      "code": "X01017",
+      "name": "Kontrola mehaničkog kontraceptivnog sredstva",
+      "price_eur": 3.76,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01020_GYN",
+      "name": "Frikcije (gyn)",
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 2.05
+    },
+    {
+      "code": "X01021_GYN",
+      "name": "Lokalno apliciranje lijeka (subkutano i intramuskularno) (gyn)",
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 1.03
+    },
+    {
+      "code": "X01024",
+      "name": "Lokalno apliciranje lijeka (vaginalno i cervikalno)",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01025",
+      "name": "Stavljanje IUD",
+      "price_eur": 3.76,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01026",
+      "name": "Skidanje IUD",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02003_GYN",
+      "name": "Incizija abscesa (gyn)",
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 7.52
+    },
+    {
+      "code": "X02006_GYN",
+      "name": "Kateterizacija mokraćne bešike sa ili bez ispiranja (gyn)",
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 7.52
+    },
+    {
+      "code": "X02007_GYN",
+      "name": "Davanje klizme (gyn)",
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 3.08
+    },
+    {
+      "code": "X02009_GYN",
+      "name": "Postavljanje kanile u venu ili uključivanje infuzije (gyn)",
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 2.05
+    },
+    {
+      "code": "X02010_GYN",
+      "name": "Snimanje i očitavanje EKG (gyn)",
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 4.79
+    },
+    {
+      "code": "X02016",
+      "name": "Kolposkopski pregled",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02017",
+      "name": "Incizija i drenaža Bartolinijeve žljezde i vulve",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "name_paddle": "Incizija i drenaza Bartolinijeve Zlijezde i vulve",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02018",
+      "name": "Abrazija kondiloma vulve i vagine",
+      "price_eur": 7.52,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X02021_GYN",
+      "name": "Ekstirpac. ateroma, ciste ili manjeg benin. tumora (gyn)",
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 7.52
+    },
+    {
+      "code": "X03001_GYN",
+      "name": "Obrada rane sa šivanjem uz lokalnu anesteziju (gyn)",
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 11.29
+    },
+    {
+      "code": "X03005",
+      "name": "Uzimanje biopsije labije i vulve sa slanjem uzoraka na analizu",
+      "price_eur": 9.03,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "name_paddle": "caamicGentaatYenalowb 9,03",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X03006",
+      "name": "Uzimanje biopsije vagine i cerviksa sa slanjem uzoraka na analizu",
+      "price_eur": 9.03,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "name_paddle": "E 9,03",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X03007",
+      "name": "Uzimanje biopsije endometrijuma sa slanjem uzoraka na analizu",
+      "price_eur": 9.03,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "name_paddle": "cYaGntaYlow 15,05",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X03008",
+      "name": "Polipektomija (grliča materice, cavum uteri)",
+      "price_eur": 9.03,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "name_paddle": "Polipektomija (grlica materice, cavum uter)",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X03009",
+      "name": "Amnioskopija",
+      "price_eur": 9.03,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X03010",
+      "name": "Ultrazvučni pregled žene",
+      "price_eur": 15.05,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X03013",
+      "name": "CTG - kardiotokografija",
+      "price_eur": 9.03,
+      "section": "USLUGE IZABRANOG GINEKOLOGA",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D14001",
+      "name": "Prva posjeta u vezi specijalističko-ortodontskog pregleda",
+      "price_eur": 7.77,
+      "section": "USLUGE ORTODONCIJE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D14002",
+      "name": "Analiza studijskih modela obuhvaća: mjerenje širine pojedinih zuba, grupa zuba, interdentalnih prostora, mjerenje prednje i zadnje širine zubnih lukova i njihove visine, analiza rezultata mjerenja, njihovo upoređivanje sa prosječnim vrijednostima",
+      "price_eur": 15.07,
+      "section": "USLUGE ORTODONCIJE",
+      "subsection": null,
+      "name_paddle": "Analiza studijskih modela obuhvata: mjerenje Sirine pojedinih zuba, grupa zuba, interdentalnih prostora, mjerenje prednje i zadnje sirine zubnih lukovai njihove visine, analizu rezultata mjerenja, njihovo uporedivanje sa prosjenim vrijednostima",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D14003",
+      "name": "Čitanje i analiza telerentgenskog snimka glave",
+      "price_eur": 9.42,
+      "section": "USLUGE ORTODONCIJE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D14004",
+      "name": "Planiranje ortodontskog liječenja. Takođe nacrt ortodon. aparata",
+      "price_eur": 15.07,
+      "section": "USLUGE ORTODONCIJE",
+      "subsection": null,
+      "name_paddle": "Planiranje ortodontskog lijecenja. Takode nacrt ortodon. aparaa",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D14005",
+      "name": "Mobilni ortodontski aparat izrađen bez konstrukcijskog zagriza - aktivni pokretni ortodontski aparat. Uključuje: odabir kašika, izrada retencije, uzimanje otiska i evidentiranje podataka u odgovarajuću dokumentaciju",
+      "price_eur": 31.09,
+      "section": "USLUGE ORTODONCIJE",
+      "subsection": null,
+      "name_paddle": "Mobilni ortodontski aparat izraden bez konstrukcijskog zagriza -aktivni pokretni ortodntski aparat. Ukljucuje: odabir kasika, izrada retencije, uzimanje otiskai evidentiranje podataka u odgovarajucu dokumentaciju",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D14006",
+      "name": "Readaptacija ortodontskog aparata: podrazumijeva isti aparat za rad pacijenta i prilagođen novim ili drugačijim stanjima. Ne smije se obračunavati za radove na novoj izradi",
+      "price_eur": 10.36,
+      "section": "USLUGE ORTODONCIJE",
+      "subsection": null,
+      "name_paddle": "Readaptacija ortodontskog aparata: podrazumijeva isti aparat adaptiran ili prilagoden novim ili drugaijim stanjima. Ne smie se obracunavati uz uslugu predaje novog aparata",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D14007",
+      "name": "Mobilni ortodontski aparat izrađen na podlozi konstrukcijskog zagriza - funkcionalni aparat. Uključuje: odabir kašika, izrada retencije, uzimanje otiska i evidentiranje podataka u odgovarajuću dokumentaciju",
+      "price_eur": 31.09,
+      "section": "USLUGE ORTODONCIJE",
+      "subsection": null,
+      "name_paddle": "Mobilni ortodontski aparat izraden na podlozi konstrukcijskog zagriza -funkcionalni aparat. Ukljuuje: odabir kasika, izrada retencije, uzimanje otiska i evidentiranje podataka u odgovarajucu dokumentaciju",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D14008",
+      "name": "Podveza brade/ kosa veza",
+      "price_eur": 20.72,
+      "section": "USLUGE ORTODONCIJE",
+      "subsection": null,
+      "name_paddle": "Podvez brade/ kosa ravan",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D14009",
+      "name": "Kontrola toka ortodontskog liječenja",
+      "price_eur": 6.22,
+      "section": "USLUGE ORTODONCIJE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D14010",
+      "name": "Prodaja aparata i uputstvo za upotrebu",
+      "price_eur": 10.36,
+      "section": "USLUGE ORTODONCIJE",
+      "subsection": null,
+      "name_paddle": "Predaja aparatai uputstvo za upotrebu",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D15001",
+      "name": "Prva posjeta u vezi izrade stomatološkog pomagala",
+      "price_eur": 4.55,
+      "section": "USLUGE STOMATOLOŠKO-PROTETSKE ZAŠTITE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D15002",
+      "name": "Livena nadogradnja",
+      "price_eur": 36.42,
+      "section": "USLUGE STOMATOLOŠKO-PROTETSKE ZAŠTITE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D15003",
+      "name": "Metalna cijela livena krunica",
+      "price_eur": 32.78,
+      "section": "USLUGE STOMATOLOŠKO-PROTETSKE ZAŠTITE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D15004",
+      "name": "Član od metala u mostu",
+      "price_eur": 11.38,
+      "section": "USLUGE STOMATOLOŠKO-PROTETSKE ZAŠTITE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D15005",
+      "name": "Fasetirana krunica",
+      "price_eur": 40.98,
+      "section": "USLUGE STOMATOLOŠKO-PROTETSKE ZAŠTITE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D15006",
+      "name": "Fasetirani član u mostu",
+      "price_eur": 11.38,
+      "section": "USLUGE STOMATOLOŠKO-PROTETSKE ZAŠTITE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D15007",
+      "name": "Registracija zagriza u fiksnoj protetici",
+      "price_eur": 13.66,
+      "section": "USLUGE STOMATOLOŠKO-PROTETSKE ZAŠTITE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D15008",
+      "name": "Totalna zubna proteza - akrilatna",
+      "price_eur": 86.51,
+      "section": "USLUGE STOMATOLOŠKO-PROTETSKE ZAŠTITE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D15009",
+      "name": "Totalna zubna proteza sa livenom metalnom bazom",
+      "price_eur": 86.51,
+      "section": "USLUGE STOMATOLOŠKO-PROTETSKE ZAŠTITE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-single",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "D15010",
+      "name": "Parcijalna zubna proteza od akrilata sa bazom do 10 elemenata",
+      "section": "USLUGE STOMATOLOŠKO-PROTETSKE ZAŠTITE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 79.68
+    },
+    {
+      "code": "D15011",
+      "name": "Parcijalna zubna proteza od akrilata sa bazom preko 10 elemenata",
+      "section": "USLUGE STOMATOLOŠKO-PROTETSKE ZAŠTITE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 79.68
+    },
+    {
+      "code": "D15012",
+      "name": "Parcijalna proteza sa livenom metalnom bazom i nadogradnjom od akrilata (parcijalna skeletirana proteza)",
+      "section": "USLUGE STOMATOLOŠKO-PROTETSKE ZAŠTITE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 79.68
+    },
+    {
+      "code": "D15013",
+      "name": "Reokluzija proteze, prilagođavanje proteze (uključuje i obradu i poliranje)",
+      "section": "USLUGE STOMATOLOŠKO-PROTETSKE ZAŠTITE",
+      "subsection": null,
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "llm-only"
+      },
+      "price_eur": 5.92
+    }
+  ]
+}

@@ -117,7 +117,7 @@ async function loadServicesData() {
 
 	isLoadingServices.value = true;
 	try {
-		const data = await $fetch('/api/services/list', {
+		const data = await $fetch('/api/services/admin-list', {
 			method: 'POST',
 			body: {},
 		});

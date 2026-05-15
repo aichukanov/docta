@@ -400,7 +400,9 @@ watchEffect(() => {
 				:title="t('TabAbout')"
 			>
 				<template #icon><IconInfo :size="20" /></template>
-				<MarkedContent :content="doctorDescription" />
+				<CollapsibleContent>
+					<MarkedContent :content="doctorDescription" />
+				</CollapsibleContent>
 			</EntityPageSection>
 
 			<!-- Clinics -->

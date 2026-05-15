@@ -520,7 +520,9 @@ watchEffect(() => {
 				:title="t('TabAbout')"
 			>
 				<template #icon><IconInfo :size="20" /></template>
-				<MarkedContent :content="clinicDescription" />
+				<CollapsibleContent>
+					<MarkedContent :content="clinicDescription" />
+				</CollapsibleContent>
 			</EntityPageSection>
 
 			<!-- Contacts -->

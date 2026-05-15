@@ -1,0 +1,134 @@
+# Doctor duplicates report — 2026-05-14T08:06:31.072Z
+# Total doctors scanned: 1219
+
+=================================================================
+ SECTION 1. Точные дубли (одинаковые токены, любой порядок)
+   — потеря диакритики, перевёрнутое имя
+   Groups: 14
+=================================================================
+
+--- key: "aleksandar celebic"
+  [  367]  Čelebić Aleksandar   |   general_surgery
+            cyrl: Челебић Александар
+  [  883]  Aleksandar Čelebić   |   oncology
+            cyrl: Александар Челебић
+
+--- key: "aleksandar filipovic"
+  [   47]  Filipović Aleksandar   |   endocrine_surgery, general_surgery
+            cyrl: Филиповић Александар
+  [  928]  Aleksandar Filipović   |   radiology
+            cyrl: Александар Филиповић
+
+--- key: "aleksandra jokmanovic spasic"
+  [  214]  Aleksandra Spasić Jokmanović   |   gynecology_obstetrics
+            cyrl: Александра Спасић Јокмановић
+  [ 1150]  Aleksandra Jokmanović Spasić   |   gynecology_obstetrics
+            cyrl: Александра Јокмановић Спасић
+
+--- key: "ana bulatovic"
+  [  725]  Ana Bulatović   |   rheumatology
+            cyrl: Ана Булатовић
+  [ 1054]  Ana Bulatović   |   orthodontist
+            cyrl: Ана Булатовић
+
+--- key: "ana popovic"
+  [  370]  Popović Ana   |   cardiology
+            cyrl: Поповић Ана
+  [  852]  Ana Popović   |   dermatovenerology, oncology
+            cyrl: Ана Поповић
+
+--- key: "andrija mikulic"
+  [  428]  Mikulić Andrija   |   radiology
+            cyrl: Микулић Андрија
+  [  926]  Andrija Mikulić   |   radiology
+            cyrl: Андрија Микулић
+
+--- key: "dijana jovic"
+  [ 1068]  Dijana Jović   |   psychology
+            cyrl: Дијана Јовић
+  [ 1069]  Dijana Jović   |   psychology
+            cyrl: Дијана Јовић
+
+--- key: "djurovic marija"
+  [  450]  Marija Đurović   |   gastroenterology
+            cyrl: Марија Ђуровић
+  [  591]  Marija Đurović   |   endocrinology, gynecology_obstetrics, reproductive_medicine
+            cyrl: Марија Ђуровић
+
+--- key: "emil nasufovic"
+  [   65]  Nasufović Emil   |   urology
+            cyrl: Насуфовић Емил
+  [  654]  Emil Nasufović   |   urology
+            cyrl: Емил Насуфовић
+
+--- key: "gazivoda milica"
+  [  211]  Milica Gazivoda   |   gynecology_obstetrics
+            cyrl: Милица Газивода
+  [  867]  Milica Gazivoda   |   immunology, pediatric_allergology
+            cyrl: Милица Газивода
+
+--- key: "kalac senad"
+  [  730]  Senad Kalač   |   general_surgery
+            cyrl: Сенад Калач
+  [  780]  Senad Kalač   |   psychiatry
+            cyrl: Сенад Калач
+
+--- key: "katarina raspopovic"
+  [  680]  Katarina Raspopović   |   aesthetic_medicine
+            cyrl: Катарина Распоповић
+  [  876]  Katarina Raspopović   |   pediatric_orthopedics
+            cyrl: Катарина Распоповић
+
+--- key: "nenad sorat"
+  [   33]  Sorat Nenad   |   radiology
+            cyrl: Сорат Ненад
+  [  903]  Nenad Sorat   |   radiology
+            cyrl: Ненад Сорат
+
+--- key: "nisavic toma"
+  [  327]  Nišavić Toma   |   orthopedics_traumatology, pediatric_orthopedics
+            cyrl: Нишавић Тома
+  [  940]  Toma Nišavić   |   orthopedics_traumatology
+            cyrl: Тома Нишавић
+
+=================================================================
+ SECTION 2. Подмножество токенов (один ⊂ другому)
+   — двойная фамилия, недостающий/лишний токен
+   Groups: 6
+=================================================================
+
+---
+  [  593]  Aleksandra Božović   |   gynecology_obstetrics
+            cyrl: Александра Божовић
+  [  986]  Aleksandra Božović-Čelebić   |   plastic_surgery
+            cyrl: Александра Божовић-Челебић
+
+---
+  [ 1131]  Bojana Mijatović   |   ophthalmology
+            cyrl: Бојана Мијатовић
+  [  176]  Bojana Mijatović Pavlović   |   ophthalmology
+            cyrl: Бојана Мијатовић Павловић
+
+---
+  [ 1309]  Branimir Vlahović   |   radiology
+            cyrl: Бранимир Влаховић
+  [  898]  Branimir Brano Vlahović   |   radiology
+            cyrl: Бранимир Брано Влаховић
+
+---
+  [  892]  Dragana Ognjenović   |   oncology
+            cyrl: Драгана Огњеновић
+  [  905]  Dragana Ognjenović Nikčević   |   oncology, radiology
+            cyrl: Драгана Огњеновић Никчевић
+
+---
+  [ 1038]  Jelena Miranović   |   gynecology_obstetrics
+            cyrl: Јелена Мирановић
+  [  217]  Jelena Terzić Miranović   |   gynecology_obstetrics
+            cyrl: Јелена Терзић Мирановић
+
+---
+  [ 1109]  Jelena Vučetić   |   dentistry
+            cyrl: Јелена Вучетић
+  [ 1239]  Jelena Jeknić-Vučetić   |   infectious_diseases
+            cyrl: Јелена Јекнић-Вучетић

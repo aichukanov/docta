@@ -1,0 +1,33 @@
+{
+	"jsonPath": "data/google-places/kotor/klinicko-bolnicki-centar-kotor.json",
+	"outputPath": "server/sql/reviews-google/klinicko-bolnicki-centar-kotor.sql",
+	"dataCollectedDate": "2026-05-14",
+	"clinicId": 133,
+	"clinicName": "Opšta Bolnica Kotor (Kliničko-bolnički Centar Kotor)",
+	"doctors": [
+		{
+			"id": 1297,
+			"varName": "milos_milic",
+			"patterns": [
+				"Milo[sš][aeuom]?\\s+Mili[cć]",
+				"Мило[сш][ауео]?\\s+Мили[чћ]"
+			]
+		},
+		{
+			"id": 129,
+			"varName": "mladen_donkovic",
+			"patterns": [
+				"Donkovi[cć]",
+				"Донкови[чћ]"
+			]
+		},
+		{
+			"id": 329,
+			"varName": "petar_milic",
+			"patterns": [
+				"Petar[ueaom]?\\s+Mili[cć]",
+				"Петар[ауе]?\\s+Мили[чћ]"
+			]
+		}
+	]
+}

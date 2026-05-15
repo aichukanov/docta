@@ -1,4 +1,4 @@
-import { CityId, CITY_COORDINATES } from '~/enums/cities';
+import { CITY_COORDINATES, CityId } from '~/enums/cities';
 
 // Константа для центра Черногории (Подгорица по умолчанию)
 export const MONTENEGRO_CENTER: [number, number] =
@@ -50,3 +50,11 @@ export const LIST_PAGE_SIZE = 20;
 // Если отзывов > REVIEWS_THRESHOLD, создаётся /reviews/ подстраница
 export const REVIEWS_THRESHOLD = 5;
 export const REVIEWS_PAGE_SIZE = 10;
+
+// Порог для создания отдельных подстраниц со списками клиники
+// (услуги / анализы / лекарства / врачи).
+// Если элементов данного типа > порога, главная страница клиники
+// показывает компактный summary + ссылку на подстраницу /clinics/{slug}/{type}.
+// Ниже порога — рендерим список инлайн как раньше, подстраница 301-редиректит на якорь.
+export const CLINIC_ITEMS_INLINE_THRESHOLD = 10;
+export const CLINIC_ITEMS_PAGE_SIZE = 36;

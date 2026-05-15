@@ -31,6 +31,9 @@ defineProps<{
 	border-radius: var(--border-radius-md);
 	padding: var(--spacing-xl);
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
 }
 
 @media (max-width: 500px) {

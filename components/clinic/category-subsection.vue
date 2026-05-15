@@ -3,6 +3,7 @@ const props = withDefaults(
 	defineProps<{
 		title: string;
 		items: { id: number }[];
+		// 0 or negative — no limit, render all items without show-more.
 		initialLimit?: number;
 	}>(),
 	{
@@ -15,11 +16,17 @@ const { t } = useI18n();
 const showAll = ref(false);
 
 const totalCount = computed(() => props.items.length);
-const hasMoreItems = computed(() => totalCount.value > props.initialLimit);
+const hasMoreItems = computed(
+	() => props.initialLimit > 0 && totalCount.value > props.initialLimit,
+);
 const hiddenCount = computed(() => totalCount.value - props.initialLimit);
 
 const visibleItems = computed(() => {
-	if (showAll.value || props.items.length <= props.initialLimit) {
+	if (
+		props.initialLimit <= 0 ||
+		showAll.value ||
+		props.items.length <= props.initialLimit
+	) {
 		return props.items;
 	}
 

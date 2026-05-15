@@ -2,6 +2,7 @@ import { REVIEWS_THRESHOLD } from '~/common/constants';
 import { getCurrentUser } from '~/server/common/auth';
 import { getConnection } from '~/server/common/db-mysql';
 import { fetchRating, fetchReviews } from '~/server/common/reviews';
+import { fetchClinicItemsSummary } from '~/server/common/clinic-items-summary';
 import {
 	processLocalizedNameForClinicOrDoctor,
 	processLocalizedFieldForClinic,
@@ -104,6 +105,8 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 
 		await connection.end();
 
+		const itemsSummary = await fetchClinicItemsSummary(clinic.id, locale);
+
 		// Обрабатываем локализованные имена
 		const { name, localName } = processLocalizedNameForClinicOrDoctor(
 			clinic,
@@ -146,6 +149,7 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 			logoUrl: clinic.logoUrl || '',
 			rating,
 			reviews: allReviews,
+			itemsSummary,
 		};
 	} catch (error) {
 		console.error('API Error - clinic data:', error);

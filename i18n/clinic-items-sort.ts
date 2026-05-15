@@ -1,0 +1,52 @@
+export default {
+	messages: {
+		'en': {
+			SortPlaceholder: 'Sort',
+			SortRatingDesc: 'By rating',
+			SortPopularDesc: 'Most popular',
+			SortNameAsc: 'By name',
+			SortPriceAsc: 'Price: low to high',
+			SortPriceDesc: 'Price: high to low',
+		},
+		'ru': {
+			SortPlaceholder: 'Сортировка',
+			SortRatingDesc: 'По рейтингу',
+			SortPopularDesc: 'По популярности',
+			SortNameAsc: 'По алфавиту',
+			SortPriceAsc: 'Сначала дешевле',
+			SortPriceDesc: 'Сначала дороже',
+		},
+		'sr': {
+			SortPlaceholder: 'Sortiranje',
+			SortRatingDesc: 'Po oceni',
+			SortPopularDesc: 'Najpopularnije',
+			SortNameAsc: 'Po nazivu',
+			SortPriceAsc: 'Cena: jeftinije prvo',
+			SortPriceDesc: 'Cena: skuplje prvo',
+		},
+		'de': {
+			SortPlaceholder: 'Sortierung',
+			SortRatingDesc: 'Nach Bewertung',
+			SortPopularDesc: 'Beliebteste',
+			SortNameAsc: 'Nach Name',
+			SortPriceAsc: 'Preis: günstig zuerst',
+			SortPriceDesc: 'Preis: teuer zuerst',
+		},
+		'tr': {
+			SortPlaceholder: 'Sıralama',
+			SortRatingDesc: 'Puana göre',
+			SortPopularDesc: 'En popüler',
+			SortNameAsc: 'Ada göre',
+			SortPriceAsc: 'Fiyat: ucuzdan pahalıya',
+			SortPriceDesc: 'Fiyat: pahalıdan ucuza',
+		},
+		'sr-cyrl': {
+			SortPlaceholder: 'Сортирање',
+			SortRatingDesc: 'По оцени',
+			SortPopularDesc: 'Најпопуларније',
+			SortNameAsc: 'По називу',
+			SortPriceAsc: 'Цена: јефтиније прво',
+			SortPriceDesc: 'Цена: скупље прво',
+		},
+	},
+};

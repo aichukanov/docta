@@ -42,6 +42,8 @@ export async function getMedicalServiceList(
 		name?: string;
 		locale?: string;
 		page?: number;
+		pageSize?: number;
+		sort?: 'name-asc' | 'price-asc' | 'price-desc';
 	} = {},
 ) {
 	const whereFilters: string[] = [];
@@ -49,7 +51,11 @@ export async function getMedicalServiceList(
 	const locale = body.locale || 'en';
 	const usePagination = body.page != null;
 	const pageRaw = Number(body.page);
-	const pageSize = LIST_PAGE_SIZE;
+	const pageSizeRaw = Number(body.pageSize);
+	const pageSize =
+		Number.isFinite(pageSizeRaw) && pageSizeRaw > 0
+			? Math.min(Math.trunc(pageSizeRaw), 100)
+			: LIST_PAGE_SIZE;
 	const page = Math.max(Number.isFinite(pageRaw) ? pageRaw : 1, 1);
 	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
 
@@ -106,7 +112,40 @@ export async function getMedicalServiceList(
 		? `LIMIT ${pageSize} OFFSET ${offset}`
 		: '';
 
+	// City filter applied inside the SELECT subqueries so the card only lists
+	// clinics from the selected city (otherwise all clinics of the service leak through).
+	const hasCitySelectFilter = body.cityIds?.length > 0;
+	const cityFilterInSelect = hasCitySelectFilter
+		? ` AND EXISTS (SELECT 1 FROM clinics cms_city WHERE cms_city.id = cms.clinic_id AND cms_city.city_id IN (${body.cityIds.map(() => '?').join(',')}))`
+		: '';
+	const selectCityParams: Array<number | string> = hasCitySelectFilter
+		? [...body.cityIds, ...body.cityIds]
+		: [];
+
 	const priceOrder = getPriceOrderBySQL('cms');
+
+	// Sort: 'name-asc' / 'price-asc' / 'price-desc' override the default rank-based order.
+	// Price sort only works when scoped to a single clinic.
+	const localizedNameField =
+		getLocalizedNameField(locale) || 'name_en';
+	const singleClinicId =
+		body.clinicIds?.length === 1 ? body.clinicIds[0] : null;
+	const usePriceSort =
+		(body.sort === 'price-asc' || body.sort === 'price-desc') &&
+		singleClinicId != null;
+	const sortPriceSelect = usePriceSort
+		? `(SELECT cms_sort.price FROM clinic_medical_services cms_sort WHERE cms_sort.medical_service_id = ms.id AND cms_sort.clinic_id = ? AND cms_sort.price IS NOT NULL ORDER BY cms_sort.price ASC LIMIT 1) as sortPrice,`
+		: '';
+	const sortPriceParams: number[] = usePriceSort ? [singleClinicId!] : [];
+	let orderByClause =
+		'ms.sort_order IS NULL, ms.sort_order ASC, ms.rank_score DESC, ms.name_en ASC';
+	if (body.sort === 'name-asc') {
+		orderByClause = `COALESCE(NULLIF(ms.${localizedNameField}, ''), ms.name_en) ASC`;
+	} else if (usePriceSort) {
+		const dir = body.sort === 'price-asc' ? 'ASC' : 'DESC';
+		orderByClause = `sortPrice IS NULL, sortPrice ${dir}, ms.name_en ASC`;
+	}
+
 	const totalCountQuery = `
 		SELECT COUNT(DISTINCT ms.id) as totalCount
 		FROM medical_services ms
@@ -123,11 +162,12 @@ export async function getMedicalServiceList(
 			ms.name_de,
 			ms.name_tr,
 			ms.sort_order,
-			(SELECT COALESCE(GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${priceOrder}), '') FROM clinic_medical_services cms WHERE cms.medical_service_id = ms.id) as clinicIds,
+			${sortPriceSelect}
+			(SELECT COALESCE(GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${priceOrder}), '') FROM clinic_medical_services cms WHERE cms.medical_service_id = ms.id${cityFilterInSelect}) as clinicIds,
 			(SELECT GROUP_CONCAT(
 				DISTINCT CONCAT(cms.clinic_id, ':', IFNULL(cms.price, ''), ':', IFNULL(cms.price_min, ''), ':', IFNULL(cms.price_max, ''), ':', COALESCE(cms.code, ''))
 				ORDER BY ${priceOrder}
-			) FROM clinic_medical_services cms WHERE cms.medical_service_id = ms.id) as clinicPricesData,
+			) FROM clinic_medical_services cms WHERE cms.medical_service_id = ms.id${cityFilterInSelect}) as clinicPricesData,
 			(
 				SELECT GROUP_CONCAT(DISTINCT mscr2.medical_service_category_id ORDER BY mscr2.medical_service_category_id)
 				FROM medical_service_categories_relations mscr2
@@ -135,7 +175,7 @@ export async function getMedicalServiceList(
 			) as categoryIds
 		FROM medical_services ms
 		${whereFiltersString}
-		ORDER BY ms.sort_order IS NULL, ms.sort_order ASC, ms.rank_score DESC, ms.name_en ASC
+		ORDER BY ${orderByClause}
 		${paginationClause};
 	`;
 
@@ -147,7 +187,7 @@ export async function getMedicalServiceList(
 	}
 	const [medicalServiceRows] = await connection.execute(
 		medicalServicesQuery,
-		queryParams,
+		[...sortPriceParams, ...selectCityParams, ...queryParams],
 	);
 	await connection.end();
 

@@ -12,6 +12,7 @@ import {
 	getSitemapFilters as getClinicSitemapFilters,
 	getClinicList,
 } from './filters/clinics';
+import { getClinicSubpageSlugs } from './filters/clinic-subpages';
 import { getMedicineList } from '~/server/api/medicines/list';
 import { getSitemapFilters as getMedicineSitemapFilters } from './filters/medicines';
 import { getConnection } from '~/server/common/db-mysql';
@@ -225,6 +226,24 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		menuItemToLinks('clinics', { cityIds: city }),
 	);
 
+	// === Clinic subpages (services/labtests/medications/doctors) ===
+	// Only for clinics whose item count exceeds the inline threshold — smaller
+	// clinics 301-redirect the subpage to the main page anchor.
+	const clinicSubpages = await getClinicSubpageSlugs();
+	const buildSubpageLinks = (
+		slugs: string[],
+		type: 'services' | 'labtests' | 'medications' | 'doctors',
+	): SitemapLink[] =>
+		slugs.map((slug) =>
+			menuItemToLinks(`${SITE_URL}/clinics/${slug}/${type}`, {}, true),
+		);
+	const clinicSubpageLinks: SitemapLink[] = [
+		...buildSubpageLinks(clinicSubpages.services, 'services'),
+		...buildSubpageLinks(clinicSubpages.labtests, 'labtests'),
+		...buildSubpageLinks(clinicSubpages.medications, 'medications'),
+		...buildSubpageLinks(clinicSubpages.doctors, 'doctors'),
+	];
+
 	return await generateSitemap([
 		// Главная страница
 		homeLink,
@@ -259,6 +278,8 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		...clinicLinks,
 		...clinicReviewLinks,
 		...clinicCityLinks,
+		// Clinic subpages: списки услуг/анализов/лекарств/врачей конкретной клиники
+		...clinicSubpageLinks,
 	]);
 }
 

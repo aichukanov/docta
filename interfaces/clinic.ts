@@ -16,6 +16,34 @@ export interface Coordinates {
 	longitude: number;
 }
 
+export type ClinicItemType = 'services' | 'labtests' | 'medications' | 'doctors';
+
+export interface ClinicItemCategory {
+	categoryId: number | null;
+	count: number;
+}
+
+export interface ClinicItemTopEntry {
+	id: number;
+	slug: string;
+	name: string;
+	localName: string;
+	price: number | null;
+	priceMin: number | null;
+	priceMax: number | null;
+	photoUrl?: string;
+	professionalTitle?: string;
+	specialtyIds?: string;
+}
+
+export interface ClinicItemTypeSummary {
+	totalCount: number;
+	categories: ClinicItemCategory[];
+	topItems: ClinicItemTopEntry[];
+}
+
+export type ClinicItemsSummary = Record<ClinicItemType, ClinicItemTypeSummary>;
+
 export interface ClinicData extends ContactList, Coordinates {
 	id: number;
 	slug: string;
@@ -33,6 +61,7 @@ export interface ClinicData extends ContactList, Coordinates {
 	rating?: Rating;
 	reviews?: Review[];
 	workingHours?: Omit<WorkingHours, 'clinicId'>;
+	itemsSummary?: ClinicItemsSummary;
 }
 
 export interface ClinicList {

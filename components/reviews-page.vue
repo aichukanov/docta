@@ -72,7 +72,6 @@ const { t, locale } = useI18n({
 const route = useRoute();
 const router = useRouter();
 
-// SEO
 const entityUrl = computed(
 	() => `${SITE_URL}/${props.entityType}s/${props.entitySlug}`,
 );
@@ -154,7 +153,6 @@ const headLinks = computed(() => {
 
 useHead({ link: headLinks });
 
-// Schema.org
 const schemaOrgStore = useSchemaOrgStore();
 
 watchEffect(() => {
@@ -225,15 +223,29 @@ watchEffect(() => {
 
 const currentSort = computed(() => (route.query.sort as string) || 'rank');
 
+const SORT_OPTIONS = [
+	{ value: 'rank', labelKey: 'SortRank' },
+	{ value: 'newest', labelKey: 'SortNewest' },
+	{ value: 'oldest', labelKey: 'SortOldest' },
+	{ value: 'rating_high', labelKey: 'SortRatingHigh' },
+	{ value: 'rating_low', labelKey: 'SortRatingLow' },
+] as const;
+
+const sortOptions = computed(() =>
+	SORT_OPTIONS.map((o) => ({ value: o.value, label: t(o.labelKey) })),
+);
+
 const onSortChange = (sort: string) => {
 	router.push({
 		query: {
 			...route.query,
-			sort: sort !== 'rank' ? sort : undefined,
-			page: undefined, // reset to page 1
+			sort: sort && sort !== 'rank' ? sort : undefined,
+			page: undefined,
 		},
 	});
-	window.scrollTo({ top: 0, behavior: 'smooth' });
+	if (import.meta.client) {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}
 };
 
 const onPageChange = (page: number) => {
@@ -243,45 +255,49 @@ const onPageChange = (page: number) => {
 			page: page > 1 ? page.toString() : undefined,
 		},
 	});
-	window.scrollTo({ top: 0, behavior: 'smooth' });
+	if (import.meta.client) {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}
 };
+
+const homeLink = computed(() => ({
+	path: '/',
+	query: getRegionalQuery(locale.value),
+}));
+const parentLink = computed(() => ({
+	name: props.parentListRouteName,
+	query: getRegionalQuery(locale.value),
+}));
+const entityLink = computed(() => ({
+	name: props.entityRouteName,
+	params: { [props.entityRouteParam]: props.entitySlug },
+	query: getRegionalQuery(locale.value),
+}));
+
+const breadcrumbs = computed(() => [
+	{ label: t('BreadcrumbHome'), to: homeLink.value },
+	{ label: t(props.breadcrumbParentKey), to: parentLink.value },
+	{ label: props.entityName, to: entityLink.value },
+	{ label: t('BreadcrumbReviews') },
+]);
+
+const totalReviewsCount = computed(
+	() => props.rating?.totalReviews ?? props.pagination.totalReviews ?? 0,
+);
 </script>
 
 <template>
 	<div class="reviews-page">
-		<!-- Breadcrumbs -->
-		<nav class="breadcrumbs" aria-label="breadcrumb">
-			<NuxtLink to="/" :query="getRegionalQuery(locale)">{{
-				t('BreadcrumbHome')
-			}}</NuxtLink>
-			<span class="separator">/</span>
-			<NuxtLink
-				:to="{ name: parentListRouteName, query: getRegionalQuery(locale) }"
-				>{{ t(breadcrumbParentKey) }}</NuxtLink
-			>
-			<span class="separator">/</span>
-			<NuxtLink
-				:to="{
-					name: entityRouteName,
-					params: { [entityRouteParam]: entitySlug },
-					query: getRegionalQuery(locale),
-				}"
-				>{{ entityName }}</NuxtLink
-			>
-			<span class="separator">/</span>
-			<span class="current">{{ t('BreadcrumbReviews') }}</span>
-		</nav>
+		<ClinicItemsPageHeader
+			:breadcrumbs="breadcrumbs"
+			:title="t('ReviewsPageTitle', { name: entityName })"
+			:count="totalReviewsCount"
+		>
+			<template v-if="$slots.badges" #badges>
+				<slot name="badges" />
+			</template>
+		</ClinicItemsPageHeader>
 
-		<h1 class="reviews-page-title">
-			{{ t('ReviewsPageTitle', { name: entityName }) }}
-		</h1>
-
-		<!-- Badges (specialties, clinic types, etc.) -->
-		<div v-if="$slots.badges" class="reviews-page-badges">
-			<slot name="badges" />
-		</div>
-
-		<!-- Rating summary + write button -->
 		<RatingSummary
 			v-if="rating && rating.totalReviews > 0"
 			:rating="rating"
@@ -289,7 +305,6 @@ const onPageChange = (page: number) => {
 			@writeReview="showReviewDialog = true"
 		/>
 
-		<!-- Own review (pinned, outside pagination) -->
 		<section v-if="currentOwnReview" class="own-review-section">
 			<ReviewItem
 				:review="currentOwnReview"
@@ -298,27 +313,26 @@ const onPageChange = (page: number) => {
 			/>
 		</section>
 
-		<!-- Other reviews -->
 		<section class="other-reviews-section">
 			<div class="reviews-sort">
-				<el-select
+				<el-select-v2
 					:modelValue="currentSort"
-					@update:modelValue="onSortChange"
-					size="default"
+					:options="sortOptions"
+					:placeholder="t('SortLabel')"
 					:aria-label="t('SortLabel')"
-				>
-					<el-option value="rank" :label="t('SortRank')" />
-					<el-option value="newest" :label="t('SortNewest')" />
-					<el-option value="oldest" :label="t('SortOldest')" />
-					<el-option value="rating_high" :label="t('SortRatingHigh')" />
-					<el-option value="rating_low" :label="t('SortRatingLow')" />
-				</el-select>
+					size="large"
+					class="sort-select"
+					@update:modelValue="onSortChange"
+				/>
 			</div>
 
-			<DoctorReviews :reviews="reviews" :clinicInfo="clinicInfo" />
+			<el-empty
+				v-if="reviews.length === 0 && !currentOwnReview"
+				:description="t('NoReviews')"
+			/>
+			<DoctorReviews v-else :reviews="reviews" :clinicInfo="clinicInfo" />
 		</section>
 
-		<!-- Review form dialog -->
 		<ReviewForm
 			v-if="entityId"
 			v-model="showReviewDialog"
@@ -329,7 +343,6 @@ const onPageChange = (page: number) => {
 			@submitted="onReviewSubmitted"
 		/>
 
-		<!-- Pagination -->
 		<Pagination
 			v-if="pagination.totalPages > 1"
 			:total="pagination.totalReviews"
@@ -341,57 +354,16 @@ const onPageChange = (page: number) => {
 	</div>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 .reviews-page {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
-	max-width: 800px;
-	min-width: 0;
+	gap: var(--spacing-xl);
+	max-width: 1100px;
 	width: 100%;
 	margin: 0 auto;
-	padding: var(--spacing-lg);
+	padding: var(--spacing-xl);
 	box-sizing: border-box;
-}
-
-.breadcrumbs {
-	display: flex;
-	align-items: center;
-	gap: var(--spacing-sm);
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
-	flex-wrap: wrap;
-}
-
-.breadcrumbs a {
-	color: var(--color-text-muted);
-	text-decoration: none;
-}
-
-.breadcrumbs a:hover {
-	color: var(--color-primary);
-	text-decoration: underline;
-}
-
-.breadcrumbs .separator {
-	color: var(--color-text-light);
-}
-
-.breadcrumbs .current {
-	color: var(--color-text-secondary);
-	font-weight: var(--font-weight-medium);
-}
-
-.reviews-page-title {
-	font-size: 1.5rem;
-	font-weight: var(--font-weight-bold);
-	color: var(--color-text-heading);
-}
-
-.reviews-page-badges {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--spacing-xs);
 }
 
 .own-review-section {
@@ -408,5 +380,17 @@ const onPageChange = (page: number) => {
 .reviews-sort {
 	display: flex;
 	justify-content: flex-end;
+}
+
+.sort-select {
+	width: 240px;
+	max-width: 100%;
+}
+
+@media (max-width: 640px) {
+	.reviews-page {
+		padding: var(--spacing-md);
+		gap: var(--spacing-lg);
+	}
 }
 </style>

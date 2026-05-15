@@ -764,20 +764,29 @@ function buildEmployeeRefs(
 	});
 }
 
+interface OfferCatalogTypeConfig {
+	itemType: 'MedicalProcedure' | 'MedicalTest' | 'Drug';
+	fragment: string;
+	urlPrefix: string;
+	catalogName: string;
+}
+
 /**
- * Build hasOfferCatalog schema for clinic services
+ * Build hasOfferCatalog schema for a clinic item type
+ * (medical services / lab tests / medications).
  */
 function buildOfferCatalogSchema(options: {
 	siteUrl: string;
 	clinicId: number;
-	services: ClinicServiceOffer[];
+	items: ClinicServiceOffer[];
+	config: OfferCatalogTypeConfig;
 }): object | undefined {
-	if (!options.services || options.services.length === 0) {
+	if (!options.items || options.items.length === 0) {
 		return undefined;
 	}
 
-	// Limit to 10 services, prioritizing ones with prices
-	const sortedServices = [...options.services].sort((a, b) => {
+	// Limit to 10 items, prioritizing ones with prices
+	const sorted = [...options.items].sort((a, b) => {
 		const aPrice = a.clinicPrices?.find((p) => p.clinicId === options.clinicId);
 		const bPrice = b.clinicPrices?.find((p) => p.clinicId === options.clinicId);
 		const aHasPrice = aPrice?.price != null || aPrice?.priceMin != null;
@@ -785,30 +794,28 @@ function buildOfferCatalogSchema(options: {
 		if (aHasPrice !== bHasPrice) return aHasPrice ? -1 : 1;
 		return 0;
 	});
-	const limitedServices = sortedServices.slice(0, 10);
+	const limited = sorted.slice(0, 10);
 
-	const items = limitedServices.map((service) => {
+	const { itemType, fragment, urlPrefix } = options.config;
+	const itemListElement = limited.map((service) => {
 		const priceInfo = service.clinicPrices?.find(
 			(p) => p.clinicId === options.clinicId,
 		);
-		const serviceUrl = `${options.siteUrl}/services/${service.slug}`;
+		const serviceUrl = `${options.siteUrl}/${urlPrefix}/${service.slug}`;
 
 		const hasPrice = priceInfo?.price != null || priceInfo?.priceMin != null;
 
-		// Услуга без цены → просто MedicalProcedure
 		if (!hasPrice) {
 			return {
-				'@type': 'MedicalProcedure' as const,
-				'@id': `${serviceUrl}#medicalprocedure`,
+				'@type': itemType,
+				'@id': `${serviceUrl}#${fragment}`,
 				'name': service.name,
 				'url': serviceUrl,
 			};
 		}
 
-		// price + priceMax → диапазон "100-120 евро"
 		const hasPriceRange =
 			priceInfo!.price != null && priceInfo!.priceMax != null;
-		// priceMin (без priceMax) → "от 1200 евро"
 		const hasMinPriceOnly =
 			priceInfo!.priceMin != null && priceInfo!.priceMax == null;
 
@@ -828,12 +835,11 @@ function buildOfferCatalogSchema(options: {
 			};
 		}
 
-		// Услуга с ценой → Offer
 		return {
 			'@type': 'Offer' as const,
 			'itemOffered': {
-				'@type': 'MedicalProcedure' as const,
-				'@id': `${serviceUrl}#medicalprocedure`,
+				'@type': itemType,
+				'@id': `${serviceUrl}#${fragment}`,
 				'name': service.name,
 				'url': serviceUrl,
 			},
@@ -847,16 +853,35 @@ function buildOfferCatalogSchema(options: {
 		};
 	});
 
-	if (items.length === 0) {
+	if (itemListElement.length === 0) {
 		return undefined;
 	}
 
 	return {
 		'@type': 'OfferCatalog' as const,
-		'name': 'Medical Services',
-		'itemListElement': items,
+		'name': options.config.catalogName,
+		'itemListElement': itemListElement,
 	};
 }
+
+const SERVICES_CATALOG_CONFIG: OfferCatalogTypeConfig = {
+	itemType: 'MedicalProcedure',
+	fragment: 'medicalprocedure',
+	urlPrefix: 'services',
+	catalogName: 'Medical Services',
+};
+const LABTESTS_CATALOG_CONFIG: OfferCatalogTypeConfig = {
+	itemType: 'MedicalTest',
+	fragment: 'medicaltest',
+	urlPrefix: 'labtests',
+	catalogName: 'Lab Tests',
+};
+const MEDICATIONS_CATALOG_CONFIG: OfferCatalogTypeConfig = {
+	itemType: 'Drug',
+	fragment: 'drug',
+	urlPrefix: 'medications',
+	catalogName: 'Medications',
+};
 
 const SCHEMA_DAY_MAP: Record<DayOfWeek, string> = {
 	monday: 'Monday',
@@ -906,6 +931,8 @@ export function buildClinicSchema(options: {
 	pageDescription?: string;
 	getCityName: (id: number) => string | undefined;
 	services?: ClinicServiceOffer[];
+	labTests?: ClinicServiceOffer[];
+	medications?: ClinicServiceOffer[];
 	doctors?: ClinicDoctorItem[];
 	workingHours?: WorkingHours | null;
 	rating?: { averageRating: number | null; totalReviews: number } | null;
@@ -975,11 +1002,30 @@ export function buildClinicSchema(options: {
 		openingHoursSpecification: options.workingHours
 			? buildOpeningHoursSpecification(options.workingHours)
 			: undefined,
-		hasOfferCatalog: buildOfferCatalogSchema({
-			siteUrl,
-			clinicId: clinic.id,
-			services: options.services || [],
-		}),
+		hasOfferCatalog: (() => {
+			const catalogs = [
+				buildOfferCatalogSchema({
+					siteUrl,
+					clinicId: clinic.id,
+					items: options.services || [],
+					config: SERVICES_CATALOG_CONFIG,
+				}),
+				buildOfferCatalogSchema({
+					siteUrl,
+					clinicId: clinic.id,
+					items: options.labTests || [],
+					config: LABTESTS_CATALOG_CONFIG,
+				}),
+				buildOfferCatalogSchema({
+					siteUrl,
+					clinicId: clinic.id,
+					items: options.medications || [],
+					config: MEDICATIONS_CATALOG_CONFIG,
+				}),
+			].filter(Boolean);
+			if (catalogs.length === 0) return undefined;
+			return catalogs.length === 1 ? catalogs[0] : catalogs;
+		})(),
 		employee:
 			options.doctors && options.doctors.length > 0
 				? buildEmployeeRefs(options.doctors, siteUrl)

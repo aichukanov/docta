@@ -45,6 +45,8 @@ export async function getMedicationList(
 		name?: string;
 		locale?: string;
 		page?: number;
+		pageSize?: number;
+		sort?: 'name-asc' | 'price-asc' | 'price-desc';
 	} = {},
 ) {
 	const whereFilters: string[] = [];
@@ -52,7 +54,11 @@ export async function getMedicationList(
 	const locale = body.locale || 'en';
 	const usePagination = body.page != null;
 	const pageRaw = Number(body.page);
-	const pageSize = LIST_PAGE_SIZE;
+	const pageSizeRaw = Number(body.pageSize);
+	const pageSize =
+		Number.isFinite(pageSizeRaw) && pageSizeRaw > 0
+			? Math.min(Math.trunc(pageSizeRaw), 100)
+			: LIST_PAGE_SIZE;
 	const page = Math.max(Number.isFinite(pageRaw) ? pageRaw : 1, 1);
 	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
 
@@ -94,6 +100,25 @@ export async function getMedicationList(
 		: '';
 
 	const priceOrder = getPriceOrderBySQL('cm');
+
+	const localizedNameField = getLocalizedNameField(locale) || 'name_en';
+	const singleClinicId =
+		body.clinicIds?.length === 1 ? body.clinicIds[0] : null;
+	const usePriceSort =
+		(body.sort === 'price-asc' || body.sort === 'price-desc') &&
+		singleClinicId != null;
+	const sortPriceSelect = usePriceSort
+		? `(SELECT cm_sort.price FROM clinic_medications cm_sort WHERE cm_sort.medication_id = m.id AND cm_sort.clinic_id = ? AND cm_sort.price IS NOT NULL ORDER BY cm_sort.price ASC LIMIT 1) as sortPrice,`
+		: '';
+	const sortPriceParams: number[] = usePriceSort ? [singleClinicId!] : [];
+	let orderByClause = 'm.name_en ASC';
+	if (body.sort === 'name-asc') {
+		orderByClause = `COALESCE(NULLIF(m.${localizedNameField}, ''), m.name_en) ASC`;
+	} else if (usePriceSort) {
+		const dir = body.sort === 'price-asc' ? 'ASC' : 'DESC';
+		orderByClause = `sortPrice IS NULL, sortPrice ${dir}, m.name_en ASC`;
+	}
+
 	const totalCountQuery = `
 		SELECT COUNT(DISTINCT m.id) as totalCount
 		FROM medications m
@@ -112,6 +137,7 @@ export async function getMedicationList(
 			m.name_ru,
 			m.name_de,
 			m.name_tr,
+			${sortPriceSelect}
 			GROUP_CONCAT(DISTINCT cm.clinic_id ORDER BY ${priceOrder}) as clinicIds,
 			GROUP_CONCAT(
 				DISTINCT CONCAT(cm.clinic_id, ':', IFNULL(cm.price, ''), ':', '', ':', IFNULL(cm.price_max, ''), ':', COALESCE(cm.code, ''))
@@ -122,8 +148,8 @@ export async function getMedicationList(
 		LEFT JOIN clinics ON cm.clinic_id = clinics.id
 		LEFT JOIN cities ON clinics.city_id = cities.id
 		${whereFiltersString}
-		GROUP BY m.id, m.name_en, m.name_sr, m.name_sr_cyrl, m.name_ru, m.name_de, m.name_tr 
-		ORDER BY m.name_en ASC
+		GROUP BY m.id, m.name_en, m.name_sr, m.name_sr_cyrl, m.name_ru, m.name_de, m.name_tr${usePriceSort ? ', sortPrice' : ''}
+		ORDER BY ${orderByClause}
 		${paginationClause};
 	`;
 
@@ -133,10 +159,10 @@ export async function getMedicationList(
 		const [countRows] = await connection.execute(totalCountQuery, queryParams);
 		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
 	}
-	const [medicationRows] = await connection.execute(
-		medicationsQuery,
-		queryParams,
-	);
+	const [medicationRows] = await connection.execute(medicationsQuery, [
+		...sortPriceParams,
+		...queryParams,
+	]);
 	await connection.end();
 
 	const items = medicationRows.map((row: any) => {

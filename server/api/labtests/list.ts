@@ -47,6 +47,8 @@ export async function getLabTestList(
 		name?: string;
 		locale?: string;
 		page?: number;
+		pageSize?: number;
+		sort?: 'name-asc' | 'price-asc' | 'price-desc';
 	} = {},
 ) {
 	const whereFilters: string[] = [];
@@ -54,7 +56,11 @@ export async function getLabTestList(
 	const locale = body.locale || 'en';
 	const usePagination = body.page != null;
 	const pageRaw = Number(body.page);
-	const pageSize = LIST_PAGE_SIZE;
+	const pageSizeRaw = Number(body.pageSize);
+	const pageSize =
+		Number.isFinite(pageSizeRaw) && pageSizeRaw > 0
+			? Math.min(Math.trunc(pageSizeRaw), 100)
+			: LIST_PAGE_SIZE;
 	const page = Math.max(Number.isFinite(pageRaw) ? pageRaw : 1, 1);
 	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
 
@@ -120,7 +126,34 @@ export async function getLabTestList(
 		? `LIMIT ${pageSize} OFFSET ${offset}`
 		: '';
 
+	const hasCitySelectFilter = body.cityIds?.length > 0;
+	const cityFilterInSelect = hasCitySelectFilter
+		? ` AND EXISTS (SELECT 1 FROM clinics clt_city WHERE clt_city.id = clt.clinic_id AND clt_city.city_id IN (${body.cityIds.map(() => '?').join(',')}))`
+		: '';
+	const selectCityParams: Array<number | string> = hasCitySelectFilter
+		? [...body.cityIds, ...body.cityIds]
+		: [];
+
 	const priceOrder = getPriceOrderBySQL('clt');
+
+	const localizedNameField = getLocalizedNameField(locale) || 'name_en';
+	const singleClinicId =
+		body.clinicIds?.length === 1 ? body.clinicIds[0] : null;
+	const usePriceSort =
+		(body.sort === 'price-asc' || body.sort === 'price-desc') &&
+		singleClinicId != null;
+	const sortPriceSelect = usePriceSort
+		? `(SELECT clt_sort.price FROM clinic_lab_tests clt_sort WHERE clt_sort.lab_test_id = lt.id AND clt_sort.clinic_id = ? AND clt_sort.price IS NOT NULL ORDER BY clt_sort.price ASC LIMIT 1) as sortPrice,`
+		: '';
+	const sortPriceParams: number[] = usePriceSort ? [singleClinicId!] : [];
+	let orderByClause = 'lt.rank_score DESC, lt.name_en ASC';
+	if (body.sort === 'name-asc') {
+		orderByClause = `COALESCE(NULLIF(lt.${localizedNameField}, ''), lt.name_en) ASC`;
+	} else if (usePriceSort) {
+		const dir = body.sort === 'price-asc' ? 'ASC' : 'DESC';
+		orderByClause = `sortPrice IS NULL, sortPrice ${dir}, lt.name_en ASC`;
+	}
+
 	const totalCountQuery = `
 		SELECT COUNT(DISTINCT lt.id) as totalCount
 		FROM lab_tests lt
@@ -136,17 +169,18 @@ export async function getLabTestList(
 			lt.name_ru,
 			lt.name_de,
 			lt.name_tr,
-			(SELECT GROUP_CONCAT(DISTINCT clt.clinic_id ORDER BY ${priceOrder}) FROM clinic_lab_tests clt WHERE clt.lab_test_id = lt.id) as clinicIds,
+			${sortPriceSelect}
+			(SELECT GROUP_CONCAT(DISTINCT clt.clinic_id ORDER BY ${priceOrder}) FROM clinic_lab_tests clt WHERE clt.lab_test_id = lt.id${cityFilterInSelect}) as clinicIds,
 			(SELECT GROUP_CONCAT(
 				DISTINCT CONCAT(clt.clinic_id, ':', IFNULL(clt.price, ''), ':', '', ':', IFNULL(clt.price_max, ''), ':', COALESCE(clt.code, ''))
 				ORDER BY ${priceOrder}
-			) FROM clinic_lab_tests clt WHERE clt.lab_test_id = lt.id) as clinicPricesData,
+			) FROM clinic_lab_tests clt WHERE clt.lab_test_id = lt.id${cityFilterInSelect}) as clinicPricesData,
 			(SELECT GROUP_CONCAT(DISTINCT ltcr_cat.category_id ORDER BY ltcr_cat.category_id)
 			 FROM lab_test_categories_relations ltcr_cat
 			 WHERE ltcr_cat.lab_test_id = lt.id) as categoryIds
 		FROM lab_tests lt
 		${whereFiltersString}
-		ORDER BY lt.rank_score DESC, lt.name_en ASC
+		ORDER BY ${orderByClause}
 		${paginationClause};
 	`;
 
@@ -156,7 +190,11 @@ export async function getLabTestList(
 		const [countRows] = await connection.execute(totalCountQuery, queryParams);
 		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
 	}
-	const [labTestRows] = await connection.execute(labTestsQuery, queryParams);
+	const [labTestRows] = await connection.execute(labTestsQuery, [
+		...sortPriceParams,
+		...selectCityParams,
+		...queryParams,
+	]);
 
 	// Получаем синонимы для всех анализов на выбранном языке
 	const labTestIds = labTestRows.map(({ id }: { id: number }) => id);

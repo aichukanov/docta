@@ -427,15 +427,19 @@ watchEffect(() => {
 			</EntityPageSection>
 
 			<!-- Reviews -->
-			<EntityPageSection
-				v-if="doctorData"
-				sectionId="reviews"
-				:title="t('TabReviews')"
-				:count="
-					doctorData.rating?.totalReviews || doctorData.reviews?.length || 0
-				"
-			>
-				<template #icon><IconStar :size="20" /></template>
+			<EntityPageSection v-if="doctorData" sectionId="reviews">
+				<div class="reviews-header">
+					<EntityPageSectionTitle :title="t('TabReviews')">
+						<template #icon><IconStar :size="20" /></template>
+					</EntityPageSectionTitle>
+					<ViewAllLink
+						v-if="allReviewsLink && doctorData.rating"
+						:to="allReviewsLink"
+						:label="
+							t('AllReviews', { count: doctorData.rating.totalReviews })
+						"
+					/>
+				</div>
 				<div class="reviews-content">
 					<RatingSummary
 						v-if="doctorData.rating && doctorData.rating.totalReviews > 0"
@@ -453,13 +457,6 @@ watchEffect(() => {
 						:reviews="displayedReviews"
 						:clinicInfo="clinicInfoMap"
 					/>
-					<NuxtLink
-						v-if="allReviewsLink && doctorData.rating"
-						class="all-reviews-link"
-						:to="allReviewsLink"
-					>
-						{{ t('AllReviews', { count: doctorData.rating.totalReviews }) }}
-					</NuxtLink>
 				</div>
 				<ReviewForm
 					v-if="doctorData.id"
@@ -507,25 +504,14 @@ watchEffect(() => {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-lg);
-	margin-top: var(--spacing-lg);
 }
 
-.all-reviews-link {
-	display: inline-flex;
+.reviews-header {
+	display: flex;
 	align-items: center;
-	padding: var(--spacing-md) var(--spacing-xl);
-	background: var(--color-primary);
-	color: var(--color-bg-primary);
-	border-radius: var(--border-radius-lg);
-	text-decoration: none;
-	font-weight: var(--font-weight-semibold);
-	font-size: var(--font-size-lg);
-	transition: background-color var(--transition-base);
-	align-self: center;
-
-	&:hover {
-		background: var(--color-primary-dark);
-	}
+	justify-content: space-between;
+	gap: var(--spacing-md);
+	flex-wrap: wrap;
 }
 
 .doctor-map {

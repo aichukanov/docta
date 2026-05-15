@@ -1,6 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { CityId } from '~/enums/cities';
-import { ClinicType } from '~/enums/clinic-type';
 
 function getEnumValues(enumType: any) {
 	return Object.values(enumType).filter(
@@ -8,17 +7,9 @@ function getEnumValues(enumType: any) {
 	);
 }
 
-// === Одиночные фильтры ===
-
-export function getCityIds() {
+function getCityIds() {
 	return getEnumValues(CityId);
 }
-
-export function getClinicTypeIds() {
-	return getEnumValues(ClinicType);
-}
-
-// === Данные из БД ===
 
 export async function getClinicList() {
 	const connection = await getConnection();
@@ -34,12 +25,8 @@ export async function getClinicList() {
 	return rows as Array<{ id: number; slug: string; cityId: number }>;
 }
 
-// === Фильтры для Sitemap (только ценные, без thin pages) ===
-
 export async function getSitemapFilters() {
 	return {
-		// Одиночные — "клиники в Подгорице" — реальный запрос
 		cityIds: getCityIds(),
-		clinicTypeIds: getClinicTypeIds(),
 	};
 }

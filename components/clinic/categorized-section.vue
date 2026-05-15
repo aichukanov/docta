@@ -12,6 +12,8 @@ const props = defineProps<{
 	routeName: string;
 	categories: CategoryWithTitle[];
 	otherCategory?: CategoryWithTitle;
+	// 0 — show all items in each category without show-more.
+	initialLimit?: number;
 }>();
 
 const { locale } = useI18n();
@@ -42,6 +44,7 @@ const sectionLink = computed(() => ({
 				:key="index"
 				:title="category.title"
 				:items="category.items"
+				:initialLimit="initialLimit"
 			>
 				<template #default="{ item }">
 					<slot :item="item" />
@@ -52,6 +55,7 @@ const sectionLink = computed(() => ({
 				v-if="otherCategory"
 				:title="otherCategory.title"
 				:items="otherCategory.items"
+				:initialLimit="initialLimit"
 			>
 				<template #default="{ item }">
 					<slot :item="item" />
@@ -63,6 +67,10 @@ const sectionLink = computed(() => ({
 
 <style lang="less" scoped>
 .categorized-section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+
 	.section-body {
 		display: flex;
 		flex-direction: column;

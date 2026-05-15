@@ -24,7 +24,6 @@ defineProps<{
 	display: flex;
 	align-items: baseline;
 	gap: var(--spacing-md);
-	margin-bottom: var(--spacing-lg);
 }
 
 .section-title-icon {

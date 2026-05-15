@@ -61,6 +61,8 @@ export async function getDoctorList(
 		includeHidden?: boolean;
 		includeServices?: boolean;
 		page?: number;
+		pageSize?: number;
+		sort?: 'name-asc' | 'rating-desc';
 	} = {},
 ) {
 	const locale = body.locale || 'en';
@@ -68,7 +70,11 @@ export async function getDoctorList(
 	const queryParams: Array<number | string> = [];
 	const usePagination = body.page != null;
 	const pageRaw = Number(body.page);
-	const pageSize = LIST_PAGE_SIZE;
+	const pageSizeRaw = Number(body.pageSize);
+	const pageSize =
+		Number.isFinite(pageSizeRaw) && pageSizeRaw > 0
+			? Math.min(Math.trunc(pageSizeRaw), 100)
+			: LIST_PAGE_SIZE;
 	const page = Math.max(Number.isFinite(pageRaw) ? pageRaw : 1, 1);
 	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
 
@@ -139,11 +145,32 @@ export async function getDoctorList(
 	const paginationClause = usePagination
 		? `LIMIT ${pageSize} OFFSET ${offset}`
 		: '';
+
+	const hasCitySelectFilter = body.cityIds?.length > 0;
+	const cityFilterInClinicIds = hasCitySelectFilter
+		? ` AND EXISTS (SELECT 1 FROM clinics dc_city WHERE dc_city.id = dc.clinic_id AND dc_city.city_id IN (${body.cityIds.map(() => '?').join(',')}))`
+		: '';
+	const selectCityParams: Array<number | string> = hasCitySelectFilter
+		? [...body.cityIds]
+		: [];
+
 	const totalCountQuery = `
 			SELECT COUNT(DISTINCT d.id) as totalCount
 			FROM doctors d
 			${whereFiltersString};
 		`;
+	const localizedDoctorNameField =
+		({
+			en: 'name_en',
+			ru: 'name_ru',
+			sr: 'name_sr',
+			'sr-cyrl': 'name_sr_cyrl',
+		} as Record<string, string>)[locale] || 'name_en';
+	const orderByClause =
+		body.sort === 'name-asc'
+			? `COALESCE(NULLIF(d.${localizedDoctorNameField}, ''), d.name_sr, d.name_en) ASC`
+			: 'd.rank_score DESC, d.name_sr ASC';
+
 	const doctorsQuery = `
 			SELECT
 				d.id,
@@ -164,12 +191,12 @@ export async function getDoctorList(
 				d.website,
 				(SELECT GROUP_CONCAT(DISTINCT ds.specialty_id ORDER BY ds.specialty_id) FROM doctor_specialties ds WHERE ds.doctor_id = d.id) as specialtyIds,
 				(SELECT GROUP_CONCAT(DISTINCT dl.language_id ORDER BY dl.language_id) FROM doctor_languages dl WHERE dl.doctor_id = d.id) as languageIds,
-				(SELECT GROUP_CONCAT(DISTINCT dc.clinic_id ORDER BY dc.clinic_id) FROM doctor_clinics dc WHERE dc.doctor_id = d.id) as clinicIds,
+				(SELECT GROUP_CONCAT(DISTINCT dc.clinic_id ORDER BY dc.clinic_id) FROM doctor_clinics dc WHERE dc.doctor_id = d.id${cityFilterInClinicIds}) as clinicIds,
 				(SELECT ROUND(AVG(r.rating), 1) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL) as averageRating,
 				(SELECT COUNT(*) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL) as totalReviews
 			FROM doctors d
 			${whereFiltersString}
-			ORDER BY d.rank_score DESC, d.name_sr ASC
+			ORDER BY ${orderByClause}
 			${paginationClause};
 		`;
 
@@ -179,7 +206,10 @@ export async function getDoctorList(
 		const [countRows] = await connection.execute(totalCountQuery, queryParams);
 		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
 	}
-	const [doctorRows] = await connection.execute(doctorsQuery, queryParams);
+	const [doctorRows] = await connection.execute(doctorsQuery, [
+		...selectCityParams,
+		...queryParams,
+	]);
 
 	// Загружаем услуги для всех врачей, если нужно
 	let servicesMap: Map<string, ClinicServicesMap> | null = null;

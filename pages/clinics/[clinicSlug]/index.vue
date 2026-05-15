@@ -2,6 +2,7 @@
 import { Clock } from '@element-plus/icons-vue';
 import { formatClinicAddressLine } from '~/common/clinic-address';
 import {
+	CLINIC_ITEMS_INLINE_THRESHOLD,
 	OG_IMAGE,
 	REVIEWS_THRESHOLD,
 	SITE_NAME,
@@ -25,7 +26,7 @@ import reviewsI18n from '~/i18n/reviews';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
 import workingHoursI18n from '~/i18n/working-hours';
-import type { ClinicPrice } from '~/interfaces/clinic';
+import type { ClinicItemTopEntry, ClinicPrice } from '~/interfaces/clinic';
 import type { WorkingHours } from '~/interfaces/clinic-working-hours';
 import { DAYS_OF_WEEK } from '~/interfaces/clinic-working-hours';
 
@@ -62,41 +63,80 @@ const { pending: isLoading, data: clinicData } = await useFetch(
 	},
 );
 
-const { data: doctorsList } = await useFetch('/api/doctors/list', {
-	key: `doctors-list-clinic-${clinicSlug.value}`,
-	method: 'POST',
-	body: computed(() => ({
-		clinicIds: clinicId.value ? [clinicId.value] : [],
-		locale: locale.value,
-	})),
-});
+const itemsSummary = computed(() => clinicData.value?.itemsSummary);
 
-const { data: labTestsList } = await useFetch('/api/labtests/list', {
-	key: `labtests-list-clinic-${clinicSlug.value}`,
-	method: 'POST',
-	body: computed(() => ({
-		clinicIds: clinicId.value ? [clinicId.value] : [],
-		locale: locale.value,
-	})),
-});
+const totals = computed(() => ({
+	doctors: itemsSummary.value?.doctors.totalCount ?? 0,
+	services: itemsSummary.value?.services.totalCount ?? 0,
+	labtests: itemsSummary.value?.labtests.totalCount ?? 0,
+	medications: itemsSummary.value?.medications.totalCount ?? 0,
+}));
 
-const { data: medicationsList } = await useFetch('/api/medications/list', {
-	key: `medications-list-clinic-${clinicSlug.value}`,
-	method: 'POST',
-	body: computed(() => ({
-		clinicIds: clinicId.value ? [clinicId.value] : [],
-		locale: locale.value,
-	})),
-});
+const isInline = (total: number) =>
+	total > 0 && total <= CLINIC_ITEMS_INLINE_THRESHOLD;
 
-const { data: medicalServicesList } = await useFetch('/api/services/list', {
-	key: `services-list-clinic-${clinicSlug.value}`,
-	method: 'POST',
-	body: computed(() => ({
-		clinicIds: clinicId.value ? [clinicId.value] : [],
-		locale: locale.value,
-	})),
-});
+const renderInline = computed(() => ({
+	doctors: isInline(totals.value.doctors),
+	services: isInline(totals.value.services),
+	labtests: isInline(totals.value.labtests),
+	medications: isInline(totals.value.medications),
+}));
+
+const fetchInlineList = async <T,>(
+	endpoint: string,
+	enabled: boolean,
+	empty: T,
+): Promise<T> => {
+	if (!enabled || !clinicId.value) return empty;
+	const res = (await $fetch(endpoint, {
+		method: 'POST',
+		body: {
+			clinicIds: [clinicId.value],
+			locale: locale.value,
+		},
+	})) as T | null;
+	return res ?? empty;
+};
+
+const { data: doctorsList } = await useAsyncData(
+	`doctors-list-clinic-${clinicSlug.value}`,
+	() =>
+		fetchInlineList('/api/doctors/list', renderInline.value.doctors, {
+			doctors: [],
+			totalCount: 0,
+		}),
+	{ watch: [renderInline, clinicId] },
+);
+
+const { data: labTestsList } = await useAsyncData(
+	`labtests-list-clinic-${clinicSlug.value}`,
+	() =>
+		fetchInlineList('/api/labtests/list', renderInline.value.labtests, {
+			items: [],
+			totalCount: 0,
+		}),
+	{ watch: [renderInline, clinicId] },
+);
+
+const { data: medicationsList } = await useAsyncData(
+	`medications-list-clinic-${clinicSlug.value}`,
+	() =>
+		fetchInlineList('/api/medications/list', renderInline.value.medications, {
+			items: [],
+			totalCount: 0,
+		}),
+	{ watch: [renderInline, clinicId] },
+);
+
+const { data: medicalServicesList } = await useAsyncData(
+	`services-list-clinic-${clinicSlug.value}`,
+	() =>
+		fetchInlineList('/api/services/list', renderInline.value.services, {
+			items: [],
+			totalCount: 0,
+		}),
+	{ watch: [renderInline, clinicId] },
+);
 
 const { data: workingHoursData } = await useFetch<WorkingHours>(
 	'/api/clinics/working-hours',
@@ -216,6 +256,29 @@ const clinicAsList = computed(() =>
 	isFound.value && clinicData.value ? [clinicData.value] : [],
 );
 
+const EMPTY_TYPE_SUMMARY = {
+	totalCount: 0,
+	categories: [],
+	topItems: [],
+};
+const servicesSummary = computed(
+	() => itemsSummary.value?.services ?? EMPTY_TYPE_SUMMARY,
+);
+const labtestsSummary = computed(
+	() => itemsSummary.value?.labtests ?? EMPTY_TYPE_SUMMARY,
+);
+const medicationsSummary = computed(
+	() => itemsSummary.value?.medications ?? EMPTY_TYPE_SUMMARY,
+);
+const doctorsSummary = computed(
+	() => itemsSummary.value?.doctors ?? EMPTY_TYPE_SUMMARY,
+);
+
+const serviceCategoryTitle = (id: number) =>
+	t(`medical_service_category_${id}`);
+const labtestCategoryTitle = (id: number) => t(`lab_test_category_${id}`);
+const specialtyTitle = (id: number) => t(`specialty_${id}`);
+
 const tabs = computed(() => {
 	const result = [];
 	if (clinicDescription.value) {
@@ -225,28 +288,28 @@ const tabs = computed(() => {
 	if (hasWorkingHours.value) {
 		result.push({ id: 'hours', label: t('WorkingHours') });
 	}
-	if (clinicDoctors.value.length > 0) {
+	if (totals.value.doctors > 0) {
 		result.push({
 			id: 'doctors',
-			label: `${t('TabDoctors')} (${clinicDoctors.value.length})`,
+			label: `${t('TabDoctors')} (${totals.value.doctors})`,
 		});
 	}
-	if (clinicMedicalServices.value.length > 0) {
+	if (totals.value.services > 0) {
 		result.push({
 			id: 'services',
-			label: `${t('TabServices')} (${clinicMedicalServices.value.length})`,
+			label: `${t('TabServices')} (${totals.value.services})`,
 		});
 	}
-	if (clinicLabTests.value.length > 0) {
+	if (totals.value.labtests > 0) {
 		result.push({
 			id: 'labtests',
-			label: `${t('TabLabTests')} (${clinicLabTests.value.length})`,
+			label: `${t('TabLabTests')} (${totals.value.labtests})`,
 		});
 	}
-	if (clinicMedications.value.length > 0) {
+	if (totals.value.medications > 0) {
 		result.push({
 			id: 'medications',
-			label: `${t('TabMedications')} (${clinicMedications.value.length})`,
+			label: `${t('TabMedications')} (${totals.value.medications})`,
 		});
 	}
 	if (clinicData.value) {
@@ -300,8 +363,8 @@ const pageTitle = computed(() => {
 
 	const clinicName = localizedName.value;
 	const city = t(`city_${clinicData.value.cityId}`);
-	const doctorCount = clinicDoctors.value.length;
-	const serviceCount = clinicMedicalServices.value.length;
+	const doctorCount = totals.value.doctors;
+	const serviceCount = totals.value.services;
 
 	const statsParts: string[] = [];
 	if (doctorCount > 0) {
@@ -328,10 +391,17 @@ const pageDescription = computed(() => {
 
 	const segments: string[] = [];
 
-	// Specialties (top 3 by doctor count)
-	const specialtyCategories = [
-		...clinicDoctorsBySpecialty.value.categories,
-	].sort((a, b) => b.items.length - a.items.length);
+	// Specialties (top 3 by doctor count) — prefer itemsSummary; fall back to list.
+	const summaryDoctorCats = (itemsSummary.value?.doctors.categories || [])
+		.filter((c) => c.categoryId != null)
+		.map((c) => ({ categoryId: c.categoryId as number, count: c.count }))
+		.sort((a, b) => b.count - a.count);
+
+	const specialtyCategories = summaryDoctorCats.length
+		? summaryDoctorCats
+		: [...clinicDoctorsBySpecialty.value.categories]
+				.sort((a, b) => b.items.length - a.items.length)
+				.map((c) => ({ categoryId: c.categoryId, count: c.items.length }));
 
 	if (specialtyCategories.length > 0) {
 		const topSpecialties = specialtyCategories
@@ -350,12 +420,18 @@ const pageDescription = computed(() => {
 		}
 	}
 
-	// Min price across all services
-	const allPrices = clinicMedicalServices.value
+	// Min price — prefer inline list (covers all services); fall back to topItems
+	// from itemsSummary so big clinics still get a price hint in SEO description.
+	const inlinePrices = clinicMedicalServices.value
 		.flatMap((s) => s.clinicPrices)
 		.filter((p) => p.clinicId === clinicData.value!.id)
 		.map((p) => p.price ?? p.priceMin)
 		.filter((p): p is number => p != null && p > 0);
+	const topItemPrices = (itemsSummary.value?.services.topItems || [])
+		.flatMap((s) => [s.price, s.priceMin])
+		.filter((p): p is number => p != null && p > 0);
+	const allPrices =
+		inlinePrices.length > 0 ? inlinePrices : topItemPrices;
 
 	if (allPrices.length > 0) {
 		const minPrice = Math.min(...allPrices);
@@ -457,9 +533,49 @@ const getCityName = (id: number): string | undefined => {
 	return value && value !== key ? value : undefined;
 };
 
+const topItemsToOffers = (
+	items: ClinicItemTopEntry[] | undefined,
+	clinicIdValue: number,
+) =>
+	(items || []).map((item) => ({
+		id: item.id,
+		slug: item.slug,
+		name: item.name,
+		clinicPrices: [
+			{
+				clinicId: clinicIdValue,
+				price: item.price,
+				priceMin: item.priceMin,
+				priceMax: item.priceMax,
+			},
+		],
+	}));
+
 watchEffect(() => {
 	if (clinicData.value && isFound.value) {
 		const clinicUrl = `${SITE_URL}/clinics/${clinicData.value.slug}`;
+		const cid = clinicData.value.id;
+
+		const schemaServices =
+			clinicMedicalServices.value.length > 0
+				? clinicMedicalServices.value
+				: topItemsToOffers(itemsSummary.value?.services.topItems, cid);
+		const schemaLabTests =
+			clinicLabTests.value.length > 0
+				? clinicLabTests.value
+				: topItemsToOffers(itemsSummary.value?.labtests.topItems, cid);
+		const schemaMedications =
+			clinicMedications.value.length > 0
+				? clinicMedications.value
+				: topItemsToOffers(itemsSummary.value?.medications.topItems, cid);
+		const schemaDoctors =
+			clinicDoctors.value.length > 0
+				? clinicDoctors.value
+				: (itemsSummary.value?.doctors.topItems || []).map((d) => ({
+						id: d.id,
+						slug: d.slug,
+						professionalTitle: d.professionalTitle,
+					}));
 
 		schemaOrgStore.setSchemas([
 			...buildClinicSchema({
@@ -469,8 +585,10 @@ watchEffect(() => {
 				pageTitle: pageTitle.value,
 				pageDescription: pageDescription.value,
 				getCityName,
-				services: clinicMedicalServices.value,
-				doctors: clinicDoctors.value,
+				services: schemaServices,
+				labTests: schemaLabTests,
+				medications: schemaMedications,
+				doctors: schemaDoctors,
 				workingHours: workingHoursData.value,
 				rating: clinicData.value.rating,
 				reviews: displayedReviews.value.map((review) => ({
@@ -548,38 +666,52 @@ watchEffect(() => {
 			</EntityPageSection>
 
 			<!-- Doctors -->
-			<EntityPageSection v-if="clinicDoctors.length > 0" sectionId="doctors">
+			<EntityPageSection v-if="totals.doctors > 0" sectionId="doctors">
 				<ClinicCategorizedSection
+					v-if="renderInline.doctors"
 					:title="t('DoctorsAtClinic')"
-					:totalCount="clinicDoctors.length"
+					:totalCount="totals.doctors"
 					routeName="doctors"
 					:categories="doctorCategoriesWithTitles.categories"
 					:otherCategory="doctorCategoriesWithTitles.otherCategory"
+					:initialLimit="0"
 				>
-					<template #icon>
-						<IconDoctor />
-					</template>
+					<template #icon><IconDoctor /></template>
 					<template #default="{ item }">
 						<DoctorInfo :service="item" short headingLevel="h4" />
 					</template>
 				</ClinicCategorizedSection>
+				<ClinicItemsSummary
+					v-else
+					:title="t('DoctorsAtClinic')"
+					:summary="doctorsSummary"
+					:clinicSlug="clinicSlug"
+					subpageRouteName="clinics-clinicSlug-doctors"
+					categoryQueryKey="category"
+					:getCategoryTitle="specialtyTitle"
+					:otherLabel="t('OtherDoctors')"
+					:viewAllLabel="t('ViewAllDoctors', { count: totals.doctors })"
+					:popularLabel="t('PopularLabel')"
+					:categoriesLabel="t('BySpecialtyLabel')"
+				>
+					<template #icon><IconDoctor /></template>
+					<template #item="{ item }">
+						<DoctorInfo :service="item" short headingLevel="h4" />
+					</template>
+				</ClinicItemsSummary>
 			</EntityPageSection>
 
 			<!-- Services -->
-			<EntityPageSection
-				v-if="clinicMedicalServices.length > 0"
-				sectionId="services"
-			>
+			<EntityPageSection v-if="totals.services > 0" sectionId="services">
 				<ClinicCategorizedSection
+					v-if="renderInline.services"
 					:title="t('MedicalServicesAtClinic')"
-					:totalCount="clinicMedicalServices.length"
+					:totalCount="totals.services"
 					routeName="services"
 					:categories="serviceCategoriesWithTitles.categories"
 					:otherCategory="serviceCategoriesWithTitles.otherCategory"
 				>
-					<template #icon>
-						<IconMedicalService />
-					</template>
+					<template #icon><IconMedicalService /></template>
 					<template #default="{ item }">
 						<PricedItemCard
 							:id="item.id"
@@ -594,20 +726,47 @@ watchEffect(() => {
 						/>
 					</template>
 				</ClinicCategorizedSection>
+				<ClinicItemsSummary
+					v-else
+					:title="t('MedicalServicesAtClinic')"
+					:summary="servicesSummary"
+					:clinicSlug="clinicSlug"
+					subpageRouteName="clinics-clinicSlug-services"
+					categoryQueryKey="category"
+					:getCategoryTitle="serviceCategoryTitle"
+					:otherLabel="t('OtherServices')"
+					:viewAllLabel="t('ViewAllServices', { count: totals.services })"
+					:popularLabel="t('PopularLabel')"
+					:categoriesLabel="t('ByCategoryLabel')"
+				>
+					<template #icon><IconMedicalService /></template>
+					<template #item="{ item }">
+						<PricedItemCard
+							:id="item.id"
+							:slug="item.slug"
+							:name="item.name"
+							:localName="item.localName"
+							:price="item.price"
+							:priceMax="item.priceMax"
+							:priceMin="item.priceMin"
+							routeName="services-serviceSlug"
+							routeParamName="serviceSlug"
+						/>
+					</template>
+				</ClinicItemsSummary>
 			</EntityPageSection>
 
 			<!-- Lab Tests -->
-			<EntityPageSection v-if="clinicLabTests.length > 0" sectionId="labtests">
+			<EntityPageSection v-if="totals.labtests > 0" sectionId="labtests">
 				<ClinicCategorizedSection
+					v-if="renderInline.labtests"
 					:title="t('LabTestsAtClinic')"
-					:totalCount="clinicLabTests.length"
+					:totalCount="totals.labtests"
 					routeName="labtests"
 					:categories="labTestCategoriesWithTitles.categories"
 					:otherCategory="labTestCategoriesWithTitles.otherCategory"
 				>
-					<template #icon>
-						<IconLabTest />
-					</template>
+					<template #icon><IconLabTest /></template>
 					<template #default="{ item }">
 						<PricedItemCard
 							:id="item.id"
@@ -621,21 +780,44 @@ watchEffect(() => {
 						/>
 					</template>
 				</ClinicCategorizedSection>
+				<ClinicItemsSummary
+					v-else
+					:title="t('LabTestsAtClinic')"
+					:summary="labtestsSummary"
+					:clinicSlug="clinicSlug"
+					subpageRouteName="clinics-clinicSlug-labtests"
+					categoryQueryKey="category"
+					:getCategoryTitle="labtestCategoryTitle"
+					:otherLabel="t('OtherLabTests')"
+					:viewAllLabel="t('ViewAllLabTests', { count: totals.labtests })"
+					:popularLabel="t('PopularLabel')"
+					:categoriesLabel="t('ByCategoryLabel')"
+				>
+					<template #icon><IconLabTest /></template>
+					<template #item="{ item }">
+						<PricedItemCard
+							:id="item.id"
+							:slug="item.slug"
+							:name="item.name"
+							:localName="item.localName"
+							:price="item.price"
+							:priceMax="item.priceMax"
+							routeName="labtests-labTestSlug"
+							routeParamName="labTestSlug"
+						/>
+					</template>
+				</ClinicItemsSummary>
 			</EntityPageSection>
 
 			<!-- Medications -->
-			<EntityPageSection
-				v-if="clinicMedications.length > 0"
-				sectionId="medications"
-			>
+			<EntityPageSection v-if="totals.medications > 0" sectionId="medications">
 				<ClinicServiceSection
+					v-if="renderInline.medications"
 					:title="t('MedicationsAtClinic')"
 					:items="clinicMedications"
 					routeName="medications"
 				>
-					<template #icon>
-						<IconMedication />
-					</template>
+					<template #icon><IconMedication /></template>
 					<template #default="{ item }">
 						<PricedItemCard
 							:id="item.id"
@@ -649,18 +831,50 @@ watchEffect(() => {
 						/>
 					</template>
 				</ClinicServiceSection>
+				<ClinicItemsSummary
+					v-else
+					:title="t('MedicationsAtClinic')"
+					:summary="medicationsSummary"
+					:clinicSlug="clinicSlug"
+					subpageRouteName="clinics-clinicSlug-medications"
+					categoryQueryKey="category"
+					:getCategoryTitle="() => ''"
+					:otherLabel="''"
+					:viewAllLabel="
+						t('ViewAllMedications', { count: totals.medications })
+					"
+					:popularLabel="t('PopularLabel')"
+				>
+					<template #icon><IconMedication /></template>
+					<template #item="{ item }">
+						<PricedItemCard
+							:id="item.id"
+							:slug="item.slug"
+							:name="item.name"
+							:localName="item.localName"
+							:price="item.price"
+							:priceMax="item.priceMax"
+							routeName="medications-medicationSlug"
+							routeParamName="medicationSlug"
+						/>
+					</template>
+				</ClinicItemsSummary>
 			</EntityPageSection>
 
 			<!-- Reviews -->
-			<EntityPageSection
-				v-if="clinicData"
-				sectionId="reviews"
-				:title="t('TabReviews')"
-				:count="
-					clinicData.rating?.totalReviews || clinicData.reviews?.length || 0
-				"
-			>
-				<template #icon><IconStar :size="20" /></template>
+			<EntityPageSection v-if="clinicData" sectionId="reviews">
+				<div class="reviews-header">
+					<EntityPageSectionTitle :title="t('TabReviews')">
+						<template #icon><IconStar :size="20" /></template>
+					</EntityPageSectionTitle>
+					<ViewAllLink
+						v-if="allReviewsLink && clinicData.rating"
+						:to="allReviewsLink"
+						:label="
+							t('AllReviews', { count: clinicData.rating.totalReviews })
+						"
+					/>
+				</div>
 				<div class="reviews-content">
 					<RatingSummary
 						v-if="clinicData.rating && clinicData.rating.totalReviews > 0"
@@ -678,13 +892,6 @@ watchEffect(() => {
 						:reviews="displayedReviews"
 						:noReviewsText="t('NoReviewsClinic')"
 					/>
-					<NuxtLink
-						v-if="allReviewsLink && clinicData.rating"
-						class="all-reviews-link"
-						:to="allReviewsLink"
-					>
-						{{ t('AllReviews', { count: clinicData.rating.totalReviews }) }}
-					</NuxtLink>
 				</div>
 				<ReviewForm
 					v-if="clinicData.id"
@@ -731,10 +938,6 @@ watchEffect(() => {
 		"OtherLabTests": "Other lab tests",
 		"TabAbout": "About",
 		"TabContacts": "Contacts",
-		"TabDoctors": "Doctors",
-		"TabServices": "Services",
-		"TabLabTests": "Lab tests",
-		"TabMedications": "Medications",
 		"TabReviews": "Reviews",
 		"TabMap": "Location",
 		"SeoTitleDoctors": "{count} doctors",
@@ -743,7 +946,14 @@ watchEffect(() => {
 		"SeoDescMoreSpecialties": "{specialties} and {count}+ more specialties",
 		"SeoDescPriceFrom": "Services from {price}€",
 		"SeoDescRating": "Rating {rating} ★ ({count} reviews)",
-		"SeoDescCta": "Find a doctor on Docta.me"
+		"SeoDescCta": "Find a doctor on Docta.me",
+		"ViewAllServices": "All services ({count})",
+		"ViewAllLabTests": "All lab tests ({count})",
+		"ViewAllMedications": "All medications ({count})",
+		"ViewAllDoctors": "All doctors ({count})",
+		"PopularLabel": "Popular",
+		"ByCategoryLabel": "Browse by category",
+		"BySpecialtyLabel": "Browse by specialty"
 	},
 	"ru": {
 		"ClinicLanguageAssistance": "Предоставляется сопровождение на {language} языке.",
@@ -757,10 +967,6 @@ watchEffect(() => {
 		"OtherLabTests": "Другие анализы",
 		"TabAbout": "О клинике",
 		"TabContacts": "Контакты",
-		"TabDoctors": "Врачи",
-		"TabServices": "Услуги",
-		"TabLabTests": "Анализы",
-		"TabMedications": "Лекарства",
 		"TabReviews": "Отзывы",
 		"TabMap": "На карте",
 		"SeoTitleDoctors": "{count} врачей",
@@ -769,7 +975,14 @@ watchEffect(() => {
 		"SeoDescMoreSpecialties": "{specialties} и ещё {count}+ специальностей",
 		"SeoDescPriceFrom": "Цены на услуги от {price}€",
 		"SeoDescRating": "Оценка {rating} ★ ({count} отзывов)",
-		"SeoDescCta": "Найдите врача на Docta.me"
+		"SeoDescCta": "Найдите врача на Docta.me",
+		"ViewAllServices": "Все услуги ({count})",
+		"ViewAllLabTests": "Все анализы ({count})",
+		"ViewAllMedications": "Все лекарства ({count})",
+		"ViewAllDoctors": "Все врачи ({count})",
+		"PopularLabel": "Популярные",
+		"ByCategoryLabel": "По категориям",
+		"BySpecialtyLabel": "По специальностям"
 	},
 	"de": {
 		"ClinicLanguageAssistance": "Unterstützung wird in {language} bereitgestellt.",
@@ -783,10 +996,6 @@ watchEffect(() => {
 		"OtherLabTests": "Andere Laboruntersuchungen",
 		"TabAbout": "Über uns",
 		"TabContacts": "Kontakte",
-		"TabDoctors": "Ärzte",
-		"TabServices": "Leistungen",
-		"TabLabTests": "Laboruntersuchungen",
-		"TabMedications": "Medikamente",
 		"TabReviews": "Bewertungen",
 		"TabMap": "Standort",
 		"SeoTitleDoctors": "{count} Ärzte",
@@ -795,7 +1004,14 @@ watchEffect(() => {
 		"SeoDescMoreSpecialties": "{specialties} und {count}+ weitere Fachgebiete",
 		"SeoDescPriceFrom": "Leistungen ab {price}€",
 		"SeoDescRating": "Bewertung {rating} ★ ({count} Bewertungen)",
-		"SeoDescCta": "Finden Sie einen Arzt auf Docta.me"
+		"SeoDescCta": "Finden Sie einen Arzt auf Docta.me",
+		"ViewAllServices": "Alle Leistungen ({count})",
+		"ViewAllLabTests": "Alle Laboruntersuchungen ({count})",
+		"ViewAllMedications": "Alle Medikamente ({count})",
+		"ViewAllDoctors": "Alle Ärzte ({count})",
+		"PopularLabel": "Beliebt",
+		"ByCategoryLabel": "Nach Kategorie",
+		"BySpecialtyLabel": "Nach Fachgebiet"
 	},
 	"tr": {
 		"ClinicLanguageAssistance": "{language} dilinde destek sağlanır.",
@@ -809,10 +1025,6 @@ watchEffect(() => {
 		"OtherLabTests": "Diğer laboratuvar testleri",
 		"TabAbout": "Hakkında",
 		"TabContacts": "İletişim",
-		"TabDoctors": "Doktorlar",
-		"TabServices": "Hizmetler",
-		"TabLabTests": "Laboratuvar testleri",
-		"TabMedications": "İlaçlar",
 		"TabReviews": "Değerlendirmeler",
 		"TabMap": "Konum",
 		"SeoTitleDoctors": "{count} doktor",
@@ -821,7 +1033,14 @@ watchEffect(() => {
 		"SeoDescMoreSpecialties": "{specialties} ve {count}+ uzmanlık alanı daha",
 		"SeoDescPriceFrom": "Hizmetler {price}€'dan başlayan fiyatlarla",
 		"SeoDescRating": "Puan {rating} ★ ({count} değerlendirme)",
-		"SeoDescCta": "Docta.me'de doktor bulun"
+		"SeoDescCta": "Docta.me'de doktor bulun",
+		"ViewAllServices": "Tüm hizmetler ({count})",
+		"ViewAllLabTests": "Tüm laboratuvar testleri ({count})",
+		"ViewAllMedications": "Tüm ilaçlar ({count})",
+		"ViewAllDoctors": "Tüm doktorlar ({count})",
+		"PopularLabel": "Popüler",
+		"ByCategoryLabel": "Kategoriye göre",
+		"BySpecialtyLabel": "Uzmanlığa göre"
 	},
 	"sr": {
 		"ClinicLanguageAssistance": "Pomoć se pruža na {language} jeziku.",
@@ -835,10 +1054,6 @@ watchEffect(() => {
 		"OtherLabTests": "Ostale analize",
 		"TabAbout": "O klinici",
 		"TabContacts": "Kontakti",
-		"TabDoctors": "Lekari",
-		"TabServices": "Usluge",
-		"TabLabTests": "Analize",
-		"TabMedications": "Lekovi",
 		"TabReviews": "Recenzije",
 		"TabMap": "Lokacija",
 		"SeoTitleDoctors": "{count} ljekara",
@@ -847,7 +1062,14 @@ watchEffect(() => {
 		"SeoDescMoreSpecialties": "{specialties} i još {count}+ specijalnosti",
 		"SeoDescPriceFrom": "Cijene usluga od {price}€",
 		"SeoDescRating": "Ocjena {rating} ★ ({count} recenzija)",
-		"SeoDescCta": "Pronađite ljekara na Docta.me"
+		"SeoDescCta": "Pronađite ljekara na Docta.me",
+		"ViewAllServices": "Sve usluge ({count})",
+		"ViewAllLabTests": "Sve analize ({count})",
+		"ViewAllMedications": "Svi lekovi ({count})",
+		"ViewAllDoctors": "Svi ljekari ({count})",
+		"PopularLabel": "Popularno",
+		"ByCategoryLabel": "Po kategoriji",
+		"BySpecialtyLabel": "Po specijalnosti"
 	},
 	"sr-cyrl": {
 		"ClinicLanguageAssistance": "Помоћ се пружа на {language} језику.",
@@ -861,10 +1083,6 @@ watchEffect(() => {
 		"OtherLabTests": "Остале анализе",
 		"TabAbout": "О клиници",
 		"TabContacts": "Контакти",
-		"TabDoctors": "Лекари",
-		"TabServices": "Услуге",
-		"TabLabTests": "Анализе",
-		"TabMedications": "Лекови",
 		"TabReviews": "Рецензије",
 		"TabMap": "Локација",
 		"SeoTitleDoctors": "{count} лекара",
@@ -873,7 +1091,14 @@ watchEffect(() => {
 		"SeoDescMoreSpecialties": "{specialties} и још {count}+ специјалности",
 		"SeoDescPriceFrom": "Цијене услуга од {price}€",
 		"SeoDescRating": "Оцјена {rating} ★ ({count} рецензија)",
-		"SeoDescCta": "Пронађите лекара на Docta.me"
+		"SeoDescCta": "Пронађите лекара на Docta.me",
+		"ViewAllServices": "Све услуге ({count})",
+		"ViewAllLabTests": "Све анализе ({count})",
+		"ViewAllMedications": "Сви лекови ({count})",
+		"ViewAllDoctors": "Сви лекари ({count})",
+		"PopularLabel": "Популарно",
+		"ByCategoryLabel": "По категорији",
+		"BySpecialtyLabel": "По специјалности"
 	}
 }
 </i18n>
@@ -885,29 +1110,18 @@ watchEffect(() => {
 	gap: var(--spacing-xl);
 }
 
+.reviews-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--spacing-md);
+	flex-wrap: wrap;
+}
+
 .reviews-content {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-lg);
-	margin-top: var(--spacing-lg);
-}
-
-.all-reviews-link {
-	display: inline-flex;
-	align-items: center;
-	padding: var(--spacing-md) var(--spacing-xl);
-	background: var(--color-primary);
-	color: var(--color-bg-primary);
-	border-radius: var(--border-radius-lg);
-	text-decoration: none;
-	font-weight: var(--font-weight-semibold);
-	font-size: var(--font-size-lg);
-	transition: background-color var(--transition-base);
-	align-self: center;
-
-	&:hover {
-		background: var(--color-primary-dark);
-	}
 }
 
 .clinic-map {

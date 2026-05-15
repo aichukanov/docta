@@ -43,3 +43,11 @@ const sectionLink = computed(() => ({
 		</ClinicServiceSectionContent>
 	</div>
 </template>
+
+<style lang="less" scoped>
+.service-section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+}
+</style>

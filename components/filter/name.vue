@@ -12,26 +12,32 @@
 <script setup lang="ts">
 import { debounce } from 'lodash-es';
 
-defineProps<{
+const props = defineProps<{
 	label: string;
 	placeholder: string;
+	value: string;
 }>();
 
-const { name } = useFilters();
+const emit = defineEmits<{
+	(e: 'update:value', value: string): void;
+}>();
 
-const localName = ref(name.value);
+const localName = ref(props.value);
 
-const updateName = debounce((value: string) => {
-	name.value = value;
+const emitName = debounce((value: string) => {
+	emit('update:value', value);
 }, 300);
 
 watch(localName, (value) => {
-	updateName(value);
+	emitName(value);
 });
 
-watch(name, (value) => {
-	if (value !== localName.value) {
-		localName.value = value;
-	}
-});
+watch(
+	() => props.value,
+	(value) => {
+		if (value !== localName.value) {
+			localName.value = value;
+		}
+	},
+);
 </script>

@@ -26,15 +26,10 @@ const { t, locale } = useI18n({
 	]),
 });
 
-const {
-	cityIds,
-	languageIds,
-	clinicTypeIds,
-	name,
-	openNow,
-	updateFromRoute,
-	getRouteParams,
-} = useFilters();
+const filtersStore = useFiltersStore();
+const { cityIds, languageIds, clinicTypeIds, name, openNow } = toRefs(
+	filtersStore.namespaces.clinics,
+);
 const route = useRoute();
 const pageNumber = ref(Number(route.query.page || 1));
 const routeName = route.name;
@@ -43,7 +38,7 @@ watch(
 	(query) => {
 		if (route.name !== routeName) return;
 		pageNumber.value = Number(query.page || 1);
-		updateFromRoute(query);
+		filtersStore.updateFromRoute('clinics', query);
 	},
 	{ immediate: true },
 );
@@ -58,7 +53,7 @@ const filterList = computed(() => ({
 	page: pageNumber.value,
 }));
 
-const filterQuery = computed(() => getRouteParams().query);
+const filterQuery = computed(() => filtersStore.getRouteParams('clinics').query);
 
 const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
 	'/api/clinics/list',
@@ -189,13 +184,14 @@ watchEffect(() => {
 	>
 		<template #filters>
 			<FilterName
+				v-model:value="name"
 				:label="t('ClinicName')"
 				:placeholder="t('InsertClinicName')"
 			/>
 			<FilterClinicTypeSelect v-model:value="clinicTypeIds" />
 			<FilterCitySelect v-model:value="cityIds" />
 			<FilterLanguageSelect v-model:value="languageIds" />
-			<FilterOpenNow :label="t('OpenNow')" />
+			<FilterOpenNow v-model:value="openNow" :label="t('OpenNow')" />
 		</template>
 
 		<template #card="{ item, showClinicOnMap }">

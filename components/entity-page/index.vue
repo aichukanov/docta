@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { ArrowLeft } from '@element-plus/icons-vue';
 import { getRegionalQuery } from '~/common/url-utils';
+import { useFiltersStore, type FilterNamespace } from '~/stores/filters';
 import type { TabItem } from './tab-bar.vue';
 
 const props = defineProps<{
 	isLoading: boolean;
 	isFound: boolean;
-	backRouteName: string;
+	backRouteName: FilterNamespace;
 	loadingText: string;
 	notFoundText: string;
 	tabs: TabItem[];
@@ -14,12 +15,15 @@ const props = defineProps<{
 
 const { t, locale } = useI18n();
 const router = useRouter();
-const { getRouteParams } = useFilters();
+const filtersStore = useFiltersStore();
 
 const backToSearch = () => {
 	router.push({
 		name: props.backRouteName,
-		query: { ...getRouteParams().query, ...getRegionalQuery(locale.value) },
+		query: {
+			...filtersStore.getRouteParams(props.backRouteName).query,
+			...getRegionalQuery(locale.value),
+		},
 	});
 };
 </script>

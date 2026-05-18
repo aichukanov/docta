@@ -15,8 +15,10 @@ const { t, locale } = useI18n({
 	messages: combineI18nMessages([breadcrumbI18n, cityI18n, medicationI18n]),
 });
 
-const { cityIds, clinicIds, name, updateFromRoute, getRouteParams } =
-	useFilters();
+const filtersStore = useFiltersStore();
+const { cityIds, clinicIds, name } = toRefs(
+	filtersStore.namespaces.medications,
+);
 
 const route = useRoute();
 const pageNumber = ref(Number(route.query.page || 1));
@@ -26,7 +28,7 @@ watch(
 	(query) => {
 		if (route.name !== routeName) return;
 		pageNumber.value = Number(query.page || 1);
-		updateFromRoute(query);
+		filtersStore.updateFromRoute('medications', query);
 	},
 	{ immediate: true },
 );
@@ -39,7 +41,9 @@ const filterList = computed(() => ({
 	page: pageNumber.value,
 }));
 
-const filterQuery = computed(() => getRouteParams().query);
+const filterQuery = computed(
+	() => filtersStore.getRouteParams('medications').query,
+);
 
 const { pending: isLoadingMedications, data: medicationsList } = await useFetch(
 	'/api/medications/list',
@@ -152,6 +156,7 @@ watchEffect(() => {
 	>
 		<template #filters>
 			<FilterName
+				v-model:value="name"
 				:label="t('MedicationName')"
 				:placeholder="t('InsertMedicationName')"
 			/>

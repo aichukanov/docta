@@ -3,16 +3,19 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
 	label: string;
+	value: boolean;
 }>();
 
-const { openNow } = useFilters();
+const emit = defineEmits<{
+	(e: 'update:value', value: boolean): void;
+}>();
 
 const checked = computed({
-	get: () => openNow.value,
+	get: () => props.value,
 	set: (value: boolean) => {
-		openNow.value = value;
+		emit('update:value', value);
 	},
 });
 </script>

@@ -22,14 +22,10 @@ const { t, locale } = useI18n({
 	]),
 });
 
-const {
-	cityIds,
-	serviceCategoryIds,
-	clinicIds,
-	name,
-	updateFromRoute,
-	getRouteParams,
-} = useFilters();
+const filtersStore = useFiltersStore();
+const { cityIds, serviceCategoryIds, clinicIds, name } = toRefs(
+	filtersStore.namespaces.services,
+);
 
 const route = useRoute();
 const pageNumber = ref(Number(route.query.page || 1));
@@ -39,7 +35,7 @@ watch(
 	(query) => {
 		if (route.name !== routeName) return;
 		pageNumber.value = Number(query.page || 1);
-		updateFromRoute(query);
+		filtersStore.updateFromRoute('services', query);
 	},
 	{ immediate: true },
 );
@@ -53,7 +49,7 @@ const filterList = computed(() => ({
 	page: pageNumber.value,
 }));
 
-const filterQuery = computed(() => getRouteParams().query);
+const filterQuery = computed(() => filtersStore.getRouteParams('services').query);
 
 const clinicsStore = useClinicsStore();
 
@@ -218,6 +214,7 @@ watchEffect(() => {
 	>
 		<template #filters>
 			<FilterName
+				v-model:value="name"
 				:label="t('ServiceName')"
 				:placeholder="t('InsertServiceName')"
 			/>

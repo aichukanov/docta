@@ -21,14 +21,10 @@ const { t, locale } = useI18n({
 	]),
 });
 
-const {
-	cityIds,
-	categoryIds,
-	clinicIds,
-	name,
-	updateFromRoute,
-	getRouteParams,
-} = useFilters();
+const filtersStore = useFiltersStore();
+const { cityIds, categoryIds, clinicIds, name } = toRefs(
+	filtersStore.namespaces.labtests,
+);
 
 const route = useRoute();
 const pageNumber = ref(Number(route.query.page || 1));
@@ -38,7 +34,7 @@ watch(
 	(query) => {
 		if (route.name !== routeName) return;
 		pageNumber.value = Number(query.page || 1);
-		updateFromRoute(query);
+		filtersStore.updateFromRoute('labtests', query);
 	},
 	{ immediate: true },
 );
@@ -52,7 +48,7 @@ const filterList = computed(() => ({
 	page: pageNumber.value,
 }));
 
-const filterQuery = computed(() => getRouteParams().query);
+const filterQuery = computed(() => filtersStore.getRouteParams('labtests').query);
 
 const clinicsStore = useClinicsStore();
 
@@ -217,6 +213,7 @@ watchEffect(() => {
 	>
 		<template #filters>
 			<FilterName
+				v-model:value="name"
 				:label="t('LabTestName')"
 				:placeholder="t('InsertLabTestName')"
 			/>

@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
+import type { UserAdminListItem } from '~/server/api/users/admin-list';
+import type { RecentRealUserReview } from '~/server/api/reviews/recent-from-real-users';
 
 // Проверка авторизации
 definePageMeta({
@@ -30,6 +32,7 @@ const loadedTabs = ref({
 	services: false,
 	clinics: false,
 	reviews: false,
+	users: false,
 });
 
 // Состояние загрузки
@@ -38,6 +41,7 @@ const isLoadingLabTests = ref(false);
 const isLoadingServices = ref(false);
 const isLoadingClinics = ref(false);
 const isLoadingReviews = ref(false);
+const isLoadingUsers = ref(false);
 
 // Данные
 const doctorsList = ref(null);
@@ -45,6 +49,8 @@ const labTestsList = ref(null);
 const servicesList = ref(null);
 const reviewsList = ref([]);
 const usersList = ref([]);
+const usersAdminList = ref<UserAdminListItem[]>([]);
+const recentRealReviews = ref<RecentRealUserReview[]>([]);
 const clinicsStore = useClinicsStore();
 
 const clinicsList = computed(() => ({
@@ -73,6 +79,25 @@ async function loadUsersData() {
 		usersList.value = await $fetch('/api/users/list');
 	} catch (error) {
 		console.error('Failed to load users:', error);
+	}
+}
+
+async function loadUsersAdminData() {
+	if (loadedTabs.value.users) return;
+
+	isLoadingUsers.value = true;
+	try {
+		const [users, recent] = await Promise.all([
+			$fetch<UserAdminListItem[]>('/api/users/admin-list'),
+			$fetch<RecentRealUserReview[]>('/api/reviews/recent-from-real-users'),
+		]);
+		usersAdminList.value = users;
+		recentRealReviews.value = recent;
+		loadedTabs.value.users = true;
+	} catch (error) {
+		console.error('Failed to load users admin data:', error);
+	} finally {
+		isLoadingUsers.value = false;
 	}
 }
 
@@ -179,6 +204,9 @@ watch(activeTab, async (newTab) => {
 			break;
 		case 'reviews':
 			await loadReviewsData();
+			break;
+		case 'users':
+			await loadUsersAdminData();
 			break;
 	}
 });
@@ -372,6 +400,18 @@ async function recalculateRankScores() {
 						</div>
 					</el-tab-pane>
 				</el-tabs>
+			</el-tab-pane>
+
+			<el-tab-pane label="Пользователи" name="users">
+				<div v-if="isLoadingUsers" class="tab-loading">
+					<div class="loading-spinner"></div>
+					<p>Загрузка пользователей...</p>
+				</div>
+				<AdminUserInfo
+					v-else-if="loadedTabs.users"
+					:users="usersAdminList"
+					:recentReviews="recentRealReviews"
+				/>
 			</el-tab-pane>
 
 			<el-tab-pane label="Клиники" name="clinics">

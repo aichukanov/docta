@@ -14,6 +14,7 @@ const props = withDefaults(
 		ariaLabel?: string;
 		noDataText?: string;
 		multiple?: boolean;
+		clearable?: boolean;
 	}>(),
 	{
 		placeholder: '',
@@ -21,6 +22,7 @@ const props = withDefaults(
 		ariaLabel: '',
 		noDataText: '',
 		multiple: false,
+		clearable: false,
 	},
 );
 
@@ -45,6 +47,7 @@ const value = computed({
 		:aria-label="ariaLabel"
 		:no-data-text="noDataText"
 		:multiple="multiple"
+		:clearable="clearable"
 		filterable
 		size="large"
 		@change="selectRef?.blur()"

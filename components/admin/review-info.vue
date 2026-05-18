@@ -139,6 +139,32 @@ const saveChanges = async () => {
 	if (reviewId.value) await loadReviewDetails(reviewId.value);
 };
 
+const deleteReview = async () => {
+	if (!reviewId.value) return;
+	if (
+		!confirm(
+			'Удалить отзыв вместе со всеми ответами и лайками? Действие необратимо.',
+		)
+	) {
+		return;
+	}
+
+	try {
+		await $fetch('/api/reviews/admin-delete', {
+			method: 'POST',
+			body: { reviewId: reviewId.value },
+		});
+		reviewId.value = null;
+		reviewModel.value = null;
+		originalReview.value = null;
+		emit('updated');
+		alert('Отзыв удалён');
+	} catch (e) {
+		console.error('Failed to delete review:', e);
+		alert('Ошибка удаления отзыва');
+	}
+};
+
 watch(reviewId, async (newId) => {
 	if (newId) {
 		await loadReviewDetails(newId);
@@ -209,61 +235,37 @@ watch(reviewId, async (newId) => {
 			<!-- Привязка: пользователь -->
 			<div class="association-section" :class="{ modified: userIdModified }">
 				<label class="section-label">Автор (пользователь)</label>
-				<el-select
-					v-model="reviewModel.userId"
-					filterable
-					clearable
+				<FilterableSelect
+					:items="userOptions"
+					v-model:value="reviewModel.userId"
 					placeholder="Не привязан"
-					:disabled="!editable"
+					clearable
 					class="wide-select"
-				>
-					<el-option
-						v-for="u in userOptions"
-						:key="u.value"
-						:label="u.label"
-						:value="u.value"
-					/>
-				</el-select>
+				/>
 			</div>
 
 			<!-- Привязка: клиника -->
 			<div class="association-section" :class="{ modified: clinicIdModified }">
 				<label class="section-label">Клиника</label>
-				<el-select
-					v-model="reviewModel.clinicId"
-					filterable
-					clearable
+				<FilterableSelect
+					:items="clinicOptions"
+					v-model:value="reviewModel.clinicId"
 					placeholder="Не привязана"
-					:disabled="!editable"
+					clearable
 					class="wide-select"
-				>
-					<el-option
-						v-for="c in clinicOptions"
-						:key="c.value"
-						:label="c.label"
-						:value="c.value"
-					/>
-				</el-select>
+				/>
 			</div>
 
 			<!-- Привязка: врач -->
 			<div class="association-section" :class="{ modified: doctorIdModified }">
 				<label class="section-label">Врач</label>
-				<el-select
-					v-model="reviewModel.doctorId"
-					filterable
-					clearable
+				<FilterableSelect
+					:items="doctorOptions"
+					v-model:value="reviewModel.doctorId"
 					placeholder="Не привязан"
-					:disabled="!editable"
+					clearable
 					class="wide-select"
-				>
-					<el-option
-						v-for="d in doctorOptions"
-						:key="d.value"
-						:label="d.label"
-						:value="d.value"
-					/>
-				</el-select>
+				/>
 			</div>
 
 			<!-- Привязка: услуга (редко меняется) -->
@@ -493,6 +495,9 @@ watch(reviewId, async (newId) => {
 			<div v-if="editable" class="button-group">
 				<el-button type="primary" @click="saveChanges" :disabled="!hasChanges">
 					Сохранить изменения
+				</el-button>
+				<el-button type="danger" @click="deleteReview">
+					Удалить отзыв
 				</el-button>
 			</div>
 		</div>

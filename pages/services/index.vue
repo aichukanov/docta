@@ -10,7 +10,7 @@ import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import medicalServiceI18n from '~/i18n/medical-service';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
-import { getRegionalQuery } from '~/common/url-utils';
+import { getDetailLinkQuery } from '~/common/url-utils';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -230,7 +230,7 @@ watchEffect(() => {
 						:to="{
 							name: 'services-serviceSlug',
 							params: { serviceSlug: item.slug },
-							query: getRegionalQuery(locale),
+							query: getDetailLinkQuery(locale, cityIds),
 						}"
 						class="service-name-link"
 					>

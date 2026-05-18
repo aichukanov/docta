@@ -47,17 +47,21 @@ if (import.meta.server && !isFound.value) {
 	setResponseStatus(useRequestEvent()!, 404);
 }
 
-const medicalServiceClinics = computed(() =>
+const allMedicalServiceClinics = computed(() =>
 	isFound.value
 		? clinicsStore.getClinicsByIds(medicalServiceData.value?.clinicIds)
 		: [],
 );
 
-const getPriceInfo = (clinicId: number) => {
-	return medicalServiceData.value?.clinicPrices?.find(
-		(p) => p.clinicId === clinicId,
-	);
-};
+const {
+	cityIds,
+	filteredClinics: medicalServiceClinics,
+	filteredClinicPrices,
+} = useClinicCityFilter(
+	'services',
+	allMedicalServiceClinics,
+	computed(() => medicalServiceData.value?.clinicPrices),
+);
 
 const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
 const { target: mapSentinel, hasBeenVisible: isMapVisible } = useInViewport();
@@ -85,9 +89,10 @@ const showClinicOnMap = (clinic: ClinicData) => {
 const tariffs = computed(() => medicalServiceData.value?.tariffs ?? []);
 const hasTariffs = computed(() => tariffs.value.length > 0);
 
+// Табы — на полном наборе клиник: фильтр не должен прятать таб «Клиники».
 const tabs = computed(() => {
 	const result = [];
-	if (medicalServiceClinics.value.length > 0) {
+	if (allMedicalServiceClinics.value.length > 0) {
 		result.push({ id: 'clinics', label: t('TabClinics') });
 	}
 	if (hasTariffs.value) {
@@ -97,6 +102,8 @@ const tabs = computed(() => {
 	return result;
 });
 
+// Заголовок, описание и JSON-LD — на отфильтрованном списке. cityIds сидит
+// в URL, поэтому каждый город — отдельная каноническая страница со своим SEO.
 const pageTitle = computed(() => {
 	if (!isFound.value) {
 		return '';
@@ -156,6 +163,15 @@ const pageDescription = computed(() => {
 		: t('MedicalServiceDescriptionDefault', { name });
 });
 
+const heroTitle = computed(() => {
+	const name = medicalServiceData.value?.name ?? '';
+	if (cityIds.value.length !== 1) return name;
+	return t('NameInCity', {
+		name,
+		city: t(`city_${cityIds.value[0]}_genitive`),
+	});
+});
+
 // Schema.org for medical service details
 const schemaOrgStore = useSchemaOrgStore();
 
@@ -195,7 +211,7 @@ watchEffect(() => {
 				pageTitle: pageTitle.value,
 				pageDescription: pageDescription.value,
 				clinics: medicalServiceClinics.value,
-				clinicPrices: medicalServiceData.value.clinicPrices,
+				clinicPrices: filteredClinicPrices.value,
 				getCityName,
 			}),
 			buildBreadcrumbsSchema(serviceUrl, [
@@ -219,7 +235,7 @@ watchEffect(() => {
 	>
 		<template #hero v-if="medicalServiceData">
 			<div class="medical-service-hero">
-				<h1 class="medical-service-name">{{ medicalServiceData.name }}</h1>
+				<h1 class="medical-service-name">{{ heroTitle }}</h1>
 				<div
 					v-if="medicalServiceData.localName"
 					class="medical-service-local-name"
@@ -241,24 +257,15 @@ watchEffect(() => {
 		</template>
 
 		<template #sections>
-			<EntityPageSection
-				v-if="medicalServiceClinics.length > 0"
-				sectionId="clinics"
+			<EntityPageClinicsSection
+				v-if="allMedicalServiceClinics.length > 0"
+				v-model:cityIds="cityIds"
+				:allClinics="allMedicalServiceClinics"
+				:clinics="medicalServiceClinics"
+				:clinicPrices="medicalServiceData?.clinicPrices"
 				:title="t('TabClinics')"
-				:count="medicalServiceClinics.length"
-			>
-				<template #icon><IconClinic :size="20" /></template>
-				<div class="clinics-list">
-					<ClinicSummary
-						v-for="clinic in medicalServiceClinics"
-						:key="clinic.id"
-						:clinic="clinic"
-						:priceInfo="getPriceInfo(clinic.id)"
-						:showPrice="true"
-						@show-on-map="showClinicOnMap(clinic)"
-					/>
-				</div>
-			</EntityPageSection>
+				@show-on-map="showClinicOnMap"
+			/>
 
 			<EntityPageSection
 				v-if="hasTariffs"
@@ -330,12 +337,6 @@ watchEffect(() => {
 	flex-wrap: wrap;
 	gap: var(--spacing-xs);
 	margin-top: var(--spacing-md);
-}
-
-.clinics-list {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-lg);
 }
 
 .tariff-cards {

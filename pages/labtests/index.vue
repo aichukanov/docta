@@ -232,6 +232,7 @@ watchEffect(() => {
 				:itemSlug="item.slug"
 				detailsRouteName="labtests-labTestSlug"
 				detailsParamName="labTestSlug"
+				:filterCityIds="cityIds"
 			/>
 		</template>
 	</ListPage>

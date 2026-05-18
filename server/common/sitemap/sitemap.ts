@@ -1,7 +1,11 @@
 import { SitemapLink } from './utils';
 import { locales } from '~/composables/use-locale';
 import { getRegionalUrl } from '~/common/url-utils';
-import { SITE_URL, REVIEWS_THRESHOLD } from '~/common/constants';
+import {
+	SITE_URL,
+	REVIEWS_THRESHOLD,
+	SITEMAP_DETAIL_CITY_MIN_CLINICS,
+} from '~/common/constants';
 import { getDoctorList } from '~/server/api/doctors/list';
 import { getLabTestList } from '~/server/api/labtests/list';
 import { getMedicalServiceList } from '~/server/api/services/list';
@@ -135,7 +139,9 @@ export async function generateSitemapPage(sitemapIndex: number) {
 
 	// === Lab Tests ===
 	const { items: labTests } = await getLabTestList();
-	const labTestFilters = await getLabTestSitemapFilters();
+	const labTestFilters = await getLabTestSitemapFilters(
+		SITEMAP_DETAIL_CITY_MIN_CLINICS,
+	);
 
 	const labTestsPageLink: SitemapLink = menuItemToLinks('labtests');
 
@@ -155,9 +161,22 @@ export async function generateSitemapPage(sitemapIndex: number) {
 			}),
 		);
 
+	// Город-варианты деталей анализа: `/labtests/{slug}?cityIds={cityId}`,
+	// только для пар, где у анализа есть ≥ SITEMAP_DETAIL_CITY_MIN_CLINICS клиник в городе.
+	const labTestCityLinks: SitemapLink[] =
+		labTestFilters.entityCityCombinations.map((combo) =>
+			menuItemToLinks(
+				`${SITE_URL}/labtests/${combo.slug}`,
+				{ cityIds: combo.cityId },
+				true,
+			),
+		);
+
 	// === Medical Services ===
 	const { items: medicalServices } = await getMedicalServiceList();
-	const medicalServiceFilters = await getMedicalServiceSitemapFilters();
+	const medicalServiceFilters = await getMedicalServiceSitemapFilters(
+		SITEMAP_DETAIL_CITY_MIN_CLINICS,
+	);
 
 	const medicalServicesPageLink: SitemapLink = menuItemToLinks('services');
 
@@ -176,6 +195,17 @@ export async function generateSitemapPage(sitemapIndex: number) {
 				serviceCategoryIds: combo.categoryId,
 				cityIds: combo.cityId,
 			}),
+		);
+
+	// Город-варианты деталей услуги: `/services/{slug}?cityIds={cityId}`,
+	// только для пар, где у услуги есть ≥ SITEMAP_DETAIL_CITY_MIN_CLINICS клиник в городе.
+	const medicalServiceCityLinks: SitemapLink[] =
+		medicalServiceFilters.entityCityCombinations.map((combo) =>
+			menuItemToLinks(
+				`${SITE_URL}/services/${combo.slug}`,
+				{ cityIds: combo.cityId },
+				true,
+			),
 		);
 
 	// === Reviews pages ===
@@ -258,16 +288,18 @@ export async function generateSitemapPage(sitemapIndex: number) {
 		...specialtyLinks,
 		...specialtyCityLinks,
 		...specialtyLanguageLinks,
-		// Lab Tests: страницы + категории + категория+город
+		// Lab Tests: страницы + категории + категория+город + деталь+город
 		labTestsPageLink,
 		...labTestLinks,
 		...labTestCategoryLinks,
 		...labTestCategoryCityLinks,
-		// Medical Services: страницы + категории + категория+город
+		...labTestCityLinks,
+		// Medical Services: страницы + категории + категория+город + деталь+город
 		medicalServicesPageLink,
 		...medicalServiceLinks,
 		...medicalServiceCategoryLinks,
 		...medicalServiceCategoryCityLinks,
+		...medicalServiceCityLinks,
 		// Medicines: страницы + ATC группа + вещество+ATC
 		medicinesPageLink,
 		...medicineLinks,

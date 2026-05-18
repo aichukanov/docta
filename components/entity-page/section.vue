@@ -9,16 +9,21 @@ defineProps<{
 
 <template>
 	<section :id="sectionId" class="entity-section">
-		<EntityPageSectionTitle
-			v-if="title"
-			:title="title"
-			:count="count"
-			:link="link"
-		>
-			<template v-if="$slots.icon" #icon>
-				<slot name="icon" />
-			</template>
-		</EntityPageSectionTitle>
+		<header v-if="title || $slots.actions" class="entity-section__header">
+			<EntityPageSectionTitle
+				v-if="title"
+				:title="title"
+				:count="count"
+				:link="link"
+			>
+				<template v-if="$slots.icon" #icon>
+					<slot name="icon" />
+				</template>
+			</EntityPageSectionTitle>
+			<div v-if="$slots.actions" class="entity-section__actions">
+				<slot name="actions" />
+			</div>
+		</header>
 		<slot />
 	</section>
 </template>
@@ -34,6 +39,30 @@ defineProps<{
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-lg);
+}
+
+.entity-section__header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--spacing-md);
+}
+
+.entity-section__actions {
+	flex: 0 1 auto;
+	min-width: 220px;
+	max-width: 280px;
+	margin-left: auto;
+}
+
+@media (max-width: 600px) {
+	.entity-section__actions {
+		flex: 1 1 100%;
+		min-width: 0;
+		max-width: 100%;
+		margin-left: 0;
+	}
 }
 
 @media (max-width: 500px) {

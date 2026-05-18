@@ -22,6 +22,7 @@ interface ListItem {
 	localName?: string;
 	synonyms?: string[];
 	clinicIds?: string;
+	clinicCount?: number;
 	clinicPrices?: ClinicPrice[];
 	clinicServices?: ClinicServicesMap;
 }
@@ -269,11 +270,13 @@ onMounted(async () => {
 										:itemId="item.id"
 										:itemSlug="item.slug"
 										:clinicIds="item.clinicIds"
+										:clinicCount="item.clinicCount"
 										:clinicPrices="item.clinicPrices"
 										:detailsRouteName="detailsRouteName"
 										:detailsParamName="detailsParamName"
 										:clinicServices="item.clinicServices"
 										:showPrice="showPrice"
+										:filterCityIds="cityIds"
 										@show-on-map="showClinicOnMap($event)"
 									>
 										<slot name="item" :item="item" />

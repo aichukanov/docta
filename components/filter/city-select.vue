@@ -1,5 +1,5 @@
 <template>
-	<FilterWrapper :label="t('City')">
+	<FilterWrapper :label="hideLabel ? undefined : t('City')">
 		<el-select
 			ref="selectRef"
 			v-model="cityIds"
@@ -33,6 +33,11 @@ const props = withDefaults(
 	defineProps<{
 		value: number[];
 		multiple?: boolean;
+		// Если передан — селект показывает только эти города и для каждого
+		// дописывает количество в скобках (для detail-страниц с клиник-фильтром).
+		availableCities?: Array<{ value: number; count: number }>;
+		// Прячет верхний label «Город» — нужно, когда селект встроен в шапку секции.
+		hideLabel?: boolean;
 	}>(),
 	{
 		multiple: true,
@@ -52,13 +57,21 @@ const cityIds = computed({
 	},
 });
 
-const cities = computed(() =>
-	Object.values(CityId)
+const cities = computed(() => {
+	if (props.availableCities) {
+		return props.availableCities
+			.map(({ value, count }) => ({
+				value,
+				text: `${t(`city_${value}`)} (${count})`,
+			}))
+			.sort((a, b) => a.text.localeCompare(b.text));
+	}
+	return Object.values(CityId)
 		.filter(Number)
 		.map((key) => ({
 			text: t(`city_${key}`),
 			value: key,
 		}))
-		.sort((a, b) => a.text.localeCompare(b.text)),
-);
+		.sort((a, b) => a.text.localeCompare(b.text));
+});
 </script>

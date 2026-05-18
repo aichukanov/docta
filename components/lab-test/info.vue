@@ -1,21 +1,30 @@
 <script setup lang="ts">
-import { getRegionalQuery } from '~/common/url-utils';
+import { getDetailLinkQuery } from '~/common/url-utils';
 import labTestI18n from '~/i18n/labtest';
 import labTestCategoryI18n from '~/i18n/labtest-category';
 import { combineI18nMessages } from '~/i18n/utils';
 import { toCyrillic } from '~/common/serbian-transliteration';
 
-const props = defineProps<{
-	name: string;
-	localName?: string;
-	synonyms?: string[];
-	categoryIds?: number[];
-	short?: boolean;
-	itemId?: number;
-	itemSlug?: string;
-	detailsRouteName?: string;
-	detailsParamName?: string;
-}>();
+const props = withDefaults(
+	defineProps<{
+		name: string;
+		localName?: string;
+		synonyms?: string[];
+		categoryIds?: number[];
+		short?: boolean;
+		itemId?: number;
+		itemSlug?: string;
+		detailsRouteName?: string;
+		detailsParamName?: string;
+		// Активный city-фильтр на listing-странице. Переносим в URL детальной,
+		// чтобы выбор пользователя сохранялся и у каждого города был свой
+		// канонический URL.
+		filterCityIds?: number[];
+	}>(),
+	{
+		filterCityIds: () => [],
+	},
+);
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -29,7 +38,7 @@ const detailsLink = computed(() => {
 	return {
 		name: props.detailsRouteName,
 		params: { [props.detailsParamName]: props.itemSlug },
-		query: getRegionalQuery(locale.value),
+		query: getDetailLinkQuery(locale.value, props.filterCityIds),
 	};
 });
 </script>

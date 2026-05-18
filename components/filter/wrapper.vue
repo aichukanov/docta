@@ -1,13 +1,13 @@
 <template>
 	<div class="filter-group">
-		<label class="filter-label">{{ label }}</label>
+		<label v-if="label" class="filter-label">{{ label }}</label>
 		<slot />
 	</div>
 </template>
 
 <script setup lang="ts">
 defineProps<{
-	label: string;
+	label?: string;
 }>();
 </script>
 

@@ -65,3 +65,22 @@ export function getRegionalUrl(
 ) {
 	return updateQueryInUrl(url, query, getRegionalQuery(lang));
 }
+
+/**
+ * Query для ссылки listing → detail-страницы: всегда regional (`lang`),
+ * плюс активный фильтр городов, если он есть. Каждый город даёт свой
+ * канонический URL детальной — нужно и для SEO, и чтобы выбор пользователя
+ * сохранялся при переходе.
+ */
+export function getDetailLinkQuery(
+	lang: string,
+	filterCityIds?: readonly number[],
+): Record<string, string | string[] | undefined> {
+	const query: Record<string, string | string[] | undefined> = {
+		...getRegionalQuery(lang),
+	};
+	if (filterCityIds?.length) {
+		query.cityIds = filterCityIds.map(String);
+	}
+	return query;
+}

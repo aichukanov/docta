@@ -7,6 +7,9 @@ export default {
 			AnyCity: 'Any city',
 			And: 'and',
 			InMontenegro: 'Montenegro',
+			// Шаблон для H1 detail-страниц, когда выбран один город.
+			// `{city}` — заполняется формой city_${id}_genitive.
+			NameInCity: '{name} in {city}',
 
 			[`city_${CityId.PODGORICA}`]: 'Podgorica',
 			[`city_${CityId.PODGORICA}_genitive`]: 'Podgorica',
@@ -44,6 +47,7 @@ export default {
 			AnyCity: 'Любой город',
 			And: 'и',
 			InMontenegro: 'Черногория',
+			NameInCity: '{name} в {city}',
 
 			[`city_${CityId.PODGORICA}`]: 'Подгорица',
 			[`city_${CityId.PODGORICA}_genitive`]: 'Подгорице',
@@ -81,6 +85,7 @@ export default {
 			AnyCity: 'Bilo koji grad',
 			And: 'i',
 			InMontenegro: 'Crna Gora',
+			NameInCity: '{name} u {city}',
 
 			[`city_${CityId.PODGORICA}`]: 'Podgorica',
 			[`city_${CityId.PODGORICA}_genitive`]: 'Podgorici',
@@ -125,6 +130,7 @@ export default {
 			AnyCity: 'Beliebiger Ort',
 			And: 'und',
 			InMontenegro: 'Montenegro',
+			NameInCity: '{name} in {city}',
 
 			[`city_${CityId.PODGORICA}`]: 'Podgorica',
 			[`city_${CityId.PODGORICA}_genitive`]: 'Podgorica',
@@ -162,6 +168,8 @@ export default {
 			AnyCity: 'Herhangi bir şehir',
 			And: 've',
 			InMontenegro: 'Karadağ',
+			// Турецкий порядок: «город'de название» — city_${id}_genitive уже несёт суффикс 'da/'de/'ta.
+			NameInCity: '{city} {name}',
 
 			[`city_${CityId.PODGORICA}`]: 'Podgorica',
 			[`city_${CityId.PODGORICA}_genitive`]: "Podgorica'da",
@@ -199,6 +207,7 @@ export default {
 			AnyCity: 'Било који град',
 			And: 'и',
 			InMontenegro: 'Црна Гора',
+			NameInCity: '{name} у {city}',
 
 			[`city_${CityId.PODGORICA}`]: 'Подгорица',
 			[`city_${CityId.PODGORICA}_genitive`]: 'Подгорици',

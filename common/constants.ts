@@ -46,6 +46,19 @@ export const LEGAL_ENTITY = {
 // Размер страницы для списков
 export const LIST_PAGE_SIZE = 20;
 
+// Максимум клиник в карточке услуги/анализа/лекарства на listing-странице.
+// Сверх этого числа выводится ссылка «показать все» на страницу деталей,
+// а бэкенд возвращает только это число clinicIds/clinicPrices (плюс clinicCount —
+// общее число клиник для подписи кнопки).
+export const LIST_CARD_MAX_CLINICS = 3;
+
+// Минимум клиник в городе, чтобы пара (entity, city) попадала в sitemap
+// как отдельный URL `/labtests/{slug}?cityIds={cityId}` (и аналогично для
+// services). Ниже порога — thin page, не хотим раздувать индекс.
+// Снизим, когда детальные страницы смогут быть «толстыми» и без подробной
+// инфы о клиниках.
+export const SITEMAP_DETAIL_CITY_MIN_CLINICS = 3;
+
 // Порог для создания отдельной страницы отзывов
 // Если отзывов > REVIEWS_THRESHOLD, создаётся /reviews/ подстраница
 export const REVIEWS_THRESHOLD = 5;

@@ -12,7 +12,7 @@ import {
 	validateCityIds,
 	validateServiceCategoryIds,
 } from '~/common/validation';
-import { LIST_PAGE_SIZE } from '~/common/constants';
+import { LIST_PAGE_SIZE, LIST_CARD_MAX_CLINICS } from '~/common/constants';
 
 export default defineEventHandler(async (event): Promise<ClinicServiceList> => {
 	try {
@@ -218,13 +218,26 @@ export async function getMedicalServiceList(
 			name_tr,
 			...rest
 		} = row;
+		// Listing-карточка показывает только первые LIST_CARD_MAX_CLINICS клиник,
+		// поэтому отдаём только их id/цены — остальное доступно на странице деталей.
+		const allClinicIds = row.clinicIds
+			? String(row.clinicIds).split(',').filter(Boolean)
+			: [];
+		const clinicCount = allClinicIds.length;
+		const limitedIds = new Set(allClinicIds.slice(0, LIST_CARD_MAX_CLINICS));
+		const limitedClinicIds = Array.from(limitedIds).join(',');
+		const allClinicPrices = parseClinicPricesData(row.clinicPricesData);
+		const limitedClinicPrices = allClinicPrices.filter((p) =>
+			limitedIds.has(String(p.clinicId)),
+		);
 		return {
 			...rest,
 			id: row.id,
 			name: name || '',
 			localName: localName || '',
-			clinicIds: row.clinicIds,
-			clinicPrices: parseClinicPricesData(row.clinicPricesData),
+			clinicIds: limitedClinicIds,
+			clinicCount,
+			clinicPrices: limitedClinicPrices,
 			categoryIds: row.categoryIds
 				? row.categoryIds.split(',').map(Number)
 				: [],

@@ -72,7 +72,12 @@ export interface ClinicList {
 export interface ClinicServiceItem {
 	id: number;
 	slug: string;
+	// На listing-страницах содержит только первые LIST_CARD_MAX_CLINICS id (см. common/constants.ts).
+	// Полный список клиник доступен на странице деталей.
 	clinicIds: string;
+	// Общее число клиник, в которых доступна услуга/анализ/лекарство.
+	// Заполняется backend-ом на listing-эндпоинтах и используется для подписи "Показать все клиники (N)".
+	clinicCount?: number;
 	name: string;
 	localName: string;
 }

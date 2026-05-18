@@ -92,8 +92,17 @@ export async function getMedicalServiceList(
 	if (body.name && validateName(body, 'api/services/list')) {
 		const nameField = getLocalizedNameField(locale) || 'name_en';
 		const namePattern = `%${body.name}%`;
+		// Match against tariff codes too (e.g. "J09001", "A05Z") so users can
+		// search by FZOCG code. Codes are short alpha-numeric strings; we
+		// only enable the lookup when the query looks code-like, to avoid
+		// noise from short name fragments.
+		const trimmedName = body.name.trim();
+		const codeLike = /^[A-Z0-9]{2,8}$/i.test(trimmedName);
+		const tariffCodeClause = codeLike
+			? ` OR EXISTS (SELECT 1 FROM medical_service_tariffs t_search WHERE t_search.medical_service_id = ms.id AND t_search.code = ?)`
+			: '';
 		whereFilters.push(
-			`(ms.name_en LIKE ? OR ms.${nameField} LIKE ? OR ms.name_sr LIKE ? OR ms.name_sr_cyrl LIKE ? OR ms.name_ru LIKE ? OR ms.name_de LIKE ? OR ms.name_tr LIKE ?)`,
+			`(ms.name_en LIKE ? OR ms.${nameField} LIKE ? OR ms.name_sr LIKE ? OR ms.name_sr_cyrl LIKE ? OR ms.name_ru LIKE ? OR ms.name_de LIKE ? OR ms.name_tr LIKE ?${tariffCodeClause})`,
 		);
 		queryParams.push(
 			namePattern,
@@ -104,6 +113,9 @@ export async function getMedicalServiceList(
 			namePattern,
 			namePattern,
 		);
+		if (codeLike) {
+			queryParams.push(trimmedName.toUpperCase());
+		}
 	}
 
 	const whereFiltersString =

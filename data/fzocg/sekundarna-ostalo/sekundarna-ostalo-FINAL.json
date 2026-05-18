@@ -8,12 +8,14 @@
     "number": "01-4396",
     "note": "Cjenovnik br. 01-4396 od 29.07.2015. godine"
   },
-  "effective_from": null,
-  "source_pdf": null,
-  "signed": null,
-  "supersedes": null,
+  "effective_from": "2015-07-29",
+  "source_pdf": "15846071842.-Cjenovnik-zdravstvenih-usluga-na-sekundarnom-i.pdf",
+  "signed": {
+    "date": "2015-07-29",
+    "number": "01-4596"
+  },
   "merge_info": {
-    "merge_date": "2026-05-13",
+    "merge_date": "2026-05-15",
     "paddle_engine": "paddleocr 3.5.0 / PP-StructureV3",
     "paddle_items": 3841,
     "llm_items": 3939,
@@ -2104,6 +2106,86 @@
       "D01068",
       "D01069",
       "H04001"
+    ],
+    "sections_cleaned": [
+      {
+        "code": "D07009",
+        "from": "Operacija zadnjeg segmenta oka - poslije D06145",
+        "to_section": "47. OPERACIJE - OFTALMOLOGIJA",
+        "to_subsection": "Operacija zadnjeg segmenta oka"
+      },
+      {
+        "code": "D07001",
+        "from": "Operacija prednjeg segmenta oka (bez katarakte) - poslije D06145",
+        "to_section": "47. OPERACIJE - OFTALMOLOGIJA",
+        "to_subsection": "Operacija prednjeg segmenta oka (bez katarakte)"
+      },
+      {
+        "code": "D07002",
+        "from": "Operacija prednjeg segmenta oka (bez katarakte) - poslije D06145",
+        "to_section": "47. OPERACIJE - OFTALMOLOGIJA",
+        "to_subsection": "Operacija prednjeg segmenta oka (bez katarakte)"
+      },
+      {
+        "code": "D07003",
+        "from": "Operacija prednjeg segmenta oka (bez katarakte) - poslije D06145",
+        "to_section": "47. OPERACIJE - OFTALMOLOGIJA",
+        "to_subsection": "Operacija prednjeg segmenta oka (bez katarakte)"
+      },
+      {
+        "code": "D07004",
+        "from": "Operacija prednjeg segmenta oka (bez katarakte) - poslije D06145",
+        "to_section": "47. OPERACIJE - OFTALMOLOGIJA",
+        "to_subsection": "Operacija prednjeg segmenta oka (bez katarakte)"
+      },
+      {
+        "code": "D07005",
+        "from": "Operacija zadnjeg segmenta oka - poslije D06145",
+        "to_section": "47. OPERACIJE - OFTALMOLOGIJA",
+        "to_subsection": "Operacija zadnjeg segmenta oka"
+      },
+      {
+        "code": "D07006",
+        "from": "Operacija zadnjeg segmenta oka - poslije D06145",
+        "to_section": "47. OPERACIJE - OFTALMOLOGIJA",
+        "to_subsection": "Operacija zadnjeg segmenta oka"
+      },
+      {
+        "code": "D07007",
+        "from": "Operacija zadnjeg segmenta oka - poslije D06145",
+        "to_section": "47. OPERACIJE - OFTALMOLOGIJA",
+        "to_subsection": "Operacija zadnjeg segmenta oka"
+      },
+      {
+        "code": "D07008",
+        "from": "Operacija zadnjeg segmenta oka - poslije D06145",
+        "to_section": "47. OPERACIJE - OFTALMOLOGIJA",
+        "to_subsection": "Operacija zadnjeg segmenta oka"
+      },
+      {
+        "code": "D07011",
+        "from": "Operacija zadnjeg segmenta oka - poslije D07009",
+        "to_section": "47. OPERACIJE - OFTALMOLOGIJA",
+        "to_subsection": "Operacija zadnjeg segmenta oka"
+      },
+      {
+        "code": "K03181",
+        "from": "Mikrobiološka dijagnostika - Molekularna dijagnostika",
+        "to_section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
+        "to_subsection": "Mikrobiološka dijagnostika - Molekularna dijagnostika"
+      },
+      {
+        "code": "D24025",
+        "from": "Ortopedija vilica sa laboratorijom - poslije D24025 (note: code D24025 in source text appears to be the predecessor refe",
+        "to_section": "67. STOMATOLOGIJA",
+        "to_subsection": "Ortopedija vilica sa laboratorijom"
+      },
+      {
+        "code": "J07014",
+        "from": "tačka 6 (Radiološka dijagnostika - ULTRAZVUČNA DIJAGNOSTIKA)",
+        "to_section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+        "to_subsection": "ULTRAZVUČNA DIJAGNOSTIKA"
+      }
     ],
     "llm_only_codes": [
       "Y04014",
@@ -15537,6 +15619,22 @@
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
+    },
+    {
+      "code": "K03181",
+      "name": "Ispitivanje prisustva novog korona virusa (SARS-CoV-2) real-time PCR tehnikom",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 40.0,
+      "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "Mikrobiološka dijagnostika - Molekularna dijagnostika",
+      "name_paddle": "HIcIuTHBaILe pnCyCTBa HOBOT KOpOHa BHpyCa (SARS- CoV-2) real-time PCR rexHnKOM",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-as-ambulanta-via-llm-hint",
+        "section": "cleaned-from-llm-meta",
+        "amendment": "16275892028.-Odluka-o-izmjeni-Cjenovnika-STN-nova-cij.-PCR-test.items.json"
+      },
+      "amended_from": "2021-08-01"
     },
     {
       "code": "K04001",
@@ -42332,6 +42430,164 @@
       }
     },
     {
+      "code": "D07001",
+      "name": "Ultra B2",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 336.0,
+      "section": "47. OPERACIJE - OFTALMOLOGIJA",
+      "subsection": "Operacija prednjeg segmenta oka (bez katarakte)",
+      "name_paddle": "Ultra B2-",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-as-ambulanta-via-llm-hint",
+        "section": "cleaned-from-llm-meta",
+        "amendment": "15846072455.-Odluka-o-izmjeni-Cjenovnika-na-STN.items.json"
+      },
+      "amended_from": "2019-10-01"
+    },
+    {
+      "code": "D07002",
+      "name": "Sekundarna implantacija IOL",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 567.0,
+      "section": "47. OPERACIJE - OFTALMOLOGIJA",
+      "subsection": "Operacija prednjeg segmenta oka (bez katarakte)",
+      "name_paddle": "Sekundarna implantaciia lOL",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-as-ambulanta-via-llm-hint",
+        "section": "cleaned-from-llm-meta",
+        "amendment": "15846072455.-Odluka-o-izmjeni-Cjenovnika-na-STN.items.json"
+      },
+      "amended_from": "2019-10-01"
+    },
+    {
+      "code": "D07003",
+      "name": "Keratoplastika",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 2142.0,
+      "section": "47. OPERACIJE - OFTALMOLOGIJA",
+      "subsection": "Operacija prednjeg segmenta oka (bez katarakte)",
+      "name_paddle": "Keratoplastika.",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "paddle-as-ambulanta-via-llm-hint",
+        "section": "cleaned-from-llm-meta",
+        "amendment": "15846072455.-Odluka-o-izmjeni-Cjenovnika-na-STN.items.json"
+      },
+      "amended_from": "2019-10-01"
+    },
+    {
+      "code": "D07004",
+      "name": "INTACS - intraokularni prsten",
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 728.0,
+      "section": "47. OPERACIJE - OFTALMOLOGIJA",
+      "subsection": "Operacija prednjeg segmenta oka (bez katarakte)",
+      "_sources": {
+        "name": "llm-diacritic",
+        "price": "paddle-as-ambulanta-via-llm-hint",
+        "section": "cleaned-from-llm-meta",
+        "amendment": "15846072455.-Odluka-o-izmjeni-Cjenovnika-na-STN.items.json"
+      },
+      "amended_from": "2019-10-01"
+    },
+    {
+      "code": "D07005",
+      "name": "Vađenje plombe sa plastikom konjuktive",
+      "section": "47. OPERACIJE - OFTALMOLOGIJA",
+      "subsection": "Operacija zadnjeg segmenta oka",
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "cleaned-from-llm-meta"
+      },
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 238,
+      "price_operacija_eur": null,
+      "price_anestezija_eur": null,
+      "price_ukupno_eur": null
+    },
+    {
+      "code": "D07006",
+      "name": "Evakuacija silikonskog ulja",
+      "section": "47. OPERACIJE - OFTALMOLOGIJA",
+      "subsection": "Operacija zadnjeg segmenta oka",
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "cleaned-from-llm-meta"
+      },
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 498,
+      "price_operacija_eur": null,
+      "price_anestezija_eur": null,
+      "price_ukupno_eur": null
+    },
+    {
+      "code": "D07007",
+      "name": "Zamjena silikonskog ulja",
+      "section": "47. OPERACIJE - OFTALMOLOGIJA",
+      "subsection": "Operacija zadnjeg segmenta oka",
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "cleaned-from-llm-meta"
+      },
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 672,
+      "price_operacija_eur": null,
+      "price_anestezija_eur": null,
+      "price_ukupno_eur": null
+    },
+    {
+      "code": "D07008",
+      "name": "Operacija ablacije mrežnjače",
+      "section": "47. OPERACIJE - OFTALMOLOGIJA",
+      "subsection": "Operacija zadnjeg segmenta oka",
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "cleaned-from-llm-meta"
+      },
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 1125,
+      "price_operacija_eur": null,
+      "price_anestezija_eur": null,
+      "price_ukupno_eur": null
+    },
+    {
+      "code": "D07009",
+      "name": "Vitrektomija",
+      "price_ambulanta_eur": 1355,
+      "section": "47. OPERACIJE - OFTALMOLOGIJA",
+      "subsection": "Operacija zadnjeg segmenta oka",
+      "name_paddle": "D07008",
+      "_sources": {
+        "name": "llm-substantive",
+        "price": "llm-fallback",
+        "section": "cleaned-from-llm-meta",
+        "amendment": "15846071973.-Odluka-o-izmjeni-i-dopuni-Cjenovnika-na-STN.items.json"
+      },
+      "amended_from": "2017-01-01"
+    },
+    {
+      "code": "D07011",
+      "name": "Vitrektomija sa kataraktom",
+      "section": "47. OPERACIJE - OFTALMOLOGIJA",
+      "subsection": "Operacija zadnjeg segmenta oka",
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "cleaned-from-llm-meta"
+      },
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 1610,
+      "price_operacija_eur": null,
+      "price_anestezija_eur": null,
+      "price_ukupno_eur": null
+    },
+    {
       "code": "D05001",
       "name": "Artroplastika acetabuluma i proksimalnog dijela femura (cijeli kuk)",
       "price_operacija_eur": 260.0,
@@ -50341,6 +50597,22 @@
       "amended_from": "2026-05-01"
     },
     {
+      "code": "J07014",
+      "name": "Ultrazvuk pregled vrata",
+      "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
+      "subsection": "ULTRAZVUČNA DIJAGNOSTIKA",
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "cleaned-from-llm-meta"
+      },
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 13.94,
+      "price_operacija_eur": null,
+      "price_anestezija_eur": null,
+      "price_ukupno_eur": null
+    },
+    {
       "code": "J07015",
       "name": "Ultrazvuk pregled vrata (pljuvačne žlijezde i meka tkiva)",
       "price_odjeljenje_eur": 14.5,
@@ -55919,6 +56191,22 @@
       }
     },
     {
+      "code": "D24025",
+      "name": "Izrada retencionog aparata",
+      "section": "67. STOMATOLOGIJA",
+      "subsection": "Ortopedija vilica sa laboratorijom",
+      "_sources": {
+        "name": "llm-only",
+        "price": "llm-only",
+        "section": "cleaned-from-llm-meta"
+      },
+      "price_odjeljenje_eur": null,
+      "price_ambulanta_eur": 43.29,
+      "price_operacija_eur": null,
+      "price_anestezija_eur": null,
+      "price_ukupno_eur": null
+    },
+    {
       "code": "D25001",
       "name": "Prvi specijalistički pregled",
       "price_odjeljenje_eur": null,
@@ -58711,212 +58999,6 @@
         "price": "paddle",
         "section": "llm"
       }
-    },
-    {
-      "code": "K03181",
-      "name": "Ispitivanje prisustva novog korona virusa (SARS-CoV-2) real-time PCR tehnikom",
-      "price_odjeljenje_eur": null,
-      "price_ambulanta_eur": 40.0,
-      "section": "Mikrobiološka dijagnostika - Molekularna dijagnostika",
-      "subsection": null,
-      "name_paddle": "HIcIuTHBaILe pnCyCTBa HOBOT KOpOHa BHpyCa (SARS- CoV-2) real-time PCR rexHnKOM",
-      "_sources": {
-        "name": "llm-substantive",
-        "price": "paddle-as-ambulanta-via-llm-hint",
-        "section": "llm",
-        "amendment": "16275892028.-Odluka-o-izmjeni-Cjenovnika-STN-nova-cij.-PCR-test.items.json"
-      },
-      "amended_from": "2021-08-01"
-    },
-    {
-      "code": "D07001",
-      "name": "Ultra B2",
-      "price_odjeljenje_eur": null,
-      "price_ambulanta_eur": 336.0,
-      "section": "Operacija prednjeg segmenta oka (bez katarakte) - poslije D06145",
-      "subsection": null,
-      "name_paddle": "Ultra B2-",
-      "_sources": {
-        "name": "llm-substantive",
-        "price": "paddle-as-ambulanta-via-llm-hint",
-        "section": "llm",
-        "amendment": "15846072455.-Odluka-o-izmjeni-Cjenovnika-na-STN.items.json"
-      },
-      "amended_from": "2019-10-01"
-    },
-    {
-      "code": "D07002",
-      "name": "Sekundarna implantacija IOL",
-      "price_odjeljenje_eur": null,
-      "price_ambulanta_eur": 567.0,
-      "section": "Operacija prednjeg segmenta oka (bez katarakte) - poslije D06145",
-      "subsection": null,
-      "name_paddle": "Sekundarna implantaciia lOL",
-      "_sources": {
-        "name": "llm-substantive",
-        "price": "paddle-as-ambulanta-via-llm-hint",
-        "section": "llm",
-        "amendment": "15846072455.-Odluka-o-izmjeni-Cjenovnika-na-STN.items.json"
-      },
-      "amended_from": "2019-10-01"
-    },
-    {
-      "code": "D07003",
-      "name": "Keratoplastika",
-      "price_odjeljenje_eur": null,
-      "price_ambulanta_eur": 2142.0,
-      "section": "Operacija prednjeg segmenta oka (bez katarakte) - poslije D06145",
-      "subsection": null,
-      "name_paddle": "Keratoplastika.",
-      "_sources": {
-        "name": "llm-substantive",
-        "price": "paddle-as-ambulanta-via-llm-hint",
-        "section": "llm",
-        "amendment": "15846072455.-Odluka-o-izmjeni-Cjenovnika-na-STN.items.json"
-      },
-      "amended_from": "2019-10-01"
-    },
-    {
-      "code": "D07004",
-      "name": "INTACS - intraokularni prsten",
-      "price_odjeljenje_eur": null,
-      "price_ambulanta_eur": 728.0,
-      "section": "Operacija prednjeg segmenta oka (bez katarakte) - poslije D06145",
-      "subsection": null,
-      "_sources": {
-        "name": "llm-diacritic",
-        "price": "paddle-as-ambulanta-via-llm-hint",
-        "section": "llm",
-        "amendment": "15846072455.-Odluka-o-izmjeni-Cjenovnika-na-STN.items.json"
-      },
-      "amended_from": "2019-10-01"
-    },
-    {
-      "code": "D07005",
-      "name": "Vađenje plombe sa plastikom konjuktive",
-      "section": "Operacija zadnjeg segmenta oka - poslije D06145",
-      "subsection": null,
-      "_sources": {
-        "name": "llm-only",
-        "price": "llm-only",
-        "section": "llm-only"
-      },
-      "price_odjeljenje_eur": null,
-      "price_ambulanta_eur": 238,
-      "price_operacija_eur": null,
-      "price_anestezija_eur": null,
-      "price_ukupno_eur": null
-    },
-    {
-      "code": "D07006",
-      "name": "Evakuacija silikonskog ulja",
-      "section": "Operacija zadnjeg segmenta oka - poslije D06145",
-      "subsection": null,
-      "_sources": {
-        "name": "llm-only",
-        "price": "llm-only",
-        "section": "llm-only"
-      },
-      "price_odjeljenje_eur": null,
-      "price_ambulanta_eur": 498,
-      "price_operacija_eur": null,
-      "price_anestezija_eur": null,
-      "price_ukupno_eur": null
-    },
-    {
-      "code": "D07007",
-      "name": "Zamjena silikonskog ulja",
-      "section": "Operacija zadnjeg segmenta oka - poslije D06145",
-      "subsection": null,
-      "_sources": {
-        "name": "llm-only",
-        "price": "llm-only",
-        "section": "llm-only"
-      },
-      "price_odjeljenje_eur": null,
-      "price_ambulanta_eur": 672,
-      "price_operacija_eur": null,
-      "price_anestezija_eur": null,
-      "price_ukupno_eur": null
-    },
-    {
-      "code": "D07008",
-      "name": "Operacija ablacije mrežnjače",
-      "section": "Operacija zadnjeg segmenta oka - poslije D06145",
-      "subsection": null,
-      "_sources": {
-        "name": "llm-only",
-        "price": "llm-only",
-        "section": "llm-only"
-      },
-      "price_odjeljenje_eur": null,
-      "price_ambulanta_eur": 1125,
-      "price_operacija_eur": null,
-      "price_anestezija_eur": null,
-      "price_ukupno_eur": null
-    },
-    {
-      "code": "D07009",
-      "name": "Vitrektomija",
-      "price_ambulanta_eur": 1355,
-      "section": "Operacija zadnjeg segmenta oka - poslije D06145",
-      "subsection": null,
-      "name_paddle": "D07008",
-      "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
-        "section": "llm",
-        "amendment": "15846071973.-Odluka-o-izmjeni-i-dopuni-Cjenovnika-na-STN.items.json"
-      },
-      "amended_from": "2017-01-01"
-    },
-    {
-      "code": "D07011",
-      "name": "Vitrektomija sa kataraktom",
-      "section": "Operacija zadnjeg segmenta oka - poslije D07009",
-      "subsection": null,
-      "_sources": {
-        "name": "llm-only",
-        "price": "llm-only",
-        "section": "llm-only"
-      },
-      "price_odjeljenje_eur": null,
-      "price_ambulanta_eur": 1610,
-      "price_operacija_eur": null,
-      "price_anestezija_eur": null,
-      "price_ukupno_eur": null
-    },
-    {
-      "code": "D24025",
-      "name": "Izrada retencionog aparata",
-      "section": "Ortopedija vilica sa laboratorijom - poslije D24025 (note: code D24025 in source text appears to be the predecessor reference; the new added service uses code D24025 per OCR - VERIFY: text says 'poslije D24025 dodaje se nova usluga sa šifrom D24025' which is ambiguous, but per source PDF the new added item displays code D24025)",
-      "subsection": null,
-      "_sources": {
-        "name": "llm-only",
-        "price": "llm-only",
-        "section": "llm-only"
-      },
-      "price_odjeljenje_eur": null,
-      "price_ambulanta_eur": 43.29,
-      "price_operacija_eur": null,
-      "price_anestezija_eur": null,
-      "price_ukupno_eur": null
-    },
-    {
-      "code": "J07014",
-      "name": "Ultrazvuk pregled vrata",
-      "section": "tačka 6 (Radiološka dijagnostika - ULTRAZVUČNA DIJAGNOSTIKA)",
-      "subsection": null,
-      "_sources": {
-        "name": "llm-only",
-        "price": "llm-only",
-        "section": "llm-only"
-      },
-      "price_odjeljenje_eur": null,
-      "price_ambulanta_eur": 13.94,
-      "price_operacija_eur": null,
-      "price_anestezija_eur": null,
-      "price_ukupno_eur": null
     }
   ]
 }

@@ -8,6 +8,7 @@ import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import medicalServiceI18n from '~/i18n/medical-service';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
+import medicalServiceTariffI18n from '~/i18n/medical-service-tariff';
 import { combineI18nMessages } from '~/i18n/utils';
 import type { ClinicData } from '~/interfaces/clinic';
 
@@ -18,6 +19,7 @@ const { t, locale } = useI18n({
 		medicalServiceI18n,
 		cityI18n,
 		medicalServiceCategoryI18n,
+		medicalServiceTariffI18n,
 	]),
 });
 
@@ -80,10 +82,16 @@ const showClinicOnMap = (clinic: ClinicData) => {
 	}
 };
 
+const tariffs = computed(() => medicalServiceData.value?.tariffs ?? []);
+const hasTariffs = computed(() => tariffs.value.length > 0);
+
 const tabs = computed(() => {
 	const result = [];
 	if (medicalServiceClinics.value.length > 0) {
 		result.push({ id: 'clinics', label: t('TabClinics') });
+	}
+	if (hasTariffs.value) {
+		result.push({ id: 'fzocg-tariff', label: t('TabFzocgTariff') });
 	}
 	result.push({ id: 'map', label: t('TabMap') });
 	return result;
@@ -252,6 +260,28 @@ watchEffect(() => {
 				</div>
 			</EntityPageSection>
 
+			<EntityPageSection
+				v-if="hasTariffs"
+				sectionId="fzocg-tariff"
+				:title="t('TabFzocgTariff')"
+				:count="tariffs.length"
+			>
+				<template #icon><IconClinic :size="20" /></template>
+				<aside class="tariff-info">
+					<strong class="tariff-info__lead">
+						{{ t('TariffInfoLead') }}
+					</strong>
+					<p class="tariff-info__body">{{ t('TariffInfoBody') }}</p>
+				</aside>
+				<div class="tariff-cards">
+					<MedicalServiceFzocgTariffCard
+						v-for="tariffItem in tariffs"
+						:key="tariffItem.id"
+						:tariff="tariffItem"
+					/>
+				</div>
+			</EntityPageSection>
+
 			<EntityPageSection sectionId="map" :title="t('TabMap')">
 				<template #icon><IconMapPin :size="20" color="#ffffff" /></template>
 				<div ref="mapSentinel" class="service-map">
@@ -306,6 +336,37 @@ watchEffect(() => {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-lg);
+}
+
+.tariff-cards {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-md);
+}
+
+.tariff-info {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	background: var(--color-primary-bg);
+	border-left: 4px solid var(--color-primary);
+	border-radius: var(--border-radius-lg);
+	padding: var(--spacing-xl) var(--spacing-2xl);
+	margin-bottom: var(--spacing-lg);
+}
+
+.tariff-info__lead {
+	font-size: var(--font-size-2xl);
+	font-weight: var(--font-weight-bold);
+	color: var(--color-text-heading);
+	line-height: 1.3;
+}
+
+.tariff-info__body {
+	margin: 0;
+	font-size: var(--font-size-md);
+	color: var(--color-text-primary);
+	line-height: 1.6;
 }
 
 .service-map {

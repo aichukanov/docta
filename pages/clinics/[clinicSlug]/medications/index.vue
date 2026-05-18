@@ -114,15 +114,6 @@ const pageDescription = computed(() => {
 	return t('MedicationsPageDescription', { name: clinicName.value, count });
 });
 
-const canonicalUrl = computed(() => {
-	const params: string[] = [];
-	const q = getRegionalQuery(locale.value);
-	if (q.lang) params.push(`lang=${q.lang}`);
-	if (currentPage.value > 1) params.push(`page=${currentPage.value}`);
-	const base = `${SITE_URL}/clinics/${clinicSlug.value}/medications`;
-	return params.length ? `${base}?${params.join('&')}` : base;
-});
-
 const robotsMeta = computed(() =>
 	isFiltered.value ? 'noindex, follow' : undefined,
 );
@@ -140,15 +131,11 @@ useSeoMeta({
 	robots: robotsMeta,
 });
 
-useHead({
-	link: [{ key: 'canonical', rel: 'canonical', href: canonicalUrl }],
-});
-
 const schemaOrgStore = useSchemaOrgStore();
 
 watchEffect(() => {
 	if (!clinicData.value || shouldRedirect.value) return;
-	const url = canonicalUrl.value;
+	const url = `${SITE_URL}${route.fullPath}`;
 	const clinicUrl = `${SITE_URL}/clinics/${clinicSlug.value}`;
 	schemaOrgStore.setSchemas([
 		...buildEntityListSchema({

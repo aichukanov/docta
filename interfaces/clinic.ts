@@ -88,6 +88,7 @@ export interface ClinicPrice {
 export interface ClinicServiceWithPrices extends ClinicServiceItem {
 	clinicPrices: ClinicPrice[];
 	categoryIds?: number[];
+	tariffs?: import('./medical-service-tariff').MedicalServiceTariff[];
 }
 
 export interface LabTestItem extends ClinicServiceWithPrices {

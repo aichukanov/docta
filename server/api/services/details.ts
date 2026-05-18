@@ -63,12 +63,34 @@ export default defineEventHandler(
 				medicalServiceQuery,
 				[body.slug],
 			);
-			await connection.end();
 
-			const row = medicalServiceRows[0];
+			const row = (medicalServiceRows as any[])[0];
 			if (!row) {
+				await connection.end();
 				return null;
 			}
+
+			// Reference tariffs (FZOCG and similar). Multiple rows per service —
+			// e.g. a single procedure can be tariffed under both PZZ and sekundarna.
+			// Ordered by tariff_source for stable card sequence.
+			const [tariffRows] = await connection.execute(
+				`SELECT
+					id, tariff_source, code, scheme,
+					price_eur, price_odjeljenje_eur, price_ambulanta_eur,
+					price_operacija_eur, price_anestezija_eur, price_ukupno_eur,
+					coefficient, base_coefficient_eur,
+					name_sr_latin, section, subsection,
+					amended_from, effective_from, source_signed_number
+				FROM medical_service_tariffs
+				WHERE medical_service_id = ?
+				ORDER BY FIELD(tariff_source,
+					'fzocg-pzz','fzocg-sekundarna','fzocg-drg',
+					'fzocg-transfuziologija','fzocg-apotekarska',
+					'fzocg-medicinsko-pomagala','fzocg-van-mreze'
+				), code`,
+				[row.id],
+			);
+			await connection.end();
 
 			// Обрабатываем локализованные имена
 			const { name, localName } = processLocalizedNameForClinicOrDoctor(
@@ -86,6 +108,37 @@ export default defineEventHandler(
 				...rest
 			} = row;
 
+			const tariffs = (tariffRows as any[]).map((t) => ({
+				id: t.id,
+				tariffSource: t.tariff_source,
+				code: t.code,
+				scheme: t.scheme,
+				priceEur: t.price_eur != null ? Number(t.price_eur) : null,
+				priceOdjeljenjeEur:
+					t.price_odjeljenje_eur != null ? Number(t.price_odjeljenje_eur) : null,
+				priceAmbulantaEur:
+					t.price_ambulanta_eur != null ? Number(t.price_ambulanta_eur) : null,
+				priceOperacijaEur:
+					t.price_operacija_eur != null ? Number(t.price_operacija_eur) : null,
+				priceAnestezijaEur:
+					t.price_anestezija_eur != null ? Number(t.price_anestezija_eur) : null,
+				priceUkupnoEur:
+					t.price_ukupno_eur != null ? Number(t.price_ukupno_eur) : null,
+				coefficient: t.coefficient != null ? Number(t.coefficient) : null,
+				baseCoefficientEur:
+					t.base_coefficient_eur != null ? Number(t.base_coefficient_eur) : null,
+				nameSrLatin: t.name_sr_latin,
+				section: t.section,
+				subsection: t.subsection,
+				amendedFrom: t.amended_from
+					? new Date(t.amended_from).toISOString().slice(0, 10)
+					: null,
+				effectiveFrom: t.effective_from
+					? new Date(t.effective_from).toISOString().slice(0, 10)
+					: null,
+				sourceSignedNumber: t.source_signed_number,
+			}));
+
 			return {
 				...rest,
 				id: row.id,
@@ -96,6 +149,7 @@ export default defineEventHandler(
 				categoryIds: row.categoryIds
 					? row.categoryIds.split(',').map(Number)
 					: [],
+				tariffs,
 			};
 		} catch (error) {
 			console.error('API Error - medical service data:', error);

@@ -10,7 +10,6 @@ const props = withDefaults(
 		subpageRouteName: string;
 		categoryQueryKey: string;
 		getCategoryTitle: (categoryId: number) => string;
-		otherLabel: string;
 		viewAllLabel: string;
 		popularLabel?: string;
 		categoriesLabel?: string;
@@ -37,11 +36,7 @@ const topCategories = computed(() => {
 		.filter((c) => !!c.title)
 		.slice(0, props.maxCategories);
 
-	const otherCount = props.summary.categories
-		.filter((c) => c.categoryId == null)
-		.reduce((acc, c) => acc + c.count, 0);
-
-	const rows = named.map((c) => ({
+	return named.map((c) => ({
 		key: `cat-${c.categoryId}`,
 		title: c.title,
 		count: c.count,
@@ -50,20 +45,6 @@ const topCategories = computed(() => {
 			[props.categoryQueryKey]: String(c.categoryId),
 		},
 	}));
-
-	if (otherCount > 0) {
-		rows.push({
-			key: 'other',
-			title: props.otherLabel,
-			count: otherCount,
-			query: {
-				...getRegionalQuery(locale.value),
-				[props.categoryQueryKey]: 'other',
-			},
-		});
-	}
-
-	return rows;
 });
 
 const viewAllLink = computed(() => ({

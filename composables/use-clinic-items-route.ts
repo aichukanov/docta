@@ -24,7 +24,7 @@ export function useClinicItemsRoute(options?: {
 
 	const currentCategory = computed(() => {
 		const raw = route.query.category as string | undefined;
-		if (!raw || raw === 'other') return null;
+		if (!raw) return null;
 		const n = parseInt(raw);
 		return Number.isFinite(n) && n > 0 ? n : null;
 	});

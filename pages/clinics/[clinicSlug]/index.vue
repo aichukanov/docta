@@ -199,13 +199,6 @@ const doctorCategoriesWithTitles = computed(() => ({
 		title: t(`specialty_${cat.categoryId}`),
 		items: cat.items,
 	})),
-	otherCategory:
-		clinicDoctorsBySpecialty.value.itemsWithoutCategory.length > 0
-			? {
-					title: t('OtherDoctors'),
-					items: clinicDoctorsBySpecialty.value.itemsWithoutCategory,
-				}
-			: undefined,
 }));
 
 // Группировка медицинских услуг по категориям с переводами
@@ -219,13 +212,6 @@ const serviceCategoriesWithTitles = computed(() => ({
 		title: t(`medical_service_category_${cat.categoryId}`),
 		items: cat.items,
 	})),
-	otherCategory:
-		clinicMedicalServicesByCategory.value.itemsWithoutCategory.length > 0
-			? {
-					title: t('OtherServices'),
-					items: clinicMedicalServicesByCategory.value.itemsWithoutCategory,
-				}
-			: undefined,
 }));
 
 // Группировка анализов по категориям с переводами
@@ -239,13 +225,6 @@ const labTestCategoriesWithTitles = computed(() => ({
 		title: t(`lab_test_category_${cat.categoryId}`),
 		items: cat.items,
 	})),
-	otherCategory:
-		clinicLabTestsByCategory.value.itemsWithoutCategory.length > 0
-			? {
-					title: t('OtherLabTests'),
-					items: clinicLabTestsByCategory.value.itemsWithoutCategory,
-				}
-			: undefined,
 }));
 
 const getClinicPrice = (clinicPrices?: ClinicPrice[]) => {
@@ -673,7 +652,6 @@ watchEffect(() => {
 					:totalCount="totals.doctors"
 					routeName="doctors"
 					:categories="doctorCategoriesWithTitles.categories"
-					:otherCategory="doctorCategoriesWithTitles.otherCategory"
 					:initialLimit="0"
 				>
 					<template #icon><IconDoctor /></template>
@@ -689,7 +667,6 @@ watchEffect(() => {
 					subpageRouteName="clinics-clinicSlug-doctors"
 					categoryQueryKey="category"
 					:getCategoryTitle="specialtyTitle"
-					:otherLabel="t('OtherDoctors')"
 					:viewAllLabel="t('ViewAllDoctors', { count: totals.doctors })"
 					:popularLabel="t('PopularLabel')"
 					:categoriesLabel="t('BySpecialtyLabel')"
@@ -709,7 +686,6 @@ watchEffect(() => {
 					:totalCount="totals.services"
 					routeName="services"
 					:categories="serviceCategoriesWithTitles.categories"
-					:otherCategory="serviceCategoriesWithTitles.otherCategory"
 				>
 					<template #icon><IconMedicalService /></template>
 					<template #default="{ item }">
@@ -734,7 +710,6 @@ watchEffect(() => {
 					subpageRouteName="clinics-clinicSlug-services"
 					categoryQueryKey="category"
 					:getCategoryTitle="serviceCategoryTitle"
-					:otherLabel="t('OtherServices')"
 					:viewAllLabel="t('ViewAllServices', { count: totals.services })"
 					:popularLabel="t('PopularLabel')"
 					:categoriesLabel="t('ByCategoryLabel')"
@@ -764,7 +739,6 @@ watchEffect(() => {
 					:totalCount="totals.labtests"
 					routeName="labtests"
 					:categories="labTestCategoriesWithTitles.categories"
-					:otherCategory="labTestCategoriesWithTitles.otherCategory"
 				>
 					<template #icon><IconLabTest /></template>
 					<template #default="{ item }">
@@ -788,7 +762,6 @@ watchEffect(() => {
 					subpageRouteName="clinics-clinicSlug-labtests"
 					categoryQueryKey="category"
 					:getCategoryTitle="labtestCategoryTitle"
-					:otherLabel="t('OtherLabTests')"
 					:viewAllLabel="t('ViewAllLabTests', { count: totals.labtests })"
 					:popularLabel="t('PopularLabel')"
 					:categoriesLabel="t('ByCategoryLabel')"
@@ -839,7 +812,6 @@ watchEffect(() => {
 					subpageRouteName="clinics-clinicSlug-medications"
 					categoryQueryKey="category"
 					:getCategoryTitle="() => ''"
-					:otherLabel="''"
 					:viewAllLabel="
 						t('ViewAllMedications', { count: totals.medications })
 					"
@@ -933,9 +905,6 @@ watchEffect(() => {
 		"LabTestsAtClinic": "Lab tests",
 		"MedicationsAtClinic": "Medications",
 		"NoServicesAtClinic": "Information about services at this clinic is not yet available",
-		"OtherServices": "Other services",
-		"OtherDoctors": "Other doctors",
-		"OtherLabTests": "Other lab tests",
 		"TabAbout": "About",
 		"TabContacts": "Contacts",
 		"TabReviews": "Reviews",
@@ -962,9 +931,6 @@ watchEffect(() => {
 		"LabTestsAtClinic": "Анализы",
 		"MedicationsAtClinic": "Лекарства",
 		"NoServicesAtClinic": "У нас пока нет информации об услугах этой клиники",
-		"OtherServices": "Другие услуги",
-		"OtherDoctors": "Другие врачи",
-		"OtherLabTests": "Другие анализы",
 		"TabAbout": "О клинике",
 		"TabContacts": "Контакты",
 		"TabReviews": "Отзывы",
@@ -991,9 +957,6 @@ watchEffect(() => {
 		"LabTestsAtClinic": "Laboruntersuchungen",
 		"MedicationsAtClinic": "Medikamente",
 		"NoServicesAtClinic": "Informationen über die Leistungen dieser Klinik sind noch nicht verfügbar",
-		"OtherServices": "Andere Dienstleistungen",
-		"OtherDoctors": "Andere Ärzte",
-		"OtherLabTests": "Andere Laboruntersuchungen",
 		"TabAbout": "Über uns",
 		"TabContacts": "Kontakte",
 		"TabReviews": "Bewertungen",
@@ -1020,9 +983,6 @@ watchEffect(() => {
 		"LabTestsAtClinic": "Laboratuvar testleri",
 		"MedicationsAtClinic": "İlaçlar",
 		"NoServicesAtClinic": "Bu kliniğin hizmetleri hakkında henüz bilgi bulunmamaktadır",
-		"OtherServices": "Diğer hizmetler",
-		"OtherDoctors": "Diğer doktorlar",
-		"OtherLabTests": "Diğer laboratuvar testleri",
 		"TabAbout": "Hakkında",
 		"TabContacts": "İletişim",
 		"TabReviews": "Değerlendirmeler",
@@ -1049,9 +1009,6 @@ watchEffect(() => {
 		"LabTestsAtClinic": "Laboratorijske analize",
 		"MedicationsAtClinic": "Lekovi",
 		"NoServicesAtClinic": "Trenutno nemamo informacije o uslugama ove klinike",
-		"OtherServices": "Ostale usluge",
-		"OtherDoctors": "Ostali lekari",
-		"OtherLabTests": "Ostale analize",
 		"TabAbout": "O klinici",
 		"TabContacts": "Kontakti",
 		"TabReviews": "Recenzije",
@@ -1078,9 +1035,6 @@ watchEffect(() => {
 		"LabTestsAtClinic": "Лабораторијске анализе",
 		"MedicationsAtClinic": "Лекови",
 		"NoServicesAtClinic": "Тренутно немамо информације о услугама ове клинике",
-		"OtherServices": "Остале услуге",
-		"OtherDoctors": "Остали лекари",
-		"OtherLabTests": "Остале анализе",
 		"TabAbout": "О клиници",
 		"TabContacts": "Контакти",
 		"TabReviews": "Рецензије",

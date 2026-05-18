@@ -11,7 +11,6 @@ const props = defineProps<{
 	totalCount: number;
 	routeName: string;
 	categories: CategoryWithTitle[];
-	otherCategory?: CategoryWithTitle;
 	// 0 — show all items in each category without show-more.
 	initialLimit?: number;
 }>();
@@ -44,17 +43,6 @@ const sectionLink = computed(() => ({
 				:key="index"
 				:title="category.title"
 				:items="category.items"
-				:initialLimit="initialLimit"
-			>
-				<template #default="{ item }">
-					<slot :item="item" />
-				</template>
-			</ClinicCategorySubsection>
-
-			<ClinicCategorySubsection
-				v-if="otherCategory"
-				:title="otherCategory.title"
-				:items="otherCategory.items"
 				:initialLimit="initialLimit"
 			>
 				<template #default="{ item }">

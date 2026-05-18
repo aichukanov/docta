@@ -22,8 +22,8 @@ Items shape:
   }
 
 Usage:
-    py -3.12 server/scripts/kbkotor_to_items.py <input.json> <output.json>
-    py -3.12 server/scripts/kbkotor_to_items.py --all   (process all data/kbkotor/*/paddleocr/*.json)
+    py -3.12 scripts/kbkotor/kbkotor_to_items.py <input.json> <output.json>
+    py -3.12 scripts/kbkotor/kbkotor_to_items.py --all   (process all data/kbkotor/*/paddleocr/*.json)
 """
 import sys, json, re
 from pathlib import Path

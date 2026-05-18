@@ -14,7 +14,7 @@ Strategy:
 
 Inputs:
   data/fzocg/drg-akutno-bolnicko/paddleocr/<base>.items.json
-  data/fzocg/drg-akutno-bolnicko/drg-2025-01-01.json    (LLM source)
+  data/fzocg/drg-akutno-bolnicko/_intermediate/drg-2025-01-01.json    (LLM source)
 
 Output:
   data/fzocg/drg-akutno-bolnicko/drg-akutno-bolnicko-FINAL.json
@@ -31,7 +31,7 @@ ROOT = Path(__file__).resolve().parents[2]
 CAT_DIR = ROOT / 'data' / 'fzocg' / 'drg-akutno-bolnicko'
 
 PADDLE_BASE = CAT_DIR / 'paddleocr' / 'Cjenovnik-zdravstvenih-usluga-po-DRG-od-01.01.2025.g.items.json'
-LLM_SOURCE  = CAT_DIR / 'drg-2025-01-01.json'
+LLM_SOURCE  = CAT_DIR / '_intermediate' / 'drg-2025-01-01.json'
 OUT_PATH    = CAT_DIR / 'drg-akutno-bolnicko-FINAL.json'
 
 BASE_COEFFICIENT = 760.18

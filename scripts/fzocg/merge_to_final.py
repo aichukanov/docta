@@ -20,6 +20,7 @@ Each item gets a `_sources` block tracking provenance and disagreements.
 """
 
 import sys, json, re, unicodedata
+from collections import Counter
 from pathlib import Path
 from datetime import date
 
@@ -223,7 +224,7 @@ CATEGORIES = {
     'transfuziologija': {
         'paddle_base': 'paddleocr/162758924911.-Cjenovnik-zdravstvenih-usluga-transfuziologije.items.json',
         'paddle_amendments': [],
-        'llm_source': 'transfuziologija-2015-05-21.json',
+        'llm_source': '_intermediate/transfuziologija-2015-05-21.json',
         'scheme_default': 'single',
         'metadata': {
             'category': 'transfuziologija',
@@ -235,7 +236,7 @@ CATEGORIES = {
     'primarna-zdravstvena-zastita': {
         'paddle_base': 'paddleocr/Cjenovnik-zdravstvenih-usluga-na-primarnom-nivou-zdravstvene-zastite-PZZ-od-01.05.2026.items.json',
         'paddle_amendments': [],
-        'llm_source': 'pzz-2026-05-01.json',
+        'llm_source': '_intermediate/pzz-2026-05-01.json',
         'scheme_default': 'single',
         'metadata': {
             'category': 'primarna-zdravstvena-zastita',
@@ -254,6 +255,7 @@ CATEGORIES = {
             'level': 'apotekarska djelatnost (pharmacy services)',
             'issuer': 'Fond za zdravstveno osiguranje Crne Gore (FZOCG)',
             'price_columns': 'single',
+            'effective_from': '2015-01-01',
             'amendments_note': 'Odluka 01-7356 of 2018 added procedural clarification only — no price changes',
         },
     },
@@ -290,7 +292,7 @@ CATEGORIES = {
             ('paddleocr/Odluka-o-izmjeni-i-dopuni-Cjenovnika-na-STN-od-01.02.2025.items.json','2025-02-01'),  # 01-699
             ('paddleocr/Odluka-o-izmjeni-Cjenovnika-zdravstvenih-usluga-na-STN-od-01.05.items.json', '2026-05-01'),  # 01-4081
         ],
-        'llm_source': 'sekundarna-ostalo-LATEST.json',
+        'llm_source': '_intermediate/sekundarna-ostalo-LATEST.json',
         'scheme_default': 'single',
         'metadata': {
             'category': 'sekundarna-ostalo',
@@ -319,6 +321,8 @@ CATEGORIES = {
             'level': 'ZU van zdravstvene mreže (institutions outside the health network)',
             'issuer': 'Fond za zdravstveno osiguranje Crne Gore (FZOCG)',
             'price_columns': 'single',
+            'effective_from': '2021-09-01',
+            'signed': {'number': '01-8843'},
         },
     },
 }
@@ -525,14 +529,159 @@ def merge_category(category):
                 it['section'] = llm_section_by_num[int(m.group(1))]
                 it['_sources']['section'] = 'paddle-num→llm-name'
 
+    # Clean up non-canonical sections: when LLM/llm-only/llm-fallback gave a
+    # section that doesn't match the "N. NAME" canonical pattern (e.g. amend-
+    # introduced rows where LLM put a descriptive note or inline-comment in
+    # the section field), recover the canonical section by looking at code-
+    # prefix neighbors. Promotes the original ugly section text to subsection
+    # when it looks like a usable subsection.
+    sections_cleaned = []
+    canonical_section_re = re.compile(r'^\d+\.\s+\S')
+    # Build code-prefix → canonical-section index from canonical rows.
+    prefix_section_votes = {}
+    prefix_subsection_votes = {}
+    for it in final_items:
+        sec = it.get('section') or ''
+        if not canonical_section_re.match(sec):
+            continue
+        code = it.get('code') or ''
+        m = re.match(r'^([A-Z]+\d{2})', code)  # e.g. 'D07' from 'D07005'
+        if not m: continue
+        pfx = m.group(1)
+        prefix_section_votes.setdefault(pfx, Counter()).update([sec])
+        sub = it.get('subsection')
+        if sub:
+            prefix_subsection_votes.setdefault(pfx, Counter()).update([sub])
+
+    LLM_META_MARKERS = ('note:', 'VERIFY', 'poslije D', 'OCR', 'tačka ')
+
+    # Index every code to its (canonical) section for direct "poslije CODE" lookups.
+    # Rebuilt after each pass so "poslije X" chains resolve correctly (e.g. D07011
+    # references D07009 which itself was just cleaned up to canonical).
+    def _build_code_to_section():
+        return {
+            it['code']: it['section']
+            for it in final_items
+            if it.get('code') and canonical_section_re.match(it.get('section') or '')
+        }
+    code_to_section = _build_code_to_section()
+
+    def _resolve_section(it, strategies):
+        """Try the listed strategies in order and return the canonical section, or None."""
+        sec = it.get('section') or ''
+        code = it.get('code') or ''
+        for strat in strategies:
+            if strat == 'poslije':
+                m_ref = re.search(r'poslije\s+([A-Z]\d{2,6})', sec, re.IGNORECASE)
+                if m_ref and m_ref.group(1) in code_to_section:
+                    return code_to_section[m_ref.group(1)]
+            elif strat == 'own-prefix':
+                m = re.match(r'^([A-Z]+\d{2})', code)
+                if m:
+                    votes = prefix_section_votes.get(m.group(1))
+                    if votes:
+                        return votes.most_common(1)[0][0]
+            elif strat == 'adjacent-prefix':
+                m = re.match(r'^([A-Z]+)(\d{2})', code)
+                if m:
+                    letters, num = m.group(1), int(m.group(2))
+                    for delta in (1, -1, 2, -2, 3, -3):
+                        cand_pfx = f'{letters}{num + delta:02d}'
+                        votes = prefix_section_votes.get(cand_pfx)
+                        if votes:
+                            return votes.most_common(1)[0][0]
+        return None
+
+    def _apply_section_cleanup(it, canonical, original):
+        """Set canonical section + derive subsection from the original LLM blob."""
+        code = it.get('code') or ''
+        it['section'] = canonical
+        new_sub = original
+        new_sub = re.sub(r'\s*\(note:.*$', '', new_sub, flags=re.IGNORECASE)
+        new_sub = re.sub(r'\s*\(VERIFY.*$', '', new_sub, flags=re.IGNORECASE)
+        new_sub = re.sub(r'\s*-\s*poslije\s+[A-Z]?\d{2,6}\s*$', '', new_sub).strip()
+        new_sub = re.sub(r'\s*-\s*poslije\s+[A-Z]?\d{2,6}\s*', '', new_sub).strip()
+        m2 = re.match(r'^\s*tačka\s+\d+\s*\(([^)]+)\)\s*$', new_sub, re.IGNORECASE)
+        if m2:
+            inner = m2.group(1).strip()
+            new_sub = inner.split(' - ')[-1].strip() if ' - ' in inner else inner
+        if new_sub and new_sub.lower() == canonical.lower():
+            new_sub = ''
+        if any(marker in new_sub for marker in LLM_META_MARKERS):
+            new_sub = ''
+        if not new_sub:
+            m_pfx = re.match(r'^([A-Z]+\d{2})', code)
+            if m_pfx:
+                sub_votes = prefix_subsection_votes.get(m_pfx.group(1))
+                if sub_votes:
+                    new_sub = sub_votes.most_common(1)[0][0]
+        if new_sub and len(new_sub) <= 255 and not it.get('subsection'):
+            it['subsection'] = new_sub
+        it['_sources']['section'] = 'cleaned-from-llm-meta'
+        sections_cleaned.append({
+            'code': code,
+            'from': original[:120],
+            'to_section': canonical,
+            'to_subsection': it.get('subsection'),
+        })
+
+    # Phase 1: resolve "poslije <CODE>" references first (most accurate).
+    # Iterate to chain-resolve (D07011 → D07009 → D06145).
+    for _pass in range(5):
+        changed_this_pass = False
+        for it in final_items:
+            sec = it.get('section') or ''
+            if not sec or canonical_section_re.match(sec):
+                continue
+            canonical = _resolve_section(it, ['poslije'])
+            if canonical:
+                _apply_section_cleanup(it, canonical, sec)
+                changed_this_pass = True
+        if not changed_this_pass:
+            break
+        code_to_section = _build_code_to_section()
+
+    # Phase 2: prefix-based fallbacks for whatever's still non-canonical.
+    for it in final_items:
+        sec = it.get('section') or ''
+        if not sec or canonical_section_re.match(sec):
+            continue
+        canonical = _resolve_section(it, ['own-prefix', 'adjacent-prefix'])
+        if canonical:
+            _apply_section_cleanup(it, canonical, sec)
+
     # Sort final items by section then code
     final_items.sort(key=lambda it: (str(it.get('section') or ''), it.get('code') or ''))
 
     payload = dict(cfg['metadata'])
-    payload['effective_from'] = (llm_source or {}).get('effective_from')
-    payload['source_pdf']     = (llm_source or {}).get('source_pdf')
-    payload['signed']         = (llm_source or {}).get('signed')
-    payload['supersedes']     = (llm_source or {}).get('supersedes')
+    src = llm_source or {}
+    # Different LATEST.json shapes: some use {effective_from, signed:{date,number}},
+    # others use flat base_signed / base_broj / base_pdf. Look in all known places,
+    # and only set a field if a non-empty value was found (don't clobber category
+    # metadata defaults with None from a missing source).
+    eff = (
+        src.get('effective_from')
+        or src.get('base_signed')
+        or (src.get('signed') or {}).get('date')
+    )
+    if eff:
+        payload['effective_from'] = eff
+
+    pdf = src.get('source_pdf') or src.get('base_pdf')
+    if pdf:
+        payload['source_pdf'] = pdf
+
+    signed_block = src.get('signed')
+    if not signed_block and (src.get('base_signed') or src.get('base_broj')):
+        signed_block = {
+            'date':   src.get('base_signed'),
+            'number': src.get('base_broj'),
+        }
+    if signed_block:
+        payload['signed'] = signed_block
+
+    if src.get('supersedes'):
+        payload['supersedes'] = src.get('supersedes')
     payload['merge_info'] = {
         'merge_date': date.today().isoformat(),
         'paddle_engine': 'paddleocr 3.5.0 / PP-StructureV3',
@@ -554,6 +703,8 @@ def merge_category(category):
         payload['merge_info']['name_disagreement_codes'] = name_disagreements
     if only_in_paddle:
         payload['merge_info']['paddle_only_codes'] = only_in_paddle
+    if sections_cleaned:
+        payload['merge_info']['sections_cleaned'] = sections_cleaned
     if paddle_duplicates_dropped:
         payload['merge_info']['paddle_duplicates_dropped'] = paddle_duplicates_dropped
     if paddle_duplicates_conflicting:

@@ -2,7 +2,7 @@
 PaddleOCR PP-StructureV3 wrapper.
 
 Usage:
-    py -3.12 server/scripts/paddleocr_pdf.py <input.pdf> <output.json>
+    py -3.12 scripts/fzocg/paddleocr_pdf.py <input.pdf> <output.json>
 
 Produces JSON in the same shape as the web-version output we already have
 (layoutParsingResults[].prunedResult with page_count, parsing_res_list, etc.).

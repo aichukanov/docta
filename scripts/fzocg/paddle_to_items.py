@@ -15,9 +15,9 @@ Per item:
   }
 
 Usage:
-  py -3.12 server/scripts/paddle_to_items.py <input.json> <output.json>
+  py -3.12 scripts/fzocg/paddle_to_items.py <input.json> <output.json>
 or batch all in data/fzocg/*/paddleocr/:
-  py -3.12 server/scripts/paddle_to_items.py --all
+  py -3.12 scripts/fzocg/paddle_to_items.py --all
 """
 import sys, re, json
 from pathlib import Path

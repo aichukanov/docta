@@ -26,10 +26,10 @@ PDF-файл прейскуранта. Любой объём (1 страница
 
 ```powershell
 # Один PDF
-py -3.12 server/scripts/paddleocr_pdf.py "путь/к/файлу.pdf" "data/.../paddleocr/output.json"
+py -3.12 scripts/fzocg/paddleocr_pdf.py "путь/к/файлу.pdf" "data/.../paddleocr/output.json"
 
 # Batch (все PDF из заранее настроенных категорий FZOCG)
-py -3.12 server/scripts/paddleocr_all_fzocg.py
+py -3.12 scripts/fzocg/paddleocr_all_fzocg.py
 ```
 
 Выход: `<output>.json` с массивом `layoutParsingResults[]`, по одному элементу на страницу. Каждый блок типизирован (`table`, `text`, `figure_title`, `paragraph_title`, `number`, `image`, ...). Таблицы — как HTML внутри `block_content`.
@@ -44,10 +44,10 @@ py -3.12 server/scripts/paddleocr_all_fzocg.py
 
 ```powershell
 # Один файл
-py -3.12 server/scripts/paddle_to_items.py "data/.../paddleocr/output.json" "data/.../paddleocr/output.items.json"
+py -3.12 scripts/fzocg/paddle_to_items.py "data/.../paddleocr/output.json" "data/.../paddleocr/output.items.json"
 
 # Batch — обработать все *.json в data/fzocg/*/paddleocr/
-py -3.12 server/scripts/paddle_to_items.py --all
+py -3.12 scripts/fzocg/paddle_to_items.py --all
 ```
 
 Выход: `*.items.json` — плоский список:
@@ -84,7 +84,7 @@ py -3.12 server/scripts/paddle_to_items.py --all
 
 Открой `*.items.json` — если `items_total: 0`, скорее всего:
 
-- **Коды не подходят под regex** `CODE_RE` в [paddle_to_items.py](../../server/scripts/paddle_to_items.py). Текущие шаблоны:
+- **Коды не подходят под regex** `CODE_RE` в [paddle_to_items.py](../../scripts/fzocg/paddle_to_items.py). Текущие шаблоны:
   - `[A-Z]{1,2}\d{2,5}[A-Z]?` — `Y01001`, `A05Z`, `AA1101`
   - `\d{2,6}` — `10`, `20`, `180`
   
@@ -143,7 +143,7 @@ py -3.12 server/scripts/paddle_to_items.py --all
 ## Шаг 5: Merge → финальный JSON
 
 ```powershell
-py -3.12 server/scripts/merge_to_final.py <category-slug>
+py -3.12 scripts/fzocg/merge_to_final.py <category-slug>
 ```
 
 Перед запуском в `CATEGORIES` dict внутри `merge_to_final.py` должна быть запись:
@@ -236,7 +236,7 @@ print('items без цены:', len(no_price))
 | **Диакритика теряется** в paddle                                           | LLM cross-ref для имён (через `merge_to_final.py`)                                            |
 | **Continuation pages с одной колонкой цены** (Odj или Amb?)              | Cross-ref c LLM. Без LLM — единое поле `price_eur`, потребитель сам решает                    |
 | **Section headers распознались с битой стыковкой строк** (`32. MAKSI` / `LOFACIJALNA`) | Спот-чекни секции в `items.json`. При необходимости — поправь регex в `paddle_to_items.py` или пометь вручную |
-| **Цена с запятой как разделитель тысяч** (`1.234,56`)                     | Парсер уже умеет: `1.234,56 → 1234.56`. Если что-то ломается — проверь `parse_price()` в [paddle_to_items.py](../../server/scripts/paddle_to_items.py) |
+| **Цена с запятой как разделитель тысяч** (`1.234,56`)                     | Парсер уже умеет: `1.234,56 → 1234.56`. Если что-то ломается — проверь `parse_price()` в [paddle_to_items.py](../../scripts/fzocg/paddle_to_items.py) |
 
 ---
 

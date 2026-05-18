@@ -9,7 +9,7 @@ Output layout:
   data/fzocg/<category-slug>/paddleocr/<pdf-basename>.json
 
 Usage:
-    py -3.12 server/scripts/paddleocr_all_fzocg.py
+    py -3.12 scripts/fzocg/paddleocr_all_fzocg.py
 """
 import sys
 import json

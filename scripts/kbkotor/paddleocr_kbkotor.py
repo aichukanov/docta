@@ -8,7 +8,7 @@ Source:  e:/pet/docta.me/прейскуранты/kbkotor/*.pdf
 Output:  data/kbkotor/<slug>/paddleocr/<pdf-basename>.json
 
 Usage:
-    py -3.12 server/scripts/paddleocr_kbkotor.py
+    py -3.12 scripts/kbkotor/paddleocr_kbkotor.py
 """
 import sys
 import json

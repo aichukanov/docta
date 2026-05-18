@@ -74,7 +74,7 @@ doctor_languages (doctor_id, language_id)  -- языки консультаци�
 
 ```sql
 -- Insert doctors for clinics ID = {ID1}, {ID2}, ...
--- Run: mysql -u root -p --default-character-set=utf8mb4 docta_me < server/scripts/add-{clinic-name}-doctors.sql
+-- Run: mysql -u root -p --default-character-set=utf8mb4 docta_me < server/sql/add-{clinic-name}-doctors.sql
 
 SET NAMES utf8mb4;
 SET CHARACTER SET utf8mb4;
@@ -216,7 +216,7 @@ INSERT IGNORE INTO doctor_clinics (doctor_id, clinic_id) VALUES (@doctor_id, 68)
 ## Команда запуска
 
 ```bash
-mysql -u root -p --default-character-set=utf8mb4 docta_me < server/scripts/add-{clinic-name}-doctors.sql
+mysql -u root -p --default-character-set=utf8mb4 docta_me < server/sql/add-{clinic-name}-doctors.sql
 ```
 
 ⚠️ **Важно**: флаг `--default-character-set=utf8mb4` обязателен для корректной записи кириллицы!

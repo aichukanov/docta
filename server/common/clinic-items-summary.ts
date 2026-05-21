@@ -1,10 +1,10 @@
+import type {
+    ClinicItemsSummary,
+    ClinicItemTopEntry,
+    ClinicItemTypeSummary,
+} from '~/interfaces/clinic';
 import { executeQuery } from '~/server/common/db-mysql';
 import { getLocalizedNameField } from '~/server/common/utils';
-import type {
-	ClinicItemsSummary,
-	ClinicItemTopEntry,
-	ClinicItemTypeSummary,
-} from '~/interfaces/clinic';
 
 type CountRow = { count: number };
 type CategoryRow = { categoryId: number | null; count: number };
@@ -114,12 +114,25 @@ function buildPricedTopSql(options: {
 	`;
 }
 
+// doctors only has en/ru/sr/sr_cyrl — unlike medical_services/lab_tests/
+// medications, there is no name_de / name_tr. Fall back to name_en for
+// locales the table doesn't carry.
+const DOCTOR_NAME_FIELDS = new Set([
+	'name_en',
+	'name_ru',
+	'name_sr',
+	'name_sr_cyrl',
+]);
+
 function buildDoctorsTopSql(localizedNameField: string) {
+	const field = DOCTOR_NAME_FIELDS.has(localizedNameField)
+		? localizedNameField
+		: 'name_sr';
 	return `
 		SELECT
 			d.id,
 			d.slug,
-			COALESCE(NULLIF(d.${localizedNameField}, ''), d.name_sr, d.name_en) AS name,
+			COALESCE(NULLIF(d.${field}, ''), d.name_sr, d.name_en) AS name,
 			NULLIF(d.name_sr, '') AS localName,
 			d.photo_url AS photoUrl,
 			d.professional_title AS professionalTitle,

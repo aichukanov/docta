@@ -312,7 +312,7 @@ watchEffect(() => {
 }
 
 .medical-service-name {
-	font-size: 1.75rem;
+	font-size: var(--font-size-4xl);
 	font-weight: 700;
 	color: var(--color-text-primary);
 	margin: 0;
@@ -325,7 +325,7 @@ watchEffect(() => {
 }
 
 .medical-service-local-name {
-	font-size: 1.1rem;
+	font-size: var(--font-size-md);
 	color: var(--color-text-secondary);
 	margin-top: var(--spacing-sm);
 	font-style: italic;

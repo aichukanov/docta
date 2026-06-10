@@ -48,7 +48,9 @@ const filterList = computed(() => ({
 	page: pageNumber.value,
 }));
 
-const filterQuery = computed(() => filtersStore.getRouteParams('labtests').query);
+const filterQuery = computed(
+	() => filtersStore.getRouteParams('labtests').query,
+);
 
 const clinicsStore = useClinicsStore();
 

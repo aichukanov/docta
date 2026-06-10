@@ -71,9 +71,9 @@ const detailsLink = computed(() => {
 	padding: 0 var(--spacing-xs);
 
 	.lab-test-name {
-		font-size: 1.25rem;
+		font-size: var(--font-size-xl);
 		font-weight: 600;
-		color: #1f2937;
+		color: var(--color-text-heading);
 		margin: 0;
 		font-family:
 			system-ui,
@@ -93,8 +93,8 @@ const detailsLink = computed(() => {
 	}
 
 	.lab-test-original {
-		font-size: 0.9rem;
-		color: #6b7280;
+		font-size: var(--font-size-sm);
+		color: var(--color-text-muted);
 		margin-top: var(--spacing-xs);
 		font-style: italic;
 		word-break: break-word;
@@ -108,17 +108,16 @@ const detailsLink = computed(() => {
 	}
 
 	.lab-test-synonyms {
-		font-size: 0.85rem;
-		color: #6b7280;
+		font-size: var(--font-size-sm);
+		color: var(--color-text-muted);
 		margin-top: var(--spacing-sm);
 
 		.synonyms-label {
-			color: #9ca3af;
 			margin-right: var(--spacing-xs);
 		}
 
 		.synonyms-list {
-			color: #6b7280;
+			color: var(--color-text-muted);
 		}
 	}
 }

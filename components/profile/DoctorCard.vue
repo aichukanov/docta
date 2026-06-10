@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import specialtyI18n from '~/i18n/specialty';
-import doctorProfileI18n from '~/i18n/doctor-profile';
-import { combineI18nMessages } from '~/i18n/utils';
-import type { DoctorMyProfile } from '~/server/api/doctors/my-profile';
-import type { DoctorProfileStatus } from '~/interfaces/doctor';
 import { Edit } from '@element-plus/icons-vue';
+import doctorProfileI18n from '~/i18n/doctor-profile';
+import specialtyI18n from '~/i18n/specialty';
+import { combineI18nMessages } from '~/i18n/utils';
+import type { DoctorProfileStatus } from '~/interfaces/doctor';
+import type { DoctorMyProfile } from '~/server/api/doctors/my-profile';
 
 const props = defineProps<{
 	doctor: DoctorMyProfile;
@@ -283,7 +283,7 @@ const clinicNames = computed(() =>
 	height: 18px;
 	border-radius: 50%;
 	border: 2px solid var(--color-bg-primary);
-	background: var(--color-danger, #ef4444);
+	background: var(--color-danger);
 	color: #fff;
 	display: flex;
 	align-items: center;

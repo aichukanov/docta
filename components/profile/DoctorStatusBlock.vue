@@ -132,7 +132,7 @@ const doctorLink = computed(() => ({
 
 .status-block--public .status-block__badge {
 	background: var(--color-success-border);
-	color: var(--color-success-dark);
+	color: var(--color-primary-green);
 }
 
 .status-block--hidden .status-block__badge {

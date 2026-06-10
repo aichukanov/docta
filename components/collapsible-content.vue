@@ -17,8 +17,7 @@ let observer: ResizeObserver | null = null;
 
 const measure = () => {
 	if (!contentRef.value) return;
-	isOverflowing.value =
-		contentRef.value.scrollHeight > props.maxHeight + 4;
+	isOverflowing.value = contentRef.value.scrollHeight > props.maxHeight + 4;
 };
 
 onMounted(() => {
@@ -46,8 +45,7 @@ const wrapperStyle = computed(() => {
 			ref="contentRef"
 			class="collapsible-content__inner"
 			:class="{
-				'collapsible-content__inner--collapsed':
-					isOverflowing && !expanded,
+				'collapsible-content__inner--collapsed': isOverflowing && !expanded,
 			}"
 			:style="wrapperStyle"
 		>

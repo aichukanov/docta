@@ -24,8 +24,8 @@ const specialtiesText = computed(() => {
 
 <style scoped lang="less">
 .doctor-specialty {
-	font-size: var(--font-size-lg);
-	font-weight: 600;
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-medium);
 	color: var(--color-primary-green);
 	line-height: 1.3;
 	word-break: break-word;

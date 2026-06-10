@@ -341,7 +341,7 @@ schemaOrgStore.setSchemas([
 	}
 
 	&__title {
-		font-size: clamp(1.75rem, 5vw, 2.75rem);
+		font-size: var(--font-size-hero);
 		font-weight: 700;
 		color: #0f172a;
 		margin: 0 0 16px;
@@ -350,8 +350,8 @@ schemaOrgStore.setSchemas([
 	}
 
 	&__subtitle {
-		font-size: clamp(1rem, 2.5vw, 1.125rem);
-		color: #64748b;
+		font-size: var(--font-size-hero-sub);
+		color: var(--color-text-secondary);
 		margin: 0;
 		line-height: 1.6;
 	}
@@ -427,7 +427,11 @@ schemaOrgStore.setSchemas([
 			flex-direction: row;
 			align-items: center;
 			gap: 24px;
-			background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+			background: linear-gradient(
+				135deg,
+				var(--color-primary) 0%,
+				var(--color-primary-dark) 100%
+			);
 			border: none;
 
 			.bento__icon {
@@ -445,7 +449,7 @@ schemaOrgStore.setSchemas([
 
 			.bento__title {
 				color: #fff;
-				font-size: 1.5rem;
+				font-size: var(--font-size-3xl);
 			}
 
 			.bento__desc {
@@ -454,7 +458,7 @@ schemaOrgStore.setSchemas([
 
 			.bento__arrow {
 				color: #fff;
-				font-size: 1.5rem;
+				font-size: var(--font-size-3xl);
 			}
 
 			&:hover {
@@ -506,7 +510,7 @@ schemaOrgStore.setSchemas([
 	}
 
 	&__title {
-		font-size: 1.125rem;
+		font-size: var(--font-size-lg);
 		font-weight: 600;
 		color: #0f172a;
 		margin: 0 0 6px;
@@ -514,7 +518,7 @@ schemaOrgStore.setSchemas([
 	}
 
 	&__desc {
-		font-size: 0.875rem;
+		font-size: var(--font-size-sm);
 		color: #64748b;
 		margin: 0;
 		line-height: 1.5;
@@ -525,7 +529,7 @@ schemaOrgStore.setSchemas([
 		right: 24px;
 		top: 50%;
 		transform: translateY(-50%);
-		font-size: 1.25rem;
+		font-size: var(--font-size-xl);
 		color: #94a3b8;
 		opacity: 0;
 		transition: all 0.3s ease;
@@ -565,7 +569,7 @@ schemaOrgStore.setSchemas([
 				}
 
 				.bento__title {
-					font-size: 1.25rem;
+					font-size: var(--font-size-xl);
 				}
 			}
 		}

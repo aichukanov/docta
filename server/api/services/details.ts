@@ -115,18 +115,24 @@ export default defineEventHandler(
 				scheme: t.scheme,
 				priceEur: t.price_eur != null ? Number(t.price_eur) : null,
 				priceOdjeljenjeEur:
-					t.price_odjeljenje_eur != null ? Number(t.price_odjeljenje_eur) : null,
+					t.price_odjeljenje_eur != null
+						? Number(t.price_odjeljenje_eur)
+						: null,
 				priceAmbulantaEur:
 					t.price_ambulanta_eur != null ? Number(t.price_ambulanta_eur) : null,
 				priceOperacijaEur:
 					t.price_operacija_eur != null ? Number(t.price_operacija_eur) : null,
 				priceAnestezijaEur:
-					t.price_anestezija_eur != null ? Number(t.price_anestezija_eur) : null,
+					t.price_anestezija_eur != null
+						? Number(t.price_anestezija_eur)
+						: null,
 				priceUkupnoEur:
 					t.price_ukupno_eur != null ? Number(t.price_ukupno_eur) : null,
 				coefficient: t.coefficient != null ? Number(t.coefficient) : null,
 				baseCoefficientEur:
-					t.base_coefficient_eur != null ? Number(t.base_coefficient_eur) : null,
+					t.base_coefficient_eur != null
+						? Number(t.base_coefficient_eur)
+						: null,
 				nameSrLatin: t.name_sr_latin,
 				section: t.section,
 				subsection: t.subsection,

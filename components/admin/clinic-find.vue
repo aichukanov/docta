@@ -894,13 +894,13 @@ onMounted(async () => {
 }
 
 .billing-item.deleted {
-	border-color: #ef4444;
-	background: #fef2f2;
+	border-color: var(--color-danger);
+	background: var(--color-danger-bg);
 }
 
 .billing-item.expired {
-	border-color: #f59e0b;
-	background: #fff7ed;
+	border-color: var(--color-warning);
+	background: var(--color-warning-bg);
 }
 
 .billing-item-title {
@@ -928,11 +928,11 @@ onMounted(async () => {
 .billing-item-status {
 	font-size: 12px;
 	font-weight: 600;
-	color: #991b1b;
+	color: var(--color-danger-dark);
 }
 
 .billing-item.expired .billing-item-status {
-	color: #b45309;
+	color: var(--color-warning-dark);
 }
 
 .billing-empty,

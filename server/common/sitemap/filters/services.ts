@@ -64,8 +64,7 @@ export async function getSitemapFilters(detailCityMinClinics: number) {
 		categoryIds: getCategoryIds(),
 		// Комбинации
 		categoryCityCombinations: await getCategoryCityCombinations(),
-		entityCityCombinations: await getEntityCityCombinations(
-			detailCityMinClinics,
-		),
+		entityCityCombinations:
+			await getEntityCityCombinations(detailCityMinClinics),
 	};
 }

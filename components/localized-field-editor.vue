@@ -125,11 +125,11 @@ function updateField(key: string, value: string) {
 	width: 6px;
 	height: 6px;
 	border-radius: 50%;
-	background: var(--color-success);
+	background: var(--color-success-dark);
 	flex-shrink: 0;
 }
 
 .loc-field__tab--active .loc-field__dot {
-	background: #fff;
+	background: var(--color-bg-primary);
 }
 </style>

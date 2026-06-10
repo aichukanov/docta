@@ -267,7 +267,7 @@ const clinic = computed(() => {
 	font-weight: var(--font-weight-medium);
 	color: var(--color-primary);
 	background: var(--color-primary-bg);
-	padding: 0.1rem 0.5rem;
+	padding: 2px var(--spacing-sm);
 	border-radius: var(--border-radius-sm);
 }
 
@@ -289,7 +289,7 @@ const clinic = computed(() => {
 	font-size: var(--font-size-sm);
 	color: var(--color-primary);
 	background: var(--color-primary-bg);
-	padding: 0.2rem 0.5rem;
+	padding: var(--spacing-xs) var(--spacing-sm);
 	border-radius: var(--border-radius-sm);
 	display: inline-flex;
 	align-items: center;

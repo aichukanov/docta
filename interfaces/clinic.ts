@@ -16,7 +16,11 @@ export interface Coordinates {
 	longitude: number;
 }
 
-export type ClinicItemType = 'services' | 'labtests' | 'medications' | 'doctors';
+export type ClinicItemType =
+	| 'services'
+	| 'labtests'
+	| 'medications'
+	| 'doctors';
 
 export interface ClinicItemCategory {
 	categoryId: number | null;

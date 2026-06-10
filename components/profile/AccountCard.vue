@@ -168,11 +168,11 @@ const emit = defineEmits<{
 }
 
 .account-card__status--on {
-	color: var(--color-success-dark);
+	color: var(--color-primary-green);
 }
 
 .account-card__status--off {
-	color: var(--color-text-light);
+	color: var(--color-text-muted);
 }
 
 .account-card__status-dot {
@@ -217,7 +217,7 @@ const emit = defineEmits<{
 	align-items: center;
 	gap: 4px;
 	font-size: var(--font-size-xs);
-	color: var(--color-success-dark);
+	color: var(--color-primary-green);
 	background: var(--color-success-bg);
 	padding: 2px 8px;
 	border-radius: 12px;

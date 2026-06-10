@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import profileMessages from '~/i18n/profile';
 import accountCardMessages from '~/i18n/account-card';
+import profileMessages from '~/i18n/profile';
 import { combineI18nMessages } from '~/i18n/utils';
 
 const { t } = useI18n({

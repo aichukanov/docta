@@ -289,7 +289,7 @@ function getDeviceInfo(userAgent: string): string {
 .history-row__time {
 	display: block;
 	font-size: var(--font-size-xs);
-	color: var(--color-text-light);
+	color: var(--color-text-muted);
 	margin-top: 2px;
 }
 
@@ -354,7 +354,7 @@ function getDeviceInfo(userAgent: string): string {
 .full-history__ua {
 	margin-top: 6px;
 	font-size: var(--font-size-xs);
-	color: var(--color-text-light);
+	color: var(--color-text-muted);
 	word-break: break-word;
 	line-height: 1.4;
 }

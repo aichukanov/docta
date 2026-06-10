@@ -5,10 +5,14 @@ import {
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
 import { SITE_URL, OG_IMAGE } from '~/common/constants';
+import { localizeStrength } from '~/common/strength-label';
+import { buildPackagingLabel } from '~/common/packaging-label';
 
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import medicineI18n from '~/i18n/medicine';
 import dispensingModeI18n from '~/i18n/dispensing-mode';
+// packagingI18n нужен ради единиц pack_vol_* для localizeStrength
+import packagingI18n from '~/i18n/packaging';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -16,6 +20,7 @@ const { t, locale } = useI18n({
 		breadcrumbI18n,
 		medicineI18n,
 		dispensingModeI18n,
+		packagingI18n,
 	]),
 });
 
@@ -80,6 +85,10 @@ const { pending: isLoading, data: medicinesList } = await useFetch(
 		body: filterList,
 	},
 );
+
+// Фасовка различает «дубли» реестра: одинаковые название/дозировка,
+// но 10 vs 20 таблеток
+const itemPackaging = (item: any) => buildPackagingLabel(item, t, false);
 
 const getFilterLabel = (
 	items: { value: number; label: string }[],
@@ -241,18 +250,26 @@ watchEffect(() => {
 				}"
 				class="medicine-card"
 			>
-				<div class="medicine-name">{{ item.name }}</div>
-				<div v-if="item.substances" class="medicine-substances">{{
-					item.substances
-				}}</div>
-				<MedicineBadge :dispensingModeId="item.dispensingModeId" />
-				<div class="medicine-card-details">
-					<span v-if="item.pharmaForm">{{ item.pharmaForm }}</span>
-					<span v-if="item.strength">, {{ item.strength }}</span>
+				<div class="medicine-card-icon">
+					<MedicineFormIcon :formSrc="item.pharmaFormSrc" :size="24" />
 				</div>
-				<div class="medicine-card-meta">
-					<span v-if="item.manufacturer">{{ item.manufacturer }}</span>
-					<span v-if="item.country">, {{ item.country }}</span>
+				<div class="medicine-card-content">
+					<div class="medicine-name">{{ item.name }}</div>
+					<div v-if="item.substances" class="medicine-substances">{{
+						item.substances
+					}}</div>
+					<MedicineBadge :dispensingModeId="item.dispensingModeId" />
+					<div class="medicine-card-details">
+						<span v-if="item.pharmaForm">{{ item.pharmaForm }}</span>
+						<span v-if="item.strength"
+							>, {{ localizeStrength(item.strength, t) }}</span
+						>
+						<span v-if="itemPackaging(item)">, {{ itemPackaging(item) }}</span>
+					</div>
+					<div class="medicine-card-meta">
+						<span v-if="item.manufacturer">{{ item.manufacturer }}</span>
+						<span v-if="item.country">, {{ item.country }}</span>
+					</div>
 				</div>
 			</NuxtLink>
 		</template>
@@ -261,47 +278,67 @@ watchEffect(() => {
 
 <style lang="less" scoped>
 .medicine-card {
-	display: block;
-	padding: 16px 20px;
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-md);
+	display: flex;
+	gap: var(--spacing-md);
+	padding: var(--spacing-lg) var(--spacing-xl);
+	background: var(--color-bg-primary);
+	border: 1px solid var(--color-border-primary);
+	border-radius: var(--border-radius-lg);
+	box-shadow: var(--shadow-xs);
 	text-decoration: none;
 	color: inherit;
 	transition:
-		border-color 0.15s,
-		box-shadow 0.15s;
+		border-color var(--transition-base),
+		box-shadow var(--transition-base);
 
 	&:hover {
 		border-color: var(--color-primary);
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+		box-shadow: var(--shadow-hover);
 	}
 }
 
+.medicine-card-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	flex-shrink: 0;
+	background: var(--color-primary-bg);
+	border-radius: var(--border-radius-lg);
+	color: var(--color-primary);
+}
+
+.medicine-card-content {
+	flex: 1;
+	min-width: 0;
+}
+
 .medicine-name {
-	font-weight: 600;
-	font-size: 1rem;
+	font-weight: var(--font-weight-semibold);
+	font-size: var(--font-size-base);
 	line-height: 1.3;
 }
 
 .medicine-substances {
-	font-size: 0.875rem;
+	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
-	margin-top: 4px;
+	margin-top: var(--spacing-xs);
 	font-style: italic;
 }
 
 .medicine-card-details {
-	margin-top: 10px;
-	padding-top: 8px;
+	margin-top: var(--spacing-md);
+	padding-top: var(--spacing-sm);
 	border-top: 1px solid var(--color-border-light);
-	font-size: 0.875rem;
+	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
 }
 
 .medicine-card-meta {
-	margin-top: 4px;
-	font-size: 0.8rem;
-	color: var(--color-text-tertiary);
+	margin-top: var(--spacing-xs);
+	font-size: var(--font-size-xs);
+	color: var(--color-text-muted);
 }
 
 // Hide map sidebar — medicines aren't tied to locations

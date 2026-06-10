@@ -11,7 +11,11 @@
 			@click="copyToClipboard"
 		>
 			<template #icon>
-				<IconCheck v-if="isCopied" :size="14" color="var(--color-success)" />
+				<IconCheck
+					v-if="isCopied"
+					:size="14"
+					color="var(--color-success-dark)"
+				/>
 				<IconCopy v-else :size="14" color="var(--color-text-secondary)" />
 			</template>
 		</el-button>

@@ -125,7 +125,7 @@ useSeoMeta({
 
 .terms-page__title {
 	margin: 0 0 var(--spacing-sm);
-	font-size: clamp(1.8rem, 4vw, 2.6rem);
+	font-size: var(--font-size-hero);
 	letter-spacing: -0.02em;
 	color: var(--color-text-primary);
 	line-height: 1.15;
@@ -136,7 +136,7 @@ useSeoMeta({
 	margin: 0;
 	max-width: 760px;
 	color: var(--color-text-secondary);
-	font-size: clamp(1rem, 2vw, 1.2rem);
+	font-size: var(--font-size-hero-sub);
 	line-height: 1.7;
 }
 
@@ -188,7 +188,7 @@ useSeoMeta({
 
 .terms-card__title {
 	margin: 0 0 var(--spacing-lg);
-	font-size: 1.5rem;
+	font-size: var(--font-size-3xl);
 	font-weight: var(--font-weight-semibold);
 	color: var(--color-text-primary);
 	letter-spacing: -0.01em;
@@ -208,7 +208,7 @@ useSeoMeta({
 
 .terms-card__list {
 	margin: var(--spacing-md) 0 0;
-	padding-left: 1.1rem;
+	padding-left: var(--spacing-lg);
 	color: var(--color-text-secondary);
 	line-height: 1.75;
 	font-size: var(--font-size-lg);
@@ -248,7 +248,7 @@ useSeoMeta({
 	}
 
 	.terms-card__title {
-		font-size: 1.25rem;
+		font-size: var(--font-size-xl);
 	}
 
 	.terms-card__text,

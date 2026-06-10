@@ -126,11 +126,14 @@ const breadcrumbs = computed(() => [
 			@update:sort="onSortUpdate"
 		/>
 
-		<div v-loading="isLoading" class="items-area">
+		<div v-loading="isLoading && items.length > 0" class="items-area">
 			<el-empty
 				v-if="!isLoading && items.length === 0"
 				:description="emptyText"
 			/>
+			<div v-else-if="isLoading && items.length === 0" class="items-grid">
+				<SkeletonCard v-for="i in 6" :key="i" :rows="2" :show-media="false" />
+			</div>
 			<div v-else class="items-grid">
 				<slot v-for="item in items" :key="item.id" :item="item" />
 			</div>

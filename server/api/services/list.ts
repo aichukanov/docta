@@ -138,8 +138,7 @@ export async function getMedicalServiceList(
 
 	// Sort: 'name-asc' / 'price-asc' / 'price-desc' override the default rank-based order.
 	// Price sort only works when scoped to a single clinic.
-	const localizedNameField =
-		getLocalizedNameField(locale) || 'name_en';
+	const localizedNameField = getLocalizedNameField(locale) || 'name_en';
 	const singleClinicId =
 		body.clinicIds?.length === 1 ? body.clinicIds[0] : null;
 	const usePriceSort =
@@ -197,10 +196,11 @@ export async function getMedicalServiceList(
 		const [countRows] = await connection.execute(totalCountQuery, queryParams);
 		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
 	}
-	const [medicalServiceRows] = await connection.execute(
-		medicalServicesQuery,
-		[...sortPriceParams, ...selectCityParams, ...queryParams],
-	);
+	const [medicalServiceRows] = await connection.execute(medicalServicesQuery, [
+		...sortPriceParams,
+		...selectCityParams,
+		...queryParams,
+	]);
 	await connection.end();
 
 	const items = medicalServiceRows.map((row: any) => {

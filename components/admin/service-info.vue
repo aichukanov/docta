@@ -447,7 +447,7 @@ watch(serviceId, async (newId) => {
 	}
 
 	&.modified > label {
-		color: #f59e0b;
+		color: var(--color-warning-dark);
 		font-weight: 500;
 	}
 
@@ -474,7 +474,7 @@ watch(serviceId, async (newId) => {
 	border: 1px solid var(--color-border-primary);
 
 	&.modified {
-		border-color: #f59e0b;
+		border-color: var(--color-warning);
 	}
 
 	& > label {
@@ -498,7 +498,7 @@ watch(serviceId, async (newId) => {
 	border: 1px solid var(--color-border-primary);
 
 	&.modified {
-		border-color: #f59e0b;
+		border-color: var(--color-warning);
 	}
 
 	.section-header {

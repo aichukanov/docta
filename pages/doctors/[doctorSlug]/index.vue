@@ -435,9 +435,7 @@ watchEffect(() => {
 					<ViewAllLink
 						v-if="allReviewsLink && doctorData.rating"
 						:to="allReviewsLink"
-						:label="
-							t('AllReviews', { count: doctorData.rating.totalReviews })
-						"
+						:label="t('AllReviews', { count: doctorData.rating.totalReviews })"
 					/>
 				</div>
 				<div class="reviews-content">

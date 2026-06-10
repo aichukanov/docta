@@ -1,4 +1,8 @@
-import mixpanel from 'mixpanel-browser';
+// mixpanel-browser подключается динамически: библиотека не попадает в общий
+// бандл и грузится только после согласия пользователя на аналитику
+let mixpanelInstance: (typeof import('mixpanel-browser'))['default'] | null =
+	null;
+let mixpanelLoadPromise: Promise<void> | null = null;
 
 export function useAnalytics() {
 	const config = useRuntimeConfig();
@@ -7,14 +11,21 @@ export function useAnalytics() {
 
 	const initMixpanel = () => {
 		if (!import.meta.client) return;
-		if (config.public.mixpanelToken && isConsentGiven.value) {
-			mixpanel.init(config.public.mixpanelToken, {
-				debug: import.meta.dev,
-				track_pageview: true,
-				persistence: 'localStorage',
-				ignore_dnt: true,
-				api_host: 'https://api-eu.mixpanel.com',
-			});
+		if (!config.public.mixpanelToken || !isConsentGiven.value) return;
+
+		if (!mixpanelLoadPromise) {
+			mixpanelLoadPromise = import('mixpanel-browser').then(
+				({ default: mixpanel }) => {
+					mixpanel.init(config.public.mixpanelToken, {
+						debug: import.meta.dev,
+						track_pageview: true,
+						persistence: 'localStorage',
+						ignore_dnt: true,
+						api_host: 'https://api-eu.mixpanel.com',
+					});
+					mixpanelInstance = mixpanel;
+				},
+			);
 		}
 	};
 
@@ -58,13 +69,13 @@ export function useAnalytics() {
 
 	const trackEvent = (eventName: string, properties?: Record<string, any>) => {
 		if (isConsentGiven.value) {
-			mixpanel.track(eventName, properties);
+			mixpanelInstance?.track(eventName, properties);
 		}
 	};
 
 	const identifyUser = (userId: string) => {
 		if (isConsentGiven.value) {
-			mixpanel.identify(userId);
+			mixpanelInstance?.identify(userId);
 		}
 	};
 

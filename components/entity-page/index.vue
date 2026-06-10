@@ -106,14 +106,14 @@ const backToSearch = () => {
 	align-items: center;
 	justify-content: center;
 	padding: 40px;
-	color: #6b7280;
+	color: var(--color-text-muted);
 }
 
 .entity-page__spinner {
 	width: 40px;
 	height: 40px;
-	border: 3px solid #e5e7eb;
-	border-top: 3px solid #4f46e5;
+	border: 3px solid var(--color-border-secondary);
+	border-top: 3px solid var(--color-primary);
 	border-radius: 50%;
 	animation: spin 1s linear infinite;
 	margin-bottom: 16px;
@@ -131,7 +131,7 @@ const backToSearch = () => {
 .entity-page__not-found {
 	padding: 40px;
 	text-align: center;
-	color: #6b7280;
+	color: var(--color-text-muted);
 }
 </style>
 

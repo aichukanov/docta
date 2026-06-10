@@ -88,9 +88,7 @@ const { data: servicesData, pending: isLoading } = await useFetch(
 const items = computed(() => servicesData.value?.items || []);
 const totalCount = computed(() => servicesData.value?.totalCount || 0);
 const pageSize = CLINIC_ITEMS_PAGE_SIZE;
-const totalPages = computed(
-	() => Math.ceil(totalCount.value / pageSize) || 1,
-);
+const totalPages = computed(() => Math.ceil(totalCount.value / pageSize) || 1);
 
 const clinicName = computed(() =>
 	getLocalizedName(clinicData.value, locale.value),
@@ -118,7 +116,9 @@ const categories = computed(() => {
 			title: t(`medical_service_category_${c.categoryId}`),
 			count: c.count,
 		}))
-		.filter((c) => !!c.title && !c.title.startsWith('medical_service_category_'));
+		.filter(
+			(c) => !!c.title && !c.title.startsWith('medical_service_category_'),
+		);
 });
 
 const getClinicPrice = (clinicPrices: any[] = []) =>
@@ -183,9 +183,7 @@ watchEffect(() => {
 			locale: locale.value,
 			title: pageTitleText.value,
 			description: pageDescription.value,
-			totalCount: isFiltered.value
-				? totalCount.value
-				: totalServices.value,
+			totalCount: isFiltered.value ? totalCount.value : totalServices.value,
 			items: items.value,
 			buildPath: (item) => `/services/${item.slug}`,
 			isFiltered: isFiltered.value,

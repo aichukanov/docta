@@ -27,6 +27,14 @@
 	--color-text-secondary: #475569;
 	--color-text-muted: #64748b;
 	--color-text-light: #94a3b8;
+	--color-text-tertiary: var(--color-text-light);
+
+	--color-primary-light: #a5b4fc;
+	/* Янтарный: 3.16:1 на белом, 3.02:1 на bg-secondary (норма 1.4.11 — 3:1).
+	   Ярче нельзя — провал нормы; на bg-tertiary 2.88 — звёзды там не размещать */
+	--color-rating: #d17d00;
+	--color-auth-gradient-start: #667eea;
+	--color-auth-gradient-end: #764ba2;
 
 	--color-bg-primary: #ffffff;
 	--color-bg-secondary: #f8fafc;
@@ -58,16 +66,25 @@
 	--spacing-4xl: 4rem; /* 64px */
 
 	/* === ТИПОГРАФИКА === */
-	--font-size-xs: 0.7rem; /* 11.2px */
-	--font-size-sm: 0.8rem; /* 12.8px */
-	--font-size-base: 0.85rem; /* 13.6px */
-	--font-size-md: 0.9rem; /* 14.4px */
-	--font-size-lg: 0.95rem; /* 15.2px */
-	--font-size-xl: 1rem; /* 16px */
-	--font-size-2xl: 1.1rem; /* 17.6px */
-	--font-size-3xl: 1.2rem; /* 19.2px */
-	--font-size-4xl: 2rem; /* 32px */
+	/* База 16px (1rem) — доступность и отсутствие авто-зума инпутов на iOS */
+	--font-size-xs: 0.75rem; /* 12px */
+	--font-size-sm: 0.875rem; /* 14px */
+	--font-size-base: 1rem; /* 16px */
+	--font-size-md: 1.0625rem; /* 17px */
+	--font-size-lg: 1.125rem; /* 18px */
+	--font-size-xl: 1.25rem; /* 20px */
+	--font-size-2xl: 1.375rem; /* 22px */
+	--font-size-3xl: 1.5rem; /* 24px */
+	--font-size-4xl: 2rem; /* 32px — стандарт H1 */
 	--font-size-5xl: 3rem; /* 48px */
+
+	/* Fluid-размеры для hero-блоков (главная, лендинговые страницы) */
+	--font-size-hero: clamp(2rem, 4vw, 2.75rem);
+	--font-size-hero-sub: clamp(
+		var(--font-size-base),
+		2.5vw,
+		var(--font-size-lg)
+	);
 
 	--font-weight-normal: 400;
 	--font-weight-medium: 500;
@@ -85,6 +102,7 @@
 	--border-radius-full: 50%;
 
 	/* === ТЕНИ === */
+	--shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
 	--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
 	--shadow-md: 0 2px 6px rgba(0, 0, 0, 0.08);
 	--shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -107,4 +125,54 @@
 	--z-modal: 2000;
 	--z-cookie-consent: 2500;
 	--z-tooltip: 3000;
+}
+
+/* === МОСТ ELEMENT PLUS === */
+/* :root:root — удвоенная специфичность, чтобы переопределить дефолтные
+   --el-* независимо от порядка загрузки CSS Element Plus */
+:root:root {
+	--el-color-primary: var(--color-primary);
+	--el-color-primary-light-3: #6366f1;
+	--el-color-primary-light-5: #818cf8;
+	--el-color-primary-light-7: var(--color-primary-light);
+	--el-color-primary-light-8: #c7d2fe;
+	--el-color-primary-light-9: #e0e7ff;
+	--el-color-primary-dark-2: var(--color-primary-dark);
+
+	--el-color-success: var(--color-success);
+	--el-color-warning: var(--color-warning);
+	--el-color-danger: var(--color-danger);
+	--el-color-error: var(--color-danger);
+
+	--el-text-color-primary: var(--color-text-primary);
+	--el-text-color-regular: var(--color-text-secondary);
+	--el-text-color-secondary: var(--color-text-muted);
+	--el-text-color-placeholder: var(--color-text-muted);
+
+	--el-border-color: var(--color-border-primary);
+	--el-border-color-light: var(--color-border-secondary);
+	--el-border-color-lighter: var(--color-border-light);
+
+	--el-border-radius-base: var(--border-radius-md);
+	--el-border-radius-small: var(--border-radius-sm);
+
+	--el-box-shadow: var(--shadow-xl);
+	--el-box-shadow-light: var(--shadow-lg);
+	--el-box-shadow-lighter: var(--shadow-md);
+	--el-box-shadow-dark: var(--shadow-xl);
+
+	--el-font-family: system-ui, -apple-system, sans-serif;
+	/* 14px — стандартный размер контролов EP, привязан к шкале токенов */
+	--el-font-size-base: var(--font-size-sm);
+}
+
+/* Danger-кнопки EP: белый текст на дефолтном #ef4444 даёт 3.76:1 (< 4.5 AA),
+   затемняем фон. plain/text/link-варианты не трогаем */
+.el-button--danger:not(.is-plain):not(.is-text):not(.is-link) {
+	--el-button-bg-color: var(--color-danger-dark);
+	--el-button-border-color: var(--color-danger-dark);
+	--el-button-hover-bg-color: #b91c1c;
+	--el-button-hover-border-color: #b91c1c;
+	--el-button-active-bg-color: #7f1d1d;
+	--el-button-active-border-color: #7f1d1d;
 }

@@ -252,7 +252,7 @@ watchEffect(() => {
 }
 
 .medication-name {
-	font-size: 1.75rem;
+	font-size: var(--font-size-4xl);
 	font-weight: 700;
 	color: var(--color-text-primary);
 	margin: 0;

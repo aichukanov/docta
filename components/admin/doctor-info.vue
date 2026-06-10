@@ -744,7 +744,7 @@ watch(doctorId, async (newDoctorId) => {
 
 	.hidden-hint {
 		font-size: 0.85em;
-		color: var(--color-danger);
+		color: var(--color-danger-dark);
 	}
 }
 

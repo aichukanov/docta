@@ -25,7 +25,9 @@ defineProps<{
 
 		<div class="title-row">
 			<h1 class="title">{{ title }}</h1>
-			<el-tag round size="large" type="primary" effect="dark">{{ count }}</el-tag>
+			<el-tag round size="large" type="primary" effect="dark">{{
+				count
+			}}</el-tag>
 		</div>
 
 		<div v-if="$slots.badges" class="badges">
@@ -53,7 +55,7 @@ defineProps<{
 }
 
 .title {
-	font-size: 2rem;
+	font-size: var(--font-size-4xl);
 	font-weight: var(--font-weight-bold);
 	color: var(--color-text-heading);
 	margin: 0;
@@ -68,7 +70,7 @@ defineProps<{
 
 @media (max-width: 640px) {
 	.title {
-		font-size: 1.5rem;
+		font-size: var(--font-size-3xl);
 	}
 }
 </style>

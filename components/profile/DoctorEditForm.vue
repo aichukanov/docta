@@ -336,7 +336,7 @@ async function save() {
 	height: 20px;
 	border-radius: 50%;
 	border: 2px solid var(--color-bg-primary);
-	background: var(--color-danger, #ef4444);
+	background: var(--color-danger);
 	color: #fff;
 	display: flex;
 	align-items: center;
@@ -347,7 +347,7 @@ async function save() {
 }
 
 .edit-form__avatar-remove:hover {
-	background: var(--color-danger-dark, #dc2626);
+	background: var(--color-danger-dark);
 	transform: scale(1.1);
 }
 

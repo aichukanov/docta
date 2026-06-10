@@ -300,7 +300,7 @@ async function logoutAllOtherSessions() {
 .session-card__current-tag {
 	font-size: 11px;
 	font-weight: var(--font-weight-semibold);
-	color: var(--color-success-dark);
+	color: var(--color-primary-green);
 	background: var(--color-success-bg);
 	padding: 2px 10px;
 	border-radius: 12px;
@@ -310,7 +310,7 @@ async function logoutAllOtherSessions() {
 	display: flex;
 	gap: var(--spacing-lg);
 	font-size: var(--font-size-xs);
-	color: var(--color-text-light);
+	color: var(--color-text-muted);
 }
 
 /* ── Responsive ──────────────────────────────── */

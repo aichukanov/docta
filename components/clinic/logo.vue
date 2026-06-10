@@ -7,11 +7,14 @@ const props = withDefaults(
 		name: string;
 		size?: number;
 		zoomable?: boolean;
+		// 'eager' — для изображений выше фолда (hero детальной страницы)
+		loading?: 'lazy' | 'eager';
 	}>(),
 	{
 		logoUrl: null,
 		size: 80,
 		zoomable: false,
+		loading: 'lazy',
 	},
 );
 
@@ -49,6 +52,7 @@ const zoomed = ref(false);
 			class="clinic-logo__img"
 			:width="size"
 			:height="size"
+			:loading="loading"
 			@error="onError"
 		/>
 		<el-icon v-else class="clinic-logo__fallback" :size="size * 0.5">

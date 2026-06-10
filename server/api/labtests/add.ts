@@ -52,11 +52,10 @@ export default defineEventHandler(async (event): Promise<number | null> => {
 
 			// 2. Добавляем категории
 			if (body.categoryIds?.length > 0) {
-				const categoryValues = body.categoryIds
-					.map((catId) => `(${labTestId}, ${catId})`)
-					.join(',');
+				const placeholders = body.categoryIds.map(() => '(?, ?)').join(',');
 				await connection.execute(
-					`INSERT INTO lab_test_categories_relations (lab_test_id, category_id) VALUES ${categoryValues}`,
+					`INSERT INTO lab_test_categories_relations (lab_test_id, category_id) VALUES ${placeholders}`,
+					body.categoryIds.flatMap((catId) => [labTestId, catId]),
 				);
 			}
 

@@ -37,15 +37,15 @@ async function getDoctorServicePrices(
 		return result;
 	}
 
-	const doctorIdsStr = doctorIds.join(',');
-	const clinicIdsStr = clinicIds.join(',');
+	const doctorPlaceholders = doctorIds.map(() => '?').join(',');
+	const clinicPlaceholders = clinicIds.map(() => '?').join(',');
 	const query = `
 		SELECT doctor_id, clinic_id, medical_service_id, price, price_max
 		FROM clinic_medical_service_doctors
-		WHERE doctor_id IN (${doctorIdsStr}) AND clinic_id IN (${clinicIdsStr})
+		WHERE doctor_id IN (${doctorPlaceholders}) AND clinic_id IN (${clinicPlaceholders})
 	`;
 
-	const [rows] = await connection.execute(query);
+	const [rows] = await connection.execute(query, [...doctorIds, ...clinicIds]);
 
 	for (const row of rows as any[]) {
 		const key = `${row.doctor_id}_${row.clinic_id}_${row.medical_service_id}`;
@@ -84,8 +84,8 @@ export async function getServicesByClinicAndSpecialty(
 		? await getDoctorServicePrices(connection, [doctorId], clinicIds)
 		: new Map<string, DoctorPriceInfo>();
 
-	const clinicIdsStr = clinicIds.join(',');
-	const specialtyIdsStr = specialtyIds.join(',');
+	const clinicPlaceholders = clinicIds.map(() => '?').join(',');
+	const specialtyPlaceholders = specialtyIds.map(() => '?').join(',');
 
 	const servicesQuery = `
 		SELECT
@@ -106,14 +106,17 @@ export async function getServicesByClinicAndSpecialty(
 		FROM clinic_medical_services cms
 		INNER JOIN medical_services ms ON cms.medical_service_id = ms.id
 		INNER JOIN medical_services_specialties mss ON ms.id = mss.medical_service_id
-		WHERE cms.clinic_id IN (${clinicIdsStr})
-			AND mss.specialty_id IN (${specialtyIdsStr})
+		WHERE cms.clinic_id IN (${clinicPlaceholders})
+			AND mss.specialty_id IN (${specialtyPlaceholders})
 		GROUP BY cms.clinic_id, ms.id, ms.slug, ms.name_en, ms.name_sr, ms.name_sr_cyrl,
 			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price, cms.price_min, cms.price_max
 		ORDER BY cms.clinic_id, ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
 	`;
 
-	const [serviceRows] = await connection.execute(servicesQuery);
+	const [serviceRows] = await connection.execute(servicesQuery, [
+		...clinicIds,
+		...specialtyIds,
+	]);
 
 	const result: ClinicServicesMap = {};
 
@@ -204,8 +207,10 @@ export async function getServicesForDoctors(
 		return new Map();
 	}
 
-	const clinicIdsStr = Array.from(allClinicIds).join(',');
-	const specialtyIdsStr = Array.from(allSpecialtyIds).join(',');
+	const clinicIdsArr = Array.from(allClinicIds);
+	const specialtyIdsArr = Array.from(allSpecialtyIds);
+	const clinicPlaceholders = clinicIdsArr.map(() => '?').join(',');
+	const specialtyPlaceholders = specialtyIdsArr.map(() => '?').join(',');
 
 	// Загружаем индивидуальные цены для всех врачей
 	const doctorPrices = await getDoctorServicePrices(
@@ -233,14 +238,17 @@ export async function getServicesForDoctors(
 		FROM clinic_medical_services cms
 		INNER JOIN medical_services ms ON cms.medical_service_id = ms.id
 		INNER JOIN medical_services_specialties mss ON ms.id = mss.medical_service_id
-		WHERE cms.clinic_id IN (${clinicIdsStr})
-			AND mss.specialty_id IN (${specialtyIdsStr})
+		WHERE cms.clinic_id IN (${clinicPlaceholders})
+			AND mss.specialty_id IN (${specialtyPlaceholders})
 		GROUP BY cms.clinic_id, ms.id, ms.slug, ms.name_en, ms.name_sr, ms.name_sr_cyrl,
 			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price, cms.price_min, cms.price_max
 		ORDER BY cms.clinic_id, ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
 	`;
 
-	const [serviceRows] = await connection.execute(servicesQuery);
+	const [serviceRows] = await connection.execute(servicesQuery, [
+		...clinicIdsArr,
+		...specialtyIdsArr,
+	]);
 
 	// Группируем услуги по clinicId с сохранением specialtyIds и базовых цен
 	const servicesByClinic: Map<

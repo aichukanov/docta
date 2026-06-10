@@ -112,7 +112,7 @@ const telegramUrl = computed(() => `https://t.me/${cleanNumber.value}`);
 }
 
 .channel-btn:hover {
-	background: var(--color-primary-light);
+	background: var(--color-primary-bg);
 	color: var(--color-primary);
 }
 

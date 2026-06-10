@@ -160,12 +160,14 @@ export async function getDoctorList(
 			${whereFiltersString};
 		`;
 	const localizedDoctorNameField =
-		({
-			en: 'name_en',
-			ru: 'name_ru',
-			sr: 'name_sr',
-			'sr-cyrl': 'name_sr_cyrl',
-		} as Record<string, string>)[locale] || 'name_en';
+		(
+			{
+				'en': 'name_en',
+				'ru': 'name_ru',
+				'sr': 'name_sr',
+				'sr-cyrl': 'name_sr_cyrl',
+			} as Record<string, string>
+		)[locale] || 'name_en';
 	const orderByClause =
 		body.sort === 'name-asc'
 			? `COALESCE(NULLIF(d.${localizedDoctorNameField}, ''), d.name_sr, d.name_en) ASC`

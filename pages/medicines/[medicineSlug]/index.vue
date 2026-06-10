@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import { OG_IMAGE, SITE_URL } from '~/common/constants';
+import { buildPackagingLabel } from '~/common/packaging-label';
+import { localizeStrength } from '~/common/strength-label';
 import {
 	buildBreadcrumbsSchema,
 	buildMedicineSchema,
 } from '~/common/schema-org-builders';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import medicineI18n from '~/i18n/medicine';
+import packagingI18n from '~/i18n/packaging';
 import { combineI18nMessages } from '~/i18n/utils';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([breadcrumbI18n, medicineI18n]),
+	messages: combineI18nMessages([breadcrumbI18n, medicineI18n, packagingI18n]),
 });
 
 const route = useRoute();
@@ -109,13 +112,67 @@ watchEffect(() => {
 	}
 });
 
+// «Другие дозировки» — тот же бренд (совпадает название); «Аналоги» — точно
+// тот же состав действующих веществ (matchType из API); «Комбинированные» —
+// весь состав текущего препарата плюс дополнительные вещества; «Компоненты
+// по отдельности» — частичное совпадение состава (API сортирует от
+// монопрепаратов к комбинациям)
+const analogSections = computed(() => {
+	const medName = (med.value?.name || '').trim().toLowerCase();
+	const analogs = med.value?.analogs || [];
+	const isSameBrand = (a: any) =>
+		(a.name || '').trim().toLowerCase() === medName;
+	const others = analogs.filter((a: any) => !isSameBrand(a));
+	return [
+		{
+			id: 'dosages',
+			title: t('OtherDosagesTitle'),
+			hint: t('OtherDosagesDescription'),
+			items: analogs.filter(isSameBrand),
+		},
+		{
+			id: 'analogs',
+			title: t('AnalogsTitle'),
+			hint: t('AnalogsDescription'),
+			items: others.filter((a: any) => a.matchType === 'exact'),
+		},
+		{
+			id: 'combo',
+			title: t('CombinationsTitle'),
+			hint: t('CombinationsDescription'),
+			items: others.filter((a: any) => a.matchType === 'superset'),
+		},
+		{
+			id: 'components',
+			title: t('ComponentsTitle'),
+			hint: t('ComponentsDescription'),
+			items: others.filter((a: any) => a.matchType === 'partial'),
+		},
+	].filter((section) => section.items.length > 0);
+});
+
 const tabs = computed(() => {
 	const result = [{ id: 'info', label: t('PharmaForm') }];
-	if (med.value?.analogs?.length) {
-		result.push({ id: 'analogs', label: t('AnalogsTitle') });
+	for (const section of analogSections.value) {
+		result.push({ id: section.id, label: section.title });
 	}
 	return result;
 });
+
+// Локализованная подпись упаковки из структурных полей (сырой текст реестра
+// не выводим). С разбивкой «(2 × 10)» на детальной странице.
+const packagingLabel = computed(() =>
+	med.value ? buildPackagingLabel(med.value, t, true) : '',
+);
+// Компактная подпись (без разбивки) для строки-подзаголовка hero
+const packagingShort = computed(() =>
+	med.value ? buildPackagingLabel(med.value, t, false) : '',
+);
+const analogPackaging = (analog: any) => buildPackagingLabel(analog, t, false);
+
+// Дозировка с локализованными единицами («500mg» → «500 мг» для ru)
+const strengthLabel = computed(() => localizeStrength(med.value?.strength, t));
+const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 </script>
 
 <template>
@@ -129,19 +186,31 @@ const tabs = computed(() => {
 	>
 		<template #hero v-if="med">
 			<div class="medicine-hero">
-				<h1 class="medicine-name">{{ med.name }}</h1>
-				<div class="medicine-subtitle">
-					<span v-if="med.pharmaForm">{{ med.pharmaForm }}</span>
-					<span v-if="med.strength">, {{ med.strength }}</span>
+				<div class="medicine-hero-icon">
+					<MedicineFormIcon :formSrc="med.pharmaFormSrc" :size="32" />
 				</div>
-				<div class="medicine-badges">
-					<MedicineBadge :dispensingModeId="med.dispensingModeId" />
-					<span
-						class="badge"
-						:class="med.isActive ? 'badge-active' : 'badge-expired'"
-					>
-						{{ med.isActive ? t('ActiveLicense') : t('ExpiredLicense') }}
-					</span>
+				<div class="medicine-hero-main">
+					<h1 class="medicine-name">{{ med.name }}</h1>
+					<div class="medicine-subtitle">
+						<span v-if="med.strength">{{ strengthLabel }}</span>
+						<template v-if="med.strength && packagingShort"> · </template>
+						<span v-if="packagingShort">{{ packagingShort }}</span>
+						<template v-if="(med.strength || packagingShort) && med.pharmaForm">
+							·
+						</template>
+						<span v-if="med.pharmaForm" class="medicine-form">{{
+							med.pharmaForm
+						}}</span>
+					</div>
+					<div class="medicine-badges">
+						<MedicineBadge :dispensingModeId="med.dispensingModeId" />
+						<span
+							class="badge"
+							:class="med.isActive ? 'badge-active' : 'badge-expired'"
+						>
+							{{ med.isActive ? t('ActiveLicense') : t('ExpiredLicense') }}
+						</span>
+					</div>
 				</div>
 			</div>
 		</template>
@@ -154,13 +223,14 @@ const tabs = computed(() => {
 				:title="t('ActiveSubstance')"
 			>
 				<div class="substance-list">
-					<span
+					<NuxtLink
 						v-for="sub in med.substances"
 						:key="sub.id"
+						:to="{ name: 'medicines', query: { substanceIds: sub.id } }"
 						class="substance-tag"
 					>
 						{{ sub.name }}
-					</span>
+					</NuxtLink>
 				</div>
 			</EntityPageSection>
 
@@ -173,20 +243,26 @@ const tabs = computed(() => {
 					</div>
 					<div v-if="med.strength" class="detail-row">
 						<span class="detail-label">{{ t('Strength') }}</span>
-						<span>{{ med.strength }}</span>
+						<span>{{ strengthLabel }}</span>
 					</div>
-					<div v-if="med.detailPackaging || med.packaging" class="detail-row">
+					<div v-if="packagingLabel" class="detail-row">
 						<span class="detail-label">{{ t('Packaging') }}</span>
-						<span>{{ med.detailPackaging || med.packaging }}</span>
+						<span>{{ packagingLabel }}</span>
 					</div>
 					<div v-if="med.manufacturer" class="detail-row">
 						<span class="detail-label">{{ t('Manufacturer') }}</span>
-						<span
-							>{{ med.manufacturer
-							}}<template v-if="med.country"
-								>, {{ med.country }}</template
-							></span
-						>
+						<span>
+							<NuxtLink
+								v-if="med.manufacturerId"
+								:to="{
+									name: 'medicines',
+									query: { manufacturerIds: med.manufacturerId },
+								}"
+								class="detail-link"
+								>{{ med.manufacturer }}</NuxtLink
+							><template v-else>{{ med.manufacturer }}</template
+							><template v-if="med.country">, {{ med.country }}</template>
+						</span>
 					</div>
 					<div v-if="med.atcGroup" class="detail-row">
 						<span class="detail-label">{{ t('AtcGroup') }}</span>
@@ -208,17 +284,18 @@ const tabs = computed(() => {
 				</div>
 			</EntityPageSection>
 
-			<!-- Analogs -->
+			<!-- Other dosages / Analogs -->
 			<EntityPageSection
-				v-if="med.analogs?.length"
-				sectionId="analogs"
-				:title="t('AnalogsTitle')"
-				:count="med.analogs.length"
+				v-for="section in analogSections"
+				:key="section.id"
+				:sectionId="section.id"
+				:title="section.title"
+				:count="section.items.length"
 			>
-				<p class="section-hint">{{ t('AnalogsDescription') }}</p>
+				<p class="section-hint">{{ section.hint }}</p>
 				<div class="analogs-list">
 					<NuxtLink
-						v-for="analog in med.analogs"
+						v-for="analog in section.items"
 						:key="analog.id"
 						:to="{
 							name: 'medicines-medicineSlug',
@@ -227,17 +304,35 @@ const tabs = computed(() => {
 						class="analog-card"
 					>
 						<div class="analog-header">
+							<MedicineFormIcon
+								class="analog-form-icon"
+								:formSrc="analog.pharmaFormSrc"
+								:size="20"
+								color="var(--color-text-muted)"
+							/>
 							<span class="analog-name">{{ analog.name }}</span>
 							<MedicineBadge :dispensingModeId="analog.dispensingModeId" />
 						</div>
-						<span class="analog-details">
-							<template v-if="analog.pharmaForm">{{
-								analog.pharmaForm
-							}}</template>
-							<template v-if="analog.strength"
-								>, {{ analog.strength }}</template
-							>
+						<span
+							v-if="analog.strength || analogPackaging(analog)"
+							class="analog-key"
+						>
+							<span v-if="analog.strength" class="analog-strength">{{
+								analogStrength(analog)
+							}}</span>
+							<template v-if="analog.strength && analogPackaging(analog)">
+								·
+							</template>
+							<span v-if="analogPackaging(analog)">{{
+								analogPackaging(analog)
+							}}</span>
 						</span>
+						<span v-if="analog.substances" class="analog-substances">
+							{{ analog.substances }}
+						</span>
+						<span v-if="analog.pharmaForm" class="analog-form">{{
+							analog.pharmaForm
+						}}</span>
 						<span class="analog-meta">{{ analog.manufacturer }}</span>
 					</NuxtLink>
 				</div>
@@ -274,11 +369,31 @@ const tabs = computed(() => {
 
 <style lang="less" scoped>
 .medicine-hero {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--spacing-lg);
 	padding: var(--spacing-xl) 0 var(--spacing-lg);
 }
 
+.medicine-hero-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	flex-shrink: 0;
+	background: var(--color-primary-bg);
+	border-radius: var(--border-radius-lg);
+	color: var(--color-primary);
+}
+
+.medicine-hero-main {
+	flex: 1;
+	min-width: 0;
+}
+
 .medicine-name {
-	font-size: 2rem;
+	font-size: var(--font-size-4xl);
 	font-weight: 700;
 	color: var(--color-text-primary);
 	margin: 0;
@@ -286,21 +401,26 @@ const tabs = computed(() => {
 }
 
 .medicine-subtitle {
-	font-size: 1rem;
+	font-size: var(--font-size-md);
 	color: var(--color-text-secondary);
 	margin-top: 6px;
 }
 
+/* Форма — общий контекст, приглушаем цветом (без жирности) */
+.medicine-subtitle .medicine-form {
+	color: var(--color-text-muted);
+}
+
 .medicine-badges {
 	display: flex;
-	gap: 8px;
-	margin-top: 12px;
+	gap: var(--spacing-sm);
+	margin-top: var(--spacing-md);
 }
 
 .badge {
-	font-size: 0.8rem;
+	font-size: var(--font-size-sm);
 	font-weight: 500;
-	padding: 4px 12px;
+	padding: var(--spacing-xs) var(--spacing-md);
 	border-radius: 16px;
 }
 
@@ -324,20 +444,26 @@ const tabs = computed(() => {
 	color: #3b5998;
 	padding: 6px 14px;
 	border-radius: 16px;
-	font-size: 0.9rem;
+	font-size: var(--font-size-sm);
 	font-weight: 500;
+	text-decoration: none;
+	transition: background-color 0.15s ease;
+}
+
+.substance-tag:hover {
+	background: #e0e8fc;
 }
 
 .details-grid {
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	gap: var(--spacing-md);
 }
 
 .detail-row {
 	display: flex;
 	gap: var(--spacing-md);
-	font-size: 0.9rem;
+	font-size: var(--font-size-base);
 	line-height: 1.5;
 
 	@media (max-width: 600px) {
@@ -348,17 +474,26 @@ const tabs = computed(() => {
 
 .detail-label {
 	min-width: 200px;
-	color: var(--color-text-tertiary);
+	color: var(--color-text-muted);
 	flex-shrink: 0;
-	font-size: 0.85rem;
+	font-size: var(--font-size-sm);
 	text-transform: uppercase;
 	letter-spacing: 0.03em;
 }
 
+.detail-link {
+	color: var(--color-primary);
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
 .section-hint {
-	font-size: 0.875rem;
+	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
-	margin: 0 0 16px;
+	margin: 0 0 var(--spacing-lg);
 }
 
 .analogs-list {
@@ -393,38 +528,60 @@ const tabs = computed(() => {
 	gap: 8px;
 }
 
-.analog-name {
-	font-weight: 600;
-	font-size: 0.9rem;
+.analog-form-icon {
+	flex-shrink: 0;
 }
 
-.analog-details {
-	font-size: 0.8rem;
+.analog-name {
+	flex: 1;
+	min-width: 0;
+	font-weight: var(--font-weight-semibold);
+	font-size: var(--font-size-base);
+}
+
+/* Различители (дозировка + фасовка) — заметный вес, строка-якорь */
+.analog-key {
+	font-size: var(--font-size-base);
+	color: var(--color-text-primary);
+}
+
+/* Состав комбинации — ключевой различитель в секции комбо, поэтому темнее
+   и выше формы выпуска */
+.analog-substances {
+	font-size: var(--font-size-sm);
+	font-style: italic;
 	color: var(--color-text-secondary);
 }
 
+/* Форма — общий контекст линейки, приглушаем */
+.analog-form {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
+}
+
+/* muted, не tertiary: 12px тоном #94a3b8 не проходит WCAG AA (≈2.6:1) */
 .analog-meta {
-	font-size: 0.8rem;
-	color: var(--color-text-tertiary);
+	font-size: var(--font-size-xs);
+	color: var(--color-text-muted);
 	display: flex;
 	align-items: center;
-	gap: 8px;
-	margin-top: 2px;
+	gap: var(--spacing-sm);
+	margin-top: 6px;
 }
 
 .medicine-source {
 	margin-top: var(--spacing-2xl);
 	padding: var(--spacing-md) var(--spacing-lg);
-	background: #f8f9fb;
+	background: var(--color-bg-secondary);
 	border-radius: var(--border-radius-md);
 	border: 1px solid var(--color-border-light);
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
+	gap: var(--spacing-xs);
 }
 
 .source-text {
-	font-size: 0.85rem;
+	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
 	line-height: 1.4;
 }
@@ -440,7 +597,7 @@ const tabs = computed(() => {
 }
 
 .source-updated {
-	font-size: 0.8rem;
-	color: var(--color-text-tertiary);
+	font-size: var(--font-size-xs);
+	color: var(--color-text-muted);
 }
 </style>

@@ -95,7 +95,7 @@ const formattedPrice = computed(() => {
 }
 
 .item-name {
-	font-size: var(--font-size-lg);
+	font-size: var(--font-size-base);
 	font-weight: var(--font-weight-medium);
 	color: var(--color-text-primary);
 	line-height: 1.3;

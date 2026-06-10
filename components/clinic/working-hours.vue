@@ -94,7 +94,7 @@ const formatDayHours = (ds: DaySchedule): string => {
 	justify-content: space-between;
 	padding: 4px 0;
 	border-radius: var(--border-radius-sm);
-	font-size: var(--font-size-md);
+	font-size: var(--font-size-base);
 	color: var(--color-text-secondary);
 }
 

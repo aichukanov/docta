@@ -9,11 +9,19 @@ interface MedicineListItem {
 	name: string;
 	strength: string | null;
 	pharmaForm: string | null;
+	pharmaFormSrc: string | null;
 	manufacturer: string | null;
 	country: string | null;
 	dispensingModeId: number | null;
 	isActive: boolean;
 	atcCode: string | null;
+	pack_total: number | null;
+	pack_unit: string | null;
+	pack_container_count: number | null;
+	pack_per_container: number | null;
+	pack_volume: number | null;
+	pack_volume_unit: string | null;
+	pack_parse_status: string | null;
 }
 
 interface MedicineListResponse {
@@ -146,6 +154,13 @@ export async function getMedicineList(
 			m.strength,
 			m.is_active,
 			m.atc_code,
+			m.pack_total,
+			m.pack_unit,
+			m.pack_container_count,
+			m.pack_per_container,
+			m.pack_volume,
+			m.pack_volume_unit,
+			m.pack_parse_status,
 			(SELECT GROUP_CONCAT(COALESCE(s.${nameField}, s.name_en, s.name) SEPARATOR ', ')
 			 FROM med_medicine_substances mms
 			 JOIN med_substances s ON s.id = mms.substance_id
@@ -153,6 +168,7 @@ export async function getMedicineList(
 			) as substances,
 			pf.${nameField} as pharmaForm,
 			pf.name_en as pharmaFormEn,
+			pf.name as pharmaFormSrc,
 			mfg.name as manufacturer,
 			c.${nameField} as country,
 			c.name_en as countryEn,
@@ -183,12 +199,20 @@ export async function getMedicineList(
 		name: row.name,
 		strength: row.strength,
 		pharmaForm: row.pharmaForm || row.pharmaFormEn || null,
+		pharmaFormSrc: row.pharmaFormSrc || null,
 		manufacturer: row.manufacturer || null,
 		country: row.country || row.countryEn || null,
 		substances: row.substances || null,
 		dispensingModeId: row.dispensing_mode_id || null,
 		isActive: !!row.is_active,
 		atcCode: row.atc_code,
+		pack_total: row.pack_total,
+		pack_unit: row.pack_unit,
+		pack_container_count: row.pack_container_count,
+		pack_per_container: row.pack_per_container,
+		pack_volume: row.pack_volume != null ? Number(row.pack_volume) : null,
+		pack_volume_unit: row.pack_volume_unit,
+		pack_parse_status: row.pack_parse_status,
 	}));
 
 	return {

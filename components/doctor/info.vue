@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { REVIEWS_THRESHOLD } from '~/common/constants';
 import { getRegionalQuery } from '~/common/url-utils';
-import type { DoctorData } from '~/interfaces/doctor';
 import RatingStars from '~/components/rating-stars.vue';
+import type { DoctorData } from '~/interfaces/doctor';
 
 const props = withDefaults(
 	defineProps<{
@@ -38,15 +39,35 @@ const avatarName = computed(() => {
 		? props.service.localName
 		: props.service.name;
 });
+
+// Больше порога — отдельная страница отзывов, иначе якорь на детальной
+const reviewsLink = computed(() => {
+	if (!props.service.slug || !props.service.rating?.totalReviews) return null;
+	const base = {
+		params: { doctorSlug: props.service.slug },
+		query: getRegionalQuery(locale.value),
+	};
+	if (props.service.rating.totalReviews > REVIEWS_THRESHOLD) {
+		return { name: 'doctors-doctorSlug-reviews', ...base };
+	}
+	return { name: 'doctors-doctorSlug', ...base, hash: '#reviews' };
+});
 </script>
 
 <template>
-	<div class="doctor-wrapper" :class="{ 'doctor-wrapper__short': short }">
+	<div
+		class="doctor-wrapper"
+		:class="{
+			'doctor-wrapper__short': short,
+			'doctor-wrapper__hero': isMainHeading,
+		}"
+	>
 		<DoctorAvatar
 			:name="avatarName"
 			:photoUrl="service.photoUrl"
 			:size="short ? 40 : 120"
 			:zoomable="!short"
+			:loading="isMainHeading ? 'eager' : 'lazy'"
 		/>
 		<div class="doctor-info">
 			<component :is="headingTag" class="doctor-name">
@@ -68,6 +89,9 @@ const avatarName = computed(() => {
 			<RatingStars
 				v-if="service.rating && service.rating.averageRating"
 				:rating="service.rating.averageRating"
+				:count="service.rating.totalReviews"
+				:count-link="reviewsLink"
+				show-value
 			/>
 			<ConsultationLanguages v-if="!short" :languageIds="service.languageIds">
 				{{ t('DoctorLanguages') }}
@@ -111,10 +135,11 @@ const avatarName = computed(() => {
 		flex: 1;
 	}
 
+	/* Дефолт — карточка в выдаче; крупный вариант только в hero детальной */
 	.doctor-name {
 		margin: 0;
-		font-size: var(--font-size-2xl);
-		font-weight: 700;
+		font-size: var(--font-size-lg);
+		font-weight: 600;
 		color: var(--color-text-primary);
 		line-height: 1.2;
 		letter-spacing: -0.01em;
@@ -131,7 +156,7 @@ const avatarName = computed(() => {
 	}
 
 	.doctor-professional-title {
-		font-size: var(--font-size-md);
+		font-size: var(--font-size-sm);
 		font-weight: var(--font-weight-medium);
 		color: var(--color-text-secondary);
 		line-height: 1.4;
@@ -140,10 +165,22 @@ const avatarName = computed(() => {
 	}
 
 	.doctor-original-name {
-		font-size: var(--font-size-md);
+		font-size: var(--font-size-sm);
 		font-weight: var(--font-weight-medium);
 		color: var(--color-text-secondary);
 		margin-top: var(--spacing-xs);
+	}
+
+	&.doctor-wrapper__hero {
+		.doctor-name {
+			font-size: var(--font-size-2xl);
+			font-weight: 700;
+		}
+
+		.doctor-professional-title,
+		.doctor-original-name {
+			font-size: var(--font-size-md);
+		}
 	}
 
 	&.doctor-wrapper__short {
@@ -154,7 +191,7 @@ const avatarName = computed(() => {
 		}
 
 		.doctor-name {
-			font-size: var(--font-size-xl);
+			font-size: var(--font-size-base);
 			font-weight: initial;
 		}
 

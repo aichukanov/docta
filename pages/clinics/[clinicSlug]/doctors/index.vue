@@ -86,9 +86,7 @@ const { data: doctorsData, pending: isLoading } = await useFetch(
 const items = computed(() => doctorsData.value?.doctors || []);
 const totalCount = computed(() => doctorsData.value?.totalCount || 0);
 const pageSize = CLINIC_ITEMS_PAGE_SIZE;
-const totalPages = computed(
-	() => Math.ceil(totalCount.value / pageSize) || 1,
-);
+const totalPages = computed(() => Math.ceil(totalCount.value / pageSize) || 1);
 
 const clinicName = computed(() =>
 	getLocalizedName(clinicData.value, locale.value),
@@ -122,9 +120,7 @@ const isFiltered = computed(
 );
 
 const selectedSpecialtyName = computed(() =>
-	currentCategory.value != null
-		? t(`specialty_${currentCategory.value}`)
-		: '',
+	currentCategory.value != null ? t(`specialty_${currentCategory.value}`) : '',
 );
 
 const pageTitleText = computed(() => {
@@ -181,9 +177,7 @@ watchEffect(() => {
 			locale: locale.value,
 			title: pageTitleText.value,
 			description: pageDescription.value,
-			totalCount: isFiltered.value
-				? totalCount.value
-				: totalDoctors.value,
+			totalCount: isFiltered.value ? totalCount.value : totalDoctors.value,
 			doctors: items.value,
 			isFiltered: isFiltered.value,
 			getSpecialtyName,

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { LocationFilled } from '@element-plus/icons-vue';
 import { getRegionalQuery } from '~/common/url-utils';
+import { REVIEWS_THRESHOLD } from '~/common/constants';
 import { getLocalizedName } from '~/common/utils';
 import RatingStars from '~/components/rating-stars.vue';
 import { BillingService } from '~/enums/billing-service';
@@ -84,6 +85,19 @@ const clinicLink = computed(() => {
 		query: getRegionalQuery(locale.value),
 	};
 });
+
+// Больше порога — отдельная страница отзывов, иначе якорь на детальной
+const reviewsLink = computed(() => {
+	if (!props.clinic.slug || !props.clinic.rating?.totalReviews) return null;
+	const base = {
+		params: { clinicSlug: props.clinic.slug },
+		query: getRegionalQuery(locale.value),
+	};
+	if (props.clinic.rating.totalReviews > REVIEWS_THRESHOLD) {
+		return { name: 'clinics-clinicSlug-reviews', ...base };
+	}
+	return { name: 'clinics-clinicSlug', ...base, hash: '#reviews' };
+});
 </script>
 
 <template>
@@ -135,6 +149,9 @@ const clinicLink = computed(() => {
 			<RatingStars
 				v-if="clinic.rating && clinic.rating.averageRating"
 				:rating="clinic.rating.averageRating"
+				:count="clinic.rating.totalReviews"
+				:count-link="reviewsLink"
+				show-value
 			/>
 
 			<ConsultationLanguages :languageIds="clinic.languageIds">
@@ -181,7 +198,7 @@ const clinicLink = computed(() => {
 }
 
 .clinic-name {
-	font-size: var(--font-size-xl);
+	font-size: var(--font-size-lg);
 	font-weight: 600;
 	color: var(--color-primary);
 	text-decoration: none;
@@ -202,8 +219,8 @@ const clinicLink = computed(() => {
 	background: var(--color-primary);
 	border-radius: var(--border-radius-sm);
 	color: white;
-	font-size: var(--font-size-lg);
-	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-semibold);
 	white-space: nowrap;
 
 	&__unknown {
@@ -218,7 +235,7 @@ const clinicLink = computed(() => {
 	display: flex;
 	align-items: center;
 	gap: var(--spacing-xs);
-	font-size: var(--font-size-md);
+	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
 
 	.address-icon {

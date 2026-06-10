@@ -247,6 +247,16 @@ onMounted(async () => {
 							<p>{{ t('NotFound') }}</p>
 						</div>
 
+						<div
+							v-else-if="list.length === 0"
+							class="skeleton-list"
+							role="status"
+							aria-live="polite"
+							:aria-label="t('AriaLoadingResults')"
+						>
+							<SkeletonCard v-for="i in 5" :key="i" />
+						</div>
+
 						<ul
 							v-else
 							class="results-list"
@@ -347,7 +357,7 @@ onMounted(async () => {
 	flex-direction: column;
 	flex: 0 0 280px;
 	width: 280px;
-	background: #ffffff;
+	background: var(--color-bg-primary);
 	gap: var(--spacing-lg);
 	position: sticky;
 	top: calc(60px + var(--spacing-lg));
@@ -360,15 +370,15 @@ onMounted(async () => {
 	flex: 1 1 60%;
 	min-width: 0;
 	box-sizing: border-box;
-	background: #ffffff;
+	background: var(--color-bg-primary);
 	border-right: 1px solid rgba(0, 0, 0, 0.06);
 	padding: var(--spacing-lg);
 }
 
 .page-title {
-	font-size: 2rem;
+	font-size: var(--font-size-3xl);
 	font-weight: 600;
-	color: #1f2937;
+	color: var(--color-text-heading);
 	margin: 0 0 var(--spacing-2xl) 0;
 	font-family:
 		system-ui,
@@ -418,19 +428,18 @@ onMounted(async () => {
 	box-sizing: border-box;
 }
 
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
+.skeleton-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .empty-state {
 	text-align: center;
 	padding: 40px;
-	color: #6b7280;
+	color: var(--color-text-muted);
 }
 
 .loading-overlay {
@@ -449,7 +458,7 @@ onMounted(async () => {
 	background: linear-gradient(
 		90deg,
 		var(--color-primary) 0%,
-		var(--color-primary-light, #a5b4fc) 50%,
+		var(--color-primary-light) 50%,
 		var(--color-primary) 100%
 	);
 	animation: loading-slide 0.8s linear infinite;

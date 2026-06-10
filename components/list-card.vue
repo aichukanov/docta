@@ -156,7 +156,7 @@ const viewAllLink = computed(() => {
 	}
 
 	.list-card-header {
-		font-size: 1.25rem;
+		font-size: var(--font-size-lg);
 		font-weight: 600;
 		color: #1f2937;
 		margin: 0;
@@ -205,7 +205,7 @@ const viewAllLink = computed(() => {
 	border: 1px solid var(--color-border-accent);
 	border-radius: var(--border-radius-lg);
 	color: var(--color-primary);
-	font-size: var(--font-size-md);
+	font-size: var(--font-size-base);
 	font-weight: var(--font-weight-semibold);
 	text-decoration: none;
 	transition:

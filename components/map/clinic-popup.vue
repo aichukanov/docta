@@ -123,7 +123,7 @@ watch(pageNumber, () => {
 	overflow-wrap: break-word;
 
 	.clinic-name {
-		font-size: var(--font-size-xl);
+		font-size: var(--font-size-base);
 		font-weight: 600;
 		color: var(--color-primary);
 		text-decoration: none;

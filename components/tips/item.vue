@@ -59,12 +59,12 @@ withDefaults(
 
 	&--emergency {
 		&::before {
-			background: #ef4444;
+			background: var(--color-danger);
 		}
 
 		.tip-icon-wrapper {
 			background: rgba(239, 68, 68, 0.1);
-			color: #ef4444;
+			color: var(--color-danger);
 		}
 	}
 }

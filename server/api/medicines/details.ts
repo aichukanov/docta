@@ -38,9 +38,17 @@ export default defineEventHandler(async (event) => {
 				m.is_active,
 				m.detail_url,
 				m.updated_at,
+				m.pack_total,
+				m.pack_unit,
+				m.pack_container_count,
+				m.pack_per_container,
+				m.pack_volume,
+				m.pack_volume_unit,
+				m.pack_parse_status,
 				pf.name as pharmaFormSrc,
 				pf.${nameField} as pharmaForm,
 				pf.name_en as pharmaFormEn,
+				mfg.id as manufacturerId,
 				mfg.name as manufacturer,
 				mfg.full_address as manufacturerAddress,
 				c.${nameField} as country,
@@ -83,45 +91,91 @@ export default defineEventHandler(async (event) => {
 			[med.id],
 		);
 
-		// Analogs: other active medicines with the same substances
+		// Аналоги — сравнение МНОЖЕСТВ действующих веществ, не «хотя бы одно общее»:
+		// exact — состав совпадает полностью; superset — содержит весь состав плюс
+		// дополнительные вещества; partial — только часть состава. Сортировка:
+		// сначала полные совпадения, внутри группы — от монопрепаратов к комбинациям
+		// (тот же ключ даёт нужный порядок и в секции «компоненты по отдельности»).
 		const substances = subRows as any[];
 		let analogs: any[] = [];
 
 		if (substances.length > 0) {
 			const substanceIds = substances.map((s: any) => s.id);
+			const targetCount = substanceIds.length;
 			const placeholders = substanceIds.map(() => '?').join(',');
 			const [analogRows] = await connection.execute(
 				`
-				SELECT DISTINCT
+				SELECT
 					m2.id,
 					m2.slug,
 					m2.name,
 					m2.strength,
 					pf2.${nameField} as pharmaForm,
 					pf2.name_en as pharmaFormEn,
+					pf2.name as pharmaFormSrc,
 					m2.dispensing_mode_id,
-					mfg2.name as manufacturer
+					m2.pack_total,
+					m2.pack_unit,
+					m2.pack_container_count,
+					m2.pack_per_container,
+					m2.pack_volume,
+					m2.pack_volume_unit,
+					m2.pack_parse_status,
+					mfg2.name as manufacturer,
+					GROUP_CONCAT(
+						DISTINCT COALESCE(NULLIF(s3.${nameField}, ''), NULLIF(s3.name_en, ''), s3.name)
+						ORDER BY COALESCE(NULLIF(s3.${nameField}, ''), NULLIF(s3.name_en, ''), s3.name)
+						SEPARATOR ', '
+					) as substances,
+					COUNT(DISTINCT mms3.substance_id) as substanceTotal,
+					COUNT(DISTINCT CASE WHEN mms3.substance_id IN (${placeholders})
+						THEN mms3.substance_id END) as substanceShared
 				FROM med_medicine_substances mms2
 				JOIN med_medicines m2 ON m2.id = mms2.medicine_id
 				LEFT JOIN med_pharma_forms pf2 ON pf2.id = m2.pharmaceutical_form_id
 				LEFT JOIN med_manufacturers mfg2 ON mfg2.id = m2.manufacturer_id
+				LEFT JOIN med_medicine_substances mms3 ON mms3.medicine_id = m2.id
+				LEFT JOIN med_substances s3 ON s3.id = mms3.substance_id
 				WHERE mms2.substance_id IN (${placeholders})
 					AND m2.id != ?
 					AND m2.is_active = 1
-				ORDER BY m2.name ASC
-				LIMIT 20
+				GROUP BY m2.id, pf2.id, mfg2.id
+				ORDER BY
+					(substanceShared = ?) DESC,
+					substanceTotal ASC,
+					m2.name ASC
+				LIMIT 60
 			`,
-				[...substanceIds, med.id],
+				[...substanceIds, ...substanceIds, med.id, targetCount],
 			);
-			analogs = (analogRows as any[]).map((row: any) => ({
-				id: row.id,
-				slug: row.slug,
-				name: row.name,
-				strength: row.strength,
-				pharmaForm: row.pharmaForm || row.pharmaFormEn || null,
-				dispensingModeId: row.dispensing_mode_id || null,
-				manufacturer: row.manufacturer,
-			}));
+			analogs = (analogRows as any[]).map((row: any) => {
+				const total = Number(row.substanceTotal);
+				const shared = Number(row.substanceShared);
+				return {
+					id: row.id,
+					slug: row.slug,
+					name: row.name,
+					strength: row.strength,
+					pharmaForm: row.pharmaForm || row.pharmaFormEn || null,
+					pharmaFormSrc: row.pharmaFormSrc || null,
+					dispensingModeId: row.dispensing_mode_id || null,
+					manufacturer: row.manufacturer,
+					substances: row.substances || null,
+					matchType:
+						shared === targetCount
+							? total === targetCount
+								? 'exact'
+								: 'superset'
+							: 'partial',
+					pack_total: row.pack_total,
+					pack_unit: row.pack_unit,
+					pack_container_count: row.pack_container_count,
+					pack_per_container: row.pack_per_container,
+					pack_volume: row.pack_volume != null ? Number(row.pack_volume) : null,
+					pack_volume_unit: row.pack_volume_unit,
+					pack_parse_status: row.pack_parse_status,
+				};
+			});
 		}
 
 		await connection.end();
@@ -141,6 +195,15 @@ export default defineEventHandler(async (event) => {
 			detailUrl: med.detail_url,
 			updatedAt: med.updated_at,
 			pharmaForm: med.pharmaForm || med.pharmaFormEn || null,
+			pharmaFormSrc: med.pharmaFormSrc || null,
+			pack_total: med.pack_total,
+			pack_unit: med.pack_unit,
+			pack_container_count: med.pack_container_count,
+			pack_per_container: med.pack_per_container,
+			pack_volume: med.pack_volume != null ? Number(med.pack_volume) : null,
+			pack_volume_unit: med.pack_volume_unit,
+			pack_parse_status: med.pack_parse_status,
+			manufacturerId: med.manufacturerId,
 			manufacturer: med.manufacturer,
 			manufacturerAddress: med.manufacturerAddress,
 			country: med.country || med.countryEn || null,

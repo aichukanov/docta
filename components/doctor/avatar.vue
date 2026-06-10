@@ -8,11 +8,14 @@ const props = withDefaults(
 		size: number;
 		class?: string;
 		zoomable?: boolean;
+		// 'eager' — для изображений выше фолда (hero детальной страницы)
+		loading?: 'lazy' | 'eager';
 	}>(),
 	{
 		photoUrl: null,
 		class: '',
 		zoomable: false,
+		loading: 'lazy',
 	},
 );
 
@@ -67,6 +70,7 @@ const zoomed = ref(false);
 		]"
 		:width="size"
 		:height="size"
+		:loading="loading"
 		:referrerpolicy="mounted ? 'no-referrer' : undefined"
 		@error="onError"
 		@click="canZoom && (zoomed = true)"

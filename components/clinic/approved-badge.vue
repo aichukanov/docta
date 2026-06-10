@@ -65,7 +65,7 @@ const hasApproved = computed(() =>
 
 <style scoped lang="less">
 .approved-icon {
-	color: var(--color-success);
+	color: var(--color-success-dark);
 	font-size: var(--font-size-lg);
 	flex-shrink: 0;
 	margin-top: 2px;
@@ -73,7 +73,7 @@ const hasApproved = computed(() =>
 	cursor: help;
 
 	&--small {
-		font-size: var(--font-size-md);
+		font-size: var(--font-size-base);
 	}
 }
 </style>

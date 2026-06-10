@@ -49,7 +49,7 @@ const { giveConsent, declineConsent } = useCookieControl();
 
 .cookie-banner__text {
 	margin: 0;
-	font-size: var(--font-size-sm);
+	font-size: var(--font-size-base);
 	line-height: 1.4;
 	color: var(--color-text-secondary);
 }
@@ -72,7 +72,7 @@ const { giveConsent, declineConsent } = useCookieControl();
 
 .cookie-banner__btn {
 	border: none;
-	padding: 6px 14px;
+	padding: var(--spacing-sm) var(--spacing-lg);
 	border-radius: var(--border-radius-md);
 	cursor: pointer;
 	font-size: var(--font-size-sm);

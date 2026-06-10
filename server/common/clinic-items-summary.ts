@@ -1,7 +1,7 @@
 import type {
-    ClinicItemsSummary,
-    ClinicItemTopEntry,
-    ClinicItemTypeSummary,
+	ClinicItemsSummary,
+	ClinicItemTopEntry,
+	ClinicItemTypeSummary,
 } from '~/interfaces/clinic';
 import { executeQuery } from '~/server/common/db-mysql';
 import { getLocalizedNameField } from '~/server/common/utils';

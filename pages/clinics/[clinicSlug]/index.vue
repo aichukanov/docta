@@ -409,8 +409,7 @@ const pageDescription = computed(() => {
 	const topItemPrices = (itemsSummary.value?.services.topItems || [])
 		.flatMap((s) => [s.price, s.priceMin])
 		.filter((p): p is number => p != null && p > 0);
-	const allPrices =
-		inlinePrices.length > 0 ? inlinePrices : topItemPrices;
+	const allPrices = inlinePrices.length > 0 ? inlinePrices : topItemPrices;
 
 	if (allPrices.length > 0) {
 		const minPrice = Math.min(...allPrices);
@@ -812,9 +811,7 @@ watchEffect(() => {
 					subpageRouteName="clinics-clinicSlug-medications"
 					categoryQueryKey="category"
 					:getCategoryTitle="() => ''"
-					:viewAllLabel="
-						t('ViewAllMedications', { count: totals.medications })
-					"
+					:viewAllLabel="t('ViewAllMedications', { count: totals.medications })"
 					:popularLabel="t('PopularLabel')"
 				>
 					<template #icon><IconMedication /></template>
@@ -842,9 +839,7 @@ watchEffect(() => {
 					<ViewAllLink
 						v-if="allReviewsLink && clinicData.rating"
 						:to="allReviewsLink"
-						:label="
-							t('AllReviews', { count: clinicData.rating.totalReviews })
-						"
+						:label="t('AllReviews', { count: clinicData.rating.totalReviews })"
 					/>
 				</div>
 				<div class="reviews-content">

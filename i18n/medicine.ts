@@ -32,7 +32,17 @@ export default {
 			SourceCInMEDSite: 'cinmed.me',
 			SourceCInMEDUpdated: 'Data updated: {date}',
 			AnalogsTitle: 'Analogs in Montenegro',
-			AnalogsDescription: 'Other medicines with the same active substance',
+			AnalogsDescription:
+				'Same active substances; inactive ingredients may differ',
+			OtherDosagesTitle: 'Other variants',
+			OtherDosagesDescription:
+				'The same medicine in a different pack size, dosage or form',
+			CombinationsTitle: 'Combination medicines',
+			CombinationsDescription:
+				'Contain all active substances of this medicine plus additional ones',
+			ComponentsTitle: 'Individual components',
+			ComponentsDescription:
+				"Contain only some of this medicine's active substances, not the full combination",
 			NoAnalogs: 'No analogs found',
 			FilterAll: 'All',
 			FilterOTC: 'Without prescription',
@@ -97,7 +107,17 @@ export default {
 			SourceCInMEDSite: 'cinmed.me',
 			SourceCInMEDUpdated: 'Данные обновлены: {date}',
 			AnalogsTitle: 'Аналоги в Черногории',
-			AnalogsDescription: 'Другие лекарства с тем же действующим веществом',
+			AnalogsDescription:
+				'Действующие вещества совпадают, вспомогательные могут отличаться',
+			OtherDosagesTitle: 'Варианты выпуска',
+			OtherDosagesDescription:
+				'Тот же препарат в другой упаковке, дозировке или форме выпуска',
+			CombinationsTitle: 'Комбинированные препараты',
+			CombinationsDescription:
+				'Содержат все действующие вещества этого препарата и дополнительные компоненты',
+			ComponentsTitle: 'Компоненты по отдельности',
+			ComponentsDescription:
+				'Содержат только некоторые из действующих веществ этого препарата, а не весь состав',
 			NoAnalogs: 'Аналоги не найдены',
 			FilterAll: 'Все',
 			FilterOTC: 'Без рецепта',
@@ -133,7 +153,7 @@ export default {
 		},
 		'sr': {
 			MedicineName: 'Ime lijeka ili supstance',
-			InsertMedicineName: 'npr. Aspirin, paracetamol, ibuprofen',
+			InsertMedicineName: 'npr. Aspirin, Brufen, Amoksiklav',
 			Medicines: 'Registar lijekova Crne Gore',
 			MedicinesDescription:
 				'Zvanični registar odobrenih lijekova CInMED. Pretraga po imenu ili aktivnoj supstanci, provjera režima izdavanja, analozi.',
@@ -163,7 +183,17 @@ export default {
 			SourceCInMEDSite: 'cinmed.me',
 			SourceCInMEDUpdated: 'Podaci ažurirani: {date}',
 			AnalogsTitle: 'Analozi u Crnoj Gori',
-			AnalogsDescription: 'Drugi lijekovi sa istom aktivnom supstancom',
+			AnalogsDescription:
+				'Aktivne supstance su iste, pomoćne se mogu razlikovati',
+			OtherDosagesTitle: 'Druga pakovanja i jačine',
+			OtherDosagesDescription:
+				'Isti lijek u drugom pakovanju, jačini ili obliku',
+			CombinationsTitle: 'Kombinovani lijekovi',
+			CombinationsDescription:
+				'Sadrže sve aktivne supstance ovog lijeka uz dodatne komponente',
+			ComponentsTitle: 'Pojedinačne komponente',
+			ComponentsDescription:
+				'Sadrže samo neke od aktivnih supstanci ovog lijeka, a ne kompletan sastav',
 			NoAnalogs: 'Analozi nisu pronađeni',
 			FilterAll: 'Svi',
 			FilterOTC: 'Bez recepta',
@@ -228,7 +258,17 @@ export default {
 			SourceCInMEDSite: 'cinmed.me',
 			SourceCInMEDUpdated: 'Daten aktualisiert: {date}',
 			AnalogsTitle: 'Analoga in Montenegro',
-			AnalogsDescription: 'Andere Arzneimittel mit demselben Wirkstoff',
+			AnalogsDescription:
+				'Gleiche Wirkstoffe – die Hilfsstoffe können sich unterscheiden',
+			OtherDosagesTitle: 'Weitere Varianten',
+			OtherDosagesDescription:
+				'Dasselbe Arzneimittel in anderer Packungsgröße, Stärke oder Darreichungsform',
+			CombinationsTitle: 'Kombinationspräparate',
+			CombinationsDescription:
+				'Enthalten alle Wirkstoffe dieses Arzneimittels sowie zusätzliche Komponenten',
+			ComponentsTitle: 'Einzelne Komponenten',
+			ComponentsDescription:
+				'Enthalten nur einige der Wirkstoffe dieses Arzneimittels, nicht die vollständige Kombination',
 			NoAnalogs: 'Keine Analoga gefunden',
 			FilterAll: 'Alle',
 			FilterOTC: 'Rezeptfrei',
@@ -294,7 +334,16 @@ export default {
 			SourceCInMEDSite: 'cinmed.me',
 			SourceCInMEDUpdated: 'Veriler güncellendi: {date}',
 			AnalogsTitle: "Karadağ'daki analoglar",
-			AnalogsDescription: 'Aynı etken maddeye sahip diğer ilaçlar',
+			AnalogsDescription:
+				'Etken maddeler aynı, yardımcı maddeler farklı olabilir',
+			OtherDosagesTitle: 'Diğer ambalaj ve dozlar',
+			OtherDosagesDescription: 'Aynı ilacın farklı ambalaj, doz veya formları',
+			CombinationsTitle: 'Kombine ilaçlar',
+			CombinationsDescription:
+				'Bu ilacın tüm etken maddelerinin yanı sıra ek bileşenler içeren ilaçlar',
+			ComponentsTitle: 'Ayrı bileşenler',
+			ComponentsDescription:
+				'Bu ilacın etken maddelerinin tamamını değil, yalnızca bazılarını içerir',
 			NoAnalogs: 'Analog bulunamadı',
 			FilterAll: 'Tümü',
 			FilterOTC: 'Reçetesiz',
@@ -359,7 +408,17 @@ export default {
 			SourceCInMEDSite: 'cinmed.me',
 			SourceCInMEDUpdated: 'Подаци ажурирани: {date}',
 			AnalogsTitle: 'Аналози у Црној Гори',
-			AnalogsDescription: 'Други лијекови са истом активном супстанцом',
+			AnalogsDescription:
+				'Активне супстанце су исте, помоћне се могу разликовати',
+			OtherDosagesTitle: 'Друга паковања и јачине',
+			OtherDosagesDescription:
+				'Исти лијек у другом паковању, јачини или облику',
+			CombinationsTitle: 'Комбиновани лијекови',
+			CombinationsDescription:
+				'Садрже све активне супстанце овог лијека уз додатне компоненте',
+			ComponentsTitle: 'Појединачне компоненте',
+			ComponentsDescription:
+				'Садрже само неке од активних супстанци овог лијека, а не комплетан састав',
 			NoAnalogs: 'Аналози нису пронађени',
 			FilterAll: 'Сви',
 			FilterOTC: 'Без рецепта',

@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { debounce } from 'lodash-es';
+import { getRegionalQuery } from '~/common/url-utils';
+import { getLocalizedName } from '~/common/utils';
 import { DoctorSpecialty } from '~/enums/specialty';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
-import { getRegionalQuery } from '~/common/url-utils';
-import { getLocalizedName } from '~/common/utils';
+import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
 import type { DoctorData } from '~/interfaces/doctor';
 import type { LabTestData } from '~/interfaces/lab-test';
-import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
 
 const globalSearchI18n = {
 	messages: {

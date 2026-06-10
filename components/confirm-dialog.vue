@@ -79,7 +79,7 @@ const handleCancel = () => {
 }
 
 .confirm-btn.danger {
-	background: var(--color-danger, #ef4444);
+	background: var(--color-danger-dark, #991b1b);
 	color: #fff;
 }
 </style>

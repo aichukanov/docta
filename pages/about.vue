@@ -446,7 +446,7 @@ const breadcrumbItems = computed(() => [
 
 .about-page__title {
 	margin: 0 0 var(--spacing-sm);
-	font-size: clamp(1.8rem, 4vw, 2.6rem);
+	font-size: var(--font-size-hero);
 	letter-spacing: -0.02em;
 	color: var(--color-text-heading);
 	line-height: 1.15;
@@ -520,7 +520,7 @@ const breadcrumbItems = computed(() => [
 
 .about-card__list {
 	margin: 0;
-	padding-left: 1.1rem;
+	padding-left: var(--spacing-lg);
 	color: var(--color-text-secondary);
 	line-height: 1.75;
 

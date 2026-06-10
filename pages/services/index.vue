@@ -49,7 +49,9 @@ const filterList = computed(() => ({
 	page: pageNumber.value,
 }));
 
-const filterQuery = computed(() => filtersStore.getRouteParams('services').query);
+const filterQuery = computed(
+	() => filtersStore.getRouteParams('services').query,
+);
 
 const clinicsStore = useClinicsStore();
 
@@ -259,7 +261,7 @@ watchEffect(() => {
 	padding: 0 var(--spacing-xs);
 
 	.service-name {
-		font-size: 1.25rem;
+		font-size: var(--font-size-xl);
 		font-weight: 600;
 		color: #1f2937;
 		margin: 0;
@@ -281,7 +283,7 @@ watchEffect(() => {
 	}
 
 	.service-local-name {
-		font-size: 0.9rem;
+		font-size: var(--font-size-sm);
 		color: #6b7280;
 		margin-top: var(--spacing-xs);
 		font-style: italic;

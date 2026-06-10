@@ -80,11 +80,7 @@ const hasCategories = computed(() => topCategories.value.length > 0);
 		<section v-if="hasTopItems" class="top-items-section">
 			<p v-if="popularLabel" class="subsection-label">{{ popularLabel }}</p>
 			<div class="top-items-grid">
-				<slot
-					v-for="item in summary.topItems"
-					name="item"
-					:item="item"
-				/>
+				<slot v-for="item in summary.topItems" name="item" :item="item" />
 			</div>
 		</section>
 
@@ -93,11 +89,7 @@ const hasCategories = computed(() => topCategories.value.length > 0);
 				{{ categoriesLabel }}
 			</p>
 			<ul class="category-list">
-				<li
-					v-for="row in topCategories"
-					:key="row.key"
-					class="category-item"
-				>
+				<li v-for="row in topCategories" :key="row.key" class="category-item">
 					<NuxtLink :to="categoryLink(row.query)" class="category-link">
 						<span class="category-title">{{ row.title }}</span>
 						<span class="category-count">{{ row.count }}</span>
@@ -168,7 +160,7 @@ const hasCategories = computed(() => topCategories.value.length > 0);
 	align-items: center;
 	justify-content: space-between;
 	gap: var(--spacing-sm);
-	padding: var(--spacing-sm) var(--spacing-md);
+	padding: var(--spacing-md);
 	border-radius: var(--border-radius-md);
 	text-decoration: none;
 	color: var(--color-text-primary);

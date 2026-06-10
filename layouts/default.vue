@@ -336,16 +336,7 @@ watch(
 </i18n>
 
 <style lang="less">
-:root {
-	/* === СОВМЕСТИМОСТЬ С ELEMENT PLUS === */
-	--el-color-primary: var(--color-primary);
-	--el-color-primary-light-3: #6366f1;
-	--el-color-primary-light-5: #818cf8;
-	--el-color-primary-light-7: #a5b4fc;
-	--el-color-primary-light-8: #c7d2fe;
-	--el-color-primary-light-9: #e0e7ff;
-	--el-color-primary-dark-2: var(--color-primary-dark);
-}
+/* Мост Element Plus → дизайн-токены живёт в assets/css/design-tokens.css */
 
 html,
 body {
@@ -354,8 +345,9 @@ body {
 
 body {
 	width: 100%;
-	background-color: #ffffff;
+	background-color: var(--color-bg-primary);
 	font-family: system-ui;
+	font-size: var(--font-size-base);
 	overflow-x: hidden;
 	overflow-y: auto;
 }
@@ -436,7 +428,7 @@ body {
 				flex-wrap: wrap;
 				gap: var(--spacing-xs);
 				font-size: var(--font-size-sm);
-				color: var(--color-text-light);
+				color: var(--color-text-muted);
 				line-height: 1.4;
 			}
 
@@ -451,7 +443,7 @@ body {
 			}
 
 			&__partner-note {
-				color: var(--color-text-light);
+				color: var(--color-text-muted);
 			}
 		}
 
@@ -460,7 +452,7 @@ body {
 			flex-wrap: wrap;
 			gap: var(--spacing-xs);
 			font-size: var(--font-size-sm);
-			color: var(--color-text-light);
+			color: var(--color-text-muted);
 			line-height: 1.4;
 
 			&__link {
@@ -474,7 +466,7 @@ body {
 			}
 
 			&__note {
-				color: var(--color-text-light);
+				color: var(--color-text-muted);
 			}
 
 			&--mobile {
@@ -573,7 +565,7 @@ body {
 			}
 
 			&__muted {
-				color: var(--color-text-light);
+				color: var(--color-text-muted);
 				font-size: var(--font-size-sm);
 				line-height: 1.4;
 			}
@@ -582,7 +574,7 @@ body {
 				background: none;
 				border: none;
 				padding: 0;
-				color: var(--color-text-light);
+				color: var(--color-text-muted);
 				font-size: var(--font-size-sm);
 				cursor: pointer;
 				text-decoration: underline;

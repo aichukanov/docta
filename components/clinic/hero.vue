@@ -28,6 +28,7 @@ const localizedName = computed(() =>
 				:name="localizedName"
 				:size="80"
 				zoomable
+				loading="eager"
 			/>
 			<div class="clinic-hero__header-info">
 				<div class="clinic-hero__title-row">
@@ -95,7 +96,7 @@ const localizedName = computed(() =>
 }
 
 .clinic-hero__name {
-	font-size: 1.75rem;
+	font-size: var(--font-size-4xl);
 	font-weight: 700;
 	color: var(--color-text-primary);
 	margin: 0;
@@ -134,7 +135,7 @@ const localizedName = computed(() =>
 
 @media (max-width: 500px) {
 	.clinic-hero__name {
-		font-size: 1.5rem;
+		font-size: var(--font-size-3xl);
 	}
 }
 </style>

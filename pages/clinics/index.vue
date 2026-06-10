@@ -53,7 +53,9 @@ const filterList = computed(() => ({
 	page: pageNumber.value,
 }));
 
-const filterQuery = computed(() => filtersStore.getRouteParams('clinics').query);
+const filterQuery = computed(
+	() => filtersStore.getRouteParams('clinics').query,
+);
 
 const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
 	'/api/clinics/list',

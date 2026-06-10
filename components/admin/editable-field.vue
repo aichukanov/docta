@@ -171,7 +171,7 @@ const showTranslateButton = computed(
 
 	&.modified {
 		& > label {
-			color: #f59e0b;
+			color: var(--color-warning-dark);
 			font-weight: 500;
 		}
 	}

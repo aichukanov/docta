@@ -93,7 +93,7 @@ const getPriceInfo = (clinicId: number) =>
 	margin: 0;
 	padding: var(--spacing-xl);
 	text-align: center;
-	color: var(--color-text-muted);
+	color: var(--color-text-secondary);
 	background: var(--color-bg-tertiary);
 	border-radius: var(--border-radius-md);
 }

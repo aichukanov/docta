@@ -82,13 +82,14 @@ const onMapReady = () => {
 		<div class="details-page-content" :aria-busy="isLoading">
 			<div
 				v-if="isLoading"
-				class="loading"
+				class="details-skeleton"
 				role="status"
 				aria-live="polite"
 				:aria-label="t('AriaLoading')"
 			>
-				<div class="loading-spinner" aria-hidden="true"></div>
-				<p>{{ loadingText }}</p>
+				<SkeletonCard :rows="4" />
+				<SkeletonCard :rows="2" :show-media="false" />
+				<SkeletonCard :rows="2" :show-media="false" />
 			</div>
 			<div v-else-if="isFound" class="details-info-container">
 				<article
@@ -189,32 +190,12 @@ const onMapReady = () => {
 	gap: var(--spacing-lg);
 }
 
-.loading {
+.details-skeleton {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 40px;
-	color: #6b7280;
-}
-
-.loading-spinner {
-	width: 40px;
-	height: 40px;
-	border: 3px solid #e5e7eb;
-	border-top: 3px solid #4f46e5;
-	border-radius: 50%;
-	animation: spin 1s linear infinite;
-	margin-bottom: 16px;
-}
-
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
+	gap: var(--spacing-lg);
+	width: 100%;
+	max-width: 800px;
 }
 
 @media (max-width: 650px) {

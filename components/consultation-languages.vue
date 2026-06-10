@@ -38,7 +38,7 @@ const languagesText = computed(() => {
 	gap: var(--spacing-xs);
 
 	.languages-title {
-		font-size: var(--font-size-md);
+		font-size: var(--font-size-sm);
 		color: var(--color-text-secondary);
 	}
 
@@ -49,6 +49,7 @@ const languagesText = computed(() => {
 		flex-wrap: wrap;
 
 		.languages-text {
+			font-size: var(--font-size-sm);
 			color: var(--color-primary-green);
 			margin-top: -3px;
 		}

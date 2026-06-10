@@ -38,7 +38,7 @@ const { t } = useI18n();
 	border: 1px solid var(--color-border-secondary, #e5e7eb);
 	border-radius: 8px;
 	padding: 16px;
-	background: #fff;
+	background: var(--color-bg-primary);
 	text-align: center;
 }
 .error-inline__code {
@@ -49,11 +49,11 @@ const { t } = useI18n();
 }
 .error-inline__title {
 	font-weight: 700;
-	font-size: 1.25rem;
+	font-size: var(--font-size-xl);
 	margin: 0;
 }
 .error-inline__message {
-	color: #6b7280;
+	color: var(--color-text-muted);
 	margin: 8px 0 0 0;
 }
 </style>

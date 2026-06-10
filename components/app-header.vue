@@ -299,28 +299,28 @@ const userDisplayName = computed(() => {
 		display: flex;
 		align-items: center;
 		gap: var(--spacing-xs);
-		font-size: var(--font-size-md);
+		font-size: var(--font-size-base);
 		font-weight: 500;
-		color: #4b5563;
+		color: var(--color-text-secondary);
 		text-decoration: none;
-		padding: var(--spacing-sm) var(--spacing-sm);
+		padding: var(--spacing-sm) var(--spacing-md);
 		border-radius: var(--border-radius-sm);
 		transition: all 0.2s ease;
 		white-space: nowrap;
 
 		.nav-icon {
-			width: 18px;
-			height: 18px;
+			width: 20px;
+			height: 20px;
 			flex-shrink: 0;
 		}
 
 		&:hover {
-			color: #4f46e5;
+			color: var(--color-primary);
 			background: rgba(79, 70, 229, 0.06);
 		}
 
 		&.is-active {
-			color: #4f46e5;
+			color: var(--color-primary);
 			font-weight: 600;
 			background: rgba(79, 70, 229, 0.1);
 		}
@@ -338,13 +338,16 @@ const userDisplayName = computed(() => {
 		display: flex;
 		align-items: center;
 		gap: var(--spacing-md);
-		flex-shrink: 0;
+		/* Сжимаемый (min-width: 0), чтобы при нехватке места первым
+		   ужималось имя пользователя, а не ломалась шапка */
+		min-width: 0;
 	}
 
 	&__user {
 		display: flex;
 		align-items: center;
 		gap: var(--spacing-sm);
+		min-width: 0;
 		text-decoration: none;
 		color: var(--color-text-primary);
 		padding: 4px 10px 4px 4px;
@@ -376,7 +379,9 @@ const userDisplayName = computed(() => {
 		font-size: var(--font-size-md);
 		font-weight: var(--font-weight-medium);
 		white-space: nowrap;
-		max-width: 120px;
+		/* Потолок — от аномально длинных имён на широких экранах;
+		   при нехватке места имя сжимается с многоточием (min-width: 0 по цепочке) */
+		max-width: 280px;
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
@@ -384,13 +389,19 @@ const userDisplayName = computed(() => {
 	&__login-btn {
 		display: flex;
 		align-items: center;
-		gap: var(--spacing-xs);
-		font-size: var(--font-size-md);
+		gap: var(--spacing-sm);
+		box-sizing: border-box;
+		/* 40px — вровень с переключателем языка */
+		height: 40px;
+		font-size: var(--font-size-base);
 		font-weight: var(--font-weight-medium);
+		/* line-box = иконке (16px), иначе текст с наследуемым line-height
+		   оптически уезжает ниже центра */
+		line-height: 1;
 		color: white;
 		background: var(--color-primary);
 		text-decoration: none;
-		padding: var(--spacing-sm) var(--spacing-lg);
+		padding: 0 var(--spacing-lg);
 		border-radius: var(--border-radius-lg);
 		transition: all var(--transition-base);
 		white-space: nowrap;
@@ -489,7 +500,7 @@ const userDisplayName = computed(() => {
 		}
 
 		&__login-btn {
-			padding: var(--spacing-sm) var(--spacing-md);
+			padding: 0 var(--spacing-md);
 			font-size: var(--font-size-sm);
 		}
 	}

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import doctorProfileI18n from '~/i18n/doctor-profile';
 import { PROJECT_CONTACTS } from '~/common/constants';
+import doctorProfileI18n from '~/i18n/doctor-profile';
 
 const { t } = useI18n({
 	useScope: 'local',

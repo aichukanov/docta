@@ -98,7 +98,7 @@ onBeforeUnmount(() => setAppInert(false));
 .dialog-close {
 	background: none;
 	border: none;
-	font-size: 1.5rem;
+	font-size: var(--font-size-3xl);
 	line-height: 1;
 	color: var(--color-text-muted);
 	cursor: pointer;

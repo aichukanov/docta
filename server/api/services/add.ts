@@ -64,12 +64,11 @@ export default defineEventHandler(async (event): Promise<number | null> => {
 
 			// 2. Добавляем специальности
 			if (body.specialtyIds?.length > 0) {
-				const specialtyValues = body.specialtyIds
-					.map((specId) => `(${serviceId}, ${specId})`)
-					.join(',');
+				const placeholders = body.specialtyIds.map(() => '(?, ?)').join(',');
 				await connection.execute(
-					`INSERT INTO medical_services_specialties (medical_service_id, specialty_id) 
-					 VALUES ${specialtyValues}`,
+					`INSERT INTO medical_services_specialties (medical_service_id, specialty_id)
+					 VALUES ${placeholders}`,
+					body.specialtyIds.flatMap((specId) => [serviceId, specId]),
 				);
 			}
 

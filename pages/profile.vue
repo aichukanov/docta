@@ -431,13 +431,13 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 
 .profile-hero__badge--user {
 	background: var(--color-success-bg);
-	color: var(--color-success-dark);
+	color: var(--color-primary-green);
 	border: 1px solid var(--color-success-border);
 }
 
 .profile-hero__badge--admin {
 	background: var(--color-danger-bg);
-	color: var(--color-danger);
+	color: var(--color-danger-dark);
 	border: 1px solid var(--color-danger-border);
 }
 
@@ -573,7 +573,7 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 	margin-left: auto;
 	font-size: 10px;
 	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-muted);
+	color: var(--color-text-secondary);
 	background: var(--color-bg-tertiary);
 	padding: 1px 6px;
 	border-radius: 6px;

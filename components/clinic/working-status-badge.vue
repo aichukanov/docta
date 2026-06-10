@@ -76,13 +76,13 @@ const detail = computed(() => {
 	align-items: baseline;
 	flex-wrap: wrap;
 	gap: var(--spacing-xs) var(--spacing-sm);
-	font-size: var(--font-size-md);
-	color: #dc2626;
+	font-size: var(--font-size-sm);
+	color: var(--color-danger-dark);
 	font-weight: 500;
 }
 
 .status-badge--open {
-	color: #16a34a;
+	color: var(--color-primary-green);
 }
 
 .status-badge__dot {

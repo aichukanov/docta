@@ -470,7 +470,7 @@ async function recalculateRankScores() {
 
 .user-email {
 	font-size: 14px;
-	color: #7f8c8d;
+	color: var(--color-text-muted);
 	font-weight: 500;
 }
 

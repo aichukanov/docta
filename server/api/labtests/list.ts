@@ -204,11 +204,14 @@ export async function getLabTestList(
 		const synonymsQuery = `
 			SELECT lab_test_id, another_name
 			FROM lab_test_synonyms
-			WHERE lab_test_id IN (${labTestIds.join(',')})
+			WHERE lab_test_id IN (${labTestIds.map(() => '?').join(',')})
 			AND language = ?
 			ORDER BY another_name ASC
 		`;
-		const [synonymRows] = await connection.execute(synonymsQuery, [locale]);
+		const [synonymRows] = await connection.execute(synonymsQuery, [
+			...labTestIds,
+			locale,
+		]);
 
 		for (const row of synonymRows as any[]) {
 			if (!synonymsMap[row.lab_test_id]) {

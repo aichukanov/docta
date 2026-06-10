@@ -79,9 +79,7 @@ const { data: medicationsData, pending: isLoading } = await useFetch(
 const items = computed(() => medicationsData.value?.items || []);
 const totalCount = computed(() => medicationsData.value?.totalCount || 0);
 const pageSize = CLINIC_ITEMS_PAGE_SIZE;
-const totalPages = computed(
-	() => Math.ceil(totalCount.value / pageSize) || 1,
-);
+const totalPages = computed(() => Math.ceil(totalCount.value / pageSize) || 1);
 
 const clinicName = computed(() =>
 	getLocalizedName(clinicData.value, locale.value),
@@ -108,9 +106,7 @@ const pageTitleText = computed(() =>
 	t('MedicationsPageTitle', { name: clinicName.value }),
 );
 const pageDescription = computed(() => {
-	const count = isFiltered.value
-		? totalCount.value
-		: totalMedications.value;
+	const count = isFiltered.value ? totalCount.value : totalMedications.value;
 	return t('MedicationsPageDescription', { name: clinicName.value, count });
 });
 
@@ -144,9 +140,7 @@ watchEffect(() => {
 			locale: locale.value,
 			title: pageTitleText.value,
 			description: pageDescription.value,
-			totalCount: isFiltered.value
-				? totalCount.value
-				: totalMedications.value,
+			totalCount: isFiltered.value ? totalCount.value : totalMedications.value,
 			items: items.value,
 			buildPath: (item) => `/medications/${item.slug}`,
 			isFiltered: isFiltered.value,

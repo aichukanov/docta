@@ -29,7 +29,11 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	background: linear-gradient(
+		135deg,
+		var(--color-auth-gradient-start) 0%,
+		var(--color-auth-gradient-end) 100%
+	);
 	padding: 20px;
 	box-sizing: border-box;
 	overflow: auto;
@@ -53,7 +57,7 @@ body {
 	justify-content: space-between;
 	margin-bottom: 24px;
 	padding-bottom: 20px;
-	border-bottom: 1px solid #f0f0f0;
+	border-bottom: 1px solid var(--color-bg-tertiary);
 }
 
 .minimal-card__logo {

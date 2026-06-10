@@ -479,7 +479,7 @@ watch(labTestId, async (newId) => {
 	}
 
 	&.modified > label {
-		color: #f59e0b;
+		color: var(--color-warning-dark);
 		font-weight: 500;
 	}
 
@@ -505,7 +505,7 @@ watch(labTestId, async (newId) => {
 	border: 1px solid var(--color-border-primary);
 
 	&.modified {
-		border-color: #f59e0b;
+		border-color: var(--color-warning);
 	}
 
 	.section-header {
@@ -555,7 +555,7 @@ watch(labTestId, async (newId) => {
 	border: 1px solid var(--color-border-primary);
 
 	&.modified {
-		border-color: #f59e0b;
+		border-color: var(--color-warning);
 	}
 
 	h4 {

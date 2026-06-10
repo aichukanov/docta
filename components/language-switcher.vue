@@ -122,11 +122,14 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside));
 .language-switcher {
 	position: relative;
 	width: 80px;
+	/* Ширина фиксированная — во flex-контейнерах (шапка) не сжиматься */
+	flex-shrink: 0;
 
 	&--small {
 		width: 70px;
 
 		.language-switcher__trigger {
+			height: auto;
 			padding: var(--spacing-xs) var(--spacing-sm);
 			font-size: var(--font-size-sm);
 		}
@@ -137,7 +140,9 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside));
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
-		padding: var(--spacing-sm) var(--spacing-md);
+		/* 40px — вровень с кнопкой входа в шапке */
+		height: 40px;
+		padding: 0 var(--spacing-md);
 		background: var(--color-bg-primary);
 		border: var(--border-width-thin) solid var(--color-border-primary);
 		border-radius: var(--border-radius-md);

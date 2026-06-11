@@ -8,7 +8,7 @@ Usage:
     py -3.12 scripts/fzocg/generate_tariff_sql.py
 """
 
-import sys, json, re
+import sys, json, re, unicodedata
 from pathlib import Path
 from datetime import date
 
@@ -61,8 +61,57 @@ def detect_scheme(item):
     return 'single'
 
 
+def _strip_diacritics(s):
+    return ''.join(c for c in unicodedata.normalize('NFKD', s or '')
+                   if not unicodedata.combining(c))
+
+
+def _section_acronym(section):
+    """Short uppercase tag from a section name, e.g.
+    'RADNE TAKSE' -> 'RT', 'Jedinica za patronažu' -> 'JZP'."""
+    words = re.findall(r'[A-Za-z0-9]+', _strip_diacritics(section).upper())
+    return ''.join(w[0] for w in words)
+
+
+def assign_sql_codes(items):
+    """The DB unique key is (tariff_source, code). A source pricelist may legitimately
+    reuse the same code in different sections (e.g. PZZ X01022 in the TBC centre vs the
+    patronage unit; apotekarska '50' in USLUGE vs RADNE TAKSE). FINAL.json keeps the real
+    printed code; here we keep the first occurrence as-is and give later occurrences a
+    unique synthetic code (`<code>-<section-acronym>`), recording the real code in `notes`."""
+    counts = {}
+    for it in items:
+        counts[it.get('code') or ''] = counts.get(it.get('code') or '', 0) + 1
+    used, seen = set(), {}
+    for it in items:
+        code = it.get('code') or ''
+        it['_orig_code_note'] = None
+        if counts[code] <= 1:
+            it['_sql_code'] = code
+            used.add(code)
+            continue
+        seen[code] = seen.get(code, 0) + 1
+        if seen[code] == 1:                     # first occurrence keeps the clean code
+            it['_sql_code'] = code
+            used.add(code)
+            continue
+        tag = _section_acronym(it.get('section')) or str(seen[code])
+        cand = f'{code}-{tag}'
+        n = 2
+        while cand in used:
+            cand = f'{code}-{tag}-{n}'
+            n += 1
+        it['_sql_code'] = cand
+        used.add(cand)
+        sec = it.get('section') or '?'
+        it['_orig_code_note'] = (
+            f'Izvorni kod: {code} (sekcija: {sec}). '
+            f'Kod izmijenjen u {cand} radi jedinstvenosti (isti kod postoji u drugoj sekciji).'
+        )
+
+
 def build_row_values(tariff_source, item, base_meta):
-    code           = item.get('code') or ''
+    code           = item.get('_sql_code') or item.get('code') or ''
     scheme         = detect_scheme(item)
     name_sr_latin  = item.get('name')
     section        = item.get('section')
@@ -71,7 +120,7 @@ def build_row_values(tariff_source, item, base_meta):
     effective_from = base_meta.get('effective_from')
     signed_number  = (base_meta.get('signed') or {}).get('number') if base_meta.get('signed') else None
     source_pdf     = base_meta.get('source_pdf')
-    notes          = None  # reserved for future use
+    notes          = item.get('_orig_code_note')
 
     price_eur            = item.get('price_eur')
     price_odjeljenje_eur = item.get('price_odjeljenje_eur')
@@ -127,6 +176,11 @@ def generate_for_category(slug, tariff_source):
     if not items:
         print(f'SKIP: {slug} has no items')
         return None
+
+    assign_sql_codes(items)
+    dups = [(it.get('code'), it['_sql_code']) for it in items if it.get('_orig_code_note')]
+    for orig, newc in dups:
+        print(f'    dedup: {tariff_source} {orig!r} -> {newc!r}')
 
     base_meta = {
         'effective_from':       payload.get('effective_from'),

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SITE_URL, OG_IMAGE } from '~/common/constants';
+import { SITE_URL } from '~/common/constants';
 import { getRegionalQuery, getRegionalUrl } from '~/common/url-utils';
 import { getLocalizedName } from '~/common/utils';
 import {
@@ -8,7 +8,7 @@ import {
 	buildTopListItemElements,
 } from '~/common/schema-org-builders';
 import { combineI18nMessages } from '~/i18n/utils';
-import { LanguageId } from '~/enums/language';
+import { CLINIC_SUPPORT_LANGUAGE_IDS } from '~/common/articles';
 import type { ClinicData } from '~/interfaces/clinic';
 
 import articlesI18n from '~/i18n/articles';
@@ -62,15 +62,7 @@ const pageUrl = computed(() =>
 const clinicsStore = useClinicsStore();
 await clinicsStore.fetchClinics();
 
-// Languages to display (excluding Serbian as it's the default)
-const displayLanguages = [
-	LanguageId.EN,
-	LanguageId.RU,
-	LanguageId.DE,
-	LanguageId.TR,
-	LanguageId.IT,
-	LanguageId.FR,
-];
+const displayLanguages = CLINIC_SUPPORT_LANGUAGE_IDS;
 
 // Group clinics by language
 const groupedClinics = computed(() => {
@@ -106,6 +98,34 @@ const totalClinicsCount = computed(() => {
 	});
 	return uniqueClinicIds.size;
 });
+
+const articleMeta = computed(() =>
+	totalClinicsCount.value
+		? t('ArticleMetaClinics', {
+				languages: groupedClinics.value.length,
+				clinics: totalClinicsCount.value,
+			})
+		: '',
+);
+
+const articleToc = computed(() =>
+	groupedClinics.value.map((group) => ({
+		id: `language-${group.languageId}`,
+		label: group.name,
+		count: group.clinics.length,
+	})),
+);
+
+// CTA: каталог клиник с фильтрами по городу и языку
+const articleCta = computed(() => ({
+	title: t('CtaClinicsTitle'),
+	text: t('CtaClinicsText'),
+	button: t('CtaClinicsButton'),
+	link: {
+		name: 'clinics',
+		query: getRegionalQuery(locale.value),
+	},
+}));
 
 // 3. Set SEO and Schema.org
 const pageTitle = computed(() => t('ClinicsWithLanguageSupportTitle'));
@@ -168,122 +188,71 @@ watchEffect(() => {
 </script>
 
 <template>
-	<div class="article-detail-page">
-		<div class="container">
-			<AppBreadcrumbs :items="breadcrumbItems" />
-
-			<h1>{{ t('ClinicsWithLanguageSupportTitle') }}</h1>
-
-			<p class="description">
-				{{ t('ClinicsWithLanguageSupportDescription') }}
-			</p>
-
-			<div class="languages-list">
-				<section
-					v-for="group in groupedClinics"
-					:key="group.languageId"
-					class="language-block"
+	<ArticlePage
+		:breadcrumbs="breadcrumbItems"
+		:title="t('ClinicsWithLanguageSupportTitle')"
+		:meta="articleMeta"
+		:description="t('ClinicsWithLanguageSupportDescription')"
+		image="/img/articles/clinics-with-language-support.webp"
+		:toc="articleToc"
+		:cta="articleCta"
+	>
+		<ArticleSection
+			v-for="group in groupedClinics"
+			:id="`language-${group.languageId}`"
+			:key="group.languageId"
+			:title="group.name"
+			:count="group.clinics.length"
+		>
+			<div class="clinics-grid">
+				<NuxtLink
+					v-for="clinic in group.clinics"
+					:key="clinic.id"
+					:to="getClinicUrl(clinic.slug)"
+					class="clinic-card"
 				>
-					<h2 class="language-title">
-						{{ group.name }} ({{ group.clinics.length }})
-					</h2>
-					<div class="clinics-grid">
-						<NuxtLink
-							v-for="clinic in group.clinics"
-							:key="clinic.id"
-							:to="getClinicUrl(clinic.slug)"
-							class="clinic-card"
-						>
-							<span class="clinic-name">{{
-								getLocalizedName(clinic, locale)
-							}}</span>
-							<span class="clinic-city">{{ t(`city_${clinic.cityId}`) }}</span>
-						</NuxtLink>
-					</div>
-				</section>
+					<span class="clinic-name">{{
+						getLocalizedName(clinic, locale)
+					}}</span>
+					<span class="clinic-city">{{ t(`city_${clinic.cityId}`) }}</span>
+				</NuxtLink>
 			</div>
-		</div>
-	</div>
+		</ArticleSection>
+	</ArticlePage>
 </template>
 
 <style scoped lang="less">
-.article-detail-page {
-	padding: 24px 0 48px;
-
-	h1 {
-		margin: 16px 0 12px;
-		font-size: 28px;
-		font-weight: 800;
-		line-height: 1.2;
-		color: #111827;
-	}
-
-	.description {
-		margin-bottom: 32px;
-		font-size: 16px;
-		line-height: 1.6;
-		color: #4b5563;
-		max-width: 600px;
-	}
-}
-
-.container {
-	max-width: 900px;
-	margin: 0 auto;
-	padding: 0 16px;
-}
-
-.languages-list {
-	display: flex;
-	flex-direction: column;
-	gap: 40px;
-}
-
-.language-title {
-	margin: 0 0 20px;
-	padding-bottom: 8px;
-	font-size: 20px;
-	font-weight: 700;
-	color: #111827;
-	border-bottom: 2px solid #f3f4f6;
-	text-transform: capitalize;
-}
-
 .clinics-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-	gap: 12px;
+	gap: var(--spacing-md);
 }
 
 .clinic-card {
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
-	padding: 16px;
-	background: #fff;
-	border-radius: 10px;
+	gap: var(--spacing-xs);
+	padding: var(--spacing-md) var(--spacing-lg);
+	background: var(--color-bg-tertiary);
+	border-radius: var(--border-radius-xl);
 	text-decoration: none;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-	border: 1px solid #f3f4f6;
-	transition: all 0.15s ease;
+	transition: background var(--transition-base);
 
 	&:hover {
-		border-color: #e0e7ff;
-		box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
-		transform: translateY(-1px);
+		background: var(--color-primary-bg);
 	}
 }
 
 .clinic-name {
-	font-size: 15px;
-	font-weight: 600;
-	color: #4f46e5;
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-primary);
 	line-height: 1.3;
 }
 
 .clinic-city {
-	font-size: 13px;
-	color: #6b7280;
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
 }
 
 @media (max-width: 600px) {

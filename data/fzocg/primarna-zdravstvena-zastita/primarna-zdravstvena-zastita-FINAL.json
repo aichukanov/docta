@@ -355,7 +355,7 @@
       "M02011"
     ]
   },
-  "items_total": 492,
+  "items_total": 493,
   "items": [
     {
       "code": "J01001",
@@ -2994,9 +2994,22 @@
       "subsection": null,
       "_sources": {
         "name": "llm-diacritic",
-        "price": "paddle-single",
+        "price": "verified-pdf",
         "section": "llm"
       }
+    },
+    {
+      "code": "X01022",
+      "name": "Direktno opservirana terapija za TBC (DOTs)",
+      "price_eur": 0.9,
+      "section": "Jedinica za patronažu",
+      "subsection": null,
+      "_sources": {
+        "name": "verified-pdf",
+        "price": "verified-pdf",
+        "section": "verified-pdf"
+      },
+      "_note": "Isti kod u dvije sekcije s različitom cijenom (TBC centar 1.03, patronaža 0.90); оба подтверждены по PDF."
     },
     {
       "code": "X02001",
@@ -5448,7 +5461,7 @@
       "subsection": null,
       "_sources": {
         "name": "llm-diacritic",
-        "price": "paddle-single",
+        "price": "verified-pdf",
         "section": "llm"
       }
     },

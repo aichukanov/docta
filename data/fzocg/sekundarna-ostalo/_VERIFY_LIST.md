@@ -2,6 +2,30 @@
 
 Документ покрывает **все** прайслисты (FZOCG + KBKotor), не только SEKUNDARNA OSTALO. Обновлён после paddle-merge всех документов (2026-05-13).
 
+> ## ✅ РЕЗОЛЮЦИЯ 2026-06-11 (сверка с PDF, исправления применены)
+>
+> Все 🔴 HIGH сверены с исходными PDF (рендер сканов + визуальная вычитка) и исправлены прямо в `*-FINAL.json`. Источник в `_sources` помечен `verified-pdf`.
+>
+> | Категория | Что сделано |
+> |---|---|
+> | **sekundarna-ostalo** | D02241=325/65/390, D02252=130/26/156 (+имя ć→đ), D05065=32.5/9.1/41.6 (+имя). Все три — колонки Operacija/Anestezija/Ukupno. |
+> | **PZZ** | X01021=1.03 подтверждён (3 инстанса, «3-я цена» — OCR-мусор). X01022: **обе цены реальны** — 1.03 (TBC centar) + **добавлена** 0.90 (Jedinica za patronažu). items 492→493. ⚠️ дубль кода X01022 (разнесён по `section`). |
+> | **DRG** | I24Z=0.75/570.14 подтверждён (3.68/2797.46 — это I25A, сдвиг строки). **Удалены** I22Z, I25Z, O65Z (нет в источнике). Сняты флаги `_review` с 23 реальных I/O-кодов (I21Z **реален**). Имена I23Z/I25A/I25B → диакритика. Остаются `E76Z`, `801C` (главы не оцифрованы). items 697→694. |
+> | **transfuziologija** | Исправлены имена G05005 («…davaoca, trudnice»), X12021 («Eluciona»), X12060 («Izdvajanje»). X12026/X12042/X12050/X12051/X12053/X12066 — подтверждены как есть. |
+> | **apotekarska** | code «50» — **обе услуги реальны** (секции USLUGE и RADNE TAKSE, нумерация перезапускается). Массив перестроен из источника: 37→**40** (добавлены code «1», «607», 2-й «50»; «do 100g»→«do 1000 g»; диакритика; поле `section`). ⚠️ дубль «50» (разнесён по `section`). |
+> | **medicinsko-pomagala** | Цены: AA1201=210, AA1204=221.39, AB3111=117.07, AC1110=142.10, AC1112=196. AA2813=«Zamjena zgloba kuka»=150 + **добавлен** AA2814=«Zamjena dezartikulacionog koljena»=150. AC1110/AC1117 имена расцеплены. DA1101-1104 — цена `null` + `price_note: "stvarni trošak"` (в источнике так). items 415→416. |
+> | **van-mreze** | J09007=80 (амендмент 01.12.2023; base было 90), J09026=«MR toraksa/medijastinuma - sa kontrastom»=107, D07012=«Laser trabekuloplastika»=291.28 (+секция), X04042=«Ultrazvučni pregled žene»=16.68. |
+>
+> **НЕ закрыто (требует решения/ресурсов):**
+> - ⚠️ **Дубли кодов** X01022 (PZZ) и «50» (apotekarska) — это реальные разные услуги в разных секциях. В JSON оставлены обе строки, разнесены по `section`. Если импорт в БД использует `code` как уникальный ключ — нужно решить, как дизамбигуировать (например `code+section`).
+> - 🟡 **defektolog-logoped** (KBKotor §8/§9): в данных FZOCG sekundarna нет ни одного кода I03xxx и ни слова «logoped/defektolog». В PDF нет оглавления (стр.1 — титул, стр.2 пустая). Подтверждение «paddle пропустил секцию» требует полного re-OCR всех 120 стр. — низкая ценность (имена KBKotor-кодов уже есть в KBKotor-файлах). Отложено.
+> - 🟢 Массовые `name_disagreements` (диакритика) и `llm-only`/`paddle-only` информационные пункты — не трогались (один источник уже выбран канонически).
+>
+> Детали ниже по секциям помечены как «✅ РЕШЕНО».
+
+---
+PRE-RESOLUTION SNAPSHOT (исходный чеклист, оставлен для истории):
+
 **Где смотреть PDF-источники:**
 - FZOCG: `e:/pet/docta.me/прейскуранты/fzocg/<категория>/`
 - KBKotor: `e:/pet/docta.me/прейскуранты/kbkotor/`
@@ -291,17 +315,17 @@ jq '.merge_info' data/fzocg/<кат>/<кат>-FINAL.json
 
 ## Сводка по всем категориям
 
-| Категория | Items | 🔴 HIGH | 🟡 MED | Примечание |
+| Категория | Items | 🔴 HIGH | Статус | Примечание |
 |---|---|---|---|---|
-| **sekundarna-ostalo** | 4031 | 3 no-price | 91 paddle-only, 172 llm-only | LLM-fallback вылечил W04xxx, D07xxx |
-| **primarna-zdravstvena (PZZ)** | 492 | 1 real conflict (X01022) | 92 llm-only, 145 name disagree | 18 paddle base dups auto-dedup'нуто |
-| **DRG** | 697 | 1 numeric disagree (I24Z), 3 likely-hallucination (I21Z/I22Z/O65Z) | 13 suspicious-drift, 4 paddle-only finds | All 697 pass coef×base xval |
-| **transfuziologija** | 67 | — | 9 name disagree | clean |
-| **apotekarska** | 37 | 1 conflict (code "50") | all paddle-only | без LLM |
-| **medicinsko-pomagala** | 415 | 10 no-price | all paddle-only | без LLM |
-| **van-mreze** | 81 | 4 no-price | all paddle-only | без LLM |
-| **kbkotor ambulanta** | 368 | — | 8 not-in-FZOCG | 260/341 xval matches |
-| **kbkotor odjeljenja** | 773 | — | 30 not-in-FZOCG | 377/473 xval matches |
-| **ИТОГО** | **6961** | **19 high** | **~1100 informational** | |
+| **sekundarna-ostalo** | 4031 | 3 no-price | ✅ решено | цены вписаны (Operacija/Anestezija/Ukupno) |
+| **primarna-zdravstvena (PZZ)** | 492→**493** | X01022 | ✅ решено | обе цены реальны, добавлена 0.90 patronaža; ⚠️ дубль кода |
+| **DRG** | 697→**694** | I24Z + I21Z/I22Z/O65Z | ✅ решено | I24Z=0.75 верно; удалены I22Z/I25Z/O65Z; 23 флага сняты |
+| **transfuziologija** | 67 | — | ✅ решено | 3 имени исправлены, 6 подтверждены |
+| **apotekarska** | 37→**40** | code "50" | ✅ решено | обе реальны; +3 пропущенных строки; ⚠️ дубль кода |
+| **medicinsko-pomagala** | 415→**416** | 10 no-price | ✅ решено | 6 цен; 4×DA110x = «stvarni trošak»; +AA2814 |
+| **van-mreze** | 81 | 4 no-price | ✅ решено | цены+имена из base/амендмента |
+| **kbkotor ambulanta** | 368 | — | 🟡 info | 8 not-in-FZOCG (см. defektolog ниже) |
+| **kbkotor odjeljenja** | 773 | — | 🟡 info | 30 not-in-FZOCG (defektolog отложен) |
+| **ИТОГО** | **~6964** | **19 high → 0** | | дубли кодов X01022/«50» — на решение по импорту |
 
 Старый LLM-OCR список из 132 верификационных items — почти все resolved через paddle pipeline (см. §1 → 🟢 INFO).

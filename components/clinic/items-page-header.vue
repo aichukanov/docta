@@ -1,11 +1,8 @@
 <script setup lang="ts">
-interface Crumb {
-	label: string;
-	to?: object;
-}
+import type { BreadcrumbItem } from '~/components/app-breadcrumbs.vue';
 
 defineProps<{
-	breadcrumbs: Crumb[];
+	breadcrumbs: BreadcrumbItem[];
 	title: string;
 	count: number;
 }>();
@@ -13,15 +10,7 @@ defineProps<{
 
 <template>
 	<header class="items-page-header">
-		<el-breadcrumb separator="/" class="breadcrumb">
-			<el-breadcrumb-item
-				v-for="(crumb, i) in breadcrumbs"
-				:key="i"
-				:to="crumb.to"
-			>
-				{{ crumb.label }}
-			</el-breadcrumb-item>
-		</el-breadcrumb>
+		<AppBreadcrumbs :items="breadcrumbs" />
 
 		<div class="title-row">
 			<h1 class="title">{{ title }}</h1>
@@ -41,10 +30,6 @@ defineProps<{
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-md);
-}
-
-.breadcrumb {
-	font-size: var(--font-size-sm);
 }
 
 .title-row {

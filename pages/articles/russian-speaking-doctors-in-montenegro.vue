@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SITE_URL, OG_IMAGE } from '~/common/constants';
+import { SITE_URL } from '~/common/constants';
 import { getRegionalQuery, getRegionalUrl } from '~/common/url-utils';
 import { getLocalizedName } from '~/common/utils';
 import {
@@ -53,6 +53,20 @@ const getClinicUrl = (slug: string) => ({
 	params: { clinicSlug: slug },
 	query: getRegionalQuery(locale.value),
 });
+
+// CTA: каталог врачей с предустановленным фильтром «русский язык»
+const articleCta = computed(() => ({
+	title: t('CtaDoctorsTitle'),
+	text: t('CtaDoctorsText'),
+	button: t('CtaDoctorsButton'),
+	link: {
+		name: 'doctors',
+		query: {
+			languageIds: [String(LanguageId.RU)],
+			...getRegionalQuery(locale.value),
+		},
+	},
+}));
 
 const schemaOrgStore = useSchemaOrgStore();
 const pageUrl = computed(() =>
@@ -109,6 +123,23 @@ const groupedDoctors = computed(() => {
 		}));
 });
 
+const articleMeta = computed(() =>
+	doctors.value.length
+		? t('ArticleMetaDoctors', {
+				doctors: doctors.value.length,
+				specialties: groupedDoctors.value.length,
+			})
+		: '',
+);
+
+const articleToc = computed(() =>
+	groupedDoctors.value.map((group) => ({
+		id: `specialty-${group.id}`,
+		label: group.name,
+		count: group.doctors.length,
+	})),
+);
+
 // 3. Set SEO and Schema.org
 const pageTitle = computed(() => t('RussianSpeakingDoctorsTitle'));
 const pageDescription = computed(() => t('RussianSpeakingDoctorsDescription'));
@@ -159,131 +190,80 @@ watchEffect(() => {
 </script>
 
 <template>
-	<div class="article-detail-page">
-		<div class="container">
-			<AppBreadcrumbs :items="breadcrumbItems" />
-
-			<h1>{{ t('RussianSpeakingDoctorsTitle') }}</h1>
-
-			<p class="description">{{ t('RussianSpeakingDoctorsDescription') }}</p>
-
-			<div class="article-image">
-				<img
-					src="/img/articles/russian-speaking-doctors.webp"
-					:alt="t('RussianSpeakingDoctorsTitle')"
-					loading="lazy"
-				/>
-			</div>
-
-			<div class="specialties-list">
-				<section
-					v-for="group in groupedDoctors"
-					:key="group.id"
-					class="specialty-block"
+	<ArticlePage
+		:breadcrumbs="breadcrumbItems"
+		:title="t('RussianSpeakingDoctorsTitle')"
+		:meta="articleMeta"
+		:description="t('RussianSpeakingDoctorsDescription')"
+		image="/img/articles/russian-speaking-doctors.webp"
+		:toc="articleToc"
+		:cta="articleCta"
+	>
+		<ArticleSection
+			v-for="group in groupedDoctors"
+			:id="`specialty-${group.id}`"
+			:key="group.id"
+			:title="group.name"
+			:count="group.doctors.length"
+		>
+			<div class="doctors-list">
+				<div
+					v-for="doctor in group.doctors"
+					:key="doctor.id"
+					class="doctor-item"
 				>
-					<h2 class="specialty-title">{{ group.name }}</h2>
-					<div class="doctors-list">
-						<div
-							v-for="doctor in group.doctors"
-							:key="doctor.id"
-							class="doctor-item"
-						>
-							<NuxtLink :to="getDoctorUrl(doctor.slug)" class="doctor-name">
-								{{ getLocalizedName(doctor, locale) }}
-							</NuxtLink>
-							<ul class="clinics-list">
-								<li
-									v-for="clinic in getDoctorClinics(doctor)"
-									:key="clinic.id"
-									class="clinic-item"
-								>
-									<NuxtLink :to="getClinicUrl(clinic.slug)" class="clinic-link">
-										{{ getLocalizedName(clinic, locale) }},
-										{{ t(`city_${clinic.cityId}`) }}
-									</NuxtLink>
-								</li>
-							</ul>
-						</div>
+					<DoctorAvatar
+						:name="getLocalizedName(doctor, locale)"
+						:photoUrl="doctor.photoUrl"
+						:size="44"
+					/>
+					<div class="doctor-info">
+						<NuxtLink :to="getDoctorUrl(doctor.slug)" class="doctor-name">
+							{{ getLocalizedName(doctor, locale) }}
+						</NuxtLink>
+						<ul class="clinics-list">
+							<li
+								v-for="clinic in getDoctorClinics(doctor)"
+								:key="clinic.id"
+								class="clinic-item"
+							>
+								<NuxtLink :to="getClinicUrl(clinic.slug)" class="clinic-link">
+									{{ getLocalizedName(clinic, locale) }},
+									{{ t(`city_${clinic.cityId}`) }}
+								</NuxtLink>
+							</li>
+						</ul>
 					</div>
-				</section>
+				</div>
 			</div>
-		</div>
-	</div>
+		</ArticleSection>
+	</ArticlePage>
 </template>
 
 <style scoped lang="less">
-.article-detail-page {
-	padding: 24px 0 48px;
-
-	h1 {
-		margin: 16px 0 12px;
-		font-size: 28px;
-		font-weight: 800;
-		line-height: 1.2;
-		color: #111827;
-	}
-
-	.description {
-		margin-bottom: 24px;
-		font-size: 16px;
-		line-height: 1.6;
-		color: #4b5563;
-		max-width: 600px;
-	}
-}
-
-.article-image {
-	margin-bottom: 40px;
-	border-radius: 12px;
-	overflow: hidden;
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-
-	img {
-		display: block;
-		width: 100%;
-		height: auto;
-		max-height: 400px;
-		object-fit: cover;
-	}
-}
-
-.container {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 0 16px;
-}
-
-.specialties-list {
-	display: flex;
-	flex-direction: column;
-	gap: 40px;
-}
-
-.specialty-title {
-	margin: 0 0 20px;
-	padding-bottom: 8px;
-	font-size: 20px;
-	font-weight: 700;
-	color: #111827;
-	border-bottom: 2px solid #f3f4f6;
-}
-
 .doctors-list {
-	display: flex;
-	flex-direction: column;
-	gap: 24px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--spacing-xl) var(--spacing-2xl);
 }
 
 .doctor-item {
 	display: flex;
+	align-items: flex-start;
+	gap: var(--spacing-md);
+}
+
+.doctor-info {
+	min-width: 0;
+	display: flex;
 	flex-direction: column;
-	gap: 4px;
+	gap: var(--spacing-xs);
 }
 
 .doctor-name {
-	font-size: 16px;
-	font-weight: 600;
-	color: #4f46e5;
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-primary);
 	text-decoration: none;
 
 	&:hover {
@@ -297,17 +277,13 @@ watchEffect(() => {
 	list-style: none;
 	display: flex;
 	flex-direction: column;
-	gap: 2px;
+	gap: var(--spacing-xs);
 }
 
 .clinic-item {
-	font-size: 14px;
-	color: #6b7280;
-
-	&::before {
-		content: '— ';
-		color: #d1d5db;
-	}
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
+	line-height: 1.6;
 }
 
 .clinic-link {
@@ -315,8 +291,14 @@ watchEffect(() => {
 	text-decoration: none;
 
 	&:hover {
-		color: #111827;
+		color: var(--color-text-heading);
 		text-decoration: underline;
+	}
+}
+
+@media (max-width: 700px) {
+	.doctors-list {
+		grid-template-columns: 1fr;
 	}
 }
 </style>

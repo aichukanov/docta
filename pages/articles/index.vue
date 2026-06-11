@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { SITE_URL, OG_IMAGE } from '~/common/constants';
+import { CLINIC_SUPPORT_LANGUAGE_IDS } from '~/common/articles';
 import { getRegionalQuery, getRegionalUrl } from '~/common/url-utils';
 import {
 	buildBreadcrumbsSchema,
@@ -7,6 +8,7 @@ import {
 	buildTopListItemElements,
 } from '~/common/schema-org-builders';
 import { combineI18nMessages } from '~/i18n/utils';
+import { LanguageId } from '~/enums/language';
 import articlesI18n from '~/i18n/articles';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 
@@ -26,11 +28,60 @@ const breadcrumbItems = computed(() => [
 	{ label: t('BreadcrumbArticles') },
 ]);
 
+// Реальные цифры для мета-строк карточек: те же выборки,
+// что строят сами статьи
+const clinicsStore = useClinicsStore();
+const [{ data: doctorsData }] = await Promise.all([
+	useFetch('/api/doctors/list', {
+		method: 'POST',
+		body: computed(() => ({
+			languageIds: [String(LanguageId.RU)],
+			onlyDoctorLanguages: true,
+			locale: locale.value,
+		})),
+	}),
+	clinicsStore.fetchClinics(),
+]);
+
+const doctorsCount = computed(() => doctorsData.value?.totalCount ?? 0);
+
+const specialtiesCount = computed(() => {
+	const ids = new Set<number>();
+	doctorsData.value?.doctors.forEach((doctor) => {
+		doctor.specialtyIds
+			?.split(',')
+			.forEach((id: string) => ids.add(Number(id)));
+	});
+	return ids.size;
+});
+
+const clinicLanguageStats = computed(() => {
+	const clinicIds = new Set<number>();
+	const languageIds = new Set<number>();
+	clinicsStore.clinics.forEach((clinic) => {
+		if (!clinic.languageIds) return;
+		const langIds = clinic.languageIds.split(',').map(Number);
+		CLINIC_SUPPORT_LANGUAGE_IDS.forEach((langId) => {
+			if (langIds.includes(langId)) {
+				clinicIds.add(clinic.id);
+				languageIds.add(langId);
+			}
+		});
+	});
+	return { clinics: clinicIds.size, languages: languageIds.size };
+});
+
 const articles = computed(() => [
 	{
 		title: t('RussianSpeakingDoctorsTitle'),
 		description: t('RussianSpeakingDoctorsDescription'),
 		image: '/img/articles/russian-speaking-doctors.webp',
+		meta: doctorsCount.value
+			? t('ArticleMetaDoctors', {
+					doctors: doctorsCount.value,
+					specialties: specialtiesCount.value,
+				})
+			: '',
 		link: {
 			path: '/articles/russian-speaking-doctors-in-montenegro',
 			query: getRegionalQuery(locale.value),
@@ -40,6 +91,12 @@ const articles = computed(() => [
 		title: t('ClinicsWithLanguageSupportTitle'),
 		description: t('ClinicsWithLanguageSupportDescription'),
 		image: '/img/articles/clinics-with-language-support.webp',
+		meta: clinicLanguageStats.value.clinics
+			? t('ArticleMetaClinics', {
+					languages: clinicLanguageStats.value.languages,
+					clinics: clinicLanguageStats.value.clinics,
+				})
+			: '',
 		link: {
 			path: '/articles/clinics-with-language-support',
 			query: getRegionalQuery(locale.value),
@@ -100,7 +157,9 @@ watchEffect(() => {
 		<div class="container">
 			<AppBreadcrumbs :items="breadcrumbItems" />
 
-			<h1>{{ t('Articles') }}</h1>
+			<h1 class="page-title">{{ t('Articles') }}</h1>
+			<p class="page-subtitle">{{ t('ArticlesDescription') }}</p>
+
 			<div class="articles-list">
 				<NuxtLink
 					v-for="article in articles"
@@ -111,9 +170,10 @@ watchEffect(() => {
 					<div v-if="article.image" class="article-card__image">
 						<img :src="article.image" :alt="article.title" loading="lazy" />
 					</div>
-					<div class="article-card__content">
-						<h2>{{ article.title }}</h2>
-						<p>{{ article.description }}</p>
+					<h2 class="article-card__title">{{ article.title }}</h2>
+					<p class="article-card__description">{{ article.description }}</p>
+					<div v-if="article.meta" class="article-card__meta">
+						{{ article.meta }}
 					</div>
 				</NuxtLink>
 			</div>
@@ -123,85 +183,92 @@ watchEffect(() => {
 
 <style scoped lang="less">
 .articles-page {
-	padding: 24px 0;
+	padding: var(--spacing-xl) 0 var(--spacing-3xl);
+}
 
-	h1 {
-		margin-top: 16px;
-		margin-bottom: 24px;
-		font-size: 24px;
-		font-weight: 700;
-	}
+.page-title {
+	margin: var(--spacing-lg) 0 var(--spacing-sm);
+	font-size: var(--font-size-4xl);
+	font-weight: var(--font-weight-bold);
+	letter-spacing: -0.02em;
+	line-height: 1.2;
+	color: var(--color-text-heading);
+}
+
+.page-subtitle {
+	margin: 0 0 var(--spacing-3xl);
+	font-size: var(--font-size-lg);
+	line-height: 1.7;
+	color: var(--color-text-secondary);
 }
 
 .articles-list {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--spacing-3xl) var(--spacing-2xl);
 }
 
 .article-card {
-	display: flex;
-	gap: 20px;
-	padding: 20px;
-	background: #fff;
-	border-radius: 12px;
+	display: block;
 	text-decoration: none;
 	color: inherit;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-	transition: all 0.2s ease;
-
-	&:hover {
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-		transform: translateY(-2px);
-	}
 
 	&__image {
-		flex: 0 0 200px;
-		height: 120px;
-		border-radius: 8px;
+		aspect-ratio: 16 / 9;
+		border-radius: var(--border-radius-xl);
 		overflow: hidden;
+		margin-bottom: var(--spacing-lg);
 
 		img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+			transition: transform var(--transition-base);
 		}
 	}
 
-	&__content {
-		flex: 1;
+	&:hover &__image img {
+		transform: scale(1.03);
 	}
 
-	h2 {
-		margin: 0 0 8px;
-		font-size: 18px;
-		font-weight: 600;
-		color: #4f46e5;
+	&__title {
+		margin: 0 0 var(--spacing-sm);
+		font-size: var(--font-size-xl);
+		font-weight: var(--font-weight-semibold);
+		letter-spacing: -0.01em;
+		line-height: 1.35;
+		color: var(--color-text-heading);
+		transition: color var(--transition-base);
 	}
 
-	p {
+	&:hover &__title {
+		color: var(--color-primary);
+	}
+
+	&__description {
 		margin: 0;
-		font-size: 14px;
-		color: #6b7280;
-		line-height: 1.5;
+		font-size: var(--font-size-base);
+		color: var(--color-text-secondary);
+		line-height: 1.6;
+	}
+
+	&__meta {
+		margin-top: var(--spacing-md);
+		font-size: var(--font-size-sm);
+		color: var(--color-text-muted);
 	}
 }
 
-@media (max-width: 600px) {
-	.article-card {
-		flex-direction: column;
-
-		&__image {
-			flex: none;
-			width: 100%;
-			height: 160px;
-		}
+@media (max-width: 700px) {
+	.articles-list {
+		grid-template-columns: 1fr;
+		gap: var(--spacing-2xl);
 	}
 }
 
 .container {
 	max-width: 800px;
 	margin: 0 auto;
-	padding: 0 16px;
+	padding: 0 var(--spacing-lg);
 }
 </style>

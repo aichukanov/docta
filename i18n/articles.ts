@@ -11,6 +11,16 @@ export default {
 				'Clinics with multilingual support in Montenegro',
 			ClinicsWithLanguageSupportDescription:
 				'A complete list of clinics in Montenegro offering consultations in different languages. Find a clinic with support in your native language.',
+			ArticleMetaDoctors: 'Doctors: {doctors} · Specialties: {specialties}',
+			ArticleMetaClinics: 'Languages: {languages} · Clinics: {clinics}',
+			CtaDoctorsTitle: 'Looking for a specific specialist?',
+			CtaDoctorsText:
+				'In the catalog you can filter doctors by city, specialty and clinic.',
+			CtaDoctorsButton: 'All Russian-speaking doctors',
+			CtaClinicsTitle: 'Need a clinic near you?',
+			CtaClinicsText:
+				'In the catalog you can filter clinics by city and language — with a map.',
+			CtaClinicsButton: 'Clinic catalog',
 		},
 		'ru': {
 			Articles: 'Статьи',
@@ -23,6 +33,16 @@ export default {
 				'Клиники с языковой поддержкой в Черногории',
 			ClinicsWithLanguageSupportDescription:
 				'Полный список клиник в Черногории с консультациями на разных языках. Найдите клинику с поддержкой на вашем родном языке.',
+			ArticleMetaDoctors: 'Врачей: {doctors} · Специальностей: {specialties}',
+			ArticleMetaClinics: 'Языков: {languages} · Клиник: {clinics}',
+			CtaDoctorsTitle: 'Ищете конкретного специалиста?',
+			CtaDoctorsText:
+				'В каталоге можно фильтровать врачей по городу, специальности и клинике.',
+			CtaDoctorsButton: 'Все русскоязычные врачи',
+			CtaClinicsTitle: 'Нужна клиника рядом с вами?',
+			CtaClinicsText:
+				'В каталоге можно фильтровать клиники по городу и языку — с картой.',
+			CtaClinicsButton: 'Каталог клиник',
 		},
 		'sr': {
 			Articles: 'Članci',
@@ -35,6 +55,16 @@ export default {
 				'Klinike sa višejezičnom podrškom u Crnoj Gori',
 			ClinicsWithLanguageSupportDescription:
 				'Kompletan spisak klinika u Crnoj Gori koje nude konsultacije na različitim jezicima. Pronađite kliniku sa podrškom na vašem maternjem jeziku.',
+			ArticleMetaDoctors: 'Doktora: {doctors} · Specijalnosti: {specialties}',
+			ArticleMetaClinics: 'Jezika: {languages} · Klinika: {clinics}',
+			CtaDoctorsTitle: 'Tražite određenog specijalistu?',
+			CtaDoctorsText:
+				'U katalogu možete filtrirati doktore po gradu, specijalnosti i klinici.',
+			CtaDoctorsButton: 'Svi doktori koji govore ruski',
+			CtaClinicsTitle: 'Potrebna vam je klinika u vašoj blizini?',
+			CtaClinicsText:
+				'U katalogu možete filtrirati klinike po gradu i jeziku — sa mapom.',
+			CtaClinicsButton: 'Katalog klinika',
 		},
 		'de': {
 			Articles: 'Artikel',
@@ -47,6 +77,16 @@ export default {
 				'Kliniken mit mehrsprachiger Unterstützung in Montenegro',
 			ClinicsWithLanguageSupportDescription:
 				'Eine vollständige Liste der Kliniken in Montenegro, die Beratungen in verschiedenen Sprachen anbieten. Finden Sie eine Klinik mit Unterstützung in Ihrer Muttersprache.',
+			ArticleMetaDoctors: 'Ärzte: {doctors} · Fachrichtungen: {specialties}',
+			ArticleMetaClinics: 'Sprachen: {languages} · Kliniken: {clinics}',
+			CtaDoctorsTitle: 'Suchen Sie einen bestimmten Spezialisten?',
+			CtaDoctorsText:
+				'Im Katalog können Sie Ärzte nach Stadt, Fachrichtung und Klinik filtern.',
+			CtaDoctorsButton: 'Alle russischsprachigen Ärzte',
+			CtaClinicsTitle: 'Brauchen Sie eine Klinik in Ihrer Nähe?',
+			CtaClinicsText:
+				'Im Katalog können Sie Kliniken nach Stadt und Sprache filtern — mit Karte.',
+			CtaClinicsButton: 'Klinikkatalog',
 		},
 		'tr': {
 			Articles: 'Makaleler',
@@ -59,6 +99,16 @@ export default {
 				"Karadağ'da çok dilli destek sunan klinikler",
 			ClinicsWithLanguageSupportDescription:
 				"Karadağ'da farklı dillerde danışmanlık sunan kliniklerin tam listesi. Ana dilinizde destek sunan bir klinik bulun.",
+			ArticleMetaDoctors: 'Doktor: {doctors} · Uzmanlık: {specialties}',
+			ArticleMetaClinics: 'Dil: {languages} · Klinik: {clinics}',
+			CtaDoctorsTitle: 'Belirli bir uzman mı arıyorsunuz?',
+			CtaDoctorsText:
+				'Katalogda doktorları şehre, uzmanlığa ve kliniğe göre filtreleyebilirsiniz.',
+			CtaDoctorsButton: 'Rusça konuşan tüm doktorlar',
+			CtaClinicsTitle: 'Yakınınızda bir klinik mi arıyorsunuz?',
+			CtaClinicsText:
+				'Katalogda klinikleri şehre ve dile göre filtreleyebilirsiniz — haritayla.',
+			CtaClinicsButton: 'Klinik kataloğu',
 		},
 		'sr-cyrl': {
 			Articles: 'Чланци',
@@ -71,6 +121,16 @@ export default {
 				'Клинике са вишејезичном подршком у Црној Гори',
 			ClinicsWithLanguageSupportDescription:
 				'Комплетан списак клиника у Црној Гори које нуде консултације на различитим језицима. Пронађите клинику са подршком на вашем матерњем језику.',
+			ArticleMetaDoctors: 'Доктора: {doctors} · Специјалности: {specialties}',
+			ArticleMetaClinics: 'Језика: {languages} · Клиника: {clinics}',
+			CtaDoctorsTitle: 'Тражите одређеног специјалисту?',
+			CtaDoctorsText:
+				'У каталогу можете филтрирати докторе по граду, специјалности и клиници.',
+			CtaDoctorsButton: 'Сви доктори који говоре руски',
+			CtaClinicsTitle: 'Потребна вам је клиника у вашој близини?',
+			CtaClinicsText:
+				'У каталогу можете филтрирати клинике по граду и језику — са мапом.',
+			CtaClinicsButton: 'Каталог клиника',
 		},
 	},
 };

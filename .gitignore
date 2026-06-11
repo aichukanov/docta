@@ -11,6 +11,10 @@ dist
 # Node dependencies
 node_modules
 
+# Python cache (FZOCG/import scripts)
+__pycache__/
+*.pyc
+
 # Logs
 logs
 *.log

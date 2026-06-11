@@ -1,6 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
-import type { DoctorData } from '~/interfaces/doctor';
 import {
 	downloadAndSaveImage,
 	isExternalUrl,
@@ -21,7 +20,7 @@ interface DoctorServicePrice {
 	priceMax: number | null;
 }
 
-export default defineEventHandler(async (event): Promise<DoctorData> => {
+export default defineEventHandler(async (event): Promise<boolean | null> => {
 	try {
 		await requireAdmin(event);
 

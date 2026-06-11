@@ -7,6 +7,7 @@ import type { ClinicPrice } from '~/interfaces/clinic';
 
 interface AddServiceBody {
 	name: string;
+	slug?: string;
 	name_sr: string;
 	name_sr_cyrl?: string;
 	name_ru?: string;
@@ -63,7 +64,7 @@ export default defineEventHandler(async (event): Promise<number | null> => {
 			const serviceId = result.insertId;
 
 			// 2. Добавляем специальности
-			if (body.specialtyIds?.length > 0) {
+			if (body.specialtyIds != null && body.specialtyIds.length > 0) {
 				const placeholders = body.specialtyIds.map(() => '(?, ?)').join(',');
 				await connection.execute(
 					`INSERT INTO medical_services_specialties (medical_service_id, specialty_id)
@@ -73,7 +74,7 @@ export default defineEventHandler(async (event): Promise<number | null> => {
 			}
 
 			// 3. Добавляем связи с клиниками (с ценой и кодом)
-			if (body.clinicPrices?.length > 0) {
+			if (body.clinicPrices != null && body.clinicPrices.length > 0) {
 				for (const cp of body.clinicPrices) {
 					await connection.execute(
 						`INSERT INTO clinic_medical_services (medical_service_id, clinic_id, price, price_min, price_max, code) 

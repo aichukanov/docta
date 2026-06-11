@@ -8,7 +8,7 @@ import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
 import { validateBody } from '~/common/validation';
 
 export default defineEventHandler(
-	async (event): Promise<ClinicServiceWithPrices> => {
+	async (event): Promise<ClinicServiceWithPrices | null> => {
 		try {
 			const body = await readBody(event);
 

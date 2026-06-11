@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import type { ClinicServicesMap } from '#components';
 import { OG_IMAGE, SITE_URL } from '~/common/constants';
+import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
 import {
 	buildBreadcrumbsSchema,
 	buildDrugSchema,
@@ -175,7 +177,11 @@ const getCityName = (id: number): string | undefined => {
 
 watchEffect(() => {
 	if (medicationData.value && isFound.value) {
-		const medicationUrl = `${SITE_URL}/medications/${medicationData.value.slug}`;
+		const pageUrl = getCanonicalUrl(
+			route.path,
+			route.query as Record<string, string | string[]>,
+			locale.value,
+		);
 
 		schemaOrgStore.setSchemas([
 			...buildDrugSchema({
@@ -186,13 +192,20 @@ watchEffect(() => {
 				locale: locale.value,
 				pageTitle: pageTitle.value,
 				pageDescription: pageDescription.value,
+				pageUrl,
 				clinics: medicationClinics.value,
 				clinicPrices: filteredClinicPrices.value,
 				getCityName,
 			}),
-			buildBreadcrumbsSchema(medicationUrl, [
-				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
-				{ name: t('BreadcrumbMedications'), url: `${SITE_URL}/medications` },
+			buildBreadcrumbsSchema(pageUrl, [
+				{
+					name: t('BreadcrumbHome'),
+					url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
+				},
+				{
+					name: t('BreadcrumbMedications'),
+					url: getRegionalUrl(`${SITE_URL}/medications`, {}, locale.value),
+				},
 				{ name: pageTitle.value },
 			]),
 		]);
@@ -202,7 +215,7 @@ watchEffect(() => {
 
 <template>
 	<EntityPage
-		:isLoading="isLoading || clinicsStore.isLoadingClinics || false"
+		:isLoading="isLoading || clinicsStore.isLoading || false"
 		:isFound="isFound"
 		backRouteName="medications"
 		:loadingText="t('LoadingMedications')"

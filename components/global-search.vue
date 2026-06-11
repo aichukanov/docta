@@ -5,9 +5,8 @@ import { getLocalizedName } from '~/common/utils';
 import { DoctorSpecialty } from '~/enums/specialty';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
-import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
+import type { ClinicServiceWithPrices, LabTestItem } from '~/interfaces/clinic';
 import type { DoctorData } from '~/interfaces/doctor';
-import type { LabTestData } from '~/interfaces/lab-test';
 
 const globalSearchI18n = {
 	messages: {
@@ -128,10 +127,12 @@ clinicsStore.fetchClinics();
 // Полные результаты поиска
 const allFilteredSpecialties = ref<{ id: number; name: string }[]>([]);
 const allDoctors = ref<DoctorData[]>([]);
-const allFilteredClinics = ref<{ id: number; name: string }[]>([]);
+const allFilteredClinics = ref<{ id: number; slug: string; name: string }[]>(
+	[],
+);
 const allMedicalServices = ref<ClinicServiceWithPrices[]>([]);
 const allMedications = ref<{ id: number; slug: string; name: string }[]>([]);
-const allLabTests = ref<LabTestData[]>([]);
+const allLabTests = ref<LabTestItem[]>([]);
 
 // Текущий поисковый запрос для ссылок
 const currentQuery = ref('');

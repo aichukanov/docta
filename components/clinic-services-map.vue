@@ -3,9 +3,13 @@ import { getClinicMarkerId } from '~/common/utils';
 import type { ClinicData, ClinicServiceItem } from '~/interfaces/clinic';
 import { getLocalizedName } from '~/common/utils';
 
+// На карту приходят элементы listing-страниц: для медикаментов/режима клиник
+// массив пустой, поэтому все поля кроме id опциональны.
+type MapServiceItem = Partial<ClinicServiceItem> & { id: number };
+
 const props = defineProps<{
 	clinics: ClinicData[];
-	services: ClinicServiceItem[];
+	services: MapServiceItem[];
 	showAllClinics?: boolean;
 	detailsRouteName?: string;
 	detailsParamName?: string;
@@ -39,7 +43,7 @@ const existingMarkerIds = ref(new Set<string>());
 const isClinicMode = computed(() => props.showAllClinics);
 
 const clinicsWithServices = computed<
-	Array<ClinicData & { services: number[] }>
+	Array<ClinicData & { services: MapServiceItem[] }>
 >(() => {
 	// Режим клиник: показываем все переданные клиники
 	if (props.showAllClinics) {
@@ -67,7 +71,7 @@ const clinicsWithMarkers = computed(() => {
 	);
 });
 
-const getClinicServices = (clinic: ClinicData): ClinicServiceItem[] => {
+const getClinicServices = (clinic: ClinicData): MapServiceItem[] => {
 	return props.services.filter(
 		({ clinicIds }) =>
 			clinicIds && clinicIds.split(',').map(Number).includes(clinic.id),

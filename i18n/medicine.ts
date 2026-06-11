@@ -143,7 +143,7 @@ export default {
 			TitleSubstance: 'Лекарства с действующим веществом {substance}',
 			TitleOTCSubstance: 'Лекарства без рецепта с веществом {substance}',
 			TitleRxSubstance: 'Лекарства по рецепту с веществом {substance}',
-			MedicinesDescriptionFiltered: 'Найдено {count} лекарств — {title}',
+			MedicinesDescriptionFiltered: 'Лекарств найдено: {count} — {title}',
 			MedicineDescriptionOTC:
 				'{name} ({substance}) — продаётся без рецепта в Черногории',
 			MedicineDescriptionRx:
@@ -219,7 +219,7 @@ export default {
 			TitleSubstance: 'Lijekovi sa aktivnom supstancom {substance}',
 			TitleOTCSubstance: 'Lijekovi bez recepta sa supstancom {substance}',
 			TitleRxSubstance: 'Lijekovi na recept sa supstancom {substance}',
-			MedicinesDescriptionFiltered: 'Pronađeno {count} lijekova — {title}',
+			MedicinesDescriptionFiltered: 'Pronađeno lijekova: {count} — {title}',
 			MedicineDescriptionOTC:
 				'{name} ({substance}) — dostupno bez recepta u Crnoj Gori',
 			MedicineDescriptionRx:
@@ -444,7 +444,7 @@ export default {
 			TitleSubstance: 'Лијекови са активном супстанцом {substance}',
 			TitleOTCSubstance: 'Лијекови без рецепта са супстанцом {substance}',
 			TitleRxSubstance: 'Лијекови на рецепт са супстанцом {substance}',
-			MedicinesDescriptionFiltered: 'Пронађено {count} лијекова — {title}',
+			MedicinesDescriptionFiltered: 'Пронађено лијекова: {count} — {title}',
 			MedicineDescriptionOTC:
 				'{name} ({substance}) — доступно без рецепта у Црној Гори',
 			MedicineDescriptionRx:

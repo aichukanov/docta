@@ -1,4 +1,4 @@
-import { Page, Locator } from '@playwright/test';
+import type { Page, Locator } from '@playwright/test';
 import { ListBasePage } from './list-base.page';
 import { URLS } from '../../utils/constants';
 
@@ -7,7 +7,7 @@ export class ArticleListPage extends ListBasePage {
 		super(page);
 	}
 
-	async goto() {
+	override async goto() {
 		await super.goto(URLS.ARTICLES);
 	}
 
@@ -25,7 +25,7 @@ export class ArticleListPage extends ListBasePage {
 		return (await firstItem.locator('p').first().textContent()) || '';
 	}
 
-	async clickFirstItem() {
+	override async clickFirstItem() {
 		await this.getListItems().first().click();
 		await this.page.waitForLoadState('domcontentloaded');
 	}

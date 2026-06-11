@@ -1,9 +1,9 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="T">
 import { getRegionalQuery } from '~/common/url-utils';
 
 interface Props {
 	title: string;
-	items: unknown[];
+	items: T[];
 	routeName: string;
 	initialLimit?: number;
 }

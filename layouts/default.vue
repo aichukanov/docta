@@ -122,24 +122,6 @@ watch(
 						<NuxtLink class="footer-link" :to="medicationsPageLink">
 							{{ t('Medications') }}
 						</NuxtLink>
-						<NuxtLink
-							class="footer-link footer-link--muted"
-							:to="aboutPageLink"
-						>
-							{{ t('AboutProject') }}
-						</NuxtLink>
-						<NuxtLink
-							class="footer-link footer-link--muted"
-							:to="privacyPageLink"
-						>
-							{{ t('PrivacyPolicy') }}
-						</NuxtLink>
-						<NuxtLink
-							class="footer-link footer-link--muted"
-							:to="termsPageLink"
-						>
-							{{ t('TermsOfService') }}
-						</NuxtLink>
 					</nav>
 
 					<div class="footer-contacts">
@@ -172,6 +154,19 @@ watch(
 						<span class="footer-bottom__muted"
 							>© {{ years }} {{ SITE_NAME }}</span
 						>
+						<span class="footer-bottom__dot" aria-hidden="true">·</span>
+						<NuxtLink class="footer-bottom__link" :to="aboutPageLink">
+							{{ t('AboutProject') }}
+						</NuxtLink>
+						<span class="footer-bottom__dot" aria-hidden="true">·</span>
+						<NuxtLink class="footer-bottom__link" :to="privacyPageLink">
+							{{ t('PrivacyPolicy') }}
+						</NuxtLink>
+						<span class="footer-bottom__dot" aria-hidden="true">·</span>
+						<NuxtLink class="footer-bottom__link" :to="termsPageLink">
+							{{ t('TermsOfService') }}
+						</NuxtLink>
+						<span class="footer-bottom__dot" aria-hidden="true">·</span>
 						<button
 							class="footer-bottom__cookie-link"
 							@click="isModalActive = true"
@@ -479,15 +474,17 @@ body {
 
 		.footer-nav {
 			display: grid;
+			grid-auto-flow: column;
+			grid-template-rows: repeat(3, auto);
 			grid-template-columns: repeat(2, minmax(140px, 1fr));
-			gap: var(--spacing-sm) var(--spacing-xl);
+			gap: var(--spacing-xs) var(--spacing-3xl);
 			align-content: start;
 		}
 
 		.footer-link {
 			color: var(--color-text-secondary);
 			text-decoration: none;
-			font-size: var(--font-size-md);
+			font-size: var(--font-size-sm);
 			line-height: 1.4;
 			padding: var(--spacing-xs) 0;
 
@@ -495,26 +492,24 @@ body {
 				color: var(--color-primary);
 				text-decoration: underline;
 			}
-
-			&--muted {
-				color: var(--color-text-muted);
-			}
 		}
 
 		.footer-contacts {
 			min-width: 180px;
 
 			&__title {
-				font-size: var(--font-size-sm);
+				font-size: var(--font-size-xs);
 				color: var(--color-text-muted);
-				margin-bottom: var(--spacing-sm);
-				font-weight: var(--font-weight-medium);
+				margin-bottom: var(--spacing-md);
+				font-weight: var(--font-weight-semibold);
+				letter-spacing: 0.06em;
+				text-transform: uppercase;
 			}
 
 			&__actions {
 				display: flex;
 				flex-direction: column;
-				gap: var(--spacing-sm);
+				gap: var(--spacing-md);
 			}
 		}
 
@@ -561,13 +556,31 @@ body {
 			&__left {
 				display: flex;
 				align-items: center;
-				gap: var(--spacing-lg);
+				flex-wrap: wrap;
+				gap: var(--spacing-sm) var(--spacing-lg);
 			}
 
 			&__muted {
 				color: var(--color-text-muted);
 				font-size: var(--font-size-sm);
 				line-height: 1.4;
+			}
+
+			&__dot {
+				color: var(--color-text-light);
+				font-size: var(--font-size-sm);
+			}
+
+			&__link {
+				color: var(--color-text-muted);
+				text-decoration: none;
+				font-size: var(--font-size-sm);
+				line-height: 1.4;
+
+				&:hover {
+					color: var(--color-primary);
+					text-decoration: underline;
+				}
 			}
 
 			&__cookie-link {
@@ -598,10 +611,6 @@ body {
 				gap: var(--spacing-xl);
 			}
 
-			.footer-nav {
-				grid-template-columns: repeat(3, minmax(120px, 1fr));
-			}
-
 			.footer-bottom {
 				flex-direction: column;
 				align-items: flex-start;
@@ -625,7 +634,7 @@ body {
 
 			.footer-nav {
 				grid-template-columns: repeat(2, minmax(120px, 1fr));
-				gap: var(--spacing-sm) var(--spacing-lg);
+				gap: var(--spacing-xs) var(--spacing-lg);
 			}
 		}
 	}

@@ -10,7 +10,11 @@ import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import medicalServiceI18n from '~/i18n/medical-service';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
-import { getDetailLinkQuery } from '~/common/url-utils';
+import {
+	getCanonicalUrl,
+	getDetailLinkQuery,
+	getRegionalUrl,
+} from '~/common/url-utils';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -180,7 +184,11 @@ const isFiltered = computed(() => {
 
 watchEffect(() => {
 	if (medicalServicesList.value) {
-		const pageUrl = `${SITE_URL}${route.fullPath}`;
+		const pageUrl = getCanonicalUrl(
+			route.path,
+			route.query as Record<string, string | string[]>,
+			locale.value,
+		);
 		schemaOrgStore.setSchemas([
 			...buildEntityListSchema({
 				siteUrl: SITE_URL,
@@ -194,7 +202,10 @@ watchEffect(() => {
 				isFiltered: isFiltered.value,
 			}),
 			buildBreadcrumbsSchema(pageUrl, [
-				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
+				{
+					name: t('BreadcrumbHome'),
+					url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
+				},
 				{ name: t('BreadcrumbServices') },
 			]),
 		]);

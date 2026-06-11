@@ -4,7 +4,9 @@ import {
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
 import { SITE_URL, OG_IMAGE } from '~/common/constants';
+import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
 import { combineI18nMessages } from '~/i18n/utils';
+import type { DoctorCardData } from '~/interfaces/doctor';
 
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
@@ -235,7 +237,11 @@ const isFiltered = computed(() => {
 });
 watchEffect(() => {
 	if (doctorsList.value) {
-		const pageUrl = `${SITE_URL}${route.fullPath}`;
+		const pageUrl = getCanonicalUrl(
+			route.path,
+			route.query as Record<string, string | string[]>,
+			locale.value,
+		);
 		schemaOrgStore.setSchemas([
 			...buildDoctorListSchema({
 				siteUrl: SITE_URL,
@@ -249,7 +255,10 @@ watchEffect(() => {
 				getSpecialtyName: (id) => t(`specialty_${id}`),
 			}),
 			buildBreadcrumbsSchema(pageUrl, [
-				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
+				{
+					name: t('BreadcrumbHome'),
+					url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
+				},
 				{ name: t('BreadcrumbDoctors') },
 			]),
 		]);
@@ -285,7 +294,8 @@ watchEffect(() => {
 		</template>
 
 		<template #map-clinic-popup="{ service }">
-			<DoctorInfo :service="service" short />
+			<!-- На странице врачей в качестве services на карту передаётся список врачей -->
+			<DoctorInfo :service="service as unknown as DoctorCardData" short />
 		</template>
 
 		<template #tips>

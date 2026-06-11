@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import type { ClinicServicesMap } from '#components';
 import { OG_IMAGE, SITE_URL } from '~/common/constants';
+import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
 import {
 	buildBreadcrumbsSchema,
 	buildMedicalTestSchema,
@@ -189,7 +191,11 @@ const getCityName = (id: number): string | undefined => {
 
 watchEffect(() => {
 	if (labTestData.value && isFound.value) {
-		const testUrl = `${SITE_URL}/labtests/${labTestData.value.slug}`;
+		const pageUrl = getCanonicalUrl(
+			route.path,
+			route.query as Record<string, string | string[]>,
+			locale.value,
+		);
 
 		schemaOrgStore.setSchemas([
 			...buildMedicalTestSchema({
@@ -202,13 +208,20 @@ watchEffect(() => {
 				locale: locale.value,
 				pageTitle: pageTitle.value,
 				pageDescription: pageDescription.value,
+				pageUrl,
 				clinics: labTestClinics.value,
 				clinicPrices: filteredClinicPrices.value,
 				getCityName,
 			}),
-			buildBreadcrumbsSchema(testUrl, [
-				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
-				{ name: t('BreadcrumbLabTests'), url: `${SITE_URL}/labtests` },
+			buildBreadcrumbsSchema(pageUrl, [
+				{
+					name: t('BreadcrumbHome'),
+					url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
+				},
+				{
+					name: t('BreadcrumbLabTests'),
+					url: getRegionalUrl(`${SITE_URL}/labtests`, {}, locale.value),
+				},
 				{ name: pageTitle.value },
 			]),
 		]);
@@ -218,7 +231,7 @@ watchEffect(() => {
 
 <template>
 	<EntityPage
-		:isLoading="isLoading || clinicsStore.isLoadingClinics || false"
+		:isLoading="isLoading || clinicsStore.isLoading || false"
 		:isFound="isFound"
 		backRouteName="labtests"
 		:loadingText="t('LoadingLabTests')"

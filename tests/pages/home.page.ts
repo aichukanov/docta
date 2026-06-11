@@ -1,4 +1,4 @@
-import { Page } from '@playwright/test';
+import type { Page } from '@playwright/test';
 import { BasePage } from './base.page';
 
 export class HomePage extends BasePage {
@@ -9,7 +9,7 @@ export class HomePage extends BasePage {
 	/**
 	 * Перейти на главную страницу
 	 */
-	async goto() {
+	override async goto() {
 		await super.goto('/');
 	}
 

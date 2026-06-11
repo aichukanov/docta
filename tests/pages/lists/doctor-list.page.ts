@@ -1,4 +1,4 @@
-import { Page, Locator } from '@playwright/test';
+import type { Page, Locator } from '@playwright/test';
 import { ListBasePage } from './list-base.page';
 import { URLS } from '../../utils/constants';
 
@@ -10,7 +10,7 @@ export class DoctorListPage extends ListBasePage {
 	/**
 	 * Перейти на страницу списка врачей
 	 */
-	async goto() {
+	override async goto() {
 		await super.goto(URLS.DOCTORS);
 	}
 

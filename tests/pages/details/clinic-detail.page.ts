@@ -1,4 +1,4 @@
-import { Page } from '@playwright/test';
+import type { Page } from '@playwright/test';
 import { DetailBasePage } from './detail-base.page';
 
 export class ClinicDetailPage extends DetailBasePage {

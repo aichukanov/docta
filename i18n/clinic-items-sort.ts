@@ -18,11 +18,11 @@ export default {
 		},
 		'sr': {
 			SortPlaceholder: 'Sortiranje',
-			SortRatingDesc: 'Po oceni',
+			SortRatingDesc: 'Po ocjeni',
 			SortPopularDesc: 'Najpopularnije',
 			SortNameAsc: 'Po nazivu',
-			SortPriceAsc: 'Cena: jeftinije prvo',
-			SortPriceDesc: 'Cena: skuplje prvo',
+			SortPriceAsc: 'Cijena: jeftinije prvo',
+			SortPriceDesc: 'Cijena: skuplje prvo',
 		},
 		'de': {
 			SortPlaceholder: 'Sortierung',
@@ -42,11 +42,11 @@ export default {
 		},
 		'sr-cyrl': {
 			SortPlaceholder: 'Сортирање',
-			SortRatingDesc: 'По оцени',
+			SortRatingDesc: 'По оцјени',
 			SortPopularDesc: 'Најпопуларније',
 			SortNameAsc: 'По називу',
-			SortPriceAsc: 'Цена: јефтиније прво',
-			SortPriceDesc: 'Цена: скупље прво',
+			SortPriceAsc: 'Цијена: јефтиније прво',
+			SortPriceDesc: 'Цијена: скупље прво',
 		},
 	},
 };

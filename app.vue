@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { getRegionalUrl } from './common/url-utils';
+import { getCanonicalUrl } from './common/url-utils';
 import { Language } from './enums/language';
 import {
 	defaultLocale,
 	getLocaleFromQuery,
 	locales,
-	type Locale,
 } from './composables/use-locale';
 import { useSchemaOrgStore } from './stores/schema-org';
 import type { SchemaOrg } from './types/schema-org';
@@ -41,6 +40,15 @@ const buildJsonLd = (schemas: SchemaOrg[]) => {
 			};
 };
 
+// Чистим схемы перед каждой клиентской навигацией: страницы без собственной
+// разметки (terms, privacy, 404 и т.п.) не должны наследовать схемы предыдущей
+// страницы. Страницы со схемами заново заполнят стор в своём setup/watchEffect.
+if (import.meta.client) {
+	router.beforeEach(() => {
+		schemaOrgStore.clearSchemas();
+	});
+}
+
 // Reactive head for schema.org JSON-LD (works with SSR)
 useHead(() => {
 	const jsonLd = buildJsonLd(schemaOrgStore.schemas);
@@ -61,22 +69,15 @@ useHead(() => {
 const queryLocale = getLocaleFromQuery(route.query.lang as string | string[]);
 locale.value = queryLocale || defaultLocale;
 
-function getMainUrl() {
-	const searchParamsRe = /(?=.+)\?.+/gi;
-	const path = route.fullPath.replace(searchParamsRe, '');
-	return `${SITE_URL}${path}`;
-}
-
-function getLangLink(mainUrl: string, lang: Locale) {
-	return getRegionalUrl(
-		mainUrl,
+function getLangLink(lang: string) {
+	return getCanonicalUrl(
+		route.path,
 		route.query as Record<string, string | string[]>,
 		lang,
 	);
 }
 
 const alternateLinks = computed(() => {
-	const mainUrl = getMainUrl();
 	const currentLocale = locale.value;
 
 	const links: Array<{
@@ -88,11 +89,11 @@ const alternateLinks = computed(() => {
 		{
 			key: 'canonical',
 			rel: 'canonical',
-			href: getLangLink(mainUrl, currentLocale),
+			href: getLangLink(currentLocale),
 		},
 		{
 			rel: 'alternate',
-			href: getLangLink(mainUrl, Language.EN),
+			href: getLangLink(Language.EN),
 			hreflang: 'x-default',
 		},
 	];
@@ -102,7 +103,7 @@ const alternateLinks = computed(() => {
 
 		links.push({
 			rel: 'alternate',
-			href: getLangLink(mainUrl, lang),
+			href: getLangLink(lang),
 			hreflang: lang,
 		});
 	}

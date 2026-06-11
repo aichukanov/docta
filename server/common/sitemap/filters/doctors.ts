@@ -1,9 +1,9 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { DoctorSpecialty } from '~/enums/specialty';
 
-function getEnumValues(enumType: any) {
+function getEnumValues(enumType: Record<string, string | number>): number[] {
 	return Object.values(enumType).filter(
-		(value) => !Number.isNaN(Number(value)),
+		(value): value is number => !Number.isNaN(Number(value)),
 	);
 }
 

@@ -17,10 +17,12 @@ export default defineEventHandler(async (event) => {
 	);
 	await connection.end();
 
-	const items = (rows as any[]).map((s) => ({
-		id: s.id,
-		name: s.localized_name || s.name_en || '',
-	}));
+	const items: Array<{ id: number; name: string }> = (rows as any[]).map(
+		(s) => ({
+			id: s.id,
+			name: s.localized_name || s.name_en || '',
+		}),
+	);
 
 	return { items, totalCount: items.length };
 });

@@ -1,15 +1,8 @@
 import type { ContactList } from '~/interfaces/contacts';
+import type { CityId } from '~/enums/cities';
 import type { BillingService } from '~/enums/billing-service';
 import type { Rating, Review } from '~/interfaces/review';
 import type { WorkingHours } from '~/interfaces/clinic-working-hours';
-
-export interface ClinicService {
-	clinicId: number;
-	price: number | null;
-	priceMin: number | null;
-	priceMax: number | null;
-	code: string;
-}
 
 export interface Coordinates {
 	latitude: number;
@@ -86,12 +79,26 @@ export interface ClinicServiceItem {
 	localName: string;
 }
 
+// Услуга клиники в карточке ClinicSummary (профильные услуги врача в клинике)
+export interface ClinicSummaryService {
+	id: number;
+	slug: string;
+	name: string;
+	localName: string;
+	price: number | null;
+	priceMin: number | null;
+	priceMax: number | null;
+}
+
+// Услуги, сгруппированные по id клиники. Не путать с компонентом ClinicServicesMap (карта).
+export type ClinicServicesByClinicId = Record<number, ClinicSummaryService[]>;
+
 export interface ClinicPrice {
 	clinicId: number;
 	price: number | null;
 	priceMin?: number | null;
 	priceMax?: number | null;
-	code?: string;
+	code?: string | null;
 }
 
 export interface ClinicServiceWithPrices extends ClinicServiceItem {

@@ -1,8 +1,15 @@
 <script setup lang="ts">
 import type { ClinicData } from '~/interfaces/clinic';
 
+// Лёгкий элемент из /api/doctors/admin-list
+interface DoctorListItem {
+	id: number;
+	name: string;
+	localName: string;
+}
+
 const props = defineProps<{
-	doctors: DoctorData[];
+	doctors: DoctorListItem[];
 	clinics: ClinicData[];
 }>();
 

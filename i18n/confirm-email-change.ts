@@ -27,13 +27,13 @@ export default {
 		},
 
 		'sr': {
-			pageTitle: 'Promena email-a',
-			processing: 'Obrađujemo vaš zahtev...',
-			successTitle: 'Email promenjen! ✅',
+			pageTitle: 'Promjena email adrese',
+			processing: 'Obrađujemo vaš zahtjev...',
+			successTitle: 'Email promijenjen! ✅',
 			successDescription:
-				'Vaš email je uspešno ažuriran. Sada ćete biti preusmereni na profil.',
+				'Vaš email je uspješno ažuriran. Sada ćete biti preusmjereni na profil.',
 			btnGoToProfile: 'Idi na profil',
-			errorTitle: 'Greška promene email-a',
+			errorTitle: 'Greška promjene email adrese',
 			btnHome: 'Početna',
 		},
 
@@ -60,13 +60,13 @@ export default {
 		},
 
 		'sr-cyrl': {
-			pageTitle: 'Промена емаила',
-			processing: 'Обрађујемо ваш захтев...',
-			successTitle: 'Емаил промењен! ✅',
+			pageTitle: 'Промјена email адресе',
+			processing: 'Обрађујемо ваш захтјев...',
+			successTitle: 'Email промијењен! ✅',
 			successDescription:
-				'Ваш емаил је успешно ажуриран. Сада ћете бити преусмерени на профил.',
+				'Ваш email је успјешно ажуриран. Сада ћете бити преусмјерени на профил.',
 			btnGoToProfile: 'Иди на профил',
-			errorTitle: 'Грешка промене емаила',
+			errorTitle: 'Грешка промјене email адресе',
 			btnHome: 'Почетна',
 		},
 	},

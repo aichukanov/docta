@@ -68,12 +68,12 @@ export async function getMedicationList(
 		return arr.map(() => '?').join(',');
 	};
 
-	if (body.clinicIds?.length > 0) {
+	if (body.clinicIds != null && body.clinicIds.length > 0) {
 		whereFilters.push(
 			`cm.clinic_id IN (${buildInPlaceholders(body.clinicIds)})`,
 		);
 	}
-	if (body.cityIds?.length > 0) {
+	if (body.cityIds != null && body.cityIds.length > 0) {
 		whereFilters.push(`cities.id IN (${buildInPlaceholders(body.cityIds)})`);
 	}
 	if (body.name && validateName(body, 'api/medications/list')) {
@@ -165,7 +165,7 @@ export async function getMedicationList(
 	]);
 	await connection.end();
 
-	const items = medicationRows.map((row: any) => {
+	const items = (medicationRows as any[]).map((row: any) => {
 		const { name, localName } = processLocalizedNameForClinicOrDoctor(
 			row,
 			locale,

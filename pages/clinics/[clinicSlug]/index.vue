@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { ClinicServicesMap } from '#components';
 import { Clock } from '@element-plus/icons-vue';
 import { formatClinicAddressLine } from '~/common/clinic-address';
 import {
@@ -12,7 +13,11 @@ import {
 	buildBreadcrumbsSchema,
 	buildClinicSchema,
 } from '~/common/schema-org-builders';
-import { getRegionalQuery } from '~/common/url-utils';
+import {
+	getCanonicalUrl,
+	getRegionalQuery,
+	getRegionalUrl,
+} from '~/common/url-utils';
 import { getLocalizedName } from '~/common/utils';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
@@ -26,7 +31,13 @@ import reviewsI18n from '~/i18n/reviews';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
 import workingHoursI18n from '~/i18n/working-hours';
-import type { ClinicItemTopEntry, ClinicPrice } from '~/interfaces/clinic';
+import type {
+	ClinicItemTopEntry,
+	ClinicPrice,
+	ClinicServiceList,
+	LabTestList,
+} from '~/interfaces/clinic';
+import type { DoctorList } from '~/interfaces/doctor';
 import type { WorkingHours } from '~/interfaces/clinic-working-hours';
 import { DAYS_OF_WEEK } from '~/interfaces/clinic-working-hours';
 
@@ -101,40 +112,56 @@ const fetchInlineList = async <T,>(
 const { data: doctorsList } = await useAsyncData(
 	`doctors-list-clinic-${clinicSlug.value}`,
 	() =>
-		fetchInlineList('/api/doctors/list', renderInline.value.doctors, {
-			doctors: [],
-			totalCount: 0,
-		}),
+		fetchInlineList<DoctorList>(
+			'/api/doctors/list',
+			renderInline.value.doctors,
+			{
+				doctors: [],
+				totalCount: 0,
+			},
+		),
 	{ watch: [renderInline, clinicId] },
 );
 
 const { data: labTestsList } = await useAsyncData(
 	`labtests-list-clinic-${clinicSlug.value}`,
 	() =>
-		fetchInlineList('/api/labtests/list', renderInline.value.labtests, {
-			items: [],
-			totalCount: 0,
-		}),
+		fetchInlineList<LabTestList>(
+			'/api/labtests/list',
+			renderInline.value.labtests,
+			{
+				items: [],
+				totalCount: 0,
+			},
+		),
 	{ watch: [renderInline, clinicId] },
 );
 
 const { data: medicationsList } = await useAsyncData(
 	`medications-list-clinic-${clinicSlug.value}`,
 	() =>
-		fetchInlineList('/api/medications/list', renderInline.value.medications, {
-			items: [],
-			totalCount: 0,
-		}),
+		fetchInlineList<ClinicServiceList>(
+			'/api/medications/list',
+			renderInline.value.medications,
+			{
+				items: [],
+				totalCount: 0,
+			},
+		),
 	{ watch: [renderInline, clinicId] },
 );
 
 const { data: medicalServicesList } = await useAsyncData(
 	`services-list-clinic-${clinicSlug.value}`,
 	() =>
-		fetchInlineList('/api/services/list', renderInline.value.services, {
-			items: [],
-			totalCount: 0,
-		}),
+		fetchInlineList<ClinicServiceList>(
+			'/api/services/list',
+			renderInline.value.services,
+			{
+				items: [],
+				totalCount: 0,
+			},
+		),
 	{ watch: [renderInline, clinicId] },
 );
 
@@ -336,7 +363,7 @@ const scrollToMap = () => {
 };
 
 const pageTitle = computed(() => {
-	if (!isFound.value) {
+	if (!isFound.value || !clinicData.value) {
 		return '';
 	}
 
@@ -497,7 +524,8 @@ useSeoMeta({
 	ogTitle: pageTitle,
 	ogDescription: pageDescription,
 	ogImage: OG_IMAGE,
-	ogType: 'business.business',
+	// og:type business.business валиден для Facebook, но отсутствует в union-типе useSeoMeta
+	ogType: 'business.business' as 'website',
 	twitterCard: 'summary',
 	twitterTitle: pageTitle,
 	twitterDescription: pageDescription,
@@ -531,7 +559,11 @@ const topItemsToOffers = (
 
 watchEffect(() => {
 	if (clinicData.value && isFound.value) {
-		const clinicUrl = `${SITE_URL}/clinics/${clinicData.value.slug}`;
+		const pageUrl = getCanonicalUrl(
+			route.path,
+			route.query as Record<string, string | string[]>,
+			locale.value,
+		);
 		const cid = clinicData.value.id;
 
 		const schemaServices =
@@ -562,13 +594,16 @@ watchEffect(() => {
 				locale: locale.value,
 				pageTitle: pageTitle.value,
 				pageDescription: pageDescription.value,
+				pageUrl,
 				getCityName,
 				services: schemaServices,
 				labTests: schemaLabTests,
 				medications: schemaMedications,
 				doctors: schemaDoctors,
 				workingHours: workingHoursData.value,
-				rating: clinicData.value.rating,
+				// rating не передаём: API-агрегат включает сторонние отзывы
+				// (google_maps и т.п.), а в разметку допустим только рейтинг
+				// по собственным docta_me-отзывам — его пока нет на бэкенде
 				reviews: displayedReviews.value.map((review) => ({
 					id: review.id,
 					text: review.text,
@@ -578,9 +613,15 @@ watchEffect(() => {
 					provider: review.provider,
 				})),
 			}),
-			buildBreadcrumbsSchema(clinicUrl, [
-				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
-				{ name: t('BreadcrumbClinics'), url: `${SITE_URL}/clinics` },
+			buildBreadcrumbsSchema(pageUrl, [
+				{
+					name: t('BreadcrumbHome'),
+					url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
+				},
+				{
+					name: t('BreadcrumbClinics'),
+					url: getRegionalUrl(`${SITE_URL}/clinics`, {}, locale.value),
+				},
 				{ name: localizedName.value },
 			]),
 		]);
@@ -633,7 +674,7 @@ watchEffect(() => {
 
 			<!-- Working Hours -->
 			<EntityPageSection
-				v-if="hasWorkingHours"
+				v-if="hasWorkingHours && clinicId != null"
 				sectionId="hours"
 				:title="t('WorkingHours')"
 			>

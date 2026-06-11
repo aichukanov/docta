@@ -1,35 +1,14 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="T extends ListPageItem">
 import { getRegionalQuery } from '~/common/url-utils';
-import { CITY_COORDINATES } from '~/enums/cities';
+import { CITY_COORDINATES, type CityId } from '~/enums/cities';
 import { LIST_PAGE_SIZE, SITE_URL } from '~/common/constants';
-import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
-import { LanguageId } from '~/enums/language';
-
-interface ClinicServiceItem {
-	id: number;
-	name: string;
-	localName: string;
-	price: number | null;
-}
-
-interface ClinicServicesMap {
-	[clinicId: number]: ClinicServiceItem[];
-}
-
-interface ListItem {
-	id: number;
-	name?: string;
-	localName?: string;
-	synonyms?: string[];
-	clinicIds?: string;
-	clinicCount?: number;
-	clinicPrices?: ClinicPrice[];
-	clinicServices?: ClinicServicesMap;
-}
+import type { ClinicData } from '~/interfaces/clinic';
+import type { ListPageItem } from '~/interfaces/list-page';
+import type { ClinicServicesMap } from '#components';
 
 const props = withDefaults(
 	defineProps<{
-		list: ListItem[];
+		list: T[];
 		totalCount: number;
 		isLoading: boolean;
 		pageTitle: string;
@@ -52,9 +31,9 @@ const { t, locale } = useI18n({ useScope: 'local' });
 const router = useRouter();
 const route = useRoute();
 
-const mapRef = ref<HTMLElement>();
+const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
 const { target: mapSentinel, hasBeenVisible: isMapVisible } = useInViewport();
-const pageNumber = ref(+route.query.page || 1);
+const pageNumber = ref(Number(route.query.page) || 1);
 const isSyncingFromRoute = ref(false);
 
 const clinicsStore = useClinicsStore();
@@ -120,7 +99,7 @@ const onMapReady = () => {
 		() => props.cityIds,
 		() => {
 			mapRef.value?.centerOnLocations(
-				props.cityIds.map((cityId) => CITY_COORDINATES[cityId]),
+				props.cityIds.map((cityId) => CITY_COORDINATES[cityId as CityId]),
 			);
 		},
 		{ immediate: true },
@@ -183,7 +162,7 @@ watch(
 	() => route.query,
 	(query) => {
 		isSyncingFromRoute.value = true;
-		pageNumber.value = +query.page || 1;
+		pageNumber.value = Number(query.page) || 1;
 		nextTick(() => {
 			isSyncingFromRoute.value = false;
 		});
@@ -235,7 +214,7 @@ onMounted(async () => {
 				<section
 					class="list-content"
 					:aria-label="t('AriaSearchResults')"
-					:aria-busy="isLoading || clinicsStore.isLoadingClinics"
+					:aria-busy="isLoading || clinicsStore.isLoading"
 				>
 					<div class="list-wrapper">
 						<div
@@ -299,7 +278,7 @@ onMounted(async () => {
 					</div>
 
 					<div
-						v-if="isLoading || clinicsStore.isLoadingClinics"
+						v-if="isLoading || clinicsStore.isLoading"
 						class="loading-overlay"
 						role="status"
 						aria-live="polite"

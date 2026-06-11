@@ -2,7 +2,7 @@ import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
-export default defineEventHandler(async (event): Promise<boolean> => {
+export default defineEventHandler(async (event): Promise<boolean | null> => {
 	try {
 		await requireAdmin(event);
 

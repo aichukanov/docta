@@ -16,7 +16,7 @@ export enum CityId {
 	ANDRIJEVICA = 15,
 }
 
-export const CITY_COORDINATES = {
+export const CITY_COORDINATES: Record<CityId, [number, number]> = {
 	[CityId.PODGORICA]: [42.442574, 19.268646],
 	[CityId.NIKSIC]: [42.77105944, 18.9476806],
 	[CityId.BUDVA]: [42.2864, 18.84],

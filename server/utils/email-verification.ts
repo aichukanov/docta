@@ -30,7 +30,7 @@ export async function validateEmailVerificationToken(token: string): Promise<{
 	valid: boolean;
 	userId?: number;
 	email?: string;
-	error?: string;
+	error?: ERROR_CODES;
 }> {
 	const results = await executeQuery(
 		`SELECT user_id, email, expires_at, verified 

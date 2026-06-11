@@ -147,7 +147,7 @@ export interface MedicalProcedureSchema extends SchemaOrgBase {
  * Compact person reference for list items
  */
 export interface PersonListItemRef {
-	'@type': SchemaType;
+	'@type': PersonSchemaType;
 	'@id': string;
 	'name': string;
 	'url': string;

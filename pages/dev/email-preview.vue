@@ -34,6 +34,10 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+	middleware: 'dev-only',
+});
+
 const selectedType = ref('password-reset');
 const selectedLocale = ref('en');
 

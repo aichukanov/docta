@@ -1,5 +1,6 @@
 import { toRefs } from 'vue';
 import type { ComputedRef } from 'vue';
+import type { LocationQueryRaw } from 'vue-router';
 import { useFiltersStore, type FilterNamespace } from '~/stores/filters';
 import { validateCityIds } from '~/common/validation';
 import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
@@ -76,7 +77,7 @@ export function useClinicCityFilter(
 			if (isSyncingFromRoute.value) return;
 			const current = parseCityIdsFromQuery(route.query.cityIds);
 			if (sameIdSet(ids, current)) return;
-			const nextQuery: Record<string, unknown> = { ...route.query };
+			const nextQuery: LocationQueryRaw = { ...route.query };
 			if (ids.length) {
 				nextQuery.cityIds = ids.map(String);
 			} else {

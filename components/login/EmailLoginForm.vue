@@ -9,7 +9,7 @@ const { t } = useI18n({
 
 defineProps<{
 	loading: boolean;
-	regionalQuery: Record<string, string>;
+	regionalQuery: Record<string, string | undefined>;
 }>();
 
 const emit = defineEmits<{

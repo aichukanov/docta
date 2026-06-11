@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { hasContacts } from '../contacts/utils';
-import type { ClinicService, ClinicData } from '~/interfaces/clinic';
+import type {
+	ClinicPrice,
+	ClinicData,
+	ClinicSummaryService,
+} from '~/interfaces/clinic';
 
 const props = withDefaults(
 	defineProps<{
 		clinic: ClinicData;
-		priceInfo?: ClinicService;
-		services?: unknown[];
+		priceInfo?: ClinicPrice;
+		services?: ClinicSummaryService[];
 		serviceLimit?: number;
 		showPrice?: boolean;
 	}>(),
@@ -53,7 +57,10 @@ const { t } = useI18n({
 });
 
 const hasServices = computed(() => props.services && props.services.length > 0);
-const hasFooterContent = computed(() => hasServices.value || hasContacts);
+const hasClinicContacts = computed(() => hasContacts(props.clinic));
+const hasFooterContent = computed(
+	() => hasServices.value || hasClinicContacts.value,
+);
 
 // Услуги открыты по умолчанию
 const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
@@ -76,11 +83,11 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 					<template #title>
 						<span class="collapse-title">
 							{{ t('AvailableServices') }}
-							<span class="collapse-count">({{ services.length }})</span>
+							<span class="collapse-count">({{ services?.length }})</span>
 						</span>
 					</template>
 					<ClinicServiceSectionContent
-						:items="services"
+						:items="services || []"
 						:initialLimit="serviceLimit"
 					>
 						<template #default="{ item }">
@@ -100,7 +107,7 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 				</el-collapse-item>
 
 				<el-collapse-item
-					v-if="hasContacts"
+					v-if="hasClinicContacts"
 					name="contacts"
 					:title="t('Contacts')"
 				>

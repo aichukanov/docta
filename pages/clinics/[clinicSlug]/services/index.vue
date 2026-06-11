@@ -9,7 +9,11 @@ import {
 	buildBreadcrumbsSchema,
 	buildEntityListSchema,
 } from '~/common/schema-org-builders';
-import { getRegionalQuery } from '~/common/url-utils';
+import {
+	getCanonicalUrl,
+	getRegionalQuery,
+	getRegionalUrl,
+} from '~/common/url-utils';
 import { getLocalizedName } from '~/common/utils';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import clinicItemsSortI18n from '~/i18n/clinic-items-sort';
@@ -174,8 +178,16 @@ const schemaOrgStore = useSchemaOrgStore();
 
 watchEffect(() => {
 	if (!clinicData.value || shouldRedirect.value) return;
-	const url = `${SITE_URL}${route.fullPath}`;
-	const clinicUrl = `${SITE_URL}/clinics/${clinicSlug.value}`;
+	const url = getCanonicalUrl(
+		route.path,
+		route.query as Record<string, string | string[]>,
+		locale.value,
+	);
+	const clinicUrl = getRegionalUrl(
+		`${SITE_URL}/clinics/${clinicSlug.value}`,
+		{},
+		locale.value,
+	);
 	schemaOrgStore.setSchemas([
 		...buildEntityListSchema({
 			siteUrl: SITE_URL,
@@ -189,8 +201,14 @@ watchEffect(() => {
 			isFiltered: isFiltered.value,
 		}),
 		buildBreadcrumbsSchema(url, [
-			{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
-			{ name: t('BreadcrumbClinics'), url: `${SITE_URL}/clinics` },
+			{
+				name: t('BreadcrumbHome'),
+				url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
+			},
+			{
+				name: t('BreadcrumbClinics'),
+				url: getRegionalUrl(`${SITE_URL}/clinics`, {}, locale.value),
+			},
 			{ name: clinicName.value, url: clinicUrl },
 			{ name: t('BreadcrumbServices') },
 		]),

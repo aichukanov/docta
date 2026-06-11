@@ -70,7 +70,7 @@ export async function getLabTestList(
 		return arr.map(() => '?').join(',');
 	};
 
-	if (body.categoryIds?.length > 0) {
+	if (body.categoryIds != null && body.categoryIds.length > 0) {
 		if (
 			!validateCategoryIds(
 				{ categoryIds: body.categoryIds },
@@ -86,14 +86,14 @@ export async function getLabTestList(
 		);
 	}
 
-	if (body.clinicIds?.length > 0) {
+	if (body.clinicIds != null && body.clinicIds.length > 0) {
 		whereFilters.push(
 			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f WHERE clt_f.lab_test_id = lt.id AND clt_f.clinic_id IN (${buildInPlaceholders(
 				body.clinicIds,
 			)}))`,
 		);
 	}
-	if (body.cityIds?.length > 0) {
+	if (body.cityIds != null && body.cityIds.length > 0) {
 		whereFilters.push(
 			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f JOIN clinics c_f ON clt_f.clinic_id = c_f.id WHERE clt_f.lab_test_id = lt.id AND c_f.city_id IN (${buildInPlaceholders(
 				body.cityIds,
@@ -126,13 +126,15 @@ export async function getLabTestList(
 		? `LIMIT ${pageSize} OFFSET ${offset}`
 		: '';
 
-	const hasCitySelectFilter = body.cityIds?.length > 0;
-	const cityFilterInSelect = hasCitySelectFilter
-		? ` AND EXISTS (SELECT 1 FROM clinics clt_city WHERE clt_city.id = clt.clinic_id AND clt_city.city_id IN (${body.cityIds.map(() => '?').join(',')}))`
-		: '';
-	const selectCityParams: Array<number | string> = hasCitySelectFilter
-		? [...body.cityIds, ...body.cityIds]
-		: [];
+	const selectCityIds = body.cityIds ?? [];
+	const cityFilterInSelect =
+		selectCityIds.length > 0
+			? ` AND EXISTS (SELECT 1 FROM clinics clt_city WHERE clt_city.id = clt.clinic_id AND clt_city.city_id IN (${selectCityIds.map(() => '?').join(',')}))`
+			: '';
+	const selectCityParams: Array<number | string> = [
+		...selectCityIds,
+		...selectCityIds,
+	];
 
 	const priceOrder = getPriceOrderBySQL('clt');
 
@@ -197,7 +199,7 @@ export async function getLabTestList(
 	]);
 
 	// Получаем синонимы для всех анализов на выбранном языке
-	const labTestIds = labTestRows.map(({ id }: { id: number }) => id);
+	const labTestIds = (labTestRows as any[]).map(({ id }: { id: number }) => id);
 	let synonymsMap: Record<number, string[]> = {};
 
 	if (labTestIds.length > 0) {
@@ -223,7 +225,7 @@ export async function getLabTestList(
 
 	await connection.end();
 
-	const items = labTestRows.map((row: any) => {
+	const items = (labTestRows as any[]).map((row: any) => {
 		const { name, localName } = processLocalizedNameForLabTest(row, locale);
 		// Listing-карточка показывает только первые LIST_CARD_MAX_CLINICS клиник,
 		// поэтому отдаём только их id/цены — остальное доступно на странице деталей.

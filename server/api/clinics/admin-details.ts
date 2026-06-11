@@ -4,6 +4,7 @@ import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
 interface ClinicAdminData {
 	id: number;
+	slug: string;
 	clinicTypeIds: number[];
 	name_sr: string;
 	name_ru: string;
@@ -98,7 +99,7 @@ export default defineEventHandler(
 
 			await connection.end();
 
-			const clinic = clinicRows[0];
+			const clinic = (clinicRows as any[])[0];
 			if (!clinic) {
 				return null;
 			}

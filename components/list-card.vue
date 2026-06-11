@@ -1,17 +1,11 @@
 <script setup lang="ts">
 import { getDetailLinkQuery } from '~/common/url-utils';
 import { LIST_CARD_MAX_CLINICS } from '~/common/constants';
-
-interface ClinicServiceItem {
-	id: number;
-	name: string;
-	localName: string;
-	price: number | null;
-}
-
-interface ClinicServicesMap {
-	[clinicId: number]: ClinicServiceItem[];
-}
+import type {
+	ClinicData,
+	ClinicPrice,
+	ClinicServicesByClinicId,
+} from '~/interfaces/clinic';
 
 const props = withDefaults(
 	defineProps<{
@@ -20,13 +14,13 @@ const props = withDefaults(
 		itemId?: number;
 		itemSlug?: string;
 		// Только первые LIST_CARD_MAX_CLINICS клиник — бэкенд уже обрезает на listing-эндпоинтах.
-		clinicIds: string;
+		clinicIds?: string;
 		// Общее число клиник, в которых доступна услуга — для подписи кнопки «показать все».
 		clinicCount?: number;
-		clinicPrices?: ClinicService[];
+		clinicPrices?: ClinicPrice[];
 		detailsRouteName?: string;
 		detailsParamName?: string;
-		clinicServices?: ClinicServicesMap;
+		clinicServices?: ClinicServicesByClinicId;
 		showPrice?: boolean;
 		// Активный фильтр городов на listing-странице. Прокидываем в URL детальной,
 		// чтобы выбор пользователя сохранялся при переходе и каждый город имел

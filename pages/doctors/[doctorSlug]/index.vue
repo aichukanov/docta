@@ -1,6 +1,11 @@
 <script setup lang="ts">
+import type { ClinicServicesMap } from '#components';
 import { OG_IMAGE, SITE_URL, REVIEWS_THRESHOLD } from '~/common/constants';
-import { getRegionalQuery } from '~/common/url-utils';
+import {
+	getCanonicalUrl,
+	getRegionalQuery,
+	getRegionalUrl,
+} from '~/common/url-utils';
 import {
 	buildBreadcrumbsSchema,
 	buildDoctorSchema,
@@ -53,7 +58,11 @@ const localizedName = computed(() => {
 	if (!doctorData.value) {
 		return '';
 	}
-	return doctorData.value[`name_${locale.value}`] || doctorData.value.name;
+	const localized =
+		doctorData.value[
+			`name_${locale.value}` as 'name_sr' | 'name_ru' | 'name_en'
+		];
+	return localized || doctorData.value.name;
 });
 
 // Set HTTP 404 status for not found doctor
@@ -129,7 +138,7 @@ const doctorClinics = computed(() => {
 	// Сохраняем порядок из API
 	return clinicIds
 		.map((id) => clinicsStore.clinics.find((c) => c.id === id))
-		.filter(Boolean);
+		.filter((c): c is ClinicData => c != null);
 });
 
 const clinicInfoMap = computed(() => {
@@ -334,7 +343,11 @@ watchEffect(() => {
 	if (doctorData.value && isFound.value) {
 		const specialtyIds = doctorData.value.specialtyIds?.split(',').map(Number);
 		const languageIds = doctorData.value.languageIds?.split(',').map(Number);
-		const doctorUrl = `${SITE_URL}/doctors/${doctorData.value.slug}`;
+		const pageUrl = getCanonicalUrl(
+			route.path,
+			route.query as Record<string, string | string[]>,
+			locale.value,
+		);
 
 		schemaOrgStore.setSchemas([
 			...buildDoctorSchema({
@@ -351,9 +364,12 @@ watchEffect(() => {
 				locale: locale.value,
 				pageTitle: pageTitle.value,
 				pageDescription: pageDescription.value,
+				pageUrl,
 				facebook: doctorData.value.facebook,
 				instagram: doctorData.value.instagram,
-				rating: doctorData.value.rating,
+				// rating не передаём: API-агрегат включает сторонние отзывы
+				// (google_maps и т.п.), а в разметку допустим только рейтинг
+				// по собственным docta_me-отзывам — его пока нет на бэкенде
 				reviews: displayedReviews.value.map((review) => ({
 					id: review.id,
 					text: review.text,
@@ -365,9 +381,15 @@ watchEffect(() => {
 				getSpecialtyName,
 				getCityName,
 			}),
-			buildBreadcrumbsSchema(doctorUrl, [
-				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
-				{ name: t('BreadcrumbDoctors'), url: `${SITE_URL}/doctors` },
+			buildBreadcrumbsSchema(pageUrl, [
+				{
+					name: t('BreadcrumbHome'),
+					url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
+				},
+				{
+					name: t('BreadcrumbDoctors'),
+					url: getRegionalUrl(`${SITE_URL}/doctors`, {}, locale.value),
+				},
 				{ name: pageTitle.value },
 			]),
 		]);
@@ -377,7 +399,7 @@ watchEffect(() => {
 
 <template>
 	<EntityPage
-		:isLoading="isLoading || clinicsStore.isLoadingClinics || false"
+		:isLoading="isLoading || clinicsStore.isLoading || false"
 		:isFound="isFound"
 		backRouteName="doctors"
 		:loadingText="t('LoadingDoctor')"

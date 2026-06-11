@@ -2,11 +2,11 @@
 import { REVIEWS_THRESHOLD } from '~/common/constants';
 import { getRegionalQuery } from '~/common/url-utils';
 import RatingStars from '~/components/rating-stars.vue';
-import type { DoctorData } from '~/interfaces/doctor';
+import type { DoctorCardData } from '~/interfaces/doctor';
 
 const props = withDefaults(
 	defineProps<{
-		service: DoctorData;
+		service: DoctorCardData;
 		short?: boolean;
 		isMainHeading?: boolean;
 		headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

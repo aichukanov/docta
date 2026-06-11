@@ -90,17 +90,17 @@ export default {
 			languagesRequired: 'Выберите хотя бы один язык',
 		},
 		'sr': {
-			doctorProfile: 'Profil lekara',
-			noDoctorProfile: 'Još nemate profil lekara',
+			doctorProfile: 'Profil ljekara',
+			noDoctorProfile: 'Još nemate profil ljekara',
 			noDoctorProfileDesc:
-				'Da biste kreirali profil lekara ili povezali postojeći, pišite nam na email:',
+				'Da biste kreirali profil ljekara ili povezali postojeći, pišite nam na email:',
 			viewProfile: 'Pogledaj profil',
-			statusDraft: 'Na proveri',
+			statusDraft: 'Na provjeri',
 			statusDraftDesc:
 				'Vaš profil pregleda administrator. Biće vidljiv pacijentima nakon odobrenja.',
 			statusPublic: 'Objavljen',
 			statusPublicDesc:
-				'Vaš profil je vidljiv pacijentima u pretrazi i na stranici lekara.',
+				'Vaš profil je vidljiv pacijentima u pretrazi i na stranici ljekara.',
 			statusHidden: 'Sakriven',
 			statusHiddenDesc:
 				'Vaš profil je sakriven iz pretrage, stranica vraća 404. Možete ga ponovo učiniti vidljivim u bilo kom trenutku.',
@@ -111,11 +111,11 @@ export default {
 			confirmShow:
 				'Da li ste sigurni da želite da prikažete profil? Pojaviće se u pretrazi.',
 			visibilityUpdated: 'Vidljivost profila ažurirana',
-			errorUpdating: 'Nije uspelo ažuriranje vidljivosti',
+			errorUpdating: 'Nije uspjelo ažuriranje vidljivosti',
 			ownerBanner: 'Ovo je vaš profil',
-			ownerBannerEdit: 'Izmeni',
+			ownerBannerEdit: 'Izmijeni',
 			ownerBannerManage: 'Upravljanje profilom',
-			editProfile: 'Izmeni profil',
+			editProfile: 'Izmijeni profil',
 			fieldName: 'Ime',
 			fieldProfessionalTitle: 'Stručna titula',
 			fieldSpecialties: 'Specijalnosti',
@@ -123,11 +123,11 @@ export default {
 			saveChanges: 'Sačuvaj',
 			cancel: 'Otkaži',
 			profileSaved: 'Profil ažuriran',
-			errorSaving: 'Nije uspelo čuvanje promena',
+			errorSaving: 'Nije uspjelo čuvanje promjena',
 			descriptionMarkdownHint:
 				'Koristite dugmad na traci za formatiranje teksta',
 			descriptionSection: 'Opis',
-			changePhoto: 'Promeni fotografiju',
+			changePhoto: 'Promijeni fotografiju',
 			removePhoto: 'Ukloni fotografiju',
 			photoUpdated: 'Fotografija ažurirana',
 			nameRequired: 'Ime (SR) je obavezno',
@@ -225,17 +225,17 @@ export default {
 			languagesRequired: 'En az bir dil seçin',
 		},
 		'sr-cyrl': {
-			doctorProfile: 'Профил лекара',
-			noDoctorProfile: 'Још немате профил лекара',
+			doctorProfile: 'Профил љекара',
+			noDoctorProfile: 'Још немате профил љекара',
 			noDoctorProfileDesc:
-				'Да бисте креирали профил лекара или повезали постојећи, пишите нам на имејл:',
+				'Да бисте креирали профил љекара или повезали постојећи, пишите нам на email:',
 			viewProfile: 'Погледај профил',
-			statusDraft: 'На провери',
+			statusDraft: 'На провјери',
 			statusDraftDesc:
 				'Ваш профил прегледа администратор. Биће видљив пацијентима након одобрења.',
 			statusPublic: 'Објављен',
 			statusPublicDesc:
-				'Ваш профил је видљив пацијентима у претрази и на страници лекара.',
+				'Ваш профил је видљив пацијентима у претрази и на страници љекара.',
 			statusHidden: 'Сакривен',
 			statusHiddenDesc:
 				'Ваш профил је сакривен из претраге, страница враћа 404. Можете га поново учинити видљивим у било ком тренутку.',
@@ -246,11 +246,11 @@ export default {
 			confirmShow:
 				'Да ли сте сигурни да желите да прикажете профил? Појавиће се у претрази.',
 			visibilityUpdated: 'Видљивост профила ажурирана',
-			errorUpdating: 'Није успело ажурирање видљивости',
+			errorUpdating: 'Није успјело ажурирање видљивости',
 			ownerBanner: 'Ово је ваш профил',
-			ownerBannerEdit: 'Измени',
+			ownerBannerEdit: 'Измијени',
 			ownerBannerManage: 'Управљање профилом',
-			editProfile: 'Измени профил',
+			editProfile: 'Измијени профил',
 			fieldName: 'Име',
 			fieldProfessionalTitle: 'Стручна титула',
 			fieldSpecialties: 'Специјалности',
@@ -258,11 +258,11 @@ export default {
 			saveChanges: 'Сачувај',
 			cancel: 'Откажи',
 			profileSaved: 'Профил ажуриран',
-			errorSaving: 'Није успело чување промена',
+			errorSaving: 'Није успјело чување промјена',
 			descriptionMarkdownHint:
 				'Користите дугмад на траци за форматирање текста',
 			descriptionSection: 'Опис',
-			changePhoto: 'Промени фотографију',
+			changePhoto: 'Промијени фотографију',
 			removePhoto: 'Уклони фотографију',
 			photoUpdated: 'Фотографија ажурирана',
 			nameRequired: 'Име (SR) је обавезно',

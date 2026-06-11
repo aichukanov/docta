@@ -44,11 +44,25 @@ const isLoadingReviews = ref(false);
 const isLoadingUsers = ref(false);
 
 // Данные
-const doctorsList = ref(null);
-const labTestsList = ref(null);
-const servicesList = ref(null);
-const reviewsList = ref([]);
-const usersList = ref([]);
+interface AdminNamedItem {
+	id: number;
+	name: string;
+}
+
+const doctorsList = ref<{
+	doctors: Array<AdminNamedItem & { localName: string }>;
+	totalCount: number;
+} | null>(null);
+const labTestsList = ref<{
+	items: AdminNamedItem[];
+	totalCount: number;
+} | null>(null);
+const servicesList = ref<{
+	items: AdminNamedItem[];
+	totalCount: number;
+} | null>(null);
+const reviewsList = ref<{ id: number; label: string }[]>([]);
+const usersList = ref<{ id: number; email: string; name: string }[]>([]);
 const usersAdminList = ref<UserAdminListItem[]>([]);
 const recentRealReviews = ref<RecentRealUserReview[]>([]);
 const clinicsStore = useClinicsStore();

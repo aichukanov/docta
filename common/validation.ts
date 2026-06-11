@@ -19,7 +19,7 @@ export function validateBody(body: any, from: string) {
 	return true;
 }
 
-export function validateName({ name }: { name: unknown }, from: string) {
+export function validateName({ name }: { name?: unknown }, from: string) {
 	if (typeof name !== 'string') {
 		showError(from, 'Invalid name: must be a string');
 		return false;
@@ -45,7 +45,7 @@ export function validateName({ name }: { name: unknown }, from: string) {
 }
 
 export function validateSpecialtyIds(
-	{ specialtyIds }: { specialtyIds: unknown },
+	{ specialtyIds }: { specialtyIds?: unknown },
 	from: string,
 ) {
 	if (
@@ -63,7 +63,7 @@ export function validateSpecialtyIds(
 }
 
 export function validateCityIds(
-	{ cityIds }: { cityIds: unknown },
+	{ cityIds }: { cityIds?: unknown },
 	from: string,
 ) {
 	if (
@@ -78,12 +78,12 @@ export function validateCityIds(
 }
 
 export function validateDoctorLanguageIds(
-	{ languageIds }: { languageIds: unknown },
+	{ languageIds }: { languageIds?: unknown },
 	from: string,
 ) {
 	if (
 		!Array.isArray(languageIds) ||
-		!languageIds.every((lang) => isDoctorLanguage(lang as LanguageId))
+		!languageIds.every((lang) => isDoctorLanguage(String(lang)))
 	) {
 		showError(from, 'Invalid doctor language: ' + languageIds);
 		return false;
@@ -92,7 +92,7 @@ export function validateDoctorLanguageIds(
 	return true;
 }
 
-export function validateCityId({ cityId }: { cityId: unknown }, from: string) {
+export function validateCityId({ cityId }: { cityId?: unknown }, from: string) {
 	if (CityId[cityId as keyof typeof CityId] == null) {
 		showError(from, 'Invalid city: ' + cityId);
 		return false;
@@ -102,7 +102,7 @@ export function validateCityId({ cityId }: { cityId: unknown }, from: string) {
 }
 
 export function validateClinicIds(
-	{ clinicIds }: { clinicIds: unknown },
+	{ clinicIds }: { clinicIds?: unknown },
 	from: string,
 	required = false,
 ) {
@@ -119,7 +119,7 @@ export function validateClinicIds(
 	return true;
 }
 
-export function validateNonNegativeNumber(value: string): boolean {
+export function validateNonNegativeNumber(value: string | number): boolean {
 	if (value == null) {
 		return false;
 	}
@@ -128,7 +128,7 @@ export function validateNonNegativeNumber(value: string): boolean {
 	return !isNaN(num) && num >= 0;
 }
 
-export function validateNonNegativeInteger(value: string): boolean {
+export function validateNonNegativeInteger(value: string | number): boolean {
 	if (value == null) {
 		return false;
 	}
@@ -146,7 +146,7 @@ export function validateNonNegativeIntegerArray(arr: string[]): boolean {
 }
 
 export function validateCategoryIds(
-	{ categoryIds }: { categoryIds: unknown },
+	{ categoryIds }: { categoryIds?: unknown },
 	from: string,
 ) {
 	if (
@@ -164,7 +164,7 @@ export function validateCategoryIds(
 }
 
 export function validateClinicTypeIds(
-	{ clinicTypeIds }: { clinicTypeIds: unknown },
+	{ clinicTypeIds }: { clinicTypeIds?: unknown },
 	from: string,
 ) {
 	if (
@@ -181,7 +181,7 @@ export function validateClinicTypeIds(
 }
 
 export function validateServiceCategoryIds(
-	{ serviceCategoryIds }: { serviceCategoryIds: unknown },
+	{ serviceCategoryIds }: { serviceCategoryIds?: unknown },
 	from: string,
 ) {
 	if (

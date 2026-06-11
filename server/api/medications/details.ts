@@ -8,7 +8,7 @@ import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
 import { validateBody } from '~/common/validation';
 
 export default defineEventHandler(
-	async (event): Promise<ClinicServiceWithPrices> => {
+	async (event): Promise<ClinicServiceWithPrices | null> => {
 		try {
 			const body = await readBody(event);
 
@@ -59,7 +59,7 @@ export default defineEventHandler(
 			]);
 			await connection.end();
 
-			const row = medicationRows[0];
+			const row = (medicationRows as any[])[0];
 			if (!row) {
 				return null;
 			}

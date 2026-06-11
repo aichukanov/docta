@@ -1,8 +1,8 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="T extends { id: number }">
 const props = withDefaults(
 	defineProps<{
 		title: string;
-		items: { id: number }[];
+		items: T[];
 		// 0 or negative — no limit, render all items without show-more.
 		initialLimit?: number;
 	}>(),

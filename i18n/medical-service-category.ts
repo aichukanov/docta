@@ -215,15 +215,15 @@ export default {
 			[`medical_service_category_${MedicalServiceCategory.INJECTIONS_INFUSIONS}`]:
 				'Injekcije i infuzije',
 			[`medical_service_category_${MedicalServiceCategory.HOME_VISITS}`]:
-				'Kućne posete',
+				'Kućne posjete',
 			[`medical_service_category_${MedicalServiceCategory.WOUND_CARE}`]:
-				'Nega rana',
+				'Njega rana',
 			[`medical_service_category_${MedicalServiceCategory.OPHTHALMIC_SURGERY}`]:
 				'Oftalmološka hirurgija',
 			[`medical_service_category_${MedicalServiceCategory.ORTHODONTICS}`]:
 				'Ortodoncija',
 			[`medical_service_category_${MedicalServiceCategory.PEDIATRIC_DENTISTRY}`]:
-				'Dečja stomatologija',
+				'Dječja stomatologija',
 		},
 		'sr-cyrl': {
 			ServiceCategory: 'Категорија',
@@ -292,15 +292,15 @@ export default {
 			[`medical_service_category_${MedicalServiceCategory.INJECTIONS_INFUSIONS}`]:
 				'Ињекције и инфузије',
 			[`medical_service_category_${MedicalServiceCategory.HOME_VISITS}`]:
-				'Кућне посете',
+				'Кућне посјете',
 			[`medical_service_category_${MedicalServiceCategory.WOUND_CARE}`]:
-				'Нега рана',
+				'Њега рана',
 			[`medical_service_category_${MedicalServiceCategory.OPHTHALMIC_SURGERY}`]:
 				'Офталмолошка хирургија',
 			[`medical_service_category_${MedicalServiceCategory.ORTHODONTICS}`]:
 				'Ортодонција',
 			[`medical_service_category_${MedicalServiceCategory.PEDIATRIC_DENTISTRY}`]:
-				'Дечја стоматологија',
+				'Дјечја стоматологија',
 		},
 		'de': {
 			ServiceCategory: 'Kategorie',

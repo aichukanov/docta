@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import type { LocationQuery } from 'vue-router';
 import {
 	validateSpecialtyIds,
 	validateDoctorLanguageIds,
@@ -95,10 +96,7 @@ export const useFiltersStore = defineStore('filters', () => {
 		};
 	};
 
-	const updateFromRoute = (
-		ns: FilterNamespace,
-		query: Record<string, string | string[]>,
-	) => {
+	const updateFromRoute = (ns: FilterNamespace, query: LocationQuery) => {
 		const s = namespaces[ns];
 		const setIfValid = (
 			key: IdArrayKey,

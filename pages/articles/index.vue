@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { SITE_URL, OG_IMAGE } from '~/common/constants';
-import { getRegionalQuery } from '~/common/url-utils';
+import { getRegionalQuery, getRegionalUrl } from '~/common/url-utils';
 import {
 	buildBreadcrumbsSchema,
 	buildCollectionPageSchemas,
@@ -48,7 +48,9 @@ const articles = computed(() => [
 ]);
 
 const schemaOrgStore = useSchemaOrgStore();
-const pageUrl = `${SITE_URL}/articles`;
+const pageUrl = computed(() =>
+	getRegionalUrl(`${SITE_URL}/articles`, {}, locale.value),
+);
 
 // 2. Then use it in effects/meta
 const pageTitle = computed(() => t('Articles'));
@@ -69,7 +71,7 @@ useSeoMeta({
 watchEffect(() => {
 	schemaOrgStore.setSchemas([
 		...buildCollectionPageSchemas({
-			pageUrl,
+			pageUrl: pageUrl.value,
 			locale: locale.value,
 			title: t('Articles'),
 			description: t('Articles'),
@@ -82,8 +84,11 @@ watchEffect(() => {
 				},
 			),
 		}),
-		buildBreadcrumbsSchema(pageUrl, [
-			{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
+		buildBreadcrumbsSchema(pageUrl.value, [
+			{
+				name: t('BreadcrumbHome'),
+				url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
+			},
 			{ name: t('BreadcrumbArticles') },
 		]),
 	]);

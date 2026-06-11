@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { SITE_URL, OG_IMAGE } from '~/common/constants';
-import { getRegionalQuery } from '~/common/url-utils';
+import { getRegionalQuery, getRegionalUrl } from '~/common/url-utils';
 import { getLocalizedName } from '~/common/utils';
 import {
 	buildBreadcrumbsSchema,
@@ -50,7 +50,13 @@ const getClinicUrl = (slug: string) => ({
 });
 
 const schemaOrgStore = useSchemaOrgStore();
-const pageUrl = `${SITE_URL}/articles/clinics-with-language-support`;
+const pageUrl = computed(() =>
+	getRegionalUrl(
+		`${SITE_URL}/articles/clinics-with-language-support`,
+		{},
+		locale.value,
+	),
+);
 
 // 2. Fetch clinic data
 const clinicsStore = useClinicsStore();
@@ -131,7 +137,7 @@ watchEffect(() => {
 
 	schemaOrgStore.setSchemas([
 		...buildCollectionPageSchemas({
-			pageUrl,
+			pageUrl: pageUrl.value,
 			locale: locale.value,
 			title: t('ClinicsWithLanguageSupportTitle'),
 			description: t('ClinicsWithLanguageSupportDescription'),
@@ -146,9 +152,15 @@ watchEffect(() => {
 				},
 			),
 		}),
-		buildBreadcrumbsSchema(pageUrl, [
-			{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
-			{ name: t('BreadcrumbArticles'), url: `${SITE_URL}/articles` },
+		buildBreadcrumbsSchema(pageUrl.value, [
+			{
+				name: t('BreadcrumbHome'),
+				url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
+			},
+			{
+				name: t('BreadcrumbArticles'),
+				url: getRegionalUrl(`${SITE_URL}/articles`, {}, locale.value),
+			},
 			{ name: t('ClinicsWithLanguageSupportTitle') },
 		]),
 	]);

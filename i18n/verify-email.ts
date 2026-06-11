@@ -27,11 +27,11 @@ export default {
 		},
 
 		'sr': {
-			pageTitle: 'Verifikacija email-a',
+			pageTitle: 'Verifikacija email adrese',
 			verifying: 'Verifikujemo vaš email...',
 			successTitle: 'Email verifikovan! ✅',
 			successDescription:
-				'Vaš email je uspešno verifikovan. Sada ćete biti preusmereni na profil.',
+				'Vaš email je uspješno verifikovan. Sada ćete biti preusmjereni na profil.',
 			btnGoToProfile: 'Idi na profil',
 			errorTitle: 'Greška verifikacije',
 			btnHome: 'Početna',
@@ -60,11 +60,11 @@ export default {
 		},
 
 		'sr-cyrl': {
-			pageTitle: 'Верификација емаила',
-			verifying: 'Верификујемо ваш емаил...',
-			successTitle: 'Емаил верификован! ✅',
+			pageTitle: 'Верификација email адресе',
+			verifying: 'Верификујемо ваш email...',
+			successTitle: 'Email верификован! ✅',
 			successDescription:
-				'Ваш емаил је успешно верификован. Сада ћете бити преусмерени на профил.',
+				'Ваш email је успјешно верификован. Сада ћете бити преусмјерени на профил.',
 			btnGoToProfile: 'Иди на профил',
 			errorTitle: 'Грешка верификације',
 			btnHome: 'Почетна',

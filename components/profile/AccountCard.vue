@@ -9,8 +9,8 @@ const { t } = useI18n({
 withDefaults(
 	defineProps<{
 		provider: string;
-		isConnected: boolean;
-		isPrimary: boolean;
+		isConnected?: boolean;
+		isPrimary?: boolean;
 		details?: { label: string; value: string }[];
 		verifiedEmail?: boolean;
 		isLoading?: boolean;
@@ -18,7 +18,7 @@ withDefaults(
 	{
 		isConnected: false,
 		isPrimary: false,
-		details: [],
+		details: () => [],
 		verifiedEmail: false,
 		isLoading: false,
 	},

@@ -7,7 +7,6 @@ import {
 	createSuccessResponse,
 	createErrorResponse,
 } from '~/server/utils/api-codes';
-import { Language } from '~/enums/language';
 import { locales } from '~/composables/use-locale';
 
 /**
@@ -30,7 +29,7 @@ export default defineEventHandler(async (event) => {
 	}
 
 	// Проверяем что локаль из поддерживаемых
-	if (!locales.includes(locale as Language)) {
+	if (!(locales as readonly string[]).includes(locale)) {
 		return createErrorResponse(400, ERROR_CODES.INVALID_LOCALE);
 	}
 

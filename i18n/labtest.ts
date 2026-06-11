@@ -73,13 +73,13 @@ export default {
 			LabTestDescriptionCity: '{name} — laboratorijska analiza u {city}',
 			LabTestDescriptionDefault: '{name} — laboratorijska analiza u Crnoj Gori',
 			LabTestsListDescription:
-				'Pronađite laboratorijske analize u Crnoj Gori po imenu, gradu ili klinici. Uporedite cene i lokacije klinika na mapi.',
+				'Pronađite laboratorijske analize u Crnoj Gori po imenu, gradu ili klinici. Uporedite cijene i lokacije klinika na mapi.',
 			LabTestsListDescriptionCity:
-				'Laboratorijske analize u {city} — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
+				'Laboratorijske analize u {city} — pretraga po imenu ili klinici. Uporedite cijene i lokacije klinika na mapi.',
 			LabTestsListDescriptionCategory:
-				'{category} u Crnoj Gori — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
+				'{category} u Crnoj Gori — pretraga po imenu ili klinici. Uporedite cijene i lokacije klinika na mapi.',
 			LabTestsListDescriptionCategoryCity:
-				'{category} u {city} — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
+				'{category} u {city} — pretraga po imenu ili klinici. Uporedite cijene i lokacije klinika na mapi.',
 			Synonyms: 'Poznato i kao',
 			TabClinics: 'Klinike',
 			TabMap: 'Lokacija',
@@ -116,27 +116,26 @@ export default {
 			LabTestName: 'Test adı',
 			InsertLabTestName: 'Test adını girin',
 			LabTests: "Karadağ'da Laboratuvar Testleri",
-			LabTestsCity: '{city} şehrinde Laboratuvar Testleri',
+			LabTestsCity: '{city} Laboratuvar Testleri',
 			LabTestsClinic: "Karadağ'da {clinic} kliniğinde Laboratuvar Testleri",
-			LabTestsCityClinic:
-				'{city} şehrinde {clinic} kliniğinde Laboratuvar Testleri',
+			LabTestsCityClinic: '{city} {clinic} kliniğinde Laboratuvar Testleri',
 			LabTestsCategory: "Karadağ'da {category}",
-			LabTestsCategoryCity: "{city}'de {category}",
+			LabTestsCategoryCity: '{city} {category}',
 			LabTestsCategoryClinic: "Karadağ'da {clinic} kliniğinde {category}",
-			LabTestsCategoryCityClinic: "{city}'de {clinic} kliniğinde {category}",
+			LabTestsCategoryCityClinic: '{city} {clinic} kliniğinde {category}',
 
 			LoadingLabTests: 'Laboratuvar testleri yükleniyor...',
 			NoLabTestsFound: 'Laboratuvar testi bulunamadı',
-			LabTestDescriptionCity: "{name} — {city}'de laboratuvar testi",
+			LabTestDescriptionCity: '{name} — {city} laboratuvar testi',
 			LabTestDescriptionDefault: "{name} — Karadağ'da laboratuvar testi",
 			LabTestsListDescription:
 				"Karadağ'da ada, şehre veya kliniğe göre laboratuvar testleri bulun. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
 			LabTestsListDescriptionCity:
-				"{city}'de ada veya kliniğe göre laboratuvar testleri arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
+				'{city} ada veya kliniğe göre laboratuvar testleri arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.',
 			LabTestsListDescriptionCategory:
 				"Karadağ'da {category} — ada veya kliniğe göre arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
 			LabTestsListDescriptionCategoryCity:
-				"{city}'de {category} — ada veya kliniğe göre arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
+				'{city} {category} — ada veya kliniğe göre arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.',
 			Synonyms: 'Ayrıca şu adla bilinir',
 			TabClinics: 'Klinikler',
 			TabMap: 'Konum',
@@ -158,13 +157,13 @@ export default {
 			LabTestDescriptionCity: '{name} — лабораторијска анализа у {city}',
 			LabTestDescriptionDefault: '{name} — лабораторијска анализа у Црној Гори',
 			LabTestsListDescription:
-				'Пронађите лабораторијске анализе у Црној Гори по имену, граду или клиници. Упоредите цене и локације клиника на мапи.',
+				'Пронађите лабораторијске анализе у Црној Гори по имену, граду или клиници. Упоредите цијене и локације клиника на мапи.',
 			LabTestsListDescriptionCity:
-				'Лабораторијске анализе у {city} — претрага по имену или клиници. Упоредите цене и локације клиника на мапи.',
+				'Лабораторијске анализе у {city} — претрага по имену или клиници. Упоредите цијене и локације клиника на мапи.',
 			LabTestsListDescriptionCategory:
-				'{category} у Црној Гори — претрага по имену или клиници. Упоредите цене и локације клиника на мапи.',
+				'{category} у Црној Гори — претрага по имену или клиници. Упоредите цијене и локације клиника на мапи.',
 			LabTestsListDescriptionCategoryCity:
-				'{category} у {city} — претрага по имену или клиници. Упоредите цене и локације клиника на мапи.',
+				'{category} у {city} — претрага по имену или клиници. Упоредите цијене и локације клиника на мапи.',
 			Synonyms: 'Познато и као',
 			TabClinics: 'Клинике',
 			TabMap: 'Локација',

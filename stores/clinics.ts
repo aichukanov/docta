@@ -9,13 +9,16 @@ export const useClinicsStore = defineStore('clinics', () => {
 	const isLoaded = ref(false);
 	const currentLocale = ref<string | null>(null);
 
-	const fetchPromise = ref<Promise<void> | null>(null);
+	const fetchPromise = ref<Promise<{
+		clinics: ClinicData[];
+		totalCount: number;
+	} | null> | null>(null);
 
 	const loadClinicsData = async () => {
 		isLoading.value = true;
 		currentLocale.value = locale.value;
 
-		fetchPromise.value = $fetch<{
+		const promise = $fetch<{
 			clinics: ClinicData[];
 			totalCount: number;
 		}>('/api/clinics/list', {
@@ -27,8 +30,9 @@ export const useClinicsStore = defineStore('clinics', () => {
 			console.error('Failed to fetch clinics:', error);
 			throw error;
 		});
+		fetchPromise.value = promise;
 
-		const response = await fetchPromise.value;
+		const response = await promise;
 
 		clinics.value = response.clinics || [];
 		isLoaded.value = true;

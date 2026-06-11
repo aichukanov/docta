@@ -3,8 +3,9 @@ import { OG_IMAGE, SITE_URL } from '~/common/constants';
 import {
 	buildBreadcrumbsSchema,
 	buildWebPageSchema,
+	filterSchemaReviews,
 } from '~/common/schema-org-builders';
-import { getRegionalQuery } from '~/common/url-utils';
+import { getRegionalQuery, getRegionalUrl } from '~/common/url-utils';
 import type { ReviewFormEntity } from '~/components/review/form.vue';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import reviewsI18n from '~/i18n/reviews';
@@ -158,7 +159,10 @@ const schemaOrgStore = useSchemaOrgStore();
 watchEffect(() => {
 	if (!props.reviews?.length) return;
 
-	const reviewSchemas = props.reviews
+	// В разметку попадают только собственные docta_me-отзывы; aggregateRating
+	// не выводим, пока API-агрегат считает и сторонние отзывы (google_maps и
+	// т.п.) — см. SCHEMA_REVIEWS_PROVIDER в schema-org-builders.ts
+	const reviewSchemas = filterSchemaReviews(props.reviews)
 		.filter((r) => r.text)
 		.map((review) => ({
 			'@type': 'Review' as const,
@@ -176,46 +180,42 @@ watchEffect(() => {
 				: undefined,
 			'reviewBody': review.text,
 			'datePublished': review.publishedAt || undefined,
-			'provider': {
-				'@type': 'Organization' as const,
-				'name': review.provider,
-			},
 		}));
-
-	const aggregateRating =
-		props.rating && props.rating.averageRating && props.rating.totalReviews > 0
-			? {
-					'@type': 'AggregateRating' as const,
-					'ratingValue': props.rating.averageRating.toFixed(1),
-					'reviewCount': props.rating.totalReviews,
-				}
-			: undefined;
 
 	const reviewedEntity = {
 		'@type': props.schemaOrgType,
 		'@id': `${entityUrl.value}#${props.schemaOrgFragment}`,
 		'mainEntityOfPage': entityUrl.value,
 		'name': props.entityName,
-		aggregateRating,
 		'review': reviewSchemas.length > 0 ? reviewSchemas : undefined,
 	};
 
 	schemaOrgStore.setSchemas([
 		buildWebPageSchema({
-			url: reviewsUrl.value,
+			url: canonicalUrl.value,
 			locale: locale.value,
 			name: pageTitle.value,
 			description: pageDescription.value,
 			mainEntityId: reviewedEntity['@id'] as string,
 		}),
 		reviewedEntity,
-		buildBreadcrumbsSchema(reviewsUrl.value, [
-			{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
+		buildBreadcrumbsSchema(canonicalUrl.value, [
+			{
+				name: t('BreadcrumbHome'),
+				url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
+			},
 			{
 				name: t(props.breadcrumbParentKey),
-				url: `${SITE_URL}/${props.entityType}s`,
+				url: getRegionalUrl(
+					`${SITE_URL}/${props.entityType}s`,
+					{},
+					locale.value,
+				),
 			},
-			{ name: props.entityName, url: entityUrl.value },
+			{
+				name: props.entityName,
+				url: getRegionalUrl(entityUrl.value, {}, locale.value),
+			},
 			{ name: t('BreadcrumbReviews') },
 		]),
 	]);

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { SITE_URL, OG_IMAGE } from '~/common/constants';
-import { getRegionalQuery } from '~/common/url-utils';
+import { getRegionalQuery, getRegionalUrl } from '~/common/url-utils';
 import { getLocalizedName } from '~/common/utils';
 import {
 	buildBreadcrumbsSchema,
@@ -55,7 +55,13 @@ const getClinicUrl = (slug: string) => ({
 });
 
 const schemaOrgStore = useSchemaOrgStore();
-const pageUrl = `${SITE_URL}/articles/russian-speaking-doctors-in-montenegro`;
+const pageUrl = computed(() =>
+	getRegionalUrl(
+		`${SITE_URL}/articles/russian-speaking-doctors-in-montenegro`,
+		{},
+		locale.value,
+	),
+);
 
 // 2. Fetch and prepare doctor data
 const clinicsStore = useClinicsStore();
@@ -125,7 +131,7 @@ watchEffect(() => {
 	schemaOrgStore.setSchemas([
 		...buildMedicalWebPageSchema({
 			siteUrl: SITE_URL,
-			pageUrl,
+			pageUrl: pageUrl.value,
 			locale: locale.value,
 			title: t('RussianSpeakingDoctorsTitle'),
 			description: t('RussianSpeakingDoctorsDescription'),
@@ -137,9 +143,15 @@ watchEffect(() => {
 			doctors: doctors.value,
 			getSpecialtyName: (id) => t(`specialty_${id}`),
 		}),
-		buildBreadcrumbsSchema(pageUrl, [
-			{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
-			{ name: t('BreadcrumbArticles'), url: `${SITE_URL}/articles` },
+		buildBreadcrumbsSchema(pageUrl.value, [
+			{
+				name: t('BreadcrumbHome'),
+				url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
+			},
+			{
+				name: t('BreadcrumbArticles'),
+				url: getRegionalUrl(`${SITE_URL}/articles`, {}, locale.value),
+			},
 			{ name: t('RussianSpeakingDoctorsTitle') },
 		]),
 	]);

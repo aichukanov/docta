@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import type { ClinicData } from '~/interfaces/clinic';
 
+// Лёгкий элемент из /api/doctors/admin-list — полные данные грузятся отдельно
+interface DoctorListItem {
+	id: number;
+	name: string;
+	localName: string;
+}
+
 interface ServiceListItem {
 	id: number;
 	name: string;
@@ -52,7 +59,7 @@ interface DoctorAdminDetails {
 
 const props = withDefaults(
 	defineProps<{
-		doctors: DoctorData[];
+		doctors: DoctorListItem[];
 		clinics: ClinicData[];
 		services?: ServiceListItem[];
 		editable?: boolean;

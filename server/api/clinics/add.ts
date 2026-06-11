@@ -13,7 +13,7 @@ import {
 	validateDoctorLanguageIds,
 } from '~/common/validation';
 
-export default defineEventHandler(async (event): Promise<boolean> => {
+export default defineEventHandler(async (event): Promise<boolean | null> => {
 	try {
 		await requireAdmin(event);
 
@@ -32,7 +32,8 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 			return null;
 		}
 		if (
-			body.clinicTypeIds?.length > 0 &&
+			body.clinicTypeIds != null &&
+			body.clinicTypeIds.length > 0 &&
 			!validateClinicTypeIds(body, 'api/clinics/add')
 		) {
 			setResponseStatus(event, 400, 'Invalid clinic type');
@@ -102,7 +103,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				await connection.execute(languageQuery, languageQueryParams);
 			}
 
-			if (body.clinicTypeIds?.length > 0) {
+			if (body.clinicTypeIds != null && body.clinicTypeIds.length > 0) {
 				for (const typeId of body.clinicTypeIds) {
 					await connection.execute(
 						'INSERT INTO clinic_clinic_types (clinic_id, clinic_type_id) VALUES (?, ?)',

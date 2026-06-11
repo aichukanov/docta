@@ -149,8 +149,8 @@ export default {
 			TariffEmpty: '—',
 		},
 		'sr-cyrl': {
-			TabFzocgTariff: 'Ценовник ФЗОЦГ',
-			TariffTitle: 'Ценовник ФЗОЦГ (државно здравствено осигурање)',
+			TabFzocgTariff: 'Цјеновник ФЗОЦГ',
+			TariffTitle: 'Цјеновник ФЗОЦГ (државно здравствено осигурање)',
 			TariffCode: 'Шифра',
 			TariffSourcePzz: 'Примарна здравствена заштита (PZZ)',
 			TariffSourceSekundarna: 'Секундарна и терцијарна ЗЗ (амбуланта/одјељење)',

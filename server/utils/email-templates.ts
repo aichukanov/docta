@@ -1,4 +1,5 @@
 import { Language } from '~/enums/language';
+import type { Locale } from '~/composables/use-locale';
 
 export interface EmailTemplate {
 	subject: string;
@@ -12,7 +13,7 @@ export interface EmailTemplate {
 
 // === Password Reset Templates ===
 
-const passwordResetTemplates: Record<Language, EmailTemplate> = {
+const passwordResetTemplates: Record<Locale, EmailTemplate> = {
 	[Language.SR]: {
 		subject: 'Resetovanje lozinke na docta.me',
 		heading: 'Resetovanje lozinke',
@@ -107,7 +108,7 @@ const passwordResetTemplates: Record<Language, EmailTemplate> = {
 
 // === Email Verification Templates ===
 
-const emailVerificationTemplates: Record<Language, EmailTemplate> = {
+const emailVerificationTemplates: Record<Locale, EmailTemplate> = {
 	[Language.SR]: {
 		subject: 'Potvrdite email na docta.me',
 		heading: 'Dobrodošli u zajednicu docta.me! 👋',
@@ -220,112 +221,111 @@ interface LoginNotificationTemplate {
 	copyright: string;
 }
 
-const loginNotificationTemplates: Record<Language, LoginNotificationTemplate> =
-	{
-		[Language.SR]: {
-			subject: '🔔 Nova prijava na nalog docta.me',
-			heading: '🔔 Nova prijava na nalog',
-			greeting: (name) => `Zdravo, ${name}!`,
-			intro: 'Detektovali smo novu prijavu na vaš nalog na docta.me.',
-			infoLabels: {
-				time: 'Vreme:',
-				ip: 'IP adresa:',
-				device: 'Uređaj:',
-				location: 'Lokacija:',
-			},
-			wasYou: 'Ako ste to bili vi, možete ignorisati ovu poruku.',
-			wasNotYou:
-				'<strong>Ako niste bili vi,</strong> preporučujemo da odmah promenite lozinku i završite sve aktivne sesije.',
-			buttonText: 'Promenite lozinku',
-			copyright: '© 2026 docta.me - Sva prava zadržana',
+const loginNotificationTemplates: Record<Locale, LoginNotificationTemplate> = {
+	[Language.SR]: {
+		subject: '🔔 Nova prijava na nalog docta.me',
+		heading: '🔔 Nova prijava na nalog',
+		greeting: (name) => `Zdravo, ${name}!`,
+		intro: 'Detektovali smo novu prijavu na vaš nalog na docta.me.',
+		infoLabels: {
+			time: 'Vreme:',
+			ip: 'IP adresa:',
+			device: 'Uređaj:',
+			location: 'Lokacija:',
 		},
-		[Language.SR_CYRILLIC]: {
-			subject: '🔔 Нова пријава на налог docta.me',
-			heading: '🔔 Нова пријава на налог',
-			greeting: (name) => `Здраво, ${name}!`,
-			intro: 'Детектовали смо нову пријаву на ваш налог на docta.me.',
-			infoLabels: {
-				time: 'Време:',
-				ip: 'IP адреса:',
-				device: 'Уређај:',
-				location: 'Локација:',
-			},
-			wasYou: 'Ако сте то били ви, можете игнорисати ову поруку.',
-			wasNotYou:
-				'<strong>Ако нисте били ви,</strong> препоручујемо да одмах промените лозинку и завршите све активне сесије.',
-			buttonText: 'Промените лозинку',
-			copyright: '© 2026 docta.me - Сва права задржана',
+		wasYou: 'Ako ste to bili vi, možete ignorisati ovu poruku.',
+		wasNotYou:
+			'<strong>Ako niste bili vi,</strong> preporučujemo da odmah promenite lozinku i završite sve aktivne sesije.',
+		buttonText: 'Promenite lozinku',
+		copyright: '© 2026 docta.me - Sva prava zadržana',
+	},
+	[Language.SR_CYRILLIC]: {
+		subject: '🔔 Нова пријава на налог docta.me',
+		heading: '🔔 Нова пријава на налог',
+		greeting: (name) => `Здраво, ${name}!`,
+		intro: 'Детектовали смо нову пријаву на ваш налог на docta.me.',
+		infoLabels: {
+			time: 'Време:',
+			ip: 'IP адреса:',
+			device: 'Уређај:',
+			location: 'Локација:',
 		},
-		[Language.EN]: {
-			subject: '🔔 New login to docta.me account',
-			heading: '🔔 New Account Login',
-			greeting: (name) => `Hello, ${name}!`,
-			intro: 'We detected a new login to your account on docta.me.',
-			infoLabels: {
-				time: 'Time:',
-				ip: 'IP Address:',
-				device: 'Device:',
-				location: 'Location:',
-			},
-			wasYou: 'If this was you, you can ignore this email.',
-			wasNotYou:
-				'<strong>If this was not you,</strong> we recommend immediately changing your password and terminating all active sessions.',
-			buttonText: 'Change Password',
-			copyright: '© 2026 docta.me - All Rights Reserved',
+		wasYou: 'Ако сте то били ви, можете игнорисати ову поруку.',
+		wasNotYou:
+			'<strong>Ако нисте били ви,</strong> препоручујемо да одмах промените лозинку и завршите све активне сесије.',
+		buttonText: 'Промените лозинку',
+		copyright: '© 2026 docta.me - Сва права задржана',
+	},
+	[Language.EN]: {
+		subject: '🔔 New login to docta.me account',
+		heading: '🔔 New Account Login',
+		greeting: (name) => `Hello, ${name}!`,
+		intro: 'We detected a new login to your account on docta.me.',
+		infoLabels: {
+			time: 'Time:',
+			ip: 'IP Address:',
+			device: 'Device:',
+			location: 'Location:',
 		},
-		[Language.RU]: {
-			subject: '🔔 Новый вход в аккаунт docta.me',
-			heading: '🔔 Новый вход в аккаунт',
-			greeting: (name) => `Здравствуйте, ${name}!`,
-			intro: 'Мы обнаружили новый вход в ваш аккаунт на docta.me.',
-			infoLabels: {
-				time: 'Время:',
-				ip: 'IP адрес:',
-				device: 'Устройство:',
-				location: 'Местоположение:',
-			},
-			wasYou: 'Если это были вы, можете проигнорировать это письмо.',
-			wasNotYou:
-				'<strong>Если это были не вы,</strong> рекомендуем немедленно изменить пароль и завершить все активные сессии.',
-			buttonText: 'Изменить пароль',
-			copyright: '© 2026 docta.me - Все права защищены',
+		wasYou: 'If this was you, you can ignore this email.',
+		wasNotYou:
+			'<strong>If this was not you,</strong> we recommend immediately changing your password and terminating all active sessions.',
+		buttonText: 'Change Password',
+		copyright: '© 2026 docta.me - All Rights Reserved',
+	},
+	[Language.RU]: {
+		subject: '🔔 Новый вход в аккаунт docta.me',
+		heading: '🔔 Новый вход в аккаунт',
+		greeting: (name) => `Здравствуйте, ${name}!`,
+		intro: 'Мы обнаружили новый вход в ваш аккаунт на docta.me.',
+		infoLabels: {
+			time: 'Время:',
+			ip: 'IP адрес:',
+			device: 'Устройство:',
+			location: 'Местоположение:',
 		},
-		[Language.DE]: {
-			subject: '🔔 Neue Anmeldung bei docta.me-Konto',
-			heading: '🔔 Neue Kontoanmeldung',
-			greeting: (name) => `Hallo, ${name}!`,
-			intro:
-				'Wir haben eine neue Anmeldung bei Ihrem Konto auf docta.me festgestellt.',
-			infoLabels: {
-				time: 'Zeit:',
-				ip: 'IP-Adresse:',
-				device: 'Gerät:',
-				location: 'Standort:',
-			},
-			wasYou: 'Wenn Sie das waren, können Sie diese E-Mail ignorieren.',
-			wasNotYou:
-				'<strong>Wenn Sie das nicht waren,</strong> empfehlen wir, sofort Ihr Passwort zu ändern und alle aktiven Sitzungen zu beenden.',
-			buttonText: 'Passwort ändern',
-			copyright: '© 2026 docta.me - Alle Rechte vorbehalten',
+		wasYou: 'Если это были вы, можете проигнорировать это письмо.',
+		wasNotYou:
+			'<strong>Если это были не вы,</strong> рекомендуем немедленно изменить пароль и завершить все активные сессии.',
+		buttonText: 'Изменить пароль',
+		copyright: '© 2026 docta.me - Все права защищены',
+	},
+	[Language.DE]: {
+		subject: '🔔 Neue Anmeldung bei docta.me-Konto',
+		heading: '🔔 Neue Kontoanmeldung',
+		greeting: (name) => `Hallo, ${name}!`,
+		intro:
+			'Wir haben eine neue Anmeldung bei Ihrem Konto auf docta.me festgestellt.',
+		infoLabels: {
+			time: 'Zeit:',
+			ip: 'IP-Adresse:',
+			device: 'Gerät:',
+			location: 'Standort:',
 		},
-		[Language.TR]: {
-			subject: '🔔 docta.me hesabına yeni giriş',
-			heading: '🔔 Yeni Hesap Girişi',
-			greeting: (name) => `Merhaba, ${name}!`,
-			intro: 'docta.me üzerindeki hesabınıza yeni bir giriş tespit ettik.',
-			infoLabels: {
-				time: 'Zaman:',
-				ip: 'IP Adresi:',
-				device: 'Cihaz:',
-				location: 'Konum:',
-			},
-			wasYou: 'Bu sizseniz, bu e-postayı görmezden gelebilirsiniz.',
-			wasNotYou:
-				'<strong>Bu siz değilseniz,</strong> hemen şifrenizi değiştirmenizi ve tüm aktif oturumları sonlandırmanızı öneririz.',
-			buttonText: 'Şifreyi Değiştir',
-			copyright: '© 2026 docta.me - Tüm Hakları Saklıdır',
+		wasYou: 'Wenn Sie das waren, können Sie diese E-Mail ignorieren.',
+		wasNotYou:
+			'<strong>Wenn Sie das nicht waren,</strong> empfehlen wir, sofort Ihr Passwort zu ändern und alle aktiven Sitzungen zu beenden.',
+		buttonText: 'Passwort ändern',
+		copyright: '© 2026 docta.me - Alle Rechte vorbehalten',
+	},
+	[Language.TR]: {
+		subject: '🔔 docta.me hesabına yeni giriş',
+		heading: '🔔 Yeni Hesap Girişi',
+		greeting: (name) => `Merhaba, ${name}!`,
+		intro: 'docta.me üzerindeki hesabınıza yeni bir giriş tespit ettik.',
+		infoLabels: {
+			time: 'Zaman:',
+			ip: 'IP Adresi:',
+			device: 'Cihaz:',
+			location: 'Konum:',
 		},
-	};
+		wasYou: 'Bu sizseniz, bu e-postayı görmezden gelebilirsiniz.',
+		wasNotYou:
+			'<strong>Bu siz değilseniz,</strong> hemen şifrenizi değiştirmenizi ve tüm aktif oturumları sonlandırmanızı öneririz.',
+		buttonText: 'Şifreyi Değiştir',
+		copyright: '© 2026 docta.me - Tüm Hakları Saklıdır',
+	},
+};
 
 // === Email Change Notification Templates ===
 
@@ -341,7 +341,7 @@ interface EmailChangeNotificationTemplate {
 }
 
 const emailChangeNotificationTemplates: Record<
-	Language,
+	Locale,
 	EmailChangeNotificationTemplate
 > = {
 	[Language.SR]: {
@@ -460,7 +460,8 @@ export function getPasswordResetEmail(
 	resetUrl: string,
 ): { subject: string; html: string; text: string } {
 	const template =
-		passwordResetTemplates[locale] || passwordResetTemplates[Language.EN];
+		passwordResetTemplates[locale as Locale] ||
+		passwordResetTemplates[Language.EN];
 
 	const contentHtml = `
     <p>${template.greeting('')}</p>
@@ -500,7 +501,7 @@ export function getEmailVerificationEmail(
 	userName: string,
 ): { subject: string; html: string; text: string } {
 	const template =
-		emailVerificationTemplates[locale] ||
+		emailVerificationTemplates[locale as Locale] ||
 		emailVerificationTemplates[Language.EN];
 
 	const contentHtml = `
@@ -547,7 +548,7 @@ export function getLoginNotificationEmail(
 	loginInfo: LoginInfo,
 ): { subject: string; html: string; text: string } {
 	const template =
-		loginNotificationTemplates[locale] ||
+		loginNotificationTemplates[locale as Locale] ||
 		loginNotificationTemplates[Language.EN];
 
 	const contentHtml = `
@@ -616,7 +617,7 @@ export function getEmailChangeNotificationEmail(
 	userName: string,
 ): { subject: string; html: string; text: string } {
 	const template =
-		emailChangeNotificationTemplates[locale] ||
+		emailChangeNotificationTemplates[locale as Locale] ||
 		emailChangeNotificationTemplates[Language.EN];
 
 	const contentHtml = `

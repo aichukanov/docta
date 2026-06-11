@@ -7,10 +7,14 @@ export const locales = [
 	Language.RU,
 	Language.DE,
 	Language.TR,
-];
+] as const;
 
 export type Locale = (typeof locales)[number];
-export const defaultLocale: (typeof locales)[number] = Language.SR;
+export const defaultLocale: Locale = Language.SR;
+
+// Устаревшие локали: принимаются во входящих URL/cookie, дальше 301-редиректятся на defaultLocale
+const legacyLocales = [Language.ME, Language.BA] as const;
+export type LegacyLocale = (typeof legacyLocales)[number];
 
 export const localeNames: Record<Locale, string> = {
 	[Language.SR]: 'Srpski / Crnogorski',
@@ -30,7 +34,9 @@ export const localeShortNames: Record<Locale, string> = {
 	[Language.SR_CYRILLIC]: 'SR',
 };
 
-export function getLocaleFromQuery(value: string | string[]): Locale | null {
+export function getLocaleFromQuery(
+	value?: string | string[] | null,
+): Locale | LegacyLocale | null {
 	if (!value) {
 		return null;
 	}
@@ -39,14 +45,17 @@ export function getLocaleFromQuery(value: string | string[]): Locale | null {
 		(Array.isArray(value) ? value[0] : value) || '',
 	);
 
-	return locale &&
-		(locales.includes(locale) ||
-			locale === Language.ME ||
-			locale === Language.BA)
-		? locale
-		: null;
+	if ((locales as readonly string[]).includes(locale)) {
+		return locale as Locale;
+	}
+
+	if ((legacyLocales as readonly string[]).includes(locale)) {
+		return locale as LegacyLocale;
+	}
+
+	return null;
 }
 
-export function formatLocaleAsQuery(lang: Locale): string {
+export function formatLocaleAsQuery(lang: string): string {
 	return lang ? lang.toLowerCase() : '';
 }

@@ -58,13 +58,13 @@ export default {
 			ClinicName: 'Klinik adı',
 			InsertClinicName: 'Klinik adını girin',
 			Clinics: "Karadağ'daki klinikler",
-			ClinicsCity: '{city} klinikleri',
+			ClinicsCity: '{city} klinikler',
 			ClinicsLanguage: "Karadağ'da {language} konuşulan klinikler",
 			ClinicsLanguageCity: '{city} {language} konuşulan klinikler',
 			ClinicsType: "Karadağ'daki {type}",
-			ClinicsTypeCity: "{city}'deki {type}",
+			ClinicsTypeCity: '{city} {type}',
 			ClinicsTypeLanguage: "Karadağ'da {language} konuşulan {type}",
-			ClinicsTypeLanguageCity: "{city}'de {language} konuşulan {type}",
+			ClinicsTypeLanguageCity: '{city} {language} konuşulan {type}',
 
 			LoadingClinics: 'Klinikler yükleniyor...',
 			NoClinicsFound: 'Klinik bulunamadı',
@@ -77,7 +77,7 @@ export default {
 			ClinicsListDescription:
 				"Karadağ'da şehir ve konsültasyon diline göre klinik bulun. Adresler, iletişim, doktorlar ve haritada hizmetler.",
 			ClinicsListDescriptionCity:
-				"{city}'de konsültasyon diline göre klinik arayın. Adresler, iletişim, doktorlar ve haritada hizmetler.",
+				'{city} konsültasyon diline göre klinik arayın. Adresler, iletişim, doktorlar ve haritada hizmetler.',
 		},
 		'de': {
 			ClinicName: 'Klinikname',
@@ -125,13 +125,13 @@ export default {
 			LoadingClinic: 'Učitavanje podataka o klinici...',
 			ClinicNotFound: 'Klinika nije pronađena',
 			ToSearchPage: 'Na stranicu pretrage',
-			DoctorsAtClinic: 'Lekari klinike',
-			NoDoctorsAtClinic: 'U ovoj klinici nema lekara',
+			DoctorsAtClinic: 'Ljekari klinike',
+			NoDoctorsAtClinic: 'U ovoj klinici nema ljekara',
 			And: 'i',
 			ClinicsListDescription:
-				'Pronađite klinike u Crnoj Gori po gradu i jeziku konsultacije. Adrese, kontakti, lekari i usluge na mapi.',
+				'Pronađite klinike u Crnoj Gori po gradu i jeziku konsultacije. Adrese, kontakti, ljekari i usluge na mapi.',
 			ClinicsListDescriptionCity:
-				'Klinike u {city} — pretraga po jeziku konsultacije. Adrese, kontakti, lekari i usluge na mapi.',
+				'Klinike u {city} — pretraga po jeziku konsultacije. Adrese, kontakti, ljekari i usluge na mapi.',
 		},
 		'sr-cyrl': {
 			ClinicName: 'Име клинике',
@@ -152,13 +152,13 @@ export default {
 			LoadingClinic: 'Учитавање података о клиници...',
 			ClinicNotFound: 'Клиника није пронађена',
 			ToSearchPage: 'На страницу претраге',
-			DoctorsAtClinic: 'Лекари клинике',
-			NoDoctorsAtClinic: 'У овој клиници нема лекара',
+			DoctorsAtClinic: 'Љекари клинике',
+			NoDoctorsAtClinic: 'У овој клиници нема љекара',
 			And: 'и',
 			ClinicsListDescription:
-				'Пронађите клинике у Црној Гори по граду и језику консултације. Адресе, контакти, лекари и услуге на мапи.',
+				'Пронађите клинике у Црној Гори по граду и језику консултације. Адресе, контакти, љекари и услуге на мапи.',
 			ClinicsListDescriptionCity:
-				'Клинике у {city} — претрага по језику консултације. Адресе, контакти, лекари и услуге на мапи.',
+				'Клинике у {city} — претрага по језику консултације. Адресе, контакти, љекари и услуге на мапи.',
 		},
 	},
 };

@@ -1,29 +1,31 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { getLocalizedNameField } from '~/server/common/utils';
 import { validateBody } from '~/common/validation';
+import type { MedicineAnalog, MedicineDetails } from '~/interfaces/medicine';
 
-export default defineEventHandler(async (event) => {
-	try {
-		const body = await readBody(event);
+export default defineEventHandler(
+	async (event): Promise<MedicineDetails | null> => {
+		try {
+			const body = await readBody(event);
 
-		if (!validateBody(body, 'api/medicines/details')) {
-			setResponseStatus(event, 400, 'Invalid parameters');
-			return null;
-		}
+			if (!validateBody(body, 'api/medicines/details')) {
+				setResponseStatus(event, 400, 'Invalid parameters');
+				return null;
+			}
 
-		if (!body.slug || typeof body.slug !== 'string') {
-			setResponseStatus(event, 400, 'Invalid slug');
-			return null;
-		}
+			if (!body.slug || typeof body.slug !== 'string') {
+				setResponseStatus(event, 400, 'Invalid slug');
+				return null;
+			}
 
-		const locale = body.locale || 'en';
-		const nameField = getLocalizedNameField(locale) || 'name_en';
+			const locale = body.locale || 'en';
+			const nameField = getLocalizedNameField(locale) || 'name_en';
 
-		const connection = await getConnection();
+			const connection = await getConnection();
 
-		// Main medicine data
-		const [medRows] = await connection.execute(
-			`
+			// Main medicine data
+			const [medRows] = await connection.execute(
+				`
 			SELECT
 				m.id,
 				m.cinmed_id,
@@ -67,18 +69,18 @@ export default defineEventHandler(async (event) => {
 			WHERE m.slug = ?
 			LIMIT 1
 		`,
-			[body.slug],
-		);
+				[body.slug],
+			);
 
-		const med = (medRows as any[])[0];
-		if (!med) {
-			await connection.end();
-			return null;
-		}
+			const med = (medRows as any[])[0];
+			if (!med) {
+				await connection.end();
+				return null;
+			}
 
-		// Substances for this medicine
-		const [subRows] = await connection.execute(
-			`
+			// Substances for this medicine
+			const [subRows] = await connection.execute(
+				`
 			SELECT
 				s.id,
 				s.name as src,
@@ -88,23 +90,23 @@ export default defineEventHandler(async (event) => {
 			JOIN med_substances s ON s.id = mms.substance_id
 			WHERE mms.medicine_id = ?
 		`,
-			[med.id],
-		);
+				[med.id],
+			);
 
-		// Аналоги — сравнение МНОЖЕСТВ действующих веществ, не «хотя бы одно общее»:
-		// exact — состав совпадает полностью; superset — содержит весь состав плюс
-		// дополнительные вещества; partial — только часть состава. Сортировка:
-		// сначала полные совпадения, внутри группы — от монопрепаратов к комбинациям
-		// (тот же ключ даёт нужный порядок и в секции «компоненты по отдельности»).
-		const substances = subRows as any[];
-		let analogs: any[] = [];
+			// Аналоги — сравнение МНОЖЕСТВ действующих веществ, не «хотя бы одно общее»:
+			// exact — состав совпадает полностью; superset — содержит весь состав плюс
+			// дополнительные вещества; partial — только часть состава. Сортировка:
+			// сначала полные совпадения, внутри группы — от монопрепаратов к комбинациям
+			// (тот же ключ даёт нужный порядок и в секции «компоненты по отдельности»).
+			const substances = subRows as any[];
+			let analogs: MedicineAnalog[] = [];
 
-		if (substances.length > 0) {
-			const substanceIds = substances.map((s: any) => s.id);
-			const targetCount = substanceIds.length;
-			const placeholders = substanceIds.map(() => '?').join(',');
-			const [analogRows] = await connection.execute(
-				`
+			if (substances.length > 0) {
+				const substanceIds = substances.map((s: any) => s.id);
+				const targetCount = substanceIds.length;
+				const placeholders = substanceIds.map(() => '?').join(',');
+				const [analogRows] = await connection.execute(
+					`
 				SELECT
 					m2.id,
 					m2.slug,
@@ -146,82 +148,84 @@ export default defineEventHandler(async (event) => {
 					m2.name ASC
 				LIMIT 60
 			`,
-				[...substanceIds, ...substanceIds, med.id, targetCount],
-			);
-			analogs = (analogRows as any[]).map((row: any) => {
-				const total = Number(row.substanceTotal);
-				const shared = Number(row.substanceShared);
-				return {
-					id: row.id,
-					slug: row.slug,
-					name: row.name,
-					strength: row.strength,
-					pharmaForm: row.pharmaForm || row.pharmaFormEn || null,
-					pharmaFormSrc: row.pharmaFormSrc || null,
-					dispensingModeId: row.dispensing_mode_id || null,
-					manufacturer: row.manufacturer,
-					substances: row.substances || null,
-					matchType:
-						shared === targetCount
-							? total === targetCount
-								? 'exact'
-								: 'superset'
-							: 'partial',
-					pack_total: row.pack_total,
-					pack_unit: row.pack_unit,
-					pack_container_count: row.pack_container_count,
-					pack_per_container: row.pack_per_container,
-					pack_volume: row.pack_volume != null ? Number(row.pack_volume) : null,
-					pack_volume_unit: row.pack_volume_unit,
-					pack_parse_status: row.pack_parse_status,
-				};
+					[...substanceIds, ...substanceIds, med.id, targetCount],
+				);
+				analogs = (analogRows as any[]).map((row: any) => {
+					const total = Number(row.substanceTotal);
+					const shared = Number(row.substanceShared);
+					return {
+						id: row.id,
+						slug: row.slug,
+						name: row.name,
+						strength: row.strength,
+						pharmaForm: row.pharmaForm || row.pharmaFormEn || null,
+						pharmaFormSrc: row.pharmaFormSrc || null,
+						dispensingModeId: row.dispensing_mode_id || null,
+						manufacturer: row.manufacturer,
+						substances: row.substances || null,
+						matchType:
+							shared === targetCount
+								? total === targetCount
+									? 'exact'
+									: 'superset'
+								: 'partial',
+						pack_total: row.pack_total,
+						pack_unit: row.pack_unit,
+						pack_container_count: row.pack_container_count,
+						pack_per_container: row.pack_per_container,
+						pack_volume:
+							row.pack_volume != null ? Number(row.pack_volume) : null,
+						pack_volume_unit: row.pack_volume_unit,
+						pack_parse_status: row.pack_parse_status,
+					};
+				});
+			}
+
+			await connection.end();
+
+			return {
+				id: med.id,
+				cinmedId: med.cinmed_id,
+				slug: med.slug,
+				name: med.name,
+				strength: med.strength,
+				packaging: med.packaging,
+				detailPackaging: med.detail_packaging,
+				authorizationNumber: med.authorization_number,
+				authorizationDate: med.authorization_date,
+				atcCode: med.atc_code,
+				isActive: !!med.is_active,
+				detailUrl: med.detail_url,
+				updatedAt: med.updated_at,
+				pharmaForm: med.pharmaForm || med.pharmaFormEn || null,
+				pharmaFormSrc: med.pharmaFormSrc || null,
+				pack_total: med.pack_total,
+				pack_unit: med.pack_unit,
+				pack_container_count: med.pack_container_count,
+				pack_per_container: med.pack_per_container,
+				pack_volume: med.pack_volume != null ? Number(med.pack_volume) : null,
+				pack_volume_unit: med.pack_volume_unit,
+				pack_parse_status: med.pack_parse_status,
+				manufacturerId: med.manufacturerId || null,
+				manufacturer: med.manufacturer,
+				manufacturerAddress: med.manufacturerAddress,
+				country: med.country || med.countryEn || null,
+				authorizationHolder: med.authorizationHolder,
+				dispensingModeId: med.dispensing_mode_id || null,
+				atcGroup: med.atcGroup || med.atcGroupEn || null,
+				atcGroupCode: med.atcGroupCode,
+				substances: substances.map((s: any) => ({
+					id: s.id,
+					name: s.name || s.nameEn || s.src,
+				})),
+				analogs,
+			};
+		} catch (error) {
+			console.error('API Error - medicine details:', error);
+			throw createError({
+				statusCode: 500,
+				statusMessage: 'Failed to fetch medicine data',
 			});
 		}
-
-		await connection.end();
-
-		return {
-			id: med.id,
-			cinmedId: med.cinmed_id,
-			slug: med.slug,
-			name: med.name,
-			strength: med.strength,
-			packaging: med.packaging,
-			detailPackaging: med.detail_packaging,
-			authorizationNumber: med.authorization_number,
-			authorizationDate: med.authorization_date,
-			atcCode: med.atc_code,
-			isActive: !!med.is_active,
-			detailUrl: med.detail_url,
-			updatedAt: med.updated_at,
-			pharmaForm: med.pharmaForm || med.pharmaFormEn || null,
-			pharmaFormSrc: med.pharmaFormSrc || null,
-			pack_total: med.pack_total,
-			pack_unit: med.pack_unit,
-			pack_container_count: med.pack_container_count,
-			pack_per_container: med.pack_per_container,
-			pack_volume: med.pack_volume != null ? Number(med.pack_volume) : null,
-			pack_volume_unit: med.pack_volume_unit,
-			pack_parse_status: med.pack_parse_status,
-			manufacturerId: med.manufacturerId,
-			manufacturer: med.manufacturer,
-			manufacturerAddress: med.manufacturerAddress,
-			country: med.country || med.countryEn || null,
-			authorizationHolder: med.authorizationHolder,
-			dispensingModeId: med.dispensing_mode_id || null,
-			atcGroup: med.atcGroup || med.atcGroupEn || null,
-			atcGroupCode: med.atcGroupCode,
-			substances: substances.map((s: any) => ({
-				id: s.id,
-				name: s.name || s.nameEn || s.src,
-			})),
-			analogs,
-		};
-	} catch (error) {
-		console.error('API Error - medicine details:', error);
-		throw createError({
-			statusCode: 500,
-			statusMessage: 'Failed to fetch medicine data',
-		});
-	}
-});
+	},
+);

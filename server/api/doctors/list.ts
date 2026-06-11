@@ -89,7 +89,7 @@ export async function getDoctorList(
 		return arr.map(() => '?').join(',');
 	};
 
-	if (body.specialtyIds?.length > 0) {
+	if (body.specialtyIds != null && body.specialtyIds.length > 0) {
 		whereFilters.push(
 			`EXISTS (SELECT 1 FROM doctor_specialties ds WHERE ds.doctor_id = d.id AND ds.specialty_id IN (${buildInPlaceholders(
 				body.specialtyIds,
@@ -97,7 +97,7 @@ export async function getDoctorList(
 		);
 	}
 
-	if (body.cityIds?.length > 0) {
+	if (body.cityIds != null && body.cityIds.length > 0) {
 		whereFilters.push(
 			`EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinics c ON dc.clinic_id = c.id WHERE dc.doctor_id = d.id AND c.city_id IN (${buildInPlaceholders(
 				body.cityIds,
@@ -105,7 +105,7 @@ export async function getDoctorList(
 		);
 	}
 
-	if (body.languageIds?.length > 0) {
+	if (body.languageIds != null && body.languageIds.length > 0) {
 		if (body.onlyDoctorLanguages) {
 			whereFilters.push(
 				`EXISTS (SELECT 1 FROM doctor_languages dl WHERE dl.doctor_id = d.id AND dl.language_id IN (${buildInPlaceholders(
@@ -123,7 +123,7 @@ export async function getDoctorList(
 		}
 	}
 
-	if (body.clinicIds?.length > 0) {
+	if (body.clinicIds != null && body.clinicIds.length > 0) {
 		whereFilters.push(
 			`EXISTS (SELECT 1 FROM doctor_clinics dc WHERE dc.doctor_id = d.id AND dc.clinic_id IN (${buildInPlaceholders(
 				body.clinicIds,
@@ -146,13 +146,12 @@ export async function getDoctorList(
 		? `LIMIT ${pageSize} OFFSET ${offset}`
 		: '';
 
-	const hasCitySelectFilter = body.cityIds?.length > 0;
-	const cityFilterInClinicIds = hasCitySelectFilter
-		? ` AND EXISTS (SELECT 1 FROM clinics dc_city WHERE dc_city.id = dc.clinic_id AND dc_city.city_id IN (${body.cityIds.map(() => '?').join(',')}))`
-		: '';
-	const selectCityParams: Array<number | string> = hasCitySelectFilter
-		? [...body.cityIds]
-		: [];
+	const selectCityIds = body.cityIds ?? [];
+	const cityFilterInClinicIds =
+		selectCityIds.length > 0
+			? ` AND EXISTS (SELECT 1 FROM clinics dc_city WHERE dc_city.id = dc.clinic_id AND dc_city.city_id IN (${selectCityIds.map(() => '?').join(',')}))`
+			: '';
+	const selectCityParams: Array<number | string> = [...selectCityIds];
 
 	const totalCountQuery = `
 			SELECT COUNT(DISTINCT d.id) as totalCount
@@ -216,7 +215,7 @@ export async function getDoctorList(
 	// Загружаем услуги для всех врачей, если нужно
 	let servicesMap: Map<string, ClinicServicesMap> | null = null;
 
-	if (body.includeServices && doctorRows.length > 0) {
+	if (body.includeServices && (doctorRows as any[]).length > 0) {
 		servicesMap = await getServicesForDoctors(
 			connection,
 			doctorRows as any[],

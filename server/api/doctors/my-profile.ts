@@ -4,6 +4,7 @@ import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
 
 export interface DoctorMyProfile {
 	id: number;
+	slug: string;
 	hidden: boolean;
 	isDraft: boolean;
 	name: string;
@@ -38,8 +39,8 @@ export default defineEventHandler(
 		const connection = await getConnection();
 		try {
 			const [rows]: any = await connection.execute(
-				`SELECT 
-				d.id, d.hidden, d.is_draft,
+				`SELECT
+				d.id, d.slug, d.hidden, d.is_draft,
 				d.name_sr, d.name_sr_cyrl, d.name_ru, d.name_en,
 				d.professional_title, d.photo_url,
 				d.description_sr, d.description_sr_cyrl, d.description_ru,
@@ -68,6 +69,7 @@ export default defineEventHandler(
 
 			return {
 				id: doctor.id,
+				slug: doctor.slug || '',
 				hidden: Boolean(doctor.hidden),
 				isDraft: Boolean(doctor.is_draft),
 				name,

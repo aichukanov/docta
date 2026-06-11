@@ -74,8 +74,8 @@ async function handleSubmit() {
 			body: { newEmail: newEmail.value },
 		});
 		ElMessage.success(t('emailChangeSent'));
-		if (response.confirmUrl) {
-			console.log('Confirmation URL:', response.confirmUrl);
+		if (response.data?.confirmUrl) {
+			console.log('Confirmation URL:', response.data.confirmUrl);
 		}
 		emit('updated');
 	} catch (err: any) {

@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { getRegionalQuery } from '~/common/url-utils';
+import {
+	getCanonicalUrl,
+	getRegionalQuery,
+	getRegionalUrl,
+} from '~/common/url-utils';
 import { buildBreadcrumbsSchema } from '~/common/schema-org-builders';
 import {
 	PROJECT_CONTACTS,
@@ -24,7 +28,13 @@ const pageDescription = computed(() =>
 );
 
 const schemaOrgStore = useSchemaOrgStore();
-const aboutUrl = computed(() => `${SITE_URL}${route.path}`);
+const aboutUrl = computed(() =>
+	getCanonicalUrl(
+		route.path,
+		route.query as Record<string, string | string[]>,
+		locale.value,
+	),
+);
 
 useSeoMeta({
 	title: pageTitle,
@@ -67,7 +77,10 @@ watchEffect(() => {
 			},
 		},
 		buildBreadcrumbsSchema(aboutUrl.value, [
-			{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
+			{
+				name: t('BreadcrumbHome'),
+				url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
+			},
 			{ name: t('BreadcrumbAbout') },
 		]),
 	]);

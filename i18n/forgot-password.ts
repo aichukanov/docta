@@ -67,9 +67,9 @@ export default {
 			btnBackToLogin: 'Nazad na prijavu',
 
 			// Uspeh
-			requestSent: 'Zahtev poslat',
+			requestSent: 'Zahtjev poslat',
 			requestSentDescription:
-				'Ako korisnik sa ovim email-om postoji, biće poslat email sa instrukcijama',
+				'Ako korisnik sa ovom email adresom postoji, biće poslat email sa instrukcijama',
 			btnBackToLoginSuccess: 'Nazad na prijavu',
 
 			// Razvojni režim
@@ -131,17 +131,17 @@ export default {
 
 			// Опис
 			description:
-				'Унесите емаил који сте користили при регистрацији. Послаћемо вам линк за ресетовање лозинке.',
+				'Унесите email који сте користили при регистрацији. Послаћемо вам линк за ресетовање лозинке.',
 
 			// Форма
-			email: 'Емаил',
+			email: 'Email',
 			btnSendLink: 'Пошаљи линк',
 			btnBackToLogin: 'Назад на пријаву',
 
 			// Успех
-			requestSent: 'Захтев послат',
+			requestSent: 'Захтјев послат',
 			requestSentDescription:
-				'Ако корисник са овим емаилом постоји, биће послат емаил са инструкцијама',
+				'Ако корисник са овом email адресом постоји, биће послат email са инструкцијама',
 			btnBackToLoginSuccess: 'Назад на пријаву',
 
 			// Развојни режим

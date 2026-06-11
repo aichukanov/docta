@@ -2,7 +2,14 @@
 import { CityId } from '~/enums/cities';
 import type { ClinicData } from '~/interfaces/clinic';
 
-interface ClinicAdminModel extends ClinicData {
+// clinicTypeIds/languageIds в админке — массивы id, в ClinicData — строки через
+// запятую; координаты редактируются текстовым полем, поэтому number | string.
+interface ClinicAdminModel extends Omit<
+	ClinicData,
+	'clinicTypeIds' | 'languageIds' | 'latitude' | 'longitude'
+> {
+	latitude: number | string;
+	longitude: number | string;
 	name_sr: string;
 	name_sr_cyrl: string;
 	name_ru: string;
@@ -64,9 +71,14 @@ const billingPurchaseModel = ref({
 });
 const showOnlyActiveBilling = ref(true);
 
-const selectedClinic = computed(() => {
-	return props.clinics.find((clinic) => clinic.id === clinicId.value);
-});
+// В списке /api/clinics/list локализованных полей нет — сравнение с ними
+// даёт undefined и помечает поле как изменённое (текущее поведение).
+const selectedClinic = computed(
+	() =>
+		props.clinics.find((clinic) => clinic.id === clinicId.value) as
+			| (ClinicData & Partial<ClinicAdminModel>)
+			| undefined,
+);
 
 const clinicOptions = computed(() => {
 	return props.clinics.map((clinic) => ({
@@ -580,70 +592,70 @@ onMounted(async () => {
 				v-model:value="clinicModel.latitude"
 				:readonly="!editable"
 				:modified="latitudeModified"
-				@reset="clinicModel.latitude = selectedClinic?.latitude"
+				@reset="clinicModel.latitude = selectedClinic?.latitude || ''"
 			/>
 			<AdminEditableField
 				label="Долгота"
 				v-model:value="clinicModel.longitude"
 				:readonly="!editable"
 				:modified="longitudeModified"
-				@reset="clinicModel.longitude = selectedClinic?.longitude"
+				@reset="clinicModel.longitude = selectedClinic?.longitude || ''"
 			/>
 			<AdminEditableField
 				label="Телефон"
 				v-model:value="clinicModel.phone"
 				:readonly="!editable"
 				:modified="phoneModified"
-				@reset="clinicModel.phone = selectedClinic?.phone"
+				@reset="clinicModel.phone = selectedClinic?.phone || ''"
 			/>
 			<AdminEditableField
 				label="Email"
 				v-model:value="clinicModel.email"
 				:readonly="!editable"
 				:modified="emailModified"
-				@reset="clinicModel.email = selectedClinic?.email"
+				@reset="clinicModel.email = selectedClinic?.email || ''"
 			/>
 			<AdminEditableField
 				label="Вебсайт"
 				v-model:value="clinicModel.website"
 				:readonly="!editable"
 				:modified="websiteModified"
-				@reset="clinicModel.website = selectedClinic?.website"
+				@reset="clinicModel.website = selectedClinic?.website || ''"
 			/>
 			<AdminEditableField
 				label="Facebook"
 				v-model:value="clinicModel.facebook"
 				:readonly="!editable"
 				:modified="facebookModified"
-				@reset="clinicModel.facebook = selectedClinic?.facebook"
+				@reset="clinicModel.facebook = selectedClinic?.facebook || ''"
 			/>
 			<AdminEditableField
 				label="Instagram"
 				v-model:value="clinicModel.instagram"
 				:readonly="!editable"
 				:modified="instagramModified"
-				@reset="clinicModel.instagram = selectedClinic?.instagram"
+				@reset="clinicModel.instagram = selectedClinic?.instagram || ''"
 			/>
 			<AdminEditableField
 				label="Telegram"
 				v-model:value="clinicModel.telegram"
 				:readonly="!editable"
 				:modified="telegramModified"
-				@reset="clinicModel.telegram = selectedClinic?.telegram"
+				@reset="clinicModel.telegram = selectedClinic?.telegram || ''"
 			/>
 			<AdminEditableField
 				label="Whatsapp"
 				v-model:value="clinicModel.whatsapp"
 				:readonly="!editable"
 				:modified="whatsappModified"
-				@reset="clinicModel.whatsapp = selectedClinic?.whatsapp"
+				@reset="clinicModel.whatsapp = selectedClinic?.whatsapp || ''"
 			/>
 			<AdminEditableField
 				label="Viber"
 				v-model:value="clinicModel.viber"
 				:readonly="!editable"
 				:modified="viberModified"
-				@reset="clinicModel.viber = selectedClinic?.viber"
+				@reset="clinicModel.viber = selectedClinic?.viber || ''"
 			/>
 
 			<AdminEditableField
@@ -652,7 +664,9 @@ onMounted(async () => {
 				v-model:value="clinicModel.description_sr"
 				:readonly="!editable"
 				:modified="descriptionSrModified"
-				@reset="clinicModel.description_sr = selectedClinic?.description_sr"
+				@reset="
+					clinicModel.description_sr = selectedClinic?.description_sr || ''
+				"
 			/>
 			<AdminEditableField
 				label="Описание (SR-CYRL)"
@@ -662,7 +676,8 @@ onMounted(async () => {
 				:modified="descriptionSrCyrlModified"
 				:translate-from="clinicModel.description_sr"
 				@reset="
-					clinicModel.description_sr_cyrl = selectedClinic?.description_sr_cyrl
+					clinicModel.description_sr_cyrl =
+						selectedClinic?.description_sr_cyrl || ''
 				"
 			/>
 			<AdminEditableField
@@ -671,7 +686,9 @@ onMounted(async () => {
 				v-model:value="clinicModel.description_en"
 				:readonly="!editable"
 				:modified="descriptionEnModified"
-				@reset="clinicModel.description_en = selectedClinic?.description_en"
+				@reset="
+					clinicModel.description_en = selectedClinic?.description_en || ''
+				"
 			/>
 			<AdminEditableField
 				label="Описание (RU)"
@@ -679,7 +696,9 @@ onMounted(async () => {
 				v-model:value="clinicModel.description_ru"
 				:readonly="!editable"
 				:modified="descriptionRuModified"
-				@reset="clinicModel.description_ru = selectedClinic?.description_ru"
+				@reset="
+					clinicModel.description_ru = selectedClinic?.description_ru || ''
+				"
 			/>
 			<AdminEditableField
 				label="Описание (DE)"
@@ -687,7 +706,9 @@ onMounted(async () => {
 				v-model:value="clinicModel.description_de"
 				:readonly="!editable"
 				:modified="descriptionDeModified"
-				@reset="clinicModel.description_de = selectedClinic?.description_de"
+				@reset="
+					clinicModel.description_de = selectedClinic?.description_de || ''
+				"
 			/>
 			<AdminEditableField
 				label="Описание (TR)"
@@ -695,7 +716,9 @@ onMounted(async () => {
 				v-model:value="clinicModel.description_tr"
 				:readonly="!editable"
 				:modified="descriptionTrModified"
-				@reset="clinicModel.description_tr = selectedClinic?.description_tr"
+				@reset="
+					clinicModel.description_tr = selectedClinic?.description_tr || ''
+				"
 			/>
 
 			<FilterClinicTypeSelect v-model:value="clinicModel.clinicTypeIds" />

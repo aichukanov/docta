@@ -1,18 +1,11 @@
 import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
+import type {
+	ClinicSummaryService,
+	ClinicServicesByClinicId,
+} from '~/interfaces/clinic';
 
-export interface ClinicServiceItem {
-	id: number;
-	slug: string;
-	name: string;
-	localName: string;
-	price: number | null;
-	priceMin: number | null;
-	priceMax: number | null;
-}
-
-export interface ClinicServicesMap {
-	[clinicId: number]: ClinicServiceItem[];
-}
+export type ClinicServiceItem = ClinicSummaryService;
+export type ClinicServicesMap = ClinicServicesByClinicId;
 
 interface DoctorPriceInfo {
 	price: number | null;

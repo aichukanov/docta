@@ -32,7 +32,9 @@ export default defineEventHandler(async (event) => {
 			authLogger.debug('Password reset requested for non-existent user', {
 				email,
 			});
-			return createSuccessResponse(SUCCESS_CODES.PASSWORD_RESET_EMAIL_SENT);
+			return createSuccessResponse<{ resetUrl?: string }>(
+				SUCCESS_CODES.PASSWORD_RESET_EMAIL_SENT,
+			);
 		}
 
 		// Удаляем старые токены пользователя

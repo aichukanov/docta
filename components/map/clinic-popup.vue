@@ -8,7 +8,9 @@ import type { ClinicData, ClinicServiceItem } from '~/interfaces/clinic';
 
 const props = defineProps<{
 	clinic: ClinicData;
-	services: ClinicServiceItem[];
+	// См. MapServiceItem в clinic-services-map.vue: на listing-страницах
+	// у элементов гарантирован только id.
+	services: Array<Partial<ClinicServiceItem> & { id: number }>;
 }>();
 
 const { t, locale } = useI18n({

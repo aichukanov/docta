@@ -1,5 +1,8 @@
 import type { ContactList } from '~/interfaces/contacts';
-import type { ClinicServiceItem } from '~/interfaces/clinic';
+import type {
+	ClinicServiceItem,
+	ClinicServicesByClinicId,
+} from '~/interfaces/clinic';
 import type { Review, Rating } from '~/interfaces/review';
 
 export interface DoctorData extends ClinicServiceItem, ContactList {
@@ -16,11 +19,20 @@ export interface DoctorData extends ClinicServiceItem, ContactList {
 	isOwner?: boolean;
 	rating?: Rating;
 	reviews?: Review[];
+	// Профильные услуги врача по клиникам (details/list с includeServices)
+	clinicServices?: ClinicServicesByClinicId;
 }
 
 export interface DoctorList {
 	doctors: DoctorData[];
 	totalCount: number;
 }
+
+// Облегчённые данные для карточки врача (DoctorInfo/DoctorSpecialties):
+// полный DoctorData либо topItems из ClinicItemsSummary.
+export type DoctorCardData = Partial<DoctorData> & {
+	id: number;
+	name: string;
+};
 
 export type DoctorProfileStatus = 'draft' | 'public' | 'hidden';

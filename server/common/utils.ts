@@ -18,7 +18,7 @@ const LOCALE_TO_NAME_FIELD: Record<string, string> = {
  * Возвращает имя поля для локализованного названия
  */
 export function getLocalizedNameField(locale?: string): string {
-	return LOCALE_TO_NAME_FIELD[locale];
+	return locale ? LOCALE_TO_NAME_FIELD[locale] : '';
 }
 
 /**

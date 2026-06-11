@@ -20,14 +20,14 @@ function formatLoginMethod(method: string): string {
 	return methods[method] || method;
 }
 
-function getDeviceIcon(userAgent: string): string {
+function getDeviceIcon(userAgent: string | null): string {
 	if (!userAgent) return 'unknown';
 	if (userAgent.includes('Mobile')) return 'mobile';
 	if (userAgent.includes('Tablet')) return 'tablet';
 	return 'desktop';
 }
 
-function getDeviceInfo(userAgent: string): string {
+function getDeviceInfo(userAgent: string | null): string {
 	if (!userAgent) return t('unknownDevice');
 	if (userAgent.includes('Mobile')) return t('mobileDevice');
 	if (userAgent.includes('Tablet')) return t('tablet');

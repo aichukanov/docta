@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { DoctorData } from '~/interfaces/doctor';
+import type { DoctorCardData } from '~/interfaces/doctor';
 import specialtyI18n from '~/i18n/specialty';
 
 const props = defineProps<{
-	doctor: DoctorData;
+	doctor: DoctorCardData;
 }>();
 
 const { t } = useI18n(specialtyI18n);

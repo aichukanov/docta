@@ -122,11 +122,11 @@ export async function getClinicList(
 		return arr.map(() => '?').join(',');
 	};
 
-	if (body.cityIds?.length > 0) {
+	if (body.cityIds != null && body.cityIds.length > 0) {
 		whereFilters.push(`c.city_id IN (${buildInPlaceholders(body.cityIds)})`);
 	}
 
-	if (body.languageIds?.length > 0) {
+	if (body.languageIds != null && body.languageIds.length > 0) {
 		whereFilters.push(
 			`EXISTS (SELECT 1 FROM clinic_languages cl_f WHERE cl_f.clinic_id = c.id AND cl_f.language_id IN (${buildInPlaceholders(
 				body.languageIds,
@@ -134,7 +134,7 @@ export async function getClinicList(
 		);
 	}
 
-	if (body.clinicTypeIds?.length > 0) {
+	if (body.clinicTypeIds != null && body.clinicTypeIds.length > 0) {
 		whereFilters.push(
 			`EXISTS (SELECT 1 FROM clinic_clinic_types cct_f WHERE cct_f.clinic_id = c.id AND cct_f.clinic_type_id IN (${buildInPlaceholders(
 				body.clinicTypeIds,

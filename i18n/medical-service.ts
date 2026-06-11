@@ -83,13 +83,13 @@ export default {
 			MedicalServiceDescriptionDefault:
 				'{name} — medicinska usluga u Crnoj Gori',
 			MedicalServicesListDescription:
-				'Pronađite medicinske usluge u Crnoj Gori po imenu, gradu ili klinici. Uporedite cene i lokacije klinika na mapi.',
+				'Pronađite medicinske usluge u Crnoj Gori po imenu, gradu ili klinici. Uporedite cijene i lokacije klinika na mapi.',
 			MedicalServicesListDescriptionCity:
-				'Medicinske usluge u {city} — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
+				'Medicinske usluge u {city} — pretraga po imenu ili klinici. Uporedite cijene i lokacije klinika na mapi.',
 			MedicalServicesListDescriptionCategory:
-				'{category} u Crnoj Gori — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
+				'{category} u Crnoj Gori — pretraga po imenu ili klinici. Uporedite cijene i lokacije klinika na mapi.',
 			MedicalServicesListDescriptionCategoryCity:
-				'{category} u {city} — pretraga po imenu ili klinici. Uporedite cene i lokacije klinika na mapi.',
+				'{category} u {city} — pretraga po imenu ili klinici. Uporedite cijene i lokacije klinika na mapi.',
 			TabClinics: 'Klinike',
 			TabMap: 'Lokacija',
 		},
@@ -129,30 +129,29 @@ export default {
 			ServiceName: 'Hizmet adı',
 			InsertServiceName: 'Hizmet adını girin',
 			MedicalServices: "Karadağ'da Tıbbi Hizmetler",
-			MedicalServicesCity: '{city} şehrinde Tıbbi Hizmetler',
+			MedicalServicesCity: '{city} Tıbbi Hizmetler',
 			MedicalServicesClinic: "Karadağ'da {clinic} kliniğinde Tıbbi Hizmetler",
-			MedicalServicesCityClinic:
-				'{city} şehrinde {clinic} kliniğinde Tıbbi Hizmetler',
+			MedicalServicesCityClinic: '{city} {clinic} kliniğinde Tıbbi Hizmetler',
 			MedicalServicesCategory: "Karadağ'da {category}",
-			MedicalServicesCategoryCity: "{city}'de {category}",
+			MedicalServicesCategoryCity: '{city} {category}',
 			MedicalServicesCategoryClinic:
 				"Karadağ'da {clinic} kliniğinde {category}",
 			MedicalServicesCategoryCityClinic:
-				"{city}'de {clinic} kliniğinde {category}",
+				'{city} {clinic} kliniğinde {category}',
 
 			LoadingMedicalServices: 'Tıbbi hizmetler yükleniyor...',
 			NoMedicalServicesFound: 'Tıbbi hizmet bulunamadı',
 			ToSearchPage: 'Arama sayfasına git',
-			MedicalServiceDescriptionCity: "{name} — {city}'de tıbbi hizmet",
+			MedicalServiceDescriptionCity: '{name} — {city} tıbbi hizmet',
 			MedicalServiceDescriptionDefault: "{name} — Karadağ'da tıbbi hizmet",
 			MedicalServicesListDescription:
 				"Karadağ'da ada, şehre veya kliniğe göre tıbbi hizmetler bulun. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
 			MedicalServicesListDescriptionCity:
-				"{city}'de ada veya kliniğe göre tıbbi hizmetler arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
+				'{city} ada veya kliniğe göre tıbbi hizmetler arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.',
 			MedicalServicesListDescriptionCategory:
 				"Karadağ'da {category} — ada veya kliniğe göre arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
 			MedicalServicesListDescriptionCategoryCity:
-				"{city}'de {category} — ada veya kliniğe göre arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.",
+				'{city} {category} — ada veya kliniğe göre arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.',
 			TabClinics: 'Klinikler',
 			TabMap: 'Konum',
 		},
@@ -179,13 +178,13 @@ export default {
 			MedicalServiceDescriptionDefault:
 				'{name} — медицинска услуга у Црној Гори',
 			MedicalServicesListDescription:
-				'Пронађите медицинске услуге у Црној Гори по имену, граду или клиници. Упоредите цене и локације клиника на мапи.',
+				'Пронађите медицинске услуге у Црној Гори по имену, граду или клиници. Упоредите цијене и локације клиника на мапи.',
 			MedicalServicesListDescriptionCity:
-				'Медицинске услуге у {city} — претрага по имену или клиници. Упоредите цене и локације клиника на мапи.',
+				'Медицинске услуге у {city} — претрага по имену или клиници. Упоредите цијене и локације клиника на мапи.',
 			MedicalServicesListDescriptionCategory:
-				'{category} у Црној Гори — претрага по имену или клиници. Упоредите цене и локације клиника на мапи.',
+				'{category} у Црној Гори — претрага по имену или клиници. Упоредите цијене и локације клиника на мапи.',
 			MedicalServicesListDescriptionCategoryCity:
-				'{category} у {city} — претрага по имену или клиници. Упоредите цене и локације клиника на мапи.',
+				'{category} у {city} — претрага по имену или клиници. Упоредите цијене и локације клиника на мапи.',
 			TabClinics: 'Клинике',
 			TabMap: 'Локација',
 		},

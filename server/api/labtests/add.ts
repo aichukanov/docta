@@ -6,6 +6,9 @@ import { ensureUniqueSlug } from '~/server/common/slug-db';
 import type { ClinicPrice, LabTestNames } from '~/interfaces/clinic';
 
 interface AddLabTestBody extends LabTestNames {
+	// Отображаемое имя: пишется в name_en
+	name?: string;
+	slug?: string;
 	categoryIds?: number[];
 	clinicPrices?: ClinicPrice[];
 }
@@ -51,7 +54,7 @@ export default defineEventHandler(async (event): Promise<number | null> => {
 			const labTestId = result.insertId;
 
 			// 2. Добавляем категории
-			if (body.categoryIds?.length > 0) {
+			if (body.categoryIds != null && body.categoryIds.length > 0) {
 				const placeholders = body.categoryIds.map(() => '(?, ?)').join(',');
 				await connection.execute(
 					`INSERT INTO lab_test_categories_relations (lab_test_id, category_id) VALUES ${placeholders}`,
@@ -60,7 +63,7 @@ export default defineEventHandler(async (event): Promise<number | null> => {
 			}
 
 			// 3. Добавляем связи с клиниками (с ценой и кодом)
-			if (body.clinicPrices?.length > 0) {
+			if (body.clinicPrices != null && body.clinicPrices.length > 0) {
 				for (const cp of body.clinicPrices) {
 					await connection.execute(
 						`INSERT INTO clinic_lab_tests (lab_test_id, clinic_id, price, price_max, code) VALUES (?, ?, ?, ?, ?)`,

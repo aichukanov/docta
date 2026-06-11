@@ -1,9 +1,9 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { LabTestCategory } from '~/enums/labtest-category';
 
-function getEnumValues(enumType: any) {
+function getEnumValues(enumType: Record<string, string | number>): number[] {
 	return Object.values(enumType).filter(
-		(value) => !Number.isNaN(Number(value)),
+		(value): value is number => !Number.isNaN(Number(value)),
 	);
 }
 

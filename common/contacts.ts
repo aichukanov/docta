@@ -3,7 +3,7 @@ import type { ContactList } from '~/interfaces/contacts';
 const ABSOLUTE_URL_RE = /^(https?:)?\/\//i;
 const SPECIAL_SCHEMES_RE = /^(mailto|tel):/i;
 
-export function splitContacts(value?: string): string[] {
+export function splitContacts(value?: string | null): string[] {
 	if (!value) return [];
 	return value
 		.split(';')

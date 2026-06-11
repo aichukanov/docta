@@ -38,7 +38,7 @@ onMounted(async () => {
 		await $fetch(`/api/auth/confirm-email-change?token=${token.value}`);
 		success.value = true;
 
-		userStore.fetchUser(force);
+		userStore.fetchUser(true);
 
 		// Через 3 секунды редирект
 		setTimeout(() => {

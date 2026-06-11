@@ -1,6 +1,6 @@
-import { SitemapLink } from './utils';
+import type { SitemapLink } from './utils';
 import { locales } from '~/composables/use-locale';
-import { getRegionalUrl } from '~/common/url-utils';
+import { getRegionalUrl, type UrlQuery } from '~/common/url-utils';
 import {
 	SITE_URL,
 	REVIEWS_THRESHOLD,
@@ -23,7 +23,7 @@ import { getConnection } from '~/server/common/db-mysql';
 
 export function menuItemToLinks(
 	routeName: string,
-	query: Record<string, string | string[]> = {},
+	query: UrlQuery = {},
 	isUrl = false,
 ) {
 	const url = isUrl
@@ -34,9 +34,6 @@ export function menuItemToLinks(
 
 	for (let i = 0; i < locales.length; i++) {
 		const lang = locales[i];
-		if (lang === 'ba') {
-			continue;
-		}
 
 		linksWithParams.push({
 			hreflang: lang,
@@ -92,7 +89,7 @@ async function getEntitiesWithReviews(): Promise<{
 	};
 }
 
-export async function generateSitemapPage(sitemapIndex: number) {
+export async function generateSitemapPage() {
 	// === Главная страница ===
 	const homeLink: SitemapLink = menuItemToLinks('');
 	const aboutLink: SitemapLink = menuItemToLinks('about');

@@ -3,7 +3,8 @@ import { getRegionalQuery } from '~/common/url-utils';
 import type { ClinicServiceItem } from '~/interfaces/clinic';
 
 const props = defineProps<{
-	service: ClinicServiceItem;
+	// На карте приходят элементы listing-страниц, где гарантирован только id
+	service: Partial<ClinicServiceItem> & { id: number };
 	detailsRouteName?: string;
 	detailsParamName?: string;
 }>();

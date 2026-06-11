@@ -174,7 +174,7 @@ export default {
 		},
 
 		'sr': {
-			[`error_${ERROR_CODES.OAUTH_FAILED}`]: 'Neuspešna prijava preko OAuth',
+			[`error_${ERROR_CODES.OAUTH_FAILED}`]: 'Neuspješna prijava preko OAuth',
 			[`error_${ERROR_CODES.NO_CODE}`]: 'Kod autorizacije nije primljen',
 			[`error_${ERROR_CODES.STATE_MISMATCH}`]:
 				'Sigurnosna greška (state mismatch)',
@@ -186,14 +186,14 @@ export default {
 			[`error_${ERROR_CODES.TELEGRAM_INVALID_DATA}`]:
 				'Neispravni podaci od Telegram-a',
 			[`error_${ERROR_CODES.TELEGRAM_VERIFICATION_FAILED}`]:
-				'Nije moguće proveriti podatke Telegram-a',
+				'Nije moguće provjeriti podatke Telegram-a',
 			[`error_${ERROR_CODES.TELEGRAM_AUTH_ERROR}`]:
 				'Greška pri prijavi preko Telegram-a',
 
 			[`error_${ERROR_CODES.UNAUTHORIZED}`]: 'Niste autorizovani',
 			[`error_${ERROR_CODES.INVALID_CREDENTIALS}`]:
 				'Pogrešan email ili lozinka',
-			[`error_${ERROR_CODES.INVALID_EMAIL}`]: 'Neispravan format email-a',
+			[`error_${ERROR_CODES.INVALID_EMAIL}`]: 'Neispravan format email adrese',
 			[`error_${ERROR_CODES.INVALID_PASSWORD}`]: 'Neispravna lozinka',
 			[`error_${ERROR_CODES.EMAIL_REQUIRED}`]: 'Unesite email',
 			[`error_${ERROR_CODES.PASSWORD_REQUIRED}`]: 'Unesite lozinku',
@@ -232,26 +232,27 @@ export default {
 			[`error_${ERROR_CODES.INTERNAL_ERROR}`]: 'Interna greška servera',
 			[`error_${ERROR_CODES.ERROR_CREATING_ACCOUNT}`]:
 				'Greška pri kreiranju naloga',
-			[`error_${ERROR_CODES.ERROR_SENDING_EMAIL}`]: 'Greška pri slanju email-a',
+			[`error_${ERROR_CODES.ERROR_SENDING_EMAIL}`]:
+				'Greška pri slanju email poruke',
 			[`error_${ERROR_CODES.ERROR_UPDATING_NAME}`]:
 				'Greška pri ažuriranju imena',
 			[`error_${ERROR_CODES.ERROR_CHANGING_PASSWORD}`]:
-				'Greška pri promeni lozinke',
+				'Greška pri promjeni lozinke',
 			[`error_${ERROR_CODES.ERROR_CHANGING_EMAIL}`]:
-				'Greška pri promeni email-a',
+				'Greška pri promjeni email adrese',
 			[`error_${ERROR_CODES.ERROR_VERIFYING_EMAIL}`]:
-				'Greška pri potvrdi email-a',
+				'Greška pri potvrdi email adrese',
 			[`error_${ERROR_CODES.ERROR_RESETTING_PASSWORD}`]:
 				'Greška pri resetovanju lozinke',
 			[`error_${ERROR_CODES.ERROR_REQUESTING_EMAIL_CHANGE}`]:
-				'Greška pri zahtevu za promenu email-a',
+				'Greška pri zahtjevu za promjenu email adrese',
 			[`error_${ERROR_CODES.ERROR_UPDATING_PRIMARY_PROVIDER}`]:
 				'Greška pri ažuriranju primarnog provajdera',
 			[`error_${ERROR_CODES.ERROR_UPDATING_LOCALE}`]:
 				'Greška pri ažuriranju jezika',
 			[`error_${ERROR_CODES.ERROR_DURING_LOGIN}`]: 'Greška pri prijavljivanju',
 			[`error_${ERROR_CODES.ERROR_PROCESSING_REQUEST}`]:
-				'Greška pri obradi zahteva',
+				'Greška pri obradi zahtjeva',
 			[`error_${ERROR_CODES.NAME_TOO_LONG}`]: 'Ime je predugačko',
 			[`error_${ERROR_CODES.NAME_EMPTY}`]: 'Ime ne može biti prazno',
 		},
@@ -426,28 +427,28 @@ export default {
 		},
 
 		'sr-cyrl': {
-			[`error_${ERROR_CODES.OAUTH_FAILED}`]: 'Неуспешна пријава преко ОАутх',
+			[`error_${ERROR_CODES.OAUTH_FAILED}`]: 'Неуспјешна пријава преко OAuth',
 			[`error_${ERROR_CODES.NO_CODE}`]: 'Код ауторизације није примљен',
 			[`error_${ERROR_CODES.STATE_MISMATCH}`]:
-				'Сигурносна грешка (стате мисматцх)',
-			[`error_${ERROR_CODES.EMAIL_NOT_VERIFIED}`]: 'Емаил није потврђен',
+				'Сигурносна грешка (state mismatch)',
+			[`error_${ERROR_CODES.EMAIL_NOT_VERIFIED}`]: 'Email није потврђен',
 			[`error_${ERROR_CODES.EMAIL_NOT_PROVIDED}`]:
-				'Емаил није достављен од провајдера',
+				'Email није достављен од провајдера',
 			[`error_${ERROR_CODES.OAUTH_CALLBACK_FAILED}`]:
-				'Грешка при обради одговора ОАутх провајдера',
+				'Грешка при обради одговора OAuth провајдера',
 			[`error_${ERROR_CODES.TELEGRAM_INVALID_DATA}`]:
-				'Неисправни подаци од Телеграма',
+				'Неисправни подаци од Telegram-а',
 			[`error_${ERROR_CODES.TELEGRAM_VERIFICATION_FAILED}`]:
-				'Није могуће проверити податке Телеграма',
+				'Није могуће провјерити податке Telegram-а',
 			[`error_${ERROR_CODES.TELEGRAM_AUTH_ERROR}`]:
-				'Грешка при пријави преко Телеграма',
+				'Грешка при пријави преко Telegram-а',
 
 			[`error_${ERROR_CODES.UNAUTHORIZED}`]: 'Нисте ауторизовани',
 			[`error_${ERROR_CODES.INVALID_CREDENTIALS}`]:
-				'Погрешан емаил или лозинка',
-			[`error_${ERROR_CODES.INVALID_EMAIL}`]: 'Неисправан формат емаила',
+				'Погрешан email или лозинка',
+			[`error_${ERROR_CODES.INVALID_EMAIL}`]: 'Неисправан формат email адресе',
 			[`error_${ERROR_CODES.INVALID_PASSWORD}`]: 'Неисправна лозинка',
-			[`error_${ERROR_CODES.EMAIL_REQUIRED}`]: 'Унесите емаил',
+			[`error_${ERROR_CODES.EMAIL_REQUIRED}`]: 'Унесите email',
 			[`error_${ERROR_CODES.PASSWORD_REQUIRED}`]: 'Унесите лозинку',
 			[`error_${ERROR_CODES.NAME_REQUIRED}`]: 'Унесите име',
 			[`error_${ERROR_CODES.LOCALE_REQUIRED}`]: 'Наведите језик',
@@ -466,16 +467,16 @@ export default {
 			[`error_${ERROR_CODES.USER_NOT_FOUND}`]: 'Корисник није пронађен',
 			[`error_${ERROR_CODES.USER_ALREADY_EXISTS}`]: 'Корисник већ постоји',
 			[`error_${ERROR_CODES.EMAIL_ALREADY_IN_USE}`]:
-				'Овај емаил се већ користи',
+				'Овај email се већ користи',
 			[`error_${ERROR_CODES.EMAIL_SAME_AS_CURRENT}`]:
-				'Нови емаил је исти као тренутни',
+				'Нови email је исти као тренутни',
 			[`error_${ERROR_CODES.INVALID_CURRENT_PASSWORD}`]:
 				'Нетачна тренутна лозинка',
 			[`error_${ERROR_CODES.TOKEN_NOT_FOUND}`]: 'Токен није пронађен',
 			[`error_${ERROR_CODES.INVALID_TOKEN}`]: 'Неважећи токен',
 			[`error_${ERROR_CODES.TOKEN_EXPIRED}`]: 'Токен је истекао',
 			[`error_${ERROR_CODES.TOKEN_ALREADY_USED}`]: 'Токен је већ коришћен',
-			[`error_${ERROR_CODES.EMAIL_ALREADY_VERIFIED}`]: 'Емаил је већ потврђен',
+			[`error_${ERROR_CODES.EMAIL_ALREADY_VERIFIED}`]: 'Email је већ потврђен',
 			[`error_${ERROR_CODES.SESSION_ID_REQUIRED}`]: 'Потребан је ИД сесије',
 			[`error_${ERROR_CODES.SESSION_NOT_FOUND}`]: 'Сесија није пронађена',
 			[`error_${ERROR_CODES.INVALID_PROVIDER}`]: 'Неважећи провајдер',
@@ -484,26 +485,27 @@ export default {
 			[`error_${ERROR_CODES.INTERNAL_ERROR}`]: 'Интерна грешка сервера',
 			[`error_${ERROR_CODES.ERROR_CREATING_ACCOUNT}`]:
 				'Грешка при креирању налога',
-			[`error_${ERROR_CODES.ERROR_SENDING_EMAIL}`]: 'Грешка при слању емаила',
+			[`error_${ERROR_CODES.ERROR_SENDING_EMAIL}`]:
+				'Грешка при слању email поруке',
 			[`error_${ERROR_CODES.ERROR_UPDATING_NAME}`]:
 				'Грешка при ажурирању имена',
 			[`error_${ERROR_CODES.ERROR_CHANGING_PASSWORD}`]:
-				'Грешка при промени лозинке',
+				'Грешка при промјени лозинке',
 			[`error_${ERROR_CODES.ERROR_CHANGING_EMAIL}`]:
-				'Грешка при промени емаила',
+				'Грешка при промјени email адресе',
 			[`error_${ERROR_CODES.ERROR_VERIFYING_EMAIL}`]:
-				'Грешка при потврди емаила',
+				'Грешка при потврди email адресе',
 			[`error_${ERROR_CODES.ERROR_RESETTING_PASSWORD}`]:
 				'Грешка при ресетовању лозинке',
 			[`error_${ERROR_CODES.ERROR_REQUESTING_EMAIL_CHANGE}`]:
-				'Грешка при захтеву за промену емаила',
+				'Грешка при захтјеву за промјену email адресе',
 			[`error_${ERROR_CODES.ERROR_UPDATING_PRIMARY_PROVIDER}`]:
 				'Грешка при ажурирању примарног провајдера',
 			[`error_${ERROR_CODES.ERROR_UPDATING_LOCALE}`]:
 				'Грешка при ажурирању језика',
 			[`error_${ERROR_CODES.ERROR_DURING_LOGIN}`]: 'Грешка при пријављивању',
 			[`error_${ERROR_CODES.ERROR_PROCESSING_REQUEST}`]:
-				'Грешка при обради захтева',
+				'Грешка при обради захтјева',
 			[`error_${ERROR_CODES.NAME_TOO_LONG}`]: 'Име је предугачко',
 			[`error_${ERROR_CODES.NAME_EMPTY}`]: 'Име не може бити празно',
 		},

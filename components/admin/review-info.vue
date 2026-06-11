@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { ClinicData } from '~/interfaces/clinic';
-import type { DoctorData } from '~/interfaces/doctor';
 import type {
 	ReviewAdminDetails,
 	ReplyAdminData,
@@ -9,6 +8,12 @@ import type {
 interface ReviewListItem {
 	id: number;
 	label: string;
+}
+
+// Лёгкий элемент из /api/doctors/admin-list
+interface DoctorListItem {
+	id: number;
+	name: string;
 }
 
 interface UserListItem {
@@ -21,7 +26,7 @@ const props = withDefaults(
 	defineProps<{
 		reviews: ReviewListItem[];
 		clinics: ClinicData[];
-		doctors: DoctorData[];
+		doctors: DoctorListItem[];
 		users: UserListItem[];
 		editable?: boolean;
 	}>(),

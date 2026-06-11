@@ -2,32 +2,7 @@ import { getConnection } from '~/server/common/db-mysql';
 import { getLocalizedNameField } from '~/server/common/utils';
 import { validateBody, validateName } from '~/common/validation';
 import { LIST_PAGE_SIZE } from '~/common/constants';
-
-interface MedicineListItem {
-	id: number;
-	slug: string;
-	name: string;
-	strength: string | null;
-	pharmaForm: string | null;
-	pharmaFormSrc: string | null;
-	manufacturer: string | null;
-	country: string | null;
-	dispensingModeId: number | null;
-	isActive: boolean;
-	atcCode: string | null;
-	pack_total: number | null;
-	pack_unit: string | null;
-	pack_container_count: number | null;
-	pack_per_container: number | null;
-	pack_volume: number | null;
-	pack_volume_unit: string | null;
-	pack_parse_status: string | null;
-}
-
-interface MedicineListResponse {
-	items: MedicineListItem[];
-	totalCount: number;
-}
+import type { MedicineList as MedicineListResponse } from '~/interfaces/medicine';
 
 export default defineEventHandler(
 	async (event): Promise<MedicineListResponse> => {
@@ -116,10 +91,7 @@ export async function getMedicineList(
 	}
 
 	// Name search — search in medicine name + substance names across all languages
-	if (
-		body.name &&
-		validateName(body as { name: unknown }, 'api/medicines/list')
-	) {
+	if (body.name && validateName(body, 'api/medicines/list')) {
 		const nameField = getLocalizedNameField(locale) || 'name_en';
 		const p = `%${body.name}%`;
 		whereFilters.push(`(

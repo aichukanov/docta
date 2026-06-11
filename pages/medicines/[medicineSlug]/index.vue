@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { OG_IMAGE, SITE_URL } from '~/common/constants';
+import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
 import { buildPackagingLabel } from '~/common/packaging-label';
 import { localizeStrength } from '~/common/strength-label';
 import {
@@ -84,7 +85,11 @@ const schemaOrgStore = useSchemaOrgStore();
 
 watchEffect(() => {
 	if (med.value && isFound.value) {
-		const url = `${SITE_URL}/medicines/${med.value.slug}`;
+		const pageUrl = getCanonicalUrl(
+			route.path,
+			route.query as Record<string, string | string[]>,
+			locale.value,
+		);
 		schemaOrgStore.setSchemas([
 			...buildMedicineSchema({
 				siteUrl: SITE_URL,
@@ -93,6 +98,7 @@ watchEffect(() => {
 				locale: locale.value,
 				pageTitle: pageTitle.value,
 				pageDescription: pageDescription.value,
+				pageUrl,
 				substances: med.value.substances?.map((s: any) => s.name),
 				pharmaForm: med.value.pharmaForm,
 				strength: med.value.strength,
@@ -103,9 +109,15 @@ watchEffect(() => {
 				isActive: med.value.isActive,
 				detailUrl: med.value.detailUrl,
 			}),
-			buildBreadcrumbsSchema(url, [
-				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
-				{ name: t('BreadcrumbMedicines'), url: `${SITE_URL}/medicines` },
+			buildBreadcrumbsSchema(pageUrl, [
+				{
+					name: t('BreadcrumbHome'),
+					url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
+				},
+				{
+					name: t('BreadcrumbMedicines'),
+					url: getRegionalUrl(`${SITE_URL}/medicines`, {}, locale.value),
+				},
 				{ name: med.value.name },
 			]),
 		]);

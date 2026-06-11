@@ -455,21 +455,21 @@ export default {
 			// Сердечно-сосудистые препараты
 			[`medication_${Medication.AMLODIPINE}`]: 'Амлодипин',
 			[`medication_${Medication.ATENOLOL}`]: 'Атенолол',
-			[`medication_${Medication.BISOPROLOL}`]: 'Бизопролол',
+			[`medication_${Medication.BISOPROLOL}`]: 'Бисопролол',
 			[`medication_${Medication.ENALAPRIL}`]: 'Еналаприл',
-			[`medication_${Medication.LOSARTAN}`]: 'Лозартан',
+			[`medication_${Medication.LOSARTAN}`]: 'Лосартан',
 			[`medication_${Medication.VALSARTAN}`]: 'Валсартан',
 			[`medication_${Medication.ATORVASTATIN}`]: 'Аторвастатин',
 			[`medication_${Medication.ROSUVASTATIN}`]: 'Розувастатин',
 			[`medication_${Medication.SIMVASTATIN}`]: 'Симвастатин',
-			[`medication_${Medication.ASPIRIN_CARDIO}`]: 'Аспирин Кардио',
+			[`medication_${Medication.ASPIRIN_CARDIO}`]: 'Aspirin Cardio',
 			[`medication_${Medication.CLOPIDOGREL}`]: 'Клопидогрел',
 
 			// Препараты для дыхательной системы
 			[`medication_${Medication.SALBUTAMOL}`]: 'Салбутамол',
 			[`medication_${Medication.BUDESONIDE}`]: 'Будезонид',
 			[`medication_${Medication.FLUTICASONE}`]: 'Флутиказон',
-			[`medication_${Medication.AMBROXOL}`]: 'Амброксал',
+			[`medication_${Medication.AMBROXOL}`]: 'Амброксол',
 			[`medication_${Medication.BROMHEXINE}`]: 'Бромхексин',
 			[`medication_${Medication.ACETYLCYSTEINE}`]: 'Ацетилцистеин',
 
@@ -510,7 +510,7 @@ export default {
 
 			// Противовирусные
 			[`medication_${Medication.ACYCLOVIR}`]: 'Ацикловир',
-			[`medication_${Medication.OSELTAMIVIR}`]: 'Осельтамивир',
+			[`medication_${Medication.OSELTAMIVIR}`]: 'Оселтамивир',
 			[`medication_${Medication.VALACICLOVIR}`]: 'Валацикловир',
 
 			// Противогрибковые
@@ -519,7 +519,7 @@ export default {
 			[`medication_${Medication.TERBINAFINE}`]: 'Тербинафин',
 
 			// Препараты для мочеполовой системы
-			[`medication_${Medication.TAMSULOSIN}`]: 'Тамсулозин',
+			[`medication_${Medication.TAMSULOSIN}`]: 'Тамсулосин',
 			[`medication_${Medication.SILDENAFIL}`]: 'Силденафил',
 			[`medication_${Medication.TADALAFIL}`]: 'Тадалафил',
 			[`medication_${Medication.DROTAVERINE}`]: 'Дротаверин',

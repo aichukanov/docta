@@ -44,7 +44,7 @@ export async function findUserByOAuth(
  */
 export async function createOAuthUser(
 	email: string,
-	name: string,
+	name: string | null,
 	photoUrl: string | null,
 	provider: string,
 	providerAccountId: string,

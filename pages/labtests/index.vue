@@ -5,6 +5,7 @@ import {
 	buildBreadcrumbsSchema,
 } from '~/common/schema-org-builders';
 import { SITE_URL, OG_IMAGE } from '~/common/constants';
+import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
 
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
@@ -178,7 +179,11 @@ const isFiltered = computed(() => {
 
 watchEffect(() => {
 	if (labTestsList.value) {
-		const pageUrl = `${SITE_URL}${route.fullPath}`;
+		const pageUrl = getCanonicalUrl(
+			route.path,
+			route.query as Record<string, string | string[]>,
+			locale.value,
+		);
 
 		schemaOrgStore.setSchemas([
 			...buildEntityListSchema({
@@ -193,7 +198,10 @@ watchEffect(() => {
 				isFiltered: isFiltered.value,
 			}),
 			buildBreadcrumbsSchema(pageUrl, [
-				{ name: t('BreadcrumbHome'), url: `${SITE_URL}/` },
+				{
+					name: t('BreadcrumbHome'),
+					url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
+				},
 				{ name: t('BreadcrumbLabTests') },
 			]),
 		]);

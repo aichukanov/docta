@@ -1,4 +1,4 @@
-import { Page, Locator } from '@playwright/test';
+import type { Page, Locator } from '@playwright/test';
 import { BasePage } from '../base.page';
 
 export abstract class DetailBasePage extends BasePage {

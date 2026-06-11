@@ -1,9 +1,9 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="T extends { id: number }">
 import { getRegionalQuery } from '~/common/url-utils';
 
 interface CategoryWithTitle {
 	title: string;
-	items: { id: number }[];
+	items: T[];
 }
 
 const props = defineProps<{

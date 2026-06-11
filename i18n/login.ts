@@ -111,7 +111,7 @@ export default {
 			email: 'Email',
 			password: 'Lozinka',
 			name: 'Ime',
-			nameOptional: 'Ime (opciono)',
+			nameOptional: 'Ime (neobavezno)',
 			confirmPassword: 'Potvrdite lozinku',
 			passwordPlaceholder: 'Lozinka (min. 8 karaktera)',
 			confirmPasswordPlaceholder: 'Ponovite lozinku',
@@ -134,7 +134,7 @@ export default {
 
 			// Separator
 			or: 'ili',
-			orContinueWith: 'ili preko email-a',
+			orContinueWith: 'ili preko email adrese',
 
 			// Saglasnost pri registraciji
 			registerConsentBefore: 'Registracijom prihvatate naše',
@@ -246,7 +246,7 @@ export default {
 			createNewAccount: 'Креирајте нови налог',
 
 			// Ознаке и плацехолдер-и форми
-			email: 'Емаил',
+			email: 'Email',
 			password: 'Лозинка',
 			name: 'Име',
 			nameOptional: 'Име (необавезно)',
@@ -259,7 +259,7 @@ export default {
 			btnRegister: 'Региструј се',
 			btnLogout: 'Одјави се',
 			btnHome: 'Почетна',
-			btnFacebook: 'Настави са Фацебоок-ом',
+			btnFacebook: 'Настави са Facebook-ом',
 
 			// Линкови
 			forgotPassword: 'Заборавили сте лозинку?',
@@ -272,7 +272,7 @@ export default {
 
 			// Сепаратор
 			or: 'или',
-			orContinueWith: 'или преко емаила',
+			orContinueWith: 'или преко email адресе',
 
 			// Сагласност при регистрацији
 			registerConsentBefore: 'Регистрацијом прихватате наше',

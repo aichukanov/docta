@@ -65,14 +65,14 @@ export async function getMedicalServiceList(
 		return arr.map(() => '?').join(',');
 	};
 
-	if (body.clinicIds?.length > 0) {
+	if (body.clinicIds != null && body.clinicIds.length > 0) {
 		whereFilters.push(
 			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f WHERE cms_f.medical_service_id = ms.id AND cms_f.clinic_id IN (${buildInPlaceholders(
 				body.clinicIds,
 			)}))`,
 		);
 	}
-	if (body.cityIds?.length > 0) {
+	if (body.cityIds != null && body.cityIds.length > 0) {
 		whereFilters.push(
 			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f JOIN clinics c_f ON cms_f.clinic_id = c_f.id WHERE cms_f.medical_service_id = ms.id AND c_f.city_id IN (${buildInPlaceholders(
 				body.cityIds,
@@ -80,7 +80,8 @@ export async function getMedicalServiceList(
 		);
 	}
 	if (
-		body.serviceCategoryIds?.length > 0 &&
+		body.serviceCategoryIds != null &&
+		body.serviceCategoryIds.length > 0 &&
 		validateServiceCategoryIds(body, 'api/services/list')
 	) {
 		whereFilters.push(
@@ -126,13 +127,15 @@ export async function getMedicalServiceList(
 
 	// City filter applied inside the SELECT subqueries so the card only lists
 	// clinics from the selected city (otherwise all clinics of the service leak through).
-	const hasCitySelectFilter = body.cityIds?.length > 0;
-	const cityFilterInSelect = hasCitySelectFilter
-		? ` AND EXISTS (SELECT 1 FROM clinics cms_city WHERE cms_city.id = cms.clinic_id AND cms_city.city_id IN (${body.cityIds.map(() => '?').join(',')}))`
-		: '';
-	const selectCityParams: Array<number | string> = hasCitySelectFilter
-		? [...body.cityIds, ...body.cityIds]
-		: [];
+	const selectCityIds = body.cityIds ?? [];
+	const cityFilterInSelect =
+		selectCityIds.length > 0
+			? ` AND EXISTS (SELECT 1 FROM clinics cms_city WHERE cms_city.id = cms.clinic_id AND cms_city.city_id IN (${selectCityIds.map(() => '?').join(',')}))`
+			: '';
+	const selectCityParams: Array<number | string> = [
+		...selectCityIds,
+		...selectCityIds,
+	];
 
 	const priceOrder = getPriceOrderBySQL('cms');
 
@@ -203,7 +206,7 @@ export async function getMedicalServiceList(
 	]);
 	await connection.end();
 
-	const items = medicalServiceRows.map((row: any) => {
+	const items = (medicalServiceRows as any[]).map((row: any) => {
 		const { name, localName } = processLocalizedNameForClinicOrDoctor(
 			row,
 			locale,

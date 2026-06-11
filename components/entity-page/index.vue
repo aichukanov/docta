@@ -68,6 +68,7 @@ const backToSearch = () => {
 
 <style lang="less" scoped>
 .entity-page {
+	box-sizing: border-box;
 	max-width: 900px;
 	margin: 0 auto;
 	width: 100%;

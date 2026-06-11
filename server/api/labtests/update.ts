@@ -7,6 +7,7 @@ import type { ClinicPrice, LabTestNames } from '~/interfaces/clinic';
 
 interface UpdateLabTestBody extends LabTestNames {
 	id: number;
+	slug?: string;
 	categoryIds: number[];
 	clinicPrices: ClinicPrice[];
 	synonyms: { language: string; values: string[] }[];
@@ -165,7 +166,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				[body.id],
 			);
 
-			if (body.synonyms?.length > 0) {
+			if (body.synonyms != null && body.synonyms.length > 0) {
 				for (const langSynonyms of body.synonyms) {
 					for (const synonym of langSynonyms.values) {
 						if (synonym.trim()) {

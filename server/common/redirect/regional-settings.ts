@@ -1,6 +1,7 @@
 import {
 	getLocaleFromQuery,
 	type Locale,
+	type LegacyLocale,
 	defaultLocale,
 } from '~/composables/use-locale';
 import { getRegionalUrl } from '../../../common/url-utils';
@@ -63,7 +64,7 @@ async function getLocaleForQuery(event: any): Promise<{
 	}
 
 	// 2. Проверяем cookie
-	let cookieLocale: Locale | null = null;
+	let cookieLocale: Locale | LegacyLocale | null = null;
 	const cookieValue = getCookie(event, 'locale');
 	if (cookieValue) {
 		cookieLocale = getLocaleFromQuery(cookieValue);
@@ -79,7 +80,8 @@ async function getLocaleForQuery(event: any): Promise<{
 		: defaultLocale;
 
 	// удаляем устаревшие куки для черногорского и боснийского
-	const locale = cookieLocale || queryLocale;
+	// (невалидный ?lang=xx даёт null — откатываемся на дефолтную локаль)
+	const locale = cookieLocale || queryLocale || defaultLocale;
 	if (locale === Language.ME || locale === Language.BA) {
 		deleteCookie(event, 'locale');
 

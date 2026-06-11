@@ -102,32 +102,34 @@ export default {
 			DoctorName: 'Doktor adı',
 			InsertDoctorName: 'Doktor adını girin',
 			Doctors: "Karadağ'daki doktorlar",
-			DoctorsCity: '{city} doktorları',
+			DoctorsCity: '{city} doktorlar',
 			DoctorsClinic: "{clinic} doktorları Karadağ'da",
-			DoctorsCityClinic: '{clinic} doktorları {city}',
+			DoctorsCityClinic: '{city} {clinic} doktorları',
 			DoctorsSpecialty: "Karadağ'daki {specialtyDoctors}",
 			DoctorsSpecialtyCity: '{city} {specialtyDoctors}',
-			DoctorsSpecialtyClinic: "{clinic} {specialtyDoctors} Karadağ'da",
-			DoctorsSpecialtyCityClinic: '{clinic} {specialtyDoctors} {city}',
+			DoctorsSpecialtyClinic:
+				"Karadağ'da {clinic} kliniğinde {specialtyDoctors}",
+			DoctorsSpecialtyCityClinic:
+				'{city} {clinic} kliniğinde {specialtyDoctors}',
 			DoctorsLanguage: "Karadağ'da {language} konuşan doktorlar",
 			DoctorsLanguageCity: '{city} {language} konuşan doktorlar',
 			DoctorsLanguageClinic:
-				"{clinic} doktorları Karadağ'da {language} konuşan",
+				"Karadağ'da {language} konuşan {clinic} doktorları",
 			DoctorsLanguageCityClinic:
-				'{clinic} doktorları {city} {language} konuşan',
+				'{city} {language} konuşan {clinic} doktorları',
 			DoctorsLanguageSpecialty:
 				"Karadağ'da {language} konuşan {specialtyDoctors}",
 			DoctorsLanguageSpecialtyCity:
 				'{city} {language} konuşan {specialtyDoctors}',
 			DoctorsLanguageSpecialtyClinic:
-				"{clinic} {specialtyDoctors} Karadağ'da {language} konuşan",
+				"Karadağ'da {clinic} kliniğinde {language} konuşan {specialtyDoctors}",
 			DoctorsLanguageSpecialtyCityClinic:
-				'{clinic} {specialtyDoctors} {city} {language} konuşan',
+				'{city} {clinic} kliniğinde {language} konuşan {specialtyDoctors}',
 
 			Visit: "Karadağ'da konsültasyon",
-			VisitCity: '{city} içinde konsültasyon',
+			VisitCity: '{city} konsültasyon',
 			VisitLanguage: '{language} dilinde konsültasyon',
-			VisitLanguageCity: '{language} dilinde konsültasyon {city} içinde',
+			VisitLanguageCity: '{city} {language} dilinde konsültasyon',
 
 			LoadingDoctors: 'Doktorlar yükleniyor...',
 			NoDoctorsFound: 'Doktor bulunamadı',
@@ -137,7 +139,7 @@ export default {
 			DoctorsListDescription:
 				"Karadağ'da uzmanlık, şehir ve konsültasyon diline göre doktor bulun. Klinikler, adresler ve iletişim bilgileri.",
 			DoctorsListDescriptionCity:
-				"{city}'de uzmanlık ve konsültasyon diline göre doktor arayın. Klinikler, adresler ve iletişim bilgileri.",
+				'{city} uzmanlık ve konsültasyon diline göre doktor arayın. Klinikler, adresler ve iletişim bilgileri.',
 			DoctorsListDescriptionFiltered:
 				'{count} bulundu: {title}. Klinikler, adresler ve iletişim bilgileri.',
 			And: 've',
@@ -197,24 +199,24 @@ export default {
 			TabMap: 'Standort',
 		},
 		'sr': {
-			DoctorName: 'Ime lekara',
-			InsertDoctorName: 'Unesite ime lekara',
-			Doctors: 'Lekari u Crnoj Gori',
-			DoctorsCity: 'Lekari u {city}',
-			DoctorsClinic: 'Lekari klinike {clinic} u Crnoj Gori',
-			DoctorsCityClinic: 'Lekari klinike {clinic} u {city}',
+			DoctorName: 'Ime ljekara',
+			InsertDoctorName: 'Unesite ime ljekara',
+			Doctors: 'Ljekari u Crnoj Gori',
+			DoctorsCity: 'Ljekari u {city}',
+			DoctorsClinic: 'Ljekari klinike {clinic} u Crnoj Gori',
+			DoctorsCityClinic: 'Ljekari klinike {clinic} u {city}',
 			DoctorsSpecialty: '{specialtyDoctors} u Crnoj Gori',
 			DoctorsSpecialtyCity: '{specialtyDoctors} u {city}',
 			DoctorsSpecialtyClinic:
 				'{specialtyDoctors} klinike {clinic} u Crnoj Gori',
 			DoctorsSpecialtyCityClinic:
 				'{specialtyDoctors} klinike {clinic} u {city}',
-			DoctorsLanguage: 'Lekari u Crnoj Gori koji govore {language} jezik',
-			DoctorsLanguageCity: 'Lekari u {city} koji govore {language} jezik',
+			DoctorsLanguage: 'Ljekari u Crnoj Gori koji govore {language} jezik',
+			DoctorsLanguageCity: 'Ljekari u {city} koji govore {language} jezik',
 			DoctorsLanguageClinic:
-				'Lekari klinike {clinic} u Crnoj Gori koji govore {language} jezik',
+				'Ljekari klinike {clinic} u Crnoj Gori koji govore {language} jezik',
 			DoctorsLanguageCityClinic:
-				'Lekari klinike {clinic} u {city} koji govore {language} jezik',
+				'Ljekari klinike {clinic} u {city} koji govore {language} jezik',
 			DoctorsLanguageSpecialty:
 				'{specialtyDoctors} u Crnoj Gori koji govore {language} jezik',
 			DoctorsLanguageSpecialtyCity:
@@ -229,42 +231,42 @@ export default {
 			VisitLanguage: 'Pregled na {language} jeziku',
 			VisitLanguageCity: 'Pregled na {language} jeziku u {city}',
 
-			LoadingDoctors: 'Učitava lekare...',
-			NoDoctorsFound: 'Lekari nisu pronađeni',
-			LoadingDoctor: 'Učitavanje podataka o lekaru...',
+			LoadingDoctors: 'Učitava ljekare...',
+			NoDoctorsFound: 'Ljekari nisu pronađeni',
+			LoadingDoctor: 'Učitavanje podataka o ljekaru...',
 			ToSearchPage: 'Na stranicu pretrage',
-			DoctorNotFound: 'Lekar nije pronađen',
+			DoctorNotFound: 'Ljekar nije pronađen',
 			DoctorsListDescription:
-				'Pronađite lekare u Crnoj Gori po specijalizaciji, gradu i jeziku konsultacije. Klinike, adrese i kontakti.',
+				'Pronađite ljekare u Crnoj Gori po specijalizaciji, gradu i jeziku konsultacije. Klinike, adrese i kontakti.',
 			DoctorsListDescriptionCity:
-				'Lekari u {city} — pretraga po specijalizaciji i jeziku konsultacije. Klinike, adrese i kontakti.',
+				'Ljekari u {city} — pretraga po specijalizaciji i jeziku konsultacije. Klinike, adrese i kontakti.',
 			DoctorsListDescriptionFiltered:
 				'Pronađeno {count}: {title}. Klinike, adrese i kontakti.',
 			And: 'i',
-			TabAbout: 'O lekaru',
+			TabAbout: 'O ljekaru',
 			TabClinics: 'Klinike',
 			TabReviews: 'Recenzije',
 			TabMap: 'Lokacija',
 		},
 		'sr-cyrl': {
-			DoctorName: 'Име лекара',
-			InsertDoctorName: 'Унесите име лекара',
-			Doctors: 'Лекари у Црној Гори',
-			DoctorsCity: 'Лекари у {city}',
-			DoctorsClinic: 'Лекари клинике {clinic} у Црној Гори',
-			DoctorsCityClinic: 'Лекари клинике {clinic} у {city}',
+			DoctorName: 'Име љекара',
+			InsertDoctorName: 'Унесите име љекара',
+			Doctors: 'Љекари у Црној Гори',
+			DoctorsCity: 'Љекари у {city}',
+			DoctorsClinic: 'Љекари клинике {clinic} у Црној Гори',
+			DoctorsCityClinic: 'Љекари клинике {clinic} у {city}',
 			DoctorsSpecialty: '{specialtyDoctors} у Црној Гори',
 			DoctorsSpecialtyCity: '{specialtyDoctors} у {city}',
 			DoctorsSpecialtyClinic:
 				'{specialtyDoctors} клинике {clinic} у Црној Гори',
 			DoctorsSpecialtyCityClinic:
 				'{specialtyDoctors} клинике {clinic} у {city}',
-			DoctorsLanguage: 'Лекари у Црној Гори који говоре {language} језик',
-			DoctorsLanguageCity: 'Лекари у {city} који говоре {language} језик',
+			DoctorsLanguage: 'Љекари у Црној Гори који говоре {language} језик',
+			DoctorsLanguageCity: 'Љекари у {city} који говоре {language} језик',
 			DoctorsLanguageClinic:
-				'Лекари клинике {clinic} у Црној Гори који говоре {language} језик',
+				'Љекари клинике {clinic} у Црној Гори који говоре {language} језик',
 			DoctorsLanguageCityClinic:
-				'Лекари клинике {clinic} у {city} који говоре {language} језик',
+				'Љекари клинике {clinic} у {city} који говоре {language} језик',
 			DoctorsLanguageSpecialty:
 				'{specialtyDoctors} у Црној Гори који говоре {language} језик',
 			DoctorsLanguageSpecialtyCity:
@@ -279,19 +281,19 @@ export default {
 			VisitLanguage: 'Преглед на {language} језику',
 			VisitLanguageCity: 'Преглед на {language} језику у {city}',
 
-			LoadingDoctors: 'Учитава лекаре...',
-			NoDoctorsFound: 'Лекари нису пронађени',
-			LoadingDoctor: 'Учитавање података о лекару...',
+			LoadingDoctors: 'Учитава љекаре...',
+			NoDoctorsFound: 'Љекари нису пронађени',
+			LoadingDoctor: 'Учитавање података о љекару...',
 			ToSearchPage: 'На страницу претраге',
-			DoctorNotFound: 'Лекар није пронађен',
+			DoctorNotFound: 'Љекар није пронађен',
 			DoctorsListDescription:
-				'Пронађите лекаре у Црној Гори по специјализацији, граду и језику консултације. Клинике, адресе и контакти.',
+				'Пронађите љекаре у Црној Гори по специјализацији, граду и језику консултације. Клинике, адресе и контакти.',
 			DoctorsListDescriptionCity:
-				'Лекари у {city} — претрага по специјализацији и језику консултације. Клинике, адресе и контакти.',
+				'Љекари у {city} — претрага по специјализацији и језику консултације. Клинике, адресе и контакти.',
 			DoctorsListDescriptionFiltered:
 				'Пронађено {count}: {title}. Клинике, адресе и контакти.',
 			And: 'и',
-			TabAbout: 'О лекару',
+			TabAbout: 'О љекару',
 			TabClinics: 'Клинике',
 			TabReviews: 'Рецензије',
 			TabMap: 'Локација',

@@ -1,4 +1,4 @@
-import { Page, Locator } from '@playwright/test';
+import type { Page, Locator } from '@playwright/test';
 import { ListBasePage } from './list-base.page';
 import { URLS } from '../../utils/constants';
 
@@ -7,7 +7,7 @@ export class MedicationListPage extends ListBasePage {
 		super(page);
 	}
 
-	async goto() {
+	override async goto() {
 		await super.goto(URLS.MEDICINES);
 	}
 

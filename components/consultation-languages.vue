@@ -3,7 +3,7 @@ import { LanguageId } from '~/enums/language';
 import languageI18n from '~/i18n/language';
 
 const props = defineProps<{
-	languageIds: string;
+	languageIds?: string;
 }>();
 
 const { t } = useI18n(languageI18n);

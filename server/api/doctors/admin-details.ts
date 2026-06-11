@@ -12,6 +12,7 @@ interface DoctorServicePrice {
 
 interface DoctorAdminDetails extends ContactList {
 	id: number;
+	slug: string;
 	userId: number | null;
 	hidden: boolean;
 	name: string;

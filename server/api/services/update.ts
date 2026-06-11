@@ -7,6 +7,7 @@ import type { ClinicPrice } from '~/interfaces/clinic';
 
 interface UpdateServiceBody {
 	id: number;
+	slug?: string;
 	name_en: string;
 	name_sr: string;
 	name_sr_cyrl?: string;

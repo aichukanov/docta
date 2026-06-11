@@ -39,12 +39,12 @@ test.describe('Home Page', () => {
 		await expect(page.locator('.hero__subtitle')).toBeVisible();
 	});
 
-	test('should have bento cards', async () => {
+	test('should have bento cards', async ({ page }) => {
 		const hasBentoCards = await homePage.hasBentoCards();
 		expect(hasBentoCards).toBeTruthy();
 
 		// Проверяем что есть хотя бы 5 карточек (основные разделы)
-		const cardsCount = await homePage.page.locator('.bento__card').count();
+		const cardsCount = await page.locator('.bento__card').count();
 		expect(cardsCount).toBeGreaterThanOrEqual(5);
 	});
 

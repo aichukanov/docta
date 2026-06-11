@@ -42,8 +42,8 @@ async function handleSubmit() {
 		success.value = true;
 
 		// В development режиме показываем ссылку для тестирования
-		if (response.resetUrl) {
-			resetUrl.value = response.resetUrl;
+		if (response.data?.resetUrl) {
+			resetUrl.value = response.data.resetUrl;
 		}
 	} catch (err: any) {
 		console.error('Forgot password error:', err);

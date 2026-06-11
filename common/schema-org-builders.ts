@@ -51,6 +51,23 @@ const isNonEmptyString = (value: unknown): value is string =>
 	typeof value === 'string' && value.length > 0;
 
 /**
+ * В JSON-LD попадают только собственные отзывы docta.me: разметка
+ * сторонних (google_maps, facebook и т.п.) нарушает гайдлайны Google
+ * для review snippets («ratings must be sourced directly from users»)
+ * и рискует ручной санкцией за spammy structured markup. В UI сторонние
+ * отзывы остаются — фильтр касается только разметки.
+ */
+export const SCHEMA_REVIEWS_PROVIDER = 'docta_me';
+
+export function filterSchemaReviews<T extends { provider: string }>(
+	reviews: T[] | undefined,
+): T[] {
+	return (reviews || []).filter(
+		(review) => review.provider === SCHEMA_REVIEWS_PROVIDER,
+	);
+}
+
+/**
  * Build social media sameAs links from contacts
  */
 export function buildSameAs(contacts: {
@@ -141,11 +158,9 @@ function buildClinicMedicalSpecialties(
 /**
  * Build entity schema base with common fields
  */
-export function buildEntitySchemaBase<TType extends string>(options: {
-	url: string;
-	type: TType;
-	fragment: string;
-}) {
+export function buildEntitySchemaBase<
+	TType extends string | string[],
+>(options: { url: string; type: TType; fragment: string }) {
 	return {
 		'@type': options.type,
 		'@id': `${options.url}#${options.fragment}`,
@@ -219,7 +234,7 @@ export interface DoctorSchemaData {
 	specialtyIds?: number[];
 }
 
-export function getSchemaType(professionalTitle: string): {
+export function getSchemaType(professionalTitle?: string): {
 	schemaType: PersonSchemaType;
 	fragment: string;
 } {
@@ -282,6 +297,7 @@ export function buildDoctorListItemElements(
 	doctors:
 		| Array<{
 				id: number;
+				slug: string;
 				name: string;
 				photoUrl?: string;
 				professionalTitle?: string;
@@ -397,6 +413,7 @@ export function buildDoctorListSchema(options: {
 	totalCount: number;
 	doctors?: Array<{
 		id: number;
+		slug: string;
 		name: string;
 		photoUrl?: string;
 		professionalTitle?: string;
@@ -509,8 +526,10 @@ function buildDoctorServicesSchema(options: {
 	}
 
 	const offersWithPrice: object[] = [];
-	const servicesWithoutPrice: Map<number, { id: number; name: string }> =
-		new Map();
+	const servicesWithoutPrice: Map<
+		number,
+		{ id: number; slug: string; name: string }
+	> = new Map();
 
 	// Iterate through all clinics and their services
 	for (const [clinicIdStr, services] of Object.entries(
@@ -554,6 +573,7 @@ function buildDoctorServicesSchema(options: {
 				if (!servicesWithoutPrice.has(service.id)) {
 					servicesWithoutPrice.set(service.id, {
 						id: service.id,
+						slug: service.slug,
 						name: service.name,
 					});
 				}
@@ -604,8 +624,14 @@ export function buildDoctorSchema(options: {
 	locale: string;
 	pageTitle?: string;
 	pageDescription?: string;
+	/** Канонический URL страницы (с ?lang= и т.п.); по умолчанию — URL сущности */
+	pageUrl?: string;
 	facebook?: string | null;
 	instagram?: string | null;
+	/**
+	 * Рейтинг ТОЛЬКО по собственным отзывам docta.me. Агрегат по сторонним
+	 * провайдерам сюда передавать нельзя (см. SCHEMA_REVIEWS_PROVIDER).
+	 */
 	rating?: { averageRating: number | null; totalReviews: number } | null;
 	reviews?: Array<{
 		id: number;
@@ -625,9 +651,9 @@ export function buildDoctorSchema(options: {
 	// Build job titles for Person type
 	const jobTitles =
 		schemaType === 'ProfessionalService' || schemaType === 'Pharmacist'
-			? options.specialtyIds
+			? (options.specialtyIds
 					?.map((id) => options.getSpecialtyName(id))
-					.filter(isNonEmptyString)
+					.filter(isNonEmptyString) ?? [])
 			: [];
 
 	// Build medical specialties for Physician type
@@ -668,9 +694,9 @@ export function buildDoctorSchema(options: {
 		};
 	}
 
-	// Build reviews (skip reviews without text — they still count in AggregateRating)
-	const reviews = options.reviews
-		?.filter((review) => review.text)
+	// Build reviews (only own docta.me reviews, skip ones without text)
+	const reviews = filterSchemaReviews(options.reviews)
+		.filter((review) => review.text)
 		.map((review) => ({
 			'@type': 'Review' as const,
 			'author': review.author
@@ -687,12 +713,7 @@ export function buildDoctorSchema(options: {
 				: undefined,
 			'reviewBody': review.text,
 			'datePublished': review.publishedAt || undefined,
-			'provider': {
-				'@type': 'Organization' as const,
-				'name': review.provider,
-			},
-		}))
-		.filter(Boolean);
+		}));
 
 	const doctorSchema = {
 		...buildEntitySchemaBase({
@@ -708,7 +729,7 @@ export function buildDoctorSchema(options: {
 		image: options.photoUrl || undefined,
 		honorificPrefix,
 		medicalSpecialty: schemaType === 'Physician' ? specialties : undefined,
-		jobTitle: jobTitles.length > 0 ? jobTitles : undefined,
+		jobTitle: jobTitles && jobTitles.length > 0 ? jobTitles : undefined,
 		knowsLanguage: languages,
 		sameAs: sameAs.length > 0 ? sameAs : undefined,
 		worksFor: options.clinics?.map((clinic) => ({
@@ -722,7 +743,7 @@ export function buildDoctorSchema(options: {
 	};
 
 	const webPageSchema = buildWebPageSchema({
-		url: doctorUrl,
+		url: options.pageUrl || doctorUrl,
 		locale: options.locale,
 		name: options.pageTitle || options.name,
 		description: options.pageDescription,
@@ -929,12 +950,18 @@ export function buildClinicSchema(options: {
 	locale: string;
 	pageTitle?: string;
 	pageDescription?: string;
+	/** Канонический URL страницы (с ?lang= и т.п.); по умолчанию — URL сущности */
+	pageUrl?: string;
 	getCityName: (id: number) => string | undefined;
 	services?: ClinicServiceOffer[];
 	labTests?: ClinicServiceOffer[];
 	medications?: ClinicServiceOffer[];
 	doctors?: ClinicDoctorItem[];
 	workingHours?: WorkingHours | null;
+	/**
+	 * Рейтинг ТОЛЬКО по собственным отзывам docta.me. Агрегат по сторонним
+	 * провайдерам сюда передавать нельзя (см. SCHEMA_REVIEWS_PROVIDER).
+	 */
 	rating?: { averageRating: number | null; totalReviews: number } | null;
 	reviews?: Array<{
 		id: number;
@@ -1041,8 +1068,9 @@ export function buildClinicSchema(options: {
 					}
 				: undefined,
 		review: (() => {
-			const reviews = options.reviews
-				?.filter((review) => review.text)
+			// Only own docta.me reviews, skip ones without text
+			const reviews = filterSchemaReviews(options.reviews)
+				.filter((review) => review.text)
 				.map((review) => ({
 					'@type': 'Review' as const,
 					'author': review.author
@@ -1059,18 +1087,13 @@ export function buildClinicSchema(options: {
 						: undefined,
 					'reviewBody': review.text,
 					'datePublished': review.publishedAt || undefined,
-					'provider': {
-						'@type': 'Organization' as const,
-						'name': review.provider,
-					},
-				}))
-				.filter(Boolean);
-			return reviews && reviews.length > 0 ? reviews : undefined;
+				}));
+			return reviews.length > 0 ? reviews : undefined;
 		})(),
 	};
 
 	const webPageSchema = buildWebPageSchema({
-		url: clinicUrl,
+		url: options.pageUrl || clinicUrl,
 		locale,
 		name: options.pageTitle || clinic.name,
 		description: options.pageDescription,
@@ -1164,6 +1187,8 @@ export function buildMedicalTestSchema(options: {
 	locale: string;
 	pageTitle: string;
 	pageDescription?: string;
+	/** Канонический URL страницы (с ?lang= и т.п.); по умолчанию — URL сущности */
+	pageUrl?: string;
 	clinics?: ClinicData[];
 	clinicPrices?: ClinicPrice[];
 	getCityName: (id: number) => string | undefined;
@@ -1189,10 +1214,6 @@ export function buildMedicalTestSchema(options: {
 		description: options.pageDescription || undefined,
 		alternateName:
 			alternateNames.length > 0 ? alternateNames.join(', ') : undefined,
-		// Use availableAt to specify where the test is available
-		availableAt: options.clinics?.map((clinic) =>
-			buildMedicalOrganizationRef(clinic, options.siteUrl),
-		),
 		offers: buildOffersSchema({
 			siteUrl: options.siteUrl,
 			clinics: options.clinics,
@@ -1202,7 +1223,7 @@ export function buildMedicalTestSchema(options: {
 	};
 
 	const webPageSchema = buildWebPageSchema({
-		url: testUrl,
+		url: options.pageUrl || testUrl,
 		locale: options.locale,
 		name: options.pageTitle,
 		description: options.pageDescription,
@@ -1223,6 +1244,8 @@ export function buildDrugSchema(options: {
 	locale: string;
 	pageTitle: string;
 	pageDescription?: string;
+	/** Канонический URL страницы (с ?lang= и т.п.); по умолчанию — URL сущности */
+	pageUrl?: string;
 	clinics?: ClinicData[];
 	clinicPrices?: ClinicPrice[];
 	getCityName: (id: number) => string | undefined;
@@ -1237,10 +1260,6 @@ export function buildDrugSchema(options: {
 		}),
 		name: options.name,
 		description: options.pageDescription || undefined,
-		// Use availableAt to specify pharmacies/clinics where drug is available
-		availableAt: options.clinics?.map((clinic) =>
-			buildMedicalOrganizationRef(clinic, options.siteUrl),
-		),
 		offers: buildOffersSchema({
 			siteUrl: options.siteUrl,
 			clinics: options.clinics,
@@ -1250,7 +1269,7 @@ export function buildDrugSchema(options: {
 	};
 
 	const webPageSchema = buildWebPageSchema({
-		url: drugUrl,
+		url: options.pageUrl || drugUrl,
 		locale: options.locale,
 		name: options.pageTitle,
 		description: options.pageDescription,
@@ -1270,6 +1289,8 @@ export function buildMedicineSchema(options: {
 	locale: string;
 	pageTitle: string;
 	pageDescription?: string;
+	/** Канонический URL страницы (с ?lang= и т.п.); по умолчанию — URL сущности */
+	pageUrl?: string;
 	substances?: string[];
 	pharmaForm?: string | null;
 	strength?: string | null;
@@ -1339,14 +1360,14 @@ export function buildMedicineSchema(options: {
 	}
 
 	const webPageSchema = buildWebPageSchema({
-		url: medicineUrl,
+		url: options.pageUrl || medicineUrl,
 		locale: options.locale,
 		name: options.pageTitle,
 		description: options.pageDescription,
 		mainEntityId: medicineSchema['@id'] as string,
 	});
 
-	return [webPageSchema, medicineSchema];
+	return [webPageSchema, medicineSchema as SchemaOrg];
 }
 
 /**
@@ -1360,6 +1381,8 @@ export function buildMedicalProcedureSchema(options: {
 	locale: string;
 	pageTitle: string;
 	pageDescription?: string;
+	/** Канонический URL страницы (с ?lang= и т.п.); по умолчанию — URL сущности */
+	pageUrl?: string;
 	clinics?: ClinicData[];
 	clinicPrices?: ClinicPrice[];
 	getCityName: (id: number) => string | undefined;
@@ -1374,10 +1397,6 @@ export function buildMedicalProcedureSchema(options: {
 		}),
 		name: options.name,
 		description: options.pageDescription || undefined,
-		// Use availableAt to specify clinics where procedure is performed
-		availableAt: options.clinics?.map((clinic) =>
-			buildMedicalOrganizationRef(clinic, options.siteUrl),
-		),
 		offers: buildOffersSchema({
 			siteUrl: options.siteUrl,
 			clinics: options.clinics,
@@ -1387,7 +1406,7 @@ export function buildMedicalProcedureSchema(options: {
 	};
 
 	const webPageSchema = buildWebPageSchema({
-		url: procedureUrl,
+		url: options.pageUrl || procedureUrl,
 		locale: options.locale,
 		name: options.pageTitle,
 		description: options.pageDescription,
@@ -1414,6 +1433,7 @@ export function buildMedicalWebPageSchema(options: {
 	totalCount: number;
 	doctors?: Array<{
 		id: number;
+		slug: string;
 		name: string;
 		photoUrl?: string;
 		professionalTitle?: string;

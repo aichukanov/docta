@@ -61,8 +61,8 @@ async function handleEmailLogin(payload: { email: string; password: string }) {
 			payload.password,
 		);
 
-		if (response.redirectTo) {
-			await router.push(response.redirectTo);
+		if (response.data?.redirectTo) {
+			await router.push(response.data.redirectTo);
 		} else {
 			await router.push({ path: '/', query: regionalQuery.value });
 		}
@@ -97,8 +97,8 @@ async function handleRegister(payload: {
 			locale.value,
 		);
 
-		if (response.redirectTo) {
-			await router.push(response.redirectTo);
+		if (response.data?.redirectTo) {
+			await router.push(response.data.redirectTo);
 		} else {
 			await router.push({ path: '/', query: regionalQuery.value });
 		}

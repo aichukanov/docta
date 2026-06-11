@@ -147,18 +147,18 @@ export default {
 
 			// Kartice
 			tabBasic: 'Profil',
-			tabSecurity: 'Bezbednost',
-			tabDoctor: 'Profil lekara',
+			tabSecurity: 'Bezbjednost',
+			tabDoctor: 'Profil ljekara',
 			tabClinics: 'Moje klinike',
 			comingSoon: 'Uskoro',
-			comingSoonDesc: 'Ovaj odeljak je u razvoju',
+			comingSoonDesc: 'Ovaj odjeljak je u razvoju',
 			// Uređivanje profila
 			editName: 'Ime',
 			editEmail: 'Email',
-			changePhoto: 'Promeni fotografiju',
+			changePhoto: 'Promijeni fotografiju',
 			removePhoto: 'Ukloni fotografiju',
 			oauthPhotoHint:
-				'Fotografija sa povezanog naloga. Otpremite svoju da je zamenite.',
+				'Fotografija sa povezanog naloga. Otpremite svoju da je zamijenite.',
 			photoUpdated: 'Fotografija ažurirana',
 			uploadError: 'Greška pri učitavanju fotografije',
 
@@ -176,24 +176,24 @@ export default {
 			confirmUnlinkFacebook:
 				'Da li ste sigurni da želite da odvojite Facebook nalog?',
 			// Poruke o uspehu
-			accountUnlinked: 'Nalog uspešno odvojen',
+			accountUnlinked: 'Nalog uspješno odvojen',
 			primaryProviderUpdated: 'Primarni profil ažuriran',
-			nameUpdated: 'Ime uspešno ažurirano',
+			nameUpdated: 'Ime uspješno ažurirano',
 			emailChangeSent: 'Email sa potvrdom poslat na novu adresu',
 
 			// Poruke o greškama
-			errorUnlinkAccount: 'Neuspešno odvajanje naloga',
+			errorUnlinkAccount: 'Neuspješno odvajanje naloga',
 			errorUpdatePriority: 'Greška pri ažuriranju prioriteta',
 
 			// Uređivanje imena
-			editNameTitle: 'Izmeni ime',
+			editNameTitle: 'Izmijeni ime',
 			nameLabel: 'Ime',
 			namePlaceholder: 'Unesite novo ime',
 
 			// Uređivanje email-a
-			editEmailTitle: 'Izmeni email',
+			editEmailTitle: 'Izmijeni email',
 			emailChangeNote:
-				'Email sa potvrdom će biti poslat na novu adresu. Email će se promeniti samo nakon potvrde.',
+				'Email sa potvrdom će biti poslat na novu adresu. Email će se promijeniti samo nakon potvrde.',
 			newEmailLabel: 'Novi email',
 			newEmailPlaceholder: 'Unesite novi email',
 			sendEmail: 'Pošalji email',
@@ -339,18 +339,18 @@ export default {
 
 			// Картице
 			tabBasic: 'Профил',
-			tabSecurity: 'Безбедност',
-			tabDoctor: 'Профил лекара',
+			tabSecurity: 'Безбједност',
+			tabDoctor: 'Профил љекара',
 			tabClinics: 'Моје клинике',
 			comingSoon: 'Ускоро',
-			comingSoonDesc: 'Овај одељак је у развоју',
+			comingSoonDesc: 'Овај одјељак је у развоју',
 			// Уређивање профила
 			editName: 'Име',
-			editEmail: 'Емаил',
-			changePhoto: 'Промени фотографију',
+			editEmail: 'Email',
+			changePhoto: 'Промијени фотографију',
 			removePhoto: 'Уклони фотографију',
 			oauthPhotoHint:
-				'Фотографија са повезаног налога. Отпремите своју да је замените.',
+				'Фотографија са повезаног налога. Отпремите своју да је замијените.',
 			photoUpdated: 'Фотографија ажурирана',
 			uploadError: 'Грешка при учитавању фотографије',
 
@@ -362,33 +362,33 @@ export default {
 
 			// Потврде у модалима
 			confirmUnlinkGoogle:
-				'Да ли сте сигурни да желите да одвојите Гоогле налог?',
+				'Да ли сте сигурни да желите да одвојите Google налог?',
 			confirmUnlinkTelegram:
-				'Да ли сте сигурни да желите да одвојите Телеграм налог?',
+				'Да ли сте сигурни да желите да одвојите Telegram налог?',
 			confirmUnlinkFacebook:
-				'Да ли сте сигурни да желите да одвојите Фејсбук налог?',
+				'Да ли сте сигурни да желите да одвојите Facebook налог?',
 			// Поруке о успеху
-			accountUnlinked: 'Налог успешно одвојен',
+			accountUnlinked: 'Налог успјешно одвојен',
 			primaryProviderUpdated: 'Примарни профил ажуриран',
-			nameUpdated: 'Име успешно ажурирано',
-			emailChangeSent: 'Емаил са потврдом послат на нову адресу',
+			nameUpdated: 'Име успјешно ажурирано',
+			emailChangeSent: 'Email са потврдом послат на нову адресу',
 
 			// Поруке о грешкама
-			errorUnlinkAccount: 'Неуспешно одвајање налога',
+			errorUnlinkAccount: 'Неуспјешно одвајање налога',
 			errorUpdatePriority: 'Грешка при ажурирању приоритета',
 
 			// Уређивање имена
-			editNameTitle: 'Измени име',
+			editNameTitle: 'Измијени име',
 			nameLabel: 'Име',
 			namePlaceholder: 'Унесите ново име',
 
 			// Уређивање емаила
-			editEmailTitle: 'Измени емаил',
+			editEmailTitle: 'Измијени email',
 			emailChangeNote:
-				'Емаил са потврдом ће бити послат на нову адресу. Емаил ће се променити само након потврде.',
-			newEmailLabel: 'Нови емаил',
-			newEmailPlaceholder: 'Унесите нови емаил',
-			sendEmail: 'Пошаљи емаил',
+				'Email са потврдом ће бити послат на нову адресу. Email ће се промијенити само након потврде.',
+			newEmailLabel: 'Нови email',
+			newEmailPlaceholder: 'Унесите нови email',
+			sendEmail: 'Пошаљи email',
 		},
 	},
 };

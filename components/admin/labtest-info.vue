@@ -11,6 +11,7 @@ interface LabTestAdminDetails {
 	slug: string;
 	name_en: string;
 	name_sr: string;
+	name_sr_cyrl: string;
 	name_ru: string;
 	name_de: string;
 	name_tr: string;

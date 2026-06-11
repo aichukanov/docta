@@ -5,7 +5,7 @@ import { toCyrillic } from '~/common/serbian-transliteration';
 const props = withDefaults(
 	defineProps<{
 		label: string;
-		value?: string | null;
+		value?: string | number | null;
 		modified?: boolean;
 		type?: 'text' | 'photo' | 'textarea';
 		readonly?: boolean;
@@ -30,7 +30,7 @@ const emit = defineEmits<{
 }>();
 
 const editableValue = computed({
-	get: () => props.value,
+	get: () => (props.value == null ? '' : String(props.value)),
 	set: (value: string) => emit('update:value', value),
 });
 

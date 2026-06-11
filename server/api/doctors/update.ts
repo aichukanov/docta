@@ -23,7 +23,7 @@ interface DoctorServicePrice {
 	priceMax: number | null;
 }
 
-export default defineEventHandler(async (event): Promise<boolean> => {
+export default defineEventHandler(async (event): Promise<boolean | null> => {
 	try {
 		await requireAdmin(event);
 

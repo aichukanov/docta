@@ -12,7 +12,7 @@ import {
 	processLocalizedNameForClinicOrDoctor,
 } from '~/server/common/utils';
 
-export default defineEventHandler(async (event): Promise<DoctorData> => {
+export default defineEventHandler(async (event): Promise<DoctorData | null> => {
 	try {
 		const body = await readBody(event);
 

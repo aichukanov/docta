@@ -11,7 +11,7 @@ import {
 import type { ClinicData } from '~/interfaces/clinic';
 import { validateBody } from '~/common/validation';
 
-export default defineEventHandler(async (event): Promise<ClinicData> => {
+export default defineEventHandler(async (event): Promise<ClinicData | null> => {
 	try {
 		const body = await readBody(event);
 
@@ -80,7 +80,7 @@ export default defineEventHandler(async (event): Promise<ClinicData> => {
 		const connection = await getConnection();
 		const [clinicRows] = await connection.execute(clinicsQuery, [body.slug]);
 
-		const clinic = clinicRows[0];
+		const clinic = (clinicRows as any[])[0];
 		if (!clinic) {
 			await connection.end();
 			return null;

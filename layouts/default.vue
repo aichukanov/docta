@@ -4,6 +4,14 @@ import { getRegionalQuery } from '~/common/url-utils';
 
 const { isConsentGiven, isConsentDecided, isModalActive } = useCookieControl();
 const { t, locale } = useI18n();
+const userStore = useUserStore();
+const { user, isUserLoading } = storeToRefs(userStore);
+
+// Authentication is not analytics consent. Logged-in users without a stored
+// preference are not prompted, while optional analytics remain disabled.
+const shouldShowCookieBanner = computed(
+	() => !isUserLoading.value && !user.value && !isConsentDecided.value,
+);
 
 const years = computed(() => `2025-${new Date().getFullYear()}`);
 
@@ -56,7 +64,8 @@ const svadLink = computed(() => {
 	return url.toString();
 });
 
-const { initMixpanel, initCloudflare, initGTag } = useAnalytics();
+const { initMixpanel, initCloudflare, initGTag, disableAnalytics } =
+	useAnalytics();
 
 // Cloudflare Web Analytics is cookie-free and doesn't collect personal data — no consent required
 if (import.meta.client) {
@@ -69,6 +78,8 @@ watch(
 		if (isConsentGiven.value) {
 			initMixpanel();
 			initGTag();
+		} else {
+			disableAnalytics();
 		}
 	},
 	{ immediate: true },
@@ -193,7 +204,7 @@ watch(
 		</footer>
 
 		<ClientOnly>
-			<CookieBanner v-if="!isConsentDecided" />
+			<CookieBanner v-if="shouldShowCookieBanner" />
 			<CookieModal />
 		</ClientOnly>
 	</div>

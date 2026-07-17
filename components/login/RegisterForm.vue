@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Message, Lock, User } from '@element-plus/icons-vue';
 import loginMessages from '~/i18n/login';
+import { ERROR_CODES } from '~/server/utils/api-codes';
 import { getRegionalQuery } from '~/common/url-utils';
 
 const { t, locale } = useI18n({
@@ -23,7 +24,15 @@ defineProps<{
 }>();
 
 const emit = defineEmits<{
-	submit: [payload: { email: string; password: string; name?: string }];
+	submit: [
+		payload: {
+			email: string;
+			password: string;
+			name?: string;
+			termsAccepted: true;
+			analyticsConsent: boolean;
+		},
+	];
 	switchMode: [];
 }>();
 
@@ -32,13 +41,31 @@ const form = ref({
 	name: '',
 	password: '',
 	confirmPassword: '',
+	termsAccepted: false,
+	analyticsConsent: false,
 });
 
+const validationError = ref<ERROR_CODES | null>(null);
+
 function handleSubmit() {
+	validationError.value = null;
+
+	if (form.value.password !== form.value.confirmPassword) {
+		validationError.value = ERROR_CODES.PASSWORDS_DO_NOT_MATCH;
+		return;
+	}
+
+	if (!form.value.termsAccepted) {
+		validationError.value = ERROR_CODES.TERMS_ACCEPTANCE_REQUIRED;
+		return;
+	}
+
 	emit('submit', {
 		email: form.value.email,
 		password: form.value.password,
 		...(form.value.name.trim() ? { name: form.value.name.trim() } : {}),
+		termsAccepted: true,
+		analyticsConsent: form.value.analyticsConsent,
 	});
 }
 </script>
@@ -99,6 +126,44 @@ function handleSubmit() {
 					</template>
 				</el-input>
 			</el-form-item>
+			<ApiErrorAlert
+				:error="validationError"
+				closable
+				style="margin-bottom: 12px"
+				@close="validationError = null"
+			/>
+
+			<el-checkbox
+				v-model="form.termsAccepted"
+				:disabled="loading"
+				class="register-checkbox"
+			>
+				<span class="register-checkbox__text">
+					{{ t('registerConsentBefore') }}
+					<NuxtLink :to="termsLink" class="register-consent__link" @click.stop>
+						{{ t('registerConsentTerms') }}
+					</NuxtLink>
+					{{ t('registerConsentAnd') }}
+					<NuxtLink
+						:to="privacyLink"
+						class="register-consent__link"
+						@click.stop
+					>
+						{{ t('registerConsentPrivacy') }}
+					</NuxtLink>
+				</span>
+			</el-checkbox>
+
+			<el-checkbox
+				v-model="form.analyticsConsent"
+				:disabled="loading"
+				class="register-checkbox"
+			>
+				<span class="register-checkbox__text">
+					{{ t('registerAnalyticsConsent') }}
+				</span>
+			</el-checkbox>
+
 			<el-button
 				type="primary"
 				size="large"
@@ -109,17 +174,6 @@ function handleSubmit() {
 				{{ t('btnRegister') }}
 			</el-button>
 		</el-form>
-
-		<p class="register-consent">
-			{{ t('registerConsentBefore') }}
-			<NuxtLink :to="termsLink" class="register-consent__link">{{
-				t('registerConsentTerms')
-			}}</NuxtLink>
-			{{ t('registerConsentAnd') }}
-			<NuxtLink :to="privacyLink" class="register-consent__link">{{
-				t('registerConsentPrivacy')
-			}}</NuxtLink>
-		</p>
 
 		<div class="form-footer">
 			<el-button link type="primary" @click="emit('switchMode')">
@@ -139,11 +193,17 @@ function handleSubmit() {
 	margin-top: 8px;
 }
 
-.register-consent {
+.register-checkbox {
+	display: flex;
+	align-items: flex-start;
+	height: auto;
+	margin: 0 0 10px;
+	white-space: normal;
+}
+
+.register-checkbox__text {
 	font-size: 12px;
 	color: var(--color-text-secondary, #8a94a6);
-	text-align: center;
-	margin: 10px 0 0;
 	line-height: 1.5;
 }
 

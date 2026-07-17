@@ -4,21 +4,21 @@
 // и данными русскоязычных чатов о реальном опыте (2023–2026). Актуальность: июль 2026.
 export default {
 	messages: {
-		'en': {
+		en: {
 			LabTestsArticleTitle:
-				'Lab Tests and Check-ups in Montenegro: Labs, Prices, No Referral Needed',
+				'Lab Tests and Check-ups in Montenegro: Labs, Prices and Referrals',
 			LabTestsArticleDescription:
-				'Where to get tested in Montenegro: private labs with no referral and their prices, the free route via your izabrani doktor, MRI and CT waiting lists, check-up packages and how to read the results. Updated July 2026.',
+				'Routine private laboratory tests, current price guidance, which tests may need a clinician order, the state route through izabrani doktor, CT and MRI access, preventive screening and safe interpretation. Reviewed July 2026.',
 
-			'LtcToc_private-labs': 'Private labs: no referral, no appointment',
+			'LtcToc_private-labs': 'Private labs: routine tests and referral rules',
 			'LtcToc_state-route': 'The state route: uput, free, but with queues',
-			'LtcToc_imaging': 'Ultrasound, CT and MRI: where it is faster',
-			'LtcToc_checkups': 'Check-up packages (sistematski pregled)',
-			'LtcToc_results': 'How to read results: units and reference ranges',
-			'LtcToc_sources': 'Sources and useful links',
+			LtcToc_imaging: 'Ultrasound, CT and MRI: where it is faster',
+			LtcToc_checkups: 'Check-up packages (sistematski pregled)',
+			LtcToc_results: 'How to read results: units and reference ranges',
+			LtcToc_sources: 'Sources and useful links',
 
 			LtcPrivate1:
-				'Getting a blood test is one of the easiest medical tasks in Montenegro: you can walk into a private laboratory without a referral, without an appointment and without insurance. Labs work on a first-come basis — and there is usually no queue at all; results of basic tests are ready the same day and arrive by e-mail. The largest chain is Moj Lab (nine cities, from Podgorica and Budva to Ulcinj); In Vitro and Bona-lab prima operate in Podgorica, and many polyclinics (Konzilijum, Milmedika) run their own labs.',
+				'Many private laboratories accept self-paying patients for common routine blood and urine tests without a referral or insurance, often by walk-in. Booking, preparation, turnaround and referral requirements vary; specialised, genetic, pathology and clinically interpreted tests may require an order or consultation. Confirm fasting and sample instructions with the laboratory before attending.',
 			LtcPrivate2:
 				'Prices are charged per parameter. Reference points from 2025–2026 price lists: complete blood count ~5 €, glucose ~2 €, cholesterol ~3 €, standard biochemistry parameters 1.5–3 € each, TSH and thyroid hormones 5–10 €, vitamin D ~20 €, tumor markers ~13 € each. A home visit for a blood draw costs about 10 €.',
 			LtcPrivate3:
@@ -38,9 +38,9 @@ export default {
 			LtcState3End: '.',
 
 			LtcImaging1:
-				'Ultrasound is available in private clinics without any referral almost everywhere — often on the same day. Typical prices: 20–50 € per scan; a specialist consultation together with an ultrasound usually comes to 50–90 €.',
+				'Private clinics commonly offer ultrasound, but same-day access and the need for a referral depend on the clinic and examination. Ask who performs and reports the study, what preparation is needed, whether a clinician request is required and the current price before booking.',
 			LtcImaging2:
-				'MRI and CT are also available privately without an uput: an MRI of one region costs around 90–120 €, a CT scan 60–120 € depending on the region and clinic. Scanners are available in Podgorica, Budva, Sutomore and Radanovići; appointments are usually within days, not months. It is worth calling ahead to check that the scanner is working and until what time.',
+				'Private CT and MRI are available by appointment, but a clinic may require a referral, clinical question, recent creatinine or other documents. CT uses ionising radiation; contrast CT or MRI has additional kidney, allergy and pregnancy considerations, while MRI requires metal and implant screening. Confirm the scanner, protocol, preparation and total price in advance.',
 			LtcImaging3:
 				'With a knjižica, MRI and CT are free, but this is exactly where the queues are longest: with an uput you join a waiting list, and the wait can range from several weeks to months. The quality of the written report varies in both private and state centers — ask for the scan on a disc or a download link and show it to your treating doctor.',
 			LtcImaging4: 'Clinics with ultrasound, CT and MRI can be found in the',
@@ -48,18 +48,18 @@ export default {
 			LtcImaging4End: '.',
 
 			LtcCheckup1:
-				'There is no state-run preventive screening program for adults in Montenegro — a preventive exam here is called a sistematski pregled and is offered by private clinics as a paid package: a GP exam, ECG, ultrasound and basic labs. In patients’ experience, a comprehensive visit with an exam, ultrasound and blood tests comes to roughly 80–90 €; extended packages at larger clinics cost more.',
+				'Montenegro does not offer one universal annual adult check-up for everyone, but targeted public screening and preventive programmes may exist for eligible age or risk groups. Ask the izabrani doktor or current public-health programme about eligibility. Private clinics sell sistematski pregled packages, with contents and prices that vary from clinic to clinic.',
 			LtcCheckup2:
-				'Check-up packages for women and men are regularly offered by the big chains (for example Moj Lab), polyclinics like Milmedika and hospitals such as Codra Hospital. If you hold voluntary insurance, check your policy terms: Uniqa, for instance, lets you add an annual sistematski pregled worth up to 100 € to any package, and it does not count against the policy limit.',
+				'Laboratories and clinics sell women, men and general check-up packages. Before purchasing, compare each included test with age, symptoms, family history and previous results; more tests are not automatically better and can lead to incidental findings.',
 			LtcCheckup3:
-				'A budget option is to assemble the check-up yourself from lab panels (a women’s or men’s panel is ~47–52 €) plus a single GP consultation to review the results.',
+				'A review appointment with a doctor helps interpret the results and decide whether any follow-up is actually needed.',
 
 			LtcResults1:
 				'Results are issued in Serbian (Latin script) with international parameter abbreviations — LEU, ERY, HGB, GLU and so on — so they are readable even without the language. Private labs send a PDF by e-mail; state results are available via eZdravlje.',
 			LtcResults2:
 				'The main trap is units of measurement and reference ranges: they may differ from what you are used to. The classic example is vitamin D: local labs usually report it in ng/ml, while many other countries use nmol/l (a factor of 2.5) — a “normal” local value is easy to mistake for a deficiency and vice versa. Always compare a result only against the reference ranges of the lab that ran the test.',
 			LtcResults3:
-				'Do not interpret abnormal values on your own: a GP or specialist consultation costs 20–50 €, and the doctor will read the results in the context of your symptoms and history.',
+				'Abnormal values are best discussed with a doctor: a GP or specialist consultation costs 20–50 €, and they will read the results in the context of your symptoms and history.',
 
 			LtcSources0:
 				'The information is current as of July 2026. Prices are reference points from lab price lists and patient experience in 2024–2026 — check the current price list before your visit. Official sources:',
@@ -83,21 +83,23 @@ export default {
 				'The docta.me catalog covers hundreds of lab tests with prices at laboratories and clinics across Montenegro — from a complete blood count to hormone panels.',
 			LtcCtaButton: 'Open the lab tests catalog',
 		},
-		'ru': {
+		ru: {
 			LabTestsArticleTitle:
-				'Анализы и чекапы в Черногории: лаборатории, цены, без направления',
+				'Анализы и чекапы в Черногории: лаборатории, цены и направления',
 			LabTestsArticleDescription:
-				'Где сдать анализы в Черногории: частные лаборатории без направления и цены, бесплатный путь через izabrani doktor, очереди на МРТ и КТ, чекап-пакеты и как читать результаты. Актуально на июль 2026 года.',
+				'Рутинные анализы в частных лабораториях, ориентиры цен, когда нужно назначение врача, бесплатный маршрут через izabrani doktor, КТ и МРТ, профилактический скрининг и безопасный разбор результатов. Проверено в июле 2026 года.',
 
-			'LtcToc_private-labs': 'Частные лаборатории: без направления и записи',
-			'LtcToc_state-route': 'Государственный путь: uput, бесплатно, но с очередями',
-			'LtcToc_imaging': 'УЗИ, КТ и МРТ: где быстрее',
-			'LtcToc_checkups': 'Чекап-пакеты (sistematski pregled)',
-			'LtcToc_results': 'Как читать результаты: единицы и референсы',
-			'LtcToc_sources': 'Источники и полезные ссылки',
+			'LtcToc_private-labs':
+				'Частные лаборатории: рутинные анализы и направления',
+			'LtcToc_state-route':
+				'Государственный путь: uput, бесплатно, но с очередями',
+			LtcToc_imaging: 'УЗИ, КТ и МРТ: где быстрее',
+			LtcToc_checkups: 'Чекап-пакеты (sistematski pregled)',
+			LtcToc_results: 'Как читать результаты: единицы и референсы',
+			LtcToc_sources: 'Источники и полезные ссылки',
 
 			LtcPrivate1:
-				'Сдать анализы — одна из самых простых медицинских задач в Черногории: в частную лабораторию можно прийти без направления, без записи и без страховки. Работают в порядке живой очереди, которой чаще всего просто нет; результаты базовых анализов готовы в тот же день и приходят на e-mail. Крупнейшая сеть — Moj Lab (девять городов, от Подгорицы и Будвы до Улциня), в Подгорице работают In Vitro и Bona-lab prima, свои лаборатории есть и у многих поликлиник (Konzilijum, Milmedika).',
+				'Многие частные лаборатории принимают платных пациентов на распространённые анализы крови и мочи без направления и страховки, часто без записи. Но запись, подготовка, срок готовности и необходимость назначения различаются; специализированные, генетические, патоморфологические и требующие клинической интерпретации исследования могут потребовать направление или консультацию. До визита уточните у лаборатории голодание и правила забора.',
 			LtcPrivate2:
 				'Цены считаются за каждый показатель отдельно. Ориентиры по прайсам 2025–2026 годов: общий анализ крови ~5 €, глюкоза ~2 €, холестерин ~3 €, стандартные биохимические показатели по 1,5–3 € за позицию, ТТГ и гормоны щитовидной железы 5–10 €, витамин D ~20 €, онкомаркеры ~13 € за каждый. Выезд на дом для забора крови стоит около 10 €.',
 			LtcPrivate3:
@@ -117,9 +119,9 @@ export default {
 			LtcState3End: '.',
 
 			LtcImaging1:
-				'УЗИ в частных клиниках делают без направления практически везде — часто в тот же день. Ориентир по ценам: 20–50 € за исследование; приём специалиста вместе с УЗИ обычно выходит в 50–90 €.',
+				'Частные клиники часто предлагают УЗИ, но приём в тот же день и необходимость направления зависят от учреждения и вида исследования. До записи спросите, кто выполняет и описывает УЗИ, нужна ли подготовка и заявка врача и какова полная актуальная цена.',
 			LtcImaging2:
-				'МРТ и КТ в частном секторе тоже доступны без uput: МРТ одной зоны стоит порядка 90–120 €, КТ — 60–120 € в зависимости от зоны и клиники. Аппараты есть в Подгорице, Будве, Сутоморе, Радановичах; запись обычно на ближайшие дни, а не месяцы. Перед поездкой стоит позвонить и уточнить, работает ли аппарат и до которого часа.',
+				'КТ и МРТ доступны в частном секторе по записи, но клиника может запросить направление, клинический вопрос, свежий креатинин или другие документы. КТ использует ионизирующее излучение; контраст для КТ или МРТ требует учёта функции почек, аллергий и беременности, а перед МРТ проверяют металл и импланты. Заранее уточните аппарат, протокол, подготовку и полную цену.',
 			LtcImaging3:
 				'По книжице МРТ и КТ бесплатны, но именно на них очереди самые заметные: с uput вы попадаете в лист ожидания, и ждать можно от нескольких недель до месяцев. Качество описания снимков различается и в частных, и в государственных центрах — попросите записать исследование на диск или прислать ссылку и покажите его лечащему врачу.',
 			LtcImaging4: 'Клиники с УЗИ, КТ и МРТ ищите в',
@@ -127,18 +129,18 @@ export default {
 			LtcImaging4End: '.',
 
 			LtcCheckup1:
-				'Государственной диспансеризации для взрослых в Черногории нет — профилактический осмотр здесь называется sistematski pregled и предлагается частными клиниками как платный пакет: осмотр терапевта, ЭКГ, УЗИ, базовые анализы. По опыту пациентов, комплексный визит с осмотром, УЗИ и анализами обходится примерно в 80–90 €; расширенные пакеты крупных клиник стоят дороже.',
+				'Единой ежегодной диспансеризации для всех взрослых в Черногории нет, но для отдельных возрастных групп и рисков могут действовать целевые государственные программы скрининга и профилактики. Право на участие уточняйте у izabrani doktor или в актуальной программе общественного здоровья. Частные клиники продают пакеты sistematski pregled — состав и цена различаются от клиники к клинике.',
 			LtcCheckup2:
-				'Чекап-пакеты для женщин и мужчин регулярно предлагают крупные сети (например, Moj Lab), поликлиники вроде Milmedika и больницы уровня Codra Hospital. Если у вас добровольная страховка, проверьте условия: например, Uniqa к любому пакету позволяет докупить годовой систематский преглед на сумму до 100 €, и он не расходует лимит полиса.',
+				'Лаборатории и клиники продают женские, мужские и общие чекап-пакеты. Перед покупкой сопоставьте каждый анализ с возрастом, симптомами, семейным анамнезом и прежними результатами: больше тестов не всегда лучше, а случайные находки могут привести к лишним обследованиям.',
 			LtcCheckup3:
-				'Бюджетный вариант — собрать чекап самостоятельно из лабораторных панелей (женская или мужская панель ~47–52 €) плюс один приём терапевта для разбора результатов.',
+				'Отдельный приём для разбора результатов поможет понять, действительно ли нужно дальнейшее обследование.',
 
 			LtcResults1:
 				'Результаты выдают на сербском (латиницей) с международными сокращениями показателей — LEU, ERY, HGB, GLU и так далее, так что прочитать их можно и без знания языка. Частные лаборатории присылают PDF на почту, государственные результаты доступны через eZdravlje.',
 			LtcResults2:
 				'Главная ловушка — единицы измерения и референсные диапазоны: они могут отличаться от привычных вам. Классический пример — витамин D: местные лаборатории обычно считают его в ng/ml, тогда как во многих других странах используют нмоль/л (коэффициент 2,5) — «нормальное» местное значение легко принять за дефицит и наоборот. Сравнивайте результат только с референсами той лаборатории, которая делала анализ.',
 			LtcResults3:
-				'Не интерпретируйте отклонения самостоятельно: приём терапевта или узкого специалиста стоит 20–50 €, и врач оценит результаты в контексте ваших жалоб и истории.',
+				'Отклонения лучше обсудить с врачом: приём терапевта или узкого специалиста стоит 20–50 €, и он оценит результаты в контексте ваших жалоб и истории.',
 
 			LtcSources0:
 				'Информация актуальна на июль 2026 года. Цены — ориентиры из прайсов лабораторий и опыта пациентов 2024–2026 годов; перед визитом проверяйте актуальный прайс. Официальные источники:',
@@ -162,21 +164,22 @@ export default {
 				'В каталоге docta.me — сотни анализов с ценами в лабораториях и клиниках Черногории: от общего анализа крови до гормональных панелей.',
 			LtcCtaButton: 'Открыть каталог анализов',
 		},
-		'sr': {
+		sr: {
 			LabTestsArticleTitle:
-				'Analize i check-up u Crnoj Gori: laboratorije, cijene, bez uputa',
+				'Analize i check-up u Crnoj Gori: laboratorije, cijene i uputi',
 			LabTestsArticleDescription:
-				'Gdje uraditi analize u Crnoj Gori: privatne laboratorije bez uputa i cijene, besplatan put preko izabranog doktora, liste čekanja za MR i CT, check-up paketi i kako čitati rezultate. Ažurirano: jul 2026.',
+				'Rutinske privatne analize, orijentiri cijena, kada je potreban nalog ljekara, državni put preko izabranog doktora, CT i MR, preventivni skrining i bezbjedno tumačenje. Provjereno u julu 2026.',
 
-			'LtcToc_private-labs': 'Privatne laboratorije: bez uputa i zakazivanja',
+			'LtcToc_private-labs': 'Privatne laboratorije: rutinske analize i uputi',
 			'LtcToc_state-route': 'Državni put: uput, besplatno, ali uz redove',
-			'LtcToc_imaging': 'Ultrazvuk, CT i MR: gdje je brže',
-			'LtcToc_checkups': 'Check-up paketi (sistematski pregled)',
-			'LtcToc_results': 'Kako čitati rezultate: jedinice i referentne vrijednosti',
-			'LtcToc_sources': 'Izvori i korisni linkovi',
+			LtcToc_imaging: 'Ultrazvuk, CT i MR: gdje je brže',
+			LtcToc_checkups: 'Check-up paketi (sistematski pregled)',
+			LtcToc_results:
+				'Kako čitati rezultate: jedinice i referentne vrijednosti',
+			LtcToc_sources: 'Izvori i korisni linkovi',
 
 			LtcPrivate1:
-				'Uraditi analize jedan je od najjednostavnijih medicinskih zadataka u Crnoj Gori: u privatnu laboratoriju možete doći bez uputa, bez zakazivanja i bez osiguranja. Radi se po redosljedu dolaska — a reda najčešće uopšte nema; rezultati osnovnih analiza gotovi su istog dana i stižu na e-mail. Najveći lanac je Moj Lab (devet gradova, od Podgorice i Budve do Ulcinja); u Podgorici rade In Vitro i Bona-lab prima, a sopstvene laboratorije imaju i mnoge poliklinike (Konzilijum, Milmedika).',
+				'Mnoge privatne laboratorije primaju pacijente koji sami plaćaju za uobičajene analize krvi i urina bez uputa i osiguranja, često bez zakazivanja. Zakazivanje, priprema, rok i potreba za nalogom razlikuju se; specijalizovani, genetski, patološki i testovi koji traže kliničko tumačenje mogu zahtijevati uput ili konsultaciju. Prije dolaska provjerite gladovanje i uzimanje uzorka.',
 			LtcPrivate2:
 				'Cijene se računaju po svakom parametru posebno. Orijentiri iz cjenovnika 2025–2026: kompletna krvna slika ~5 €, glukoza ~2 €, holesterol ~3 €, standardni biohemijski parametri po 1,5–3 € po stavci, TSH i hormoni štitne žlijezde 5–10 €, vitamin D ~20 €, tumor markeri ~13 € po svakom. Dolazak na kućnu adresu radi vađenja krvi košta oko 10 €.',
 			LtcPrivate3:
@@ -196,9 +199,9 @@ export default {
 			LtcState3End: '.',
 
 			LtcImaging1:
-				'Ultrazvuk se u privatnim klinikama radi bez uputa praktično svuda — često istog dana. Orijentir cijena: 20–50 € po pregledu; pregled specijaliste zajedno sa ultrazvukom obično izađe 50–90 €.',
+				'Privatne klinike često nude ultrazvuk, ali termin istog dana i potreba za uputom zavise od ustanove i pregleda. Prije zakazivanja pitajte ko radi i opisuje pregled, kakva je priprema, treba li zahtjev ljekara i koja je ukupna cijena.',
 			LtcImaging2:
-				'MR i CT su u privatnom sektoru takođe dostupni bez uputa: MR jedne regije košta oko 90–120 €, CT 60–120 € u zavisnosti od regije i klinike. Aparati postoje u Podgorici, Budvi, Sutomoru i Radanovićima; termin je obično u narednim danima, a ne mjesecima. Prije polaska vrijedi pozvati i provjeriti da li aparat radi i do koliko sati.',
+				'Privatni CT i MR dostupni su uz zakazivanje, ali klinika može tražiti uput, kliničko pitanje, svježi kreatinin ili dokumentaciju. CT koristi jonizujuće zračenje; kontrast za CT ili MR zahtijeva procjenu bubrega, alergija i trudnoće, a MR provjeru metala i implantata. Unaprijed provjerite aparat, protokol, pripremu i cijenu.',
 			LtcImaging3:
 				'Uz knjižicu su MR i CT besplatni, ali su upravo tu redovi najuočljiviji: sa uputom ulazite na listu čekanja, a čeka se od nekoliko nedjelja do nekoliko mjeseci. Kvalitet opisa snimaka razlikuje se i u privatnim i u državnim centrima — tražite da vam snimak narežu na disk ili pošalju link i pokažite ga ljekaru koji vas liječi.',
 			LtcImaging4: 'Klinike sa ultrazvukom, CT i MR potražite u',
@@ -206,18 +209,18 @@ export default {
 			LtcImaging4End: '.',
 
 			LtcCheckup1:
-				'Državnog programa preventivnih pregleda za odrasle u Crnoj Gori nema — preventivni pregled ovdje se zove sistematski pregled i privatne klinike ga nude kao plaćeni paket: pregled ljekara opšte prakse, EKG, ultrazvuk, osnovne analize. Po iskustvu pacijenata, kompletna posjeta sa pregledom, ultrazvukom i analizama izađe otprilike 80–90 €; prošireni paketi većih klinika koštaju više.',
+				'Crna Gora nema jedan univerzalni godišnji pregled za sve odrasle, ali mogu postojati ciljani javni skrininzi i preventivni programi za određeni uzrast ili rizik. Pravo provjerite kod izabranog doktora ili u važećem programu javnog zdravlja. Privatni sistematski paketi razlikuju se po sadržaju i cijeni od klinike do klinike.',
 			LtcCheckup2:
-				'Check-up pakete za žene i muškarce redovno nude veliki lanci (na primjer Moj Lab), poliklinike poput Milmedike i bolnice ranga Codra Hospital. Ako imate dobrovoljno osiguranje, provjerite uslove: Uniqa, na primjer, uz svaki paket dozvoljava da se dokupi godišnji sistematski pregled u vrijednosti do 100 €, koji ne troši limit polise.',
+				'Laboratorije i klinike prodaju ženske, muške i opšte check-up pakete. Svaki test uporedite sa godinama, simptomima, porodičnom istorijom i ranijim nalazima; više testova nije automatski bolje i može otkriti slučajne nalaze.',
 			LtcCheckup3:
-				'Budžetska varijanta je da check-up sastavite sami od laboratorijskih panela (ženski ili muški panel ~47–52 €) plus jedan pregled kod ljekara opšte prakse radi tumačenja rezultata.',
+				'Poseban pregled kod ljekara pomaže da se rezultati protumače i odluči da li je dalje praćenje zaista potrebno.',
 
 			LtcResults1:
 				'Rezultati se izdaju na srpskom (latinicom) sa međunarodnim skraćenicama parametara — LEU, ERY, HGB, GLU i tako dalje, pa su čitljivi i bez znanja jezika. Privatne laboratorije šalju PDF na e-mail, državni rezultati dostupni su preko portala eZdravlje.',
 			LtcResults2:
 				'Glavna zamka su mjerne jedinice i referentne vrijednosti: mogu se razlikovati od onih na koje ste navikli. Klasičan primjer je vitamin D: lokalne laboratorije ga obično iskazuju u ng/ml, dok mnoge druge zemlje koriste nmol/l (koeficijent 2,5) — „normalnu“ lokalnu vrijednost lako je pogrešno protumačiti kao deficit i obrnuto. Rezultat poredite isključivo sa referentnim vrijednostima laboratorije koja je analizu radila.',
 			LtcResults3:
-				'Odstupanja ne tumačite sami: pregled ljekara opšte prakse ili specijaliste košta 20–50 €, a ljekar će rezultate procijeniti u kontekstu vaših tegoba i istorije bolesti.',
+				'Odstupanja je bolje razgovoriti sa ljekarom: pregled ljekara opšte prakse ili specijaliste košta 20–50 €, a ljekar će rezultate procijeniti u kontekstu vaših tegoba i istorije bolesti.',
 
 			LtcSources0:
 				'Informacije važe za jul 2026. Cijene su orijentiri iz cjenovnika laboratorija i iskustva pacijenata 2024–2026 — prije posjete provjerite aktuelni cjenovnik. Zvanični izvori:',
@@ -243,19 +246,20 @@ export default {
 		},
 		'sr-cyrl': {
 			LabTestsArticleTitle:
-				'Анализе и check-up у Црној Гори: лабораторије, цијене, без упута',
+				'Анализе и check-up у Црној Гори: лабораторије, цијене и упути',
 			LabTestsArticleDescription:
-				'Гдје урадити анализе у Црној Гори: приватне лабораторије без упута и цијене, бесплатан пут преко изабраног доктора, листе чекања за МР и ЦТ, check-up пакети и како читати резултате. Ажурирано: јул 2026.',
+				'Рутинске приватне анализе, оријентири цијена, када је потребан налог љекара, државни пут преко изабраног доктора, CT и MR, превентивни скрининг и безбједно тумачење. Провјерено у јулу 2026.',
 
-			'LtcToc_private-labs': 'Приватне лабораторије: без упута и заказивања',
+			'LtcToc_private-labs': 'Приватне лабораторије: рутинске анализе и упути',
 			'LtcToc_state-route': 'Државни пут: упут, бесплатно, али уз редове',
-			'LtcToc_imaging': 'Ултразвук, ЦТ и МР: гдје је брже',
-			'LtcToc_checkups': 'Check-up пакети (систематски преглед)',
-			'LtcToc_results': 'Како читати резултате: јединице и референтне вриједности',
-			'LtcToc_sources': 'Извори и корисни линкови',
+			LtcToc_imaging: 'Ултразвук, ЦТ и МР: гдје је брже',
+			LtcToc_checkups: 'Check-up пакети (систематски преглед)',
+			LtcToc_results:
+				'Како читати резултате: јединице и референтне вриједности',
+			LtcToc_sources: 'Извори и корисни линкови',
 
 			LtcPrivate1:
-				'Урадити анализе један је од најједноставнијих медицинских задатака у Црној Гори: у приватну лабораторију можете доћи без упута, без заказивања и без осигурања. Ради се по редосљеду доласка — а реда најчешће уопште нема; резултати основних анализа готови су истог дана и стижу на e-mail. Највећи ланац је Moj Lab (девет градова, од Подгорице и Будве до Улциња); у Подгорици раде In Vitro и Bona-lab prima, а сопствене лабораторије имају и многе поликлинике (Konzilijum, Milmedika).',
+				'Многе приватне лабораторије примају пацијенте који сами плаћају за уобичајене анализе крви и урина без упута и осигурања, често без заказивања. Заказивање, припрема, рок и потреба за налогом разликују се; специјализовани, генетски, патолошки и тестови који траже клиничко тумачење могу захтијевати упут или консултацију. Прије доласка провјерите гладовање и узимање узорка.',
 			LtcPrivate2:
 				'Цијене се рачунају по сваком параметру посебно. Оријентири из цјеновника 2025–2026: комплетна крвна слика ~5 €, глукоза ~2 €, холестерол ~3 €, стандардни биохемијски параметри по 1,5–3 € по ставци, TSH и хормони штитне жлијезде 5–10 €, витамин D ~20 €, тумор маркери ~13 € по сваком. Долазак на кућну адресу ради вађења крви кошта око 10 €.',
 			LtcPrivate3:
@@ -275,9 +279,9 @@ export default {
 			LtcState3End: '.',
 
 			LtcImaging1:
-				'Ултразвук се у приватним клиникама ради без упута практично свуда — често истог дана. Оријентир цијена: 20–50 € по прегледу; преглед специјалисте заједно са ултразвуком обично изађе 50–90 €.',
+				'Приватне клинике често нуде ултразвук, али термин истог дана и потреба за упутом зависе од установе и прегледа. Прије заказивања питајте ко ради и описује преглед, каква је припрема, треба ли захтјев љекара и која је укупна цијена.',
 			LtcImaging2:
-				'МР и ЦТ су у приватном сектору такође доступни без упута: МР једне регије кошта око 90–120 €, ЦТ 60–120 € у зависности од регије и клинике. Апарати постоје у Подгорици, Будви, Сутомору и Радановићима; термин је обично у наредним данима, а не мјесецима. Прије поласка вриједи позвати и провјерити да ли апарат ради и до колико сати.',
+				'Приватни CT и MR доступни су уз заказивање, али клиника може тражити упут, клиничко питање, свјежи креатинин или документацију. CT користи јонизујуће зрачење; контраст за CT или MR захтијева процјену бубрега, алергија и трудноће, а MR провјеру метала и имплантата. Унапријед провјерите апарат, протокол, припрему и цијену.',
 			LtcImaging3:
 				'Уз књижицу су МР и ЦТ бесплатни, али су управо ту редови најуочљивији: са упутом улазите на листу чекања, а чека се од неколико недјеља до неколико мјесеци. Квалитет описа снимака разликује се и у приватним и у државним центрима — тражите да вам снимак нарежу на диск или пошаљу линк и покажите га љекару који вас лијечи.',
 			LtcImaging4: 'Клинике са ултразвуком, ЦТ и МР потражите у',
@@ -285,18 +289,18 @@ export default {
 			LtcImaging4End: '.',
 
 			LtcCheckup1:
-				'Државног програма превентивних прегледа за одрасле у Црној Гори нема — превентивни преглед овдје се зове систематски преглед и приватне клинике га нуде као плаћени пакет: преглед љекара опште праксе, ЕКГ, ултразвук, основне анализе. По искуству пацијената, комплетна посјета са прегледом, ултразвуком и анализама изађе отприлике 80–90 €; проширени пакети већих клиника коштају више.',
+				'Црна Гора нема један универзални годишњи преглед за све одрасле, али могу постојати циљани јавни скрининзи и превентивни програми за одређени узраст или ризик. Право провјерите код изабраног доктора или у важећем програму јавног здравља. Приватни систематски пакети разликују се по садржају и цијени од клинике до клинике.',
 			LtcCheckup2:
-				'Check-up пакете за жене и мушкарце редовно нуде велики ланци (на примјер Moj Lab), поликлинике попут Milmedike и болнице ранга Codra Hospital. Ако имате добровољно осигурање, провјерите услове: Uniqa, на примјер, уз сваки пакет дозвољава да се докупи годишњи систематски преглед у вриједности до 100 €, који не троши лимит полисе.',
+				'Лабораторије и клинике продају женске, мушке и опште check-up пакете. Сваки тест упоредите са годинама, симптомима, породичном историјом и ранијим налазима; више тестова није аутоматски боље и може открити случајне налазе.',
 			LtcCheckup3:
-				'Буџетска варијанта је да check-up саставите сами од лабораторијских панела (женски или мушки панел ~47–52 €) плус један преглед код љекара опште праксе ради тумачења резултата.',
+				'Посебан преглед код љекара помаже да се резултати протумаче и одлучи да ли је даље праћење заиста потребно.',
 
 			LtcResults1:
 				'Резултати се издају на српском (латиницом) са међународним скраћеницама параметара — LEU, ERY, HGB, GLU и тако даље, па су читљиви и без знања језика. Приватне лабораторије шаљу PDF на e-mail, државни резултати доступни су преко портала eZdravlje.',
 			LtcResults2:
 				'Главна замка су мјерне јединице и референтне вриједности: могу се разликовати од оних на које сте навикли. Класичан примјер је витамин D: локалне лабораторије га обично исказују у ng/ml, док многе друге земље користе nmol/l (коефицијент 2,5) — „нормалну“ локалну вриједност лако је погрешно протумачити као дефицит и обрнуто. Резултат поредите искључиво са референтним вриједностима лабораторије која је анализу радила.',
 			LtcResults3:
-				'Одступања не тумачите сами: преглед љекара опште праксе или специјалисте кошта 20–50 €, а љекар ће резултате процијенити у контексту ваших тегоба и историје болести.',
+				'Одступања је боље разговорити са љекаром: преглед љекара опште праксе или специјалисте кошта 20–50 €, а љекар ће резултате процијенити у контексту ваших тегоба и историје болести.',
 
 			LtcSources0:
 				'Информације важе за јул 2026. Цијене су оријентири из цјеновника лабораторија и искуства пацијената 2024–2026 — прије посјете провјерите актуелни цјеновник. Званични извори:',
@@ -320,21 +324,22 @@ export default {
 				'У каталогу docta.me налазе се стотине анализа са цијенама у лабораторијама и клиникама Црне Горе — од комплетне крвне слике до хормонских панела.',
 			LtcCtaButton: 'Отвори каталог анализа',
 		},
-		'de': {
+		de: {
 			LabTestsArticleTitle:
-				'Laboranalysen und Check-ups in Montenegro: Labore, Preise, ohne Überweisung',
+				'Laboranalysen und Check-ups in Montenegro: Labore, Preise und Überweisungen',
 			LabTestsArticleDescription:
-				'Wo man in Montenegro Laborwerte bestimmen lässt: private Labore ohne Überweisung und ihre Preise, der kostenlose Weg über den izabrani doktor, Wartelisten für MRT und CT, Check-up-Pakete und wie man die Befunde liest. Stand: Juli 2026.',
+				'Übliche private Labortests, Preisrichtwerte, wann eine ärztliche Anordnung nötig ist, der staatliche Weg über izabrani doktor, CT und MRT, Vorsorge und sichere Befundinterpretation. Geprüft im Juli 2026.',
 
-			'LtcToc_private-labs': 'Private Labore: ohne Überweisung und Termin',
-			'LtcToc_state-route': 'Der staatliche Weg: uput, kostenlos, aber mit Wartezeiten',
-			'LtcToc_imaging': 'Ultraschall, CT und MRT: wo es schneller geht',
-			'LtcToc_checkups': 'Check-up-Pakete (sistematski pregled)',
-			'LtcToc_results': 'Befunde richtig lesen: Einheiten und Referenzwerte',
-			'LtcToc_sources': 'Quellen und nützliche Links',
+			'LtcToc_private-labs': 'Private Labore: Routinetests und Überweisungen',
+			'LtcToc_state-route':
+				'Der staatliche Weg: uput, kostenlos, aber mit Wartezeiten',
+			LtcToc_imaging: 'Ultraschall, CT und MRT: wo es schneller geht',
+			LtcToc_checkups: 'Check-up-Pakete (sistematski pregled)',
+			LtcToc_results: 'Befunde richtig lesen: Einheiten und Referenzwerte',
+			LtcToc_sources: 'Quellen und nützliche Links',
 
 			LtcPrivate1:
-				'Blut abnehmen zu lassen ist eine der einfachsten medizinischen Aufgaben in Montenegro: In ein privates Labor kommt man ohne Überweisung, ohne Termin und ohne Versicherung. Bedient wird nach Reihenfolge des Erscheinens — meist gibt es gar keine Schlange; die Ergebnisse der Basisanalysen sind noch am selben Tag fertig und kommen per E-Mail. Die größte Kette ist Moj Lab (neun Städte, von Podgorica und Budva bis Ulcinj); in Podgorica arbeiten In Vitro und Bona-lab prima, und viele Polikliniken (Konzilijum, Milmedika) betreiben eigene Labore.',
+				'Viele Privatlabore nehmen Selbstzahler für übliche Blut- und Urintests ohne Überweisung und Versicherung an, oft ohne Termin. Termin, Vorbereitung, Bearbeitungszeit und Auftragspflicht variieren; Spezial-, Genetik-, Pathologie- und klinisch zu interpretierende Tests können eine Anordnung oder Beratung erfordern. Nüchternheit und Probenanleitung vorher beim Labor klären.',
 			LtcPrivate2:
 				'Abgerechnet wird pro Parameter. Anhaltspunkte aus den Preislisten 2025–2026: großes Blutbild ~5 €, Glukose ~2 €, Cholesterin ~3 €, biochemische Standardparameter je 1,5–3 €, TSH und Schilddrüsenhormone 5–10 €, Vitamin D ~20 €, Tumormarker je ~13 €. Ein Hausbesuch zur Blutentnahme kostet etwa 10 €.',
 			LtcPrivate3:
@@ -354,9 +359,9 @@ export default {
 			LtcState3End: '.',
 
 			LtcImaging1:
-				'Ultraschall gibt es in Privatkliniken praktisch überall ohne Überweisung — oft noch am selben Tag. Preisorientierung: 20–50 € pro Untersuchung; eine Facharztkonsultation samt Ultraschall kommt meist auf 50–90 €.',
+				'Privatkliniken bieten häufig Ultraschall an, doch Termin am selben Tag und Überweisungspflicht hängen von Einrichtung und Untersuchung ab. Vor Buchung fragen, wer untersucht und befundet, welche Vorbereitung und ärztliche Anforderung nötig sind und wie hoch der Gesamtpreis ist.',
 			LtcImaging2:
-				'Auch MRT und CT sind privat ohne uput zugänglich: Ein MRT einer Region kostet etwa 90–120 €, ein CT 60–120 € je nach Region und Klinik. Geräte gibt es in Podgorica, Budva, Sutomore und Radanovići; Termine gibt es in der Regel innerhalb von Tagen, nicht Monaten. Vor der Fahrt lohnt ein Anruf, ob das Gerät läuft und bis wann.',
+				'Private CT und MRT sind nach Termin verfügbar, doch die Klinik kann Überweisung, klinische Frage, aktuelles Kreatinin oder Unterlagen verlangen. CT verwendet ionisierende Strahlung; Kontrast bei CT oder MRT erfordert Prüfung von Niere, Allergien und Schwangerschaft, MRT zudem von Metall und Implantaten. Gerät, Protokoll, Vorbereitung und Gesamtpreis vorher bestätigen.',
 			LtcImaging3:
 				'Mit knjižica sind MRT und CT kostenlos, aber genau hier sind die Wartezeiten am längsten: Mit dem uput kommen Sie auf eine Warteliste, und das Warten kann mehrere Wochen bis Monate dauern. Die Qualität der schriftlichen Befunde schwankt in privaten wie staatlichen Zentren — lassen Sie sich die Aufnahmen auf einer CD oder als Download-Link geben und zeigen Sie sie Ihrem behandelnden Arzt.',
 			LtcImaging4: 'Kliniken mit Ultraschall, CT und MRT finden Sie im',
@@ -364,18 +369,18 @@ export default {
 			LtcImaging4End: '.',
 
 			LtcCheckup1:
-				'Ein staatliches Vorsorgeprogramm für Erwachsene gibt es in Montenegro nicht — die Vorsorgeuntersuchung heißt hier sistematski pregled und wird von Privatkliniken als bezahltes Paket angeboten: Untersuchung beim Allgemeinarzt, EKG, Ultraschall, Basisanalysen. Nach den Erfahrungen von Patienten kostet ein umfassender Besuch mit Untersuchung, Ultraschall und Laborwerten etwa 80–90 €; erweiterte Pakete größerer Kliniken sind teurer.',
+				'Montenegro hat keine einheitliche jährliche Vorsorge für alle Erwachsenen, doch zielgerichtete öffentliche Screening- und Präventionsprogramme können für bestimmte Alters- oder Risikogruppen bestehen. Anspruch beim izabrani doktor oder aktuellen Gesundheitsprogramm prüfen. Private sistematski-Pakete unterscheiden sich in Inhalt und Preis von Klinik zu Klinik.',
 			LtcCheckup2:
-				'Check-up-Pakete für Frauen und Männer bieten regelmäßig die großen Ketten (zum Beispiel Moj Lab), Polikliniken wie Milmedika und Häuser vom Rang des Codra Hospital an. Wer eine freiwillige Versicherung hat, sollte die Bedingungen prüfen: Bei Uniqa etwa lässt sich zu jedem Paket ein jährlicher sistematski pregled im Wert von bis zu 100 € hinzubuchen, der das Policenlimit nicht verbraucht.',
+				'Labore und Kliniken verkaufen Frauen-, Männer- und allgemeine Check-up-Pakete. Jeden Test mit Alter, Symptomen, Familienanamnese und Vorbefunden abgleichen; mehr Tests sind nicht automatisch besser und können Zufallsbefunde erzeugen.',
 			LtcCheckup3:
-				'Die Budget-Variante: den Check-up selbst aus Laborpanels zusammenstellen (Frauen- oder Männer-Panel ~47–52 €) plus eine einzige Konsultation beim Allgemeinarzt zur Besprechung der Ergebnisse.',
+				'Ein Besprechungstermin beim Arzt hilft, die Ergebnisse einzuordnen und zu klären, ob Nachuntersuchungen wirklich nötig sind.',
 
 			LtcResults1:
 				'Befunde werden auf Serbisch (in lateinischer Schrift) mit internationalen Parameterkürzeln ausgestellt — LEU, ERY, HGB, GLU und so weiter — und sind damit auch ohne Sprachkenntnisse lesbar. Private Labore schicken ein PDF per E-Mail, staatliche Ergebnisse sind über eZdravlje abrufbar.',
 			LtcResults2:
 				'Die größte Falle sind Maßeinheiten und Referenzbereiche: Sie können von den gewohnten abweichen. Das klassische Beispiel ist Vitamin D: Lokale Labore geben es meist in ng/ml an, während viele andere Länder nmol/l verwenden (Faktor 2,5) — ein „normaler“ lokaler Wert wird leicht für einen Mangel gehalten und umgekehrt. Vergleichen Sie ein Ergebnis nur mit den Referenzwerten des Labors, das die Analyse durchgeführt hat.',
 			LtcResults3:
-				'Interpretieren Sie Abweichungen nicht selbst: Eine Konsultation beim Allgemeinarzt oder Facharzt kostet 20–50 €, und der Arzt bewertet die Werte im Kontext Ihrer Beschwerden und Vorgeschichte.',
+				'Abweichungen bespricht man am besten mit einem Arzt: Eine Konsultation beim Allgemeinarzt oder Facharzt kostet 20–50 €, und er bewertet die Werte im Kontext Ihrer Beschwerden und Vorgeschichte.',
 
 			LtcSources0:
 				'Stand der Informationen: Juli 2026. Die Preise sind Anhaltspunkte aus Laborpreislisten und Patientenerfahrungen 2024–2026 — prüfen Sie vor dem Besuch die aktuelle Preisliste. Offizielle Quellen:',
@@ -399,21 +404,22 @@ export default {
 				'Der docta.me-Katalog umfasst Hunderte Laboranalysen mit Preisen in Laboren und Kliniken Montenegros — vom Blutbild bis zu Hormonpanels.',
 			LtcCtaButton: 'Katalog der Laboranalysen öffnen',
 		},
-		'tr': {
+		tr: {
 			LabTestsArticleTitle:
-				"Karadağ'da Tahliller ve Check-up: Laboratuvarlar, Fiyatlar, Sevk Gerekmez",
+				'Karadağ Tahlilleri ve Check-up: Laboratuvarlar, Fiyatlar ve Sevk',
 			LabTestsArticleDescription:
-				"Karadağ'da tahlil nerede yaptırılır: sevksiz özel laboratuvarlar ve fiyatları, izabrani doktor üzerinden ücretsiz yol, MR ve BT bekleme listeleri, check-up paketleri ve sonuçların nasıl okunacağı. Güncellik: Temmuz 2026.",
+				'Rutin özel testler, fiyat göstergeleri, hekim isteminin ne zaman gerektiği, izabrani doktor üzerinden devlet yolu, BT ve MR, koruyucu tarama ve güvenli sonuç yorumu. Temmuz 2026 tarihinde incelendi.',
 
-			'LtcToc_private-labs': 'Özel laboratuvarlar: sevksiz ve randevusuz',
+			'LtcToc_private-labs':
+				'Özel laboratuvarlar: rutin testler ve sevk kuralları',
 			'LtcToc_state-route': 'Devlet yolu: uput, ücretsiz ama sıralı',
-			'LtcToc_imaging': 'Ultrason, BT ve MR: nerede daha hızlı',
-			'LtcToc_checkups': 'Check-up paketleri (sistematski pregled)',
-			'LtcToc_results': 'Sonuçlar nasıl okunur: birimler ve referans aralıkları',
-			'LtcToc_sources': 'Kaynaklar ve faydalı bağlantılar',
+			LtcToc_imaging: 'Ultrason, BT ve MR: nerede daha hızlı',
+			LtcToc_checkups: 'Check-up paketleri (sistematski pregled)',
+			LtcToc_results: 'Sonuçlar nasıl okunur: birimler ve referans aralıkları',
+			LtcToc_sources: 'Kaynaklar ve faydalı bağlantılar',
 
 			LtcPrivate1:
-				"Tahlil yaptırmak Karadağ'daki en kolay tıbbi işlerden biridir: özel laboratuvara sevksiz, randevusuz ve sigortasız gidebilirsiniz. Geliş sırasına göre çalışılır — çoğu zaman sıra hiç olmaz; temel tahlillerin sonuçları aynı gün hazırdır ve e-postayla gelir. En büyük zincir Moj Lab'dır (Podgorica ve Budva'dan Ulcinj'e dokuz şehir); Podgorica'da In Vitro ve Bona-lab prima çalışır, birçok polikliniğin (Konzilijum, Milmedika) de kendi laboratuvarı vardır.",
+				'Birçok özel laboratuvar yaygın kan ve idrar testlerinde kendi ödeyen hastaları sevksiz ve sigortasız, çoğu kez randevusuz kabul eder. Randevu, hazırlık, sonuç süresi ve istem gereği değişir; uzmanlık, genetik, patoloji ve klinik yorum gerektiren testler sevk veya görüşme isteyebilir. Açlık ve örnek kurallarını önceden laboratuvardan doğrulayın.',
 			LtcPrivate2:
 				'Fiyatlar her parametre için ayrı hesaplanır. 2025–2026 fiyat listelerinden örnekler: tam kan sayımı ~5 €, glukoz ~2 €, kolesterol ~3 €, standart biyokimya parametreleri kalem başına 1,5–3 €, TSH ve tiroid hormonları 5–10 €, D vitamini ~20 €, tümör belirteçleri her biri ~13 €. Evde kan alma hizmeti yaklaşık 10 € tutar.',
 			LtcPrivate3:
@@ -433,9 +439,9 @@ export default {
 			LtcState3End: ' toplanmıştır.',
 
 			LtcImaging1:
-				'Ultrason özel kliniklerde hemen her yerde sevksiz yapılır — çoğu zaman aynı gün. Fiyat aralığı: tetkik başına 20–50 €; uzman muayenesi artı ultrason genellikle 50–90 € tutar.',
+				'Özel klinikler sıkça ultrason sunar, ancak aynı gün erişim ve sevk gereği kuruma ve incelemeye bağlıdır. Randevudan önce kimin çekip raporladığını, hazırlığı, hekim istemi gereğini ve toplam güncel fiyatı sorun.',
 			LtcImaging2:
-				"MR ve BT de özel sektörde uput'suz erişilebilir: bir bölgenin MR'ı yaklaşık 90–120 €, BT 60–120 € (bölgeye ve kliniğe göre). Cihazlar Podgorica, Budva, Sutomore ve Radanovići'de bulunur; randevu genellikle aylar değil, önümüzdeki günler içindir. Yola çıkmadan arayıp cihazın çalışıp çalışmadığını ve saat kaça kadar çalıştığını sormakta fayda var.",
+				'Özel BT ve MR randevuyla bulunur, ancak klinik sevk, klinik soru, yeni kreatinin veya belge isteyebilir. BT iyonlaştırıcı radyasyon kullanır; BT veya MR kontrastı böbrek, alerji ve gebelik değerlendirmesi, MR ise metal ve implant taraması gerektirir. İnceleme ve kontrast gereğini nitelikli hekim belirlemelidir. Cihazı, protokolü, hazırlığı ve toplam fiyatı önceden doğrulayın.',
 			LtcImaging3:
 				'Karneyle MR ve BT ücretsizdir, ancak en uzun sıralar tam da buradadır: uput ile bekleme listesine girersiniz ve bekleyiş birkaç haftadan aylara uzayabilir. Görüntü raporlarının kalitesi hem özel hem devlet merkezlerinde değişkendir — tetkiki diske yazdırın veya bağlantı isteyin ve tedavi eden doktorunuza gösterin.',
 			LtcImaging4: 'Ultrason, BT ve MR yapan klinikleri',
@@ -443,11 +449,11 @@ export default {
 			LtcImaging4End: ' bulabilirsiniz.',
 
 			LtcCheckup1:
-				"Karadağ'da yetişkinler için devlet eliyle yürütülen bir tarama programı yoktur — koruyucu muayene burada sistematski pregled olarak adlandırılır ve özel klinikler tarafından ücretli paket olarak sunulur: pratisyen muayenesi, EKG, ultrason, temel tahliller. Hastaların deneyimine göre muayene, ultrason ve tahlilleri içeren kapsamlı bir ziyaret yaklaşık 80–90 € tutar; büyük kliniklerin genişletilmiş paketleri daha pahalıdır.",
+				'Karadağ tüm yetişkinler için tek evrensel yıllık kontrol sunmaz, ancak belirli yaş veya risk grupları için hedefli kamusal tarama ve korunma programları olabilir. Uygunluğu izabrani doktor veya güncel halk sağlığı programından sorun. Özel sistematski paketleri içerik ve fiyat bakımından değişir ve kişisel önerinin yerini tutmaz.',
 			LtcCheckup2:
-				'Kadınlar ve erkekler için check-up paketlerini büyük zincirler (örneğin Moj Lab), Milmedika gibi poliklinikler ve Codra Hospital düzeyindeki hastaneler düzenli olarak sunar. Gönüllü sigortanız varsa koşulları kontrol edin: örneğin Uniqa, her pakete poliçe limitini tüketmeyen, 100 €’ya kadar değerde yıllık sistematik muayene eklenmesine izin verir.',
+				'Laboratuvar ve klinikler kadın, erkek ve genel kontrol paketleri satar. Her testi yaş, belirti, aile öyküsü ve önceki sonuçlarla karşılaştırın; daha çok test otomatik olarak daha iyi değildir ve rastlantısal bulgular doğurabilir. Sigorta ekleri ve yıllık haklar değişir; marka örneği yerine güncel yazılı koşulları doğrulayın.',
 			LtcCheckup3:
-				'Bütçe dostu seçenek: check-up’ı laboratuvar panellerinden kendiniz oluşturmak (kadın veya erkek paneli ~47–52 €) ve sonuçları değerlendirmek için tek bir pratisyen muayenesi eklemek.',
+				'Yalnız ticari panelden tarama programı kurmayın. Yaş, cinsiyet, gebelik, aile öyküsü, yaşam tarzı ve belirtilerden başlayıp korunmayı hekimle planlayın. Sonuç görüşmesi gerçekten izlem gerekip gerekmediğini belirlemeye yardımcı olur.',
 
 			LtcResults1:
 				'Sonuçlar Sırpça (Latin alfabesiyle) ve uluslararası parametre kısaltmalarıyla verilir — LEU, ERY, HGB, GLU vb. — bu yüzden dil bilmeden de okunabilir. Özel laboratuvarlar PDF’i e-postayla gönderir; devlet sonuçlarına eZdravlje üzerinden erişilir.',

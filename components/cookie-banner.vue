@@ -134,39 +134,39 @@ const { giveConsent, declineConsent } = useCookieControl();
 <i18n lang="json">
 {
 	"en": {
-		"CookieText": "We use cookies for site functionality and analytics.",
+		"CookieText": "We use optional cookies for analytics. Necessary cookies are always active.",
 		"PrivacyLink": "Privacy Policy",
-		"Accept": "OK",
+		"Accept": "Accept analytics",
 		"Decline": "Decline"
 	},
 	"ru": {
-		"CookieText": "Мы используем cookies для работы сайта и аналитики.",
+		"CookieText": "Мы используем необязательные cookies для аналитики. Необходимые cookies всегда активны.",
 		"PrivacyLink": "Политика конфиденциальности",
-		"Accept": "ОК",
+		"Accept": "Разрешить аналитику",
 		"Decline": "Отклонить"
 	},
 	"de": {
-		"CookieText": "Wir verwenden Cookies fur die Website-Funktionalitat und Analysen.",
+		"CookieText": "Wir verwenden optionale Cookies für Analysen. Notwendige Cookies sind immer aktiv.",
 		"PrivacyLink": "Datenschutzerklarung",
-		"Accept": "OK",
+		"Accept": "Analyse erlauben",
 		"Decline": "Ablehnen"
 	},
 	"tr": {
-		"CookieText": "Site islevseligi ve analitik icin cerezler kullaniyoruz.",
+		"CookieText": "Analiz için isteğe bağlı çerezler kullanıyoruz. Gerekli çerezler her zaman etkindir.",
 		"PrivacyLink": "Gizlilik Politikasi",
-		"Accept": "Tamam",
+		"Accept": "Analize izin ver",
 		"Decline": "Reddet"
 	},
 	"sr": {
-		"CookieText": "Koristimo kolacice za funkcionalnost sajta i analitiku.",
+		"CookieText": "Koristimo opcione kolačiće za analitiku. Neophodni kolačići su uvek aktivni.",
 		"PrivacyLink": "Politika privatnosti",
-		"Accept": "OK",
+		"Accept": "Dozvoli analitiku",
 		"Decline": "Odbij"
 	},
 	"sr-cyrl": {
-		"CookieText": "Користимо колачиће за функционалност сајта и аналитику.",
+		"CookieText": "Користимо опционе колачиће за аналитику. Неопходни колачићи су увек активни.",
 		"PrivacyLink": "Политика приватности",
-		"Accept": "ОК",
+		"Accept": "Дозволи аналитику",
 		"Decline": "Одбиј"
 	}
 }

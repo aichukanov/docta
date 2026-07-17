@@ -57,6 +57,8 @@ export const useUserStore = defineStore('user', () => {
 		password: string,
 		name?: string,
 		locale?: string,
+		termsAccepted?: boolean,
+		analyticsConsent?: boolean,
 	) => {
 		try {
 			const response = await $fetch('/api/auth/register', {
@@ -66,6 +68,8 @@ export const useUserStore = defineStore('user', () => {
 					password,
 					...(name ? { name } : {}),
 					...(locale ? { locale } : {}),
+					termsAccepted,
+					analyticsConsent,
 				},
 			});
 

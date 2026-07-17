@@ -45,10 +45,12 @@ export default {
 			orContinueWith: 'or use email',
 
 			// Registration consent
-			registerConsentBefore: 'By registering, you agree to our',
+			registerConsentBefore: 'I accept the',
 			registerConsentTerms: 'Terms of Use',
-			registerConsentAnd: 'and',
+			registerConsentAnd: 'and confirm that I have read the',
 			registerConsentPrivacy: 'Privacy Policy',
+			registerAnalyticsConsent:
+				'Allow optional analytics cookies (Mixpanel and Google Analytics). You can change this choice at any time.',
 		},
 
 		'ru': {
@@ -91,10 +93,12 @@ export default {
 			orContinueWith: 'или через email',
 
 			// Согласие при регистрации
-			registerConsentBefore: 'Регистрируясь, вы принимаете',
+			registerConsentBefore: 'Я принимаю',
 			registerConsentTerms: 'Условия использования',
-			registerConsentAnd: 'и',
-			registerConsentPrivacy: 'Политику конфиденциальности',
+			registerConsentAnd: 'и подтверждаю, что ознакомился(-ась) с',
+			registerConsentPrivacy: 'Политикой конфиденциальности',
+			registerAnalyticsConsent:
+				'Разрешить необязательные аналитические cookies (Mixpanel и Google Analytics). Выбор можно изменить в любое время.',
 		},
 
 		'sr': {
@@ -137,10 +141,12 @@ export default {
 			orContinueWith: 'ili preko email adrese',
 
 			// Saglasnost pri registraciji
-			registerConsentBefore: 'Registracijom prihvatate naše',
+			registerConsentBefore: 'Prihvatam',
 			registerConsentTerms: 'Uslove korišćenja',
-			registerConsentAnd: 'i',
+			registerConsentAnd: 'i potvrđujem da sam pročitao/la',
 			registerConsentPrivacy: 'Politiku privatnosti',
+			registerAnalyticsConsent:
+				'Dozvoli opcione analitičke kolačiće (Mixpanel i Google Analytics). Ovu odluku možete promeniti u bilo kom trenutku.',
 		},
 
 		'de': {
@@ -183,10 +189,12 @@ export default {
 			orContinueWith: 'oder per E-Mail',
 
 			// Einwilligung bei der Registrierung
-			registerConsentBefore: 'Mit der Registrierung stimmen Sie unseren',
+			registerConsentBefore: 'Ich akzeptiere die',
 			registerConsentTerms: 'Nutzungsbedingungen',
-			registerConsentAnd: 'und der',
+			registerConsentAnd: 'und bestätige die Kenntnisnahme der',
 			registerConsentPrivacy: 'Datenschutzerklärung',
+			registerAnalyticsConsent:
+				'Optionale Analyse-Cookies (Mixpanel und Google Analytics) erlauben. Diese Auswahl kann jederzeit geändert werden.',
 		},
 
 		'tr': {
@@ -229,10 +237,12 @@ export default {
 			orContinueWith: 'veya e-posta ile',
 
 			// Kayıt sırasında onay
-			registerConsentBefore: 'Kaydolarak',
+			registerConsentBefore: 'Kabul ediyorum:',
 			registerConsentTerms: 'Kullanım Koşullarımızı',
-			registerConsentAnd: 've',
+			registerConsentAnd: 've okuduğumu onaylıyorum:',
 			registerConsentPrivacy: 'Gizlilik Politikamızı',
+			registerAnalyticsConsent:
+				'İsteğe bağlı analiz çerezlerine (Mixpanel ve Google Analytics) izin ver. Bu seçimi istediğiniz zaman değiştirebilirsiniz.',
 		},
 
 		'sr-cyrl': {
@@ -275,10 +285,12 @@ export default {
 			orContinueWith: 'или преко email адресе',
 
 			// Сагласност при регистрацији
-			registerConsentBefore: 'Регистрацијом прихватате наше',
+			registerConsentBefore: 'Прихватам',
 			registerConsentTerms: 'Услове коришћења',
-			registerConsentAnd: 'и',
+			registerConsentAnd: 'и потврђујем да сам прочитао/ла',
 			registerConsentPrivacy: 'Политику приватности',
+			registerAnalyticsConsent:
+				'Дозволи опционе аналитичке колачиће (Mixpanel и Google Analytics). Ову одлуку можете променити у било ком тренутку.',
 		},
 	},
 };

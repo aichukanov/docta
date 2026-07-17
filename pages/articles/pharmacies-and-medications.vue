@@ -72,6 +72,14 @@ const medicinesLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
+const adrenalineMedicineLink = computed(() => ({
+	name: 'medicines',
+	query: {
+		...getRegionalQuery(locale.value),
+		name: 'LIDOKAIN 2% - ADRENALIN GALENIKA',
+	},
+}));
+
 const healthcareArticleLink = computed(() => ({
 	path: '/articles/healthcare-system-in-montenegro',
 	query: getRegionalQuery(locale.value),
@@ -165,7 +173,13 @@ watchEffect(() => {
 			<p>{{ t('PhaPharmacies1') }}</p>
 			<p>{{ t('PhaPharmacies2') }}</p>
 			<p>{{ t('PhaPharmacies3') }}</p>
-			<p>{{ t('PhaPharmacies4') }}</p>
+			<p>
+				{{ t('PhaPharmacies4') }}
+				<NuxtLink :to="adrenalineMedicineLink">{{
+					t('PhaPharmacies4Link')
+				}}</NuxtLink
+				>{{ t('PhaPharmacies4End') }}
+			</p>
 		</ArticleSection>
 
 		<ArticleSection

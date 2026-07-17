@@ -6,7 +6,7 @@
 // русскоязычных чатов (2023–2026). Актуальность: июль 2026.
 export default {
 	messages: {
-		'en': {
+		en: {
 			BirthInMontenegroTitle:
 				'Giving Birth in Montenegro: State Maternity Ward or Private Clinic',
 			BirthInMontenegroDescription:
@@ -15,7 +15,8 @@ export default {
 			BimToc_prenatal: 'Prenatal care: dom zdravlja or a private gynecologist',
 			BimToc_where: 'Where babies are born: maternity wards of Montenegro',
 			BimToc_costs: 'What childbirth costs: with and without a knjižica',
-			BimToc_practical: 'Practical tips: pain relief, partner births, what to pack',
+			BimToc_practical:
+				'Practical tips: pain relief, partner births, what to pack',
 			BimToc_after: 'After the birth: paperwork and the patronage nurse',
 			BimToc_sources: 'Useful contacts and sources',
 
@@ -24,7 +25,7 @@ export default {
 			BimPrenatal2:
 				'Many foreign women — and quite a few locals — have their pregnancy monitored privately: a consultation costs €30–50 and an ultrasound is usually done right during the visit. Lab work can be done in private laboratories without any referral; many offer ready-made “pregnancy panels”. Private prenatal care combines easily with the state system: see a private doctor during pregnancy and give birth in a state maternity ward.',
 			BimPrenatal3:
-				'From mothers in expat chats (2024–2025): there is no rigid screening schedule familiar to post-Soviet countries — an ultrasound is done at almost every visit (roughly once a month), a double test at 12 weeks is available in private clinics, and amniocentesis is offered when indicated. If you need certificates for institutions back home, ask for a full stamped “izvještaj ljekara specijaliste” with the gestational age spelled out — it makes translation and legalization much easier.',
+				'Prenatal visits, ultrasound and screening should follow an individual plan based on gestational age, medical history, previous pregnancy and current risk, not a schedule from expat chats. Screening choices are time-sensitive and should be discussed early with a qualified obstetric clinician; an invasive test such as amniocentesis is considered only after assessment and informed consent. Ask for a complete signed specialist report if documents will be used abroad.',
 			BimPrenatal4:
 				'You can find a gynecologist who speaks your language in our',
 			BimPrenatal4Link: 'catalog of gynecologists',
@@ -48,7 +49,7 @@ export default {
 			BimWhere4End: '.',
 
 			BimCosts1:
-				'For women with Montenegrin state insurance, childbirth in a state maternity ward is free — as are prenatal care, the hospital stay and newborn care. Women insured in countries that have a social-security agreement with Montenegro (Serbia, Germany, Austria, Turkey and others) are covered by their home fund — arrange the treaty paperwork before the due date. A real example from the chats: a UK citizen gave birth in Montenegro free of charge under the reciprocity arrangement.',
+				'Birth in a state maternity unit is covered for patients who are currently entitled under Montenegrin compulsory insurance. Do not assume that a bilateral agreement automatically covers planned childbirth: the applicable country, purpose of stay, prior authorisation, forms and chosen institution matter. Confirm planned maternity cover in writing with the home fund and FZOCG before travel; an individual forum story is not proof of eligibility.',
 			BimCosts2:
 				'No insurance? A state maternity ward will not turn you away: a woman in labour is admitted regardless of status, care is provided as emergency treatment, and the bill is issued afterwards at the official fund tariffs (DRG). Reference points for 2025–2026: a vaginal birth — about €850, a cesarean section — about €1,500, and up to €2,100 or more with severe complications.',
 			BimCosts3: 'You can check the official tariffs in our',
@@ -56,10 +57,10 @@ export default {
 			BimCosts3End:
 				' — for example, under codes O60Z (vaginal birth) and O01B (cesarean section).',
 			BimCosts4:
-				'A private-clinic birth, according to patient reports in the chats (2024), starts at roughly €1,800 out of pocket. Local voluntary health policies can cover childbirth in full, but almost always carry a waiting period of about 9 months from the purchase of the policy — so it must be bought before the pregnancy.',
+				'Private maternity prices reported by patients are dated estimates; request a current written package showing what is included and how complications or newborn care are charged. Insurance covers pregnancy or childbirth only if the policy expressly includes it and all eligibility, waiting-period, limit and pre-authorisation rules are met. Waiting periods vary and pregnancy that began before cover may be excluded, so obtain written confirmation rather than assuming a nine-month rule.',
 
 			BimPractical1:
-				'Epidural analgesia is officially available at KCCG — the clinic has a dedicated procedure for it and anesthesiology teams are on duty around the clock. In practice, however, pain relief in Montenegrin labour wards is rare: as of 2022 only about 6.5% of births used it, and the “painless birth” service was long charged separately (about €120 under the official decision). Discuss pain relief with your doctor in advance and confirm the current terms on admission; smaller maternity units may not have an anesthesiologist in the delivery room.',
+				'Epidural analgesia may be available at KCCG and some maternity units, but availability at a particular birth is not guaranteed and depends on clinical suitability, timing, staffing and local procedure. Older utilisation rates and historic fees do not establish current access or price. Discuss options and contraindications during pregnancy and confirm the current process with the maternity unit and anaesthesia team; ask about alternatives if an epidural cannot be provided.',
 			BimPractical2:
 				'Partner births are possible: KCCG has an official procedure for a companion attending the delivery, and the private Codra Hospital also admits partners. Check the conditions (medical checks, preparation courses, fees) with your specific maternity ward in advance.',
 			BimPractical3:
@@ -96,13 +97,14 @@ export default {
 				'The docta.me catalog lists gynecologists and obstetricians from state and private clinics — with prices, consultation languages and reviews.',
 			BimCtaButton: 'Find a gynecologist',
 		},
-		'ru': {
+		ru: {
 			BirthInMontenegroTitle:
 				'Роды в Черногории: государственный роддом или частная клиника',
 			BirthInMontenegroDescription:
 				'Где рожать в Черногории: роддома государственных больниц и частный вариант, ведение беременности, цены родов без страховки, доступность эпидуральной анестезии, документы для новорождённого и патронаж. Актуально на июль 2026 года.',
 
-			BimToc_prenatal: 'Ведение беременности: дом здравля или частный гинеколог',
+			BimToc_prenatal:
+				'Ведение беременности: дом здравля или частный гинеколог',
 			BimToc_where: 'Где рожают: роддома Черногории',
 			BimToc_costs: 'Сколько стоят роды: с книжицей и без',
 			BimToc_practical:
@@ -115,9 +117,8 @@ export default {
 			BimPrenatal2:
 				'Многие иностранки — и немало местных — наблюдаются платно у частных гинекологов: приём стоит 30–50 €, УЗИ обычно делают прямо на приёме. Анализы можно сдавать в частных лабораториях без направления, у многих есть готовые «панели для беременных». Частное ведение легко совмещать с государственной системой: наблюдаться у частного врача, а рожать в государственном роддоме.',
 			BimPrenatal3:
-				'Из опыта мам в русскоязычных чатах (2024–2025): привычной для стран СНГ жёсткой системы скринингов здесь нет — УЗИ делают почти на каждом визите (примерно раз в месяц), в 12 недель в частной клинике можно сделать двойной тест, а при показаниях направляют на амниоцентез. Если справки нужны для инстанций на родине, просите полный «izvještaj ljekara specijaliste» с печатью и расшифрованным сроком беременности — так документ заметно проще переводить и легализовать.',
-			BimPrenatal4:
-				'Найти гинеколога с нужным языком приёма можно в нашем',
+				'Частоту приёмов, УЗИ и скринингов определяют индивидуально с учётом срока, анамнеза, предыдущих беременностей и текущего риска, а не по расписанию из чатов. Выбор скрининга привязан к сроку, поэтому обсудите его заранее с квалифицированным акушером-гинекологом; инвазивное исследование, например амниоцентез, рассматривают только после оценки и информированного согласия. Для использования документов за границей просите полное подписанное заключение специалиста.',
+			BimPrenatal4: 'Найти гинеколога с нужным языком приёма можно в нашем',
 			BimPrenatal4Link: 'каталоге врачей-гинекологов',
 			BimPrenatal4End: '.',
 
@@ -139,7 +140,7 @@ export default {
 			BimWhere4End: '.',
 
 			BimCosts1:
-				'Для женщин с черногорской государственной страховкой роды в государственном роддоме бесплатны — как и ведение беременности, пребывание в стационаре и помощь новорождённому. Застрахованным в странах, у которых с Черногорией есть соглашение о социальном обеспечении (Сербия, Германия, Австрия, Турция и другие), роды покрывает домашний фонд — оформите документы по соглашению заранее. Реальный пример из чатов: гражданка Великобритании рожала в Черногории бесплатно по принципу взаимности.',
+				'Роды в государственном роддоме покрываются пациенткам, у которых на этот момент есть право по черногорской обязательной страховке. Не считайте, что двустороннее соглашение автоматически оплачивает плановые роды: важны страна, цель пребывания, предварительное разрешение, формы и выбранное учреждение. До поездки получите письменное подтверждение покрытия плановых родов у домашнего фонда и FZOCG; единичная история из чата не доказывает право.',
 			BimCosts2:
 				'Без страховки государственный роддом не откажет: роженицу примут в любом статусе, помощь окажут как неотложную, а счёт выставят потом — по официальным тарифам фонда (DRG). Ориентиры на 2025–2026 годы: естественные роды — около 850 €, кесарево сечение — около 1 500 €, при тяжёлых осложнениях — до 2 100 € и выше.',
 			BimCosts3: 'Официальные тарифы можно проверить в нашем',
@@ -147,10 +148,10 @@ export default {
 			BimCosts3End:
 				' — например, по кодам O60Z (естественные роды) и O01B (кесарево сечение).',
 			BimCosts4:
-				'Роды в частной клинике, по опыту пациенток из чатов (2024), обходятся примерно от 1 800 € за свой счёт. Местные добровольные страховки могут покрыть роды полностью, но почти всегда действует период ожидания около 9 месяцев с момента покупки полиса — оформлять его нужно ещё до беременности.',
+				'Цены частного роддома из рассказов пациенток — датированный ориентир; запросите актуальный письменный пакет с перечнем включённых услуг и правилами оплаты осложнений и помощи новорождённому. Страховка покрывает беременность или роды только при прямом включении этого риска и соблюдении права, ожидания, лимитов и предварительного согласования. Периоды ожидания различаются, а начавшаяся до покрытия беременность может быть исключена: просите письменное подтверждение, а не рассчитывайте на универсальные девять месяцев.',
 
 			BimPractical1:
-				'Эпидуральная анальгезия в KCCG официально доступна — у клиники есть отдельная процедура её применения, анестезиологические бригады дежурят круглосуточно. Но на практике роды в Черногории обезболивают редко: по данным на 2022 год — лишь около 6,5 % родов, а услуга «безболезненных родов» долгое время была платной (около 120 € по официальному решению). Обсудите обезболивание с врачом заранее и уточните актуальные условия при поступлении; в небольших роддомах анестезиолога в родзале может не быть.',
+				'Эпидуральная анальгезия может быть доступна в KCCG и некоторых роддомах, но её нельзя гарантировать для конкретных родов: решение зависит от медицинских показаний и противопоказаний, момента обращения, наличия команды и местной процедуры. Старые показатели использования и прежняя цена не подтверждают текущую доступность или стоимость. Обсудите варианты во время беременности и уточните порядок у роддома и анестезиологической службы; спросите об альтернативах, если эпидуральная анальгезия будет невозможна.',
 			BimPractical2:
 				'Партнёрские роды возможны: в KCCG действует официальная процедура присутствия сопровождающего на родах, частная Codra тоже допускает партнёра. Условия (обследования, курсы подготовки, оплату) уточняйте заранее в конкретном роддоме.',
 			BimPractical3:
@@ -187,7 +188,7 @@ export default {
 				'В каталоге docta.me — гинекологи и акушеры государственных и частных клиник: с ценами, языками приёма и отзывами.',
 			BimCtaButton: 'Найти гинеколога',
 		},
-		'sr': {
+		sr: {
 			BirthInMontenegroTitle:
 				'Porođaj u Crnoj Gori: državno porodilište ili privatna klinika',
 			BirthInMontenegroDescription:
@@ -206,9 +207,8 @@ export default {
 			BimPrenatal2:
 				'Mnoge strankinje — i dosta domaćih — trudnoću vode privatno: pregled košta 30–50 €, a ultrazvuk se obično radi odmah na pregledu. Analize možete uraditi u privatnim laboratorijama bez uputa; mnoge nude gotove „panele za trudnice“. Privatno vođenje lako se kombinuje sa državnim sistemom: kontrole kod privatnog ljekara, a porođaj u državnom porodilištu.',
 			BimPrenatal3:
-				'Iz iskustva majki u ruskojezičnim četovima (2024–2025): stroge šeme skrininga kakvu poznaju zemlje ZND ovdje nema — ultrazvuk se radi gotovo na svakom pregledu (otprilike jednom mjesečno), dabl test u 12. nedjelji dostupan je u privatnim klinikama, a amniocenteza se radi po indikacijama. Ako su vam potvrde potrebne za institucije u matičnoj zemlji, tražite kompletan „izvještaj ljekara specijaliste“ sa pečatom i ispisanom nedjeljom gestacije — takav dokument je mnogo lakše prevesti i legalizovati.',
-			BimPrenatal4:
-				'Ginekologa koji govori vaš jezik možete naći u našem',
+				'Pregledi, ultrazvuk i skrininzi treba da slijede individualni plan prema nedjelji trudnoće, anamnezi, prethodnim trudnoćama i riziku, a ne raspored iz četova. Izbor skrininga vremenski je osjetljiv i treba ga rano dogovoriti sa kvalifikovanim ginekologom; invazivni test poput amniocenteze razmatra se tek nakon procjene i informisanog pristanka. Za upotrebu dokumenata u inostranstvu tražite potpisan kompletan izvještaj specijaliste.',
+			BimPrenatal4: 'Ginekologa koji govori vaš jezik možete naći u našem',
 			BimPrenatal4Link: 'katalogu ginekologa',
 			BimPrenatal4End: '.',
 
@@ -230,7 +230,7 @@ export default {
 			BimWhere4End: '.',
 
 			BimCosts1:
-				'Za žene sa crnogorskim državnim osiguranjem porođaj u državnom porodilištu je besplatan — kao i vođenje trudnoće, boravak u bolnici i zbrinjavanje novorođenčeta. Osiguranicama iz zemalja koje sa Crnom Gorom imaju sporazum o socijalnom osiguranju (Srbija, Njemačka, Austrija, Turska i druge) porođaj pokriva matični fond — dokumentaciju po sporazumu pripremite prije termina. Primjer iz četova: državljanka Velike Britanije porodila se u Crnoj Gori besplatno po principu reciprociteta.',
+				'Porođaj u državnom porodilištu pokriven je pacijentkinjama koje u tom trenutku imaju pravo iz crnogorskog obaveznog osiguranja. Ne pretpostavljajte da bilateralni sporazum automatski pokriva planirani porođaj: važni su država, svrha boravka, prethodno odobrenje, obrasci i ustanova. Prije puta tražite pisanu potvrdu matičnog fonda i FZOCG; pojedinačna priča iz četa nije dokaz prava.',
 			BimCosts2:
 				'Bez osiguranja državno porodilište vas neće odbiti: porodilja se prima bez obzira na status, pomoć se pruža kao hitna, a račun se ispostavlja naknadno — po zvaničnim tarifama Fonda (DRG). Orijentiri za 2025–2026: vaginalni porođaj — oko 850 €, carski rez — oko 1.500 €, kod teških komplikacija — do 2.100 € i više.',
 			BimCosts3: 'Zvanične tarife možete provjeriti u našem',
@@ -238,10 +238,10 @@ export default {
 			BimCosts3End:
 				' — na primjer, pod šiframa O60Z (vaginalni porođaj) i O01B (carski rez).',
 			BimCosts4:
-				'Porođaj u privatnoj klinici, prema iskustvima pacijentkinja iz četova (2024), košta od otprilike 1.800 € o sopstvenom trošku. Lokalna dobrovoljna osiguranja mogu pokriti porođaj u cjelini, ali gotovo uvijek važi period čekanja od oko 9 mjeseci od kupovine polise — treba je ugovoriti prije trudnoće.',
+				'Privatne cijene iz iskustava pacijentkinja samo su datirani orijentiri; tražite aktuelni pisani paket sa uključenim uslugama i naplatom komplikacija i njege novorođenčeta. Osiguranje pokriva trudnoću ili porođaj samo ako je izričito uključeno i ispunjeni su uslovi prava, karence, limita i odobrenja. Karence se razlikuju, a ranije započeta trudnoća može biti isključena, zato tražite pisanu potvrdu.',
 
 			BimPractical1:
-				'Epiduralna analgezija u KCCG-u zvanično je dostupna — klinika ima posebnu proceduru za njenu primjenu, a anesteziološke ekipe dežuraju non-stop. U praksi se, međutim, porođaji u Crnoj Gori rijetko obezboljavaju: prema podacima za 2022. — svega oko 6,5 % porođaja, a usluga „bezbolnog porođaja“ dugo se naplaćivala posebno (oko 120 € po zvaničnoj odluci). Analgeziju dogovorite sa ljekarom unaprijed i provjerite aktuelne uslove pri prijemu; u malim porodilištima anesteziolog u porođajnoj sali ne mora biti dostupan.',
+				'Epiduralna analgezija može biti dostupna u KCCG-u i nekim porodilištima, ali nije zagarantovana za konkretan porođaj: zavisi od kliničke podobnosti, vremena, osoblja i procedure ustanove. Stari procenat primjene i ranija cijena ne potvrđuju današnju dostupnost ili trošak. Opcije i kontraindikacije dogovorite u trudnoći i provjerite postupak sa porodilištem i anestezijom; pitajte za alternative.',
 			BimPractical2:
 				'Porođaj uz partnera je moguć: u KCCG-u postoji zvanična procedura prisustva pratioca porođaju, a i privatna Codra prima partnere. Uslove (preglede, kurseve pripreme, plaćanje) provjerite unaprijed u konkretnom porodilištu.',
 			BimPractical3:
@@ -297,9 +297,8 @@ export default {
 			BimPrenatal2:
 				'Многе странкиње — и доста домаћих — трудноћу воде приватно: преглед кошта 30–50 €, а ултразвук се обично ради одмах на прегледу. Анализе можете урадити у приватним лабораторијама без упута; многе нуде готове „панеле за труднице“. Приватно вођење лако се комбинује са државним системом: контроле код приватног љекара, а порођај у државном породилишту.',
 			BimPrenatal3:
-				'Из искуства мајки у рускојезичним четовима (2024–2025): строге шеме скрининга какву познају земље ЗНД овдје нема — ултразвук се ради готово на сваком прегледу (отприлике једном мјесечно), дабл тест у 12. недјељи доступан је у приватним клиникама, а амниоцентеза се ради по индикацијама. Ако су вам потврде потребне за институције у матичној земљи, тражите комплетан „извјештај љекара специјалисте“ са печатом и исписаном недјељом гестације — такав документ је много лакше превести и легализовати.',
-			BimPrenatal4:
-				'Гинеколога који говори ваш језик можете наћи у нашем',
+				'Прегледи, ултразвук и скрининзи треба да слиједе индивидуални план према недјељи трудноће, анамнези, претходним трудноћама и ризику, а не распоред из четова. Избор скрининга временски је осјетљив и треба га рано договорити са квалификованим гинекологом; инвазивни тест попут амниоцентезе разматра се тек након процјене и информисаног пристанка. За употребу докумената у иностранству тражите потписан комплетан извјештај специјалисте.',
+			BimPrenatal4: 'Гинеколога који говори ваш језик можете наћи у нашем',
 			BimPrenatal4Link: 'каталогу гинеколога',
 			BimPrenatal4End: '.',
 
@@ -321,7 +320,7 @@ export default {
 			BimWhere4End: '.',
 
 			BimCosts1:
-				'За жене са црногорским државним осигурањем порођај у државном породилишту је бесплатан — као и вођење трудноће, боравак у болници и збрињавање новорођенчета. Осигураницама из земаља које са Црном Гором имају споразум о социјалном осигурању (Србија, Њемачка, Аустрија, Турска и друге) порођај покрива матични фонд — документацију по споразуму припремите прије термина. Примјер из четова: држављанка Велике Британије породила се у Црној Гори бесплатно по принципу реципроцитета.',
+				'Порођај у државном породилишту покривен је пацијенткињама које у том тренутку имају право из црногорског обавезног осигурања. Не претпостављајте да билатерални споразум аутоматски покрива планирани порођај: важни су држава, сврха боравка, претходно одобрење, обрасци и установа. Прије пута тражите писану потврду матичног фонда и FZOCG; појединачна прича из чета није доказ права.',
 			BimCosts2:
 				'Без осигурања државно породилиште вас неће одбити: породиља се прима без обзира на статус, помоћ се пружа као хитна, а рачун се испоставља накнадно — по званичним тарифама Фонда (DRG). Оријентири за 2025–2026: вагинални порођај — око 850 €, царски рез — око 1.500 €, код тешких компликација — до 2.100 € и више.',
 			BimCosts3: 'Званичне тарифе можете провјерити у нашем',
@@ -329,10 +328,10 @@ export default {
 			BimCosts3End:
 				' — на примјер, под шифрама O60Z (вагинални порођај) и O01B (царски рез).',
 			BimCosts4:
-				'Порођај у приватној клиници, према искуствима пацијенткиња из четова (2024), кошта од отприлике 1.800 € о сопственом трошку. Локална добровољна осигурања могу покрити порођај у цјелини, али готово увијек важи период чекања од око 9 мјесеци од куповине полисе — треба је уговорити прије трудноће.',
+				'Приватне цијене из искустава пацијенткиња само су датирани оријентири; тражите актуелни писани пакет са укљученим услугама и наплатом компликација и његе новорођенчета. Осигурање покрива трудноћу или порођај само ако је изричито укључено и испуњени су услови права, каренце, лимита и одобрења. Каренце се разликују, а раније започета трудноћа може бити искључена, зато тражите писану потврду.',
 
 			BimPractical1:
-				'Епидурална аналгезија у КЦЦГ-у званично је доступна — клиника има посебну процедуру за њену примјену, а анестезиолошке екипе дежурају нон-стоп. У пракси се, међутим, порођаји у Црној Гори ријетко обезбољавају: према подацима за 2022. — свега око 6,5 % порођаја, а услуга „безболног порођаја“ дуго се наплаћивала посебно (око 120 € по званичној одлуци). Аналгезију договорите са љекаром унапријед и провјерите актуелне услове при пријему; у малим породилиштима анестезиолог у порођајној сали не мора бити доступан.',
+				'Епидурална аналгезија може бити доступна у KCCG-у и неким породилиштима, али није загарантована за конкретан порођај: зависи од клиничке подобности, времена, особља и процедуре установе. Стари проценат примјене и ранија цијена не потврђују данашњу доступност или трошак. Опције и контраиндикације договорите у трудноћи и провјерите поступак са породилиштем и анестезијом; питајте за алтернативе.',
 			BimPractical2:
 				'Порођај уз партнера је могућ: у КЦЦГ-у постоји званична процедура присуства пратиоца порођају, а и приватна Codra прима партнере. Услове (прегледе, курсеве припреме, плаћање) провјерите унапријед у конкретном породилишту.',
 			BimPractical3:
@@ -369,7 +368,7 @@ export default {
 				'У каталогу docta.me су гинеколози и акушери државних и приватних клиника — са цијенама, језицима и рецензијама.',
 			BimCtaButton: 'Пронађите гинеколога',
 		},
-		'de': {
+		de: {
 			BirthInMontenegroTitle:
 				'Entbindung in Montenegro: staatliche Geburtsstation oder Privatklinik',
 			BirthInMontenegroDescription:
@@ -389,7 +388,7 @@ export default {
 			BimPrenatal2:
 				'Viele Ausländerinnen — und etliche Einheimische — lassen die Schwangerschaft privat betreuen: eine Konsultation kostet 30–50 €, der Ultraschall wird meist direkt beim Termin gemacht. Laboruntersuchungen sind in privaten Laboren ohne Überweisung möglich; viele bieten fertige „Schwangerschafts-Panels“ an. Private Vorsorge lässt sich gut mit dem staatlichen System kombinieren: Betreuung beim Privatarzt, Entbindung in der staatlichen Geburtsstation.',
 			BimPrenatal3:
-				'Aus den Erfahrungen von Müttern in Expat-Chats (2024–2025): Ein starres Screening-Schema wie in den GUS-Ländern gibt es hier nicht — Ultraschall wird fast bei jedem Termin gemacht (etwa monatlich), der Doppeltest in der 12. Woche ist in Privatkliniken verfügbar, eine Amniozentese wird bei Indikation veranlasst. Wenn Sie Bescheinigungen für Behörden in der Heimat brauchen, verlangen Sie einen vollständigen, gestempelten „izvještaj ljekara specijaliste“ mit ausgeschriebener Schwangerschaftswoche — das erleichtert Übersetzung und Legalisierung erheblich.',
+				'Vorsorge, Ultraschall und Screening sollten einem individuellen Plan nach Schwangerschaftswoche, Anamnese, früheren Schwangerschaften und Risiko folgen, nicht einem Chat-Zeitplan. Screeningoptionen sind zeitgebunden und früh mit einer qualifizierten geburtshilflichen Fachkraft zu besprechen; invasive Tests wie Amniozentese erst nach Prüfung und Einwilligung. Für Auslandsunterlagen einen vollständigen unterschriebenen Facharztbericht verlangen.',
 			BimPrenatal4:
 				'Eine Gynäkologin oder einen Gynäkologen mit Ihrer Sprache finden Sie in unserem',
 			BimPrenatal4Link: 'Katalog der Gynäkologen',
@@ -413,7 +412,7 @@ export default {
 			BimWhere4End: '.',
 
 			BimCosts1:
-				'Für Frauen mit montenegrinischer staatlicher Versicherung ist die Geburt in einer staatlichen Geburtsstation kostenlos — ebenso die Schwangerschaftsvorsorge, der Krankenhausaufenthalt und die Versorgung des Neugeborenen. Versicherte aus Ländern mit einem Sozialversicherungsabkommen mit Montenegro (Serbien, Deutschland, Österreich, Türkei u. a.) werden über ihren Heimatfonds abgerechnet — erledigen Sie die Abkommensformalitäten vor dem Termin. Ein reales Beispiel aus den Chats: Eine britische Staatsbürgerin entband in Montenegro kostenlos nach dem Gegenseitigkeitsprinzip.',
+				'Eine Geburt in einer staatlichen Station ist für Patientinnen gedeckt, die aktuell Anspruch aus der montenegrinischen Pflichtversicherung haben. Ein bilaterales Abkommen deckt geplante Geburt nicht automatisch: Land, Aufenthaltszweck, Vorabgenehmigung, Formulare und Einrichtung sind entscheidend. Vor der Reise schriftliche Bestätigung von Heimatfonds und FZOCG einholen; ein einzelner Forenbericht beweist keinen Anspruch.',
 			BimCosts2:
 				'Ohne Versicherung weist die staatliche Geburtsstation niemanden ab: Eine Gebärende wird unabhängig vom Status aufgenommen, die Hilfe gilt als Notfallversorgung, und die Rechnung kommt danach — nach den offiziellen Fondstarifen (DRG). Richtwerte für 2025–2026: vaginale Geburt — etwa 850 €, Kaiserschnitt — etwa 1.500 €, bei schweren Komplikationen bis 2.100 € und mehr.',
 			BimCosts3: 'Die offiziellen Tarife können Sie in unserem',
@@ -421,10 +420,10 @@ export default {
 			BimCosts3End:
 				' prüfen — zum Beispiel unter den Codes O60Z (vaginale Geburt) und O01B (Kaiserschnitt).',
 			BimCosts4:
-				'Eine Geburt in der Privatklinik kostet nach Patientenberichten aus den Chats (2024) ab etwa 1.800 € aus eigener Tasche. Lokale freiwillige Versicherungen können die Geburt vollständig übernehmen, haben aber fast immer eine Wartezeit von rund 9 Monaten ab Abschluss der Police — sie muss also vor der Schwangerschaft abgeschlossen werden.',
+				'Von Patientinnen genannte Privatpreise sind datierte Richtwerte; verlangen Sie ein aktuelles schriftliches Paket mit Leistungen und Kosten für Komplikationen und Neugeborenenversorgung. Versicherung deckt Schwangerschaft oder Geburt nur bei ausdrücklichem Einschluss und erfüllten Anspruchs-, Wartezeit-, Limit- und Genehmigungsregeln. Wartezeiten variieren und eine bereits begonnene Schwangerschaft kann ausgeschlossen sein; schriftlich bestätigen lassen.',
 
 			BimPractical1:
-				'Die Epiduralanalgesie (PDA) ist am KCCG offiziell verfügbar — die Klinik hat dafür eine eigene Prozedur, Anästhesie-Teams sind rund um die Uhr im Dienst. In der Praxis wird bei Geburten in Montenegro jedoch selten eine Schmerzlinderung eingesetzt: Stand 2022 nur bei etwa 6,5 % der Geburten, und die „schmerzarme Geburt“ wurde lange separat berechnet (etwa 120 € laut offiziellem Beschluss). Besprechen Sie die Schmerzlinderung vorab mit Ihrem Arzt und klären Sie die aktuellen Bedingungen bei der Aufnahme; in kleinen Geburtsabteilungen ist nicht immer ein Anästhesist im Kreißsaal.',
+				'Epiduralanalgesie kann am KCCG und in manchen Geburtsstationen verfügbar sein, ist für eine konkrete Geburt aber nicht garantiert und hängt von medizinischer Eignung, Zeitpunkt, Personal und Hausverfahren ab. Alte Nutzungsraten und frühere Gebühren belegen weder heutigen Zugang noch Preis. Optionen und Gegenanzeigen in der Schwangerschaft besprechen und den Ablauf mit Geburtsstation und Anästhesie klären; nach Alternativen fragen.',
 			BimPractical2:
 				'Partnergeburten sind möglich: Am KCCG gibt es eine offizielle Prozedur für die Anwesenheit einer Begleitperson, auch die private Codra lässt Partner zu. Die Bedingungen (Untersuchungen, Vorbereitungskurse, Kosten) klären Sie vorab mit der jeweiligen Geburtsstation.',
 			BimPractical3:
@@ -456,12 +455,13 @@ export default {
 			BimSourcesCatalogLink: 'Ärztekatalog',
 			BimSourcesCatalogEnd: '.',
 
-			BimCtaTitle: 'Suchen Sie eine Gynäkologin oder einen Gynäkologen in Montenegro?',
+			BimCtaTitle:
+				'Suchen Sie eine Gynäkologin oder einen Gynäkologen in Montenegro?',
 			BimCtaText:
 				'Der docta.me-Katalog listet Gynäkologen und Geburtshelfer staatlicher und privater Kliniken — mit Preisen, Sprachen und Bewertungen.',
 			BimCtaButton: 'Gynäkologen finden',
 		},
-		'tr': {
+		tr: {
 			BirthInMontenegroTitle:
 				'Karadağ’da Doğum: Devlet Doğumhanesi mi, Özel Klinik mi',
 			BirthInMontenegroDescription:
@@ -480,7 +480,7 @@ export default {
 			BimPrenatal2:
 				'Birçok yabancı kadın — ve az olmayan sayıda yerli — gebeliği özel jinekologlarda izletir: muayene 30–50 €, ultrason genellikle muayene sırasında yapılır. Tahliller özel laboratuvarlarda sevk olmadan yapılabilir; birçoğunda hazır “gebe panelleri” vardır. Özel takip devlet sistemiyle kolayca birleştirilir: özel doktorda takip, devlet doğumhanesinde doğum.',
 			BimPrenatal3:
-				'Göçmen sohbetlerindeki annelerin deneyiminden (2024–2025): BDT ülkelerinden alışılan katı tarama şeması burada yok — ultrason hemen her muayenede yapılır (yaklaşık ayda bir), 12. haftada ikili test özel kliniklerde mevcuttur, endikasyon varsa amniyosenteze yönlendirilir. Kendi ülkenizdeki kurumlar için belge gerekiyorsa, gebelik haftası açıkça yazılmış, kaşeli eksiksiz bir “izvještaj ljekara specijaliste” isteyin — çeviri ve tasdik böylece çok kolaylaşır.',
+				'Gebelik görüşmeleri, ultrason ve tarama; gebelik haftası, öykü, önceki gebelik ve riske göre kişisel planı izlemeli, sohbet takvimine dayanmamalıdır. Tarama seçenekleri zamana duyarlıdır ve nitelikli kadın doğum hekimiyle erken konuşulmalıdır; amniyosentez gibi girişimsel testler yalnız değerlendirme ve bilgilendirilmiş onamdan sonra düşünülür. Yurt dışında kullanılacak belge için imzalı tam uzman raporu isteyin.',
 			BimPrenatal4: 'Dilinizi konuşan bir jinekologu',
 			BimPrenatal4Link: 'jinekolog kataloğumuzda',
 			BimPrenatal4End: ' bulabilirsiniz.',
@@ -503,7 +503,7 @@ export default {
 			BimWhere4End: ' toplanmıştır.',
 
 			BimCosts1:
-				'Karadağ devlet sigortası olan kadınlar için devlet doğumhanesinde doğum ücretsizdir — gebelik takibi, hastane yatışı ve yenidoğan bakımı da öyle. Karadağ ile sosyal güvenlik anlaşması olan ülkelerde (Sırbistan, Almanya, Avusturya, Türkiye ve diğerleri) sigortalı kadınların doğumunu kendi ülkelerinin fonu karşılar — anlaşma evraklarını doğum tarihinden önce hazırlayın. Sohbetlerden gerçek bir örnek: bir Birleşik Krallık vatandaşı, karşılıklılık ilkesi uyarınca Karadağ’da ücretsiz doğum yaptı.',
+				'Devlet doğumhanesinde doğum, o sırada Karadağ zorunlu sigortası kapsamında hak sahibi olan hastalar için karşılanır. İkili anlaşmanın planlı doğumu otomatik kapsadığını varsaymayın: ülke, kalış amacı, ön onay, formlar ve kurum önemlidir. Yolculuktan önce kendi fonunuzdan ve FZOCG kurumundan yazılı onay alın; tek forum hikâyesi hak kanıtı değildir.',
 			BimCosts2:
 				'Sigortanız yok mu? Devlet doğumhanesi sizi geri çevirmez: doğum yapan kadın statüsüne bakılmaksızın kabul edilir, yardım acil bakım olarak verilir ve fatura sonradan resmi fon tarifeleri (DRG) üzerinden kesilir. 2025–2026 için yaklaşık rakamlar: normal doğum — yaklaşık 850 €, sezaryen — yaklaşık 1.500 €, ağır komplikasyonlarda 2.100 € ve üzeri.',
 			BimCosts3: 'Resmi tarifeleri',
@@ -511,10 +511,10 @@ export default {
 			BimCosts3End:
 				' kontrol edebilirsiniz — örneğin O60Z (normal doğum) ve O01B (sezaryen) kodlarıyla.',
 			BimCosts4:
-				'Özel klinikte doğum, sohbetlerdeki hasta deneyimlerine göre (2024) cepten yaklaşık 1.800 €’dan başlar. Yerel gönüllü sigortalar doğumu tamamen karşılayabilir, ancak neredeyse her zaman poliçenin satın alınmasından itibaren yaklaşık 9 aylık bekleme süresi vardır — poliçe gebelikten önce yaptırılmalıdır.',
+				'Hasta bildirimlerindeki özel doğum fiyatları tarihli göstergedir; dahil hizmetleri ve komplikasyon ile yenidoğan bakımının ücretini gösteren güncel yazılı paket isteyin. Sigorta gebelik veya doğumu yalnız açıkça içeriyorsa ve hak, bekleme, limit ve ön onay koşulları karşılanırsa öder. Bekleme değişir ve kapsam öncesi başlayan gebelik dışlanabilir; yazılı doğrulama alın.',
 
 			BimPractical1:
-				'KCCG’de epidural analjezi resmen mevcuttur — kliniğin bunun için ayrı bir prosedürü vardır ve anestezi ekipleri 7/24 nöbettedir. Ancak uygulamada Karadağ’da doğum ağrısı nadiren dindirilmektedir: 2022 verilerine göre doğumların yalnızca yaklaşık %6,5’inde; “ağrısız doğum” hizmeti uzun süre ayrıca ücretlendirildi (resmi karara göre yaklaşık 120 €). Ağrı kesmeyi doktorunuzla önceden konuşun ve kabulde güncel koşulları teyit edin; küçük doğumhanelerde doğumhanede anestezist bulunmayabilir.',
+				'Epidural analjezi KCCG ve bazı doğumhanelerde bulunabilir, ancak belirli doğum için garanti değildir; tıbbi uygunluk, zamanlama, personel ve kurum prosedürüne bağlıdır. Eski kullanım oranları ve önceki ücret güncel erişim veya fiyatı kanıtlamaz. Seçenek ve kontrendikasyonları gebelikte konuşun, doğumhane ve anestezi ekibiyle süreci doğrulayın; alternatifleri sorun.',
 			BimPractical2:
 				'Eşli doğum mümkündür: KCCG’de doğuma refakatçi katılımı için resmi bir prosedür vardır; özel Codra da eş kabul eder. Koşulları (tetkikler, hazırlık kursları, ücret) ilgili doğumhaneyle önceden netleştirin.',
 			BimPractical3:

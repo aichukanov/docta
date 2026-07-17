@@ -124,8 +124,8 @@ watchEffect(() => {
 			description: t('ChildHealthcareDescription'),
 			image: articleImage,
 			datePublished: '2026-07-16',
-			dateModified: '2026-07-16',
-			lastReviewed: '2026-07-16',
+			dateModified: '2026-07-17',
+			lastReviewed: '2026-07-17',
 		}),
 		buildBreadcrumbsSchema(pageUrl.value, [
 			{

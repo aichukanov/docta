@@ -100,10 +100,19 @@ export function useAnalytics() {
 	const initMixpanel = () => {
 		if (!import.meta.client) return;
 		if (!config.public.mixpanelToken || !isConsentGiven.value) return;
+		if (mixpanelInstance) {
+			mixpanelInstance.opt_in_tracking();
+			return;
+		}
 
 		if (!mixpanelLoadPromise) {
 			mixpanelLoadPromise = import('mixpanel-browser').then(
 				({ default: mixpanel }) => {
+					if (!isConsentGiven.value) {
+						mixpanelLoadPromise = null;
+						return;
+					}
+
 					mixpanel.init(config.public.mixpanelToken, {
 						debug: import.meta.dev,
 						track_pageview: true,
@@ -116,7 +125,12 @@ export function useAnalytics() {
 					// track_pageview: true фиксирует только полную загрузку страницы —
 					// клиентские переходы трекаем сами, заодно обновляя super properties
 					router.afterEach((to, from) => {
-						if (!from.matched.length || to.fullPath === from.fullPath) return;
+						if (
+							!isConsentGiven.value ||
+							!from.matched.length ||
+							to.fullPath === from.fullPath
+						)
+							return;
 						registerSuperProperties(mixpanel, to.name);
 						mixpanel.track_pageview();
 					});
@@ -157,12 +171,25 @@ export function useAnalytics() {
 	};
 
 	const initGTag = () => {
+		if (!import.meta.client) return;
 		gtag('consent', 'update', {
 			ad_user_data: 'granted',
 			ad_personalization: 'granted',
 			ad_storage: 'granted',
 			analytics_storage: 'granted',
 		});
+	};
+
+	const disableAnalytics = () => {
+		if (!import.meta.client) return;
+		gtag('consent', 'update', {
+			ad_user_data: 'denied',
+			ad_personalization: 'denied',
+			ad_storage: 'denied',
+			analytics_storage: 'denied',
+		});
+
+		mixpanelInstance?.opt_out_tracking({ delete_user: false });
 	};
 
 	// События не отправляются без согласия; если SDK ещё грузится после
@@ -214,6 +241,7 @@ export function useAnalytics() {
 		initMixpanel,
 		initCloudflare,
 		initGTag,
+		disableAnalytics,
 		trackEvent,
 		identifyUser,
 		resetUser,

@@ -6,12 +6,14 @@ const { isModalActive, isConsentGiven, giveConsent, declineConsent } =
 const cookieData = [
 	{
 		id: 'website',
+		required: true,
 		name: 'Website & API',
 		description: 'These cookies are necessary to make our site work',
 		targetCookieIds: ['ncc_c'],
 	},
 	{
 		id: 'analytics_mixpanel',
+		required: false,
 		name: 'Mixpanel Analytics',
 		description:
 			'This cookie helps us understand how visitors interact with our website',
@@ -23,6 +25,7 @@ const cookieData = [
 	},
 	{
 		id: 'analytics_gtm',
+		required: false,
 		name: 'Google Tag Manager',
 		description: 'This cookie tracks site usage behvaiour',
 		targetCookieIds: ['_ga', '_ga_<container-id>', '_gat', '_gid'],
@@ -34,6 +37,7 @@ const cookieData = [
 	},
 	{
 		id: 'cloudflare',
+		required: true,
 		name: 'Cloudflare Analytics',
 		description:
 			'These cookies are used by Cloudflare to provide security and performance analytics',
@@ -87,7 +91,21 @@ function closeModal() {
 								}}</p>
 							</div>
 							<div class="cookie-category__status">
-								<span class="cookie-status-badge">{{ t('Required') }}</span>
+								<span
+									class="cookie-status-badge"
+									:class="{
+										'cookie-status-badge--disabled':
+											!category.required && !isConsentGiven,
+									}"
+								>
+									{{
+										category.required
+											? t('Required')
+											: isConsentGiven
+												? t('Enabled')
+												: t('Disabled')
+									}}
+								</span>
 							</div>
 						</div>
 
@@ -268,6 +286,12 @@ function closeModal() {
 	text-transform: uppercase;
 }
 
+.cookie-status-badge--disabled {
+	background: var(--color-bg-tertiary);
+	border-color: var(--color-border-primary);
+	color: var(--color-text-muted);
+}
+
 .cookie-category__details {
 	display: flex;
 	flex-direction: column;
@@ -393,60 +417,72 @@ function closeModal() {
 {
 	"en": {
 		"CookieSettings": "Cookie Information",
-		"CookieInfoDescription": "We use cookies to improve your experience and analyze website traffic. All cookies are necessary for proper site functionality.",
+		"CookieInfoDescription": "Necessary cookies are always active. Analytics cookies are optional and are only used with your consent.",
 		"CookiesUsed": "Cookies used",
 		"MoreInfo": "More information",
 		"Required": "Required",
+		"Enabled": "Enabled",
+		"Disabled": "Disabled",
 		"Accept": "Accept",
 		"Revoke": "Revoke consent",
 		"Cancel": "Cancel"
 	},
 	"ru": {
 		"CookieSettings": "Информация о cookies",
-		"CookieInfoDescription": "Мы используем файлы cookie для улучшения вашего опыта и анализа трафика сайта. Все файлы cookie необходимы для корректной работы сайта.",
+		"CookieInfoDescription": "Необходимые cookies всегда активны. Аналитические cookies необязательны и используются только с вашего согласия.",
 		"CookiesUsed": "Используемые cookies",
 		"MoreInfo": "Подробнее",
 		"Required": "Обязательно",
+		"Enabled": "Включено",
+		"Disabled": "Выключено",
 		"Accept": "Принять",
 		"Revoke": "Отозвать согласие",
 		"Cancel": "Отмена"
 	},
 	"de": {
 		"CookieSettings": "Cookie-Informationen",
-		"CookieInfoDescription": "Wir verwenden Cookies, um Ihr Erlebnis zu verbessern und den Website-Traffic zu analysieren. Alle Cookies sind für die ordnungsgemäße Funktionalität der Website erforderlich.",
+		"CookieInfoDescription": "Notwendige Cookies sind immer aktiv. Analyse-Cookies sind optional und werden nur mit Ihrer Einwilligung verwendet.",
 		"CookiesUsed": "Verwendete Cookies",
 		"MoreInfo": "Weitere Informationen",
 		"Required": "Erforderlich",
+		"Enabled": "Aktiviert",
+		"Disabled": "Deaktiviert",
 		"Accept": "Akzeptieren",
 		"Revoke": "Einwilligung widerrufen",
 		"Cancel": "Abbrechen"
 	},
 	"tr": {
 		"CookieSettings": "Çerez Bilgileri",
-		"CookieInfoDescription": "Deneyiminizi geliştirmek ve website trafiğini analiz etmek için çerezler kullanıyoruz. Tüm çerezler sitenin düzgün çalışması için gereklidir.",
+		"CookieInfoDescription": "Gerekli çerezler her zaman etkindir. Analiz çerezleri isteğe bağlıdır ve yalnızca izninizle kullanılır.",
 		"CookiesUsed": "Kullanılan çerezler",
 		"MoreInfo": "Daha fazla bilgi",
 		"Required": "Gerekli",
+		"Enabled": "Etkin",
+		"Disabled": "Devre dışı",
 		"Accept": "Kabul Et",
 		"Revoke": "Onayı geri çek",
 		"Cancel": "İptal"
 	},
 	"sr": {
 		"CookieSettings": "Informacije o kolačićima",
-		"CookieInfoDescription": "Koristimo kolačiće da poboljšamo vaše iskustvo i analiziramo saobraćaj na sajtu. Svi kolačići su potrebni za ispravno funkcionisanje sajta.",
+		"CookieInfoDescription": "Neophodni kolačići su uvek aktivni. Analitički kolačići su opcioni i koriste se samo uz vašu saglasnost.",
 		"CookiesUsed": "Korišćeni kolačići",
 		"MoreInfo": "Više informacija",
 		"Required": "Obavezno",
+		"Enabled": "Uključeno",
+		"Disabled": "Isključeno",
 		"Accept": "Prihvati",
 		"Revoke": "Povuci saglasnost",
 		"Cancel": "Otkaži"
 	},
 	"sr-cyrl": {
 		"CookieSettings": "Информације о колачићима",
-		"CookieInfoDescription": "Користимо колачиће да побољшамо ваше искуство и анализирамо саобраћај на сајту. Сви колачићи су потребни за исправно функционисање сајта.",
+		"CookieInfoDescription": "Неопходни колачићи су увек активни. Аналитички колачићи су опциони и користе се само уз вашу сагласност.",
 		"CookiesUsed": "Коришћени колачићи",
 		"MoreInfo": "Више информација",
 		"Required": "Обавезно",
+		"Enabled": "Укључено",
+		"Disabled": "Искључено",
 		"Accept": "Прихвати",
 		"Revoke": "Повуци сагласност",
 		"Cancel": "Откажи"

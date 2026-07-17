@@ -1,16 +1,16 @@
 export default {
 	messages: {
-		'en': {
+		en: {
 			Articles: 'Articles',
 			ArticlesDescription:
 				'Useful articles about healthcare in Montenegro: Russian-speaking doctors, clinics with multilingual support, and more.',
 			RussianSpeakingDoctorsTitle: 'Russian-speaking doctors in Montenegro',
 			RussianSpeakingDoctorsDescription:
-				'A complete list of doctors in Montenegro who speak Russian, grouped by medical specialty. Find a Russian-speaking specialist in your city.',
+				'A curated directory of listed doctors in Montenegro who report speaking Russian, grouped by specialty. Coverage is not complete; confirm current practice, language level, licence and appointment details directly.',
 			ClinicsWithLanguageSupportTitle:
 				'Clinics with multilingual support in Montenegro',
 			ClinicsWithLanguageSupportDescription:
-				'A complete list of clinics in Montenegro offering consultations in different languages. Find a clinic with support in your native language.',
+				'A curated directory of listed clinics that report consultations in different languages. Coverage and language availability are not guaranteed; confirm the specific clinician, language and appointment directly with the clinic.',
 			MentalHealthTitle:
 				'Psychologists, psychiatrists and antidepressants in Montenegro',
 			MentalHealthDescription:
@@ -26,11 +26,11 @@ export default {
 			PharmaciesTitle:
 				'Pharmacies and medications in Montenegro: prescriptions, analogs, what to bring',
 			PharmaciesDescription:
-				'How pharmacies work in Montenegro: the state Montefarm chain and private Benu and Tea Medica, on-duty pharmacies, e-prescriptions and why foreign prescriptions are not accepted, free medications from the Fund list, and how to find local analogs of your usual drugs. Current as of July 2026.',
+				'How pharmacies work in Montenegro: pharmacy networks and duty services, e-prescriptions, why a foreign prescription does not guarantee dispensing, Fund-covered medicines, and how to search the local medicine registry by product or active ingredient. Reviewed July 2026.',
 			LabTestsArticleTitle:
-				'Lab Tests and Check-ups in Montenegro: Labs, Prices, No Referral Needed',
+				'Lab Tests and Check-ups in Montenegro: Labs, Prices and Referrals',
 			LabTestsArticleDescription:
-				'Where to get tested in Montenegro: private labs with no referral and their prices, the free route via your izabrani doktor, MRI and CT waiting lists, check-up packages and how to read the results. Updated July 2026.',
+				'Routine private tests, price guidance, when a clinician order may be needed, the state route, CT and MRI, preventive screening and safe result interpretation. Reviewed July 2026.',
 			BirthInMontenegroTitle:
 				'Giving Birth in Montenegro: State Maternity Ward or Private Clinic',
 			BirthInMontenegroDescription:
@@ -58,19 +58,18 @@ export default {
 				'In the catalog you can filter clinics by city and language — with a map.',
 			CtaClinicsButton: 'Clinic catalog',
 		},
-		'ru': {
+		ru: {
 			Articles: 'Статьи',
 			ArticlesDescription:
 				'Полезные статьи о здравоохранении в Черногории: русскоязычные врачи, клиники с языковой поддержкой и многое другое.',
 			RussianSpeakingDoctorsTitle: 'Русскоязычные врачи в Черногории',
 			RussianSpeakingDoctorsDescription:
-				'Полный список врачей в Черногории, владеющих русским языком, сгруппированный по специальностям. Найдите русскоязычного специалиста в своем городе.',
+				'Редакционный каталог добавленных врачей в Черногории, которые указывают русский язык, с группировкой по специальностям. Каталог не претендует на полноту: уточняйте место работы, уровень языка, лицензию и запись напрямую.',
 			ClinicsWithLanguageSupportTitle:
 				'Клиники с языковой поддержкой в Черногории',
 			ClinicsWithLanguageSupportDescription:
-				'Полный список клиник в Черногории с консультациями на разных языках. Найдите клинику с поддержкой на вашем родном языке.',
-			MentalHealthTitle:
-				'Психологи, психиатры и антидепрессанты в Черногории',
+				'Редакционный каталог добавленных клиник, которые сообщают о консультациях на разных языках. Полнота и доступность языка не гарантируются: подтверждайте конкретного врача, язык и запись непосредственно в клинике.',
+			MentalHealthTitle: 'Психологи, психиатры и антидепрессанты в Черногории',
 			MentalHealthDescription:
 				'Как устроена помощь в сфере ментального здоровья в Черногории: государственные центры ментального здоровья и психиатрические больницы, поиск терапевта на своём языке, продолжение медикаментозного лечения после переезда, цены с книжицей и без, куда обращаться в кризисной ситуации.',
 			TouristHealthcareTitle:
@@ -84,17 +83,16 @@ export default {
 			PharmaciesTitle:
 				'Аптеки и лекарства в Черногории: рецепты, аналоги, что взять с собой',
 			PharmaciesDescription:
-				'Как работают аптеки в Черногории: государственная сеть Montefarm и частные Benu и Tea Medica, дежурные аптеки, электронные рецепты и почему иностранный рецепт не примут, бесплатные лекарства по списку Фонда и как искать аналоги привычных препаратов. Актуально на июль 2026 года.',
+				'Как работают аптеки в Черногории: аптечные сети и дежурства, электронные рецепты, почему иностранный рецепт не гарантирует отпуск, лекарства с покрытием Фонда и поиск по собственному реестру лекарств по названию или действующему веществу. Проверено в июле 2026 года.',
 			LabTestsArticleTitle:
-				'Анализы и чекапы в Черногории: лаборатории, цены, без направления',
+				'Анализы и чекапы в Черногории: лаборатории, цены и направления',
 			LabTestsArticleDescription:
-				'Где сдать анализы в Черногории: частные лаборатории без направления и цены, бесплатный путь через izabrani doktor, очереди на МРТ и КТ, чекап-пакеты и как читать результаты. Актуально на июль 2026 года.',
+				'Рутинные частные анализы, ориентиры цен, когда нужно назначение врача, бесплатный маршрут, КТ и МРТ, профилактический скрининг и безопасный разбор результатов. Проверено в июле 2026 года.',
 			BirthInMontenegroTitle:
 				'Роды в Черногории: государственный роддом или частная клиника',
 			BirthInMontenegroDescription:
 				'Где рожать в Черногории: роддома государственных больниц и частный вариант, ведение беременности, цены родов без страховки, доступность эпидуральной анестезии, документы для новорождённого и патронаж. Актуально на июль 2026 года.',
-			ResidenceInsuranceTitle:
-				'Медицинская страховка для ВНЖ в Черногории',
+			ResidenceInsuranceTitle: 'Медицинская страховка для ВНЖ в Черногории',
 			ResidenceInsuranceDescription:
 				'Зачем при подаче на боравак нужна медицинская страховка, на какой срок её требуют в разных городах — от 40 дней в Подгорице до 2 лет в Будве, — цены Sava, Lovćen и Uniqa, что полис реально покрывает и кому вместо него положена государственная страховка. Актуально на июль 2026.',
 			ChildHealthcareTitle:
@@ -116,17 +114,17 @@ export default {
 				'В каталоге можно фильтровать клиники по городу и языку — с картой.',
 			CtaClinicsButton: 'Каталог клиник',
 		},
-		'sr': {
+		sr: {
 			Articles: 'Članci',
 			ArticlesDescription:
 				'Korisni članci o zdravstvenoj zaštiti u Crnoj Gori: doktori koji govore ruski, klinike sa višejezičnom podrškom i još mnogo toga.',
 			RussianSpeakingDoctorsTitle: 'Doktori koji govore ruski u Crnoj Gori',
 			RussianSpeakingDoctorsDescription:
-				'Kompletan spisak doktora u Crnoj Gori koji govore ruski jezik, grupisan po medicinskim specijalnostima. Pronađite stručnjaka koji govori ruski u vašem gradu.',
+				'Uređeni katalog unesenih doktora u Crnoj Gori koji navode ruski jezik, grupisan po specijalnosti. Katalog nije potpun; direktno provjerite mjesto rada, nivo jezika, licencu i termin.',
 			ClinicsWithLanguageSupportTitle:
 				'Klinike sa višejezičnom podrškom u Crnoj Gori',
 			ClinicsWithLanguageSupportDescription:
-				'Kompletan spisak klinika u Crnoj Gori koje nude konsultacije na različitim jezicima. Pronađite kliniku sa podrškom na vašem maternjem jeziku.',
+				'Uređeni katalog unesenih klinika koje navode konsultacije na različitim jezicima. Potpunost i jezička dostupnost nijesu garantovane; provjerite konkretnog doktora, jezik i termin direktno sa klinikom.',
 			MentalHealthTitle: 'Psiholozi, psihijatri i antidepresivi u Crnoj Gori',
 			MentalHealthDescription:
 				'Kako funkcioniše zaštita mentalnog zdravlja u Crnoj Gori: državni centri za mentalno zdravlje i psihijatrijske bolnice, kako naći terapeuta koji govori vaš jezik, nastavak terapije ljekovima nakon preseljenja, cijene sa zdravstvenom knjižicom i bez nje, kome se obratiti u kriznoj situaciji.',
@@ -141,17 +139,16 @@ export default {
 			PharmaciesTitle:
 				'Apoteke i ljekovi u Crnoj Gori: recepti, analozi, šta ponijeti sa sobom',
 			PharmaciesDescription:
-				'Kako rade apoteke u Crnoj Gori: državni lanac Montefarm i privatni Benu i Tea Medica, dežurne apoteke, elektronski recepti i zašto strani recept neće biti prihvaćen, besplatni ljekovi sa liste Fonda i kako tražiti analoge uobičajenih preparata. Važi za jul 2026.',
+				'Kako rade apoteke u Crnoj Gori: mreže i dežurstva, elektronski recepti, zašto strani recept ne garantuje izdavanje, ljekovi koje pokriva Fond i pretraga našeg registra po nazivu ili aktivnoj supstanci. Provjereno u julu 2026.',
 			LabTestsArticleTitle:
-				'Analize i check-up u Crnoj Gori: laboratorije, cijene, bez uputa',
+				'Analize i check-up u Crnoj Gori: laboratorije, cijene i uputi',
 			LabTestsArticleDescription:
-				'Gdje uraditi analize u Crnoj Gori: privatne laboratorije bez uputa i cijene, besplatan put preko izabranog doktora, liste čekanja za MR i CT, check-up paketi i kako čitati rezultate. Ažurirano: jul 2026.',
+				'Rutinske privatne analize, cijene, kada je potreban nalog ljekara, državni put, CT i MR, preventivni skrining i bezbjedno tumačenje. Provjereno u julu 2026.',
 			BirthInMontenegroTitle:
 				'Porođaj u Crnoj Gori: državno porodilište ili privatna klinika',
 			BirthInMontenegroDescription:
 				'Gdje se porađa u Crnoj Gori: porodilišta državnih bolnica i privatna opcija, vođenje trudnoće, cijena porođaja bez osiguranja, dostupnost epiduralne analgezije, dokumenti za novorođenče i patronaža. Važi za jul 2026.',
-			ResidenceInsuranceTitle:
-				'Zdravstveno osiguranje za boravak u Crnoj Gori',
+			ResidenceInsuranceTitle: 'Zdravstveno osiguranje za boravak u Crnoj Gori',
 			ResidenceInsuranceDescription:
 				'Zašto je za zahtjev za boravak potrebno zdravstveno osiguranje, na koji period polisu traže u različitim gradovima — od 40 dana u Podgorici do 2 godine u Budvi — cijene kod Sava, Lovćen i Uniqa osiguranja, šta polisa stvarno pokriva i ko umjesto nje dobija državno osiguranje. Ažurirano: jul 2026.',
 			ChildHealthcareTitle:
@@ -173,17 +170,17 @@ export default {
 				'U katalogu možete filtrirati klinike po gradu i jeziku — sa mapom.',
 			CtaClinicsButton: 'Katalog klinika',
 		},
-		'de': {
+		de: {
 			Articles: 'Artikel',
 			ArticlesDescription:
 				'Nützliche Artikel über das Gesundheitswesen in Montenegro: russischsprachige Ärzte, Kliniken mit mehrsprachiger Unterstützung und mehr.',
 			RussianSpeakingDoctorsTitle: 'Russischsprachige Ärzte in Montenegro',
 			RussianSpeakingDoctorsDescription:
-				'Eine vollständige Liste der russischsprachigen Ärzte in Montenegro, gruppiert nach medizinischen Fachrichtungen. Finden Sie einen russischsprachigen Spezialisten in Ihrer Stadt.',
+				'Ein redaktionell gepflegtes Verzeichnis eingetragener Ärzte in Montenegro, die Russisch angeben, nach Fachgebiet. Es ist nicht vollständig; Praxis, Sprachniveau, Zulassung und Termin direkt bestätigen.',
 			ClinicsWithLanguageSupportTitle:
 				'Kliniken mit mehrsprachiger Unterstützung in Montenegro',
 			ClinicsWithLanguageSupportDescription:
-				'Eine vollständige Liste der Kliniken in Montenegro, die Beratungen in verschiedenen Sprachen anbieten. Finden Sie eine Klinik mit Unterstützung in Ihrer Muttersprache.',
+				'Ein redaktionell gepflegtes Verzeichnis eingetragener Kliniken, die Beratungen in verschiedenen Sprachen angeben. Vollständigkeit und Sprachverfügbarkeit sind nicht garantiert; konkreten Arzt, Sprache und Termin direkt bestätigen.',
 			MentalHealthTitle:
 				'Psychologen, Psychiater und Antidepressiva in Montenegro',
 			MentalHealthDescription:
@@ -199,11 +196,11 @@ export default {
 			PharmaciesTitle:
 				'Apotheken und Medikamente in Montenegro: Rezepte, Generika, was man mitnehmen sollte',
 			PharmaciesDescription:
-				'So funktionieren Apotheken in Montenegro: die staatliche Kette Montefarm und die privaten Benu und Tea Medica, Notdienst-Apotheken, E-Rezepte und warum ausländische Rezepte nicht akzeptiert werden, kostenlose Medikamente von der Fondsliste und wie man lokale Pendants gewohnter Präparate findet. Stand: Juli 2026.',
+				'Apotheken in Montenegro: Netze und Bereitschaft, E-Rezepte, warum ein ausländisches Rezept keine Abgabe garantiert, vom Fonds gedeckte Arzneimittel und Suche im eigenen Register nach Produkt oder Wirkstoff. Geprüft im Juli 2026.',
 			LabTestsArticleTitle:
-				'Laboranalysen und Check-ups in Montenegro: Labore, Preise, ohne Überweisung',
+				'Laboranalysen und Check-ups in Montenegro: Labore, Preise und Überweisungen',
 			LabTestsArticleDescription:
-				'Wo man in Montenegro Laborwerte bestimmen lässt: private Labore ohne Überweisung und ihre Preise, der kostenlose Weg über den izabrani doktor, Wartelisten für MRT und CT, Check-up-Pakete und wie man die Befunde liest. Stand: Juli 2026.',
+				'Übliche private Tests, Preisrichtwerte, wann eine ärztliche Anordnung nötig ist, staatlicher Weg, CT und MRT, Vorsorge und sichere Befundinterpretation. Geprüft im Juli 2026.',
 			BirthInMontenegroTitle:
 				'Entbindung in Montenegro: staatliche Geburtsstation oder Privatklinik',
 			BirthInMontenegroDescription:
@@ -231,17 +228,17 @@ export default {
 				'Im Katalog können Sie Kliniken nach Stadt und Sprache filtern — mit Karte.',
 			CtaClinicsButton: 'Klinikkatalog',
 		},
-		'tr': {
+		tr: {
 			Articles: 'Makaleler',
 			ArticlesDescription:
 				"Karadağ'daki sağlık hizmetleri hakkında yararlı makaleler: Rusça konuşan doktorlar, çok dilli destek sunan klinikler ve daha fazlası.",
 			RussianSpeakingDoctorsTitle: "Karadağ'da Rusça konuşan doktorlar",
 			RussianSpeakingDoctorsDescription:
-				"Karadağ'da Rusça konuşan doktorların tam listesi, tıbbi uzmanlık alanlarına göre gruplandırılmıştır. Şehrinizde Rusça konuşan bir uzman bulun.",
+				'Karadağ genelinde Rusça bildiren kayıtlı doktorların uzmanlığa göre düzenlenmiş kataloğu. Tam değildir; çalışma yeri, dil düzeyi, ruhsat ve randevuyu doğrudan doğrulayın.',
 			ClinicsWithLanguageSupportTitle:
 				"Karadağ'da çok dilli destek sunan klinikler",
 			ClinicsWithLanguageSupportDescription:
-				"Karadağ'da farklı dillerde danışmanlık sunan kliniklerin tam listesi. Ana dilinizde destek sunan bir klinik bulun.",
+				'Farklı dillerde görüşme bildiren kayıtlı kliniklerin düzenlenmiş kataloğu. Tamlık ve dil erişimi garanti değildir; belirli hekimi, dili ve randevuyu klinikten doğrulayın.',
 			MentalHealthTitle:
 				'Karadağ’da psikologlar, psikiyatristler ve antidepresanlar',
 			MentalHealthDescription:
@@ -257,11 +254,11 @@ export default {
 			PharmaciesTitle:
 				"Karadağ'da eczaneler ve ilaçlar: reçeteler, muadiller, yanınızda ne getirmelisiniz",
 			PharmaciesDescription:
-				"Karadağ'da eczaneler nasıl çalışır: devlet zinciri Montefarm ile özel Benu ve Tea Medica, nöbetçi eczaneler, e-reçeteler ve yabancı reçetelerin neden kabul edilmediği, Fon listesinden ücretsiz ilaçlar ve alıştığınız ilaçların yerel muadillerini bulma yolları. Temmuz 2026 itibarıyla günceldir.",
+				'Karadağ eczaneleri: ağlar ve nöbet, e-reçeteler, yabancı reçetenin neden ilaç verilmesini garanti etmediği, Fon kapsamındaki ilaçlar ve kendi sicilimizde ürün veya etken maddeyle arama. Temmuz 2026 tarihinde incelendi.',
 			LabTestsArticleTitle:
-				"Karadağ'da Tahliller ve Check-up: Laboratuvarlar, Fiyatlar, Sevk Gerekmez",
+				'Karadağ Tahlilleri ve Check-up: Laboratuvarlar, Fiyatlar ve Sevk',
 			LabTestsArticleDescription:
-				"Karadağ'da tahlil nerede yaptırılır: sevksiz özel laboratuvarlar ve fiyatları, izabrani doktor üzerinden ücretsiz yol, MR ve BT bekleme listeleri, check-up paketleri ve sonuçların nasıl okunacağı. Güncellik: Temmuz 2026.",
+				'Rutin özel testler, fiyatlar, hekim isteminin ne zaman gerektiği, devlet yolu, BT ve MR, koruyucu tarama ve güvenli sonuç yorumu. Temmuz 2026 tarihinde incelendi.',
 			BirthInMontenegroTitle:
 				"Karadağ'da Doğum: Devlet Doğumhanesi mi, Özel Klinik mi",
 			BirthInMontenegroDescription:
@@ -276,7 +273,7 @@ export default {
 			HealthcareSystemTitle:
 				"Karadağ'da sağlık sistemi nasıl işler: yeni taşınanlar için rehber",
 			HealthcareSystemDescription:
-				"Acil numarası 124, dom zdravlja ve özel klinikler, zdravstvena knjižica sağlık kartı, AB vatandaşları ve diğer yabancılar için sağlık hizmetleri — Karadağ sağlık sistemine pratik bir rehber.",
+				'Acil numarası 124, dom zdravlja ve özel klinikler, zdravstvena knjižica sağlık kartı, AB vatandaşları ve diğer yabancılar için sağlık hizmetleri — Karadağ sağlık sistemine pratik bir rehber.',
 			ArticleMetaDoctors: 'Doktor: {doctors} · Uzmanlık: {specialties}',
 			ArticleMetaClinics: 'Dil: {languages} · Klinik: {clinics}',
 			CtaDoctorsTitle: 'Belirli bir uzman mı arıyorsunuz?',
@@ -294,11 +291,11 @@ export default {
 				'Корисни чланци о здравственој заштити у Црној Гори: доктори који говоре руски, клинике са вишејезичном подршком и још много тога.',
 			RussianSpeakingDoctorsTitle: 'Доктори који говоре руски у Црној Гори',
 			RussianSpeakingDoctorsDescription:
-				'Комплетан списак доктора у Црној Гори који говоре руски језик, груписан по медицинским специјалностима. Пронађите стручњака који говори руски у вашем граду.',
+				'Уређени каталог унесених доктора у Црној Гори који наводе руски језик, груписан по специјалности. Каталог није потпун; директно провјерите мјесто рада, ниво језика, лиценцу и термин.',
 			ClinicsWithLanguageSupportTitle:
 				'Клинике са вишејезичном подршком у Црној Гори',
 			ClinicsWithLanguageSupportDescription:
-				'Комплетан списак клиника у Црној Гори које нуде консултације на различитим језицима. Пронађите клинику са подршком на вашем матерњем језику.',
+				'Уређени каталог унесених клиника које наводе консултације на различитим језицима. Потпуност и језичка доступност нијесу гарантоване; провјерите конкретног доктора, језик и термин директно са клиником.',
 			MentalHealthTitle: 'Психолози, психијатри и антидепресиви у Црној Гори',
 			MentalHealthDescription:
 				'Како функционише заштита менталног здравља у Црној Гори: државни центри за ментално здравље и психијатријске болнице, како наћи терапеута који говори ваш језик, наставак терапије љековима након пресељења, цијене са здравственом књижицом и без ње, коме се обратити у кризној ситуацији.',
@@ -313,17 +310,16 @@ export default {
 			PharmaciesTitle:
 				'Апотеке и љекови у Црној Гори: рецепти, аналози, шта понијети са собом',
 			PharmaciesDescription:
-				'Како раде апотеке у Црној Гори: државни ланац Montefarm и приватни Benu и Tea Medica, дежурне апотеке, електронски рецепти и зашто страни рецепт неће бити прихваћен, бесплатни љекови са листе Фонда и како тражити аналоге уобичајених препарата. Важи за јул 2026.',
+				'Како раде апотеке у Црној Гори: мреже и дежурства, електронски рецепти, зашто страни рецепт не гарантује издавање, љекови које покрива Фонд и претрага нашег регистра по називу или активној супстанци. Провјерено у јулу 2026.',
 			LabTestsArticleTitle:
-				'Анализе и check-up у Црној Гори: лабораторије, цијене, без упута',
+				'Анализе и check-up у Црној Гори: лабораторије, цијене и упути',
 			LabTestsArticleDescription:
-				'Гдје урадити анализе у Црној Гори: приватне лабораторије без упута и цијене, бесплатан пут преко изабраног доктора, листе чекања за МР и ЦТ, check-up пакети и како читати резултате. Ажурирано: јул 2026.',
+				'Рутинске приватне анализе, цијене, када је потребан налог љекара, државни пут, CT и MR, превентивни скрининг и безбједно тумачење. Провјерено у јулу 2026.',
 			BirthInMontenegroTitle:
 				'Порођај у Црној Гори: државно породилиште или приватна клиника',
 			BirthInMontenegroDescription:
 				'Гдје се порађа у Црној Гори: породилишта државних болница и приватна опција, вођење трудноће, цијена порођаја без осигурања, доступност епидуралне аналгезије, документи за новорођенче и патронажа. Важи за јул 2026.',
-			ResidenceInsuranceTitle:
-				'Здравствено осигурање за боравак у Црној Гори',
+			ResidenceInsuranceTitle: 'Здравствено осигурање за боравак у Црној Гори',
 			ResidenceInsuranceDescription:
 				'Зашто је за захтјев за боравак потребно здравствено осигурање, на који период полису траже у различитим градовима — од 40 дана у Подгорици до 2 године у Будви — цијене код Sava, Lovćen и Uniqa осигурања, шта полиса стварно покрива и ко умјесто ње добија државно осигурање. Ажурирано: јул 2026.',
 			ChildHealthcareTitle:

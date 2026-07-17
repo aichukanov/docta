@@ -80,6 +80,8 @@ async function handleRegister(payload: {
 	email: string;
 	password: string;
 	name?: string;
+	termsAccepted: true;
+	analyticsConsent: boolean;
 }) {
 	formError.value = null;
 
@@ -95,6 +97,8 @@ async function handleRegister(payload: {
 			payload.password,
 			payload.name || undefined,
 			locale.value,
+			payload.termsAccepted,
+			payload.analyticsConsent,
 		);
 
 		if (response.data?.redirectTo) {

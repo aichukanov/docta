@@ -16,11 +16,24 @@ import { getLocalizedUrl } from '~/server/utils/base-url';
 
 export default defineEventHandler(async (event) => {
 	const body = await readBody(event);
-	const { email, password, name, locale: requestLocale } = body;
+	const {
+		email,
+		password,
+		name,
+		locale: requestLocale,
+		termsAccepted,
+		analyticsConsent,
+	} = body;
 
 	// Валидация входных данных
 	if (!email || !password) {
 		return createErrorResponse(400, ERROR_CODES.ALL_FIELDS_REQUIRED);
+	}
+	if (termsAccepted !== true) {
+		return createErrorResponse(400, ERROR_CODES.TERMS_ACCEPTANCE_REQUIRED);
+	}
+	if (typeof analyticsConsent !== 'boolean') {
+		return createErrorResponse(400, ERROR_CODES.INVALID_PRIVACY_VALUE);
 	}
 
 	const trimmedName = name?.trim() || null;
@@ -89,11 +102,19 @@ export default defineEventHandler(async (event) => {
 		logOperation(authLogger, 'User registered', {
 			userId,
 			email: email.toLowerCase(),
+			termsAccepted: true,
+			analyticsConsent,
 		});
 
 		// Создаем сессию (можно войти даже с неподтвержденным email)
 		const sessionId = await createSession(userId);
 		setSessionCookie(event, sessionId);
+		setCookie(event, 'ncc_c', analyticsConsent ? 'accepted' : 'declined', {
+			maxAge: 60 * 60 * 24 * 365,
+			path: '/',
+			sameSite: 'lax',
+			secure: !import.meta.dev,
+		});
 
 		// Проверяем redirect
 		const redirectTo = getCookie(event, 'auth_redirect');

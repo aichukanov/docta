@@ -27,6 +27,16 @@ const CITY_IDS: Record<CityHealthcareCity, CityId> = {
 	bar: CityId.BAR,
 };
 
+// Флагманское государственное учреждение города — прямая ссылка на его страницу в каталоге
+const STATE_CLINIC_SLUGS: Record<CityHealthcareCity, string> = {
+	budva: 'dom-zdravlja-budva',
+	podgorica: 'klinicki-centar-crne-gore-podgorica',
+	kotor: 'opsta-bolnica-kotor',
+	bar: 'opsta-bolnica-blazo-orlandic',
+};
+
+const LENAPHARM_MAPS_URL = 'https://maps.app.goo.gl/hkf6JFxwT6MUXfuXA';
+
 const ARTICLE_DATE = '2026-07-16';
 
 const { t, locale } = useI18n({
@@ -93,6 +103,12 @@ const labtestsCityLink = computed(() => ({
 		...getRegionalQuery(locale.value),
 		cityIds: String(CITY_IDS[props.city]),
 	},
+}));
+
+const stateClinicLink = computed(() => ({
+	name: 'clinics-clinicSlug',
+	params: { clinicSlug: STATE_CLINIC_SLUGS[props.city] },
+	query: getRegionalQuery(locale.value),
 }));
 
 // Секции статьи: id → ключи заголовков для TOC и разметки
@@ -194,6 +210,13 @@ watchEffect(() => {
 			<p>{{ t(`CityHcState1_${city}`) }}</p>
 			<p>{{ t(`CityHcState2_${city}`) }}</p>
 			<p>{{ t(`CityHcState3_${city}`) }}</p>
+			<p>
+				{{ t(`CityHcStateCatalog_${city}`) }}
+				<NuxtLink :to="stateClinicLink">{{
+					t(`CityHcStateLink_${city}`)
+				}}</NuxtLink
+				>{{ t('CityHcLinkEnd') }}
+			</p>
 		</ArticleSection>
 
 		<ArticleSection id="section-private" :title="t('CityHcToc_private')">
@@ -216,6 +239,13 @@ watchEffect(() => {
 
 		<ArticleSection id="section-pharmacies" :title="t('CityHcToc_pharmacies')">
 			<p>{{ t(`CityHcPharmacy1_${city}`) }}</p>
+			<p v-if="city === 'bar'">
+				{{ t('CityHcLenapharmText_bar') }}
+				<a :href="LENAPHARM_MAPS_URL" target="_blank" rel="noopener"
+					>Lenapharm</a
+				>
+				{{ t('CityHcLenapharmAfter_bar') }}
+			</p>
 			<p>{{ t(`CityHcPharmacy2_${city}`) }}</p>
 		</ArticleSection>
 	</ArticlePage>

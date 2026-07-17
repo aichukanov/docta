@@ -38,6 +38,8 @@ export default {
 			[`error_${ERROR_CODES.LOCALE_REQUIRED}`]: 'Locale is required',
 			[`error_${ERROR_CODES.ALL_FIELDS_REQUIRED}`]: 'Please fill in all fields',
 			[`error_${ERROR_CODES.PASSWORDS_DO_NOT_MATCH}`]: 'Passwords do not match',
+			[`error_${ERROR_CODES.TERMS_ACCEPTANCE_REQUIRED}`]:
+				'Please accept the Terms of Use',
 			[`error_${ERROR_CODES.PASSWORD_TOO_SHORT}`]:
 				'Password is too short (min. 8 characters)',
 			[`error_${ERROR_CODES.PASSWORD_MISSING_DIGIT}`]:
@@ -118,6 +120,8 @@ export default {
 			[`error_${ERROR_CODES.LOCALE_REQUIRED}`]: 'Укажите язык',
 			[`error_${ERROR_CODES.ALL_FIELDS_REQUIRED}`]: 'Заполните все поля',
 			[`error_${ERROR_CODES.PASSWORDS_DO_NOT_MATCH}`]: 'Пароли не совпадают',
+			[`error_${ERROR_CODES.TERMS_ACCEPTANCE_REQUIRED}`]:
+				'Примите Условия использования',
 			[`error_${ERROR_CODES.PASSWORD_TOO_SHORT}`]:
 				'Пароль слишком короткий (мин. 8 символов)',
 			[`error_${ERROR_CODES.PASSWORD_MISSING_DIGIT}`]:
@@ -202,6 +206,8 @@ export default {
 			[`error_${ERROR_CODES.ALL_FIELDS_REQUIRED}`]: 'Popunite sva polja',
 			[`error_${ERROR_CODES.PASSWORDS_DO_NOT_MATCH}`]:
 				'Lozinke se ne poklapaju',
+			[`error_${ERROR_CODES.TERMS_ACCEPTANCE_REQUIRED}`]:
+				'Prihvatite Uslove korišćenja',
 			[`error_${ERROR_CODES.PASSWORD_TOO_SHORT}`]:
 				'Lozinka je prekratka (min. 8 karaktera)',
 			[`error_${ERROR_CODES.PASSWORD_MISSING_DIGIT}`]:
@@ -287,6 +293,8 @@ export default {
 			[`error_${ERROR_CODES.ALL_FIELDS_REQUIRED}`]: 'Alle Felder ausfüllen',
 			[`error_${ERROR_CODES.PASSWORDS_DO_NOT_MATCH}`]:
 				'Passwörter stimmen nicht überein',
+			[`error_${ERROR_CODES.TERMS_ACCEPTANCE_REQUIRED}`]:
+				'Bitte akzeptieren Sie die Nutzungsbedingungen',
 			[`error_${ERROR_CODES.PASSWORD_TOO_SHORT}`]:
 				'Passwort ist zu kurz (mind. 8 Zeichen)',
 			[`error_${ERROR_CODES.PASSWORD_MISSING_DIGIT}`]:
@@ -373,6 +381,8 @@ export default {
 			[`error_${ERROR_CODES.LOCALE_REQUIRED}`]: 'Dil gerekli',
 			[`error_${ERROR_CODES.ALL_FIELDS_REQUIRED}`]: 'Tüm alanları doldurun',
 			[`error_${ERROR_CODES.PASSWORDS_DO_NOT_MATCH}`]: 'Şifreler eşleşmiyor',
+			[`error_${ERROR_CODES.TERMS_ACCEPTANCE_REQUIRED}`]:
+				'Lütfen Kullanım Koşullarını kabul edin',
 			[`error_${ERROR_CODES.PASSWORD_TOO_SHORT}`]:
 				'Şifre çok kısa (en az 8 karakter)',
 			[`error_${ERROR_CODES.PASSWORD_MISSING_DIGIT}`]:
@@ -455,6 +465,8 @@ export default {
 			[`error_${ERROR_CODES.ALL_FIELDS_REQUIRED}`]: 'Попуните сва поља',
 			[`error_${ERROR_CODES.PASSWORDS_DO_NOT_MATCH}`]:
 				'Лозинке се не поклапају',
+			[`error_${ERROR_CODES.TERMS_ACCEPTANCE_REQUIRED}`]:
+				'Прихватите Услове коришћења',
 			[`error_${ERROR_CODES.PASSWORD_TOO_SHORT}`]:
 				'Лозинка је прекратка (мин. 8 карактера)',
 			[`error_${ERROR_CODES.PASSWORD_MISSING_DIGIT}`]:

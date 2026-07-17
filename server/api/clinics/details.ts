@@ -31,6 +31,8 @@ export default defineEventHandler(async (event): Promise<ClinicData | null> => {
 			SELECT
 				c.id,
 				c.slug,
+				c.status,
+				c.created_by,
 				c.name_sr,
 				c.name_ru,
 				c.name_sr_cyrl,
@@ -87,6 +89,21 @@ export default defineEventHandler(async (event): Promise<ClinicData | null> => {
 		}
 
 		const currentUser = await getCurrentUser(event);
+
+		// Непубличная клиника (draft и т.п.) видна только владельцу или админу,
+		// остальным — 404 (как для несуществующей).
+		const isOwner =
+			!!currentUser &&
+			clinic.created_by != null &&
+			currentUser.id === clinic.created_by;
+		if (
+			clinic.status !== 'published' &&
+			!isOwner &&
+			!currentUser?.is_admin
+		) {
+			await connection.end();
+			return null;
+		}
 
 		// Загружаем рейтинг и отзывы клиники
 		const rating = await fetchRating(connection, 'clinic', clinic.id);
@@ -150,6 +167,8 @@ export default defineEventHandler(async (event): Promise<ClinicData | null> => {
 			rating,
 			reviews: allReviews,
 			itemsSummary,
+			status: clinic.status,
+			isOwner,
 		};
 	} catch (error) {
 		console.error('API Error - clinic data:', error);

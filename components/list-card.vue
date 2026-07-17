@@ -13,7 +13,8 @@ const props = withDefaults(
 		localName?: string;
 		itemId?: number;
 		itemSlug?: string;
-		// Только первые LIST_CARD_MAX_CLINICS клиник — бэкенд уже обрезает на listing-эндпоинтах.
+		// Полный список клиник (отсортирован бэкендом по цене) —
+		// карточка показывает только первые LIST_CARD_MAX_CLINICS.
 		clinicIds?: string;
 		// Общее число клиник, в которых доступна услуга — для подписи кнопки «показать все».
 		clinicCount?: number;
@@ -45,9 +46,17 @@ const getPriceInfo = (clinicId: number) =>
 
 const getServices = (clinicId: number) => props.clinicServices?.[clinicId];
 
-// clinicIds уже отсортированы на бэкенде по количеству услуг и обрезаны до LIST_CARD_MAX_CLINICS.
+// Состав первых LIST_CARD_MAX_CLINICS фиксирует сервер (композитный скор без
+// локации — цены обрезаны до этого же числа); клиент лишь переупорядочивает
+// видимые с учётом расстояния и показывает его на карточке.
+const { getDistanceKm, rankClinics } = useClinicRanking();
 const visibleClinics = computed(() =>
-	clinicsStore.getClinicsByIds(props.clinicIds),
+	rankClinics(
+		clinicsStore
+			.getClinicsByIds(props.clinicIds)
+			.slice(0, LIST_CARD_MAX_CLINICS),
+		props.clinicPrices,
+	),
 );
 
 const hasMoreClinics = computed(
@@ -72,6 +81,19 @@ const viewAllLink = computed(() => {
 		query: { ...detailsLink.value.query, tab: 'clinics' },
 	};
 });
+
+const { trackEvent } = useAnalytics();
+
+const trackDetailsLinkClick = () => {
+	const entityType = getEntityTypeByRouteName(props.detailsRouteName);
+	if (!entityType || !props.itemId || !props.itemSlug) return;
+	trackEvent('entity_link_clicked', {
+		entity_type: entityType,
+		entity_id: props.itemId,
+		entity_slug: props.itemSlug,
+		entity_name: props.title,
+	});
+};
 </script>
 
 <template>
@@ -79,7 +101,12 @@ const viewAllLink = computed(() => {
 		<slot>
 			<div v-if="title" class="list-card-header-wrapper">
 				<h2 class="list-card-header">
-					<NuxtLink v-if="detailsLink" :to="detailsLink" class="list-card-link">
+					<NuxtLink
+						v-if="detailsLink"
+						:to="detailsLink"
+						class="list-card-link"
+						@click="trackDetailsLinkClick"
+					>
 						{{ title }}
 					</NuxtLink>
 					<template v-else>{{ title }}</template>
@@ -98,6 +125,7 @@ const viewAllLink = computed(() => {
 				:price-info="getPriceInfo(clinic.id)"
 				:services="getServices(clinic.id)"
 				:showPrice="showPrice"
+				:distance="getDistanceKm(clinic)"
 				@show-on-map="$emit('show-on-map', clinic)"
 			/>
 			<NuxtLink
@@ -105,6 +133,7 @@ const viewAllLink = computed(() => {
 				:to="viewAllLink"
 				class="view-all-clinics"
 				:aria-label="t('ViewAllClinics', { count: clinicCount })"
+				@click="trackDetailsLinkClick"
 			>
 				<span class="view-all-clinics__icon" aria-hidden="true">
 					<IconClinic :size="18" />

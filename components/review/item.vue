@@ -39,6 +39,11 @@ const cancelEdit = () => {
 	isEditing.value = false;
 };
 
+// Отклонённый файл верификации заменён новым — отзыв снова в очереди проверки
+const onVerificationReuploaded = () => {
+	emit('updated', { ...props.review, verificationStatus: 'pending' });
+};
+
 const saveEdit = async () => {
 	if (!editRating.value) return;
 	try {
@@ -128,6 +133,7 @@ const clinic = computed(() => {
 				<span v-if="review.isOwn" class="own-badge">{{
 					t('YourReviewLabel')
 				}}</span>
+				<ReviewVerifiedBadge v-if="review.isVerified" />
 			</div>
 			<div class="review-meta">
 				<RatingStars
@@ -193,6 +199,39 @@ const clinic = computed(() => {
 
 		<!-- View mode -->
 		<template v-else>
+			<!-- Уведомления автору о модерации/верификации -->
+			<el-alert
+				v-if="review.isOwn && review.status === 'rejected'"
+				type="warning"
+				:closable="false"
+				show-icon
+				class="own-status-alert"
+				:title="t('ReviewRejectedNotice')"
+				:description="review.rejectionReason || undefined"
+			/>
+			<div
+				v-else-if="review.isOwn && review.verificationStatus === 'pending'"
+				class="verification-status-note"
+			>
+				{{ t('VerificationPendingNotice') }}
+			</div>
+			<div
+				v-else-if="review.isOwn && review.verificationStatus === 'rejected'"
+				class="verification-rejected"
+			>
+				<el-alert
+					type="info"
+					:closable="false"
+					show-icon
+					class="own-status-alert"
+					:title="t('VerificationRejectedNotice')"
+				/>
+				<ReviewVerificationUpload
+					:review-id="review.id"
+					@uploaded="onVerificationReuploaded"
+				/>
+			</div>
+
 			<!-- Text -->
 			<ReviewText
 				:text="review.text"
@@ -322,6 +361,24 @@ const clinic = computed(() => {
 	display: flex;
 	gap: var(--spacing-sm);
 	margin-top: var(--spacing-lg);
+}
+
+.own-status-alert {
+	margin-bottom: var(--spacing-md);
+}
+
+.verification-status-note {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
+	margin-bottom: var(--spacing-md);
+}
+
+.verification-rejected {
+	margin-bottom: var(--spacing-md);
+}
+
+.verification-rejected .own-status-alert {
+	margin-bottom: var(--spacing-sm);
 }
 
 .edit-form {

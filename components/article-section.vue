@@ -3,7 +3,7 @@
 // и попадает на корневой <section> через наследование атрибутов
 defineProps<{
 	title: string;
-	count: number;
+	count?: number;
 }>();
 </script>
 
@@ -11,7 +11,9 @@ defineProps<{
 	<section class="article-section">
 		<h2 class="article-section__title">
 			{{ title }}
-			<span class="article-section__count">({{ count }})</span>
+			<span v-if="count != null" class="article-section__count">
+				({{ count }})
+			</span>
 		</h2>
 		<slot />
 	</section>

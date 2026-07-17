@@ -145,6 +145,51 @@ export function validateNonNegativeIntegerArray(arr: string[]): boolean {
 	);
 }
 
+// Минимальный рейтинг для фильтра клиник: 1..5 с шагом 0.5
+export function validateMinRating(
+	{ minRating }: { minRating?: unknown },
+	from?: string,
+) {
+	const num = Number(minRating);
+
+	if (!Number.isFinite(num) || num < 1 || num > 5 || (num * 2) % 1 !== 0) {
+		if (from) {
+			showError(from, 'Invalid min rating: ' + minRating);
+		}
+		return false;
+	}
+
+	return true;
+}
+
+export function validateUserCoordinates(
+	{
+		userLatitude,
+		userLongitude,
+	}: { userLatitude?: unknown; userLongitude?: unknown },
+	from: string,
+) {
+	const lat = Number(userLatitude);
+	const lng = Number(userLongitude);
+
+	if (
+		!Number.isFinite(lat) ||
+		lat < -90 ||
+		lat > 90 ||
+		!Number.isFinite(lng) ||
+		lng < -180 ||
+		lng > 180
+	) {
+		showError(
+			from,
+			`Invalid user coordinates: ${userLatitude}, ${userLongitude}`,
+		);
+		return false;
+	}
+
+	return true;
+}
+
 export function validateCategoryIds(
 	{ categoryIds }: { categoryIds?: unknown },
 	from: string,

@@ -20,6 +20,21 @@ const serviceLink = computed(() => {
 		query: getRegionalQuery(locale.value),
 	};
 });
+
+const { trackEvent } = useAnalytics();
+
+const trackServiceLinkClick = () => {
+	const entityType = getEntityTypeByRouteName(
+		props.detailsRouteName || 'services-serviceSlug',
+	);
+	if (!entityType || !props.service.slug) return;
+	trackEvent('entity_link_clicked', {
+		entity_type: entityType,
+		entity_id: props.service.id,
+		entity_slug: props.service.slug,
+		entity_name: props.service.name,
+	});
+};
 </script>
 
 <template>
@@ -30,6 +45,7 @@ const serviceLink = computed(() => {
 					v-if="serviceLink"
 					:to="serviceLink"
 					class="service-name-link"
+					@click="trackServiceLinkClick"
 				>
 					{{ service.name }}
 				</NuxtLink>

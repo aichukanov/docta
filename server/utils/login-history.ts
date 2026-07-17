@@ -1,5 +1,6 @@
 import type { H3Event } from 'h3';
 import { executeQuery } from '~/server/common/db-mysql';
+import { getClientIp } from './client-ip';
 import { authLogger } from './logger';
 import type { AuthMethod } from './oauth-providers';
 
@@ -13,25 +14,6 @@ export interface LoginHistoryEntry {
 	success: boolean;
 	failure_reason: string | null;
 	created_at: string;
-}
-
-/**
- * Получить IP адрес из запроса
- */
-export function getClientIp(event: H3Event): string {
-	// Проверяем заголовки от прокси/балансировщика
-	const xForwardedFor = getRequestHeader(event, 'x-forwarded-for');
-	if (xForwardedFor) {
-		return xForwardedFor.split(',')[0].trim();
-	}
-
-	const xRealIp = getRequestHeader(event, 'x-real-ip');
-	if (xRealIp) {
-		return xRealIp;
-	}
-
-	// Fallback на адрес из запроса
-	return event.node.req.socket.remoteAddress || 'unknown';
 }
 
 /**

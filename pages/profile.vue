@@ -47,13 +47,15 @@ const tabs = computed<ProfileTab[]>(() => [
 	{ key: 'basic', icon: 'user', label: t('tabBasic') },
 	{ key: 'security', icon: 'shield', label: t('tabSecurity') },
 	{ key: 'doctor', icon: 'doctor', label: t('tabDoctor') },
-	{ key: 'clinics', icon: 'clinic', label: t('tabClinics'), soon: true },
+	{ key: 'clinics', icon: 'clinic', label: t('tabClinics') },
 ]);
 
 const activeTab = computed(() => {
 	const name = route.name as string;
 	const match = name?.match(/^profile-(.+)$/);
-	return match ? match[1] : 'basic';
+	// Вложенные маршруты таба (например profile-clinics-clinicId-billing)
+	// подсвечивают родительский таб
+	return match ? match[1].split('-')[0] : 'basic';
 });
 
 function tabRoute(key: string) {

@@ -37,6 +37,41 @@ if (import.meta.server && !isFound.value) {
 	setResponseStatus(useRequestEvent()!, 404);
 }
 
+const { trackEvent } = useAnalytics();
+
+provideAnalyticsEntity(
+	computed(() =>
+		med.value?.id
+			? {
+					entity_type: 'medicine' as const,
+					entity_id: med.value.id,
+					entity_slug: route.params.medicineSlug as string,
+				}
+			: null,
+	),
+);
+
+if (import.meta.client) {
+	const trackMedicineView = () => {
+		if (!med.value?.id) return;
+		trackEvent('entity_viewed', {
+			entity_type: 'medicine',
+			entity_id: med.value.id,
+			entity_slug: route.params.medicineSlug as string,
+			entity_name: med.value.name,
+		});
+	};
+	// onMounted — первый показ; watch — клиентский переход лекарство→лекарство,
+	// когда компонент страницы переиспользуется без remount
+	onMounted(trackMedicineView);
+	watch(
+		() => med.value?.id,
+		(id, prevId) => {
+			if (id && id !== prevId) trackMedicineView();
+		},
+	);
+}
+
 const isOTC = computed(() => med.value?.dispensingModeId === 2);
 
 const substanceNames = computed(

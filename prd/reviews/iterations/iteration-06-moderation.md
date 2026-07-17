@@ -4,7 +4,15 @@
 
 ---
 
-## Статус: 🔴 Not Started
+## Статус: 🟢 Done (2026-06-12)
+
+> Реализовано с отступлениями (см. PROGRESS.md): ПОСТ-модерация (pending
+> виден публично, rejected скрывается, автор видит причину); модерация —
+> суб-таб «Модерация» в табе «Отзывы» админки (`pages/admin/index.vue` +
+> `components/admin/review-moderation.vue`), не отдельная страница; роль —
+> `is_admin`; очереди жалоб нет (механизм repоrts отсутствует в продукте).
+> API: `GET /api/admin/reviews/queue`, `POST /api/admin/reviews/moderate`,
+> `POST /api/admin/reviews/verify`. Код-примеры ниже — исходный псевдокод PRD.
 
 ---
 

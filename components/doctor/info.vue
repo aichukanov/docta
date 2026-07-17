@@ -34,6 +34,17 @@ const doctorLink = computed(() => {
 	};
 });
 
+const { trackEvent } = useAnalytics();
+
+const trackDoctorLinkClick = () => {
+	trackEvent('entity_link_clicked', {
+		entity_type: 'doctor',
+		entity_id: props.service.id,
+		entity_slug: props.service.slug ?? '',
+		entity_name: props.service.name,
+	});
+};
+
 const avatarName = computed(() => {
 	return props.service.localName && props.service.localName.trim() !== ''
 		? props.service.localName
@@ -71,7 +82,12 @@ const reviewsLink = computed(() => {
 		/>
 		<div class="doctor-info">
 			<component :is="headingTag" class="doctor-name">
-				<NuxtLink v-if="doctorLink" :to="doctorLink" class="doctor-name-link">
+				<NuxtLink
+					v-if="doctorLink"
+					:to="doctorLink"
+					class="doctor-name-link"
+					@click="trackDoctorLinkClick"
+				>
 					{{ service.name }}
 				</NuxtLink>
 				<span v-else>{{ service.name }}</span>

@@ -9,9 +9,13 @@ const props = withDefaults(
 		languages: LanguageTab[];
 		modelValue: Record<string, string>;
 		type?: 'input' | 'markdown';
+		// Пример значения для первичной вкладки (вторичные подсказываются
+		// значением первичной, а при его отсутствии — тоже этим примером)
+		placeholder?: string;
 	}>(),
 	{
 		type: 'input',
+		placeholder: '',
 	},
 );
 
@@ -32,9 +36,9 @@ function isFilled(key: string): boolean {
 }
 
 function getPlaceholder(key: string): string {
-	if (key === primaryKey.value) return '';
+	if (key === primaryKey.value) return props.placeholder;
 	const primaryValue = props.modelValue[primaryKey.value]?.trim();
-	return primaryValue || '';
+	return primaryValue || props.placeholder;
 }
 
 function updateField(key: string, value: string) {

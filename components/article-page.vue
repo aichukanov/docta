@@ -5,7 +5,7 @@ import type { BreadcrumbItem } from '~/components/app-breadcrumbs.vue';
 export interface ArticleTocItem {
 	id: string;
 	label: string;
-	count: number;
+	count?: number;
 }
 
 export interface ArticleCta {
@@ -55,7 +55,9 @@ const { t } = useI18n({ useScope: 'local' });
 					class="toc-chip"
 				>
 					{{ item.label }}
-					<span class="toc-count">{{ item.count }}</span>
+					<span v-if="item.count != null" class="toc-count">
+						{{ item.count }}
+					</span>
 				</a>
 			</nav>
 

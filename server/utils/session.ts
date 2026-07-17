@@ -12,6 +12,9 @@ export interface User {
 	photo_url: string | null;
 	has_custom_photo: boolean;
 	is_admin: boolean;
+	is_profile_public: boolean;
+	/** Способ авторизации — для user property в аналитике */
+	auth_provider: 'google' | 'telegram' | 'facebook' | 'password';
 }
 
 /**
@@ -95,6 +98,8 @@ export async function getUserFromSession(
 			) AS photo_url,
 			(NULLIF(u.photo_url, '') IS NOT NULL) AS has_custom_photo,
 			u.is_admin,
+			u.is_profile_public,
+			COALESCE(u.primary_oauth_provider, 'password') AS auth_provider,
 			u.preferred_locale,
 			u.email_verified
 		FROM auth_users u

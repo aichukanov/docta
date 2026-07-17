@@ -12,6 +12,21 @@ interface LeafletMapOptions {
 	maxZoom?: number;
 }
 
+interface InitializeMapOptions {
+	// Группировать маркеры через leaflet.markercluster (грузится по требованию)
+	cluster?: boolean;
+}
+
+interface AddMarkerOptions {
+	title?: string;
+	alt?: string;
+	// Статичный HTML иконки вместо телепорт-контейнера <div id="...">.
+	// Обязателен при кластеризации: markercluster пересоздаёт DOM маркеров
+	// при сборке/разборке кластеров, и Teleport-цели внутри них пропадают.
+	html?: string;
+	onClick?: () => void;
+}
+
 interface ViewportChangeEvent {
 	bounds: any;
 	center: any;
@@ -21,10 +36,17 @@ interface ViewportChangeEvent {
 export function useLeaflet() {
 	let leafletMap: any = null;
 	let popup: any = null;
+	let clusterGroup: any = null;
 
 	const isLoading = ref(true);
 	const isInitialized = ref(false);
 	const markers = new Map<string, any>();
+	let mapClickHandler: ((lat: number, lng: number) => void) | null = null;
+
+	/** Подписка на клик по карте (используется map-picker'ом координат). */
+	const onMapClick = (handler: (lat: number, lng: number) => void): void => {
+		mapClickHandler = handler;
+	};
 
 	const loadLeaflet = async (): Promise<void> => {
 		if (typeof window !== 'undefined' && window.L) {
@@ -53,7 +75,40 @@ export function useLeaflet() {
 		});
 	};
 
-	const initializeMap = async (container: HTMLElement): Promise<void> => {
+	const loadMarkerCluster = async (): Promise<void> => {
+		if (typeof window === 'undefined') return;
+		// markercluster — плагин, его нет в @types/leaflet
+		if ((window.L as any)?.markerClusterGroup) {
+			return Promise.resolve();
+		}
+
+		const base = 'https://unpkg.com/leaflet.markercluster@1.5.3/dist';
+
+		['MarkerCluster.css', 'MarkerCluster.Default.css'].forEach((file) => {
+			const cssLink = document.createElement('link');
+			cssLink.rel = 'stylesheet';
+			cssLink.href = `${base}/${file}`;
+			cssLink.crossOrigin = '';
+			document.head.appendChild(cssLink);
+		});
+
+		return new Promise((resolve, reject) => {
+			const script = document.createElement('script');
+			script.src = `${base}/leaflet.markercluster.js`;
+			script.crossOrigin = '';
+
+			script.onload = () => resolve();
+			script.onerror = () =>
+				reject(new Error('Failed to load leaflet.markercluster'));
+
+			document.head.appendChild(script);
+		});
+	};
+
+	const initializeMap = async (
+		container: HTMLElement,
+		options?: InitializeMapOptions,
+	): Promise<void> => {
 		if (typeof window === 'undefined') return;
 
 		if (isInitialized.value) {
@@ -63,6 +118,9 @@ export function useLeaflet() {
 		try {
 			isLoading.value = true;
 			await loadLeaflet();
+			if (options?.cluster) {
+				await loadMarkerCluster();
+			}
 
 			leafletMap = window.L.map(container, {
 				center: MONTENEGRO_CENTER,
@@ -76,6 +134,25 @@ export function useLeaflet() {
 				attribution:
 					'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 			}).addTo(leafletMap);
+
+			leafletMap.on('click', (e: any) => {
+				mapClickHandler?.(e.latlng.lat, e.latlng.lng);
+			});
+
+			if (options?.cluster) {
+				clusterGroup = (window.L as any).markerClusterGroup({
+					showCoverageOnHover: false,
+					maxClusterRadius: 60,
+					iconCreateFunction: (cluster: any) =>
+						window.L.divIcon({
+							html: `<div class="map-cluster-marker">${cluster.getChildCount()}</div>`,
+							className: 'custom-marker-icon',
+							iconSize: [40, 40],
+							iconAnchor: [20, 20],
+						}),
+				});
+				leafletMap.addLayer(clusterGroup);
+			}
 
 			// leafletMap.on('moveend zoomend', () => {
 			// if (onViewportChanged) {
@@ -127,14 +204,17 @@ export function useLeaflet() {
 		id: string,
 		lat: number,
 		lng: number,
-		options?: { title?: string; alt?: string },
+		options?: AddMarkerOptions,
 	) => {
+		// Без координат L.marker бросит исключение и оборвёт добавление
+		// остальных маркеров — такую клинику просто пропускаем
 		if (!lat || !lng) {
 			console.error('Error adding marker:', id, lat, lng);
+			return;
 		}
 
 		const icon = window.L.divIcon({
-			html: `<div id="${id}"></div>`,
+			html: options?.html ?? `<div id="${id}"></div>`,
 			className: 'custom-marker-icon',
 			iconSize: [40, 40],
 			iconAnchor: [20, 20],
@@ -146,7 +226,15 @@ export function useLeaflet() {
 			alt: options?.alt || options?.title,
 		});
 
-		marker.addTo(leafletMap);
+		if (options?.onClick) {
+			marker.on('click', options.onClick);
+		}
+
+		if (clusterGroup) {
+			clusterGroup.addLayer(marker);
+		} else {
+			marker.addTo(leafletMap);
+		}
 
 		const el = marker.getElement();
 		if (el && options?.title) {
@@ -158,7 +246,11 @@ export function useLeaflet() {
 
 	const removeMarker = (id: string): void => {
 		const marker = markers.get(id);
-		if (marker && leafletMap) {
+		if (!marker) return;
+		if (clusterGroup) {
+			clusterGroup.removeLayer(marker);
+			markers.delete(id);
+		} else if (leafletMap) {
 			leafletMap.removeLayer(marker);
 			markers.delete(id);
 		}
@@ -172,9 +264,13 @@ export function useLeaflet() {
 	};
 
 	const clearMarkers = (): void => {
-		markers.forEach((marker) => {
-			leafletMap.removeLayer(marker);
-		});
+		if (clusterGroup) {
+			clusterGroup.clearLayers();
+		} else {
+			markers.forEach((marker) => {
+				leafletMap.removeLayer(marker);
+			});
+		}
 		markers.clear();
 	};
 
@@ -224,6 +320,7 @@ export function useLeaflet() {
 
 		initializeMap,
 		centerOnLocations,
+		onMapClick,
 
 		openPopup,
 		markers,

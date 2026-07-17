@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { formatPhoneNumber } from './utils';
+import type { AnalyticsContactType } from '~/types/analytics';
 
 const props = defineProps<{
 	phoneNumber: string;
@@ -10,6 +11,8 @@ const props = defineProps<{
 }>();
 
 const { t } = useI18n();
+const { trackEvent } = useAnalytics();
+const analyticsEntity = useAnalyticsEntity();
 
 const formattedNumber = computed(() => formatPhoneNumber(props.phoneNumber));
 
@@ -18,17 +21,29 @@ const cleanNumber = computed(() => props.phoneNumber.replace(/[^+\d]/g, ''));
 const waUrl = computed(() => `https://wa.me/${cleanNumber.value}`);
 const viberUrl = computed(() => `viber://chat?number=${cleanNumber.value}`);
 const telegramUrl = computed(() => `https://t.me/${cleanNumber.value}`);
+
+const trackContactClick = (contactType: AnalyticsContactType) => {
+	trackEvent('contact_clicked', {
+		...analyticsEntity.value,
+		contact_type: contactType,
+	});
+};
 </script>
 
 <template>
 	<div class="phone-group-item">
 		<div class="phone-header">
 			<span class="phone-number">{{ formattedNumber }}</span>
-			<ContactsCopyButton :value="phoneNumber" />
+			<ContactsCopyButton :value="phoneNumber" contactType="phone" />
 		</div>
 
 		<div class="channel-buttons">
-			<a v-if="hasPhone" :href="`tel:${phoneNumber}`" class="channel-btn">
+			<a
+				v-if="hasPhone"
+				:href="`tel:${phoneNumber}`"
+				class="channel-btn"
+				@click="trackContactClick('phone')"
+			>
 				<IconPhone :size="20" />
 				<span>{{ t('Call') }}</span>
 			</a>
@@ -38,6 +53,7 @@ const telegramUrl = computed(() => `https://t.me/${cleanNumber.value}`);
 				:href="telegramUrl"
 				target="_blank"
 				class="channel-btn channel-telegram"
+				@click="trackContactClick('telegram')"
 			>
 				<IconTelegram :size="20" />
 				<span>Telegram</span>
@@ -48,6 +64,7 @@ const telegramUrl = computed(() => `https://t.me/${cleanNumber.value}`);
 				:href="waUrl"
 				target="_blank"
 				class="channel-btn channel-whatsapp"
+				@click="trackContactClick('whatsapp')"
 			>
 				<IconWhatsapp :size="20" />
 				<span>WhatsApp</span>
@@ -58,6 +75,7 @@ const telegramUrl = computed(() => `https://t.me/${cleanNumber.value}`);
 				:href="viberUrl"
 				target="_blank"
 				class="channel-btn channel-viber"
+				@click="trackContactClick('viber')"
 			>
 				<IconViber :size="20" />
 				<span>Viber</span>

@@ -19,6 +19,16 @@ export async function ensureUniqueSlug(
 	excludeId?: number,
 ): Promise<string> {
 	const entityType = TABLE_TO_ENTITY_TYPE[table] || table;
+
+	// Вырожденные слаги недопустимы: пустой ломает ссылки, а чисто числовой
+	// занят легаси-пространством `/{entity}/{id}` — redirect-мидлвар
+	// (server/common/redirect/slug-redirects.ts) трактует его как ID и уводит
+	// 301-ом на ЧУЖУЮ сущность. Префиксуем единственным числом типа: 5 → clinic-5.
+	if (!baseSlug || /^\d+$/.test(baseSlug)) {
+		const prefix = entityType.replace(/s$/, '');
+		baseSlug = baseSlug ? `${prefix}-${baseSlug}` : prefix;
+	}
+
 	let slug = baseSlug;
 	let suffix = 2;
 

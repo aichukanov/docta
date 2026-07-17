@@ -20,6 +20,12 @@ export async function getConnection() {
 				charset: 'utf8mb4',
 				timezone: '+00:00',
 			});
+			// Дефолт GROUP_CONCAT — 1024 байта: clinicIds/clinicPricesData у
+			// популярных услуг молча усекались бы (битые id, потерянные цены,
+			// см. prd/maps §3.1). Выставляется раз на физическое соединение.
+			pool.on('connection', (connection: any) => {
+				connection.query('SET SESSION group_concat_max_len = 1048576');
+			});
 		}
 
 		const connection = await pool.getConnection();

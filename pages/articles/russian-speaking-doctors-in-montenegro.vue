@@ -25,6 +25,38 @@ const { t, locale } = useI18n({
 	]),
 });
 
+const ARTICLE_SLUG = 'russian-speaking-doctors-in-montenegro';
+
+const { trackEvent } = useAnalytics();
+
+provideAnalyticsEntity(
+	computed(() => ({
+		entity_type: 'article' as const,
+		entity_id: ARTICLE_SLUG,
+		entity_slug: ARTICLE_SLUG,
+	})),
+);
+
+onMounted(() => {
+	trackEvent('entity_viewed', {
+		entity_type: 'article',
+		entity_id: ARTICLE_SLUG,
+		entity_slug: ARTICLE_SLUG,
+	});
+});
+
+const trackEntityLinkClick = (
+	entityType: 'doctor' | 'clinic',
+	entity: { id: number; slug: string; name?: string },
+) => {
+	trackEvent('entity_link_clicked', {
+		entity_type: entityType,
+		entity_id: entity.id,
+		entity_slug: entity.slug,
+		entity_name: entity.name,
+	});
+};
+
 // 1. Define links and basic data
 const homeLink = computed(() => ({
 	name: 'index',
@@ -218,7 +250,11 @@ watchEffect(() => {
 						:size="44"
 					/>
 					<div class="doctor-info">
-						<NuxtLink :to="getDoctorUrl(doctor.slug)" class="doctor-name">
+						<NuxtLink
+							:to="getDoctorUrl(doctor.slug)"
+							class="doctor-name"
+							@click="trackEntityLinkClick('doctor', doctor)"
+						>
 							{{ getLocalizedName(doctor, locale) }}
 						</NuxtLink>
 						<ul class="clinics-list">
@@ -227,7 +263,11 @@ watchEffect(() => {
 								:key="clinic.id"
 								class="clinic-item"
 							>
-								<NuxtLink :to="getClinicUrl(clinic.slug)" class="clinic-link">
+								<NuxtLink
+									:to="getClinicUrl(clinic.slug)"
+									class="clinic-link"
+									@click="trackEntityLinkClick('clinic', clinic)"
+								>
 									{{ getLocalizedName(clinic, locale) }},
 									{{ t(`city_${clinic.cityId}`) }}
 								</NuxtLink>

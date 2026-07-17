@@ -1,7 +1,7 @@
 import sharp from 'sharp';
 import { randomUUID } from 'node:crypto';
-import { writeFile, mkdir } from 'node:fs/promises';
-import { join } from 'node:path';
+import { writeFile, mkdir, unlink } from 'node:fs/promises';
+import { join, basename } from 'node:path';
 
 const MAX_DIMENSION = 1600;
 const WEBP_QUALITY = 82;
@@ -14,6 +14,16 @@ const WEBP_QUALITY = 82;
 export function getUploadsRoot(): string {
 	const config = useRuntimeConfig();
 	return config.uploadsDir || join(process.cwd(), 'public', 'uploads');
+}
+
+/**
+ * Корневая директория файлов верификации отзывов (чеки, направления).
+ * Персональные данные — хранится ВНЕ public/, отдаётся только автору отзыва
+ * и админу через /api/reviews/verification-file.
+ */
+export function getVerificationsRoot(): string {
+	const config = useRuntimeConfig();
+	return config.verificationsDir || join(process.cwd(), 'storage', 'verifications');
 }
 
 const ALLOWED_MIME_TYPES = [
@@ -105,4 +115,40 @@ export async function processAndSaveImage(
 	await writeFile(filePath, processed);
 
 	return `/uploads/${category}/${filename}`;
+}
+
+/**
+ * Сохраняет файл верификации отзыва в непубличное хранилище.
+ * Возвращает имя файла на диске и размер после обработки.
+ */
+export async function processAndSaveVerificationImage(
+	buffer: Buffer,
+): Promise<{ storedName: string; size: number }> {
+	const processed = await sharp(buffer)
+		.rotate()
+		.resize(MAX_DIMENSION, MAX_DIMENSION, {
+			fit: 'inside',
+			withoutEnlargement: true,
+		})
+		.webp({ quality: WEBP_QUALITY })
+		.toBuffer();
+
+	const storedName = `${randomUUID()}.webp`;
+	const verificationsRoot = getVerificationsRoot();
+	await mkdir(verificationsRoot, { recursive: true });
+	await writeFile(join(verificationsRoot, storedName), processed);
+
+	return { storedName, size: processed.length };
+}
+
+/**
+ * Удаляет файл верификации с диска (замена отклонённого файла, откат
+ * неудавшейся загрузки). Отсутствие файла — не ошибка.
+ */
+export async function deleteVerificationImage(storedName: string): Promise<void> {
+	try {
+		await unlink(join(getVerificationsRoot(), basename(storedName)));
+	} catch (error: any) {
+		if (error?.code !== 'ENOENT') throw error;
+	}
 }

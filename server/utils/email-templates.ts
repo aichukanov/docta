@@ -409,7 +409,7 @@ const emailChangeNotificationTemplates: Record<
 
 // === Base HTML Template ===
 
-function generateEmailHTML(
+export function generateEmailHTML(
 	heading: string,
 	contentHtml: string,
 	copyright: string,

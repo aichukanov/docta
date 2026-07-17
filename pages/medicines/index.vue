@@ -57,6 +57,8 @@ watch(
 	},
 	{ immediate: true },
 );
+// строго после первичной синхронизации из URL — она не действие пользователя
+useFilterTracking('medicines');
 
 const filterList = computed(() => ({
 	name: name.value,

@@ -23,12 +23,16 @@
 </template>
 
 <script setup lang="ts">
+import type { AnalyticsContactType } from '~/types/analytics';
+
 const props = defineProps<{
 	value: string;
+	contactType: AnalyticsContactType;
 }>();
 
 const { t } = useI18n();
 const { trackEvent } = useAnalytics();
+const analyticsEntity = useAnalyticsEntity();
 
 const isCopied = ref(false);
 
@@ -36,7 +40,11 @@ async function copyToClipboard(): Promise<void> {
 	try {
 		await navigator.clipboard.writeText(props.value);
 		isCopied.value = true;
-		trackEvent('contact_copied', { value: props.value });
+		// PII не отправляем: вместо значения контакта — его тип и сущность-владелец
+		trackEvent('contact_copied', {
+			...analyticsEntity.value,
+			contact_type: props.contactType,
+		});
 
 		setTimeout(() => {
 			isCopied.value = false;

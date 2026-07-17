@@ -1,7 +1,7 @@
 import { getConnection } from '~/server/common/db-mysql';
 import {
 	parseClinicPricesData,
-	getPriceOrderBySQL,
+	getClinicRankOrderBySQL,
 	processLocalizedNameForClinicOrDoctor,
 	getLocalizedNameField,
 } from '~/server/common/utils';
@@ -74,7 +74,7 @@ export async function getMedicalServiceList(
 	}
 	if (body.cityIds != null && body.cityIds.length > 0) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f JOIN clinics c_f ON cms_f.clinic_id = c_f.id WHERE cms_f.medical_service_id = ms.id AND c_f.city_id IN (${buildInPlaceholders(
+			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f JOIN clinics c_f ON cms_f.clinic_id = c_f.id WHERE cms_f.medical_service_id = ms.id AND c_f.status = 'published' AND c_f.city_id IN (${buildInPlaceholders(
 				body.cityIds,
 			)}))`,
 		);
@@ -137,7 +137,10 @@ export async function getMedicalServiceList(
 		...selectCityIds,
 	];
 
-	const priceOrder = getPriceOrderBySQL('cms');
+	// Порядок клиник в карточке: композитный скор без локации (rank_score +
+	// бонус за цену); первые LIST_CARD_MAX_CLINICS клиник видны на карточке,
+	// их порядок клиент пересортирует с учётом расстояния (use-clinic-ranking.ts)
+	const rankOrder = getClinicRankOrderBySQL('c_rank', 'cms', true);
 
 	// Sort: 'name-asc' / 'price-asc' / 'price-desc' override the default rank-based order.
 	// Price sort only works when scoped to a single clinic.
@@ -177,11 +180,11 @@ export async function getMedicalServiceList(
 			ms.name_tr,
 			ms.sort_order,
 			${sortPriceSelect}
-			(SELECT COALESCE(GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${priceOrder}), '') FROM clinic_medical_services cms WHERE cms.medical_service_id = ms.id${cityFilterInSelect}) as clinicIds,
+			(SELECT COALESCE(GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${rankOrder}), '') FROM clinic_medical_services cms JOIN clinics c_rank ON c_rank.id = cms.clinic_id AND c_rank.status = 'published' WHERE cms.medical_service_id = ms.id${cityFilterInSelect}) as clinicIds,
 			(SELECT GROUP_CONCAT(
 				DISTINCT CONCAT(cms.clinic_id, ':', IFNULL(cms.price, ''), ':', IFNULL(cms.price_min, ''), ':', IFNULL(cms.price_max, ''), ':', COALESCE(cms.code, ''))
-				ORDER BY ${priceOrder}
-			) FROM clinic_medical_services cms WHERE cms.medical_service_id = ms.id${cityFilterInSelect}) as clinicPricesData,
+				ORDER BY ${rankOrder}
+			) FROM clinic_medical_services cms JOIN clinics c_rank ON c_rank.id = cms.clinic_id AND c_rank.status = 'published' WHERE cms.medical_service_id = ms.id${cityFilterInSelect}) as clinicPricesData,
 			(
 				SELECT GROUP_CONCAT(DISTINCT mscr2.medical_service_category_id ORDER BY mscr2.medical_service_category_id)
 				FROM medical_service_categories_relations mscr2
@@ -221,14 +224,14 @@ export async function getMedicalServiceList(
 			name_tr,
 			...rest
 		} = row;
-		// Listing-карточка показывает только первые LIST_CARD_MAX_CLINICS клиник,
-		// поэтому отдаём только их id/цены — остальное доступно на странице деталей.
+		// clinicIds отдаём полностью — по ним карта ставит маркеры всех клиник.
+		// Цены нужны только карточке (первые LIST_CARD_MAX_CLINICS клиник),
+		// остальное доступно на странице деталей.
 		const allClinicIds = row.clinicIds
 			? String(row.clinicIds).split(',').filter(Boolean)
 			: [];
 		const clinicCount = allClinicIds.length;
 		const limitedIds = new Set(allClinicIds.slice(0, LIST_CARD_MAX_CLINICS));
-		const limitedClinicIds = Array.from(limitedIds).join(',');
 		const allClinicPrices = parseClinicPricesData(row.clinicPricesData);
 		const limitedClinicPrices = allClinicPrices.filter((p) =>
 			limitedIds.has(String(p.clinicId)),
@@ -238,7 +241,7 @@ export async function getMedicalServiceList(
 			id: row.id,
 			name: name || '',
 			localName: localName || '',
-			clinicIds: limitedClinicIds,
+			clinicIds: allClinicIds.join(','),
 			clinicCount,
 			clinicPrices: limitedClinicPrices,
 			categoryIds: row.categoryIds

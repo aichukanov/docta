@@ -1,6 +1,6 @@
 # PRD: Самостоятельная покупка платных услуг для клиник
 
-**Статус:** Draft  
+**Статус:** Complete (4/4 итераций, Stripe Checkout, 2026-06-12)  
 **Приоритет:** P1 (высокий)
 
 ---
@@ -21,10 +21,12 @@
 
 ### 🔄 Итерации разработки
 
-- **[Итерация 1: Страница платных услуг в профиле клиники](iterations/iteration-01-services-page.md)** [TODO]
-- **[Итерация 2: Выбор и формирование заказа](iterations/iteration-02-order-creation.md)** [TODO]
-- **[Итерация 3: Интеграция платежной системы](iterations/iteration-03-payment-integration.md)** [TODO]
-- **[Итерация 4: Подтверждение и активация услуг](iterations/iteration-04-activation.md)** [TODO]
+- **[Итерация 1: Страница платных услуг в профиле клиники](iterations/iteration-01-services-page.md)** [✅ DONE 2026-06-12]
+- **[Итерация 2: Выбор и формирование заказа](iterations/iteration-02-order-creation.md)** [✅ DONE 2026-06-12]
+- **[Итерация 3: Интеграция платежной системы](iterations/iteration-03-payment-integration.md)** [✅ DONE 2026-06-12, Stripe]
+- **[Итерация 4: Подтверждение и активация услуг](iterations/iteration-04-activation.md)** [✅ DONE 2026-06-12]
+
+Детали реализации и принятые отступления от PRD — в [PROGRESS.md](PROGRESS.md).
 
 ---
 

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { List, MapLocation } from '@element-plus/icons-vue';
 import { OG_IMAGE, SITE_URL } from '~/common/constants';
 import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
 import {
@@ -13,9 +14,11 @@ import cityI18n from '~/i18n/city';
 import clinicI18n from '~/i18n/clinic';
 import clinicTypeI18n from '~/i18n/clinic-type';
 import languageI18n from '~/i18n/language';
+import ratingI18n from '~/i18n/rating';
+import specialtyI18n from '~/i18n/specialty';
 import workingHoursI18n from '~/i18n/working-hours';
 
-const { t, locale } = useI18n({
+const { t, n, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([
 		breadcrumbI18n,
@@ -23,16 +26,54 @@ const { t, locale } = useI18n({
 		clinicTypeI18n,
 		cityI18n,
 		languageI18n,
+		ratingI18n,
+		specialtyI18n,
 		workingHoursI18n,
 	]),
 });
 
+const { userLocation, initLocation } = useUserLocation();
+
+onMounted(() => {
+	initLocation();
+});
+
 const filtersStore = useFiltersStore();
-const { cityIds, languageIds, clinicTypeIds, name, openNow } = toRefs(
-	filtersStore.namespaces.clinics,
-);
+const {
+	cityIds,
+	languageIds,
+	clinicTypeIds,
+	specialtyIds,
+	name,
+	openNow,
+	minRating,
+} = toRefs(filtersStore.namespaces.clinics);
 const route = useRoute();
 const pageNumber = ref(Number(route.query.page || 1));
+// Переключатель список/карта — только мобильные; на десктопе карта всегда
+// сбоку списка. Локальное состояние, НЕ в URL: карта — вспомогательный режим,
+// перезагрузка/шеринг ссылки должны всегда открывать список.
+const view = ref<'list' | 'map'>('list');
+
+const MOBILE_BREAKPOINT = '(max-width: 950px)';
+const isMobileViewport = ref(false);
+let mediaQuery: MediaQueryList | null = null;
+const onViewportChange = (e: MediaQueryListEvent | MediaQueryList) => {
+	isMobileViewport.value = e.matches;
+};
+onMounted(() => {
+	mediaQuery = window.matchMedia(MOBILE_BREAKPOINT);
+	onViewportChange(mediaQuery);
+	mediaQuery.addEventListener('change', onViewportChange);
+});
+onUnmounted(() => {
+	mediaQuery?.removeEventListener('change', onViewportChange);
+});
+
+// Режим карты на десктопе (ресайз с открытой картой) рендерится списком
+const effectiveView = computed(() =>
+	isMobileViewport.value && view.value === 'map' ? 'map' : 'list',
+);
 const routeName = route.name;
 watch(
 	() => route.query,
@@ -43,16 +84,37 @@ watch(
 	},
 	{ immediate: true },
 );
+// строго после первичной синхронизации из URL — она не действие пользователя
+useFilterTracking('clinics');
+
+// Композитное ранжирование (rank_score + вклад близости, common/ranking.ts) —
+// когда локация известна. На SSR её нет, поэтому SEO-выдача не меняется.
+// Спецслучай «фильтр по городу отключает сортировку» (бывш. FR-2.6) не нужен:
+// у клиник далёкого отфильтрованного города вклад близости ≈ 0 у всех,
+// порядок сам вырождается в rank_score.
+const sortByDistance = computed(() => !!userLocation.value);
 
 const filterList = computed(() => ({
 	cityIds: cityIds.value,
 	languageIds: languageIds.value,
 	clinicTypeIds: clinicTypeIds.value,
+	specialtyIds: specialtyIds.value,
 	name: name.value,
 	openNow: openNow.value,
+	minRating: minRating.value || undefined,
 	locale: locale.value,
 	page: pageNumber.value,
+	userLatitude: sortByDistance.value
+		? userLocation.value?.latitude
+		: undefined,
+	userLongitude: sortByDistance.value
+		? userLocation.value?.longitude
+		: undefined,
+	sortByDistance: sortByDistance.value || undefined,
 }));
+
+// Расстояние на карточке — общий механизм ранжирования
+const { getDistanceKm } = useClinicRanking();
 
 const filterQuery = computed(
 	() => filtersStore.getRouteParams('clinics').query,
@@ -66,6 +128,28 @@ const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
 		body: filterList,
 	},
 );
+
+// Для карты нужны ВСЕ клиники по текущим фильтрам (без пагинации).
+// Грузится только на клиенте; в режиме списка тоже используется —
+// боковая карта показывает отфильтрованные клиники, а не все подряд.
+const mapFilterList = computed(() => ({
+	cityIds: cityIds.value,
+	languageIds: languageIds.value,
+	clinicTypeIds: clinicTypeIds.value,
+	specialtyIds: specialtyIds.value,
+	name: name.value,
+	openNow: openNow.value,
+	minRating: minRating.value || undefined,
+	locale: locale.value,
+}));
+
+const { data: mapClinicsList } = await useFetch('/api/clinics/list', {
+	key: 'clinics-map-list',
+	method: 'POST',
+	body: mapFilterList,
+	server: false,
+	lazy: true,
+});
 
 const clinicTypeName = computed(() => {
 	if (clinicTypeIds.value.length === 1) {
@@ -112,8 +196,28 @@ const pageTitle = computed(() => {
 	return t('Clinics');
 });
 
+// Специальность и рейтинг не входят в комбинаторику базовых заголовков —
+// добавляются суффиксами через разделитель
+const pageTitleSuffixes = computed(() => {
+	const parts: string[] = [];
+	if (specialtyIds.value.length === 1) {
+		parts.push(t(`specialty_${specialtyIds.value[0]}`));
+	}
+	if (minRating.value) {
+		parts.push(t('RatingFrom', { rating: n(minRating.value) }));
+	}
+	return parts;
+});
+
+const pageTitleFull = computed(() => {
+	if (pageTitleSuffixes.value.length === 0) {
+		return pageTitle.value;
+	}
+	return `${pageTitle.value} · ${pageTitleSuffixes.value.join(' · ')}`;
+});
+
 const pageTitleWithCount = computed(() => {
-	return `${pageTitle.value} (${clinicsList.value?.totalCount || 0})`;
+	return `${pageTitleFull.value} (${clinicsList.value?.totalCount || 0})`;
 });
 
 const pageDescription = computed(() => {
@@ -145,8 +249,10 @@ const isFiltered = computed(() => {
 		cityIds.value.length > 0 ||
 		languageIds.value.length > 0 ||
 		clinicTypeIds.value.length > 0 ||
+		specialtyIds.value.length > 0 ||
 		!!name.value ||
-		openNow.value
+		openNow.value ||
+		minRating.value > 0
 	);
 });
 
@@ -162,7 +268,7 @@ watchEffect(() => {
 				siteUrl: SITE_URL,
 				pageUrl,
 				locale: locale.value,
-				title: pageTitle.value,
+				title: pageTitleFull.value,
 				description: pageDescription.value,
 				totalCount: clinicsList.value.totalCount,
 				items: clinicsList.value.clinics,
@@ -191,7 +297,37 @@ watchEffect(() => {
 		:filterQuery="filterQuery"
 		:cityIds="cityIds"
 		:clinicMode="true"
+		:mapClinics="mapClinicsList?.clinics"
+		:view="effectiveView"
 	>
+		<template #header-actions>
+			<el-radio-group v-model="view" class="view-toggle">
+				<el-radio-button value="list">
+					<el-icon><List /></el-icon>
+					{{ t('ViewList') }}
+				</el-radio-button>
+				<el-radio-button value="map">
+					<el-icon><MapLocation /></el-icon>
+					{{ t('ViewMap') }}
+				</el-radio-button>
+			</el-radio-group>
+		</template>
+
+		<template #map-view>
+			<div class="map-view-wrapper">
+				<ClinicsMapView :clinics="mapClinicsList?.clinics || []" />
+				<el-button
+					class="map-view-exit"
+					type="primary"
+					round
+					@click="view = 'list'"
+				>
+					<el-icon><List /></el-icon>
+					{{ t('BackToList') }}
+				</el-button>
+			</div>
+		</template>
+
 		<template #filters>
 			<FilterName
 				v-model:value="name"
@@ -199,8 +335,10 @@ watchEffect(() => {
 				:placeholder="t('InsertClinicName')"
 			/>
 			<FilterClinicTypeSelect v-model:value="clinicTypeIds" />
+			<FilterSpecialtySelect v-model:value="specialtyIds" />
 			<FilterCitySelect v-model:value="cityIds" />
 			<FilterLanguageSelect v-model:value="languageIds" />
+			<FilterRatingSelect v-model:value="minRating" />
 			<FilterOpenNow v-model:value="openNow" :label="t('OpenNow')" />
 		</template>
 
@@ -208,6 +346,7 @@ watchEffect(() => {
 			<ClinicSummary
 				:clinic="item as ClinicData"
 				:showPrice="false"
+				:distance="getDistanceKm(item as ClinicData)"
 				@show-on-map="showClinicOnMap(item)"
 			/>
 		</template>
@@ -223,3 +362,50 @@ watchEffect(() => {
 		</template>
 	</ListPage>
 </template>
+
+<style scoped lang="less">
+// Переключатель список/карта — только мобильные; на десктопе
+// карта всегда отображается сбоку от списка
+.view-toggle {
+	display: none;
+	flex-shrink: 0;
+
+	:deep(.el-radio-button__inner) {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--spacing-xs);
+	}
+}
+
+.map-view-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-height: inherit;
+}
+
+// Плавающая кнопка выхода из мобильного фулскрина карты
+.map-view-exit {
+	display: none;
+	position: absolute;
+	bottom: var(--spacing-2xl);
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: var(--z-dropdown);
+	box-shadow: var(--shadow-lg);
+
+	.el-icon {
+		margin-right: var(--spacing-xs);
+	}
+}
+
+@media (max-width: 950px) {
+	.view-toggle {
+		display: inline-flex;
+	}
+
+	.map-view-exit {
+		display: inline-flex;
+	}
+}
+</style>

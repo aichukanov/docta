@@ -47,9 +47,52 @@ if (import.meta.server && !isFound.value) {
 	setResponseStatus(useRequestEvent()!, 404);
 }
 
+const { trackEvent } = useAnalytics();
+
+provideAnalyticsEntity(
+	computed(() =>
+		labTestData.value?.id
+			? {
+					entity_type: 'labtest' as const,
+					entity_id: labTestData.value.id,
+					entity_slug: route.params.labTestSlug as string,
+				}
+			: null,
+	),
+);
+
+if (import.meta.client) {
+	const trackLabTestView = () => {
+		const labTest = labTestData.value;
+		if (!labTest?.id) return;
+		trackEvent('entity_viewed', {
+			entity_type: 'labtest',
+			entity_id: labTest.id,
+			entity_slug: route.params.labTestSlug as string,
+			entity_name: labTest.name,
+			clinics_count: labTest.clinicIds ? labTest.clinicIds.split(',').length : 0,
+		});
+	};
+	// onMounted — первый показ; watch — клиентский переход анализ→анализ,
+	// когда компонент страницы переиспользуется без remount
+	onMounted(trackLabTestView);
+	watch(
+		() => labTestData.value?.id,
+		(id, prevId) => {
+			if (id && id !== prevId) trackLabTestView();
+		},
+	);
+}
+
+// Композитная пересортировка (rank_score + близость + бонус за цену):
+// до определения локации совпадает с серверным порядком — гидрация не прыгает
+const { rankClinics } = useClinicRanking();
 const allLabTestClinics = computed(() =>
 	isFound.value
-		? clinicsStore.getClinicsByIds(labTestData.value?.clinicIds)
+		? rankClinics(
+				clinicsStore.getClinicsByIds(labTestData.value?.clinicIds),
+				labTestData.value?.clinicPrices,
+			)
 		: [],
 );
 

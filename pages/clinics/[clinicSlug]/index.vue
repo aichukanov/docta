@@ -74,6 +74,38 @@ const { pending: isLoading, data: clinicData } = await useFetch(
 	},
 );
 
+const { trackEvent } = useAnalytics();
+
+provideAnalyticsEntity(
+	computed(() =>
+		clinicData.value?.id
+			? {
+					entity_type: 'clinic' as const,
+					entity_id: clinicData.value.id,
+					entity_slug: clinicSlug.value,
+				}
+			: null,
+	),
+);
+
+if (import.meta.client) {
+	const trackClinicView = () => {
+		if (!clinicData.value?.id) return;
+		trackEvent('entity_viewed', {
+			entity_type: 'clinic',
+			entity_id: clinicData.value.id,
+			entity_slug: clinicSlug.value,
+			entity_name: clinicData.value.name,
+		});
+	};
+	// onMounted — первый показ; watch — клиентский переход клиника→клиника,
+	// когда компонент страницы переиспользуется без remount
+	onMounted(trackClinicView);
+	watch(clinicId, (id, prevId) => {
+		if (id && id !== prevId) trackClinicView();
+	});
+}
+
 const itemsSummary = computed(() => clinicData.value?.itemsSummary);
 
 const totals = computed(() => ({
@@ -516,7 +548,12 @@ const allReviewsLink = computed(() => {
 
 const schemaOrgStore = useSchemaOrgStore();
 
-const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
+// Черновик виден только владельцу/админу — даже им страница отдаётся с noindex
+const robotsMeta = computed(() =>
+	isFound.value && clinicData.value?.status === 'published'
+		? undefined
+		: 'noindex',
+);
 
 useSeoMeta({
 	title: pageTitle,
@@ -639,6 +676,10 @@ watchEffect(() => {
 		:tabs="tabs"
 	>
 		<template #hero>
+			<ClinicOwnerBanner
+				v-if="clinicData?.isOwner"
+				:status="clinicData.status"
+			/>
 			<ClinicHero
 				v-if="clinicData"
 				:clinic="clinicData"

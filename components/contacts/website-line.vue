@@ -4,6 +4,7 @@
 		link
 		:tooltip="t('Website')"
 		:nofollow="nofollow"
+		contactType="website"
 	>
 		<IconWebsite :size="20" class="messenger-icon" />
 		<span>{{ websiteUrl }}</span>

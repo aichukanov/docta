@@ -1,5 +1,5 @@
 <template>
-	<ContactsLine :value="emailAddress" :tooltip="t('Email')">
+	<ContactsLine :value="emailAddress" :tooltip="t('Email')" contactType="email">
 		<IconEmail :size="20" class="messenger-icon" />
 		<span>{{ emailAddress }}</span>
 	</ContactsLine>

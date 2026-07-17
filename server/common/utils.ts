@@ -1,3 +1,5 @@
+import { CLINIC_PRICE_BONUS } from '~/common/ranking';
+
 export function sanitizeLink(link: string): string {
 	// Убираем все пробелы и оставляем только валидные символы для URL
 	return link
@@ -22,13 +24,24 @@ export function getLocalizedNameField(locale?: string): string {
 }
 
 /**
- * Генерирует SQL ORDER BY для сортировки по цене:
- * сначала клиники с ценой (от дешёвых к дорогим), потом без цены
- * @param tableAlias - алиас таблицы (например 'clt', 'cm', 'cms'), или пустая строка для подзапросов
+ * SQL ORDER BY композитного скора клиник для списков позиций с ценами
+ * (услуги/анализы/лекарства): rank_score клиники + бонус за указанную цену.
+ * Серверное зеркало common/ranking.ts — порядок «без локации»; вклад
+ * расстояния добавляется на клиенте (composables/use-clinic-ranking.ts),
+ * чтобы SSR-выдача не зависела от города пользователя.
+ * @param clinicAlias - алиас таблицы clinics в запросе
+ * @param priceAlias - алиас таблицы цен (cms/clt/cm)
+ * @param hasPriceMin - есть ли у таблицы цен колонка price_min (только clinic_medical_services)
  */
-export function getPriceOrderBySQL(tableAlias: string = ''): string {
-	const priceField = tableAlias ? `${tableAlias}.price` : 'price';
-	return `CASE WHEN ${priceField} > 0 THEN 0 ELSE 1 END, CASE WHEN ${priceField} > 0 THEN ${priceField} ELSE 999999999 END`;
+export function getClinicRankOrderBySQL(
+	clinicAlias: string,
+	priceAlias: string,
+	hasPriceMin = false,
+): string {
+	const hasPrice = hasPriceMin
+		? `${priceAlias}.price > 0 OR ${priceAlias}.price_min > 0`
+		: `${priceAlias}.price > 0`;
+	return `(${clinicAlias}.rank_score + CASE WHEN ${hasPrice} THEN ${CLINIC_PRICE_BONUS} ELSE 0 END) DESC, ${priceAlias}.clinic_id ASC`;
 }
 
 export function parseClinicPricesData(clinicPricesData: string | null): Array<{

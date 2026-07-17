@@ -49,9 +49,54 @@ if (import.meta.server && !isFound.value) {
 	setResponseStatus(useRequestEvent()!, 404);
 }
 
+const { trackEvent } = useAnalytics();
+
+provideAnalyticsEntity(
+	computed(() =>
+		medicalServiceData.value?.id
+			? {
+					entity_type: 'service' as const,
+					entity_id: medicalServiceData.value.id,
+					entity_slug: route.params.serviceSlug as string,
+				}
+			: null,
+	),
+);
+
+if (import.meta.client) {
+	const trackServiceView = () => {
+		const service = medicalServiceData.value;
+		if (!service?.id) return;
+		trackEvent('entity_viewed', {
+			entity_type: 'service',
+			entity_id: service.id,
+			entity_slug: route.params.serviceSlug as string,
+			entity_name: service.name,
+			clinics_count: service.clinicIds
+				? service.clinicIds.split(',').length
+				: 0,
+		});
+	};
+	// onMounted — первый показ; watch — клиентский переход услуга→услуга,
+	// когда компонент страницы переиспользуется без remount
+	onMounted(trackServiceView);
+	watch(
+		() => medicalServiceData.value?.id,
+		(id, prevId) => {
+			if (id && id !== prevId) trackServiceView();
+		},
+	);
+}
+
+// Композитная пересортировка (rank_score + близость + бонус за цену):
+// до определения локации совпадает с серверным порядком — гидрация не прыгает
+const { rankClinics } = useClinicRanking();
 const allMedicalServiceClinics = computed(() =>
 	isFound.value
-		? clinicsStore.getClinicsByIds(medicalServiceData.value?.clinicIds)
+		? rankClinics(
+				clinicsStore.getClinicsByIds(medicalServiceData.value?.clinicIds),
+				medicalServiceData.value?.clinicPrices,
+			)
 		: [],
 );
 

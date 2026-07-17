@@ -1,7 +1,7 @@
 import { getConnection } from '~/server/common/db-mysql';
 import {
 	parseClinicPricesData,
-	getPriceOrderBySQL,
+	getClinicRankOrderBySQL,
 	processLocalizedNameForClinicOrDoctor,
 	getLocalizedNameField,
 } from '~/server/common/utils';
@@ -99,7 +99,10 @@ export async function getMedicationList(
 		? `LIMIT ${pageSize} OFFSET ${offset}`
 		: '';
 
-	const priceOrder = getPriceOrderBySQL('cm');
+	// Порядок клиник в карточке: композитный скор без локации (rank_score +
+	// бонус за цену); вклад расстояния добавит клиент (use-clinic-ranking.ts).
+	// Таблица clinics уже приджойнена в основном запросе.
+	const rankOrder = getClinicRankOrderBySQL('clinics', 'cm');
 
 	const localizedNameField = getLocalizedNameField(locale) || 'name_en';
 	const singleClinicId =
@@ -123,7 +126,7 @@ export async function getMedicationList(
 		SELECT COUNT(DISTINCT m.id) as totalCount
 		FROM medications m
 		LEFT JOIN clinic_medications cm ON m.id = cm.medication_id
-		LEFT JOIN clinics ON cm.clinic_id = clinics.id
+		LEFT JOIN clinics ON cm.clinic_id = clinics.id AND clinics.status = 'published'
 		LEFT JOIN cities ON clinics.city_id = cities.id
 		${whereFiltersString};
 	`;
@@ -138,14 +141,14 @@ export async function getMedicationList(
 			m.name_de,
 			m.name_tr,
 			${sortPriceSelect}
-			GROUP_CONCAT(DISTINCT cm.clinic_id ORDER BY ${priceOrder}) as clinicIds,
+			GROUP_CONCAT(DISTINCT clinics.id ORDER BY ${rankOrder}) as clinicIds,
 			GROUP_CONCAT(
-				DISTINCT CONCAT(cm.clinic_id, ':', IFNULL(cm.price, ''), ':', '', ':', IFNULL(cm.price_max, ''), ':', COALESCE(cm.code, ''))
-				ORDER BY ${priceOrder}
+				DISTINCT CONCAT(clinics.id, ':', IFNULL(cm.price, ''), ':', '', ':', IFNULL(cm.price_max, ''), ':', COALESCE(cm.code, ''))
+				ORDER BY ${rankOrder}
 			) as clinicPricesData
 		FROM medications m
 		LEFT JOIN clinic_medications cm ON m.id = cm.medication_id
-		LEFT JOIN clinics ON cm.clinic_id = clinics.id
+		LEFT JOIN clinics ON cm.clinic_id = clinics.id AND clinics.status = 'published'
 		LEFT JOIN cities ON clinics.city_id = cities.id
 		${whereFiltersString}
 		GROUP BY m.id, m.name_en, m.name_sr, m.name_sr_cyrl, m.name_ru, m.name_de, m.name_tr${usePriceSort ? ', sortPrice' : ''}
@@ -180,14 +183,14 @@ export async function getMedicationList(
 			name_tr,
 			...rest
 		} = row;
-		// Listing-карточка показывает только первые LIST_CARD_MAX_CLINICS клиник,
-		// поэтому отдаём только их id/цены — остальное доступно на странице деталей.
+		// clinicIds отдаём полностью — по ним карта ставит маркеры всех клиник.
+		// Цены нужны только карточке (первые LIST_CARD_MAX_CLINICS клиник),
+		// остальное доступно на странице деталей.
 		const allClinicIds = row.clinicIds
 			? String(row.clinicIds).split(',').filter(Boolean)
 			: [];
 		const clinicCount = allClinicIds.length;
 		const limitedIds = new Set(allClinicIds.slice(0, LIST_CARD_MAX_CLINICS));
-		const limitedClinicIds = Array.from(limitedIds).join(',');
 		const allClinicPrices = parseClinicPricesData(row.clinicPricesData);
 		const limitedClinicPrices = allClinicPrices.filter((p) =>
 			limitedIds.has(String(p.clinicId)),
@@ -197,7 +200,7 @@ export async function getMedicationList(
 			id: row.id,
 			name: name || '',
 			localName: localName || '',
-			clinicIds: limitedClinicIds,
+			clinicIds: allClinicIds.join(','),
 			clinicCount,
 			clinicPrices: limitedClinicPrices,
 		};

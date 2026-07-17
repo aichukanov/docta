@@ -159,6 +159,7 @@ const userDisplayName = computed(() => {
 						</template>
 					</ClientOnly>
 
+					<LocationSelector />
 					<LanguageSwitcher />
 				</div>
 			</div>

@@ -68,6 +68,17 @@ export default {
 			newEmailLabel: 'New email',
 			newEmailPlaceholder: 'Enter new email',
 			sendEmail: 'Send email',
+
+			// Privacy
+			privacyTitle: 'Privacy',
+			privacyDescription: 'Control how you appear next to your reviews',
+			publicProfileLabel: 'Public profile',
+			publicProfileHint: 'Your name is shown next to your reviews',
+			privateProfileHint: 'Your reviews are published anonymously',
+			privacyPreviewLabel: 'How others see your reviews:',
+			anonymousUser: 'Anonymous',
+			privacyUpdated: 'Privacy settings saved',
+			errorUpdatingPrivacy: 'Failed to update privacy settings',
 		},
 
 		'ru': {
@@ -132,6 +143,18 @@ export default {
 			newEmailLabel: 'Новый email',
 			newEmailPlaceholder: 'Введите новый email',
 			sendEmail: 'Отправить письмо',
+
+			// Приватность
+			privacyTitle: 'Приватность',
+			privacyDescription:
+				'Управляйте тем, как вы отображаетесь рядом с вашими отзывами',
+			publicProfileLabel: 'Публичный профиль',
+			publicProfileHint: 'Рядом с вашими отзывами отображается ваше имя',
+			privateProfileHint: 'Ваши отзывы публикуются анонимно',
+			privacyPreviewLabel: 'Так ваши отзывы видят другие:',
+			anonymousUser: 'Анонимно',
+			privacyUpdated: 'Настройки приватности сохранены',
+			errorUpdatingPrivacy: 'Не удалось обновить настройки приватности',
 		},
 
 		'sr': {
@@ -197,6 +220,18 @@ export default {
 			newEmailLabel: 'Novi email',
 			newEmailPlaceholder: 'Unesite novi email',
 			sendEmail: 'Pošalji email',
+
+			// Privatnost
+			privacyTitle: 'Privatnost',
+			privacyDescription:
+				'Upravljajte time kako se prikazujete uz svoje recenzije',
+			publicProfileLabel: 'Javni profil',
+			publicProfileHint: 'Uz vaše recenzije prikazuje se vaše ime',
+			privateProfileHint: 'Vaše recenzije se objavljuju anonimno',
+			privacyPreviewLabel: 'Ovako drugi vide vaše recenzije:',
+			anonymousUser: 'Anonimno',
+			privacyUpdated: 'Podešavanja privatnosti sačuvana',
+			errorUpdatingPrivacy: 'Neuspješno ažuriranje podešavanja privatnosti',
 		},
 
 		'de': {
@@ -259,6 +294,19 @@ export default {
 			newEmailLabel: 'Neue E-Mail',
 			newEmailPlaceholder: 'Neue E-Mail eingeben',
 			sendEmail: 'E-Mail senden',
+
+			// Privatsphäre
+			privacyTitle: 'Privatsphäre',
+			privacyDescription:
+				'Steuern Sie, wie Sie neben Ihren Bewertungen erscheinen',
+			publicProfileLabel: 'Öffentliches Profil',
+			publicProfileHint: 'Ihr Name wird neben Ihren Bewertungen angezeigt',
+			privateProfileHint: 'Ihre Bewertungen werden anonym veröffentlicht',
+			privacyPreviewLabel: 'So sehen andere Ihre Bewertungen:',
+			anonymousUser: 'Anonym',
+			privacyUpdated: 'Privatsphäre-Einstellungen gespeichert',
+			errorUpdatingPrivacy:
+				'Privatsphäre-Einstellungen konnten nicht aktualisiert werden',
 		},
 
 		'tr': {
@@ -324,6 +372,18 @@ export default {
 			newEmailLabel: 'Yeni e-posta',
 			newEmailPlaceholder: 'Yeni e-posta girin',
 			sendEmail: 'E-posta gönder',
+
+			// Gizlilik
+			privacyTitle: 'Gizlilik',
+			privacyDescription:
+				'Yorumlarınızın yanında nasıl görüneceğinizi yönetin',
+			publicProfileLabel: 'Herkese açık profil',
+			publicProfileHint: 'Yorumlarınızın yanında adınız gösterilir',
+			privateProfileHint: 'Yorumlarınız anonim olarak yayınlanır',
+			privacyPreviewLabel: 'Yorumlarınızı başkaları böyle görür:',
+			anonymousUser: 'Anonim',
+			privacyUpdated: 'Gizlilik ayarları kaydedildi',
+			errorUpdatingPrivacy: 'Gizlilik ayarları güncellenemedi',
 		},
 
 		'sr-cyrl': {
@@ -389,6 +449,18 @@ export default {
 			newEmailLabel: 'Нови email',
 			newEmailPlaceholder: 'Унесите нови email',
 			sendEmail: 'Пошаљи email',
+
+			// Приватност
+			privacyTitle: 'Приватност',
+			privacyDescription:
+				'Управљајте тиме како се приказујете уз своје рецензије',
+			publicProfileLabel: 'Јавни профил',
+			publicProfileHint: 'Уз ваше рецензије приказује се ваше име',
+			privateProfileHint: 'Ваше рецензије се објављују анонимно',
+			privacyPreviewLabel: 'Овако други виде ваше рецензије:',
+			anonymousUser: 'Анонимно',
+			privacyUpdated: 'Подешавања приватности сачувана',
+			errorUpdatingPrivacy: 'Неуспјешно ажурирање подешавања приватности',
 		},
 	},
 };

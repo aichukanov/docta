@@ -30,6 +30,19 @@ const itemLink = computed(() => {
 	};
 });
 
+const { trackEvent } = useAnalytics();
+
+const trackItemLinkClick = () => {
+	const entityType = getEntityTypeByRouteName(props.routeName);
+	if (!entityType) return;
+	trackEvent('entity_link_clicked', {
+		entity_type: entityType,
+		entity_id: props.id,
+		entity_slug: props.slug,
+		entity_name: props.name,
+	});
+};
+
 const isPriceUnknown = computed(
 	() => props.price == null && props.priceMin == null,
 );
@@ -57,7 +70,12 @@ const formattedPrice = computed(() => {
 <template>
 	<div class="item-card">
 		<div class="item-info">
-			<NuxtLink v-if="itemLink" :to="itemLink" class="item-name item-link">
+			<NuxtLink
+				v-if="itemLink"
+				:to="itemLink"
+				class="item-name item-link"
+				@click="trackItemLinkClick"
+			>
 				{{ name }}
 			</NuxtLink>
 			<span v-else class="item-name">{{ name }}</span>

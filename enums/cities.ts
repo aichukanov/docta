@@ -16,6 +16,25 @@ export enum CityId {
 	ANDRIJEVICA = 15,
 }
 
+// Почтовые индексы центров общин — для автоподстановки в формах
+export const CITY_POSTAL_CODES: Record<CityId, string> = {
+	[CityId.PODGORICA]: '81000',
+	[CityId.NIKSIC]: '81400',
+	[CityId.BUDVA]: '85310',
+	[CityId.TIVAT]: '85320',
+	[CityId.ULCINJ]: '85360',
+	[CityId.KOTOR]: '85330',
+	[CityId.BAR]: '85000',
+	[CityId.HERCEG_NOVI]: '85340',
+	[CityId.BERANE]: '84300',
+	[CityId.CETINJE]: '81250',
+	[CityId.DANILOVGRAD]: '81410',
+	[CityId.BELO_POLJE]: '84000',
+	[CityId.KOLASIN]: '81210',
+	[CityId.MOJKOVAC]: '84205',
+	[CityId.ANDRIJEVICA]: '84320',
+};
+
 export const CITY_COORDINATES: Record<CityId, [number, number]> = {
 	[CityId.PODGORICA]: [42.442574, 19.268646],
 	[CityId.NIKSIC]: [42.77105944, 18.9476806],

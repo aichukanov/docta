@@ -5,6 +5,7 @@ import {
 	SITE_URL,
 	REVIEWS_THRESHOLD,
 	SITEMAP_DETAIL_CITY_MIN_CLINICS,
+	SITEMAP_CLINIC_TYPE_CITY_MIN_CLINICS,
 } from '~/common/constants';
 import { getDoctorList } from '~/server/api/doctors/list';
 import { getLabTestList } from '~/server/api/labtests/list';
@@ -65,7 +66,7 @@ async function getEntitiesWithReviews(): Promise<{
 	const [doctorRows] = await connection.execute(
 		`SELECT d.slug
 		FROM doctors d
-		JOIN reviews r ON r.doctor_id = d.id AND r.rating IS NOT NULL
+		JOIN reviews r ON r.doctor_id = d.id AND r.rating IS NOT NULL AND r.status != 'rejected'
 		WHERE d.hidden = 0 AND d.is_draft = 0
 		GROUP BY d.id
 		HAVING COUNT(*) > ?`,
@@ -75,7 +76,8 @@ async function getEntitiesWithReviews(): Promise<{
 	const [clinicRows] = await connection.execute(
 		`SELECT c.slug
 		FROM clinics c
-		JOIN reviews r ON r.clinic_id = c.id AND r.rating IS NOT NULL
+		JOIN reviews r ON r.clinic_id = c.id AND r.rating IS NOT NULL AND r.status != 'rejected'
+		WHERE c.status = 'published'
 		GROUP BY c.id
 		HAVING COUNT(*) > ?`,
 		[REVIEWS_THRESHOLD],
@@ -241,7 +243,9 @@ export async function generateSitemapPage() {
 
 	// === Clinics ===
 	const clinics = await getClinicList();
-	const clinicFilters = await getClinicSitemapFilters();
+	const clinicFilters = await getClinicSitemapFilters(
+		SITEMAP_CLINIC_TYPE_CITY_MIN_CLINICS,
+	);
 
 	const clinicsPageLink: SitemapLink = menuItemToLinks('clinics');
 
@@ -252,6 +256,21 @@ export async function generateSitemapPage() {
 	const clinicCityLinks: SitemapLink[] = clinicFilters.cityIds.map((city) =>
 		menuItemToLinks('clinics', { cityIds: city }),
 	);
+
+	// Тип клиники: «Стоматологические клиники [в Будве]» — реальный поисковый
+	// спрос; рейтинг/«открыто сейчас»/специализация в sitemap сознательно НЕ
+	// включены (см. prd/clinic-catalog/PROGRESS.md)
+	const clinicTypeLinks: SitemapLink[] = clinicFilters.clinicTypeIds.map(
+		(typeId) => menuItemToLinks('clinics', { clinicTypeIds: typeId }),
+	);
+
+	const clinicTypeCityLinks: SitemapLink[] =
+		clinicFilters.typeCityCombinations.map((combo) =>
+			menuItemToLinks('clinics', {
+				clinicTypeIds: combo.clinicTypeId,
+				cityIds: combo.cityId,
+			}),
+		);
 
 	// === Clinic subpages (services/labtests/medications/doctors) ===
 	// Only for clinics whose item count exceeds the inline threshold — smaller
@@ -302,11 +321,13 @@ export async function generateSitemapPage() {
 		...medicineLinks,
 		...medicineAtcGroupLinks,
 		...medicineSubstanceAtcLinks,
-		// Clinics: страницы + город
+		// Clinics: страницы + город + тип + тип+город
 		clinicsPageLink,
 		...clinicLinks,
 		...clinicReviewLinks,
 		...clinicCityLinks,
+		...clinicTypeLinks,
+		...clinicTypeCityLinks,
 		// Clinic subpages: списки услуг/анализов/лекарств/врачей конкретной клиники
 		...clinicSubpageLinks,
 	]);

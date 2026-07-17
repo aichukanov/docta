@@ -1,7 +1,7 @@
 import { getConnection } from '~/server/common/db-mysql';
 import {
 	parseClinicPricesData,
-	getPriceOrderBySQL,
+	getClinicRankOrderBySQL,
 	processLocalizedNameForLabTest,
 } from '~/server/common/utils';
 import type { LabTestItem } from '~/interfaces/clinic';
@@ -23,7 +23,9 @@ export default defineEventHandler(
 			}
 
 			const locale = body.locale || 'en';
-			const priceOrder = getPriceOrderBySQL();
+			// Порядок клиник: композитный скор без локации (rank_score + бонус
+			// за цену); вклад расстояния добавит клиент (use-clinic-ranking.ts)
+			const rankOrder = getClinicRankOrderBySQL('c_rank', 'clt');
 
 			const labTestQuery = `
 			SELECT DISTINCT
@@ -36,17 +38,19 @@ export default defineEventHandler(
 				lt.name_de,
 				lt.name_tr,
 				(
-					SELECT GROUP_CONCAT(clinic_id ORDER BY ${priceOrder})
-					FROM clinic_lab_tests
-					WHERE lab_test_id = lt.id
+					SELECT GROUP_CONCAT(clt.clinic_id ORDER BY ${rankOrder})
+					FROM clinic_lab_tests clt
+					JOIN clinics c_rank ON c_rank.id = clt.clinic_id AND c_rank.status = 'published'
+					WHERE clt.lab_test_id = lt.id
 				) as clinicIds,
 				(
 					SELECT GROUP_CONCAT(
-						CONCAT(clinic_id, ':', IFNULL(price, ''), ':', '', ':', IFNULL(price_max, ''), ':', COALESCE(code, ''))
-						ORDER BY ${priceOrder}
+						CONCAT(clt.clinic_id, ':', IFNULL(clt.price, ''), ':', '', ':', IFNULL(clt.price_max, ''), ':', COALESCE(clt.code, ''))
+						ORDER BY ${rankOrder}
 					)
-					FROM clinic_lab_tests
-					WHERE lab_test_id = lt.id
+					FROM clinic_lab_tests clt
+					JOIN clinics c_rank ON c_rank.id = clt.clinic_id AND c_rank.status = 'published'
+					WHERE clt.lab_test_id = lt.id
 				) as clinicPricesData,
 				(SELECT GROUP_CONCAT(DISTINCT ltcr.category_id ORDER BY ltcr.category_id)
 				 FROM lab_test_categories_relations ltcr

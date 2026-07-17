@@ -1,7 +1,7 @@
 import { getConnection } from '~/server/common/db-mysql';
 import {
 	parseClinicPricesData,
-	getPriceOrderBySQL,
+	getClinicRankOrderBySQL,
 	processLocalizedNameForClinicOrDoctor,
 } from '~/server/common/utils';
 import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
@@ -24,7 +24,9 @@ export default defineEventHandler(
 
 			const locale = body.locale || 'en';
 
-			const priceOrder = getPriceOrderBySQL();
+			// Порядок клиник: композитный скор без локации (rank_score + бонус
+			// за цену); вклад расстояния добавит клиент (use-clinic-ranking.ts)
+			const rankOrder = getClinicRankOrderBySQL('c_rank', 'cm');
 			const medicationQuery = `
 			SELECT DISTINCT
 				m.id,
@@ -36,17 +38,19 @@ export default defineEventHandler(
 				m.name_de,
 				m.name_tr,
 				(
-					SELECT GROUP_CONCAT(clinic_id ORDER BY ${priceOrder})
-					FROM clinic_medications
-					WHERE medication_id = m.id
+					SELECT GROUP_CONCAT(cm.clinic_id ORDER BY ${rankOrder})
+					FROM clinic_medications cm
+					JOIN clinics c_rank ON c_rank.id = cm.clinic_id AND c_rank.status = 'published'
+					WHERE cm.medication_id = m.id
 				) as clinicIds,
 				(
 					SELECT GROUP_CONCAT(
-						CONCAT(clinic_id, ':', IFNULL(price, ''), ':', '', ':', IFNULL(price_max, ''), ':', COALESCE(code, ''))
-						ORDER BY ${priceOrder}
+						CONCAT(cm.clinic_id, ':', IFNULL(cm.price, ''), ':', '', ':', IFNULL(cm.price_max, ''), ':', COALESCE(cm.code, ''))
+						ORDER BY ${rankOrder}
 					)
-					FROM clinic_medications
-					WHERE medication_id = m.id
+					FROM clinic_medications cm
+					JOIN clinics c_rank ON c_rank.id = cm.clinic_id AND c_rank.status = 'published'
+					WHERE cm.medication_id = m.id
 				) as clinicPricesData
 			FROM medications m
 			WHERE m.slug = ?

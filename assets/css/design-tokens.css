@@ -28,6 +28,9 @@
 	--color-text-muted: #64748b;
 	--color-text-light: #94a3b8;
 	--color-text-tertiary: var(--color-text-light);
+	/* Плейсхолдеры заметно светлее текста (#475569 в инпутах) — иначе поле
+	   выглядит заполненным; низкий контраст здесь намеренный */
+	--color-text-placeholder: #a8b3c2;
 
 	--color-primary-light: #a5b4fc;
 	/* Янтарный: 3.16:1 на белом, 3.02:1 на bg-secondary (норма 1.4.11 — 3:1).
@@ -147,7 +150,7 @@
 	--el-text-color-primary: var(--color-text-primary);
 	--el-text-color-regular: var(--color-text-secondary);
 	--el-text-color-secondary: var(--color-text-muted);
-	--el-text-color-placeholder: var(--color-text-muted);
+	--el-text-color-placeholder: var(--color-text-placeholder);
 
 	--el-border-color: var(--color-border-primary);
 	--el-border-color-light: var(--color-border-secondary);

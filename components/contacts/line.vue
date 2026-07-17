@@ -12,6 +12,7 @@
 				:rel="nofollow ? 'nofollow noopener noreferrer' : 'noopener noreferrer'"
 				class="contact-link messenger-link"
 				target="_blank"
+				@click="trackContactClick"
 			>
 				<slot />
 			</a>
@@ -20,15 +21,18 @@
 			</span>
 		</el-tooltip>
 
-		<ContactsCopyButton :value="value" />
+		<ContactsCopyButton :value="value" :contactType="contactType" />
 	</div>
 </template>
 
 <script setup lang="ts">
-withDefaults(
+import type { AnalyticsContactType } from '~/types/analytics';
+
+const props = withDefaults(
 	defineProps<{
 		value: string;
 		tooltip: string;
+		contactType: AnalyticsContactType;
 		link?: boolean;
 		nofollow?: boolean;
 	}>(),
@@ -36,6 +40,16 @@ withDefaults(
 		nofollow: false,
 	},
 );
+
+const { trackEvent } = useAnalytics();
+const analyticsEntity = useAnalyticsEntity();
+
+const trackContactClick = () => {
+	trackEvent('contact_clicked', {
+		...analyticsEntity.value,
+		contact_type: props.contactType,
+	});
+};
 </script>
 
 <style scoped src="./style.css" />

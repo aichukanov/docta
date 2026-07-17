@@ -40,6 +40,7 @@ export default defineNuxtConfig({
 
 	runtimeConfig: {
 		uploadsDir: process.env.UPLOADS_DIR || '',
+		verificationsDir: process.env.VERIFICATIONS_DIR || '',
 		baseUrl: process.env.BASE_URL || '',
 		googleClientId: process.env.GOOGLE_CLIENT_ID || '',
 		googleClientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
@@ -52,6 +53,8 @@ export default defineNuxtConfig({
 		mailgunDomain: process.env.MAILGUN_DOMAIN || '',
 		mailgunFromEmail: process.env.MAILGUN_FROM_EMAIL || '',
 		mailgunFromName: process.env.MAILGUN_FROM_NAME || '',
+		stripeSecretKey: process.env.STRIPE_SECRET_KEY || '',
+		stripeWebhookSecret: process.env.STRIPE_WEBHOOK_SECRET || '',
 		dbHost: process.env.DB_HOST || '',
 		dbUser: process.env.DB_USER || '',
 		dbPassword: process.env.DB_PASSWORD || '',
@@ -59,6 +62,7 @@ export default defineNuxtConfig({
 			telegramBotId: (process.env.TELEGRAM_BOT_TOKEN || '').split(':')[0],
 			mixpanelToken: process.env.MIXPANEL_TOKEN,
 			cloudflareToken: process.env.CLOUDFLARE_TOKEN,
+			stripePublishableKey: process.env.NUXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '',
 		},
 	},
 

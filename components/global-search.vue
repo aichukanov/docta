@@ -638,7 +638,7 @@ onUnmounted(() => {
 		box-sizing: border-box;
 
 		&::placeholder {
-			color: var(--color-text-light);
+			color: var(--color-text-placeholder);
 		}
 
 		&:focus {

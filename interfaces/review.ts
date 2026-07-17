@@ -13,9 +13,10 @@ export interface ReviewReply {
 	updatedAt: string;
 }
 
+export type ReviewModerationStatus = 'pending' | 'approved' | 'rejected';
+
 export interface Review {
 	id: number;
-	userId?: number;
 	clinicId?: number;
 	doctorId?: number;
 	medicalServiceId?: number;
@@ -27,6 +28,8 @@ export interface Review {
 	text: string;
 	publishedAt?: string;
 	likesCount: number;
+	/** Визит подтверждён документом, проверенным модератором */
+	isVerified?: boolean;
 	updatedAt: string;
 	replies?: ReviewReply[];
 	author?: {
@@ -36,6 +39,21 @@ export interface Review {
 	};
 	/** true if this review belongs to the currently logged-in user */
 	isOwn?: boolean;
+	/** Только для own-отзыва: статус модерации */
+	status?: ReviewModerationStatus;
+	/** Только для own-отзыва: причина отклонения */
+	rejectionReason?: string | null;
+	/** Только для own-отзыва: статус проверки файла верификации */
+	verificationStatus?: ReviewModerationStatus | null;
+}
+
+export interface ReviewAiSummary {
+	sentiment: 'positive' | 'neutral' | 'negative';
+	positives: string[];
+	negatives: string[];
+	recommendations: string | null;
+	reviewsCount: number;
+	generatedAt: string;
 }
 
 export interface Rating {

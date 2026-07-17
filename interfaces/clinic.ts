@@ -9,6 +9,15 @@ export interface Coordinates {
 	longitude: number;
 }
 
+// Жизненный цикл пользовательской клиники (clinics.status).
+// 'pending_verification' и 'rejected' зарезервированы под будущую модерацию
+// (PRD clinic-verification); пользовательский флоу — draft <-> published.
+export type ClinicStatus =
+	| 'draft'
+	| 'pending_verification'
+	| 'published'
+	| 'rejected';
+
 export type ClinicItemType =
 	| 'services'
 	| 'labtests'
@@ -59,6 +68,16 @@ export interface ClinicData extends ContactList, Coordinates {
 	reviews?: Review[];
 	workingHours?: Omit<WorkingHours, 'clinicId'>;
 	itemsSummary?: ClinicItemsSummary;
+	// Заполняются только на details-эндпоинте: непубличная клиника видна
+	// владельцу/админу, страница показывает owner-баннер.
+	status?: ClinicStatus;
+	isOwner?: boolean;
+	// Расстояние до пользователя в км — только когда список отсортирован
+	// по расстоянию (см. sortByDistance в server/api/clinics/list.ts)
+	distance?: number;
+	// Общий рейтинг 0..1 (server/utils/entity-ranking.ts) — нужен клиенту
+	// для композитной пересортировки (composables/use-clinic-ranking.ts)
+	rankScore?: number;
 }
 
 export interface ClinicList {
@@ -69,8 +88,9 @@ export interface ClinicList {
 export interface ClinicServiceItem {
 	id: number;
 	slug: string;
-	// На listing-страницах содержит только первые LIST_CARD_MAX_CLINICS id (см. common/constants.ts).
-	// Полный список клиник доступен на странице деталей.
+	// Полный список id клиник (по нему карта ставит маркеры). Карточка
+	// показывает только первые LIST_CARD_MAX_CLINICS (см. common/constants.ts),
+	// clinicPrices на listing-эндпоинтах тоже обрезаны до этого числа.
 	clinicIds: string;
 	// Общее число клиник, в которых доступна услуга/анализ/лекарство.
 	// Заполняется backend-ом на listing-эндпоинтах и используется для подписи "Показать все клиники (N)".

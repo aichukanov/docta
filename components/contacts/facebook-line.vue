@@ -1,5 +1,11 @@
 <template>
-	<ContactsLine :value="facebookUrl" link :tooltip="t('Facebook')" nofollow>
+	<ContactsLine
+		:value="facebookUrl"
+		link
+		:tooltip="t('Facebook')"
+		nofollow
+		contactType="facebook"
+	>
 		<IconFacebook :size="20" class="messenger-icon" />
 		<span>{{ profile }}</span>
 	</ContactsLine>

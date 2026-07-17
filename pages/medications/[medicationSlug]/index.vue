@@ -41,9 +41,54 @@ if (import.meta.server && !isFound.value) {
 	setResponseStatus(useRequestEvent()!, 404);
 }
 
+const { trackEvent } = useAnalytics();
+
+provideAnalyticsEntity(
+	computed(() =>
+		medicationData.value?.id
+			? {
+					entity_type: 'medication' as const,
+					entity_id: medicationData.value.id,
+					entity_slug: route.params.medicationSlug as string,
+				}
+			: null,
+	),
+);
+
+if (import.meta.client) {
+	const trackMedicationView = () => {
+		const medication = medicationData.value;
+		if (!medication?.id) return;
+		trackEvent('entity_viewed', {
+			entity_type: 'medication',
+			entity_id: medication.id,
+			entity_slug: route.params.medicationSlug as string,
+			entity_name: medication.name,
+			clinics_count: medication.clinicIds
+				? medication.clinicIds.split(',').length
+				: 0,
+		});
+	};
+	// onMounted — первый показ; watch — клиентский переход между лекарствами,
+	// когда компонент страницы переиспользуется без remount
+	onMounted(trackMedicationView);
+	watch(
+		() => medicationData.value?.id,
+		(id, prevId) => {
+			if (id && id !== prevId) trackMedicationView();
+		},
+	);
+}
+
+// Композитная пересортировка (rank_score + близость + бонус за цену):
+// до определения локации совпадает с серверным порядком — гидрация не прыгает
+const { rankClinics } = useClinicRanking();
 const allMedicationClinics = computed(() =>
 	isFound.value
-		? clinicsStore.getClinicsByIds(medicationData.value?.clinicIds)
+		? rankClinics(
+				clinicsStore.getClinicsByIds(medicationData.value?.clinicIds),
+				medicationData.value?.clinicPrices,
+			)
 		: [],
 );
 

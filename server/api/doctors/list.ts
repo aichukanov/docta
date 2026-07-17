@@ -113,12 +113,26 @@ export async function getDoctorList(
 				)}))`,
 			);
 		} else {
+			// Клиники с языковым сопровождением учитываем только в выбранном
+			// городе, иначе врач попадёт в выдачу из-за клиники в другом городе,
+			// которая на странице всё равно не показывается (clinicIds фильтруются
+			// по городу ниже).
+			const cityIdsForLang =
+				body.cityIds != null && body.cityIds.length > 0
+					? body.cityIds
+					: null;
 			whereFilters.push(
 				`(EXISTS (SELECT 1 FROM doctor_languages dl WHERE dl.doctor_id = d.id AND dl.language_id IN (${buildInPlaceholders(
 					body.languageIds,
 				)})) OR EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id WHERE dc.doctor_id = d.id AND cl.language_id IN (${buildInPlaceholders(
 					body.languageIds,
-				)})))`,
+				)})${
+					cityIdsForLang
+						? ` AND EXISTS (SELECT 1 FROM clinics c_lang WHERE c_lang.id = dc.clinic_id AND c_lang.city_id IN (${buildInPlaceholders(
+								cityIdsForLang,
+							)}))`
+						: ''
+				}))`,
 			);
 		}
 	}
@@ -193,8 +207,8 @@ export async function getDoctorList(
 				(SELECT GROUP_CONCAT(DISTINCT ds.specialty_id ORDER BY ds.specialty_id) FROM doctor_specialties ds WHERE ds.doctor_id = d.id) as specialtyIds,
 				(SELECT GROUP_CONCAT(DISTINCT dl.language_id ORDER BY dl.language_id) FROM doctor_languages dl WHERE dl.doctor_id = d.id) as languageIds,
 				(SELECT GROUP_CONCAT(DISTINCT dc.clinic_id ORDER BY dc.clinic_id) FROM doctor_clinics dc WHERE dc.doctor_id = d.id${cityFilterInClinicIds}) as clinicIds,
-				(SELECT ROUND(AVG(r.rating), 1) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL) as averageRating,
-				(SELECT COUNT(*) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL) as totalReviews
+				(SELECT ROUND(AVG(r.rating), 1) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL AND r.status != 'rejected') as averageRating,
+				(SELECT COUNT(*) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL AND r.status != 'rejected') as totalReviews
 			FROM doctors d
 			${whereFiltersString}
 			ORDER BY ${orderByClause}

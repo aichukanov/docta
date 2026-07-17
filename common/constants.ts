@@ -59,6 +59,11 @@ export const LIST_CARD_MAX_CLINICS = 3;
 // инфы о клиниках.
 export const SITEMAP_DETAIL_CITY_MIN_CLINICS = 3;
 
+// Минимум опубликованных клиник, чтобы пара (тип клиники, город) попадала
+// в sitemap как `/clinics?clinicTypeIds=N&cityIds=M`. Листинг с 2+ карточками
+// уже не thin page (в отличие от детальных страниц выше).
+export const SITEMAP_CLINIC_TYPE_CITY_MIN_CLINICS = 2;
+
 // Порог для создания отдельной страницы отзывов
 // Если отзывов > REVIEWS_THRESHOLD, создаётся /reviews/ подстраница
 export const REVIEWS_THRESHOLD = 5;

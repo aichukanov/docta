@@ -1,4 +1,5 @@
 <script setup lang="ts" generic="T extends ListPageItem">
+import { Filter, ArrowDown } from '@element-plus/icons-vue';
 import { getRegionalQuery } from '~/common/url-utils';
 import { CITY_COORDINATES, type CityId } from '~/enums/cities';
 import { LIST_PAGE_SIZE, SITE_URL } from '~/common/constants';
@@ -20,9 +21,13 @@ const props = withDefaults(
 		detailsRouteName?: string;
 		detailsParamName?: string;
 		showPrice?: boolean;
+		// 'map' — список скрыт, карту рендерит слот #map-view на всю ширину
+		// (на мобильном — фулскрин). По умолчанию обычный список.
+		view?: 'list' | 'map';
 	}>(),
 	{
 		showPrice: true,
+		view: 'list',
 	},
 );
 
@@ -90,21 +95,35 @@ const showClinicOnMap = (clinic: ClinicData) => {
 	}
 };
 
+// Watcher живёт в setup-скоупе (и уничтожается вместе с компонентом):
+// регистрация внутри onMapReady создавала бы новый вечный watcher при каждом
+// ремаунте карты — мобильный переключатель список/карта эмитит 'ready' заново
+const centerMapOnCities = () => {
+	mapRef.value?.centerOnLocations(
+		props.cityIds.map((cityId) => CITY_COORDINATES[cityId as CityId]),
+	);
+};
+watch(() => props.cityIds, centerMapOnCities);
+
 const onMapReady = () => {
 	if (pendingMapAction.value) {
 		pendingMapAction.value();
 		pendingMapAction.value = null;
 	}
-	watch(
-		() => props.cityIds,
-		() => {
-			mapRef.value?.centerOnLocations(
-				props.cityIds.map((cityId) => CITY_COORDINATES[cityId as CityId]),
-			);
-		},
-		{ immediate: true },
-	);
+	centerMapOnCities();
 };
+
+// На узких экранах фильтры свёрнуты по умолчанию — развёрнутые они
+// занимают весь первый экран
+const areFiltersOpen = ref(false);
+
+const activeFiltersCount = computed(
+	() =>
+		Object.values(props.filterQuery).filter((value) => {
+			if (Array.isArray(value)) return value.length > 0;
+			return value != null && value !== '' && value !== false;
+		}).length,
+);
 
 const robotsMeta = computed(() => {
 	if (props.list?.length === 0) {
@@ -198,13 +217,47 @@ onMounted(async () => {
 </script>
 
 <template>
-	<div class="list-page" role="main" :aria-label="t('AriaMainContent')">
+	<div
+		class="list-page"
+		:class="{ 'list-page--map-view': view === 'map' }"
+		role="main"
+		:aria-label="t('AriaMainContent')"
+	>
 		<div class="list-sidebar">
-			<h1 class="page-title">{{ pageTitle }}</h1>
+			<div class="page-header">
+				<h1 class="page-title">{{ pageTitle }}</h1>
+				<!-- На узких экранах контролы встают одной строкой под заголовком -->
+				<div class="page-header__controls">
+					<slot name="header-actions" />
+					<el-badge
+						:value="activeFiltersCount"
+						:hidden="activeFiltersCount === 0"
+						type="primary"
+						class="filters-toggle"
+					>
+						<el-button
+							:icon="Filter"
+							:aria-expanded="areFiltersOpen"
+							@click="areFiltersOpen = !areFiltersOpen"
+						>
+							{{ t('Filters') }}
+							<el-icon
+								:size="14"
+								class="filters-toggle__chevron"
+								:class="{ 'is-open': areFiltersOpen }"
+							>
+								<ArrowDown />
+							</el-icon>
+						</el-button>
+					</el-badge>
+				</div>
+			</div>
 
 			<div class="list-container">
+
 				<aside
 					class="filters-sidebar"
+					:class="{ 'is-open': areFiltersOpen }"
 					role="search"
 					:aria-label="t('AriaSearchFilters')"
 				>
@@ -212,6 +265,7 @@ onMounted(async () => {
 				</aside>
 
 				<section
+					v-show="view !== 'map'"
 					class="list-content"
 					:aria-label="t('AriaSearchResults')"
 					:aria-busy="isLoading || clinicsStore.isLoading"
@@ -303,12 +357,14 @@ onMounted(async () => {
 			class="map-container"
 			:aria-label="t('AriaMapSection')"
 		>
+			<slot v-if="view === 'map'" name="map-view" />
 			<ClinicServicesMap
-				v-if="isMapVisible"
+				v-else-if="isMapVisible"
 				ref="mapRef"
 				:services="clinicMode || mapClinics ? [] : list"
 				:clinics="mapClinics || clinicsStore.clinics"
 				:showAllClinics="clinicMode || !!mapClinics"
+				:autoFit="cityIds.length === 0"
 				:detailsRouteName="detailsRouteName"
 				:detailsParamName="detailsParamName"
 				@ready="onMapReady"
@@ -345,6 +401,20 @@ onMounted(async () => {
 	overflow-y: auto;
 }
 
+// Кнопка «Фильтры» — только на узких экранах, где фильтры свёрнуты
+.filters-toggle {
+	display: none;
+
+	&__chevron {
+		margin-left: var(--spacing-xs);
+		transition: transform var(--transition-base);
+
+		&.is-open {
+			transform: rotate(180deg);
+		}
+	}
+}
+
 .list-sidebar {
 	flex: 1 1 60%;
 	min-width: 0;
@@ -354,11 +424,27 @@ onMounted(async () => {
 	padding: var(--spacing-lg);
 }
 
+.page-header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: var(--spacing-md);
+	margin-bottom: var(--spacing-2xl);
+
+	&__controls {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: var(--spacing-md);
+	}
+}
+
 .page-title {
 	font-size: var(--font-size-3xl);
 	font-weight: 600;
 	color: var(--color-text-heading);
-	margin: 0 0 var(--spacing-2xl) 0;
+	margin: 0;
 	font-family:
 		system-ui,
 		-apple-system,
@@ -462,21 +548,48 @@ onMounted(async () => {
 	align-self: flex-start;
 }
 
+// Режим «Карта»: слева узкая колонка с заголовком и фильтрами, карта — всё остальное
+.list-page--map-view {
+	.list-sidebar {
+		flex: 0 0 380px;
+		min-width: 0;
+	}
+
+	.map-container {
+		flex: 1 1 auto;
+	}
+
+	.list-container .filters-sidebar {
+		flex: 1 1 auto;
+		width: 100%;
+	}
+}
+
 @media (max-width: 1300px) {
-	.page-title {
+	.page-header {
 		margin-bottom: var(--spacing-lg);
+	}
+
+	.filters-toggle {
+		display: inline-block;
 	}
 
 	.list-container {
 		flex-direction: column;
 
+		// Свёрнуты по умолчанию, раскрываются кнопкой «Фильтры»
 		.filters-sidebar {
+			display: none;
 			position: initial;
 			max-width: 100%;
 			width: 100%;
 			max-height: none;
 			overflow-y: visible;
 			gap: var(--spacing-sm);
+
+			&.is-open {
+				display: flex;
+			}
 		}
 	}
 }
@@ -499,6 +612,33 @@ onMounted(async () => {
 		height: 450px;
 		margin-bottom: var(--spacing-2xl);
 	}
+
+	// На мобильном режим карты — настоящий фулскрин-оверлей поверх шапки
+	// и фильтров; выход — плавающая кнопка «К списку».
+	.list-page--map-view {
+		.list-sidebar {
+			flex: none;
+			width: 100%;
+		}
+
+		.map-container {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			// Явная высота: Leaflet-контейнер тянется цепочкой height:100%,
+			// которая должна упираться в конкретное значение — с height:auto
+			// карта схлопывается в 0
+			height: 100vh;
+			height: 100dvh;
+			margin-bottom: 0;
+			background: var(--color-bg-primary);
+			// Поверх sticky-шапки (--z-header), иначе та перекрывает верх карты
+			z-index: var(--z-modal);
+		}
+	}
 }
 
 @media (max-width: 500px) {
@@ -512,6 +652,7 @@ onMounted(async () => {
 {
 	"en": {
 		"Loading": "Loading...",
+		"Filters": "Filters",
 		"NotFound": "No results found",
 		"AriaMainContent": "Main content",
 		"AriaSearchFilters": "Search filters",
@@ -523,6 +664,7 @@ onMounted(async () => {
 	},
 	"ru": {
 		"Loading": "Загрузка...",
+		"Filters": "Фильтры",
 		"NotFound": "Результаты не найдены",
 		"AriaMainContent": "Основное содержимое",
 		"AriaSearchFilters": "Фильтры поиска",
@@ -534,6 +676,7 @@ onMounted(async () => {
 	},
 	"sr": {
 		"Loading": "Učitavanje...",
+		"Filters": "Filteri",
 		"NotFound": "Rezultati nisu pronađeni",
 		"AriaMainContent": "Glavni sadržaj",
 		"AriaSearchFilters": "Filteri pretrage",
@@ -545,6 +688,7 @@ onMounted(async () => {
 	},
 	"sr-cyrl": {
 		"Loading": "Учитавање...",
+		"Filters": "Филтери",
 		"NotFound": "Резултати нису пронађени",
 		"AriaMainContent": "Главни садржај",
 		"AriaSearchFilters": "Филтери претраге",
@@ -556,6 +700,7 @@ onMounted(async () => {
 	},
 	"de": {
 		"Loading": "Laden...",
+		"Filters": "Filter",
 		"NotFound": "Keine Ergebnisse gefunden",
 		"AriaMainContent": "Hauptinhalt",
 		"AriaSearchFilters": "Suchfilter",
@@ -567,6 +712,7 @@ onMounted(async () => {
 	},
 	"tr": {
 		"Loading": "Yükleniyor...",
+		"Filters": "Filtreler",
 		"NotFound": "Sonuç bulunamadı",
 		"AriaMainContent": "Ana içerik",
 		"AriaSearchFilters": "Arama filtreleri",

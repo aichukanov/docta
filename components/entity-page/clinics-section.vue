@@ -48,6 +48,9 @@ const showCityFilter = computed(() => availableCities.value.length > 1);
 
 const getPriceInfo = (clinicId: number) =>
 	props.clinicPrices?.find((p) => p.clinicId === clinicId);
+
+// Расстояние до пользователя на карточке — появляется после определения локации
+const { getDistanceKm } = useClinicRanking();
 </script>
 
 <template>
@@ -73,6 +76,7 @@ const getPriceInfo = (clinicId: number) =>
 				:clinic="clinic"
 				:priceInfo="getPriceInfo(clinic.id)"
 				:showPrice="showPrice"
+				:distance="getDistanceKm(clinic)"
 				@show-on-map="emit('show-on-map', clinic)"
 			/>
 		</div>

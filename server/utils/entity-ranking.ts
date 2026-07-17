@@ -210,7 +210,7 @@ async function recalculateDoctorScores(connection: any): Promise<void> {
 				EXISTS(SELECT 1 FROM review_replies rr WHERE rr.review_id = r.id)
 			) AS reviewsWithReply
 		FROM reviews r
-		WHERE r.doctor_id IS NOT NULL AND r.rating IS NOT NULL
+		WHERE r.doctor_id IS NOT NULL AND r.rating IS NOT NULL AND r.status != 'rejected'
 		GROUP BY r.doctor_id
 	`);
 	const statsMap = new Map<number, ReviewStats>();
@@ -269,7 +269,7 @@ async function recalculateClinicScores(connection: any): Promise<void> {
 				EXISTS(SELECT 1 FROM review_replies rr WHERE rr.review_id = r.id)
 			) AS reviewsWithReply
 		FROM reviews r
-		WHERE r.clinic_id IS NOT NULL AND r.rating IS NOT NULL
+		WHERE r.clinic_id IS NOT NULL AND r.rating IS NOT NULL AND r.status != 'rejected'
 		GROUP BY r.clinic_id
 	`);
 	const statsMap = new Map<number, ReviewStats>();

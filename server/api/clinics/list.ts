@@ -1,4 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { getCurrentUser } from '~/server/common/auth';
 import {
 	processLocalizedNameForClinicOrDoctor,
 	processLocalizedFieldForClinic,
@@ -18,8 +19,15 @@ import {
 	validateCityIds,
 	validateClinicTypeIds,
 	validateDoctorLanguageIds,
+	validateMinRating,
 	validateName,
+	validateSpecialtyIds,
+	validateUserCoordinates,
 } from '~/common/validation';
+import {
+	PROXIMITY_WEIGHT,
+	PROXIMITY_HALF_DISTANCE_KM,
+} from '~/common/ranking';
 import { LIST_PAGE_SIZE } from '~/common/constants';
 
 function parseDaySchedule(value: unknown): DaySchedule {
@@ -80,8 +88,28 @@ export default defineEventHandler(async (event): Promise<ClinicList> => {
 			setResponseStatus(event, 400, 'Invalid clinic type');
 			return { clinics: [], totalCount: 0 };
 		}
+		if (
+			body.sortByDistance &&
+			!validateUserCoordinates(body, 'api/clinics/list')
+		) {
+			setResponseStatus(event, 400, 'Invalid user coordinates');
+			return { clinics: [], totalCount: 0 };
+		}
+		if (body.specialtyIds && !validateSpecialtyIds(body, 'api/clinics/list')) {
+			setResponseStatus(event, 400, 'Invalid specialty');
+			return { clinics: [], totalCount: 0 };
+		}
+		if (body.minRating && !validateMinRating(body, 'api/clinics/list')) {
+			setResponseStatus(event, 400, 'Invalid min rating');
+			return { clinics: [], totalCount: 0 };
+		}
 
-		return getClinicList(body);
+		// Админ видит клиники во всех статусах: админка (поиск клиник,
+		// селекторы в редакторах) ходит этим же эндпоинтом
+		const currentUser = await getCurrentUser(event);
+		return getClinicList(body, {
+			includeUnpublished: !!currentUser?.is_admin,
+		});
 	} catch (error) {
 		console.error('API Error - clinics:', error);
 		throw createError({
@@ -96,17 +124,32 @@ export async function getClinicList(
 		cityIds?: number[];
 		languageIds?: number[];
 		clinicTypeIds?: number[];
+		specialtyIds?: number[];
 		name?: string;
 		locale?: string;
 		page?: number;
 		openNow?: boolean;
+		minRating?: number;
+		userLatitude?: number;
+		userLongitude?: number;
+		sortByDistance?: boolean;
 	} = {},
+	opts: { includeUnpublished?: boolean } = {},
 ) {
-	const whereFilters: string[] = [];
+	// Публичные списки показывают только опубликованные клиники
+	// (draft/pending_verification/rejected доступны лишь владельцу в кабинете
+	// и админу — как на детальной странице).
+	const whereFilters: string[] = opts.includeUnpublished
+		? []
+		: [`c.status = 'published'`];
 	const queryParams: Array<number | string> = [];
 	const locale = body.locale || 'en';
 	const usePagination = body.page != null;
 	const openNow = body.openNow === true;
+	const sortByDistance =
+		body.sortByDistance === true &&
+		typeof body.userLatitude === 'number' &&
+		typeof body.userLongitude === 'number';
 	const pageRaw = Number(body.page);
 	const pageSize = LIST_PAGE_SIZE;
 	const page = Math.max(Number.isFinite(pageRaw) ? pageRaw : 1, 1);
@@ -142,6 +185,35 @@ export async function getClinicList(
 		);
 	}
 
+	// Специализация клиники: либо в ней принимает врач этой специальности,
+	// либо она оказывает услуги, привязанные к специальности
+	if (body.specialtyIds != null && body.specialtyIds.length > 0) {
+		const doctorPlaceholders = buildInPlaceholders(body.specialtyIds);
+		const servicePlaceholders = buildInPlaceholders(body.specialtyIds);
+		whereFilters.push(
+			`(EXISTS (
+				SELECT 1 FROM doctor_clinics dc_f
+				JOIN doctor_specialties ds_f ON ds_f.doctor_id = dc_f.doctor_id
+				WHERE dc_f.clinic_id = c.id AND ds_f.specialty_id IN (${doctorPlaceholders})
+			) OR EXISTS (
+				SELECT 1 FROM clinic_medical_services cms_f
+				JOIN medical_services_specialties mss_f ON mss_f.medical_service_id = cms_f.medical_service_id
+				WHERE cms_f.clinic_id = c.id AND mss_f.specialty_id IN (${servicePlaceholders})
+			))`,
+		);
+	}
+
+	// Тот же подзапрос, что считает averageRating в SELECT — фильтр одинаково
+	// влияет на count- и data-запросы. ROUND обязателен: карточка показывает
+	// округлённый рейтинг, и клиника с видимыми «4.0» (сырые 3.96) обязана
+	// проходить фильтр «4+»
+	if (body.minRating != null && validateMinRating(body)) {
+		whereFilters.push(
+			`(SELECT ROUND(AVG(r.rating), 1) FROM reviews r WHERE r.clinic_id = c.id AND r.rating IS NOT NULL AND r.status != 'rejected') >= ?`,
+		);
+		queryParams.push(body.minRating);
+	}
+
 	if (body.name && validateName(body, 'api/clinics/list')) {
 		const namePattern = `%${body.name}%`;
 		whereFilters.push(
@@ -155,6 +227,27 @@ export async function getClinicList(
 	const paginationClause = useDbPagination
 		? `LIMIT ${pageSize} OFFSET ${offset}`
 		: '';
+
+	// Haversine (км) от точки пользователя. Это сортировка, НЕ фильтр:
+	// все клиники остаются в выдаче, без координат — без бонуса близости.
+	// LEAST/GREATEST страхуют ACOS от выхода аргумента за [-1, 1].
+	const distanceSelect = sortByDistance
+		? `,
+				(6371 * ACOS(LEAST(1, GREATEST(-1,
+					COS(RADIANS(?)) * COS(RADIANS(c.latitude)) *
+					COS(RADIANS(c.longitude) - RADIANS(?)) +
+					SIN(RADIANS(?)) * SIN(RADIANS(c.latitude))
+				)))) as distance`
+		: '';
+	const distanceParams: number[] = sortByDistance
+		? [body.userLatitude!, body.userLongitude!, body.userLatitude!]
+		: [];
+	// Композитный скор: rank_score + вклад близости (зеркало common/ranking.ts).
+	// Расстояние — компонент рейтинга, а не его замена: пустой профиль в 500 м
+	// не должен перекрывать заполненную клинику с отзывами чуть дальше.
+	const orderByClause = sortByDistance
+		? `ORDER BY (c.rank_score + CASE WHEN distance IS NULL THEN 0 ELSE ${PROXIMITY_WEIGHT} * POW(2, -distance / ${PROXIMITY_HALF_DISTANCE_KM}) END) DESC, c.name_sr ASC`
+		: 'ORDER BY c.rank_score DESC, c.name_sr ASC';
 
 	const totalCountQuery = `
 			SELECT COUNT(DISTINCT c.id) as totalCount
@@ -191,6 +284,7 @@ export async function getClinicList(
 				c.description_de,
 				c.description_tr,
 				c.logo_url as logoUrl,
+				c.rank_score as rankScore,
 				ANY_VALUE(cwh.monday) as monday,
 				ANY_VALUE(cwh.tuesday) as tuesday,
 				ANY_VALUE(cwh.wednesday) as wednesday,
@@ -204,8 +298,9 @@ export async function getClinicList(
 					GROUP_CONCAT(DISTINCT bspi.service_id ORDER BY bspi.service_id),
 					''
 				) as features,
-				(SELECT ROUND(AVG(r.rating), 1) FROM reviews r WHERE r.clinic_id = c.id AND r.rating IS NOT NULL) as averageRating,
-				(SELECT COUNT(*) FROM reviews r WHERE r.clinic_id = c.id AND r.rating IS NOT NULL) as totalReviews
+				(SELECT ROUND(AVG(r.rating), 1) FROM reviews r WHERE r.clinic_id = c.id AND r.rating IS NOT NULL AND r.status != 'rejected') as averageRating,
+				(SELECT COUNT(*) FROM reviews r WHERE r.clinic_id = c.id AND r.rating IS NOT NULL AND r.status != 'rejected') as totalReviews
+				${distanceSelect}
 			FROM clinics c
 			LEFT JOIN clinic_languages cl ON c.id = cl.clinic_id
 			LEFT JOIN clinic_clinic_types cct ON c.id = cct.clinic_id
@@ -219,7 +314,7 @@ export async function getClinicList(
 				ON bscp.id = bspi.purchase_id
 			${whereFiltersString}
 			GROUP BY c.id
-			ORDER BY c.rank_score DESC, c.name_sr ASC
+			${orderByClause}
 			${paginationClause};
 		`;
 
@@ -229,7 +324,11 @@ export async function getClinicList(
 		const [countRows] = await connection.execute(totalCountQuery, queryParams);
 		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
 	}
-	const [clinics] = await connection.execute(clinicsQuery, queryParams);
+	// Плейсхолдеры расстояния стоят в SELECT — их параметры идут первыми
+	const [clinics] = await connection.execute(clinicsQuery, [
+		...distanceParams,
+		...queryParams,
+	]);
 	await connection.end();
 
 	// Обрабатываем локализованные имена, town, address и description
@@ -269,12 +368,17 @@ export async function getClinicList(
 			address,
 			town,
 			logoUrl: clinic.logoUrl || '',
+			rankScore: clinic.rankScore != null ? Number(clinic.rankScore) : 0,
 			rating: clinic.averageRating
 				? {
 						averageRating: parseFloat(clinic.averageRating),
 						totalReviews: clinic.totalReviews,
 					}
 				: undefined,
+			distance:
+				clinic.distance != null
+					? Math.round(Number(clinic.distance) * 10) / 10
+					: undefined,
 			workingHours: buildWorkingHours(clinic),
 		};
 	});

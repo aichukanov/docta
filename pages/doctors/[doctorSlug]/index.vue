@@ -54,6 +54,41 @@ const clinicServices = computed(() => doctorData.value?.clinicServices || {});
 
 const isFound = computed(() => doctorData.value?.id != null);
 
+const { trackEvent } = useAnalytics();
+
+provideAnalyticsEntity(
+	computed(() =>
+		doctorData.value?.id
+			? {
+					entity_type: 'doctor' as const,
+					entity_id: doctorData.value.id,
+					entity_slug: route.params.doctorSlug as string,
+				}
+			: null,
+	),
+);
+
+if (import.meta.client) {
+	const trackDoctorView = () => {
+		if (!doctorData.value?.id) return;
+		trackEvent('entity_viewed', {
+			entity_type: 'doctor',
+			entity_id: doctorData.value.id,
+			entity_slug: route.params.doctorSlug as string,
+			entity_name: doctorData.value.name,
+		});
+	};
+	// onMounted — первый показ; watch — клиентский переход врач→врач,
+	// когда компонент страницы переиспользуется без remount
+	onMounted(trackDoctorView);
+	watch(
+		() => doctorData.value?.id,
+		(id, prevId) => {
+			if (id && id !== prevId) trackDoctorView();
+		},
+	);
+}
+
 const localizedName = computed(() => {
 	if (!doctorData.value) {
 		return '';

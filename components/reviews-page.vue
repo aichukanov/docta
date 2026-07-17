@@ -305,6 +305,12 @@ const totalReviewsCount = computed(
 			@writeReview="showReviewDialog = true"
 		/>
 
+		<ReviewAiSummary
+			v-if="entityId"
+			:entityType="entityType as 'doctor' | 'clinic'"
+			:entityId="entityId"
+		/>
+
 		<section v-if="currentOwnReview" class="own-review-section">
 			<ReviewItem
 				:review="currentOwnReview"

@@ -26,6 +26,35 @@ const { t, locale } = useI18n({
 	]),
 });
 
+const ARTICLE_SLUG = 'clinics-with-language-support';
+
+const { trackEvent } = useAnalytics();
+
+provideAnalyticsEntity(
+	computed(() => ({
+		entity_type: 'article' as const,
+		entity_id: ARTICLE_SLUG,
+		entity_slug: ARTICLE_SLUG,
+	})),
+);
+
+onMounted(() => {
+	trackEvent('entity_viewed', {
+		entity_type: 'article',
+		entity_id: ARTICLE_SLUG,
+		entity_slug: ARTICLE_SLUG,
+	});
+});
+
+const trackClinicLinkClick = (clinic: ClinicData) => {
+	trackEvent('entity_link_clicked', {
+		entity_type: 'clinic',
+		entity_id: clinic.id,
+		entity_slug: clinic.slug,
+		entity_name: clinic.name,
+	});
+};
+
 // 1. Define links and basic data
 const homeLink = computed(() => ({
 	name: 'index',
@@ -210,6 +239,7 @@ watchEffect(() => {
 					:key="clinic.id"
 					:to="getClinicUrl(clinic.slug)"
 					class="clinic-card"
+					@click="trackClinicLinkClick(clinic)"
 				>
 					<span class="clinic-name">{{
 						getLocalizedName(clinic, locale)

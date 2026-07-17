@@ -17,6 +17,26 @@ const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: clinicCommonI18n.messages,
 });
+const { trackEvent } = useAnalytics();
+
+// Контакты внутри попапа атрибуцируются к клинике маркера
+provideAnalyticsEntity(
+	computed(() => ({
+		entity_type: 'clinic' as const,
+		entity_id: props.clinic.id,
+		entity_slug: props.clinic.slug,
+	})),
+);
+
+const trackClinicLinkClick = () => {
+	trackEvent('entity_link_clicked', {
+		entity_type: 'clinic',
+		entity_id: props.clinic.id,
+		entity_slug: props.clinic.slug,
+		entity_name: props.clinic.name,
+	});
+};
+
 const servicesListRef = ref<HTMLElement>();
 const pageNumber = ref(1);
 
@@ -50,7 +70,12 @@ watch(pageNumber, () => {
 <template>
 	<div class="clinic-popup">
 		<div class="clinic-name-container">
-			<NuxtLink v-if="clinicLink" :to="clinicLink" class="clinic-name">
+			<NuxtLink
+				v-if="clinicLink"
+				:to="clinicLink"
+				class="clinic-name"
+				@click="trackClinicLinkClick"
+			>
 				{{ localizedName }}
 			</NuxtLink>
 			<span v-else class="clinic-name">{{ localizedName }}</span>

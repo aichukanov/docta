@@ -42,6 +42,8 @@ watch(
 	},
 	{ immediate: true },
 );
+// строго после первичной синхронизации из URL — она не действие пользователя
+useFilterTracking('doctors');
 
 const filterList = computed(() => ({
 	specialtyIds: specialtyIds.value,

@@ -43,9 +43,11 @@ export default defineEventHandler(async (event) => {
 		if (rows.length === 0)
 			createErrorResponse(400, ERROR_CODES.REVIEW_INVALID_ENTITY);
 	} else {
-		const rows = await executeQuery('SELECT id FROM clinics WHERE id = ?', [
-			entityId,
-		]);
+		// Черновики не принимают отзывы — публично их страниц не существует
+		const rows = await executeQuery(
+			`SELECT id FROM clinics WHERE id = ? AND status = 'published'`,
+			[entityId],
+		);
 		if (rows.length === 0)
 			createErrorResponse(400, ERROR_CODES.REVIEW_INVALID_ENTITY);
 	}
@@ -108,10 +110,12 @@ export default defineEventHandler(async (event) => {
 	};
 	const textColumn = localeToColumn[originalLanguage] || 'text_en';
 
+	// Пост-модерация: отзыв публикуется сразу со статусом 'pending',
+	// админ позже одобряет или отклоняет его в очереди модерации
 	const rows = await executeQuery(
 		`INSERT INTO reviews
-			(user_id, doctor_id, clinic_id, provider, rating, original_language, original_text, ${textColumn}, published_at, likes_count, created_at, updated_at)
-		VALUES (?, ?, ?, 'docta_me', ?, ?, ?, ?, NOW(), 0, NOW(), NOW())`,
+			(user_id, doctor_id, clinic_id, provider, rating, original_language, original_text, ${textColumn}, status, published_at, likes_count, created_at, updated_at)
+		VALUES (?, ?, ?, 'docta_me', ?, ?, ?, ?, 'pending', NOW(), 0, NOW(), NOW())`,
 		[
 			user!.id,
 			doctorId,

@@ -1,6 +1,15 @@
 # Итерация 2: События просмотра страниц
 
-**Статус:** 🔴 Not Started  
+**Статус:** 🟢 Completed (код, 2026-06-11)
+
+> Реальность: вместо отдельных «Clinic Viewed»/«Doctor Viewed» — единое
+> событие `entity_viewed` с `entity_type/entity_id/entity_slug` на всех
+> детальных страницах (клиника, врач, услуга, анализ, лекарство, статьи).
+> Листинги покрыты автоматическим pageview (фильтры видны в URL события).
+> Identify/reset подключены к auth (plugins/analytics-user.client.ts),
+> user property `auth_provider`. Счётчики `incrementUserProperty` не делали —
+> агрегируется в Mixpanel из событий. Unit-тестов нет (фреймворка нет в
+> проекте). Каталог: ../events-catalog.md  
 **Приоритет:** P0 (критично)  
 **Оценка:** 3-4 дня  
 **Зависимости:** Итерация 1 должна быть завершена

@@ -1,5 +1,10 @@
 <template>
-	<ContactsLine :value="waUrl" link :tooltip="t('Whatsapp')">
+	<ContactsLine
+		:value="waUrl"
+		link
+		:tooltip="t('Whatsapp')"
+		contactType="whatsapp"
+	>
 		<IconWhatsapp :size="20" class="messenger-icon" />
 		<span>{{ waContact }}</span>
 	</ContactsLine>

@@ -1,215 +1,92 @@
 # Прогресс реализации: Система аналитики и трэкинга
 
-**Последнее обновление:** 29 января 2026  
-**Общий статус:** 🔴 Not Started
+**Последнее обновление:** 12 июня 2026
+**Общий статус:** 🟢 Код завершён (фазы А и Б) — осталась только конфигурация Mixpanel UI
 
 ---
 
 ## Общая информация
 
 - **PRD:** [analytics/index.md](index.md)
+- **Каталог событий (актуальный):** [events-catalog.md](events-catalog.md)
 - **Приоритет:** P1 (высокий)
-- **Оценка времени:** 2-3 недели (4 итерации)
+
+Документы итераций писались до реализации и местами устарели; реальное
+положение дел — здесь и в events-catalog.md.
 
 ---
 
 ## Статус итераций
 
-| #   | Итерация                                                                 | Статус         | Прогресс | Оценка   |
-| --- | ------------------------------------------------------------------------ | -------------- | -------- | -------- |
-| 1   | [Настройка Mixpanel и базовые события](iterations/iteration-01-setup.md) | 🔴 Not Started | 0%       | 3-4 дня  |
-| 2   | [События просмотра страниц](iterations/iteration-02-page-views.md)       | 🔴 Not Started | 0%       | 3-4 дня  |
-| 3   | [События взаимодействия](iterations/iteration-03-interactions.md)        | 🔴 Not Started | 0%       | 4-5 дней |
-| 4   | [События конверсий и воронки](iterations/iteration-04-funnels.md)        | 🔴 Not Started | 0%       | 3-4 дня  |
-
-**Общий прогресс:** 0/4 итераций завершено (0%)
+| #   | Итерация                                                                 | Статус                  | Комментарий |
+| --- | ------------------------------------------------------------------------ | ----------------------- | ----------- |
+| 1   | [Настройка Mixpanel и базовые события](iterations/iteration-01-setup.md) | 🟢 Completed            | Сделано ранее иначе, чем в плане: без отдельного plugin — динамический импорт SDK в `use-analytics.ts` после consent; `track_pageview: true`; параллельно работают GA4 (nuxt-gtag) и Cloudflare Insights |
+| 2   | [События просмотра страниц](iterations/iteration-02-page-views.md)       | 🟢 Completed (код)      | `entity_viewed` на всех детальных страницах; листинги покрыты auto-pageview (фильтры видны в URL); identify/reset подключены; super properties (locale, page_type); счётчики `incrementUserProperty` не делали — считается в Mixpanel из событий |
+| 3   | [События взаимодействия](iterations/iteration-03-interactions.md)        | 🟢 Completed            | Контакты (клики+копирование без PII), переходы между сущностями, поиск/фильтры листингов (`use-filter-tracking.ts`), карта (`map_opened`/`map_marker_clicked`), карточка клиники. Избранное — пропущено, его нет в продукте |
+| 4   | [События конверсий и воронки](iterations/iteration-04-funnels.md)        | 🟡 In Progress          | Кодовая часть готова (свойства `entity_*`/`page_type` под воронки). Осталась конфигурация в Mixpanel UI — отдельный PRD [mixpanel-setup.md](mixpanel-setup.md) |
 
 ---
 
-## Легенда статусов
+## Что реализовано (фаза А, 2026-06-11)
 
-- 🔴 **Not Started** - работа не начата
-- 🟡 **In Progress** - в процессе разработки
-- 🟢 **Completed** - завершено и задеплоено
-- ⏸️ **Blocked** - заблокировано (указать причину)
-- 🔵 **In Review** - на ревью (код готов, ждет проверки)
+### Инфраструктура
 
----
+- `types/analytics.ts` — типизированный каталог событий; `trackEvent` —
+  дженерик по каталогу, неправильные свойства не компилируются.
+- `composables/use-analytics.ts` — enrichment `page_type`, super properties
+  (locale, page_type), ручной `track_pageview()` на SPA-переходах, очередь
+  до загрузки SDK, `identifyUser`/`resetUser`. Проверка consent сохранена.
+- `plugins/analytics-user.client.ts` — identify при логине (user property
+  `auth_provider`: google/telegram/facebook/password), reset при логауте.
+- `server/utils/session.ts` — поле `auth_provider` в активном пользователе.
 
-## Детальный прогресс по итерациям
+### События
 
-### Итерация 1: Настройка Mixpanel и базовые события
+- `entity_viewed` — детальные страницы: клиника, врач, услуга, анализ,
+  лекарство (medicines + medications), 2 статьи.
+- `entity_link_clicked` — карточка врача, priced-item-card (услуги/анализы/
+  лекарства), list-card (заголовок + «все клиники»), ссылки в статьях.
+- `contact_clicked` / `contact_copied` — все контактные компоненты;
+  PII убрана (раньше `contact_copied` слал само значение). Владелец контакта
+  передаётся через provide/inject (`provideAnalyticsEntity`).
 
-**Статус:** 🔴 Not Started  
-**Дата начала:** -  
-**Дата завершения:** -
+### Фаза Б (2026-06-12, после завершения окна 1)
 
-#### Задачи
+- Карточка клиники: `entity_link_clicked` в `clinic/summary-header.vue`,
+  provide в `clinic/summary.vue`.
+- Поиск/фильтры: `composables/use-filter-tracking.ts` + вызов на 6
+  листинг-страницах (`search_performed`, `filter_applied`, `filter_cleared`;
+  debounce уже в FilterName, синхронизация из URL не трекается).
+- Карта: `map_opened` (mount ленивой карты), `map_marker_clicked`
+  (клик по маркеру), provide + клик по имени клиники в `map/clinic-popup.vue`,
+  переходы из попапа (`service-info.vue`).
 
-- [ ] Создать Mixpanel project
-- [ ] Установить `mixpanel-browser` пакет
-- [ ] Создать plugin для инициализации SDK
-- [ ] Создать composable `useAnalytics()`
-- [ ] Добавить TypeScript типы для событий
-- [ ] Настроить environment variables
-- [ ] Интегрировать cookie consent
-- [ ] Добавить debug mode
-- [ ] Документация setup guide
+### Осталось пользователю (не код)
 
-**Блокеры:** нет
-
----
-
-### Итерация 2: События просмотра страниц
-
-**Статус:** 🔴 Not Started  
-**Дата начала:** -  
-**Дата завершения:** -
-
-#### Задачи
-
-- [ ] Трэкинг просмотра страниц клиник
-- [ ] Трэкинг просмотра страниц врачей
-- [ ] Трэкинг просмотра страниц услуг
-- [ ] Трэкинг просмотра страниц лекарств
-- [ ] Трэкинг просмотра статей
-- [ ] Трэкинг списочных страниц (с фильтрами)
-- [ ] User identification при авторизации
-- [ ] Super properties (global)
-- [ ] Unit тесты для page view events
-- [ ] Документация page view событий
-
-**Зависимости:** Итерация 1
-
-**Блокеры:** нет
+- Конфигурация Mixpanel UI: custom event «Contact Action», воронки,
+  борды, когорты, retention, дайджесты — PRD с чеклистом в
+  [mixpanel-setup.md](mixpanel-setup.md).
 
 ---
 
-### Итерация 3: События взаимодействия
+## Решения и отступления от PRD
 
-**Статус:** 🔴 Not Started  
-**Дата начала:** -  
-**Дата завершения:** -
-
-#### Задачи
-
-- [ ] Трэкинг кликов на телефон
-- [ ] Трэкинг копирования телефона
-- [ ] Трэкинг кликов на email
-- [ ] Трэкинг копирования email
-- [ ] Трэкинг копирования адреса
-- [ ] Трэкинг переходов на сайт клиники
-- [ ] Трэкинг переходов между страницами (service→clinic, doctor→clinic)
-- [ ] Трэкинг поиска и фильтров
-- [ ] Трэкинг взаимодействия с картой
-- [ ] Трэкинг избранного
-- [ ] Unit тесты для interaction events
-- [ ] Документация interaction событий
-
-**Зависимости:** Итерация 2
-
-**Блокеры:** нет
-
----
-
-### Итерация 4: События конверсий и воронки
-
-**Статус:** 🔴 Not Started  
-**Дата начала:** -  
-**Дата завершения:** -
-
-#### Задачи
-
-- [ ] Настроить воронку: Search → View → Contact
-- [ ] Настроить воронку: Service → Clinic → Contact
-- [ ] Настроить воронку: Doctor → Clinic → Contact
-- [ ] Настроить воронку: View → Favorite → Return
-- [ ] Создать cohorts для segmentation
-- [ ] Настроить retention reports
-- [ ] Создать key dashboards в Mixpanel
-- [ ] E2E тесты для critical funnels
-- [ ] Документация funnels и dashboards
-- [ ] Обучение команды работе с Mixpanel
-
-**Зависимости:** Итерация 3
-
-**Блокеры:** нет
-
----
-
-## Ключевые метрики прогресса
-
-### Coverage событий
-
-- **Must Have (P0):** 0/15 событий (0%)
-- **Should Have (P1):** 0/12 событий (0%)
-- **Nice to Have (P2):** 0/8 событий (0%)
-
-### Технические метрики
-
-- **Unit Tests Coverage:** 0%
-- **E2E Tests Coverage:** 0%
-- **Type Safety:** 0% (типы не созданы)
-- **Documentation:** 0% (документация не создана)
-
-### Интеграция в компоненты
-
-- **Pages с трэкингом:** 0/10 (0%)
-- **Components с трэкингом:** 0/15 (0%)
-
----
-
-## Текущие блокеры
-
-На данный момент блокеров нет.
-
----
-
-## Следующие шаги
-
-1. **Создать Mixpanel account и project**
-2. **Начать Итерацию 1:** Настройка базовой инфраструктуры
-3. **Setup environment:** добавить MIXPANEL_TOKEN в .env
-
----
-
-## Заметки и решения
-
-### Архитектурные решения
-
-- **Client-side only:** Начинаем с client-side tracking, server-side будет позже
-- **Mixpanel over GA4:** Выбрали Mixpanel за удобство event-based аналитики
-- **TypeScript first:** Все события type-safe с самого начала
-- **Cookie consent:** Обязательное согласие перед трэкингом
-
-### Риски и concerns
-
-- **Ad blockers:** ~30% пользователей могут блокировать Mixpanel
-- **Free tier limits:** Нужно мониторить quota usage
-- **Privacy compliance:** Важно следовать GDPR
+- Унифицированные события (`entity_viewed` + `entity_type`) вместо
+  отдельных «Clinic Viewed»/«Doctor Viewed» — воронки строятся фильтрами по
+  свойствам, каталог не разрастается.
+- Snake_case имён вместо Title Case из старого PRD.
+- Избранное (F7.1–7.2) — функционала нет, события не делали.
+- Unit-тестов нет (в проекте нет фреймворка) — проверка typecheck + debug
+  mode.
+- GA4-форвардинг событий не делали: nuxt-gtag шлёт свои pageview, продуктовые
+  события — только в Mixpanel.
 
 ---
 
 ## История изменений
 
-| Дата       | Изменение                       | Автор |
-| ---------- | ------------------------------- | ----- |
-| 2026-01-29 | Создан PRD и структура итераций | -     |
-
----
-
-## Вопросы для обсуждения
-
-1. **Cookie Consent:** Есть ли уже готовое решение для cookie consent или нужно реализовать?
-2. **Budget:** Готовы ли перейти на paid plan Mixpanel при превышении free tier?
-3. **Server-side tracking:** Когда планируем добавить server-side analytics?
-4. **Alternative tools:** Нужно ли параллельно настроить Google Analytics для сравнения?
-
----
-
-## Полезные ссылки
-
-- [Mixpanel Documentation](https://docs.mixpanel.com/)
-- [mixpanel-browser SDK](https://github.com/mixpanel/mixpanel-js)
-- [Mixpanel Best Practices](https://docs.mixpanel.com/docs/tracking/how-tos/best-practices)
-- [GDPR & Mixpanel](https://docs.mixpanel.com/docs/privacy/gdpr-compliance)
+| Дата       | Изменение                                                       | Автор |
+| ---------- | --------------------------------------------------------------- | ----- |
+| 2026-01-29 | Создан PRD и структура итераций                                 | -     |
+| 2026-06-11 | Фаза А: каталог типов, контакты, переходы, identify, super props | -     |
+| 2026-06-12 | Фаза Б: карточка клиники, поиск/фильтры листингов, карта         | -     |

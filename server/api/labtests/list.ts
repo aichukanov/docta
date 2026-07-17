@@ -1,7 +1,7 @@
 import { getConnection } from '~/server/common/db-mysql';
 import {
 	parseClinicPricesData,
-	getPriceOrderBySQL,
+	getClinicRankOrderBySQL,
 	processLocalizedNameForLabTest,
 	getLocalizedNameField,
 } from '~/server/common/utils';
@@ -95,7 +95,7 @@ export async function getLabTestList(
 	}
 	if (body.cityIds != null && body.cityIds.length > 0) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f JOIN clinics c_f ON clt_f.clinic_id = c_f.id WHERE clt_f.lab_test_id = lt.id AND c_f.city_id IN (${buildInPlaceholders(
+			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f JOIN clinics c_f ON clt_f.clinic_id = c_f.id WHERE clt_f.lab_test_id = lt.id AND c_f.status = 'published' AND c_f.city_id IN (${buildInPlaceholders(
 				body.cityIds,
 			)}))`,
 		);
@@ -136,7 +136,9 @@ export async function getLabTestList(
 		...selectCityIds,
 	];
 
-	const priceOrder = getPriceOrderBySQL('clt');
+	// Порядок клиник в карточке: композитный скор без локации (rank_score +
+	// бонус за цену); вклад расстояния добавит клиент (use-clinic-ranking.ts)
+	const rankOrder = getClinicRankOrderBySQL('c_rank', 'clt');
 
 	const localizedNameField = getLocalizedNameField(locale) || 'name_en';
 	const singleClinicId =
@@ -172,11 +174,11 @@ export async function getLabTestList(
 			lt.name_de,
 			lt.name_tr,
 			${sortPriceSelect}
-			(SELECT GROUP_CONCAT(DISTINCT clt.clinic_id ORDER BY ${priceOrder}) FROM clinic_lab_tests clt WHERE clt.lab_test_id = lt.id${cityFilterInSelect}) as clinicIds,
+			(SELECT GROUP_CONCAT(DISTINCT clt.clinic_id ORDER BY ${rankOrder}) FROM clinic_lab_tests clt JOIN clinics c_rank ON c_rank.id = clt.clinic_id AND c_rank.status = 'published' WHERE clt.lab_test_id = lt.id${cityFilterInSelect}) as clinicIds,
 			(SELECT GROUP_CONCAT(
 				DISTINCT CONCAT(clt.clinic_id, ':', IFNULL(clt.price, ''), ':', '', ':', IFNULL(clt.price_max, ''), ':', COALESCE(clt.code, ''))
-				ORDER BY ${priceOrder}
-			) FROM clinic_lab_tests clt WHERE clt.lab_test_id = lt.id${cityFilterInSelect}) as clinicPricesData,
+				ORDER BY ${rankOrder}
+			) FROM clinic_lab_tests clt JOIN clinics c_rank ON c_rank.id = clt.clinic_id AND c_rank.status = 'published' WHERE clt.lab_test_id = lt.id${cityFilterInSelect}) as clinicPricesData,
 			(SELECT GROUP_CONCAT(DISTINCT ltcr_cat.category_id ORDER BY ltcr_cat.category_id)
 			 FROM lab_test_categories_relations ltcr_cat
 			 WHERE ltcr_cat.lab_test_id = lt.id) as categoryIds
@@ -227,14 +229,14 @@ export async function getLabTestList(
 
 	const items = (labTestRows as any[]).map((row: any) => {
 		const { name, localName } = processLocalizedNameForLabTest(row, locale);
-		// Listing-карточка показывает только первые LIST_CARD_MAX_CLINICS клиник,
-		// поэтому отдаём только их id/цены — остальное доступно на странице деталей.
+		// clinicIds отдаём полностью — по ним карта ставит маркеры всех клиник.
+		// Цены нужны только карточке (первые LIST_CARD_MAX_CLINICS клиник),
+		// остальное доступно на странице деталей.
 		const allClinicIds = row.clinicIds
 			? String(row.clinicIds).split(',').filter(Boolean)
 			: [];
 		const clinicCount = allClinicIds.length;
 		const limitedIds = new Set(allClinicIds.slice(0, LIST_CARD_MAX_CLINICS));
-		const limitedClinicIds = Array.from(limitedIds).join(',');
 		const allClinicPrices = parseClinicPricesData(row.clinicPricesData);
 		const limitedClinicPrices = allClinicPrices.filter((p) =>
 			limitedIds.has(String(p.clinicId)),
@@ -245,7 +247,7 @@ export async function getLabTestList(
 			name: name || '',
 			localName: localName || '',
 			synonyms: synonymsMap[row.id] || [],
-			clinicIds: limitedClinicIds,
+			clinicIds: allClinicIds.join(','),
 			clinicCount,
 			clinicPrices: limitedClinicPrices,
 			categoryIds: row.categoryIds

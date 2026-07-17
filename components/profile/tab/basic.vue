@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import RatingStars from '~/components/rating-stars.vue';
+import { maskEmail } from '~/common/email-masking';
 import accountCardMessages from '~/i18n/account-card';
 import profileMessages from '~/i18n/profile';
 import { combineI18nMessages } from '~/i18n/utils';
@@ -81,6 +83,44 @@ function linkTelegram() {
 function linkFacebook() {
 	sessionStorage.setItem('auth_redirect', '/profile');
 	window.location.href = '/api/auth/facebook';
+}
+
+// --- Приватность (prd/user-profile, итерации 3-4) ---
+const userStore = useUserStore();
+const { user } = storeToRefs(userStore);
+
+const isPublicProfile = ref(!!user.value?.is_profile_public);
+watch(user, (u) => {
+	isPublicProfile.value = !!u?.is_profile_public;
+});
+
+const isSavingPrivacy = ref(false);
+
+// Подпись к отзыву глазами других: имя, иначе маскированный email — как на сервере
+const previewName = computed(() => {
+	if (!isPublicProfile.value) return t('anonymousUser');
+	const u = user.value;
+	if (!u) return '';
+	if (u.name && u.name !== u.email) return u.name;
+	return u.email ? maskEmail(u.email) : '';
+});
+
+async function onPrivacyChange(value: string | number | boolean) {
+	const isPublic = !!value;
+	try {
+		isSavingPrivacy.value = true;
+		await $fetch('/api/auth/update-privacy', {
+			method: 'POST',
+			body: { isPublic },
+		});
+		await userStore.fetchUser(true);
+		ElMessage.success(t('privacyUpdated'));
+	} catch {
+		isPublicProfile.value = !isPublic;
+		ElMessage.error(t('errorUpdatingPrivacy'));
+	} finally {
+		isSavingPrivacy.value = false;
+	}
 }
 </script>
 
@@ -193,6 +233,45 @@ function linkFacebook() {
 			</ProfileAccountCard>
 		</div>
 	</section>
+
+	<section class="profile-section">
+		<div class="profile-section__header">
+			<div class="profile-section__icon">
+				<IconLock :size="20" />
+			</div>
+			<div>
+				<h2 class="profile-section__title">{{ t('privacyTitle') }}</h2>
+				<p class="profile-section__desc">{{ t('privacyDescription') }}</p>
+			</div>
+		</div>
+
+		<div class="privacy-toggle">
+			<div class="privacy-toggle__text">
+				<span class="privacy-toggle__label">{{ t('publicProfileLabel') }}</span>
+				<span class="privacy-toggle__hint">{{
+					isPublicProfile ? t('publicProfileHint') : t('privateProfileHint')
+				}}</span>
+			</div>
+			<el-switch
+				v-model="isPublicProfile"
+				:disabled="isSavingPrivacy"
+				@change="onPrivacyChange"
+			/>
+		</div>
+
+		<div class="privacy-preview">
+			<span class="privacy-preview__label">{{ t('privacyPreviewLabel') }}</span>
+			<div class="privacy-preview__card">
+				<span
+					class="privacy-preview__author"
+					:class="{ 'privacy-preview__author--anon': !isPublicProfile }"
+				>
+					{{ previewName }}
+				</span>
+				<RatingStars :rating="5" />
+			</div>
+		</div>
+	</section>
 </template>
 
 <style scoped>
@@ -242,6 +321,64 @@ function linkFacebook() {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: var(--spacing-lg);
+}
+
+.privacy-toggle {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--spacing-lg);
+}
+
+.privacy-toggle__text {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	min-width: 0;
+}
+
+.privacy-toggle__label {
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-medium);
+	color: var(--color-text-primary);
+}
+
+.privacy-toggle__hint {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
+	line-height: 1.4;
+}
+
+.privacy-preview {
+	margin-top: var(--spacing-xl);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.privacy-preview__label {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
+}
+
+.privacy-preview__card {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-md);
+	padding: var(--spacing-md) var(--spacing-lg);
+	border: var(--border-width-thin) solid var(--color-border-secondary);
+	border-radius: var(--border-radius-lg);
+	background: var(--color-bg-secondary);
+}
+
+.privacy-preview__author {
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-text-primary);
+}
+
+.privacy-preview__author--anon {
+	color: var(--color-text-muted);
+	font-style: italic;
 }
 
 @media (max-width: 640px) {

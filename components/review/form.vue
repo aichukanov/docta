@@ -35,6 +35,32 @@ const selectedRelatedId = ref<number | undefined>(undefined);
 const isSubmitting = ref(false);
 const error = ref('');
 
+// Шаг 2 (опционально): подтверждение визита документом
+const step = ref<'form' | 'verification'>('form');
+const createdReviewId = ref<number | null>(null);
+
+const dialogTitle = computed(() =>
+	step.value === 'verification' ? t('VerificationTitle') : t('WriteReview'),
+);
+
+const closeDialog = () => {
+	visible.value = false;
+	step.value = 'form';
+	createdReviewId.value = null;
+};
+
+const onVerificationUploaded = () => {
+	ElMessage.success(t('VerificationUploaded'));
+	closeDialog();
+};
+
+watch(visible, (isOpen) => {
+	if (!isOpen) {
+		step.value = 'form';
+		createdReviewId.value = null;
+	}
+});
+
 const relatedHint = computed(() =>
 	props.entityType === 'clinic' ? t('ReviewDoctorHint') : t('ReviewClinicHint'),
 );
@@ -76,8 +102,14 @@ const handleSubmit = async () => {
 				name: user.value?.name || t('Anonymous'),
 			},
 		};
-		visible.value = false;
 		emit('submitted', review);
+		// Отзыв создан — предлагаем опционально подтвердить визит документом
+		if (review.id) {
+			createdReviewId.value = review.id;
+			step.value = 'verification';
+		} else {
+			closeDialog();
+		}
 	} catch (e: unknown) {
 		const err = e as {
 			data?: { statusMessage?: string; data?: { code?: string } };
@@ -96,8 +128,23 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-	<AppDialog v-model="visible" :title="t('WriteReview')" width="560px">
+	<AppDialog v-model="visible" :title="dialogTitle" width="560px">
 		<ReviewLoginPrompt v-if="!user" />
+
+		<!-- Шаг 2: опциональная верификация визита -->
+		<div
+			v-else-if="step === 'verification' && createdReviewId"
+			class="verification-step"
+		>
+			<p class="verification-hint">{{ t('VerificationHint') }}</p>
+			<ReviewVerificationUpload
+				:reviewId="createdReviewId"
+				@uploaded="onVerificationUploaded"
+			/>
+			<el-button text class="skip-button" @click="closeDialog">
+				{{ t('VerificationSkip') }}
+			</el-button>
+		</div>
 
 		<form v-else class="review-form" @submit.prevent="handleSubmit">
 			<!-- Primary entity (read-only) -->
@@ -172,6 +219,22 @@ const handleSubmit = async () => {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-lg);
+}
+
+.verification-step {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+}
+
+.verification-hint {
+	margin: 0;
+	color: var(--color-text-secondary);
+	line-height: 1.6;
+}
+
+.skip-button {
+	align-self: flex-start;
 }
 
 .form-field {

@@ -1,5 +1,5 @@
 <template>
-	<ContactsLine :value="phoneNumber" :tooltip="t('Phone')">
+	<ContactsLine :value="phoneNumber" :tooltip="t('Phone')" contactType="phone">
 		<IconPhone :size="20" class="phone-icon" />
 		<span>{{ formatPhoneNumber(phoneNumber) }}</span>
 	</ContactsLine>

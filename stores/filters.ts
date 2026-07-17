@@ -9,6 +9,7 @@ import {
 	validateCategoryIds,
 	validateServiceCategoryIds,
 	validateNonNegativeIntegerArray,
+	validateMinRating,
 } from '~/common/validation';
 
 export type FilterNamespace =
@@ -34,6 +35,8 @@ interface FilterState {
 	manufacturerIds: number[];
 	name: string;
 	openNow: boolean;
+	// Минимальный средний рейтинг (0 — фильтр выключен), шаг 0.5
+	minRating: number;
 }
 
 type IdArrayKey = {
@@ -55,6 +58,7 @@ const createInitialState = (): FilterState => ({
 	manufacturerIds: [],
 	name: '',
 	openNow: false,
+	minRating: 0,
 });
 
 const parseIdArray = (
@@ -92,11 +96,18 @@ export const useFiltersStore = defineStore('filters', () => {
 				pharmaFormIds: s.pharmaFormIds,
 				manufacturerIds: s.manufacturerIds,
 				openNow: s.openNow ? 'true' : undefined,
+				minRating: s.minRating || undefined,
 			},
 		};
 	};
 
+	// Счётчик URL-синхронизаций: инкрементируется на каждый updateFromRoute,
+	// чтобы трекинг фильтров (use-filter-tracking) отличал восстановление
+	// состояния из URL (back/forward, переход по ссылке) от действий пользователя
+	const routeSyncVersion = ref(0);
+
 	const updateFromRoute = (ns: FilterNamespace, query: LocationQuery) => {
+		routeSyncVersion.value++;
 		const s = namespaces[ns];
 		const setIfValid = (
 			key: IdArrayKey,
@@ -148,11 +159,18 @@ export const useFiltersStore = defineStore('filters', () => {
 
 		s.name = typeof query.name === 'string' ? query.name : '';
 		s.openNow = query.openNow === 'true' || query.openNow === '1';
+
+		const ratingRaw = Array.isArray(query.minRating)
+			? query.minRating[0]
+			: query.minRating;
+		const ratingNum = ratingRaw != null ? Number(ratingRaw) : 0;
+		s.minRating = validateMinRating({ minRating: ratingNum }) ? ratingNum : 0;
 	};
 
 	return {
 		namespaces,
 		getRouteParams,
 		updateFromRoute,
+		routeSyncVersion,
 	};
 });

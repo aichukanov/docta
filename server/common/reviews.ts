@@ -1,4 +1,5 @@
 import type { Connection } from 'mysql2/promise';
+import { maskEmail } from '~/common/email-masking';
 import type { Rating, Review } from '~/interfaces/review';
 
 export type ReviewSort =
@@ -83,7 +84,7 @@ export async function fetchRating(
 			ROUND(AVG(rating), 1) as averageRating,
 			COUNT(*) as totalReviews
 		FROM reviews
-		WHERE ${column} = ? AND rating IS NOT NULL
+		WHERE ${column} = ? AND rating IS NOT NULL AND status != 'rejected'
 	`;
 	const [rows] = await connection.execute(query, [entityId]);
 	const row = (rows as any[])[0];
@@ -122,6 +123,7 @@ const reviewSelectFields = (textExpr: string) => `
 	${textExpr} as text,
 	r.published_at as publishedAt,
 	r.likes_count as likesCount,
+	r.is_verified as isVerified,
 	r.updated_at as updatedAt,
 	COALESCE(
 		NULLIF(u.name, ''),
@@ -129,9 +131,11 @@ const reviewSelectFields = (textExpr: string) => `
 			WHEN 'google'   THEN gp.name
 			WHEN 'telegram' THEN CONCAT(tp.first_name, IFNULL(CONCAT(' ', NULLIF(tp.last_name, '')), ''))
 			WHEN 'facebook' THEN fp.name
-		END,
-		u.email
+		END
 	) as authorName,
+	u.email as authorEmail,
+	u.is_profile_public as authorIsPublic,
+	u.is_phantom as authorIsPhantom,
 	COALESCE(
 		NULLIF(u.photo_url, ''),
 		CASE u.primary_oauth_provider
@@ -178,8 +182,10 @@ export async function fetchReviews(
 	const replyTextExpr = localizedTextField(locale, 'rr');
 	const selectFields = reviewSelectFields(textExpr);
 
-	// Build WHERE for other reviews (excluding own)
-	const conditions = [`r.${column} = ?`];
+	// Build WHERE for other reviews (excluding own).
+	// Отклонённые модератором отзывы публично не показываются
+	// (автор видит свой rejected-отзыв через отдельный own-запрос).
+	const conditions = [`r.${column} = ?`, `r.status != 'rejected'`];
 	const params: any[] = [entityId];
 
 	if (minRating > 0) {
@@ -221,12 +227,17 @@ export async function fetchReviews(
 	`;
 	const [reviewsRows] = await connection.execute(mainQuery, params);
 
-	// Own review (separate query, no minRating/pagination)
+	// Own review (separate query, no minRating/pagination).
+	// Автору отдаём отзыв в любом статусе + причину отклонения и статус верификации.
 	let ownReviewRow: any = null;
 	if (currentUserId) {
 		const ownQuery = `
-			SELECT ${selectFields}
+			SELECT ${selectFields},
+				r.status as status,
+				r.rejection_reason as rejectionReason,
+				vf.status as verificationStatus
 			${REVIEW_JOINS}
+			LEFT JOIN review_verification_files vf ON vf.review_id = r.id
 			WHERE r.${column} = ? AND r.user_id = ?
 		`;
 		const [ownRows] = await connection.execute(ownQuery, [
@@ -267,7 +278,20 @@ export async function fetchReviews(
 	}
 
 	// Process review row into Review object
-	const processReview = (review: any): Review => {
+	const processReview = (row: any): Review => {
+		// Вспомогательные поля автора не должны попадать в ответ API.
+		// userId тоже вырезаем: иначе «анонимные» отзывы приватного автора
+		// коррелируются по стабильному идентификатору (isOwn считаем здесь же)
+		const {
+			authorName,
+			authorPhotoUrl,
+			authorProfileUrl,
+			authorEmail,
+			authorIsPublic,
+			authorIsPhantom,
+			userId,
+			...review
+		} = row;
 		const reviewReplies = replies
 			.filter((r) => r.reviewId === review.id)
 			.map((reply) => ({
@@ -275,19 +299,26 @@ export async function fetchReviews(
 				originalText:
 					reply.originalText === reply.text ? null : reply.originalText,
 			}));
+		// Приватный профиль — отзыв отображается анонимно. Фантомы (импортированные
+		// отзывы) всегда публичны: их имена взяты из открытых источников.
+		// Без имени публичный автор подписывается маскированным email (u*****@g****.*om).
+		const displayName =
+			authorName || (authorEmail ? maskEmail(authorEmail) : null);
+		const isAuthorVisible =
+			userId && (authorIsPublic || authorIsPhantom) && displayName;
 		return {
 			...review,
 			originalText:
 				review.originalText === review.text ? null : review.originalText,
 			replies: reviewReplies,
-			author: review.userId
+			author: isAuthorVisible
 				? {
-						name: review.authorName,
-						photoUrl: review.authorPhotoUrl,
-						profileUrl: review.authorProfileUrl,
+						name: displayName,
+						photoUrl: authorPhotoUrl,
+						profileUrl: authorProfileUrl,
 					}
 				: undefined,
-			isOwn: currentUserId ? review.userId === currentUserId : undefined,
+			isOwn: currentUserId ? userId === currentUserId : undefined,
 		};
 	};
 

@@ -1,6 +1,12 @@
 # Итерация 1: Настройка Mixpanel, GA4 и базовые события
 
-**Статус:** 🔴 Not Started  
+**Статус:** 🟢 Completed (реализовано иначе, чем в плане)
+
+> Реальность (2026-06): отдельного plugin нет — Mixpanel инициализируется
+> динамическим импортом в `composables/use-analytics.ts` после cookie-consent,
+> `track_pageview: true`, EU api_host. GA4 — через модуль nuxt-gtag с consent
+> mode, Cloudflare Insights — без cookies. Актуальный каталог событий:
+> ../events-catalog.md  
 **Приоритет:** P0 (критично)  
 **Оценка:** 4-5 дней
 

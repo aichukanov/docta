@@ -1430,7 +1430,9 @@ export function buildMedicalWebPageSchema(options: {
 	datePublished?: string;
 	dateModified?: string;
 	lastReviewed?: string;
-	totalCount: number;
+	// Списочная часть опциональна: прозаические статьи отдают
+	// только MedicalWebPage без mainEntity/ItemList
+	totalCount?: number;
 	doctors?: Array<{
 		id: number;
 		slug: string;
@@ -1439,10 +1441,12 @@ export function buildMedicalWebPageSchema(options: {
 		professionalTitle?: string;
 		specialtyIds?: string;
 	}>;
-	getSpecialtyName: (id: number) => string | undefined;
+	getSpecialtyName?: (id: number) => string | undefined;
 }): SchemaOrg[] {
 	const pageId = `${options.pageUrl}#webpage`;
 	const itemListId = `${options.pageUrl}#itemlist`;
+	const { totalCount, doctors } = options;
+	const hasItemList = totalCount != null && doctors != null;
 
 	const pageSchema: WebPageSchema = {
 		'@type': 'MedicalWebPage',
@@ -1451,7 +1455,7 @@ export function buildMedicalWebPageSchema(options: {
 		'name': options.title,
 		'description': options.description,
 		'inLanguage': options.locale,
-		'mainEntity': { '@id': itemListId },
+		...(hasItemList ? { mainEntity: { '@id': itemListId } } : {}),
 		'author': {
 			'@type': 'Organization',
 			'name': SITE_NAME,
@@ -1463,15 +1467,19 @@ export function buildMedicalWebPageSchema(options: {
 		'image': options.image,
 	};
 
+	if (totalCount == null || doctors == null) {
+		return [pageSchema];
+	}
+
 	const itemListSchema: ItemListSchema = {
 		'@type': 'ItemList',
 		'@id': itemListId,
 		'name': options.title,
 		'description': options.description,
-		'numberOfItems': options.totalCount,
-		'itemListElement': buildDoctorListItemElements(options.doctors, {
+		'numberOfItems': totalCount,
+		'itemListElement': buildDoctorListItemElements(doctors, {
 			siteUrl: options.siteUrl,
-			getSpecialtyName: options.getSpecialtyName,
+			getSpecialtyName: options.getSpecialtyName ?? (() => undefined),
 		}),
 	};
 

@@ -398,6 +398,9 @@ async function recalculateRankScores() {
 							@updated="updateReviews"
 						/>
 					</el-tab-pane>
+					<el-tab-pane label="Модерация" lazy>
+						<AdminReviewModeration />
+					</el-tab-pane>
 					<el-tab-pane label="Ранжирование">
 						<div class="ranking-section">
 							<p

@@ -1,5 +1,10 @@
 <template>
-	<ContactsLine :value="telegramUrl" link :tooltip="t('Telegram')">
+	<ContactsLine
+		:value="telegramUrl"
+		link
+		:tooltip="t('Telegram')"
+		contactType="telegram"
+	>
 		<IconTelegram :size="20" class="messenger-icon" />
 		<span>{{ telegramContact }}</span>
 	</ContactsLine>

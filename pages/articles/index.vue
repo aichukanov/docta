@@ -10,11 +10,16 @@ import {
 import { combineI18nMessages } from '~/i18n/utils';
 import { LanguageId } from '~/enums/language';
 import articlesI18n from '~/i18n/articles';
+import cityHealthcareI18n from '~/i18n/article-city-healthcare';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([articlesI18n, breadcrumbI18n]),
+	messages: combineI18nMessages([
+		articlesI18n,
+		cityHealthcareI18n,
+		breadcrumbI18n,
+	]),
 });
 
 // 1. Define data first
@@ -73,6 +78,96 @@ const clinicLanguageStats = computed(() => {
 
 const articles = computed(() => [
 	{
+		title: t('HealthcareSystemTitle'),
+		description: t('HealthcareSystemDescription'),
+		image: '/img/articles/healthcare-system-in-montenegro.webp',
+		meta: '',
+		link: {
+			path: '/articles/healthcare-system-in-montenegro',
+			query: getRegionalQuery(locale.value),
+		},
+	},
+	{
+		title: t('BirthInMontenegroTitle'),
+		description: t('BirthInMontenegroDescription'),
+		image: '/img/articles/birth-in-montenegro.webp',
+		meta: '',
+		link: {
+			path: '/articles/birth-in-montenegro',
+			query: getRegionalQuery(locale.value),
+		},
+	},
+	{
+		title: t('ResidenceInsuranceTitle'),
+		description: t('ResidenceInsuranceDescription'),
+		image: '/img/articles/health-insurance-for-residence-permit.webp',
+		meta: '',
+		link: {
+			path: '/articles/health-insurance-for-residence-permit',
+			query: getRegionalQuery(locale.value),
+		},
+	},
+	{
+		title: t('MentalHealthTitle'),
+		description: t('MentalHealthDescription'),
+		image: '/img/articles/mental-health-in-montenegro.webp',
+		meta: '',
+		link: {
+			path: '/articles/mental-health-in-montenegro',
+			query: getRegionalQuery(locale.value),
+		},
+	},
+	{
+		title: t('TouristHealthcareTitle'),
+		description: t('TouristHealthcareDescription'),
+		image: '/img/articles/tourist-healthcare-in-montenegro.webp',
+		meta: '',
+		link: {
+			path: '/articles/tourist-healthcare-in-montenegro',
+			query: getRegionalQuery(locale.value),
+		},
+	},
+	{
+		title: t('DentistryTitle'),
+		description: t('DentistryDescription'),
+		image: '/img/articles/dentistry-in-montenegro.webp',
+		meta: '',
+		link: {
+			path: '/articles/dentistry-in-montenegro',
+			query: getRegionalQuery(locale.value),
+		},
+	},
+	{
+		title: t('PharmaciesTitle'),
+		description: t('PharmaciesDescription'),
+		image: '/img/articles/pharmacies-and-medications.webp',
+		meta: '',
+		link: {
+			path: '/articles/pharmacies-and-medications',
+			query: getRegionalQuery(locale.value),
+		},
+	},
+	{
+		title: t('LabTestsArticleTitle'),
+		description: t('LabTestsArticleDescription'),
+		image: '/img/articles/lab-tests-and-checkups.webp',
+		meta: '',
+		link: {
+			path: '/articles/lab-tests-and-checkups',
+			query: getRegionalQuery(locale.value),
+		},
+	},
+	{
+		title: t('ChildHealthcareTitle'),
+		description: t('ChildHealthcareDescription'),
+		image: '/img/articles/child-healthcare-in-montenegro.webp',
+		meta: '',
+		link: {
+			path: '/articles/child-healthcare-in-montenegro',
+			query: getRegionalQuery(locale.value),
+		},
+	},
+	{
 		title: t('RussianSpeakingDoctorsTitle'),
 		description: t('RussianSpeakingDoctorsDescription'),
 		image: '/img/articles/russian-speaking-doctors.webp',
@@ -87,6 +182,16 @@ const articles = computed(() => [
 			query: getRegionalQuery(locale.value),
 		},
 	},
+	...(['budva', 'podgorica', 'kotor', 'bar'] as const).map((city) => ({
+		title: t(`CityHcTitle_${city}`),
+		description: t(`CityHcDescription_${city}`),
+		image: `/img/articles/healthcare-in-${city}.webp`,
+		meta: '',
+		link: {
+			path: `/articles/healthcare-in-${city}`,
+			query: getRegionalQuery(locale.value),
+		},
+	})),
 	{
 		title: t('ClinicsWithLanguageSupportTitle'),
 		description: t('ClinicsWithLanguageSupportDescription'),

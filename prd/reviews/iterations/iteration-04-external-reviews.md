@@ -4,7 +4,12 @@
 
 ---
 
-## Статус: 🔴 Not Started
+## Статус: 🟢 Done (2026-03-20)
+
+> Реализовано: импорт отзывов Google Maps / Telegram / Facebook через
+> phantom-пользователей, переводы на 6 локалей, иконки источников
+> (`components/review-provider-icon.vue`). Workflow:
+> `docs/import/REVIEWS_IMPORT.md`, `data/review-import-configs/`.
 
 ---
 

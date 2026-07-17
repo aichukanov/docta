@@ -33,6 +33,8 @@ watch(
 	},
 	{ immediate: true },
 );
+// строго после первичной синхронизации из URL — она не действие пользователя
+useFilterTracking('medications');
 
 const filterList = computed(() => ({
 	cityIds: cityIds.value,

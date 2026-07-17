@@ -13,6 +13,8 @@ const props = withDefaults(
 		services?: ClinicSummaryService[];
 		serviceLimit?: number;
 		showPrice?: boolean;
+		// Расстояние до пользователя в км; null/undefined — локация неизвестна
+		distance?: number | null;
 	}>(),
 	{
 		serviceLimit: 2,
@@ -23,6 +25,15 @@ const props = withDefaults(
 defineEmits<{
 	(e: 'show-on-map'): void;
 }>();
+
+// Контакты внутри карточки атрибуцируются к этой клинике
+provideAnalyticsEntity(
+	computed(() => ({
+		entity_type: 'clinic' as const,
+		entity_id: props.clinic.id,
+		entity_slug: props.clinic.slug,
+	})),
+);
 
 const summaryI18n = {
 	'en': {
@@ -74,6 +85,7 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 			:priceMin="priceInfo?.priceMin"
 			:priceMax="priceInfo?.priceMax"
 			:showPrice="showPrice"
+			:distance="distance"
 			@show-on-map="$emit('show-on-map')"
 		/>
 

@@ -1,5 +1,5 @@
 <template>
-	<ContactsLine :value="contact" :tooltip="t('Viber')">
+	<ContactsLine :value="contact" :tooltip="t('Viber')" contactType="viber">
 		<IconViber :size="20" class="messenger-icon" />
 		<span>{{ viberContact }}</span>
 	</ContactsLine>

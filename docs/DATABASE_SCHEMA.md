@@ -49,6 +49,9 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `review_replies`                        | Replies to reviews (one from clinic, one from doctor).         |
 | `review_likes`                          | Likes on reviews by registered users.                         |
 | `review_reply_likes`                    | Likes on review replies by registered users.                  |
+| `review_verification_files`             | Visit-confirmation files for reviews (private storage). *(migration 005, pending)* |
+| `review_moderation_logs`                | Audit log of review moderation actions. *(migration 005, pending)* |
+| `review_ai_summaries`                   | Cached AI summaries of reviews per entity per locale. *(migration 005, pending)* |
 | `billing_paid_services`                 | Catalog of paid services available for clinics.                |
 | `billing_clinic_service_purchases`      | Purchase records of paid services by clinics.                  |
 | `billing_clinic_service_purchase_items` | Junction table: Purchase <-> Paid Service.                     |
@@ -75,8 +78,10 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `is_admin` (boolean, default FALSE): Flag indicating administrator privileges.
 - `email_verified` (boolean, default FALSE): Whether the user's email is verified.
 - `is_phantom` (boolean, default FALSE): Auto-created user from external review import. Flips to FALSE on first OAuth login.
+- `is_profile_public` (boolean, NOT NULL, default FALSE): Profile privacy. TRUE — author name shown next to own reviews (masked email `u*****@g****.*om` if no name); FALSE — reviews displayed anonymously. Default is private for real users; phantom users are backfilled TRUE and always treated as public in display logic (imported review names come from public sources).
 - `primary_oauth_provider` (varchar(50), NULL): Primary OAuth provider for display (google, telegram, NULL for email).
 - `preferred_locale` (varchar(10), NULL): Preferred language: sr, sr-cyrl, en, ru, de, tr.
+- `preferred_city_id` (int, FK -> cities.id, NULL, ON DELETE SET NULL): User's city for distance sorting of clinics.
 - `created_at` (timestamp)
 - `updated_at` (timestamp)
 - _Indexes_: `idx_email`, `idx_is_admin`, `idx_email_verified`, `idx_is_phantom`, `idx_primary_provider`, `idx_preferred_locale`
@@ -497,7 +502,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `text_sr`, `text_sr_cyrl`, `text_en`, `text_ru`, `text_de`, `text_tr` (text, NULL): Localized/translated review texts.
 - `published_at` (datetime, NULL): When review was published on the platform.
 - `likes_count` (int unsigned, NOT NULL, default 0): Denormalized like counter for sorting.
-- `created_at`, `updated_at` (timestamp)
+- `status` (enum: 'pending', 'approved', 'rejected', NOT NULL, default 'approved'): POST-moderation status. New user reviews are inserted as 'pending' (publicly visible); 'rejected' reviews are hidden from public lists, ratings, and ranking, but the author still sees their own review with the rejection reason. Imported/external reviews stay 'approved' via the column default.- `is_verified` (boolean, NOT NULL, default FALSE): Visit confirmed by a moderator-approved verification file.- `moderated_by` (int, NULL, FK -> auth_users.id, SET NULL): Admin who moderated.- `moderated_at` (datetime, NULL): When moderated.- `rejection_reason` (text, NULL): Shown to the author when status='rejected'.- `created_at`, `updated_at` (timestamp)
 - _Unique constraint_: (`provider`, `provider_review_id`)
 - _Indexes_: `idx_reviews_user_id`, `idx_reviews_clinic_rating` (clinic_id, rating), `idx_reviews_doctor_rating` (doctor_id, rating), `idx_reviews_clinic_user` (clinic_id, user_id), `idx_reviews_doctor_user` (doctor_id, user_id), `idx_medical_service_id`, `idx_provider`, `idx_rating`, `idx_reviews_likes_count` (likes_count DESC)
 - _Foreign Keys_: `user_id` -> `auth_users.id` (SET NULL), `clinic_id` -> `clinics.id` (CASCADE), `doctor_id` -> `doctors.id` (CASCADE), `medical_service_id` -> `medical_services.id` (CASCADE)
@@ -544,6 +549,42 @@ This file provides a structured reference of the MySQL database for the docta.me
 - _Indexes_: `idx_review_reply_likes_user_id`
 - _Foreign Keys_: `reply_id` -> `review_replies.id` (CASCADE), `user_id` -> `auth_users.id` (CASCADE)
 - _Comment_: Only authenticated (non-phantom) users can like. `review_replies.likes_count` is updated via application logic on insert/delete.
+
+### `review_verification_files`
+- `id` (int, PK, AI)
+- `review_id` (int, FK -> reviews.id, NOT NULL): Review being verified. One file per review.
+- `stored_name` (varchar(255), NOT NULL): On-disk file name (UUID.webp) inside `VERIFICATIONS_DIR` (default `storage/verifications`, **outside** `public/`).
+- `file_name` (varchar(255), NULL): Original client file name.
+- `file_type` (varchar(100), NOT NULL): MIME type after processing (image/webp).
+- `file_size` (int unsigned, NOT NULL): Size in bytes after processing.
+- `status` (enum: 'pending', 'approved', 'rejected', NOT NULL, default 'pending')
+- `rejection_reason` (text, NULL)
+- `uploaded_at` (datetime, default CURRENT_TIMESTAMP), `reviewed_at` (datetime, NULL), `reviewed_by` (int, NULL, FK -> auth_users.id, SET NULL)
+- _Unique constraint_: (`review_id`)
+- _Foreign Keys_: `review_id` -> `reviews.id` (CASCADE), `reviewed_by` -> `auth_users.id` (SET NULL)
+- _Comment_: Personal data (receipts, referrals). Files are served only to the review author and admins via `/api/reviews/verification-file?reviewId=`. Approving sets `reviews.is_verified = TRUE`.
+
+### `review_moderation_logs`
+- `id` (int, PK, AI)
+- `review_id` (int, FK -> reviews.id, NOT NULL)
+- `action` (enum: 'approved', 'rejected', 'verification_uploaded', 'verification_approved', 'verification_rejected', NOT NULL)
+- `moderator_id` (int, NULL, FK -> auth_users.id, SET NULL): NULL = action by the review author (e.g. verification upload).
+- `comment` (text, NULL): Rejection reason etc.
+- `created_at` (datetime, default CURRENT_TIMESTAMP)
+- _Indexes_: `idx_moderation_logs_review` (review_id)
+
+### `review_ai_summaries`
+- `id` (int, PK, AI)
+- `entity_type` (enum: 'doctor', 'clinic', NOT NULL)
+- `entity_id` (int, NOT NULL)
+- `language` (varchar(10), NOT NULL): One of the 6 site locales.
+- `sentiment` (enum: 'positive', 'neutral', 'negative', NOT NULL): Shared across locales of one entity.
+- `positives`, `negatives` (JSON, NOT NULL): Arrays of short strings.
+- `recommendations` (text, NULL): 2-3 sentences for potential patients.
+- `reviews_count` (int, NOT NULL): Number of reviews the summary was generated from (staleness check: regenerate when current count differs by >= 5).
+- `generated_at` (datetime, default CURRENT_TIMESTAMP), `regenerated_at` (datetime, NULL)
+- _Unique constraint_: (`entity_type`, `entity_id`, `language`)
+- _Comment_: Cache for AI review summaries (Anthropic `claude-haiku-4-5`, one call generates all 6 locales). Generated lazily in the background by `GET /api/reviews/ai-summary` when an entity has >= 3 non-rejected reviews with text. Feature is disabled without `ANTHROPIC_API_KEY`.
 
 ## Core Implementation Logic
 
@@ -622,12 +663,12 @@ This file provides a structured reference of the MySQL database for the docta.me
 
 14. **Paid Services (Billing)**:
 
-    - `billing_paid_services` contains available paid services (dofollow, highlight, approved/verified).
+    - `billing_paid_services` contains paid services (dofollow, highlight, approved/verified).
     - `billing_clinic_service_purchases` tracks purchases made by clinics.
     - `billing_clinic_service_purchase_items` links purchases to specific services.
     - Prices are stored as `decimal(10,2)`.
     - `deleted` flag supports soft deletes for purchases.
-    - Current available services: DOFOLLOW (dofollow links), HIGHLIGHT (featured in lists), APPROVED (verified badge).
+    - Services sold via the catalog: HIGHLIGHT (featured in lists), APPROVED (verified badge). DOFOLLOW (id 1) is no longer sold — its `billing_service_prices` rows are deactivated (migration 008), the service row remains for legacy purchases. Selling dofollow links violates Google's link spam policy.
 
 15. **Clinic Types & Working Hours**:
 

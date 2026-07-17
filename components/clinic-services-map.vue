@@ -11,6 +11,10 @@ const props = defineProps<{
 	clinics: ClinicData[];
 	services: MapServiceItem[];
 	showAllClinics?: boolean;
+	// Авто-центрирование по видимым маркерам после синхронизации.
+	// list-page включает его, когда город не выбран — иначе картой
+	// управляет центрирование по выбранному городу.
+	autoFit?: boolean;
 	detailsRouteName?: string;
 	detailsParamName?: string;
 }>();
@@ -20,6 +24,7 @@ const emit = defineEmits<{
 }>();
 
 const { t, locale } = useI18n();
+const { trackEvent } = useAnalytics();
 
 const {
 	isLoading,
@@ -42,19 +47,24 @@ const existingMarkerIds = ref(new Set<string>());
 
 const isClinicMode = computed(() => props.showAllClinics);
 
+// Клиники без координат на карту не попадают
+const clinicsWithCoords = computed(() =>
+	props.clinics.filter((clinic) => clinic.latitude && clinic.longitude),
+);
+
 const clinicsWithServices = computed<
 	Array<ClinicData & { services: MapServiceItem[] }>
 >(() => {
 	// Режим клиник: показываем все переданные клиники
 	if (props.showAllClinics) {
-		return props.clinics.map((clinic) => ({
+		return clinicsWithCoords.value.map((clinic) => ({
 			...clinic,
 			services: [],
 		}));
 	}
 
 	// Режим услуг: показываем только клиники с услугами из списка
-	return props.clinics
+	return clinicsWithCoords.value
 		.map((clinic) => {
 			return {
 				...clinic,
@@ -124,6 +134,15 @@ const openClinicPopup = async (clinic: ClinicData) => {
 	scrollToMap();
 };
 
+const onMarkerClick = (clinic: ClinicData) => {
+	trackEvent('map_marker_clicked', {
+		entity_type: 'clinic',
+		entity_id: clinic.id,
+		entity_slug: clinic.slug,
+	});
+	openClinicPopup(clinic);
+};
+
 const centerOnClinics = async (clinics: ClinicData[]) => {
 	await waitForInit();
 	centerOnLocations(
@@ -136,7 +155,7 @@ const centerOnClinics = async (clinics: ClinicData[]) => {
 const syncMarkers = () => {
 	const currentMarkerIds = new Set(markers.keys());
 	const newClinicIds = new Set(
-		props.clinics.map((clinic) => getClinicMarkerId(clinic.id)),
+		clinicsWithCoords.value.map((clinic) => getClinicMarkerId(clinic.id)),
 	);
 
 	// Удаляем маркеры для клиник, которых больше нет в списке
@@ -147,7 +166,7 @@ const syncMarkers = () => {
 	});
 
 	// Добавляем маркеры для новых клиник
-	props.clinics.forEach((clinic) => {
+	clinicsWithCoords.value.forEach((clinic) => {
 		const markerId = getClinicMarkerId(clinic.id);
 		if (!currentMarkerIds.has(markerId)) {
 			addMarker(markerId, clinic.latitude, clinic.longitude, {
@@ -160,11 +179,23 @@ const syncMarkers = () => {
 	existingMarkerIds.value = new Set(markers.keys());
 };
 
+// Подгоняем вьюпорт под видимые маркеры: без этого стартовый вид
+// (Подгорица, дефолтный зум) оставляет прибрежные и северные клиники за кадром
+const fitToMarkers = () => {
+	if (!props.autoFit) return;
+	centerOnLocations(
+		clinicsWithServices.value.map((clinic) => [
+			clinic.latitude,
+			clinic.longitude,
+		]),
+	);
+};
+
 onMounted(async () => {
 	if (mapContainer.value) {
 		await initializeMap(mapContainer.value);
 
-		props.clinics.forEach((clinic) => {
+		clinicsWithCoords.value.forEach((clinic) => {
 			addMarker(
 				getClinicMarkerId(clinic.id),
 				clinic.latitude,
@@ -176,8 +207,13 @@ onMounted(async () => {
 		// Инициализируем Set существующих маркеров
 		existingMarkerIds.value = new Set(markers.keys());
 
+		fitToMarkers();
+
 		isTeleportReady.value = true;
 		emit('ready');
+
+		// Карта монтируется лениво (по виду/кнопке) — mount и есть «открытие»
+		trackEvent('map_opened', { markers_count: clinicsWithCoords.value.length });
 
 		// Следим за изменениями списка клиник
 		watch(
@@ -187,6 +223,12 @@ onMounted(async () => {
 			},
 			{ deep: true },
 		);
+
+		// Видимый набор маркеров меняется и при смене services
+		// (пагинация, фильтры) — перецентрируем карту по нему
+		watch(clinicsWithServices, () => {
+			fitToMarkers();
+		});
 	}
 });
 
@@ -214,7 +256,7 @@ defineExpose({
 				<MapMarker
 					:clinicServiceCount="clinic.services.length"
 					:showIcon="isClinicMode"
-					@click.stop="openClinicPopup(clinic)"
+					@click.stop="onMarkerClick(clinic)"
 				/>
 			</Teleport>
 

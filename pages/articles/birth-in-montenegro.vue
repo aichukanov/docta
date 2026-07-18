@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import { SITE_URL } from '~/common/constants';
-import { getRegionalQuery, getRegionalUrl } from '~/common/url-utils';
-import {
-	buildBreadcrumbsSchema,
-	buildMedicalWebPageSchema,
-} from '~/common/schema-org-builders';
+import { getRegionalQuery } from '~/common/url-utils';
 import { combineI18nMessages } from '~/i18n/utils';
 import { DoctorSpecialty } from '~/enums/specialty';
 
@@ -19,48 +14,23 @@ const { t, locale } = useI18n({
 
 const ARTICLE_SLUG = 'birth-in-montenegro';
 
-const { trackEvent } = useAnalytics();
-
-provideAnalyticsEntity(
-	computed(() => ({
-		entity_type: 'article' as const,
-		entity_id: ARTICLE_SLUG,
-		entity_slug: ARTICLE_SLUG,
-	})),
-);
-
-onMounted(() => {
-	trackEvent('entity_viewed', {
-		entity_type: 'article',
-		entity_id: ARTICLE_SLUG,
-		entity_slug: ARTICLE_SLUG,
-	});
-});
-
-// 1. Links and basic data
-const homeLink = computed(() => ({
-	name: 'index',
-	query: getRegionalQuery(locale.value),
-}));
-
-const articlesLink = computed(() => ({
-	name: 'articles',
-	query: getRegionalQuery(locale.value),
-}));
-
-const breadcrumbItems = computed(() => [
-	{ label: t('BreadcrumbHome'), to: homeLink.value },
-	{ label: t('BreadcrumbArticles'), to: articlesLink.value },
-	{ label: t('BirthInMontenegroTitle') },
-]);
+const BIRTH_SCANDAL_SOURCE_URL =
+	'https://press.co.me/novorodence-u-kccg-potrosilo-600-eura/';
 
 const clinicsLink = computed(() => ({
 	name: 'clinics',
 	query: getRegionalQuery(locale.value),
 }));
 
-const servicesLink = computed(() => ({
-	name: 'services',
+const vaginalDeliveryLink = computed(() => ({
+	name: 'services-serviceSlug',
+	params: { serviceSlug: 'vaginal-delivery-anterior-occiput-presentation' },
+	query: getRegionalQuery(locale.value),
+}));
+
+const cesareanSectionLink = computed(() => ({
+	name: 'services-serviceSlug',
+	params: { serviceSlug: 'low-isthmic-cesarean-section-with-delivery' },
 	query: getRegionalQuery(locale.value),
 }));
 
@@ -98,54 +68,14 @@ const articleCta = computed(() => ({
 	link: gynecologistsLink.value,
 }));
 
-const schemaOrgStore = useSchemaOrgStore();
-const pageUrl = computed(() =>
-	getRegionalUrl(`${SITE_URL}/articles/${ARTICLE_SLUG}`, {}, locale.value),
-);
-
-// 2. SEO and Schema.org
-const pageTitle = computed(() => t('BirthInMontenegroTitle'));
-const pageDescription = computed(() => t('BirthInMontenegroDescription'));
-const articleImage = `${SITE_URL}/img/articles/birth-in-montenegro.webp`;
-
-useSeoMeta({
-	title: pageTitle,
-	description: pageDescription,
-	ogTitle: pageTitle,
-	ogDescription: pageDescription,
-	ogImage: articleImage,
-	ogUrl: pageUrl,
-	twitterCard: 'summary',
-	twitterTitle: pageTitle,
-	twitterDescription: pageDescription,
-	twitterImage: articleImage,
-});
-
-watchEffect(() => {
-	schemaOrgStore.setSchemas([
-		...buildMedicalWebPageSchema({
-			siteUrl: SITE_URL,
-			pageUrl: pageUrl.value,
-			locale: locale.value,
-			title: t('BirthInMontenegroTitle'),
-			description: t('BirthInMontenegroDescription'),
-			image: articleImage,
-			datePublished: '2026-07-16',
-			dateModified: '2026-07-16',
-			lastReviewed: '2026-07-16',
-		}),
-		buildBreadcrumbsSchema(pageUrl.value, [
-			{
-				name: t('BreadcrumbHome'),
-				url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
-			},
-			{
-				name: t('BreadcrumbArticles'),
-				url: getRegionalUrl(`${SITE_URL}/articles`, {}, locale.value),
-			},
-			{ name: t('BirthInMontenegroTitle') },
-		]),
-	]);
+const { breadcrumbItems } = useArticlePageSeo({
+	slug: ARTICLE_SLUG,
+	title: computed(() => t('BirthInMontenegroTitle')),
+	description: computed(() => t('BirthInMontenegroDescription')),
+	image: `/img/articles/${ARTICLE_SLUG}.webp`,
+	datePublished: '2026-07-16',
+	t,
+	locale,
 });
 </script>
 
@@ -190,10 +120,19 @@ watchEffect(() => {
 			<p>{{ t('BimCosts2') }}</p>
 			<p>
 				{{ t('BimCosts3') }}
-				<NuxtLink :to="servicesLink">{{ t('BimCosts3Link') }}</NuxtLink
+				<NuxtLink :to="vaginalDeliveryLink">{{ t('BimCosts3Link') }}</NuxtLink>
+				{{ t('BimCosts3Mid') }}
+				<NuxtLink :to="cesareanSectionLink">{{ t('BimCosts3Link2') }}</NuxtLink
 				>{{ t('BimCosts3End') }}
 			</p>
 			<p>{{ t('BimCosts4') }}</p>
+			<p>
+				{{ t('BimScandal1') }}
+				<a :href="BIRTH_SCANDAL_SOURCE_URL" target="_blank" rel="noopener">{{
+					t('BimScandalLink')
+				}}</a
+				>{{ t('BimScandalEnd') }}
+			</p>
 		</ArticleSection>
 
 		<ArticleSection id="section-practical" :title="t('BimToc_practical')">
@@ -228,38 +167,3 @@ watchEffect(() => {
 		</ArticleSection>
 	</ArticlePage>
 </template>
-
-<style scoped lang="less">
-p {
-	margin: 0 0 var(--spacing-lg);
-	font-size: var(--font-size-base);
-	line-height: 1.7;
-	color: var(--color-text-secondary);
-
-	&:last-child {
-		margin-bottom: 0;
-	}
-
-	a {
-		color: var(--color-primary);
-
-		&:hover {
-			text-decoration: none;
-		}
-	}
-}
-
-ul {
-	margin: 0 0 var(--spacing-lg);
-	padding-left: var(--spacing-xl);
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-sm);
-
-	li {
-		font-size: var(--font-size-base);
-		line-height: 1.7;
-		color: var(--color-text-secondary);
-	}
-}
-</style>

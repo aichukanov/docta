@@ -4,24 +4,24 @@
 // русскоязычных чатов о реальном опыте (2023–2026). Актуальность: июль 2026.
 export default {
 	messages: {
-		en: {
-			HcsToc_emergency: 'Emergency care: dial 124',
+		'en': {
+			'HcsToc_emergency': 'Emergency care: dial 124',
 			'HcsToc_state-system': 'How the state system works',
-			HcsToc_knjizica: 'Zdravstvena knjižica: who is entitled',
+			'HcsToc_knjizica': 'Zdravstvena knjižica: who is entitled',
 			'HcsToc_without-knjizica': 'No health card? Paid options',
-			HcsToc_foreigners: 'EU citizens and bilateral agreements',
-			HcsToc_insurance: 'Private health insurance',
-			HcsToc_medications: 'Medications and prescriptions',
-			HcsToc_sources: 'Useful contacts and sources',
+			'HcsToc_foreigners': 'EU citizens and bilateral agreements',
+			'HcsToc_insurance': 'Private health insurance',
+			'HcsToc_medications': 'Medications and prescriptions',
+			'HcsToc_sources': 'Useful contacts and sources',
 
 			HcsEmergency1:
 				'The emergency medical number in Montenegro is 124 (police — 122, fire — 123; the European 112 also works and redirects to local services). Emergency medical units (hitna pomoć) operate at the dom zdravlja health centers in every municipality.',
 			HcsEmergency2:
-				'The emergency dispatcher assesses the call and decides whether to send a team or advise attendance at a hitna pomoć point. Do not judge urgency by fever alone: call 124 or 112 for breathing difficulty, chest pain, severe injury, loss of consciousness, seizures, signs of stroke or rapid deterioration, follow the instructions, and do not drive yourself if unsafe.',
+				'A practical detail newcomers learn quickly: ambulances rarely come to your home for non-life-threatening cases. With a fever — even a high one — you will most likely be told to come to the emergency point yourself, where doctors will treat you, refer you onward or take you to a hospital by ambulance if needed.',
 			HcsEmergency3:
 				'For serious conditions the main destination is the Urgentni centar of the Clinical Center of Montenegro (KCCG) in Podgorica, open 24/7. On the coast, acute cases go to the emergency rooms of the general hospitals (Kotor, Bar) or the hitna pomoć unit at the local dom zdravlja.',
 			HcsEmergency4:
-				'State emergency services will not turn you away over citizenship or insurance status: care comes first, and an uninsured patient is billed afterwards at the official DRG tariffs — the same ones listed in our catalog of medical services and prices.',
+				'Emergency care is provided to everyone regardless of citizenship or insurance. It is free only if you are covered — by Montenegrin state insurance or via a bilateral agreement (see below). Otherwise you will be billed at official price lists: real-life example from 2023 — a laparoscopic appendectomy with two days in hospital in Podgorica cost about €1,200–1,500 for an uninsured patient, while an insured one pays nothing.',
 
 			HcsState1:
 				'Public healthcare has three tiers, plus specialized hospitals (orthopedics in Risan, pulmonology in Brezovik, psychiatry in Dobrota):',
@@ -41,9 +41,9 @@ export default {
 			HcsKnjizica2:
 				'Who is entitled: Montenegrin citizens and foreigners with permanent or temporary residence who work in Montenegro — employees, entrepreneurs and self-employed — plus pensioners, registered unemployed and some other categories. Family members (spouse, children) holding a family-reunification residence permit are insured through the working family member.',
 			HcsKnjizica3:
-				'A residence permit based on property ownership, company ownership or digital-nomad status does not by itself give you the right to compulsory insurance. Before cancelling other cover, confirm your eligibility and the required documents directly with FZOCG.',
+				'Who is not entitled: foreigners whose residence permit is based on property ownership, company ownership without employment, or the digital nomad permit — the law simply has no category for them, and the old option of voluntarily buying into state insurance was not carried over into the current law. Note also: you cannot be insured in two countries at once — in practice the Fund asks first-time foreign applicants to prove they have deregistered from health insurance in their home country.',
 			HcsKnjizica4:
-				'For employees, registration normally starts through the employer, followed by steps at FZOCG and primary care. Some services involve co-payments or are limited by the Fund’s medicine list. Confirm the current procedure and coverage with FZOCG, especially after a job or status change.',
+				'How to get it: for employees the employer registers you with the Fund; then you visit the FZO branch / dom zdravlja with your residence permit to complete registration and choose your izabrani doktor. What it gives: free GP and referred specialist visits, hospital treatment, vaccinations under the national calendar, and medications from the Fund’s list free or nearly free. If you change employer, visit the Fund to update who insures you.',
 
 			HcsWithout1:
 				'No knjižica? Every dom zdravlja has a paid option — often called the turistička ambulanta — where the uninsured see a doctor at official rates, typically €25–30 per consultation. You cannot register with an izabrani doktor, but one-off visits are possible.',
@@ -63,17 +63,17 @@ export default {
 			HcsForeigners2:
 				'How it works: before travelling, obtain a certificate from your home fund (e.g. form SRB/MNE 111 in Serbia, ČR/YU 111 in Czechia; German, Austrian, Slovenian and Luxembourgish insured can simply use their EHIC as the entitlement document). In Montenegro exchange it at the local FZOCG branch for the INO 1 health list, then use state institutions like a local patient. In a genuine emergency hospitals must treat you first and let you regularize paperwork afterwards.',
 			HcsForeigners3:
-				'Planned treatment under an agreement normally needs prior authorisation. Before travelling, confirm the required forms and the reimbursement route with your home fund and FZOCG.',
+				'The UK and Poland work on reciprocity: a valid GHIC/EHIC or even just proof of insurance plus a passport is enough for urgent care. Swiss, Swedish, Danish and Norwegian insured pay on the spot and claim reimbursement at home. In all cases only urgent/necessary care is covered — planned treatment and services over €150 require prior approval of your home insurer. A note specifically for German nationals: repatriation transport home is not covered — the DVKA explicitly recommends private travel insurance.',
 			HcsForeigners4:
 				'Russia, Ukraine, Kazakhstan and other CIS countries have no healthcare agreement with Montenegro. Citizens of these countries rely on paid medicine or private insurance unless they work in Montenegro and hold state insurance.',
 
 			HcsInsurance1:
-				'Price, limits, exclusions and waiting periods for a private policy depend on the insurer, age, medical history and package. Before buying, check three things: exclusions for pre-existing and chronic conditions, waiting periods, and the deductible. A policy accepted as residence-permit evidence is not necessarily comprehensive health cover.',
+				'Private (voluntary) health insurance is offered by local insurers — Sava, Lovćen, Uniqa, Generali, Grawe. Outpatient packages start around €18 per month for people under 40; a typical “foreigner” policy costs about €300 per year with a coverage limit around €10,000. Standard exclusions apply: pre-existing and chronic conditions are not covered, and there are waiting periods (usually 2 months, 9 for childbirth). A policy is also a mandatory document for residence-permit applications.',
 			HcsInsurance2:
-				'Direct billing and reimbursement depend on the insurer, provider and prior authorisation; state or private ownership alone does not determine the route. Get written confirmation of the provider, service, documents, payment method, bank-account requirements and deadline. For tourists, it’s worth comparing policies by assistance service, exclusions and coverage limits.',
+				'Keep in mind: state clinics do not bill private insurers directly. In practice you either agree the visit with the insurer in advance or pay yourself and claim reimbursement — which is usually paid only to a Montenegrin bank account. For tourists, ordinary travel insurance with an assistance service remains the best option.',
 
 			HcsMedications1:
-				'Antibiotics, psychotropics and other prescription medicines require a valid prescription under Montenegrin rules. A foreign prescription isn’t officially recognised, but in practice some pharmacies do accept one — that’s a pattern expats report in local chats; how consistent it is varies by pharmacy. For antibiotics, psychotropics or any ongoing therapy, it’s more reliable to plan a local doctor’s consultation and get a Montenegrin prescription. The doctor independently decides whether to prescribe, change the plan or refer. Covered medicines are dispensed by pharmacies contracted with the Fund, not only Montefarm; verify each medicine in our registry.',
+				'Prescription drugs (antibiotics, psychotropics and many others) are sold strictly with a Montenegrin prescription — pharmacies do not accept foreign ones. Prescriptions are electronic: your izabrani doktor issues them free with a knjižica; without one, any licensed doctor can prescribe after a paid consultation. For the insured, medications from the Fund’s list are free or nearly free at Montefarm state pharmacies.',
 			HcsMedications2:
 				'Availability and prices of specific drugs in Montenegro can be checked in our',
 			HcsMedications2Link: 'medications catalog',
@@ -96,24 +96,24 @@ export default {
 			HcsSourcesCatalogLink: 'find a doctor who speaks your language',
 			HcsSourcesCatalogEnd: '.',
 		},
-		ru: {
-			HcsToc_emergency: 'Экстренная помощь: номер 124',
+		'ru': {
+			'HcsToc_emergency': 'Экстренная помощь: номер 124',
 			'HcsToc_state-system': 'Как устроена государственная система',
-			HcsToc_knjizica: 'Zdravstvena knjižica: кому положена',
+			'HcsToc_knjizica': 'Zdravstvena knjižica: кому положена',
 			'HcsToc_without-knjizica': 'Без книжицы: платные варианты',
-			HcsToc_foreigners: 'Граждане ЕС и межгосударственные соглашения',
-			HcsToc_insurance: 'Частные страховки',
-			HcsToc_medications: 'Лекарства и рецепты',
-			HcsToc_sources: 'Полезные контакты и источники',
+			'HcsToc_foreigners': 'Граждане ЕС и межгосударственные соглашения',
+			'HcsToc_insurance': 'Частные страховки',
+			'HcsToc_medications': 'Лекарства и рецепты',
+			'HcsToc_sources': 'Полезные контакты и источники',
 
 			HcsEmergency1:
 				'Номер скорой помощи в Черногории — 124 (полиция — 122, пожарные — 123; общеевропейский 112 тоже работает и переключает на местные службы). Отделения скорой (hitna pomoć) работают при домах здравля в каждом муниципалитете.',
 			HcsEmergency2:
-				'Срочность оценивает диспетчер: он решает, направить ли бригаду или рекомендовать поездку в hitna pomoć. Не оценивайте тяжесть только по температуре: при затруднённом дыхании, боли в груди, тяжёлой травме, потере сознания, судорогах, признаках инсульта или быстром ухудшении звоните 124 или 112, выполняйте инструкции и не садитесь за руль, если это небезопасно.',
+				'Практическая деталь, с которой быстро сталкиваются все переехавшие: на дом бригада при неугрожающих жизни состояниях выезжает редко. С температурой — даже высокой — вам, скорее всего, скажут приехать в пункт скорой самостоятельно: там осмотрят, окажут помощь, направят дальше или отвезут в больницу на машине скорой, если это действительно нужно.',
 			HcsEmergency3:
 				'При серьёзных состояниях основной адрес — Urgentni centar Клинического центра Черногории (KCCG) в Подгорице, он работает круглосуточно. На побережье с острыми случаями едут в приёмные отделения общих больниц (Котор, Бар) или в hitna pomoć при местном доме здравля.',
 			HcsEmergency4:
-				'Государственная неотложная помощь не откажет из-за гражданства или отсутствия страховки: помощь оказывают сразу, а счёт незастрахованному пациенту выставляют потом — по официальным тарифам Фонда (DRG), которые можно посмотреть в нашем каталоге медицинских услуг и цен.',
+				'Экстренную помощь окажут любому — независимо от гражданства и страховки. Но бесплатной она будет только для застрахованных: по черногорской государственной страховке или по межгосударственному соглашению (см. ниже). Остальным выставят счёт по официальным тарифам. Реальный пример 2023 года: лапароскопическое удаление аппендикса с двумя днями стационара в Подгорице обошлось незастрахованному пациенту примерно в 1200–1500 €, застрахованный не платит ничего.',
 
 			HcsState1:
 				'Государственная медицина устроена в три уровня, плюс специализированные больницы (ортопедия в Рисане, пульмонология в Брезовике, психиатрия в Доброте):',
@@ -133,9 +133,9 @@ export default {
 			HcsKnjizica2:
 				'Кому положена: гражданам Черногории и иностранцам с постоянным или временным ВНЖ, которые работают в стране — наёмным работникам, предпринимателям, самозанятым; а также пенсионерам, зарегистрированным безработным и ряду других категорий. Члены семьи (супруг, дети) с ВНЖ по воссоединению семьи страхуются «через» работающего члена семьи.',
 			HcsKnjizica3:
-				'ВНЖ по недвижимости, владение фирмой или статус цифрового кочевника сами по себе не дают права на обязательное страхование. До отказа от другой страховки подтвердите своё право и список документов непосредственно в FZOCG.',
+				'Кому не положена: иностранцам с ВНЖ по недвижимости, владельцам фирм без трудоустройства и цифровым кочевникам — для них в законе просто нет основания, а возможность добровольно «вступить» в госстраховку за взнос в новый закон не перенесли. Ещё один нюанс: быть застрахованным в двух странах нельзя — на практике при первичном оформлении фонд требует у иностранца подтверждение отказа от медстраховки в стране гражданства.',
 			HcsKnjizica4:
-				'Для работника регистрация обычно начинается через работодателя, затем оформляются шаги в FZOCG и в первичной помощи. Часть услуг предполагает доплаты или ограничена списком лекарств Фонда. Уточняйте процедуру и покрытие в FZOCG, особенно после смены работы или статуса.',
+				'Как оформить: за наёмных работников заявление в фонд подаёт работодатель; дальше вы приходите в филиал FZO / дом здравля с бораваком, завершаете регистрацию и прикрепляетесь к izabrani doktor. Что даёт книжица: бесплатные приёмы у своего врача и по направлениям, стационар, прививки по национальному календарю, лекарства из списка фонда бесплатно или почти бесплатно. При смене работодателя нужно зайти в фонд и обновить данные о страхователе.',
 
 			HcsWithout1:
 				'Нет книжицы? В каждом доме здравля есть платный приём для незастрахованных — его часто называют «туристической амбулантой»: консультация по официальному тарифу, обычно 25–30 €. Прикрепиться к izabrani doktor без книжицы нельзя, но разово попасть к врачу — можно.',
@@ -155,17 +155,17 @@ export default {
 			HcsForeigners2:
 				'Как это работает: перед поездкой возьмите в своём фонде справку (например, форма SRB/MNE 111 в Сербии, ČR/YU 111 в Чехии; застрахованным в Германии, Австрии, Словении и Люксембурге достаточно их EHIC как документа-основания). В Черногории её обменивают в филиале FZOCG на форму INO 1 — и дальше вы обслуживаетесь в госучреждениях как местный пациент. В настоящей экстренной ситуации обязаны сначала оказать помощь, а бумаги оформить потом.',
 			HcsForeigners3:
-				'Плановое лечение по соглашению обычно требует предварительного разрешения. До поездки уточните нужные формы и порядок возмещения у домашнего фонда и FZOCG.',
+				'Великобритания и Польша работают по принципу взаимности: для неотложной помощи достаточно паспорта и действующего GHIC/EHIC или иного подтверждения страховки. Застрахованные в Швейцарии, Швеции, Дании и Норвегии платят на месте и получают возмещение дома. Во всех случаях покрывается только неотложная/необходимая помощь — плановое лечение и услуги дороже 150 € требуют предварительного согласия домашнего страховщика. Отдельная оговорка для граждан Германии: транспортировка домой (репатриация) не покрывается — DVKA прямо рекомендует оформлять частную туристическую страховку.',
 			HcsForeigners4:
 				'России, Украины, Казахстана и других стран СНГ в этих списках нет — действующих соглашений о медицинской помощи с Черногорией у них не существует. Гражданам этих стран остаётся платная медицина или частная страховка — либо государственная страховка через работу в Черногории.',
 
 			HcsInsurance1:
-				'Цена, лимиты, исключения и периоды ожидания частного полиса зависят от страховщика, возраста, анамнеза и пакета. Перед покупкой проверьте три вещи: исключения для уже имеющихся и хронических болезней, периоды ожидания и франшизу. Полис, который МУП принимает как документ для ВНЖ, не обязательно даёт широкое медицинское покрытие.',
+				'Частные (добровольные) страховки продают местные страховщики — Sava, Lovćen, Uniqa, Generali, Grawe. Амбулаторные пакеты начинаются примерно от 18 € в месяц для людей младше 40 лет; типовой полис «для иностранцев» стоит около 300 € в год с лимитом покрытия порядка 10 000 €. Стандартные исключения: хронические и существовавшие до покупки полиса заболевания не покрываются, действуют периоды ожидания (обычно 2 месяца, для родов — 9). Такой полис — ещё и обязательный документ при подаче на ВНЖ.',
 			HcsInsurance2:
-				'Прямой расчёт и возмещение зависят от страховщика, учреждения и предварительного согласования; принадлежность клиники к государственному или частному сектору сама по себе не определяет маршрут. Получите письменное подтверждение клиники, услуги, документов, способа оплаты, требований к банковскому счёту и срока подачи. Туристам стоит сравнивать полисы по ассистансу, исключениям и лимитам покрытия.',
+				'Важно понимать: государственные клиники не работают с частными страховыми напрямую. На практике визит либо заранее согласуют со страховой, либо платят сами и подают на возмещение — а его, как правило, перечисляют только на счёт в черногорском банке. Туристам по-прежнему разумнее всего обычная travel-страховка с ассистансом.',
 
 			HcsMedications1:
-				'Антибиотики, психотропные и другие рецептурные препараты требуют действительного рецепта по правилам Черногории. Иностранный рецепт формально не признаётся, но на практике некоторые аптеки его всё же принимают — так сообщают пользователи русскоязычных чатов; насколько это распространено, зависит от конкретной аптеки. Для антибиотиков, психотропных препаратов и другой важной терапии надёжнее сразу спланировать консультацию местного врача и получить черногорский рецепт. Врач самостоятельно решает, выписать ли препарат, изменить схему или направить к специалисту. Покрываемые лекарства отпускают аптеки, работающие по договору с Фондом, а не только Montefarm; конкретный препарат проверяйте в нашем реестре.',
+				'Рецептурные препараты (антибиотики, психотропные и многие другие) продаются строго по черногорскому рецепту — иностранный аптека не примет. Рецепты электронные: по книжице их бесплатно выписывает izabrani doktor, без книжицы — любой лицензированный врач после платной консультации. Застрахованным лекарства из списка фонда отпускают бесплатно или почти бесплатно в государственных аптеках Montefarm.',
 			HcsMedications2:
 				'Наличие и цены конкретных препаратов в Черногории можно проверить в нашем',
 			HcsMedications2Link: 'каталоге лекарств',
@@ -188,24 +188,24 @@ export default {
 			HcsSourcesCatalogLink: 'найдите врача, говорящего на вашем языке',
 			HcsSourcesCatalogEnd: '.',
 		},
-		sr: {
-			HcsToc_emergency: 'Hitna pomoć: broj 124',
+		'sr': {
+			'HcsToc_emergency': 'Hitna pomoć: broj 124',
 			'HcsToc_state-system': 'Kako funkcioniše državni sistem',
-			HcsToc_knjizica: 'Zdravstvena knjižica: ko ima pravo',
+			'HcsToc_knjizica': 'Zdravstvena knjižica: ko ima pravo',
 			'HcsToc_without-knjizica': 'Bez knjižice: plaćene opcije',
-			HcsToc_foreigners: 'Državljani EU i međudržavni sporazumi',
-			HcsToc_insurance: 'Privatna osiguranja',
-			HcsToc_medications: 'Ljekovi i recepti',
-			HcsToc_sources: 'Korisni kontakti i izvori',
+			'HcsToc_foreigners': 'Državljani EU i međudržavni sporazumi',
+			'HcsToc_insurance': 'Privatna osiguranja',
+			'HcsToc_medications': 'Ljekovi i recepti',
+			'HcsToc_sources': 'Korisni kontakti i izvori',
 
 			HcsEmergency1:
 				'Broj hitne medicinske pomoći u Crnoj Gori je 124 (policija — 122, vatrogasci — 123; evropski broj 112 takođe radi i preusmjerava na lokalne službe). Jedinice hitne pomoći rade pri domovima zdravlja u svakoj opštini.',
 			HcsEmergency2:
-				'Dispečer procjenjuje poziv i odlučuje da li šalje ekipu ili savjetuje dolazak u hitnu pomoć. Ne procjenjujte hitnost samo po temperaturi: kod otežanog disanja, bola u grudima, teške povrede, gubitka svijesti, napada, znakova moždanog udara ili brzog pogoršanja pozovite 124 ili 112, slijedite uputstva i ne vozite sami ako nije bezbjedno.',
+				'Praktičan detalj koji doseljenici brzo nauče: ekipa rijetko izlazi na kućnu adresu kada stanje ne ugrožava život. Sa temperaturom — čak i visokom — najvjerovatnije će vam reći da sami dođete u punkt hitne pomoći: tamo će vas pregledati, zbrinuti, uputiti dalje ili prevesti u bolnicu ako je zaista potrebno.',
 			HcsEmergency3:
 				'Za ozbiljna stanja glavna adresa je Urgentni centar Kliničkog centra Crne Gore (KCCG) u Podgorici, otvoren 24/7. Na primorju se akutni slučajevi voze u prijemna odjeljenja opštih bolnica (Kotor, Bar) ili u hitnu pomoć pri lokalnom domu zdravlja.',
 			HcsEmergency4:
-				'Hitni pristup ne treba odlagati zbog državljanstva ili osiguranja, ali račun zavisi od važećeg prava, usluge i međunarodnog aranžmana. Ne pretpostavljajte da svaki osigurani pacijent ne plaća ništa. Cijena operacije koju je pacijent naveo 2023. nije tarifa; neosigurani treba da traži detaljan račun i provjeri pravo na refundaciju.',
+				'Hitna pomoć se pruža svima — bez obzira na državljanstvo i osiguranje. Besplatna je samo za osigurane: preko crnogorskog državnog osiguranja ili po međudržavnom sporazumu (vidi niže). Ostalima se ispostavlja račun po zvaničnom cjenovniku. Primjer iz prakse (2023): laparoskopska operacija slijepog crijeva sa dva dana bolničkog liječenja u Podgorici koštala je neosiguranog pacijenta oko 1.200–1.500 €, dok osigurani ne plaća ništa.',
 
 			HcsState1:
 				'Državno zdravstvo ima tri nivoa, uz specijalne bolnice (ortopedija u Risnu, plućne bolesti u Brezoviku, psihijatrija u Dobroti):',
@@ -225,9 +225,9 @@ export default {
 			HcsKnjizica2:
 				'Ko ima pravo: crnogorski državljani i stranci sa stalnim ili privremenim boravkom koji rade u Crnoj Gori — zaposleni, preduzetnici i lica koja obavljaju samostalnu djelatnost; takođe penzioneri, nezaposleni na evidenciji Zavoda i još neke kategorije. Članovi porodice (supružnik, djeca) sa boravkom radi spajanja porodice osiguravaju se preko zaposlenog člana porodice.',
 			HcsKnjizica3:
-				'Pravo na obavezno osiguranje zavisi od važeće zakonske kategorije i činjenica konkretnog slučaja; boravak po osnovu nekretnine, vlasništvo firme ili status digitalnog nomada sami ne garantuju pokriće. Usklađivanje sa osiguranjem u drugoj državi i dokumenti koje traži FZOCG takođe zavise od primjenjivih pravila. Prije odjave drugog osiguranja provjerite pravo i dokumente direktno kod FZOCG.',
+				'Ko nema pravo: stranci sa boravkom po osnovu nekretnine, vlasnici firmi bez zaposlenja i digitalni nomadi — za njih u zakonu jednostavno ne postoji osnov, a mogućnost dobrovoljnog ulaska u državno osiguranje uz uplatu doprinosa nije prenijeta u važeći zakon. Još jedna napomena: ne možete biti osigurani u dvije države istovremeno — u praksi Fond od stranca pri prvoj registraciji traži potvrdu o odjavi zdravstvenog osiguranja u zemlji porijekla.',
 			HcsKnjizica4:
-				'Za zaposlene registracija obično počinje preko poslodavca, zatim slijede koraci u FZOCG i primarnoj zaštiti. Prava zavise od aktivnog statusa, uputa, ugovorne ustanove, nacionalnog programa i liste ljekova Fonda; doplate i isključenja su mogući. Aktuelni postupak i pokriće provjerite kod FZOCG, naročito poslije promjene posla ili statusa.',
+				'Kako se dobija: za zaposlene prijavu Fondu podnosi poslodavac; zatim sa boravkom dolazite u filijalu FZO / dom zdravlja, završavate registraciju i birate izabranog doktora. Šta knjižica daje: besplatne preglede kod izabranog doktora i po uputu, bolničko liječenje, vakcinaciju po nacionalnom kalendaru, ljekove sa liste Fonda besplatno ili gotovo besplatno. Pri promjeni poslodavca treba otići u Fond i ažurirati podatke o osiguravaocu.',
 
 			HcsWithout1:
 				'Nemate knjižicu? U svakom domu zdravlja postoji plaćeni pregled za neosigurane — često se zove turistička ambulanta: konsultacija po zvaničnoj tarifi, obično 25–30 €. Bez knjižice se ne možete registrovati kod izabranog doktora, ali pojedinačni pregledi su mogući.',
@@ -247,17 +247,17 @@ export default {
 			HcsForeigners2:
 				'Kako funkcioniše: prije putovanja uzmite potvrdu svog fonda (npr. obrazac SRB/MNE 111 u Srbiji, ČR/YU 111 u Češkoj; osiguranicima iz Njemačke, Austrije, Slovenije i Luksemburga dovoljna je njihova EHIC kartica). U Crnoj Gori se potvrda u filijali FZOCG zamjenjuje za zdravstveni list INO 1 — i dalje se liječite u državnim ustanovama kao domaći pacijent. U stvarnoj hitnoj situaciji prvo su dužni da vam pomognu, a papiri se sređuju naknadno.',
 			HcsForeigners3:
-				'Pokriće po uzajamnosti i sporazumima zavisi od države, osiguranog statusa, svrhe boravka, medicinske neophodnosti i dokumentacije. Planirano liječenje obično traži prethodno odobrenje, ali ne oslanjajte se na univerzalni novčani prag ili samo pasoš. Prije puta provjerite obrasce i refundaciju kod matičnog fonda i FZOCG.',
+				'Velika Britanija i Poljska funkcionišu po principu reciprociteta: za hitnu pomoć dovoljni su pasoš i važeći GHIC/EHIC ili drugi dokaz osiguranja. Osiguranici iz Švajcarske, Švedske, Danske i Norveške plaćaju na licu mjesta i traže refundaciju kod kuće. U svim slučajevima pokrivena je samo hitna/neophodna zaštita — planirano liječenje i usluge skuplje od 150 € zahtijevaju prethodnu saglasnost matičnog osiguravača. Napomena posebno za njemačke državljane: povratni transport kući nije pokriven — DVKA izričito preporučuje privatno putno osiguranje.',
 			HcsForeigners4:
 				'Rusija, Ukrajina, Kazahstan i druge zemlje ZND nisu na ovim listama — važeći sporazumi o zdravstvenoj zaštiti sa Crnom Gorom ne postoje. Državljanima tih zemalja ostaje plaćena medicina ili privatno osiguranje — ili državno osiguranje preko zaposlenja u Crnoj Gori.',
 
 			HcsInsurance1:
-				'Cijena, limiti, isključenja i karence privatne polise zavise od osiguravača, godina, zdravstvene istorije i paketa; navedeni iznosi su samo orijentacioni. Provjerite pravila za postojeće i hronične bolesti, ljekove, trudnoću i porođaj, karence, franšizu, mrežu i refundaciju. Polisa prihvaćena kao dokaz za boravak nije nužno sveobuhvatno zdravstveno pokriće.',
+				'Privatna (dobrovoljna) osiguranja prodaju lokalni osiguravači — Sava, Lovćen, Uniqa, Generali, Grawe. Vanbolnički paketi počinju od oko 18 € mjesečno za mlađe od 40 godina; tipična polisa „za strance“ košta oko 300 € godišnje sa limitom pokrića oko 10.000 €. Standardna isključenja: hronične bolesti i stanja nastala prije kupovine polise nisu pokriveni, važe periodi čekanja (obično 2 mjeseca, za porođaj 9). Ovakva polisa je ujedno i obavezan dokument pri podnošenju zahtjeva za boravak.',
 			HcsInsurance2:
-				'Direktno plaćanje i refundacija zavise od osiguravača, ustanove i prethodnog odobrenja; državno ili privatno vlasništvo samo ne određuje put. Tražite pisanu potvrdu ustanove, usluge, dokumenata, načina plaćanja, računa i roka. Turisti treba da porede asistenciju, isključenja i limite, a ne da jedan tip polise smatraju uvijek najboljim.',
+				'Važno je znati: državne klinike ne fakturišu privatnim osiguravačima direktno. U praksi se posjeta ili unaprijed usaglašava sa osiguravačem, ili sami platite pa tražite refundaciju — koja se po pravilu isplaćuje samo na račun u crnogorskoj banci. Za turiste je i dalje najrazumnije obično putno osiguranje sa asistencijom.',
 
 			HcsMedications1:
-				'Antibiotici, psihotropni i drugi ljekovi na recept zahtijevaju važeći recept po crnogorskim pravilima. Strani recept ne garantuje izdavanje: neki korisnici navode da ga je pojedina apoteka prihvatila, ali farmaceut može odbiti, pa planirajte lokalnu procjenu ljekara. Ljekar samostalno odlučuje da li propisuje, mijenja plan ili upućuje specijalisti. Pokrivene ljekove izdaju apoteke sa ugovorom sa Fondom, ne samo Montefarm; konkretan lijek provjerite u našem registru.',
+				'Ljekovi na recept (antibiotici, psihotropni i mnogi drugi) prodaju se isključivo uz crnogorski recept — strani recept apoteka neće prihvatiti. Recepti su elektronski: uz knjižicu ih besplatno propisuje izabrani doktor, bez knjižice — bilo koji licencirani ljekar nakon plaćene konsultacije. Osiguranima se ljekovi sa liste Fonda izdaju besplatno ili gotovo besplatno u državnim apotekama Montefarm.',
 			HcsMedications2:
 				'Dostupnost i cijene konkretnih ljekova u Crnoj Gori provjerite u našem',
 			HcsMedications2Link: 'katalogu ljekova',
@@ -281,23 +281,23 @@ export default {
 			HcsSourcesCatalogEnd: '.',
 		},
 		'sr-cyrl': {
-			HcsToc_emergency: 'Хитна помоћ: број 124',
+			'HcsToc_emergency': 'Хитна помоћ: број 124',
 			'HcsToc_state-system': 'Како функционише државни систем',
-			HcsToc_knjizica: 'Здравствена књижица: ко има право',
+			'HcsToc_knjizica': 'Здравствена књижица: ко има право',
 			'HcsToc_without-knjizica': 'Без књижице: плаћене опције',
-			HcsToc_foreigners: 'Држављани ЕУ и међудржавни споразуми',
-			HcsToc_insurance: 'Приватна осигурања',
-			HcsToc_medications: 'Љекови и рецепти',
-			HcsToc_sources: 'Корисни контакти и извори',
+			'HcsToc_foreigners': 'Држављани ЕУ и међудржавни споразуми',
+			'HcsToc_insurance': 'Приватна осигурања',
+			'HcsToc_medications': 'Љекови и рецепти',
+			'HcsToc_sources': 'Корисни контакти и извори',
 
 			HcsEmergency1:
 				'Број хитне медицинске помоћи у Црној Гори је 124 (полиција — 122, ватрогасци — 123; европски број 112 такође ради и преусмјерава на локалне службе). Јединице хитне помоћи раде при домовима здравља у свакој општини.',
 			HcsEmergency2:
-				'Диспечер процјењује позив и одлучује да ли шаље екипу или савјетује долазак у хитну помоћ. Не процјењујте хитност само по температури: код отежаног дисања, бола у грудима, тешке повреде, губитка свијести, напада, знакова можданог удара или брзог погоршања позовите 124 или 112, слиједите упутства и не возите сами ако није безбједно.',
+				'Практичан детаљ који досељеници брзо науче: екипа ријетко излази на кућну адресу када стање не угрожава живот. Са температуром — чак и високом — највјероватније ће вам рећи да сами дођете у пункт хитне помоћи: тамо ће вас прегледати, збринути, упутити даље или превести у болницу ако је заиста потребно.',
 			HcsEmergency3:
 				'За озбиљна стања главна адреса је Ургентни центар Клиничког центра Црне Горе (КЦЦГ) у Подгорици, отворен 24/7. На приморју се акутни случајеви возе у пријемна одјељења општих болница (Котор, Бар) или у хитну помоћ при локалном дому здравља.',
 			HcsEmergency4:
-				'Хитни приступ не треба одлагати због држављанства или осигурања, али рачун зависи од важећег права, услуге и међународног аранжмана. Не претпостављајте да сваки осигурани пацијент не плаћа ништа. Цијена операције коју је пацијент навео 2023. није тарифа; неосигурани треба да тражи детаљан рачун и провјери право на рефундацију.',
+				'Хитна помоћ се пружа свима — без обзира на држављанство и осигурање. Бесплатна је само за осигуране: преко црногорског државног осигурања или по међудржавном споразуму (види ниже). Осталима се испоставља рачун по званичном цјеновнику. Примјер из праксе (2023): лапароскопска операција слијепог цријева са два дана болничког лијечења у Подгорици коштала је неосигураног пацијента око 1.200–1.500 €, док осигурани не плаћа ништа.',
 
 			HcsState1:
 				'Државно здравство има три нивоа, уз специјалне болнице (ортопедија у Рисну, плућне болести у Брезовику, психијатрија у Доброти):',
@@ -317,9 +317,9 @@ export default {
 			HcsKnjizica2:
 				'Ко има право: црногорски држављани и странци са сталним или привременим боравком који раде у Црној Гори — запослени, предузетници и лица која обављају самосталну дјелатност; такође пензионери, незапослени на евиденцији Завода и још неке категорије. Чланови породице (супружник, дјеца) са боравком ради спајања породице осигуравају се преко запосленог члана породице.',
 			HcsKnjizica3:
-				'Право на обавезно осигурање зависи од важеће законске категорије и чињеница конкретног случаја; боравак по основу некретнине, власништво фирме или статус дигиталног номада сами не гарантују покриће. Усклађивање са осигурањем у другој држави и документи које тражи FZOCG такође зависе од примјењивих правила. Прије одјаве другог осигурања провјерите право и документе директно код FZOCG.',
+				'Ко нема право: странци са боравком по основу некретнине, власници фирми без запослења и дигитални номади — за њих у закону једноставно не постоји основ, а могућност добровољног уласка у државно осигурање уз уплату доприноса није пренијета у важећи закон. Још једна напомена: не можете бити осигурани у двије државе истовремено — у пракси Фонд од странца при првој регистрацији тражи потврду о одјави здравственог осигурања у земљи поријекла.',
 			HcsKnjizica4:
-				'За запослене регистрација обично почиње преко послодавца, затим слиједе кораци у FZOCG и примарној заштити. Права зависе од активног статуса, упута, уговорне установе, националног програма и листе љекова Фонда; доплате и искључења су могући. Актуелни поступак и покриће провјерите код FZOCG, нарочито послије промјене посла или статуса.',
+				'Како се добија: за запослене пријаву Фонду подноси послодавац; затим са боравком долазите у филијалу ФЗО / дом здравља, завршавате регистрацију и бирате изабраног доктора. Шта књижица даје: бесплатне прегледе код изабраног доктора и по упуту, болничко лијечење, вакцинацију по националном календару, љекове са листе Фонда бесплатно или готово бесплатно. При промјени послодавца треба отићи у Фонд и ажурирати податке о осигураваоцу.',
 
 			HcsWithout1:
 				'Немате књижицу? У сваком дому здравља постоји плаћени преглед за неосигуране — често се зове туристичка амбуланта: консултација по званичној тарифи, обично 25–30 €. Без књижице се не можете регистровати код изабраног доктора, али појединачни прегледи су могући.',
@@ -339,17 +339,17 @@ export default {
 			HcsForeigners2:
 				'Како функционише: прије путовања узмите потврду свог фонда (нпр. образац SRB/MNE 111 у Србији, ČR/YU 111 у Чешкој; осигураницима из Њемачке, Аустрије, Словеније и Луксембурга довољна је њихова EHIC картица). У Црној Гори се потврда у филијали ФЗОЦГ замјењује за здравствени лист ИНО 1 — и даље се лијечите у државним установама као домаћи пацијент. У стварној хитној ситуацији прво су дужни да вам помогну, а папири се сређују накнадно.',
 			HcsForeigners3:
-				'Покриће по узајамности и споразумима зависи од државе, осигураног статуса, сврхе боравка, медицинске неопходности и документације. Планирано лијечење обично тражи претходно одобрење, али не ослањајте се на универзални новчани праг или само пасош. Прије пута провјерите обрасце и рефундацију код матичног фонда и FZOCG.',
+				'Велика Британија и Пољска функционишу по принципу реципроцитета: за хитну помоћ довољни су пасош и важећи GHIC/EHIC или други доказ осигурања. Осигураници из Швајцарске, Шведске, Данске и Норвешке плаћају на лицу мјеста и траже рефундацију код куће. У свим случајевима покривена је само хитна/неопходна заштита — планирано лијечење и услуге скупље од 150 € захтијевају претходну сагласност матичног осигуравача. Напомена посебно за њемачке држављане: повратни транспорт кући није покривен — DVKA изричито препоручује приватно путно осигурање.',
 			HcsForeigners4:
 				'Русија, Украјина, Казахстан и друге земље ЗНД нису на овим листама — важећи споразуми о здравственој заштити са Црном Гором не постоје. Држављанима тих земаља остаје плаћена медицина или приватно осигурање — или државно осигурање преко запослења у Црној Гори.',
 
 			HcsInsurance1:
-				'Цијена, лимити, искључења и каренце приватне полисе зависе од осигуравача, година, здравствене историје и пакета; наведени износи су само оријентациони. Провјерите правила за постојеће и хроничне болести, љекове, трудноћу и порођај, каренце, франшизу, мрежу и рефундацију. Полиса прихваћена као доказ за боравак није нужно свеобухватно здравствено покриће.',
+				'Приватна (добровољна) осигурања продају локални осигуравачи — Sava, Lovćen, Uniqa, Generali, Grawe. Ванболнички пакети почињу од око 18 € мјесечно за млађе од 40 година; типична полиса „за странце“ кошта око 300 € годишње са лимитом покрића око 10.000 €. Стандардна искључења: хроничне болести и стања настала прије куповине полисе нису покривени, важе периоди чекања (обично 2 мјесеца, за порођај 9). Оваква полиса је уједно и обавезан документ при подношењу захтјева за боравак.',
 			HcsInsurance2:
-				'Директно плаћање и рефундација зависе од осигуравача, установе и претходног одобрења; државно или приватно власништво само не одређује пут. Тражите писану потврду установе, услуге, докумената, начина плаћања, рачуна и рока. Туристи треба да пореде асистенцију, искључења и лимите, а не да један тип полисе сматрају увијек најбољим.',
+				'Важно је знати: државне клинике не фактуришу приватним осигуравачима директно. У пракси се посјета или унапријед усаглашава са осигуравачем, или сами платите па тражите рефундацију — која се по правилу исплаћује само на рачун у црногорској банци. За туристе је и даље најразумније обично путно осигурање са асистенцијом.',
 
 			HcsMedications1:
-				'Антибиотици, психотропни и други љекови на рецепт захтијевају важећи рецепт по црногорским правилима. Страни рецепт не гарантује издавање: неки корисници наводе да га је поједина апотека прихватила, али фармацеут може одбити, па планирајте локалну процјену љекара. Љекар самостално одлучује да ли прописује, мијења план или упућује специјалисти. Покривене љекове издају апотеке са уговором са Фондом, не само Montefarm; конкретан лијек провјерите у нашем регистру.',
+				'Љекови на рецепт (антибиотици, психотропни и многи други) продају се искључиво уз црногорски рецепт — страни рецепт апотека неће прихватити. Рецепти су електронски: уз књижицу их бесплатно прописује изабрани доктор, без књижице — било који лиценцирани љекар након плаћене консултације. Осигуранима се љекови са листе Фонда издају бесплатно или готово бесплатно у државним апотекама Montefarm.',
 			HcsMedications2:
 				'Доступност и цијене конкретних љекова у Црној Гори провјерите у нашем',
 			HcsMedications2Link: 'каталогу љекова',
@@ -372,24 +372,24 @@ export default {
 			HcsSourcesCatalogLink: 'пронађите доктора који говори ваш језик',
 			HcsSourcesCatalogEnd: '.',
 		},
-		de: {
-			HcsToc_emergency: 'Notfallversorgung: Notruf 124',
+		'de': {
+			'HcsToc_emergency': 'Notfallversorgung: Notruf 124',
 			'HcsToc_state-system': 'So funktioniert das staatliche System',
-			HcsToc_knjizica: 'Zdravstvena knjižica: Wer hat Anspruch',
+			'HcsToc_knjizica': 'Zdravstvena knjižica: Wer hat Anspruch',
 			'HcsToc_without-knjizica': 'Ohne Gesundheitskarte: bezahlte Optionen',
-			HcsToc_foreigners: 'EU-Bürger und bilaterale Abkommen',
-			HcsToc_insurance: 'Private Krankenversicherungen',
-			HcsToc_medications: 'Medikamente und Rezepte',
-			HcsToc_sources: 'Nützliche Kontakte und Quellen',
+			'HcsToc_foreigners': 'EU-Bürger und bilaterale Abkommen',
+			'HcsToc_insurance': 'Private Krankenversicherungen',
+			'HcsToc_medications': 'Medikamente und Rezepte',
+			'HcsToc_sources': 'Nützliche Kontakte und Quellen',
 
 			HcsEmergency1:
 				'Die Notrufnummer des Rettungsdienstes in Montenegro ist 124 (Polizei — 122, Feuerwehr — 123; die europäische 112 funktioniert ebenfalls und leitet an die lokalen Dienste weiter). Die Rettungsstellen (hitna pomoć) sind den Gesundheitszentren (dom zdravlja) in jeder Gemeinde angegliedert.',
 			HcsEmergency2:
-				'Der Disponent beurteilt den Anruf und entscheidet über einen Einsatz oder empfiehlt den Weg zur hitna pomoć. Dringlichkeit nicht allein am Fieber messen: Bei Atemnot, Brustschmerz, schwerer Verletzung, Bewusstlosigkeit, Krampfanfällen, Schlaganfallzeichen oder rascher Verschlechterung 124 oder 112 anrufen, Anweisungen folgen und nicht selbst fahren, wenn dies unsicher wäre.',
+				'Ein praktisches Detail, das Zugezogene schnell lernen: Bei nicht lebensbedrohlichen Zuständen kommt selten ein Rettungswagen nach Hause. Mit Fieber — auch hohem — wird man Sie höchstwahrscheinlich bitten, selbst zur Rettungsstelle zu kommen: Dort werden Sie untersucht, versorgt, weiterverwiesen oder bei Bedarf ins Krankenhaus gebracht.',
 			HcsEmergency3:
 				'Bei ernsten Zuständen ist die wichtigste Adresse das Urgentni centar des Klinischen Zentrums von Montenegro (KCCG) in Podgorica, rund um die Uhr geöffnet. An der Küste fährt man mit akuten Fällen in die Notaufnahmen der allgemeinen Krankenhäuser (Kotor, Bar) oder zur hitna pomoć am örtlichen dom zdravlja.',
 			HcsEmergency4:
-				'Notfallzugang sollte nicht wegen Staatsangehörigkeit oder Versicherung verzögert werden; die Rechnung hängt jedoch von Anspruch, Leistung und Abkommen ab. Nicht annehmen, jeder Versicherte zahle nichts. Ein von Patienten genannter Operationspreis aus 2023 ist kein Tarif; Unversicherte sollten eine Einzelrechnung verlangen und Erstattungsrechte prüfen.',
+				'Notfallhilfe erhält jeder — unabhängig von Staatsangehörigkeit und Versicherung. Kostenlos ist sie aber nur für Versicherte: über die montenegrinische staatliche Versicherung oder ein bilaterales Abkommen (siehe unten). Allen anderen wird nach offiziellen Tarifen Rechnung gestellt. Reales Beispiel aus 2023: Eine laparoskopische Blinddarmoperation mit zwei Tagen stationärem Aufenthalt in Podgorica kostete einen Unversicherten etwa 1.200–1.500 €, ein Versicherter zahlt nichts.',
 
 			HcsState1:
 				'Das staatliche Gesundheitswesen hat drei Ebenen, dazu Spezialkliniken (Orthopädie in Risan, Lungenheilkunde in Brezovik, Psychiatrie in Dobrota):',
@@ -409,9 +409,9 @@ export default {
 			HcsKnjizica2:
 				'Anspruch haben: montenegrinische Staatsbürger und Ausländer mit dauerhaftem oder befristetem Aufenthalt, die in Montenegro arbeiten — Angestellte, Unternehmer und Selbständige; außerdem Rentner, gemeldete Arbeitslose und einige weitere Kategorien. Familienangehörige (Ehepartner, Kinder) mit Aufenthaltstitel zur Familienzusammenführung werden über das erwerbstätige Familienmitglied versichert.',
 			HcsKnjizica3:
-				'Der Anspruch auf Pflichtversicherung hängt von der aktuellen gesetzlichen Kategorie und dem Einzelfall ab; Aufenthalt wegen Immobilie, Firmeneigentum oder Digitalnomadenstatus garantiert für sich allein keinen Schutz. Koordination mit einer Versicherung im Ausland und die von FZOCG verlangten Nachweise richten sich ebenfalls nach den anwendbaren Regeln. Vor Kündigung anderer Versicherung Anspruch und Unterlagen direkt bei FZOCG bestätigen.',
+				'Keinen Anspruch haben: Ausländer mit Aufenthalt auf Basis von Immobilienbesitz, Firmeninhaber ohne Anstellung und digitale Nomaden — für sie sieht das Gesetz schlicht keine Grundlage vor, und die frühere Möglichkeit, sich freiwillig gegen Beitrag einzukaufen, wurde nicht ins geltende Gesetz übernommen. Wichtig auch: Man kann nicht in zwei Ländern gleichzeitig versichert sein — in der Praxis verlangt der Fonds bei der Erstanmeldung von Ausländern einen Nachweis der Abmeldung von der Krankenversicherung im Herkunftsland.',
 			HcsKnjizica4:
-				'Bei Beschäftigten beginnt die Anmeldung meist über den Arbeitgeber, gefolgt von Schritten bei FZOCG und Primärversorgung. Leistungen hängen von aktivem Status, Überweisung, Vertragseinrichtung, nationalem Programm und Arzneimittelliste ab; Zuzahlungen oder Ausschlüsse sind möglich. Aktuellen Ablauf und Schutz besonders nach Job- oder Statuswechsel bei FZOCG prüfen.',
+				'So erhalten Sie sie: Für Angestellte meldet der Arbeitgeber Sie beim Fonds an; anschließend gehen Sie mit Ihrem Aufenthaltstitel zur FZO-Filiale bzw. zum dom zdravlja, schließen die Registrierung ab und wählen Ihren izabrani doktor. Was das Heft bietet: kostenlose Besuche beim eigenen Arzt und nach Überweisung, stationäre Behandlung, Impfungen nach dem nationalen Kalender, Medikamente von der Fondsliste kostenlos oder fast kostenlos. Bei einem Arbeitgeberwechsel müssen die Versichererdaten beim Fonds aktualisiert werden.',
 
 			HcsWithout1:
 				'Keine knjižica? In jedem dom zdravlja gibt es eine bezahlte Sprechstunde für Unversicherte — oft „turistička ambulanta“ genannt: eine Konsultation zum offiziellen Tarif, meist 25–30 €. Ohne Karte können Sie sich nicht bei einem izabrani doktor registrieren, einzelne Besuche sind aber möglich.',
@@ -431,17 +431,17 @@ export default {
 			HcsForeigners2:
 				'So funktioniert es: Besorgen Sie sich vor der Reise eine Bescheinigung Ihrer Kasse (z. B. Formular SRB/MNE 111 in Serbien, ČR/YU 111 in Tschechien; für deutsche, österreichische, slowenische und luxemburgische Versicherte genügt die EHIC als Anspruchsnachweis). In Montenegro tauschen Sie sie in der örtlichen FZOCG-Filiale gegen den Behandlungsschein INO 1 — danach werden Sie in staatlichen Einrichtungen wie ein einheimischer Patient behandelt. In einem echten Notfall muss zuerst behandelt werden; die Papiere werden nachgereicht.',
 			HcsForeigners3:
-				'Leistungen aus Gegenseitigkeit und Abkommen hängen von Land, Versicherungsstatus, Aufenthaltszweck, medizinischer Notwendigkeit und Unterlagen ab. Geplante Behandlung braucht meist Vorabgenehmigung; verlassen Sie sich nicht auf eine universelle Geldgrenze oder nur einen Pass. Formulare und Erstattung vor Reise beim Heimatfonds und FZOCG prüfen.',
+				'Großbritannien und Polen arbeiten nach dem Gegenseitigkeitsprinzip: Für die Notfallversorgung genügen Reisepass und eine gültige GHIC/EHIC oder ein anderer Versicherungsnachweis. Versicherte aus der Schweiz, Schweden, Dänemark und Norwegen zahlen vor Ort und beantragen die Erstattung zu Hause. In allen Fällen ist nur die dringend notwendige Versorgung abgedeckt — geplante Behandlungen und Leistungen über 150 € erfordern die vorherige Zustimmung der heimischen Kasse. Hinweis für deutsche Versicherte: Der Rücktransport nach Hause ist nicht gedeckt — die DVKA empfiehlt ausdrücklich eine private Reiseversicherung.',
 			HcsForeigners4:
 				'Russland, die Ukraine, Kasachstan und andere GUS-Staaten stehen auf keiner dieser Listen — gültige Abkommen über medizinische Versorgung mit Montenegro existieren nicht. Bürgern dieser Länder bleiben bezahlte Medizin oder eine private Versicherung — oder die staatliche Versicherung über eine Beschäftigung in Montenegro.',
 
 			HcsInsurance1:
-				'Preis, Grenzen, Ausschlüsse und Wartezeiten privater Policen hängen von Versicherer, Alter, Vorgeschichte und Tarif ab; genannte Beträge sind nur Richtwerte. Bedingungen für bestehende und chronische Erkrankungen, Arzneimittel, Schwangerschaft und Geburt, Wartezeiten, Selbstbehalt, Netzwerk und Erstattung prüfen. Eine als Aufenthaltsnachweis akzeptierte Police ist nicht zwingend umfassender Krankenversicherungsschutz.',
+				'Private (freiwillige) Krankenversicherungen bieten lokale Versicherer an — Sava, Lovćen, Uniqa, Generali, Grawe. Ambulante Pakete beginnen bei etwa 18 € pro Monat für Personen unter 40; eine typische „Ausländer“-Police kostet rund 300 € pro Jahr mit einer Deckungssumme von etwa 10.000 €. Übliche Ausschlüsse: chronische und vorbestehende Erkrankungen sind nicht gedeckt, es gelten Wartezeiten (meist 2 Monate, 9 für Entbindungen). Eine solche Police ist zugleich Pflichtdokument beim Antrag auf einen Aufenthaltstitel.',
 			HcsInsurance2:
-				'Direktabrechnung und Erstattung hängen von Versicherer, Einrichtung und Vorabgenehmigung ab; staatlich oder privat bestimmt den Weg nicht allein. Einrichtung, Leistung, Unterlagen, Zahlungsweg, Kontoanforderung und Frist schriftlich bestätigen lassen. Touristen sollten Assistance, Ausschlüsse und Grenzen vergleichen, statt einen Policentyp allgemein als besten anzusehen.',
+				'Wichtig zu wissen: Staatliche Kliniken rechnen nicht direkt mit privaten Versicherern ab. In der Praxis stimmt man den Besuch entweder vorab mit dem Versicherer ab oder zahlt selbst und beantragt die Erstattung — die in der Regel nur auf ein montenegrinisches Bankkonto ausgezahlt wird. Für Touristen bleibt eine gewöhnliche Reiseversicherung mit Assistance die beste Wahl.',
 
 			HcsMedications1:
-				'Antibiotika, Psychopharmaka und andere rezeptpflichtige Arzneimittel erfordern ein nach montenegrinischen Regeln gültiges Rezept. Ein ausländisches Rezept garantiert keine Abgabe: Einige Nutzer berichten von einer Annahme durch einzelne Apotheken, doch der Apotheker kann ablehnen; planen Sie eine lokale ärztliche Beurteilung. Der Arzt entscheidet eigenständig über Verordnung, Änderung oder Überweisung. Erstattete Arzneimittel geben Vertragsapotheken des Fonds ab, nicht nur Montefarm; das konkrete Mittel in unserem Register prüfen.',
+				'Verschreibungspflichtige Medikamente (Antibiotika, Psychopharmaka und viele andere) werden ausschließlich gegen ein montenegrinisches Rezept verkauft — ausländische Rezepte akzeptiert die Apotheke nicht. Rezepte sind elektronisch: Mit knjižica stellt sie der izabrani doktor kostenlos aus, ohne Karte jeder lizenzierte Arzt nach einer bezahlten Konsultation. Versicherte erhalten Medikamente von der Fondsliste kostenlos oder fast kostenlos in den staatlichen Montefarm-Apotheken.',
 			HcsMedications2:
 				'Verfügbarkeit und Preise konkreter Medikamente in Montenegro finden Sie in unserem',
 			HcsMedications2Link: 'Medikamentenkatalog',
@@ -464,24 +464,24 @@ export default {
 			HcsSourcesCatalogLink: 'finden Sie einen Arzt, der Ihre Sprache spricht',
 			HcsSourcesCatalogEnd: '.',
 		},
-		tr: {
-			HcsToc_emergency: 'Acil yardım: 124 numarası',
+		'tr': {
+			'HcsToc_emergency': 'Acil yardım: 124 numarası',
 			'HcsToc_state-system': 'Devlet sistemi nasıl işler',
-			HcsToc_knjizica: 'Zdravstvena knjižica: kimler hak sahibi',
+			'HcsToc_knjizica': 'Zdravstvena knjižica: kimler hak sahibi',
 			'HcsToc_without-knjizica': 'Sağlık kartı yoksa: ücretli seçenekler',
-			HcsToc_foreigners: 'AB vatandaşları ve ikili anlaşmalar',
-			HcsToc_insurance: 'Özel sağlık sigortaları',
-			HcsToc_medications: 'İlaçlar ve reçeteler',
-			HcsToc_sources: 'Faydalı iletişim bilgileri ve kaynaklar',
+			'HcsToc_foreigners': 'AB vatandaşları ve ikili anlaşmalar',
+			'HcsToc_insurance': 'Özel sağlık sigortaları',
+			'HcsToc_medications': 'İlaçlar ve reçeteler',
+			'HcsToc_sources': 'Faydalı iletişim bilgileri ve kaynaklar',
 
 			HcsEmergency1:
 				"Karadağ'da acil tıbbi yardım numarası 124'tür (polis — 122, itfaiye — 123; Avrupa ortak numarası 112 de çalışır ve yerel servislere yönlendirir). Acil yardım birimleri (hitna pomoć) her belediyedeki dom zdravlja sağlık merkezlerine bağlıdır.",
 			HcsEmergency2:
-				'Operatör çağrıyı değerlendirir ve ekip gönderme veya hitna pomoć noktasına gitme önerisine karar verir. Aciliyeti yalnız ateşe göre belirlemeyin: nefes darlığı, göğüs ağrısı, ağır yaralanma, bilinç kaybı, nöbet, inme belirtisi veya hızlı kötüleşmede 124 ya da 112 numarasını arayın, talimatları izleyin ve güvenli değilse kendiniz araç kullanmayın.',
+				'Yeni taşınanların hızla öğrendiği pratik bir ayrıntı: hayati tehlike olmayan durumlarda ambulans eve nadiren gelir. Ateşiniz olduğunda — yüksek bile olsa — büyük olasılıkla acil yardım noktasına kendiniz gitmeniz söylenir: orada muayene edilir, tedavi edilir, sevk edilir veya gerçekten gerekiyorsa ambulansla hastaneye götürülürsünüz.',
 			HcsEmergency3:
 				"Ciddi durumlarda ana adres, Podgorica'daki Karadağ Klinik Merkezi'nin (KCCG) 7/24 açık Urgentni centar'ıdır. Sahil şehirlerinde akut vakalar genel hastanelerin acil servislerine (Kotor, Bar) veya yerel dom zdravlja'daki hitna pomoć'a götürülür.",
 			HcsEmergency4:
-				'Acil erişim vatandaşlık veya sigorta nedeniyle geciktirilmemelidir; fatura güncel hakka, hizmete ve uluslararası düzene bağlıdır. Her sigortalının hiç ödeme yapmadığını varsaymayın. Hastanın 2023 için bildirdiği ameliyat fiyatı tarife değildir; sigortasız hasta ayrıntılı fatura alıp geri ödeme hakkını kontrol etmelidir.',
+				"Acil yardım, vatandaşlık ve sigorta durumuna bakılmaksızın herkese verilir. Ancak yalnızca sigortalılar için ücretsizdir: Karadağ devlet sigortası veya ikili anlaşma yoluyla (aşağıya bakın). Diğerlerine resmi tarifeler üzerinden fatura kesilir. 2023'ten gerçek bir örnek: Podgorica'da iki gün hastane yatışıyla laparoskopik apandisit ameliyatı sigortasız bir hastaya yaklaşık 1.200–1.500 €'ya mal oldu; sigortalı hiçbir şey ödemez.",
 
 			HcsState1:
 				'Devlet sağlık sistemi üç kademelidir; ayrıca uzmanlaşmış hastaneler vardır (Risan’da ortopedi, Brezovik’te göğüs hastalıkları, Dobrota’da psikiyatri):',
@@ -501,9 +501,9 @@ export default {
 			HcsKnjizica2:
 				'Kimler hak sahibi: Karadağ vatandaşları ve Karadağ’da çalışan daimi veya geçici oturum izinli yabancılar — çalışanlar, girişimciler ve serbest meslek sahipleri; ayrıca emekliler, kayıtlı işsizler ve bazı diğer kategoriler. Aile birleşimi oturum izni olan aile üyeleri (eş, çocuklar) çalışan aile üyesi üzerinden sigortalanır.',
 			HcsKnjizica3:
-				'Zorunlu sigorta hakkı güncel yasal kategoriye ve kişisel duruma bağlıdır; taşınmaz, şirket sahipliği veya dijital göçebe statüsü tek başına kapsamı garanti etmez. Başka ülkedeki sigortayla koordinasyon ve FZOCG tarafından istenen belgeler de uygulanabilir kurallara bağlıdır. Diğer sigortayı iptal etmeden önce hakkı ve belgeleri doğrudan FZOCG kurumundan doğrulayın.',
+				'Kimler hak sahibi değil: gayrimenkul sahipliğine dayalı oturum izni olanlar, istihdam olmadan şirket sahipleri ve dijital göçebeler — kanunda onlar için bir dayanak yoktur ve prim ödeyerek gönüllü katılım imkânı yürürlükteki kanuna taşınmamıştır. Bir not daha: aynı anda iki ülkede sigortalı olamazsınız — uygulamada Fon, ilk kayıtta yabancıdan kendi ülkesindeki sağlık sigortasından çıkış belgesini ister.',
 			HcsKnjizica4:
-				'Çalışanlarda kayıt genellikle işverenle başlar, ardından FZOCG ve birinci basamak adımları gelir. Haklar aktif statü, sevk, sözleşmeli kurum, ulusal program ve Fon ilaç listesine bağlıdır; katkı veya istisna olabilir. Güncel süreç ve kapsamı özellikle iş ya da statü değişince FZOCG kurumundan doğrulayın.',
+				'Nasıl alınır: çalışanlar için başvuruyu Fon’a işveren yapar; ardından oturum izninizle FZO şubesine / dom zdravlja’ya gidip kaydı tamamlar ve izabrani doktor’unuzu seçersiniz. Karne ne sağlar: kendi doktorunuzda ve sevkle ücretsiz muayeneler, hastane tedavisi, ulusal takvime göre aşılar, Fon listesindeki ilaçlar ücretsiz veya neredeyse ücretsiz. İşveren değiştiğinde Fon’a gidip sigortalayan bilgilerini güncellemek gerekir.',
 
 			HcsWithout1:
 				'Karneniz yok mu? Her dom zdravlja’da sigortasızlar için ücretli muayene vardır — genellikle turistička ambulanta denir: resmi tarifeyle konsültasyon, genellikle 25–30 €. Karne olmadan izabrani doktor’a kaydolamazsınız, ancak tek seferlik muayeneler mümkündür.',
@@ -523,17 +523,17 @@ export default {
 			HcsForeigners2:
 				"Nasıl işler: yolculuktan önce kendi fonunuzdan belge alın (ör. Sırbistan'da SRB/MNE 111, Çekya'da ČR/YU 111 formu; Almanya, Avusturya, Slovenya ve Lüksemburg sigortalılarına EHIC kartları yeterlidir). Karadağ'da bu belge yerel FZOCG şubesinde INO 1 sağlık belgesiyle değiştirilir — sonrasında devlet kurumlarında yerli hasta gibi hizmet alırsınız. Gerçek bir acil durumda önce tedavi etmek zorundadırlar; evraklar sonradan tamamlanır.",
 			HcsForeigners3:
-				'Karşılıklılık ve anlaşma kapsamı ülke, sigortalı statüsü, kalış amacı, tıbbi gereklilik ve belgelere bağlıdır. Planlı tedavi genellikle ön onay ister; evrensel para eşiğine veya yalnız pasaporta güvenmeyin. Yolculuktan önce formları ve geri ödemeyi kendi fonunuz ve FZOCG kurumundan doğrulayın.',
+				"Birleşik Krallık ve Polonya karşılıklılık ilkesiyle çalışır: acil yardım için pasaport ve geçerli GHIC/EHIC veya başka bir sigorta kanıtı yeterlidir. İsviçre, İsveç, Danimarka ve Norveç sigortalıları yerinde öder ve geri ödemeyi kendi ülkelerinde talep eder. Her durumda yalnızca acil/zorunlu bakım kapsanır — planlı tedaviler ve 150 €'yu aşan hizmetler kendi sigortacınızın ön onayını gerektirir. Özellikle Alman vatandaşları için not: eve dönüş nakli kapsam dışıdır — DVKA açıkça özel seyahat sigortası öneriyor.",
 			HcsForeigners4:
 				'Rusya, Ukrayna, Kazakistan ve diğer BDT ülkeleri bu listelerde yoktur — Karadağ ile yürürlükte sağlık anlaşmaları bulunmaz. Bu ülkelerin vatandaşlarına ücretli tıp veya özel sigorta kalır — ya da Karadağ’da çalışarak devlet sigortası.',
 
 			HcsInsurance1:
-				'Özel poliçe fiyatı, limiti, istisnaları ve bekleme süreleri sigortacıya, yaşa, sağlık geçmişine ve pakete göre değişir; verilen tutarlar yalnız göstergedir. Mevcut ve kronik hastalıklar, ilaçlar, gebelik ve doğum, bekleme, muafiyet, ağ ve geri ödeme koşullarını okuyun. Oturum belgesi olarak kabul edilen poliçe mutlaka kapsamlı sağlık koruması sağlamaz.',
+				'Özel (gönüllü) sağlık sigortalarını yerel sigortacılar sunar — Sava, Lovćen, Uniqa, Generali, Grawe. Ayakta tedavi paketleri 40 yaş altı için ayda yaklaşık 18 €’dan başlar; tipik bir “yabancı” poliçesi yılda yaklaşık 300 €’ya, yaklaşık 10.000 € teminat limitiyle satılır. Standart istisnalar geçerlidir: kronik ve önceden var olan hastalıklar kapsanmaz, bekleme süreleri vardır (genellikle 2 ay, doğum için 9). Böyle bir poliçe aynı zamanda oturum izni başvurusunda zorunlu belgedir.',
 			HcsInsurance2:
-				'Doğrudan ödeme ve geri ödeme sigortacı, kurum ve ön onaya bağlıdır; kamu veya özel olması yolu tek başına belirlemez. Kurumu, hizmeti, belgeleri, ödeme şeklini, hesap gereğini ve süreyi yazılı doğrulayın. Turistler bir poliçe türünü evrensel en iyi saymak yerine asistans, istisna ve limitleri karşılaştırmalıdır.',
+				'Bilinmesi gereken: devlet klinikleri özel sigortacılarla doğrudan çalışmaz. Uygulamada ziyaret ya önceden sigortacıyla mutabık kalınır ya da kendiniz ödeyip geri ödeme talep edersiniz — geri ödeme kural olarak yalnızca Karadağ’daki bir banka hesabına yapılır. Turistler için asistans hizmetli sıradan seyahat sigortası en makul seçenek olmaya devam ediyor.',
 
 			HcsMedications1:
-				'Antibiyotikler, psikotrop ilaçlar ve diğer reçeteli ürünler Karadağ kurallarına uygun geçerli reçete gerektirir. Yabancı reçete ilacın verilmesini garanti etmez: bazı kullanıcılar belirli eczanelerin kabul ettiğini bildirir, ancak eczacı reddedebilir; yerel hekim değerlendirmesini planlayın. Hekim reçete, plan değişikliği veya sevk kararını bağımsız verir. Kapsanan ilaçları yalnız Montefarm değil, Fonla sözleşmeli eczaneler verir; belirli ilacı kendi sicilimizde kontrol edin.',
+				'Reçeteli ilaçlar (antibiyotikler, psikotroplar ve diğerleri) yalnızca Karadağ reçetesiyle satılır — eczane yabancı reçeteyi kabul etmez. Reçeteler elektroniktir: karneyle izabrani doktor ücretsiz yazar; karne yoksa herhangi bir lisanslı doktor ücretli konsültasyon sonrası yazabilir. Sigortalılara Fon listesindeki ilaçlar devlet eczanesi Montefarm’da ücretsiz veya neredeyse ücretsiz verilir.',
 			HcsMedications2:
 				'Belirli ilaçların Karadağ’daki mevcudiyetini ve fiyatlarını',
 			HcsMedications2Link: 'ilaç kataloğumuzda',

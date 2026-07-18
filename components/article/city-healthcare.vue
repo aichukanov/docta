@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import { SITE_URL } from '~/common/constants';
-import { getRegionalQuery, getRegionalUrl } from '~/common/url-utils';
-import {
-	buildBreadcrumbsSchema,
-	buildMedicalWebPageSchema,
-} from '~/common/schema-org-builders';
+import { getRegionalQuery } from '~/common/url-utils';
 import { combineI18nMessages } from '~/i18n/utils';
 import { CityId } from '~/enums/cities';
 
@@ -37,6 +32,11 @@ const STATE_CLINIC_SLUGS: Record<CityHealthcareCity, string> = {
 
 const LENAPHARM_MAPS_URL = 'https://maps.app.goo.gl/hkf6JFxwT6MUXfuXA';
 
+const weekendArticleLink = computed(() => ({
+	path: '/articles/weekend-medical-help-in-montenegro',
+	query: getRegionalQuery(locale.value),
+}));
+
 const ARTICLE_DATE = '2026-07-16';
 
 const { t, locale } = useI18n({
@@ -52,41 +52,6 @@ const articleSlug = computed(() => `healthcare-in-${props.city}`);
 const articleImagePath = computed(
 	() => `/img/articles/healthcare-in-${props.city}.webp`,
 );
-
-const { trackEvent } = useAnalytics();
-
-provideAnalyticsEntity(
-	computed(() => ({
-		entity_type: 'article' as const,
-		entity_id: articleSlug.value,
-		entity_slug: articleSlug.value,
-	})),
-);
-
-onMounted(() => {
-	trackEvent('entity_viewed', {
-		entity_type: 'article',
-		entity_id: articleSlug.value,
-		entity_slug: articleSlug.value,
-	});
-});
-
-// 1. Links and basic data
-const homeLink = computed(() => ({
-	name: 'index',
-	query: getRegionalQuery(locale.value),
-}));
-
-const articlesLink = computed(() => ({
-	name: 'articles',
-	query: getRegionalQuery(locale.value),
-}));
-
-const breadcrumbItems = computed(() => [
-	{ label: t('BreadcrumbHome'), to: homeLink.value },
-	{ label: t('BreadcrumbArticles'), to: articlesLink.value },
-	{ label: t(`CityHcTitle_${props.city}`) },
-]);
 
 // Перелинковка с каталогами, отфильтрованными по городу статьи
 const clinicsCityLink = computed(() => ({
@@ -135,54 +100,14 @@ const articleCta = computed(() => ({
 	link: clinicsCityLink.value,
 }));
 
-const schemaOrgStore = useSchemaOrgStore();
-const pageUrl = computed(() =>
-	getRegionalUrl(`${SITE_URL}/articles/${articleSlug.value}`, {}, locale.value),
-);
-
-// 2. SEO and Schema.org
-const pageTitle = computed(() => t(`CityHcTitle_${props.city}`));
-const pageDescription = computed(() => t(`CityHcDescription_${props.city}`));
-const articleImage = computed(() => `${SITE_URL}${articleImagePath.value}`);
-
-useSeoMeta({
-	title: pageTitle,
-	description: pageDescription,
-	ogTitle: pageTitle,
-	ogDescription: pageDescription,
-	ogImage: articleImage,
-	ogUrl: pageUrl,
-	twitterCard: 'summary',
-	twitterTitle: pageTitle,
-	twitterDescription: pageDescription,
-	twitterImage: articleImage,
-});
-
-watchEffect(() => {
-	schemaOrgStore.setSchemas([
-		...buildMedicalWebPageSchema({
-			siteUrl: SITE_URL,
-			pageUrl: pageUrl.value,
-			locale: locale.value,
-			title: pageTitle.value,
-			description: pageDescription.value,
-			image: articleImage.value,
-			datePublished: ARTICLE_DATE,
-			dateModified: ARTICLE_DATE,
-			lastReviewed: ARTICLE_DATE,
-		}),
-		buildBreadcrumbsSchema(pageUrl.value, [
-			{
-				name: t('BreadcrumbHome'),
-				url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
-			},
-			{
-				name: t('BreadcrumbArticles'),
-				url: getRegionalUrl(`${SITE_URL}/articles`, {}, locale.value),
-			},
-			{ name: pageTitle.value },
-		]),
-	]);
+const { breadcrumbItems } = useArticlePageSeo({
+	slug: articleSlug,
+	title: computed(() => t(`CityHcTitle_${props.city}`)),
+	description: computed(() => t(`CityHcDescription_${props.city}`)),
+	image: articleImagePath,
+	datePublished: ARTICLE_DATE,
+	t,
+	locale,
 });
 </script>
 
@@ -247,27 +172,13 @@ watchEffect(() => {
 				{{ t('CityHcLenapharmAfter_bar') }}
 			</p>
 			<p>{{ t(`CityHcPharmacy2_${city}`) }}</p>
+			<p>
+				{{ t('CityHcWeekendText') }}
+				<NuxtLink :to="weekendArticleLink">{{
+					t('CityHcWeekendLink')
+				}}</NuxtLink
+				>{{ t('CityHcLinkEnd') }}
+			</p>
 		</ArticleSection>
 	</ArticlePage>
 </template>
-
-<style scoped lang="less">
-p {
-	margin: 0 0 var(--spacing-lg);
-	font-size: var(--font-size-base);
-	line-height: 1.7;
-	color: var(--color-text-secondary);
-
-	&:last-child {
-		margin-bottom: 0;
-	}
-
-	a {
-		color: var(--color-primary);
-
-		&:hover {
-			text-decoration: none;
-		}
-	}
-}
-</style>

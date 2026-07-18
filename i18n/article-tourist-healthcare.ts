@@ -5,26 +5,26 @@
 // русскоязычных чатов о реальном опыте туристов (2023–2026). Актуальность: июль 2026.
 export default {
 	messages: {
-		en: {
+		'en': {
 			TouristHealthcareTitle:
 				'Getting sick on holiday in Montenegro: where tourists can get help',
 			TouristHealthcareDescription:
 				'Emergency number 124, the turistička ambulanta at local health centers, private clinics and hospital ERs, what treatment really costs without insurance, EHIC and bilateral agreements, travel insurance tips and pharmacies — a practical guide for tourists in Montenegro.',
 
-			ThcToc_emergency: 'Emergency: dial 124 — and how ambulances really work',
+			'ThcToc_emergency': 'Emergency: dial 124 — and how ambulances really work',
 			'ThcToc_where-to-go': 'Where to go, depending on severity',
-			ThcToc_costs: 'What it costs without insurance',
-			ThcToc_agreements: 'EU and agreement-country tourists: EHIC and INO 1',
-			ThcToc_insurance: 'Travel insurance: what to check and how to use it',
-			ThcToc_pharmacies: 'Pharmacies and common holiday ailments',
-			ThcToc_sources: 'Sources and useful links',
+			'ThcToc_costs': 'What it costs without insurance',
+			'ThcToc_agreements': 'EU and agreement-country tourists: EHIC and INO 1',
+			'ThcToc_insurance': 'Travel insurance: what to check and how to use it',
+			'ThcToc_pharmacies': 'Pharmacies and common holiday ailments',
+			'ThcToc_sources': 'Sources and useful links',
 
 			ThcEmergency1:
 				'The emergency medical number in Montenegro is 124; the European 112 also works and redirects to local services. Emergency units (hitna pomoć) operate at the dom zdravlja health center in every municipality — including all the resort towns: Budva, Kotor, Tivat, Herceg Novi, Bar, Ulcinj.',
 			ThcEmergency2:
-				'The dispatcher decides whether to send an ambulance and may advise attendance at a hitna pomoć point. Do not use fever or vomiting alone to judge severity: call 124 or 112 for breathing difficulty, chest pain, severe injury, loss of consciousness, seizures, signs of stroke or any rapidly worsening condition, and follow dispatcher instructions. Do not drive yourself if it would be unsafe.',
+				'Set your expectations straight away: ambulance crews go out to genuinely life-threatening emergencies, and rarely otherwise. With a fever — even a high one — or vomiting, you will most likely be told to come to the hitna pomoć point yourself, by taxi or car. There you will be examined, treated, referred onward or, if truly necessary, taken to a hospital by ambulance.',
 			ThcEmergency3:
-				'State hospitals and hitna pomoć treat emergencies for anyone, regardless of citizenship or insurance. If you are not covered by a bilateral agreement or travel insurance, the bill comes afterwards — at the institution’s official tariffs. Keep the medical report and request an itemised invoice for any payment or reimbursement claim.',
+				'Nobody will be left without help: the healthcare law (Zakon o zdravstvenoj zaštiti, art. 12) guarantees urgent medical care to everyone in Montenegro regardless of citizenship or insurance. But it will not be free: an uninsured tourist is billed at official tariffs after the treatment.',
 
 			ThcWhere1:
 				'With mild complaints — a sore throat, fever, an upset stomach, an ear that hurts after swimming — go to the turistička ambulanta: the paid walk-in unit for the uninsured at the local dom zdravlja. A consultation at official rates costs about €25–30. In resort towns it works longer hours in summer (in Budva usually from 10:00 to 18:00 — ask at the info desk at the entrance; the door is often right next to hitna pomoć).',
@@ -40,7 +40,7 @@ export default {
 			ThcCosts1:
 				'Price anchors for a patient without insurance: a turistička ambulanta consultation — €25–30 (in Budva in 2025 an examination with a prescription cost exactly €25), a private clinic visit — €30–50, a comprehensive visit with ultrasound and lab tests — around €80. Tests in private laboratories are inexpensive: a basic blood panel from about €5.',
 			ThcCosts2:
-				'Hospital charges vary by institution, service and patient status. Prices reported in tourist and expat forums are individual, dated experiences and are not an official tariff or evidence about quality. If the situation allows, ask for a written estimate and what it includes; after treatment request an itemised invoice and medical report. Do not delay urgent care while comparing prices.',
+				'Hospitals are a different league. Travelers and expats repeatedly complain, in anecdotal reports rather than any published price list, about the “tourist” unit of the Kotor hospital: accounts from 2023 mention about €150 for a doctor’s examination and about €200 for a simple saline IV drip — several times more than anywhere else (the same drip at the Bar hospital was quoted at about €30). In 2025 visitors reported around €170 for a foreigner’s consultation there. Again, these are unverified patient reports, not an official price list — but the same complaint keeps recurring year after year.',
 			ThcCosts3:
 				'A real reference case from 2023: a laparoscopic appendectomy with two days in hospital at the Urgentni centar in Podgorica cost an uninsured patient about €1,200–1,500. Hospitals often want payment straight away — in cash or by card — even when you have travel insurance: you pay first, the insurer reimburses later. Insist on a receipt (račun) for every payment: without one neither the insurer nor anyone else will refund you a cent.',
 
@@ -51,21 +51,21 @@ export default {
 			ThcAgreements3:
 				'The UK and Poland work on simple reciprocity: for urgent treatment a valid GHIC/EHIC — or even just your passport — is enough. The UK guidance adds a practical detail: the hospital certificate should be arranged with the local FZOCG office before or during treatment, not after discharge — and note that prescribed medicines are not covered by the agreement.',
 			ThcAgreements4:
-				'The list of countries, covered services and required forms can change, and eligibility depends on the individual case. Verify the current arrangement with the home fund and FZOCG before travel. Where no agreement applies, travel insurance can reduce financial risk but remains subject to limits and exclusions; it is not a guarantee that every bill will be paid.',
+				'Swiss, Swedish, Danish and Norwegian insured pay on the spot and claim reimbursement at home. Russia, Ukraine and other CIS countries have no healthcare agreements with Montenegro at all — for these tourists (and everyone else “without an agreement”) travel insurance is the only protection from full-price bills.',
 
 			ThcInsurance1:
-				'Coverage under bilateral arrangements is generally limited to medically necessary care during a temporary stay and usually does not include medical evacuation or repatriation. Check the exact rules with the home fund. A private travel policy may add this cover, but only if it is expressly included in the wording.',
+				'Even for agreement countries the coverage is narrow: only urgent and necessary care — and never a medical evacuation home. The German liaison office DVKA says it plainly in its Montenegro leaflet: repatriation is not covered, take out private travel insurance despite the agreement. That advice applies to everyone.',
 			ThcInsurance2:
 				'Using a policy in practice: call your insurer’s assistance line as early as you can — they will direct you to a partner clinic and may arrange direct billing. If the situation is acute, don’t wait for the call center: go to hitna pomoć or a hospital, pay, and keep every medical report and receipt for the claim. Judging by travellers’ experiences here, assistance services vary a lot — one arranges a doctor within an hour, another leaves you waiting for a day — so a small cash reserve for a doctor’s visit is a sensible backup.',
 			ThcInsurance3:
-				'When buying a policy, check activity cover, scooter and motorbike rules, alcohol exclusions, pre-existing-condition and exacerbation clauses, deductibles, direct-billing conditions, evacuation and repatriation, and the territorial and total limits. There is no universal minimum suitable for every traveller: choose cover for the trip, activities, health needs and any visa requirement, and compare the policy wording rather than the headline limit alone.',
+				'When buying a policy, check the points tourists actually get caught by: coverage of active holidays (hiking, mopeds and scooters, rafting and paragliding are popular here), alcohol exclusions, exacerbation of chronic conditions, and the coverage limit — €30,000 looks like a reasonable minimum for a country where a single surgery can cost €1,500.',
 
 			ThcPharmacies1:
-				'Many common non-prescription products are available at pharmacies, while antibiotics and other prescription medicines require a valid prescription under Montenegrin rules. A foreign prescription does not guarantee dispensing: some travellers report that individual pharmacies accepted one, but the pharmacist may refuse, so plan for a local medical assessment. The public system usually uses eRecept, while written prescriptions may be used where the rules allow.',
+				'Pharmacies (apoteka) are on every corner in resort towns, and in season many work late and on Sundays. Painkillers, antipyretics, rehydration salts, ear and nose drops, sunburn sprays and motion-sickness pills are sold freely. Antibiotic tablets are strictly prescription-only — and pharmacies do not accept foreign prescriptions, only Montenegrin (electronic) ones. If you need prescription medication, a paid visit to the turistička ambulanta or a private doctor solves it: after the consultation the doctor issues a local e-prescription.',
 			ThcPharmacies2:
-				'Common holiday problems include acute diarrhoea or vomiting, ear pain after swimming, sunburn, heat illness, sea-urchin injuries and falls. With vomiting or diarrhoea, use oral rehydration if the person can drink and seek urgent assessment for marked drowsiness, breathing difficulty, blood, severe pain, very little urine or inability to keep fluids down, especially in a child. A clinician decides whether intravenous fluids or another treatment is needed. Seek professional help for deep or contaminated punctures rather than digging into the wound.',
+				'The classics of the summer season — judging by what tourists here actually face every year: food poisoning and rotavirus (in a child dehydration can develop within hours — do not put off going to hitna pomoć or a hospital for an IV drip), ear infections after swimming, sunburn and heat stroke, sea-urchin spines (they are removed at hitna pomoć or in any private clinic — don’t dig them out on the beach) and minor injuries on rocky beaches.',
 			ThcPharmacies3:
-				'Many private laboratories accept self-paying patients for common routine tests without a referral, while specialised tests may require a clinician order, preparation or appointment. Confirm with the laboratory and compare listed prices in the',
+				'If a doctor asks for tests — or you simply want to check yourself — private laboratories take everyone without a referral; compare prices in the',
 			ThcPharmacies3Link: 'lab tests catalog',
 			ThcPharmacies3End: '.',
 
@@ -84,27 +84,28 @@ export default {
 			ThcSourcesGuideLink: 'how healthcare works in Montenegro',
 			ThcSourcesGuideEnd: '.',
 		},
-		ru: {
+		'ru': {
 			TouristHealthcareTitle:
 				'Заболел в отпуске в Черногории: куда обращаться туристу',
 			TouristHealthcareDescription:
 				'Экстренный номер 124, туристическая амбуланта при доме здравля, частные клиники и приёмные отделения больниц, реальные цены без страховки, EHIC и двусторонние соглашения, советы по travel-страховке и аптеки — практический гид для туристов в Черногории.',
 
-			ThcToc_emergency:
+			'ThcToc_emergency':
 				'Экстренная помощь: номер 124 — и как на самом деле работает скорая',
 			'ThcToc_where-to-go': 'Куда идти: по тяжести ситуации',
-			ThcToc_costs: 'Сколько стоит лечение без страховки',
-			ThcToc_agreements: 'Туристам из ЕС и стран с соглашениями: EHIC и INO 1',
-			ThcToc_insurance: 'Travel-страховка: что проверить и как пользоваться',
-			ThcToc_pharmacies: 'Аптеки и типичные курортные болячки',
-			ThcToc_sources: 'Источники и полезные ссылки',
+			'ThcToc_costs': 'Сколько стоит лечение без страховки',
+			'ThcToc_agreements':
+				'Туристам из ЕС и стран с соглашениями: EHIC и INO 1',
+			'ThcToc_insurance': 'Travel-страховка: что проверить и как пользоваться',
+			'ThcToc_pharmacies': 'Аптеки и типичные курортные болячки',
+			'ThcToc_sources': 'Источники и полезные ссылки',
 
 			ThcEmergency1:
 				'Номер скорой помощи в Черногории — 124; общеевропейский 112 тоже работает и переключает на местные службы. Пункты скорой (hitna pomoć) есть при доме здравля (dom zdravlja) в каждом муниципалитете — включая все курортные города: Будву, Котор, Тиват, Херцег-Нови, Бар, Улцинь.',
 			ThcEmergency2:
-				'Решение о выезде принимает диспетчер; он может предложить самостоятельно обратиться в hitna pomoć. Нельзя оценивать тяжесть только по наличию температуры или рвоты: при затруднённом дыхании, боли в груди, тяжёлой травме, потере сознания, судорогах, признаках инсульта или быстром ухудшении звоните 124 или 112 и следуйте указаниям диспетчера. Не садитесь за руль, если это небезопасно.',
+				'Сразу настройте ожидания: бригада выезжает на реально угрожающие жизни состояния, а в остальных случаях — редко. С температурой, даже высокой, или рвотой вам, скорее всего, скажут добраться до пункта скорой самостоятельно — на такси или машине. Там осмотрят, окажут помощь, направят дальше или, если это действительно нужно, отвезут в больницу на машине скорой.',
 			ThcEmergency3:
-				'Доступ к неотложной помощи не следует откладывать из-за гражданства или страховки. Будет ли счёт и каким он окажется, зависит от услуги, действующего страхового статуса и применимого международного соглашения; не считайте помощь автоматически бесплатной или всегда платной. Сохраняйте медицинское заключение и просите детализированный счёт для оплаты или возмещения.',
+				'Без помощи вас не оставят: закон о здравоохранении (Zakon o zdravstvenoj zaštiti, ст. 12) гарантирует неотложную помощь каждому, кто находится в Черногории, независимо от гражданства и страховки. Но бесплатной она не будет: незастрахованному туристу после лечения выставят счёт по официальным тарифам.',
 
 			ThcWhere1:
 				'С лёгкими жалобами — горло, температура, расстройство желудка, заболевшее после купания ухо — идите в туристическую амбуланту (turistička ambulanta): платный приём для незастрахованных при местном доме здравля. Консультация по официальному тарифу — около 25–30 €. В курортных городах летом она работает дольше обычного (в Будве обычно с 10:00 до 18:00 — спросите на инфопункте у входа; дверь часто рядом с hitna pomoć).',
@@ -120,7 +121,7 @@ export default {
 			ThcCosts1:
 				'Ориентиры цен для пациента без страховки: консультация в туристической амбуланте — 25–30 € (в Будве в 2025 году осмотр с выпиской рецепта стоил ровно 25 €), приём в частной клинике — 30–50 €, комплексный визит с УЗИ и анализами — около 80 €. Анализы в частных лабораториях недорогие: базовый анализ крови — от 5 €.',
 			ThcCosts2:
-				'Стоимость больничной помощи зависит от учреждения, услуги и статуса пациента. Цены из туристических форумов и чатов — частный опыт в конкретную дату, а не официальный тариф и не доказательство качества помощи. Если ситуация позволяет, заранее попросите письменную смету и уточните, что в неё входит; после лечения возьмите детализированный счёт и медицинское заключение. Не откладывайте неотложную помощь ради сравнения цен.',
+				'Больницы — другая лига. Туристы и переехавшие регулярно жалуются — в неподтверждённых рассказах, а не по опубликованному прейскуранту — на «туристическое» отделение Которской больницы: в рассказах 2023 года фигурируют около 150 € за осмотр врача и около 200 € за обычную капельницу с физраствором — в разы дороже, чем где-либо ещё (ту же капельницу в больнице Бара оценивали примерно в 30 €). В 2025-м писали о примерно 170 € за приём иностранца. Повторим: это непроверенные рассказы пациентов, а не официальный прейскурант, но одна и та же жалоба повторяется из года в год.',
 			ThcCosts3:
 				'Реальный ориентир 2023 года: лапароскопическое удаление аппендикса с двумя днями стационара в Urgentni centar в Подгорице обошлось незастрахованной пациентке примерно в 1200–1500 €. Больницы часто просят оплату сразу — наличными или картой — даже если у вас есть travel-страховка: сначала платите вы, потом возмещает страховая. Обязательно требуйте чек (račun) за каждый платёж: без него ни страховая, ни кто-либо ещё не вернёт вам ни цента.',
 
@@ -131,21 +132,21 @@ export default {
 			ThcAgreements3:
 				'Великобритания и Польша работают по принципу взаимности: для неотложной помощи достаточно действующего GHIC/EHIC — или даже просто паспорта. Британская памятка добавляет практичную деталь: больничный сертификат нужно оформить в местном филиале FZOCG до или во время лечения, а не после выписки, — и учтите, что выписанные лекарства соглашением не покрываются.',
 			ThcAgreements4:
-				'Список стран, объём покрытия и нужные формы могут меняться, а право на оплату зависит от конкретной ситуации. До поездки подтвердите действующие условия у своего фонда и FZOCG. Если соглашение не применяется, travel-страховка снижает финансовый риск, но действует только в пределах лимитов и исключений и не гарантирует оплату любого счёта.',
+				'Застрахованные в Швейцарии, Швеции, Дании и Норвегии платят на месте и получают возмещение дома. У России, Украины и других стран СНГ действующих соглашений о медицинской помощи с Черногорией нет вовсе — для этих туристов (и всех остальных «без соглашения») travel-страховка — единственная защита от счетов по полной стоимости.',
 
 			ThcInsurance1:
-				'Покрытие по двусторонним соглашениям обычно ограничено медицински необходимой помощью во время временного пребывания и, как правило, не включает медицинскую эвакуацию или репатриацию. Точные условия уточняйте в домашнем фонде. Частный travel-полис может добавить такое покрытие, только если оно прямо указано в правилах.',
+				'Даже для стран с соглашениями покрытие узкое: только неотложная и необходимая помощь — и никогда медицинская эвакуация домой. Немецкое бюро DVKA в памятке по Черногории пишет прямо: репатриация не покрывается, оформляйте частную travel-страховку, несмотря на соглашение. Этот совет актуален для всех.',
 			ThcInsurance2:
 				'Как пользоваться полисом на практике: звоните на линию ассистанса как можно раньше — вас направят в партнёрскую клинику и могут организовать прямую оплату. Если ситуация острая, не ждите колл-центр: идите в hitna pomoć или больницу, платите и сохраняйте все заключения и чеки для возмещения. Судя по опыту путешественников здесь, ассистансы очень разные — один организует врача за час, другой заставит ждать сутки, — так что небольшой запас наличных на визит к врачу будет разумной подстраховкой.',
 			ThcInsurance3:
-				'При покупке полиса проверьте активный отдых, правила для мопедов и мотоциклов, алкогольные исключения, хронические болезни и их обострения, франшизу, условия прямой оплаты, эвакуацию и репатриацию, территорию и общий лимит. Универсального минимума для всех нет: выбирайте покрытие под поездку, занятия, состояние здоровья и визовые требования и сравнивайте не только крупную цифру на полисе, но и его правила.',
+				'При покупке полиса проверьте то, на чём туристы реально «попадают»: покрытие активного отдыха (хайкинг, мопеды и скутеры, рафтинг и парапланы здесь популярны), алкогольные исключения, обострение хронических болезней и лимит покрытия — 30 000 € выглядит разумным минимумом для страны, где одна операция может стоить 1500 €.',
 
 			ThcPharmacies1:
-				'Многие безрецептурные средства доступны в аптеках, а антибиотики и другие рецептурные препараты требуют действительного рецепта по правилам Черногории. Иностранный рецепт не гарантирует отпуск: некоторые путешественники сообщают, что отдельные аптеки его принимали, но фармацевт может отказать, поэтому планируйте местную врачебную консультацию. В государственной системе обычно действует eRecept; в предусмотренных правилами случаях возможен письменный рецепт.',
+				'Аптеки (apoteka) в курортных городах на каждом шагу, в сезон многие работают допоздна и по воскресеньям. Обезболивающие, жаропонижающие, регидратационные соли, капли для ушей и носа, средства от солнечных ожогов и укачивания продаются свободно. Антибиотики в таблетках — строго по рецепту, причём иностранные рецепты аптеки не принимают, только черногорские (электронные). Если нужен рецептурный препарат, вопрос решается платным визитом в туристическую амбуланту или к частному врачу: после консультации врач выпишет местный электронный рецепт.',
 			ThcPharmacies2:
-				'На отдыхе часто встречаются острая диарея или рвота, боль в ухе после купания, солнечные ожоги, перегрев, уколы морского ежа и падения. При рвоте или диарее используйте раствор для пероральной регидратации, если человек может пить, и срочно обращайтесь за оценкой при выраженной сонливости, затруднённом дыхании, крови, сильной боли, редком мочеиспускании или невозможности удерживать жидкость — особенно у ребёнка. Нужны ли внутривенные растворы или другое лечение, решает врач. С глубокими или загрязнёнными проколами обращайтесь к специалисту, а не выковыривайте инородное тело самостоятельно.',
+				'Классика курортного сезона — судя по тому, с чем туристы здесь реально сталкиваются каждое лето: отравления и ротавирус (у ребёнка обезвоживание может развиться за считанные часы — не тяните с поездкой в hitna pomoć или больницу на капельницу), отит после купания, солнечные ожоги и тепловой удар, иглы морского ежа (их вытащат в hitna pomoć или в любой частной клинике — не выковыривайте на пляже) и мелкие травмы на каменистых пляжах.',
 			ThcPharmacies3:
-				'Многие частные лаборатории принимают платно на распространённые рутинные анализы без направления, а для специализированных исследований могут потребоваться назначение врача, подготовка или запись. Уточните в лаборатории и сравните добавленные цены в',
+				'Если врач просит анализы — или вы просто хотите провериться, — частные лаборатории принимают всех без направления; цены удобно сравнить в',
 			ThcPharmacies3Link: 'каталоге анализов',
 			ThcPharmacies3End: '.',
 
@@ -164,27 +165,28 @@ export default {
 			ThcSourcesGuideLink: 'как устроена медицина в Черногории',
 			ThcSourcesGuideEnd: '.',
 		},
-		sr: {
+		'sr': {
 			TouristHealthcareTitle:
 				'Bolest na odmoru u Crnoj Gori: gdje turista može dobiti pomoć',
 			TouristHealthcareDescription:
 				'Broj hitne pomoći 124, turistička ambulanta pri domu zdravlja, privatne klinike i bolnička prijemna odjeljenja, stvarne cijene bez osiguranja, EHIC i bilateralni sporazumi, savjeti za putno osiguranje i apoteke — praktični vodič za turiste u Crnoj Gori.',
 
-			ThcToc_emergency:
+			'ThcToc_emergency':
 				'Hitna pomoć: broj 124 — i kako hitna zaista funkcioniše',
 			'ThcToc_where-to-go': 'Kuda ići: prema težini situacije',
-			ThcToc_costs: 'Koliko košta liječenje bez osiguranja',
-			ThcToc_agreements: 'Turisti iz EU i zemalja sa sporazumima: EHIC i INO 1',
-			ThcToc_insurance: 'Putno osiguranje: šta provjeriti i kako ga koristiti',
-			ThcToc_pharmacies: 'Apoteke i tipične ljetnje boljke',
-			ThcToc_sources: 'Izvori i korisni linkovi',
+			'ThcToc_costs': 'Koliko košta liječenje bez osiguranja',
+			'ThcToc_agreements':
+				'Turisti iz EU i zemalja sa sporazumima: EHIC i INO 1',
+			'ThcToc_insurance': 'Putno osiguranje: šta provjeriti i kako ga koristiti',
+			'ThcToc_pharmacies': 'Apoteke i tipične ljetnje boljke',
+			'ThcToc_sources': 'Izvori i korisni linkovi',
 
 			ThcEmergency1:
 				'Broj hitne medicinske pomoći u Crnoj Gori je 124; evropski broj 112 takođe radi i preusmjerava na lokalne službe. Punktovi hitne pomoći rade pri domu zdravlja u svakoj opštini — uključujući sva turistička mjesta: Budvu, Kotor, Tivat, Herceg Novi, Bar, Ulcinj.',
 			ThcEmergency2:
-				'Dispečer odlučuje da li šalje ekipu i može savjetovati odlazak u hitnu pomoć. Težinu ne procjenjujte samo po temperaturi ili povraćanju: kod otežanog disanja, bola u grudima, teške povrede, gubitka svijesti, napada, znakova moždanog udara ili brzog pogoršanja pozovite 124 ili 112 i slijedite uputstva. Ne vozite sami ako to nije bezbjedno.',
+				'Odmah prilagodite očekivanja: ekipa izlazi na stanja koja zaista ugrožavaju život, a u ostalim slučajevima — rijetko. Sa temperaturom, čak i visokom, ili povraćanjem najvjerovatnije će vam reći da do punkta hitne pomoći dođete sami — taksijem ili autom. Tamo će vas pregledati, zbrinuti, uputiti dalje ili, ako je zaista potrebno, prevesti u bolnicu vozilom hitne pomoći.',
 			ThcEmergency3:
-				'Hitni pristup ne treba odlagati zbog državljanstva ili osiguranja. Da li postoji račun i koliki je zavisi od usluge, aktivnog osiguranja i primjenjivog međunarodnog aranžmana; ne pretpostavljajte da je pomoć automatski besplatna ili uvijek naplativa. Sačuvajte izvještaj i tražite detaljan račun za plaćanje ili refundaciju.',
+				'Bez pomoći nećete ostati: Zakon o zdravstvenoj zaštiti (čl. 12) garantuje hitnu medicinsku pomoć svakome ko se nalazi u Crnoj Gori, bez obzira na državljanstvo i osiguranje. Ali besplatna neće biti: neosiguranom turisti se nakon liječenja ispostavlja račun po zvaničnim tarifama.',
 
 			ThcWhere1:
 				'Sa lakšim tegobama — grlo, temperatura, stomačne smetnje, uho koje zaboli poslije kupanja — idite u turističku ambulantu: plaćeni pregled za neosigurane pri lokalnom domu zdravlja. Konsultacija po zvaničnoj tarifi košta oko 25–30 €. U turističkim mjestima ljeti radi duže nego inače (u Budvi obično od 10 do 18 časova — pitajte na infopunktu na ulazu; vrata su često odmah pored hitne pomoći).',
@@ -200,7 +202,7 @@ export default {
 			ThcCosts1:
 				'Orijentacione cijene za pacijenta bez osiguranja: konsultacija u turističkoj ambulanti — 25–30 € (u Budvi je 2025. pregled sa izdavanjem recepta koštao tačno 25 €), pregled u privatnoj klinici — 30–50 €, kompletna posjeta sa ultrazvukom i analizama — oko 80 €. Analize u privatnim laboratorijama su povoljne: osnovna analiza krvi od oko 5 €.',
 			ThcCosts2:
-				'Bolnički troškovi zavise od ustanove, usluge i statusa pacijenta. Cijene sa foruma i iz četova pojedinačna su, datirana iskustva, a ne zvanični cjenovnik niti dokaz kvaliteta. Ako situacija dozvoljava, tražite pisanu procjenu i šta uključuje; nakon liječenja uzmite detaljan račun i medicinski izvještaj. Ne odlažite hitnu pomoć radi poređenja cijena.',
+				'Bolnice su druga liga. Turisti i stranci se učestalo žale — u neprovjerenim iskustvima, a ne prema objavljenom cjenovniku — na „turističko“ odjeljenje kotorske bolnice: u iskustvima iz 2023. pominju se oko 150 € za pregled ljekara i oko 200 € za običnu infuziju fiziološkog rastvora — višestruko skuplje nego bilo gdje drugo (ista infuzija u barskoj bolnici procijenjena je na oko 30 €). Godine 2025. pominjano je oko 170 € za pregled stranca. Ponovimo: to su neprovjerena iskustva pacijenata, a ne zvanični cjenovnik, ali se ista pritužba ponavlja iz godine u godinu.',
 			ThcCosts3:
 				'Stvarni orijentir iz 2023: laparoskopska operacija slijepog crijeva sa dva dana bolničkog liječenja u Urgentnom centru u Podgorici koštala je neosiguranu pacijentkinju oko 1.200–1.500 €. Bolnice često traže plaćanje odmah — gotovinom ili karticom — čak i kada imate putno osiguranje: prvo platite vi, a osiguravač kasnije refundira. Obavezno tražite račun za svako plaćanje: bez njega vam ni osiguravač ni bilo ko drugi neće vratiti ni cent.',
 
@@ -211,21 +213,21 @@ export default {
 			ThcAgreements3:
 				'Velika Britanija i Poljska funkcionišu po principu reciprociteta: za hitnu pomoć dovoljan je važeći GHIC/EHIC — ili čak samo pasoš. Britansko uputstvo dodaje praktičan detalj: bolnički list treba srediti u lokalnoj filijali FZOCG prije ili tokom liječenja, a ne poslije otpusta — i imajte u vidu da propisani ljekovi nisu pokriveni sporazumom.',
 			ThcAgreements4:
-				'Spisak država, obim pokrića i potrebni obrasci mogu se mijenjati, a pravo zavisi od konkretnog slučaja. Prije puta provjerite važeći aranžman kod svog fonda i FZOCG. Ako sporazum ne važi, putno osiguranje smanjuje finansijski rizik, ali podliježe limitima i isključenjima i ne garantuje plaćanje svakog računa.',
+				'Osiguranici iz Švajcarske, Švedske, Danske i Norveške plaćaju na licu mjesta i traže refundaciju kod kuće. Rusija, Ukrajina i druge zemlje ZND uopšte nemaju važeće sporazume o zdravstvenoj zaštiti sa Crnom Gorom — za te turiste (i sve ostale „bez sporazuma“) putno osiguranje je jedina zaštita od računa po punoj cijeni.',
 
 			ThcInsurance1:
-				'Pokriće po bilateralnim sporazumima obično je ograničeno na medicinski neophodnu njegu tokom privremenog boravka i uglavnom ne uključuje medicinsku evakuaciju ili repatrijaciju. Tačna pravila provjerite kod matičnog fonda. Privatna polisa može dodati to pokriće samo ako je izričito navedeno.',
+				'Čak i za zemlje sa sporazumima pokriće je usko: samo hitna i neophodna pomoć — i nikada medicinska evakuacija kući. Njemačka kancelarija DVKA u svom uputstvu za Crnu Goru piše direktno: repatrijacija nije pokrivena, zaključite privatno putno osiguranje uprkos sporazumu. Taj savjet važi za sve.',
 			ThcInsurance2:
 				'Kako koristiti polisu u praksi: pozovite asistenciju svog osiguravača što ranije — uputiće vas u partnersku kliniku i mogu organizovati direktno plaćanje. Ako je situacija akutna, ne čekajte kol-centar: idite u hitnu pomoć ili bolnicu, platite i čuvajte sve nalaze i račune za refundaciju. Sudeći po iskustvima putnika ovdje, asistencije su veoma različite — jedna organizuje ljekara za sat, druga vas ostavi da čekate cijeli dan — pa je manja rezerva gotovine za pregled kod ljekara razumna mjera opreza.',
 			ThcInsurance3:
-				'Pri kupovini polise provjerite aktivni odmor, pravila za skutere i motore, alkoholna isključenja, postojeće i hronične bolesti, franšizu, direktno plaćanje, evakuaciju i repatrijaciju, teritoriju i ukupan limit. Ne postoji univerzalni minimum: birajte pokriće prema putu, aktivnostima, zdravlju i viznim uslovima i čitajte pravila, ne samo naslovni limit.',
+				'Pri kupovini polise provjerite ono na čemu se turisti stvarno „opeku“: pokriće aktivnog odmora (planinarenje, mopedi i skuteri, rafting i paraglajding ovdje su popularni), isključenja vezana za alkohol, pogoršanje hroničnih bolesti i limit pokrića — 30.000 € izgleda kao razuman minimum za zemlju u kojoj jedna operacija može koštati 1.500 €.',
 
 			ThcPharmacies1:
-				'Mnogi ljekovi bez recepta dostupni su u apotekama, dok antibiotici i drugi ljekovi na recept zahtijevaju važeći recept po crnogorskim pravilima. Strani recept ne garantuje izdavanje: neki putnici navode da ga je pojedina apoteka prihvatila, ali farmaceut može odbiti, pa planirajte lokalni ljekarski pregled. Javni sistem obično koristi eRecept, a pisani recept je moguć kada pravila to dozvoljavaju.',
+				'Apoteka u turističkim mjestima ima na svakom koraku, a u sezoni mnoge rade do kasno i nedjeljom. Analgetici, antipiretici, rehidratacione soli, kapi za uši i nos, sprejevi za opekotine od sunca i tablete protiv mučnine prodaju se slobodno. Antibiotici u tabletama izdaju se strogo na recept, pri čemu apoteke ne prihvataju strane recepte, već samo crnogorske (elektronske). Ako vam treba lijek na recept, pitanje rješava plaćeni pregled u turističkoj ambulanti ili kod privatnog ljekara: poslije konsultacije ljekar izdaje lokalni eRecept.',
 			ThcPharmacies2:
-				'Česti problemi na odmoru uključuju akutnu dijareju ili povraćanje, bol u uhu poslije kupanja, opekotine od sunca, toplotnu bolest, ubode morskog ježa i padove. Kod povraćanja ili dijareje koristite oralnu rehidrataciju ako osoba može piti i hitno tražite procjenu kod izrazite pospanosti, otežanog disanja, krvi, jakog bola, vrlo malo mokrenja ili nemogućnosti zadržavanja tečnosti, naročito kod djeteta. Ljekar odlučuje da li su potrebne infuzije ili drugo liječenje. Duboke ili prljave ubode neka pregleda stručnjak.',
+				'Klasika ljetnje sezone — sudeći po onome sa čim se turisti ovdje zaista susreću svakog ljeta: trovanja hranom i rotavirus (kod djeteta se dehidratacija može razviti za nekoliko sati — ne odlažite odlazak u hitnu pomoć ili bolnicu na infuziju), upala uha poslije kupanja, opekotine od sunca i toplotni udar, bodlje morskog ježa (izvadiće ih u hitnoj pomoći ili u bilo kojoj privatnoj klinici — ne vadite ih sami na plaži) i sitne povrede na kamenitim plažama.',
 			ThcPharmacies3:
-				'Mnoge privatne laboratorije primaju uz plaćanje za uobičajene rutinske analize bez uputa, dok specijalizovani testovi mogu tražiti nalog ljekara, pripremu ili termin. Provjerite u laboratoriji i uporedite unesene cijene u',
+				'Ako ljekar traži analize — ili prosto želite da se provjerite — privatne laboratorije primaju sve bez uputa; cijene uporedite u',
 			ThcPharmacies3Link: 'katalogu analiza',
 			ThcPharmacies3End: '.',
 
@@ -250,21 +252,22 @@ export default {
 			TouristHealthcareDescription:
 				'Број хитне помоћи 124, туристичка амбуланта при дому здравља, приватне клинике и болничка пријемна одјељења, стварне цијене без осигурања, EHIC и билатерални споразуми, савјети за путно осигурање и апотеке — практични водич за туристе у Црној Гори.',
 
-			ThcToc_emergency:
+			'ThcToc_emergency':
 				'Хитна помоћ: број 124 — и како хитна заиста функционише',
 			'ThcToc_where-to-go': 'Куда ићи: према тежини ситуације',
-			ThcToc_costs: 'Колико кошта лијечење без осигурања',
-			ThcToc_agreements: 'Туристи из ЕУ и земаља са споразумима: EHIC и ИНО 1',
-			ThcToc_insurance: 'Путно осигурање: шта провјерити и како га користити',
-			ThcToc_pharmacies: 'Апотеке и типичне љетње бољке',
-			ThcToc_sources: 'Извори и корисни линкови',
+			'ThcToc_costs': 'Колико кошта лијечење без осигурања',
+			'ThcToc_agreements':
+				'Туристи из ЕУ и земаља са споразумима: EHIC и ИНО 1',
+			'ThcToc_insurance': 'Путно осигурање: шта провјерити и како га користити',
+			'ThcToc_pharmacies': 'Апотеке и типичне љетње бољке',
+			'ThcToc_sources': 'Извори и корисни линкови',
 
 			ThcEmergency1:
 				'Број хитне медицинске помоћи у Црној Гори је 124; европски број 112 такође ради и преусмјерава на локалне службе. Пунктови хитне помоћи раде при дому здравља у свакој општини — укључујући сва туристичка мјеста: Будву, Котор, Тиват, Херцег Нови, Бар, Улцињ.',
 			ThcEmergency2:
-				'Диспечер одлучује да ли шаље екипу и може савјетовати одлазак у хитну помоћ. Тежину не процјењујте само по температури или повраћању: код отежаног дисања, бола у грудима, тешке повреде, губитка свијести, напада, знакова можданог удара или брзог погоршања позовите 124 или 112 и слиједите упутства. Не возите сами ако то није безбједно.',
+				'Одмах прилагодите очекивања: екипа излази на стања која заиста угрожавају живот, а у осталим случајевима — ријетко. Са температуром, чак и високом, или повраћањем највјероватније ће вам рећи да до пункта хитне помоћи дођете сами — таксијем или аутом. Тамо ће вас прегледати, збринути, упутити даље или, ако је заиста потребно, превести у болницу возилом хитне помоћи.',
 			ThcEmergency3:
-				'Хитни приступ не треба одлагати због држављанства или осигурања. Да ли постоји рачун и колики је зависи од услуге, активног осигурања и примјењивог међународног аранжмана; не претпостављајте да је помоћ аутоматски бесплатна или увијек наплатива. Сачувајте извјештај и тражите детаљан рачун за плаћање или рефундацију.',
+				'Без помоћи нећете остати: Закон о здравственој заштити (чл. 12) гарантује хитну медицинску помоћ свакоме ко се налази у Црној Гори, без обзира на држављанство и осигурање. Али бесплатна неће бити: неосигураном туристи се након лијечења испоставља рачун по званичним тарифама.',
 
 			ThcWhere1:
 				'Са лакшим тегобама — грло, температура, стомачне сметње, ухо које заболи послије купања — идите у туристичку амбуланту: плаћени преглед за неосигуране при локалном дому здравља. Консултација по званичној тарифи кошта око 25–30 €. У туристичким мјестима љети ради дуже него иначе (у Будви обично од 10 до 18 часова — питајте на инфопункту на улазу; врата су често одмах поред хитне помоћи).',
@@ -280,7 +283,7 @@ export default {
 			ThcCosts1:
 				'Оријентационе цијене за пацијента без осигурања: консултација у туристичкој амбуланти — 25–30 € (у Будви је 2025. преглед са издавањем рецепта коштао тачно 25 €), преглед у приватној клиници — 30–50 €, комплетна посјета са ултразвуком и анализама — око 80 €. Анализе у приватним лабораторијама су повољне: основна анализа крви од око 5 €.',
 			ThcCosts2:
-				'Болнички трошкови зависе од установе, услуге и статуса пацијента. Цијене са форума и из четова појединачна су, датирана искуства, а не званични цјеновник нити доказ квалитета. Ако ситуација дозвољава, тражите писану процјену и шта укључује; након лијечења узмите детаљан рачун и медицински извјештај. Не одлажите хитну помоћ ради поређења цијена.',
+				'Болнице су друга лига. Туристи и странци се учестало жале — у непровјереним искуствима, а не према објављеном цјеновнику — на „туристичко“ одјељење которске болнице: у искуствима из 2023. помињу се око 150 € за преглед љекара и око 200 € за обичну инфузију физиолошког раствора — вишеструко скупље него било гдје друго (иста инфузија у барској болници процијењена је на око 30 €). Године 2025. помињано је око 170 € за преглед странца. Поновимо: то су непровјерена искуства пацијената, а не званични цјеновник, али се иста притужба понавља из године у годину.',
 			ThcCosts3:
 				'Стварни оријентир из 2023: лапароскопска операција слијепог цријева са два дана болничког лијечења у Ургентном центру у Подгорици коштала је неосигурану пацијенткињу око 1.200–1.500 €. Болнице често траже плаћање одмах — готовином или картицом — чак и када имате путно осигурање: прво платите ви, а осигуравач касније рефундира. Обавезно тражите рачун за свако плаћање: без њега вам ни осигуравач ни било ко други неће вратити ни цент.',
 
@@ -291,21 +294,21 @@ export default {
 			ThcAgreements3:
 				'Велика Британија и Пољска функционишу по принципу реципроцитета: за хитну помоћ довољан је важећи GHIC/EHIC — или чак само пасош. Британско упутство додаје практичан детаљ: болнички лист треба средити у локалној филијали ФЗОЦГ прије или током лијечења, а не послије отпуста — и имајте у виду да прописани љекови нису покривени споразумом.',
 			ThcAgreements4:
-				'Списак држава, обим покрића и потребни обрасци могу се мијењати, а право зависи од конкретног случаја. Прије пута провјерите важећи аранжман код свог фонда и FZOCG. Ако споразум не важи, путно осигурање смањује финансијски ризик, али подлијеже лимитима и искључењима и не гарантује плаћање сваког рачуна.',
+				'Осигураници из Швајцарске, Шведске, Данске и Норвешке плаћају на лицу мјеста и траже рефундацију код куће. Русија, Украјина и друге земље ЗНД уопште немају важеће споразуме о здравственој заштити са Црном Гором — за те туристе (и све остале „без споразума“) путно осигурање је једина заштита од рачуна по пуној цијени.',
 
 			ThcInsurance1:
-				'Покриће по билатералним споразумима обично је ограничено на медицински неопходну његу током привременог боравка и углавном не укључује медицинску евакуацију или репатријацију. Тачна правила провјерите код матичног фонда. Приватна полиса може додати то покриће само ако је изричито наведено.',
+				'Чак и за земље са споразумима покриће је уско: само хитна и неопходна помоћ — и никада медицинска евакуација кући. Њемачка канцеларија DVKA у свом упутству за Црну Гору пише директно: репатријација није покривена, закључите приватно путно осигурање упркос споразуму. Тај савјет важи за све.',
 			ThcInsurance2:
 				'Како користити полису у пракси: позовите асистенцију свог осигуравача што раније — упутиће вас у партнерску клинику и могу организовати директно плаћање. Ако је ситуација акутна, не чекајте кол-центар: идите у хитну помоћ или болницу, платите и чувајте све налазе и рачуне за рефундацију. Судећи по искуствима путника овдје, асистенције су веома различите — једна организује љекара за сат, друга вас остави да чекате цијели дан — па је мања резерва готовине за преглед код љекара разумна мјера опреза.',
 			ThcInsurance3:
-				'При куповини полисе провјерите активни одмор, правила за скутере и моторе, алкохолна искључења, постојеће и хроничне болести, франшизу, директно плаћање, евакуацију и репатријацију, територију и укупан лимит. Не постоји универзални минимум: бирајте покриће према путу, активностима, здрављу и визним условима и читајте правила, не само насловни лимит.',
+				'При куповини полисе провјерите оно на чему се туристи стварно „опеку“: покриће активног одмора (планинарење, мопеди и скутери, рафтинг и параглајдинг овдје су популарни), искључења везана за алкохол, погоршање хроничних болести и лимит покрића — 30.000 € изгледа као разуман минимум за земљу у којој једна операција може коштати 1.500 €.',
 
 			ThcPharmacies1:
-				'Многи љекови без рецепта доступни су у апотекама, док антибиотици и други љекови на рецепт захтијевају важећи рецепт по црногорским правилима. Страни рецепт не гарантује издавање: неки путници наводе да га је поједина апотека прихватила, али фармацеут може одбити, па планирајте локални љекарски преглед. Јавни систем обично користи еРецепт, а писани рецепт је могућ када правила то дозвољавају.',
+				'Апотека у туристичким мјестима има на сваком кораку, а у сезони многе раде до касно и недјељом. Аналгетици, антипиретици, рехидратационе соли, капи за уши и нос, спрејеви за опекотине од сунца и таблете против мучнине продају се слободно. Антибиотици у таблетама издају се строго на рецепт, при чему апотеке не прихватају стране рецепте, већ само црногорске (електронске). Ако вам треба лијек на рецепт, питање рјешава плаћени преглед у туристичкој амбуланти или код приватног љекара: послије консултације љекар издаје локални еРецепт.',
 			ThcPharmacies2:
-				'Чести проблеми на одмору укључују акутну дијареју или повраћање, бол у уху послије купања, опекотине од сунца, топлотну болест, убоде морског јежа и падове. Код повраћања или дијареје користите оралну рехидратацију ако особа може пити и хитно тражите процјену код изразите поспаности, отежаног дисања, крви, јаког бола, врло мало мокрења или немогућности задржавања течности, нарочито код дјетета. Љекар одлучује да ли су потребне инфузије или друго лијечење. Дубоке или прљаве убоде нека прегледа стручњак.',
+				'Класика љетње сезоне — судећи по ономе са чим се туристи овдје заиста сусрећу сваког љета: тровања храном и ротавирус (код дјетета се дехидратација може развити за неколико сати — не одлажите одлазак у хитну помоћ или болницу на инфузију), упала уха послије купања, опекотине од сунца и топлотни удар, бодље морског јежа (извадиће их у хитној помоћи или у било којој приватној клиници — не вадите их сами на плажи) и ситне повреде на каменитим плажама.',
 			ThcPharmacies3:
-				'Многе приватне лабораторије примају уз плаћање за уобичајене рутинске анализе без упута, док специјализовани тестови могу тражити налог љекара, припрему или термин. Провјерите у лабораторији и упоредите унесене цијене у',
+				'Ако љекар тражи анализе — или просто желите да се провјерите — приватне лабораторије примају све без упута; цијене упоредите у',
 			ThcPharmacies3Link: 'каталогу анализа',
 			ThcPharmacies3End: '.',
 
@@ -324,28 +327,28 @@ export default {
 			ThcSourcesGuideLink: 'како функционише здравство у Црној Гори',
 			ThcSourcesGuideEnd: '.',
 		},
-		de: {
+		'de': {
 			TouristHealthcareTitle:
 				'Krank im Urlaub in Montenegro: Wohin als Tourist?',
 			TouristHealthcareDescription:
 				'Notrufnummer 124, die turistička ambulanta am örtlichen Gesundheitszentrum, Privatkliniken und Notaufnahmen, reale Preise ohne Versicherung, EHIC und bilaterale Abkommen, Tipps zur Reiseversicherung und Apotheken — ein praktischer Leitfaden für Touristen in Montenegro.',
 
-			ThcToc_emergency:
+			'ThcToc_emergency':
 				'Notfall: Notruf 124 — und wie der Rettungsdienst wirklich arbeitet',
 			'ThcToc_where-to-go': 'Wohin je nach Schweregrad',
-			ThcToc_costs: 'Was die Behandlung ohne Versicherung kostet',
-			ThcToc_agreements:
+			'ThcToc_costs': 'Was die Behandlung ohne Versicherung kostet',
+			'ThcToc_agreements':
 				'Touristen aus der EU und Abkommensländern: EHIC und INO 1',
-			ThcToc_insurance: 'Reiseversicherung: worauf achten, wie nutzen',
-			ThcToc_pharmacies: 'Apotheken und typische Urlaubsbeschwerden',
-			ThcToc_sources: 'Quellen und nützliche Links',
+			'ThcToc_insurance': 'Reiseversicherung: worauf achten, wie nutzen',
+			'ThcToc_pharmacies': 'Apotheken und typische Urlaubsbeschwerden',
+			'ThcToc_sources': 'Quellen und nützliche Links',
 
 			ThcEmergency1:
 				'Die Notrufnummer des Rettungsdienstes in Montenegro ist 124; die europäische 112 funktioniert ebenfalls und leitet an die lokalen Dienste weiter. Rettungsstellen (hitna pomoć) gibt es am Gesundheitszentrum (dom zdravlja) jeder Gemeinde — auch in allen Urlaubsorten: Budva, Kotor, Tivat, Herceg Novi, Bar, Ulcinj.',
 			ThcEmergency2:
-				'Der Disponent entscheidet über einen Rettungswageneinsatz und kann zum Aufsuchen einer hitna pomoć raten. Beurteilen Sie die Schwere nicht allein anhand von Fieber oder Erbrechen: Bei Atemnot, Brustschmerz, schwerer Verletzung, Bewusstlosigkeit, Krampfanfällen, Schlaganfallzeichen oder rascher Verschlechterung 124 oder 112 anrufen und den Anweisungen folgen. Fahren Sie nicht selbst, wenn dies unsicher wäre.',
+				'Stellen Sie Ihre Erwartungen gleich richtig ein: Ein Rettungswagen fährt bei wirklich lebensbedrohlichen Zuständen — sonst selten. Mit Fieber, auch hohem, oder Erbrechen wird man Sie höchstwahrscheinlich bitten, selbst zur Rettungsstelle zu kommen, per Taxi oder Auto. Dort werden Sie untersucht, versorgt, weiterverwiesen oder — wenn wirklich nötig — mit dem Rettungswagen ins Krankenhaus gebracht.',
 			ThcEmergency3:
-				'Notfallzugang sollte nicht wegen Staatsangehörigkeit oder Versicherung verzögert werden. Ob und wie viel berechnet wird, hängt von Leistung, aktivem Versicherungsschutz und anwendbarem Abkommen ab; nicht automatisch von kostenloser oder stets kostenpflichtiger Hilfe ausgehen. Arztbericht aufbewahren und für Zahlung oder Erstattung eine Einzelrechnung verlangen.',
+				'Ohne Hilfe bleibt niemand: Das Gesundheitsschutzgesetz (Zakon o zdravstvenoj zaštiti, Art. 12) garantiert jedem, der sich in Montenegro aufhält, dringende medizinische Hilfe — unabhängig von Staatsangehörigkeit und Versicherung. Kostenlos ist sie aber nicht: Ein unversicherter Tourist erhält nach der Behandlung eine Rechnung nach offiziellen Tarifen.',
 
 			ThcWhere1:
 				'Mit leichten Beschwerden — Halsschmerzen, Fieber, Magenverstimmung, ein nach dem Baden schmerzendes Ohr — gehen Sie in die turistička ambulanta: die bezahlte Sprechstunde für Unversicherte am örtlichen dom zdravlja. Eine Konsultation kostet nach offiziellem Tarif etwa 25–30 €. In den Urlaubsorten gilt im Sommer verlängerte Öffnungszeit (in Budva meist von 10 bis 18 Uhr — fragen Sie am Infopunkt am Eingang; die Tür liegt oft direkt neben der hitna pomoć).',
@@ -361,7 +364,7 @@ export default {
 			ThcCosts1:
 				'Preisanker für Patienten ohne Versicherung: Konsultation in der turistička ambulanta — 25–30 € (in Budva kostete 2025 eine Untersuchung mit Rezept genau 25 €), Termin in einer Privatklinik — 30–50 €, umfassender Besuch mit Ultraschall und Laboranalysen — etwa 80 €. Laboruntersuchungen in privaten Laboren sind günstig: ein Basis-Blutbild ab etwa 5 €.',
 			ThcCosts2:
-				'Krankenhauskosten hängen von Einrichtung, Leistung und Patientenstatus ab. Preise aus Foren und Chats sind einzelne, datierte Erfahrungen, kein offizieller Tarif und kein Qualitätsnachweis. Wenn die Situation es erlaubt, verlangen Sie einen schriftlichen Kostenvoranschlag mit Leistungsumfang; nach der Behandlung eine detaillierte Rechnung und den Arztbericht. Verzögern Sie dringende Hilfe nicht wegen eines Preisvergleichs.',
+				'Krankenhäuser sind eine andere Liga. Touristen und Expats beklagen sich immer wieder — in unbestätigten Berichten, nicht anhand einer veröffentlichten Preisliste — über die „Touristenabteilung“ des Krankenhauses Kotor: In Berichten aus 2023 werden etwa 150 € für eine ärztliche Untersuchung und etwa 200 € für eine einfache Kochsalzinfusion genannt — ein Mehrfaches der Preise anderswo (dieselbe Infusion im Krankenhaus Bar wurde mit etwa 30 € beziffert). 2025 berichteten Besucher von rund 170 € für die Untersuchung eines Ausländers. Nochmals: Das sind unbestätigte Patientenberichte, keine offizielle Preisliste — aber dieselbe Beschwerde wiederholt sich Jahr für Jahr.',
 			ThcCosts3:
 				'Ein realer Anhaltspunkt aus 2023: Eine laparoskopische Blinddarmoperation mit zwei Tagen stationär im Urgentni centar in Podgorica kostete eine unversicherte Patientin etwa 1.200–1.500 €. Krankenhäuser verlangen die Zahlung oft sofort — bar oder mit Karte — selbst wenn Sie eine Reiseversicherung haben: Erst zahlen Sie, später erstattet der Versicherer. Bestehen Sie bei jeder Zahlung auf einer Quittung (račun): Ohne sie erstattet Ihnen weder der Versicherer noch sonst jemand einen Cent.',
 
@@ -372,21 +375,21 @@ export default {
 			ThcAgreements3:
 				'Großbritannien und Polen arbeiten nach dem Gegenseitigkeitsprinzip: Für dringende Behandlungen genügt eine gültige GHIC/EHIC — oder sogar nur der Reisepass. Die britische Anleitung ergänzt ein praktisches Detail: Die Krankenhausbescheinigung sollte vor oder während der Behandlung bei der örtlichen FZOCG-Filiale geregelt werden, nicht erst nach der Entlassung — und verschriebene Medikamente sind vom Abkommen nicht abgedeckt.',
 			ThcAgreements4:
-				'Länderliste, Leistungsumfang und Formulare können sich ändern; der Anspruch hängt vom Einzelfall ab. Prüfen Sie die aktuellen Regeln vor der Reise beim Heimatfonds und FZOCG. Greift kein Abkommen, kann eine Reiseversicherung das finanzielle Risiko mindern, unterliegt aber Grenzen und Ausschlüssen und garantiert nicht die Zahlung jeder Rechnung.',
+				'Versicherte aus der Schweiz, Schweden, Dänemark und Norwegen zahlen vor Ort und beantragen die Erstattung zu Hause. Russland, die Ukraine und andere GUS-Staaten haben mit Montenegro überhaupt keine Gesundheitsabkommen — für diese Touristen (und alle anderen „ohne Abkommen“) ist die Reiseversicherung der einzige Schutz vor Rechnungen zum vollen Preis.',
 
 			ThcInsurance1:
-				'Bilaterale Abkommen decken gewöhnlich nur medizinisch notwendige Versorgung während eines vorübergehenden Aufenthalts und meist keine Evakuierung oder Rückführung. Die genauen Regeln beim Heimatfonds prüfen. Eine private Reiseversicherung ergänzt dies nur, wenn die Leistung ausdrücklich in den Bedingungen steht.',
+				'Selbst für Abkommensländer ist die Deckung schmal: nur dringende und notwendige Behandlungen — und niemals ein Rücktransport nach Hause. Die deutsche Verbindungsstelle DVKA schreibt es in ihrem Montenegro-Merkblatt ausdrücklich: Rücktransporte sind nicht gedeckt, schließen Sie trotz des Abkommens eine private Reiseversicherung ab. Dieser Rat gilt für alle.',
 			ThcInsurance2:
 				'Die Police in der Praxis: Rufen Sie die Assistance Ihres Versicherers so früh wie möglich an — sie schickt Sie in eine Partnerklinik und kann eine Direktabrechnung organisieren. Ist die Lage akut, warten Sie nicht auf das Callcenter: Gehen Sie zur hitna pomoć oder ins Krankenhaus, zahlen Sie und heben Sie alle Befunde und Quittungen für die Erstattung auf. Nach den Erfahrungen von Reisenden hier arbeiten Assistance-Dienste sehr unterschiedlich — mancher organisiert binnen einer Stunde einen Arzt, ein anderer lässt Sie einen Tag warten —, eine kleine Bargeldreserve für einen Arztbesuch ist also eine vernünftige Absicherung.',
 			ThcInsurance3:
-				'Prüfen Sie beim Policenkauf Aktivitäten, Roller und Motorräder, Alkoholausschlüsse, Vor- und chronische Erkrankungen, Selbstbehalt, Direktabrechnung, Evakuierung und Rückführung, Gebiet und Gesamtlimit. Es gibt keinen universellen Mindestbetrag: Wählen Sie Schutz nach Reise, Aktivitäten, Gesundheit und Visum und vergleichen Sie die Bedingungen, nicht nur das hervorgehobene Limit.',
+				'Prüfen Sie beim Kauf der Police genau die Punkte, an denen Touristen tatsächlich hängen bleiben: Deckung von Aktivurlaub (Wandern, Mopeds und Roller, Rafting und Paragliding sind hier beliebt), Alkoholklauseln, Verschlimmerung chronischer Krankheiten und die Deckungssumme — 30.000 € sind ein vernünftiges Minimum für ein Land, in dem eine einzige Operation 1.500 € kosten kann.',
 
 			ThcPharmacies1:
-				'Viele nicht verschreibungspflichtige Mittel sind in Apotheken erhältlich; Antibiotika und andere rezeptpflichtige Arzneimittel erfordern ein nach montenegrinischen Regeln gültiges Rezept. Ein ausländisches Rezept garantiert keine Abgabe: Einige Reisende berichten von einer Annahme durch einzelne Apotheken, doch der Apotheker kann ablehnen. Planen Sie daher eine lokale ärztliche Beurteilung. Im öffentlichen System ist eRecept üblich; ein Papierrezept ist möglich, wenn die Regeln es zulassen.',
+				'Apotheken (apoteka) gibt es in den Urlaubsorten an jeder Ecke, in der Saison öffnen viele bis spät und sonntags. Schmerzmittel, Fiebersenker, Elektrolytlösungen, Ohren- und Nasentropfen, Mittel gegen Sonnenbrand und Reisekrankheit sind frei verkäuflich. Antibiotika in Tablettenform gibt es strikt nur auf Rezept — und ausländische Rezepte akzeptieren die Apotheken nicht, nur montenegrinische (elektronische). Brauchen Sie ein verschreibungspflichtiges Medikament, löst das ein bezahlter Besuch in der turistička ambulanta oder bei einem Privatarzt: Nach der Konsultation stellt der Arzt ein lokales E-Rezept aus.',
 			ThcPharmacies2:
-				'Häufige Urlaubsprobleme sind akuter Durchfall oder Erbrechen, Ohrschmerz nach dem Baden, Sonnenbrand, Hitzekrankheit, Seeigelverletzungen und Stürze. Bei Erbrechen oder Durchfall orale Rehydratation nutzen, wenn Trinken möglich ist; bei starker Schläfrigkeit, Atemnot, Blut, starken Schmerzen, sehr wenig Urin oder wenn Flüssigkeit nicht behalten wird dringend untersuchen lassen, besonders ein Kind. Ob Infusionen oder andere Behandlung nötig sind, entscheidet der Arzt. Tiefe oder verschmutzte Stichwunden fachlich versorgen lassen.',
+				'Die Klassiker der Sommersaison — nach dem, womit Touristen hier tatsächlich jeden Sommer zu tun haben: Lebensmittelvergiftungen und Rotaviren (bei einem Kind kann sich eine Dehydrierung binnen Stunden entwickeln — zögern Sie die Fahrt zur hitna pomoć oder ins Krankenhaus für eine Infusion nicht hinaus), Ohrenentzündungen nach dem Baden, Sonnenbrand und Hitzschlag, Seeigelstacheln (sie werden in der hitna pomoć oder in jeder Privatklinik entfernt — nicht am Strand herauspulen) und kleinere Verletzungen an steinigen Stränden.',
 			ThcPharmacies3:
-				'Viele Privatlabore nehmen Selbstzahler für übliche Routinetests ohne Überweisung an; Spezialtests können eine ärztliche Anordnung, Vorbereitung oder einen Termin erfordern. Beim Labor bestätigen und eingetragene Preise vergleichen im',
+				'Verlangt der Arzt Laborwerte — oder wollen Sie sich einfach durchchecken lassen —, nehmen private Labore jeden ohne Überweisung an; vergleichen Sie die Preise im',
 			ThcPharmacies3Link: 'Katalog der Laboranalysen',
 			ThcPharmacies3End: '.',
 
@@ -406,28 +409,29 @@ export default {
 				'wie das Gesundheitswesen in Montenegro funktioniert',
 			ThcSourcesGuideEnd: '.',
 		},
-		tr: {
+		'tr': {
 			TouristHealthcareTitle:
 				"Karadağ'da tatilde hastalanmak: turist nereye başvurmalı",
 			TouristHealthcareDescription:
 				"Acil numarası 124, dom zdravlja'daki turistička ambulanta, özel klinikler ve hastane acil servisleri, sigortasız tedavinin gerçek fiyatları, EHIC ve ikili anlaşmalar, seyahat sigortası ipuçları ve eczaneler — Karadağ'daki turistler için pratik bir rehber.",
 
-			ThcToc_emergency:
+			'ThcToc_emergency':
 				'Acil durum: 124 numarası — ve ambulans gerçekte nasıl çalışır',
 			'ThcToc_where-to-go': 'Duruma göre nereye gitmeli',
-			ThcToc_costs: 'Sigortasız tedavi ne kadar tutar',
-			ThcToc_agreements: 'AB ve anlaşmalı ülke turistleri: EHIC ve INO 1',
-			ThcToc_insurance:
+			'ThcToc_costs': 'Sigortasız tedavi ne kadar tutar',
+			'ThcToc_agreements':
+				'AB ve anlaşmalı ülke turistleri: EHIC ve INO 1',
+			'ThcToc_insurance':
 				'Seyahat sigortası: neye dikkat etmeli, nasıl kullanmalı',
-			ThcToc_pharmacies: 'Eczaneler ve tipik tatil rahatsızlıkları',
-			ThcToc_sources: 'Kaynaklar ve faydalı bağlantılar',
+			'ThcToc_pharmacies': 'Eczaneler ve tipik tatil rahatsızlıkları',
+			'ThcToc_sources': 'Kaynaklar ve faydalı bağlantılar',
 
 			ThcEmergency1:
 				"Karadağ'da acil tıbbi yardım numarası 124'tür; Avrupa ortak numarası 112 de çalışır ve yerel servislere yönlendirir. Acil yardım noktaları (hitna pomoć) her belediyedeki dom zdravlja sağlık merkezinde bulunur — Budva, Kotor, Tivat, Herceg Novi, Bar ve Ulcinj dahil tüm tatil şehirlerinde.",
 			ThcEmergency2:
-				'Ambulans gönderilip gönderilmeyeceğine operatör karar verir ve hitna pomoć noktasına gitmenizi önerebilir. Ciddiyeti yalnız ateş veya kusmaya göre değerlendirmeyin: nefes darlığı, göğüs ağrısı, ağır yaralanma, bilinç kaybı, nöbet, inme belirtisi veya hızlı kötüleşmede 124 ya da 112 numarasını arayıp talimatları izleyin. Güvenli değilse kendiniz araç kullanmayın.',
+				'Beklentilerinizi baştan ayarlayın: ekip gerçekten hayati tehlike olan durumlara çıkar, diğer durumlarda nadiren gelir. Ateşiniz — yüksek bile olsa — veya kusmanız varsa, büyük olasılıkla acil yardım noktasına taksiyle ya da arabayla kendiniz gitmeniz söylenir. Orada muayene edilir, tedavi edilir, sevk edilir veya gerçekten gerekiyorsa ambulansla hastaneye götürülürsünüz.',
 			ThcEmergency3:
-				'Acil erişim vatandaşlık veya sigorta nedeniyle geciktirilmemelidir. Fatura ve tutarı hizmete, aktif sigorta statüsüne ve uygulanabilir uluslararası düzene bağlıdır; yardımın otomatik ücretsiz veya her zaman ücretli olduğunu varsaymayın. Tıbbi raporu saklayın ve ödeme ya da geri ödeme için ayrıntılı fatura isteyin.',
+				"Yardımsız kalmazsınız: sağlık koruma kanunu (Zakon o zdravstvenoj zaštiti, md. 12) Karadağ'da bulunan herkese, vatandaşlık ve sigorta durumuna bakılmaksızın acil tıbbi yardımı garanti eder. Ancak ücretsiz olmaz: sigortasız turiste tedaviden sonra resmi tarifeler üzerinden fatura kesilir.",
 
 			ThcWhere1:
 				"Hafif şikâyetlerde — boğaz ağrısı, ateş, mide bozulması, yüzdükten sonra ağrıyan kulak — turistička ambulanta'ya gidin: yerel dom zdravlja'daki sigortasızlar için ücretli muayene birimi. Konsültasyon resmi tarifeyle yaklaşık 25–30 €. Tatil şehirlerinde yazın normalden uzun çalışır (Budva'da genellikle 10:00–18:00 — girişteki bilgi noktasına sorun; kapısı çoğu zaman hitna pomoć'un hemen yanındadır).",
@@ -443,7 +447,7 @@ export default {
 			ThcCosts1:
 				"Sigortasız hasta için fiyat çapaları: turistička ambulanta'da konsültasyon — 25–30 € (Budva'da 2025'te reçete yazılan bir muayene tam 25 € tuttu), özel klinikte muayene — 30–50 €, ultrason ve tahlillerle kapsamlı ziyaret — yaklaşık 80 €. Özel laboratuvarlarda tahliller ucuzdur: temel kan tahlili yaklaşık 5 €'dan başlar.",
 			ThcCosts2:
-				'Hastane ücretleri kuruma, hizmete ve hasta statüsüne göre değişir. Forum ve sohbet fiyatları belirli tarihteki kişisel deneyimlerdir; resmi tarife veya kalite kanıtı değildir. Durum elveriyorsa yazılı tahmin ve kapsadığı hizmetleri isteyin; tedaviden sonra ayrıntılı fatura ve tıbbi rapor alın. Fiyat karşılaştırmak için acil yardımı geciktirmeyin.',
+				"Hastaneler başka bir ligdir. Turistler ve yabancılar, yayımlanmış bir tarifeye değil doğrulanmamış anlatımlara dayanarak, Kotor hastanesinin 'turist' bölümünden sık sık şikayet ediyor: 2023 anlatımlarında doktor muayenesi için yaklaşık 150 €, basit bir fizyolojik serum için yaklaşık 200 € geçiyor — başka her yerden kat kat pahalı (aynı serum Bar hastanesinde yaklaşık 30 € olarak belirtilmişti). 2025'te bir yabancının muayenesi için yaklaşık 170 €'dan söz edildi. Tekrar belirtelim: bunlar doğrulanmamış hasta anlatımlarıdır, resmi bir tarife değil — ancak aynı şikayet yıldan yıla tekrarlanıyor.",
 			ThcCosts3:
 				"2023'ten gerçek bir referans: Podgorica'daki Urgentni centar'da iki gün yatışla laparoskopik apandisit ameliyatı sigortasız bir hastaya yaklaşık 1.200–1.500 €'ya mal oldu. Hastaneler, seyahat sigortanız olsa bile ödemeyi çoğu zaman hemen ister — nakit veya kartla: önce siz ödersiniz, sigortacı sonra geri öder. Her ödeme için fiş (račun) isteyin: fiş olmadan ne sigortacı ne de başka biri size tek sent iade eder.",
 
@@ -454,21 +458,21 @@ export default {
 			ThcAgreements3:
 				'Birleşik Krallık ve Polonya karşılıklılık ilkesiyle çalışır: acil yardım için geçerli bir GHIC/EHIC — hatta yalnızca pasaport — yeterlidir. Britanya rehberi pratik bir ayrıntı ekliyor: hastane belgesi taburcu olduktan sonra değil, tedaviden önce veya tedavi sırasında yerel FZOCG şubesinde düzenlenmelidir; ayrıca yazılan ilaçların anlaşma kapsamında olmadığını unutmayın.',
 			ThcAgreements4:
-				'Ülke listesi, kapsam ve gerekli formlar değişebilir; hak kişisel duruma bağlıdır. Yolculuktan önce güncel düzenlemeyi kendi fonunuzdan ve FZOCG kurumundan doğrulayın. Anlaşma uygulanmıyorsa seyahat sigortası mali riski azaltabilir, ancak limit ve istisnalara tabidir ve her faturanın ödenmesini garanti etmez.',
+				"İsviçre, İsveç, Danimarka ve Norveç sigortalıları yerinde öder ve geri ödemeyi kendi ülkelerinde talep eder. Rusya, Ukrayna ve diğer BDT ülkelerinin Karadağ ile hiçbir sağlık anlaşması yoktur — bu turistler (ve 'anlaşmasız' diğer herkes) için seyahat sigortası, tam fiyatlı faturalara karşı tek korumadır.",
 
 			ThcInsurance1:
-				'İkili anlaşmalar genellikle geçici kalışta tıbben gerekli bakımla sınırlıdır ve çoğu kez tıbbi tahliye veya ülkeye dönüşü kapsamaz. Kesin kuralları kendi fonunuzdan doğrulayın. Özel seyahat poliçesi bunu yalnız koşullarda açıkça yazıyorsa ekler.',
+				'Anlaşmalı ülkeler için bile kapsam dardır: yalnızca acil ve zorunlu bakım — eve tıbbi tahliye ise asla. Alman irtibat kurumu DVKA, Karadağ broşüründe bunu açıkça yazar: geri nakil karşılanmaz, anlaşmaya rağmen özel seyahat sigortası yaptırın. Bu tavsiye herkes için geçerlidir.',
 			ThcInsurance2:
 				"Poliçeyi pratikte kullanmak: sigortacınızın asistans hattını olabildiğince erken arayın — sizi anlaşmalı bir kliniğe yönlendirir ve doğrudan ödeme ayarlayabilirler. Durum acilse çağrı merkezini beklemeyin: hitna pomoć'a veya hastaneye gidin, ödeyin ve geri ödeme için tüm raporları ve fişleri saklayın. Buradaki yolcuların deneyimlerine bakılırsa asistans servisleri çok farklı çalışıyor — biri bir saatte doktor ayarlıyor, diğeri sizi bir gün bekletiyor — bu yüzden doktor ziyareti için küçük bir nakit rezervi makul bir önlemdir.",
 			ThcInsurance3:
-				'Poliçe alırken etkinlikleri, scooter ve motosiklet kurallarını, alkol istisnalarını, mevcut ve kronik hastalıkları, muafiyeti, doğrudan ödemeyi, tahliye ve ülkeye dönüşü, bölgeyi ve toplam limiti kontrol edin. Herkes için evrensel asgari tutar yoktur: seyahate, etkinliklere, sağlığa ve vizeye göre seçin ve yalnız büyük limite değil koşullara bakın.',
+				"Poliçe alırken turistlerin gerçekten takıldığı noktaları kontrol edin: aktif tatil kapsamı (yürüyüş, moped ve scooter, rafting ve yamaç paraşütü burada popüler), alkol istisnaları, kronik hastalıkların alevlenmesi ve teminat limiti — tek bir ameliyatın 1.500 € tutabildiği bir ülke için 30.000 € makul bir alt sınırdır.",
 
 			ThcPharmacies1:
-				'Birçok reçetesiz ürün eczanede bulunur; antibiyotikler ve diğer reçeteli ilaçlar Karadağ kurallarına uygun geçerli reçete gerektirir. Yabancı reçete ilacın verilmesini garanti etmez: bazı yolcular belirli eczanelerin kabul ettiğini bildirir, ancak eczacı reddedebilir; yerel hekim değerlendirmesini planlayın. Kamu sisteminde eRecept olağandır; kurallar izin verirse yazılı reçete de kullanılabilir.',
+				"Tatil şehirlerinde eczane (apoteka) her adımda vardır; sezonda çoğu geç saatlere kadar ve pazar günleri de açıktır. Ağrı kesiciler, ateş düşürücüler, rehidrasyon tuzları, kulak ve burun damlaları, güneş yanığı spreyleri ve mide bulantısı hapları serbestçe satılır. Tablet antibiyotikler kesinlikle reçeteye tabidir — eczaneler yabancı reçeteleri kabul etmez, yalnızca Karadağ (elektronik) reçetelerini. Reçeteli bir ilaca ihtiyacınız varsa sorun turistička ambulanta'da veya özel bir doktorda ücretli bir muayeneyle çözülür: konsültasyondan sonra doktor yerel e-reçete yazar.",
 			ThcPharmacies2:
-				'Sık tatil sorunları akut ishal veya kusma, yüzme sonrası kulak ağrısı, güneş yanığı, sıcak hastalığı, denizkestanesi yarası ve düşmelerdir. Kişi içebiliyorsa oral rehidrasyon kullanın; belirgin uyku hali, nefes darlığı, kan, şiddetli ağrı, çok az idrar veya sıvı tutamamada, özellikle çocukta, acil değerlendirme alın. Serum veya başka tedavi gerekip gerekmediğine hekim karar verir. Derin ya da kirli batma yaralarını kendiniz kazımak yerine uzmana gösterin.',
+				"Yaz sezonunun klasikleri — turistlerin burada her yaz gerçekten yaşadıklarına bakılırsa: gıda zehirlenmesi ve rotavirüs (çocukta dehidrasyon birkaç saatte gelişebilir — serum için hitna pomoć'a veya hastaneye gitmeyi geciktirmeyin), yüzdükten sonra kulak iltihabı, güneş yanığı ve güneş çarpması, deniz kestanesi dikenleri (hitna pomoć'ta veya herhangi bir özel klinikte çıkarılır — plajda kendiniz kurcalamayın) ve taşlı plajlardaki küçük yaralanmalar.",
 			ThcPharmacies3:
-				'Birçok özel laboratuvar yaygın rutin testlerde kendi ödeyen hastaları sevksiz kabul eder; uzman testler hekim istemi, hazırlık veya randevu gerektirebilir. Laboratuvardan doğrulayın ve kayıtlı fiyatları',
+				'Doktor tahlil isterse — veya sadece kendinizi kontrol ettirmek isterseniz — özel laboratuvarlar herkesi sevksiz kabul eder; fiyatları',
 			ThcPharmacies3Link: 'tahlil kataloğunda',
 			ThcPharmacies3End: ' karşılaştırın.',
 
@@ -482,7 +486,8 @@ export default {
 				"Birleşik Krallık'ta yaşayanlar için — Karadağ ile karşılıklı sağlık hizmetine dair resmi rehber: gov.uk;",
 			ThcSourcesDvka:
 				"Almanya sigortalıları için — anlaşmanın neyi kapsayıp neyi kapsamadığına dair DVKA broşürü 'Urlaub in Montenegro': dvka.de.",
-			ThcSourcesGuide: "Karadağ'da tatilden daha uzun mu kalacaksınız?",
+			ThcSourcesGuide:
+				"Karadağ'da tatilden daha uzun mu kalacaksınız?",
 			ThcSourcesGuideLink: "Karadağ'da sağlık sistemi nasıl işler",
 			ThcSourcesGuideEnd: ' rehberimizi okuyun.',
 		},

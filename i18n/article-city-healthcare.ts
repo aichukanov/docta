@@ -3,16 +3,19 @@
 // Источники: телеграм-чат medicina_montenegro (экспорт 2026-03), каталог docta.me.
 export default {
 	messages: {
-		en: {
+		'en': {
 			// Shared
-			CityHcToc_overview: 'What the city offers',
-			CityHcToc_emergency: 'Emergency care',
-			CityHcToc_state: 'Public healthcare',
-			CityHcToc_private: 'Private clinics and laboratories',
-			CityHcToc_pharmacies: 'Pharmacies and on-call services',
+			'CityHcToc_overview': 'What the city offers',
+			'CityHcToc_emergency': 'Emergency care',
+			'CityHcToc_state': 'Public healthcare',
+			'CityHcToc_private': 'Private clinics and laboratories',
+			'CityHcToc_pharmacies': 'Pharmacies and on-call services',
 			CityHcEmergencyShared:
-				'Call 124 or 112 for a medical emergency. The dispatcher assesses urgency and decides whether to send a team or advise attendance at a hitna pomoć point. Do not assume it is faster or safe to travel independently: follow instructions and do not drive yourself if there is breathing difficulty, chest pain, loss of consciousness, severe injury, seizure, stroke signs or rapid deterioration.',
+				'The nationwide ambulance number in Montenegro is 124. Dispatchers speak Montenegrin and usually understand basic English. Ambulances mostly go out to severe cases: if your condition allows, it is often faster to get to the emergency unit (hitna pomoć) yourself.',
 			CityHcLinkEnd: '.',
+			CityHcWeekendText:
+				'A full list of pharmacies and clinics open on weekends across Montenegro is in a separate',
+			CityHcWeekendLink: 'article',
 			CityHcCtaTitle: 'Need a clinic near you?',
 			CityHcCtaText:
 				'In the catalog you can filter clinics by city and language — with a map, prices and reviews.',
@@ -36,18 +39,20 @@ export default {
 				'In summer the center runs a tourist ambulanta — paid appointments for visitors without the health card. The Dom zdravlja also offers seasonal flu vaccination and occasional free campaigns such as HIV and hepatitis testing.',
 			CityHcState3_budva:
 				'Hospital care for Budva residents is provided by the general hospital in Kotor and the Clinical Center in Podgorica. Planned examinations under the health card require a referral from your chosen doctor.',
+			CityHcStateCatalog_budva: 'The institution’s page on docta.me — address, reviews and services:',
+			CityHcStateLink_budva: 'Dom Zdravlja Budva',
 			CityHcPrivate1_budva:
 				'Budva has plenty of private clinics and laboratories, from general polyclinics to dentistry and ophthalmology. The Russian-speaking expat chat most often mentions the Moj Lab laboratory and the Milmedika and BonoMedica clinics — all of them are listed in our catalog.',
 			CityHcPrivateCatalog_budva:
 				'For an up-to-date list with addresses, prices and reviews, see the catalog:',
 			CityHcPrivateLink_budva: 'private clinics in Budva',
 			CityHcLabs_budva:
-				'Many private laboratories accept self-paying patients for common routine tests without a referral, but specialised tests may require an order, preparation or appointment. Confirm directly. Listed tests and available prices are in',
+				"You can also get tested without a doctor's referral — paid, at any private laboratory. See the list of tests with prices in the section",
 			CityHcLabsLink_budva: 'lab tests in Budva',
 			CityHcPharmacy1_budva:
 				'There are many pharmacies in Budva, and in season most work seven days a week. Prescription drugs (antibiotics above all) formally require a prescription from a Montenegrin doctor — a private clinic doctor can issue one.',
 			CityHcPharmacy2_budva:
-				'Pharmacy opening hours and duty rosters change seasonally; do not rely on a chat report or a named 24-hour pharmacy without same-day confirmation. Check the pharmacy directly or ask the local dom zdravlja. A pharmacy is not a substitute for emergency assessment.',
+				'Chat members point to a 24-hour pharmacy near the bus station — BENU at Sportska Hala 11, also listed on Montefarm’s own duty roster. Schedules can still shift, so check locally; at night, in an acute situation, it is more reliable to go straight to hitna pomoć.',
 			CityHcCtaButton_budva: 'Clinics in Budva',
 
 			// Podgorica
@@ -69,18 +74,20 @@ export default {
 				'Dom zdravlja Podgorica is a network of public primary care centers (several blocks in different districts): general practice, pediatrics, laboratory, a mental health center.',
 			CityHcState3_podgorica:
 				'The Institute of Public Health (Institut za javno zdravlje) handles vaccination, including travel vaccines. The Blood Transfusion Institute (Zavod za transfuziju krvi) accepts donors and does blood group testing.',
+			CityHcStateCatalog_podgorica: 'KCCG’s page on docta.me — departments, reviews and services:',
+			CityHcStateLink_podgorica: 'Klinički Centar Crne Gore',
 			CityHcPrivate1_podgorica:
 				'Podgorica offers the widest choice of private medicine: private hospitals with surgery and MRI (the chat most often mentions Codra Hospital and the Hipokrat polyclinics), Moj Lab laboratories, Milmedika, Poliklinika Filipović and dozens of others.',
 			CityHcPrivateCatalog_podgorica:
-				'Listed clinics with available prices and reviews are in the catalog; coverage is not complete, so confirm services directly:',
+				'The full list with prices and reviews is in the catalog:',
 			CityHcPrivateLink_podgorica: 'private clinics in Podgorica',
 			CityHcLabs_podgorica:
-				'Many private laboratories accept self-paying patients for common routine tests without a referral, but specialised tests may require an order, preparation or appointment. Confirm directly. Listed tests and available prices are in',
+				'Tests can be done privately without a referral at any laboratory. Prices and addresses are in the section',
 			CityHcLabsLink_podgorica: 'lab tests in Podgorica',
 			CityHcPharmacy1_podgorica:
-				'Podgorica has state and private pharmacies, but the current overnight duty roster and location can change. Confirm same-day opening hours directly with the pharmacy or local official information rather than relying on an old 24-hour listing.',
+				'Podgorica has hundreds of pharmacies: the state Montefarm chain and private networks. Three are open round the clock: Montefarm "Kruševac" (Bulevar Svetog Petra Cetinjskog 45/a), BENU on Moskovska 22, and Holos 7 on Bulevar Oktobarske Revolucije 31. Addresses and round-the-clock status can change — confirm before a late-night trip.',
 			CityHcPharmacy2_podgorica:
-				'Prescription medicines require a prescription valid under Montenegrin rules. A foreign prescription may be accepted in an individual case but does not guarantee dispensing and the pharmacist may refuse; arrange local clinical assessment when continuity matters.',
+				'Many drugs sold freely elsewhere require a Montenegrin prescription here. If a medicine is out of stock, ask for an analog by active ingredient — brand names often differ.',
 			CityHcCtaButton_podgorica: 'Clinics in Podgorica',
 
 			// Kotor
@@ -91,7 +98,7 @@ export default {
 			CityHcOverview1_kotor:
 				'Kotor is the medical hub of the Boka Kotorska bay: it hosts the Kotor General Hospital (Opšta bolnica Kotor), which serves the whole coastal area including Tivat, Budva and Herceg Novi. Primary care is provided by Dom zdravlja Kotor with its ambulance service.',
 			CityHcOverview2_kotor:
-				'Nearby, in Risan, there is the specialized public hospital Vaso Ćuković for orthopedics, neurosurgery and neurology, which receives patients from all over the country. The private sector is more modest than in Budva or Podgorica, but laboratories and private doctors are available.',
+				"Nearby, in Risan, there is the specialized public hospital Vaso Ćuković for orthopedics, neurosurgery and neurology, which receives patients from all over the country. The private sector is more modest than in Budva or Podgorica, but laboratories and private doctors are available.",
 			CityHcEmergency1_kotor:
 				'In an emergency, go to hitna pomoć at Dom zdravlja Kotor or directly to the admission unit of the Kotor hospital: injuries, pediatric emergencies and infections from along the coast are brought here (the hospital has pediatric and infectious disease wards).',
 			CityHcEmergency2_kotor:
@@ -102,27 +109,29 @@ export default {
 				'Dom zdravlja Kotor is the public primary care center: chosen doctor, pediatrician, laboratory. With the zdravstvena knjižica, visits are free, and your chosen GP issues prescriptions for subsidized medicines.',
 			CityHcState3_kotor:
 				'The specialized hospital Vaso Ćuković in Risan, a short drive along the bay, is the national center for orthopedics, neurosurgery and neurology. Kotor also hosts the state specialized psychiatric hospital.',
+			CityHcStateCatalog_kotor: 'The hospital’s page on docta.me — departments, reviews and services:',
+			CityHcStateLink_kotor: 'Opšta bolnica Kotor',
 			CityHcPrivate1_kotor:
 				'Among private services, the chat most often mentions the SmartMed laboratory in Kotor; in Radanovići (Kotor municipality) there is a Hipokrat polyclinic with MRI. For a wider choice of private specialists, Kotor residents usually travel to Budva or Podgorica.',
 			CityHcPrivateCatalog_kotor:
 				'See what is available in the town itself in the catalog:',
 			CityHcPrivateLink_kotor: 'private clinics in Kotor',
 			CityHcLabs_kotor:
-				'Many private laboratories accept self-paying patients for common routine tests without a referral, but specialised tests may require an order, preparation or appointment. Confirm directly. Listed tests and available prices are in',
+				'Private laboratories accept tests without a referral. The list with prices is in the section',
 			CityHcLabsLink_kotor: 'lab tests in Kotor',
 			CityHcPharmacy1_kotor:
 				'Pharmacies operate in the Old Town and the newer districts; in season the hours are extended. There may be no 24-hour pharmacy in Kotor — keep a stock of your regular medicines at home.',
 			CityHcPharmacy2_kotor:
-				'Opening hours and duty rosters change, especially by season. Confirm the current open pharmacy directly or through local official information; do not rely on a statement that no 24-hour pharmacy exists. Keep lawful continuity supplies for regular treatment and use urgent medical services for acute symptoms.',
+				'At night, in an acute situation, go to hitna pomoć or the hospital admission unit: they will examine you and provide the first medicines.',
 			CityHcCtaButton_kotor: 'Clinics in Kotor',
 
 			// Bar
 			CityHcTitle_bar:
 				'Healthcare in Bar: hospital, Dom zdravlja and private clinics',
 			CityHcDescription_bar:
-				'Medical help in Bar: ambulance 124, Dom zdravlja Bar in the center, the Blažo Orlandić hospital in Stari Bar, private clinics, laboratories and pharmacies.',
+				"Medical help in Bar: ambulance 124, Dom zdravlja Bar in the center, the Blažo Orlandić hospital in Stari Bar, private clinics, laboratories and pharmacies.",
 			CityHcOverview1_bar:
-				'Bar has the full set of public healthcare: Dom zdravlja Bar (the primary care center with the ambulance service) in the city center and the Blažo Orlandić General Hospital in Stari Bar — a round-the-clock inpatient facility.',
+				"Bar has the full set of public healthcare: Dom zdravlja Bar (the primary care center with the ambulance service) in the city center and the Blažo Orlandić General Hospital in Stari Bar — a round-the-clock inpatient facility.",
 			CityHcOverview2_bar:
 				'The private sector is notable: polyclinics, a private day hospital, laboratories and many dental offices. In Sutomore (Bar municipality) there is a private hospital with CT and MRI.',
 			CityHcEmergency1_bar:
@@ -130,35 +139,42 @@ export default {
 			CityHcEmergency2_bar:
 				'The scheme shared in the chat: first hitna — they will examine you and issue a referral to the hospital if needed; or straight to the hospital admission unit when it is obvious that inpatient care is required.',
 			CityHcState1_bar:
-				'The Blažo Orlandić General Hospital is a multi-specialty facility: surgery, gynecology and a maternity ward, pediatrics, X-ray and CT, physiotherapy. Treatment is free with the health card; for others it is paid by the price list.',
+				"The Blažo Orlandić General Hospital is a multi-specialty facility: surgery, gynecology and a maternity ward, pediatrics, X-ray and CT, physiotherapy. Treatment is free with the health card; for others it is paid by the price list.",
 			CityHcState2_bar:
 				'Dom zdravlja Bar is the primary care level: chosen doctor, pediatrics, laboratory, vaccination (including some travel vaccines).',
 			CityHcState3_bar:
 				'Specialized examinations not available in Bar are done by referral in Podgorica — the Clinical Center is about an hour away.',
+			CityHcStateCatalog_bar: 'The hospital’s page on docta.me — departments, reviews and services:',
+			CityHcStateLink_bar: 'Opšta Bolnica "Blažo Orlandić"',
 			CityHcPrivate1_bar:
 				'Among private facilities, the chat most often names the Novi Standard polyclinic, the Dr Zejnilović day hospital and Medical Vraneš; there are many private dental offices. In Sutomore, the private A3 Medical hospital offers CT and MRI.',
 			CityHcPrivateCatalog_bar:
-				'Listed clinics with available prices and reviews are in the catalog; coverage is not complete, so confirm services directly:',
+				'The full list with prices and reviews is in the catalog:',
 			CityHcPrivateLink_bar: 'private clinics in Bar',
 			CityHcLabs_bar:
-				'Many private laboratories accept self-paying patients for common routine tests without a referral, but specialised tests may require an order, preparation or appointment. Confirm directly. Listed tests and available prices are in',
+				'Tests are accepted without a referral at private laboratories. The list with prices is in the section',
 			CityHcLabsLink_bar: 'lab tests in Bar',
 			CityHcPharmacy1_bar:
-				'Pharmacies are spread across the center and Šušanj; chat members often recommend the Lenapharm pharmacy in Šušanj, where you can communicate in Russian.',
+				'Pharmacies are spread across the center and Šušanj.',
+			CityHcLenapharmText_bar: 'Chat members especially often recommend',
+			CityHcLenapharmAfter_bar: 'in Šušanj — staff there answer in Russian.',
 			CityHcPharmacy2_bar:
-				'Opening hours and duty rosters change, so verify the current open pharmacy directly or through local official information. Do not go to an emergency department solely to obtain a routine medicine; use emergency care for acute medical need. Prescription dispensing follows Montenegrin rules and a foreign prescription is not guaranteed.',
+				'There may be no 24-hour pharmacy — at night go to hitna pomoć or the hospital admission unit. Prescription drugs are sold with a prescription from a Montenegrin doctor.',
 			CityHcCtaButton_bar: 'Clinics in Bar',
 		},
-		ru: {
+		'ru': {
 			// Общие
-			CityHcToc_overview: 'Что есть в городе',
-			CityHcToc_emergency: 'Экстренная помощь',
-			CityHcToc_state: 'Государственная медицина',
-			CityHcToc_private: 'Частные клиники и лаборатории',
-			CityHcToc_pharmacies: 'Аптеки и дежурные службы',
+			'CityHcToc_overview': 'Что есть в городе',
+			'CityHcToc_emergency': 'Экстренная помощь',
+			'CityHcToc_state': 'Государственная медицина',
+			'CityHcToc_private': 'Частные клиники и лаборатории',
+			'CityHcToc_pharmacies': 'Аптеки и дежурные службы',
 			CityHcEmergencyShared:
-				'При медицинской угрозе звоните 124 или 112. Диспетчер оценивает срочность и решает, направить ли бригаду или рекомендовать поездку в hitna pomoć. Не считайте, что ехать самостоятельно всегда быстрее и безопасно: выполняйте инструкции и не садитесь за руль при затруднённом дыхании, боли в груди, потере сознания, тяжёлой травме, судорогах, признаках инсульта или быстром ухудшении.',
+				'Единый номер скорой помощи в Черногории — 124. Диспетчеры говорят на черногорском, базовый английский обычно понимают. На вызовы на дом скорая выезжает в основном в тяжёлых случаях: если состояние позволяет, быстрее самостоятельно добраться до дежурной службы (hitna pomoć).',
 			CityHcLinkEnd: '.',
+			CityHcWeekendText:
+				'Полный список аптек и клиник Черногории, открытых по выходным, — в отдельной',
+			CityHcWeekendLink: 'статье',
 			CityHcCtaTitle: 'Нужна клиника рядом с вами?',
 			CityHcCtaText:
 				'В каталоге можно фильтровать клиники по городу и языку — с картой, ценами и отзывами.',
@@ -182,18 +198,20 @@ export default {
 				'Летом при поликлинике работает туристическая амбулатория (turistička ambulanta) — платный приём для гостей без книжицы. Также в Dom zdravlja проводят сезонную вакцинацию от гриппа и периодические бесплатные акции, например тестирование на ВИЧ и гепатиты.',
 			CityHcState3_budva:
 				'Больничное лечение жители Будвы получают в Опште больнице Котора и в Клиническом центре в Подгорице. На плановые обследования по книжице нужно направление от выбранного врача.',
+			CityHcStateCatalog_budva: 'Страница учреждения на docta.me — с адресом, отзывами и списком услуг:',
+			CityHcStateLink_budva: 'Dom Zdravlja Budva',
 			CityHcPrivate1_budva:
 				'Частных клиник и лабораторий в Будве много: от терапевтических поликлиник до стоматологий и офтальмологии. В русскоязычном чате чаще всего упоминают лабораторию Moj Lab и клиники Milmedika и BonoMedica — все они есть в нашем каталоге.',
 			CityHcPrivateCatalog_budva:
 				'Актуальный список с адресами, ценами и отзывами — в каталоге:',
 			CityHcPrivateLink_budva: 'частные клиники Будвы',
 			CityHcLabs_budva:
-				'Многие частные лаборатории принимают платно на распространённые рутинные анализы без направления, но для специализированных исследований могут понадобиться назначение, подготовка или запись. Уточняйте напрямую. Добавленные анализы и доступные цены — в разделе',
+				'Сдать анализы можно и без направления врача — платно в любой частной лаборатории. Список анализов с ценами смотрите в разделе',
 			CityHcLabsLink_budva: 'анализы в Будве',
 			CityHcPharmacy1_budva:
 				'Аптек в Будве много, в сезон большинство работает без выходных. Рецептурные препараты (в первую очередь антибиотики) формально продаются по рецепту черногорского врача — его выпишет и врач частной клиники.',
 			CityHcPharmacy2_budva:
-				'Часы работы аптек и график дежурств меняются по сезону; не рассчитывайте на сообщение из чата или названную круглосуточную аптеку без проверки в тот же день. Позвоните в аптеку или уточните у местного dom zdravlja. Аптека не заменяет экстренную оценку состояния.',
+				'Участники чатов указывают на круглосуточную аптеку у автовокзала — это BENU (Sportska Hala, 11), она же в официальном списке дежурных аптек Montefarm. График всё равно может меняться — уточняйте на месте; ночью при острой ситуации надёжнее обращаться сразу в hitna pomoć.',
 			CityHcCtaButton_budva: 'Клиники Будвы',
 
 			// Подгорица
@@ -215,18 +233,20 @@ export default {
 				'Dom zdravlja Podgorica — сеть государственных поликлиник (несколько блоков в разных районах города): терапия, педиатрия, лаборатория, центр ментального здоровья.',
 			CityHcState3_podgorica:
 				'Институт общественного здоровья (Institut za javno zdravlje) занимается в том числе вакцинацией, включая прививки для путешественников. Институт переливания крови (Zavod za transfuziju krvi) принимает доноров и делает анализы группы крови.',
+			CityHcStateCatalog_podgorica: 'Страница KCCG на docta.me — с отделениями, отзывами и услугами:',
+			CityHcStateLink_podgorica: 'Klinički Centar Crne Gore',
 			CityHcPrivate1_podgorica:
 				'Выбор частной медицины в Подгорице самый широкий: частные госпитали с хирургией и МРТ (в чате чаще всего упоминают Codra Hospital и поликлиники Hipokrat), лаборатории Moj Lab, клиники Milmedika, Poliklinika Filipović и десятки других.',
 			CityHcPrivateCatalog_podgorica:
 				'Полный список с ценами и отзывами — в каталоге:',
 			CityHcPrivateLink_podgorica: 'частные клиники Подгорицы',
 			CityHcLabs_podgorica:
-				'Многие частные лаборатории принимают платно на распространённые рутинные анализы без направления, но для специализированных исследований могут понадобиться назначение, подготовка или запись. Уточняйте напрямую. Добавленные анализы и доступные цены — в разделе',
+				'Анализы можно сдать платно без направления в любой частной лаборатории. Цены и адреса — в разделе',
 			CityHcLabsLink_podgorica: 'анализы в Подгорице',
 			CityHcPharmacy1_podgorica:
-				'В Подгорице есть государственные и частные аптеки, но актуальный ночной график и адрес дежурной аптеки могут меняться. Проверяйте часы работы в тот же день напрямую или по местной официальной информации, а не по старому списку круглосуточных точек.',
+				'Аптек в Подгорице сотни: государственная сеть Montefarm и частные сети. Три работают круглосуточно: Montefarm «Kruševac» (бульвар Св. Петра Цетинского, 45/а), BENU на Московской, 22, и Holos 7 на бульваре Октябрьской революции, 31. Адреса и круглосуточный режим могут измениться — уточняйте перед поздней поездкой.',
 			CityHcPharmacy2_podgorica:
-				'Рецептурные препараты требуют рецепта, действительного по правилам Черногории. Иностранный рецепт иногда могут принять в конкретном случае, но он не гарантирует отпуск, а фармацевт вправе отказать; если важна непрерывность лечения, заранее организуйте местную врачебную консультацию.',
+				'Многие препараты, которые в других странах продаются свободно, здесь требуют рецепта черногорского врача. Если лекарства нет в наличии, спрашивайте аналог по действующему веществу — торговые названия часто отличаются.',
 			CityHcCtaButton_podgorica: 'Клиники Подгорицы',
 
 			// Котор
@@ -248,18 +268,20 @@ export default {
 				'Dom zdravlja Kotor — государственная поликлиника: выбранный врач, педиатр, лаборатория. По здравственной книжице приёмы бесплатны, рецепты на льготные лекарства выписывает выбранный терапевт.',
 			CityHcState3_kotor:
 				'Специализированная больница «Васо Чукович» в Рисане, в короткой поездке вдоль залива, — государственный центр ортопедии, нейрохирургии и неврологии. Также в Которе находится государственная специализированная психиатрическая больница.',
+			CityHcStateCatalog_kotor: 'Страница больницы на docta.me — с отделениями, отзывами и услугами:',
+			CityHcStateLink_kotor: 'Opšta bolnica Kotor',
 			CityHcPrivate1_kotor:
 				'Из частных служб в чатах чаще всего упоминают лабораторию SmartMed в Которе; в Радановичах (община Котор) работает поликлиника Hipokrat с МРТ. За широким выбором частных специалистов жители Котора обычно ездят в Будву или Подгорицу.',
 			CityHcPrivateCatalog_kotor:
 				'Что есть в самом городе — смотрите в каталоге:',
 			CityHcPrivateLink_kotor: 'частные клиники Котора',
 			CityHcLabs_kotor:
-				'Многие частные лаборатории принимают платно на распространённые рутинные анализы без направления, но для специализированных исследований могут понадобиться назначение, подготовка или запись. Уточняйте напрямую. Добавленные анализы и доступные цены — в разделе',
+				'Частные лаборатории принимают анализы без направления. Список с ценами — в разделе',
 			CityHcLabsLink_kotor: 'анализы в Которе',
 			CityHcPharmacy1_kotor:
 				'Аптеки работают в Старом городе и новых районах; в сезон график расширяется. Круглосуточной аптеки в Которе может не быть — запас постоянных лекарств лучше держать дома.',
 			CityHcPharmacy2_kotor:
-				'Часы работы и дежурства меняются, особенно по сезону. Проверяйте открытую аптеку напрямую или по местной официальной информации и не полагайтесь на утверждение, что круглосуточной аптеки точно нет. Для постоянного лечения заранее держите законный запас, а при острых симптомах обращайтесь за медицинской помощью.',
+				'Ночью при острой ситуации обращайтесь в hitna pomoć или в приёмное отделение больницы: там осмотрят и дадут первые препараты.',
 			CityHcCtaButton_kotor: 'Клиники Котора',
 
 			// Бар
@@ -281,30 +303,36 @@ export default {
 				'Dom zdravlja Bar — первичное звено: выбранный врач, педиатрия, лаборатория, вакцинация (в том числе некоторые прививки для путешественников).',
 			CityHcState3_bar:
 				'Плановые узкие обследования, которых нет в Баре, делают по направлению в Подгорице — Клинический центр примерно в часе езды.',
+			CityHcStateCatalog_bar: 'Страница больницы на docta.me — с отделениями, отзывами и услугами:',
+			CityHcStateLink_bar: 'Opšta Bolnica "Blažo Orlandić"',
 			CityHcPrivate1_bar:
 				'Из частных учреждений в чатах чаще всего называют поликлинику Novi Standard, дневную больницу Dr Zejnilović и Medical Vraneš; много частных стоматологий. В Сутоморе частная больница A3 Medical делает КТ и МРТ.',
 			CityHcPrivateCatalog_bar:
 				'Полный список с ценами и отзывами — в каталоге:',
 			CityHcPrivateLink_bar: 'частные клиники Бара',
 			CityHcLabs_bar:
-				'Многие частные лаборатории принимают платно на распространённые рутинные анализы без направления, но для специализированных исследований могут понадобиться назначение, подготовка или запись. Уточняйте напрямую. Добавленные анализы и доступные цены — в разделе',
+				'Частные лаборатории принимают анализы без направления. Список с ценами — в разделе',
 			CityHcLabsLink_bar: 'анализы в Баре',
-			CityHcPharmacy1_bar:
-				'Аптеки распределены по центру и Шушаню; участники чата часто рекомендуют аптеку Lenapharm в Шушане, где можно объясниться по-русски.',
+			CityHcPharmacy1_bar: 'Аптеки распределены по центру и Шушаню.',
+			CityHcLenapharmText_bar: 'Участники чата особенно часто хвалят аптеку',
+			CityHcLenapharmAfter_bar: 'в Шушане — там отвечают по-русски.',
 			CityHcPharmacy2_bar:
-				'Часы работы и дежурства меняются: проверяйте открытую аптеку напрямую или по местной официальной информации. Не обращайтесь в приёмное отделение только ради обычного лекарства; экстренная помощь предназначена для острой медицинской необходимости. Рецептурный отпуск регулируется правилами Черногории, а иностранный рецепт ничего не гарантирует.',
+				'Круглосуточной аптеки может не оказаться — ночью обращайтесь в hitna pomoć или приёмное отделение больницы. Рецептурные препараты продаются по рецепту черногорского врача.',
 			CityHcCtaButton_bar: 'Клиники Бара',
 		},
-		sr: {
+		'sr': {
 			// Zajednički
-			CityHcToc_overview: 'Šta grad nudi',
-			CityHcToc_emergency: 'Hitna pomoć',
-			CityHcToc_state: 'Državno zdravstvo',
-			CityHcToc_private: 'Privatne klinike i laboratorije',
-			CityHcToc_pharmacies: 'Apoteke i dežurne službe',
+			'CityHcToc_overview': 'Šta grad nudi',
+			'CityHcToc_emergency': 'Hitna pomoć',
+			'CityHcToc_state': 'Državno zdravstvo',
+			'CityHcToc_private': 'Privatne klinike i laboratorije',
+			'CityHcToc_pharmacies': 'Apoteke i dežurne službe',
 			CityHcEmergencyShared:
-				'Kod medicinske hitnosti pozovite 124 ili 112. Dispečer procjenjuje hitnost i odlučuje da li šalje ekipu ili savjetuje dolazak u hitnu pomoć. Ne pretpostavljajte da je samostalni put brži ili bezbjedan: slijedite uputstva i ne vozite kod otežanog disanja, bola u grudima, gubitka svijesti, teške povrede, napada, znakova moždanog udara ili brzog pogoršanja.',
+				'Jedinstveni broj hitne pomoći u Crnoj Gori je 124. Dispečeri govore crnogorski, a obično razumiju osnovni engleski. Ekipe uglavnom izlaze na teren u težim slučajevima: ako stanje dozvoljava, često je brže da sami dođete do hitne pomoći.',
 			CityHcLinkEnd: '.',
+			CityHcWeekendText:
+				'Kompletan spisak apoteka i klinika u Crnoj Gori otvorenih vikendom je u posebnom',
+			CityHcWeekendLink: 'članku',
 			CityHcCtaTitle: 'Potrebna vam je klinika u vašoj blizini?',
 			CityHcCtaText:
 				'U katalogu možete filtrirati klinike po gradu i jeziku — sa mapom, cijenama i recenzijama.',
@@ -328,18 +356,20 @@ export default {
 				'Ljeti pri domu zdravlja radi turistička ambulanta — pregledi uz plaćanje za goste bez knjižice. Dom zdravlja organizuje i sezonsku vakcinaciju protiv gripa, kao i povremene besplatne akcije, npr. testiranje na HIV i hepatitise.',
 			CityHcState3_budva:
 				'Bolničko liječenje stanovnici Budve dobijaju u Opštoj bolnici Kotor i u Kliničkom centru u Podgorici. Za planirane preglede po knjižici potreban je uput izabranog doktora.',
+			CityHcStateCatalog_budva: 'Stranica ustanove na docta.me — adresa, recenzije i usluge:',
+			CityHcStateLink_budva: 'Dom Zdravlja Budva',
 			CityHcPrivate1_budva:
 				'Privatnih klinika i laboratorija u Budvi ima mnogo: od opštih poliklinika do stomatologije i oftalmologije. U četu na ruskom jeziku najčešće se pominju laboratorija Moj Lab i klinike Milmedika i BonoMedica — sve su u našem katalogu.',
 			CityHcPrivateCatalog_budva:
 				'Aktuelni spisak sa adresama, cijenama i recenzijama nalazi se u katalogu:',
 			CityHcPrivateLink_budva: 'privatne klinike u Budvi',
 			CityHcLabs_budva:
-				'Mnoge privatne laboratorije primaju uz plaćanje za uobičajene rutinske analize bez uputa, ali specijalizovani testovi mogu tražiti nalog, pripremu ili termin. Provjerite direktno. Unesene analize i dostupne cijene su u odjeljku',
+				'Analize možete uraditi i bez uputa — uz plaćanje, u bilo kojoj privatnoj laboratoriji. Spisak analiza sa cijenama pogledajte u sekciji',
 			CityHcLabsLink_budva: 'analize u Budvi',
 			CityHcPharmacy1_budva:
 				'Apoteka u Budvi ima mnogo, a u sezoni većina radi svakog dana. Ljekovi na recept (prije svega antibiotici) formalno se izdaju uz recept crnogorskog ljekara — može ga izdati i ljekar privatne klinike.',
 			CityHcPharmacy2_budva:
-				'Radno vrijeme i dežurstva apoteka mijenjaju se sezonski; ne oslanjajte se na čet ili navedenu non-stop apoteku bez provjere istog dana. Pozovite apoteku ili pitajte dom zdravlja. Apoteka ne zamjenjuje hitnu medicinsku procjenu.',
+				'Učesnici četova pominju non-stop apoteku kod autobuske stanice — to je BENU (Sportska Hala 11), koja je i na zvaničnom spisku dežurnih apoteka Montefarma. Raspored se ipak može mijenjati, provjerite na licu mjesta; noću je u hitnim situacijama pouzdanije otići pravo u hitnu pomoć.',
 			CityHcCtaButton_budva: 'Klinike u Budvi',
 
 			// Podgorica
@@ -361,18 +391,20 @@ export default {
 				'Dom zdravlja Podgorica je mreža državnih ustanova primarne zaštite (nekoliko blokova po djelovima grada): opšta medicina, pedijatrija, laboratorija, centar za mentalno zdravlje.',
 			CityHcState3_podgorica:
 				'Institut za javno zdravlje bavi se, između ostalog, vakcinacijom, uključujući vakcine za putnike. Zavod za transfuziju krvi prima donore i radi analize krvnih grupa.',
+			CityHcStateCatalog_podgorica: 'Stranica KCCG na docta.me — odjeljenja, recenzije i usluge:',
+			CityHcStateLink_podgorica: 'Klinički Centar Crne Gore',
 			CityHcPrivate1_podgorica:
 				'Izbor privatne medicine u Podgorici je najširi: privatne bolnice sa hirurgijom i magnetnom rezonancom (u četu se najčešće pominju Codra Hospital i poliklinike Hipokrat), laboratorije Moj Lab, Milmedika, Poliklinika Filipović i deseci drugih.',
 			CityHcPrivateCatalog_podgorica:
 				'Kompletan spisak sa cijenama i recenzijama je u katalogu:',
 			CityHcPrivateLink_podgorica: 'privatne klinike u Podgorici',
 			CityHcLabs_podgorica:
-				'Mnoge privatne laboratorije primaju uz plaćanje za uobičajene rutinske analize bez uputa, ali specijalizovani testovi mogu tražiti nalog, pripremu ili termin. Provjerite direktno. Unesene analize i dostupne cijene su u odjeljku',
+				'Analize se rade privatno bez uputa u bilo kojoj laboratoriji. Cijene i adrese su u sekciji',
 			CityHcLabsLink_podgorica: 'analize u Podgorici',
 			CityHcPharmacy1_podgorica:
-				'Podgorica ima državne i privatne apoteke, ali noćno dežurstvo i lokacija mogu se mijenjati. Provjerite radno vrijeme istog dana direktno ili kroz lokalne zvanične informacije, ne preko starog non-stop spiska.',
+				'U Podgorici postoje stotine apoteka: državni lanac Montefarm i privatni lanci. Tri rade non-stop: Montefarm „Kruševac" (Bulevar Svetog Petra Cetinjskog 45/a), BENU na Moskovskoj 22 i Holos 7 na Bulevaru oktobarske revolucije 31. Adrese i non-stop režim rada mogu se promijeniti — provjerite prije noćne posjete.',
 			CityHcPharmacy2_podgorica:
-				'Ljekovi na recept traže recept važeći po crnogorskim pravilima. Strani recept može biti prihvaćen u pojedinačnom slučaju, ali ne garantuje izdavanje i farmaceut može odbiti; kada je kontinuitet važan, organizujte lokalnu procjenu ljekara.',
+				'Mnogi ljekovi koji se drugdje prodaju slobodno ovdje traže recept crnogorskog ljekara. Ako lijeka nema, pitajte za analog po aktivnoj supstanci — komercijalni nazivi se često razlikuju.',
 			CityHcCtaButton_podgorica: 'Klinike u Podgorici',
 
 			// Kotor
@@ -394,18 +426,20 @@ export default {
 				'Dom zdravlja Kotor je državna ustanova primarne zaštite: izabrani doktor, pedijatar, laboratorija. Uz zdravstvenu knjižicu pregledi su besplatni, a recepte za ljekove sa liste izdaje izabrani doktor.',
 			CityHcState3_kotor:
 				'Specijalna bolnica „Vaso Ćuković" u Risnu, na kratkoj vožnji uz zaliv, državni je centar za ortopediju, neurohirurgiju i neurologiju. U Kotoru se nalazi i državna specijalna psihijatrijska bolnica.',
+			CityHcStateCatalog_kotor: 'Stranica bolnice na docta.me — odjeljenja, recenzije i usluge:',
+			CityHcStateLink_kotor: 'Opšta bolnica Kotor',
 			CityHcPrivate1_kotor:
 				'Od privatnih službi u četovima se najčešće pominje laboratorija SmartMed u Kotoru; u Radanovićima (opština Kotor) radi poliklinika Hipokrat sa magnetnom rezonancom. Po širi izbor privatnih specijalista stanovnici Kotora obično idu u Budvu ili Podgoricu.',
 			CityHcPrivateCatalog_kotor:
 				'Šta postoji u samom gradu pogledajte u katalogu:',
 			CityHcPrivateLink_kotor: 'privatne klinike u Kotoru',
 			CityHcLabs_kotor:
-				'Mnoge privatne laboratorije primaju uz plaćanje za uobičajene rutinske analize bez uputa, ali specijalizovani testovi mogu tražiti nalog, pripremu ili termin. Provjerite direktno. Unesene analize i dostupne cijene su u odjeljku',
+				'Privatne laboratorije primaju analize bez uputa. Spisak sa cijenama je u sekciji',
 			CityHcLabsLink_kotor: 'analize u Kotoru',
 			CityHcPharmacy1_kotor:
 				'Apoteke rade u Starom gradu i novijim djelovima; u sezoni je radno vrijeme duže. Non-stop apoteke u Kotoru možda nema — zalihu stalnih ljekova držite kod kuće.',
 			CityHcPharmacy2_kotor:
-				'Radno vrijeme i dežurstva mijenjaju se, naročito sezonski. Provjerite otvorenu apoteku direktno ili kroz zvanične lokalne podatke; ne oslanjajte se na tvrdnju da non-stop apoteke sigurno nema. Za redovnu terapiju držite zakonitu zalihu, a kod akutnih simptoma koristite medicinsku službu.',
+				'Noću se u akutnoj situaciji obratite hitnoj pomoći ili prijemnom odjeljenju bolnice: tamo će vas pregledati i dati prve ljekove.',
 			CityHcCtaButton_kotor: 'Klinike u Kotoru',
 
 			// Bar
@@ -427,30 +461,36 @@ export default {
 				'Dom zdravlja Bar je primarni nivo: izabrani doktor, pedijatrija, laboratorija, vakcinacija (uključujući neke vakcine za putnike).',
 			CityHcState3_bar:
 				'Specijalistički pregledi kojih nema u Baru rade se po uputu u Podgorici — Klinički centar je na oko sat vremena vožnje.',
+			CityHcStateCatalog_bar: 'Stranica bolnice na docta.me — odjeljenja, recenzije i usluge:',
+			CityHcStateLink_bar: 'Opšta bolnica „Blažo Orlandić"',
 			CityHcPrivate1_bar:
 				'Od privatnih ustanova u četovima se najčešće pominju poliklinika Novi Standard, dnevna bolnica Dr Zejnilović i Medical Vraneš; ima mnogo privatnih stomatologa. U Sutomoru privatna bolnica A3 Medical nudi CT i magnetnu rezonancu.',
 			CityHcPrivateCatalog_bar:
 				'Kompletan spisak sa cijenama i recenzijama je u katalogu:',
 			CityHcPrivateLink_bar: 'privatne klinike u Baru',
 			CityHcLabs_bar:
-				'Mnoge privatne laboratorije primaju uz plaćanje za uobičajene rutinske analize bez uputa, ali specijalizovani testovi mogu tražiti nalog, pripremu ili termin. Provjerite direktno. Unesene analize i dostupne cijene su u odjeljku',
+				'Analize se primaju bez uputa u privatnim laboratorijama. Spisak sa cijenama je u sekciji',
 			CityHcLabsLink_bar: 'analize u Baru',
-			CityHcPharmacy1_bar:
-				'Apoteke su raspoređene po centru i Šušnju; učesnici četa često preporučuju apoteku Lenapharm u Šušnju, gdje se možete sporazumjeti i na ruskom.',
+			CityHcPharmacy1_bar: 'Apoteke su raspoređene po centru i Šušnju.',
+			CityHcLenapharmText_bar: 'Učesnici četa posebno često preporučuju apoteku',
+			CityHcLenapharmAfter_bar: 'u Šušnju — tamo odgovaraju i na ruskom.',
 			CityHcPharmacy2_bar:
-				'Radno vrijeme i dežurstva mijenjaju se, pa otvorenu apoteku provjerite direktno ili kroz zvanične lokalne podatke. Ne idite u hitni prijem samo radi redovnog lijeka; hitna pomoć je za akutnu medicinsku potrebu. Izdavanje na recept prati crnogorska pravila, a strani recept nije garancija.',
+				'Non-stop apoteke možda nema — noću se obratite hitnoj pomoći ili prijemnom odjeljenju bolnice. Ljekovi na recept izdaju se uz recept crnogorskog ljekara.',
 			CityHcCtaButton_bar: 'Klinike u Baru',
 		},
 		'sr-cyrl': {
 			// Заједнички
-			CityHcToc_overview: 'Шта град нуди',
-			CityHcToc_emergency: 'Хитна помоћ',
-			CityHcToc_state: 'Државно здравство',
-			CityHcToc_private: 'Приватне клинике и лабораторије',
-			CityHcToc_pharmacies: 'Апотеке и дежурне службе',
+			'CityHcToc_overview': 'Шта град нуди',
+			'CityHcToc_emergency': 'Хитна помоћ',
+			'CityHcToc_state': 'Државно здравство',
+			'CityHcToc_private': 'Приватне клинике и лабораторије',
+			'CityHcToc_pharmacies': 'Апотеке и дежурне службе',
 			CityHcEmergencyShared:
-				'Код медицинске хитности позовите 124 или 112. Диспечер процјењује хитност и одлучује да ли шаље екипу или савјетује долазак у хитну помоћ. Не претпостављајте да је самостални пут бржи или безбједан: слиједите упутства и не возите код отежаног дисања, бола у грудима, губитка свијести, тешке повреде, напада, знакова можданог удара или брзог погоршања.',
+				'Јединствени број хитне помоћи у Црној Гори је 124. Диспечери говоре црногорски, а обично разумију основни енглески. Екипе углавном излазе на терен у тежим случајевима: ако стање дозвољава, често је брже да сами дођете до хитне помоћи.',
 			CityHcLinkEnd: '.',
+			CityHcWeekendText:
+				'Комплетан списак апотека и клиника у Црној Гори отворених викендом је у посебном',
+			CityHcWeekendLink: 'чланку',
 			CityHcCtaTitle: 'Потребна вам је клиника у вашој близини?',
 			CityHcCtaText:
 				'У каталогу можете филтрирати клинике по граду и језику — са мапом, цијенама и рецензијама.',
@@ -474,18 +514,20 @@ export default {
 				'Љети при дому здравља ради туристичка амбуланта — прегледи уз плаћање за госте без књижице. Дом здравља организује и сезонску вакцинацију против грипа, као и повремене бесплатне акције, нпр. тестирање на ХИВ и хепатитисе.',
 			CityHcState3_budva:
 				'Болничко лијечење становници Будве добијају у Општој болници Котор и у Клиничком центру у Подгорици. За планиране прегледе по књижици потребан је упут изабраног доктора.',
+			CityHcStateCatalog_budva: 'Страница установе на docta.me — адреса, рецензије и услуге:',
+			CityHcStateLink_budva: 'Дом Здравља Будва',
 			CityHcPrivate1_budva:
 				'Приватних клиника и лабораторија у Будви има много: од општих поликлиника до стоматологије и офталмологије. У чету на руском језику најчешће се помињу лабораторија Moj Lab и клинике Milmedika и BonoMedica — све су у нашем каталогу.',
 			CityHcPrivateCatalog_budva:
 				'Актуелни списак са адресама, цијенама и рецензијама налази се у каталогу:',
 			CityHcPrivateLink_budva: 'приватне клинике у Будви',
 			CityHcLabs_budva:
-				'Многе приватне лабораторије примају уз плаћање за уобичајене рутинске анализе без упута, али специјализовани тестови могу тражити налог, припрему или термин. Провјерите директно. Унесене анализе и доступне цијене су у одјељку',
+				'Анализе можете урадити и без упута — уз плаћање, у било којој приватној лабораторији. Списак анализа са цијенама погледајте у секцији',
 			CityHcLabsLink_budva: 'анализе у Будви',
 			CityHcPharmacy1_budva:
 				'Апотека у Будви има много, а у сезони већина ради сваког дана. Љекови на рецепт (прије свега антибиотици) формално се издају уз рецепт црногорског љекара — може га издати и љекар приватне клинике.',
 			CityHcPharmacy2_budva:
-				'Радно вријеме и дежурства апотека мијењају се сезонски; не ослањајте се на чет или наведену нон-стоп апотеку без провјере истог дана. Позовите апотеку или питајте дом здравља. Апотека не замјењује хитну медицинску процјену.',
+				'Учесници четова помињу нон-стоп апотеку код аутобуске станице — то је BENU (Sportska Hala 11), која је и на званичном списку дежурних апотека Montefarma. Распоред се ипак може мијењати, провјерите на лицу мјеста; ноћу је у хитним ситуацијама поузданије отићи право у хитну помоћ.',
 			CityHcCtaButton_budva: 'Клинике у Будви',
 
 			// Подгорица
@@ -507,18 +549,20 @@ export default {
 				'Дом здравља Подгорица је мрежа државних установа примарне заштите (неколико блокова по дјеловима града): општа медицина, педијатрија, лабораторија, центар за ментално здравље.',
 			CityHcState3_podgorica:
 				'Институт за јавно здравље бави се, између осталог, вакцинацијом, укључујући вакцине за путнике. Завод за трансфузију крви прима доноре и ради анализе крвних група.',
+			CityHcStateCatalog_podgorica: 'Страница КЦЦГ на docta.me — одјељења, рецензије и услуге:',
+			CityHcStateLink_podgorica: 'Клинички Центар Црне Горе',
 			CityHcPrivate1_podgorica:
 				'Избор приватне медицине у Подгорици је најшири: приватне болнице са хирургијом и магнетном резонанцом (у чету се најчешће помињу Codra Hospital и поликлинике Hipokrat), лабораторије Moj Lab, Milmedika, Poliklinika Filipović и десеци других.',
 			CityHcPrivateCatalog_podgorica:
 				'Комплетан списак са цијенама и рецензијама је у каталогу:',
 			CityHcPrivateLink_podgorica: 'приватне клинике у Подгорици',
 			CityHcLabs_podgorica:
-				'Многе приватне лабораторије примају уз плаћање за уобичајене рутинске анализе без упута, али специјализовани тестови могу тражити налог, припрему или термин. Провјерите директно. Унесене анализе и доступне цијене су у одјељку',
+				'Анализе се раде приватно без упута у било којој лабораторији. Цијене и адресе су у секцији',
 			CityHcLabsLink_podgorica: 'анализе у Подгорици',
 			CityHcPharmacy1_podgorica:
-				'Подгорица има државне и приватне апотеке, али ноћно дежурство и локација могу се мијењати. Провјерите радно вријеме истог дана директно или кроз локалне званичне информације, не преко старог нон-стоп списка.',
+				'У Подгорици постоје стотине апотека: државни ланац Montefarm и приватни ланци. Три раде нон-стоп: Montefarm „Крушевац" (Булевар Светог Петра Цетињског 45/а), BENU на Московској 22 и Holos 7 на Булевару октобарске револуције 31. Адресе и нон-стоп режим рада могу се промијенити — провјерите прије ноћне посјете.',
 			CityHcPharmacy2_podgorica:
-				'Љекови на рецепт траже рецепт важећи по црногорским правилима. Страни рецепт може бити прихваћен у појединачном случају, али не гарантује издавање и фармацеут може одбити; када је континуитет важан, организујте локалну процјену љекара.',
+				'Многи љекови који се другдје продају слободно овдје траже рецепт црногорског љекара. Ако лијека нема, питајте за аналог по активној супстанци — комерцијални називи се често разликују.',
 			CityHcCtaButton_podgorica: 'Клинике у Подгорици',
 
 			// Котор
@@ -540,18 +584,20 @@ export default {
 				'Дом здравља Котор је државна установа примарне заштите: изабрани доктор, педијатар, лабораторија. Уз здравствену књижицу прегледи су бесплатни, а рецепте за љекове са листе издаје изабрани доктор.',
 			CityHcState3_kotor:
 				'Специјална болница „Васо Ћуковић" у Рисну, на краткој вожњи уз залив, државни је центар за ортопедију, неурохирургију и неурологију. У Котору се налази и државна специјална психијатријска болница.',
+			CityHcStateCatalog_kotor: 'Страница болнице на docta.me — одјељења, рецензије и услуге:',
+			CityHcStateLink_kotor: 'Општа болница Котор',
 			CityHcPrivate1_kotor:
 				'Од приватних служби у четовима се најчешће помиње лабораторија SmartMed у Котору; у Радановићима (општина Котор) ради поликлиника Hipokrat са магнетном резонанцом. По шири избор приватних специјалиста становници Котора обично иду у Будву или Подгорицу.',
 			CityHcPrivateCatalog_kotor:
 				'Шта постоји у самом граду погледајте у каталогу:',
 			CityHcPrivateLink_kotor: 'приватне клинике у Котору',
 			CityHcLabs_kotor:
-				'Многе приватне лабораторије примају уз плаћање за уобичајене рутинске анализе без упута, али специјализовани тестови могу тражити налог, припрему или термин. Провјерите директно. Унесене анализе и доступне цијене су у одјељку',
+				'Приватне лабораторије примају анализе без упута. Списак са цијенама је у секцији',
 			CityHcLabsLink_kotor: 'анализе у Котору',
 			CityHcPharmacy1_kotor:
 				'Апотеке раде у Старом граду и новијим дјеловима; у сезони је радно вријеме дуже. Нон-стоп апотеке у Котору можда нема — залиху сталних љекова држите код куће.',
 			CityHcPharmacy2_kotor:
-				'Радно вријеме и дежурства мијењају се, нарочито сезонски. Провјерите отворену апотеку директно или кроз званичне локалне податке; не ослањајте се на тврдњу да нон-стоп апотеке сигурно нема. За редовну терапију држите закониту залиху, а код акутних симптома користите медицинску службу.',
+				'Ноћу се у акутној ситуацији обратите хитној помоћи или пријемном одјељењу болнице: тамо ће вас прегледати и дати прве љекове.',
 			CityHcCtaButton_kotor: 'Клинике у Котору',
 
 			// Бар
@@ -573,30 +619,36 @@ export default {
 				'Дом здравља Бар је примарни ниво: изабрани доктор, педијатрија, лабораторија, вакцинација (укључујући неке вакцине за путнике).',
 			CityHcState3_bar:
 				'Специјалистички прегледи којих нема у Бару раде се по упуту у Подгорици — Клинички центар је на око сат времена вожње.',
+			CityHcStateCatalog_bar: 'Страница болнице на docta.me — одјељења, рецензије и услуге:',
+			CityHcStateLink_bar: 'Општа болница „Блажо Орландић"',
 			CityHcPrivate1_bar:
 				'Од приватних установа у четовима се најчешће помињу поликлиника Novi Standard, дневна болница Dr Zejnilović и Medical Vraneš; има много приватних стоматолога. У Сутомору приватна болница A3 Medical нуди CT и магнетну резонанцу.',
 			CityHcPrivateCatalog_bar:
 				'Комплетан списак са цијенама и рецензијама је у каталогу:',
 			CityHcPrivateLink_bar: 'приватне клинике у Бару',
 			CityHcLabs_bar:
-				'Многе приватне лабораторије примају уз плаћање за уобичајене рутинске анализе без упута, али специјализовани тестови могу тражити налог, припрему или термин. Провјерите директно. Унесене анализе и доступне цијене су у одјељку',
+				'Анализе се примају без упута у приватним лабораторијама. Списак са цијенама је у секцији',
 			CityHcLabsLink_bar: 'анализе у Бару',
-			CityHcPharmacy1_bar:
-				'Апотеке су распоређене по центру и Шушњу; учесници чета често препоручују апотеку Lenapharm у Шушњу, гдје се можете споразумјети и на руском.',
+			CityHcPharmacy1_bar: 'Апотеке су распоређене по центру и Шушњу.',
+			CityHcLenapharmText_bar: 'Учесници чета посебно често препоручују апотеку',
+			CityHcLenapharmAfter_bar: 'у Шушњу — тамо одговарају и на руском.',
 			CityHcPharmacy2_bar:
-				'Радно вријеме и дежурства мијењају се, па отворену апотеку провјерите директно или кроз званичне локалне податке. Не идите у хитни пријем само ради редовног лијека; хитна помоћ је за акутну медицинску потребу. Издавање на рецепт прати црногорска правила, а страни рецепт није гаранција.',
+				'Нон-стоп апотеке можда нема — ноћу се обратите хитној помоћи или пријемном одјељењу болнице. Љекови на рецепт издају се уз рецепт црногорског љекара.',
 			CityHcCtaButton_bar: 'Клинике у Бару',
 		},
-		de: {
+		'de': {
 			// Gemeinsam
-			CityHcToc_overview: 'Was die Stadt bietet',
-			CityHcToc_emergency: 'Notfallversorgung',
-			CityHcToc_state: 'Staatliche Medizin',
-			CityHcToc_private: 'Private Kliniken und Labore',
-			CityHcToc_pharmacies: 'Apotheken und Notdienste',
+			'CityHcToc_overview': 'Was die Stadt bietet',
+			'CityHcToc_emergency': 'Notfallversorgung',
+			'CityHcToc_state': 'Staatliche Medizin',
+			'CityHcToc_private': 'Private Kliniken und Labore',
+			'CityHcToc_pharmacies': 'Apotheken und Notdienste',
 			CityHcEmergencyShared:
-				'Bei medizinischem Notfall 124 oder 112 anrufen. Der Disponent beurteilt die Dringlichkeit und entscheidet über Einsatz oder Anfahrt zur hitna pomoć. Gehen Sie nicht davon aus, dass eigenes Fahren schneller oder sicher ist: Anweisungen folgen und bei Atemnot, Brustschmerz, Bewusstlosigkeit, schwerer Verletzung, Krampfanfall, Schlaganfallzeichen oder rascher Verschlechterung nicht selbst fahren.',
+				'Die landesweite Notrufnummer für den Rettungsdienst in Montenegro ist 124. Die Disponenten sprechen Montenegrinisch und verstehen meist einfaches Englisch. Der Rettungsdienst fährt vor allem zu schweren Fällen raus: Wenn der Zustand es erlaubt, ist es oft schneller, selbst zur Notaufnahme (hitna pomoć) zu fahren.',
 			CityHcLinkEnd: '.',
+			CityHcWeekendText:
+				'Eine vollständige Liste der am Wochenende geöffneten Apotheken und Kliniken in Montenegro finden Sie in einem eigenen',
+			CityHcWeekendLink: 'Artikel',
 			CityHcCtaTitle: 'Brauchen Sie eine Klinik in Ihrer Nähe?',
 			CityHcCtaText:
 				'Im Katalog können Sie Kliniken nach Stadt und Sprache filtern — mit Karte, Preisen und Bewertungen.',
@@ -620,18 +672,20 @@ export default {
 				'Im Sommer arbeitet dort eine Touristenambulanz (turistička ambulanta) — kostenpflichtige Termine für Gäste ohne Gesundheitskarte. Außerdem gibt es saisonale Grippeimpfungen und gelegentlich kostenlose Aktionen, etwa HIV- und Hepatitis-Tests.',
 			CityHcState3_budva:
 				'Krankenhausversorgung erhalten die Einwohner Budvas im Allgemeinen Krankenhaus Kotor und im Klinischen Zentrum in Podgorica. Geplante Untersuchungen über die Gesundheitskarte erfordern eine Überweisung des gewählten Arztes.',
+			CityHcStateCatalog_budva: 'Die Seite der Einrichtung auf docta.me — Adresse, Bewertungen und Leistungen:',
+			CityHcStateLink_budva: 'Dom Zdravlja Budva',
 			CityHcPrivate1_budva:
 				'Private Kliniken und Labore gibt es in Budva viele — von allgemeinen Polikliniken bis zu Zahnmedizin und Augenheilkunde. Im russischsprachigen Chat werden am häufigsten das Labor Moj Lab sowie die Kliniken Milmedika und BonoMedica genannt — alle sind in unserem Katalog.',
 			CityHcPrivateCatalog_budva:
 				'Die aktuelle Liste mit Adressen, Preisen und Bewertungen finden Sie im Katalog:',
 			CityHcPrivateLink_budva: 'Privatkliniken in Budva',
 			CityHcLabs_budva:
-				'Viele Privatlabore nehmen Selbstzahler für übliche Routinetests ohne Überweisung an; Spezialtests können jedoch Anordnung, Vorbereitung oder Termin erfordern. Direkt bestätigen. Eingetragene Tests und verfügbare Preise stehen im Bereich',
+				'Analysen sind auch ohne ärztliche Überweisung möglich — kostenpflichtig in jedem privaten Labor. Die Liste der Tests mit Preisen finden Sie im Bereich',
 			CityHcLabsLink_budva: 'Laboranalysen in Budva',
 			CityHcPharmacy1_budva:
 				'Apotheken gibt es in Budva viele, in der Saison arbeiten die meisten täglich. Verschreibungspflichtige Medikamente (vor allem Antibiotika) erfordern formal ein Rezept eines montenegrinischen Arztes — auch ein Arzt einer Privatklinik kann es ausstellen.',
 			CityHcPharmacy2_budva:
-				'Apothekenzeiten und Bereitschaft ändern sich saisonal; nicht ohne tagesaktuelle Bestätigung auf Chatbericht oder genannte 24-Stunden-Apotheke vertrauen. Direkt bei der Apotheke oder dem dom zdravlja nachfragen. Eine Apotheke ersetzt keine Notfalluntersuchung.',
+				'Chat-Teilnehmer verweisen auf eine 24-Stunden-Apotheke am Busbahnhof — die BENU (Sportska Hala 11), die auch auf Montefarms offizieller Notdienstliste steht. Die Zeiten können sich trotzdem ändern, fragen Sie vor Ort nach; nachts ist es im Akutfall zuverlässiger, direkt zur hitna pomoć zu fahren.',
 			CityHcCtaButton_budva: 'Kliniken in Budva',
 
 			// Podgorica
@@ -653,18 +707,20 @@ export default {
 				'Das Dom zdravlja Podgorica ist ein Netz staatlicher Gesundheitszentren (mehrere Blöcke in verschiedenen Stadtteilen): Allgemeinmedizin, Pädiatrie, Labor, Zentrum für psychische Gesundheit.',
 			CityHcState3_podgorica:
 				'Das Institut für öffentliche Gesundheit (Institut za javno zdravlje) übernimmt unter anderem Impfungen, einschließlich Reiseimpfungen. Das Institut für Bluttransfusion (Zavod za transfuziju krvi) nimmt Spender an und bestimmt Blutgruppen.',
+			CityHcStateCatalog_podgorica: 'Die Seite des KCCG auf docta.me — Abteilungen, Bewertungen und Leistungen:',
+			CityHcStateLink_podgorica: 'Klinički Centar Crne Gore',
 			CityHcPrivate1_podgorica:
 				'Die Auswahl an privater Medizin ist in Podgorica am größten: Privatkrankenhäuser mit Chirurgie und MRT (im Chat werden am häufigsten Codra Hospital und die Hipokrat-Polikliniken genannt), die Labore Moj Lab, Milmedika, Poliklinika Filipović und Dutzende weitere.',
 			CityHcPrivateCatalog_podgorica:
 				'Die vollständige Liste mit Preisen und Bewertungen finden Sie im Katalog:',
 			CityHcPrivateLink_podgorica: 'Privatkliniken in Podgorica',
 			CityHcLabs_podgorica:
-				'Viele Privatlabore nehmen Selbstzahler für übliche Routinetests ohne Überweisung an; Spezialtests können jedoch Anordnung, Vorbereitung oder Termin erfordern. Direkt bestätigen. Eingetragene Tests und verfügbare Preise stehen im Bereich',
+				'Analysen sind ohne Überweisung in jedem privaten Labor möglich. Preise und Adressen finden Sie im Bereich',
 			CityHcLabsLink_podgorica: 'Laboranalysen in Podgorica',
 			CityHcPharmacy1_podgorica:
-				'Podgorica hat staatliche und private Apotheken, doch Nachtdienst und Standort können wechseln. Öffnung am selben Tag direkt oder über lokale amtliche Information prüfen, nicht über eine alte 24-Stunden-Liste.',
+				'In Podgorica gibt es Hunderte Apotheken: die staatliche Kette Montefarm und private Ketten. Drei sind rund um die Uhr geöffnet: Montefarm „Kruševac" (Bulevar Svetog Petra Cetinjskog 45/a), BENU in der Moskovska 22 und Holos 7 im Bulevar Oktobarske Revolucije 31. Adressen und der 24-Stunden-Betrieb können sich ändern — vor einem späten Besuch bitte bestätigen.',
 			CityHcPharmacy2_podgorica:
-				'Rezeptpflichtige Arzneimittel erfordern ein nach montenegrinischen Regeln gültiges Rezept. Ein ausländisches Rezept kann im Einzelfall akzeptiert werden, garantiert aber keine Abgabe und der Apotheker kann ablehnen; bei wichtiger Therapiefortsetzung lokale ärztliche Beurteilung organisieren.',
+				'Viele anderswo frei verkäufliche Medikamente erfordern hier ein montenegrinisches Rezept. Ist ein Medikament nicht vorrätig, fragen Sie nach einem Analogon nach Wirkstoff — die Handelsnamen unterscheiden sich oft.',
 			CityHcCtaButton_podgorica: 'Kliniken in Podgorica',
 
 			// Kotor
@@ -686,18 +742,20 @@ export default {
 				'Das Dom zdravlja Kotor ist das staatliche Gesundheitszentrum: gewählter Arzt, Kinderarzt, Labor. Mit der Gesundheitskarte sind Besuche kostenlos; Rezepte für subventionierte Medikamente stellt der gewählte Arzt aus.',
 			CityHcState3_kotor:
 				'Die Spezialklinik Vaso Ćuković in Risan, eine kurze Fahrt die Bucht entlang, ist das nationale Zentrum für Orthopädie, Neurochirurgie und Neurologie. In Kotor gibt es außerdem die staatliche psychiatrische Spezialklinik.',
+			CityHcStateCatalog_kotor: 'Die Seite des Krankenhauses auf docta.me — Abteilungen, Bewertungen und Leistungen:',
+			CityHcStateLink_kotor: 'Opšta bolnica Kotor',
 			CityHcPrivate1_kotor:
 				'Von den privaten Angeboten wird im Chat am häufigsten das Labor SmartMed in Kotor genannt; in Radanovići (Gemeinde Kotor) arbeitet eine Hipokrat-Poliklinik mit MRT. Für eine größere Auswahl privater Spezialisten fahren die Einwohner Kotors meist nach Budva oder Podgorica.',
 			CityHcPrivateCatalog_kotor:
 				'Was es in der Stadt selbst gibt, sehen Sie im Katalog:',
 			CityHcPrivateLink_kotor: 'Privatkliniken in Kotor',
 			CityHcLabs_kotor:
-				'Viele Privatlabore nehmen Selbstzahler für übliche Routinetests ohne Überweisung an; Spezialtests können jedoch Anordnung, Vorbereitung oder Termin erfordern. Direkt bestätigen. Eingetragene Tests und verfügbare Preise stehen im Bereich',
+				'Private Labore nehmen Analysen ohne Überweisung an. Die Liste mit Preisen finden Sie im Bereich',
 			CityHcLabsLink_kotor: 'Laboranalysen in Kotor',
 			CityHcPharmacy1_kotor:
 				'Apotheken gibt es in der Altstadt und in den neueren Vierteln; in der Saison sind die Öffnungszeiten länger. Eine 24-Stunden-Apotheke gibt es in Kotor möglicherweise nicht — halten Sie einen Vorrat Ihrer Dauermedikamente zu Hause.',
 			CityHcPharmacy2_kotor:
-				'Öffnungszeiten und Bereitschaft ändern sich, besonders saisonal. Offene Apotheke direkt oder über amtliche lokale Angaben prüfen; nicht auf die Aussage vertrauen, es gebe sicher keinen Nachtdienst. Für Dauertherapie einen legalen Vorrat planen und bei akuten Symptomen medizinische Hilfe nutzen.',
+				'Nachts wenden Sie sich im Akutfall an die hitna pomoć oder die Krankenhausaufnahme: Dort werden Sie untersucht und erhalten die ersten Medikamente.',
 			CityHcCtaButton_kotor: 'Kliniken in Kotor',
 
 			// Bar
@@ -719,30 +777,36 @@ export default {
 				'Das Dom zdravlja Bar ist die Grundversorgung: gewählter Arzt, Pädiatrie, Labor, Impfungen (einschließlich einiger Reiseimpfungen).',
 			CityHcState3_bar:
 				'Spezialuntersuchungen, die es in Bar nicht gibt, werden per Überweisung in Podgorica gemacht — das Klinische Zentrum ist rund eine Stunde entfernt.',
+			CityHcStateCatalog_bar: 'Die Seite des Krankenhauses auf docta.me — Abteilungen, Bewertungen und Leistungen:',
+			CityHcStateLink_bar: 'Opšta Bolnica „Blažo Orlandić"',
 			CityHcPrivate1_bar:
 				'Von den privaten Einrichtungen nennt der Chat am häufigsten die Poliklinik Novi Standard, die Tagesklinik Dr Zejnilović und Medical Vraneš; dazu viele private Zahnarztpraxen. In Sutomore bietet das private Krankenhaus A3 Medical CT und MRT an.',
 			CityHcPrivateCatalog_bar:
 				'Die vollständige Liste mit Preisen und Bewertungen finden Sie im Katalog:',
 			CityHcPrivateLink_bar: 'Privatkliniken in Bar',
 			CityHcLabs_bar:
-				'Viele Privatlabore nehmen Selbstzahler für übliche Routinetests ohne Überweisung an; Spezialtests können jedoch Anordnung, Vorbereitung oder Termin erfordern. Direkt bestätigen. Eingetragene Tests und verfügbare Preise stehen im Bereich',
+				'Analysen werden in privaten Laboren ohne Überweisung angenommen. Die Liste mit Preisen finden Sie im Bereich',
 			CityHcLabsLink_bar: 'Laboranalysen in Bar',
-			CityHcPharmacy1_bar:
-				'Apotheken verteilen sich über das Zentrum und Šušanj; Chat-Teilnehmer empfehlen oft die Apotheke Lenapharm in Šušanj, wo man sich auch auf Russisch verständigen kann.',
+			CityHcPharmacy1_bar: 'Apotheken verteilen sich über das Zentrum und Šušanj.',
+			CityHcLenapharmText_bar: 'Chat-Teilnehmer empfehlen besonders oft die Apotheke',
+			CityHcLenapharmAfter_bar: 'in Šušanj — dort wird auch auf Russisch geantwortet.',
 			CityHcPharmacy2_bar:
-				'Öffnungszeiten und Bereitschaft ändern sich; offene Apotheke direkt oder amtlich prüfen. Nicht nur für ein reguläres Arzneimittel zur Notaufnahme gehen; Notfallversorgung ist für akuten medizinischen Bedarf. Rezeptabgabe folgt montenegrinischen Regeln, ein ausländisches Rezept ist keine Garantie.',
+				'Eine 24-Stunden-Apotheke gibt es möglicherweise nicht — nachts wenden Sie sich an die hitna pomoć oder die Krankenhausaufnahme. Verschreibungspflichtige Medikamente gibt es gegen Rezept eines montenegrinischen Arztes.',
 			CityHcCtaButton_bar: 'Kliniken in Bar',
 		},
-		tr: {
+		'tr': {
 			// Ortak
-			CityHcToc_overview: 'Şehirde neler var',
-			CityHcToc_emergency: 'Acil yardım',
-			CityHcToc_state: 'Devlet sağlık hizmetleri',
-			CityHcToc_private: 'Özel klinikler ve laboratuvarlar',
-			CityHcToc_pharmacies: 'Eczaneler ve nöbetçi hizmetler',
+			'CityHcToc_overview': 'Şehirde neler var',
+			'CityHcToc_emergency': 'Acil yardım',
+			'CityHcToc_state': 'Devlet sağlık hizmetleri',
+			'CityHcToc_private': 'Özel klinikler ve laboratuvarlar',
+			'CityHcToc_pharmacies': 'Eczaneler ve nöbetçi hizmetler',
 			CityHcEmergencyShared:
-				'Tıbbi acilde 124 veya 112 numarasını arayın. Operatör aciliyeti değerlendirip ekip veya hitna pomoć noktasına gidiş önerisine karar verir. Kendi imkânınızla gitmenin her zaman hızlı veya güvenli olduğunu varsaymayın: talimatları izleyin ve nefes darlığı, göğüs ağrısı, bilinç kaybı, ağır yaralanma, nöbet, inme belirtisi veya hızlı kötüleşmede araç kullanmayın.',
+				"Karadağ'da ambulansın ülke çapındaki numarası 124'tür. Operatörler Karadağca konuşur, genellikle temel İngilizceyi anlar. Ambulans çoğunlukla ağır vakalara çıkar: durumunuz elveriyorsa, acil servise (hitna pomoć) kendi imkanınızla gitmek çoğu zaman daha hızlıdır.",
 			CityHcLinkEnd: '.',
+			CityHcWeekendText:
+				"Karadağ genelinde hafta sonu açık eczane ve kliniklerin tam listesi ayrı bir",
+			CityHcWeekendLink: 'makalede',
 			CityHcCtaTitle: 'Yakınınızda bir klinik mi arıyorsunuz?',
 			CityHcCtaText:
 				'Katalogda klinikleri şehre ve dile göre filtreleyebilirsiniz — harita, fiyatlar ve yorumlarla.',
@@ -766,18 +830,20 @@ export default {
 				'Yazın burada turist polikliniği çalışır — kartı olmayan ziyaretçiler için ücretli muayene. Dom zdravlja ayrıca mevsimlik grip aşısı ve zaman zaman HIV ile hepatit testi gibi ücretsiz kampanyalar düzenler.',
 			CityHcState3_budva:
 				"Budva sakinleri hastane tedavisini Kotor Genel Hastanesi'nde ve Podgorica'daki Klinik Merkez'de alır. Kartla planlı tetkikler için seçili doktorun sevki gerekir.",
+			CityHcStateCatalog_budva: "Kurumun docta.me'deki sayfası — adres, yorumlar ve hizmetler:",
+			CityHcStateLink_budva: 'Dom Zdravlja Budva',
 			CityHcPrivate1_budva:
 				"Budva'da çok sayıda özel klinik ve laboratuvar vardır: genel polikliniklerden diş hekimliği ve göz kliniklerine kadar. Rusça sohbet grubunda en sık Moj Lab laboratuvarı ile Milmedika ve BonoMedica klinikleri anılır — hepsi kataloğumuzdadır.",
 			CityHcPrivateCatalog_budva:
 				'Adresler, fiyatlar ve yorumlarla güncel liste katalogda:',
 			CityHcPrivateLink_budva: "Budva'daki özel klinikler",
 			CityHcLabs_budva:
-				'Birçok özel laboratuvar yaygın rutin testlerde kendi ödeyen hastaları sevksiz kabul eder; uzman testler istem, hazırlık veya randevu gerektirebilir. Doğrudan doğrulayın. Kayıtlı testler ve mevcut fiyatlar şu bölümde',
+				'Tahlilleri doktor sevki olmadan da — ücretli olarak herhangi bir özel laboratuvarda — yaptırabilirsiniz. Fiyatlarıyla tahlil listesi şu bölümde:',
 			CityHcLabsLink_budva: "Budva'da tahliller",
 			CityHcPharmacy1_budva:
 				"Budva'da çok eczane vardır; sezonda çoğu her gün açıktır. Reçeteli ilaçlar (özellikle antibiyotikler) resmen Karadağlı bir doktorun reçetesiyle satılır — özel klinik doktoru da yazabilir.",
 			CityHcPharmacy2_budva:
-				'Eczane saatleri ve nöbet listesi mevsime göre değişir; aynı gün doğrulamadan sohbet bildirimi veya adı verilen gece eczanesine güvenmeyin. Eczaneyi ya da dom zdravlja kurumunu arayın. Eczane acil değerlendirmenin yerini tutmaz.',
+				"Sohbet üyeleri otogar yakınındaki 24 saat açık eczaneden söz ediyor — bu, Montefarm'ın resmi nöbetçi listesinde de yer alan BENU (Sportska Hala 11). Yine de saatler değişebilir, yerinde teyit edin; gece acil durumda doğrudan hitna pomoć'a gitmek daha güvenilirdir.",
 			CityHcCtaButton_budva: 'Budva klinikleri',
 
 			// Podgorica
@@ -799,18 +865,20 @@ export default {
 				'Dom zdravlja Podgorica, farklı semtlerdeki birkaç bloktan oluşan devlet birinci basamak ağıdır: dahiliye, pediatri, laboratuvar, ruh sağlığı merkezi.',
 			CityHcState3_podgorica:
 				'Halk Sağlığı Enstitüsü (Institut za javno zdravlje) seyahat aşıları dahil aşılamayla ilgilenir. Kan Transfüzyonu Enstitüsü (Zavod za transfuziju krvi) donör kabul eder ve kan grubu testleri yapar.',
+			CityHcStateCatalog_podgorica: "KCCG'nin docta.me'deki sayfası — bölümler, yorumlar ve hizmetler:",
+			CityHcStateLink_podgorica: 'Klinički Centar Crne Gore',
 			CityHcPrivate1_podgorica:
 				"Podgorica'da özel tıp seçenekleri en geniştir: cerrahi ve MR yapılan özel hastaneler (sohbette en sık Codra Hospital ve Hipokrat poliklinikleri anılır), Moj Lab laboratuvarları, Milmedika, Poliklinika Filipović ve onlarcası.",
 			CityHcPrivateCatalog_podgorica:
-				'Kayıtlı klinikler, mevcut fiyatlar ve yorumlar katalogdadır; kapsam tam değildir, hizmeti doğrudan doğrulayın:',
+				'Fiyatlar ve yorumlarla tam liste katalogda:',
 			CityHcPrivateLink_podgorica: "Podgorica'daki özel klinikler",
 			CityHcLabs_podgorica:
-				'Birçok özel laboratuvar yaygın rutin testlerde kendi ödeyen hastaları sevksiz kabul eder; uzman testler istem, hazırlık veya randevu gerektirebilir. Doğrudan doğrulayın. Kayıtlı testler ve mevcut fiyatlar şu bölümde',
+				'Tahliller herhangi bir özel laboratuvarda sevksiz, ücretli yapılır. Fiyatlar ve adresler şu bölümde:',
 			CityHcLabsLink_podgorica: "Podgorica'da tahliller",
 			CityHcPharmacy1_podgorica:
-				'Podgorica devlet ve özel eczanelere sahiptir, ancak gece nöbeti ve konumu değişebilir. Aynı gün saatleri doğrudan veya yerel resmi bilgiden doğrulayın; eski gece listesine güvenmeyin.',
+				"Podgorica'da yüzlerce eczane vardır: devlet zinciri Montefarm ve özel zincirler. Üçü 24 saat açıktır: Montefarm „Kruševac\" (Bulevar Svetog Petra Cetinjskog 45/a), Moskovska 22'deki BENU ve Bulevar Oktobarske Revolucije 31'deki Holos 7. Adresler ve 24 saat açık olma durumu değişebilir — geç saatte gitmeden önce teyit edin.",
 			CityHcPharmacy2_podgorica:
-				'Reçeteli ilaçlar Karadağ kurallarına uygun geçerli reçete gerektirir. Yabancı reçete tekil durumda kabul edilebilir, ancak ilacın verilmesini garanti etmez ve eczacı reddedebilir; tedavi devamlılığı önemliyse yerel hekim değerlendirmesi planlayın.',
+				'Başka yerlerde serbest satılan birçok ilaç burada Karadağlı doktor reçetesi ister. İlaç stokta yoksa etken maddeye göre muadilini sorun — ticari adlar sıkça farklıdır.',
 			CityHcCtaButton_podgorica: 'Podgorica klinikleri',
 
 			// Kotor
@@ -832,18 +900,20 @@ export default {
 				'Dom zdravlja Kotor devlet birinci basamak merkezidir: seçili doktor, çocuk doktoru, laboratuvar. Sağlık kartıyla muayeneler ücretsizdir; listedeki ilaçların reçetesini seçili doktor yazar.',
 			CityHcState3_kotor:
 				"Körfez boyunca kısa bir sürüş mesafesindeki Risan'daki Vaso Ćuković ihtisas hastanesi, ortopedi, beyin cerrahisi ve nörolojide ulusal merkezdir. Kotor'da ayrıca devlet ihtisas psikiyatri hastanesi bulunur.",
+			CityHcStateCatalog_kotor: "Hastanenin docta.me'deki sayfası — bölümler, yorumlar ve hizmetler:",
+			CityHcStateLink_kotor: 'Opšta bolnica Kotor',
 			CityHcPrivate1_kotor:
 				"Özel hizmetlerden sohbetlerde en sık Kotor'daki SmartMed laboratuvarı anılır; Radanovići'de (Kotor belediyesi) MR yapılan bir Hipokrat polikliniği çalışır. Daha geniş özel uzman seçeneği için Kotorlular genellikle Budva'ya veya Podgorica'ya gider.",
 			CityHcPrivateCatalog_kotor:
 				'Şehrin kendisinde ne olduğunu katalogda görün:',
 			CityHcPrivateLink_kotor: "Kotor'daki özel klinikler",
 			CityHcLabs_kotor:
-				'Birçok özel laboratuvar yaygın rutin testlerde kendi ödeyen hastaları sevksiz kabul eder; uzman testler istem, hazırlık veya randevu gerektirebilir. Doğrudan doğrulayın. Kayıtlı testler ve mevcut fiyatlar şu bölümde',
+				'Özel laboratuvarlar sevksiz tahlil kabul eder. Fiyatlı liste şu bölümde:',
 			CityHcLabsLink_kotor: "Kotor'da tahliller",
 			CityHcPharmacy1_kotor:
 				"Eczaneler Eski Şehir'de ve yeni semtlerde çalışır; sezonda çalışma saatleri uzar. Kotor'da gece açık eczane olmayabilir — düzenli ilaçlarınızın yedeğini evde bulundurun.",
 			CityHcPharmacy2_kotor:
-				'Saatler ve nöbetler özellikle mevsimsel değişir. Açık eczaneyi doğrudan veya yerel resmi bilgiden doğrulayın; gece eczanesi kesinlikle yoktur sözüne güvenmeyin. Sürekli tedavi için yasal stok planlayın, akut belirtide tıbbi hizmet kullanın.',
+				"Gece akut bir durumda hitna pomoć'a veya hastanenin acil kabulüne başvurun: orada muayene edilir ve ilk ilaçlar verilir.",
 			CityHcCtaButton_kotor: 'Kotor klinikleri',
 
 			// Bar
@@ -865,18 +935,20 @@ export default {
 				'Dom zdravlja Bar birinci basamaktır: seçili doktor, pediatri, laboratuvar, aşılama (bazı seyahat aşıları dahil).',
 			CityHcState3_bar:
 				"Bar'da olmayan uzmanlık tetkikleri sevkle Podgorica'da yapılır — Klinik Merkez yaklaşık bir saat uzaklıktadır.",
+			CityHcStateCatalog_bar: "Hastanenin docta.me'deki sayfası — bölümler, yorumlar ve hizmetler:",
+			CityHcStateLink_bar: 'Opšta Bolnica "Blažo Orlandić"',
 			CityHcPrivate1_bar:
-				"Özel kurumlardan sohbetlerde en sık Novi Standard polikliniği, Dr Zejnilović gündüz hastanesi ve Medical Vraneš anılır; çok sayıda özel diş kliniği vardır. Sutomore'deki özel A3 Medical hastanesi BT ve MR sunar.",
-			CityHcPrivateCatalog_bar:
-				'Kayıtlı klinikler, mevcut fiyatlar ve yorumlar katalogdadır; kapsam tam değildir, hizmeti doğrudan doğrulayın:',
+				'Özel kurumlardan sohbetlerde en sık Novi Standard polikliniği, Dr Zejnilović gündüz hastanesi ve Medical Vraneš anılır; çok sayıda özel diş kliniği vardır. Sutomore\'deki özel A3 Medical hastanesi BT ve MR sunar.',
+			CityHcPrivateCatalog_bar: 'Fiyatlar ve yorumlarla tam liste katalogda:',
 			CityHcPrivateLink_bar: "Bar'daki özel klinikler",
 			CityHcLabs_bar:
-				'Birçok özel laboratuvar yaygın rutin testlerde kendi ödeyen hastaları sevksiz kabul eder; uzman testler istem, hazırlık veya randevu gerektirebilir. Doğrudan doğrulayın. Kayıtlı testler ve mevcut fiyatlar şu bölümde',
+				'Özel laboratuvarlar sevksiz tahlil kabul eder. Fiyatlı liste şu bölümde:',
 			CityHcLabsLink_bar: "Bar'da tahliller",
-			CityHcPharmacy1_bar:
-				"Eczaneler merkezde ve Šušanj'da bulunur; sohbet üyeleri Rusça anlaşılabilen Šušanj'daki Lenapharm eczanesini sık önerir.",
+			CityHcPharmacy1_bar: "Eczaneler merkezde ve Šušanj'da bulunur.",
+			CityHcLenapharmText_bar: 'Sohbet üyeleri özellikle sık şu eczaneyi önerir:',
+			CityHcLenapharmAfter_bar: "Šušanj'da — orada Rusça da yanıt verirler.",
 			CityHcPharmacy2_bar:
-				'Saatler ve nöbetler değişir; açık eczaneyi doğrudan veya resmi yerel bilgiden doğrulayın. Yalnız rutin ilaç için acil servise gitmeyin; acil bakım akut tıbbi gereksinim içindir. Reçeteli verme Karadağ kurallarına tabidir ve yabancı reçete garanti değildir.',
+				"Gece açık eczane olmayabilir — gece hitna pomoć'a veya hastanenin acil kabulüne başvurun. Reçeteli ilaçlar Karadağlı doktor reçetesiyle satılır.",
 			CityHcCtaButton_bar: 'Bar klinikleri',
 		},
 	},

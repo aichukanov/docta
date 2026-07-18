@@ -5,23 +5,23 @@
 // и дозировке препаратов. Актуальность: июль 2026.
 export default {
 	messages: {
-		en: {
+		'en': {
 			MentalHealthTitle:
 				'Psychologists, psychiatrists and antidepressants in Montenegro',
 			MentalHealthDescription:
 				'How mental health care works in Montenegro: state mental health centers and psychiatric hospitals, finding a therapist who speaks your language, continuing your medication after relocation, prices with and without the zdravstvena knjižica, and where to turn in a crisis.',
 
-			MhmToc_system: 'How mental health care is organized',
-			MhmToc_therapy: 'Therapy: finding a specialist in your language',
-			MhmToc_prescriptions: 'Prescriptions: continuing treatment after moving',
-			MhmToc_costs: 'What it costs: with and without a knjižica',
-			MhmToc_crisis: 'Crisis situations: where to get urgent help',
-			MhmToc_sources: 'Useful contacts and sources',
+			'MhmToc_system': 'How mental health care is organized',
+			'MhmToc_therapy': 'Therapy: finding a specialist in your language',
+			'MhmToc_prescriptions': 'Prescriptions: continuing treatment after moving',
+			'MhmToc_costs': 'What it costs: with and without a knjižica',
+			'MhmToc_crisis': 'Crisis situations: where to get urgent help',
+			'MhmToc_sources': 'Useful contacts and sources',
 
 			MhmSystem1:
 				'Taking care of your mental health is as normal a part of medicine as treating any other condition, and Montenegro has dedicated public infrastructure for it:',
 			MhmSystemLevel1:
-				'Centri za mentalno zdravlje — mental health centers within the dom zdravlja primary-care network. Staffing, available services and opening hours vary by municipality. A 2022 review listed services in seven municipalities, but that is a historical snapshot rather than a current directory; confirm the available team and hours with your local dom zdravlja;',
+				'Centri za mentalno zdravlje — mental health centers at the dom zdravlja primary care centers: outpatient teams of a psychiatrist, a psychologist and a social worker. As of the latest available review (2022) they were actually functioning in seven municipalities — Podgorica, Bar, Berane, Bijelo Polje, Nikšić, Kotor and Pljevlja;',
 			MhmSystemLevel2:
 				'Klinika za psihijatriju of the Clinical Center of Montenegro (KCCG) in Podgorica and the psychiatric ward of the general hospital in Nikšić — inpatient psychiatric treatment;',
 			MhmSystemLevel3:
@@ -34,44 +34,43 @@ export default {
 			MhmSystem3End: '.',
 
 			MhmTherapy1:
-				'A quick note on terms: a psychiatrist is a medical doctor and may diagnose and prescribe. A psychologist is not a physician unless separately medically qualified. “Psychotherapist” describes a type of training and work and may refer to either a physician or a non-physician; prescribing depends on a medical licence, not on the psychotherapist title. Seeing any of them is ordinary self-care, not a “last resort”.',
+				'A quick note on terms: a psychiatrist is a medical doctor — they diagnose and prescribe medication; psychologists and psychotherapists work through talk therapy and do not issue prescriptions. Seeing any of them is ordinary self-care, not a “last resort”.',
 			MhmTherapy2:
 				'State insurance covers psychiatric care — consultations, hospital treatment and medications from the Fund’s list; consultations at the mental health centers are free for the insured too. What is scarce is regular long-term talk therapy: the centers are severely understaffed, so ongoing psychotherapy is almost always private.',
 			MhmTherapy3:
-				'Russian- and English-speaking psychologists and psychotherapists work in person in several Montenegrin cities and online. Ads and expat-chat reports at the time of review often mentioned €40–60 per session; this is an anecdotal range, not a current quote. Rules for professional titles, licensing and cross-border online practice differ, so check the provider’s base profession, degree, licence or registration where applicable, psychotherapy training, supervision, confidentiality policy and complaint route. Support groups are also reported in Budva and Bar; confirm the current schedule with the organiser.',
+				'There are many Russian- and English-speaking psychologists and psychotherapists around Montenegro: some see clients in person in Podgorica, Budva and Bar, most work online. Judging by ads and patient experience in expat chats, a session usually costs €40–60. Keep in mind that this market is unregulated — anyone can advertise as a “therapist” in expat chats, so check education, methods and experience before committing. Support groups exist too: Alcoholics Anonymous meetings in Budva, a support group for parents of children with special needs in Bar.',
 			MhmTherapy4: 'You can look for in-person specialists in our ',
 			MhmTherapy4Link: 'doctors catalog',
-			MhmTherapy4Mid:
-				', and clinics with a psychiatrist or psychologist in the ',
+			MhmTherapy4Mid: ', and clinics with a psychiatrist or psychologist in the ',
 			MhmTherapy4ClinicsLink: 'clinics catalog',
 			MhmTherapy4End: '.',
 
 			MhmRx1:
-				'Antidepressants, anxiolytics, sleep medications and other psychotropic medicines are prescription medicines in Montenegro. A foreign prescription does not guarantee dispensing: some people report that individual pharmacies accepted one, but a pharmacist may refuse and you should not rely on this, especially for psychotropic or controlled medicines. The public system normally uses eRecept, while written prescriptions may also be used where the rules allow. Always discuss starting, changing or stopping treatment with a qualified clinician.',
+				'Antidepressants, anxiolytics, sleep medications and other psychotropic drugs are sold in Montenegro strictly with a local prescription: pharmacies do not accept foreign ones — checks tightened in 2023–2024, and the days when some pharmacies quietly accepted a Russian prescription are over. Prescriptions are electronic and go straight into the pharmacy system. Important: this article explains how the system works — always discuss choosing, switching or stopping medication with a doctor.',
 			MhmRx2:
-				'If you are relocating while on treatment, arrange continuity with your prescriber before travel. Carry only a lawful personal-use quantity in original packaging, together with the prescription and a medical report stating the INN in Latin script, dose and treatment history. Check the medicine in our registry and verify current customs rules before crossing the border. Do not stop suddenly, change the dose or substitute a product without clinical advice.',
+				'If you are relocating while on medication: bring a supply for the first weeks and your documents — a doctor’s statement with the diagnosis and prescribed treatment, the prescription itself, and the international (INN) name of the active substance in Latin script. Not every drug is registered in Montenegro (tofisopam, for example, is not available), so check availability by active substance in advance — and check the customs rules for bringing prescription medication across the border.',
 			MhmRx3:
-				'With a knjižica, start with your izabrani doktor. They may refer you to a psychiatrist; the exact prescribing and renewal route depends on the medicine, indication and any specialist-report requirements of the Health Insurance Fund. Covered medicines may be dispensed by a contracted pharmacy, which is not limited to Montefarm. One chat report from late 2023 mentioned a 30-cent co-payment for two packs of sertraline, but that individual example is not a price or coverage promise. Renewal timing follows the prescription and treatment plan.',
+				'With a knjižica the route is well trodden (real experience from expat chats, late 2023): you go to your izabrani doktor → they refer you to a psychiatrist → the psychiatrist reviews your foreign prescription and issues a Montenegrin e-prescription → you collect the medication at a state Montefarm pharmacy. Drugs from the Fund’s list are nearly free: one person paid 30 cents for two packs of sertraline. After the first visit the psychiatrist can issue a report that lets your izabrani doktor renew the prescription monthly.',
 			MhmRx4:
-				'Without a knjižica, you can request a paid consultation at a dom zdravlja service or a private clinic. Prices previously reported around €20–30 are only indicative; ask for the current fee before the visit. The clinician independently assesses the history and may issue a local prescription, change the plan or refer you to a psychiatrist. The permitted quantity and renewal interval depend on the medicine and clinical plan.',
+				'Without a knjižica the route is the same but paid: a visit to the turistička ambulanta at the dom zdravlja (around €25) or to a private clinic (€20–30) — the doctor reviews your foreign prescription and issues a local one. Be ready for limits: usually only one or two packs are prescribed at a time, renewals are regular, and with psychiatric medication a GP may still send you to a psychiatrist even when formally entitled to prescribe it — a real case from the chats: the tourist ambulanta issued two packs and referred the patient onward, and the €25 fee came as a surprise afterwards.',
 			MhmRx5:
 				'Check the availability and prices of specific medications in our',
 			MhmRx5Link: 'medications catalog',
 			MhmRx5End: '.',
 
 			MhmCosts1:
-				'With a knjižica, coverage depends on current eligibility, referral rules, the contracted provider and whether the medicine and indication meet Fund conditions; co-payments may apply. Confirm the route and cost before non-urgent care.',
+				'With a knjižica: a psychiatrist consultation with a referral, hospital treatment and medications from the Fund’s list are free or nearly free (a symbolic co-payment at the pharmacy).',
 			MhmCosts2:
-				'Prices reported in expat chats and advertisements are dated estimates, not quotes. Ask the provider for the current consultation fee and what it includes before booking, and check each medicine in our registry and with the dispensing pharmacy.',
+				'Without a knjižica (figures from expat-chat experience and ads): a consultation to get a prescription costs €20–30 at a private clinic or about €25 at the turistička ambulanta; a full private psychiatrist appointment — €30–60; a psychotherapy session with a Russian- or English-speaking specialist — usually €40–60; medications are paid at full price, though generics in Montenegro are mostly affordable.',
 			MhmCosts3:
-				'Availability of sustained psychotherapy in the public system varies by municipality and capacity. If using a remote therapist in another country, verify qualifications, legal ability to serve you, privacy, emergency arrangements and coordination with any local prescriber; do not split medication decisions across uncoordinated providers.',
+				'There is no separate “psychotherapy” item in state insurance: consultations at the mental health centers are free, but getting regular long-term therapy there is difficult — budget for private therapy separately. A common setup among expats: online therapy with a therapist from home plus a local psychiatrist for prescriptions.',
 
 			MhmCrisis1:
-				'If you or someone nearby has a suicide plan or access to means, has taken an overdose, is experiencing psychosis or severe agitation, or cannot stay safe, do not leave the person alone. Call 112 or 124, go to the nearest hitna pomoć or hospital emergency department, and ask a trusted person to stay until help arrives. Emergency access should not be delayed because of citizenship or insurance, although charges may later depend on status and coverage.',
+				'If there is an immediate threat to life — yours or someone else’s — call 124 (ambulance) or go straight to the nearest hitna pomoć point or hospital emergency department. Emergency care is provided regardless of citizenship, insurance or status.',
 			MhmCrisis2:
-				'At the time of review we could not identify a stable, dedicated national mental-health crisis line; contacts can change, so verify current local information. In an acute crisis use 112 or 124 or go to the nearest emergency service. A mental health center may help during its working hours, but availability varies. Do not rely on an overseas online service as the only emergency route.',
+				'As of the latest reports, Montenegro has no dedicated national crisis hotline. In an acute situation call 124 (medical emergency) or 112, go to the nearest hitna pomoć point, and during working hours you can also come directly to a mental health center at the dom zdravlja. Online crisis services of other countries in Russian or English remain accessible from Montenegro as well.',
 			MhmCrisis3:
-				'Reaching out for help is a form of self-care, not weakness. If there is immediate danger, use the emergency route above. If the danger is not immediate, contact a trusted person and a qualified clinician and agree on a safety and follow-up plan.',
+				'Reaching out for help is a sign of caring for yourself, not of weakness. If things feel unbearable, do not stay alone with it — text someone close, a doctor or a therapist, or come to an emergency department in person: crises pass, and help works.',
 
 			MhmSources0:
 				'The information is current as of July 2026. Rules and contacts change — verify with primary sources:',
@@ -95,22 +94,23 @@ export default {
 				'The catalog lets you filter doctors by city, specialty and consultation language.',
 			MhmCtaButton: 'Psychiatrists in Montenegro',
 		},
-		ru: {
-			MentalHealthTitle: 'Психологи, психиатры и антидепрессанты в Черногории',
+		'ru': {
+			MentalHealthTitle:
+				'Психологи, психиатры и антидепрессанты в Черногории',
 			MentalHealthDescription:
 				'Как устроена помощь в сфере ментального здоровья в Черногории: государственные центры ментального здоровья и психиатрические больницы, поиск терапевта на своём языке, продолжение медикаментозного лечения после переезда, цены с книжицей и без, куда обращаться в кризисной ситуации.',
 
-			MhmToc_system: 'Как устроена помощь в сфере ментального здоровья',
-			MhmToc_therapy: 'Терапия: как найти специалиста на своём языке',
-			MhmToc_prescriptions: 'Рецепты: как продолжить лечение после переезда',
-			MhmToc_costs: 'Сколько это стоит: с книжицей и без',
-			MhmToc_crisis: 'Кризисные ситуации: где получить срочную помощь',
-			MhmToc_sources: 'Полезные контакты и источники',
+			'MhmToc_system': 'Как устроена помощь в сфере ментального здоровья',
+			'MhmToc_therapy': 'Терапия: как найти специалиста на своём языке',
+			'MhmToc_prescriptions': 'Рецепты: как продолжить лечение после переезда',
+			'MhmToc_costs': 'Сколько это стоит: с книжицей и без',
+			'MhmToc_crisis': 'Кризисные ситуации: где получить срочную помощь',
+			'MhmToc_sources': 'Полезные контакты и источники',
 
 			MhmSystem1:
 				'Забота о ментальном здоровье — такая же нормальная часть медицины, как лечение любой другой болезни, и в Черногории для неё есть отдельная государственная инфраструктура:',
 			MhmSystemLevel1:
-				'Centri za mentalno zdravlje — центры ментального здоровья в структуре домов здравля. Состав команды, услуги и часы работы различаются по муниципалитетам. В обзоре 2022 года были перечислены семь муниципалитетов, но это исторический срез, а не актуальный справочник: уточняйте доступных специалистов и расписание в своём доме здравля;',
+				'Centri za mentalno zdravlje — центры ментального здоровья при домах здравля: амбулаторные команды из психиатра, психолога и социального работника. По данным последнего доступного обзора (2022), реально работают в семи муниципалитетах — Подгорица, Бар, Беране, Биело-Поле, Никшич, Котор и Плевля;',
 			MhmSystemLevel2:
 				'Klinika za psihijatriju Клинического центра Черногории (KCCG) в Подгорице и психиатрическое отделение общей больницы в Никшиче — стационарное лечение;',
 			MhmSystemLevel3:
@@ -123,11 +123,11 @@ export default {
 			MhmSystem3End: '.',
 
 			MhmTherapy1:
-				'Коротко о терминах: психиатр — врач, который может ставить диагноз и назначать препараты. Психолог не является врачом, если отдельно не получил медицинскую квалификацию. «Психотерапевт» — это роль и подготовка: так может работать как врач, так и специалист без медицинской лицензии; право выписывать рецепты зависит именно от врачебной лицензии, а не от названия профессии. Обратиться за помощью — обычная забота о себе, а не «крайняя мера».',
+				'Коротко о терминах: психиатр — врач, он ставит диагноз и назначает препараты; психолог и психотерапевт работают разговорной терапией и рецептов не выписывают. Обратиться к любому из них — обычная забота о себе, а не «крайняя мера».',
 			MhmTherapy2:
 				'Государственная страховка покрывает психиатрическую помощь — приёмы, стационар и лекарства из списка фонда; консультации в центрах ментального здоровья для застрахованных тоже бесплатны. Дефицит — в регулярной длительной разговорной терапии: центры серьёзно недоукомплектованы, поэтому постоянная психотерапия почти всегда частная.',
 			MhmTherapy3:
-				'Русско- и англоязычные психологи и психотерапевты принимают очно в нескольких городах Черногории и онлайн. На момент проверки в объявлениях и чатах часто встречался диапазон 40–60 € за сеанс, но это пользовательские данные, а не актуальная оферта. Правила для профессиональных названий, лицензирования и трансграничной онлайн-практики различаются: проверяйте базовую профессию, диплом, лицензию или регистрацию там, где она требуется, обучение психотерапии, супервизию, конфиденциальность и порядок подачи жалоб. О группах поддержки сообщали в Будве и Баре; расписание уточняйте у организаторов.',
+				'Русско- и англоязычных психологов и психотерапевтов вокруг Черногории много: часть принимает очно в Подгорице, Будве и Баре, большинство работает онлайн. Судя по объявлениям и опыту в чатах переехавших, сеанс обычно стоит 40–60 €. Учитывайте, что этот рынок никак не регулируется — «терапевтом» в чатах переехавших может назваться кто угодно, поэтому до начала работы проверяйте образование, методы и опыт. Есть и группы поддержки: встречи анонимных алкоголиков в Будве, группа для родителей особенных детей в Баре.',
 			MhmTherapy4: 'Очных специалистов ищите в нашем ',
 			MhmTherapy4Link: 'каталоге врачей',
 			MhmTherapy4Mid: ', а клиники с психиатром или психологом — в ',
@@ -135,30 +135,31 @@ export default {
 			MhmTherapy4End: '.',
 
 			MhmRx1:
-				'Антидепрессанты, анксиолитики, снотворные и другие психотропные препараты в Черногории относятся к рецептурным. Иностранный рецепт не гарантирует отпуск: некоторые люди сообщают, что отдельные аптеки его принимали, но фармацевт вправе отказать, и рассчитывать на это не стоит — особенно для психотропных и контролируемых препаратов. В государственной системе обычно действует eRecept; в предусмотренных правилами случаях возможен и письменный рецепт. Начало, замену и отмену лечения обсуждайте с квалифицированным врачом.',
+				'Антидепрессанты, анксиолитики, снотворные и другие психотропные препараты продаются в Черногории строго по местному рецепту: иностранный аптеки не принимают — в 2023–2024 годах проверки ужесточились, и времена, когда часть аптек тихо принимала российский рецепт, закончились. Рецепты электронные и попадают в аптечную систему напрямую. Важно: эта статья о том, как устроена система; подбор, замену и отмену препаратов обсуждайте только с врачом.',
 			MhmRx2:
-				'Если вы переезжаете на фоне лечения, заранее согласуйте его непрерывность со своим врачом. Везите только разрешённое для личного использования количество в оригинальной упаковке, вместе с рецептом и заключением, где указаны МНН латиницей, дозировка и история лечения. Проверьте препарат в нашем реестре и заранее уточните действующие таможенные правила. Не прекращайте приём резко, не меняйте дозу и не заменяйте препарат без медицинской консультации.',
+				'Если вы переезжаете и принимаете препараты: возьмите запас на первые недели и документы — заключение врача с диагнозом и схемой лечения, сам рецепт и международное название действующего вещества (МНН) латиницей. Не все препараты зарегистрированы в Черногории (например, тофизопама здесь нет), поэтому наличие лучше проверить заранее по действующему веществу — а заодно уточнить таможенные правила провоза рецептурных препаратов.',
 			MhmRx3:
-				'С книжицей начните с izabrani doktor. Он может направить к психиатру; точный порядок назначения и продления зависит от препарата, показания и требований Фонда к заключению специалиста. Покрываемое лекарство можно получить в аптеке, работающей по договору с Фондом, — не только в Montefarm. В одном сообщении из чата конца 2023 года упоминалась доплата 30 центов за две упаковки сертралина, но это частный пример, а не обещание цены или покрытия. Срок продления определяют рецепт и план лечения.',
+				'С книжицей маршрут отработан (реальный опыт из чатов, конец 2023 года): идёте к izabrani doktor → он направляет к психиатру → психиатр смотрит иностранное назначение и выписывает черногорский электронный рецепт → препарат забираете в государственной аптеке Montefarm. Лекарства из списка фонда почти бесплатны: за две упаковки сертралина человек заплатил 30 центов. После первого визита психиатр может дать заключение, по которому izabrani doktor продлевает рецепт ежемесячно.',
 			MhmRx4:
-				'Без книжицы можно обратиться на платный приём в службу дома здравля или частную клинику. Ранее встречавшиеся цены около 20–30 € — лишь ориентир; актуальную стоимость спрашивайте до визита. Врач самостоятельно оценивает историю лечения и может выписать местный рецепт, изменить схему или направить к психиатру. Допустимое количество и срок продления зависят от препарата и клинического плана.',
-			MhmRx5: 'Наличие и цены конкретных препаратов проверяйте в нашем',
+				'Без книжицы маршрут тот же, но платный: приём в «туристической амбуланте» дома здравля (около 25 €) или в частной клинике (20–30 €) — врач смотрит иностранное назначение и выписывает местный рецепт. Будьте готовы к ограничениям: за раз выписывают обычно одну-две упаковки, продлевать нужно регулярно, а с «психиатрическим» препаратом терапевт может отправить к психиатру, даже когда формально вправе выписать сам — реальный случай из чатов: туристическая амбуланта выдала две упаковки и направила дальше, а 25 € за приём стали сюрпризом постфактум.',
+			MhmRx5:
+				'Наличие и цены конкретных препаратов проверяйте в нашем',
 			MhmRx5Link: 'каталоге лекарств',
 			MhmRx5End: '.',
 
 			MhmCosts1:
-				'С книжицей покрытие зависит от действующего права, правил направления, договорного учреждения и того, соответствует ли лекарство и показание условиям Фонда; возможны доплаты. До неэкстренного обращения уточняйте маршрут и стоимость.',
+				'С книжицей: приём психиатра по направлению, стационар и лекарства из списка фонда — бесплатно или почти бесплатно (символическая доплата в аптеке).',
 			MhmCosts2:
-				'Цены из чатов и объявлений — датированные ориентиры, а не оферта. До записи спросите актуальную стоимость консультации и что в неё входит, а конкретное лекарство проверьте в нашем реестре и в аптеке.',
+				'Без книжицы (цифры из опыта и объявлений в чатах переехавших): консультация ради рецепта — 20–30 € в частной клинике или около 25 € в туристической амбуланте; полноценный приём частного психиатра — 30–60 €; сеанс психотерапии у русско- или англоязычного специалиста — обычно 40–60 €; лекарства — за полную стоимость, хотя дженерики в Черногории в основном недорогие.',
 			MhmCosts3:
-				'Доступность длительной психотерапии в государственной системе зависит от муниципалитета и нагрузки. При работе с онлайн-терапевтом из другой страны проверяйте квалификацию, законность помощи по месту вашего нахождения, конфиденциальность, план на случай кризиса и координацию с местным врачом; решения о лекарствах не должны приниматься несогласованными специалистами.',
+				'Отдельной строки «психотерапия» в госстраховке нет: консультации в центрах ментального здоровья бесплатны, но регулярную длительную терапию там получить сложно — частную терапию закладывайте в бюджет отдельно. Распространённая среди переехавших схема: онлайн-терапия со «своим» специалистом из дома плюс местный психиатр для рецептов.',
 
 			MhmCrisis1:
-				'Если у человека есть план самоубийства или доступ к средствам, произошла передозировка, начался психоз или сильное возбуждение либо человек не может гарантировать собственную безопасность, не оставляйте его одного. Звоните 112 или 124, направляйтесь в ближайшую hitna pomoć или приёмное отделение и попросите близкого побыть рядом до приезда помощи. Доступ к экстренной помощи не следует откладывать из-за гражданства или страховки, однако счёт впоследствии может зависеть от статуса и покрытия.',
+				'Если есть непосредственная угроза жизни — вашей или близкого человека, — звоните 124 (скорая) или сразу отправляйтесь в ближайший пункт hitna pomoć или приёмное отделение больницы. Экстренную помощь окажут независимо от гражданства, страховки и статуса.',
 			MhmCrisis2:
-				'На момент проверки нам не удалось найти стабильную отдельную национальную линию помощи при психическом кризисе; контакты могут меняться, поэтому проверяйте актуальную местную информацию. В остром кризисе звоните 112 или 124 либо направляйтесь в ближайшую экстренную службу. В рабочие часы может помочь центр ментального здоровья, но его доступность зависит от муниципалитета. Не полагайтесь на зарубежный онлайн-сервис как на единственный экстренный маршрут.',
+				'По последним доступным данным, выделенной национальной кризисной линии в Черногории нет. В остром состоянии звоните 124 (скорая) или 112, езжайте в ближайший пункт hitna pomoć, а в рабочие часы можно прийти напрямую в центр ментального здоровья при доме здравля. Русско- и англоязычные онлайн-службы поддержки других стран из Черногории тоже доступны.',
 			MhmCrisis3:
-				'Попросить о помощи — это забота о себе, а не слабость. При непосредственной опасности используйте экстренный маршрут выше. Если опасность не немедленная, свяжитесь с близким человеком и квалифицированным специалистом и вместе составьте план безопасности и дальнейшей помощи.',
+				'Попросить о помощи — это забота о себе, а не слабость. Если совсем тяжело, не оставайтесь с этим наедине: напишите близкому человеку, врачу или психологу либо приезжайте в приёмное отделение лично — кризисы проходят, а помощь работает.',
 
 			MhmSources0:
 				'Информация актуальна на июль 2026 года. Правила и контакты меняются — сверяйтесь с первоисточниками:',
@@ -182,23 +183,23 @@ export default {
 				'В каталоге — врачи с фильтрами по городу, специальности и языку приёма.',
 			MhmCtaButton: 'Психиатры в Черногории',
 		},
-		sr: {
-			MentalHealthTitle: 'Psiholozi, psihijatri i antidepresivi u Crnoj Gori',
+		'sr': {
+			MentalHealthTitle:
+				'Psiholozi, psihijatri i antidepresivi u Crnoj Gori',
 			MentalHealthDescription:
 				'Kako funkcioniše zaštita mentalnog zdravlja u Crnoj Gori: državni centri za mentalno zdravlje i psihijatrijske bolnice, kako naći terapeuta koji govori vaš jezik, nastavak terapije ljekovima nakon preseljenja, cijene sa zdravstvenom knjižicom i bez nje, kome se obratiti u kriznoj situaciji.',
 
-			MhmToc_system: 'Kako je organizovana zaštita mentalnog zdravlja',
-			MhmToc_therapy: 'Terapija: kako naći stručnjaka na svom jeziku',
-			MhmToc_prescriptions:
-				'Recepti: kako nastaviti liječenje nakon preseljenja',
-			MhmToc_costs: 'Koliko to košta: sa knjižicom i bez nje',
-			MhmToc_crisis: 'Krizne situacije: gdje dobiti hitnu pomoć',
-			MhmToc_sources: 'Korisni kontakti i izvori',
+			'MhmToc_system': 'Kako je organizovana zaštita mentalnog zdravlja',
+			'MhmToc_therapy': 'Terapija: kako naći stručnjaka na svom jeziku',
+			'MhmToc_prescriptions': 'Recepti: kako nastaviti liječenje nakon preseljenja',
+			'MhmToc_costs': 'Koliko to košta: sa knjižicom i bez nje',
+			'MhmToc_crisis': 'Krizne situacije: gdje dobiti hitnu pomoć',
+			'MhmToc_sources': 'Korisni kontakti i izvori',
 
 			MhmSystem1:
 				'Briga o mentalnom zdravlju jednako je normalan dio medicine kao i liječenje bilo koje druge bolesti, a Crna Gora za nju ima posebnu državnu infrastrukturu:',
 			MhmSystemLevel1:
-				'Centri za mentalno zdravlje dio su mreže domova zdravlja. Sastav tima, dostupne usluge i radno vrijeme razlikuju se po opštinama. Pregled iz 2022. naveo je usluge u sedam opština, ali to je istorijski presjek, a ne aktuelni imenik; provjerite tim i termine u svom domu zdravlja;',
+				'Centri za mentalno zdravlje pri domovima zdravlja: ambulantni timovi psihijatra, psihologa i socijalnog radnika. Prema posljednjem dostupnom pregledu (2022), stvarno funkcionišu u sedam opština — Podgorica, Bar, Berane, Bijelo Polje, Nikšić, Kotor i Pljevlja;',
 			MhmSystemLevel2:
 				'Klinika za psihijatriju Kliničkog centra Crne Gore (KCCG) u Podgorici i psihijatrijsko odjeljenje opšte bolnice u Nikšiću — bolničko liječenje;',
 			MhmSystemLevel3:
@@ -211,11 +212,11 @@ export default {
 			MhmSystem3End: '.',
 
 			MhmTherapy1:
-				'Kratko o pojmovima: psihijatar je ljekar i može postaviti dijagnozu i propisati ljekove. Psiholog nije ljekar ako nema i posebnu medicinsku kvalifikaciju. „Psihoterapeut“ opisuje vrstu obuke i rada i može biti ljekar ili stručnjak bez medicinske licence; pravo propisivanja zavisi od ljekarske licence, a ne od naziva psihoterapeut. Traženje pomoći je uobičajena briga o sebi, a ne „krajnja mjera“.',
+				'Kratko o pojmovima: psihijatar je ljekar — postavlja dijagnozu i propisuje ljekove; psiholog i psihoterapeut rade razgovornom terapijom i ne izdaju recepte. Obratiti se bilo kome od njih obična je briga o sebi, a ne „krajnja mjera“.',
 			MhmTherapy2:
 				'Državno osiguranje pokriva psihijatrijsku zaštitu — preglede, bolničko liječenje i ljekove sa liste Fonda; konsultacije u centrima za mentalno zdravlje za osigurane su takođe besplatne. Deficit postoji kod redovne dugotrajne razgovorne terapije: centri su ozbiljno potkapacitirani, pa je stalna psihoterapija gotovo uvijek privatna.',
 			MhmTherapy3:
-				'Psiholozi i psihoterapeuti koji govore ruski ili engleski rade uživo u više crnogorskih gradova i onlajn. U vrijeme provjere oglasi i iskustva iz četova često su pominjali 40–60 € po seansi; to je anegdotalni raspon, a ne aktuelna ponuda. Pravila za stručna zvanja, licence i prekogranični onlajn rad razlikuju se, zato provjerite osnovnu profesiju, diplomu, licencu ili registraciju gdje je potrebna, psihoterapijsku obuku, superviziju, povjerljivost i način podnošenja prigovora. Grupe podrške prijavljene su u Budvi i Baru; aktuelni raspored provjerite kod organizatora.',
+				'Psihologa i psihoterapeuta koji govore ruski i engleski oko Crne Gore ima mnogo: dio prima uživo u Podgorici, Budvi i Baru, većina radi onlajn. Sudeći po oglasima i iskustvima iz četova doseljenika, seansa obično košta 40–60 €. Imajte na umu da ovo tržište nije regulisano — „terapeutom“ se u četovima doseljenika može nazvati bilo ko, pa prije početka rada provjerite obrazovanje, metode i iskustvo. Postoje i grupe podrške: sastanci anonimnih alkoholičara u Budvi, grupa za roditelje djece sa posebnim potrebama u Baru.',
 			MhmTherapy4: 'Stručnjake koji primaju uživo potražite u našem ',
 			MhmTherapy4Link: 'katalogu doktora',
 			MhmTherapy4Mid: ', a klinike sa psihijatrom ili psihologom u ',
@@ -223,30 +224,31 @@ export default {
 			MhmTherapy4End: '.',
 
 			MhmRx1:
-				'Antidepresivi, anksiolitici, ljekovi za spavanje i drugi psihotropni ljekovi u Crnoj Gori izdaju se na recept. Strani recept ne garantuje izdavanje: neki korisnici navode da ga je pojedina apoteka prihvatila, ali farmaceut može odbiti i na to se ne treba oslanjati, naročito kod psihotropnih ili kontrolisanih ljekova. Javni sistem uobičajeno koristi eRecept, dok je pisani recept moguć kada ga pravila dozvoljavaju. Početak, promjenu ili prekid terapije uvijek dogovorite sa kvalifikovanim ljekarom.',
+				'Antidepresivi, anksiolitici, ljekovi za spavanje i drugi psihotropni preparati u Crnoj Gori se prodaju isključivo uz lokalni recept: strani recept apoteke ne prihvataju — kontrole su pooštrene 2023–2024, i vremena kada je dio apoteka prećutno primao ruski recept su prošla. Recepti su elektronski i idu direktno u apotekarski sistem. Važno: ovaj tekst objašnjava kako sistem funkcioniše — izbor, zamjenu i prekid terapije uvijek dogovarajte sa ljekarom.',
 			MhmRx2:
-				'Ako se selite tokom liječenja, unaprijed dogovorite kontinuitet sa svojim ljekarom. Nosite samo zakonom dozvoljenu količinu za ličnu upotrebu u originalnom pakovanju, uz recept i izvještaj sa INN nazivom latinicom, dozom i istorijom terapije. Provjerite lijek u našem registru i važeća carinska pravila prije prelaska granice. Ne prekidajte terapiju naglo, ne mijenjajte dozu i ne zamjenjujte preparat bez savjeta ljekara.',
+				'Ako se selite i uzimate ljekove: ponesite zalihu za prve sedmice i dokumentaciju — izvještaj ljekara sa dijagnozom i šemom liječenja, sam recept i međunarodni (INN) naziv aktivne supstance latinicom. Nisu svi ljekovi registrovani u Crnoj Gori (tofizopama, na primjer, nema), pa dostupnost provjerite unaprijed po aktivnoj supstanci — i provjerite carinska pravila za unošenje ljekova na recept.',
 			MhmRx3:
-				'Sa knjižicom počnite kod izabranog doktora. On vas može uputiti psihijatru; tačan put propisivanja i obnavljanja zavisi od lijeka, indikacije i zahtjeva Fonda za izvještaj specijaliste. Lijek koji se pokriva može se podići u apoteci sa ugovorom sa Fondom, ne samo u Montefarmu. Jedno iskustvo iz četa krajem 2023. pominjalo je doplatu od 30 centi za dvije kutije sertralina, ali taj pojedinačni primjer nije obećanje cijene ili pokrića. Rok obnove određuju recept i plan liječenja.',
+				'Sa knjižicom je put utaban (stvarno iskustvo iz četova, kraj 2023): idete kod izabranog doktora → on vas upućuje psihijatru → psihijatar pogleda strani nalaz i propisuje crnogorski elektronski recept → lijek podižete u državnoj apoteci Montefarm. Ljekovi sa liste Fonda su gotovo besplatni: za dvije kutije sertralina osoba je platila 30 centi. Nakon prve posjete psihijatar može dati izvještaj po kome izabrani doktor produžava recept svakog mjeseca.',
 			MhmRx4:
-				'Bez knjižice možete zatražiti pregled koji se plaća u službi doma zdravlja ili privatnoj klinici. Ranije pominjane cijene oko 20–30 € samo su orijentacione; aktuelnu cijenu pitajte prije pregleda. Ljekar samostalno procjenjuje istoriju liječenja i može izdati lokalni recept, promijeniti plan ili uputiti psihijatru. Dozvoljena količina i rok obnove zavise od lijeka i kliničkog plana.',
-			MhmRx5: 'Dostupnost i cijene konkretnih ljekova provjerite u našem',
+				'Bez knjižice put je isti, ali se plaća: pregled u turističkoj ambulanti doma zdravlja (oko 25 €) ili u privatnoj klinici (20–30 €) — ljekar pogleda strani nalaz i izdaje lokalni recept. Računajte na ograničenja: odjednom se obično propisuje jedna do dvije kutije, produžavanje je redovno, a sa „psihijatrijskim“ lijekom ljekar opšte prakse može vas uputiti psihijatru čak i kada formalno smije sam da ga propiše — stvaran slučaj iz četova: turistička ambulanta izdala je dvije kutije i uputila pacijenta dalje, a 25 € za pregled bilo je iznenađenje naknadno.',
+			MhmRx5:
+				'Dostupnost i cijene konkretnih ljekova provjerite u našem',
 			MhmRx5Link: 'katalogu ljekova',
 			MhmRx5End: '.',
 
 			MhmCosts1:
-				'Sa knjižicom pokriće zavisi od važećeg prava, uputa, ugovorne ustanove i uslova Fonda za lijek i indikaciju; doplate su moguće. Prije nehitne njege provjerite put i trošak.',
+				'Sa knjižicom: pregled psihijatra po uputu, bolničko liječenje i ljekovi sa liste Fonda — besplatno ili gotovo besplatno (simbolična doplata u apoteci).',
 			MhmCosts2:
-				'Cijene iz četova i oglasa datirani su orijentiri, ne ponuda. Prije zakazivanja pitajte aktuelnu cijenu i šta uključuje, a konkretan lijek provjerite u našem registru i apoteci.',
+				'Bez knjižice (cifre iz iskustava i oglasa u četovima doseljenika): konsultacija radi recepta — 20–30 € u privatnoj klinici ili oko 25 € u turističkoj ambulanti; kompletan pregled privatnog psihijatra — 30–60 €; seansa psihoterapije kod stručnjaka koji govori ruski ili engleski — obično 40–60 €; ljekovi se plaćaju po punoj cijeni, mada su generici u Crnoj Gori uglavnom pristupačni.',
 			MhmCosts3:
-				'Dostupnost dugotrajne psihoterapije u javnom sistemu zavisi od opštine i kapaciteta. Kod onlajn terapeuta iz druge države provjerite kvalifikacije, zakonitost rada, privatnost, plan za krizu i koordinaciju sa lokalnim ljekarom; odluke o ljekovima ne treba dijeliti među neusaglašenim pružaocima.',
+				'Posebne stavke „psihoterapija“ u državnom osiguranju nema: konsultacije u centrima za mentalno zdravlje su besplatne, ali je redovnu dugotrajnu terapiju tamo teško dobiti — privatnu terapiju planirajte u budžetu posebno. Česta šema među doseljenicima: onlajn terapija sa „svojim“ terapeutom iz matične zemlje plus lokalni psihijatar za recepte.',
 
 			MhmCrisis1:
-				'Ako osoba ima plan samoubistva ili pristup sredstvima, uzela je prekomjernu dozu, ima psihozu ili jaku uznemirenost ili ne može ostati bezbjedna, ne ostavljajte je samu. Pozovite 112 ili 124, pođite u najbližu hitnu pomoć ili bolnički prijem i zamolite osobu od povjerenja da ostane do dolaska pomoći. Hitni pristup ne treba odlagati zbog državljanstva ili osiguranja, iako kasniji trošak može zavisiti od statusa i pokrića.',
+				'Ako postoji neposredna opasnost po život — vaš ili bliske osobe — pozovite 124 (hitna pomoć) ili odmah pođite u najbližu jedinicu hitne pomoći ili prijemno odjeljenje bolnice. Hitna pomoć se pruža bez obzira na državljanstvo, osiguranje i status.',
 			MhmCrisis2:
-				'U vrijeme provjere nijesmo našli stabilnu posebnu nacionalnu liniju za krize mentalnog zdravlja; kontakti se mogu mijenjati, pa provjerite aktuelne lokalne podatke. U akutnoj krizi pozovite 112 ili 124 ili idite u najbližu hitnu službu. Centar za mentalno zdravlje može pomoći u radno vrijeme, ali dostupnost varira. Ne oslanjajte se na strani onlajn servis kao jedini hitni put.',
+				'Prema posljednjim dostupnim podacima, posebne nacionalne krizne linije u Crnoj Gori nema. U akutnom stanju pozovite 124 (hitna pomoć) ili 112, pođite u najbližu jedinicu hitne pomoći, a u radno vrijeme možete doći i direktno u centar za mentalno zdravlje pri domu zdravlja. Onlajn službe podrške drugih zemalja na ruskom i engleskom takođe su dostupne iz Crne Gore.',
 			MhmCrisis3:
-				'Tražiti pomoć znači brinuti o sebi, a ne pokazati slabost. Ako postoji neposredna opasnost, koristite hitni put iznad. Ako opasnost nije neposredna, javite se osobi od povjerenja i kvalifikovanom stručnjaku i zajedno napravite plan bezbjednosti i daljeg praćenja.',
+				'Zatražiti pomoć znači brinuti o sebi, a ne pokazati slabost. Ako vam je veoma teško, ne ostajite sami sa tim: javite se bliskoj osobi, ljekaru ili psihologu, ili dođite lično u prijemno odjeljenje — krize prolaze, a pomoć djeluje.',
 
 			MhmSources0:
 				'Informacije važe za jul 2026. Pravila i kontakti se mijenjaju — provjerite primarne izvore:',
@@ -271,21 +273,22 @@ export default {
 			MhmCtaButton: 'Psihijatri u Crnoj Gori',
 		},
 		'sr-cyrl': {
-			MentalHealthTitle: 'Психолози, психијатри и антидепресиви у Црној Гори',
+			MentalHealthTitle:
+				'Психолози, психијатри и антидепресиви у Црној Гори',
 			MentalHealthDescription:
 				'Како функционише заштита менталног здравља у Црној Гори: државни центри за ментално здравље и психијатријске болнице, како наћи терапеута који говори ваш језик, наставак терапије љековима након пресељења, цијене са здравственом књижицом и без ње, коме се обратити у кризној ситуацији.',
 
-			MhmToc_system: 'Како је организована заштита менталног здравља',
-			MhmToc_therapy: 'Терапија: како наћи стручњака на свом језику',
-			MhmToc_prescriptions: 'Рецепти: како наставити лијечење након пресељења',
-			MhmToc_costs: 'Колико то кошта: са књижицом и без ње',
-			MhmToc_crisis: 'Кризне ситуације: гдје добити хитну помоћ',
-			MhmToc_sources: 'Корисни контакти и извори',
+			'MhmToc_system': 'Како је организована заштита менталног здравља',
+			'MhmToc_therapy': 'Терапија: како наћи стручњака на свом језику',
+			'MhmToc_prescriptions': 'Рецепти: како наставити лијечење након пресељења',
+			'MhmToc_costs': 'Колико то кошта: са књижицом и без ње',
+			'MhmToc_crisis': 'Кризне ситуације: гдје добити хитну помоћ',
+			'MhmToc_sources': 'Корисни контакти и извори',
 
 			MhmSystem1:
 				'Брига о менталном здрављу једнако је нормалан дио медицине као и лијечење било које друге болести, а Црна Гора за њу има посебну државну инфраструктуру:',
 			MhmSystemLevel1:
-				'Центри за ментално здравље дио су мреже домова здравља. Састав тима, доступне услуге и радно вријеме разликују се по општинама. Преглед из 2022. навео је услуге у седам општина, али то је историјски пресјек, а не актуелни именик; провјерите тим и термине у свом дому здравља;',
+				'Центри за ментално здравље при домовима здравља: амбулантни тимови психијатра, психолога и социјалног радника. Према посљедњем доступном прегледу (2022), стварно функционишу у седам општина — Подгорица, Бар, Беране, Бијело Поље, Никшић, Котор и Пљевља;',
 			MhmSystemLevel2:
 				'Клиника за психијатрију Клиничког центра Црне Горе (КЦЦГ) у Подгорици и психијатријско одјељење опште болнице у Никшићу — болничко лијечење;',
 			MhmSystemLevel3:
@@ -298,11 +301,11 @@ export default {
 			MhmSystem3End: '.',
 
 			MhmTherapy1:
-				'Кратко о појмовима: психијатар је љекар и може поставити дијагнозу и прописати љекове. Психолог није љекар ако нема и посебну медицинску квалификацију. „Психотерапеут“ описује врсту обуке и рада и може бити љекар или стручњак без медицинске лиценце; право прописивања зависи од љекарске лиценце, а не од назива психотерапеут. Тражење помоћи је уобичајена брига о себи, а не „крајња мјера“.',
+				'Кратко о појмовима: психијатар је љекар — поставља дијагнозу и прописује љекове; психолог и психотерапеут раде разговорном терапијом и не издају рецепте. Обратити се било коме од њих обична је брига о себи, а не „крајња мјера“.',
 			MhmTherapy2:
 				'Државно осигурање покрива психијатријску заштиту — прегледе, болничко лијечење и љекове са листе Фонда; консултације у центрима за ментално здравље за осигуране су такође бесплатне. Дефицит постоји код редовне дуготрајне разговорне терапије: центри су озбиљно поткапацитирани, па је стална психотерапија готово увијек приватна.',
 			MhmTherapy3:
-				'Психолози и психотерапеути који говоре руски или енглески раде уживо у више црногорских градова и онлајн. У вријеме провјере огласи и искуства из четова често су помињали 40–60 € по сеанси; то је анегдотални распон, а не актуелна понуда. Правила за стручна звања, лиценце и прекогранични онлајн рад разликују се, зато провјерите основну професију, диплому, лиценцу или регистрацију гдје је потребна, психотерапијску обуку, супервизију, повјерљивост и начин подношења приговора. Групе подршке пријављене су у Будви и Бару; актуелни распоред провјерите код организатора.',
+				'Психолога и психотерапеута који говоре руски и енглески око Црне Горе има много: дио прима уживо у Подгорици, Будви и Бару, већина ради онлајн. Судећи по огласима и искуствима из четова досељеника, сеанса обично кошта 40–60 €. Имајте на уму да ово тржиште није регулисано — „терапеутом“ се у четовима досељеника може назвати било ко, па прије почетка рада провјерите образовање, методе и искуство. Постоје и групе подршке: састанци анонимних алкохоличара у Будви, група за родитеље дјеце са посебним потребама у Бару.',
 			MhmTherapy4: 'Стручњаке који примају уживо потражите у нашем ',
 			MhmTherapy4Link: 'каталогу доктора',
 			MhmTherapy4Mid: ', а клинике са психијатром или психологом у ',
@@ -310,30 +313,31 @@ export default {
 			MhmTherapy4End: '.',
 
 			MhmRx1:
-				'Антидепресиви, анксиолитици, љекови за спавање и други психотропни љекови у Црној Гори издају се на рецепт. Страни рецепт не гарантује издавање: неки корисници наводе да га је поједина апотека прихватила, али фармацеут може одбити и на то се не треба ослањати, нарочито код психотропних или контролисаних љекова. Јавни систем уобичајено користи еРецепт, док је писани рецепт могућ када га правила дозвољавају. Почетак, промјену или прекид терапије увијек договорите са квалификованим љекаром.',
+				'Антидепресиви, анксиолитици, љекови за спавање и други психотропни препарати у Црној Гори се продају искључиво уз локални рецепт: страни рецепт апотеке не прихватају — контроле су пооштрене 2023–2024, и времена када је дио апотека прећутно примао руски рецепт су прошла. Рецепти су електронски и иду директно у апотекарски систем. Важно: овај текст објашњава како систем функционише — избор, замјену и прекид терапије увијек договарајте са љекаром.',
 			MhmRx2:
-				'Ако се селите током лијечења, унапријед договорите континуитет са својим љекаром. Носите само законом дозвољену количину за личну употребу у оригиналном паковању, уз рецепт и извјештај са INN називом латиницом, дозом и историјом терапије. Провјерите лијек у нашем регистру и важећа царинска правила прије преласка границе. Не прекидајте терапију нагло, не мијењајте дозу и не замјењујте препарат без савјета љекара.',
+				'Ако се селите и узимате љекове: понесите залиху за прве седмице и документацију — извјештај љекара са дијагнозом и шемом лијечења, сам рецепт и међународни (INN) назив активне супстанце латиницом. Нису сви љекови регистровани у Црној Гори (тофизопама, на примјер, нема), па доступност провјерите унапријед по активној супстанци — и провјерите царинска правила за уношење љекова на рецепт.',
 			MhmRx3:
-				'Са књижицом почните код изабраног доктора. Он вас може упутити психијатру; тачан пут прописивања и обнављања зависи од лијека, индикације и захтјева Фонда за извјештај специјалисте. Лијек који се покрива може се подићи у апотеци са уговором са Фондом, не само у Montefarmu. Једно искуство из чета крајем 2023. помињало је доплату од 30 центи за двије кутије сертралина, али тај појединачни примјер није обећање цијене или покрића. Рок обнове одређују рецепт и план лијечења.',
+				'Са књижицом је пут утабан (стварно искуство из четова, крај 2023): идете код изабраног доктора → он вас упућује психијатру → психијатар погледа страни налаз и прописује црногорски електронски рецепт → лијек подижете у државној апотеци Montefarm. Љекови са листе Фонда су готово бесплатни: за двије кутије сертралина особа је платила 30 центи. Након прве посјете психијатар може дати извјештај по коме изабрани доктор продужава рецепт сваког мјесеца.',
 			MhmRx4:
-				'Без књижице можете затражити преглед који се плаћа у служби дома здравља или приватној клиници. Раније помињане цијене око 20–30 € само су оријентационе; актуелну цијену питајте прије прегледа. Љекар самостално процјењује историју лијечења и може издати локални рецепт, промијенити план или упутити психијатру. Дозвољена количина и рок обнове зависе од лијека и клиничког плана.',
-			MhmRx5: 'Доступност и цијене конкретних љекова провјерите у нашем',
+				'Без књижице пут је исти, али се плаћа: преглед у туристичкој амбуланти дома здравља (око 25 €) или у приватној клиници (20–30 €) — љекар погледа страни налаз и издаје локални рецепт. Рачунајте на ограничења: одједном се обично прописује једна до двије кутије, продужавање је редовно, а са „психијатријским“ лијеком љекар опште праксе може вас упутити психијатру чак и када формално смије сам да га пропише — стваран случај из četova: туристичка амбуланта издала је двије кутије и упутила пацијента даље, а 25 € за преглед било је изненађење накнадно.',
+			MhmRx5:
+				'Доступност и цијене конкретних љекова провјерите у нашем',
 			MhmRx5Link: 'каталогу љекова',
 			MhmRx5End: '.',
 
 			MhmCosts1:
-				'Са књижицом покриће зависи од важећег права, упута, уговорне установе и услова Фонда за лијек и индикацију; доплате су могуће. Прије нехитне његе провјерите пут и трошак.',
+				'Са књижицом: преглед психијатра по упуту, болничко лијечење и љекови са листе Фонда — бесплатно или готово бесплатно (симболична доплата у апотеци).',
 			MhmCosts2:
-				'Цијене из четова и огласа датирани су оријентири, не понуда. Прије заказивања питајте актуелну цијену и шта укључује, а конкретан лијек провјерите у нашем регистру и апотеци.',
+				'Без књижице (цифре из искустава и огласа у четовима досељеника): консултација ради рецепта — 20–30 € у приватној клиници или око 25 € у туристичкој амбуланти; комплетан преглед приватног психијатра — 30–60 €; сеанса психотерапије код стручњака који говори руски или енглески — обично 40–60 €; љекови се плаћају по пуној цијени, мада су генерици у Црној Гори углавном приступачни.',
 			MhmCosts3:
-				'Доступност дуготрајне психотерапије у јавном систему зависи од општине и капацитета. Код онлајн терапеута из друге државе провјерите квалификације, законитост рада, приватност, план за кризу и координацију са локалним љекаром; одлуке о љековима не треба дијелити међу неусаглашеним пружаоцима.',
+				'Посебне ставке „психотерапија“ у државном осигурању нема: консултације у центрима за ментално здравље су бесплатне, али је редовну дуготрајну терапију тамо тешко добити — приватну терапију планирајте у буџету посебно. Честа шема међу досељеницима: онлајн терапија са „својим“ терапеутом из матичне земље плус локални психијатар за рецепте.',
 
 			MhmCrisis1:
-				'Ако особа има план самоубиства или приступ средствима, узела је прекомјерну дозу, има психозу или јаку узнемиреност или не може остати безбједна, не остављајте је саму. Позовите 112 или 124, пођите у најближу хитну помоћ или болнички пријем и замолите особу од повјерења да остане до доласка помоћи. Хитни приступ не треба одлагати због држављанства или осигурања, иако каснији трошак може зависити од статуса и покрића.',
+				'Ако постоји непосредна опасност по живот — ваш или блиске особе — позовите 124 (хитна помоћ) или одмах пођите у најближу јединицу хитне помоћи или пријемно одјељење болнице. Хитна помоћ се пружа без обзира на држављанство, осигурање и статус.',
 			MhmCrisis2:
-				'У вријеме провјере нијесмо нашли стабилну посебну националну линију за кризе менталног здравља; контакти се могу мијењати, па провјерите актуелне локалне податке. У акутној кризи позовите 112 или 124 или идите у најближу хитну службу. Центар за ментално здравље може помоћи у радно вријеме, али доступност варира. Не ослањајте се на страни онлајн сервис као једини хитни пут.',
+				'Према посљедњим доступним подацима, посебне националне кризне линије у Црној Гори нема. У акутном стању позовите 124 (хитна помоћ) или 112, пођите у најближу јединицу хитне помоћи, а у радно вријеме можете доћи и директно у центар за ментално здравље при дому здравља. Онлајн службе подршке других земаља на руском и енглеском такође су доступне из Црне Горе.',
 			MhmCrisis3:
-				'Тражити помоћ значи бринути о себи, а не показати слабост. Ако постоји непосредна опасност, користите хитни пут изнад. Ако опасност није непосредна, јавите се особи од повјерења и квалификованом стручњаку и заједно направите план безбједности и даљег праћења.',
+				'Затражити помоћ значи бринути о себи, а не показати слабост. Ако вам је веома тешко, не остајите сами са тим: јавите се блиској особи, љекару или психологу, или дођите лично у пријемно одјељење — кризе пролазе, а помоћ дјелује.',
 
 			MhmSources0:
 				'Информације важе за јул 2026. Правила и контакти се мијењају — провјерите примарне изворе:',
@@ -357,23 +361,23 @@ export default {
 				'У каталогу су доктори са филтерима по граду, специјалности и језику прегледа.',
 			MhmCtaButton: 'Психијатри у Црној Гори',
 		},
-		de: {
+		'de': {
 			MentalHealthTitle:
 				'Psychologen, Psychiater und Antidepressiva in Montenegro',
 			MentalHealthDescription:
 				'Wie die psychische Gesundheitsversorgung in Montenegro funktioniert: staatliche Zentren für mentale Gesundheit und psychiatrische Kliniken, einen Therapeuten in Ihrer Sprache finden, die Medikation nach dem Umzug fortsetzen, Preise mit und ohne zdravstvena knjižica und wohin man sich in einer Krise wendet.',
 
-			MhmToc_system: 'So ist die psychische Gesundheitsversorgung organisiert',
-			MhmToc_therapy: 'Therapie: einen Spezialisten in Ihrer Sprache finden',
-			MhmToc_prescriptions: 'Rezepte: die Behandlung nach dem Umzug fortsetzen',
-			MhmToc_costs: 'Was es kostet: mit und ohne knjižica',
-			MhmToc_crisis: 'Krisensituationen: wo es dringend Hilfe gibt',
-			MhmToc_sources: 'Nützliche Kontakte und Quellen',
+			'MhmToc_system': 'So ist die psychische Gesundheitsversorgung organisiert',
+			'MhmToc_therapy': 'Therapie: einen Spezialisten in Ihrer Sprache finden',
+			'MhmToc_prescriptions': 'Rezepte: die Behandlung nach dem Umzug fortsetzen',
+			'MhmToc_costs': 'Was es kostet: mit und ohne knjižica',
+			'MhmToc_crisis': 'Krisensituationen: wo es dringend Hilfe gibt',
+			'MhmToc_sources': 'Nützliche Kontakte und Quellen',
 
 			MhmSystem1:
 				'Die Sorge um die psychische Gesundheit ist ein ebenso normaler Teil der Medizin wie die Behandlung jeder anderen Erkrankung — und Montenegro hat dafür eine eigene staatliche Infrastruktur:',
 			MhmSystemLevel1:
-				'Centri za mentalno zdravlje sind Teil des primärärztlichen Netzes der dom zdravlja. Teamzusammensetzung, Leistungen und Öffnungszeiten unterscheiden sich je nach Gemeinde. Eine Übersicht von 2022 nannte Angebote in sieben Gemeinden; das ist jedoch eine historische Momentaufnahme und kein aktuelles Verzeichnis. Erfragen Sie Team und Zeiten beim örtlichen dom zdravlja;',
+				'Centri za mentalno zdravlje — Zentren für mentale Gesundheit an den dom zdravlja: ambulante Teams aus Psychiater, Psychologe und Sozialarbeiter. Laut der letzten verfügbaren Übersicht (2022) arbeiten sie tatsächlich in sieben Gemeinden — Podgorica, Bar, Berane, Bijelo Polje, Nikšić, Kotor und Pljevlja;',
 			MhmSystemLevel2:
 				'Die Klinika za psihijatriju des Klinischen Zentrums von Montenegro (KCCG) in Podgorica und die psychiatrische Abteilung des allgemeinen Krankenhauses in Nikšić — stationäre Behandlung;',
 			MhmSystemLevel3:
@@ -386,11 +390,11 @@ export default {
 			MhmSystem3End: '.',
 
 			MhmTherapy1:
-				'Kurz zu den Begriffen: Ein Psychiater ist Arzt und darf diagnostizieren und Medikamente verordnen. Ein Psychologe ist ohne zusätzliche medizinische Qualifikation kein Arzt. „Psychotherapeut“ bezeichnet eine Ausbildung und Tätigkeit und kann ein Arzt oder Nichtarzt sein; die Verordnungsbefugnis richtet sich nach der ärztlichen Zulassung, nicht nach der Bezeichnung Psychotherapeut. Hilfe zu suchen ist normale Selbstfürsorge und kein „letzter Ausweg“.',
+				'Kurz zu den Begriffen: Ein Psychiater ist Arzt — er stellt Diagnosen und verordnet Medikamente; Psychologen und Psychotherapeuten arbeiten mit Gesprächstherapie und stellen keine Rezepte aus. Sich an einen von ihnen zu wenden ist ganz normale Selbstfürsorge und kein „letzter Ausweg“.',
 			MhmTherapy2:
 				'Die staatliche Versicherung deckt die psychiatrische Versorgung ab — Konsultationen, stationäre Behandlung und Medikamente von der Fondsliste; Beratungen in den Zentren für mentale Gesundheit sind für Versicherte ebenfalls kostenlos. Knapp ist die regelmäßige langfristige Gesprächstherapie: Die Zentren sind stark unterbesetzt, daher läuft dauerhafte Psychotherapie fast immer privat.',
 			MhmTherapy3:
-				'Russisch- und englischsprachige Psychologen und Psychotherapeuten arbeiten in mehreren Städten Montenegros und online. Anzeigen und Expat-Berichte nannten zum Prüfzeitpunkt häufig 40–60 € pro Sitzung; das ist eine anekdotische Spanne und kein aktuelles Angebot. Regeln für Berufsbezeichnungen, Zulassung und grenzüberschreitende Online-Arbeit unterscheiden sich. Prüfen Sie Grundberuf, Abschluss, Zulassung oder Registrierung soweit erforderlich, Psychotherapieausbildung, Supervision, Vertraulichkeit und Beschwerdeweg. Für Budva und Bar wurden Selbsthilfegruppen gemeldet; aktuelle Termine beim Veranstalter erfragen.',
+				'Russisch- und englischsprachige Psychologen und Psychotherapeuten gibt es rund um Montenegro viele: Ein Teil empfängt persönlich in Podgorica, Budva und Bar, die meisten arbeiten online. Nach Anzeigen und Erfahrungsberichten in Expat-Chats kostet eine Sitzung in der Regel 40–60 €. Beachten Sie, dass dieser Markt nicht reguliert ist — in Expat-Chats kann sich jeder „Therapeut“ nennen; prüfen Sie also Ausbildung, Methoden und Erfahrung, bevor Sie beginnen. Auch Selbsthilfegruppen existieren: Treffen der Anonymen Alkoholiker in Budva, eine Gruppe für Eltern von Kindern mit besonderen Bedürfnissen in Bar.',
 			MhmTherapy4: 'Spezialisten mit Präsenzterminen finden Sie in unserem ',
 			MhmTherapy4Link: 'Ärztekatalog',
 			MhmTherapy4Mid: ', Kliniken mit Psychiater oder Psychologe im ',
@@ -398,31 +402,31 @@ export default {
 			MhmTherapy4End: '.',
 
 			MhmRx1:
-				'Antidepressiva, Anxiolytika, Schlafmittel und andere Psychopharmaka sind in Montenegro verschreibungspflichtig. Ein ausländisches Rezept garantiert keine Abgabe: Einzelne Nutzer berichten von einer Annahme durch manche Apotheken, doch der Apotheker darf ablehnen und darauf sollte man sich insbesondere bei psychotropen oder kontrollierten Arzneimitteln nicht verlassen. Im öffentlichen System ist eRecept üblich; ein Papierrezept kann in den gesetzlich vorgesehenen Fällen möglich sein. Beginn, Änderung oder Absetzen der Therapie immer mit einem qualifizierten Arzt besprechen.',
+				'Antidepressiva, Anxiolytika, Schlafmittel und andere Psychopharmaka werden in Montenegro ausschließlich gegen ein lokales Rezept verkauft: Ausländische Rezepte akzeptieren die Apotheken nicht — die Kontrollen wurden 2023–2024 verschärft, und die Zeiten, in denen manche Apotheken stillschweigend ein russisches Rezept annahmen, sind vorbei. Rezepte sind elektronisch und gelangen direkt ins Apothekensystem. Wichtig: Dieser Artikel erklärt, wie das System funktioniert — Auswahl, Wechsel oder Absetzen von Medikamenten besprechen Sie immer mit einem Arzt.',
 			MhmRx2:
-				'Wenn Sie während einer Behandlung umziehen, klären Sie die Weiterbehandlung vor der Reise mit dem verordnenden Arzt. Führen Sie nur eine gesetzlich zulässige Menge für den persönlichen Bedarf in Originalverpackung mit, dazu Rezept und Arztbericht mit INN in lateinischer Schrift, Dosis und Therapieverlauf. Prüfen Sie das Arzneimittel in unserem Register und die aktuellen Zollregeln vor dem Grenzübertritt. Nicht abrupt absetzen, die Dosis ändern oder das Präparat ohne ärztlichen Rat austauschen.',
+				'Wenn Sie umziehen und Medikamente einnehmen: Nehmen Sie einen Vorrat für die ersten Wochen und Ihre Unterlagen mit — einen Arztbericht mit Diagnose und Behandlungsschema, das Rezept selbst und den internationalen Freinamen (INN) des Wirkstoffs in lateinischer Schrift. Nicht jedes Medikament ist in Montenegro registriert (Tofisopam etwa gibt es nicht), prüfen Sie die Verfügbarkeit daher vorab nach Wirkstoff — und informieren Sie sich über die Zollregeln für die Einfuhr verschreibungspflichtiger Medikamente.',
 			MhmRx3:
-				'Mit knjižica beginnen Sie beim izabrani doktor. Er kann zum Psychiater überweisen; der genaue Verordnungs- und Verlängerungsweg hängt vom Arzneimittel, der Indikation und den Anforderungen des Fonds an einen Facharztbericht ab. Ein erstattetes Arzneimittel kann in einer Vertragsapotheke abgegeben werden, nicht nur bei Montefarm. Ein Chatbericht von Ende 2023 nannte 30 Cent Zuzahlung für zwei Packungen Sertralin; dieses Einzelbeispiel ist keine Preis- oder Leistungszusage. Fristen richten sich nach Rezept und Behandlungsplan.',
+				'Mit knjižica ist der Weg eingespielt (reale Erfahrung aus Expat-Chats, Ende 2023): Sie gehen zum izabrani doktor → er überweist zum Psychiater → dieser sieht sich die ausländische Verordnung an und stellt ein montenegrinisches E-Rezept aus → das Medikament holen Sie in einer staatlichen Montefarm-Apotheke ab. Medikamente von der Fondsliste sind fast kostenlos: Für zwei Packungen Sertralin zahlte jemand 30 Cent. Nach dem ersten Besuch kann der Psychiater einen Bericht ausstellen, mit dem der izabrani doktor das Rezept monatlich verlängert.',
 			MhmRx4:
-				'Ohne knjižica können Sie eine kostenpflichtige Konsultation bei einem dom zdravlja oder einer Privatklinik anfragen. Früher genannte Preise um 20–30 € sind nur Richtwerte; fragen Sie vor dem Termin nach dem aktuellen Honorar. Der Arzt beurteilt die Vorgeschichte eigenständig und kann ein lokales Rezept ausstellen, den Plan ändern oder zum Psychiater überweisen. Zulässige Menge und Verlängerungsfrist hängen von Arzneimittel und Behandlungsplan ab.',
+				'Ohne knjižica ist der Weg derselbe, aber kostenpflichtig: ein Termin in der turistička ambulanta des dom zdravlja (etwa 25 €) oder in einer Privatklinik (20–30 €) — der Arzt sieht sich die ausländische Verordnung an und stellt ein lokales Rezept aus. Rechnen Sie mit Einschränkungen: Meist werden nur ein bis zwei Packungen auf einmal verschrieben, die Verlängerung ist regelmäßig fällig, und bei einem „psychiatrischen“ Präparat schickt der Allgemeinarzt Sie unter Umständen zum Psychiater, auch wenn er formal selbst verschreiben dürfte — ein realer Fall aus den Chats: Die Touristenambulanz gab zwei Packungen aus und überwies weiter, und die 25 € für den Termin waren im Nachhinein eine Überraschung.',
 			MhmRx5:
 				'Verfügbarkeit und Preise konkreter Medikamente prüfen Sie in unserem',
 			MhmRx5Link: 'Medikamentenkatalog',
 			MhmRx5End: '.',
 
 			MhmCosts1:
-				'Mit knjižica hängt die Deckung von aktuellem Anspruch, Überweisung, Vertragseinrichtung und den Fondsbedingungen für Arzneimittel und Indikation ab; Zuzahlungen sind möglich. Weg und Kosten vor nicht dringender Versorgung klären.',
+				'Mit knjižica: Psychiatertermin mit Überweisung, stationäre Behandlung und Medikamente von der Fondsliste — kostenlos oder fast kostenlos (symbolische Zuzahlung in der Apotheke).',
 			MhmCosts2:
-				'Preise aus Chats und Anzeigen sind datierte Richtwerte, kein Angebot. Aktuelles Honorar und Leistungsumfang vor Buchung erfragen und das konkrete Arzneimittel in unserem Register und bei der Apotheke prüfen.',
+				'Ohne knjižica (Zahlen aus Erfahrungen und Anzeigen in Expat-Chats): eine Konsultation für ein Rezept — 20–30 € in einer Privatklinik oder etwa 25 € in der turistička ambulanta; ein vollwertiger Termin beim privaten Psychiater — 30–60 €; eine Psychotherapiesitzung bei einem russisch- oder englischsprachigen Spezialisten — meist 40–60 €; Medikamente zahlen Sie zum vollen Preis, wobei Generika in Montenegro überwiegend erschwinglich sind.',
 			MhmCosts3:
-				'Verfügbarkeit langfristiger Psychotherapie im öffentlichen System hängt von Gemeinde und Kapazität ab. Bei Online-Therapie aus dem Ausland Qualifikation, rechtliche Zulässigkeit, Datenschutz, Krisenplan und Koordination mit dem lokalen Arzt prüfen; Arzneimittelentscheidungen nicht auf unkoordinierte Anbieter verteilen.',
+				'Einen eigenen Posten „Psychotherapie“ gibt es in der staatlichen Versicherung nicht: Beratungen in den Zentren für mentale Gesundheit sind kostenlos, regelmäßige Langzeittherapie ist dort aber schwer zu bekommen — planen Sie private Therapie separat im Budget ein. Ein unter Zugezogenen verbreitetes Modell: Online-Therapie mit dem „eigenen“ Therapeuten aus der Heimat plus ein lokaler Psychiater für die Rezepte.',
 
 			MhmCrisis1:
-				'Wenn eine Person einen Suizidplan oder Zugang zu Mitteln hat, eine Überdosis genommen hat, psychotisch oder stark erregt ist oder nicht sicher bleiben kann, lassen Sie sie nicht allein. Rufen Sie 112 oder 124, gehen Sie zur nächsten hitna pomoć oder Notaufnahme und bitten Sie eine Vertrauensperson, bis zum Eintreffen der Hilfe zu bleiben. Notfallzugang sollte nicht wegen Staatsangehörigkeit oder Versicherung verzögert werden; spätere Kosten können jedoch von Status und Deckung abhängen.',
+				'Bei unmittelbarer Lebensgefahr — für Sie oder einen Angehörigen — rufen Sie 124 (Rettungsdienst) oder fahren Sie direkt zur nächsten hitna pomoć oder in die Notaufnahme eines Krankenhauses. Notfallhilfe wird unabhängig von Staatsangehörigkeit, Versicherung und Status geleistet.',
 			MhmCrisis2:
-				'Zum Prüfzeitpunkt konnten wir keine stabile, eigene nationale Krisenhotline für psychische Notlagen ermitteln; Kontakte können sich ändern, daher aktuelle lokale Angaben prüfen. In einer akuten Krise 112 oder 124 anrufen oder zur nächsten Notfallstelle gehen. Ein Zentrum für mentale Gesundheit kann während seiner Öffnungszeiten helfen, doch die Verfügbarkeit variiert. Verlassen Sie sich nicht ausschließlich auf einen ausländischen Online-Dienst.',
+				'Nach den letzten verfügbaren Berichten gibt es in Montenegro keine eigene nationale Krisenhotline. Rufen Sie im akuten Zustand 124 (Rettungsdienst) oder 112 an, fahren Sie zur nächsten hitna pomoć — und zu den Öffnungszeiten können Sie auch direkt in ein Zentrum für mentale Gesundheit am dom zdravlja kommen. Russisch- und englischsprachige Online-Krisendienste anderer Länder sind aus Montenegro ebenfalls erreichbar.',
 			MhmCrisis3:
-				'Um Hilfe zu bitten ist Selbstfürsorge, keine Schwäche. Bei unmittelbarer Gefahr nutzen Sie den oben beschriebenen Notfallweg. Ist die Gefahr nicht unmittelbar, wenden Sie sich an eine Vertrauensperson und eine qualifizierte Fachkraft und vereinbaren Sie einen Sicherheits- und Nachsorgeplan.',
+				'Um Hilfe zu bitten ist Selbstfürsorge, keine Schwäche. Wenn es unerträglich wird, bleiben Sie damit nicht allein: Schreiben Sie einem nahestehenden Menschen, einem Arzt oder Therapeuten — oder kommen Sie persönlich in eine Notaufnahme. Krisen gehen vorbei, und Hilfe wirkt.',
 
 			MhmSources0:
 				'Stand der Informationen: Juli 2026. Regeln und Kontakte ändern sich — prüfen Sie die Primärquellen:',
@@ -446,23 +450,23 @@ export default {
 				'Im Katalog finden Sie Ärzte mit Filtern nach Stadt, Fachrichtung und Sprache.',
 			MhmCtaButton: 'Psychiater in Montenegro',
 		},
-		tr: {
+		'tr': {
 			MentalHealthTitle:
 				'Karadağ’da psikologlar, psikiyatristler ve antidepresanlar',
 			MentalHealthDescription:
 				'Karadağ’da ruh sağlığı hizmetleri nasıl işler: devlet ruh sağlığı merkezleri ve psikiyatri hastaneleri, kendi dilinizde terapist bulma, taşındıktan sonra ilaç tedavisine devam etme, zdravstvena knjižica ile ve olmadan fiyatlar, kriz durumunda nereye başvurulur.',
 
-			MhmToc_system: 'Ruh sağlığı hizmetleri nasıl örgütlenmiştir',
-			MhmToc_therapy: 'Terapi: kendi dilinizde uzman bulmak',
-			MhmToc_prescriptions: 'Reçeteler: taşındıktan sonra tedaviye devam etmek',
-			MhmToc_costs: 'Maliyetler: knjižica ile ve olmadan',
-			MhmToc_crisis: 'Kriz durumları: acil yardım nereden alınır',
-			MhmToc_sources: 'Faydalı iletişim bilgileri ve kaynaklar',
+			'MhmToc_system': 'Ruh sağlığı hizmetleri nasıl örgütlenmiştir',
+			'MhmToc_therapy': 'Terapi: kendi dilinizde uzman bulmak',
+			'MhmToc_prescriptions': 'Reçeteler: taşındıktan sonra tedaviye devam etmek',
+			'MhmToc_costs': 'Maliyetler: knjižica ile ve olmadan',
+			'MhmToc_crisis': 'Kriz durumları: acil yardım nereden alınır',
+			'MhmToc_sources': 'Faydalı iletişim bilgileri ve kaynaklar',
 
 			MhmSystem1:
 				'Ruh sağlığına özen göstermek, tıbbın diğer her hastalığın tedavisi kadar olağan bir parçasıdır ve Karadağ’da bunun için ayrı bir devlet altyapısı vardır:',
 			MhmSystemLevel1:
-				'Centri za mentalno zdravlje, dom zdravlja birinci basamak ağı içindeki ruh sağlığı merkezleridir. Ekip, hizmetler ve çalışma saatleri belediyeye göre değişir. 2022 tarihli bir inceleme yedi belediyedeki hizmetleri sıralamıştı; bu güncel bir rehber değil, tarihsel bir kesittir. Mevcut ekip ve saatleri yerel dom zdravlja’dan doğrulayın;',
+				'Centri za mentalno zdravlje — dom zdravlja bünyesindeki ruh sağlığı merkezleri: psikiyatrist, psikolog ve sosyal hizmet uzmanından oluşan ayaktan ekipler. Mevcut son değerlendirmeye (2022) göre yedi belediyede fiilen çalışıyorlar — Podgorica, Bar, Berane, Bijelo Polje, Nikšić, Kotor ve Pljevlja;',
 			MhmSystemLevel2:
 				'Podgorica’daki Karadağ Klinik Merkezi’nin (KCCG) Klinika za psihijatriju’su ve Nikšić genel hastanesinin psikiyatri servisi — yatarak tedavi;',
 			MhmSystemLevel3:
@@ -475,11 +479,11 @@ export default {
 			MhmSystem3End: ' bulabilirsiniz.',
 
 			MhmTherapy1:
-				'Terimler hakkında kısaca: psikiyatrist bir hekimdir; tanı koyabilir ve ilaç yazabilir. Psikolog, ayrıca tıbbi yeterliliği yoksa hekim değildir. “Psikoterapist” bir eğitim ve çalışma türünü anlatır; hekim veya hekim olmayan bir uzman olabilir. Reçete yazma yetkisi psikoterapist unvanına değil, hekimlik ruhsatına bağlıdır. Yardım istemek sıradan bir öz bakımdır, “son çare” değildir.',
+				'Terimler hakkında kısaca: psikiyatrist bir hekimdir — tanı koyar ve ilaç yazar; psikolog ve psikoterapist konuşma terapisiyle çalışır ve reçete yazamaz. Bunlardan herhangi birine başvurmak sıradan bir öz bakımdır, “son çare” değildir.',
 			MhmTherapy2:
 				'Devlet sigortası psikiyatrik bakımı kapsar — muayeneler, yatarak tedavi ve Fon listesindeki ilaçlar; ruh sağlığı merkezlerindeki görüşmeler de sigortalılar için ücretsizdir. Kıt olan, düzenli uzun süreli konuşma terapisidir: merkezlerde ciddi personel eksikliği vardır, bu yüzden sürekli psikoterapi neredeyse her zaman özeldir.',
 			MhmTherapy3:
-				'Rusça veya İngilizce konuşan psikologlar ve psikoterapistler Karadağ’ın çeşitli şehirlerinde ve çevrimiçi çalışır. İnceleme sırasında ilanlar ve göçmen sohbetleri seans başına sıkça 40–60 € aralığını anıyordu; bu güncel fiyat teklifi değil, kullanıcı bildirimidir. Mesleki unvan, ruhsat ve sınır ötesi çevrimiçi çalışma kuralları değişir. Temel mesleği, diplomayı, gerektiğinde ruhsat veya kaydı, psikoterapi eğitimini, süpervizyonu, gizlilik politikasını ve şikâyet yolunu kontrol edin. Budva ve Bar’da destek grupları bildirildi; güncel programı düzenleyiciden doğrulayın.',
+				'Karadağ çevresinde Rusça ve İngilizce konuşan çok sayıda psikolog ve psikoterapist vardır: bir kısmı Podgorica, Budva ve Bar’da yüz yüze görüşür, çoğu çevrimiçi çalışır. Göçmen sohbetlerindeki ilanlara ve deneyimlere bakılırsa bir seans genellikle 40–60 € tutar. Bu pazarın hiçbir şekilde düzenlenmediğini unutmayın — göçmen sohbetlerinde herkes kendine “terapist” diyebilir; başlamadan önce eğitimi, yöntemleri ve deneyimi kontrol edin. Destek grupları da vardır: Budva’da Adsız Alkolikler toplantıları, Bar’da özel gereksinimli çocukların ebeveynleri için bir grup.',
 			MhmTherapy4: 'Yüz yüze görüşen uzmanları ',
 			MhmTherapy4Link: 'doktor kataloğumuzda',
 			MhmTherapy4Mid: ', psikiyatrist veya psikolog bulunan klinikleri ',
@@ -487,30 +491,31 @@ export default {
 			MhmTherapy4End: ' arayabilirsiniz.',
 
 			MhmRx1:
-				'Antidepresanlar, anksiyolitikler, uyku ilaçları ve diğer psikotrop ilaçlar Karadağ’da reçeteye tabidir. Yabancı reçete ilacın verilmesini garanti etmez: bazı kullanıcılar belirli eczanelerin reçeteyi kabul ettiğini bildirir, ancak eczacı reddedebilir ve özellikle psikotrop veya kontrollü ilaçlarda buna güvenilmemelidir. Kamu sisteminde eRecept olağandır; kuralların izin verdiği durumlarda yazılı reçete de mümkün olabilir. Tedaviye başlamayı, değişikliği veya bırakmayı nitelikli bir hekimle görüşün.',
+				'Antidepresanlar, anksiyolitikler, uyku ilaçları ve diğer psikotrop ilaçlar Karadağ’da yalnızca yerel reçeteyle satılır: eczaneler yabancı reçeteyi kabul etmez — denetimler 2023–2024’te sıkılaştı ve bazı eczanelerin Rus reçetesini sessizce kabul ettiği günler geride kaldı. Reçeteler elektroniktir ve doğrudan eczane sistemine düşer. Önemli: bu makale sistemin nasıl işlediğini anlatır — ilaç seçimini, değişimini ve bırakılmasını her zaman bir hekimle konuşun.',
 			MhmRx2:
-				'Tedavi sırasında taşınıyorsanız devamlılığı yolculuktan önce ilacı yazan hekimle planlayın. Yalnızca yasal kişisel kullanım miktarını özgün ambalajında; reçete ve Latin harfleriyle INN, doz ve tedavi geçmişini içeren raporla taşıyın. İlacı kendi sicilimizde ve güncel gümrük kurallarında önceden kontrol edin. Hekim önerisi olmadan ilacı aniden bırakmayın, dozu değiştirmeyin veya başka ürüne geçmeyin.',
+				'İlaç kullanırken taşınıyorsanız: ilk haftalar için yeterli stok ve belgelerinizi yanınıza alın — tanı ve tedavi şemasını içeren hekim raporu, reçetenin kendisi ve etken maddenin Latin harfleriyle uluslararası (INN) adı. Her ilaç Karadağ’da ruhsatlı değildir (örneğin tofizopam yoktur), bu yüzden bulunabilirliği önceden etken maddeye göre kontrol edin — ve reçeteli ilaçların sınırdan geçirilmesine ilişkin gümrük kurallarına bakın.',
 			MhmRx3:
-				'Knjižica ile izabrani doktor’dan başlayın. Sizi psikiyatriste sevk edebilir; reçete ve yenileme yolu ilaca, endikasyona ve Fonun uzman raporu şartlarına bağlıdır. Kapsanan ilaç yalnızca Montefarm’dan değil, Fonla sözleşmeli bir eczaneden alınabilir. 2023 sonundaki bir sohbet bildirimi iki kutu sertralin için 30 sent katkı payından söz ediyordu; bu tekil örnek fiyat veya kapsam taahhüdü değildir. Yenileme süresi reçete ve tedavi planına bağlıdır.',
+				'Knjižica varsa yol denenmiştir (göçmen sohbetlerinden gerçek deneyim, 2023 sonu): izabrani doktor’a gidersiniz → sizi psikiyatriste sevk eder → psikiyatrist yabancı reçetenizi inceleyip Karadağ e-reçetesi yazar → ilacı devlet eczanesi Montefarm’dan alırsınız. Fon listesindeki ilaçlar neredeyse ücretsizdir: bir kişi iki kutu sertralin için 30 sent ödedi. İlk görüşmeden sonra psikiyatrist, izabrani doktor’un reçeteyi her ay yenilemesini sağlayan bir rapor verebilir.',
 			MhmRx4:
-				'Knjižica olmadan dom zdravlja hizmetinde veya özel klinikte ücretli muayene isteyebilirsiniz. Daha önce bildirilen 20–30 € civarı fiyatlar yalnızca göstergedir; güncel ücreti randevudan önce sorun. Hekim tedavi geçmişini bağımsız değerlendirir ve yerel reçete yazabilir, planı değiştirebilir veya psikiyatriste sevk edebilir. İzin verilen miktar ve yenileme aralığı ilaca ve klinik plana bağlıdır.',
-			MhmRx5: 'Belirli ilaçların bulunabilirliğini ve fiyatlarını',
+				'Knjižica yoksa yol aynıdır ama ücretlidir: dom zdravlja’daki turistička ambulanta’da (yaklaşık 25 €) veya özel bir klinikte (20–30 €) muayene — hekim yabancı reçetenizi inceleyip yerel reçete yazar. Kısıtlamalara hazır olun: genellikle bir seferde yalnızca bir-iki kutu yazılır, yenileme düzenli gerekir ve “psikiyatrik” bir ilaçta pratisyen, resmen kendisi yazabilecekken bile sizi psikiyatriste gönderebilir — sohbetlerden gerçek bir vaka: turist polikliniği iki kutu verip hastayı sevk etti, muayene için 25 € ise sonradan sürpriz oldu.',
+			MhmRx5:
+				'Belirli ilaçların bulunabilirliğini ve fiyatlarını',
 			MhmRx5Link: 'ilaç kataloğumuzda',
 			MhmRx5End: ' kontrol edin.',
 
 			MhmCosts1:
-				'Knjižica ile kapsam; güncel hak, sevk, sözleşmeli kurum ve ilaç ile endikasyon için Fon koşullarına bağlıdır; katkı payı olabilir. Acil olmayan bakım öncesi yolu ve maliyeti doğrulayın.',
+				'Knjižica ile: sevkli psikiyatrist muayenesi, yatarak tedavi ve Fon listesindeki ilaçlar — ücretsiz veya neredeyse ücretsiz (eczanede sembolik katkı payı).',
 			MhmCosts2:
-				'Sohbet ve ilan fiyatları tarihli göstergedir, teklif değildir. Randevudan önce güncel ücreti ve içeriğini sorun; belirli ilacı kendi sicilimizde ve eczanede kontrol edin.',
+				'Knjižica olmadan (rakamlar göçmen sohbetlerindeki deneyim ve ilanlardan): reçete için konsültasyon — özel klinikte 20–30 € veya turistička ambulanta’da yaklaşık 25 €; özel psikiyatristte tam muayene — 30–60 €; Rusça veya İngilizce konuşan bir uzmanda psikoterapi seansı — genellikle 40–60 €; ilaçlar tam fiyattan ödenir, ancak Karadağ’da jenerikler çoğunlukla uygun fiyatlıdır.',
 			MhmCosts3:
-				'Kamuda uzun süreli psikoterapi erişimi belediye ve kapasiteye bağlıdır. Başka ülkedeki çevrimiçi terapistin niteliğini, yasal hizmet yetkisini, gizliliği, kriz planını ve yerel hekimle koordinasyonu doğrulayın; ilaç kararlarını koordinasyonsuz sağlayıcılar arasında bölmeyin.',
+				'Devlet sigortasında ayrı bir “psikoterapi” kalemi yoktur: ruh sağlığı merkezlerindeki görüşmeler ücretsizdir, ancak orada düzenli uzun süreli terapi almak zordur — özel terapiyi bütçenizde ayrıca planlayın. Göçmenler arasında yaygın bir model: memleketteki “kendi” terapistiyle çevrimiçi terapi artı reçeteler için yerel bir psikiyatrist.',
 
 			MhmCrisis1:
-				'Bir kişinin intihar planı veya araçlara erişimi varsa, aşırı doz aldıysa, psikoz ya da ağır ajitasyon yaşıyorsa veya güvenli kalamıyorsa onu yalnız bırakmayın. 112’yi veya 124’ü arayın, en yakın hitna pomoć ya da hastane aciline gidin ve yardım gelene kadar güvendiğiniz birinin yanında kalmasını sağlayın. Acil erişim vatandaşlık veya sigorta nedeniyle geciktirilmemelidir; sonraki ücretler statü ve kapsama göre değişebilir.',
+				'Sizin veya bir yakınınızın yaşamı için doğrudan tehlike varsa 124’ü (ambulans) arayın veya en yakın hitna pomoć noktasına ya da hastane acil servisine gidin. Acil yardım; vatandaşlık, sigorta ve statüden bağımsız olarak verilir.',
 			MhmCrisis2:
-				'İnceleme sırasında ruh sağlığı krizleri için istikrarlı, özel bir ulusal hat belirleyemedik; iletişim bilgileri değişebileceğinden güncel yerel bilgiyi doğrulayın. Akut krizde 112 veya 124’ü arayın ya da en yakın acil servise gidin. Ruh sağlığı merkezi çalışma saatlerinde yardımcı olabilir, ancak erişilebilirlik değişir. Yabancı bir çevrimiçi hizmeti tek acil yol olarak kullanmayın.',
+				'Mevcut son raporlara göre Karadağ’da özel bir ulusal kriz hattı yoktur. Akut durumda 124’ü (ambulans) veya 112’yi arayın, en yakın hitna pomoć noktasına gidin; çalışma saatleri içinde dom zdravlja’daki ruh sağlığı merkezine doğrudan da başvurabilirsiniz. Diğer ülkelerin Rusça ve İngilizce çevrimiçi kriz servislerine Karadağ’dan da erişilebilir.',
 			MhmCrisis3:
-				'Yardım istemek öz bakımdır, zayıflık değildir. Doğrudan tehlike varsa yukarıdaki acil yolu kullanın. Tehlike doğrudan değilse güvendiğiniz biriyle ve nitelikli bir uzmanla iletişime geçip güvenlik ve takip planı oluşturun.',
+				'Yardım istemek kendinize özen göstermektir, zayıflık değildir. Çok zorlanıyorsanız bununla yalnız kalmayın: yakın birine, bir hekime veya psikoloğa yazın ya da bizzat bir acil servise gidin — krizler geçer ve yardım işe yarar.',
 
 			MhmSources0:
 				'Bilgiler Temmuz 2026 itibarıyla günceldir. Kurallar ve iletişim bilgileri değişir — birincil kaynakları kontrol edin:',

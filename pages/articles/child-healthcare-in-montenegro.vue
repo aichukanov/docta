@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import { SITE_URL } from '~/common/constants';
-import { getRegionalQuery, getRegionalUrl } from '~/common/url-utils';
-import {
-	buildBreadcrumbsSchema,
-	buildMedicalWebPageSchema,
-} from '~/common/schema-org-builders';
+import { getRegionalQuery } from '~/common/url-utils';
 import { combineI18nMessages } from '~/i18n/utils';
 import { DoctorSpecialty } from '~/enums/specialty';
 
@@ -17,41 +12,6 @@ const { t, locale } = useI18n({
 });
 
 const ARTICLE_SLUG = 'child-healthcare-in-montenegro';
-
-const { trackEvent } = useAnalytics();
-
-provideAnalyticsEntity(
-	computed(() => ({
-		entity_type: 'article' as const,
-		entity_id: ARTICLE_SLUG,
-		entity_slug: ARTICLE_SLUG,
-	})),
-);
-
-onMounted(() => {
-	trackEvent('entity_viewed', {
-		entity_type: 'article',
-		entity_id: ARTICLE_SLUG,
-		entity_slug: ARTICLE_SLUG,
-	});
-});
-
-// 1. Links and basic data
-const homeLink = computed(() => ({
-	name: 'index',
-	query: getRegionalQuery(locale.value),
-}));
-
-const articlesLink = computed(() => ({
-	name: 'articles',
-	query: getRegionalQuery(locale.value),
-}));
-
-const breadcrumbItems = computed(() => [
-	{ label: t('BreadcrumbHome'), to: homeLink.value },
-	{ label: t('BreadcrumbArticles'), to: articlesLink.value },
-	{ label: t('ChildHealthcareTitle') },
-]);
 
 // Каталог врачей с предустановленным фильтром «педиатрия»
 const pediatriciansLink = computed(() => ({
@@ -91,54 +51,16 @@ const articleCta = computed(() => ({
 	link: pediatriciansLink.value,
 }));
 
-const schemaOrgStore = useSchemaOrgStore();
-const pageUrl = computed(() =>
-	getRegionalUrl(`${SITE_URL}/articles/${ARTICLE_SLUG}`, {}, locale.value),
-);
-
-// 2. SEO and Schema.org
-const pageTitle = computed(() => t('ChildHealthcareTitle'));
-const pageDescription = computed(() => t('ChildHealthcareDescription'));
-const articleImage = `${SITE_URL}/img/articles/child-healthcare-in-montenegro.webp`;
-
-useSeoMeta({
-	title: pageTitle,
-	description: pageDescription,
-	ogTitle: pageTitle,
-	ogDescription: pageDescription,
-	ogImage: articleImage,
-	ogUrl: pageUrl,
-	twitterCard: 'summary',
-	twitterTitle: pageTitle,
-	twitterDescription: pageDescription,
-	twitterImage: articleImage,
-});
-
-watchEffect(() => {
-	schemaOrgStore.setSchemas([
-		...buildMedicalWebPageSchema({
-			siteUrl: SITE_URL,
-			pageUrl: pageUrl.value,
-			locale: locale.value,
-			title: t('ChildHealthcareTitle'),
-			description: t('ChildHealthcareDescription'),
-			image: articleImage,
-			datePublished: '2026-07-16',
-			dateModified: '2026-07-17',
-			lastReviewed: '2026-07-17',
-		}),
-		buildBreadcrumbsSchema(pageUrl.value, [
-			{
-				name: t('BreadcrumbHome'),
-				url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
-			},
-			{
-				name: t('BreadcrumbArticles'),
-				url: getRegionalUrl(`${SITE_URL}/articles`, {}, locale.value),
-			},
-			{ name: t('ChildHealthcareTitle') },
-		]),
-	]);
+const { breadcrumbItems } = useArticlePageSeo({
+	slug: ARTICLE_SLUG,
+	title: computed(() => t('ChildHealthcareTitle')),
+	description: computed(() => t('ChildHealthcareDescription')),
+	image: `/img/articles/${ARTICLE_SLUG}.webp`,
+	datePublished: '2026-07-16',
+	dateModified: '2026-07-17',
+	lastReviewed: '2026-07-17',
+	t,
+	locale,
 });
 </script>
 
@@ -195,24 +117,3 @@ watchEffect(() => {
 		</ArticleSection>
 	</ArticlePage>
 </template>
-
-<style scoped lang="less">
-p {
-	margin: 0 0 var(--spacing-lg);
-	font-size: var(--font-size-base);
-	line-height: 1.7;
-	color: var(--color-text-secondary);
-
-	&:last-child {
-		margin-bottom: 0;
-	}
-
-	a {
-		color: var(--color-primary);
-
-		&:hover {
-			text-decoration: none;
-		}
-	}
-}
-</style>

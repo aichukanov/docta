@@ -149,10 +149,16 @@ const { t } = useI18n({ useScope: 'local' });
 		background: var(--color-primary-bg);
 		color: var(--color-primary);
 	}
+
+	&:focus-visible {
+		outline: 2px solid var(--color-primary);
+		outline-offset: 2px;
+	}
 }
 
 .toc-count {
-	color: var(--color-text-muted);
+	// var(--color-text-muted) на сером фоне чипа даёт ~4.34:1 — ниже порога WCAG AA (4.5:1)
+	color: var(--color-text-secondary);
 	font-weight: var(--font-weight-normal);
 }
 
@@ -203,9 +209,16 @@ const { t } = useI18n({ useScope: 'local' });
 		&:hover {
 			background: var(--color-primary-dark);
 		}
+
+		&:focus-visible {
+			outline: 2px solid var(--color-primary-dark);
+			outline-offset: 2px;
+		}
 	}
 }
 </style>
+
+<style src="~/assets/css/article-prose.less" lang="less"></style>
 
 <i18n lang="json">
 {

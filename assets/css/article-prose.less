@@ -1,0 +1,45 @@
+// Общая типографика содержимого статей (используется внутри .article-body
+// в article-page.vue). Обычный, не scoped стиль — рендерит теги p/ul/li/a,
+// приходящие через <slot /> из родительских страниц.
+.article-body {
+	p {
+		max-width: 70ch;
+		margin: 0 0 var(--spacing-lg);
+		font-size: var(--font-size-base);
+		line-height: 1.7;
+		color: var(--color-text-secondary);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	ul {
+		max-width: 70ch;
+		margin: 0 0 var(--spacing-lg);
+		padding-left: var(--spacing-xl);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-sm);
+	}
+
+	li {
+		font-size: var(--font-size-base);
+		line-height: 1.7;
+		color: var(--color-text-secondary);
+	}
+
+	a {
+		color: var(--color-primary);
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--color-primary);
+			outline-offset: 2px;
+			border-radius: 2px;
+		}
+	}
+}

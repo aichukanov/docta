@@ -11,6 +11,7 @@ import { combineI18nMessages } from '~/i18n/utils';
 import { LanguageId } from '~/enums/language';
 import articlesI18n from '~/i18n/articles';
 import cityHealthcareI18n from '~/i18n/article-city-healthcare';
+import weekendMedicalHelpI18n from '~/i18n/article-weekend-medical-help';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 
 const { t, locale } = useI18n({
@@ -18,6 +19,7 @@ const { t, locale } = useI18n({
 	messages: combineI18nMessages([
 		articlesI18n,
 		cityHealthcareI18n,
+		weekendMedicalHelpI18n,
 		breadcrumbI18n,
 	]),
 });
@@ -144,6 +146,16 @@ const articles = computed(() => [
 		meta: '',
 		link: {
 			path: '/articles/pharmacies-and-medications',
+			query: getRegionalQuery(locale.value),
+		},
+	},
+	{
+		title: t('WeekendMedicalHelpTitle'),
+		description: t('WeekendMedicalHelpDescription'),
+		image: '/img/articles/weekend-medical-help-in-montenegro.webp',
+		meta: '',
+		link: {
+			path: '/articles/weekend-medical-help-in-montenegro',
 			query: getRegionalQuery(locale.value),
 		},
 	},

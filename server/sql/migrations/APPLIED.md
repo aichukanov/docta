@@ -138,7 +138,35 @@ Created tables:
 `data/entity-reference/{lab-tests,medical-services}.json` (110 карточек × 6 языков),
 импорт собирается скриптом `node scripts/entity-reference/build-entity-reference-sql.mjs`
 → `server/sql/migrations/insert-entity-reference-info.sql` (INSERT ... ON DUPLICATE KEY UPDATE,
-FK резолвится по slug). Импорт ещё не применён к БД, вывод на страницах ещё не реализован.
+FK резолвится по slug).
+
+`insert-entity-reference-info.sql` применён 2026-07-19 (confirmed by user) — данные в БД.
+
+## 2026-07-19: 010/011/012-insurance-*.sql + insert-insurance-companies.sql
+
+Справочник страховых компаний (prd/insurance-companies — Sava, Lovćen, Uniqa,
+Generali, Grawe). Applied by user (confirmed 2026-07-19).
+
+Schema changes:
+- `cities`: добавлены Pljevlja (16), Rožaje (17) — не было в `enums/cities.ts`
+- Created `insurance_companies` — справочник, колонки зеркалят конвенцию
+  `clinics` (name_sr/name_sr_cyrl/name_ru), контакты
+  (phone/email/website/logo_url + facebook/instagram/telegram/whatsapp/viber,
+  добавлены миграцией 011 — забыли в 010, `SELECT` в
+  `server/api/insurance-companies/details.ts` падал с "Unknown column")
+- Created `insurance_company_branches` — 1:N филиалы (в отличие от `clinics`
+  у страховой может быть несколько офисов), адрес/город/координаты, свои
+  телефон/email (переопределяют компанию), `working_hours` (миграция 012)
+
+Данные — `insert-insurance-companies.sql`, собраны с официальных сайтов
+страховых (2026-07-18), координаты/адреса/часы работы филиалов перепроверены
+и исправлены 2026-07-19 (детали и источники — в шапке файла и
+`013-insurance-company-branches-geo-hours-fix.sql`), телефоны/email приведены
+к единому формату сайта (чистые цифры `+382...`, разделитель `;`). Скрипт
+идемпотентен (`ON DUPLICATE KEY UPDATE`).
+
+Используется `server/api/insurance-companies/{list,details,add,update,remove,admin-details}.ts`
+и страницами `pages/insurance-companies/{index,[companySlug]}.vue`.
 
 ## 2026-06-12: 008-billing-remove-dofollow-prices.sql
 

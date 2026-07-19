@@ -226,6 +226,11 @@ watchEffect(() => {
 		:toc="articleToc"
 		:cta="articleCta"
 	>
+		<div>
+			<p>{{ t('ClinicsWithLanguageSupportIntro1') }}</p>
+			<p>{{ t('ClinicsWithLanguageSupportIntro2') }}</p>
+		</div>
+
 		<ArticleSection
 			v-for="group in groupedClinics"
 			:id="`language-${group.languageId}`"

@@ -17,14 +17,14 @@
 | [lab-tests-and-checkups](../pages/articles/lab-tests-and-checkups.vue) | `i18n/article-labtests.ts` | 2026-07-19 |
 | [child-healthcare-in-montenegro](../pages/articles/child-healthcare-in-montenegro.vue) | `i18n/article-child-healthcare.ts` | 2026-07-19 |
 | [healthcare-in-budva](../pages/articles/healthcare-in-budva.vue) | `i18n/article-city-healthcare.ts` (общий компонент `components/article/city-healthcare.vue`) | 2026-07-19 |
+| [healthcare-in-podgorica](../pages/articles/healthcare-in-podgorica.vue) | `i18n/article-city-healthcare.ts` | 2026-07-19 |
+| [healthcare-in-kotor](../pages/articles/healthcare-in-kotor.vue) | `i18n/article-city-healthcare.ts` | 2026-07-19 |
+| [healthcare-in-bar](../pages/articles/healthcare-in-bar.vue) | `i18n/article-city-healthcare.ts` | 2026-07-19 |
 
 ## Сгенерировано, ждёт проверки
 
 | Статья | i18n-файл |
 |---|---|
-| [healthcare-in-podgorica](../pages/articles/healthcare-in-podgorica.vue) | `i18n/article-city-healthcare.ts` |
-| [healthcare-in-kotor](../pages/articles/healthcare-in-kotor.vue) | `i18n/article-city-healthcare.ts` |
-| [healthcare-in-bar](../pages/articles/healthcare-in-bar.vue) | `i18n/article-city-healthcare.ts` |
 | [russian-speaking-doctors-in-montenegro](../pages/articles/russian-speaking-doctors-in-montenegro.vue) | — |
 | [clinics-with-language-support](../pages/articles/clinics-with-language-support.vue) | — |
 

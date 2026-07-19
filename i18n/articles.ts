@@ -7,10 +7,18 @@ export default {
 			RussianSpeakingDoctorsTitle: 'Russian-speaking doctors in Montenegro',
 			RussianSpeakingDoctorsDescription:
 				'A curated directory of listed doctors in Montenegro who report speaking Russian, grouped by specialty. Coverage is not complete; confirm current practice, language level, licence and appointment details directly.',
+			RussianSpeakingDoctorsIntro1:
+				'If you speak Russian and want to discuss symptoms and treatment without a language barrier, that is realistic in Montenegro: some doctors list Russian among the languages they see patients in. Below is a directory of such doctors, grouped by specialty.',
+			RussianSpeakingDoctorsIntro2:
+				'The list is compiled from doctor profiles in our catalog and is not exhaustive: if a doctor has not filled in a language, that does not necessarily mean they do not speak Russian — confirm when booking. It is also worth checking language level, current availability and workplace directly, since clinics and staff do change.',
 			ClinicsWithLanguageSupportTitle:
 				'Clinics with multilingual support in Montenegro',
 			ClinicsWithLanguageSupportDescription:
 				'A curated directory of listed clinics that report consultations in different languages. Coverage and language availability are not guaranteed; confirm the specific clinician, language and appointment directly with the clinic.',
+			ClinicsWithLanguageSupportIntro1:
+				"If Montenegrin (or Serbian) is not your first language, a number of clinics across the country have staff who speak other languages too — from English to Turkish. Below is a directory of such clinics, grouped by language.",
+			ClinicsWithLanguageSupportIntro2:
+				'The list is compiled from clinic profiles in our catalog: a clinic states which languages its staff can consult in. Whether a specific language is available from a specific doctor on a given day is best confirmed directly when booking — staff and language coverage can change.',
 			MentalHealthTitle:
 				'Psychologists, psychiatrists and antidepressants in Montenegro',
 			MentalHealthDescription:
@@ -65,10 +73,18 @@ export default {
 			RussianSpeakingDoctorsTitle: 'Русскоязычные врачи в Черногории',
 			RussianSpeakingDoctorsDescription:
 				'Редакционный каталог добавленных врачей в Черногории, которые указывают русский язык, с группировкой по специальностям. Каталог не претендует на полноту: уточняйте место работы, уровень языка, лицензию и запись напрямую.',
+			RussianSpeakingDoctorsIntro1:
+				'Если вы говорите по-русски и хотите обсуждать симптомы и лечение без языкового барьера, в Черногории это вполне реально: часть врачей указывают русский в числе языков приёма. Ниже — каталог таких врачей, сгруппированный по специальностям.',
+			RussianSpeakingDoctorsIntro2:
+				'Список собран по данным профилей врачей в нашем каталоге и не претендует на полноту: если врач не указал язык в профиле, это не значит, что он не говорит по-русски — уточняйте при записи. Уровень языка, актуальность приёма и место работы также стоит проверять напрямую: клиники и состав врачей иногда меняются.',
 			ClinicsWithLanguageSupportTitle:
 				'Клиники с языковой поддержкой в Черногории',
 			ClinicsWithLanguageSupportDescription:
 				'Редакционный каталог добавленных клиник, которые сообщают о консультациях на разных языках. Полнота и доступность языка не гарантируются: подтверждайте конкретного врача, язык и запись непосредственно в клинике.',
+			ClinicsWithLanguageSupportIntro1:
+				'Если вам удобнее объясняться не только по-черногорски (или по-сербски), в части клиник страны есть персонал, говорящий на других языках, — от английского до турецкого. Ниже — каталог таких клиник, сгруппированный по языку.',
+			ClinicsWithLanguageSupportIntro2:
+				'Список собран по данным профилей клиник в нашем каталоге: клиника указывает языки, на которых там могут проконсультировать. Доступность конкретного языка у конкретного врача в конкретный день лучше уточнять напрямую при записи — персонал и набор языков могут меняться.',
 			MentalHealthTitle: 'Психологи, психиатры и антидепрессанты в Черногории',
 			MentalHealthDescription:
 				'Как устроена помощь в сфере ментального здоровья в Черногории: государственные центры ментального здоровья и психиатрические больницы, поиск терапевта на своём языке, продолжение медикаментозного лечения после переезда, цены с книжицей и без, куда обращаться в кризисной ситуации.',
@@ -121,10 +137,18 @@ export default {
 			RussianSpeakingDoctorsTitle: 'Doktori koji govore ruski u Crnoj Gori',
 			RussianSpeakingDoctorsDescription:
 				'Uređeni katalog unesenih doktora u Crnoj Gori koji navode ruski jezik, grupisan po specijalnosti. Katalog nije potpun; direktno provjerite mjesto rada, nivo jezika, licencu i termin.',
+			RussianSpeakingDoctorsIntro1:
+				'Ako govorite ruski i želite da razgovarate o simptomima i liječenju bez jezičke barijere, to je u Crnoj Gori sasvim ostvarivo: neki ljekari navode ruski među jezicima na kojima primaju pacijente. Ispod je spisak takvih ljekara, grupisan po specijalnostima.',
+			RussianSpeakingDoctorsIntro2:
+				'Spisak je sastavljen na osnovu profila ljekara u našem katalogu i nije potpun: ako ljekar nije naveo jezik u profilu, to ne znači nužno da ne govori ruski — provjerite prilikom zakazivanja. Takođe vrijedi direktno provjeriti nivo jezika, aktuelnost termina i mjesto rada, jer se klinike i sastav osoblja mijenjaju.',
 			ClinicsWithLanguageSupportTitle:
 				'Klinike sa višejezičnom podrškom u Crnoj Gori',
 			ClinicsWithLanguageSupportDescription:
 				'Uređeni katalog unesenih klinika koje navode konsultacije na različitim jezicima. Potpunost i jezička dostupnost nijesu garantovane; provjerite konkretnog doktora, jezik i termin direktno sa klinikom.',
+			ClinicsWithLanguageSupportIntro1:
+				'Ako vam crnogorski (ili srpski) nije maternji jezik, u dijelu klinika širom zemlje osoblje govori i druge jezike — od engleskog do turskog. Ispod je spisak takvih klinika, grupisan po jeziku.',
+			ClinicsWithLanguageSupportIntro2:
+				'Spisak je sastavljen na osnovu profila klinika u našem katalogu: klinika navodi jezike na kojima tamo mogu da vas konsultuju. Da li je konkretan jezik dostupan kod konkretnog ljekara određenog dana, najbolje je provjeriti direktno prilikom zakazivanja — osoblje i jezička ponuda se mogu mijenjati.',
 			MentalHealthTitle: 'Psiholozi, psihijatri i antidepresivi u Crnoj Gori',
 			MentalHealthDescription:
 				'Kako funkcioniše zaštita mentalnog zdravlja u Crnoj Gori: državni centri za mentalno zdravlje i psihijatrijske bolnice, kako naći terapeuta koji govori vaš jezik, nastavak terapije ljekovima nakon preseljenja, cijene sa zdravstvenom knjižicom i bez nje, kome se obratiti u kriznoj situaciji.',
@@ -177,10 +201,18 @@ export default {
 			RussianSpeakingDoctorsTitle: 'Russischsprachige Ärzte in Montenegro',
 			RussianSpeakingDoctorsDescription:
 				'Ein redaktionell gepflegtes Verzeichnis eingetragener Ärzte in Montenegro, die Russisch angeben, nach Fachgebiet. Es ist nicht vollständig; Praxis, Sprachniveau, Zulassung und Termin direkt bestätigen.',
+			RussianSpeakingDoctorsIntro1:
+				'Wenn Sie Russisch sprechen und Symptome und Behandlung ohne Sprachbarriere besprechen möchten, ist das in Montenegro durchaus möglich: Einige Ärzte geben Russisch als eine der Sprachen an, in denen sie Patienten empfangen. Unten finden Sie ein Verzeichnis solcher Ärzte, gruppiert nach Fachrichtung.',
+			RussianSpeakingDoctorsIntro2:
+				'Die Liste basiert auf den Arztprofilen in unserem Katalog und ist nicht vollständig: Wenn ein Arzt keine Sprache angegeben hat, heißt das nicht zwangsläufig, dass er kein Russisch spricht — fragen Sie bei der Terminvereinbarung nach. Auch Sprachniveau, aktuelle Verfügbarkeit und Arbeitsort sollten Sie direkt bestätigen, da sich Kliniken und Personal ändern können.',
 			ClinicsWithLanguageSupportTitle:
 				'Kliniken mit mehrsprachiger Unterstützung in Montenegro',
 			ClinicsWithLanguageSupportDescription:
 				'Ein redaktionell gepflegtes Verzeichnis eingetragener Kliniken, die Beratungen in verschiedenen Sprachen angeben. Vollständigkeit und Sprachverfügbarkeit sind nicht garantiert; konkreten Arzt, Sprache und Termin direkt bestätigen.',
+			ClinicsWithLanguageSupportIntro1:
+				'Wenn Montenegrinisch (oder Serbisch) nicht Ihre Muttersprache ist: In einigen Kliniken im Land spricht das Personal auch andere Sprachen — von Englisch bis Türkisch. Unten finden Sie ein Verzeichnis solcher Kliniken, gruppiert nach Sprache.',
+			ClinicsWithLanguageSupportIntro2:
+				'Die Liste basiert auf den Klinikprofilen in unserem Katalog: Eine Klinik gibt an, in welchen Sprachen dort beraten werden kann. Ob eine bestimmte Sprache bei einem bestimmten Arzt an einem bestimmten Tag verfügbar ist, bestätigen Sie am besten direkt bei der Terminvereinbarung — Personal und Sprachangebot können sich ändern.',
 			MentalHealthTitle:
 				'Psychologen, Psychiater und Antidepressiva in Montenegro',
 			MentalHealthDescription:
@@ -235,10 +267,18 @@ export default {
 			RussianSpeakingDoctorsTitle: "Karadağ'da Rusça konuşan doktorlar",
 			RussianSpeakingDoctorsDescription:
 				'Karadağ genelinde Rusça bildiren kayıtlı doktorların uzmanlığa göre düzenlenmiş kataloğu. Tam değildir; çalışma yeri, dil düzeyi, ruhsat ve randevuyu doğrudan doğrulayın.',
+			RussianSpeakingDoctorsIntro1:
+				"Rusça konuşuyorsanız ve semptomlarınızı, tedavinizi dil engeli olmadan anlatmak istiyorsanız, Karadağ'da bu mümkündür: bazı doktorlar hastalarıyla iletişim kurduğu diller arasında Rusçayı da belirtir. Aşağıda, uzmanlıklarına göre gruplandırılmış bu doktorların listesi var.",
+			RussianSpeakingDoctorsIntro2:
+				'Liste, kataloğumuzdaki doktor profillerinden derlenmiştir ve eksiksiz değildir: bir doktor profilinde dil belirtmemişse, bu Rusça konuşmadığı anlamına gelmez — randevu alırken teyit edin. Dil seviyesini, güncel müsaitliği ve çalıştığı yeri de doğrudan doğrulamakta fayda var, çünkü klinikler ve kadrolar değişebilir.',
 			ClinicsWithLanguageSupportTitle:
 				"Karadağ'da çok dilli destek sunan klinikler",
 			ClinicsWithLanguageSupportDescription:
 				'Farklı dillerde görüşme bildiren kayıtlı kliniklerin düzenlenmiş kataloğu. Tamlık ve dil erişimi garanti değildir; belirli hekimi, dili ve randevuyu klinikten doğrulayın.',
+			ClinicsWithLanguageSupportIntro1:
+				"Karadağca (ya da Sırpça) ana diliniz değilse, ülke genelinde bazı kliniklerde personel başka diller de konuşur — İngilizceden Türkçeye kadar. Aşağıda, dile göre gruplandırılmış bu kliniklerin listesi var.",
+			ClinicsWithLanguageSupportIntro2:
+				'Liste, kataloğumuzdaki klinik profillerinden derlenmiştir: bir klinik, orada hangi dillerde danışma verilebileceğini belirtir. Belirli bir dilin belirli bir doktorda, belirli bir günde mevcut olup olmadığını randevu alırken doğrudan teyit etmek en iyisidir — personel ve dil kapsamı değişebilir.',
 			MentalHealthTitle:
 				'Karadağ’da psikologlar, psikiyatristler ve antidepresanlar',
 			MentalHealthDescription:
@@ -292,10 +332,18 @@ export default {
 			RussianSpeakingDoctorsTitle: 'Доктори који говоре руски у Црној Гори',
 			RussianSpeakingDoctorsDescription:
 				'Уређени каталог унесених доктора у Црној Гори који наводе руски језик, груписан по специјалности. Каталог није потпун; директно провјерите мјесто рада, ниво језика, лиценцу и термин.',
+			RussianSpeakingDoctorsIntro1:
+				'Ако говорите руски и желите да разговарате о симптомима и лијечењу без језичке баријере, то је у Црној Гори сасвим остварљиво: неки љекари наводе руски међу језицима на којима примају пацијенте. Испод је списак таквих љекара, груписан по специјалностима.',
+			RussianSpeakingDoctorsIntro2:
+				'Списак је састављен на основу профила љекара у нашем каталогу и није потпун: ако љекар није навео језик у профилу, то не значи нужно да не говори руски — провјерите приликом заказивања. Такође вриједи директно провјерити ниво језика, актуелност термина и мјесто рада, јер се клинике и састав особља мијењају.',
 			ClinicsWithLanguageSupportTitle:
 				'Клинике са вишејезичном подршком у Црној Гори',
 			ClinicsWithLanguageSupportDescription:
 				'Уређени каталог унесених клиника које наводе консултације на различитим језицима. Потпуност и језичка доступност нијесу гарантоване; провјерите конкретног доктора, језик и термин директно са клиником.',
+			ClinicsWithLanguageSupportIntro1:
+				'Ако вам црногорски (или српски) није матерњи језик, у дијелу клиника широм земље особље говори и друге језике — од енглеског до турског. Испод је списак таквих клиника, груписан по језику.',
+			ClinicsWithLanguageSupportIntro2:
+				'Списак је састављен на основу профила клиника у нашем каталогу: клиника наводи језике на којима тамо могу да вас консултују. Да ли је конкретан језик доступан код конкретног љекара одређеног дана, најбоље је провјерити директно приликом заказивања — особље и језичка понуда се могу мијењати.',
 			MentalHealthTitle: 'Психолози, психијатри и антидепресиви у Црној Гори',
 			MentalHealthDescription:
 				'Како функционише заштита менталног здравља у Црној Гори: државни центри за ментално здравље и психијатријске болнице, како наћи терапеута који говори ваш језик, наставак терапије љековима након пресељења, цијене са здравственом књижицом и без ње, коме се обратити у кризној ситуацији.',

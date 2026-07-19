@@ -132,6 +132,9 @@ const showClinicOnMap = (clinic: ClinicData) => {
 // Табы — на полном наборе клиник: фильтр не должен прятать таб «Клиники».
 const tabs = computed(() => {
 	const result = [];
+	if (labTestData.value?.referenceInfo) {
+		result.push({ id: 'reference', label: t('TabReference') });
+	}
 	if (allLabTestClinics.value.length > 0) {
 		result.push({ id: 'clinics', label: t('TabClinics') });
 	}
@@ -305,6 +308,13 @@ watchEffect(() => {
 		</template>
 
 		<template #sections>
+			<EntityPageReferenceSection
+				v-if="labTestData?.referenceInfo"
+				sectionId="reference"
+				:title="t('TabReference')"
+				:referenceInfo="labTestData.referenceInfo"
+			/>
+
 			<EntityPageClinicsSection
 				v-if="allLabTestClinics.length > 0"
 				v-model:cityIds="cityIds"

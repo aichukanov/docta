@@ -27,6 +27,22 @@ const healthcareArticleLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
+const LAW_URL = 'https://www.paragraf.me/propisi-crnegore/zakon_o_strancima.html';
+
+// Ссылки на страховые ведут на внутренние страницы каталога
+// (pages/insurance-companies/[companySlug]) вместо внешних сайтов страховых.
+const insuranceCompanyLink = (slug: string) => ({
+	name: 'insurance-companies-companySlug',
+	params: { companySlug: slug },
+	query: getRegionalQuery(locale.value),
+});
+
+const savaLink = computed(() => insuranceCompanyLink('sava'));
+const lovcenLink = computed(() => insuranceCompanyLink('lovcen'));
+const uniqaLink = computed(() => insuranceCompanyLink('uniqa'));
+const generaliLink = computed(() => insuranceCompanyLink('generali'));
+const graweLink = computed(() => insuranceCompanyLink('grawe'));
+
 // Секции статьи: id → ключи заголовков для TOC и разметки
 const SECTION_IDS = [
 	'why-required',
@@ -73,8 +89,30 @@ const { breadcrumbItems } = useArticlePageSeo({
 		:cta="articleCta"
 	>
 		<ArticleSection id="section-why-required" :title="t('RipToc_why-required')">
-			<p>{{ t('RipWhy1') }}</p>
-			<p>{{ t('RipWhy2') }}</p>
+			<p
+				>{{ t('RipWhy1a') }}<a :href="LAW_URL" target="_blank" rel="noopener nofollow">{{
+					t('RipWhy1LawLink')
+				}}</a
+				>{{ t('RipWhy1b') }}</p
+			>
+			<p
+				>{{ t('RipWhy2a') }}<NuxtLink :to="savaLink">{{
+					t('RipWhy2SavaLink')
+				}}</NuxtLink
+				>{{ t('RipWhy2b') }}<NuxtLink :to="lovcenLink">{{
+					t('RipWhy2LovcenLink')
+				}}</NuxtLink
+				>{{ t('RipWhy2c') }}<NuxtLink :to="uniqaLink">{{
+					t('RipWhy2UniqaLink')
+				}}</NuxtLink
+				>{{ t('RipWhy2d') }}<NuxtLink :to="generaliLink">{{
+					t('RipWhy2GeneraliLink')
+				}}</NuxtLink
+				>{{ t('RipWhy2e') }}<NuxtLink :to="graweLink">{{
+					t('RipWhy2GraweLink')
+				}}</NuxtLink
+				>{{ t('RipWhy2f') }}</p
+			>
 			<p>{{ t('RipWhy3') }}</p>
 			<p>{{ t('RipWhy4') }}</p>
 		</ArticleSection>
@@ -134,10 +172,32 @@ const { breadcrumbItems } = useArticlePageSeo({
 		<ArticleSection id="section-sources" :title="t('RipToc_sources')">
 			<p>{{ t('RipSources0') }}</p>
 			<ul>
-				<li>{{ t('RipSourcesLaw') }}</li>
-				<li>{{ t('RipSourcesInsurers') }}</li>
+				<li>
+					<a :href="LAW_URL" target="_blank" rel="noopener nofollow">{{
+						t('RipSourcesLaw')
+					}}</a>
+				</li>
+				<li
+					>{{ t('RipSourcesInsurersA') }}<NuxtLink :to="savaLink">{{
+						t('RipSourcesInsurersSavaLink')
+					}}</NuxtLink
+					>{{ t('RipSourcesInsurersB') }}<NuxtLink :to="lovcenLink">{{
+						t('RipSourcesInsurersLovcenLink')
+					}}</NuxtLink
+					>{{ t('RipSourcesInsurersC') }}<NuxtLink :to="uniqaLink">{{
+						t('RipSourcesInsurersUniqaLink')
+					}}</NuxtLink
+					>{{ t('RipSourcesInsurersD') }}</li
+				>
 				<li>{{ t('RipSourcesMup') }}</li>
-				<li>{{ t('RipSourcesChat') }}</li>
+				<li
+					>{{ t('RipSourcesChatA') }}<a
+						href="https://t.me/DN_Montenegro"
+						target="_blank"
+						rel="noopener nofollow"
+						>{{ t('RipSourcesChatLink') }}</a
+					>{{ t('RipSourcesChatB') }}</li
+				>
 			</ul>
 		</ArticleSection>
 	</ArticlePage>

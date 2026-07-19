@@ -1,6 +1,6 @@
 // Контент статьи «Роды в Черногории: государственный роддом или частная клиника».
 // Факты сверены с kccg.me (Klinika za ginekologiju i akušerstvo: процедуры приёма,
-// партнёрских родов и эпидуральной анальгезии), fzocg.me (страховка, соглашения),
+// партнёрских родов и эпидуральной анестезии), fzocg.me (страховка, соглашения),
 // официальными DRG-тарифами FZOCG (2025), данными RTV Budva о сети роддомов,
 // codra.me, asistent.me/roditelji.me (регистрация новорождённого) и опытом из
 // русскоязычных чатов (2023–2026). Актуальность: июль 2026.
@@ -23,8 +23,16 @@ export default {
 				'With a zdravstvena knjižica (state health insurance), pregnancy care in Montenegro is free. At your dom zdravlja you register with an izabrani ginekolog — your “chosen gynecologist” — who monitors the pregnancy: check-ups, ultrasounds, lab tests and the referral to the maternity ward. It works the same way as registering with a GP.',
 			BimPrenatal2:
 				'Many foreign women — and quite a few locals — have their pregnancy monitored privately: a consultation costs €30–50 and an ultrasound is usually done right during the visit. Lab work can be done in private laboratories without any referral; many offer ready-made “pregnancy panels”. Private prenatal care combines easily with the state system: see a private doctor during pregnancy and give birth in a state maternity ward.',
-			BimPrenatal3:
-				'From mothers in expat chats (2024–2025): there is no rigid screening schedule familiar to post-Soviet countries — an ultrasound is done at almost every visit (roughly once a month), a double test at 12 weeks is available in private clinics, and amniocentesis is offered when indicated. If you need certificates for institutions back home, ask for a full stamped “izvještaj ljekara specijaliste” with the gestational age spelled out — it makes translation and legalization much easier.',
+			BimPrenatal3a:
+				'From mothers in expat chats (2024–2025): there is no rigid screening schedule familiar to post-Soviet countries — an ultrasound is done at almost every visit (roughly once a month), a double test (a blood screening for ',
+			BimPrenatal3PappaLink: 'PAPP-A',
+			BimPrenatal3b: ' and ',
+			BimPrenatal3FreeBetaHcgLink: 'free beta-hCG',
+			BimPrenatal3c:
+				') at 12 weeks is available in private clinics, and ',
+			BimPrenatal3AmnioLink: 'amniocentesis',
+			BimPrenatal3d:
+				' is offered when indicated. If you need certificates for institutions back home, ask for a full stamped “izvještaj ljekara specijaliste” with the gestational age spelled out — it makes translation and legalization much easier.',
 			BimPrenatal4:
 				'You can find a gynecologist who speaks your language in our',
 			BimPrenatal4Link: 'catalog of gynecologists',
@@ -32,16 +40,29 @@ export default {
 
 			BimWhere1:
 				'Maternity wards (porodilište) exist in far from every town. Babies in Montenegro are born here:',
-			BimWhereList1:
-				'Klinički centar Crne Gore (KCCG) in Podgorica — the country’s main gynecology and obstetrics clinic: delivery unit, obstetric ward, neonatology and a high-risk pregnancy unit; all complicated cases are referred here;',
-			BimWhereList2:
-				'maternity wards of the general hospitals in Bar, Kotor, Nikšić, Berane, Bijelo Polje, Cetinje and Pljevlja;',
+			BimWhereList1Pre: '',
+			BimWhereList1KccgLink: 'Klinički centar Crne Gore (KCCG)',
+			BimWhereList1a:
+				' in Podgorica — the country’s main gynecology and obstetrics clinic: delivery unit, obstetric ward, neonatology and a high-risk pregnancy unit; all complicated cases are referred here;',
+			BimWhereList2a: 'maternity wards of the general hospitals in ',
+			BimWhereList2BarLink: 'Bar',
+			BimWhereList2b: ', ',
+			BimWhereList2KotorLink: 'Kotor',
+			BimWhereList2c: ', Nikšić, Berane, ',
+			BimWhereList2BijeloPoljeLink: 'Bijelo Polje',
+			BimWhereList2d: ', ',
+			BimWhereList2CetinjeLink: 'Cetinje',
+			BimWhereList2e: ' and Pljevlja;',
 			BimWhereList3:
 				'small maternity units at the dom zdravlja health centers in Ulcinj, Rožaje and Plav.',
 			BimWhere2:
 				'Thirteen municipalities have no maternity ward at all — including the entire coast from Herceg Novi to Budva and Tivat. Women from there usually go to Kotor or straight to Podgorica, so plan your route and travel time in advance, especially in the summer season with its traffic jams.',
-			BimWhere3:
-				'There is effectively one private option in the country — Codra Hospital in Podgorica: natural and cesarean deliveries, apartment-style rooms, operating theatres and an ICU. The vast majority of births in Montenegro take place in the state system — in case of serious complications both the private hospital and the small maternity units transfer patients to KCCG.',
+			BimWhere3a: 'There is effectively one private option in the country — ',
+			BimWhere3CodraLink: 'Codra Hospital',
+			BimWhere3b:
+				' in Podgorica: natural and cesarean deliveries, apartment-style rooms, operating theatres and an ICU. The vast majority of births in Montenegro take place in the state system — in case of serious complications both the private hospital and the small maternity units transfer patients to ',
+			BimWhere3KccgLink: 'KCCG',
+			BimWhere3c: '.',
 			BimWhere4:
 				'Addresses and contacts of state hospitals and private clinics are collected in our',
 			BimWhere4Link: 'clinic catalog',
@@ -93,10 +114,6 @@ export default {
 				'Newborn registration — the Ministry of Interior of Montenegro (mup.gov.me) and government service portals;',
 			BimSourcesDz:
 				'The patronage service and izabrani ginekolog — the dom zdravlja of your municipality (e.g. dzpg.me in Podgorica).',
-			BimSourcesCatalog:
-				'Gynecologists with their consultation languages and the clinics where they practice are listed in our',
-			BimSourcesCatalogLink: 'doctor catalog',
-			BimSourcesCatalogEnd: '.',
 
 			BimCtaTitle: 'Looking for a gynecologist in Montenegro?',
 			BimCtaText:
@@ -121,8 +138,15 @@ export default {
 				'С zdravstvena knjižica (государственной страховкой) ведение беременности в Черногории бесплатно. В своём доме здравля вы прикрепляетесь к izabrani ginekolog — «выбранному гинекологу», который ведёт беременность: осмотры, УЗИ, анализы и направление в роддом. Работает это так же, как прикрепление к терапевту.',
 			BimPrenatal2:
 				'Многие иностранки — и немало местных — наблюдаются платно у частных гинекологов: приём стоит 30–50 €, УЗИ обычно делают прямо на приёме. Анализы можно сдавать в частных лабораториях без направления, у многих есть готовые «панели для беременных». Частное ведение легко совмещать с государственной системой: наблюдаться у частного врача, а рожать в государственном роддоме.',
-			BimPrenatal3:
-				'Из опыта мам в русскоязычных чатах (2024–2025): привычной для стран СНГ жёсткой системы скринингов здесь нет — УЗИ делают почти на каждом визите (примерно раз в месяц), в 12 недель в частной клинике можно сделать двойной тест, а при показаниях направляют на амниоцентез. Если справки нужны для инстанций на родине, просите полный «izvještaj ljekara specijaliste» с печатью и расшифрованным сроком беременности — так документ заметно проще переводить и легализовать.',
+			BimPrenatal3a:
+				'Из опыта мам в русскоязычных чатах (2024–2025): привычной для стран бывшего СССР жёсткой системы скринингов здесь нет — УЗИ делают почти на каждом визите (примерно раз в месяц), в 12 недель в частной клинике можно сделать двойной тест (биохимический скрининг на ',
+			BimPrenatal3PappaLink: 'PAPP-A',
+			BimPrenatal3b: ' и ',
+			BimPrenatal3FreeBetaHcgLink: 'свободный β-ХГЧ',
+			BimPrenatal3c: '), а при показаниях направляют на ',
+			BimPrenatal3AmnioLink: 'амниоцентез',
+			BimPrenatal3d:
+				'. Если справки нужны для инстанций на родине, просите полный «izvještaj ljekara specijaliste» с печатью и расшифрованным сроком беременности — так документ заметно проще перевести и легализовать.',
 			BimPrenatal4:
 				'Найти гинеколога с нужным языком приёма можно в нашем',
 			BimPrenatal4Link: 'каталоге врачей-гинекологов',
@@ -130,16 +154,29 @@ export default {
 
 			BimWhere1:
 				'Родильные отделения (porodilište) есть далеко не в каждом городе. Рожают в Черногории здесь:',
-			BimWhereList1:
-				'Klinički centar Crne Gore (KCCG) в Подгорице — главная клиника гинекологии и акушерства страны: родильный блок, акушерское отделение, неонатология и отделение патологии беременности; сюда направляют все сложные случаи;',
-			BimWhereList2:
-				'родильные отделения общих больниц в Баре, Которе, Никшиче, Беране, Биело-Поле, Цетине и Плевле;',
+			BimWhereList1Pre: '',
+			BimWhereList1KccgLink: 'Klinički centar Crne Gore (KCCG)',
+			BimWhereList1a:
+				' в Подгорице — главная клиника гинекологии и акушерства страны: родильный блок, акушерское отделение, неонатология и отделение патологии беременности; сюда направляют все сложные случаи;',
+			BimWhereList2a: 'родильные отделения общих больниц в ',
+			BimWhereList2BarLink: 'Баре',
+			BimWhereList2b: ', ',
+			BimWhereList2KotorLink: 'Которе',
+			BimWhereList2c: ', Никшиче, Беране, ',
+			BimWhereList2BijeloPoljeLink: 'Биело-Поле',
+			BimWhereList2d: ', ',
+			BimWhereList2CetinjeLink: 'Цетине',
+			BimWhereList2e: ' и Плевле;',
 			BimWhereList3:
 				'небольшие роддома при домах здравля в Ульцине, Рожае и Плаве.',
 			BimWhere2:
 				'В 13 муниципалитетах роддомов нет вовсе — в том числе на всём побережье от Херцег-Нови до Будвы и Тивата. Оттуда обычно едут рожать в Котор или сразу в Подгорицу, поэтому маршрут и время в пути стоит продумать заранее — особенно в летний сезон с пробками.',
-			BimWhere3:
-				'Частный вариант в стране фактически один — больница Codra в Подгорице: естественные роды и кесарево сечение, палаты типа апартаментов, операционные и реанимация. Подавляющее большинство родов в Черногории проходит в государственной системе — при серьёзных осложнениях и частная клиника, и небольшие роддома переводят пациенток в KCCG.',
+			BimWhere3a: 'Частный вариант в стране фактически один — больница ',
+			BimWhere3CodraLink: 'Codra',
+			BimWhere3b:
+				' в Подгорице: естественные роды и кесарево сечение, палаты типа апартаментов, операционные и реанимация. Подавляющее большинство родов в Черногории проходит в государственной системе — при серьёзных осложнениях и частная клиника, и небольшие роддома переводят пациенток в ',
+			BimWhere3KccgLink: 'KCCG',
+			BimWhere3c: '.',
 			BimWhere4:
 				'Адреса и контакты государственных больниц и частных клиник собраны в нашем',
 			BimWhere4Link: 'каталоге клиник',
@@ -164,7 +201,7 @@ export default {
 				' с сомнительными позициями — 2400 пар перчаток, 50 метров резинового полотна — и семье пришлось подавать жалобу защитнику прав пациентов. Всегда просите полную детализацию счёта перед оплатой.',
 
 			BimPractical1:
-				'Эпидуральная анальгезия в KCCG официально доступна — у клиники есть отдельная процедура её применения, анестезиологические бригады дежурят круглосуточно. Но на практике роды в Черногории обезболивают редко: по данным на 2022 год — лишь около 6,5 % родов, а услуга «безболезненных родов» долгое время была платной (около 120 € по официальному решению). Обсудите обезболивание с врачом заранее и уточните актуальные условия при поступлении; в небольших роддомах анестезиолога в родзале может не быть.',
+				'Эпидуральная анестезия в KCCG официально доступна — у клиники есть отдельная процедура её применения, анестезиологические бригады дежурят круглосуточно. Но на практике в Черногории обезболивают роды редко: по данным за 2022 год эпидуральную анестезию получили лишь около 6,5 % рожениц, а услуга «безболезненные роды» долгое время была платной — около 120 € по официальному тарифу. Обсудите обезболивание с врачом заранее и уточните актуальные условия при поступлении; в небольших роддомах анестезиолога в родзале может не быть.',
 			BimPractical2:
 				'Партнёрские роды возможны: в KCCG действует официальная процедура присутствия сопровождающего на родах, частная Codra тоже допускает партнёра. Условия (обследования, курсы подготовки, оплату) уточняйте заранее в конкретном роддоме.',
 			BimPractical3:
@@ -184,17 +221,13 @@ export default {
 			BimSources0:
 				'Информация актуальна на июль 2026 года. Порядки в роддомах меняются — перед родами сверяйтесь с официальными источниками:',
 			BimSourcesKccg:
-				'Клиника гинекологии и акушерства KCCG — официальные процедуры приёма в роддом, партнёрских родов и эпидуральной анальгезии: kccg.me;',
+				'Клиника гинекологии и акушерства KCCG — официальные процедуры приёма в роддом, партнёрских родов и эпидуральной анестезии: kccg.me;',
 			BimSourcesFzo:
 				'Фонд медицинского страхования (FZOCG) — правила страхования и межгосударственные соглашения: fzocg.me;',
 			BimSourcesMup:
 				'Регистрация новорождённого — МВД Черногории (mup.gov.me) и порталы госуслуг;',
 			BimSourcesDz:
 				'Патронажная служба и izabrani ginekolog — дом здравля вашего муниципалитета (например, dzpg.me в Подгорице).',
-			BimSourcesCatalog:
-				'Врачи-гинекологи с языками приёма и клиниками, где они работают, собраны в нашем',
-			BimSourcesCatalogLink: 'каталоге врачей',
-			BimSourcesCatalogEnd: '.',
 
 			BimCtaTitle: 'Ищете гинеколога в Черногории?',
 			BimCtaText:
@@ -219,8 +252,16 @@ export default {
 				'Sa zdravstvenom knjižicom (državnim osiguranjem) vođenje trudnoće u Crnoj Gori je besplatno. U svom domu zdravlja registrujete se kod izabranog ginekologa, koji vodi trudnoću: pregledi, ultrazvuk, analize i uput za porodilište. Funkcioniše isto kao registracija kod izabranog doktora za odrasle.',
 			BimPrenatal2:
 				'Mnoge strankinje — i dosta domaćih — trudnoću vode privatno: pregled košta 30–50 €, a ultrazvuk se obično radi odmah na pregledu. Analize možete uraditi u privatnim laboratorijama bez uputa; mnoge nude gotove „panele za trudnice“. Privatno vođenje lako se kombinuje sa državnim sistemom: kontrole kod privatnog ljekara, a porođaj u državnom porodilištu.',
-			BimPrenatal3:
-				'Iz iskustva majki u ruskojezičnim četovima (2024–2025): stroge šeme skrininga kakvu poznaju zemlje ZND ovdje nema — ultrazvuk se radi gotovo na svakom pregledu (otprilike jednom mjesečno), dabl test u 12. nedjelji dostupan je u privatnim klinikama, a amniocenteza se radi po indikacijama. Ako su vam potvrde potrebne za institucije u matičnoj zemlji, tražite kompletan „izvještaj ljekara specijaliste“ sa pečatom i ispisanom nedjeljom gestacije — takav dokument je mnogo lakše prevesti i legalizovati.',
+			BimPrenatal3a:
+				'Iz iskustva majki u ruskojezičnim četovima (2024–2025): stroge šeme skrininga kakvu poznaju postsovjetske zemlje ovdje nema — ultrazvuk se radi gotovo na svakom pregledu (otprilike jednom mjesečno), dabl test (biohemijski skrining ',
+			BimPrenatal3PappaLink: 'PAPP-A',
+			BimPrenatal3b: ' i ',
+			BimPrenatal3FreeBetaHcgLink: 'slobodnog beta-hCG',
+			BimPrenatal3c:
+				') u 12. nedjelji dostupan je u privatnim klinikama, a ',
+			BimPrenatal3AmnioLink: 'amniocenteza',
+			BimPrenatal3d:
+				' se radi po indikacijama. Ako su vam potvrde potrebne za institucije u matičnoj zemlji, tražite kompletan „izvještaj ljekara specijaliste“ sa pečatom i ispisanom nedjeljom gestacije — takav dokument je mnogo lakše prevesti i legalizovati.',
 			BimPrenatal4:
 				'Ginekologa koji govori vaš jezik možete naći u našem',
 			BimPrenatal4Link: 'katalogu ginekologa',
@@ -228,16 +269,29 @@ export default {
 
 			BimWhere1:
 				'Porodilište ne postoji u svakom gradu. U Crnoj Gori se porađa ovdje:',
-			BimWhereList1:
-				'Klinički centar Crne Gore (KCCG) u Podgorici — glavna klinika za ginekologiju i akušerstvo u zemlji: porođajni blok, akušersko odjeljenje, neonatologija i odjeljenje visokorizičnih trudnoća; ovamo se upućuju svi komplikovani slučajevi;',
-			BimWhereList2:
-				'porodilišta opštih bolnica u Baru, Kotoru, Nikšiću, Beranama, Bijelom Polju, Cetinju i Pljevljima;',
+			BimWhereList1Pre: '',
+			BimWhereList1KccgLink: 'Klinički centar Crne Gore (KCCG)',
+			BimWhereList1a:
+				' u Podgorici — glavna klinika za ginekologiju i akušerstvo u zemlji: porođajni blok, akušersko odjeljenje, neonatologija i odjeljenje visokorizičnih trudnoća; ovamo se upućuju svi komplikovani slučajevi;',
+			BimWhereList2a: 'porodilišta opštih bolnica u ',
+			BimWhereList2BarLink: 'Baru',
+			BimWhereList2b: ', ',
+			BimWhereList2KotorLink: 'Kotoru',
+			BimWhereList2c: ', Nikšiću, Beranama, ',
+			BimWhereList2BijeloPoljeLink: 'Bijelom Polju',
+			BimWhereList2d: ', ',
+			BimWhereList2CetinjeLink: 'Cetinju',
+			BimWhereList2e: ' i Pljevljima;',
 			BimWhereList3:
 				'mala porodilišta pri domovima zdravlja u Ulcinju, Rožajama i Plavu.',
 			BimWhere2:
 				'Trinaest opština uopšte nema porodilište — uključujući cijelo primorje od Herceg Novog do Budve i Tivta. Odatle se obično ide u Kotor ili direktno u Podgoricu, pa rutu i vrijeme putovanja isplanirajte unaprijed — naročito u ljetnjoj sezoni sa gužvama.',
-			BimWhere3:
-				'Privatna opcija u zemlji je praktično jedna — bolnica Codra u Podgorici: prirodni porođaji i carski rez, sobe tipa apartmana, operacione sale i intenzivna njega. Ogromna većina porođaja u Crnoj Gori obavlja se u državnom sistemu — kod ozbiljnih komplikacija i privatna bolnica i mala porodilišta prebacuju pacijentkinje u KCCG.',
+			BimWhere3a: 'Privatna opcija u zemlji je praktično jedna — bolnica ',
+			BimWhere3CodraLink: 'Codra',
+			BimWhere3b:
+				' u Podgorici: prirodni porođaji i carski rez, sobe tipa apartmana, operacione sale i intenzivna njega. Ogromna većina porođaja u Crnoj Gori obavlja se u državnom sistemu — kod ozbiljnih komplikacija i privatna bolnica i mala porodilišta prebacuju pacijentkinje u ',
+			BimWhere3KccgLink: 'KCCG',
+			BimWhere3c: '.',
 			BimWhere4:
 				'Adrese i kontakti državnih bolnica i privatnih klinika nalaze se u našem',
 			BimWhere4Link: 'katalogu klinika',
@@ -289,10 +343,6 @@ export default {
 				'Prijava novorođenčeta — MUP Crne Gore (mup.gov.me) i portali e-uprave;',
 			BimSourcesDz:
 				'Patronažna služba i izabrani ginekolog — dom zdravlja vaše opštine (npr. dzpg.me u Podgorici).',
-			BimSourcesCatalog:
-				'Ginekolozi sa jezicima na kojima primaju i klinikama u kojima rade nalaze se u našem',
-			BimSourcesCatalogLink: 'katalogu doktora',
-			BimSourcesCatalogEnd: '.',
 
 			BimCtaTitle: 'Tražite ginekologa u Crnoj Gori?',
 			BimCtaText:
@@ -317,8 +367,16 @@ export default {
 				'Са здравственом књижицом (државним осигурањем) вођење трудноће у Црној Гори је бесплатно. У свом дому здравља региструјете се код изабраног гинеколога, који води трудноћу: прегледи, ултразвук, анализе и упут за породилиште. Функционише исто као регистрација код изабраног доктора за одрасле.',
 			BimPrenatal2:
 				'Многе странкиње — и доста домаћих — трудноћу воде приватно: преглед кошта 30–50 €, а ултразвук се обично ради одмах на прегледу. Анализе можете урадити у приватним лабораторијама без упута; многе нуде готове „панеле за труднице“. Приватно вођење лако се комбинује са државним системом: контроле код приватног љекара, а порођај у државном породилишту.',
-			BimPrenatal3:
-				'Из искуства мајки у рускојезичним четовима (2024–2025): строге шеме скрининга какву познају земље ЗНД овдје нема — ултразвук се ради готово на сваком прегледу (отприлике једном мјесечно), дабл тест у 12. недјељи доступан је у приватним клиникама, а амниоцентеза се ради по индикацијама. Ако су вам потврде потребне за институције у матичној земљи, тражите комплетан „извјештај љекара специјалисте“ са печатом и исписаном недјељом гестације — такав документ је много лакше превести и легализовати.',
+			BimPrenatal3a:
+				'Из искуства мајки у рускојезичним четовима (2024–2025): строге шеме скрининга какву познају постсовјетске земље овдје нема — ултразвук се ради готово на сваком прегледу (отприлике једном мјесечно), дабл тест (биохемијски скрининг ',
+			BimPrenatal3PappaLink: 'PAPP-A',
+			BimPrenatal3b: ' и ',
+			BimPrenatal3FreeBetaHcgLink: 'слободног бета-хЦГ',
+			BimPrenatal3c:
+				') у 12. недјељи доступан је у приватним клиникама, а ',
+			BimPrenatal3AmnioLink: 'амниоцентеза',
+			BimPrenatal3d:
+				' се ради по индикацијама. Ако су вам потврде потребне за институције у матичној земљи, тражите комплетан „извјештај љекара специјалисте“ са печатом и исписаном недјељом гестације — такав документ је много лакше превести и легализовати.',
 			BimPrenatal4:
 				'Гинеколога који говори ваш језик можете наћи у нашем',
 			BimPrenatal4Link: 'каталогу гинеколога',
@@ -326,16 +384,29 @@ export default {
 
 			BimWhere1:
 				'Породилиште не постоји у сваком граду. У Црној Гори се порађа овдје:',
-			BimWhereList1:
-				'Клинички центар Црне Горе (КЦЦГ) у Подгорици — главна клиника за гинекологију и акушерство у земљи: порођајни блок, акушерско одјељење, неонатологија и одјељење високоризичних трудноћа; овамо се упућују сви компликовани случајеви;',
-			BimWhereList2:
-				'породилишта општих болница у Бару, Котору, Никшићу, Беранама, Бијелом Пољу, Цетињу и Пљевљима;',
+			BimWhereList1Pre: '',
+			BimWhereList1KccgLink: 'Клинички центар Црне Горе (КЦЦГ)',
+			BimWhereList1a:
+				' у Подгорици — главна клиника за гинекологију и акушерство у земљи: порођајни блок, акушерско одјељење, неонатологија и одјељење високоризичних трудноћа; овамо се упућују сви компликовани случајеви;',
+			BimWhereList2a: 'породилишта општих болница у ',
+			BimWhereList2BarLink: 'Бару',
+			BimWhereList2b: ', ',
+			BimWhereList2KotorLink: 'Котору',
+			BimWhereList2c: ', Никшићу, Беранама, ',
+			BimWhereList2BijeloPoljeLink: 'Бијелом Пољу',
+			BimWhereList2d: ', ',
+			BimWhereList2CetinjeLink: 'Цетињу',
+			BimWhereList2e: ' и Пљевљима;',
 			BimWhereList3:
 				'мала породилишта при домовима здравља у Улцињу, Рожајама и Плаву.',
 			BimWhere2:
 				'Тринаест општина уопште нема породилиште — укључујући цијело приморје од Херцег Новог до Будве и Тивта. Одатле се обично иде у Котор или директно у Подгорицу, па руту и вријеме путовања испланирајте унапријед — нарочито у љетњој сезони са гужвама.',
-			BimWhere3:
-				'Приватна опција у земљи је практично једна — болница Codra у Подгорици: природни порођаји и царски рез, собе типа апартмана, операционе сале и интензивна њега. Огромна већина порођаја у Црној Гори обавља се у државном систему — код озбиљних компликација и приватна болница и мала породилишта пребацују пацијенткиње у КЦЦГ.',
+			BimWhere3a: 'Приватна опција у земљи је практично једна — болница ',
+			BimWhere3CodraLink: 'Codra',
+			BimWhere3b:
+				' у Подгорици: природни порођаји и царски рез, собе типа апартмана, операционе сале и интензивна њега. Огромна већина порођаја у Црној Гори обавља се у државном систему — код озбиљних компликација и приватна болница и мала породилишта пребацују пацијенткиње у ',
+			BimWhere3KccgLink: 'КЦЦГ',
+			BimWhere3c: '.',
 			BimWhere4:
 				'Адресе и контакти државних болница и приватних клиника налазе се у нашем',
 			BimWhere4Link: 'каталогу клиника',
@@ -387,10 +458,6 @@ export default {
 				'Пријава новорођенчета — МУП Црне Горе (mup.gov.me) и портали е-управе;',
 			BimSourcesDz:
 				'Патронажна служба и изабрани гинеколог — дом здравља ваше општине (нпр. dzpg.me у Подгорици).',
-			BimSourcesCatalog:
-				'Гинеколози са језицима на којима примају и клиникама у којима раде налазе се у нашем',
-			BimSourcesCatalogLink: 'каталогу доктора',
-			BimSourcesCatalogEnd: '.',
 
 			BimCtaTitle: 'Тражите гинеколога у Црној Гори?',
 			BimCtaText:
@@ -416,8 +483,16 @@ export default {
 				'Mit einer zdravstvena knjižica (staatliche Krankenversicherung) ist die Schwangerschaftsvorsorge in Montenegro kostenlos. In Ihrem dom zdravlja registrieren Sie sich bei einem izabrani ginekolog — der „gewählten Gynäkologin“ bzw. dem Gynäkologen —, der die Schwangerschaft betreut: Untersuchungen, Ultraschall, Laborwerte und die Überweisung an die Geburtsstation. Es funktioniert genauso wie die Registrierung beim Hausarzt.',
 			BimPrenatal2:
 				'Viele Ausländerinnen — und etliche Einheimische — lassen die Schwangerschaft privat betreuen: eine Konsultation kostet 30–50 €, der Ultraschall wird meist direkt beim Termin gemacht. Laboruntersuchungen sind in privaten Laboren ohne Überweisung möglich; viele bieten fertige „Schwangerschafts-Panels“ an. Private Vorsorge lässt sich gut mit dem staatlichen System kombinieren: Betreuung beim Privatarzt, Entbindung in der staatlichen Geburtsstation.',
-			BimPrenatal3:
-				'Aus den Erfahrungen von Müttern in Expat-Chats (2024–2025): Ein starres Screening-Schema wie in den GUS-Ländern gibt es hier nicht — Ultraschall wird fast bei jedem Termin gemacht (etwa monatlich), der Doppeltest in der 12. Woche ist in Privatkliniken verfügbar, eine Amniozentese wird bei Indikation veranlasst. Wenn Sie Bescheinigungen für Behörden in der Heimat brauchen, verlangen Sie einen vollständigen, gestempelten „izvještaj ljekara specijaliste“ mit ausgeschriebener Schwangerschaftswoche — das erleichtert Übersetzung und Legalisierung erheblich.',
+			BimPrenatal3a:
+				'Aus den Erfahrungen von Müttern in Expat-Chats (2024–2025): Ein starres Screening-Schema wie in postsowjetischen Ländern gibt es hier nicht — Ultraschall wird fast bei jedem Termin gemacht (etwa monatlich), der Doppeltest (Bluttest auf ',
+			BimPrenatal3PappaLink: 'PAPP-A',
+			BimPrenatal3b: ' und ',
+			BimPrenatal3FreeBetaHcgLink: 'freies beta-hCG',
+			BimPrenatal3c:
+				') in der 12. Woche ist in Privatkliniken verfügbar, eine ',
+			BimPrenatal3AmnioLink: 'Amniozentese',
+			BimPrenatal3d:
+				' wird bei Indikation veranlasst. Wenn Sie Bescheinigungen für Behörden in der Heimat brauchen, verlangen Sie einen vollständigen, gestempelten „izvještaj ljekara specijaliste“ mit ausgeschriebener Schwangerschaftswoche — das erleichtert Übersetzung und Legalisierung erheblich.',
 			BimPrenatal4:
 				'Eine Gynäkologin oder einen Gynäkologen mit Ihrer Sprache finden Sie in unserem',
 			BimPrenatal4Link: 'Katalog der Gynäkologen',
@@ -425,16 +500,31 @@ export default {
 
 			BimWhere1:
 				'Geburtsstationen (porodilište) gibt es längst nicht in jeder Stadt. Entbunden wird in Montenegro hier:',
-			BimWhereList1:
-				'Klinički centar Crne Gore (KCCG) in Podgorica — die wichtigste Klinik für Gynäkologie und Geburtshilfe des Landes: Kreißsaalbereich, geburtshilfliche Station, Neonatologie und eine Abteilung für Risikoschwangerschaften; alle komplizierten Fälle werden hierher überwiesen;',
-			BimWhereList2:
-				'die Geburtsstationen der allgemeinen Krankenhäuser in Bar, Kotor, Nikšić, Berane, Bijelo Polje, Cetinje und Pljevlja;',
+			BimWhereList1Pre: '',
+			BimWhereList1KccgLink: 'Klinički centar Crne Gore (KCCG)',
+			BimWhereList1a:
+				' in Podgorica — die wichtigste Klinik für Gynäkologie und Geburtshilfe des Landes: Kreißsaalbereich, geburtshilfliche Station, Neonatologie und eine Abteilung für Risikoschwangerschaften; alle komplizierten Fälle werden hierher überwiesen;',
+			BimWhereList2a:
+				'die Geburtsstationen der allgemeinen Krankenhäuser in ',
+			BimWhereList2BarLink: 'Bar',
+			BimWhereList2b: ', ',
+			BimWhereList2KotorLink: 'Kotor',
+			BimWhereList2c: ', Nikšić, Berane, ',
+			BimWhereList2BijeloPoljeLink: 'Bijelo Polje',
+			BimWhereList2d: ', ',
+			BimWhereList2CetinjeLink: 'Cetinje',
+			BimWhereList2e: ' und Pljevlja;',
 			BimWhereList3:
 				'kleine Geburtsabteilungen an den dom zdravlja in Ulcinj, Rožaje und Plav.',
 			BimWhere2:
 				'Dreizehn Gemeinden haben gar keine Geburtsstation — darunter die gesamte Küste von Herceg Novi über Tivat bis Budva. Von dort fährt man üblicherweise nach Kotor oder gleich nach Podgorica; planen Sie Route und Fahrzeit im Voraus, besonders in der Sommersaison mit Staus.',
-			BimWhere3:
-				'Die private Option im Land ist faktisch eine einzige — das Codra-Krankenhaus in Podgorica: natürliche Geburten und Kaiserschnitte, Zimmer im Apartment-Stil, OP-Säle und Intensivstation. Die überwiegende Mehrheit der Geburten in Montenegro findet im staatlichen System statt — bei ernsten Komplikationen verlegen sowohl die Privatklinik als auch die kleinen Geburtsabteilungen die Patientinnen ins KCCG.',
+			BimWhere3a:
+				'Die private Option im Land ist faktisch eine einzige — das ',
+			BimWhere3CodraLink: 'Codra-Krankenhaus',
+			BimWhere3b:
+				' in Podgorica: natürliche Geburten und Kaiserschnitte, Zimmer im Apartment-Stil, OP-Säle und Intensivstation. Die überwiegende Mehrheit der Geburten in Montenegro findet im staatlichen System statt — bei ernsten Komplikationen verlegen sowohl die Privatklinik als auch die kleinen Geburtsabteilungen die Patientinnen ins ',
+			BimWhere3KccgLink: 'KCCG',
+			BimWhere3c: '.',
 			BimWhere4:
 				'Adressen und Kontakte der staatlichen Krankenhäuser und Privatkliniken finden Sie in unserem',
 			BimWhere4Link: 'Klinik-Katalog',
@@ -486,10 +576,6 @@ export default {
 				'Anmeldung des Neugeborenen — Innenministerium Montenegros (mup.gov.me) und die E-Government-Portale;',
 			BimSourcesDz:
 				'Patronage-Dienst und izabrani ginekolog — der dom zdravlja Ihrer Gemeinde (z. B. dzpg.me in Podgorica).',
-			BimSourcesCatalog:
-				'Gynäkologen mit ihren Sprachen und den Kliniken, in denen sie praktizieren, finden Sie in unserem',
-			BimSourcesCatalogLink: 'Ärztekatalog',
-			BimSourcesCatalogEnd: '.',
 
 			BimCtaTitle: 'Suchen Sie eine Gynäkologin oder einen Gynäkologen in Montenegro?',
 			BimCtaText:
@@ -514,24 +600,45 @@ export default {
 				'Zdravstvena knjižica (devlet sağlık sigortası) varsa Karadağ’da gebelik takibi ücretsizdir. Kendi dom zdravlja’nızda bir izabrani ginekolog’a — “seçilmiş jinekolog” — kaydolursunuz; gebeliği o izler: muayeneler, ultrason, tahliller ve doğumhaneye sevk. Sistem, aile hekimine kayıtla aynı şekilde işler.',
 			BimPrenatal2:
 				'Birçok yabancı kadın — ve az olmayan sayıda yerli — gebeliği özel jinekologlarda izletir: muayene 30–50 €, ultrason genellikle muayene sırasında yapılır. Tahliller özel laboratuvarlarda sevk olmadan yapılabilir; birçoğunda hazır “gebe panelleri” vardır. Özel takip devlet sistemiyle kolayca birleştirilir: özel doktorda takip, devlet doğumhanesinde doğum.',
-			BimPrenatal3:
-				'Göçmen sohbetlerindeki annelerin deneyiminden (2024–2025): BDT ülkelerinden alışılan katı tarama şeması burada yok — ultrason hemen her muayenede yapılır (yaklaşık ayda bir), 12. haftada ikili test özel kliniklerde mevcuttur, endikasyon varsa amniyosenteze yönlendirilir. Kendi ülkenizdeki kurumlar için belge gerekiyorsa, gebelik haftası açıkça yazılmış, kaşeli eksiksiz bir “izvještaj ljekara specijaliste” isteyin — çeviri ve tasdik böylece çok kolaylaşır.',
+			BimPrenatal3a:
+				'Göçmen sohbetlerindeki annelerin deneyiminden (2024–2025): eski Sovyet ülkelerinden alışılan katı tarama şeması burada yok — ultrason hemen her muayenede yapılır (yaklaşık ayda bir), 12. haftada ikili test (',
+			BimPrenatal3PappaLink: 'PAPP-A',
+			BimPrenatal3b: ' ve ',
+			BimPrenatal3FreeBetaHcgLink: 'serbest beta-hCG',
+			BimPrenatal3c:
+				' kan taraması) özel kliniklerde mevcuttur, endikasyon varsa ',
+			BimPrenatal3AmnioLink: 'amniyosenteze',
+			BimPrenatal3d:
+				' yönlendirilir. Kendi ülkenizdeki kurumlar için belge gerekiyorsa, gebelik haftası açıkça yazılmış, kaşeli eksiksiz bir “izvještaj ljekara specijaliste” isteyin — çeviri ve tasdik böylece çok kolaylaşır.',
 			BimPrenatal4: 'Dilinizi konuşan bir jinekologu',
 			BimPrenatal4Link: 'jinekolog kataloğumuzda',
 			BimPrenatal4End: ' bulabilirsiniz.',
 
 			BimWhere1:
 				'Doğumhane (porodilište) her şehirde yoktur. Karadağ’da doğumlar şuralarda yapılır:',
-			BimWhereList1:
-				'Podgorica’daki Klinički centar Crne Gore (KCCG) — ülkenin ana kadın doğum kliniği: doğum ünitesi, doğum servisi, yenidoğan bölümü ve riskli gebelik servisi; tüm karmaşık vakalar buraya sevk edilir;',
-			BimWhereList2:
-				'Bar, Kotor, Nikšić, Berane, Bijelo Polje, Cetinje ve Pljevlja’daki genel hastanelerin doğumhaneleri;',
+			BimWhereList1Pre: 'Podgorica’daki ',
+			BimWhereList1KccgLink: 'Klinički centar Crne Gore (KCCG)',
+			BimWhereList1a:
+				' — ülkenin ana kadın doğum kliniği: doğum ünitesi, doğum servisi, yenidoğan bölümü ve riskli gebelik servisi; tüm karmaşık vakalar buraya sevk edilir;',
+			BimWhereList2a: '',
+			BimWhereList2BarLink: 'Bar',
+			BimWhereList2b: ', ',
+			BimWhereList2KotorLink: 'Kotor',
+			BimWhereList2c: ', Nikšić, Berane, ',
+			BimWhereList2BijeloPoljeLink: 'Bijelo Polje',
+			BimWhereList2d: ', ',
+			BimWhereList2CetinjeLink: 'Cetinje',
+			BimWhereList2e: ' ve Pljevlja’daki genel hastanelerin doğumhaneleri;',
 			BimWhereList3:
 				'Ulcinj, Rožaje ve Plav’daki dom zdravlja’lara bağlı küçük doğum üniteleri.',
 			BimWhere2:
 				'On üç belediyede hiç doğumhane yoktur — Herceg Novi’den Budva ve Tivat’a kadar tüm sahil dahil. Oralardan genellikle Kotor’a veya doğrudan Podgorica’ya gidilir; güzergâhı ve yol süresini önceden planlayın — özellikle trafiğin yoğun olduğu yaz sezonunda.',
-			BimWhere3:
-				'Ülkedeki özel seçenek fiilen tektir — Podgorica’daki Codra Hastanesi: normal doğum ve sezaryen, apart tipi odalar, ameliyathaneler ve yoğun bakım. Karadağ’daki doğumların büyük çoğunluğu devlet sisteminde gerçekleşir — ciddi komplikasyonlarda hem özel hastane hem de küçük doğum üniteleri hastaları KCCG’ye nakleder.',
+			BimWhere3a: 'Ülkedeki özel seçenek fiilen tektir — Podgorica’daki ',
+			BimWhere3CodraLink: 'Codra Hastanesi',
+			BimWhere3b:
+				': normal doğum ve sezaryen, apart tipi odalar, ameliyathaneler ve yoğun bakım. Karadağ’daki doğumların büyük çoğunluğu devlet sisteminde gerçekleşir — ciddi komplikasyonlarda hem özel hastane hem de küçük doğum üniteleri hastaları ',
+			BimWhere3KccgLink: 'KCCG’ye',
+			BimWhere3c: ' nakleder.',
 			BimWhere4:
 				'Devlet hastaneleri ve özel kliniklerin adres ve iletişim bilgileri',
 			BimWhere4Link: 'klinik kataloğumuzda',
@@ -583,10 +690,6 @@ export default {
 				'Yenidoğan kaydı — Karadağ İçişleri Bakanlığı (mup.gov.me) ve e-devlet portalları;',
 			BimSourcesDz:
 				'Ev ziyareti hizmeti ve izabrani ginekolog — belediyenizin dom zdravlja’sı (ör. Podgorica’da dzpg.me).',
-			BimSourcesCatalog:
-				'Muayene dilleri ve çalıştıkları kliniklerle birlikte jinekologlar',
-			BimSourcesCatalogLink: 'doktor kataloğumuzda',
-			BimSourcesCatalogEnd: ' yer alır.',
 
 			BimCtaTitle: 'Karadağ’da jinekolog mu arıyorsunuz?',
 			BimCtaText:

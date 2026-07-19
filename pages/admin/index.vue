@@ -33,6 +33,7 @@ const loadedTabs = ref({
 	clinics: false,
 	reviews: false,
 	users: false,
+	insuranceCompanies: false,
 });
 
 // Состояние загрузки
@@ -42,6 +43,7 @@ const isLoadingServices = ref(false);
 const isLoadingClinics = ref(false);
 const isLoadingReviews = ref(false);
 const isLoadingUsers = ref(false);
+const isLoadingInsuranceCompanies = ref(false);
 
 // Данные
 interface AdminNamedItem {
@@ -65,6 +67,7 @@ const reviewsList = ref<{ id: number; label: string }[]>([]);
 const usersList = ref<{ id: number; email: string; name: string }[]>([]);
 const usersAdminList = ref<UserAdminListItem[]>([]);
 const recentRealReviews = ref<RecentRealUserReview[]>([]);
+const insuranceCompaniesList = ref<AdminNamedItem[]>([]);
 const clinicsStore = useClinicsStore();
 
 const clinicsList = computed(() => ({
@@ -183,6 +186,27 @@ async function loadClinicsData() {
 	}
 }
 
+async function loadInsuranceCompaniesData() {
+	if (loadedTabs.value.insuranceCompanies) return;
+
+	isLoadingInsuranceCompanies.value = true;
+	try {
+		const data = await $fetch('/api/insurance-companies/list', {
+			method: 'POST',
+			body: {},
+		});
+		insuranceCompaniesList.value = data.map((company) => ({
+			id: company.id,
+			name: company.name,
+		}));
+		loadedTabs.value.insuranceCompanies = true;
+	} catch (error) {
+		console.error('Failed to load insurance companies:', error);
+	} finally {
+		isLoadingInsuranceCompanies.value = false;
+	}
+}
+
 async function loadReviewsData() {
 	if (loadedTabs.value.reviews) return;
 
@@ -222,6 +246,9 @@ watch(activeTab, async (newTab) => {
 		case 'users':
 			await loadUsersAdminData();
 			break;
+		case 'insurance-companies':
+			await loadInsuranceCompaniesData();
+			break;
 	}
 });
 
@@ -254,6 +281,11 @@ const updateServices = async () => {
 const updateReviews = async () => {
 	loadedTabs.value.reviews = false;
 	await loadReviewsData();
+};
+
+const updateInsuranceCompanies = async () => {
+	loadedTabs.value.insuranceCompanies = false;
+	await loadInsuranceCompaniesData();
 };
 
 const isRecalculatingRanks = ref(false);
@@ -449,6 +481,30 @@ async function recalculateRankScores() {
 
 					<el-tab-pane label="Добавить">
 						<AdminClinicAdd @updated="updateClinics" />
+					</el-tab-pane>
+				</el-tabs>
+			</el-tab-pane>
+
+			<el-tab-pane label="Страховые" name="insurance-companies">
+				<div v-if="isLoadingInsuranceCompanies" class="tab-loading">
+					<div class="loading-spinner"></div>
+					<p>Загрузка страховых компаний...</p>
+				</div>
+				<el-tabs
+					v-else-if="
+						insuranceCompaniesList.length > 0 || loadedTabs.insuranceCompanies
+					"
+				>
+					<el-tab-pane label="Найти">
+						<AdminInsuranceCompanyFind
+							:companies="insuranceCompaniesList"
+							editable
+							@updated="updateInsuranceCompanies"
+						/>
+					</el-tab-pane>
+
+					<el-tab-pane label="Добавить">
+						<AdminInsuranceCompanyAdd @updated="updateInsuranceCompanies" />
 					</el-tab-pane>
 				</el-tabs>
 			</el-tab-pane>

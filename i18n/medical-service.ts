@@ -28,6 +28,7 @@ export default {
 				'{category} services in {city} — search by name or clinic. Compare prices and clinic locations on the map.',
 			TabClinics: 'Clinics',
 			TabMap: 'Location',
+			TabReference: 'Info',
 		},
 		'ru': {
 			ServiceName: 'Название услуги',
@@ -59,6 +60,7 @@ export default {
 				'{category} в {city} — поиск по названию или клинике. Сравните цены и адреса клиник на карте.',
 			TabClinics: 'Клиники',
 			TabMap: 'На карте',
+			TabReference: 'Справка',
 		},
 		'sr': {
 			ServiceName: 'Ime usluge',
@@ -92,6 +94,7 @@ export default {
 				'{category} u {city} — pretraga po imenu ili klinici. Uporedite cijene i lokacije klinika na mapi.',
 			TabClinics: 'Klinike',
 			TabMap: 'Lokacija',
+			TabReference: 'Info',
 		},
 		'de': {
 			ServiceName: 'Dienstleistungsname',
@@ -124,6 +127,7 @@ export default {
 				'{category} in {city} — Suche nach Name oder Klinik. Vergleichen Sie Preise und Klinikstandorte auf der Karte.',
 			TabClinics: 'Kliniken',
 			TabMap: 'Standort',
+			TabReference: 'Info',
 		},
 		'tr': {
 			ServiceName: 'Hizmet adı',
@@ -154,6 +158,7 @@ export default {
 				'{city} {category} — ada veya kliniğe göre arayın. Fiyatları ve klinik konumlarını haritada karşılaştırın.',
 			TabClinics: 'Klinikler',
 			TabMap: 'Konum',
+			TabReference: 'Bilgi',
 		},
 		'sr-cyrl': {
 			ServiceName: 'Име услуге',
@@ -187,6 +192,7 @@ export default {
 				'{category} у {city} — претрага по имену или клиници. Упоредите цијене и локације клиника на мапи.',
 			TabClinics: 'Клинике',
 			TabMap: 'Локација',
+			TabReference: 'Инфо',
 		},
 	},
 };

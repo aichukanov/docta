@@ -32,17 +32,39 @@ export default {
 				'Private clinics are the comfortable alternative: a GP or specialist visit costs €30–50, appointments come quickly, and staff in tourist areas usually speak English, often Russian or German. Addresses, languages and opening hours are in our',
 			ThcWhere2Link: 'clinic catalog with a map',
 			ThcWhere2End: '.',
-			ThcWhere3:
-				'With injuries and conditions that clearly need a hospital, the coast is served by the emergency rooms of the general hospitals in Kotor and Bar; with fractures and sports injuries around the Bay of Kotor locals often go straight to the orthopedic hospital in Risan. Keep in mind: only a few private clinics have inpatient wards and operating theatres (in Podgorica and Sutomore) — with an acute surgical problem a private clinic will most likely redirect you to a state hospital.',
-			ThcWhere4:
-				'In a genuinely serious situation — suspected appendicitis, chest pain, a bad accident — the main address is the Urgentni centar of the Clinical Center of Montenegro (KCCG) in Podgorica: open 24/7 and, unlike the rest of the state system, it takes emergency patients without any referral.',
+			ThcWhere3a:
+				'With injuries and conditions that clearly need a hospital, the coast is served by the emergency rooms of the general hospitals in ',
+			ThcWhere3KotorLink: 'Kotor',
+			ThcWhere3b: ' and ',
+			ThcWhere3BarLink: 'Bar',
+			ThcWhere3c:
+				'; with fractures and sports injuries around the Bay of Kotor locals often go straight to the ',
+			ThcWhere3RisanLink: 'orthopedic hospital in Risan',
+			ThcWhere3d:
+				'. Keep in mind: only a few private clinics have inpatient wards and operating theatres — with an acute surgical problem a private clinic will most likely redirect you to a state hospital.',
+			ThcWhere4a:
+				'In a genuinely serious situation — suspected appendicitis, chest pain, a bad accident — the main address is the Urgentni centar of the ',
+			ThcWhere4KccgLink: 'Clinical Center of Montenegro (KCCG)',
+			ThcWhere4b:
+				' in Podgorica: open 24/7 and, unlike the rest of the state system, it takes emergency patients without any referral.',
 
-			ThcCosts1:
-				'Price anchors for a patient without insurance: a turistička ambulanta consultation — €25–30 (in Budva in 2025 an examination with a prescription cost exactly €25), a private clinic visit — €30–50, a comprehensive visit with ultrasound and lab tests — around €80. Tests in private laboratories are inexpensive: a basic blood panel from about €5.',
-			ThcCosts2:
-				'Hospitals are a different league. Travelers and expats repeatedly complain, in anecdotal reports rather than any published price list, about the “tourist” unit of the Kotor hospital: accounts from 2023 mention about €150 for a doctor’s examination and about €200 for a simple saline IV drip — several times more than anywhere else (the same drip at the Bar hospital was quoted at about €30). In 2025 visitors reported around €170 for a foreigner’s consultation there. Again, these are unverified patient reports, not an official price list — but the same complaint keeps recurring year after year.',
-			ThcCosts3:
-				'A real reference case from 2023: a laparoscopic appendectomy with two days in hospital at the Urgentni centar in Podgorica cost an uninsured patient about €1,200–1,500. Hospitals often want payment straight away — in cash or by card — even when you have travel insurance: you pay first, the insurer reimburses later. Insist on a receipt (račun) for every payment: without one neither the insurer nor anyone else will refund you a cent.',
+			ThcCosts1a:
+				'Price anchors for a patient without insurance: a turistička ambulanta consultation — €25–30 (in Budva in 2025 an examination with a prescription cost exactly €25), a private clinic visit — €30–50, a comprehensive visit with ultrasound and lab tests — around €80. Tests in private laboratories are inexpensive: a ',
+			ThcCosts1CbcLink: 'basic blood panel',
+			ThcCosts1b: ' from about €5.',
+			ThcCosts2a:
+				'Hospitals are a different league. Travelers and expats repeatedly complain, in anecdotal reports rather than any published price list, about the “tourist” unit of the ',
+			ThcCosts2KotorLink: 'Kotor hospital',
+			ThcCosts2b:
+				': accounts from 2023 mention about €150 for a doctor’s examination and about €200 for a simple saline IV drip — several times more than anywhere else (the same drip at the ',
+			ThcCosts2BarLink: 'Bar hospital',
+			ThcCosts2c:
+				' was quoted at about €30). In 2025 visitors reported around €170 for a foreigner’s consultation there. Again, these are unverified patient reports, not an official price list — but the same complaint keeps recurring year after year.',
+			ThcCosts3a:
+				'A real reference case from 2023: a laparoscopic appendectomy with two days in hospital at the Urgentni centar in ',
+			ThcCosts3PodgoricaLink: 'Podgorica',
+			ThcCosts3b:
+				' cost an uninsured patient about €1,200–1,500. Hospitals often want payment straight away — in cash or by card — even when you have travel insurance: you pay first, the insurer reimburses later. Insist on a receipt (račun) for every payment: without one neither the insurer nor anyone else will refund you a cent.',
 
 			ThcAgreements1:
 				'Montenegro is not in the EU, so the European Health Insurance Card as such is not valid here. Bilateral social-security agreements are: citizens insured in Serbia, Slovenia, Croatia, Bosnia and Herzegovina, North Macedonia, Austria, Germany, Czechia, Slovakia, Hungary, the Netherlands, Belgium, Luxembourg, Italy, Turkey or Bulgaria receive urgent care in Montenegrin state facilities at the expense of their home insurance fund.',
@@ -51,14 +73,14 @@ export default {
 			ThcAgreements3:
 				'The UK and Poland work on simple reciprocity: for urgent treatment a valid GHIC/EHIC — or even just your passport — is enough. The UK guidance adds a practical detail: the hospital certificate should be arranged with the local FZOCG office before or during treatment, not after discharge — and note that prescribed medicines are not covered by the agreement.',
 			ThcAgreements4:
-				'Swiss, Swedish, Danish and Norwegian insured pay on the spot and claim reimbursement at home. Russia, Ukraine and other CIS countries have no healthcare agreements with Montenegro at all — for these tourists (and everyone else “without an agreement”) travel insurance is the only protection from full-price bills.',
+				'Swiss, Swedish, Danish and Norwegian insured pay on the spot and claim reimbursement at home. Russia, Ukraine, Kazakhstan and most other countries have no healthcare agreements with Montenegro at all — for these tourists (and everyone else “without an agreement”) travel insurance is the only protection from full-price bills.',
 
 			ThcInsurance1:
 				'Even for agreement countries the coverage is narrow: only urgent and necessary care — and never a medical evacuation home. The German liaison office DVKA says it plainly in its Montenegro leaflet: repatriation is not covered, take out private travel insurance despite the agreement. That advice applies to everyone.',
 			ThcInsurance2:
 				'Using a policy in practice: call your insurer’s assistance line as early as you can — they will direct you to a partner clinic and may arrange direct billing. If the situation is acute, don’t wait for the call center: go to hitna pomoć or a hospital, pay, and keep every medical report and receipt for the claim. Judging by travellers’ experiences here, assistance services vary a lot — one arranges a doctor within an hour, another leaves you waiting for a day — so a small cash reserve for a doctor’s visit is a sensible backup.',
 			ThcInsurance3:
-				'When buying a policy, check the points tourists actually get caught by: coverage of active holidays (hiking, mopeds and scooters, rafting and paragliding are popular here), alcohol exclusions, exacerbation of chronic conditions, and the coverage limit — €30,000 looks like a reasonable minimum for a country where a single surgery can cost €1,500.',
+				'When buying a policy, pay attention to the points that most often leave tourists without coverage: coverage of active holidays (hiking, mopeds and scooters, rafting and paragliding are popular here), alcohol exclusions, exacerbation of chronic conditions, and the coverage limit — €30,000 looks like a reasonable minimum for a country where a single surgery can cost €1,500.',
 
 			ThcPharmacies1:
 				'Pharmacies (apoteka) are on every corner in resort towns, and in season many work late and on Sundays. Painkillers, antipyretics, rehydration salts, ear and nose drops, sunburn sprays and motion-sickness pills are sold freely. Antibiotic tablets are strictly prescription-only — and pharmacies do not accept foreign prescriptions, only Montenegrin (electronic) ones. If you need prescription medication, a paid visit to the turistička ambulanta or a private doctor solves it: after the consultation the doctor issues a local e-prescription.',
@@ -113,17 +135,39 @@ export default {
 				'Частные клиники — комфортная альтернатива: приём терапевта или специалиста стоит 30–50 €, запись быстрая, а персонал в туристических местах обычно говорит по-английски, часто по-русски или по-немецки. Адреса, языки и часы работы — в нашем',
 			ThcWhere2Link: 'каталоге клиник с картой',
 			ThcWhere2End: '.',
-			ThcWhere3:
-				'С травмами и состояниями, которым явно нужна больница, на побережье едут в приёмные отделения общих больниц Котора и Бара; с переломами и спортивными травмами вокруг Боки местные часто едут сразу в ортопедическую больницу в Рисане. Учтите: стационар и операционные есть лишь у нескольких частных клиник (в Подгорице и Сутоморе) — с острой хирургической проблемой частная клиника, скорее всего, перенаправит вас в государственную больницу.',
-			ThcWhere4:
-				'В действительно серьёзной ситуации — подозрение на аппендицит, боль в груди, тяжёлая авария — главный адрес: Urgentni centar Клинического центра Черногории (KCCG) в Подгорице. Он работает круглосуточно и, в отличие от остальной государственной системы, принимает экстренных пациентов без всяких направлений.',
+			ThcWhere3a:
+				'С травмами и состояниями, которым явно нужна больница, на побережье едут в приёмные отделения общих больниц ',
+			ThcWhere3KotorLink: 'Котора',
+			ThcWhere3b: ' и ',
+			ThcWhere3BarLink: 'Бара',
+			ThcWhere3c:
+				'; с переломами и спортивными травмами вокруг Боки местные часто едут сразу в ',
+			ThcWhere3RisanLink: 'ортопедическую больницу в Рисане',
+			ThcWhere3d:
+				'. Учтите: стационар и операционные есть лишь у нескольких частных клиник — с острой хирургической проблемой частная клиника, скорее всего, перенаправит вас в государственную больницу.',
+			ThcWhere4a:
+				'В действительно серьёзной ситуации — подозрение на аппендицит, боль в груди, тяжёлая авария — главный адрес: Urgentni centar ',
+			ThcWhere4KccgLink: 'Клинического центра Черногории (KCCG)',
+			ThcWhere4b:
+				' в Подгорице. Он работает круглосуточно и, в отличие от остальной государственной системы, принимает экстренных пациентов без всяких направлений.',
 
-			ThcCosts1:
-				'Ориентиры цен для пациента без страховки: консультация в туристической амбуланте — 25–30 € (в Будве в 2025 году осмотр с выпиской рецепта стоил ровно 25 €), приём в частной клинике — 30–50 €, комплексный визит с УЗИ и анализами — около 80 €. Анализы в частных лабораториях недорогие: базовый анализ крови — от 5 €.',
-			ThcCosts2:
-				'Больницы — другая лига. Туристы и переехавшие регулярно жалуются — в неподтверждённых рассказах, а не по опубликованному прейскуранту — на «туристическое» отделение Которской больницы: в рассказах 2023 года фигурируют около 150 € за осмотр врача и около 200 € за обычную капельницу с физраствором — в разы дороже, чем где-либо ещё (ту же капельницу в больнице Бара оценивали примерно в 30 €). В 2025-м писали о примерно 170 € за приём иностранца. Повторим: это непроверенные рассказы пациентов, а не официальный прейскурант, но одна и та же жалоба повторяется из года в год.',
-			ThcCosts3:
-				'Реальный ориентир 2023 года: лапароскопическое удаление аппендикса с двумя днями стационара в Urgentni centar в Подгорице обошлось незастрахованной пациентке примерно в 1200–1500 €. Больницы часто просят оплату сразу — наличными или картой — даже если у вас есть travel-страховка: сначала платите вы, потом возмещает страховая. Обязательно требуйте чек (račun) за каждый платёж: без него ни страховая, ни кто-либо ещё не вернёт вам ни цента.',
+			ThcCosts1a:
+				'Ориентиры цен для пациента без страховки: консультация в туристической амбуланте — 25–30 € (в Будве в 2025 году осмотр с выпиской рецепта стоил ровно 25 €), приём в частной клинике — 30–50 €, комплексный визит с УЗИ и анализами — около 80 €. Анализы в частных лабораториях недорогие: ',
+			ThcCosts1CbcLink: 'базовый анализ крови',
+			ThcCosts1b: ' — от 5 €.',
+			ThcCosts2a:
+				'Больницы — другая лига. Туристы и переехавшие регулярно жалуются — в неподтверждённых рассказах, а не по опубликованному прейскуранту — на «туристическое» отделение ',
+			ThcCosts2KotorLink: 'Которской больницы',
+			ThcCosts2b:
+				': в рассказах 2023 года фигурируют около 150 € за осмотр врача и около 200 € за обычную капельницу с физраствором — в разы дороже, чем где-либо ещё (ту же капельницу в ',
+			ThcCosts2BarLink: 'больнице Бара',
+			ThcCosts2c:
+				' оценивали примерно в 30 €). В 2025-м писали о примерно 170 € за приём иностранца. Повторим: это непроверенные рассказы пациентов, а не официальный прейскурант, но одна и та же жалоба повторяется из года в год.',
+			ThcCosts3a:
+				'Реальный ориентир 2023 года: лапароскопическое удаление аппендикса с двумя днями стационара в Urgentni centar в ',
+			ThcCosts3PodgoricaLink: 'Подгорице',
+			ThcCosts3b:
+				' обошлось незастрахованной пациентке примерно в 1200–1500 €. Больницы часто просят оплату сразу — наличными или картой — даже если у вас есть travel-страховка: сначала платите вы, потом возмещает страховая. Обязательно требуйте чек (račun) за каждый платёж: без него ни страховая, ни кто-либо ещё не вернёт вам ни цента.',
 
 			ThcAgreements1:
 				'Черногория не входит в ЕС, поэтому европейская карта EHIC сама по себе здесь не действует. Зато действуют двусторонние соглашения о социальном обеспечении: застрахованным в Сербии, Словении, Хорватии, Боснии и Герцеговине, Северной Македонии, Австрии, Германии, Чехии, Словакии, Венгрии, Нидерландах, Бельгии, Люксембурге, Италии, Турции и Болгарии неотложную помощь в государственных учреждениях оказывают за счёт их домашнего фонда.',
@@ -132,14 +176,14 @@ export default {
 			ThcAgreements3:
 				'Великобритания и Польша работают по принципу взаимности: для неотложной помощи достаточно действующего GHIC/EHIC — или даже просто паспорта. Британская памятка добавляет практичную деталь: больничный сертификат нужно оформить в местном филиале FZOCG до или во время лечения, а не после выписки, — и учтите, что выписанные лекарства соглашением не покрываются.',
 			ThcAgreements4:
-				'Застрахованные в Швейцарии, Швеции, Дании и Норвегии платят на месте и получают возмещение дома. У России, Украины и других стран СНГ действующих соглашений о медицинской помощи с Черногорией нет вовсе — для этих туристов (и всех остальных «без соглашения») travel-страховка — единственная защита от счетов по полной стоимости.',
+				'Застрахованные в Швейцарии, Швеции, Дании и Норвегии платят на месте и получают возмещение дома. У России, Украины, Казахстана и большинства других стран действующих соглашений о медицинской помощи с Черногорией нет вовсе — для этих туристов (и всех остальных «без соглашения») travel-страховка — единственная защита от счетов по полной стоимости.',
 
 			ThcInsurance1:
 				'Даже для стран с соглашениями покрытие узкое: только неотложная и необходимая помощь — и никогда медицинская эвакуация домой. Немецкое бюро DVKA в памятке по Черногории пишет прямо: репатриация не покрывается, оформляйте частную travel-страховку, несмотря на соглашение. Этот совет актуален для всех.',
 			ThcInsurance2:
 				'Как пользоваться полисом на практике: звоните на линию ассистанса как можно раньше — вас направят в партнёрскую клинику и могут организовать прямую оплату. Если ситуация острая, не ждите колл-центр: идите в hitna pomoć или больницу, платите и сохраняйте все заключения и чеки для возмещения. Судя по опыту путешественников здесь, ассистансы очень разные — один организует врача за час, другой заставит ждать сутки, — так что небольшой запас наличных на визит к врачу будет разумной подстраховкой.',
 			ThcInsurance3:
-				'При покупке полиса проверьте то, на чём туристы реально «попадают»: покрытие активного отдыха (хайкинг, мопеды и скутеры, рафтинг и парапланы здесь популярны), алкогольные исключения, обострение хронических болезней и лимит покрытия — 30 000 € выглядит разумным минимумом для страны, где одна операция может стоить 1500 €.',
+				'При покупке полиса обратите внимание на пункты, из-за которых туристы чаще всего остаются без покрытия: покрытие активного отдыха (хайкинг, мопеды и скутеры, рафтинг и парапланы здесь популярны), алкогольные исключения, обострение хронических болезней и лимит покрытия — 30 000 € выглядит разумным минимумом для страны, где одна операция может стоить 1500 €.',
 
 			ThcPharmacies1:
 				'Аптеки (apoteka) в курортных городах на каждом шагу, в сезон многие работают допоздна и по воскресеньям. Обезболивающие, жаропонижающие, регидратационные соли, капли для ушей и носа, средства от солнечных ожогов и укачивания продаются свободно. Антибиотики в таблетках — строго по рецепту, причём иностранные рецепты аптеки не принимают, только черногорские (электронные). Если нужен рецептурный препарат, вопрос решается платным визитом в туристическую амбуланту или к частному врачу: после консультации врач выпишет местный электронный рецепт.',
@@ -194,17 +238,39 @@ export default {
 				'Privatne klinike su komforna alternativa: pregled ljekara opšte prakse ili specijaliste košta 30–50 €, termini se brzo dobijaju, a osoblje u turističkim mjestima obično govori engleski, često i ruski ili njemački. Adrese, jezici i radno vrijeme su u našem',
 			ThcWhere2Link: 'katalogu klinika sa mapom',
 			ThcWhere2End: '.',
-			ThcWhere3:
-				'Sa povredama i stanjima kojima je očigledno potrebna bolnica, na primorju se ide u prijemna odjeljenja opštih bolnica u Kotoru i Baru; sa prelomima i sportskim povredama oko Boke mještani često idu pravo u ortopedsku bolnicu u Risnu. Imajte u vidu: stacionar i operacione sale ima samo nekoliko privatnih klinika (u Podgorici i Sutomoru) — kod akutnog hirurškog problema privatna klinika će vas najvjerovatnije preusmjeriti u državnu bolnicu.',
-			ThcWhere4:
-				'U zaista ozbiljnoj situaciji — sumnja na upalu slijepog crijeva, bol u grudima, teška nesreća — glavna adresa je Urgentni centar Kliničkog centra Crne Gore (KCCG) u Podgorici: radi 24/7 i, za razliku od ostatka državnog sistema, prima hitne pacijente bez ikakvog uputa.',
+			ThcWhere3a:
+				'Sa povredama i stanjima kojima je očigledno potrebna bolnica, na primorju se ide u prijemna odjeljenja opštih bolnica u ',
+			ThcWhere3KotorLink: 'Kotoru',
+			ThcWhere3b: ' i ',
+			ThcWhere3BarLink: 'Baru',
+			ThcWhere3c:
+				'; sa prelomima i sportskim povredama oko Boke mještani često idu pravo u ',
+			ThcWhere3RisanLink: 'ortopedsku bolnicu u Risnu',
+			ThcWhere3d:
+				'. Imajte u vidu: stacionar i operacione sale ima samo nekoliko privatnih klinika — kod akutnog hirurškog problema privatna klinika će vas najvjerovatnije preusmjeriti u državnu bolnicu.',
+			ThcWhere4a:
+				'U zaista ozbiljnoj situaciji — sumnja na upalu slijepog crijeva, bol u grudima, teška nesreća — glavna adresa je Urgentni centar ',
+			ThcWhere4KccgLink: 'Kliničkog centra Crne Gore (KCCG)',
+			ThcWhere4b:
+				' u Podgorici: radi 24/7 i, za razliku od ostatka državnog sistema, prima hitne pacijente bez ikakvog uputa.',
 
-			ThcCosts1:
-				'Orijentacione cijene za pacijenta bez osiguranja: konsultacija u turističkoj ambulanti — 25–30 € (u Budvi je 2025. pregled sa izdavanjem recepta koštao tačno 25 €), pregled u privatnoj klinici — 30–50 €, kompletna posjeta sa ultrazvukom i analizama — oko 80 €. Analize u privatnim laboratorijama su povoljne: osnovna analiza krvi od oko 5 €.',
-			ThcCosts2:
-				'Bolnice su druga liga. Turisti i stranci se učestalo žale — u neprovjerenim iskustvima, a ne prema objavljenom cjenovniku — na „turističko“ odjeljenje kotorske bolnice: u iskustvima iz 2023. pominju se oko 150 € za pregled ljekara i oko 200 € za običnu infuziju fiziološkog rastvora — višestruko skuplje nego bilo gdje drugo (ista infuzija u barskoj bolnici procijenjena je na oko 30 €). Godine 2025. pominjano je oko 170 € za pregled stranca. Ponovimo: to su neprovjerena iskustva pacijenata, a ne zvanični cjenovnik, ali se ista pritužba ponavlja iz godine u godinu.',
-			ThcCosts3:
-				'Stvarni orijentir iz 2023: laparoskopska operacija slijepog crijeva sa dva dana bolničkog liječenja u Urgentnom centru u Podgorici koštala je neosiguranu pacijentkinju oko 1.200–1.500 €. Bolnice često traže plaćanje odmah — gotovinom ili karticom — čak i kada imate putno osiguranje: prvo platite vi, a osiguravač kasnije refundira. Obavezno tražite račun za svako plaćanje: bez njega vam ni osiguravač ni bilo ko drugi neće vratiti ni cent.',
+			ThcCosts1a:
+				'Orijentacione cijene za pacijenta bez osiguranja: konsultacija u turističkoj ambulanti — 25–30 € (u Budvi je 2025. pregled sa izdavanjem recepta koštao tačno 25 €), pregled u privatnoj klinici — 30–50 €, kompletna posjeta sa ultrazvukom i analizama — oko 80 €. Analize u privatnim laboratorijama su povoljne: ',
+			ThcCosts1CbcLink: 'osnovna analiza krvi',
+			ThcCosts1b: ' od oko 5 €.',
+			ThcCosts2a:
+				'Bolnice su druga liga. Turisti i stranci se učestalo žale — u neprovjerenim iskustvima, a ne prema objavljenom cjenovniku — na „turističko“ odjeljenje ',
+			ThcCosts2KotorLink: 'kotorske bolnice',
+			ThcCosts2b:
+				': u iskustvima iz 2023. pominju se oko 150 € za pregled ljekara i oko 200 € za običnu infuziju fiziološkog rastvora — višestruko skuplje nego bilo gdje drugo (ista infuzija u ',
+			ThcCosts2BarLink: 'barskoj bolnici',
+			ThcCosts2c:
+				' procijenjena je na oko 30 €). Godine 2025. pominjano je oko 170 € za pregled stranca. Ponovimo: to su neprovjerena iskustva pacijenata, a ne zvanični cjenovnik, ali se ista pritužba ponavlja iz godine u godinu.',
+			ThcCosts3a:
+				'Stvarni orijentir iz 2023: laparoskopska operacija slijepog crijeva sa dva dana bolničkog liječenja u Urgentnom centru u ',
+			ThcCosts3PodgoricaLink: 'Podgorici',
+			ThcCosts3b:
+				' koštala je neosiguranu pacijentkinju oko 1.200–1.500 €. Bolnice često traže plaćanje odmah — gotovinom ili karticom — čak i kada imate putno osiguranje: prvo platite vi, a osiguravač kasnije refundira. Obavezno tražite račun za svako plaćanje: bez njega vam ni osiguravač ni bilo ko drugi neće vratiti ni cent.',
 
 			ThcAgreements1:
 				'Crna Gora nije članica EU, pa evropska kartica EHIC sama po sebi ovdje ne važi. Važe, međutim, bilateralni sporazumi o socijalnom osiguranju: osiguranicima iz Srbije, Slovenije, Hrvatske, Bosne i Hercegovine, Sjeverne Makedonije, Austrije, Njemačke, Češke, Slovačke, Mađarske, Holandije, Belgije, Luksemburga, Italije, Turske i Bugarske hitna pomoć u državnim ustanovama pruža se na teret njihovog matičnog fonda.',
@@ -213,14 +279,14 @@ export default {
 			ThcAgreements3:
 				'Velika Britanija i Poljska funkcionišu po principu reciprociteta: za hitnu pomoć dovoljan je važeći GHIC/EHIC — ili čak samo pasoš. Britansko uputstvo dodaje praktičan detalj: bolnički list treba srediti u lokalnoj filijali FZOCG prije ili tokom liječenja, a ne poslije otpusta — i imajte u vidu da propisani ljekovi nisu pokriveni sporazumom.',
 			ThcAgreements4:
-				'Osiguranici iz Švajcarske, Švedske, Danske i Norveške plaćaju na licu mjesta i traže refundaciju kod kuće. Rusija, Ukrajina i druge zemlje ZND uopšte nemaju važeće sporazume o zdravstvenoj zaštiti sa Crnom Gorom — za te turiste (i sve ostale „bez sporazuma“) putno osiguranje je jedina zaštita od računa po punoj cijeni.',
+				'Osiguranici iz Švajcarske, Švedske, Danske i Norveške plaćaju na licu mjesta i traže refundaciju kod kuće. Rusija, Ukrajina, Kazahstan i većina drugih zemalja uopšte nemaju važeće sporazume o zdravstvenoj zaštiti sa Crnom Gorom — za te turiste (i sve ostale „bez sporazuma“) putno osiguranje je jedina zaštita od računa po punoj cijeni.',
 
 			ThcInsurance1:
 				'Čak i za zemlje sa sporazumima pokriće je usko: samo hitna i neophodna pomoć — i nikada medicinska evakuacija kući. Njemačka kancelarija DVKA u svom uputstvu za Crnu Goru piše direktno: repatrijacija nije pokrivena, zaključite privatno putno osiguranje uprkos sporazumu. Taj savjet važi za sve.',
 			ThcInsurance2:
 				'Kako koristiti polisu u praksi: pozovite asistenciju svog osiguravača što ranije — uputiće vas u partnersku kliniku i mogu organizovati direktno plaćanje. Ako je situacija akutna, ne čekajte kol-centar: idite u hitnu pomoć ili bolnicu, platite i čuvajte sve nalaze i račune za refundaciju. Sudeći po iskustvima putnika ovdje, asistencije su veoma različite — jedna organizuje ljekara za sat, druga vas ostavi da čekate cijeli dan — pa je manja rezerva gotovine za pregled kod ljekara razumna mjera opreza.',
 			ThcInsurance3:
-				'Pri kupovini polise provjerite ono na čemu se turisti stvarno „opeku“: pokriće aktivnog odmora (planinarenje, mopedi i skuteri, rafting i paraglajding ovdje su popularni), isključenja vezana za alkohol, pogoršanje hroničnih bolesti i limit pokrića — 30.000 € izgleda kao razuman minimum za zemlju u kojoj jedna operacija može koštati 1.500 €.',
+				'Pri kupovini polise obratite pažnju na tačke zbog kojih turisti najčešće ostanu bez pokrića: pokriće aktivnog odmora (planinarenje, mopedi i skuteri, rafting i paraglajding ovdje su popularni), isključenja vezana za alkohol, pogoršanje hroničnih bolesti i limit pokrića — 30.000 € izgleda kao razuman minimum za zemlju u kojoj jedna operacija može koštati 1.500 €.',
 
 			ThcPharmacies1:
 				'Apoteka u turističkim mjestima ima na svakom koraku, a u sezoni mnoge rade do kasno i nedjeljom. Analgetici, antipiretici, rehidratacione soli, kapi za uši i nos, sprejevi za opekotine od sunca i tablete protiv mučnine prodaju se slobodno. Antibiotici u tabletama izdaju se strogo na recept, pri čemu apoteke ne prihvataju strane recepte, već samo crnogorske (elektronske). Ako vam treba lijek na recept, pitanje rješava plaćeni pregled u turističkoj ambulanti ili kod privatnog ljekara: poslije konsultacije ljekar izdaje lokalni eRecept.',
@@ -275,17 +341,39 @@ export default {
 				'Приватне клинике су комфорна алтернатива: преглед љекара опште праксе или специјалисте кошта 30–50 €, термини се брзо добијају, а особље у туристичким мјестима обично говори енглески, често и руски или њемачки. Адресе, језици и радно вријеме су у нашем',
 			ThcWhere2Link: 'каталогу клиника са мапом',
 			ThcWhere2End: '.',
-			ThcWhere3:
-				'Са повредама и стањима којима је очигледно потребна болница, на приморју се иде у пријемна одјељења општих болница у Котору и Бару; са преломима и спортским повредама око Боке мјештани често иду право у ортопедску болницу у Рисну. Имајте у виду: стационар и операционе сале има само неколико приватних клиника (у Подгорици и Сутомору) — код акутног хируршког проблема приватна клиника ће вас највјероватније преусмјерити у државну болницу.',
-			ThcWhere4:
-				'У заиста озбиљној ситуацији — сумња на упалу слијепог цријева, бол у грудима, тешка несрећа — главна адреса је Ургентни центар Клиничког центра Црне Горе (КЦЦГ) у Подгорици: ради 24/7 и, за разлику од остатка државног система, прима хитне пацијенте без икаквог упута.',
+			ThcWhere3a:
+				'Са повредама и стањима којима је очигледно потребна болница, на приморју се иде у пријемна одјељења општих болница у ',
+			ThcWhere3KotorLink: 'Котору',
+			ThcWhere3b: ' и ',
+			ThcWhere3BarLink: 'Бару',
+			ThcWhere3c:
+				'; са преломима и спортским повредама око Боке мјештани често иду право у ',
+			ThcWhere3RisanLink: 'ортопедску болницу у Рисну',
+			ThcWhere3d:
+				'. Имајте у виду: стационар и операционе сале има само неколико приватних клиника — код акутног хируршког проблема приватна клиника ће вас највјероватније преусмјерити у државну болницу.',
+			ThcWhere4a:
+				'У заиста озбиљној ситуацији — сумња на упалу слијепог цријева, бол у грудима, тешка несрећа — главна адреса је Ургентни центар ',
+			ThcWhere4KccgLink: 'Клиничког центра Црне Горе (КЦЦГ)',
+			ThcWhere4b:
+				' у Подгорици: ради 24/7 и, за разлику од остатка државног система, прима хитне пацијенте без икаквог упута.',
 
-			ThcCosts1:
-				'Оријентационе цијене за пацијента без осигурања: консултација у туристичкој амбуланти — 25–30 € (у Будви је 2025. преглед са издавањем рецепта коштао тачно 25 €), преглед у приватној клиници — 30–50 €, комплетна посјета са ултразвуком и анализама — око 80 €. Анализе у приватним лабораторијама су повољне: основна анализа крви од око 5 €.',
-			ThcCosts2:
-				'Болнице су друга лига. Туристи и странци се учестало жале — у непровјереним искуствима, а не према објављеном цјеновнику — на „туристичко“ одјељење которске болнице: у искуствима из 2023. помињу се око 150 € за преглед љекара и око 200 € за обичну инфузију физиолошког раствора — вишеструко скупље него било гдје друго (иста инфузија у барској болници процијењена је на око 30 €). Године 2025. помињано је око 170 € за преглед странца. Поновимо: то су непровјерена искуства пацијената, а не званични цјеновник, али се иста притужба понавља из године у годину.',
-			ThcCosts3:
-				'Стварни оријентир из 2023: лапароскопска операција слијепог цријева са два дана болничког лијечења у Ургентном центру у Подгорици коштала је неосигурану пацијенткињу око 1.200–1.500 €. Болнице често траже плаћање одмах — готовином или картицом — чак и када имате путно осигурање: прво платите ви, а осигуравач касније рефундира. Обавезно тражите рачун за свако плаћање: без њега вам ни осигуравач ни било ко други неће вратити ни цент.',
+			ThcCosts1a:
+				'Оријентационе цијене за пацијента без осигурања: консултација у туристичкој амбуланти — 25–30 € (у Будви је 2025. преглед са издавањем рецепта коштао тачно 25 €), преглед у приватној клиници — 30–50 €, комплетна посјета са ултразвуком и анализама — око 80 €. Анализе у приватним лабораторијама су повољне: ',
+			ThcCosts1CbcLink: 'основна анализа крви',
+			ThcCosts1b: ' од око 5 €.',
+			ThcCosts2a:
+				'Болнице су друга лига. Туристи и странци се учестало жале — у непровјереним искуствима, а не према објављеном цјеновнику — на „туристичко“ одјељење ',
+			ThcCosts2KotorLink: 'которске болнице',
+			ThcCosts2b:
+				': у искуствима из 2023. помињу се око 150 € за преглед љекара и око 200 € за обичну инфузију физиолошког раствора — вишеструко скупље него било гдје друго (иста инфузија у ',
+			ThcCosts2BarLink: 'барској болници',
+			ThcCosts2c:
+				' процијењена је на око 30 €). Године 2025. помињано је око 170 € за преглед странца. Поновимо: то су непровјерена искуства пацијената, а не званични цјеновник, али се иста притужба понавља из године у годину.',
+			ThcCosts3a:
+				'Стварни оријентир из 2023: лапароскопска операција слијепог цријева са два дана болничког лијечења у Ургентном центру у ',
+			ThcCosts3PodgoricaLink: 'Подгорици',
+			ThcCosts3b:
+				' коштала је неосигурану пацијенткињу око 1.200–1.500 €. Болнице често траже плаћање одмах — готовином или картицом — чак и када имате путно осигурање: прво платите ви, а осигуравач касније рефундира. Обавезно тражите рачун за свако плаћање: без њега вам ни осигуравач ни било ко други неће вратити ни цент.',
 
 			ThcAgreements1:
 				'Црна Гора није чланица ЕУ, па европска картица EHIC сама по себи овдје не важи. Важе, међутим, билатерални споразуми о социјалном осигурању: осигураницима из Србије, Словеније, Хрватске, Босне и Херцеговине, Сјеверне Македоније, Аустрије, Њемачке, Чешке, Словачке, Мађарске, Холандије, Белгије, Луксембурга, Италије, Турске и Бугарске хитна помоћ у државним установама пружа се на терет њиховог матичног фонда.',
@@ -294,14 +382,14 @@ export default {
 			ThcAgreements3:
 				'Велика Британија и Пољска функционишу по принципу реципроцитета: за хитну помоћ довољан је важећи GHIC/EHIC — или чак само пасош. Британско упутство додаје практичан детаљ: болнички лист треба средити у локалној филијали ФЗОЦГ прије или током лијечења, а не послије отпуста — и имајте у виду да прописани љекови нису покривени споразумом.',
 			ThcAgreements4:
-				'Осигураници из Швајцарске, Шведске, Данске и Норвешке плаћају на лицу мјеста и траже рефундацију код куће. Русија, Украјина и друге земље ЗНД уопште немају важеће споразуме о здравственој заштити са Црном Гором — за те туристе (и све остале „без споразума“) путно осигурање је једина заштита од рачуна по пуној цијени.',
+				'Осигураници из Швајцарске, Шведске, Данске и Норвешке плаћају на лицу мјеста и траже рефундацију код куће. Русија, Украјина, Казахстан и већина других земаља уопште немају важеће споразуме о здравственој заштити са Црном Гором — за те туристе (и све остале „без споразума“) путно осигурање је једина заштита од рачуна по пуној цијени.',
 
 			ThcInsurance1:
 				'Чак и за земље са споразумима покриће је уско: само хитна и неопходна помоћ — и никада медицинска евакуација кући. Њемачка канцеларија DVKA у свом упутству за Црну Гору пише директно: репатријација није покривена, закључите приватно путно осигурање упркос споразуму. Тај савјет важи за све.',
 			ThcInsurance2:
 				'Како користити полису у пракси: позовите асистенцију свог осигуравача што раније — упутиће вас у партнерску клинику и могу организовати директно плаћање. Ако је ситуација акутна, не чекајте кол-центар: идите у хитну помоћ или болницу, платите и чувајте све налазе и рачуне за рефундацију. Судећи по искуствима путника овдје, асистенције су веома различите — једна организује љекара за сат, друга вас остави да чекате цијели дан — па је мања резерва готовине за преглед код љекара разумна мјера опреза.',
 			ThcInsurance3:
-				'При куповини полисе провјерите оно на чему се туристи стварно „опеку“: покриће активног одмора (планинарење, мопеди и скутери, рафтинг и параглајдинг овдје су популарни), искључења везана за алкохол, погоршање хроничних болести и лимит покрића — 30.000 € изгледа као разуман минимум за земљу у којој једна операција може коштати 1.500 €.',
+				'При куповини полисе обратите пажњу на тачке због којих туристи најчешће остану без покрића: покриће активног одмора (планинарење, мопеди и скутери, рафтинг и параглајдинг овдје су популарни), искључења везана за алкохол, погоршање хроничних болести и лимит покрића — 30.000 € изгледа као разуман минимум за земљу у којој једна операција може коштати 1.500 €.',
 
 			ThcPharmacies1:
 				'Апотека у туристичким мјестима има на сваком кораку, а у сезони многе раде до касно и недјељом. Аналгетици, антипиретици, рехидратационе соли, капи за уши и нос, спрејеви за опекотине од сунца и таблете против мучнине продају се слободно. Антибиотици у таблетама издају се строго на рецепт, при чему апотеке не прихватају стране рецепте, већ само црногорске (електронске). Ако вам треба лијек на рецепт, питање рјешава плаћени преглед у туристичкој амбуланти или код приватног љекара: послије консултације љекар издаје локални еРецепт.',
@@ -356,17 +444,39 @@ export default {
 				'Privatkliniken sind die komfortable Alternative: Ein Termin beim Allgemeinarzt oder Facharzt kostet 30–50 €, geht schnell, und das Personal in Touristenorten spricht meist Englisch, oft auch Russisch oder Deutsch. Adressen, Sprachen und Öffnungszeiten finden Sie in unserem',
 			ThcWhere2Link: 'Klinikkatalog mit Karte',
 			ThcWhere2End: '.',
-			ThcWhere3:
-				'Mit Verletzungen und Zuständen, die eindeutig ein Krankenhaus brauchen, fährt man an der Küste in die Notaufnahmen der allgemeinen Krankenhäuser in Kotor und Bar; mit Frakturen und Sportverletzungen rund um die Bucht von Kotor fahren Einheimische oft direkt in das orthopädische Krankenhaus in Risan. Beachten Sie: Nur wenige Privatkliniken haben Betten und Operationssäle (in Podgorica und Sutomore) — bei einem akuten chirurgischen Problem wird eine Privatklinik Sie höchstwahrscheinlich an ein staatliches Krankenhaus verweisen.',
-			ThcWhere4:
-				'In einer wirklich ernsten Situation — Verdacht auf Blinddarmentzündung, Brustschmerz, schwerer Unfall — ist die wichtigste Adresse das Urgentni centar des Klinischen Zentrums von Montenegro (KCCG) in Podgorica: rund um die Uhr geöffnet, und anders als der Rest des staatlichen Systems nimmt es Notfälle ohne jede Überweisung an.',
+			ThcWhere3a:
+				'Mit Verletzungen und Zuständen, die eindeutig ein Krankenhaus brauchen, fährt man an der Küste in die Notaufnahmen der allgemeinen Krankenhäuser in ',
+			ThcWhere3KotorLink: 'Kotor',
+			ThcWhere3b: ' und ',
+			ThcWhere3BarLink: 'Bar',
+			ThcWhere3c:
+				'; mit Frakturen und Sportverletzungen rund um die Bucht von Kotor fahren Einheimische oft direkt in das ',
+			ThcWhere3RisanLink: 'orthopädische Krankenhaus in Risan',
+			ThcWhere3d:
+				'. Beachten Sie: Nur wenige Privatkliniken haben Betten und Operationssäle — bei einem akuten chirurgischen Problem wird eine Privatklinik Sie höchstwahrscheinlich an ein staatliches Krankenhaus verweisen.',
+			ThcWhere4a:
+				'In einer wirklich ernsten Situation — Verdacht auf Blinddarmentzündung, Brustschmerz, schwerer Unfall — ist die wichtigste Adresse das Urgentni centar des ',
+			ThcWhere4KccgLink: 'Klinischen Zentrums von Montenegro (KCCG)',
+			ThcWhere4b:
+				' in Podgorica: rund um die Uhr geöffnet, und anders als der Rest des staatlichen Systems nimmt es Notfälle ohne jede Überweisung an.',
 
-			ThcCosts1:
-				'Preisanker für Patienten ohne Versicherung: Konsultation in der turistička ambulanta — 25–30 € (in Budva kostete 2025 eine Untersuchung mit Rezept genau 25 €), Termin in einer Privatklinik — 30–50 €, umfassender Besuch mit Ultraschall und Laboranalysen — etwa 80 €. Laboruntersuchungen in privaten Laboren sind günstig: ein Basis-Blutbild ab etwa 5 €.',
-			ThcCosts2:
-				'Krankenhäuser sind eine andere Liga. Touristen und Expats beklagen sich immer wieder — in unbestätigten Berichten, nicht anhand einer veröffentlichten Preisliste — über die „Touristenabteilung“ des Krankenhauses Kotor: In Berichten aus 2023 werden etwa 150 € für eine ärztliche Untersuchung und etwa 200 € für eine einfache Kochsalzinfusion genannt — ein Mehrfaches der Preise anderswo (dieselbe Infusion im Krankenhaus Bar wurde mit etwa 30 € beziffert). 2025 berichteten Besucher von rund 170 € für die Untersuchung eines Ausländers. Nochmals: Das sind unbestätigte Patientenberichte, keine offizielle Preisliste — aber dieselbe Beschwerde wiederholt sich Jahr für Jahr.',
-			ThcCosts3:
-				'Ein realer Anhaltspunkt aus 2023: Eine laparoskopische Blinddarmoperation mit zwei Tagen stationär im Urgentni centar in Podgorica kostete eine unversicherte Patientin etwa 1.200–1.500 €. Krankenhäuser verlangen die Zahlung oft sofort — bar oder mit Karte — selbst wenn Sie eine Reiseversicherung haben: Erst zahlen Sie, später erstattet der Versicherer. Bestehen Sie bei jeder Zahlung auf einer Quittung (račun): Ohne sie erstattet Ihnen weder der Versicherer noch sonst jemand einen Cent.',
+			ThcCosts1a:
+				'Preisanker für Patienten ohne Versicherung: Konsultation in der turistička ambulanta — 25–30 € (in Budva kostete 2025 eine Untersuchung mit Rezept genau 25 €), Termin in einer Privatklinik — 30–50 €, umfassender Besuch mit Ultraschall und Laboranalysen — etwa 80 €. Laboruntersuchungen in privaten Laboren sind günstig: ein ',
+			ThcCosts1CbcLink: 'Basis-Blutbild',
+			ThcCosts1b: ' ab etwa 5 €.',
+			ThcCosts2a:
+				'Krankenhäuser sind eine andere Liga. Touristen und Expats beklagen sich immer wieder — in unbestätigten Berichten, nicht anhand einer veröffentlichten Preisliste — über die „Touristenabteilung“ des ',
+			ThcCosts2KotorLink: 'Krankenhauses Kotor',
+			ThcCosts2b:
+				': In Berichten aus 2023 werden etwa 150 € für eine ärztliche Untersuchung und etwa 200 € für eine einfache Kochsalzinfusion genannt — ein Mehrfaches der Preise anderswo (dieselbe Infusion im ',
+			ThcCosts2BarLink: 'Krankenhaus Bar',
+			ThcCosts2c:
+				' wurde mit etwa 30 € beziffert). 2025 berichteten Besucher von rund 170 € für die Untersuchung eines Ausländers. Nochmals: Das sind unbestätigte Patientenberichte, keine offizielle Preisliste — aber dieselbe Beschwerde wiederholt sich Jahr für Jahr.',
+			ThcCosts3a:
+				'Ein realer Anhaltspunkt aus 2023: Eine laparoskopische Blinddarmoperation mit zwei Tagen stationär im Urgentni centar in ',
+			ThcCosts3PodgoricaLink: 'Podgorica',
+			ThcCosts3b:
+				' kostete eine unversicherte Patientin etwa 1.200–1.500 €. Krankenhäuser verlangen die Zahlung oft sofort — bar oder mit Karte — selbst wenn Sie eine Reiseversicherung haben: Erst zahlen Sie, später erstattet der Versicherer. Bestehen Sie bei jeder Zahlung auf einer Quittung (račun): Ohne sie erstattet Ihnen weder der Versicherer noch sonst jemand einen Cent.',
 
 			ThcAgreements1:
 				'Montenegro ist kein EU-Mitglied, daher gilt die Europäische Krankenversicherungskarte als solche hier nicht. Es gelten aber bilaterale Sozialversicherungsabkommen: Versicherte aus Serbien, Slowenien, Kroatien, Bosnien und Herzegowina, Nordmazedonien, Österreich, Deutschland, Tschechien, der Slowakei, Ungarn, den Niederlanden, Belgien, Luxemburg, Italien, der Türkei und Bulgarien erhalten dringend notwendige Behandlungen in staatlichen Einrichtungen zulasten ihrer heimischen Kasse.',
@@ -375,14 +485,14 @@ export default {
 			ThcAgreements3:
 				'Großbritannien und Polen arbeiten nach dem Gegenseitigkeitsprinzip: Für dringende Behandlungen genügt eine gültige GHIC/EHIC — oder sogar nur der Reisepass. Die britische Anleitung ergänzt ein praktisches Detail: Die Krankenhausbescheinigung sollte vor oder während der Behandlung bei der örtlichen FZOCG-Filiale geregelt werden, nicht erst nach der Entlassung — und verschriebene Medikamente sind vom Abkommen nicht abgedeckt.',
 			ThcAgreements4:
-				'Versicherte aus der Schweiz, Schweden, Dänemark und Norwegen zahlen vor Ort und beantragen die Erstattung zu Hause. Russland, die Ukraine und andere GUS-Staaten haben mit Montenegro überhaupt keine Gesundheitsabkommen — für diese Touristen (und alle anderen „ohne Abkommen“) ist die Reiseversicherung der einzige Schutz vor Rechnungen zum vollen Preis.',
+				'Versicherte aus der Schweiz, Schweden, Dänemark und Norwegen zahlen vor Ort und beantragen die Erstattung zu Hause. Russland, die Ukraine, Kasachstan und die meisten anderen Länder haben mit Montenegro überhaupt keine Gesundheitsabkommen — für diese Touristen (und alle anderen „ohne Abkommen“) ist die Reiseversicherung der einzige Schutz vor Rechnungen zum vollen Preis.',
 
 			ThcInsurance1:
 				'Selbst für Abkommensländer ist die Deckung schmal: nur dringende und notwendige Behandlungen — und niemals ein Rücktransport nach Hause. Die deutsche Verbindungsstelle DVKA schreibt es in ihrem Montenegro-Merkblatt ausdrücklich: Rücktransporte sind nicht gedeckt, schließen Sie trotz des Abkommens eine private Reiseversicherung ab. Dieser Rat gilt für alle.',
 			ThcInsurance2:
 				'Die Police in der Praxis: Rufen Sie die Assistance Ihres Versicherers so früh wie möglich an — sie schickt Sie in eine Partnerklinik und kann eine Direktabrechnung organisieren. Ist die Lage akut, warten Sie nicht auf das Callcenter: Gehen Sie zur hitna pomoć oder ins Krankenhaus, zahlen Sie und heben Sie alle Befunde und Quittungen für die Erstattung auf. Nach den Erfahrungen von Reisenden hier arbeiten Assistance-Dienste sehr unterschiedlich — mancher organisiert binnen einer Stunde einen Arzt, ein anderer lässt Sie einen Tag warten —, eine kleine Bargeldreserve für einen Arztbesuch ist also eine vernünftige Absicherung.',
 			ThcInsurance3:
-				'Prüfen Sie beim Kauf der Police genau die Punkte, an denen Touristen tatsächlich hängen bleiben: Deckung von Aktivurlaub (Wandern, Mopeds und Roller, Rafting und Paragliding sind hier beliebt), Alkoholklauseln, Verschlimmerung chronischer Krankheiten und die Deckungssumme — 30.000 € sind ein vernünftiges Minimum für ein Land, in dem eine einzige Operation 1.500 € kosten kann.',
+				'Achten Sie beim Kauf der Police auf die Punkte, wegen denen Touristen am häufigsten ohne Deckung dastehen: Deckung von Aktivurlaub (Wandern, Mopeds und Roller, Rafting und Paragliding sind hier beliebt), Alkoholklauseln, Verschlimmerung chronischer Krankheiten und die Deckungssumme — 30.000 € sind ein vernünftiges Minimum für ein Land, in dem eine einzige Operation 1.500 € kosten kann.',
 
 			ThcPharmacies1:
 				'Apotheken (apoteka) gibt es in den Urlaubsorten an jeder Ecke, in der Saison öffnen viele bis spät und sonntags. Schmerzmittel, Fiebersenker, Elektrolytlösungen, Ohren- und Nasentropfen, Mittel gegen Sonnenbrand und Reisekrankheit sind frei verkäuflich. Antibiotika in Tablettenform gibt es strikt nur auf Rezept — und ausländische Rezepte akzeptieren die Apotheken nicht, nur montenegrinische (elektronische). Brauchen Sie ein verschreibungspflichtiges Medikament, löst das ein bezahlter Besuch in der turistička ambulanta oder bei einem Privatarzt: Nach der Konsultation stellt der Arzt ein lokales E-Rezept aus.',
@@ -439,15 +549,33 @@ export default {
 				'Özel klinikler konforlu alternatiftir: pratisyen veya uzman muayenesi 30–50 €, randevu hızlı alınır ve turistik bölgelerdeki personel genellikle İngilizce, sıklıkla Rusça veya Almanca konuşur. Adresleri, dilleri ve çalışma saatlerini',
 			ThcWhere2Link: 'haritalı klinik kataloğumuzda',
 			ThcWhere2End: ' bulabilirsiniz.',
-			ThcWhere3:
-				"Açıkça hastane gerektiren yaralanma ve durumlarda sahilde Kotor ve Bar genel hastanelerinin acil servislerine gidilir; Boka Körfezi çevresindeki kırık ve spor yaralanmalarında yerliler çoğu zaman doğrudan Risan'daki ortopedi hastanesine gider. Unutmayın: yataklı servis ve ameliyathane yalnızca birkaç özel klinikte vardır (Podgorica ve Sutomore'de) — akut cerrahi bir sorunda özel klinik sizi büyük olasılıkla devlet hastanesine yönlendirir.",
-			ThcWhere4:
-				"Gerçekten ciddi bir durumda — apandisit şüphesi, göğüs ağrısı, ağır kaza — ana adres Podgorica'daki Karadağ Klinik Merkezi'nin (KCCG) Urgentni centar'ıdır: 7/24 açıktır ve devlet sisteminin geri kalanından farklı olarak acil hastaları hiçbir sevk olmadan kabul eder.",
+			ThcWhere3a:
+				'Açıkça hastane gerektiren yaralanma ve durumlarda sahilde ',
+			ThcWhere3KotorLink: 'Kotor',
+			ThcWhere3b: ' ve ',
+			ThcWhere3BarLink: 'Bar',
+			ThcWhere3c:
+				" genel hastanelerinin acil servislerine gidilir; Boka Körfezi çevresindeki kırık ve spor yaralanmalarında yerliler çoğu zaman doğrudan ",
+			ThcWhere3RisanLink: "Risan'daki ortopedi hastanesine",
+			ThcWhere3d:
+				' gider. Unutmayın: yataklı servis ve ameliyathane yalnızca birkaç özel klinikte vardır — akut cerrahi bir sorunda özel klinik sizi büyük olasılıkla devlet hastanesine yönlendirir.',
+			ThcWhere4a: "Gerçekten ciddi bir durumda — apandisit şüphesi, göğüs ağrısı, ağır kaza — ana adres Podgorica'daki ",
+			ThcWhere4KccgLink: "Karadağ Klinik Merkezi'nin (KCCG)",
+			ThcWhere4b:
+				" Urgentni centar'ıdır: 7/24 açıktır ve devlet sisteminin geri kalanından farklı olarak acil hastaları hiçbir sevk olmadan kabul eder.",
 
-			ThcCosts1:
-				"Sigortasız hasta için fiyat çapaları: turistička ambulanta'da konsültasyon — 25–30 € (Budva'da 2025'te reçete yazılan bir muayene tam 25 € tuttu), özel klinikte muayene — 30–50 €, ultrason ve tahlillerle kapsamlı ziyaret — yaklaşık 80 €. Özel laboratuvarlarda tahliller ucuzdur: temel kan tahlili yaklaşık 5 €'dan başlar.",
-			ThcCosts2:
-				"Hastaneler başka bir ligdir. Turistler ve yabancılar, yayımlanmış bir tarifeye değil doğrulanmamış anlatımlara dayanarak, Kotor hastanesinin 'turist' bölümünden sık sık şikayet ediyor: 2023 anlatımlarında doktor muayenesi için yaklaşık 150 €, basit bir fizyolojik serum için yaklaşık 200 € geçiyor — başka her yerden kat kat pahalı (aynı serum Bar hastanesinde yaklaşık 30 € olarak belirtilmişti). 2025'te bir yabancının muayenesi için yaklaşık 170 €'dan söz edildi. Tekrar belirtelim: bunlar doğrulanmamış hasta anlatımlarıdır, resmi bir tarife değil — ancak aynı şikayet yıldan yıla tekrarlanıyor.",
+			ThcCosts1a:
+				"Sigortasız hasta için fiyat çapaları: turistička ambulanta'da konsültasyon — 25–30 € (Budva'da 2025'te reçete yazılan bir muayene tam 25 € tuttu), özel klinikte muayene — 30–50 €, ultrason ve tahlillerle kapsamlı ziyaret — yaklaşık 80 €. Özel laboratuvarlarda tahliller ucuzdur: bir ",
+			ThcCosts1CbcLink: 'temel kan tahlili',
+			ThcCosts1b: " yaklaşık 5 €'dan başlar.",
+			ThcCosts2a:
+				"Hastaneler başka bir ligdir. Turistler ve yabancılar, yayımlanmış bir tarifeye değil doğrulanmamış anlatımlara dayanarak, ",
+			ThcCosts2KotorLink: "Kotor hastanesinin",
+			ThcCosts2b:
+				" 'turist' bölümünden sık sık şikayet ediyor: 2023 anlatımlarında doktor muayenesi için yaklaşık 150 €, basit bir fizyolojik serum için yaklaşık 200 € geçiyor — başka her yerden kat kat pahalı (aynı serum ",
+			ThcCosts2BarLink: "Bar hastanesinde",
+			ThcCosts2c:
+				" yaklaşık 30 € olarak belirtilmişti). 2025'te bir yabancının muayenesi için yaklaşık 170 €'dan söz edildi. Tekrar belirtelim: bunlar doğrulanmamış hasta anlatımlarıdır, resmi bir tarife değil — ancak aynı şikayet yıldan yıla tekrarlanıyor.",
 			ThcCosts3:
 				"2023'ten gerçek bir referans: Podgorica'daki Urgentni centar'da iki gün yatışla laparoskopik apandisit ameliyatı sigortasız bir hastaya yaklaşık 1.200–1.500 €'ya mal oldu. Hastaneler, seyahat sigortanız olsa bile ödemeyi çoğu zaman hemen ister — nakit veya kartla: önce siz ödersiniz, sigortacı sonra geri öder. Her ödeme için fiş (račun) isteyin: fiş olmadan ne sigortacı ne de başka biri size tek sent iade eder.",
 
@@ -458,14 +586,14 @@ export default {
 			ThcAgreements3:
 				'Birleşik Krallık ve Polonya karşılıklılık ilkesiyle çalışır: acil yardım için geçerli bir GHIC/EHIC — hatta yalnızca pasaport — yeterlidir. Britanya rehberi pratik bir ayrıntı ekliyor: hastane belgesi taburcu olduktan sonra değil, tedaviden önce veya tedavi sırasında yerel FZOCG şubesinde düzenlenmelidir; ayrıca yazılan ilaçların anlaşma kapsamında olmadığını unutmayın.',
 			ThcAgreements4:
-				"İsviçre, İsveç, Danimarka ve Norveç sigortalıları yerinde öder ve geri ödemeyi kendi ülkelerinde talep eder. Rusya, Ukrayna ve diğer BDT ülkelerinin Karadağ ile hiçbir sağlık anlaşması yoktur — bu turistler (ve 'anlaşmasız' diğer herkes) için seyahat sigortası, tam fiyatlı faturalara karşı tek korumadır.",
+				"İsviçre, İsveç, Danimarka ve Norveç sigortalıları yerinde öder ve geri ödemeyi kendi ülkelerinde talep eder. Rusya, Ukrayna, Kazakistan ve diğer ülkelerin çoğunun Karadağ ile hiçbir sağlık anlaşması yoktur — bu turistler (ve 'anlaşmasız' diğer herkes) için seyahat sigortası, tam fiyatlı faturalara karşı tek korumadır.",
 
 			ThcInsurance1:
 				'Anlaşmalı ülkeler için bile kapsam dardır: yalnızca acil ve zorunlu bakım — eve tıbbi tahliye ise asla. Alman irtibat kurumu DVKA, Karadağ broşüründe bunu açıkça yazar: geri nakil karşılanmaz, anlaşmaya rağmen özel seyahat sigortası yaptırın. Bu tavsiye herkes için geçerlidir.',
 			ThcInsurance2:
 				"Poliçeyi pratikte kullanmak: sigortacınızın asistans hattını olabildiğince erken arayın — sizi anlaşmalı bir kliniğe yönlendirir ve doğrudan ödeme ayarlayabilirler. Durum acilse çağrı merkezini beklemeyin: hitna pomoć'a veya hastaneye gidin, ödeyin ve geri ödeme için tüm raporları ve fişleri saklayın. Buradaki yolcuların deneyimlerine bakılırsa asistans servisleri çok farklı çalışıyor — biri bir saatte doktor ayarlıyor, diğeri sizi bir gün bekletiyor — bu yüzden doktor ziyareti için küçük bir nakit rezervi makul bir önlemdir.",
 			ThcInsurance3:
-				"Poliçe alırken turistlerin gerçekten takıldığı noktaları kontrol edin: aktif tatil kapsamı (yürüyüş, moped ve scooter, rafting ve yamaç paraşütü burada popüler), alkol istisnaları, kronik hastalıkların alevlenmesi ve teminat limiti — tek bir ameliyatın 1.500 € tutabildiği bir ülke için 30.000 € makul bir alt sınırdır.",
+				"Poliçe alırken turistlerin en sık teminatsız kaldığı noktalara dikkat edin: aktif tatil kapsamı (yürüyüş, moped ve scooter, rafting ve yamaç paraşütü burada popüler), alkol istisnaları, kronik hastalıkların alevlenmesi ve teminat limiti — tek bir ameliyatın 1.500 € tutabildiği bir ülke için 30.000 € makul bir alt sınırdır.",
 
 			ThcPharmacies1:
 				"Tatil şehirlerinde eczane (apoteka) her adımda vardır; sezonda çoğu geç saatlere kadar ve pazar günleri de açıktır. Ağrı kesiciler, ateş düşürücüler, rehidrasyon tuzları, kulak ve burun damlaları, güneş yanığı spreyleri ve mide bulantısı hapları serbestçe satılır. Tablet antibiyotikler kesinlikle reçeteye tabidir — eczaneler yabancı reçeteleri kabul etmez, yalnızca Karadağ (elektronik) reçetelerini. Reçeteli bir ilaca ihtiyacınız varsa sorun turistička ambulanta'da veya özel bir doktorda ücretli bir muayeneyle çözülür: konsültasyondan sonra doktor yerel e-reçete yazar.",

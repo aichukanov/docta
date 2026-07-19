@@ -125,6 +125,21 @@ Legacy-таблицы покупок (`billing_clinic_service_purchases*`) не 
 Stripe-ключи (`STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`) на момент применения
 не заведены — онлайн-оплата выключена, каталог/заказы/история работают.
 
+## 2026-07-18: 009-entity-reference-info.sql
+
+Справочный контент услуг/анализов (prd/service-reference-content). Applied by user (confirmed 2026-07-18).
+
+Created tables:
+- `lab_test_reference_info` — 1:1 с `lab_tests` (FK `lab_test_id`, ON DELETE CASCADE)
+- `medical_service_reference_info` — 1:1 с `medical_services` (FK `medical_service_id`, ON DELETE CASCADE)
+
+По 30 текстовых колонок в каждой (5 полей `what/how/indications/prep/abnormal` × 6 локалей
+`en/sr/sr_cyrl/ru/de/tr`, все NULL). Данные — черновиком в
+`data/entity-reference/{lab-tests,medical-services}.json` (110 карточек × 6 языков),
+импорт собирается скриптом `node scripts/entity-reference/build-entity-reference-sql.mjs`
+→ `server/sql/migrations/insert-entity-reference-info.sql` (INSERT ... ON DUPLICATE KEY UPDATE,
+FK резолвится по slug). Импорт ещё не применён к БД, вывод на страницах ещё не реализован.
+
 ## 2026-06-12: 008-billing-remove-dofollow-prices.sql
 
 Вывод DOFOLLOW из продажи + новые цены. Applied by user (confirmed 2026-06-12).

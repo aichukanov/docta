@@ -24,7 +24,7 @@ export default {
 			ChmVac1:
 				'Childhood vaccination in Montenegro is carried out only in state institutions — the vaccination offices of the dom zdravlja. Private clinics do not vaccinate. Children are vaccinated according to the Montenegrin mandatory immunization calendar approved by the Institute of Public Health (Institut za javno zdravlje).',
 			ChmVac2:
-				'The calendar in brief: at birth — BCG (tuberculosis) and hepatitis B; during the first two years — several doses of the hexavalent vaccine (diphtheria, tetanus, pertussis, polio, Hib, hepatitis B) and the pneumococcal vaccine; at 12 months — the first dose of MMR (measles, mumps, rubella); before school — an MMR booster and a quadrivalent vaccine; at 9–14 years HPV vaccination is offered, and in adolescence — diphtheria and tetanus boosters.',
+				'The calendar in brief: at birth — BCG (tuberculosis) and hepatitis B; during the first two years — several doses of the hexavalent vaccine (diphtheria, tetanus, pertussis, polio, Hib — Haemophilus influenzae type b, hepatitis B) and the pneumococcal vaccine; at 12 months — the first dose of MMR (measles, mumps, rubella); before school — an MMR booster and a quadrivalent vaccine (diphtheria, tetanus, pertussis, polio); at 9–14 years HPV (human papillomavirus) vaccination is offered, and in adolescence — diphtheria and tetanus boosters.',
 			ChmVac3:
 				'The Montenegrin calendar differs from the Russian one and many others: it does not include vaccines against chickenpox, hepatitis A, rotavirus or meningococcus, and the Mantoux test is not used here at all. If your child started vaccination in another country, bring the vaccination record with a translation — the pediatrician will transfer the data and draw up a plan for further vaccinations according to the local calendar.',
 			ChmVac4:
@@ -76,7 +76,7 @@ export default {
 			ChmVac1:
 				'Детская вакцинация в Черногории проводится только в государственных учреждениях — прививочных кабинетах dom zdravlja. Частные клиники прививки не делают. Прививают по черногорскому календарю обязательной иммунизации, который утверждает Институт общественного здоровья (Institut za javno zdravlje).',
 			ChmVac2:
-				'Кратко по календарю: при рождении — BCG (туберкулёз) и гепатит B; на первом-втором году жизни — несколько доз шестивалентной вакцины (дифтерия, столбняк, коклюш, полиомиелит, Hib, гепатит B) и пневмококковой; в 12 месяцев — первая доза MMR (корь, краснуха, паротит); перед школой — ревакцинация MMR и четырёхвалентная вакцина; в 9–14 лет предлагается вакцинация против HPV, в подростковом возрасте — ревакцинации от дифтерии и столбняка.',
+				'Кратко по календарю: при рождении — BCG (туберкулёз) и гепатит B; на первом-втором году жизни — несколько доз шестивалентной вакцины (дифтерия, столбняк, коклюш, полиомиелит, Hib — Haemophilus influenzae типа b, гепатит B) и пневмококковой; в 12 месяцев — первая доза MMR (корь, краснуха, паротит); перед школой — ревакцинация MMR и четырёхвалентная вакцина (дифтерия, столбняк, коклюш, полиомиелит); в 9–14 лет предлагается вакцинация против HPV (вируса папилломы человека), в подростковом возрасте — ревакцинации от дифтерии и столбняка.',
 			ChmVac3:
 				'Черногорский календарь отличается от российского и многих других: в нём нет прививок от ветрянки, гепатита A, ротавируса и менингококка, а пробу Манту здесь не делают вовсе. Если ребёнок начал вакцинацию в другой стране, возьмите с собой прививочный сертификат с переводом — педиатр перенесёт данные и составит план дальнейших прививок уже по местному календарю.',
 			ChmVac4:
@@ -128,7 +128,7 @@ export default {
 			ChmVac1:
 				'Vakcinacija djece u Crnoj Gori sprovodi se samo u državnim ustanovama — u vakcinalnim punktovima domova zdravlja. Privatne klinike ne vakcinišu. Djeca se vakcinišu po crnogorskom kalendaru obavezne imunizacije koji utvrđuje Institut za javno zdravlje.',
 			ChmVac2:
-				'Kalendar ukratko: na rođenju — BCG (tuberkuloza) i hepatitis B; tokom prve dvije godine — nekoliko doza šestovalentne vakcine (difterija, tetanus, veliki kašalj, dječja paraliza, Hib, hepatitis B) i pneumokokne vakcine; sa 12 mjeseci — prva doza MMR (male boginje, zauške, rubeola); pred školu — revakcinacija MMR i četvorovalentna vakcina; od 9. do 14. godine nudi se HPV vakcinacija, a u adolescenciji — revakcinacije protiv difterije i tetanusa.',
+				'Kalendar ukratko: na rođenju — BCG (tuberkuloza) i hepatitis B; tokom prve dvije godine — nekoliko doza šestovalentne vakcine (difterija, tetanus, veliki kašalj, dječja paraliza, Hib — Haemophilus influenzae tip b, hepatitis B) i pneumokokne vakcine; sa 12 mjeseci — prva doza MMR (male boginje, zauške, rubeola); pred školu — revakcinacija MMR i četvorovalentna vakcina (difterija, tetanus, veliki kašalj, dječja paraliza); od 9. do 14. godine nudi se HPV (humani papiloma virus) vakcinacija, a u adolescenciji — revakcinacije protiv difterije i tetanusa.',
 			ChmVac3:
 				'Crnogorski kalendar razlikuje se od ruskog i mnogih drugih: ne sadrži vakcine protiv ovčijih boginja, hepatitisa A, rotavirusa ni meningokoka, a Mantu test se ovdje uopšte ne radi. Ako je dijete počelo vakcinaciju u drugoj zemlji, ponesite karton vakcinacije sa prevodom — pedijatar će prenijeti podatke i napraviti plan daljih vakcina po lokalnom kalendaru.',
 			ChmVac4:
@@ -180,7 +180,7 @@ export default {
 			ChmVac1:
 				'Вакцинација дјеце у Црној Гори спроводи се само у државним установама — у вакциналним пунктовима домова здравља. Приватне клинике не вакцинишу. Дјеца се вакцинишу по црногорском календару обавезне имунизације који утврђује Институт за јавно здравље.',
 			ChmVac2:
-				'Календар укратко: на рођењу — БЦГ (туберкулоза) и хепатитис Б; током прве двије године — неколико доза шестовалентне вакцине (дифтерија, тетанус, велики кашаљ, дјечја парализа, Хиб, хепатитис Б) и пнеумококне вакцине; са 12 мјесеци — прва доза ММР (мале богиње, заушке, рубеола); пред школу — ревакцинација ММР и четворовалентна вакцина; од 9. до 14. године нуди се ХПВ вакцинација, а у адолесценцији — ревакцинације против дифтерије и тетануса.',
+				'Календар укратко: на рођењу — БЦГ (туберкулоза) и хепатитис Б; током прве двије године — неколико доза шестовалентне вакцине (дифтерија, тетанус, велики кашаљ, дјечја парализа, Хиб — Haemophilus influenzae тип б, хепатитис Б) и пнеумококне вакцине; са 12 мјесеци — прва доза ММР (мале богиње, заушке, рубеола); пред школу — ревакцинација ММР и четворовалентна вакцина (дифтерија, тетанус, велики кашаљ, дјечја парализа); од 9. до 14. године нуди се ХПВ (хумани папилома вирус) вакцинација, а у адолесценцији — ревакцинације против дифтерије и тетануса.',
 			ChmVac3:
 				'Црногорски календар разликује се од руског и многих других: не садржи вакцине против овчијих богиња, хепатитиса А, ротавируса ни менингокока, а Манту тест се овдје уопште не ради. Ако је дијете почело вакцинацију у другој земљи, понесите картон вакцинације са преводом — педијатар ће пренијети податке и направити план даљих вакцина по локалном календару.',
 			ChmVac4:
@@ -232,7 +232,7 @@ export default {
 			ChmVac1:
 				'Kinderimpfungen werden in Montenegro nur in staatlichen Einrichtungen durchgeführt — in den Impfstellen der Dom zdravlja. Private Kliniken impfen nicht. Geimpft wird nach dem montenegrinischen Kalender der Pflichtimpfungen, den das Institut für öffentliche Gesundheit (Institut za javno zdravlje) festlegt.',
 			ChmVac2:
-				'Der Kalender in Kürze: bei der Geburt — BCG (Tuberkulose) und Hepatitis B; in den ersten zwei Lebensjahren — mehrere Dosen des Sechsfachimpfstoffs (Diphtherie, Tetanus, Keuchhusten, Polio, Hib, Hepatitis B) und der Pneumokokken-Impfung; mit 12 Monaten — die erste MMR-Dosis (Masern, Mumps, Röteln); vor der Schule — eine MMR-Auffrischung und ein Vierfachimpfstoff; mit 9–14 Jahren wird die HPV-Impfung angeboten, im Jugendalter folgen Auffrischungen gegen Diphtherie und Tetanus.',
+				'Der Kalender in Kürze: bei der Geburt — BCG (Tuberkulose) und Hepatitis B; in den ersten zwei Lebensjahren — mehrere Dosen des Sechsfachimpfstoffs (Diphtherie, Tetanus, Keuchhusten, Polio, Hib — Haemophilus influenzae Typ b, Hepatitis B) und der Pneumokokken-Impfung; mit 12 Monaten — die erste MMR-Dosis (Masern, Mumps, Röteln); vor der Schule — eine MMR-Auffrischung und ein Vierfachimpfstoff (Diphtherie, Tetanus, Keuchhusten, Polio); mit 9–14 Jahren wird die HPV-Impfung (gegen humane Papillomviren) angeboten, im Jugendalter folgen Auffrischungen gegen Diphtherie und Tetanus.',
 			ChmVac3:
 				'Der montenegrinische Kalender unterscheidet sich vom russischen und vielen anderen: Er enthält keine Impfungen gegen Windpocken, Hepatitis A, Rotaviren oder Meningokokken, und der Mantoux-Test wird hier gar nicht durchgeführt. Wenn Ihr Kind die Impfungen in einem anderen Land begonnen hat, bringen Sie den Impfpass mit Übersetzung mit — der Kinderarzt überträgt die Daten und erstellt einen Plan für die weiteren Impfungen nach dem lokalen Kalender.',
 			ChmVac4:
@@ -284,7 +284,7 @@ export default {
 			ChmVac1:
 				"Karadağ'da çocuk aşıları yalnızca devlet kurumlarında — dom zdravlja'ların aşı birimlerinde — yapılır. Özel klinikler aşı yapmaz. Aşılar, Halk Sağlığı Enstitüsü'nün (Institut za javno zdravlje) belirlediği Karadağ zorunlu aşı takvimine göre uygulanır.",
 			ChmVac2:
-				'Takvim kısaca: doğumda — BCG (verem) ve hepatit B; ilk iki yaşta — altılı karma aşının (difteri, tetanos, boğmaca, çocuk felci, Hib, hepatit B) ve pnömokok aşısının birkaç dozu; 12 ayda — ilk MMR dozu (kızamık, kabakulak, kızamıkçık); okuldan önce — MMR pekiştirme dozu ve dörtlü karma aşı; 9–14 yaşta HPV aşısı önerilir, ergenlikte ise difteri ve tetanos pekiştirme dozları yapılır.',
+				'Takvim kısaca: doğumda — BCG (verem) ve hepatit B; ilk iki yaşta — altılı karma aşının (difteri, tetanos, boğmaca, çocuk felci, Hib — Haemophilus influenzae tip b, hepatit B) ve pnömokok aşısının birkaç dozu; 12 ayda — ilk MMR dozu (kızamık, kabakulak, kızamıkçık); okuldan önce — MMR pekiştirme dozu ve dörtlü karma aşı (difteri, tetanos, boğmaca, çocuk felci); 9–14 yaşta HPV (insan papilloma virüsü) aşısı önerilir, ergenlikte ise difteri ve tetanos pekiştirme dozları yapılır.',
 			ChmVac3:
 				"Karadağ takvimi Rusya'nınkinden ve birçok ülkeninkinden farklıdır: suçiçeği, hepatit A, rotavirüs ve meningokok aşıları takvimde yoktur; Mantoux testi burada hiç yapılmaz. Çocuğunuz aşılarına başka bir ülkede başladıysa, çevirisiyle birlikte aşı kartını yanınıza alın — çocuk doktoru verileri aktarır ve sonraki aşılar için yerel takvime göre bir plan hazırlar.",
 			ChmVac4:

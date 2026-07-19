@@ -3,6 +3,7 @@ import {
 	parseClinicPricesData,
 	getClinicRankOrderBySQL,
 	processLocalizedNameForLabTest,
+	buildReferenceInfo,
 } from '~/server/common/utils';
 import type { LabTestItem } from '~/interfaces/clinic';
 import { validateBody } from '~/common/validation';
@@ -80,6 +81,11 @@ export default defineEventHandler(
 				row.id,
 				locale,
 			]);
+
+			const [referenceInfoRows] = await connection.execute(
+				`SELECT * FROM lab_test_reference_info WHERE lab_test_id = ?`,
+				[row.id],
+			);
 			await connection.end();
 
 			const synonyms = (synonymRows as any[]).map((r) => r.another_name);
@@ -98,6 +104,10 @@ export default defineEventHandler(
 				categoryIds: row.categoryIds
 					? row.categoryIds.split(',').map(Number)
 					: undefined,
+				referenceInfo: buildReferenceInfo(
+					(referenceInfoRows as any[])[0],
+					locale,
+				),
 			};
 		} catch (error) {
 			console.error('API Error - lab test data:', error);

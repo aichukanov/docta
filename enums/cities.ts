@@ -14,6 +14,8 @@ export enum CityId {
 	KOLASIN = 13,
 	MOJKOVAC = 14,
 	ANDRIJEVICA = 15,
+	PLJEVLJA = 16,
+	ROZAJE = 17,
 }
 
 // Почтовые индексы центров общин — для автоподстановки в формах
@@ -33,6 +35,8 @@ export const CITY_POSTAL_CODES: Record<CityId, string> = {
 	[CityId.KOLASIN]: '81210',
 	[CityId.MOJKOVAC]: '84205',
 	[CityId.ANDRIJEVICA]: '84320',
+	[CityId.PLJEVLJA]: '84210',
+	[CityId.ROZAJE]: '84310',
 };
 
 export const CITY_COORDINATES: Record<CityId, [number, number]> = {
@@ -51,4 +55,6 @@ export const CITY_COORDINATES: Record<CityId, [number, number]> = {
 	[CityId.KOLASIN]: [42.82402994, 19.52011879],
 	[CityId.MOJKOVAC]: [42.96307738, 19.5831351],
 	[CityId.ANDRIJEVICA]: [42.73308122, 19.79313634],
+	[CityId.PLJEVLJA]: [43.3564, 19.36],
+	[CityId.ROZAJE]: [42.8433, 20.1667],
 };

@@ -18,10 +18,24 @@ export default {
 			'RipToc_knjizica': 'Who gets state insurance instead',
 			'RipToc_sources': 'Sources and disclaimer',
 
-			RipWhy1:
-				'The requirement comes from the Law on Foreigners (Zakon o strancima, “Sl. list CG” 12/2018 with later amendments): Article 43, paragraph 1, item 3 lists among the conditions for temporary residence that the applicant “ima zdravstveno osiguranje” — has health insurance. It applies to every permit type: work, family reunification, property ownership, study, digital nomad.',
-			RipWhy2:
-				'The implementing rules accept three kinds of proof: a travel or health insurance policy from an insurer authorized in Montenegro, insurance under an international social-security treaty, or Montenegrin mandatory (state) insurance. In practice in 2025–2026 MUP offices expect a local “zdravstveno osiguranje stranaca” policy — a product every major local insurer sells: Sava, Lovćen, Uniqa, Generali, Grawe. This is a summary, not a legal citation — confirm the exact wording and current interpretation with your MUP office or a lawyer before relying on it for an application.',
+			RipWhy1a:
+				'The requirement comes from the Law on Foreigners (Zakon o strancima, ',
+			RipWhy1LawLink: '“Službeni list CG” 12/2018',
+			RipWhy1b:
+				' with later amendments): Article 43, paragraph 1, item 3 lists among the conditions for temporary residence that the applicant “ima zdravstveno osiguranje” — has health insurance. It applies to every permit type: work, family reunification, property ownership, study, digital nomad.',
+			RipWhy2a:
+				'The implementing rules accept three kinds of proof: a travel or health insurance policy from an insurer authorized in Montenegro, insurance under an international social-security treaty, or Montenegrin mandatory (state) insurance. In practice in 2025–2026 MUP offices expect a local “zdravstveno osiguranje stranaca” policy — a product every major local insurer sells: ',
+			RipWhy2SavaLink: 'Sava',
+			RipWhy2b: ', ',
+			RipWhy2LovcenLink: 'Lovćen',
+			RipWhy2c: ', ',
+			RipWhy2UniqaLink: 'Uniqa',
+			RipWhy2d: ', ',
+			RipWhy2GeneraliLink: 'Generali',
+			RipWhy2e: ', ',
+			RipWhy2GraweLink: 'Grawe',
+			RipWhy2f:
+				'. Confirm the exact wording and current interpretation with your MUP office or a lawyer before submitting your application.',
 			RipWhy3:
 				'The law does not say how long the policy must be valid — and that is where the differences begin. Each MUP office interprets the requirement its own way: some accept a policy covering only the application review period (30–60 days), others demand coverage for the entire future permit, i.e. up to 2 years.',
 			RipWhy4:
@@ -51,7 +65,7 @@ export default {
 			RipBuying2:
 				'Buying online is possible and sometimes cheaper, but printouts of e-policies regularly cause problems: Sava offices refuse to stamp policies bought online, and MUP clerks accept an unstamped printout only after phoning the insurer to verify it — some do, some simply turn it away.',
 			RipBuying3:
-				'Offices and websites do not always sell the same thing: in Herceg Novi the Sava office refused to issue a 2-year policy (maximum one year in person) while the same 2-year product exists online. If you need a long policy, check availability in advance.',
+				"Offices and websites don't always offer the same terms: in Herceg Novi the Sava office refused to issue a 2-year policy in person (maximum one year there). If you need a long policy, check the maximum duration in advance — terms can vary by city and change over time.",
 			RipBuying4:
 				'International insurance (Genki, SafetyWing and similar) was still accepted by some offices in 2023; by 2025–2026 MUP offices almost always want a policy from a local insurer.',
 			RipPrices0:
@@ -78,7 +92,7 @@ export default {
 			RipCoverage5End: '.',
 
 			RipKnjizica1:
-				'If your permit is based on employment — you work for a Montenegrin company, run your own firm as an employed director, or are otherwise employed here — you only need the private policy to bridge the application period. Once the permit is issued, the employer registers you with the state Health Insurance Fund and you receive the zdravstvena knjižica with full state coverage.',
+				'If your permit is based on employment — you work for a Montenegrin company, run your own firm as an employed director, or are otherwise employed here — you only need the private policy to bridge the application period. Once the permit is issued, the employer registers you with the state Health Insurance Fund and you receive the zdravstvena knjižica with full state coverage. One important catch: you cannot be insured in two countries at once, and on first registration the Fund will require proof that you have deregistered from health insurance in your home country — very few countries actually issue such a certificate, so in practice this can become a real obstacle.',
 			RipKnjizica2:
 				'Digital nomads, residents by property ownership and company owners without employment have no path to state insurance at all — the insurance law simply has no category for them. That is exactly why MUP offices increasingly want their private policy to cover the whole permit period. Family members on reunification permits are insured through the working family member — but only if that member has state insurance; a nomad’s family stays on private policies too.',
 			RipKnjizica3:
@@ -89,13 +103,21 @@ export default {
 			RipSources0:
 				'Figures and practice described here are current as of July 2026. City requirements change quickly — always verify before applying:',
 			RipSourcesLaw:
-				'Zakon o strancima (“Sl. list CG” 12/2018, with amendments), Article 43 — the health-insurance condition for temporary residence: paragraf.me;',
-			RipSourcesInsurers:
-				'insurers’ products for foreigners: sava.co.me, lovcen-osiguranje.me, uniqa.me;',
+				'Zakon o strancima (“Službeni list CG” 12/2018, with amendments), Article 43 — the health-insurance condition for temporary residence: paragraf.me;',
+			RipSourcesInsurersA: 'insurers’ products for foreigners: ',
+			RipSourcesInsurersSavaLink: 'Sava',
+			RipSourcesInsurersB: ', ',
+			RipSourcesInsurersLovcenLink: 'Lovćen',
+			RipSourcesInsurersC: ', ',
+			RipSourcesInsurersUniqaLink: 'Uniqa',
+			RipSourcesInsurersD: ';',
 			RipSourcesMup:
 				'current requirements of your municipality — the MUP (Ministry of Interior) office where you apply: gov.me;',
-			RipSourcesChat:
-				'city-by-city durations, prices and office practices are compiled from applicant reports in expat communities (2025–2026) — treat them as experience of real applications, not as official rules.',
+			RipSourcesChatA:
+				'city-by-city durations, prices and office practices are compiled from applicant reports in the ',
+			RipSourcesChatLink: 'DN Montenegro',
+			RipSourcesChatB:
+				' Telegram community (2025–2026) — treat them as experience of real applications, not as official rules.',
 		},
 		'ru': {
 			ResidenceInsuranceTitle:
@@ -110,10 +132,24 @@ export default {
 			'RipToc_knjizica': 'Кому вместо полиса положена госстраховка',
 			'RipToc_sources': 'Источники и оговорка',
 
-			RipWhy1:
-				'Требование идёт из закона об иностранцах (Zakon o strancima, «Sl. list CG» 12/2018 с последующими изменениями): статья 43, пункт 1, подпункт 3 среди условий временного ВНЖ называет то, что заявитель «ima zdravstveno osiguranje» — имеет медицинскую страховку. Это касается всех оснований: работа, воссоединение семьи, недвижимость, учёба, цифровой кочевник.',
-			RipWhy2:
-				'Подзаконные акты допускают три вида подтверждения: полис туристической или медицинской страховки от страховщика, работающего в Черногории, страховку по международному соглашению или черногорскую обязательную (государственную) страховку. На практике в 2025–2026 годах МУПы ждут местный полис «zdravstveno osiguranje stranaca» — такой продукт есть у всех крупных страховщиков: Sava, Lovćen, Uniqa, Generali, Grawe. Это пересказ, а не юридическая цитата — перед подачей документов уточните точную формулировку и актуальную трактовку в своём МУПе или у юриста.',
+			RipWhy1a:
+				'Требование идёт из закона об иностранцах (Zakon o strancima, ',
+			RipWhy1LawLink: '«Službeni list CG» 12/2018',
+			RipWhy1b:
+				' с последующими изменениями): статья 43, пункт 1, подпункт 3 среди условий временного ВНЖ называет то, что заявитель «ima zdravstveno osiguranje» — имеет медицинскую страховку. Это касается всех оснований: работа, воссоединение семьи, недвижимость, учёба, цифровой кочевник.',
+			RipWhy2a:
+				'Подзаконные акты допускают три вида подтверждения: полис туристической или медицинской страховки от страховщика, работающего в Черногории, страховку по международному соглашению или черногорскую обязательную (государственную) страховку. На практике в 2025–2026 годах МУПы ждут местный полис «zdravstveno osiguranje stranaca» — такой продукт есть у всех крупных страховщиков: ',
+			RipWhy2SavaLink: 'Sava',
+			RipWhy2b: ', ',
+			RipWhy2LovcenLink: 'Lovćen',
+			RipWhy2c: ', ',
+			RipWhy2UniqaLink: 'Uniqa',
+			RipWhy2d: ', ',
+			RipWhy2GeneraliLink: 'Generali',
+			RipWhy2e: ', ',
+			RipWhy2GraweLink: 'Grawe',
+			RipWhy2f:
+				'. Прежде чем подавать документы, уточните точную формулировку и актуальную практику в своём МУПе или у юриста.',
 			RipWhy3:
 				'На какой срок должен действовать полис, закон не говорит — и именно здесь начинаются различия. Каждый МУП трактует требование по-своему: где-то достаточно полиса на период рассмотрения заявки (30–60 дней), а где-то требуют покрытие на весь срок будущего ВНЖ — то есть до 2 лет.',
 			RipWhy4:
@@ -143,7 +179,7 @@ export default {
 			RipBuying2:
 				'Купить онлайн можно, и иногда это дешевле, но распечатки электронных полисов регулярно вызывают проблемы: офисы Sava отказываются ставить печати на купленные онлайн полисы, а сотрудники МУП принимают распечатку без печати только после звонка страховщику для проверки — кто-то звонит, а кто-то просто разворачивает.',
 			RipBuying3:
-				'Офисы и сайты не всегда продают одно и то же: в Херцег-Нови офис Sava отказался оформить полис на 2 года (лично — максимум год), хотя онлайн такой продукт есть. Если нужен длинный полис — проверьте доступность заранее.',
+				'Условия оформления не всегда одинаковы даже у одного страховщика: в Херцег-Нови офис Sava отказался оформить полис дольше года лично. Если нужен длинный полис, уточняйте максимальный срок заранее — правила могут отличаться от города к городу и меняться со временем.',
 			RipBuying4:
 				'Международные страховки (Genki, SafetyWing и подобные) в 2023 году некоторые отделения ещё принимали; к 2025–2026 годам МУПы почти всегда хотят полис местного страховщика.',
 			RipPrices0:
@@ -170,7 +206,7 @@ export default {
 			RipCoverage5End: '.',
 
 			RipKnjizica1:
-				'Если ваш ВНЖ основан на работе — вы наняты черногорской фирмой, оформлены директором собственной компании или иначе трудоустроены здесь, — частный полис нужен только на период рассмотрения заявки. После выдачи ВНЖ работодатель регистрирует вас в государственном фонде медстрахования, и вы получаете zdravstvena knjižica с полным государственным покрытием.',
+				'Если ваш ВНЖ основан на работе — вы наняты черногорской фирмой, оформлены директором собственной компании или иначе трудоустроены здесь, — частный полис нужен только на период рассмотрения заявки. После выдачи ВНЖ работодатель регистрирует вас в государственном фонде медстрахования, и вы получаете zdravstvena knjižica с полным государственным покрытием. Важный нюанс: быть застрахованным в двух странах нельзя, и при первичном оформлении фонд потребует подтверждение отказа от медстраховки в стране гражданства — а такую справку выдают очень немногие страны, так что на практике это может стать реальным препятствием.',
 			RipKnjizica2:
 				'У цифровых кочевников, обладателей ВНЖ по недвижимости и владельцев фирм без трудоустройства пути к госстраховке нет вовсе — в законе о страховании для них просто нет категории. Именно поэтому МУПы всё чаще хотят, чтобы их частный полис покрывал весь срок ВНЖ. Члены семьи с ВНЖ по воссоединению страхуются через работающего члена семьи — но только если у того есть госстраховка; семья номада тоже остаётся на частных полисах.',
 			RipKnjizica3:
@@ -181,13 +217,21 @@ export default {
 			RipSources0:
 				'Цифры и практика в статье актуальны на июль 2026 года. Требования городов меняются быстро — перед подачей обязательно перепроверяйте:',
 			RipSourcesLaw:
-				'Zakon o strancima («Sl. list CG» 12/2018, с изменениями), статья 43 — условие о медицинской страховке для временного ВНЖ: paragraf.me;',
-			RipSourcesInsurers:
-				'продукты страховщиков для иностранцев: sava.co.me, lovcen-osiguranje.me, uniqa.me;',
+				'Zakon o strancima («Službeni list CG» 12/2018, с изменениями), статья 43 — условие о медицинской страховке для временного ВНЖ: paragraf.me;',
+			RipSourcesInsurersA: 'продукты страховщиков для иностранцев: ',
+			RipSourcesInsurersSavaLink: 'Sava',
+			RipSourcesInsurersB: ', ',
+			RipSourcesInsurersLovcenLink: 'Lovćen',
+			RipSourcesInsurersC: ', ',
+			RipSourcesInsurersUniqaLink: 'Uniqa',
+			RipSourcesInsurersD: ';',
 			RipSourcesMup:
 				'актуальные требования вашего муниципалитета — отделение МУП (МВД), куда вы подаётесь: gov.me;',
-			RipSourcesChat:
-				'сроки, цены и практика по городам собраны из отчётов заявителей в сообществах переехавших (2025–2026) — относитесь к ним как к опыту реальных подач, а не официальным правилам.',
+			RipSourcesChatA:
+				'сроки, цены и практика по городам собраны из отчётов заявителей в Telegram-сообществе ',
+			RipSourcesChatLink: 'DN Montenegro',
+			RipSourcesChatB:
+				' (2025–2026) — относитесь к ним как к опыту реальных подач, а не официальным правилам.',
 		},
 		'sr': {
 			ResidenceInsuranceTitle:
@@ -202,10 +246,23 @@ export default {
 			'RipToc_knjizica': 'Ko umjesto polise dobija državno osiguranje',
 			'RipToc_sources': 'Izvori i napomena',
 
-			RipWhy1:
-				'Zahtjev proizilazi iz Zakona o strancima („Sl. list CG“ 12/2018 sa kasnijim izmjenama): član 43, stav 1, tačka 3 među uslovima za privremeni boravak navodi da podnosilac „ima zdravstveno osiguranje“. Ovo važi za sve osnove: rad, spajanje porodice, nekretninu, školovanje, digitalnog nomada.',
-			RipWhy2:
-				'Podzakonski akti prihvataju tri vrste dokaza: polisu putnog ili zdravstvenog osiguranja osiguravača ovlašćenog u Crnoj Gori, osiguranje po međunarodnom sporazumu ili crnogorsko obavezno (državno) osiguranje. U praksi 2025–2026. filijale MUP-a očekuju lokalnu polisu „zdravstveno osiguranje stranaca“ — takav proizvod ima svaki veći osiguravač: Sava, Lovćen, Uniqa, Generali, Grawe. Ovo je sažetak, a ne pravni citat — prije podnošenja zahtjeva provjerite tačnu formulaciju i aktuelno tumačenje u svojoj filijali MUP-a ili kod advokata.',
+			RipWhy1a: 'Zahtjev proizilazi iz Zakona o strancima (',
+			RipWhy1LawLink: '„Službeni list CG“ 12/2018',
+			RipWhy1b:
+				' sa kasnijim izmjenama): član 43, stav 1, tačka 3 među uslovima za privremeni boravak navodi da podnosilac „ima zdravstveno osiguranje“. Ovo važi za sve osnove: rad, spajanje porodice, nekretninu, školovanje, digitalnog nomada.',
+			RipWhy2a:
+				'Podzakonski akti prihvataju tri vrste dokaza: polisu putnog ili zdravstvenog osiguranja osiguravača ovlašćenog u Crnoj Gori, osiguranje po međunarodnom sporazumu ili crnogorsko obavezno (državno) osiguranje. U praksi 2025–2026. filijale MUP-a očekuju lokalnu polisu „zdravstveno osiguranje stranaca“ — takav proizvod ima svaki veći osiguravač: ',
+			RipWhy2SavaLink: 'Sava',
+			RipWhy2b: ', ',
+			RipWhy2LovcenLink: 'Lovćen',
+			RipWhy2c: ', ',
+			RipWhy2UniqaLink: 'Uniqa',
+			RipWhy2d: ', ',
+			RipWhy2GeneraliLink: 'Generali',
+			RipWhy2e: ', ',
+			RipWhy2GraweLink: 'Grawe',
+			RipWhy2f:
+				'. Prije podnošenja zahtjeva provjerite tačnu formulaciju i aktuelnu praksu u svojoj filijali MUP-a ili kod advokata.',
 			RipWhy3:
 				'Koliko dugo polisa mora da važi, zakon ne kaže — i tu počinju razlike. Svaka filijala MUP-a tumači zahtjev na svoj način: negdje je dovoljna polisa za period razmatranja zahtjeva (30–60 dana), a negdje traže pokriće za cijeli period budućeg boravka — dakle do 2 godine.',
 			RipWhy4:
@@ -235,7 +292,7 @@ export default {
 			RipBuying2:
 				'Kupovina onlajn je moguća i ponekad jeftinija, ali odštampane e-polise redovno prave probleme: filijale Sava osiguranja odbijaju da stave pečat na polise kupljene onlajn, a službenici MUP-a prihvataju odštampanu polisu bez pečata tek nakon telefonske provjere kod osiguravača — neko zove, a neko jednostavno vrati.',
 			RipBuying3:
-				'Filijale i sajtovi ne prodaju uvijek isto: u Herceg Novom filijala Sava osiguranja odbila je da izda polisu na 2 godine (lično — najviše godinu), iako onlajn takav proizvod postoji. Ako vam treba duga polisa — provjerite dostupnost unaprijed.',
+				'Uslovi nisu uvijek isti čak ni kod istog osiguravača: u Herceg Novom filijala Sava osiguranja odbila je da izda polisu dužu od godinu dana lično. Ako vam treba duga polisa, provjerite maksimalno trajanje unaprijed — pravila se razlikuju od grada do grada i mijenjaju se tokom vremena.',
 			RipBuying4:
 				'Međunarodna osiguranja (Genki, SafetyWing i slična) 2023. su neke filijale još prihvatale; do 2025–2026. MUP gotovo uvijek traži polisu lokalnog osiguravača.',
 			RipPrices0:
@@ -262,7 +319,7 @@ export default {
 			RipCoverage5End: '.',
 
 			RipKnjizica1:
-				'Ako se vaš boravak zasniva na radu — zaposleni ste u crnogorskoj firmi, prijavljeni kao direktor sopstvene kompanije ili na drugi način zaposleni ovdje — privatna polisa vam treba samo za period razmatranja zahtjeva. Nakon izdavanja boravka poslodavac vas prijavljuje državnom Fondu za zdravstveno osiguranje i dobijate zdravstvenu knjižicu sa punim državnim pokrićem.',
+				'Ako se vaš boravak zasniva na radu — zaposleni ste u crnogorskoj firmi, prijavljeni kao direktor sopstvene kompanije ili na drugi način zaposleni ovdje — privatna polisa vam treba samo za period razmatranja zahtjeva. Nakon izdavanja boravka poslodavac vas prijavljuje državnom Fondu za zdravstveno osiguranje i dobijate zdravstvenu knjižicu sa punim državnim pokrićem. Važna napomena: ne možete biti osigurani u dvije države istovremeno, a pri prvoj registraciji Fond će tražiti potvrdu da ste se odjavili sa zdravstvenog osiguranja u zemlji porijekla — takvu potvrdu izdaje vrlo malo zemalja, pa ovo u praksi može biti stvarna prepreka.',
 			RipKnjizica2:
 				'Digitalni nomadi, stranci sa boravkom po osnovu nekretnine i vlasnici firmi bez zaposlenja nemaju nikakav put do državnog osiguranja — u zakonu o osiguranju za njih jednostavno ne postoji kategorija. Upravo zato filijale MUP-a sve češće traže da njihova privatna polisa pokriva cijeli period boravka. Članovi porodice sa boravkom radi spajanja osiguravaju se preko zaposlenog člana porodice — ali samo ako taj član ima državno osiguranje; porodica nomada takođe ostaje na privatnim polisama.',
 			RipKnjizica3:
@@ -273,13 +330,21 @@ export default {
 			RipSources0:
 				'Brojke i praksa iz članka važe za jul 2026. Zahtjevi gradova se brzo mijenjaju — prije podnošenja obavezno provjerite:',
 			RipSourcesLaw:
-				'Zakon o strancima („Sl. list CG“ 12/2018, sa izmjenama), član 43 — uslov o zdravstvenom osiguranju za privremeni boravak: paragraf.me;',
-			RipSourcesInsurers:
-				'proizvodi osiguravača za strance: sava.co.me, lovcen-osiguranje.me, uniqa.me;',
+				'Zakon o strancima („Službeni list CG“ 12/2018, sa izmjenama), član 43 — uslov o zdravstvenom osiguranju za privremeni boravak: paragraf.me;',
+			RipSourcesInsurersA: 'proizvodi osiguravača za strance: ',
+			RipSourcesInsurersSavaLink: 'Sava',
+			RipSourcesInsurersB: ', ',
+			RipSourcesInsurersLovcenLink: 'Lovćen',
+			RipSourcesInsurersC: ', ',
+			RipSourcesInsurersUniqaLink: 'Uniqa',
+			RipSourcesInsurersD: ';',
 			RipSourcesMup:
 				'aktuelni zahtjevi vaše opštine — filijala MUP-a u kojoj podnosite zahtjev: gov.me;',
-			RipSourcesChat:
-				'periodi, cijene i praksa po gradovima prikupljeni su iz izvještaja podnosilaca u zajednicama doseljenika (2025–2026) — tretirajte ih kao iskustvo stvarnih podnošenja, a ne kao zvanična pravila.',
+			RipSourcesChatA:
+				'periodi, cijene i praksa po gradovima prikupljeni su iz izvještaja podnosilaca u Telegram zajednici ',
+			RipSourcesChatLink: 'DN Montenegro',
+			RipSourcesChatB:
+				' (2025–2026) — tretirajte ih kao iskustvo stvarnih podnošenja, a ne kao zvanična pravila.',
 		},
 		'sr-cyrl': {
 			ResidenceInsuranceTitle:
@@ -294,10 +359,23 @@ export default {
 			'RipToc_knjizica': 'Ко умјесто полисе добија државно осигурање',
 			'RipToc_sources': 'Извори и напомена',
 
-			RipWhy1:
-				'Захтјев произилази из Закона о странцима („Сл. лист ЦГ“ 12/2018 са каснијим измјенама): члан 43, став 1, тачка 3 међу условима за привремени боравак наводи да подносилац „има здравствено осигурање“. Ово важи за све основе: рад, спајање породице, некретнину, школовање, дигиталног номада.',
-			RipWhy2:
-				'Подзаконски акти прихватају три врсте доказа: полису путног или здравственог осигурања осигуравача овлашћеног у Црној Гори, осигурање по међународном споразуму или црногорско обавезно (државно) осигурање. У пракси 2025–2026. филијале МУП-а очекују локалну полису „здравствено осигурање странаца“ — такав производ има сваки већи осигуравач: Sava, Lovćen, Uniqa, Generali, Grawe. Ово је сажетак, а не правни цитат — прије подношења захтјева провјерите тачну формулацију и актуелно тумачење у својој филијали МУП-а или код адвоката.',
+			RipWhy1a: 'Захтјев произилази из Закона о странцима (',
+			RipWhy1LawLink: '„Службени лист ЦГ“ 12/2018',
+			RipWhy1b:
+				' са каснијим измјенама): члан 43, став 1, тачка 3 међу условима за привремени боравак наводи да подносилац „има здравствено осигурање“. Ово важи за све основе: рад, спајање породице, некретнину, школовање, дигиталног номада.',
+			RipWhy2a:
+				'Подзаконски акти прихватају три врсте доказа: полису путног или здравственог осигурања осигуравача овлашћеног у Црној Гори, осигурање по међународном споразуму или црногорско обавезно (државно) осигурање. У пракси 2025–2026. филијале МУП-а очекују локалну полису „здравствено осигурање странаца“ — такав производ има сваки већи осигуравач: ',
+			RipWhy2SavaLink: 'Sava',
+			RipWhy2b: ', ',
+			RipWhy2LovcenLink: 'Lovćen',
+			RipWhy2c: ', ',
+			RipWhy2UniqaLink: 'Uniqa',
+			RipWhy2d: ', ',
+			RipWhy2GeneraliLink: 'Generali',
+			RipWhy2e: ', ',
+			RipWhy2GraweLink: 'Grawe',
+			RipWhy2f:
+				'. Прије подношења захтјева провјерите тачну формулацију и актуелну праксу у својој филијали МУП-а или код адвоката.',
 			RipWhy3:
 				'Колико дуго полиса мора да важи, закон не каже — и ту почињу разлике. Свака филијала МУП-а тумачи захтјев на свој начин: негдје је довољна полиса за период разматрања захтјева (30–60 дана), а негдје траже покриће за цијели период будућег боравка — дакле до 2 године.',
 			RipWhy4:
@@ -327,7 +405,7 @@ export default {
 			RipBuying2:
 				'Куповина онлајн је могућа и понекад јефтинија, али одштампане е-полисе редовно праве проблеме: филијале Sava осигурања одбијају да ставе печат на полисе купљене онлајн, а службеници МУП-а прихватају одштампану полису без печата тек након телефонске провјере код осигуравача — неко зове, а неко једноставно врати.',
 			RipBuying3:
-				'Филијале и сајтови не продају увијек исто: у Херцег Новом филијала Sava осигурања одбила је да изда полису на 2 године (лично — највише годину), иако онлајн такав производ постоји. Ако вам треба дуга полиса — провјерите доступност унапријед.',
+				'Услови нису увијек исти чак ни код истог осигуравача: у Херцег Новом филијала Sava осигурања одбила је да изда полису дужу од годину дана лично. Ако вам треба дуга полиса, провјерите максимално трајање унапријед — правила се разликују од града до града и мијењају се током времена.',
 			RipBuying4:
 				'Међународна осигурања (Genki, SafetyWing и слична) 2023. су неке филијале још прихватале; до 2025–2026. МУП готово увијек тражи полису локалног осигуравача.',
 			RipPrices0:
@@ -354,7 +432,7 @@ export default {
 			RipCoverage5End: '.',
 
 			RipKnjizica1:
-				'Ако се ваш боравак заснива на раду — запослени сте у црногорској фирми, пријављени као директор сопствене компаније или на други начин запослени овдје — приватна полиса вам треба само за период разматрања захтјева. Након издавања боравка послодавац вас пријављује државном Фонду за здравствено осигурање и добијате здравствену књижицу са пуним државним покрићем.',
+				'Ако се ваш боравак заснива на раду — запослени сте у црногорској фирми, пријављени као директор сопствене компаније или на други начин запослени овдје — приватна полиса вам треба само за период разматрања захтјева. Након издавања боравка послодавац вас пријављује државном Фонду за здравствено осигурање и добијате здравствену књижицу са пуним државним покрићем. Важна напомена: не можете бити осигурани у двије државе истовремено, а при првој регистрацији Фонд ће тражити потврду да сте се одјавили са здравственог осигурања у земљи поријекла — такву потврду издаје врло мало земаља, па ово у пракси може бити стварна препрека.',
 			RipKnjizica2:
 				'Дигитални номади, странци са боравком по основу некретнине и власници фирми без запослења немају никакав пут до државног осигурања — у закону о осигурању за њих једноставно не постоји категорија. Управо зато филијале МУП-а све чешће траже да њихова приватна полиса покрива цијели период боравка. Чланови породице са боравком ради спајања осигуравају се преко запосленог члана породице — али само ако тај члан има државно осигурање; породица номада такође остаје на приватним полисама.',
 			RipKnjizica3:
@@ -365,13 +443,21 @@ export default {
 			RipSources0:
 				'Бројке и пракса из чланка важе за јул 2026. Захтјеви градова се брзо мијењају — прије подношења обавезно провјерите:',
 			RipSourcesLaw:
-				'Закон о странцима („Сл. лист ЦГ“ 12/2018, са измјенама), члан 43 — услов о здравственом осигурању за привремени боравак: paragraf.me;',
-			RipSourcesInsurers:
-				'производи осигуравача за странце: sava.co.me, lovcen-osiguranje.me, uniqa.me;',
+				'Закон о странцима („Службени лист ЦГ“ 12/2018, са измјенама), члан 43 — услов о здравственом осигурању за привремени боравак: paragraf.me;',
+			RipSourcesInsurersA: 'производи осигуравача за странце: ',
+			RipSourcesInsurersSavaLink: 'Sava',
+			RipSourcesInsurersB: ', ',
+			RipSourcesInsurersLovcenLink: 'Lovćen',
+			RipSourcesInsurersC: ', ',
+			RipSourcesInsurersUniqaLink: 'Uniqa',
+			RipSourcesInsurersD: ';',
 			RipSourcesMup:
 				'актуелни захтјеви ваше општине — филијала МУП-а у којој подносите захтјев: gov.me;',
-			RipSourcesChat:
-				'периоди, цијене и пракса по градовима прикупљени су из извјештаја подносилаца у заједницама досељеника (2025–2026) — третирајте их као искуство стварних подношења, а не као званична правила.',
+			RipSourcesChatA:
+				'периоди, цијене и пракса по градовима прикупљени су из извјештаја подносилаца у Telegram заједници ',
+			RipSourcesChatLink: 'DN Montenegro',
+			RipSourcesChatB:
+				' (2025–2026) — третирајте их као искуство стварних подношења, а не као званична правила.',
 		},
 		'de': {
 			ResidenceInsuranceTitle:
@@ -386,10 +472,24 @@ export default {
 			'RipToc_knjizica': 'Wer stattdessen die staatliche Versicherung bekommt',
 			'RipToc_sources': 'Quellen und Vorbehalt',
 
-			RipWhy1:
-				'Die Anforderung stammt aus dem Ausländergesetz (Zakon o strancima, „Sl. list CG“ 12/2018 mit späteren Änderungen): Artikel 43 Absatz 1 Nummer 3 nennt unter den Bedingungen für den befristeten Aufenthalt, dass der Antragsteller „ima zdravstveno osiguranje“ — eine Krankenversicherung hat. Das gilt für jeden Aufenthaltstyp: Arbeit, Familienzusammenführung, Immobilienbesitz, Studium, Digitalnomade.',
-			RipWhy2:
-				'Die Durchführungsvorschriften akzeptieren drei Nachweise: eine Reise- oder Krankenversicherungspolice eines in Montenegro zugelassenen Versicherers, eine Versicherung nach einem internationalen Abkommen oder die montenegrinische Pflichtversicherung. In der Praxis erwarten die MUP-Stellen 2025–2026 eine lokale Police „zdravstveno osiguranje stranaca“ — ein Produkt, das jeder größere Versicherer anbietet: Sava, Lovćen, Uniqa, Generali, Grawe. Das ist eine Zusammenfassung, kein Gesetzeszitat — prüfen Sie den genauen Wortlaut und die aktuelle Auslegung vor der Antragstellung bei Ihrer MUP-Stelle oder einem Anwalt.',
+			RipWhy1a:
+				'Die Anforderung stammt aus dem Ausländergesetz (Zakon o strancima, ',
+			RipWhy1LawLink: '„Službeni list CG“ 12/2018',
+			RipWhy1b:
+				' mit späteren Änderungen): Artikel 43 Absatz 1 Nummer 3 nennt unter den Bedingungen für den befristeten Aufenthalt, dass der Antragsteller „ima zdravstveno osiguranje“ — eine Krankenversicherung hat. Das gilt für jeden Aufenthaltstyp: Arbeit, Familienzusammenführung, Immobilienbesitz, Studium, Digitalnomade.',
+			RipWhy2a:
+				'Die Durchführungsvorschriften akzeptieren drei Nachweise: eine Reise- oder Krankenversicherungspolice eines in Montenegro zugelassenen Versicherers, eine Versicherung nach einem internationalen Abkommen oder die montenegrinische Pflichtversicherung. In der Praxis erwarten die MUP-Stellen 2025–2026 eine lokale Police „zdravstveno osiguranje stranaca“ — ein Produkt, das jeder größere Versicherer anbietet: ',
+			RipWhy2SavaLink: 'Sava',
+			RipWhy2b: ', ',
+			RipWhy2LovcenLink: 'Lovćen',
+			RipWhy2c: ', ',
+			RipWhy2UniqaLink: 'Uniqa',
+			RipWhy2d: ', ',
+			RipWhy2GeneraliLink: 'Generali',
+			RipWhy2e: ', ',
+			RipWhy2GraweLink: 'Grawe',
+			RipWhy2f:
+				'. Prüfen Sie den genauen Wortlaut und die aktuelle Praxis vor der Antragstellung bei Ihrer MUP-Stelle oder einem Anwalt.',
 			RipWhy3:
 				'Wie lange die Police gelten muss, sagt das Gesetz nicht — und genau hier beginnen die Unterschiede. Jede MUP-Stelle legt die Anforderung eigenständig aus: Manche akzeptieren eine Police nur für die Bearbeitungszeit des Antrags (30–60 Tage), andere verlangen Deckung für die gesamte künftige Aufenthaltsdauer, also bis zu 2 Jahre.',
 			RipWhy4:
@@ -419,7 +519,7 @@ export default {
 			RipBuying2:
 				'Der Online-Kauf ist möglich und manchmal günstiger, aber Ausdrucke von E-Policen machen regelmäßig Probleme: Sava-Filialen weigern sich, online gekaufte Policen zu stempeln, und MUP-Beamte akzeptieren einen ungestempelten Ausdruck nur nach telefonischer Verifizierung beim Versicherer — manche rufen an, andere weisen ihn schlicht zurück.',
 			RipBuying3:
-				'Filialen und Websites verkaufen nicht immer dasselbe: In Herceg Novi weigerte sich die Sava-Filiale, eine 2-Jahres-Police auszustellen (vor Ort maximal ein Jahr), obwohl es das Produkt online gibt. Wer eine lange Police braucht, sollte die Verfügbarkeit vorab klären.',
+				'Die Bedingungen sind nicht überall gleich, selbst beim selben Versicherer: In Herceg Novi verweigerte die Sava-Filiale die Ausstellung einer Police über einem Jahr vor Ort. Wer eine lange Police braucht, sollte die maximale Laufzeit vorab klären — die Regeln unterscheiden sich von Stadt zu Stadt und ändern sich mit der Zeit.',
 			RipBuying4:
 				'Internationale Versicherungen (Genki, SafetyWing und ähnliche) wurden 2023 von einigen Stellen noch akzeptiert; 2025–2026 verlangen die MUP-Stellen fast immer eine Police eines lokalen Versicherers.',
 			RipPrices0:
@@ -446,7 +546,7 @@ export default {
 			RipCoverage5End: '.',
 
 			RipKnjizica1:
-				'Beruht Ihr Titel auf Arbeit — Sie sind bei einer montenegrinischen Firma angestellt, als Direktor Ihrer eigenen Gesellschaft gemeldet oder anderweitig hier beschäftigt —, brauchen Sie die private Police nur zur Überbrückung der Antragszeit. Nach Erteilung des Titels meldet der Arbeitgeber Sie beim staatlichen Krankenversicherungsfonds an, und Sie erhalten die zdravstvena knjižica mit vollem staatlichem Schutz.',
+				'Beruht Ihr Titel auf Arbeit — Sie sind bei einer montenegrinischen Firma angestellt, als Direktor Ihrer eigenen Gesellschaft gemeldet oder anderweitig hier beschäftigt —, brauchen Sie die private Police nur zur Überbrückung der Antragszeit. Nach Erteilung des Titels meldet der Arbeitgeber Sie beim staatlichen Krankenversicherungsfonds an, und Sie erhalten die zdravstvena knjižica mit vollem staatlichem Schutz. Wichtiger Haken: Man kann nicht in zwei Ländern gleichzeitig versichert sein, und bei der Erstanmeldung verlangt der Fonds einen Nachweis der Abmeldung von der Krankenversicherung im Herkunftsland — nur sehr wenige Länder stellen eine solche Bescheinigung überhaupt aus, sodass dies in der Praxis ein echtes Hindernis sein kann.',
 			RipKnjizica2:
 				'Digitalnomaden, Aufenthaltsinhaber auf Immobilienbasis und Firmeninhaber ohne Anstellung haben überhaupt keinen Weg in die staatliche Versicherung — das Versicherungsgesetz kennt für sie schlicht keine Kategorie. Genau deshalb wollen die MUP-Stellen zunehmend, dass deren private Police die gesamte Aufenthaltsdauer abdeckt. Familienangehörige mit Titel zur Familienzusammenführung werden über das erwerbstätige Familienmitglied versichert — aber nur, wenn dieses staatlich versichert ist; die Familie eines Nomaden bleibt ebenfalls bei privaten Policen.',
 			RipKnjizica3:
@@ -457,13 +557,21 @@ export default {
 			RipSources0:
 				'Zahlen und Praxis in diesem Artikel sind auf dem Stand von Juli 2026. Die Anforderungen der Städte ändern sich schnell — prüfen Sie vor der Antragstellung unbedingt:',
 			RipSourcesLaw:
-				'Zakon o strancima („Sl. list CG“ 12/2018, mit Änderungen), Artikel 43 — die Krankenversicherungsbedingung für den befristeten Aufenthalt: paragraf.me;',
-			RipSourcesInsurers:
-				'Produkte der Versicherer für Ausländer: sava.co.me, lovcen-osiguranje.me, uniqa.me;',
+				'Zakon o strancima („Službeni list CG“ 12/2018, mit Änderungen), Artikel 43 — die Krankenversicherungsbedingung für den befristeten Aufenthalt: paragraf.me;',
+			RipSourcesInsurersA: 'Produkte der Versicherer für Ausländer: ',
+			RipSourcesInsurersSavaLink: 'Sava',
+			RipSourcesInsurersB: ', ',
+			RipSourcesInsurersLovcenLink: 'Lovćen',
+			RipSourcesInsurersC: ', ',
+			RipSourcesInsurersUniqaLink: 'Uniqa',
+			RipSourcesInsurersD: ';',
 			RipSourcesMup:
 				'aktuelle Anforderungen Ihrer Gemeinde — die MUP-Stelle (Innenministerium), bei der Sie den Antrag stellen: gov.me;',
-			RipSourcesChat:
-				'Laufzeiten, Preise und Behördenpraxis je Stadt stammen aus Berichten von Antragstellern in Expat-Communities (2025–2026) — verstehen Sie sie als Erfahrung realer Anträge, nicht als offizielle Regeln.',
+			RipSourcesChatA:
+				'Laufzeiten, Preise und Behördenpraxis je Stadt stammen aus Berichten von Antragstellern in der Telegram-Community ',
+			RipSourcesChatLink: 'DN Montenegro',
+			RipSourcesChatB:
+				' (2025–2026) — verstehen Sie sie als Erfahrung realer Anträge, nicht als offizielle Regeln.',
 		},
 		'tr': {
 			ResidenceInsuranceTitle:
@@ -478,10 +586,24 @@ export default {
 			'RipToc_knjizica': 'Bunun yerine kim devlet sigortası alır',
 			'RipToc_sources': 'Kaynaklar ve uyarı',
 
-			RipWhy1:
-				'Şart, Yabancılar Kanunu\'ndan (Zakon o strancima, "Sl. list CG" 12/2018, sonraki değişikliklerle) gelir: 43. maddenin 1. fıkrasının 3. bendi, geçici oturum koşulları arasında başvuranın "ima zdravstveno osiguranje" — sağlık sigortasına sahip olmasını sayar. Bu, tüm izin türleri için geçerlidir: çalışma, aile birleşimi, gayrimenkul, eğitim, dijital göçebe.',
-			RipWhy2:
-				"Uygulama kuralları üç tür kanıt kabul eder: Karadağ'da yetkili bir sigortacının seyahat veya sağlık sigortası poliçesi, uluslararası anlaşma kapsamında sigorta veya Karadağ zorunlu (devlet) sigortası. Uygulamada 2025–2026'da MUP ofisleri yerel \"zdravstveno osiguranje stranaca\" poliçesi bekler — bu ürün her büyük yerel sigortacıda vardır: Sava, Lovćen, Uniqa, Generali, Grawe. Bu bir özettir, yasa metninin alıntısı değildir — başvurudan önce tam ifadeyi ve güncel yorumu MUP ofisinizde veya bir avukatla teyit edin.",
+			RipWhy1a:
+				"Şart, Yabancılar Kanunu'ndan (Zakon o strancima, ",
+			RipWhy1LawLink: '"Službeni list CG" 12/2018',
+			RipWhy1b:
+				', sonraki değişikliklerle) gelir: 43. maddenin 1. fıkrasının 3. bendi, geçici oturum koşulları arasında başvuranın "ima zdravstveno osiguranje" — sağlık sigortasına sahip olmasını sayar. Bu, tüm izin türleri için geçerlidir: çalışma, aile birleşimi, gayrimenkul, eğitim, dijital göçebe.',
+			RipWhy2a:
+				"Uygulama kuralları üç tür kanıt kabul eder: Karadağ'da yetkili bir sigortacının seyahat veya sağlık sigortası poliçesi, uluslararası anlaşma kapsamında sigorta veya Karadağ zorunlu (devlet) sigortası. Uygulamada 2025–2026'da MUP ofisleri yerel \"zdravstveno osiguranje stranaca\" poliçesi bekler — bu ürün her büyük yerel sigortacıda vardır: ",
+			RipWhy2SavaLink: 'Sava',
+			RipWhy2b: ', ',
+			RipWhy2LovcenLink: 'Lovćen',
+			RipWhy2c: ', ',
+			RipWhy2UniqaLink: 'Uniqa',
+			RipWhy2d: ', ',
+			RipWhy2GeneraliLink: 'Generali',
+			RipWhy2e: ', ',
+			RipWhy2GraweLink: 'Grawe',
+			RipWhy2f:
+				'. Başvurudan önce tam ifadeyi ve güncel uygulamayı MUP ofisinizde veya bir avukatla teyit edin.',
 			RipWhy3:
 				'Poliçenin ne kadar süre geçerli olması gerektiğini kanun söylemez — farklılıklar da tam burada başlar. Her MUP ofisi şartı kendine göre yorumlar: bazıları yalnızca başvuru inceleme dönemini (30–60 gün) kapsayan poliçeyi kabul eder, bazıları ise gelecekteki iznin tamamı için — yani 2 yıla kadar — teminat ister.',
 			RipWhy4:
@@ -511,7 +633,7 @@ export default {
 			RipBuying2:
 				'Online satın almak mümkün ve bazen daha ucuz, ancak e-poliçe çıktıları düzenli olarak sorun çıkarır: Sava şubeleri online alınan poliçelere kaşe basmayı reddeder; MUP memurları kaşesiz çıktıyı ancak sigortacıyı telefonla arayıp doğruladıktan sonra kabul eder — kimi arar, kimi ise doğrudan geri çevirir.',
 			RipBuying3:
-				"Şubeler ve siteler her zaman aynı şeyi satmaz: Herceg Novi'de Sava şubesi 2 yıllık poliçe düzenlemeyi reddetti (yüz yüze en fazla bir yıl), oysa aynı ürün online mevcut. Uzun poliçe gerekiyorsa müsaitliği önceden kontrol edin.",
+				"Koşullar aynı sigortacıda bile her zaman aynı değildir: Herceg Novi'de Sava şubesi yüz yüze bir yıldan uzun poliçe düzenlemeyi reddetti. Uzun poliçe gerekiyorsa maksimum süreyi önceden kontrol edin — kurallar şehirden şehre değişir ve zamanla güncellenir.",
 			RipBuying4:
 				"Uluslararası sigortalar (Genki, SafetyWing ve benzerleri) 2023'te bazı ofislerce hâlâ kabul ediliyordu; 2025–2026 itibarıyla MUP ofisleri neredeyse her zaman yerel sigortacının poliçesini istiyor.",
 			RipPrices0:
@@ -538,7 +660,7 @@ export default {
 			RipCoverage5End: ' karşılaştırın.',
 
 			RipKnjizica1:
-				'İzniniz çalışmaya dayanıyorsa — bir Karadağ şirketinde çalışıyor, kendi şirketinizde direktör olarak kayıtlı veya burada başka şekilde istihdam ediliyorsanız — özel poliçe yalnızca başvuru dönemini köprülemek için gerekir. İzin verildikten sonra işveren sizi devlet Sağlık Sigortası Fonu\'na kaydeder ve tam devlet teminatlı zdravstvena knjižica alırsınız.',
+				"İzniniz çalışmaya dayanıyorsa — bir Karadağ şirketinde çalışıyor, kendi şirketinizde direktör olarak kayıtlı veya burada başka şekilde istihdam ediliyorsanız — özel poliçe yalnızca başvuru dönemini köprülemek için gerekir. İzin verildikten sonra işveren sizi devlet Sağlık Sigortası Fonu'na kaydeder ve tam devlet teminatlı zdravstvena knjižica alırsınız. Önemli bir ayrıntı: aynı anda iki ülkede sigortalı olunamaz ve ilk kayıtta Fon, kendi ülkenizdeki sağlık sigortasından çıkış belgesini ister — ancak bu tür bir belgeyi çok az ülke düzenler, bu yüzden pratikte gerçek bir engel olabilir.",
 			RipKnjizica2:
 				'Dijital göçebelerin, gayrimenkule dayalı oturum sahiplerinin ve istihdamsız şirket sahiplerinin devlet sigortasına giden hiçbir yolu yok — sigorta kanununda onlar için kategori yok. MUP ofislerinin özel poliçenin tüm izin dönemini kapsamasını giderek daha sık istemesinin nedeni tam da bu. Aile birleşimi iznindeki aile üyeleri çalışan aile üyesi üzerinden sigortalanır — ama yalnızca o üyenin devlet sigortası varsa; göçebenin ailesi de özel poliçelerde kalır.',
 			RipKnjizica3:
@@ -549,13 +671,20 @@ export default {
 			RipSources0:
 				'Makaledeki rakamlar ve uygulama Temmuz 2026 itibarıyla günceldir. Şehirlerin şartları hızla değişir — başvurmadan önce mutlaka doğrulayın:',
 			RipSourcesLaw:
-				'Zakon o strancima ("Sl. list CG" 12/2018, değişikliklerle), 43. madde — geçici oturum için sağlık sigortası şartı: paragraf.me;',
-			RipSourcesInsurers:
-				'sigortacıların yabancılara yönelik ürünleri: sava.co.me, lovcen-osiguranje.me, uniqa.me;',
+				'Zakon o strancima ("Službeni list CG" 12/2018, değişikliklerle), 43. madde — geçici oturum için sağlık sigortası şartı: paragraf.me;',
+			RipSourcesInsurersA: 'sigortacıların yabancılara yönelik ürünleri: ',
+			RipSourcesInsurersSavaLink: 'Sava',
+			RipSourcesInsurersB: ', ',
+			RipSourcesInsurersLovcenLink: 'Lovćen',
+			RipSourcesInsurersC: ', ',
+			RipSourcesInsurersUniqaLink: 'Uniqa',
+			RipSourcesInsurersD: ';',
 			RipSourcesMup:
 				'belediyenizin güncel şartları — başvurduğunuz MUP (İçişleri Bakanlığı) ofisi: gov.me;',
-			RipSourcesChat:
-				'şehirlere göre süreler, fiyatlar ve ofis uygulamaları göçmen topluluklarındaki başvuru raporlarından derlenmiştir (2025–2026) — bunları resmi kurallar olarak değil, gerçek başvuruların deneyimi olarak değerlendirin.',
+			RipSourcesChatA: 'şehirlere göre süreler, fiyatlar ve ofis uygulamaları ',
+			RipSourcesChatLink: 'DN Montenegro',
+			RipSourcesChatB:
+				' Telegram topluluğundaki başvuru raporlarından derlenmiştir (2025–2026) — bunları resmi kurallar olarak değil, gerçek başvuruların deneyimi olarak değerlendirin.',
 		},
 	},
 };

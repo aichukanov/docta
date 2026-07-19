@@ -28,21 +28,46 @@ export default {
 			CityHcOverview1_budva:
 				"Budva is Montenegro's main resort town, and its medical infrastructure serves both residents and the seasonal flow of visitors. The key public facility is Dom zdravlja Budva (the primary care center), which hosts the ambulance service and a seasonal tourist ambulanta. The town has no public hospital of its own.",
 			CityHcOverview2_budva:
-				'The private sector is well developed: private polyclinics, laboratories and dental offices operate in town, and in many of them you can communicate in English or Russian. Inpatient treatment and advanced diagnostics mean a trip to nearby Kotor or Podgorica.',
+				'The private sector is well developed: general polyclinics, labs, several dental clinics, a gynecology clinic and two ophthalmology clinics offering laser eye surgery — English or Russian is spoken in many of them.',
 			CityHcEmergency1_budva:
 				'The emergency unit (hitna pomoć) in Budva is located at the Dom zdravlja and works around the clock. According to expat chat reports, it also sees children — you can go there directly with a child.',
-			CityHcEmergency2_budva:
-				'For serious injuries and conditions requiring hospitalization, patients from Budva are referred to the hospital in Kotor (about half an hour away) or to the Clinical Center of Montenegro in Podgorica. The referral (uputnica) is issued by the hitna pomoć doctor.',
+			CityHcEmergency2a_budva:
+				'For serious injuries and conditions requiring hospitalization, patients from Budva are referred to the ',
+			CityHcEmergency2KotorLink_budva: 'hospital in Kotor',
+			CityHcEmergency2b_budva: ' (about half an hour away) or to the ',
+			CityHcEmergency2KccgLink_budva: 'Clinical Center of Montenegro',
+			CityHcEmergency2c_budva:
+				' in Podgorica. The referral (uputnica) is issued by the hitna pomoć doctor.',
 			CityHcState1_budva:
 				'Dom zdravlja Budva is the public primary care center: GPs (izabrani doktor), pediatrics, a laboratory and treatment rooms. For holders of the zdravstvena knjižica health card, visits are free or almost free.',
 			CityHcState2_budva:
-				'In summer the center runs a tourist ambulanta — paid appointments for visitors without the health card. The Dom zdravlja also offers seasonal flu vaccination and occasional free campaigns such as HIV and hepatitis testing.',
+				'In summer the center runs a tourist ambulanta — paid appointments for visitors without the health card. The Dom zdravlja also offers seasonal flu vaccination and occasional free campaigns such as HIV and hepatitis testing. Several doctors there speak Russian, some also English.',
 			CityHcState3_budva:
-				'Hospital care for Budva residents is provided by the general hospital in Kotor and the Clinical Center in Podgorica. Planned examinations under the health card require a referral from your chosen doctor.',
+				'Planned hospitalization and specialist care follow the same route — Kotor or Podgorica — on referral from your chosen doctor. Judging by the specialties of its staff, the general hospital in Kotor is a multi-department facility: internal medicine, general surgery, gynecology and obstetrics, radiology, pediatrics, urology and several other fields.',
 			CityHcStateCatalog_budva: 'The institution’s page on docta.me — address, reviews and services:',
 			CityHcStateLink_budva: 'Dom Zdravlja Budva',
 			CityHcPrivate1_budva:
-				'Budva has plenty of private clinics and laboratories, from general polyclinics to dentistry and ophthalmology. The Russian-speaking expat chat most often mentions the Moj Lab laboratory and the Milmedika and BonoMedica clinics — all of them are listed in our catalog.',
+				'Budva has plenty of private clinics and laboratories — from general polyclinics and the Moj Lab laboratory chain to dentistry, gynecology and ophthalmology with laser eye surgery. A more or less complete list of what is in our catalog:',
+			CityHcPvGroupLabel_Polyclinic: 'General polyclinics',
+			CityHcPvMilmedika: 'Milmedika Budva',
+			CityHcPvMojLab: 'Moj Lab Budva',
+			CityHcPvBonoMedica: 'BonoMedica',
+			CityHcPvMedicalCentar: 'Medical Centar Budva',
+			CityHcPvGroupLabel_Dental: 'Dental clinics',
+			CityHcPvDukley: 'Dukley Dental Clinic',
+			CityHcPvReDent: 'ReDent',
+			CityHcPvZecevic: 'Zečević Dental',
+			CityHcPvGroupLabel_Ophthalmology: 'Ophthalmology, laser eye surgery',
+			CityHcPvLaserFocus: 'LaserFocus',
+			CityHcPvSvjetlost: 'Svjetlost Eye Clinic',
+			CityHcPvGroupLabel_Gynecology: 'Gynecology',
+			CityHcPvGroupLabel_Cardiology: 'Cardiology',
+			CityHcPvGroupLabel_Physiotherapy: 'Physiotherapy',
+			CityHcPvGroupLabel_RussianDental: 'Dental clinics with Russian-speaking doctors',
+			CityHcPvGroupLabel_PolyclinicHospital: 'Polyclinics and hospitals',
+			CityHcPvGroupLabel_SurgicalHospital: 'Private hospitals with surgery',
+			CityHcPvGroupLabel_AestheticSurgery: 'Plastic and aesthetic surgery',
+			CityHcPvHumana: 'Humana reprodukcija',
 			CityHcPrivateCatalog_budva:
 				'For an up-to-date list with addresses, prices and reviews, see the catalog:',
 			CityHcPrivateLink_budva: 'private clinics in Budva',
@@ -77,7 +102,16 @@ export default {
 			CityHcStateCatalog_podgorica: 'KCCG’s page on docta.me — departments, reviews and services:',
 			CityHcStateLink_podgorica: 'Klinički Centar Crne Gore',
 			CityHcPrivate1_podgorica:
-				'Podgorica offers the widest choice of private medicine: private hospitals with surgery and MRI (the chat most often mentions Codra Hospital and the Hipokrat polyclinics), Moj Lab laboratories, Milmedika, Poliklinika Filipović and dozens of others.',
+				'Podgorica has the widest choice of private medicine in the country — for example, Konzilijum has MRI and a broad range of operations, and Ars Medica is a large surgical and aesthetic hospital. Here are the main facilities by profile (the full list — dozens of clinics — is in the catalog):',
+			CityHcPvKonzilijum: 'Konzilijum',
+			CityHcPvArsMedica: 'Ars Medica',
+			CityHcPvMedtim: 'Medtim',
+			CityHcPvCodraHospital: 'Codra Hospital',
+			CityHcPvAMedic: 'A Medic',
+			CityHcPvHipokratPg: 'Hipokrat',
+			CityHcPvMojLabPg: 'Moj Lab',
+			CityHcPvMilmedikaPg: 'Milmedika',
+			CityHcPvFilipovicPg: 'Poliklinika Filipović',
 			CityHcPrivateCatalog_podgorica:
 				'The full list with prices and reviews is in the catalog:',
 			CityHcPrivateLink_podgorica: 'private clinics in Podgorica',
@@ -98,21 +132,33 @@ export default {
 			CityHcOverview1_kotor:
 				'Kotor is the medical hub of the Boka Kotorska bay: it hosts the Kotor General Hospital (Opšta bolnica Kotor), which serves the whole coastal area including Tivat, Budva and Herceg Novi. Primary care is provided by Dom zdravlja Kotor with its ambulance service.',
 			CityHcOverview2_kotor:
-				"Nearby, in Risan, there is the specialized public hospital Vaso Ćuković for orthopedics, neurosurgery and neurology, which receives patients from all over the country. The private sector is more modest than in Budva or Podgorica, but laboratories and private doctors are available.",
+				'Nearby — in Risan and Dobrota — are two specialized state hospitals: one for orthopedics, one psychiatric. The private sector in Kotor itself is smaller than in Budva or Podgorica, but there is something: a lab, polyclinics, cardiology and dental clinics.',
 			CityHcEmergency1_kotor:
 				'In an emergency, go to hitna pomoć at Dom zdravlja Kotor or directly to the admission unit of the Kotor hospital: injuries, pediatric emergencies and infections from along the coast are brought here (the hospital has pediatric and infectious disease wards).',
 			CityHcEmergency2_kotor:
 				'Note: for foreigners without the health card and insurance, hospital treatment is paid according to the price list, and inpatient bills can be substantial. If you have an insurance policy, clarify the procedure with your insurer in advance; you can ask for a cost estimate before treatment starts.',
 			CityHcState1_kotor:
-				'Kotor General Hospital is a multi-specialty inpatient facility: surgery, pediatrics, gynecology, an infectious diseases ward, X-ray. Patients are referred here from the primary care centers of Budva, Tivat and Herceg Novi.',
+				'The general hospital in Kotor is a multi-department facility serving the whole Bay of Kotor (Budva, Tivat, Herceg Novi). Judging by its medical staff, it has departments for internal medicine, general surgery, gynecology and obstetrics, radiology, pediatrics, urology and infectious diseases, plus several narrower specialties.',
 			CityHcState2_kotor:
 				'Dom zdravlja Kotor is the public primary care center: chosen doctor, pediatrician, laboratory. With the zdravstvena knjižica, visits are free, and your chosen GP issues prescriptions for subsidized medicines.',
-			CityHcState3_kotor:
-				'The specialized hospital Vaso Ćuković in Risan, a short drive along the bay, is the national center for orthopedics, neurosurgery and neurology. Kotor also hosts the state specialized psychiatric hospital.',
+			CityHcState3a_kotor: 'The specialized ',
+			CityHcState3VasoLink_kotor: '"Vaso Ćuković" hospital',
+			CityHcState3b_kotor:
+				' in Risan (about half an hour along the bay from Kotor) is the national center for orthopedics, neurosurgery and neurology — patients are referred here from across the country, not just the coast. Kotor, in the Dobrota area, is also home to the specialized psychiatric hospital ',
+			CityHcState3DobrotaLink_kotor: '"Dobrota"',
+			CityHcState3c_kotor:
+				' — the only dedicated psychiatric hospital in Montenegro (other cities only have outpatient psychiatric care or a department within a general hospital).',
 			CityHcStateCatalog_kotor: 'The hospital’s page on docta.me — departments, reviews and services:',
 			CityHcStateLink_kotor: 'Opšta bolnica Kotor',
 			CityHcPrivate1_kotor:
-				'Among private services, the chat most often mentions the SmartMed laboratory in Kotor; in Radanovići (Kotor municipality) there is a Hipokrat polyclinic with MRI. For a wider choice of private specialists, Kotor residents usually travel to Budva or Podgorica.',
+				'The private sector in Kotor itself is small: a lab, a couple of polyclinics, a cardiology clinic, dental offices and physiotherapy. For a wider choice, Kotor residents usually go to Budva or Podgorica. What is available locally, per our catalog:',
+			CityHcPvSmartMed: 'SmartMed Kotor',
+			CityHcPvHipokratRadanovici: 'Hipokrat Radanovići',
+			CityHcPvInterCardio: 'Inter Cardio',
+			CityHcPvDentalStudioVucetic: 'Dental Studio Vučetić',
+			CityHcPvDrCetkovic: 'Dr Ćetković',
+			CityHcPvOrthoCentarKotor: 'Ortho Centar',
+			CityHcPvEndorfinRadanovici: 'Endorfin Radanovići',
 			CityHcPrivateCatalog_kotor:
 				'See what is available in the town itself in the catalog:',
 			CityHcPrivateLink_kotor: 'private clinics in Kotor',
@@ -141,13 +187,28 @@ export default {
 			CityHcState1_bar:
 				"The Blažo Orlandić General Hospital is a multi-specialty facility: surgery, gynecology and a maternity ward, pediatrics, X-ray and CT, physiotherapy. Treatment is free with the health card; for others it is paid by the price list.",
 			CityHcState2_bar:
-				'Dom zdravlja Bar is the primary care level: chosen doctor, pediatrics, laboratory, vaccination (including some travel vaccines).',
+				'Dom zdravlja Bar is the primary care level: chosen doctor, pediatrics, laboratory, vaccination (including some travel vaccines). Some doctors there speak Russian or English — ask when booking.',
 			CityHcState3_bar:
 				'Specialized examinations not available in Bar are done by referral in Podgorica — the Clinical Center is about an hour away.',
 			CityHcStateCatalog_bar: 'The hospital’s page on docta.me — departments, reviews and services:',
 			CityHcStateLink_bar: 'Opšta Bolnica "Blažo Orlandić"',
 			CityHcPrivate1_bar:
-				'Among private facilities, the chat most often names the Novi Standard polyclinic, the Dr Zejnilović day hospital and Medical Vraneš; there are many private dental offices. In Sutomore, the private A3 Medical hospital offers CT and MRI.',
+				'Bar and Sutomore have several sizeable private clinics and labs — for instance, A3 Medical in Sutomore offers CT and MRI, and provides a free interpreter (Russian, English) for your appointment. Bar has an especially large number of dental clinics, including some with Russian-speaking doctors; there are also ENT, urology and gynecology practices. A more or less complete list, per our catalog:',
+			CityHcPvNoviStandardBar: 'Novi Standard',
+			CityHcPvDrZejnilovic: 'Dr Zejnilović',
+			CityHcPvMedicalVranes: 'Medical Vraneš',
+			CityHcPvA3Medical: 'A3 Medical',
+			CityHcPvJustDental: 'Just Dental',
+			CityHcPvPavlinDental: 'Pavlin',
+			CityHcPvDrDebelja: 'Dr Debelja',
+			CityHcPvGroupLabel_OtherDental: 'Other dental clinics',
+			CityHcPvBuntic: 'Buntić',
+			CityHcPvDrSimonovic: 'Dr Simonović',
+			CityHcPvDrBajagic: 'Dr Bajagić',
+			CityHcPvDrZejak: 'Dr Zejak',
+			CityHcPvGacina: 'Gaćina',
+			CityHcPvJovoticDent: 'Jovetić Dent',
+			CityHcPvCicmil: 'Cicmil',
 			CityHcPrivateCatalog_bar:
 				'The full list with prices and reviews is in the catalog:',
 			CityHcPrivateLink_bar: 'private clinics in Bar',
@@ -187,21 +248,48 @@ export default {
 			CityHcOverview1_budva:
 				'Будва — главный туристический город Черногории, и медицинская инфраструктура здесь рассчитана и на местных жителей, и на сезонный поток гостей. Основное государственное учреждение — Dom zdravlja Budva (поликлиника), при котором работают служба скорой помощи и сезонная туристическая амбулатория. Собственной государственной больницы в городе нет.',
 			CityHcOverview2_budva:
-				'Частный сектор развит хорошо: в городе работают частные поликлиники, лаборатории и стоматологии, во многих можно объясниться на русском или английском. Стационарное лечение и сложная диагностика — это поездка в соседний Котор или Подгорицу.',
+				'Частный сектор развит хорошо: поликлиники широкого профиля, лаборатории, несколько стоматологий, гинекологическая клиника и две офтальмологические клиники с лазерной хирургией глаза — во многих можно объясниться на русском или английском.',
 			CityHcEmergency1_budva:
 				'Служба скорой помощи (hitna pomoć) в Будве находится при Dom zdravlja и принимает круглосуточно. Судя по опыту участников русскоязычных чатов, там есть и детский приём — с ребёнком можно ехать напрямую.',
-			CityHcEmergency2_budva:
-				'При серьёзных травмах и состояниях, требующих госпитализации, из Будвы направляют в больницу Котора (около получаса езды) или в Клинический центр Черногории в Подгорице. Направление (uputnica) выдаёт врач hitna pomoć.',
+			CityHcEmergency2a_budva:
+				'При серьёзных травмах и состояниях, требующих госпитализации, из Будвы направляют в ',
+			CityHcEmergency2KotorLink_budva: 'больницу Котора',
+			CityHcEmergency2b_budva: ' (около получаса езды) или в ',
+			CityHcEmergency2KccgLink_budva: 'Клинический центр Черногории',
+			CityHcEmergency2c_budva:
+				' в Подгорице. Направление (uputnica) выдаёт врач hitna pomoć.',
 			CityHcState1_budva:
 				'Dom zdravlja Budva — государственная поликлиника: терапевты (izabrani doktor), педиатрия, лаборатория, процедурные кабинеты. Для обладателей здравственной книжицы (zdravstvena knjižica) приёмы бесплатны или почти бесплатны.',
 			CityHcState2_budva:
-				'Летом при поликлинике работает туристическая амбулатория (turistička ambulanta) — платный приём для гостей без книжицы. Также в Dom zdravlja проводят сезонную вакцинацию от гриппа и периодические бесплатные акции, например тестирование на ВИЧ и гепатиты.',
+				'Летом при поликлинике работает туристическая амбулатория (turistička ambulanta) — платный приём для гостей без книжицы. Также в Dom zdravlja проводят сезонную вакцинацию от гриппа и периодические бесплатные акции, например тестирование на ВИЧ и гепатиты. Среди врачей есть несколько говорящих по-русски, некоторые — и по-английски.',
 			CityHcState3_budva:
-				'Больничное лечение жители Будвы получают в Опште больнице Котора и в Клиническом центре в Подгорице. На плановые обследования по книжице нужно направление от выбранного врача.',
+				'Плановая госпитализация и специализированная помощь — тот же маршрут (Котор или Подгорица), по направлению от выбранного врача. Судя по специальностям врачей, Општа больница Котора — многопрофильный стационар: терапия, общая хирургия, гинекология и акушерство, радиология, педиатрия, урология и ряд других направлений.',
 			CityHcStateCatalog_budva: 'Страница учреждения на docta.me — с адресом, отзывами и списком услуг:',
 			CityHcStateLink_budva: 'Dom Zdravlja Budva',
 			CityHcPrivate1_budva:
-				'Частных клиник и лабораторий в Будве много: от терапевтических поликлиник до стоматологий и офтальмологии. В русскоязычном чате чаще всего упоминают лабораторию Moj Lab и клиники Milmedika и BonoMedica — все они есть в нашем каталоге.',
+				'Частных клиник и лабораторий в Будве много — от терапевтических поликлиник и сети лабораторий Moj Lab до стоматологий, гинекологии и офтальмологии с лазерной хирургией глаза. Более-менее полный список того, что есть в нашем каталоге:',
+			CityHcPvGroupLabel_Polyclinic: 'Поликлиники широкого профиля',
+			CityHcPvMilmedika: 'Milmedika Budva',
+			CityHcPvMojLab: 'Moj Lab Budva',
+			CityHcPvBonoMedica: 'BonoMedica',
+			CityHcPvMedicalCentar: 'Medical Centar Budva',
+			CityHcPvGroupLabel_Dental: 'Стоматологии',
+			CityHcPvDukley: 'Dukley Dental Clinic',
+			CityHcPvReDent: 'ReDent',
+			CityHcPvZecevic: 'Zečević Dental',
+			CityHcPvGroupLabel_Ophthalmology: 'Офтальмология, лазерная хирургия глаза',
+			CityHcPvLaserFocus: 'LaserFocus',
+			CityHcPvSvjetlost: 'Svjetlost Eye Clinic',
+			CityHcPvGroupLabel_Gynecology: 'Гинекология',
+			CityHcPvGroupLabel_Cardiology: 'Кардиология',
+			CityHcPvGroupLabel_Physiotherapy: 'Физиотерапия',
+			CityHcPvGroupLabel_RussianDental:
+				'Стоматологии с русскоговорящими врачами',
+			CityHcPvGroupLabel_PolyclinicHospital: 'Поликлиники и больницы',
+			CityHcPvGroupLabel_SurgicalHospital: 'Частные госпитали с хирургией',
+			CityHcPvGroupLabel_AestheticSurgery:
+				'Пластическая и эстетическая хирургия',
+			CityHcPvHumana: 'Humana reprodukcija',
 			CityHcPrivateCatalog_budva:
 				'Актуальный список с адресами, ценами и отзывами — в каталоге:',
 			CityHcPrivateLink_budva: 'частные клиники Будвы',
@@ -236,7 +324,16 @@ export default {
 			CityHcStateCatalog_podgorica: 'Страница KCCG на docta.me — с отделениями, отзывами и услугами:',
 			CityHcStateLink_podgorica: 'Klinički Centar Crne Gore',
 			CityHcPrivate1_podgorica:
-				'Выбор частной медицины в Подгорице самый широкий: частные госпитали с хирургией и МРТ (в чате чаще всего упоминают Codra Hospital и поликлиники Hipokrat), лаборатории Moj Lab, клиники Milmedika, Poliklinika Filipović и десятки других.',
+				'Выбор частной медицины в Подгорице самый широкий в стране — например, в Konzilijum есть МРТ и большой выбор операций, а Ars Medica — крупный хирургический и эстетический госпиталь. Вот основные заведения по профилю (полный список — десятки клиник — в каталоге):',
+			CityHcPvKonzilijum: 'Konzilijum',
+			CityHcPvArsMedica: 'Ars Medica',
+			CityHcPvMedtim: 'Medtim',
+			CityHcPvCodraHospital: 'Codra Hospital',
+			CityHcPvAMedic: 'A Medic',
+			CityHcPvHipokratPg: 'Hipokrat',
+			CityHcPvMojLabPg: 'Moj Lab',
+			CityHcPvMilmedikaPg: 'Milmedika',
+			CityHcPvFilipovicPg: 'Poliklinika Filipović',
 			CityHcPrivateCatalog_podgorica:
 				'Полный список с ценами и отзывами — в каталоге:',
 			CityHcPrivateLink_podgorica: 'частные клиники Подгорицы',
@@ -257,21 +354,33 @@ export default {
 			CityHcOverview1_kotor:
 				'Котор — медицинский центр Боки Которской: здесь находится Општа больница Котор (Opšta bolnica Kotor), обслуживающая всё побережье залива, включая Тиват, Будву и Херцег-Нови. Первичное звено — Dom zdravlja Kotor со службой скорой помощи.',
 			CityHcOverview2_kotor:
-				'Рядом, в Рисане, работает специализированная государственная больница «Васо Чукович» — ортопедия, нейрохирургия и неврология, туда направляют пациентов со всей страны. Частный сектор скромнее, чем в Будве или Подгорице, но лаборатории и частные врачи в городе есть.',
+				'Рядом с городом — в Рисане и Доброте — работают две специализированные государственные больницы: ортопедическая и психиатрическая. Частный сектор в самом Которе скромнее, чем в Будве или Подгорице, но кое-что есть — лаборатория, поликлиники, кардиология, стоматологии.',
 			CityHcEmergency1_kotor:
 				'В экстренных случаях — hitna pomoć при Dom zdravlja Kotor или сразу приёмное отделение больницы Котора: сюда с побережья везут травмы, детские неотложные состояния и инфекции (в больнице есть детское и инфекционное отделения).',
 			CityHcEmergency2_kotor:
 				'Учтите: для иностранцев без здравственной книжицы и страховки лечение в больнице платное по прейскуранту, и счета за стационар бывают ощутимыми. Если есть полис — заранее уточните у страховой порядок обращения; смету можно попросить до начала лечения.',
 			CityHcState1_kotor:
-				'Општа больница Котор — многопрофильный стационар: хирургия, педиатрия, гинекология, инфекционное отделение, рентген. Сюда направляют из домов здравля Будвы, Тивата и Херцег-Нови.',
+				'Општа больница Котор — многопрофильный стационар, обслуживающий всю Боку Которскую (Будву, Тиват, Херцег-Нови). Судя по составу врачей, здесь есть отделения внутренних болезней, общей хирургии, гинекологии и акушерства, радиологии, педиатрии, урологии и инфекционное, а также ряд более узких специальностей.',
 			CityHcState2_kotor:
 				'Dom zdravlja Kotor — государственная поликлиника: выбранный врач, педиатр, лаборатория. По здравственной книжице приёмы бесплатны, рецепты на льготные лекарства выписывает выбранный терапевт.',
-			CityHcState3_kotor:
-				'Специализированная больница «Васо Чукович» в Рисане, в короткой поездке вдоль залива, — государственный центр ортопедии, нейрохирургии и неврологии. Также в Которе находится государственная специализированная психиатрическая больница.',
+			CityHcState3a_kotor: 'Специализированная больница ',
+			CityHcState3VasoLink_kotor: '«Васо Чукович»',
+			CityHcState3b_kotor:
+				' в Рисане (в получасе вдоль залива от Котора) — государственный центр ортопедии, нейрохирургии и неврологии: сюда направляют пациентов со всей страны, а не только с побережья. Также в Которе, в районе Доброта, находится специализированная психиатрическая больница ',
+			CityHcState3DobrotaLink_kotor: '«Доброта»',
+			CityHcState3c_kotor:
+				' — единственный в Черногории специализированный психиатрический стационар (в других городах есть только амбулаторная психиатрическая помощь или отделение в составе обычной больницы).',
 			CityHcStateCatalog_kotor: 'Страница больницы на docta.me — с отделениями, отзывами и услугами:',
 			CityHcStateLink_kotor: 'Opšta bolnica Kotor',
 			CityHcPrivate1_kotor:
-				'Из частных служб в чатах чаще всего упоминают лабораторию SmartMed в Которе; в Радановичах (община Котор) работает поликлиника Hipokrat с МРТ. За широким выбором частных специалистов жители Котора обычно ездят в Будву или Подгорицу.',
+				'Частный сектор в самом Которе небольшой: лаборатория, пара поликлиник, кардиологическая клиника, стоматологии и физиотерапия. За более широким выбором жители Котора обычно едут в Будву или Подгорицу. Что есть на месте — по нашему каталогу:',
+			CityHcPvSmartMed: 'SmartMed Kotor',
+			CityHcPvHipokratRadanovici: 'Hipokrat Radanovići',
+			CityHcPvInterCardio: 'Inter Cardio',
+			CityHcPvDentalStudioVucetic: 'Dental Studio Vučetić',
+			CityHcPvDrCetkovic: 'Dr Ćetković',
+			CityHcPvOrthoCentarKotor: 'Ortho Centar',
+			CityHcPvEndorfinRadanovici: 'Endorfin Radanovići',
 			CityHcPrivateCatalog_kotor:
 				'Что есть в самом городе — смотрите в каталоге:',
 			CityHcPrivateLink_kotor: 'частные клиники Котора',
@@ -300,13 +409,28 @@ export default {
 			CityHcState1_bar:
 				'Општа больница «Блажо Орландич» — многопрофильный стационар: хирургия, гинекология с роддомом, педиатрия, рентген и КТ, физиотерапия. По здравственной книжице лечение бесплатно, для остальных — по прейскуранту.',
 			CityHcState2_bar:
-				'Dom zdravlja Bar — первичное звено: выбранный врач, педиатрия, лаборатория, вакцинация (в том числе некоторые прививки для путешественников).',
+				'Dom zdravlja Bar — первичное звено: выбранный врач, педиатрия, лаборатория, вакцинация (в том числе некоторые прививки для путешественников). Среди врачей есть говорящие по-русски и по-английски — уточняйте при записи.',
 			CityHcState3_bar:
 				'Плановые узкие обследования, которых нет в Баре, делают по направлению в Подгорице — Клинический центр примерно в часе езды.',
 			CityHcStateCatalog_bar: 'Страница больницы на docta.me — с отделениями, отзывами и услугами:',
 			CityHcStateLink_bar: 'Opšta Bolnica "Blažo Orlandić"',
 			CityHcPrivate1_bar:
-				'Из частных учреждений в чатах чаще всего называют поликлинику Novi Standard, дневную больницу Dr Zejnilović и Medical Vraneš; много частных стоматологий. В Сутоморе частная больница A3 Medical делает КТ и МРТ.',
+				'В Баре и Сутоморе несколько крупных частных клиник и лабораторий — например, в Сутоморе A3 Medical делает КТ и МРТ, и бесплатно предоставляет переводчика на приём (русский, английский). Стоматологий в Баре особенно много, есть и с русскоговорящими врачами; также есть ЛОР, урология и гинекология. Более-менее полный список — по нашему каталогу:',
+			CityHcPvNoviStandardBar: 'Novi Standard',
+			CityHcPvDrZejnilovic: 'Dr Zejnilović',
+			CityHcPvMedicalVranes: 'Medical Vraneš',
+			CityHcPvA3Medical: 'A3 Medical',
+			CityHcPvJustDental: 'Just Dental',
+			CityHcPvPavlinDental: 'Pavlin',
+			CityHcPvDrDebelja: 'Dr Debelja',
+			CityHcPvGroupLabel_OtherDental: 'Другие стоматологии',
+			CityHcPvBuntic: 'Buntić',
+			CityHcPvDrSimonovic: 'Dr Simonović',
+			CityHcPvDrBajagic: 'Dr Bajagić',
+			CityHcPvDrZejak: 'Dr Zejak',
+			CityHcPvGacina: 'Gaćina',
+			CityHcPvJovoticDent: 'Jovetić Dent',
+			CityHcPvCicmil: 'Cicmil',
 			CityHcPrivateCatalog_bar:
 				'Полный список с ценами и отзывами — в каталоге:',
 			CityHcPrivateLink_bar: 'частные клиники Бара',
@@ -345,21 +469,48 @@ export default {
 			CityHcOverview1_budva:
 				'Budva je glavni turistički grad Crne Gore, pa je medicinska infrastruktura prilagođena i mještanima i sezonskom prilivu gostiju. Glavna državna ustanova je Dom zdravlja Budva, pri kojem rade služba hitne pomoći i sezonska turistička ambulanta. Grad nema sopstvenu državnu bolnicu.',
 			CityHcOverview2_budva:
-				'Privatni sektor je dobro razvijen: u gradu rade privatne poliklinike, laboratorije i stomatološke ordinacije, a u mnogima se možete sporazumjeti na engleskom ili ruskom. Bolničko liječenje i složena dijagnostika znače put do Kotora ili Podgorice.',
+				'Privatni sektor je dobro razvijen: poliklinike opšteg profila, laboratorije, nekoliko stomatoloških ordinacija, ginekološka klinika i dvije oftalmološke klinike sa laserskom hirurgijom oka — u mnogima se možete sporazumjeti na engleskom ili ruskom.',
 			CityHcEmergency1_budva:
 				'Hitna pomoć u Budvi nalazi se pri Domu zdravlja i radi non-stop. Prema iskustvima iz četova, prima i djecu — sa djetetom možete doći direktno.',
-			CityHcEmergency2_budva:
-				'Kod ozbiljnih povreda i stanja koja zahtijevaju hospitalizaciju, pacijenti se iz Budve upućuju u bolnicu u Kotoru (oko pola sata vožnje) ili u Klinički centar Crne Gore u Podgorici. Uput izdaje ljekar hitne pomoći.',
+			CityHcEmergency2a_budva:
+				'Kod ozbiljnih povreda i stanja koja zahtijevaju hospitalizaciju, pacijenti se iz Budve upućuju u ',
+			CityHcEmergency2KotorLink_budva: 'bolnicu u Kotoru',
+			CityHcEmergency2b_budva: ' (oko pola sata vožnje) ili u ',
+			CityHcEmergency2KccgLink_budva: 'Klinički centar Crne Gore',
+			CityHcEmergency2c_budva: ' u Podgorici. Uput izdaje ljekar hitne pomoći.',
 			CityHcState1_budva:
 				'Dom zdravlja Budva je državna ustanova primarne zaštite: izabrani doktori, pedijatrija, laboratorija i intervencije. Za vlasnike zdravstvene knjižice pregledi su besplatni ili gotovo besplatni.',
 			CityHcState2_budva:
-				'Ljeti pri domu zdravlja radi turistička ambulanta — pregledi uz plaćanje za goste bez knjižice. Dom zdravlja organizuje i sezonsku vakcinaciju protiv gripa, kao i povremene besplatne akcije, npr. testiranje na HIV i hepatitise.',
+				'Ljeti pri domu zdravlja radi turistička ambulanta — pregledi uz plaćanje za goste bez knjižice. Dom zdravlja organizuje i sezonsku vakcinaciju protiv gripa, kao i povremene besplatne akcije, npr. testiranje na HIV i hepatitise. Među ljekarima ima nekoliko koji govore ruski, a neki i engleski.',
 			CityHcState3_budva:
-				'Bolničko liječenje stanovnici Budve dobijaju u Opštoj bolnici Kotor i u Kliničkom centru u Podgorici. Za planirane preglede po knjižici potreban je uput izabranog doktora.',
+				'Planirana hospitalizacija i specijalistička pomoć idu istim putem — Kotor ili Podgorica — uz uput izabranog doktora. Sudeći po specijalnostima ljekara, Opšta bolnica Kotor je višeodjeljenska ustanova: interna medicina, opšta hirurgija, ginekologija i akušerstvo, radiologija, pedijatrija, urologija i još nekoliko oblasti.',
 			CityHcStateCatalog_budva: 'Stranica ustanove na docta.me — adresa, recenzije i usluge:',
 			CityHcStateLink_budva: 'Dom Zdravlja Budva',
 			CityHcPrivate1_budva:
-				'Privatnih klinika i laboratorija u Budvi ima mnogo: od opštih poliklinika do stomatologije i oftalmologije. U četu na ruskom jeziku najčešće se pominju laboratorija Moj Lab i klinike Milmedika i BonoMedica — sve su u našem katalogu.',
+				'Privatnih klinika i laboratorija u Budvi ima mnogo — od opštih poliklinika i lanca laboratorija Moj Lab do stomatologije, ginekologije i oftalmologije sa laserskom hirurgijom oka. Manje-više kompletan spisak onoga što je u našem katalogu:',
+			CityHcPvGroupLabel_Polyclinic: 'Poliklinike opšteg profila',
+			CityHcPvMilmedika: 'Milmedika Budva',
+			CityHcPvMojLab: 'Moj Lab Budva',
+			CityHcPvBonoMedica: 'BonoMedica',
+			CityHcPvMedicalCentar: 'Medical Centar Budva',
+			CityHcPvGroupLabel_Dental: 'Stomatologije',
+			CityHcPvDukley: 'Dukley Dental Clinic',
+			CityHcPvReDent: 'ReDent',
+			CityHcPvZecevic: 'Zečević Dental',
+			CityHcPvGroupLabel_Ophthalmology:
+				'Oftalmologija, laserska hirurgija oka',
+			CityHcPvLaserFocus: 'LaserFocus',
+			CityHcPvSvjetlost: 'Svjetlost Eye Clinic',
+			CityHcPvGroupLabel_Gynecology: 'Ginekologija',
+			CityHcPvGroupLabel_Cardiology: 'Kardiologija',
+			CityHcPvGroupLabel_Physiotherapy: 'Fizioterapija',
+			CityHcPvGroupLabel_RussianDental:
+				'Stomatologije sa ljekarima koji govore ruski',
+			CityHcPvGroupLabel_PolyclinicHospital: 'Poliklinike i bolnice',
+			CityHcPvGroupLabel_SurgicalHospital: 'Privatne bolnice sa hirurgijom',
+			CityHcPvGroupLabel_AestheticSurgery:
+				'Plastična i estetska hirurgija',
+			CityHcPvHumana: 'Humana reprodukcija',
 			CityHcPrivateCatalog_budva:
 				'Aktuelni spisak sa adresama, cijenama i recenzijama nalazi se u katalogu:',
 			CityHcPrivateLink_budva: 'privatne klinike u Budvi',
@@ -394,7 +545,16 @@ export default {
 			CityHcStateCatalog_podgorica: 'Stranica KCCG na docta.me — odjeljenja, recenzije i usluge:',
 			CityHcStateLink_podgorica: 'Klinički Centar Crne Gore',
 			CityHcPrivate1_podgorica:
-				'Izbor privatne medicine u Podgorici je najširi: privatne bolnice sa hirurgijom i magnetnom rezonancom (u četu se najčešće pominju Codra Hospital i poliklinike Hipokrat), laboratorije Moj Lab, Milmedika, Poliklinika Filipović i deseci drugih.',
+				'Podgorica ima najširi izbor privatne medicine u zemlji — na primjer, Konzilijum ima magnetnu rezonancu i širok izbor operacija, a Ars Medica je velika hirurška i estetska bolnica. Evo glavnih ustanova po profilu (kompletan spisak — deseci klinika — je u katalogu):',
+			CityHcPvKonzilijum: 'Konzilijum',
+			CityHcPvArsMedica: 'Ars Medica',
+			CityHcPvMedtim: 'Medtim',
+			CityHcPvCodraHospital: 'Codra Hospital',
+			CityHcPvAMedic: 'A Medic',
+			CityHcPvHipokratPg: 'Hipokrat',
+			CityHcPvMojLabPg: 'Moj Lab',
+			CityHcPvMilmedikaPg: 'Milmedika',
+			CityHcPvFilipovicPg: 'Poliklinika Filipović',
 			CityHcPrivateCatalog_podgorica:
 				'Kompletan spisak sa cijenama i recenzijama je u katalogu:',
 			CityHcPrivateLink_podgorica: 'privatne klinike u Podgorici',
@@ -415,21 +575,33 @@ export default {
 			CityHcOverview1_kotor:
 				'Kotor je medicinski centar Boke Kotorske: tu se nalazi Opšta bolnica Kotor, koja pokriva cijelo područje zaliva, uključujući Tivat, Budvu i Herceg Novi. Primarnu zaštitu pruža Dom zdravlja Kotor sa službom hitne pomoći.',
 			CityHcOverview2_kotor:
-				'U obližnjem Risnu radi specijalna državna bolnica „Vaso Ćuković" — ortopedija, neurohirurgija i neurologija — u koju dolaze pacijenti iz cijele zemlje. Privatni sektor je skromniji nego u Budvi ili Podgorici, ali laboratorija i privatnih ljekara ima.',
+				'U blizini — u Risanu i Dobroti — rade dvije specijalizovane državne bolnice: jedna za ortopediju, druga psihijatrijska. Privatni sektor u samom Kotoru je skromniji nego u Budvi ili Podgorici, ali nešto ima: laboratorija, poliklinike, kardiologija i stomatologije.',
 			CityHcEmergency1_kotor:
 				'U hitnim slučajevima idite u hitnu pomoć pri Domu zdravlja Kotor ili direktno na prijemno odjeljenje kotorske bolnice: ovamo se sa primorja dovoze povrede, dječja urgentna stanja i infekcije (bolnica ima dječje i infektivno odjeljenje).',
 			CityHcEmergency2_kotor:
 				'Imajte u vidu: za strance bez zdravstvene knjižice i osiguranja bolničko liječenje se plaća po cjenovniku, a računi za stacionar mogu biti visoki. Ako imate polisu, unaprijed provjerite proceduru sa osiguravačem; predračun možete tražiti prije početka liječenja.',
 			CityHcState1_kotor:
-				'Opšta bolnica Kotor je višespecijalistički stacionar: hirurgija, pedijatrija, ginekologija, infektivno odjeljenje, rendgen. Ovamo upućuju domovi zdravlja Budve, Tivta i Herceg Novog.',
+				'Opšta bolnica Kotor je višeodjeljenska ustanova koja opslužuje cijelu Boku Kotorsku (Budvu, Tivat, Herceg Novi). Sudeći po sastavu ljekara, tu postoje odjeljenja interne medicine, opšte hirurgije, ginekologije i akušerstva, radiologije, pedijatrije, urologije i infektivno odjeljenje, kao i niz užih specijalnosti.',
 			CityHcState2_kotor:
 				'Dom zdravlja Kotor je državna ustanova primarne zaštite: izabrani doktor, pedijatar, laboratorija. Uz zdravstvenu knjižicu pregledi su besplatni, a recepte za ljekove sa liste izdaje izabrani doktor.',
-			CityHcState3_kotor:
-				'Specijalna bolnica „Vaso Ćuković" u Risnu, na kratkoj vožnji uz zaliv, državni je centar za ortopediju, neurohirurgiju i neurologiju. U Kotoru se nalazi i državna specijalna psihijatrijska bolnica.',
+			CityHcState3a_kotor: 'Specijalna bolnica ',
+			CityHcState3VasoLink_kotor: '„Vaso Ćuković"',
+			CityHcState3b_kotor:
+				' u Risanu (oko pola sata duž zaliva od Kotora) — državni centar za ortopediju, neurohirurgiju i neurologiju: ovdje se upućuju pacijenti iz cijele zemlje, ne samo sa primorja. U Kotoru, u dijelu Dobrota, nalazi se i specijalna psihijatrijska bolnica ',
+			CityHcState3DobrotaLink_kotor: '„Dobrota"',
+			CityHcState3c_kotor:
+				' — jedina specijalizovana psihijatrijska bolnica u Crnoj Gori (u drugim gradovima postoji samo ambulantna psihijatrijska pomoć ili odjeljenje u sklopu opšte bolnice).',
 			CityHcStateCatalog_kotor: 'Stranica bolnice na docta.me — odjeljenja, recenzije i usluge:',
 			CityHcStateLink_kotor: 'Opšta bolnica Kotor',
 			CityHcPrivate1_kotor:
-				'Od privatnih službi u četovima se najčešće pominje laboratorija SmartMed u Kotoru; u Radanovićima (opština Kotor) radi poliklinika Hipokrat sa magnetnom rezonancom. Po širi izbor privatnih specijalista stanovnici Kotora obično idu u Budvu ili Podgoricu.',
+				'Privatni sektor u samom Kotoru je mali: laboratorija, par poliklinika, kardiološka klinika, stomatologije i fizioterapija. Za širi izbor stanovnici Kotora obično idu u Budvu ili Podgoricu. Šta postoji na licu mjesta — po našem katalogu:',
+			CityHcPvSmartMed: 'SmartMed Kotor',
+			CityHcPvHipokratRadanovici: 'Hipokrat Radanovići',
+			CityHcPvInterCardio: 'Inter Cardio',
+			CityHcPvDentalStudioVucetic: 'Dental Studio Vučetić',
+			CityHcPvDrCetkovic: 'Dr Ćetković',
+			CityHcPvOrthoCentarKotor: 'Ortho Centar',
+			CityHcPvEndorfinRadanovici: 'Endorfin Radanovići',
 			CityHcPrivateCatalog_kotor:
 				'Šta postoji u samom gradu pogledajte u katalogu:',
 			CityHcPrivateLink_kotor: 'privatne klinike u Kotoru',
@@ -458,13 +630,28 @@ export default {
 			CityHcState1_bar:
 				'Opšta bolnica „Blažo Orlandić" je višespecijalistička ustanova: hirurgija, ginekologija sa porodilištem, pedijatrija, rendgen i CT, fizikalna terapija. Uz zdravstvenu knjižicu liječenje je besplatno; za ostale se plaća po cjenovniku.',
 			CityHcState2_bar:
-				'Dom zdravlja Bar je primarni nivo: izabrani doktor, pedijatrija, laboratorija, vakcinacija (uključujući neke vakcine za putnike).',
+				'Dom zdravlja Bar je primarni nivo: izabrani doktor, pedijatrija, laboratorija, vakcinacija (uključujući neke vakcine za putnike). Neki ljekari tu govore ruski ili engleski — pitajte prilikom zakazivanja.',
 			CityHcState3_bar:
 				'Specijalistički pregledi kojih nema u Baru rade se po uputu u Podgorici — Klinički centar je na oko sat vremena vožnje.',
 			CityHcStateCatalog_bar: 'Stranica bolnice na docta.me — odjeljenja, recenzije i usluge:',
 			CityHcStateLink_bar: 'Opšta bolnica „Blažo Orlandić"',
 			CityHcPrivate1_bar:
-				'Od privatnih ustanova u četovima se najčešće pominju poliklinika Novi Standard, dnevna bolnica Dr Zejnilović i Medical Vraneš; ima mnogo privatnih stomatologa. U Sutomoru privatna bolnica A3 Medical nudi CT i magnetnu rezonancu.',
+				'U Baru i Sutomoru ima nekoliko velikih privatnih klinika i laboratorija — na primjer, A3 Medical u Sutomoru radi CT i magnetnu rezonancu, i besplatno obezbjeđuje prevodioca (ruski, engleski) za pregled. Bar ima posebno mnogo stomatoloških ordinacija, uključujući one sa ljekarima koji govore ruski; ima i ORL, urologiju i ginekologiju. Manje-više kompletan spisak, po našem katalogu:',
+			CityHcPvNoviStandardBar: 'Novi Standard',
+			CityHcPvDrZejnilovic: 'Dr Zejnilović',
+			CityHcPvMedicalVranes: 'Medical Vraneš',
+			CityHcPvA3Medical: 'A3 Medical',
+			CityHcPvJustDental: 'Just Dental',
+			CityHcPvPavlinDental: 'Pavlin',
+			CityHcPvDrDebelja: 'Dr Debelja',
+			CityHcPvGroupLabel_OtherDental: 'Ostale stomatologije',
+			CityHcPvBuntic: 'Buntić',
+			CityHcPvDrSimonovic: 'Dr Simonović',
+			CityHcPvDrBajagic: 'Dr Bajagić',
+			CityHcPvDrZejak: 'Dr Zejak',
+			CityHcPvGacina: 'Gaćina',
+			CityHcPvJovoticDent: 'Jovetić Dent',
+			CityHcPvCicmil: 'Cicmil',
 			CityHcPrivateCatalog_bar:
 				'Kompletan spisak sa cijenama i recenzijama je u katalogu:',
 			CityHcPrivateLink_bar: 'privatne klinike u Baru',
@@ -503,21 +690,48 @@ export default {
 			CityHcOverview1_budva:
 				'Будва је главни туристички град Црне Горе, па је медицинска инфраструктура прилагођена и мјештанима и сезонском приливу гостију. Главна државна установа је Дом здравља Будва, при којем раде служба хитне помоћи и сезонска туристичка амбуланта. Град нема сопствену државну болницу.',
 			CityHcOverview2_budva:
-				'Приватни сектор је добро развијен: у граду раде приватне поликлинике, лабораторије и стоматолошке ординације, а у многима се можете споразумјети на енглеском или руском. Болничко лијечење и сложена дијагностика значе пут до Котора или Подгорице.',
+				'Приватни сектор је добро развијен: поликлинике општег профила, лабораторије, неколико стоматолошких ординација, гинеколошка клиника и двије офталмолошке клинике са ласерском хирургијом ока — у многима се можете споразумјети на енглеском или руском.',
 			CityHcEmergency1_budva:
 				'Хитна помоћ у Будви налази се при Дому здравља и ради нон-стоп. Према искуствима из четова, прима и дјецу — са дјететом можете доћи директно.',
-			CityHcEmergency2_budva:
-				'Код озбиљних повреда и стања која захтијевају хоспитализацију, пацијенти се из Будве упућују у болницу у Котору (око пола сата вожње) или у Клинички центар Црне Горе у Подгорици. Упут издаје љекар хитне помоћи.',
+			CityHcEmergency2a_budva:
+				'Код озбиљних повреда и стања која захтијевају хоспитализацију, пацијенти се из Будве упућују у ',
+			CityHcEmergency2KotorLink_budva: 'болницу у Котору',
+			CityHcEmergency2b_budva: ' (око пола сата вожње) или у ',
+			CityHcEmergency2KccgLink_budva: 'Клинички центар Црне Горе',
+			CityHcEmergency2c_budva: ' у Подгорици. Упут издаје љекар хитне помоћи.',
 			CityHcState1_budva:
 				'Дом здравља Будва је државна установа примарне заштите: изабрани доктори, педијатрија, лабораторија и интервенције. За власнике здравствене књижице прегледи су бесплатни или готово бесплатни.',
 			CityHcState2_budva:
-				'Љети при дому здравља ради туристичка амбуланта — прегледи уз плаћање за госте без књижице. Дом здравља организује и сезонску вакцинацију против грипа, као и повремене бесплатне акције, нпр. тестирање на ХИВ и хепатитисе.',
+				'Љети при дому здравља ради туристичка амбуланта — прегледи уз плаћање за госте без књижице. Дом здравља организује и сезонску вакцинацију против грипа, као и повремене бесплатне акције, нпр. тестирање на ХИВ и хепатитисе. Међу љекарима има неколико који говоре руски, а неки и енглески.',
 			CityHcState3_budva:
-				'Болничко лијечење становници Будве добијају у Општој болници Котор и у Клиничком центру у Подгорици. За планиране прегледе по књижици потребан је упут изабраног доктора.',
+				'Планирана хоспитализација и специјалистичка помоћ иду истим путем — Котор или Подгорица — уз упут изабраног доктора. Судећи по специјалностима љекара, Општа болница Котор је вишеодјељенска установа: интерна медицина, општа хирургија, гинекологија и акушерство, радиологија, педијатрија, урологија и још неколико области.',
 			CityHcStateCatalog_budva: 'Страница установе на docta.me — адреса, рецензије и услуге:',
 			CityHcStateLink_budva: 'Дом Здравља Будва',
 			CityHcPrivate1_budva:
-				'Приватних клиника и лабораторија у Будви има много: од општих поликлиника до стоматологије и офталмологије. У чету на руском језику најчешће се помињу лабораторија Moj Lab и клинике Milmedika и BonoMedica — све су у нашем каталогу.',
+				'Приватних клиника и лабораторија у Будви има много — од општих поликлиника и ланца лабораторија Moj Lab до стоматологије, гинекологије и офталмологије са ласерском хирургијом ока. Мање-више комплетан списак онога што је у нашем каталогу:',
+			CityHcPvGroupLabel_Polyclinic: 'Поликлинике општег профила',
+			CityHcPvMilmedika: 'Milmedika Budva',
+			CityHcPvMojLab: 'Moj Lab Budva',
+			CityHcPvBonoMedica: 'BonoMedica',
+			CityHcPvMedicalCentar: 'Medical Centar Budva',
+			CityHcPvGroupLabel_Dental: 'Стоматологије',
+			CityHcPvDukley: 'Dukley Dental Clinic',
+			CityHcPvReDent: 'ReDent',
+			CityHcPvZecevic: 'Zečević Dental',
+			CityHcPvGroupLabel_Ophthalmology:
+				'Офталмологија, ласерска хирургија ока',
+			CityHcPvLaserFocus: 'LaserFocus',
+			CityHcPvSvjetlost: 'Svjetlost Eye Clinic',
+			CityHcPvGroupLabel_Gynecology: 'Гинекологија',
+			CityHcPvGroupLabel_Cardiology: 'Кардиологија',
+			CityHcPvGroupLabel_Physiotherapy: 'Физиотерапија',
+			CityHcPvGroupLabel_RussianDental:
+				'Стоматологије са љекарима који говоре руски',
+			CityHcPvGroupLabel_PolyclinicHospital: 'Поликлинике и болнице',
+			CityHcPvGroupLabel_SurgicalHospital: 'Приватне болнице са хирургијом',
+			CityHcPvGroupLabel_AestheticSurgery:
+				'Пластична и естетска хирургија',
+			CityHcPvHumana: 'Humana reprodukcija',
 			CityHcPrivateCatalog_budva:
 				'Актуелни списак са адресама, цијенама и рецензијама налази се у каталогу:',
 			CityHcPrivateLink_budva: 'приватне клинике у Будви',
@@ -552,7 +766,16 @@ export default {
 			CityHcStateCatalog_podgorica: 'Страница КЦЦГ на docta.me — одјељења, рецензије и услуге:',
 			CityHcStateLink_podgorica: 'Клинички Центар Црне Горе',
 			CityHcPrivate1_podgorica:
-				'Избор приватне медицине у Подгорици је најшири: приватне болнице са хирургијом и магнетном резонанцом (у чету се најчешће помињу Codra Hospital и поликлинике Hipokrat), лабораторије Moj Lab, Milmedika, Poliklinika Filipović и десеци других.',
+				'Подгорица има најшири избор приватне медицине у земљи — на примјер, Konzilijum има магнетну резонанцу и широк избор операција, а Ars Medica је велика хируршка и естетска болница. Ево главних установа по профилу (комплетан списак — десетине клиника — је у каталогу):',
+			CityHcPvKonzilijum: 'Konzilijum',
+			CityHcPvArsMedica: 'Ars Medica',
+			CityHcPvMedtim: 'Medtim',
+			CityHcPvCodraHospital: 'Codra Hospital',
+			CityHcPvAMedic: 'A Medic',
+			CityHcPvHipokratPg: 'Hipokrat',
+			CityHcPvMojLabPg: 'Moj Lab',
+			CityHcPvMilmedikaPg: 'Milmedika',
+			CityHcPvFilipovicPg: 'Poliklinika Filipović',
 			CityHcPrivateCatalog_podgorica:
 				'Комплетан списак са цијенама и рецензијама је у каталогу:',
 			CityHcPrivateLink_podgorica: 'приватне клинике у Подгорици',
@@ -573,21 +796,33 @@ export default {
 			CityHcOverview1_kotor:
 				'Котор је медицински центар Боке Которске: ту се налази Општа болница Котор, која покрива цијело подручје залива, укључујући Тиват, Будву и Херцег Нови. Примарну заштиту пружа Дом здравља Котор са службом хитне помоћи.',
 			CityHcOverview2_kotor:
-				'У оближњем Рисну ради специјална државна болница „Васо Ћуковић" — ортопедија, неурохирургија и неурологија — у коју долазе пацијенти из цијеле земље. Приватни сектор је скромнији него у Будви или Подгорици, али лабораторија и приватних љекара има.',
+				'У близини — у Рисану и Доброти — раде двије специјализоване државне болнице: једна за ортопедију, друга психијатријска. Приватни сектор у самом Котору је скромнији него у Будви или Подгорици, али нешто има: лабораторија, поликлинике, кардиологија и стоматологије.',
 			CityHcEmergency1_kotor:
 				'У хитним случајевима идите у хитну помоћ при Дому здравља Котор или директно на пријемно одјељење которске болнице: овамо се са приморја довозе повреде, дјечја ургентна стања и инфекције (болница има дјечје и инфективно одјељење).',
 			CityHcEmergency2_kotor:
 				'Имајте у виду: за странце без здравствене књижице и осигурања болничко лијечење се плаћа по цјеновнику, а рачуни за стационар могу бити високи. Ако имате полису, унапријед провјерите процедуру са осигуравачем; предрачун можете тражити прије почетка лијечења.',
 			CityHcState1_kotor:
-				'Општа болница Котор је вишеспецијалистички стационар: хирургија, педијатрија, гинекологија, инфективно одјељење, рендген. Овамо упућују домови здравља Будве, Тивта и Херцег Новог.',
+				'Општа болница Котор је вишеодјељенска установа која опслужује цијелу Боку Которску (Будву, Тиват, Херцег Нови). Судећи по саставу љекара, ту постоје одјељења интерне медицине, опште хирургије, гинекологије и акушерства, радиологије, педијатрије, урологије и инфективно одјељење, као и низ ужих специјалности.',
 			CityHcState2_kotor:
 				'Дом здравља Котор је државна установа примарне заштите: изабрани доктор, педијатар, лабораторија. Уз здравствену књижицу прегледи су бесплатни, а рецепте за љекове са листе издаје изабрани доктор.',
-			CityHcState3_kotor:
-				'Специјална болница „Васо Ћуковић" у Рисну, на краткој вожњи уз залив, државни је центар за ортопедију, неурохирургију и неурологију. У Котору се налази и државна специјална психијатријска болница.',
+			CityHcState3a_kotor: 'Специјална болница ',
+			CityHcState3VasoLink_kotor: '„Васо Чуковић"',
+			CityHcState3b_kotor:
+				' у Рисану (око пола сата дуж залива од Котора) — државни центар за ортопедију, неурохирургију и неурологију: овдје се упућују пацијенти из цијеле земље, не само са приморја. У Котору, у дијелу Доброта, налази се и специјална психијатријска болница ',
+			CityHcState3DobrotaLink_kotor: '„Доброта"',
+			CityHcState3c_kotor:
+				' — једина специјализована психијатријска болница у Црној Гори (у другим градовима постоји само амбулантна психијатријска помоћ или одјељење у склопу опште болнице).',
 			CityHcStateCatalog_kotor: 'Страница болнице на docta.me — одјељења, рецензије и услуге:',
 			CityHcStateLink_kotor: 'Општа болница Котор',
 			CityHcPrivate1_kotor:
-				'Од приватних служби у четовима се најчешће помиње лабораторија SmartMed у Котору; у Радановићима (општина Котор) ради поликлиника Hipokrat са магнетном резонанцом. По шири избор приватних специјалиста становници Котора обично иду у Будву или Подгорицу.',
+				'Приватни сектор у самом Котору је мали: лабораторија, пар поликлиника, кардиолошка клиника, стоматологије и физиотерапија. За шири избор становници Котора обично иду у Будву или Подгорицу. Шта постоји на лицу мјеста — по нашем каталогу:',
+			CityHcPvSmartMed: 'SmartMed Kotor',
+			CityHcPvHipokratRadanovici: 'Hipokrat Radanovići',
+			CityHcPvInterCardio: 'Inter Cardio',
+			CityHcPvDentalStudioVucetic: 'Dental Studio Vučetić',
+			CityHcPvDrCetkovic: 'Dr Ćetković',
+			CityHcPvOrthoCentarKotor: 'Ortho Centar',
+			CityHcPvEndorfinRadanovici: 'Endorfin Radanovići',
 			CityHcPrivateCatalog_kotor:
 				'Шта постоји у самом граду погледајте у каталогу:',
 			CityHcPrivateLink_kotor: 'приватне клинике у Котору',
@@ -616,13 +851,28 @@ export default {
 			CityHcState1_bar:
 				'Општа болница „Блажо Орландић" је вишеспецијалистичка установа: хирургија, гинекологија са породилиштем, педијатрија, рендген и CT, физикална терапија. Уз здравствену књижицу лијечење је бесплатно; за остале се плаћа по цјеновнику.',
 			CityHcState2_bar:
-				'Дом здравља Бар је примарни ниво: изабрани доктор, педијатрија, лабораторија, вакцинација (укључујући неке вакцине за путнике).',
+				'Дом здравља Бар је примарни ниво: изабрани доктор, педијатрија, лабораторија, вакцинација (укључујући неке вакцине за путнике). Неки љекари ту говоре руски или енглески — питајте приликом заказивања.',
 			CityHcState3_bar:
 				'Специјалистички прегледи којих нема у Бару раде се по упуту у Подгорици — Клинички центар је на око сат времена вожње.',
 			CityHcStateCatalog_bar: 'Страница болнице на docta.me — одјељења, рецензије и услуге:',
 			CityHcStateLink_bar: 'Општа болница „Блажо Орландић"',
 			CityHcPrivate1_bar:
-				'Од приватних установа у четовима се најчешће помињу поликлиника Novi Standard, дневна болница Dr Zejnilović и Medical Vraneš; има много приватних стоматолога. У Сутомору приватна болница A3 Medical нуди CT и магнетну резонанцу.',
+				'У Бару и Сутомору има неколико великих приватних клиника и лабораторија — на примјер, A3 Medical у Сутомору ради CT и магнетну резонанцу, и бесплатно обезбјеђује преводиоца (руски, енглески) за преглед. Бар има посебно много стоматолошких ординација, укључујући оне са љекарима који говоре руски; има и ОРЛ, урологију и гинекологију. Мање-више комплетан списак, по нашем каталогу:',
+			CityHcPvNoviStandardBar: 'Novi Standard',
+			CityHcPvDrZejnilovic: 'Dr Zejnilović',
+			CityHcPvMedicalVranes: 'Medical Vraneš',
+			CityHcPvA3Medical: 'A3 Medical',
+			CityHcPvJustDental: 'Just Dental',
+			CityHcPvPavlinDental: 'Pavlin',
+			CityHcPvDrDebelja: 'Dr Debelja',
+			CityHcPvGroupLabel_OtherDental: 'Остале стоматологије',
+			CityHcPvBuntic: 'Buntić',
+			CityHcPvDrSimonovic: 'Dr Simonović',
+			CityHcPvDrBajagic: 'Dr Bajagić',
+			CityHcPvDrZejak: 'Dr Zejak',
+			CityHcPvGacina: 'Gaćina',
+			CityHcPvJovoticDent: 'Jovetić Dent',
+			CityHcPvCicmil: 'Cicmil',
 			CityHcPrivateCatalog_bar:
 				'Комплетан списак са цијенама и рецензијама је у каталогу:',
 			CityHcPrivateLink_bar: 'приватне клинике у Бару',
@@ -661,21 +911,48 @@ export default {
 			CityHcOverview1_budva:
 				'Budva ist Montenegros wichtigster Urlaubsort, und die medizinische Infrastruktur ist auf Einheimische wie auf den saisonalen Gästestrom ausgelegt. Die zentrale staatliche Einrichtung ist das Dom zdravlja Budva (Gesundheitszentrum) mit Rettungsdienst und saisonaler Touristenambulanz. Ein eigenes staatliches Krankenhaus hat die Stadt nicht.',
 			CityHcOverview2_budva:
-				'Der private Sektor ist gut entwickelt: In der Stadt arbeiten private Polikliniken, Labore und Zahnarztpraxen, in vielen kann man sich auf Englisch oder Russisch verständigen. Stationäre Behandlung und aufwendige Diagnostik bedeuten eine Fahrt nach Kotor oder Podgorica.',
+				'Der Privatsektor ist gut entwickelt: allgemeinmedizinische Polikliniken, Labore, mehrere Zahnarztpraxen, eine gynäkologische Klinik und zwei Augenkliniken mit Laser-Augenchirurgie — in vielen wird Englisch oder Russisch gesprochen.',
 			CityHcEmergency1_budva:
 				'Die Notaufnahme (hitna pomoć) in Budva befindet sich am Dom zdravlja und arbeitet rund um die Uhr. Nach Berichten aus Expat-Chats werden dort auch Kinder behandelt — mit einem Kind können Sie direkt hinfahren.',
-			CityHcEmergency2_budva:
-				'Bei schweren Verletzungen und stationär zu behandelnden Zuständen werden Patienten aus Budva ins Krankenhaus Kotor (etwa eine halbe Stunde) oder ins Klinische Zentrum Montenegros in Podgorica überwiesen. Die Überweisung (uputnica) stellt der Arzt der hitna pomoć aus.',
+			CityHcEmergency2a_budva:
+				'Bei schweren Verletzungen und stationär zu behandelnden Zuständen werden Patienten aus Budva ins ',
+			CityHcEmergency2KotorLink_budva: 'Krankenhaus Kotor',
+			CityHcEmergency2b_budva: ' (etwa eine halbe Stunde) oder ins ',
+			CityHcEmergency2KccgLink_budva: 'Klinische Zentrum Montenegros',
+			CityHcEmergency2c_budva:
+				' in Podgorica überwiesen. Die Überweisung (uputnica) stellt der Arzt der hitna pomoć aus.',
 			CityHcState1_budva:
 				'Das Dom zdravlja Budva ist das staatliche Gesundheitszentrum: Hausärzte (izabrani doktor), Pädiatrie, Labor und Behandlungsräume. Für Inhaber der Gesundheitskarte zdravstvena knjižica sind Besuche kostenlos oder fast kostenlos.',
 			CityHcState2_budva:
-				'Im Sommer arbeitet dort eine Touristenambulanz (turistička ambulanta) — kostenpflichtige Termine für Gäste ohne Gesundheitskarte. Außerdem gibt es saisonale Grippeimpfungen und gelegentlich kostenlose Aktionen, etwa HIV- und Hepatitis-Tests.',
+				'Im Sommer arbeitet dort eine Touristenambulanz (turistička ambulanta) — kostenpflichtige Termine für Gäste ohne Gesundheitskarte. Außerdem gibt es saisonale Grippeimpfungen und gelegentlich kostenlose Aktionen, etwa HIV- und Hepatitis-Tests. Einige Ärzte dort sprechen Russisch, manche auch Englisch.',
 			CityHcState3_budva:
-				'Krankenhausversorgung erhalten die Einwohner Budvas im Allgemeinen Krankenhaus Kotor und im Klinischen Zentrum in Podgorica. Geplante Untersuchungen über die Gesundheitskarte erfordern eine Überweisung des gewählten Arztes.',
+				'Geplante Krankenhausaufenthalte und Facharztbehandlungen laufen über denselben Weg — Kotor oder Podgorica — mit Überweisung des gewählten Arztes. Nach den Fachrichtungen des Personals zu urteilen, ist das Allgemeine Krankenhaus Kotor eine Einrichtung mit mehreren Abteilungen: Innere Medizin, Allgemeinchirurgie, Gynäkologie und Geburtshilfe, Radiologie, Pädiatrie, Urologie und weitere Fachbereiche.',
 			CityHcStateCatalog_budva: 'Die Seite der Einrichtung auf docta.me — Adresse, Bewertungen und Leistungen:',
 			CityHcStateLink_budva: 'Dom Zdravlja Budva',
 			CityHcPrivate1_budva:
-				'Private Kliniken und Labore gibt es in Budva viele — von allgemeinen Polikliniken bis zu Zahnmedizin und Augenheilkunde. Im russischsprachigen Chat werden am häufigsten das Labor Moj Lab sowie die Kliniken Milmedika und BonoMedica genannt — alle sind in unserem Katalog.',
+				'Private Kliniken und Labore gibt es in Budva viele — von allgemeinen Polikliniken und der Laborkette Moj Lab bis zu Zahnmedizin, Gynäkologie und Augenheilkunde mit Laser-Augenchirurgie. Eine mehr oder weniger vollständige Liste dessen, was in unserem Katalog steht:',
+			CityHcPvGroupLabel_Polyclinic: 'Allgemeine Polikliniken',
+			CityHcPvMilmedika: 'Milmedika Budva',
+			CityHcPvMojLab: 'Moj Lab Budva',
+			CityHcPvBonoMedica: 'BonoMedica',
+			CityHcPvMedicalCentar: 'Medical Centar Budva',
+			CityHcPvGroupLabel_Dental: 'Zahnkliniken',
+			CityHcPvDukley: 'Dukley Dental Clinic',
+			CityHcPvReDent: 'ReDent',
+			CityHcPvZecevic: 'Zečević Dental',
+			CityHcPvGroupLabel_Ophthalmology: 'Augenheilkunde, Laser-Augenchirurgie',
+			CityHcPvLaserFocus: 'LaserFocus',
+			CityHcPvSvjetlost: 'Svjetlost Eye Clinic',
+			CityHcPvGroupLabel_Gynecology: 'Gynäkologie',
+			CityHcPvGroupLabel_Cardiology: 'Kardiologie',
+			CityHcPvGroupLabel_Physiotherapy: 'Physiotherapie',
+			CityHcPvGroupLabel_RussianDental:
+				'Zahnkliniken mit russischsprachigen Ärzten',
+			CityHcPvGroupLabel_PolyclinicHospital: 'Polikliniken und Krankenhäuser',
+			CityHcPvGroupLabel_SurgicalHospital: 'Privatkliniken mit Chirurgie',
+			CityHcPvGroupLabel_AestheticSurgery:
+				'Plastische und ästhetische Chirurgie',
+			CityHcPvHumana: 'Humana reprodukcija',
 			CityHcPrivateCatalog_budva:
 				'Die aktuelle Liste mit Adressen, Preisen und Bewertungen finden Sie im Katalog:',
 			CityHcPrivateLink_budva: 'Privatkliniken in Budva',
@@ -710,7 +987,16 @@ export default {
 			CityHcStateCatalog_podgorica: 'Die Seite des KCCG auf docta.me — Abteilungen, Bewertungen und Leistungen:',
 			CityHcStateLink_podgorica: 'Klinički Centar Crne Gore',
 			CityHcPrivate1_podgorica:
-				'Die Auswahl an privater Medizin ist in Podgorica am größten: Privatkrankenhäuser mit Chirurgie und MRT (im Chat werden am häufigsten Codra Hospital und die Hipokrat-Polikliniken genannt), die Labore Moj Lab, Milmedika, Poliklinika Filipović und Dutzende weitere.',
+				'Podgorica hat die größte Auswahl an privater Medizin im Land — Konzilijum bietet beispielsweise MRT und eine breite Auswahl an Operationen, und Ars Medica ist ein großes chirurgisch-ästhetisches Krankenhaus. Hier die wichtigsten Einrichtungen nach Profil (die vollständige Liste — Dutzende Kliniken — finden Sie im Katalog):',
+			CityHcPvKonzilijum: 'Konzilijum',
+			CityHcPvArsMedica: 'Ars Medica',
+			CityHcPvMedtim: 'Medtim',
+			CityHcPvCodraHospital: 'Codra Hospital',
+			CityHcPvAMedic: 'A Medic',
+			CityHcPvHipokratPg: 'Hipokrat',
+			CityHcPvMojLabPg: 'Moj Lab',
+			CityHcPvMilmedikaPg: 'Milmedika',
+			CityHcPvFilipovicPg: 'Poliklinika Filipović',
 			CityHcPrivateCatalog_podgorica:
 				'Die vollständige Liste mit Preisen und Bewertungen finden Sie im Katalog:',
 			CityHcPrivateLink_podgorica: 'Privatkliniken in Podgorica',
@@ -731,21 +1017,33 @@ export default {
 			CityHcOverview1_kotor:
 				'Kotor ist das medizinische Zentrum der Bucht von Kotor: Hier befindet sich das Allgemeine Krankenhaus Kotor (Opšta bolnica Kotor), das die gesamte Küstenregion einschließlich Tivat, Budva und Herceg Novi versorgt. Die Grundversorgung übernimmt das Dom zdravlja Kotor mit Rettungsdienst.',
 			CityHcOverview2_kotor:
-				'Im nahen Risan arbeitet die staatliche Spezialklinik Vaso Ćuković für Orthopädie, Neurochirurgie und Neurologie, die Patienten aus dem ganzen Land aufnimmt. Der private Sektor ist bescheidener als in Budva oder Podgorica, aber Labore und Privatärzte sind vorhanden.',
+				'In der Nähe — in Risan und Dobrota — gibt es zwei spezialisierte staatliche Krankenhäuser: eines für Orthopädie, eines für Psychiatrie. Der Privatsektor in Kotor selbst ist kleiner als in Budva oder Podgorica, aber es gibt einiges: ein Labor, Polikliniken, eine Kardiologie- und Zahnkliniken.',
 			CityHcEmergency1_kotor:
 				'Im Notfall: hitna pomoć am Dom zdravlja Kotor oder direkt die Aufnahme des Krankenhauses Kotor — hierhin werden Verletzungen, pädiatrische Notfälle und Infektionen von der ganzen Küste gebracht (das Krankenhaus hat eine Kinder- und eine Infektionsabteilung).',
 			CityHcEmergency2_kotor:
 				'Beachten Sie: Für Ausländer ohne Gesundheitskarte und Versicherung ist die Krankenhausbehandlung nach Preisliste kostenpflichtig, und stationäre Rechnungen können erheblich sein. Mit einer Police klären Sie das Vorgehen vorab mit dem Versicherer; einen Kostenvoranschlag können Sie vor Behandlungsbeginn verlangen.',
 			CityHcState1_kotor:
-				'Das Allgemeine Krankenhaus Kotor ist ein Krankenhaus mit vielen Fachabteilungen: Chirurgie, Pädiatrie, Gynäkologie, Infektionsabteilung, Röntgen. Hierhin überweisen die Gesundheitszentren von Budva, Tivat und Herceg Novi.',
+				'Das Allgemeine Krankenhaus Kotor ist eine Einrichtung mit mehreren Abteilungen, die die gesamte Bucht von Kotor versorgt (Budva, Tivat, Herceg Novi). Nach der Zusammensetzung des Personals zu urteilen, gibt es Abteilungen für Innere Medizin, Allgemeinchirurgie, Gynäkologie und Geburtshilfe, Radiologie, Pädiatrie, Urologie und Infektionskrankheiten sowie mehrere engere Fachbereiche.',
 			CityHcState2_kotor:
 				'Das Dom zdravlja Kotor ist das staatliche Gesundheitszentrum: gewählter Arzt, Kinderarzt, Labor. Mit der Gesundheitskarte sind Besuche kostenlos; Rezepte für subventionierte Medikamente stellt der gewählte Arzt aus.',
-			CityHcState3_kotor:
-				'Die Spezialklinik Vaso Ćuković in Risan, eine kurze Fahrt die Bucht entlang, ist das nationale Zentrum für Orthopädie, Neurochirurgie und Neurologie. In Kotor gibt es außerdem die staatliche psychiatrische Spezialklinik.',
+			CityHcState3a_kotor: 'Das Spezialkrankenhaus ',
+			CityHcState3VasoLink_kotor: '„Vaso Ćuković"',
+			CityHcState3b_kotor:
+				' in Risan (etwa eine halbe Stunde entlang der Bucht von Kotor) ist das landesweite Zentrum für Orthopädie, Neurochirurgie und Neurologie — Patienten werden von überall im Land hierher überwiesen, nicht nur von der Küste. In Kotor, im Stadtteil Dobrota, befindet sich außerdem das spezialisierte psychiatrische Krankenhaus ',
+			CityHcState3DobrotaLink_kotor: '„Dobrota"',
+			CityHcState3c_kotor:
+				' — das einzige spezialisierte psychiatrische Krankenhaus Montenegros (in anderen Städten gibt es nur ambulante psychiatrische Versorgung oder eine Abteilung innerhalb eines Allgemeinkrankenhauses).',
 			CityHcStateCatalog_kotor: 'Die Seite des Krankenhauses auf docta.me — Abteilungen, Bewertungen und Leistungen:',
 			CityHcStateLink_kotor: 'Opšta bolnica Kotor',
 			CityHcPrivate1_kotor:
-				'Von den privaten Angeboten wird im Chat am häufigsten das Labor SmartMed in Kotor genannt; in Radanovići (Gemeinde Kotor) arbeitet eine Hipokrat-Poliklinik mit MRT. Für eine größere Auswahl privater Spezialisten fahren die Einwohner Kotors meist nach Budva oder Podgorica.',
+				'Der Privatsektor in Kotor selbst ist klein: ein Labor, ein paar Polikliniken, eine Kardiologieklinik, Zahnarztpraxen und Physiotherapie. Für eine größere Auswahl fahren Einwohner Kotors meist nach Budva oder Podgorica. Was es vor Ort gibt, laut unserem Katalog:',
+			CityHcPvSmartMed: 'SmartMed Kotor',
+			CityHcPvHipokratRadanovici: 'Hipokrat Radanovići',
+			CityHcPvInterCardio: 'Inter Cardio',
+			CityHcPvDentalStudioVucetic: 'Dental Studio Vučetić',
+			CityHcPvDrCetkovic: 'Dr Ćetković',
+			CityHcPvOrthoCentarKotor: 'Ortho Centar',
+			CityHcPvEndorfinRadanovici: 'Endorfin Radanovići',
 			CityHcPrivateCatalog_kotor:
 				'Was es in der Stadt selbst gibt, sehen Sie im Katalog:',
 			CityHcPrivateLink_kotor: 'Privatkliniken in Kotor',
@@ -774,13 +1072,28 @@ export default {
 			CityHcState1_bar:
 				'Das Allgemeine Krankenhaus Blažo Orlandić ist ein Haus mit vielen Fachabteilungen: Chirurgie, Gynäkologie mit Geburtsstation, Pädiatrie, Röntgen und CT, Physiotherapie. Mit der Gesundheitskarte ist die Behandlung kostenlos, sonst nach Preisliste.',
 			CityHcState2_bar:
-				'Das Dom zdravlja Bar ist die Grundversorgung: gewählter Arzt, Pädiatrie, Labor, Impfungen (einschließlich einiger Reiseimpfungen).',
+				'Das Dom zdravlja Bar ist die Grundversorgung: gewählter Arzt, Pädiatrie, Labor, Impfungen (einschließlich einiger Reiseimpfungen). Einige Ärzte dort sprechen Russisch oder Englisch — fragen Sie bei der Terminvereinbarung.',
 			CityHcState3_bar:
 				'Spezialuntersuchungen, die es in Bar nicht gibt, werden per Überweisung in Podgorica gemacht — das Klinische Zentrum ist rund eine Stunde entfernt.',
 			CityHcStateCatalog_bar: 'Die Seite des Krankenhauses auf docta.me — Abteilungen, Bewertungen und Leistungen:',
 			CityHcStateLink_bar: 'Opšta Bolnica „Blažo Orlandić"',
 			CityHcPrivate1_bar:
-				'Von den privaten Einrichtungen nennt der Chat am häufigsten die Poliklinik Novi Standard, die Tagesklinik Dr Zejnilović und Medical Vraneš; dazu viele private Zahnarztpraxen. In Sutomore bietet das private Krankenhaus A3 Medical CT und MRT an.',
+				'In Bar und Sutomore gibt es mehrere größere Privatkliniken und Labore — zum Beispiel bietet A3 Medical in Sutomore CT und MRT an und stellt kostenlos einen Dolmetscher (Russisch, Englisch) für den Termin. Bar hat besonders viele Zahnkliniken, darunter auch russischsprachige; außerdem gibt es HNO, Urologie und Gynäkologie. Eine mehr oder weniger vollständige Liste, laut unserem Katalog:',
+			CityHcPvNoviStandardBar: 'Novi Standard',
+			CityHcPvDrZejnilovic: 'Dr Zejnilović',
+			CityHcPvMedicalVranes: 'Medical Vraneš',
+			CityHcPvA3Medical: 'A3 Medical',
+			CityHcPvJustDental: 'Just Dental',
+			CityHcPvPavlinDental: 'Pavlin',
+			CityHcPvDrDebelja: 'Dr Debelja',
+			CityHcPvGroupLabel_OtherDental: 'Weitere Zahnkliniken',
+			CityHcPvBuntic: 'Buntić',
+			CityHcPvDrSimonovic: 'Dr Simonović',
+			CityHcPvDrBajagic: 'Dr Bajagić',
+			CityHcPvDrZejak: 'Dr Zejak',
+			CityHcPvGacina: 'Gaćina',
+			CityHcPvJovoticDent: 'Jovetić Dent',
+			CityHcPvCicmil: 'Cicmil',
 			CityHcPrivateCatalog_bar:
 				'Die vollständige Liste mit Preisen und Bewertungen finden Sie im Katalog:',
 			CityHcPrivateLink_bar: 'Privatkliniken in Bar',
@@ -819,21 +1132,47 @@ export default {
 			CityHcOverview1_budva:
 				"Budva, Karadağ'ın başlıca turizm şehridir; sağlık altyapısı hem yerel halka hem de sezonluk ziyaretçi akışına göre kurulmuştur. Temel devlet kurumu, acil yardım servisi ve sezonluk turist polikliniğinin (turistička ambulanta) bulunduğu Dom zdravlja Budva'dır. Şehrin kendi devlet hastanesi yoktur.",
 			CityHcOverview2_budva:
-				"Özel sektör iyi gelişmiştir: şehirde özel poliklinikler, laboratuvarlar ve diş klinikleri çalışır; birçoğunda İngilizce veya Rusça anlaşabilirsiniz. Yatarak tedavi ve ileri teşhis için Kotor'a veya Podgorica'ya gitmek gerekir.",
+				"Özel sektör oldukça gelişmiştir: genel poliklinikler, laboratuvarlar, birkaç diş kliniği, bir jinekoloji kliniği ve lazer göz cerrahisi sunan iki göz kliniği bulunur — birçoğunda İngilizce veya Rusça konuşulur.",
 			CityHcEmergency1_budva:
 				"Budva'daki acil servis (hitna pomoć) Dom zdravlja binasındadır ve gece gündüz çalışır. Sohbet gruplarındaki deneyimlere göre çocuklar da kabul edilir — çocuğunuzla doğrudan gidebilirsiniz.",
-			CityHcEmergency2_budva:
-				"Ciddi yaralanmalarda ve hastane yatışı gerektiren durumlarda hastalar Budva'dan Kotor'daki hastaneye (yaklaşık yarım saat) veya Podgorica'daki Karadağ Klinik Merkezi'ne sevk edilir. Sevk belgesini (uputnica) hitna pomoć doktoru verir.",
+			CityHcEmergency2a_budva:
+				"Ciddi yaralanmalarda ve hastane yatışı gerektiren durumlarda hastalar Budva'dan ",
+			CityHcEmergency2KotorLink_budva: "Kotor'daki hastaneye",
+			CityHcEmergency2b_budva: ' (yaklaşık yarım saat) veya ',
+			CityHcEmergency2KccgLink_budva: "Podgorica'daki Karadağ Klinik Merkezi'ne",
+			CityHcEmergency2c_budva:
+				' sevk edilir. Sevk belgesini (uputnica) hitna pomoć doktoru verir.',
 			CityHcState1_budva:
 				'Dom zdravlja Budva devlet birinci basamak merkezidir: aile hekimleri (izabrani doktor), pediatri, laboratuvar ve müdahale odaları. Sağlık kartı (zdravstvena knjižica) sahipleri için muayeneler ücretsiz veya sembolik ücretlidir.',
 			CityHcState2_budva:
-				'Yazın burada turist polikliniği çalışır — kartı olmayan ziyaretçiler için ücretli muayene. Dom zdravlja ayrıca mevsimlik grip aşısı ve zaman zaman HIV ile hepatit testi gibi ücretsiz kampanyalar düzenler.',
+				'Yazın burada turist polikliniği çalışır — kartı olmayan ziyaretçiler için ücretli muayene. Dom zdravlja ayrıca mevsimlik grip aşısı ve zaman zaman HIV ile hepatit testi gibi ücretsiz kampanyalar düzenler. Doktorlardan bazıları Rusça, bazıları da İngilizce konuşur.',
 			CityHcState3_budva:
-				"Budva sakinleri hastane tedavisini Kotor Genel Hastanesi'nde ve Podgorica'daki Klinik Merkez'de alır. Kartla planlı tetkikler için seçili doktorun sevki gerekir.",
+				"Planlı hastane yatışı ve uzman bakımı da aynı yolu izler — Kotor veya Podgorica — seçili doktorun sevkiyle. Hekim kadrosunun uzmanlıklarına bakılırsa, Kotor Genel Hastanesi çok bölümlü bir kurumdur: iç hastalıkları, genel cerrahi, kadın hastalıkları ve doğum, radyoloji, pediatri, üroloji ve birkaç başka alan.",
 			CityHcStateCatalog_budva: "Kurumun docta.me'deki sayfası — adres, yorumlar ve hizmetler:",
 			CityHcStateLink_budva: 'Dom Zdravlja Budva',
 			CityHcPrivate1_budva:
-				"Budva'da çok sayıda özel klinik ve laboratuvar vardır: genel polikliniklerden diş hekimliği ve göz kliniklerine kadar. Rusça sohbet grubunda en sık Moj Lab laboratuvarı ile Milmedika ve BonoMedica klinikleri anılır — hepsi kataloğumuzdadır.",
+				"Budva'da çok sayıda özel klinik ve laboratuvar vardır — genel polikliniklerden ve Moj Lab laboratuvar zincirinden diş hekimliği, jinekoloji ve lazer göz cerrahisi sunan göz kliniklerine kadar. Kataloğumuzdaki aşağı yukarı eksiksiz liste:",
+			CityHcPvGroupLabel_Polyclinic: 'Genel poliklinikler',
+			CityHcPvMilmedika: 'Milmedika Budva',
+			CityHcPvMojLab: 'Moj Lab Budva',
+			CityHcPvBonoMedica: 'BonoMedica',
+			CityHcPvMedicalCentar: 'Medical Centar Budva',
+			CityHcPvGroupLabel_Dental: 'Diş klinikleri',
+			CityHcPvDukley: 'Dukley Dental Clinic',
+			CityHcPvReDent: 'ReDent',
+			CityHcPvZecevic: 'Zečević Dental',
+			CityHcPvGroupLabel_Ophthalmology: 'Göz hastalıkları, lazer göz cerrahisi',
+			CityHcPvLaserFocus: 'LaserFocus',
+			CityHcPvSvjetlost: 'Svjetlost Eye Clinic',
+			CityHcPvGroupLabel_Gynecology: 'Jinekoloji',
+			CityHcPvGroupLabel_Cardiology: 'Kardiyoloji',
+			CityHcPvGroupLabel_Physiotherapy: 'Fizyoterapi',
+			CityHcPvGroupLabel_RussianDental:
+				'Rusça konuşan doktorlarla diş klinikleri',
+			CityHcPvGroupLabel_PolyclinicHospital: 'Poliklinikler ve hastaneler',
+			CityHcPvGroupLabel_SurgicalHospital: 'Cerrahi sunan özel hastaneler',
+			CityHcPvGroupLabel_AestheticSurgery: 'Plastik ve estetik cerrahi',
+			CityHcPvHumana: 'Humana reprodukcija',
 			CityHcPrivateCatalog_budva:
 				'Adresler, fiyatlar ve yorumlarla güncel liste katalogda:',
 			CityHcPrivateLink_budva: "Budva'daki özel klinikler",
@@ -868,7 +1207,16 @@ export default {
 			CityHcStateCatalog_podgorica: "KCCG'nin docta.me'deki sayfası — bölümler, yorumlar ve hizmetler:",
 			CityHcStateLink_podgorica: 'Klinički Centar Crne Gore',
 			CityHcPrivate1_podgorica:
-				"Podgorica'da özel tıp seçenekleri en geniştir: cerrahi ve MR yapılan özel hastaneler (sohbette en sık Codra Hospital ve Hipokrat poliklinikleri anılır), Moj Lab laboratuvarları, Milmedika, Poliklinika Filipović ve onlarcası.",
+				"Podgorica ülkedeki en geniş özel tıp seçeneğine sahiptir — örneğin Konzilijum'da MR ve geniş bir ameliyat yelpazesi var, Ars Medica ise büyük bir cerrahi ve estetik hastanedir. İşte profillerine göre başlıca kurumlar (tam liste — onlarca klinik — katalogda):",
+			CityHcPvKonzilijum: 'Konzilijum',
+			CityHcPvArsMedica: 'Ars Medica',
+			CityHcPvMedtim: 'Medtim',
+			CityHcPvCodraHospital: 'Codra Hospital',
+			CityHcPvAMedic: 'A Medic',
+			CityHcPvHipokratPg: 'Hipokrat',
+			CityHcPvMojLabPg: 'Moj Lab',
+			CityHcPvMilmedikaPg: 'Milmedika',
+			CityHcPvFilipovicPg: 'Poliklinika Filipović',
 			CityHcPrivateCatalog_podgorica:
 				'Fiyatlar ve yorumlarla tam liste katalogda:',
 			CityHcPrivateLink_podgorica: "Podgorica'daki özel klinikler",
@@ -889,21 +1237,34 @@ export default {
 			CityHcOverview1_kotor:
 				'Kotor, Boka Kotorska körfezinin tıp merkezidir: Tivat, Budva ve Herceg Novi dahil tüm körfez bölgesine hizmet veren Kotor Genel Hastanesi (Opšta bolnica Kotor) buradadır. Birinci basamak hizmeti, acil servisiyle Dom zdravlja Kotor verir.',
 			CityHcOverview2_kotor:
-				"Yakındaki Risan'da ortopedi, beyin cerrahisi ve nöroloji alanında uzmanlaşmış, ülkenin her yerinden hasta kabul eden devlet ihtisas hastanesi Vaso Ćuković çalışır. Özel sektör Budva veya Podgorica'ya göre mütevazıdır, ancak laboratuvarlar ve özel doktorlar vardır.",
+				"Yakında — Risan ve Dobrota'da — iki uzman devlet hastanesi bulunur: biri ortopedi, diğeri psikiyatri. Kotor'un kendisindeki özel sektör Budva veya Podgorica'ya göre daha küçüktür, ama bir şeyler var: bir laboratuvar, poliklinikler, kardiyoloji ve diş klinikleri.",
 			CityHcEmergency1_kotor:
 				"Acil durumda Dom zdravlja Kotor'daki hitna pomoć'a veya doğrudan Kotor hastanesinin acil kabulüne gidin: kıyı boyunca yaralanmalar, çocuk acilleri ve enfeksiyonlar buraya getirilir (hastanede çocuk ve enfeksiyon servisleri vardır).",
 			CityHcEmergency2_kotor:
 				'Dikkat: sağlık kartı ve sigortası olmayan yabancılar için hastane tedavisi fiyat listesine göre ücretlidir ve yatış faturaları yüklü olabilir. Poliçeniz varsa başvuru prosedürünü sigortacınızla önceden netleştirin; tedaviye başlamadan maliyet tahmini isteyebilirsiniz.',
 			CityHcState1_kotor:
-				'Kotor Genel Hastanesi çok branşlı bir hastanedir: cerrahi, pediatri, jinekoloji, enfeksiyon servisi, röntgen. Budva, Tivat ve Herceg Novi sağlık merkezleri hastaları buraya sevk eder.',
+				"Kotor Genel Hastanesi, tüm Kotor Körfezi'ne (Budva, Tivat, Herceg Novi) hizmet veren çok bölümlü bir kurumdur. Hekim kadrosuna bakılırsa, iç hastalıkları, genel cerrahi, kadın hastalıkları ve doğum, radyoloji, pediatri, üroloji ve enfeksiyon hastalıkları bölümleri ile birkaç dar uzmanlık alanı bulunur.",
 			CityHcState2_kotor:
 				'Dom zdravlja Kotor devlet birinci basamak merkezidir: seçili doktor, çocuk doktoru, laboratuvar. Sağlık kartıyla muayeneler ücretsizdir; listedeki ilaçların reçetesini seçili doktor yazar.',
-			CityHcState3_kotor:
-				"Körfez boyunca kısa bir sürüş mesafesindeki Risan'daki Vaso Ćuković ihtisas hastanesi, ortopedi, beyin cerrahisi ve nörolojide ulusal merkezdir. Kotor'da ayrıca devlet ihtisas psikiyatri hastanesi bulunur.",
+			CityHcState3a_kotor:
+				"Risan'daki (Kotor'dan körfez boyunca yaklaşık yarım saat) uzman ",
+			CityHcState3VasoLink_kotor: '"Vaso Ćuković" hastanesi',
+			CityHcState3b_kotor:
+				", ortopedi, nöroşirürji ve nöroloji için ülke çapında sevk merkezidir — hastalar yalnızca kıyıdan değil, ülkenin her yerinden buraya gönderilir. Kotor'un Dobrota semtinde ise uzman psikiyatri hastanesi ",
+			CityHcState3DobrotaLink_kotor: '"Dobrota"',
+			CityHcState3c_kotor:
+				" bulunur — Karadağ'daki tek uzman psikiyatri hastanesi (diğer şehirlerde yalnızca ayaktan psikiyatri hizmeti veya genel hastane bünyesinde bir bölüm bulunur).",
 			CityHcStateCatalog_kotor: "Hastanenin docta.me'deki sayfası — bölümler, yorumlar ve hizmetler:",
 			CityHcStateLink_kotor: 'Opšta bolnica Kotor',
 			CityHcPrivate1_kotor:
-				"Özel hizmetlerden sohbetlerde en sık Kotor'daki SmartMed laboratuvarı anılır; Radanovići'de (Kotor belediyesi) MR yapılan bir Hipokrat polikliniği çalışır. Daha geniş özel uzman seçeneği için Kotorlular genellikle Budva'ya veya Podgorica'ya gider.",
+				"Kotor'un kendisindeki özel sektör küçüktür: bir laboratuvar, birkaç poliklinik, bir kardiyoloji kliniği, diş klinikleri ve fizyoterapi. Daha geniş seçenek için Kotor sakinleri genellikle Budva'ya veya Podgorica'ya gider. Yerinde bulunanlar, kataloğumuza göre:",
+			CityHcPvSmartMed: 'SmartMed Kotor',
+			CityHcPvHipokratRadanovici: 'Hipokrat Radanovići',
+			CityHcPvInterCardio: 'Inter Cardio',
+			CityHcPvDentalStudioVucetic: 'Dental Studio Vučetić',
+			CityHcPvDrCetkovic: 'Dr Ćetković',
+			CityHcPvOrthoCentarKotor: 'Ortho Centar',
+			CityHcPvEndorfinRadanovici: 'Endorfin Radanovići',
 			CityHcPrivateCatalog_kotor:
 				'Şehrin kendisinde ne olduğunu katalogda görün:',
 			CityHcPrivateLink_kotor: "Kotor'daki özel klinikler",
@@ -932,13 +1293,28 @@ export default {
 			CityHcState1_bar:
 				'Blažo Orlandić Genel Hastanesi çok branşlıdır: cerrahi, jinekoloji ve doğumhane, pediatri, röntgen ve BT, fizik tedavi. Sağlık kartıyla tedavi ücretsizdir; diğerleri için fiyat listesine göre ücretlidir.',
 			CityHcState2_bar:
-				'Dom zdravlja Bar birinci basamaktır: seçili doktor, pediatri, laboratuvar, aşılama (bazı seyahat aşıları dahil).',
+				'Dom zdravlja Bar birinci basamaktır: seçili doktor, pediatri, laboratuvar, aşılama (bazı seyahat aşıları dahil). Bazı doktorlar Rusça veya İngilizce konuşur — randevu alırken sorun.',
 			CityHcState3_bar:
 				"Bar'da olmayan uzmanlık tetkikleri sevkle Podgorica'da yapılır — Klinik Merkez yaklaşık bir saat uzaklıktadır.",
 			CityHcStateCatalog_bar: "Hastanenin docta.me'deki sayfası — bölümler, yorumlar ve hizmetler:",
 			CityHcStateLink_bar: 'Opšta Bolnica "Blažo Orlandić"',
 			CityHcPrivate1_bar:
-				'Özel kurumlardan sohbetlerde en sık Novi Standard polikliniği, Dr Zejnilović gündüz hastanesi ve Medical Vraneš anılır; çok sayıda özel diş kliniği vardır. Sutomore\'deki özel A3 Medical hastanesi BT ve MR sunar.',
+				"Bar ve Sutomore'de birkaç büyük özel klinik ve laboratuvar var — örneğin Sutomore'deki A3 Medical BT ve MR çekimi yapıyor ve muayeneye ücretsiz tercüman (Rusça, İngilizce) sağlıyor. Bar'da özellikle çok sayıda diş kliniği var, bazıları Rusça konuşan doktorlarla; ayrıca KBB, üroloji ve jinekoloji var. Kataloğumuza göre aşağı yukarı eksiksiz liste:",
+			CityHcPvNoviStandardBar: 'Novi Standard',
+			CityHcPvDrZejnilovic: 'Dr Zejnilović',
+			CityHcPvMedicalVranes: 'Medical Vraneš',
+			CityHcPvA3Medical: 'A3 Medical',
+			CityHcPvJustDental: 'Just Dental',
+			CityHcPvPavlinDental: 'Pavlin',
+			CityHcPvDrDebelja: 'Dr Debelja',
+			CityHcPvGroupLabel_OtherDental: 'Diğer diş klinikleri',
+			CityHcPvBuntic: 'Buntić',
+			CityHcPvDrSimonovic: 'Dr Simonović',
+			CityHcPvDrBajagic: 'Dr Bajagić',
+			CityHcPvDrZejak: 'Dr Zejak',
+			CityHcPvGacina: 'Gaćina',
+			CityHcPvJovoticDent: 'Jovetić Dent',
+			CityHcPvCicmil: 'Cicmil',
 			CityHcPrivateCatalog_bar: 'Fiyatlar ve yorumlarla tam liste katalogda:',
 			CityHcPrivateLink_bar: "Bar'daki özel klinikler",
 			CityHcLabs_bar:

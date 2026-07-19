@@ -18,7 +18,8 @@ export type FilterNamespace =
 	| 'doctors'
 	| 'labtests'
 	| 'medicines'
-	| 'medications';
+	| 'medications'
+	| 'insurance-companies';
 
 interface FilterState {
 	specialtyIds: number[];
@@ -76,6 +77,7 @@ export const useFiltersStore = defineStore('filters', () => {
 		labtests: createInitialState(),
 		medicines: createInitialState(),
 		medications: createInitialState(),
+		'insurance-companies': createInitialState(),
 	});
 
 	const getRouteParams = (ns: FilterNamespace) => {

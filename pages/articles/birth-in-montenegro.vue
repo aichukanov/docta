@@ -22,6 +22,29 @@ const clinicsLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
+const getClinicLink = (slug: string) => ({
+	name: 'clinics-clinicSlug',
+	params: { clinicSlug: slug },
+	query: getRegionalQuery(locale.value),
+});
+
+const kccgLink = computed(() =>
+	getClinicLink('klinicki-centar-crne-gore-podgorica'),
+);
+const barHospitalLink = computed(() =>
+	getClinicLink('opsta-bolnica-blazo-orlandic'),
+);
+const kotorHospitalLink = computed(() => getClinicLink('opsta-bolnica-kotor'));
+const bijeloPoljeHospitalLink = computed(() =>
+	getClinicLink('opsta-bolnica-bijelo-polje'),
+);
+const cetinjeHospitalLink = computed(() =>
+	getClinicLink('bolnica-danilo-i-cetinje'),
+);
+const codraHospitalLink = computed(() =>
+	getClinicLink('codra-hospital-podgorica'),
+);
+
 const vaginalDeliveryLink = computed(() => ({
 	name: 'services-serviceSlug',
 	params: { serviceSlug: 'vaginal-delivery-anterior-occiput-presentation' },
@@ -31,6 +54,24 @@ const vaginalDeliveryLink = computed(() => ({
 const cesareanSectionLink = computed(() => ({
 	name: 'services-serviceSlug',
 	params: { serviceSlug: 'low-isthmic-cesarean-section-with-delivery' },
+	query: getRegionalQuery(locale.value),
+}));
+
+const amniocentesisLink = computed(() => ({
+	name: 'services-serviceSlug',
+	params: { serviceSlug: 'amniocentesis' },
+	query: getRegionalQuery(locale.value),
+}));
+
+const pappaLink = computed(() => ({
+	name: 'labtests-labTestSlug',
+	params: { labTestSlug: 'papp-a' },
+	query: getRegionalQuery(locale.value),
+}));
+
+const freeBetaHcgLink = computed(() => ({
+	name: 'labtests-labTestSlug',
+	params: { labTestSlug: 'free-beta-hcg' },
 	query: getRegionalQuery(locale.value),
 }));
 
@@ -91,7 +132,18 @@ const { breadcrumbItems } = useArticlePageSeo({
 		<ArticleSection id="section-prenatal" :title="t('BimToc_prenatal')">
 			<p>{{ t('BimPrenatal1') }}</p>
 			<p>{{ t('BimPrenatal2') }}</p>
-			<p>{{ t('BimPrenatal3') }}</p>
+			<p
+				>{{ t('BimPrenatal3a') }}<NuxtLink :to="pappaLink">{{
+					t('BimPrenatal3PappaLink')
+				}}</NuxtLink
+				>{{ t('BimPrenatal3b') }}<NuxtLink :to="freeBetaHcgLink">{{
+					t('BimPrenatal3FreeBetaHcgLink')
+				}}</NuxtLink
+				>{{ t('BimPrenatal3c') }}<NuxtLink :to="amniocentesisLink">{{
+					t('BimPrenatal3AmnioLink')
+				}}</NuxtLink
+				>{{ t('BimPrenatal3d') }}</p
+			>
 			<p>
 				{{ t('BimPrenatal4') }}
 				<NuxtLink :to="gynecologistsLink">{{ t('BimPrenatal4Link') }}</NuxtLink
@@ -102,12 +154,39 @@ const { breadcrumbItems } = useArticlePageSeo({
 		<ArticleSection id="section-where" :title="t('BimToc_where')">
 			<p>{{ t('BimWhere1') }}</p>
 			<ul>
-				<li>{{ t('BimWhereList1') }}</li>
-				<li>{{ t('BimWhereList2') }}</li>
+				<li
+					>{{ t('BimWhereList1Pre') }}<NuxtLink :to="kccgLink">{{
+						t('BimWhereList1KccgLink')
+					}}</NuxtLink
+					>{{ t('BimWhereList1a') }}</li
+				>
+				<li
+					>{{ t('BimWhereList2a') }}<NuxtLink :to="barHospitalLink">{{
+						t('BimWhereList2BarLink')
+					}}</NuxtLink
+					>{{ t('BimWhereList2b') }}<NuxtLink :to="kotorHospitalLink">{{
+						t('BimWhereList2KotorLink')
+					}}</NuxtLink
+					>{{ t('BimWhereList2c') }}<NuxtLink :to="bijeloPoljeHospitalLink">{{
+						t('BimWhereList2BijeloPoljeLink')
+					}}</NuxtLink
+					>{{ t('BimWhereList2d') }}<NuxtLink :to="cetinjeHospitalLink">{{
+						t('BimWhereList2CetinjeLink')
+					}}</NuxtLink
+					>{{ t('BimWhereList2e') }}</li
+				>
 				<li>{{ t('BimWhereList3') }}</li>
 			</ul>
 			<p>{{ t('BimWhere2') }}</p>
-			<p>{{ t('BimWhere3') }}</p>
+			<p
+				>{{ t('BimWhere3a') }}<NuxtLink :to="codraHospitalLink">{{
+					t('BimWhere3CodraLink')
+				}}</NuxtLink
+				>{{ t('BimWhere3b') }}<NuxtLink :to="kccgLink">{{
+					t('BimWhere3KccgLink')
+				}}</NuxtLink
+				>{{ t('BimWhere3c') }}</p
+			>
 			<p>
 				{{ t('BimWhere4') }}
 				<NuxtLink :to="clinicsLink">{{ t('BimWhere4Link') }}</NuxtLink
@@ -152,18 +231,29 @@ const { breadcrumbItems } = useArticlePageSeo({
 		<ArticleSection id="section-sources" :title="t('BimToc_sources')">
 			<p>{{ t('BimSources0') }}</p>
 			<ul>
-				<li>{{ t('BimSourcesKccg') }}</li>
-				<li>{{ t('BimSourcesFzo') }}</li>
+				<li>
+					<a
+						href="https://www.kccg.me/klinike-i-centri/klinika-za-ginekologiju-i-akuserstvo/"
+						target="_blank"
+						rel="noopener nofollow"
+						>{{ t('BimSourcesKccg') }}</a
+					>
+				</li>
+				<li>
+					<a
+						href="https://fzocg.me/osiguranici-i-osigurana-lica-fonda/"
+						target="_blank"
+						rel="noopener nofollow"
+						>{{ t('BimSourcesFzo') }}</a
+					>
+				</li>
 				<li>{{ t('BimSourcesMup') }}</li>
-				<li>{{ t('BimSourcesDz') }}</li>
+				<li>
+					<a href="https://dzpg.me/" target="_blank" rel="noopener nofollow">{{
+						t('BimSourcesDz')
+					}}</a>
+				</li>
 			</ul>
-			<p>
-				{{ t('BimSourcesCatalog') }}
-				<NuxtLink :to="gynecologistsLink">{{
-					t('BimSourcesCatalogLink')
-				}}</NuxtLink
-				>{{ t('BimSourcesCatalogEnd') }}
-			</p>
 		</ArticleSection>
 	</ArticlePage>
 </template>

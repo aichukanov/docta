@@ -35,6 +35,9 @@ const { t, locale } = useI18n({ useScope: 'local' });
 
 const router = useRouter();
 const route = useRoute();
+// Стор клиник питает только фолбэк-карту ниже — если страница подменяет
+// #side-map своей картой, он не нужен и грузить его незачем
+const hasSideMapSlot = !!useSlots()['side-map'];
 
 const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
 const { target: mapSentinel, hasBeenVisible: isMapVisible } = useInViewport();
@@ -133,7 +136,9 @@ const robotsMeta = computed(() => {
 	return undefined;
 });
 
-await clinicsStore.fetchClinics();
+if (!hasSideMapSlot) {
+	await clinicsStore.fetchClinics();
+}
 
 useSeoMeta({
 	title: props.pageTitle,
@@ -358,21 +363,23 @@ onMounted(async () => {
 			:aria-label="t('AriaMapSection')"
 		>
 			<slot v-if="view === 'map'" name="map-view" />
-			<ClinicServicesMap
-				v-else-if="isMapVisible"
-				ref="mapRef"
-				:services="clinicMode || mapClinics ? [] : list"
-				:clinics="mapClinics || clinicsStore.clinics"
-				:showAllClinics="clinicMode || !!mapClinics"
-				:autoFit="cityIds.length === 0"
-				:detailsRouteName="detailsRouteName"
-				:detailsParamName="detailsParamName"
-				@ready="onMapReady"
-			>
-				<template #map-clinic-popup="slotProps">
-					<slot name="map-clinic-popup" v-bind="slotProps" />
-				</template>
-			</ClinicServicesMap>
+			<slot v-else name="side-map">
+				<ClinicServicesMap
+					v-if="isMapVisible"
+					ref="mapRef"
+					:services="clinicMode || mapClinics ? [] : list"
+					:clinics="mapClinics || clinicsStore.clinics"
+					:showAllClinics="clinicMode || !!mapClinics"
+					:autoFit="cityIds.length === 0"
+					:detailsRouteName="detailsRouteName"
+					:detailsParamName="detailsParamName"
+					@ready="onMapReady"
+				>
+					<template #map-clinic-popup="slotProps">
+						<slot name="map-clinic-popup" v-bind="slotProps" />
+					</template>
+				</ClinicServicesMap>
+			</slot>
 		</aside>
 	</div>
 </template>

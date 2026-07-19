@@ -10,6 +10,7 @@ export default {
 			BreadcrumbAbout: 'About',
 			BreadcrumbArticles: 'Articles',
 			BreadcrumbReviews: 'Reviews',
+			BreadcrumbInsuranceCompanies: 'Insurance companies',
 		},
 		'ru': {
 			BreadcrumbHome: 'Главная',
@@ -21,6 +22,7 @@ export default {
 			BreadcrumbAbout: 'О проекте',
 			BreadcrumbArticles: 'Статьи',
 			BreadcrumbReviews: 'Отзывы',
+			BreadcrumbInsuranceCompanies: 'Страховые компании',
 		},
 		'sr': {
 			BreadcrumbHome: 'Početna',
@@ -32,6 +34,7 @@ export default {
 			BreadcrumbAbout: 'O projektu',
 			BreadcrumbArticles: 'Članci',
 			BreadcrumbReviews: 'Recenzije',
+			BreadcrumbInsuranceCompanies: 'Osiguravajuća društva',
 		},
 		'de': {
 			BreadcrumbHome: 'Startseite',
@@ -43,6 +46,7 @@ export default {
 			BreadcrumbAbout: 'Über',
 			BreadcrumbArticles: 'Artikel',
 			BreadcrumbReviews: 'Bewertungen',
+			BreadcrumbInsuranceCompanies: 'Versicherungsgesellschaften',
 		},
 		'tr': {
 			BreadcrumbHome: 'Ana sayfa',
@@ -54,6 +58,7 @@ export default {
 			BreadcrumbAbout: 'Hakkında',
 			BreadcrumbArticles: 'Makaleler',
 			BreadcrumbReviews: 'Değerlendirmeler',
+			BreadcrumbInsuranceCompanies: 'Sigorta şirketleri',
 		},
 		'sr-cyrl': {
 			BreadcrumbHome: 'Почетна',
@@ -65,6 +70,7 @@ export default {
 			BreadcrumbAbout: 'О пројекту',
 			BreadcrumbArticles: 'Чланци',
 			BreadcrumbReviews: 'Рецензије',
+			BreadcrumbInsuranceCompanies: 'Осигуравајућа друштва',
 		},
 	},
 };

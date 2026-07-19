@@ -37,7 +37,12 @@ const ALLOWED_MIME_TYPES = [
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
 
-export const VALID_CATEGORIES = ['avatars', 'doctors', 'clinics'] as const;
+export const VALID_CATEGORIES = [
+	'avatars',
+	'doctors',
+	'clinics',
+	'insurance-companies',
+] as const;
 
 export type ImageCategory = (typeof VALID_CATEGORIES)[number];
 

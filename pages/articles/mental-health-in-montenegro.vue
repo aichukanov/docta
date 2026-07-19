@@ -27,10 +27,18 @@ const doctorsLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
-const clinicsLink = computed(() => ({
-	name: 'clinics',
+const getClinicLink = (slug: string) => ({
+	name: 'clinics-clinicSlug',
+	params: { clinicSlug: slug },
 	query: getRegionalQuery(locale.value),
-}));
+});
+
+const dobrotaHospitalLink = computed(() =>
+	getClinicLink('specijalna-bolnica-za-psihijatriju-dobrota-kotor'),
+);
+const kccgLink = computed(() =>
+	getClinicLink('klinicki-centar-crne-gore-podgorica'),
+);
 
 const medicationsLink = computed(() => ({
 	name: 'medications',
@@ -40,6 +48,18 @@ const medicationsLink = computed(() => ({
 const healthcareArticleLink = computed(() => ({
 	path: '/articles/healthcare-system-in-montenegro',
 	query: getRegionalQuery(locale.value),
+}));
+
+const AA_BUDVA_URL = 'https://aabelarus.org/groups/groups-ru/chernogoria-aa/';
+const NARDOS_URL = 'https://nardoscg.me/';
+
+const SERTRALINE_SUBSTANCE_ID = 738;
+const sertralineLink = computed(() => ({
+	name: 'medicines',
+	query: {
+		substanceIds: SERTRALINE_SUBSTANCE_ID,
+		...getRegionalQuery(locale.value),
+	},
 }));
 
 // Секции статьи: id → ключи заголовков для TOC и разметки
@@ -92,7 +112,12 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<ul>
 				<li>{{ t('MhmSystemLevel1') }}</li>
 				<li>{{ t('MhmSystemLevel2') }}</li>
-				<li>{{ t('MhmSystemLevel3') }}</li>
+				<li
+					>{{ t('MhmSystemLevel3a') }}<NuxtLink :to="dobrotaHospitalLink">{{
+						t('MhmSystemLevel3DobrotaLink')
+					}}</NuxtLink
+					>{{ t('MhmSystemLevel3b') }}</li
+				>
 			</ul>
 			<p>{{ t('MhmSystem2') }}</p>
 			<p>
@@ -108,11 +133,22 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t('MhmTherapy1') }}</p>
 			<p>{{ t('MhmTherapy2') }}</p>
 			<p>{{ t('MhmTherapy3') }}</p>
+			<p
+				>{{ t('MhmTherapy3Groups') }}<a
+					:href="AA_BUDVA_URL"
+					target="_blank"
+					rel="noopener nofollow"
+					>{{ t('MhmTherapy3GroupsAaLink') }}</a
+				>{{ t('MhmTherapy3GroupsMid') }}<a
+					:href="NARDOS_URL"
+					target="_blank"
+					rel="noopener nofollow"
+					>{{ t('MhmTherapy3GroupsNardosLink') }}</a
+				>{{ t('MhmTherapy3GroupsEnd') }}</p
+			>
 			<p>
 				{{ t('MhmTherapy4') }}
 				<NuxtLink :to="doctorsLink">{{ t('MhmTherapy4Link') }}</NuxtLink
-				>{{ t('MhmTherapy4Mid') }}
-				<NuxtLink :to="clinicsLink">{{ t('MhmTherapy4ClinicsLink') }}</NuxtLink
 				>{{ t('MhmTherapy4End') }}
 			</p>
 		</ArticleSection>
@@ -123,7 +159,12 @@ const { breadcrumbItems } = useArticlePageSeo({
 		>
 			<p>{{ t('MhmRx1') }}</p>
 			<p>{{ t('MhmRx2') }}</p>
-			<p>{{ t('MhmRx3') }}</p>
+			<p
+				>{{ t('MhmRx3a') }}<NuxtLink :to="sertralineLink">{{
+					t('MhmRx3SertralineLink')
+				}}</NuxtLink
+				>{{ t('MhmRx3b') }}</p
+			>
 			<p>{{ t('MhmRx4') }}</p>
 			<p>
 				{{ t('MhmRx5') }}
@@ -148,22 +189,18 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t('MhmSources0') }}</p>
 			<ul>
 				<li>{{ t('MhmSourcesPhones') }}</li>
-				<li>
-					<a
-						href="https://psihijatrijakotor.com/"
-						target="_blank"
-						rel="noopener nofollow"
-						>{{ t('MhmSourcesDobrota') }}</a
-					>
-				</li>
-				<li>
-					<a
-						href="https://www.kccg.me/klinike-i-centri/klinika-za-psihijatriju/"
-						target="_blank"
-						rel="noopener nofollow"
-						>{{ t('MhmSourcesKccg') }}</a
-					>
-				</li>
+				<li
+					><NuxtLink :to="dobrotaHospitalLink">{{
+						t('MhmSourcesDobrotaLink')
+					}}</NuxtLink
+					>{{ t('MhmSourcesDobrotaEnd') }}</li
+				>
+				<li
+					><NuxtLink :to="kccgLink">{{
+						t('MhmSourcesKccgLink')
+					}}</NuxtLink
+					>{{ t('MhmSourcesKccgEnd') }}</li
+				>
 				<li>
 					<a
 						href="https://fzocg.me"
@@ -181,13 +218,6 @@ const { breadcrumbItems } = useArticlePageSeo({
 					>
 				</li>
 			</ul>
-			<p>
-				{{ t('MhmSourcesCatalog') }}
-				<NuxtLink :to="psychiatristsLink">{{
-					t('MhmSourcesCatalogLink')
-				}}</NuxtLink
-				>{{ t('MhmSourcesCatalogEnd') }}
-			</p>
 		</ArticleSection>
 	</ArticlePage>
 </template>

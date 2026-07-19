@@ -107,6 +107,31 @@ export interface MedicalOrganizationSchema extends SchemaOrgBase {
 	'availableLanguage'?: string[];
 }
 
+/**
+ * A single branch/office of an InsuranceAgency — schema.org's supported way
+ * to attach multiple physical locations to one Organization (`location`).
+ */
+export interface InsuranceAgencyLocationSchema {
+	'@type': 'InsuranceAgency';
+	'name'?: string;
+	'address'?: PostalAddressSchema;
+	'geo'?: GeoCoordinatesSchema;
+	'telephone'?: string;
+}
+
+export interface InsuranceAgencySchema extends SchemaOrgBase {
+	'@type': 'InsuranceAgency';
+	'name': string;
+	'image'?: string;
+	'logo'?: string;
+	'description'?: string;
+	'telephone'?: string;
+	'email'?: string;
+	'url'?: string;
+	'sameAs'?: string[];
+	'location'?: InsuranceAgencyLocationSchema[];
+}
+
 export interface MedicalTestSchema extends SchemaOrgBase {
 	'@type': 'MedicalTest';
 	'name': string;
@@ -213,6 +238,7 @@ export type SchemaOrg =
 	| WebSiteSchema
 	| PhysicianSchema
 	| MedicalOrganizationSchema
+	| InsuranceAgencySchema
 	| MedicalTestSchema
 	| DrugSchema
 	| MedicalProcedureSchema

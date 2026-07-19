@@ -22,11 +22,6 @@ const clinicsLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
-const doctorsLink = computed(() => ({
-	name: 'doctors',
-	query: getRegionalQuery(locale.value),
-}));
-
 const servicesLink = computed(() => ({
 	name: 'services',
 	query: getRegionalQuery(locale.value),
@@ -36,6 +31,51 @@ const labtestsLink = computed(() => ({
 	name: 'labtests',
 	query: getRegionalQuery(locale.value),
 }));
+
+const getClinicLink = (slug: string) => ({
+	name: 'clinics-clinicSlug',
+	params: { clinicSlug: slug },
+	query: getRegionalQuery(locale.value),
+});
+
+const kccgLink = computed(() =>
+	getClinicLink('klinicki-centar-crne-gore-podgorica'),
+);
+const kotorHospitalLink = computed(() => getClinicLink('opsta-bolnica-kotor'));
+const barHospitalLink = computed(() =>
+	getClinicLink('opsta-bolnica-blazo-orlandic'),
+);
+const risanHospitalLink = computed(() =>
+	getClinicLink(
+		'specijalna-bolnica-za-ortopediju-neurohirurgiju-i-neurologiju-vaso-cukovic-risan',
+	),
+);
+const cetinjeHospitalLink = computed(() =>
+	getClinicLink('bolnica-danilo-i-cetinje'),
+);
+const bijeloPoljeHospitalLink = computed(() =>
+	getClinicLink('opsta-bolnica-bijelo-polje'),
+);
+const dobrotaHospitalLink = computed(() =>
+	getClinicLink('specijalna-bolnica-za-psihijatriju-dobrota-kotor'),
+);
+
+const SL_LIST_URL =
+	'https://fzocg.me/wp-content/uploads/2025/10/Zakon-o-obaveznom-zdravstvenom-osiguranju-2024.pdf';
+
+// Ссылки на страховые ведут на внутренние страницы каталога
+// (pages/insurance-companies/[companySlug]) вместо внешних сайтов страховых.
+const insuranceCompanyLink = (slug: string) => ({
+	name: 'insurance-companies-companySlug',
+	params: { companySlug: slug },
+	query: getRegionalQuery(locale.value),
+});
+
+const savaLink = computed(() => insuranceCompanyLink('sava'));
+const lovcenLink = computed(() => insuranceCompanyLink('lovcen'));
+const uniqaLink = computed(() => insuranceCompanyLink('uniqa'));
+const generaliLink = computed(() => insuranceCompanyLink('generali'));
+const graweLink = computed(() => insuranceCompanyLink('grawe'));
 
 const medicationsLink = computed(() => ({
 	name: 'medications',
@@ -92,23 +132,85 @@ const { breadcrumbItems } = useArticlePageSeo({
 		<ArticleSection id="section-emergency" :title="t('HcsToc_emergency')">
 			<p>{{ t('HcsEmergency1') }}</p>
 			<p>{{ t('HcsEmergency2') }}</p>
-			<p>{{ t('HcsEmergency3') }}</p>
+			<p>
+				{{ t('HcsEmergency3a') }}
+				<NuxtLink :to="kccgLink">{{ t('HcsEmergency3KccgLink') }}</NuxtLink
+				>{{ t('HcsEmergency3b') }}
+				<NuxtLink :to="kotorHospitalLink">{{
+					t('HcsEmergency3KotorLink')
+				}}</NuxtLink
+				>{{ t('HcsEmergency3c') }}
+				<NuxtLink :to="barHospitalLink">{{
+					t('HcsEmergency3BarLink')
+				}}</NuxtLink
+				>{{ t('HcsEmergency3d') }}
+				<NuxtLink :to="risanHospitalLink">{{
+					t('HcsEmergency3RisanLink')
+				}}</NuxtLink
+				>{{ t('HcsEmergency3e') }}
+			</p>
 			<p>{{ t('HcsEmergency4') }}</p>
 		</ArticleSection>
 
 		<ArticleSection id="section-state-system" :title="t('HcsToc_state-system')">
-			<p>{{ t('HcsState1') }}</p>
+			<p
+				>{{ t('HcsState1a') }}<NuxtLink :to="risanHospitalLink">{{
+					t('HcsState1RisanLink')
+				}}</NuxtLink
+				>{{ t('HcsState1b') }}<NuxtLink :to="dobrotaHospitalLink">{{
+					t('HcsState1DobrotaLink')
+				}}</NuxtLink
+				>{{ t('HcsState1c') }}</p
+			>
 			<ul>
 				<li>{{ t('HcsStateLevel1') }}</li>
-				<li>{{ t('HcsStateLevel2') }}</li>
-				<li>{{ t('HcsStateLevel3') }}</li>
+				<li>
+					{{ t('HcsStateLevel2a') }}
+					<NuxtLink :to="barHospitalLink">{{
+						t('HcsStateLevel2BarLink')
+					}}</NuxtLink
+					>{{ t('HcsStateLevel2b') }}
+					<NuxtLink :to="kotorHospitalLink">{{
+						t('HcsStateLevel2KotorLink')
+					}}</NuxtLink
+					>{{ t('HcsStateLevel2c') }}
+					<NuxtLink :to="bijeloPoljeHospitalLink">{{
+						t('HcsStateLevel2BijeloPoljeLink')
+					}}</NuxtLink
+					>{{ t('HcsStateLevel2d') }}
+					<NuxtLink :to="cetinjeHospitalLink">{{
+						t('HcsStateLevel2CetinjeLink')
+					}}</NuxtLink
+					>{{ t('HcsStateLevel2e') }}
+				</li>
+				<li
+					>{{ t('HcsStateLevel3Pre') }}<NuxtLink :to="kccgLink">{{
+						t('HcsStateLevel3KccgLink')
+					}}</NuxtLink
+					>{{ t('HcsStateLevel3a') }}</li
+				>
 			</ul>
 			<p>{{ t('HcsState2') }}</p>
-			<p>{{ t('HcsState3') }}</p>
+			<p>
+				{{ t('HcsState3a') }}
+				<a
+					href="https://www.ezdravlje.me"
+					target="_blank"
+					rel="noopener nofollow"
+					>{{ t('HcsState3EzdravljeLink') }}</a
+				>{{ t('HcsState3b') }}
+			</p>
 		</ArticleSection>
 
 		<ArticleSection id="section-knjizica" :title="t('HcsToc_knjizica')">
-			<p>{{ t('HcsKnjizica1') }}</p>
+			<p
+				>{{ t('HcsKnjizica1a') }}<a
+					:href="SL_LIST_URL"
+					target="_blank"
+					rel="noopener nofollow"
+					>{{ t('HcsKnjizica1SlListLink') }}</a
+				>{{ t('HcsKnjizica1b') }}</p
+			>
 			<p>{{ t('HcsKnjizica2') }}</p>
 			<p>{{ t('HcsKnjizica3') }}</p>
 			<p>{{ t('HcsKnjizica4') }}</p>
@@ -140,7 +242,29 @@ const { breadcrumbItems } = useArticlePageSeo({
 		</ArticleSection>
 
 		<ArticleSection id="section-insurance" :title="t('HcsToc_insurance')">
-			<p>{{ t('HcsInsurance1') }}</p>
+			<p>
+				{{ t('HcsInsurance1a') }}
+				<NuxtLink :to="savaLink">{{
+					t('HcsInsurance1SavaLink')
+				}}</NuxtLink
+				>{{ t('HcsInsurance1b') }}
+				<NuxtLink :to="lovcenLink">{{
+					t('HcsInsurance1LovcenLink')
+				}}</NuxtLink
+				>{{ t('HcsInsurance1c') }}
+				<NuxtLink :to="uniqaLink">{{
+					t('HcsInsurance1UniqaLink')
+				}}</NuxtLink
+				>{{ t('HcsInsurance1d') }}
+				<NuxtLink :to="generaliLink">{{
+					t('HcsInsurance1GeneraliLink')
+				}}</NuxtLink
+				>{{ t('HcsInsurance1e') }}
+				<NuxtLink :to="graweLink">{{
+					t('HcsInsurance1GraweLink')
+				}}</NuxtLink
+				>{{ t('HcsInsurance1f') }}
+			</p>
 			<p>{{ t('HcsInsurance2') }}</p>
 		</ArticleSection>
 
@@ -190,13 +314,6 @@ const { breadcrumbItems } = useArticlePageSeo({
 					>
 				</li>
 			</ul>
-			<p>
-				{{ t('HcsSourcesCatalog') }}
-				<NuxtLink :to="doctorsLink">{{
-					t('HcsSourcesCatalogLink')
-				}}</NuxtLink
-				>{{ t('HcsSourcesCatalogEnd') }}
-			</p>
 		</ArticleSection>
 	</ArticlePage>
 </template>

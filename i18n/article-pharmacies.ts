@@ -25,7 +25,10 @@ export default {
 			PhaPharmacies3:
 				'Typical opening hours are roughly 7–8 a.m. to 9–10 p.m., and many pharmacies close on Sundays. Big towns have round-the-clock spots: Podgorica has three — Montefarm “Kruševac” (Bulevar Svetog Petra Cetinjskog 45/a), BENU on Moskovska 22, and Holos 7 on Bulevar Oktobarske Revolucije 31; in Budva it’s the BENU opposite the bus station; in Nikšić, Montefarm “Gojko Darić” on Radoja Dakića bb. For public holidays Montefarm publishes a list of on-duty pharmacies for every municipality.',
 			PhaPharmacies4:
-				'The prescription/OTC line is drawn differently than you may be used to. Antibiotic tablets, sleeping pills, antidepressants and most “serious” drugs are strictly prescription-only — no amount of persuasion helps. On the other hand, painkillers (ibuprofen — sold here mostly as Brufen — and paracetamol), many ointments and drops, and even, according to expat forums, adrenaline ampoules are sold freely. Adrenaline is a potent emergency drug, though: it is not something to self-administer without medical training or a doctor-confirmed reason (such as a diagnosed severe allergy) — if you might need it, get it prescribed and get shown how to use it first. Pharmacists are usually happy to help you find an analog, and on the coast many speak English.',
+				'The prescription/OTC line is drawn differently than you may be used to. Antibiotic tablets, sleeping pills, antidepressants and most “serious” drugs are strictly prescription-only — no amount of persuasion helps. On the other hand, painkillers (ibuprofen — sold here mostly as Brufen — and paracetamol), many ointments and drops, and even, according to expat forums, ',
+			PhaPharmacies4Link: 'adrenaline ampoules',
+			PhaPharmacies4End:
+				' are sold freely. Adrenaline is a potent emergency drug, though: it is not something to self-administer without medical training or a doctor-confirmed reason (such as a diagnosed severe allergy) — if you might need it, get it prescribed and get shown how to use it first. Pharmacists are usually happy to help you find an analog, and on the coast many speak English.',
 
 			PhaPrescriptions1:
 				'The main rule: foreign prescriptions are not valid in Montenegrin pharmacies — neither Russian, nor EU, nor any other. The stories in expat chats repeat year after year: with a home-country prescription in hand you will not be sold the drug; at best you will be advised to show it to a local doctor. The prescription must be Montenegrin.',
@@ -38,25 +41,31 @@ export default {
 
 			PhaFond1:
 				'For those insured with FZOCG there is a “positive list” of medications (lista ljekova): the basic list — over a thousand drugs that the Fund covers in full — and the supplementary list of about 90 more, where the patient pays the price difference. One prescription covers one drug for at most 30 days of treatment.',
-			PhaFond2:
-				'In practice this means nearly free therapy for chronic conditions. A telling story from an expat chat: a local psychiatrist’s prescription for sertraline (Zoloft), a state pharmacy — and “we paid 30 cents for 2 packs”. Chronic patients can also use the eNaručivanje service to order repeat therapy electronically, without visiting the doctor each time.',
+			PhaFond2a:
+				'In practice this means nearly free therapy for chronic conditions. A telling story from an expat chat: a local psychiatrist’s prescription for ',
+			PhaFond2SertralineLink: 'sertraline (Zoloft)',
+			PhaFond2b:
+				', a state pharmacy — and “we paid 30 cents for 2 packs”. Chronic patients can also use the eNaručivanje service to order repeat therapy electronically, without visiting the doctor each time.',
 			PhaFond3:
 				'All of this is available only with a zdravstvena knjižica — who is entitled to one and how to get it is covered in detail in our article',
 			PhaFond3Link: 'about the Montenegrin healthcare system',
 			PhaFond3End: '.',
 
-			PhaAnalogs1:
-				'Familiar brand names are rarely found in Montenegro, but the active substances are the same: the market is supplied by Balkan and European manufacturers (Hemofarm, Krka, Alkaloid, Galenika and others). So search for a drug by its international nonproprietary name (INN) written in Latin script, not by brand: not “Nurofen” but ibuprofen (the local equivalent is Brufen), not “Euthyrox” but levothyroxine. Given the active substance, a pharmacist will find the local analog.',
+			PhaAnalogs1a:
+				'Familiar brand names are rarely found in Montenegro, but the active substances are the same: the market is supplied by Balkan and European manufacturers (Hemofarm, Krka, Alkaloid, Galenika and others). So search for a drug by its international nonproprietary name (INN) written in Latin script, not by brand: not “Nurofen” but ',
+			PhaAnalogs1IbuprofenLink: 'ibuprofen',
+			PhaAnalogs1b: ' (the local equivalent is Brufen), not “Euthyrox” but ',
+			PhaAnalogs1LevothyroxineLink: 'levothyroxine',
+			PhaAnalogs1c:
+				'. Given the active substance, a pharmacist will find the local analog.',
 			PhaAnalogs2:
 				'You can check whether a drug is registered in Montenegro and whether it is sold over the counter in our',
 			PhaAnalogs2Link: 'register of approved medicines',
-			PhaAnalogs2Mid: ', and availability and prices — in the',
-			PhaAnalogs2Link2: 'medications catalog',
 			PhaAnalogs2End: '.',
 			PhaAnalogs3:
-				'Not everything can be found: the market is small, some drugs are simply not registered in Montenegro — a pharmacy will not sell them even with a prescription — and registered ones occasionally disappear from stock. In such cases pharmacies can order medications from Serbia or Bosnia — ask on the spot. Avoid buying prescription drugs “second-hand” via chat groups: legality and safety aside, prepayment scammers do appear there.',
+				'Not everything can be found: the market is small, some drugs are simply not registered in Montenegro — a pharmacy will not sell them even with a prescription — and registered ones occasionally disappear from stock. In such cases pharmacies can order medications from Serbia or Bosnia — ask on the spot. Avoid buying prescription drugs “second-hand” via chat groups: legality and safety aside, prepayment scammers do appear there. Two examples worth knowing: cyclosporine (sold abroad as Ikervis or Restasis eye drops) has no local analog — only plain lubricating eye drops are available; valacyclovir and famciclovir aren’t registered either, only acyclovir is, and only as tablets or a skin cream — there is no eye ointment form.',
 			PhaAnalogs4:
-				'If you are relocating and take something regularly, it is reasonable to bring a supply for the first months — in personal-use quantities and original packaging — plus a recent doctor’s report with the INN and dosages: it makes getting a local prescription much easier. For strong painkillers and psychotropic drugs, check the customs rules of Montenegro and your transit country in advance — proof of prescription is normally required. And do not plan on permanently importing your therapy: it is more reliable to switch to local analogs with a doctor within the first weeks.',
+				'If you are relocating and take something regularly, it is reasonable to bring a supply for the first months — in personal-use quantities and original packaging — plus a recent doctor’s report with the INN and dosages: it makes getting a local prescription much easier. For strong painkillers and psychotropic drugs, check the customs rules of Montenegro and your transit country in advance — proof of prescription is normally required. Some people just keep bringing their medication from home indefinitely, and that works too — but if you would rather not depend on trips back, switching to a local analog with a doctor in the first few weeks is the more resilient option.',
 
 			PhaSources0:
 				'The information is current as of July 2026. Assortments, lists and rules change — verify with the primary sources:',
@@ -68,8 +77,11 @@ export default {
 				'eZdravlje portal — eRecept (your prescriptions) and eApoteka (drug availability in Fund pharmacies): ezdravlje.me;',
 			PhaSourcesCinmed:
 				'CInMED — the Institute for Medicines and Medical Devices of Montenegro, the official register of approved drugs: cinmed.me;',
-			PhaSourcesBenu:
-				'Private chains — Benu (benu.me) and Tea Medica: pharmacies across the country.',
+			PhaSourcesBenu: 'Private chains — ',
+			PhaSourcesBenuLink: 'Benu',
+			PhaSourcesBenuMid: ' and ',
+			PhaSourcesTeaMedicaLink: 'Tea Medica',
+			PhaSourcesBenuEnd: ': pharmacies across the country.',
 			PhaSourcesCatalog:
 				'Need a doctor who will sort out your therapy and issue a prescription? Our catalog shows the languages each doctor speaks —',
 			PhaSourcesCatalogLink: 'find a doctor who speaks your language',
@@ -77,7 +89,7 @@ export default {
 
 			PhaCtaTitle: 'Looking for a specific medication?',
 			PhaCtaText:
-				'Check the availability and prices of specific drugs in Montenegro in our catalog.',
+				'Check whether it is registered in Montenegro and how it is dispensed in our catalog.',
 			PhaCtaButton: 'Medications catalog',
 		},
 		'ru': {
@@ -99,7 +111,10 @@ export default {
 			PhaPharmacies3:
 				'Обычный график работы — примерно с 7–8 утра до 21–22 часов, по воскресеньям многие закрыты. В крупных городах есть круглосуточные точки: в Подгорице их три — Montefarm «Kruševac» (бульвар Св. Петра Цетинского, 45/а), BENU на Московской, 22, и Holos 7 на бульваре Октябрьской революции, 31; в Будве — Benu напротив автовокзала; в Никшиче — Montefarm «Gojko Darić» на Radoja Dakića bb. На праздники Montefarm публикует список дежурных аптек по каждому муниципалитету.',
 			PhaPharmacies4:
-				'Граница «рецептурное/безрецептурное» проходит не так, как вы, возможно, привыкли. Таблетированные антибиотики, снотворные, антидепрессанты и большинство «серьёзных» препаратов — строго по рецепту, уговорить фармацевта не выйдет. Зато обезболивающие (ибупрофен — здесь это чаще Brufen — и парацетамол), многие мази, капли и даже, по опыту форумов, ампулы адреналина продаются свободно. Адреналин — сильнодействующий экстренный препарат: колоть его самостоятельно без медицинской подготовки или подтверждённого врачом показания (например, диагностированной тяжёлой аллергии) не стоит — если он может понадобиться, получите рецепт и инструктаж у врача заранее. Фармацевты обычно охотно помогают подобрать аналог; на побережье многие говорят по-английски.',
+				'Граница «рецептурное/безрецептурное» проходит не так, как вы, возможно, привыкли. Таблетированные антибиотики, снотворные, антидепрессанты и большинство «серьёзных» препаратов — строго по рецепту, уговорить фармацевта не выйдет. Зато обезболивающие (ибупрофен — здесь это чаще Brufen — и парацетамол), многие мази, капли и даже, по опыту форумов, ',
+			PhaPharmacies4Link: 'ампулы адреналина',
+			PhaPharmacies4End:
+				' продаются свободно. Адреналин — сильнодействующий экстренный препарат: колоть его самостоятельно без медицинской подготовки или подтверждённого врачом показания (например, диагностированной тяжёлой аллергии) не стоит — если он может понадобиться, получите рецепт и инструктаж у врача заранее. Фармацевты обычно охотно помогают подобрать аналог; на побережье многие говорят по-английски.',
 
 			PhaPrescriptions1:
 				'Главное правило: иностранные рецепты в черногорских аптеках не действуют — ни российские, ни европейские, никакие. Истории в чатах повторяются из года в год: с домашним рецептом на руках препарат не продадут, максимум посоветуют показать его местному врачу. Рецепт должен быть черногорским.',
@@ -112,25 +127,30 @@ export default {
 
 			PhaFond1:
 				'Для застрахованных в FZOCG действует «позитивный список» лекарств (lista ljekova): основной список (osnovna lista) — больше тысячи препаратов, которые Фонд оплачивает полностью, и доплатный (doplatna) — ещё около 90, где пациент доплачивает разницу в цене. По одному рецепту выдают один препарат максимум на 30 дней лечения.',
-			PhaFond2:
-				'На практике это означает почти бесплатную терапию хронических заболеваний. Показательная история из чата: рецепт на сертралин (Золофт) от местного психиатра, государственная аптека — и «за 2 пачки отдали 30 центов». Хроническим пациентам доступен сервис eNaručivanje — повторную терапию можно заказать электронно, не приходя к врачу каждый раз.',
+			PhaFond2a:
+				'На практике это означает почти бесплатную терапию хронических заболеваний. Показательная история из чата: рецепт на ',
+			PhaFond2SertralineLink: 'сертралин (Золофт)',
+			PhaFond2b:
+				' от местного психиатра, государственная аптека — и «за 2 пачки отдали 30 центов». Хроническим пациентам доступен сервис eNaručivanje — повторную терапию можно заказать электронно, не приходя к врачу каждый раз.',
 			PhaFond3:
 				'Всё это доступно только со здравственной книжицей — кому она положена и как её оформить, подробно разбираем в статье',
 			PhaFond3Link: 'о системе здравоохранения Черногории',
 			PhaFond3End: '.',
 
-			PhaAnalogs1:
-				'Привычные торговые названия в Черногории почти не встречаются, но действующие вещества те же: рынок наполняют балканские и европейские производители (Hemofarm, Krka, Alkaloid, Galenika и другие). Поэтому ищите препарат не по бренду, а по международному непатентованному наименованию (МНН), записанному латиницей: не «Нурофен», а ibuprofen (местный аналог — Brufen), не «Эутирокс», а levotiroksin. По действующему веществу фармацевт подберёт местный аналог.',
+			PhaAnalogs1a:
+				'Привычные торговые названия в Черногории почти не встречаются, но действующие вещества те же: рынок наполняют балканские и европейские производители (Hemofarm, Krka, Alkaloid, Galenika и другие). Поэтому ищите препарат не по бренду, а по международному непатентованному наименованию (МНН), записанному латиницей: не «Нурофен», а ',
+			PhaAnalogs1IbuprofenLink: 'ibuprofen',
+			PhaAnalogs1b: ' (местный аналог — Brufen), не «Эутирокс», а ',
+			PhaAnalogs1LevothyroxineLink: 'levotiroksin',
+			PhaAnalogs1c: '. По действующему веществу фармацевт подберёт местный аналог.',
 			PhaAnalogs2:
 				'Проверить, зарегистрирован ли препарат в Черногории и продаётся ли он без рецепта, можно в нашем',
 			PhaAnalogs2Link: 'реестре лекарств',
-			PhaAnalogs2Mid: ', а наличие и цены — в',
-			PhaAnalogs2Link2: 'каталоге лекарств',
 			PhaAnalogs2End: '.',
 			PhaAnalogs3:
-				'Находится не всё: рынок маленький, отдельные препараты в Черногории просто не зарегистрированы — аптека не продаст их даже по рецепту, — а зарегистрированные периодически пропадают из наличия. В таких случаях аптеки привозят лекарства под заказ из Сербии или Боснии — спросите на месте. Покупать рецептурные препараты «с рук» через чаты не стоит: помимо законности и безопасности, там встречаются мошенники, исчезающие после предоплаты.',
+				'Находится не всё: рынок маленький, отдельные препараты в Черногории просто не зарегистрированы — аптека не продаст их даже по рецепту, — а зарегистрированные периодически пропадают из наличия. В таких случаях аптеки привозят лекарства под заказ из Сербии или Боснии — спросите на месте. Покупать рецептурные препараты «с рук» через чаты не стоит: помимо законности и безопасности, там встречаются мошенники, исчезающие после предоплаты. Два показательных примера: циклоспорину (за рубежом — глазные капли Икервис или Рестасис) местного аналога нет — есть только обычные увлажняющие капли; валацикловир и фамцикловир тоже не зарегистрированы, есть только ацикловир — и то в виде таблеток и крема для рук, глазной мази нет.',
 			PhaAnalogs4:
-				'Если вы переезжаете и принимаете что-то постоянно, разумно взять с собой запас на первые месяцы — в личных количествах и в оригинальных упаковках — и свежее заключение врача с МНН и дозировками: с ним получить местный рецепт заметно проще. Для сильнодействующих и психотропных препаратов заранее проверьте таможенные правила Черногории и страны транзита — как правило, требуется подтверждение назначения от врача. И не рассчитывайте постоянно возить лекарства «оттуда»: надёжнее в первые же недели вместе с врачом перевести терапию на местные аналоги.',
+				'Если вы переезжаете и принимаете что-то постоянно, разумно взять с собой запас на первые месяцы — в личных количествах и в оригинальных упаковках — и свежее заключение врача с МНН и дозировками: с ним получить местный рецепт заметно проще. Для сильнодействующих и психотропных препаратов заранее проверьте таможенные правила Черногории и страны транзита — как правило, требуется подтверждение назначения от врача. Многие так и живут, периодически привозя препараты «оттуда», — это тоже рабочий вариант. Но если не хочется зависеть от поездок, в первые недели можно вместе с врачом подобрать местный аналог.',
 
 			PhaSources0:
 				'Информация актуальна на июль 2026 года. Ассортимент, списки и правила меняются — сверяйтесь с первоисточниками:',
@@ -142,8 +162,11 @@ export default {
 				'Портал eZdravlje — eRecept (ваши рецепты) и eApoteka (наличие препаратов в аптеках Фонда): ezdravlje.me;',
 			PhaSourcesCinmed:
 				'CInMED — Институт лекарств и медицинских изделий Черногории, официальный реестр зарегистрированных препаратов: cinmed.me;',
-			PhaSourcesBenu:
-				'Частные сети — Benu (benu.me) и Tea Medica: аптеки по всей стране.',
+			PhaSourcesBenu: 'Частные сети — ',
+			PhaSourcesBenuLink: 'Benu',
+			PhaSourcesBenuMid: ' и ',
+			PhaSourcesTeaMedicaLink: 'Tea Medica',
+			PhaSourcesBenuEnd: ': аптеки по всей стране.',
 			PhaSourcesCatalog:
 				'Нужен врач, который разберётся в вашей терапии и выпишет рецепт? В нашем каталоге у врачей указаны языки приёма —',
 			PhaSourcesCatalogLink: 'найдите врача, говорящего на вашем языке',
@@ -151,7 +174,7 @@ export default {
 
 			PhaCtaTitle: 'Ищете конкретный препарат?',
 			PhaCtaText:
-				'Проверьте наличие и цены конкретных лекарств в Черногории в нашем каталоге.',
+				'Проверьте, зарегистрирован ли он в Черногории и как отпускается, в нашем каталоге.',
 			PhaCtaButton: 'Каталог лекарств',
 		},
 		'sr': {
@@ -173,7 +196,10 @@ export default {
 			PhaPharmacies3:
 				'Uobičajeno radno vrijeme je otprilike od 7–8 ujutro do 21–22 sata, nedjeljom su mnoge zatvorene. U većim gradovima postoje neprekidna dežurstva: Podgorica ih ima tri — Montefarm „Kruševac“ (Bulevar Svetog Petra Cetinjskog 45/a), BENU na Moskovskoj 22 i Holos 7 na Bulevaru oktobarske revolucije 31; u Budvi je to Benu preko puta autobuske stanice; u Nikšiću Montefarm „Gojko Darić“ na Radoja Dakića bb. Za praznike Montefarm objavljuje spisak dežurnih apoteka za svaku opštinu.',
 			PhaPharmacies4:
-				'Granica „na recept / bez recepta“ ne prolazi tamo gdje ste možda navikli. Antibiotici u tabletama, tablete za spavanje, antidepresivi i većina „ozbiljnih“ ljekova — strogo na recept, farmaceuta nećete nagovoriti. S druge strane, analgetici (ibuprofen — ovdje najčešće Brufen — i paracetamol), mnoge masti, kapi, pa čak i, po iskustvu sa foruma, ampule adrenalina prodaju se slobodno. Adrenalin je jak hitni lijek: ne treba ga sami ubrizgavati bez medicinske obuke ili indikacije koju je potvrdio ljekar (npr. dijagnostikovane teške alergije) — ako vam možda zatreba, nabavite recept i uputstvo od ljekara unaprijed. Farmaceuti obično rado pomažu da se nađe analog; na primorju mnogi govore engleski.',
+				'Granica „na recept / bez recepta“ ne prolazi tamo gdje ste možda navikli. Antibiotici u tabletama, tablete za spavanje, antidepresivi i većina „ozbiljnih“ ljekova — strogo na recept, farmaceuta nećete nagovoriti. S druge strane, analgetici (ibuprofen — ovdje najčešće Brufen — i paracetamol), mnoge masti, kapi, pa čak i, po iskustvu sa foruma, ',
+			PhaPharmacies4Link: 'ampule adrenalina',
+			PhaPharmacies4End:
+				' prodaju se slobodno. Adrenalin je jak hitni lijek: ne treba ga sami ubrizgavati bez medicinske obuke ili indikacije koju je potvrdio ljekar (npr. dijagnostikovane teške alergije) — ako vam možda zatreba, nabavite recept i uputstvo od ljekara unaprijed. Farmaceuti obično rado pomažu da se nađe analog; na primorju mnogi govore engleski.',
 
 			PhaPrescriptions1:
 				'Glavno pravilo: strani recepti u crnogorskim apotekama ne važe — ni ruski, ni iz EU, nikakvi. Priče u četovima ponavljaju se iz godine u godinu: sa domaćim receptom u ruci lijek vam neće prodati, u najboljem slučaju će savjetovati da ga pokažete lokalnom ljekaru. Recept mora biti crnogorski.',
@@ -186,25 +212,30 @@ export default {
 
 			PhaFond1:
 				'Za osigurane u FZOCG važi „pozitivna lista“ ljekova (lista ljekova): osnovna lista — više od hiljadu ljekova koje Fond plaća u potpunosti, i doplatna — još oko 90, gdje pacijent doplaćuje razliku u cijeni. Na jedan recept izdaje se jedan lijek za najviše 30 dana liječenja.',
-			PhaFond2:
-				'U praksi to znači gotovo besplatnu terapiju hroničnih bolesti. Ilustrativna priča iz četa: recept za sertralin (Zoloft) od lokalnog psihijatra, državna apoteka — i „za 2 kutije dali smo 30 centi“. Hroničnim pacijentima dostupan je servis eNaručivanje — ponovljenu terapiju možete naručiti elektronski, bez odlaska kod ljekara svaki put.',
+			PhaFond2a:
+				'U praksi to znači gotovo besplatnu terapiju hroničnih bolesti. Ilustrativna priča iz četa: recept za ',
+			PhaFond2SertralineLink: 'sertralin (Zoloft)',
+			PhaFond2b:
+				' od lokalnog psihijatra, državna apoteka — i „za 2 kutije dali smo 30 centi“. Hroničnim pacijentima dostupan je servis eNaručivanje — ponovljenu terapiju možete naručiti elektronski, bez odlaska kod ljekara svaki put.',
 			PhaFond3:
 				'Sve ovo dostupno je samo sa zdravstvenom knjižicom — ko ima pravo na nju i kako se dobija, detaljno objašnjavamo u članku',
 			PhaFond3Link: 'o zdravstvenom sistemu Crne Gore',
 			PhaFond3End: '.',
 
-			PhaAnalogs1:
-				'Uobičajeni strani zaštićeni nazivi u Crnoj Gori se gotovo ne sreću, ali aktivne supstance su iste: tržište snabdijevaju balkanski i evropski proizvođači (Hemofarm, Krka, Alkaloid, Galenika i drugi). Zato lijek tražite ne po brendu, nego po internacionalnom nezaštićenom nazivu (INN): ne „Nurofen“, nego ibuprofen (lokalni ekvivalent je Brufen), ne „Euthyrox“, nego levotiroksin. Po aktivnoj supstanci farmaceut će naći lokalni analog.',
+			PhaAnalogs1a:
+				'Uobičajeni strani zaštićeni nazivi u Crnoj Gori se gotovo ne sreću, ali aktivne supstance su iste: tržište snabdijevaju balkanski i evropski proizvođači (Hemofarm, Krka, Alkaloid, Galenika i drugi). Zato lijek tražite ne po brendu, nego po internacionalnom nezaštićenom nazivu (INN): ne „Nurofen“, nego ',
+			PhaAnalogs1IbuprofenLink: 'ibuprofen',
+			PhaAnalogs1b: ' (lokalni ekvivalent je Brufen), ne „Euthyrox“, nego ',
+			PhaAnalogs1LevothyroxineLink: 'levotiroksin',
+			PhaAnalogs1c: '. Po aktivnoj supstanci farmaceut će naći lokalni analog.',
 			PhaAnalogs2:
 				'Da li je lijek registrovan u Crnoj Gori i da li se prodaje bez recepta, provjerite u našem',
 			PhaAnalogs2Link: 'registru ljekova',
-			PhaAnalogs2Mid: ', a dostupnost i cijene — u',
-			PhaAnalogs2Link2: 'katalogu ljekova',
 			PhaAnalogs2End: '.',
 			PhaAnalogs3:
-				'Ne nalazi se sve: tržište je malo, pojedini ljekovi u Crnoj Gori jednostavno nisu registrovani — apoteka ih neće prodati ni uz recept — a registrovani povremeno nestaju sa zaliha. U takvim slučajevima apoteke naručuju ljekove iz Srbije ili Bosne — pitajte na licu mjesta. Ljekove na recept ne kupujte „iz ruke“ preko četova: pored zakonitosti i bezbjednosti, tamo se javljaju i prevaranti koji nestaju nakon avansa.',
+				'Ne nalazi se sve: tržište je malo, pojedini ljekovi u Crnoj Gori jednostavno nisu registrovani — apoteka ih neće prodati ni uz recept — a registrovani povremeno nestaju sa zaliha. U takvim slučajevima apoteke naručuju ljekove iz Srbije ili Bosne — pitajte na licu mjesta. Ljekove na recept ne kupujte „iz ruke“ preko četova: pored zakonitosti i bezbjednosti, tamo se javljaju i prevaranti koji nestaju nakon avansa. Dva pokazna primjera: ciklosporinu (u inostranstvu — kapi za oči Ikervis ili Restasis) nema lokalnog analoga — dostupne su samo obične kapi za vlaženje; valaciklovir i famciklovir takođe nisu registrovani, postoji samo aciklovir — i to u obliku tableta i kreme za ruke, mast za oči ne postoji.',
 			PhaAnalogs4:
-				'Ako se selite i nešto stalno uzimate, razumno je ponijeti zalihe za prve mjesece — u količinama za ličnu upotrebu i u originalnim pakovanjima — i svjež izvještaj ljekara sa INN nazivima i dozama: sa njim je dobijanje lokalnog recepta znatno lakše. Za jake analgetike i psihotropne ljekove unaprijed provjerite carinska pravila Crne Gore i zemlje tranzita — po pravilu je potrebna potvrda ljekara o terapiji. I ne računajte da ćete stalno donositi ljekove „odande“: pouzdanije je da već u prvim sedmicama sa ljekarom pređete na lokalne analoge.',
+				'Ako se selite i nešto stalno uzimate, razumno je ponijeti zalihe za prve mjesece — u količinama za ličnu upotrebu i u originalnim pakovanjima — i svjež izvještaj ljekara sa INN nazivima i dozama: sa njim je dobijanje lokalnog recepta znatno lakše. Za jake analgetike i psihotropne ljekove unaprijed provjerite carinska pravila Crne Gore i zemlje tranzita — po pravilu je potrebna potvrda ljekara o terapiji. Mnogi tako i žive, povremeno donoseći ljekove „odande“ — i to je rješenje koje funkcioniše. Ali ako ne želite da zavisite od putovanja, u prvim sedmicama možete sa ljekarom pronaći lokalni analog.',
 
 			PhaSources0:
 				'Informacije važe za jul 2026. Asortiman, liste i pravila se mijenjaju — provjerite u primarnim izvorima:',
@@ -216,8 +247,11 @@ export default {
 				'Portal eZdravlje — eRecept (vaši recepti) i eApoteka (dostupnost ljekova u apotekama Fonda): ezdravlje.me;',
 			PhaSourcesCinmed:
 				'CInMED — Institut za ljekove i medicinska sredstva Crne Gore, zvanični registar odobrenih ljekova: cinmed.me;',
-			PhaSourcesBenu:
-				'Privatni lanci — Benu (benu.me) i Tea Medica: apoteke širom zemlje.',
+			PhaSourcesBenu: 'Privatni lanci — ',
+			PhaSourcesBenuLink: 'Benu',
+			PhaSourcesBenuMid: ' i ',
+			PhaSourcesTeaMedicaLink: 'Tea Medica',
+			PhaSourcesBenuEnd: ': apoteke širom zemlje.',
 			PhaSourcesCatalog:
 				'Treba vam ljekar koji će razumjeti vašu terapiju i napisati recept? U našem katalogu doktori imaju oznake jezika —',
 			PhaSourcesCatalogLink: 'pronađite doktora koji govori vaš jezik',
@@ -225,7 +259,7 @@ export default {
 
 			PhaCtaTitle: 'Tražite određeni lijek?',
 			PhaCtaText:
-				'Provjerite dostupnost i cijene konkretnih ljekova u Crnoj Gori u našem katalogu.',
+				'Provjerite da li je registrovan u Crnoj Gori i kako se izdaje u našem katalogu.',
 			PhaCtaButton: 'Katalog ljekova',
 		},
 		'sr-cyrl': {
@@ -247,7 +281,10 @@ export default {
 			PhaPharmacies3:
 				'Уобичајено радно вријеме је отприлике од 7–8 ујутро до 21–22 сата, недјељом су многе затворене. У већим градовима постоје непрекидна дежурства: Подгорица их има три — Montefarm „Крушевац“ (Булевар Светог Петра Цетињског 45/а), BENU на Московској 22 и Holos 7 на Булевару октобарске револуције 31; у Будви је то Benu преко пута аутобуске станице; у Никшићу Montefarm „Gojko Darić“ на Radoja Dakića bb. За празнике Montefarm објављује списак дежурних апотека за сваку општину.',
 			PhaPharmacies4:
-				'Граница „на рецепт / без рецепта“ не пролази тамо гдје сте можда навикли. Антибиотици у таблетама, таблете за спавање, антидепресиви и већина „озбиљних“ љекова — строго на рецепт, фармацеута нећете наговорити. С друге стране, аналгетици (ибупрофен — овдје најчешће Brufen — и парацетамол), многе масти, капи, па чак и, по искуству са форума, ампуле адреналина продају се слободно. Адреналин је јак хитни лијек: не треба га сами убризгавати без медицинске обуке или индикације коју је потврдио љекар (нпр. дијагностиковане тешке алергије) — ако вам можда затреба, набавите рецепт и упутство од љекара унапријед. Фармацеути обично радо помажу да се нађе аналог; на приморју многи говоре енглески.',
+				'Граница „на рецепт / без рецепта“ не пролази тамо гдје сте можда навикли. Антибиотици у таблетама, таблете за спавање, антидепресиви и већина „озбиљних“ љекова — строго на рецепт, фармацеута нећете наговорити. С друге стране, аналгетици (ибупрофен — овдје најчешће Brufen — и парацетамол), многе масти, капи, па чак и, по искуству са форума, ',
+			PhaPharmacies4Link: 'ампуле адреналина',
+			PhaPharmacies4End:
+				' продају се слободно. Адреналин је јак хитни лијек: не треба га сами убризгавати без медицинске обуке или индикације коју је потврдио љекар (нпр. дијагностиковане тешке алергије) — ако вам можда затреба, набавите рецепт и упутство од љекара унапријед. Фармацеути обично радо помажу да се нађе аналог; на приморју многи говоре енглески.',
 
 			PhaPrescriptions1:
 				'Главно правило: страни рецепти у црногорским апотекама не важе — ни руски, ни из ЕУ, никакви. Приче у четовима понављају се из године у годину: са домаћим рецептом у руци лијек вам неће продати, у најбољем случају ће савјетовати да га покажете локалном љекару. Рецепт мора бити црногорски.',
@@ -260,25 +297,30 @@ export default {
 
 			PhaFond1:
 				'За осигуране у ФЗОЦГ важи „позитивна листа“ љекова (lista ljekova): основна листа — више од хиљаду љекова које Фонд плаћа у потпуности, и доплатна — још око 90, гдје пацијент доплаћује разлику у цијени. На један рецепт издаје се један лијек за највише 30 дана лијечења.',
-			PhaFond2:
-				'У пракси то значи готово бесплатну терапију хроничних болести. Илустративна прича из чета: рецепт за сертралин (Zoloft) од локалног психијатра, државна апотека — и „за 2 кутије дали смо 30 центи“. Хроничним пацијентима доступан је сервис eNaručivanje — поновљену терапију можете наручити електронски, без одласка код љекара сваки пут.',
+			PhaFond2a:
+				'У пракси то значи готово бесплатну терапију хроничних болести. Илустративна прича из чета: рецепт за ',
+			PhaFond2SertralineLink: 'сертралин (Zoloft)',
+			PhaFond2b:
+				' од локалног психијатра, државна апотека — и „за 2 кутије дали смо 30 центи“. Хроничним пацијентима доступан је сервис eNaručivanje — поновљену терапију можете наручити електронски, без одласка код љекара сваки пут.',
 			PhaFond3:
 				'Све ово доступно је само са здравственом књижицом — ко има право на њу и како се добија, детаљно објашњавамо у чланку',
 			PhaFond3Link: 'о здравственом систему Црне Горе',
 			PhaFond3End: '.',
 
-			PhaAnalogs1:
-				'Уобичајени страни заштићени називи у Црној Гори се готово не срећу, али активне супстанце су исте: тржиште снабдијевају балкански и европски произвођачи (Hemofarm, Krka, Alkaloid, Galenika и други). Зато лијек тражите не по бренду, него по интернационалном незаштићеном називу (INN): не „Нурофен“, него ибупрофен (локални еквивалент је Brufen), не „Euthyrox“, него левотироксин. По активној супстанци фармацеут ће наћи локални аналог.',
+			PhaAnalogs1a:
+				'Уобичајени страни заштићени називи у Црној Гори се готово не срећу, али активне супстанце су исте: тржиште снабдијевају балкански и европски произвођачи (Hemofarm, Krka, Alkaloid, Galenika и други). Зато лијек тражите не по бренду, него по интернационалном незаштићеном називу (INN): не „Нурофен“, него ',
+			PhaAnalogs1IbuprofenLink: 'ибупрофен',
+			PhaAnalogs1b: ' (локални еквивалент је Brufen), не „Euthyrox“, него ',
+			PhaAnalogs1LevothyroxineLink: 'левотироксин',
+			PhaAnalogs1c: '. По активној супстанци фармацеут ће наћи локални аналог.',
 			PhaAnalogs2:
 				'Да ли је лијек регистрован у Црној Гори и да ли се продаје без рецепта, провјерите у нашем',
 			PhaAnalogs2Link: 'регистру љекова',
-			PhaAnalogs2Mid: ', а доступност и цијене — у',
-			PhaAnalogs2Link2: 'каталогу љекова',
 			PhaAnalogs2End: '.',
 			PhaAnalogs3:
-				'Не налази се све: тржиште је мало, поједини љекови у Црној Гори једноставно нису регистровани — апотека их неће продати ни уз рецепт — а регистровани повремено нестају са залиха. У таквим случајевима апотеке наручују љекове из Србије или Босне — питајте на лицу мјеста. Љекове на рецепт не купујте „из руке“ преко четова: поред законитости и безбједности, тамо се јављају и преваранти који нестају након аванса.',
+				'Не налази се све: тржиште је мало, поједини љекови у Црној Гори једноставно нису регистровани — апотека их неће продати ни уз рецепт — а регистровани повремено нестају са залиха. У таквим случајевима апотеке наручују љекове из Србије или Босне — питајте на лицу мјеста. Љекове на рецепт не купујте „из руке“ преко четова: поред законитости и безбједности, тамо се јављају и преваранти који нестају након аванса. Два показна примјера: циклоспорину (у иностранству — капи за очи Ikervis или Restasis) нема локалног аналога — доступне су само обичне капи за влажење; валацикловир и фамцикловир такође нису регистровани, постоји само ацикловир — и то у облику таблета и креме за руке, маст за очи не постоји.',
 			PhaAnalogs4:
-				'Ако се селите и нешто стално узимате, разумно је понијети залихе за прве мјесеце — у количинама за личну употребу и у оригиналним паковањима — и свјеж извјештај љекара са INN називима и дозама: са њим је добијање локалног рецепта знатно лакше. За јаке аналгетике и психотропне љекове унапријед провјерите царинска правила Црне Горе и земље транзита — по правилу је потребна потврда љекара о терапији. И не рачунајте да ћете стално доносити љекове „оданде“: поузданије је да већ у првим седмицама са љекаром пређете на локалне аналоге.',
+				'Ако се селите и нешто стално узимате, разумно је понијети залихе за прве мјесеце — у количинама за личну употребу и у оригиналним паковањима — и свјеж извјештај љекара са INN називима и дозама: са њим је добијање локалног рецепта знатно лакше. За јаке аналгетике и психотропне љекове унапријед провјерите царинска правила Црне Горе и земље транзита — по правилу је потребна потврда љекара о терапији. Многи тако и живе, повремено доносећи љекове „оданде“ — и то је рјешење које функционише. Али ако не желите да зависите од путовања, у првим седмицама можете са љекаром пронаћи локални аналог.',
 
 			PhaSources0:
 				'Информације важе за јул 2026. Асортиман, листе и правила се мијењају — провјерите у примарним изворима:',
@@ -290,8 +332,11 @@ export default {
 				'Портал eZdravlje — eRecept (ваши рецепти) и eApoteka (доступност љекова у апотекама Фонда): ezdravlje.me;',
 			PhaSourcesCinmed:
 				'CInMED — Институт за љекове и медицинска средства Црне Горе, званични регистар одобрених љекова: cinmed.me;',
-			PhaSourcesBenu:
-				'Приватни ланци — Benu (benu.me) и Tea Medica: апотеке широм земље.',
+			PhaSourcesBenu: 'Приватни ланци — ',
+			PhaSourcesBenuLink: 'Benu',
+			PhaSourcesBenuMid: ' и ',
+			PhaSourcesTeaMedicaLink: 'Tea Medica',
+			PhaSourcesBenuEnd: ': апотеке широм земље.',
 			PhaSourcesCatalog:
 				'Треба вам љекар који ће разумјети вашу терапију и написати рецепт? У нашем каталогу доктори имају ознаке језика —',
 			PhaSourcesCatalogLink: 'пронађите доктора који говори ваш језик',
@@ -299,7 +344,7 @@ export default {
 
 			PhaCtaTitle: 'Тражите одређени лијек?',
 			PhaCtaText:
-				'Провјерите доступност и цијене конкретних љекова у Црној Гори у нашем каталогу.',
+				'Провјерите да ли је регистрован у Црној Гори и како се издаје у нашем каталогу.',
 			PhaCtaButton: 'Каталог љекова',
 		},
 		'de': {
@@ -321,7 +366,10 @@ export default {
 			PhaPharmacies3:
 				'Übliche Öffnungszeiten sind etwa 7–8 Uhr bis 21–22 Uhr, sonntags sind viele geschlossen. In größeren Städten gibt es Rund-um-die-Uhr-Standorte: Podgorica hat drei — Montefarm „Kruševac“ (Bulevar Svetog Petra Cetinjskog 45/a), BENU in der Moskovska 22 und Holos 7 im Bulevar Oktobarske Revolucije 31; in Budva ist es die Benu gegenüber dem Busbahnhof; in Nikšić die Montefarm „Gojko Darić“ in der Radoja Dakića bb. Zu Feiertagen veröffentlicht Montefarm eine Liste der Notdienst-Apotheken für jede Gemeinde.',
 			PhaPharmacies4:
-				'Die Grenze zwischen rezeptpflichtig und rezeptfrei verläuft anders, als Sie es vielleicht gewohnt sind. Antibiotika in Tablettenform, Schlafmittel, Antidepressiva und die meisten „ernsthaften“ Präparate gibt es strikt nur auf Rezept — Überredung hilft nicht. Dafür werden Schmerzmittel (Ibuprofen — hier meist als Brufen — und Paracetamol), viele Salben, Tropfen und laut Foren sogar Adrenalin-Ampullen frei verkauft. Adrenalin ist allerdings ein starkes Notfallmedikament: Es sollte nicht ohne medizinische Schulung oder eine ärztlich bestätigte Indikation (etwa eine diagnostizierte schwere Allergie) selbst gespritzt werden — wer es eventuell braucht, sollte es sich vorab verschreiben und die Anwendung zeigen lassen. Apotheker helfen in der Regel gern bei der Suche nach einem Pendant; an der Küste sprechen viele Englisch.',
+				'Die Grenze zwischen rezeptpflichtig und rezeptfrei verläuft anders, als Sie es vielleicht gewohnt sind. Antibiotika in Tablettenform, Schlafmittel, Antidepressiva und die meisten „ernsthaften“ Präparate gibt es strikt nur auf Rezept — Überredung hilft nicht. Dafür werden Schmerzmittel (Ibuprofen — hier meist als Brufen — und Paracetamol), viele Salben, Tropfen und laut Foren sogar ',
+			PhaPharmacies4Link: 'Adrenalin-Ampullen',
+			PhaPharmacies4End:
+				' frei verkauft. Adrenalin ist allerdings ein starkes Notfallmedikament: Es sollte nicht ohne medizinische Schulung oder eine ärztlich bestätigte Indikation (etwa eine diagnostizierte schwere Allergie) selbst gespritzt werden — wer es eventuell braucht, sollte es sich vorab verschreiben und die Anwendung zeigen lassen. Apotheker helfen in der Regel gern bei der Suche nach einem Pendant; an der Küste sprechen viele Englisch.',
 
 			PhaPrescriptions1:
 				'Die wichtigste Regel: Ausländische Rezepte gelten in montenegrinischen Apotheken nicht — weder russische noch EU-Rezepte, keine. Die Geschichten in den Chats wiederholen sich Jahr für Jahr: Mit einem heimischen Rezept in der Hand bekommen Sie das Medikament nicht; bestenfalls rät man Ihnen, es einem lokalen Arzt zu zeigen. Das Rezept muss montenegrinisch sein.',
@@ -334,25 +382,30 @@ export default {
 
 			PhaFond1:
 				'Für FZOCG-Versicherte gilt eine „Positivliste“ der Medikamente (lista ljekova): die Basisliste — über tausend Präparate, die der Fonds vollständig bezahlt — und die Zuzahlungsliste mit rund 90 weiteren, bei denen der Patient die Preisdifferenz zuzahlt. Pro Rezept wird ein Medikament für höchstens 30 Behandlungstage abgegeben.',
-			PhaFond2:
-				'In der Praxis bedeutet das eine fast kostenlose Dauertherapie. Eine bezeichnende Geschichte aus einem Chat: Rezept für Sertralin (Zoloft) vom lokalen Psychiater, staatliche Apotheke — und „für 2 Packungen zahlten wir 30 Cent“. Chronisch Kranken steht der Dienst eNaručivanje zur Verfügung — die Wiederholungstherapie lässt sich elektronisch bestellen, ohne jedes Mal zum Arzt zu gehen.',
+			PhaFond2a:
+				'In der Praxis bedeutet das eine fast kostenlose Dauertherapie. Eine bezeichnende Geschichte aus einem Chat: Rezept für ',
+			PhaFond2SertralineLink: 'Sertralin (Zoloft)',
+			PhaFond2b:
+				' vom lokalen Psychiater, staatliche Apotheke — und „für 2 Packungen zahlten wir 30 Cent“. Chronisch Kranken steht der Dienst eNaručivanje zur Verfügung — die Wiederholungstherapie lässt sich elektronisch bestellen, ohne jedes Mal zum Arzt zu gehen.',
 			PhaFond3:
 				'All das gibt es nur mit einer zdravstvena knjižica — wer Anspruch darauf hat und wie man sie bekommt, erklären wir ausführlich in unserem Artikel',
 			PhaFond3Link: 'über das montenegrinische Gesundheitssystem',
 			PhaFond3End: '.',
 
-			PhaAnalogs1:
-				'Gewohnte Markennamen findet man in Montenegro kaum, die Wirkstoffe sind aber dieselben: Den Markt versorgen Balkan- und europäische Hersteller (Hemofarm, Krka, Alkaloid, Galenika und andere). Suchen Sie ein Medikament daher nicht nach der Marke, sondern nach dem internationalen Freinamen (INN) in lateinischer Schrift: nicht „Nurofen“, sondern ibuprofen (das lokale Pendant heißt Brufen), nicht „Euthyrox“, sondern levothyroxin. Anhand des Wirkstoffs findet der Apotheker das lokale Pendant.',
+			PhaAnalogs1a:
+				'Gewohnte Markennamen findet man in Montenegro kaum, die Wirkstoffe sind aber dieselben: Den Markt versorgen Balkan- und europäische Hersteller (Hemofarm, Krka, Alkaloid, Galenika und andere). Suchen Sie ein Medikament daher nicht nach der Marke, sondern nach dem internationalen Freinamen (INN) in lateinischer Schrift: nicht „Nurofen“, sondern ',
+			PhaAnalogs1IbuprofenLink: 'ibuprofen',
+			PhaAnalogs1b: ' (das lokale Pendant heißt Brufen), nicht „Euthyrox“, sondern ',
+			PhaAnalogs1LevothyroxineLink: 'levothyroxin',
+			PhaAnalogs1c: '. Anhand des Wirkstoffs findet der Apotheker das lokale Pendant.',
 			PhaAnalogs2:
 				'Ob ein Medikament in Montenegro zugelassen ist und ob es rezeptfrei verkauft wird, prüfen Sie in unserem',
 			PhaAnalogs2Link: 'Arzneimittelregister',
-			PhaAnalogs2Mid: ', Verfügbarkeit und Preise — im',
-			PhaAnalogs2Link2: 'Medikamentenkatalog',
 			PhaAnalogs2End: '.',
 			PhaAnalogs3:
-				'Nicht alles ist zu finden: Der Markt ist klein, manche Präparate sind in Montenegro schlicht nicht zugelassen — die Apotheke verkauft sie auch mit Rezept nicht —, und zugelassene verschwinden gelegentlich aus dem Bestand. In solchen Fällen bestellen Apotheken Medikamente aus Serbien oder Bosnien — fragen Sie vor Ort. Kaufen Sie verschreibungspflichtige Medikamente nicht „von privat“ über Chats: Abgesehen von Legalität und Sicherheit tauchen dort auch Betrüger auf, die nach der Vorauszahlung verschwinden.',
+				'Nicht alles ist zu finden: Der Markt ist klein, manche Präparate sind in Montenegro schlicht nicht zugelassen — die Apotheke verkauft sie auch mit Rezept nicht —, und zugelassene verschwinden gelegentlich aus dem Bestand. In solchen Fällen bestellen Apotheken Medikamente aus Serbien oder Bosnien — fragen Sie vor Ort. Kaufen Sie verschreibungspflichtige Medikamente nicht „von privat“ über Chats: Abgesehen von Legalität und Sicherheit tauchen dort auch Betrüger auf, die nach der Vorauszahlung verschwinden. Zwei anschauliche Beispiele: Für Ciclosporin (im Ausland als Ikervis oder Restasis Augentropfen) gibt es kein lokales Pendant — erhältlich sind nur einfache befeuchtende Augentropfen; Valaciclovir und Famciclovir sind ebenfalls nicht zugelassen, nur Aciclovir — und das nur als Tabletten oder Handcreme, eine Augensalbe gibt es nicht.',
 			PhaAnalogs4:
-				'Wenn Sie umziehen und dauerhaft etwas einnehmen, ist es vernünftig, einen Vorrat für die ersten Monate mitzunehmen — in Mengen für den Eigenbedarf und in Originalverpackungen — sowie einen aktuellen Arztbericht mit INN und Dosierungen: Damit ist das lokale Rezept deutlich leichter zu bekommen. Bei starken Schmerzmitteln und Psychopharmaka prüfen Sie vorab die Zollregeln Montenegros und des Transitlandes — in der Regel ist ein ärztlicher Verordnungsnachweis erforderlich. Und planen Sie nicht, Medikamente dauerhaft „von zu Hause“ einzuführen: Zuverlässiger ist es, die Therapie in den ersten Wochen gemeinsam mit einem Arzt auf lokale Pendants umzustellen.',
+				'Wenn Sie umziehen und dauerhaft etwas einnehmen, ist es vernünftig, einen Vorrat für die ersten Monate mitzunehmen — in Mengen für den Eigenbedarf und in Originalverpackungen — sowie einen aktuellen Arztbericht mit INN und Dosierungen: Damit ist das lokale Rezept deutlich leichter zu bekommen. Bei starken Schmerzmitteln und Psychopharmaka prüfen Sie vorab die Zollregeln Montenegros und des Transitlandes — in der Regel ist ein ärztlicher Verordnungsnachweis erforderlich. Manche bringen ihre Medikamente auch dauerhaft weiter „von zu Hause“ mit — das funktioniert ebenfalls. Wer aber nicht von Reisen abhängig sein möchte, kann in den ersten Wochen gemeinsam mit einem Arzt auf ein lokales Pendant umsteigen.',
 
 			PhaSources0:
 				'Stand der Informationen: Juli 2026. Sortimente, Listen und Regeln ändern sich — prüfen Sie die Primärquellen:',
@@ -364,8 +417,11 @@ export default {
 				'Portal eZdravlje — eRecept (Ihre Rezepte) und eApoteka (Verfügbarkeit in Fondsapotheken): ezdravlje.me;',
 			PhaSourcesCinmed:
 				'CInMED — das Institut für Arzneimittel und Medizinprodukte Montenegros, das offizielle Register zugelassener Präparate: cinmed.me;',
-			PhaSourcesBenu:
-				'Private Ketten — Benu (benu.me) und Tea Medica: Apotheken im ganzen Land.',
+			PhaSourcesBenu: 'Private Ketten — ',
+			PhaSourcesBenuLink: 'Benu',
+			PhaSourcesBenuMid: ' und ',
+			PhaSourcesTeaMedicaLink: 'Tea Medica',
+			PhaSourcesBenuEnd: ': Apotheken im ganzen Land.',
 			PhaSourcesCatalog:
 				'Sie brauchen einen Arzt, der Ihre Therapie versteht und ein Rezept ausstellt? In unserem Katalog sind die Sprachen der Ärzte angegeben —',
 			PhaSourcesCatalogLink: 'finden Sie einen Arzt, der Ihre Sprache spricht',
@@ -373,7 +429,7 @@ export default {
 
 			PhaCtaTitle: 'Suchen Sie ein bestimmtes Medikament?',
 			PhaCtaText:
-				'Prüfen Sie Verfügbarkeit und Preise konkreter Medikamente in Montenegro in unserem Katalog.',
+				'Prüfen Sie in unserem Katalog, ob es in Montenegro zugelassen ist und wie es abgegeben wird.',
 			PhaCtaButton: 'Medikamentenkatalog',
 		},
 		'tr': {
@@ -395,7 +451,10 @@ export default {
 			PhaPharmacies3:
 				"Olağan çalışma saatleri yaklaşık sabah 7–8'den akşam 21–22'ye kadardır; pazar günleri çoğu kapalıdır. Büyük şehirlerde 24 saat açık noktalar vardır: Podgorica'da üç tane var — Montefarm „Kruševac“ (Bulevar Svetog Petra Cetinjskog 45/a), Moskovska 22'deki BENU ve Bulevar Oktobarske Revolucije 31'deki Holos 7; Budva'da otogarın karşısındaki Benu; Nikšić'te Radoja Dakića bb'deki Montefarm „Gojko Darić“. Bayramlarda Montefarm her belediye için nöbetçi eczane listesi yayımlar.",
 			PhaPharmacies4:
-				"Reçeteli/reçetesiz sınırı alıştığınız yerden geçmez. Tablet antibiyotikler, uyku ilaçları, antidepresanlar ve „ciddi“ ilaçların çoğu kesinlikle reçeteyle satılır — eczacıyı ikna edemezsiniz. Buna karşılık ağrı kesiciler (ibuprofen — burada çoğunlukla Brufen — ve parasetamol), birçok merhem, damla ve hatta forumlardaki deneyimlere göre adrenalin ampulleri serbestçe satılır. Ancak adrenalin güçlü bir acil durum ilacıdır: tıbbi eğitim almadan veya bir doktorun onayladığı bir gerekçe (örneğin teşhis edilmiş ciddi bir alerji) olmadan kendi kendinize enjekte etmeyin — ihtiyacınız olabileceğini düşünüyorsanız önce bir doktordan reçete ve kullanım talimatı alın. Eczacılar muadil bulmaya genellikle severek yardım eder; sahil şehirlerinde birçoğu İngilizce konuşur.",
+				"Reçeteli/reçetesiz sınırı alıştığınız yerden geçmez. Tablet antibiyotikler, uyku ilaçları, antidepresanlar ve „ciddi“ ilaçların çoğu kesinlikle reçeteyle satılır — eczacıyı ikna edemezsiniz. Buna karşılık ağrı kesiciler (ibuprofen — burada çoğunlukla Brufen — ve parasetamol), birçok merhem, damla ve hatta forumlardaki deneyimlere göre ",
+			PhaPharmacies4Link: 'adrenalin ampulleri',
+			PhaPharmacies4End:
+				" serbestçe satılır. Ancak adrenalin güçlü bir acil durum ilacıdır: tıbbi eğitim almadan veya bir doktorun onayladığı bir gerekçe (örneğin teşhis edilmiş ciddi bir alerji) olmadan kendi kendinize enjekte etmeyin — ihtiyacınız olabileceğini düşünüyorsanız önce bir doktordan reçete ve kullanım talimatı alın. Eczacılar muadil bulmaya genellikle severek yardım eder; sahil şehirlerinde birçoğu İngilizce konuşur.",
 
 			PhaPrescriptions1:
 				"Ana kural: yabancı reçeteler Karadağ eczanelerinde geçerli değildir — ne Rus, ne AB, hiçbiri. Sohbetlerdeki hikâyeler yıldan yıla tekrarlanır: elinizde ülkenizden bir reçeteyle ilacı satmazlar; en iyi ihtimalle onu yerel bir doktora göstermenizi önerirler. Reçete Karadağ reçetesi olmalıdır.",
@@ -408,25 +467,30 @@ export default {
 
 			PhaFond1:
 				"FZOCG sigortalıları için „pozitif ilaç listesi“ (lista ljekova) geçerlidir: temel liste — Fon'un tamamını karşıladığı binden fazla ilaç — ve hastanın fiyat farkını ödediği yaklaşık 90 ilaçlık ek liste. Bir reçeteyle en fazla 30 günlük tedavi için tek ilaç verilir.",
-			PhaFond2:
-				"Pratikte bu, kronik hastalıkların neredeyse ücretsiz tedavisi demektir. Sohbetten çarpıcı bir hikâye: yerel psikiyatrdan sertralin (Zoloft) reçetesi, devlet eczanesi — ve „2 kutu için 30 sent ödedik“. Kronik hastalar eNaručivanje servisini kullanabilir — tekrarlanan tedavi, her seferinde doktora gitmeden elektronik olarak sipariş edilebilir.",
+			PhaFond2a:
+				'Pratikte bu, kronik hastalıkların neredeyse ücretsiz tedavisi demektir. Sohbetten çarpıcı bir hikâye: yerel psikiyatrdan ',
+			PhaFond2SertralineLink: 'sertralin (Zoloft)',
+			PhaFond2b:
+				' reçetesi, devlet eczanesi — ve „2 kutu için 30 sent ödedik“. Kronik hastalar eNaručivanje servisini kullanabilir — tekrarlanan tedavi, her seferinde doktora gitmeden elektronik olarak sipariş edilebilir.',
 			PhaFond3:
 				"Bütün bunlar yalnızca zdravstvena knjižica ile mümkündür — kimin hak sahibi olduğunu ve nasıl alınacağını şu makalede ayrıntılı anlatıyoruz:",
 			PhaFond3Link: 'Karadağ sağlık sistemi hakkında',
 			PhaFond3End: '.',
 
-			PhaAnalogs1:
-				"Alışık olduğunuz ticari markalar Karadağ'da neredeyse bulunmaz, ancak etken maddeler aynıdır: piyasayı Balkan ve Avrupa üreticileri besler (Hemofarm, Krka, Alkaloid, Galenika ve diğerleri). Bu yüzden ilacı markayla değil, Latin harfleriyle yazılmış uluslararası mülkiyetsiz adıyla (INN) arayın: „Nurofen“ değil ibuprofen (yerel karşılığı Brufen), „Euthyrox“ değil levotiroksin. Etken maddeye göre eczacı yerel muadili bulur.",
+			PhaAnalogs1a:
+				"Alışık olduğunuz ticari markalar Karadağ'da neredeyse bulunmaz, ancak etken maddeler aynıdır: piyasayı Balkan ve Avrupa üreticileri besler (Hemofarm, Krka, Alkaloid, Galenika ve diğerleri). Bu yüzden ilacı markayla değil, Latin harfleriyle yazılmış uluslararası mülkiyetsiz adıyla (INN) arayın: „Nurofen“ değil ",
+			PhaAnalogs1IbuprofenLink: 'ibuprofen',
+			PhaAnalogs1b: ' (yerel karşılığı Brufen), „Euthyrox“ değil ',
+			PhaAnalogs1LevothyroxineLink: 'levotiroksin',
+			PhaAnalogs1c: '. Etken maddeye göre eczacı yerel muadili bulur.',
 			PhaAnalogs2:
 				"Bir ilacın Karadağ'da ruhsatlı olup olmadığını ve reçetesiz satılıp satılmadığını",
 			PhaAnalogs2Link: 'ilaç ruhsat kayıtlarımızda',
-			PhaAnalogs2Mid: ', bulunabilirlik ve fiyatları ise',
-			PhaAnalogs2Link2: 'ilaç kataloğumuzda',
 			PhaAnalogs2End: ' kontrol edebilirsiniz.',
 			PhaAnalogs3:
-				"Her şey bulunmaz: pazar küçüktür, bazı ilaçlar Karadağ'da hiç ruhsatlı değildir — eczane bunları reçeteyle bile satmaz — ruhsatlılar da zaman zaman stoklardan kaybolur. Böyle durumlarda eczaneler ilaçları Sırbistan veya Bosna'dan sipariş eder — yerinde sorun. Reçeteli ilaçları sohbet grupları üzerinden „elden“ satın almayın: yasallık ve güvenlik bir yana, ön ödemeden sonra ortadan kaybolan dolandırıcılar da görülür.",
+				"Her şey bulunmaz: pazar küçüktür, bazı ilaçlar Karadağ'da hiç ruhsatlı değildir — eczane bunları reçeteyle bile satmaz — ruhsatlılar da zaman zaman stoklardan kaybolur. Böyle durumlarda eczaneler ilaçları Sırbistan veya Bosna'dan sipariş eder — yerinde sorun. Reçeteli ilaçları sohbet grupları üzerinden „elden“ satın almayın: yasallık ve güvenlik bir yana, ön ödemeden sonra ortadan kaybolan dolandırıcılar da görülür. İki somut örnek: siklosporinin (yurt dışında Ikervis veya Restasis göz damlası) yerel bir muadili yoktur — yalnızca sıradan nemlendirici göz damlaları bulunur; valasiklovir ve famsiklovir de ruhsatlı değildir, yalnızca asiklovir vardır — o da yalnızca tablet ve el kremi olarak, göz merhemi formu yoktur.",
 			PhaAnalogs4:
-				"Taşınıyorsanız ve düzenli ilaç kullanıyorsanız, ilk aylar için yanınıza yedek almak mantıklıdır — kişisel kullanım miktarlarında ve orijinal ambalajlarında — ayrıca INN adları ve dozları içeren güncel bir doktor raporu: onunla yerel reçete almak çok daha kolaydır. Güçlü ağrı kesiciler ve psikotrop ilaçlar için Karadağ'ın ve transit ülkenin gümrük kurallarını önceden kontrol edin — kural olarak doktorun tedavi onayı gerekir. Ve ilaçları sürekli „oradan“ taşımayı planlamayın: ilk haftalarda doktorla birlikte tedaviyi yerel muadillere geçirmek daha güvenilirdir.",
+				"Taşınıyorsanız ve düzenli ilaç kullanıyorsanız, ilk aylar için yanınıza yedek almak mantıklıdır — kişisel kullanım miktarlarında ve orijinal ambalajlarında — ayrıca INN adları ve dozları içeren güncel bir doktor raporu: onunla yerel reçete almak çok daha kolaydır. Güçlü ağrı kesiciler ve psikotrop ilaçlar için Karadağ'ın ve transit ülkenin gümrük kurallarını önceden kontrol edin — kural olarak doktorun tedavi onayı gerekir. Bazıları ilaçlarını sürekli „oradan“ getirmeye devam eder — bu da işe yarayan bir yöntemdir. Ama seyahate bağımlı olmak istemiyorsanız, ilk haftalarda doktorla birlikte yerel bir muadile geçebilirsiniz.",
 
 			PhaSources0:
 				'Bilgiler Temmuz 2026 itibarıyla günceldir. Ürün yelpazesi, listeler ve kurallar değişir — birincil kaynaklardan doğrulayın:',
@@ -438,8 +502,11 @@ export default {
 				'eZdravlje portalı — eRecept (reçeteleriniz) ve eApoteka (Fon eczanelerinde ilaç bulunabilirliği): ezdravlje.me;',
 			PhaSourcesCinmed:
 				'CInMED — Karadağ İlaç ve Tıbbi Cihaz Enstitüsü, ruhsatlı ilaçların resmî kaydı: cinmed.me;',
-			PhaSourcesBenu:
-				'Özel zincirler — Benu (benu.me) ve Tea Medica: ülke genelinde eczaneler.',
+			PhaSourcesBenu: 'Özel zincirler — ',
+			PhaSourcesBenuLink: 'Benu',
+			PhaSourcesBenuMid: ' ve ',
+			PhaSourcesTeaMedicaLink: 'Tea Medica',
+			PhaSourcesBenuEnd: ': ülke genelinde eczaneler.',
 			PhaSourcesCatalog:
 				'Tedavinizi anlayacak ve reçete yazacak bir doktor mu gerekiyor? Kataloğumuzda doktorların konuştuğu diller belirtilir —',
 			PhaSourcesCatalogLink: 'dilinizi konuşan bir doktor bulun',
@@ -447,7 +514,7 @@ export default {
 
 			PhaCtaTitle: 'Belirli bir ilaç mı arıyorsunuz?',
 			PhaCtaText:
-				"Belirli ilaçların Karadağ'daki bulunabilirliğini ve fiyatlarını kataloğumuzda kontrol edin.",
+				"Karadağ'da ruhsatlı olup olmadığını ve nasıl satıldığını kataloğumuzda kontrol edin.",
 			PhaCtaButton: 'İlaç kataloğu',
 		},
 	},

@@ -31,18 +31,58 @@ export default {
 			WmhPharmaciesLink: 'on pharmacies and medications in Montenegro',
 			WmhPharmaciesEnd: '.',
 
-			WmhHospitals1:
-				'Admission units at state hospitals accept emergency patients around the clock, seven days a week — Saturday or Sunday makes no difference. This applies to the Clinical Center of Montenegro (KCCG) in Podgorica, the general hospital in Kotor, the “Blažo Orlandić” general hospital in Bar, the general hospital in Bijelo Polje, Meljine hospital in Herceg Novi, and Danilo hospital in Cetinje.',
+			WmhHospitals1a:
+				'Admission units at state hospitals accept emergency patients around the clock, seven days a week — Saturday or Sunday makes no difference. This applies to the ',
+			WmhHospitals1KccgLink: 'Clinical Center of Montenegro (KCCG)',
+			WmhHospitals1b: ' in Podgorica, the ',
+			WmhHospitals1KotorLink: 'general hospital in Kotor',
+			WmhHospitals1c: ', the ',
+			WmhHospitals1BarLink: '“Blažo Orlandić” general hospital in Bar',
+			WmhHospitals1d: ', the ',
+			WmhHospitals1BijeloPoljeLink: 'general hospital in Bijelo Polje',
+			WmhHospitals1e: ', ',
+			WmhHospitals1MeljineLink: 'Meljine hospital',
+			WmhHospitals1f: ' in Herceg Novi, and ',
+			WmhHospitals1DaniloLink: 'Danilo I hospital',
+			WmhHospitals1g: ' in Cetinje.',
 			WmhHospitals2:
 				'The country’s one private hospital,',
 			WmhHospitalsLink: 'Codra Hospital',
 			WmhHospitalsMid: 'in Podgorica, also runs 24/7, weekends included. Routine appointments under the health card at public clinics normally do not run on weekends — only urgent cases through an admission unit or ambulance (124).',
 			WmhHospitalsEnd: '',
 
-			WmhClinics1:
-				'In Podgorica, several private clinics and labs see patients on weekends: Hipokrat Poliklinika — Saturday and Sunday, 7:30 a.m.–10 p.m.; Milmedika Podgorica — Saturday and Sunday, 8 a.m.–8 p.m.; Moj Lab and its pediatric branch — Saturday until 8 p.m., Sunday until 1 p.m.; Medikid — Saturday until 8 p.m., Sunday until noon.',
-			WmhClinics2:
-				'In Budva: Milmedika Budva (8 a.m.–8 p.m. both days), Moj Lab Budva (8 a.m.–9 p.m. both days) and Altabella Health & Beauty Studio (10 a.m.–7 p.m.). In Bar: the Dr Masoničić polyclinic (8 a.m.–8 p.m.) and A3 Medical in Sutomore (8 a.m.–9 p.m.). In Tivat: Mansa Medica and Dental Expert. In Nikšić: Milmedika Nikšić (8 a.m.–8 p.m.).',
+			WmhClinicsIntro:
+				'Below are the private clinics and labs that see patients on weekends in Montenegro, by city:',
+			WmhClinicsPodgoricaLabel: 'Podgorica:',
+			WmhClinicsHipokratLink: 'Hipokrat Poliklinika',
+			WmhClinicsPodgoricaA: ' — Saturday and Sunday, 7:30 a.m.–10 p.m.; ',
+			WmhClinicsMilmedikaPgLink: 'Milmedika Podgorica',
+			WmhClinicsPodgoricaB: ' — Saturday and Sunday, 8 a.m.–8 p.m.; ',
+			WmhClinicsMojLabPgLink: 'Moj Lab',
+			WmhClinicsPodgoricaC: ' and its ',
+			WmhClinicsMojLabPedLink: 'pediatric branch',
+			WmhClinicsPodgoricaD: ' — Saturday until 8 p.m., Sunday until 1 p.m.; ',
+			WmhClinicsMedikidLink: 'Medikid',
+			WmhClinicsPodgoricaE:
+				' (pediatrics) — Saturday until 8 p.m., Sunday until noon.',
+			WmhClinicsBudvaLabel: 'Budva:',
+			WmhClinicsMilmedikaBdLink: 'Milmedika Budva',
+			WmhClinicsBudvaA: ' (8 a.m.–8 p.m. both days) and ',
+			WmhClinicsMojLabBdLink: 'Moj Lab Budva',
+			WmhClinicsBudvaB: ' (8 a.m.–9 p.m. both days).',
+			WmhClinicsBarLabel: 'Bar:',
+			WmhClinicsMasonicicLink: 'the Dr Masoničić polyclinic',
+			WmhClinicsBarA: ' (8 a.m.–8 p.m.) and ',
+			WmhClinicsA3Link: 'A3 Medical',
+			WmhClinicsBarB: ' in Sutomore (8 a.m.–9 p.m.).',
+			WmhClinicsTivatLabel: 'Tivat:',
+			WmhClinicsMansaLink: 'Mansa Medica',
+			WmhClinicsTivatA: ' (also sees children) and ',
+			WmhClinicsDentalExpertLink: 'Dental Expert',
+			WmhClinicsTivatB: ' (a dental clinic).',
+			WmhClinicsNiksicLabel: 'Nikšić:',
+			WmhClinicsMilmedikaNkLink: 'Milmedika Nikšić',
+			WmhClinicsNiksicA: ' (8 a.m.–8 p.m.).',
 			WmhClinicsCatalog:
 				'Hours change, so check the current schedule of a specific clinic on its page in our',
 			WmhClinicsLink: 'clinic catalog',
@@ -52,8 +92,6 @@ export default {
 				'The information is current as of July 2026. Pharmacy and clinic hours can change — verify before you go:',
 			WmhSourcesMontefarm:
 				'Montefarm — on-duty pharmacies for public holidays, by municipality: montefarm.co.me;',
-			WmhSourcesApoteke:
-				'apoteke.me — a directory of Montenegrin pharmacies with a filter for round-the-clock ones;',
 			WmhSourcesCatalog:
 				'Our clinic catalog lists working hours for every listed clinic.',
 
@@ -88,18 +126,58 @@ export default {
 			WmhPharmaciesLink: 'об аптеках и лекарствах в Черногории',
 			WmhPharmaciesEnd: '.',
 
-			WmhHospitals1:
-				'Приёмные отделения государственных больниц принимают неотложных пациентов круглосуточно и без выходных — суббота или воскресенье на это не влияют. Это касается Клинического центра Черногории (KCCG) в Подгорице, Опште больницы Котор, Опште больницы «Блажо Орландич» в Баре, Опште больницы Биело-Поле, больницы Мельине в Херцег-Нови и больницы Данило в Цетине.',
+			WmhHospitals1a:
+				'Приёмные отделения государственных больниц принимают неотложных пациентов круглосуточно и без выходных — суббота или воскресенье на это не влияют. Это касается ',
+			WmhHospitals1KccgLink: 'Клинического центра Черногории (KCCG)',
+			WmhHospitals1b: ' в Подгорице, ',
+			WmhHospitals1KotorLink: 'общей больницы в Которе',
+			WmhHospitals1c: ', ',
+			WmhHospitals1BarLink: 'общей больницы «Блажо Орландич» в Баре',
+			WmhHospitals1d: ', ',
+			WmhHospitals1BijeloPoljeLink: 'общей больницы в Биело-Поле',
+			WmhHospitals1e: ', ',
+			WmhHospitals1MeljineLink: 'больницы Мельине',
+			WmhHospitals1f: ' в Херцег-Нови и ',
+			WmhHospitals1DaniloLink: 'больницы «Данило I»',
+			WmhHospitals1g: ' в Цетинье.',
 			WmhHospitals2: 'Единственная частная больница страны —',
 			WmhHospitalsLink: 'Codra Hospital',
 			WmhHospitalsMid:
 				'в Подгорице — тоже работает круглосуточно, включая выходные. Плановый приём по здравственной книжице в государственных поликлиниках по субботам и воскресеньям, как правило, не работает — только неотложные случаи через приёмное отделение или скорую (124).',
 			WmhHospitalsEnd: '',
 
-			WmhClinics1:
-				'В Подгорице по выходным принимают несколько частных клиник и лабораторий: Hipokrat Poliklinika — суббота и воскресенье, 7:30–22:00; Milmedika Podgorica — суббота и воскресенье, 8:00–20:00; Moj Lab и его педиатрическое отделение — суббота до 20:00, воскресенье до 13:00; Medikid — суббота до 20:00, воскресенье до 12:00.',
-			WmhClinics2:
-				'В Будве: Milmedika Budva (8:00–20:00 оба дня), Moj Lab Budva (8:00–21:00 оба дня) и Altabella Health & Beauty Studio (10:00–19:00). В Баре: поликлиника Dr Masoničić (8:00–20:00) и A3 Medical в Сутоморе (8:00–21:00). В Тивате: Mansa Medica и Dental Expert. В Никшиче: Milmedika Nikšić (8:00–20:00).',
+			WmhClinicsIntro:
+				'Ниже — частные клиники и лаборатории, которые по выходным принимают пациентов в Черногории, по городам:',
+			WmhClinicsPodgoricaLabel: 'Подгорица:',
+			WmhClinicsHipokratLink: 'Hipokrat Poliklinika',
+			WmhClinicsPodgoricaA: ' — суббота и воскресенье, 7:30–22:00; ',
+			WmhClinicsMilmedikaPgLink: 'Milmedika Podgorica',
+			WmhClinicsPodgoricaB: ' — суббота и воскресенье, 8:00–20:00; ',
+			WmhClinicsMojLabPgLink: 'Moj Lab',
+			WmhClinicsPodgoricaC: ' и его ',
+			WmhClinicsMojLabPedLink: 'педиатрическое отделение',
+			WmhClinicsPodgoricaD: ' — суббота до 20:00, воскресенье до 13:00; ',
+			WmhClinicsMedikidLink: 'Medikid',
+			WmhClinicsPodgoricaE:
+				' (педиатрия) — суббота до 20:00, воскресенье до 12:00.',
+			WmhClinicsBudvaLabel: 'Будва:',
+			WmhClinicsMilmedikaBdLink: 'Milmedika Budva',
+			WmhClinicsBudvaA: ' (8:00–20:00 оба дня) и ',
+			WmhClinicsMojLabBdLink: 'Moj Lab Budva',
+			WmhClinicsBudvaB: ' (8:00–21:00 оба дня).',
+			WmhClinicsBarLabel: 'Бар:',
+			WmhClinicsMasonicicLink: 'поликлиника Dr Masoničić',
+			WmhClinicsBarA: ' (8:00–20:00) и ',
+			WmhClinicsA3Link: 'A3 Medical',
+			WmhClinicsBarB: ' в Сутоморе (8:00–21:00).',
+			WmhClinicsTivatLabel: 'Тиват:',
+			WmhClinicsMansaLink: 'Mansa Medica',
+			WmhClinicsTivatA: ' (принимает и детей) и ',
+			WmhClinicsDentalExpertLink: 'Dental Expert',
+			WmhClinicsTivatB: ' (стоматология).',
+			WmhClinicsNiksicLabel: 'Никшич:',
+			WmhClinicsMilmedikaNkLink: 'Milmedika Nikšić',
+			WmhClinicsNiksicA: ' (8:00–20:00).',
 			WmhClinicsCatalog:
 				'Часы могут меняться — актуальный график конкретной клиники смотрите на её странице в',
 			WmhClinicsLink: 'каталоге клиник',
@@ -109,8 +187,6 @@ export default {
 				'Информация актуальна на июль 2026 года. Часы работы аптек и клиник могут меняться — уточняйте перед визитом:',
 			WmhSourcesMontefarm:
 				'Montefarm — дежурные аптеки на праздники по каждому муниципалитету: montefarm.co.me;',
-			WmhSourcesApoteke:
-				'apoteke.me — справочник аптек Черногории с фильтром по круглосуточным;',
 			WmhSourcesCatalog:
 				'В нашем каталоге клиник указан график работы каждой из них.',
 
@@ -145,18 +221,58 @@ export default {
 			WmhPharmaciesLink: 'o apotekama i ljekovima u Crnoj Gori',
 			WmhPharmaciesEnd: '.',
 
-			WmhHospitals1:
-				'Prijemna odjeljenja državnih bolnica primaju hitne pacijente non-stop, svih sedam dana u nedjelji — subota ili nedjelja ne mijenjaju ništa. Ovo važi za Klinički centar Crne Gore (KCCG) u Podgorici, opštu bolnicu u Kotoru, opštu bolnicu „Blažo Orlandić“ u Baru, opštu bolnicu u Bijelom Polju, bolnicu Meljine u Herceg Novom i bolnicu Danilo u Cetinju.',
+			WmhHospitals1a:
+				'Prijemna odjeljenja državnih bolnica primaju hitne pacijente non-stop, svih sedam dana u nedjelji — subota ili nedjelja ne mijenjaju ništa. Ovo važi za ',
+			WmhHospitals1KccgLink: 'Klinički centar Crne Gore (KCCG)',
+			WmhHospitals1b: ' u Podgorici, ',
+			WmhHospitals1KotorLink: 'opštu bolnicu u Kotoru',
+			WmhHospitals1c: ', ',
+			WmhHospitals1BarLink: 'opštu bolnicu „Blažo Orlandić“ u Baru',
+			WmhHospitals1d: ', ',
+			WmhHospitals1BijeloPoljeLink: 'opštu bolnicu u Bijelom Polju',
+			WmhHospitals1e: ', ',
+			WmhHospitals1MeljineLink: 'bolnicu Meljine',
+			WmhHospitals1f: ' u Herceg Novom i ',
+			WmhHospitals1DaniloLink: 'bolnicu Danilo I',
+			WmhHospitals1g: ' u Cetinju.',
 			WmhHospitals2: 'Jedina privatna bolnica u zemlji,',
 			WmhHospitalsLink: 'Codra Hospital',
 			WmhHospitalsMid:
 				'u Podgorici, takođe radi non-stop, uključujući vikend. Redovni pregledi po zdravstvenoj knjižici u domovima zdravlja subotom i nedjeljom po pravilu ne rade — samo hitni slučajevi preko prijemnog odjeljenja ili hitne pomoći (124).',
 			WmhHospitalsEnd: '',
 
-			WmhClinics1:
-				'U Podgorici vikendom prima nekoliko privatnih klinika i laboratorija: Hipokrat Poliklinika — subota i nedjelja, 7:30–22:00; Milmedika Podgorica — subota i nedjelja, 8:00–20:00; Moj Lab i njegovo pedijatrijsko odjeljenje — subota do 20:00, nedjelja do 13:00; Medikid — subota do 20:00, nedjelja do 12:00.',
-			WmhClinics2:
-				'U Budvi: Milmedika Budva (8:00–20:00 oba dana), Moj Lab Budva (8:00–21:00 oba dana) i Altabella Health & Beauty Studio (10:00–19:00). U Baru: poliklinika Dr Masoničić (8:00–20:00) i A3 Medical u Sutomoru (8:00–21:00). U Tivtu: Mansa Medica i Dental Expert. U Nikšiću: Milmedika Nikšić (8:00–20:00).',
+			WmhClinicsIntro:
+				'Ispod su privatne klinike i laboratorije koje vikendom primaju pacijente u Crnoj Gori, po gradovima:',
+			WmhClinicsPodgoricaLabel: 'Podgorica:',
+			WmhClinicsHipokratLink: 'Hipokrat Poliklinika',
+			WmhClinicsPodgoricaA: ' — subota i nedjelja, 7:30–22:00; ',
+			WmhClinicsMilmedikaPgLink: 'Milmedika Podgorica',
+			WmhClinicsPodgoricaB: ' — subota i nedjelja, 8:00–20:00; ',
+			WmhClinicsMojLabPgLink: 'Moj Lab',
+			WmhClinicsPodgoricaC: ' i njegovo ',
+			WmhClinicsMojLabPedLink: 'pedijatrijsko odjeljenje',
+			WmhClinicsPodgoricaD: ' — subota do 20:00, nedjelja do 13:00; ',
+			WmhClinicsMedikidLink: 'Medikid',
+			WmhClinicsPodgoricaE:
+				' (pedijatrija) — subota do 20:00, nedjelja do 12:00.',
+			WmhClinicsBudvaLabel: 'Budva:',
+			WmhClinicsMilmedikaBdLink: 'Milmedika Budva',
+			WmhClinicsBudvaA: ' (8:00–20:00 oba dana) i ',
+			WmhClinicsMojLabBdLink: 'Moj Lab Budva',
+			WmhClinicsBudvaB: ' (8:00–21:00 oba dana).',
+			WmhClinicsBarLabel: 'Bar:',
+			WmhClinicsMasonicicLink: 'poliklinika Dr Masoničić',
+			WmhClinicsBarA: ' (8:00–20:00) i ',
+			WmhClinicsA3Link: 'A3 Medical',
+			WmhClinicsBarB: ' u Sutomoru (8:00–21:00).',
+			WmhClinicsTivatLabel: 'Tivat:',
+			WmhClinicsMansaLink: 'Mansa Medica',
+			WmhClinicsTivatA: ' (prima i djecu) i ',
+			WmhClinicsDentalExpertLink: 'Dental Expert',
+			WmhClinicsTivatB: ' (stomatološka klinika).',
+			WmhClinicsNiksicLabel: 'Nikšić:',
+			WmhClinicsMilmedikaNkLink: 'Milmedika Nikšić',
+			WmhClinicsNiksicA: ' (8:00–20:00).',
 			WmhClinicsCatalog:
 				'Radno vrijeme se mijenja — aktuelan raspored konkretne klinike provjerite na njenoj stranici u',
 			WmhClinicsLink: 'katalogu klinika',
@@ -166,8 +282,6 @@ export default {
 				'Informacije važe za jul 2026. Radno vrijeme apoteka i klinika se mijenja — provjerite prije posjete:',
 			WmhSourcesMontefarm:
 				'Montefarm — dežurne apoteke za praznike po opštinama: montefarm.co.me;',
-			WmhSourcesApoteke:
-				'apoteke.me — vodič kroz apoteke Crne Gore sa filterom za non-stop apoteke;',
 			WmhSourcesCatalog:
 				'U našem katalogu klinika naznačeno je radno vrijeme svake od njih.',
 
@@ -202,18 +316,58 @@ export default {
 			WmhPharmaciesLink: 'о апотекама и љековима у Црној Гори',
 			WmhPharmaciesEnd: '.',
 
-			WmhHospitals1:
-				'Пријемна одјељења државних болница примају хитне пацијенте нон-стоп, свих седам дана у недјељи — субота или недјеља не мијењају ништа. Ово важи за Клинички центар Црне Горе (КЦЦГ) у Подгорици, општу болницу у Котору, општу болницу „Блажо Орландић“ у Бару, општу болницу у Бијелом Пољу, болницу Мељине у Херцег Новом и болницу Данило у Цетињу.',
+			WmhHospitals1a:
+				'Пријемна одјељења државних болница примају хитне пацијенте нон-стоп, свих седам дана у недјељи — субота или недјеља не мијењају ништа. Ово важи за ',
+			WmhHospitals1KccgLink: 'Клинички центар Црне Горе (КЦЦГ)',
+			WmhHospitals1b: ' у Подгорици, ',
+			WmhHospitals1KotorLink: 'општу болницу у Котору',
+			WmhHospitals1c: ', ',
+			WmhHospitals1BarLink: 'општу болницу „Блажо Орландић“ у Бару',
+			WmhHospitals1d: ', ',
+			WmhHospitals1BijeloPoljeLink: 'општу болницу у Бијелом Пољу',
+			WmhHospitals1e: ', ',
+			WmhHospitals1MeljineLink: 'болницу Мељине',
+			WmhHospitals1f: ' у Херцег Новом и ',
+			WmhHospitals1DaniloLink: 'болницу Данило I',
+			WmhHospitals1g: ' у Цетињу.',
 			WmhHospitals2: 'Једина приватна болница у земљи,',
 			WmhHospitalsLink: 'Codra Hospital',
 			WmhHospitalsMid:
 				'у Подгорици, такође ради нон-стоп, укључујући викенд. Редовни прегледи по здравственој књижици у домовима здравља суботом и недјељом по правилу не раде — само хитни случајеви преко пријемног одјељења или хитне помоћи (124).',
 			WmhHospitalsEnd: '',
 
-			WmhClinics1:
-				'У Подгорици викендом прима неколико приватних клиника и лабораторија: Hipokrat Poliklinika — субота и недјеља, 7:30–22:00; Milmedika Podgorica — субота и недјеља, 8:00–20:00; Moj Lab и његово педијатријско одјељење — субота до 20:00, недјеља до 13:00; Medikid — субота до 20:00, недјеља до 12:00.',
-			WmhClinics2:
-				'У Будви: Milmedika Budva (8:00–20:00 оба дана), Moj Lab Budva (8:00–21:00 оба дана) и Altabella Health & Beauty Studio (10:00–19:00). У Бару: поликлиника Dr Masoničić (8:00–20:00) и A3 Medical у Сутомору (8:00–21:00). У Тивту: Mansa Medica и Dental Expert. У Никшићу: Milmedika Nikšić (8:00–20:00).',
+			WmhClinicsIntro:
+				'Испод су приватне клинике и лабораторије које викендом примају пацијенте у Црној Гори, по градовима:',
+			WmhClinicsPodgoricaLabel: 'Подгорица:',
+			WmhClinicsHipokratLink: 'Hipokrat Poliklinika',
+			WmhClinicsPodgoricaA: ' — субота и недјеља, 7:30–22:00; ',
+			WmhClinicsMilmedikaPgLink: 'Milmedika Podgorica',
+			WmhClinicsPodgoricaB: ' — субота и недјеља, 8:00–20:00; ',
+			WmhClinicsMojLabPgLink: 'Moj Lab',
+			WmhClinicsPodgoricaC: ' и његово ',
+			WmhClinicsMojLabPedLink: 'педијатријско одјељење',
+			WmhClinicsPodgoricaD: ' — субота до 20:00, недјеља до 13:00; ',
+			WmhClinicsMedikidLink: 'Medikid',
+			WmhClinicsPodgoricaE:
+				' (педијатрија) — субота до 20:00, недјеља до 12:00.',
+			WmhClinicsBudvaLabel: 'Будва:',
+			WmhClinicsMilmedikaBdLink: 'Milmedika Budva',
+			WmhClinicsBudvaA: ' (8:00–20:00 оба дана) и ',
+			WmhClinicsMojLabBdLink: 'Moj Lab Budva',
+			WmhClinicsBudvaB: ' (8:00–21:00 оба дана).',
+			WmhClinicsBarLabel: 'Бар:',
+			WmhClinicsMasonicicLink: 'поликлиника Dr Masoničić',
+			WmhClinicsBarA: ' (8:00–20:00) и ',
+			WmhClinicsA3Link: 'A3 Medical',
+			WmhClinicsBarB: ' у Сутомору (8:00–21:00).',
+			WmhClinicsTivatLabel: 'Тиват:',
+			WmhClinicsMansaLink: 'Mansa Medica',
+			WmhClinicsTivatA: ' (прима и дјецу) и ',
+			WmhClinicsDentalExpertLink: 'Dental Expert',
+			WmhClinicsTivatB: ' (стоматолошка клиника).',
+			WmhClinicsNiksicLabel: 'Никшић:',
+			WmhClinicsMilmedikaNkLink: 'Milmedika Nikšić',
+			WmhClinicsNiksicA: ' (8:00–20:00).',
 			WmhClinicsCatalog:
 				'Радно вријеме се мијења — актуелан распоред конкретне клинике провјерите на њеној страници у',
 			WmhClinicsLink: 'каталогу клиника',
@@ -223,8 +377,6 @@ export default {
 				'Информације важе за јул 2026. Радно вријеме апотека и клиника се мијења — провјерите прије посјете:',
 			WmhSourcesMontefarm:
 				'Montefarm — дежурне апотеке за празнике по општинама: montefarm.co.me;',
-			WmhSourcesApoteke:
-				'apoteke.me — водич кроз апотеке Црне Горе са филтером за нон-стоп апотеке;',
 			WmhSourcesCatalog:
 				'У нашем каталогу клиника назначено је радно вријеме сваке од њих.',
 
@@ -259,18 +411,60 @@ export default {
 			WmhPharmaciesLink: 'über Apotheken und Medikamente in Montenegro',
 			WmhPharmaciesEnd: '.',
 
-			WmhHospitals1:
-				'Die Notaufnahmen staatlicher Krankenhäuser nehmen Notfallpatienten rund um die Uhr an, sieben Tage die Woche — Samstag oder Sonntag ändern daran nichts. Das gilt für das Klinische Zentrum Montenegros (KCCG) in Podgorica, das Allgemeine Krankenhaus in Kotor, das Allgemeine Krankenhaus „Blažo Orlandić“ in Bar, das Allgemeine Krankenhaus in Bijelo Polje, das Krankenhaus Meljine in Herceg Novi und das Krankenhaus Danilo in Cetinje.',
+			WmhHospitals1a:
+				'Die Notaufnahmen staatlicher Krankenhäuser nehmen Notfallpatienten rund um die Uhr an, sieben Tage die Woche — Samstag oder Sonntag ändern daran nichts. Das gilt für das ',
+			WmhHospitals1KccgLink: 'Klinische Zentrum Montenegros (KCCG)',
+			WmhHospitals1b: ' in Podgorica, das ',
+			WmhHospitals1KotorLink: 'Allgemeine Krankenhaus in Kotor',
+			WmhHospitals1c: ', das ',
+			WmhHospitals1BarLink:
+				'Allgemeine Krankenhaus „Blažo Orlandić“ in Bar',
+			WmhHospitals1d: ', das ',
+			WmhHospitals1BijeloPoljeLink:
+				'Allgemeine Krankenhaus in Bijelo Polje',
+			WmhHospitals1e: ', das ',
+			WmhHospitals1MeljineLink: 'Krankenhaus Meljine',
+			WmhHospitals1f: ' in Herceg Novi und das ',
+			WmhHospitals1DaniloLink: 'Krankenhaus Danilo I',
+			WmhHospitals1g: ' in Cetinje.',
 			WmhHospitals2: 'Das einzige Privatkrankenhaus des Landes,',
 			WmhHospitalsLink: 'Codra Hospital',
 			WmhHospitalsMid:
 				'in Podgorica, arbeitet ebenfalls rund um die Uhr, auch am Wochenende. Reguläre Termine mit der Gesundheitskarte finden in staatlichen Zentren samstags und sonntags in der Regel nicht statt — nur Notfälle über die Notaufnahme oder den Rettungsdienst (124).',
 			WmhHospitalsEnd: '',
 
-			WmhClinics1:
-				'In Podgorica haben am Wochenende mehrere Privatkliniken und Labore geöffnet: Hipokrat Poliklinika — Samstag und Sonntag, 7:30–22 Uhr; Milmedika Podgorica — Samstag und Sonntag, 8–20 Uhr; Moj Lab mit seiner Kinderabteilung — Samstag bis 20 Uhr, Sonntag bis 13 Uhr; Medikid — Samstag bis 20 Uhr, Sonntag bis 12 Uhr.',
-			WmhClinics2:
-				'In Budva: Milmedika Budva (8–20 Uhr an beiden Tagen), Moj Lab Budva (8–21 Uhr an beiden Tagen) und Altabella Health & Beauty Studio (10–19 Uhr). In Bar: die Poliklinik Dr Masoničić (8–20 Uhr) und A3 Medical in Sutomore (8–21 Uhr). In Tivat: Mansa Medica und Dental Expert. In Nikšić: Milmedika Nikšić (8–20 Uhr).',
+			WmhClinicsIntro:
+				'Im Folgenden die privaten Kliniken und Labore, die in Montenegro am Wochenende Patienten empfangen, nach Städten:',
+			WmhClinicsPodgoricaLabel: 'Podgorica:',
+			WmhClinicsHipokratLink: 'Hipokrat Poliklinika',
+			WmhClinicsPodgoricaA: ' — Samstag und Sonntag, 7:30–22 Uhr; ',
+			WmhClinicsMilmedikaPgLink: 'Milmedika Podgorica',
+			WmhClinicsPodgoricaB: ' — Samstag und Sonntag, 8–20 Uhr; ',
+			WmhClinicsMojLabPgLink: 'Moj Lab',
+			WmhClinicsPodgoricaC: ' und seine ',
+			WmhClinicsMojLabPedLink: 'Kinderabteilung',
+			WmhClinicsPodgoricaD: ' — Samstag bis 20 Uhr, Sonntag bis 13 Uhr; ',
+			WmhClinicsMedikidLink: 'Medikid',
+			WmhClinicsPodgoricaE:
+				' (Kinderklinik) — Samstag bis 20 Uhr, Sonntag bis 12 Uhr.',
+			WmhClinicsBudvaLabel: 'Budva:',
+			WmhClinicsMilmedikaBdLink: 'Milmedika Budva',
+			WmhClinicsBudvaA: ' (8–20 Uhr an beiden Tagen) und ',
+			WmhClinicsMojLabBdLink: 'Moj Lab Budva',
+			WmhClinicsBudvaB: ' (8–21 Uhr an beiden Tagen).',
+			WmhClinicsBarLabel: 'Bar:',
+			WmhClinicsMasonicicLink: 'die Poliklinik Dr Masoničić',
+			WmhClinicsBarA: ' (8–20 Uhr) und ',
+			WmhClinicsA3Link: 'A3 Medical',
+			WmhClinicsBarB: ' in Sutomore (8–21 Uhr).',
+			WmhClinicsTivatLabel: 'Tivat:',
+			WmhClinicsMansaLink: 'Mansa Medica',
+			WmhClinicsTivatA: ' (behandelt auch Kinder) und ',
+			WmhClinicsDentalExpertLink: 'Dental Expert',
+			WmhClinicsTivatB: ' (eine Zahnklinik).',
+			WmhClinicsNiksicLabel: 'Nikšić:',
+			WmhClinicsMilmedikaNkLink: 'Milmedika Nikšić',
+			WmhClinicsNiksicA: ' (8–20 Uhr).',
 			WmhClinicsCatalog:
 				'Die Zeiten ändern sich — den aktuellen Zeitplan einer bestimmten Klinik finden Sie auf ihrer Seite in unserem',
 			WmhClinicsLink: 'Klinik-Katalog',
@@ -280,8 +474,6 @@ export default {
 				'Die Informationen sind auf dem Stand von Juli 2026. Öffnungszeiten von Apotheken und Kliniken ändern sich — prüfen Sie diese vor dem Besuch:',
 			WmhSourcesMontefarm:
 				'Montefarm — Notdienst-Apotheken für Feiertage, nach Gemeinde: montefarm.co.me;',
-			WmhSourcesApoteke:
-				'apoteke.me — ein Verzeichnis montenegrinischer Apotheken mit Filter für durchgehend geöffnete;',
 			WmhSourcesCatalog:
 				'Unser Klinik-Katalog zeigt die Öffnungszeiten jeder gelisteten Klinik.',
 
@@ -316,18 +508,58 @@ export default {
 			WmhPharmaciesLink: "Karadağ'da eczaneler ve ilaçlar",
 			WmhPharmaciesEnd: ' hakkındaki makalemizde ayrıntılı olarak ele aldık.',
 
-			WmhHospitals1:
-				"Devlet hastanelerinin acil servisleri, haftanın yedi günü, cumartesi veya pazar fark etmeksizin acil hastaları gece gündüz kabul eder. Bu, Podgorica'daki Karadağ Klinik Merkezi'ni (KCCG), Kotor Genel Hastanesi'ni, Bar'daki „Blažo Orlandić“ Genel Hastanesi'ni, Bijelo Polje Genel Hastanesi'ni, Herceg Novi'deki Meljine hastanesini ve Cetinje'deki Danilo hastanesini kapsar.",
+			WmhHospitals1a:
+				"Devlet hastanelerinin acil servisleri, haftanın yedi günü, cumartesi veya pazar fark etmeksizin acil hastaları gece gündüz kabul eder. Bu, Podgorica'daki ",
+			WmhHospitals1KccgLink: "Karadağ Klinik Merkezi'ni (KCCG)",
+			WmhHospitals1b: ', ',
+			WmhHospitals1KotorLink: "Kotor Genel Hastanesi'ni",
+			WmhHospitals1c: ", Bar'daki ",
+			WmhHospitals1BarLink: '„Blažo Orlandić“ Genel Hastanesi\'ni',
+			WmhHospitals1d: ', ',
+			WmhHospitals1BijeloPoljeLink: "Bijelo Polje Genel Hastanesi'ni",
+			WmhHospitals1e: ", Herceg Novi'deki ",
+			WmhHospitals1MeljineLink: 'Meljine hastanesini',
+			WmhHospitals1f: " ve Cetinje'deki ",
+			WmhHospitals1DaniloLink: 'Danilo I hastanesini',
+			WmhHospitals1g: ' kapsar.',
 			WmhHospitals2: "Ülkenin tek özel hastanesi olan",
 			WmhHospitalsLink: 'Codra Hospital',
 			WmhHospitalsMid:
 				"da Podgorica'da hafta sonu dahil gece gündüz çalışır. Sağlık kartıyla rutin muayeneler devlet merkezlerinde cumartesi ve pazar günleri genellikle yapılmaz — yalnızca acil servis veya ambulans (124) üzerinden acil vakalar kabul edilir.",
 			WmhHospitalsEnd: '',
 
-			WmhClinics1:
-				"Podgorica'da hafta sonu birkaç özel klinik ve laboratuvar hasta kabul eder: Hipokrat Poliklinika — cumartesi ve pazar, 7:30–22:00; Milmedika Podgorica — cumartesi ve pazar, 8:00–20:00; Moj Lab ve pediatri şubesi — cumartesi 20:00'a, pazar 13:00'e kadar; Medikid — cumartesi 20:00'a, pazar öğlene kadar.",
-			WmhClinics2:
-				"Budva'da: Milmedika Budva (her iki gün 8:00–20:00), Moj Lab Budva (her iki gün 8:00–21:00) ve Altabella Health & Beauty Studio (10:00–19:00). Bar'da: Dr Masoničić polikliniği (8:00–20:00) ve Sutomore'deki A3 Medical (8:00–21:00). Tivat'ta: Mansa Medica ve Dental Expert. Nikšić'te: Milmedika Nikšić (8:00–20:00).",
+			WmhClinicsIntro:
+				"Karadağ'da hafta sonu hasta kabul eden özel klinikler ve laboratuvarlar, şehir şehir:",
+			WmhClinicsPodgoricaLabel: 'Podgorica:',
+			WmhClinicsHipokratLink: 'Hipokrat Poliklinika',
+			WmhClinicsPodgoricaA: ' — cumartesi ve pazar, 7:30–22:00; ',
+			WmhClinicsMilmedikaPgLink: 'Milmedika Podgorica',
+			WmhClinicsPodgoricaB: ' — cumartesi ve pazar, 8:00–20:00; ',
+			WmhClinicsMojLabPgLink: 'Moj Lab',
+			WmhClinicsPodgoricaC: ' ve ',
+			WmhClinicsMojLabPedLink: 'pediatri şubesi',
+			WmhClinicsPodgoricaD: " — cumartesi 20:00'a, pazar 13:00'e kadar; ",
+			WmhClinicsMedikidLink: 'Medikid',
+			WmhClinicsPodgoricaE:
+				" (pediatri) — cumartesi 20:00'a, pazar öğlene kadar.",
+			WmhClinicsBudvaLabel: 'Budva:',
+			WmhClinicsMilmedikaBdLink: 'Milmedika Budva',
+			WmhClinicsBudvaA: ' (her iki gün 8:00–20:00) ve ',
+			WmhClinicsMojLabBdLink: 'Moj Lab Budva',
+			WmhClinicsBudvaB: ' (her iki gün 8:00–21:00).',
+			WmhClinicsBarLabel: 'Bar:',
+			WmhClinicsMasonicicLink: 'Dr Masoničić polikliniği',
+			WmhClinicsBarA: ' (8:00–20:00) ve ',
+			WmhClinicsA3Link: 'A3 Medical',
+			WmhClinicsBarB: ' (Sutomore, 8:00–21:00).',
+			WmhClinicsTivatLabel: 'Tivat:',
+			WmhClinicsMansaLink: 'Mansa Medica',
+			WmhClinicsTivatA: ' (çocuk hastaları da kabul eder) ve ',
+			WmhClinicsDentalExpertLink: 'Dental Expert',
+			WmhClinicsTivatB: ' (diş kliniği).',
+			WmhClinicsNiksicLabel: 'Nikšić:',
+			WmhClinicsMilmedikaNkLink: 'Milmedika Nikšić',
+			WmhClinicsNiksicA: ' (8:00–20:00).',
 			WmhClinicsCatalog: 'Saatler değişebilir — güncel programı',
 			WmhClinicsLink: 'klinik kataloğu',
 			WmhClinicsEnd: ' üzerinden kontrol edin.',
@@ -336,8 +568,6 @@ export default {
 				'Bilgiler Temmuz 2026 itibarıyla günceldir. Eczane ve klinik saatleri değişebilir — gitmeden önce doğrulayın:',
 			WmhSourcesMontefarm:
 				'Montefarm — belediyeye göre resmi tatil nöbetçi eczaneleri: montefarm.co.me;',
-			WmhSourcesApoteke:
-				'apoteke.me — 24 saat açık olanlar için filtreli Karadağ eczane rehberi;',
 			WmhSourcesCatalog:
 				'Klinik kataloğumuzda listelenen her kliniğin çalışma saatleri belirtilir.',
 

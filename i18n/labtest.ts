@@ -27,6 +27,7 @@ export default {
 			Synonyms: 'Also known as',
 			TabClinics: 'Clinics',
 			TabMap: 'Location',
+			TabReference: 'Info',
 		},
 		'ru': {
 			LabTestName: 'Название анализа',
@@ -55,6 +56,7 @@ export default {
 			Synonyms: 'Также известен как',
 			TabClinics: 'Клиники',
 			TabMap: 'На карте',
+			TabReference: 'Справка',
 		},
 		'sr': {
 			LabTestName: 'Ime analize',
@@ -83,6 +85,7 @@ export default {
 			Synonyms: 'Poznato i kao',
 			TabClinics: 'Klinike',
 			TabMap: 'Lokacija',
+			TabReference: 'Info',
 		},
 		'de': {
 			LabTestName: 'Testname',
@@ -111,6 +114,7 @@ export default {
 			Synonyms: 'Auch bekannt als',
 			TabClinics: 'Kliniken',
 			TabMap: 'Standort',
+			TabReference: 'Info',
 		},
 		'tr': {
 			LabTestName: 'Test adı',
@@ -139,6 +143,7 @@ export default {
 			Synonyms: 'Ayrıca şu adla bilinir',
 			TabClinics: 'Klinikler',
 			TabMap: 'Konum',
+			TabReference: 'Bilgi',
 		},
 		'sr-cyrl': {
 			LabTestName: 'Име анализе',
@@ -167,6 +172,7 @@ export default {
 			Synonyms: 'Познато и као',
 			TabClinics: 'Клинике',
 			TabMap: 'Локација',
+			TabReference: 'Инфо',
 		},
 	},
 };

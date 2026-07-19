@@ -139,6 +139,9 @@ const hasTariffs = computed(() => tariffs.value.length > 0);
 // Табы — на полном наборе клиник: фильтр не должен прятать таб «Клиники».
 const tabs = computed(() => {
 	const result = [];
+	if (medicalServiceData.value?.referenceInfo) {
+		result.push({ id: 'reference', label: t('TabReference') });
+	}
 	if (allMedicalServiceClinics.value.length > 0) {
 		result.push({ id: 'clinics', label: t('TabClinics') });
 	}
@@ -315,6 +318,13 @@ watchEffect(() => {
 		</template>
 
 		<template #sections>
+			<EntityPageReferenceSection
+				v-if="medicalServiceData?.referenceInfo"
+				sectionId="reference"
+				:title="t('TabReference')"
+				:referenceInfo="medicalServiceData.referenceInfo"
+			/>
+
 			<EntityPageClinicsSection
 				v-if="allMedicalServiceClinics.length > 0"
 				v-model:cityIds="cityIds"

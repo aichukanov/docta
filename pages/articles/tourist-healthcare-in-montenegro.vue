@@ -32,6 +32,31 @@ const healthcareArticleLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
+const getClinicLink = (slug: string) => ({
+	name: 'clinics-clinicSlug',
+	params: { clinicSlug: slug },
+	query: getRegionalQuery(locale.value),
+});
+
+const kccgLink = computed(() =>
+	getClinicLink('klinicki-centar-crne-gore-podgorica'),
+);
+const kotorHospitalLink = computed(() => getClinicLink('opsta-bolnica-kotor'));
+const barHospitalLink = computed(() =>
+	getClinicLink('opsta-bolnica-blazo-orlandic'),
+);
+const risanHospitalLink = computed(() =>
+	getClinicLink(
+		'specijalna-bolnica-za-ortopediju-neurohirurgiju-i-neurologiju-vaso-cukovic-risan',
+	),
+);
+
+const cbcLink = computed(() => ({
+	name: 'labtests-labTestSlug',
+	params: { labTestSlug: 'complete-blood-count' },
+	query: getRegionalQuery(locale.value),
+}));
+
 // Секции статьи: id → ключи заголовков для TOC и разметки
 const SECTION_IDS = [
 	'emergency',
@@ -91,14 +116,48 @@ const { breadcrumbItems } = useArticlePageSeo({
 				<NuxtLink :to="clinicsLink">{{ t('ThcWhere2Link') }}</NuxtLink
 				>{{ t('ThcWhere2End') }}
 			</p>
-			<p>{{ t('ThcWhere3') }}</p>
-			<p>{{ t('ThcWhere4') }}</p>
+			<p
+				>{{ t('ThcWhere3a') }}<NuxtLink :to="kotorHospitalLink">{{
+					t('ThcWhere3KotorLink')
+				}}</NuxtLink
+				>{{ t('ThcWhere3b') }}<NuxtLink :to="barHospitalLink">{{
+					t('ThcWhere3BarLink')
+				}}</NuxtLink
+				>{{ t('ThcWhere3c') }}<NuxtLink :to="risanHospitalLink">{{
+					t('ThcWhere3RisanLink')
+				}}</NuxtLink
+				>{{ t('ThcWhere3d') }}</p
+			>
+			<p
+				>{{ t('ThcWhere4a') }}<NuxtLink :to="kccgLink">{{
+					t('ThcWhere4KccgLink')
+				}}</NuxtLink
+				>{{ t('ThcWhere4b') }}</p
+			>
 		</ArticleSection>
 
 		<ArticleSection id="section-costs" :title="t('ThcToc_costs')">
-			<p>{{ t('ThcCosts1') }}</p>
-			<p>{{ t('ThcCosts2') }}</p>
-			<p>{{ t('ThcCosts3') }}</p>
+			<p
+				>{{ t('ThcCosts1a') }}<NuxtLink :to="cbcLink">{{
+					t('ThcCosts1CbcLink')
+				}}</NuxtLink
+				>{{ t('ThcCosts1b') }}</p
+			>
+			<p
+				>{{ t('ThcCosts2a') }}<NuxtLink :to="kotorHospitalLink">{{
+					t('ThcCosts2KotorLink')
+				}}</NuxtLink
+				>{{ t('ThcCosts2b') }}<NuxtLink :to="barHospitalLink">{{
+					t('ThcCosts2BarLink')
+				}}</NuxtLink
+				>{{ t('ThcCosts2c') }}</p
+			>
+			<p
+				>{{ t('ThcCosts3a') }}<NuxtLink :to="kccgLink">{{
+					t('ThcCosts3PodgoricaLink')
+				}}</NuxtLink
+				>{{ t('ThcCosts3b') }}</p
+			>
 		</ArticleSection>
 
 		<ArticleSection id="section-agreements" :title="t('ThcToc_agreements')">

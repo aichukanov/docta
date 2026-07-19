@@ -22,23 +22,42 @@ const doctorsLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
-const medicationsLink = computed(() => ({
-	name: 'medications',
-	query: getRegionalQuery(locale.value),
-}));
-
 const medicinesLink = computed(() => ({
 	name: 'medicines',
 	query: getRegionalQuery(locale.value),
 }));
 
 const adrenalineMedicineLink = computed(() => ({
+	name: 'medicines-medicineSlug',
+	params: { medicineSlug: 'lidokain-2---adrenalin-galenika' },
+	query: getRegionalQuery(locale.value),
+}));
+
+const SERTRALINE_SUBSTANCE_ID = 738;
+const sertralineLink = computed(() => ({
 	name: 'medicines',
 	query: {
+		substanceIds: SERTRALINE_SUBSTANCE_ID,
 		...getRegionalQuery(locale.value),
-		name: 'LIDOKAIN 2% - ADRENALIN GALENIKA',
 	},
 }));
+
+const getSubstanceLink = (substanceId: number) => ({
+	name: 'medicines',
+	query: {
+		substanceIds: substanceId,
+		...getRegionalQuery(locale.value),
+	},
+});
+
+const IBUPROFEN_SUBSTANCE_ID = 364;
+const LEVOTHYROXINE_SUBSTANCE_ID = 485;
+const ibuprofenLink = computed(() =>
+	getSubstanceLink(IBUPROFEN_SUBSTANCE_ID),
+);
+const levothyroxineLink = computed(() =>
+	getSubstanceLink(LEVOTHYROXINE_SUBSTANCE_ID),
+);
 
 const healthcareArticleLink = computed(() => ({
 	path: '/articles/healthcare-system-in-montenegro',
@@ -66,7 +85,7 @@ const articleCta = computed(() => ({
 	title: t('PhaCtaTitle'),
 	text: t('PhaCtaText'),
 	button: t('PhaCtaButton'),
-	link: medicationsLink.value,
+	link: medicinesLink.value,
 }));
 
 const { breadcrumbItems } = useArticlePageSeo({
@@ -114,7 +133,12 @@ const { breadcrumbItems } = useArticlePageSeo({
 
 		<ArticleSection id="section-fond-list" :title="t('PhaToc_fond-list')">
 			<p>{{ t('PhaFond1') }}</p>
-			<p>{{ t('PhaFond2') }}</p>
+			<p
+				>{{ t('PhaFond2a') }}<NuxtLink :to="sertralineLink">{{
+					t('PhaFond2SertralineLink')
+				}}</NuxtLink
+				>{{ t('PhaFond2b') }}</p
+			>
 			<p>
 				{{ t('PhaFond3') }}
 				<NuxtLink :to="healthcareArticleLink">{{ t('PhaFond3Link') }}</NuxtLink
@@ -123,12 +147,18 @@ const { breadcrumbItems } = useArticlePageSeo({
 		</ArticleSection>
 
 		<ArticleSection id="section-analogs" :title="t('PhaToc_analogs')">
-			<p>{{ t('PhaAnalogs1') }}</p>
+			<p
+				>{{ t('PhaAnalogs1a') }}<NuxtLink :to="ibuprofenLink">{{
+					t('PhaAnalogs1IbuprofenLink')
+				}}</NuxtLink
+				>{{ t('PhaAnalogs1b') }}<NuxtLink :to="levothyroxineLink">{{
+					t('PhaAnalogs1LevothyroxineLink')
+				}}</NuxtLink
+				>{{ t('PhaAnalogs1c') }}</p
+			>
 			<p>
 				{{ t('PhaAnalogs2') }}
 				<NuxtLink :to="medicinesLink">{{ t('PhaAnalogs2Link') }}</NuxtLink
-				>{{ t('PhaAnalogs2Mid') }}
-				<NuxtLink :to="medicationsLink">{{ t('PhaAnalogs2Link2') }}</NuxtLink
 				>{{ t('PhaAnalogs2End') }}
 			</p>
 			<p>{{ t('PhaAnalogs3') }}</p>
@@ -170,14 +200,19 @@ const { breadcrumbItems } = useArticlePageSeo({
 						>{{ t('PhaSourcesCinmed') }}</a
 					>
 				</li>
-				<li>
-					<a
+				<li
+					>{{ t('PhaSourcesBenu') }}<a
 						href="https://benu.me"
 						target="_blank"
 						rel="noopener nofollow"
-						>{{ t('PhaSourcesBenu') }}</a
-					>
-				</li>
+						>{{ t('PhaSourcesBenuLink') }}</a
+					>{{ t('PhaSourcesBenuMid') }}<a
+						href="https://www.teamedica.me"
+						target="_blank"
+						rel="noopener nofollow"
+						>{{ t('PhaSourcesTeaMedicaLink') }}</a
+					>{{ t('PhaSourcesBenuEnd') }}</li
+				>
 			</ul>
 			<p>
 				{{ t('PhaSourcesCatalog') }}

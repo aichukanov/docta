@@ -3,6 +3,7 @@ import {
 	parseClinicPricesData,
 	getClinicRankOrderBySQL,
 	processLocalizedNameForClinicOrDoctor,
+	buildReferenceInfo,
 } from '~/server/common/utils';
 import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
 import { validateBody } from '~/common/validation';
@@ -94,6 +95,11 @@ export default defineEventHandler(
 				), code`,
 				[row.id],
 			);
+
+			const [referenceInfoRows] = await connection.execute(
+				`SELECT * FROM medical_service_reference_info WHERE medical_service_id = ?`,
+				[row.id],
+			);
 			await connection.end();
 
 			// Обрабатываем локализованные имена
@@ -160,6 +166,10 @@ export default defineEventHandler(
 					? row.categoryIds.split(',').map(Number)
 					: [],
 				tariffs,
+				referenceInfo: buildReferenceInfo(
+					(referenceInfoRows as any[])[0],
+					locale,
+				),
 			};
 		} catch (error) {
 			console.error('API Error - medical service data:', error);

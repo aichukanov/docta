@@ -22,11 +22,59 @@ const clinicsLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
-const codraHospitalLink = computed(() => ({
+const getClinicLink = (slug: string) => ({
 	name: 'clinics-clinicSlug',
-	params: { clinicSlug: 'codra-hospital-podgorica' },
+	params: { clinicSlug: slug },
 	query: getRegionalQuery(locale.value),
-}));
+});
+
+const codraHospitalLink = computed(() =>
+	getClinicLink('codra-hospital-podgorica'),
+);
+
+const kccgLink = computed(() =>
+	getClinicLink('klinicki-centar-crne-gore-podgorica'),
+);
+const kotorHospitalLink = computed(() => getClinicLink('opsta-bolnica-kotor'));
+const barHospitalLink = computed(() =>
+	getClinicLink('opsta-bolnica-blazo-orlandic'),
+);
+const bijeloPoljeHospitalLink = computed(() =>
+	getClinicLink('opsta-bolnica-bijelo-polje'),
+);
+const meljineHospitalLink = computed(() =>
+	getClinicLink('bolnica-meljine-herceg-novi'),
+);
+const daniloHospitalLink = computed(() =>
+	getClinicLink('bolnica-danilo-i-cetinje'),
+);
+
+const hipokratPodgoricaLink = computed(() =>
+	getClinicLink('hipokrat-poliklinika-podgorica'),
+);
+const milmedikaPodgoricaLink = computed(() =>
+	getClinicLink('milmedika-podgorica'),
+);
+const mojLabPodgoricaLink = computed(() =>
+	getClinicLink('moj-lab-podgorica-1'),
+);
+const mojLabPedijatriaLink = computed(() =>
+	getClinicLink('moj-lab-pedijatria-podgorica'),
+);
+const medikidLink = computed(() => getClinicLink('medikid-podgorica'));
+
+const milmedikaBudvaLink = computed(() => getClinicLink('milmedika-budva'));
+const mojLabBudvaLink = computed(() => getClinicLink('moj-lab-budva'));
+
+const drMasonicicLink = computed(() =>
+	getClinicLink('poliklinika-dr-masonicic-bar'),
+);
+const a3MedicalLink = computed(() => getClinicLink('a3-medical-sutomore'));
+
+const mansaMedicaLink = computed(() => getClinicLink('mansa-medica-tivat'));
+const dentalExpertLink = computed(() => getClinicLink('dental-expert-tivat'));
+
+const milmedikaNiksicLink = computed(() => getClinicLink('milmedika-niksic'));
 
 const pharmaciesArticleLink = computed(() => ({
 	path: '/articles/pharmacies-and-medications',
@@ -89,7 +137,27 @@ const { breadcrumbItems } = useArticlePageSeo({
 		</ArticleSection>
 
 		<ArticleSection id="section-hospitals" :title="t('WmhToc_hospitals')">
-			<p>{{ t('WmhHospitals1') }}</p>
+			<p
+				>{{ t('WmhHospitals1a') }}<NuxtLink :to="kccgLink">{{
+					t('WmhHospitals1KccgLink')
+				}}</NuxtLink
+				>{{ t('WmhHospitals1b') }}<NuxtLink :to="kotorHospitalLink">{{
+					t('WmhHospitals1KotorLink')
+				}}</NuxtLink
+				>{{ t('WmhHospitals1c') }}<NuxtLink :to="barHospitalLink">{{
+					t('WmhHospitals1BarLink')
+				}}</NuxtLink
+				>{{ t('WmhHospitals1d') }}<NuxtLink :to="bijeloPoljeHospitalLink">{{
+					t('WmhHospitals1BijeloPoljeLink')
+				}}</NuxtLink
+				>{{ t('WmhHospitals1e') }}<NuxtLink :to="meljineHospitalLink">{{
+					t('WmhHospitals1MeljineLink')
+				}}</NuxtLink
+				>{{ t('WmhHospitals1f') }}<NuxtLink :to="daniloHospitalLink">{{
+					t('WmhHospitals1DaniloLink')
+				}}</NuxtLink
+				>{{ t('WmhHospitals1g') }}</p
+			>
 			<p>
 				{{ t('WmhHospitals2') }}
 				<NuxtLink :to="codraHospitalLink">{{
@@ -101,8 +169,65 @@ const { breadcrumbItems } = useArticlePageSeo({
 		</ArticleSection>
 
 		<ArticleSection id="section-clinics" :title="t('WmhToc_clinics')">
-			<p>{{ t('WmhClinics1') }}</p>
-			<p>{{ t('WmhClinics2') }}</p>
+			<p>{{ t('WmhClinicsIntro') }}</p>
+			<ul>
+				<li
+					>{{ t('WmhClinicsPodgoricaLabel') }}
+					<NuxtLink :to="hipokratPodgoricaLink">{{
+						t('WmhClinicsHipokratLink')
+					}}</NuxtLink
+					>{{ t('WmhClinicsPodgoricaA') }}<NuxtLink
+						:to="milmedikaPodgoricaLink"
+						>{{ t('WmhClinicsMilmedikaPgLink') }}</NuxtLink
+					>{{ t('WmhClinicsPodgoricaB') }}<NuxtLink
+						:to="mojLabPodgoricaLink"
+						>{{ t('WmhClinicsMojLabPgLink') }}</NuxtLink
+					>{{ t('WmhClinicsPodgoricaC') }}<NuxtLink
+						:to="mojLabPedijatriaLink"
+						>{{ t('WmhClinicsMojLabPedLink') }}</NuxtLink
+					>{{ t('WmhClinicsPodgoricaD') }}<NuxtLink :to="medikidLink">{{
+						t('WmhClinicsMedikidLink')
+					}}</NuxtLink
+					>{{ t('WmhClinicsPodgoricaE') }}</li
+				>
+				<li
+					>{{ t('WmhClinicsBudvaLabel') }}
+					<NuxtLink :to="milmedikaBudvaLink">{{
+						t('WmhClinicsMilmedikaBdLink')
+					}}</NuxtLink
+					>{{ t('WmhClinicsBudvaA') }}<NuxtLink :to="mojLabBudvaLink">{{
+						t('WmhClinicsMojLabBdLink')
+					}}</NuxtLink
+					>{{ t('WmhClinicsBudvaB') }}</li
+				>
+				<li
+					>{{ t('WmhClinicsBarLabel') }}
+					<NuxtLink :to="drMasonicicLink">{{
+						t('WmhClinicsMasonicicLink')
+					}}</NuxtLink
+					>{{ t('WmhClinicsBarA') }}<NuxtLink :to="a3MedicalLink">{{
+						t('WmhClinicsA3Link')
+					}}</NuxtLink
+					>{{ t('WmhClinicsBarB') }}</li
+				>
+				<li
+					>{{ t('WmhClinicsTivatLabel') }}
+					<NuxtLink :to="mansaMedicaLink">{{
+						t('WmhClinicsMansaLink')
+					}}</NuxtLink
+					>{{ t('WmhClinicsTivatA') }}<NuxtLink :to="dentalExpertLink">{{
+						t('WmhClinicsDentalExpertLink')
+					}}</NuxtLink
+					>{{ t('WmhClinicsTivatB') }}</li
+				>
+				<li
+					>{{ t('WmhClinicsNiksicLabel') }}
+					<NuxtLink :to="milmedikaNiksicLink">{{
+						t('WmhClinicsMilmedikaNkLink')
+					}}</NuxtLink
+					>{{ t('WmhClinicsNiksicA') }}</li
+				>
+			</ul>
 			<p>
 				{{ t('WmhClinicsCatalog') }}
 				<NuxtLink :to="clinicsLink">{{ t('WmhClinicsLink') }}</NuxtLink
@@ -114,7 +239,6 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t('WmhSources0') }}</p>
 			<ul>
 				<li>{{ t('WmhSourcesMontefarm') }}</li>
-				<li>{{ t('WmhSourcesApoteke') }}</li>
 			</ul>
 			<p>{{ t('WmhSourcesCatalog') }}</p>
 		</ArticleSection>

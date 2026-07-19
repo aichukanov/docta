@@ -15,12 +15,17 @@ import {
 import { Language, LanguageId } from '~/enums/language';
 import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
 import type {
+	InsuranceBranchData,
+	InsuranceCompanyData,
+} from '~/interfaces/insurance-company';
+import type {
 	DayOfWeek,
 	WorkingHours,
 } from '~/interfaces/clinic-working-hours';
 import { DAYS_OF_WEEK } from '~/interfaces/clinic-working-hours';
 import type {
 	BreadcrumbListSchema,
+	InsuranceAgencySchema,
 	ItemListSchema,
 	ListItemSchema,
 	MedicalOrganizationRef,
@@ -110,6 +115,34 @@ export function buildClinicPostalAddress(
 		'@type': 'PostalAddress',
 		'addressCountry': 'ME',
 		'streetAddress': clinic.address,
+		'addressLocality': town || cityName || undefined,
+		'addressRegion': town ? cityName || undefined : undefined,
+		'postalCode': postalCode || undefined,
+	};
+}
+
+/**
+ * Build postal address schema from an insurance company branch — same field
+ * mapping as buildClinicPostalAddress, mirrored because InsuranceBranchData
+ * isn't a ClinicData (it has no clinicTypeIds/languageIds/etc).
+ */
+export function buildInsuranceBranchAddress(
+	branch: InsuranceBranchData,
+	getCityName: (id: number) => string | undefined,
+): PostalAddressSchema | undefined {
+	if (!branch.address) {
+		return undefined;
+	}
+
+	const cityName = branch.cityId ? getCityName(branch.cityId) : undefined;
+	const town = typeof branch.town === 'string' ? branch.town.trim() : '';
+	const postalCode =
+		typeof branch.postalCode === 'string' ? branch.postalCode.trim() : '';
+
+	return {
+		'@type': 'PostalAddress',
+		'addressCountry': 'ME',
+		'streetAddress': branch.address,
 		'addressLocality': town || cityName || undefined,
 		'addressRegion': town ? cityName || undefined : undefined,
 		'postalCode': postalCode || undefined,
@@ -1101,6 +1134,76 @@ export function buildClinicSchema(options: {
 	});
 
 	return [webPageSchema, clinicSchema];
+}
+
+/**
+ * Build InsuranceAgency schema for an insurance company page. Unlike a
+ * clinic (one address), an insurer has several offices across Montenegro —
+ * schema.org models this via `location`, an array of InsuranceAgency nodes
+ * each with their own address/geo/telephone (see types/schema-org.ts).
+ */
+export function buildInsuranceCompanySchema(options: {
+	siteUrl: string;
+	company: InsuranceCompanyData;
+	locale: string;
+	pageTitle?: string;
+	pageDescription?: string;
+	pageUrl?: string;
+	getCityName: (id: number) => string | undefined;
+}): SchemaOrg[] {
+	const { siteUrl, company, locale, getCityName } = options;
+	const companyUrl = `${siteUrl}/insurance-companies/${company.slug}`;
+
+	const socialLinks = buildSameAs({
+		facebook: company.facebook,
+		instagram: company.instagram,
+		telegram: company.telegram,
+	});
+
+	const sameAs: string[] = [];
+	const website = normalizeWebsiteUrl(company.website);
+	if (website) {
+		sameAs.push(website);
+	}
+	sameAs.push(...socialLinks);
+
+	const companySchema: InsuranceAgencySchema = {
+		...buildEntitySchemaBase({
+			url: companyUrl,
+			type: 'InsuranceAgency',
+			fragment: 'insuranceagency',
+		}),
+		name: company.name,
+		image: company.logoUrl ? `${siteUrl}${company.logoUrl}` : undefined,
+		logo: company.logoUrl ? `${siteUrl}${company.logoUrl}` : undefined,
+		description: options.pageDescription || undefined,
+		telephone: splitContacts(company.phone)[0] || undefined,
+		email: splitContacts(company.email)[0] || undefined,
+		sameAs: sameAs.length > 0 ? sameAs : undefined,
+		location: company.branches.map((branch) => ({
+			'@type': 'InsuranceAgency' as const,
+			address: buildInsuranceBranchAddress(branch, getCityName),
+			geo:
+				branch.latitude && branch.longitude
+					? {
+							'@type': 'GeoCoordinates' as const,
+							'latitude': branch.latitude,
+							'longitude': branch.longitude,
+						}
+					: undefined,
+			telephone: branch.phone || splitContacts(company.phone)[0] || undefined,
+		})),
+	};
+
+	const webPageSchema = buildWebPageSchema({
+		url: options.pageUrl || companyUrl,
+		locale,
+		name: options.pageTitle || company.name,
+		description: options.pageDescription,
+		mainEntityId: companySchema['@id'] as string,
+	});
+
+	return [webPageSchema, companySchema];
 }
 
 /**

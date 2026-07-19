@@ -236,3 +236,43 @@ export function processLocalizedDescriptionForClinic(
 ): string {
 	return processLocalizedDescription(row, locale);
 }
+
+const REFERENCE_INFO_FIELDS = [
+	'what',
+	'how',
+	'indications',
+	'prep',
+	'abnormal',
+] as const;
+
+/**
+ * Строит ReferenceInfo из строки lab_test_reference_info /
+ * medical_service_reference_info. Фолбэк на sr, затем en — карточка может
+ * быть переведена не на все 6 локалей сразу (data/entity-reference/README.md).
+ * Возвращает null, если строки нет или все поля пустые.
+ */
+export function buildReferenceInfo(
+	row: any | undefined | null,
+	locale?: string,
+): import('~/interfaces/reference-info').ReferenceInfo | null {
+	if (!row) return null;
+
+	const normalizedLocale = locale || 'en';
+	const localeSuffix =
+		normalizedLocale === 'sr-cyrl' ? 'sr_cyrl' : normalizedLocale;
+
+	const result: any = {};
+	for (const field of REFERENCE_INFO_FIELDS) {
+		result[field] =
+			row[`${field}_${localeSuffix}`] ||
+			row[`${field}_sr`] ||
+			row[`${field}_en`] ||
+			'';
+	}
+
+	if (REFERENCE_INFO_FIELDS.every((field) => !result[field])) {
+		return null;
+	}
+
+	return result;
+}

@@ -40,6 +40,11 @@ const medicationsPageLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
+const insuranceCompaniesPageLink = computed(() => ({
+	name: 'insurance-companies',
+	query: getRegionalQuery(locale.value),
+}));
+
 const aboutPageLink = computed(() => ({
 	name: 'about',
 	query: getRegionalQuery(locale.value),
@@ -133,6 +138,9 @@ watch(
 						<NuxtLink class="footer-link" :to="medicationsPageLink">
 							{{ t('Medications') }}
 						</NuxtLink>
+						<NuxtLink class="footer-link" :to="insuranceCompaniesPageLink">
+							{{ t('InsuranceCompanies') }}
+						</NuxtLink>
 					</nav>
 
 					<div class="footer-contacts">
@@ -220,6 +228,7 @@ watch(
 		"LabTests": "Lab Tests",
 		"MedicalServices": "Medical Services",
 		"Medications": "Medications",
+		"InsuranceCompanies": "Insurance Companies",
 		"ContactsTitle": "Contacts",
 		"Email": "Email",
 		"Telegram": "Telegram",
@@ -241,6 +250,7 @@ watch(
 		"LabTests": "Анализы",
 		"MedicalServices": "Услуги",
 		"Medications": "Лекарства",
+		"InsuranceCompanies": "Страховые компании",
 		"ContactsTitle": "Контакты",
 		"Email": "Email",
 		"Telegram": "Telegram",
@@ -262,6 +272,7 @@ watch(
 		"LabTests": "Analize",
 		"MedicalServices": "Usluge",
 		"Medications": "Lekovi",
+		"InsuranceCompanies": "Osiguravajuća društva",
 		"ContactsTitle": "Kontakti",
 		"Email": "Email",
 		"Telegram": "Telegram",
@@ -283,6 +294,7 @@ watch(
 		"LabTests": "Анализе",
 		"MedicalServices": "Услуге",
 		"Medications": "Лекови",
+		"InsuranceCompanies": "Осигуравајућа друштва",
 		"ContactsTitle": "Контакти",
 		"Email": "Email",
 		"Telegram": "Telegram",
@@ -304,6 +316,7 @@ watch(
 		"LabTests": "Labortests",
 		"MedicalServices": "Medizinische Dienstleistungen",
 		"Medications": "Medikamente",
+		"InsuranceCompanies": "Versicherungsgesellschaften",
 		"ContactsTitle": "Kontakt",
 		"Email": "E-Mail",
 		"Telegram": "Telegram",
@@ -325,6 +338,7 @@ watch(
 		"LabTests": "Laboratuvar Testleri",
 		"MedicalServices": "Tıbbi Hizmetler",
 		"Medications": "İlaçlar",
+		"InsuranceCompanies": "Sigorta Şirketleri",
 		"ContactsTitle": "İletişim",
 		"Email": "E-posta",
 		"Telegram": "Telegram",

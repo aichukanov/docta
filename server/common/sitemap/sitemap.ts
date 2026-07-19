@@ -20,6 +20,7 @@ import {
 import { getClinicSubpageSlugs } from './filters/clinic-subpages';
 import { getMedicineList } from '~/server/api/medicines/list';
 import { getSitemapFilters as getMedicineSitemapFilters } from './filters/medicines';
+import { getInsuranceCompanyList } from './filters/insurance-companies';
 import { getConnection } from '~/server/common/db-mysql';
 
 export function menuItemToLinks(
@@ -272,6 +273,26 @@ export async function generateSitemapPage() {
 			}),
 		);
 
+	// === Insurance companies ===
+	// routeName содержит дефис ('insurance-companies') — menuItemToLinks в
+	// не-URL режиме заменяет '-' на '/', ломая путь, поэтому isUrl=true.
+	const insuranceCompanies = await getInsuranceCompanyList();
+
+	const insuranceCompaniesPageLink: SitemapLink = menuItemToLinks(
+		`${SITE_URL}/insurance-companies`,
+		{},
+		true,
+	);
+
+	const insuranceCompanyLinks: SitemapLink[] = insuranceCompanies.map(
+		(company) =>
+			menuItemToLinks(
+				`${SITE_URL}/insurance-companies/${company.slug}`,
+				{},
+				true,
+			),
+	);
+
 	// === Clinic subpages (services/labtests/medications/doctors) ===
 	// Only for clinics whose item count exceeds the inline threshold — smaller
 	// clinics 301-redirect the subpage to the main page anchor.
@@ -330,6 +351,9 @@ export async function generateSitemapPage() {
 		...clinicTypeCityLinks,
 		// Clinic subpages: списки услуг/анализов/лекарств/врачей конкретной клиники
 		...clinicSubpageLinks,
+		// Insurance companies: список + страницы компаний
+		insuranceCompaniesPageLink,
+		...insuranceCompanyLinks,
 	]);
 }
 

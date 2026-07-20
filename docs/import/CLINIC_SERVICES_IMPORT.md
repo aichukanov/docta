@@ -71,8 +71,9 @@ lab_test_synonyms (lab_test_id, another_name, language)  -- альтернати
 -- Insert services and lab tests for clinic ID = {ID}
 -- Run: mysql -u root -p --default-character-set=utf8mb4 docta_me < d:/pet/docta.me/nuxt/server/sql/insert-clinic-{ID}-services.sql
 
-SET NAMES utf8mb4;
+SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;
 SET CHARACTER SET utf8mb4;
+SET collation_connection = 'utf8mb4_unicode_ci';
 
 -- ═══════════════════════════════════════════════════════════════
 -- PART 0: ADD NEW CATEGORIES (if needed)

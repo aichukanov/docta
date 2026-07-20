@@ -76,8 +76,9 @@ doctor_languages (doctor_id, language_id)  -- языки консультаци�
 -- Insert doctors for clinics ID = {ID1}, {ID2}, ...
 -- Run: mysql -u root -p --default-character-set=utf8mb4 docta_me < server/sql/add-{clinic-name}-doctors.sql
 
-SET NAMES utf8mb4;
+SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;
 SET CHARACTER SET utf8mb4;
+SET collation_connection = 'utf8mb4_unicode_ci';
 
 -- ═══════════════════════════════════════════════════════════════
 -- {SPECIALTY_NAME} (specialty_id = {ID})

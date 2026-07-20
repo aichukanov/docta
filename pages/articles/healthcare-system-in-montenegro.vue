@@ -59,6 +59,14 @@ const bijeloPoljeHospitalLink = computed(() =>
 const dobrotaHospitalLink = computed(() =>
 	getClinicLink('specijalna-bolnica-za-psihijatriju-dobrota-kotor'),
 );
+const brezovikHospitalLink = computed(() =>
+	getClinicLink('specijalna-bolnica-za-plucne-bolesti-dr-jovan-bulajic-brezovik'),
+);
+const niksicHospitalLink = computed(() => getClinicLink('opsta-bolnica-niksic'));
+const beraneHospitalLink = computed(() => getClinicLink('opsta-bolnica-berane'));
+const pljevljaHospitalLink = computed(() =>
+	getClinicLink('opsta-bolnica-pljevlja'),
+);
 
 const SL_LIST_URL =
 	'https://fzocg.me/wp-content/uploads/2025/10/Zakon-o-obaveznom-zdravstvenom-osiguranju-2024.pdf';
@@ -157,7 +165,10 @@ const { breadcrumbItems } = useArticlePageSeo({
 				>{{ t('HcsState1a') }}<NuxtLink :to="risanHospitalLink">{{
 					t('HcsState1RisanLink')
 				}}</NuxtLink
-				>{{ t('HcsState1b') }}<NuxtLink :to="dobrotaHospitalLink">{{
+				>{{ t('HcsState1b') }}<NuxtLink :to="brezovikHospitalLink">{{
+					t('HcsState1BrezovikLink')
+				}}</NuxtLink
+				>{{ t('HcsState1b2') }}<NuxtLink :to="dobrotaHospitalLink">{{
 					t('HcsState1DobrotaLink')
 				}}</NuxtLink
 				>{{ t('HcsState1c') }}</p
@@ -173,7 +184,13 @@ const { breadcrumbItems } = useArticlePageSeo({
 					<NuxtLink :to="kotorHospitalLink">{{
 						t('HcsStateLevel2KotorLink')
 					}}</NuxtLink
-					>{{ t('HcsStateLevel2c') }}
+					>{{ t('HcsStateLevel2c') }}<NuxtLink :to="niksicHospitalLink">{{
+						t('HcsStateLevel2NiksicLink')
+					}}</NuxtLink
+					>{{ t('HcsStateLevel2c2') }}<NuxtLink :to="beraneHospitalLink">{{
+						t('HcsStateLevel2BeraneLink')
+					}}</NuxtLink
+					>{{ t('HcsStateLevel2c3') }}
 					<NuxtLink :to="bijeloPoljeHospitalLink">{{
 						t('HcsStateLevel2BijeloPoljeLink')
 					}}</NuxtLink
@@ -181,7 +198,10 @@ const { breadcrumbItems } = useArticlePageSeo({
 					<NuxtLink :to="cetinjeHospitalLink">{{
 						t('HcsStateLevel2CetinjeLink')
 					}}</NuxtLink
-					>{{ t('HcsStateLevel2e') }}
+					>{{ t('HcsStateLevel2e') }}<NuxtLink :to="pljevljaHospitalLink">{{
+						t('HcsStateLevel2PljevljaLink')
+					}}</NuxtLink
+					>{{ t('HcsStateLevel2e2') }}
 				</li>
 				<li
 					>{{ t('HcsStateLevel3Pre') }}<NuxtLink :to="kccgLink">{{

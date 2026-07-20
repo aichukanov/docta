@@ -44,6 +44,14 @@ const cetinjeHospitalLink = computed(() =>
 const codraHospitalLink = computed(() =>
 	getClinicLink('codra-hospital-podgorica'),
 );
+const niksicHospitalLink = computed(() => getClinicLink('opsta-bolnica-niksic'));
+const beraneHospitalLink = computed(() => getClinicLink('opsta-bolnica-berane'));
+const pljevljaHospitalLink = computed(() =>
+	getClinicLink('opsta-bolnica-pljevlja'),
+);
+const domZdravljaPodgoricaLink = computed(() =>
+	getClinicLink('dom-zdravlja-podgorica'),
+);
 
 const vaginalDeliveryLink = computed(() => ({
 	name: 'services-serviceSlug',
@@ -167,13 +175,22 @@ const { breadcrumbItems } = useArticlePageSeo({
 					>{{ t('BimWhereList2b') }}<NuxtLink :to="kotorHospitalLink">{{
 						t('BimWhereList2KotorLink')
 					}}</NuxtLink
-					>{{ t('BimWhereList2c') }}<NuxtLink :to="bijeloPoljeHospitalLink">{{
+					>{{ t('BimWhereList2c') }}<NuxtLink :to="niksicHospitalLink">{{
+						t('BimWhereList2NiksicLink')
+					}}</NuxtLink
+					>{{ t('BimWhereList2c2') }}<NuxtLink :to="beraneHospitalLink">{{
+						t('BimWhereList2BeraneLink')
+					}}</NuxtLink
+					>{{ t('BimWhereList2c3') }}<NuxtLink :to="bijeloPoljeHospitalLink">{{
 						t('BimWhereList2BijeloPoljeLink')
 					}}</NuxtLink
 					>{{ t('BimWhereList2d') }}<NuxtLink :to="cetinjeHospitalLink">{{
 						t('BimWhereList2CetinjeLink')
 					}}</NuxtLink
-					>{{ t('BimWhereList2e') }}</li
+					>{{ t('BimWhereList2e') }}<NuxtLink :to="pljevljaHospitalLink">{{
+						t('BimWhereList2PljevljaLink')
+					}}</NuxtLink
+					>{{ t('BimWhereList2e2') }}</li
 				>
 				<li>{{ t('BimWhereList3') }}</li>
 			</ul>
@@ -249,9 +266,9 @@ const { breadcrumbItems } = useArticlePageSeo({
 				</li>
 				<li>{{ t('BimSourcesMup') }}</li>
 				<li>
-					<a href="https://dzpg.me/" target="_blank" rel="noopener nofollow">{{
+					<NuxtLink :to="domZdravljaPodgoricaLink">{{
 						t('BimSourcesDz')
-					}}</a>
+					}}</NuxtLink>
 				</li>
 			</ul>
 		</ArticleSection>

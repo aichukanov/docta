@@ -46,7 +46,7 @@ export default defineEventHandler(
 				) as clinicIds,
 				(
 					SELECT GROUP_CONCAT(
-						CONCAT(cms.clinic_id, ':', IFNULL(cms.price, ''), ':', IFNULL(cms.price_min, ''), ':', IFNULL(cms.price_max, ''), ':', COALESCE(cms.code, ''))
+						CONCAT(cms.clinic_id, ':', IFNULL(cms.price, ''), ':', IFNULL(cms.price_min, ''), ':', IFNULL(cms.price_max, ''), ':', COALESCE(cms.code, ''), ':', cms.is_price_outdated)
 						ORDER BY ${rankOrder}
 					)
 					FROM clinic_medical_services cms

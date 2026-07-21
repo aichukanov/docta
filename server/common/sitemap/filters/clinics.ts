@@ -55,7 +55,7 @@ async function getClinicTypeIds() {
 // Пары (тип клиники, город) с количеством клиник ≥ threshold —
 // `/clinics?clinicTypeIds=N&cityIds=M` («Стоматологические клиники в Будве»).
 // Ниже порога — thin page, не раздуваем индекс.
-async function getTypeCityCombinations(threshold: number) {
+export async function getTypeCityCombinations(threshold: number) {
 	const connection = await getConnection();
 
 	const query = `

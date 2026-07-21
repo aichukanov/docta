@@ -359,6 +359,7 @@ watchEffect(() => {
 					:cityIds="cityIds"
 				/>
 			</TipsList>
+			<ClinicRelatedFilters :clinicTypeIds="clinicTypeIds" :cityIds="cityIds" />
 		</template>
 	</ListPage>
 </template>

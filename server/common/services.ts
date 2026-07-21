@@ -95,6 +95,7 @@ export async function getServicesByClinicAndSpecialty(
 			cms.price,
 			cms.price_min,
 			cms.price_max,
+			cms.is_price_outdated,
 			GROUP_CONCAT(DISTINCT mss.specialty_id ORDER BY mss.specialty_id) as specialtyIds
 		FROM clinic_medical_services cms
 		INNER JOIN medical_services ms ON cms.medical_service_id = ms.id
@@ -102,7 +103,7 @@ export async function getServicesByClinicAndSpecialty(
 		WHERE cms.clinic_id IN (${clinicPlaceholders})
 			AND mss.specialty_id IN (${specialtyPlaceholders})
 		GROUP BY cms.clinic_id, ms.id, ms.slug, ms.name_en, ms.name_sr, ms.name_sr_cyrl,
-			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price, cms.price_min, cms.price_max
+			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price, cms.price_min, cms.price_max, cms.is_price_outdated
 		ORDER BY cms.clinic_id, ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
 	`;
 
@@ -157,6 +158,11 @@ export async function getServicesByClinicAndSpecialty(
 					? Number(row.price_max)
 					: null;
 
+		// Флаг устаревшей цены относится к цене клиники; для индивидуальной
+		// цены врача (другой источник) не применяется.
+		const isOutdated =
+			doctorPrice === undefined ? Boolean(row.is_price_outdated) : false;
+
 		result[clinicId].push({
 			id: serviceId,
 			slug: row.slug || '',
@@ -165,6 +171,7 @@ export async function getServicesByClinicAndSpecialty(
 			price,
 			priceMin,
 			priceMax,
+			isOutdated,
 		});
 	}
 
@@ -254,6 +261,7 @@ export async function getServicesForDoctors(
 			price: number | null;
 			priceMin: number | null;
 			priceMax: number | null;
+			isOutdated: boolean;
 			specialtyIds: number[];
 		}>
 	> = new Map();
@@ -280,6 +288,7 @@ export async function getServicesForDoctors(
 			price: row.price ? Number(row.price) : null,
 			priceMin: row.price_min ? Number(row.price_min) : null,
 			priceMax: row.price_max ? Number(row.price_max) : null,
+			isOutdated: Boolean(row.is_price_outdated),
 			specialtyIds,
 		});
 	}
@@ -310,13 +319,15 @@ export async function getServicesForDoctors(
 					const doctorPriceKey = `${doctor.id}_${clinicId}_${rest.id}`;
 					const doctorPrice = doctorPrices.get(doctorPriceKey);
 
-					// Если есть запись для врача - используем её значения
+					// Если есть запись для врача - используем её значения (флаг
+					// устаревшей цены клиники к ней не относится)
 					if (doctorPrice !== undefined) {
 						return {
 							...rest,
 							price: doctorPrice.price,
 							priceMin: doctorPrice.priceMin,
 							priceMax: doctorPrice.priceMax,
+							isOutdated: false,
 						};
 					}
 

@@ -252,6 +252,7 @@ watchEffect(() => {
 				:price="getClinicPrice(item.clinicPrices)?.price"
 				:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
 				:priceMin="getClinicPrice(item.clinicPrices)?.priceMin"
+				:isOutdated="getClinicPrice(item.clinicPrices)?.isOutdated"
 				routeName="services-serviceSlug"
 				routeParamName="serviceSlug"
 			/>

@@ -10,6 +10,7 @@ const props = defineProps<{
 	price?: number | null;
 	priceMin?: number | null;
 	priceMax?: number | null;
+	isOutdated?: boolean;
 	routeName?: string;
 	routeParamName?: string;
 }>();
@@ -82,7 +83,11 @@ const formattedPrice = computed(() => {
 			<span v-if="localName" class="item-local-name">{{ localName }}</span>
 		</div>
 		<div class="item-price" :class="{ 'item-price__unknown': isPriceUnknown }">
-			<template v-if="formattedPrice">{{ formattedPrice }}</template>
+			<template v-if="formattedPrice">
+				{{ formattedPrice }}
+				<template v-if="isOutdated"> {{ t('PriceOutdatedSuffix') }}</template>
+				<PriceOutdatedBadge v-if="isOutdated" small inverse />
+			</template>
 			<template v-else>{{ t('PriceUnknown') }}</template>
 		</div>
 	</div>
@@ -136,6 +141,9 @@ const formattedPrice = computed(() => {
 }
 
 .item-price {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--spacing-xs);
 	padding: var(--spacing-xs) var(--spacing-sm);
 	background: var(--color-primary);
 	border-radius: var(--border-radius-sm);

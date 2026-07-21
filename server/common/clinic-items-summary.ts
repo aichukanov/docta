@@ -76,6 +76,7 @@ type TopRow = {
 	price: number | null;
 	priceMin: number | null;
 	priceMax: number | null;
+	isOutdated?: number | boolean | null;
 	photoUrl?: string | null;
 	professionalTitle?: string | null;
 	specialtyIds?: string | null;
@@ -86,6 +87,8 @@ function buildPricedTopSql(options: {
 	itemFk: string;
 	relationTable: string;
 	withPriceMin: boolean;
+	// clinic_medications не хранит флаг устаревшей цены (только услуги и анализы)
+	withOutdatedFlag: boolean;
 	localizedNameField: string;
 	orderBy: string;
 }) {
@@ -94,6 +97,7 @@ function buildPricedTopSql(options: {
 		itemFk,
 		relationTable,
 		withPriceMin,
+		withOutdatedFlag,
 		localizedNameField,
 		orderBy,
 	} = options;
@@ -105,7 +109,8 @@ function buildPricedTopSql(options: {
 			NULLIF(i.name_sr, '') AS localName,
 			r.price AS price,
 			${withPriceMin ? 'r.price_min' : 'NULL'} AS priceMin,
-			r.price_max AS priceMax
+			r.price_max AS priceMax,
+			${withOutdatedFlag ? 'r.is_price_outdated' : 'NULL'} AS isOutdated
 		FROM ${relationTable} r
 		JOIN ${table} i ON i.id = r.${itemFk}
 		WHERE r.clinic_id = ?
@@ -140,7 +145,8 @@ function buildDoctorsTopSql(localizedNameField: string) {
 				FROM doctor_specialties ds WHERE ds.doctor_id = d.id) AS specialtyIds,
 			NULL AS price,
 			NULL AS priceMin,
-			NULL AS priceMax
+			NULL AS priceMax,
+			NULL AS isOutdated
 		FROM doctor_clinics dc
 		JOIN doctors d ON d.id = dc.doctor_id
 		WHERE dc.clinic_id = ?
@@ -160,6 +166,7 @@ function mapTopRow(row: TopRow): ClinicItemTopEntry {
 		price: row.price != null ? Number(row.price) : null,
 		priceMin: row.priceMin != null ? Number(row.priceMin) : null,
 		priceMax: row.priceMax != null ? Number(row.priceMax) : null,
+		isOutdated: row.isOutdated != null ? Boolean(row.isOutdated) : undefined,
 		photoUrl: row.photoUrl || undefined,
 		professionalTitle: row.professionalTitle || undefined,
 		specialtyIds: row.specialtyIds || undefined,
@@ -189,6 +196,7 @@ async function fetchOne(
 				itemFk: 'medical_service_id',
 				relationTable: 'clinic_medical_services',
 				withPriceMin: true,
+				withOutdatedFlag: true,
 				localizedNameField,
 				orderBy: 'i.rank_score DESC, i.name_en ASC',
 			}),
@@ -201,6 +209,7 @@ async function fetchOne(
 				itemFk: 'lab_test_id',
 				relationTable: 'clinic_lab_tests',
 				withPriceMin: false,
+				withOutdatedFlag: true,
 				localizedNameField,
 				orderBy: 'i.rank_score DESC, i.name_en ASC',
 			}),
@@ -214,6 +223,7 @@ async function fetchOne(
 				itemFk: 'medication_id',
 				relationTable: 'clinic_medications',
 				withPriceMin: false,
+				withOutdatedFlag: false,
 				localizedNameField,
 				orderBy: 'i.name_en ASC',
 			}),

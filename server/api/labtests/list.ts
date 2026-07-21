@@ -176,7 +176,7 @@ export async function getLabTestList(
 			${sortPriceSelect}
 			(SELECT GROUP_CONCAT(DISTINCT clt.clinic_id ORDER BY ${rankOrder}) FROM clinic_lab_tests clt JOIN clinics c_rank ON c_rank.id = clt.clinic_id AND c_rank.status = 'published' WHERE clt.lab_test_id = lt.id${cityFilterInSelect}) as clinicIds,
 			(SELECT GROUP_CONCAT(
-				DISTINCT CONCAT(clt.clinic_id, ':', IFNULL(clt.price, ''), ':', '', ':', IFNULL(clt.price_max, ''), ':', COALESCE(clt.code, ''))
+				DISTINCT CONCAT(clt.clinic_id, ':', IFNULL(clt.price, ''), ':', '', ':', IFNULL(clt.price_max, ''), ':', COALESCE(clt.code, ''), ':', clt.is_price_outdated)
 				ORDER BY ${rankOrder}
 			) FROM clinic_lab_tests clt JOIN clinics c_rank ON c_rank.id = clt.clinic_id AND c_rank.status = 'published' WHERE clt.lab_test_id = lt.id${cityFilterInSelect}) as clinicPricesData,
 			(SELECT GROUP_CONCAT(DISTINCT ltcr_cat.category_id ORDER BY ltcr_cat.category_id)

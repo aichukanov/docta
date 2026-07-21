@@ -247,5 +247,9 @@ watchEffect(() => {
 				:filterCityIds="cityIds"
 			/>
 		</template>
+
+		<template #tips>
+			<LabTestRelatedFilters :categoryIds="categoryIds" :cityIds="cityIds" />
+		</template>
 	</ListPage>
 </template>

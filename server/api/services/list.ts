@@ -182,7 +182,7 @@ export async function getMedicalServiceList(
 			${sortPriceSelect}
 			(SELECT COALESCE(GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${rankOrder}), '') FROM clinic_medical_services cms JOIN clinics c_rank ON c_rank.id = cms.clinic_id AND c_rank.status = 'published' WHERE cms.medical_service_id = ms.id${cityFilterInSelect}) as clinicIds,
 			(SELECT GROUP_CONCAT(
-				DISTINCT CONCAT(cms.clinic_id, ':', IFNULL(cms.price, ''), ':', IFNULL(cms.price_min, ''), ':', IFNULL(cms.price_max, ''), ':', COALESCE(cms.code, ''))
+				DISTINCT CONCAT(cms.clinic_id, ':', IFNULL(cms.price, ''), ':', IFNULL(cms.price_min, ''), ':', IFNULL(cms.price_max, ''), ':', COALESCE(cms.code, ''), ':', cms.is_price_outdated)
 				ORDER BY ${rankOrder}
 			) FROM clinic_medical_services cms JOIN clinics c_rank ON c_rank.id = cms.clinic_id AND c_rank.status = 'published' WHERE cms.medical_service_id = ms.id${cityFilterInSelect}) as clinicPricesData,
 			(

@@ -304,6 +304,7 @@ watchEffect(() => {
 			<TipsList v-if="doctorsData.doctors.length <= 5">
 				<TipsDoctors :cityIds="cityIds" :specialtyIds="specialtyIds" />
 			</TipsList>
+			<DoctorRelatedFilters :specialtyIds="specialtyIds" :cityIds="cityIds" />
 		</template>
 	</ListPage>
 </template>

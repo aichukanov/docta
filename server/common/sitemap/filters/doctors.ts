@@ -11,7 +11,7 @@ function getSpecialtyIds() {
 	return getEnumValues(DoctorSpecialty);
 }
 
-async function getSpecialtyCityCombinations() {
+export async function getSpecialtyCityCombinations() {
 	const connection = await getConnection();
 
 	const query = `

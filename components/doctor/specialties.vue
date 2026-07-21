@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { getRegionalQuery } from '~/common/url-utils';
 import type { DoctorCardData } from '~/interfaces/doctor';
 import specialtyI18n from '~/i18n/specialty';
 
@@ -6,19 +7,26 @@ const props = defineProps<{
 	doctor: DoctorCardData;
 }>();
 
-const { t } = useI18n(specialtyI18n);
+const { t, locale } = useI18n(specialtyI18n);
 
-const specialtiesText = computed(() => {
-	return props.doctor.specialtyIds
-		?.split(',')
-		.map((specialty) => t(`specialty_${specialty}`))
-		.join(', ');
+const specialtyIdList = computed(
+	() => props.doctor.specialtyIds?.split(',').filter(Boolean) ?? [],
+);
+
+const specialtyLink = (specialtyId: string) => ({
+	name: 'doctors',
+	query: { ...getRegionalQuery(locale.value), specialtyIds: specialtyId },
 });
 </script>
 
 <template>
 	<div class="doctor-specialty">
-		{{ specialtiesText }}
+		<template v-for="(specialtyId, index) in specialtyIdList" :key="specialtyId">
+			<NuxtLink class="doctor-specialty__link" :to="specialtyLink(specialtyId)">{{
+				t(`specialty_${specialtyId}`)
+			}}</NuxtLink
+			><span v-if="index < specialtyIdList.length - 1">, </span>
+		</template>
 	</div>
 </template>
 
@@ -26,8 +34,16 @@ const specialtiesText = computed(() => {
 .doctor-specialty {
 	font-size: var(--font-size-base);
 	font-weight: var(--font-weight-medium);
-	color: var(--color-primary-green);
 	line-height: 1.3;
 	word-break: break-word;
+}
+
+.doctor-specialty__link {
+	color: var(--color-primary-green);
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
 </style>

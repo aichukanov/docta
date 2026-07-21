@@ -37,6 +37,9 @@ export interface ClinicItemTopEntry {
 	price: number | null;
 	priceMin: number | null;
 	priceMax: number | null;
+	// Цена помечена клиникой/админом как устаревшая — прейскурант мог
+	// измениться, но новый ещё не получен (см. is_price_outdated в БД).
+	isOutdated?: boolean;
 	photoUrl?: string;
 	professionalTitle?: string;
 	specialtyIds?: string;
@@ -108,6 +111,8 @@ export interface ClinicSummaryService {
 	price: number | null;
 	priceMin: number | null;
 	priceMax: number | null;
+	// Цена помечена как устаревшая — см. ClinicItemTopEntry.isOutdated
+	isOutdated?: boolean;
 }
 
 // Услуги, сгруппированные по id клиники. Не путать с компонентом ClinicServicesMap (карта).
@@ -119,6 +124,8 @@ export interface ClinicPrice {
 	priceMin?: number | null;
 	priceMax?: number | null;
 	code?: string | null;
+	// Цена помечена как устаревшая — см. ClinicItemTopEntry.isOutdated
+	isOutdated?: boolean;
 }
 
 export interface ClinicServiceWithPrices extends ClinicServiceItem {

@@ -266,6 +266,13 @@ watchEffect(() => {
 				</div>
 			</div>
 		</template>
+
+		<template #tips>
+			<ServiceRelatedFilters
+				:serviceCategoryIds="serviceCategoryIds"
+				:cityIds="cityIds"
+			/>
+		</template>
 	</ListPage>
 </template>
 

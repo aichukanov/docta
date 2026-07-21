@@ -778,6 +778,7 @@ watchEffect(() => {
 							:price="getClinicPrice(item.clinicPrices)?.price"
 							:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
 							:priceMin="getClinicPrice(item.clinicPrices)?.priceMin"
+							:isOutdated="getClinicPrice(item.clinicPrices)?.isOutdated"
 							routeName="services-serviceSlug"
 							routeParamName="serviceSlug"
 						/>
@@ -805,6 +806,7 @@ watchEffect(() => {
 							:price="item.price"
 							:priceMax="item.priceMax"
 							:priceMin="item.priceMin"
+							:isOutdated="item.isOutdated"
 							routeName="services-serviceSlug"
 							routeParamName="serviceSlug"
 						/>
@@ -830,6 +832,7 @@ watchEffect(() => {
 							:localName="item.localName"
 							:price="getClinicPrice(item.clinicPrices)?.price"
 							:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
+							:isOutdated="getClinicPrice(item.clinicPrices)?.isOutdated"
 							routeName="labtests-labTestSlug"
 							routeParamName="labTestSlug"
 						/>
@@ -856,6 +859,7 @@ watchEffect(() => {
 							:localName="item.localName"
 							:price="item.price"
 							:priceMax="item.priceMax"
+							:isOutdated="item.isOutdated"
 							routeName="labtests-labTestSlug"
 							routeParamName="labTestSlug"
 						/>

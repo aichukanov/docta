@@ -11,7 +11,7 @@ function getCategoryIds() {
 	return getEnumValues(LabTestCategory);
 }
 
-async function getCategoryCityCombinations() {
+export async function getCategoryCityCombinations() {
 	const connection = await getConnection();
 
 	const query = `

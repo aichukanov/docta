@@ -84,6 +84,7 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 			:price="priceInfo?.price"
 			:priceMin="priceInfo?.priceMin"
 			:priceMax="priceInfo?.priceMax"
+			:isOutdated="priceInfo?.isOutdated"
 			:showPrice="showPrice"
 			:distance="distance"
 			@show-on-map="$emit('show-on-map')"
@@ -111,6 +112,7 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 								:price="item.price"
 								:priceMin="item.priceMin"
 								:priceMax="item.priceMax"
+								:isOutdated="item.isOutdated"
 								routeName="services-serviceSlug"
 								routeParamName="serviceSlug"
 							/>

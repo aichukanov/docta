@@ -50,19 +50,22 @@ export function parseClinicPricesData(clinicPricesData: string | null): Array<{
 	priceMin: number | null;
 	priceMax: number | null;
 	code: string | null;
+	isOutdated: boolean;
 }> {
 	if (!clinicPricesData) {
 		return [];
 	}
 
 	return clinicPricesData.split(',').map((priceData) => {
-		const [clinicId, price, priceMin, priceMax, code] = priceData.split(':');
+		const [clinicId, price, priceMin, priceMax, code, isOutdated] =
+			priceData.split(':');
 		return {
 			clinicId: Number(clinicId),
 			price: price === '' ? null : Number(price),
 			priceMin: priceMin === '' ? null : Number(priceMin),
 			priceMax: priceMax === '' ? null : Number(priceMax),
 			code: code || null,
+			isOutdated: isOutdated === '1',
 		};
 	});
 }

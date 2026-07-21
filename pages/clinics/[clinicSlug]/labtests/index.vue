@@ -246,6 +246,7 @@ watchEffect(() => {
 				:localName="item.localName"
 				:price="getClinicPrice(item.clinicPrices)?.price"
 				:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
+				:isOutdated="getClinicPrice(item.clinicPrices)?.isOutdated"
 				routeName="labtests-labTestSlug"
 				routeParamName="labTestSlug"
 			/>

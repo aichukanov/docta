@@ -17,6 +17,7 @@ const props = withDefaults(
 		price?: number | null;
 		priceMin?: number | null;
 		priceMax?: number | null;
+		isOutdated?: boolean;
 		showPrice?: boolean;
 		// Расстояние до пользователя в км; null/undefined — локация неизвестна
 		distance?: number | null;
@@ -157,7 +158,11 @@ const reviewsLink = computed(() => {
 					class="price-badge"
 					:class="{ 'price-badge__unknown': !hasPrice }"
 				>
-					<template v-if="formattedPrice">{{ formattedPrice }}</template>
+					<template v-if="formattedPrice">
+						{{ formattedPrice }}
+						<template v-if="isOutdated"> {{ t('PriceOutdatedSuffix') }}</template>
+						<PriceOutdatedBadge v-if="isOutdated" inverse />
+					</template>
 					<template v-else>{{ t('PriceUnknown') }}</template>
 				</div>
 			</div>
@@ -250,6 +255,9 @@ const reviewsLink = computed(() => {
 }
 
 .price-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--spacing-xs);
 	padding: var(--spacing-xs) var(--spacing-md);
 	background: var(--color-primary);
 	border-radius: var(--border-radius-sm);

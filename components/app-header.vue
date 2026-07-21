@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
+import IconDoctor from '~/components/icon/doctor.vue';
+import IconClinic from '~/components/icon/clinic.vue';
+import IconLabTest from '~/components/icon/lab-test.vue';
+import IconMedicalService from '~/components/icon/medical-service.vue';
+import IconMedication from '~/components/icon/medication.vue';
+import IconLightbulb from '~/components/icon/lightbulb.vue';
+import IconClose from '~/components/icon/close.vue';
 
 const { t, locale } = useI18n();
 const route = useRoute();
-const userStore = useUserStore();
-const { user, isUserLoading } = storeToRefs(userStore);
 
 const indexPageLink = computed(() => ({
 	name: 'index',
@@ -41,25 +46,84 @@ const articlesPageLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
-const profilePageLink = computed(() => ({
-	name: 'profile-basic',
-	query: getRegionalQuery(locale.value),
-}));
-
-const loginPageLink = computed(() => ({
-	path: '/login',
-	query: getRegionalQuery(locale.value),
-}));
-
 const isActiveSection = (section: string) => {
 	return route.path.startsWith(`/${section}`);
 };
 
-const userDisplayName = computed(() => {
-	if (!user.value) return '';
-	if (user.value.name) return user.value.name;
-	if (user.value.email) return user.value.email.split('@')[0];
-	return '';
+const navItems = computed(() => [
+	{
+		key: 'doctors',
+		to: doctorsPageLink.value,
+		icon: IconDoctor,
+		label: t('Doctors'),
+	},
+	{
+		key: 'clinics',
+		to: clinicsPageLink.value,
+		icon: IconClinic,
+		label: t('Clinics'),
+	},
+	{
+		key: 'labtests',
+		to: labTestsPageLink.value,
+		icon: IconLabTest,
+		label: t('LabTests'),
+	},
+	{
+		key: 'services',
+		to: medicalServicesPageLink.value,
+		icon: IconMedicalService,
+		label: t('MedicalServices'),
+	},
+	{
+		key: 'medicines',
+		to: medicationsPageLink.value,
+		icon: IconMedication,
+		label: t('Medications'),
+	},
+]);
+
+const articlesNavItem = computed(() => ({
+	key: 'articles',
+	to: articlesPageLink.value,
+	icon: IconLightbulb,
+	label: t('Articles'),
+}));
+
+// Мобильная шторка с навигацией, локацией и логином — см. feedback_visual_decisions
+const isDrawerOpen = ref(false);
+
+function openDrawer() {
+	isDrawerOpen.value = true;
+}
+
+function closeDrawer() {
+	isDrawerOpen.value = false;
+}
+
+function onKeydown(e: KeyboardEvent) {
+	if (e.key === 'Escape') {
+		closeDrawer();
+	}
+}
+
+watch(
+	() => route.fullPath,
+	() => closeDrawer(),
+);
+
+watch(isDrawerOpen, (open) => {
+	if (!import.meta.client) return;
+	document.body.style.overflow = open ? 'hidden' : '';
+});
+
+onMounted(() => {
+	document.addEventListener('keydown', onKeydown);
+});
+
+onBeforeUnmount(() => {
+	document.removeEventListener('keydown', onKeydown);
+	document.body.style.overflow = '';
 });
 </script>
 
@@ -77,93 +141,115 @@ const userDisplayName = computed(() => {
 
 				<nav class="app-header__nav">
 					<NuxtLink
+						v-for="item in navItems"
+						:key="item.key"
 						class="app-header__nav-link"
-						:class="{ 'is-active': isActiveSection('doctors') }"
-						:to="doctorsPageLink"
+						:class="{ 'is-active': isActiveSection(item.key) }"
+						:to="item.to"
 					>
-						<IconDoctor class="nav-icon" />
-						<span>{{ t('Doctors') }}</span>
-					</NuxtLink>
-					<NuxtLink
-						class="app-header__nav-link"
-						:class="{ 'is-active': isActiveSection('clinics') }"
-						:to="clinicsPageLink"
-					>
-						<IconClinic class="nav-icon" />
-						<span>{{ t('Clinics') }}</span>
-					</NuxtLink>
-					<NuxtLink
-						class="app-header__nav-link"
-						:class="{ 'is-active': isActiveSection('labtests') }"
-						:to="labTestsPageLink"
-					>
-						<IconLabTest class="nav-icon" />
-						<span>{{ t('LabTests') }}</span>
-					</NuxtLink>
-					<NuxtLink
-						class="app-header__nav-link"
-						:class="{ 'is-active': isActiveSection('services') }"
-						:to="medicalServicesPageLink"
-					>
-						<IconMedicalService class="nav-icon" />
-						<span>{{ t('MedicalServices') }}</span>
-					</NuxtLink>
-					<NuxtLink
-						class="app-header__nav-link"
-						:class="{ 'is-active': isActiveSection('medicines') }"
-						:to="medicationsPageLink"
-					>
-						<IconMedication class="nav-icon" />
-						<span>{{ t('Medications') }}</span>
+						<component :is="item.icon" class="nav-icon" />
+						<span>{{ item.label }}</span>
 					</NuxtLink>
 
 					<div class="app-header__nav-divider" aria-hidden="true"></div>
 
 					<NuxtLink
 						class="app-header__nav-link"
-						:class="{ 'is-active': isActiveSection('articles') }"
-						:to="articlesPageLink"
+						:class="{ 'is-active': isActiveSection(articlesNavItem.key) }"
+						:to="articlesNavItem.to"
 					>
-						<IconLightbulb class="nav-icon" />
-						<span>{{ t('Articles') }}</span>
+						<component :is="articlesNavItem.icon" class="nav-icon" />
+						<span>{{ articlesNavItem.label }}</span>
 					</NuxtLink>
 				</nav>
 
 				<div class="app-header__actions">
-					<ClientOnly>
-						<template v-if="!isUserLoading">
-							<!-- Залогиненный пользователь -->
-							<NuxtLink
-								v-if="user"
-								class="app-header__user"
-								:to="profilePageLink"
-								:aria-label="t('GoToProfile')"
-							>
-								<DoctorAvatar
-									:name="userDisplayName"
-									:photo-url="user?.photo_url"
-									:size="32"
-								/>
-								<span class="app-header__user-name">{{ userDisplayName }}</span>
-							</NuxtLink>
-
-							<!-- Кнопка входа -->
-							<NuxtLink
-								v-else
-								class="app-header__login-btn"
-								:to="loginPageLink"
-							>
-								<IconUser class="app-header__login-icon" :size="16" />
-								<span>{{ t('Login') }}</span>
-							</NuxtLink>
-						</template>
-					</ClientOnly>
+					<AppHeaderAuthLink />
 
 					<LocationSelector />
 					<LanguageSwitcher />
 				</div>
+
+				<div class="app-header__mobile-controls">
+					<LanguageSwitcher smaller />
+
+					<button
+						type="button"
+						class="app-header__burger"
+						:aria-label="t('OpenMenu')"
+						:aria-expanded="isDrawerOpen"
+						aria-controls="app-header-drawer"
+						@click="openDrawer"
+					>
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
 			</div>
 		</div>
+
+		<Transition name="app-header-fade">
+			<div
+				v-if="isDrawerOpen"
+				class="app-header__backdrop"
+				@click="closeDrawer"
+			></div>
+		</Transition>
+
+		<Transition name="app-header-slide">
+			<div
+				v-if="isDrawerOpen"
+				id="app-header-drawer"
+				class="app-header__drawer"
+				role="dialog"
+				aria-modal="true"
+				:aria-label="t('MobileMenu')"
+			>
+				<div class="app-header__drawer-top" @click="closeDrawer">
+					<AppHeaderAuthLink drawer :avatar-size="36" />
+
+					<button
+						type="button"
+						class="app-header__drawer-close"
+						:aria-label="t('CloseMenu')"
+						@click="closeDrawer"
+					>
+						<IconClose :size="20" />
+					</button>
+				</div>
+
+				<div class="app-header__drawer-location">
+					<LocationSelector />
+				</div>
+
+				<nav class="app-header__drawer-nav">
+					<NuxtLink
+						v-for="item in navItems"
+						:key="item.key"
+						class="app-header__drawer-link"
+						:class="{ 'is-active': isActiveSection(item.key) }"
+						:to="item.to"
+						@click="closeDrawer"
+					>
+						<component :is="item.icon" class="nav-icon" />
+						<span>{{ item.label }}</span>
+					</NuxtLink>
+
+					<div class="app-header__drawer-divider" aria-hidden="true"></div>
+
+					<NuxtLink
+						class="app-header__drawer-link"
+						:class="{ 'is-active': isActiveSection(articlesNavItem.key) }"
+						:to="articlesNavItem.to"
+						@click="closeDrawer"
+					>
+						<component :is="articlesNavItem.icon" class="nav-icon" />
+						<span>{{ articlesNavItem.label }}</span>
+					</NuxtLink>
+				</nav>
+			</div>
+		</Transition>
 	</header>
 </template>
 
@@ -177,8 +263,9 @@ const userDisplayName = computed(() => {
 		"MedicalServices": "Medical Services",
 		"Medications": "Medications",
 		"Articles": "Articles",
-		"Login": "Log in",
-		"GoToProfile": "Go to profile"
+		"OpenMenu": "Open menu",
+		"CloseMenu": "Close menu",
+		"MobileMenu": "Navigation menu"
 	},
 	"ru": {
 		"GoToMainPage": "Перейти на главную страницу",
@@ -188,8 +275,9 @@ const userDisplayName = computed(() => {
 		"MedicalServices": "Услуги",
 		"Medications": "Лекарства",
 		"Articles": "Статьи",
-		"Login": "Войти",
-		"GoToProfile": "Перейти в профиль"
+		"OpenMenu": "Открыть меню",
+		"CloseMenu": "Закрыть меню",
+		"MobileMenu": "Меню навигации"
 	},
 	"sr": {
 		"GoToMainPage": "Idi na početnu stranicu",
@@ -199,8 +287,9 @@ const userDisplayName = computed(() => {
 		"MedicalServices": "Usluge",
 		"Medications": "Lekovi",
 		"Articles": "Članci",
-		"Login": "Prijavite se",
-		"GoToProfile": "Idite na profil"
+		"OpenMenu": "Otvorite meni",
+		"CloseMenu": "Zatvorite meni",
+		"MobileMenu": "Navigacioni meni"
 	},
 	"sr-cyrl": {
 		"GoToMainPage": "Иди на почетну страницу",
@@ -210,8 +299,9 @@ const userDisplayName = computed(() => {
 		"MedicalServices": "Услуге",
 		"Medications": "Лекови",
 		"Articles": "Чланци",
-		"Login": "Пријавите се",
-		"GoToProfile": "Идите на профил"
+		"OpenMenu": "Отворите мени",
+		"CloseMenu": "Затворите мени",
+		"MobileMenu": "Навигациони мени"
 	},
 	"de": {
 		"GoToMainPage": "Zur Startseite gehen",
@@ -221,8 +311,9 @@ const userDisplayName = computed(() => {
 		"MedicalServices": "Medizinische Dienstleistungen",
 		"Medications": "Medikamente",
 		"Articles": "Artikel",
-		"Login": "Anmelden",
-		"GoToProfile": "Zum Profil gehen"
+		"OpenMenu": "Menü öffnen",
+		"CloseMenu": "Menü schließen",
+		"MobileMenu": "Navigationsmenü"
 	},
 	"tr": {
 		"GoToMainPage": "Ana sayfaya git",
@@ -232,8 +323,9 @@ const userDisplayName = computed(() => {
 		"MedicalServices": "Tıbbi Hizmetler",
 		"Medications": "İlaçlar",
 		"Articles": "Makaleler",
-		"Login": "Giriş yap",
-		"GoToProfile": "Profile git"
+		"OpenMenu": "Menüyü aç",
+		"CloseMenu": "Menüyü kapat",
+		"MobileMenu": "Gezinme menüsü"
 	}
 }
 </i18n>
@@ -344,177 +436,182 @@ const userDisplayName = computed(() => {
 		min-width: 0;
 	}
 
-	&__user {
-		display: flex;
+	// Компактные контролы (переключатель языка + гамбургер), только мобильные экраны
+	&__mobile-controls {
+		display: none;
 		align-items: center;
 		gap: var(--spacing-sm);
-		min-width: 0;
-		text-decoration: none;
-		color: var(--color-text-primary);
-		padding: 4px 10px 4px 4px;
-		border-radius: var(--border-radius-xl);
-		transition: all var(--transition-base);
+		flex-shrink: 0;
+
+		// Высота триггера языка по умолчанию — по контенту (auto);
+		// здесь выравниваем её с квадратной кнопкой-гамбургером (40px)
+		:deep(.language-switcher__trigger) {
+			height: 40px;
+		}
+	}
+
+	&__burger {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 4px;
+		width: 40px;
+		height: 40px;
+		padding: 0;
+		background: var(--color-bg-secondary);
+		border: 1px solid var(--color-border-secondary);
+		border-radius: var(--border-radius-md);
+		cursor: pointer;
+		flex-shrink: 0;
+
+		span {
+			display: block;
+			width: 18px;
+			height: 2px;
+			background: var(--color-text-primary);
+			border-radius: 2px;
+		}
+
+		&:hover {
+			background: var(--color-bg-tertiary);
+		}
+	}
+
+	&__backdrop {
+		position: fixed;
+		inset: 0;
+		background: rgba(15, 23, 42, 0.45);
+		z-index: var(--z-modal);
+	}
+
+	&__drawer {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: min(320px, 85vw);
+		background: white;
+		z-index: calc(var(--z-modal) + 1);
+		display: flex;
+		flex-direction: column;
+		box-shadow: -8px 0 24px rgba(0, 0, 0, 0.12);
+		overflow-y: auto;
+		box-sizing: border-box;
+		padding: var(--spacing-lg);
+	}
+
+	&__drawer-top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--spacing-md);
+		padding-bottom: var(--spacing-lg);
+		border-bottom: 1px solid var(--color-border-secondary);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	&__drawer-close {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		flex-shrink: 0;
+		background: var(--color-bg-secondary);
+		border: 1px solid var(--color-border-secondary);
+		border-radius: var(--border-radius-md);
+		color: var(--color-text-secondary);
 		cursor: pointer;
 
 		&:hover {
-			background: rgba(79, 70, 229, 0.06);
-			color: var(--color-primary);
+			background: var(--color-bg-tertiary);
 		}
 	}
 
-	&__user-avatar {
-		width: 32px;
-		height: 32px;
-		border-radius: var(--border-radius-full);
-		object-fit: cover;
-		flex-shrink: 0;
-		border: 2px solid var(--color-border-secondary);
-		transition: border-color var(--transition-base);
+	&__drawer-location {
+		margin-bottom: var(--spacing-lg);
 
-		.app-header__user:hover & {
-			border-color: rgba(79, 70, 229, 0.3);
+		:deep(.header-location) {
+			width: 100%;
 		}
 	}
 
-	&__user-name {
-		font-size: var(--font-size-md);
-		font-weight: var(--font-weight-medium);
-		white-space: nowrap;
-		/* Потолок — от аномально длинных имён на широких экранах;
-		   при нехватке места имя сжимается с многоточием (min-width: 0 по цепочке) */
-		max-width: 280px;
-		overflow: hidden;
-		text-overflow: ellipsis;
+	&__drawer-nav {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-xs);
 	}
 
-	&__login-btn {
+	&__drawer-link {
 		display: flex;
 		align-items: center;
-		gap: var(--spacing-sm);
-		box-sizing: border-box;
-		/* 40px — вровень с переключателем языка */
-		height: 40px;
-		font-size: var(--font-size-base);
-		font-weight: var(--font-weight-medium);
-		/* line-box = иконке (16px), иначе текст с наследуемым line-height
-		   оптически уезжает ниже центра */
-		line-height: 1;
-		color: white;
-		background: var(--color-primary);
+		gap: var(--spacing-md);
+		padding: var(--spacing-md);
+		border-radius: var(--border-radius-md);
+		color: var(--color-text-secondary);
 		text-decoration: none;
-		padding: 0 var(--spacing-lg);
-		border-radius: var(--border-radius-lg);
-		transition: all var(--transition-base);
-		white-space: nowrap;
+		font-size: var(--font-size-base);
+		font-weight: 500;
+
+		.nav-icon {
+			width: 22px;
+			height: 22px;
+			flex-shrink: 0;
+		}
 
 		&:hover {
-			background: var(--color-primary-dark);
-			box-shadow: var(--shadow-hover);
+			background: var(--color-bg-secondary);
+		}
+
+		&.is-active {
+			color: var(--color-primary);
+			font-weight: 600;
+			background: rgba(79, 70, 229, 0.1);
 		}
 	}
 
-	&__login-icon {
-		width: 16px;
-		height: 16px;
-		flex-shrink: 0;
+	&__drawer-divider {
+		height: 1px;
+		background: var(--color-border-secondary);
+		margin: var(--spacing-sm) 0;
 	}
+}
+
+.app-header-fade-enter-active,
+.app-header-fade-leave-active {
+	transition: opacity 0.2s ease;
+}
+
+.app-header-fade-enter-from,
+.app-header-fade-leave-to {
+	opacity: 0;
+}
+
+.app-header-slide-enter-active,
+.app-header-slide-leave-active {
+	transition: transform 0.25s ease;
+}
+
+.app-header-slide-enter-from,
+.app-header-slide-leave-to {
+	transform: translateX(100%);
 }
 
 @media only screen and (max-width: 1024px) {
 	.app-header {
 		&__main-content {
-			height: auto;
-			padding: var(--spacing-sm) var(--spacing-md);
-			flex-wrap: wrap;
-			gap: var(--spacing-xs) var(--spacing-md);
-		}
-
-		&__nav {
-			order: 3;
-			width: 100%;
-			flex: none;
-			margin-left: 0;
-			justify-content: flex-start;
 			flex-wrap: nowrap;
-			overflow-x: auto;
-			padding: var(--spacing-xs) 0 var(--spacing-sm);
-			gap: var(--spacing-xs);
-			scrollbar-width: none; /* Firefox */
+			padding: var(--spacing-sm) var(--spacing-md);
 		}
 
-		&__nav-link {
-			font-size: var(--font-size-sm);
-			padding: var(--spacing-sm) var(--spacing-xs);
-			background: var(--color-bg-secondary);
-			border: 1px solid var(--color-border-secondary);
-			flex-direction: column;
-			gap: 4px;
-			min-width: 20px;
-			flex: 1 1 auto;
-			align-items: center;
-			justify-content: center;
-
-			.nav-icon {
-				width: 20px;
-				height: 20px;
-			}
-
-			span {
-				font-size: 10px;
-				text-transform: uppercase;
-				letter-spacing: 0.5px;
-				word-break: break-all;
-			}
-
-			&:hover {
-				background: var(--color-bg-tertiary);
-			}
-
-			&.is-active {
-				background: rgba(79, 70, 229, 0.08);
-				border-color: rgba(79, 70, 229, 0.3);
-			}
-		}
-
-		&__nav-divider {
-			display: none;
-		}
-
-		&__nav-link:last-child {
-			margin-left: var(--spacing-sm);
-		}
-
+		&__nav,
 		&__actions {
-			order: 2;
-		}
-
-		&__brand {
-			order: 1;
-		}
-
-		&__user-name {
 			display: none;
 		}
 
-		&__user {
-			padding: 2px;
-		}
-
-		&__login-btn {
-			padding: 0 var(--spacing-md);
-			font-size: var(--font-size-sm);
-		}
-	}
-}
-
-@media only screen and (max-width: 500px) {
-	.app-header {
-		&__main-content {
-			padding: var(--spacing-sm) var(--spacing-sm);
-		}
-
-		&__nav-link span {
-			display: none;
+		&__mobile-controls {
+			display: flex;
 		}
 	}
 }

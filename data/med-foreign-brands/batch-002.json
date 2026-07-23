@@ -1,0 +1,284 @@
+[
+  {
+    "inn_en": "loperamide",
+    "inn_ru": "лоперамид",
+    "markets": {
+      "RU": [
+        {"brand": "Имодиум", "strength": "2 мг", "form": "таблетки для рассасывания / капсулы", "note": "оригинальный бренд (Johnson & Johnson)", "confidence": "high"},
+        {"brand": "Лопедиум", "strength": "2 мг", "form": "капсулы / таблетки", "note": "", "confidence": "high"},
+        {"brand": "Диара", "strength": "2 мг", "form": "таблетки жевательные", "note": "", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Imodium", "strength": "2 mg", "form": "Kapseln / Schmelztabletten (akut/N duo)", "note": "", "confidence": "high"},
+        {"brand": "Lopedium", "strength": "2 mg", "form": "Kapseln / Tabletten", "note": "Hexal", "confidence": "high"},
+        {"brand": "Loperamid-ratiopharm akut", "strength": "2 mg", "form": "Tabletten", "note": "generic", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Imodium", "strength": "2 mg", "form": "kapsułki / tabletki (Instant/Multi-Action)", "note": "", "confidence": "high"},
+        {"brand": "Stoperan", "strength": "2 mg", "form": "kapsułki", "note": "", "confidence": "high"},
+        {"brand": "Laremid", "strength": "2 mg", "form": "tabletki", "note": "", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Imodium A-D", "strength": "2 mg", "form": "caplets / soft gels / liquid", "note": "OTC", "confidence": "high"},
+        {"brand": "Loperamide Hydrochloride (generic / store brand)", "strength": "2 mg", "form": "caplets", "note": "", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "diosmectite",
+    "inn_ru": "смектит диоктаэдрический",
+    "markets": {
+      "RU": [
+        {"brand": "Смекта", "strength": "3 г/пакет", "form": "порошок для суспензии", "note": "оригинальный бренд (Ipsen)", "confidence": "high"},
+        {"brand": "Неосмектин", "strength": "3 г/пакет", "form": "порошок для суспензии", "note": "Фармстандарт", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Colina", "strength": "3 g/Beutel", "form": "Pulver zur Herstellung einer Suspension", "note": "Ipsen; Smecta auch als Import erhältlich", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Smecta", "strength": "3 g/saszetka", "form": "proszek do sporządzania zawiesiny", "note": "", "confidence": "high"}
+      ],
+      "US": []
+    },
+    "available_note": "US: не одобрен FDA как лекарство, обычные противодиарейные средства в США основаны на других веществах (лоперамид, висмута субсалицилат); диоктаэдрический смектит в широкой розничной продаже отсутствует."
+  },
+  {
+    "inn_en": "polymethylsiloxane polyhydrate",
+    "inn_ru": "полиметилсилоксана полигидрат",
+    "markets": {
+      "RU": [
+        {"brand": "Энтеросгель", "strength": "паста ~70% гидрогеля", "form": "паста / гель для приёма внутрь, пакеты 15 г", "note": "энтеросорбент", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Enterosgel", "strength": "15 g/Beutel", "form": "orales Gel / Paste", "note": "как медицинское изделие (Medizinprodukt), не рецептурный препарат", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Enterosgel", "strength": "15 g/saszetka", "form": "żel doustny / pasta", "note": "wyrób medyczny", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Enterosgel", "strength": "15 g/sachet", "form": "oral gel", "note": "продаётся как медицинское изделие/добавка через розницу (Amazon и др.), не одобрен FDA как лекарство", "confidence": "low"}
+      ]
+    },
+    "available_note": "Вещество почти всегда продаётся под единственным брендом Enterosgel. В ЕС/США классифицируется как медицинское изделие, а не лекарственный препарат."
+  },
+  {
+    "inn_en": "activated charcoal",
+    "inn_ru": "уголь активированный",
+    "markets": {
+      "RU": [
+        {"brand": "Уголь активированный", "strength": "250 мг", "form": "таблетки", "note": "непатентованное название = торговое", "confidence": "high"},
+        {"brand": "Карбактин", "strength": "250-500 мг", "form": "порошок / капсулы", "note": "", "confidence": "medium"},
+        {"brand": "Сорбекс", "strength": "250 мг", "form": "капсулы", "note": "чаще Украина", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Kohle-Compretten", "strength": "250 mg", "form": "Tabletten", "note": "", "confidence": "high"},
+        {"brand": "Ultracarbon", "strength": "Granulat / Tabletten", "form": "Granulat, Tabletten", "note": "", "confidence": "high"},
+        {"brand": "Kohle-Hevert", "strength": "", "form": "Tabletten", "note": "", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Carbo medicinalis", "strength": "200-300 mg", "form": "tabletki", "note": "= Carbo activatus", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "CharcoCaps", "strength": "260 mg", "form": "capsules", "note": "OTC anti-gas/digestive", "confidence": "high"},
+        {"brand": "Actidose-Aqua", "strength": "25 g / 50 g", "form": "oral suspension", "note": "для острых отравлений", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "pancreatin",
+    "inn_ru": "панкреатин",
+    "markets": {
+      "RU": [
+        {"brand": "Креон", "strength": "10000 / 25000 / 40000 ЕД липазы", "form": "капсулы с минимикросферами", "note": "лидер рынка", "confidence": "high"},
+        {"brand": "Мезим форте", "strength": "3500-10000 ЕД", "form": "таблетки", "note": "", "confidence": "high"},
+        {"brand": "Панзинорм / Эрмиталь / Микразим", "strength": "10000-25000 ЕД", "form": "капсулы / таблетки", "note": "", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Kreon", "strength": "10000 / 25000 / 40000 Einheiten", "form": "magensaftresistente Kapseln", "note": "", "confidence": "high"},
+        {"brand": "Pangrol", "strength": "10000 / 25000 Einheiten", "form": "Kapseln", "note": "", "confidence": "high"},
+        {"brand": "Ozym / Panzytrat", "strength": "10000-40000 Einheiten", "form": "Kapseln", "note": "", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Kreon", "strength": "10000 / 25000 j.", "form": "kapsułki", "note": "", "confidence": "high"},
+        {"brand": "Lipancrea", "strength": "8000 / 16000 j.", "form": "kapsułki", "note": "", "confidence": "high"},
+        {"brand": "Neo-Pancreatinum forte", "strength": "", "form": "tabletki", "note": "", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Creon", "strength": "3000-36000 units lipase", "form": "delayed-release capsules", "note": "рецептурный pancrelipase", "confidence": "high"},
+        {"brand": "Zenpep", "strength": "3000-40000 units lipase", "form": "delayed-release capsules", "note": "рецептурный", "confidence": "high"},
+        {"brand": "Pancreaze", "strength": "2600-37000 units lipase", "form": "delayed-release capsules", "note": "рецептурный", "confidence": "high"}
+      ]
+    },
+    "available_note": "В США панкреатические ферменты продаются как рецептурный pancrelipase (Creon, Zenpep, Pancreaze, Pertzye, Viokace); безрецептурный 'pancreatin' есть только как БАД. В РФ/ЕС Kreon — самый узнаваемый бренд."
+  },
+  {
+    "inn_en": "omeprazole",
+    "inn_ru": "омепразол",
+    "markets": {
+      "RU": [
+        {"brand": "Омез", "strength": "10 / 20 / 40 мг", "form": "капсулы", "note": "самый популярный (Dr. Reddy's)", "confidence": "high"},
+        {"brand": "Ультоп", "strength": "10 / 20 / 40 мг", "form": "капсулы", "note": "", "confidence": "high"},
+        {"brand": "Ортанол / Гастрозол / Лосек", "strength": "10 / 20 / 40 мг", "form": "капсулы", "note": "Лосек — оригинал (AstraZeneca)", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Antra MUPS", "strength": "10 / 20 / 40 mg", "form": "magensaftresistente Tabletten (MUPS)", "note": "оригинальный бренд (AstraZeneca)", "confidence": "high"},
+        {"brand": "Omep", "strength": "10 / 20 / 40 mg", "form": "Kapseln", "note": "Hexal", "confidence": "high"},
+        {"brand": "Omeprazol-ratiopharm", "strength": "20 / 40 mg", "form": "Kapseln", "note": "generic", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Polprazol", "strength": "10 / 20 / 40 mg", "form": "kapsułki", "note": "", "confidence": "high"},
+        {"brand": "Helicid", "strength": "10 / 20 / 40 mg", "form": "kapsułki", "note": "", "confidence": "high"},
+        {"brand": "Bioprazol / Prazol / Ortanol", "strength": "10 / 20 mg", "form": "kapsułki", "note": "", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Prilosec / Prilosec OTC", "strength": "20 mg", "form": "delayed-release capsules / tablets", "note": "оригинал (AstraZeneca)", "confidence": "high"},
+        {"brand": "Zegerid", "strength": "20 / 40 mg", "form": "capsules (+ sodium bicarbonate)", "note": "комбинация с бикарбонатом", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "pantoprazole",
+    "inn_ru": "пантопразол",
+    "markets": {
+      "RU": [
+        {"brand": "Нольпаза", "strength": "20 / 40 мг", "form": "таблетки, покрытые оболочкой", "note": "KRKA, очень популярен", "confidence": "high"},
+        {"brand": "Контролок", "strength": "20 / 40 мг", "form": "таблетки", "note": "оригинал (Takeda)", "confidence": "high"},
+        {"brand": "Санпраз / Панум", "strength": "20 / 40 мг", "form": "таблетки", "note": "", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Pantozol / Pantozol Control", "strength": "20 / 40 mg", "form": "magensaftresistente Tabletten", "note": "оригинал; Control — OTC", "confidence": "high"},
+        {"brand": "Pantoprazol-ratiopharm", "strength": "20 / 40 mg", "form": "Tabletten", "note": "generic", "confidence": "high"},
+        {"brand": "Pantoprazol Hexal", "strength": "20 / 40 mg", "form": "Tabletten", "note": "generic", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Controloc / Controloc Control", "strength": "20 / 40 mg", "form": "tabletki", "note": "Control — OTC", "confidence": "high"},
+        {"brand": "Nolpaza", "strength": "20 / 40 mg", "form": "tabletki", "note": "", "confidence": "high"},
+        {"brand": "Anesteloc / Contix", "strength": "20 / 40 mg", "form": "tabletki", "note": "", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Protonix", "strength": "20 / 40 mg", "form": "delayed-release tablets / IV", "note": "оригинал (Pfizer/Wyeth)", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "famotidine",
+    "inn_ru": "фамотидин",
+    "markets": {
+      "RU": [
+        {"brand": "Квамател", "strength": "20 / 40 мг", "form": "таблетки; лиофилизат для инъекций", "note": "Gedeon Richter", "confidence": "high"},
+        {"brand": "Фамотидин", "strength": "20 / 40 мг", "form": "таблетки", "note": "generic", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Famotidin-ratiopharm", "strength": "20 / 40 mg", "form": "Filmtabletten", "note": "", "confidence": "high"},
+        {"brand": "Famotidin STADA", "strength": "20 / 40 mg", "form": "Filmtabletten", "note": "", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Quamatel", "strength": "20 / 40 mg", "form": "tabletki", "note": "", "confidence": "high"},
+        {"brand": "Famosan", "strength": "20 / 40 mg", "form": "tabletki", "note": "", "confidence": "high"},
+        {"brand": "Ulfamid", "strength": "20 / 40 mg", "form": "tabletki", "note": "", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Pepcid / Pepcid AC", "strength": "10 / 20 / 40 mg", "form": "tablets (OTC & Rx)", "note": "", "confidence": "high"},
+        {"brand": "Pepcid Complete", "strength": "10 mg (+ антациды)", "form": "chewable tablets", "note": "комбинация с CaCO3/Mg(OH)2", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "domperidone",
+    "inn_ru": "домперидон",
+    "markets": {
+      "RU": [
+        {"brand": "Мотилиум", "strength": "10 мг; 1 мг/мл суспензия", "form": "таблетки / таблетки для рассасывания / суспензия", "note": "оригинал (Johnson & Johnson)", "confidence": "high"},
+        {"brand": "Мотилак", "strength": "10 мг", "form": "таблетки", "note": "", "confidence": "high"},
+        {"brand": "Пассажикс", "strength": "10 мг", "form": "таблетки жевательные", "note": "", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Motilium", "strength": "10 mg", "form": "Filmtabletten", "note": "rezeptpflichtig", "confidence": "medium"},
+        {"brand": "Domperidon AbZ / Domperidon-ratiopharm", "strength": "10 mg", "form": "Tabletten", "note": "generic, rezeptpflichtig", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Motilium", "strength": "10 mg", "form": "tabletki", "note": "rejestracja ograniczona", "confidence": "low"},
+        {"brand": "Domrid", "strength": "10 mg", "form": "tabletki", "note": "", "confidence": "low"}
+      ],
+      "US": []
+    },
+    "available_note": "US: домперидон НЕ одобрен FDA, в обычной продаже отсутствует (доступ только через программу расширенного доступа FDA). В ЕС после 2014 г. отпускается по рецепту с ограничениями по дозе/длительности; ассортимент брендов сузился — уверенность по DE/PL средняя/низкая."
+  },
+  {
+    "inn_en": "metoclopramide",
+    "inn_ru": "метоклопрамид",
+    "markets": {
+      "RU": [
+        {"brand": "Церукал", "strength": "10 мг; 5 мг/мл раствор", "form": "таблетки; раствор для инъекций", "note": "самый узнаваемый бренд", "confidence": "high"},
+        {"brand": "Метоклопрамид", "strength": "10 мг; 5 мг/мл", "form": "таблетки; раствор", "note": "generic", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Paspertin", "strength": "10 mg; Tropfen; Injektion", "form": "Tabletten / Tropfen / Injektionslösung", "note": "оригинал", "confidence": "high"},
+        {"brand": "MCP-ratiopharm", "strength": "10 mg", "form": "Tabletten / Tropfen", "note": "generic", "confidence": "high"},
+        {"brand": "Gastrosil", "strength": "10 mg", "form": "Tabletten", "note": "", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Metoclopramidum Polpharma", "strength": "10 mg; 5 mg/ml", "form": "tabletki; roztwór do wstrzykiwań", "note": "", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Reglan", "strength": "5 / 10 mg; 5 mg/ml", "form": "tablets; injection", "note": "", "confidence": "high"},
+        {"brand": "Metozolv ODT", "strength": "5 / 10 mg", "form": "orally disintegrating tablets", "note": "", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "bismuth subcitrate",
+    "inn_ru": "висмута трикалия дицитрат",
+    "markets": {
+      "RU": [
+        {"brand": "Де-Нол", "strength": "120 мг", "form": "таблетки, покрытые оболочкой", "note": "оригинал (Astellas)", "confidence": "high"},
+        {"brand": "Улькавис", "strength": "120 мг", "form": "таблетки", "note": "", "confidence": "high"},
+        {"brand": "Новобисмол / Эскейп", "strength": "120 мг", "form": "таблетки", "note": "", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Pylera", "strength": "140 mg висмута субцитрата + 125 mg metronidazol + 125 mg tetracyclin", "form": "Hartkapseln", "note": "только в составе тройной комбинации для эрадикации H. pylori; монопрепарата на рынке нет", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Ulcamed", "strength": "120 mg", "form": "tabletki powlekane", "note": "монопрепарат", "confidence": "medium"},
+        {"brand": "Pylera", "strength": "комбинация 140/125/125 mg", "form": "kapsułki", "note": "тройная комбинация", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Pylera", "strength": "140 mg bismuth subcitrate potassium + metronidazole + tetracycline", "form": "capsules", "note": "рецептурная комбинация с омепразолом для H. pylori; висмута субцитрат как монопрепарат в США не продаётся", "confidence": "high"}
+      ]
+    },
+    "available_note": "Именно висмута трикалия дицитрат (субцитрат) как монопрепарат распространён в РФ/СНГ (Де-Нол) и в Польше (Ulcamed). В DE/US он есть только в составе комбинации Pylera. В США безрецептурный 'bismuth' (Pepto-Bismol) — это ДРУГАЯ соль, висмута субсалицилат."
+  },
+  {
+    "inn_en": "simethicone",
+    "inn_ru": "симетикон",
+    "markets": {
+      "RU": [
+        {"brand": "Эспумизан", "strength": "40 мг капс.; 40 мг/мл эмульсия/капли", "form": "капсулы / эмульсия / капли", "note": "лидер (Berlin-Chemie)", "confidence": "high"},
+        {"brand": "Саб симплекс", "strength": "69,19 мг/мл", "form": "суспензия (капли)", "note": "", "confidence": "high"},
+        {"brand": "Боботик", "strength": "66,66 мг/мл", "form": "капли для детей", "note": "", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Lefax", "strength": "42 / 105 mg (extra)", "form": "Kautabletten / Flüssigkeit / Kapseln", "note": "", "confidence": "high"},
+        {"brand": "sab simplex", "strength": "69,19 mg/ml", "form": "Suspension (Tropfen)", "note": "", "confidence": "high"},
+        {"brand": "Espumisan", "strength": "40 / 125 mg", "form": "Kapseln / Emulsion", "note": "", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Espumisan", "strength": "40 mg kaps.; 40 mg/ml krople", "form": "kapsułki / krople / emulsja", "note": "", "confidence": "high"},
+        {"brand": "Bobotic", "strength": "66,66 mg/ml", "form": "krople dla dzieci", "note": "", "confidence": "high"},
+        {"brand": "Sab simplex", "strength": "69,19 mg/ml", "form": "zawiesina (krople)", "note": "", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Gas-X", "strength": "80 / 125 / 180 mg", "form": "chewable tablets / softgels", "note": "OTC", "confidence": "high"},
+        {"brand": "Mylicon (Infants')", "strength": "20 mg/0,3 ml", "form": "oral drops", "note": "для младенцев", "confidence": "high"},
+        {"brand": "Phazyme", "strength": "180 / 250 mg", "form": "softgels", "note": "", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  }
+]

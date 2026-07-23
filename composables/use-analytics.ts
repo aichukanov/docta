@@ -141,35 +141,6 @@ export function useAnalytics() {
 		}
 	};
 
-	const initCloudflare = () => {
-		if (typeof window === 'undefined') {
-			return;
-		}
-
-		const domain = window.location.hostname;
-
-		if (domain === 'localhost') {
-			console.log('Cloudflare is not initialized on localhost');
-			return;
-		}
-
-		const token = config.public.cloudflareToken;
-
-		if (!token) {
-			console.error('Token for cloudflare is not defined. Domain:', domain);
-			return;
-		}
-
-		const script = document.createElement('script');
-		script.async = true;
-		script.src = 'https://static.cloudflareinsights.com/beacon.min.js';
-		script.dataset.cfBeacon = JSON.stringify({
-			token: token,
-		});
-
-		document.body.appendChild(script);
-	};
-
 	const initGTag = () => {
 		if (!import.meta.client) return;
 		gtag('consent', 'update', {
@@ -239,7 +210,6 @@ export function useAnalytics() {
 
 	return {
 		initMixpanel,
-		initCloudflare,
 		initGTag,
 		disableAnalytics,
 		trackEvent,

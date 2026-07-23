@@ -12,6 +12,7 @@ import { LanguageId } from '~/enums/language';
 import articlesI18n from '~/i18n/articles';
 import cityHealthcareI18n from '~/i18n/article-city-healthcare';
 import weekendMedicalHelpI18n from '~/i18n/article-weekend-medical-help';
+import articleUnavailableI18n from '~/i18n/article-medications-unavailable';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 
 const { t, locale } = useI18n({
@@ -20,6 +21,7 @@ const { t, locale } = useI18n({
 		articlesI18n,
 		cityHealthcareI18n,
 		weekendMedicalHelpI18n,
+		articleUnavailableI18n,
 		breadcrumbI18n,
 	]),
 });
@@ -78,148 +80,177 @@ const clinicLanguageStats = computed(() => {
 	return { clinics: clinicIds.size, languages: languageIds.size };
 });
 
-const articles = computed(() => [
-	{
-		title: t('HealthcareSystemTitle'),
-		description: t('HealthcareSystemDescription'),
-		image: '/img/articles/healthcare-system-in-montenegro.webp',
-		meta: '',
-		link: {
-			path: '/articles/healthcare-system-in-montenegro',
-			query: getRegionalQuery(locale.value),
+// date — дата публикации статьи (совпадает с datePublished на самой странице).
+// Список сортируется по ней от новых к старым; при равных датах сохраняется
+// порядок объявления. Новую статью достаточно добавить с правильной датой.
+const articles = computed(() =>
+	[
+		{
+			title: t('HealthcareSystemTitle'),
+			description: t('HealthcareSystemDescription'),
+			image: '/img/articles/healthcare-system-in-montenegro.webp',
+			date: '2026-07-16',
+			meta: '',
+			link: {
+				path: '/articles/healthcare-system-in-montenegro',
+				query: getRegionalQuery(locale.value),
+			},
 		},
-	},
-	{
-		title: t('BirthInMontenegroTitle'),
-		description: t('BirthInMontenegroDescription'),
-		image: '/img/articles/birth-in-montenegro.webp',
-		meta: '',
-		link: {
-			path: '/articles/birth-in-montenegro',
-			query: getRegionalQuery(locale.value),
+		{
+			title: t('BirthInMontenegroTitle'),
+			description: t('BirthInMontenegroDescription'),
+			image: '/img/articles/birth-in-montenegro.webp',
+			date: '2026-07-16',
+			meta: '',
+			link: {
+				path: '/articles/birth-in-montenegro',
+				query: getRegionalQuery(locale.value),
+			},
 		},
-	},
-	{
-		title: t('ResidenceInsuranceTitle'),
-		description: t('ResidenceInsuranceDescription'),
-		image: '/img/articles/health-insurance-for-residence-permit.webp',
-		meta: '',
-		link: {
-			path: '/articles/health-insurance-for-residence-permit',
-			query: getRegionalQuery(locale.value),
+		{
+			title: t('ResidenceInsuranceTitle'),
+			description: t('ResidenceInsuranceDescription'),
+			image: '/img/articles/health-insurance-for-residence-permit.webp',
+			date: '2026-07-16',
+			meta: '',
+			link: {
+				path: '/articles/health-insurance-for-residence-permit',
+				query: getRegionalQuery(locale.value),
+			},
 		},
-	},
-	{
-		title: t('MentalHealthTitle'),
-		description: t('MentalHealthDescription'),
-		image: '/img/articles/mental-health-in-montenegro.webp',
-		meta: '',
-		link: {
-			path: '/articles/mental-health-in-montenegro',
-			query: getRegionalQuery(locale.value),
+		{
+			title: t('MentalHealthTitle'),
+			description: t('MentalHealthDescription'),
+			image: '/img/articles/mental-health-in-montenegro.webp',
+			date: '2026-07-16',
+			meta: '',
+			link: {
+				path: '/articles/mental-health-in-montenegro',
+				query: getRegionalQuery(locale.value),
+			},
 		},
-	},
-	{
-		title: t('TouristHealthcareTitle'),
-		description: t('TouristHealthcareDescription'),
-		image: '/img/articles/tourist-healthcare-in-montenegro.webp',
-		meta: '',
-		link: {
-			path: '/articles/tourist-healthcare-in-montenegro',
-			query: getRegionalQuery(locale.value),
+		{
+			title: t('TouristHealthcareTitle'),
+			description: t('TouristHealthcareDescription'),
+			image: '/img/articles/tourist-healthcare-in-montenegro.webp',
+			date: '2026-07-16',
+			meta: '',
+			link: {
+				path: '/articles/tourist-healthcare-in-montenegro',
+				query: getRegionalQuery(locale.value),
+			},
 		},
-	},
-	{
-		title: t('DentistryTitle'),
-		description: t('DentistryDescription'),
-		image: '/img/articles/dentistry-in-montenegro.webp',
-		meta: '',
-		link: {
-			path: '/articles/dentistry-in-montenegro',
-			query: getRegionalQuery(locale.value),
+		{
+			title: t('DentistryTitle'),
+			description: t('DentistryDescription'),
+			image: '/img/articles/dentistry-in-montenegro.webp',
+			date: '2026-07-16',
+			meta: '',
+			link: {
+				path: '/articles/dentistry-in-montenegro',
+				query: getRegionalQuery(locale.value),
+			},
 		},
-	},
-	{
-		title: t('PharmaciesTitle'),
-		description: t('PharmaciesDescription'),
-		image: '/img/articles/pharmacies-and-medications.webp',
-		meta: '',
-		link: {
-			path: '/articles/pharmacies-and-medications',
-			query: getRegionalQuery(locale.value),
+		{
+			title: t('PharmaciesTitle'),
+			description: t('PharmaciesDescription'),
+			image: '/img/articles/pharmacies-and-medications.webp',
+			date: '2026-07-16',
+			meta: '',
+			link: {
+				path: '/articles/pharmacies-and-medications',
+				query: getRegionalQuery(locale.value),
+			},
 		},
-	},
-	{
-		title: t('WeekendMedicalHelpTitle'),
-		description: t('WeekendMedicalHelpDescription'),
-		image: '/img/articles/weekend-medical-help-in-montenegro.webp',
-		meta: '',
-		link: {
-			path: '/articles/weekend-medical-help-in-montenegro',
-			query: getRegionalQuery(locale.value),
+		{
+			title: t('UnaTitle'),
+			description: t('UnaDescription'),
+			image: '/img/articles/medications-not-available-in-montenegro.webp',
+			date: '2026-07-23',
+			meta: '',
+			link: {
+				path: '/articles/medications-not-available-in-montenegro',
+				query: getRegionalQuery(locale.value),
+			},
 		},
-	},
-	{
-		title: t('LabTestsArticleTitle'),
-		description: t('LabTestsArticleDescription'),
-		image: '/img/articles/lab-tests-and-checkups.webp',
-		meta: '',
-		link: {
-			path: '/articles/lab-tests-and-checkups',
-			query: getRegionalQuery(locale.value),
+		{
+			title: t('WeekendMedicalHelpTitle'),
+			description: t('WeekendMedicalHelpDescription'),
+			image: '/img/articles/weekend-medical-help-in-montenegro.webp',
+			date: '2026-07-17',
+			meta: '',
+			link: {
+				path: '/articles/weekend-medical-help-in-montenegro',
+				query: getRegionalQuery(locale.value),
+			},
 		},
-	},
-	{
-		title: t('ChildHealthcareTitle'),
-		description: t('ChildHealthcareDescription'),
-		image: '/img/articles/child-healthcare-in-montenegro.webp',
-		meta: '',
-		link: {
-			path: '/articles/child-healthcare-in-montenegro',
-			query: getRegionalQuery(locale.value),
+		{
+			title: t('LabTestsArticleTitle'),
+			description: t('LabTestsArticleDescription'),
+			image: '/img/articles/lab-tests-and-checkups.webp',
+			date: '2026-07-16',
+			meta: '',
+			link: {
+				path: '/articles/lab-tests-and-checkups',
+				query: getRegionalQuery(locale.value),
+			},
 		},
-	},
-	{
-		title: t('RussianSpeakingDoctorsTitle'),
-		description: t('RussianSpeakingDoctorsDescription'),
-		image: '/img/articles/russian-speaking-doctors.webp',
-		meta: doctorsCount.value
-			? t('ArticleMetaDoctors', {
-					doctors: doctorsCount.value,
-					specialties: specialtiesCount.value,
-				})
-			: '',
-		link: {
-			path: '/articles/russian-speaking-doctors-in-montenegro',
-			query: getRegionalQuery(locale.value),
+		{
+			title: t('ChildHealthcareTitle'),
+			description: t('ChildHealthcareDescription'),
+			image: '/img/articles/child-healthcare-in-montenegro.webp',
+			date: '2026-07-16',
+			meta: '',
+			link: {
+				path: '/articles/child-healthcare-in-montenegro',
+				query: getRegionalQuery(locale.value),
+			},
 		},
-	},
-	...(['budva', 'podgorica', 'kotor', 'bar'] as const).map((city) => ({
-		title: t(`CityHcTitle_${city}`),
-		description: t(`CityHcDescription_${city}`),
-		image: `/img/articles/healthcare-in-${city}.webp`,
-		meta: '',
-		link: {
-			path: `/articles/healthcare-in-${city}`,
-			query: getRegionalQuery(locale.value),
+		{
+			title: t('RussianSpeakingDoctorsTitle'),
+			description: t('RussianSpeakingDoctorsDescription'),
+			image: '/img/articles/russian-speaking-doctors.webp',
+			date: '2025-12-31',
+			meta: doctorsCount.value
+				? t('ArticleMetaDoctors', {
+						doctors: doctorsCount.value,
+						specialties: specialtiesCount.value,
+					})
+				: '',
+			link: {
+				path: '/articles/russian-speaking-doctors-in-montenegro',
+				query: getRegionalQuery(locale.value),
+			},
 		},
-	})),
-	{
-		title: t('ClinicsWithLanguageSupportTitle'),
-		description: t('ClinicsWithLanguageSupportDescription'),
-		image: '/img/articles/clinics-with-language-support.webp',
-		meta: clinicLanguageStats.value.clinics
-			? t('ArticleMetaClinics', {
-					languages: clinicLanguageStats.value.languages,
-					clinics: clinicLanguageStats.value.clinics,
-				})
-			: '',
-		link: {
-			path: '/articles/clinics-with-language-support',
-			query: getRegionalQuery(locale.value),
+		...(['budva', 'podgorica', 'kotor', 'bar'] as const).map((city) => ({
+			title: t(`CityHcTitle_${city}`),
+			description: t(`CityHcDescription_${city}`),
+			image: `/img/articles/healthcare-in-${city}.webp`,
+			date: '2026-07-16',
+			meta: '',
+			link: {
+				path: `/articles/healthcare-in-${city}`,
+				query: getRegionalQuery(locale.value),
+			},
+		})),
+		{
+			title: t('ClinicsWithLanguageSupportTitle'),
+			description: t('ClinicsWithLanguageSupportDescription'),
+			image: '/img/articles/clinics-with-language-support.webp',
+			date: '2026-07-16',
+			meta: clinicLanguageStats.value.clinics
+				? t('ArticleMetaClinics', {
+						languages: clinicLanguageStats.value.languages,
+						clinics: clinicLanguageStats.value.clinics,
+					})
+				: '',
+			link: {
+				path: '/articles/clinics-with-language-support',
+				query: getRegionalQuery(locale.value),
+			},
 		},
-	},
-]);
+	].sort((a, b) => b.date.localeCompare(a.date)),
+);
 
 const schemaOrgStore = useSchemaOrgStore();
 const pageUrl = computed(() =>

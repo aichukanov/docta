@@ -76,21 +76,26 @@ export async function getMedicationList(
 	if (body.cityIds != null && body.cityIds.length > 0) {
 		whereFilters.push(`cities.id IN (${buildInPlaceholders(body.cityIds)})`);
 	}
-	if (body.name && validateName(body, 'api/medications/list')) {
-		const nameField = getLocalizedNameField(locale) || 'name_en';
-		const namePattern = `%${body.name}%`;
-		whereFilters.push(
-			`(m.name_en LIKE ? OR m.${nameField} LIKE ? OR m.name_sr LIKE ? OR m.name_sr_cyrl LIKE ? OR m.name_ru LIKE ? OR m.name_de LIKE ? OR m.name_tr LIKE ?)`,
-		);
-		queryParams.push(
-			namePattern,
-			namePattern,
-			namePattern,
-			namePattern,
-			namePattern,
-			namePattern,
-			namePattern,
-		);
+	if (body.name) {
+		if (validateName(body, 'api/medications/list')) {
+			const nameField = getLocalizedNameField(locale) || 'name_en';
+			const namePattern = `%${body.name}%`;
+			whereFilters.push(
+				`(m.name_en LIKE ? OR m.${nameField} LIKE ? OR m.name_sr LIKE ? OR m.name_sr_cyrl LIKE ? OR m.name_ru LIKE ? OR m.name_de LIKE ? OR m.name_tr LIKE ?)`,
+			);
+			queryParams.push(
+				namePattern,
+				namePattern,
+				namePattern,
+				namePattern,
+				namePattern,
+				namePattern,
+				namePattern,
+			);
+		} else {
+			// Invalid search term → no matches, never the full catalogue.
+			whereFilters.push('1 = 0');
+		}
 	}
 
 	const whereFiltersString =

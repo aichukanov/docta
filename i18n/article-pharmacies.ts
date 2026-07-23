@@ -13,7 +13,7 @@ export default {
 				'How pharmacies work in Montenegro: the state Montefarm chain and private Benu and Tea Medica, on-duty pharmacies, e-prescriptions and why foreign prescriptions are not accepted, free medications from the Fund list, and how to find local analogs of your usual drugs. Current as of July 2026.',
 
 			'PhaToc_pharmacies': 'How pharmacies work: Montefarm, private chains, on-duty',
-			'PhaToc_prescriptions': 'Prescriptions: Montenegrin and electronic only',
+			'PhaToc_prescriptions': 'Prescriptions: Montenegrin only — paper or electronic',
 			'PhaToc_fond-list': 'Free medications from the Fund list',
 			'PhaToc_analogs': 'Analogs of your usual drugs and what to bring',
 			'PhaToc_sources': 'Useful links and sources',
@@ -35,7 +35,7 @@ export default {
 			PhaPrescriptions2:
 				'Getting one is not hard. With a zdravstvena knjižica your izabrani doktor at the dom zdravlja issues prescriptions for free. Without one, any licensed doctor can prescribe after a paid consultation: roughly €10–25 at a dom zdravlja, €30–50 at a private clinic. Bring your home prescription or a doctor’s report with the active substance and dosage — the local doctor will re-issue it as a Montenegrin prescription. One caveat: nobody will prescribe “a year’s supply” — a prescription usually covers up to a month of treatment, so refills mean coming back.',
 			PhaPrescriptions3:
-				'Prescriptions are electronic (eRecept): the doctor enters them into the system and the pharmacy sees them under your number. A handwritten paper prescription will most likely be refused — a real case from February 2025: a doctor wrote a child’s prescription by hand because the drug was missing from the e-system, and the pharmacy would not hand over the medication that was physically sitting in its fridge until an electronic prescription appeared. Private-clinic prescriptions (with the doctor’s and the clinic’s stamps) are usually accepted when you pay full price, but some pharmacies may still send you to the dom zdravlja for an e-prescription.',
+				'A prescription can be paper or electronic. The electronic one (eRecept) is issued by a doctor at the dom zdravlja: it goes into the system and the pharmacy sees it under your number — this is the main route for Fund-covered medicines. Private clinics usually give a paper prescription with the doctor’s stamp and signature, and pharmacies accept it when you pay out of pocket. Occasionally a pharmacy may still send you to the dom zdravlja for an electronic prescription.',
 			PhaPrescriptions4:
 				'One more local quirk: not every doctor will write the prescription — only the “right” one. A real example: at the Kotor hospital an ENT gave the patient a treatment report but sent them to a GP at the dom zdravlja for the actual prescription; psychotropic drugs are prescribed by a psychiatrist or neurologist. If you book a visit just for a prescription, check in advance that the doctor can prescribe your specific drug.',
 
@@ -99,7 +99,7 @@ export default {
 				'Как работают аптеки в Черногории: государственная сеть Montefarm и частные Benu и Tea Medica, дежурные аптеки, электронные рецепты и почему иностранный рецепт не примут, бесплатные лекарства по списку Фонда и как искать аналоги привычных препаратов. Актуально на июль 2026 года.',
 
 			'PhaToc_pharmacies': 'Как работают аптеки: Montefarm, частные сети, дежурные',
-			'PhaToc_prescriptions': 'Рецепты: только черногорские и только электронные',
+			'PhaToc_prescriptions': 'Рецепты: только черногорские — бумажные или электронные',
 			'PhaToc_fond-list': 'Бесплатные лекарства по списку Фонда',
 			'PhaToc_analogs': 'Аналоги привычных препаратов и что взять с собой',
 			'PhaToc_sources': 'Полезные ссылки и источники',
@@ -121,7 +121,7 @@ export default {
 			PhaPrescriptions2:
 				'Получить его несложно. Со здравственной книжицей рецепты бесплатно выписывает izabrani doktor в доме здравля. Без книжицы рецепт выпишет любой лицензированный врач после платной консультации: в доме здравля это порядка 10–25 €, в частной клинике — 30–50 €. Возьмите с собой домашний рецепт или заключение врача с действующим веществом и дозировкой — на их основании местный врач оформит черногорский рецепт. Нюанс: «на год вперёд» не выпишут — рецепт обычно покрывает до месяца лечения, за продлением придётся приходить снова.',
 			PhaPrescriptions3:
-				'Рецепты электронные (eRecept): врач вносит назначение в систему, и аптека видит его по вашему номеру. Бумажный рецепт «от руки» аптека, скорее всего, не примет — реальный случай февраля 2025 года: врач выписал ребёнку рецепт вручную, потому что препарата не оказалось в электронной программе, и аптека отказалась выдать лекарство, которое физически лежало у неё в холодильнике, пока не появился электронный рецепт. Рецепты частных клиник (с печатью врача и учреждения) при покупке за свои деньги обычно принимают, но иногда могут отправить за электронным рецептом в дом здравля.',
+				'Рецепт может быть бумажным или электронным. Электронный (eRecept) выписывает врач в доме здравля: назначение попадает в систему, и аптека видит его по вашему номеру — это основной путь для лекарств по линии Фонда. В частных клиниках обычно дают бумажный рецепт с печатью и подписью врача, и при покупке за свои деньги его принимают в аптеках. Изредка аптека всё же может отправить за электронным рецептом в дом здравля.',
 			PhaPrescriptions4:
 				'Ещё одна местная особенность: рецепт выпишет не любой врач, а «профильный». Реальный пример: в которской больнице ЛОР выдал пациенту назначение, но за самим рецептом отправил к терапевту в дом здравля; психотропные препараты выписывает психиатр или невролог. Если записываетесь к врачу ради рецепта, заранее уточните, сможет ли он выписать именно ваш препарат.',
 
@@ -184,7 +184,7 @@ export default {
 				'Kako rade apoteke u Crnoj Gori: državni lanac Montefarm i privatni Benu i Tea Medica, dežurne apoteke, elektronski recepti i zašto strani recept neće biti prihvaćen, besplatni ljekovi sa liste Fonda i kako tražiti analoge uobičajenih preparata. Važi za jul 2026.',
 
 			'PhaToc_pharmacies': 'Kako rade apoteke: Montefarm, privatni lanci, dežurne',
-			'PhaToc_prescriptions': 'Recepti: samo crnogorski i samo elektronski',
+			'PhaToc_prescriptions': 'Recepti: samo crnogorski — papirni ili elektronski',
 			'PhaToc_fond-list': 'Besplatni ljekovi sa liste Fonda',
 			'PhaToc_analogs': 'Analozi uobičajenih ljekova i šta ponijeti sa sobom',
 			'PhaToc_sources': 'Korisni linkovi i izvori',
@@ -206,7 +206,7 @@ export default {
 			PhaPrescriptions2:
 				'Do njega nije teško doći. Sa zdravstvenom knjižicom recepte besplatno propisuje izabrani doktor u domu zdravlja. Bez knjižice recept će napisati bilo koji licencirani ljekar nakon plaćene konsultacije: u domu zdravlja to je oko 10–25 €, u privatnoj klinici 30–50 €. Ponesite domaći recept ili izvještaj ljekara sa aktivnom supstancom i dozom — na osnovu njih lokalni ljekar će izdati crnogorski recept. Napomena: „za godinu unaprijed“ niko neće propisati — recept obično pokriva do mjesec dana terapije, pa za produženje morate doći ponovo.',
 			PhaPrescriptions3:
-				'Recepti su elektronski (eRecept): ljekar unosi terapiju u sistem i apoteka je vidi po vašem broju. Papirni recept „pisan rukom“ apoteka najvjerovatnije neće prihvatiti — stvaran slučaj iz februara 2025: ljekar je djetetu napisao recept rukom jer lijeka nije bilo u elektronskom programu, i apoteka je odbila da izda lijek koji je fizički stajao u njenom frižideru dok se nije pojavio elektronski recept. Recepte privatnih klinika (sa pečatom ljekara i ustanove) pri kupovini o svom trošku obično prihvataju, ali ponekad mogu da vas pošalju po elektronski recept u dom zdravlja.',
+				'Recept može biti papirni ili elektronski. Elektronski (eRecept) izdaje ljekar u domu zdravlja: terapija ulazi u sistem i apoteka je vidi po vašem broju — to je glavni put za ljekove o trošku Fonda. U privatnim klinikama obično daju papirni recept sa pečatom i potpisom ljekara, i pri kupovini o svom trošku apoteke ga prihvataju. Ponekad vas apoteka ipak može poslati po elektronski recept u dom zdravlja.',
 			PhaPrescriptions4:
 				'Još jedna lokalna posebnost: recept ne piše bilo koji ljekar, nego „nadležni“. Stvaran primjer: u kotorskoj bolnici ORL je pacijentu dao izvještaj sa terapijom, ali ga je po sam recept poslao kod izabranog doktora u dom zdravlja; psihotropne ljekove propisuje psihijatar ili neurolog. Ako zakazujete pregled samo radi recepta, unaprijed provjerite može li ljekar propisati baš vaš lijek.',
 
@@ -269,7 +269,7 @@ export default {
 				'Како раде апотеке у Црној Гори: државни ланац Montefarm и приватни Benu и Tea Medica, дежурне апотеке, електронски рецепти и зашто страни рецепт неће бити прихваћен, бесплатни љекови са листе Фонда и како тражити аналоге уобичајених препарата. Важи за јул 2026.',
 
 			'PhaToc_pharmacies': 'Како раде апотеке: Montefarm, приватни ланци, дежурне',
-			'PhaToc_prescriptions': 'Рецепти: само црногорски и само електронски',
+			'PhaToc_prescriptions': 'Рецепти: само црногорски — папирни или електронски',
 			'PhaToc_fond-list': 'Бесплатни љекови са листе Фонда',
 			'PhaToc_analogs': 'Аналози уобичајених љекова и шта понијети са собом',
 			'PhaToc_sources': 'Корисни линкови и извори',
@@ -291,7 +291,7 @@ export default {
 			PhaPrescriptions2:
 				'До њега није тешко доћи. Са здравственом књижицом рецепте бесплатно прописује изабрани доктор у дому здравља. Без књижице рецепт ће написати било који лиценцирани љекар након плаћене консултације: у дому здравља то је око 10–25 €, у приватној клиници 30–50 €. Понесите домаћи рецепт или извјештај љекара са активном супстанцом и дозом — на основу њих локални љекар ће издати црногорски рецепт. Напомена: „за годину унапријед“ нико неће прописати — рецепт обично покрива до мјесец дана терапије, па за продужење морате доћи поново.',
 			PhaPrescriptions3:
-				'Рецепти су електронски (eRecept): љекар уноси терапију у систем и апотека је види по вашем броју. Папирни рецепт „писан руком“ апотека највјероватније неће прихватити — стваран случај из фебруара 2025: љекар је дјетету написао рецепт руком јер лијека није било у електронском програму, и апотека је одбила да изда лијек који је физички стајао у њеном фрижидеру док се није појавио електронски рецепт. Рецепте приватних клиника (са печатом љекара и установе) при куповини о свом трошку обично прихватају, али понекад могу да вас пошаљу по електронски рецепт у дом здравља.',
+				'Рецепт може бити папирни или електронски. Електронски (eRecept) издаје љекар у дому здравља: терапија улази у систем и апотека је види по вашем броју — то је главни пут за љекове о трошку Фонда. У приватним клиникама обично дају папирни рецепт са печатом и потписом љекара, и при куповини о свом трошку апотеке га прихватају. Понекад вас апотека ипак може послати по електронски рецепт у дом здравља.',
 			PhaPrescriptions4:
 				'Још једна локална посебност: рецепт не пише било који љекар, него „надлежни“. Стваран примјер: у которској болници ОРЛ је пацијенту дао извјештај са терапијом, али га је по сам рецепт послао код изабраног доктора у дом здравља; психотропне љекове прописује психијатар или неуролог. Ако заказујете преглед само ради рецепта, унапријед провјерите може ли љекар прописати баш ваш лијек.',
 
@@ -354,7 +354,7 @@ export default {
 				'So funktionieren Apotheken in Montenegro: die staatliche Kette Montefarm und die privaten Benu und Tea Medica, Notdienst-Apotheken, E-Rezepte und warum ausländische Rezepte nicht akzeptiert werden, kostenlose Medikamente von der Fondsliste und wie man lokale Pendants gewohnter Präparate findet. Stand: Juli 2026.',
 
 			'PhaToc_pharmacies': 'So funktionieren Apotheken: Montefarm, private Ketten, Notdienst',
-			'PhaToc_prescriptions': 'Rezepte: nur montenegrinisch und nur elektronisch',
+			'PhaToc_prescriptions': 'Rezepte: nur montenegrinisch — Papier oder elektronisch',
 			'PhaToc_fond-list': 'Kostenlose Medikamente von der Fondsliste',
 			'PhaToc_analogs': 'Pendants gewohnter Präparate und was man mitnehmen sollte',
 			'PhaToc_sources': 'Nützliche Links und Quellen',
@@ -376,7 +376,7 @@ export default {
 			PhaPrescriptions2:
 				'Eines zu bekommen ist nicht schwer. Mit einer zdravstvena knjižica stellt der izabrani doktor im Dom zdravlja Rezepte kostenlos aus. Ohne Karte verschreibt jeder lizenzierte Arzt nach einer bezahlten Konsultation: im Dom zdravlja etwa 10–25 €, in einer Privatklinik 30–50 €. Nehmen Sie Ihr heimisches Rezept oder einen Arztbericht mit Wirkstoff und Dosierung mit — auf dieser Grundlage stellt der lokale Arzt ein montenegrinisches Rezept aus. Ein Hinweis: „Für ein Jahr im Voraus“ verschreibt niemand — ein Rezept deckt üblicherweise bis zu einem Monat Therapie, für die Verlängerung muss man wiederkommen.',
 			PhaPrescriptions3:
-				'Rezepte sind elektronisch (eRecept): Der Arzt trägt die Verordnung ins System ein, und die Apotheke sieht sie unter Ihrer Nummer. Ein handgeschriebenes Papierrezept wird die Apotheke höchstwahrscheinlich ablehnen — ein realer Fall vom Februar 2025: Ein Arzt schrieb das Rezept für ein Kind von Hand, weil das Medikament im E-System fehlte, und die Apotheke weigerte sich, das Medikament herauszugeben, das physisch in ihrem Kühlschrank lag, bis ein elektronisches Rezept vorlag. Rezepte von Privatkliniken (mit Stempel des Arztes und der Einrichtung) werden beim Kauf auf eigene Kosten meist akzeptiert, manchmal schickt man Sie aber für ein E-Rezept in den Dom zdravlja.',
+				'Ein Rezept kann auf Papier oder elektronisch sein. Das elektronische (eRecept) stellt ein Arzt im Dom zdravlja aus: Es gelangt ins System und die Apotheke sieht es unter Ihrer Nummer — das ist der Hauptweg für Medikamente zulasten des Fonds. Privatkliniken geben meist ein Papierrezept mit Stempel und Unterschrift des Arztes, und beim Kauf auf eigene Kosten akzeptieren es die Apotheken. Gelegentlich schickt eine Apotheke Sie dennoch für ein elektronisches Rezept in den Dom zdravlja.',
 			PhaPrescriptions4:
 				'Noch eine lokale Eigenheit: Nicht jeder Arzt stellt das Rezept aus, sondern nur der „zuständige“. Ein reales Beispiel: Im Krankenhaus Kotor gab der HNO-Arzt dem Patienten einen Befund mit Therapie, schickte ihn für das eigentliche Rezept aber zum Hausarzt in den Dom zdravlja; Psychopharmaka verschreibt ein Psychiater oder Neurologe. Wenn Sie einen Termin nur wegen eines Rezepts buchen, klären Sie vorab, ob der Arzt genau Ihr Medikament verschreiben kann.',
 
@@ -439,7 +439,7 @@ export default {
 				"Karadağ'da eczaneler nasıl çalışır: devlet zinciri Montefarm ile özel Benu ve Tea Medica, nöbetçi eczaneler, e-reçeteler ve yabancı reçetelerin neden kabul edilmediği, Fon listesinden ücretsiz ilaçlar ve alıştığınız ilaçların yerel muadillerini bulma yolları. Temmuz 2026 itibarıyla günceldir.",
 
 			'PhaToc_pharmacies': 'Eczaneler nasıl çalışır: Montefarm, özel zincirler, nöbetçiler',
-			'PhaToc_prescriptions': 'Reçeteler: yalnızca Karadağ reçetesi ve yalnızca elektronik',
+			'PhaToc_prescriptions': 'Reçeteler: yalnızca Karadağ reçetesi — kâğıt veya elektronik',
 			'PhaToc_fond-list': 'Fon listesinden ücretsiz ilaçlar',
 			'PhaToc_analogs': 'Alışılmış ilaçların muadilleri ve yanınızda ne getirmelisiniz',
 			'PhaToc_sources': 'Faydalı bağlantılar ve kaynaklar',
@@ -461,7 +461,7 @@ export default {
 			PhaPrescriptions2:
 				"Almak zor değildir. Zdravstvena knjižica ile reçeteleri dom zdravlja'daki izabrani doktor ücretsiz yazar. Karne yoksa, ücretli bir konsültasyondan sonra herhangi bir lisanslı doktor reçete yazabilir: dom zdravlja'da yaklaşık 10–25 €, özel klinikte 30–50 €. Yanınıza ülkenizdeki reçeteyi veya etken madde ve dozu içeren doktor raporunu alın — yerel doktor bunlara dayanarak Karadağ reçetesi düzenler. Bir ayrıntı: „bir yıllık“ reçete yazılmaz — reçete genellikle bir aya kadar tedaviyi kapsar; uzatmak için yeniden gitmek gerekir.",
 			PhaPrescriptions3:
-				"Reçeteler elektroniktir (eRecept): doktor tedaviyi sisteme girer ve eczane numaranızla görür. El yazısı kâğıt reçeteyi eczane büyük olasılıkla kabul etmez — Şubat 2025'ten gerçek bir olay: ilaç elektronik programda olmadığı için doktor çocuğun reçetesini elle yazdı ve eczane, elektronik reçete oluşana kadar buzdolabında fiilen duran ilacı vermeyi reddetti. Özel klinik reçeteleri (doktor ve kurum kaşeli) kendi cebinizden ödemede genellikle kabul edilir, ancak bazen sizi e-reçete için dom zdravlja'ya gönderebilirler.",
+				"Reçete kâğıt ya da elektronik olabilir. Elektronik reçeteyi (eRecept) dom zdravlja'daki doktor yazar: sisteme girer ve eczane numaranızla görür — bu, Fon kapsamındaki ilaçlar için ana yoldur. Özel klinikler genellikle doktorun kaşesi ve imzası bulunan kâğıt reçete verir ve kendi cebinizden öderken eczaneler bunu kabul eder. Yine de bazen eczane sizi elektronik reçete için dom zdravlja'ya gönderebilir.",
 			PhaPrescriptions4:
 				"Bir yerel özellik daha: reçeteyi her doktor değil, „yetkili“ doktor yazar. Gerçek bir örnek: Kotor hastanesinde KBB uzmanı hastaya tedavi raporu verdi, ama asıl reçete için dom zdravlja'daki pratisyene gönderdi; psikotrop ilaçları psikiyatr veya nörolog yazar. Yalnızca reçete için randevu alıyorsanız, doktorun tam olarak sizin ilacınızı yazıp yazamayacağını önceden öğrenin.",
 

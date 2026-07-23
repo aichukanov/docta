@@ -91,26 +91,53 @@ export async function getMedicineList(
 	}
 
 	// Name search — search in medicine name + substance names across all languages
-	if (body.name && validateName(body, 'api/medicines/list')) {
-		const nameField = getLocalizedNameField(locale) || 'name_en';
-		const p = `%${body.name}%`;
-		whereFilters.push(`(
-			m.name LIKE ? OR
-			EXISTS (
-				SELECT 1 FROM med_medicine_substances mms
-				JOIN med_substances s ON s.id = mms.substance_id
-				WHERE mms.medicine_id = m.id AND (
-					s.name LIKE ? OR s.name_en LIKE ? OR s.${nameField} LIKE ?
-					OR s.name_ru LIKE ? OR s.name_sr LIKE ? OR s.name_sr_cyrl LIKE ?
+	if (body.name) {
+		if (validateName(body, 'api/medicines/list')) {
+			const nameField = getLocalizedNameField(locale) || 'name_en';
+			const p = `%${body.name}%`;
+			whereFilters.push(`(
+				m.name LIKE ? OR
+				EXISTS (
+					SELECT 1 FROM med_medicine_substances mms
+					JOIN med_substances s ON s.id = mms.substance_id
+					WHERE mms.medicine_id = m.id AND (
+						s.name LIKE ? OR s.name_en LIKE ? OR s.${nameField} LIKE ?
+						OR s.name_ru LIKE ? OR s.name_sr LIKE ? OR s.name_sr_cyrl LIKE ?
+					)
 				)
-			)
-		)`);
-		queryParams.push(p, p, p, p, p, p, p);
+			)`);
+			queryParams.push(p, p, p, p, p, p, p);
+		} else {
+			// Invalid search term → no matches. Never drop the filter silently:
+			// returning the full catalogue reads to the user as "search is broken".
+			whereFilters.push('1 = 0');
+		}
 	}
 
 	const where =
 		whereFilters.length > 0 ? 'WHERE ' + whereFilters.join(' AND ') : '';
 	const pagination = usePagination ? `LIMIT ${pageSize} OFFSET ${offset}` : '';
+
+	// Rank medicines whose total substance count is closest to the number of
+	// selected substances first: a single-substance medicine (e.g. pure
+	// paracetamol) outranks combination drugs. The target is an integer
+	// (array length or 1), safe to inline.
+	const orderClauses: string[] = ['m.is_active DESC'];
+	// Target: number of substances selected in the filter. When there is no
+	// substance filter but a name search (e.g. typing "paracetamol"), target a
+	// single substance so the pure drug outranks combinations.
+	const substanceCountTarget = body.substanceIds?.length
+		? body.substanceIds.length
+		: body.name
+			? 1
+			: null;
+	if (substanceCountTarget != null) {
+		orderClauses.push(
+			`ABS((SELECT COUNT(*) FROM med_medicine_substances mms2 WHERE mms2.medicine_id = m.id) - ${substanceCountTarget}) ASC`,
+		);
+	}
+	orderClauses.push('m.name ASC');
+	const orderBy = orderClauses.join(', ');
 
 	const nameField = getLocalizedNameField(locale) || 'name_en';
 
@@ -150,7 +177,7 @@ export async function getMedicineList(
 		LEFT JOIN med_manufacturers mfg ON mfg.id = m.manufacturer_id
 		LEFT JOIN countries c ON c.id = mfg.country_id
 		${where}
-		ORDER BY m.is_active DESC, m.name ASC
+		ORDER BY ${orderBy}
 		${pagination};
 	`;
 

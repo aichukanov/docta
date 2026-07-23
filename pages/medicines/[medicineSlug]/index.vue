@@ -135,6 +135,15 @@ watchEffect(() => {
 				pageDescription: pageDescription.value,
 				pageUrl,
 				substances: med.value.substances?.map((s: any) => s.name),
+				alternateName: med.value.foreignBrands?.length
+					? [
+							...new Set(
+								med.value.foreignBrands.flatMap((m: any) =>
+									m.brands.map((b: any) => b.brand),
+								),
+							),
+						]
+					: undefined,
 				pharmaForm: med.value.pharmaForm,
 				strength: med.value.strength,
 				manufacturer: med.value.manufacturer,
@@ -203,8 +212,34 @@ const tabs = computed(() => {
 	for (const section of analogSections.value) {
 		result.push({ id: section.id, label: section.title });
 	}
+	if (med.value?.foreignBrands?.length) {
+		result.push({ id: 'foreign', label: t('ForeignBrandsTitle') });
+	}
 	return result;
 });
+
+// Ярлык рынка (RU → «Россия, Украина, Казахстан» и т.п.) из i18n
+const marketLabel = (code: string) => t(`Market${code}`);
+
+// Поле strength в данных грязное — местами вместо дозы форма («Granulat / Tabletten»),
+// состав («нафазолин + …»), «varies», «-». Поэтому вытаскиваем ТОЛЬКО дозовые токены
+// (число + единица, диапазоны, «мг/мл»), остальное отбрасываем, затем нормализуем
+// единицы тем же localizeStrength. Нет дозовых токенов → пустая строка (покажем только вещество).
+// число (+ варианты через «/» или «-»: «200/400», «25/50/75/100», «250-500»)
+// + единица, опц. «/единица» (мг/мл). Хвосты (формы, состав) не попадают.
+const DOSE_RE =
+	/\d+(?:[.,]\d+)?(?:\s*[/–-]\s*\d+(?:[.,]\d+)?)*\s*(?:mg|mcg|µg|ml|g|l|%|мг|мкг|мл|г|л)(?:\s*\/\s*\d*(?:[.,]\d+)?\s*(?:mg|mcg|µg|ml|g|l|мг|мкг|мл|г|л))?/gi;
+
+const foreignStrength = (s: string | null) => {
+	const doses = (s || '').match(DOSE_RE);
+	if (!doses) return '';
+	const uniq = [...new Set(doses.map((d) => d.replace(/\s+/g, ' ').trim()))];
+	return localizeStrength(uniq.join(', '), t);
+};
+
+// «вещество доза» одной строкой (собираем в JS, чтобы Vue не схлопнул пробелы)
+const foreignBrandDetail = (b: any) =>
+	[b.substance, foreignStrength(b.strength)].filter(Boolean).join(' ');
 
 // Локализованная подпись упаковки из структурных полей (сырой текст реестра
 // не выводим). С разбивкой «(2 × 10)» на детальной странице.
@@ -385,6 +420,36 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 				</div>
 			</EntityPageSection>
 
+			<!-- Foreign trade names (same active substance, other countries) -->
+			<EntityPageSection
+				v-if="med.foreignBrands?.length"
+				sectionId="foreign"
+				:title="t('ForeignBrandsTitle')"
+			>
+				<div class="foreign-markets">
+					<div
+						v-for="m in med.foreignBrands"
+						:key="m.market"
+						class="foreign-market"
+					>
+						<div class="foreign-market-label">{{ marketLabel(m.market) }}</div>
+						<ul class="foreign-brand-list">
+							<li v-for="(b, i) in m.brands" :key="i" class="foreign-brand">
+								<span class="foreign-brand-name">{{ b.brand }}</span>
+								<span
+									v-if="foreignBrandDetail(b)"
+									class="foreign-brand-detail"
+									>{{ ' · ' + foreignBrandDetail(b) }}</span
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<p class="section-hint foreign-disclaimer">
+					{{ t('ForeignBrandsDisclaimer') }}
+				</p>
+			</EntityPageSection>
+
 			<!-- Source -->
 			<div class="medicine-source">
 				<div class="source-text">
@@ -541,6 +606,47 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
 	margin: 0 0 var(--spacing-lg);
+}
+
+.foreign-markets {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+}
+
+.foreign-market-label {
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-text-secondary);
+	margin-bottom: 6px;
+}
+
+.foreign-brand-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.foreign-brand {
+	font-size: var(--font-size-base);
+	line-height: 1.5;
+}
+
+.foreign-brand-name {
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-text-primary);
+}
+
+.foreign-brand-detail {
+	color: var(--color-text-muted);
+	font-size: var(--font-size-sm);
+}
+
+.foreign-disclaimer {
+	margin: var(--spacing-lg) 0 0;
 }
 
 .analogs-list {

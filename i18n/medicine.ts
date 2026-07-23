@@ -74,6 +74,13 @@ export default {
 			MedicineDescriptionRx:
 				'{name} ({substance}) — available by prescription in Montenegro',
 			MedicineDescriptionDefault: '{name} — registered medicine in Montenegro',
+			ForeignBrandsTitle: 'Names in other countries',
+			ForeignBrandsDisclaimer:
+				'For reference only. Forms, strengths and composition may differ between countries — check with a pharmacist.',
+			MarketRU: 'Russia, Ukraine, Kazakhstan',
+			MarketDE: 'Germany',
+			MarketPL: 'Poland',
+			MarketUS: 'USA',
 		},
 		'ru': {
 			MedicineName: 'Название лекарства или вещества',
@@ -150,6 +157,13 @@ export default {
 				'{name} ({substance}) — продаётся по рецепту в Черногории',
 			MedicineDescriptionDefault:
 				'{name} — зарегистрированное лекарство в Черногории',
+			ForeignBrandsTitle: 'Аналоги в других странах',
+			ForeignBrandsDisclaimer:
+				'Справочная информация. Формы, дозировки и состав в разных странах могут отличаться — уточняйте у фармацевта.',
+			MarketRU: 'Россия, Украина, Казахстан',
+			MarketDE: 'Германия',
+			MarketPL: 'Польша',
+			MarketUS: 'США',
 		},
 		'sr': {
 			MedicineName: 'Ime lijeka ili supstance',
@@ -225,6 +239,13 @@ export default {
 			MedicineDescriptionRx:
 				'{name} ({substance}) — dostupno na recept u Crnoj Gori',
 			MedicineDescriptionDefault: '{name} — registrovani lijek u Crnoj Gori',
+			ForeignBrandsTitle: 'Nazivi u drugim zemljama',
+			ForeignBrandsDisclaimer:
+				'Informativnog karaktera. Oblici, jačine i sastav mogu se razlikovati po zemljama — provjerite kod farmaceuta.',
+			MarketRU: 'Rusija, Ukrajina, Kazahstan',
+			MarketDE: 'Njemačka',
+			MarketPL: 'Poljska',
+			MarketUS: 'SAD',
 		},
 		'de': {
 			MedicineName: 'Arzneimittel- oder Wirkstoffname',
@@ -301,6 +322,13 @@ export default {
 				'{name} ({substance}) — verschreibungspflichtig in Montenegro',
 			MedicineDescriptionDefault:
 				'{name} — zugelassenes Arzneimittel in Montenegro',
+			ForeignBrandsTitle: 'Namen in anderen Ländern',
+			ForeignBrandsDisclaimer:
+				'Nur zur Information. Formen, Stärken und Zusammensetzung können je nach Land abweichen — fragen Sie in der Apotheke nach.',
+			MarketRU: 'Russland, Ukraine, Kasachstan',
+			MarketDE: 'Deutschland',
+			MarketPL: 'Polen',
+			MarketUS: 'USA',
 		},
 		'tr': {
 			MedicineName: 'İlaç veya etken madde adı',
@@ -375,6 +403,13 @@ export default {
 			MedicineDescriptionRx:
 				"{name} ({substance}) — Karadağ'da reçeteyle satılır",
 			MedicineDescriptionDefault: "{name} — Karadağ'da kayıtlı ilaç",
+			ForeignBrandsTitle: 'Diğer ülkelerdeki adları',
+			ForeignBrandsDisclaimer:
+				'Yalnızca bilgi amaçlıdır. Formlar, dozlar ve bileşim ülkelere göre değişebilir — eczacınıza danışın.',
+			MarketRU: 'Rusya, Ukrayna, Kazakistan',
+			MarketDE: 'Almanya',
+			MarketPL: 'Polonya',
+			MarketUS: 'ABD',
 		},
 		'sr-cyrl': {
 			MedicineName: 'Име лијека или супстанце',
@@ -450,6 +485,13 @@ export default {
 			MedicineDescriptionRx:
 				'{name} ({substance}) — доступно на рецепт у Црној Гори',
 			MedicineDescriptionDefault: '{name} — регистровани лијек у Црној Гори',
+			ForeignBrandsTitle: 'Називи у другим земљама',
+			ForeignBrandsDisclaimer:
+				'Информативног карактера. Облици, јачине и састав могу се разликовати по земљама — провјерите код фармацеута.',
+			MarketRU: 'Русија, Украјина, Казахстан',
+			MarketDE: 'Њемачка',
+			MarketPL: 'Пољска',
+			MarketUS: 'САД',
 		},
 	},
 };

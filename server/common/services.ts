@@ -2,7 +2,9 @@ import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
 import type {
 	ClinicSummaryService,
 	ClinicServicesByClinicId,
+	ClinicDoctorsByClinicId,
 } from '~/interfaces/clinic';
+import type { DoctorCardData } from '~/interfaces/doctor';
 
 export type ClinicServiceItem = ClinicSummaryService;
 export type ClinicServicesMap = ClinicServicesByClinicId;
@@ -173,6 +175,150 @@ export async function getServicesByClinicAndSpecialty(
 			priceMax,
 			isOutdated,
 		});
+	}
+
+	return result;
+}
+
+// Кэп врачей на клинику в блоке «Врачи» на странице услуги (см. PRD).
+const SERVICE_CLINIC_DOCTORS_CAP = 2;
+
+/**
+ * Собирает врачей для блока «Врачи» в карточке клиники на странице услуги.
+ *
+ * Два источника (см. prd/service-page-doctor-links):
+ *  1. Точный — clinic_medical_service_doctors (клиника подтвердила пару
+ *     врач×услуга). Если для пары клиника+услуга есть строки — берём только их.
+ *  2. Фолбэк по специальности — врачи нужной специальности, работающие именно
+ *     в этой клинике (не сайтвайд). Кэп 2, сортировка по rank_score DESC.
+ *
+ * @returns Record<clinicId, DoctorCardData[]> — только клиники, где нашлись врачи
+ */
+export async function getDoctorsForServiceByClinic(
+	connection: any,
+	medicalServiceId: number,
+	clinicIds: number[],
+	locale: string,
+): Promise<ClinicDoctorsByClinicId> {
+	if (clinicIds.length === 0) {
+		return {};
+	}
+
+	const clinicPlaceholders = clinicIds.map(() => '?').join(',');
+
+	// 1. Точный источник: подтверждённые клиникой пары врач×услуга.
+	const [exactRows] = await connection.execute(
+		`SELECT cmsd.clinic_id AS clinicId, cmsd.doctor_id AS doctorId
+		 FROM clinic_medical_service_doctors cmsd
+		 JOIN doctors d ON d.id = cmsd.doctor_id AND d.hidden = 0 AND d.is_draft = 0
+		 WHERE cmsd.medical_service_id = ? AND cmsd.clinic_id IN (${clinicPlaceholders})
+		 ORDER BY cmsd.clinic_id, cmsd.id`,
+		[medicalServiceId, ...clinicIds],
+	);
+
+	// clinicId -> [doctorId] (в порядке появления, кэп применим ниже)
+	const doctorsByClinic = new Map<number, number[]>();
+	const clinicsWithExact = new Set<number>();
+	for (const row of exactRows as any[]) {
+		clinicsWithExact.add(row.clinicId);
+		const list = doctorsByClinic.get(row.clinicId) ?? [];
+		if (list.length < SERVICE_CLINIC_DOCTORS_CAP) {
+			list.push(row.doctorId);
+		}
+		doctorsByClinic.set(row.clinicId, list);
+	}
+
+	// 2. Фолбэк по специальности — только для клиник без точных строк.
+	const fallbackClinicIds = clinicIds.filter(
+		(id) => !clinicsWithExact.has(id),
+	);
+	if (fallbackClinicIds.length > 0) {
+		const fbPlaceholders = fallbackClinicIds.map(() => '?').join(',');
+		const [fallbackRows] = await connection.execute(
+			`SELECT dc.clinic_id AS clinicId, d.id AS doctorId, d.rank_score AS rankScore
+			 FROM clinic_medical_services cms
+			 JOIN doctor_clinics dc ON dc.clinic_id = cms.clinic_id
+			 JOIN doctor_specialties ds ON ds.doctor_id = dc.doctor_id
+			 JOIN medical_services_specialties mss
+			   ON mss.specialty_id = ds.specialty_id
+			   AND mss.medical_service_id = cms.medical_service_id
+			 JOIN doctors d ON d.id = dc.doctor_id AND d.hidden = 0 AND d.is_draft = 0
+			 WHERE cms.medical_service_id = ?
+			   AND cms.clinic_id IN (${fbPlaceholders})
+			 GROUP BY dc.clinic_id, d.id, d.rank_score
+			 ORDER BY dc.clinic_id, d.rank_score DESC, d.id`,
+			[medicalServiceId, ...fallbackClinicIds],
+		);
+
+		for (const row of fallbackRows as any[]) {
+			const list = doctorsByClinic.get(row.clinicId) ?? [];
+			if (list.length < SERVICE_CLINIC_DOCTORS_CAP) {
+				list.push(row.doctorId);
+				doctorsByClinic.set(row.clinicId, list);
+			}
+		}
+	}
+
+	// Собираем уникальные doctorId и грузим карточные поля одним запросом.
+	const allDoctorIds = Array.from(
+		new Set(Array.from(doctorsByClinic.values()).flat()),
+	);
+	if (allDoctorIds.length === 0) {
+		return {};
+	}
+
+	const doctorPlaceholders = allDoctorIds.map(() => '?').join(',');
+	const [doctorRows] = await connection.execute(
+		`SELECT
+			d.id,
+			d.slug,
+			d.name_sr,
+			d.name_sr_cyrl,
+			d.name_ru,
+			d.name_en,
+			d.professional_title AS professionalTitle,
+			d.photo_url AS photoUrl,
+			(SELECT GROUP_CONCAT(DISTINCT ds.specialty_id ORDER BY ds.specialty_id) FROM doctor_specialties ds WHERE ds.doctor_id = d.id) AS specialtyIds,
+			(SELECT GROUP_CONCAT(DISTINCT dl.language_id ORDER BY dl.language_id) FROM doctor_languages dl WHERE dl.doctor_id = d.id) AS languageIds,
+			(SELECT ROUND(AVG(r.rating), 1) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL AND r.status != 'rejected') AS averageRating,
+			(SELECT COUNT(*) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL AND r.status != 'rejected') AS totalReviews
+		 FROM doctors d
+		 WHERE d.id IN (${doctorPlaceholders})`,
+		allDoctorIds,
+	);
+
+	const doctorById = new Map<number, DoctorCardData>();
+	for (const row of doctorRows as any[]) {
+		const { name, localName } = processLocalizedNameForClinicOrDoctor(
+			row,
+			locale,
+		);
+		doctorById.set(row.id, {
+			id: row.id,
+			slug: row.slug,
+			name,
+			localName,
+			professionalTitle: row.professionalTitle || '',
+			photoUrl: row.photoUrl || '',
+			specialtyIds: row.specialtyIds || '',
+			languageIds: row.languageIds || '',
+			rating: row.averageRating
+				? {
+						averageRating: parseFloat(row.averageRating),
+						totalReviews: row.totalReviews,
+					}
+				: undefined,
+		});
+	}
+
+	const result: ClinicDoctorsByClinicId = {};
+	for (const [clinicId, doctorIds] of doctorsByClinic) {
+		const doctors = doctorIds
+			.map((id) => doctorById.get(id))
+			.filter((d): d is DoctorCardData => d != null);
+		if (doctors.length > 0) {
+			result[clinicId] = doctors;
+		}
 	}
 
 	return result;

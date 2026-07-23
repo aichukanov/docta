@@ -5,12 +5,15 @@ import type {
 	ClinicData,
 	ClinicSummaryService,
 } from '~/interfaces/clinic';
+import type { DoctorCardData } from '~/interfaces/doctor';
 
 const props = withDefaults(
 	defineProps<{
 		clinic: ClinicData;
 		priceInfo?: ClinicPrice;
 		services?: ClinicSummaryService[];
+		// Врачи этой клиники по профилю услуги (страница услуги, см. PRD).
+		doctors?: DoctorCardData[];
 		serviceLimit?: number;
 		showPrice?: boolean;
 		// Расстояние до пользователя в км; null/undefined — локация неизвестна
@@ -39,26 +42,32 @@ const summaryI18n = {
 	'en': {
 		Contacts: 'Contacts',
 		AvailableServices: 'Specialty services',
+		Doctors: 'Specialists',
 	},
 	'ru': {
 		Contacts: 'Контакты',
 		AvailableServices: 'Профильные услуги',
+		Doctors: 'Врачи',
 	},
 	'de': {
 		Contacts: 'Kontakte',
 		AvailableServices: 'Fachleistungen',
+		Doctors: 'Ärzte',
 	},
 	'tr': {
 		Contacts: 'İletişim',
 		AvailableServices: 'Uzmanlık hizmetleri',
+		Doctors: 'Doktorlar',
 	},
 	'sr': {
 		Contacts: 'Kontakti',
 		AvailableServices: 'Profilne usluge',
+		Doctors: 'Lekari',
 	},
 	'sr-cyrl': {
 		Contacts: 'Контакти',
 		AvailableServices: 'Профилне услуге',
+		Doctors: 'Лекари',
 	},
 };
 
@@ -68,9 +77,10 @@ const { t } = useI18n({
 });
 
 const hasServices = computed(() => props.services && props.services.length > 0);
+const hasDoctors = computed(() => props.doctors && props.doctors.length > 0);
 const hasClinicContacts = computed(() => hasContacts(props.clinic));
 const hasFooterContent = computed(
-	() => hasServices.value || hasClinicContacts.value,
+	() => hasServices.value || hasDoctors.value || hasClinicContacts.value,
 );
 
 // Услуги открыты по умолчанию
@@ -120,6 +130,23 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 					</ClinicServiceSectionContent>
 				</el-collapse-item>
 
+				<el-collapse-item v-if="hasDoctors" name="doctors">
+					<template #title>
+						<span class="collapse-title">
+							{{ t('Doctors') }}
+							<span class="collapse-count">({{ doctors?.length }})</span>
+						</span>
+					</template>
+					<div class="clinic-doctors">
+						<DoctorInfo
+							v-for="doctor in doctors"
+							:key="doctor.id"
+							:service="doctor"
+							short
+						/>
+					</div>
+				</el-collapse-item>
+
 				<el-collapse-item
 					v-if="hasClinicContacts"
 					name="contacts"
@@ -145,6 +172,13 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 .clinic-footer {
 	border-top: 1px solid var(--color-border-light);
 	padding: 0 var(--spacing-xl);
+}
+
+.clinic-doctors {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-md);
+	padding-bottom: var(--spacing-sm);
 }
 
 .collapse-title {

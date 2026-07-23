@@ -31,12 +31,15 @@ export function validateName({ name }: { name?: unknown }, from: string) {
 		return true;
 	}
 
-	// Allow only letters (any locale), digits, spaces, hyphens, dots and commas
-	const allowedPattern = /^[\p{L}\d\s.,-]+$/u;
+	// Letters (any locale), digits, whitespace and the punctuation that occurs
+	// in real entity names — drug names in particular carry / + ( ) : % ’ ® ™
+	// (e.g. "ASPIRIN® PLUS C 400mg/240mg"). Search terms are always passed as
+	// bound `LIKE ?` parameters, so this is input sanity, not an SQLi guard.
+	const allowedPattern = /^[\p{L}\p{N}\s.,\-+()/:%&'’®™]+$/u;
 	if (!allowedPattern.test(trimmed)) {
 		showError(
 			from,
-			`Invalid name: only letters, digits, spaces, hyphens, dots and commas allowed. Received: "${trimmed}"`,
+			`Invalid name: contains disallowed characters. Received: "${trimmed}"`,
 		);
 		return false;
 	}

@@ -1395,6 +1395,8 @@ export function buildMedicineSchema(options: {
 	/** Канонический URL страницы (с ?lang= и т.п.); по умолчанию — URL сущности */
 	pageUrl?: string;
 	substances?: string[];
+	/** Зарубежные торговые названия того же вещества → schema.org alternateName */
+	alternateName?: string[];
 	pharmaForm?: string | null;
 	strength?: string | null;
 	manufacturer?: string | null;
@@ -1418,6 +1420,9 @@ export function buildMedicineSchema(options: {
 
 	if (options.substances?.length) {
 		medicineSchema.activeIngredient = options.substances.join(', ');
+	}
+	if (options.alternateName?.length) {
+		medicineSchema.alternateName = options.alternateName;
 	}
 	if (options.pharmaForm) {
 		medicineSchema.dosageForm = options.pharmaForm;

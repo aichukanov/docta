@@ -32,6 +32,23 @@ export interface MedicineSubstance {
 	name: string;
 }
 
+// Зарубежное торговое название того же действующего вещества (med_foreign_brands).
+// strength/pharmaForm — описательная справка, не ключ дозо-матчинга.
+export interface MedicineForeignBrand {
+	brand: string;
+	// Локализованное название действующего вещества (для «МИГ · ибупрофен 400 мг»)
+	substance: string | null;
+	strength: string | null;
+	pharmaForm: string | null;
+	note: string | null;
+}
+
+// Бренды одного рынка (RU/DE/PL/US). market — код рынка, ярлык берётся из i18n.
+export interface MedicineForeignMarket {
+	market: string;
+	brands: MedicineForeignBrand[];
+}
+
 // exact — состав совпадает полностью; superset — содержит весь состав плюс
 // дополнительные вещества; partial — только часть состава.
 export type MedicineAnalogMatchType = 'exact' | 'superset' | 'partial';
@@ -90,4 +107,6 @@ export interface MedicineDetails {
 	atcGroupCode: string | null;
 	substances: MedicineSubstance[];
 	analogs: MedicineAnalog[];
+	// Зарубежные торговые названия того же вещества, сгруппированы по рынку.
+	foreignBrands: MedicineForeignMarket[];
 }

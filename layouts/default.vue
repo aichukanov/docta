@@ -69,13 +69,10 @@ const svadLink = computed(() => {
 	return url.toString();
 });
 
-const { initMixpanel, initCloudflare, initGTag, disableAnalytics } =
-	useAnalytics();
+const { initMixpanel, initGTag, disableAnalytics } = useAnalytics();
 
-// Cloudflare Web Analytics is cookie-free and doesn't collect personal data — no consent required
-if (import.meta.client) {
-	initCloudflare();
-}
+// Cloudflare Web Analytics is injected automatically at the Cloudflare edge
+// (domain proxied through Cloudflare) — no client-side beacon needed.
 
 watch(
 	isConsentGiven,

@@ -1,0 +1,271 @@
+[
+  {
+    "inn_en": "ibuprofen",
+    "inn_ru": "ибупрофен",
+    "markets": {
+      "RU": [
+        {"brand": "Нурофен", "strength": "200/400 мг", "form": "таблетки, капсулы, сироп, гель", "note": "", "confidence": "high"},
+        {"brand": "Ибупрофен", "strength": "200/400 мг", "form": "таблетки", "note": "международное непатентованное название как торговое", "confidence": "high"},
+        {"brand": "МИГ", "strength": "400 мг", "form": "таблетки", "note": "", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Nurofen", "strength": "200/400 mg", "form": "Tabletten, Saft", "note": "", "confidence": "high"},
+        {"brand": "Ibuflam", "strength": "400/600 mg", "form": "Filmtabletten", "note": "sehr verbreitetes Generikum (Lichtenstein)", "confidence": "high"},
+        {"brand": "Dolormin", "strength": "200/400 mg", "form": "Tabletten", "note": "", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Ibuprom", "strength": "200/400 mg", "form": "tabletki", "note": "", "confidence": "high"},
+        {"brand": "Nurofen", "strength": "200/400 mg", "form": "tabletki, kapsułki", "note": "", "confidence": "high"},
+        {"brand": "Ibum", "strength": "200/400 mg", "form": "kapsułki, syrop", "note": "", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Advil", "strength": "200 mg", "form": "tablets, capsules", "note": "OTC", "confidence": "high"},
+        {"brand": "Motrin", "strength": "200 mg (OTC) / 400-800 mg (Rx)", "form": "tablets", "note": "Motrin IB is OTC; higher strengths Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "paracetamol",
+    "inn_ru": "парацетамол",
+    "markets": {
+      "RU": [
+        {"brand": "Панадол", "strength": "500 мг", "form": "таблетки, суспензия для детей", "note": "", "confidence": "high"},
+        {"brand": "Эффералган", "strength": "500 мг", "form": "шипучие таблетки, сироп, свечи", "note": "", "confidence": "high"},
+        {"brand": "Цефекон Д", "strength": "50/100/250 мг", "form": "свечи (детские)", "note": "", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "ben-u-ron", "strength": "500/1000 mg", "form": "Tabletten, Zäpfchen, Saft", "note": "meistverbreitete Marke", "confidence": "high"},
+        {"brand": "Paracetamol-ratiopharm", "strength": "500 mg", "form": "Tabletten", "note": "", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Apap", "strength": "500 mg", "form": "tabletki", "note": "", "confidence": "high"},
+        {"brand": "Panadol", "strength": "500 mg", "form": "tabletki", "note": "", "confidence": "high"},
+        {"brand": "Paracetamol", "strength": "500 mg", "form": "tabletki, syrop", "note": "", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Tylenol", "strength": "325/500 mg", "form": "tablets, capsules, liquid", "note": "OTC; sold as acetaminophen", "confidence": "high"}
+      ]
+    },
+    "available_note": "US INN/USAN is acetaminophen (not paracetamol); leading brand Tylenol."
+  },
+  {
+    "inn_en": "acetylsalicylic acid",
+    "inn_ru": "ацетилсалициловая кислота",
+    "markets": {
+      "RU": [
+        {"brand": "Аспирин", "strength": "500 мг", "form": "таблетки", "note": "Bayer", "confidence": "high"},
+        {"brand": "Кардиомагнил", "strength": "75/150 мг (+ магния гидроксид)", "form": "таблетки", "note": "низкодозный кардиологический", "confidence": "high"},
+        {"brand": "Тромбо АСС", "strength": "50/100 мг", "form": "таблетки кишечнорастворимые", "note": "низкодозный кардиологический", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Aspirin", "strength": "500 mg", "form": "Tabletten", "note": "Bayer", "confidence": "high"},
+        {"brand": "ASS-ratiopharm", "strength": "100/500 mg", "form": "Tabletten", "note": "100 mg als Kardio-Prophylaxe", "confidence": "high"},
+        {"brand": "Godamed", "strength": "100/300 mg", "form": "Tabletten", "note": "niedrigdosiert kardiologisch", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Polopiryna", "strength": "300/500 mg", "form": "tabletki", "note": "kultowa marka Polfa", "confidence": "high"},
+        {"brand": "Aspirin", "strength": "500 mg", "form": "tabletki", "note": "Bayer", "confidence": "high"},
+        {"brand": "Acard", "strength": "75/150 mg", "form": "tabletki dojelitowe", "note": "niskodawkowy kardiologiczny", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Bayer Aspirin", "strength": "325 mg / 81 mg", "form": "tablets", "note": "OTC; 81 mg = low-dose 'baby aspirin'", "confidence": "high"},
+        {"brand": "Ecotrin", "strength": "81/325 mg", "form": "enteric-coated tablets", "note": "OTC", "confidence": "medium"},
+        {"brand": "Bufferin", "strength": "325 mg", "form": "buffered tablets", "note": "OTC", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "metamizole sodium",
+    "inn_ru": "метамизол натрия",
+    "markets": {
+      "RU": [
+        {"brand": "Анальгин", "strength": "500 мг", "form": "таблетки, раствор для инъекций", "note": "", "confidence": "high"},
+        {"brand": "Баралгин М", "strength": "500 мг", "form": "таблетки, раствор", "note": "", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Novalgin", "strength": "500 mg", "form": "Tabletten, Tropfen, Injektionslösung", "note": "Sanofi; verschreibungspflichtig", "confidence": "high"},
+        {"brand": "Novaminsulfon", "strength": "500 mg", "form": "Tabletten, Tropfen", "note": "Generikaname (z.B. Lichtenstein, ratiopharm)", "confidence": "high"},
+        {"brand": "Berlosin", "strength": "500 mg", "form": "Tabletten", "note": "", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Pyralgina", "strength": "500 mg", "form": "tabletki, roztwór do wstrzykiwań", "note": "kultowa polska marka", "confidence": "high"}
+      ],
+      "US": []
+    },
+    "available_note": "Not available in the US — never FDA-approved / withdrawn due to risk of agranulocytosis. In Germany prescription-only (Rx). Also widely used in Ukraine/Kazakhstan as Анальгин."
+  },
+  {
+    "inn_en": "ketoprofen",
+    "inn_ru": "кетопрофен",
+    "markets": {
+      "RU": [
+        {"brand": "ОКИ", "strength": "80 мг", "form": "гранулы для раствора, свечи", "note": "", "confidence": "high"},
+        {"brand": "Кетонал", "strength": "100/150 мг", "form": "таблетки, капсулы, раствор, гель", "note": "", "confidence": "high"},
+        {"brand": "Фастум гель", "strength": "2.5%", "form": "гель", "note": "", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Gabrilen", "strength": "50 mg / 200 mg retard", "form": "Kapseln, Retardtabletten, Gel", "note": "orales Ketoprofen in DE wenig verbreitet", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Ketonal", "strength": "100/150 mg", "form": "tabletki, kapsułki, żel, ampułki", "note": "", "confidence": "high"},
+        {"brand": "Fastum", "strength": "2.5%", "form": "żel", "note": "", "confidence": "high"},
+        {"brand": "Bi-Profenid", "strength": "150 mg", "form": "tabletki o zmodyfikowanym uwalnianiu", "note": "", "confidence": "medium"}
+      ],
+      "US": []
+    },
+    "available_note": "US: former brands Orudis, Oruvail and OTC Actron/Orudis KT are all discontinued; oral ketoprofen now only as generic Rx (no marketed brand). Topical ketoprofen is not FDA-approved in the US."
+  },
+  {
+    "inn_en": "dexketoprofen",
+    "inn_ru": "декскетопрофен",
+    "markets": {
+      "RU": [
+        {"brand": "Дексалгин", "strength": "25 мг", "form": "таблетки, раствор для инъекций", "note": "Menarini", "confidence": "high"},
+        {"brand": "Фламадекс", "strength": "25 мг / 50 мг/2мл", "form": "таблетки, раствор", "note": "", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Sympal", "strength": "25 mg", "form": "Filmtabletten, Injektionslösung", "note": "Berlin-Chemie", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Dexak", "strength": "25 mg", "form": "tabletki, granulat", "note": "", "confidence": "high"},
+        {"brand": "Dexalgin", "strength": "25 mg", "form": "tabletki, roztwór", "note": "Menarini", "confidence": "high"}
+      ],
+      "US": []
+    },
+    "available_note": "Not marketed in the US — dexketoprofen trometamol has never been FDA-approved (only the racemate ketoprofen was)."
+  },
+  {
+    "inn_en": "nimesulide",
+    "inn_ru": "нимесулид",
+    "markets": {
+      "RU": [
+        {"brand": "Найз", "strength": "100 мг", "form": "таблетки, суспензия, гель", "note": "", "confidence": "high"},
+        {"brand": "Нимесил", "strength": "100 мг", "form": "гранулы для суспензии (порошок)", "note": "Menarini", "confidence": "high"},
+        {"brand": "Нимулид", "strength": "100 мг", "form": "таблетки, суспензия", "note": "", "confidence": "medium"}
+      ],
+      "DE": [],
+      "PL": [
+        {"brand": "Aulin", "strength": "100 mg", "form": "tabletki, granulat do sporządzania zawiesiny", "note": "", "confidence": "high"},
+        {"brand": "Nimesil", "strength": "100 mg", "form": "granulat do sporządzania zawiesiny", "note": "Menarini", "confidence": "high"}
+      ],
+      "US": []
+    },
+    "available_note": "Not marketed in the US (never filed with FDA) and not authorised in Germany. In the EU (incl. Poland) restricted after an EMA review: second-line only, max 15 days, due to serious liver-toxicity risk. Also common in Ukraine as Найз/Німесил."
+  },
+  {
+    "inn_en": "diclofenac",
+    "inn_ru": "диклофенак",
+    "markets": {
+      "RU": [
+        {"brand": "Вольтарен", "strength": "25/50/75/100 мг; гель 1%/2%", "form": "таблетки, раствор, гель, свечи", "note": "", "confidence": "high"},
+        {"brand": "Диклофенак", "strength": "25/50/100 мг", "form": "таблетки, раствор, гель, свечи", "note": "", "confidence": "high"},
+        {"brand": "Ортофен", "strength": "25 мг", "form": "таблетки, мазь", "note": "", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Voltaren", "strength": "25/50/75 mg; Schmerzgel 1%/2%", "form": "Tabletten, Schmerzgel, Zäpfchen", "note": "", "confidence": "high"},
+        {"brand": "Diclofenac-ratiopharm", "strength": "25/50/75 mg", "form": "Tabletten, Gel", "note": "", "confidence": "high"},
+        {"brand": "Diclac", "strength": "25/50/75/150 mg", "form": "Tabletten, Gel", "note": "Hexal", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Voltaren", "strength": "25/50/75/100 mg; żel", "form": "tabletki, żel, czopki", "note": "", "confidence": "high"},
+        {"brand": "Olfen", "strength": "75/100/150 mg", "form": "kapsułki/tabletki SR, żel", "note": "", "confidence": "high"},
+        {"brand": "Majamil", "strength": "50 mg / 100 mg SR", "form": "tabletki", "note": "", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Voltaren Arthritis Pain", "strength": "1%", "form": "topical gel", "note": "OTC", "confidence": "high"},
+        {"brand": "Cambia", "strength": "50 mg", "form": "powder for oral solution", "note": "Rx, for migraine", "confidence": "medium"},
+        {"brand": "Zipsor", "strength": "25 mg", "form": "capsules", "note": "Rx", "confidence": "medium"}
+      ]
+    },
+    "available_note": "US: brand-name oral Voltaren tablets are discontinued (oral diclofenac now generic Rx); Voltaren gel 1% is OTC."
+  },
+  {
+    "inn_en": "naproxen",
+    "inn_ru": "напроксен",
+    "markets": {
+      "RU": [
+        {"brand": "Налгезин", "strength": "275 мг (напроксен натрия)", "form": "таблетки", "note": "KRKA", "confidence": "high"},
+        {"brand": "Напроксен", "strength": "250 мг", "form": "таблетки", "note": "", "confidence": "medium"},
+        {"brand": "Апранакс", "strength": "275/550 мг", "form": "таблетки", "note": "", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Dolormin GS / Dolormin für Frauen", "strength": "250/500 mg", "form": "Tabletten", "note": "naproxenhaltige Dolormin-Varianten", "confidence": "high"},
+        {"brand": "Naproxen-ratiopharm", "strength": "250/500 mg", "form": "Tabletten", "note": "", "confidence": "high"},
+        {"brand": "Aleve", "strength": "220 mg (Naproxen-Natrium)", "form": "Tabletten", "note": "", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Aleve", "strength": "220/250 mg", "form": "tabletki", "note": "OTC", "confidence": "high"},
+        {"brand": "Nalgesin", "strength": "275 mg", "form": "tabletki", "note": "KRKA", "confidence": "high"},
+        {"brand": "Anapran", "strength": "275/550 mg", "form": "tabletki", "note": "", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Aleve", "strength": "220 mg (naproxen sodium)", "form": "tablets, caplets", "note": "OTC", "confidence": "high"},
+        {"brand": "Naprosyn", "strength": "250/375/500 mg", "form": "tablets, suspension", "note": "Rx", "confidence": "high"},
+        {"brand": "Anaprox DS", "strength": "550 mg (naproxen sodium)", "form": "tablets", "note": "Rx", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "meloxicam",
+    "inn_ru": "мелоксикам",
+    "markets": {
+      "RU": [
+        {"brand": "Мовалис", "strength": "7.5/15 мг", "form": "таблетки, раствор для инъекций, свечи", "note": "Boehringer Ingelheim", "confidence": "high"},
+        {"brand": "Мелоксикам", "strength": "7.5/15 мг", "form": "таблетки", "note": "", "confidence": "high"},
+        {"brand": "Амелотекс", "strength": "7.5/15 мг", "form": "таблетки, раствор, гель", "note": "", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Mobec", "strength": "7.5/15 mg", "form": "Tabletten", "note": "Originator Boehringer Ingelheim", "confidence": "high"},
+        {"brand": "Meloxicam-ratiopharm", "strength": "7.5/15 mg", "form": "Tabletten", "note": "", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Movalis", "strength": "7.5/15 mg", "form": "tabletki, roztwór do wstrzykiwań", "note": "Boehringer Ingelheim", "confidence": "high"},
+        {"brand": "Aspicam", "strength": "7.5/15 mg", "form": "tabletki", "note": "", "confidence": "high"},
+        {"brand": "Opokan", "strength": "7.5/15 mg", "form": "tabletki", "note": "", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Mobic", "strength": "7.5/15 mg", "form": "tablets, oral suspension", "note": "Rx", "confidence": "high"},
+        {"brand": "Vivlodex", "strength": "5/10 mg", "form": "capsules", "note": "Rx, low-dose", "confidence": "medium"},
+        {"brand": "Anjeso", "strength": "30 mg", "form": "IV injection", "note": "Rx, hospital", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "ketorolac",
+    "inn_ru": "кеторолак",
+    "markets": {
+      "RU": [
+        {"brand": "Кеторол", "strength": "10 мг таб / 30 мг/мл р-р", "form": "таблетки, раствор для инъекций, гель", "note": "", "confidence": "high"},
+        {"brand": "Кетанов", "strength": "10 мг", "form": "таблетки, раствор для инъекций", "note": "", "confidence": "high"},
+        {"brand": "Долак", "strength": "10 мг", "form": "таблетки, раствор", "note": "", "confidence": "medium"}
+      ],
+      "DE": [],
+      "PL": [],
+      "US": [
+        {"brand": "Toradol", "strength": "10 мг таб / 15-30 мг/мл inj", "form": "tablets, IM/IV injection", "note": "brand discontinued; available as generic ketorolac", "confidence": "high"},
+        {"brand": "Sprix", "strength": "15.75 mg/spray", "form": "nasal spray", "note": "Rx", "confidence": "medium"}
+      ]
+    },
+    "available_note": "Systemic ketorolac withdrawn from the German market in 1993 (only ophthalmic ketorolac, e.g. Acular, remains in DE) — DE left empty for the analgesic use-case. Poland: no widely-sold retail brand identified (mainly hospital/injectable) — left empty, low confidence. Short-term use only (≤5 days). US: Toradol brand discontinued but generic ketorolac widely used."
+  },
+  {
+    "inn_en": "lornoxicam",
+    "inn_ru": "лорноксикам",
+    "markets": {
+      "RU": [
+        {"brand": "Ксефокам", "strength": "4/8 мг", "form": "таблетки, лиофилизат для инъекций", "note": "Xefocam; Takeda/Nycomed", "confidence": "high"}
+      ],
+      "DE": [],
+      "PL": [
+        {"brand": "Xefo", "strength": "4/8 mg", "form": "tabletki, proszek do wstrzykiwań", "note": "Takeda", "confidence": "high"},
+        {"brand": "Xefo Rapid", "strength": "8 mg", "form": "tabletki powlekane", "note": "Takeda", "confidence": "medium"}
+      ],
+      "US": []
+    },
+    "available_note": "Not approved in the US. German brand Telos (Merckle) has been withdrawn from the market — DE left empty. Russian brand transliterated Xefocam/Ксефокам."
+  }
+]

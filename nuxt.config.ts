@@ -61,7 +61,6 @@ export default defineNuxtConfig({
 		public: {
 			telegramBotId: (process.env.TELEGRAM_BOT_TOKEN || '').split(':')[0],
 			mixpanelToken: process.env.MIXPANEL_TOKEN,
-			cloudflareToken: process.env.CLOUDFLARE_TOKEN,
 			stripePublishableKey: process.env.NUXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '',
 		},
 	},
@@ -106,9 +105,6 @@ export default defineNuxtConfig({
 			headers: { 'Cache-Control': 'max-age=31536000, public, immutable' },
 		},
 		'/*.js': {
-			headers: { 'Cache-Control': 'max-age=31536000, public, immutable' },
-		},
-		'/_ca/**': {
 			headers: { 'Cache-Control': 'max-age=31536000, public, immutable' },
 		},
 		'/site.webmanifest': {

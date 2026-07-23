@@ -1,7 +1,11 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { getLocalizedNameField } from '~/server/common/utils';
 import { validateBody } from '~/common/validation';
-import type { MedicineAnalog, MedicineDetails } from '~/interfaces/medicine';
+import type {
+	MedicineAnalog,
+	MedicineDetails,
+	MedicineForeignMarket,
+} from '~/interfaces/medicine';
 
 export default defineEventHandler(
 	async (event): Promise<MedicineDetails | null> => {
@@ -181,6 +185,62 @@ export default defineEventHandler(
 				});
 			}
 
+			// Зарубежные торговые названия того же вещества (med_foreign_brands),
+			// сгруппированы по рынку в порядке RU/DE/PL/US. Отдельный try/catch:
+			// пока миграция не применена, таблицы нет — фича просто пустая, не 500.
+			let foreignBrands: MedicineForeignMarket[] = [];
+			if (substances.length > 0) {
+				try {
+					const fbIds = substances.map((s: any) => s.id);
+					const fbPlaceholders = fbIds.map(() => '?').join(',');
+					const [fbRows] = await connection.execute(
+						`
+					SELECT fb.market_code, fb.brand_name, fb.strength, fb.pharma_form, fb.note,
+						COALESCE(NULLIF(s.${nameField}, ''), NULLIF(s.name_en, ''), s.name) AS substanceName
+					FROM med_foreign_brands fb
+					JOIN med_substances s ON s.id = fb.substance_id
+					WHERE fb.substance_id IN (${fbPlaceholders})
+						-- не показываем бренд, совпадающий с самим МНН (Ибупрофен на карточке ибупрофена)
+						AND LOWER(fb.brand_name) NOT IN (
+							LOWER(COALESCE(s.name, '')),
+							LOWER(COALESCE(s.name_en, '')),
+							LOWER(COALESCE(s.name_ru, '')),
+							LOWER(COALESCE(s.name_sr, '')),
+							LOWER(COALESCE(s.name_de, '')),
+							LOWER(COALESCE(s.name_tr, ''))
+						)
+					-- fb.id ASC = порядок вставки = порядок агента (флагман первым)
+					ORDER BY FIELD(fb.market_code, 'RU', 'DE', 'PL', 'US'), fb.id
+				`,
+						fbIds,
+					);
+					const order = ['RU', 'DE', 'PL', 'US'];
+					const byMarket = new Map<string, MedicineForeignMarket['brands']>();
+					const seen = new Set<string>();
+					for (const r of fbRows as any[]) {
+						const key = `${r.market_code}|${r.brand_name}`;
+						if (seen.has(key)) continue; // дедуп при мульти-веществе
+						seen.add(key);
+						if (!byMarket.has(r.market_code)) byMarket.set(r.market_code, []);
+						byMarket.get(r.market_code)!.push({
+							brand: r.brand_name,
+							substance: r.substanceName || null,
+							strength: r.strength || null,
+							pharmaForm: r.pharma_form || null,
+							note: r.note || null,
+						});
+					}
+					foreignBrands = [...byMarket.keys()]
+						.sort(
+							(a, b) =>
+								(order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99),
+						)
+						.map((market) => ({ market, brands: byMarket.get(market)! }));
+				} catch {
+					foreignBrands = [];
+				}
+			}
+
 			await connection.end();
 
 			return {
@@ -219,6 +279,7 @@ export default defineEventHandler(
 					name: s.name || s.nameEn || s.src,
 				})),
 				analogs,
+				foreignBrands,
 			};
 		} catch (error) {
 			console.error('API Error - medicine details:', error);

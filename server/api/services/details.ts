@@ -6,6 +6,7 @@ import {
 	buildReferenceInfo,
 } from '~/server/common/utils';
 import type { ClinicServiceWithPrices } from '~/interfaces/clinic';
+import { getDoctorsForServiceByClinic } from '~/server/common/services';
 import { validateBody } from '~/common/validation';
 
 export default defineEventHandler(
@@ -100,6 +101,19 @@ export default defineEventHandler(
 				`SELECT * FROM medical_service_reference_info WHERE medical_service_id = ?`,
 				[row.id],
 			);
+
+			// Врачи по клиникам для блока «Врачи» в карточке клиники (см. PRD
+			// service-page-doctor-links). Только для услуг, не для анализов.
+			const clinicIdList: number[] = row.clinicIds
+				? row.clinicIds.split(',').map(Number)
+				: [];
+			const clinicDoctors = await getDoctorsForServiceByClinic(
+				connection,
+				row.id,
+				clinicIdList,
+				locale,
+			);
+
 			await connection.end();
 
 			// Обрабатываем локализованные имена
@@ -165,6 +179,7 @@ export default defineEventHandler(
 				categoryIds: row.categoryIds
 					? row.categoryIds.split(',').map(Number)
 					: [],
+				clinicDoctors,
 				tariffs,
 				referenceInfo: buildReferenceInfo(
 					(referenceInfoRows as any[])[0],

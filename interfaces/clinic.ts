@@ -118,6 +118,13 @@ export interface ClinicSummaryService {
 // Услуги, сгруппированные по id клиники. Не путать с компонентом ClinicServicesMap (карта).
 export type ClinicServicesByClinicId = Record<number, ClinicSummaryService[]>;
 
+// Врачи, сгруппированные по id клиники — для блока «Врачи» в карточке клиники
+// на странице услуги (см. server/common/services.ts:getDoctorsForServiceByClinic).
+export type ClinicDoctorsByClinicId = Record<
+	number,
+	import('./doctor').DoctorCardData[]
+>;
+
 export interface ClinicPrice {
 	clinicId: number;
 	price: number | null;
@@ -133,6 +140,9 @@ export interface ClinicServiceWithPrices extends ClinicServiceItem {
 	categoryIds?: number[];
 	tariffs?: import('./medical-service-tariff').MedicalServiceTariff[];
 	referenceInfo?: import('./reference-info').ReferenceInfo | null;
+	// Врачи по клиникам — только на детальной странице услуги
+	// (/services/[serviceSlug]); анализы (lab_tests) не заполняются, см. PRD.
+	clinicDoctors?: ClinicDoctorsByClinicId;
 }
 
 export interface LabTestItem extends ClinicServiceWithPrices {

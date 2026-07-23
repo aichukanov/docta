@@ -331,6 +331,7 @@ watchEffect(() => {
 				:allClinics="allMedicalServiceClinics"
 				:clinics="medicalServiceClinics"
 				:clinicPrices="medicalServiceData?.clinicPrices"
+				:clinicDoctors="medicalServiceData?.clinicDoctors"
 				:title="t('TabClinics')"
 				@show-on-map="showClinicOnMap"
 			/>

@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
+import type {
+	ClinicData,
+	ClinicPrice,
+	ClinicDoctorsByClinicId,
+} from '~/interfaces/clinic';
 
 const props = withDefaults(
 	defineProps<{
@@ -9,6 +13,8 @@ const props = withDefaults(
 		// Уже отфильтрованный по cityIds список — то, что рендерим.
 		clinics: ClinicData[];
 		clinicPrices?: ClinicPrice[];
+		// Врачи по клиникам — только на странице услуги (см. PRD).
+		clinicDoctors?: ClinicDoctorsByClinicId;
 		title: string;
 		sectionId?: string;
 		showPrice?: boolean;
@@ -49,6 +55,8 @@ const showCityFilter = computed(() => availableCities.value.length > 1);
 const getPriceInfo = (clinicId: number) =>
 	props.clinicPrices?.find((p) => p.clinicId === clinicId);
 
+const getDoctorsInfo = (clinicId: number) => props.clinicDoctors?.[clinicId];
+
 // Расстояние до пользователя на карточке — появляется после определения локации
 const { getDistanceKm } = useClinicRanking();
 </script>
@@ -75,6 +83,7 @@ const { getDistanceKm } = useClinicRanking();
 				:key="clinic.id"
 				:clinic="clinic"
 				:priceInfo="getPriceInfo(clinic.id)"
+				:doctors="getDoctorsInfo(clinic.id)"
 				:showPrice="showPrice"
 				:distance="getDistanceKm(clinic)"
 				@show-on-map="emit('show-on-map', clinic)"

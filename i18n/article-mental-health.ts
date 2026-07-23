@@ -52,7 +52,7 @@ export default {
 			MhmTherapy4End: '.',
 
 			MhmRx1:
-				'Antidepressants, anxiolytics, sleep medications and other psychotropic drugs are sold in Montenegro strictly with a local prescription: pharmacies do not accept foreign ones — checks tightened in 2023–2024, and the days when some pharmacies quietly accepted a Russian prescription are over. Prescriptions are electronic and go straight into the pharmacy system. Important: this article explains how the system works — always discuss choosing, switching or stopping medication with a doctor.',
+				'Antidepressants, anxiolytics, sleep medications and other psychotropic drugs are sold in Montenegro strictly with a local prescription: pharmacies do not accept foreign ones — checks tightened in 2023–2024, and the days when some pharmacies quietly accepted a Russian prescription are over. A local prescription may be electronic (via the Fund, fed straight into the pharmacy system) or paper — with the doctor’s stamp and signature at a private clinic. Important: this article explains how the system works — always discuss choosing, switching or stopping medication with a doctor.',
 			MhmRx2:
 				'If you are relocating while on medication: bring a supply for the first weeks and your documents — a doctor’s statement with the diagnosis and prescribed treatment, the prescription itself, and the international (INN) name of the active substance in Latin script. Not every drug is registered in Montenegro (tofisopam, for example, is not available), so check availability by active substance in advance — and check the customs rules for bringing prescription medication across the border.',
 			MhmRx3a:
@@ -147,7 +147,7 @@ export default {
 			MhmTherapy4End: '.',
 
 			MhmRx1:
-				'Антидепрессанты, анксиолитики, снотворные и другие психотропные препараты продаются в Черногории строго по местному рецепту: иностранный аптеки не принимают — в 2023–2024 годах проверки ужесточились, и времена, когда часть аптек тихо принимала российский рецепт, закончились. Рецепты электронные и попадают в аптечную систему напрямую. Важно: эта статья о том, как устроена система; подбор, замену и отмену препаратов обсуждайте только с врачом.',
+				'Антидепрессанты, анксиолитики, снотворные и другие психотропные препараты продаются в Черногории строго по местному рецепту: иностранный аптеки не принимают — в 2023–2024 годах проверки ужесточились, и времена, когда часть аптек тихо принимала российский рецепт, закончились. Местный рецепт бывает электронным (по линии Фонда, попадает в аптечную систему напрямую) или бумажным — с печатью и подписью врача в частной клинике. Важно: эта статья о том, как устроена система; подбор, замену и отмену препаратов обсуждайте только с врачом.',
 			MhmRx2:
 				'Если вы переезжаете и принимаете препараты: возьмите запас на первые недели и документы — заключение врача с диагнозом и схемой лечения, сам рецепт и международное название действующего вещества (МНН) латиницей. Не все препараты зарегистрированы в Черногории (например, тофизопама здесь нет), поэтому наличие лучше проверить заранее по действующему веществу — а заодно уточнить таможенные правила провоза рецептурных препаратов.',
 			MhmRx3a:
@@ -243,7 +243,7 @@ export default {
 			MhmTherapy4End: '.',
 
 			MhmRx1:
-				'Antidepresivi, anksiolitici, ljekovi za spavanje i drugi psihotropni preparati u Crnoj Gori se prodaju isključivo uz lokalni recept: strani recept apoteke ne prihvataju — kontrole su pooštrene 2023–2024, i vremena kada je dio apoteka prećutno primao ruski recept su prošla. Recepti su elektronski i idu direktno u apotekarski sistem. Važno: ovaj tekst objašnjava kako sistem funkcioniše — izbor, zamjenu i prekid terapije uvijek dogovarajte sa ljekarom.',
+				'Antidepresivi, anksiolitici, ljekovi za spavanje i drugi psihotropni preparati u Crnoj Gori se prodaju isključivo uz lokalni recept: strani recept apoteke ne prihvataju — kontrole su pooštrene 2023–2024, i vremena kada je dio apoteka prećutno primao ruski recept su prošla. Lokalni recept može biti elektronski (o trošku Fonda, ide direktno u apotekarski sistem) ili papirni — sa pečatom i potpisom ljekara u privatnoj klinici. Važno: ovaj tekst objašnjava kako sistem funkcioniše — izbor, zamjenu i prekid terapije uvijek dogovarajte sa ljekarom.',
 			MhmRx2:
 				'Ako se selite i uzimate ljekove: ponesite zalihu za prve sedmice i dokumentaciju — izvještaj ljekara sa dijagnozom i šemom liječenja, sam recept i međunarodni (INN) naziv aktivne supstance latinicom. Nisu svi ljekovi registrovani u Crnoj Gori (tofizopama, na primjer, nema), pa dostupnost provjerite unaprijed po aktivnoj supstanci — i provjerite carinska pravila za unošenje ljekova na recept.',
 			MhmRx3a:
@@ -339,7 +339,7 @@ export default {
 			MhmTherapy4End: '.',
 
 			MhmRx1:
-				'Антидепресиви, анксиолитици, љекови за спавање и други психотропни препарати у Црној Гори се продају искључиво уз локални рецепт: страни рецепт апотеке не прихватају — контроле су пооштрене 2023–2024, и времена када је дио апотека прећутно примао руски рецепт су прошла. Рецепти су електронски и иду директно у апотекарски систем. Важно: овај текст објашњава како систем функционише — избор, замјену и прекид терапије увијек договарајте са љекаром.',
+				'Антидепресиви, анксиолитици, љекови за спавање и други психотропни препарати у Црној Гори се продају искључиво уз локални рецепт: страни рецепт апотеке не прихватају — контроле су пооштрене 2023–2024, и времена када је дио апотека прећутно примао руски рецепт су прошла. Локални рецепт може бити електронски (о трошку Фонда, иде директно у апотекарски систем) или папирни — са печатом и потписом љекара у приватној клиници. Важно: овај текст објашњава како систем функционише — избор, замјену и прекид терапије увијек договарајте са љекаром.',
 			MhmRx2:
 				'Ако се селите и узимате љекове: понесите залиху за прве седмице и документацију — извјештај љекара са дијагнозом и шемом лијечења, сам рецепт и међународни (INN) назив активне супстанце латиницом. Нису сви љекови регистровани у Црној Гори (тофизопама, на примјер, нема), па доступност провјерите унапријед по активној супстанци — и провјерите царинска правила за уношење љекова на рецепт.',
 			MhmRx3a:
@@ -435,7 +435,7 @@ export default {
 			MhmTherapy4End: '.',
 
 			MhmRx1:
-				'Antidepressiva, Anxiolytika, Schlafmittel und andere Psychopharmaka werden in Montenegro ausschließlich gegen ein lokales Rezept verkauft: Ausländische Rezepte akzeptieren die Apotheken nicht — die Kontrollen wurden 2023–2024 verschärft, und die Zeiten, in denen manche Apotheken stillschweigend ein russisches Rezept annahmen, sind vorbei. Rezepte sind elektronisch und gelangen direkt ins Apothekensystem. Wichtig: Dieser Artikel erklärt, wie das System funktioniert — Auswahl, Wechsel oder Absetzen von Medikamenten besprechen Sie immer mit einem Arzt.',
+				'Antidepressiva, Anxiolytika, Schlafmittel und andere Psychopharmaka werden in Montenegro ausschließlich gegen ein lokales Rezept verkauft: Ausländische Rezepte akzeptieren die Apotheken nicht — die Kontrollen wurden 2023–2024 verschärft, und die Zeiten, in denen manche Apotheken stillschweigend ein russisches Rezept annahmen, sind vorbei. Ein lokales Rezept kann elektronisch sein (zulasten des Fonds, gelangt direkt ins Apothekensystem) oder auf Papier — mit Stempel und Unterschrift des Arztes in einer Privatklinik. Wichtig: Dieser Artikel erklärt, wie das System funktioniert — Auswahl, Wechsel oder Absetzen von Medikamenten besprechen Sie immer mit einem Arzt.',
 			MhmRx2:
 				'Wenn Sie umziehen und Medikamente einnehmen: Nehmen Sie einen Vorrat für die ersten Wochen und Ihre Unterlagen mit — einen Arztbericht mit Diagnose und Behandlungsschema, das Rezept selbst und den internationalen Freinamen (INN) des Wirkstoffs in lateinischer Schrift. Nicht jedes Medikament ist in Montenegro registriert (Tofisopam etwa gibt es nicht), prüfen Sie die Verfügbarkeit daher vorab nach Wirkstoff — und informieren Sie sich über die Zollregeln für die Einfuhr verschreibungspflichtiger Medikamente.',
 			MhmRx3a:
@@ -531,7 +531,7 @@ export default {
 			MhmTherapy4End: ' arayabilirsiniz.',
 
 			MhmRx1:
-				'Antidepresanlar, anksiyolitikler, uyku ilaçları ve diğer psikotrop ilaçlar Karadağ’da yalnızca yerel reçeteyle satılır: eczaneler yabancı reçeteyi kabul etmez — denetimler 2023–2024’te sıkılaştı ve bazı eczanelerin Rus reçetesini sessizce kabul ettiği günler geride kaldı. Reçeteler elektroniktir ve doğrudan eczane sistemine düşer. Önemli: bu makale sistemin nasıl işlediğini anlatır — ilaç seçimini, değişimini ve bırakılmasını her zaman bir hekimle konuşun.',
+				'Antidepresanlar, anksiyolitikler, uyku ilaçları ve diğer psikotrop ilaçlar Karadağ’da yalnızca yerel reçeteyle satılır: eczaneler yabancı reçeteyi kabul etmez — denetimler 2023–2024’te sıkılaştı ve bazı eczanelerin Rus reçetesini sessizce kabul ettiği günler geride kaldı. Yerel reçete elektronik olabilir (Fon üzerinden, doğrudan eczane sistemine düşer) ya da kâğıt — özel klinikte doktorun kaşesi ve imzasıyla. Önemli: bu makale sistemin nasıl işlediğini anlatır — ilaç seçimini, değişimini ve bırakılmasını her zaman bir hekimle konuşun.',
 			MhmRx2:
 				'İlaç kullanırken taşınıyorsanız: ilk haftalar için yeterli stok ve belgelerinizi yanınıza alın — tanı ve tedavi şemasını içeren hekim raporu, reçetenin kendisi ve etken maddenin Latin harfleriyle uluslararası (INN) adı. Her ilaç Karadağ’da ruhsatlı değildir (örneğin tofizopam yoktur), bu yüzden bulunabilirliği önceden etken maddeye göre kontrol edin — ve reçeteli ilaçların sınırdan geçirilmesine ilişkin gümrük kurallarına bakın.',
 			MhmRx3a:

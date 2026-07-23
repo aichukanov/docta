@@ -1,0 +1,311 @@
+[
+  {
+    "inn_en": "chlorhexidine",
+    "inn_ru": "хлоргексидин",
+    "markets": {
+      "RU": [
+        {"brand": "Хлоргексидин", "strength": "0.05% / 0.5% / 20%", "form": "раствор наружный", "note": "самое распространённое дженерик-название", "confidence": "high"},
+        {"brand": "Гексикон", "strength": "16 мг", "form": "вагинальные суппозитории / раствор", "note": "антисептик, в т.ч. гинекология", "confidence": "high"},
+        {"brand": "Цитеал", "strength": "комбинация", "form": "раствор для кожи", "note": "хлоргексидин + гексамидин + хлоркрезол", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Chlorhexamed", "strength": "0.06% / 0.12% / 0.2%", "form": "Mundspülung / Gel", "note": "ведущий бренд, но это стоматологический/оральный антисептик", "confidence": "high"},
+        {"brand": "Chlorhexidin", "strength": "0.5% / 1%", "form": "alkoholische Lösung", "note": "для кожи как дженерик; в DE кожную антисептику чаще занимает октенидин (Octenisept)", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Corsodyl", "strength": "0.2%", "form": "płyn do płukania jamy ustnej", "note": "оральный антисептик, самый узнаваемый бренд", "confidence": "high"},
+        {"brand": "Chlorhexidum", "strength": "0.02% / 5%", "form": "roztwór", "note": "дженерик для кожи/слизистых", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Hibiclens", "strength": "4% CHG", "form": "antiseptic skin cleanser", "note": "OTC, кожный антисептик Molnlycke", "confidence": "high"},
+        {"brand": "Peridex", "strength": "0.12%", "form": "oral rinse (Rx)", "note": "стоматологический ополаскиватель (хлоргексидина глюконат)", "confidence": "high"},
+        {"brand": "Hibistat", "strength": "chlorhexidine gluconate", "form": "skin wipe/rinse", "note": "антисептик для рук/кожи", "confidence": "medium"}
+      ]
+    },
+    "available_note": "Широко доступен во всех рынках. В DE/PL самые известные бренды — оральные (Chlorhexamed/Corsodyl); кожная антисептика чаще дженерик или (в DE) октенидин."
+  },
+  {
+    "inn_en": "hydrogen peroxide",
+    "inn_ru": "перекись водорода",
+    "markets": {
+      "RU": [
+        {"brand": "Перекись водорода", "strength": "3%", "form": "раствор наружный", "note": "дженерик, аптечный стандарт", "confidence": "high"},
+        {"brand": "Пергидроль", "strength": "27.5–31%", "form": "концентрированный раствор", "note": "концентрат для разведения", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Wasserstoffperoxid", "strength": "3%", "form": "Lösung", "note": "дженерик, аптека", "confidence": "high"},
+        {"brand": "Wasserstoffperoxid-Lösung 3% Caelo/Hedinger", "strength": "3%", "form": "Lösung", "note": "аптечные фасовки", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Woda utleniona", "strength": "3%", "form": "roztwór na skórę", "note": "дженерик, аптечный стандарт", "confidence": "high"},
+        {"brand": "Perhydrol", "strength": "30%", "form": "roztwór stężony", "note": "концентрат", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Hydrogen Peroxide", "strength": "3%", "form": "topical solution", "note": "дженерик, продаётся повсеместно (store brands: CVS, Swan)", "confidence": "high"}
+      ]
+    },
+    "available_note": "Универсальный безрецептурный антисептик во всех рынках, почти исключительно как дженерик 3%."
+  },
+  {
+    "inn_en": "povidone-iodine",
+    "inn_ru": "повидон-йод",
+    "markets": {
+      "RU": [
+        {"brand": "Бетадин", "strength": "10%", "form": "раствор / мазь / вагинальные суппозитории", "note": "ведущий бренд", "confidence": "high"},
+        {"brand": "Йодопирон", "strength": "1% / 10%", "form": "раствор наружный", "note": "распространённый дженерик-бренд", "confidence": "medium"},
+        {"brand": "Повидон-йод", "strength": "10%", "form": "раствор / мазь", "note": "дженерик", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Betaisodona", "strength": "10% (7.5–11%)", "form": "Lösung / Salbe", "note": "ведущий бренд (Mundipharma)", "confidence": "high"},
+        {"brand": "Braunol", "strength": "7.5%", "form": "Lösung", "note": "B. Braun, антисептик для кожи/ран", "confidence": "high"},
+        {"brand": "PVP-Jod-ratiopharm", "strength": "10%", "form": "Salbe / Lösung", "note": "дженерик", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Betadine", "strength": "10%", "form": "roztwór / maść", "note": "ведущий бренд", "confidence": "high"},
+        {"brand": "Braunol", "strength": "7.5%", "form": "roztwór", "note": "B. Braun", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Betadine", "strength": "10%", "form": "solution / ointment / surgical scrub", "note": "ведущий OTC бренд", "confidence": "high"},
+        {"brand": "Povidone-Iodine (store brand)", "strength": "10%", "form": "topical solution", "note": "дженерик", "confidence": "high"}
+      ]
+    },
+    "available_note": "Доступен во всех рынках; бренд Betadine/Бетадин/Betaisodona доминирует."
+  },
+  {
+    "inn_en": "benzyldimethyl-ammonium chloride (miramistin)",
+    "inn_ru": "мирамистин",
+    "markets": {
+      "RU": [
+        {"brand": "Мирамистин", "strength": "0.01%", "form": "раствор наружный / спрей", "note": "оригинальный бренд, безрецептурный", "confidence": "high"},
+        {"brand": "Окомистин", "strength": "0.01%", "form": "глазные/ушные/назальные капли", "note": "тот же действующий на основе бензилдиметил-аммония", "confidence": "medium"}
+      ],
+      "DE": [],
+      "PL": [],
+      "US": []
+    },
+    "available_note": "Только СНГ. Мирамистин зарегистрирован в РФ (также обращается в UA/BY/KZ). В DE/PL/US не зарегистрирован и не продаётся."
+  },
+  {
+    "inn_en": "dexpanthenol",
+    "inn_ru": "декспантенол",
+    "markets": {
+      "RU": [
+        {"brand": "Бепантен", "strength": "5%", "form": "крем / мазь", "note": "ведущий бренд (Bayer)", "confidence": "high"},
+        {"brand": "Д-Пантенол", "strength": "5%", "form": "крем / мазь", "note": "распространённый дженерик", "confidence": "high"},
+        {"brand": "Пантенол", "strength": "5% / спрей", "form": "спрей / крем", "note": "часто для ожогов", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Bepanthen", "strength": "5%", "form": "Wund- und Heilsalbe / Creme", "note": "ведущий бренд (Bayer)", "confidence": "high"},
+        {"brand": "Panthenol-ratiopharm", "strength": "5%", "form": "Creme / Salbe", "note": "дженерик", "confidence": "high"},
+        {"brand": "Bepanthol", "strength": "5%", "form": "Creme / Lotion", "note": "косметическая линейка того же бренда", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Bepanthen", "strength": "5%", "form": "maść / krem", "note": "ведущий бренд", "confidence": "high"},
+        {"brand": "Dexpanthenol", "strength": "5%", "form": "krem / maść", "note": "дженерик", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Bepanthen / Bepanthol (imported)", "strength": "5%", "form": "cream / ointment", "note": "продаётся как импорт/косметика; лекарственный крем декспантенола (Panthoderm) снят с рынка США", "confidence": "low"}
+      ]
+    },
+    "available_note": "В RU/DE/PL — очень популярен (Bepanthen). В США нет стандартного OTC-препарата декспантенола (Panthoderm discontinued); встречается лишь как импортная/косметическая продукция — US помечен low."
+  },
+  {
+    "inn_en": "mupirocin",
+    "inn_ru": "мупироцин",
+    "markets": {
+      "RU": [
+        {"brand": "Бактробан", "strength": "2%", "form": "мазь", "note": "оригинальный бренд", "confidence": "high"},
+        {"brand": "Супироцин", "strength": "2%", "form": "мазь", "note": "дженерик", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Turixin", "strength": "2%", "form": "Nasensalbe", "note": "назальная мазь (GSK)", "confidence": "high"},
+        {"brand": "Infectopyoderm", "strength": "2%", "form": "Salbe", "note": "кожная мазь (Infectopharm)", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Bactroban", "strength": "2%", "form": "maść / krem", "note": "оригинальный бренд, Rx", "confidence": "high"},
+        {"brand": "Mupirox", "strength": "2%", "form": "maść", "note": "дженерик, Rx", "confidence": "high"},
+        {"brand": "Taconal", "strength": "2%", "form": "maść", "note": "дженерик, Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Bactroban", "strength": "2%", "form": "ointment / cream (Rx)", "note": "оригинальный бренд", "confidence": "high"},
+        {"brand": "Centany", "strength": "2%", "form": "ointment (Rx)", "note": "бренд мази", "confidence": "high"}
+      ]
+    },
+    "available_note": "Рецептурный во всех рынках. Bactroban — общий узнаваемый бренд; в DE различают назальную (Turixin) и кожную (Infectopyoderm) формы."
+  },
+  {
+    "inn_en": "silver sulfadiazine",
+    "inn_ru": "сульфадиазин серебра",
+    "markets": {
+      "RU": [
+        {"brand": "Дермазин", "strength": "1%", "form": "крем", "note": "распространённый бренд (Sandoz)", "confidence": "high"},
+        {"brand": "Сульфаргин", "strength": "1%", "form": "мазь", "note": "дженерик", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Flammazine", "strength": "1%", "form": "Creme", "note": "классический бренд для ожогов", "confidence": "high"},
+        {"brand": "Brandiazin", "strength": "1%", "form": "Creme", "note": "бренд для ожогов", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Dermazin", "strength": "1%", "form": "krem", "note": "распространённый бренд", "confidence": "high"},
+        {"brand": "Argosulfan", "strength": "2%", "form": "krem", "note": "ВНИМАНИЕ: Argosulfan — это сульфатиазол серебра (родственное, но иное вещество); указан справочно для контекста рынка", "confidence": "low"}
+      ],
+      "US": [
+        {"brand": "Silvadene", "strength": "1%", "form": "cream (Rx)", "note": "ведущий бренд", "confidence": "high"},
+        {"brand": "SSD / SSD AF", "strength": "1%", "form": "cream (Rx)", "note": "бренд", "confidence": "high"},
+        {"brand": "Thermazene", "strength": "1%", "form": "cream (Rx)", "note": "бренд", "confidence": "high"}
+      ]
+    },
+    "available_note": "Применяется при ожогах, обычно Rx. Не путать с сульфатиазолом серебра (Аргосульфан) — иная соль; помечен low и отмечен как справочный."
+  },
+  {
+    "inn_en": "clotrimazole",
+    "inn_ru": "клотримазол",
+    "markets": {
+      "RU": [
+        {"brand": "Клотримазол", "strength": "1%", "form": "крем / раствор / вагинальные таблетки", "note": "дженерик", "confidence": "high"},
+        {"brand": "Кандид", "strength": "1% / 2%", "form": "крем / раствор / порошок / вагинальный гель", "note": "популярный бренд (Glenmark)", "confidence": "high"},
+        {"brand": "Канестен", "strength": "1% / 2%", "form": "крем / вагинальные таблетки", "note": "бренд Bayer", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Canesten", "strength": "1% (крем) / 100–500 мг (ваг.)", "form": "Creme / Vaginaltabletten", "note": "ведущий бренд (Bayer)", "confidence": "high"},
+        {"brand": "Canifug", "strength": "1% / 2%", "form": "Creme / Vaginalcreme / Vaginaltabletten", "note": "распространённый бренд", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Clotrimazolum", "strength": "1% / 2%", "form": "krem / płyn / globulki dopochwowe", "note": "дженерик, аптечный стандарт", "confidence": "high"},
+        {"brand": "Canesten", "strength": "1% / 100–500 мг", "form": "krem / tabletki dopochwowe", "note": "бренд Bayer", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Lotrimin AF", "strength": "1%", "form": "cream / solution (topical, OTC)", "note": "ведущий бренд от грибка кожи", "confidence": "high"},
+        {"brand": "Gyne-Lotrimin", "strength": "1% / 2% / вагинальные таблетки", "form": "vaginal cream / inserts (OTC)", "note": "вагинальная линейка", "confidence": "high"},
+        {"brand": "Mycelex", "strength": "1% / troche 10 мг", "form": "cream / oral troche", "note": "бренд", "confidence": "medium"}
+      ]
+    },
+    "available_note": "Широко доступен OTC во всех рынках, включая кожные и вагинальные формы."
+  },
+  {
+    "inn_en": "terbinafine",
+    "inn_ru": "тербинафин",
+    "markets": {
+      "RU": [
+        {"brand": "Ламизил", "strength": "1% (крем/спрей) / 250 мг (табл.)", "form": "крем / спрей / таблетки", "note": "оригинальный бренд (Novartis/GSK)", "confidence": "high"},
+        {"brand": "Тербизил", "strength": "1% / 250 мг", "form": "крем / таблетки", "note": "дженерик", "confidence": "medium"},
+        {"brand": "Экзифин", "strength": "1% / 250 мг", "form": "крем / таблетки", "note": "дженерик", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Lamisil", "strength": "1% (Creme/Spray) / 250 мг", "form": "Creme / Spray / Tabletten", "note": "оригинальный бренд", "confidence": "high"},
+        {"brand": "Terbinafin-ratiopharm", "strength": "1% / 250 мг", "form": "Creme / Tabletten", "note": "дженерик", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Lamisil", "strength": "1% / 250 мг", "form": "krem / tabletki", "note": "оригинальный бренд", "confidence": "high"},
+        {"brand": "Undofen Max", "strength": "1%", "form": "krem / spray", "note": "популярный OTC бренд от грибка стоп с тербинафином", "confidence": "medium"},
+        {"brand": "Terbinafina", "strength": "1% / 250 мг", "form": "krem / tabletki", "note": "дженерик", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Lamisil AT", "strength": "1%", "form": "cream / spray / gel (OTC)", "note": "OTC для грибка кожи", "confidence": "high"},
+        {"brand": "Lamisil", "strength": "250 мг", "form": "oral tablets (Rx)", "note": "таблетки рецептурные", "confidence": "high"}
+      ]
+    },
+    "available_note": "Доступен во всех рынках; крем/спрей — OTC, таблетки обычно Rx."
+  },
+  {
+    "inn_en": "aciclovir (topical cream)",
+    "inn_ru": "ацикловир (крем)",
+    "markets": {
+      "RU": [
+        {"brand": "Ацикловир", "strength": "5%", "form": "крем / мазь", "note": "дженерик, аптечный стандарт", "confidence": "high"},
+        {"brand": "Зовиракс", "strength": "5%", "form": "крем", "note": "оригинальный бренд (GSK)", "confidence": "high"},
+        {"brand": "Ацигерпин", "strength": "5%", "form": "крем", "note": "дженерик", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Zovirax", "strength": "5%", "form": "Lippenherpescreme", "note": "оригинальный бренд", "confidence": "high"},
+        {"brand": "Aciclostad", "strength": "5%", "form": "Creme", "note": "дженерик (Stada)", "confidence": "high"},
+        {"brand": "Aciclovir-ratiopharm", "strength": "5%", "form": "Creme", "note": "дженерик", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Zovirax", "strength": "5%", "form": "krem", "note": "оригинальный бренд", "confidence": "high"},
+        {"brand": "Hascovir", "strength": "5%", "form": "krem / labia (na opryszczkę)", "note": "популярный польский бренд (Hasco-Lek)", "confidence": "high"},
+        {"brand": "Antivir", "strength": "5%", "form": "krem", "note": "дженерик", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Zovirax", "strength": "5%", "form": "cream (Rx)", "note": "оригинальный бренд", "confidence": "high"},
+        {"brand": "Xerese", "strength": "aciclovir 5% + hydrocortisone 1%", "form": "cream (Rx)", "note": "комбинированный крем от герпеса губ", "confidence": "medium"}
+      ]
+    },
+    "available_note": "Крем от герпеса губ доступен во всех рынках; в RU/DE/PL часто OTC, в US — рецептурный."
+  },
+  {
+    "inn_en": "heparin (topical gel)",
+    "inn_ru": "гепарин (гель)",
+    "markets": {
+      "RU": [
+        {"brand": "Лиотон 1000", "strength": "1000 МЕ/г", "form": "гель", "note": "ведущий бренд (Menarini)", "confidence": "high"},
+        {"brand": "Гепариновая мазь", "strength": "~100 МЕ/г гепарина (комбинация)", "form": "мазь", "note": "классический дженерик (гепарин + бензокаин + бензил-никотинат)", "confidence": "high"},
+        {"brand": "Тромблесс", "strength": "1000 МЕ/г", "form": "гель", "note": "дженерик", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Hepathrombin", "strength": "30000 / 60000 МЕ", "form": "Gel / Salbe", "note": "распространённый бренд", "confidence": "high"},
+        {"brand": "Heparin-ratiopharm", "strength": "30000 / 60000 МЕ", "form": "Gel / Salbe", "note": "дженерик", "confidence": "high"},
+        {"brand": "Vetren", "strength": "gel", "form": "Gel", "note": "бренд гепаринового геля", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Lioton 1000", "strength": "1000 j.m./g", "form": "żel", "note": "ведущий бренд", "confidence": "high"},
+        {"brand": "Heparegen", "strength": "гель", "form": "żel", "note": "польский бренд (не гепарин, а гепариноид — часто в той же полке; помечен для контекста)", "confidence": "low"},
+        {"brand": "Heparin", "strength": "300 j.m./g и выше", "form": "żel / maść", "note": "дженерик", "confidence": "medium"}
+      ],
+      "US": []
+    },
+    "available_note": "Гепариновый гель для вен популярен в RU/DE/PL. В США топический гепарин НЕ является стандартным одобренным OTC-продуктом (Lioton не зарегистрирован FDA); US — пустой массив."
+  },
+  {
+    "inn_en": "hydrocortisone (topical)",
+    "inn_ru": "гидрокортизон (мазь)",
+    "markets": {
+      "RU": [
+        {"brand": "Гидрокортизон", "strength": "1%", "form": "мазь", "note": "дженерик, аптечный стандарт", "confidence": "high"},
+        {"brand": "Локоид", "strength": "0.1% (гидрокортизона бутират)", "form": "крем / мазь / эмульсия", "note": "бренд гидрокортизона бутирата (более сильный эфир)", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Ebenol", "strength": "0.25% / 0.5%", "form": "Creme / Spray", "note": "OTC бренд гидрокортизона", "confidence": "high"},
+        {"brand": "Soventol Hydrocort", "strength": "0.25% / 0.5%", "form": "Creme", "note": "OTC бренд", "confidence": "high"},
+        {"brand": "Fenistil Hydrocort", "strength": "0.5%", "form": "Creme", "note": "OTC бренд", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Hydrocortisonum", "strength": "0.5% / 1%", "form": "krem / maść", "note": "дженерик, аптечный стандарт", "confidence": "high"},
+        {"brand": "Laticort", "strength": "0.1% (гидрокортизона бутират)", "form": "krem / maść / roztwór", "note": "польский бренд гидрокортизона бутирата", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Cortizone-10", "strength": "1%", "form": "cream / ointment (OTC)", "note": "ведущий OTC бренд", "confidence": "high"},
+        {"brand": "Cortaid", "strength": "0.5% / 1%", "form": "cream / ointment (OTC)", "note": "OTC бренд", "confidence": "high"},
+        {"brand": "Locoid", "strength": "0.1% (hydrocortisone butyrate)", "form": "cream / ointment / lotion (Rx)", "note": "рецептурный эфир", "confidence": "medium"}
+      ]
+    },
+    "available_note": "Низкие концентрации (0.25–1%) — OTC во всех рынках; бутиратный эфир (Locoid/Локоид/Laticort) — рецептурный."
+  },
+  {
+    "inn_en": "lidocaine (topical)",
+    "inn_ru": "лидокаин (местно)",
+    "markets": {
+      "RU": [
+        {"brand": "Лидокаин", "strength": "10% спрей / 2–10%", "form": "спрей / раствор", "note": "дженерик; спрей для слизистых", "confidence": "high"},
+        {"brand": "Версатис", "strength": "5% (700 мг)", "form": "трансдермальный пластырь", "note": "пластырь при постгерпетической невралгии", "confidence": "high"},
+        {"brand": "Эмла", "strength": "лидокаин 2.5% + прилокаин 2.5%", "form": "крем", "note": "комбинированный крем-анестетик", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Emla", "strength": "лидокаин 2.5% + прилокаин 2.5%", "form": "Creme / Pflaster", "note": "комбинированный анестетик", "confidence": "high"},
+        {"brand": "Versatis", "strength": "5% (700 мг)", "form": "medizinisches Pflaster", "note": "пластырь", "confidence": "high"},
+        {"brand": "Xylocain", "strength": "2% / gel / spray", "form": "Gel / Spray / Salbe", "note": "бренд лидокаина для местного применения", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Emla", "strength": "лидокаин 2.5% + прилокаин 2.5%", "form": "krem / plaster", "note": "комбинированный анестетик", "confidence": "high"},
+        {"brand": "Versatis", "strength": "5% (700 мг)", "form": "plaster leczniczy", "note": "пластырь", "confidence": "high"},
+        {"brand": "Lidocaine / Lignocainum", "strength": "2% / 10% aerozol", "form": "żel / aerozol", "note": "дженерик", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Lidoderm", "strength": "5% (700 мг)", "form": "medicated patch (Rx)", "note": "пластырь", "confidence": "high"},
+        {"brand": "Aspercreme with Lidocaine", "strength": "4%", "form": "cream / patch (OTC)", "note": "популярный OTC бренд от боли", "confidence": "high"},
+        {"brand": "LMX 4 / LMX 5", "strength": "4% / 5%", "form": "cream (OTC)", "note": "местный анестетик крем", "confidence": "medium"}
+      ]
+    },
+    "available_note": "Доступен во всех рынках. Часто как комбинация (Emla = лидокаин+прилокаин) или пластырь 5% (Versatis/Lidoderm); в US 4% лидокаин — крупная OTC-категория (Aspercreme)."
+  }
+]

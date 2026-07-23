@@ -1,0 +1,273 @@
+[
+  {
+    "inn_en": "brilliant green",
+    "inn_ru": "бриллиантовый зелёный (зелёнка)",
+    "markets": {
+      "RU": [
+        {"brand": "Бриллиантовый зелёный (зелёнка)", "strength": "1%", "form": "spirtovoy rastvor (alcohol solution), often with applicator brush", "note": "OTC antiseptic dye, sold generically; not a proprietary brand", "confidence": "high"}
+      ],
+      "DE": [],
+      "PL": [],
+      "US": []
+    },
+    "available_note": "CIS-only staple antiseptic. Not marketed as a registered medicine in DE/PL/US; only obtainable via Eastern-European specialty/online sellers. Sold everywhere in the ex-USSR generically as 'zelyonka'."
+  },
+  {
+    "inn_en": "hypromellose (ophthalmic) / artificial tears",
+    "inn_ru": "гипромеллоза (глазные капли, искусственная слеза)",
+    "markets": {
+      "RU": [
+        {"brand": "Дефислёз", "strength": "0.3%", "form": "eye drops", "note": "OTC", "confidence": "high"},
+        {"brand": "Гипромелоза-П", "strength": "0.5%", "form": "eye drops", "note": "OTC", "confidence": "medium"},
+        {"brand": "Искусственная слеза", "strength": "-", "form": "eye drops", "note": "OTC; hypromellose-based", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Artelac", "strength": "3.2 mg/ml", "form": "eye drops (also EDO single-dose)", "note": "OTC", "confidence": "high"},
+        {"brand": "Berberil Dry Eye", "strength": "-", "form": "eye drops", "note": "OTC", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Sztuczne łzy (Polfa Warszawa)", "strength": "hypromellose + dextran", "form": "eye drops", "note": "OTC", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "GenTeal Tears", "strength": "3 mg/ml", "form": "eye drops", "note": "OTC (Alcon)", "confidence": "high"},
+        {"brand": "Isopto Tears", "strength": "0.5%", "form": "eye drops", "note": "OTC", "confidence": "high"},
+        {"brand": "Tears Naturale", "strength": "hypromellose + dextran", "form": "eye drops", "note": "OTC", "confidence": "medium"}
+      ]
+    },
+    "available_note": "Widely available OTC artificial-tear category in all four markets. Note: many popular US 'dry eye' brands (Systane, Refresh) use PEG/propylene glycol or CMC rather than hypromellose, so they were excluded; only hypromellose-containing products listed."
+  },
+  {
+    "inn_en": "ofloxacin (ophthalmic)",
+    "inn_ru": "офлоксацин (глазные капли)",
+    "markets": {
+      "RU": [
+        {"brand": "Флоксал (Floxal)", "strength": "0.3%", "form": "eye drops / eye ointment", "note": "Rx", "confidence": "high"},
+        {"brand": "Данцил", "strength": "0.3%", "form": "eye drops", "note": "Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Floxal", "strength": "3 mg/ml (0.3%)", "form": "eye drops / eye ointment", "note": "Rx (Dr. Gerhard Mann / Bausch + Lomb)", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Floxal", "strength": "3 mg/ml (0.3%)", "form": "eye drops / eye ointment", "note": "Rx", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Ocuflox", "strength": "0.3%", "form": "eye drops", "note": "Rx; original brand discontinued, now supplied as generic ofloxacin ophthalmic 0.3%", "confidence": "medium"}
+      ]
+    },
+    "available_note": "Prescription topical antibiotic in all markets. Floxal is the dominant EU/RU brand; in the US the Ocuflox brand is discontinued and only generic ofloxacin 0.3% ophthalmic solution is sold."
+  },
+  {
+    "inn_en": "boric acid (otic)",
+    "inn_ru": "борная кислота (ушные капли)",
+    "markets": {
+      "RU": [
+        {"brand": "Борный спирт (Борная кислота, спиртовой раствор)", "strength": "3%", "form": "alcohol solution used as ear drops", "note": "OTC; generic, no proprietary brand", "confidence": "high"}
+      ],
+      "DE": [],
+      "PL": [],
+      "US": [
+        {"brand": "Auro-Dri", "strength": "boric acid in isopropyl alcohol", "form": "ear drops", "note": "OTC swimmer's-ear drying drops", "confidence": "high"},
+        {"brand": "Dri-Ear / EarDry", "strength": "boric acid-alcohol", "form": "ear drops", "note": "OTC", "confidence": "medium"}
+      ]
+    },
+    "available_note": "In RU sold generically as 3% boric alcohol ('borny spirt'). In the US available OTC as swimmer's-ear drying drops (Auro-Dri, Dri-Ear, EarDry). In DE/PL there is no standard registered boric-acid ear-drop product — boric acid solutions are largely compounded/pharmacy-prepared, so left empty."
+  },
+  {
+    "inn_en": "glyceryl trinitrate / nitroglycerin",
+    "inn_ru": "нитроглицерин",
+    "markets": {
+      "RU": [
+        {"brand": "Нитроглицерин", "strength": "0.5 mg", "form": "sublingual tablets", "note": "Rx", "confidence": "high"},
+        {"brand": "Нитроминт", "strength": "0.4 mg/dose", "form": "sublingual spray", "note": "Rx", "confidence": "high"},
+        {"brand": "Нитроспрей", "strength": "0.4 mg/dose", "form": "sublingual spray", "note": "Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Nitrolingual akut / Nitrolingual Pumpspray", "strength": "0.4-0.8 mg/dose", "form": "sublingual spray", "note": "OTC (pharmacy); Pohl-Boskamp", "confidence": "high"},
+        {"brand": "Nitrangin", "strength": "-", "form": "sublingual/solution", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Nitromint", "strength": "0.4 mg/dose", "form": "sublingual spray (also SR tablets)", "note": "Rx (Egis)", "confidence": "high"},
+        {"brand": "Nitrocard", "strength": "-", "form": "tablets", "note": "Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Nitrostat", "strength": "0.3 / 0.4 / 0.6 mg", "form": "sublingual tablets", "note": "Rx", "confidence": "high"},
+        {"brand": "Nitrolingual Pumpspray / NitroMist / GoNitro", "strength": "0.4 mg/dose", "form": "sublingual spray / powder", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": "Classic home cardio rescue medicine, present in all markets. Prescription in RU/PL/US; in Germany the Nitrolingual spray is pharmacy-OTC (apothekenpflichtig)."
+  },
+  {
+    "inn_en": "validol (menthyl isovalerate / menthol)",
+    "inn_ru": "валидол",
+    "markets": {
+      "RU": [
+        {"brand": "Валидол", "strength": "60 mg", "form": "sublingual tablets / capsules", "note": "OTC; generic, no single proprietary owner", "confidence": "high"}
+      ],
+      "DE": [],
+      "PL": [],
+      "US": []
+    },
+    "available_note": "CIS-only. Marketed across the ex-USSR generically as 'Validol' (menthol in menthyl isovalerate). Not a registered medicine in DE/PL/US; only via Eastern-European specialty/online sellers. Menthyl-isovalerate preparations have historically existed in PL/BG/RO under names like Valofin/Menthoval, but no mainstream current PL consumer product, so left empty."
+  },
+  {
+    "inn_en": "fluconazole",
+    "inn_ru": "флуконазол",
+    "markets": {
+      "RU": [
+        {"brand": "Флюкостат", "strength": "150 mg", "form": "capsule", "note": "OTC/behind-counter; single-dose for vaginal candidiasis", "confidence": "high"},
+        {"brand": "Дифлюкан (Diflucan)", "strength": "50-150 mg", "form": "capsule", "note": "originator (Pfizer)", "confidence": "high"},
+        {"brand": "Микосист", "strength": "50-150 mg", "form": "capsule", "note": "-", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Diflucan", "strength": "50-200 mg", "form": "hard capsule", "note": "Rx", "confidence": "high"},
+        {"brand": "Fungata", "strength": "150 mg", "form": "single hard capsule", "note": "Rx in Germany (prescription-only despite single-dose vaginal indication)", "confidence": "high"},
+        {"brand": "Fluconazol-ratiopharm / STADA", "strength": "50-200 mg", "form": "capsule", "note": "Rx generic", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Flumycon", "strength": "50-150 mg", "form": "capsule", "note": "Rx", "confidence": "high"},
+        {"brand": "Fluconazole Polfarmex", "strength": "50-150 mg", "form": "capsule/tablet", "note": "Rx generic", "confidence": "medium"},
+        {"brand": "Diflucan", "strength": "50-150 mg", "form": "capsule", "note": "Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Diflucan", "strength": "50-200 mg", "form": "tablet (also 150 mg single-dose)", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": "Prescription systemic antifungal in DE/PL/US (incl. the 150 mg single-dose vaginal-thrush pack, which is Rx in Germany as Fungata). In RU the 150 mg single dose (Флюкостат) is effectively OTC/pharmacy-counter. Note: unlike the UK/Canada, none of these four markets sell fluconazole as a general OTC product for thrush."
+  },
+  {
+    "inn_en": "fosfomycin (oral, UTI single-dose)",
+    "inn_ru": "фосфомицин",
+    "markets": {
+      "RU": [
+        {"brand": "Монурал (Monural)", "strength": "3 g", "form": "granules for oral solution (sachet)", "note": "Rx; single-dose for cystitis", "confidence": "high"},
+        {"brand": "Фосфомицин Эспарма", "strength": "3 g", "form": "granules (sachet)", "note": "Rx generic", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Monuril", "strength": "3 g", "form": "granules for oral solution (sachet)", "note": "Rx", "confidence": "high"},
+        {"brand": "Fosfomycin Eberth / Fosfuro / Infectofos", "strength": "3 g", "form": "granules (sachet)", "note": "Rx generic", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Monural", "strength": "3 g", "form": "granules for oral solution (sachet)", "note": "Rx (Zambon)", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Monurol", "strength": "3 g", "form": "granules for oral solution (single sachet)", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": "Single 3 g sachet for uncomplicated cystitis; prescription in all four markets. Same product, spelling varies by market: Monurol (US), Monuril (DE/IT), Monural (RU/PL)."
+  },
+  {
+    "inn_en": "phenazopyridine",
+    "inn_ru": "феназопиридин",
+    "markets": {
+      "RU": [],
+      "DE": [],
+      "PL": [],
+      "US": [
+        {"brand": "AZO Urinary Pain Relief", "strength": "95 mg (Max Strength 97.5 mg)", "form": "tablets", "note": "OTC", "confidence": "high"},
+        {"brand": "Uristat", "strength": "95 mg", "form": "tablets", "note": "OTC", "confidence": "high"},
+        {"brand": "Pyridium / Azo-Standard", "strength": "100 / 200 mg", "form": "tablets", "note": "Rx (Pyridium) / OTC (Azo-Standard)", "confidence": "high"}
+      ]
+    },
+    "available_note": "US urinary-analgesic staple, sold OTC (AZO, Uristat) and Rx (Pyridium 100/200 mg). Not registered in Germany. In Poland the classic brand Nefrecil was discontinued in 2008; phenazopyridine is only irregularly obtainable now, so PL left empty. Not marketed in Russia. Turns urine bright orange-red; symptomatic pain relief only."
+  },
+  {
+    "inn_en": "dimenhydrinate",
+    "inn_ru": "дименгидринат",
+    "markets": {
+      "RU": [
+        {"brand": "Драмина (Dramina)", "strength": "50 mg", "form": "tablets", "note": "OTC", "confidence": "high"},
+        {"brand": "Дедалон", "strength": "50 mg", "form": "tablets", "note": "OTC", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Vomex A", "strength": "50-150 mg", "form": "tablets / suppositories / capsules", "note": "pharmacy OTC", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Aviomarin", "strength": "50 mg", "form": "tablets", "note": "OTC", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Dramamine (Original Formula)", "strength": "50 mg", "form": "tablets", "note": "OTC", "confidence": "high"}
+      ]
+    },
+    "available_note": "OTC antiemetic/motion-sickness drug in all four markets under well-established local brands (Vomex A in DE, Aviomarin in PL, Dramina in RU, Dramamine in US). Note the US 'Dramamine Less Drowsy' is meclizine, not dimenhydrinate."
+  },
+  {
+    "inn_en": "cinnarizine",
+    "inn_ru": "циннаризин",
+    "markets": {
+      "RU": [
+        {"brand": "Циннаризин", "strength": "25 mg", "form": "tablets", "note": "Rx/pharmacy generic", "confidence": "high"},
+        {"brand": "Стугерон (Stugeron)", "strength": "25 / 75 mg", "form": "tablets", "note": "-", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Cinnarizin (generic)", "strength": "20-75 mg", "form": "tablets", "note": "-", "confidence": "medium"},
+        {"brand": "Arlevert", "strength": "cinnarizine 20 mg + dimenhydrinate 40 mg", "form": "tablets", "note": "Rx fixed-combination for vertigo", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Cinnarizinum WZF", "strength": "25 mg", "form": "tablets", "note": "-", "confidence": "medium"}
+      ],
+      "US": []
+    },
+    "available_note": "Vestibular suppressant common across Europe/RU (Stugeron the classic brand; Arlevert the popular DE cinnarizine+dimenhydrinate vertigo combo). NOT approved or marketed in the United States."
+  },
+  {
+    "inn_en": "meclozine / meclizine",
+    "inn_ru": "меклозин",
+    "markets": {
+      "RU": [
+        {"brand": "Бонин (Bonine)", "strength": "25 mg", "form": "chewable tablets", "note": "OTC; limited availability", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Postafen", "strength": "25 mg", "form": "tablets", "note": "pharmacy OTC", "confidence": "high"},
+        {"brand": "Postadoxin / Diligan", "strength": "25 mg", "form": "tablets", "note": "-", "confidence": "medium"}
+      ],
+      "PL": [],
+      "US": [
+        {"brand": "Bonine / Dramamine Less Drowsy", "strength": "25 mg", "form": "chewable tablets", "note": "OTC", "confidence": "high"},
+        {"brand": "Antivert", "strength": "12.5 / 25 / 50 mg", "form": "tablets", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": "Motion-sickness/vertigo antihistamine. Strong in US (Bonine, Dramamine Less Drowsy, Antivert) and available in DE (Postafen; the older Peremesin was discontinued ~2007). Not marketed as a mono-product in Poland, so PL left empty. RU availability (Бонин) is limited/intermittent — low confidence."
+  },
+  {
+    "inn_en": "tolperisone",
+    "inn_ru": "толперизон",
+    "markets": {
+      "RU": [
+        {"brand": "Мидокалм (Mydocalm)", "strength": "50 / 150 mg", "form": "tablets (also injectable)", "note": "Rx (Gedeon Richter)", "confidence": "high"},
+        {"brand": "Толперизон", "strength": "50 / 150 mg", "form": "tablets", "note": "Rx generic", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Mydocalm", "strength": "50 / 150 mg", "form": "tablets", "note": "Rx", "confidence": "medium"},
+        {"brand": "Tolperison HEXAL / -AL / -dura / Viveo", "strength": "50 / 150 mg", "form": "tablets", "note": "Rx generic", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Mydocalm", "strength": "50 / 150 mg", "form": "tablets", "note": "Rx (Gedeon Richter)", "confidence": "high"}
+      ],
+      "US": []
+    },
+    "available_note": "Centrally-acting muscle relaxant; prescription in RU/DE/PL (Mydocalm the flagship brand). NOT FDA-approved / not available in the United States. Note EMA restricted its indications to post-stroke spasticity in 2013."
+  },
+  {
+    "inn_en": "melatonin",
+    "inn_ru": "мелатонин",
+    "markets": {
+      "RU": [
+        {"brand": "Мелаксен (Melaxen)", "strength": "3 mg", "form": "tablets", "note": "OTC", "confidence": "high"},
+        {"brand": "Соннован / Меларена", "strength": "3 mg", "form": "tablets", "note": "OTC", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Circadin", "strength": "2 mg", "form": "prolonged-release tablets", "note": "Rx (approved medicine for insomnia in ≥55 y)", "confidence": "high"},
+        {"brand": "low-dose melatonin supplements (various)", "strength": "≤1 mg typ.", "form": "tablets / sprays", "note": "OTC food supplement", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Melatonina LEK-AM", "strength": "1 / 3 / 5 mg", "form": "tablets", "note": "OTC", "confidence": "high"},
+        {"brand": "Melatonina (Hasco / various)", "strength": "1-5 mg", "form": "tablets", "note": "OTC", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Natrol Melatonin", "strength": "1-10 mg", "form": "tablets / gummies", "note": "OTC dietary supplement", "confidence": "high"},
+        {"brand": "Nature Made / ZzzQuil Pure Zzzs", "strength": "1-10 mg", "form": "tablets / gummies", "note": "OTC dietary supplement", "confidence": "high"}
+      ]
+    },
+    "available_note": "Regulatory status differs sharply: US sells it freely as an OTC dietary supplement (Natrol, Nature Made, etc.); in the EU prolonged-release melatonin is a prescription medicine (Circadin; pediatric Slenyto), while low-dose (≤1 mg) supplements are OTC in DE. Poland is more liberal — melatonin 1-5 mg is broadly OTC (Melatonina LEK-AM). RU sells it OTC (Мелаксен)."
+  }
+]

@@ -68,7 +68,7 @@ export default {
 			HcsState3a: 'The system is largely digital: the',
 			HcsState3EzdravljeLink: 'eZdravlje portal',
 			HcsState3b:
-				' (ezdravlje.me) offers online booking, e-prescriptions (paper prescriptions are essentially phased out) and lab results. Insurance status is checked electronically, and since 2020 a Montenegrin electronic ID card can replace the paper health booklet.',
+				' (ezdravlje.me) offers online booking, e-prescriptions and lab results. Insurance status is checked electronically, and since 2020 a Montenegrin electronic ID card can replace the paper health booklet.',
 
 			HcsKnjizica1a:
 				'The zdravstvena knjižica (the “green booklet”) is the document of a person insured with the Health Insurance Fund of Montenegro (FZOCG). Since 1 January 2022 health-insurance contributions have been abolished (the “Europe Now” reform) — the system is financed from the state budget, but insured status is still defined by the insurance law (',
@@ -120,7 +120,7 @@ export default {
 				'Keep in mind: state clinics do not bill private insurers directly. In practice you either agree the visit with the insurer in advance or pay yourself and claim reimbursement — which is usually paid only to a Montenegrin bank account. For tourists, ordinary travel insurance with an assistance service remains the best option.',
 
 			HcsMedications1:
-				'Prescription drugs (antibiotics, psychotropics and many others) are sold strictly with a Montenegrin prescription — pharmacies do not accept foreign ones. Prescriptions are electronic: your izabrani doktor issues them free with a knjižica; without one, any licensed doctor can prescribe after a paid consultation. For the insured, medications from the Fund’s list are free or nearly free at Montefarm state pharmacies and at other pharmacies under contract with the Fund.',
+				'Prescription drugs (antibiotics, psychotropics and many others) are sold strictly with a Montenegrin prescription — pharmacies do not accept foreign ones. With a knjižica your izabrani doktor issues prescriptions free of charge (usually electronic); without one, any licensed doctor can prescribe after a paid consultation — at a private clinic that is a paper prescription with a stamp. For the insured, medications from the Fund’s list are free or nearly free at Montefarm state pharmacies and at other pharmacies under contract with the Fund.',
 			HcsMedications2: 'Our',
 			HcsMedications2Link: 'medications catalog',
 			HcsMedications2End:
@@ -201,7 +201,7 @@ export default {
 			HcsState3a: 'Система в значительной мере цифровая:',
 			HcsState3EzdravljeLink: 'портал eZdravlje',
 			HcsState3b:
-				' (ezdravlje.me) — запись к врачу, электронные рецепты (бумажные практически выведены из оборота), результаты анализов. Статус страховки проверяется электронно, а с 2020 года вместо бумажной книжицы можно активировать черногорскую электронную личную карту.',
+				' (ezdravlje.me) — запись к врачу, электронные рецепты, результаты анализов. Статус страховки проверяется электронно, а с 2020 года вместо бумажной книжицы можно активировать черногорскую электронную личную карту.',
 
 			HcsKnjizica1a:
 				'Zdravstvena knjižica («зелёная книжица») — документ застрахованного в Фонде медицинского страхования Черногории (FZOCG). С 1 января 2022 года взносы на медстрахование отменены (реформа «Европа сейчас») — система финансируется из бюджета, но круг застрахованных по-прежнему определяет закон об обязательном медицинском страховании (',
@@ -253,7 +253,7 @@ export default {
 				'Важно понимать: государственные клиники не работают с частными страховыми напрямую. На практике визит либо заранее согласуют со страховой, либо платят сами и подают на возмещение — а его, как правило, перечисляют только на счёт в черногорском банке. Туристам по-прежнему разумнее всего обычная travel-страховка с ассистансом.',
 
 			HcsMedications1:
-				'Рецептурные препараты (антибиотики, психотропные и многие другие) продаются строго по черногорскому рецепту — иностранный аптека не примет. Рецепты электронные: по книжице их бесплатно выписывает izabrani doktor, без книжицы — любой лицензированный врач после платной консультации. Застрахованным лекарства из списка фонда отпускают бесплатно или почти бесплатно в государственных аптеках Montefarm, а также в других аптеках, у которых заключён договор с фондом.',
+				'Рецептурные препараты (антибиотики, психотропные и многие другие) продаются строго по черногорскому рецепту — иностранный аптека не примет. По книжице рецепт бесплатно выписывает izabrani doktor (обычно электронный); без книжицы его выпишет любой лицензированный врач после платной консультации — в частной клинике это бумажный рецепт с печатью. Застрахованным лекарства из списка фонда отпускают бесплатно или почти бесплатно в государственных аптеках Montefarm, а также в других аптеках, у которых заключён договор с фондом.',
 			HcsMedications2: 'В нашем',
 			HcsMedications2Link: 'каталоге лекарств',
 			HcsMedications2End:
@@ -334,7 +334,7 @@ export default {
 			HcsState3a: 'Sistem je u velikoj mjeri digitalizovan:',
 			HcsState3EzdravljeLink: 'portal eZdravlje',
 			HcsState3b:
-				' (ezdravlje.me) nudi eZakazivanje, eRecept (papirni recepti su praktično izbačeni iz upotrebe) i eNalaz. Status osiguranja se provjerava elektronski, a od 2020. umjesto papirne knjižice može se aktivirati elektronska lična karta.',
+				' (ezdravlje.me) nudi eZakazivanje, eRecept i eNalaz. Status osiguranja se provjerava elektronski, a od 2020. umjesto papirne knjižice može se aktivirati elektronska lična karta.',
 
 			HcsKnjizica1a:
 				'Zdravstvena knjižica je dokument osiguranika Fonda za zdravstveno osiguranje Crne Gore (FZOCG). Od 1. januara 2022. doprinosi za zdravstveno osiguranje su ukinuti (program „Evropa sad“) — sistem se finansira iz budžeta, ali krug osiguranika i dalje određuje Zakon o obaveznom zdravstvenom osiguranju (',
@@ -386,7 +386,7 @@ export default {
 				'Važno je znati: državne klinike ne fakturišu privatnim osiguravačima direktno. U praksi se posjeta ili unaprijed usaglašava sa osiguravačem, ili sami platite pa tražite refundaciju — koja se po pravilu isplaćuje samo na račun u crnogorskoj banci. Za turiste je i dalje najrazumnije obično putno osiguranje sa asistencijom.',
 
 			HcsMedications1:
-				'Ljekovi na recept (antibiotici, psihotropni i mnogi drugi) prodaju se isključivo uz crnogorski recept — strani recept apoteka neće prihvatiti. Recepti su elektronski: uz knjižicu ih besplatno propisuje izabrani doktor, bez knjižice — bilo koji licencirani ljekar nakon plaćene konsultacije. Osiguranima se ljekovi sa liste Fonda izdaju besplatno ili gotovo besplatno u državnim apotekama Montefarm, kao i u drugim apotekama koje imaju ugovor sa Fondom.',
+				'Ljekovi na recept (antibiotici, psihotropni i mnogi drugi) prodaju se isključivo uz crnogorski recept — strani recept apoteka neće prihvatiti. Uz knjižicu recept besplatno propisuje izabrani doktor (obično elektronski); bez knjižice ga izdaje bilo koji licencirani ljekar nakon plaćene konsultacije — u privatnoj klinici to je papirni recept sa pečatom. Osiguranima se ljekovi sa liste Fonda izdaju besplatno ili gotovo besplatno u državnim apotekama Montefarm, kao i u drugim apotekama koje imaju ugovor sa Fondom.',
 			HcsMedications2: 'Naš',
 			HcsMedications2Link: 'katalog ljekova',
 			HcsMedications2End:
@@ -467,7 +467,7 @@ export default {
 			HcsState3a: 'Систем је у великој мјери дигитализован:',
 			HcsState3EzdravljeLink: 'портал eZdravlje',
 			HcsState3b:
-				' (ezdravlje.me) нуди еЗаказивање, еРецепт (папирни рецепти су практично избачени из употребе) и еНалаз. Статус осигурања се провјерава електронски, а од 2020. умјесто папирне књижице може се активирати електронска лична карта.',
+				' (ezdravlje.me) нуди еЗаказивање, еРецепт и еНалаз. Статус осигурања се провјерава електронски, а од 2020. умјесто папирне књижице може се активирати електронска лична карта.',
 
 			HcsKnjizica1a:
 				'Здравствена књижица је документ осигураника Фонда за здравствено осигурање Црне Горе (ФЗОЦГ). Од 1. јануара 2022. доприноси за здравствено осигурање су укинути (програм „Европа сад“) — систем се финансира из буџета, али круг осигураника и даље одређује Закон о обавезном здравственом осигурању (',
@@ -519,7 +519,7 @@ export default {
 				'Важно је знати: државне клинике не фактуришу приватним осигуравачима директно. У пракси се посјета или унапријед усаглашава са осигуравачем, или сами платите па тражите рефундацију — која се по правилу исплаћује само на рачун у црногорској банци. За туристе је и даље најразумније обично путно осигурање са асистенцијом.',
 
 			HcsMedications1:
-				'Љекови на рецепт (антибиотици, психотропни и многи други) продају се искључиво уз црногорски рецепт — страни рецепт апотека неће прихватити. Рецепти су електронски: уз књижицу их бесплатно прописује изабрани доктор, без књижице — било који лиценцирани љекар након плаћене консултације. Осигуранима се љекови са листе Фонда издају бесплатно или готово бесплатно у државним апотекама Montefarm, као и у другим апотекама које имају уговор са Фондом.',
+				'Љекови на рецепт (антибиотици, психотропни и многи други) продају се искључиво уз црногорски рецепт — страни рецепт апотека неће прихватити. Уз књижицу рецепт бесплатно прописује изабрани доктор (обично електронски); без књижице га издаје било који лиценцирани љекар након плаћене консултације — у приватној клиници то је папирни рецепт са печатом. Осигуранима се љекови са листе Фонда издају бесплатно или готово бесплатно у државним апотекама Montefarm, као и у другим апотекама које имају уговор са Фондом.',
 			HcsMedications2: 'Наш',
 			HcsMedications2Link: 'каталог љекова',
 			HcsMedications2End:
@@ -599,7 +599,7 @@ export default {
 			HcsState2:
 				'Die Primärversorgung ist um den izabrani doktor aufgebaut — den „gewählten Arzt“, bei dem Sie sich in Ihrem dom zdravlja registrieren. Er behandelt Sie, stellt Rezepte und Überweisungen (uput) zu Fachärzten und zur Diagnostik aus und vereinbart die Facharzttermine für Sie. Bei manchen Fachärzten und Untersuchungen gibt es Wartezeiten; die Wartelisten werden von Krankenhäusern und dem Fonds veröffentlicht.',
 			HcsState3:
-				'Das System ist weitgehend digital: Das Portal eZdravlje (ezdravlje.me) bietet Online-Terminbuchung, E-Rezepte (Papierrezepte sind praktisch abgeschafft) und Laborergebnisse. Der Versicherungsstatus wird elektronisch geprüft, und seit 2020 kann die elektronische Identitätskarte das papierne Gesundheitsheft ersetzen.',
+				'Das System ist weitgehend digital: Das Portal eZdravlje (ezdravlje.me) bietet Online-Terminbuchung, E-Rezepte und Laborergebnisse. Der Versicherungsstatus wird elektronisch geprüft, und seit 2020 kann die elektronische Identitätskarte das papierne Gesundheitsheft ersetzen.',
 
 			HcsKnjizica1a:
 				'Die zdravstvena knjižica (das „grüne Heft“) ist das Dokument eines Versicherten des montenegrinischen Krankenversicherungsfonds (FZOCG). Seit dem 1. Januar 2022 sind die Krankenversicherungsbeiträge abgeschafft (Reform „Europa jetzt“) — das System wird aus dem Staatshaushalt finanziert, den Kreis der Versicherten bestimmt aber weiterhin das Versicherungsgesetz (',
@@ -651,7 +651,7 @@ export default {
 				'Wichtig zu wissen: Staatliche Kliniken rechnen nicht direkt mit privaten Versicherern ab. In der Praxis stimmt man den Besuch entweder vorab mit dem Versicherer ab oder zahlt selbst und beantragt die Erstattung — die in der Regel nur auf ein montenegrinisches Bankkonto ausgezahlt wird. Für Touristen bleibt eine gewöhnliche Reiseversicherung mit Assistance die beste Wahl.',
 
 			HcsMedications1:
-				'Verschreibungspflichtige Medikamente (Antibiotika, Psychopharmaka und viele andere) werden ausschließlich gegen ein montenegrinisches Rezept verkauft — ausländische Rezepte akzeptiert die Apotheke nicht. Rezepte sind elektronisch: Mit knjižica stellt sie der izabrani doktor kostenlos aus, ohne Karte jeder lizenzierte Arzt nach einer bezahlten Konsultation. Versicherte erhalten Medikamente von der Fondsliste kostenlos oder fast kostenlos in den staatlichen Montefarm-Apotheken sowie in anderen Apotheken mit Vertrag mit dem Fonds.',
+				'Verschreibungspflichtige Medikamente (Antibiotika, Psychopharmaka und viele andere) werden ausschließlich gegen ein montenegrinisches Rezept verkauft — ausländische Rezepte akzeptiert die Apotheke nicht. Mit knjižica stellt der izabrani doktor das Rezept kostenlos aus (meist elektronisch); ohne Karte tut das jeder lizenzierte Arzt nach einer bezahlten Konsultation — in einer Privatklinik ist es ein Papierrezept mit Stempel. Versicherte erhalten Medikamente von der Fondsliste kostenlos oder fast kostenlos in den staatlichen Montefarm-Apotheken sowie in anderen Apotheken mit Vertrag mit dem Fonds.',
 			HcsMedications2: 'Unser',
 			HcsMedications2Link: 'Medikamentenkatalog',
 			HcsMedications2End:
@@ -729,7 +729,7 @@ export default {
 			HcsState2:
 				'Birinci basamak, izabrani doktor — dom zdravlja’nızda kaydolduğunuz “seçilmiş doktor” — etrafında kuruludur. Sizi tedavi eder, reçete ve uzmanlara/tanıya sevk (uput) yazar, uzman randevunuzu kendisi alır. Bazı uzmanlar ve tetkikler için sıralar vardır; bekleme listelerini hastaneler ve Fon açıkça yayımlar.',
 			HcsState3:
-				'Sistem büyük ölçüde dijitaldir: eZdravlje portalı (ezdravlje.me) çevrimiçi randevu, e-reçete (kâğıt reçeteler fiilen kaldırıldı) ve tahlil sonuçları sunar. Sigorta durumu elektronik olarak doğrulanır; 2020’den beri kâğıt karnenin yerine Karadağ elektronik kimlik kartı kullanılabilir.',
+				'Sistem büyük ölçüde dijitaldir: eZdravlje portalı (ezdravlje.me) çevrimiçi randevu, e-reçete ve tahlil sonuçları sunar. Sigorta durumu elektronik olarak doğrulanır; 2020’den beri kâğıt karnenin yerine Karadağ elektronik kimlik kartı kullanılabilir.',
 
 			HcsKnjizica1a:
 				'Zdravstvena knjižica (“yeşil karne”), Karadağ Sağlık Sigortası Fonu’nda (FZOCG) sigortalı olan kişinin belgesidir. 1 Ocak 2022’den beri sağlık sigortası primleri kaldırılmıştır (“Şimdi Avrupa” reformu) — sistem devlet bütçesinden finanse edilir, ancak sigortalıların kapsamını yine sigorta kanunu (',
@@ -781,7 +781,7 @@ export default {
 				'Bilinmesi gereken: devlet klinikleri özel sigortacılarla doğrudan çalışmaz. Uygulamada ziyaret ya önceden sigortacıyla mutabık kalınır ya da kendiniz ödeyip geri ödeme talep edersiniz — geri ödeme kural olarak yalnızca Karadağ’daki bir banka hesabına yapılır. Turistler için asistans hizmetli sıradan seyahat sigortası en makul seçenek olmaya devam ediyor.',
 
 			HcsMedications1:
-				'Reçeteli ilaçlar (antibiyotikler, psikotroplar ve diğerleri) yalnızca Karadağ reçetesiyle satılır — eczane yabancı reçeteyi kabul etmez. Reçeteler elektroniktir: karneyle izabrani doktor ücretsiz yazar; karne yoksa herhangi bir lisanslı doktor ücretli konsültasyon sonrası yazabilir. Sigortalılara Fon listesindeki ilaçlar devlet eczanesi Montefarm’da ve Fon ile sözleşmesi olan diğer eczanelerde ücretsiz veya neredeyse ücretsiz verilir.',
+				'Reçeteli ilaçlar (antibiyotikler, psikotroplar ve diğerleri) yalnızca Karadağ reçetesiyle satılır — eczane yabancı reçeteyi kabul etmez. Karneyle reçeteyi izabrani doktor ücretsiz yazar (genellikle elektronik); karne yoksa herhangi bir lisanslı doktor ücretli konsültasyondan sonra yazar — özel klinikte bu kaşeli bir kâğıt reçetedir. Sigortalılara Fon listesindeki ilaçlar devlet eczanesi Montefarm’da ve Fon ile sözleşmesi olan diğer eczanelerde ücretsiz veya neredeyse ücretsiz verilir.',
 			HcsMedications2:
 				"Karadağ'da satışına CInMED sicili uyarınca izin verilen ilaçların listesi",
 			HcsMedications2Link: 'ilaç kataloğumuzda',

@@ -1,6 +1,13 @@
 # PRD: Кросс-страновые торговые названия лекарств («аналоги для туристов»)
 
-Статус: черновик · Дата: 2026-07-23 · Автор: Anton + Claude
+Статус: **Фаза 1 реализована в коде 2026-07-23** (коммит `8039957 absent medicines`) · Дата: 2026-07-23 · Автор: Anton + Claude
+
+**Что готово:** миграция `server/sql/migrations/015-med-foreign-brands.sql` + `insert-med-foreign-brands.sql` (сгенерирована из `data/med-foreign-brands/batch-001..007.json` через `scripts/medicines/build-foreign-brands-sql.mjs`), API `server/api/medicines/details.ts` (`foreignBrands`, с try/catch — не 500, если миграция ещё не применена), UI на `pages/medicines/[medicineSlug]/index.vue`, `alternateName` в `buildMedicineSchema`.
+
+**Не сделано:**
+- Миграция **не применена** — обе SQL-файла untracked, ждут ручного запуска (см. [[feedback_sql_apply]], я сам не выполняю мутирующий SQL).
+- Ручная проверка `data/med-foreign-brands/_review-checklist.md` — **54 вещества с флагами** (combo/no-dose/form-mixed) не вычитаны носителем/фармацевтом.
+- Фаза 2 (синонимы в поиске `/medicines`, обработка «нет в ЧГ») и Фаза 3 (SEO-лендинги) — не начаты, по плану и не должны стартовать без данных о трафике с Фазы 1.
 
 ## 1. Проблема и идея
 

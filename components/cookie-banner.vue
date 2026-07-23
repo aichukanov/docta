@@ -37,9 +37,9 @@ const { giveConsent, declineConsent } = useCookieControl();
 	left: var(--spacing-lg);
 	z-index: var(--z-cookie-consent);
 	display: flex;
-	align-items: center;
+	flex-direction: column;
 	gap: var(--spacing-md);
-	max-width: 480px;
+	max-width: 360px;
 	padding: var(--spacing-md) var(--spacing-lg);
 	background: var(--color-bg-primary);
 	border: 1px solid var(--color-border-secondary);
@@ -67,6 +67,8 @@ const { giveConsent, declineConsent } = useCookieControl();
 .cookie-banner__actions {
 	display: flex;
 	gap: var(--spacing-sm);
+	justify-content: flex-end;
+	align-items: center;
 	flex-shrink: 0;
 }
 

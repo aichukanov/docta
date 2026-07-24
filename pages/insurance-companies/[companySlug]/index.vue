@@ -14,22 +14,28 @@ import type { InsuranceCompanyData } from '~/interfaces/insurance-company';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([breadcrumbI18n, cityI18n, insuranceCompanyI18n]),
+	messages: combineI18nMessages([
+		breadcrumbI18n,
+		cityI18n,
+		insuranceCompanyI18n,
+	]),
 });
 
 const route = useRoute();
 const companySlug = computed(() => route.params.companySlug as string);
 
-const { pending: isLoading, data: companyData } = await useFetch<
-	InsuranceCompanyData | null
->('/api/insurance-companies/details', {
-	key: 'insurance-company-details',
-	method: 'POST',
-	body: computed(() => ({
-		slug: companySlug.value,
-		locale: locale.value,
-	})),
-});
+const { pending: isLoading, data: companyData } =
+	await useFetch<InsuranceCompanyData | null>(
+		'/api/insurance-companies/details',
+		{
+			key: 'insurance-company-details',
+			method: 'POST',
+			body: computed(() => ({
+				slug: companySlug.value,
+				locale: locale.value,
+			})),
+		},
+	);
 
 const isFound = computed(() => companyData.value?.id != null);
 
@@ -50,7 +56,9 @@ const tabs = computed(() => [
 
 // Аналог scrollToMap на странице клиники — открывает попап нужного филиала
 // на карте офисов (см. components/insurance-company/branches-map.vue).
-const mapRef = ref<InstanceType<typeof InsuranceCompanyBranchesMap> | null>(null);
+const mapRef = ref<InstanceType<typeof InsuranceCompanyBranchesMap> | null>(
+	null,
+);
 const { target: mapSentinel, hasBeenVisible: isMapVisible } = useInViewport();
 const pendingMapAction = ref<(() => void) | null>(null);
 
@@ -132,7 +140,11 @@ watchEffect(() => {
 			},
 			{
 				name: t('BreadcrumbInsuranceCompanies'),
-				url: getRegionalUrl(`${SITE_URL}/insurance-companies`, {}, locale.value),
+				url: getRegionalUrl(
+					`${SITE_URL}/insurance-companies`,
+					{},
+					locale.value,
+				),
 			},
 			{ name: companyData.value.name },
 		]),
@@ -173,7 +185,10 @@ watchEffect(() => {
 			</EntityPageSection>
 
 			<EntityPageSection
-				v-if="companyData && (companyData.website || companyData.phone || companyData.email)"
+				v-if="
+					companyData &&
+					(companyData.website || companyData.phone || companyData.email)
+				"
 				sectionId="contacts"
 				:title="t('ContactsTitle')"
 			>

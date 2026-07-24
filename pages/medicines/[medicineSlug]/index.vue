@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { OG_IMAGE, SITE_URL } from '~/common/constants';
-import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
 import { buildPackagingLabel } from '~/common/packaging-label';
-import { localizeStrength } from '~/common/strength-label';
 import {
 	buildBreadcrumbsSchema,
 	buildMedicineSchema,
 } from '~/common/schema-org-builders';
+import { localizeStrength } from '~/common/strength-label';
+import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import medicineI18n from '~/i18n/medicine';
 import packagingI18n from '~/i18n/packaging';
@@ -139,7 +139,7 @@ watchEffect(() => {
 					? [
 							...new Set(
 								med.value.foreignBrands.flatMap((m: any) =>
-									m.brands.map((b: any) => b.brand),
+									m.products.map((p: any) => p.brand),
 								),
 							),
 						]
@@ -218,39 +218,33 @@ const tabs = computed(() => {
 	return result;
 });
 
-// Ярлык рынка (RU → «Россия, Украина, Казахстан» и т.п.) из i18n
+// Ярлык рынка (RU → «Россия, Беларусь, Казахстан» и т.п.) и флаг-эмодзи из i18n
 const marketLabel = (code: string) => t(`Market${code}`);
-
-// Поле strength в данных грязное — местами вместо дозы форма («Granulat / Tabletten»),
-// состав («нафазолин + …»), «varies», «-». Поэтому вытаскиваем ТОЛЬКО дозовые токены
-// (число + единица, диапазоны, «мг/мл»), остальное отбрасываем, затем нормализуем
-// единицы тем же localizeStrength. Нет дозовых токенов → пустая строка (покажем только вещество).
-// число (+ варианты через «/» или «-»: «200/400», «25/50/75/100», «250-500»)
-// + единица, опц. «/единица» (мг/мл). Хвосты (формы, состав) не попадают.
-const DOSE_RE =
-	/\d+(?:[.,]\d+)?(?:\s*[/–-]\s*\d+(?:[.,]\d+)?)*\s*(?:mg|mcg|µg|ml|g|l|%|мг|мкг|мл|г|л)(?:\s*\/\s*\d*(?:[.,]\d+)?\s*(?:mg|mcg|µg|ml|g|l|мг|мкг|мл|г|л))?/gi;
-
-const foreignStrength = (s: string | null) => {
-	const doses = (s || '').match(DOSE_RE);
-	if (!doses) return '';
-	const uniq = [...new Set(doses.map((d) => d.replace(/\s+/g, ' ').trim()))];
-	return localizeStrength(uniq.join(', '), t);
+const MARKET_FLAGS: Record<string, string> = {
+	RU: '🇷🇺',
+	UA: '🇺🇦',
+	TR: '🇹🇷',
+	DE: '🇩🇪',
+	PL: '🇵🇱',
+	US: '🇺🇸',
 };
+const marketFlag = (code: string) => MARKET_FLAGS[code] || '';
 
-// «вещество доза» одной строкой (собираем в JS, чтобы Vue не схлопнул пробелы)
-const foreignBrandDetail = (b: any) =>
-	[b.substance, foreignStrength(b.strength)].filter(Boolean).join(' ');
+// Дозировка зарубежного продукта: strength уже нормализован на этапе сборки
+// (одна форма — своя доза), поэтому просто локализуем единицы.
+const foreignDose = (p: any) => localizeStrength(p.strength, t);
 
 // Локализованная подпись упаковки из структурных полей (сырой текст реестра
 // не выводим). С разбивкой «(2 × 10)» на детальной странице.
 const packagingLabel = computed(() =>
-	med.value ? buildPackagingLabel(med.value, t, true) : '',
+	med.value ? buildPackagingLabel(med.value, t, locale.value, true) : '',
 );
 // Компактная подпись (без разбивки) для строки-подзаголовка hero
 const packagingShort = computed(() =>
-	med.value ? buildPackagingLabel(med.value, t, false) : '',
+	med.value ? buildPackagingLabel(med.value, t, locale.value, false) : '',
 );
-const analogPackaging = (analog: any) => buildPackagingLabel(analog, t, false);
+const analogPackaging = (analog: any) =>
+	buildPackagingLabel(analog, t, locale.value, false);
 
 // Дозировка с локализованными единицами («500mg» → «500 мг» для ru)
 const strengthLabel = computed(() => localizeStrength(med.value?.strength, t));
@@ -269,7 +263,7 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 		<template #hero v-if="med">
 			<div class="medicine-hero">
 				<div class="medicine-hero-icon">
-					<MedicineFormIcon :formSrc="med.pharmaFormSrc" :size="32" />
+					<MedicineFormIcon :formId="med.pharmaFormId" :size="32" />
 				</div>
 				<div class="medicine-hero-main">
 					<h1 class="medicine-name">{{ med.name }}</h1>
@@ -388,7 +382,7 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 						<div class="analog-header">
 							<MedicineFormIcon
 								class="analog-form-icon"
-								:formSrc="analog.pharmaFormSrc"
+								:formId="analog.pharmaFormId"
 								:size="20"
 								color="var(--color-text-muted)"
 							/>
@@ -409,9 +403,13 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 								analogPackaging(analog)
 							}}</span>
 						</span>
-						<span v-if="analog.substances" class="analog-substances">
-							{{ analog.substances }}
-						</span>
+						<MedicineSubstanceBadges
+							v-if="analog.substanceList?.length"
+							class="analog-substances"
+							:items="analog.substanceList"
+							:missing="analog.missingSubstances"
+							:extraTitle="t('ForeignExtraSubstance', { name: med.name })"
+						/>
 						<span v-if="analog.pharmaForm" class="analog-form">{{
 							analog.pharmaForm
 						}}</span>
@@ -420,30 +418,61 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 				</div>
 			</EntityPageSection>
 
-			<!-- Foreign trade names (same active substance, other countries) -->
+			<!-- Foreign brands in other countries, ranked by substance-set match -->
 			<EntityPageSection
 				v-if="med.foreignBrands?.length"
 				sectionId="foreign"
 				:title="t('ForeignBrandsTitle')"
 			>
-				<div class="foreign-markets">
-					<div
+				<div class="foreign-grid">
+					<section
 						v-for="m in med.foreignBrands"
 						:key="m.market"
-						class="foreign-market"
+						class="foreign-card"
 					>
-						<div class="foreign-market-label">{{ marketLabel(m.market) }}</div>
-						<ul class="foreign-brand-list">
-							<li v-for="(b, i) in m.brands" :key="i" class="foreign-brand">
-								<span class="foreign-brand-name">{{ b.brand }}</span>
+						<header class="foreign-card-head">
+							<span class="foreign-flag" aria-hidden="true">{{
+								marketFlag(m.market)
+							}}</span>
+							<span class="foreign-market-name">{{
+								marketLabel(m.market)
+							}}</span>
+							<span class="foreign-market-count">{{ m.products.length }}</span>
+						</header>
+						<div v-for="(p, i) in m.products" :key="i" class="foreign-product">
+							<div class="foreign-product-top">
+								<span class="foreign-brand-name">{{ p.brand }}</span>
 								<span
-									v-if="foreignBrandDetail(b)"
-									class="foreign-brand-detail"
-									>{{ ' · ' + foreignBrandDetail(b) }}</span
+									v-if="p.exactMatch"
+									class="foreign-check"
+									:title="t('ForeignFullMatch', { name: med.name })"
+									aria-hidden="true"
+									>✓</span
 								>
-							</li>
-						</ul>
-					</div>
+							</div>
+							<MedicineSubstanceBadges
+								:items="p.substances"
+								:missing="p.missing"
+								:extraTitle="t('ForeignExtraSubstance', { name: med.name })"
+							/>
+							<div v-if="p.pharmaForm || foreignDose(p)" class="foreign-meta">
+								<span
+									v-if="p.pharmaForm"
+									class="foreign-form"
+									:class="{ 'is-form-match': p.formMatch }"
+								>
+									<MedicineFormIcon :formId="p.pharmaFormId" :size="15" />
+									{{ p.pharmaForm }}
+								</span>
+								<span
+									v-if="foreignDose(p)"
+									class="foreign-dose"
+									:class="{ 'is-dose-match': p.doseMatch }"
+									>{{ foreignDose(p) }}</span
+								>
+							</div>
+						</div>
+					</section>
 				</div>
 				<p class="section-hint foreign-disclaimer">
 					{{ t('ForeignBrandsDisclaimer') }}
@@ -608,41 +637,110 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 	margin: 0 0 var(--spacing-lg);
 }
 
-.foreign-markets {
-	display: flex;
-	flex-direction: column;
+.foreign-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 	gap: var(--spacing-lg);
 }
 
-.foreign-market-label {
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-secondary);
-	margin-bottom: 6px;
+.foreign-card {
+	border: 1px solid var(--color-border-secondary);
+	border-radius: var(--border-radius-lg);
+	overflow: hidden;
+	background: var(--color-bg-primary);
 }
 
-.foreign-brand-list {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+.foreign-card-head {
 	display: flex;
-	flex-direction: column;
-	gap: 4px;
+	align-items: center;
+	gap: var(--spacing-sm);
+	padding: 11px var(--spacing-lg);
+	background: var(--color-bg-secondary);
+	border-bottom: 1px solid var(--color-border-light);
 }
 
-.foreign-brand {
+.foreign-flag {
+	font-size: 1.15rem;
+	line-height: 1;
+}
+
+.foreign-market-name {
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-text-heading);
 	font-size: var(--font-size-base);
-	line-height: 1.5;
+}
+
+.foreign-market-count {
+	margin-left: auto;
+	color: var(--color-text-light);
+	font-size: var(--font-size-sm);
+}
+
+.foreign-product {
+	padding: var(--spacing-md) var(--spacing-lg);
+	border-bottom: 1px solid var(--color-border-light);
+}
+
+.foreign-product:last-child {
+	border-bottom: none;
+}
+
+.foreign-product-top {
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
 }
 
 .foreign-brand-name {
 	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-primary);
+	color: var(--color-text-heading);
+	font-size: var(--font-size-base);
 }
 
-.foreign-brand-detail {
-	color: var(--color-text-muted);
+.foreign-check {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: rgba(14, 93, 20, 0.09);
+	color: var(--color-primary-green);
+	font-size: 12px;
+	font-weight: 800;
+	margin-left: 6px;
+	cursor: help;
+	align-self: center;
+}
+
+.foreign-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px 12px;
+	margin-top: 8px;
 	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
+}
+
+.foreign-form {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.foreign-form.is-form-match {
+	color: var(--color-primary-green);
+	font-weight: var(--font-weight-medium);
+}
+
+.foreign-dose.is-dose-match {
+	color: var(--color-primary-green);
+	font-weight: var(--font-weight-medium);
+}
+
+.foreign-product :deep(.substance-badges) {
+	margin-top: var(--spacing-sm);
 }
 
 .foreign-disclaimer {
@@ -702,7 +800,6 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
    и выше формы выпуска */
 .analog-substances {
 	font-size: var(--font-size-sm);
-	font-style: italic;
 	color: var(--color-text-secondary);
 }
 

@@ -51,11 +51,7 @@ const cityName = computed(() =>
 <template>
 	<section class="clinic-card">
 		<div class="clinic-card__profile">
-			<ClinicLogo
-				:logoUrl="clinic.logoUrl"
-				:name="clinic.name"
-				:size="64"
-			/>
+			<ClinicLogo :logoUrl="clinic.logoUrl" :name="clinic.name" :size="64" />
 			<div class="clinic-card__info">
 				<div class="clinic-card__name">
 					{{ clinic.name }}

@@ -70,7 +70,9 @@ if (import.meta.client) {
 			entity_id: labTest.id,
 			entity_slug: route.params.labTestSlug as string,
 			entity_name: labTest.name,
-			clinics_count: labTest.clinicIds ? labTest.clinicIds.split(',').length : 0,
+			clinics_count: labTest.clinicIds
+				? labTest.clinicIds.split(',').length
+				: 0,
 		});
 	};
 	// onMounted — первый показ; watch — клиентский переход анализ→анализ,

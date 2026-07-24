@@ -187,10 +187,13 @@ const { breadcrumbItems } = useArticlePageSeo({
 					>{{ t('UnaGapsAntihistaminesMid2')
 					}}<NuxtLink :to="getSubstanceLink(SUBSTANCE_ID.loratadine)">{{
 						t('UnaGapsAntihistaminesLink1')
-					}}</NuxtLink>, <NuxtLink
-						:to="getSubstanceLink(SUBSTANCE_ID.desloratadine)"
-						>{{ t('UnaGapsAntihistaminesLink2') }}</NuxtLink
-					>, <NuxtLink :to="getSubstanceLink(SUBSTANCE_ID.fexofenadine)">{{
+					}}</NuxtLink
+					>,
+					<NuxtLink :to="getSubstanceLink(SUBSTANCE_ID.desloratadine)">{{
+						t('UnaGapsAntihistaminesLink2')
+					}}</NuxtLink
+					>,
+					<NuxtLink :to="getSubstanceLink(SUBSTANCE_ID.fexofenadine)">{{
 						t('UnaGapsAntihistaminesLink3')
 					}}</NuxtLink
 					>{{ t('UnaGapsAntihistaminesEnd')
@@ -216,7 +219,9 @@ const { breadcrumbItems } = useArticlePageSeo({
 					>{{ t('UnaGapsAnalgesicsMid2')
 					}}<NuxtLink :to="getSubstanceLink(SUBSTANCE_ID.paracetamol)">{{
 						t('UnaGapsAnalgesicsLink1')
-					}}</NuxtLink>, <NuxtLink :to="getSubstanceLink(SUBSTANCE_ID.ibuprofen)">{{
+					}}</NuxtLink
+					>,
+					<NuxtLink :to="getSubstanceLink(SUBSTANCE_ID.ibuprofen)">{{
 						t('UnaGapsAnalgesicsLink2')
 					}}</NuxtLink
 					>{{ t('UnaGapsAnalgesicsEnd') }}</li
@@ -237,10 +242,7 @@ const { breadcrumbItems } = useArticlePageSeo({
 			</p>
 		</ArticleSection>
 
-		<ArticleSection
-			id="section-antivirals"
-			:title="t('UnaToc_antivirals')"
-		>
+		<ArticleSection id="section-antivirals" :title="t('UnaToc_antivirals')">
 			<p>{{ t('UnaAntivirals1') }}</p>
 			<p>{{ t('UnaAntivirals2') }}</p>
 			<p
@@ -298,20 +300,14 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t('UnaSources0') }}</p>
 			<ul>
 				<li>
-					<a
-						href="https://cinmed.me"
-						target="_blank"
-						rel="noopener nofollow"
-						>{{ t('UnaSourcesCinmed') }}</a
-					>
+					<a href="https://cinmed.me" target="_blank" rel="noopener nofollow">{{
+						t('UnaSourcesCinmed')
+					}}</a>
 				</li>
 				<li>
-					<a
-						href="https://fzocg.me"
-						target="_blank"
-						rel="noopener nofollow"
-						>{{ t('UnaSourcesFzo') }}</a
-					>
+					<a href="https://fzocg.me" target="_blank" rel="noopener nofollow">{{
+						t('UnaSourcesFzo')
+					}}</a>
 				</li>
 			</ul>
 			<p>

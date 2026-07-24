@@ -11,7 +11,10 @@ import type {
 	DaySchedule,
 	WorkingHours,
 } from '~/interfaces/clinic-working-hours';
-import { DEFAULT_WORKING_HOURS, DAYS_OF_WEEK } from '~/interfaces/clinic-working-hours';
+import {
+	DEFAULT_WORKING_HOURS,
+	DAYS_OF_WEEK,
+} from '~/interfaces/clinic-working-hours';
 
 const props = defineProps<{
 	// null — создание новой клиники
@@ -449,7 +452,9 @@ async function save() {
 		<div class="clinic-form__section">
 			<div class="clinic-form__section-header">
 				<h3 class="clinic-form__section-title">{{ t('SectionContacts') }} *</h3>
-				<span class="clinic-form__markdown-hint">{{ t('ContactsRequiredHint') }}</span>
+				<span class="clinic-form__markdown-hint">{{
+					t('ContactsRequiredHint')
+				}}</span>
 			</div>
 			<div class="clinic-form__contacts">
 				<div class="clinic-form__field">
@@ -499,7 +504,9 @@ async function save() {
 		<!-- Описание -->
 		<div class="clinic-form__section">
 			<div class="clinic-form__section-header">
-				<h3 class="clinic-form__section-title">{{ t('SectionDescription') }}</h3>
+				<h3 class="clinic-form__section-title">{{
+					t('SectionDescription')
+				}}</h3>
 				<span class="clinic-form__markdown-hint">{{ t('MarkdownHint') }}</span>
 			</div>
 			<LocalizedFieldEditor

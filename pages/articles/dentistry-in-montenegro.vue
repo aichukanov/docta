@@ -143,9 +143,8 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t('DstState1') }}</p>
 			<p>{{ t('DstState2') }}</p>
 			<p
-				>{{ t('DstState3a') }}<NuxtLink :to="kccgLink">{{
-					t('DstState3KccgLink')
-				}}</NuxtLink
+				>{{ t('DstState3a')
+				}}<NuxtLink :to="kccgLink">{{ t('DstState3KccgLink') }}</NuxtLink
 				>{{ t('DstState3b') }}</p
 			>
 			<p>
@@ -162,9 +161,8 @@ const { breadcrumbItems } = useArticlePageSeo({
 					><NuxtLink :to="consultLink">{{
 						t('DstPriceItem1ConsultLink')
 					}}</NuxtLink
-					>{{ t('DstPriceItem1a') }}<NuxtLink :to="xrayLink">{{
-						t('DstPriceItem1XrayLink')
-					}}</NuxtLink
+					>{{ t('DstPriceItem1a')
+					}}<NuxtLink :to="xrayLink">{{ t('DstPriceItem1XrayLink') }}</NuxtLink
 					>{{ t('DstPriceItem1b') }}</li
 				>
 				<li
@@ -174,19 +172,19 @@ const { breadcrumbItems } = useArticlePageSeo({
 					>{{ t('DstPriceItem2End') }}</li
 				>
 				<li
-					><NuxtLink :to="canalLink">{{
-						t('DstPriceItem3CanalLink')
-					}}</NuxtLink
+					><NuxtLink :to="canalLink">{{ t('DstPriceItem3CanalLink') }}</NuxtLink
 					>{{ t('DstPriceItem3End') }}</li
 				>
 				<li
 					><NuxtLink :to="extractLink">{{
 						t('DstPriceItem4ExtractLink')
 					}}</NuxtLink
-					>{{ t('DstPriceItem4a') }}<NuxtLink :to="complexExtractLink">{{
+					>{{ t('DstPriceItem4a')
+					}}<NuxtLink :to="complexExtractLink">{{
 						t('DstPriceItem4ComplexLink')
 					}}</NuxtLink
-					>{{ t('DstPriceItem4b') }}<NuxtLink :to="wisdomExtractLink">{{
+					>{{ t('DstPriceItem4b')
+					}}<NuxtLink :to="wisdomExtractLink">{{
 						t('DstPriceItem4WisdomLink')
 					}}</NuxtLink
 					>{{ t('DstPriceItem4c') }}</li
@@ -195,19 +193,23 @@ const { breadcrumbItems } = useArticlePageSeo({
 					><NuxtLink :to="cleaningLink">{{
 						t('DstPriceItem5CleaningLink')
 					}}</NuxtLink
-					>{{ t('DstPriceItem5a') }}<NuxtLink :to="whiteningLink">{{
+					>{{ t('DstPriceItem5a')
+					}}<NuxtLink :to="whiteningLink">{{
 						t('DstPriceItem5WhiteningLink')
 					}}</NuxtLink
 					>{{ t('DstPriceItem5b') }}</li
 				>
 				<li
-					>{{ t('DstPriceItem6a') }}<NuxtLink :to="metalCeramicCrownLink">{{
+					>{{ t('DstPriceItem6a')
+					}}<NuxtLink :to="metalCeramicCrownLink">{{
 						t('DstPriceItem6MetalCeramicLink')
 					}}</NuxtLink
-					>{{ t('DstPriceItem6b') }}<NuxtLink :to="zirconiaCrownLink">{{
+					>{{ t('DstPriceItem6b')
+					}}<NuxtLink :to="zirconiaCrownLink">{{
 						t('DstPriceItem6ZirconiaLink')
 					}}</NuxtLink
-					>{{ t('DstPriceItem6c') }}<NuxtLink :to="removableDentureLink">{{
+					>{{ t('DstPriceItem6c')
+					}}<NuxtLink :to="removableDentureLink">{{
 						t('DstPriceItem6DentureLink')
 					}}</NuxtLink
 					>{{ t('DstPriceItem6d') }}</li
@@ -216,10 +218,12 @@ const { breadcrumbItems } = useArticlePageSeo({
 					><NuxtLink :to="implantLink">{{
 						t('DstPriceItem7ImplantLink')
 					}}</NuxtLink
-					>{{ t('DstPriceItem7a') }}<NuxtLink :to="metalBracesLink">{{
+					>{{ t('DstPriceItem7a')
+					}}<NuxtLink :to="metalBracesLink">{{
 						t('DstPriceItem7MetalBracesLink')
 					}}</NuxtLink
-					>{{ t('DstPriceItem7b') }}<NuxtLink :to="ceramicBracesLink">{{
+					>{{ t('DstPriceItem7b')
+					}}<NuxtLink :to="ceramicBracesLink">{{
 						t('DstPriceItem7CeramicBracesLink')
 					}}</NuxtLink
 					>{{ t('DstPriceItem7c') }}</li
@@ -251,12 +255,9 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t('DstSources0') }}</p>
 			<ul>
 				<li>
-					<a
-						href="https://fzocg.me"
-						target="_blank"
-						rel="noopener nofollow"
-						>{{ t('DstSourcesFzo') }}</a
-					>
+					<a href="https://fzocg.me" target="_blank" rel="noopener nofollow">{{
+						t('DstSourcesFzo')
+					}}</a>
 				</li>
 				<li>
 					<a

@@ -57,13 +57,17 @@ const typeCityLink = (clinicTypeId: number, cityId: number) => ({
 });
 
 const hasHub = computed(
-	() => otherCitiesForType.value.length > 0 || otherTypesForCity.value.length > 0,
+	() =>
+		otherCitiesForType.value.length > 0 || otherTypesForCity.value.length > 0,
 );
 </script>
 
 <template>
 	<div v-if="hasHub" class="clinics-related-filters">
-		<div v-if="otherCitiesForType.length" class="clinics-related-filters__group">
+		<div
+			v-if="otherCitiesForType.length"
+			class="clinics-related-filters__group"
+		>
 			<h3 class="clinics-related-filters__title">
 				{{ t(`clinic_type_${selectedTypeId}_plural`) }}
 				{{ t('InOtherCities') }}
@@ -135,11 +139,29 @@ const hasHub = computed(
 
 <i18n lang="json">
 {
-	"en": { "InOtherCities": "in other cities", "OtherTypesIn": "Other clinic types in {city}" },
-	"ru": { "InOtherCities": "в других городах", "OtherTypesIn": "Другие типы клиник в {city}" },
-	"sr": { "InOtherCities": "u drugim gradovima", "OtherTypesIn": "Drugi tipovi klinika u {city}" },
-	"sr-cyrl": { "InOtherCities": "у другим градовима", "OtherTypesIn": "Други типови клиника у {city}" },
-	"de": { "InOtherCities": "in anderen Städten", "OtherTypesIn": "Andere Klinikarten in {city}" },
-	"tr": { "InOtherCities": "diğer şehirlerde", "OtherTypesIn": "{city} içindeki diğer klinik türleri" }
+	"en": {
+		"InOtherCities": "in other cities",
+		"OtherTypesIn": "Other clinic types in {city}"
+	},
+	"ru": {
+		"InOtherCities": "в других городах",
+		"OtherTypesIn": "Другие типы клиник в {city}"
+	},
+	"sr": {
+		"InOtherCities": "u drugim gradovima",
+		"OtherTypesIn": "Drugi tipovi klinika u {city}"
+	},
+	"sr-cyrl": {
+		"InOtherCities": "у другим градовима",
+		"OtherTypesIn": "Други типови клиника у {city}"
+	},
+	"de": {
+		"InOtherCities": "in anderen Städten",
+		"OtherTypesIn": "Andere Klinikarten in {city}"
+	},
+	"tr": {
+		"InOtherCities": "diğer şehirlerde",
+		"OtherTypesIn": "{city} içindeki diğer klinik türleri"
+	}
 }
 </i18n>

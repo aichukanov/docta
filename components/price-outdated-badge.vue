@@ -47,7 +47,11 @@ const { t } = useI18n({
 </script>
 
 <template>
-	<el-tooltip :content="t('PriceOutdatedTooltip')" placement="top" effect="light">
+	<el-tooltip
+		:content="t('PriceOutdatedTooltip')"
+		placement="top"
+		effect="light"
+	>
 		<el-icon
 			class="price-outdated-icon"
 			:class="{

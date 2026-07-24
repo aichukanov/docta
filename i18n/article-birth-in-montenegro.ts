@@ -15,7 +15,8 @@ export default {
 			BimToc_prenatal: 'Prenatal care: dom zdravlja or a private gynecologist',
 			BimToc_where: 'Where babies are born: maternity wards of Montenegro',
 			BimToc_costs: 'What childbirth costs: with and without a knjižica',
-			BimToc_practical: 'Practical tips: pain relief, partner births, what to pack',
+			BimToc_practical:
+				'Practical tips: pain relief, partner births, what to pack',
 			BimToc_after: 'After the birth: paperwork and the patronage nurse',
 			BimToc_sources: 'Useful contacts and sources',
 
@@ -28,8 +29,7 @@ export default {
 			BimPrenatal3PappaLink: 'PAPP-A',
 			BimPrenatal3b: ' and ',
 			BimPrenatal3FreeBetaHcgLink: 'free beta-hCG',
-			BimPrenatal3c:
-				') at 12 weeks is available in private clinics, and ',
+			BimPrenatal3c: ') at 12 weeks is available in private clinics, and ',
 			BimPrenatal3AmnioLink: 'amniocentesis',
 			BimPrenatal3d:
 				' is offered when indicated. If you need certificates for institutions back home, ask for a full stamped “izvještaj ljekara specijaliste” with the gestational age spelled out — it makes translation and legalization much easier.',
@@ -132,7 +132,8 @@ export default {
 			BirthInMontenegroDescription:
 				'Где рожать в Черногории: роддома государственных больниц и частный вариант, ведение беременности, цены родов без страховки, доступность эпидуральной анестезии, документы для новорождённого и патронаж. Актуально на июль 2026 года.',
 
-			BimToc_prenatal: 'Ведение беременности: дом здравля или частный гинеколог',
+			BimToc_prenatal:
+				'Ведение беременности: дом здравля или частный гинеколог',
 			BimToc_where: 'Где рожают: роддома Черногории',
 			BimToc_costs: 'Сколько стоят роды: с книжицей и без',
 			BimToc_practical:
@@ -153,8 +154,7 @@ export default {
 			BimPrenatal3AmnioLink: 'амниоцентез',
 			BimPrenatal3d:
 				'. Если справки нужны для инстанций на родине, просите полный «izvještaj ljekara specijaliste» с печатью и расшифрованным сроком беременности — так документ заметно проще перевести и легализовать.',
-			BimPrenatal4:
-				'Найти гинеколога с нужным языком приёма можно в нашем',
+			BimPrenatal4: 'Найти гинеколога с нужным языком приёма можно в нашем',
 			BimPrenatal4Link: 'каталоге врачей-гинекологов',
 			BimPrenatal4End: '.',
 
@@ -269,13 +269,11 @@ export default {
 			BimPrenatal3PappaLink: 'PAPP-A',
 			BimPrenatal3b: ' i ',
 			BimPrenatal3FreeBetaHcgLink: 'slobodnog beta-hCG',
-			BimPrenatal3c:
-				') u 12. nedjelji dostupan je u privatnim klinikama, a ',
+			BimPrenatal3c: ') u 12. nedjelji dostupan je u privatnim klinikama, a ',
 			BimPrenatal3AmnioLink: 'amniocenteza',
 			BimPrenatal3d:
 				' se radi po indikacijama. Ako su vam potvrde potrebne za institucije u matičnoj zemlji, tražite kompletan „izvještaj ljekara specijaliste“ sa pečatom i ispisanom nedjeljom gestacije — takav dokument je mnogo lakše prevesti i legalizovati.',
-			BimPrenatal4:
-				'Ginekologa koji govori vaš jezik možete naći u našem',
+			BimPrenatal4: 'Ginekologa koji govori vaš jezik možete naći u našem',
 			BimPrenatal4Link: 'katalogu ginekologa',
 			BimPrenatal4End: '.',
 
@@ -390,13 +388,11 @@ export default {
 			BimPrenatal3PappaLink: 'PAPP-A',
 			BimPrenatal3b: ' и ',
 			BimPrenatal3FreeBetaHcgLink: 'слободног бета-хЦГ',
-			BimPrenatal3c:
-				') у 12. недјељи доступан је у приватним клиникама, а ',
+			BimPrenatal3c: ') у 12. недјељи доступан је у приватним клиникама, а ',
 			BimPrenatal3AmnioLink: 'амниоцентеза',
 			BimPrenatal3d:
 				' се ради по индикацијама. Ако су вам потврде потребне за институције у матичној земљи, тражите комплетан „извјештај љекара специјалисте“ са печатом и исписаном недјељом гестације — такав документ је много лакше превести и легализовати.',
-			BimPrenatal4:
-				'Гинеколога који говори ваш језик можете наћи у нашем',
+			BimPrenatal4: 'Гинеколога који говори ваш језик можете наћи у нашем',
 			BimPrenatal4Link: 'каталогу гинеколога',
 			BimPrenatal4End: '.',
 
@@ -528,8 +524,7 @@ export default {
 			BimWhereList1KccgLink: 'Klinički centar Crne Gore (KCCG)',
 			BimWhereList1a:
 				' in Podgorica — die wichtigste Klinik für Gynäkologie und Geburtshilfe des Landes: Kreißsaalbereich, geburtshilfliche Station, Neonatologie und eine Abteilung für Risikoschwangerschaften; alle komplizierten Fälle werden hierher überwiesen;',
-			BimWhereList2a:
-				'die Geburtsstationen der allgemeinen Krankenhäuser in ',
+			BimWhereList2a: 'die Geburtsstationen der allgemeinen Krankenhäuser in ',
 			BimWhereList2BarLink: 'Bar',
 			BimWhereList2b: ', ',
 			BimWhereList2KotorLink: 'Kotor',
@@ -548,8 +543,7 @@ export default {
 				'kleine Geburtsabteilungen an den dom zdravlja in Ulcinj, Rožaje und Plav.',
 			BimWhere2:
 				'Dreizehn Gemeinden haben gar keine Geburtsstation — darunter die gesamte Küste von Herceg Novi über Tivat bis Budva. Von dort fährt man üblicherweise nach Kotor oder gleich nach Podgorica; planen Sie Route und Fahrzeit im Voraus, besonders in der Sommersaison mit Staus.',
-			BimWhere3a:
-				'Die private Option im Land ist faktisch eine einzige — das ',
+			BimWhere3a: 'Die private Option im Land ist faktisch eine einzige — das ',
 			BimWhere3CodraLink: 'Codra-Krankenhaus',
 			BimWhere3b:
 				' in Podgorica: natürliche Geburten und Kaiserschnitte, Zimmer im Apartment-Stil, OP-Säle und Intensivstation. Die überwiegende Mehrheit der Geburten in Montenegro findet im staatlichen System statt — bei ernsten Komplikationen verlegen sowohl die Privatklinik als auch die kleinen Geburtsabteilungen die Patientinnen ins ',
@@ -607,7 +601,8 @@ export default {
 			BimSourcesDz:
 				'Patronage-Dienst und izabrani ginekolog — der dom zdravlja Ihrer Gemeinde (z. B. dzpg.me in Podgorica).',
 
-			BimCtaTitle: 'Suchen Sie eine Gynäkologin oder einen Gynäkologen in Montenegro?',
+			BimCtaTitle:
+				'Suchen Sie eine Gynäkologin oder einen Gynäkologen in Montenegro?',
 			BimCtaText:
 				'Der docta.me-Katalog listet Gynäkologen und Geburtshelfer staatlicher und privater Kliniken — mit Preisen, Sprachen und Bewertungen.',
 			BimCtaButton: 'Gynäkologen finden',

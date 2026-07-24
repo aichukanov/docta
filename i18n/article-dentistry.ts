@@ -12,11 +12,11 @@ export default {
 			DentistryDescription:
 				'What a filling, an extraction, a crown or an implant costs in Montenegro, who gets free dental care with the zdravstvena knjižica, how to find the on-call dentist for acute pain at night or on holidays, and how to choose a clinic. Updated July 2026.',
 
-			'DstToc_state': 'State dentistry and the knjižica',
-			'DstToc_prices': 'Private clinics and prices',
-			'DstToc_choose': 'Choosing a clinic and language',
-			'DstToc_emergency': 'Acute pain: the on-call dentist',
-			'DstToc_sources': 'Useful links and sources',
+			DstToc_state: 'State dentistry and the knjižica',
+			DstToc_prices: 'Private clinics and prices',
+			DstToc_choose: 'Choosing a clinic and language',
+			DstToc_emergency: 'Acute pain: the on-call dentist',
+			DstToc_sources: 'Useful links and sources',
 
 			DstState1:
 				'Dentistry is the most privatized corner of Montenegrin healthcare: after the 2008–2009 reform the dental offices in the dom zdravlja health centers were privatized, and dentists work as private practices (ordinacije). State-funded care under the zdravstvena knjižica is also delivered in private offices — those contracted with the Health Insurance Fund (FZOCG). The Fund publishes the list of contracted dental offices on its website; there are a few dozen across the country, with the largest share in Podgorica.',
@@ -24,7 +24,8 @@ export default {
 				'Free dental care with the knjižica is not for everyone. The mandatory health-insurance law guarantees it to children under 18 (pupils and students — up to 26), pregnant women and mothers within a year after childbirth, people over 67 and several disability categories. Children under 18 with jaw anomalies are also entitled to free orthodontics — parents in expat chats confirm that kids really did get plates and braces on the “green booklet”. To use it, register the child (or the eligible adult) with an izabrani stomatolog at one of the contracted offices.',
 			DstState3a:
 				'Adults aged 18–67 without a special entitlement are not on the list: with a knjižica they only get urgent dental care (see the acute-pain section below), and everything else is paid out of pocket in private clinics. Complex cases are referred from the contracted offices to the ',
-			DstState3KccgLink: 'dental polyclinic of the Clinical Center of Montenegro (KCCG)',
+			DstState3KccgLink:
+				'dental polyclinic of the Clinical Center of Montenegro (KCCG)',
 			DstState3b:
 				' in Podgorica — you need an uput (referral) from your dentist.',
 			DstState4:
@@ -36,8 +37,7 @@ export default {
 			DstPrices1:
 				'The main market is private clinics and practices: every town has plenty, and prices differ noticeably even between neighboring offices. Benchmarks from Montenegrin clinics’ price lists (summer 2026):',
 			DstPriceItem1ConsultLink: 'exam and consultation',
-			DstPriceItem1a:
-				' — €10–20, often free if you proceed with treatment; ',
+			DstPriceItem1a: ' — €10–20, often free if you proceed with treatment; ',
 			DstPriceItem1XrayLink: 'a single-tooth X-ray',
 			DstPriceItem1b: ' — about €10;',
 			DstPriceItem2FillingLink: 'composite filling',
@@ -106,11 +106,11 @@ export default {
 			DentistryDescription:
 				'Сколько стоят пломба, удаление зуба, коронка и имплант в Черногории, кому стоматология бесплатна по здравственной книжице, как найти дежурного стоматолога при острой боли ночью и в праздники и как выбрать клинику. Актуально на июль 2026 года.',
 
-			'DstToc_state': 'Государственная стоматология и книжица',
-			'DstToc_prices': 'Частные клиники и цены',
-			'DstToc_choose': 'Как выбрать клинику и язык общения',
-			'DstToc_emergency': 'Острая боль: дежурный стоматолог',
-			'DstToc_sources': 'Полезные ссылки и источники',
+			DstToc_state: 'Государственная стоматология и книжица',
+			DstToc_prices: 'Частные клиники и цены',
+			DstToc_choose: 'Как выбрать клинику и язык общения',
+			DstToc_emergency: 'Острая боль: дежурный стоматолог',
+			DstToc_sources: 'Полезные ссылки и источники',
 
 			DstState1:
 				'Стоматология — самая «частная» область черногорской медицины: после реформы 2008–2009 годов стоматологические кабинеты в домах здравля были приватизированы, и врачи работают как частные ординации. Помощь за счёт государства по здравственной книжице тоже оказывается в частных кабинетах — тех, что заключили договор с Фондом медицинского страхования (FZOCG). Список договорных кабинетов фонд публикует на своём сайте; по всей стране их несколько десятков, больше всего — в Подгорице.',
@@ -138,8 +138,7 @@ export default {
 			DstPriceItem2FillingLink: 'композитная пломба',
 			DstPriceItem2End: ' — 20–70 €;',
 			DstPriceItem3CanalLink: 'лечение каналов',
-			DstPriceItem3End:
-				' — 45–80 € за зуб в зависимости от числа каналов;',
+			DstPriceItem3End: ' — 45–80 € за зуб в зависимости от числа каналов;',
 			DstPriceItem4ExtractLink: 'удаление зуба',
 			DstPriceItem4a: ' — 20–50 €, ',
 			DstPriceItem4ComplexLink: 'сложное',
@@ -201,11 +200,11 @@ export default {
 			DentistryDescription:
 				'Koliko koštaju plomba, vađenje zuba, krunica i implantat u Crnoj Gori, ko ima pravo na besplatnog izabranog stomatologa, kako do pripravnog stomatologa kod akutnog bola noću i praznicima i kako izabrati ordinaciju. Ažurirano: jul 2026.',
 
-			'DstToc_state': 'Državna stomatologija i zdravstvena knjižica',
-			'DstToc_prices': 'Privatne klinike i cijene',
-			'DstToc_choose': 'Kako izabrati ordinaciju i jezik',
-			'DstToc_emergency': 'Akutni bol: pripravni stomatolog',
-			'DstToc_sources': 'Korisni linkovi i izvori',
+			DstToc_state: 'Državna stomatologija i zdravstvena knjižica',
+			DstToc_prices: 'Privatne klinike i cijene',
+			DstToc_choose: 'Kako izabrati ordinaciju i jezik',
+			DstToc_emergency: 'Akutni bol: pripravni stomatolog',
+			DstToc_sources: 'Korisni linkovi i izvori',
 
 			DstState1:
 				'Stomatologija je najprivatizovaniji dio crnogorskog zdravstva: nakon reforme 2008–2009. stomatološke ambulante u domovima zdravlja su privatizovane i stomatolozi rade kao privatne ordinacije. I zaštita o trošku države, uz zdravstvenu knjižicu, pruža se u privatnim ordinacijama — onima koje imaju ugovor sa Fondom za zdravstveno osiguranje (FZOCG). Spisak ugovornih stomatoloških ambulanti Fond objavljuje na svom sajtu; u cijeloj zemlji ih je nekoliko desetina, najviše u Podgorici.',
@@ -294,11 +293,11 @@ export default {
 			DentistryDescription:
 				'Колико коштају пломба, вађење зуба, круница и имплантат у Црној Гори, ко има право на бесплатног изабраног стоматолога, како до приправног стоматолога код акутног бола ноћу и празницима и како изабрати ординацију. Ажурирано: јул 2026.',
 
-			'DstToc_state': 'Државна стоматологија и здравствена књижица',
-			'DstToc_prices': 'Приватне клинике и цијене',
-			'DstToc_choose': 'Како изабрати ординацију и језик',
-			'DstToc_emergency': 'Акутни бол: приправни стоматолог',
-			'DstToc_sources': 'Корисни линкови и извори',
+			DstToc_state: 'Државна стоматологија и здравствена књижица',
+			DstToc_prices: 'Приватне клинике и цијене',
+			DstToc_choose: 'Како изабрати ординацију и језик',
+			DstToc_emergency: 'Акутни бол: приправни стоматолог',
+			DstToc_sources: 'Корисни линкови и извори',
 
 			DstState1:
 				'Стоматологија је најприватизованији дио црногорског здравства: након реформе 2008–2009. стоматолошке амбуланте у домовима здравља су приватизоване и стоматолози раде као приватне ординације. И заштита о трошку државе, уз здравствену књижицу, пружа се у приватним ординацијама — онима које имају уговор са Фондом за здравствено осигурање (ФЗОЦГ). Списак уговорних стоматолошких амбуланти Фонд објављује на свом сајту; у цијелој земљи их је неколико десетина, највише у Подгорици.',
@@ -387,11 +386,11 @@ export default {
 			DentistryDescription:
 				'Was Füllung, Zahnextraktion, Krone oder Implantat in Montenegro kosten, wer mit der zdravstvena knjižica Anspruch auf kostenlose Zahnbehandlung hat, wie man bei akuten Schmerzen nachts und an Feiertagen den Bereitschaftszahnarzt findet und wie man eine Praxis auswählt. Stand: Juli 2026.',
 
-			'DstToc_state': 'Staatliche Zahnmedizin und die knjižica',
-			'DstToc_prices': 'Privatkliniken und Preise',
-			'DstToc_choose': 'Praxiswahl und Sprache',
-			'DstToc_emergency': 'Akute Schmerzen: der Bereitschaftszahnarzt',
-			'DstToc_sources': 'Nützliche Links und Quellen',
+			DstToc_state: 'Staatliche Zahnmedizin und die knjižica',
+			DstToc_prices: 'Privatkliniken und Preise',
+			DstToc_choose: 'Praxiswahl und Sprache',
+			DstToc_emergency: 'Akute Schmerzen: der Bereitschaftszahnarzt',
+			DstToc_sources: 'Nützliche Links und Quellen',
 
 			DstState1:
 				'Die Zahnmedizin ist der am stärksten privatisierte Teil des montenegrinischen Gesundheitswesens: Nach der Reform von 2008–2009 wurden die Zahnarztpraxen in den dom-zdravlja-Gesundheitszentren privatisiert, und Zahnärzte arbeiten als private Praxen (ordinacije). Auch die staatlich finanzierte Versorgung mit der zdravstvena knjižica erfolgt in privaten Praxen — in jenen, die einen Vertrag mit dem Krankenversicherungsfonds (FZOCG) haben. Die Liste der Vertragspraxen veröffentlicht der Fonds auf seiner Website; landesweit sind es einige Dutzend, die meisten in Podgorica.',
@@ -481,11 +480,11 @@ export default {
 			DentistryDescription:
 				"Karadağ'da dolgu, diş çekimi, kuron ve implant ne kadar tutar; zdravstvena knjižica ile kimler ücretsiz diş tedavisi alır; gece ve tatillerde şiddetli ağrıda nöbetçi diş hekimine nasıl ulaşılır; klinik nasıl seçilir. Temmuz 2026 itibarıyla günceldir.",
 
-			'DstToc_state': 'Devlet diş hekimliği ve knjižica',
-			'DstToc_prices': 'Özel klinikler ve fiyatlar',
-			'DstToc_choose': 'Klinik seçimi ve dil',
-			'DstToc_emergency': 'Şiddetli ağrı: nöbetçi diş hekimi',
-			'DstToc_sources': 'Faydalı bağlantılar ve kaynaklar',
+			DstToc_state: 'Devlet diş hekimliği ve knjižica',
+			DstToc_prices: 'Özel klinikler ve fiyatlar',
+			DstToc_choose: 'Klinik seçimi ve dil',
+			DstToc_emergency: 'Şiddetli ağrı: nöbetçi diş hekimi',
+			DstToc_sources: 'Faydalı bağlantılar ve kaynaklar',
 
 			DstState1:
 				"Diş hekimliği, Karadağ sağlık sisteminin en fazla özelleştirilmiş alanıdır: 2008–2009 reformundan sonra dom zdravlja sağlık merkezlerindeki diş muayenehaneleri özelleştirildi ve diş hekimleri özel muayenehaneler (ordinacija) olarak çalışır. Zdravstvena knjižica ile devletin karşıladığı bakım da özel muayenehanelerde — Sağlık Sigortası Fonu (FZOCG) ile sözleşmesi olanlarda — verilir. Fon, sözleşmeli diş muayenehanelerinin listesini web sitesinde yayımlar; ülke genelinde birkaç düzine vardır, en fazlası Podgorica'dadır.",
@@ -545,7 +544,8 @@ export default {
 				'Kliniklerin tek bir resmi sıralaması yoktur: lisansları Sağlık Bakanlığı verir, diş hekimleri Karadağ Diş Hekimleri Odası üyesidir. Uygulamada ana mekanizma tavsiyedir — şehir ve göçmen sohbet gruplarında sürekli belirli doktorlar sorulur ve önerilir. Kapsamlı tedavilerden önce — implant, protez, diş teli — fiyatlı yazılı tedavi planı isteyin ve ikinci bir görüş alın.',
 			DstChoose2:
 				"Dil nadiren sorundur: birçok diş hekimi İngilizce konuşur, sahilde ve Podgorica'da Rusça konuşan çok sayıda doktor ve personel vardır; Türkçe veya Almanca hizmet veren muayenehaneler de bulunur. Sohbetlerden pratik bir ayrıntı: randevular ara sıra kaybolur — bir gün önce arayıp randevunuzu teyit edin.",
-			DstChoose3: 'Yakınınızda bir muayenehane bulmak için kataloglarımıza bakın:',
+			DstChoose3:
+				'Yakınınızda bir muayenehane bulmak için kataloglarımıza bakın:',
 			DstChoose3Link: 'şehir ve dil filtreli diş klinikleri',
 			DstChoose3Mid: ' ve ',
 			DstChoose3Link2: 'çalıştıkları diller belirtilmiş diş hekimleri',

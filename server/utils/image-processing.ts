@@ -23,7 +23,9 @@ export function getUploadsRoot(): string {
  */
 export function getVerificationsRoot(): string {
 	const config = useRuntimeConfig();
-	return config.verificationsDir || join(process.cwd(), 'storage', 'verifications');
+	return (
+		config.verificationsDir || join(process.cwd(), 'storage', 'verifications')
+	);
 }
 
 const ALLOWED_MIME_TYPES = [
@@ -150,7 +152,9 @@ export async function processAndSaveVerificationImage(
  * Удаляет файл верификации с диска (замена отклонённого файла, откат
  * неудавшейся загрузки). Отсутствие файла — не ошибка.
  */
-export async function deleteVerificationImage(storedName: string): Promise<void> {
+export async function deleteVerificationImage(
+	storedName: string,
+): Promise<void> {
 	try {
 		await unlink(join(getVerificationsRoot(), basename(storedName)));
 	} catch (error: any) {

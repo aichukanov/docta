@@ -27,7 +27,8 @@ const healthcareArticleLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
-const LAW_URL = 'https://www.paragraf.me/propisi-crnegore/zakon_o_strancima.html';
+const LAW_URL =
+	'https://www.paragraf.me/propisi-crnegore/zakon_o_strancima.html';
 
 // Ссылки на страховые ведут на внутренние страницы каталога
 // (pages/insurance-companies/[companySlug]) вместо внешних сайтов страховых.
@@ -90,27 +91,23 @@ const { breadcrumbItems } = useArticlePageSeo({
 	>
 		<ArticleSection id="section-why-required" :title="t('RipToc_why-required')">
 			<p
-				>{{ t('RipWhy1a') }}<a :href="LAW_URL" target="_blank" rel="noopener nofollow">{{
+				>{{ t('RipWhy1a')
+				}}<a :href="LAW_URL" target="_blank" rel="noopener nofollow">{{
 					t('RipWhy1LawLink')
 				}}</a
 				>{{ t('RipWhy1b') }}</p
 			>
 			<p
-				>{{ t('RipWhy2a') }}<NuxtLink :to="savaLink">{{
-					t('RipWhy2SavaLink')
-				}}</NuxtLink
-				>{{ t('RipWhy2b') }}<NuxtLink :to="lovcenLink">{{
-					t('RipWhy2LovcenLink')
-				}}</NuxtLink
-				>{{ t('RipWhy2c') }}<NuxtLink :to="uniqaLink">{{
-					t('RipWhy2UniqaLink')
-				}}</NuxtLink
-				>{{ t('RipWhy2d') }}<NuxtLink :to="generaliLink">{{
-					t('RipWhy2GeneraliLink')
-				}}</NuxtLink
-				>{{ t('RipWhy2e') }}<NuxtLink :to="graweLink">{{
-					t('RipWhy2GraweLink')
-				}}</NuxtLink
+				>{{ t('RipWhy2a')
+				}}<NuxtLink :to="savaLink">{{ t('RipWhy2SavaLink') }}</NuxtLink
+				>{{ t('RipWhy2b')
+				}}<NuxtLink :to="lovcenLink">{{ t('RipWhy2LovcenLink') }}</NuxtLink
+				>{{ t('RipWhy2c')
+				}}<NuxtLink :to="uniqaLink">{{ t('RipWhy2UniqaLink') }}</NuxtLink
+				>{{ t('RipWhy2d')
+				}}<NuxtLink :to="generaliLink">{{ t('RipWhy2GeneraliLink') }}</NuxtLink
+				>{{ t('RipWhy2e')
+				}}<NuxtLink :to="graweLink">{{ t('RipWhy2GraweLink') }}</NuxtLink
 				>{{ t('RipWhy2f') }}</p
 			>
 			<p>{{ t('RipWhy3') }}</p>
@@ -178,20 +175,24 @@ const { breadcrumbItems } = useArticlePageSeo({
 					}}</a>
 				</li>
 				<li
-					>{{ t('RipSourcesInsurersA') }}<NuxtLink :to="savaLink">{{
+					>{{ t('RipSourcesInsurersA')
+					}}<NuxtLink :to="savaLink">{{
 						t('RipSourcesInsurersSavaLink')
 					}}</NuxtLink
-					>{{ t('RipSourcesInsurersB') }}<NuxtLink :to="lovcenLink">{{
+					>{{ t('RipSourcesInsurersB')
+					}}<NuxtLink :to="lovcenLink">{{
 						t('RipSourcesInsurersLovcenLink')
 					}}</NuxtLink
-					>{{ t('RipSourcesInsurersC') }}<NuxtLink :to="uniqaLink">{{
+					>{{ t('RipSourcesInsurersC')
+					}}<NuxtLink :to="uniqaLink">{{
 						t('RipSourcesInsurersUniqaLink')
 					}}</NuxtLink
 					>{{ t('RipSourcesInsurersD') }}</li
 				>
 				<li>{{ t('RipSourcesMup') }}</li>
 				<li
-					>{{ t('RipSourcesChatA') }}<a
+					>{{ t('RipSourcesChatA')
+					}}<a
 						href="https://t.me/DN_Montenegro"
 						target="_blank"
 						rel="noopener nofollow"

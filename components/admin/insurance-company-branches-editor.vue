@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { CityId } from '~/enums/cities';
-import { createEmptyBranch, type AdminBranchRow } from '~/common/insurance-company-admin';
+import {
+	createEmptyBranch,
+	type AdminBranchRow,
+} from '~/common/insurance-company-admin';
 
 // Админка не переведена на другие языки (см. остальные components/admin/*) —
 // названия городов здесь просто латиница, без привязки к i18n/city.ts
@@ -60,7 +63,10 @@ const removeBranch = (index: number) => {
 			class="branch-row"
 		>
 			<div class="branch-row__header">
-				<span>Филиал #{{ index + 1 }}{{ branch.id ? ` (id ${branch.id})` : '' }}</span>
+				<span
+					>Филиал #{{ index + 1
+					}}{{ branch.id ? ` (id ${branch.id})` : '' }}</span
+				>
 				<el-button type="danger" size="small" @click="removeBranch(index)">
 					×
 				</el-button>

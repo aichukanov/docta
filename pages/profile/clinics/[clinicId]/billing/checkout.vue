@@ -2,10 +2,7 @@
 import clinicBillingI18n from '~/i18n/clinic-billing';
 import { getRegionalQuery } from '~/common/url-utils';
 import { BillingService } from '~/enums/billing-service';
-import {
-	formatEurCents,
-	type BillingOrderDetails,
-} from '~/interfaces/billing';
+import { formatEurCents, type BillingOrderDetails } from '~/interfaces/billing';
 import { ERROR_CODES } from '~/server/utils/api-codes';
 
 definePageMeta({

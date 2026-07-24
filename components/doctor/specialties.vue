@@ -21,10 +21,14 @@ const specialtyLink = (specialtyId: string) => ({
 
 <template>
 	<div class="doctor-specialty">
-		<template v-for="(specialtyId, index) in specialtyIdList" :key="specialtyId">
-			<NuxtLink class="doctor-specialty__link" :to="specialtyLink(specialtyId)">{{
-				t(`specialty_${specialtyId}`)
-			}}</NuxtLink
+		<template
+			v-for="(specialtyId, index) in specialtyIdList"
+			:key="specialtyId"
+		>
+			<NuxtLink
+				class="doctor-specialty__link"
+				:to="specialtyLink(specialtyId)"
+				>{{ t(`specialty_${specialtyId}`) }}</NuxtLink
 			><span v-if="index < specialtyIdList.length - 1">, </span>
 		</template>
 	</div>

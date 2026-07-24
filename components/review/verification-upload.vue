@@ -92,7 +92,11 @@ const upload = async () => {
 
 		<div class="upload-actions">
 			<el-button @click="fileInput?.click()">
-				{{ selectedFile ? t('VerificationChangeFile') : t('VerificationSelectFile') }}
+				{{
+					selectedFile
+						? t('VerificationChangeFile')
+						: t('VerificationSelectFile')
+				}}
 			</el-button>
 			<el-button
 				v-if="selectedFile"

@@ -115,7 +115,9 @@ const applyQuickCity = () => {
 	if (!quickCity.value) return;
 	emit(
 		'update:value',
-		props.multiple ? [...props.value, quickCity.value.value] : [quickCity.value.value],
+		props.multiple
+			? [...props.value, quickCity.value.value]
+			: [quickCity.value.value],
 	);
 };
 </script>

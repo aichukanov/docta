@@ -60,10 +60,16 @@ const dobrotaHospitalLink = computed(() =>
 	getClinicLink('specijalna-bolnica-za-psihijatriju-dobrota-kotor'),
 );
 const brezovikHospitalLink = computed(() =>
-	getClinicLink('specijalna-bolnica-za-plucne-bolesti-dr-jovan-bulajic-brezovik'),
+	getClinicLink(
+		'specijalna-bolnica-za-plucne-bolesti-dr-jovan-bulajic-brezovik',
+	),
 );
-const niksicHospitalLink = computed(() => getClinicLink('opsta-bolnica-niksic'));
-const beraneHospitalLink = computed(() => getClinicLink('opsta-bolnica-berane'));
+const niksicHospitalLink = computed(() =>
+	getClinicLink('opsta-bolnica-niksic'),
+);
+const beraneHospitalLink = computed(() =>
+	getClinicLink('opsta-bolnica-berane'),
+);
 const pljevljaHospitalLink = computed(() =>
 	getClinicLink('opsta-bolnica-pljevlja'),
 );
@@ -162,13 +168,16 @@ const { breadcrumbItems } = useArticlePageSeo({
 
 		<ArticleSection id="section-state-system" :title="t('HcsToc_state-system')">
 			<p
-				>{{ t('HcsState1a') }}<NuxtLink :to="risanHospitalLink">{{
+				>{{ t('HcsState1a')
+				}}<NuxtLink :to="risanHospitalLink">{{
 					t('HcsState1RisanLink')
 				}}</NuxtLink
-				>{{ t('HcsState1b') }}<NuxtLink :to="brezovikHospitalLink">{{
+				>{{ t('HcsState1b')
+				}}<NuxtLink :to="brezovikHospitalLink">{{
 					t('HcsState1BrezovikLink')
 				}}</NuxtLink
-				>{{ t('HcsState1b2') }}<NuxtLink :to="dobrotaHospitalLink">{{
+				>{{ t('HcsState1b2')
+				}}<NuxtLink :to="dobrotaHospitalLink">{{
 					t('HcsState1DobrotaLink')
 				}}</NuxtLink
 				>{{ t('HcsState1c') }}</p
@@ -184,10 +193,12 @@ const { breadcrumbItems } = useArticlePageSeo({
 					<NuxtLink :to="kotorHospitalLink">{{
 						t('HcsStateLevel2KotorLink')
 					}}</NuxtLink
-					>{{ t('HcsStateLevel2c') }}<NuxtLink :to="niksicHospitalLink">{{
+					>{{ t('HcsStateLevel2c')
+					}}<NuxtLink :to="niksicHospitalLink">{{
 						t('HcsStateLevel2NiksicLink')
 					}}</NuxtLink
-					>{{ t('HcsStateLevel2c2') }}<NuxtLink :to="beraneHospitalLink">{{
+					>{{ t('HcsStateLevel2c2')
+					}}<NuxtLink :to="beraneHospitalLink">{{
 						t('HcsStateLevel2BeraneLink')
 					}}</NuxtLink
 					>{{ t('HcsStateLevel2c3') }}
@@ -198,15 +209,15 @@ const { breadcrumbItems } = useArticlePageSeo({
 					<NuxtLink :to="cetinjeHospitalLink">{{
 						t('HcsStateLevel2CetinjeLink')
 					}}</NuxtLink
-					>{{ t('HcsStateLevel2e') }}<NuxtLink :to="pljevljaHospitalLink">{{
+					>{{ t('HcsStateLevel2e')
+					}}<NuxtLink :to="pljevljaHospitalLink">{{
 						t('HcsStateLevel2PljevljaLink')
 					}}</NuxtLink
 					>{{ t('HcsStateLevel2e2') }}
 				</li>
 				<li
-					>{{ t('HcsStateLevel3Pre') }}<NuxtLink :to="kccgLink">{{
-						t('HcsStateLevel3KccgLink')
-					}}</NuxtLink
+					>{{ t('HcsStateLevel3Pre')
+					}}<NuxtLink :to="kccgLink">{{ t('HcsStateLevel3KccgLink') }}</NuxtLink
 					>{{ t('HcsStateLevel3a') }}</li
 				>
 			</ul>
@@ -224,11 +235,10 @@ const { breadcrumbItems } = useArticlePageSeo({
 
 		<ArticleSection id="section-knjizica" :title="t('HcsToc_knjizica')">
 			<p
-				>{{ t('HcsKnjizica1a') }}<a
-					:href="SL_LIST_URL"
-					target="_blank"
-					rel="noopener nofollow"
-					>{{ t('HcsKnjizica1SlListLink') }}</a
+				>{{ t('HcsKnjizica1a')
+				}}<a :href="SL_LIST_URL" target="_blank" rel="noopener nofollow">{{
+					t('HcsKnjizica1SlListLink')
+				}}</a
 				>{{ t('HcsKnjizica1b') }}</p
 			>
 			<p>{{ t('HcsKnjizica2') }}</p>
@@ -264,25 +274,17 @@ const { breadcrumbItems } = useArticlePageSeo({
 		<ArticleSection id="section-insurance" :title="t('HcsToc_insurance')">
 			<p>
 				{{ t('HcsInsurance1a') }}
-				<NuxtLink :to="savaLink">{{
-					t('HcsInsurance1SavaLink')
-				}}</NuxtLink
+				<NuxtLink :to="savaLink">{{ t('HcsInsurance1SavaLink') }}</NuxtLink
 				>{{ t('HcsInsurance1b') }}
-				<NuxtLink :to="lovcenLink">{{
-					t('HcsInsurance1LovcenLink')
-				}}</NuxtLink
+				<NuxtLink :to="lovcenLink">{{ t('HcsInsurance1LovcenLink') }}</NuxtLink
 				>{{ t('HcsInsurance1c') }}
-				<NuxtLink :to="uniqaLink">{{
-					t('HcsInsurance1UniqaLink')
-				}}</NuxtLink
+				<NuxtLink :to="uniqaLink">{{ t('HcsInsurance1UniqaLink') }}</NuxtLink
 				>{{ t('HcsInsurance1d') }}
 				<NuxtLink :to="generaliLink">{{
 					t('HcsInsurance1GeneraliLink')
 				}}</NuxtLink
 				>{{ t('HcsInsurance1e') }}
-				<NuxtLink :to="graweLink">{{
-					t('HcsInsurance1GraweLink')
-				}}</NuxtLink
+				<NuxtLink :to="graweLink">{{ t('HcsInsurance1GraweLink') }}</NuxtLink
 				>{{ t('HcsInsurance1f') }}
 			</p>
 			<p>{{ t('HcsInsurance2') }}</p>
@@ -302,12 +304,9 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<ul>
 				<li>{{ t('HcsSourcesPhones') }}</li>
 				<li>
-					<a
-						href="https://fzocg.me"
-						target="_blank"
-						rel="noopener nofollow"
-						>{{ t('HcsSourcesFzo') }}</a
-					>
+					<a href="https://fzocg.me" target="_blank" rel="noopener nofollow">{{
+						t('HcsSourcesFzo')
+					}}</a>
 				</li>
 				<li>
 					<a

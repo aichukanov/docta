@@ -11,12 +11,12 @@ export default {
 			MentalHealthDescription:
 				'How mental health care works in Montenegro: state mental health centers and psychiatric hospitals, finding a therapist who speaks your language, continuing your medication after relocation, prices with and without the zdravstvena knjižica, and where to turn in a crisis.',
 
-			'MhmToc_system': 'How mental health care is organized',
-			'MhmToc_therapy': 'Therapy: finding a specialist in your language',
-			'MhmToc_prescriptions': 'Prescriptions: continuing treatment after moving',
-			'MhmToc_costs': 'What it costs: with and without a knjižica',
-			'MhmToc_crisis': 'Crisis situations: where to get urgent help',
-			'MhmToc_sources': 'Useful contacts and sources',
+			MhmToc_system: 'How mental health care is organized',
+			MhmToc_therapy: 'Therapy: finding a specialist in your language',
+			MhmToc_prescriptions: 'Prescriptions: continuing treatment after moving',
+			MhmToc_costs: 'What it costs: with and without a knjižica',
+			MhmToc_crisis: 'Crisis situations: where to get urgent help',
+			MhmToc_sources: 'Useful contacts and sources',
 
 			MhmSystem1:
 				'Taking care of your mental health is as normal a part of medicine as treating any other condition, and Montenegro has dedicated public infrastructure for it:',
@@ -102,17 +102,16 @@ export default {
 			MhmCtaButton: 'Psychiatrists in Montenegro',
 		},
 		'ru': {
-			MentalHealthTitle:
-				'Психологи, психиатры и антидепрессанты в Черногории',
+			MentalHealthTitle: 'Психологи, психиатры и антидепрессанты в Черногории',
 			MentalHealthDescription:
 				'Как устроена помощь в сфере ментального здоровья в Черногории: государственные центры ментального здоровья и психиатрические больницы, поиск терапевта на своём языке, продолжение медикаментозного лечения после переезда, цены с книжицей и без, куда обращаться в кризисной ситуации.',
 
-			'MhmToc_system': 'Как устроена помощь в сфере ментального здоровья',
-			'MhmToc_therapy': 'Терапия: как найти специалиста на своём языке',
-			'MhmToc_prescriptions': 'Рецепты: как продолжить лечение после переезда',
-			'MhmToc_costs': 'Сколько это стоит: с книжицей и без',
-			'MhmToc_crisis': 'Кризисные ситуации: где получить срочную помощь',
-			'MhmToc_sources': 'Полезные контакты и источники',
+			MhmToc_system: 'Как устроена помощь в сфере ментального здоровья',
+			MhmToc_therapy: 'Терапия: как найти специалиста на своём языке',
+			MhmToc_prescriptions: 'Рецепты: как продолжить лечение после переезда',
+			MhmToc_costs: 'Сколько это стоит: с книжицей и без',
+			MhmToc_crisis: 'Кризисные ситуации: где получить срочную помощь',
+			MhmToc_sources: 'Полезные контакты и источники',
 
 			MhmSystem1:
 				'Забота о ментальном здоровье — такая же нормальная часть медицины, как лечение любой другой болезни, и в Черногории для неё есть отдельная государственная инфраструктура:',
@@ -197,17 +196,17 @@ export default {
 			MhmCtaButton: 'Психиатры в Черногории',
 		},
 		'sr': {
-			MentalHealthTitle:
-				'Psiholozi, psihijatri i antidepresivi u Crnoj Gori',
+			MentalHealthTitle: 'Psiholozi, psihijatri i antidepresivi u Crnoj Gori',
 			MentalHealthDescription:
 				'Kako funkcioniše zaštita mentalnog zdravlja u Crnoj Gori: državni centri za mentalno zdravlje i psihijatrijske bolnice, kako naći terapeuta koji govori vaš jezik, nastavak terapije ljekovima nakon preseljenja, cijene sa zdravstvenom knjižicom i bez nje, kome se obratiti u kriznoj situaciji.',
 
-			'MhmToc_system': 'Kako je organizovana zaštita mentalnog zdravlja',
-			'MhmToc_therapy': 'Terapija: kako naći stručnjaka na svom jeziku',
-			'MhmToc_prescriptions': 'Recepti: kako nastaviti liječenje nakon preseljenja',
-			'MhmToc_costs': 'Koliko to košta: sa knjižicom i bez nje',
-			'MhmToc_crisis': 'Krizne situacije: gdje dobiti hitnu pomoć',
-			'MhmToc_sources': 'Korisni kontakti i izvori',
+			MhmToc_system: 'Kako je organizovana zaštita mentalnog zdravlja',
+			MhmToc_therapy: 'Terapija: kako naći stručnjaka na svom jeziku',
+			MhmToc_prescriptions:
+				'Recepti: kako nastaviti liječenje nakon preseljenja',
+			MhmToc_costs: 'Koliko to košta: sa knjižicom i bez nje',
+			MhmToc_crisis: 'Krizne situacije: gdje dobiti hitnu pomoć',
+			MhmToc_sources: 'Korisni kontakti i izvori',
 
 			MhmSystem1:
 				'Briga o mentalnom zdravlju jednako je normalan dio medicine kao i liječenje bilo koje druge bolesti, a Crna Gora za nju ima posebnu državnu infrastrukturu:',
@@ -293,17 +292,16 @@ export default {
 			MhmCtaButton: 'Psihijatri u Crnoj Gori',
 		},
 		'sr-cyrl': {
-			MentalHealthTitle:
-				'Психолози, психијатри и антидепресиви у Црној Гори',
+			MentalHealthTitle: 'Психолози, психијатри и антидепресиви у Црној Гори',
 			MentalHealthDescription:
 				'Како функционише заштита менталног здравља у Црној Гори: државни центри за ментално здравље и психијатријске болнице, како наћи терапеута који говори ваш језик, наставак терапије љековима након пресељења, цијене са здравственом књижицом и без ње, коме се обратити у кризној ситуацији.',
 
-			'MhmToc_system': 'Како је организована заштита менталног здравља',
-			'MhmToc_therapy': 'Терапија: како наћи стручњака на свом језику',
-			'MhmToc_prescriptions': 'Рецепти: како наставити лијечење након пресељења',
-			'MhmToc_costs': 'Колико то кошта: са књижицом и без ње',
-			'MhmToc_crisis': 'Кризне ситуације: гдје добити хитну помоћ',
-			'MhmToc_sources': 'Корисни контакти и извори',
+			MhmToc_system: 'Како је организована заштита менталног здравља',
+			MhmToc_therapy: 'Терапија: како наћи стручњака на свом језику',
+			MhmToc_prescriptions: 'Рецепти: како наставити лијечење након пресељења',
+			MhmToc_costs: 'Колико то кошта: са књижицом и без ње',
+			MhmToc_crisis: 'Кризне ситуације: гдје добити хитну помоћ',
+			MhmToc_sources: 'Корисни контакти и извори',
 
 			MhmSystem1:
 				'Брига о менталном здрављу једнако је нормалан дио медицине као и лијечење било које друге болести, а Црна Гора за њу има посебну државну инфраструктуру:',
@@ -394,12 +392,12 @@ export default {
 			MentalHealthDescription:
 				'Wie die psychische Gesundheitsversorgung in Montenegro funktioniert: staatliche Zentren für mentale Gesundheit und psychiatrische Kliniken, einen Therapeuten in Ihrer Sprache finden, die Medikation nach dem Umzug fortsetzen, Preise mit und ohne zdravstvena knjižica und wohin man sich in einer Krise wendet.',
 
-			'MhmToc_system': 'So ist die psychische Gesundheitsversorgung organisiert',
-			'MhmToc_therapy': 'Therapie: einen Spezialisten in Ihrer Sprache finden',
-			'MhmToc_prescriptions': 'Rezepte: die Behandlung nach dem Umzug fortsetzen',
-			'MhmToc_costs': 'Was es kostet: mit und ohne knjižica',
-			'MhmToc_crisis': 'Krisensituationen: wo es dringend Hilfe gibt',
-			'MhmToc_sources': 'Nützliche Kontakte und Quellen',
+			MhmToc_system: 'So ist die psychische Gesundheitsversorgung organisiert',
+			MhmToc_therapy: 'Therapie: einen Spezialisten in Ihrer Sprache finden',
+			MhmToc_prescriptions: 'Rezepte: die Behandlung nach dem Umzug fortsetzen',
+			MhmToc_costs: 'Was es kostet: mit und ohne knjižica',
+			MhmToc_crisis: 'Krisensituationen: wo es dringend Hilfe gibt',
+			MhmToc_sources: 'Nützliche Kontakte und Quellen',
 
 			MhmSystem1:
 				'Die Sorge um die psychische Gesundheit ist ein ebenso normaler Teil der Medizin wie die Behandlung jeder anderen Erkrankung — und Montenegro hat dafür eine eigene staatliche Infrastruktur:',
@@ -490,12 +488,12 @@ export default {
 			MentalHealthDescription:
 				'Karadağ’da ruh sağlığı hizmetleri nasıl işler: devlet ruh sağlığı merkezleri ve psikiyatri hastaneleri, kendi dilinizde terapist bulma, taşındıktan sonra ilaç tedavisine devam etme, zdravstvena knjižica ile ve olmadan fiyatlar, kriz durumunda nereye başvurulur.',
 
-			'MhmToc_system': 'Ruh sağlığı hizmetleri nasıl örgütlenmiştir',
-			'MhmToc_therapy': 'Terapi: kendi dilinizde uzman bulmak',
-			'MhmToc_prescriptions': 'Reçeteler: taşındıktan sonra tedaviye devam etmek',
-			'MhmToc_costs': 'Maliyetler: knjižica ile ve olmadan',
-			'MhmToc_crisis': 'Kriz durumları: acil yardım nereden alınır',
-			'MhmToc_sources': 'Faydalı iletişim bilgileri ve kaynaklar',
+			MhmToc_system: 'Ruh sağlığı hizmetleri nasıl örgütlenmiştir',
+			MhmToc_therapy: 'Terapi: kendi dilinizde uzman bulmak',
+			MhmToc_prescriptions: 'Reçeteler: taşındıktan sonra tedaviye devam etmek',
+			MhmToc_costs: 'Maliyetler: knjižica ile ve olmadan',
+			MhmToc_crisis: 'Kriz durumları: acil yardım nereden alınır',
+			MhmToc_sources: 'Faydalı iletişim bilgileri ve kaynaklar',
 
 			MhmSystem1:
 				'Ruh sağlığına özen göstermek, tıbbın diğer her hastalığın tedavisi kadar olağan bir parçasıdır ve Karadağ’da bunun için ayrı bir devlet altyapısı vardır:',
@@ -568,7 +566,8 @@ export default {
 			MhmSourcesDobrotaLink:
 				'Specijalna bolnica za psihijatriju “Dobrota” (Kotor)',
 			MhmSourcesDobrotaEnd: ' — ülkenin uzmanlaşmış psikiyatri hastanesi;',
-			MhmSourcesKccgLink: 'Karadağ Klinik Merkezi’nin (KCCG) psikiyatri kliniği',
+			MhmSourcesKccgLink:
+				'Karadağ Klinik Merkezi’nin (KCCG) psikiyatri kliniği',
 			MhmSourcesKccgEnd: ';',
 			MhmSourcesFzo:
 				'Karadağ Sağlık Sigortası Fonu (FZOCG) — devlet sigortasının kapsamı: fzocg.me;',

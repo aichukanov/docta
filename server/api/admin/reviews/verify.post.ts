@@ -42,7 +42,12 @@ export default defineEventHandler(async (event) => {
 		`UPDATE review_verification_files
 		SET status = ?, reviewed_at = NOW(), reviewed_by = ?, rejection_reason = ?
 		WHERE review_id = ?`,
-		[newStatus, moderator.id, action === 'reject' ? reason || null : null, reviewId],
+		[
+			newStatus,
+			moderator.id,
+			action === 'reject' ? reason || null : null,
+			reviewId,
+		],
 	);
 
 	await executeQuery('UPDATE reviews SET is_verified = ? WHERE id = ?', [

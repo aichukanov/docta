@@ -21,9 +21,11 @@ const detailLink = computed(() => ({
 		<ClinicLogo :logoUrl="company.logoUrl" :name="company.name" :size="56" />
 		<div class="insurance-summary-card__info">
 			<h2 class="insurance-summary-card__name">{{ company.name }}</h2>
-			<span v-if="company.localName" class="insurance-summary-card__local-name">{{
-				company.localName
-			}}</span>
+			<span
+				v-if="company.localName"
+				class="insurance-summary-card__local-name"
+				>{{ company.localName }}</span
+			>
 			<span class="insurance-summary-card__meta">{{ branchesLabel }}</span>
 		</div>
 	</NuxtLink>

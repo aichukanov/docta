@@ -1,0 +1,41 @@
+[
+  {
+    "inn_en": "diosmin",
+    "inn_ru": "диосмин",
+    "src": "diosmin",
+    "markets": {
+      "RU": [
+        {"brand": "Детралекс", "also": ["hesperidin"]},
+        {"brand": "Венарус", "also": ["hesperidin"]}
+      ],
+      "UA": [
+        {"brand": "Детралекс", "also": ["hesperidin"]}
+      ],
+      "DE": [
+        {"brand": "Daflon", "also": ["hesperidin"]}
+      ],
+      "PL": [
+        {"brand": "Detralex", "also": ["hesperidin"]}
+      ],
+      "TR": [
+        {"brand": "Daflon", "also": ["hesperidin"]}
+      ],
+      "US": [
+        {"brand": "Daflon (supplement)", "also": ["hesperidin"]}
+      ]
+    },
+    "available_note": "combo-enrich: micronized diosmin+hesperidin (Detralex/Daflon/Venarus)"
+  },
+  {
+    "inn_en": "ethinylestradiol",
+    "inn_ru": "этинилэстрадиол",
+    "src": "etinilestradiol",
+    "markets": {
+      "RU": [
+        {"brand": "Логест", "also": ["gestoden"]},
+        {"brand": "Линдинет", "also": ["gestoden"]}
+      ]
+    },
+    "available_note": "combo-enrich: ethinylestradiol+gestodene COCs"
+  }
+]

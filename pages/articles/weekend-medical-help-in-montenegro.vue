@@ -82,7 +82,13 @@ const pharmaciesArticleLink = computed(() => ({
 }));
 
 // Секции статьи: id → ключи заголовков для TOC и разметки
-const SECTION_IDS = ['overview', 'pharmacies', 'hospitals', 'clinics', 'sources'] as const;
+const SECTION_IDS = [
+	'overview',
+	'pharmacies',
+	'hospitals',
+	'clinics',
+	'sources',
+] as const;
 
 const articleToc = computed(() =>
 	SECTION_IDS.map((id) => ({
@@ -138,31 +144,33 @@ const { breadcrumbItems } = useArticlePageSeo({
 
 		<ArticleSection id="section-hospitals" :title="t('WmhToc_hospitals')">
 			<p
-				>{{ t('WmhHospitals1a') }}<NuxtLink :to="kccgLink">{{
-					t('WmhHospitals1KccgLink')
-				}}</NuxtLink
-				>{{ t('WmhHospitals1b') }}<NuxtLink :to="kotorHospitalLink">{{
+				>{{ t('WmhHospitals1a')
+				}}<NuxtLink :to="kccgLink">{{ t('WmhHospitals1KccgLink') }}</NuxtLink
+				>{{ t('WmhHospitals1b')
+				}}<NuxtLink :to="kotorHospitalLink">{{
 					t('WmhHospitals1KotorLink')
 				}}</NuxtLink
-				>{{ t('WmhHospitals1c') }}<NuxtLink :to="barHospitalLink">{{
+				>{{ t('WmhHospitals1c')
+				}}<NuxtLink :to="barHospitalLink">{{
 					t('WmhHospitals1BarLink')
 				}}</NuxtLink
-				>{{ t('WmhHospitals1d') }}<NuxtLink :to="bijeloPoljeHospitalLink">{{
+				>{{ t('WmhHospitals1d')
+				}}<NuxtLink :to="bijeloPoljeHospitalLink">{{
 					t('WmhHospitals1BijeloPoljeLink')
 				}}</NuxtLink
-				>{{ t('WmhHospitals1e') }}<NuxtLink :to="meljineHospitalLink">{{
+				>{{ t('WmhHospitals1e')
+				}}<NuxtLink :to="meljineHospitalLink">{{
 					t('WmhHospitals1MeljineLink')
 				}}</NuxtLink
-				>{{ t('WmhHospitals1f') }}<NuxtLink :to="daniloHospitalLink">{{
+				>{{ t('WmhHospitals1f')
+				}}<NuxtLink :to="daniloHospitalLink">{{
 					t('WmhHospitals1DaniloLink')
 				}}</NuxtLink
 				>{{ t('WmhHospitals1g') }}</p
 			>
 			<p>
 				{{ t('WmhHospitals2') }}
-				<NuxtLink :to="codraHospitalLink">{{
-					t('WmhHospitalsLink')
-				}}</NuxtLink>
+				<NuxtLink :to="codraHospitalLink">{{ t('WmhHospitalsLink') }}</NuxtLink>
 				{{ t('WmhHospitalsMid') }}
 				{{ t('WmhHospitalsEnd') }}
 			</p>
@@ -176,16 +184,20 @@ const { breadcrumbItems } = useArticlePageSeo({
 					<NuxtLink :to="hipokratPodgoricaLink">{{
 						t('WmhClinicsHipokratLink')
 					}}</NuxtLink
-					>{{ t('WmhClinicsPodgoricaA') }}<NuxtLink
-						:to="milmedikaPodgoricaLink"
-						>{{ t('WmhClinicsMilmedikaPgLink') }}</NuxtLink
-					>{{ t('WmhClinicsPodgoricaB') }}<NuxtLink
-						:to="mojLabPodgoricaLink"
-						>{{ t('WmhClinicsMojLabPgLink') }}</NuxtLink
-					>{{ t('WmhClinicsPodgoricaC') }}<NuxtLink
-						:to="mojLabPedijatriaLink"
-						>{{ t('WmhClinicsMojLabPedLink') }}</NuxtLink
-					>{{ t('WmhClinicsPodgoricaD') }}<NuxtLink :to="medikidLink">{{
+					>{{ t('WmhClinicsPodgoricaA')
+					}}<NuxtLink :to="milmedikaPodgoricaLink">{{
+						t('WmhClinicsMilmedikaPgLink')
+					}}</NuxtLink
+					>{{ t('WmhClinicsPodgoricaB')
+					}}<NuxtLink :to="mojLabPodgoricaLink">{{
+						t('WmhClinicsMojLabPgLink')
+					}}</NuxtLink
+					>{{ t('WmhClinicsPodgoricaC')
+					}}<NuxtLink :to="mojLabPedijatriaLink">{{
+						t('WmhClinicsMojLabPedLink')
+					}}</NuxtLink
+					>{{ t('WmhClinicsPodgoricaD')
+					}}<NuxtLink :to="medikidLink">{{
 						t('WmhClinicsMedikidLink')
 					}}</NuxtLink
 					>{{ t('WmhClinicsPodgoricaE') }}</li
@@ -195,7 +207,8 @@ const { breadcrumbItems } = useArticlePageSeo({
 					<NuxtLink :to="milmedikaBudvaLink">{{
 						t('WmhClinicsMilmedikaBdLink')
 					}}</NuxtLink
-					>{{ t('WmhClinicsBudvaA') }}<NuxtLink :to="mojLabBudvaLink">{{
+					>{{ t('WmhClinicsBudvaA')
+					}}<NuxtLink :to="mojLabBudvaLink">{{
 						t('WmhClinicsMojLabBdLink')
 					}}</NuxtLink
 					>{{ t('WmhClinicsBudvaB') }}</li
@@ -205,9 +218,8 @@ const { breadcrumbItems } = useArticlePageSeo({
 					<NuxtLink :to="drMasonicicLink">{{
 						t('WmhClinicsMasonicicLink')
 					}}</NuxtLink
-					>{{ t('WmhClinicsBarA') }}<NuxtLink :to="a3MedicalLink">{{
-						t('WmhClinicsA3Link')
-					}}</NuxtLink
+					>{{ t('WmhClinicsBarA')
+					}}<NuxtLink :to="a3MedicalLink">{{ t('WmhClinicsA3Link') }}</NuxtLink
 					>{{ t('WmhClinicsBarB') }}</li
 				>
 				<li
@@ -215,7 +227,8 @@ const { breadcrumbItems } = useArticlePageSeo({
 					<NuxtLink :to="mansaMedicaLink">{{
 						t('WmhClinicsMansaLink')
 					}}</NuxtLink
-					>{{ t('WmhClinicsTivatA') }}<NuxtLink :to="dentalExpertLink">{{
+					>{{ t('WmhClinicsTivatA')
+					}}<NuxtLink :to="dentalExpertLink">{{
 						t('WmhClinicsDentalExpertLink')
 					}}</NuxtLink
 					>{{ t('WmhClinicsTivatB') }}</li

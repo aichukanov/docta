@@ -113,7 +113,8 @@ const { breadcrumbItems } = useArticlePageSeo({
 				<li>{{ t('MhmSystemLevel1') }}</li>
 				<li>{{ t('MhmSystemLevel2') }}</li>
 				<li
-					>{{ t('MhmSystemLevel3a') }}<NuxtLink :to="dobrotaHospitalLink">{{
+					>{{ t('MhmSystemLevel3a')
+					}}<NuxtLink :to="dobrotaHospitalLink">{{
 						t('MhmSystemLevel3DobrotaLink')
 					}}</NuxtLink
 					>{{ t('MhmSystemLevel3b') }}</li
@@ -134,16 +135,14 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t('MhmTherapy2') }}</p>
 			<p>{{ t('MhmTherapy3') }}</p>
 			<p
-				>{{ t('MhmTherapy3Groups') }}<a
-					:href="AA_BUDVA_URL"
-					target="_blank"
-					rel="noopener nofollow"
-					>{{ t('MhmTherapy3GroupsAaLink') }}</a
-				>{{ t('MhmTherapy3GroupsMid') }}<a
-					:href="NARDOS_URL"
-					target="_blank"
-					rel="noopener nofollow"
-					>{{ t('MhmTherapy3GroupsNardosLink') }}</a
+				>{{ t('MhmTherapy3Groups')
+				}}<a :href="AA_BUDVA_URL" target="_blank" rel="noopener nofollow">{{
+					t('MhmTherapy3GroupsAaLink')
+				}}</a
+				>{{ t('MhmTherapy3GroupsMid')
+				}}<a :href="NARDOS_URL" target="_blank" rel="noopener nofollow">{{
+					t('MhmTherapy3GroupsNardosLink')
+				}}</a
 				>{{ t('MhmTherapy3GroupsEnd') }}</p
 			>
 			<p>
@@ -160,7 +159,8 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t('MhmRx1') }}</p>
 			<p>{{ t('MhmRx2') }}</p>
 			<p
-				>{{ t('MhmRx3a') }}<NuxtLink :to="sertralineLink">{{
+				>{{ t('MhmRx3a')
+				}}<NuxtLink :to="sertralineLink">{{
 					t('MhmRx3SertralineLink')
 				}}</NuxtLink
 				>{{ t('MhmRx3b') }}</p
@@ -196,18 +196,13 @@ const { breadcrumbItems } = useArticlePageSeo({
 					>{{ t('MhmSourcesDobrotaEnd') }}</li
 				>
 				<li
-					><NuxtLink :to="kccgLink">{{
-						t('MhmSourcesKccgLink')
-					}}</NuxtLink
+					><NuxtLink :to="kccgLink">{{ t('MhmSourcesKccgLink') }}</NuxtLink
 					>{{ t('MhmSourcesKccgEnd') }}</li
 				>
 				<li>
-					<a
-						href="https://fzocg.me"
-						target="_blank"
-						rel="noopener nofollow"
-						>{{ t('MhmSourcesFzo') }}</a
-					>
+					<a href="https://fzocg.me" target="_blank" rel="noopener nofollow">{{
+						t('MhmSourcesFzo')
+					}}</a>
 				</li>
 				<li>
 					<a

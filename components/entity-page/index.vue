@@ -29,7 +29,12 @@ const backToSearch = () => {
 </script>
 
 <template>
-	<div class="entity-page" role="main" :aria-label="t('AriaMainContent')">
+	<div
+		class="entity-page"
+		:class="{ 'entity-page--with-nav': isFound && tabs.length > 1 }"
+		role="main"
+		:aria-label="t('AriaMainContent')"
+	>
 		<nav class="entity-page__back" :aria-label="t('AriaBackToSearch')">
 			<el-button @click="backToSearch()" :icon="ArrowLeft">
 				{{ t('ToSearchPage') }}
@@ -46,19 +51,23 @@ const backToSearch = () => {
 			<p>{{ loadingText }}</p>
 		</div>
 
-		<template v-else-if="isFound">
+		<div v-else-if="isFound" class="entity-page__layout">
 			<div class="entity-page__hero">
 				<slot name="hero" />
 			</div>
 
 			<ClientOnly>
-				<EntityPageTabBar v-if="tabs.length > 1" :tabs="tabs" />
+				<EntityPageTabBar
+					v-if="tabs.length > 1"
+					:tabs="tabs"
+					class="entity-page__nav"
+				/>
 			</ClientOnly>
 
 			<div class="entity-page__body">
 				<slot name="sections" />
 			</div>
-		</template>
+		</div>
 
 		<div v-else class="entity-page__not-found" role="status" aria-live="polite">
 			<p>{{ notFoundText }}</p>
@@ -88,6 +97,36 @@ const backToSearch = () => {
 	flex-direction: column;
 	gap: var(--spacing-2xl);
 	padding: var(--spacing-2xl) 0;
+}
+
+/* Широкие экраны: навигация по секциям выносится в левый рельс вне колонки
+   контента. Рельс (грид-область nav) охватывает высоту hero+body, поэтому
+   sticky-список внутри него прокручивается вместе со страницей. */
+@media (min-width: 1024px) {
+	.entity-page--with-nav {
+		max-width: 1152px; /* 220 рельс + 32 gap + ~900 контент */
+	}
+
+	.entity-page--with-nav .entity-page__layout {
+		display: grid;
+		grid-template-columns: 220px minmax(0, 1fr);
+		column-gap: var(--spacing-2xl);
+		grid-template-areas:
+			'nav hero'
+			'nav body';
+	}
+
+	.entity-page--with-nav .entity-page__hero {
+		grid-area: hero;
+	}
+
+	.entity-page--with-nav .entity-page__nav {
+		grid-area: nav;
+	}
+
+	.entity-page--with-nav .entity-page__body {
+		grid-area: body;
+	}
 }
 
 @media (max-width: 500px) {

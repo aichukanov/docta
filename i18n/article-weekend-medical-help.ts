@@ -5,7 +5,7 @@
 // Актуальность: июль 2026.
 export default {
 	messages: {
-		en: {
+		'en': {
 			WeekendMedicalHelpTitle:
 				'Pharmacies and clinics in Montenegro open on weekends',
 			WeekendMedicalHelpDescription:
@@ -45,10 +45,10 @@ export default {
 			WmhHospitals1f: ' in Herceg Novi, and ',
 			WmhHospitals1DaniloLink: 'Danilo I hospital',
 			WmhHospitals1g: ' in Cetinje.',
-			WmhHospitals2:
-				'The country’s one private hospital,',
+			WmhHospitals2: 'The country’s one private hospital,',
 			WmhHospitalsLink: 'Codra Hospital',
-			WmhHospitalsMid: 'in Podgorica, also runs 24/7, weekends included. Routine appointments under the health card at public clinics normally do not run on weekends — only urgent cases through an admission unit or ambulance (124).',
+			WmhHospitalsMid:
+				'in Podgorica, also runs 24/7, weekends included. Routine appointments under the health card at public clinics normally do not run on weekends — only urgent cases through an admission unit or ambulance (124).',
 			WmhHospitalsEnd: '',
 
 			WmhClinicsIntro:
@@ -100,7 +100,7 @@ export default {
 				'Our clinic catalog shows the working hours of every clinic — find one open near you.',
 			WmhCtaButton: 'Open the clinic catalog',
 		},
-		ru: {
+		'ru': {
 			WeekendMedicalHelpTitle:
 				'Аптеки и клиники в Черногории, открытые в выходные',
 			WeekendMedicalHelpDescription:
@@ -195,7 +195,7 @@ export default {
 				'В каталоге docta.me указаны часы работы каждой клиники — найдите открытую поблизости.',
 			WmhCtaButton: 'Открыть каталог клиник',
 		},
-		sr: {
+		'sr': {
 			WeekendMedicalHelpTitle:
 				'Apoteke i klinike u Crnoj Gori otvorene vikendom',
 			WeekendMedicalHelpDescription:
@@ -385,7 +385,7 @@ export default {
 				'У каталогу docta.me назначено је радно вријеме сваке клинике — пронађите отворену у близини.',
 			WmhCtaButton: 'Отворите каталог клиника',
 		},
-		de: {
+		'de': {
 			WeekendMedicalHelpTitle:
 				'Apotheken und Kliniken in Montenegro, die am Wochenende geöffnet haben',
 			WeekendMedicalHelpDescription:
@@ -417,11 +417,9 @@ export default {
 			WmhHospitals1b: ' in Podgorica, das ',
 			WmhHospitals1KotorLink: 'Allgemeine Krankenhaus in Kotor',
 			WmhHospitals1c: ', das ',
-			WmhHospitals1BarLink:
-				'Allgemeine Krankenhaus „Blažo Orlandić“ in Bar',
+			WmhHospitals1BarLink: 'Allgemeine Krankenhaus „Blažo Orlandić“ in Bar',
 			WmhHospitals1d: ', das ',
-			WmhHospitals1BijeloPoljeLink:
-				'Allgemeine Krankenhaus in Bijelo Polje',
+			WmhHospitals1BijeloPoljeLink: 'Allgemeine Krankenhaus in Bijelo Polje',
 			WmhHospitals1e: ', das ',
 			WmhHospitals1MeljineLink: 'Krankenhaus Meljine',
 			WmhHospitals1f: ' in Herceg Novi und das ',
@@ -482,7 +480,7 @@ export default {
 				'Unser Klinik-Katalog zeigt die Öffnungszeiten jeder Klinik — finden Sie eine geöffnete in Ihrer Nähe.',
 			WmhCtaButton: 'Klinik-Katalog öffnen',
 		},
-		tr: {
+		'tr': {
 			WeekendMedicalHelpTitle:
 				"Karadağ'da hafta sonu açık eczaneler ve klinikler",
 			WeekendMedicalHelpDescription:
@@ -504,7 +502,7 @@ export default {
 			WmhPharmacies2:
 				"Kalıcı 24 saat açık eczanenin olmadığı yerlerde, resmi tatillerde nöbetçi sistemi devreye girer: Montefarm her belediyede o gün için bir eczaneyi nöbetçi olarak belirler. Liste her seferinde farklıdır ve tarihten kısa süre önce montefarm.co.me'de yayımlanır; bu yüzden önceki bir ziyarete güvenmek yerine tatilden hemen önce kontrol edin.",
 			WmhPharmacies3:
-				"Reçetenin nasıl işlediğini, reçetesiz ne satıldığını ve sağlık kartıyla hangi ilaçların ücretsiz olduğunu",
+				'Reçetenin nasıl işlediğini, reçetesiz ne satıldığını ve sağlık kartıyla hangi ilaçların ücretsiz olduğunu',
 			WmhPharmaciesLink: "Karadağ'da eczaneler ve ilaçlar",
 			WmhPharmaciesEnd: ' hakkındaki makalemizde ayrıntılı olarak ele aldık.',
 
@@ -514,7 +512,7 @@ export default {
 			WmhHospitals1b: ', ',
 			WmhHospitals1KotorLink: "Kotor Genel Hastanesi'ni",
 			WmhHospitals1c: ", Bar'daki ",
-			WmhHospitals1BarLink: '„Blažo Orlandić“ Genel Hastanesi\'ni',
+			WmhHospitals1BarLink: "„Blažo Orlandić“ Genel Hastanesi'ni",
 			WmhHospitals1d: ', ',
 			WmhHospitals1BijeloPoljeLink: "Bijelo Polje Genel Hastanesi'ni",
 			WmhHospitals1e: ", Herceg Novi'deki ",
@@ -522,7 +520,7 @@ export default {
 			WmhHospitals1f: " ve Cetinje'deki ",
 			WmhHospitals1DaniloLink: 'Danilo I hastanesini',
 			WmhHospitals1g: ' kapsar.',
-			WmhHospitals2: "Ülkenin tek özel hastanesi olan",
+			WmhHospitals2: 'Ülkenin tek özel hastanesi olan',
 			WmhHospitalsLink: 'Codra Hospital',
 			WmhHospitalsMid:
 				"da Podgorica'da hafta sonu dahil gece gündüz çalışır. Sağlık kartıyla rutin muayeneler devlet merkezlerinde cumartesi ve pazar günleri genellikle yapılmaz — yalnızca acil servis veya ambulans (124) üzerinden acil vakalar kabul edilir.",

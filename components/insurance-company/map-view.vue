@@ -64,7 +64,10 @@ const openBranchPopup = async (branch: InsuranceCompanyBranchWithCompany) => {
 
 const fitToMarkers = () => {
 	centerOnLocations(
-		branchesWithCoords.value.map((branch) => [branch.latitude, branch.longitude]),
+		branchesWithCoords.value.map((branch) => [
+			branch.latitude,
+			branch.longitude,
+		]),
 	);
 };
 
@@ -155,7 +158,9 @@ defineExpose({
 						class="insurance-catalog-popup__phone"
 					>
 						<IconPhone :size="16" />
-						<span>{{ selectedBranch.phone || selectedBranch.companyPhone }}</span>
+						<span>{{
+							selectedBranch.phone || selectedBranch.companyPhone
+						}}</span>
 					</div>
 				</div>
 			</Teleport>

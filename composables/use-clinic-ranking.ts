@@ -46,9 +46,7 @@ export function useClinicRanking() {
 		clinics: T[],
 		prices?: ClinicPrice[],
 	): T[] => {
-		const priceByClinic = new Map(
-			(prices ?? []).map((p) => [p.clinicId, p]),
-		);
+		const priceByClinic = new Map((prices ?? []).map((p) => [p.clinicId, p]));
 		const scored = clinics.map((clinic) => ({
 			clinic,
 			score: compositeClinicScore({

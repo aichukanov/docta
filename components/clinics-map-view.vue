@@ -120,10 +120,7 @@ onMounted(async () => {
 			</div>
 		</div>
 
-		<Teleport
-			v-if="isTeleportReady && selectedClinic"
-			to="#popup-container"
-		>
+		<Teleport v-if="isTeleportReady && selectedClinic" to="#popup-container">
 			<MapClinicPopup :clinic="selectedClinic" :services="[]" />
 		</Teleport>
 	</div>

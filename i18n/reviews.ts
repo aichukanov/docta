@@ -151,11 +151,13 @@ export default {
 			VerificationUploadButton: 'Загрузить',
 			VerificationSkip: 'Пропустить',
 			VerificationUploaded: 'Файл загружен и будет проверен модератором.',
-			VerificationInvalidType: 'Можно загружать только изображения (JPG, PNG, WebP)',
+			VerificationInvalidType:
+				'Можно загружать только изображения (JPG, PNG, WebP)',
 			VerificationFileTooLarge: 'Файл слишком большой (максимум 10 МБ)',
 			VerificationAlreadyExists:
 				'Файл подтверждения для этого отзыва уже загружен',
-			VerificationUploadFailed: 'Не удалось загрузить файл. Попробуйте ещё раз.',
+			VerificationUploadFailed:
+				'Не удалось загрузить файл. Попробуйте ещё раз.',
 			VerificationPendingNotice:
 				'Подтверждение визита на проверке у модератора',
 			VerificationRejectedNotice: 'Подтверждение визита не принято',
@@ -242,8 +244,10 @@ export default {
 				'Datei konnte nicht hochgeladen werden. Bitte versuchen Sie es erneut.',
 			VerificationPendingNotice:
 				'Die Besuchsbestätigung wird von einem Moderator geprüft',
-			VerificationRejectedNotice: 'Die Besuchsbestätigung wurde nicht akzeptiert',
-			ReviewRejectedNotice: 'Ihre Bewertung wurde von einem Moderator ausgeblendet',
+			VerificationRejectedNotice:
+				'Die Besuchsbestätigung wurde nicht akzeptiert',
+			ReviewRejectedNotice:
+				'Ihre Bewertung wurde von einem Moderator ausgeblendet',
 			AiSummaryTitle: 'KI-Zusammenfassung der Bewertungen',
 			AiSummaryPositives: 'Stärken',
 			AiSummaryNegatives: 'Erwähnte Probleme',
@@ -318,7 +322,8 @@ export default {
 			VerificationSkip: 'Atla',
 			VerificationUploaded:
 				'Dosya yüklendi. Moderatör tarafından kontrol edilecek.',
-			VerificationInvalidType: 'Yalnızca görseller yüklenebilir (JPG, PNG, WebP)',
+			VerificationInvalidType:
+				'Yalnızca görseller yüklenebilir (JPG, PNG, WebP)',
 			VerificationFileTooLarge: 'Dosya çok büyük (en fazla 10 MB)',
 			VerificationAlreadyExists: 'Bu yorum için onay dosyası zaten yüklendi',
 			VerificationUploadFailed: 'Dosya yüklenemedi. Lütfen tekrar deneyin.',
@@ -403,7 +408,8 @@ export default {
 			VerificationFileTooLarge: 'Fajl je prevelik (najviše 10 MB)',
 			VerificationAlreadyExists:
 				'Fajl potvrde za ovu recenziju je već otpremljen',
-			VerificationUploadFailed: 'Otpremanje fajla nije uspjelo. Pokušajte ponovo.',
+			VerificationUploadFailed:
+				'Otpremanje fajla nije uspjelo. Pokušajte ponovo.',
 			VerificationPendingNotice:
 				'Potvrda posjete je na provjeri kod moderatora',
 			VerificationRejectedNotice: 'Potvrda posjete nije prihvaćena',
@@ -485,7 +491,8 @@ export default {
 			VerificationFileTooLarge: 'Фајл је превелик (највише 10 MB)',
 			VerificationAlreadyExists:
 				'Фајл потврде за ову рецензију је већ отпремљен',
-			VerificationUploadFailed: 'Отпремање фајла није успјело. Покушајте поново.',
+			VerificationUploadFailed:
+				'Отпремање фајла није успјело. Покушајте поново.',
 			VerificationPendingNotice:
 				'Потврда посјете је на провјери код модератора',
 			VerificationRejectedNotice: 'Потврда посјете није прихваћена',

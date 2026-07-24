@@ -96,11 +96,7 @@ export default defineEventHandler(async (event): Promise<ClinicData | null> => {
 			!!currentUser &&
 			clinic.created_by != null &&
 			currentUser.id === clinic.created_by;
-		if (
-			clinic.status !== 'published' &&
-			!isOwner &&
-			!currentUser?.is_admin
-		) {
+		if (clinic.status !== 'published' && !isOwner && !currentUser?.is_admin) {
 			await connection.end();
 			return null;
 		}

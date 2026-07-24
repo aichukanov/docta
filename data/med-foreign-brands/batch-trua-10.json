@@ -1,0 +1,145 @@
+[
+  {"inn_en":"terbinafine","inn_ru":"тербинафин","src":"terbinafin",
+   "markets":{
+     "TR":[
+       {"brand":"Lamisil","strength":"250 mg","form":"tablet","note":"originator; also cream OTC","confidence":"high"},
+       {"brand":"Terbisil","strength":"250 mg","form":"tablet","note":"","confidence":"high"}
+     ],
+     "UA":[
+       {"brand":"Ламизил","strength":"250 мг","form":"таблетки","note":"оригинатор; крем OTC","confidence":"high"},
+       {"brand":"Ламикон","strength":"250 мг","form":"таблетки","note":"Фармак","confidence":"high"},
+       {"brand":"Тербинафин","strength":"250 мг","form":"таблетки","note":"генерик","confidence":"high"}
+     ]
+   },
+   "available_note":""},
+
+  {"inn_en":"tetryzoline","inn_ru":"тетризолин","src":"tetrizolin",
+   "markets":{
+     "TR":[
+       {"brand":"Visine","strength":"0.05%","form":"eye drops","note":"OTC decongestant","confidence":"high"}
+     ],
+     "UA":[
+       {"brand":"Визин","strength":"0.05%","form":"глазные капли","note":"OTC","confidence":"high"},
+       {"brand":"Тизин","strength":"0.05%/0.1%","form":"назальные капли","note":"OTC","confidence":"medium"}
+     ]
+   },
+   "available_note":"Mainly OTC eye/nasal decongestant."},
+
+  {"inn_en":"ticagrelor","inn_ru":"тикагрелор","src":"tikagrelor",
+   "markets":{
+     "TR":[
+       {"brand":"Brilinta","strength":"90 mg","form":"tablet","note":"Rx; originator (AstraZeneca)","confidence":"high"}
+     ],
+     "UA":[
+       {"brand":"Брилинта","strength":"90 мг","form":"таблетки","note":"Rx; оригинатор","confidence":"high"}
+     ]
+   },
+   "available_note":""},
+
+  {"inn_en":"thioctic acid","inn_ru":"тиоктовая кислота","src":"tioktinska kiselina",
+   "markets":{
+     "TR":[
+       {"brand":"Thioctacid","strength":"600 mg","form":"tablet","note":"","confidence":"medium"}
+     ],
+     "UA":[
+       {"brand":"Берлитион","strength":"300 мг/600 мг","form":"таблетки, р-р для инфузий","note":"","confidence":"high"},
+       {"brand":"Тиогамма","strength":"600 мг","form":"таблетки, р-р для инфузий","note":"","confidence":"high"},
+       {"brand":"Диалипон","strength":"600 мг","form":"таблетки","note":"","confidence":"high"}
+     ]
+   },
+   "available_note":"Alpha-lipoic acid."},
+
+  {"inn_en":"tolperisone","inn_ru":"толперизон","src":"tolperison",
+   "markets":{
+     "TR":[
+       {"brand":"Mydocalm","strength":"150 mg","form":"tablet","note":"muscle relaxant","confidence":"medium"},
+       {"brand":"Mydeton","strength":"150 mg","form":"tablet","note":"","confidence":"low"}
+     ],
+     "UA":[
+       {"brand":"Мидокалм","strength":"50 мг/150 мг","form":"таблетки, р-р для инъекций","note":"","confidence":"high"},
+       {"brand":"Толперизон","strength":"150 мг","form":"таблетки","note":"генерик","confidence":"medium"}
+     ]
+   },
+   "available_note":""},
+
+  {"inn_en":"tramadol","inn_ru":"трамадол","src":"tramadol",
+   "markets":{
+     "TR":[
+       {"brand":"Contramal","strength":"100 mg","form":"capsule, drops, injection","note":"Rx opioid","confidence":"high"},
+       {"brand":"Tramadolor","strength":"100 mg","form":"tablet","note":"","confidence":"medium"},
+       {"brand":"Tramosel","strength":"50 mg","form":"injection","note":"","confidence":"medium"}
+     ],
+     "UA":[
+       {"brand":"Трамадол","strength":"50 мг/100 мг","form":"капсулы, р-р для инъекций","note":"Rx","confidence":"high"},
+       {"brand":"Трамал","strength":"50 мг/100 мг","form":"капсулы, р-р, свечи","note":"оригинатор","confidence":"high"}
+     ]
+   },
+   "available_note":""},
+
+  {"inn_en":"valsartan","inn_ru":"валсартан","src":"valsartan",
+   "markets":{
+     "TR":[
+       {"brand":"Diovan","strength":"80 mg/160 mg","form":"tablet","note":"originator (Novartis)","confidence":"high"},
+       {"brand":"Co-Diovan","strength":"160/12.5 mg","form":"tablet","note":"+ HCTZ","confidence":"high"}
+     ],
+     "UA":[
+       {"brand":"Диован","strength":"80 мг/160 мг","form":"таблетки","note":"оригинатор","confidence":"high"},
+       {"brand":"Вальсакор","strength":"80 мг/160 мг","form":"таблетки","note":"KRKA","confidence":"high"},
+       {"brand":"Вазар","strength":"80 мг/160 мг","form":"таблетки","note":"","confidence":"medium"}
+     ]
+   },
+   "available_note":""},
+
+  {"inn_en":"vancomycin","inn_ru":"ванкомицин","src":"vankomicin",
+   "markets":{
+     "TR":[
+       {"brand":"Vancomycin","strength":"500 mg/1 g","form":"powder for infusion","note":"Rx; generic","confidence":"high"},
+       {"brand":"Edicin","strength":"500 mg/1 g","form":"powder for infusion","note":"","confidence":"medium"}
+     ],
+     "UA":[
+       {"brand":"Ванкомицин","strength":"500 мг/1 г","form":"порошок для р-ра для инфузий","note":"Rx","confidence":"high"},
+       {"brand":"Эдицин","strength":"500 мг/1 г","form":"порошок для р-ра для инфузий","note":"","confidence":"high"}
+     ]
+   },
+   "available_note":"Hospital IV antibiotic."},
+
+  {"inn_en":"vildagliptin","inn_ru":"вилдаглиптин","src":"vildagliptin",
+   "markets":{
+     "TR":[
+       {"brand":"Galvus","strength":"50 mg","form":"tablet","note":"originator (Novartis)","confidence":"high"},
+       {"brand":"Galvus Met","strength":"50/1000 mg","form":"tablet","note":"+ metformin","confidence":"high"}
+     ],
+     "UA":[
+       {"brand":"Гальвус","strength":"50 мг","form":"таблетки","note":"оригинатор","confidence":"high"},
+       {"brand":"Гальвус Мет","strength":"50/1000 мг","form":"таблетки","note":"+ метформин","confidence":"high"}
+     ]
+   },
+   "available_note":""},
+
+  {"inn_en":"vinpocetine","inn_ru":"винпоцетин","src":"vinpocetin",
+   "markets":{
+     "TR":[
+       {"brand":"Vinpocetin","strength":"5 mg/10 mg","form":"tablet","note":"","confidence":"low"},
+       {"brand":"Cavinton","strength":"5 mg","form":"tablet","note":"","confidence":"low"}
+     ],
+     "UA":[
+       {"brand":"Кавинтон","strength":"5 мг/10 мг","form":"таблетки, р-р для инъекций","note":"оригинатор (Gedeon Richter)","confidence":"high"},
+       {"brand":"Винпоцетин","strength":"5 мг","form":"таблетки","note":"генерик","confidence":"high"}
+     ]
+   },
+   "available_note":"Not a mainstream Western drug; TR availability uncertain, widely used in UA."},
+
+  {"inn_en":"zolpidem","inn_ru":"золпидем","src":"zolpidem",
+   "markets":{
+     "TR":[
+       {"brand":"Stilnox","strength":"10 mg","form":"tablet","note":"Rx; originator","confidence":"high"},
+       {"brand":"Zoldem","strength":"10 mg","form":"tablet","note":"","confidence":"medium"},
+       {"brand":"Zolt","strength":"10 mg","form":"tablet","note":"","confidence":"low"}
+     ],
+     "UA":[
+       {"brand":"Ивадал","strength":"10 мг","form":"таблетки","note":"Rx","confidence":"high"},
+       {"brand":"Санвал","strength":"5 мг/10 мг","form":"таблетки","note":"","confidence":"medium"}
+     ]
+   },
+   "available_note":"Controlled hypnotic (Rx)."}
+]

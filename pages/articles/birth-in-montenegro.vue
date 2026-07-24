@@ -9,7 +9,11 @@ import breadcrumbI18n from '~/i18n/breadcrumb';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([articlesI18n, articleBirthI18n, breadcrumbI18n]),
+	messages: combineI18nMessages([
+		articlesI18n,
+		articleBirthI18n,
+		breadcrumbI18n,
+	]),
 });
 
 const ARTICLE_SLUG = 'birth-in-montenegro';
@@ -44,8 +48,12 @@ const cetinjeHospitalLink = computed(() =>
 const codraHospitalLink = computed(() =>
 	getClinicLink('codra-hospital-podgorica'),
 );
-const niksicHospitalLink = computed(() => getClinicLink('opsta-bolnica-niksic'));
-const beraneHospitalLink = computed(() => getClinicLink('opsta-bolnica-berane'));
+const niksicHospitalLink = computed(() =>
+	getClinicLink('opsta-bolnica-niksic'),
+);
+const beraneHospitalLink = computed(() =>
+	getClinicLink('opsta-bolnica-berane'),
+);
 const pljevljaHospitalLink = computed(() =>
 	getClinicLink('opsta-bolnica-pljevlja'),
 );
@@ -141,13 +149,14 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t('BimPrenatal1') }}</p>
 			<p>{{ t('BimPrenatal2') }}</p>
 			<p
-				>{{ t('BimPrenatal3a') }}<NuxtLink :to="pappaLink">{{
-					t('BimPrenatal3PappaLink')
-				}}</NuxtLink
-				>{{ t('BimPrenatal3b') }}<NuxtLink :to="freeBetaHcgLink">{{
+				>{{ t('BimPrenatal3a')
+				}}<NuxtLink :to="pappaLink">{{ t('BimPrenatal3PappaLink') }}</NuxtLink
+				>{{ t('BimPrenatal3b')
+				}}<NuxtLink :to="freeBetaHcgLink">{{
 					t('BimPrenatal3FreeBetaHcgLink')
 				}}</NuxtLink
-				>{{ t('BimPrenatal3c') }}<NuxtLink :to="amniocentesisLink">{{
+				>{{ t('BimPrenatal3c')
+				}}<NuxtLink :to="amniocentesisLink">{{
 					t('BimPrenatal3AmnioLink')
 				}}</NuxtLink
 				>{{ t('BimPrenatal3d') }}</p
@@ -163,31 +172,37 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t('BimWhere1') }}</p>
 			<ul>
 				<li
-					>{{ t('BimWhereList1Pre') }}<NuxtLink :to="kccgLink">{{
-						t('BimWhereList1KccgLink')
-					}}</NuxtLink
+					>{{ t('BimWhereList1Pre')
+					}}<NuxtLink :to="kccgLink">{{ t('BimWhereList1KccgLink') }}</NuxtLink
 					>{{ t('BimWhereList1a') }}</li
 				>
 				<li
-					>{{ t('BimWhereList2a') }}<NuxtLink :to="barHospitalLink">{{
+					>{{ t('BimWhereList2a')
+					}}<NuxtLink :to="barHospitalLink">{{
 						t('BimWhereList2BarLink')
 					}}</NuxtLink
-					>{{ t('BimWhereList2b') }}<NuxtLink :to="kotorHospitalLink">{{
+					>{{ t('BimWhereList2b')
+					}}<NuxtLink :to="kotorHospitalLink">{{
 						t('BimWhereList2KotorLink')
 					}}</NuxtLink
-					>{{ t('BimWhereList2c') }}<NuxtLink :to="niksicHospitalLink">{{
+					>{{ t('BimWhereList2c')
+					}}<NuxtLink :to="niksicHospitalLink">{{
 						t('BimWhereList2NiksicLink')
 					}}</NuxtLink
-					>{{ t('BimWhereList2c2') }}<NuxtLink :to="beraneHospitalLink">{{
+					>{{ t('BimWhereList2c2')
+					}}<NuxtLink :to="beraneHospitalLink">{{
 						t('BimWhereList2BeraneLink')
 					}}</NuxtLink
-					>{{ t('BimWhereList2c3') }}<NuxtLink :to="bijeloPoljeHospitalLink">{{
+					>{{ t('BimWhereList2c3')
+					}}<NuxtLink :to="bijeloPoljeHospitalLink">{{
 						t('BimWhereList2BijeloPoljeLink')
 					}}</NuxtLink
-					>{{ t('BimWhereList2d') }}<NuxtLink :to="cetinjeHospitalLink">{{
+					>{{ t('BimWhereList2d')
+					}}<NuxtLink :to="cetinjeHospitalLink">{{
 						t('BimWhereList2CetinjeLink')
 					}}</NuxtLink
-					>{{ t('BimWhereList2e') }}<NuxtLink :to="pljevljaHospitalLink">{{
+					>{{ t('BimWhereList2e')
+					}}<NuxtLink :to="pljevljaHospitalLink">{{
 						t('BimWhereList2PljevljaLink')
 					}}</NuxtLink
 					>{{ t('BimWhereList2e2') }}</li
@@ -196,12 +211,12 @@ const { breadcrumbItems } = useArticlePageSeo({
 			</ul>
 			<p>{{ t('BimWhere2') }}</p>
 			<p
-				>{{ t('BimWhere3a') }}<NuxtLink :to="codraHospitalLink">{{
+				>{{ t('BimWhere3a')
+				}}<NuxtLink :to="codraHospitalLink">{{
 					t('BimWhere3CodraLink')
 				}}</NuxtLink
-				>{{ t('BimWhere3b') }}<NuxtLink :to="kccgLink">{{
-					t('BimWhere3KccgLink')
-				}}</NuxtLink
+				>{{ t('BimWhere3b')
+				}}<NuxtLink :to="kccgLink">{{ t('BimWhere3KccgLink') }}</NuxtLink
 				>{{ t('BimWhere3c') }}</p
 			>
 			<p>

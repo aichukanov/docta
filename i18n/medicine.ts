@@ -77,7 +77,12 @@ export default {
 			ForeignBrandsTitle: 'Names in other countries',
 			ForeignBrandsDisclaimer:
 				'For reference only. Forms, strengths and composition may differ between countries — check with a pharmacist.',
-			MarketRU: 'Russia, Ukraine, Kazakhstan',
+			ForeignFullMatch:
+				'Full match: same active ingredients, form and dose as {name}',
+			ForeignExtraSubstance: '{name} does not contain this substance',
+			MarketRU: 'Russia, Belarus, Kazakhstan',
+			MarketUA: 'Ukraine',
+			MarketTR: 'Turkey',
 			MarketDE: 'Germany',
 			MarketPL: 'Poland',
 			MarketUS: 'USA',
@@ -160,7 +165,12 @@ export default {
 			ForeignBrandsTitle: 'Аналоги в других странах',
 			ForeignBrandsDisclaimer:
 				'Справочная информация. Формы, дозировки и состав в разных странах могут отличаться — уточняйте у фармацевта.',
-			MarketRU: 'Россия, Украина, Казахстан',
+			ForeignFullMatch:
+				'Полное совпадение: те же вещества, форма и дозировка, что у {name}',
+			ForeignExtraSubstance: '{name} не содержит это вещество',
+			MarketRU: 'Россия, Беларусь, Казахстан',
+			MarketUA: 'Украина',
+			MarketTR: 'Турция',
 			MarketDE: 'Германия',
 			MarketPL: 'Польша',
 			MarketUS: 'США',
@@ -242,7 +252,12 @@ export default {
 			ForeignBrandsTitle: 'Nazivi u drugim zemljama',
 			ForeignBrandsDisclaimer:
 				'Informativnog karaktera. Oblici, jačine i sastav mogu se razlikovati po zemljama — provjerite kod farmaceuta.',
-			MarketRU: 'Rusija, Ukrajina, Kazahstan',
+			ForeignFullMatch:
+				'Potpuno podudaranje: iste supstance, oblik i doza kao {name}',
+			ForeignExtraSubstance: '{name} ne sadrži ovu supstancu',
+			MarketRU: 'Rusija, Bjelorusija, Kazahstan',
+			MarketUA: 'Ukrajina',
+			MarketTR: 'Turska',
 			MarketDE: 'Njemačka',
 			MarketPL: 'Poljska',
 			MarketUS: 'SAD',
@@ -325,7 +340,12 @@ export default {
 			ForeignBrandsTitle: 'Namen in anderen Ländern',
 			ForeignBrandsDisclaimer:
 				'Nur zur Information. Formen, Stärken und Zusammensetzung können je nach Land abweichen — fragen Sie in der Apotheke nach.',
-			MarketRU: 'Russland, Ukraine, Kasachstan',
+			ForeignFullMatch:
+				'Vollständige Übereinstimmung: gleiche Wirkstoffe, Form und Dosis wie {name}',
+			ForeignExtraSubstance: '{name} enthält diesen Wirkstoff nicht',
+			MarketRU: 'Russland, Belarus, Kasachstan',
+			MarketUA: 'Ukraine',
+			MarketTR: 'Türkei',
 			MarketDE: 'Deutschland',
 			MarketPL: 'Polen',
 			MarketUS: 'USA',
@@ -406,7 +426,11 @@ export default {
 			ForeignBrandsTitle: 'Diğer ülkelerdeki adları',
 			ForeignBrandsDisclaimer:
 				'Yalnızca bilgi amaçlıdır. Formlar, dozlar ve bileşim ülkelere göre değişebilir — eczacınıza danışın.',
-			MarketRU: 'Rusya, Ukrayna, Kazakistan',
+			ForeignFullMatch: 'Tam eşleşme: {name} ile aynı etkin madde, form ve doz',
+			ForeignExtraSubstance: '{name} bu etkin maddeyi içermez',
+			MarketRU: 'Rusya, Belarus, Kazakistan',
+			MarketUA: 'Ukrayna',
+			MarketTR: 'Türkiye',
 			MarketDE: 'Almanya',
 			MarketPL: 'Polonya',
 			MarketUS: 'ABD',
@@ -488,7 +512,12 @@ export default {
 			ForeignBrandsTitle: 'Називи у другим земљама',
 			ForeignBrandsDisclaimer:
 				'Информативног карактера. Облици, јачине и састав могу се разликовати по земљама — провјерите код фармацеута.',
-			MarketRU: 'Русија, Украјина, Казахстан',
+			ForeignFullMatch:
+				'Потпуно подударање: исте супстанце, облик и доза као {name}',
+			ForeignExtraSubstance: '{name} не садржи ову супстанцу',
+			MarketRU: 'Русија, Бјелорусија, Казахстан',
+			MarketUA: 'Украјина',
+			MarketTR: 'Турска',
 			MarketDE: 'Њемачка',
 			MarketPL: 'Пољска',
 			MarketUS: 'САД',

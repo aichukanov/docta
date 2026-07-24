@@ -1,0 +1,191 @@
+[
+  {"inn_en":"heparin","inn_ru":"гепарин","src":"heparin",
+   "markets":{
+     "TR":[
+       {"brand":"Nevparin","strength":"5000 IU/mL","form":"injection","note":"Rx","confidence":"medium"},
+       {"brand":"Panheparin","strength":"25000 IU/5mL","form":"injection","note":"Rx","confidence":"medium"}
+     ],
+     "UA":[
+       {"brand":"Гепарин-Дарниця","strength":"5000 МЕ/мл","form":"раствор для инъекций","note":"Rx","confidence":"high"},
+       {"brand":"Ліотон 1000","strength":"1000 МЕ/г","form":"гель","note":"OTC, топический","confidence":"high"}
+     ]
+   },
+   "available_note":"Unfractionated heparin injectable; topical gels (Lioton) widely sold in UA"},
+  {"inn_en":"hydrocortisone","inn_ru":"гидрокортизон","src":"hidrokortizon",
+   "markets":{
+     "TR":[
+       {"brand":"Locoid","strength":"0.1%","form":"cream","note":"Rx, hidrokortizon butirat","confidence":"medium"},
+       {"brand":"Fucidin H","strength":"","form":"cream","note":"Rx, combo w/ fusidic acid","confidence":"medium"}
+     ],
+     "UA":[
+       {"brand":"Гідрокортизон","strength":"1%","form":"мазь глазная","note":"Rx","confidence":"high"},
+       {"brand":"Латикорт","strength":"0.1%","form":"крем/мазь","note":"Rx, бутират","confidence":"high"},
+       {"brand":"Локоїд","strength":"0.1%","form":"крем","note":"Rx","confidence":"medium"}
+     ]
+   },
+   "available_note":""},
+  {"inn_en":"hyoscine butylbromide","inn_ru":"гиосцина бутилбромид","src":"hioscin butilbromid",
+   "markets":{
+     "TR":[
+       {"brand":"Buscopan","strength":"10 mg","form":"tablet/injection","note":"Rx","confidence":"high"}
+     ],
+     "UA":[
+       {"brand":"Бускопан","strength":"10 мг","form":"таблетки/суппозитории","note":"Rx","confidence":"high"}
+     ]
+   },
+   "available_note":"Buscopan (Sanofi) is the dominant brand in both markets"},
+  {"inn_en":"hypromellose","inn_ru":"гипромеллоза","src":"hipromeloza",
+   "markets":{
+     "TR":[
+       {"brand":"Artelac","strength":"","form":"eye drops","note":"OTC, artificial tears","confidence":"medium"},
+       {"brand":"Tears Naturale","strength":"","form":"eye drops","note":"OTC","confidence":"medium"}
+     ],
+     "UA":[
+       {"brand":"Артелак","strength":"","form":"капли глазные","note":"OTC","confidence":"medium"},
+       {"brand":"Слеза натуральна","strength":"","form":"капли глазные","note":"OTC","confidence":"medium"}
+     ]
+   },
+   "available_note":"Sold as artificial-tear eye drops; hypromellose often combined with other polymers"},
+  {"inn_en":"chloropyramine","inn_ru":"хлоропирамин","src":"hloropiramin",
+   "markets":{
+     "TR":[],
+     "UA":[
+       {"brand":"Супрастин","strength":"25 мг","form":"таблетки/раствор","note":"Rx","confidence":"high"}
+     ]
+   },
+   "available_note":"Chloropyramine (Suprastin) is a CEE/post-Soviet drug; not marketed in Turkey"},
+  {"inn_en":"ibuprofen","inn_ru":"ибупрофен","src":"ibuprofen",
+   "markets":{
+     "TR":[
+       {"brand":"Brufen","strength":"400 mg","form":"tablet","note":"Rx","confidence":"high"},
+       {"brand":"Dolven","strength":"","form":"suspension/tablet","note":"OTC","confidence":"high"},
+       {"brand":"Nurofen","strength":"200 mg","form":"tablet","note":"OTC","confidence":"medium"}
+     ],
+     "UA":[
+       {"brand":"Нурофен","strength":"200 мг","form":"таблетки/суспензия","note":"OTC","confidence":"high"},
+       {"brand":"Імет","strength":"400 мг","form":"таблетки","note":"OTC","confidence":"high"},
+       {"brand":"Ібупром","strength":"200 мг","form":"таблетки","note":"OTC","confidence":"medium"}
+     ]
+   },
+   "available_note":""},
+  {"inn_en":"insulin aspart","inn_ru":"инсулин аспарт","src":"insulin aspart",
+   "markets":{
+     "TR":[
+       {"brand":"NovoRapid","strength":"100 IU/mL","form":"injection (FlexPen)","note":"Rx","confidence":"high"},
+       {"brand":"Fiasp","strength":"100 IU/mL","form":"injection","note":"Rx, fast-acting","confidence":"medium"}
+     ],
+     "UA":[
+       {"brand":"НовоРапід","strength":"100 ОД/мл","form":"раствор для инъекций","note":"Rx","confidence":"high"},
+       {"brand":"Фіасп","strength":"100 ОД/мл","form":"раствор для инъекций","note":"Rx","confidence":"medium"}
+     ]
+   },
+   "available_note":"Originator Novo Nordisk; NovoRapid dominant in both markets"},
+  {"inn_en":"captopril","inn_ru":"каптоприл","src":"kaptopril",
+   "markets":{
+     "TR":[
+       {"brand":"Kapril","strength":"25 mg","form":"tablet","note":"Rx","confidence":"medium"},
+       {"brand":"Captopril","strength":"25 mg","form":"tablet","note":"Rx, generic","confidence":"low"}
+     ],
+     "UA":[
+       {"brand":"Капотен","strength":"25 мг","form":"таблетки","note":"Rx","confidence":"high"},
+       {"brand":"Каптопрес-Дарниця","strength":"","form":"таблетки","note":"Rx, combo w/ HCT","confidence":"medium"}
+     ]
+   },
+   "available_note":""},
+  {"inn_en":"carbocisteine","inn_ru":"карбоцистеин","src":"karbocistein",
+   "markets":{
+     "TR":[
+       {"brand":"Rhinathiol","strength":"","form":"syrup","note":"OTC, mucolytic","confidence":"medium"}
+     ],
+     "UA":[
+       {"brand":"Флюдитек","strength":"","form":"сироп","note":"OTC","confidence":"high"},
+       {"brand":"Бронхобос","strength":"","form":"капсулы/сироп","note":"OTC","confidence":"medium"}
+     ]
+   },
+   "available_note":""},
+  {"inn_en":"ketoprofen","inn_ru":"кетопрофен","src":"ketoprofen",
+   "markets":{
+     "TR":[
+       {"brand":"Profenid","strength":"100 mg","form":"tablet/injection","note":"Rx","confidence":"high"},
+       {"brand":"Fastum jel","strength":"2.5%","form":"gel","note":"OTC, топический","confidence":"medium"}
+     ],
+     "UA":[
+       {"brand":"Кетонал","strength":"100 мг","form":"таблетки/раствор","note":"Rx","confidence":"high"},
+       {"brand":"Фастум гель","strength":"2.5%","form":"гель","note":"OTC","confidence":"high"}
+     ]
+   },
+   "available_note":""},
+  {"inn_en":"ketorolac","inn_ru":"кеторолак","src":"ketorolak",
+   "markets":{
+     "TR":[],
+     "UA":[
+       {"brand":"Кетанов","strength":"10 мг","form":"таблетки/раствор","note":"Rx","confidence":"high"},
+       {"brand":"Кеторол","strength":"10 мг","form":"таблетки/раствор","note":"Rx","confidence":"high"},
+       {"brand":"Кеторолак","strength":"30 мг/мл","form":"раствор для инъекций","note":"Rx","confidence":"medium"}
+     ]
+   },
+   "available_note":"Ketorolac is not commonly marketed in Turkey; very popular analgesic in UA"},
+  {"inn_en":"ketotifen","inn_ru":"кетотифен","src":"ketotifen",
+   "markets":{
+     "TR":[
+       {"brand":"Zaditen","strength":"1 mg","form":"tablet/syrup","note":"Rx","confidence":"high"}
+     ],
+     "UA":[
+       {"brand":"Задітен","strength":"1 мг","form":"таблетки/сироп","note":"Rx","confidence":"high"},
+       {"brand":"Кетотифен","strength":"1 мг","form":"таблетки","note":"Rx, generic","confidence":"medium"}
+     ]
+   },
+   "available_note":""},
+  {"inn_en":"clindamycin","inn_ru":"клиндамицин","src":"klindamicin",
+   "markets":{
+     "TR":[
+       {"brand":"Dalacin C","strength":"300 mg","form":"capsule","note":"Rx","confidence":"high"},
+       {"brand":"Klindan","strength":"300 mg","form":"capsule/injection","note":"Rx","confidence":"medium"}
+     ],
+     "UA":[
+       {"brand":"Далацин Ц","strength":"300 мг","form":"капсулы","note":"Rx","confidence":"high"},
+       {"brand":"Клиндовит","strength":"1%","form":"гель","note":"Rx, топический (acne)","confidence":"medium"},
+       {"brand":"Кліндаміцин","strength":"150 мг","form":"капсулы","note":"Rx, generic","confidence":"medium"}
+     ]
+   },
+   "available_note":""},
+  {"inn_en":"clotrimazole","inn_ru":"клотримазол","src":"klotrimazol",
+   "markets":{
+     "TR":[
+       {"brand":"Canesten","strength":"1%","form":"cream","note":"OTC","confidence":"high"}
+     ],
+     "UA":[
+       {"brand":"Кандід","strength":"1%","form":"крем/раствор","note":"OTC","confidence":"high"},
+       {"brand":"Канестен","strength":"1%","form":"крем","note":"OTC","confidence":"medium"},
+       {"brand":"Клотримазол","strength":"1%","form":"крем/таблетки вагинальные","note":"OTC, generic","confidence":"high"}
+     ]
+   },
+   "available_note":""},
+  {"inn_en":"xylometazoline","inn_ru":"ксилометазолин","src":"ksilometazolin",
+   "markets":{
+     "TR":[
+       {"brand":"Otrivine","strength":"0.1%","form":"nasal spray","note":"OTC","confidence":"high"},
+       {"brand":"Rhinospray","strength":"","form":"nasal spray","note":"OTC","confidence":"low"}
+     ],
+     "UA":[
+       {"brand":"Отривін","strength":"0.1%","form":"спрей назальный","note":"OTC","confidence":"high"},
+       {"brand":"Галазолін","strength":"0.1%","form":"капли/гель назальный","note":"OTC","confidence":"high"},
+       {"brand":"Ксилометазолін","strength":"0.1%","form":"спрей назальный","note":"OTC, generic","confidence":"medium"}
+     ]
+   },
+   "available_note":""},
+  {"inn_en":"quetiapine","inn_ru":"кветиапин","src":"kvetiapin",
+   "markets":{
+     "TR":[
+       {"brand":"Seroquel","strength":"200 mg","form":"tablet","note":"Rx","confidence":"high"},
+       {"brand":"Cedrina","strength":"","form":"tablet","note":"Rx, generic","confidence":"medium"},
+       {"brand":"Gyrex","strength":"","form":"tablet","note":"Rx, generic","confidence":"low"}
+     ],
+     "UA":[
+       {"brand":"Сероквель","strength":"200 мг","form":"таблетки","note":"Rx","confidence":"high"},
+       {"brand":"Квентіакс","strength":"200 мг","form":"таблетки","note":"Rx, generic","confidence":"medium"},
+       {"brand":"Кетилепт","strength":"200 мг","form":"таблетки","note":"Rx, generic","confidence":"medium"}
+     ]
+   },
+   "available_note":""}
+]

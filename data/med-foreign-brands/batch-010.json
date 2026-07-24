@@ -1,0 +1,306 @@
+[
+  {
+    "inn_en": "pregabalin",
+    "inn_ru": "прегабалин",
+    "src": "pregabalin",
+    "markets": {
+      "RU": [
+        {"brand": "Лирика", "strength": "75/150/300 мг", "form": "капсулы", "note": "Pfizer; оригинатор; Rx", "confidence": "high"},
+        {"brand": "Прегабалин Канон", "strength": "75/150/300 мг", "form": "капсулы", "note": "Канонфарма; дженерик; Rx", "confidence": "high"},
+        {"brand": "Прегабалин-Рихтер", "strength": "75/150 мг", "form": "капсулы", "note": "Gedeon Richter; дженерик; Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Lyrica", "strength": "75/150/300 mg", "form": "Hartkapseln", "note": "Pfizer; Original; Rx", "confidence": "high"},
+        {"brand": "Pregabalin-ratiopharm", "strength": "75/150/300 mg", "form": "Hartkapseln", "note": "Generikum; Rx", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Lyrica", "strength": "75/150/300 mg", "form": "kapsułki", "note": "Pfizer; oryginał; Rx", "confidence": "high"},
+        {"brand": "Pregabalin Sandoz", "strength": "75/150/300 mg", "form": "kapsułki", "note": "generyk; Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Lyrica", "strength": "75/150/300 mg", "form": "capsules", "note": "Pfizer; brand; Rx (controlled C-V)", "confidence": "high"},
+        {"brand": "Lyrica CR", "strength": "165/330 mg", "form": "extended-release tablets", "note": "Pfizer; Rx", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "gabapentin",
+    "inn_ru": "габапентин",
+    "src": "gabapentin",
+    "markets": {
+      "RU": [
+        {"brand": "Нейронтин", "strength": "300/400 мг", "form": "капсулы", "note": "Pfizer; оригинатор; Rx", "confidence": "high"},
+        {"brand": "Тебантин", "strength": "100/300/400 мг", "form": "капсулы", "note": "Gedeon Richter; Rx", "confidence": "high"},
+        {"brand": "Габагамма", "strength": "300/400 мг", "form": "капсулы", "note": "Woerwag; Rx", "confidence": "medium"},
+        {"brand": "Конвалис", "strength": "300 мг", "form": "капсулы", "note": "Pharmstandard; Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Neurontin", "strength": "100/300/400/600/800 mg", "form": "Hartkapseln / Filmtabletten", "note": "Pfizer; Original; Rx", "confidence": "high"},
+        {"brand": "Gabapentin-ratiopharm", "strength": "100/300/400 mg", "form": "Hartkapseln", "note": "Generikum; Rx", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Neurontin", "strength": "100/300/400 mg", "form": "kapsułki", "note": "Pfizer; oryginał; Rx", "confidence": "high"},
+        {"brand": "Gabapentin Teva", "strength": "100/300/400 mg", "form": "kapsułki", "note": "generyk; Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Neurontin", "strength": "100/300/400 mg", "form": "capsules", "note": "Pfizer; brand; Rx", "confidence": "high"},
+        {"brand": "Gralise", "strength": "300/600 mg", "form": "extended-release tablets", "note": "once-daily; Rx", "confidence": "medium"},
+        {"brand": "Horizant", "strength": "300/600 mg", "form": "extended-release tablets", "note": "gabapentin enacarbil; Rx", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "lamotrigine",
+    "inn_ru": "ламотриджин",
+    "src": "lamotrigin",
+    "markets": {
+      "RU": [
+        {"brand": "Ламиктал", "strength": "25/50/100 мг", "form": "таблетки", "note": "GSK; оригинатор; Rx", "confidence": "high"},
+        {"brand": "Ламотриджин Канон", "strength": "25/50/100 мг", "form": "таблетки", "note": "Канонфарма; дженерик; Rx", "confidence": "high"},
+        {"brand": "Конвульсан", "strength": "25/50/100 мг", "form": "таблетки", "note": "дженерик; Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Lamictal", "strength": "25/50/100/200 mg", "form": "Tabletten", "note": "GSK; Original; Rx", "confidence": "high"},
+        {"brand": "Lamotrigin-ratiopharm", "strength": "25/50/100/200 mg", "form": "Tabletten", "note": "Generikum; Rx", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Lamictal", "strength": "25/50/100 mg", "form": "tabletki", "note": "GSK; oryginał; Rx", "confidence": "high"},
+        {"brand": "Lamitrin", "strength": "25/50/100 mg", "form": "tabletki", "note": "GSK; Rx", "confidence": "high"},
+        {"brand": "Epitrigine", "strength": "25/50/100 mg", "form": "tabletki", "note": "generyk; Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Lamictal", "strength": "25/100/150/200 mg", "form": "tablets", "note": "GSK; brand; Rx", "confidence": "high"},
+        {"brand": "Lamictal XR", "strength": "25/50/100/200/300 mg", "form": "extended-release tablets", "note": "GSK; Rx", "confidence": "medium"},
+        {"brand": "Lamictal ODT", "strength": "25/50/100/200 mg", "form": "orally disintegrating tablets", "note": "Rx", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "levetiracetam",
+    "inn_ru": "леветирацетам",
+    "src": "levetiracetam",
+    "markets": {
+      "RU": [
+        {"brand": "Кеппра", "strength": "250/500/1000 мг", "form": "таблетки; раствор для приёма внутрь", "note": "UCB; оригинатор; Rx", "confidence": "high"},
+        {"brand": "Леветинол", "strength": "250/500/1000 мг", "form": "таблетки", "note": "дженерик; Rx", "confidence": "medium"},
+        {"brand": "Леветирацетам Канон", "strength": "250/500/1000 мг", "form": "таблетки", "note": "Канонфарма; Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Keppra", "strength": "250/500/750/1000 mg", "form": "Filmtabletten / Lösung", "note": "UCB; Original; Rx", "confidence": "high"},
+        {"brand": "Levetiracetam-ratiopharm", "strength": "250/500/1000 mg", "form": "Filmtabletten", "note": "Generikum; Rx", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Keppra", "strength": "250/500/1000 mg", "form": "tabletki; roztwór doustny", "note": "UCB; oryginał; Rx", "confidence": "high"},
+        {"brand": "Levetiracetam Teva", "strength": "250/500/1000 mg", "form": "tabletki", "note": "generyk; Rx", "confidence": "medium"},
+        {"brand": "Trund", "strength": "250/500/1000 mg", "form": "tabletki", "note": "generyk; Rx", "confidence": "low"}
+      ],
+      "US": [
+        {"brand": "Keppra", "strength": "250/500/750/1000 mg", "form": "tablets; oral solution", "note": "UCB; brand; Rx", "confidence": "high"},
+        {"brand": "Keppra XR", "strength": "500/750 mg", "form": "extended-release tablets", "note": "UCB; Rx", "confidence": "medium"},
+        {"brand": "Spritam", "strength": "250/500/750/1000 mg", "form": "orally disintegrating tablets", "note": "3D-printed; Rx", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "escitalopram",
+    "inn_ru": "эсциталопрам",
+    "src": "escitalopram",
+    "markets": {
+      "RU": [
+        {"brand": "Ципралекс", "strength": "5/10/20 мг", "form": "таблетки", "note": "Lundbeck; оригинатор; Rx", "confidence": "high"},
+        {"brand": "Селектра", "strength": "10/20 мг", "form": "таблетки", "note": "дженерик; Rx", "confidence": "medium"},
+        {"brand": "Эсциталопрам Канон", "strength": "10/20 мг", "form": "таблетки", "note": "Канонфарма; Rx", "confidence": "medium"},
+        {"brand": "Элицея", "strength": "5/10/20 мг", "form": "таблетки", "note": "KRKA; Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Cipralex", "strength": "5/10/20 mg", "form": "Filmtabletten", "note": "Lundbeck; Original; Rx", "confidence": "high"},
+        {"brand": "Escitalopram-ratiopharm", "strength": "5/10/20 mg", "form": "Filmtabletten", "note": "Generikum; Rx", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Cipralex", "strength": "5/10/20 mg", "form": "tabletki", "note": "Lundbeck; oryginał; Rx", "confidence": "high"},
+        {"brand": "Elicea", "strength": "5/10/20 mg", "form": "tabletki", "note": "KRKA; Rx", "confidence": "high"},
+        {"brand": "Mozarin", "strength": "5/10/20 mg", "form": "tabletki", "note": "generyk; Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Lexapro", "strength": "5/10/20 mg", "form": "tablets; oral solution", "note": "AbbVie/Allergan; brand; Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": "US brand is Lexapro (not Cipralex)."
+  },
+  {
+    "inn_en": "sertraline",
+    "inn_ru": "сертралин",
+    "src": "sertralin",
+    "markets": {
+      "RU": [
+        {"brand": "Золофт", "strength": "50/100 мг", "form": "таблетки", "note": "Pfizer; оригинатор; Rx", "confidence": "high"},
+        {"brand": "Стимулотон", "strength": "50/100 мг", "form": "таблетки", "note": "Gedeon Richter; Rx", "confidence": "high"},
+        {"brand": "Асентра", "strength": "50/100 мг", "form": "таблетки", "note": "KRKA; Rx", "confidence": "medium"},
+        {"brand": "Серлифт", "strength": "50/100 мг", "form": "таблетки", "note": "дженерик; Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Zoloft", "strength": "50/100 mg", "form": "Filmtabletten", "note": "Pfizer; Original; Rx", "confidence": "high"},
+        {"brand": "Sertralin-ratiopharm", "strength": "50/100 mg", "form": "Filmtabletten", "note": "Generikum; Rx", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Zoloft", "strength": "50/100 mg", "form": "tabletki", "note": "Pfizer; oryginał; Rx", "confidence": "high"},
+        {"brand": "Asentra", "strength": "50/100 mg", "form": "tabletki", "note": "KRKA; Rx", "confidence": "high"},
+        {"brand": "Setaloft", "strength": "50/100 mg", "form": "tabletki", "note": "generyk; Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Zoloft", "strength": "25/50/100 mg", "form": "tablets; oral concentrate", "note": "Pfizer; brand; Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "memantine",
+    "inn_ru": "мемантин",
+    "src": "memantin",
+    "markets": {
+      "RU": [
+        {"brand": "Акатинол Мемантин", "strength": "10/20 мг", "form": "таблетки", "note": "Merz; оригинатор; Rx", "confidence": "high"},
+        {"brand": "Мемантин Канон", "strength": "10 мг", "form": "таблетки", "note": "Канонфарма; дженерик; Rx", "confidence": "medium"},
+        {"brand": "Меманталь", "strength": "10 мг", "form": "таблетки", "note": "дженерик; Rx", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Axura", "strength": "10/20 mg", "form": "Filmtabletten", "note": "Merz; Original; Rx", "confidence": "high"},
+        {"brand": "Ebixa", "strength": "10/20 mg", "form": "Filmtabletten", "note": "Lundbeck; Rx", "confidence": "high"},
+        {"brand": "Memantin-ratiopharm", "strength": "10/20 mg", "form": "Filmtabletten", "note": "Generikum; Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Ebixa", "strength": "10/20 mg", "form": "tabletki", "note": "Lundbeck; oryginał; Rx", "confidence": "high"},
+        {"brand": "Axura", "strength": "10/20 mg", "form": "tabletki", "note": "Merz; Rx", "confidence": "medium"},
+        {"brand": "Memigmin", "strength": "10/20 mg", "form": "tabletki", "note": "generyk; Rx", "confidence": "low"}
+      ],
+      "US": [
+        {"brand": "Namenda", "strength": "5/10 mg", "form": "tablets; oral solution", "note": "Allergan; brand; Rx", "confidence": "high"},
+        {"brand": "Namenda XR", "strength": "7/14/21/28 mg", "form": "extended-release capsules", "note": "Rx", "confidence": "medium"},
+        {"brand": "Namzaric", "strength": "combination", "form": "extended-release capsules", "note": "memantine + donepezil; Rx", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "donepezil",
+    "inn_ru": "донепезил",
+    "src": "donepezil",
+    "markets": {
+      "RU": [
+        {"brand": "Арисепт", "strength": "5/10 мг", "form": "таблетки", "note": "Eisai/Pfizer; оригинатор; Rx", "confidence": "high"},
+        {"brand": "Алзепил", "strength": "5/10 мг", "form": "таблетки", "note": "Egis; Rx", "confidence": "medium"},
+        {"brand": "Донепезил Канон", "strength": "5/10 мг", "form": "таблетки", "note": "Канонфарма; Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Aricept", "strength": "5/10 mg", "form": "Filmtabletten / Schmelztabletten", "note": "Eisai; Original; Rx", "confidence": "high"},
+        {"brand": "Donepezil-ratiopharm", "strength": "5/10 mg", "form": "Filmtabletten", "note": "Generikum; Rx", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Aricept", "strength": "5/10 mg", "form": "tabletki", "note": "Eisai; oryginał; Rx", "confidence": "high"},
+        {"brand": "Yasnal", "strength": "5/10 mg", "form": "tabletki", "note": "KRKA; Rx", "confidence": "high"},
+        {"brand": "Donepex", "strength": "5/10 mg", "form": "tabletki", "note": "generyk; Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Aricept", "strength": "5/10/23 mg", "form": "tablets; orally disintegrating tablets", "note": "Eisai; brand; Rx", "confidence": "high"},
+        {"brand": "Adlarity", "strength": "5/10 mg/day", "form": "transdermal patch", "note": "Rx", "confidence": "low"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "betahistine",
+    "inn_ru": "бетагистин",
+    "src": "betahistin",
+    "markets": {
+      "RU": [
+        {"brand": "Бетасерк", "strength": "8/16/24 мг", "form": "таблетки", "note": "Abbott/Mylan; оригинатор; Rx", "confidence": "high"},
+        {"brand": "Вестибо", "strength": "8/16/24 мг", "form": "таблетки", "note": "Actavis; Rx", "confidence": "high"},
+        {"brand": "Бетагистин Канон", "strength": "16/24 мг", "form": "таблетки", "note": "Канонфарма; Rx", "confidence": "medium"},
+        {"brand": "Тагиста", "strength": "8/16/24 мг", "form": "таблетки", "note": "дженерик; Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Vertigo-Vomex", "strength": "", "form": "Tabletten", "note": "betahistine preparations; Rx", "confidence": "low"},
+        {"brand": "Betahistin STADA", "strength": "6/12/24 mg", "form": "Tabletten", "note": "Generikum; Rx", "confidence": "medium"},
+        {"brand": "Betavert", "strength": "6/12/24 mg", "form": "Tabletten", "note": "Hennig; Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Betaserc", "strength": "8/16/24 mg", "form": "tabletki", "note": "Mylan; oryginał; Rx", "confidence": "high"},
+        {"brand": "Betahistin Aurovitas", "strength": "8/16/24 mg", "form": "tabletki", "note": "generyk; Rx", "confidence": "medium"},
+        {"brand": "Histimerck", "strength": "16/24 mg", "form": "tabletki", "note": "generyk; Rx", "confidence": "low"}
+      ],
+      "US": []
+    },
+    "available_note": "Betahistine is not FDA-approved in the US; not marketed there as a prescription drug (available via compounding only)."
+  },
+  {
+    "inn_en": "thioctic acid",
+    "inn_ru": "тиоктовая кислота",
+    "src": "tioktinska kiselina",
+    "markets": {
+      "RU": [
+        {"brand": "Тиоктацид", "strength": "600 мг", "form": "таблетки; раствор для инфузий", "note": "Meda/Viatris; alpha-lipoic acid; Rx", "confidence": "high"},
+        {"brand": "Берлитион", "strength": "300/600 ЕД", "form": "таблетки; концентрат для инфузий", "note": "Berlin-Chemie; Rx", "confidence": "high"},
+        {"brand": "Октолипен", "strength": "300/600 мг", "form": "капсулы; таблетки", "note": "Pharmstandard; Rx", "confidence": "medium"},
+        {"brand": "Эспа-Липон", "strength": "600 мг", "form": "таблетки", "note": "дженерик; Rx", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Thioctacid", "strength": "600 mg", "form": "Filmtabletten; Injektionslösung", "note": "Meda/Viatris; alpha-Liponsäure; Rx", "confidence": "high"},
+        {"brand": "Berlthion", "strength": "300/600 mg", "form": "Tabletten", "note": "Berlin-Chemie; Rx", "confidence": "medium"},
+        {"brand": "alpha-Lipon STADA", "strength": "600 mg", "form": "Filmtabletten", "note": "Generikum; Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Thiogamma", "strength": "600 mg", "form": "tabletki; roztwór do infuzji", "note": "Woerwag; kwas alfa-liponowy; Rx", "confidence": "high"},
+        {"brand": "Berlthion", "strength": "300/600 mg", "form": "tabletki", "note": "Berlin-Chemie; Rx", "confidence": "medium"}
+      ],
+      "US": []
+    },
+    "available_note": "In the US alpha-lipoic acid is sold only as a dietary supplement (e.g. under generic names), not an FDA-approved drug; no prescription brand."
+  },
+  {
+    "inn_en": "vinpocetine",
+    "inn_ru": "винпоцетин",
+    "src": "vinpocetin",
+    "markets": {
+      "RU": [
+        {"brand": "Кавинтон", "strength": "5/10 мг таб; 5 мг/мл р-р", "form": "таблетки; концентрат для инфузий", "note": "Gedeon Richter; оригинатор; Rx", "confidence": "high"},
+        {"brand": "Кавинтон Форте", "strength": "10 мг", "form": "таблетки", "note": "Gedeon Richter; Rx", "confidence": "high"},
+        {"brand": "Винпоцетин", "strength": "5/10 мг", "form": "таблетки", "note": "дженерик; Rx", "confidence": "medium"},
+        {"brand": "Корсавин", "strength": "5/10 мг", "form": "таблетки", "note": "дженерик; Rx", "confidence": "low"}
+      ],
+      "DE": [],
+      "PL": [
+        {"brand": "Cavinton", "strength": "5/10 mg", "form": "tabletki", "note": "Gedeon Richter; Rx", "confidence": "high"},
+        {"brand": "Vicebrol", "strength": "5/10 mg", "form": "tabletki", "note": "Polfarmex; Rx", "confidence": "medium"},
+        {"brand": "Vinpoton", "strength": "5 mg", "form": "tabletki", "note": "generyk; Rx", "confidence": "low"}
+      ],
+      "US": []
+    },
+    "available_note": "Vinpocetine is not an approved drug in Germany or the US. In the US it is sold only as a dietary supplement (and FDA has warned against it in supplements, esp. for pregnant women)."
+  },
+  {
+    "inn_en": "alfacalcidol",
+    "inn_ru": "альфакальцидол",
+    "src": "alfakalcidol",
+    "markets": {
+      "RU": [
+        {"brand": "Альфа Д3", "strength": "0,25/0,5/1 мкг", "form": "капсулы", "note": "Teva; ранее Альфа Д3-Тева; Rx", "confidence": "high"},
+        {"brand": "Этальфа", "strength": "0,25/1 мкг; капли 2 мкг/мл", "form": "капсулы; капли для приёма внутрь", "note": "Leo Pharma; Rx", "confidence": "high"},
+        {"brand": "Оксидевит", "strength": "0,25 мкг; раствор 9 мкг/мл", "form": "капсулы; масляный раствор", "note": "дженерик; Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "EinsAlpha", "strength": "0,25/0,5/1 µg", "form": "Weichkapseln", "note": "Teva; Rx", "confidence": "high"},
+        {"brand": "Bondiol", "strength": "0,25/1 µg", "form": "Kapseln", "note": "generic; Rx", "confidence": "low"}
+      ],
+      "PL": [
+        {"brand": "Alfadiol", "strength": "0,25/1 µg", "form": "kapsułki", "note": "Chephasaar/generyk; Rx", "confidence": "medium"},
+        {"brand": "Etalpha", "strength": "0,25/1 µg; krople", "form": "kapsułki; krople doustne", "note": "Leo Pharma; Rx", "confidence": "medium"}
+      ],
+      "US": []
+    },
+    "available_note": "Alfacalcidol is not FDA-approved / not marketed in the US (US uses calcitriol and doxercalciferol instead). One-Alpha is the common brand in UK/other markets."
+  }
+]

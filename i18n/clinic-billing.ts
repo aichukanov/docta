@@ -122,8 +122,7 @@ export default {
 			SuccessTitle: 'Оплата прошла успешно',
 			SuccessProcessing:
 				'Платёж получен. Активируем услуги — обычно это занимает несколько секунд…',
-			SuccessDone:
-				'Услуги активированы и уже видны на странице вашей клиники.',
+			SuccessDone: 'Услуги активированы и уже видны на странице вашей клиники.',
 			SuccessPending:
 				'Платёж получен. Активация выполняется — услуги скоро появятся в истории.',
 			ErrorTitle: 'Оплата не завершена',
@@ -353,8 +352,7 @@ export default {
 			ServiceHighlightDesc:
 				'Kliniğiniz arama sonuçlarında ve klinik listelerinde öne çıkar',
 			ServiceApprovedName: 'Doğrulanmış klinik rozeti',
-			ServiceApprovedDesc:
-				'Doğrulama rozeti ✓ alın ve hasta güvenini artırın',
+			ServiceApprovedDesc: 'Doğrulama rozeti ✓ alın ve hasta güvenini artırın',
 
 			ActiveBadge: 'Aktif',
 			ActiveUntil: '{date} tarihine kadar aktif',
@@ -395,8 +393,7 @@ export default {
 			SuccessTitle: 'Ödeme başarılı',
 			SuccessProcessing:
 				'Ödeme alındı. Hizmetler etkinleştiriliyor — genellikle birkaç saniye sürer…',
-			SuccessDone:
-				'Hizmetler etkinleştirildi ve klinik sayfanızda görünüyor.',
+			SuccessDone: 'Hizmetler etkinleştirildi ve klinik sayfanızda görünüyor.',
 			SuccessPending:
 				'Ödeme alındı. Etkinleştirme devam ediyor — hizmetler yakında geçmişte görünecek.',
 			ErrorTitle: 'Ödeme tamamlanmadı',

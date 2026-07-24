@@ -229,9 +229,7 @@ export async function getDoctorsForServiceByClinic(
 	}
 
 	// 2. Фолбэк по специальности — только для клиник без точных строк.
-	const fallbackClinicIds = clinicIds.filter(
-		(id) => !clinicsWithExact.has(id),
-	);
+	const fallbackClinicIds = clinicIds.filter((id) => !clinicsWithExact.has(id));
 	if (fallbackClinicIds.length > 0) {
 		const fbPlaceholders = fallbackClinicIds.map(() => '?').join(',');
 		const [fallbackRows] = await connection.execute(

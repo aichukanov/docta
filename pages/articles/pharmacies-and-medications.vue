@@ -52,9 +52,7 @@ const getSubstanceLink = (substanceId: number) => ({
 
 const IBUPROFEN_SUBSTANCE_ID = 364;
 const LEVOTHYROXINE_SUBSTANCE_ID = 485;
-const ibuprofenLink = computed(() =>
-	getSubstanceLink(IBUPROFEN_SUBSTANCE_ID),
-);
+const ibuprofenLink = computed(() => getSubstanceLink(IBUPROFEN_SUBSTANCE_ID));
 const levothyroxineLink = computed(() =>
 	getSubstanceLink(LEVOTHYROXINE_SUBSTANCE_ID),
 );
@@ -134,7 +132,8 @@ const { breadcrumbItems } = useArticlePageSeo({
 		<ArticleSection id="section-fond-list" :title="t('PhaToc_fond-list')">
 			<p>{{ t('PhaFond1') }}</p>
 			<p
-				>{{ t('PhaFond2a') }}<NuxtLink :to="sertralineLink">{{
+				>{{ t('PhaFond2a')
+				}}<NuxtLink :to="sertralineLink">{{
 					t('PhaFond2SertralineLink')
 				}}</NuxtLink
 				>{{ t('PhaFond2b') }}</p
@@ -148,10 +147,12 @@ const { breadcrumbItems } = useArticlePageSeo({
 
 		<ArticleSection id="section-analogs" :title="t('PhaToc_analogs')">
 			<p
-				>{{ t('PhaAnalogs1a') }}<NuxtLink :to="ibuprofenLink">{{
+				>{{ t('PhaAnalogs1a')
+				}}<NuxtLink :to="ibuprofenLink">{{
 					t('PhaAnalogs1IbuprofenLink')
 				}}</NuxtLink
-				>{{ t('PhaAnalogs1b') }}<NuxtLink :to="levothyroxineLink">{{
+				>{{ t('PhaAnalogs1b')
+				}}<NuxtLink :to="levothyroxineLink">{{
 					t('PhaAnalogs1LevothyroxineLink')
 				}}</NuxtLink
 				>{{ t('PhaAnalogs1c') }}</p
@@ -193,20 +194,17 @@ const { breadcrumbItems } = useArticlePageSeo({
 					>
 				</li>
 				<li>
-					<a
-						href="https://cinmed.me"
-						target="_blank"
-						rel="noopener nofollow"
-						>{{ t('PhaSourcesCinmed') }}</a
-					>
+					<a href="https://cinmed.me" target="_blank" rel="noopener nofollow">{{
+						t('PhaSourcesCinmed')
+					}}</a>
 				</li>
 				<li
-					>{{ t('PhaSourcesBenu') }}<a
-						href="https://benu.me"
-						target="_blank"
-						rel="noopener nofollow"
-						>{{ t('PhaSourcesBenuLink') }}</a
-					>{{ t('PhaSourcesBenuMid') }}<a
+					>{{ t('PhaSourcesBenu')
+					}}<a href="https://benu.me" target="_blank" rel="noopener nofollow">{{
+						t('PhaSourcesBenuLink')
+					}}</a
+					>{{ t('PhaSourcesBenuMid')
+					}}<a
 						href="https://www.teamedica.me"
 						target="_blank"
 						rel="noopener nofollow"
@@ -216,9 +214,7 @@ const { breadcrumbItems } = useArticlePageSeo({
 			</ul>
 			<p>
 				{{ t('PhaSourcesCatalog') }}
-				<NuxtLink :to="doctorsLink">{{
-					t('PhaSourcesCatalogLink')
-				}}</NuxtLink
+				<NuxtLink :to="doctorsLink">{{ t('PhaSourcesCatalogLink') }}</NuxtLink
 				>{{ t('PhaSourcesCatalogEnd') }}
 			</p>
 		</ArticleSection>

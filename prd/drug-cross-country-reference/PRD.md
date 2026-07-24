@@ -1,5 +1,10 @@
 # PRD: Кросс-страновые торговые названия лекарств («аналоги для туристов»)
 
+> ⚠️ **АКТУАЛЬНАЯ архитектура «как есть» — в [IMPLEMENTATION.md](./IMPLEMENTATION.md).**
+> Этот PRD — история решений фазы 1. Фича с тех пор ушла далеко вперёд (per-form модель,
+> рынки RU/UA/TR/DE/PL/US, сет-матчинг веществ + доза + форма, миграция 017). Новый чат:
+> читать IMPLEMENTATION.md (там же §10 «текущее состояние»).
+
 Статус: **Фаза 1 реализована в коде 2026-07-23** (коммит `8039957 absent medicines`) · Дата: 2026-07-23 · Автор: Anton + Claude
 
 **Что готово:** миграция `server/sql/migrations/015-med-foreign-brands.sql` + `insert-med-foreign-brands.sql` (сгенерирована из `data/med-foreign-brands/batch-001..007.json` через `scripts/medicines/build-foreign-brands-sql.mjs`), API `server/api/medicines/details.ts` (`foreignBrands`, с try/catch — не 500, если миграция ещё не применена), UI на `pages/medicines/[medicineSlug]/index.vue`, `alternateName` в `buildMedicineSchema`.

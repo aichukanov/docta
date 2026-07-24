@@ -63,6 +63,9 @@ for (const sub of substances) {
   const en = norm(sub.inn_en), enc = cleanInn(sub.inn_en);
   const ru = norm(sub.inn_ru), ruc = cleanInn(sub.inn_ru);
   let srcName = null, via = null;
+  // Explicit src = exact med_substances.name natural key (deterministic, skips fuzzy match).
+  // Used by curated batches where the DB name was verified directly.
+  if (sub.src && srcSet.has(norm(sub.src))) { srcName = sub.src; via = 'src-explicit'; }
   const tryKey = (m, k, label) => { if (!srcName && k && m.has(k)) { srcName = m.get(k); via = label; } };
   tryKey(enToSrc, en, 'en'); tryKey(enToSrc, enc, 'en~');
   tryKey(ruToSrc, ru, 'ru'); tryKey(ruToSrc, ruc, 'ru~');

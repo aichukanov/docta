@@ -6,15 +6,15 @@ import type { H3Event } from 'h3';
  */
 const ENTITY_TYPES: Record<string, { table: string; redirectTable?: string }> =
 	{
-		clinics: { table: 'clinics' },
-		doctors: { table: 'doctors', redirectTable: 'doctor_redirects' },
-		services: {
+		'clinics': { table: 'clinics' },
+		'doctors': { table: 'doctors', redirectTable: 'doctor_redirects' },
+		'services': {
 			table: 'medical_services',
 			redirectTable: 'medical_service_redirects',
 		},
-		labtests: { table: 'lab_tests', redirectTable: 'lab_test_redirects' },
-		medications: { table: 'medications' },
-		medicines: { table: 'med_medicines' },
+		'labtests': { table: 'lab_tests', redirectTable: 'lab_test_redirects' },
+		'medications': { table: 'medications' },
+		'medicines': { table: 'med_medicines' },
 		'insurance-companies': { table: 'insurance_companies' },
 	};
 

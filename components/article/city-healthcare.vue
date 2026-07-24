@@ -257,10 +257,12 @@ const { breadcrumbItems } = useArticlePageSeo({
 		<ArticleSection id="section-emergency" :title="t('CityHcToc_emergency')">
 			<p>{{ t(`CityHcEmergency1_${city}`) }}</p>
 			<p v-if="city === 'budva'"
-				>{{ t('CityHcEmergency2a_budva') }}<NuxtLink :to="kotorHospitalLink">{{
+				>{{ t('CityHcEmergency2a_budva')
+				}}<NuxtLink :to="kotorHospitalLink">{{
 					t('CityHcEmergency2KotorLink_budva')
 				}}</NuxtLink
-				>{{ t('CityHcEmergency2b_budva') }}<NuxtLink :to="kccgLink">{{
+				>{{ t('CityHcEmergency2b_budva')
+				}}<NuxtLink :to="kccgLink">{{
 					t('CityHcEmergency2KccgLink_budva')
 				}}</NuxtLink
 				>{{ t('CityHcEmergency2c_budva') }}</p
@@ -273,10 +275,12 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t(`CityHcState1_${city}`) }}</p>
 			<p>{{ t(`CityHcState2_${city}`) }}</p>
 			<p v-if="city === 'kotor'"
-				>{{ t('CityHcState3a_kotor') }}<NuxtLink :to="vasoCukovicRisanLink">{{
+				>{{ t('CityHcState3a_kotor')
+				}}<NuxtLink :to="vasoCukovicRisanLink">{{
 					t('CityHcState3VasoLink_kotor')
 				}}</NuxtLink
-				>{{ t('CityHcState3b_kotor') }}<NuxtLink :to="dobrotaPsychiatricLink">{{
+				>{{ t('CityHcState3b_kotor')
+				}}<NuxtLink :to="dobrotaPsychiatricLink">{{
 					t('CityHcState3DobrotaLink_kotor')
 				}}</NuxtLink
 				>{{ t('CityHcState3c_kotor') }}</p
@@ -299,34 +303,28 @@ const { breadcrumbItems } = useArticlePageSeo({
 					<NuxtLink :to="milmedikaBudvaLink">{{
 						t('CityHcPvMilmedika')
 					}}</NuxtLink
-					>, <NuxtLink :to="mojLabBudvaLink">{{
-						t('CityHcPvMojLab')
-					}}</NuxtLink
-					>, <NuxtLink :to="bonoMedicaLink">{{
-						t('CityHcPvBonoMedica')
-					}}</NuxtLink
-					>, <NuxtLink :to="medicalCentarBudvaLink">{{
+					>, <NuxtLink :to="mojLabBudvaLink">{{ t('CityHcPvMojLab') }}</NuxtLink
+					>,
+					<NuxtLink :to="bonoMedicaLink">{{ t('CityHcPvBonoMedica') }}</NuxtLink
+					>,
+					<NuxtLink :to="medicalCentarBudvaLink">{{
 						t('CityHcPvMedicalCentar')
 					}}</NuxtLink
 					>.</li
 				>
 				<li
 					>{{ t('CityHcPvGroupLabel_Dental') }}:
-					<NuxtLink :to="dukleyDentalLink">{{
-						t('CityHcPvDukley')
-					}}</NuxtLink
+					<NuxtLink :to="dukleyDentalLink">{{ t('CityHcPvDukley') }}</NuxtLink
 					>, <NuxtLink :to="reDentLink">{{ t('CityHcPvReDent') }}</NuxtLink
-					>, <NuxtLink :to="zecevicDentalLink">{{
-						t('CityHcPvZecevic')
-					}}</NuxtLink
+					>,
+					<NuxtLink :to="zecevicDentalLink">{{ t('CityHcPvZecevic') }}</NuxtLink
 					>.</li
 				>
 				<li
 					>{{ t('CityHcPvGroupLabel_Ophthalmology') }}:
-					<NuxtLink :to="laserFocusLink">{{
-						t('CityHcPvLaserFocus')
-					}}</NuxtLink
-					>, <NuxtLink :to="svjetlostEyeLink">{{
+					<NuxtLink :to="laserFocusLink">{{ t('CityHcPvLaserFocus') }}</NuxtLink
+					>,
+					<NuxtLink :to="svjetlostEyeLink">{{
 						t('CityHcPvSvjetlost')
 					}}</NuxtLink
 					>.</li
@@ -345,7 +343,8 @@ const { breadcrumbItems } = useArticlePageSeo({
 					<NuxtLink :to="smartMedKotorLink">{{
 						t('CityHcPvSmartMed')
 					}}</NuxtLink
-					>, <NuxtLink :to="hipokratRadanoviciLink">{{
+					>,
+					<NuxtLink :to="hipokratRadanoviciLink">{{
 						t('CityHcPvHipokratRadanovici')
 					}}</NuxtLink
 					>.</li
@@ -362,10 +361,10 @@ const { breadcrumbItems } = useArticlePageSeo({
 					<NuxtLink :to="dentalStudioVuceticLink">{{
 						t('CityHcPvDentalStudioVucetic')
 					}}</NuxtLink
-					>, <NuxtLink :to="drCetkovicLink">{{
-						t('CityHcPvDrCetkovic')
-					}}</NuxtLink
-					>, <NuxtLink :to="orthoCentarKotorLink">{{
+					>,
+					<NuxtLink :to="drCetkovicLink">{{ t('CityHcPvDrCetkovic') }}</NuxtLink
+					>,
+					<NuxtLink :to="orthoCentarKotorLink">{{
 						t('CityHcPvOrthoCentarKotor')
 					}}</NuxtLink
 					>.</li
@@ -384,13 +383,16 @@ const { breadcrumbItems } = useArticlePageSeo({
 					<NuxtLink :to="novoStandardBarLink">{{
 						t('CityHcPvNoviStandardBar')
 					}}</NuxtLink
-					>, <NuxtLink :to="drZejnilovicLink">{{
+					>,
+					<NuxtLink :to="drZejnilovicLink">{{
 						t('CityHcPvDrZejnilovic')
 					}}</NuxtLink
-					>, <NuxtLink :to="medicalVranesLink">{{
+					>,
+					<NuxtLink :to="medicalVranesLink">{{
 						t('CityHcPvMedicalVranes')
 					}}</NuxtLink
-					>, <NuxtLink :to="a3MedicalSutomoreLink">{{
+					>,
+					<NuxtLink :to="a3MedicalSutomoreLink">{{
 						t('CityHcPvA3Medical')
 					}}</NuxtLink
 					>.</li
@@ -400,37 +402,37 @@ const { breadcrumbItems } = useArticlePageSeo({
 					<NuxtLink :to="justDentalBarLink">{{
 						t('CityHcPvJustDental')
 					}}</NuxtLink
-					>, <NuxtLink :to="pavlinDentalBarLink">{{
+					>,
+					<NuxtLink :to="pavlinDentalBarLink">{{
 						t('CityHcPvPavlinDental')
 					}}</NuxtLink
-					>, <NuxtLink :to="drDebeljaBarLink">{{
+					>,
+					<NuxtLink :to="drDebeljaBarLink">{{
 						t('CityHcPvDrDebelja')
 					}}</NuxtLink
 					>.</li
 				>
 				<li
 					>{{ t('CityHcPvGroupLabel_OtherDental') }}:
-					<NuxtLink :to="bunticDentalLink">{{
-						t('CityHcPvBuntic')
-					}}</NuxtLink
-					>, <NuxtLink :to="drSimonovicDentalLink">{{
+					<NuxtLink :to="bunticDentalLink">{{ t('CityHcPvBuntic') }}</NuxtLink
+					>,
+					<NuxtLink :to="drSimonovicDentalLink">{{
 						t('CityHcPvDrSimonovic')
 					}}</NuxtLink
-					>, <NuxtLink :to="drBajagicDentalLink">{{
+					>,
+					<NuxtLink :to="drBajagicDentalLink">{{
 						t('CityHcPvDrBajagic')
 					}}</NuxtLink
-					>, <NuxtLink :to="drZejakDentalLink">{{
-						t('CityHcPvDrZejak')
-					}}</NuxtLink
-					>, <NuxtLink :to="gacinaDentalLink">{{
-						t('CityHcPvGacina')
-					}}</NuxtLink
-					>, <NuxtLink :to="jovoticDentLink">{{
+					>,
+					<NuxtLink :to="drZejakDentalLink">{{ t('CityHcPvDrZejak') }}</NuxtLink
+					>,
+					<NuxtLink :to="gacinaDentalLink">{{ t('CityHcPvGacina') }}</NuxtLink
+					>,
+					<NuxtLink :to="jovoticDentLink">{{
 						t('CityHcPvJovoticDent')
 					}}</NuxtLink
-					>, <NuxtLink :to="cicmilDentalLink">{{
-						t('CityHcPvCicmil')
-					}}</NuxtLink
+					>,
+					<NuxtLink :to="cicmilDentalLink">{{ t('CityHcPvCicmil') }}</NuxtLink
 					>.</li
 				>
 			</ul>
@@ -440,11 +442,11 @@ const { breadcrumbItems } = useArticlePageSeo({
 					<NuxtLink :to="konzilijumPgLink">{{
 						t('CityHcPvKonzilijum')
 					}}</NuxtLink
-					>, <NuxtLink :to="arsMedicaPgLink">{{
-						t('CityHcPvArsMedica')
-					}}</NuxtLink
+					>,
+					<NuxtLink :to="arsMedicaPgLink">{{ t('CityHcPvArsMedica') }}</NuxtLink
 					>, <NuxtLink :to="medtimPgLink">{{ t('CityHcPvMedtim') }}</NuxtLink
-					>, <NuxtLink :to="codraHospitalPgLink">{{
+					>,
+					<NuxtLink :to="codraHospitalPgLink">{{
 						t('CityHcPvCodraHospital')
 					}}</NuxtLink
 					>.</li
@@ -456,16 +458,14 @@ const { breadcrumbItems } = useArticlePageSeo({
 				>
 				<li
 					>{{ t('CityHcPvGroupLabel_Polyclinic') }}:
-					<NuxtLink :to="hipokratPgLink">{{
-						t('CityHcPvHipokratPg')
-					}}</NuxtLink
-					>, <NuxtLink :to="mojLabPg1Link">{{
-						t('CityHcPvMojLabPg')
-					}}</NuxtLink
-					>, <NuxtLink :to="milmedikaPgLink">{{
+					<NuxtLink :to="hipokratPgLink">{{ t('CityHcPvHipokratPg') }}</NuxtLink
+					>, <NuxtLink :to="mojLabPg1Link">{{ t('CityHcPvMojLabPg') }}</NuxtLink
+					>,
+					<NuxtLink :to="milmedikaPgLink">{{
 						t('CityHcPvMilmedikaPg')
 					}}</NuxtLink
-					>, <NuxtLink :to="filipovicPgLink">{{
+					>,
+					<NuxtLink :to="filipovicPgLink">{{
 						t('CityHcPvFilipovicPg')
 					}}</NuxtLink
 					>.</li

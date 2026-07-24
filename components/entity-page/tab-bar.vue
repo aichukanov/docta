@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ArrowDown } from '@element-plus/icons-vue';
+
 export interface TabItem {
 	id: string;
 	label: string;
@@ -12,12 +14,45 @@ const route = useRoute();
 
 const tabIds = computed(() => new Set(props.tabs.map((t) => t.id)));
 const activeTabId = ref(props.tabs[0]?.id || '');
+const activeLabel = computed(
+	() =>
+		props.tabs.find((t) => t.id === activeTabId.value)?.label ||
+		props.tabs[0]?.label ||
+		'',
+);
 
-const scrollToSection = (id: string) => {
+// Высота залипающей шапки приложения (app-header: sticky, min-height 60px).
+const HEADER_OFFSET = 60;
+// Ссылка на мобильную залипающую полосу. На десктопе она display:none →
+// offsetHeight 0, поэтому смещение сводится к высоте шапки (рельс сбоку не
+// перекрывает контент по вертикали).
+const mobileBarRef = ref<HTMLElement | null>(null);
+const stickyHeight = () =>
+	HEADER_OFFSET + (mobileBarRef.value?.offsetHeight ?? 0);
+
+// «Линия активации» — насколько ниже залипающего блока должен подняться
+// заголовок секции, чтобы она стала активной. Берём ~28% высоты области под
+// баром, чтобы подсветка переключалась заранее, с заметным отступом от верха,
+// а не когда заголовок упрётся в самый верх экрана.
+const activationLine = () => {
+	const base = stickyHeight();
+	return base + Math.round((window.innerHeight - base) * 0.28);
+};
+
+// На время программного скролла (клик по вкладке) блокируем scroll-spy, чтобы
+// он не переключил подсветку на соседнюю секцию: у коротких секций заголовок
+// после клика оказывается выше линии активации.
+const spyLocked = ref(false);
+
+const scrollToSection = (id: string, onDone?: () => void) => {
 	const el = document.getElementById(id);
-	if (!el) return;
+	if (!el) {
+		onDone?.();
+		return;
+	}
 
-	const targetY = el.getBoundingClientRect().top + window.scrollY - 120;
+	const targetY =
+		el.getBoundingClientRect().top + window.scrollY - stickyHeight() - 8;
 	const startY = window.scrollY;
 	const diff = targetY - startY;
 	const duration = Math.min(300, Math.abs(diff) * 0.3);
@@ -25,10 +60,11 @@ const scrollToSection = (id: string) => {
 
 	const step = (now: number) => {
 		const elapsed = now - startTime;
-		const t = Math.min(elapsed / duration, 1);
+		const t = duration > 0 ? Math.min(elapsed / duration, 1) : 1;
 		const ease = t * (2 - t);
 		window.scrollTo(0, startY + diff * ease);
 		if (t < 1) requestAnimationFrame(step);
+		else onDone?.();
 	};
 
 	requestAnimationFrame(step);
@@ -41,11 +77,17 @@ const updateQueryParam = (id: string) => {
 };
 
 const onTabClick = (id: string) => {
-	scrollToSection(id);
+	activeTabId.value = id; // подсвечиваем сразу, не дожидаясь scroll-spy
+	spyLocked.value = true;
+	scrollToSection(id, () => {
+		spyLocked.value = false;
+	});
 	updateQueryParam(id);
 };
 
 const updateActiveTab = () => {
+	if (spyLocked.value) return;
+
 	const scrollBottom = window.scrollY + window.innerHeight;
 	const docHeight = document.documentElement.scrollHeight;
 
@@ -54,13 +96,15 @@ const updateActiveTab = () => {
 		return;
 	}
 
+	// Активна секция, чей заголовок последним поднялся выше линии активации.
+	const line = activationLine();
 	let closest = props.tabs[0]?.id || '';
 	let minDist = Infinity;
 
 	for (const tab of props.tabs) {
 		const el = document.getElementById(tab.id);
 		if (!el) continue;
-		const top = el.getBoundingClientRect().top - 130;
+		const top = el.getBoundingClientRect().top - line;
 		if (top <= 0 && Math.abs(top) < minDist) {
 			minDist = Math.abs(top);
 			closest = tab.id;
@@ -73,7 +117,7 @@ const updateActiveTab = () => {
 onMounted(() => {
 	const tab = route.query.tab as string | undefined;
 	if (tab && tabIds.value.has(tab)) {
-		nextTick(() => scrollToSection(tab));
+		nextTick(() => onTabClick(tab));
 	}
 
 	window.addEventListener('scroll', updateActiveTab, { passive: true });
@@ -86,63 +130,137 @@ onMounted(() => {
 </script>
 
 <template>
-	<nav class="section-tab-bar" aria-label="Page sections">
-		<div class="section-tab-bar__inner">
+	<div class="section-nav">
+		<!-- Десктоп: вертикальный рельс слева от контента -->
+		<nav class="section-nav__rail" aria-label="Page sections">
 			<button
 				v-for="tab in tabs"
 				:key="tab.id"
-				class="section-tab"
-				:class="{ 'section-tab--active': activeTabId === tab.id }"
+				class="rail-item"
+				:class="{ 'rail-item--active': activeTabId === tab.id }"
 				@click="onTabClick(tab.id)"
 			>
 				{{ tab.label }}
 			</button>
+		</nav>
+
+		<!-- Мобильные: залипающая полоса с текущим разделом и выпадающим списком -->
+		<div class="section-nav__mobile" ref="mobileBarRef">
+			<el-dropdown
+				trigger="click"
+				placement="bottom-start"
+				popper-class="section-nav-menu"
+				@command="onTabClick"
+			>
+				<button class="mobile-trigger" type="button">
+					<span class="mobile-trigger__label">{{ activeLabel }}</span>
+					<el-icon class="mobile-trigger__chev"><ArrowDown /></el-icon>
+				</button>
+				<template #dropdown>
+					<el-dropdown-menu>
+						<el-dropdown-item
+							v-for="tab in tabs"
+							:key="tab.id"
+							:command="tab.id"
+							:class="{ 'is-active': activeTabId === tab.id }"
+						>
+							{{ tab.label }}
+						</el-dropdown-item>
+					</el-dropdown-menu>
+				</template>
+			</el-dropdown>
 		</div>
-	</nav>
+	</div>
 </template>
 
 <style lang="less" scoped>
-.section-tab-bar {
+/* --- Мобильная полоса (по умолчанию); рельс скрыт --- */
+.section-nav__rail {
+	display: none;
+}
+
+.section-nav__mobile {
 	position: sticky;
 	top: 60px;
-	z-index: 10;
+	z-index: var(--z-raised);
 	background: var(--color-surface-primary, #fff);
 	border-bottom: 1px solid var(--color-border-light);
+	padding: var(--spacing-sm) 0;
 }
 
-.section-tab-bar__inner {
-	max-width: 900px;
-	margin: 0 auto;
-	padding: 0 var(--spacing-md);
+.mobile-trigger {
 	display: flex;
-	gap: var(--spacing-xs);
-	overflow-x: auto;
-	-webkit-overflow-scrolling: touch;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--spacing-sm);
+	width: 100%;
+	padding: var(--spacing-sm) var(--spacing-md);
+	border: 1px solid var(--color-border-secondary);
+	border-radius: var(--border-radius-md);
+	background: var(--color-bg-primary, #fff);
+	font-family: inherit;
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-primary);
+	cursor: pointer;
+}
 
-	&::-webkit-scrollbar {
+.mobile-trigger__chev {
+	flex-shrink: 0;
+	color: var(--color-text-muted);
+	font-size: 12px;
+}
+
+/* --- Десктоп: рельс вместо полосы --- */
+@media (min-width: 1024px) {
+	.section-nav__mobile {
 		display: none;
 	}
+
+	.section-nav__rail {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		position: sticky;
+		top: 76px;
+		border-left: 1px solid var(--color-border-light);
+	}
+
+	.rail-item {
+		text-align: left;
+		padding: var(--spacing-sm) var(--spacing-md);
+		border: none;
+		border-left: 2px solid transparent;
+		margin-left: -1px;
+		border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+		background: none;
+		font-family: inherit;
+		font-size: var(--font-size-sm);
+		color: var(--color-text-secondary);
+		cursor: pointer;
+		transition:
+			color 0.15s ease,
+			background-color 0.15s ease;
+
+		&:hover {
+			color: var(--color-text-primary);
+			background: var(--color-bg-secondary);
+		}
+
+		&--active {
+			color: var(--color-primary);
+			border-left-color: var(--color-primary);
+			font-weight: var(--font-weight-semibold);
+			background: var(--color-primary-bg);
+		}
+	}
 }
+</style>
 
-.section-tab {
-	flex-shrink: 0;
-	padding: var(--spacing-sm) var(--spacing-md);
-	border: none;
-	background: none;
-	font-size: var(--font-size-sm);
-	font-family: inherit;
-	color: var(--color-text-secondary);
-	cursor: pointer;
-	border-bottom: 2px solid transparent;
-	transition: color 0.15s ease;
-
-	&:hover {
-		color: var(--color-text-primary);
-	}
-
-	&--active {
-		color: var(--color-primary);
-		border-bottom-color: var(--color-primary);
-	}
+<style lang="less">
+/* Выпадающее меню телепортируется из scoped-области — стилизуем глобально */
+.section-nav-menu .el-dropdown-menu__item.is-active {
+	color: var(--color-primary);
+	font-weight: var(--font-weight-semibold);
 }
 </style>

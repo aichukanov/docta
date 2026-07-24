@@ -160,7 +160,9 @@ const reviewsLink = computed(() => {
 				>
 					<template v-if="formattedPrice">
 						{{ formattedPrice }}
-						<template v-if="isOutdated"> {{ t('PriceOutdatedSuffix') }}</template>
+						<template v-if="isOutdated">
+							{{ t('PriceOutdatedSuffix') }}</template
+						>
 						<PriceOutdatedBadge v-if="isOutdated" inverse />
 					</template>
 					<template v-else>{{ t('PriceUnknown') }}</template>

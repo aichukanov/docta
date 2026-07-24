@@ -59,7 +59,9 @@ export async function requireUser(event: H3Event): Promise<User> {
 function isValidCoordinate(value: unknown, max: number): boolean {
 	return (
 		value == null ||
-		(typeof value === 'number' && Number.isFinite(value) && Math.abs(value) <= max)
+		(typeof value === 'number' &&
+			Number.isFinite(value) &&
+			Math.abs(value) <= max)
 	);
 }
 
@@ -80,17 +82,11 @@ export function validateClinicCabinetBody(
 		createErrorResponse(400, ERROR_CODES.CLINIC_INVALID_DATA);
 	}
 
-	if (
-		!validateDoctorLanguageIds(body, from) ||
-		body.languageIds.length === 0
-	) {
+	if (!validateDoctorLanguageIds(body, from) || body.languageIds.length === 0) {
 		createErrorResponse(400, ERROR_CODES.CLINIC_INVALID_DATA);
 	}
 
-	if (
-		body.clinicTypeIds !== undefined &&
-		!validateClinicTypeIds(body, from)
-	) {
+	if (body.clinicTypeIds !== undefined && !validateClinicTypeIds(body, from)) {
 		createErrorResponse(400, ERROR_CODES.CLINIC_INVALID_DATA);
 	}
 

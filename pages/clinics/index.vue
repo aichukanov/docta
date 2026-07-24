@@ -104,9 +104,7 @@ const filterList = computed(() => ({
 	minRating: minRating.value || undefined,
 	locale: locale.value,
 	page: pageNumber.value,
-	userLatitude: sortByDistance.value
-		? userLocation.value?.latitude
-		: undefined,
+	userLatitude: sortByDistance.value ? userLocation.value?.latitude : undefined,
 	userLongitude: sortByDistance.value
 		? userLocation.value?.longitude
 		: undefined,

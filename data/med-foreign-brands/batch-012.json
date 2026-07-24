@@ -1,0 +1,461 @@
+[
+  {
+    "inn_en": "amoxicillin",
+    "inn_ru": "амоксициллин",
+    "src": "amoksicilin",
+    "markets": {
+      "RU": [
+        {"brand": "Флемоксин Солютаб", "strength": "125/250/500/1000 мг", "form": "таблетки диспергируемые", "note": "Rx", "confidence": "high"},
+        {"brand": "Амоксициллин", "strength": "250/500 мг", "form": "капсулы, таблетки", "note": "Rx, дженерик", "confidence": "high"},
+        {"brand": "Оспамокс", "strength": "250/500/1000 мг", "form": "таблетки, суспензия", "note": "Rx", "confidence": "high"},
+        {"brand": "Хиконцил", "strength": "250/500 мг", "form": "капсулы", "note": "Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Amoxicillin AL", "strength": "500/750/1000 mg", "form": "Tabletten", "note": "Rx, Generikum", "confidence": "high"},
+        {"brand": "Amoxi-ratiopharm", "strength": "500/750/1000 mg", "form": "Tabletten", "note": "Rx", "confidence": "high"},
+        {"brand": "Amoxicillin-1A Pharma", "strength": "500/1000 mg", "form": "Tabletten", "note": "Rx", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Ospamox", "strength": "500/1000 mg", "form": "tabletki", "note": "Rx", "confidence": "high"},
+        {"brand": "Amotaks", "strength": "500/1000 mg", "form": "tabletki, kapsułki", "note": "Rx", "confidence": "high"},
+        {"brand": "Duomox", "strength": "250/500/1000 mg", "form": "tabletki", "note": "Rx", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Amoxil", "strength": "250/500 mg", "form": "capsules", "note": "Rx, originator largely generic", "confidence": "medium"},
+        {"brand": "Moxatag", "strength": "775 mg", "form": "extended-release tablets", "note": "Rx", "confidence": "low"},
+        {"brand": "amoxicillin (generic)", "strength": "500/875 mg", "form": "capsules, tablets", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": "Plain amoxicillin only; not to be confused with amoxicillin+clavulanate (Augmentin)."
+  },
+  {
+    "inn_en": "azithromycin",
+    "inn_ru": "азитромицин",
+    "src": "azitromicin",
+    "markets": {
+      "RU": [
+        {"brand": "Сумамед", "strength": "125/250/500 мг", "form": "таблетки, капсулы, суспензия", "note": "Rx, оригинатор", "confidence": "high"},
+        {"brand": "Азитромицин", "strength": "250/500 мг", "form": "капсулы, таблетки", "note": "Rx, дженерик", "confidence": "high"},
+        {"brand": "Азитрокс", "strength": "250/500 мг", "form": "капсулы", "note": "Rx", "confidence": "high"},
+        {"brand": "Хемомицин", "strength": "250/500 мг", "form": "капсулы, таблетки", "note": "Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Zithromax", "strength": "250/500 mg", "form": "Filmtabletten", "note": "Rx, Originator", "confidence": "high"},
+        {"brand": "Azithromycin-ratiopharm", "strength": "250/500 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "high"},
+        {"brand": "Azi-TEVA", "strength": "250/500 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Sumamed", "strength": "250/500 mg", "form": "tabletki, kapsułki", "note": "Rx", "confidence": "high"},
+        {"brand": "AzitroLEK", "strength": "250/500 mg", "form": "tabletki", "note": "Rx", "confidence": "medium"},
+        {"brand": "Azimycin", "strength": "250/500 mg", "form": "tabletki", "note": "Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Zithromax", "strength": "250/500/600 mg", "form": "tablets, Z-Pak", "note": "Rx, originator", "confidence": "high"},
+        {"brand": "Zmax", "strength": "2 g", "form": "extended-release suspension", "note": "Rx", "confidence": "low"},
+        {"brand": "azithromycin (generic)", "strength": "250/500 mg", "form": "tablets", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "ciprofloxacin",
+    "inn_ru": "ципрофлоксацин",
+    "src": "ciprofloksacin",
+    "markets": {
+      "RU": [
+        {"brand": "Ципролет", "strength": "250/500 мг", "form": "таблетки", "note": "Rx", "confidence": "high"},
+        {"brand": "Ципробай", "strength": "250/500/750 мг", "form": "таблетки", "note": "Rx, оригинатор", "confidence": "high"},
+        {"brand": "Ципрофлоксацин", "strength": "250/500 мг", "form": "таблетки", "note": "Rx, дженерик", "confidence": "high"},
+        {"brand": "Цифран", "strength": "250/500 мг", "form": "таблетки", "note": "Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Ciprobay", "strength": "250/500/750 mg", "form": "Filmtabletten", "note": "Rx, Originator", "confidence": "high"},
+        {"brand": "Ciprofloxacin-ratiopharm", "strength": "250/500 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "high"},
+        {"brand": "Cipro-1A Pharma", "strength": "250/500 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Cipronex", "strength": "250/500 mg", "form": "tabletki", "note": "Rx", "confidence": "high"},
+        {"brand": "Ciprinol", "strength": "250/500 mg", "form": "tabletki", "note": "Rx", "confidence": "high"},
+        {"brand": "Ciphin", "strength": "250/500 mg", "form": "tabletki", "note": "Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Cipro", "strength": "250/500/750 mg", "form": "tablets", "note": "Rx, originator", "confidence": "high"},
+        {"brand": "Cipro XR", "strength": "500/1000 mg", "form": "extended-release tablets", "note": "Rx", "confidence": "medium"},
+        {"brand": "ciprofloxacin (generic)", "strength": "250/500 mg", "form": "tablets", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "levofloxacin",
+    "inn_ru": "левофлоксацин",
+    "src": "levofloksacin",
+    "markets": {
+      "RU": [
+        {"brand": "Таваник", "strength": "250/500 мг", "form": "таблетки", "note": "Rx, оригинатор", "confidence": "high"},
+        {"brand": "Левофлоксацин", "strength": "250/500 мг", "form": "таблетки", "note": "Rx, дженерик", "confidence": "high"},
+        {"brand": "Флексид", "strength": "250/500 мг", "form": "таблетки", "note": "Rx", "confidence": "medium"},
+        {"brand": "Элефлокс", "strength": "250/500 мг", "form": "таблетки", "note": "Rx", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Tavanic", "strength": "250/500 mg", "form": "Filmtabletten", "note": "Rx, Originator", "confidence": "high"},
+        {"brand": "Levofloxacin-ratiopharm", "strength": "250/500 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "high"},
+        {"brand": "Levofloxacin Aristo", "strength": "250/500 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Tavanic", "strength": "250/500 mg", "form": "tabletki", "note": "Rx", "confidence": "high"},
+        {"brand": "Levoxa", "strength": "250/500 mg", "form": "tabletki", "note": "Rx", "confidence": "high"},
+        {"brand": "Xyvelam", "strength": "250/500 mg", "form": "tabletki", "note": "Rx", "confidence": "low"}
+      ],
+      "US": [
+        {"brand": "Levaquin", "strength": "250/500/750 mg", "form": "tablets", "note": "Rx, brand discontinued in US; generic available", "confidence": "high"},
+        {"brand": "levofloxacin (generic)", "strength": "250/500/750 mg", "form": "tablets", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": "US brand Levaquin discontinued; generic levofloxacin remains available."
+  },
+  {
+    "inn_en": "moxifloxacin",
+    "inn_ru": "моксифлоксацин",
+    "src": "moksifloksacin",
+    "markets": {
+      "RU": [
+        {"brand": "Авелокс", "strength": "400 мг", "form": "таблетки", "note": "Rx, оригинатор", "confidence": "high"},
+        {"brand": "Моксифлоксацин", "strength": "400 мг", "form": "таблетки", "note": "Rx, дженерик", "confidence": "high"},
+        {"brand": "Вигамокс", "strength": "5 мг/мл", "form": "капли глазные", "note": "Rx, офтальмологический", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Avalox", "strength": "400 mg", "form": "Filmtabletten", "note": "Rx, Originator", "confidence": "high"},
+        {"brand": "Moxifloxacin-ratiopharm", "strength": "400 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "medium"},
+        {"brand": "Vigamox", "strength": "5 mg/ml", "form": "Augentropfen", "note": "Rx, ophthalmologisch", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Avelox", "strength": "400 mg", "form": "tabletki", "note": "Rx", "confidence": "high"},
+        {"brand": "Moxifloxacin", "strength": "400 mg", "form": "tabletki", "note": "Rx, generyk", "confidence": "medium"},
+        {"brand": "Vigamox", "strength": "5 mg/ml", "form": "krople do oczu", "note": "Rx, okulistyczny", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Avelox", "strength": "400 mg", "form": "tablets", "note": "Rx, originator (brand largely discontinued)", "confidence": "medium"},
+        {"brand": "Vigamox", "strength": "0.5%", "form": "ophthalmic solution", "note": "Rx", "confidence": "high"},
+        {"brand": "moxifloxacin (generic)", "strength": "400 mg", "form": "tablets", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "cefuroxime",
+    "inn_ru": "цефуроксим",
+    "src": "cefuroksim",
+    "markets": {
+      "RU": [
+        {"brand": "Зиннат", "strength": "125/250/500 мг", "form": "таблетки, суспензия", "note": "Rx, оригинатор (пероральный)", "confidence": "high"},
+        {"brand": "Зинацеф", "strength": "250/750/1500 мг", "form": "порошок для инъекций", "note": "Rx, парентеральный", "confidence": "high"},
+        {"brand": "Аксетин", "strength": "250/750/1500 мг", "form": "порошок для инъекций", "note": "Rx", "confidence": "medium"},
+        {"brand": "Цефуроксим", "strength": "250/500 мг", "form": "таблетки", "note": "Rx, дженерик", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Zinnat", "strength": "125/250/500 mg", "form": "Filmtabletten, Suspension", "note": "Rx", "confidence": "high"},
+        {"brand": "Cefuroxim-ratiopharm", "strength": "250/500 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "high"},
+        {"brand": "Elobact", "strength": "125/250/500 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Zinnat", "strength": "125/250/500 mg", "form": "tabletki, zawiesina", "note": "Rx", "confidence": "high"},
+        {"brand": "Ceroxim", "strength": "250/500 mg", "form": "tabletki", "note": "Rx", "confidence": "medium"},
+        {"brand": "Xorimax", "strength": "250/500 mg", "form": "tabletki", "note": "Rx", "confidence": "medium"},
+        {"brand": "Bioracef", "strength": "250/500 mg", "form": "tabletki", "note": "Rx", "confidence": "low"}
+      ],
+      "US": [
+        {"brand": "Ceftin", "strength": "250/500 mg", "form": "tablets", "note": "Rx, originator (oral)", "confidence": "high"},
+        {"brand": "Zinacef", "strength": "750/1500 mg", "form": "injection", "note": "Rx, parenteral", "confidence": "medium"},
+        {"brand": "cefuroxime (generic)", "strength": "250/500 mg", "form": "tablets", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "ceftriaxone",
+    "inn_ru": "цефтриаксон",
+    "src": "ceftriakson",
+    "markets": {
+      "RU": [
+        {"brand": "Роцефин", "strength": "500/1000/2000 мг", "form": "порошок для инъекций", "note": "Rx, оригинатор", "confidence": "high"},
+        {"brand": "Цефтриаксон", "strength": "500/1000 мг", "form": "порошок для инъекций", "note": "Rx, дженерик", "confidence": "high"},
+        {"brand": "Азаран", "strength": "1000 мг", "form": "порошок для инъекций", "note": "Rx", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Rocephin", "strength": "500/1000/2000 mg", "form": "Injektion/Infusion", "note": "Rx, Originator", "confidence": "high"},
+        {"brand": "Ceftriaxon-ratiopharm", "strength": "1000/2000 mg", "form": "Injektion", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Biotrakson", "strength": "1000/2000 mg", "form": "iniekcja", "note": "Rx", "confidence": "medium"},
+        {"brand": "Ceftriaxon", "strength": "1000/2000 mg", "form": "iniekcja", "note": "Rx, generyk", "confidence": "medium"},
+        {"brand": "Oframax", "strength": "1000 mg", "form": "iniekcja", "note": "Rx", "confidence": "low"}
+      ],
+      "US": [
+        {"brand": "Rocephin", "strength": "250/500/1000/2000 mg", "form": "injection", "note": "Rx, originator", "confidence": "high"},
+        {"brand": "ceftriaxone (generic)", "strength": "500/1000/2000 mg", "form": "injection", "note": "Rx, hospital generic", "confidence": "high"}
+      ]
+    },
+    "available_note": "Injectable, mostly hospital use; largely supplied as generic."
+  },
+  {
+    "inn_en": "cefixime",
+    "inn_ru": "цефиксим",
+    "src": "cefiksim",
+    "markets": {
+      "RU": [
+        {"brand": "Супракс", "strength": "200/400 мг", "form": "капсулы, суспензия, таблетки диспергируемые", "note": "Rx, оригинатор", "confidence": "high"},
+        {"brand": "Цефиксим", "strength": "200/400 мг", "form": "капсулы, таблетки", "note": "Rx, дженерик", "confidence": "high"},
+        {"brand": "Панцеф", "strength": "400 мг", "form": "таблетки, суспензия", "note": "Rx", "confidence": "medium"},
+        {"brand": "Иксим Люпин", "strength": "100 мг/5 мл", "form": "суспензия", "note": "Rx", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Cephoral", "strength": "200/400 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "medium"},
+        {"brand": "Cefixim AL", "strength": "200/400 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "medium"},
+        {"brand": "Suprax", "strength": "200/400 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "low"}
+      ],
+      "PL": [
+        {"brand": "Suprax", "strength": "100 mg/5 ml, 200 mg", "form": "zawiesina, tabletki", "note": "Rx", "confidence": "medium"},
+        {"brand": "Cefixime", "strength": "200/400 mg", "form": "tabletki", "note": "Rx, generyk", "confidence": "low"}
+      ],
+      "US": [
+        {"brand": "Suprax", "strength": "100/200/400 mg", "form": "capsules, tablets, suspension", "note": "Rx, originator", "confidence": "high"},
+        {"brand": "cefixime (generic)", "strength": "400 mg", "form": "capsules", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "cefalexin",
+    "inn_ru": "цефалексин",
+    "src": "cefaleksin",
+    "markets": {
+      "RU": [
+        {"brand": "Цефалексин", "strength": "250/500 мг", "form": "капсулы, таблетки, суспензия", "note": "Rx, дженерик", "confidence": "high"},
+        {"brand": "Экоцефрон", "strength": "250 мг", "form": "капсулы", "note": "Rx", "confidence": "low"},
+        {"brand": "Оспексин", "strength": "250/500 мг", "form": "таблетки, суспензия", "note": "Rx", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Cephalexin-ratiopharm", "strength": "500/1000 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "medium"},
+        {"brand": "Cephalex CT", "strength": "1000 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "low"}
+      ],
+      "PL": [
+        {"brand": "Keflex", "strength": "250/500 mg", "form": "kapsułki, zawiesina", "note": "Rx", "confidence": "medium"},
+        {"brand": "Cefalexin", "strength": "250/500 mg", "form": "kapsułki", "note": "Rx, generyk", "confidence": "low"}
+      ],
+      "US": [
+        {"brand": "Keflex", "strength": "250/500/750 mg", "form": "capsules", "note": "Rx, originator", "confidence": "high"},
+        {"brand": "cephalexin (generic)", "strength": "250/500 mg", "form": "capsules", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "clindamycin",
+    "inn_ru": "клиндамицин",
+    "src": "klindamicin",
+    "markets": {
+      "RU": [
+        {"brand": "Далацин", "strength": "150/300 мг; 1%; 2%", "form": "капсулы, гель, крем вагинальный", "note": "Rx, оригинатор", "confidence": "high"},
+        {"brand": "Клиндамицин", "strength": "150/300 мг", "form": "капсулы", "note": "Rx, дженерик", "confidence": "high"},
+        {"brand": "Клиндовит", "strength": "1%", "form": "гель", "note": "Rx, дерматологический", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Sobelin", "strength": "150/300 mg", "form": "Kapseln", "note": "Rx, Originator", "confidence": "high"},
+        {"brand": "Clindamycin-ratiopharm", "strength": "150/300/600 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "high"},
+        {"brand": "Clinda-saar", "strength": "300/600 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Dalacin C", "strength": "150/300 mg", "form": "kapsułki", "note": "Rx", "confidence": "high"},
+        {"brand": "Clindamycin-MIP", "strength": "300/600 mg", "form": "tabletki", "note": "Rx", "confidence": "high"},
+        {"brand": "Klimicin", "strength": "150/300 mg", "form": "kapsułki", "note": "Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Cleocin", "strength": "75/150/300 mg", "form": "capsules", "note": "Rx, originator", "confidence": "high"},
+        {"brand": "clindamycin (generic)", "strength": "150/300 mg", "form": "capsules", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "metronidazole",
+    "inn_ru": "метронидазол",
+    "src": "metronidazol",
+    "markets": {
+      "RU": [
+        {"brand": "Трихопол", "strength": "250 мг", "form": "таблетки", "note": "Rx", "confidence": "high"},
+        {"brand": "Метронидазол", "strength": "250/500 мг", "form": "таблетки, раствор для инфузий", "note": "Rx, дженерик", "confidence": "high"},
+        {"brand": "Флагил", "strength": "250 мг; 500 мг", "form": "таблетки, свечи", "note": "Rx", "confidence": "medium"},
+        {"brand": "Клион", "strength": "250 мг", "form": "таблетки", "note": "Rx", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Clont", "strength": "250/400 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "high"},
+        {"brand": "Metronidazol AL", "strength": "250/400 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "high"},
+        {"brand": "Arilin", "strength": "250/500 mg", "form": "Tabletten, Vaginalzäpfchen", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Metronidazol", "strength": "250/500 mg", "form": "tabletki, roztwór", "note": "Rx, generyk", "confidence": "high"},
+        {"brand": "Rozex", "strength": "0.75%", "form": "żel, krem", "note": "Rx, dermatologiczny (róża)", "confidence": "medium"},
+        {"brand": "Metrosept", "strength": "0.75%", "form": "żel", "note": "Rx", "confidence": "low"}
+      ],
+      "US": [
+        {"brand": "Flagyl", "strength": "250/500 mg", "form": "tablets", "note": "Rx, originator", "confidence": "high"},
+        {"brand": "MetroGel", "strength": "0.75%/1%", "form": "topical gel", "note": "Rx, dermatologic", "confidence": "medium"},
+        {"brand": "metronidazole (generic)", "strength": "250/500 mg", "form": "tablets", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "gentamicin",
+    "inn_ru": "гентамицин",
+    "src": "gentamicin",
+    "markets": {
+      "RU": [
+        {"brand": "Гентамицин", "strength": "40 мг/мл; 0.3%", "form": "раствор для инъекций, капли глазные", "note": "Rx, дженерик", "confidence": "high"},
+        {"brand": "Гентамицина сульфат", "strength": "40 мг/мл", "form": "раствор для инъекций", "note": "Rx", "confidence": "high"},
+        {"brand": "Гарамицин", "strength": "0.3%", "form": "капли глазные, мазь", "note": "Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Refobacin", "strength": "40/80/120 mg", "form": "Injektionslösung", "note": "Rx", "confidence": "high"},
+        {"brand": "Gentamicin-ratiopharm", "strength": "40 mg/ml", "form": "Injektionslösung", "note": "Rx", "confidence": "medium"},
+        {"brand": "Sulmycin", "strength": "0.1%", "form": "Creme/Salbe", "note": "Rx, topisch", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Gentamicin", "strength": "40 mg/ml", "form": "roztwór do wstrzykiwań", "note": "Rx, generyk", "confidence": "high"},
+        {"brand": "Garamycin", "strength": "0.3%", "form": "krople do oczu, maść", "note": "Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Garamycin", "strength": "0.1%; 0.3%", "form": "topical/ophthalmic (brand largely discontinued)", "note": "Rx", "confidence": "medium"},
+        {"brand": "gentamicin (generic)", "strength": "40 mg/ml", "form": "injection", "note": "Rx, hospital generic", "confidence": "high"}
+      ]
+    },
+    "available_note": "Mostly injectable hospital generic; topical/ophthalmic forms branded."
+  },
+  {
+    "inn_en": "vancomycin",
+    "inn_ru": "ванкомицин",
+    "src": "vankomicin",
+    "markets": {
+      "RU": [
+        {"brand": "Ванкомицин", "strength": "500/1000 мг", "form": "порошок для инфузий", "note": "Rx, дженерик", "confidence": "high"},
+        {"brand": "Эдицин", "strength": "500/1000 мг", "form": "порошок для инфузий", "note": "Rx", "confidence": "medium"},
+        {"brand": "Ванкорус", "strength": "500/1000 мг", "form": "порошок для инфузий", "note": "Rx", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Vancomycin-ratiopharm", "strength": "500/1000 mg", "form": "Infusion", "note": "Rx", "confidence": "medium"},
+        {"brand": "Vancomycin Hikma", "strength": "500/1000 mg", "form": "Infusion", "note": "Rx", "confidence": "low"}
+      ],
+      "PL": [
+        {"brand": "Vancomycin", "strength": "500/1000 mg", "form": "iniekcja/infuzja", "note": "Rx, generyk", "confidence": "high"},
+        {"brand": "Edicin", "strength": "500/1000 mg", "form": "infuzja", "note": "Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Vancocin", "strength": "125/250 mg", "form": "capsules (oral)", "note": "Rx, originator (oral form)", "confidence": "high"},
+        {"brand": "Firvanq", "strength": "25/50 mg/ml", "form": "oral solution", "note": "Rx", "confidence": "medium"},
+        {"brand": "vancomycin (generic)", "strength": "500/1000 mg", "form": "injection", "note": "Rx, hospital generic", "confidence": "high"}
+      ]
+    },
+    "available_note": "IV form mostly hospital generic; oral Vancocin for C. difficile."
+  },
+  {
+    "inn_en": "meropenem",
+    "inn_ru": "меропенем",
+    "src": "meropenem",
+    "markets": {
+      "RU": [
+        {"brand": "Меронем", "strength": "500/1000 мг", "form": "порошок для инъекций", "note": "Rx, оригинатор", "confidence": "high"},
+        {"brand": "Меропенем", "strength": "500/1000 мг", "form": "порошок для инъекций", "note": "Rx, дженерик", "confidence": "high"},
+        {"brand": "Пропенем", "strength": "500/1000 мг", "form": "порошок для инъекций", "note": "Rx", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Meronem", "strength": "500/1000 mg", "form": "Infusion", "note": "Rx, Originator", "confidence": "high"},
+        {"brand": "Meropenem-ratiopharm", "strength": "500/1000 mg", "form": "Infusion", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Meronem", "strength": "500/1000 mg", "form": "iniekcja", "note": "Rx", "confidence": "high"},
+        {"brand": "Meropenem", "strength": "500/1000 mg", "form": "iniekcja", "note": "Rx, generyk", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Merrem", "strength": "500/1000 mg", "form": "injection", "note": "Rx, originator", "confidence": "high"},
+        {"brand": "meropenem (generic)", "strength": "500/1000 mg", "form": "injection", "note": "Rx, hospital generic", "confidence": "high"}
+      ]
+    },
+    "available_note": "Injectable, hospital use."
+  },
+  {
+    "inn_en": "nystatin",
+    "inn_ru": "нистатин",
+    "src": "nistatin",
+    "markets": {
+      "RU": [
+        {"brand": "Нистатин", "strength": "250000/500000 ЕД", "form": "таблетки, мазь, свечи", "note": "Rx, дженерик", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Moronal", "strength": "100000 IE/ml, 500000 IE", "form": "Suspension, Tabletten, Salbe", "note": "Rx", "confidence": "high"},
+        {"brand": "Nystatin acis", "strength": "500000 IE", "form": "Tabletten", "note": "Rx", "confidence": "medium"},
+        {"brand": "Biofanal", "strength": "100000 IE", "form": "Suspension, Salbe", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Nystatyna Teva", "strength": "500000 j.m., 2 800 000 j.m.", "form": "tabletki, granulat do zawiesiny", "note": "Rx", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Mycostatin", "strength": "100000 units/ml, 500000 units", "form": "suspension, tablets", "note": "Rx", "confidence": "high"},
+        {"brand": "Nystop", "strength": "100000 units/g", "form": "topical powder", "note": "Rx", "confidence": "medium"},
+        {"brand": "nystatin (generic)", "strength": "500000 units", "form": "tablets", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "miconazole",
+    "inn_ru": "миконазол",
+    "src": "mikonazol",
+    "markets": {
+      "RU": [
+        {"brand": "Дактарин", "strength": "2%", "form": "гель оральный, спрей/крем", "note": "OTC/Rx, топический/оральный", "confidence": "high"},
+        {"brand": "Гинезол 7", "strength": "2%", "form": "крем вагинальный", "note": "гинекологический", "confidence": "medium"},
+        {"brand": "Микозон", "strength": "2%", "form": "крем", "note": "топический", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Daktar", "strength": "2%", "form": "Creme, Mundgel", "note": "topisch/oral", "confidence": "high"},
+        {"brand": "Infectosoor", "strength": "20 mg/g", "form": "Mundgel", "note": "oral (Soor)", "confidence": "medium"},
+        {"brand": "Micotar", "strength": "2%", "form": "Creme", "note": "topisch", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Daktarin", "strength": "20 mg/g", "form": "żel do jamy ustnej, krem, puder", "note": "topiczny/doustny", "confidence": "high"},
+        {"brand": "Gynazol", "strength": "2%", "form": "krem dopochwowy", "note": "ginekologiczny", "confidence": "low"}
+      ],
+      "US": [
+        {"brand": "Monistat", "strength": "2%; 100/200/1200 mg", "form": "vaginal cream/suppository", "note": "OTC, vaginal antifungal", "confidence": "high"},
+        {"brand": "Micatin", "strength": "2%", "form": "topical cream/spray", "note": "OTC, topical", "confidence": "medium"},
+        {"brand": "Oravig", "strength": "50 mg", "form": "buccal tablet", "note": "Rx, oral thrush", "confidence": "low"}
+      ]
+    },
+    "available_note": "Mostly topical/vaginal/oral-gel OTC; forms and legal status vary by market."
+  },
+  {
+    "inn_en": "phenoxymethylpenicillin",
+    "inn_ru": "феноксиметилпенициллин",
+    "src": "fenoksimetilpenicilin",
+    "markets": {
+      "RU": [
+        {"brand": "Феноксиметилпенициллин", "strength": "250 мг", "form": "таблетки, суспензия", "note": "Rx, дженерик", "confidence": "medium"},
+        {"brand": "Оспен", "strength": "250/500/1000 мг; 750000/1500000 ЕД", "form": "таблетки, сироп", "note": "Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Penicillin V-ratiopharm", "strength": "1.0/1.2/1.5 Mega", "form": "Filmtabletten", "note": "Rx", "confidence": "high"},
+        {"brand": "Isocillin", "strength": "1.2 Mega", "form": "Filmtabletten", "note": "Rx", "confidence": "medium"},
+        {"brand": "Penicillin V acis", "strength": "1.0/1.5 Mega", "form": "Filmtabletten", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Ospen", "strength": "1000/1500 j.m., 750000 j.m./5 ml", "form": "tabletki, zawiesina", "note": "Rx", "confidence": "high"},
+        {"brand": "V-Cetina", "strength": "1000000 j.m.", "form": "tabletki", "note": "Rx", "confidence": "low"}
+      ],
+      "US": [
+        {"brand": "penicillin V potassium (generic)", "strength": "250/500 mg", "form": "tablets", "note": "Rx; brand Pen-Vee K/Veetids discontinued", "confidence": "high"}
+      ]
+    },
+    "available_note": "US brands (Pen-Vee K, Veetids) discontinued; generic penicillin V potassium available."
+  }
+]

@@ -6,6 +6,7 @@ export interface MedicineListItem {
 	strength: string | null;
 	pharmaForm: string | null;
 	pharmaFormSrc: string | null;
+	pharmaFormId: number | null;
 	manufacturer: string | null;
 	country: string | null;
 	// Действующие вещества одной строкой через запятую (GROUP_CONCAT)
@@ -32,21 +33,42 @@ export interface MedicineSubstance {
 	name: string;
 }
 
-// Зарубежное торговое название того же действующего вещества (med_foreign_brands).
-// strength/pharmaForm — описательная справка, не ключ дозо-матчинга.
-export interface MedicineForeignBrand {
-	brand: string;
-	// Локализованное название действующего вещества (для «МИГ · ибупрофен 400 мг»)
-	substance: string | null;
-	strength: string | null;
-	pharmaForm: string | null;
-	note: string | null;
+// Одно вещество в составе зарубежного продукта, с состоянием сопоставления
+// относительно веществ текущей карточки: matched — есть в карточке; extra — лишнее.
+export interface MedicineForeignSubstance {
+	name: string;
+	state: 'matched' | 'extra';
 }
 
-// Бренды одного рынка (RU/DE/PL/US). market — код рынка, ярлык берётся из i18n.
+// Зарубежный продукт (бренд рынка) с НАБОРОМ веществ и результатом set-matching
+// против состава карточки. strength/pharmaForm — описательная справка.
+export interface MedicineForeignProduct {
+	brand: string;
+	strength: string | null;
+	// локализованное имя формы (из med_pharma_forms) + сербский src для иконки
+	pharmaForm: string | null;
+	pharmaFormSrc: string | null;
+	pharmaFormId: number | null;
+	note: string | null;
+	// matched-вещества идут первыми, затем extra
+	substances: MedicineForeignSubstance[];
+	// вещества карточки, которых нет в продукте (показываются перечёркнутыми)
+	missing: string[];
+	matchedCount: number;
+	// наборы действующих веществ полностью совпадают
+	fullMatch: boolean;
+	// дозировка продукта содержит все дозы карточки (для подсветки бейджа/ранга)
+	doseMatch: boolean;
+	// форма продукта совпадает с формой карточки (сироп↔сироп)
+	formMatch: boolean;
+	// полное совпадение: вещества + форма + доза (условие для галочки ✓)
+	exactMatch: boolean;
+}
+
+// Продукты одного рынка (RU/UA/TR/DE/PL/US). market — код рынка, ярлык из i18n.
 export interface MedicineForeignMarket {
 	market: string;
-	brands: MedicineForeignBrand[];
+	products: MedicineForeignProduct[];
 }
 
 // exact — состав совпадает полностью; superset — содержит весь состав плюс
@@ -60,9 +82,13 @@ export interface MedicineAnalog {
 	strength: string | null;
 	pharmaForm: string | null;
 	pharmaFormSrc: string | null;
+	pharmaFormId: number | null;
 	dispensingModeId: number | null;
 	manufacturer: string | null;
 	substances: string | null;
+	// per-substance бейджи относительно текущей карточки (matched/extra) + отсутствующие
+	substanceList: MedicineForeignSubstance[];
+	missingSubstances: string[];
 	matchType: MedicineAnalogMatchType;
 	pack_total: number | null;
 	pack_unit: string | null;
@@ -90,6 +116,7 @@ export interface MedicineDetails {
 	updatedAt: string | null;
 	pharmaForm: string | null;
 	pharmaFormSrc: string | null;
+	pharmaFormId: number | null;
 	pack_total: number | null;
 	pack_unit: string | null;
 	pack_container_count: number | null;

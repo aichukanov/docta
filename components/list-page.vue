@@ -259,7 +259,6 @@ onMounted(async () => {
 			</div>
 
 			<div class="list-container">
-
 				<aside
 					class="filters-sidebar"
 					:class="{ 'is-open': areFiltersOpen }"

@@ -45,9 +45,7 @@ const companyOptions = computed(() =>
 	})),
 );
 
-const toModel = (
-	data: InsuranceCompanyAdminData,
-): InsuranceCompanyModel => ({
+const toModel = (data: InsuranceCompanyAdminData): InsuranceCompanyModel => ({
 	id: data.id,
 	slug: data.slug,
 	name_sr: data.name_sr,

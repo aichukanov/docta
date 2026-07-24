@@ -68,8 +68,7 @@ export interface EntityLinkClickedProperties extends AnalyticsEntityRef {
  * Клик/копирование контакта. Сущность-владелец контакта приходит из
  * provide/inject-контекста (см. provideAnalyticsEntity) и может отсутствовать.
  */
-export interface ContactInteractionProperties
-	extends Partial<AnalyticsEntityRef> {
+export interface ContactInteractionProperties extends Partial<AnalyticsEntityRef> {
 	contact_type: AnalyticsContactType;
 }
 
@@ -97,8 +96,7 @@ export interface MapOpenedProperties {
 }
 
 /** Клик по маркеру/попапу клиники на карте */
-export interface MapMarkerClickedProperties
-	extends Partial<AnalyticsEntityRef> {}
+export interface MapMarkerClickedProperties extends Partial<AnalyticsEntityRef> {}
 
 /** Имя события → интерфейс его свойств. Источник истины для trackEvent. */
 export interface AnalyticsEvents {

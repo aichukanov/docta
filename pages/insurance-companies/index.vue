@@ -17,12 +17,18 @@ import type {
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([breadcrumbI18n, cityI18n, insuranceCompanyI18n]),
+	messages: combineI18nMessages([
+		breadcrumbI18n,
+		cityI18n,
+		insuranceCompanyI18n,
+	]),
 });
 
 const route = useRoute();
 const filtersStore = useFiltersStore();
-const { cityIds, name } = toRefs(filtersStore.namespaces['insurance-companies']);
+const { cityIds, name } = toRefs(
+	filtersStore.namespaces['insurance-companies'],
+);
 
 watch(
 	() => route.query,

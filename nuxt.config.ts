@@ -61,7 +61,8 @@ export default defineNuxtConfig({
 		public: {
 			telegramBotId: (process.env.TELEGRAM_BOT_TOKEN || '').split(':')[0],
 			mixpanelToken: process.env.MIXPANEL_TOKEN,
-			stripePublishableKey: process.env.NUXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '',
+			stripePublishableKey:
+				process.env.NUXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '',
 		},
 	},
 

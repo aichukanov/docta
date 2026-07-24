@@ -34,7 +34,11 @@ export default defineEventHandler(
 			? String(query.locale)
 			: 'en';
 
-		if (!['doctor', 'clinic'].includes(entityType) || !entityId || entityId <= 0) {
+		if (
+			!['doctor', 'clinic'].includes(entityType) ||
+			!entityId ||
+			entityId <= 0
+		) {
 			return { summary: null };
 		}
 

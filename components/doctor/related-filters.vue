@@ -23,7 +23,9 @@ const { data } = await useFetch('/api/doctors/specialty-city-combinations', {
 	key: 'doctors-specialty-city-combinations',
 });
 
-const combinations = computed(() => data.value?.specialtyCityCombinations ?? []);
+const combinations = computed(
+	() => data.value?.specialtyCityCombinations ?? [],
+);
 
 const selectedSpecialtyId = computed(() =>
 	props.specialtyIds.length === 1 ? props.specialtyIds[0] : null,
@@ -66,7 +68,10 @@ const hasHub = computed(
 
 <template>
 	<div v-if="hasHub" class="doctors-related-filters">
-		<div v-if="otherCitiesForSpecialty.length" class="doctors-related-filters__group">
+		<div
+			v-if="otherCitiesForSpecialty.length"
+			class="doctors-related-filters__group"
+		>
 			<h3 class="doctors-related-filters__title">
 				{{ t(`doctors_${selectedSpecialtyId}`) }}
 				{{ t('InOtherCities') }}
@@ -82,9 +87,16 @@ const hasHub = computed(
 			</div>
 		</div>
 
-		<div v-if="otherSpecialtiesForCity.length" class="doctors-related-filters__group">
+		<div
+			v-if="otherSpecialtiesForCity.length"
+			class="doctors-related-filters__group"
+		>
 			<h3 class="doctors-related-filters__title">
-				{{ t('OtherSpecialtiesIn', { city: t(`city_${selectedCityId}_genitive`) }) }}
+				{{
+					t('OtherSpecialtiesIn', {
+						city: t(`city_${selectedCityId}_genitive`),
+					})
+				}}
 			</h3>
 			<div class="doctors-related-filters__links">
 				<NuxtLink
@@ -138,11 +150,29 @@ const hasHub = computed(
 
 <i18n lang="json">
 {
-	"en": { "InOtherCities": "in other cities", "OtherSpecialtiesIn": "Other specialties in {city}" },
-	"ru": { "InOtherCities": "в других городах", "OtherSpecialtiesIn": "Другие специальности в {city}" },
-	"sr": { "InOtherCities": "u drugim gradovima", "OtherSpecialtiesIn": "Drugi specijalisti u {city}" },
-	"sr-cyrl": { "InOtherCities": "у другим градовима", "OtherSpecialtiesIn": "Други специјалисти у {city}" },
-	"de": { "InOtherCities": "in anderen Städten", "OtherSpecialtiesIn": "Andere Fachärzte in {city}" },
-	"tr": { "InOtherCities": "diğer şehirlerde", "OtherSpecialtiesIn": "{city} içindeki diğer uzmanlar" }
+	"en": {
+		"InOtherCities": "in other cities",
+		"OtherSpecialtiesIn": "Other specialties in {city}"
+	},
+	"ru": {
+		"InOtherCities": "в других городах",
+		"OtherSpecialtiesIn": "Другие специальности в {city}"
+	},
+	"sr": {
+		"InOtherCities": "u drugim gradovima",
+		"OtherSpecialtiesIn": "Drugi specijalisti u {city}"
+	},
+	"sr-cyrl": {
+		"InOtherCities": "у другим градовима",
+		"OtherSpecialtiesIn": "Други специјалисти у {city}"
+	},
+	"de": {
+		"InOtherCities": "in anderen Städten",
+		"OtherSpecialtiesIn": "Andere Fachärzte in {city}"
+	},
+	"tr": {
+		"InOtherCities": "diğer şehirlerde",
+		"OtherSpecialtiesIn": "{city} içindeki diğer uzmanlar"
+	}
 }
 </i18n>

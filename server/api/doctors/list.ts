@@ -118,9 +118,7 @@ export async function getDoctorList(
 			// которая на странице всё равно не показывается (clinicIds фильтруются
 			// по городу ниже).
 			const cityIdsForLang =
-				body.cityIds != null && body.cityIds.length > 0
-					? body.cityIds
-					: null;
+				body.cityIds != null && body.cityIds.length > 0 ? body.cityIds : null;
 			whereFilters.push(
 				`(EXISTS (SELECT 1 FROM doctor_languages dl WHERE dl.doctor_id = d.id AND dl.language_id IN (${buildInPlaceholders(
 					body.languageIds,

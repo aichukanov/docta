@@ -55,14 +55,20 @@ watch([activeType, status], () => {
 watch(page, loadQueue);
 onMounted(loadQueue);
 
-async function moderate(reviewId: number, action: 'approve' | 'reject', reason?: string) {
+async function moderate(
+	reviewId: number,
+	action: 'approve' | 'reject',
+	reason?: string,
+) {
 	isSubmitting.value = true;
 	try {
 		await $fetch('/api/admin/reviews/moderate', {
 			method: 'POST',
 			body: { reviewId, action, reason },
 		});
-		ElMessage.success(action === 'approve' ? 'Отзыв одобрен' : 'Отзыв отклонён');
+		ElMessage.success(
+			action === 'approve' ? 'Отзыв одобрен' : 'Отзыв отклонён',
+		);
 		rejectDialogVisible.value = false;
 		await loadQueue();
 	} catch (error) {
@@ -73,7 +79,11 @@ async function moderate(reviewId: number, action: 'approve' | 'reject', reason?:
 	}
 }
 
-async function verify(reviewId: number, action: 'approve' | 'reject', reason?: string) {
+async function verify(
+	reviewId: number,
+	action: 'approve' | 'reject',
+	reason?: string,
+) {
 	isSubmitting.value = true;
 	try {
 		await $fetch('/api/admin/reviews/verify', {
@@ -172,9 +182,11 @@ function formatDate(date: string | null) {
 				<el-card v-for="review in reviews" :key="review.id" shadow="never">
 					<div class="item-header">
 						<div>
-							<strong>{{
-								review.targetType === 'doctor' ? 'Врач' : 'Клиника'
-							}}:</strong>
+							<strong
+								>{{
+									review.targetType === 'doctor' ? 'Врач' : 'Клиника'
+								}}:</strong
+							>
 							<a
 								v-if="review.targetSlug"
 								:href="`/${review.targetType}s/${review.targetSlug}`"
@@ -242,7 +254,11 @@ function formatDate(date: string | null) {
 				description="Нет файлов верификации"
 			/>
 			<div v-else class="queue-list">
-				<el-card v-for="file in verifications" :key="file.reviewId" shadow="never">
+				<el-card
+					v-for="file in verifications"
+					:key="file.reviewId"
+					shadow="never"
+				>
 					<div class="item-header">
 						<div>
 							<strong>{{ file.targetName }}</strong>
@@ -308,7 +324,11 @@ function formatDate(date: string | null) {
 		/>
 
 		<!-- Диалог отклонения -->
-		<el-dialog v-model="rejectDialogVisible" title="Причина отклонения" width="480px">
+		<el-dialog
+			v-model="rejectDialogVisible"
+			title="Причина отклонения"
+			width="480px"
+		>
 			<el-input
 				v-model="rejectReason"
 				type="textarea"

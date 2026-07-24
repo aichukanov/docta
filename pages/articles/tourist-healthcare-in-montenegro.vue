@@ -117,45 +117,43 @@ const { breadcrumbItems } = useArticlePageSeo({
 				>{{ t('ThcWhere2End') }}
 			</p>
 			<p
-				>{{ t('ThcWhere3a') }}<NuxtLink :to="kotorHospitalLink">{{
+				>{{ t('ThcWhere3a')
+				}}<NuxtLink :to="kotorHospitalLink">{{
 					t('ThcWhere3KotorLink')
 				}}</NuxtLink
-				>{{ t('ThcWhere3b') }}<NuxtLink :to="barHospitalLink">{{
-					t('ThcWhere3BarLink')
-				}}</NuxtLink
-				>{{ t('ThcWhere3c') }}<NuxtLink :to="risanHospitalLink">{{
+				>{{ t('ThcWhere3b')
+				}}<NuxtLink :to="barHospitalLink">{{ t('ThcWhere3BarLink') }}</NuxtLink
+				>{{ t('ThcWhere3c')
+				}}<NuxtLink :to="risanHospitalLink">{{
 					t('ThcWhere3RisanLink')
 				}}</NuxtLink
 				>{{ t('ThcWhere3d') }}</p
 			>
 			<p
-				>{{ t('ThcWhere4a') }}<NuxtLink :to="kccgLink">{{
-					t('ThcWhere4KccgLink')
-				}}</NuxtLink
+				>{{ t('ThcWhere4a')
+				}}<NuxtLink :to="kccgLink">{{ t('ThcWhere4KccgLink') }}</NuxtLink
 				>{{ t('ThcWhere4b') }}</p
 			>
 		</ArticleSection>
 
 		<ArticleSection id="section-costs" :title="t('ThcToc_costs')">
 			<p
-				>{{ t('ThcCosts1a') }}<NuxtLink :to="cbcLink">{{
-					t('ThcCosts1CbcLink')
-				}}</NuxtLink
+				>{{ t('ThcCosts1a')
+				}}<NuxtLink :to="cbcLink">{{ t('ThcCosts1CbcLink') }}</NuxtLink
 				>{{ t('ThcCosts1b') }}</p
 			>
 			<p
-				>{{ t('ThcCosts2a') }}<NuxtLink :to="kotorHospitalLink">{{
+				>{{ t('ThcCosts2a')
+				}}<NuxtLink :to="kotorHospitalLink">{{
 					t('ThcCosts2KotorLink')
 				}}</NuxtLink
-				>{{ t('ThcCosts2b') }}<NuxtLink :to="barHospitalLink">{{
-					t('ThcCosts2BarLink')
-				}}</NuxtLink
+				>{{ t('ThcCosts2b')
+				}}<NuxtLink :to="barHospitalLink">{{ t('ThcCosts2BarLink') }}</NuxtLink
 				>{{ t('ThcCosts2c') }}</p
 			>
 			<p
-				>{{ t('ThcCosts3a') }}<NuxtLink :to="kccgLink">{{
-					t('ThcCosts3PodgoricaLink')
-				}}</NuxtLink
+				>{{ t('ThcCosts3a')
+				}}<NuxtLink :to="kccgLink">{{ t('ThcCosts3PodgoricaLink') }}</NuxtLink
 				>{{ t('ThcCosts3b') }}</p
 			>
 		</ArticleSection>
@@ -188,12 +186,9 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<ul>
 				<li>{{ t('ThcSourcesPhones') }}</li>
 				<li>
-					<a
-						href="https://fzocg.me"
-						target="_blank"
-						rel="noopener nofollow"
-						>{{ t('ThcSourcesFzo') }}</a
-					>
+					<a href="https://fzocg.me" target="_blank" rel="noopener nofollow">{{
+						t('ThcSourcesFzo')
+					}}</a>
 				</li>
 				<li>
 					<a

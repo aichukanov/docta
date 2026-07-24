@@ -90,18 +90,18 @@ export default {
 		},
 		'tr': {
 			InsuranceCompanies: 'Sigorta şirketleri',
-			InsuranceCompaniesInCity: '{city}\'deki sigorta şirketleri',
+			InsuranceCompaniesInCity: "{city}'deki sigorta şirketleri",
 			InsuranceCompaniesDescription:
-				'Karadağ\'da faaliyet gösteren sağlık ve seyahat sigortası şirketleri — şehir bazında iletişim ve ofis adresleri.',
+				"Karadağ'da faaliyet gösteren sağlık ve seyahat sigortası şirketleri — şehir bazında iletişim ve ofis adresleri.",
 			InsuranceCompaniesDescriptionCity:
-				'{city}\'de ofisi olan sigorta şirketleri — iletişim ve adresler.',
+				"{city}'de ofisi olan sigorta şirketleri — iletişim ve adresler.",
 			InsuranceCompanyPageDescription:
-				'{name} Karadağ\'da: telefon, site ve şehir bazında ofis adresleri — haritada göster ve rota oluştur.',
+				"{name} Karadağ'da: telefon, site ve şehir bazında ofis adresleri — haritada göster ve rota oluştur.",
 			InsuranceCompanyLoading: 'Şirket verileri yükleniyor',
 			InsuranceCompanyNotFound: 'Sigorta şirketi bulunamadı',
 			OfficesTitle: 'Ofisler',
 			ContactsTitle: 'İletişim',
-			OfficeCount: 'Karadağ\'da {count} ofis',
+			OfficeCount: "Karadağ'da {count} ofis",
 			OfficeCountInCity: '{city} {count} ofis',
 			TabMap: 'Konum',
 			InsuranceCompanyName: 'Şirket adı',

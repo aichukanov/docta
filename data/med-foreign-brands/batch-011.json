@@ -1,0 +1,297 @@
+[
+  {
+    "inn_en": "alprazolam",
+    "inn_ru": "алпразолам",
+    "src": "alprazolam",
+    "markets": {
+      "RU": [
+        {"brand": "Ксанакс", "strength": "0.25/0.5/1/2 мг", "form": "таблетки", "note": "Rx, контролируемый", "confidence": "high"},
+        {"brand": "Алпразолам", "strength": "0.25/0.5/1 мг", "form": "таблетки", "note": "Rx, контролируемый", "confidence": "high"},
+        {"brand": "Золомакс", "strength": "0.25/0.5/1 мг", "form": "таблетки", "note": "Rx, контролируемый", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Tafil", "strength": "0,5/1 mg", "form": "Tabletten", "note": "Rx, BtM (kontrolliert)", "confidence": "high"},
+        {"brand": "Xanax", "strength": "0,5/1 mg", "form": "Tabletten", "note": "Rx, BtM", "confidence": "medium"},
+        {"brand": "Alprazolam-ratiopharm", "strength": "0,5/1 mg", "form": "Tabletten", "note": "Rx, BtM", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Xanax", "strength": "0,25/0,5/1 mg", "form": "tabletki", "note": "Rx, kontrolowany", "confidence": "high"},
+        {"brand": "Afobam", "strength": "0,25/0,5/1 mg", "form": "tabletki", "note": "Rx, kontrolowany", "confidence": "medium"},
+        {"brand": "Zomiren", "strength": "0,25/0,5/1 mg", "form": "tabletki", "note": "Rx, kontrolowany", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Xanax", "strength": "0.25/0.5/1/2 mg", "form": "tablets", "note": "Rx, Schedule IV controlled", "confidence": "high"},
+        {"brand": "Xanax XR", "strength": "0.5/1/2/3 mg", "form": "extended-release tablets", "note": "Rx, Schedule IV", "confidence": "high"},
+        {"brand": "Niravam", "strength": "0.25/0.5/1/2 mg", "form": "orally disintegrating tablets", "note": "Rx, Schedule IV", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "bromazepam",
+    "inn_ru": "бромазепам",
+    "src": "bromazepam",
+    "markets": {
+      "RU": [
+        {"brand": "Лексотан", "strength": "3/6 мг", "form": "таблетки", "note": "Rx, контролируемый", "confidence": "medium"},
+        {"brand": "Лексилиум", "strength": "3/6 мг", "form": "таблетки", "note": "Rx, контролируемый", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Lexotanil", "strength": "6 mg", "form": "Tabletten", "note": "Rx, BtM (kontrolliert)", "confidence": "high"},
+        {"brand": "Bromazanil", "strength": "3/6 mg", "form": "Tabletten", "note": "Rx, BtM", "confidence": "medium"},
+        {"brand": "Normoc", "strength": "6 mg", "form": "Tabletten", "note": "Rx, BtM", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Lexotan", "strength": "3/6 mg", "form": "tabletki", "note": "Rx, kontrolowany", "confidence": "medium"},
+        {"brand": "Sedam", "strength": "3/6 mg", "form": "tabletki", "note": "Rx, kontrolowany", "confidence": "low"}
+      ],
+      "US": []
+    },
+    "available_note": "Not marketed in the US (no FDA-approved bromazepam product)."
+  },
+  {
+    "inn_en": "diazepam",
+    "inn_ru": "диазепам",
+    "src": "diazepam",
+    "markets": {
+      "RU": [
+        {"brand": "Реланиум", "strength": "5 мг/мл", "form": "раствор для инъекций", "note": "Rx, контролируемый", "confidence": "high"},
+        {"brand": "Сибазон", "strength": "5 мг", "form": "таблетки", "note": "Rx, контролируемый", "confidence": "high"},
+        {"brand": "Валиум", "strength": "5/10 мг", "form": "таблетки", "note": "Rx, контролируемый", "confidence": "medium"},
+        {"brand": "Диазепам", "strength": "5 мг", "form": "таблетки", "note": "Rx, контролируемый", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Valium", "strength": "5/10 mg", "form": "Tabletten", "note": "Rx, BtM (kontrolliert)", "confidence": "high"},
+        {"brand": "Diazepam-ratiopharm", "strength": "5/10 mg", "form": "Tabletten", "note": "Rx, BtM", "confidence": "high"},
+        {"brand": "Faustan", "strength": "5/10 mg", "form": "Tabletten", "note": "Rx, BtM", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Relanium", "strength": "2/5 mg", "form": "tabletki", "note": "Rx, kontrolowany", "confidence": "high"},
+        {"brand": "Relsed", "strength": "5/10 mg", "form": "wlewka doodbytnicza", "note": "Rx, kontrolowany", "confidence": "medium"},
+        {"brand": "Diazepam", "strength": "5 mg", "form": "tabletki", "note": "Rx, kontrolowany", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Valium", "strength": "2/5/10 mg", "form": "tablets", "note": "Rx, Schedule IV controlled", "confidence": "high"},
+        {"brand": "Diastat", "strength": "2.5/10/20 mg", "form": "rectal gel", "note": "Rx, Schedule IV", "confidence": "high"},
+        {"brand": "Valtoco", "strength": "5/10/15/20 mg", "form": "nasal spray", "note": "Rx, Schedule IV", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "lorazepam",
+    "inn_ru": "лоразепам",
+    "src": "lorazepam",
+    "markets": {
+      "RU": [
+        {"brand": "Лоразепам", "strength": "1/2.5 мг", "form": "таблетки", "note": "Rx, контролируемый", "confidence": "medium"},
+        {"brand": "Лорафен", "strength": "1/2.5 мг", "form": "таблетки", "note": "Rx, контролируемый", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Tavor", "strength": "1/2,5 mg", "form": "Tabletten", "note": "Rx, BtM (kontrolliert)", "confidence": "high"},
+        {"brand": "Tavor Expidet", "strength": "1/2,5 mg", "form": "Schmelztabletten", "note": "Rx, BtM", "confidence": "high"},
+        {"brand": "Lorazepam-neuraxpharm", "strength": "1/2,5 mg", "form": "Tabletten", "note": "Rx, BtM", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Lorafen", "strength": "1/2,5 mg", "form": "tabletki", "note": "Rx, kontrolowany", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Ativan", "strength": "0.5/1/2 mg", "form": "tablets", "note": "Rx, Schedule IV controlled", "confidence": "high"},
+        {"brand": "Loreev XR", "strength": "1/2/3 mg", "form": "extended-release capsules", "note": "Rx, Schedule IV", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "zolpidem",
+    "inn_ru": "золпидем",
+    "src": "zolpidem",
+    "markets": {
+      "RU": [
+        {"brand": "Санвал", "strength": "5/10 мг", "form": "таблетки", "note": "Rx, контролируемый", "confidence": "high"},
+        {"brand": "Ивадал", "strength": "10 мг", "form": "таблетки", "note": "Rx, контролируемый", "confidence": "medium"},
+        {"brand": "Золпидем", "strength": "10 мг", "form": "таблетки", "note": "Rx, контролируемый", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Stilnox", "strength": "10 mg", "form": "Filmtabletten", "note": "Rx, BtM (kontrolliert)", "confidence": "high"},
+        {"brand": "Bikalm", "strength": "10 mg", "form": "Filmtabletten", "note": "Rx, BtM", "confidence": "medium"},
+        {"brand": "Zolpidem-ratiopharm", "strength": "10 mg", "form": "Filmtabletten", "note": "Rx, BtM", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Stilnox", "strength": "10 mg", "form": "tabletki powlekane", "note": "Rx, kontrolowany", "confidence": "high"},
+        {"brand": "Sanval", "strength": "5/10 mg", "form": "tabletki powlekane", "note": "Rx, kontrolowany", "confidence": "high"},
+        {"brand": "Nasen", "strength": "10 mg", "form": "tabletki powlekane", "note": "Rx, kontrolowany", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Ambien", "strength": "5/10 mg", "form": "tablets", "note": "Rx, Schedule IV controlled", "confidence": "high"},
+        {"brand": "Ambien CR", "strength": "6.25/12.5 mg", "form": "extended-release tablets", "note": "Rx, Schedule IV", "confidence": "high"},
+        {"brand": "Edluar", "strength": "5/10 mg", "form": "sublingual tablets", "note": "Rx, Schedule IV", "confidence": "medium"},
+        {"brand": "Intermezzo", "strength": "1.75/3.5 mg", "form": "sublingual tablets", "note": "Rx, Schedule IV", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "quetiapine",
+    "inn_ru": "кветиапин",
+    "src": "kvetiapin",
+    "markets": {
+      "RU": [
+        {"brand": "Сероквель", "strength": "25/100/200/300 мг", "form": "таблетки", "note": "Rx", "confidence": "high"},
+        {"brand": "Кветиапин", "strength": "25/100/200 мг", "form": "таблетки", "note": "Rx", "confidence": "high"},
+        {"brand": "Квентиакс", "strength": "25/100/200 мг", "form": "таблетки", "note": "Rx", "confidence": "medium"},
+        {"brand": "Сервитель", "strength": "25/100/200 мг", "form": "таблетки", "note": "Rx", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Seroquel", "strength": "25/100/200/300 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "high"},
+        {"brand": "Seroquel Prolong", "strength": "50/150/200/300/400 mg", "form": "Retardtabletten", "note": "Rx", "confidence": "high"},
+        {"brand": "Quetiapin-ratiopharm", "strength": "25/100/200 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Seroquel", "strength": "25/100/200/300 mg", "form": "tabletki powlekane", "note": "Rx", "confidence": "high"},
+        {"brand": "Ketrel", "strength": "25/100/200 mg", "form": "tabletki powlekane", "note": "Rx", "confidence": "medium"},
+        {"brand": "Kventiax", "strength": "25/100/200 mg", "form": "tabletki powlekane", "note": "Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Seroquel", "strength": "25/50/100/200/300/400 mg", "form": "tablets", "note": "Rx", "confidence": "high"},
+        {"brand": "Seroquel XR", "strength": "50/150/200/300/400 mg", "form": "extended-release tablets", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "olanzapine",
+    "inn_ru": "оланзапин",
+    "src": "olanzapin",
+    "markets": {
+      "RU": [
+        {"brand": "Зипрекса", "strength": "5/10 мг", "form": "таблетки", "note": "Rx", "confidence": "high"},
+        {"brand": "Оланзапин", "strength": "5/10 мг", "form": "таблетки", "note": "Rx", "confidence": "high"},
+        {"brand": "Заласта", "strength": "5/10 мг", "form": "таблетки", "note": "Rx", "confidence": "medium"},
+        {"brand": "Эголанза", "strength": "5/10 мг", "form": "таблетки", "note": "Rx", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Zyprexa", "strength": "5/7,5/10 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "high"},
+        {"brand": "Zyprexa Velotab", "strength": "5/10/15/20 mg", "form": "Schmelztabletten", "note": "Rx", "confidence": "medium"},
+        {"brand": "Olanzapin-neuraxpharm", "strength": "5/10 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Zyprexa", "strength": "5/10 mg", "form": "tabletki powlekane", "note": "Rx", "confidence": "high"},
+        {"brand": "Zolafren", "strength": "5/10 mg", "form": "tabletki", "note": "Rx", "confidence": "medium"},
+        {"brand": "Zalasta", "strength": "5/10 mg", "form": "tabletki", "note": "Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Zyprexa", "strength": "2.5/5/7.5/10/15/20 mg", "form": "tablets", "note": "Rx", "confidence": "high"},
+        {"brand": "Zyprexa Zydis", "strength": "5/10/15/20 mg", "form": "orally disintegrating tablets", "note": "Rx", "confidence": "medium"},
+        {"brand": "Zyprexa Relprevv", "strength": "210/300/405 mg", "form": "long-acting injection", "note": "Rx", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "risperidone",
+    "inn_ru": "рисперидон",
+    "src": "risperidon",
+    "markets": {
+      "RU": [
+        {"brand": "Рисполепт", "strength": "1/2/3/4 мг", "form": "таблетки", "note": "Rx", "confidence": "high"},
+        {"brand": "Рисполепт Конста", "strength": "25/37.5/50 мг", "form": "суспензия для инъекций пролонгированная", "note": "Rx", "confidence": "medium"},
+        {"brand": "Рисперидон", "strength": "1/2/4 мг", "form": "таблетки", "note": "Rx", "confidence": "high"},
+        {"brand": "Сперидан", "strength": "1/2/4 мг", "form": "таблетки", "note": "Rx", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Risperdal", "strength": "1/2/3/4 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "high"},
+        {"brand": "Risperdal Consta", "strength": "25/37,5/50 mg", "form": "Depot-Injektion", "note": "Rx", "confidence": "medium"},
+        {"brand": "Risperidon-ratiopharm", "strength": "1/2/4 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Rispolept", "strength": "1/2/3/4 mg", "form": "tabletki powlekane", "note": "Rx", "confidence": "high"},
+        {"brand": "Rispen", "strength": "1/2/3/4 mg", "form": "tabletki powlekane", "note": "Rx", "confidence": "medium"},
+        {"brand": "Ryspolit", "strength": "1/2/3/4 mg", "form": "tabletki powlekane", "note": "Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Risperdal", "strength": "0.25/0.5/1/2/3/4 mg", "form": "tablets", "note": "Rx", "confidence": "high"},
+        {"brand": "Risperdal Consta", "strength": "12.5/25/37.5/50 mg", "form": "long-acting injection", "note": "Rx", "confidence": "medium"},
+        {"brand": "Perseris", "strength": "90/120 mg", "form": "extended-release injection", "note": "Rx", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "haloperidol",
+    "inn_ru": "галоперидол",
+    "src": "haloperidol",
+    "markets": {
+      "RU": [
+        {"brand": "Галоперидол", "strength": "1.5/5 мг", "form": "таблетки", "note": "Rx", "confidence": "high"},
+        {"brand": "Галоперидол деканоат", "strength": "50 мг/мл", "form": "раствор для инъекций (депо)", "note": "Rx", "confidence": "medium"},
+        {"brand": "Сенорм", "strength": "2 мг/мл", "form": "капли для приёма внутрь", "note": "Rx", "confidence": "low"}
+      ],
+      "DE": [
+        {"brand": "Haldol", "strength": "1/2/5/10/20 mg", "form": "Tabletten", "note": "Rx", "confidence": "high"},
+        {"brand": "Haldol-Janssen", "strength": "5 mg/ml", "form": "Injektionslösung", "note": "Rx", "confidence": "medium"},
+        {"brand": "Haloperidol-neuraxpharm", "strength": "1/2/5/10 mg", "form": "Tabletten", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Haloperidol WZF", "strength": "1/5 mg", "form": "tabletki", "note": "Rx", "confidence": "high"},
+        {"brand": "Decaldol", "strength": "50 mg/ml", "form": "roztwór do wstrzykiwań (depot)", "note": "Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Haldol", "strength": "0.5/1/2/5/10/20 mg", "form": "tablets", "note": "Rx", "confidence": "high"},
+        {"brand": "Haldol Decanoate", "strength": "50/100 mg/ml", "form": "long-acting injection", "note": "Rx", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "tramadol",
+    "inn_ru": "трамадол",
+    "src": "tramadol",
+    "markets": {
+      "RU": [
+        {"brand": "Трамал", "strength": "50 мг", "form": "капсулы", "note": "Rx, контролируемый (опиоид)", "confidence": "high"},
+        {"brand": "Трамадол", "strength": "50 мг", "form": "капсулы", "note": "Rx, контролируемый (опиоид)", "confidence": "high"},
+        {"brand": "Трамадол ретард", "strength": "100/150/200 мг", "form": "таблетки пролонгированные", "note": "Rx, контролируемый", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Tramal", "strength": "50/100 mg", "form": "Kapseln", "note": "Rx (Opioid)", "confidence": "high"},
+        {"brand": "Tramal long", "strength": "100/150/200 mg", "form": "Retardtabletten", "note": "Rx (Opioid)", "confidence": "high"},
+        {"brand": "Tramadol-ratiopharm", "strength": "50/100 mg", "form": "Kapseln", "note": "Rx (Opioid)", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Tramal", "strength": "50/100 mg", "form": "kapsułki", "note": "Rx (opioid)", "confidence": "high"},
+        {"brand": "Poltram", "strength": "50/100 mg", "form": "kapsułki/tabletki", "note": "Rx (opioid)", "confidence": "high"},
+        {"brand": "Adamon SR", "strength": "50/100/150/200 mg", "form": "kapsułki o przedłużonym uwalnianiu", "note": "Rx (opioid)", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Ultram", "strength": "50 mg", "form": "tablets", "note": "Rx, Schedule IV controlled (opioid)", "confidence": "high"},
+        {"brand": "Ultram ER", "strength": "100/200/300 mg", "form": "extended-release tablets", "note": "Rx, Schedule IV", "confidence": "medium"},
+        {"brand": "ConZip", "strength": "100/200/300 mg", "form": "extended-release capsules", "note": "Rx, Schedule IV", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "tapentadol",
+    "inn_ru": "тапентадол",
+    "src": "tapentadol",
+    "markets": {
+      "RU": [
+        {"brand": "Палексия", "strength": "50 мг", "form": "таблетки", "note": "Rx, контролируемый (опиоид)", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Palexia", "strength": "50 mg", "form": "Filmtabletten", "note": "Rx, BtM (Opioid)", "confidence": "high"},
+        {"brand": "Palexia retard", "strength": "50/100/150/200/250 mg", "form": "Retardtabletten", "note": "Rx, BtM (Opioid)", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Palexia", "strength": "50 mg", "form": "tabletki powlekane", "note": "Rx, kontrolowany (opioid)", "confidence": "high"},
+        {"brand": "Palexia retard", "strength": "50/100/150/200/250 mg", "form": "tabletki o przedłużonym uwalnianiu", "note": "Rx, kontrolowany (opioid)", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Nucynta", "strength": "50/75/100 mg", "form": "tablets", "note": "Rx, Schedule II controlled (opioid)", "confidence": "high"},
+        {"brand": "Nucynta ER", "strength": "50/100/150/200/250 mg", "form": "extended-release tablets", "note": "Rx, Schedule II", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  }
+]

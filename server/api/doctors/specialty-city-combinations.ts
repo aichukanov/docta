@@ -8,10 +8,7 @@ export default defineEventHandler(async () => {
 		const specialtyCityCombinations = await getSpecialtyCityCombinations();
 		return { specialtyCityCombinations };
 	} catch (error) {
-		console.error(
-			'API Error - doctors/specialty-city-combinations:',
-			error,
-		);
+		console.error('API Error - doctors/specialty-city-combinations:', error);
 		return { specialtyCityCombinations: [] };
 	}
 });

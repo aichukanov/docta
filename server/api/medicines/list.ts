@@ -1,7 +1,12 @@
-import { getConnection } from '~/server/common/db-mysql';
-import { getLocalizedNameField } from '~/server/common/utils';
 import { validateBody, validateName } from '~/common/validation';
 import { LIST_PAGE_SIZE } from '~/common/constants';
+import {
+	localizedField,
+	localizedNameSql,
+	mapPack,
+	nameFieldFor,
+	withConnection,
+} from '~/server/common/medicines/helpers';
 import type { MedicineList as MedicineListResponse } from '~/interfaces/medicine';
 
 export default defineEventHandler(
@@ -93,7 +98,7 @@ export async function getMedicineList(
 	// Name search — search in medicine name + substance names across all languages
 	if (body.name) {
 		if (validateName(body, 'api/medicines/list')) {
-			const nameField = getLocalizedNameField(locale) || 'name_en';
+			const nameField = nameFieldFor(locale);
 			const p = `%${body.name}%`;
 			whereFilters.push(`(
 				m.name LIKE ? OR
@@ -139,7 +144,7 @@ export async function getMedicineList(
 	orderClauses.push('m.name ASC');
 	const orderBy = orderClauses.join(', ');
 
-	const nameField = getLocalizedNameField(locale) || 'name_en';
+	const nameField = nameFieldFor(locale);
 
 	const countQuery = `
 		SELECT COUNT(*) as totalCount FROM med_medicines m ${where};
@@ -160,7 +165,7 @@ export async function getMedicineList(
 			m.pack_volume,
 			m.pack_volume_unit,
 			m.pack_parse_status,
-			(SELECT GROUP_CONCAT(COALESCE(s.${nameField}, s.name_en, s.name) SEPARATOR ', ')
+			(SELECT GROUP_CONCAT(${localizedNameSql('s', nameField)} SEPARATOR ', ')
 			 FROM med_medicine_substances mms
 			 JOIN med_substances s ON s.id = mms.substance_id
 			 WHERE mms.medicine_id = m.id
@@ -168,6 +173,7 @@ export async function getMedicineList(
 			pf.${nameField} as pharmaForm,
 			pf.name_en as pharmaFormEn,
 			pf.name as pharmaFormSrc,
+			pf.id as pharmaFormId,
 			mfg.name as manufacturer,
 			c.${nameField} as country,
 			c.name_en as countryEn,
@@ -181,41 +187,35 @@ export async function getMedicineList(
 		${pagination};
 	`;
 
-	const connection = await getConnection();
+	return withConnection(async (connection) => {
+		let totalCount = 0;
+		if (usePagination) {
+			const [countRows] = await connection.execute(countQuery, queryParams);
+			totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
+		}
 
-	let totalCount = 0;
-	if (usePagination) {
-		const [countRows] = await connection.execute(countQuery, queryParams);
-		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
-	}
+		const [rows] = await connection.execute(listQuery, queryParams);
 
-	const [rows] = await connection.execute(listQuery, queryParams);
-	await connection.end();
+		const items = (rows as any[]).map((row) => ({
+			id: row.id,
+			slug: row.slug,
+			name: row.name,
+			strength: row.strength,
+			pharmaForm: localizedField(row, 'pharmaForm'),
+			pharmaFormSrc: row.pharmaFormSrc || null,
+			pharmaFormId: row.pharmaFormId ?? null,
+			manufacturer: row.manufacturer || null,
+			country: localizedField(row, 'country'),
+			substances: row.substances || null,
+			dispensingModeId: row.dispensing_mode_id || null,
+			isActive: !!row.is_active,
+			atcCode: row.atc_code,
+			...mapPack(row),
+		}));
 
-	const items = (rows as any[]).map((row) => ({
-		id: row.id,
-		slug: row.slug,
-		name: row.name,
-		strength: row.strength,
-		pharmaForm: row.pharmaForm || row.pharmaFormEn || null,
-		pharmaFormSrc: row.pharmaFormSrc || null,
-		manufacturer: row.manufacturer || null,
-		country: row.country || row.countryEn || null,
-		substances: row.substances || null,
-		dispensingModeId: row.dispensing_mode_id || null,
-		isActive: !!row.is_active,
-		atcCode: row.atc_code,
-		pack_total: row.pack_total,
-		pack_unit: row.pack_unit,
-		pack_container_count: row.pack_container_count,
-		pack_per_container: row.pack_per_container,
-		pack_volume: row.pack_volume != null ? Number(row.pack_volume) : null,
-		pack_volume_unit: row.pack_volume_unit,
-		pack_parse_status: row.pack_parse_status,
-	}));
-
-	return {
-		items,
-		totalCount: usePagination ? totalCount : items.length,
-	};
+		return {
+			items,
+			totalCount: usePagination ? totalCount : items.length,
+		};
+	});
 }

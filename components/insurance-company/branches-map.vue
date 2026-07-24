@@ -29,7 +29,8 @@ const branchesWithCoords = computed(() =>
 	props.branches.filter((branch) => branch.latitude && branch.longitude),
 );
 
-const getBranchMarkerId = (branchId: number) => `insurance-branch-marker-${branchId}`;
+const getBranchMarkerId = (branchId: number) =>
+	`insurance-branch-marker-${branchId}`;
 
 const waitForInit = () => {
 	if (isInitialized.value) return Promise.resolve();
@@ -56,7 +57,10 @@ const openBranchPopup = async (branch: InsuranceBranchData) => {
 const centerOnBranches = async () => {
 	await waitForInit();
 	centerOnLocations(
-		branchesWithCoords.value.map((branch) => [branch.latitude, branch.longitude]),
+		branchesWithCoords.value.map((branch) => [
+			branch.latitude,
+			branch.longitude,
+		]),
 	);
 };
 
@@ -104,7 +108,10 @@ defineExpose({
 				<div class="insurance-branch-popup">
 					<ClinicLocationAddress :clinic="selectedBranch" />
 					<ClinicRouteButton :clinic="selectedBranch" />
-					<div v-if="selectedBranch.phone || companyPhone" class="insurance-branch-popup__phone">
+					<div
+						v-if="selectedBranch.phone || companyPhone"
+						class="insurance-branch-popup__phone"
+					>
 						<IconPhone :size="16" />
 						<span>{{ selectedBranch.phone || companyPhone }}</span>
 					</div>

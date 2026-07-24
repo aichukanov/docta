@@ -91,7 +91,8 @@ const { pending: isLoading, data: medicinesList } = await useFetch(
 
 // Фасовка различает «дубли» реестра: одинаковые название/дозировка,
 // но 10 vs 20 таблеток
-const itemPackaging = (item: any) => buildPackagingLabel(item, t, false);
+const itemPackaging = (item: any) =>
+	buildPackagingLabel(item, t, locale.value, false);
 
 const getFilterLabel = (
 	items: { value: number; label: string }[],
@@ -261,7 +262,7 @@ watchEffect(() => {
 				class="medicine-card"
 			>
 				<div class="medicine-card-icon">
-					<MedicineFormIcon :formSrc="item.pharmaFormSrc" :size="24" />
+					<MedicineFormIcon :formId="item.pharmaFormId" :size="24" />
 				</div>
 				<div class="medicine-card-content">
 					<div class="medicine-name">{{ item.name }}</div>

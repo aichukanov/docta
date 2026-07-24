@@ -1182,8 +1182,8 @@ export function buildInsuranceCompanySchema(options: {
 		sameAs: sameAs.length > 0 ? sameAs : undefined,
 		location: company.branches.map((branch) => ({
 			'@type': 'InsuranceAgency' as const,
-			address: buildInsuranceBranchAddress(branch, getCityName),
-			geo:
+			'address': buildInsuranceBranchAddress(branch, getCityName),
+			'geo':
 				branch.latitude && branch.longitude
 					? {
 							'@type': 'GeoCoordinates' as const,
@@ -1191,7 +1191,7 @@ export function buildInsuranceCompanySchema(options: {
 							'longitude': branch.longitude,
 						}
 					: undefined,
-			telephone: branch.phone || splitContacts(company.phone)[0] || undefined,
+			'telephone': branch.phone || splitContacts(company.phone)[0] || undefined,
 		})),
 	};
 

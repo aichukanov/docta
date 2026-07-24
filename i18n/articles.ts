@@ -1,6 +1,6 @@
 export default {
 	messages: {
-		en: {
+		'en': {
 			Articles: 'Articles',
 			ArticlesDescription:
 				'Useful articles about healthcare in Montenegro: Russian-speaking doctors, clinics with multilingual support, and more.',
@@ -16,7 +16,7 @@ export default {
 			ClinicsWithLanguageSupportDescription:
 				'A curated directory of listed clinics that report consultations in different languages. Coverage and language availability are not guaranteed; confirm the specific clinician, language and appointment directly with the clinic.',
 			ClinicsWithLanguageSupportIntro1:
-				"If Montenegrin (or Serbian) is not your first language, a number of clinics across the country have staff who speak other languages too — from English to Turkish. Below is a directory of such clinics, grouped by language.",
+				'If Montenegrin (or Serbian) is not your first language, a number of clinics across the country have staff who speak other languages too — from English to Turkish. Below is a directory of such clinics, grouped by language.',
 			ClinicsWithLanguageSupportIntro2:
 				'The list is compiled from clinic profiles in our catalog: a clinic states which languages its staff can consult in. Whether a specific language is available from a specific doctor on a given day is best confirmed directly when booking — staff and language coverage can change.',
 			MentalHealthTitle:
@@ -66,7 +66,7 @@ export default {
 				'In the catalog you can filter clinics by city and language — with a map.',
 			CtaClinicsButton: 'Clinic catalog',
 		},
-		ru: {
+		'ru': {
 			Articles: 'Статьи',
 			ArticlesDescription:
 				'Полезные статьи о здравоохранении в Черногории: русскоязычные врачи, клиники с языковой поддержкой и многое другое.',
@@ -130,7 +130,7 @@ export default {
 				'В каталоге можно фильтровать клиники по городу и языку — с картой.',
 			CtaClinicsButton: 'Каталог клиник',
 		},
-		sr: {
+		'sr': {
 			Articles: 'Članci',
 			ArticlesDescription:
 				'Korisni članci o zdravstvenoj zaštiti u Crnoj Gori: doktori koji govore ruski, klinike sa višejezičnom podrškom i još mnogo toga.',
@@ -194,7 +194,7 @@ export default {
 				'U katalogu možete filtrirati klinike po gradu i jeziku — sa mapom.',
 			CtaClinicsButton: 'Katalog klinika',
 		},
-		de: {
+		'de': {
 			Articles: 'Artikel',
 			ArticlesDescription:
 				'Nützliche Artikel über das Gesundheitswesen in Montenegro: russischsprachige Ärzte, Kliniken mit mehrsprachiger Unterstützung und mehr.',
@@ -260,7 +260,7 @@ export default {
 				'Im Katalog können Sie Kliniken nach Stadt und Sprache filtern — mit Karte.',
 			CtaClinicsButton: 'Klinikkatalog',
 		},
-		tr: {
+		'tr': {
 			Articles: 'Makaleler',
 			ArticlesDescription:
 				"Karadağ'daki sağlık hizmetleri hakkında yararlı makaleler: Rusça konuşan doktorlar, çok dilli destek sunan klinikler ve daha fazlası.",
@@ -276,7 +276,7 @@ export default {
 			ClinicsWithLanguageSupportDescription:
 				'Farklı dillerde görüşme bildiren kayıtlı kliniklerin düzenlenmiş kataloğu. Tamlık ve dil erişimi garanti değildir; belirli hekimi, dili ve randevuyu klinikten doğrulayın.',
 			ClinicsWithLanguageSupportIntro1:
-				"Karadağca (ya da Sırpça) ana diliniz değilse, ülke genelinde bazı kliniklerde personel başka diller de konuşur — İngilizceden Türkçeye kadar. Aşağıda, dile göre gruplandırılmış bu kliniklerin listesi var.",
+				'Karadağca (ya da Sırpça) ana diliniz değilse, ülke genelinde bazı kliniklerde personel başka diller de konuşur — İngilizceden Türkçeye kadar. Aşağıda, dile göre gruplandırılmış bu kliniklerin listesi var.',
 			ClinicsWithLanguageSupportIntro2:
 				'Liste, kataloğumuzdaki klinik profillerinden derlenmiştir: bir klinik, orada hangi dillerde danışma verilebileceğini belirtir. Belirli bir dilin belirli bir doktorda, belirli bir günde mevcut olup olmadığını randevu alırken doğrudan teyit etmek en iyisidir — personel ve dil kapsamı değişebilir.',
 			MentalHealthTitle:

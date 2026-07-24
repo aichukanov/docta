@@ -144,52 +144,61 @@ const { breadcrumbItems } = useArticlePageSeo({
 	>
 		<ArticleSection id="section-private-labs" :title="t('LtcToc_private-labs')">
 			<p
-				>{{ t('LtcPrivate1a') }}<NuxtLink :to="mojLabLink">{{
-					t('LtcPrivate1MojLabLink')
-				}}</NuxtLink
-				>{{ t('LtcPrivate1b') }}<NuxtLink :to="inVitroLink">{{
+				>{{ t('LtcPrivate1a')
+				}}<NuxtLink :to="mojLabLink">{{ t('LtcPrivate1MojLabLink') }}</NuxtLink
+				>{{ t('LtcPrivate1b')
+				}}<NuxtLink :to="inVitroLink">{{
 					t('LtcPrivate1InVitroLink')
 				}}</NuxtLink
-				>{{ t('LtcPrivate1c') }}<NuxtLink :to="bonaLabLink">{{
+				>{{ t('LtcPrivate1c')
+				}}<NuxtLink :to="bonaLabLink">{{
 					t('LtcPrivate1BonaLabLink')
 				}}</NuxtLink
-				>{{ t('LtcPrivate1d') }}<NuxtLink :to="konzilijumLink">{{
+				>{{ t('LtcPrivate1d')
+				}}<NuxtLink :to="konzilijumLink">{{
 					t('LtcPrivate1KonzilijumLink')
 				}}</NuxtLink
-				>{{ t('LtcPrivate1e') }}<NuxtLink :to="milmedikaLink">{{
+				>{{ t('LtcPrivate1e')
+				}}<NuxtLink :to="milmedikaLink">{{
 					t('LtcPrivate1MilmedikaLink')
 				}}</NuxtLink
-				>{{ t('LtcPrivate1f') }}<NuxtLink :to="zejnilovicLink">{{
+				>{{ t('LtcPrivate1f')
+				}}<NuxtLink :to="zejnilovicLink">{{
 					t('LtcPrivate1ZejnilovicLink')
 				}}</NuxtLink
-				>{{ t('LtcPrivate1g') }}<NuxtLink :to="noviStandardLink">{{
+				>{{ t('LtcPrivate1g')
+				}}<NuxtLink :to="noviStandardLink">{{
 					t('LtcPrivate1NoviStandardLink')
 				}}</NuxtLink
 				>{{ t('LtcPrivate1h') }}</p
 			>
 			<p
-				>{{ t('LtcPrivate2a') }}<NuxtLink :to="cbcLink">{{
-					t('LtcPrivate2CbcLink')
-				}}</NuxtLink
-				>{{ t('LtcPrivate2b') }}<NuxtLink :to="glucoseLink">{{
+				>{{ t('LtcPrivate2a')
+				}}<NuxtLink :to="cbcLink">{{ t('LtcPrivate2CbcLink') }}</NuxtLink
+				>{{ t('LtcPrivate2b')
+				}}<NuxtLink :to="glucoseLink">{{
 					t('LtcPrivate2GlucoseLink')
 				}}</NuxtLink
-				>{{ t('LtcPrivate2c') }}<NuxtLink :to="cholesterolLink">{{
+				>{{ t('LtcPrivate2c')
+				}}<NuxtLink :to="cholesterolLink">{{
 					t('LtcPrivate2CholesterolLink')
 				}}</NuxtLink
-				>{{ t('LtcPrivate2d') }}<NuxtLink :to="biochemistryCategoryLink">{{
+				>{{ t('LtcPrivate2d')
+				}}<NuxtLink :to="biochemistryCategoryLink">{{
 					t('LtcPrivate2BiochemistryLink')
 				}}</NuxtLink
-				>{{ t('LtcPrivate2e') }}<NuxtLink :to="tshLink">{{
-					t('LtcPrivate2TshLink')
-				}}</NuxtLink
-				>{{ t('LtcPrivate2f') }}<NuxtLink :to="hormonesCategoryLink">{{
+				>{{ t('LtcPrivate2e')
+				}}<NuxtLink :to="tshLink">{{ t('LtcPrivate2TshLink') }}</NuxtLink
+				>{{ t('LtcPrivate2f')
+				}}<NuxtLink :to="hormonesCategoryLink">{{
 					t('LtcPrivate2HormonesLink')
 				}}</NuxtLink
-				>{{ t('LtcPrivate2g') }}<NuxtLink :to="vitaminDLink">{{
+				>{{ t('LtcPrivate2g')
+				}}<NuxtLink :to="vitaminDLink">{{
 					t('LtcPrivate2VitaminDLink')
 				}}</NuxtLink
-				>{{ t('LtcPrivate2h') }}<NuxtLink :to="tumorMarkersCategoryLink">{{
+				>{{ t('LtcPrivate2h')
+				}}<NuxtLink :to="tumorMarkersCategoryLink">{{
 					t('LtcPrivate2TumorMarkersLink')
 				}}</NuxtLink
 				>{{ t('LtcPrivate2i') }}</p
@@ -220,12 +229,12 @@ const { breadcrumbItems } = useArticlePageSeo({
 				>{{ t('LtcImaging1a') }}</p
 			>
 			<p
-				>{{ t('LtcImaging2a') }}<NuxtLink :to="mriCategoryLink">{{
+				>{{ t('LtcImaging2a')
+				}}<NuxtLink :to="mriCategoryLink">{{
 					t('LtcImaging2MriLink')
 				}}</NuxtLink
-				>{{ t('LtcImaging2b') }}<NuxtLink :to="ctCategoryLink">{{
-					t('LtcImaging2CtLink')
-				}}</NuxtLink
+				>{{ t('LtcImaging2b')
+				}}<NuxtLink :to="ctCategoryLink">{{ t('LtcImaging2CtLink') }}</NuxtLink
 				>{{ t('LtcImaging2c') }}</p
 			>
 			<p>{{ t('LtcImaging3') }}</p>
@@ -279,9 +288,7 @@ const { breadcrumbItems } = useArticlePageSeo({
 			</ul>
 			<p>
 				{{ t('LtcSourcesCatalog') }}
-				<NuxtLink :to="doctorsLink">{{
-					t('LtcSourcesCatalogLink')
-				}}</NuxtLink
+				<NuxtLink :to="doctorsLink">{{ t('LtcSourcesCatalogLink') }}</NuxtLink
 				>{{ t('LtcSourcesCatalogEnd') }}
 			</p>
 		</ArticleSection>

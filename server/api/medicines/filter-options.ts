@@ -1,6 +1,9 @@
-import { getConnection } from '~/server/common/db-mysql';
-import { getLocalizedNameField } from '~/server/common/utils';
 import { validateBody } from '~/common/validation';
+import {
+	localizedNameSql,
+	nameFieldFor,
+	withConnection,
+} from '~/server/common/medicines/helpers';
 
 interface FilterOption {
 	value: number;
@@ -45,50 +48,47 @@ export default defineEventHandler(
 async function getFilterOptions(
 	body: { locale?: string } = {},
 ): Promise<MedicineFilterOptionsResponse> {
-	const locale = body.locale || 'en';
-	const nameField = getLocalizedNameField(locale) || 'name_en';
+	const nameField = nameFieldFor(body.locale);
 
-	const connection = await getConnection();
-
-	// Run all queries in parallel
+	// Все справочники — параллельно на одном соединении.
 	const [atcGroupRows, substanceRows, pharmaFormRows, manufacturerRows] =
-		await Promise.all([
-			connection.execute(
-				`SELECT id, code, COALESCE(${nameField}, name_en, name) as label
-			 FROM med_atc_groups
-			 ORDER BY code`,
-			),
-			connection.execute(
-				`SELECT s.id, COALESCE(s.${nameField}, s.name_en, s.name) as label
-			 FROM med_substances s
-			 WHERE EXISTS (
-				SELECT 1 FROM med_medicine_substances mms
-				JOIN med_medicines m ON m.id = mms.medicine_id
-				WHERE mms.substance_id = s.id AND m.is_active = 1
-			 )
-			 ORDER BY label`,
-			),
-			connection.execute(
-				`SELECT pf.id, COALESCE(pf.${nameField}, pf.name_en, pf.name) as label
-			 FROM med_pharma_forms pf
-			 WHERE EXISTS (
-				SELECT 1 FROM med_medicines m
-				WHERE m.pharmaceutical_form_id = pf.id AND m.is_active = 1
-			 )
-			 ORDER BY label`,
-			),
-			connection.execute(
-				`SELECT mfg.id, mfg.name as label
-			 FROM med_manufacturers mfg
-			 WHERE EXISTS (
-				SELECT 1 FROM med_medicines m
-				WHERE m.manufacturer_id = mfg.id AND m.is_active = 1
-			 )
-			 ORDER BY label`,
-			),
-		]);
-
-	await connection.end();
+		await withConnection((connection) =>
+			Promise.all([
+				connection.execute(
+					`SELECT id, code, ${localizedNameSql('med_atc_groups', nameField)} as label
+				 FROM med_atc_groups
+				 ORDER BY code`,
+				),
+				connection.execute(
+					`SELECT s.id, ${localizedNameSql('s', nameField)} as label
+				 FROM med_substances s
+				 WHERE EXISTS (
+					SELECT 1 FROM med_medicine_substances mms
+					JOIN med_medicines m ON m.id = mms.medicine_id
+					WHERE mms.substance_id = s.id AND m.is_active = 1
+				 )
+				 ORDER BY label`,
+				),
+				connection.execute(
+					`SELECT pf.id, ${localizedNameSql('pf', nameField)} as label
+				 FROM med_pharma_forms pf
+				 WHERE EXISTS (
+					SELECT 1 FROM med_medicines m
+					WHERE m.pharmaceutical_form_id = pf.id AND m.is_active = 1
+				 )
+				 ORDER BY label`,
+				),
+				connection.execute(
+					`SELECT mfg.id, mfg.name as label
+				 FROM med_manufacturers mfg
+				 WHERE EXISTS (
+					SELECT 1 FROM med_medicines m
+					WHERE m.manufacturer_id = mfg.id AND m.is_active = 1
+				 )
+				 ORDER BY label`,
+				),
+			]),
+		);
 
 	const atcGroups = (atcGroupRows[0] as any[]).map((row) => ({
 		value: row.id,

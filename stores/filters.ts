@@ -71,12 +71,12 @@ const parseIdArray = (
 
 export const useFiltersStore = defineStore('filters', () => {
 	const namespaces = reactive<Record<FilterNamespace, FilterState>>({
-		clinics: createInitialState(),
-		services: createInitialState(),
-		doctors: createInitialState(),
-		labtests: createInitialState(),
-		medicines: createInitialState(),
-		medications: createInitialState(),
+		'clinics': createInitialState(),
+		'services': createInitialState(),
+		'doctors': createInitialState(),
+		'labtests': createInitialState(),
+		'medicines': createInitialState(),
+		'medications': createInitialState(),
 		'insurance-companies': createInitialState(),
 	});
 

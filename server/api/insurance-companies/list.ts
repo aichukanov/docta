@@ -12,7 +12,10 @@ export default defineEventHandler(
 			const body = (await readBody(event).catch(() => ({}))) || {};
 			const locale = body.locale || 'en';
 
-			if (body.cityIds && !validateCityIds(body, 'api/insurance-companies/list')) {
+			if (
+				body.cityIds &&
+				!validateCityIds(body, 'api/insurance-companies/list')
+			) {
 				setResponseStatus(event, 400, 'Invalid city');
 				return [];
 			}
@@ -73,7 +76,9 @@ export default defineEventHandler(
 			// Отфильтровано по городу — на карте/в счётчике показываем только
 			// офисы в выбранных городах, а не весь список филиалов компании
 			if (hasCityFilter) {
-				branchWhere.push(`icb.city_id IN (${cityIds.map(() => '?').join(',')})`);
+				branchWhere.push(
+					`icb.city_id IN (${cityIds.map(() => '?').join(',')})`,
+				);
 				branchParams.push(...cityIds);
 			}
 

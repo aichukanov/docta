@@ -91,8 +91,7 @@ export default {
 
 			OwnerBanner: 'This is your clinic',
 			OwnerBannerManage: 'Manage',
-			DraftNotice:
-				'The clinic is not published — only you can see this page.',
+			DraftNotice: 'The clinic is not published — only you can see this page.',
 		},
 		'ru': {
 			MyClinics: 'Мои клиники',
@@ -185,8 +184,7 @@ export default {
 
 			OwnerBanner: 'Это ваша клиника',
 			OwnerBannerManage: 'Управление',
-			DraftNotice:
-				'Клиника не опубликована — эту страницу видите только вы.',
+			DraftNotice: 'Клиника не опубликована — эту страницу видите только вы.',
 		},
 		'sr': {
 			MyClinics: 'Moje klinike',
@@ -279,8 +277,7 @@ export default {
 
 			OwnerBanner: 'Ovo je vaša klinika',
 			OwnerBannerManage: 'Upravljanje',
-			DraftNotice:
-				'Klinika nije objavljena — ovu stranicu vidite samo vi.',
+			DraftNotice: 'Klinika nije objavljena — ovu stranicu vidite samo vi.',
 		},
 		'sr-cyrl': {
 			MyClinics: 'Моје клинике',
@@ -373,8 +370,7 @@ export default {
 
 			OwnerBanner: 'Ово је ваша клиника',
 			OwnerBannerManage: 'Управљање',
-			DraftNotice:
-				'Клиника није објављена — ову страницу видите само ви.',
+			DraftNotice: 'Клиника није објављена — ову страницу видите само ви.',
 		},
 		'de': {
 			MyClinics: 'Meine Kliniken',
@@ -456,8 +452,7 @@ export default {
 
 			SectionWorkingHours: 'Öffnungszeiten',
 			SectionDescription: 'Beschreibung',
-			MarkdownHint:
-				'Verwenden Sie die Symbolleiste zum Formatieren des Textes',
+			MarkdownHint: 'Verwenden Sie die Symbolleiste zum Formatieren des Textes',
 
 			ValidationNameRequired: 'Name (SR) ist erforderlich',
 			ValidationCityRequired: 'Wählen Sie eine Stadt',
@@ -531,8 +526,7 @@ export default {
 			LogoUpdated: 'Logo yüklendi',
 
 			SectionLocation: 'Haritadaki konum',
-			MapPickerHint:
-				'Kliniğin konumunu belirlemek için haritaya tıklayın',
+			MapPickerHint: 'Kliniğin konumunu belirlemek için haritaya tıklayın',
 			CoordinatesSet: 'Nokta: {lat}, {lng}',
 			CoordinatesNotSet: 'Nokta belirlenmedi',
 			ClearPoint: 'Noktayı kaldır',

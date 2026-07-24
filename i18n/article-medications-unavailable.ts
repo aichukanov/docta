@@ -17,13 +17,14 @@ export default {
 			UnaDescription:
 				'Enterosgel, rehydration salts, cetirizine, miramistin, suprastin, corvalol — which drugs from a Russian or Ukrainian home kit you won’t find in Montenegro, why, how to look for a substitute by active ingredient, and what to keep in mind when bringing medicines from home. Current as of July 2026.',
 
-			'UnaToc_why': 'Why your usual kit falls short here',
-			'UnaToc_gaps': "What's really missing and how to find a substitute",
-			'UnaToc_antivirals': 'Antivirals and immunomodulators: a break in tradition',
-			'UnaToc_import': "What's risky or forbidden to bring in",
-			'UnaToc_access':
+			UnaToc_why: 'Why your usual kit falls short here',
+			UnaToc_gaps: "What's really missing and how to find a substitute",
+			UnaToc_antivirals:
+				'Antivirals and immunomodulators: a break in tradition',
+			UnaToc_import: "What's risky or forbidden to bring in",
+			UnaToc_access:
 				"It's not only about the substance: prescriptions and access",
-			'UnaToc_sources': 'Caveats and sources',
+			UnaToc_sources: 'Caveats and sources',
 
 			UnaWhy1:
 				'One of the first things people notice after moving to Montenegro is that the home first-aid kit they are used to simply cannot be reassembled here: half the familiar names are not sold. It is not a shortage — the Montenegrin market follows the European and Balkan formulary, which differs markedly from the Russian and Ukrainian one. Some drugs common in the former USSR were never registered here, and others belong to treatment traditions that European medicine does not share at all.',
@@ -73,8 +74,7 @@ export default {
 			UnaGapsSpasmoA:
 				'Antispasmodics. No-Spa (drotaverine) and papaverine are not sold. Of the GI antispasmodics, pharmacies stock, for example, ',
 			UnaGapsSpasmoMebeverine: 'mebeverine',
-			UnaGapsSpasmoEnd:
-				' — but a pharmacist will advise what fits your case.',
+			UnaGapsSpasmoEnd: ' — but a pharmacist will advise what fits your case.',
 			UnaGapsMisc:
 				'Individual items. By community reports, you will not find Doctor MOM, Kameton, Validol, Heptral (ademetionine), Panangin or Asparkam (potassium and magnesium aspartate); sibutramine is not sold under any name.',
 			UnaGaps2:
@@ -93,7 +93,7 @@ export default {
 			UnaAntivirals3Cinnarizine: 'cinnarizine',
 			UnaAntivirals3End: '.',
 
-			'UnaToc_glp1': 'Diabetes and weight-loss injections',
+			UnaToc_glp1: 'Diabetes and weight-loss injections',
 			UnaGlp1a:
 				'A separate topic is the GLP-1 agonists (semaglutide, tirzepatide) that people in Russia and Ukraine now widely inject for weight loss. Semaglutide is available in Montenegro: ',
 			UnaGlp1Ozempic: 'Ozempic',
@@ -127,7 +127,8 @@ export default {
 				'This overview draws on the experience of Montenegro’s Russian-speaking communities (2023–2026) and is current as of July 2026. Availability and rules change; the material is for reference and does not replace a consultation with a doctor or pharmacist. Verify against the primary sources:',
 			UnaSourcesCinmed:
 				'CInMED — the Institute for Medicines and Medical Devices of Montenegro, the official register of approved drugs: cinmed.me;',
-			UnaSourcesFzo: "FZOCG — the Health Insurance Fund's drug lists: fzocg.me.",
+			UnaSourcesFzo:
+				"FZOCG — the Health Insurance Fund's drug lists: fzocg.me.",
 			UnaSourcesDoctors:
 				'Need a doctor to sort out your therapy and issue a local prescription? Our catalog shows the languages each doctor speaks — ',
 			UnaSourcesDoctorsLink: 'find a doctor who speaks your language',
@@ -144,12 +145,12 @@ export default {
 			UnaDescription:
 				'Энтеросгель, Регидрон, Зиртек, Мирамистин, Супрастин, Корвалол, Пенталгин — что из домашней аптечки не найти в Черногории, чем это объясняется, как искать замену по действующему веществу и что учесть при ввозе из дома. Актуально на июль 2026 года.',
 
-			'UnaToc_why': 'Почему привычной аптечки здесь не хватает',
-			'UnaToc_gaps': 'Чего действительно нет и как искать замену',
-			'UnaToc_antivirals': 'Противовирусные и иммуномодуляторы: разрыв традиций',
-			'UnaToc_import': 'Что рискованно или нельзя ввозить',
-			'UnaToc_access': 'Дело не только в веществе: рецепты и доступ',
-			'UnaToc_sources': 'Оговорки и источники',
+			UnaToc_why: 'Почему привычной аптечки здесь не хватает',
+			UnaToc_gaps: 'Чего действительно нет и как искать замену',
+			UnaToc_antivirals: 'Противовирусные и иммуномодуляторы: разрыв традиций',
+			UnaToc_import: 'Что рискованно или нельзя ввозить',
+			UnaToc_access: 'Дело не только в веществе: рецепты и доступ',
+			UnaToc_sources: 'Оговорки и источники',
 
 			UnaWhy1:
 				'Переехав в Черногорию, многие первым делом обнаруживают, что привычную домашнюю аптечку здесь не собрать: половины названий в аптеках просто нет. Дело не в дефиците — черногорский рынок ориентирован на европейский и балканский формуляр, а он заметно отличается от российского и украинского. Часть препаратов, привычных в СНГ, здесь никогда не регистрировали, а часть относится к лечебным традициям, которых в европейской медицине нет вовсе.',
@@ -218,7 +219,7 @@ export default {
 			UnaAntivirals3Cinnarizine: 'циннаризин',
 			UnaAntivirals3End: '.',
 
-			'UnaToc_glp1': 'Диабет и уколы для похудения',
+			UnaToc_glp1: 'Диабет и уколы для похудения',
 			UnaGlp1a:
 				'Отдельная тема — агонисты ГПП-1, которые в России и Украине массово колют для похудения. Семаглутид (в России — Семавик, Велгия, Квинсента) в Черногории есть: зарегистрированы ',
 			UnaGlp1Ozempic: 'Ozempic',
@@ -265,16 +266,17 @@ export default {
 			UnaCtaButton: 'Каталог лекарств',
 		},
 		'sr': {
-			UnaTitle: 'Ljekovi koje nećete naći u Crnoj Gori: vaša uobičajena kućna apoteka',
+			UnaTitle:
+				'Ljekovi koje nećete naći u Crnoj Gori: vaša uobičajena kućna apoteka',
 			UnaDescription:
 				'Enterosgel, so za rehidrataciju, cetirizine, Miramistin, Suprastin, Corvalol — koji se ljekovi iz ruske ili ukrajinske kućne apoteke ne mogu naći u Crnoj Gori, zašto, kako tražiti zamjenu po aktivnoj supstanci i šta imati u vidu pri unosu ljekova od kuće. Važi za jul 2026.',
 
-			'UnaToc_why': 'Zašto uobičajena apoteka ovdje nije dovoljna',
-			'UnaToc_gaps': 'Čega zaista nema i kako tražiti zamjenu',
-			'UnaToc_antivirals': 'Antivirotici i imunomodulatori: prekid tradicije',
-			'UnaToc_import': 'Šta je rizično ili zabranjeno unositi',
-			'UnaToc_access': 'Nije stvar samo u supstanci: recepti i dostupnost',
-			'UnaToc_sources': 'Napomene i izvori',
+			UnaToc_why: 'Zašto uobičajena apoteka ovdje nije dovoljna',
+			UnaToc_gaps: 'Čega zaista nema i kako tražiti zamjenu',
+			UnaToc_antivirals: 'Antivirotici i imunomodulatori: prekid tradicije',
+			UnaToc_import: 'Šta je rizično ili zabranjeno unositi',
+			UnaToc_access: 'Nije stvar samo u supstanci: recepti i dostupnost',
+			UnaToc_sources: 'Napomene i izvori',
 
 			UnaWhy1:
 				'Jedna od prvih stvari koju ljudi primijete nakon preseljenja u Crnu Goru jeste da kućnu apoteku na koju su navikli ovdje jednostavno ne mogu ponovo sastaviti: polovine poznatih naziva nema u prodaji. Nije riječ o nestašici — crnogorsko tržište prati evropski i balkanski formular, koji se osjetno razlikuje od ruskog i ukrajinskog. Dio ljekova uobičajenih u bivšem SSSR-u ovdje nikada nije ni registrovan, a dio pripada tradicijama liječenja koje evropska medicina uopšte ne dijeli.',
@@ -316,7 +318,8 @@ export default {
 			UnaGapsAnalgesicsCaffetin: 'Caffetin Cold',
 			UnaGapsAnalgesicsMid: ', ',
 			UnaGapsAnalgesicsTylolHot: 'Tylol Hot',
-			UnaGapsAnalgesicsMid2: ' i slično. Od analgetika, pojedinačne supstance — ',
+			UnaGapsAnalgesicsMid2:
+				' i slično. Od analgetika, pojedinačne supstance — ',
 			UnaGapsAnalgesicsLink1: 'paracetamol',
 			UnaGapsAnalgesicsLink2: 'ibuprofen',
 			UnaGapsAnalgesicsEnd: ' — prodaju se slobodno.',
@@ -343,7 +346,7 @@ export default {
 			UnaAntivirals3Cinnarizine: 'cinarizin',
 			UnaAntivirals3End: '.',
 
-			'UnaToc_glp1': 'Dijabetes i injekcije za mršavljenje',
+			UnaToc_glp1: 'Dijabetes i injekcije za mršavljenje',
 			UnaGlp1a:
 				'Posebna tema su agonisti GLP-1 (semaglutid, tirzepatid), koje u Rusiji i Ukrajini masovno ubrizgavaju radi mršavljenja. Semaglutid u Crnoj Gori postoji: registrovani su ',
 			UnaGlp1Ozempic: 'Ozempic',
@@ -377,7 +380,8 @@ export default {
 				'Ovaj pregled se oslanja na iskustvo ruskogovorećih zajednica u Crnoj Gori (2023–2026) i važi za jul 2026. Dostupnost i pravila se mijenjaju; materijal je informativan i ne zamjenjuje konsultaciju sa ljekarom ili farmaceutom. Provjerite u primarnim izvorima:',
 			UnaSourcesCinmed:
 				'CInMED — Institut za ljekove i medicinska sredstva Crne Gore, zvanični registar odobrenih ljekova: cinmed.me;',
-			UnaSourcesFzo: 'FZOCG — liste ljekova Fonda za zdravstveno osiguranje: fzocg.me.',
+			UnaSourcesFzo:
+				'FZOCG — liste ljekova Fonda za zdravstveno osiguranje: fzocg.me.',
 			UnaSourcesDoctors:
 				'Treba vam ljekar koji će posložiti vašu terapiju i izdati lokalni recept? U našem katalogu naznačeni su jezici koje svaki doktor govori — ',
 			UnaSourcesDoctorsLink: 'pronađite doktora koji govori vaš jezik',
@@ -389,16 +393,18 @@ export default {
 			UnaCtaButton: 'Katalog ljekova',
 		},
 		'sr-cyrl': {
-			UnaTitle: 'Љекови које нећете наћи у Црној Гори: ваша уобичајена кућна апотека',
+			UnaTitle:
+				'Љекови које нећете наћи у Црној Гори: ваша уобичајена кућна апотека',
 			UnaDescription:
 				'Enterosgel, соли за рехидратацију, цетиризин, Miramistin, Suprastin, Corvalol — шта од уобичајене кућне апотеке нећете наћи у Црној Гори, чиме се то објашњава, како тражити замјену по активној супстанци и шта имати у виду при уносу љекова из домовине. Важи за јул 2026.',
 
-			'UnaToc_why': 'Зашто уобичајена апотека овдје није довољна',
-			'UnaToc_gaps': 'Чега заиста нема и како тражити замјену',
-			'UnaToc_antivirals': 'Противвирусни љекови и имуномодулатори: раскид с традицијом',
-			'UnaToc_import': 'Шта је ризично или забрањено уносити',
-			'UnaToc_access': 'Није ствар само у супстанци: рецепти и доступност',
-			'UnaToc_sources': 'Ограде и извори',
+			UnaToc_why: 'Зашто уобичајена апотека овдје није довољна',
+			UnaToc_gaps: 'Чега заиста нема и како тражити замјену',
+			UnaToc_antivirals:
+				'Противвирусни љекови и имуномодулатори: раскид с традицијом',
+			UnaToc_import: 'Шта је ризично или забрањено уносити',
+			UnaToc_access: 'Није ствар само у супстанци: рецепти и доступност',
+			UnaToc_sources: 'Ограде и извори',
 
 			UnaWhy1:
 				'Једна од првих ствари које људи примијете након селидбе у Црну Гору јесте да кућну апотеку на коју су навикли овдје једноставно не могу поново да саставе: половине познатих назива нема у продаји. Није ствар у несташици — црногорско тржиште прати европски и балкански формулар, а он се знатно разликује од руског и украјинског. Дио љекова уобичајених у бившем СССР-у овдје никада није ни регистрован, а дио припада традицијама лијечења којих у европској медицини уопште нема.',
@@ -440,7 +446,8 @@ export default {
 			UnaGapsAnalgesicsCaffetin: 'Caffetin Cold',
 			UnaGapsAnalgesicsMid: ', ',
 			UnaGapsAnalgesicsTylolHot: 'Tylol Hot',
-			UnaGapsAnalgesicsMid2: ' и слично. Од аналгетика, појединачне супстанце — ',
+			UnaGapsAnalgesicsMid2:
+				' и слично. Од аналгетика, појединачне супстанце — ',
 			UnaGapsAnalgesicsLink1: 'парацетамол',
 			UnaGapsAnalgesicsLink2: 'ибупрофен',
 			UnaGapsAnalgesicsEnd: ' — продају се слободно.',
@@ -467,7 +474,7 @@ export default {
 			UnaAntivirals3Cinnarizine: 'цинаризин',
 			UnaAntivirals3End: '.',
 
-			'UnaToc_glp1': 'Дијабетес и ињекције за мршављење',
+			UnaToc_glp1: 'Дијабетес и ињекције за мршављење',
 			UnaGlp1a:
 				'Посебна тема су агонисти GLP-1 (семаглутид, тирзепатид), које у Русији и Украјини масовно убризгавају ради мршављења. Семаглутид у Црној Гори постоји: регистровани су ',
 			UnaGlp1Ozempic: 'Ozempic',
@@ -501,7 +508,8 @@ export default {
 				'Овај преглед се заснива на искуству рускоговорних заједница у Црној Гори (2023–2026) и важи за јул 2026. Доступност и правила се мијењају; материјал је информативан и не замјењује консултацију са љекаром или фармацеутом. Провјерите у примарним изворима:',
 			UnaSourcesCinmed:
 				'CInMED — Институт за љекове и медицинска средства Црне Горе, званични регистар одобрених љекова: cinmed.me;',
-			UnaSourcesFzo: 'ФЗОЦГ — листе љекова Фонда за здравствено осигурање: fzocg.me.',
+			UnaSourcesFzo:
+				'ФЗОЦГ — листе љекова Фонда за здравствено осигурање: fzocg.me.',
 			UnaSourcesDoctors:
 				'Треба вам љекар који ће средити вашу терапију и издати локални рецепт? У нашем каталогу су наведени језици које доктори говоре — ',
 			UnaSourcesDoctorsLink: 'пронађите доктора који говори ваш језик',
@@ -518,12 +526,13 @@ export default {
 			UnaDescription:
 				'Enterosgel, Rehydratationssalze, Cetirizin, Miramistin, Suprastin, Corvalol — welche Medikamente aus einer russischen oder ukrainischen Hausapotheke Sie in Montenegro nicht finden, warum das so ist, wie Sie über den Wirkstoff ein Pendant suchen und was Sie beim Mitbringen von Medikamenten von zu Hause beachten sollten. Stand: Juli 2026.',
 
-			'UnaToc_why': 'Warum die gewohnte Hausapotheke hier nicht ausreicht',
-			'UnaToc_gaps': 'Was wirklich fehlt und wie Sie ein Pendant finden',
-			'UnaToc_antivirals': 'Antivirale Mittel und Immunmodulatoren: ein Traditionsbruch',
-			'UnaToc_import': 'Was riskant oder verboten einzuführen ist',
-			'UnaToc_access': 'Es geht nicht nur um den Wirkstoff: Rezepte und Zugang',
-			'UnaToc_sources': 'Vorbehalte und Quellen',
+			UnaToc_why: 'Warum die gewohnte Hausapotheke hier nicht ausreicht',
+			UnaToc_gaps: 'Was wirklich fehlt und wie Sie ein Pendant finden',
+			UnaToc_antivirals:
+				'Antivirale Mittel und Immunmodulatoren: ein Traditionsbruch',
+			UnaToc_import: 'Was riskant oder verboten einzuführen ist',
+			UnaToc_access: 'Es geht nicht nur um den Wirkstoff: Rezepte und Zugang',
+			UnaToc_sources: 'Vorbehalte und Quellen',
 
 			UnaWhy1:
 				'Eines der ersten Dinge, die man nach dem Umzug nach Montenegro bemerkt, ist, dass sich die gewohnte Hausapotheke hier schlicht nicht zusammenstellen lässt: Die Hälfte der vertrauten Namen wird nicht verkauft. Es ist kein Versorgungsengpass — der montenegrinische Markt folgt dem europäischen und balkanischen Arzneiformular, das sich vom russischen und ukrainischen deutlich unterscheidet. Manche in der ehemaligen UdSSR verbreiteten Medikamente wurden hier nie zugelassen, andere gehören zu Behandlungstraditionen, die die europäische Medizin gar nicht teilt.',
@@ -557,7 +566,8 @@ export default {
 			UnaGapsAntihistaminesDimetindene: 'Dimetinden',
 			UnaGapsAntihistaminesDimMid: ', ist zugelassen, aber nur als Gel — ',
 			UnaGapsAntihistaminesFlenty: 'Flenty',
-			UnaGapsAntihistaminesTail: '; die gewohnten Tropfen zum Einnehmen gibt es nicht.',
+			UnaGapsAntihistaminesTail:
+				'; die gewohnten Tropfen zum Einnehmen gibt es nicht.',
 			UnaGapsRehydration:
 				'Rehydratationssalze. Rehydratationspulver in Apothekenqualität (Regidron) gibt es nicht. Sportelektrolyte in Beuteln werden verkauft, viele enthalten aber Zucker, was bei einer Darminfektion unerwünscht ist — prüfen Sie die Zusammensetzung.',
 			UnaGapsAnalgesicsA:
@@ -573,8 +583,7 @@ export default {
 			UnaGapsSpasmoA:
 				'Spasmolytika. No-Spa (Drotaverin) und Papaverin werden nicht verkauft. Von den Magen-Darm-Spasmolytika führen die Apotheken etwa ',
 			UnaGapsSpasmoMebeverine: 'Mebeverin',
-			UnaGapsSpasmoEnd:
-				' — was in Ihrem Fall passt, sagt Ihnen der Apotheker.',
+			UnaGapsSpasmoEnd: ' — was in Ihrem Fall passt, sagt Ihnen der Apotheker.',
 			UnaGapsMisc:
 				'Einzelne Positionen. Nach Berichten aus den Communitys finden Sie weder Doctor MOM, Kameton, Validol, Heptral (Ademetionin) noch Panangin oder Asparkam (Kalium- und Magnesiumaspartat); Sibutramin wird unter keinem Namen verkauft.',
 			UnaGaps2:
@@ -593,7 +602,7 @@ export default {
 			UnaAntivirals3Cinnarizine: 'Cinnarizin',
 			UnaAntivirals3End: '.',
 
-			'UnaToc_glp1': 'Diabetes und Abnehmspritzen',
+			UnaToc_glp1: 'Diabetes und Abnehmspritzen',
 			UnaGlp1a:
 				'Ein eigenes Thema sind die GLP-1-Agonisten (Semaglutid, Tirzepatid), die in Russland und der Ukraine inzwischen massenhaft zum Abnehmen gespritzt werden. Semaglutid ist in Montenegro erhältlich: Zugelassen sind ',
 			UnaGlp1Ozempic: 'Ozempic',
@@ -639,16 +648,17 @@ export default {
 			UnaCtaButton: 'Medikamentenkatalog',
 		},
 		'tr': {
-			UnaTitle: "Karadağ'da bulamayacağınız ilaçlar: alıştığınız evdeki ilaç dolabı",
+			UnaTitle:
+				"Karadağ'da bulamayacağınız ilaçlar: alıştığınız evdeki ilaç dolabı",
 			UnaDescription:
 				"Enterosgel, rehidrasyon tuzları, setirizin, miramistin, suprastin, corvalol — Rus veya Ukrayna evindeki ilaç dolabından hangi ilaçları Karadağ'da bulamayacağınız, bunun nedeni, etken maddeye göre nasıl muadil aranacağı ve ilaçları ülkenizden getirirken nelere dikkat edilmesi gerektiği. Temmuz 2026 itibarıyla günceldir.",
 
-			'UnaToc_why': 'Alışık olduğunuz ilaç dolabı burada neden yetersiz kalıyor',
-			'UnaToc_gaps': 'Gerçekte neyin eksik olduğu ve muadilin nasıl bulunacağı',
-			'UnaToc_antivirals': 'Antiviraller ve immünomodülatörler: gelenekten kopuş',
-			'UnaToc_import': 'Ülkeye sokması riskli veya yasak olanlar',
-			'UnaToc_access': 'Mesele yalnızca etken madde değil: reçeteler ve erişim',
-			'UnaToc_sources': 'Çekinceler ve kaynaklar',
+			UnaToc_why: 'Alışık olduğunuz ilaç dolabı burada neden yetersiz kalıyor',
+			UnaToc_gaps: 'Gerçekte neyin eksik olduğu ve muadilin nasıl bulunacağı',
+			UnaToc_antivirals: 'Antiviraller ve immünomodülatörler: gelenekten kopuş',
+			UnaToc_import: 'Ülkeye sokması riskli veya yasak olanlar',
+			UnaToc_access: 'Mesele yalnızca etken madde değil: reçeteler ve erişim',
+			UnaToc_sources: 'Çekinceler ve kaynaklar',
 
 			UnaWhy1:
 				"Karadağ'a taşındıktan sonra insanların ilk fark ettiği şeylerden biri, alıştıkları evdeki ilaç dolabını burada bir araya getiremeyecekleridir: tanıdık isimlerin yarısı satılmıyor. Bu bir kıtlık değil — Karadağ pazarı, Rusya ve Ukrayna'dakinden belirgin biçimde farklı olan Avrupa ve Balkan formülerini izler. Eski SSCB'de yaygın olan bazı ilaçlar burada hiç ruhsatlandırılmadı, bir kısmı ise Avrupa tıbbının hiç paylaşmadığı tedavi geleneklerine ait.",
@@ -668,7 +678,7 @@ export default {
 			UnaGapsAntisepticsOctenidine: 'oktenidin',
 			UnaGapsAntisepticsEnd: ' (Octenisept).',
 			UnaGapsAntihistaminesA:
-				'Antihistaminikler. Tavegil (klemastin) yoktur, setirizin (Zyrtec) de yoktur — levosetirizin (Xyzal) genellikle Sırbistan\'dan getirilir. Ama Suprastin\'in etken maddesi ',
+				"Antihistaminikler. Tavegil (klemastin) yoktur, setirizin (Zyrtec) de yoktur — levosetirizin (Xyzal) genellikle Sırbistan'dan getirilir. Ama Suprastin'in etken maddesi ",
 			UnaGapsAntihistaminesChloropyramine: 'kloropiramin',
 			UnaGapsAntihistaminesMid: ' burada ',
 			UnaGapsAntihistaminesSynopen: 'Synopen',
@@ -718,7 +728,7 @@ export default {
 			UnaAntivirals3Cinnarizine: 'sinarizin',
 			UnaAntivirals3End: '.',
 
-			'UnaToc_glp1': 'Diyabet ve zayıflama iğneleri',
+			UnaToc_glp1: 'Diyabet ve zayıflama iğneleri',
 			UnaGlp1a:
 				"Ayrı bir konu, Rusya ve Ukrayna'da zayıflamak için yaygın biçimde enjekte edilen GLP-1 agonistleridir (semaglutid, tirzepatid). Semaglutid Karadağ'da mevcut: ",
 			UnaGlp1Ozempic: 'Ozempic',
@@ -736,7 +746,7 @@ export default {
 			UnaGlp13End:
 				' (Forxiga), empagliflozin (Jardiance), gliptinler. Sağlık karnesiyle Fon listesindeki ilaçlar neredeyse ücretsizdir; sigortasız kendiniz ödersiniz, ama bulunurlar.',
 			UnaImport1:
-				"Eksik olanların bir kısmını ülkenizden getirmek isteyebilirsiniz — ve burada hukuki bir ayrıntı var. Corvalol ve Valocordin, birçok ülkede kontrole tabi bir madde olan fenobarbital içerir: bu tür ilaçların ülkeye sokulması, ülkenizde serbestçe satılsalar bile kısıtlanmış veya yasaklanmış olabilir. Aynı şey güçlü ağrı kesiciler ve psikotrop ilaçlar için de geçerlidir.",
+				'Eksik olanların bir kısmını ülkenizden getirmek isteyebilirsiniz — ve burada hukuki bir ayrıntı var. Corvalol ve Valocordin, birçok ülkede kontrole tabi bir madde olan fenobarbital içerir: bu tür ilaçların ülkeye sokulması, ülkenizde serbestçe satılsalar bile kısıtlanmış veya yasaklanmış olabilir. Aynı şey güçlü ağrı kesiciler ve psikotrop ilaçlar için de geçerlidir.',
 			UnaImport2:
 				"Genel kural: yola çıkmadan önce Karadağ'ın ve varsa transit ülkenin gümrük kurallarını kontrol edin. Kişisel kullanım için ilaçların makul miktarlarda, orijinal ambalajında ve etken madde ile dozu belirten bir reçete veya doktor raporuyla getirilmesine genellikle izin verilir. Sınırdaki ilaçlar için reçetenin belgeli kanıtını yanınızda taşımak — ya da onları hiç getirmemek — daha iyidir.",
 
@@ -751,7 +761,8 @@ export default {
 				"Bu özet, Karadağ'ın Rusça konuşan topluluklarının deneyimine (2023–2026) dayanır ve Temmuz 2026 itibarıyla günceldir. Bulunabilirlik ve kurallar değişir; içerik bilgilendirme amaçlıdır ve doktor veya eczacı danışmasının yerini tutmaz. Birincil kaynaklardan doğrulayın:",
 			UnaSourcesCinmed:
 				'CInMED — Karadağ İlaç ve Tıbbi Cihaz Enstitüsü, ruhsatlı ilaçların resmî kaydı: cinmed.me;',
-			UnaSourcesFzo: "FZOCG — Sağlık Sigortası Fonu'nun ilaç listeleri: fzocg.me.",
+			UnaSourcesFzo:
+				"FZOCG — Sağlık Sigortası Fonu'nun ilaç listeleri: fzocg.me.",
 			UnaSourcesDoctors:
 				'Tedavinizi düzenleyecek ve yerel bir reçete yazacak bir doktor mu gerekiyor? Kataloğumuzda her doktorun konuştuğu diller belirtilir — ',
 			UnaSourcesDoctorsLink: 'dilinizi konuşan bir doktor bulun',

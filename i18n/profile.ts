@@ -375,8 +375,7 @@ export default {
 
 			// Gizlilik
 			privacyTitle: 'Gizlilik',
-			privacyDescription:
-				'Yorumlarınızın yanında nasıl görüneceğinizi yönetin',
+			privacyDescription: 'Yorumlarınızın yanında nasıl görüneceğinizi yönetin',
 			publicProfileLabel: 'Herkese açık profil',
 			publicProfileHint: 'Yorumlarınızın yanında adınız gösterilir',
 			privateProfileHint: 'Yorumlarınız anonim olarak yayınlanır',

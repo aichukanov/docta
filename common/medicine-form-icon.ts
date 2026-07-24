@@ -8,6 +8,7 @@ export type MedicineFormCategory =
 	| 'spray'
 	| 'patch'
 	| 'powder'
+	| 'suppository'
 	| 'other';
 
 // Rules are checked in order — priority matters: the route of administration
@@ -30,7 +31,8 @@ const FORM_CATEGORY_RULES: Array<{
 	{ pattern: /sprej/, category: 'spray' },
 	// 'kapi za oči/uši/nos' and 'oralne kapi' (must not catch 'kapsula')
 	{ pattern: /kapi\b/, category: 'drops' },
-	{ pattern: /supozitor|vagitor/, category: 'other' },
+	// Свечи (ректальные/вагинальные суппозитории) — своя категория и иконка
+	{ pattern: /supozitor|vagitor|čepić/, category: 'suppository' },
 	{ pattern: /flaster/, category: 'patch' },
 	// Solid oral forms ('tablet' before 'za oralnu suspenziju' fallthrough)
 	{ pattern: /tablet|pastil|lozeng|guma/, category: 'tablet' },

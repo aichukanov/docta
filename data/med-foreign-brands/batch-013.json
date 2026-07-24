@@ -1,0 +1,298 @@
+[
+  {
+    "inn_en": "etoricoxib",
+    "inn_ru": "эторикоксиб",
+    "src": "etorikoksib",
+    "markets": {
+      "RU": [
+        {"brand": "Аркоксиа", "strength": "60/90/120 мг", "form": "таблетки", "note": "Rx, оригинал", "confidence": "high"},
+        {"brand": "Костарокс", "strength": "60/90/120 мг", "form": "таблетки", "note": "Rx", "confidence": "high"},
+        {"brand": "Эторелекс", "strength": "60/90/120 мг", "form": "таблетки", "note": "Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Arcoxia", "strength": "30/60/90/120 mg", "form": "Filmtabletten", "note": "Rx, Originator", "confidence": "high"},
+        {"brand": "Etoricoxib (Generika)", "strength": "60/90/120 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Arcoxia", "strength": "30/60/90/120 mg", "form": "tabletki powlekane", "note": "Rx, oryginał", "confidence": "high"},
+        {"brand": "Etoricoxib (generyki)", "strength": "60/90/120 mg", "form": "tabletki powlekane", "note": "Rx", "confidence": "high"}
+      ],
+      "US": []
+    },
+    "available_note": "Not FDA-approved in the US; no US brand."
+  },
+  {
+    "inn_en": "flurbiprofen",
+    "inn_ru": "флурбипрофен",
+    "src": "flurbiprofen",
+    "markets": {
+      "RU": [
+        {"brand": "Стрепсилс Интенсив", "strength": "8,75 мг", "form": "таблетки для рассасывания", "note": "OTC, боль в горле", "confidence": "high"},
+        {"brand": "Флугалин", "strength": "8,75 мг", "form": "таблетки для рассасывания", "note": "OTC", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Dobendan Direkt", "strength": "8,75 mg", "form": "Lutschtabletten", "note": "OTC, Halsschmerzen", "confidence": "high"},
+        {"brand": "Strepfen", "strength": "8,75 mg", "form": "Lutschtabletten", "note": "OTC", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Strepfen", "strength": "8,75 mg", "form": "tabletki do ssania", "note": "OTC, ból gardła", "confidence": "high"},
+        {"brand": "Strepsils Intensive", "strength": "8,75 mg", "form": "tabletki do ssania", "note": "OTC", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Ansaid", "strength": "50/100 mg", "form": "tablets", "note": "Rx, discontinued (generic flurbiprofen may exist)", "confidence": "medium"},
+        {"brand": "Ocufen", "strength": "0.03%", "form": "ophthalmic solution", "note": "Rx", "confidence": "medium"}
+      ]
+    },
+    "available_note": "Predominantly a throat lozenge in RU/DE/PL; oral Ansaid discontinued in US, ophthalmic Ocufen remains."
+  },
+  {
+    "inn_en": "methylprednisolone",
+    "inn_ru": "метилпреднизолон",
+    "src": "metilprednizolon",
+    "markets": {
+      "RU": [
+        {"brand": "Метипред", "strength": "4/16 мг; 250/500/1000 мг", "form": "таблетки, лиофилизат для инъекций", "note": "Rx", "confidence": "high"},
+        {"brand": "Медрол", "strength": "4/16/32 мг", "form": "таблетки", "note": "Rx, оригинал", "confidence": "high"},
+        {"brand": "Солу-Медрол", "strength": "250/500/1000 мг", "form": "лиофилизат для инъекций", "note": "Rx", "confidence": "high"},
+        {"brand": "Депо-Медрол", "strength": "40 мг/мл", "form": "суспензия для инъекций", "note": "Rx, депо", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Urbason", "strength": "4/8/16/40 mg", "form": "Tabletten", "note": "Rx", "confidence": "high"},
+        {"brand": "Medrol", "strength": "4/16 mg", "form": "Tabletten", "note": "Rx", "confidence": "medium"},
+        {"brand": "Metypred", "strength": "4/16 mg", "form": "Tabletten", "note": "Rx", "confidence": "medium"},
+        {"brand": "Solu-Medrol", "strength": "125/250/500/1000 mg", "form": "Injektionslösung", "note": "Rx", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Metypred", "strength": "4/16 mg", "form": "tabletki", "note": "Rx", "confidence": "high"},
+        {"brand": "Medrol", "strength": "4/16 mg", "form": "tabletki", "note": "Rx", "confidence": "high"},
+        {"brand": "Solu-Medrol", "strength": "125/250/500/1000 mg", "form": "proszek do sporządzania roztworu do wstrzykiwań", "note": "Rx", "confidence": "high"},
+        {"brand": "Depo-Medrol", "strength": "40 mg/ml", "form": "zawiesina do wstrzykiwań", "note": "Rx", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Medrol", "strength": "2/4/8/16/32 mg", "form": "tablets (incl. Dosepak)", "note": "Rx", "confidence": "high"},
+        {"brand": "Solu-Medrol", "strength": "40/125/500/1000 mg", "form": "injection", "note": "Rx", "confidence": "high"},
+        {"brand": "Depo-Medrol", "strength": "20/40/80 mg/mL", "form": "injectable suspension", "note": "Rx, depot", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "dexamethasone",
+    "inn_ru": "дексаметазон",
+    "src": "deksametazon",
+    "markets": {
+      "RU": [
+        {"brand": "Дексаметазон", "strength": "0,5 мг; 4 мг/мл", "form": "таблетки, раствор для инъекций", "note": "Rx", "confidence": "high"},
+        {"brand": "Дексазон", "strength": "4 мг/мл", "form": "раствор для инъекций", "note": "Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Fortecortin", "strength": "0,5/2/4/8 mg; 4/8/40/100 mg Inj.", "form": "Tabletten, Injektionslösung", "note": "Rx", "confidence": "high"},
+        {"brand": "Dexamethason (Generika)", "strength": "0,5/1,5/4 mg", "form": "Tabletten", "note": "Rx", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Dexamethason", "strength": "0,5/1 mg; 4/8 mg/ml", "form": "tabletki, roztwór do wstrzykiwań", "note": "Rx", "confidence": "high"},
+        {"brand": "Dexaven", "strength": "4/8 mg/ml", "form": "roztwór do wstrzykiwań", "note": "Rx", "confidence": "high"},
+        {"brand": "Pabi-Dexamethason", "strength": "0,5/1 mg", "form": "tabletki", "note": "Rx", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Decadron", "strength": "0.5/0.75/4 mg", "form": "tablets", "note": "Rx, historic originator (brand largely discontinued)", "confidence": "medium"},
+        {"brand": "Dexamethasone (generic)", "strength": "0.5/0.75/1/1.5/2/4/6 mg", "form": "tablets, injection", "note": "Rx", "confidence": "high"},
+        {"brand": "Hemady", "strength": "20 mg", "form": "tablets", "note": "Rx, multiple myeloma", "confidence": "medium"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "betamethasone",
+    "inn_ru": "бетаметазон",
+    "src": "betametazon",
+    "markets": {
+      "RU": [
+        {"brand": "Дипроспан", "strength": "2+5 мг/мл", "form": "суспензия для инъекций", "note": "Rx, депо (бетаметазон дипропионат+фосфат)", "confidence": "high"},
+        {"brand": "Целестон", "strength": "0,5 мг; 4 мг/мл", "form": "таблетки, раствор для инъекций", "note": "Rx", "confidence": "medium"},
+        {"brand": "Акридерм", "strength": "0,05%", "form": "крем, мазь", "note": "Rx, наружно", "confidence": "high"},
+        {"brand": "Белодерм", "strength": "0,05%", "form": "крем, мазь", "note": "Rx, наружно", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Celestamine N", "strength": "0,5 mg", "form": "Tabletten/Liquidum", "note": "Rx", "confidence": "medium"},
+        {"brand": "Diprosone", "strength": "0,05%", "form": "Creme/Salbe", "note": "Rx, topisch", "confidence": "medium"},
+        {"brand": "Diprosis / Betagalen", "strength": "0,05%", "form": "Creme/Salbe", "note": "Rx, topisch", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Diprophos", "strength": "2+5 mg/ml", "form": "zawiesina do wstrzykiwań", "note": "Rx, depot", "confidence": "high"},
+        {"brand": "Celeston", "strength": "4 mg/ml", "form": "roztwór do wstrzykiwań", "note": "Rx", "confidence": "medium"},
+        {"brand": "Diprosone", "strength": "0,05%", "form": "krem/maść", "note": "Rx, miejscowo", "confidence": "medium"},
+        {"brand": "Betnovate", "strength": "0,1%", "form": "krem/maść", "note": "Rx, miejscowo", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Celestone Soluspan", "strength": "6 mg/mL", "form": "injectable suspension", "note": "Rx", "confidence": "high"},
+        {"brand": "Diprolene", "strength": "0.05%", "form": "cream/ointment/gel/lotion", "note": "Rx, augmented topical", "confidence": "high"},
+        {"brand": "Diprosone", "strength": "0.05%", "form": "cream/ointment", "note": "Rx, topical", "confidence": "medium"}
+      ]
+    },
+    "available_note": "Marketed mainly as injectable depot (Diprospan/Diprophos) and topical corticosteroid brands."
+  },
+  {
+    "inn_en": "montelukast",
+    "inn_ru": "монтелукаст",
+    "src": "montelukast",
+    "markets": {
+      "RU": [
+        {"brand": "Сингуляр", "strength": "4/5/10 мг", "form": "таблетки, жевательные таблетки", "note": "Rx, оригинал", "confidence": "high"},
+        {"brand": "Монтелар", "strength": "4/5/10 мг", "form": "жевательные таблетки, таблетки", "note": "Rx", "confidence": "high"},
+        {"brand": "Синглон", "strength": "4/5/10 мг", "form": "таблетки", "note": "Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Singulair", "strength": "4/5/10 mg", "form": "Kau-/Filmtabletten, Granulat", "note": "Rx, Originator", "confidence": "high"},
+        {"brand": "Montelukast (Generika)", "strength": "4/5/10 mg", "form": "Kau-/Filmtabletten", "note": "Rx", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Singulair", "strength": "4/5/10 mg", "form": "tabletki do rozgryzania i żucia, powlekane", "note": "Rx, oryginał", "confidence": "high"},
+        {"brand": "Montelukast (generyki)", "strength": "4/5/10 mg", "form": "tabletki", "note": "Rx", "confidence": "high"},
+        {"brand": "Astmirex", "strength": "4/5/10 mg", "form": "tabletki", "note": "Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Singulair", "strength": "4/5/10 mg", "form": "chewable/film tablets, granules", "note": "Rx, boxed warning (neuropsychiatric)", "confidence": "high"},
+        {"brand": "Montelukast (generic)", "strength": "4/5/10 mg", "form": "tablets, granules", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "esomeprazole",
+    "inn_ru": "эзомепразол",
+    "src": "esomeprazol",
+    "markets": {
+      "RU": [
+        {"brand": "Нексиум", "strength": "20/40 мг", "form": "таблетки, гранулы", "note": "Rx, оригинал", "confidence": "high"},
+        {"brand": "Эманера", "strength": "20/40 мг", "form": "капсулы", "note": "Rx", "confidence": "high"},
+        {"brand": "Нео-Зекст", "strength": "20/40 мг", "form": "таблетки", "note": "Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Nexium", "strength": "20/40 mg", "form": "magensaftresistente Tabletten", "note": "Rx/OTC (20 mg)", "confidence": "high"},
+        {"brand": "Esomeprazol (Generika)", "strength": "20/40 mg", "form": "magensaftresistente Tabletten/Kapseln", "note": "Rx", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Nexium", "strength": "20/40 mg", "form": "tabletki dojelitowe", "note": "Rx", "confidence": "high"},
+        {"brand": "Emanera", "strength": "20/40 mg", "form": "kapsułki", "note": "Rx/OTC (20 mg)", "confidence": "high"},
+        {"brand": "Helides", "strength": "20/40 mg", "form": "kapsułki", "note": "Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Nexium", "strength": "20/40 mg", "form": "delayed-release capsules, granules", "note": "Rx", "confidence": "high"},
+        {"brand": "Nexium 24HR", "strength": "20 mg", "form": "delayed-release capsules/tablets", "note": "OTC", "confidence": "high"}
+      ]
+    },
+    "available_note": ""
+  },
+  {
+    "inn_en": "dexlansoprazole",
+    "inn_ru": "декслансопразол",
+    "src": "dekslansoprazol",
+    "markets": {
+      "RU": [],
+      "DE": [],
+      "PL": [],
+      "US": [
+        {"brand": "Dexilant", "strength": "30/60 mg", "form": "delayed-release capsules", "note": "Rx (originator Kapidex/Dexilant)", "confidence": "high"}
+      ]
+    },
+    "available_note": "Marketed essentially only in the US (Dexilant); not registered/available in RU, DE, PL."
+  },
+  {
+    "inn_en": "mesalazine",
+    "inn_ru": "месалазин",
+    "src": "mesalazin",
+    "markets": {
+      "RU": [
+        {"brand": "Салофальк", "strength": "250/500/1000 мг", "form": "таблетки, гранулы, суппозитории, клизмы", "note": "Rx", "confidence": "high"},
+        {"brand": "Пентаса", "strength": "500/1000 мг", "form": "таблетки, гранулы, суппозитории", "note": "Rx", "confidence": "high"},
+        {"brand": "Асакол", "strength": "400/800 мг", "form": "таблетки", "note": "Rx", "confidence": "medium"},
+        {"brand": "Месакол", "strength": "400 мг", "form": "таблетки", "note": "Rx", "confidence": "medium"}
+      ],
+      "DE": [
+        {"brand": "Salofalk", "strength": "250/500/1000/1500/3000 mg", "form": "Tabletten, Granulat, Zäpfchen, Klysmen", "note": "Rx", "confidence": "high"},
+        {"brand": "Pentasa", "strength": "500/1000/2000/4000 mg", "form": "Tabletten, Granulat, Zäpfchen", "note": "Rx", "confidence": "high"},
+        {"brand": "Claversal", "strength": "250/500 mg", "form": "Tabletten, Zäpfchen", "note": "Rx", "confidence": "high"},
+        {"brand": "Mezavant", "strength": "1200 mg", "form": "Retardtabletten", "note": "Rx", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Salofalk", "strength": "250/500/1000 mg", "form": "tabletki, granulat, czopki, wlewki", "note": "Rx", "confidence": "high"},
+        {"brand": "Pentasa", "strength": "500/1000 mg", "form": "tabletki, granulat, czopki", "note": "Rx", "confidence": "high"},
+        {"brand": "Asamax", "strength": "250/500 mg", "form": "tabletki, czopki", "note": "Rx", "confidence": "medium"},
+        {"brand": "Mezavant", "strength": "1200 mg", "form": "tabletki o zmodyfikowanym uwalnianiu", "note": "Rx", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Lialda", "strength": "1.2 g", "form": "delayed-release tablets", "note": "Rx", "confidence": "high"},
+        {"brand": "Pentasa", "strength": "250/500 mg", "form": "controlled-release capsules", "note": "Rx", "confidence": "high"},
+        {"brand": "Asacol HD", "strength": "800 mg", "form": "delayed-release tablets", "note": "Rx", "confidence": "high"},
+        {"brand": "Apriso", "strength": "0.375 g", "form": "extended-release capsules", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": "US brand Delzicol (400 mg) also available; formulations vary widely by market."
+  },
+  {
+    "inn_en": "prucalopride",
+    "inn_ru": "прукалоприд",
+    "src": "prukaloprid",
+    "markets": {
+      "RU": [
+        {"brand": "Резолор", "strength": "1/2 мг", "form": "таблетки", "note": "Rx", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Resolor", "strength": "1/2 mg", "form": "Filmtabletten", "note": "Rx", "confidence": "high"}
+      ],
+      "PL": [
+        {"brand": "Resolor", "strength": "1/2 mg", "form": "tabletki powlekane", "note": "Rx", "confidence": "high"}
+      ],
+      "US": [
+        {"brand": "Motegrity", "strength": "1/2 mg", "form": "tablets", "note": "Rx", "confidence": "high"}
+      ]
+    },
+    "available_note": "EU/RU brand Resolor; US brand Motegrity."
+  },
+  {
+    "inn_en": "diosmin",
+    "inn_ru": "диосмин",
+    "src": "diosmin",
+    "markets": {
+      "RU": [
+        {"brand": "Детралекс", "strength": "500/1000 мг", "form": "таблетки, суспензия", "note": "OTC, диосмин+гесперидин (микронизированный)", "confidence": "high"},
+        {"brand": "Флебодиа 600", "strength": "600 мг", "form": "таблетки", "note": "OTC, диосмин", "confidence": "high"},
+        {"brand": "Венарус", "strength": "500/1000 мг", "form": "таблетки", "note": "OTC, диосмин+гесперидин", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Daflon", "strength": "500 mg", "form": "Filmtabletten", "note": "Diosmin+Hesperidin; in DE nur eingeschränkt/als Import erhältlich", "confidence": "low"}
+      ],
+      "PL": [
+        {"brand": "Detralex", "strength": "500 mg", "form": "tabletki powlekane", "note": "OTC, diosmina+hesperydyna", "confidence": "high"},
+        {"brand": "Diosminex", "strength": "500/1000 mg", "form": "tabletki", "note": "OTC, diosmina", "confidence": "high"},
+        {"brand": "Phlebodia", "strength": "600 mg", "form": "tabletki", "note": "OTC, diosmina", "confidence": "medium"}
+      ],
+      "US": [
+        {"brand": "Vasculera", "strength": "630 mg diosmiplex", "form": "tablets", "note": "medical food (not FDA drug)", "confidence": "medium"},
+        {"brand": "Daflon (supplement)", "strength": "500/1000 mg", "form": "tablets", "note": "dietary supplement, not FDA-approved drug", "confidence": "low"}
+      ]
+    },
+    "available_note": "Usually combined with hesperidin (diosmin+hesperidin, e.g. Detralex/Daflon); in the US sold as medical food / supplement, not an approved drug."
+  },
+  {
+    "inn_en": "octenidine",
+    "inn_ru": "октенидин",
+    "src": "oktenidin",
+    "markets": {
+      "RU": [
+        {"brand": "Октенисепт", "strength": "0,1% октенидин + 2% феноксиэтанол", "form": "раствор/спрей", "note": "OTC, антисептик", "confidence": "high"}
+      ],
+      "DE": [
+        {"brand": "Octenisept", "strength": "0,1% + 2% Phenoxyethanol", "form": "Lösung/Spray", "note": "OTC, Antiseptikum", "confidence": "high"},
+        {"brand": "Octenidin (Generika)", "strength": "0,1%", "form": "Lösung", "note": "OTC/Medizinprodukt", "confidence": "medium"}
+      ],
+      "PL": [
+        {"brand": "Octenisept", "strength": "0,1% + 2% fenoksyetanol", "form": "roztwór/aerozol", "note": "OTC, antyseptyk", "confidence": "high"},
+        {"brand": "Octenilin", "strength": "0,05%", "form": "roztwór/żel do ran", "note": "wyrób medyczny", "confidence": "medium"}
+      ],
+      "US": []
+    },
+    "available_note": "Antiseptic (topical); widely available OTC in RU/DE/PL as Octenisept. Not established as a marketed antiseptic brand in the US."
+  }
+]

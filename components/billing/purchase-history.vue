@@ -54,7 +54,9 @@ const statusType = (purchase: BillingMyPurchase) => {
 		<div class="history__filters">
 			<el-radio-group v-model="filter">
 				<el-radio-button value="all">{{ t('FilterAll') }}</el-radio-button>
-				<el-radio-button value="active">{{ t('FilterActive') }}</el-radio-button>
+				<el-radio-button value="active">{{
+					t('FilterActive')
+				}}</el-radio-button>
 				<el-radio-button value="expired">
 					{{ t('FilterExpired') }}
 				</el-radio-button>

@@ -22,9 +22,7 @@ const { data } = await useFetch('/api/labtests/category-city-combinations', {
 	key: 'labtests-category-city-combinations',
 });
 
-const combinations = computed(
-	() => data.value?.categoryCityCombinations ?? [],
-);
+const combinations = computed(() => data.value?.categoryCityCombinations ?? []);
 
 const selectedCategoryId = computed(() =>
 	props.categoryIds.length === 1 ? props.categoryIds[0] : null,
@@ -91,7 +89,9 @@ const hasHub = computed(
 			class="labtests-related-filters__group"
 		>
 			<h3 class="labtests-related-filters__title">
-				{{ t('OtherCategoriesIn', { city: t(`city_${selectedCityId}_genitive`) }) }}
+				{{
+					t('OtherCategoriesIn', { city: t(`city_${selectedCityId}_genitive`) })
+				}}
 			</h3>
 			<div class="labtests-related-filters__links">
 				<NuxtLink
@@ -145,11 +145,29 @@ const hasHub = computed(
 
 <i18n lang="json">
 {
-	"en": { "InOtherCities": "in other cities", "OtherCategoriesIn": "Other lab test categories in {city}" },
-	"ru": { "InOtherCities": "в других городах", "OtherCategoriesIn": "Другие категории анализов в {city}" },
-	"sr": { "InOtherCities": "u drugim gradovima", "OtherCategoriesIn": "Druge kategorije analiza u {city}" },
-	"sr-cyrl": { "InOtherCities": "у другим градовима", "OtherCategoriesIn": "Друге категорије анализа у {city}" },
-	"de": { "InOtherCities": "in anderen Städten", "OtherCategoriesIn": "Andere Laborkategorien in {city}" },
-	"tr": { "InOtherCities": "diğer şehirlerde", "OtherCategoriesIn": "{city} içindeki diğer tahlil kategorileri" }
+	"en": {
+		"InOtherCities": "in other cities",
+		"OtherCategoriesIn": "Other lab test categories in {city}"
+	},
+	"ru": {
+		"InOtherCities": "в других городах",
+		"OtherCategoriesIn": "Другие категории анализов в {city}"
+	},
+	"sr": {
+		"InOtherCities": "u drugim gradovima",
+		"OtherCategoriesIn": "Druge kategorije analiza u {city}"
+	},
+	"sr-cyrl": {
+		"InOtherCities": "у другим градовима",
+		"OtherCategoriesIn": "Друге категорије анализа у {city}"
+	},
+	"de": {
+		"InOtherCities": "in anderen Städten",
+		"OtherCategoriesIn": "Andere Laborkategorien in {city}"
+	},
+	"tr": {
+		"InOtherCities": "diğer şehirlerde",
+		"OtherCategoriesIn": "{city} içindeki diğer tahlil kategorileri"
+	}
 }
 </i18n>

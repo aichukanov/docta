@@ -24,10 +24,7 @@ import {
 	validateSpecialtyIds,
 	validateUserCoordinates,
 } from '~/common/validation';
-import {
-	PROXIMITY_WEIGHT,
-	PROXIMITY_HALF_DISTANCE_KM,
-} from '~/common/ranking';
+import { PROXIMITY_WEIGHT, PROXIMITY_HALF_DISTANCE_KM } from '~/common/ranking';
 import { LIST_PAGE_SIZE } from '~/common/constants';
 
 function parseDaySchedule(value: unknown): DaySchedule {

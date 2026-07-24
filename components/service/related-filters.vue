@@ -22,9 +22,7 @@ const { data } = await useFetch('/api/services/category-city-combinations', {
 	key: 'services-category-city-combinations',
 });
 
-const combinations = computed(
-	() => data.value?.categoryCityCombinations ?? [],
-);
+const combinations = computed(() => data.value?.categoryCityCombinations ?? []);
 
 const selectedCategoryId = computed(() =>
 	props.serviceCategoryIds.length === 1 ? props.serviceCategoryIds[0] : null,
@@ -91,7 +89,9 @@ const hasHub = computed(
 			class="services-related-filters__group"
 		>
 			<h3 class="services-related-filters__title">
-				{{ t('OtherCategoriesIn', { city: t(`city_${selectedCityId}_genitive`) }) }}
+				{{
+					t('OtherCategoriesIn', { city: t(`city_${selectedCityId}_genitive`) })
+				}}
 			</h3>
 			<div class="services-related-filters__links">
 				<NuxtLink
@@ -145,11 +145,29 @@ const hasHub = computed(
 
 <i18n lang="json">
 {
-	"en": { "InOtherCities": "in other cities", "OtherCategoriesIn": "Other service categories in {city}" },
-	"ru": { "InOtherCities": "в других городах", "OtherCategoriesIn": "Другие категории услуг в {city}" },
-	"sr": { "InOtherCities": "u drugim gradovima", "OtherCategoriesIn": "Druge kategorije usluga u {city}" },
-	"sr-cyrl": { "InOtherCities": "у другим градовима", "OtherCategoriesIn": "Друге категорије услуга у {city}" },
-	"de": { "InOtherCities": "in anderen Städten", "OtherCategoriesIn": "Andere Leistungskategorien in {city}" },
-	"tr": { "InOtherCities": "diğer şehirlerde", "OtherCategoriesIn": "{city} içindeki diğer hizmet kategorileri" }
+	"en": {
+		"InOtherCities": "in other cities",
+		"OtherCategoriesIn": "Other service categories in {city}"
+	},
+	"ru": {
+		"InOtherCities": "в других городах",
+		"OtherCategoriesIn": "Другие категории услуг в {city}"
+	},
+	"sr": {
+		"InOtherCities": "u drugim gradovima",
+		"OtherCategoriesIn": "Druge kategorije usluga u {city}"
+	},
+	"sr-cyrl": {
+		"InOtherCities": "у другим градовима",
+		"OtherCategoriesIn": "Друге категорије услуга у {city}"
+	},
+	"de": {
+		"InOtherCities": "in anderen Städten",
+		"OtherCategoriesIn": "Andere Leistungskategorien in {city}"
+	},
+	"tr": {
+		"InOtherCities": "diğer şehirlerde",
+		"OtherCategoriesIn": "{city} içindeki diğer hizmet kategorileri"
+	}
 }
 </i18n>

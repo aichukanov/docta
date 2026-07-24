@@ -88,8 +88,7 @@ const totalCents = computed(() =>
 
 const activePurchaseForService = (serviceId: number) =>
 	purchases.value.find(
-		(purchase) =>
-			purchase.isActive && purchase.serviceIds.includes(serviceId),
+		(purchase) => purchase.isActive && purchase.serviceIds.includes(serviceId),
 	);
 
 // --- Создание заказа ---

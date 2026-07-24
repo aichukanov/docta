@@ -85,9 +85,14 @@ export default defineEventHandler(async (event) => {
 		try {
 			await sendPurchaseConfirmationEmail(activation);
 		} catch (err) {
-			logError(billingLogger, 'Failed to send purchase confirmation email', err, {
-				orderId,
-			});
+			logError(
+				billingLogger,
+				'Failed to send purchase confirmation email',
+				err,
+				{
+					orderId,
+				},
+			);
 		}
 	}
 

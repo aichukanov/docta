@@ -112,9 +112,7 @@ export default defineEventHandler(async (event): Promise<boolean | null> => {
 				'SELECT id FROM insurance_company_branches WHERE insurance_company_id = ?',
 				[body.id],
 			);
-			const existingIds = new Set(
-				(existingRows as any[]).map((row) => row.id),
-			);
+			const existingIds = new Set((existingRows as any[]).map((row) => row.id));
 			const submittedIds = new Set(
 				branches.filter((b) => b.id != null).map((b) => b.id),
 			);

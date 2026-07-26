@@ -1,0 +1,50 @@
+{
+  "_note": "doctors[].id — SQL-подзапросы, а не числа: генератор подставляет id в 'SET @doctor_x = …;' сырой строкой, поэтому SQL одинаково работает на локальной БД и на проде без сверки id. Заменить на числа, когда будут известны. Требует, чтобы insert-clinic-stomatoloska-ordinacija-musura.sql был применён раньше.",
+  "jsonPath": "data/google-places/budva/dental-musura.json",
+  "outputPath": "server/sql/reviews-google/stomatoloska-ordinacija-musura-budva.sql",
+  "dataCollectedDate": "2026-07-26",
+  "clinicId": 142,
+  "clinicName": "Stomatološka ordinacija Mušura (Budva)",
+  "translationsDir": "data/review-translations/stomatoloska-ordinacija-musura-budva/",
+  "doctors": [
+    {
+      "id": "(SELECT id FROM doctors WHERE slug = 'dejan-musura')",
+      "varName": "dejan_musura",
+      "patterns": [
+        "Dejan[aeiu]?(?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Дејан[аеиу]?(?:[^а-яёА-ЯЁ]|$)",
+        "Деян[аеиу]?(?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "_note": "Nikol[aeiu] + обязательный не-буквенный хвост НЕ ловит Nikoleta/Nikoleti/Nikoletu: после 'Nikole' там идёт 't', и охранная группа не срабатывает. Обратно тоже чисто — паттерн Николеты требует 'Nikolet'.",
+      "id": "(SELECT id FROM doctors WHERE slug = 'nikola-musura')",
+      "varName": "nikola_musura",
+      "patterns": [
+        "Nikol[aeiu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Никол[аеиу](?:[^а-яёА-ЯЁ]|$)"
+      ]
+    },
+    {
+      "id": "(SELECT id FROM doctors WHERE slug = 'dragana-bjelica')",
+      "varName": "dragana_bjelica",
+      "patterns": [
+        "Dragan[aeiu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Драган[аеиу](?:[^а-яёА-ЯЁ]|$)",
+        "Bjelic[aeiu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Бјелиц[аеиу]|Бьелиц[аеиу]"
+      ]
+    },
+    {
+      "id": "(SELECT id FROM doctors WHERE slug = 'jelena-potpara')",
+      "varName": "jelena_potpara",
+      "patterns": [
+        "Jelen[aeiu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Potpar[aeiu](?:[^a-zA-Zа-яёА-ЯЁ]|$)",
+        "Јелен[аеиу](?:[^а-яёА-ЯЁ]|$)",
+        "Елен[аеиу](?:[^а-яёА-ЯЁ]|$)"
+      ]
+    }
+  ],
+  "childDentistDoctorVar": "dejan_musura"
+}

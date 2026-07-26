@@ -142,6 +142,32 @@ FK резолвится по slug).
 
 `insert-entity-reference-info.sql` применён 2026-07-19 (confirmed by user) — данные в БД.
 
+## 2026-07-24 (?): 017-med-foreign-products-forms.sql + insert-med-foreign-products.sql
+
+Зарубежные аналоги лекарств, «аптечка туриста» (prd/drug-cross-country-reference).
+Записано задним числом 2026-07-26: **сама запись в этом логе отсутствовала**, факт
+применения установлен проверкой прода, точная дата неизвестна.
+
+Created tables (DDL): `med_foreign_products` (market_code, brand_name, pharma_form_id,
+strength, note, sort_order), `med_foreign_product_substances` (product_id, substance_id).
+Миграции `015`/`016` устарели — `017` дропает созданные ими таблицы, применять их не нужно.
+
+⚠️ **Файлов `015`/`016`/`017` нет ни на диске, ни в git** — в отличие от миграций 004–013,
+которые были закоммичены, применены и удалены осознанно (коммит `52a4802`), эти трое
+не коммитились никогда. DDL существует только в проде и в локальной dev-БД. Данные
+восстановимы (`node scripts/medicines/build-foreign-products-sql.mjs` из
+`data/med-foreign-brands/batch-*.json`), схема — нет: при пересоздании БД с нуля
+структуру таблиц придётся снимать с живой базы (`SHOW CREATE TABLE`).
+
+Данные — `insert-med-foreign-products.sql`, генерируется скриптом, идемпотентен
+(`ON DUPLICATE KEY UPDATE`), в git не хранится. Актуальный билд на 2026-07-26:
+2683 продукта, 2874 связи, 0 unresolved.
+
+Проверено на проде 2026-07-26: сверка всех 156 веществ сгенерированного SQL с живыми
+страницами `/medicines/<slug>?lang=ru` — 154/156 полного совпадения по составу рынков,
+оба расхождения объясняются сет-матчингом комбинированных препаратов.
+
+
 ## 2026-07-19: 010/011/012-insurance-*.sql + insert-insurance-companies.sql
 
 Справочник страховых компаний (prd/insurance-companies — Sava, Lovćen, Uniqa,

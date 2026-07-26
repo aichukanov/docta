@@ -36,6 +36,10 @@ const localizedName = computed(() =>
 					<ClinicApprovedBadge :clinic="clinic" />
 				</div>
 
+				<div v-if="clinic.localName" class="clinic-hero__original-name">
+					{{ clinic.localName }}
+				</div>
+
 				<div v-if="clinicTypeNames?.length" class="clinic-hero__types">
 					<CategoryTag
 						v-for="typeName in clinicTypeNames"
@@ -105,6 +109,14 @@ const localizedName = computed(() =>
 		-apple-system,
 		sans-serif;
 	line-height: 1.2;
+}
+
+/* Оригинальное название на сербской латинице — под локализованным */
+.clinic-hero__original-name {
+	font-size: var(--font-size-md);
+	font-weight: var(--font-weight-medium);
+	color: var(--color-text-secondary);
+	margin-top: calc(-1 * var(--spacing-xs));
 }
 
 .clinic-hero__actions {

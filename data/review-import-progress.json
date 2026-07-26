@@ -1169,6 +1169,19 @@
         "sr": 1,
         "it": 1
       }
+    },
+    "stomatoloska-ordinacija-musura-budva": {
+      "status": "done",
+      "clinicName": "Stomatološka ordinacija Mušura (Budva)",
+      "clinicId": 142,
+      "configFile": "data/review-import-configs/stomatoloska-ordinacija-musura-budva.json",
+      "sqlFile": "server/sql/reviews-google/stomatoloska-ordinacija-musura-budva.sql",
+      "translationsDir": "data/review-translations/stomatoloska-ordinacija-musura-budva/",
+      "reviewsTotal": 69,
+      "reviewsWithText": 42,
+      "replies": 7,
+      "note": "doctors[].id в конфиге — подзапросы по slug (id врачей не были известны). Паттерны только для 4 врачей, реально упомянутых по имени: dejan 1, nikola 2, dragana 3, jelena 1; остальные 62 отзыва — только на клинику. Nikola Mušura (4-я генерация) отсутствовал и на /nas-tim, и в БД — заведён минимальной записью в insert-clinic-stomatoloska-ordinacija-musura.sql специально под эти отзывы.",
+      "doctorsWithPatterns": 4
     }
   }
 }

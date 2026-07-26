@@ -140,18 +140,23 @@ const reviewsLink = computed(() => {
 		<ClinicLogo :logoUrl="clinic.logoUrl" :name="localizedName" :size="64" />
 		<div class="clinic-info">
 			<div class="clinic-name-row">
-				<div class="clinic-name-wrapper">
-					<NuxtLink
-						v-if="clinicLink"
-						:to="clinicLink"
-						class="clinic-name"
-						:class="{ 'clinic-name--highlight': hasHighlight }"
-						@click="trackClinicLinkClick"
-					>
-						{{ localizedName }}
-					</NuxtLink>
-					<span v-else class="clinic-name">{{ localizedName }}</span>
-					<ClinicApprovedBadge :clinic="clinic" :small="true" />
+				<div class="clinic-name-block">
+					<div class="clinic-name-wrapper">
+						<NuxtLink
+							v-if="clinicLink"
+							:to="clinicLink"
+							class="clinic-name"
+							:class="{ 'clinic-name--highlight': hasHighlight }"
+							@click="trackClinicLinkClick"
+						>
+							{{ localizedName }}
+						</NuxtLink>
+						<span v-else class="clinic-name">{{ localizedName }}</span>
+						<ClinicApprovedBadge :clinic="clinic" :small="true" />
+					</div>
+					<div v-if="clinic.localName" class="clinic-original-name">
+						{{ clinic.localName }}
+					</div>
 				</div>
 				<div
 					v-if="showPrice"
@@ -233,10 +238,25 @@ const reviewsLink = computed(() => {
 	gap: var(--spacing-md);
 }
 
+.clinic-name-block {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+	min-width: 0;
+}
+
 .clinic-name-wrapper {
 	display: flex;
 	align-items: center;
 	gap: var(--spacing-xs);
+}
+
+/* Оригинальное название на сербской латинице — под локализованным */
+.clinic-original-name {
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-medium);
+	color: var(--color-text-secondary);
+	overflow-wrap: break-word;
 }
 
 .clinic-name {

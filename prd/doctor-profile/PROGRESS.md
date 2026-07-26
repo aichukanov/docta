@@ -4,6 +4,14 @@
 **Дата начала:** ~2025 (Итерация 1 уже реализована)  
 **Текущий статус:** 🟡 Partial (1/5 итераций завершено)
 
+> ⚠️ **PRD не дописан (сверено 2026-07-26).** В `iterations/` лежит только
+> `iteration-01-public-page.md`. Файлов `iteration-02-create-doctor.md`,
+> `iteration-03-edit-doctor.md`, `iteration-04-markdown-preview.md`,
+> `iteration-05-draft-published.md` **не существует** — ссылки на них в таблице ниже
+> и в `iterations/README.md` битые. Брать итерации 2–5 в работу нельзя, пока PRD не написан.
+> Хороший образец для дописывания — `prd/clinic-profile/`, где тот же путь
+> (создание → редактирование → контент → Markdown → draft/published) уже пройден 6/6.
+
 ---
 
 ## Общий прогресс

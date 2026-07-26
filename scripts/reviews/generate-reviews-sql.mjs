@@ -19,7 +19,8 @@ import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const ROOT = resolve(__dirname, '..')
+// Скрипт лежит в scripts/reviews/, корень проекта на два уровня выше
+const ROOT = resolve(__dirname, '..', '..')
 
 // ---------------------------------------------------------------------------
 // Load .env
@@ -517,8 +518,12 @@ const lines = []
 lines.push(`-- Insert Google Maps reviews for ${CLINIC_NAME}`)
 lines.push(`-- Run: mysql -u root -p --default-character-set=utf8mb4 docta_me < ${config.outputPath}`)
 lines.push('')
-lines.push('SET NAMES utf8mb4;')
+// Именно с COLLATE: голый `SET NAMES utf8mb4` берёт коллацию по умолчанию
+// (utf8mb4_0900_ai_ci на MySQL 8) и ломает сравнение с колонками
+// utf8mb4_unicode_ci — см. docs/import/CLINIC_SERVICES_IMPORT.md
+lines.push('SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;')
 lines.push('SET CHARACTER SET utf8mb4;')
+lines.push("SET collation_connection = 'utf8mb4_unicode_ci';")
 lines.push('')
 
 // PART 0

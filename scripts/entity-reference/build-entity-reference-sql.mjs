@@ -1,14 +1,18 @@
 #!/usr/bin/env node
 /**
- * Build SQL insert file from data/entity-reference/{lab-tests,medical-services}.json
+ * Build SQL insert file from data/entity-reference/{lab-tests,medical-services}*.json
  * into lab_test_reference_info / medical_service_reference_info (migration 009).
+ *
+ * Подхватывает ВСЕ файлы по префиксу, а не только базовые два: батчи можно
+ * писать параллельно в `medical-services-batch-08.json` и т.п., не конфликтуя
+ * за один общий массив. См. loadCards().
  *
  * FK resolved by slug via subquery (JSON has no id, only slug).
  *
  * Usage: node scripts/entity-reference/build-entity-reference-sql.mjs
  */
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -30,8 +34,47 @@ function esc(s) {
 	return "'" + String(s).replace(/\\/g, '\\\\').replace(/'/g, "''") + "'";
 }
 
-function loadJson(path) {
-	return JSON.parse(readFileSync(resolve(ROOT, path), 'utf-8'));
+const DATA_DIR = 'data/entity-reference';
+
+/**
+ * Собирает карточки из ВСЕХ файлов `<prefix>*.json` в data/entity-reference.
+ *
+ * Несколько файлов, а не один, — чтобы над контентом можно было работать
+ * параллельно (несколько сессий/агентов сразу): каждый пишет свой
+ * `medical-services-batch-NN.json`, и они не затирают друг другу правки.
+ * Один общий массив в этом случае терялся бы молча — файл остаётся валидным
+ * JSON, просто часть карточек пропадает.
+ *
+ * Файлы читаются в алфавитном порядке, чтобы SQL получался детерминированным.
+ * Дубли по slug — ошибка (значит, два батча взяли одну позицию).
+ */
+function loadCards(prefix) {
+	const files = readdirSync(resolve(ROOT, DATA_DIR))
+		.filter((f) => f.startsWith(prefix) && f.endsWith('.json'))
+		.sort();
+
+	const cards = [];
+	const seen = new Map(); // slug -> файл, где встретился первым
+
+	for (const file of files) {
+		const items = JSON.parse(
+			readFileSync(resolve(ROOT, DATA_DIR, file), 'utf-8'),
+		);
+		for (const item of items) {
+			const first = seen.get(item.slug);
+			if (first) {
+				throw new Error(
+					`Дубль карточки «${item.slug}»: ${first} и ${file}. ` +
+						`Два батча взяли одну позицию — уберите лишнюю.`,
+				);
+			}
+			seen.set(item.slug, file);
+			cards.push(item);
+		}
+	}
+
+	console.log(`  ${prefix}*: ${cards.length} карточек из ${files.length} файл(ов)`);
+	return cards;
 }
 
 function buildInserts(items, table, fkColumn, parentTable) {
@@ -58,8 +101,8 @@ function buildInserts(items, table, fkColumn, parentTable) {
 	return lines.join('\n');
 }
 
-const labTests = loadJson('data/entity-reference/lab-tests.json');
-const medicalServices = loadJson('data/entity-reference/medical-services.json');
+const labTests = loadCards('lab-tests');
+const medicalServices = loadCards('medical-services');
 
 const out = [
 	'-- Импорт справочного контента (что/как/когда/подготовка/отклонение) —',
@@ -75,7 +118,9 @@ const out = [
 	'-- Apply:',
 	'--   mysql -u docta_admin -p --default-character-set=utf8mb4 docta_me < server/sql/migrations/insert-entity-reference-info.sql',
 	'',
-	'SET NAMES utf8mb4;',
+	// COLLATE обязателен: без него подзапрос по slug может сравниваться
+	// в другой коллации и не найти строку (см. docs/import/)
+	'SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;',
 	'',
 	buildInserts(
 		labTests,

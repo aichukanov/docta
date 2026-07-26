@@ -6,8 +6,10 @@ import {
 	buildBreadcrumbsSchema,
 	buildMedicalTestSchema,
 } from '~/common/schema-org-builders';
+import { computeEntityAutoFacts } from '~/common/entity-auto-facts';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
+import entityAutoFactsI18n from '~/i18n/entity-auto-facts';
 import labTestI18n from '~/i18n/labtest';
 import labTestCategoryI18n from '~/i18n/labtest-category';
 import { combineI18nMessages } from '~/i18n/utils';
@@ -20,6 +22,7 @@ const { t, locale } = useI18n({
 		labTestI18n,
 		cityI18n,
 		labTestCategoryI18n,
+		entityAutoFactsI18n,
 	]),
 });
 
@@ -130,6 +133,13 @@ const showClinicOnMap = (clinic: ClinicData) => {
 		isMapVisible.value = true;
 	}
 };
+
+// Авто-факты считаются по ОТФИЛЬТРОВАННОМУ списку — как заголовок и JSON-LD
+// ниже: при фильтре по городу страница каноническая для этого города, и цифры
+// обязаны совпадать с тем, что реально отрисовано.
+const autoFacts = computed(() =>
+	computeEntityAutoFacts(labTestClinics.value, filteredClinicPrices.value),
+);
 
 // Табы — на полном наборе клиник: фильтр не должен прятать таб «Клиники».
 const tabs = computed(() => {
@@ -306,6 +316,7 @@ watchEffect(() => {
 						{{ t(`lab_test_category_${categoryId}`) }}
 					</CategoryTag>
 				</div>
+				<EntityPageAutoFacts v-if="autoFacts" :facts="autoFacts" />
 			</div>
 		</template>
 

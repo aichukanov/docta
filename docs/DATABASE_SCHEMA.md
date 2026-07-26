@@ -49,9 +49,9 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `review_replies`                        | Replies to reviews (one from clinic, one from doctor).         |
 | `review_likes`                          | Likes on reviews by registered users.                         |
 | `review_reply_likes`                    | Likes on review replies by registered users.                  |
-| `review_verification_files`             | Visit-confirmation files for reviews (private storage). *(migration 005, pending)* |
-| `review_moderation_logs`                | Audit log of review moderation actions. *(migration 005, pending)* |
-| `review_ai_summaries`                   | Cached AI summaries of reviews per entity per locale. *(migration 005, pending)* |
+| `review_verification_files`             | Visit-confirmation files for reviews (private storage). *(migration 005, applied 2026-06-12)* |
+| `review_moderation_logs`                | Audit log of review moderation actions. *(migration 005, applied 2026-06-12)* |
+| `review_ai_summaries`                   | Cached AI summaries of reviews per entity per locale. *(migration 005, applied 2026-06-12)* |
 | `billing_paid_services`                 | Catalog of paid services available for clinics.                |
 | `billing_clinic_service_purchases`      | Purchase records of paid services by clinics.                  |
 | `billing_clinic_service_purchase_items` | Junction table: Purchase <-> Paid Service.                     |
@@ -584,7 +584,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `reviews_count` (int, NOT NULL): Number of reviews the summary was generated from (staleness check: regenerate when current count differs by >= 5).
 - `generated_at` (datetime, default CURRENT_TIMESTAMP), `regenerated_at` (datetime, NULL)
 - _Unique constraint_: (`entity_type`, `entity_id`, `language`)
-- _Comment_: Cache for AI review summaries (Anthropic `claude-haiku-4-5`, one call generates all 6 locales). Generated lazily in the background by `GET /api/reviews/ai-summary` when an entity has >= 3 non-rejected reviews with text. Feature is disabled without `ANTHROPIC_API_KEY`.
+- _Comment_: Cache for AI review summaries, one row per entity per locale. `GET /api/reviews/ai-summary` **only reads this cache** — it never generates anything and needs no API key (verified 2026-07-26). Summaries are produced manually in a Claude Code session and loaded as SQL; the workflow is `docs/import/AI_SUMMARY_WORKFLOW.md`. Earlier plans for background generation via `ANTHROPIC_API_KEY` were dropped 2026-06-12 (see `prd/reviews/PROGRESS.md`) — treat any mention of that key for this feature as stale.
 
 ## Core Implementation Logic
 

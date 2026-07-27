@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { debounce } from 'lodash-es';
 import { getRegionalQuery } from '~/common/url-utils';
-import { getLocalizedName } from '~/common/utils';
+import { getLocalizedName, normalizeForSearch } from '~/common/utils';
 import { DoctorSpecialty } from '~/enums/specialty';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
@@ -172,24 +172,29 @@ function filterSpecialties(query: string) {
 		allFilteredSpecialties.value = [];
 		return;
 	}
-	const lowerQuery = query.toLowerCase();
+	const normalizedQuery = normalizeForSearch(query);
 	allFilteredSpecialties.value = allSpecialties.value.filter((s) =>
-		s.name.toLowerCase().includes(lowerQuery),
+		normalizeForSearch(s.name).includes(normalizedQuery),
 	);
 }
 
-// Фильтрация клиник из store (без запроса на сервер)
+// Фильтрация клиник из store (без запроса на сервер).
+// Ищем и по локализованному имени, и по оригинальному сербскому (localName):
+// в ru/en/de/tr-локалях клинику ищут по вывеске, а не только по переводу —
+// как это делает /api/clinics/list (name_sr OR name_sr_cyrl OR name_ru).
 function filterClinics(query: string) {
 	if (!query.trim()) {
 		allFilteredClinics.value = [];
 		return;
 	}
-	const lowerQuery = query.toLowerCase();
+	const normalizedQuery = normalizeForSearch(query);
 	allFilteredClinics.value = clinicsStore.clinics
-		.filter((c) => {
-			const localizedClinicName = getLocalizedName(c, locale.value);
-			return localizedClinicName.toLowerCase().includes(lowerQuery);
-		})
+		.filter(
+			(c) =>
+				normalizeForSearch(getLocalizedName(c, locale.value)).includes(
+					normalizedQuery,
+				) || normalizeForSearch(c.localName).includes(normalizedQuery),
+		)
 		.map((c) => ({
 			id: c.id,
 			slug: c.slug,

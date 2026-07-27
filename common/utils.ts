@@ -20,3 +20,15 @@ export function getLocalizedName<
 
 	return (entity[fieldName] as string) || entity.name;
 }
+
+/**
+ * Нормализует строку для поиска по подстроке на клиенте: нижний регистр
+ * без диакритики. Зеркалит поведение MySQL LIKE с utf8mb4_unicode_ci
+ * (серверные списки), чтобы «musura» находило «Mušura».
+ */
+export function normalizeForSearch(value: string | null | undefined): string {
+	return (value || '')
+		.normalize('NFD')
+		.replace(/\p{M}/gu, '')
+		.toLowerCase();
+}

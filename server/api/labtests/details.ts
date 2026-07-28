@@ -26,7 +26,9 @@ export default defineEventHandler(
 			const locale = body.locale || 'en';
 			// Порядок клиник: композитный скор без локации (rank_score + бонус
 			// за цену); вклад расстояния добавит клиент (use-clinic-ranking.ts)
-			const rankOrder = getClinicRankOrderBySQL('c_rank', 'clt');
+			const rankOrder = getClinicRankOrderBySQL('c_rank', 'clt', {
+				hasOutdatedFlag: true,
+			});
 
 			const labTestQuery = `
 			SELECT DISTINCT

@@ -39,7 +39,8 @@ export function useClinicRanking() {
 
 	/**
 	 * Пересортировка по композитному скору. `prices` передаются на страницах
-	 * позиций с ценами (бонус за цену); без них скор = rank_score + близость.
+	 * позиций с ценами (бонус за цену, урезанный для устаревшей); без них
+	 * скор = rank_score + близость.
 	 * Сортировка стабильная: при равном скоре сохраняется серверный порядок.
 	 */
 	const rankClinics = <T extends ClinicData>(
@@ -47,16 +48,18 @@ export function useClinicRanking() {
 		prices?: ClinicPrice[],
 	): T[] => {
 		const priceByClinic = new Map((prices ?? []).map((p) => [p.clinicId, p]));
-		const scored = clinics.map((clinic) => ({
-			clinic,
-			score: compositeClinicScore({
-				rankScore: clinic.rankScore,
-				distanceKm: getDistanceKm(clinic),
-				hasPrice: prices
-					? hasPriceInfo(priceByClinic.get(clinic.id))
-					: undefined,
-			}),
-		}));
+		const scored = clinics.map((clinic) => {
+			const priceInfo = priceByClinic.get(clinic.id);
+			return {
+				clinic,
+				score: compositeClinicScore({
+					rankScore: clinic.rankScore,
+					distanceKm: getDistanceKm(clinic),
+					hasPrice: prices ? hasPriceInfo(priceInfo) : undefined,
+					isPriceOutdated: priceInfo?.isOutdated,
+				}),
+			};
+		});
 		scored.sort((a, b) => b.score - a.score);
 		return scored.map(({ clinic }) => clinic);
 	};

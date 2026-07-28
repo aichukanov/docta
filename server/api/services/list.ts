@@ -140,7 +140,10 @@ export async function getMedicalServiceList(
 	// Порядок клиник в карточке: композитный скор без локации (rank_score +
 	// бонус за цену); первые LIST_CARD_MAX_CLINICS клиник видны на карточке,
 	// их порядок клиент пересортирует с учётом расстояния (use-clinic-ranking.ts)
-	const rankOrder = getClinicRankOrderBySQL('c_rank', 'cms', true);
+	const rankOrder = getClinicRankOrderBySQL('c_rank', 'cms', {
+		hasPriceMin: true,
+		hasOutdatedFlag: true,
+	});
 
 	// Sort: 'name-asc' / 'price-asc' / 'price-desc' override the default rank-based order.
 	// Price sort only works when scoped to a single clinic.

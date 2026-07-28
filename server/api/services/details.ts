@@ -28,7 +28,10 @@ export default defineEventHandler(
 
 			// Порядок клиник: композитный скор без локации (rank_score + бонус
 			// за цену); вклад расстояния добавит клиент (use-clinic-ranking.ts)
-			const rankOrder = getClinicRankOrderBySQL('c_rank', 'cms', true);
+			const rankOrder = getClinicRankOrderBySQL('c_rank', 'cms', {
+				hasPriceMin: true,
+				hasOutdatedFlag: true,
+			});
 			const medicalServiceQuery = `
 			SELECT DISTINCT
 				ms.id,

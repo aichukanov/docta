@@ -1,3 +1,4 @@
+import { OUTDATED_PRICE_FACTOR } from '~/common/ranking';
 import { getConnection } from '~/server/common/db-mysql';
 
 const MS_PER_DAY = 86_400_000;
@@ -146,12 +147,26 @@ function computeScore(
  *
  * hasPricing (0.10): есть ли хотя бы одна цена — сигнал полезности.
  *   Услуга с ценами полезнее для пользователя, чем без.
+ *   Устаревшая цена засчитывается частично — см. OUTDATED_PRICE_FACTOR в common/ranking.ts.
  */
 const SW = {
 	clinicCount: 0.6,
 	doctorCount: 0.3,
 	hasPricing: 0.1,
 } as const;
+
+/**
+ * Ценовой сигнал услуги/анализа: 1 — есть актуальная цена хотя бы в одной
+ * клинике, OUTDATED_PRICE_FACTOR — все цены помечены устаревшими, 0 — цен нет.
+ * Хватает одной актуальной цены, чтобы получить полный вес.
+ */
+function pricingScore(
+	hasFreshPricing: boolean,
+	hasAnyPricing: boolean,
+): number {
+	if (hasFreshPricing) return 1;
+	return hasAnyPricing ? OUTDATED_PRICE_FACTOR : 0;
+}
 
 /**
  * Потолки для нормализации количества клиник и врачей.
@@ -173,6 +188,7 @@ const SERVICE_DOCTOR_LOG_DIVISOR = Math.log2(1 + SERVICE_DOCTOR_CAP);
  * hasPricing (0.20): есть ли хотя бы одна цена — сигнал полезности.
  *   Вес выше чем у услуг (10%), потому что для анализов цена — ключевой
  *   фактор выбора (пользователи сравнивают цены между лабораториями).
+ *   Устаревшая цена засчитывается частично — см. OUTDATED_PRICE_FACTOR в common/ranking.ts.
  */
 const LW = {
 	clinicCount: 0.8,
@@ -328,7 +344,12 @@ async function recalculateServiceScores(connection: any): Promise<void> {
 			EXISTS(
 				SELECT 1 FROM clinic_medical_services cms
 				WHERE cms.medical_service_id = ms.id AND cms.price IS NOT NULL
-			) AS hasPricing
+					AND COALESCE(cms.is_price_outdated, 0) = 0
+			) AS hasFreshPricing,
+			EXISTS(
+				SELECT 1 FROM clinic_medical_services cms
+				WHERE cms.medical_service_id = ms.id AND cms.price IS NOT NULL
+			) AS hasAnyPricing
 		FROM medical_services ms
 	`);
 
@@ -341,12 +362,15 @@ async function recalculateServiceScores(connection: any): Promise<void> {
 			1,
 			Math.log2(1 + Number(row.doctorCount)) / SERVICE_DOCTOR_LOG_DIVISOR,
 		);
-		const pricingScore = Number(row.hasPricing);
+		const priceScore = pricingScore(
+			Boolean(Number(row.hasFreshPricing)),
+			Boolean(Number(row.hasAnyPricing)),
+		);
 
 		const score =
 			SW.clinicCount * clinicScore +
 			SW.doctorCount * doctorScore +
-			SW.hasPricing * pricingScore;
+			SW.hasPricing * priceScore;
 
 		await connection.execute(
 			'UPDATE medical_services SET rank_score = ? WHERE id = ?',
@@ -363,7 +387,12 @@ async function recalculateLabTestScores(connection: any): Promise<void> {
 			EXISTS(
 				SELECT 1 FROM clinic_lab_tests clt
 				WHERE clt.lab_test_id = lt.id AND clt.price IS NOT NULL
-			) AS hasPricing
+					AND COALESCE(clt.is_price_outdated, 0) = 0
+			) AS hasFreshPricing,
+			EXISTS(
+				SELECT 1 FROM clinic_lab_tests clt
+				WHERE clt.lab_test_id = lt.id AND clt.price IS NOT NULL
+			) AS hasAnyPricing
 		FROM lab_tests lt
 	`);
 
@@ -372,9 +401,12 @@ async function recalculateLabTestScores(connection: any): Promise<void> {
 			1,
 			Math.log2(1 + Number(row.clinicCount)) / LAB_CLINIC_LOG_DIVISOR,
 		);
-		const pricingScore = Number(row.hasPricing);
+		const priceScore = pricingScore(
+			Boolean(Number(row.hasFreshPricing)),
+			Boolean(Number(row.hasAnyPricing)),
+		);
 
-		const score = LW.clinicCount * clinicScore + LW.hasPricing * pricingScore;
+		const score = LW.clinicCount * clinicScore + LW.hasPricing * priceScore;
 
 		await connection.execute(
 			'UPDATE lab_tests SET rank_score = ? WHERE id = ?',

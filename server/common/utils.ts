@@ -1,4 +1,7 @@
-import { CLINIC_PRICE_BONUS } from '~/common/ranking';
+import {
+	CLINIC_OUTDATED_PRICE_BONUS,
+	CLINIC_PRICE_BONUS,
+} from '~/common/ranking';
 
 export function sanitizeLink(link: string): string {
 	// Убираем все пробелы и оставляем только валидные символы для URL
@@ -29,19 +32,26 @@ export function getLocalizedNameField(locale?: string): string {
  * Серверное зеркало common/ranking.ts — порядок «без локации»; вклад
  * расстояния добавляется на клиенте (composables/use-clinic-ranking.ts),
  * чтобы SSR-выдача не зависела от города пользователя.
+ * Цена, помеченная устаревшей, даёт урезанный бонус (CLINIC_OUTDATED_PRICE_BONUS):
+ * клиника с актуальной ценой должна показываться выше.
  * @param clinicAlias - алиас таблицы clinics в запросе
  * @param priceAlias - алиас таблицы цен (cms/clt/cm)
- * @param hasPriceMin - есть ли у таблицы цен колонка price_min (только clinic_medical_services)
+ * @param options.hasPriceMin - есть ли у таблицы цен колонка price_min (только clinic_medical_services)
+ * @param options.hasOutdatedFlag - есть ли у таблицы цен колонка is_price_outdated
+ *   (clinic_medical_services и clinic_lab_tests; у цен лекарств её нет)
  */
 export function getClinicRankOrderBySQL(
 	clinicAlias: string,
 	priceAlias: string,
-	hasPriceMin = false,
+	options: { hasPriceMin?: boolean; hasOutdatedFlag?: boolean } = {},
 ): string {
-	const hasPrice = hasPriceMin
+	const hasPrice = options.hasPriceMin
 		? `${priceAlias}.price > 0 OR ${priceAlias}.price_min > 0`
 		: `${priceAlias}.price > 0`;
-	return `(${clinicAlias}.rank_score + CASE WHEN ${hasPrice} THEN ${CLINIC_PRICE_BONUS} ELSE 0 END) DESC, ${priceAlias}.clinic_id ASC`;
+	const priceBonus = options.hasOutdatedFlag
+		? `CASE WHEN COALESCE(${priceAlias}.is_price_outdated, 0) = 0 THEN ${CLINIC_PRICE_BONUS} ELSE ${CLINIC_OUTDATED_PRICE_BONUS} END`
+		: `${CLINIC_PRICE_BONUS}`;
+	return `(${clinicAlias}.rank_score + CASE WHEN ${hasPrice} THEN ${priceBonus} ELSE 0 END) DESC, ${priceAlias}.clinic_id ASC`;
 }
 
 export function parseClinicPricesData(clinicPricesData: string | null): Array<{

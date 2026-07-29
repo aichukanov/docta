@@ -1,8 +1,8 @@
 <script setup lang="ts" generic="T extends ListPageItem">
 import { Filter, ArrowDown } from '@element-plus/icons-vue';
-import { getRegionalQuery } from '~/common/url-utils';
+import { getCanonicalUrl, getRegionalQuery } from '~/common/url-utils';
 import { CITY_COORDINATES, type CityId } from '~/enums/cities';
-import { LIST_PAGE_SIZE, SITE_URL } from '~/common/constants';
+import { LIST_PAGE_SIZE } from '~/common/constants';
 import type { ClinicData } from '~/interfaces/clinic';
 import type { ListPageItem } from '~/interfaces/list-page';
 import type { ClinicServicesMap } from '#components';
@@ -150,26 +150,21 @@ const totalPages = computed(() => Math.ceil(props.totalCount / LIST_PAGE_SIZE));
 
 const paginationLinks = computed(() => {
 	const links: Array<{ rel: string; href: string }> = [];
-	const baseUrl = `${SITE_URL}${route.path}`;
-	const query = {
-		...props.filterQuery,
-		...getRegionalQuery(locale.value),
-	} as Record<string, string | string[]>;
 
-	const buildUrl = (p: number) => {
-		const pageQuery = p > 1 ? { ...query, page: String(p) } : { ...query };
-		const params = new URLSearchParams();
-		for (const [key, value] of Object.entries(pageQuery)) {
-			if (value == null || value === '') continue;
-			if (Array.isArray(value)) {
-				value.forEach((v) => params.append(key, String(v)));
-			} else {
-				params.set(key, String(value));
-			}
-		}
-		const qs = params.toString();
-		return qs ? `${baseUrl}?${qs}` : baseUrl;
-	};
+	// Через getCanonicalUrl, а не своей сборкой URL: иначе порядок параметров
+	// расходится с canonical этой же страницы. До правки rel=next отдавал
+	// `?lang=ru&page=3`, а сама третья страница канонизировалась в
+	// `?page=3&lang=ru` — та же перестановка, против которой затевалась
+	// итерация 3 в prd/silent-200-index-hygiene.
+	const buildUrl = (p: number) =>
+		getCanonicalUrl(
+			route.path,
+			{
+				...props.filterQuery,
+				...(p > 1 ? { page: String(p) } : {}),
+			},
+			locale.value,
+		);
 
 	if (pageNumber.value > 1) {
 		links.push({ rel: 'prev', href: buildUrl(pageNumber.value - 1) });

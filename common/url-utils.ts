@@ -35,6 +35,41 @@ function notEmpty(value: string | number | null | undefined): boolean {
 	return value != null && value !== '';
 }
 
+/**
+ * Канонический порядок query-параметров.
+ *
+ * Раньше порядок брался из объекта как есть, поэтому
+ * `?specialtyIds=4&cityIds=1` и `?cityIds=1&specialtyIds=4` давали два разных
+ * self-canonical на одинаковый контент (prd/silent-200-index-hygiene, итерация 3).
+ *
+ * Список НЕ алфавитный, и это принципиально: он воспроизводит порядок, который
+ * сайт и sitemap уже отдают — фильтр сущности перед `cityIds`, `substanceIds`
+ * перед `atcGroupIds`, `specialtyIds` перед `languageIds`. Проверено по
+ * прод-sitemap: все 12 встречающихся там комбинаций остаются побайтово теми же.
+ * Алфавитная сортировка сломала бы каждую из них, а фасеты дают 29% показов в
+ * Google — переезд на новую форму URL стоил бы дороже, чем исправляемый дубль.
+ * Поэтому перестановки нормализуются К СУЩЕСТВУЮЩЕЙ форме, а не к новой.
+ *
+ * `lang` в списке нет: он всегда уезжает последним (приходит через `newQuery`).
+ * Неизвестные параметры сохраняют относительный порядок и идут после known.
+ */
+const CANONICAL_QUERY_ORDER = [
+	'substanceIds',
+	'specialtyIds',
+	'serviceCategoryIds',
+	'categoryIds',
+	'clinicTypeIds',
+	'atcGroupIds',
+	'cityIds',
+	'languageIds',
+	'page',
+];
+
+function canonicalQueryRank(key: string): number {
+	const index = CANONICAL_QUERY_ORDER.indexOf(key);
+	return index === -1 ? CANONICAL_QUERY_ORDER.length : index;
+}
+
 function updateQueryInUrl(
 	pathname: string,
 	query: UrlQuery,
@@ -42,13 +77,17 @@ function updateQueryInUrl(
 ) {
 	const searchParams = new URLSearchParams();
 
-	Object.entries(query).forEach(([key, value]) => {
-		if (key in newQuery) {
-			return;
-		} else {
-			addQueryParams(searchParams, key, value);
-		}
-	});
+	Object.entries(query)
+		// Стабильная сортировка: known-параметры в каноническом порядке,
+		// остальные — в порядке появления.
+		.sort(([a], [b]) => canonicalQueryRank(a) - canonicalQueryRank(b))
+		.forEach(([key, value]) => {
+			if (key in newQuery) {
+				return;
+			} else {
+				addQueryParams(searchParams, key, value);
+			}
+		});
 
 	Object.entries(newQuery).forEach(([key, value]) => {
 		addQueryParams(searchParams, key, value);
@@ -74,8 +113,24 @@ export function getRegionalUrl(url: string, query: UrlQuery, lang: string) {
 }
 
 /**
+ * Параметры, которые не влияют на содержимое страницы и потому не должны
+ * попадать в canonical.
+ *
+ * `tab` — чисто клиентский скролл к секции: `components/entity-page/tab-bar.vue`
+ * читает его только в `onMounted`, серверная разметка от него не зависит вообще.
+ * При этом Яндекс, исполнив JS, нашёл и проиндексировал 6 таких URL как
+ * отдельные страницы (`/labtests/cholesterol?tab=clinics` и т.п.).
+ *
+ * `sort` СОЗНАТЕЛЬНО не входит: на страницах отзывов он меняет порядок, а
+ * значит и состав конкретной страницы пагинации — канонизировать
+ * `?sort=X&page=2` в `?page=2` было бы неправдой.
+ */
+const NON_CANONICAL_QUERY_KEYS = ['tab'];
+
+/**
  * Абсолютный канонический URL страницы: path + текущие query-параметры
- * с нормализованным `lang` (для дефолтной локали параметр опускается).
+ * с нормализованным `lang` (для дефолтной локали параметр опускается),
+ * в каноническом порядке и без UI-параметров.
  * Единая точка истины для rel=canonical (app.vue) и URL страниц
  * в schema.org разметке — они обязаны совпадать.
  */
@@ -84,7 +139,14 @@ export function getCanonicalUrl(
 	query: UrlQuery,
 	lang: string,
 ): string {
-	return getRegionalUrl(`${SITE_URL}${path}`, query, lang);
+	const meaningfulQuery: UrlQuery = {};
+	Object.entries(query).forEach(([key, value]) => {
+		if (!NON_CANONICAL_QUERY_KEYS.includes(key)) {
+			meaningfulQuery[key] = value;
+		}
+	});
+
+	return getRegionalUrl(`${SITE_URL}${path}`, meaningfulQuery, lang);
 }
 
 /**

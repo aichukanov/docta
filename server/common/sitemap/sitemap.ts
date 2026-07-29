@@ -21,6 +21,8 @@ import { getClinicSubpageSlugs } from './filters/clinic-subpages';
 import { getMedicineList } from '~/server/api/medicines/list';
 import { getSitemapFilters as getMedicineSitemapFilters } from './filters/medicines';
 import { getInsuranceCompanyList } from './filters/insurance-companies';
+import { getMedicationSlugs } from './filters/medications';
+import { ARTICLE_SLUGS } from '~/common/articles';
 import { getConnection } from '~/server/common/db-mysql';
 
 export function menuItemToLinks(
@@ -98,12 +100,11 @@ export async function generateSitemapPage() {
 	const aboutLink: SitemapLink = menuItemToLinks('about');
 
 	// === Articles ===
+	// Список слагов — в common/articles.ts, под присмотром unit-теста. Раньше
+	// он был захардкожен здесь двумя слагами из семнадцати, и 15 статей просто
+	// не попадали в sitemap (см. prd/silent-200-index-hygiene, итерация 2).
 	const articlesPageLink: SitemapLink = menuItemToLinks('articles');
-	const articleList = [
-		'russian-speaking-doctors-in-montenegro',
-		'clinics-with-language-support',
-	];
-	const articleLinks: SitemapLink[] = articleList.map((article) =>
+	const articleLinks: SitemapLink[] = ARTICLE_SLUGS.map((article) =>
 		menuItemToLinks(SITE_URL + '/articles/' + article, {}, true),
 	);
 
@@ -242,6 +243,15 @@ export async function generateSitemapPage() {
 			}),
 		);
 
+	// === Medications (цены лекарств в клиниках, не регистр ЦИнМЕД) ===
+	const medicationSlugs = await getMedicationSlugs();
+
+	const medicationsPageLink: SitemapLink = menuItemToLinks('medications');
+
+	const medicationLinks: SitemapLink[] = medicationSlugs.map((slug) =>
+		menuItemToLinks(`${SITE_URL}/medications/${slug}`, {}, true),
+	);
+
 	// === Clinics ===
 	const clinics = await getClinicList();
 	const clinicFilters = await getClinicSitemapFilters(
@@ -342,6 +352,9 @@ export async function generateSitemapPage() {
 		...medicineLinks,
 		...medicineAtcGroupLinks,
 		...medicineSubstanceAtcLinks,
+		// Medications: листинг + карточки лекарств с ценами в клиниках
+		medicationsPageLink,
+		...medicationLinks,
 		// Clinics: страницы + город + тип + тип+город
 		clinicsPageLink,
 		...clinicLinks,

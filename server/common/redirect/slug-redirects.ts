@@ -38,8 +38,10 @@ export async function checkSlugRedirect(
 	const id = parseInt(param, 10);
 	const isNumericId = !isNaN(id) && id > 0 && String(id) === param;
 
+	let connection: Awaited<ReturnType<typeof getConnection>> | null = null;
+
 	try {
-		const connection = await getConnection();
+		connection = await getConnection();
 		let targetSlug: string | null = null;
 
 		if (isNumericId) {
@@ -77,8 +79,6 @@ export async function checkSlugRedirect(
 			}
 		}
 
-		await connection.end();
-
 		if (targetSlug && targetSlug !== param) {
 			const { searchParams } = getRequestURL(event);
 			const queryString = searchParams.toString();
@@ -89,6 +89,29 @@ export async function checkSlugRedirect(
 		}
 	} catch (error) {
 		console.error('Error checking slug redirect:', error);
+
+		// Числовой ID НИКОГДА не является канонической ссылкой: если проверку
+		// выполнить не удалось, мы не знаем слаг, но точно знаем, что отдавать
+		// 200 с контентом по этому URL нельзя. Раньше здесь возвращался null
+		// («редирект не нужен»), и при аварии БД в мае-июне 2026 числовые URL
+		// отрендерились как обычные страницы — Яндекс проиндексировал 602 таких
+		// URL (42% всего индекса), см. prd/silent-200-index-hygiene.
+		// 500 краулер повторит, 200 запомнит навсегда.
+		if (isNumericId) {
+			throw createError({
+				statusCode: 500,
+				statusMessage: 'Unable to resolve canonical URL',
+			});
+		}
+
+		// Для обычного слага null корректен: почти всегда слаг актуальный и
+		// редирект действительно не нужен. Ронять основной трафик из-за упавшей
+		// проверки таблицы slug_redirects нельзя.
+	} finally {
+		// end() пропатчен в release(), см. db-mysql.ts. Без finally соединение
+		// не возвращалось в пул при ошибке: 10 ошибок = мёртвый пул
+		// (connectionLimit 10, queueLimit 0) и висящие запросы до рестарта pm2.
+		await connection?.end();
 	}
 
 	return null;

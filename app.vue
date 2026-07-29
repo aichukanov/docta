@@ -77,7 +77,20 @@ function getLangLink(lang: string) {
 	);
 }
 
+// Catch-all `pages/[...not-found].vue` матчит любой несуществующий путь. Опознаём
+// его по имени параметра, а не по route.name: имя роута с i18n может получить
+// локальный суффикс, а параметр стабилен. Дефис из имени файла Nuxt убирает,
+// поэтому именно `notfound`.
+// Канонизировать URL, которого не существует, и объявлять его языковые версии
+// нельзя: self-canonical на мусорный путь превращал 404 в «валидную» страницу
+// для краулера (см. prd/silent-200-index-hygiene).
+const isNotFoundRoute = computed(() => route.params.notfound !== undefined);
+
 const alternateLinks = computed(() => {
+	if (isNotFoundRoute.value) {
+		return [];
+	}
+
 	const currentLocale = locale.value;
 
 	const links: Array<{

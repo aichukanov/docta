@@ -56,7 +56,7 @@ export function menuItemToLinks(
 
 	return {
 		loc,
-		lastmod: new Date(),
+		// lastmod сознательно не заполняем — см. SitemapLink в ./utils.ts
 		changefreq: 'weekly',
 		alternatives: linksWithParams,
 	};
@@ -389,9 +389,14 @@ async function generateSitemap(routes: SitemapLink[]) {
 	}
 
 	async function getUrlData(route: SitemapLink) {
+		// lastmod выводим только если он реально известен: заведомо ложный
+		// (время генерации файла) хуже отсутствующего — см. SitemapLink.
+		const lastmod = route.lastmod
+			? `\n\t\t<lastmod>${route.lastmod.toISOString()}</lastmod>`
+			: '';
+
 		return `	<url>
-		<loc>${route.loc.replaceAll('&', '&amp;')}</loc>
-		<lastmod>${route.lastmod.toISOString()}</lastmod>
+		<loc>${route.loc.replaceAll('&', '&amp;')}</loc>${lastmod}
 		<changefreq>${route.changefreq}</changefreq>
 		${route.alternatives.map((alt) => getAltLink(alt)).join('')}
 	</url>`;

@@ -5,6 +5,8 @@ import {
 	formatCouponScopeList,
 	getCouponOgImageUrl,
 	getCouponPaymentKey,
+	getCouponTabRoute,
+	getCouponTabUrl,
 	getCouponScopeByRoute,
 	getCouponScopeKeys,
 	isCouponApplicable,
@@ -170,6 +172,25 @@ test('способ оплаты: строка условия и парсинг E
 	expect(parseCouponPaymentMethod('bitcoin')).toBe('any');
 	expect(parseCouponPaymentMethod(null)).toBe('any');
 	expect(parseCouponPaymentMethod(undefined)).toBe('any');
+});
+
+// Три входа в купон — метка в карточке, баннер на подстранице и расшаренная
+// ссылка — обязаны вести на один адрес: по нему секция раскрывается сразу
+test('адрес таба купонов: один для ссылок и шеринга', () => {
+	expect(getCouponTabRoute('novi-standard-poliklinika', 'ru')).toEqual({
+		name: 'clinics-clinicSlug',
+		params: { clinicSlug: 'novi-standard-poliklinika' },
+		query: { lang: 'ru', tab: 'coupons' },
+	});
+
+	const url = getCouponTabUrl(
+		'novi-standard-poliklinika',
+		'https://docta.me',
+		'ru',
+	);
+	expect(url).toContain('/clinics/novi-standard-poliklinika');
+	expect(url).toContain('tab=coupons');
+	expect(url).toContain('lang=ru');
 });
 
 // Telegram и Facebook кэшируют превью по URL — при замене картинки адрес

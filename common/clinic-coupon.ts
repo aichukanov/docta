@@ -1,3 +1,4 @@
+import { getRegionalQuery, getRegionalUrl } from '~/common/url-utils';
 import {
 	CLINIC_COUPON_PAYMENT_METHODS,
 	CLINIC_COUPON_SCOPES,
@@ -5,6 +6,40 @@ import {
 	type ClinicCouponPaymentMethod,
 	type ClinicCouponScope,
 } from '~/interfaces/clinic-coupon';
+
+/**
+ * Таб купонов на странице клиники. `?tab=coupons` — конвенция таб-бара
+ * (`entity-page/tab-bar.vue` читает параметр на монтировании и скроллит к
+ * секции), а секция купонов по нему ещё и раскрывается сразу: любой внешний
+ * вход по купонной ссылке — запрос показать купон, а не просто открыть клинику.
+ * Параметр исключён из canonical (NON_CANONICAL_QUERY_KEYS), дублей URL нет.
+ *
+ * Один адрес на все входы: метка в карточке клиники, баннер на подстраницах
+ * с ценами и ссылка в шеринге.
+ */
+export const COUPON_TAB_ID = 'coupons';
+
+/** Router-локация таба купонов — для внутренних ссылок. */
+export function getCouponTabRoute(clinicSlug: string, locale: string) {
+	return {
+		name: 'clinics-clinicSlug',
+		params: { clinicSlug },
+		query: { ...getRegionalQuery(locale), tab: COUPON_TAB_ID },
+	};
+}
+
+/** Абсолютный адрес того же таба — для шеринга в Telegram и Facebook. */
+export function getCouponTabUrl(
+	clinicSlug: string,
+	siteUrl: string,
+	locale: string,
+): string {
+	return getRegionalUrl(
+		`${siteUrl}/clinics/${clinicSlug}`,
+		{ tab: COUPON_TAB_ID },
+		locale,
+	);
+}
 
 // Карточка клиники (ClinicSummary) рендерится одним компонентом на каталоге
 // клиник, страницах врача, услуги, анализа и лекарства — и цена в ней всегда

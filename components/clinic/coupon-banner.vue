@@ -1,6 +1,9 @@
 <script setup lang="ts">
-import { buildCouponTitle, isCouponApplicable } from '~/common/clinic-coupon';
-import { getRegionalQuery } from '~/common/url-utils';
+import {
+	buildCouponTitle,
+	getCouponTabRoute,
+	isCouponApplicable,
+} from '~/common/clinic-coupon';
 import clinicCouponI18n from '~/i18n/clinic-coupon';
 import type {
 	ClinicCoupon,
@@ -36,13 +39,11 @@ const sourceLine = computed(() => {
 });
 
 // Сам купон и условия живут в табе «Купоны» на странице клиники — ведём туда,
-// а не открываем второй копией здесь
-const couponTabLink = computed(() => ({
-	name: 'clinics-clinicSlug',
-	params: { clinicSlug: props.clinicSlug },
-	query: getRegionalQuery(locale.value),
-	hash: '#coupons',
-}));
+// а не открываем второй копией здесь. Тот же адрес, что у метки и шеринга:
+// блок там раскроется сразу (см. getCouponTabRoute)
+const couponTabLink = computed(() =>
+	getCouponTabRoute(props.clinicSlug, locale.value),
+);
 </script>
 
 <template>

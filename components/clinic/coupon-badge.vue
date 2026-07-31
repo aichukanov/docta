@@ -2,9 +2,9 @@
 import {
 	buildCouponTitle,
 	getCouponScopeByRoute,
+	getCouponTabRoute,
 	isCouponApplicable,
 } from '~/common/clinic-coupon';
-import { getRegionalQuery } from '~/common/url-utils';
 import clinicCouponI18n from '~/i18n/clinic-coupon';
 import type { ClinicCoupon } from '~/interfaces/clinic-coupon';
 
@@ -55,17 +55,8 @@ const tooltip = computed(() =>
 	props.coupon ? buildCouponTitle(props.coupon, t, locale.value) : '',
 );
 
-// `?tab=coupons` — конвенция таб-бара (entity-page/tab-bar.vue): он на монтировании
-// проскроллит к секции, а сама секция по этому параметру раскроется. Параметр
-// исключён из canonical (NON_CANONICAL_QUERY_KEYS), лишних URL в индексе не даёт.
 const couponTabLink = computed(() =>
-	props.clinicSlug
-		? {
-				name: 'clinics-clinicSlug',
-				params: { clinicSlug: props.clinicSlug },
-				query: { ...getRegionalQuery(locale.value), tab: 'coupons' },
-			}
-		: null,
+	props.clinicSlug ? getCouponTabRoute(props.clinicSlug, locale.value) : null,
 );
 
 const { trackEvent } = useAnalytics();

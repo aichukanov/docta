@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { Share } from '@element-plus/icons-vue';
-import { buildCouponTitle } from '~/common/clinic-coupon';
+import {
+	buildCouponTitle,
+	COUPON_TAB_ID,
+	getCouponTabUrl,
+} from '~/common/clinic-coupon';
 import { SITE_URL } from '~/common/constants';
-import { getRegionalUrl } from '~/common/url-utils';
 import clinicCouponI18n from '~/i18n/clinic-coupon';
 import type { ClinicCoupon } from '~/interfaces/clinic-coupon';
 import type { AnalyticsShareChannel } from '~/types/analytics';
@@ -32,12 +35,13 @@ const isExpanded = ref(false);
 const isZoomed = ref(false);
 const { trackEvent } = useAnalytics();
 
-// Переход по купонной метке из карточки клиники (`?tab=coupons`) — это запрос
-// показать купон, а не просто открыть страницу: раскрываем блок сразу. Только на
-// монтировании: клик по вкладке «Купоны» уже на странице ничего не разворачивает.
+// Вход по купонной ссылке (`?tab=coupons`) — из карточки клиники, с баннера на
+// подстранице или по расшаренной ссылке — это запрос показать купон, а не просто
+// открыть страницу: раскрываем блок сразу. Только на монтировании: клик по
+// вкладке «Купоны», когда пациент уже на странице, ничего не разворачивает.
 const route = useRoute();
 onMounted(() => {
-	if (route.query.tab === 'coupons') isExpanded.value = true;
+	if (route.query.tab === COUPON_TAB_ID) isExpanded.value = true;
 });
 
 const title = computed(() => buildCouponTitle(props.coupon, t, locale.value));
@@ -79,14 +83,10 @@ const openFullscreen = () => {
 	});
 };
 
-// Ссылка ведёт на таб купонов этой клиники, локаль — через ?lang=
-const shareUrl = computed(
-	() =>
-		`${getRegionalUrl(
-			`${SITE_URL}/clinics/${props.clinicSlug}`,
-			{},
-			locale.value,
-		)}#coupons`,
+// Тот же адрес таба, что у метки в карточке: у получателя ссылки купон
+// откроется сразу раскрытым, а не свёрнутой полосой
+const shareUrl = computed(() =>
+	getCouponTabUrl(props.clinicSlug, SITE_URL, locale.value),
 );
 
 const shareText = computed(() => `${title.value} — ${props.clinicName}`);

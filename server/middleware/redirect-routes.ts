@@ -19,9 +19,13 @@ export default defineEventHandler(async (event) => {
 		pathArray[0] === 'uploads' ||
 		pathArray[0] === 'ads' ||
 		pathArray[0] === 'search' ||
-		pathArray[0].includes('a1b2c3d4e5f6789012345678901234567890abcd') ||
-		pathArray[0].includes('cdn-cgi') ||
-		pathArray[0].includes('robots')
+		// Любой .txt в корне: robots.txt, ads.txt, ключи IndexNow. Их нельзя
+		// пропускать через fixUrlRegionalParams — с cookie `locale` он отдал бы
+		// 302 на версию с ?lang=, а верификация IndexNow и парсеры robots.txt
+		// ждут 200 с ровным содержимым. Раньше здесь был захардкожен конкретный
+		// ключ-файл, из-за чего второй ключ пришлось бы дописывать руками.
+		(pathArray.length === 1 && pathArray[0].endsWith('.txt')) ||
+		pathArray[0].includes('cdn-cgi')
 	) {
 		// ignore these calls
 	} else if (pathArray[0] === 'admin') {

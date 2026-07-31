@@ -26,6 +26,8 @@ interface ClinicAdminModel extends Omit<
 	logoUrl: string;
 	clinicTypeIds: number[];
 	languageIds: number[];
+	hidden: boolean;
+	hiddenReason: string;
 }
 
 interface BillingService {
@@ -272,6 +274,17 @@ const logoUrlModified = computed(() => fieldModified('logoUrl'));
 
 const cityIdModified = computed(() => fieldModified('cityId'));
 
+// В /api/clinics/list скрытых клиник нет вовсе, поэтому сравнивать не с чем:
+// исходное значение берём из админского details (см. watch ниже).
+const originalHidden = ref(false);
+const originalHiddenReason = ref('');
+const hiddenModified = computed(
+	() => originalHidden.value !== clinicModel.value?.hidden,
+);
+const hiddenReasonModified = computed(
+	() => originalHiddenReason.value !== clinicModel.value?.hiddenReason,
+);
+
 const descriptionSrModified = computed(() => fieldModified('description_sr'));
 const descriptionEnModified = computed(() => fieldModified('description_en'));
 const descriptionRuModified = computed(() => fieldModified('description_ru'));
@@ -338,7 +351,9 @@ const hasChanges = computed(() => {
 		descriptionDeModified.value ||
 		descriptionTrModified.value ||
 		clinicTypeIdsModified.value ||
-		languageIdsModified.value
+		languageIdsModified.value ||
+		hiddenModified.value ||
+		hiddenReasonModified.value
 	);
 });
 
@@ -353,6 +368,13 @@ const saveChanges = async () => {
 		!clinicModel.value.languageIds.length
 	) {
 		alert('Название (SR), адрес (SR) и язык обязательны');
+		return;
+	}
+
+	// Причина не обязательна технически, но без неё владелец видит только общий
+	// текст и не понимает, что исправлять
+	if (clinicModel.value.hidden && !clinicModel.value.hiddenReason?.trim()) {
+		alert('Укажите причину скрытия на сербском — её увидит владелец клиники');
 		return;
 	}
 
@@ -394,8 +416,13 @@ const saveChanges = async () => {
 			logoUrl: clinicModel.value.logoUrl,
 			clinicTypeIds: clinicModel.value.clinicTypeIds,
 			languageIds: clinicModel.value.languageIds,
+			hidden: clinicModel.value.hidden,
+			hiddenReason: clinicModel.value.hiddenReason,
 		},
 	});
+
+	originalHidden.value = clinicModel.value.hidden;
+	originalHiddenReason.value = clinicModel.value.hiddenReason;
 
 	emit('updated');
 };
@@ -455,7 +482,11 @@ watch(selectedClinic, async (clinic) => {
 				postalCode: adminData.postalCode || '',
 				clinicTypeIds: adminData.clinicTypeIds || [],
 				languageIds: adminData.languageIds,
+				hidden: adminData.hidden,
+				hiddenReason: adminData.hiddenReason || '',
 			};
+			originalHidden.value = adminData.hidden;
+			originalHiddenReason.value = adminData.hiddenReason || '';
 			cityIds.value = [adminData.cityId];
 		} else {
 			// Fallback на данные из списка, если админский API недоступен
@@ -480,7 +511,11 @@ watch(selectedClinic, async (clinic) => {
 					? clinic.clinicTypeIds.split(',').map(Number).filter(Boolean)
 					: [],
 				languageIds: clinic.languageIds.split(',').map(Number),
+				hidden: false,
+				hiddenReason: '',
 			};
+			originalHidden.value = false;
+			originalHiddenReason.value = '';
 			cityIds.value = [clinic.cityId];
 		}
 	}
@@ -501,6 +536,33 @@ onMounted(async () => {
 		/>
 
 		<div v-if="clinicModel" class="clinic-info">
+			<div
+				class="hidden-toggle"
+				:class="{ modified: hiddenModified, active: clinicModel.hidden }"
+			>
+				<el-switch
+					v-model="clinicModel.hidden"
+					active-text="Клиника скрыта"
+					inactive-text="Клиника видна"
+					:disabled="!editable"
+				/>
+				<span v-if="clinicModel.hidden" class="hidden-hint">
+					Клиника не отображается в публичных списках, поиске и sitemap,
+					страница отдаёт 410 Gone. Владельцу и админу она открывается с
+					плашкой-объяснением
+				</span>
+			</div>
+
+			<AdminEditableField
+				v-if="clinicModel.hidden"
+				label="Причина скрытия (SR) — её видит владелец"
+				type="textarea"
+				v-model:value="clinicModel.hiddenReason"
+				:readonly="!editable"
+				:modified="hiddenReasonModified"
+				@reset="clinicModel.hiddenReason = originalHiddenReason"
+			/>
+
 			<AdminEditableField
 				label="Логотип"
 				type="photo"
@@ -732,6 +794,8 @@ onMounted(async () => {
 				:clinicId="clinicModel.id"
 			/>
 
+			<AdminClinicCouponsEditor v-if="clinicModel" :clinicId="clinicModel.id" />
+
 			<div class="billing-section">
 				<div class="section-header">
 					<h4>Платные услуги (пакеты)</h4>
@@ -855,6 +919,30 @@ onMounted(async () => {
 	margin-top: var(--spacing-lg);
 	border-top: 1px solid black;
 	padding-top: var(--spacing-lg);
+}
+
+.hidden-toggle {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-md);
+	padding: var(--spacing-md);
+	border-radius: var(--border-radius-md);
+	border: 1px solid var(--color-border-primary);
+	background: var(--color-surface-secondary);
+
+	&.modified {
+		border-color: var(--color-warning);
+	}
+
+	&.active {
+		background: var(--color-danger-bg);
+		border-color: var(--color-danger-border);
+	}
+
+	.hidden-hint {
+		font-size: 0.85em;
+		color: var(--color-danger-dark);
+	}
 }
 
 .billing-section {

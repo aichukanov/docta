@@ -31,6 +31,8 @@ interface DoctorAdminDetails {
 	slug: string;
 	userId: number | null;
 	hidden: boolean;
+	hiddenByAdmin: boolean;
+	hiddenByAdminReason: string;
 	name: string;
 	name_sr_cyrl: string;
 	name_ru: string;
@@ -168,6 +170,10 @@ const fieldModified = (field: keyof DoctorAdminDetails) =>
 	originalDoctor.value?.[field] !== doctorModel.value?.[field];
 
 const hiddenModified = computed(() => fieldModified('hidden'));
+const hiddenByAdminModified = computed(() => fieldModified('hiddenByAdmin'));
+const hiddenByAdminReasonModified = computed(() =>
+	fieldModified('hiddenByAdminReason'),
+);
 const userIdModified = computed(() => fieldModified('userId'));
 
 const slugModified = computed(() => fieldModified('slug'));
@@ -236,6 +242,8 @@ const servicePricesModified = computed(() => {
 const hasChanges = computed(() => {
 	return (
 		hiddenModified.value ||
+		hiddenByAdminModified.value ||
+		hiddenByAdminReasonModified.value ||
 		userIdModified.value ||
 		slugModified.value ||
 		nameModified.value ||
@@ -307,6 +315,16 @@ const saveChanges = async () => {
 		return;
 	}
 
+	// Причина не обязательна технически, но врач без неё видит только общий
+	// текст и не понимает, что исправлять
+	if (
+		doctorModel.value.hiddenByAdmin &&
+		!doctorModel.value.hiddenByAdminReason?.trim()
+	) {
+		alert('Укажите причину скрытия на сербском — её увидит врач в кабинете');
+		return;
+	}
+
 	if (!confirm('Вы уверены, что хотите сохранить изменения?')) {
 		return;
 	}
@@ -374,16 +392,49 @@ watch(doctorId, async (newDoctorId) => {
 		<div v-else-if="doctorModel" class="doctor-info">
 			<div
 				class="hidden-toggle"
+				:class="{
+					modified: hiddenByAdminModified,
+					active: doctorModel.hiddenByAdmin,
+				}"
+			>
+				<el-switch
+					v-model="doctorModel.hiddenByAdmin"
+					active-text="Скрыт администратором"
+					inactive-text="Не скрыт администратором"
+					:disabled="!editable"
+				/>
+				<span v-if="doctorModel.hiddenByAdmin" class="hidden-hint">
+					Врача нет в публичных списках, поиске и sitemap, страница отдаёт 410
+					Gone. Сам врач этот флаг снять не может
+				</span>
+			</div>
+
+			<AdminEditableField
+				v-if="doctorModel.hiddenByAdmin"
+				label="Причина скрытия (SR) — её видит врач"
+				type="textarea"
+				v-model:value="doctorModel.hiddenByAdminReason"
+				:readonly="!editable"
+				:modified="hiddenByAdminReasonModified"
+				@reset="
+					doctorModel.hiddenByAdminReason =
+						originalDoctor?.hiddenByAdminReason || ''
+				"
+			/>
+
+			<div
+				class="hidden-toggle"
 				:class="{ modified: hiddenModified, active: doctorModel.hidden }"
 			>
 				<el-switch
 					v-model="doctorModel.hidden"
-					active-text="Профиль скрыт"
+					active-text="Профиль скрыт врачом"
 					inactive-text="Профиль виден"
 					:disabled="!editable"
 				/>
 				<span v-if="doctorModel.hidden" class="hidden-hint">
-					Врач не отображается в публичных списках, страница отдаёт 404
+					Собственное скрытие врача (он может снять его сам в кабинете):
+					страница отдаёт 404
 				</span>
 			</div>
 

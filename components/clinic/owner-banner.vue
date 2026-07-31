@@ -1,10 +1,18 @@
 <script setup lang="ts">
 import clinicProfileI18n from '~/i18n/clinic-profile';
+import { PROJECT_CONTACTS } from '~/common/constants';
 import { getRegionalQuery } from '~/common/url-utils';
 import type { ClinicStatus } from '~/interfaces/clinic';
 
+// Баннер показывается тем, кому вообще досталась непубличная клиника:
+// владельцу (со ссылкой в кабинет) и админу (только плашка-предупреждение,
+// иначе скрытая страница выглядит для него как живая).
 const props = defineProps<{
 	status?: ClinicStatus;
+	hidden?: boolean;
+	/** Причина скрытия админом, как в БД — на сербском. */
+	hiddenReason?: string;
+	isOwner?: boolean;
 }>();
 
 const { t } = useI18n({
@@ -15,7 +23,7 @@ const { t } = useI18n({
 const { locale } = useI18n({ useScope: 'global' });
 
 const isDraftVisible = computed(
-	() => props.status != null && props.status !== 'published',
+	() => !props.hidden && props.status != null && props.status !== 'published',
 );
 
 const cabinetLink = computed(() => ({
@@ -26,7 +34,7 @@ const cabinetLink = computed(() => ({
 
 <template>
 	<div class="owner-banner">
-		<div class="owner-banner__row">
+		<div v-if="isOwner" class="owner-banner__row">
 			<div class="owner-banner__content">
 				<IconEdit :size="18" />
 				<span class="owner-banner__text">{{ t('OwnerBanner') }}</span>
@@ -38,6 +46,22 @@ const cabinetLink = computed(() => ({
 		<p v-if="isDraftVisible" class="owner-banner__draft-notice">
 			{{ t('DraftNotice') }}
 		</p>
+
+		<!-- Скрытие админом: почему страницы нет для пациентов, причина (её
+		     пишет админ на сербском) и как вернуть клинику -->
+		<div v-if="hidden" class="owner-banner__hidden-notice">
+			<p class="owner-banner__hidden-text">{{ t('HiddenNotice') }}</p>
+			<p v-if="hiddenReason" class="owner-banner__reason">
+				<span class="owner-banner__reason-label">{{ t('HiddenReason') }}</span>
+				<span lang="sr">{{ hiddenReason }}</span>
+			</p>
+			<p class="owner-banner__hidden-text">
+				{{ t('HiddenReasonAction') }}
+				<a :href="`mailto:${PROJECT_CONTACTS.email}`">
+					{{ PROJECT_CONTACTS.email }}
+				</a>
+			</p>
+		</div>
 	</div>
 </template>
 
@@ -92,5 +116,34 @@ const cabinetLink = computed(() => ({
 	border: 1px solid var(--color-warning-border);
 	border-radius: var(--border-radius-md);
 	padding: var(--spacing-xs) var(--spacing-md);
+}
+
+.owner-banner__hidden-notice {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+	background: var(--color-danger-bg);
+	border: 1px solid var(--color-danger-border);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-xs) var(--spacing-md);
+}
+
+.owner-banner__hidden-text {
+	margin: 0;
+	font-size: var(--font-size-sm);
+	color: var(--color-danger-dark);
+	line-height: 1.5;
+}
+
+.owner-banner__reason {
+	margin: 0;
+	font-size: var(--font-size-sm);
+	color: var(--color-text-primary);
+	line-height: 1.5;
+}
+
+.owner-banner__reason-label {
+	font-weight: var(--font-weight-semibold);
+	margin-right: var(--spacing-xs);
 }
 </style>

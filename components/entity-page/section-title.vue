@@ -14,7 +14,11 @@ defineProps<{
 		<NuxtLink v-if="link" :to="link" class="section-title-link">
 			<h2 class="section-title">{{ title }}</h2>
 		</NuxtLink>
-		<h2 v-else class="section-title">{{ title }}</h2>
+		<!-- Слот — для заголовков, которым нужен не только текст (купонный талон
+		     в табе «Купоны»); обычные секции передают title строкой -->
+		<h2 v-else class="section-title">
+			<slot>{{ title }}</slot>
+		</h2>
 		<span v-if="count != null" class="section-title-count">{{ count }}</span>
 	</div>
 </template>

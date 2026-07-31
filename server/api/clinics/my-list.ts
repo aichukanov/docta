@@ -7,6 +7,10 @@ export interface ClinicMyListItem {
 	id: number;
 	slug: string;
 	status: ClinicStatus;
+	/** Скрыта администратором: публично страницы нет, публикация заблокирована. */
+	hidden: boolean;
+	/** Причина скрытия, написанная админом на сербском (может быть пустой). */
+	hiddenReason: string;
 	name: string;
 	localName: string;
 	nameSr: string;
@@ -47,7 +51,7 @@ export default defineEventHandler(
 		try {
 			const [rows]: any = await connection.execute(
 				`SELECT
-					c.id, c.slug, c.status,
+					c.id, c.slug, c.status, c.hidden, c.hidden_reason,
 					c.name_sr, c.name_sr_cyrl, c.name_ru,
 					c.city_id, c.address_sr, c.address_sr_cyrl,
 					c.town_sr, c.town_sr_cyrl, c.postal_code,
@@ -82,6 +86,8 @@ export default defineEventHandler(
 					id: clinic.id,
 					slug: clinic.slug || '',
 					status: clinic.status as ClinicStatus,
+					hidden: Boolean(clinic.hidden),
+					hiddenReason: clinic.hidden_reason || '',
 					name,
 					localName,
 					nameSr: clinic.name_sr || '',

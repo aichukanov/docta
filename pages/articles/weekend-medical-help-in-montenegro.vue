@@ -145,32 +145,36 @@ const { breadcrumbItems } = useArticlePageSeo({
 		<ArticleSection id="section-hospitals" :title="t('WmhToc_hospitals')">
 			<p
 				>{{ t('WmhHospitals1a')
-				}}<NuxtLink :to="kccgLink">{{ t('WmhHospitals1KccgLink') }}</NuxtLink
+				}}<ClinicRouteLink :to="kccgLink">{{
+					t('WmhHospitals1KccgLink')
+				}}</ClinicRouteLink
 				>{{ t('WmhHospitals1b')
-				}}<NuxtLink :to="kotorHospitalLink">{{
+				}}<ClinicRouteLink :to="kotorHospitalLink">{{
 					t('WmhHospitals1KotorLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('WmhHospitals1c')
-				}}<NuxtLink :to="barHospitalLink">{{
+				}}<ClinicRouteLink :to="barHospitalLink">{{
 					t('WmhHospitals1BarLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('WmhHospitals1d')
-				}}<NuxtLink :to="bijeloPoljeHospitalLink">{{
+				}}<ClinicRouteLink :to="bijeloPoljeHospitalLink">{{
 					t('WmhHospitals1BijeloPoljeLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('WmhHospitals1e')
-				}}<NuxtLink :to="meljineHospitalLink">{{
+				}}<ClinicRouteLink :to="meljineHospitalLink">{{
 					t('WmhHospitals1MeljineLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('WmhHospitals1f')
-				}}<NuxtLink :to="daniloHospitalLink">{{
+				}}<ClinicRouteLink :to="daniloHospitalLink">{{
 					t('WmhHospitals1DaniloLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('WmhHospitals1g') }}</p
 			>
 			<p>
 				{{ t('WmhHospitals2') }}
-				<NuxtLink :to="codraHospitalLink">{{ t('WmhHospitalsLink') }}</NuxtLink>
+				<ClinicRouteLink :to="codraHospitalLink">{{
+					t('WmhHospitalsLink')
+				}}</ClinicRouteLink>
 				{{ t('WmhHospitalsMid') }}
 				{{ t('WmhHospitalsEnd') }}
 			</p>
@@ -181,63 +185,65 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<ul>
 				<li
 					>{{ t('WmhClinicsPodgoricaLabel') }}
-					<NuxtLink :to="hipokratPodgoricaLink">{{
+					<ClinicRouteLink :to="hipokratPodgoricaLink">{{
 						t('WmhClinicsHipokratLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('WmhClinicsPodgoricaA')
-					}}<NuxtLink :to="milmedikaPodgoricaLink">{{
+					}}<ClinicRouteLink :to="milmedikaPodgoricaLink">{{
 						t('WmhClinicsMilmedikaPgLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('WmhClinicsPodgoricaB')
-					}}<NuxtLink :to="mojLabPodgoricaLink">{{
+					}}<ClinicRouteLink :to="mojLabPodgoricaLink">{{
 						t('WmhClinicsMojLabPgLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('WmhClinicsPodgoricaC')
-					}}<NuxtLink :to="mojLabPedijatriaLink">{{
+					}}<ClinicRouteLink :to="mojLabPedijatriaLink">{{
 						t('WmhClinicsMojLabPedLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('WmhClinicsPodgoricaD')
-					}}<NuxtLink :to="medikidLink">{{
+					}}<ClinicRouteLink :to="medikidLink">{{
 						t('WmhClinicsMedikidLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('WmhClinicsPodgoricaE') }}</li
 				>
 				<li
 					>{{ t('WmhClinicsBudvaLabel') }}
-					<NuxtLink :to="milmedikaBudvaLink">{{
+					<ClinicRouteLink :to="milmedikaBudvaLink">{{
 						t('WmhClinicsMilmedikaBdLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('WmhClinicsBudvaA')
-					}}<NuxtLink :to="mojLabBudvaLink">{{
+					}}<ClinicRouteLink :to="mojLabBudvaLink">{{
 						t('WmhClinicsMojLabBdLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('WmhClinicsBudvaB') }}</li
 				>
 				<li
 					>{{ t('WmhClinicsBarLabel') }}
-					<NuxtLink :to="drMasonicicLink">{{
+					<ClinicRouteLink :to="drMasonicicLink">{{
 						t('WmhClinicsMasonicicLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('WmhClinicsBarA')
-					}}<NuxtLink :to="a3MedicalLink">{{ t('WmhClinicsA3Link') }}</NuxtLink
+					}}<ClinicRouteLink :to="a3MedicalLink">{{
+						t('WmhClinicsA3Link')
+					}}</ClinicRouteLink
 					>{{ t('WmhClinicsBarB') }}</li
 				>
 				<li
 					>{{ t('WmhClinicsTivatLabel') }}
-					<NuxtLink :to="mansaMedicaLink">{{
+					<ClinicRouteLink :to="mansaMedicaLink">{{
 						t('WmhClinicsMansaLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('WmhClinicsTivatA')
-					}}<NuxtLink :to="dentalExpertLink">{{
+					}}<ClinicRouteLink :to="dentalExpertLink">{{
 						t('WmhClinicsDentalExpertLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('WmhClinicsTivatB') }}</li
 				>
 				<li
 					>{{ t('WmhClinicsNiksicLabel') }}
-					<NuxtLink :to="milmedikaNiksicLink">{{
+					<ClinicRouteLink :to="milmedikaNiksicLink">{{
 						t('WmhClinicsMilmedikaNkLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('WmhClinicsNiksicA') }}</li
 				>
 			</ul>

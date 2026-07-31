@@ -1,4 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 import {
 	parseClinicPricesData,
 	getClinicRankOrderBySQL,
@@ -131,7 +132,7 @@ export async function getMedicationList(
 		SELECT COUNT(DISTINCT m.id) as totalCount
 		FROM medications m
 		LEFT JOIN clinic_medications cm ON m.id = cm.medication_id
-		LEFT JOIN clinics ON cm.clinic_id = clinics.id AND clinics.status = 'published'
+		LEFT JOIN clinics ON cm.clinic_id = clinics.id AND ${clinicIsPublicSql('clinics')}
 		LEFT JOIN cities ON clinics.city_id = cities.id
 		${whereFiltersString};
 	`;
@@ -153,7 +154,7 @@ export async function getMedicationList(
 			) as clinicPricesData
 		FROM medications m
 		LEFT JOIN clinic_medications cm ON m.id = cm.medication_id
-		LEFT JOIN clinics ON cm.clinic_id = clinics.id AND clinics.status = 'published'
+		LEFT JOIN clinics ON cm.clinic_id = clinics.id AND ${clinicIsPublicSql('clinics')}
 		LEFT JOIN cities ON clinics.city_id = cities.id
 		${whereFiltersString}
 		GROUP BY m.id, m.name_en, m.name_sr, m.name_sr_cyrl, m.name_ru, m.name_de, m.name_tr${usePriceSort ? ', sortPrice' : ''}

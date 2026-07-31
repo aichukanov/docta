@@ -6,6 +6,10 @@ export interface DoctorMyProfile {
 	id: number;
 	slug: string;
 	hidden: boolean;
+	/** Скрыт администратором: врач не может снять этот флаг сам. */
+	hiddenByAdmin: boolean;
+	/** Причина скрытия, написанная админом на сербском (может быть пустой). */
+	hiddenByAdminReason: string;
 	isDraft: boolean;
 	name: string;
 	localName: string;
@@ -40,7 +44,7 @@ export default defineEventHandler(
 		try {
 			const [rows]: any = await connection.execute(
 				`SELECT
-				d.id, d.slug, d.hidden, d.is_draft,
+				d.id, d.slug, d.hidden, d.hidden_by_admin, d.hidden_by_admin_reason, d.is_draft,
 				d.name_sr, d.name_sr_cyrl, d.name_ru, d.name_en,
 				d.professional_title, d.photo_url,
 				d.description_sr, d.description_sr_cyrl, d.description_ru,
@@ -71,6 +75,8 @@ export default defineEventHandler(
 				id: doctor.id,
 				slug: doctor.slug || '',
 				hidden: Boolean(doctor.hidden),
+				hiddenByAdmin: Boolean(doctor.hidden_by_admin),
+				hiddenByAdminReason: doctor.hidden_by_admin_reason || '',
 				isDraft: Boolean(doctor.is_draft),
 				name,
 				localName,

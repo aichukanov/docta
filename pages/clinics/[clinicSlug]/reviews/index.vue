@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { isGonePayload } from '~/common/gone';
 import { getClinicSchemaOrgType } from '~/common/schema-org-builders';
 import clinicTypeI18n from '~/i18n/clinic-type';
 import { combineI18nMessages } from '~/i18n/utils';
@@ -11,7 +12,7 @@ const { t, locale } = useI18n({
 const clinicSlug = computed(() => route.params.clinicSlug as string);
 const currentPage = computed(() => parseInt(route.query.page as string) || 1);
 
-const { data: reviewsData } = await useFetch('/api/clinics/reviews', {
+const { data: reviewsPayload } = await useFetch('/api/clinics/reviews', {
 	key: `clinic-reviews-${clinicSlug.value}`,
 	method: 'POST',
 	body: computed(() => ({
@@ -21,6 +22,12 @@ const { data: reviewsData } = await useFetch('/api/clinics/reviews', {
 		sort: route.query.sort || 'rank',
 	})),
 });
+
+// Скрытую админом клинику эндпоинт отдаёт маркером `{ gone: true }` вместо
+// данных — страница отвечает 410 (см. common/gone.ts).
+const reviewsData = computed(() =>
+	isGonePayload(reviewsPayload.value) ? null : reviewsPayload.value,
+);
 
 // Redirect if below threshold
 if (import.meta.server && reviewsData.value?.shouldRedirect) {
@@ -38,9 +45,9 @@ watch(
 	},
 );
 
-// 404
-if (import.meta.server && !reviewsData.value) {
-	setResponseStatus(useRequestEvent()!, 404);
+// 404, либо 410 если клинику скрыл администратор
+if (!reviewsData.value) {
+	setMissingEntityStatus(reviewsPayload.value);
 }
 
 const data = computed(() => {

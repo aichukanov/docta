@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { isGonePayload } from '~/common/gone';
 import { getSchemaType } from '~/common/schema-org-builders';
 import specialtyI18n from '~/i18n/specialty';
 import reviewsI18n from '~/i18n/reviews';
@@ -13,7 +14,7 @@ const route = useRoute();
 const doctorSlug = computed(() => route.params.doctorSlug as string);
 const currentPage = computed(() => parseInt(route.query.page as string) || 1);
 
-const { data: reviewsData } = await useFetch('/api/doctors/reviews', {
+const { data: reviewsPayload } = await useFetch('/api/doctors/reviews', {
 	key: `doctor-reviews-${doctorSlug.value}`,
 	method: 'POST',
 	body: computed(() => ({
@@ -23,6 +24,12 @@ const { data: reviewsData } = await useFetch('/api/doctors/reviews', {
 		sort: route.query.sort || 'rank',
 	})),
 });
+
+// Скрытого админом врача эндпоинт отдаёт маркером `{ gone: true }` вместо
+// данных — страница отвечает 410 (см. common/gone.ts).
+const reviewsData = computed(() =>
+	isGonePayload(reviewsPayload.value) ? null : reviewsPayload.value,
+);
 
 // Redirect if below threshold
 if (import.meta.server && reviewsData.value?.shouldRedirect) {
@@ -40,9 +47,9 @@ watch(
 	},
 );
 
-// 404
-if (import.meta.server && !reviewsData.value) {
-	setResponseStatus(useRequestEvent()!, 404);
+// 404, либо 410 если врача скрыл администратор
+if (!reviewsData.value) {
+	setMissingEntityStatus(reviewsPayload.value);
 }
 
 const data = computed(() => {

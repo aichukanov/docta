@@ -3,6 +3,7 @@ import type {
 	ClinicItemTopEntry,
 	ClinicItemTypeSummary,
 } from '~/interfaces/clinic';
+import { doctorIsPublicSql } from '~/server/common/doctor-visibility';
 import { executeQuery } from '~/server/common/db-mysql';
 import { getLocalizedNameField } from '~/server/common/utils';
 
@@ -150,8 +151,7 @@ function buildDoctorsTopSql(localizedNameField: string) {
 		FROM doctor_clinics dc
 		JOIN doctors d ON d.id = dc.doctor_id
 		WHERE dc.clinic_id = ?
-			AND d.hidden = FALSE
-			AND d.is_draft = FALSE
+			AND ${doctorIsPublicSql('d')}
 		ORDER BY d.rank_score DESC, d.name_sr ASC
 		LIMIT ${TOP_LIMIT}
 	`;

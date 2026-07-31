@@ -148,19 +148,21 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t('HcsEmergency2') }}</p>
 			<p>
 				{{ t('HcsEmergency3a') }}
-				<NuxtLink :to="kccgLink">{{ t('HcsEmergency3KccgLink') }}</NuxtLink
+				<ClinicRouteLink :to="kccgLink">{{
+					t('HcsEmergency3KccgLink')
+				}}</ClinicRouteLink
 				>{{ t('HcsEmergency3b') }}
-				<NuxtLink :to="kotorHospitalLink">{{
+				<ClinicRouteLink :to="kotorHospitalLink">{{
 					t('HcsEmergency3KotorLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('HcsEmergency3c') }}
-				<NuxtLink :to="barHospitalLink">{{
+				<ClinicRouteLink :to="barHospitalLink">{{
 					t('HcsEmergency3BarLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('HcsEmergency3d') }}
-				<NuxtLink :to="risanHospitalLink">{{
+				<ClinicRouteLink :to="risanHospitalLink">{{
 					t('HcsEmergency3RisanLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('HcsEmergency3e') }}
 			</p>
 			<p>{{ t('HcsEmergency4') }}</p>
@@ -169,55 +171,57 @@ const { breadcrumbItems } = useArticlePageSeo({
 		<ArticleSection id="section-state-system" :title="t('HcsToc_state-system')">
 			<p
 				>{{ t('HcsState1a')
-				}}<NuxtLink :to="risanHospitalLink">{{
+				}}<ClinicRouteLink :to="risanHospitalLink">{{
 					t('HcsState1RisanLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('HcsState1b')
-				}}<NuxtLink :to="brezovikHospitalLink">{{
+				}}<ClinicRouteLink :to="brezovikHospitalLink">{{
 					t('HcsState1BrezovikLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('HcsState1b2')
-				}}<NuxtLink :to="dobrotaHospitalLink">{{
+				}}<ClinicRouteLink :to="dobrotaHospitalLink">{{
 					t('HcsState1DobrotaLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('HcsState1c') }}</p
 			>
 			<ul>
 				<li>{{ t('HcsStateLevel1') }}</li>
 				<li>
 					{{ t('HcsStateLevel2a') }}
-					<NuxtLink :to="barHospitalLink">{{
+					<ClinicRouteLink :to="barHospitalLink">{{
 						t('HcsStateLevel2BarLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('HcsStateLevel2b') }}
-					<NuxtLink :to="kotorHospitalLink">{{
+					<ClinicRouteLink :to="kotorHospitalLink">{{
 						t('HcsStateLevel2KotorLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('HcsStateLevel2c')
-					}}<NuxtLink :to="niksicHospitalLink">{{
+					}}<ClinicRouteLink :to="niksicHospitalLink">{{
 						t('HcsStateLevel2NiksicLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('HcsStateLevel2c2')
-					}}<NuxtLink :to="beraneHospitalLink">{{
+					}}<ClinicRouteLink :to="beraneHospitalLink">{{
 						t('HcsStateLevel2BeraneLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('HcsStateLevel2c3') }}
-					<NuxtLink :to="bijeloPoljeHospitalLink">{{
+					<ClinicRouteLink :to="bijeloPoljeHospitalLink">{{
 						t('HcsStateLevel2BijeloPoljeLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('HcsStateLevel2d') }}
-					<NuxtLink :to="cetinjeHospitalLink">{{
+					<ClinicRouteLink :to="cetinjeHospitalLink">{{
 						t('HcsStateLevel2CetinjeLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('HcsStateLevel2e')
-					}}<NuxtLink :to="pljevljaHospitalLink">{{
+					}}<ClinicRouteLink :to="pljevljaHospitalLink">{{
 						t('HcsStateLevel2PljevljaLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('HcsStateLevel2e2') }}
 				</li>
 				<li
 					>{{ t('HcsStateLevel3Pre')
-					}}<NuxtLink :to="kccgLink">{{ t('HcsStateLevel3KccgLink') }}</NuxtLink
+					}}<ClinicRouteLink :to="kccgLink">{{
+						t('HcsStateLevel3KccgLink')
+					}}</ClinicRouteLink
 					>{{ t('HcsStateLevel3a') }}</li
 				>
 			</ul>

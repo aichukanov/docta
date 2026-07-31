@@ -1,5 +1,5 @@
-import { getConnection } from '~/server/common/db-mysql';
 import type { H3Event } from 'h3';
+import { getConnection } from '~/server/common/db-mysql';
 
 /**
  * Проверяет, есть ли редирект для medical service ID

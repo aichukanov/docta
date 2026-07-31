@@ -74,6 +74,13 @@ export default defineNuxtConfig({
 		'/verify-email': { ssr: false },
 		'/forgot-password': { ssr: false },
 		'/confirm-email-change': { ssr: false },
+		// данные Telegram приезжают в hash-фрагменте — читать их может только клиент.
+		// Заголовком дублируем noindex: на ssr:false странице meta появляется
+		// только после выполнения JS, а краулер его может не дождаться
+		'/auth/telegram/return': {
+			ssr: false,
+			headers: { 'X-Robots-Tag': 'noindex, nofollow' },
+		},
 		'/admin/**': { cors: true, ssr: false, prerender: false },
 		'/img/**': {
 			headers: { 'Cache-Control': 'max-age=31536000, public, immutable' },

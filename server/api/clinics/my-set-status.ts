@@ -30,6 +30,12 @@ export default defineEventHandler(async (event) => {
 	try {
 		const clinic = await getOwnedClinic(connection, body.clinicId, user);
 
+		// Скрытие админом — модерационное решение: публикацией его не обойти.
+		// Скрыть (уйти в draft) владельцу при этом никто не мешает.
+		if (clinic.hidden && body.action === 'publish' && !user.is_admin) {
+			createErrorResponse(403, ERROR_CODES.CLINIC_HIDDEN_BY_ADMIN);
+		}
+
 		let newStatus: ClinicStatus;
 		if (body.action === 'publish') {
 			if (clinic.status === 'published') {

@@ -15,6 +15,10 @@ interface DoctorAdminDetails extends ContactList {
 	slug: string;
 	userId: number | null;
 	hidden: boolean;
+	/** Скрыт администратором: врач не может снять флаг сам, страница 410. */
+	hiddenByAdmin: boolean;
+	/** Причина скрытия на сербском — её видит врач в кабинете. */
+	hiddenByAdminReason: string;
 	name: string;
 	name_sr_cyrl: string;
 	name_ru: string;
@@ -54,7 +58,7 @@ export default defineEventHandler(
 
 			// Получаем основные данные врача
 			const [doctorRows]: any = await connection.execute(
-				`SELECT id, slug, user_id, hidden, name_sr, name_sr_cyrl, name_ru, name_en, 
+				`SELECT id, slug, user_id, hidden, hidden_by_admin, hidden_by_admin_reason, name_sr, name_sr_cyrl, name_ru, name_en, 
 			        description_sr, description_sr_cyrl, description_ru, description_en, description_de, description_tr,
 			        professional_title, photo_url, phone, email, facebook, instagram, telegram, whatsapp, viber, website 
 			 FROM doctors WHERE id = ?`,
@@ -111,6 +115,8 @@ export default defineEventHandler(
 				slug: doctor.slug || '',
 				userId: doctor.user_id ?? null,
 				hidden: Boolean(doctor.hidden),
+				hiddenByAdmin: Boolean(doctor.hidden_by_admin),
+				hiddenByAdminReason: doctor.hidden_by_admin_reason || '',
 				name: doctor.name_sr || '',
 				name_sr_cyrl: doctor.name_sr_cyrl || '',
 				name_ru: doctor.name_ru || '',

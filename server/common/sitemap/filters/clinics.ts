@@ -1,4 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 
 export async function getClinicList() {
 	const connection = await getConnection();
@@ -6,7 +7,7 @@ export async function getClinicList() {
 	const query = `
 		SELECT c.id, c.slug, c.city_id as cityId
 		FROM clinics c
-		WHERE c.status = 'published'
+		WHERE ${clinicIsPublicSql('c')}
 		ORDER BY c.id;
 	`;
 	const [rows] = await connection.execute<any[]>(query);
@@ -23,7 +24,7 @@ async function getCityIdsWithClinics() {
 	const query = `
 		SELECT DISTINCT c.city_id as cityId
 		FROM clinics c
-		WHERE c.status = 'published' AND c.city_id IS NOT NULL
+		WHERE ${clinicIsPublicSql('c')} AND c.city_id IS NOT NULL
 		ORDER BY c.city_id;
 	`;
 	const [rows] = await connection.execute<any[]>(query);
@@ -41,7 +42,7 @@ async function getClinicTypeIds() {
 		SELECT DISTINCT cct.clinic_type_id as clinicTypeId
 		FROM clinic_clinic_types cct
 		INNER JOIN clinics c ON cct.clinic_id = c.id
-		WHERE c.status = 'published'
+		WHERE ${clinicIsPublicSql('c')}
 		ORDER BY cct.clinic_type_id;
 	`;
 	const [rows] = await connection.execute<any[]>(query);
@@ -65,7 +66,7 @@ export async function getTypeCityCombinations(threshold: number) {
 			COUNT(DISTINCT c.id) as clinicCount
 		FROM clinic_clinic_types cct
 		INNER JOIN clinics c ON cct.clinic_id = c.id
-		WHERE c.status = 'published' AND c.city_id IS NOT NULL
+		WHERE ${clinicIsPublicSql('c')} AND c.city_id IS NOT NULL
 		GROUP BY cct.clinic_type_id, c.city_id
 		HAVING clinicCount >= ?
 		ORDER BY cct.clinic_type_id, c.city_id;

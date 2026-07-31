@@ -15,6 +15,9 @@ export default {
 			statusHidden: 'Hidden',
 			statusHiddenDesc:
 				'Your profile is hidden from search and your page returns 404. You can make it visible again at any time.',
+			statusHiddenByAdmin: 'Hidden by administrator',
+			statusHiddenByAdminDesc:
+				'The administrator has hidden your profile: it is not in search and your page returns 410 Gone. Only the administrator can restore it — contact support.',
 			hideProfile: 'Hide profile',
 			showProfile: 'Show profile',
 			confirmHide:
@@ -23,6 +26,16 @@ export default {
 				'Are you sure you want to show your profile? It will appear in search.',
 			visibilityUpdated: 'Profile visibility updated',
 			errorUpdating: 'Failed to update visibility',
+			errorHiddenByAdmin:
+				'Your profile is hidden by the administrator — contact support',
+			hiddenReason: 'Reason for hiding:',
+			hiddenReasonAction:
+				'To get the profile back, write to us from your work email:',
+			bannerHiddenByAdmin:
+				'The profile is hidden by the administrator — patients do not see it and it is not in search.',
+			bannerHidden:
+				'The profile is hidden — patients do not see it. It can be shown again from the cabinet.',
+			bannerDraft: 'The profile is not published yet — patients do not see it.',
 			ownerBanner: 'This is your profile',
 			ownerBannerEdit: 'Edit',
 			ownerBannerManage: 'Manage profile',
@@ -59,6 +72,9 @@ export default {
 			statusHidden: 'Скрыт',
 			statusHiddenDesc:
 				'Ваш профиль скрыт из поиска, страница отдаёт 404. Вы можете сделать его видимым в любой момент.',
+			statusHiddenByAdmin: 'Скрыт администратором',
+			statusHiddenByAdminDesc:
+				'Администратор скрыл ваш профиль: его нет в поиске, страница отдаёт 410 Gone. Вернуть его может только администратор — напишите в поддержку.',
 			hideProfile: 'Скрыть профиль',
 			showProfile: 'Показать профиль',
 			confirmHide:
@@ -67,6 +83,16 @@ export default {
 				'Вы уверены, что хотите показать профиль? Он появится в поиске.',
 			visibilityUpdated: 'Видимость профиля обновлена',
 			errorUpdating: 'Не удалось обновить видимость',
+			errorHiddenByAdmin:
+				'Профиль скрыт администратором — напишите в поддержку',
+			hiddenReason: 'Причина скрытия:',
+			hiddenReasonAction:
+				'Чтобы вернуть профиль, напишите нам с рабочей почты:',
+			bannerHiddenByAdmin:
+				'Профиль скрыт администратором — пациенты его не видят, в поиске его нет.',
+			bannerHidden:
+				'Профиль скрыт — пациенты его не видят. Показать его снова можно в кабинете.',
+			bannerDraft: 'Профиль ещё не опубликован — пациенты его не видят.',
 			ownerBanner: 'Это ваш профиль',
 			ownerBannerEdit: 'Редактировать',
 			ownerBannerManage: 'Управление профилем',
@@ -104,6 +130,9 @@ export default {
 			statusHidden: 'Sakriven',
 			statusHiddenDesc:
 				'Vaš profil je sakriven iz pretrage, stranica vraća 404. Možete ga ponovo učiniti vidljivim u bilo kom trenutku.',
+			statusHiddenByAdmin: 'Sakrio administrator',
+			statusHiddenByAdminDesc:
+				'Administrator je sakrio vaš profil: nema ga u pretrazi, stranica vraća 410 Gone. Vratiti ga može samo administrator — obratite se podršci.',
 			hideProfile: 'Sakrij profil',
 			showProfile: 'Prikaži profil',
 			confirmHide:
@@ -112,6 +141,16 @@ export default {
 				'Da li ste sigurni da želite da prikažete profil? Pojaviće se u pretrazi.',
 			visibilityUpdated: 'Vidljivost profila ažurirana',
 			errorUpdating: 'Nije uspjelo ažuriranje vidljivosti',
+			errorHiddenByAdmin:
+				'Vaš profil je sakrio administrator — obratite se podršci',
+			hiddenReason: 'Razlog sakrivanja:',
+			hiddenReasonAction:
+				'Da biste vratili profil, pišite nam sa svoje radne e-adrese:',
+			bannerHiddenByAdmin:
+				'Profil je sakrio administrator — pacijenti ga ne vide i nema ga u pretrazi.',
+			bannerHidden:
+				'Profil je sakriven — pacijenti ga ne vide. Može se ponovo prikazati u kabinetu.',
+			bannerDraft: 'Profil još nije objavljen — pacijenti ga ne vide.',
 			ownerBanner: 'Ovo je vaš profil',
 			ownerBannerEdit: 'Izmijeni',
 			ownerBannerManage: 'Upravljanje profilom',
@@ -149,6 +188,9 @@ export default {
 			statusHidden: 'Versteckt',
 			statusHiddenDesc:
 				'Ihr Profil ist in der Suche versteckt, die Seite gibt 404 zurück. Sie können es jederzeit wieder sichtbar machen.',
+			statusHiddenByAdmin: 'Vom Administrator versteckt',
+			statusHiddenByAdminDesc:
+				'Der Administrator hat Ihr Profil versteckt: es erscheint nicht in der Suche und die Seite gibt 410 Gone zurück. Nur der Administrator kann es wiederherstellen — wenden Sie sich an den Support.',
 			hideProfile: 'Profil verstecken',
 			showProfile: 'Profil anzeigen',
 			confirmHide:
@@ -157,6 +199,17 @@ export default {
 				'Sind Sie sicher, dass Sie Ihr Profil anzeigen möchten? Es wird in der Suche erscheinen.',
 			visibilityUpdated: 'Profilsichtbarkeit aktualisiert',
 			errorUpdating: 'Sichtbarkeit konnte nicht aktualisiert werden',
+			errorHiddenByAdmin:
+				'Ihr Profil wurde vom Administrator versteckt — wenden Sie sich an den Support',
+			hiddenReason: 'Grund für das Verstecken:',
+			hiddenReasonAction:
+				'Um das Profil zurückzubekommen, schreiben Sie uns von Ihrer Arbeits-E-Mail:',
+			bannerHiddenByAdmin:
+				'Das Profil wurde vom Administrator versteckt — Patienten sehen es nicht und es ist nicht in der Suche.',
+			bannerHidden:
+				'Das Profil ist versteckt — Patienten sehen es nicht. Es kann im Kabinett wieder angezeigt werden.',
+			bannerDraft:
+				'Das Profil ist noch nicht veröffentlicht — Patienten sehen es nicht.',
 			ownerBanner: 'Dies ist Ihr Profil',
 			ownerBannerEdit: 'Bearbeiten',
 			ownerBannerManage: 'Profil verwalten',
@@ -194,6 +247,9 @@ export default {
 			statusHidden: 'Gizli',
 			statusHiddenDesc:
 				'Profiliniz aramadan gizlenmiştir, sayfa 404 döndürür. İstediğiniz zaman tekrar görünür yapabilirsiniz.',
+			statusHiddenByAdmin: 'Yönetici tarafından gizlendi',
+			statusHiddenByAdminDesc:
+				'Yönetici profilinizi gizledi: aramada görünmüyor ve sayfa 410 Gone döndürüyor. Yalnızca yönetici geri alabilir — destek ekibine yazın.',
 			hideProfile: 'Profili gizle',
 			showProfile: 'Profili göster',
 			confirmHide:
@@ -202,6 +258,16 @@ export default {
 				'Profilinizi göstermek istediğinizden emin misiniz? Aramada görünecek.',
 			visibilityUpdated: 'Profil görünürlüğü güncellendi',
 			errorUpdating: 'Görünürlük güncellenemedi',
+			errorHiddenByAdmin:
+				'Profiliniz yönetici tarafından gizlendi — destek ekibine yazın',
+			hiddenReason: 'Gizleme nedeni:',
+			hiddenReasonAction:
+				'Profili geri almak için iş e-postanızdan bize yazın:',
+			bannerHiddenByAdmin:
+				'Profil yönetici tarafından gizlendi — hastalar onu görmüyor ve aramada yok.',
+			bannerHidden:
+				'Profil gizli — hastalar onu görmüyor. Panelden tekrar gösterilebilir.',
+			bannerDraft: 'Profil henüz yayınlanmadı — hastalar onu görmüyor.',
 			ownerBanner: 'Bu sizin profiliniz',
 			ownerBannerEdit: 'Düzenle',
 			ownerBannerManage: 'Profili yönet',
@@ -239,6 +305,9 @@ export default {
 			statusHidden: 'Сакривен',
 			statusHiddenDesc:
 				'Ваш профил је сакривен из претраге, страница враћа 404. Можете га поново учинити видљивим у било ком тренутку.',
+			statusHiddenByAdmin: 'Сакрио администратор',
+			statusHiddenByAdminDesc:
+				'Администратор је сакрио ваш профил: нема га у претрази, страница враћа 410 Gone. Вратити га може само администратор — обратите се подршци.',
 			hideProfile: 'Сакриј профил',
 			showProfile: 'Прикажи профил',
 			confirmHide:
@@ -247,6 +316,16 @@ export default {
 				'Да ли сте сигурни да желите да прикажете профил? Појавиће се у претрази.',
 			visibilityUpdated: 'Видљивост профила ажурирана',
 			errorUpdating: 'Није успјело ажурирање видљивости',
+			errorHiddenByAdmin:
+				'Ваш профил је сакрио администратор — обратите се подршци',
+			hiddenReason: 'Разлог сакривања:',
+			hiddenReasonAction:
+				'Да бисте вратили профил, пишите нам са своје радне е-адресе:',
+			bannerHiddenByAdmin:
+				'Профил је сакрио администратор — пацијенти га не виде и нема га у претрази.',
+			bannerHidden:
+				'Профил је сакривен — пацијенти га не виде. Може се поново приказати у кабинету.',
+			bannerDraft: 'Профил још није објављен — пацијенти га не виде.',
 			ownerBanner: 'Ово је ваш профил',
 			ownerBannerEdit: 'Измијени',
 			ownerBannerManage: 'Управљање профилом',

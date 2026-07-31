@@ -1,6 +1,12 @@
 import { validateBody } from '~/common/validation';
+import { GONE_PAYLOAD, type GonePayload } from '~/common/gone';
 import type { DoctorData } from '~/interfaces/doctor';
 import { getCurrentUser } from '~/server/common/auth';
+import {
+	isDoctorHiddenByAdmin,
+	isDoctorPublic,
+} from '~/server/common/doctor-visibility';
+import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 import { getConnection } from '~/server/common/db-mysql';
 import { fetchRating, fetchReviews } from '~/server/common/reviews';
 import {
@@ -12,29 +18,31 @@ import {
 	processLocalizedNameForClinicOrDoctor,
 } from '~/server/common/utils';
 
-export default defineEventHandler(async (event): Promise<DoctorData | null> => {
-	try {
-		const body = await readBody(event);
+export default defineEventHandler(
+	async (event): Promise<DoctorData | GonePayload | null> => {
+		try {
+			const body = await readBody(event);
 
-		if (!validateBody(body, 'api/doctors/details')) {
-			setResponseStatus(event, 400, 'Invalid parameters');
-			return null;
-		}
+			if (!validateBody(body, 'api/doctors/details')) {
+				setResponseStatus(event, 400, 'Invalid parameters');
+				return null;
+			}
 
-		if (!body.slug || typeof body.slug !== 'string') {
-			setResponseStatus(event, 400, 'Invalid doctor slug');
-			return null;
-		}
+			if (!body.slug || typeof body.slug !== 'string') {
+				setResponseStatus(event, 400, 'Invalid doctor slug');
+				return null;
+			}
 
-		const locale = body.locale || 'en';
-		const includeServices = body.includeServices || false;
+			const locale = body.locale || 'en';
+			const includeServices = body.includeServices || false;
 
-		const doctorsQuery = `
+			const doctorsQuery = `
 			SELECT DISTINCT
 				d.id,
 				d.slug,
 				d.user_id,
 				d.hidden,
+				d.hidden_by_admin,
 				d.is_draft,
 				d.name_sr,
 				d.name_sr_cyrl,
@@ -58,109 +66,134 @@ export default defineEventHandler(async (event): Promise<DoctorData | null> => {
 				d.website,
 				GROUP_CONCAT(DISTINCT s.id ORDER BY s.id) as specialtyIds,
 				GROUP_CONCAT(DISTINCT languages.id ORDER BY languages.id) as languageIds,
-				GROUP_CONCAT(DISTINCT dc.clinic_id ORDER BY dc.clinic_id) as clinicIds
+				-- только публичные клиники: черновики и скрытые админом не должны
+				-- утекать ни в блок клиник врача, ни в его прайс по услугам
+				COALESCE(GROUP_CONCAT(DISTINCT c.id ORDER BY c.id), '') as clinicIds
 			FROM doctors d
 			LEFT JOIN doctor_specialties ds ON d.id = ds.doctor_id
 			LEFT JOIN specialties s ON ds.specialty_id = s.id
 			LEFT JOIN doctor_languages dl ON d.id = dl.doctor_id
 			LEFT JOIN languages ON dl.language_id = languages.id
 			LEFT JOIN doctor_clinics dc ON d.id = dc.doctor_id
+			LEFT JOIN clinics c ON c.id = dc.clinic_id AND ${clinicIsPublicSql('c')}
 			WHERE d.slug = ?
 			GROUP BY d.id;
 		`;
 
-		const connection = await getConnection();
-		const [doctorRows] = await connection.execute(doctorsQuery, [body.slug]);
+			const connection = await getConnection();
+			const [doctorRows] = await connection.execute(doctorsQuery, [body.slug]);
 
-		const doctor = (doctorRows as any[])[0];
-		if (!doctor || doctor.hidden || doctor.is_draft) {
-			await connection.end();
-			return null;
-		}
+			const doctor = (doctorRows as any[])[0];
+			if (!doctor) {
+				await connection.end();
+				return null;
+			}
 
-		// Загружаем услуги, если требуется
-		let clinicServices: ClinicServicesMap | undefined;
-		if (includeServices && doctor.clinicIds && doctor.specialtyIds) {
-			const clinicIds = doctor.clinicIds.split(',').map(Number);
-			const specialtyIds = doctor.specialtyIds.split(',').map(Number);
-			clinicServices = await getServicesByClinicAndSpecialty(
+			const currentUser = await getCurrentUser(event);
+			const isOwner =
+				!!currentUser && !!doctor.user_id && currentUser.id === doctor.user_id;
+
+			// Непубличный профиль виден владельцу и админу: страница рисует его
+			// как неопубликованный с баннером-объяснением наверху. Остальным —
+			// 410 при скрытии админом (намеренное удаление) и 404 при черновике
+			// и самоскрытии, они обратимы (см. common/gone.ts).
+			if (!isDoctorPublic(doctor) && !isOwner && !currentUser?.is_admin) {
+				await connection.end();
+				return isDoctorHiddenByAdmin(doctor) ? GONE_PAYLOAD : null;
+			}
+
+			// Загружаем услуги, если требуется
+			let clinicServices: ClinicServicesMap | undefined;
+			if (includeServices && doctor.clinicIds && doctor.specialtyIds) {
+				const clinicIds = doctor.clinicIds.split(',').map(Number);
+				const specialtyIds = doctor.specialtyIds.split(',').map(Number);
+				clinicServices = await getServicesByClinicAndSpecialty(
+					connection,
+					clinicIds,
+					specialtyIds,
+					locale,
+					doctor.id, // Передаём ID врача для получения индивидуальных цен
+				);
+			}
+
+			// Загружаем рейтинг и отзывы врача
+			const processedRating = await fetchRating(
 				connection,
-				clinicIds,
-				specialtyIds,
-				locale,
-				doctor.id, // Передаём ID врача для получения индивидуальных цен
+				'doctor',
+				doctor.id,
 			);
-		}
+			const { reviews: reviewsRows, ownReview: ownDoctorReview } =
+				await fetchReviews(connection, 'doctor', doctor.id, locale, {
+					currentUserId: currentUser?.id,
+				});
 
-		const currentUser = await getCurrentUser(event);
+			await connection.end();
 
-		// Загружаем рейтинг и отзывы врача
-		const processedRating = await fetchRating(connection, 'doctor', doctor.id);
-		const { reviews: reviewsRows, ownReview: ownDoctorReview } =
-			await fetchReviews(connection, 'doctor', doctor.id, locale, {
-				currentUserId: currentUser?.id,
+			// Обрабатываем локализованные имена
+			const { name, localName } = processLocalizedNameForClinicOrDoctor(
+				doctor,
+				locale,
+			);
+
+			// Обрабатываем локализованное описание
+			const description = processLocalizedDescription(doctor, locale);
+
+			// Сортируем clinicIds по количеству услуг (больше услуг — выше)
+			let sortedClinicIds = doctor.clinicIds;
+			if (clinicServices && doctor.clinicIds) {
+				const clinicIdsList = doctor.clinicIds.split(',').map(Number);
+				clinicIdsList.sort((a: number, b: number) => {
+					const aCount = clinicServices[a]?.length || 0;
+					const bCount = clinicServices[b]?.length || 0;
+					return bCount - aCount;
+				});
+				sortedClinicIds = clinicIdsList.join(',');
+			}
+			const {
+				hidden: _hidden,
+				hidden_by_admin: _hiddenByAdmin,
+				hidden_by_admin_reason: _hiddenReason,
+				is_draft: _isDraft,
+				user_id: _userId,
+				name_sr,
+				name_sr_cyrl,
+				name_ru,
+				name_en,
+				description_sr,
+				description_sr_cyrl,
+				description_ru,
+				description_en,
+				description_de,
+				description_tr,
+				...rest
+			} = doctor;
+
+			return {
+				...rest,
+				name,
+				localName,
+				description,
+				clinicIds: sortedClinicIds,
+				clinicServices,
+				isOwner,
+				// Флаги непубличности доезжают только до владельца и админа —
+				// остальные до этой строки не доходят. Причина скрытия нужна
+				// врачу в баннере наверху страницы.
+				isDraft: Boolean(doctor.is_draft),
+				hidden: Boolean(doctor.hidden),
+				hiddenByAdmin: Boolean(doctor.hidden_by_admin),
+				hiddenReason: doctor.hidden_by_admin_reason || '',
+				rating: processedRating,
+				reviews: ownDoctorReview
+					? [ownDoctorReview, ...reviewsRows]
+					: reviewsRows,
+			};
+		} catch (error) {
+			console.error('API Error - doctor data:', error);
+			throw createError({
+				statusCode: 500,
+				statusMessage: 'Failed to fetch doctor data',
 			});
-
-		await connection.end();
-
-		// Обрабатываем локализованные имена
-		const { name, localName } = processLocalizedNameForClinicOrDoctor(
-			doctor,
-			locale,
-		);
-
-		// Обрабатываем локализованное описание
-		const description = processLocalizedDescription(doctor, locale);
-
-		// Сортируем clinicIds по количеству услуг (больше услуг — выше)
-		let sortedClinicIds = doctor.clinicIds;
-		if (clinicServices && doctor.clinicIds) {
-			const clinicIdsList = doctor.clinicIds.split(',').map(Number);
-			clinicIdsList.sort((a: number, b: number) => {
-				const aCount = clinicServices[a]?.length || 0;
-				const bCount = clinicServices[b]?.length || 0;
-				return bCount - aCount;
-			});
-			sortedClinicIds = clinicIdsList.join(',');
 		}
-		const isOwner =
-			!!currentUser && !!doctor.user_id && currentUser.id === doctor.user_id;
-
-		const {
-			hidden: _hidden,
-			is_draft: _isDraft,
-			user_id: _userId,
-			name_sr,
-			name_sr_cyrl,
-			name_ru,
-			name_en,
-			description_sr,
-			description_sr_cyrl,
-			description_ru,
-			description_en,
-			description_de,
-			description_tr,
-			...rest
-		} = doctor;
-
-		return {
-			...rest,
-			name,
-			localName,
-			description,
-			clinicIds: sortedClinicIds,
-			clinicServices,
-			isOwner,
-			rating: processedRating,
-			reviews: ownDoctorReview
-				? [ownDoctorReview, ...reviewsRows]
-				: reviewsRows,
-		};
-	} catch (error) {
-		console.error('API Error - doctor data:', error);
-		throw createError({
-			statusCode: 500,
-			statusMessage: 'Failed to fetch doctor data',
-		});
-	}
-});
+	},
+);

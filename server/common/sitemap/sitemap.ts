@@ -1,4 +1,6 @@
 import type { SitemapLink } from './utils';
+import { doctorIsPublicSql } from '~/server/common/doctor-visibility';
+import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 import { locales } from '~/composables/use-locale';
 import { getRegionalUrl, type UrlQuery } from '~/common/url-utils';
 import {
@@ -70,7 +72,7 @@ async function getEntitiesWithReviews(): Promise<{
 		`SELECT d.slug
 		FROM doctors d
 		JOIN reviews r ON r.doctor_id = d.id AND r.rating IS NOT NULL AND r.status != 'rejected'
-		WHERE d.hidden = 0 AND d.is_draft = 0
+		WHERE ${doctorIsPublicSql('d')}
 		GROUP BY d.id
 		HAVING COUNT(*) > ?`,
 		[REVIEWS_THRESHOLD],
@@ -80,7 +82,7 @@ async function getEntitiesWithReviews(): Promise<{
 		`SELECT c.slug
 		FROM clinics c
 		JOIN reviews r ON r.clinic_id = c.id AND r.rating IS NOT NULL AND r.status != 'rejected'
-		WHERE c.status = 'published'
+		WHERE ${clinicIsPublicSql('c')}
 		GROUP BY c.id
 		HAVING COUNT(*) > ?`,
 		[REVIEWS_THRESHOLD],

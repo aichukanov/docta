@@ -17,6 +17,14 @@ export interface DoctorData extends ClinicServiceItem, ContactList {
 	localName: string;
 	description?: string;
 	isOwner?: boolean;
+	// Непубличный профиль отдаётся только владельцу и админу — страница
+	// показывает его как неопубликованный, с баннером наверху. Публично такой
+	// врач получает 404 (черновик, самоскрытие) или 410 (скрытие админом).
+	isDraft?: boolean;
+	hidden?: boolean;
+	hiddenByAdmin?: boolean;
+	/** Причина скрытия админом, на сербском (doctors.hidden_by_admin_reason). */
+	hiddenReason?: string;
 	rating?: Rating;
 	reviews?: Review[];
 	// Профильные услуги врача по клиникам (details/list с includeServices)
@@ -35,4 +43,10 @@ export type DoctorCardData = Partial<DoctorData> & {
 	name: string;
 };
 
-export type DoctorProfileStatus = 'draft' | 'public' | 'hidden';
+// 'hidden' — врач скрыл себя сам (обратимо им же), 'hidden_by_admin' — скрыт
+// администратором: страница отдаёт 410, снять флаг может только админ.
+export type DoctorProfileStatus =
+	| 'draft'
+	| 'public'
+	| 'hidden'
+	| 'hidden_by_admin';

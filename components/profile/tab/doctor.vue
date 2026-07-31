@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import doctorProfileI18n from '~/i18n/doctor-profile';
+import { ERROR_CODES } from '~/server/utils/api-codes';
 import type { DoctorMyProfile } from '~/server/api/doctors/my-profile';
 import type { DoctorProfileStatus } from '~/interfaces/doctor';
 
@@ -16,13 +17,16 @@ const { data: doctor } = await useFetch<DoctorMyProfile | null>(
 const isToggling = ref(false);
 const isEditing = ref(false);
 
+// Скрытие админом важнее собственного статуса: врач его не снимет
 const status = computed<DoctorProfileStatus | null>(() =>
 	doctor.value
-		? doctor.value.isDraft
-			? 'draft'
-			: doctor.value.hidden
-				? 'hidden'
-				: 'public'
+		? doctor.value.hiddenByAdmin
+			? 'hidden_by_admin'
+			: doctor.value.isDraft
+				? 'draft'
+				: doctor.value.hidden
+					? 'hidden'
+					: 'public'
 		: null,
 );
 
@@ -39,8 +43,12 @@ async function toggleVisibility() {
 		});
 		doctor.value.hidden = result.hidden;
 		ElMessage.success(t('visibilityUpdated'));
-	} catch {
-		ElMessage.error(t('errorUpdating'));
+	} catch (e: any) {
+		if (e?.data?.data?.code === ERROR_CODES.DOCTOR_PROFILE_HIDDEN_BY_ADMIN) {
+			ElMessage.warning(t('errorHiddenByAdmin'));
+		} else {
+			ElMessage.error(t('errorUpdating'));
+		}
 	} finally {
 		isToggling.value = false;
 	}

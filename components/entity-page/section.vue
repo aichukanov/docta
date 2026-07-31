@@ -9,15 +9,22 @@ defineProps<{
 
 <template>
 	<section :id="sectionId" class="entity-section">
-		<header v-if="title || $slots.actions" class="entity-section__header">
+		<header
+			v-if="title || $slots.title || $slots.actions"
+			class="entity-section__header"
+		>
 			<EntityPageSectionTitle
-				v-if="title"
-				:title="title"
+				v-if="title || $slots.title"
+				:title="title ?? ''"
 				:count="count"
 				:link="link"
 			>
 				<template v-if="$slots.icon" #icon>
 					<slot name="icon" />
+				</template>
+				<!-- Заголовок содержимым, а не строкой — см. section-title.vue -->
+				<template v-if="$slots.title">
+					<slot name="title" />
 				</template>
 			</EntityPageSectionTitle>
 			<div v-if="$slots.actions" class="entity-section__actions">

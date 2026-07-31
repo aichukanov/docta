@@ -258,13 +258,13 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t(`CityHcEmergency1_${city}`) }}</p>
 			<p v-if="city === 'budva'"
 				>{{ t('CityHcEmergency2a_budva')
-				}}<NuxtLink :to="kotorHospitalLink">{{
+				}}<ClinicRouteLink :to="kotorHospitalLink">{{
 					t('CityHcEmergency2KotorLink_budva')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('CityHcEmergency2b_budva')
-				}}<NuxtLink :to="kccgLink">{{
+				}}<ClinicRouteLink :to="kccgLink">{{
 					t('CityHcEmergency2KccgLink_budva')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('CityHcEmergency2c_budva') }}</p
 			>
 			<p v-else>{{ t(`CityHcEmergency2_${city}`) }}</p>
@@ -276,21 +276,21 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t(`CityHcState2_${city}`) }}</p>
 			<p v-if="city === 'kotor'"
 				>{{ t('CityHcState3a_kotor')
-				}}<NuxtLink :to="vasoCukovicRisanLink">{{
+				}}<ClinicRouteLink :to="vasoCukovicRisanLink">{{
 					t('CityHcState3VasoLink_kotor')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('CityHcState3b_kotor')
-				}}<NuxtLink :to="dobrotaPsychiatricLink">{{
+				}}<ClinicRouteLink :to="dobrotaPsychiatricLink">{{
 					t('CityHcState3DobrotaLink_kotor')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('CityHcState3c_kotor') }}</p
 			>
 			<p v-else>{{ t(`CityHcState3_${city}`) }}</p>
 			<p>
 				{{ t(`CityHcStateCatalog_${city}`) }}
-				<NuxtLink :to="stateClinicLink">{{
+				<ClinicRouteLink :to="stateClinicLink">{{
 					t(`CityHcStateLink_${city}`)
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('CityHcLinkEnd') }}
 			</p>
 		</ArticleSection>
@@ -300,174 +300,210 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<ul v-if="city === 'budva'">
 				<li
 					>{{ t('CityHcPvGroupLabel_Polyclinic') }}:
-					<NuxtLink :to="milmedikaBudvaLink">{{
+					<ClinicRouteLink :to="milmedikaBudvaLink">{{
 						t('CityHcPvMilmedika')
-					}}</NuxtLink
-					>, <NuxtLink :to="mojLabBudvaLink">{{ t('CityHcPvMojLab') }}</NuxtLink
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="bonoMedicaLink">{{ t('CityHcPvBonoMedica') }}</NuxtLink
+					<ClinicRouteLink :to="mojLabBudvaLink">{{
+						t('CityHcPvMojLab')
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="medicalCentarBudvaLink">{{
+					<ClinicRouteLink :to="bonoMedicaLink">{{
+						t('CityHcPvBonoMedica')
+					}}</ClinicRouteLink
+					>,
+					<ClinicRouteLink :to="medicalCentarBudvaLink">{{
 						t('CityHcPvMedicalCentar')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>.</li
 				>
 				<li
 					>{{ t('CityHcPvGroupLabel_Dental') }}:
-					<NuxtLink :to="dukleyDentalLink">{{ t('CityHcPvDukley') }}</NuxtLink
-					>, <NuxtLink :to="reDentLink">{{ t('CityHcPvReDent') }}</NuxtLink
+					<ClinicRouteLink :to="dukleyDentalLink">{{
+						t('CityHcPvDukley')
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="zecevicDentalLink">{{ t('CityHcPvZecevic') }}</NuxtLink
+					<ClinicRouteLink :to="reDentLink">{{
+						t('CityHcPvReDent')
+					}}</ClinicRouteLink
+					>,
+					<ClinicRouteLink :to="zecevicDentalLink">{{
+						t('CityHcPvZecevic')
+					}}</ClinicRouteLink
 					>.</li
 				>
 				<li
 					>{{ t('CityHcPvGroupLabel_Ophthalmology') }}:
-					<NuxtLink :to="laserFocusLink">{{ t('CityHcPvLaserFocus') }}</NuxtLink
+					<ClinicRouteLink :to="laserFocusLink">{{
+						t('CityHcPvLaserFocus')
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="svjetlostEyeLink">{{
+					<ClinicRouteLink :to="svjetlostEyeLink">{{
 						t('CityHcPvSvjetlost')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>.</li
 				>
 				<li
 					>{{ t('CityHcPvGroupLabel_Gynecology') }}:
-					<NuxtLink :to="humanaReprodukcijaLink">{{
+					<ClinicRouteLink :to="humanaReprodukcijaLink">{{
 						t('CityHcPvHumana')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>.</li
 				>
 			</ul>
 			<ul v-else-if="city === 'kotor'">
 				<li
 					>{{ t('CityHcPvGroupLabel_Polyclinic') }}:
-					<NuxtLink :to="smartMedKotorLink">{{
+					<ClinicRouteLink :to="smartMedKotorLink">{{
 						t('CityHcPvSmartMed')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="hipokratRadanoviciLink">{{
+					<ClinicRouteLink :to="hipokratRadanoviciLink">{{
 						t('CityHcPvHipokratRadanovici')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>.</li
 				>
 				<li
 					>{{ t('CityHcPvGroupLabel_Cardiology') }}:
-					<NuxtLink :to="interCardioKotorLink">{{
+					<ClinicRouteLink :to="interCardioKotorLink">{{
 						t('CityHcPvInterCardio')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>.</li
 				>
 				<li
 					>{{ t('CityHcPvGroupLabel_Dental') }}:
-					<NuxtLink :to="dentalStudioVuceticLink">{{
+					<ClinicRouteLink :to="dentalStudioVuceticLink">{{
 						t('CityHcPvDentalStudioVucetic')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="drCetkovicLink">{{ t('CityHcPvDrCetkovic') }}</NuxtLink
+					<ClinicRouteLink :to="drCetkovicLink">{{
+						t('CityHcPvDrCetkovic')
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="orthoCentarKotorLink">{{
+					<ClinicRouteLink :to="orthoCentarKotorLink">{{
 						t('CityHcPvOrthoCentarKotor')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>.</li
 				>
 				<li
 					>{{ t('CityHcPvGroupLabel_Physiotherapy') }}:
-					<NuxtLink :to="endorfinRadanoviciLink">{{
+					<ClinicRouteLink :to="endorfinRadanoviciLink">{{
 						t('CityHcPvEndorfinRadanovici')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>.</li
 				>
 			</ul>
 			<ul v-else-if="city === 'bar'">
 				<li
 					>{{ t('CityHcPvGroupLabel_PolyclinicHospital') }}:
-					<NuxtLink :to="novoStandardBarLink">{{
+					<ClinicRouteLink :to="novoStandardBarLink">{{
 						t('CityHcPvNoviStandardBar')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="drZejnilovicLink">{{
+					<ClinicRouteLink :to="drZejnilovicLink">{{
 						t('CityHcPvDrZejnilovic')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="medicalVranesLink">{{
+					<ClinicRouteLink :to="medicalVranesLink">{{
 						t('CityHcPvMedicalVranes')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="a3MedicalSutomoreLink">{{
+					<ClinicRouteLink :to="a3MedicalSutomoreLink">{{
 						t('CityHcPvA3Medical')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>.</li
 				>
 				<li
 					>{{ t('CityHcPvGroupLabel_RussianDental') }}:
-					<NuxtLink :to="justDentalBarLink">{{
+					<ClinicRouteLink :to="justDentalBarLink">{{
 						t('CityHcPvJustDental')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="pavlinDentalBarLink">{{
+					<ClinicRouteLink :to="pavlinDentalBarLink">{{
 						t('CityHcPvPavlinDental')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="drDebeljaBarLink">{{
+					<ClinicRouteLink :to="drDebeljaBarLink">{{
 						t('CityHcPvDrDebelja')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>.</li
 				>
 				<li
 					>{{ t('CityHcPvGroupLabel_OtherDental') }}:
-					<NuxtLink :to="bunticDentalLink">{{ t('CityHcPvBuntic') }}</NuxtLink
+					<ClinicRouteLink :to="bunticDentalLink">{{
+						t('CityHcPvBuntic')
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="drSimonovicDentalLink">{{
+					<ClinicRouteLink :to="drSimonovicDentalLink">{{
 						t('CityHcPvDrSimonovic')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="drBajagicDentalLink">{{
+					<ClinicRouteLink :to="drBajagicDentalLink">{{
 						t('CityHcPvDrBajagic')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="drZejakDentalLink">{{ t('CityHcPvDrZejak') }}</NuxtLink
+					<ClinicRouteLink :to="drZejakDentalLink">{{
+						t('CityHcPvDrZejak')
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="gacinaDentalLink">{{ t('CityHcPvGacina') }}</NuxtLink
+					<ClinicRouteLink :to="gacinaDentalLink">{{
+						t('CityHcPvGacina')
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="jovoticDentLink">{{
+					<ClinicRouteLink :to="jovoticDentLink">{{
 						t('CityHcPvJovoticDent')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="cicmilDentalLink">{{ t('CityHcPvCicmil') }}</NuxtLink
+					<ClinicRouteLink :to="cicmilDentalLink">{{
+						t('CityHcPvCicmil')
+					}}</ClinicRouteLink
 					>.</li
 				>
 			</ul>
 			<ul v-else-if="city === 'podgorica'">
 				<li
 					>{{ t('CityHcPvGroupLabel_SurgicalHospital') }}:
-					<NuxtLink :to="konzilijumPgLink">{{
+					<ClinicRouteLink :to="konzilijumPgLink">{{
 						t('CityHcPvKonzilijum')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="arsMedicaPgLink">{{ t('CityHcPvArsMedica') }}</NuxtLink
-					>, <NuxtLink :to="medtimPgLink">{{ t('CityHcPvMedtim') }}</NuxtLink
+					<ClinicRouteLink :to="arsMedicaPgLink">{{
+						t('CityHcPvArsMedica')
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="codraHospitalPgLink">{{
+					<ClinicRouteLink :to="medtimPgLink">{{
+						t('CityHcPvMedtim')
+					}}</ClinicRouteLink
+					>,
+					<ClinicRouteLink :to="codraHospitalPgLink">{{
 						t('CityHcPvCodraHospital')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>.</li
 				>
 				<li
 					>{{ t('CityHcPvGroupLabel_AestheticSurgery') }}:
-					<NuxtLink :to="aMedicPgLink">{{ t('CityHcPvAMedic') }}</NuxtLink
+					<ClinicRouteLink :to="aMedicPgLink">{{
+						t('CityHcPvAMedic')
+					}}</ClinicRouteLink
 					>.</li
 				>
 				<li
 					>{{ t('CityHcPvGroupLabel_Polyclinic') }}:
-					<NuxtLink :to="hipokratPgLink">{{ t('CityHcPvHipokratPg') }}</NuxtLink
-					>, <NuxtLink :to="mojLabPg1Link">{{ t('CityHcPvMojLabPg') }}</NuxtLink
+					<ClinicRouteLink :to="hipokratPgLink">{{
+						t('CityHcPvHipokratPg')
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="milmedikaPgLink">{{
+					<ClinicRouteLink :to="mojLabPg1Link">{{
+						t('CityHcPvMojLabPg')
+					}}</ClinicRouteLink
+					>,
+					<ClinicRouteLink :to="milmedikaPgLink">{{
 						t('CityHcPvMilmedikaPg')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>,
-					<NuxtLink :to="filipovicPgLink">{{
+					<ClinicRouteLink :to="filipovicPgLink">{{
 						t('CityHcPvFilipovicPg')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>.</li
 				>
 			</ul>

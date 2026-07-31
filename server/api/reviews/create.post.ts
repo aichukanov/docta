@@ -1,4 +1,6 @@
 import { getCurrentUser } from '~/server/common/auth';
+import { doctorIsPublicSql } from '~/server/common/doctor-visibility';
+import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 import { executeQuery } from '~/server/common/db-mysql';
 import {
 	ERROR_CODES,
@@ -37,7 +39,7 @@ export default defineEventHandler(async (event) => {
 	// Verify primary entity exists
 	if (entityType === 'doctor') {
 		const rows = await executeQuery(
-			'SELECT id FROM doctors WHERE id = ? AND hidden = 0',
+			`SELECT id FROM doctors WHERE id = ? AND ${doctorIsPublicSql('doctors')}`,
 			[entityId],
 		);
 		if (rows.length === 0)
@@ -45,7 +47,7 @@ export default defineEventHandler(async (event) => {
 	} else {
 		// Черновики не принимают отзывы — публично их страниц не существует
 		const rows = await executeQuery(
-			`SELECT id FROM clinics WHERE id = ? AND status = 'published'`,
+			`SELECT id FROM clinics WHERE id = ? AND ${clinicIsPublicSql('clinics')}`,
 			[entityId],
 		);
 		if (rows.length === 0)
@@ -73,7 +75,7 @@ export default defineEventHandler(async (event) => {
 		if (relatedEntityId && typeof relatedEntityId === 'number') {
 			const doctorRows = await executeQuery(
 				`SELECT dc.doctor_id FROM doctor_clinics dc
-				JOIN doctors d ON dc.doctor_id = d.id AND d.hidden = 0
+				JOIN doctors d ON dc.doctor_id = d.id AND ${doctorIsPublicSql('d')}
 				WHERE dc.clinic_id = ? AND dc.doctor_id = ?`,
 				[entityId, relatedEntityId],
 			);

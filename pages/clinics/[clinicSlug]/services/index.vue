@@ -5,6 +5,7 @@ import {
 	OG_IMAGE,
 	SITE_URL,
 } from '~/common/constants';
+import { isGonePayload } from '~/common/gone';
 import {
 	buildBreadcrumbsSchema,
 	buildEntityListSchema,
@@ -34,7 +35,7 @@ const clinicSlug = computed(() => route.params.clinicSlug as string);
 const { currentPage, currentSearch, currentCategory, currentSort } =
 	useClinicItemsRoute();
 
-const { data: clinicData } = await useFetch('/api/clinics/items-summary', {
+const { data: clinicPayload } = await useFetch('/api/clinics/items-summary', {
 	key: `clinic-items-summary-services-${clinicSlug.value}`,
 	method: 'POST',
 	body: computed(() => ({
@@ -42,6 +43,13 @@ const { data: clinicData } = await useFetch('/api/clinics/items-summary', {
 		locale: locale.value,
 	})),
 });
+
+// Скрытую админом клинику эндпоинт отдаёт маркером `{ gone: true }`
+// вместо данных — страница отвечает 410 (см. common/gone.ts).
+const clinicData = computed(() =>
+	isGonePayload(clinicPayload.value) ? null : clinicPayload.value,
+);
+const isGone = computed(() => isGonePayload(clinicPayload.value));
 
 const totalServices = computed(
 	() => clinicData.value?.itemsSummary?.services?.totalCount || 0,
@@ -53,7 +61,8 @@ const shouldRedirect = computed(
 
 if (import.meta.server) {
 	if (!clinicData.value?.id) {
-		setResponseStatus(useRequestEvent()!, 404);
+		// 404, либо 410 если клинику скрыл администратор
+		setMissingEntityStatus(clinicPayload.value);
 	} else if (shouldRedirect.value) {
 		await navigateTo(`/clinics/${clinicSlug.value}#services`, {
 			redirectCode: 301,
@@ -219,6 +228,8 @@ watchEffect(() => {
 <template>
 	<ClinicItemsPage
 		v-if="clinicData && !shouldRedirect"
+		:coupon="clinicData.coupon"
+		couponScope="services"
 		:clinicSlug="clinicSlug"
 		:clinicName="clinicName"
 		:clinicLink="clinicLink"
@@ -235,6 +246,10 @@ watchEffect(() => {
 			totalCount,
 			totalPages,
 		}"
+		:clinicStatus="clinicData.status"
+		:clinicHidden="clinicData.hidden"
+		:clinicHiddenReason="clinicData.hiddenReason"
+		:isOwner="clinicData.isOwner"
 		:isLoading="isLoading"
 		:searchPlaceholder="t('SearchServices')"
 		:allCategoriesLabel="t('AllCategories')"
@@ -258,6 +273,7 @@ watchEffect(() => {
 			/>
 		</template>
 	</ClinicItemsPage>
+	<ClinicItemsMissing v-else-if="!clinicData" :isGone="isGone" />
 </template>
 
 <i18n lang="json">

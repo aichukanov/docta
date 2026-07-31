@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ClinicServicesMap } from '#components';
 import { OG_IMAGE, SITE_URL, REVIEWS_THRESHOLD } from '~/common/constants';
+import { isGonePayload } from '~/common/gone';
 import {
 	getCanonicalUrl,
 	getRegionalQuery,
@@ -34,7 +35,7 @@ const { t, locale } = useI18n({
 
 const route = useRoute();
 
-const { pending: isLoading, data: doctorData } = await useFetch(
+const { pending: isLoading, data: doctorPayload } = await useFetch(
 	'/api/doctors/details',
 	{
 		key: 'doctor-details',
@@ -45,6 +46,13 @@ const { pending: isLoading, data: doctorData } = await useFetch(
 			includeServices: true,
 		})),
 	},
+);
+
+// Скрытого админом врача эндпоинт отдаёт маркером `{ gone: true }` вместо
+// данных, чтобы страница ответила 410, а не 404 (см. common/gone.ts).
+// Дальше по странице работаем с данными, маркер к ним не относится.
+const doctorData = computed(() =>
+	isGonePayload(doctorPayload.value) ? null : doctorPayload.value,
 );
 
 const clinicsStore = useClinicsStore();
@@ -100,9 +108,9 @@ const localizedName = computed(() => {
 	return localized || doctorData.value.name;
 });
 
-// Set HTTP 404 status for not found doctor
-if (import.meta.server && !isFound.value) {
-	setResponseStatus(useRequestEvent()!, 404);
+// 404 для отсутствующего врача, 410 — для скрытого администратором
+if (!isFound.value) {
+	setMissingEntityStatus(doctorPayload.value);
 }
 
 const doctorDescription = computed(() => {
@@ -169,7 +177,8 @@ const doctorClinics = computed(() => {
 		return [];
 	}
 
-	const clinicIds = doctorData.value?.clinicIds.split(',').map(Number) || [];
+	// clinicIds пустой, если все клиники врача непубличны (скрыты/черновики)
+	const clinicIds = doctorData.value?.clinicIds?.split(',').map(Number) || [];
 	// Сохраняем порядок из API
 	return clinicIds
 		.map((id) => clinicsStore.clinics.find((c) => c.id === id))
@@ -346,7 +355,18 @@ const ogImage = computed(() => {
 	return OG_IMAGE;
 });
 
-const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
+// Непубличный профиль виден владельцу/админу — но всегда с noindex
+// (флаги приходят только им, публично страницы просто нет)
+const isPublicProfile = computed(
+	() =>
+		isFound.value &&
+		!doctorData.value?.isDraft &&
+		!doctorData.value?.hidden &&
+		!doctorData.value?.hiddenByAdmin,
+);
+const robotsMeta = computed(() =>
+	isPublicProfile.value ? undefined : 'noindex',
+);
 
 useSeoMeta({
 	title: pageTitle,

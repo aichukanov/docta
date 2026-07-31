@@ -41,20 +41,30 @@ const wrapperStyle = computed(() => {
 
 <template>
 	<div class="collapsible-content">
-		<div
-			ref="contentRef"
-			class="collapsible-content__inner"
-			:class="{
-				'collapsible-content__inner--collapsed': isOverflowing && !expanded,
-			}"
-			:style="wrapperStyle"
-		>
-			<slot />
+		<div class="collapsible-content__wrapper">
+			<div
+				ref="contentRef"
+				class="collapsible-content__inner"
+				:class="{
+					'collapsible-content__inner--collapsed': isOverflowing && !expanded,
+				}"
+				:style="wrapperStyle"
+			>
+				<slot />
+			</div>
+			<!-- Пока свёрнуто, кнопка лежит на затухании; раскрытый блок ставит её
+			     строкой под содержимым -->
+			<ShowMoreButton
+				v-if="isOverflowing && !expanded"
+				overlay
+				:label="t('ShowMore')"
+				@click="expanded = true"
+			/>
 		</div>
 		<ShowMoreButton
-			v-if="isOverflowing"
-			:label="expanded ? t('ShowLess') : t('ShowMore')"
-			@click="expanded = !expanded"
+			v-if="isOverflowing && expanded"
+			:label="t('ShowLess')"
+			@click="expanded = false"
 		/>
 	</div>
 </template>
@@ -75,6 +85,10 @@ const wrapperStyle = computed(() => {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-md);
+}
+
+.collapsible-content__wrapper {
+	position: relative;
 }
 
 .collapsible-content__inner {

@@ -144,7 +144,9 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t('DstState2') }}</p>
 			<p
 				>{{ t('DstState3a')
-				}}<NuxtLink :to="kccgLink">{{ t('DstState3KccgLink') }}</NuxtLink
+				}}<ClinicRouteLink :to="kccgLink">{{
+					t('DstState3KccgLink')
+				}}</ClinicRouteLink
 				>{{ t('DstState3b') }}</p
 			>
 			<p>

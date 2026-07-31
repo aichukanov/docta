@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
+import type { ClinicStatus } from '~/interfaces/clinic';
+import type {
+	ClinicCoupon,
+	ClinicCouponScope,
+} from '~/interfaces/clinic-coupon';
 
 interface CategoryOption {
 	categoryId: number;
@@ -17,6 +22,10 @@ const props = withDefaults(
 		clinicSlug: string;
 		clinicName: string;
 		clinicLink: object;
+		// Купон клиники и тип позиций этой подстраницы: баннер сам скроется,
+		// если скидка на них не действует (см. ClinicCouponBanner)
+		coupon?: ClinicCoupon | null;
+		couponScope?: ClinicCouponScope;
 		breadcrumbHomeLabel: string;
 		breadcrumbClinicsLabel: string;
 		breadcrumbCurrentLabel: string;
@@ -37,6 +46,12 @@ const props = withDefaults(
 			totalPages: number;
 		};
 		isLoading?: boolean;
+		// Непубличная клиника: подстраница видна только владельцу и админу,
+		// сверху — та же плашка, что на главной странице клиники
+		clinicStatus?: ClinicStatus;
+		clinicHidden?: boolean;
+		clinicHiddenReason?: string;
+		isOwner?: boolean;
 	}>(),
 	{
 		sortOptions: () => [],
@@ -49,6 +64,12 @@ const props = withDefaults(
 const { locale } = useI18n();
 const { currentSearch, currentCategory, currentSort, pushQuery } =
 	useClinicItemsRoute();
+
+const isNonPublic = computed(
+	() =>
+		props.clinicHidden === true ||
+		(props.clinicStatus != null && props.clinicStatus !== 'published'),
+);
 
 const searchLocal = ref(currentSearch.value);
 let searchTimer: ReturnType<typeof setTimeout> | null = null;
@@ -102,6 +123,14 @@ const breadcrumbs = computed(() => [
 
 <template>
 	<div class="items-page">
+		<ClinicOwnerBanner
+			v-if="isOwner || isNonPublic"
+			:status="clinicStatus"
+			:hidden="clinicHidden"
+			:hiddenReason="clinicHiddenReason"
+			:isOwner="isOwner"
+		/>
+
 		<ClinicItemsPageHeader
 			:breadcrumbs="breadcrumbs"
 			:title="pageTitle"
@@ -111,6 +140,12 @@ const breadcrumbs = computed(() => [
 				<slot name="badges" />
 			</template>
 		</ClinicItemsPageHeader>
+
+		<ClinicCouponBanner
+			:coupon="coupon"
+			:clinicSlug="clinicSlug"
+			:scope="couponScope"
+		/>
 
 		<ClinicItemsPageFilters
 			:search="searchLocal"

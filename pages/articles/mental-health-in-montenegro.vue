@@ -114,9 +114,9 @@ const { breadcrumbItems } = useArticlePageSeo({
 				<li>{{ t('MhmSystemLevel2') }}</li>
 				<li
 					>{{ t('MhmSystemLevel3a')
-					}}<NuxtLink :to="dobrotaHospitalLink">{{
+					}}<ClinicRouteLink :to="dobrotaHospitalLink">{{
 						t('MhmSystemLevel3DobrotaLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('MhmSystemLevel3b') }}</li
 				>
 			</ul>
@@ -190,13 +190,15 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<ul>
 				<li>{{ t('MhmSourcesPhones') }}</li>
 				<li
-					><NuxtLink :to="dobrotaHospitalLink">{{
+					><ClinicRouteLink :to="dobrotaHospitalLink">{{
 						t('MhmSourcesDobrotaLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('MhmSourcesDobrotaEnd') }}</li
 				>
 				<li
-					><NuxtLink :to="kccgLink">{{ t('MhmSourcesKccgLink') }}</NuxtLink
+					><ClinicRouteLink :to="kccgLink">{{
+						t('MhmSourcesKccgLink')
+					}}</ClinicRouteLink
 					>{{ t('MhmSourcesKccgEnd') }}</li
 				>
 				<li>

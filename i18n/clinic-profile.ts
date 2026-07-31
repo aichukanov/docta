@@ -20,6 +20,14 @@ export default {
 			StatusRejected: 'Rejected',
 			StatusRejectedDesc:
 				'Publication was rejected by the administrator. Edit the details and publish again.',
+			StatusHiddenByAdmin: 'Hidden by administrator',
+			StatusHiddenByAdminDesc:
+				'Patients do not see the clinic and it is not in search. Only the administrator can restore it.',
+			HiddenNotice:
+				'The clinic is hidden by the administrator — patients do not see this page and it is not in search.',
+			HiddenReason: 'Reason for hiding:',
+			HiddenReasonAction:
+				'To get the clinic back, write to us from your work email:',
 
 			BtnPublish: 'Publish',
 			BtnHide: 'Hide',
@@ -33,6 +41,8 @@ export default {
 			ErrorUpdatingStatus: 'Failed to update status',
 			ErrorClinicIncomplete:
 				'Fill in the name, address and pick a point on the map before publishing',
+			ErrorClinicHiddenByAdmin:
+				'The clinic is hidden by the administrator — contact support',
 
 			CreateClinicTitle: 'New clinic',
 			EditClinicTitle: 'Edit clinic',
@@ -113,6 +123,14 @@ export default {
 			StatusRejected: 'Отклонена',
 			StatusRejectedDesc:
 				'Публикация отклонена администратором. Отредактируйте данные и опубликуйте снова.',
+			StatusHiddenByAdmin: 'Скрыта администратором',
+			StatusHiddenByAdminDesc:
+				'Пациенты клинику не видят, в поиске её нет. Вернуть её может только администратор.',
+			HiddenNotice:
+				'Клиника скрыта администратором — пациенты эту страницу не видят, в поиске её нет.',
+			HiddenReason: 'Причина скрытия:',
+			HiddenReasonAction:
+				'Чтобы вернуть клинику, напишите нам с рабочей почты:',
 
 			BtnPublish: 'Опубликовать',
 			BtnHide: 'Скрыть',
@@ -126,6 +144,8 @@ export default {
 			ErrorUpdatingStatus: 'Не удалось обновить статус',
 			ErrorClinicIncomplete:
 				'Перед публикацией заполните название, адрес и поставьте точку на карте',
+			ErrorClinicHiddenByAdmin:
+				'Клиника скрыта администратором — напишите в поддержку',
 
 			CreateClinicTitle: 'Новая клиника',
 			EditClinicTitle: 'Редактирование клиники',
@@ -206,6 +226,14 @@ export default {
 			StatusRejected: 'Odbijena',
 			StatusRejectedDesc:
 				'Objavljivanje je odbio administrator. Izmijenite podatke i objavite ponovo.',
+			StatusHiddenByAdmin: 'Sakrivena',
+			StatusHiddenByAdminDesc:
+				'Pacijenti ne vide kliniku i nema je u pretrazi. Vratiti je može samo administrator.',
+			HiddenNotice:
+				'Kliniku je sakrio administrator — pacijenti ne vide ovu stranicu i nema je u pretrazi.',
+			HiddenReason: 'Razlog sakrivanja:',
+			HiddenReasonAction:
+				'Da biste vratili kliniku, pišite nam sa svoje radne e-adrese:',
 
 			BtnPublish: 'Objavi',
 			BtnHide: 'Sakrij',
@@ -219,6 +247,8 @@ export default {
 			ErrorUpdatingStatus: 'Nije uspjelo ažuriranje statusa',
 			ErrorClinicIncomplete:
 				'Prije objavljivanja popunite naziv, adresu i postavite tačku na mapi',
+			ErrorClinicHiddenByAdmin:
+				'Kliniku je sakrio administrator — obratite se podršci',
 
 			CreateClinicTitle: 'Nova klinika',
 			EditClinicTitle: 'Izmjena klinike',
@@ -299,6 +329,14 @@ export default {
 			StatusRejected: 'Одбијена',
 			StatusRejectedDesc:
 				'Објављивање је одбио администратор. Измијените податке и објавите поново.',
+			StatusHiddenByAdmin: 'Сакривена',
+			StatusHiddenByAdminDesc:
+				'Пацијенти не виде клинику и нема је у претрази. Вратити је може само администратор.',
+			HiddenNotice:
+				'Клинику је сакрио администратор — пацијенти не виде ову страницу и нема је у претрази.',
+			HiddenReason: 'Разлог сакривања:',
+			HiddenReasonAction:
+				'Да бисте вратили клинику, пишите нам са своје радне е-адресе:',
 
 			BtnPublish: 'Објави',
 			BtnHide: 'Сакриј',
@@ -312,6 +350,8 @@ export default {
 			ErrorUpdatingStatus: 'Није успјело ажурирање статуса',
 			ErrorClinicIncomplete:
 				'Прије објављивања попуните назив, адресу и поставите тачку на мапи',
+			ErrorClinicHiddenByAdmin:
+				'Клинику је сакрио администратор — обратите се подршци',
 
 			CreateClinicTitle: 'Нова клиника',
 			EditClinicTitle: 'Измјена клинике',
@@ -392,6 +432,14 @@ export default {
 			StatusRejected: 'Abgelehnt',
 			StatusRejectedDesc:
 				'Die Veröffentlichung wurde vom Administrator abgelehnt. Bearbeiten Sie die Daten und veröffentlichen Sie erneut.',
+			StatusHiddenByAdmin: 'Vom Administrator versteckt',
+			StatusHiddenByAdminDesc:
+				'Patienten sehen die Klinik nicht und sie erscheint nicht in der Suche. Nur der Administrator kann sie wiederherstellen.',
+			HiddenNotice:
+				'Die Klinik wurde vom Administrator versteckt — Patienten sehen diese Seite nicht und sie erscheint nicht in der Suche.',
+			HiddenReason: 'Grund für das Verstecken:',
+			HiddenReasonAction:
+				'Um die Klinik zurückzubekommen, schreiben Sie uns von Ihrer Arbeits-E-Mail:',
 
 			BtnPublish: 'Veröffentlichen',
 			BtnHide: 'Verstecken',
@@ -405,6 +453,8 @@ export default {
 			ErrorUpdatingStatus: 'Status konnte nicht aktualisiert werden',
 			ErrorClinicIncomplete:
 				'Füllen Sie vor der Veröffentlichung Name und Adresse aus und setzen Sie einen Punkt auf der Karte',
+			ErrorClinicHiddenByAdmin:
+				'Die Klinik wurde vom Administrator versteckt — wenden Sie sich an den Support',
 
 			CreateClinicTitle: 'Neue Klinik',
 			EditClinicTitle: 'Klinik bearbeiten',
@@ -487,6 +537,14 @@ export default {
 			StatusRejected: 'Reddedildi',
 			StatusRejectedDesc:
 				'Yayınlama yönetici tarafından reddedildi. Bilgileri düzenleyip tekrar yayınlayın.',
+			StatusHiddenByAdmin: 'Yönetici tarafından gizlendi',
+			StatusHiddenByAdminDesc:
+				'Hastalar kliniği görmüyor ve aramada yok. Yalnızca yönetici geri alabilir.',
+			HiddenNotice:
+				'Klinik yönetici tarafından gizlendi — hastalar bu sayfayı görmüyor ve aramada yok.',
+			HiddenReason: 'Gizleme nedeni:',
+			HiddenReasonAction:
+				'Kliniği geri almak için iş e-postanızdan bize yazın:',
 
 			BtnPublish: 'Yayınla',
 			BtnHide: 'Gizle',
@@ -500,6 +558,8 @@ export default {
 			ErrorUpdatingStatus: 'Durum güncellenemedi',
 			ErrorClinicIncomplete:
 				'Yayınlamadan önce adı, adresi doldurun ve haritada bir nokta seçin',
+			ErrorClinicHiddenByAdmin:
+				'Klinik yönetici tarafından gizlendi — destek ekibine yazın',
 
 			CreateClinicTitle: 'Yeni klinik',
 			EditClinicTitle: 'Kliniği düzenle',

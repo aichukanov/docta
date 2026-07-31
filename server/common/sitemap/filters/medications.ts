@@ -1,4 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 
 /**
  * Слаги лекарств (цены в клиниках, раздел `/medications` — не путать с
@@ -20,7 +21,7 @@ export async function getMedicationSlugs(): Promise<string[]> {
 		SELECT DISTINCT m.slug
 		FROM medications m
 		JOIN clinic_medications cm ON cm.medication_id = m.id
-		JOIN clinics c ON c.id = cm.clinic_id AND c.status = 'published'
+		JOIN clinics c ON c.id = cm.clinic_id AND ${clinicIsPublicSql('c')}
 		WHERE m.slug IS NOT NULL AND m.slug != ''
 	`;
 

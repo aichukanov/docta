@@ -72,7 +72,7 @@ export default defineEventHandler(async (event): Promise<boolean | null> => {
 				    phone = ?, email = ?, website = ?, facebook = ?, instagram = ?,
 				    telegram = ?, whatsapp = ?, viber = ?,
 				    description_sr = ?, description_sr_cyrl = ?, description_en = ?, description_ru = ?, description_de = ?, description_tr = ?,
-				    logo_url = ?
+				    logo_url = ?, hidden = ?, hidden_reason = ?
 				WHERE id = ?;
 			`;
 
@@ -104,6 +104,8 @@ export default defineEventHandler(async (event): Promise<boolean | null> => {
 				body.description_de || '',
 				body.description_tr || '',
 				body.logoUrl || '',
+				body.hidden ? 1 : 0,
+				(body.hiddenReason || '').trim() || null,
 				body.id,
 			]);
 

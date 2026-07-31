@@ -1,4 +1,6 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { doctorIsPublicSql } from '~/server/common/doctor-visibility';
+import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 import { DoctorSpecialty } from '~/enums/specialty';
 
 function getEnumValues(enumType: Record<string, string | number>): number[] {
@@ -20,7 +22,8 @@ export async function getSpecialtyCityCombinations() {
 		INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
 		INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 		INNER JOIN clinics ON dc.clinic_id = clinics.id
-		WHERE d.hidden = FALSE AND d.is_draft = FALSE
+			AND ${clinicIsPublicSql('clinics')}
+		WHERE ${doctorIsPublicSql('d')}
 		ORDER BY ds.specialty_id, clinics.city_id;
 	`;
 	const [rows] = await connection.execute<any[]>(query);
@@ -39,14 +42,16 @@ async function getSpecialtyLanguageCombinations() {
 			FROM doctors d
 			INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
 			INNER JOIN doctor_languages dl ON d.id = dl.doctor_id
-			WHERE dl.language_id != 1 AND d.hidden = FALSE AND d.is_draft = FALSE
+			WHERE dl.language_id != 1 AND ${doctorIsPublicSql('d')}
 			UNION
 			SELECT ds.specialty_id, cl.language_id as lang_id
 			FROM doctors d
 			INNER JOIN doctor_specialties ds ON d.id = ds.doctor_id
 			INNER JOIN doctor_clinics dc ON d.id = dc.doctor_id
 			INNER JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id
-			WHERE cl.language_id != 1 AND d.hidden = FALSE AND d.is_draft = FALSE
+			INNER JOIN clinics c ON c.id = dc.clinic_id
+				AND ${clinicIsPublicSql('c')}
+			WHERE cl.language_id != 1 AND ${doctorIsPublicSql('d')}
 		) as combined
 		ORDER BY specialty_id, lang_id;
 	`;

@@ -1,4 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 import {
 	parseClinicPricesData,
 	getClinicRankOrderBySQL,
@@ -95,7 +96,7 @@ export async function getLabTestList(
 	}
 	if (body.cityIds != null && body.cityIds.length > 0) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f JOIN clinics c_f ON clt_f.clinic_id = c_f.id WHERE clt_f.lab_test_id = lt.id AND c_f.status = 'published' AND c_f.city_id IN (${buildInPlaceholders(
+			`EXISTS (SELECT 1 FROM clinic_lab_tests clt_f JOIN clinics c_f ON clt_f.clinic_id = c_f.id WHERE clt_f.lab_test_id = lt.id AND ${clinicIsPublicSql('c_f')} AND c_f.city_id IN (${buildInPlaceholders(
 				body.cityIds,
 			)}))`,
 		);
@@ -176,11 +177,11 @@ export async function getLabTestList(
 			lt.name_de,
 			lt.name_tr,
 			${sortPriceSelect}
-			(SELECT GROUP_CONCAT(DISTINCT clt.clinic_id ORDER BY ${rankOrder}) FROM clinic_lab_tests clt JOIN clinics c_rank ON c_rank.id = clt.clinic_id AND c_rank.status = 'published' WHERE clt.lab_test_id = lt.id${cityFilterInSelect}) as clinicIds,
+			(SELECT GROUP_CONCAT(DISTINCT clt.clinic_id ORDER BY ${rankOrder}) FROM clinic_lab_tests clt JOIN clinics c_rank ON c_rank.id = clt.clinic_id AND ${clinicIsPublicSql('c_rank')} WHERE clt.lab_test_id = lt.id${cityFilterInSelect}) as clinicIds,
 			(SELECT GROUP_CONCAT(
 				DISTINCT CONCAT(clt.clinic_id, ':', IFNULL(clt.price, ''), ':', '', ':', IFNULL(clt.price_max, ''), ':', COALESCE(clt.code, ''), ':', clt.is_price_outdated)
 				ORDER BY ${rankOrder}
-			) FROM clinic_lab_tests clt JOIN clinics c_rank ON c_rank.id = clt.clinic_id AND c_rank.status = 'published' WHERE clt.lab_test_id = lt.id${cityFilterInSelect}) as clinicPricesData,
+			) FROM clinic_lab_tests clt JOIN clinics c_rank ON c_rank.id = clt.clinic_id AND ${clinicIsPublicSql('c_rank')} WHERE clt.lab_test_id = lt.id${cityFilterInSelect}) as clinicPricesData,
 			(SELECT GROUP_CONCAT(DISTINCT ltcr_cat.category_id ORDER BY ltcr_cat.category_id)
 			 FROM lab_test_categories_relations ltcr_cat
 			 WHERE ltcr_cat.lab_test_id = lt.id) as categoryIds

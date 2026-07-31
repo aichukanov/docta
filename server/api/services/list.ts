@@ -1,4 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 import {
 	parseClinicPricesData,
 	getClinicRankOrderBySQL,
@@ -74,7 +75,7 @@ export async function getMedicalServiceList(
 	}
 	if (body.cityIds != null && body.cityIds.length > 0) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f JOIN clinics c_f ON cms_f.clinic_id = c_f.id WHERE cms_f.medical_service_id = ms.id AND c_f.status = 'published' AND c_f.city_id IN (${buildInPlaceholders(
+			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f JOIN clinics c_f ON cms_f.clinic_id = c_f.id WHERE cms_f.medical_service_id = ms.id AND ${clinicIsPublicSql('c_f')} AND c_f.city_id IN (${buildInPlaceholders(
 				body.cityIds,
 			)}))`,
 		);
@@ -183,11 +184,11 @@ export async function getMedicalServiceList(
 			ms.name_tr,
 			ms.sort_order,
 			${sortPriceSelect}
-			(SELECT COALESCE(GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${rankOrder}), '') FROM clinic_medical_services cms JOIN clinics c_rank ON c_rank.id = cms.clinic_id AND c_rank.status = 'published' WHERE cms.medical_service_id = ms.id${cityFilterInSelect}) as clinicIds,
+			(SELECT COALESCE(GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${rankOrder}), '') FROM clinic_medical_services cms JOIN clinics c_rank ON c_rank.id = cms.clinic_id AND ${clinicIsPublicSql('c_rank')} WHERE cms.medical_service_id = ms.id${cityFilterInSelect}) as clinicIds,
 			(SELECT GROUP_CONCAT(
 				DISTINCT CONCAT(cms.clinic_id, ':', IFNULL(cms.price, ''), ':', IFNULL(cms.price_min, ''), ':', IFNULL(cms.price_max, ''), ':', COALESCE(cms.code, ''), ':', cms.is_price_outdated)
 				ORDER BY ${rankOrder}
-			) FROM clinic_medical_services cms JOIN clinics c_rank ON c_rank.id = cms.clinic_id AND c_rank.status = 'published' WHERE cms.medical_service_id = ms.id${cityFilterInSelect}) as clinicPricesData,
+			) FROM clinic_medical_services cms JOIN clinics c_rank ON c_rank.id = cms.clinic_id AND ${clinicIsPublicSql('c_rank')} WHERE cms.medical_service_id = ms.id${cityFilterInSelect}) as clinicPricesData,
 			(
 				SELECT GROUP_CONCAT(DISTINCT mscr2.medical_service_category_id ORDER BY mscr2.medical_service_category_id)
 				FROM medical_service_categories_relations mscr2

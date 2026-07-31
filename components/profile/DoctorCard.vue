@@ -151,6 +151,7 @@ const clinicNames = computed(() =>
 
 		<ProfileDoctorStatusBlock
 			:status="status"
+			:hidden-reason="doctor.hiddenByAdminReason"
 			:doctor-id="doctor.id"
 			:doctor-slug="doctor.slug"
 			:is-toggling="isToggling"

@@ -1,6 +1,7 @@
 import type { ContactList } from '~/interfaces/contacts';
 import type { CityId } from '~/enums/cities';
 import type { BillingService } from '~/enums/billing-service';
+import type { ClinicCoupon } from '~/interfaces/clinic-coupon';
 import type { Rating, Review } from '~/interfaces/review';
 import type { WorkingHours } from '~/interfaces/clinic-working-hours';
 
@@ -67,6 +68,9 @@ export interface ClinicData extends ContactList, Coordinates {
 	description: string;
 	logoUrl?: string;
 	features: BillingService[];
+	// Активный купон на скидку (лучший, если их несколько) — см.
+	// server/common/clinic-coupons.ts. undefined — купона нет.
+	coupon?: ClinicCoupon;
 	rating?: Rating;
 	reviews?: Review[];
 	workingHours?: Omit<WorkingHours, 'clinicId'>;
@@ -75,6 +79,11 @@ export interface ClinicData extends ContactList, Coordinates {
 	// владельцу/админу, страница показывает owner-баннер.
 	status?: ClinicStatus;
 	isOwner?: boolean;
+	// Скрыта администратором: публично страницы не существует (404), видна
+	// только админу. Ортогонально status — он сохраняется как был.
+	hidden?: boolean;
+	/** Причина скрытия админом, как в БД — на сербском. */
+	hiddenReason?: string;
 	// Расстояние до пользователя в км — только когда список отсортирован
 	// по расстоянию (см. sortByDistance в server/api/clinics/list.ts)
 	distance?: number;

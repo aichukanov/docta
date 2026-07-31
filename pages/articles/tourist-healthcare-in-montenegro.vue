@@ -118,20 +118,24 @@ const { breadcrumbItems } = useArticlePageSeo({
 			</p>
 			<p
 				>{{ t('ThcWhere3a')
-				}}<NuxtLink :to="kotorHospitalLink">{{
+				}}<ClinicRouteLink :to="kotorHospitalLink">{{
 					t('ThcWhere3KotorLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('ThcWhere3b')
-				}}<NuxtLink :to="barHospitalLink">{{ t('ThcWhere3BarLink') }}</NuxtLink
+				}}<ClinicRouteLink :to="barHospitalLink">{{
+					t('ThcWhere3BarLink')
+				}}</ClinicRouteLink
 				>{{ t('ThcWhere3c')
-				}}<NuxtLink :to="risanHospitalLink">{{
+				}}<ClinicRouteLink :to="risanHospitalLink">{{
 					t('ThcWhere3RisanLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('ThcWhere3d') }}</p
 			>
 			<p
 				>{{ t('ThcWhere4a')
-				}}<NuxtLink :to="kccgLink">{{ t('ThcWhere4KccgLink') }}</NuxtLink
+				}}<ClinicRouteLink :to="kccgLink">{{
+					t('ThcWhere4KccgLink')
+				}}</ClinicRouteLink
 				>{{ t('ThcWhere4b') }}</p
 			>
 		</ArticleSection>
@@ -144,16 +148,20 @@ const { breadcrumbItems } = useArticlePageSeo({
 			>
 			<p
 				>{{ t('ThcCosts2a')
-				}}<NuxtLink :to="kotorHospitalLink">{{
+				}}<ClinicRouteLink :to="kotorHospitalLink">{{
 					t('ThcCosts2KotorLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('ThcCosts2b')
-				}}<NuxtLink :to="barHospitalLink">{{ t('ThcCosts2BarLink') }}</NuxtLink
+				}}<ClinicRouteLink :to="barHospitalLink">{{
+					t('ThcCosts2BarLink')
+				}}</ClinicRouteLink
 				>{{ t('ThcCosts2c') }}</p
 			>
 			<p
 				>{{ t('ThcCosts3a')
-				}}<NuxtLink :to="kccgLink">{{ t('ThcCosts3PodgoricaLink') }}</NuxtLink
+				}}<ClinicRouteLink :to="kccgLink">{{
+					t('ThcCosts3PodgoricaLink')
+				}}</ClinicRouteLink
 				>{{ t('ThcCosts3b') }}</p
 			>
 		</ArticleSection>

@@ -1,8 +1,14 @@
 <script setup lang="ts">
-defineProps<{
-	src: string;
-	alt: string;
-}>();
+// maxWidth — для широких картинок вроде купонов: 600px хватает логотипу,
+// но горизонтальный купон на десктопе получается нечитаемым
+const props = withDefaults(
+	defineProps<{
+		src: string;
+		alt: string;
+		maxWidth?: string;
+	}>(),
+	{ maxWidth: '600px' },
+);
 
 const visible = defineModel<boolean>({ default: false });
 
@@ -30,7 +36,13 @@ onBeforeUnmount(() => {
 	<Teleport to="body">
 		<Transition name="image-zoom">
 			<div v-if="visible" class="image-zoom-overlay" @click="visible = false">
-				<img :src="src" :alt="alt" class="image-zoom-image" @click.stop />
+				<img
+					:src="src"
+					:alt="alt"
+					class="image-zoom-image"
+					:style="{ maxWidth: `min(90vw, ${props.maxWidth})` }"
+					@click.stop
+				/>
 			</div>
 		</Transition>
 	</Teleport>
@@ -51,7 +63,6 @@ onBeforeUnmount(() => {
 }
 
 .image-zoom-image {
-	max-width: min(90vw, 600px);
 	max-height: 85vh;
 	border-radius: 8px;
 	object-fit: contain;

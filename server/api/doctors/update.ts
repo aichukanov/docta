@@ -76,7 +76,7 @@ export default defineEventHandler(async (event): Promise<boolean | null> => {
 			UPDATE doctors
 			SET slug = ?, name_sr = ?, name_sr_cyrl = ?, name_ru = ?, name_en = ?,
 			    description_sr = ?, description_sr_cyrl = ?, description_ru = ?, description_en = ?, description_de = ?, description_tr = ?,
-			    professional_title = ?, hidden = ?, email = ?, phone = ?, website = ?,
+			    professional_title = ?, hidden = ?, hidden_by_admin = ?, hidden_by_admin_reason = ?, email = ?, phone = ?, website = ?,
 			    photo_url = ?, facebook = ?, instagram = ?, telegram = ?, whatsapp = ?, viber = ?,
 			    user_id = ?
 			WHERE id = ?;
@@ -96,6 +96,8 @@ export default defineEventHandler(async (event): Promise<boolean | null> => {
 				body.description_tr || '',
 				body.professionalTitle || '',
 				body.hidden ? 1 : 0,
+				body.hiddenByAdmin ? 1 : 0,
+				(body.hiddenByAdminReason || '').trim() || null,
 				body.email || '',
 				body.phone || '',
 				body.website || '',

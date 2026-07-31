@@ -33,6 +33,9 @@ interface ClinicAdminData {
 	description_tr: string;
 	logoUrl: string;
 	languageIds: number[];
+	hidden: boolean;
+	/** Причина скрытия на сербском — её видит владелец клиники. */
+	hiddenReason: string;
 }
 
 export default defineEventHandler(
@@ -58,6 +61,8 @@ export default defineEventHandler(
 				SELECT
 					c.id,
 					c.slug,
+					c.hidden,
+					c.hidden_reason,
 					c.name_sr,
 					c.name_ru,
 					c.name_sr_cyrl,
@@ -139,6 +144,8 @@ export default defineEventHandler(
 				languageIds: clinic.languageIds
 					? clinic.languageIds.split(',').map(Number)
 					: [1],
+				hidden: Boolean(clinic.hidden),
+				hiddenReason: clinic.hidden_reason || '',
 			};
 		} catch (error) {
 			console.error('API Error - clinic admin details:', error);

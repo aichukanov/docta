@@ -1,4 +1,6 @@
 import { CLINIC_ITEMS_INLINE_THRESHOLD } from '~/common/constants';
+import { doctorIsPublicSql } from '~/server/common/doctor-visibility';
+import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 import { getConnection } from '~/server/common/db-mysql';
 
 export interface ClinicSubpageSlugs {
@@ -21,7 +23,7 @@ export async function getClinicSubpageSlugs(
 			SELECT c.slug
 			FROM clinics c
 			JOIN clinic_medical_services cms ON cms.clinic_id = c.id
-			WHERE c.status = 'published'
+			WHERE ${clinicIsPublicSql('c')}
 			GROUP BY c.id, c.slug
 			HAVING COUNT(DISTINCT cms.medical_service_id) > ?
 		`,
@@ -29,7 +31,7 @@ export async function getClinicSubpageSlugs(
 			SELECT c.slug
 			FROM clinics c
 			JOIN clinic_lab_tests clt ON clt.clinic_id = c.id
-			WHERE c.status = 'published'
+			WHERE ${clinicIsPublicSql('c')}
 			GROUP BY c.id, c.slug
 			HAVING COUNT(DISTINCT clt.lab_test_id) > ?
 		`,
@@ -37,7 +39,7 @@ export async function getClinicSubpageSlugs(
 			SELECT c.slug
 			FROM clinics c
 			JOIN clinic_medications cm ON cm.clinic_id = c.id
-			WHERE c.status = 'published'
+			WHERE ${clinicIsPublicSql('c')}
 			GROUP BY c.id, c.slug
 			HAVING COUNT(DISTINCT cm.medication_id) > ?
 		`,
@@ -46,8 +48,8 @@ export async function getClinicSubpageSlugs(
 			FROM clinics c
 			JOIN doctor_clinics dc ON dc.clinic_id = c.id
 			JOIN doctors d ON d.id = dc.doctor_id
-				AND d.hidden = FALSE AND d.is_draft = FALSE
-			WHERE c.status = 'published'
+				AND ${doctorIsPublicSql('d')}
+			WHERE ${clinicIsPublicSql('c')}
 			GROUP BY c.id, c.slug
 			HAVING COUNT(DISTINCT dc.doctor_id) > ?
 		`,

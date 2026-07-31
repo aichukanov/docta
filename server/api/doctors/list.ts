@@ -1,4 +1,5 @@
 import { LIST_PAGE_SIZE } from '~/common/constants';
+import { doctorIsPublicSql } from '~/server/common/doctor-visibility';
 import {
 	validateBody,
 	validateCityIds,
@@ -7,6 +8,7 @@ import {
 	validateSpecialtyIds,
 } from '~/common/validation';
 import type { DoctorList } from '~/interfaces/doctor';
+import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 import { getConnection } from '~/server/common/db-mysql';
 import {
 	getServicesForDoctors,
@@ -79,8 +81,7 @@ export async function getDoctorList(
 	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
 
 	if (!body.includeHidden) {
-		whereFilters.push('d.hidden = FALSE');
-		whereFilters.push('d.is_draft = FALSE');
+		whereFilters.push(doctorIsPublicSql('d'));
 	}
 
 	const buildInPlaceholders = (values: Array<number | string>) => {
@@ -99,7 +100,7 @@ export async function getDoctorList(
 
 	if (body.cityIds != null && body.cityIds.length > 0) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinics c ON dc.clinic_id = c.id WHERE dc.doctor_id = d.id AND c.city_id IN (${buildInPlaceholders(
+			`EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinics c ON dc.clinic_id = c.id AND ${clinicIsPublicSql('c')} WHERE dc.doctor_id = d.id AND c.city_id IN (${buildInPlaceholders(
 				body.cityIds,
 			)}))`,
 		);
@@ -122,13 +123,11 @@ export async function getDoctorList(
 			whereFilters.push(
 				`(EXISTS (SELECT 1 FROM doctor_languages dl WHERE dl.doctor_id = d.id AND dl.language_id IN (${buildInPlaceholders(
 					body.languageIds,
-				)})) OR EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id WHERE dc.doctor_id = d.id AND cl.language_id IN (${buildInPlaceholders(
+				)})) OR EXISTS (SELECT 1 FROM doctor_clinics dc JOIN clinic_languages cl ON dc.clinic_id = cl.clinic_id JOIN clinics c_pub ON c_pub.id = dc.clinic_id AND ${clinicIsPublicSql('c_pub')} WHERE dc.doctor_id = d.id AND cl.language_id IN (${buildInPlaceholders(
 					body.languageIds,
 				)})${
 					cityIdsForLang
-						? ` AND EXISTS (SELECT 1 FROM clinics c_lang WHERE c_lang.id = dc.clinic_id AND c_lang.city_id IN (${buildInPlaceholders(
-								cityIdsForLang,
-							)}))`
+						? ` AND c_pub.city_id IN (${buildInPlaceholders(cityIdsForLang)})`
 						: ''
 				}))`,
 			);
@@ -161,7 +160,7 @@ export async function getDoctorList(
 	const selectCityIds = body.cityIds ?? [];
 	const cityFilterInClinicIds =
 		selectCityIds.length > 0
-			? ` AND EXISTS (SELECT 1 FROM clinics dc_city WHERE dc_city.id = dc.clinic_id AND dc_city.city_id IN (${selectCityIds.map(() => '?').join(',')}))`
+			? ` AND EXISTS (SELECT 1 FROM clinics dc_city WHERE dc_city.id = dc.clinic_id AND ${clinicIsPublicSql('dc_city')} AND dc_city.city_id IN (${selectCityIds.map(() => '?').join(',')}))`
 			: '';
 	const selectCityParams: Array<number | string> = [...selectCityIds];
 
@@ -204,7 +203,7 @@ export async function getDoctorList(
 				d.website,
 				(SELECT GROUP_CONCAT(DISTINCT ds.specialty_id ORDER BY ds.specialty_id) FROM doctor_specialties ds WHERE ds.doctor_id = d.id) as specialtyIds,
 				(SELECT GROUP_CONCAT(DISTINCT dl.language_id ORDER BY dl.language_id) FROM doctor_languages dl WHERE dl.doctor_id = d.id) as languageIds,
-				(SELECT GROUP_CONCAT(DISTINCT dc.clinic_id ORDER BY dc.clinic_id) FROM doctor_clinics dc WHERE dc.doctor_id = d.id${cityFilterInClinicIds}) as clinicIds,
+				(SELECT COALESCE(GROUP_CONCAT(DISTINCT dc.clinic_id ORDER BY dc.clinic_id), '') FROM doctor_clinics dc JOIN clinics c_pub ON c_pub.id = dc.clinic_id AND ${clinicIsPublicSql('c_pub')} WHERE dc.doctor_id = d.id${cityFilterInClinicIds}) as clinicIds,
 				(SELECT ROUND(AVG(r.rating), 1) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL AND r.status != 'rejected') as averageRating,
 				(SELECT COUNT(*) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL AND r.status != 'rejected') as totalReviews
 			FROM doctors d

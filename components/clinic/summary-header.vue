@@ -172,6 +172,13 @@ const reviewsLink = computed(() => {
 					</template>
 					<template v-else>{{ t('PriceUnknown') }}</template>
 				</div>
+				<!-- После цены: сначала пациент видит, сколько стоит, потом — что на
+				     это есть купон. Ведёт в таб купонов клиники -->
+				<ClinicCouponBadge
+					:coupon="clinic.coupon"
+					:clinicSlug="clinic.slug"
+					:clinicId="clinic.id"
+				/>
 			</div>
 
 			<div class="clinic-address">

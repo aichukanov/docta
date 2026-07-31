@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import clinicProfileI18n from '~/i18n/clinic-profile';
+import { PROJECT_CONTACTS } from '~/common/constants';
 import { getRegionalQuery } from '~/common/url-utils';
 import type { ClinicStatus } from '~/interfaces/clinic';
 
 const props = defineProps<{
 	status: ClinicStatus;
+	// Скрыта администратором: публично страницы не существует, статус при этом
+	// сохраняется как был (см. clinics.hidden)
+	hidden?: boolean;
+	/** Причина скрытия, написанная админом на сербском (может быть пустой). */
+	hiddenReason?: string;
 	clinicSlug: string;
 	isToggling: boolean;
 }>();
@@ -19,7 +25,12 @@ const { t, locale } = useI18n({
 	messages: clinicProfileI18n.messages,
 });
 
+// Скрытие админом важнее любого статуса: страницы публично нет, и публиковать
+// её владелец не может, пока админ не снял флаг.
+const statusKind = computed(() => (props.hidden ? 'hidden' : props.status));
+
 const statusLabel = computed(() => {
+	if (props.hidden) return t('StatusHiddenByAdmin');
 	const map: Record<ClinicStatus, string> = {
 		draft: t('StatusDraft'),
 		published: t('StatusPublished'),
@@ -30,6 +41,7 @@ const statusLabel = computed(() => {
 });
 
 const statusDesc = computed(() => {
+	if (props.hidden) return t('StatusHiddenByAdminDesc');
 	const map: Record<ClinicStatus, string> = {
 		draft: t('StatusDraftDesc'),
 		published: t('StatusPublishedDesc'),
@@ -40,10 +52,13 @@ const statusDesc = computed(() => {
 });
 
 const canPublish = computed(
-	() => props.status === 'draft' || props.status === 'rejected',
+	() =>
+		!props.hidden && (props.status === 'draft' || props.status === 'rejected'),
 );
 const canHide = computed(
-	() => props.status === 'published' || props.status === 'pending_verification',
+	() =>
+		!props.hidden &&
+		(props.status === 'published' || props.status === 'pending_verification'),
 );
 
 const clinicLink = computed(() => ({
@@ -54,18 +69,33 @@ const clinicLink = computed(() => ({
 </script>
 
 <template>
-	<div class="status-block" :class="`status-block--${status}`">
+	<div class="status-block" :class="`status-block--${statusKind}`">
 		<div class="status-block__header">
 			<span class="status-block__badge">
-				<IconCheck v-if="status === 'published'" :size="14" />
+				<IconCheck v-if="statusKind === 'published'" :size="14" />
 				<IconLock v-else :size="14" />
 				{{ statusLabel }}
 			</span>
 		</div>
 		<p class="status-block__desc">{{ statusDesc }}</p>
 
+		<!-- Почему скрыли и что сделать, чтобы вернуться. Причина написана
+		     администратором на сербском — помечаем именно её. -->
+		<div v-if="hidden" class="status-block__reason">
+			<p v-if="hiddenReason" class="status-block__reason-text">
+				<span class="status-block__reason-label">{{ t('HiddenReason') }}</span>
+				<span lang="sr">{{ hiddenReason }}</span>
+			</p>
+			<p class="status-block__reason-action">
+				{{ t('HiddenReasonAction') }}
+				<a :href="`mailto:${PROJECT_CONTACTS.email}`">
+					{{ PROJECT_CONTACTS.email }}
+				</a>
+			</p>
+		</div>
+
 		<div class="status-block__actions">
-			<NuxtLink :to="clinicLink" target="_blank">
+			<NuxtLink v-if="!hidden" :to="clinicLink" target="_blank">
 				<el-button size="small" type="primary">
 					{{ t('BtnView') }}
 				</el-button>
@@ -113,7 +143,8 @@ const clinicLink = computed(() => ({
 	border-color: var(--color-success-border);
 }
 
-.status-block--rejected {
+.status-block--rejected,
+.status-block--hidden {
 	background: var(--color-danger-bg);
 	border-color: var(--color-danger-border);
 }
@@ -146,7 +177,8 @@ const clinicLink = computed(() => ({
 	color: var(--color-primary-green);
 }
 
-.status-block--rejected .status-block__badge {
+.status-block--rejected .status-block__badge,
+.status-block--hidden .status-block__badge {
 	background: var(--color-danger-border);
 	color: var(--color-danger-dark);
 }
@@ -156,6 +188,34 @@ const clinicLink = computed(() => ({
 	color: var(--color-text-secondary);
 	margin: 0;
 	line-height: 1.5;
+}
+
+.status-block__reason {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+	padding: var(--spacing-md);
+	background: var(--color-bg-primary);
+	border: 1px solid var(--color-danger-border);
+	border-radius: var(--border-radius-md);
+}
+
+.status-block__reason-text,
+.status-block__reason-action {
+	margin: 0;
+	font-size: var(--font-size-sm);
+	color: var(--color-text-primary);
+	line-height: 1.5;
+}
+
+.status-block__reason-action {
+	color: var(--color-text-secondary);
+}
+
+.status-block__reason-label {
+	font-weight: var(--font-weight-semibold);
+	margin-right: var(--spacing-xs);
+	color: var(--color-danger-dark);
 }
 
 .status-block__actions {

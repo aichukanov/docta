@@ -1,4 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 import {
 	parseClinicPricesData,
 	getClinicRankOrderBySQL,
@@ -40,7 +41,7 @@ export default defineEventHandler(
 				(
 					SELECT GROUP_CONCAT(cm.clinic_id ORDER BY ${rankOrder})
 					FROM clinic_medications cm
-					JOIN clinics c_rank ON c_rank.id = cm.clinic_id AND c_rank.status = 'published'
+					JOIN clinics c_rank ON c_rank.id = cm.clinic_id AND ${clinicIsPublicSql('c_rank')}
 					WHERE cm.medication_id = m.id
 				) as clinicIds,
 				(
@@ -49,7 +50,7 @@ export default defineEventHandler(
 						ORDER BY ${rankOrder}
 					)
 					FROM clinic_medications cm
-					JOIN clinics c_rank ON c_rank.id = cm.clinic_id AND c_rank.status = 'published'
+					JOIN clinics c_rank ON c_rank.id = cm.clinic_id AND ${clinicIsPublicSql('c_rank')}
 					WHERE cm.medication_id = m.id
 				) as clinicPricesData
 			FROM medications m

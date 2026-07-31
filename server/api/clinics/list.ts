@@ -1,4 +1,6 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
+import { fetchClinicCoupons } from '~/server/common/clinic-coupons';
 import { getCurrentUser } from '~/server/common/auth';
 import {
 	processLocalizedNameForClinicOrDoctor,
@@ -138,7 +140,7 @@ export async function getClinicList(
 	// и админу — как на детальной странице).
 	const whereFilters: string[] = opts.includeUnpublished
 		? []
-		: [`c.status = 'published'`];
+		: [clinicIsPublicSql('c')];
 	const queryParams: Array<number | string> = [];
 	const locale = body.locale || 'en';
 	const usePagination = body.page != null;
@@ -328,6 +330,10 @@ export async function getClinicList(
 	]);
 	await connection.end();
 
+	// Купоны — по всем клиникам сразу: их единицы, а стор всё равно тянет
+	// справочник целиком (stores/clinics.ts)
+	const coupons = await fetchClinicCoupons();
+
 	// Обрабатываем локализованные имена, town, address и description
 	let processedClinics = (clinics as any[]).map((clinic: any) => {
 		const { name, localName } = processLocalizedNameForClinicOrDoctor(
@@ -360,6 +366,7 @@ export async function getClinicList(
 			description,
 			languageIds: clinic.languageIds,
 			features,
+			coupon: coupons.get(clinic.id),
 			name,
 			localName,
 			address,

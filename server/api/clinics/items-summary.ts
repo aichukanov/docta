@@ -1,7 +1,11 @@
 import { fetchClinicItemsSummary } from '~/server/common/clinic-items-summary';
+import { GONE_PAYLOAD, type GonePayload } from '~/common/gone';
+import { getCurrentUser } from '~/server/common/auth';
 import { getConnection } from '~/server/common/db-mysql';
 import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
-import type { ClinicItemsSummary } from '~/interfaces/clinic';
+import { fetchClinicCoupons } from '~/server/common/clinic-coupons';
+import type { ClinicItemsSummary, ClinicStatus } from '~/interfaces/clinic';
+import type { ClinicCoupon } from '~/interfaces/clinic-coupon';
 import { validateBody } from '~/common/validation';
 
 export interface ClinicItemsSummaryResponse {
@@ -10,10 +14,19 @@ export interface ClinicItemsSummaryResponse {
 	name: string;
 	localName: string;
 	itemsSummary: ClinicItemsSummary;
+	// Купон нужен подстраницам с ценами — у крупных клиник основной список
+	// услуг живёт здесь, а не на главной странице клиники
+	coupon?: ClinicCoupon;
+	// Непубличная клиника: подстраница доезжает только до владельца и админа
+	// и рисует ту же плашку, что и главная страница клиники
+	status?: ClinicStatus;
+	hidden?: boolean;
+	hiddenReason?: string;
+	isOwner?: boolean;
 }
 
 export default defineEventHandler(
-	async (event): Promise<ClinicItemsSummaryResponse | null> => {
+	async (event): Promise<ClinicItemsSummaryResponse | GonePayload | null> => {
 		try {
 			const body = await readBody(event);
 
@@ -28,17 +41,33 @@ export default defineEventHandler(
 
 			const locale = body.locale || 'en';
 			const connection = await getConnection();
+			// Статус, hidden и владельца читаем, а не фильтруем в SQL: подстранице
+			// нужно отличить «нет такой клиники» (404) от «скрыта админом» (410),
+			// а владельцу и админу — показать содержимое с плашкой.
 			const [rows] = await connection.execute(
-				`SELECT id, slug, name_sr, name_sr_cyrl, name_ru FROM clinics
-				WHERE slug = ? AND status = 'published' LIMIT 1`,
+				`SELECT id, slug, status, hidden, hidden_reason, created_by,
+					name_sr, name_sr_cyrl, name_ru
+				FROM clinics WHERE slug = ? LIMIT 1`,
 				[body.slug],
 			);
 			await connection.end();
 
 			const clinic = (rows as any[])[0];
-			// Clinic subpages are public content. Drafts must look missing even
-			// to their owner or an administrator, before redirect logic can run.
-			if (!clinic) {
+			const currentUser = await getCurrentUser(event);
+			const isOwner =
+				!!currentUser &&
+				clinic?.created_by != null &&
+				currentUser.id === clinic.created_by;
+			const canSeeNonPublic = isOwner || !!currentUser?.is_admin;
+
+			// Права те же, что на главной странице клиники (clinics/details.ts).
+			// Статус ответа ставит страница, а не эндпоинт: любой не-2xx ответ
+			// здесь useFetch считает ошибкой и обнуляет data — маркер до
+			// страницы не доехал бы, и подстраница отдала бы 404 вместо 410.
+			if (clinic?.hidden && !canSeeNonPublic) {
+				return GONE_PAYLOAD;
+			}
+			if (!clinic || (clinic.status !== 'published' && !canSeeNonPublic)) {
 				setResponseStatus(event, 404, 'Clinic not found');
 				return null;
 			}
@@ -48,6 +77,7 @@ export default defineEventHandler(
 				locale,
 			);
 			const itemsSummary = await fetchClinicItemsSummary(clinic.id, locale);
+			const coupon = (await fetchClinicCoupons(clinic.id)).get(clinic.id);
 
 			return {
 				id: clinic.id,
@@ -55,6 +85,11 @@ export default defineEventHandler(
 				name,
 				localName,
 				itemsSummary,
+				coupon,
+				status: clinic.status as ClinicStatus,
+				hidden: Boolean(clinic.hidden),
+				hiddenReason: clinic.hidden_reason || '',
+				isOwner,
 			};
 		} catch (error) {
 			console.error('API Error - clinic items-summary:', error);

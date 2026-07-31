@@ -110,6 +110,8 @@ export interface OwnedClinicRow {
 	id: number;
 	slug: string;
 	status: ClinicStatus;
+	/** Скрыта администратором: владелец не может её опубликовать. */
+	hidden: boolean;
 	created_by: number | null;
 	name_sr: string;
 	address_sr: string;
@@ -136,7 +138,7 @@ export async function getOwnedClinic(
 	user: User,
 ): Promise<OwnedClinicRow> {
 	const [rows]: any = await connection.execute(
-		`SELECT id, slug, status, created_by, name_sr, address_sr, postal_code,
+		`SELECT id, slug, status, hidden, created_by, name_sr, address_sr, postal_code,
 			latitude, longitude,
 			phone, email, website, facebook, instagram, telegram, whatsapp, viber
 		 FROM clinics WHERE id = ?`,

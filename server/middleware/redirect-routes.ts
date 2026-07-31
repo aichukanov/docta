@@ -13,6 +13,9 @@ export default defineEventHandler(async (event) => {
 		return sendSitemap(event, await generateSitemapPage());
 	} else if (
 		pathArray[0] === 'api' ||
+		// технические страницы авторизации: локаль в URL им не нужна, а лишний
+		// редирект только мешает (данные Telegram приезжают в hash-фрагменте)
+		pathArray[0] === 'auth' ||
 		pathArray[0] === 'uploads' ||
 		pathArray[0] === 'ads' ||
 		pathArray[0] === 'search' ||

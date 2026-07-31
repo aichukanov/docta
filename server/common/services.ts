@@ -1,4 +1,5 @@
 import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
+import { doctorIsPublicSql } from '~/server/common/doctor-visibility';
 import type {
 	ClinicSummaryService,
 	ClinicServicesByClinicId,
@@ -210,7 +211,7 @@ export async function getDoctorsForServiceByClinic(
 	const [exactRows] = await connection.execute(
 		`SELECT cmsd.clinic_id AS clinicId, cmsd.doctor_id AS doctorId
 		 FROM clinic_medical_service_doctors cmsd
-		 JOIN doctors d ON d.id = cmsd.doctor_id AND d.hidden = 0 AND d.is_draft = 0
+		 JOIN doctors d ON d.id = cmsd.doctor_id AND ${doctorIsPublicSql('d')}
 		 WHERE cmsd.medical_service_id = ? AND cmsd.clinic_id IN (${clinicPlaceholders})
 		 ORDER BY cmsd.clinic_id, cmsd.id`,
 		[medicalServiceId, ...clinicIds],
@@ -240,7 +241,7 @@ export async function getDoctorsForServiceByClinic(
 			 JOIN medical_services_specialties mss
 			   ON mss.specialty_id = ds.specialty_id
 			   AND mss.medical_service_id = cms.medical_service_id
-			 JOIN doctors d ON d.id = dc.doctor_id AND d.hidden = 0 AND d.is_draft = 0
+			 JOIN doctors d ON d.id = dc.doctor_id AND ${doctorIsPublicSql('d')}
 			 WHERE cms.medical_service_id = ?
 			   AND cms.clinic_id IN (${fbPlaceholders})
 			 GROUP BY dc.clinic_id, d.id, d.rank_score

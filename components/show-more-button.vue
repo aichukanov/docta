@@ -1,7 +1,17 @@
 <script setup lang="ts">
-defineProps<{
-	label: string;
-}>();
+withDefaults(
+	defineProps<{
+		label: string;
+		/**
+		 * Кнопка лежит поверх затухающего края контента, а не отдельной строкой
+		 * под ним. Для блоков, свёрнутых по высоте (см. CollapsibleContent и таб
+		 * купонов): строкой кнопка добавляет блоку ~60 px, а затухание и так
+		 * показывает, что содержимое продолжается.
+		 */
+		overlay?: boolean;
+	}>(),
+	{ overlay: false },
+);
 
 defineEmits<{
 	click: [];
@@ -9,7 +19,11 @@ defineEmits<{
 </script>
 
 <template>
-	<button class="show-more-button" @click="$emit('click')">
+	<button
+		class="show-more-button"
+		:class="{ 'show-more-button--overlay': overlay }"
+		@click="$emit('click')"
+	>
 		{{ label }}
 	</button>
 </template>
@@ -36,6 +50,18 @@ defineEmits<{
 	&:hover {
 		border-color: var(--color-primary);
 		background: rgba(79, 70, 229, 0.04);
+	}
+
+	/* Родителю нужен position: relative — он владеет затуханием */
+	&--overlay {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: var(--spacing-sm);
+		background: rgba(255, 255, 255, 0.85);
+		backdrop-filter: blur(2px);
+		border-color: var(--color-border-secondary);
 	}
 }
 </style>

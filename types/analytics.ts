@@ -98,6 +98,25 @@ export interface MapOpenedProperties {
 /** Клик по маркеру/попапу клиники на карте */
 export interface MapMarkerClickedProperties extends Partial<AnalyticsEntityRef> {}
 
+/**
+ * Открытие купона на скидку («Показать купон» на странице клиники) — единственный
+ * измеримый шаг воронки купона: дальше пациент показывает экран на ресепшене.
+ */
+export interface CouponOpenedProperties extends AnalyticsEntityRef {
+	discount_percent: number;
+	/** Партнёр, чью акцию транслируем; у собственных купонов отсутствует */
+	coupon_source?: string;
+}
+
+/** Куда пациент отправил купон. 'native' — системное меню «Поделиться» */
+export type AnalyticsShareChannel = 'telegram' | 'facebook' | 'native';
+
+/** Клик по кнопке «Поделиться» у купона */
+export interface CouponSharedProperties extends AnalyticsEntityRef {
+	share_channel: AnalyticsShareChannel;
+	discount_percent: number;
+}
+
 /** Имя события → интерфейс его свойств. Источник истины для trackEvent. */
 export interface AnalyticsEvents {
 	entity_viewed: EntityViewedProperties;
@@ -109,6 +128,8 @@ export interface AnalyticsEvents {
 	filter_cleared: FilterClearedProperties;
 	map_opened: MapOpenedProperties;
 	map_marker_clicked: MapMarkerClickedProperties;
+	coupon_opened: CouponOpenedProperties;
+	coupon_shared: CouponSharedProperties;
 }
 
 export type AnalyticsEventName = keyof AnalyticsEvents;

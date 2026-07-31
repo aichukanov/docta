@@ -44,6 +44,8 @@ export const VALID_CATEGORIES = [
 	'doctors',
 	'clinics',
 	'insurance-companies',
+	// Визуал купона на скидку — его пациент показывает на ресепшене
+	'coupons',
 ] as const;
 
 export type ImageCategory = (typeof VALID_CATEGORIES)[number];

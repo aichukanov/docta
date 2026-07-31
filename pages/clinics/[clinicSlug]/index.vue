@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ClinicServicesMap } from '#components';
-import { Clock } from '@element-plus/icons-vue';
+import { Clock, Discount } from '@element-plus/icons-vue';
 import { formatClinicAddressLine } from '~/common/clinic-address';
 import {
 	CLINIC_ITEMS_INLINE_THRESHOLD,
@@ -9,6 +9,12 @@ import {
 	SITE_NAME,
 	SITE_URL,
 } from '~/common/constants';
+import {
+	buildCouponScopePhrase,
+	buildCouponTitle,
+	getCouponOgImageUrl,
+} from '~/common/clinic-coupon';
+import { isGonePayload } from '~/common/gone';
 import {
 	buildBreadcrumbsSchema,
 	buildClinicSchema,
@@ -23,6 +29,7 @@ import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import clinicI18n from '~/i18n/clinic';
 import clinicCommonI18n from '~/i18n/clinic-common';
+import clinicCouponI18n from '~/i18n/clinic-coupon';
 import clinicTypeI18n from '~/i18n/clinic-type';
 import labTestCategoryI18n from '~/i18n/labtest-category';
 import languageI18n from '~/i18n/language';
@@ -47,6 +54,7 @@ const { t, locale } = useI18n({
 		breadcrumbI18n,
 		clinicI18n,
 		clinicCommonI18n,
+		clinicCouponI18n,
 		clinicTypeI18n,
 		languageI18n,
 		cityI18n,
@@ -62,7 +70,7 @@ const route = useRoute();
 const clinicSlug = computed(() => route.params.clinicSlug as string);
 const clinicId = computed(() => clinicData.value?.id);
 
-const { pending: isLoading, data: clinicData } = await useFetch(
+const { pending: isLoading, data: clinicPayload } = await useFetch(
 	'/api/clinics/details',
 	{
 		key: 'clinic-details',
@@ -72,6 +80,12 @@ const { pending: isLoading, data: clinicData } = await useFetch(
 			locale: locale.value,
 		})),
 	},
+);
+
+// Скрытую админом клинику эндпоинт отдаёт маркером `{ gone: true }` вместо
+// данных, чтобы страница ответила 410, а не 404 (см. common/gone.ts).
+const clinicData = computed(() =>
+	isGonePayload(clinicPayload.value) ? null : clinicPayload.value,
 );
 
 const { trackEvent } = useAnalytics();
@@ -215,9 +229,32 @@ const hasWorkingHours = computed(() => {
 
 const isFound = computed(() => clinicData.value?.id != null);
 
+// Непубличная клиника (скрыта админом или черновик) — такие данные доезжают
+// только до владельца и админа
+const isNonPublicClinic = computed(
+	() =>
+		isFound.value &&
+		(clinicData.value?.hidden === true ||
+			(clinicData.value?.status != null &&
+				clinicData.value.status !== 'published')),
+);
+
 const localizedName = computed(() =>
 	getLocalizedName(clinicData.value, locale.value),
 );
+
+// Купон: заголовок таба-секции — сама скидка («Скидка 10% на медицинские
+// услуги»), а оговорка про лабораторию нужна только клиникам с анализами
+const coupon = computed(() => clinicData.value?.coupon ?? null);
+const couponTitle = computed(() =>
+	coupon.value ? buildCouponTitle(coupon.value, t, locale.value) : '',
+);
+// В заголовке таба процент уже стоит в купонном чипе, поэтому рядом — только
+// «на что действует», без повтора скидки
+const couponScopePhrase = computed(() =>
+	coupon.value ? buildCouponScopePhrase(coupon.value, t, locale.value) : '',
+);
+const hasLabtests = computed(() => totals.value.labtests > 0);
 
 const clinicTypeNames = computed(() => {
 	if (!clinicData.value?.clinicTypeIds) return [];
@@ -228,9 +265,9 @@ const clinicTypeNames = computed(() => {
 		.map((id) => t(`clinic_type_${id}`));
 });
 
-// Set HTTP 404 status for not found clinic
-if (import.meta.server && !isFound.value) {
-	setResponseStatus(useRequestEvent()!, 404);
+// 404 для отсутствующей клиники, 410 — для скрытой администратором
+if (!isFound.value) {
+	setMissingEntityStatus(clinicPayload.value);
 }
 
 const clinicDescription = computed(() => {
@@ -319,6 +356,10 @@ const specialtyTitle = (id: number) => t(`specialty_${id}`);
 
 const tabs = computed(() => {
 	const result = [];
+	// Купоны — первым табом: единственное на странице, что экономит деньги
+	if (coupon.value) {
+		result.push({ id: 'coupons', label: t('CouponTab') });
+	}
 	if (clinicDescription.value) {
 		result.push({ id: 'about', label: t('TabAbout') });
 	}
@@ -548,25 +589,47 @@ const allReviewsLink = computed(() => {
 
 const schemaOrgStore = useSchemaOrgStore();
 
-// Черновик виден только владельцу/админу — даже им страница отдаётся с noindex
+// Черновик виден только владельцу/админу, скрытая админом клиника — только
+// админу; даже им страница отдаётся с noindex
 const robotsMeta = computed(() =>
-	isFound.value && clinicData.value?.status === 'published'
+	isFound.value &&
+	clinicData.value?.status === 'published' &&
+	!clinicData.value?.hidden
 		? undefined
 		: 'noindex',
+);
+
+// Если у клиники есть купон с картинкой, превью ссылки — сам купон: им делятся
+// именно ради скидки. Заголовок превью тоже ведёт со скидки, а не с названия
+// клиники. На <title> и meta description это не влияет — там SEO-текст.
+const couponOgImage = computed(() =>
+	coupon.value ? getCouponOgImageUrl(coupon.value, SITE_URL) : null,
+);
+const ogImageUrl = computed(() => couponOgImage.value ?? OG_IMAGE);
+const ogTitleText = computed(() =>
+	couponOgImage.value && couponTitle.value
+		? `${couponTitle.value} — ${localizedName.value}`
+		: pageTitle.value,
 );
 
 useSeoMeta({
 	title: pageTitle,
 	description: pageDescription,
-	ogTitle: pageTitle,
+	ogTitle: ogTitleText,
 	ogDescription: pageDescription,
-	ogImage: OG_IMAGE,
+	ogImage: ogImageUrl,
+	// Размеры проставляем только для купона — он рисуется под 1200×630, и с
+	// ними Facebook показывает превью сразу, не дожидаясь своей загрузки
+	ogImageWidth: computed(() => (couponOgImage.value ? 1200 : undefined)),
+	ogImageHeight: computed(() => (couponOgImage.value ? 630 : undefined)),
 	// og:type business.business валиден для Facebook, но отсутствует в union-типе useSeoMeta
 	ogType: 'business.business' as 'website',
-	twitterCard: 'summary',
-	twitterTitle: pageTitle,
+	twitterCard: computed(() =>
+		couponOgImage.value ? 'summary_large_image' : 'summary',
+	),
+	twitterTitle: ogTitleText,
 	twitterDescription: pageDescription,
-	twitterImage: OG_IMAGE,
+	twitterImage: ogImageUrl,
 	robots: robotsMeta,
 });
 
@@ -676,9 +739,15 @@ watchEffect(() => {
 		:tabs="tabs"
 	>
 		<template #hero>
+			<!-- Непубличную клинику получают только владелец и админ: баннер
+			     объясняет, почему пациенты её не видят. Для админа это
+			     единственный признак, что страница скрыта. -->
 			<ClinicOwnerBanner
-				v-if="clinicData?.isOwner"
+				v-if="clinicData && (clinicData.isOwner || isNonPublicClinic)"
 				:status="clinicData.status"
+				:hidden="clinicData.hidden"
+				:hiddenReason="clinicData.hiddenReason"
+				:isOwner="clinicData.isOwner"
 			/>
 			<ClinicHero
 				v-if="clinicData"
@@ -691,6 +760,28 @@ watchEffect(() => {
 		</template>
 
 		<template #sections>
+			<!-- Coupons -->
+			<EntityPageSection v-if="coupon && clinicData" sectionId="coupons">
+				<template #icon>
+					<el-icon :size="20"><Discount /></el-icon>
+				</template>
+				<!-- Заголовок = купонный талон + на что действует: «просто скидка» в
+				     заголовке читалась как шум, слово «купон» обязательно -->
+				<template #title>
+					<span class="coupon-title">
+						<ClinicCouponBadge :coupon="coupon" :withTooltip="false" />
+						<span class="coupon-scope">{{ couponScopePhrase }}</span>
+					</span>
+				</template>
+				<ClinicCouponSection
+					:coupon="coupon"
+					:clinicId="clinicData.id"
+					:clinicSlug="clinicData.slug"
+					:clinicName="localizedName"
+					:hasLabtests="hasLabtests"
+				/>
+			</EntityPageSection>
+
 			<!-- About -->
 			<EntityPageSection
 				v-if="clinicDescription"
@@ -1139,6 +1230,20 @@ watchEffect(() => {
 </i18n>
 
 <style lang="less" scoped>
+.coupon-title {
+	display: inline-flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: var(--spacing-sm);
+}
+
+/* «на медицинские услуги и анализы» рядом с купонным чипом — обычным весом,
+   акцент держит чип */
+.coupon-scope {
+	font-weight: var(--font-weight-medium);
+	color: var(--color-text-secondary);
+}
+
 .clinic-services {
 	display: flex;
 	flex-direction: column;

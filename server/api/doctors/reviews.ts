@@ -1,6 +1,12 @@
 import { validateBody } from '~/common/validation';
+import { GONE_PAYLOAD } from '~/common/gone';
 import { REVIEWS_PAGE_SIZE, REVIEWS_THRESHOLD } from '~/common/constants';
+import {
+	isDoctorHiddenByAdmin,
+	isDoctorPublic,
+} from '~/server/common/doctor-visibility';
 import { getCurrentUser } from '~/server/common/auth';
+import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 import { getConnection } from '~/server/common/db-mysql';
 import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
 import {
@@ -45,22 +51,25 @@ export default defineEventHandler(async (event) => {
 				d.professional_title as professionalTitle,
 				d.photo_url as photoUrl,
 				d.hidden,
+				d.hidden_by_admin,
 				d.is_draft,
 				GROUP_CONCAT(DISTINCT s.id ORDER BY s.id) as specialtyIds,
-				GROUP_CONCAT(DISTINCT dc.clinic_id ORDER BY dc.clinic_id) as clinicIds
+				-- только публичные клиники (см. doctors/details.ts)
+				COALESCE(GROUP_CONCAT(DISTINCT c.id ORDER BY c.id), '') as clinicIds
 			FROM doctors d
 			LEFT JOIN doctor_specialties ds ON d.id = ds.doctor_id
 			LEFT JOIN specialties s ON ds.specialty_id = s.id
 			LEFT JOIN doctor_clinics dc ON d.id = dc.doctor_id
+			LEFT JOIN clinics c ON c.id = dc.clinic_id AND ${clinicIsPublicSql('c')}
 			WHERE d.slug = ?
 			GROUP BY d.id
 		`;
 		const [doctorRows] = await connection.execute(doctorQuery, [body.slug]);
 		const doctor = (doctorRows as any[])[0];
 
-		if (!doctor || doctor.hidden || doctor.is_draft) {
+		if (!doctor || !isDoctorPublic(doctor)) {
 			await connection.end();
-			return null;
+			return doctor && isDoctorHiddenByAdmin(doctor) ? GONE_PAYLOAD : null;
 		}
 
 		const rating: Rating = await fetchRating(connection, 'doctor', doctor.id);

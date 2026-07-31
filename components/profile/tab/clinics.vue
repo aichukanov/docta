@@ -56,6 +56,8 @@ async function setStatus(clinic: ClinicMyListItem, action: 'publish' | 'hide') {
 	} catch (e: any) {
 		if (e?.data?.data?.code === ERROR_CODES.CLINIC_INCOMPLETE) {
 			ElMessage.warning(t('ErrorClinicIncomplete'));
+		} else if (e?.data?.data?.code === ERROR_CODES.CLINIC_HIDDEN_BY_ADMIN) {
+			ElMessage.warning(t('ErrorClinicHiddenByAdmin'));
 		} else {
 			ElMessage.error(t('ErrorUpdatingStatus'));
 		}

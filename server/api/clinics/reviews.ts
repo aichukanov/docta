@@ -1,4 +1,5 @@
 import { validateBody } from '~/common/validation';
+import { GONE_PAYLOAD } from '~/common/gone';
 import { REVIEWS_PAGE_SIZE, REVIEWS_THRESHOLD } from '~/common/constants';
 import { getCurrentUser } from '~/server/common/auth';
 import { getConnection } from '~/server/common/db-mysql';
@@ -43,16 +44,24 @@ export default defineEventHandler(async (event) => {
 				c.name_sr_cyrl,
 				c.city_id as cityId,
 				c.logo_url as logoUrl,
+				c.status,
+				c.hidden,
 				COALESCE(GROUP_CONCAT(DISTINCT cct.clinic_type_id ORDER BY cct.clinic_type_id), '') as clinicTypeIds
 			FROM clinics c
 			LEFT JOIN clinic_clinic_types cct ON c.id = cct.clinic_id
-			WHERE c.slug = ? AND c.status = 'published'
+			WHERE c.slug = ?
 			GROUP BY c.id
 		`;
 		const [clinicRows] = await connection.execute(clinicQuery, [body.slug]);
 		const clinic = (clinicRows as any[])[0];
 
-		if (!clinic) {
+		// Скрытую админом клинику отдаём маркером — страница ответит 410,
+		// остальные непубличные (черновики) и отсутствующие — 404.
+		if (clinic?.hidden) {
+			await connection.end();
+			return GONE_PAYLOAD;
+		}
+		if (!clinic || clinic.status !== 'published') {
 			await connection.end();
 			return null;
 		}

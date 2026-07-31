@@ -173,38 +173,40 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<ul>
 				<li
 					>{{ t('BimWhereList1Pre')
-					}}<NuxtLink :to="kccgLink">{{ t('BimWhereList1KccgLink') }}</NuxtLink
+					}}<ClinicRouteLink :to="kccgLink">{{
+						t('BimWhereList1KccgLink')
+					}}</ClinicRouteLink
 					>{{ t('BimWhereList1a') }}</li
 				>
 				<li
 					>{{ t('BimWhereList2a')
-					}}<NuxtLink :to="barHospitalLink">{{
+					}}<ClinicRouteLink :to="barHospitalLink">{{
 						t('BimWhereList2BarLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('BimWhereList2b')
-					}}<NuxtLink :to="kotorHospitalLink">{{
+					}}<ClinicRouteLink :to="kotorHospitalLink">{{
 						t('BimWhereList2KotorLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('BimWhereList2c')
-					}}<NuxtLink :to="niksicHospitalLink">{{
+					}}<ClinicRouteLink :to="niksicHospitalLink">{{
 						t('BimWhereList2NiksicLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('BimWhereList2c2')
-					}}<NuxtLink :to="beraneHospitalLink">{{
+					}}<ClinicRouteLink :to="beraneHospitalLink">{{
 						t('BimWhereList2BeraneLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('BimWhereList2c3')
-					}}<NuxtLink :to="bijeloPoljeHospitalLink">{{
+					}}<ClinicRouteLink :to="bijeloPoljeHospitalLink">{{
 						t('BimWhereList2BijeloPoljeLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('BimWhereList2d')
-					}}<NuxtLink :to="cetinjeHospitalLink">{{
+					}}<ClinicRouteLink :to="cetinjeHospitalLink">{{
 						t('BimWhereList2CetinjeLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('BimWhereList2e')
-					}}<NuxtLink :to="pljevljaHospitalLink">{{
+					}}<ClinicRouteLink :to="pljevljaHospitalLink">{{
 						t('BimWhereList2PljevljaLink')
-					}}</NuxtLink
+					}}</ClinicRouteLink
 					>{{ t('BimWhereList2e2') }}</li
 				>
 				<li>{{ t('BimWhereList3') }}</li>
@@ -212,11 +214,13 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t('BimWhere2') }}</p>
 			<p
 				>{{ t('BimWhere3a')
-				}}<NuxtLink :to="codraHospitalLink">{{
+				}}<ClinicRouteLink :to="codraHospitalLink">{{
 					t('BimWhere3CodraLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('BimWhere3b')
-				}}<NuxtLink :to="kccgLink">{{ t('BimWhere3KccgLink') }}</NuxtLink
+				}}<ClinicRouteLink :to="kccgLink">{{
+					t('BimWhere3KccgLink')
+				}}</ClinicRouteLink
 				>{{ t('BimWhere3c') }}</p
 			>
 			<p>
@@ -281,9 +285,9 @@ const { breadcrumbItems } = useArticlePageSeo({
 				</li>
 				<li>{{ t('BimSourcesMup') }}</li>
 				<li>
-					<NuxtLink :to="domZdravljaPodgoricaLink">{{
+					<ClinicRouteLink :to="domZdravljaPodgoricaLink">{{
 						t('BimSourcesDz')
-					}}</NuxtLink>
+					}}</ClinicRouteLink>
 				</li>
 			</ul>
 		</ArticleSection>

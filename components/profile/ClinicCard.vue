@@ -84,6 +84,8 @@ const cityName = computed(() =>
 
 		<ProfileClinicStatusBlock
 			:status="clinic.status"
+			:hidden="clinic.hidden"
+			:hidden-reason="clinic.hiddenReason"
 			:clinic-slug="clinic.slug"
 			:is-toggling="isToggling"
 			@publish="emit('publish')"

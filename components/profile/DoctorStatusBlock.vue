@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import doctorProfileI18n from '~/i18n/doctor-profile';
+import { PROJECT_CONTACTS } from '~/common/constants';
 import { getRegionalQuery } from '~/common/url-utils';
 import type { DoctorProfileStatus } from '~/interfaces/doctor';
 
@@ -8,6 +9,10 @@ const props = defineProps<{
 	doctorId: number;
 	doctorSlug: string;
 	isToggling: boolean;
+	// Причина скрытия админом — как есть, на сербском (см. doctors
+	// .hidden_by_admin_reason). Может быть пустой: тогда плашка обходится
+	// общим описанием статуса.
+	hiddenReason?: string;
 }>();
 
 const emit = defineEmits<{
@@ -24,6 +29,7 @@ const statusLabel = computed(() => {
 		draft: t('statusDraft'),
 		public: t('statusPublic'),
 		hidden: t('statusHidden'),
+		hidden_by_admin: t('statusHiddenByAdmin'),
 	};
 	return map[props.status];
 });
@@ -33,6 +39,7 @@ const statusDesc = computed(() => {
 		draft: t('statusDraftDesc'),
 		public: t('statusPublicDesc'),
 		hidden: t('statusHiddenDesc'),
+		hidden_by_admin: t('statusHiddenByAdminDesc'),
 	};
 	return map[props.status];
 });
@@ -48,14 +55,32 @@ const doctorLink = computed(() => ({
 	<div class="status-block" :class="`status-block--${status}`">
 		<div class="status-block__header">
 			<span class="status-block__badge">
-				<IconLock v-if="status === 'draft' || status === 'hidden'" :size="14" />
+				<IconLock v-if="status !== 'public'" :size="14" />
 				<IconCheck v-else :size="14" />
 				{{ statusLabel }}
 			</span>
 		</div>
 		<p class="status-block__desc">{{ statusDesc }}</p>
 
-		<div v-if="status !== 'draft'" class="status-block__actions">
+		<!-- Почему скрыли и что сделать, чтобы вернуться. Причина написана
+		     администратором на сербском, поэтому помечена lang="sr". -->
+		<div v-if="status === 'hidden_by_admin'" class="status-block__reason">
+			<template v-if="hiddenReason">
+				<span class="status-block__reason-label">{{ t('hiddenReason') }}</span>
+				<p class="status-block__reason-text" lang="sr">{{ hiddenReason }}</p>
+			</template>
+			<p class="status-block__reason-action">
+				{{ t('hiddenReasonAction') }}
+				<a :href="`mailto:${PROJECT_CONTACTS.email}`">
+					{{ PROJECT_CONTACTS.email }}
+				</a>
+			</p>
+		</div>
+
+		<!-- Страница непубличного профиля открывается владельцу (с баннером
+		     наверху), поэтому ссылка есть при любом статусе. Переключать
+		     видимость можно только там, где это решение врача. -->
+		<div class="status-block__actions">
 			<NuxtLink :to="doctorLink" target="_blank">
 				<el-button size="small" type="primary">
 					{{ t('viewProfile') }}
@@ -71,7 +96,7 @@ const doctorLink = computed(() => ({
 				{{ t('hideProfile') }}
 			</el-button>
 			<el-button
-				v-else
+				v-else-if="status === 'hidden'"
 				size="small"
 				type="success"
 				:loading="isToggling"
@@ -103,7 +128,8 @@ const doctorLink = computed(() => ({
 	border-color: var(--color-success-border);
 }
 
-.status-block--hidden {
+.status-block--hidden,
+.status-block--hidden_by_admin {
 	background: var(--color-danger-bg);
 	border-color: var(--color-danger-border);
 }
@@ -135,7 +161,8 @@ const doctorLink = computed(() => ({
 	color: var(--color-primary-green);
 }
 
-.status-block--hidden .status-block__badge {
+.status-block--hidden .status-block__badge,
+.status-block--hidden_by_admin .status-block__badge {
 	background: var(--color-danger-border);
 	color: var(--color-danger-dark);
 }
@@ -151,5 +178,33 @@ const doctorLink = computed(() => ({
 	display: flex;
 	gap: var(--spacing-sm);
 	flex-wrap: wrap;
+}
+
+.status-block__reason {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+	padding: var(--spacing-md);
+	background: var(--color-bg-primary);
+	border: 1px solid var(--color-danger-border);
+	border-radius: var(--border-radius-md);
+}
+
+.status-block__reason-label {
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-danger-dark);
+}
+
+.status-block__reason-text,
+.status-block__reason-action {
+	margin: 0;
+	font-size: var(--font-size-sm);
+	color: var(--color-text-primary);
+	line-height: 1.5;
+}
+
+.status-block__reason-action {
+	color: var(--color-text-secondary);
 }
 </style>

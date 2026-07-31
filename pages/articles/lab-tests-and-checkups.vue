@@ -145,31 +145,33 @@ const { breadcrumbItems } = useArticlePageSeo({
 		<ArticleSection id="section-private-labs" :title="t('LtcToc_private-labs')">
 			<p
 				>{{ t('LtcPrivate1a')
-				}}<NuxtLink :to="mojLabLink">{{ t('LtcPrivate1MojLabLink') }}</NuxtLink
+				}}<ClinicRouteLink :to="mojLabLink">{{
+					t('LtcPrivate1MojLabLink')
+				}}</ClinicRouteLink
 				>{{ t('LtcPrivate1b')
-				}}<NuxtLink :to="inVitroLink">{{
+				}}<ClinicRouteLink :to="inVitroLink">{{
 					t('LtcPrivate1InVitroLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('LtcPrivate1c')
-				}}<NuxtLink :to="bonaLabLink">{{
+				}}<ClinicRouteLink :to="bonaLabLink">{{
 					t('LtcPrivate1BonaLabLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('LtcPrivate1d')
-				}}<NuxtLink :to="konzilijumLink">{{
+				}}<ClinicRouteLink :to="konzilijumLink">{{
 					t('LtcPrivate1KonzilijumLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('LtcPrivate1e')
-				}}<NuxtLink :to="milmedikaLink">{{
+				}}<ClinicRouteLink :to="milmedikaLink">{{
 					t('LtcPrivate1MilmedikaLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('LtcPrivate1f')
-				}}<NuxtLink :to="zejnilovicLink">{{
+				}}<ClinicRouteLink :to="zejnilovicLink">{{
 					t('LtcPrivate1ZejnilovicLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('LtcPrivate1g')
-				}}<NuxtLink :to="noviStandardLink">{{
+				}}<ClinicRouteLink :to="noviStandardLink">{{
 					t('LtcPrivate1NoviStandardLink')
-				}}</NuxtLink
+				}}</ClinicRouteLink
 				>{{ t('LtcPrivate1h') }}</p
 			>
 			<p

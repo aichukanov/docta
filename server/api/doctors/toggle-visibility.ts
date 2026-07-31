@@ -1,5 +1,6 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { getCurrentUser } from '~/server/common/auth';
+import { ERROR_CODES, createErrorResponse } from '~/server/utils/api-codes';
 
 export default defineEventHandler(
 	async (event): Promise<{ hidden: boolean }> => {
@@ -14,7 +15,7 @@ export default defineEventHandler(
 		const connection = await getConnection();
 		try {
 			const [rows]: any = await connection.execute(
-				'SELECT id, hidden, is_draft FROM doctors WHERE user_id = ?',
+				'SELECT id, hidden, hidden_by_admin, is_draft FROM doctors WHERE user_id = ?',
 				[user.id],
 			);
 
@@ -32,6 +33,12 @@ export default defineEventHandler(
 					statusCode: 403,
 					statusMessage: 'Cannot change visibility of a draft profile',
 				});
+			}
+
+			// Скрытие администратором — модерационное решение, врач снять его
+			// не может: иначе админский флаг обходится одним кликом в кабинете.
+			if (doctor.hidden_by_admin) {
+				createErrorResponse(403, ERROR_CODES.DOCTOR_PROFILE_HIDDEN_BY_ADMIN);
 			}
 
 			const newHidden = !doctor.hidden;

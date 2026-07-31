@@ -47,6 +47,14 @@ export default defineEventHandler(async (event) => {
 		hasFirstName: !!query.first_name,
 	});
 
+	// Поля для проверки подписи — все присланные кроме hash, в исходном виде
+	const signedFields: Record<string, string> = {};
+	for (const [key, value] of Object.entries(query)) {
+		if (key !== 'hash' && value !== undefined && value !== null) {
+			signedFields[key] = String(value);
+		}
+	}
+
 	// Получаем данные от Telegram (фильтруем "undefined" строки)
 	const telegramData: TelegramAuthData = {
 		id: Number(query.id),
@@ -80,10 +88,22 @@ export default defineEventHandler(async (event) => {
 		const { telegram } = config;
 
 		// Проверяем подлинность данных от Telegram
-		const isValid = verifyTelegramAuth(telegramData, telegram.botToken);
+		const isValid = verifyTelegramAuth(
+			signedFields,
+			telegramData.hash,
+			telegram.botToken,
+		);
 
 		if (!isValid) {
-			authLogger.error('Invalid Telegram authentication');
+			const serverBotId = telegram.botToken.split(':')[0];
+			const widgetBotId = String(
+				useRuntimeConfig().public.telegramBotId || '',
+			);
+			authLogger.error('Invalid Telegram authentication', {
+				serverBotId: serverBotId || '(no token)',
+				widgetBotId: widgetBotId || '(empty)',
+				botIdMatch: !!serverBotId && serverBotId === widgetBotId,
+			});
 			setCookie(event, 'auth_error', ERROR_CODES.TELEGRAM_VERIFICATION_FAILED, {
 				maxAge: 10,
 				path: '/',

@@ -4,66 +4,67 @@ This file provides a structured reference of the MySQL database for the docta.me
 
 ## Tables Summary
 
-| Table                                   | Description                                                    |
-| :-------------------------------------- | :------------------------------------------------------------- |
-| `auth_users`                            | User accounts (admins with email/password, OAuth users).       |
-| `auth_oauth_accounts`                   | OAuth provider accounts linked to users.                       |
-| `auth_oauth_profiles_google`            | Google OAuth profile data (email, name, locale, avatar).       |
-| `auth_oauth_profiles_telegram`          | Telegram OAuth profile data (name, username, avatar).          |
-| `auth_oauth_profiles_facebook`          | Facebook OAuth profile data (name, email, avatar).             |
-| `auth_sessions`                         | User sessions with expiration tracking.                        |
-| `auth_login_history`                    | Login attempt history (IP, user agent, method, success).       |
-| `auth_email_verification_tokens`        | Tokens for email verification flow.                            |
-| `auth_password_reset_tokens`            | Tokens for password reset flow.                                |
-| `auth_email_log`                        | Log of all sent email messages.                                |
-| `cities`                                | List of cities with coordinates.                               |
-| `clinics`                               | Core clinic data, contacts, and multi-language descriptions.   |
-| `doctors`                               | Medical specialists, personal info, and professional titles.   |
-| `lab_tests`                             | Catalog of laboratory tests with localized names.              |
-| `medical_services`                      | Catalog of general medical services (localized).               |
-| `medications`                           | Catalog of medications (localized).                            |
-| `specialties`                           | Medical specialties.                                           |
-| `languages`                             | Supported languages (codes and names).                         |
-| `clinic_lab_tests`                      | Junction table: Clinic <-> Lab Test (includes pricing).        |
-| `clinic_medical_services`               | Junction table: Clinic <-> Medical Service (includes pricing). |
-| `clinic_medications`                    | Junction table: Clinic <-> Medication (includes pricing).      |
-| `clinic_languages`                      | Junction table: Clinic <-> Languages supported.                |
-| `clinic_medical_service_doctors`        | Junction table: Clinic <-> Medical Service <-> Doctor.         |
-| `clinic_types`                          | Reference table of clinic types (e.g. hospital, lab, pharmacy).|
-| `clinic_clinic_types`                   | Junction table: Clinic <-> Clinic Type.                        |
-| `clinic_working_hours`                  | Working hours per clinic (JSON per weekday).                   |
-| `doctor_clinics`                        | Junction table: Doctor <-> Clinic (includes position).         |
-| `doctor_specialties`                    | Junction table: Doctor <-> Specialty.                          |
-| `doctor_languages`                      | Junction table: Doctor <-> Languages spoken.                   |
-| `medical_services_specialties`          | Junction table: Medical Service <-> Specialty.                 |
-| `medical_service_categories`            | Categories for medical services.                               |
-| `medical_service_categories_relations`  | Junction table: Medical Service <-> Category.                  |
-| `lab_test_categories`                   | Categories for lab tests.                                      |
-| `lab_test_categories_relations`         | Junction table: Lab Test <-> Category.                         |
-| `lab_test_synonyms`                     | Alternative names for lab tests for search optimization.       |
-| `medical_service_redirects`             | Redirect map for merged medical service records.               |
-| `doctor_redirects`                      | Redirect map for merged doctor profiles.                       |
-| `lab_test_redirects`                    | Redirect map for merged lab test records.                      |
-| `slug_redirects`                        | Redirect map for renamed slugs (old slug → entity id).         |
-| `reviews`                               | Polymorphic reviews for clinics, doctors, and services.        |
-| `review_replies`                        | Replies to reviews (one from clinic, one from doctor).         |
-| `review_likes`                          | Likes on reviews by registered users.                         |
-| `review_reply_likes`                    | Likes on review replies by registered users.                  |
-| `review_verification_files`             | Visit-confirmation files for reviews (private storage). *(migration 005, applied 2026-06-12)* |
-| `review_moderation_logs`                | Audit log of review moderation actions. *(migration 005, applied 2026-06-12)* |
-| `review_ai_summaries`                   | Cached AI summaries of reviews per entity per locale. *(migration 005, applied 2026-06-12)* |
-| `billing_paid_services`                 | Catalog of paid services available for clinics.                |
-| `billing_clinic_service_purchases`      | Purchase records of paid services by clinics.                  |
-| `billing_clinic_service_purchase_items` | Junction table: Purchase <-> Paid Service.                     |
-| `countries`                             | Shared country table with 6-language translations.             |
-| `med_dispensing_modes`                  | Medicine dispensing modes (prescription/OTC) with translations.|
-| `med_pharma_forms`                      | Pharmaceutical dosage forms with translations.                 |
-| `med_substances`                        | INN / active substances with translations.                     |
-| `med_atc_groups`                        | ATC level-1 therapeutic categories with translations.          |
-| `med_auth_holders`                      | Marketing authorization holders (legal entities in MNE).       |
-| `med_manufacturers`                     | Drug manufacturers with full addresses and country FK.         |
-| `med_medicines`                         | CInMED medicine register (3553 medicines).                     |
-| `med_medicine_substances`               | Junction table: Medicine <-> Substance (M:N).                  |
+| Table                                   | Description                                                                                   |
+| :-------------------------------------- | :-------------------------------------------------------------------------------------------- |
+| `auth_users`                            | User accounts (admins with email/password, OAuth users).                                      |
+| `auth_oauth_accounts`                   | OAuth provider accounts linked to users.                                                      |
+| `auth_oauth_profiles_google`            | Google OAuth profile data (email, name, locale, avatar).                                      |
+| `auth_oauth_profiles_telegram`          | Telegram OAuth profile data (name, username, avatar).                                         |
+| `auth_oauth_profiles_facebook`          | Facebook OAuth profile data (name, email, avatar).                                            |
+| `auth_sessions`                         | User sessions with expiration tracking.                                                       |
+| `auth_login_history`                    | Login attempt history (IP, user agent, method, success).                                      |
+| `auth_email_verification_tokens`        | Tokens for email verification flow.                                                           |
+| `auth_password_reset_tokens`            | Tokens for password reset flow.                                                               |
+| `auth_email_log`                        | Log of all sent email messages.                                                               |
+| `cities`                                | List of cities with coordinates.                                                              |
+| `clinics`                               | Core clinic data, contacts, and multi-language descriptions.                                  |
+| `doctors`                               | Medical specialists, personal info, and professional titles.                                  |
+| `lab_tests`                             | Catalog of laboratory tests with localized names.                                             |
+| `medical_services`                      | Catalog of general medical services (localized).                                              |
+| `medications`                           | Catalog of medications (localized).                                                           |
+| `specialties`                           | Medical specialties.                                                                          |
+| `languages`                             | Supported languages (codes and names).                                                        |
+| `clinic_lab_tests`                      | Junction table: Clinic <-> Lab Test (includes pricing).                                       |
+| `clinic_medical_services`               | Junction table: Clinic <-> Medical Service (includes pricing).                                |
+| `clinic_medications`                    | Junction table: Clinic <-> Medication (includes pricing).                                     |
+| `clinic_languages`                      | Junction table: Clinic <-> Languages supported.                                               |
+| `clinic_medical_service_doctors`        | Junction table: Clinic <-> Medical Service <-> Doctor.                                        |
+| `clinic_types`                          | Reference table of clinic types (e.g. hospital, lab, pharmacy).                               |
+| `clinic_clinic_types`                   | Junction table: Clinic <-> Clinic Type.                                                       |
+| `clinic_working_hours`                  | Working hours per clinic (JSON per weekday).                                                  |
+| `clinic_coupons`                        | Discount coupons per clinic (percent + item types). _(migration 020)_                         |
+| `doctor_clinics`                        | Junction table: Doctor <-> Clinic (includes position).                                        |
+| `doctor_specialties`                    | Junction table: Doctor <-> Specialty.                                                         |
+| `doctor_languages`                      | Junction table: Doctor <-> Languages spoken.                                                  |
+| `medical_services_specialties`          | Junction table: Medical Service <-> Specialty.                                                |
+| `medical_service_categories`            | Categories for medical services.                                                              |
+| `medical_service_categories_relations`  | Junction table: Medical Service <-> Category.                                                 |
+| `lab_test_categories`                   | Categories for lab tests.                                                                     |
+| `lab_test_categories_relations`         | Junction table: Lab Test <-> Category.                                                        |
+| `lab_test_synonyms`                     | Alternative names for lab tests for search optimization.                                      |
+| `medical_service_redirects`             | Redirect map for merged medical service records.                                              |
+| `doctor_redirects`                      | Redirect map for merged doctor profiles.                                                      |
+| `lab_test_redirects`                    | Redirect map for merged lab test records.                                                     |
+| `slug_redirects`                        | Redirect map for renamed slugs (old slug → entity id).                                        |
+| `reviews`                               | Polymorphic reviews for clinics, doctors, and services.                                       |
+| `review_replies`                        | Replies to reviews (one from clinic, one from doctor).                                        |
+| `review_likes`                          | Likes on reviews by registered users.                                                         |
+| `review_reply_likes`                    | Likes on review replies by registered users.                                                  |
+| `review_verification_files`             | Visit-confirmation files for reviews (private storage). _(migration 005, applied 2026-06-12)_ |
+| `review_moderation_logs`                | Audit log of review moderation actions. _(migration 005, applied 2026-06-12)_                 |
+| `review_ai_summaries`                   | Cached AI summaries of reviews per entity per locale. _(migration 005, applied 2026-06-12)_   |
+| `billing_paid_services`                 | Catalog of paid services available for clinics.                                               |
+| `billing_clinic_service_purchases`      | Purchase records of paid services by clinics.                                                 |
+| `billing_clinic_service_purchase_items` | Junction table: Purchase <-> Paid Service.                                                    |
+| `countries`                             | Shared country table with 6-language translations.                                            |
+| `med_dispensing_modes`                  | Medicine dispensing modes (prescription/OTC) with translations.                               |
+| `med_pharma_forms`                      | Pharmaceutical dosage forms with translations.                                                |
+| `med_substances`                        | INN / active substances with translations.                                                    |
+| `med_atc_groups`                        | ATC level-1 therapeutic categories with translations.                                         |
+| `med_auth_holders`                      | Marketing authorization holders (legal entities in MNE).                                      |
+| `med_manufacturers`                     | Drug manufacturers with full addresses and country FK.                                        |
+| `med_medicines`                         | CInMED medicine register (3553 medicines).                                                    |
+| `med_medicine_substances`               | Junction table: Medicine <-> Substance (M:N).                                                 |
 
 ## Detailed Table Definitions
 
@@ -238,8 +239,12 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `description_sr`, `description_sr_cyrl`, `description_ru`, `description_en`, `description_de`, `description_tr` (text): Localized descriptions.
 - `logo_url` (varchar(500)): URL to clinic logo image.
 - `rank_score` (decimal(5,4), NOT NULL, default 0.0000): Computed ranking score for sort ordering.
+- `created_by` (int, NULL, FK -> auth_users.id, ON DELETE SET NULL): Owner user account. NULL for clinics created via admin panel or import.
+- `status` (enum: 'draft', 'pending_verification', 'published', 'rejected', NOT NULL, default 'published'): Owner-driven lifecycle. Public flow is draft <-> published; non-published clinics are excluded from public listings and their page is visible only to the owner and admins. 'pending_verification'/'rejected' are reserved for future moderation.
+- `hidden` (boolean, NOT NULL, default FALSE): When TRUE, the clinic is excluded from every public query (listings, service/labtest/medication cards, global search, sitemap) and its page returns **410 Gone** for everyone except the owner and admins, who still see it rendered as non-public with an explanation banner (drafts stay 404 — they are reversible, an admin hiding is not).
+- `hidden_reason` (text, NULL): Why the clinic was hidden, written by an admin **in Serbian (Latin)**. Shown to the owner in the cabinet and in the page banner; never public. _(migration 021)_ Admin-only flag, orthogonal to `status` (the owner's status is preserved and cannot be used to bypass it). Mirrors `doctors.hidden`. The predicate lives in `server/common/clinic-visibility.ts` — never inline `status = 'published'`.
 - `created_at`, `updated_at` (timestamp)
-- _Indexes_: `idx_clinics_slug` (slug, UNIQUE), `uq_clinics_google_place_id` (google_place_id, UNIQUE), `idx_city`, `idx_location` (latitude, longitude), `idx_name` (name_sr), `idx_clinics_rank_score` (rank_score DESC)
+- _Indexes_: `idx_clinics_slug` (slug, UNIQUE), `uq_clinics_google_place_id` (google_place_id, UNIQUE), `idx_city`, `idx_location` (latitude, longitude), `idx_name` (name_sr), `idx_clinics_rank_score` (rank_score DESC), `idx_clinics_status`, `idx_clinics_created_by`, `idx_clinics_hidden`
 
 ### `doctors`
 
@@ -255,11 +260,13 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `email`, `website`, `instagram`, `facebook`, `whatsapp`, `telegram`, `viber` (varchar(255))
 - `description_sr`, `description_sr_cyrl`, `description_ru`, `description_en`, `description_de`, `description_tr` (text): Localized descriptions.
 - `professional_title` (varchar(255))
-- `hidden` (boolean, default FALSE): When TRUE, the doctor is excluded from all public listings and their profile page returns 404.
+- `hidden` (boolean, default FALSE): Self-hiding. When TRUE, the doctor is excluded from all public listings and their profile page returns 404. The doctor toggles it from their own cabinet (`POST /api/doctors/toggle-visibility`), so it is reversible by them.
+- `hidden_by_admin` (boolean, NOT NULL, default FALSE): Moderation hiding, admin-only. Same exclusion from every public query, but the page returns **410 Gone** (intentional, permanent removal) and the doctor cannot lift it from their cabinet. Kept separate from `hidden` precisely so a doctor cannot undo an admin decision.
 - `is_draft` (boolean, default FALSE): When TRUE, the profile is pending review and not yet published. Only admins can change this.
+- Public visibility is `hidden = 0 AND hidden_by_admin = 0 AND is_draft = 0` — build the predicate with `doctorIsPublicSql()` from `server/common/doctor-visibility.ts`, never inline it.
 - `rank_score` (decimal(5,4), NOT NULL, default 0.0000): Computed ranking score for sort ordering.
 - `created_at`, `updated_at` (timestamp)
-- _Indexes_: `idx_doctors_user_id` (user_id, UNIQUE), `idx_hidden`, `idx_doctors_is_draft`, `idx_doctors_rank_score` (rank_score DESC)
+- _Indexes_: `idx_doctors_user_id` (user_id, UNIQUE), `idx_hidden`, `idx_doctors_hidden_by_admin`, `idx_doctors_is_draft`, `idx_doctors_rank_score` (rank_score DESC)
 - _Foreign Keys_: `user_id` -> `auth_users.id` (ON DELETE SET NULL)
 
 ### `specialties`
@@ -426,6 +433,37 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`, `sunday` (json, NOT NULL): Working hours per day.
 - `created_at`, `updated_at` (timestamp)
 
+### `clinic_coupons`
+
+Discount coupons offered at a clinic (migration 020). Unlike `is_price_outdated`,
+which flags a single price row, a coupon is a clinic-level offer covering a whole
+item type — hence a separate table.
+
+- `id` (int, PK, AI)
+- `clinic_id` (int, FK -> clinics.id ON DELETE CASCADE)
+- `discount_percent` (tinyint unsigned, NOT NULL): 1..100.
+- `applies_to` (set('services','labtests','medications'), NOT NULL): Item types the discount covers. Drives where the coupon may be shown — a services-only coupon must not appear on lab test pages.
+- `source_name` (varchar(100), NULL): Partner whose promo we relay (e.g. 'Montenegro Experte'); NULL — docta.me's own coupon.
+- `image_url` (varchar(500), NULL): Coupon visual to show at the reception; NULL — the site renders its own localized coupon.
+- `code` (varchar(50), NULL): Code word, if the clinic asks for one; NULL — showing the coupon is enough.
+- `payment_method` (enum: 'any', 'cash', 'card', NOT NULL, default 'any'): Payment method the discount requires. Surfaced in the coupon's terms — finding out at the till that only cash counts is the worst case. Unknown values are read as 'any': inventing a restriction is worse than omitting one.
+- `valid_from`, `valid_until` (date, NULL): NULL means "already active" / "open-ended, cancel manually".
+- `is_active` (boolean, NOT NULL, default TRUE)
+- `created_at`, `updated_at` (timestamp)
+- _Indexes_: `idx_clinic_coupons_clinic` (clinic_id, is_active)
+
+Read only via `server/common/clinic-coupons.ts` — it applies the three activity
+conditions (flag + both dates) and returns the best coupon per clinic. Exposed on
+`ClinicData.coupon` by `clinics/list`, `clinics/details` and
+`clinics/items-summary`.
+
+Managed from the admin clinic panel (`AdminClinicCouponsEditor`) via
+`clinics/coupons/{list,save,delete}` — all admin-only. The coupon image is
+uploaded like every other image (`/api/upload/admin-image`, category `coupons`);
+an external URL passed to `save` is downloaded into `/uploads/coupons/` instead of
+being hotlinked. Withdrawing an offer means `is_active = 0`, not deletion — the
+history matters, patients may already have come with that coupon.
+
 ### `clinic_languages`
 
 - `id` (int, PK, AI)
@@ -551,6 +589,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - _Comment_: Only authenticated (non-phantom) users can like. `review_replies.likes_count` is updated via application logic on insert/delete.
 
 ### `review_verification_files`
+
 - `id` (int, PK, AI)
 - `review_id` (int, FK -> reviews.id, NOT NULL): Review being verified. One file per review.
 - `stored_name` (varchar(255), NOT NULL): On-disk file name (UUID.webp) inside `VERIFICATIONS_DIR` (default `storage/verifications`, **outside** `public/`).
@@ -565,6 +604,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - _Comment_: Personal data (receipts, referrals). Files are served only to the review author and admins via `/api/reviews/verification-file?reviewId=`. Approving sets `reviews.is_verified = TRUE`.
 
 ### `review_moderation_logs`
+
 - `id` (int, PK, AI)
 - `review_id` (int, FK -> reviews.id, NOT NULL)
 - `action` (enum: 'approved', 'rejected', 'verification_uploaded', 'verification_approved', 'verification_rejected', NOT NULL)
@@ -574,6 +614,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - _Indexes_: `idx_moderation_logs_review` (review_id)
 
 ### `review_ai_summaries`
+
 - `id` (int, PK, AI)
 - `entity_type` (enum: 'doctor', 'clinic', NOT NULL)
 - `entity_id` (int, NOT NULL)
@@ -589,7 +630,6 @@ This file provides a structured reference of the MySQL database for the docta.me
 ## Core Implementation Logic
 
 1. **Authentication Strategy**:
-
    - **Admin users**: Use email + password authentication. `password_hash` is filled with bcrypt hash (cost=10), `is_admin=TRUE`.
    - **Regular users**: Use OAuth (Google, Telegram). `password_hash=NULL`, `is_admin=FALSE`.
    - **Session management**: Database-based sessions stored in `auth_sessions` table with expiration tracking.
@@ -599,7 +639,6 @@ This file provides a structured reference of the MySQL database for the docta.me
    - **Login history**: All login attempts tracked in `auth_login_history`.
 
 2. **User Account Types**:
-
    - Admin accounts are created manually in the database (no public registration).
    - OAuth users can self-register through OAuth providers.
    - One user can have multiple OAuth providers linked via `auth_oauth_accounts`.
@@ -607,53 +646,42 @@ This file provides a structured reference of the MySQL database for the docta.me
    - **Phantom users** (`is_phantom=TRUE`): auto-created during external review imports (Facebook, Telegram, Google Maps). When a phantom user authenticates via OAuth, `is_phantom` flips to `FALSE` and all their reviews are already linked via `user_id`. Google Maps phantom users cannot be auto-claimed (contributor ID ≠ OAuth ID).
 
 3. **I18n Strategy**:
-
    - Explicit columns with language suffixes (e.g., `name_sr`, `name_ru`, `description_en`) are used for localized content.
    - The `_sr` suffix denotes Serbian (Latin script), `_sr_cyrl` denotes Serbian (Cyrillic script).
    - For `specialties`, `languages`, and some reference tables, the `name` column acts as a key for lookup in `i18n/*.ts` files.
 
 4. **Pricing**:
-
    - Prices are stored as `decimal(10,2)` in junction tables between clinics and services/tests/meds.
    - `price_max` field supports price ranges (e.g., "100-150 EUR").
    - `clinic_medical_services` also has `price_min` for three-tier price ranges.
 
 5. **Ranking**:
-
    - `clinics`, `doctors`, `lab_tests`, and `medical_services` all have a `rank_score` column (decimal(5,4), default 0) used for default sort ordering.
    - Each table has a DESC index on `rank_score` for efficient sorted queries.
 
 6. **Geo**:
-
    - Latitude uses `decimal(10,8)`, Longitude uses `decimal(11,8)` for high precision.
 
 7. **Referential Integrity**:
-
    - Most foreign keys use `ON DELETE CASCADE`.
 
 8. **Search**:
-
    - Search should consider `lab_test_synonyms` and localized `name_*` columns.
 
 9. **Redirects**:
-
    - `doctor_redirects`, `lab_test_redirects` and `medical_service_redirects` tables handle merged records for 301 redirects.
 
 10. **Service-Specialty Mapping**:
-
     - `medical_services_specialties` links medical services to relevant specialties for filtering.
 
 11. **Service-Category Mapping**:
-
     - `medical_service_categories` and `medical_service_categories_relations` allow grouping medical services by categories.
     - `lab_test_categories` and `lab_test_categories_relations` allow grouping lab tests by categories.
 
 12. **Doctor-Service Assignment**:
-
     - `clinic_medical_service_doctors` enables assigning specific doctors to medical services within a clinic context.
 
 13. **Reviews, Replies & Likes**:
-
     - Each review can have up to **2 replies**: one from the clinic (`responder_type='clinic'`) and one from the doctor (`responder_type='doctor'`). No threading — flat structure only.
     - Replies are stored in `review_replies` with a unique constraint on (`review_id`, `responder_type`).
     - Both reviews and replies can be liked by authenticated (non-phantom) users. One like per user per entity.
@@ -662,7 +690,6 @@ This file provides a structured reference of the MySQL database for the docta.me
     - Imported replies (from Google Maps, Facebook) use the `provider` field; native replies default to `docta_me`.
 
 14. **Paid Services (Billing)**:
-
     - `billing_paid_services` contains paid services (dofollow, highlight, approved/verified).
     - `billing_clinic_service_purchases` tracks purchases made by clinics.
     - `billing_clinic_service_purchase_items` links purchases to specific services.
@@ -671,7 +698,6 @@ This file provides a structured reference of the MySQL database for the docta.me
     - Services sold via the catalog: HIGHLIGHT (featured in lists), APPROVED (verified badge). DOFOLLOW (id 1) is no longer sold — its `billing_service_prices` rows are deactivated (migration 008), the service row remains for legacy purchases. Selling dofollow links violates Google's link spam policy.
 
 15. **Clinic Types & Working Hours**:
-
     - `clinic_types` is a reference table of clinic types (hospital, laboratory, pharmacy, etc.).
     - `clinic_clinic_types` links clinics to one or more types.
     - `clinic_working_hours` stores working hours per weekday as JSON (one row per clinic).

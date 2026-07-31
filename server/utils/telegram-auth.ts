@@ -15,27 +15,27 @@ export interface TelegramAuthData {
 }
 
 /**
- * Проверка подлинности данных от Telegram Login Widget
+ * Проверка подлинности данных от Telegram
  * https://core.telegram.org/widgets/login#checking-authorization
+ *
+ * `fields` — ВСЕ полученные от Telegram поля кроме hash, в исходном строковом
+ * виде. Подпись считается по ним, а не по заранее известному списку: если
+ * Telegram добавит поле, оно попадёт в его hash, и фиксированный список молча
+ * перестал бы сходиться.
  */
 export function verifyTelegramAuth(
-	data: TelegramAuthData,
+	fields: Record<string, string>,
+	hash: string,
 	botToken: string,
 ): boolean {
-	const { hash, ...checkData } = data;
-
 	authLogger.debug('Telegram auth data received', {
-		id: data.id,
-		first_name: data.first_name,
+		fields: Object.keys(fields).sort(),
 		has_hash: !!hash,
-		auth_date: data.auth_date,
 	});
 
-	// Создаем строку для проверки - ТОЛЬКО поля с определенными значениями
-	const dataCheckString = Object.keys(checkData)
-		.filter((key) => checkData[key as keyof typeof checkData] !== undefined)
+	const dataCheckString = Object.keys(fields)
 		.sort()
-		.map((key) => `${key}=${checkData[key as keyof typeof checkData]}`)
+		.map((key) => `${key}=${fields[key]}`)
 		.join('\n');
 
 	authLogger.debug('Telegram data check string', { dataCheckString });
@@ -57,12 +57,19 @@ export function verifyTelegramAuth(
 
 	// Проверяем совпадение
 	if (computedHash !== hash) {
-		authLogger.error('Telegram hash mismatch');
+		// Логируем публичную часть токена (bot_id): частая причина расхождения —
+		// сервер проверяет подпись токеном не того бота, которым авторизовался
+		// пользователь.
+		authLogger.error('Telegram hash mismatch', {
+			telegramUserId: fields.id,
+			serverBotId: botToken.split(':')[0] || '(no token)',
+			fields: Object.keys(fields).sort(),
+		});
 		return false;
 	}
 
 	// Проверяем что данные не старше 24 часов
-	const authDate = data.auth_date;
+	const authDate = Number(fields.auth_date);
 	const currentTime = Math.floor(Date.now() / 1000);
 	const maxAge = 86400; // 24 часа
 	const age = currentTime - authDate;
@@ -75,8 +82,12 @@ export function verifyTelegramAuth(
 		is_valid: age <= maxAge,
 	});
 
-	if (currentTime - authDate > maxAge) {
-		authLogger.error('Telegram data too old');
+	if (!authDate || age > maxAge) {
+		authLogger.error('Telegram data too old', {
+			telegramUserId: fields.id,
+			authDate: fields.auth_date,
+			ageSeconds: age,
+		});
 		return false;
 	}
 

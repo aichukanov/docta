@@ -19,6 +19,11 @@ __pycache__/
 logs
 *.log
 
+# Исключение: снимки логов прода, на которых стоят выводы аудита
+# (gzip, ~330 КБ; разбор — docs/audit/server-logs-2026-07-30.md)
+!data/logs/
+!data/logs/**
+
 # Misc
 .DS_Store
 .fleet

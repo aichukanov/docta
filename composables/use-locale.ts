@@ -34,6 +34,31 @@ export const localeShortNames: Record<Locale, string> = {
 	[Language.SR_CYRILLIC]: 'SR',
 };
 
+/**
+ * Код локали → тег для атрибута `hreflang`.
+ *
+ * Наши коды локалей живут в URL (`?lang=sr-cyrl`) и потому строчные, а BCP 47
+ * требует у скрипта заглавную первую букву: `sr-Cyrl`. Google к регистру
+ * нечувствителен, поведение Яндекса не проверялось — а в его индексе
+ * sr-cyrl-страниц ровно ноль (docs/audit/seo-2026-07.md). Правка дешёвая и
+ * делает разметку валидной; ждать от неё многого не стоит.
+ *
+ * `sr` намеренно остаётся как есть, а не превращается в `sr-Latn`: это
+ * дефолтная локаль с наибольшим числом показов, менять ей тег ради формальной
+ * симметрии — риск без выигрыша. `sr` + `sr-Cyrl` — валидная пара, где
+ * первый тег означает «сербский без уточнения скрипта».
+ *
+ * Регистр важен только в hreflang. В URL, cookie и `?lang=` код остаётся
+ * строчным — там его сравнивают через `formatLocaleAsQuery`.
+ */
+const HREFLANG_TAGS: Partial<Record<Locale, string>> = {
+	[Language.SR_CYRILLIC]: 'sr-Cyrl',
+};
+
+export function getHreflangTag(locale: Locale | string): string {
+	return HREFLANG_TAGS[locale as Locale] ?? locale;
+}
+
 export function getLocaleFromQuery(
 	value?: string | string[] | null,
 ): Locale | LegacyLocale | null {

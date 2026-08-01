@@ -3,6 +3,7 @@ import { getCanonicalUrl } from './common/url-utils';
 import { Language } from './enums/language';
 import {
 	defaultLocale,
+	getHreflangTag,
 	getLocaleFromQuery,
 	locales,
 } from './composables/use-locale';
@@ -117,7 +118,7 @@ const alternateLinks = computed(() => {
 		links.push({
 			rel: 'alternate',
 			href: getLangLink(lang),
-			hreflang: lang,
+			hreflang: getHreflangTag(lang),
 		});
 	}
 

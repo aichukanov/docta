@@ -27,8 +27,22 @@ export function getLocalizedName<
  * (серверные списки), чтобы «musura» находило «Mušura».
  */
 export function normalizeForSearch(value: string | null | undefined): string {
-	return (value || '')
-		.normalize('NFD')
-		.replace(/\p{M}/gu, '')
-		.toLowerCase();
+	return (value || '').normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+}
+
+/**
+ * Перевод по ключу или пустая строка, если ключа нет.
+ *
+ * vue-i18n при отсутствующем ключе возвращает сам ключ, и он утекает в
+ * интерфейс: `?category=99999` на подстранице клиники выводил в заголовок
+ * `medical_service_category_99999`. Страница при этом noindex (7e), то есть
+ * баг косметический, но выглядит как поломка. Проверка `=== key` надёжнее
+ * прежней `startsWith(prefix)`: не требует повторять префикс на каждом вызове.
+ */
+export function translateOrEmpty(
+	t: (key: string) => string,
+	key: string,
+): string {
+	const value = t(key);
+	return value === key ? '' : value;
 }

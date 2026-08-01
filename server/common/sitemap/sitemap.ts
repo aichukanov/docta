@@ -1,7 +1,7 @@
 import type { SitemapLink } from './utils';
 import { doctorIsPublicSql } from '~/server/common/doctor-visibility';
 import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
-import { locales } from '~/composables/use-locale';
+import { getHreflangTag, locales } from '~/composables/use-locale';
 import { getRegionalUrl, type UrlQuery } from '~/common/url-utils';
 import {
 	SITE_URL,
@@ -42,7 +42,7 @@ export function menuItemToLinks(
 		const lang = locales[i];
 
 		linksWithParams.push({
-			hreflang: lang,
+			hreflang: getHreflangTag(lang),
 			href: getRegionalUrl(url, query, lang),
 		});
 	}

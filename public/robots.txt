@@ -1,14 +1,3 @@
-# Полный robots.txt проекта. Держим его самодостаточным намеренно.
-#
-# ВАЖНО: Cloudflare Managed robots.txt инжектит на эдже СВОЙ блок перед этим
-# файлом, и в живом robots.txt оказывается два блока `User-agent: *`. Google
-# группы с одинаковым user-agent объединяет, а Яндекс при нескольких подходящих
-# записях использует одну — то есть наш Disallow-список может игнорироваться
-# целиком. Чтобы это снять, Managed robots.txt в панели Cloudflare нужно
-# ОТКЛЮЧИТЬ: всё, что он добавлял (Content-Signal + запреты AI-ботам),
-# продублировано ниже, поэтому после отключения ничего не потеряется.
-# См. prd/silent-200-index-hygiene, итерация 4.
-
 User-agent: *
 Content-Signal: search=yes,ai-train=no,use=reference
 Disallow: /admin/
@@ -21,20 +10,8 @@ Disallow: /reset-password
 Disallow: /auth/
 Disallow: /dev/
 
-# Директива Яндекса: параметр не влияет на содержимое, страницы с ним и без
-# склеиваются. `tab` — чисто клиентский скролл к секции
-# (components/entity-page/tab-bar.vue читает его только в onMounted), но Яндекс,
-# исполнив JS, проиндексировал 6 таких URL как отдельные страницы.
-# Из canonical он уже вырезается (итерация 3), Clean-param закрывает то же для
-# Яндекса надёжнее и без ожидания переобхода.
-#
-# СЮДА НЕЛЬЗЯ добавлять содержательные фильтры (cityIds, specialtyIds,
-# categoryIds, serviceCategoryIds, clinicTypeIds, substanceIds, atcGroupIds,
-# languageIds, page): у Google фасеты дают 29% показов, и склейка их с базовым
-# листингом обошлась бы дороже всего выигрыша этой PRD.
 Clean-param: tab
 
-# Запреты AI-краулерам — копия того, что инжектит Cloudflare Managed robots.txt.
 User-agent: Amazonbot
 Disallow: /
 

@@ -1207,6 +1207,24 @@ export function buildInsuranceCompanySchema(options: {
 }
 
 /**
+ * Добавляет `Product` вторым типом только когда есть чем его наполнить.
+ *
+ * Google требует у `Product` хотя бы одно из `offers` / `review` /
+ * `aggregateRating`. Медицинские типы (`MedicalTest`, `Drug`,
+ * `MedicalProcedure`) своих обязательных полей не имеют, поэтому карточка без
+ * цен раньше отдавала пустой `Product` — в GSC это 758 недопустимых элементов
+ * («Описания товара», росло с 271 в январе 2026), и такие страницы выпадали из
+ * расширенного сниппета, который у сайта реально работает (1384 показа за
+ * 3 месяца). См. пункт 11 в docs/audit/seo-2026-07.md.
+ *
+ * `aggregateRating` сюда не подставить: отзывы у нас про клинику, а не про
+ * услугу — это была бы неправда в разметке.
+ */
+function withProductType(baseType: string, offers: unknown): string | string[] {
+	return offers ? [baseType, 'Product'] : baseType;
+}
+
+/**
  * Build offers schema for products/services
  */
 export function buildOffersSchema(options: {
@@ -1307,22 +1325,24 @@ export function buildMedicalTestSchema(options: {
 		alternateNames.push(...options.synonyms);
 	}
 
+	const offers = buildOffersSchema({
+		siteUrl: options.siteUrl,
+		clinics: options.clinics,
+		clinicPrices: options.clinicPrices,
+		getCityName: options.getCityName,
+	});
+
 	const testSchema = {
 		...buildEntitySchemaBase({
 			url: testUrl,
-			type: ['MedicalTest', 'Product'],
+			type: withProductType('MedicalTest', offers),
 			fragment: 'medicaltest',
 		}),
 		name: options.name,
 		description: options.pageDescription || undefined,
 		alternateName:
 			alternateNames.length > 0 ? alternateNames.join(', ') : undefined,
-		offers: buildOffersSchema({
-			siteUrl: options.siteUrl,
-			clinics: options.clinics,
-			clinicPrices: options.clinicPrices,
-			getCityName: options.getCityName,
-		}),
+		offers,
 	};
 
 	const webPageSchema = buildWebPageSchema({
@@ -1355,20 +1375,22 @@ export function buildDrugSchema(options: {
 }): SchemaOrg[] {
 	const drugUrl = `${options.siteUrl}/medications/${options.slug}`;
 
+	const offers = buildOffersSchema({
+		siteUrl: options.siteUrl,
+		clinics: options.clinics,
+		clinicPrices: options.clinicPrices,
+		getCityName: options.getCityName,
+	});
+
 	const drugSchema = {
 		...buildEntitySchemaBase({
 			url: drugUrl,
-			type: ['Drug', 'Product'],
+			type: withProductType('Drug', offers),
 			fragment: 'drug',
 		}),
 		name: options.name,
 		description: options.pageDescription || undefined,
-		offers: buildOffersSchema({
-			siteUrl: options.siteUrl,
-			clinics: options.clinics,
-			clinicPrices: options.clinicPrices,
-			getCityName: options.getCityName,
-		}),
+		offers,
 	};
 
 	const webPageSchema = buildWebPageSchema({
@@ -1497,20 +1519,22 @@ export function buildMedicalProcedureSchema(options: {
 }): SchemaOrg[] {
 	const procedureUrl = `${options.siteUrl}/services/${options.slug}`;
 
+	const offers = buildOffersSchema({
+		siteUrl: options.siteUrl,
+		clinics: options.clinics,
+		clinicPrices: options.clinicPrices,
+		getCityName: options.getCityName,
+	});
+
 	const procedureSchema = {
 		...buildEntitySchemaBase({
 			url: procedureUrl,
-			type: ['MedicalProcedure', 'Product'],
+			type: withProductType('MedicalProcedure', offers),
 			fragment: 'medicalprocedure',
 		}),
 		name: options.name,
 		description: options.pageDescription || undefined,
-		offers: buildOffersSchema({
-			siteUrl: options.siteUrl,
-			clinics: options.clinics,
-			clinicPrices: options.clinicPrices,
-			getCityName: options.getCityName,
-		}),
+		offers,
 	};
 
 	const webPageSchema = buildWebPageSchema({

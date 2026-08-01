@@ -559,11 +559,11 @@ body {
 			background-repeat: no-repeat;
 
 			&.tg-icon {
-				background-image: url('/tg.png');
+				background-image: url('/tg.svg');
 			}
 
 			&.email-icon {
-				background-image: url('/email.png');
+				background-image: url('/email.svg');
 			}
 		}
 

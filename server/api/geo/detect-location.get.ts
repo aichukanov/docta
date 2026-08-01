@@ -1,5 +1,6 @@
 import { executeQuery } from '~/server/common/db-mysql';
 import { getClientIp } from '~/server/utils/client-ip';
+import { isBotUserAgent } from '~/server/utils/bot-user-agent';
 import type { DetectedLocation } from '~/interfaces/geo';
 
 interface IpApiResponse {
@@ -26,6 +27,41 @@ const ipCache = new Map<
 	string,
 	{ data: DetectedLocation | null; expires: number }
 >();
+
+// Отказ ipapi (429, таймаут, сеть) кэшируем отдельным коротким TTL.
+//
+// Раньше `catch` возвращал `null` НЕ кэшируя, и это делало исчерпание лимита
+// самоподдерживающимся: после первого 429 каждый следующий заход того же
+// посетителя снова шёл в ipapi, снова получал 429 — за неделю 4810 ошибок по
+// 1556 IP, 88% всего error-лога прода (docs/audit/server-logs-2026-07-30.md).
+// Тот же класс, что `catch → null` в slug-redirects: тихая деградация.
+//
+// TTL короткий именно потому, что причина временная: «город не сматчился» —
+// это факт про IP и живёт сутки, а «ipapi сейчас недоступен» — про сервис, и
+// после сброса суточной квоты детект должен заработать сам.
+const IP_ERROR_CACHE_TTL_MS = 10 * 60 * 1000;
+
+// Логи этого эндпоинта сами стали проблемой: 4810 одинаковых строк за неделю
+// топили всё остальное. Пишем не чаще раза в 5 минут, с числом подавленных —
+// сигнал «ipapi лежит» сохраняется, шум исчезает.
+const ERROR_LOG_INTERVAL_MS = 5 * 60 * 1000;
+let lastErrorLoggedAt = 0;
+let suppressedErrorCount = 0;
+
+function logErrorThrottled(error: unknown): void {
+	const now = Date.now();
+	if (now - lastErrorLoggedAt < ERROR_LOG_INTERVAL_MS) {
+		suppressedErrorCount++;
+		return;
+	}
+	const suffix =
+		suppressedErrorCount > 0
+			? ` (подавлено похожих за интервал: ${suppressedErrorCount})`
+			: '';
+	console.error(`[GEO] Error detecting location${suffix}:`, error);
+	lastErrorLoggedAt = now;
+	suppressedErrorCount = 0;
+}
 
 // Список городов меняется редко — кэшируем на час
 const CITIES_CACHE_TTL_MS = 60 * 60 * 1000;
@@ -69,12 +105,13 @@ async function getCities(): Promise<CityRow[]> {
 function cacheResult(
 	ip: string,
 	data: DetectedLocation | null,
+	ttlMs: number = IP_CACHE_TTL_MS,
 ): DetectedLocation | null {
 	if (ipCache.size >= IP_CACHE_MAX_SIZE) {
 		const oldestKey = ipCache.keys().next().value;
 		if (oldestKey) ipCache.delete(oldestKey);
 	}
-	ipCache.set(ip, { data, expires: Date.now() + IP_CACHE_TTL_MS });
+	ipCache.set(ip, { data, expires: Date.now() + ttlMs });
 	return data;
 }
 
@@ -83,13 +120,22 @@ function cacheResult(
 // или сырые IP-координаты значит втихую искажать ранжирование.
 export default defineEventHandler(
 	async (event): Promise<DetectedLocation | null> => {
+		const clientIp = getClientIp(event);
+
+		if (!clientIp || clientIp === 'unknown' || isPrivateIp(clientIp)) {
+			return null;
+		}
+
+		// Геолокация нужна живому посетителю (ранжирование клиник по
+		// расстоянию), а эндпоинт вызывается с клиента — значит его дёргают
+		// краулеры, исполняющие JS. В логах прода квоту жгли Googlebot
+		// (66.249.77.100) и Baiduspider (116.179.37.x). Ботам отвечаем `null`,
+		// не тратя ни запроса к ipapi, ни места в кэше.
+		if (isBotUserAgent(getRequestHeader(event, 'user-agent'))) {
+			return null;
+		}
+
 		try {
-			const clientIp = getClientIp(event);
-
-			if (!clientIp || clientIp === 'unknown' || isPrivateIp(clientIp)) {
-				return null;
-			}
-
 			const cached = ipCache.get(clientIp);
 			if (cached && cached.expires > Date.now()) {
 				return cached.data;
@@ -127,8 +173,10 @@ export default defineEventHandler(
 				longitude: Number(matched.longitude ?? response.longitude),
 			});
 		} catch (error) {
-			console.error('[GEO] Error detecting location:', error);
-			return null;
+			logErrorThrottled(error);
+			// Кэшируем отказ, иначе следующий заход того же посетителя снова
+			// пойдёт в ipapi — именно это делало 429 самоподдерживающимся.
+			return cacheResult(clientIp, null, IP_ERROR_CACHE_TTL_MS);
 		}
 	},
 );

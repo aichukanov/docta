@@ -88,7 +88,12 @@ const pageTitle = computed(() => {
 		});
 	}
 
-	return t('Medications');
+	// Не `Medications`: тот же ключ стоит в меню и на главной, и коротким он там
+	// нужен. А как заголовок страницы он конкурировал с `/medicines`: в sr обе
+	// страницы назывались почти одинаково («Lijekovi u Crnoj Gori» против
+	// «Registar lijekova Crne Gore»), хотя сущности разные — цены в клиниках
+	// против регистра ЦИнМЕД. См. «Мелочи» в docs/audit/seo-2026-07.md.
+	return t('MedicationsPageTitle');
 });
 
 const pageTitleWithCount = computed(() => {

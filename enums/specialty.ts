@@ -100,6 +100,31 @@ export const PEDIATRIC_SPECIALTIES = [
 	DoctorSpecialty.PEDIATRIC_DENTISTRY,
 ];
 
+/**
+ * Снятые ID специальностей → действующая замена.
+ *
+ * Значение, убранное из enum'а, не исчезает: оно остаётся в индексе
+ * поисковика, во внешних ссылках и в закладках, и краулер продолжает его
+ * запрашивать месяцами. Валидатор его отвергает, фильтр молча пропадает и
+ * листинг отдаёт ПОЛНЫЙ каталог под мусорным URL.
+ *
+ * `73` (`PHYSICAL_MEDICINE_REHABILITATION`) заменён на `PHYSIOTHERAPY = 94`
+ * коммитом `f5f3b6b` 2026-04-14. Через три с половиной месяца после этого
+ * `?specialtyIds=73` всё ещё запрашивался 72 раза в неделю, а в GSC такие URL
+ * приносили клики — при том что `specialtyIds=94` не проиндексирован вообще.
+ * См. пункт 12 в docs/audit/seo-2026-07.md.
+ *
+ * Поэтому снятому значению нужен именно 301 на преемника, а не `noindex`:
+ * `noindex` гасит страницу, которая уже ранжируется, и ничего не передаёт
+ * замене. Заводить редирект надо тем же коммитом, что и смену ID.
+ *
+ * Проверено по всей истории git: 73 — единственное снятое значение во всех
+ * enum'ах проекта (дыры 53–67 в нумерации никогда не были заняты).
+ */
+export const RETIRED_SPECIALTY_IDS: Record<number, DoctorSpecialty> = {
+	73: DoctorSpecialty.PHYSIOTHERAPY,
+};
+
 // Surgical specialties group
 export const SURGICAL_SPECIALTIES = [
 	DoctorSpecialty.GENERAL_SURGERY,

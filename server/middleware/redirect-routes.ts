@@ -1,4 +1,5 @@
 import { fixUrlRegionalParams } from '../common/redirect/regional-settings';
+import { fixRetiredFilterIds } from '../common/redirect/retired-filter-ids';
 import { checkSlugRedirect } from '../common/redirect/slug-redirects';
 import { sendSitemap } from '../common/sitemap/utils';
 import { generateSitemapPage } from '../common/sitemap/sitemap';
@@ -35,6 +36,19 @@ export default defineEventHandler(async (event) => {
 		const slugRedirect = await checkSlugRedirect(event, pathArray);
 		if (slugRedirect) {
 			await sendRedirect(event, slugRedirect.url, slugRedirect.status);
+			return;
+		}
+
+		// Раньше локального: снятое значение фильтра надо унести на преемника
+		// до того, как страница отрисуется полным каталогом. Целевой URL уже
+		// нормализован по `lang`, поэтому второго хопа обычно не будет.
+		const retiredFilterRedirect = fixRetiredFilterIds(event);
+		if (retiredFilterRedirect) {
+			await sendRedirect(
+				event,
+				retiredFilterRedirect.url,
+				retiredFilterRedirect.status,
+			);
 			return;
 		}
 

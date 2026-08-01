@@ -15,7 +15,7 @@ import {
 	getRegionalQuery,
 	getRegionalUrl,
 } from '~/common/url-utils';
-import { getLocalizedName } from '~/common/utils';
+import { getLocalizedName, translateOrEmpty } from '~/common/utils';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import clinicItemsSortI18n from '~/i18n/clinic-items-sort';
 import labTestCategoryI18n from '~/i18n/labtest-category';
@@ -144,7 +144,7 @@ const isFiltered = computed(
 
 const selectedCategoryName = computed(() =>
 	currentCategory.value != null
-		? t(`lab_test_category_${currentCategory.value}`)
+		? translateOrEmpty(t, `lab_test_category_${currentCategory.value}`)
 		: '',
 );
 

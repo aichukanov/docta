@@ -103,7 +103,7 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside));
 			<li v-for="lang in locales" :key="lang" role="none">
 				<NuxtLink
 					:to="getLocalePath(lang)"
-					:hreflang="lang"
+					:hreflang="getHreflangTag(lang)"
 					role="menuitem"
 					class="language-switcher__option"
 					:class="{ 'language-switcher__option--active': locale === lang }"

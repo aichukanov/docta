@@ -97,10 +97,10 @@ export default defineNuxtConfig({
 		'/logo-site.png': {
 			headers: { 'Cache-Control': 'max-age=31536000, public, immutable' },
 		},
-		'/tg.png': {
+		'/tg.svg': {
 			headers: { 'Cache-Control': 'max-age=31536000, public, immutable' },
 		},
-		'/email.png': {
+		'/email.svg': {
 			headers: { 'Cache-Control': 'max-age=31536000, public, immutable' },
 		},
 		'/**/*.png': {

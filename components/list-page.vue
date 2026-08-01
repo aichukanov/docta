@@ -1,6 +1,7 @@
 <script setup lang="ts" generic="T extends ListPageItem">
 import { Filter, ArrowDown } from '@element-plus/icons-vue';
 import { getCanonicalUrl, getRegionalQuery } from '~/common/url-utils';
+import type { FilterNamespace } from '~/stores/filters';
 import { CITY_COORDINATES, type CityId } from '~/enums/cities';
 import { LIST_PAGE_SIZE } from '~/common/constants';
 import type { ClinicData } from '~/interfaces/clinic';
@@ -15,6 +16,10 @@ const props = withDefaults(
 		pageTitle: string;
 		pageDescription?: string;
 		filterQuery: Record<string, any>;
+		// Нужен, чтобы узнать у стора, не было ли в URL невалидных значений
+		// фильтров (пункт 7d аудита). Проп обязательный намеренно: с
+		// необязательным страницу легко завести без защиты и не заметить.
+		filterNamespace: FilterNamespace;
 		cityIds: number[];
 		mapClinics?: ClinicData[];
 		clinicMode?: boolean;
@@ -45,6 +50,7 @@ const pageNumber = ref(Number(route.query.page) || 1);
 const isSyncingFromRoute = ref(false);
 
 const clinicsStore = useClinicsStore();
+const filtersStore = useFiltersStore();
 
 const routeWithParams = computed(() => {
 	return {
@@ -130,6 +136,15 @@ const activeFiltersCount = computed(
 
 const robotsMeta = computed(() => {
 	if (props.list?.length === 0) {
+		return 'noindex, follow';
+	}
+
+	// Невалидное значение фильтра store молча заменяет на «фильтра нет», и
+	// страница отдаёт ПОЛНЫЙ каталог: `?specialtyIds=99999` показывал всех 1316
+	// врачей с self-canonical на этот URL. Значение может быть любым, то есть
+	// это неограниченная поверхность дублей базового листинга.
+	// См. пункт 7d в docs/audit/seo-2026-07.md.
+	if (filtersStore.hasInvalidFilters(props.filterNamespace)) {
 		return 'noindex, follow';
 	}
 

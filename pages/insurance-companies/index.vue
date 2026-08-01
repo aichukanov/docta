@@ -174,6 +174,7 @@ watchEffect(() => {
 
 <template>
 	<ListPage
+		filter-namespace="insurance-companies"
 		:pageTitle="pageTitleWithCount"
 		:pageDescription="pageDescription"
 		:list="companiesList"

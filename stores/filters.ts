@@ -108,15 +108,50 @@ export const useFiltersStore = defineStore('filters', () => {
 	// состояния из URL (back/forward, переход по ссылке) от действий пользователя
 	const routeSyncVersion = ref(0);
 
+	/**
+	 * Ключи фильтров, значения которых пришли в URL, но не прошли валидацию.
+	 *
+	 * `setIfValid` в таком случае ставит `[]`, то есть фильтр молча исчезает и
+	 * страница отдаёт ПОЛНЫЙ каталог: `/doctors?specialtyIds=99999` показывал
+	 * все 1316 врачей с self-canonical на этот мусорный URL и без `noindex`.
+	 * Поскольку значение может быть любым, это неограниченная поверхность
+	 * дублей базового листинга. Флаг нужен, чтобы `list-page.vue` мог отдать
+	 * `noindex` — см. пункт 7d в docs/audit/seo-2026-07.md.
+	 *
+	 * Валидаторы проверяют членство в enum'ах (`DoctorSpecialty`, `CityId` и
+	 * т.п.), без обращения к БД, поэтому «всё стало невалидным из-за аварии»
+	 * здесь невозможно, и строгость безопасна.
+	 */
+	const invalidFilterKeys = reactive(
+		Object.fromEntries(
+			(Object.keys(namespaces) as FilterNamespace[]).map((ns) => [
+				ns,
+				new Set<string>(),
+			]),
+		) as Record<FilterNamespace, Set<string>>,
+	);
+
+	const hasInvalidFilters = (ns: FilterNamespace) =>
+		invalidFilterKeys[ns].size > 0;
+
 	const updateFromRoute = (ns: FilterNamespace, query: LocationQuery) => {
 		routeSyncVersion.value++;
 		const s = namespaces[ns];
+		const invalid = invalidFilterKeys[ns];
+		invalid.clear();
+
 		const setIfValid = (
 			key: IdArrayKey,
 			validator: (ids: number[]) => boolean,
 		) => {
 			const parsed = parseIdArray(query[key] as string | string[] | undefined);
-			s[key] = parsed && validator(parsed) ? parsed : [];
+			const isValid = parsed != null && validator(parsed);
+			// Отсутствующий параметр — не ошибка; ошибка — когда он есть, но
+			// значение не проходит валидацию.
+			if (!isValid && query[key] != null) {
+				invalid.add(key);
+			}
+			s[key] = isValid ? parsed : [];
 		};
 
 		setIfValid('specialtyIds', (ids) =>
@@ -166,7 +201,15 @@ export const useFiltersStore = defineStore('filters', () => {
 			? query.minRating[0]
 			: query.minRating;
 		const ratingNum = ratingRaw != null ? Number(ratingRaw) : 0;
-		s.minRating = validateMinRating({ minRating: ratingNum }) ? ratingNum : 0;
+		const isRatingValid = validateMinRating({ minRating: ratingNum });
+		if (!isRatingValid && ratingRaw != null) {
+			invalid.add('minRating');
+		}
+		s.minRating = isRatingValid ? ratingNum : 0;
+
+		// `name` и `openNow` сознательно не проверяем: у поиска любое значение
+		// осмысленно, а у `openNow` всё, кроме 'true'/'1', означает «выключено» —
+		// то есть значение по умолчанию, а не отброшенный фильтр.
 	};
 
 	return {
@@ -174,5 +217,6 @@ export const useFiltersStore = defineStore('filters', () => {
 		getRouteParams,
 		updateFromRoute,
 		routeSyncVersion,
+		hasInvalidFilters,
 	};
 });

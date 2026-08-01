@@ -213,6 +213,7 @@ watchEffect(() => {
 
 <template>
 	<ListPage
+		filter-namespace="labtests"
 		:pageTitle="pageTitleWithCount"
 		:pageDescription="pageDescription"
 		:list="labTestsList?.items || []"

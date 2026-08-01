@@ -270,6 +270,7 @@ watchEffect(() => {
 
 <template>
 	<ListPage
+		filter-namespace="doctors"
 		:pageTitle="pageTitleWithCount"
 		:pageDescription="pageDescription"
 		:list="doctorsData.doctors"

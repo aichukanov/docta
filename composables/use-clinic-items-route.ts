@@ -36,6 +36,39 @@ export function useClinicItemsRoute(options?: {
 			: '';
 	});
 
+	/**
+	 * Есть ли в URL параметры, из-за которых страница — дубль базовой подстраницы.
+	 * Используется только для `robots` (пункт 7e аудита и его окрестности).
+	 *
+	 * Отдельным флагом, а НЕ добавлением в `isFiltered`: тот управляет ещё и
+	 * отображаемым счётчиком, и пропом `isFiltered` дочернего компонента —
+	 * порядок сортировки не должен менять UI.
+	 *
+	 * Три случая, все проверены вживую:
+	 *
+	 * 1. `?sort=<любое непустое>` — валидное значение меняет только ПОРЯДОК, а не
+	 *    состав; невалидное молча игнорируется. И то и другое = дубль.
+	 * 2. `?category=abc` — не парсится, фильтр молча отбрасывается, отдаётся
+	 *    полный список. Тот же класс, что 7d на листингах.
+	 * 3. `?page=1` и `?page=abc` — сводятся к первой странице, то есть к базовому URL.
+	 *
+	 * Почему noindex, а не вырезание `sort` из canonical: подстраницы клиник
+	 * пагинируются, и у `?sort=X&page=2` состав ИНОЙ, чем у `?page=2` —
+	 * канонизировать одно в другое было бы неправдой.
+	 */
+	const hasRedundantQuery = computed(() => {
+		const raw = (key: string) => {
+			const v = route.query[key];
+			return Array.isArray(v) ? v[0] : v;
+		};
+
+		if (raw('sort')) return true;
+		if (raw('category') != null && currentCategory.value == null) return true;
+		if (raw('page') != null && currentPage.value === 1) return true;
+
+		return false;
+	});
+
 	const pushQuery = (
 		updates: Record<string, string | number | null | undefined>,
 	) => {
@@ -56,6 +89,7 @@ export function useClinicItemsRoute(options?: {
 		currentSearch,
 		currentCategory,
 		currentSort,
+		hasRedundantQuery,
 		pushQuery,
 	};
 }

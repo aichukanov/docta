@@ -32,8 +32,13 @@ const { t, locale } = useI18n({
 
 const route = useRoute();
 const clinicSlug = computed(() => route.params.clinicSlug as string);
-const { currentPage, currentSearch, currentCategory, currentSort } =
-	useClinicItemsRoute();
+const {
+	currentPage,
+	currentSearch,
+	currentCategory,
+	currentSort,
+	hasRedundantQuery,
+} = useClinicItemsRoute();
 
 const { data: clinicPayload } = await useFetch('/api/clinics/items-summary', {
 	key: `clinic-items-summary-labtests-${clinicSlug.value}`,
@@ -161,8 +166,11 @@ const pageDescription = computed(() => {
 		: base;
 });
 
+// hasRedundantQuery, а не isFiltered: сортировка меняет порядок, а не состав, то есть
+// даёт дубль базовой подстраницы (пункт 7e аудита). В isFiltered её добавлять
+// нельзя — он управляет ещё и счётчиком, и пропом дочернего компонента.
 const robotsMeta = computed(() =>
-	isFiltered.value ? 'noindex, follow' : undefined,
+	isFiltered.value || hasRedundantQuery.value ? 'noindex, follow' : undefined,
 );
 
 useSeoMeta({

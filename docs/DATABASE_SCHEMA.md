@@ -42,6 +42,8 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `lab_test_categories`                   | Categories for lab tests.                                                                     |
 | `lab_test_categories_relations`         | Junction table: Lab Test <-> Category.                                                        |
 | `lab_test_synonyms`                     | Alternative names for lab tests for search optimization.                                      |
+| `medical_service_synonyms`              | Alternative names for medical services (search + names kept from merges).                     |
+| `medical_service_duplicate_candidates`  | Review queue of suspected duplicate service pairs.                                            |
 | `medical_service_redirects`             | Redirect map for merged medical service records.                                              |
 | `doctor_redirects`                      | Redirect map for merged doctor profiles.                                                      |
 | `lab_test_redirects`                    | Redirect map for merged lab test records.                                                     |
@@ -342,6 +344,29 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `rank_score` (decimal(5,4), NOT NULL, default 0.0000): Computed ranking score for sort ordering.
 - `created_at` (timestamp)
 - _Indexes_: `idx_medical_services_slug` (slug, UNIQUE), `idx_medical_services_rank_score` (rank_score DESC), `idx_ms_sort_order` (sort_order, rank_score DESC)
+
+### `medical_service_synonyms`
+
+- `id` (int, PK, AI)
+- `medical_service_id` (int, FK -> medical_services.id, CASCADE)
+- `another_name` (varchar(255), NOT NULL): Alternative name.
+- `language` (varchar(10), NOT NULL): Locale code — `en`, `sr`, `sr-cyrl`, `ru`, `de`, `tr`.
+- `created_at` (timestamp)
+- _Unique constraint_: (`medical_service_id`, `another_name`, `language`)
+- _Comment_: Mirrors `lab_test_synonyms`, but scoped per service rather than globally unique on name — the same wording may legitimately point at more than one service. Merging services writes the losing record's names here, so a clinic's own phrasing keeps resolving after the merge.
+
+### `medical_service_duplicate_candidates`
+
+- `id` (int, PK, AI)
+- `service_id_a` (int, FK -> medical_services.id, CASCADE): Always the smaller id.
+- `service_id_b` (int, FK -> medical_services.id, CASCADE): Always the larger id.
+- `tier` (enum('A','B','C')): A — ≥2 language columns agree; B — 1 agrees; C — fuzzy English only.
+- `score` (decimal(6,2)): Ranking score, higher = more confident.
+- `signals` (varchar(500)): Comma-separated evidence codes, e.g. `lang:name_sr,lang:name_ru,same-clinic:3`.
+- `status` (enum('pending','merged','dismissed'), default 'pending')
+- `detected_at` (timestamp), `decided_at` (datetime, NULL)
+- _Unique constraint_: (`service_id_a`, `service_id_b`)
+- _Comment_: Filled by `scripts/services/find-duplicate-services.mjs`, reviewed in the admin "Дубликаты" tab. `status` is why the queue is persisted — a dismissed pair must never resurface on the next detector run. Rows disappear on their own when one side is merged away (FK CASCADE).
 
 ### `medical_service_categories`
 
@@ -666,7 +691,7 @@ history matters, patients may already have come with that coupon.
    - Most foreign keys use `ON DELETE CASCADE`.
 
 8. **Search**:
-   - Search should consider `lab_test_synonyms` and localized `name_*` columns.
+   - Search should consider `lab_test_synonyms`, `medical_service_synonyms` and localized `name_*` columns.
 
 9. **Redirects**:
    - `doctor_redirects`, `lab_test_redirects` and `medical_service_redirects` tables handle merged records for 301 redirects.

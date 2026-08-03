@@ -2,6 +2,18 @@ import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
+// Колонка названия → код языка в medical_service_synonyms.
+// Коды совпадают с локалями приложения ('sr-cyrl', не 'sr_cyrl') — по ним
+// фильтрует выдача синонимов на странице услуги.
+const SYNONYM_LANGUAGE_COLUMNS: ReadonlyArray<readonly [string, string]> = [
+	['name_en', 'en'],
+	['name_sr', 'sr'],
+	['name_sr_cyrl', 'sr-cyrl'],
+	['name_ru', 'ru'],
+	['name_de', 'de'],
+	['name_tr', 'tr'],
+];
+
 export default defineEventHandler(async (event): Promise<boolean> => {
 	try {
 		await requireAdmin(event);
@@ -35,7 +47,8 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 			// Проверяем существование обеих услуг
 			const [serviceRows]: any = await connection.execute(
-				'SELECT id, name_sr FROM medical_services WHERE id IN (?, ?)',
+				`SELECT id, name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr
+				 FROM medical_services WHERE id IN (?, ?)`,
 				[body.primaryServiceId, body.secondaryServiceId],
 			);
 
@@ -48,11 +61,32 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 			// 1. Переносим связи с клиниками (только те, которых ещё нет)
 			await connection.execute(
-				`INSERT IGNORE INTO clinic_medical_services (medical_service_id, clinic_id, price, price_max, code)
-				 SELECT ?, clinic_id, price, price_max, code
+				`INSERT IGNORE INTO clinic_medical_services (medical_service_id, clinic_id, price, price_min, price_max, code, is_price_outdated)
+				 SELECT ?, clinic_id, price, price_min, price_max, code, is_price_outdated
 				 FROM clinic_medical_services
 				 WHERE medical_service_id = ?`,
 				[body.primaryServiceId, body.secondaryServiceId],
+			);
+
+			// 1.1 Клиника могла быть привязана к обеим услугам — тогда INSERT IGNORE
+			// выше ничего не вставил. Дозаполняем пустые поля основной услуги
+			// данными дубликата, чтобы не потерять цену.
+			// is_price_outdated присваивается ПЕРВЫМ: MySQL вычисляет SET слева
+			// направо, и после присвоения p.price условие уже не сработает.
+			await connection.execute(
+				`UPDATE clinic_medical_services p
+				 JOIN clinic_medical_services s
+				   ON s.clinic_id = p.clinic_id AND s.medical_service_id = ?
+				 SET p.is_price_outdated = CASE
+					     WHEN p.price IS NULL AND s.price IS NOT NULL THEN s.is_price_outdated
+					     ELSE p.is_price_outdated
+				     END,
+				     p.price = COALESCE(p.price, s.price),
+				     p.price_min = COALESCE(p.price_min, s.price_min),
+				     p.price_max = COALESCE(p.price_max, s.price_max),
+				     p.code = COALESCE(p.code, s.code)
+				 WHERE p.medical_service_id = ?`,
+				[body.secondaryServiceId, body.primaryServiceId],
 			);
 
 			// 2. Переносим специальности (только те, которых ещё нет)
@@ -81,6 +115,66 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				 WHERE medical_service_id = ?`,
 				[body.primaryServiceId, body.secondaryServiceId],
 			);
+
+			// 4.1 Переносим справочный контент. На medical_service_id стоит UNIQUE,
+			// поэтому UPDATE IGNORE перенесёт справку только если у основной услуги
+			// её ещё нет; иначе справка останется на дубликате и уйдёт по CASCADE.
+			await connection.execute(
+				`UPDATE IGNORE medical_service_reference_info
+				 SET medical_service_id = ?
+				 WHERE medical_service_id = ?`,
+				[body.primaryServiceId, body.secondaryServiceId],
+			);
+
+			// 4.2 Переносим связь с тарифами ФЗОЦГ (FK стоит на SET NULL —
+			// без переноса коды молча отвязались бы от каталога)
+			await connection.execute(
+				`UPDATE medical_service_tariffs
+				 SET medical_service_id = ?
+				 WHERE medical_service_id = ?`,
+				[body.primaryServiceId, body.secondaryServiceId],
+			);
+
+			// 4.3 Переносим отзывы (FK стоит на CASCADE — без переноса удалились бы)
+			await connection.execute(
+				`UPDATE reviews
+				 SET medical_service_id = ?
+				 WHERE medical_service_id = ?`,
+				[body.primaryServiceId, body.secondaryServiceId],
+			);
+
+			// 4.4 Переносим синонимы дубликата. UPDATE IGNORE — у основной услуги
+			// такой синоним мог уже быть, тогда строка дубликата уйдёт по CASCADE.
+			await connection.execute(
+				`UPDATE IGNORE medical_service_synonyms
+				 SET medical_service_id = ?
+				 WHERE medical_service_id = ?`,
+				[body.primaryServiceId, body.secondaryServiceId],
+			);
+
+			// 4.5 Сохраняем названия удаляемой услуги как синонимы основной —
+			// иначе формулировка, под которой услугу знает клиника (и по которой
+			// её ищут), после слияния перестала бы находиться.
+			const secondaryNames = serviceRows.find(
+				(s: any) => s.id === body.secondaryServiceId,
+			);
+			if (secondaryNames) {
+				const primaryNames = serviceRows.find(
+					(s: any) => s.id === body.primaryServiceId,
+				);
+				for (const [column, language] of SYNONYM_LANGUAGE_COLUMNS) {
+					const value = secondaryNames[column]?.trim();
+					// Совпало с названием основной услуги — синоним не нужен.
+					if (!value || value === primaryNames?.[column]?.trim()) {
+						continue;
+					}
+					await connection.execute(
+						`INSERT IGNORE INTO medical_service_synonyms (medical_service_id, another_name, language)
+						 VALUES (?, ?, ?)`,
+						[body.primaryServiceId, value, language],
+					);
+				}
+			}
 
 			// 5. Удаляем связи удаляемой услуги
 			await connection.execute(

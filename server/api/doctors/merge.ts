@@ -119,6 +119,19 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				body.primaryDoctorId,
 			]);
 
+			// 4.1 Переносим отзывы и ответы на них (FK стоят на CASCADE —
+			// без переноса отзывы удаляемого врача пропали бы вместе с ним).
+			// Уникальные ключи (provider, provider_review_id) и
+			// (review_id, responder_type) при смене doctor_id не затрагиваются.
+			await connection.execute(
+				'UPDATE reviews SET doctor_id = ? WHERE doctor_id = ?',
+				[body.primaryDoctorId, body.secondaryDoctorId],
+			);
+			await connection.execute(
+				'UPDATE review_replies SET doctor_id = ? WHERE doctor_id = ?',
+				[body.primaryDoctorId, body.secondaryDoctorId],
+			);
+
 			// 5. Удаляем связи второго врача
 			const deleteSecondarySpecialtiesQuery =
 				'DELETE FROM doctor_specialties WHERE doctor_id = ?';

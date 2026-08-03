@@ -1,5 +1,14 @@
 import { test, expect } from '@playwright/test';
+import type { Page } from '@playwright/test';
 import { HeaderComponent } from '../pages/components/header.page';
+
+// Cookie ставится по адресу страницы, а не по захардкоженному домену: иначе
+// на прогоне против прода кука с domain=localhost до docta.me не доезжает и
+// тест «приоритет cookie над query» проверял бы пустоту.
+async function setLocaleCookie(page: Page, value: string) {
+	const baseURL = process.env.E2E_BASE_URL || 'http://localhost:3000';
+	await page.context().addCookies([{ name: 'locale', value, url: baseURL }]);
+}
 
 test.describe('Locale System', () => {
 	test.describe('Anonymous Users - Query Parameters', () => {
@@ -45,14 +54,7 @@ test.describe('Locale System', () => {
 			page,
 		}) => {
 			// Устанавливаем cookie вручную
-			await page.context().addCookies([
-				{
-					name: 'locale',
-					value: 'de',
-					domain: 'localhost',
-					path: '/',
-				},
-			]);
+			await setLocaleCookie(page, 'de');
 
 			await page.goto('/');
 			await page.waitForLoadState('domcontentloaded');
@@ -64,14 +66,7 @@ test.describe('Locale System', () => {
 
 		test('should prefer cookie over query parameter', async ({ page }) => {
 			// Устанавливаем cookie с одной локалью
-			await page.context().addCookies([
-				{
-					name: 'locale',
-					value: 'de',
-					domain: 'localhost',
-					path: '/',
-				},
-			]);
+			await setLocaleCookie(page, 'de');
 
 			// Открываем с другой локалью в query
 			await page.goto('/?lang=ru');
@@ -94,6 +89,10 @@ test.describe('Locale System', () => {
 		test.beforeEach(async ({ page }) => {
 			await page.goto('/');
 			header = new HeaderComponent(page);
+		});
+
+		test('переключатель языка виден в шапке', async () => {
+			await expect(header.getLanguageSwitcher()).toBeVisible();
 		});
 
 		test('should switch language using language switcher', async ({ page }) => {
@@ -188,86 +187,10 @@ test.describe('Locale System', () => {
 		});
 	});
 
-	test.describe('Authenticated Users', () => {
-		// NOTE: Эти тесты требуют наличия тестового пользователя с сессией
-		// Для полноценного запуска нужно добавить фикстуры для авторизации
-
-		test.skip('should load user preferred locale from database', async ({
-			page,
-		}) => {
-			// TODO: Добавить авторизацию тестового пользователя
-			// const authCookie = await loginTestUser(page, 'test@example.com', 'password');
-
-			// Пользователь имеет русскую локаль в профиле
-			// Открываем страницу без query параметра
-			await page.goto('/');
-			await page.waitForLoadState('domcontentloaded');
-
-			// Должна загрузиться русская локаль из БД
-			const htmlLang = await page.getAttribute('html', 'lang');
-			expect(htmlLang).toBe('ru');
-		});
-
-		test.skip('should ignore query parameter for authenticated users', async ({
-			page,
-		}) => {
-			// TODO: Добавить авторизацию тестового пользователя
-
-			// Пользователь имеет русскую локаль в профиле
-			// Открываем страницу с английским query параметром
-			await page.goto('/?lang=en');
-			await page.waitForLoadState('domcontentloaded');
-
-			// Должна загрузиться русская локаль из БД (игнорируя query)
-			const htmlLang = await page.getAttribute('html', 'lang');
-			expect(htmlLang).toBe('ru');
-
-			// URL НЕ должен содержать lang параметр
-			// (для залогиненных пользователей редирект не происходит)
-			expect(page.url()).toContain('lang=en');
-		});
-
-		test.skip('should save locale to database when changed', async ({
-			page,
-		}) => {
-			// TODO: Добавить авторизацию тестового пользователя
-
-			const header = new HeaderComponent(page);
-			await page.goto('/');
-
-			// Меняем язык через switcher
-			await header.selectLanguage('English');
-			await page.waitForLoadState('domcontentloaded');
-
-			// Перезагружаем страницу
-			await page.reload();
-			await page.waitForLoadState('domcontentloaded');
-
-			// Должен загрузиться английский из БД
-			const htmlLang = await page.getAttribute('html', 'lang');
-			expect(htmlLang).toBe('en');
-		});
-
-		test.skip('should use query parameter after logout', async ({ page }) => {
-			// TODO: Добавить авторизацию и разлогинивание
-
-			// Залогиненный пользователь имеет русскую локаль
-			await page.goto('/');
-			let htmlLang = await page.getAttribute('html', 'lang');
-			expect(htmlLang).toBe('ru');
-
-			// Разлогиниваемся
-			// await logoutTestUser(page);
-
-			// Открываем с английским query параметром
-			await page.goto('/?lang=en');
-			await page.waitForLoadState('domcontentloaded');
-
-			// Теперь должен работать query параметр
-			htmlLang = await page.getAttribute('html', 'lang');
-			expect(htmlLang).toBe('en');
-		});
-	});
+	// Локаль залогиненного пользователя (приоритет БД над query, запись при
+	// смене языка) сюда не входит: здесь были четыре test.skip-заглушки без
+	// фикстуры авторизации, они не проверяли ничего. Появится тестовый
+	// пользователь — вернуть.
 
 	test.describe('Edge Cases', () => {
 		test('should handle invalid locale gracefully', async ({ page }) => {
@@ -342,12 +265,7 @@ test.describe('Locale System', () => {
 			expect(cls).toBeLessThan(0.1);
 		});
 
-		test('should load locale from profile quickly for authenticated users', async ({
-			page,
-		}) => {
-			// TODO: Добавить авторизацию
-			// Измеряем время загрузки локали из БД
-
+		test('главная отдаётся быстрее 3 секунд', async ({ page }) => {
 			const startTime = Date.now();
 			await page.goto('/');
 			await page.waitForLoadState('domcontentloaded');

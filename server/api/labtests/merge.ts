@@ -52,11 +52,31 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 			// 1. Переносим связи с клиниками (только те, которых ещё нет)
 			await connection.execute(
-				`INSERT IGNORE INTO clinic_lab_tests (lab_test_id, clinic_id, price, price_max, code)
-				 SELECT ?, clinic_id, price, price_max, code
+				`INSERT IGNORE INTO clinic_lab_tests (lab_test_id, clinic_id, price, price_max, code, is_price_outdated)
+				 SELECT ?, clinic_id, price, price_max, code, is_price_outdated
 				 FROM clinic_lab_tests
 				 WHERE lab_test_id = ?`,
 				[body.primaryLabTestId, body.secondaryLabTestId],
+			);
+
+			// 1.1 Клиника могла быть привязана к обоим анализам — тогда INSERT IGNORE
+			// выше ничего не вставил. Дозаполняем пустые поля основного анализа
+			// данными дубликата, чтобы не потерять цену.
+			// is_price_outdated присваивается ПЕРВЫМ: MySQL вычисляет SET слева
+			// направо, и после присвоения p.price условие уже не сработает.
+			await connection.execute(
+				`UPDATE clinic_lab_tests p
+				 JOIN clinic_lab_tests s
+				   ON s.clinic_id = p.clinic_id AND s.lab_test_id = ?
+				 SET p.is_price_outdated = CASE
+					     WHEN p.price IS NULL AND s.price IS NOT NULL THEN s.is_price_outdated
+					     ELSE p.is_price_outdated
+				     END,
+				     p.price = COALESCE(p.price, s.price),
+				     p.price_max = COALESCE(p.price_max, s.price_max),
+				     p.code = COALESCE(p.code, s.code)
+				 WHERE p.lab_test_id = ?`,
+				[body.secondaryLabTestId, body.primaryLabTestId],
 			);
 
 			// 2. Переносим категории (только те, которых ещё нет)
@@ -82,6 +102,16 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 					[body.primaryLabTestId, secondaryLabTest.name_sr],
 				);
 			}
+
+			// 4.1 Переносим справочный контент. На lab_test_id стоит UNIQUE,
+			// поэтому UPDATE IGNORE перенесёт справку только если у основного
+			// анализа её ещё нет; иначе она останется на дубликате и уйдёт по CASCADE.
+			await connection.execute(
+				`UPDATE IGNORE lab_test_reference_info
+				 SET lab_test_id = ?
+				 WHERE lab_test_id = ?`,
+				[body.primaryLabTestId, body.secondaryLabTestId],
+			);
 
 			// 5. Удаляем связи удаляемого анализа
 			await connection.execute(

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ClinicServicesMap } from '#components';
 import { OG_IMAGE, SITE_URL, REVIEWS_THRESHOLD } from '~/common/constants';
+import { priceFormatOptions } from '~/common/entity-auto-facts';
 import { isGonePayload } from '~/common/gone';
 import {
 	getCanonicalUrl,
@@ -11,17 +12,23 @@ import {
 	buildBreadcrumbsSchema,
 	buildDoctorSchema,
 } from '~/common/schema-org-builders';
+import {
+	buildSeoDescription,
+	fitSeoTitle,
+	MAX_CITIES_IN_DESCRIPTION,
+} from '~/common/seo-meta';
 import { LanguageId } from '~/enums/language';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import doctorI18n from '~/i18n/doctor';
 import languageI18n from '~/i18n/language';
 import reviewsI18n from '~/i18n/reviews';
+import seoDescriptionI18n from '~/i18n/seo-description';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
 import type { ClinicData } from '~/interfaces/clinic';
 
-const { t, locale } = useI18n({
+const { t, n, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([
 		breadcrumbI18n,
@@ -30,6 +37,7 @@ const { t, locale } = useI18n({
 		languageI18n,
 		cityI18n,
 		reviewsI18n,
+		seoDescriptionI18n,
 	]),
 });
 
@@ -202,10 +210,10 @@ const pageTitle = computed(() => {
 		return '';
 	}
 
-	const specialtiesText = doctorData.value?.specialtyIds
-		?.split(',')
-		.map((specialty) => t(`specialty_${specialty}`))
-		.join(', ');
+	const specialties =
+		doctorData.value?.specialtyIds
+			?.split(',')
+			.map((specialty) => t(`specialty_${specialty}`)) ?? [];
 
 	const usedCities: { [key: string]: true } = {};
 	const uniqueCities = doctorClinics.value
@@ -223,8 +231,17 @@ const pageTitle = computed(() => {
 			? t(`city_${uniqueCities[0]}`)
 			: t('InMontenegro');
 
-	const titleParts = [localizedName.value, specialtiesText, locationText];
-	return titleParts.filter(Boolean).join(' | ');
+	const name = localizedName.value;
+
+	// Вторая-третья специальность уходят раньше города и раньше имени: в Bing
+	// интент по врачам навигационный («dr zejnilovic bar»), там нужны имя и
+	// место, а перечень специальностей есть в самой карточке.
+	return fitSeoTitle([
+		[name, specialties.join(', '), locationText].filter(Boolean).join(' | '),
+		[name, specialties[0], locationText].filter(Boolean).join(' | '),
+		[name, locationText].filter(Boolean).join(' | '),
+		name,
+	]);
 });
 
 const pageDescription = computed(() => {
@@ -248,18 +265,21 @@ const pageDescription = computed(() => {
 				);
 
 	const usedCities: { [key: string]: true } = {};
-	const citiesText = joinWithAnd(
-		doctorClinics.value
-			.map((clinic) => {
-				if (usedCities[clinic.cityId]) {
-					return '';
-				}
+	const cityNames = doctorClinics.value
+		.map((clinic) => {
+			if (usedCities[clinic.cityId]) {
+				return '';
+			}
 
-				usedCities[clinic.cityId] = true;
-				return t(`city_${clinic.cityId}_genitive`);
-			})
-			.filter(Boolean),
-	);
+			usedCities[clinic.cityId] = true;
+			return t(`city_${clinic.cityId}_genitive`);
+		})
+		.filter(Boolean);
+
+	// От пяти городов перечисление уходит: пусть место достанется рейтингу.
+	// Пустой citiesText уводит на ключ Visit («Приём в Черногории»).
+	const citiesText =
+		cityNames.length <= MAX_CITIES_IN_DESCRIPTION ? joinWithAnd(cityNames) : '';
 
 	const visitText =
 		citiesText && languagesText
@@ -276,7 +296,44 @@ const pageDescription = computed(() => {
 	const doctorNameFull =
 		(professionalTitle ? professionalTitle + ' ' : '') + localizedName.value;
 
-	return `${doctorNameFull} — ${joinWithAnd(specialtiesText)}. ${visitText}`;
+	const rating = doctorData.value.rating;
+	const ratingSegment =
+		rating?.averageRating && rating.totalReviews > 0
+			? t('SeoDescRating', {
+					rating: rating.averageRating.toFixed(1),
+					count: rating.totalReviews,
+				})
+			: null;
+
+	// Нижняя граница по профильным услугам врача во всех его клиниках. Цены с
+	// пометкой «устаревшая» не берём: на странице рядом с такой ценой стоит
+	// оговорка, а в сниппет её не унести — см. common/clinic-coupon.ts соседний
+	// случай и флаг isOutdated.
+	const servicePrices = Object.values(clinicServices.value)
+		.flat()
+		.filter((service) => !service.isOutdated)
+		.map((service) => service.price ?? service.priceMin)
+		.filter((price): price is number => price != null && price > 0);
+
+	const priceSegment = servicePrices.length
+		? t('SeoDescServicesFrom', {
+				min: n(
+					Math.min(...servicePrices),
+					priceFormatOptions(Math.min(...servicePrices)),
+				),
+			})
+		: null;
+
+	// Клиники приёма перечислять не стали: у врача их бывает три-четыре, и
+	// названия вида «Specijalna bolnica za ortopediju…» вытесняют из сниппета
+	// специальность и город, то есть ровно то, чем врача ищут.
+	return buildSeoDescription([
+		`${doctorNameFull} — ${joinWithAnd(specialtiesText)}`,
+		visitText,
+		priceSegment,
+		ratingSegment,
+		t('SeoDescCtaDoctor'),
+	]);
 });
 
 function joinWithAnd(items: string[]): string {

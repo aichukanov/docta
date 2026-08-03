@@ -6,16 +6,26 @@ import {
 	buildBreadcrumbsSchema,
 	buildMedicalTestSchema,
 } from '~/common/schema-org-builders';
-import { computeEntityAutoFacts } from '~/common/entity-auto-facts';
+import {
+	computeEntityAutoFacts,
+	priceFormatOptions,
+} from '~/common/entity-auto-facts';
+import {
+	buildSeoDescription,
+	buildSeoPriceSegment,
+	fitSeoTitle,
+	MAX_CITIES_IN_DESCRIPTION,
+} from '~/common/seo-meta';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import entityAutoFactsI18n from '~/i18n/entity-auto-facts';
 import labTestI18n from '~/i18n/labtest';
 import labTestCategoryI18n from '~/i18n/labtest-category';
+import seoDescriptionI18n from '~/i18n/seo-description';
 import { combineI18nMessages } from '~/i18n/utils';
 import type { ClinicData } from '~/interfaces/clinic';
 
-const { t, locale } = useI18n({
+const { t, n, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([
 		breadcrumbI18n,
@@ -23,6 +33,7 @@ const { t, locale } = useI18n({
 		cityI18n,
 		labTestCategoryI18n,
 		entityAutoFactsI18n,
+		seoDescriptionI18n,
 	]),
 });
 
@@ -141,6 +152,8 @@ const autoFacts = computed(() =>
 	computeEntityAutoFacts(labTestClinics.value, filteredClinicPrices.value),
 );
 
+const formatPrice = (value: number) => n(value, priceFormatOptions(value));
+
 // Табы — на полном наборе клиник: фильтр не должен прятать таб «Клиники».
 const tabs = computed(() => {
 	const result = [];
@@ -181,9 +194,15 @@ const pageTitle = computed(() => {
 		? t(`lab_test_category_${labTestData.value.categoryIds[0]}_title`)
 		: '';
 
-	return categoryText
-		? `${labTestData.value?.name} | ${categoryText} | ${locationText}`
-		: `${labTestData.value?.name} | ${locationText}`;
+	const name = labTestData.value?.name ?? '';
+
+	// Порядок отбрасывания как на карточке услуги: сначала категория, город
+	// остаётся до последнего.
+	return fitSeoTitle([
+		[name, categoryText, locationText].filter(Boolean).join(' | '),
+		[name, locationText].filter(Boolean).join(' | '),
+		name,
+	]);
 });
 
 const pageDescription = computed(() => {
@@ -196,7 +215,7 @@ const pageDescription = computed(() => {
 		localName && localName !== name ? `${name} (${localName})` : name;
 
 	const usedCities: { [key: string]: true } = {};
-	const citiesText = labTestClinics.value
+	const cityNames = labTestClinics.value
 		.map((clinic) => {
 			if (usedCities[clinic.cityId]) {
 				return '';
@@ -205,12 +224,24 @@ const pageDescription = computed(() => {
 			usedCities[clinic.cityId] = true;
 			return t(`city_${clinic.cityId}_genitive`);
 		})
-		.filter(Boolean)
-		.join(', ');
+		.filter(Boolean);
 
-	return citiesText
+	// Как на карточке услуги: от пяти городов перечисление сворачивается, место
+	// уходит вилке цен.
+	const citiesText =
+		cityNames.length > 0 && cityNames.length <= MAX_CITIES_IN_DESCRIPTION
+			? cityNames.join(', ')
+			: '';
+
+	const intro = citiesText
 		? t('LabTestDescriptionCity', { name: displayName, city: citiesText })
 		: t('LabTestDescriptionDefault', { name: displayName });
+
+	return buildSeoDescription([
+		intro,
+		buildSeoPriceSegment(autoFacts.value, t, formatPrice),
+		t('SeoDescCtaCompare'),
+	]);
 });
 
 const heroTitle = computed(() => {

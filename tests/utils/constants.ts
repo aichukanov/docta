@@ -3,17 +3,12 @@ export const URLS = {
 	CLINICS: '/clinics',
 	DOCTORS: '/doctors',
 	SERVICES: '/services',
-	MEDICINES: '/medications',
+	LABTESTS: '/labtests',
+	// Два разных раздела, названия легко перепутать:
+	// /medicines — реестр лекарств (пункт «Lekovi» в шапке),
+	// /medications — лекарства, которые продают клиники.
+	MEDICINES: '/medicines',
+	MEDICATIONS: '/medications',
+	INSURANCE_COMPANIES: '/insurance-companies',
 	ARTICLES: '/articles',
-} as const;
-
-export const LANGUAGES = {
-	SERBIAN: 'sr',
-	ENGLISH: 'en',
-} as const;
-
-export const TIMEOUTS = {
-	SHORT: 2000,
-	MEDIUM: 5000,
-	LONG: 10000,
 } as const;

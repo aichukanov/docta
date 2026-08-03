@@ -103,10 +103,14 @@ export async function getMedicalServiceList(
 		const tariffCodeClause = codeLike
 			? ` OR EXISTS (SELECT 1 FROM medical_service_tariffs t_search WHERE t_search.medical_service_id = ms.id AND t_search.code = ?)`
 			: '';
+		// Alternative wordings — including the names of services merged into
+		// this one, so a clinic's own phrasing keeps resolving after a merge.
+		const synonymsClause = ` OR EXISTS (SELECT 1 FROM medical_service_synonyms mss_f WHERE mss_f.medical_service_id = ms.id AND mss_f.another_name LIKE ?)`;
 		whereFilters.push(
-			`(ms.name_en LIKE ? OR ms.${nameField} LIKE ? OR ms.name_sr LIKE ? OR ms.name_sr_cyrl LIKE ? OR ms.name_ru LIKE ? OR ms.name_de LIKE ? OR ms.name_tr LIKE ?${tariffCodeClause})`,
+			`(ms.name_en LIKE ? OR ms.${nameField} LIKE ? OR ms.name_sr LIKE ? OR ms.name_sr_cyrl LIKE ? OR ms.name_ru LIKE ? OR ms.name_de LIKE ? OR ms.name_tr LIKE ?${synonymsClause}${tariffCodeClause})`,
 		);
 		queryParams.push(
+			namePattern,
 			namePattern,
 			namePattern,
 			namePattern,

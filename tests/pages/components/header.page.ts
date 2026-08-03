@@ -1,4 +1,4 @@
-import type { Page } from '@playwright/test';
+import type { Locator, Page } from '@playwright/test';
 
 export class HeaderComponent {
 	constructor(private page: Page) {}
@@ -12,56 +12,34 @@ export class HeaderComponent {
 		}
 	}
 
-	/**
-	 * Получить ссылку навигации по тексту
-	 */
-	private getNavLinkByHref(href: string) {
-		return this.page.locator(`.app-header__nav-link[href="${href}"]`);
+	private getNavLinkByHref(href: string): Locator {
+		return this.page.locator(`.app-header__nav-link[href="${href}"]`).first();
 	}
 
-	/**
-	 * Кликнуть по ссылке в навигации
-	 */
 	async clickNavLink(linkHref: string) {
 		await this.waitForCookieBanner();
 		await this.getNavLinkByHref(linkHref).click();
 		await this.page.waitForLoadState('domcontentloaded');
 	}
 
-	/**
-	 * Проверить что ссылка навигации видима
-	 */
 	async isNavLinkVisible(linkHref: string): Promise<boolean> {
-		try {
-			return await this.getNavLinkByHref(linkHref).isVisible();
-		} catch {
-			return false;
-		}
+		return await this.getNavLinkByHref(linkHref)
+			.isVisible()
+			.catch(() => false);
 	}
 
-	/**
-	 * Получить все ссылки навигации
-	 */
 	async getNavLinks(): Promise<string[]> {
 		const links = await this.page.locator('.app-header__nav-link').all();
 		const hrefs = await Promise.all(
 			links.map((link) => link.getAttribute('href')),
 		);
-		return hrefs.filter(
-			(href) => href !== null && href.trim() !== '',
-		) as string[];
+		return hrefs.filter((href): href is string => !!href && href.trim() !== '');
 	}
 
-	/**
-	 * Проверить что хедер видим
-	 */
 	async isVisible(): Promise<boolean> {
 		return await this.page.locator('.app-header').isVisible();
 	}
 
-	/**
-	 * Кликнуть по логотипу
-	 */
 	async clickLogo() {
 		await this.waitForCookieBanner();
 		await this.page.locator('.app-header__logo').click();
@@ -69,47 +47,43 @@ export class HeaderComponent {
 	}
 
 	/**
-	 * Получить селектор языка
+	 * Переключатель языка.
+	 *
+	 * Это не el-select: `components/language-switcher.vue` — свой
+	 * button + ul, dropdown рендерится внутри компонента, а не в body.
+	 * В шапке их два (десктопный и мобильный), поэтому берём видимый.
 	 */
-	getLanguageSwitcher() {
-		return this.page.locator('.language-switcher-wrapper');
+	getLanguageSwitcher(): Locator {
+		return this.page.locator('.language-switcher:visible').first();
 	}
 
-	/**
-	 * Открыть переключатель языка
-	 */
 	async openLanguageSwitcher() {
-		// Кликаем по input внутри el-select
 		await this.waitForCookieBanner();
-		await this.getLanguageSwitcher().click();
-		// Ждем появления выпадающего списка
-		await this.page.waitForTimeout(800);
+		const trigger = this.getLanguageSwitcher().locator(
+			'.language-switcher__trigger',
+		);
+		if ((await trigger.getAttribute('aria-expanded')) === 'true') return;
+		await trigger.click();
+		await this.getLanguageSwitcher()
+			.locator('.language-switcher__dropdown')
+			.waitFor({ state: 'visible' });
 	}
 
-	/**
-	 * Выбрать язык
-	 */
+	/** @param language — подпись из `localeNames`, например «Русский», «English» */
 	async selectLanguage(language: string) {
 		await this.openLanguageSwitcher();
-		// Element Plus рендерит dropdown в body, находим visible dropdown
-		const dropdown = this.page.locator('.el-select-dropdown').last();
-		await dropdown.waitFor({ state: 'visible', timeout: 3000 });
-
-		// Ищем опцию по тексту в выпадающем списке
-		await dropdown
-			.locator('.el-select-dropdown__item')
+		await this.getLanguageSwitcher()
+			.locator('.language-switcher__option')
 			.filter({ hasText: language })
+			.first()
 			.click();
-		await this.page.waitForLoadState('domcontentloaded');
 	}
 
-	/**
-	 * Получить текущий язык из переключателя
-	 */
+	/** Короткий код текущего языка на кнопке переключателя */
 	async getCurrentLanguageLabel(): Promise<string> {
 		return (
 			(await this.getLanguageSwitcher()
-				.locator('.el-select__selected-item')
+				.locator('.language-switcher__label')
 				.textContent()) || ''
 		).trim();
 	}

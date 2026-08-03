@@ -411,6 +411,10 @@ async function recalculateRankScores() {
 							@updated="updateServices"
 						/>
 					</el-tab-pane>
+
+					<el-tab-pane label="Дубликаты">
+						<AdminServiceDuplicates @updated="updateServices" />
+					</el-tab-pane>
 				</el-tabs>
 			</el-tab-pane>
 

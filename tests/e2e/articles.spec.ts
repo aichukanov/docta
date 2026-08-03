@@ -1,90 +1,85 @@
 import { test, expect } from '@playwright/test';
-import { ArticleListPage } from '../pages/lists/article-list.page';
-import { ArticleDetailPage } from '../pages/details/article-detail.page';
+import type { Page } from '@playwright/test';
+import { URLS } from '../utils/constants';
+import { ARTICLE_SLUGS } from '../../common/articles';
 
-test.describe('Articles List Page', () => {
-	let articlesPage: ArticleListPage;
+// Статьи не проходят через ListPage/EntityPage: листинг — свои `.article-card`,
+// страница — `components/article-page.vue`. Соответствие ARTICLE_SLUGS файлам
+// и sitemap проверяет tests/unit/article-slugs.spec.ts, здесь — рендер.
 
+const articleCards = (page: Page) => page.locator('.article-card');
+
+test.describe('Листинг статей', () => {
 	test.beforeEach(async ({ page }) => {
-		articlesPage = new ArticleListPage(page);
-		await articlesPage.goto();
+		await page.goto(URLS.ARTICLES, { waitUntil: 'domcontentloaded' });
 	});
 
-	test('should load articles list page', async ({ page }) => {
-		await expect(page).toHaveURL(/.*articles.*/);
+	test('открывается и показывает карточки', async ({ page }) => {
+		await expect(page).toHaveURL(/\/articles(?:[/?#]|$)/);
+		expect(await articleCards(page).count()).toBeGreaterThan(0);
 	});
 
-	test('should display article cards', async () => {
-		const hasItems = await articlesPage.hasListItems();
-		expect(hasItems).toBeTruthy();
+	test('на листинге есть ссылка на каждую статью', async ({ page }) => {
+		// Расхождение здесь означает статью, до которой нельзя дойти по сайту.
+		// Unit-тест сверяет ARTICLE_SLUGS с файлами и исходником листинга,
+		// этот — с тем, что реально отрисовалось.
+		const hrefs = await page
+			.locator('.article-card a[href^="/articles/"], a.article-card')
+			.evaluateAll((links) =>
+				links.map((l) => (l.getAttribute('href') || '').split(/[?#]/)[0]),
+			);
+		const rendered = new Set(hrefs.map((h) => h.replace('/articles/', '')));
+
+		expect([...rendered].sort()).toEqual([...ARTICLE_SLUGS].sort());
 	});
 
-	test('should have at least one article', async () => {
-		const count = await articlesPage.getListItemsCount();
-		expect(count).toBeGreaterThan(0);
+	test('у карточки есть заголовок и описание', async ({ page }) => {
+		const first = articleCards(page).first();
+		expect(
+			((await first.locator('h2, h3').first().textContent()) || '').trim()
+				.length,
+		).toBeGreaterThan(0);
+		expect(
+			((await first.locator('p').first().textContent()) || '').trim().length,
+		).toBeGreaterThan(0);
 	});
 
-	test('should display article title', async () => {
-		const title = await articlesPage.getFirstArticleTitle();
-		expect(title).toBeTruthy();
-		expect(title.length).toBeGreaterThan(0);
-	});
-
-	test('should display article description', async () => {
-		const description = await articlesPage.getFirstArticleDescription();
-		expect(description).toBeTruthy();
-		expect(description.length).toBeGreaterThan(0);
-	});
-
-	test('should navigate to article page when clicked', async ({ page }) => {
-		await articlesPage.clickFirstItem();
-
-		await page.waitForURL(/.*articles\/.+/);
-		expect(page.url()).toMatch(/articles\/.+/);
+	test('переход в статью по клику', async ({ page }) => {
+		await articleCards(page).first().click();
+		await page.waitForURL(/\/articles\/[^/?#]+/);
 	});
 });
 
-test.describe('Article Detail Page', () => {
-	let articleDetailPage: ArticleDetailPage;
-	let articlesPage: ArticleListPage;
-	let articleSlug: string | null;
-
+test.describe('Страница статьи', () => {
 	test.beforeEach(async ({ page }) => {
-		articlesPage = new ArticleListPage(page);
-		await articlesPage.goto();
-
-		await articlesPage.clickFirstItem();
-		articleDetailPage = new ArticleDetailPage(page);
-		articleSlug = page.url().split('/articles/')[1] || null;
+		await page.goto(URLS.ARTICLES, { waitUntil: 'domcontentloaded' });
+		await articleCards(page).first().click();
+		await page.waitForURL(/\/articles\/[^/?#]+/);
 	});
 
-	test('should load article detail page', async ({ page }) => {
-		await expect(page).toHaveURL(/.*articles\/.+/);
+	test('есть заголовок, описание и текст', async ({ page }) => {
+		await expect(page.locator('.article-page h1')).toBeVisible();
+		await expect(page.locator('.article-page .description')).toBeVisible();
+		await expect(page.locator('.article-page .article-body')).toBeVisible();
 	});
 
-	test('should display article title', async () => {
-		const heading = await articleDetailPage.getPageHeading();
-		expect(heading).toBeTruthy();
-		expect(heading.length).toBeGreaterThan(0);
-	});
-
-	test('should have article content', async () => {
-		const hasContent = await articleDetailPage.hasArticleContent();
-		expect(hasContent).toBeTruthy();
-	});
-
-	test('should navigate back to articles via breadcrumbs', async ({ page }) => {
-		const breadcrumbsLink = page
+	test('хлебные крошки возвращают на листинг', async ({ page }) => {
+		const articleUrl = page.url();
+		const breadcrumb = page
 			.locator('nav.app-breadcrumbs a.app-breadcrumbs__link[href="/articles"]')
 			.first();
 
-		await breadcrumbsLink.waitFor({ state: 'visible' });
-		await breadcrumbsLink.click();
+		await breadcrumb.waitFor({ state: 'visible' });
+		await breadcrumb.click();
 
-		await page.waitForURL(/.*articles(\/)?(\?.*)?$/);
-		expect(page.url()).toMatch(/\/articles(\/)?(\?.*)?$/);
-		if (articleSlug) {
-			expect(page.url()).not.toContain(`/articles/${articleSlug}`);
-		}
+		await page.waitForURL(/\/articles(?:\/)?(?:\?.*)?$/);
+		expect(page.url()).not.toBe(articleUrl);
+	});
+
+	test('canonical указывает на саму статью', async ({ page }) => {
+		const canonical = await page
+			.locator('link[rel="canonical"]')
+			.getAttribute('href');
+		expect(canonical).toContain(new URL(page.url()).pathname);
 	});
 });

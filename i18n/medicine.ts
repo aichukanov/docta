@@ -74,6 +74,8 @@ export default {
 			MedicineDescriptionRx:
 				'{name} ({substance}) — available by prescription in Montenegro',
 			MedicineDescriptionDefault: '{name} — registered medicine in Montenegro',
+			MedicineDescFormLine: 'Form: {form}',
+			MedicineDescManufacturer: 'Manufacturer: {manufacturer}',
 			ForeignBrandsTitle: 'Names in other countries',
 			ForeignBrandsDisclaimer:
 				'For reference only. Forms, strengths and composition may differ between countries — check with a pharmacist.',
@@ -162,6 +164,8 @@ export default {
 				'{name} ({substance}) — продаётся по рецепту в Черногории',
 			MedicineDescriptionDefault:
 				'{name} — зарегистрированное лекарство в Черногории',
+			MedicineDescFormLine: 'Форма выпуска: {form}',
+			MedicineDescManufacturer: 'Производитель: {manufacturer}',
 			ForeignBrandsTitle: 'Аналоги в других странах',
 			ForeignBrandsDisclaimer:
 				'Справочная информация. Формы, дозировки и состав в разных странах могут отличаться — уточняйте у фармацевта.',
@@ -249,6 +253,8 @@ export default {
 			MedicineDescriptionRx:
 				'{name} ({substance}) — dostupno na recept u Crnoj Gori',
 			MedicineDescriptionDefault: '{name} — registrovani lijek u Crnoj Gori',
+			MedicineDescFormLine: 'Farmaceutski oblik: {form}',
+			MedicineDescManufacturer: 'Proizvođač: {manufacturer}',
 			ForeignBrandsTitle: 'Nazivi u drugim zemljama',
 			ForeignBrandsDisclaimer:
 				'Informativnog karaktera. Oblici, jačine i sastav mogu se razlikovati po zemljama — provjerite kod farmaceuta.',
@@ -337,6 +343,8 @@ export default {
 				'{name} ({substance}) — verschreibungspflichtig in Montenegro',
 			MedicineDescriptionDefault:
 				'{name} — zugelassenes Arzneimittel in Montenegro',
+			MedicineDescFormLine: 'Darreichungsform: {form}',
+			MedicineDescManufacturer: 'Hersteller: {manufacturer}',
 			ForeignBrandsTitle: 'Namen in anderen Ländern',
 			ForeignBrandsDisclaimer:
 				'Nur zur Information. Formen, Stärken und Zusammensetzung können je nach Land abweichen — fragen Sie in der Apotheke nach.',
@@ -423,6 +431,8 @@ export default {
 			MedicineDescriptionRx:
 				"{name} ({substance}) — Karadağ'da reçeteyle satılır",
 			MedicineDescriptionDefault: "{name} — Karadağ'da kayıtlı ilaç",
+			MedicineDescFormLine: 'Farmasötik form: {form}',
+			MedicineDescManufacturer: 'Üretici: {manufacturer}',
 			ForeignBrandsTitle: 'Diğer ülkelerdeki adları',
 			ForeignBrandsDisclaimer:
 				'Yalnızca bilgi amaçlıdır. Formlar, dozlar ve bileşim ülkelere göre değişebilir — eczacınıza danışın.',
@@ -509,6 +519,8 @@ export default {
 			MedicineDescriptionRx:
 				'{name} ({substance}) — доступно на рецепт у Црној Гори',
 			MedicineDescriptionDefault: '{name} — регистровани лијек у Црној Гори',
+			MedicineDescFormLine: 'Фармацеутски облик: {form}',
+			MedicineDescManufacturer: 'Произвођач: {manufacturer}',
 			ForeignBrandsTitle: 'Називи у другим земљама',
 			ForeignBrandsDisclaimer:
 				'Информативног карактера. Облици, јачине и састав могу се разликовати по земљама — провјерите код фармацеута.',

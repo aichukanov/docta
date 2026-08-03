@@ -10,8 +10,11 @@ const isProduction = baseURL.includes('docta.me');
 export default defineConfig({
 	testDir: './tests',
 
-	// Максимальное время выполнения одного теста
-	timeout: isProduction ? 60 * 1000 : 30 * 1000,
+	// Максимальное время выполнения одного теста.
+	// Локально столько же, сколько на проде: `nuxt dev` компилирует роут при
+	// первом заходе, и под параллельными воркерами первый `page.goto` в
+	// раздел легко перебирал 30 секунд — тесты падали не по существу.
+	timeout: 60 * 1000,
 
 	// Ожидание элементов
 	expect: {
@@ -27,8 +30,17 @@ export default defineConfig({
 	// Retry при падении
 	retries: process.env.CI ? 2 : 1,
 
-	// Количество воркеров
-	workers: process.env.CI ? 1 : undefined,
+	// Количество воркеров.
+	// Локально узкое место — dev-сервер: на дефолтной половине ядер он не
+	// успевал отвечать и тесты флакали.
+	// По проду — последовательно: во-первых, это вежливее к живому сайту;
+	// во-вторых, параллельные браузеры отъедают CPU и раскачивают гонку при
+	// размонтировании листинга (см. tests/README.md, «Известный баг»),
+	// из-за чего половина детальных страниц падала не по своей вине.
+	workers: process.env.CI || isProduction ? 1 : 4,
+
+	// Прогрев маршрутов dev-сервера, см. tests/global-setup.ts
+	globalSetup: './tests/global-setup.ts',
 
 	// Отчеты
 	reporter: [
@@ -49,9 +61,8 @@ export default defineConfig({
 		// Трейсы для отладки
 		trace: 'on-first-retry',
 
-		// Таймауты для продакшена
-		navigationTimeout: isProduction ? 30000 : 30000,
-		actionTimeout: isProduction ? 15000 : 10000,
+		navigationTimeout: isProduction ? 30000 : 45000,
+		actionTimeout: isProduction ? 15000 : 15000,
 	},
 
 	projects: [
@@ -96,6 +107,11 @@ export default defineConfig({
 			url: 'http://localhost:3000',
 			reuseExistingServer: !process.env.CI,
 			timeout: 120 * 1000,
+			// Полный прогон e2e доводил SSR-воркер `nuxt dev` до
+			// «JS heap out of memory», и дальше весь раздел отдавал 500 —
+			// падения выглядели как флаки. Касается только сервера,
+			// который поднимает сам Playwright.
+			env: { NODE_OPTIONS: '--max-old-space-size=4096' },
 		},
 	}),
 });

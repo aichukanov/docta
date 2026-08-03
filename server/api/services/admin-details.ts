@@ -16,6 +16,7 @@ interface ServiceAdminDetails {
 	specialtyIds: number[];
 	categoryIds: number[];
 	clinicPrices: ClinicPrice[];
+	synonyms: { language: string; values: string[] }[];
 }
 
 export default defineEventHandler(
@@ -65,12 +66,35 @@ export default defineEventHandler(
 
 			// Получаем цены клиник
 			const [clinicPriceRows]: any = await connection.execute(
-				`SELECT clinic_id, price, price_min, price_max, code FROM clinic_medical_services 
+				`SELECT clinic_id, price, price_min, price_max, code FROM clinic_medical_services
 				 WHERE medical_service_id = ? ORDER BY clinic_id`,
 				[body.serviceId],
 			);
 
+			// Получаем синонимы на всех языках
+			const [synonymRows]: any = await connection.execute(
+				`SELECT another_name, language FROM medical_service_synonyms
+				 WHERE medical_service_id = ? ORDER BY language, another_name`,
+				[body.serviceId],
+			);
+
 			await connection.end();
+
+			// Группируем синонимы по языкам
+			const synonymsByLanguage: Record<string, string[]> = {};
+			for (const row of synonymRows) {
+				if (!synonymsByLanguage[row.language]) {
+					synonymsByLanguage[row.language] = [];
+				}
+				synonymsByLanguage[row.language].push(row.another_name);
+			}
+
+			const synonyms = Object.entries(synonymsByLanguage).map(
+				([language, values]) => ({
+					language,
+					values,
+				}),
+			);
 
 			const clinicPrices: ClinicPrice[] = clinicPriceRows.map((r: any) => ({
 				clinicId: r.clinic_id,
@@ -95,6 +119,7 @@ export default defineEventHandler(
 					(r: any) => r.medical_service_category_id,
 				),
 				clinicPrices,
+				synonyms,
 			};
 		} catch (error) {
 			console.error('API Error - service admin details:', error);

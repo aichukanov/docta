@@ -1,6 +1,13 @@
 import { test, expect } from '@playwright/test';
 import { HeaderComponent } from '../pages/components/header.page';
 import { FooterComponent } from '../pages/components/footer.page';
+import { LISTING_SECTIONS } from '../utils/sections';
+import { URLS } from '../utils/constants';
+
+// Разделы, которые обязаны быть в главном меню. Список берётся из общего
+// конфига: раньше тест ходил по `/medications`, хотя пункт «Lekovi» уже вёл
+// на `/medicines`, и промах ловился только таймаутом.
+const HEADER_SECTIONS = LISTING_SECTIONS.filter((s) => s.inHeaderNav);
 
 test.describe('Navigation', () => {
 	test.describe('Header Component', () => {
@@ -12,77 +19,40 @@ test.describe('Navigation', () => {
 		});
 
 		test('should have header visible', async () => {
-			const isVisible = await header.isVisible();
-			expect(isVisible).toBeTruthy();
+			expect(await header.isVisible()).toBeTruthy();
 		});
 
-		test('should have navigation links', async () => {
+		test('меню содержит все разделы и статьи', async () => {
 			const navLinks = await header.getNavLinks();
-			expect(navLinks.length).toBeGreaterThan(0);
-			// Должно быть минимум 5 основных ссылок
-			expect(navLinks.length).toBeGreaterThanOrEqual(5);
+			for (const section of HEADER_SECTIONS) {
+				expect(navLinks, `нет ссылки на ${section.url}`).toContain(section.url);
+			}
+			expect(navLinks).toContain(URLS.ARTICLES);
 		});
 
-		test('should navigate to doctors page', async ({ page }) => {
-			await header.clickNavLink('/doctors');
-			await page.waitForURL(/.*doctors.*/);
-			expect(page.url()).toContain('doctors');
-		});
+		for (const section of HEADER_SECTIONS) {
+			test(`переход в раздел ${section.url}`, async ({ page }) => {
+				await header.clickNavLink(section.url);
+				await page.waitForURL(new RegExp(`${section.url}(?:[/?#]|$)`));
+				expect(new URL(page.url()).pathname).toBe(section.url);
+			});
+		}
 
-		test('should navigate to clinics page', async ({ page }) => {
-			await header.clickNavLink('/clinics');
-			await page.waitForURL(/.*clinics.*/);
-			expect(page.url()).toContain('clinics');
-		});
-
-		test('should navigate to services page', async ({ page }) => {
-			await header.clickNavLink('/services');
-			await page.waitForURL(/.*services.*/);
-			expect(page.url()).toContain('services');
-		});
-
-		test('should navigate to medications page', async ({ page }) => {
-			await header.clickNavLink('/medications');
-			await page.waitForURL(/.*medications.*/);
-			expect(page.url()).toContain('medications');
-		});
-
-		test('should navigate to labtests page', async ({ page }) => {
-			await header.clickNavLink('/labtests');
-			await page.waitForURL(/.*labtests.*/);
-			expect(page.url()).toContain('labtests');
+		test('переход в статьи', async ({ page }) => {
+			await header.clickNavLink(URLS.ARTICLES);
+			await page.waitForURL(/\/articles(?:[/?#]|$)/);
+			expect(new URL(page.url()).pathname).toBe(URLS.ARTICLES);
 		});
 
 		test('should return to home when clicking logo', async ({ page }) => {
-			// Сначала переходим на другую страницу
 			await page.goto('/doctors');
 			await page.waitForLoadState('domcontentloaded');
 
-			// Кликаем по логотипу
 			await header.clickLogo();
 			await page.waitForURL(/.*\/(\?.*)?$/);
 
-			// Проверяем что вернулись на главную
-			const url = page.url();
-			expect(url).toMatch(/\/(\?.*)?$/);
+			expect(new URL(page.url()).pathname).toBe('/');
 		});
-	});
-
-	test.describe('Language Switching', () => {
-		let header: HeaderComponent;
-
-		test.beforeEach(async ({ page }) => {
-			await page.goto('/');
-			header = new HeaderComponent(page);
-		});
-
-		test('should have language switcher visible', async () => {
-			const switcher = header.getLanguageSwitcher();
-			await expect(switcher).toBeVisible();
-		});
-
-		// NOTE: Детальные тесты переключения языка перенесены в Итерацию 6
-		// так как требуют специальной работы с Element Plus dropdown/popper
 	});
 
 	test.describe('Footer Component', () => {
@@ -94,14 +64,11 @@ test.describe('Navigation', () => {
 		});
 
 		test('should have footer visible', async () => {
-			const isVisible = await footer.isVisible();
-			expect(isVisible).toBeTruthy();
+			expect(await footer.isVisible()).toBeTruthy();
 		});
 
 		test('should have footer navigation links', async () => {
 			const footerLinks = await footer.getFooterNavLinks();
-			expect(footerLinks.length).toBeGreaterThan(0);
-			// Должно быть минимум 5 ссылок
 			expect(footerLinks.length).toBeGreaterThanOrEqual(5);
 		});
 
@@ -116,8 +83,6 @@ test.describe('Navigation', () => {
 
 		test('should have copyright text', async () => {
 			const copyrightText = await footer.getCopyrightText();
-			expect(copyrightText).toBeTruthy();
-			// Проверяем что есть год
 			expect(copyrightText).toMatch(/202[0-9]/);
 		});
 
@@ -132,8 +97,7 @@ test.describe('Navigation', () => {
 			await footer.clickFooterLink(testLink);
 			await page.waitForLoadState('domcontentloaded');
 
-			const newUrl = page.url();
-			expect(newUrl).not.toEqual(initialUrl);
+			expect(page.url()).not.toEqual(initialUrl);
 		});
 	});
 });

@@ -5,16 +5,23 @@ import {
 	buildBreadcrumbsSchema,
 	buildMedicineSchema,
 } from '~/common/schema-org-builders';
+import { buildSeoDescription } from '~/common/seo-meta';
 import { localizeStrength } from '~/common/strength-label';
 import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import medicineI18n from '~/i18n/medicine';
 import packagingI18n from '~/i18n/packaging';
+import seoDescriptionI18n from '~/i18n/seo-description';
 import { combineI18nMessages } from '~/i18n/utils';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([breadcrumbI18n, medicineI18n, packagingI18n]),
+	messages: combineI18nMessages([
+		breadcrumbI18n,
+		medicineI18n,
+		packagingI18n,
+		seoDescriptionI18n,
+	]),
 });
 
 const route = useRoute();
@@ -88,16 +95,39 @@ const pageTitle = computed(() => {
 const pageDescription = computed(() => {
 	if (!isFound.value || !med.value) return '';
 	const sub = substanceNames.value;
-	if (sub && isOTC.value) {
-		return t('MedicineDescriptionOTC', {
-			name: med.value.name,
-			substance: sub,
-		});
-	}
-	if (sub) {
-		return t('MedicineDescriptionRx', { name: med.value.name, substance: sub });
-	}
-	return t('MedicineDescriptionDefault', { name: med.value.name });
+	const intro =
+		sub && isOTC.value
+			? t('MedicineDescriptionOTC', {
+					name: med.value.name,
+					substance: sub,
+				})
+			: sub
+				? t('MedicineDescriptionRx', { name: med.value.name, substance: sub })
+				: t('MedicineDescriptionDefault', { name: med.value.name });
+
+	// Регистр цен не содержит, поэтому фактами здесь работают форма, дозировка
+	// и производитель — по ним лекарство и ищут («dilcoran 80mg», «droksin
+	// srbija», см. docs/audit/bing-2026-07.md).
+	// localizeStrength вызываем напрямую: computed strengthLabel объявлен ниже, и
+	// ссылка на него из этого computed зависела бы от порядка инициализации.
+	const formText = [
+		med.value.pharmaForm,
+		localizeStrength(med.value.strength, t),
+	]
+		.filter(Boolean)
+		.join(', ');
+
+	const manufacturerText = med.value.manufacturer
+		? [med.value.manufacturer, med.value.country].filter(Boolean).join(', ')
+		: '';
+
+	return buildSeoDescription([
+		intro,
+		formText && t('MedicineDescFormLine', { form: formText }),
+		manufacturerText &&
+			t('MedicineDescManufacturer', { manufacturer: manufacturerText }),
+		t('SeoDescCtaMedicine'),
+	]);
 });
 
 const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));

@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import type { ClinicServicesMap } from '#components';
 import { OG_IMAGE, SITE_URL } from '~/common/constants';
+import {
+	computeEntityAutoFacts,
+	priceFormatOptions,
+} from '~/common/entity-auto-facts';
+import {
+	buildSeoDescription,
+	buildSeoPriceSegment,
+	fitSeoTitle,
+	MAX_CITIES_IN_DESCRIPTION,
+} from '~/common/seo-meta';
 import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
 import {
 	buildBreadcrumbsSchema,
@@ -9,12 +19,18 @@ import {
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import medicationI18n from '~/i18n/medication';
+import seoDescriptionI18n from '~/i18n/seo-description';
 import { combineI18nMessages } from '~/i18n/utils';
 import type { ClinicData } from '~/interfaces/clinic';
 
-const { t, locale } = useI18n({
+const { t, n, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([breadcrumbI18n, medicationI18n, cityI18n]),
+	messages: combineI18nMessages([
+		breadcrumbI18n,
+		medicationI18n,
+		cityI18n,
+		seoDescriptionI18n,
+	]),
 });
 
 const route = useRoute();
@@ -102,6 +118,14 @@ const {
 	computed(() => medicationData.value?.clinicPrices),
 );
 
+// Авто-факты — по отфильтрованному списку клиник, как на карточках услуг и
+// анализов: при фильтре по городу цифры обязаны совпадать с отрисованным.
+const autoFacts = computed(() =>
+	computeEntityAutoFacts(medicationClinics.value, filteredClinicPrices.value),
+);
+
+const formatPrice = (value: number) => n(value, priceFormatOptions(value));
+
 const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
 const { target: mapSentinel, hasBeenVisible: isMapVisible } = useInViewport();
 const pendingMapAction = ref<(() => void) | null>(null);
@@ -158,7 +182,9 @@ const pageTitle = computed(() => {
 			? t(`city_${uniqueCities[0]}`)
 			: t('InMontenegro');
 
-	return `${medicationData.value?.name} | ${locationText}`;
+	const name = medicationData.value?.name ?? '';
+
+	return fitSeoTitle([[name, locationText].filter(Boolean).join(' | '), name]);
 });
 
 const pageDescription = computed(() => {
@@ -169,7 +195,7 @@ const pageDescription = computed(() => {
 	const { name } = medicationData.value;
 
 	const usedCities: { [key: string]: true } = {};
-	const citiesText = medicationClinics.value
+	const cityNames = medicationClinics.value
 		.map((clinic) => {
 			if (usedCities[clinic.cityId]) {
 				return '';
@@ -178,12 +204,24 @@ const pageDescription = computed(() => {
 			usedCities[clinic.cityId] = true;
 			return t(`city_${clinic.cityId}_genitive`);
 		})
-		.filter(Boolean)
-		.join(', ');
+		.filter(Boolean);
 
-	return citiesText
+	// Как на карточках услуг и анализов: длинный перечень городов уступает место
+	// вилке цен.
+	const citiesText =
+		cityNames.length > 0 && cityNames.length <= MAX_CITIES_IN_DESCRIPTION
+			? cityNames.join(', ')
+			: '';
+
+	const intro = citiesText
 		? t('MedicationDescriptionCity', { name, city: citiesText })
 		: t('MedicationDescriptionDefault', { name });
+
+	return buildSeoDescription([
+		intro,
+		buildSeoPriceSegment(autoFacts.value, t, formatPrice),
+		t('SeoDescCtaCompare'),
+	]);
 });
 
 const heroTitle = computed(() => {

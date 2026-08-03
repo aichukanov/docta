@@ -18,6 +18,7 @@ interface UpdateServiceBody {
 	specialtyIds: number[];
 	categoryIds: number[];
 	clinicPrices: ClinicPrice[];
+	synonyms?: { language: string; values: string[] }[];
 }
 
 export default defineEventHandler(async (event): Promise<boolean> => {
@@ -206,6 +207,25 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 							cp.code || null,
 						],
 					);
+				}
+			}
+
+			// Обновляем синонимы
+			await connection.execute(
+				'DELETE FROM medical_service_synonyms WHERE medical_service_id = ?',
+				[body.id],
+			);
+
+			if (body.synonyms != null && body.synonyms.length > 0) {
+				for (const langSynonyms of body.synonyms) {
+					for (const synonym of langSynonyms.values) {
+						if (synonym.trim()) {
+							await connection.execute(
+								'INSERT IGNORE INTO medical_service_synonyms (medical_service_id, another_name, language) VALUES (?, ?, ?)',
+								[body.id, synonym.trim(), langSynonyms.language],
+							);
+						}
+					}
 				}
 			}
 

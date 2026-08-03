@@ -6,17 +6,27 @@ import {
 	buildBreadcrumbsSchema,
 	buildMedicalProcedureSchema,
 } from '~/common/schema-org-builders';
-import { computeEntityAutoFacts } from '~/common/entity-auto-facts';
+import {
+	computeEntityAutoFacts,
+	priceFormatOptions,
+} from '~/common/entity-auto-facts';
+import {
+	buildSeoDescription,
+	buildSeoPriceSegment,
+	fitSeoTitle,
+	MAX_CITIES_IN_DESCRIPTION,
+} from '~/common/seo-meta';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import entityAutoFactsI18n from '~/i18n/entity-auto-facts';
 import medicalServiceI18n from '~/i18n/medical-service';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
 import medicalServiceTariffI18n from '~/i18n/medical-service-tariff';
+import seoDescriptionI18n from '~/i18n/seo-description';
 import { combineI18nMessages } from '~/i18n/utils';
 import type { ClinicData } from '~/interfaces/clinic';
 
-const { t, locale } = useI18n({
+const { t, n, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([
 		breadcrumbI18n,
@@ -25,6 +35,7 @@ const { t, locale } = useI18n({
 		medicalServiceCategoryI18n,
 		medicalServiceTariffI18n,
 		entityAutoFactsI18n,
+		seoDescriptionI18n,
 	]),
 });
 
@@ -149,6 +160,8 @@ const autoFacts = computed(() =>
 	),
 );
 
+const formatPrice = (value: number) => n(value, priceFormatOptions(value));
+
 // Табы — на полном наборе клиник: фильтр не должен прятать таб «Клиники».
 const tabs = computed(() => {
 	const result = [];
@@ -192,9 +205,15 @@ const pageTitle = computed(() => {
 		? t(`medical_service_category_${medicalServiceData.value.categoryIds[0]}`)
 		: '';
 
-	return categoryText
-		? `${medicalServiceData.value?.name} | ${categoryText} | ${locationText}`
-		: `${medicalServiceData.value?.name} | ${locationText}`;
+	const name = medicalServiceData.value?.name ?? '';
+
+	// Категория уходит раньше города: запрос локальный («ortoped podgorica»),
+	// а категория дублирует то, что и так читается из названия услуги.
+	return fitSeoTitle([
+		[name, categoryText, locationText].filter(Boolean).join(' | '),
+		[name, locationText].filter(Boolean).join(' | '),
+		name,
+	]);
 });
 
 const pageDescription = computed(() => {
@@ -209,7 +228,7 @@ const pageDescription = computed(() => {
 	const { name } = medicalServiceData.value;
 
 	const usedCities: { [key: string]: true } = {};
-	const citiesText = medicalServiceClinics.value
+	const cityNames = medicalServiceClinics.value
 		.map((clinic) => {
 			if (usedCities[clinic.cityId]) {
 				return '';
@@ -218,12 +237,25 @@ const pageDescription = computed(() => {
 			usedCities[clinic.cityId] = true;
 			return t(`city_${clinic.cityId}_genitive`);
 		})
-		.filter(Boolean)
-		.join(', ');
+		.filter(Boolean);
 
-	return citiesText
+	// Длинный перечень городов съедал бы место, которое лучше отдать цене:
+	// «Podgorici, Baru, Kotoru, Nikšiću, Tivtu, Budvi…» в сниппете всё равно
+	// обрежется. От пяти городов сворачиваем в «в Черногории».
+	const citiesText =
+		cityNames.length > 0 && cityNames.length <= MAX_CITIES_IN_DESCRIPTION
+			? cityNames.join(', ')
+			: '';
+
+	const intro = citiesText
 		? t('MedicalServiceDescriptionCity', { name, city: citiesText })
 		: t('MedicalServiceDescriptionDefault', { name });
+
+	return buildSeoDescription([
+		intro,
+		buildSeoPriceSegment(autoFacts.value, t, formatPrice),
+		t('SeoDescCtaCompare'),
+	]);
 });
 
 const heroTitle = computed(() => {

@@ -24,6 +24,11 @@ import {
 	getRegionalQuery,
 	getRegionalUrl,
 } from '~/common/url-utils';
+import {
+	buildSeoDescription,
+	fitSeoTitle,
+	SEO_DESCRIPTION_MAX_LENGTH,
+} from '~/common/seo-meta';
 import { getLocalizedName } from '~/common/utils';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
@@ -35,6 +40,7 @@ import labTestCategoryI18n from '~/i18n/labtest-category';
 import languageI18n from '~/i18n/language';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
 import reviewsI18n from '~/i18n/reviews';
+import seoDescriptionI18n from '~/i18n/seo-description';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
 import workingHoursI18n from '~/i18n/working-hours';
@@ -63,6 +69,7 @@ const { t, locale } = useI18n({
 		labTestCategoryI18n,
 		reviewsI18n,
 		workingHoursI18n,
+		seoDescriptionI18n,
 	]),
 });
 
@@ -453,11 +460,17 @@ const pageTitle = computed(() => {
 		statsParts.push(t('SeoTitleServices', { count: serviceCount }));
 	}
 
-	if (statsParts.length > 0) {
-		return `${clinicName} ${city} — ${statsParts.join(', ')} | ${SITE_NAME}`;
-	}
-
-	return `${clinicName} | ${city}`;
+	// У клиник название само по себе бывает под сотню символов («Specijalna
+	// bolnica za ortopediju, neurohirurgiju i neurologiju "Vaso Ćuković"»), так
+	// что сначала уходит бренд, потом статистика.
+	return fitSeoTitle([
+		statsParts.length > 0 &&
+			`${clinicName} ${city} — ${statsParts.join(', ')} | ${SITE_NAME}`,
+		statsParts.length > 0 && `${clinicName} ${city} — ${statsParts.join(', ')}`,
+		statsParts.length > 0 && `${clinicName} ${city} — ${statsParts[0]}`,
+		`${clinicName} | ${city}`,
+		clinicName,
+	]);
 });
 
 const pageDescription = computed(() => {
@@ -527,11 +540,34 @@ const pageDescription = computed(() => {
 		);
 	}
 
+	// Адрес — единственный крупный факт, которого нет в заголовке клиники (там
+	// уже стоят город и счётчики врачей/услуг). Дублировать счётчики в описании
+	// нельзя: в выдаче заголовок и сниппет стоят рядом, и одни и те же цифры
+	// читались бы дважды.
+	// Только улица и населённый пункт: город уже стоит в интро, а индекс в
+	// сниппете бесполезен — поэтому formatClinicAddressLine (он собирает полную
+	// строку с городом и индексом) здесь не подходит.
+	const addressLine = [clinicData.value.address, clinicData.value.town]
+		.map((part) => (typeof part === 'string' ? part.trim() : ''))
+		.filter(Boolean)
+		.join(', ');
+	if (addressLine) {
+		segments.push(addressLine);
+	}
+
 	// CTA
 	segments.push(t('SeoDescCta'));
 
 	const intro = t('SeoDescIntro', { name: clinicName, city: cityGenitive });
-	return `${intro} ${segments.join('. ')}.`;
+
+	// Интро заканчивается двоеточием, поэтому в сборку сегментов он не идёт —
+	// вместо этого его длина вычитается из бюджета.
+	const body = buildSeoDescription(
+		segments,
+		SEO_DESCRIPTION_MAX_LENGTH - intro.length - 1,
+	);
+
+	return `${intro} ${body}`;
 });
 
 const hasSeparateReviewsPage = computed(() => {
@@ -1086,7 +1122,6 @@ watchEffect(() => {
 		"SeoDescIntro": "{name} in {city}:",
 		"SeoDescMoreSpecialties": "{specialties} and {count}+ more specialties",
 		"SeoDescPriceFrom": "Services from {price}€",
-		"SeoDescRating": "Rating {rating} ★ ({count} reviews)",
 		"SeoDescCta": "Find a doctor on Docta.me",
 		"ViewAllServices": "All services ({count})",
 		"ViewAllLabTests": "All lab tests ({count})",
@@ -1112,7 +1147,6 @@ watchEffect(() => {
 		"SeoDescIntro": "{name} в {city}:",
 		"SeoDescMoreSpecialties": "{specialties} и ещё {count}+ специальностей",
 		"SeoDescPriceFrom": "Цены на услуги от {price}€",
-		"SeoDescRating": "Оценка {rating} ★ ({count} отзывов)",
 		"SeoDescCta": "Найдите врача на Docta.me",
 		"ViewAllServices": "Все услуги ({count})",
 		"ViewAllLabTests": "Все анализы ({count})",
@@ -1138,7 +1172,6 @@ watchEffect(() => {
 		"SeoDescIntro": "{name} in {city}:",
 		"SeoDescMoreSpecialties": "{specialties} und {count}+ weitere Fachgebiete",
 		"SeoDescPriceFrom": "Leistungen ab {price}€",
-		"SeoDescRating": "Bewertung {rating} ★ ({count} Bewertungen)",
 		"SeoDescCta": "Finden Sie einen Arzt auf Docta.me",
 		"ViewAllServices": "Alle Leistungen ({count})",
 		"ViewAllLabTests": "Alle Laboruntersuchungen ({count})",
@@ -1164,7 +1197,6 @@ watchEffect(() => {
 		"SeoDescIntro": "{name} {city}:",
 		"SeoDescMoreSpecialties": "{specialties} ve {count}+ uzmanlık alanı daha",
 		"SeoDescPriceFrom": "Hizmetler {price}€'dan başlayan fiyatlarla",
-		"SeoDescRating": "Puan {rating} ★ ({count} değerlendirme)",
 		"SeoDescCta": "Docta.me'de doktor bulun",
 		"ViewAllServices": "Tüm hizmetler ({count})",
 		"ViewAllLabTests": "Tüm laboratuvar testleri ({count})",
@@ -1190,7 +1222,6 @@ watchEffect(() => {
 		"SeoDescIntro": "{name} u {city}:",
 		"SeoDescMoreSpecialties": "{specialties} i još {count}+ specijalnosti",
 		"SeoDescPriceFrom": "Cijene usluga od {price}€",
-		"SeoDescRating": "Ocjena {rating} ★ ({count} recenzija)",
 		"SeoDescCta": "Pronađite ljekara na Docta.me",
 		"ViewAllServices": "Sve usluge ({count})",
 		"ViewAllLabTests": "Sve analize ({count})",
@@ -1216,8 +1247,7 @@ watchEffect(() => {
 		"SeoDescIntro": "{name} у {city}:",
 		"SeoDescMoreSpecialties": "{specialties} и још {count}+ специјалности",
 		"SeoDescPriceFrom": "Цијене услуга од {price}€",
-		"SeoDescRating": "Оцјена {rating} ★ ({count} рецензија)",
-		"SeoDescCta": "Пронађите лекара на Docta.me",
+		"SeoDescCta": "Пронађите љекара на Docta.me",
 		"ViewAllServices": "Све услуге ({count})",
 		"ViewAllLabTests": "Све анализе ({count})",
 		"ViewAllMedications": "Сви лекови ({count})",

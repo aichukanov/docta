@@ -8,10 +8,9 @@ export class BasePage {
 	 */
 	async goto(url: string) {
 		try {
-			await this.page.goto(url, {
-				waitUntil: 'domcontentloaded',
-				timeout: 30000,
-			});
+			// Без своего timeout: берётся navigationTimeout из
+			// playwright.config.ts, а он разный для локали и прода
+			await this.page.goto(url, { waitUntil: 'domcontentloaded' });
 		} catch (error) {
 			const message = error instanceof Error ? error.message : String(error);
 			if (!message.includes('net::ERR_ABORTED')) {

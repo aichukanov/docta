@@ -379,6 +379,10 @@ async function recalculateRankScores() {
 							@updated="updateLabTests"
 						/>
 					</el-tab-pane>
+
+					<el-tab-pane label="Дубликаты">
+						<AdminLabtestDuplicates @updated="updateLabTests" />
+					</el-tab-pane>
 				</el-tabs>
 			</el-tab-pane>
 

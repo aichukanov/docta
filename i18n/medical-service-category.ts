@@ -74,6 +74,8 @@ export default {
 				'Orthodontics',
 			[`medical_service_category_${MedicalServiceCategory.PEDIATRIC_DENTISTRY}`]:
 				'Pediatric Dentistry',
+			[`medical_service_category_${MedicalServiceCategory.PODOLOGY}`]:
+				'Podiatry',
 		},
 		'ru': {
 			ServiceCategory: 'Категория',
@@ -147,6 +149,8 @@ export default {
 				'Ортодонтия',
 			[`medical_service_category_${MedicalServiceCategory.PEDIATRIC_DENTISTRY}`]:
 				'Детская стоматология',
+			[`medical_service_category_${MedicalServiceCategory.PODOLOGY}`]:
+				'Подология',
 		},
 		'sr': {
 			ServiceCategory: 'Kategorija',
@@ -224,6 +228,8 @@ export default {
 				'Ortodoncija',
 			[`medical_service_category_${MedicalServiceCategory.PEDIATRIC_DENTISTRY}`]:
 				'Dječja stomatologija',
+			[`medical_service_category_${MedicalServiceCategory.PODOLOGY}`]:
+				'Podologija',
 		},
 		'sr-cyrl': {
 			ServiceCategory: 'Категорија',
@@ -301,6 +307,8 @@ export default {
 				'Ортодонција',
 			[`medical_service_category_${MedicalServiceCategory.PEDIATRIC_DENTISTRY}`]:
 				'Дјечја стоматологија',
+			[`medical_service_category_${MedicalServiceCategory.PODOLOGY}`]:
+				'Подологија',
 		},
 		'de': {
 			ServiceCategory: 'Kategorie',
@@ -375,6 +383,8 @@ export default {
 				'Kieferorthopädie',
 			[`medical_service_category_${MedicalServiceCategory.PEDIATRIC_DENTISTRY}`]:
 				'Kinderzahnheilkunde',
+			[`medical_service_category_${MedicalServiceCategory.PODOLOGY}`]:
+				'Podologie',
 		},
 		'tr': {
 			ServiceCategory: 'Kategori',
@@ -448,6 +458,8 @@ export default {
 				'Ortodonti',
 			[`medical_service_category_${MedicalServiceCategory.PEDIATRIC_DENTISTRY}`]:
 				'Çocuk Diş Hekimliği',
+			[`medical_service_category_${MedicalServiceCategory.PODOLOGY}`]:
+				'Podiyatri',
 		},
 	},
 };

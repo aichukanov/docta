@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { formatDate } from '~/common/date-format';
 import clinicBillingI18n from '~/i18n/clinic-billing';
 import { BillingService } from '~/enums/billing-service';
 import type { BillingMyPurchase } from '~/interfaces/billing';
@@ -11,6 +12,8 @@ const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: clinicBillingI18n.messages,
 });
+// Форматы дат зарегистрированы глобально (i18n/date.ts), у локальной области их нет
+const { d } = useI18n({ useScope: 'global' });
 
 const filter = ref<'all' | 'active' | 'expired'>('all');
 
@@ -33,8 +36,8 @@ const SERVICE_NAME_KEYS: Record<number, string> = {
 const serviceName = (id: number) =>
 	SERVICE_NAME_KEYS[id] ? t(SERVICE_NAME_KEYS[id]) : `#${id}`;
 
-const formatDate = (value: string) =>
-	new Date(value).toLocaleDateString(locale.value);
+const formatPurchaseDate = (value: string) =>
+	formatDate(value, d, locale.value);
 
 const statusKey = (purchase: BillingMyPurchase) => {
 	if (purchase.deleted) return 'StatusDeleted';
@@ -75,7 +78,9 @@ const statusType = (purchase: BillingMyPurchase) => {
 		>
 			<div class="history__item-header">
 				<span class="history__date">
-					{{ t('PurchasedOn', { date: formatDate(purchase.purchasedAt) }) }}
+					{{
+						t('PurchasedOn', { date: formatPurchaseDate(purchase.purchasedAt) })
+					}}
 				</span>
 				<el-tag :type="statusType(purchase)" size="small">
 					{{ t(statusKey(purchase)) }}
@@ -96,7 +101,11 @@ const statusType = (purchase: BillingMyPurchase) => {
 
 			<div class="history__item-footer">
 				<span class="history__valid">
-					{{ t('ValidUntilLabel', { date: formatDate(purchase.validUntil) }) }}
+					{{
+						t('ValidUntilLabel', {
+							date: formatPurchaseDate(purchase.validUntil),
+						})
+					}}
 				</span>
 				<span class="history__price">€{{ purchase.price.toFixed(2) }}</span>
 			</div>

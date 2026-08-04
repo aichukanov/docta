@@ -221,7 +221,7 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside));
 		"Language": "Jezik"
 	},
 	"sr-cyrl": {
-		"LanguageSelector": "Изберете језик",
+		"LanguageSelector": "Изаберите језик",
 		"Language": "Језик"
 	},
 	"de": {

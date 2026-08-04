@@ -90,7 +90,7 @@ function getDeviceInfo(userAgent: string | null): string {
 						{{ t('loginVia') }} {{ formatLoginMethod(entry.login_method) }}
 					</span>
 					<span class="history-row__time">
-						{{ new Date(entry.created_at).toLocaleString() }}
+						<LocalizedDate :value="entry.created_at" format="dateTime" />
 					</span>
 				</div>
 				<span v-if="entry.ip_address" class="history-row__ip">
@@ -124,9 +124,9 @@ function getDeviceInfo(userAgent: string | null): string {
 						<span class="full-history__method">{{
 							formatLoginMethod(entry.login_method)
 						}}</span>
-						<span class="full-history__time">{{
-							new Date(entry.created_at).toLocaleString()
-						}}</span>
+						<span class="full-history__time">
+							<LocalizedDate :value="entry.created_at" format="dateTime" />
+						</span>
 					</div>
 					<div class="full-history__details">
 						<span class="full-history__device">{{

@@ -235,9 +235,9 @@ schemaOrgStore.setSchemas([
 	},
 	"sr": {
 		"MainPageTitle": "Medicinske usluge u Crnoj Gori",
-		"MainPageDescription": "Pronađite lekare, klinike, laboratorijske usluge, medicinske procedure i lekove u Crnoj Gori",
-		"Doctors": "Lekari",
-		"DoctorsDescription": "Pronađite kvalifikovane lekare po specijalnosti, gradu i jeziku",
+		"MainPageDescription": "Pronađite ljekare, klinike, laboratorijske usluge, medicinske procedure i lijekove u Crnoj Gori",
+		"Doctors": "Ljekari",
+		"DoctorsDescription": "Pronađite kvalifikovane ljekare po specijalnosti, gradu i jeziku",
 		"Clinics": "Klinike",
 		"ClinicsDescription": "Medicinske klinike i zdravstvene ustanove širom Crne Gore",
 		"LabTests": "Laboratorijske analize",
@@ -249,11 +249,11 @@ schemaOrgStore.setSchemas([
 		"AriaMainContent": "Glavni sadržaj",
 		"AriaHeroSection": "Sekcija dobrodošlice",
 		"AriaNavigationCards": "Navigacija do sekcija sajta",
-		"AriaLinkToDoctors": "Idi na direktorijum lekara",
+		"AriaLinkToDoctors": "Idi na direktorijum ljekara",
 		"AriaLinkToClinics": "Idi na direktorijum klinika",
 		"AriaLinkToLabTests": "Idi na laboratorijske analize",
 		"AriaLinkToServices": "Idi na medicinske usluge",
-		"AriaLinkToMedications": "Idi na katalog lekova"
+		"AriaLinkToMedications": "Idi na katalog lijekova"
 	},
 	"de": {
 		"MainPageTitle": "Gesundheitsdienste in Montenegro",
@@ -301,9 +301,9 @@ schemaOrgStore.setSchemas([
 	},
 	"sr-cyrl": {
 		"MainPageTitle": "Медицинске услуге у Црној Гори",
-		"MainPageDescription": "Пронађите лекаре, клинике, лабораторијске услуге, медицинске процедуре и лекове у Црној Гори",
-		"Doctors": "Лекари",
-		"DoctorsDescription": "Пронађите квалификоване лекаре по специјалности, граду и језику",
+		"MainPageDescription": "Пронађите љекаре, клинике, лабораторијске услуге, медицинске процедуре и лијекове у Црној Гори",
+		"Doctors": "Љекари",
+		"DoctorsDescription": "Пронађите квалификоване љекаре по специјалности, граду и језику",
 		"Clinics": "Клинике",
 		"ClinicsDescription": "Медицинске клинике и здравствене установе широм Црне Горе",
 		"LabTests": "Лабораторијске анализе",
@@ -315,11 +315,11 @@ schemaOrgStore.setSchemas([
 		"AriaMainContent": "Главни садржај",
 		"AriaHeroSection": "Секција добродошлице",
 		"AriaNavigationCards": "Навигација до секција сајта",
-		"AriaLinkToDoctors": "Иди на директоријум лекара",
+		"AriaLinkToDoctors": "Иди на директоријум љекара",
 		"AriaLinkToClinics": "Иди на директоријум клиника",
 		"AriaLinkToLabTests": "Иди на лабораторијске анализе",
 		"AriaLinkToServices": "Иди на медицинске услуге",
-		"AriaLinkToMedications": "Иди на каталог лекова"
+		"AriaLinkToMedications": "Иди на каталог лијекова"
 	}
 }
 </i18n>

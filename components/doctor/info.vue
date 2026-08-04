@@ -131,10 +131,10 @@ const reviewsLink = computed(() => {
 		"DoctorLanguages": "Doktor aşağıdaki dilleri konuşmaktadır:"
 	},
 	"sr": {
-		"DoctorLanguages": "Doktor govori sledeće jezike:"
+		"DoctorLanguages": "Doktor govori sljedeće jezike:"
 	},
 	"sr-cyrl": {
-		"DoctorLanguages": "Доктор говори следеће језике:"
+		"DoctorLanguages": "Доктор говори сљедеће језике:"
 	}
 }
 </i18n>

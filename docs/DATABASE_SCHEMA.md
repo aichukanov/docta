@@ -44,6 +44,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `lab_test_synonyms`                     | Alternative names for lab tests for search optimization.                                      |
 | `medical_service_synonyms`              | Alternative names for medical services (search + names kept from merges).                     |
 | `medical_service_duplicate_candidates`  | Review queue of suspected duplicate service pairs.                                            |
+| `lab_test_duplicate_candidates`         | Review queue of suspected duplicate lab test pairs.                                           |
 | `medical_service_redirects`             | Redirect map for merged medical service records.                                              |
 | `doctor_redirects`                      | Redirect map for merged doctor profiles.                                                      |
 | `lab_test_redirects`                    | Redirect map for merged lab test records.                                                     |
@@ -312,6 +313,21 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `lab_test_id` (int): Lab Test ID.
 - `another_name` (varchar(255), Indexed): Alternative name.
 - `language` (varchar(10)): Language code.
+- _Unique constraint_: (`another_name`, `language`) — globally unique, unlike `medical_service_synonyms` which scopes uniqueness per record.
+- _Comment_: Merging lab tests writes the losing record's names here (all six languages), so a clinic's own phrasing keeps resolving after the merge.
+
+### `lab_test_duplicate_candidates`
+
+- `id` (int, PK, AI)
+- `lab_test_id_a` (int, FK -> lab_tests.id, CASCADE): Always the smaller id.
+- `lab_test_id_b` (int, FK -> lab_tests.id, CASCADE): Always the larger id.
+- `tier` (enum('A','B','C')): A — ≥2 language columns agree, or a synonym match plus one language; B — 1 language, or a synonym match alone; C — fuzzy English only.
+- `score` (decimal(6,2)): Ranking score, higher = more confident.
+- `signals` (varchar(500)): Comma-separated evidence codes, e.g. `lang:name_sr,synonym-match,same-clinic:2`.
+- `status` (enum('pending','merged','dismissed'), default 'pending')
+- `detected_at` (timestamp), `decided_at` (datetime, NULL)
+- _Unique constraint_: (`lab_test_id_a`, `lab_test_id_b`)
+- _Comment_: Filled by `scripts/labtests/find-duplicate-labtests.mjs`, reviewed in the admin "Дубликаты" tab. Same contract as `medical_service_duplicate_candidates`: a dismissed pair must never resurface on the next detector run, and rows disappear on their own when one side is merged away.
 
 ### `lab_test_redirects`
 

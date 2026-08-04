@@ -296,18 +296,18 @@ watchEffect(() => {
 		"NoMatchingDoctors": "Filtrelere uyan doktor bulunamadı."
 	},
 	"sr": {
-		"DoctorsPageTitle": "Lekari — {name}",
-		"DoctorsPageDescription": "U klinici {name} radi {count} lekara.",
-		"SearchDoctors": "Pretraga lekara…",
+		"DoctorsPageTitle": "Ljekari — {name}",
+		"DoctorsPageDescription": "U klinici {name} radi {count} ljekara.",
+		"SearchDoctors": "Pretraga ljekara…",
 		"AllSpecialties": "Sve",
-		"NoMatchingDoctors": "Nema lekara koji odgovaraju filterima."
+		"NoMatchingDoctors": "Nema ljekara koji odgovaraju filterima."
 	},
 	"sr-cyrl": {
-		"DoctorsPageTitle": "Лекари — {name}",
-		"DoctorsPageDescription": "У клиници {name} ради {count} лекара.",
-		"SearchDoctors": "Претрага лекара…",
+		"DoctorsPageTitle": "Љекари — {name}",
+		"DoctorsPageDescription": "У клиници {name} ради {count} љекара.",
+		"SearchDoctors": "Претрага љекара…",
 		"AllSpecialties": "Све",
-		"NoMatchingDoctors": "Нема лекара који одговарају филтерима."
+		"NoMatchingDoctors": "Нема љекара који одговарају филтерима."
 	}
 }
 </i18n>

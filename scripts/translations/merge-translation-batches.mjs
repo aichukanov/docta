@@ -16,7 +16,8 @@ import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const ROOT = resolve(__dirname, '..')
+// Скрипт лежит в scripts/translations/, корень проекта на два уровня выше
+const ROOT = resolve(__dirname, '..', '..')
 
 const [textsFile, batchDir, outputFile] = process.argv.slice(2)
 if (!textsFile || !batchDir || !outputFile) {

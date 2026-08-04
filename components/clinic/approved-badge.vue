@@ -32,11 +32,11 @@ const approvedI18n = {
 	},
 	'sr': {
 		ApprovedTooltip:
-			'Informacije o klinici (lekari, usluge i kontakti) potvrđene su od strane predstavnika klinike.',
+			'Informacije o klinici (ljekari, usluge i kontakti) potvrđene su od strane predstavnika klinike.',
 	},
 	'sr-cyrl': {
 		ApprovedTooltip:
-			'Информације о клиници (лекари, услуге и контакти) потврђене су од стране представника клинике.',
+			'Информације о клиници (љекари, услуге и контакти) потврђене су од стране представника клинике.',
 	},
 };
 

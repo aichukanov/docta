@@ -4,6 +4,7 @@ import RatingStars from '~/components/rating-stars.vue';
 import ReviewProviderIcon from '~/components/review-provider-icon.vue';
 import reviewsI18n from '~/i18n/reviews';
 import { combineI18nMessages } from '~/i18n/utils';
+import { getReviewDateFormat } from '~/common/date-format';
 import type { Review } from '~/interfaces/review';
 
 const props = defineProps<{
@@ -94,28 +95,6 @@ const handleDelete = async () => {
 	}
 };
 
-const formatReviewDate = (dateString: string, provider: string) => {
-	if (provider === 'google_maps') {
-		const now = Date.now();
-		const diff = now - new Date(dateString).getTime();
-		const days = Math.floor(diff / 86_400_000);
-		const weeks = Math.floor(days / 7);
-		const months = Math.floor(days / 30);
-		const years = Math.floor(days / 365);
-		const rtf = new Intl.RelativeTimeFormat(locale.value, { numeric: 'auto' });
-		if (years > 0) return rtf.format(-years, 'year');
-		if (months > 0) return rtf.format(-months, 'month');
-		if (weeks > 0) return rtf.format(-weeks, 'week');
-		if (days > 0) return rtf.format(-days, 'day');
-		return rtf.format(0, 'day');
-	}
-	return new Date(dateString).toLocaleDateString(locale.value, {
-		year: 'numeric',
-		month: 'long',
-		day: 'numeric',
-	});
-};
-
 const clinic = computed(() => {
 	const id = props.review.clinicId;
 	return id && props.clinicInfo ? props.clinicInfo[id] : undefined;
@@ -145,7 +124,10 @@ const clinic = computed(() => {
 					v-if="review.publishedAt"
 					:datetime="review.publishedAt"
 				>
-					{{ formatReviewDate(review.publishedAt, review.provider) }}
+					<LocalizedDate
+						:value="review.publishedAt"
+						:format="getReviewDateFormat(review.provider)"
+					/>
 				</time>
 				<span
 					class="review-provider"

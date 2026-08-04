@@ -71,13 +71,13 @@ const clinicOptions = computed(() => {
 	"sr": {
 		"Clinic": "Klinika",
 		"AnyClinic": "Bilo koja klinika",
-		"SearchClinic": "Unesite deo naziva klinike",
+		"SearchClinic": "Unesite dio naziva klinike",
 		"NotFoundClinic": "Klinika nije pronađena"
 	},
 	"sr-cyrl": {
 		"Clinic": "Клиника",
 		"AnyClinic": "Било која клиника",
-		"SearchClinic": "Унесите део назива клинике",
+		"SearchClinic": "Унесите дио назива клинике",
 		"NotFoundClinic": "Клиника није пронађена"
 	}
 }

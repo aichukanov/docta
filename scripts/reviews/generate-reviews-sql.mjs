@@ -59,6 +59,9 @@ const INPUT = resolve(ROOT, config.jsonPath)
 const OUTPUT = resolve(ROOT, config.outputPath)
 const CLINIC_ID = config.clinicId
 const CLINIC_NAME = config.clinicName || `Clinic ${CLINIC_ID}`
+// Для ещё не заведённых клиник: id заранее не известен, поэтому SQL резолвит
+// его по google_place_id вместо литерала. Включается флагом в конфиге.
+const RESOLVE_CLINIC_BY_PLACE_ID = config.resolveClinicByPlaceId === true
 const DOCTORS = config.doctors || []
 const CHILD_DENTIST_VAR = config.childDentistDoctorVar || null
 
@@ -531,7 +534,11 @@ lines.push('-- ═════════════════════�
 lines.push('-- PART 0: Clinic and doctor IDs')
 lines.push('-- ═══════════════════════════════════════════════════════════════')
 lines.push('')
-lines.push(`SET @clinic_id = ${CLINIC_ID};`)
+if (RESOLVE_CLINIC_BY_PLACE_ID) {
+  lines.push(`SET @clinic_id = (SELECT id FROM clinics WHERE google_place_id = '${PLACE_ID}' LIMIT 1);`)
+} else {
+  lines.push(`SET @clinic_id = ${CLINIC_ID};`)
+}
 for (const d of DOCTORS) lines.push(`SET @doctor_${d.varName} = ${d.id};`)
 lines.push('')
 

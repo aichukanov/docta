@@ -23,6 +23,7 @@ export enum ClinicType {
 	ORTHOPEDIC_CLINIC = 22,
 	PULMONOLOGY_CLINIC = 23,
 	PHYSIOTHERAPY_CLINIC = 24,
+	PODOLOGY_CABINET = 25,
 }
 
 /**
@@ -53,6 +54,7 @@ export const CLINIC_TYPE_SCHEMA_ORG: Record<ClinicType, string> = {
 	[ClinicType.ORTHOPEDIC_CLINIC]: 'MedicalClinic',
 	[ClinicType.PULMONOLOGY_CLINIC]: 'MedicalClinic',
 	[ClinicType.PHYSIOTHERAPY_CLINIC]: 'MedicalClinic',
+	[ClinicType.PODOLOGY_CABINET]: 'MedicalClinic',
 };
 
 /**
@@ -82,4 +84,5 @@ export const CLINIC_TYPE_MEDICAL_SPECIALTY: Partial<
 	[ClinicType.ORTHOPEDIC_CLINIC]: 'Musculoskeletal',
 	[ClinicType.PULMONOLOGY_CLINIC]: 'Pulmonary',
 	[ClinicType.PHYSIOTHERAPY_CLINIC]: 'Physiotherapy',
+	[ClinicType.PODOLOGY_CABINET]: 'Podiatric',
 };

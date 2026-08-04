@@ -36,6 +36,7 @@ export default {
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]: 'Pulmonology Clinic',
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]:
 				'Physiotherapy Clinic',
+			[`clinic_type_${ClinicType.PODOLOGY_CABINET}`]: 'Podiatry Clinic',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Polyclinics',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]: 'Dental Clinics',
@@ -77,6 +78,7 @@ export default {
 				'Pulmonology Clinics',
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]:
 				'Physiotherapy Clinics',
+			[`clinic_type_${ClinicType.PODOLOGY_CABINET}_plural`]: 'Podiatry Clinics',
 		},
 		'ru': {
 			ClinicType: 'Тип клиники',
@@ -117,6 +119,7 @@ export default {
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]:
 				'Пульмонологическая клиника',
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]: 'Физиотерапия',
+			[`clinic_type_${ClinicType.PODOLOGY_CABINET}`]: 'Кабинет подологии',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Поликлиники',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]: 'Стоматологии',
@@ -159,6 +162,8 @@ export default {
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}_plural`]:
 				'Пульмонологические клиники',
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]: 'Физиотерапия',
+			[`clinic_type_${ClinicType.PODOLOGY_CABINET}_plural`]:
+				'Кабинеты подологии',
 		},
 		'sr': {
 			ClinicType: 'Tip klinike',
@@ -196,6 +201,7 @@ export default {
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]: 'Pulmološka klinika',
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]:
 				'Fizioterapeutska ordinacija',
+			[`clinic_type_${ClinicType.PODOLOGY_CABINET}`]: 'Podološki kabinet',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Poliklinike',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]:
@@ -238,6 +244,8 @@ export default {
 				'Pulmološke klinike',
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]:
 				'Fizioterapeutske ordinacije',
+			[`clinic_type_${ClinicType.PODOLOGY_CABINET}_plural`]:
+				'Podološki kabineti',
 		},
 		'sr-cyrl': {
 			ClinicType: 'Тип клинике',
@@ -275,6 +283,7 @@ export default {
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]: 'Пулмолошка клиника',
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]:
 				'Физиотерапеутска ординација',
+			[`clinic_type_${ClinicType.PODOLOGY_CABINET}`]: 'Подолошки кабинет',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Поликлинике',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]:
@@ -317,6 +326,8 @@ export default {
 				'Пулмолошке клинике',
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]:
 				'Физиотерапеутске ординације',
+			[`clinic_type_${ClinicType.PODOLOGY_CABINET}_plural`]:
+				'Подолошки кабинети',
 		},
 		'de': {
 			ClinicType: 'Kliniktyp',
@@ -353,6 +364,7 @@ export default {
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]: 'Pneumologische Klinik',
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]:
 				'Physiotherapie-Praxis',
+			[`clinic_type_${ClinicType.PODOLOGY_CABINET}`]: 'Podologische Praxis',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Polikliniken',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]: 'Zahnarztpraxen',
@@ -394,6 +406,8 @@ export default {
 				'Pneumologische Kliniken',
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]:
 				'Physiotherapie-Praxen',
+			[`clinic_type_${ClinicType.PODOLOGY_CABINET}_plural`]:
+				'Podologische Praxen',
 		},
 		'tr': {
 			ClinicType: 'Klinik tipi',
@@ -427,6 +441,7 @@ export default {
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]:
 				'Göğüs hastalıkları kliniği',
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]: 'Fizyoterapi kliniği',
+			[`clinic_type_${ClinicType.PODOLOGY_CABINET}`]: 'Podiyatri kliniği',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Poliklinikler',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]: 'Diş klinikleri',
@@ -468,6 +483,8 @@ export default {
 				'Göğüs hastalıkları klinikleri',
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]:
 				'Fizyoterapi klinikleri',
+			[`clinic_type_${ClinicType.PODOLOGY_CABINET}_plural`]:
+				'Podiyatri klinikleri',
 		},
 	},
 };

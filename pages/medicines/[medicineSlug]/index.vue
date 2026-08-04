@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { OG_IMAGE, SITE_URL } from '~/common/constants';
+import { formatDate } from '~/common/date-format';
 import { buildPackagingLabel } from '~/common/packaging-label';
 import {
 	buildBreadcrumbsSchema,
@@ -23,6 +24,8 @@ const { t, locale } = useI18n({
 		seoDescriptionI18n,
 	]),
 });
+// Форматы дат зарегистрированы глобально (i18n/date.ts), у локальной области их нет
+const { d } = useI18n({ useScope: 'global' });
 
 const route = useRoute();
 
@@ -380,12 +383,9 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 					</div>
 					<div v-if="med.authorizationDate" class="detail-row">
 						<span class="detail-label">{{ t('AuthorizationDate') }}</span>
-						<span>{{
-							new Date(med.authorizationDate).toLocaleDateString(
-								locale === 'sr-cyrl' ? 'sr-Cyrl' : locale,
-								{ year: 'numeric', month: 'long', day: 'numeric' },
-							)
-						}}</span>
+						<span>
+							<LocalizedDate :value="med.authorizationDate" format="long" />
+						</span>
 					</div>
 				</div>
 			</EntityPageSection>
@@ -526,10 +526,7 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 				<div v-if="med.updatedAt" class="source-updated">
 					{{
 						t('SourceCInMEDUpdated', {
-							date: new Date(med.updatedAt).toLocaleDateString(
-								locale === 'sr-cyrl' ? 'sr-Cyrl' : locale,
-								{ year: 'numeric', month: 'long' },
-							),
+							date: formatDate(med.updatedAt, d, locale, 'monthYear'),
 						})
 					}}
 				</div>

@@ -2,6 +2,18 @@ import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
 import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
+// Колонка названия → код языка в lab_test_synonyms.
+// Коды совпадают с локалями приложения ('sr-cyrl', не 'sr_cyrl') — по ним
+// фильтрует выдача синонимов на странице анализа.
+const SYNONYM_LANGUAGE_COLUMNS: ReadonlyArray<readonly [string, string]> = [
+	['name_en', 'en'],
+	['name_sr', 'sr'],
+	['name_sr_cyrl', 'sr-cyrl'],
+	['name_ru', 'ru'],
+	['name_de', 'de'],
+	['name_tr', 'tr'],
+];
+
 export default defineEventHandler(async (event): Promise<boolean> => {
 	try {
 		await requireAdmin(event);
@@ -35,7 +47,8 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 			// Проверяем существование обоих анализов
 			const [labTestRows]: any = await connection.execute(
-				'SELECT id, name_sr FROM lab_tests WHERE id IN (?, ?)',
+				`SELECT id, name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr
+				 FROM lab_tests WHERE id IN (?, ?)`,
 				[body.primaryLabTestId, body.secondaryLabTestId],
 			);
 
@@ -88,19 +101,32 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				[body.primaryLabTestId, body.secondaryLabTestId],
 			);
 
-			// 3. Переносим синонимы
+			// 3. Переносим синонимы. UNIQUE стоит на (another_name, language), а
+			// смена lab_test_id его не задевает, поэтому обычного UPDATE достаточно.
 			await connection.execute(
 				`UPDATE lab_test_synonyms SET lab_test_id = ? WHERE lab_test_id = ?`,
 				[body.primaryLabTestId, body.secondaryLabTestId],
 			);
 
-			// 4. Добавляем название удаляемого анализа как синоним
-			if (secondaryLabTest?.name_sr) {
-				await connection.execute(
-					`INSERT IGNORE INTO lab_test_synonyms (lab_test_id, another_name, language)
-					 VALUES (?, ?, 'sr')`,
-					[body.primaryLabTestId, secondaryLabTest.name_sr],
+			// 4. Сохраняем названия удаляемого анализа как синонимы основного —
+			// иначе формулировка, под которой анализ знает клиника (и по которой
+			// его ищут), после слияния перестала бы находиться.
+			if (secondaryLabTest) {
+				const primaryLabTest = labTestRows.find(
+					(r: any) => r.id === body.primaryLabTestId,
 				);
+				for (const [column, language] of SYNONYM_LANGUAGE_COLUMNS) {
+					const value = secondaryLabTest[column]?.trim();
+					// Совпало с названием основного анализа — синоним не нужен.
+					if (!value || value === primaryLabTest?.[column]?.trim()) {
+						continue;
+					}
+					await connection.execute(
+						`INSERT IGNORE INTO lab_test_synonyms (lab_test_id, another_name, language)
+						 VALUES (?, ?, ?)`,
+						[body.primaryLabTestId, value, language],
+					);
+				}
 			}
 
 			// 4.1 Переносим справочный контент. На lab_test_id стоит UNIQUE,

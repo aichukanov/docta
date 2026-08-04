@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Star, CircleCheck } from '@element-plus/icons-vue';
+import { formatDate } from '~/common/date-format';
 import clinicBillingI18n from '~/i18n/clinic-billing';
 import { BillingService } from '~/enums/billing-service';
 import {
@@ -25,6 +26,8 @@ const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: clinicBillingI18n.messages,
 });
+// Форматы дат зарегистрированы глобально (i18n/date.ts), у локальной области их нет
+const { d } = useI18n({ useScope: 'global' });
 
 const SERVICE_KEYS: Record<number, { name: string; desc: string }> = {
 	[BillingService.HIGHLIGHT]: {
@@ -53,9 +56,7 @@ const periods = computed(() =>
 );
 
 const formattedActiveUntil = computed(() =>
-	props.activeUntil
-		? new Date(props.activeUntil).toLocaleDateString(locale.value)
-		: '',
+	props.activeUntil ? formatDate(props.activeUntil, d, locale.value) : '',
 );
 
 const selectedModel = computed({

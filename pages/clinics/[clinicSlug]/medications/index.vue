@@ -261,16 +261,16 @@ watchEffect(() => {
 		"NoMatchingMedications": "Filtrelere uyan ilaç bulunamadı."
 	},
 	"sr": {
-		"MedicationsPageTitle": "Lekovi — {name}",
-		"MedicationsPageDescription": "U klinici {name} dostupno je {count} lekova.",
-		"SearchMedications": "Pretraga lekova…",
-		"NoMatchingMedications": "Nema lekova koji odgovaraju filterima."
+		"MedicationsPageTitle": "Lijekovi — {name}",
+		"MedicationsPageDescription": "U klinici {name} dostupno je {count} lijekova.",
+		"SearchMedications": "Pretraga lijekova…",
+		"NoMatchingMedications": "Nema lijekova koji odgovaraju filterima."
 	},
 	"sr-cyrl": {
-		"MedicationsPageTitle": "Лекови — {name}",
-		"MedicationsPageDescription": "У клиници {name} доступно је {count} лекова.",
-		"SearchMedications": "Претрага лекова…",
-		"NoMatchingMedications": "Нема лекова који одговарају филтерима."
+		"MedicationsPageTitle": "Лијекови — {name}",
+		"MedicationsPageDescription": "У клиници {name} доступно је {count} лијекова.",
+		"SearchMedications": "Претрага лијекова…",
+		"NoMatchingMedications": "Нема лијекова који одговарају филтерима."
 	}
 }
 </i18n>

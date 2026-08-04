@@ -26,7 +26,7 @@ const { t } = useI18n({
 			namePlaceholder: 'Unesite novo ime',
 			cancel: 'Otkaži',
 			save: 'Sačuvaj',
-			nameUpdated: 'Ime uspešno ažurirano',
+			nameUpdated: 'Ime uspješno ažurirano',
 		},
 		'de': {
 			nameLabel: 'Name',
@@ -43,11 +43,11 @@ const { t } = useI18n({
 			nameUpdated: 'İsim başarıyla güncellendi',
 		},
 		'sr-cyrl': {
-			nameLabel: 'Ime',
-			namePlaceholder: 'Унесите ново ime',
+			nameLabel: 'Име',
+			namePlaceholder: 'Унесите ново име',
 			cancel: 'Откажи',
 			save: 'Сачувај',
-			nameUpdated: 'Ime успешно ажурирано',
+			nameUpdated: 'Име успјешно ажурирано',
 		},
 	},
 });

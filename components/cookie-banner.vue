@@ -160,13 +160,13 @@ const { giveConsent, declineConsent } = useCookieControl();
 		"Decline": "Reddet"
 	},
 	"sr": {
-		"CookieText": "Koristimo opcione kolačiće za analitiku. Neophodni kolačići su uvek aktivni.",
+		"CookieText": "Koristimo opcione kolačiće za analitiku. Neophodni kolačići su uvijek aktivni.",
 		"PrivacyLink": "Politika privatnosti",
 		"Accept": "Dozvoli analitiku",
 		"Decline": "Odbij"
 	},
 	"sr-cyrl": {
-		"CookieText": "Користимо опционе колачиће за аналитику. Неопходни колачићи су увек активни.",
+		"CookieText": "Користимо опционе колачиће за аналитику. Неопходни колачићи су увијек активни.",
 		"PrivacyLink": "Политика приватности",
 		"Accept": "Дозволи аналитику",
 		"Decline": "Одбиј"

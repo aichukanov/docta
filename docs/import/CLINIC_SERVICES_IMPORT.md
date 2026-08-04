@@ -311,6 +311,7 @@ SELECT id, @spec_cardiology FROM medical_services WHERE name_en IN (
 | PHYSIOTHERAPY        | 5   | PHYSICAL_MEDICINE         | 42  |
 | OPHTHALMIC_SURGERY   | 33  | OPHTHALMIC_SURGERY        | 81  |
 | ABDOMINAL_SURGERY    | 32  | GASTROINTESTINAL_SURGERY  | 90  |
+| PODOLOGY             | 36  | PODIATRY                  | 85  |
 
 **Пример:** все услуги с категорией DENTISTRY (20) → привязать к специальности DENTISTRY (78)
 
@@ -329,6 +330,8 @@ SELECT id, @spec_cardiology FROM medical_services WHERE name_en IN (
 | Урологические пластики         | PLASTIC_SURGERY + UROLOGY                        |
 | Эпидуральные инъекции          | PAIN_THERAPY + ORTHOPEDICS                       |
 | Забор крови, экспресс-тесты    | LABORATORY_SERVICES + INJECTIONS_INFUSIONS       |
+| Диабетическая стопа            | PODOLOGY + ENDOCRINOLOGY                         |
+| Ортопедические стельки         | PODOLOGY + ORTHOPEDICS                           |
 | Детские стомат. услуги         | PEDIATRIC_DENTISTRY (не DENTISTRY + PEDIATRICS!) |
 | Ортодонтические услуги         | ORTHODONTICS (не DENTISTRY!)                     |
 | Брекеты, ретейнеры, трейнеры   | ORTHODONTICS                                     |
@@ -650,6 +653,7 @@ SELECT name_en, COUNT(*) as cnt FROM lab_tests GROUP BY name_en HAVING cnt > 1;
 78 = DENTISTRY
 79 = ALLERGOLOGY
 81 = OPHTHALMIC_SURGERY
+85 = PODIATRY
 87 = PEDIATRIC_DENTISTRY
 91 = MAXILLOFACIAL_SURGERY
 92 = CARDIAC_SURGERY
@@ -696,6 +700,7 @@ SELECT name_en, COUNT(*) as cnt FROM lab_tests GROUP BY name_en HAVING cnt > 1;
 33 = OPHTHALMIC_SURGERY
 34 = ORTHODONTICS
 35 = PEDIATRIC_DENTISTRY
+36 = PODOLOGY
 ```
 
 ### Lab Test Categories

@@ -146,7 +146,7 @@ export default {
 			registerConsentAnd: 'i potvrđujem da sam pročitao/la',
 			registerConsentPrivacy: 'Politiku privatnosti',
 			registerAnalyticsConsent:
-				'Dozvoli opcione analitičke kolačiće (Mixpanel i Google Analytics). Ovu odluku možete promeniti u bilo kom trenutku.',
+				'Dozvoli opcione analitičke kolačiće (Mixpanel i Google Analytics). Ovu odluku možete promijeniti u bilo kom trenutku.',
 		},
 
 		'de': {
@@ -290,7 +290,7 @@ export default {
 			registerConsentAnd: 'и потврђујем да сам прочитао/ла',
 			registerConsentPrivacy: 'Политику приватности',
 			registerAnalyticsConsent:
-				'Дозволи опционе аналитичке колачиће (Mixpanel и Google Analytics). Ову одлуку можете променити у било ком тренутку.',
+				'Дозволи опционе аналитичке колачиће (Mixpanel и Google Analytics). Ову одлуку можете промијенити у било ком тренутку.',
 		},
 	},
 };

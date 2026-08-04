@@ -62,12 +62,12 @@ const summaryI18n = {
 	'sr': {
 		Contacts: 'Kontakti',
 		AvailableServices: 'Profilne usluge',
-		Doctors: 'Lekari',
+		Doctors: 'Ljekari',
 	},
 	'sr-cyrl': {
 		Contacts: 'Контакти',
 		AvailableServices: 'Профилне услуге',
-		Doctors: 'Лекари',
+		Doctors: 'Љекари',
 	},
 };
 

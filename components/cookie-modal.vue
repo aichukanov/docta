@@ -465,7 +465,7 @@ function closeModal() {
 	},
 	"sr": {
 		"CookieSettings": "Informacije o kolačićima",
-		"CookieInfoDescription": "Neophodni kolačići su uvek aktivni. Analitički kolačići su opcioni i koriste se samo uz vašu saglasnost.",
+		"CookieInfoDescription": "Neophodni kolačići su uvijek aktivni. Analitički kolačići su opcioni i koriste se samo uz vašu saglasnost.",
 		"CookiesUsed": "Korišćeni kolačići",
 		"MoreInfo": "Više informacija",
 		"Required": "Obavezno",
@@ -477,7 +477,7 @@ function closeModal() {
 	},
 	"sr-cyrl": {
 		"CookieSettings": "Информације о колачићима",
-		"CookieInfoDescription": "Неопходни колачићи су увек активни. Аналитички колачићи су опциони и користе се само уз вашу сагласност.",
+		"CookieInfoDescription": "Неопходни колачићи су увијек активни. Аналитички колачићи су опциони и користе се само уз вашу сагласност.",
 		"CookiesUsed": "Коришћени колачићи",
 		"MoreInfo": "Више информација",
 		"Required": "Обавезно",

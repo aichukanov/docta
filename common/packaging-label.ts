@@ -1,4 +1,5 @@
 import { CONTAINER_UNITS } from '~/i18n/packaging';
+import { selectForm } from '~/common/intl';
 
 export interface PackagingFields {
 	pack_total?: number | null;
@@ -16,35 +17,6 @@ type TFn = (key: string) => string;
 // Аккуратное число: «0.5» вместо «0.50», запятая как десятичный разделитель.
 function fmtVolume(v: number): string {
 	return String(v).replace(/\.0+$/, '').replace('.', ',');
-}
-
-// CLDR-категории в том порядке, в котором формы единиц перечислены через «;»
-// в i18n/packaging.ts. Русский — one/few/many, сербский — one/few/other,
-// en/de — one/other, tr — одна форма (без склонения по числу).
-// Разделитель именно «;», а не «|»: pipe vue-i18n парсит как собственный
-// синтаксис множественного числа и до selectForm строка не доходит целиком.
-const PLURAL_FAMILIES: Record<string, string[]> = {
-	'ru': ['one', 'few', 'many'],
-	'sr': ['one', 'few', 'other'],
-	'sr-cyrl': ['one', 'few', 'other'],
-	'en': ['one', 'other'],
-	'de': ['one', 'other'],
-	'tr': ['other'],
-};
-
-// Locale → BCP-47 тег для Intl.PluralRules (совпадает, кроме кириллицы)
-const INTL_TAG: Record<string, string> = { 'sr-cyrl': 'sr-Cyrl' };
-
-// Выбирает форму из строки «one; few; many» по числу n. Единицы без
-// склонения («саше», tr-формы) хранятся одной формой — она и вернётся.
-function selectForm(raw: string, locale: string, n: number): string {
-	const forms = raw.split(';').map((s) => s.trim());
-	if (forms.length === 1) return forms[0];
-	const family = PLURAL_FAMILIES[locale] || ['one', 'other'];
-	const cat = new Intl.PluralRules(INTL_TAG[locale] || locale).select(n);
-	const idx = family.indexOf(cat);
-	// нет формы под категорию — берём последнюю (самую «множественную»)
-	return forms[idx >= 0 && idx < forms.length ? idx : forms.length - 1];
 }
 
 // Именительный ед.ч. (первая форма) — для контейнера в записи «3 × шприц 0,5 мл»

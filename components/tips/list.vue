@@ -73,12 +73,12 @@ const { t } = useI18n({ useScope: 'local' });
 		"TipsTitle": "Полезные советы"
 	},
 	"sr": {
-		"AriaTipsSection": "Korisni saveti",
-		"TipsTitle": "Korisni saveti"
+		"AriaTipsSection": "Korisni savjeti",
+		"TipsTitle": "Korisni savjeti"
 	},
 	"sr-cyrl": {
-		"AriaTipsSection": "Корисни савети",
-		"TipsTitle": "Корисни савети"
+		"AriaTipsSection": "Корисни савјети",
+		"TipsTitle": "Корисни савјети"
 	},
 	"de": {
 		"AriaTipsSection": "Nützliche Tipps",

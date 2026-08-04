@@ -23,7 +23,7 @@ const { t } = useI18n({
 			emailChangeSent: 'Письмо с подтверждением отправлено на новый email',
 		},
 		'sr': {
-			note: 'Email sa potvrdom će biti poslat na novu adresu. Email će se promeniti samo nakon potvrde.',
+			note: 'Email sa potvrdom će biti poslat na novu adresu. Email će se promijeniti samo nakon potvrde.',
 			newEmailLabel: 'Novi email',
 			newEmailPlaceholder: 'Unesite novi email',
 			cancel: 'Otkaži',
@@ -47,7 +47,7 @@ const { t } = useI18n({
 			emailChangeSent: 'Yeni adrese onay e-postası gönderildi',
 		},
 		'sr-cyrl': {
-			note: 'Емаил са потврдом ће бити послат на нову адресу. Емаил ће се променити само након потврде.',
+			note: 'Емаил са потврдом ће бити послат на нову адресу. Емаил ће се промијенити само након потврде.',
 			newEmailLabel: 'Нови емаил',
 			newEmailPlaceholder: 'Унесите нови емаил',
 			cancel: 'Откажи',

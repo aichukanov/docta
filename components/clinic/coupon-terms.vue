@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getCouponPaymentKey } from '~/common/clinic-coupon';
+import { formatDate } from '~/common/date-format';
 import clinicCouponI18n from '~/i18n/clinic-coupon';
 import type { ClinicCoupon } from '~/interfaces/clinic-coupon';
 
@@ -18,6 +19,8 @@ const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: clinicCouponI18n.messages,
 });
+// Форматы дат зарегистрированы глобально (i18n/date.ts), у локальной области их нет
+const { d } = useI18n({ useScope: 'global' });
 
 const sourceLine = computed(() =>
 	props.coupon.sourceName
@@ -27,11 +30,7 @@ const sourceLine = computed(() =>
 
 const formattedValidUntil = computed(() => {
 	if (!props.coupon.validUntil) return null;
-	return new Date(props.coupon.validUntil).toLocaleDateString(locale.value, {
-		year: 'numeric',
-		month: 'long',
-		day: 'numeric',
-	});
+	return formatDate(props.coupon.validUntil, d, locale.value, 'long');
 });
 
 const terms = computed(() => {

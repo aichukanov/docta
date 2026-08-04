@@ -34,4 +34,5 @@ export enum MedicalServiceCategory {
 	OPHTHALMIC_SURGERY = 33,
 	ORTHODONTICS = 34,
 	PEDIATRIC_DENTISTRY = 35,
+	PODOLOGY = 36,
 }

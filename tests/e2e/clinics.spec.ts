@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
 import { ListingPage } from '../pages/listing.page';
 import { LISTING_SECTIONS, detailUrlPattern } from '../utils/sections';
+import { visit } from '../utils/http';
 
 // Общий контракт листинга и детальной страницы клиник проверяется в
 // listings.spec.ts. Здесь — только то, чего нет у других разделов:
@@ -69,27 +70,24 @@ test.describe('Подстраницы клиники', () => {
 	// у мелкого — 301 на якорь карточки клиники. 404 здесь быть не должно.
 
 	for (const sub of SUBPAGES) {
-		test(`/${sub}: своя страница либо 301 на якорь клиники`, async ({
+		test(`/${sub}: своя страница либо редирект на якорь клиники`, async ({
 			page,
-			request,
 		}) => {
 			const clinicPath = await openFirstClinic(page);
 			const target = `${clinicPath}/${sub}`;
 
-			const response = await request.get(target, { maxRedirects: 0 });
-			const status = response.status();
-			expect([200, 301], `неожиданный код ${status} на ${target}`).toContain(
-				status,
-			);
+			// Через навигацию, а не `request.get()`: прод за Cloudflare отдаёт
+			// не-браузерным клиентам 403 (см. tests/utils/http.ts)
+			const res = await visit(page, target);
+			expect(res.status, `неожиданный код на ${target}`).toBe(200);
 
-			if (status === 301) {
-				expect(response.headers()['location']).toMatch(
-					new RegExp(`${clinicPath}#${sub}$`),
-				);
+			if (res.hops > 0) {
+				// мелкий раздел уводит на якорь карточки клиники
+				expect(res.hops, 'ровно один хоп').toBe(1);
+				expect(res.url).toMatch(new RegExp(`${clinicPath}#${sub}$`));
 				return;
 			}
 
-			await page.goto(target, { waitUntil: 'domcontentloaded' });
 			await expect(page.locator('.items-page')).toBeVisible();
 
 			const canonical = await page

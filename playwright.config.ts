@@ -3,9 +3,22 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-// const baseURL = 'https://docta.me';
 const baseURL = process.env.E2E_BASE_URL || 'http://localhost:3000';
 const isProduction = baseURL.includes('docta.me');
+const isLocal = !isProduction;
+
+// webServer в Playwright общий на весь прогон, но unit-проекту сервер не нужен:
+// `--project=unit` не должен ждать поднятия Nuxt (а если порт занят чужим
+// приложением — ещё и падать по таймауту сборки).
+const selectedProjects = process.argv.flatMap((arg, i) =>
+	arg === '--project'
+		? [process.argv[i + 1]]
+		: arg.startsWith('--project=')
+			? [arg.slice('--project='.length)]
+			: [],
+);
+const needsBrowser =
+	selectedProjects.length === 0 || selectedProjects.includes('chromium');
 
 export default defineConfig({
 	testDir: './tests',
@@ -33,11 +46,9 @@ export default defineConfig({
 	// Количество воркеров.
 	// Локально узкое место — dev-сервер: на дефолтной половине ядер он не
 	// успевал отвечать и тесты флакали.
-	// По проду — последовательно: во-первых, это вежливее к живому сайту;
-	// во-вторых, пока фикс зависания перехода (Vue 3.5.40) не выкатан,
-	// параллельные браузеры отъедают CPU и воспроизводят баг, из-за чего
-	// половина детальных страниц падает не по своей вине. После деплоя
-	// это ограничение можно снять.
+	// По проду — последовательно: прогон идёт настоящим headed Chrome (см. ниже
+	// про Cloudflare), и несколько таких окон разом и грузят живой сайт, и
+	// быстрее нарываются на бот-защиту.
 	workers: process.env.CI || isProduction ? 1 : 4,
 
 	// Прогрев маршрутов dev-сервера, см. tests/global-setup.ts
@@ -70,7 +81,26 @@ export default defineConfig({
 		{
 			name: 'chromium',
 			testDir: './tests/e2e',
-			use: { ...devices['Desktop Chrome'] },
+			use: {
+				...devices['Desktop Chrome'],
+				// Прод за Cloudflare, и он отдаёт 403 браузеру с признаками
+				// автоматизации: не доезжают манифест приложения и часть /api/,
+				// страница показывает «не найдено». Замерено на одной машине в
+				// один момент: Playwright Chromium — 403, настоящий Chrome без
+				// флага автоматизации — 200, но только headed (headless Chrome
+				// тоже 403). Живых пользователей это не касается — тот же URL
+				// из обычного Chrome и из curl отдаётся нормально.
+				...(isProduction
+					? {
+							channel: 'chrome',
+							headless: false,
+							launchOptions: {
+								args: ['--disable-blink-features=AutomationControlled'],
+								ignoreDefaultArgs: ['--enable-automation'],
+							},
+						}
+					: {}),
+			},
 		},
 
 		// Unit-тесты (без браузера)
@@ -101,18 +131,22 @@ export default defineConfig({
 		// },
 	],
 
-	// Dev server только для локального окружения
-	...(baseURL.includes('localhost') && {
-		webServer: {
-			command: 'npm run dev',
-			url: 'http://localhost:3000',
-			reuseExistingServer: !process.env.CI,
-			timeout: 120 * 1000,
-			// Полный прогон e2e доводил SSR-воркер `nuxt dev` до
-			// «JS heap out of memory», и дальше весь раздел отдавал 500 —
-			// падения выглядели как флаки. Касается только сервера,
-			// который поднимает сам Playwright.
-			env: { NODE_OPTIONS: '--max-old-space-size=4096' },
-		},
-	}),
+	// Dev server только для локального окружения.
+	// url берётся из baseURL, а не хардкодится: порт 3000 бывает занят чужим
+	// приложением, и тогда прогон молча уходил в него — падения выглядели как
+	// поломка docta. Свой порт задаётся через E2E_BASE_URL.
+	...(isLocal &&
+		needsBrowser && {
+			webServer: {
+				command: 'npm run dev',
+				url: baseURL,
+				reuseExistingServer: !process.env.CI,
+				timeout: 120 * 1000,
+				// Полный прогон e2e доводил SSR-воркер `nuxt dev` до
+				// «JS heap out of memory», и дальше весь раздел отдавал 500 —
+				// падения выглядели как флаки. Касается только сервера,
+				// который поднимает сам Playwright.
+				env: { NODE_OPTIONS: '--max-old-space-size=4096' },
+			},
+		}),
 });

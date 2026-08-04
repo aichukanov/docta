@@ -96,9 +96,7 @@ export default defineEventHandler(async (event) => {
 
 		if (!isValid) {
 			const serverBotId = telegram.botToken.split(':')[0];
-			const widgetBotId = String(
-				useRuntimeConfig().public.telegramBotId || '',
-			);
+			const widgetBotId = String(useRuntimeConfig().public.telegramBotId || '');
 			authLogger.error('Invalid Telegram authentication', {
 				serverBotId: serverBotId || '(no token)',
 				widgetBotId: widgetBotId || '(empty)',

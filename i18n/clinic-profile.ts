@@ -69,10 +69,9 @@ export default {
 			LogoUpdated: 'Logo uploaded',
 
 			SectionLocation: 'Location on the map',
-			MapPickerHint: 'Click on the map to set the clinic location',
+			MapPickerHint: 'Click on the map to set or move the clinic location',
 			CoordinatesSet: 'Point: {lat}, {lng}',
 			CoordinatesNotSet: 'Point not set',
-			ClearPoint: 'Clear point',
 
 			SectionContacts: 'Contacts',
 			FieldPhone: 'Phone',
@@ -98,6 +97,15 @@ export default {
 			ValidationPostalCodeRequired: 'Postal code is required',
 			ValidationContactRequired: 'Add at least one contact',
 			ContactsRequiredHint: 'at least one is required',
+			ContactAdd: 'Add another',
+			ContactRemove: 'Remove',
+			ContactsFormatHint:
+				'One value per line — the + button adds another; a comma or semicolon splits the input.',
+			ContactErrorPhone: 'Enter a phone number, e.g. +382 68 111 222',
+			ContactErrorEmail: 'Enter an email address, e.g. info@klinika.me',
+			ContactErrorUrl: 'Enter a link or handle, e.g. klinika.me',
+			ContactErrorTelegram: 'Enter a username or phone, e.g. @klinika',
+			ValidationContactInvalid: 'Check the value in "{field}"',
 
 			OwnerBanner: 'This is your clinic',
 			OwnerBannerManage: 'Manage',
@@ -172,10 +180,10 @@ export default {
 			LogoUpdated: 'Логотип загружен',
 
 			SectionLocation: 'Расположение на карте',
-			MapPickerHint: 'Кликните по карте, чтобы указать расположение клиники',
+			MapPickerHint:
+				'Кликните по карте, чтобы указать или передвинуть расположение клиники',
 			CoordinatesSet: 'Точка: {lat}, {lng}',
 			CoordinatesNotSet: 'Точка не указана',
-			ClearPoint: 'Убрать точку',
 
 			SectionContacts: 'Контакты',
 			FieldPhone: 'Телефон',
@@ -201,6 +209,15 @@ export default {
 			ValidationPostalCodeRequired: 'Почтовый индекс обязателен',
 			ValidationContactRequired: 'Укажите хотя бы один контакт',
 			ContactsRequiredHint: 'минимум один — обязателен',
+			ContactAdd: 'Добавить ещё',
+			ContactRemove: 'Удалить',
+			ContactsFormatHint:
+				'По одному значению в строке — «+» добавляет ещё; запятая или точка с запятой разделит ввод.',
+			ContactErrorPhone: 'Укажите номер, например +382 68 111 222',
+			ContactErrorEmail: 'Укажите email, например info@klinika.me',
+			ContactErrorUrl: 'Укажите ссылку или имя, например klinika.me',
+			ContactErrorTelegram: 'Укажите имя или номер, например @klinika',
+			ValidationContactInvalid: 'Проверьте значение в поле «{field}»',
 
 			OwnerBanner: 'Это ваша клиника',
 			OwnerBannerManage: 'Управление',
@@ -275,10 +292,10 @@ export default {
 			LogoUpdated: 'Logotip otpremljen',
 
 			SectionLocation: 'Lokacija na mapi',
-			MapPickerHint: 'Kliknite na mapu da označite lokaciju klinike',
+			MapPickerHint:
+				'Kliknite na mapu da označite ili pomjerite lokaciju klinike',
 			CoordinatesSet: 'Tačka: {lat}, {lng}',
 			CoordinatesNotSet: 'Tačka nije postavljena',
-			ClearPoint: 'Ukloni tačku',
 
 			SectionContacts: 'Kontakti',
 			FieldPhone: 'Telefon',
@@ -304,6 +321,15 @@ export default {
 			ValidationPostalCodeRequired: 'Poštanski broj je obavezan',
 			ValidationContactRequired: 'Navedite najmanje jedan kontakt',
 			ContactsRequiredHint: 'najmanje jedan je obavezan',
+			ContactAdd: 'Dodaj još',
+			ContactRemove: 'Ukloni',
+			ContactsFormatHint:
+				'Jedna vrijednost po redu — dugme + dodaje novi red; zapeta ili tačka-zapeta dijeli unos.',
+			ContactErrorPhone: 'Unesite broj telefona, npr. +382 68 111 222',
+			ContactErrorEmail: 'Unesite email adresu, npr. info@klinika.me',
+			ContactErrorUrl: 'Unesite link ili ime, npr. klinika.me',
+			ContactErrorTelegram: 'Unesite korisničko ime ili broj, npr. @klinika',
+			ValidationContactInvalid: 'Provjerite vrijednost u polju „{field}“',
 
 			OwnerBanner: 'Ovo je vaša klinika',
 			OwnerBannerManage: 'Upravljanje',
@@ -378,10 +404,10 @@ export default {
 			LogoUpdated: 'Логотип отпремљен',
 
 			SectionLocation: 'Локација на мапи',
-			MapPickerHint: 'Кликните на мапу да означите локацију клинике',
+			MapPickerHint:
+				'Кликните на мапу да означите или помјерите локацију клинике',
 			CoordinatesSet: 'Тачка: {lat}, {lng}',
 			CoordinatesNotSet: 'Тачка није постављена',
-			ClearPoint: 'Уклони тачку',
 
 			SectionContacts: 'Контакти',
 			FieldPhone: 'Телефон',
@@ -407,6 +433,15 @@ export default {
 			ValidationPostalCodeRequired: 'Поштански број је обавезан',
 			ValidationContactRequired: 'Наведите најмање један контакт',
 			ContactsRequiredHint: 'најмање један је обавезан',
+			ContactAdd: 'Додај још',
+			ContactRemove: 'Уклони',
+			ContactsFormatHint:
+				'Једна вриједност по реду — дугме + додаје нови ред; запета или тачка-запета дијели унос.',
+			ContactErrorPhone: 'Унесите број телефона, нпр. +382 68 111 222',
+			ContactErrorEmail: 'Унесите email адресу, нпр. info@klinika.me',
+			ContactErrorUrl: 'Унесите линк или име, нпр. klinika.me',
+			ContactErrorTelegram: 'Унесите корисничко име или број, нпр. @klinika',
+			ValidationContactInvalid: 'Провјерите вриједност у пољу „{field}“',
 
 			OwnerBanner: 'Ово је ваша клиника',
 			OwnerBannerManage: 'Управљање',
@@ -482,10 +517,9 @@ export default {
 
 			SectionLocation: 'Standort auf der Karte',
 			MapPickerHint:
-				'Klicken Sie auf die Karte, um den Standort der Klinik festzulegen',
+				'Klicken Sie auf die Karte, um den Standort der Klinik festzulegen oder zu verschieben',
 			CoordinatesSet: 'Punkt: {lat}, {lng}',
 			CoordinatesNotSet: 'Punkt nicht gesetzt',
-			ClearPoint: 'Punkt entfernen',
 
 			SectionContacts: 'Kontakte',
 			FieldPhone: 'Telefon',
@@ -511,6 +545,15 @@ export default {
 			ValidationPostalCodeRequired: 'Postleitzahl ist erforderlich',
 			ValidationContactRequired: 'Geben Sie mindestens einen Kontakt an',
 			ContactsRequiredHint: 'mindestens einer ist erforderlich',
+			ContactAdd: 'Weitere hinzufügen',
+			ContactRemove: 'Entfernen',
+			ContactsFormatHint:
+				'Ein Wert pro Zeile — die Schaltfläche + fügt eine weitere hinzu; ein Komma oder Semikolon teilt die Eingabe.',
+			ContactErrorPhone: 'Telefonnummer angeben, z. B. +382 68 111 222',
+			ContactErrorEmail: 'E-Mail-Adresse angeben, z. B. info@klinika.me',
+			ContactErrorUrl: 'Link oder Namen angeben, z. B. klinika.me',
+			ContactErrorTelegram: 'Benutzernamen oder Nummer angeben, z. B. @klinika',
+			ValidationContactInvalid: 'Prüfen Sie den Wert im Feld „{field}“',
 
 			OwnerBanner: 'Dies ist Ihre Klinik',
 			OwnerBannerManage: 'Verwalten',
@@ -586,10 +629,10 @@ export default {
 			LogoUpdated: 'Logo yüklendi',
 
 			SectionLocation: 'Haritadaki konum',
-			MapPickerHint: 'Kliniğin konumunu belirlemek için haritaya tıklayın',
+			MapPickerHint:
+				'Kliniğin konumunu belirlemek veya taşımak için haritaya tıklayın',
 			CoordinatesSet: 'Nokta: {lat}, {lng}',
 			CoordinatesNotSet: 'Nokta belirlenmedi',
-			ClearPoint: 'Noktayı kaldır',
 
 			SectionContacts: 'İletişim',
 			FieldPhone: 'Telefon',
@@ -616,6 +659,15 @@ export default {
 			ValidationPostalCodeRequired: 'Posta kodu zorunludur',
 			ValidationContactRequired: 'En az bir iletişim bilgisi girin',
 			ContactsRequiredHint: 'en az biri zorunludur',
+			ContactAdd: 'Yeni ekle',
+			ContactRemove: 'Kaldır',
+			ContactsFormatHint:
+				'Her satıra bir değer — + düğmesi yeni satır ekler; virgül veya noktalı virgül girişi böler.',
+			ContactErrorPhone: 'Telefon numarası girin, örn. +382 68 111 222',
+			ContactErrorEmail: 'E-posta adresi girin, örn. info@klinika.me',
+			ContactErrorUrl: 'Bağlantı veya ad girin, örn. klinika.me',
+			ContactErrorTelegram: 'Kullanıcı adı veya numara girin, örn. @klinika',
+			ValidationContactInvalid: '{field} alanındaki değeri kontrol edin',
 
 			OwnerBanner: 'Bu sizin kliniğiniz',
 			OwnerBannerManage: 'Yönet',

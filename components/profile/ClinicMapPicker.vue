@@ -6,9 +6,12 @@ const props = defineProps<{
 	longitude: number | null;
 }>();
 
+// Точку можно только поставить и перетащить кликом. Снять её нельзя: без
+// координат клиника исчезает с карты каталога и из поиска по расстоянию, а
+// вернуть их пользователь обычно не догадывается. Стереть точку может админ
+// сайта через админку.
 const emit = defineEmits<{
 	(e: 'pick', latitude: number, longitude: number): void;
-	(e: 'clear'): void;
 }>();
 
 const { t } = useI18n({
@@ -86,9 +89,6 @@ watch(
 						: t('CoordinatesNotSet')
 				}}
 			</span>
-			<el-button v-if="hasPoint" size="small" @click="emit('clear')">
-				{{ t('ClearPoint') }}
-			</el-button>
 		</div>
 	</div>
 </template>

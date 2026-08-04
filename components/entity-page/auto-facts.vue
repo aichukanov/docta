@@ -69,7 +69,10 @@ const priceText = computed(() => {
 			<dd class="auto-facts__lead-value">
 				{{ hasPrice ? priceText : facts.clinicCount }}
 			</dd>
-			<dd v-if="hasPrice && facts.priceAvg != null" class="auto-facts__lead-sub">
+			<dd
+				v-if="hasPrice && facts.priceAvg != null"
+				class="auto-facts__lead-sub"
+			>
 				{{ t('AutoFactsAvgInline', { avg: formatPrice(facts.priceAvg) }) }}
 			</dd>
 		</div>

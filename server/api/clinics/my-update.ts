@@ -35,6 +35,15 @@ export default defineEventHandler(async (event) => {
 	try {
 		const clinic = await getOwnedClinic(connection, body.clinicId, user);
 
+		// Точку на карте можно передвинуть, но не снять: без координат клиника
+		// пропадает с карты каталога и из сортировки по расстоянию. В кабинете
+		// кнопки «убрать точку» нет, но запрос можно отправить и напрямую —
+		// поэтому пустые координаты трактуем как «не менял»
+		if (body.latitude == null && clinic.latitude != null) {
+			body.latitude = Number(clinic.latitude);
+			body.longitude = Number(clinic.longitude);
+		}
+
 		await connection.beginTransaction();
 
 		// Слаг следует за названием: при переименовании сохраняем redirect со старого.

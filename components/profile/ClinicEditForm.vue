@@ -15,6 +15,12 @@ import {
 	DEFAULT_WORKING_HOURS,
 	DAYS_OF_WEEK,
 } from '~/interfaces/clinic-working-hours';
+import {
+	CONTACT_FIELD_KINDS,
+	hasInvalidContactValue,
+	normalizeContactField,
+	type ContactKind,
+} from '~/common/contact-input';
 
 const props = defineProps<{
 	// null — создание новой клиники
@@ -69,6 +75,42 @@ const form = reactive({
 		? props.clinic.clinicTypeIds.split(',').map(Number)
 		: [],
 });
+
+// --- Контакты ---
+
+// Плейсхолдер = пример в том формате, который мы ждём. Латиница и номера
+// одинаковы во всех локалях, поэтому в i18n им делать нечего
+const CONTACT_FIELDS = [
+	{ key: 'phone', labelKey: 'FieldPhone', placeholder: '+382 68 111 222' },
+	{ key: 'email', labelKey: 'FieldEmail', placeholder: 'info@klinika.me' },
+	{
+		key: 'website',
+		labelKey: 'FieldWebsite',
+		placeholder: 'https://klinika.me',
+	},
+	{
+		key: 'whatsapp',
+		labelKey: 'FieldWhatsapp',
+		placeholder: '+382 68 111 222',
+	},
+	{ key: 'viber', labelKey: 'FieldViber', placeholder: '+382 68 111 222' },
+	{ key: 'telegram', labelKey: 'FieldTelegram', placeholder: '@klinika' },
+	{
+		key: 'facebook',
+		labelKey: 'FieldFacebook',
+		placeholder: 'facebook.com/klinika',
+	},
+	{ key: 'instagram', labelKey: 'FieldInstagram', placeholder: '@klinika' },
+] as const;
+
+type ContactFieldKey = (typeof CONTACT_FIELDS)[number]['key'];
+
+const CONTACT_ERROR_KEYS: Record<ContactKind, string> = {
+	phone: 'ContactErrorPhone',
+	email: 'ContactErrorEmail',
+	url: 'ContactErrorUrl',
+	telegram: 'ContactErrorTelegram',
+};
 
 // --- Локализованные поля (вкладки по языкам, как у врача) ---
 
@@ -221,11 +263,6 @@ function onMapPick(latitude: number, longitude: number) {
 	form.longitude = longitude;
 }
 
-function onMapClear() {
-	form.latitude = null;
-	form.longitude = null;
-}
-
 // --- Сохранение ---
 
 const isSaving = ref(false);
@@ -236,18 +273,29 @@ function validate(): string | null {
 	if (!form.addressSr.trim()) return t('ValidationAddressRequired');
 	if (!form.postalCode.trim()) return t('ValidationPostalCodeRequired');
 	if (!form.languageIds.length) return t('ValidationLanguagesRequired');
-	const hasContact = [
-		form.phone,
-		form.email,
-		form.website,
-		form.facebook,
-		form.instagram,
-		form.telegram,
-		form.whatsapp,
-		form.viber,
-	].some((value) => value.trim());
+	const hasContact = CONTACT_FIELDS.some((field) => form[field.key].trim());
 	if (!hasContact) return t('ValidationContactRequired');
+	// Кривое значение молча пропадает с публичной страницы (не-номер в
+	// WhatsApp/Viber вообще не рисуется), поэтому не сохраняем его вовсе
+	const invalidField = CONTACT_FIELDS.find((field) =>
+		hasInvalidContactValue(form[field.key], CONTACT_FIELD_KINDS[field.key]),
+	);
+	if (invalidField) {
+		return t('ValidationContactInvalid', { field: t(invalidField.labelKey) });
+	}
 	return null;
+}
+
+/** Канон в БД не зависит от того, ушёл ли пользователь из поля перед save. */
+function normalizedContacts(): Record<ContactFieldKey, string> {
+	const result = {} as Record<ContactFieldKey, string>;
+	for (const field of CONTACT_FIELDS) {
+		result[field.key] = normalizeContactField(
+			form[field.key],
+			CONTACT_FIELD_KINDS[field.key],
+		);
+	}
+	return result;
 }
 
 async function save() {
@@ -271,14 +319,7 @@ async function save() {
 			postalCode: form.postalCode,
 			latitude: form.latitude,
 			longitude: form.longitude,
-			phone: form.phone,
-			email: form.email,
-			website: form.website,
-			facebook: form.facebook,
-			instagram: form.instagram,
-			telegram: form.telegram,
-			whatsapp: form.whatsapp,
-			viber: form.viber,
+			...normalizedContacts(),
 			descriptionSr: form.descriptionSr,
 			descriptionSrCyrl: form.descriptionSrCyrl,
 			descriptionRu: form.descriptionRu,
@@ -443,7 +484,6 @@ async function save() {
 					:latitude="form.latitude"
 					:longitude="form.longitude"
 					@pick="onMapPick"
-					@clear="onMapClear"
 				/>
 			</ClientOnly>
 		</div>
@@ -455,39 +495,25 @@ async function save() {
 				<span class="clinic-form__markdown-hint">{{
 					t('ContactsRequiredHint')
 				}}</span>
+				<span class="clinic-form__markdown-hint">{{
+					t('ContactsFormatHint')
+				}}</span>
 			</div>
 			<div class="clinic-form__contacts">
-				<div class="clinic-form__field">
-					<label class="clinic-form__label">{{ t('FieldPhone') }}</label>
-					<el-input v-model="form.phone" type="tel" />
-				</div>
-				<div class="clinic-form__field">
-					<label class="clinic-form__label">{{ t('FieldEmail') }}</label>
-					<el-input v-model="form.email" type="email" />
-				</div>
-				<div class="clinic-form__field">
-					<label class="clinic-form__label">{{ t('FieldWebsite') }}</label>
-					<el-input v-model="form.website" />
-				</div>
-				<div class="clinic-form__field">
-					<label class="clinic-form__label">{{ t('FieldWhatsapp') }}</label>
-					<el-input v-model="form.whatsapp" />
-				</div>
-				<div class="clinic-form__field">
-					<label class="clinic-form__label">{{ t('FieldViber') }}</label>
-					<el-input v-model="form.viber" />
-				</div>
-				<div class="clinic-form__field">
-					<label class="clinic-form__label">{{ t('FieldTelegram') }}</label>
-					<el-input v-model="form.telegram" />
-				</div>
-				<div class="clinic-form__field">
-					<label class="clinic-form__label">{{ t('FieldFacebook') }}</label>
-					<el-input v-model="form.facebook" />
-				</div>
-				<div class="clinic-form__field">
-					<label class="clinic-form__label">{{ t('FieldInstagram') }}</label>
-					<el-input v-model="form.instagram" />
+				<div
+					v-for="field in CONTACT_FIELDS"
+					:key="field.key"
+					class="clinic-form__field"
+				>
+					<label class="clinic-form__label">{{ t(field.labelKey) }}</label>
+					<ProfileContactListField
+						v-model="form[field.key]"
+						:kind="CONTACT_FIELD_KINDS[field.key]"
+						:placeholder="field.placeholder"
+						:invalidHint="t(CONTACT_ERROR_KEYS[CONTACT_FIELD_KINDS[field.key]])"
+						:addLabel="t('ContactAdd')"
+						:removeLabel="t('ContactRemove')"
+					/>
 				</div>
 			</div>
 		</div>

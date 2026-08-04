@@ -169,9 +169,7 @@ const dismiss = async (item: DuplicateCandidateItem) => {
 							<span>ID {{ side.id }}</span>
 							<span>{{ side.clinicCount }} клиник</span>
 							<span>{{ priceLabel(side) }}</span>
-							<span v-if="side.categoryIds">
-								кат. {{ side.categoryIds }}
-							</span>
+							<span v-if="side.categoryIds"> кат. {{ side.categoryIds }} </span>
 							<el-tag v-if="side.hasReferenceInfo" size="small" type="success">
 								справка
 							</el-tag>

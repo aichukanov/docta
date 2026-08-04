@@ -12,6 +12,11 @@ import {
 	validateDoctorLanguageIds,
 } from '~/common/validation';
 import { validateWorkingHoursData } from '~/common/clinic-working-hours';
+import {
+	CONTACT_FIELD_KINDS,
+	hasInvalidContactValue,
+	normalizeContactField,
+} from '~/common/contact-input';
 import { ERROR_CODES, createErrorResponse } from '~/server/utils/api-codes';
 
 export type ClinicWorkingHoursBody = Record<DayOfWeek, DaySchedule>;
@@ -97,6 +102,18 @@ export function validateClinicCabinetBody(
 		(body.latitude == null) !== (body.longitude == null)
 	) {
 		createErrorResponse(400, ERROR_CODES.CLINIC_INVALID_DATA);
+	}
+
+	// Контакты: значение, которое не пройдёт наши парсеры, на сайте молча
+	// исчезает (не-номер в WhatsApp/Viber не рисуется вовсе), поэтому в БД его
+	// не пускаем. Клиент присылает уже нормализованное, но проверка нужна и
+	// здесь — форму можно обойти прямым запросом
+	for (const [field, kind] of Object.entries(CONTACT_FIELD_KINDS)) {
+		const value = body[field as keyof ClinicCabinetBody];
+		if (value == null || value === '') continue;
+		if (typeof value !== 'string' || hasInvalidContactValue(value, kind)) {
+			createErrorResponse(400, ERROR_CODES.CLINIC_INVALID_DATA, { field });
+		}
 	}
 
 	if (body.workingHours !== undefined) {
@@ -259,14 +276,16 @@ export function clinicFieldParams(body: ClinicCabinetBody) {
 			body.postalCode?.trim() || '',
 			body.latitude ?? null,
 			body.longitude ?? null,
-			body.phone?.trim() || '',
-			body.email?.trim() || '',
-			body.website?.trim() || '',
-			body.facebook?.trim() || '',
-			body.instagram?.trim() || '',
-			body.telegram?.trim() || '',
-			body.whatsapp?.trim() || '',
-			body.viber?.trim() || '',
+			// Канон в БД не зависит от клиента: `+382XXXXXXXX` без пробелов, по
+			// одному значению на разделитель `;`
+			normalizeContactField(body.phone, 'phone'),
+			normalizeContactField(body.email, 'email'),
+			normalizeContactField(body.website, 'url'),
+			normalizeContactField(body.facebook, 'url'),
+			normalizeContactField(body.instagram, 'url'),
+			normalizeContactField(body.telegram, 'telegram'),
+			normalizeContactField(body.whatsapp, 'phone'),
+			normalizeContactField(body.viber, 'phone'),
 			body.descriptionSr?.trim() || '',
 			body.descriptionSrCyrl?.trim() || '',
 			body.descriptionRu?.trim() || '',

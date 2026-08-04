@@ -17,6 +17,7 @@ import {
 } from '~/common/url-utils';
 import { getLocalizedName } from '~/common/utils';
 import breadcrumbI18n from '~/i18n/breadcrumb';
+import clinicCommonI18n from '~/i18n/clinic-common';
 import clinicItemsSortI18n from '~/i18n/clinic-items-sort';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
@@ -25,6 +26,7 @@ const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([
 		breadcrumbI18n,
+		clinicCommonI18n,
 		specialtyI18n,
 		clinicItemsSortI18n,
 	]),
@@ -221,7 +223,7 @@ watchEffect(() => {
 				url: getRegionalUrl(`${SITE_URL}/clinics`, {}, locale.value),
 			},
 			{ name: clinicName.value, url: clinicUrl },
-			{ name: t('BreadcrumbDoctors') },
+			{ name: t('TabDoctors') },
 		]),
 	]);
 });
@@ -235,7 +237,7 @@ watchEffect(() => {
 		:clinicLink="clinicLink"
 		:breadcrumbHomeLabel="t('BreadcrumbHome')"
 		:breadcrumbClinicsLabel="t('BreadcrumbClinics')"
-		:breadcrumbCurrentLabel="t('BreadcrumbDoctors')"
+		:breadcrumbCurrentLabel="t('TabDoctors')"
 		:pageTitle="pageTitleText"
 		:items="items"
 		:totalCount="totalCount"
@@ -268,46 +270,46 @@ watchEffect(() => {
 <i18n lang="json">
 {
 	"en": {
-		"DoctorsPageTitle": "Doctors at {name}",
-		"DoctorsPageDescription": "{count} doctors at {name}.",
-		"SearchDoctors": "Search doctors…",
+		"DoctorsPageTitle": "Specialists at {name}",
+		"DoctorsPageDescription": "{count} specialists at {name}.",
+		"SearchDoctors": "Search specialists…",
 		"AllSpecialties": "All",
-		"NoMatchingDoctors": "No doctors match your filters."
+		"NoMatchingDoctors": "No specialists match your filters."
 	},
 	"ru": {
-		"DoctorsPageTitle": "Врачи — {name}",
-		"DoctorsPageDescription": "В клинике {name} принимают {count} врачей.",
-		"SearchDoctors": "Поиск врачей…",
+		"DoctorsPageTitle": "Специалисты — {name}",
+		"DoctorsPageDescription": "В {name} принимают {count} специалистов.",
+		"SearchDoctors": "Поиск специалистов…",
 		"AllSpecialties": "Все",
-		"NoMatchingDoctors": "По текущим фильтрам врачи не найдены."
+		"NoMatchingDoctors": "По текущим фильтрам специалисты не найдены."
 	},
 	"de": {
-		"DoctorsPageTitle": "Ärzte — {name}",
-		"DoctorsPageDescription": "In der Klinik {name} sind {count} Ärzte tätig.",
-		"SearchDoctors": "Ärzte suchen…",
+		"DoctorsPageTitle": "Spezialisten — {name}",
+		"DoctorsPageDescription": "Bei {name} sind {count} Spezialisten tätig.",
+		"SearchDoctors": "Spezialisten suchen…",
 		"AllSpecialties": "Alle",
-		"NoMatchingDoctors": "Keine Ärzte entsprechen Ihren Filtern."
+		"NoMatchingDoctors": "Keine Spezialisten entsprechen Ihren Filtern."
 	},
 	"tr": {
-		"DoctorsPageTitle": "Doktorlar — {name}",
-		"DoctorsPageDescription": "{name} kliniğinde {count} doktor görev yapmaktadır.",
-		"SearchDoctors": "Doktor ara…",
+		"DoctorsPageTitle": "Uzmanlar — {name}",
+		"DoctorsPageDescription": "{name} bünyesinde {count} uzman görev yapmaktadır.",
+		"SearchDoctors": "Uzman ara…",
 		"AllSpecialties": "Tümü",
-		"NoMatchingDoctors": "Filtrelere uyan doktor bulunamadı."
+		"NoMatchingDoctors": "Filtrelere uyan uzman bulunamadı."
 	},
 	"sr": {
-		"DoctorsPageTitle": "Ljekari — {name}",
-		"DoctorsPageDescription": "U klinici {name} radi {count} ljekara.",
-		"SearchDoctors": "Pretraga ljekara…",
+		"DoctorsPageTitle": "Stručnjaci — {name}",
+		"DoctorsPageDescription": "U {name} radi {count} stručnjaka.",
+		"SearchDoctors": "Pretraga stručnjaka…",
 		"AllSpecialties": "Sve",
-		"NoMatchingDoctors": "Nema ljekara koji odgovaraju filterima."
+		"NoMatchingDoctors": "Nema stručnjaka koji odgovaraju filterima."
 	},
 	"sr-cyrl": {
-		"DoctorsPageTitle": "Љекари — {name}",
-		"DoctorsPageDescription": "У клиници {name} ради {count} љекара.",
-		"SearchDoctors": "Претрага љекара…",
+		"DoctorsPageTitle": "Стручњаци — {name}",
+		"DoctorsPageDescription": "У {name} ради {count} стручњака.",
+		"SearchDoctors": "Претрага стручњака…",
 		"AllSpecialties": "Све",
-		"NoMatchingDoctors": "Нема љекара који одговарају филтерима."
+		"NoMatchingDoctors": "Нема стручњака који одговарају филтерима."
 	}
 }
 </i18n>

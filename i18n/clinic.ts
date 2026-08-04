@@ -17,8 +17,7 @@ export default {
 			LoadingClinic: 'Loading clinic data...',
 			ClinicNotFound: 'Clinic not found',
 			ToSearchPage: 'To search page',
-			DoctorsAtClinic: 'Doctors at the clinic',
-			NoDoctorsAtClinic: 'No doctors listed at this clinic',
+			DoctorsAtClinic: 'Specialists',
 			And: 'and',
 			ClinicsListDescription:
 				'Find clinics in Montenegro by city and consultation language. Addresses, contacts, doctors, and services on the map.',
@@ -50,8 +49,7 @@ export default {
 			LoadingClinic: 'Загрузка данных о клинике...',
 			ClinicNotFound: 'Клиника не найдена',
 			ToSearchPage: 'К поиску',
-			DoctorsAtClinic: 'Врачи клиники',
-			NoDoctorsAtClinic: 'В этой клинике нет врачей',
+			DoctorsAtClinic: 'Специалисты',
 			And: 'и',
 			ClinicsListDescription:
 				'Найдите клинику в Черногории по городу и языку сопровождения. Адреса, контакты, врачи и услуги на карте.',
@@ -79,8 +77,7 @@ export default {
 			LoadingClinic: 'Klinik verileri yükleniyor...',
 			ClinicNotFound: 'Klinik bulunamadı',
 			ToSearchPage: 'Arama sayfasına git',
-			DoctorsAtClinic: 'Klinikteki doktorlar',
-			NoDoctorsAtClinic: 'Bu klinik için doktor bulunamadı',
+			DoctorsAtClinic: 'Uzmanlar',
 			And: 've',
 			ClinicsListDescription:
 				"Karadağ'da şehir ve konsültasyon diline göre klinik bulun. Adresler, iletişim, doktorlar ve haritada hizmetler.",
@@ -110,8 +107,7 @@ export default {
 			LoadingClinic: 'Klinik-Daten werden geladen...',
 			ClinicNotFound: 'Klinik nicht gefunden',
 			ToSearchPage: 'Zur Suche',
-			DoctorsAtClinic: 'Ärzte der Klinik',
-			NoDoctorsAtClinic: 'Keine Ärzte in dieser Klinik',
+			DoctorsAtClinic: 'Spezialisten',
 			And: 'und',
 			ClinicsListDescription:
 				'Finden Sie Kliniken in Montenegro nach Stadt und Beratungssprache. Adressen, Kontakte, Ärzte und Dienstleistungen auf der Karte.',
@@ -141,8 +137,7 @@ export default {
 			LoadingClinic: 'Učitavanje podataka o klinici...',
 			ClinicNotFound: 'Klinika nije pronađena',
 			ToSearchPage: 'Na stranicu pretrage',
-			DoctorsAtClinic: 'Ljekari klinike',
-			NoDoctorsAtClinic: 'U ovoj klinici nema ljekara',
+			DoctorsAtClinic: 'Stručnjaci',
 			And: 'i',
 			ClinicsListDescription:
 				'Pronađite klinike u Crnoj Gori po gradu i jeziku konsultacije. Adrese, kontakti, ljekari i usluge na mapi.',
@@ -172,8 +167,7 @@ export default {
 			LoadingClinic: 'Учитавање података о клиници...',
 			ClinicNotFound: 'Клиника није пронађена',
 			ToSearchPage: 'На страницу претраге',
-			DoctorsAtClinic: 'Љекари клинике',
-			NoDoctorsAtClinic: 'У овој клиници нема љекара',
+			DoctorsAtClinic: 'Стручњаци',
 			And: 'и',
 			ClinicsListDescription:
 				'Пронађите клинике у Црној Гори по граду и језику консултације. Адресе, контакти, љекари и услуге на мапи.',

@@ -6,12 +6,10 @@ import { combineI18nMessages } from '~/i18n/utils';
 const props = withDefaults(
 	defineProps<{
 		reviews?: Review[];
-		noReviewsText?: string;
 		clinicInfo?: Record<number, { name: string; slug: string }>;
 	}>(),
 	{
 		reviews: () => [],
-		noReviewsText: undefined,
 		clinicInfo: () => ({}),
 	},
 );
@@ -36,7 +34,7 @@ const { t } = useI18n({
 
 		<!-- No reviews -->
 		<div class="no-reviews" v-else>
-			{{ noReviewsText || t('NoReviews') }}
+			{{ t('NoReviews') }}
 		</div>
 	</div>
 </template>

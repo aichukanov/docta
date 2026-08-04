@@ -24,13 +24,19 @@
 
 <script setup lang="ts">
 import type { ElSelect } from 'element-plus';
-import { ClinicType } from '~/enums/clinic-type';
+import { ALL_CLINIC_TYPES, ClinicType } from '~/enums/clinic-type';
 import clinicTypeI18n from '~/i18n/clinic-type';
 
 const selectRef = ref<InstanceType<typeof ElSelect>>();
 
 const props = defineProps<{
 	value: number[];
+	/**
+	 * Какие типы показывать в списке. По умолчанию — все: редакторы обязаны
+	 * видеть любой назначенный тип, иначе `el-select` печатает сырое число.
+	 * Публичный фильтр передаёт `FILTERABLE_CLINIC_TYPES`.
+	 */
+	types?: ClinicType[];
 }>();
 
 const emit = defineEmits<{
@@ -46,38 +52,12 @@ const clinicTypeIds = computed({
 	},
 });
 
-/** Типы, которые показываем в фильтре сейчас (остальные откроем позже) */
-const VISIBLE_TYPES: ClinicType[] = [
-	ClinicType.HOSPITAL,
-	ClinicType.POLYCLINIC,
-	ClinicType.DENTAL_CLINIC,
-	ClinicType.GYNECOLOGICAL_CLINIC,
-	ClinicType.UROLOGICAL_CLINIC,
-	ClinicType.OPHTHALMOLOGY_CLINIC,
-	ClinicType.CARDIOLOGY_CLINIC,
-	ClinicType.ENT_CLINIC,
-	ClinicType.ORTHOPEDIC_CLINIC,
-	ClinicType.DIAGNOSTIC_LAB,
-	ClinicType.PEDIATRIC_CLINIC,
-	ClinicType.SURGICAL_CENTER,
-	ClinicType.DERMATOLOGY_CLINIC,
-	ClinicType.AESTHETIC_CLINIC,
-	ClinicType.PHYSIOTHERAPY_CLINIC,
-	// ClinicType.PHARMACY,
-	// ClinicType.OPTICAL_CLINIC,
-	// ClinicType.REHABILITATION_CENTER,
-	// ClinicType.PSYCHIATRIC_CLINIC,
-	// ClinicType.ONCOLOGY_CLINIC,
-	// ClinicType.NEUROLOGY_CLINIC,
-	// ClinicType.ENDOCRINOLOGY_CLINIC,
-	// ClinicType.GASTROENTEROLOGY_CLINIC,
-	// ClinicType.PULMONOLOGY_CLINIC,
-];
-
 const clinicTypes = computed(() =>
-	VISIBLE_TYPES.map((key) => ({
-		text: t(`clinic_type_${key}`),
-		value: key,
-	})).sort((a, b) => a.text.localeCompare(b.text)),
+	(props.types ?? ALL_CLINIC_TYPES)
+		.map((key) => ({
+			text: t(`clinic_type_${key}`),
+			value: key,
+		}))
+		.sort((a, b) => a.text.localeCompare(b.text)),
 );
 </script>

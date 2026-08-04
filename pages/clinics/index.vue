@@ -7,6 +7,7 @@ import {
 	buildEntityListSchema,
 } from '~/common/schema-org-builders';
 import { combineI18nMessages } from '~/i18n/utils';
+import { FILTERABLE_CLINIC_TYPES } from '~/enums/clinic-type';
 import type { ClinicData } from '~/interfaces/clinic';
 
 import breadcrumbI18n from '~/i18n/breadcrumb';
@@ -333,7 +334,10 @@ watchEffect(() => {
 				:label="t('ClinicName')"
 				:placeholder="t('InsertClinicName')"
 			/>
-			<FilterClinicTypeSelect v-model:value="clinicTypeIds" />
+			<FilterClinicTypeSelect
+				v-model:value="clinicTypeIds"
+				:types="FILTERABLE_CLINIC_TYPES"
+			/>
 			<FilterSpecialtySelect v-model:value="specialtyIds" />
 			<FilterCitySelect v-model:value="cityIds" />
 			<FilterLanguageSelect v-model:value="languageIds" />

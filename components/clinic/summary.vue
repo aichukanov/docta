@@ -47,27 +47,27 @@ const summaryI18n = {
 	'ru': {
 		Contacts: 'Контакты',
 		AvailableServices: 'Профильные услуги',
-		Doctors: 'Врачи',
+		Doctors: 'Специалисты',
 	},
 	'de': {
 		Contacts: 'Kontakte',
 		AvailableServices: 'Fachleistungen',
-		Doctors: 'Ärzte',
+		Doctors: 'Spezialisten',
 	},
 	'tr': {
 		Contacts: 'İletişim',
 		AvailableServices: 'Uzmanlık hizmetleri',
-		Doctors: 'Doktorlar',
+		Doctors: 'Uzmanlar',
 	},
 	'sr': {
 		Contacts: 'Kontakti',
 		AvailableServices: 'Profilne usluge',
-		Doctors: 'Ljekari',
+		Doctors: 'Stručnjaci',
 	},
 	'sr-cyrl': {
 		Contacts: 'Контакти',
 		AvailableServices: 'Профилне услуге',
-		Doctors: 'Љекари',
+		Doctors: 'Стручњаци',
 	},
 };
 

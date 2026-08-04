@@ -16,27 +16,27 @@ const props = withDefaults(
 const approvedI18n = {
 	'en': {
 		ApprovedTooltip:
-			'Information about the clinic (doctors, services and contacts) confirmed by a clinic representative.',
+			'Specialists, services and contacts confirmed by a representative.',
 	},
 	'ru': {
 		ApprovedTooltip:
-			'Информация о клинике (врачи, услуги и контакты) подтверждена представителем клиники.',
+			'Специалисты, услуги и контакты подтверждены представителем.',
 	},
 	'de': {
 		ApprovedTooltip:
-			'Informationen über die Klinik (Ärzte, Dienstleistungen und Kontakte) wurden von einem Klinikvertreter bestätigt.',
+			'Spezialisten, Leistungen und Kontakte wurden von einem Vertreter bestätigt.',
 	},
 	'tr': {
 		ApprovedTooltip:
-			'Klinik hakkındaki bilgiler (doktorlar, hizmetler ve iletişim bilgileri) klinik temsilcisi tarafından onaylanmıştır.',
+			'Uzmanlar, hizmetler ve iletişim bilgileri bir temsilci tarafından onaylanmıştır.',
 	},
 	'sr': {
 		ApprovedTooltip:
-			'Informacije o klinici (ljekari, usluge i kontakti) potvrđene su od strane predstavnika klinike.',
+			'Stručnjaci, usluge i kontakti potvrđeni su od strane predstavnika.',
 	},
 	'sr-cyrl': {
 		ApprovedTooltip:
-			'Информације о клиници (љекари, услуге и контакти) потврђене су од стране представника клинике.',
+			'Стручњаци, услуге и контакти потврђени су од стране представника.',
 	},
 };
 

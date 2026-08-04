@@ -26,6 +26,44 @@ export enum ClinicType {
 	PODOLOGY_CABINET = 25,
 }
 
+/** Все типы каталога. Редакторы обязаны показывать именно этот список. */
+export const ALL_CLINIC_TYPES: ClinicType[] = Object.values(ClinicType).filter(
+	(value): value is ClinicType => typeof value === 'number',
+);
+
+/**
+ * Типы, по которым открыт фасет в публичном фильтре каталога.
+ *
+ * Правило: тип попадает сюда, только если есть хотя бы одна ПУБЛИЧНАЯ клиника
+ * этого типа, иначе фильтр отдаёт пустой список. То же правило уже реализовано
+ * данными в `server/common/sitemap/filters/clinics.ts` через `clinicIsPublicSql`
+ * — этот список приходится держать в согласии с ним руками, и он расходится:
+ * на 2026-08-04 сверка с базой показала `DERMATOLOGY_CLINIC` (0 клиник) и
+ * `UROLOGICAL_CLINIC` (единственная клиника скрыта, `hidden = 1`) в списке при
+ * отсутствии `PODOLOGY_CABINET`. Заводя новый тип, сверяйтесь с базой.
+ *
+ * ⚠️ Список предназначен ТОЛЬКО для публичного фильтра. Редакторам (админка,
+ * кабинет клиники) передавать его нельзя: если назначенный клинике тип
+ * отсутствует среди опций `el-select`, тот рендерит сырое число. Именно так
+ * после добавления `PODOLOGY_CABINET` админка показывала «25» вместо подписи.
+ */
+export const FILTERABLE_CLINIC_TYPES: ClinicType[] = [
+	ClinicType.HOSPITAL,
+	ClinicType.POLYCLINIC,
+	ClinicType.DENTAL_CLINIC,
+	ClinicType.GYNECOLOGICAL_CLINIC,
+	ClinicType.OPHTHALMOLOGY_CLINIC,
+	ClinicType.CARDIOLOGY_CLINIC,
+	ClinicType.ENT_CLINIC,
+	ClinicType.ORTHOPEDIC_CLINIC,
+	ClinicType.DIAGNOSTIC_LAB,
+	ClinicType.PEDIATRIC_CLINIC,
+	ClinicType.SURGICAL_CENTER,
+	ClinicType.AESTHETIC_CLINIC,
+	ClinicType.PHYSIOTHERAPY_CLINIC,
+	ClinicType.PODOLOGY_CABINET,
+];
+
 /**
  * Maps ClinicType → Schema.org @type
  */

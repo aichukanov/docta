@@ -36,7 +36,7 @@ export default {
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]: 'Pulmonology Clinic',
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]:
 				'Physiotherapy Clinic',
-			[`clinic_type_${ClinicType.PODOLOGY_CABINET}`]: 'Podiatry Clinic',
+			[`clinic_type_${ClinicType.PODOLOGY_CABINET}`]: 'Podiatry Cabinet',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Polyclinics',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]: 'Dental Clinics',
@@ -78,7 +78,8 @@ export default {
 				'Pulmonology Clinics',
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]:
 				'Physiotherapy Clinics',
-			[`clinic_type_${ClinicType.PODOLOGY_CABINET}_plural`]: 'Podiatry Clinics',
+			[`clinic_type_${ClinicType.PODOLOGY_CABINET}_plural`]:
+				'Podiatry Cabinets',
 		},
 		'ru': {
 			ClinicType: 'Тип клиники',
@@ -441,7 +442,7 @@ export default {
 			[`clinic_type_${ClinicType.PULMONOLOGY_CLINIC}`]:
 				'Göğüs hastalıkları kliniği',
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}`]: 'Fizyoterapi kliniği',
-			[`clinic_type_${ClinicType.PODOLOGY_CABINET}`]: 'Podiyatri kliniği',
+			[`clinic_type_${ClinicType.PODOLOGY_CABINET}`]: 'Podoloji kabini',
 
 			[`clinic_type_${ClinicType.POLYCLINIC}_plural`]: 'Poliklinikler',
 			[`clinic_type_${ClinicType.DENTAL_CLINIC}_plural`]: 'Diş klinikleri',
@@ -484,7 +485,7 @@ export default {
 			[`clinic_type_${ClinicType.PHYSIOTHERAPY_CLINIC}_plural`]:
 				'Fizyoterapi klinikleri',
 			[`clinic_type_${ClinicType.PODOLOGY_CABINET}_plural`]:
-				'Podiyatri klinikleri',
+				'Podoloji kabinleri',
 		},
 	},
 };

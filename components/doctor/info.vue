@@ -119,22 +119,22 @@ const reviewsLink = computed(() => {
 <i18n lang="json">
 {
 	"en": {
-		"DoctorLanguages": "The doctor speaks the following languages:"
+		"DoctorLanguages": "Speaks the following languages:"
 	},
 	"ru": {
-		"DoctorLanguages": "Врач владеет следующими языками:"
+		"DoctorLanguages": "Владеет языками:"
 	},
 	"de": {
-		"DoctorLanguages": "Der Arzt spricht die folgenden Sprachen:"
+		"DoctorLanguages": "Spricht folgende Sprachen:"
 	},
 	"tr": {
-		"DoctorLanguages": "Doktor aşağıdaki dilleri konuşmaktadır:"
+		"DoctorLanguages": "Şu dilleri konuşuyor:"
 	},
 	"sr": {
-		"DoctorLanguages": "Doktor govori sljedeće jezike:"
+		"DoctorLanguages": "Govori sljedeće jezike:"
 	},
 	"sr-cyrl": {
-		"DoctorLanguages": "Доктор говори сљедеће језике:"
+		"DoctorLanguages": "Говори сљедеће језике:"
 	}
 }
 </i18n>

@@ -14,6 +14,7 @@ const { trackEvent } = useAnalytics();
 
 const {
 	isLoading,
+	isInitialized,
 	initializeMap,
 	addMarker,
 	removeMarker,
@@ -90,25 +91,38 @@ const fitToClinics = () => {
 	);
 };
 
+// Наблюдатель регистрируется здесь, а не в конце onMounted: после `await`
+// активный scope компонента потерян, и такой watch НЕ останавливается при
+// размонтировании — он продолжал дёргать syncMarkers на уже мёртвой карте.
+// Ждёт инициализации: до неё маркеров нет, стартовый набор ставит onMounted.
+watch(
+	() => props.clinics,
+	() => {
+		if (!isInitialized.value) return;
+		syncMarkers();
+		fitToClinics();
+	},
+	{ deep: true },
+);
+
+// Leaflet грузится с CDN, и за это время со страницы могли уйти
+let isAlive = true;
+onBeforeUnmount(() => {
+	isAlive = false;
+});
+
 onMounted(async () => {
 	if (!mapContainer.value) return;
 
 	await initializeMap(mapContainer.value, { cluster: true });
+	if (!isAlive) return;
+
 	syncMarkers();
 	fitToClinics();
 	isTeleportReady.value = true;
 
 	// Карта монтируется по переключателю «Карта» — mount и есть «открытие»
 	trackEvent('map_opened', { markers_count: clinicsWithCoords.value.length });
-
-	watch(
-		() => props.clinics,
-		() => {
-			syncMarkers();
-			fitToClinics();
-		},
-		{ deep: true },
-	);
 });
 </script>
 

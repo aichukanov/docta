@@ -179,12 +179,18 @@ export function isValidContactValue(value: string, kind: ContactKind): boolean {
 	}
 }
 
-/** Собирает значения в строку для БД, отбрасывая пустые. */
+/**
+ * Собирает значения в строку для БД, отбрасывая пустые.
+ *
+ * Разделитель без пробела: в БД канон — `+38268111222;+38269333444`. Разбор
+ * пробел бы стерпел (splitContacts тримит), но данные в базе должны быть
+ * однородными — иначе импорт и кабинет пишут по-разному.
+ */
 export function joinContacts(values: string[]): string {
 	return values
 		.map((value) => value.trim())
 		.filter((value) => value.length > 0)
-		.join(`${CONTACT_SEPARATOR} `);
+		.join(CONTACT_SEPARATOR);
 }
 
 /**

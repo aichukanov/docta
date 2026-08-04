@@ -191,45 +191,58 @@ const fitToMarkers = () => {
 	);
 };
 
+// Наблюдатели регистрируются здесь, а не в конце onMounted: после `await`
+// активный scope компонента потерян, и такие watch НЕ останавливаются при
+// размонтировании — они продолжали срабатывать (проверено: 2 из 2 раз после
+// unmount), то есть каждое открытие карты навсегда добавляло два живых
+// наблюдателя, дёргающих syncMarkers на уже мёртвой карте.
+// Оба ждут инициализации: до неё маркеров нет, а стартовый набор
+// проставляет сам onMounted.
+watch(
+	() => props.clinics,
+	() => {
+		if (isInitialized.value) syncMarkers();
+	},
+	{ deep: true },
+);
+
+// Видимый набор маркеров меняется и при смене services
+// (пагинация, фильтры) — перецентрируем карту по нему
+watch(clinicsWithServices, () => {
+	if (isInitialized.value) fitToMarkers();
+});
+
+// Leaflet грузится с CDN, и за это время со страницы могли уйти. Продолжать
+// работу на размонтированном компоненте нельзя: маркеры уедут в оторванный
+// от документа контейнер, а `map_opened` уйдёт в аналитику за карту, которую
+// никто не увидел.
+let isAlive = true;
+onBeforeUnmount(() => {
+	isAlive = false;
+});
+
 onMounted(async () => {
-	if (mapContainer.value) {
-		await initializeMap(mapContainer.value);
+	if (!mapContainer.value) return;
 
-		clinicsWithCoords.value.forEach((clinic) => {
-			addMarker(
-				getClinicMarkerId(clinic.id),
-				clinic.latitude,
-				clinic.longitude,
-				{ title: getLocalizedName(clinic, locale.value) },
-			);
+	await initializeMap(mapContainer.value);
+	if (!isAlive) return;
+
+	clinicsWithCoords.value.forEach((clinic) => {
+		addMarker(getClinicMarkerId(clinic.id), clinic.latitude, clinic.longitude, {
+			title: getLocalizedName(clinic, locale.value),
 		});
+	});
 
-		// Инициализируем Set существующих маркеров
-		existingMarkerIds.value = new Set(markers.keys());
+	// Инициализируем Set существующих маркеров
+	existingMarkerIds.value = new Set(markers.keys());
 
-		fitToMarkers();
+	fitToMarkers();
 
-		isTeleportReady.value = true;
-		emit('ready');
+	isTeleportReady.value = true;
+	emit('ready');
 
-		// Карта монтируется лениво (по виду/кнопке) — mount и есть «открытие»
-		trackEvent('map_opened', { markers_count: clinicsWithCoords.value.length });
-
-		// Следим за изменениями списка клиник
-		watch(
-			() => props.clinics,
-			() => {
-				syncMarkers();
-			},
-			{ deep: true },
-		);
-
-		// Видимый набор маркеров меняется и при смене services
-		// (пагинация, фильтры) — перецентрируем карту по нему
-		watch(clinicsWithServices, () => {
-			fitToMarkers();
-		});
-	}
+	// Карта монтируется лениво (по виду/кнопке) — mount и есть «открытие»
+	trackEvent('map_opened', { markers_count: clinicsWithCoords.value.length });
 });
 
 defineExpose({

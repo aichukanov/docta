@@ -1,6 +1,11 @@
 import { validateBody, validateName } from '~/common/validation';
 import { LIST_PAGE_SIZE } from '~/common/constants';
 import {
+	normalizeMedicineSort,
+	MEDICINE_SORT_NAME_ASC,
+	type MedicineSort,
+} from '~/common/medicine-sort';
+import {
 	localizedField,
 	localizedNameSql,
 	mapPack,
@@ -38,6 +43,7 @@ export async function getMedicineList(
 		activeOnly?: boolean;
 		locale?: string;
 		page?: number;
+		sort?: MedicineSort;
 	} = {},
 ): Promise<MedicineListResponse> {
 	const whereFilters: string[] = [];
@@ -141,7 +147,22 @@ export async function getMedicineList(
 			`ABS((SELECT COUNT(*) FROM med_medicine_substances mms2 WHERE mms2.medicine_id = m.id) - ${substanceCountTarget}) ASC`,
 		);
 	}
-	orderClauses.push('m.name ASC');
+	const sort = normalizeMedicineSort(body.sort);
+	if (sort === MEDICINE_SORT_NAME_ASC) {
+		// Явный выбор пользователя. Названия, начинающиеся не с буквы, уходят в
+		// конец: в реестре это три фасовки 5-FLUOROURACIL, которые при чистом
+		// алфавите открывали каталог.
+		orderClauses.push(`(m.name REGEXP '^[^[:alpha:]]') ASC`);
+	} else {
+		// Дефолт — популярность: цена/рейтинг/близость к реестру неприменимы
+		// (лекарства не привязаны к клиникам), а алфавит выводил вперёд
+		// онкологию и стационарные препараты. Формула и пересчёт —
+		// server/sql/migrations/recalc-med-rank-score.sql.
+		orderClauses.push('m.rank_score DESC');
+	}
+	// Имя и id — стабильный tie-break: без них MySQL волен вернуть строки с
+	// одинаковым скором в разном порядке на разных страницах пагинации.
+	orderClauses.push('m.name ASC', 'm.id ASC');
 	const orderBy = orderClauses.join(', ');
 
 	const nameField = nameFieldFor(locale);

@@ -29,6 +29,9 @@ const props = withDefaults(
 		// 'map' — список скрыт, карту рендерит слот #map-view на всю ширину
 		// (на мобильном — фулскрин). По умолчанию обычный список.
 		view?: 'list' | 'map';
+		// Тот же состав страницы в другом порядке (сортировка в #header-actions)
+		// — контент дублирующий, индексировать его незачем.
+		noindex?: boolean;
 	}>(),
 	{
 		showPrice: true,
@@ -128,7 +131,10 @@ const areFiltersOpen = ref(false);
 
 const activeFiltersCount = computed(
 	() =>
-		Object.values(props.filterQuery).filter((value) => {
+		Object.entries(props.filterQuery).filter(([key, value]) => {
+			// Порядок выдачи — не фильтр: в счётчике на кнопке «Фильтры» он читался
+			// бы как ещё одно ограничение выборки
+			if (key === 'sort') return false;
 			if (Array.isArray(value)) return value.length > 0;
 			return value != null && value !== '' && value !== false;
 		}).length,
@@ -136,6 +142,10 @@ const activeFiltersCount = computed(
 
 const robotsMeta = computed(() => {
 	if (props.list?.length === 0) {
+		return 'noindex, follow';
+	}
+
+	if (props.noindex) {
 		return 'noindex, follow';
 	}
 
@@ -204,30 +214,40 @@ watch(
 	{ immediate: true },
 );
 
+// Наблюдатели ниже регистрируются здесь, а не в конце onMounted: после
+// `await` активный scope компонента потерян, и такие watch НЕ останавливаются
+// при размонтировании. Утёкшие дёргали syncRoute(), то есть навигацию, уже
+// после ухода со страницы — и копились с каждым открытием листинга.
+// Флаг заменяет прежнюю защиту «порядком регистрации»: до первой
+// синхронизации с роутом реагировать нельзя, иначе на монтировании уедет
+// лишний push.
+const isInitialRouteSyncDone = ref(false);
+
+watch(
+	() => props.filterQuery,
+	() => {
+		if (!isInitialRouteSyncDone.value || isSyncingFromRoute.value) {
+			return;
+		}
+		pageNumber.value = 1;
+
+		syncRoute();
+	},
+);
+
+watch(pageNumber, () => {
+	if (!isInitialRouteSyncDone.value || isSyncingFromRoute.value) {
+		return;
+	}
+	syncRoute();
+
+	window.scrollTo(0, 0);
+});
+
 onMounted(async () => {
 	await nextTick();
 	await syncRoute(true);
-
-	watch(
-		() => props.filterQuery,
-		() => {
-			if (isSyncingFromRoute.value) {
-				return;
-			}
-			pageNumber.value = 1;
-
-			syncRoute();
-		},
-	);
-
-	watch(pageNumber, () => {
-		if (isSyncingFromRoute.value) {
-			return;
-		}
-		syncRoute();
-
-		window.scrollTo(0, 0);
-	});
+	isInitialRouteSyncDone.value = true;
 });
 </script>
 

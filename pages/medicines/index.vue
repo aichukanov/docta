@@ -8,6 +8,10 @@ import { SITE_URL, OG_IMAGE } from '~/common/constants';
 import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
 import { localizeStrength } from '~/common/strength-label';
 import { buildPackagingLabel } from '~/common/packaging-label';
+import {
+	DEFAULT_MEDICINE_SORT,
+	normalizeMedicineSort,
+} from '~/common/medicine-sort';
 
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import medicineI18n from '~/i18n/medicine';
@@ -48,11 +52,16 @@ const route = useRoute();
 const pageNumber = ref(Number(route.query.page || 1));
 const routeName = route.name;
 
+// Сортировка живёт в странице, а не в сторе фильтров: она есть только у
+// лекарств, и это не фильтр — состав каталога от неё не меняется.
+const sort = ref(DEFAULT_MEDICINE_SORT);
+
 watch(
 	() => route.query,
 	(query) => {
 		if (route.name !== routeName) return;
 		pageNumber.value = Number(query.page || 1);
+		sort.value = normalizeMedicineSort(query.sort);
 		filtersStore.updateFromRoute('medicines', query);
 	},
 	{ immediate: true },
@@ -74,11 +83,15 @@ const filterList = computed(() => ({
 	activeOnly: true,
 	locale: locale.value,
 	page: pageNumber.value,
+	sort: sort.value,
 }));
 
-const filterQuery = computed(
-	() => filtersStore.getRouteParams('medicines').query,
-);
+// Дефолтный порядок в URL не пишем: у базового листинга должен остаться один
+// адрес — чистый /medicines.
+const filterQuery = computed(() => ({
+	...filtersStore.getRouteParams('medicines').query,
+	sort: sort.value === DEFAULT_MEDICINE_SORT ? undefined : sort.value,
+}));
 
 const { pending: isLoading, data: medicinesList } = await useFetch(
 	'/api/medicines/list',
@@ -226,9 +239,14 @@ watchEffect(() => {
 		:filterQuery="filterQuery"
 		:cityIds="[]"
 		:showPrice="false"
+		:noindex="sort !== DEFAULT_MEDICINE_SORT"
 		detailsRouteName="medicines-medicineSlug"
 		detailsParamName="medicineSlug"
 	>
+		<template #header-actions>
+			<FilterMedicineSortSelect v-model:value="sort" />
+		</template>
+
 		<template #filters>
 			<FilterName
 				v-model:value="name"

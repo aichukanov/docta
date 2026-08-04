@@ -5,6 +5,7 @@ import type { ClinicStatus } from '~/interfaces/clinic';
 import type { DayOfWeek, DaySchedule } from '~/interfaces/clinic-working-hours';
 import { DAYS_OF_WEEK } from '~/interfaces/clinic-working-hours';
 import { getCurrentUser } from '~/server/common/auth';
+import { isClinicAdmin } from '~/server/common/clinic-admins';
 import {
 	validateCityId,
 	validateClinicTypeIds,
@@ -112,7 +113,6 @@ export interface OwnedClinicRow {
 	status: ClinicStatus;
 	/** Скрыта администратором: владелец не может её опубликовать. */
 	hidden: boolean;
-	created_by: number | null;
 	name_sr: string;
 	address_sr: string;
 	postal_code: string | null;
@@ -129,8 +129,8 @@ export interface OwnedClinicRow {
 }
 
 /**
- * Загружает клинику и проверяет права: владелец или админ.
- * Бросает 404/403 с кодом при отсутствии доступа.
+ * Загружает клинику и проверяет права: администратор клиники (clinic_admins)
+ * или админ сайта. Бросает 404/403 с кодом при отсутствии доступа.
  */
 export async function getOwnedClinic(
 	connection: Connection,
@@ -138,7 +138,7 @@ export async function getOwnedClinic(
 	user: User,
 ): Promise<OwnedClinicRow> {
 	const [rows]: any = await connection.execute(
-		`SELECT id, slug, status, hidden, created_by, name_sr, address_sr, postal_code,
+		`SELECT id, slug, status, hidden, name_sr, address_sr, postal_code,
 			latitude, longitude,
 			phone, email, website, facebook, instagram, telegram, whatsapp, viber
 		 FROM clinics WHERE id = ?`,
@@ -150,8 +150,10 @@ export async function getOwnedClinic(
 	}
 
 	const clinic = rows[0] as OwnedClinicRow;
-	const isOwner = clinic.created_by != null && clinic.created_by === user.id;
-	if (!isOwner && !user.is_admin) {
+	if (
+		!user.is_admin &&
+		!(await isClinicAdmin(connection, clinic.id, user.id))
+	) {
 		createErrorResponse(403, ERROR_CODES.CLINIC_NOT_OWN);
 	}
 

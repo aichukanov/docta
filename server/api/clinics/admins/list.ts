@@ -1,0 +1,43 @@
+import { validateBody, validateNonNegativeInteger } from '~/common/validation';
+import { requireAdmin } from '~/server/common/auth';
+import { getConnection } from '~/server/common/db-mysql';
+import { fetchClinicAdmins } from '~/server/common/clinic-admins';
+import type { ClinicAdmin } from '~/interfaces/clinic-admin';
+
+/** Администраторы клиники для админки: кто имеет доступ к её кабинету. */
+export default defineEventHandler(
+	async (event): Promise<{ admins: ClinicAdmin[] } | null> => {
+		try {
+			await requireAdmin(event);
+
+			const body = await readBody(event);
+
+			if (!validateBody(body, 'api/clinics/admins/list')) {
+				setResponseStatus(event, 400, 'Invalid parameters');
+				return null;
+			}
+
+			if (!validateNonNegativeInteger(body.clinicId)) {
+				setResponseStatus(event, 400, 'Invalid clinic id');
+				return null;
+			}
+
+			const connection = await getConnection();
+			try {
+				const admins = await fetchClinicAdmins(
+					connection,
+					Number(body.clinicId),
+				);
+				return { admins };
+			} finally {
+				await connection.end();
+			}
+		} catch (error) {
+			console.error('API Error - clinic admins list:', error);
+			throw createError({
+				statusCode: 500,
+				statusMessage: 'Failed to fetch clinic admins',
+			});
+		}
+	},
+);

@@ -31,6 +31,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `clinic_medical_service_doctors`        | Junction table: Clinic <-> Medical Service <-> Doctor.                                        |
 | `clinic_types`                          | Reference table of clinic types (e.g. hospital, lab, pharmacy).                               |
 | `clinic_clinic_types`                   | Junction table: Clinic <-> Clinic Type.                                                       |
+| `clinic_admins`                         | Junction table: Clinic <-> managing users (cabinet access). _(migration 022)_                  |
 | `clinic_working_hours`                  | Working hours per clinic (JSON per weekday).                                                  |
 | `clinic_coupons`                        | Discount coupons per clinic (percent + item types). _(migration 020)_                         |
 | `doctor_clinics`                        | Junction table: Doctor <-> Clinic (includes position).                                        |
@@ -242,7 +243,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `description_sr`, `description_sr_cyrl`, `description_ru`, `description_en`, `description_de`, `description_tr` (text): Localized descriptions.
 - `logo_url` (varchar(500)): URL to clinic logo image.
 - `rank_score` (decimal(5,4), NOT NULL, default 0.0000): Computed ranking score for sort ordering.
-- `created_by` (int, NULL, FK -> auth_users.id, ON DELETE SET NULL): Owner user account. NULL for clinics created via admin panel or import.
+- `created_by` (int, NULL, FK -> auth_users.id, ON DELETE SET NULL): **Provenance only — who created the record.** NULL for clinics created via admin panel or import. Access to the clinic cabinet is NOT derived from this column: it lives in `clinic_admins` _(migration 022)_. Never authorize against `created_by`.
 - `status` (enum: 'draft', 'pending_verification', 'published', 'rejected', NOT NULL, default 'published'): Owner-driven lifecycle. Public flow is draft <-> published; non-published clinics are excluded from public listings and their page is visible only to the owner and admins. 'pending_verification'/'rejected' are reserved for future moderation.
 - `hidden` (boolean, NOT NULL, default FALSE): When TRUE, the clinic is excluded from every public query (listings, service/labtest/medication cards, global search, sitemap) and its page returns **410 Gone** for everyone except the owner and admins, who still see it rendered as non-public with an explanation banner (drafts stay 404 — they are reversible, an admin hiding is not).
 - `hidden_reason` (text, NULL): Why the clinic was hidden, written by an admin **in Serbian (Latin)**. Shown to the owner in the cabinet and in the page banner; never public. _(migration 021)_ Admin-only flag, orthogonal to `status` (the owner's status is preserved and cannot be used to bypass it). Mirrors `doctors.hidden`. The predicate lives in `server/common/clinic-visibility.ts` — never inline `status = 'published'`.
@@ -466,6 +467,28 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `clinic_id` (int, PK, FK -> clinics.id ON DELETE CASCADE)
 - `clinic_type_id` (tinyint unsigned, PK, FK -> clinic_types.id ON DELETE CASCADE)
 - _Comment_: Junction table linking clinics to their types. A clinic can have multiple types.
+
+### `clinic_admins`
+
+Users who manage a clinic (migration 022). Replaces the single-owner
+`clinics.created_by` check: a real clinic has several managing accounts (owner,
+reception admin, marketer), and handing over access used to mean overwriting
+ownership.
+
+- `id` (int, PK, AI)
+- `clinic_id` (int, FK -> clinics.id ON DELETE CASCADE)
+- `user_id` (int, FK -> auth_users.id ON DELETE CASCADE)
+- `created_at` (timestamp): When access was granted.
+- _Unique constraint_: (`clinic_id`, `user_id`) — required: without it a repeated
+  import or a double click in the admin panel silently duplicates rows (as happened
+  with `clinic_languages`).
+- _Indexes_: `idx_clinic_admins_user` (user_id)
+
+**The only source of truth for clinic cabinet rights.** Checked via
+`isClinicAdmin` / `getOwnedClinic` in `server/common/clinic-admins.ts` and
+`server/common/clinic-cabinet.ts`; site admins (`auth_users.is_admin`) bypass it.
+The list is edited in the admin panel only (`/api/clinics/admins/*`) — clinic
+managers cannot grant access to each other.
 
 ### `clinic_working_hours`
 

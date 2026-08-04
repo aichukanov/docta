@@ -150,7 +150,7 @@ async function activateOrder(
 		await connection.beginTransaction();
 
 		const [orderRows]: any = await connection.execute(
-			`SELECT id, clinic_id, status, total_amount_cents
+			`SELECT id, clinic_id, created_by, status, total_amount_cents
 			 FROM billing_orders WHERE id = ? FOR UPDATE`,
 			[orderId],
 		);
@@ -277,6 +277,7 @@ async function activateOrder(
 		const emailData = await loadEmailData(
 			connection,
 			order.clinic_id,
+			order.created_by,
 			emailLines,
 			order.total_amount_cents,
 		);
@@ -303,27 +304,37 @@ async function activateOrder(
 	}
 }
 
+/**
+ * Получатель письма об активации — тот, кто оформил заказ: у клиники теперь
+ * несколько администраторов (clinic_admins), и «владелец» больше не
+ * определён однозначно. Если аккаунт плательщика удалён или без email,
+ * падаем на любого администратора клиники, чтобы письмо не потерялось.
+ */
 async function loadEmailData(
 	connection: Connection,
 	clinicId: number,
+	orderCreatedBy: number | null,
 	lines: PurchasedServiceLine[],
 	totalCents: number,
 ): Promise<ActivationEmailData | null> {
 	const [rows]: any = await connection.execute(
 		`SELECT u.email, u.preferred_locale, c.name_sr
 		 FROM clinics c
-		 JOIN auth_users u ON u.id = c.created_by
-		 WHERE c.id = ?`,
-		[clinicId],
+		 JOIN clinic_admins ca ON ca.clinic_id = c.id
+		 JOIN auth_users u ON u.id = ca.user_id
+		 WHERE c.id = ? AND u.email IS NOT NULL AND u.email <> ''
+		 ORDER BY (ca.user_id = ?) DESC, ca.created_at, ca.id
+		 LIMIT 1`,
+		[clinicId, orderCreatedBy],
 	);
 
-	const owner = (rows as any[])[0];
-	if (!owner?.email) return null;
+	const recipient = (rows as any[])[0];
+	if (!recipient?.email) return null;
 
 	return {
-		to: owner.email,
-		locale: owner.preferred_locale || null,
-		clinicName: owner.name_sr || `#${clinicId}`,
+		to: recipient.email,
+		locale: recipient.preferred_locale || null,
+		clinicName: recipient.name_sr || `#${clinicId}`,
 		lines,
 		totalCents,
 	};

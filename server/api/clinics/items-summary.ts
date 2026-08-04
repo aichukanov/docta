@@ -2,6 +2,7 @@ import { fetchClinicItemsSummary } from '~/server/common/clinic-items-summary';
 import { GONE_PAYLOAD, type GonePayload } from '~/common/gone';
 import { getCurrentUser } from '~/server/common/auth';
 import { getConnection } from '~/server/common/db-mysql';
+import { isClinicAdmin } from '~/server/common/clinic-admins';
 import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
 import { fetchClinicCoupons } from '~/server/common/clinic-coupons';
 import type { ClinicItemsSummary, ClinicStatus } from '~/interfaces/clinic';
@@ -45,19 +46,23 @@ export default defineEventHandler(
 			// нужно отличить «нет такой клиники» (404) от «скрыта админом» (410),
 			// а владельцу и админу — показать содержимое с плашкой.
 			const [rows] = await connection.execute(
-				`SELECT id, slug, status, hidden, hidden_reason, created_by,
+				`SELECT id, slug, status, hidden, hidden_reason,
 					name_sr, name_sr_cyrl, name_ru
 				FROM clinics WHERE slug = ? LIMIT 1`,
 				[body.slug],
 			);
-			await connection.end();
 
 			const clinic = (rows as any[])[0];
 			const currentUser = await getCurrentUser(event);
-			const isOwner =
-				!!currentUser &&
-				clinic?.created_by != null &&
-				currentUser.id === clinic.created_by;
+			// Проверку прав делаем до end(): администраторы клиники живут в
+			// отдельной таблице, а не в колонке clinics
+			const isOwner = await isClinicAdmin(
+				connection,
+				clinic?.id,
+				currentUser?.id,
+			);
+			await connection.end();
+
 			const canSeeNonPublic = isOwner || !!currentUser?.is_admin;
 
 			// Права те же, что на главной странице клиники (clinics/details.ts).

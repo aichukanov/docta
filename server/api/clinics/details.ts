@@ -2,6 +2,7 @@ import { REVIEWS_THRESHOLD } from '~/common/constants';
 import { GONE_PAYLOAD, type GonePayload } from '~/common/gone';
 import { getCurrentUser } from '~/server/common/auth';
 import { getConnection } from '~/server/common/db-mysql';
+import { isClinicAdmin } from '~/server/common/clinic-admins';
 import { fetchRating, fetchReviews } from '~/server/common/reviews';
 import { fetchClinicItemsSummary } from '~/server/common/clinic-items-summary';
 import { fetchClinicCoupons } from '~/server/common/clinic-coupons';
@@ -37,7 +38,6 @@ export default defineEventHandler(
 				c.status,
 				c.hidden,
 				c.hidden_reason,
-				c.created_by,
 				c.name_sr,
 				c.name_ru,
 				c.name_sr_cyrl,
@@ -95,12 +95,13 @@ export default defineEventHandler(
 
 			const currentUser = await getCurrentUser(event);
 
-			// Непубличная клиника (draft и т.п.) видна только владельцу или админу,
-			// остальным — 404 (как для несуществующей).
-			const isOwner =
-				!!currentUser &&
-				clinic.created_by != null &&
-				currentUser.id === clinic.created_by;
+			// Непубличная клиника (draft и т.п.) видна только администраторам
+			// клиники или админу сайта, остальным — 404 (как для несуществующей).
+			const isOwner = await isClinicAdmin(
+				connection,
+				clinic.id,
+				currentUser?.id,
+			);
 			if (clinic.status !== 'published' && !isOwner && !currentUser?.is_admin) {
 				await connection.end();
 				return null;

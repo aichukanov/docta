@@ -66,7 +66,7 @@ export default defineEventHandler(
 					(SELECT GROUP_CONCAT(DISTINCT cct.clinic_type_id ORDER BY cct.clinic_type_id)
 						FROM clinic_clinic_types cct WHERE cct.clinic_id = c.id) as clinicTypeIds
 				FROM clinics c
-				WHERE c.created_by = ?
+				JOIN clinic_admins ca ON ca.clinic_id = c.id AND ca.user_id = ?
 				ORDER BY c.created_at DESC, c.id DESC`,
 				[user.id],
 			);

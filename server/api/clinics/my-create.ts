@@ -39,6 +39,13 @@ export default defineEventHandler(async (event) => {
 
 		const clinicId: number = insertResult.insertId;
 
+		// created_by выше — только история «кто создал»; права на кабинет даёт
+		// clinic_admins, поэтому создателя сразу заводим и туда
+		await connection.execute(
+			'INSERT INTO clinic_admins (clinic_id, user_id) VALUES (?, ?)',
+			[clinicId, user.id],
+		);
+
 		for (const languageId of body.languageIds) {
 			await connection.execute(
 				'INSERT INTO clinic_languages (clinic_id, language_id) VALUES (?, ?)',

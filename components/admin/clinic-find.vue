@@ -789,6 +789,8 @@ onMounted(async () => {
 
 			<FilterLanguageSelect v-model:value="clinicModel.languageIds" />
 
+			<AdminClinicAdminsEditor v-if="clinicModel" :clinicId="clinicModel.id" />
+
 			<AdminClinicWorkingHoursEditor
 				v-if="clinicModel"
 				:clinicId="clinicModel.id"

@@ -288,6 +288,11 @@ onMounted(async () => {
 				</div>
 			</div>
 
+			<!-- Активные фильтры: не у каждого фасета есть свой контрол в панели
+			     (ссылки из индекса, бейджи с карточек), и без этой строки человек
+			     не видит, чем сужен список -->
+			<slot name="active-filters" />
+
 			<div class="list-container">
 				<aside
 					class="filters-sidebar"

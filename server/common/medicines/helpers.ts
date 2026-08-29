@@ -43,3 +43,22 @@ export const mapPack = (row: any) => ({
 // Значение локализованной пары «base / baseEn» (pharmaForm, country, atcGroup).
 export const localizedField = (row: any, base: string): string | null =>
 	row[base] || row[`${base}En`] || null;
+
+// Суффикс колонок справочных таблиц под локаль: в БД `sr_cyrl`, в приложении
+// `sr-cyrl` (см. lab_test_reference_info / med_substance_reference_info).
+export const referenceLocaleSuffix = (locale?: string): string => {
+	const normalized = (locale || 'en').toLowerCase();
+	const allowed = ['en', 'sr', 'sr-cyrl', 'ru', 'de', 'tr'];
+	const safe = allowed.includes(normalized) ? normalized : 'en';
+	return safe === 'sr-cyrl' ? 'sr_cyrl' : safe;
+};
+
+// SQL-выражение локализованного текстового поля справки: локаль → sr → en.
+// Имя колонки в запрос не подставляется из пользовательского ввода — суффикс
+// приходит из referenceLocaleSuffix, где он сверен со списком локалей.
+export const localizedReferenceSql = (
+	alias: string,
+	field: string,
+	suffix: string,
+): string =>
+	`COALESCE(NULLIF(${alias}.${field}_${suffix}, ''), NULLIF(${alias}.${field}_sr, ''), NULLIF(${alias}.${field}_en, ''))`;

@@ -1,4 +1,6 @@
 import { validateBody, validateName } from '~/common/validation';
+import { isAtcClassCode } from '~/enums/atc-class';
+import { getMedicineCategoryAtcPrefixes } from '~/enums/medicine-category';
 import { LIST_PAGE_SIZE } from '~/common/constants';
 import {
 	normalizeMedicineSort,
@@ -6,13 +8,19 @@ import {
 	type MedicineSort,
 } from '~/common/medicine-sort';
 import {
+	type Conn,
 	localizedField,
 	localizedNameSql,
+	localizedReferenceSql,
 	mapPack,
 	nameFieldFor,
+	referenceLocaleSuffix,
 	withConnection,
 } from '~/server/common/medicines/helpers';
-import type { MedicineList as MedicineListResponse } from '~/interfaces/medicine';
+import type {
+	MedicineList as MedicineListResponse,
+	MedicineSubstance,
+} from '~/interfaces/medicine';
 
 export default defineEventHandler(
 	async (event): Promise<MedicineListResponse> => {
@@ -36,6 +44,8 @@ export async function getMedicineList(
 	body: {
 		name?: string;
 		dispensingModeIds?: number[];
+		medicineCategoryIds?: number[];
+		atcClassCodes?: string[];
 		atcGroupIds?: number[];
 		substanceIds?: number[];
 		pharmaFormIds?: number[];
@@ -71,6 +81,37 @@ export async function getMedicineList(
 		whereFilters.push(
 			`m.dispensing_mode_id IN (${buildInPlaceholders(body.dispensingModeIds)})`,
 		);
+	}
+
+	// Потребительская категория («обезболивающие», «аллергия») — набор префиксов
+	// ATC, см. enums/medicine-category.ts. Префиксный LIKE идёт по индексу
+	// atc_code; сам префикс в запрос не подставляется как параметр только потому,
+	// что он приходит не от пользователя, а из карты по валидированному id.
+	if (body.medicineCategoryIds?.length) {
+		const prefixes = getMedicineCategoryAtcPrefixes(body.medicineCategoryIds);
+		if (prefixes.length) {
+			whereFilters.push(
+				`(${prefixes.map(() => 'm.atc_code LIKE ?').join(' OR ')})`,
+			);
+			queryParams.push(...prefixes.map((prefix) => `${prefix}%`));
+		} else {
+			whereFilters.push('1 = 0');
+		}
+	}
+
+	// Фармакологический класс (ATC level-2): «все антигистаминные» = R06.
+	// Значения сверяются с ATC_CLASS_CODES, поэтому в LIKE идёт заведомо
+	// безопасный трёхсимвольный код, а не пользовательская строка.
+	if (body.atcClassCodes?.length) {
+		const codes = body.atcClassCodes.filter(isAtcClassCode);
+		if (codes.length) {
+			whereFilters.push(
+				`(${codes.map(() => 'm.atc_code LIKE ?').join(' OR ')})`,
+			);
+			queryParams.push(...codes.map((code) => `${code.toUpperCase()}%`));
+		} else {
+			whereFilters.push('1 = 0');
+		}
 	}
 
 	// ATC group filter
@@ -234,9 +275,60 @@ export async function getMedicineList(
 			...mapPack(row),
 		}));
 
+		// Фасет одного вещества играет роль страницы вещества (страниц
+		// /medicines/substance/[slug] у нас нет, а такие URL уже ранжируются).
+		// Поэтому только здесь — полная справка о веществе под списком.
+		const substanceReference =
+			body.substanceIds?.length === 1
+				? await fetchSubstanceReference(
+						connection,
+						Number(body.substanceIds[0]),
+						nameField,
+						locale,
+					)
+				: null;
+
 		return {
 			items,
 			totalCount: usePagination ? totalCount : items.length,
+			...(substanceReference ? { substanceReference } : {}),
 		};
 	});
+}
+
+/** Справка о веществе для фасета `?substanceIds=X` (одна выбранная позиция). */
+async function fetchSubstanceReference(
+	connection: Conn,
+	substanceId: number,
+	nameField: string,
+	locale?: string,
+): Promise<MedicineSubstance | null> {
+	if (!Number.isInteger(substanceId)) return null;
+
+	const suffix = referenceLocaleSuffix(locale);
+	const [rows] = await connection.execute(
+		`
+		SELECT s.id, ${localizedNameSql('s', nameField)} as name,
+			${localizedReferenceSql('sri', 'what', suffix)} as refWhat,
+			${localizedReferenceSql('sri', 'used_for', suffix)} as refUsedFor,
+			${localizedReferenceSql('sri', 'caution', suffix)} as refCaution
+		FROM med_substances s
+		JOIN med_substance_reference_info sri ON sri.substance_id = s.id
+		WHERE s.id = ?
+	`,
+		[substanceId],
+	);
+
+	const row = (rows as any[])[0];
+	if (!row?.refWhat) return null;
+
+	return {
+		id: row.id,
+		name: row.name,
+		reference: {
+			what: row.refWhat || '',
+			usedFor: row.refUsedFor || '',
+			caution: row.refCaution || '',
+		},
+	};
 }

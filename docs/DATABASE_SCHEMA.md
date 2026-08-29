@@ -827,7 +827,11 @@ history matters, patients may already have come with that coupon.
 ### `med_medicines`
 
 - `id` (int unsigned, PK, AI)
-- `cinmed_id` (int unsigned, Unique): CInMED internal ID — stable across re-scrapes.
+- `cinmed_id` (int unsigned, Unique): id from the CInMED list page (`a.dataset.id` at scrape time).
+  **NOT stable** — verified 2026-08-28: all 8 sampled ids from the April 2026 scrape now open
+  different medicines on cinmed.me. Fine as an internal dedup key for re-applying our own
+  generated SQL, but never treat it as the register's permanent identifier, and never build
+  outgoing links from it (see `detail_url`).
 - `name` (varchar(500)): Brand name (e.g. "ASPIRIN® PROTECT").
 - `slug` (varchar(600), Unique(400), NOT NULL): URL-safe slug for human-readable URLs.
 - `pharmaceutical_form_id` (smallint unsigned, FK → `med_pharma_forms.id`)
@@ -842,7 +846,10 @@ history matters, patients may already have come with that coupon.
 - `atc_code` (varchar(10)): Full ATC code (e.g. "N02BE01"). Indexed.
 - `atc_group_id` (tinyint unsigned, FK → `med_atc_groups.id`): Level-1 ATC group for fast filtering.
 - `is_active` (tinyint(1), default 1): 1 = active license, 0 = expired. Indexed.
-- `detail_url` (varchar(500)): Link to cinmed.me detail page.
+- `detail_url` (varchar(500)): cinmed.me detail link captured at scrape time. **Stale by now** —
+  cinmed.me reuses `?id=` values, so these URLs point at other medicines. Not rendered anywhere
+  and deliberately not emitted as schema.org `sameAs` (see `common/schema-org-builders.ts`);
+  the UI links to the cinmed.me root instead.
 - `scraped_at`, `updated_at` (datetime): Timestamps.
 - 3553 total, 2523 with active license.
 

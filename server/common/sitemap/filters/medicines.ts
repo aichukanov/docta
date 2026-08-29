@@ -1,17 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
 
-export async function getAtcGroupIds(): Promise<string[]> {
-	const connection = await getConnection();
-	const [rows] = await connection.execute<any[]>(
-		`SELECT DISTINCT ag.id
-		 FROM med_atc_groups ag
-		 INNER JOIN med_medicines m ON m.atc_group_id = ag.id AND m.is_active = 1
-		 ORDER BY ag.id`,
-	);
-	await connection.end();
-	return rows.map((r) => String(r.id));
-}
-
 export async function getSubstanceAtcCombinations(): Promise<
 	Array<{ substanceId: string; atcGroupId: string }>
 > {
@@ -31,8 +19,10 @@ export async function getSubstanceAtcCombinations(): Promise<
 }
 
 export async function getSitemapFilters() {
+	// Одиночные ATC-фасеты в sitemap больше не публикуются — их место заняли
+	// потребительские категории (sitemap.ts). Комбинации вещество×ATC остаются:
+	// это уже проиндексированные и ранжирующиеся URL.
 	return {
-		atcGroupIds: await getAtcGroupIds(),
 		substanceAtcCombinations: await getSubstanceAtcCombinations(),
 	};
 }

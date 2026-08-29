@@ -1,0 +1,467 @@
+[
+	{
+		"substance_id": 635,
+		"name": "paracetamol",
+		"translations": {
+			"ru": {
+				"what": "Обезболивающее и жаропонижающее средство, не относится к НПВС. Входит также в состав комбинированных средств от простуды.",
+				"used_for": "Применяют при головной и зубной боли, боли в мышцах и суставах, при повышенной температуре на фоне простуды и гриппа.",
+				"caution": "Большинство форм безрецептурные. Превышение дозы опасно для печени, риск выше вместе с алкоголем. Входит во многие средства от простуды, дозы легко сложить случайно."
+			},
+			"en": {
+				"what": "A painkiller and fever reducer, not an NSAID. It is also part of combined cold remedies.",
+				"used_for": "Used for headache and toothache, muscle and joint pain, and for fever during colds and flu.",
+				"caution": "Most forms are over the counter. Exceeding the dose is dangerous for the liver, more so with alcohol. It is in many cold remedies, so doses add up unnoticed."
+			},
+			"sr": {
+				"what": "Lijek protiv bolova i povišene temperature, ne spada u NSAIL. Ulazi i u kombinovane preparate protiv prehlade.",
+				"used_for": "Primjenjuje se kod glavobolje i zubobolje, bolova u mišićima i zglobovima, kao i kod povišene temperature uz prehladu i grip.",
+				"caution": "Većina oblika izdaje se bez recepta. Prekoračenje doze opasno je za jetru, rizik je veći uz alkohol. Ima ga u mnogim preparatima protiv prehlade, pa se doze lako saberu."
+			},
+			"de": {
+				"what": "Ein Schmerz- und Fiebermittel, das nicht zu den NSAR gehört. Es steckt auch in Kombipräparaten gegen Erkältung.",
+				"used_for": "Wird bei Kopf- und Zahnschmerzen, Muskel- und Gelenkschmerzen sowie bei Fieber im Rahmen von Erkältung und Grippe angewendet.",
+				"caution": "Die meisten Formen sind rezeptfrei. Eine zu hohe Dosis schädigt die Leber, mit Alkohol steigt das Risiko. Es steckt in vielen Erkältungsmitteln, Dosen summieren sich leicht."
+			},
+			"tr": {
+				"what": "NSAİİ grubunda yer almayan bir ağrı kesici ve ateş düşürücüdür. Soğuk algınlığı kombinasyonlarında da bulunur.",
+				"used_for": "Baş ve diş ağrısında, kas ve eklem ağrılarında, soğuk algınlığı ve gripte görülen ateşte kullanılır.",
+				"caution": "Çoğu formu reçetesizdir. Dozun aşılması karaciğer için tehlikelidir, alkolle risk artar. Birçok soğuk algınlığı ilacında bulunur, dozlar fark edilmeden toplanır."
+			}
+		}
+	},
+	{
+		"substance_id": 364,
+		"name": "ibuprofen",
+		"translations": {
+			"ru": {
+				"what": "Нестероидное противовоспалительное средство (НПВС) с обезболивающим и жаропонижающим действием.",
+				"used_for": "Применяют при боли в мышцах, суставах и спине, головной и зубной боли, при ушибах и растяжениях, при повышенной температуре.",
+				"caution": "Многие формы безрецептурные. Раздражает слизистую желудка. При язве, болезнях почек и сердца, а также при беременности — только по назначению врача."
+			},
+			"en": {
+				"what": "A non-steroidal anti-inflammatory drug (NSAID) that relieves pain and lowers fever.",
+				"used_for": "Used for muscle, joint and back pain, headache and toothache, bruises and sprains, and for fever.",
+				"caution": "Many forms are over the counter. It irritates the stomach lining. With ulcers, kidney or heart disease and in pregnancy, only on a doctor's advice."
+			},
+			"sr": {
+				"what": "Nesteroidni antiinflamatorni lijek (NSAIL) koji smanjuje bol i temperaturu.",
+				"used_for": "Primjenjuje se kod bolova u mišićima, zglobovima i leđima, glavobolje i zubobolje, kod nagnječenja i istegnuća i kod temperature.",
+				"caution": "Mnogi oblici izdaju se bez recepta. Nadražuje sluznicu želuca. Kod čira, bolesti bubrega i srca i u trudnoći samo po savjetu ljekara."
+			},
+			"de": {
+				"what": "Ein nichtsteroidales Antirheumatikum (NSAR) gegen Schmerzen und Fieber.",
+				"used_for": "Wird bei Muskel-, Gelenk- und Rückenschmerzen, Kopf- und Zahnschmerzen, Prellungen und Zerrungen sowie bei Fieber angewendet.",
+				"caution": "Viele Formen sind rezeptfrei. Es reizt die Magenschleimhaut. Bei Magengeschwür, Nieren- und Herzkrankheiten und in der Schwangerschaft nur nach ärztlicher Anweisung."
+			},
+			"tr": {
+				"what": "Ağrıyı ve ateşi azaltan, steroid yapıda olmayan antiinflamatuar bir ilaçtır (NSAİİ).",
+				"used_for": "Kas, eklem ve sırt ağrısında, baş ve diş ağrısında, berelenme ve burkulmalarda, ateşte kullanılır.",
+				"caution": "Birçok formu reçetesizdir. Mide mukozasını tahriş eder. Ülser, böbrek ve kalp hastalıklarında ve gebelikte yalnızca hekim önerisiyle kullanılır."
+			}
+		}
+	},
+	{
+		"substance_id": 7,
+		"name": "acetilsalicilna kiselina",
+		"translations": {
+			"ru": {
+				"what": "Нестероидное противовоспалительное средство из группы салицилатов. Кардиоформы препятствуют образованию тромбов, обычные снимают боль и жар.",
+				"used_for": "Кардиоформы применяют длительно для профилактики инфаркта и инсульта, обычные таблетки — при головной боли и температуре при простуде.",
+				"caution": "Раздражает желудок и повышает риск кровотечений. Детям и подросткам при вирусных инфекциях не дают из-за риска синдрома Рея. Кардиоформы — по назначению врача."
+			},
+			"en": {
+				"what": "A non-steroidal anti-inflammatory salicylate. Cardio forms prevent blood clots, ordinary tablets relieve pain and fever.",
+				"used_for": "Cardio forms are taken long term to prevent heart attack and stroke, ordinary tablets are used for headache and fever during colds.",
+				"caution": "It irritates the stomach and raises bleeding risk. Not given to children and teenagers with viral infections because of Reye's syndrome. Cardio use is a doctor's decision."
+			},
+			"sr": {
+				"what": "Nesteroidni antiinflamatorni lijek iz grupe salicilata. Kardio oblici sprječavaju stvaranje ugrušaka, obične tablete smanjuju bol i temperaturu.",
+				"used_for": "Kardio oblici uzimaju se dugotrajno radi prevencije infarkta i moždanog udara, obične tablete kod glavobolje i temperature uz prehladu.",
+				"caution": "Nadražuje želudac i povećava rizik od krvarenja. Djeci i adolescentima kod virusnih infekcija se ne daje zbog Rejevog sindroma. Kardio primjenu određuje ljekar."
+			},
+			"de": {
+				"what": "Ein Salicylat mit entzündungshemmender Wirkung. Kardio-Formen hemmen die Blutgerinnung, normale Tabletten wirken gegen Schmerzen und Fieber.",
+				"used_for": "Kardio-Formen werden dauerhaft zur Vorbeugung von Herzinfarkt und Schlaganfall eingesetzt, normale Tabletten bei Kopfschmerzen und Fieber.",
+				"caution": "Reizt den Magen und erhöht das Blutungsrisiko. Kindern und Jugendlichen mit Virusinfekten wird es wegen des Reye-Syndroms nicht gegeben. Kardio-Einnahme bestimmt der Arzt."
+			},
+			"tr": {
+				"what": "Salisilat grubundan, steroid yapıda olmayan bir antiinflamatuardır. Kardiyo formları pıhtıyı önler, normal tabletleri ağrı ve ateşi azaltır.",
+				"used_for": "Kardiyo formları kalp krizi ve inmeden korunmak için uzun süre kullanılır, normal tabletleri baş ağrısı ve ateşte tercih edilir.",
+				"caution": "Mideyi tahriş eder ve kanama riskini artırır. Viral enfeksiyonu olan çocuk ve ergenlere Reye sendromu riski nedeniyle verilmez. Kardiyo kullanımına hekim karar verir."
+			}
+		}
+	},
+	{
+		"substance_id": 634,
+		"name": "pantoprazol",
+		"translations": {
+			"ru": {
+				"what": "Ингибитор протонной помпы: снижает выработку соляной кислоты в желудке.",
+				"used_for": "Применяют при рефлюксной болезни, язве желудка и двенадцатиперстной кишки, а также для защиты желудка при длительном приёме НПВС.",
+				"caution": "Почти все формы рецептурные, длительный приём — только по назначению врача. Может маскировать симптомы более серьёзных болезней желудка."
+			},
+			"en": {
+				"what": "A proton pump inhibitor that reduces stomach acid production.",
+				"used_for": "Used for reflux disease, stomach and duodenal ulcers, and to protect the stomach during long-term NSAID treatment.",
+				"caution": "Almost all forms are prescription only, and long-term use is a doctor's decision. It can mask the symptoms of more serious stomach disease."
+			},
+			"sr": {
+				"what": "Inhibitor protonske pumpe koji smanjuje lučenje želudačne kiseline.",
+				"used_for": "Primjenjuje se kod refluksne bolesti, čira želuca i dvanaestopalačnog crijeva, kao i radi zaštite želuca uz dugotrajnu terapiju NSAIL.",
+				"caution": "Skoro svi oblici izdaju se na recept, a dugotrajnu primjenu određuje ljekar. Može prikriti simptome ozbiljnijih bolesti želuca."
+			},
+			"de": {
+				"what": "Ein Protonenpumpenhemmer, der die Magensäureproduktion senkt.",
+				"used_for": "Wird bei Refluxkrankheit, Magen- und Zwölffingerdarmgeschwüren sowie zum Magenschutz bei längerer NSAR-Therapie eingesetzt.",
+				"caution": "Fast alle Formen sind verschreibungspflichtig, eine längere Einnahme entscheidet der Arzt. Es kann Beschwerden ernsterer Magenerkrankungen verdecken."
+			},
+			"tr": {
+				"what": "Mide asidi üretimini azaltan bir proton pompası inhibitörüdür.",
+				"used_for": "Reflü hastalığında, mide ve onikiparmak bağırsağı ülserinde, ayrıca uzun süreli NSAİİ tedavisinde mideyi korumak için kullanılır.",
+				"caution": "Formlarının neredeyse tamamı reçeteye tabidir, uzun süreli kullanıma hekim karar verir. Daha ciddi mide hastalıklarının belirtilerini gizleyebilir."
+			}
+		}
+	},
+	{
+		"substance_id": 85,
+		"name": "benzidamin",
+		"translations": {
+			"ru": {
+				"what": "Местное нестероидное противовоспалительное средство с обезболивающим действием для полости рта и горла.",
+				"used_for": "Применяют при боли и воспалении в горле и полости рта, в том числе при стоматите и после стоматологических вмешательств.",
+				"caution": "Отпускается без рецепта. Возможны жжение и онемение во рту. У маленьких детей спреи и растворы применяют только по назначению врача."
+			},
+			"en": {
+				"what": "A topical non-steroidal anti-inflammatory agent with a local painkilling effect for the mouth and throat.",
+				"used_for": "Used for pain and inflammation of the throat and mouth, including mouth ulcers and the period after dental procedures.",
+				"caution": "Available over the counter. Burning or numbness in the mouth may occur. In small children, sprays and rinses only on a doctor's advice."
+			},
+			"sr": {
+				"what": "Lokalni nesteroidni antiinflamatorni lijek koji ublažava bol u ustima i grlu.",
+				"used_for": "Primjenjuje se kod bola i zapaljenja u grlu i usnoj duplji, uključujući stomatitis i period poslije stomatoloških zahvata.",
+				"caution": "Izdaje se bez recepta. Mogući su peckanje i utrnulost u ustima. Kod male djece sprejevi i rastvori samo po savjetu ljekara."
+			},
+			"de": {
+				"what": "Ein örtlich wirkendes entzündungshemmendes Mittel mit schmerzlindernder Wirkung für Mund und Rachen.",
+				"used_for": "Wird bei Schmerzen und Entzündungen im Hals und Mund angewendet, auch bei Aphthen und nach zahnärztlichen Eingriffen.",
+				"caution": "Rezeptfrei erhältlich. Brennen oder Taubheitsgefühl im Mund sind möglich. Bei kleinen Kindern nur nach ärztlicher Anweisung anwenden."
+			},
+			"tr": {
+				"what": "Ağız ve boğazda bölgesel etkili, ağrıyı hafifleten antiinflamatuar bir etken maddedir.",
+				"used_for": "Boğaz ve ağız içindeki ağrı ve iltihapta, aft ve diş işlemleri sonrası dönemde kullanılır.",
+				"caution": "Reçetesiz satılır. Ağızda yanma ve uyuşma görülebilir. Küçük çocuklarda sprey ve çözeltiler yalnızca hekim önerisiyle kullanılır."
+			}
+		}
+	},
+	{
+		"substance_id": 6,
+		"name": "acetilcistein",
+		"translations": {
+			"ru": {
+				"what": "Муколитик: разрушает связи в густой слизи, поэтому мокрота становится жиже и легче откашливается.",
+				"used_for": "Применяют при кашле с густой мокротой на фоне бронхита и других болезней дыхательных путей, назальные формы — при густом насморке.",
+				"caution": "Отпускается без рецепта. При бронхиальной астме, язвенной болезни и у детей раннего возраста — только по назначению врача."
+			},
+			"en": {
+				"what": "A mucolytic that breaks down thick mucus, so it becomes thinner and easier to cough up.",
+				"used_for": "Used for a cough with thick mucus in bronchitis and other airway conditions; nasal forms for a thick blocked nose.",
+				"caution": "Available over the counter. In asthma, peptic ulcer disease and in young children, only on a doctor's advice."
+			},
+			"sr": {
+				"what": "Mukolitik koji razgrađuje gust sekret, pa se lakše iskašljava.",
+				"used_for": "Primjenjuje se kod kašlja sa gustim sekretom uz bronhitis i druge bolesti disajnih puteva, nazalni oblici kod guste sekrecije iz nosa.",
+				"caution": "Izdaje se bez recepta. Kod astme, čira na želucu i kod male djece samo po savjetu ljekara."
+			},
+			"de": {
+				"what": "Ein Schleimlöser, der zähen Schleim aufbricht, sodass er leichter abgehustet wird.",
+				"used_for": "Wird bei Husten mit zähem Schleim bei Bronchitis und anderen Atemwegserkrankungen eingesetzt, Nasenformen bei zähem Nasensekret.",
+				"caution": "Rezeptfrei erhältlich. Bei Asthma, Magengeschwür und bei kleinen Kindern nur nach ärztlicher Anweisung."
+			},
+			"tr": {
+				"what": "Koyu balgamın yapısını çözerek atılmasını kolaylaştıran bir mukolitiktir.",
+				"used_for": "Bronşit ve diğer solunum yolu hastalıklarında koyu balgamlı öksürükte, burun formları koyu burun akıntısında kullanılır.",
+				"caution": "Reçetesiz satılır. Astım ve mide ülseri olanlarda ve küçük çocuklarda yalnızca hekim önerisiyle kullanılır."
+			}
+		}
+	},
+	{
+		"substance_id": 670,
+		"name": "povidon jod",
+		"translations": {
+			"ru": {
+				"what": "Антисептик широкого спектра на основе йода, применяется на коже и слизистых.",
+				"used_for": "Применяют для обработки ран, ожогов и кожи перед процедурами, а также при инфекциях слизистых по назначению врача.",
+				"caution": "Часть форм отпускается по рецепту. При болезнях щитовидной железы, беременности, кормлении грудью и у новорождённых — только по назначению врача."
+			},
+			"en": {
+				"what": "A broad-spectrum iodine-based antiseptic used on skin and mucous membranes.",
+				"used_for": "Used to clean wounds and burns and to prepare skin before procedures, and for mucous membrane infections as prescribed.",
+				"caution": "Some forms are prescription only. With thyroid disease, in pregnancy and breastfeeding and in newborns, only on a doctor's advice."
+			},
+			"sr": {
+				"what": "Antiseptik širokog spektra na bazi joda, primjenjuje se na koži i sluznicama.",
+				"used_for": "Koristi se za obradu rana i opekotina i pripremu kože prije zahvata, a kod infekcija sluznica po savjetu ljekara.",
+				"caution": "Dio oblika izdaje se na recept. Kod bolesti štitne žlijezde, u trudnoći i dojenju i kod novorođenčadi samo po savjetu ljekara."
+			},
+			"de": {
+				"what": "Ein jodhaltiges Antiseptikum mit breitem Wirkspektrum für Haut und Schleimhäute.",
+				"used_for": "Wird zur Reinigung von Wunden und Verbrennungen, zur Hautvorbereitung vor Eingriffen und bei Schleimhautinfektionen eingesetzt.",
+				"caution": "Ein Teil der Formen ist verschreibungspflichtig. Bei Schilddrüsenkrankheiten, in Schwangerschaft und Stillzeit und bei Neugeborenen nur nach Anweisung."
+			},
+			"tr": {
+				"what": "Deri ve mukozalarda kullanılan, iyot içeren geniş etkili bir antiseptiktir.",
+				"used_for": "Yara ve yanıkların temizlenmesinde, işlem öncesi deri hazırlığında, mukoza enfeksiyonlarında hekim önerisiyle kullanılır.",
+				"caution": "Bazı formları reçeteye tabidir. Tiroit hastalığında, gebelik ve emzirme döneminde ve yenidoğanlarda yalnızca hekim önerisiyle kullanılır."
+			}
+		}
+	},
+	{
+		"substance_id": 440,
+		"name": "klotrimazol",
+		"translations": {
+			"ru": {
+				"what": "Противогрибковое средство группы азолов для местного применения.",
+				"used_for": "Применяют при грибковых поражениях кожи и кожных складок, отрубевидном лишае, а также при вагинальном кандидозе.",
+				"caution": "Отпускается без рецепта. Если симптомы не проходят или возвращаются, нужен осмотр врача. При беременности — только по назначению врача."
+			},
+			"en": {
+				"what": "A topical antifungal from the azole group.",
+				"used_for": "Used for fungal infections of the skin and skin folds, for tinea versicolor and for vaginal thrush.",
+				"caution": "Available over the counter. If symptoms persist or come back, a doctor's examination is needed. In pregnancy, only on a doctor's advice."
+			},
+			"sr": {
+				"what": "Antimikotik iz grupe azola za lokalnu primjenu.",
+				"used_for": "Primjenjuje se kod gljivičnih infekcija kože i kožnih nabora, kod pitirijaze i kod vaginalne kandidijaze.",
+				"caution": "Izdaje se bez recepta. Ako simptomi ne prolaze ili se vraćaju, potreban je pregled ljekara. U trudnoći samo po savjetu ljekara."
+			},
+			"de": {
+				"what": "Ein örtlich anzuwendendes Antimykotikum aus der Gruppe der Azole.",
+				"used_for": "Wird bei Pilzinfektionen der Haut und der Hautfalten, bei Kleienpilzflechte und bei Scheidenpilz angewendet.",
+				"caution": "Rezeptfrei erhältlich. Bleiben die Beschwerden oder kehren sie zurück, ist eine ärztliche Untersuchung nötig. In der Schwangerschaft nur nach Anweisung."
+			},
+			"tr": {
+				"what": "Azol grubundan, bölgesel kullanılan bir mantar ilacıdır.",
+				"used_for": "Derinin ve deri kıvrımlarının mantar enfeksiyonlarında, renkli mantarda ve vajinal mantarda kullanılır.",
+				"caution": "Reçetesiz satılır. Şikayetler geçmez ya da tekrarlarsa hekime başvurmak gerekir. Gebelikte yalnızca hekim önerisiyle kullanılır."
+			}
+		}
+	},
+	{
+		"substance_id": 97,
+		"name": "bisakodil",
+		"translations": {
+			"ru": {
+				"what": "Слабительное стимулирующего действия: усиливает моторику толстой кишки.",
+				"used_for": "Применяют при запоре, а также для очищения кишечника перед эндоскопией и рентгеновскими исследованиями.",
+				"caution": "Отпускается без рецепта, но предназначено для короткого применения. При боли в животе, подозрении на непроходимость и у детей — по назначению врача."
+			},
+			"en": {
+				"what": "A stimulant laxative that increases movement of the large bowel.",
+				"used_for": "Used for constipation and to empty the bowel before endoscopy and X-ray examinations.",
+				"caution": "Available over the counter but meant for short use. With abdominal pain, suspected obstruction or in children, only on a doctor's advice."
+			},
+			"sr": {
+				"what": "Stimulativni laksativ koji pojačava pokretljivost debelog crijeva.",
+				"used_for": "Primjenjuje se kod zatvora i za pražnjenje crijeva prije endoskopije i rendgenskih pregleda.",
+				"caution": "Izdaje se bez recepta, ali je namijenjen kratkotrajnoj upotrebi. Kod bolova u trbuhu, sumnje na opstrukciju i kod djece samo po savjetu ljekara."
+			},
+			"de": {
+				"what": "Ein stimulierendes Abführmittel, das die Bewegung des Dickdarms anregt.",
+				"used_for": "Wird bei Verstopfung und zur Darmentleerung vor Endoskopie und Röntgenuntersuchungen eingesetzt.",
+				"caution": "Rezeptfrei, aber nur für kurze Anwendung gedacht. Bei Bauchschmerzen, Verdacht auf Darmverschluss und bei Kindern nur nach ärztlicher Anweisung."
+			},
+			"tr": {
+				"what": "Kalın bağırsak hareketlerini artıran uyarıcı bir müshildir.",
+				"used_for": "Kabızlıkta ve endoskopi ile röntgen incelemeleri öncesinde bağırsağın boşaltılmasında kullanılır.",
+				"caution": "Reçetesiz satılır ancak kısa süreli kullanım içindir. Karın ağrısında, tıkanıklık şüphesinde ve çocuklarda yalnızca hekim önerisiyle kullanılır."
+			}
+		}
+	},
+	{
+		"substance_id": 267,
+		"name": "fenoksietanol",
+		"translations": {
+			"ru": {
+				"what": "Антисептик и консервант. В медицине применяется наружно, обычно в комбинации с октенидином в готовых средствах для кожи.",
+				"used_for": "Применяют для обработки кожи, слизистых и небольших ран, в том числе перед процедурами и при уходе за повреждённой кожей.",
+				"caution": "Отпускается без рецепта. Только для наружного применения, внутрь не принимают. Избегать попадания в глаза, у маленьких детей — по назначению врача."
+			},
+			"en": {
+				"what": "An antiseptic and preservative. In medicine it is used externally, usually combined with octenidine in ready-made skin products.",
+				"used_for": "Used to clean skin, mucous membranes and small wounds, including before procedures and when caring for damaged skin.",
+				"caution": "Available over the counter. For external use only, not to be swallowed. Keep out of the eyes; in small children only on a doctor's advice."
+			},
+			"sr": {
+				"what": "Antiseptik i konzervans. U medicini se primjenjuje spolja, obično u kombinaciji sa oktenidinom u gotovim preparatima za kožu.",
+				"used_for": "Koristi se za obradu kože, sluznica i manjih rana, uključujući pripremu prije zahvata i njegu oštećene kože.",
+				"caution": "Izdaje se bez recepta. Samo za spoljnu upotrebu, ne guta se. Izbjegavati kontakt sa očima, kod male djece samo po savjetu ljekara."
+			},
+			"de": {
+				"what": "Ein Antiseptikum und Konservierungsmittel. Medizinisch wird es äußerlich angewendet, meist mit Octenidin in fertigen Hautpräparaten.",
+				"used_for": "Wird zur Reinigung von Haut, Schleimhäuten und kleinen Wunden verwendet, auch vor Eingriffen und bei der Pflege geschädigter Haut.",
+				"caution": "Rezeptfrei erhältlich. Nur zur äußerlichen Anwendung, nicht schlucken. Kontakt mit den Augen vermeiden, bei kleinen Kindern nur nach Anweisung."
+			},
+			"tr": {
+				"what": "Antiseptik ve koruyucu bir maddedir. Tıpta dıştan, genellikle hazır deri ürünlerinde oktenidinle birlikte kullanılır.",
+				"used_for": "Deri, mukoza ve küçük yaraların temizliğinde, işlem öncesi hazırlıkta ve hasarlı derinin bakımında kullanılır.",
+				"caution": "Reçetesiz satılır. Yalnızca haricen kullanılır, yutulmaz. Gözle temasından kaçınılır, küçük çocuklarda hekim önerisiyle kullanılır."
+			}
+		}
+	},
+	{
+		"substance_id": 611,
+		"name": "oktenidin",
+		"translations": {
+			"ru": {
+				"what": "Наружный антисептик широкого спектра против бактерий и грибов для кожи и слизистых.",
+				"used_for": "Применяют для обработки небольших ран и ссадин, слизистых, а также кожи перед процедурами и при уходе за повреждённой кожей.",
+				"caution": "Отпускается без рецепта. Только наружно, внутрь не принимают. Нельзя вводить в раны под давлением и допускать попадания в глаза."
+			},
+			"en": {
+				"what": "An external antiseptic active against bacteria and fungi, for skin and mucous membranes.",
+				"used_for": "Used to clean small wounds and grazes, mucous membranes and skin before procedures, and when caring for damaged skin.",
+				"caution": "Available over the counter. External use only, not to be swallowed. It must not be flushed into wounds under pressure or get into the eyes."
+			},
+			"sr": {
+				"what": "Spoljni antiseptik širokog spektra protiv bakterija i gljivica, za kožu i sluznice.",
+				"used_for": "Koristi se za obradu manjih rana i ogrebotina, sluznica i kože prije zahvata, kao i za njegu oštećene kože.",
+				"caution": "Izdaje se bez recepta. Samo za spoljnu upotrebu, ne guta se. Ne smije se uštrcavati u ranu pod pritiskom niti dospjeti u oči."
+			},
+			"de": {
+				"what": "Ein äußerliches Antiseptikum gegen Bakterien und Pilze für Haut und Schleimhäute.",
+				"used_for": "Wird zur Reinigung kleiner Wunden und Schürfungen, von Schleimhäuten und der Haut vor Eingriffen sowie zur Wundpflege verwendet.",
+				"caution": "Rezeptfrei erhältlich. Nur äußerlich, nicht schlucken. Es darf nicht unter Druck in Wunden eingebracht werden und nicht in die Augen gelangen."
+			},
+			"tr": {
+				"what": "Deri ve mukozada kullanılan, bakteri ve mantarlara karşı etkili bir antiseptiktir.",
+				"used_for": "Küçük yara ve sıyrıkların, mukozaların ve işlem öncesi derinin temizliğinde, hasarlı derinin bakımında kullanılır.",
+				"caution": "Reçetesiz satılır. Yalnızca haricen kullanılır, yutulmaz. Basınçla yara içine verilmemeli ve gözle temas ettirilmemelidir."
+			}
+		}
+	},
+	{
+		"substance_id": 109,
+		"name": "bromheksin",
+		"translations": {
+			"ru": {
+				"what": "Муколитик: делает мокроту менее вязкой и облегчает откашливание.",
+				"used_for": "Применяют при кашле с трудноотделяемой мокротой на фоне острых и хронических болезней дыхательных путей.",
+				"caution": "Отпускается без рецепта. Не сочетают со средствами, подавляющими кашель. При астме, язве и у детей раннего возраста — по назначению врача."
+			},
+			"en": {
+				"what": "A mucolytic that makes mucus less viscous and easier to cough up.",
+				"used_for": "Used for a cough with mucus that is hard to bring up in acute and chronic airway conditions.",
+				"caution": "Available over the counter. It is not combined with cough suppressants. In asthma, ulcer disease and young children, only on a doctor's advice."
+			},
+			"sr": {
+				"what": "Mukolitik koji smanjuje gustinu sekreta i olakšava iskašljavanje.",
+				"used_for": "Primjenjuje se kod kašlja sa sekretom koji se teško iskašljava, uz akutne i hronične bolesti disajnih puteva.",
+				"caution": "Izdaje se bez recepta. Ne kombinuje se sa lijekovima koji potiskuju kašalj. Kod astme, čira i male djece samo po savjetu ljekara."
+			},
+			"de": {
+				"what": "Ein Schleimlöser, der zähen Schleim verflüssigt und das Abhusten erleichtert.",
+				"used_for": "Wird bei Husten mit zähem, schwer abzuhustendem Schleim bei akuten und chronischen Atemwegserkrankungen eingesetzt.",
+				"caution": "Rezeptfrei erhältlich. Nicht zusammen mit hustenstillenden Mitteln. Bei Asthma, Magengeschwür und kleinen Kindern nur nach ärztlicher Anweisung."
+			},
+			"tr": {
+				"what": "Balgamın koyuluğunu azaltıp atılmasını kolaylaştıran bir mukolitiktir.",
+				"used_for": "Akut ve kronik solunum yolu hastalıklarında güç çıkarılan balgamlı öksürükte kullanılır.",
+				"caution": "Reçetesiz satılır. Öksürüğü baskılayan ilaçlarla birlikte kullanılmaz. Astım, ülser ve küçük çocuklarda yalnızca hekim önerisiyle kullanılır."
+			}
+		}
+	},
+	{
+		"substance_id": 744,
+		"name": "simetikon",
+		"translations": {
+			"ru": {
+				"what": "Пеногаситель: разрушает пузырьки газа в кишечнике и не всасывается в кровь.",
+				"used_for": "Применяют при вздутии живота и повышенном газообразовании, в том числе у младенцев, а также при подготовке к УЗИ брюшной полости.",
+				"caution": "Отпускается без рецепта и считается безопасным. При сильной или длительной боли в животе самолечение недопустимо, нужен осмотр врача."
+			},
+			"en": {
+				"what": "An antifoaming agent that breaks up gas bubbles in the gut and is not absorbed into the blood.",
+				"used_for": "Used for bloating and excess gas, including in infants, and in preparation for an abdominal ultrasound.",
+				"caution": "Available over the counter and considered safe. Severe or lasting abdominal pain is not a case for self-treatment and needs a doctor's examination."
+			},
+			"sr": {
+				"what": "Sredstvo protiv pjene koje razbija mjehuriće gasa u crijevima i ne ulazi u krvotok.",
+				"used_for": "Primjenjuje se kod nadutosti i pojačanog stvaranja gasova, i kod odojčadi, kao i u pripremi za ultrazvuk trbuha.",
+				"caution": "Izdaje se bez recepta i smatra se bezbjednim. Kod jakog ili dugotrajnog bola u trbuhu samoliječenje nije prihvatljivo, potreban je pregled."
+			},
+			"de": {
+				"what": "Ein Entschäumer, der Gasblasen im Darm auflöst und nicht ins Blut übergeht.",
+				"used_for": "Wird bei Blähungen und vermehrter Gasbildung, auch bei Säuglingen, sowie zur Vorbereitung auf eine Ultraschalluntersuchung eingesetzt.",
+				"caution": "Rezeptfrei und gut verträglich. Bei starken oder anhaltenden Bauchschmerzen ist Selbstbehandlung nicht angebracht, ein Arztbesuch ist nötig."
+			},
+			"tr": {
+				"what": "Bağırsaktaki gaz kabarcıklarını dağıtan, kana geçmeyen bir köpük gidericidir.",
+				"used_for": "Şişkinlik ve aşırı gazda, bebeklerde de, ayrıca karın ultrasonu hazırlığında kullanılır.",
+				"caution": "Reçetesiz satılır ve güvenli kabul edilir. Şiddetli ya da uzun süren karın ağrısında kendi kendine tedavi uygun değildir, hekime başvurulmalıdır."
+			}
+		}
+	},
+	{
+		"substance_id": 259,
+		"name": "feksofenadin",
+		"translations": {
+			"ru": {
+				"what": "Антигистаминное средство второго поколения: почти не проникает в мозг и реже вызывает сонливость.",
+				"used_for": "Применяют при сезонном и круглогодичном аллергическом рините, а также при крапивнице и кожном зуде аллергической природы.",
+				"caution": "Отпускается без рецепта. Фруктовые соки и антациды снижают его усвоение. При болезнях почек, беременности и у детей — по назначению врача."
+			},
+			"en": {
+				"what": "A second-generation antihistamine that barely reaches the brain and rarely causes drowsiness.",
+				"used_for": "Used for seasonal and year-round allergic rhinitis, and for hives and allergic itching of the skin.",
+				"caution": "Available over the counter. Fruit juices and antacids reduce its absorption. With kidney disease, in pregnancy and in children, only on a doctor's advice."
+			},
+			"sr": {
+				"what": "Antihistaminik druge generacije koji jedva ulazi u mozak i rjeđe izaziva pospanost.",
+				"used_for": "Primjenjuje se kod sezonskog i cjelogodišnjeg alergijskog rinitisa, kao i kod koprivnjače i alergijskog svraba kože.",
+				"caution": "Izdaje se bez recepta. Voćni sokovi i antacidi smanjuju njegovu apsorpciju. Kod bolesti bubrega, u trudnoći i kod djece samo po savjetu ljekara."
+			},
+			"de": {
+				"what": "Ein Antihistaminikum der zweiten Generation, das kaum ins Gehirn gelangt und selten müde macht.",
+				"used_for": "Wird bei saisonalem und ganzjährigem allergischem Schnupfen sowie bei Nesselsucht und allergischem Hautjucken angewendet.",
+				"caution": "Rezeptfrei erhältlich. Fruchtsäfte und Antazida verringern die Aufnahme. Bei Nierenkrankheiten, in der Schwangerschaft und bei Kindern nur nach Anweisung."
+			},
+			"tr": {
+				"what": "Beyne neredeyse geçmeyen ve nadiren uyku hali yapan ikinci kuşak bir antihistaminiktir.",
+				"used_for": "Mevsimsel ve yıl boyu süren alerjik nezlede, kurdeşende ve alerjik deri kaşıntısında kullanılır.",
+				"caution": "Reçetesiz satılır. Meyve suları ve antasitler emilimini azaltır. Böbrek hastalığında, gebelikte ve çocuklarda yalnızca hekim önerisiyle kullanılır."
+			}
+		}
+	},
+	{
+		"substance_id": 352,
+		"name": "hioscin butilbromid",
+		"translations": {
+			"ru": {
+				"what": "Спазмолитик с холиноблокирующим действием: расслабляет гладкие мышцы органов брюшной полости.",
+				"used_for": "Применяют при спастической боли в животе, кишечной и желчной колике, болезненных менструациях, а также при подготовке к обследованиям.",
+				"caution": "Таблетки безрецептурные, инъекции — только по назначению врача. При глаукоме, аденоме простаты и стойкой боли в животе нужна консультация врача."
+			},
+			"en": {
+				"what": "An antispasmodic with an anticholinergic action that relaxes smooth muscle in the abdomen.",
+				"used_for": "Used for cramping abdominal pain, intestinal and biliary colic, painful periods, and in preparation for some examinations.",
+				"caution": "Tablets are over the counter, the injection is prescription only. With glaucoma, an enlarged prostate or lasting abdominal pain, see a doctor."
+			},
+			"sr": {
+				"what": "Spazmolitik sa antiholinergičkim djelovanjem koji opušta glatke mišiće trbušnih organa.",
+				"used_for": "Primjenjuje se kod grčevitih bolova u trbuhu, crijevnih i žučnih kolika, bolnih menstruacija i u pripremi za pojedine preglede.",
+				"caution": "Tablete se izdaju bez recepta, injekcije samo po savjetu ljekara. Kod glaukoma, uvećane prostate i upornog bola u trbuhu potreban je pregled."
+			},
+			"de": {
+				"what": "Ein krampflösendes Mittel mit anticholinerger Wirkung, das die glatte Muskulatur im Bauchraum entspannt.",
+				"used_for": "Wird bei krampfartigen Bauchschmerzen, Darm- und Gallenkoliken, schmerzhafter Regel und zur Vorbereitung auf Untersuchungen eingesetzt.",
+				"caution": "Tabletten sind rezeptfrei, die Injektion ist verschreibungspflichtig. Bei Glaukom, vergrößerter Prostata und anhaltenden Bauchschmerzen zum Arzt."
+			},
+			"tr": {
+				"what": "Karın organlarındaki düz kasları gevşeten, antikolinerjik etkili bir antispazmodiktir.",
+				"used_for": "Kramp tarzı karın ağrısında, bağırsak ve safra koliğinde, ağrılı adet dönemlerinde ve bazı tetkiklerin hazırlığında kullanılır.",
+				"caution": "Tabletleri reçetesizdir, enjeksiyon formu reçeteye tabidir. Glokom, prostat büyümesi ve geçmeyen karın ağrısında hekime başvurulmalıdır."
+			}
+		}
+	}
+]

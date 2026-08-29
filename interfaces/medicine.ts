@@ -26,11 +26,27 @@ export interface MedicineListItem {
 export interface MedicineList {
 	items: MedicineListItem[];
 	totalCount: number;
+	/**
+	 * Справка о веществе — только когда выбрано ровно одно вещество
+	 * (`?substanceIds=X`): этот фасет и есть наша страница вещества.
+	 */
+	substanceReference?: MedicineSubstance | null;
+}
+
+/**
+ * Краткая справка о веществе (`med_substance_reference_info`, миграция 024).
+ * Пусто у веществ, до которых ещё не дошёл контент — тогда `reference: null`.
+ */
+export interface MedicineSubstanceReference {
+	what: string;
+	usedFor: string;
+	caution: string;
 }
 
 export interface MedicineSubstance {
 	id: number;
 	name: string;
+	reference?: MedicineSubstanceReference | null;
 }
 
 // Одно вещество в составе зарубежного продукта, с состоянием сопоставления

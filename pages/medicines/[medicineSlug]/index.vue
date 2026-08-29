@@ -8,7 +8,10 @@ import {
 } from '~/common/schema-org-builders';
 import { buildSeoDescription } from '~/common/seo-meta';
 import { localizeStrength } from '~/common/strength-label';
+import { capitalizeFirstLetter } from '~/common/string-utils';
 import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
+import { getAtcClassCode, getAtcClassKeyByCode } from '~/enums/atc-class';
+import atcClassI18n from '~/i18n/atc-class';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import medicineI18n from '~/i18n/medicine';
 import packagingI18n from '~/i18n/packaging';
@@ -18,6 +21,7 @@ import { combineI18nMessages } from '~/i18n/utils';
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([
+		atcClassI18n,
 		breadcrumbI18n,
 		medicineI18n,
 		packagingI18n,
@@ -87,6 +91,20 @@ const isOTC = computed(() => med.value?.dispensingModeId === 2);
 const substanceNames = computed(
 	() => med.value?.substances?.map((s: any) => s.name).join(', ') || '',
 );
+
+// Фармакологический класс — из ATC level-2 самого лекарства, без отдельных
+// данных и запроса: «антигистаминное», «гормональное (кортикостероид)».
+// См. enums/atc-class.ts.
+const atcClassCode = computed(() => getAtcClassCode(med.value?.atcCode));
+
+const atcClassLabel = computed(() => {
+	const code = atcClassCode.value;
+	// В данных метка строчная — она же пойдёт в середину фразы на фасете вещества;
+	// с заглавной поднимаем только здесь, чтобы бейдж встал в один ряд с соседними
+	return code
+		? capitalizeFirstLetter(t(getAtcClassKeyByCode(code)), locale.value)
+		: null;
+});
 
 const pageTitle = computed(() => {
 	if (!isFound.value || !med.value) return '';
@@ -184,7 +202,6 @@ watchEffect(() => {
 				dispensingModeId: med.value.dispensingModeId,
 				atcCode: med.value.atcCode,
 				isActive: med.value.isActive,
-				detailUrl: med.value.detailUrl,
 			}),
 			buildBreadcrumbsSchema(pageUrl, [
 				{
@@ -312,6 +329,18 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 						}}</span>
 					</div>
 					<div class="medicine-badges">
+						<!-- Класс — первым: «что это за лекарство» важнее режима отпуска.
+						     Ведёт на фасет всех лекарств этого класса («все антигистаминные») -->
+						<NuxtLink
+							v-if="atcClassLabel"
+							:to="{
+								name: 'medicines',
+								query: { atcClassCodes: atcClassCode },
+							}"
+							class="badge badge-class"
+						>
+							{{ atcClassLabel }}
+						</NuxtLink>
 						<MedicineBadge :dispensingModeId="med.dispensingModeId" />
 						<span
 							class="badge"
@@ -341,6 +370,7 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 						{{ sub.name }}
 					</NuxtLink>
 				</div>
+				<MedicineSubstanceReference :substances="med.substances" />
 			</EntityPageSection>
 
 			<!-- Details -->
@@ -599,6 +629,16 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 .badge-expired {
 	background: #fce4ec;
 	color: #c62828;
+}
+/* Класс лекарства — нейтральный бейдж: это не статус, а справочная метка */
+.badge-class {
+	background: var(--color-bg-muted);
+	color: var(--color-text-secondary);
+	text-decoration: none;
+	transition: background 0.15s ease;
+}
+.badge-class:hover {
+	background: var(--color-border-primary);
 }
 
 .substance-list {

@@ -7,14 +7,22 @@ import {
 import { SITE_URL, OG_IMAGE } from '~/common/constants';
 import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
 import { localizeStrength } from '~/common/strength-label';
+import { capitalizeFirstLetter } from '~/common/string-utils';
 import { buildPackagingLabel } from '~/common/packaging-label';
 import {
 	DEFAULT_MEDICINE_SORT,
 	normalizeMedicineSort,
 } from '~/common/medicine-sort';
 
+import { getAtcClassKeyByCode } from '~/enums/atc-class';
+import {
+	MEDICINE_CATEGORY_IDS,
+	getMedicineCategoryKey,
+} from '~/enums/medicine-category';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import medicineI18n from '~/i18n/medicine';
+import atcClassI18n from '~/i18n/atc-class';
+import medicineCategoryI18n from '~/i18n/medicine-category';
 import dispensingModeI18n from '~/i18n/dispensing-mode';
 // packagingI18n нужен ради единиц pack_vol_* для localizeStrength
 import packagingI18n from '~/i18n/packaging';
@@ -22,8 +30,10 @@ import packagingI18n from '~/i18n/packaging';
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([
+		atcClassI18n,
 		breadcrumbI18n,
 		medicineI18n,
+		medicineCategoryI18n,
 		dispensingModeI18n,
 		packagingI18n,
 	]),
@@ -33,6 +43,8 @@ const filtersStore = useFiltersStore();
 const {
 	name,
 	dispensingModeIds,
+	medicineCategoryIds,
+	atcClassCodes,
 	atcGroupIds,
 	substanceIds,
 	pharmaFormIds,
@@ -74,6 +86,10 @@ const filterList = computed(() => ({
 	dispensingModeIds: dispensingModeIds.value.length
 		? dispensingModeIds.value
 		: undefined,
+	medicineCategoryIds: medicineCategoryIds.value.length
+		? medicineCategoryIds.value
+		: undefined,
+	atcClassCodes: atcClassCodes.value.length ? atcClassCodes.value : undefined,
 	atcGroupIds: atcGroupIds.value.length ? atcGroupIds.value : undefined,
 	substanceIds: substanceIds.value.length ? substanceIds.value : undefined,
 	pharmaFormIds: pharmaFormIds.value.length ? pharmaFormIds.value : undefined,
@@ -115,6 +131,15 @@ const getFilterLabel = (
 	return items.find((item) => item.value === ids[0])?.label || null;
 };
 
+// Категории статические (enums/medicine-category.ts) — в отличие от остальных
+// фильтров, их не нужно тянуть из /filter-options
+const categoryOptions = computed(() =>
+	MEDICINE_CATEGORY_IDS.map((id) => ({
+		value: id as number,
+		label: t(getMedicineCategoryKey(id)),
+	})),
+);
+
 const pageTitle = computed(() => {
 	const opts = filterOptions.value;
 	const substanceLabel = getFilterLabel(
@@ -139,6 +164,20 @@ const pageTitle = computed(() => {
 	// Collect suffix parts
 	const suffixes: string[] = [];
 	if (dmLabel) suffixes.push(dmLabel);
+	const categoryLabel = getFilterLabel(
+		categoryOptions.value,
+		medicineCategoryIds.value,
+	);
+	if (categoryLabel) suffixes.push(categoryLabel);
+	// Класс приходит с бейджа на карточке лекарства («все антигистаминные»)
+	if (atcClassCodes.value.length === 1) {
+		suffixes.push(
+			capitalizeFirstLetter(
+				t(getAtcClassKeyByCode(atcClassCodes.value[0])),
+				locale.value,
+			),
+		);
+	}
 	const atcLabel = getFilterLabel(opts?.atcGroups || [], atcGroupIds.value);
 	if (atcLabel) suffixes.push(atcLabel);
 	const formLabel = getFilterLabel(
@@ -158,6 +197,92 @@ const pageTitle = computed(() => {
 	return base;
 });
 
+// Чипы активных фильтров: подписи знает только страница — часть справочников
+// приходит из API (вещества, формы, производители), часть лежит в enum'ах
+// (категории, классы), а режим отпуска — в i18n.
+const activeFilters = computed<
+	{ key: string; label: string; remove: () => void }[]
+>(() => {
+	const chips: { key: string; label: string; remove: () => void }[] = [];
+	const opts = filterOptions.value;
+
+	const pushIds = (
+		prefix: string,
+		ids: Ref<number[]>,
+		labelOf: (id: number) => string | null | undefined,
+	) => {
+		for (const id of ids.value) {
+			const label = labelOf(id);
+			if (!label) continue;
+			chips.push({
+				key: `${prefix}:${id}`,
+				label,
+				remove: () => {
+					ids.value = ids.value.filter((value) => value !== id);
+				},
+			});
+		}
+	};
+
+	if (name.value) {
+		chips.push({
+			key: `name:${name.value}`,
+			label: name.value,
+			remove: () => {
+				name.value = '';
+			},
+		});
+	}
+
+	pushIds('dm', dispensingModeIds, (id) => t(`dm_${id}`));
+	pushIds('cat', medicineCategoryIds, (id) =>
+		categoryOptions.value.find((option) => option.value === id)?.label,
+	);
+
+	for (const code of atcClassCodes.value) {
+		chips.push({
+			key: `class:${code}`,
+			label: capitalizeFirstLetter(
+				t(getAtcClassKeyByCode(code)),
+				locale.value,
+			),
+			remove: () => {
+				atcClassCodes.value = atcClassCodes.value.filter(
+					(value) => value !== code,
+				);
+			},
+		});
+	}
+
+	// У ATC-группы своего контрола в панели больше нет — чип остаётся
+	// единственным способом снять фильтр на старых ссылках из индекса
+	pushIds('atc', atcGroupIds, (id) =>
+		opts?.atcGroups?.find((option: any) => option.value === id)?.label,
+	);
+	pushIds('sub', substanceIds, (id) =>
+		opts?.substances?.find((option: any) => option.value === id)?.label,
+	);
+	pushIds('form', pharmaFormIds, (id) =>
+		opts?.pharmaForms?.find((option: any) => option.value === id)?.label,
+	);
+	pushIds('mfg', manufacturerIds, (id) =>
+		opts?.manufacturers?.find((option: any) => option.value === id)?.label,
+	);
+
+	return chips;
+});
+
+const resetFilters = () => {
+	name.value = '';
+	dispensingModeIds.value = [];
+	medicineCategoryIds.value = [];
+	atcClassCodes.value = [];
+	atcGroupIds.value = [];
+	substanceIds.value = [];
+	pharmaFormIds.value = [];
+	manufacturerIds.value = [];
+};
+
 const pageTitleWithCount = computed(() => {
 	return `${pageTitle.value} (${medicinesList.value?.totalCount || 0})`;
 });
@@ -166,6 +291,8 @@ const isFiltered = computed(() => {
 	return (
 		!!name.value ||
 		dispensingModeIds.value.length > 0 ||
+		medicineCategoryIds.value.length > 0 ||
+		atcClassCodes.value.length > 0 ||
 		atcGroupIds.value.length > 0 ||
 		substanceIds.value.length > 0 ||
 		pharmaFormIds.value.length > 0 ||
@@ -243,6 +370,10 @@ watchEffect(() => {
 		detailsRouteName="medicines-medicineSlug"
 		detailsParamName="medicineSlug"
 	>
+		<template #active-filters>
+			<FilterActiveFilters :items="activeFilters" @reset="resetFilters" />
+		</template>
+
 		<template #header-actions>
 			<FilterMedicineSortSelect v-model:value="sort" />
 		</template>
@@ -253,11 +384,12 @@ watchEffect(() => {
 				:label="t('MedicineName')"
 				:placeholder="t('InsertMedicineName')"
 			/>
+			<FilterMedicineCategorySelect v-model:value="medicineCategoryIds" />
 			<FilterMedicineDispensingModeSelect v-model:value="dispensingModeIds" />
-			<FilterMedicineAtcGroupSelect
-				v-model:value="atcGroupIds"
-				:items="filterOptions?.atcGroups || []"
-			/>
+			<!-- ATC level-1 («Respiratory system») из панели убран: класс ниже строго
+			     его уточняет и назван человеческими словами. Параметр
+			     `?atcGroupIds=` и старые проиндексированные URL продолжают работать -->
+			<FilterMedicineAtcClassSelect v-model:value="atcClassCodes" />
 			<FilterMedicineSubstanceSelect
 				v-model:value="substanceIds"
 				:items="filterOptions?.substances || []"
@@ -269,6 +401,14 @@ watchEffect(() => {
 			<FilterMedicineManufacturerSelect
 				v-model:value="manufacturerIds"
 				:items="filterOptions?.manufacturers || []"
+			/>
+		</template>
+
+		<!-- Фасет одного вещества = страница вещества: под списком его справка -->
+		<template #tips v-if="medicinesList?.substanceReference">
+			<MedicineSubstanceReference
+				class="substance-reference-block"
+				:substances="[medicinesList.substanceReference]"
 			/>
 		</template>
 
@@ -307,6 +447,13 @@ watchEffect(() => {
 </template>
 
 <style lang="less" scoped>
+/* Справка о веществе идёт под списком — отделяем её от последней карточки */
+.substance-reference-block {
+	margin-top: var(--spacing-xl);
+	padding-top: var(--spacing-lg);
+	border-top: 1px solid var(--color-border-secondary);
+}
+
 .medicine-card {
 	display: flex;
 	gap: var(--spacing-md);

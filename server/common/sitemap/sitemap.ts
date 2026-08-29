@@ -21,6 +21,8 @@ import {
 } from './filters/clinics';
 import { getClinicSubpageSlugs } from './filters/clinic-subpages';
 import { getMedicineList } from '~/server/api/medicines/list';
+import { DispensingMode } from '~/enums/dispensing-mode';
+import { MEDICINE_CATEGORY_IDS } from '~/enums/medicine-category';
 import { getSitemapFilters as getMedicineSitemapFilters } from './filters/medicines';
 import { getInsuranceCompanyList } from './filters/insurance-companies';
 import { getMedicationSlugs } from './filters/medications';
@@ -233,8 +235,22 @@ export async function generateSitemapPage() {
 		menuItemToLinks(`${SITE_URL}/medicines/${medicine.slug}`, {}, true),
 	);
 
-	const medicineAtcGroupLinks: SitemapLink[] = medicineFilters.atcGroupIds.map(
-		(atcGroupId) => menuItemToLinks('medicines', { atcGroupIds: atcGroupId }),
+	// Публикуем ТОЛЬКО потребительские категории: `?atcGroupIds=` даёт почти те же
+	// наборы лекарств другими словами, и два конкурирующих набора фасетных URL в
+	// индексе не нужны. Сам фильтр и старые URL остаются рабочими — их просто не
+	// рекламируем (см. prd/medicines-consumer-content/PLAN.md, трек B).
+	const medicineCategoryLinks: SitemapLink[] = MEDICINE_CATEGORY_IDS.map(
+		(categoryId) =>
+			menuItemToLinks('medicines', { medicineCategoryIds: categoryId }),
+	);
+
+	// «Что из этой категории можно купить без рецепта» — сильный отдельный интент
+	const medicineCategoryOtcLinks: SitemapLink[] = MEDICINE_CATEGORY_IDS.map(
+		(categoryId) =>
+			menuItemToLinks('medicines', {
+				medicineCategoryIds: categoryId,
+				dispensingModeIds: DispensingMode.OTC,
+			}),
 	);
 
 	const medicineSubstanceAtcLinks: SitemapLink[] =
@@ -352,7 +368,8 @@ export async function generateSitemapPage() {
 		// Medicines: страницы + ATC группа + вещество+ATC
 		medicinesPageLink,
 		...medicineLinks,
-		...medicineAtcGroupLinks,
+		...medicineCategoryLinks,
+		...medicineCategoryOtcLinks,
 		...medicineSubstanceAtcLinks,
 		// Medications: листинг + карточки лекарств с ценами в клиниках
 		medicationsPageLink,

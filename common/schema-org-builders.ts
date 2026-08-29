@@ -1426,7 +1426,11 @@ export function buildMedicineSchema(options: {
 	dispensingModeId?: number | null;
 	atcCode?: string | null;
 	isActive?: boolean;
-	detailUrl?: string | null;
+	// `sameAs` на карточку cinmed.me сознательно НЕ отдаём: id в их URL
+	// (`?id=567`) не стабилен — сверка 2026-08-28 показала, что все 8 проверенных
+	// id из нашего скрейпа (апрель 2026) на живом сайте открывают другие
+	// препараты. Неверный `sameAs` заявляет поисковику тождество сущностей,
+	// поэтому лучше никакого. Ссылка в UI ведёт на корень cinmed.me.
 }): SchemaOrg[] {
 	const medicineUrl = `${options.siteUrl}/medicines/${options.slug}`;
 
@@ -1485,10 +1489,6 @@ export function buildMedicineSchema(options: {
 			? 'ActivelyMarketed'
 			: 'WithdrawnFromMarket';
 	}
-	if (options.detailUrl) {
-		medicineSchema.sameAs = options.detailUrl;
-	}
-
 	const webPageSchema = buildWebPageSchema({
 		url: options.pageUrl || medicineUrl,
 		locale: options.locale,

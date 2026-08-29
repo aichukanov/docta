@@ -8,6 +8,7 @@
 			:ariaLabel="t('FilterSubstance')"
 			:noDataText="t('NoMedicinesFound')"
 			multiple
+			wrapItems
 		/>
 	</FilterWrapper>
 </template>

@@ -8,6 +8,8 @@ import {
 	validateClinicTypeIds,
 	validateCategoryIds,
 	validateServiceCategoryIds,
+	validateMedicineCategoryIds,
+	validateAtcClassCodes,
 	validateNonNegativeIntegerArray,
 	validateMinRating,
 } from '~/common/validation';
@@ -30,6 +32,14 @@ interface FilterState {
 	clinicTypeIds: number[];
 	clinicIds: number[];
 	dispensingModeIds: number[];
+	// Потребительские категории лекарств (enums/medicine-category.ts). Отдельный
+	// ключ, а не общий categoryIds: тот занят категориями анализов и валидируется
+	// по своему enum'у для всех namespace сразу.
+	medicineCategoryIds: number[];
+	// Фармакологический класс = ATC level-2 («R06» — все антигистаминные).
+	// Строки, а не id: код ВОЗ и есть натуральный ключ, свой enum тут был бы
+	// лишним слоем, который пришлось бы синхронизировать с классификацией.
+	atcClassCodes: string[];
 	atcGroupIds: number[];
 	substanceIds: number[];
 	pharmaFormIds: number[];
@@ -53,6 +63,8 @@ const createInitialState = (): FilterState => ({
 	clinicTypeIds: [],
 	clinicIds: [],
 	dispensingModeIds: [],
+	medicineCategoryIds: [],
+	atcClassCodes: [],
 	atcGroupIds: [],
 	substanceIds: [],
 	pharmaFormIds: [],
@@ -93,6 +105,8 @@ export const useFiltersStore = defineStore('filters', () => {
 				name: s.name || undefined,
 				clinicIds: s.clinicIds,
 				dispensingModeIds: s.dispensingModeIds,
+				medicineCategoryIds: s.medicineCategoryIds,
+				atcClassCodes: s.atcClassCodes,
 				atcGroupIds: s.atcGroupIds,
 				substanceIds: s.substanceIds,
 				pharmaFormIds: s.pharmaFormIds,
@@ -181,6 +195,30 @@ export const useFiltersStore = defineStore('filters', () => {
 		setIfValid('dispensingModeIds', (ids) =>
 			validateNonNegativeIntegerArray(ids.map(String)),
 		);
+		setIfValid('medicineCategoryIds', (ids) =>
+			validateMedicineCategoryIds(
+				{ medicineCategoryIds: ids },
+				`filters-store:${ns}`,
+			),
+		);
+		// Единственный строковый фасет — парсится отдельно от числовых
+		const atcClassRaw = query.atcClassCodes;
+		const atcClassParsed = atcClassRaw
+			? (Array.isArray(atcClassRaw) ? atcClassRaw : [atcClassRaw]).map(String)
+			: null;
+		const isAtcClassValid =
+			atcClassParsed != null &&
+			validateAtcClassCodes(
+				{ atcClassCodes: atcClassParsed },
+				`filters-store:${ns}`,
+			);
+		if (!isAtcClassValid && atcClassRaw != null) {
+			invalid.add('atcClassCodes');
+		}
+		s.atcClassCodes = isAtcClassValid
+			? atcClassParsed.map((code) => code.toUpperCase())
+			: [];
+
 		setIfValid('atcGroupIds', (ids) =>
 			validateNonNegativeIntegerArray(ids.map(String)),
 		);

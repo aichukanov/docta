@@ -4,6 +4,8 @@ import { DoctorSpecialty } from '~/enums/specialty';
 import { CityId } from '~/enums/cities';
 import { LabTestCategory } from '~/enums/labtest-category';
 import { MedicalServiceCategory } from '~/enums/medical-service-category';
+import { isAtcClassCode } from '~/enums/atc-class';
+import { isMedicineCategory } from '~/enums/medicine-category';
 import { ClinicType } from '~/enums/clinic-type';
 
 function showError(from: string, message: string) {
@@ -205,6 +207,33 @@ export function validateCategoryIds(
 		)
 	) {
 		showError(from, 'Invalid lab test category: ' + categoryIds);
+		return false;
+	}
+
+	return true;
+}
+
+export function validateAtcClassCodes(
+	{ atcClassCodes }: { atcClassCodes?: unknown },
+	from: string,
+) {
+	if (!Array.isArray(atcClassCodes) || !atcClassCodes.every(isAtcClassCode)) {
+		showError(from, 'Invalid ATC class code: ' + atcClassCodes);
+		return false;
+	}
+
+	return true;
+}
+
+export function validateMedicineCategoryIds(
+	{ medicineCategoryIds }: { medicineCategoryIds?: unknown },
+	from: string,
+) {
+	if (
+		!Array.isArray(medicineCategoryIds) ||
+		medicineCategoryIds.some((category) => !isMedicineCategory(Number(category)))
+	) {
+		showError(from, 'Invalid medicine category: ' + medicineCategoryIds);
 		return false;
 	}
 

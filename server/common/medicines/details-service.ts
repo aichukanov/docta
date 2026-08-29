@@ -11,9 +11,11 @@ import {
 	type Conn,
 	localizedField,
 	localizedNameSql,
+	localizedReferenceSql,
 	mapPack,
 	nameFieldFor,
 	placeholders,
+	referenceLocaleSuffix,
 	withConnection,
 } from './helpers';
 import { matchSubstanceSet } from './substance-match';
@@ -22,7 +24,16 @@ const MARKET_ORDER = ['RU', 'UA', 'TR', 'DE', 'PL', 'US'];
 const FOREIGN_TOP_N = 5;
 const ANALOG_LIMIT = 60;
 
-type SubstanceRow = { id: number; src: string; name: string; nameEn: string };
+type SubstanceRow = {
+	id: number;
+	src: string;
+	name: string;
+	nameEn: string;
+	// Справка из med_substance_reference_info (миграция 024); NULL, пока текста нет
+	refWhat: string | null;
+	refUsedFor: string | null;
+	refCaution: string | null;
+};
 interface PageMaps {
 	ids: number[];
 	idSet: Set<number>;
@@ -74,12 +85,18 @@ async function fetchSubstances(
 	conn: Conn,
 	medId: number,
 	nameField: string,
+	locale?: string,
 ): Promise<SubstanceRow[]> {
+	const suffix = referenceLocaleSuffix(locale);
 	const [rows] = await conn.execute(
 		`
-		SELECT s.id, s.name as src, s.${nameField} as name, s.name_en as nameEn
+		SELECT s.id, s.name as src, s.${nameField} as name, s.name_en as nameEn,
+			${localizedReferenceSql('sri', 'what', suffix)} as refWhat,
+			${localizedReferenceSql('sri', 'used_for', suffix)} as refUsedFor,
+			${localizedReferenceSql('sri', 'caution', suffix)} as refCaution
 		FROM med_medicine_substances mms
 		JOIN med_substances s ON s.id = mms.substance_id
+		LEFT JOIN med_substance_reference_info sri ON sri.substance_id = s.id
 		WHERE mms.medicine_id = ?
 	`,
 		[medId],
@@ -295,7 +312,18 @@ function assembleDetails(
 		dispensingModeId: med.dispensing_mode_id || null,
 		atcGroup: localizedField(med, 'atcGroup'),
 		atcGroupCode: med.atcGroupCode,
-		substances: substances.map((s) => ({ id: s.id, name: localizedName(s) })),
+		substances: substances.map((s) => ({
+			id: s.id,
+			name: localizedName(s),
+			reference:
+				s.refWhat || s.refUsedFor || s.refCaution
+					? {
+							what: s.refWhat || '',
+							usedFor: s.refUsedFor || '',
+							caution: s.refCaution || '',
+						}
+					: null,
+		})),
 		analogs,
 		foreignBrands,
 	};
@@ -309,7 +337,7 @@ export async function getMedicineDetails(
 	return withConnection(async (conn) => {
 		const med = await fetchMedicine(conn, slug, nameField);
 		if (!med) return null;
-		const substances = await fetchSubstances(conn, med.id, nameField);
+		const substances = await fetchSubstances(conn, med.id, nameField, locale);
 		const page: PageMaps = {
 			ids: substances.map((s) => Number(s.id)),
 			idSet: new Set(substances.map((s) => Number(s.id))),

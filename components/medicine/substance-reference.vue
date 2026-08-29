@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { capitalizeFirstLetter } from '~/common/string-utils';
 import type { MedicineSubstance } from '~/interfaces/medicine';
 
 const props = defineProps<{
@@ -6,6 +7,12 @@ const props = defineProps<{
 }>();
 
 const { t } = useI18n({ useScope: 'local' });
+const { locale } = useI18n({ useScope: 'global' });
+
+// В реестре МНН записаны строчными («бенфотиамин»), но здесь название работает
+// как подпись поля рядом с «Когда применяют» и «Важно знать», поэтому ведёт
+// себя так же — с заглавной. Локаль важна: в турецком i → İ.
+const substanceTitle = (name: string) => capitalizeFirstLetter(name, locale.value);
 
 const described = computed(() =>
 	(props.substances || []).filter((substance) => substance.reference?.what),
@@ -60,10 +67,14 @@ const hasDetails = computed(() =>
 				:key="substance.id"
 				class="substance-reference__item"
 			>
-				<p class="substance-reference__line">
-					<span class="substance-reference__name">{{ substance.name }}</span>
-					— {{ substance.reference?.what }}
-				</p>
+				<!-- Название — такая же подпись, как «Когда применяют» ниже: тире
+				     между строчным МНН и предложением с заглавной читалось криво -->
+				<dl class="substance-reference__table">
+					<div class="substance-reference__row">
+						<dt>{{ substanceTitle(substance.name) }}</dt>
+						<dd>{{ substance.reference?.what }}</dd>
+					</div>
+				</dl>
 				<!-- Скрываем классом, а не v-if: текст остаётся в SSR-DOM и индексируется -->
 				<dl
 					v-if="mode === 'lines'"
@@ -137,18 +148,6 @@ const hasDetails = computed(() =>
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-md);
-}
-
-.substance-reference__line {
-	margin: 0;
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
-	line-height: 1.5;
-}
-
-.substance-reference__name {
-	color: var(--color-text-primary);
-	font-weight: 600;
 }
 
 .substance-reference__disclaimer {

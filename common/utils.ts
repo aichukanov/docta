@@ -22,12 +22,42 @@ export function getLocalizedName<
 }
 
 /**
- * Нормализует строку для поиска по подстроке на клиенте: нижний регистр
- * без диакритики. Зеркалит поведение MySQL LIKE с utf8mb4_unicode_ci
- * (серверные списки), чтобы «musura» находило «Mušura».
+ * Буквы с перечёркиванием — самостоятельные кодовые точки, а не «буква plus
+ * диакритик», поэтому NFD их не разбирает и `\p{M}` не снимает. Поисковая
+ * коллация БД их складывает, значит клиент обязан складывать тот же набор.
+ *
+ * Набор синхронизирован с `SEARCH_COLLATION` (`server/common/search-collation.ts`,
+ * `utf8mb4_unicode_520_ci`) и сверен запросами к БД 2026-08-31. Намеренно НЕ
+ * входят `ß`→`ss`, `æ`→`ae`, `œ`→`oe`, турецкая `ı`→`i`: их коллация не
+ * складывает, и складывать их здесь значило бы находить/подсвечивать то, чего
+ * сервер не нашёл. Все пары 1:1 по длине — на этом держится карта индексов
+ * в `common/search-highlight.ts`.
+ */
+export const SEARCH_FOLDED_LETTERS: Readonly<Record<string, string>> = {
+	đ: 'd',
+	ł: 'l',
+	ø: 'o',
+	ð: 'd',
+	ħ: 'h',
+};
+
+const FOLDED_LETTERS_RE = new RegExp(
+	`[${Object.keys(SEARCH_FOLDED_LETTERS).join('')}]`,
+	'g',
+);
+
+/**
+ * Нормализует строку для поиска по подстроке на клиенте: нижний регистр,
+ * без диакритики, со складыванием перечёркнутых букв. Зеркалит поведение
+ * MySQL LIKE с поисковой коллацией, чтобы «musura» находило «Mušura»,
+ * а «odredivanje» — «Određivanje».
  */
 export function normalizeForSearch(value: string | null | undefined): string {
-	return (value || '').normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+	return (value || '')
+		.normalize('NFD')
+		.replace(/\p{M}/gu, '')
+		.toLowerCase()
+		.replace(FOLDED_LETTERS_RE, (char) => SEARCH_FOLDED_LETTERS[char]);
 }
 
 /**

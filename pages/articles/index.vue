@@ -13,6 +13,7 @@ import articlesI18n from '~/i18n/articles';
 import cityHealthcareI18n from '~/i18n/article-city-healthcare';
 import weekendMedicalHelpI18n from '~/i18n/article-weekend-medical-help';
 import articleUnavailableI18n from '~/i18n/article-medications-unavailable';
+import articleAllergyI18n from '~/i18n/article-allergy-medicines';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 
 const { t, locale } = useI18n({
@@ -22,6 +23,7 @@ const { t, locale } = useI18n({
 		cityHealthcareI18n,
 		weekendMedicalHelpI18n,
 		articleUnavailableI18n,
+		articleAllergyI18n,
 		breadcrumbI18n,
 	]),
 });
@@ -170,6 +172,17 @@ const articles = computed(() =>
 			meta: '',
 			link: {
 				path: '/articles/medications-not-available-in-montenegro',
+				query: getRegionalQuery(locale.value),
+			},
+		},
+		{
+			title: t('AlgTitle'),
+			description: t('AlgDescription'),
+			image: '/img/articles/allergy-medicines-in-montenegro.webp',
+			date: '2026-08-31',
+			meta: '',
+			link: {
+				path: '/articles/allergy-medicines-in-montenegro',
 				query: getRegionalQuery(locale.value),
 			},
 		},

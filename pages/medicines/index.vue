@@ -9,6 +9,7 @@ import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
 import { localizeStrength } from '~/common/strength-label';
 import { capitalizeFirstLetter } from '~/common/string-utils';
 import { buildPackagingLabel } from '~/common/packaging-label';
+import { medicineMatchHint } from '~/common/medicine-search-groups';
 import {
 	DEFAULT_MEDICINE_SORT,
 	normalizeMedicineSort,
@@ -26,6 +27,8 @@ import medicineCategoryI18n from '~/i18n/medicine-category';
 import dispensingModeI18n from '~/i18n/dispensing-mode';
 // packagingI18n нужен ради единиц pack_vol_* для localizeStrength
 import packagingI18n from '~/i18n/packaging';
+import searchMatchI18n from '~/i18n/search-match';
+import type { MedicineListItem } from '~/interfaces/medicine';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -36,6 +39,7 @@ const { t, locale } = useI18n({
 		medicineCategoryI18n,
 		dispensingModeI18n,
 		packagingI18n,
+		searchMatchI18n,
 	]),
 });
 
@@ -122,6 +126,11 @@ const { pending: isLoading, data: medicinesList } = await useFetch(
 // но 10 vs 20 таблеток
 const itemPackaging = (item: any) =>
 	buildPackagingLabel(item, t, locale.value, false);
+
+// Поиск по имени находит препарат и по зарубежному бренду-аналогу («супрастин»
+// → SYNOPEN). Без подписи такая карточка выглядит не относящейся к запросу.
+const itemMatchHint = (item: MedicineListItem) =>
+	medicineMatchHint(item.match, t);
 
 const getFilterLabel = (
 	items: { value: number; label: string }[],
@@ -235,17 +244,16 @@ const activeFilters = computed<
 	}
 
 	pushIds('dm', dispensingModeIds, (id) => t(`dm_${id}`));
-	pushIds('cat', medicineCategoryIds, (id) =>
-		categoryOptions.value.find((option) => option.value === id)?.label,
+	pushIds(
+		'cat',
+		medicineCategoryIds,
+		(id) => categoryOptions.value.find((option) => option.value === id)?.label,
 	);
 
 	for (const code of atcClassCodes.value) {
 		chips.push({
 			key: `class:${code}`,
-			label: capitalizeFirstLetter(
-				t(getAtcClassKeyByCode(code)),
-				locale.value,
-			),
+			label: capitalizeFirstLetter(t(getAtcClassKeyByCode(code)), locale.value),
 			remove: () => {
 				atcClassCodes.value = atcClassCodes.value.filter(
 					(value) => value !== code,
@@ -256,17 +264,27 @@ const activeFilters = computed<
 
 	// У ATC-группы своего контрола в панели больше нет — чип остаётся
 	// единственным способом снять фильтр на старых ссылках из индекса
-	pushIds('atc', atcGroupIds, (id) =>
-		opts?.atcGroups?.find((option: any) => option.value === id)?.label,
+	pushIds(
+		'atc',
+		atcGroupIds,
+		(id) => opts?.atcGroups?.find((option: any) => option.value === id)?.label,
 	);
-	pushIds('sub', substanceIds, (id) =>
-		opts?.substances?.find((option: any) => option.value === id)?.label,
+	pushIds(
+		'sub',
+		substanceIds,
+		(id) => opts?.substances?.find((option: any) => option.value === id)?.label,
 	);
-	pushIds('form', pharmaFormIds, (id) =>
-		opts?.pharmaForms?.find((option: any) => option.value === id)?.label,
+	pushIds(
+		'form',
+		pharmaFormIds,
+		(id) =>
+			opts?.pharmaForms?.find((option: any) => option.value === id)?.label,
 	);
-	pushIds('mfg', manufacturerIds, (id) =>
-		opts?.manufacturers?.find((option: any) => option.value === id)?.label,
+	pushIds(
+		'mfg',
+		manufacturerIds,
+		(id) =>
+			opts?.manufacturers?.find((option: any) => option.value === id)?.label,
 	);
 
 	return chips;
@@ -424,10 +442,18 @@ watchEffect(() => {
 					<MedicineFormIcon :formId="item.pharmaFormId" :size="24" />
 				</div>
 				<div class="medicine-card-content">
-					<div class="medicine-name">{{ item.name }}</div>
-					<div v-if="item.substances" class="medicine-substances">{{
-						item.substances
-					}}</div>
+					<div class="medicine-name">
+						<SearchHighlight :text="item.name" :query="name" />
+					</div>
+					<div v-if="item.substances" class="medicine-substances">
+						<SearchHighlight :text="item.substances" :query="name" />
+					</div>
+					<div v-if="itemMatchHint(item)" class="medicine-match">
+						<span class="medicine-match-label"
+							>{{ itemMatchHint(item)!.label }}:</span
+						>
+						<SearchHighlight :text="itemMatchHint(item)!.value" :query="name" />
+					</div>
 					<MedicineBadge :dispensingModeId="item.dispensingModeId" />
 					<div class="medicine-card-details">
 						<span v-if="item.pharmaForm">{{ item.pharmaForm }}</span>
@@ -502,6 +528,20 @@ watchEffect(() => {
 	color: var(--color-text-secondary);
 	margin-top: var(--spacing-xs);
 	font-style: italic;
+}
+
+/* Причина попадания в выдачу — сразу под составом, до технических полей */
+.medicine-match {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 var(--spacing-xs);
+	margin-top: var(--spacing-xs);
+	font-size: var(--font-size-sm);
+	color: var(--color-text-secondary);
+}
+
+.medicine-match-label {
+	color: var(--color-text-muted);
 }
 
 .medicine-card-details {

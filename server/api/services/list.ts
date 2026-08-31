@@ -14,6 +14,7 @@ import {
 	validateServiceCategoryIds,
 } from '~/common/validation';
 import { LIST_PAGE_SIZE, LIST_CARD_MAX_CLINICS } from '~/common/constants';
+import { foldedLike, foldedLikeAny } from '~/server/common/search-collation';
 
 export default defineEventHandler(async (event): Promise<ClinicServiceList> => {
 	try {
@@ -91,23 +92,35 @@ export async function getMedicalServiceList(
 			)}))`,
 		);
 	}
-	if (body.name && validateName(body, 'api/services/list')) {
+	// Поиск матчится и по синонимам (в т.ч. по названиям слитых услуг) —
+	// см. matchedSynonymsSelect ниже, он объясняет такое совпадение в карточке.
+	const nameSearchActive =
+		!!body.name && validateName(body, 'api/services/list');
+	if (nameSearchActive) {
 		const nameField = getLocalizedNameField(locale) || 'name_en';
 		const namePattern = `%${body.name}%`;
 		// Match against tariff codes too (e.g. "J09001", "A05Z") so users can
 		// search by FZOCG code. Codes are short alpha-numeric strings; we
 		// only enable the lookup when the query looks code-like, to avoid
 		// noise from short name fragments.
-		const trimmedName = body.name.trim();
+		const trimmedName = body.name!.trim();
 		const codeLike = /^[A-Z0-9]{2,8}$/i.test(trimmedName);
 		const tariffCodeClause = codeLike
 			? ` OR EXISTS (SELECT 1 FROM medical_service_tariffs t_search WHERE t_search.medical_service_id = ms.id AND t_search.code = ?)`
 			: '';
 		// Alternative wordings — including the names of services merged into
 		// this one, so a clinic's own phrasing keeps resolving after a merge.
-		const synonymsClause = ` OR EXISTS (SELECT 1 FROM medical_service_synonyms mss_f WHERE mss_f.medical_service_id = ms.id AND mss_f.another_name LIKE ?)`;
+		const synonymsClause = ` OR EXISTS (SELECT 1 FROM medical_service_synonyms mss_f WHERE mss_f.medical_service_id = ms.id AND ${foldedLike('mss_f.another_name')})`;
 		whereFilters.push(
-			`(ms.name_en LIKE ? OR ms.${nameField} LIKE ? OR ms.name_sr LIKE ? OR ms.name_sr_cyrl LIKE ? OR ms.name_ru LIKE ? OR ms.name_de LIKE ? OR ms.name_tr LIKE ?${synonymsClause}${tariffCodeClause})`,
+			`(${foldedLikeAny([
+				'ms.name_en',
+				`ms.${nameField}`,
+				'ms.name_sr',
+				'ms.name_sr_cyrl',
+				'ms.name_ru',
+				'ms.name_de',
+				'ms.name_tr',
+			])}${synonymsClause}${tariffCodeClause})`,
 		);
 		queryParams.push(
 			namePattern,
@@ -162,6 +175,17 @@ export async function getMedicalServiceList(
 		? `(SELECT cms_sort.price FROM clinic_medical_services cms_sort WHERE cms_sort.medical_service_id = ms.id AND cms_sort.clinic_id = ? AND cms_sort.price IS NOT NULL ORDER BY cms_sort.price ASC LIMIT 1) as sortPrice,`
 		: '';
 	const sortPriceParams: number[] = usePriceSort ? [singleClinicId!] : [];
+
+	// Совпавшие альтернативные названия — подпись «почему это в выдаче»:
+	// карточка показывает только каноническое имя, и связь с запросом теряется.
+	const matchedSynonymsSelect = nameSearchActive
+		? `(SELECT GROUP_CONCAT(DISTINCT mss_m.another_name ORDER BY CHAR_LENGTH(mss_m.another_name) ASC SEPARATOR '|')
+			FROM medical_service_synonyms mss_m
+			WHERE mss_m.medical_service_id = ms.id AND ${foldedLike('mss_m.another_name')}) as matchedSynonyms,`
+		: '';
+	const matchedSynonymsParams: string[] = nameSearchActive
+		? [`%${body.name}%`]
+		: [];
 	let orderByClause =
 		'ms.sort_order IS NULL, ms.sort_order ASC, ms.rank_score DESC, ms.name_en ASC';
 	if (body.sort === 'name-asc') {
@@ -188,6 +212,7 @@ export async function getMedicalServiceList(
 			ms.name_tr,
 			ms.sort_order,
 			${sortPriceSelect}
+			${matchedSynonymsSelect}
 			(SELECT COALESCE(GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${rankOrder}), '') FROM clinic_medical_services cms JOIN clinics c_rank ON c_rank.id = cms.clinic_id AND ${clinicIsPublicSql('c_rank')} WHERE cms.medical_service_id = ms.id${cityFilterInSelect}) as clinicIds,
 			(SELECT GROUP_CONCAT(
 				DISTINCT CONCAT(cms.clinic_id, ':', IFNULL(cms.price, ''), ':', IFNULL(cms.price_min, ''), ':', IFNULL(cms.price_max, ''), ':', COALESCE(cms.code, ''), ':', cms.is_price_outdated)
@@ -212,6 +237,7 @@ export async function getMedicalServiceList(
 	}
 	const [medicalServiceRows] = await connection.execute(medicalServicesQuery, [
 		...sortPriceParams,
+		...matchedSynonymsParams,
 		...selectCityParams,
 		...queryParams,
 	]);
@@ -255,6 +281,9 @@ export async function getMedicalServiceList(
 			categoryIds: row.categoryIds
 				? row.categoryIds.split(',').map(Number)
 				: [],
+			matchedSynonyms: row.matchedSynonyms
+				? String(row.matchedSynonyms).split('|').filter(Boolean)
+				: undefined,
 		};
 	});
 

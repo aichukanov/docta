@@ -152,6 +152,11 @@ export interface ClinicServiceWithPrices extends ClinicServiceItem {
 	// Врачи по клиникам — только на детальной странице услуги
 	// (/services/[serviceSlug]); анализы (lab_tests) не заполняются, см. PRD.
 	clinicDoctors?: ClinicDoctorsByClinicId;
+	/**
+	 * Альтернативные названия, совпавшие с текстовым запросом — подпись
+	 * «почему это в выдаче». Заполняется только при поиске по `name`.
+	 */
+	matchedSynonyms?: string[];
 }
 
 export interface LabTestItem extends ClinicServiceWithPrices {

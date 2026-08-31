@@ -103,6 +103,13 @@ const pharmaciesArticleLink = computed(() => ({
 	query: getRegionalQuery(locale.value),
 }));
 
+// Аллергия разобрана отдельной статьёй: цетиризина в реестре нет, и весь
+// разбор замен живёт там, а не здесь (иначе один и тот же список в двух местах).
+const allergyArticleLink = computed(() => ({
+	path: '/articles/allergy-medicines-in-montenegro',
+	query: getRegionalQuery(locale.value),
+}));
+
 // Секции статьи: id → ключи заголовков для TOC и разметки
 const SECTION_IDS = [
 	'why',
@@ -204,7 +211,12 @@ const { breadcrumbItems } = useArticlePageSeo({
 					}}<NuxtLink :to="flentyLink">{{
 						t('UnaGapsAntihistaminesFlenty')
 					}}</NuxtLink
-					>{{ t('UnaGapsAntihistaminesTail') }}</li
+					>{{ t('UnaGapsAntihistaminesTail')
+					}}{{ t('UnaGapsAntihistaminesMoreA')
+					}}<NuxtLink :to="allergyArticleLink">{{
+						t('UnaGapsAntihistaminesMoreLink')
+					}}</NuxtLink
+					>{{ t('UnaGapsAntihistaminesMoreEnd') }}</li
 				>
 				<li>{{ t('UnaGapsRehydration') }}</li>
 				<li

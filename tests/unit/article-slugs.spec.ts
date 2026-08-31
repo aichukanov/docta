@@ -2,7 +2,9 @@ import { test, expect } from '@playwright/test';
 import { readdirSync, readFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { ARTICLE_SLUGS } from '../../common/articles';
+import { ARTICLE_SEARCH, ARTICLE_SLUGS } from '../../common/articles';
+import { locales } from '../../composables/use-locale';
+import articleSearchI18n from '../../i18n/article-search';
 
 // ARTICLE_SLUGS кормит sitemap. Раньше этот список был захардкожен в
 // sitemap.ts двумя слагами при 17 статьях, и расхождение ничем не проявлялось:
@@ -42,5 +44,59 @@ test.describe('ARTICLE_SLUGS', () => {
 		});
 
 		expect(missing).toEqual([]);
+	});
+});
+
+// ARTICLE_SEARCH кормит группу «Статьи» в глобальном поиске. Разойтись он
+// может так же молча, как когда-то ARTICLE_SLUGS с sitemap: добавил статью —
+// она просто не находится, и узнать об этом можно только случайно.
+test.describe('ARTICLE_SEARCH', () => {
+	test('покрывает все статьи из ARTICLE_SLUGS', () => {
+		const searched = ARTICLE_SEARCH.map((entry) => entry.slug).sort();
+		expect(searched).toEqual([...ARTICLE_SLUGS].sort());
+	});
+
+	test('не содержит дублей слагов и ключей ярлыков', () => {
+		const slugs = ARTICLE_SEARCH.map((entry) => entry.slug);
+		const labelKeys = ARTICLE_SEARCH.map((entry) => entry.labelKey);
+		expect(new Set(slugs).size).toBe(slugs.length);
+		expect(new Set(labelKeys).size).toBe(labelKeys.length);
+	});
+
+	test('у каждой статьи есть ярлык во всех локалях', () => {
+		const messages = articleSearchI18n.messages as Record<
+			string,
+			Record<string, string>
+		>;
+		const missing: string[] = [];
+		for (const locale of locales) {
+			for (const { labelKey } of ARTICLE_SEARCH) {
+				if (!messages[locale]?.[labelKey]) {
+					missing.push(`${locale}/${labelKey}`);
+				}
+			}
+		}
+		expect(missing).toEqual([]);
+	});
+
+	test('ключевые слова непустые и без повторов внутри статьи', () => {
+		const problems: string[] = [];
+		for (const { slug, keywords } of ARTICLE_SEARCH) {
+			if (!keywords.length) problems.push(`${slug}: пустой список`);
+			const normalized = keywords.map((word) => word.trim().toLowerCase());
+			if (new Set(normalized).size !== normalized.length) {
+				problems.push(`${slug}: повторы`);
+			}
+			if (normalized.some((word) => word.length < 3)) {
+				// Короткое слово матчится подстрокой почти на всё и выносит
+				// статью в выдачу по любому запросу. Исключение — «124»,
+				// номер скорой: его ищут именно так.
+				const short = normalized.filter(
+					(word) => word.length < 3 && word !== '124',
+				);
+				if (short.length) problems.push(`${slug}: слишком коротко ${short}`);
+			}
+		}
+		expect(problems).toEqual([]);
 	});
 });

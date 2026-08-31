@@ -2,11 +2,47 @@
 import { debounce } from 'lodash-es';
 import { getRegionalQuery } from '~/common/url-utils';
 import { getLocalizedName, normalizeForSearch } from '~/common/utils';
+import { selectForm } from '~/common/intl';
+import { localizeStrength } from '~/common/strength-label';
+import { buildPackagingLabel } from '~/common/packaging-label';
+import {
+	groupMedicines,
+	medicineMatchHint,
+	type MedicineGroup,
+} from '~/common/medicine-search-groups';
+import { ARTICLE_SEARCH } from '~/common/articles';
 import { DoctorSpecialty } from '~/enums/specialty';
 import specialtyI18n from '~/i18n/specialty';
+import cityI18n from '~/i18n/city';
+import packagingI18n from '~/i18n/packaging';
+import clinicCommonI18n from '~/i18n/clinic-common';
+import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
+import labtestCategoryI18n from '~/i18n/labtest-category';
+import articleSearchI18n from '~/i18n/article-search';
+import searchMatchI18n from '~/i18n/search-match';
 import { combineI18nMessages } from '~/i18n/utils';
-import type { ClinicServiceWithPrices, LabTestItem } from '~/interfaces/clinic';
+import type {
+	ClinicPrice,
+	ClinicServiceWithPrices,
+	LabTestItem,
+} from '~/interfaces/clinic';
+import type { MedicineListItem } from '~/interfaces/medicine';
 import type { DoctorData } from '~/interfaces/doctor';
+
+// Сколько строк показываем в каждой группе выдачи.
+const SHOWN_PER_GROUP = 5;
+// Лекарства запрашиваем с запасом: записи одного названия сводятся в одну
+// строку (фасовки реестра), и без запаса пять групп могли не набраться.
+const MEDICINE_FETCH_SIZE = 24;
+// Сколько ярлыков-вариантов показываем под строкой лекарства до «все варианты».
+const SHOWN_VARIANTS = 3;
+// Уточнений (клиника, город) в строке врача — больше не влезает в ширину.
+const SHOWN_DOCTOR_CLINICS = 2;
+const SHOWN_CATEGORIES = 2;
+// С какой длины запроса матчим статьи по невидимым ключевым словам. На одной
+// букве по ним совпадает почти всё, и строка появлялась без объяснимой причины;
+// ярлык статьи виден, поэтому по нему ищем с первого символа.
+const MIN_KEYWORD_QUERY_LENGTH = 3;
 
 const globalSearchI18n = {
 	messages: {
@@ -25,6 +61,9 @@ const globalSearchI18n = {
 			MoreMedicalServices: 'More services ({count})',
 			MoreMedications: 'More medications ({count})',
 			MoreLabTests: 'More tests ({count})',
+			SpecialtyDoctors: 'Doctors of this specialty',
+			ClinicsUnit: 'clinic; clinics',
+			AllVariants: 'All variants ({count})',
 		},
 		'ru': {
 			SearchPlaceholder: 'Поиск врачей, клиник, лекарств, анализов',
@@ -41,6 +80,9 @@ const globalSearchI18n = {
 			MoreMedicalServices: 'Ещё услуги ({count})',
 			MoreMedications: 'Ещё лекарства ({count})',
 			MoreLabTests: 'Ещё анализы ({count})',
+			SpecialtyDoctors: 'Врачи этой специальности',
+			ClinicsUnit: 'клиника; клиники; клиник',
+			AllVariants: 'Все варианты ({count})',
 		},
 		'sr': {
 			SearchPlaceholder: 'Pretraga ljekara, klinika, lijekova, analiza',
@@ -57,6 +99,9 @@ const globalSearchI18n = {
 			MoreMedicalServices: 'Još usluga ({count})',
 			MoreMedications: 'Još lijekova ({count})',
 			MoreLabTests: 'Još analiza ({count})',
+			SpecialtyDoctors: 'Ljekari ove specijalnosti',
+			ClinicsUnit: 'klinika; klinike; klinika',
+			AllVariants: 'Sve varijante ({count})',
 		},
 		'sr-cyrl': {
 			SearchPlaceholder: 'Претрага љекара, клиника, лијекова, анализа',
@@ -73,6 +118,9 @@ const globalSearchI18n = {
 			MoreMedicalServices: 'Још услуга ({count})',
 			MoreMedications: 'Још лијекова ({count})',
 			MoreLabTests: 'Још анализа ({count})',
+			SpecialtyDoctors: 'Љекари ове специјалности',
+			ClinicsUnit: 'клиника; клинике; клиника',
+			AllVariants: 'Све варијанте ({count})',
 		},
 		'de': {
 			SearchPlaceholder: 'Suche nach Ärzten, Kliniken, Medikamenten, Tests',
@@ -89,6 +137,9 @@ const globalSearchI18n = {
 			MoreMedicalServices: 'Mehr Leistungen ({count})',
 			MoreMedications: 'Mehr Medikamente ({count})',
 			MoreLabTests: 'Mehr Tests ({count})',
+			SpecialtyDoctors: 'Ärzte dieses Fachgebiets',
+			ClinicsUnit: 'Klinik; Kliniken',
+			AllVariants: 'Alle Varianten ({count})',
 		},
 		'tr': {
 			SearchPlaceholder: 'Doktor, klinik, ilaç, test ara',
@@ -105,13 +156,27 @@ const globalSearchI18n = {
 			MoreMedicalServices: 'Daha fazla hizmet ({count})',
 			MoreMedications: 'Daha fazla ilaç ({count})',
 			MoreLabTests: 'Daha fazla test ({count})',
+			SpecialtyDoctors: 'Bu uzmanlıktaki doktorlar',
+			ClinicsUnit: 'klinik',
+			AllVariants: 'Tüm çeşitler ({count})',
 		},
 	},
 };
 
-const { t, locale } = useI18n({
+const { t, n, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([specialtyI18n, globalSearchI18n]),
+	// globalSearchI18n последним: его ключи должны выигрывать у справочников
+	messages: combineI18nMessages([
+		specialtyI18n,
+		cityI18n,
+		packagingI18n,
+		clinicCommonI18n,
+		medicalServiceCategoryI18n,
+		labtestCategoryI18n,
+		articleSearchI18n,
+		searchMatchI18n,
+		globalSearchI18n,
+	]),
 });
 
 const searchQuery = ref('');
@@ -124,35 +189,54 @@ const inputRef = ref<HTMLInputElement | null>(null);
 const clinicsStore = useClinicsStore();
 clinicsStore.fetchClinics();
 
-// Полные результаты поиска
+// Результаты поиска: серверные категории отдают страницу и общее число,
+// клиентские (специальности, клиники) фильтруются целиком.
 const allFilteredSpecialties = ref<{ id: number; name: string }[]>([]);
-const allDoctors = ref<DoctorData[]>([]);
+// Статьи: ярлык, путь и слово, по которому нашлось (для подписи «упоминается»)
+const allFilteredArticles = ref<
+	{ slug: string; label: string; keyword: string | null }[]
+>([]);
 const allFilteredClinics = ref<{ id: number; slug: string; name: string }[]>(
 	[],
 );
-const allMedicalServices = ref<ClinicServiceWithPrices[]>([]);
-const allMedications = ref<{ id: number; slug: string; name: string }[]>([]);
-const allLabTests = ref<LabTestItem[]>([]);
+const doctors = ref<DoctorData[]>([]);
+const doctorsTotal = ref(0);
+const medicalServices = ref<ClinicServiceWithPrices[]>([]);
+const medicalServicesTotal = ref(0);
+const medicines = ref<MedicineListItem[]>([]);
+const medicinesTotal = ref(0);
+const labTests = ref<LabTestItem[]>([]);
+const labTestsTotal = ref(0);
 
-// Текущий поисковый запрос для ссылок
+// Текущий поисковый запрос для ссылок и подсветки совпадений
 const currentQuery = ref('');
 
-// Отображаемые результаты (первые 5)
 const shownSpecialties = computed(() =>
-	allFilteredSpecialties.value.slice(0, 5),
+	allFilteredSpecialties.value.slice(0, SHOWN_PER_GROUP),
 );
-const shownDoctors = computed(() => allDoctors.value.slice(0, 5));
-const shownClinics = computed(() => allFilteredClinics.value.slice(0, 5));
+const shownClinics = computed(() =>
+	allFilteredClinics.value.slice(0, SHOWN_PER_GROUP),
+);
+const shownArticles = computed(() =>
+	allFilteredArticles.value.slice(0, SHOWN_PER_GROUP),
+);
+const shownDoctors = computed(() => doctors.value.slice(0, SHOWN_PER_GROUP));
 const shownMedicalServices = computed(() =>
-	allMedicalServices.value
-		.slice(0, 5)
-		.map((s) => ({ id: s.id, slug: s.slug, name: s.name })),
+	medicalServices.value.slice(0, SHOWN_PER_GROUP),
 );
-const shownMedications = computed(() => allMedications.value.slice(0, 5));
-const shownLabTests = computed(() =>
-	allLabTests.value
-		.slice(0, 5)
-		.map((lt) => ({ id: lt.id, slug: lt.slug, name: lt.name })),
+const shownLabTests = computed(() => labTests.value.slice(0, SHOWN_PER_GROUP));
+
+// Фасовки одного названия — одной строкой (см. common/medicine-search-groups.ts)
+const shownMedicineGroups = computed(() =>
+	groupMedicines(medicines.value, t, locale.value).slice(0, SHOWN_PER_GROUP),
+);
+// Показанные группы покрывают столько записей реестра — с этим и сравниваем
+// общее число, иначе ссылка «ещё» появлялась бы при полностью выведенной выдаче
+const shownMedicineItems = computed(() =>
+	shownMedicineGroups.value.reduce(
+		(sum, group) => sum + group.variants.length,
+		0,
+	),
 );
 
 // Все специальности с локализованными названиями
@@ -202,6 +286,50 @@ function filterClinics(query: string) {
 		}));
 }
 
+// Статьи ищем по короткому ярлыку и по ключевым словам (common/articles.ts).
+// Ключевые слова закрывают то, чего в ярлыке нет: «Zyrtec» → статья о
+// лекарствах, которых в Черногории не найти. Без этого поиск по такому бренду
+// отдавал пустую выдачу — сопоставить его с реестром нечем, вещества
+// (цетиризина) в Черногории нет вообще.
+function filterArticles(query: string) {
+	if (!query.trim()) {
+		allFilteredArticles.value = [];
+		return;
+	}
+	const normalizedQuery = normalizeForSearch(query.trim());
+	const matchKeywords = normalizedQuery.length >= MIN_KEYWORD_QUERY_LENGTH;
+	allFilteredArticles.value = ARTICLE_SEARCH.flatMap((article) => {
+		const label = t(article.labelKey);
+		const byLabel = normalizeForSearch(label).includes(normalizedQuery);
+		// Подпись показывает слово, по которому нашлось, только если в ярлыке
+		// его не видно — иначе это повтор того же самого в двух строках
+		const keyword =
+			byLabel || !matchKeywords
+				? null
+				: article.keywords.find((word) =>
+						normalizeForSearch(word).includes(normalizedQuery),
+					) || null;
+		if (!byLabel && !keyword) return [];
+		return [{ slug: article.slug, label, keyword }];
+	})
+		// Совпадение в видимом ярлыке — выше совпадения по ключевому слову
+		.sort((a, b) => Number(!!a.keyword) - Number(!!b.keyword));
+}
+
+function resetResults() {
+	allFilteredSpecialties.value = [];
+	allFilteredArticles.value = [];
+	allFilteredClinics.value = [];
+	doctors.value = [];
+	doctorsTotal.value = 0;
+	medicalServices.value = [];
+	medicalServicesTotal.value = 0;
+	medicines.value = [];
+	medicinesTotal.value = 0;
+	labTests.value = [];
+	labTestsTotal.value = 0;
+}
+
 // AbortController для отмены предыдущих запросов
 let abortController: AbortController | null = null;
 
@@ -213,10 +341,7 @@ async function searchEntities(query: string) {
 	}
 
 	if (!query.trim()) {
-		allDoctors.value = [];
-		allMedicalServices.value = [];
-		allMedications.value = [];
-		allLabTests.value = [];
+		resetResults();
 		return;
 	}
 
@@ -227,27 +352,36 @@ async function searchEntities(query: string) {
 	isLoading.value = true;
 	currentQuery.value = query;
 
+	// Запрашиваем ровно страницу, а не всю выдачу: число совпадений приходит
+	// отдельным полем totalCount и идёт в подпись «ещё N».
+	const listBody = {
+		name: query,
+		locale: locale.value,
+		page: 1,
+		pageSize: SHOWN_PER_GROUP,
+	};
+
 	try {
-		const [doctorsRes, medicalServicesRes, medicationsRes, labTestsRes] =
+		const [doctorsRes, medicalServicesRes, medicinesRes, labTestsRes] =
 			await Promise.all([
 				$fetch('/api/doctors/list', {
 					method: 'POST',
-					body: { name: query, locale: locale.value },
+					body: listBody,
 					signal,
 				}),
 				$fetch('/api/services/list', {
 					method: 'POST',
-					body: { name: query, locale: locale.value },
+					body: listBody,
 					signal,
 				}),
 				$fetch('/api/medicines/list', {
 					method: 'POST',
-					body: { name: query, locale: locale.value },
+					body: { ...listBody, pageSize: MEDICINE_FETCH_SIZE },
 					signal,
 				}),
 				$fetch('/api/labtests/list', {
 					method: 'POST',
-					body: { name: query, locale: locale.value },
+					body: listBody,
 					signal,
 				}),
 			]);
@@ -257,10 +391,14 @@ async function searchEntities(query: string) {
 			return;
 		}
 
-		allDoctors.value = doctorsRes?.doctors || [];
-		allMedicalServices.value = medicalServicesRes?.items || [];
-		allMedications.value = medicationsRes?.items || [];
-		allLabTests.value = labTestsRes?.items || [];
+		doctors.value = doctorsRes?.doctors || [];
+		doctorsTotal.value = doctorsRes?.totalCount || 0;
+		medicalServices.value = medicalServicesRes?.items || [];
+		medicalServicesTotal.value = medicalServicesRes?.totalCount || 0;
+		medicines.value = medicinesRes?.items || [];
+		medicinesTotal.value = medicinesRes?.totalCount || 0;
+		labTests.value = labTestsRes?.items || [];
+		labTestsTotal.value = labTestsRes?.totalCount || 0;
 	} catch (error: any) {
 		// Игнорируем ошибки отмены (может быть AbortError напрямую или в cause)
 		if (
@@ -283,39 +421,151 @@ async function searchEntities(query: string) {
 const debouncedSearch = debounce((query: string) => {
 	filterSpecialties(query);
 	filterClinics(query);
+	filterArticles(query);
 	searchEntities(query);
 }, 300);
 
+// Порог запроса — 2 знака. Один знак бессмыслен: «а» даёт тысячи совпадений
+// и на каждое нажатие гоняет LIKE '%а%' по всем таблицам имён. Трёх знаков
+// было бы много — отрезало бы реальные запросы: анализы CK, LH, T3, T4
+// и двузначные коды FZOCG (10, 20, 30…), по которым поиск ищет намеренно.
+const MIN_QUERY_LENGTH = 2;
+
+const canSearch = (value: string) => value.trim().length >= MIN_QUERY_LENGTH;
+
 watch(searchQuery, (value) => {
-	if (value.trim()) {
+	if (canSearch(value)) {
 		isOpen.value = true;
 		searchPerformed.value = false;
 		debouncedSearch(value);
 	} else {
+		// Отменяем отложенный вызов от прошлого, более длинного запроса: без
+		// этого стирание «ab» → «a» сбрасывает результаты, а через мгновение
+		// прилетает ответ по «ab» и наполняет закрытый уже список.
+		debouncedSearch.cancel();
 		isOpen.value = false;
 		searchPerformed.value = false;
-		allFilteredSpecialties.value = [];
-		allDoctors.value = [];
-		allFilteredClinics.value = [];
-		allMedicalServices.value = [];
-		allMedications.value = [];
-		allLabTests.value = [];
+		resetResults();
 	}
 });
 
 // Проверка есть ли результаты
-const hasResults = computed(() => {
-	return (
+const hasResults = computed(
+	() =>
 		allFilteredSpecialties.value.length > 0 ||
-		allDoctors.value.length > 0 ||
 		allFilteredClinics.value.length > 0 ||
-		allMedicalServices.value.length > 0 ||
-		allMedications.value.length > 0 ||
-		allLabTests.value.length > 0
-	);
-});
+		allFilteredArticles.value.length > 0 ||
+		doctors.value.length > 0 ||
+		medicalServices.value.length > 0 ||
+		medicines.value.length > 0 ||
+		labTests.value.length > 0,
+);
 
-// Ссылки на страницы деталей
+// ---------- Подписи строк ----------
+
+const idsToArray = (ids: string | null | undefined): number[] =>
+	(ids || '')
+		.split(',')
+		.map(Number)
+		.filter((id) => Number.isInteger(id) && id > 0);
+
+const joinLabels = (labels: string[], limit: number): string | null =>
+	labels.slice(0, limit).join(', ') || null;
+
+const doctorSpecialties = (doctor: DoctorData): string | null =>
+	joinLabels(
+		idsToArray(doctor.specialtyIds).map((id) => t(`specialty_${id}`)),
+		SHOWN_CATEGORIES,
+	);
+
+// Клиники врача и их города — так видно, куда идти на приём
+const doctorPlaces = (doctor: DoctorData): string[] => {
+	const clinics = clinicsStore
+		.getClinicsByIds(doctor.clinicIds)
+		.slice(0, SHOWN_DOCTOR_CLINICS);
+	const cities = [
+		...new Set(clinics.map((clinic) => t(`city_${clinic.cityId}`))),
+	];
+	return [
+		...clinics.map((clinic) => getLocalizedName(clinic, locale.value)),
+		...cities,
+	];
+};
+
+const clinicById = (id: number) =>
+	clinicsStore.clinics.find((clinic) => clinic.id === id);
+
+const ratingLabel = (rating?: {
+	averageRating: number | null;
+	totalReviews: number;
+}): string | null =>
+	rating?.averageRating != null ? n(rating.averageRating) : null;
+
+// Минимальная цена по клиникам — в карточке услуги/анализа это ориентир «от»
+const priceFromLabel = (prices?: ClinicPrice[]): string | null => {
+	const values = (prices || [])
+		.map((price) => price.priceMin ?? price.price)
+		.filter((value): value is number => value != null);
+	if (!values.length) return null;
+	return t('PriceFrom', {
+		price: n(Math.min(...values), { style: 'currency', currency: 'EUR' }),
+	});
+};
+
+const clinicsCountLabel = (count?: number): string | null =>
+	count
+		? `${count} ${selectForm(t('ClinicsUnit'), locale.value, count)}`
+		: null;
+
+const serviceCategories = (item: ClinicServiceWithPrices): string | null =>
+	joinLabels(
+		(item.categoryIds || []).map((id) => t(`medical_service_category_${id}`)),
+		SHOWN_CATEGORIES,
+	);
+
+const labTestCategories = (item: LabTestItem): string | null =>
+	joinLabels(
+		(item.categoryIds || []).map((id) => t(`lab_test_category_${id}`)),
+		SHOWN_CATEGORIES,
+	);
+
+// Синонимы анализа приходят целиком (на текущей локали) — совпавший ищем сами;
+// у услуг это делает бэкенд (matchedSynonyms), там локаль синонима любая.
+const matchedSynonym = (
+	item: { matchedSynonyms?: string[]; synonyms?: string[] },
+	query: string,
+): string | null => {
+	if (item.matchedSynonyms?.length) return item.matchedSynonyms[0];
+	const normalizedQuery = normalizeForSearch(query);
+	return (
+		(item.synonyms || []).find((synonym) =>
+			normalizeForSearch(synonym).includes(normalizedQuery),
+		) || null
+	);
+};
+
+const medicineHint = (group: MedicineGroup) =>
+	medicineMatchHint(group.primary.match, t);
+
+// Форма/дозировка/упаковка — когда у названия единственная запись реестра;
+// у группы различия выносятся в ярлыки-варианты под строкой.
+const medicineMeta = (group: MedicineGroup): (string | null)[] => {
+	if (group.variants.length > 1) {
+		return [group.sharedForm];
+	}
+	const item = group.primary;
+	return [
+		item.pharmaForm,
+		item.strength ? localizeStrength(item.strength, t) : null,
+		buildPackagingLabel(item, t, locale.value, false) || null,
+	];
+};
+
+const shownVariants = (group: MedicineGroup) =>
+	group.variants.length > 1 ? group.variants.slice(0, SHOWN_VARIANTS) : [];
+
+// ---------- Ссылки ----------
+
 function getSpecialtyLink(specialtyId: number) {
 	return {
 		name: 'doctors',
@@ -347,11 +597,21 @@ function getMedicalServiceLink(slug: string) {
 	};
 }
 
-function getMedicationLink(slug: string) {
+function getMedicineLink(slug: string) {
 	return {
 		name: 'medicines-medicineSlug',
 		params: { medicineSlug: slug },
 		query: getRegionalQuery(locale.value),
+	};
+}
+
+// Все фасовки бренда живут на вкладке «Другие дозировки» карточки препарата —
+// отдельной зонтичной страницы для этого не нужно.
+function getMedicineVariantsLink(slug: string) {
+	return {
+		name: 'medicines-medicineSlug',
+		params: { medicineSlug: slug },
+		query: { tab: 'dosages', ...getRegionalQuery(locale.value) },
 	};
 }
 
@@ -363,41 +623,20 @@ function getLabTestLink(slug: string) {
 	};
 }
 
-// Ссылки на страницы списков с фильтром name (для кнопки "ещё")
-function getDoctorsListLink() {
+// Статьи — статичные страницы, у каждой свой файл в pages/articles,
+// поэтому ссылка по пути, а не по имени роута
+function getArticleLink(slug: string) {
 	return {
-		name: 'doctors',
-		query: { name: currentQuery.value, ...getRegionalQuery(locale.value) },
+		path: `/articles/${slug}`,
+		query: getRegionalQuery(locale.value),
 	};
 }
 
-function getClinicsListLink() {
-	return {
-		name: 'clinics',
-		query: { name: currentQuery.value, ...getRegionalQuery(locale.value) },
-	};
-}
-
-function getMedicalServicesListLink() {
-	return {
-		name: 'services',
-		query: { name: currentQuery.value, ...getRegionalQuery(locale.value) },
-	};
-}
-
-function getMedicationsListLink() {
-	return {
-		name: 'medicines',
-		query: { name: currentQuery.value, ...getRegionalQuery(locale.value) },
-	};
-}
-
-function getLabTestsListLink() {
-	return {
-		name: 'labtests',
-		query: { name: currentQuery.value, ...getRegionalQuery(locale.value) },
-	};
-}
+// Ссылки на страницы списков с фильтром name (для кнопки «ещё»)
+const listLink = (name: string) => ({
+	name,
+	query: { name: currentQuery.value, ...getRegionalQuery(locale.value) },
+});
 
 // Закрытие при клике вне компонента
 function handleClickOutside(event: MouseEvent) {
@@ -431,7 +670,7 @@ onUnmounted(() => {
 				type="text"
 				class="global-search__input"
 				:placeholder="t('SearchPlaceholder')"
-				@focus="searchQuery.trim() && (isOpen = true)"
+				@focus="canSearch(searchQuery) && (isOpen = true)"
 			/>
 			<div v-if="isLoading" class="global-search__spinner" />
 		</div>
@@ -447,151 +686,265 @@ onUnmounted(() => {
 
 				<template v-else>
 					<!-- Специальности -->
-					<div v-if="shownSpecialties.length > 0" class="global-search__group">
-						<div class="global-search__group-title">
-							<IconDoctor :size="16" />
-							{{ t('Specialties') }}
-						</div>
-						<NuxtLink
+					<SearchResultGroup
+						v-if="shownSpecialties.length"
+						:title="t('Specialties')"
+					>
+						<template #icon><IconDoctor :size="16" /></template>
+						<SearchResultRow
 							v-for="specialty in shownSpecialties"
 							:key="`specialty-${specialty.id}`"
 							:to="getSpecialtyLink(specialty.id)"
-							class="global-search__item"
-							@click="handleResultClick"
+							:title="specialty.name"
+							:query="currentQuery"
+							:meta="[t('SpecialtyDoctors')]"
+							@navigate="handleResultClick"
 						>
-							{{ specialty.name }}
-						</NuxtLink>
-					</div>
+							<template #icon><IconDoctor :size="20" /></template>
+						</SearchResultRow>
+					</SearchResultGroup>
 
 					<!-- Врачи -->
-					<div v-if="shownDoctors.length > 0" class="global-search__group">
-						<div class="global-search__group-title">
-							<IconDoctor :size="16" />
-							{{ t('Doctors') }}
-						</div>
-						<NuxtLink
+					<SearchResultGroup
+						v-if="shownDoctors.length"
+						:title="t('Doctors')"
+						:moreTo="
+							doctorsTotal > shownDoctors.length ? listLink('doctors') : null
+						"
+						:moreLabel="t('MoreDoctors', { count: doctorsTotal })"
+						@navigate="handleResultClick"
+					>
+						<template #icon><IconDoctor :size="16" /></template>
+						<SearchResultRow
 							v-for="doctor in shownDoctors"
 							:key="`doctor-${doctor.id}`"
 							:to="getDoctorLink(doctor.slug)"
-							class="global-search__item"
-							@click="handleResultClick"
+							:title="doctor.name"
+							:query="currentQuery"
+							:subtitle="doctorSpecialties(doctor)"
+							:meta="doctorPlaces(doctor)"
+							@navigate="handleResultClick"
 						>
-							{{ doctor.name }}
-						</NuxtLink>
-						<NuxtLink
-							v-if="allDoctors.length > 5"
-							:to="getDoctorsListLink()"
-							class="global-search__more"
-							@click="handleResultClick"
-						>
-							{{ t('MoreDoctors', { count: allDoctors.length }) }}
-						</NuxtLink>
-					</div>
+							<template #icon>
+								<img
+									v-if="doctor.photoUrl"
+									:src="doctor.photoUrl"
+									:alt="doctor.name"
+									class="global-search__photo"
+									loading="lazy"
+								/>
+								<IconDoctor v-else :size="20" />
+							</template>
+							<template v-if="ratingLabel(doctor.rating)" #aside>
+								<span class="global-search__rating">
+									<IconStar :size="14" />
+									{{ ratingLabel(doctor.rating) }}
+								</span>
+							</template>
+						</SearchResultRow>
+					</SearchResultGroup>
 
 					<!-- Клиники -->
-					<div v-if="shownClinics.length > 0" class="global-search__group">
-						<div class="global-search__group-title">
-							<IconClinic :size="16" />
-							{{ t('Clinics') }}
-						</div>
-						<NuxtLink
+					<SearchResultGroup
+						v-if="shownClinics.length"
+						:title="t('Clinics')"
+						:moreTo="
+							allFilteredClinics.length > shownClinics.length
+								? listLink('clinics')
+								: null
+						"
+						:moreLabel="t('MoreClinics', { count: allFilteredClinics.length })"
+						@navigate="handleResultClick"
+					>
+						<template #icon><IconClinic :size="16" /></template>
+						<SearchResultRow
 							v-for="clinic in shownClinics"
 							:key="`clinic-${clinic.id}`"
 							:to="getClinicLink(clinic.slug)"
-							class="global-search__item"
-							@click="handleResultClick"
+							:title="clinic.name"
+							:query="currentQuery"
+							highlightSubtitle
+							:subtitle="
+								clinicById(clinic.id)?.localName !== clinic.name
+									? clinicById(clinic.id)?.localName
+									: null
+							"
+							:meta="[
+								clinicById(clinic.id)?.cityId
+									? t(`city_${clinicById(clinic.id)!.cityId}`)
+									: null,
+								clinicById(clinic.id)?.address,
+							]"
+							@navigate="handleResultClick"
 						>
-							{{ clinic.name }}
-						</NuxtLink>
-						<NuxtLink
-							v-if="allFilteredClinics.length > 5"
-							:to="getClinicsListLink()"
-							class="global-search__more"
-							@click="handleResultClick"
-						>
-							{{ t('MoreClinics', { count: allFilteredClinics.length }) }}
-						</NuxtLink>
-					</div>
+							<template #icon><IconClinic :size="20" /></template>
+							<template
+								v-if="ratingLabel(clinicById(clinic.id)?.rating)"
+								#aside
+							>
+								<span class="global-search__rating">
+									<IconStar :size="14" />
+									{{ ratingLabel(clinicById(clinic.id)?.rating) }}
+								</span>
+							</template>
+						</SearchResultRow>
+					</SearchResultGroup>
 
 					<!-- Медицинские услуги -->
-					<div
-						v-if="shownMedicalServices.length > 0"
-						class="global-search__group"
+					<SearchResultGroup
+						v-if="shownMedicalServices.length"
+						:title="t('MedicalServices')"
+						:moreTo="
+							medicalServicesTotal > shownMedicalServices.length
+								? listLink('services')
+								: null
+						"
+						:moreLabel="
+							t('MoreMedicalServices', { count: medicalServicesTotal })
+						"
+						@navigate="handleResultClick"
 					>
-						<div class="global-search__group-title">
-							<IconMedicalService :size="16" />
-							{{ t('MedicalServices') }}
-						</div>
-						<NuxtLink
+						<template #icon><IconMedicalService :size="16" /></template>
+						<SearchResultRow
 							v-for="service in shownMedicalServices"
 							:key="`service-${service.id}`"
 							:to="getMedicalServiceLink(service.slug)"
-							class="global-search__item"
-							@click="handleResultClick"
+							:title="service.name"
+							:query="currentQuery"
+							:subtitle="serviceCategories(service)"
+							:meta="[clinicsCountLabel(service.clinicCount)]"
+							:hintLabel="t('MatchOtherName')"
+							:hintValue="matchedSynonym(service, currentQuery)"
+							@navigate="handleResultClick"
 						>
-							{{ service.name }}
-						</NuxtLink>
-						<NuxtLink
-							v-if="allMedicalServices.length > 5"
-							:to="getMedicalServicesListLink()"
-							class="global-search__more"
-							@click="handleResultClick"
-						>
-							{{
-								t('MoreMedicalServices', { count: allMedicalServices.length })
-							}}
-						</NuxtLink>
-					</div>
+							<template #icon><IconMedicalService :size="20" /></template>
+							<template v-if="priceFromLabel(service.clinicPrices)" #aside>
+								{{ priceFromLabel(service.clinicPrices) }}
+							</template>
+						</SearchResultRow>
+					</SearchResultGroup>
 
 					<!-- Лекарства -->
-					<div v-if="shownMedications.length > 0" class="global-search__group">
-						<div class="global-search__group-title">
-							<IconMedication :size="16" />
-							{{ t('Medications') }}
-						</div>
-						<NuxtLink
-							v-for="medication in shownMedications"
-							:key="`medication-${medication.id}`"
-							:to="getMedicationLink(medication.slug)"
-							class="global-search__item"
-							@click="handleResultClick"
+					<SearchResultGroup
+						v-if="shownMedicineGroups.length"
+						:title="t('Medications')"
+						:moreTo="
+							medicinesTotal > shownMedicineItems ? listLink('medicines') : null
+						"
+						:moreLabel="t('MoreMedications', { count: medicinesTotal })"
+						@navigate="handleResultClick"
+					>
+						<template #icon><IconMedication :size="16" /></template>
+						<SearchResultRow
+							v-for="group in shownMedicineGroups"
+							:key="`medicine-${group.key}`"
+							:to="getMedicineLink(group.primary.slug)"
+							:title="group.name"
+							:query="currentQuery"
+							highlightSubtitle
+							:subtitle="group.primary.substances"
+							:meta="medicineMeta(group)"
+							:metaSecondary="[group.sharedManufacturer, group.sharedCountry]"
+							:hintLabel="medicineHint(group)?.label"
+							:hintValue="medicineHint(group)?.value"
+							@navigate="handleResultClick"
 						>
-							{{ medication.name }}
-						</NuxtLink>
-						<NuxtLink
-							v-if="allMedications.length > 5"
-							:to="getMedicationsListLink()"
-							class="global-search__more"
-							@click="handleResultClick"
-						>
-							{{ t('MoreMedications', { count: allMedications.length }) }}
-						</NuxtLink>
-					</div>
+							<template #icon>
+								<MedicineFormIcon
+									:formId="group.primary.pharmaFormId"
+									:size="20"
+								/>
+							</template>
+							<template #badge>
+								<MedicineBadge
+									:dispensingModeId="group.sharedDispensingModeId"
+								/>
+							</template>
+							<template v-if="shownVariants(group).length" #footer>
+								<NuxtLink
+									v-for="variant in shownVariants(group)"
+									:key="`variant-${variant.item.id}`"
+									:to="getMedicineLink(variant.item.slug)"
+									class="global-search__variant"
+									@click="handleResultClick"
+								>
+									<MedicineFormIcon
+										v-if="!group.sharedForm"
+										:formId="variant.item.pharmaFormId"
+										:size="14"
+									/>
+									{{ variant.label }}
+								</NuxtLink>
+								<NuxtLink
+									v-if="group.variants.length > shownVariants(group).length"
+									:to="getMedicineVariantsLink(group.primary.slug)"
+									class="global-search__variant global-search__variant--all"
+									@click="handleResultClick"
+								>
+									{{ t('AllVariants', { count: group.variants.length }) }}
+								</NuxtLink>
+							</template>
+						</SearchResultRow>
+					</SearchResultGroup>
 
 					<!-- Анализы -->
-					<div v-if="shownLabTests.length > 0" class="global-search__group">
-						<div class="global-search__group-title">
-							<IconLabTest :size="16" />
-							{{ t('LabTests') }}
-						</div>
-						<NuxtLink
+					<SearchResultGroup
+						v-if="shownLabTests.length"
+						:title="t('LabTests')"
+						:moreTo="
+							labTestsTotal > shownLabTests.length ? listLink('labtests') : null
+						"
+						:moreLabel="t('MoreLabTests', { count: labTestsTotal })"
+						@navigate="handleResultClick"
+					>
+						<template #icon><IconLabTest :size="16" /></template>
+						<SearchResultRow
 							v-for="labTest in shownLabTests"
 							:key="`labtest-${labTest.id}`"
 							:to="getLabTestLink(labTest.slug)"
-							class="global-search__item"
-							@click="handleResultClick"
+							:title="labTest.name"
+							:query="currentQuery"
+							:subtitle="labTestCategories(labTest)"
+							:meta="[clinicsCountLabel(labTest.clinicCount)]"
+							:hintLabel="t('MatchOtherName')"
+							:hintValue="matchedSynonym(labTest, currentQuery)"
+							@navigate="handleResultClick"
 						>
-							{{ labTest.name }}
-						</NuxtLink>
-						<NuxtLink
-							v-if="allLabTests.length > 5"
-							:to="getLabTestsListLink()"
-							class="global-search__more"
-							@click="handleResultClick"
+							<template #icon><IconLabTest :size="20" /></template>
+							<template v-if="priceFromLabel(labTest.clinicPrices)" #aside>
+								{{ priceFromLabel(labTest.clinicPrices) }}
+							</template>
+						</SearchResultRow>
+					</SearchResultGroup>
+
+					<!-- Статьи -->
+					<SearchResultGroup
+						v-if="shownArticles.length"
+						:title="t('Articles')"
+						:moreTo="
+							allFilteredArticles.length > shownArticles.length
+								? { path: '/articles' }
+								: null
+						"
+						:moreLabel="
+							t('MoreArticles', { count: allFilteredArticles.length })
+						"
+						@navigate="handleResultClick"
+					>
+						<template #icon><IconLightbulb :size="16" /></template>
+						<SearchResultRow
+							v-for="article in shownArticles"
+							:key="`article-${article.slug}`"
+							:to="getArticleLink(article.slug)"
+							:title="article.label"
+							:query="currentQuery"
+							:hintLabel="t('MatchMentioned')"
+							:hintValue="article.keyword"
+							@navigate="handleResultClick"
 						>
-							{{ t('MoreLabTests', { count: allLabTests.length }) }}
-						</NuxtLink>
-					</div>
+							<template #icon><IconLightbulb :size="20" /></template>
+						</SearchResultRow>
+					</SearchResultGroup>
 
 					<!-- Нет результатов -->
 					<div
@@ -672,11 +1025,14 @@ onUnmounted(() => {
 		border-radius: var(--border-radius-xl);
 		border: var(--border-width-thin) solid var(--color-border-light);
 		box-shadow: var(--shadow-xl);
-		max-height: 400px;
+		// Карточки многострочные: 400px хватало на 6 однострочников, а теперь
+		// не помещалась и одна группа целиком
+		max-height: min(70vh, 620px);
 		overflow: hidden;
 		overflow-y: auto;
 		z-index: var(--z-dropdown);
 		padding-bottom: var(--spacing-sm);
+		overscroll-behavior: contain;
 
 		// Кастомный скроллбар
 		&::-webkit-scrollbar {
@@ -706,49 +1062,43 @@ onUnmounted(() => {
 		font-size: var(--font-size-md);
 	}
 
-	&__group {
-		border-bottom: var(--border-width-thin) solid var(--color-border-light);
-
-		&:last-child {
-			border-bottom: none;
-		}
+	&__photo {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 
-	&__group-title {
-		display: flex;
+	&__rating {
+		display: inline-flex;
 		align-items: center;
-		gap: var(--spacing-sm);
-		padding: var(--spacing-md) var(--spacing-lg) var(--spacing-sm);
+		gap: var(--spacing-xs);
+		color: var(--color-rating);
+	}
+
+	// Ярлык варианта препарата: своя ссылка на фасовку под строкой бренда
+	&__variant {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--spacing-xs);
+		padding: 2px var(--spacing-sm);
+		border: var(--border-width-thin) solid var(--color-border-secondary);
+		// Не --border-radius-full: он равен 50%, и на широком ярлыке процент
+		// даёт эллипс, а не пилюлю
+		border-radius: var(--border-radius-md);
 		font-size: var(--font-size-xs);
-		font-weight: var(--font-weight-semibold);
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		color: var(--color-text-muted);
-	}
-
-	&__item {
-		display: block;
-		padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-sm) 40px;
-		color: var(--color-text-primary);
+		color: var(--color-text-secondary);
 		text-decoration: none;
-		font-size: var(--font-size-md);
+		background: var(--color-bg-primary);
 		transition: var(--transition-fast);
 
 		&:hover {
-			background: var(--color-bg-secondary);
+			border-color: var(--color-primary);
+			color: var(--color-primary);
 		}
-	}
 
-	&__more {
-		display: block;
-		padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-sm) 40px;
-		color: var(--color-primary);
-		text-decoration: none;
-		font-size: var(--font-size-sm);
-		transition: var(--transition-fast);
-
-		&:hover {
-			background: var(--color-bg-secondary);
+		&--all {
+			color: var(--color-primary);
+			border-style: dashed;
 		}
 	}
 }
@@ -791,22 +1141,8 @@ onUnmounted(() => {
 		}
 
 		&__dropdown {
-			max-height: 60vh;
+			max-height: 70vh;
 			border-radius: var(--border-radius-xl);
-		}
-
-		&__group-title {
-			padding: var(--spacing-sm) var(--spacing-md) var(--spacing-xs);
-			font-size: var(--font-size-xs);
-		}
-
-		&__item {
-			padding: var(--spacing-sm) var(--spacing-md) var(--spacing-sm) 36px;
-			font-size: var(--font-size-base);
-		}
-
-		&__more {
-			padding: var(--spacing-sm) var(--spacing-md) var(--spacing-sm) 36px;
 		}
 	}
 }

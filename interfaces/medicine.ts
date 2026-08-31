@@ -1,3 +1,22 @@
+/**
+ * Почему лекарство попало в текстовую выдачу. Поиск идёт не только по названию
+ * препарата, но и по действующему веществу и по названию зарубежного аналога
+ * («супрастин» → SYNOPEN) — без подписи такая выдача читается как поломка.
+ * Заполняется только при поиске по имени (`name`).
+ */
+export interface MedicineMatch {
+	/** Совпало собственное название препарата — подпись не нужна. */
+	byName: boolean;
+	/** Локализованные названия совпавших действующих веществ. */
+	substances: string[];
+	/**
+	 * Зарубежные бренды, чьё название совпало с запросом. `fullMatch` —
+	 * состав бренда совпадает с составом препарата полностью (настоящий
+	 * аналог); иначе бренд лишь делит с ним часть веществ.
+	 */
+	foreignBrands: { brand: string; fullMatch: boolean }[];
+}
+
 // Лекарство в списке /medicines (ответ /api/medicines/list)
 export interface MedicineListItem {
 	id: number;
@@ -14,6 +33,8 @@ export interface MedicineListItem {
 	dispensingModeId: number | null;
 	isActive: boolean;
 	atcCode: string | null;
+	/** Причина попадания в выдачу — только при поиске по `name`. */
+	match?: MedicineMatch;
 	pack_total: number | null;
 	pack_unit: string | null;
 	pack_container_count: number | null;

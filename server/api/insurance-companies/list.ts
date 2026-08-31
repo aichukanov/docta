@@ -5,6 +5,7 @@ import {
 } from '~/server/common/utils';
 import { validateCityIds, validateName } from '~/common/validation';
 import type { InsuranceCompanyListItem } from '~/interfaces/insurance-company';
+import { foldedLikeAny } from '~/server/common/search-collation';
 
 export default defineEventHandler(
 	async (event): Promise<InsuranceCompanyListItem[]> => {
@@ -42,7 +43,7 @@ export default defineEventHandler(
 			if (body.name && validateName(body, 'api/insurance-companies/list')) {
 				const namePattern = `%${body.name}%`;
 				companyWhere.push(
-					`(ic.name_sr LIKE ? OR ic.name_sr_cyrl LIKE ? OR ic.name_ru LIKE ?)`,
+					`(${foldedLikeAny(['ic.name_sr', 'ic.name_sr_cyrl', 'ic.name_ru'])})`,
 				);
 				companyParams.push(namePattern, namePattern, namePattern);
 			}

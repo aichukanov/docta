@@ -15,6 +15,7 @@ import {
 	validateClinicIds,
 } from '~/common/validation';
 import { LIST_PAGE_SIZE, LIST_CARD_MAX_CLINICS } from '~/common/constants';
+import { foldedLike, foldedLikeAny } from '~/server/common/search-collation';
 
 export default defineEventHandler(async (event): Promise<LabTestList> => {
 	try {
@@ -107,10 +108,10 @@ export async function getLabTestList(
 		// Для sr-cyrl ищем также по синонимам на кириллице
 		const synonymsFilter =
 			locale === 'sr-cyrl'
-				? `EXISTS (SELECT 1 FROM lab_test_synonyms lts_f WHERE lts_f.lab_test_id = lt.id AND lts_f.another_name LIKE ? AND lts_f.language IN ('sr-cyrl', 'sr'))`
-				: `EXISTS (SELECT 1 FROM lab_test_synonyms lts_f WHERE lts_f.lab_test_id = lt.id AND lts_f.another_name LIKE ?)`;
+				? `EXISTS (SELECT 1 FROM lab_test_synonyms lts_f WHERE lts_f.lab_test_id = lt.id AND ${foldedLike('lts_f.another_name')} AND lts_f.language IN ('sr-cyrl', 'sr'))`
+				: `EXISTS (SELECT 1 FROM lab_test_synonyms lts_f WHERE lts_f.lab_test_id = lt.id AND ${foldedLike('lts_f.another_name')})`;
 		whereFilters.push(
-			`(lt.name_en LIKE ? OR lt.${nameField} LIKE ? OR lt.name_sr LIKE ? OR lt.name_sr_cyrl LIKE ? OR ${synonymsFilter})`,
+			`(${foldedLikeAny(['lt.name_en', `lt.${nameField}`, 'lt.name_sr', 'lt.name_sr_cyrl'])} OR ${synonymsFilter})`,
 		);
 		queryParams.push(
 			namePattern,

@@ -1,5 +1,6 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { requireAdmin } from '~/server/common/auth';
+import { foldedLikeAny } from '~/server/common/search-collation';
 
 interface UserListItem {
 	id: number;
@@ -23,7 +24,7 @@ export default defineEventHandler(async (event): Promise<UserListItem[]> => {
 			const pattern = `%${query}%`;
 			const [result]: any = await connection.execute(
 				`SELECT id, email, COALESCE(name, '') as name FROM auth_users
-				WHERE ${isNumeric ? 'id = ? OR' : ''} email LIKE ? OR name LIKE ?
+				WHERE ${isNumeric ? 'id = ? OR' : ''} ${foldedLikeAny(['email', 'name'])}
 				ORDER BY id LIMIT 20`,
 				isNumeric ? [Number(query), pattern, pattern] : [pattern, pattern],
 			);

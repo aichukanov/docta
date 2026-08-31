@@ -7,6 +7,10 @@
 	--color-secondary: #06b6d4;
 	--color-accent: #f59e0b;
 	--color-highlight-bg: rgb(255 200 23 / 10%);
+	/* Подсветка совпадения в выдаче поиска: заливка под текстом, поэтому
+	   заметно плотнее фонового --color-highlight-bg. На белом даёт #ffe9a2 —
+	   6.3:1 с --color-text-secondary, 12:1 с --color-text-heading */
+	--color-search-highlight-bg: rgb(255 200 23 / 40%);
 	--color-success: #10b981;
 	--color-success-dark: #059669;
 	--color-success-bg: #ecfdf5;

@@ -44,12 +44,12 @@ export default {
 			UnaGapsAntisepticsOctenidine: 'octenidine',
 			UnaGapsAntisepticsEnd: ' (Octenisept).',
 			UnaGapsAntihistaminesA:
-				'Antihistamines. Tavegil (clemastine) is not sold, and neither is cetirizine (Zyrtec) — levocetirizine (Xyzal) is usually brought in from Serbia. Suprastin’s active substance, however, is available here: ',
+				'Antihistamines. Neither clemastine (Tavegil) nor cetirizine (Zyrtec) is in the Montenegrin register; levocetirizine (Xyzal) is not registered either and is usually brought in from Serbia. Suprastin’s active substance, however, is available here: ',
 			UnaGapsAntihistaminesChloropyramine: 'chloropyramine',
 			UnaGapsAntihistaminesMid: ' is sold as ',
 			UnaGapsAntihistaminesSynopen: 'Synopen',
 			UnaGapsAntihistaminesMid2:
-				' (injections and a topical gel). Among tablet H1 blockers, pharmacies stock ',
+				' (injections and an ointment). Among tablet H1 blockers, pharmacies stock ',
 			UnaGapsAntihistaminesLink1: 'loratadine',
 			UnaGapsAntihistaminesLink2: 'desloratadine',
 			UnaGapsAntihistaminesLink3: 'fexofenadine',
@@ -59,6 +59,10 @@ export default {
 			UnaGapsAntihistaminesDimMid: ', is registered, but only as a gel — ',
 			UnaGapsAntihistaminesFlenty: 'Flenty',
 			UnaGapsAntihistaminesTail: '; the familiar oral drops are not sold.',
+			UnaGapsAntihistaminesMoreA:
+				' What to take instead of Zyrtec is covered in ',
+			UnaGapsAntihistaminesMoreLink: 'a separate article on allergy medicines',
+			UnaGapsAntihistaminesMoreEnd: '.',
 			UnaGapsRehydration:
 				'Rehydration salts. Pharmacy-grade rehydration powder (Regidron) is not available. Sports electrolyte sachets are sold, but many contain sugar, which is undesirable during an intestinal infection — check the composition.',
 			UnaGapsAnalgesicsA:
@@ -170,12 +174,12 @@ export default {
 			UnaGapsAntisepticsOctenidine: 'октенидин',
 			UnaGapsAntisepticsEnd: ' (Octenisept).',
 			UnaGapsAntihistaminesA:
-				'Антигистаминные. Клемастина (Тавегил / Tavegil) и цетиризина (Зиртек / Zyrtec) в свободной продаже нет; левоцетиризин (Ксизал / Xyzal) обычно везут из Сербии. А вот действующее вещество Супрастина здесь есть: ',
+				'Антигистаминные. Клемастина (Тавегил / Tavegil) и цетиризина (Зиртек / Zyrtec) в черногорском реестре нет; левоцетиризин (Ксизал / Xyzal) тоже не зарегистрирован — его обычно везут из Сербии. А вот действующее вещество Супрастина здесь есть: ',
 			UnaGapsAntihistaminesChloropyramine: 'хлоропирамин',
 			UnaGapsAntihistaminesMid: ' продаётся как ',
 			UnaGapsAntihistaminesSynopen: 'Synopen',
 			UnaGapsAntihistaminesMid2:
-				' (инъекции и гель). Из таблетированных H1-блокаторов в наличии ',
+				' (инъекции и мазь). Из таблетированных H1-блокаторов в наличии ',
 			UnaGapsAntihistaminesLink1: 'лоратадин',
 			UnaGapsAntihistaminesLink2: 'дезлоратадин',
 			UnaGapsAntihistaminesLink3: 'фексофенадин',
@@ -185,6 +189,10 @@ export default {
 			UnaGapsAntihistaminesDimMid: ', зарегистрировано, но только как гель — ',
 			UnaGapsAntihistaminesFlenty: 'Flenty',
 			UnaGapsAntihistaminesTail: '; привычных капель для приёма внутрь нет.',
+			UnaGapsAntihistaminesMoreA:
+				' Чем заменить Зиртек и что есть от аллергии — в ',
+			UnaGapsAntihistaminesMoreLink: 'отдельной статье',
+			UnaGapsAntihistaminesMoreEnd: '.',
 			UnaGapsRehydration:
 				'Средства для регидратации. Аптечного Регидрона нет. Спортивные саше с электролитами продаются, но многие с сахаром, что при кишечной инфекции нежелательно — проверяйте состав.',
 			UnaGapsAnalgesicsA:
@@ -296,12 +304,12 @@ export default {
 			UnaGapsAntisepticsOctenidine: 'oktenidin',
 			UnaGapsAntisepticsEnd: ' (Octenisept).',
 			UnaGapsAntihistaminesA:
-				'Antihistaminici. Tavegila (clemastine) nema, nema ni cetirizina (Zyrtec) — levocetirizin (Xyzal) obično se donosi iz Srbije. Ali aktivna supstanca Suprastina ovdje postoji: ',
-			UnaGapsAntihistaminesChloropyramine: 'chloropyramine',
+				'Antihistaminici. Klemastina (Tavegil) i cetirizina (Zyrtec) nema u crnogorskom registru; ni levocetirizin (Xyzal) nije registrovan — obično se donosi iz Srbije. Ali aktivna supstanca Suprastina ovdje postoji: ',
+			UnaGapsAntihistaminesChloropyramine: 'hloropiramin',
 			UnaGapsAntihistaminesMid: ' se prodaje kao ',
 			UnaGapsAntihistaminesSynopen: 'Synopen',
 			UnaGapsAntihistaminesMid2:
-				' (injekcije i gel). Od tabletnih H1-blokatora u apotekama ima ',
+				' (injekcije i mast). Od tabletnih H1-blokatora u apotekama ima ',
 			UnaGapsAntihistaminesLink1: 'loratadin',
 			UnaGapsAntihistaminesLink2: 'desloratadin',
 			UnaGapsAntihistaminesLink3: 'feksofenadin',
@@ -311,6 +319,10 @@ export default {
 			UnaGapsAntihistaminesDimMid: ', registrovana je, ali samo kao gel — ',
 			UnaGapsAntihistaminesFlenty: 'Flenty',
 			UnaGapsAntihistaminesTail: '; uobičajenih kapi za oralnu upotrebu nema.',
+			UnaGapsAntihistaminesMoreA:
+				' Čime zamijeniti Zyrtec i šta ima protiv alergije — u ',
+			UnaGapsAntihistaminesMoreLink: 'posebnom tekstu',
+			UnaGapsAntihistaminesMoreEnd: '.',
 			UnaGapsRehydration:
 				'Sredstva za rehidrataciju. Apotekarskog praška za rehidrataciju (Regidron) nema. Sportske kesice sa elektrolitima se prodaju, ali mnoge sadrže šećer, što kod crijevne infekcije nije poželjno — provjerite sastav.',
 			UnaGapsAnalgesicsA:
@@ -424,12 +436,12 @@ export default {
 			UnaGapsAntisepticsOctenidine: 'октенидин',
 			UnaGapsAntisepticsEnd: ' (Octenisept).',
 			UnaGapsAntihistaminesA:
-				'Антихистаминици. Tavegil (клемастин) нема, нема ни цетиризина (Zyrtec) — левоцетиризин (Xyzal) обично се доноси из Србије. Али активна супстанца лијека Suprastin овдје постоји: ',
+				'Антихистаминици. Клемастина (Tavegil) и цетиризина (Zyrtec) нема у црногорском регистру; ни левоцетиризин (Xyzal) није регистрован — обично се доноси из Србије. Али активна супстанца лијека Suprastin овдје постоји: ',
 			UnaGapsAntihistaminesChloropyramine: 'хлоропирамин',
 			UnaGapsAntihistaminesMid: ' се продаје као ',
 			UnaGapsAntihistaminesSynopen: 'Synopen',
 			UnaGapsAntihistaminesMid2:
-				' (инјекције и гел). Од таблетних H1-блокатора у апотекама има ',
+				' (инјекције и маст). Од таблетних H1-блокатора у апотекама има ',
 			UnaGapsAntihistaminesLink1: 'лоратадин',
 			UnaGapsAntihistaminesLink2: 'дезлоратадин',
 			UnaGapsAntihistaminesLink3: 'фексофенадин',
@@ -439,6 +451,10 @@ export default {
 			UnaGapsAntihistaminesDimMid: ', регистрована је, али само као гел — ',
 			UnaGapsAntihistaminesFlenty: 'Flenty',
 			UnaGapsAntihistaminesTail: '; уобичајених капи за оралну употребу нема.',
+			UnaGapsAntihistaminesMoreA:
+				' Чиме замијенити Zyrtec и шта има против алергије — у ',
+			UnaGapsAntihistaminesMoreLink: 'посебном тексту',
+			UnaGapsAntihistaminesMoreEnd: '.',
 			UnaGapsRehydration:
 				'Средства за рехидратацију. Апотекарског праха за рехидратацију (Regidron) нема. Продају се спортске кесице са електролитима, али многе садрже шећер, што је код цријевне инфекције непожељно — провјерите састав.',
 			UnaGapsAnalgesicsA:
@@ -552,12 +568,12 @@ export default {
 			UnaGapsAntisepticsOctenidine: 'Octenidin',
 			UnaGapsAntisepticsEnd: ' (Octenisept).',
 			UnaGapsAntihistaminesA:
-				'Antihistaminika. Tavegil (clemastine) gibt es nicht, Cetirizin (Zyrtec) ebenso wenig — Levocetirizin (Xyzal) wird meist aus Serbien mitgebracht. Der Wirkstoff von Suprastin ist hier aber erhältlich: ',
-			UnaGapsAntihistaminesChloropyramine: 'chloropyramine',
+				'Antihistaminika. Clemastin (Tavegil) und Cetirizin (Zyrtec) stehen nicht im montenegrinischen Register; Levocetirizin (Xyzal) ist ebenfalls nicht zugelassen und wird meist aus Serbien mitgebracht. Der Wirkstoff von Suprastin ist hier aber erhältlich: ',
+			UnaGapsAntihistaminesChloropyramine: 'Chloropyramin',
 			UnaGapsAntihistaminesMid: ' wird als ',
 			UnaGapsAntihistaminesSynopen: 'Synopen',
 			UnaGapsAntihistaminesMid2:
-				' (Injektionen und ein Gel) verkauft. Von den Tabletten-H1-Blockern führen die Apotheken ',
+				' (Injektionen und eine Salbe) verkauft. Von den Tabletten-H1-Blockern führen die Apotheken ',
 			UnaGapsAntihistaminesLink1: 'Loratadin',
 			UnaGapsAntihistaminesLink2: 'Desloratadin',
 			UnaGapsAntihistaminesLink3: 'Fexofenadin',
@@ -568,6 +584,10 @@ export default {
 			UnaGapsAntihistaminesFlenty: 'Flenty',
 			UnaGapsAntihistaminesTail:
 				'; die gewohnten Tropfen zum Einnehmen gibt es nicht.',
+			UnaGapsAntihistaminesMoreA:
+				' Was man statt Zyrtec nehmen kann, behandeln wir in ',
+			UnaGapsAntihistaminesMoreLink: 'einem eigenen Beitrag zu Allergiemitteln',
+			UnaGapsAntihistaminesMoreEnd: '.',
 			UnaGapsRehydration:
 				'Rehydratationssalze. Rehydratationspulver in Apothekenqualität (Regidron) gibt es nicht. Sportelektrolyte in Beuteln werden verkauft, viele enthalten aber Zucker, was bei einer Darminfektion unerwünscht ist — prüfen Sie die Zusammensetzung.',
 			UnaGapsAnalgesicsA:
@@ -678,12 +698,12 @@ export default {
 			UnaGapsAntisepticsOctenidine: 'oktenidin',
 			UnaGapsAntisepticsEnd: ' (Octenisept).',
 			UnaGapsAntihistaminesA:
-				"Antihistaminikler. Tavegil (klemastin) yoktur, setirizin (Zyrtec) de yoktur — levosetirizin (Xyzal) genellikle Sırbistan'dan getirilir. Ama Suprastin'in etken maddesi ",
+				"Antihistaminikler. Klemastin (Tavegil) ve setirizin (Zyrtec) Karadağ kaydında yok; levosetirizin (Xyzal) de ruhsatlı değil, genellikle Sırbistan'dan getirilir. Ama Suprastin'in etken maddesi ",
 			UnaGapsAntihistaminesChloropyramine: 'kloropiramin',
 			UnaGapsAntihistaminesMid: ' burada ',
 			UnaGapsAntihistaminesSynopen: 'Synopen',
 			UnaGapsAntihistaminesMid2:
-				' adıyla bulunur (enjeksiyon ve jel). Tablet H1 blokerlerinden eczanelerde ',
+				' adıyla bulunur (enjeksiyon ve merhem). Tablet H1 blokerlerinden eczanelerde ',
 			UnaGapsAntihistaminesLink1: 'loratadin',
 			UnaGapsAntihistaminesLink2: 'desloratadin',
 			UnaGapsAntihistaminesLink3: 'feksofenadin',
@@ -693,6 +713,9 @@ export default {
 			UnaGapsAntihistaminesDimMid: ' kayıtlıdır, ama yalnızca jel olarak — ',
 			UnaGapsAntihistaminesFlenty: 'Flenty',
 			UnaGapsAntihistaminesTail: '; alışılmış ağızdan damla ise bulunmaz.',
+			UnaGapsAntihistaminesMoreA: ' Zyrtec yerine ne alınabileceğini ',
+			UnaGapsAntihistaminesMoreLink: 'alerji ilaçlarına ayrı bir yazıda',
+			UnaGapsAntihistaminesMoreEnd: ' ele alıyoruz.',
 			UnaGapsRehydration:
 				'Rehidrasyon tuzları. Eczane tipi rehidrasyon tozu (Regidron) bulunmaz. Sporcular için elektrolit saşeleri satılır, ama çoğu şeker içerir ve bu, bağırsak enfeksiyonu sırasında istenmez — içeriği kontrol edin.',
 			UnaGapsAnalgesicsA:

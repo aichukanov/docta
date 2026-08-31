@@ -14,6 +14,7 @@ import {
 	validateClinicIds,
 } from '~/common/validation';
 import { LIST_PAGE_SIZE, LIST_CARD_MAX_CLINICS } from '~/common/constants';
+import { foldedLikeAny } from '~/server/common/search-collation';
 
 export default defineEventHandler(async (event): Promise<ClinicServiceList> => {
 	try {
@@ -82,7 +83,7 @@ export async function getMedicationList(
 			const nameField = getLocalizedNameField(locale) || 'name_en';
 			const namePattern = `%${body.name}%`;
 			whereFilters.push(
-				`(m.name_en LIKE ? OR m.${nameField} LIKE ? OR m.name_sr LIKE ? OR m.name_sr_cyrl LIKE ? OR m.name_ru LIKE ? OR m.name_de LIKE ? OR m.name_tr LIKE ?)`,
+				`(${foldedLikeAny(['m.name_en', `m.${nameField}`, 'm.name_sr', 'm.name_sr_cyrl', 'm.name_ru', 'm.name_de', 'm.name_tr'])})`,
 			);
 			queryParams.push(
 				namePattern,

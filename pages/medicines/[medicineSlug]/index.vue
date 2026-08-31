@@ -489,6 +489,7 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 						v-for="m in med.foreignBrands"
 						:key="m.market"
 						class="foreign-card"
+						:class="{ 'foreign-card--empty': !m.products.length }"
 					>
 						<header class="foreign-card-head">
 							<span class="foreign-flag" aria-hidden="true">{{
@@ -497,14 +498,14 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 							<span class="foreign-market-name">{{
 								marketLabel(m.market)
 							}}</span>
-							<span
-								v-if="m.products.length"
-								class="foreign-market-count"
-								>{{ m.products.length }}</span
-							>
+							<span v-if="m.products.length" class="foreign-market-count">{{
+								m.products.length
+							}}</span>
 						</header>
 						<!-- Пустой рынок показываем явно: чаще всего вещество там просто
-						     не одобрено, и молчание читалось бы как «мы не искали» -->
+						     не одобрено, и молчание читалось бы как «мы не искали».
+						     Карточка при этом схлопывается до одной строки — иначе
+						     четыре пустые коробки перевешивают две с находками -->
 						<p v-if="!m.products.length" class="foreign-empty">
 							{{ t('ForeignNoneFound') }}
 						</p>
@@ -815,9 +816,35 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 	font-weight: var(--font-weight-medium);
 }
 
+/* Рынок без находок: место в сетке и порядок стран сохраняем, но карточку
+   схлопываем до строки — пунктир и обесцвеченный флаг отделяют её от карточек
+   с брендами, не выкидывая рынок из перечня */
+.foreign-card--empty {
+	align-self: start;
+	background: var(--color-bg-secondary);
+	border-style: dashed;
+}
+
+.foreign-card--empty .foreign-card-head {
+	padding-bottom: 0;
+	background: none;
+	border-bottom: none;
+}
+
+.foreign-card--empty .foreign-market-name {
+	color: var(--color-text-muted);
+	font-weight: var(--font-weight-medium);
+}
+
+.foreign-card--empty .foreign-flag {
+	filter: grayscale(1);
+	opacity: 0.7;
+}
+
+/* text-light (#94a3b8) на bg-secondary даёт 2.4:1 — берём muted, 4.55:1 */
 .foreign-empty {
-	margin: 0;
-	padding: var(--spacing-sm) 0;
+	margin: 2px 0 0;
+	padding: 0 var(--spacing-lg) 12px;
 	font-size: var(--font-size-sm);
 	color: var(--color-text-muted);
 }

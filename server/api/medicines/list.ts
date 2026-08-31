@@ -17,10 +17,16 @@ import {
 	referenceLocaleSuffix,
 	withConnection,
 } from '~/server/common/medicines/helpers';
+import {
+	buildMedicineMatch,
+	buildNameMatchIndex,
+	type MedicineNameMatchIndex,
+} from '~/server/common/medicines/name-match';
 import type {
 	MedicineList as MedicineListResponse,
 	MedicineSubstance,
 } from '~/interfaces/medicine';
+import { foldedLike, foldedLikeAny } from '~/server/common/search-collation';
 
 export default defineEventHandler(
 	async (event): Promise<MedicineListResponse> => {
@@ -53,6 +59,7 @@ export async function getMedicineList(
 		activeOnly?: boolean;
 		locale?: string;
 		page?: number;
+		pageSize?: number;
 		sort?: MedicineSort;
 	} = {},
 ): Promise<MedicineListResponse> {
@@ -61,7 +68,13 @@ export async function getMedicineList(
 	const locale = body.locale || 'en';
 	const usePagination = body.page != null;
 	const pageRaw = Number(body.page);
-	const pageSize = LIST_PAGE_SIZE;
+	// Глобальный поиск просит короткую страницу (ему нужно 5 карточек), листинг
+	// — свою обычную. Верхняя граница — чтобы параметр из URL не заказал дамп.
+	const pageSizeRaw = Number(body.pageSize);
+	const pageSize =
+		Number.isFinite(pageSizeRaw) && pageSizeRaw > 0
+			? Math.min(Math.trunc(pageSizeRaw), 100)
+			: LIST_PAGE_SIZE;
 	const page = Math.max(Number.isFinite(pageRaw) ? pageRaw : 1, 1);
 	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
 
@@ -142,23 +155,41 @@ export async function getMedicineList(
 		);
 	}
 
-	// Name search — search in medicine name + substance names across all languages
+	// Name search — название препарата + действующие вещества (все языки) +
+	// названия зарубежных аналогов того же вещества («супрастин» → SYNOPEN).
+	// Зарубежные бренды берутся полу-соединением, а не коррелированным EXISTS:
+	// LIKE по 3 тыс. брендов должен отработать один раз, а не на каждый препарат.
+	const searchByName = !!body.name && validateName(body, 'api/medicines/list');
 	if (body.name) {
-		if (validateName(body, 'api/medicines/list')) {
+		if (searchByName) {
 			const nameField = nameFieldFor(locale);
 			const p = `%${body.name}%`;
 			whereFilters.push(`(
-				m.name LIKE ? OR
+				${foldedLike('m.name')} OR
 				EXISTS (
 					SELECT 1 FROM med_medicine_substances mms
 					JOIN med_substances s ON s.id = mms.substance_id
 					WHERE mms.medicine_id = m.id AND (
-						s.name LIKE ? OR s.name_en LIKE ? OR s.${nameField} LIKE ?
-						OR s.name_ru LIKE ? OR s.name_sr LIKE ? OR s.name_sr_cyrl LIKE ?
+						${foldedLikeAny([
+							's.name',
+							's.name_en',
+							`s.${nameField}`,
+							's.name_ru',
+							's.name_sr',
+							's.name_sr_cyrl',
+						])}
 					)
+				) OR
+				m.id IN (
+					SELECT mms_fb.medicine_id
+					FROM med_medicine_substances mms_fb
+					JOIN med_foreign_product_substances fps
+						ON fps.substance_id = mms_fb.substance_id
+					JOIN med_foreign_products fp
+						ON fp.id = fps.product_id AND ${foldedLike('fp.brand_name')}
 				)
 			)`);
-			queryParams.push(p, p, p, p, p, p, p);
+			queryParams.push(p, p, p, p, p, p, p, p);
 		} else {
 			// Invalid search term → no matches. Never drop the filter silently:
 			// returning the full catalogue reads to the user as "search is broken".
@@ -175,6 +206,24 @@ export async function getMedicineList(
 	// paracetamol) outranks combination drugs. The target is an integer
 	// (array length or 1), safe to inline.
 	const orderClauses: string[] = ['m.is_active DESC'];
+	// Параметры ORDER BY идут ПОСЛЕ параметров WHERE и только в списочный
+	// запрос: у count-запроса нет ORDER BY, а плейсхолдеры позиционные.
+	const orderParams: string[] = [];
+	const sort = normalizeMedicineSort(body.sort);
+	// Релевантность текстового запроса: своё название важнее совпадения по
+	// веществу или зарубежному аналогу — «brufen» должен начинаться с BRUFEN,
+	// а не с ибупрофена от другого производителя. Явный алфавитный сорт
+	// пользователя не переопределяем.
+	if (searchByName && sort !== MEDICINE_SORT_NAME_ASC) {
+		// Складывание то же, что в WHERE: иначе «odredivanje» пройдёт фильтр,
+		// но ни одна ветка CASE не сработает и релевантность будет случайной.
+		orderClauses.push(
+			`CASE WHEN ${foldedLike('m.name')} THEN 0` +
+				` WHEN ${foldedLike('m.name')} THEN 1` +
+				` WHEN ${foldedLike('m.name')} THEN 2 ELSE 3 END ASC`,
+		);
+		orderParams.push(body.name!, `${body.name}%`, `%${body.name}%`);
+	}
 	// Target: number of substances selected in the filter. When there is no
 	// substance filter but a name search (e.g. typing "paracetamol"), target a
 	// single substance so the pure drug outranks combinations.
@@ -188,7 +237,6 @@ export async function getMedicineList(
 			`ABS((SELECT COUNT(*) FROM med_medicine_substances mms2 WHERE mms2.medicine_id = m.id) - ${substanceCountTarget}) ASC`,
 		);
 	}
-	const sort = normalizeMedicineSort(body.sort);
 	if (sort === MEDICINE_SORT_NAME_ASC) {
 		// Явный выбор пользователя. Названия, начинающиеся не с буквы, уходят в
 		// конец: в реестре это три фасовки 5-FLUOROURACIL, которые при чистом
@@ -232,6 +280,10 @@ export async function getMedicineList(
 			 JOIN med_substances s ON s.id = mms.substance_id
 			 WHERE mms.medicine_id = m.id
 			) as substances,
+			(SELECT GROUP_CONCAT(mms.substance_id)
+			 FROM med_medicine_substances mms
+			 WHERE mms.medicine_id = m.id
+			) as substanceIds,
 			pf.${nameField} as pharmaForm,
 			pf.name_en as pharmaFormEn,
 			pf.name as pharmaFormSrc,
@@ -256,7 +308,16 @@ export async function getMedicineList(
 			totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
 		}
 
-		const [rows] = await connection.execute(listQuery, queryParams);
+		const [rows] = await connection.execute(listQuery, [
+			...queryParams,
+			...orderParams,
+		]);
+
+		// Причина попадания в выдачу (вещество / зарубежный аналог) — только
+		// для текстового поиска: в остальных случаях объяснять нечего.
+		const matchIndex: MedicineNameMatchIndex | null = searchByName
+			? await buildNameMatchIndex(connection, body.name!, locale)
+			: null;
 
 		const items = (rows as any[]).map((row) => ({
 			id: row.id,
@@ -272,6 +333,15 @@ export async function getMedicineList(
 			dispensingModeId: row.dispensing_mode_id || null,
 			isActive: !!row.is_active,
 			atcCode: row.atc_code,
+			...(matchIndex
+				? {
+						match: buildMedicineMatch(
+							matchIndex,
+							row.name,
+							parseIdList(row.substanceIds),
+						),
+					}
+				: {}),
 			...mapPack(row),
 		}));
 
@@ -294,6 +364,15 @@ export async function getMedicineList(
 			...(substanceReference ? { substanceReference } : {}),
 		};
 	});
+}
+
+/** «12,7,40» из GROUP_CONCAT → [12, 7, 40]. */
+function parseIdList(value: string | null): number[] {
+	if (!value) return [];
+	return String(value)
+		.split(',')
+		.map(Number)
+		.filter((id) => Number.isInteger(id));
 }
 
 /** Справка о веществе для фасета `?substanceIds=X` (одна выбранная позиция). */

@@ -83,9 +83,9 @@ export default {
 			MedicineDescFormLine: 'Form: {form}',
 			MedicineDescManufacturer: 'Manufacturer: {manufacturer}',
 			ForeignBrandsTitle: 'Names in other countries',
-			ForeignNoneFound: 'No analogs found on this market',
+			ForeignNoneFound: 'No analogs found',
 			ForeignBrandsDisclaimer:
-				'For reference only. Forms, strengths and composition may differ between countries — check with a pharmacist.',
+				'Forms, strengths and composition may differ between countries — check with a pharmacist.',
 			ForeignFullMatch:
 				'Full match: same active ingredients, form and dose as {name}',
 			ForeignExtraSubstance: '{name} does not contain this substance',
@@ -180,9 +180,9 @@ export default {
 			MedicineDescFormLine: 'Форма выпуска: {form}',
 			MedicineDescManufacturer: 'Производитель: {manufacturer}',
 			ForeignBrandsTitle: 'Аналоги в других странах',
-			ForeignNoneFound: 'Аналогов на этом рынке не нашли',
+			ForeignNoneFound: 'Аналогов не нашли',
 			ForeignBrandsDisclaimer:
-				'Справочная информация. Формы, дозировки и состав в разных странах могут отличаться — уточняйте у фармацевта.',
+				'Формы, дозировки и состав в разных странах могут отличаться — уточняйте у фармацевта.',
 			ForeignFullMatch:
 				'Полное совпадение: те же вещества, форма и дозировка, что у {name}',
 			ForeignExtraSubstance: '{name} не содержит это вещество',
@@ -276,9 +276,9 @@ export default {
 			MedicineDescFormLine: 'Farmaceutski oblik: {form}',
 			MedicineDescManufacturer: 'Proizvođač: {manufacturer}',
 			ForeignBrandsTitle: 'Nazivi u drugim zemljama',
-			ForeignNoneFound: 'Na ovom tržištu nismo našli analoge',
+			ForeignNoneFound: 'Nismo našli analoge',
 			ForeignBrandsDisclaimer:
-				'Informativnog karaktera. Oblici, jačine i sastav mogu se razlikovati po zemljama — provjerite kod farmaceuta.',
+				'Oblici, jačine i sastav mogu se razlikovati po zemljama — provjerite kod farmaceuta.',
 			ForeignFullMatch:
 				'Potpuno podudaranje: iste supstance, oblik i doza kao {name}',
 			ForeignExtraSubstance: '{name} ne sadrži ovu supstancu',
@@ -373,9 +373,9 @@ export default {
 			MedicineDescFormLine: 'Darreichungsform: {form}',
 			MedicineDescManufacturer: 'Hersteller: {manufacturer}',
 			ForeignBrandsTitle: 'Namen in anderen Ländern',
-			ForeignNoneFound: 'Auf diesem Markt keine Analoga gefunden',
+			ForeignNoneFound: 'Keine Analoga gefunden',
 			ForeignBrandsDisclaimer:
-				'Nur zur Information. Formen, Stärken und Zusammensetzung können je nach Land abweichen — fragen Sie in der Apotheke nach.',
+				'Formen, Stärken und Zusammensetzung können je nach Land abweichen — fragen Sie in der Apotheke nach.',
 			ForeignFullMatch:
 				'Vollständige Übereinstimmung: gleiche Wirkstoffe, Form und Dosis wie {name}',
 			ForeignExtraSubstance: '{name} enthält diesen Wirkstoff nicht',
@@ -468,9 +468,9 @@ export default {
 			MedicineDescFormLine: 'Farmasötik form: {form}',
 			MedicineDescManufacturer: 'Üretici: {manufacturer}',
 			ForeignBrandsTitle: 'Diğer ülkelerdeki adları',
-			ForeignNoneFound: 'Bu pazarda eşdeğer bulunamadı',
+			ForeignNoneFound: 'Eşdeğer bulunamadı',
 			ForeignBrandsDisclaimer:
-				'Yalnızca bilgi amaçlıdır. Formlar, dozlar ve bileşim ülkelere göre değişebilir — eczacınıza danışın.',
+				'Formlar, dozlar ve bileşim ülkelere göre değişebilir — eczacınıza danışın.',
 			ForeignFullMatch: 'Tam eşleşme: {name} ile aynı etkin madde, form ve doz',
 			ForeignExtraSubstance: '{name} bu etkin maddeyi içermez',
 			MarketRU: 'Rusya, Belarus, Kazakistan',
@@ -563,9 +563,9 @@ export default {
 			MedicineDescFormLine: 'Фармацеутски облик: {form}',
 			MedicineDescManufacturer: 'Произвођач: {manufacturer}',
 			ForeignBrandsTitle: 'Називи у другим земљама',
-			ForeignNoneFound: 'На овом тржишту нисмо нашли аналоге',
+			ForeignNoneFound: 'Нисмо нашли аналоге',
 			ForeignBrandsDisclaimer:
-				'Информативног карактера. Облици, јачине и састав могу се разликовати по земљама — провјерите код фармацеута.',
+				'Облици, јачине и састав могу се разликовати по земљама — провјерите код фармацеута.',
 			ForeignFullMatch:
 				'Потпуно подударање: исте супстанце, облик и доза као {name}',
 			ForeignExtraSubstance: '{name} не садржи ову супстанцу',

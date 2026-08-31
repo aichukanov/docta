@@ -15,6 +15,7 @@ import {
 	type ClinicServicesMap,
 } from '~/server/common/services';
 import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
+import { foldedLikeAny } from '~/server/common/search-collation';
 
 export default defineEventHandler(async (event): Promise<DoctorList> => {
 	try {
@@ -145,7 +146,7 @@ export async function getDoctorList(
 	if (body.name && validateName(body, 'api/doctors/list')) {
 		const namePattern = `%${body.name}%`;
 		whereFilters.push(
-			`(d.name_sr LIKE ? OR d.name_sr_cyrl LIKE ? OR d.name_ru LIKE ? OR d.name_en LIKE ?)`,
+			`(${foldedLikeAny(['d.name_sr', 'd.name_sr_cyrl', 'd.name_ru', 'd.name_en'])})`,
 		);
 		queryParams.push(namePattern, namePattern, namePattern, namePattern);
 	}

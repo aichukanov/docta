@@ -28,6 +28,7 @@ import {
 } from '~/common/validation';
 import { PROXIMITY_WEIGHT, PROXIMITY_HALF_DISTANCE_KM } from '~/common/ranking';
 import { LIST_PAGE_SIZE } from '~/common/constants';
+import { foldedLikeAny } from '~/server/common/search-collation';
 
 function parseDaySchedule(value: unknown): DaySchedule {
 	if (!value) return DEFAULT_DAY_SCHEDULE;
@@ -216,7 +217,7 @@ export async function getClinicList(
 	if (body.name && validateName(body, 'api/clinics/list')) {
 		const namePattern = `%${body.name}%`;
 		whereFilters.push(
-			`(c.name_sr LIKE ? OR c.name_sr_cyrl LIKE ? OR c.name_ru LIKE ?)`,
+			`(${foldedLikeAny(['c.name_sr', 'c.name_sr_cyrl', 'c.name_ru'])})`,
 		);
 		queryParams.push(namePattern, namePattern, namePattern);
 	}

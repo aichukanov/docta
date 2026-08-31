@@ -252,10 +252,18 @@ async function fetchForeignBrands(
 			a.match.missing.length - b.match.missing.length ||
 			a.sortOrder - b.sortOrder;
 
-		return MARKET_ORDER.filter((m) => byMarket.has(m)).map((market) => ({
+		// Рынки отдаём ВСЕ шесть, даже пустые: молчаливо пропущенный рынок читается
+		// как «мы не смотрели», хотя на деле вещество там часто просто не одобрено
+		// (фенотерол в США, биластин в США, дефлазакорт в РФ). Пустой рынок фронт
+		// показывает строкой «аналогов не нашли».
+		//
+		// Если пусто ВЕЗДЕ, блока не будет вовсе (см. вызов ниже): шесть пустых
+		// карточек на карточке стационарного препарата — шум, а не информация.
+		if (byMarket.size === 0) return [];
+
+		return MARKET_ORDER.map((market) => ({
 			market,
-			products: byMarket
-				.get(market)!
+			products: (byMarket.get(market) || [])
 				.sort(rank)
 				.slice(0, FOREIGN_TOP_N)
 				.map((p) => ({

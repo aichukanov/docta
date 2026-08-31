@@ -52,11 +52,26 @@ const FORM_KEY_TO_ID = {
   gel: 10, cream: 36, ointment: 42, suppository: 117, nasal_spray: 112,
   nasal_drops: 18, eye_drops: 19, ear_drops: 21, throat_spray: 114, skin_spray: 111,
   injection: 94, injection_powder: 85, transdermal_patch: 131, vaginal_tablet: 135,
-  vaginal_capsule: 133, vaginal_cream: 136, other: null,
+  vaginal_capsule: 133, vaginal_cream: 136,
+  // Ингаляционные формы: без них астма и ХОБЛ падали в other и теряли форму,
+  // а вместе с ней и сопоставление с карточкой. Категория у всех — 'spray'
+  // (enums/pharma-form.ts), так что formMatch работает.
+  inhaler_powder: 73,          // Prašak za inhalaciju (DPI, турбухалер и т.п.)
+  inhaler_capsule: 75,         // Prašak za inhalaciju, tvrda kapsula
+  inhaler_aerosol: 93,         // Rastvor za inhalaciju pod pritiskom (MDI)
+  inhaler_aerosol_suspension: 118, // Suspenzija za inhalaciju pod pritiskom
+  nebuliser: 105,              // Rastvor za raspršivanje
+  nebuliser_suspension: 124,   // Suspenzija za raspršivanje
+  other: null,
 };
 
 // free-text form (any market language) -> vocab key (for combo batches)
 const FORM_TEXT_RULES = [
+  // Ингаляции проверяем ПЕРВЫМИ: «Prašak za inhalaciju» иначе уедет в порошок,
+  // а «Suspenzija za inhalaciju» — в оральную суспензию
+  [/inhalat|inhaler|ингалят|inhalac|inhalasyon|dosieraerosol/, 'inhaler_aerosol'],
+  [/dpi|turbuhaler|diskus|breezhaler|genuair|ellipta|handihaler/, 'inhaler_powder'],
+  [/nebul|небулай|raspršiv|verneb/, 'nebuliser'],
   [/saszet|sachet|kesic|пакет|şase|köpük/, 'oral_powder_sachet'],
   [/powder|порош|prašak|pulver|\btoz\b/, 'oral_powder_sachet'],
   [/granul|гранул/, 'granules_oral'],

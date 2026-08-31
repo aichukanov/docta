@@ -83,6 +83,7 @@ export default {
 			MedicineDescFormLine: 'Form: {form}',
 			MedicineDescManufacturer: 'Manufacturer: {manufacturer}',
 			ForeignBrandsTitle: 'Names in other countries',
+			ForeignNoneFound: 'No analogs found on this market',
 			ForeignBrandsDisclaimer:
 				'For reference only. Forms, strengths and composition may differ between countries — check with a pharmacist.',
 			ForeignFullMatch:
@@ -179,6 +180,7 @@ export default {
 			MedicineDescFormLine: 'Форма выпуска: {form}',
 			MedicineDescManufacturer: 'Производитель: {manufacturer}',
 			ForeignBrandsTitle: 'Аналоги в других странах',
+			ForeignNoneFound: 'Аналогов на этом рынке не нашли',
 			ForeignBrandsDisclaimer:
 				'Справочная информация. Формы, дозировки и состав в разных странах могут отличаться — уточняйте у фармацевта.',
 			ForeignFullMatch:
@@ -274,6 +276,7 @@ export default {
 			MedicineDescFormLine: 'Farmaceutski oblik: {form}',
 			MedicineDescManufacturer: 'Proizvođač: {manufacturer}',
 			ForeignBrandsTitle: 'Nazivi u drugim zemljama',
+			ForeignNoneFound: 'Na ovom tržištu nismo našli analoge',
 			ForeignBrandsDisclaimer:
 				'Informativnog karaktera. Oblici, jačine i sastav mogu se razlikovati po zemljama — provjerite kod farmaceuta.',
 			ForeignFullMatch:
@@ -370,6 +373,7 @@ export default {
 			MedicineDescFormLine: 'Darreichungsform: {form}',
 			MedicineDescManufacturer: 'Hersteller: {manufacturer}',
 			ForeignBrandsTitle: 'Namen in anderen Ländern',
+			ForeignNoneFound: 'Auf diesem Markt keine Analoga gefunden',
 			ForeignBrandsDisclaimer:
 				'Nur zur Information. Formen, Stärken und Zusammensetzung können je nach Land abweichen — fragen Sie in der Apotheke nach.',
 			ForeignFullMatch:
@@ -464,6 +468,7 @@ export default {
 			MedicineDescFormLine: 'Farmasötik form: {form}',
 			MedicineDescManufacturer: 'Üretici: {manufacturer}',
 			ForeignBrandsTitle: 'Diğer ülkelerdeki adları',
+			ForeignNoneFound: 'Bu pazarda eşdeğer bulunamadı',
 			ForeignBrandsDisclaimer:
 				'Yalnızca bilgi amaçlıdır. Formlar, dozlar ve bileşim ülkelere göre değişebilir — eczacınıza danışın.',
 			ForeignFullMatch: 'Tam eşleşme: {name} ile aynı etkin madde, form ve doz',
@@ -558,6 +563,7 @@ export default {
 			MedicineDescFormLine: 'Фармацеутски облик: {form}',
 			MedicineDescManufacturer: 'Произвођач: {manufacturer}',
 			ForeignBrandsTitle: 'Називи у другим земљама',
+			ForeignNoneFound: 'На овом тржишту нисмо нашли аналоге',
 			ForeignBrandsDisclaimer:
 				'Информативног карактера. Облици, јачине и састав могу се разликовати по земљама — провјерите код фармацеута.',
 			ForeignFullMatch:

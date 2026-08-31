@@ -497,8 +497,17 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 							<span class="foreign-market-name">{{
 								marketLabel(m.market)
 							}}</span>
-							<span class="foreign-market-count">{{ m.products.length }}</span>
+							<span
+								v-if="m.products.length"
+								class="foreign-market-count"
+								>{{ m.products.length }}</span
+							>
 						</header>
+						<!-- Пустой рынок показываем явно: чаще всего вещество там просто
+						     не одобрено, и молчание читалось бы как «мы не искали» -->
+						<p v-if="!m.products.length" class="foreign-empty">
+							{{ t('ForeignNoneFound') }}
+						</p>
 						<div v-for="(p, i) in m.products" :key="i" class="foreign-product">
 							<div class="foreign-product-top">
 								<span class="foreign-brand-name">{{ p.brand }}</span>
@@ -804,6 +813,13 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 .foreign-dose.is-dose-match {
 	color: var(--color-primary-green);
 	font-weight: var(--font-weight-medium);
+}
+
+.foreign-empty {
+	margin: 0;
+	padding: var(--spacing-sm) 0;
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
 }
 
 .foreign-product :deep(.substance-badges) {

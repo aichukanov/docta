@@ -56,10 +56,17 @@ export const CLINIC_SUPPORT_LANGUAGE_IDS = [
  * `med_substances`, а там только вещества зарегистрированных здесь лекарств.
  * Статьи же из поиска не находились вообще ни по какому запросу.
  *
- * `labelKey` — КОРОТКИЙ ярлык для строки дропдауна (`i18n/article-search.ts`),
- * намеренно не равный SEO-заголовку статьи: тот длинный и в узкую строку не
- * читается. Дублирования нет — это строки разного назначения, как подпись
- * в навигации против заголовка страницы.
+ * `titleKey` — ключ ЗАГОЛОВКА статьи, того же, что стоит на самой странице и
+ * на карточке в списке `/articles`. Сначала здесь были свои короткие ярлыки
+ * (`i18n/article-search.ts`), но одна статья в выдаче называлась иначе, чем
+ * страница, на которую ведёт, и это читалось как другой материал. Второго
+ * названия у статьи быть не должно, поэтому берём заголовок как есть.
+ *
+ * Заголовки лежат по своим файлам: общие — в `i18n/articles.ts`, у отдельных
+ * статей — в их собственных (`UnaTitle`, `AlgTitle`, `WeekendMedicalHelpTitle`,
+ * `CityHcTitle_*`). `components/global-search.vue` подмешивает те же словари,
+ * что и листинг статей; полноту ключей во всех локалях проверяет
+ * tests/unit/article-slugs.spec.ts.
  *
  * `keywords` — то, по чему статью ищут, но чего нет в ярлыке: торговые
  * названия, синонимы, названия городов в другом алфавите. Не локализуются:
@@ -70,14 +77,14 @@ export const CLINIC_SUPPORT_LANGUAGE_IDS = [
  */
 export interface ArticleSearchEntry {
 	slug: string;
-	labelKey: string;
+	titleKey: string;
 	keywords: string[];
 }
 
 export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	{
 		slug: 'medications-not-available-in-montenegro',
-		labelKey: 'ArtSearchUnavailable',
+		titleKey: 'UnaTitle',
 		keywords: [
 			'zyrtec',
 			'зиртек',
@@ -138,7 +145,7 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	},
 	{
 		slug: 'allergy-medicines-in-montenegro',
-		labelKey: 'ArtSearchAllergy',
+		titleKey: 'AlgTitle',
 		keywords: [
 			'аллергия',
 			'alergija',
@@ -172,7 +179,7 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	},
 	{
 		slug: 'pharmacies-and-medications',
-		labelKey: 'ArtSearchPharmacies',
+		titleKey: 'PharmaciesTitle',
 		keywords: [
 			'аптека',
 			'apoteka',
@@ -191,7 +198,7 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	},
 	{
 		slug: 'birth-in-montenegro',
-		labelKey: 'ArtSearchBirth',
+		titleKey: 'BirthInMontenegroTitle',
 		keywords: [
 			'роды',
 			'роддом',
@@ -212,7 +219,7 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	},
 	{
 		slug: 'health-insurance-for-residence-permit',
-		labelKey: 'ArtSearchResidenceInsurance',
+		titleKey: 'ResidenceInsuranceTitle',
 		keywords: [
 			'внж',
 			'boravak',
@@ -236,7 +243,7 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	},
 	{
 		slug: 'child-healthcare-in-montenegro',
-		labelKey: 'ArtSearchChild',
+		titleKey: 'ChildHealthcareTitle',
 		keywords: [
 			'ребёнок',
 			'ребенок',
@@ -264,7 +271,7 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	},
 	{
 		slug: 'mental-health-in-montenegro',
-		labelKey: 'ArtSearchMentalHealth',
+		titleKey: 'MentalHealthTitle',
 		keywords: [
 			'депрессия',
 			'depresija',
@@ -286,7 +293,7 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	},
 	{
 		slug: 'dentistry-in-montenegro',
-		labelKey: 'ArtSearchDentistry',
+		titleKey: 'DentistryTitle',
 		keywords: [
 			'зубы',
 			'зуб',
@@ -310,7 +317,7 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	},
 	{
 		slug: 'lab-tests-and-checkups',
-		labelKey: 'ArtSearchLabTests',
+		titleKey: 'LabTestsArticleTitle',
 		keywords: [
 			'чекап',
 			'check-up',
@@ -330,7 +337,7 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	},
 	{
 		slug: 'tourist-healthcare-in-montenegro',
-		labelKey: 'ArtSearchTourist',
+		titleKey: 'TouristHealthcareTitle',
 		keywords: [
 			'турист',
 			'turist',
@@ -353,7 +360,7 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	},
 	{
 		slug: 'weekend-medical-help-in-montenegro',
-		labelKey: 'ArtSearchWeekend',
+		titleKey: 'WeekendMedicalHelpTitle',
 		keywords: [
 			'выходные',
 			'vikend',
@@ -373,7 +380,7 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	},
 	{
 		slug: 'healthcare-system-in-montenegro',
-		labelKey: 'ArtSearchSystem',
+		titleKey: 'HealthcareSystemTitle',
 		keywords: [
 			'книжица',
 			'knjižica',
@@ -391,7 +398,7 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	},
 	{
 		slug: 'russian-speaking-doctors-in-montenegro',
-		labelKey: 'ArtSearchRussianSpeaking',
+		titleKey: 'RussianSpeakingDoctorsTitle',
 		keywords: [
 			'по-русски',
 			'русский язык',
@@ -405,7 +412,7 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	},
 	{
 		slug: 'clinics-with-language-support',
-		labelKey: 'ArtSearchLanguageSupport',
+		titleKey: 'ClinicsWithLanguageSupportTitle',
 		keywords: [
 			'английский',
 			'engleski',
@@ -430,12 +437,12 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	},
 	{
 		slug: 'healthcare-in-budva',
-		labelKey: 'ArtSearchCityBudva',
+		titleKey: 'CityHcTitle_budva',
 		keywords: ['budva', 'будва', 'будви', 'budvi', 'бечичи', 'bečići'],
 	},
 	{
 		slug: 'healthcare-in-podgorica',
-		labelKey: 'ArtSearchCityPodgorica',
+		titleKey: 'CityHcTitle_podgorica',
 		keywords: [
 			'podgorica',
 			'подгорица',
@@ -447,12 +454,12 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 	},
 	{
 		slug: 'healthcare-in-kotor',
-		labelKey: 'ArtSearchCityKotor',
+		titleKey: 'CityHcTitle_kotor',
 		keywords: ['kotor', 'котор', 'которе', 'kotoru', 'доброта', 'dobrota'],
 	},
 	{
 		slug: 'healthcare-in-bar',
-		labelKey: 'ArtSearchCityBar',
+		titleKey: 'CityHcTitle_bar',
 		keywords: ['bar', 'бар', 'баре', 'baru', 'сутоморе', 'sutomore'],
 	},
 ];

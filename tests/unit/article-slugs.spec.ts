@@ -4,7 +4,11 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ARTICLE_SEARCH, ARTICLE_SLUGS } from '../../common/articles';
 import { locales } from '../../composables/use-locale';
-import articleSearchI18n from '../../i18n/article-search';
+import articlesI18n from '../../i18n/articles';
+import articleUnavailableI18n from '../../i18n/article-medications-unavailable';
+import articleAllergyI18n from '../../i18n/article-allergy-medicines';
+import articleCityHealthcareI18n from '../../i18n/article-city-healthcare';
+import articleWeekendI18n from '../../i18n/article-weekend-medical-help';
 
 // ARTICLE_SLUGS кормит sitemap. Раньше этот список был захардкожен в
 // sitemap.ts двумя слагами при 17 статьях, и расхождение ничем не проявлялось:
@@ -56,24 +60,37 @@ test.describe('ARTICLE_SEARCH', () => {
 		expect(searched).toEqual([...ARTICLE_SLUGS].sort());
 	});
 
-	test('не содержит дублей слагов и ключей ярлыков', () => {
+	test('не содержит дублей слагов и ключей заголовков', () => {
 		const slugs = ARTICLE_SEARCH.map((entry) => entry.slug);
-		const labelKeys = ARTICLE_SEARCH.map((entry) => entry.labelKey);
+		const titleKeys = ARTICLE_SEARCH.map((entry) => entry.titleKey);
 		expect(new Set(slugs).size).toBe(slugs.length);
-		expect(new Set(labelKeys).size).toBe(labelKeys.length);
+		expect(new Set(titleKeys).size).toBe(titleKeys.length);
 	});
 
-	test('у каждой статьи есть ярлык во всех локалях', () => {
-		const messages = articleSearchI18n.messages as Record<
-			string,
-			Record<string, string>
-		>;
+	// Поиск печатает заголовок статьи, а заголовки разбросаны по словарям:
+	// общие в i18n/articles.ts, у отдельных статей — свои файлы. Тот же набор
+	// подмешивает components/global-search.vue; если он разойдётся с этим
+	// списком, t() вернёт сам ключ, и в выдаче будет «AlgTitle».
+	const TITLE_DICTS = [
+		articlesI18n,
+		articleUnavailableI18n,
+		articleAllergyI18n,
+		articleCityHealthcareI18n,
+		articleWeekendI18n,
+	];
+
+	test('у каждой статьи есть заголовок во всех локалях', () => {
 		const missing: string[] = [];
 		for (const locale of locales) {
-			for (const { labelKey } of ARTICLE_SEARCH) {
-				if (!messages[locale]?.[labelKey]) {
-					missing.push(`${locale}/${labelKey}`);
-				}
+			for (const { titleKey } of ARTICLE_SEARCH) {
+				const found = TITLE_DICTS.some((dict) => {
+					const messages = dict.messages as Record<
+						string,
+						Record<string, string>
+					>;
+					return Boolean(messages[locale]?.[titleKey]);
+				});
+				if (!found) missing.push(`${locale}/${titleKey}`);
 			}
 		}
 		expect(missing).toEqual([]);

@@ -19,6 +19,11 @@ import clinicCommonI18n from '~/i18n/clinic-common';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
 import labtestCategoryI18n from '~/i18n/labtest-category';
 import articleSearchI18n from '~/i18n/article-search';
+import articlesI18n from '~/i18n/articles';
+import articleUnavailableI18n from '~/i18n/article-medications-unavailable';
+import articleAllergyI18n from '~/i18n/article-allergy-medicines';
+import articleCityHealthcareI18n from '~/i18n/article-city-healthcare';
+import articleWeekendI18n from '~/i18n/article-weekend-medical-help';
 import searchMatchI18n from '~/i18n/search-match';
 import { combineI18nMessages } from '~/i18n/utils';
 import type {
@@ -173,6 +178,13 @@ const { t, n, locale } = useI18n({
 		clinicCommonI18n,
 		medicalServiceCategoryI18n,
 		labtestCategoryI18n,
+		// Заголовки статей живут в своих словарях — берём их, а не пишем
+		// поиску второе название (ARTICLE_SEARCH.titleKey, common/articles.ts)
+		articlesI18n,
+		articleUnavailableI18n,
+		articleAllergyI18n,
+		articleCityHealthcareI18n,
+		articleWeekendI18n,
 		articleSearchI18n,
 		searchMatchI18n,
 		globalSearchI18n,
@@ -286,8 +298,8 @@ function filterClinics(query: string) {
 		}));
 }
 
-// Статьи ищем по короткому ярлыку и по ключевым словам (common/articles.ts).
-// Ключевые слова закрывают то, чего в ярлыке нет: «Zyrtec» → статья о
+// Статьи ищем по заголовку и по ключевым словам (common/articles.ts).
+// Ключевые слова закрывают то, чего в заголовке нет: «Zyrtec» → статья о
 // лекарствах, которых в Черногории не найти. Без этого поиск по такому бренду
 // отдавал пустую выдачу — сопоставить его с реестром нечем, вещества
 // (цетиризина) в Черногории нет вообще.
@@ -299,9 +311,9 @@ function filterArticles(query: string) {
 	const normalizedQuery = normalizeForSearch(query.trim());
 	const matchKeywords = normalizedQuery.length >= MIN_KEYWORD_QUERY_LENGTH;
 	allFilteredArticles.value = ARTICLE_SEARCH.flatMap((article) => {
-		const label = t(article.labelKey);
+		const label = t(article.titleKey);
 		const byLabel = normalizeForSearch(label).includes(normalizedQuery);
-		// Подпись показывает слово, по которому нашлось, только если в ярлыке
+		// Подпись показывает слово, по которому нашлось, только если в заголовке
 		// его не видно — иначе это повтор того же самого в двух строках
 		const keyword =
 			byLabel || !matchKeywords
@@ -312,7 +324,7 @@ function filterArticles(query: string) {
 		if (!byLabel && !keyword) return [];
 		return [{ slug: article.slug, label, keyword }];
 	})
-		// Совпадение в видимом ярлыке — выше совпадения по ключевому слову
+		// Совпадение в видимом заголовке — выше совпадения по ключевому слову
 		.sort((a, b) => Number(!!a.keyword) - Number(!!b.keyword));
 }
 

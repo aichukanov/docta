@@ -332,7 +332,7 @@ const totalReviewsCount = computed(
 				/>
 			</div>
 
-			<el-empty
+			<KitEmpty
 				v-if="reviews.length === 0 && !currentOwnReview"
 				:description="t('NoReviews')"
 			/>
@@ -364,23 +364,23 @@ const totalReviewsCount = computed(
 .reviews-page {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xl);
+	gap: var(--kit-spacing-xl);
 	max-width: 1100px;
 	width: 100%;
 	margin: 0 auto;
-	padding: var(--spacing-xl);
+	padding: var(--kit-spacing-xl);
 	box-sizing: border-box;
 }
 
 .own-review-section {
-	padding-bottom: var(--spacing-lg);
-	border-bottom: var(--border-width-thin) solid var(--color-border-secondary);
+	padding-bottom: var(--kit-spacing-lg);
+	border-bottom: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
 }
 
 .other-reviews-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .reviews-sort {
@@ -395,8 +395,8 @@ const totalReviewsCount = computed(
 
 @media (max-width: 640px) {
 	.reviews-page {
-		padding: var(--spacing-md);
-		gap: var(--spacing-lg);
+		padding: var(--kit-spacing-md);
+		gap: var(--kit-spacing-lg);
 	}
 }
 </style>

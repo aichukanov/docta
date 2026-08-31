@@ -96,12 +96,12 @@ const priceText = computed(() => {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	gap: var(--spacing-xl);
-	margin: var(--spacing-xl) 0 0;
-	padding: var(--spacing-lg) var(--spacing-xl);
-	background: var(--color-bg-tips);
-	border: 1px solid var(--color-border-accent);
-	border-radius: var(--border-radius-lg);
+	gap: var(--kit-spacing-xl);
+	margin: var(--kit-spacing-xl) 0 0;
+	padding: var(--kit-spacing-lg) var(--kit-spacing-xl);
+	background: var(--kit-color-bg-tips);
+	border: 1px solid var(--kit-color-border-accent);
+	border-radius: var(--kit-border-radius-lg);
 }
 
 .auto-facts__lead {
@@ -109,29 +109,29 @@ const priceText = computed(() => {
 	flex-direction: column;
 	gap: 2px;
 	min-width: 0;
-	padding-right: var(--spacing-xl);
-	border-right: 1px solid var(--color-border-secondary);
+	padding-right: var(--kit-spacing-xl);
+	border-right: 1px solid var(--kit-color-border-secondary);
 }
 
 .auto-facts__lead-value {
 	margin: 0;
-	font-size: var(--font-size-2xl);
-	font-weight: var(--font-weight-bold);
+	font-size: var(--kit-font-size-2xl);
+	font-weight: var(--kit-font-weight-bold);
 	line-height: 1.2;
-	color: var(--color-primary-dark);
+	color: var(--kit-color-primary-dark);
 	overflow-wrap: break-word;
 }
 
 .auto-facts__lead-sub {
 	margin: 0;
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 
 .auto-facts__rest {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--spacing-md) var(--spacing-xl);
+	gap: var(--kit-spacing-md) var(--kit-spacing-xl);
 	min-width: 0;
 }
 
@@ -143,18 +143,18 @@ const priceText = computed(() => {
 }
 
 .auto-facts__label {
-	font-size: var(--font-size-xs);
-	font-weight: var(--font-weight-medium);
+	font-size: var(--kit-font-size-xs);
+	font-weight: var(--kit-font-weight-medium);
 	text-transform: uppercase;
 	letter-spacing: 0.04em;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 }
 
 .auto-facts__value {
 	margin: 0;
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-base);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	overflow-wrap: break-word;
 }
 
@@ -164,23 +164,23 @@ const priceText = computed(() => {
 	.auto-facts {
 		flex-direction: column;
 		align-items: stretch;
-		gap: var(--spacing-md);
-		padding: var(--spacing-md) var(--spacing-lg);
+		gap: var(--kit-spacing-md);
+		padding: var(--kit-spacing-md) var(--kit-spacing-lg);
 	}
 
 	.auto-facts__lead {
 		padding-right: 0;
-		padding-bottom: var(--spacing-md);
+		padding-bottom: var(--kit-spacing-md);
 		border-right: none;
-		border-bottom: 1px solid var(--color-border-secondary);
+		border-bottom: 1px solid var(--kit-color-border-secondary);
 	}
 
 	.auto-facts__lead-value {
-		font-size: var(--font-size-xl);
+		font-size: var(--kit-font-size-xl);
 	}
 
 	.auto-facts__rest {
-		gap: var(--spacing-sm) var(--spacing-xl);
+		gap: var(--kit-spacing-sm) var(--kit-spacing-xl);
 	}
 }
 </style>

@@ -58,17 +58,17 @@ const formattedRating = computed(() =>
 }
 
 .star {
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 	font-size: 1.2em;
 	line-height: 1;
 }
 
 .star.filled {
-	color: var(--color-rating);
+	color: var(--kit-color-rating);
 }
 
 .star.half {
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 	position: relative;
 }
 
@@ -79,20 +79,20 @@ const formattedRating = computed(() =>
 	left: 0;
 	width: 50%;
 	overflow: hidden;
-	color: var(--color-rating);
+	color: var(--kit-color-rating);
 }
 
 .rating-value {
-	margin-left: var(--spacing-xs);
+	margin-left: var(--kit-spacing-xs);
 	font-size: 0.9em;
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-primary);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-text-primary);
 }
 
 .rating-count {
-	margin-left: var(--spacing-xs);
+	margin-left: var(--kit-spacing-xs);
 	font-size: 0.9em;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 }
 
 .rating-count--link {
@@ -100,7 +100,7 @@ const formattedRating = computed(() =>
 }
 
 .rating-count--link:hover {
-	color: var(--color-primary);
+	color: var(--kit-color-primary);
 	text-decoration: underline;
 }
 </style>

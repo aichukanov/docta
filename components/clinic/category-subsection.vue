@@ -85,16 +85,16 @@ const toggleShowAll = () => {
 .category-subsection {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .category-title {
-	font-size: var(--font-size-md);
+	font-size: var(--kit-font-size-md);
 	font-weight: 600;
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 	margin: 0;
-	padding-bottom: var(--spacing-xs);
-	border-bottom: 1px solid var(--color-border-light);
+	padding-bottom: var(--kit-spacing-xs);
+	border-bottom: 1px solid var(--kit-color-border-light);
 	font-family:
 		system-ui,
 		-apple-system,
@@ -104,7 +104,7 @@ const toggleShowAll = () => {
 .items-grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 
 	@media (max-width: 640px) {
 		grid-template-columns: 1fr;

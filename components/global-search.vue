@@ -197,9 +197,15 @@ const isLoading = ref(false);
 const searchPerformed = ref(false);
 const inputRef = ref<HTMLInputElement | null>(null);
 
-// Store клиник (загружается один раз)
+// Store клиник (загружается один раз).
+//
+// Загрузку не начинаем в setup: компонент живёт в первом экране главной, а
+// каталог нужен только для локальной фильтрации по клиникам — то есть после
+// того, как в поле что-то ввели. Раньше запрос уходил у каждого посетителя,
+// причём дважды: на SSR его результат в payload не попадал (вызов без await),
+// и клиент качал каталог заново сразу после гидрации, конкурируя за канал с
+// отрисовкой главной. Теперь — по фокусу на поле и перед первой фильтрацией.
 const clinicsStore = useClinicsStore();
-clinicsStore.fetchClinics();
 
 // Результаты поиска: серверные категории отдают страницу и общее число,
 // клиентские (специальности, клиники) фильтруются целиком.
@@ -278,11 +284,15 @@ function filterSpecialties(query: string) {
 // Ищем и по локализованному имени, и по оригинальному сербскому (localName):
 // в ru/en/de/tr-локалях клинику ищут по вывеске, а не только по переводу —
 // как это делает /api/clinics/list (name_sr OR name_sr_cyrl OR name_ru).
-function filterClinics(query: string) {
+async function filterClinics(query: string) {
 	if (!query.trim()) {
 		allFilteredClinics.value = [];
 		return;
 	}
+	// Каталог мог ещё не приехать (грузим по фокусу, а не в setup).
+	// fetchClinics идемпотентен: повторные вызовы ждут тот же промис.
+	await clinicsStore.fetchClinics();
+
 	const normalizedQuery = normalizeForSearch(query);
 	allFilteredClinics.value = clinicsStore.clinics
 		.filter(
@@ -445,6 +455,18 @@ const MIN_QUERY_LENGTH = 2;
 
 const canSearch = (value: string) => value.trim().length >= MIN_QUERY_LENGTH;
 
+// Фокус на поле — первый достоверный признак намерения искать. Начинаем
+// тянуть каталог клиник заранее, чтобы к концу набора он уже был.
+function onSearchFocus() {
+	// Ошибку стор уже залогировал; здесь глушим, чтобы предзагрузка не
+	// оставляла необработанный rejection — фильтрация всё равно повторит вызов.
+	clinicsStore.fetchClinics().catch(() => {});
+
+	if (canSearch(searchQuery.value)) {
+		isOpen.value = true;
+	}
+}
+
 watch(searchQuery, (value) => {
 	if (canSearch(value)) {
 		isOpen.value = true;
@@ -492,9 +514,10 @@ const doctorSpecialties = (doctor: DoctorData): string | null =>
 
 // Клиники врача и их города — так видно, куда идти на приём
 const doctorPlaces = (doctor: DoctorData): string[] => {
-	const clinics = clinicsStore
-		.getClinicsByIds(doctor.clinicIds)
-		.slice(0, SHOWN_DOCTOR_CLINICS);
+	const clinics = clinicsStore.getClinicsByIds(
+		doctor.clinicIds,
+		SHOWN_DOCTOR_CLINICS,
+	);
 	const cities = [
 		...new Set(clinics.map((clinic) => t(`city_${clinic.cityId}`))),
 	];
@@ -504,8 +527,9 @@ const doctorPlaces = (doctor: DoctorData): string[] => {
 	];
 };
 
-const clinicById = (id: number) =>
-	clinicsStore.clinics.find((clinic) => clinic.id === id);
+// Шаблон зовёт это по нескольку раз на строку выдачи внутри v-for, поэтому
+// берём из индекса стора, а не линейным поиском по всему каталогу.
+const clinicById = (id: number) => clinicsStore.clinicsById.get(id);
 
 const ratingLabel = (rating?: {
 	averageRating: number | null;
@@ -682,7 +706,7 @@ onUnmounted(() => {
 				type="text"
 				class="global-search__input"
 				:placeholder="t('SearchPlaceholder')"
-				@focus="canSearch(searchQuery) && (isOpen = true)"
+				@focus="onSearchFocus"
 			/>
 			<div v-if="isLoading" class="global-search__spinner" />
 		</div>
@@ -987,7 +1011,7 @@ onUnmounted(() => {
 
 	&__icon {
 		position: absolute;
-		left: var(--spacing-lg);
+		left: var(--kit-spacing-lg);
 		width: 22px;
 		height: 22px;
 		pointer-events: none;
@@ -996,54 +1020,54 @@ onUnmounted(() => {
 	&__input {
 		width: 100%;
 		height: 56px;
-		padding: var(--spacing-lg) 48px var(--spacing-lg) 52px;
-		font-size: var(--font-size-2xl);
+		padding: var(--kit-spacing-lg) 48px var(--kit-spacing-lg) 52px;
+		font-size: var(--kit-font-size-2xl);
 		line-height: 1.5;
-		border: var(--border-width-thin) solid var(--color-border-light);
-		border-radius: var(--border-radius-xl);
-		background: var(--color-bg-primary);
-		box-shadow: var(--shadow-sm);
-		transition: var(--transition-base);
+		border: var(--kit-border-width-thin) solid var(--kit-color-border-light);
+		border-radius: var(--kit-border-radius-xl);
+		background: var(--kit-color-bg-primary);
+		box-shadow: var(--kit-shadow-sm);
+		transition: var(--kit-transition-base);
 		outline: none;
 		box-sizing: border-box;
 
 		&::placeholder {
-			color: var(--color-text-placeholder);
+			color: var(--kit-color-text-placeholder);
 		}
 
 		&:focus {
-			border-color: var(--color-border-accent);
-			box-shadow: var(--shadow-hover);
+			border-color: var(--kit-color-border-accent);
+			box-shadow: var(--kit-shadow-hover);
 		}
 	}
 
 	&__spinner {
 		position: absolute;
-		right: var(--spacing-lg);
+		right: var(--kit-spacing-lg);
 		width: 22px;
 		height: 22px;
-		border: 2px solid var(--color-bg-muted);
-		border-top-color: var(--color-primary);
-		border-radius: var(--border-radius-full);
+		border: 2px solid var(--kit-color-bg-muted);
+		border-top-color: var(--kit-color-primary);
+		border-radius: var(--kit-border-radius-full);
 		animation: spin 0.8s linear infinite;
 	}
 
 	&__dropdown {
 		position: absolute;
-		top: calc(100% + var(--spacing-sm));
+		top: calc(100% + var(--kit-spacing-sm));
 		left: 0;
 		right: 0;
-		background: var(--color-bg-primary);
-		border-radius: var(--border-radius-xl);
-		border: var(--border-width-thin) solid var(--color-border-light);
-		box-shadow: var(--shadow-xl);
+		background: var(--kit-color-bg-primary);
+		border-radius: var(--kit-border-radius-xl);
+		border: var(--kit-border-width-thin) solid var(--kit-color-border-light);
+		box-shadow: var(--kit-shadow-xl);
 		// Карточки многострочные: 400px хватало на 6 однострочников, а теперь
 		// не помещалась и одна группа целиком
 		max-height: min(70vh, 620px);
 		overflow: hidden;
 		overflow-y: auto;
-		z-index: var(--z-dropdown);
-		padding-bottom: var(--spacing-sm);
+		z-index: var(--kit-z-dropdown);
+		padding-bottom: var(--kit-spacing-sm);
 		overscroll-behavior: contain;
 
 		// Кастомный скроллбар
@@ -1053,25 +1077,25 @@ onUnmounted(() => {
 
 		&::-webkit-scrollbar-track {
 			background: transparent;
-			margin: var(--border-radius-xl) 0;
+			margin: var(--kit-border-radius-xl) 0;
 		}
 
 		&::-webkit-scrollbar-thumb {
-			background: var(--color-bg-muted);
+			background: var(--kit-color-bg-muted);
 			border-radius: 3px;
 
 			&:hover {
-				background: var(--color-border-primary);
+				background: var(--kit-color-border-primary);
 			}
 		}
 	}
 
 	&__loading,
 	&__no-results {
-		padding: var(--spacing-xl);
+		padding: var(--kit-spacing-xl);
 		text-align: center;
-		color: var(--color-text-muted);
-		font-size: var(--font-size-md);
+		color: var(--kit-color-text-muted);
+		font-size: var(--kit-font-size-md);
 	}
 
 	&__photo {
@@ -1083,33 +1107,33 @@ onUnmounted(() => {
 	&__rating {
 		display: inline-flex;
 		align-items: center;
-		gap: var(--spacing-xs);
-		color: var(--color-rating);
+		gap: var(--kit-spacing-xs);
+		color: var(--kit-color-rating);
 	}
 
 	// Ярлык варианта препарата: своя ссылка на фасовку под строкой бренда
 	&__variant {
 		display: inline-flex;
 		align-items: center;
-		gap: var(--spacing-xs);
-		padding: 2px var(--spacing-sm);
-		border: var(--border-width-thin) solid var(--color-border-secondary);
-		// Не --border-radius-full: он равен 50%, и на широком ярлыке процент
+		gap: var(--kit-spacing-xs);
+		padding: 2px var(--kit-spacing-sm);
+		border: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
+		// Не --kit-border-radius-full: он равен 50%, и на широком ярлыке процент
 		// даёт эллипс, а не пилюлю
-		border-radius: var(--border-radius-md);
-		font-size: var(--font-size-xs);
-		color: var(--color-text-secondary);
+		border-radius: var(--kit-border-radius-md);
+		font-size: var(--kit-font-size-xs);
+		color: var(--kit-color-text-secondary);
 		text-decoration: none;
-		background: var(--color-bg-primary);
-		transition: var(--transition-fast);
+		background: var(--kit-color-bg-primary);
+		transition: var(--kit-transition-fast);
 
 		&:hover {
-			border-color: var(--color-primary);
-			color: var(--color-primary);
+			border-color: var(--kit-color-primary);
+			color: var(--kit-color-primary);
 		}
 
 		&--all {
-			color: var(--color-primary);
+			color: var(--kit-color-primary);
 			border-style: dashed;
 		}
 	}
@@ -1118,7 +1142,7 @@ onUnmounted(() => {
 // Анимация dropdown
 .dropdown-enter-active,
 .dropdown-leave-active {
-	transition: var(--transition-base);
+	transition: var(--kit-transition-base);
 }
 
 .dropdown-enter-from,
@@ -1147,14 +1171,14 @@ onUnmounted(() => {
 
 		&__input {
 			height: 48px;
-			padding: var(--spacing-md) 40px var(--spacing-md) 44px;
-			font-size: var(--font-size-md);
-			border-radius: var(--border-radius-xl);
+			padding: var(--kit-spacing-md) 40px var(--kit-spacing-md) 44px;
+			font-size: var(--kit-font-size-md);
+			border-radius: var(--kit-border-radius-xl);
 		}
 
 		&__dropdown {
 			max-height: 70vh;
-			border-radius: var(--border-radius-xl);
+			border-radius: var(--kit-border-radius-xl);
 		}
 	}
 }
@@ -1163,17 +1187,17 @@ onUnmounted(() => {
 @media (max-width: 375px) {
 	.global-search {
 		&__icon {
-			left: var(--spacing-md);
+			left: var(--kit-spacing-md);
 		}
 
 		&__input {
 			height: 46px;
-			padding: var(--spacing-md) 36px var(--spacing-md) 40px;
-			font-size: var(--font-size-base);
+			padding: var(--kit-spacing-md) 36px var(--kit-spacing-md) 40px;
+			font-size: var(--kit-font-size-base);
 		}
 
 		&__spinner {
-			right: var(--spacing-md);
+			right: var(--kit-spacing-md);
 		}
 	}
 }

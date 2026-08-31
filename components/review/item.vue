@@ -17,10 +17,11 @@ const emit = defineEmits<{
 	deleted: [];
 }>();
 
-const { t, locale } = useI18n({
-	useScope: 'local',
-	messages: combineI18nMessages([reviewsI18n]),
-});
+// Слияние на уровне модуля, а не в setup: словарь отзывов константный, а этот
+// компонент рендерится на каждый отзыв страницы. Ссылка общая для экземпляров.
+const messages = combineI18nMessages([reviewsI18n]);
+
+const { t, locale } = useI18n({ useScope: 'local', messages });
 
 const { confirm } = useConfirm();
 
@@ -256,70 +257,70 @@ const clinic = computed(() => {
 .review-item {
 	width: 100%;
 	box-sizing: border-box;
-	padding: var(--spacing-xl);
-	border: var(--border-width-thin) solid var(--color-border-secondary);
-	border-radius: var(--border-radius-xl);
-	background: var(--color-bg-primary);
-	box-shadow: var(--shadow-sm);
+	padding: var(--kit-spacing-xl);
+	border: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-xl);
+	background: var(--kit-color-bg-primary);
+	box-shadow: var(--kit-shadow-sm);
 }
 
 .review-item.is-own {
-	border-color: var(--color-primary);
+	border-color: var(--kit-color-primary);
 }
 
 .review-header {
-	margin-bottom: var(--spacing-lg);
+	margin-bottom: var(--kit-spacing-lg);
 }
 
 .author-info {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
-	margin-bottom: var(--spacing-xs);
+	gap: var(--kit-spacing-sm);
+	margin-bottom: var(--kit-spacing-xs);
 }
 
 .author-name {
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-primary);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-primary);
 }
 
 .own-badge {
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-primary);
-	background: var(--color-primary-bg);
-	padding: 2px var(--spacing-sm);
-	border-radius: var(--border-radius-sm);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-primary);
+	background: var(--kit-color-primary-bg);
+	padding: 2px var(--kit-spacing-sm);
+	border-radius: var(--kit-border-radius-sm);
 }
 
 .review-meta {
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: var(--spacing-md);
-	font-size: var(--font-size-base);
-	color: var(--color-text-muted);
+	gap: var(--kit-spacing-md);
+	font-size: var(--kit-font-size-base);
+	color: var(--kit-color-text-muted);
 }
 
 .review-date {
-	font-size: var(--font-size-base);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-base);
+	color: var(--kit-color-text-muted);
 }
 
 .review-provider {
-	font-size: var(--font-size-sm);
-	color: var(--color-primary);
-	background: var(--color-primary-bg);
-	padding: var(--spacing-xs) var(--spacing-sm);
-	border-radius: var(--border-radius-sm);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-primary);
+	background: var(--kit-color-primary-bg);
+	padding: var(--kit-spacing-xs) var(--kit-spacing-sm);
+	border-radius: var(--kit-border-radius-sm);
 	display: inline-flex;
 	align-items: center;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .review-clinic {
-	font-size: var(--font-size-base);
-	color: var(--color-primary);
+	font-size: var(--kit-font-size-base);
+	color: var(--kit-color-primary);
 	text-decoration: none;
 }
 
@@ -334,43 +335,43 @@ const clinic = computed(() => {
 }
 
 .review-replies {
-	border-top: var(--border-width-thin) solid var(--color-border-secondary);
-	padding-top: var(--spacing-lg);
-	margin-top: var(--spacing-lg);
+	border-top: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
+	padding-top: var(--kit-spacing-lg);
+	margin-top: var(--kit-spacing-lg);
 }
 
 .own-actions {
 	display: flex;
-	gap: var(--spacing-sm);
-	margin-top: var(--spacing-lg);
+	gap: var(--kit-spacing-sm);
+	margin-top: var(--kit-spacing-lg);
 }
 
 .own-status-alert {
-	margin-bottom: var(--spacing-md);
+	margin-bottom: var(--kit-spacing-md);
 }
 
 .verification-status-note {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
-	margin-bottom: var(--spacing-md);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
+	margin-bottom: var(--kit-spacing-md);
 }
 
 .verification-rejected {
-	margin-bottom: var(--spacing-md);
+	margin-bottom: var(--kit-spacing-md);
 }
 
 .verification-rejected .own-status-alert {
-	margin-bottom: var(--spacing-sm);
+	margin-bottom: var(--kit-spacing-sm);
 }
 
 .edit-form {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .edit-actions {
 	display: flex;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 </style>

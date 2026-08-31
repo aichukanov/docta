@@ -58,10 +58,10 @@
 
 ## Design Tokens
 - Page max-width: 900px (single column, content-focused)
-- Section gap: `--spacing-2xl` (32-48px)
+- Section gap: `--kit-spacing-2xl` (32-48px)
 - Hero: white bg, no gradient, no card border
 - Sections separated by gap
-- h1: 1.75rem / 700, h2: `--font-size-xl` / 600
+- h1: 1.75rem / 700, h2: `--kit-font-size-xl` / 600
 - Accent color only for interactive elements
 - Map: inline, 400px height, border-radius, lazy-loaded
 

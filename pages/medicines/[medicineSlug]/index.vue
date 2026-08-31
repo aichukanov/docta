@@ -444,7 +444,7 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 								class="analog-form-icon"
 								:formId="analog.pharmaFormId"
 								:size="20"
-								color="var(--color-text-muted)"
+								color="var(--kit-color-text-muted)"
 							/>
 							<span class="analog-name">{{ analog.name }}</span>
 							<MedicineBadge :dispensingModeId="analog.dispensingModeId" />
@@ -579,8 +579,8 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 .medicine-hero {
 	display: flex;
 	align-items: flex-start;
-	gap: var(--spacing-lg);
-	padding: var(--spacing-xl) 0 var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
+	padding: var(--kit-spacing-xl) 0 var(--kit-spacing-lg);
 }
 
 .medicine-hero-icon {
@@ -590,9 +590,9 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 	width: 56px;
 	height: 56px;
 	flex-shrink: 0;
-	background: var(--color-primary-bg);
-	border-radius: var(--border-radius-lg);
-	color: var(--color-primary);
+	background: var(--kit-color-primary-bg);
+	border-radius: var(--kit-border-radius-lg);
+	color: var(--kit-color-primary);
 }
 
 .medicine-hero-main {
@@ -601,34 +601,34 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 }
 
 .medicine-name {
-	font-size: var(--font-size-4xl);
+	font-size: var(--kit-font-size-4xl);
 	font-weight: 700;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 	margin: 0;
 	line-height: 1.2;
 }
 
 .medicine-subtitle {
-	font-size: var(--font-size-md);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-md);
+	color: var(--kit-color-text-secondary);
 	margin-top: 6px;
 }
 
 /* Форма — общий контекст, приглушаем цветом (без жирности) */
 .medicine-subtitle .medicine-form {
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 }
 
 .medicine-badges {
 	display: flex;
-	gap: var(--spacing-sm);
-	margin-top: var(--spacing-md);
+	gap: var(--kit-spacing-sm);
+	margin-top: var(--kit-spacing-md);
 }
 
 .badge {
-	font-size: var(--font-size-sm);
+	font-size: var(--kit-font-size-sm);
 	font-weight: 500;
-	padding: var(--spacing-xs) var(--spacing-md);
+	padding: var(--kit-spacing-xs) var(--kit-spacing-md);
 	border-radius: 16px;
 }
 
@@ -642,13 +642,13 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 }
 /* Класс лекарства — нейтральный бейдж: это не статус, а справочная метка */
 .badge-class {
-	background: var(--color-bg-muted);
-	color: var(--color-text-secondary);
+	background: var(--kit-color-bg-muted);
+	color: var(--kit-color-text-secondary);
 	text-decoration: none;
 	transition: background 0.15s ease;
 }
 .badge-class:hover {
-	background: var(--color-border-primary);
+	background: var(--kit-color-border-primary);
 }
 
 .substance-list {
@@ -662,7 +662,7 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 	color: #3b5998;
 	padding: 6px 14px;
 	border-radius: 16px;
-	font-size: var(--font-size-sm);
+	font-size: var(--kit-font-size-sm);
 	font-weight: 500;
 	text-decoration: none;
 	transition: background-color 0.15s ease;
@@ -675,13 +675,13 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 .details-grid {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .detail-row {
 	display: flex;
-	gap: var(--spacing-md);
-	font-size: var(--font-size-base);
+	gap: var(--kit-spacing-md);
+	font-size: var(--kit-font-size-base);
 	line-height: 1.5;
 
 	@media (max-width: 600px) {
@@ -692,15 +692,15 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 
 .detail-label {
 	min-width: 200px;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 	flex-shrink: 0;
-	font-size: var(--font-size-sm);
+	font-size: var(--kit-font-size-sm);
 	text-transform: uppercase;
 	letter-spacing: 0.03em;
 }
 
 .detail-link {
-	color: var(--color-primary);
+	color: var(--kit-color-primary);
 	text-decoration: none;
 
 	&:hover {
@@ -709,31 +709,31 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 }
 
 .section-hint {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
-	margin: 0 0 var(--spacing-lg);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
+	margin: 0 0 var(--kit-spacing-lg);
 }
 
 .foreign-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .foreign-card {
-	border: 1px solid var(--color-border-secondary);
-	border-radius: var(--border-radius-lg);
+	border: 1px solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-lg);
 	overflow: hidden;
-	background: var(--color-bg-primary);
+	background: var(--kit-color-bg-primary);
 }
 
 .foreign-card-head {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
-	padding: 11px var(--spacing-lg);
-	background: var(--color-bg-secondary);
-	border-bottom: 1px solid var(--color-border-light);
+	gap: var(--kit-spacing-sm);
+	padding: 11px var(--kit-spacing-lg);
+	background: var(--kit-color-bg-secondary);
+	border-bottom: 1px solid var(--kit-color-border-light);
 }
 
 .foreign-flag {
@@ -742,20 +742,20 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 }
 
 .foreign-market-name {
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
-	font-size: var(--font-size-base);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
+	font-size: var(--kit-font-size-base);
 }
 
 .foreign-market-count {
 	margin-left: auto;
-	color: var(--color-text-light);
-	font-size: var(--font-size-sm);
+	color: var(--kit-color-text-light);
+	font-size: var(--kit-font-size-sm);
 }
 
 .foreign-product {
-	padding: var(--spacing-md) var(--spacing-lg);
-	border-bottom: 1px solid var(--color-border-light);
+	padding: var(--kit-spacing-md) var(--kit-spacing-lg);
+	border-bottom: 1px solid var(--kit-color-border-light);
 }
 
 .foreign-product:last-child {
@@ -769,9 +769,9 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 }
 
 .foreign-brand-name {
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
-	font-size: var(--font-size-base);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
+	font-size: var(--kit-font-size-base);
 }
 
 .foreign-check {
@@ -782,7 +782,7 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 	height: 18px;
 	border-radius: 50%;
 	background: rgba(14, 93, 20, 0.09);
-	color: var(--color-primary-green);
+	color: var(--kit-color-primary-green);
 	font-size: 12px;
 	font-weight: 800;
 	margin-left: 6px;
@@ -796,8 +796,8 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 	align-items: center;
 	gap: 6px 12px;
 	margin-top: 8px;
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 
 .foreign-form {
@@ -807,13 +807,13 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 }
 
 .foreign-form.is-form-match {
-	color: var(--color-primary-green);
-	font-weight: var(--font-weight-medium);
+	color: var(--kit-color-primary-green);
+	font-weight: var(--kit-font-weight-medium);
 }
 
 .foreign-dose.is-dose-match {
-	color: var(--color-primary-green);
-	font-weight: var(--font-weight-medium);
+	color: var(--kit-color-primary-green);
+	font-weight: var(--kit-font-weight-medium);
 }
 
 /* Рынок без находок: место в сетке и порядок стран сохраняем, но карточку
@@ -821,7 +821,7 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
    с брендами, не выкидывая рынок из перечня */
 .foreign-card--empty {
 	align-self: start;
-	background: var(--color-bg-secondary);
+	background: var(--kit-color-bg-secondary);
 	border-style: dashed;
 }
 
@@ -832,8 +832,8 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 }
 
 .foreign-card--empty .foreign-market-name {
-	color: var(--color-text-muted);
-	font-weight: var(--font-weight-medium);
+	color: var(--kit-color-text-muted);
+	font-weight: var(--kit-font-weight-medium);
 }
 
 .foreign-card--empty .foreign-flag {
@@ -844,17 +844,17 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 /* text-light (#94a3b8) на bg-secondary даёт 2.4:1 — берём muted, 4.55:1 */
 .foreign-empty {
 	margin: 2px 0 0;
-	padding: 0 var(--spacing-lg) 12px;
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	padding: 0 var(--kit-spacing-lg) 12px;
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 
 .foreign-product :deep(.substance-badges) {
-	margin-top: var(--spacing-sm);
+	margin-top: var(--kit-spacing-sm);
 }
 
 .foreign-disclaimer {
-	margin: var(--spacing-lg) 0 0;
+	margin: var(--kit-spacing-lg) 0 0;
 }
 
 .analogs-list {
@@ -868,8 +868,8 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 	flex-direction: column;
 	gap: 2px;
 	padding: 12px 16px;
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-md);
+	border: 1px solid var(--kit-color-border-light);
+	border-radius: var(--kit-border-radius-md);
 	text-decoration: none;
 	color: inherit;
 	transition:
@@ -877,7 +877,7 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 		box-shadow 0.15s;
 
 	&:hover {
-		border-color: var(--color-primary);
+		border-color: var(--kit-color-primary);
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 	}
 }
@@ -896,58 +896,58 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 .analog-name {
 	flex: 1;
 	min-width: 0;
-	font-weight: var(--font-weight-semibold);
-	font-size: var(--font-size-base);
+	font-weight: var(--kit-font-weight-semibold);
+	font-size: var(--kit-font-size-base);
 }
 
 /* Различители (дозировка + фасовка) — заметный вес, строка-якорь */
 .analog-key {
-	font-size: var(--font-size-base);
-	color: var(--color-text-primary);
+	font-size: var(--kit-font-size-base);
+	color: var(--kit-color-text-primary);
 }
 
 /* Состав комбинации — ключевой различитель в секции комбо, поэтому темнее
    и выше формы выпуска */
 .analog-substances {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 }
 
 /* Форма — общий контекст линейки, приглушаем */
 .analog-form {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 
 /* muted, не tertiary: 12px тоном #94a3b8 не проходит WCAG AA (≈2.6:1) */
 .analog-meta {
-	font-size: var(--font-size-xs);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-xs);
+	color: var(--kit-color-text-muted);
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	margin-top: 6px;
 }
 
 .medicine-source {
-	margin-top: var(--spacing-2xl);
-	padding: var(--spacing-md) var(--spacing-lg);
-	background: var(--color-bg-secondary);
-	border-radius: var(--border-radius-md);
-	border: 1px solid var(--color-border-light);
+	margin-top: var(--kit-spacing-2xl);
+	padding: var(--kit-spacing-md) var(--kit-spacing-lg);
+	background: var(--kit-color-bg-secondary);
+	border-radius: var(--kit-border-radius-md);
+	border: 1px solid var(--kit-color-border-light);
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .source-text {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 	line-height: 1.4;
 }
 
 .source-link {
-	color: var(--color-primary);
+	color: var(--kit-color-primary);
 	text-decoration: none;
 	font-weight: 500;
 
@@ -957,7 +957,7 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 }
 
 .source-updated {
-	font-size: var(--font-size-xs);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-xs);
+	color: var(--kit-color-text-muted);
 }
 </style>

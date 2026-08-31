@@ -213,22 +213,22 @@ const dismiss = async (item: LabTestDuplicateItem) => {
 .labtest-duplicates {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .queue-info {
-	padding: var(--spacing-md);
+	padding: var(--kit-spacing-md);
 	background: rgba(245, 158, 11, 0.1);
 	border: 1px solid rgba(245, 158, 11, 0.3);
-	border-radius: var(--border-radius-md);
+	border-radius: var(--kit-border-radius-md);
 
 	p {
 		margin: 0;
 	}
 
 	.tier-hint {
-		margin-top: var(--spacing-xs);
-		color: var(--color-text-secondary);
+		margin-top: var(--kit-spacing-xs);
+		color: var(--kit-color-text-secondary);
 	}
 }
 
@@ -236,44 +236,44 @@ const dismiss = async (item: LabTestDuplicateItem) => {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 
 	.dismissed-count {
-		color: var(--color-text-secondary);
+		color: var(--kit-color-text-secondary);
 	}
 }
 
 .queue-empty {
-	padding: var(--spacing-lg);
-	color: var(--color-text-secondary);
+	padding: var(--kit-spacing-lg);
+	color: var(--kit-color-text-secondary);
 	text-align: center;
 }
 
 .pair-list {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .pair {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
-	border: 1px solid var(--color-border-primary);
-	border-radius: var(--border-radius-md);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-md);
+	border: 1px solid var(--kit-color-border-primary);
+	border-radius: var(--kit-border-radius-md);
 }
 
 .pair-signals {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .pair-sides {
 	display: flex;
 	flex-direction: row;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .pair-side {
@@ -282,25 +282,25 @@ const dismiss = async (item: LabTestDuplicateItem) => {
 	max-width: 50%;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: var(--spacing-xs);
-	padding: var(--spacing-sm);
-	background: var(--color-bg-secondary);
-	border-radius: var(--border-radius-md);
+	gap: var(--kit-spacing-xs);
+	padding: var(--kit-spacing-sm);
+	background: var(--kit-color-bg-secondary);
+	border-radius: var(--kit-border-radius-md);
 
 	.side-name {
 		font-weight: 600;
 	}
 
 	.side-sub {
-		color: var(--color-text-secondary);
+		color: var(--kit-color-text-secondary);
 	}
 
 	.side-meta {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		gap: var(--spacing-xs);
-		color: var(--color-text-secondary);
+		gap: var(--kit-spacing-xs);
+		color: var(--kit-color-text-secondary);
 	}
 }
 

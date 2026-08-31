@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import securityMessages from '~/i18n/security-section';
 
+const toast = useToast();
+
 const { t } = useI18n({
 	useScope: 'local',
 	messages: securityMessages.messages,
@@ -28,9 +30,9 @@ async function deleteSession(sessionId: string) {
 		isLoading.value = true;
 		await $fetch(`/api/auth/sessions/${sessionId}`, { method: 'DELETE' });
 		await refreshSessions();
-		ElMessage.success(t('sessionDeleted'));
+		toast.success(t('sessionDeleted'));
 	} catch {
-		ElMessage.error(t('errorDeleteSession'));
+		toast.error(t('errorDeleteSession'));
 	} finally {
 		isLoading.value = false;
 	}
@@ -43,9 +45,9 @@ async function logoutAllOtherSessions() {
 		isLoading.value = true;
 		await $fetch('/api/auth/sessions/logout-all', { method: 'POST' });
 		await refreshSessions();
-		ElMessage.success(t('allSessionsDeleted'));
+		toast.success(t('allSessionsDeleted'));
 	} catch {
-		ElMessage.error(t('errorLogoutAll'));
+		toast.error(t('errorLogoutAll'));
 	} finally {
 		isLoading.value = false;
 	}
@@ -162,18 +164,18 @@ async function logoutAllOtherSessions() {
 /* ── Section wrapper ─────────────────────────── */
 
 .profile-section {
-	background: var(--color-bg-primary);
-	border-radius: var(--border-radius-xl);
-	padding: var(--spacing-2xl);
-	box-shadow: var(--shadow-sm);
-	border: 1px solid var(--color-border-secondary);
+	background: var(--kit-color-bg-primary);
+	border-radius: var(--kit-border-radius-xl);
+	padding: var(--kit-spacing-2xl);
+	box-shadow: var(--kit-shadow-sm);
+	border: 1px solid var(--kit-color-border-secondary);
 }
 
 .profile-section__header {
 	display: flex;
 	align-items: flex-start;
-	gap: var(--spacing-md);
-	margin-bottom: var(--spacing-xl);
+	gap: var(--kit-spacing-md);
+	margin-bottom: var(--kit-spacing-xl);
 }
 
 .profile-section__icon {
@@ -182,23 +184,23 @@ async function logoutAllOtherSessions() {
 	justify-content: center;
 	width: 40px;
 	height: 40px;
-	border-radius: var(--border-radius-lg);
-	background: var(--color-primary-bg);
-	color: var(--color-primary);
+	border-radius: var(--kit-border-radius-lg);
+	background: var(--kit-color-primary-bg);
+	color: var(--kit-color-primary);
 	flex-shrink: 0;
 }
 
 .profile-section__title {
-	font-size: var(--font-size-2xl);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-2xl);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	margin: 0 0 4px;
 	line-height: 1.3;
 }
 
 .profile-section__desc {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 	margin: 0;
 	line-height: 1.4;
 }
@@ -209,39 +211,39 @@ async function logoutAllOtherSessions() {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--spacing-lg);
-	padding: var(--spacing-lg);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-lg);
-	margin-bottom: var(--spacing-md);
-	transition: border-color var(--transition-base);
+	gap: var(--kit-spacing-lg);
+	padding: var(--kit-spacing-lg);
+	border: 1px solid var(--kit-color-border-light);
+	border-radius: var(--kit-border-radius-lg);
+	margin-bottom: var(--kit-spacing-md);
+	transition: border-color var(--kit-transition-base);
 }
 
 .security-row:hover {
-	border-color: var(--color-border-primary);
+	border-color: var(--kit-color-border-primary);
 }
 
 .security-row__info {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .security-row__icon {
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 	flex-shrink: 0;
 }
 
 .security-row__title {
-	font-size: var(--font-size-md);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-md);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	margin-bottom: 2px;
 }
 
 .security-row__subtitle {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 
 /* ── Session Cards ───────────────────────────── */
@@ -249,24 +251,24 @@ async function logoutAllOtherSessions() {
 .sessions-grid {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .session-card {
-	padding: var(--spacing-md) var(--spacing-lg);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-md);
-	background: var(--color-bg-primary);
-	transition: all var(--transition-base);
+	padding: var(--kit-spacing-md) var(--kit-spacing-lg);
+	border: 1px solid var(--kit-color-border-light);
+	border-radius: var(--kit-border-radius-md);
+	background: var(--kit-color-bg-primary);
+	transition: all var(--kit-transition-base);
 }
 
 .session-card:hover {
-	border-color: var(--color-border-primary);
+	border-color: var(--kit-color-border-primary);
 }
 
 .session-card--current {
-	border-color: var(--color-success-border);
-	background: var(--color-success-bg-soft);
+	border-color: var(--kit-color-success-border);
+	background: var(--kit-color-success-bg-soft);
 }
 
 .session-card__top {
@@ -279,38 +281,38 @@ async function logoutAllOtherSessions() {
 .session-card__device {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .session-card__device-icon {
 	display: flex;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 }
 
 .session-card--current .session-card__device-icon {
-	color: var(--color-success-dark);
+	color: var(--kit-color-success-dark);
 }
 
 .session-card__label {
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-primary);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-text-primary);
 }
 
 .session-card__current-tag {
 	font-size: 11px;
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-primary-green);
-	background: var(--color-success-bg);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-primary-green);
+	background: var(--kit-color-success-bg);
 	padding: 2px 10px;
 	border-radius: 12px;
 }
 
 .session-card__meta {
 	display: flex;
-	gap: var(--spacing-lg);
-	font-size: var(--font-size-xs);
-	color: var(--color-text-muted);
+	gap: var(--kit-spacing-lg);
+	font-size: var(--kit-font-size-xs);
+	color: var(--kit-color-text-muted);
 }
 
 /* ── Responsive ──────────────────────────────── */
@@ -319,7 +321,7 @@ async function logoutAllOtherSessions() {
 	.security-row {
 		flex-direction: column;
 		align-items: stretch;
-		gap: var(--spacing-md);
+		gap: var(--kit-spacing-md);
 	}
 
 	.session-card__meta {
@@ -330,7 +332,7 @@ async function logoutAllOtherSessions() {
 	.session-card__top {
 		flex-direction: column;
 		align-items: flex-start;
-		gap: var(--spacing-sm);
+		gap: var(--kit-spacing-sm);
 	}
 }
 </style>

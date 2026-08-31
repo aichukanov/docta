@@ -93,8 +93,8 @@ const cities = computed(() =>
 
 .header-location-popper__hint {
 	margin: 0;
-	font-size: var(--font-size-sm);
+	font-size: var(--kit-font-size-sm);
 	line-height: 1.4;
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 }
 </style>

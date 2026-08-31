@@ -163,37 +163,37 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 .clinic-summary {
 	display: flex;
 	flex-direction: column;
-	background: var(--color-surface-primary);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-lg);
+	background: var(--kit-color-surface-primary);
+	border: 1px solid var(--kit-color-border-light);
+	border-radius: var(--kit-border-radius-lg);
 	overflow: hidden;
 }
 
 .clinic-footer {
-	border-top: 1px solid var(--color-border-light);
-	padding: 0 var(--spacing-xl);
+	border-top: 1px solid var(--kit-color-border-light);
+	padding: 0 var(--kit-spacing-xl);
 }
 
 .clinic-doctors {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
-	padding-bottom: var(--spacing-sm);
+	gap: var(--kit-spacing-md);
+	padding-bottom: var(--kit-spacing-sm);
 }
 
 .collapse-title {
-	font-weight: var(--font-weight-medium);
+	font-weight: var(--kit-font-weight-medium);
 
 	.collapse-count {
-		color: var(--color-text-muted);
-		font-weight: var(--font-weight-normal);
-		margin-left: var(--spacing-xs);
+		color: var(--kit-color-text-muted);
+		font-weight: var(--kit-font-weight-normal);
+		margin-left: var(--kit-spacing-xs);
 	}
 }
 
 @media (max-width: 600px) {
 	.clinic-footer {
-		padding: 0 var(--spacing-md);
+		padding: 0 var(--kit-spacing-md);
 	}
 }
 </style>

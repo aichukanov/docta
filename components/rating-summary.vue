@@ -43,21 +43,21 @@ const { t } = useI18n({
 	align-items: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	gap: var(--spacing-md);
-	padding: var(--spacing-lg);
-	background: var(--color-bg-secondary);
-	border-radius: var(--border-radius-lg);
+	gap: var(--kit-spacing-md);
+	padding: var(--kit-spacing-lg);
+	background: var(--kit-color-bg-secondary);
+	border-radius: var(--kit-border-radius-lg);
 }
 
 .rating-info {
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .reviews-count {
-	font-size: var(--font-size-md);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-md);
+	color: var(--kit-color-text-muted);
 }
 </style>

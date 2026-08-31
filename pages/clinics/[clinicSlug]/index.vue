@@ -162,70 +162,77 @@ const fetchInlineList = async <T,>(
 	return res ?? empty;
 };
 
-const { data: doctorsList } = await useAsyncData(
-	`doctors-list-clinic-${clinicSlug.value}`,
-	() =>
-		fetchInlineList<DoctorList>(
-			'/api/doctors/list',
-			renderInline.value.doctors,
-			{
-				doctors: [],
-				totalCount: 0,
-			},
-		),
-	{ watch: [renderInline, clinicId] },
-);
-
-const { data: labTestsList } = await useAsyncData(
-	`labtests-list-clinic-${clinicSlug.value}`,
-	() =>
-		fetchInlineList<LabTestList>(
-			'/api/labtests/list',
-			renderInline.value.labtests,
-			{
-				items: [],
-				totalCount: 0,
-			},
-		),
-	{ watch: [renderInline, clinicId] },
-);
-
-const { data: medicationsList } = await useAsyncData(
-	`medications-list-clinic-${clinicSlug.value}`,
-	() =>
-		fetchInlineList<ClinicServiceList>(
-			'/api/medications/list',
-			renderInline.value.medications,
-			{
-				items: [],
-				totalCount: 0,
-			},
-		),
-	{ watch: [renderInline, clinicId] },
-);
-
-const { data: medicalServicesList } = await useAsyncData(
-	`services-list-clinic-${clinicSlug.value}`,
-	() =>
-		fetchInlineList<ClinicServiceList>(
-			'/api/services/list',
-			renderInline.value.services,
-			{
-				items: [],
-				totalCount: 0,
-			},
-		),
-	{ watch: [renderInline, clinicId] },
-);
-
-const { data: workingHoursData } = await useFetch<WorkingHours>(
-	'/api/clinics/working-hours',
-	{
-		key: `clinic-wh-${clinicSlug.value}`,
+// Все пять запросов зависят только от уже загруженных деталей клиники, но не
+// друг от друга: последовательные await давали пять round-trip'ов подряд.
+// Образец — pages/doctors/index.vue.
+const [
+	{ data: doctorsList },
+	{ data: labTestsList },
+	{ data: medicationsList },
+	{ data: medicalServicesList },
+	{ data: workingHoursData },
+] = await Promise.all([
+	useAsyncData(
+		`doctors-list-clinic-${clinicSlug.value}`,
+		() =>
+			fetchInlineList<DoctorList>(
+				'/api/doctors/list',
+				renderInline.value.doctors,
+				{
+					doctors: [],
+					totalCount: 0,
+				},
+			),
+		{ watch: [renderInline, clinicId] },
+	),
+	useAsyncData(
+		`labtests-list-clinic-${clinicSlug.value}`,
+		() =>
+			fetchInlineList<LabTestList>(
+				'/api/labtests/list',
+				renderInline.value.labtests,
+				{
+					items: [],
+					totalCount: 0,
+				},
+			),
+		{ watch: [renderInline, clinicId] },
+	),
+	useAsyncData(
+		`medications-list-clinic-${clinicSlug.value}`,
+		() =>
+			fetchInlineList<ClinicServiceList>(
+				'/api/medications/list',
+				renderInline.value.medications,
+				{
+					items: [],
+					totalCount: 0,
+				},
+			),
+		{ watch: [renderInline, clinicId] },
+	),
+	useAsyncData(
+		`services-list-clinic-${clinicSlug.value}`,
+		() =>
+			fetchInlineList<ClinicServiceList>(
+				'/api/services/list',
+				renderInline.value.services,
+				{
+					items: [],
+					totalCount: 0,
+				},
+			),
+		{ watch: [renderInline, clinicId] },
+	),
+	// Ключ по id (а не по слагу) — тот же, что раньше запрашивал сам
+	// ClinicWorkingHours: расписание грузилось дважды и дважды же лежало в
+	// payload. Теперь запрос один, а компонент получает данные пропом.
+	useFetch<WorkingHours>('/api/clinics/working-hours', {
+		key: `clinic-wh-${clinicId.value}`,
 		method: 'POST',
 		body: computed(() => ({ clinicId: clinicId.value })),
-	},
-);
+	}),
+]);
 
 const hasWorkingHours = computed(() => {
 	if (!workingHoursData.value) return false;
@@ -689,6 +696,9 @@ const topItemsToOffers = (
 				price: item.price,
 				priceMin: item.priceMin,
 				priceMax: item.priceMax,
+				// Флаг терялся при сборке, и устаревшая цена уходила в Offer
+				// точным числом — см. buildOfferCatalogSchema
+				isOutdated: item.isOutdated,
 			},
 		],
 	}));
@@ -842,14 +852,14 @@ watchEffect(() => {
 
 			<!-- Working Hours -->
 			<EntityPageSection
-				v-if="hasWorkingHours && clinicId != null"
+				v-if="hasWorkingHours && workingHoursData"
 				sectionId="hours"
 				:title="t('WorkingHours')"
 			>
 				<template #icon>
 					<el-icon :size="20"><Clock /></el-icon>
 				</template>
-				<ClinicWorkingHours :clinicId="clinicId" />
+				<ClinicWorkingHours :workingHours="workingHoursData" />
 			</EntityPageSection>
 
 			<!-- Doctors -->
@@ -1261,41 +1271,41 @@ watchEffect(() => {
 	display: inline-flex;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 /* «на медицинские услуги и анализы» рядом с купонным чипом — обычным весом,
    акцент держит чип */
 .coupon-scope {
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-secondary);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-text-secondary);
 }
 
 .clinic-services {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xl);
+	gap: var(--kit-spacing-xl);
 }
 
 .reviews-header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 	flex-wrap: wrap;
 }
 
 .reviews-content {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .clinic-map {
 	height: 400px;
-	border-radius: var(--border-radius-md);
+	border-radius: var(--kit-border-radius-md);
 	overflow: hidden;
-	border: 1px solid var(--color-border-light);
+	border: 1px solid var(--kit-color-border-light);
 }
 
 .empty-state {

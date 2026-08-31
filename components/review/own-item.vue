@@ -164,25 +164,25 @@ const saveEdit = async () => {
 
 <style scoped>
 .own-review {
-	padding: var(--spacing-lg);
-	border: 2px solid var(--color-primary);
-	border-radius: var(--border-radius-xl);
-	background: var(--color-primary-bg);
+	padding: var(--kit-spacing-lg);
+	border: 2px solid var(--kit-color-primary);
+	border-radius: var(--kit-border-radius-xl);
+	background: var(--kit-color-primary-bg);
 }
 
 .own-badge {
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-primary);
-	margin-bottom: var(--spacing-sm);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-primary);
+	margin-bottom: var(--kit-spacing-sm);
 }
 
 .own-actions {
-	margin-top: var(--spacing-sm);
+	margin-top: var(--kit-spacing-sm);
 }
 
 .edit-actions {
 	display: flex;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 </style>

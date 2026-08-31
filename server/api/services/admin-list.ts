@@ -10,10 +10,14 @@ export default defineEventHandler(async (event) => {
 	const nameField = getLocalizedNameField(locale) || 'name_en';
 
 	const connection = await getConnection();
+	// Порядок прежний, но выражен индексируемой колонкой sort_rank
+	// (= COALESCE(sort_order, 2147483647), миграция 025). С прежним ведущим
+	// членом-выражением индекс idx_ms_sort_order не применялся, и админский
+	// список сортировал filesort'ом все 5237 строк на каждый запрос.
 	const [rows] = await connection.execute(
 		`SELECT ms.id, ms.name_en, ms.${nameField} AS localized_name
 		FROM medical_services ms
-		ORDER BY ms.sort_order IS NULL, ms.sort_order ASC, ms.rank_score DESC, ms.name_en ASC`,
+		ORDER BY ms.sort_rank ASC, ms.rank_score DESC, ms.name_en ASC`,
 	);
 	await connection.end();
 

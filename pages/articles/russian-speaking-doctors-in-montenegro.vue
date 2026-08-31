@@ -113,6 +113,23 @@ const pageUrl = computed(() =>
 const clinicsStore = useClinicsStore();
 await clinicsStore.fetchClinics();
 
+// Статья перечисляет всех врачей поимённо, поэтому список нужен целиком —
+// пагинацию тут ставить некуда. Но из строки врача странице нужны только
+// ссылка, аватар и группировка: контакты (телефон, почта, шесть мессенджеров,
+// сайт), языки и рейтинг рисуются в каталоге, а здесь просто уезжали в payload
+// и гидрировались. `transform` отсекает их до сериализации ответа.
+const ARTICLE_DOCTOR_FIELDS = [
+	'id',
+	'slug',
+	'name',
+	'photoUrl',
+	'professionalTitle',
+	'specialtyIds',
+	'clinicIds',
+] as const;
+
+type ArticleDoctor = Pick<DoctorData, (typeof ARTICLE_DOCTOR_FIELDS)[number]>;
+
 const { data: doctorsData } = await useFetch('/api/doctors/list', {
 	method: 'POST',
 	body: computed(() => ({
@@ -120,17 +137,28 @@ const { data: doctorsData } = await useFetch('/api/doctors/list', {
 		onlyDoctorLanguages: true,
 		locale: locale.value,
 	})),
+	transform: (data) => ({
+		totalCount: data.totalCount,
+		doctors: data.doctors.map(
+			(doctor) =>
+				Object.fromEntries(
+					ARTICLE_DOCTOR_FIELDS.map((field) => [field, doctor[field]]),
+				) as ArticleDoctor,
+		),
+	}),
 });
 
-const doctors = computed(() => doctorsData.value?.doctors || []);
+const doctors = computed<ArticleDoctor[]>(
+	() => doctorsData.value?.doctors || [],
+);
 
-const getDoctorClinics = (doctor: DoctorData) => {
+const getDoctorClinics = (doctor: ArticleDoctor) => {
 	return clinicsStore.getClinicsByIds(doctor.clinicIds);
 };
 
 // Group doctors by specialties
 const groupedDoctors = computed(() => {
-	const groups: Record<number, DoctorData[]> = {};
+	const groups: Record<number, ArticleDoctor[]> = {};
 
 	doctors.value.forEach((doctor) => {
 		const specialtyIds = doctor.specialtyIds
@@ -177,16 +205,24 @@ const pageTitle = computed(() => t('RussianSpeakingDoctorsTitle'));
 const pageDescription = computed(() => t('RussianSpeakingDoctorsDescription'));
 const articleImage = `${SITE_URL}/img/articles/russian-speaking-doctors.webp`;
 
+// Эта статья строит списочную schema сама и не проходит через
+// useArticlePageSeo, но лимиты выдачи для неё те же — прогоняем заголовок и
+// лид через ту же обвязку, что и остальные статьи.
+const seoTitle = computed(() => buildArticleSeoTitle(pageTitle.value));
+const seoDescription = computed(() =>
+	buildArticleSeoDescription(pageDescription.value),
+);
+
 useSeoMeta({
-	title: pageTitle,
-	description: pageDescription,
-	ogTitle: pageTitle,
-	ogDescription: pageDescription,
+	title: seoTitle,
+	description: seoDescription,
+	ogTitle: seoTitle,
+	ogDescription: seoDescription,
 	ogImage: articleImage,
 	ogUrl: pageUrl,
 	twitterCard: 'summary',
-	twitterTitle: pageTitle,
-	twitterDescription: pageDescription,
+	twitterTitle: seoTitle,
+	twitterDescription: seoDescription,
 	twitterImage: articleImage,
 });
 
@@ -289,26 +325,26 @@ watchEffect(() => {
 .doctors-list {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: var(--spacing-xl) var(--spacing-2xl);
+	gap: var(--kit-spacing-xl) var(--kit-spacing-2xl);
 }
 
 .doctor-item {
 	display: flex;
 	align-items: flex-start;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .doctor-info {
 	min-width: 0;
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .doctor-name {
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-primary);
+	font-size: var(--kit-font-size-base);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-primary);
 	text-decoration: none;
 
 	&:hover {
@@ -322,12 +358,12 @@ watchEffect(() => {
 	list-style: none;
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .clinic-item {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 	line-height: 1.6;
 }
 
@@ -336,7 +372,7 @@ watchEffect(() => {
 	text-decoration: none;
 
 	&:hover {
-		color: var(--color-text-heading);
+		color: var(--kit-color-text-heading);
 		text-decoration: underline;
 	}
 }

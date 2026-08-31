@@ -22,14 +22,14 @@ const htmlContent = computed(() => {
 
 <style lang="less">
 .marked-content {
-	font-size: var(--font-size-md);
+	font-size: var(--kit-font-size-md);
 	line-height: 1.6;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 	overflow-wrap: break-word;
 	word-break: break-word;
 
 	p {
-		margin-bottom: var(--spacing-sm);
+		margin-bottom: var(--kit-spacing-sm);
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -37,12 +37,12 @@ const htmlContent = computed(() => {
 
 	ul,
 	ol {
-		margin-bottom: var(--spacing-sm);
-		padding-left: var(--spacing-lg);
+		margin-bottom: var(--kit-spacing-sm);
+		padding-left: var(--kit-spacing-lg);
 	}
 
 	li {
-		margin-bottom: var(--spacing-xs);
+		margin-bottom: var(--kit-spacing-xs);
 	}
 
 	strong {
@@ -53,19 +53,19 @@ const htmlContent = computed(() => {
 	h2,
 	h3 {
 		font-weight: 600;
-		margin-top: var(--spacing-md);
-		margin-bottom: var(--spacing-xs);
-		color: var(--color-text-primary);
+		margin-top: var(--kit-spacing-md);
+		margin-bottom: var(--kit-spacing-xs);
+		color: var(--kit-color-text-primary);
 	}
 
 	h1 {
-		font-size: var(--font-size-xl);
+		font-size: var(--kit-font-size-xl);
 	}
 	h2 {
-		font-size: var(--font-size-lg);
+		font-size: var(--kit-font-size-lg);
 	}
 	h3 {
-		font-size: var(--font-size-md);
+		font-size: var(--kit-font-size-md);
 	}
 }
 </style>

@@ -117,7 +117,7 @@ const statusType = (purchase: BillingMyPurchase) => {
 .history {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .history__filters {
@@ -125,21 +125,21 @@ const statusType = (purchase: BillingMyPurchase) => {
 }
 
 .history__empty {
-	color: var(--color-text-muted);
-	font-size: var(--font-size-md);
+	color: var(--kit-color-text-muted);
+	font-size: var(--kit-font-size-md);
 	text-align: center;
-	padding: var(--spacing-2xl) 0;
+	padding: var(--kit-spacing-2xl) 0;
 	margin: 0;
 }
 
 .history__item {
-	background: var(--color-bg-primary);
-	border: 1px solid var(--color-border-secondary);
-	border-radius: var(--border-radius-lg);
-	padding: var(--spacing-lg);
+	background: var(--kit-color-bg-primary);
+	border: 1px solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-lg);
+	padding: var(--kit-spacing-lg);
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .history__item--inactive {
@@ -150,38 +150,38 @@ const statusType = (purchase: BillingMyPurchase) => {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .history__date {
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-primary);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-text-primary);
 }
 
 .history__services {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .history__item-footer {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--spacing-md);
-	border-top: 1px solid var(--color-border-secondary);
-	padding-top: var(--spacing-md);
+	gap: var(--kit-spacing-md);
+	border-top: 1px solid var(--kit-color-border-secondary);
+	padding-top: var(--kit-spacing-md);
 }
 
 .history__valid {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 }
 
 .history__price {
-	font-size: var(--font-size-lg);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-lg);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 }
 </style>

@@ -11,21 +11,18 @@ import type {
 } from '~/interfaces/clinic-working-hours';
 import { DAYS_OF_WEEK } from '~/interfaces/clinic-working-hours';
 
-const props = defineProps<{ clinicId: number }>();
+// Расписание приходит пропом: страница клиники и так его грузит (ей нужен
+// признак «расписание есть» и openingHoursSpecification для JSON-LD), а свой
+// useFetch здесь шёл под другим ключом — тот же запрос уходил дважды и дважды
+// же попадал в payload.
+const props = defineProps<{ workingHours: WorkingHours | null }>();
 
 const { t } = useI18n({
 	useScope: 'local',
 	messages: workingHoursI18n.messages,
 });
 
-const { data: schedule } = await useFetch<WorkingHours>(
-	'/api/clinics/working-hours',
-	{
-		key: `clinic-wh-${props.clinicId}`,
-		method: 'POST',
-		body: { clinicId: props.clinicId },
-	},
-);
+const schedule = computed(() => props.workingHours);
 
 const hasSchedule = computed(() => {
 	if (!schedule.value) return false;
@@ -80,7 +77,7 @@ const formatDayHours = (ds: DaySchedule): string => {
 .working-hours {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .working-hours__grid {
@@ -93,14 +90,14 @@ const formatDayHours = (ds: DaySchedule): string => {
 	display: flex;
 	justify-content: space-between;
 	padding: 4px 0;
-	border-radius: var(--border-radius-sm);
-	font-size: var(--font-size-base);
-	color: var(--color-text-secondary);
+	border-radius: var(--kit-border-radius-sm);
+	font-size: var(--kit-font-size-base);
+	color: var(--kit-color-text-secondary);
 }
 
 .working-hours__row--current {
-	background: var(--color-surface-secondary);
-	color: var(--color-text-primary);
+	background: var(--kit-color-surface-secondary);
+	color: var(--kit-color-text-primary);
 	font-weight: 600;
 }
 

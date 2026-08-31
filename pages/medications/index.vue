@@ -161,6 +161,7 @@ watchEffect(() => {
 	<ListPage
 		filter-namespace="medications"
 		:pageTitle="pageTitleWithCount"
+		:pageTitleBase="pageTitle"
 		:pageDescription="pageDescription"
 		:list="medicationsList?.items || []"
 		:totalCount="medicationsList?.totalCount || 0"

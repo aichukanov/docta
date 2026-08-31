@@ -142,72 +142,72 @@ const reviewsLink = computed(() => {
 <style scoped lang="less">
 .doctor-wrapper {
 	display: flex;
-	gap: var(--spacing-2xl);
+	gap: var(--kit-spacing-2xl);
 
 	.doctor-info {
 		display: flex;
 		flex-direction: column;
-		gap: var(--spacing-sm);
+		gap: var(--kit-spacing-sm);
 		flex: 1;
 	}
 
 	/* Дефолт — карточка в выдаче; крупный вариант только в hero детальной */
 	.doctor-name {
 		margin: 0;
-		font-size: var(--font-size-lg);
+		font-size: var(--kit-font-size-lg);
 		font-weight: 600;
-		color: var(--color-text-primary);
+		color: var(--kit-color-text-primary);
 		line-height: 1.2;
 		letter-spacing: -0.01em;
 	}
 
 	.doctor-name-link {
-		color: var(--color-primary);
+		color: var(--kit-color-primary);
 		text-decoration: none;
 	}
 
 	.doctor-name-link:hover {
-		color: var(--color-primary-dark);
+		color: var(--kit-color-primary-dark);
 		text-decoration: underline;
 	}
 
 	.doctor-professional-title {
-		font-size: var(--font-size-sm);
-		font-weight: var(--font-weight-medium);
-		color: var(--color-text-secondary);
+		font-size: var(--kit-font-size-sm);
+		font-weight: var(--kit-font-weight-medium);
+		color: var(--kit-color-text-secondary);
 		line-height: 1.4;
 		font-style: italic;
 		opacity: 0.85;
 	}
 
 	.doctor-original-name {
-		font-size: var(--font-size-sm);
-		font-weight: var(--font-weight-medium);
-		color: var(--color-text-secondary);
-		margin-top: var(--spacing-xs);
+		font-size: var(--kit-font-size-sm);
+		font-weight: var(--kit-font-weight-medium);
+		color: var(--kit-color-text-secondary);
+		margin-top: var(--kit-spacing-xs);
 	}
 
 	&.doctor-wrapper__hero {
 		.doctor-name {
-			font-size: var(--font-size-2xl);
+			font-size: var(--kit-font-size-2xl);
 			font-weight: 700;
 		}
 
 		.doctor-professional-title,
 		.doctor-original-name {
-			font-size: var(--font-size-md);
+			font-size: var(--kit-font-size-md);
 		}
 	}
 
 	&.doctor-wrapper__short {
-		gap: var(--spacing-md);
+		gap: var(--kit-spacing-md);
 
 		.doctor-info {
-			gap: var(--spacing-xs);
+			gap: var(--kit-spacing-xs);
 		}
 
 		.doctor-name {
-			font-size: var(--font-size-base);
+			font-size: var(--kit-font-size-base);
 			font-weight: initial;
 		}
 
@@ -220,14 +220,14 @@ const reviewsLink = computed(() => {
 @media (max-width: 500px) {
 	.doctor-wrapper {
 		// flex-direction: column;
-		gap: var(--spacing-md);
+		gap: var(--kit-spacing-md);
 	}
 }
 
 @media (max-width: 300px) {
 	.doctor-wrapper {
 		flex-direction: column;
-		padding: 0 var(--spacing-sm);
+		padding: 0 var(--kit-spacing-sm);
 	}
 }
 </style>

@@ -1,5 +1,5 @@
 import { OUTDATED_PRICE_FACTOR } from '~/common/ranking';
-import { getConnection } from '~/server/common/db-mysql';
+import { type Conn, withConnection } from '~/server/common/medicines/helpers';
 
 const MS_PER_DAY = 86_400_000;
 
@@ -73,6 +73,7 @@ interface ReviewStats {
 
 interface DoctorProfile {
 	id: number;
+	currentScore: unknown;
 	hasPhoto: boolean;
 	hasDescription: boolean;
 	hasSpecialty: boolean;
@@ -82,6 +83,7 @@ interface DoctorProfile {
 
 interface ClinicProfile {
 	id: number;
+	currentScore: unknown;
 	hasDescription: boolean;
 	hasAddress: boolean;
 	hasContact: boolean;
@@ -199,22 +201,118 @@ const LAB_CLINIC_CAP = 20;
 const LAB_CLINIC_LOG_DIVISOR = Math.log2(1 + LAB_CLINIC_CAP);
 
 /**
+ * Округление скора до 4 знаков — ровно столько хранит колонка
+ * rank_score DECIMAL(5,4). Вынесено в функцию, чтобы все четыре пересчёта
+ * округляли одинаково (раньше `Math.round(score * 10000) / 10000` был
+ * скопирован в каждый цикл).
+ */
+function round4(score: number): number {
+	return Math.round(score * 10000) / 10000;
+}
+
+type RankScoreTable = 'doctors' | 'clinics' | 'medical_services' | 'lab_tests';
+
+interface ScoreUpdate {
+	id: number;
+	score: number;
+}
+
+/**
+ * Сколько строк уходит в один UPDATE. 500 пар — это 1000 плейсхолдеров и
+ * ~12 КБ текста запроса: пакет уже амортизирует круговой рейс, но ещё далеко
+ * и от max_allowed_packet, и от лимита плейсхолдеров протокола (65535).
+ * Число фиксированное, поэтому в LRU подготовленных выражений mysql2
+ * (maxPreparedStatements: 200, см. db-mysql.ts) оседает не больше двух
+ * вариантов текста на таблицу: полный пакет и остаток.
+ */
+const SCORE_BATCH_SIZE = 500;
+
+/**
+ * Пакетная запись посчитанных скоров.
+ *
+ * Раньше на каждую строку уходил свой `UPDATE ... WHERE id = ?`: 1318 врачей +
+ * 138 клиник + 5237 услуг + 1591 анализ = 8284 последовательных круговых
+ * рейса. Замер на копиях таблиц в локальной БД — 5.2 с чистых ожиданий
+ * (с удалённой БД будет кратно больше), и всё это время пересчёт держал
+ * 1 из 10 соединений пула, конкурируя с холодным трафиком на старте сервера.
+ *
+ * Теперь тот же объём — не больше 19 UPDATE'ов по 500 строк, 0.15 с на том же
+ * замере: значения приезжают производной таблицей из литералов, а джойн по
+ * первичному ключу даёт eq_ref (EXPLAIN UPDATE: `<derived2>` ALL 500 строк →
+ * `t` eq_ref PRIMARY). Сверка старого и нового пути на копиях всех четырёх
+ * таблиц: 0 расхождений в rank_score.
+ *
+ * Формула не меняется: скоры считает тот же JS-код, что и раньше, здесь
+ * только их доставка в БД.
+ */
+async function applyRankScores(
+	connection: Conn,
+	table: RankScoreTable,
+	updates: ScoreUpdate[],
+): Promise<void> {
+	for (let offset = 0; offset < updates.length; offset += SCORE_BATCH_SIZE) {
+		const batch = updates.slice(offset, offset + SCORE_BATCH_SIZE);
+
+		// Производная таблица через UNION ALL, а не через `VALUES ROW(...)`:
+		// табличный конструктор появился только в MySQL 8.0.19, а план у обоих
+		// вариантов одинаковый.
+		// CAST в первой ветке задаёт тип колонки id для всего UNION — без него
+		// id сравнивался бы с PRIMARY как double.
+		const derived = batch
+			.map((_, index) =>
+				index === 0
+					? 'SELECT CAST(? AS UNSIGNED) AS id, ? AS score'
+					: 'UNION ALL SELECT ?, ?',
+			)
+			.join(' ');
+		const params = batch.flatMap(({ id, score }) => [id, score]);
+
+		// Имя таблицы — из union-типа выше, а не из входных данных.
+		await connection.execute(
+			`UPDATE ${table} t JOIN (${derived}) v ON t.id = v.id SET t.rank_score = v.score`,
+			params,
+		);
+	}
+}
+
+/**
+ * Отбрасывает строки, у которых скор не изменился.
+ *
+ * Скор услуг и анализов не зависит от времени: между двумя прогонами он
+ * меняется только там, где поменялись данные (обычно — единицы строк из 6653).
+ * Отсев экономит и трафик пакета, и работу InnoDB.
+ */
+function changedOnly(
+	rows: Array<{ id: number; currentScore: unknown }>,
+	scoreOf: (row: any) => number,
+): ScoreUpdate[] {
+	const updates: ScoreUpdate[] = [];
+
+	for (const row of rows) {
+		const score = round4(scoreOf(row));
+
+		if (Number(row.currentScore) !== score) {
+			updates.push({ id: row.id, score });
+		}
+	}
+
+	return updates;
+}
+
+/**
  * Пересчитывает rank_score для всех врачей, клиник, услуг и анализов.
  * Вызывается при старте сервера и по расписанию.
  */
 export async function recalculateEntityRankScores(): Promise<void> {
-	const connection = await getConnection();
-	try {
+	await withConnection(async (connection) => {
 		await recalculateDoctorScores(connection);
 		await recalculateClinicScores(connection);
 		await recalculateServiceScores(connection);
 		await recalculateLabTestScores(connection);
-	} finally {
-		await connection.end();
-	}
+	});
 }
 
-async function recalculateDoctorScores(connection: any): Promise<void> {
+async function recalculateDoctorScores(connection: Conn): Promise<void> {
 	// Статистика отзывов по врачам
 	const [statsRows] = await connection.execute(`
 		SELECT
@@ -244,6 +342,7 @@ async function recalculateDoctorScores(connection: any): Promise<void> {
 	const [profileRows] = await connection.execute(`
 		SELECT
 			d.id,
+			d.rank_score AS currentScore,
 			(d.photo_url IS NOT NULL AND d.photo_url != '') AS hasPhoto,
 			(d.description_sr IS NOT NULL AND d.description_sr != '') AS hasDescription,
 			EXISTS(SELECT 1 FROM doctor_specialties ds WHERE ds.doctor_id = d.id) AS hasSpecialty,
@@ -256,24 +355,24 @@ async function recalculateDoctorScores(connection: any): Promise<void> {
 		FROM doctors d
 	`);
 
-	for (const doc of profileRows as DoctorProfile[]) {
-		const filled =
-			Number(doc.hasPhoto) +
-			Number(doc.hasDescription) +
-			Number(doc.hasSpecialty) +
-			Number(doc.hasContact) +
-			Number(doc.hasClinic);
-		const completeness = filled / 5;
-		const score = computeScore(statsMap.get(doc.id), completeness);
+	const updates = changedOnly(
+		profileRows as DoctorProfile[],
+		(doc: DoctorProfile) => {
+			const filled =
+				Number(doc.hasPhoto) +
+				Number(doc.hasDescription) +
+				Number(doc.hasSpecialty) +
+				Number(doc.hasContact) +
+				Number(doc.hasClinic);
+			const completeness = filled / 5;
+			return computeScore(statsMap.get(doc.id), completeness);
+		},
+	);
 
-		await connection.execute('UPDATE doctors SET rank_score = ? WHERE id = ?', [
-			Math.round(score * 10000) / 10000,
-			doc.id,
-		]);
-	}
+	await applyRankScores(connection, 'doctors', updates);
 }
 
-async function recalculateClinicScores(connection: any): Promise<void> {
+async function recalculateClinicScores(connection: Conn): Promise<void> {
 	// Статистика отзывов по клиникам
 	const [statsRows] = await connection.execute(`
 		SELECT
@@ -303,6 +402,7 @@ async function recalculateClinicScores(connection: any): Promise<void> {
 	const [profileRows] = await connection.execute(`
 		SELECT
 			c.id,
+			c.rank_score AS currentScore,
 			(c.description_sr IS NOT NULL AND c.description_sr != '') AS hasDescription,
 			(
 				c.address_sr IS NOT NULL AND c.address_sr != ''
@@ -318,27 +418,28 @@ async function recalculateClinicScores(connection: any): Promise<void> {
 		FROM clinics c
 	`);
 
-	for (const clinic of profileRows as ClinicProfile[]) {
-		const filled =
-			Number(clinic.hasDescription) +
-			Number(clinic.hasAddress) +
-			Number(clinic.hasContact) +
-			Number(clinic.hasService) +
-			Number(clinic.hasDoctor);
-		const completeness = filled / 5;
-		const score = computeScore(statsMap.get(clinic.id), completeness);
+	const updates = changedOnly(
+		profileRows as ClinicProfile[],
+		(clinic: ClinicProfile) => {
+			const filled =
+				Number(clinic.hasDescription) +
+				Number(clinic.hasAddress) +
+				Number(clinic.hasContact) +
+				Number(clinic.hasService) +
+				Number(clinic.hasDoctor);
+			const completeness = filled / 5;
+			return computeScore(statsMap.get(clinic.id), completeness);
+		},
+	);
 
-		await connection.execute('UPDATE clinics SET rank_score = ? WHERE id = ?', [
-			Math.round(score * 10000) / 10000,
-			clinic.id,
-		]);
-	}
+	await applyRankScores(connection, 'clinics', updates);
 }
 
-async function recalculateServiceScores(connection: any): Promise<void> {
+async function recalculateServiceScores(connection: Conn): Promise<void> {
 	const [rows] = await connection.execute(`
 		SELECT
 			ms.id,
+			ms.rank_score AS currentScore,
 			(SELECT COUNT(DISTINCT cms.clinic_id) FROM clinic_medical_services cms WHERE cms.medical_service_id = ms.id) AS clinicCount,
 			(SELECT COUNT(DISTINCT cmsd.doctor_id) FROM clinic_medical_service_doctors cmsd WHERE cmsd.medical_service_id = ms.id) AS doctorCount,
 			EXISTS(
@@ -353,7 +454,7 @@ async function recalculateServiceScores(connection: any): Promise<void> {
 		FROM medical_services ms
 	`);
 
-	for (const row of rows as any[]) {
+	const updates = changedOnly(rows as any[], (row: any) => {
 		const clinicScore = Math.min(
 			1,
 			Math.log2(1 + Number(row.clinicCount)) / SERVICE_CLINIC_LOG_DIVISOR,
@@ -367,22 +468,21 @@ async function recalculateServiceScores(connection: any): Promise<void> {
 			Boolean(Number(row.hasAnyPricing)),
 		);
 
-		const score =
+		return (
 			SW.clinicCount * clinicScore +
 			SW.doctorCount * doctorScore +
-			SW.hasPricing * priceScore;
-
-		await connection.execute(
-			'UPDATE medical_services SET rank_score = ? WHERE id = ?',
-			[Math.round(score * 10000) / 10000, row.id],
+			SW.hasPricing * priceScore
 		);
-	}
+	});
+
+	await applyRankScores(connection, 'medical_services', updates);
 }
 
-async function recalculateLabTestScores(connection: any): Promise<void> {
+async function recalculateLabTestScores(connection: Conn): Promise<void> {
 	const [rows] = await connection.execute(`
 		SELECT
 			lt.id,
+			lt.rank_score AS currentScore,
 			(SELECT COUNT(DISTINCT clt.clinic_id) FROM clinic_lab_tests clt WHERE clt.lab_test_id = lt.id) AS clinicCount,
 			EXISTS(
 				SELECT 1 FROM clinic_lab_tests clt
@@ -396,7 +496,7 @@ async function recalculateLabTestScores(connection: any): Promise<void> {
 		FROM lab_tests lt
 	`);
 
-	for (const row of rows as any[]) {
+	const updates = changedOnly(rows as any[], (row: any) => {
 		const clinicScore = Math.min(
 			1,
 			Math.log2(1 + Number(row.clinicCount)) / LAB_CLINIC_LOG_DIVISOR,
@@ -406,11 +506,8 @@ async function recalculateLabTestScores(connection: any): Promise<void> {
 			Boolean(Number(row.hasAnyPricing)),
 		);
 
-		const score = LW.clinicCount * clinicScore + LW.hasPricing * priceScore;
+		return LW.clinicCount * clinicScore + LW.hasPricing * priceScore;
+	});
 
-		await connection.execute(
-			'UPDATE lab_tests SET rank_score = ? WHERE id = ?',
-			[Math.round(score * 10000) / 10000, row.id],
-		);
-	}
+	await applyRankScores(connection, 'lab_tests', updates);
 }

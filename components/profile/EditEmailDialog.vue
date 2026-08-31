@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ERROR_CODES } from '~/server/utils/api-codes';
 
+const toast = useToast();
+
 const emit = defineEmits<{ updated: []; cancel: [] }>();
 
 const { t } = useI18n({
@@ -73,7 +75,7 @@ async function handleSubmit() {
 			method: 'POST',
 			body: { newEmail: newEmail.value },
 		});
-		ElMessage.success(t('emailChangeSent'));
+		toast.success(t('emailChangeSent'));
 		if (response.data?.confirmUrl) {
 			console.log('Confirmation URL:', response.data.confirmUrl);
 		}
@@ -118,16 +120,16 @@ async function handleSubmit() {
 
 <style scoped>
 .edit-email-dialog__note {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
-	margin: 0 0 var(--spacing-lg);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
+	margin: 0 0 var(--kit-spacing-lg);
 	line-height: 1.5;
 }
 
 .edit-email-dialog__footer {
 	display: flex;
 	justify-content: flex-end;
-	gap: var(--spacing-sm);
-	margin-top: var(--spacing-lg);
+	gap: var(--kit-spacing-sm);
+	margin-top: var(--kit-spacing-lg);
 }
 </style>

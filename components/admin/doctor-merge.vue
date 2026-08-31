@@ -85,13 +85,13 @@ const mergeDoctors = async () => {
 .flex-block-column {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .flex-block {
 	display: flex;
 	flex-direction: row;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 
 	& > * {
 		flex: 1 1 50%;

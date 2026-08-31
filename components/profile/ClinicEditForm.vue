@@ -22,6 +22,8 @@ import {
 	type ContactKind,
 } from '~/common/contact-input';
 
+const toast = useToast();
+
 const props = defineProps<{
 	// null — создание новой клиники
 	clinic: ClinicMyListItem | null;
@@ -219,7 +221,7 @@ async function onLogoFileChange(e: Event) {
 
 	if (url) {
 		form.logoUrl = url;
-		ElMessage.success(t('LogoUpdated'));
+		toast.success(t('LogoUpdated'));
 	}
 
 	if (logoInput.value) {
@@ -301,7 +303,7 @@ function normalizedContacts(): Record<ContactFieldKey, string> {
 async function save() {
 	const error = validate();
 	if (error) {
-		ElMessage.warning(error);
+		toast.warning(error);
 		return;
 	}
 
@@ -340,18 +342,18 @@ async function save() {
 				method: 'POST',
 				body: { ...body, clinicId: props.clinic.id },
 			});
-			ElMessage.success(t('ClinicSaved'));
+			toast.success(t('ClinicSaved'));
 		} else {
 			await $fetch('/api/clinics/my-create', {
 				method: 'POST',
 				body,
 			});
-			ElMessage.success(t('ClinicCreated'));
+			toast.success(t('ClinicCreated'));
 		}
 
 		emit('saved');
 	} catch {
-		ElMessage.error(t('ErrorSaving'));
+		toast.error(t('ErrorSaving'));
 	} finally {
 		isSaving.value = false;
 	}
@@ -553,27 +555,27 @@ async function save() {
 
 <style scoped>
 .clinic-form {
-	background: var(--color-bg-primary);
-	border-radius: var(--border-radius-xl);
-	padding: var(--spacing-2xl);
-	box-shadow: var(--shadow-sm);
-	border: 1px solid var(--color-border-secondary);
+	background: var(--kit-color-bg-primary);
+	border-radius: var(--kit-border-radius-xl);
+	padding: var(--kit-spacing-2xl);
+	box-shadow: var(--kit-shadow-sm);
+	border: 1px solid var(--kit-color-border-secondary);
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xl);
+	gap: var(--kit-spacing-xl);
 }
 
 .clinic-form__header {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
-	color: var(--color-primary);
+	gap: var(--kit-spacing-md);
+	color: var(--kit-color-primary);
 }
 
 .clinic-form__title {
-	font-size: var(--font-size-2xl);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-2xl);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	margin: 0;
 }
 
@@ -581,7 +583,7 @@ async function save() {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .clinic-form__logo-wrap {
@@ -595,19 +597,19 @@ async function save() {
 	width: 28px;
 	height: 28px;
 	border-radius: 50%;
-	border: 2px solid var(--color-bg-primary);
-	background: var(--color-primary);
+	border: 2px solid var(--kit-color-bg-primary);
+	background: var(--kit-color-primary);
 	color: #fff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	transition: all var(--transition-base);
+	transition: all var(--kit-transition-base);
 	padding: 0;
 }
 
 .clinic-form__logo-upload:hover {
-	background: var(--color-primary-dark, #3730a3);
+	background: var(--kit-color-primary-dark, #3730a3);
 	transform: scale(1.1);
 }
 
@@ -632,19 +634,19 @@ async function save() {
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	border: 2px solid var(--color-bg-primary);
-	background: var(--color-danger);
+	border: 2px solid var(--kit-color-bg-primary);
+	background: var(--kit-color-danger);
 	color: #fff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	transition: all var(--transition-base);
+	transition: all var(--kit-transition-base);
 	padding: 0;
 }
 
 .clinic-form__logo-remove:hover {
-	background: var(--color-danger-dark);
+	background: var(--kit-color-danger-dark);
 	transform: scale(1.1);
 }
 
@@ -655,40 +657,40 @@ async function save() {
 }
 
 .clinic-form__logo-hint {
-	font-size: var(--font-size-xs);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-xs);
+	color: var(--kit-color-text-muted);
 }
 
 .clinic-form__section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
-	padding-top: var(--spacing-lg);
-	border-top: 1px solid var(--color-border-secondary);
+	gap: var(--kit-spacing-lg);
+	padding-top: var(--kit-spacing-lg);
+	border-top: 1px solid var(--kit-color-border-secondary);
 }
 
 .clinic-form__section-header {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .clinic-form__section-title {
-	font-size: var(--font-size-lg);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-lg);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	margin: 0;
 }
 
 .clinic-form__markdown-hint {
-	font-size: var(--font-size-xs);
-	color: var(--color-text-tertiary);
+	font-size: var(--kit-font-size-xs);
+	color: var(--kit-color-text-tertiary);
 }
 
 .clinic-form__field {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .clinic-form__field--grow {
@@ -697,14 +699,14 @@ async function save() {
 }
 
 .clinic-form__label {
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-text-secondary);
 }
 
 .clinic-form__row {
 	display: flex;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 	align-items: flex-start;
 }
 
@@ -715,20 +717,20 @@ async function save() {
 .clinic-form__contacts {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .clinic-form__actions {
 	display: flex;
 	justify-content: flex-end;
-	gap: var(--spacing-sm);
-	padding-top: var(--spacing-lg);
-	border-top: 1px solid var(--color-border-secondary);
+	gap: var(--kit-spacing-sm);
+	padding-top: var(--kit-spacing-lg);
+	border-top: 1px solid var(--kit-color-border-secondary);
 }
 
 @media (max-width: 640px) {
 	.clinic-form {
-		padding: var(--spacing-xl) var(--spacing-lg);
+		padding: var(--kit-spacing-xl) var(--kit-spacing-lg);
 	}
 
 	.clinic-form__contacts {

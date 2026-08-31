@@ -36,18 +36,18 @@ defineProps<{
 
 /* Одиночный врач */
 .clinic-service-marker:has(.marker-inner) {
-	background: var(--color-primary);
-	border-radius: var(--border-radius-lg);
-	border: 2px solid var(--color-bg-primary);
-	box-shadow: var(--shadow-hover);
+	background: var(--kit-color-primary);
+	border-radius: var(--kit-border-radius-lg);
+	border: 2px solid var(--kit-color-bg-primary);
+	box-shadow: var(--kit-shadow-hover);
 }
 
 /* Группа врачей */
 .clinic-service-marker:has(.marker-inner-group) {
-	background: var(--color-primary);
-	border-radius: var(--border-radius-full);
-	border: 2px solid var(--color-bg-primary);
-	box-shadow: var(--shadow-hover);
+	background: var(--kit-color-primary);
+	border-radius: var(--kit-border-radius-full);
+	border: 2px solid var(--kit-color-bg-primary);
+	box-shadow: var(--kit-shadow-hover);
 }
 
 .marker-inner-group {
@@ -56,7 +56,7 @@ defineProps<{
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	color: var(--color-bg-primary);
+	color: var(--kit-color-bg-primary);
 	font-family:
 		system-ui,
 		-apple-system,
@@ -64,19 +64,19 @@ defineProps<{
 }
 
 .marker-inner-group {
-	font-weight: var(--font-weight-semibold);
-	font-size: var(--font-size-sm);
+	font-weight: var(--kit-font-weight-semibold);
+	font-size: var(--kit-font-size-sm);
 }
 
 @keyframes pulse {
 	0% {
-		box-shadow: var(--shadow-hover);
+		box-shadow: var(--kit-shadow-hover);
 	}
 	50% {
-		box-shadow: var(--shadow-lg);
+		box-shadow: var(--kit-shadow-lg);
 	}
 	100% {
-		box-shadow: var(--shadow-hover);
+		box-shadow: var(--kit-shadow-hover);
 	}
 }
 </style>

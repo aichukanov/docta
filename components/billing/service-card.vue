@@ -116,25 +116,25 @@ const monthsModel = computed({
 
 <style scoped>
 .service-card {
-	background: var(--color-bg-primary);
-	border: 1px solid var(--color-border-secondary);
-	border-radius: var(--border-radius-xl);
-	box-shadow: var(--shadow-sm);
-	padding: var(--spacing-xl);
+	background: var(--kit-color-bg-primary);
+	border: 1px solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-xl);
+	box-shadow: var(--kit-shadow-sm);
+	padding: var(--kit-spacing-xl);
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
-	transition: border-color var(--transition-base);
+	gap: var(--kit-spacing-md);
+	transition: border-color var(--kit-transition-base);
 }
 
 .service-card--selected {
-	border-color: var(--color-primary);
+	border-color: var(--kit-color-primary);
 }
 
 .service-card__header {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .service-card__icon {
@@ -143,16 +143,16 @@ const monthsModel = computed({
 	justify-content: center;
 	width: 40px;
 	height: 40px;
-	border-radius: var(--border-radius-lg);
-	background: var(--color-primary-bg);
-	color: var(--color-primary);
+	border-radius: var(--kit-border-radius-lg);
+	background: var(--kit-color-primary-bg);
+	color: var(--kit-color-primary);
 	flex-shrink: 0;
 }
 
 .service-card__name {
-	font-size: var(--font-size-lg);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-lg);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	margin: 0;
 	flex: 1;
 	min-width: 0;
@@ -168,8 +168,8 @@ const monthsModel = computed({
 }
 
 .service-card__desc {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 	margin: 0;
 	line-height: 1.5;
 }
@@ -178,26 +178,26 @@ const monthsModel = computed({
 	display: inline-flex;
 	align-items: center;
 	gap: 6px;
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-primary-green);
-	background: var(--color-success-bg);
-	border: 1px solid var(--color-success-border);
-	border-radius: var(--border-radius-md);
-	padding: var(--spacing-xs) var(--spacing-md);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-primary-green);
+	background: var(--kit-color-success-bg);
+	border: 1px solid var(--kit-color-success-border);
+	border-radius: var(--kit-border-radius-md);
+	padding: var(--kit-spacing-xs) var(--kit-spacing-md);
 	align-self: flex-start;
 }
 
 .service-card__pricing {
-	border-top: 1px solid var(--color-border-secondary);
-	padding-top: var(--spacing-md);
+	border-top: 1px solid var(--kit-color-border-secondary);
+	padding-top: var(--kit-spacing-md);
 }
 
 .service-card__pricing :deep(.el-radio-group) {
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .service-card__pricing :deep(.el-radio) {
@@ -211,17 +211,17 @@ const monthsModel = computed({
 	justify-content: space-between;
 	flex: 1;
 	width: 100%;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .service-card__period {
-	color: var(--color-text-secondary);
-	font-size: var(--font-size-sm);
+	color: var(--kit-color-text-secondary);
+	font-size: var(--kit-font-size-sm);
 }
 
 .service-card__price {
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
-	font-size: var(--font-size-sm);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
+	font-size: var(--kit-font-size-sm);
 }
 </style>

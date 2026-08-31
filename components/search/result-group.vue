@@ -32,7 +32,7 @@ const emit = defineEmits<{ (e: 'navigate'): void }>();
 
 <style lang="less" scoped>
 .search-group {
-	border-bottom: var(--border-width-thin) solid var(--color-border-secondary);
+	border-bottom: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
 
 	&:last-child {
 		border-bottom: none;
@@ -41,13 +41,13 @@ const emit = defineEmits<{ (e: 'navigate'): void }>();
 	&__title {
 		display: flex;
 		align-items: center;
-		gap: var(--spacing-sm);
-		padding: var(--spacing-md) var(--spacing-lg) var(--spacing-xs);
-		font-size: var(--font-size-xs);
-		font-weight: var(--font-weight-semibold);
+		gap: var(--kit-spacing-sm);
+		padding: var(--kit-spacing-md) var(--kit-spacing-lg) var(--kit-spacing-xs);
+		font-size: var(--kit-font-size-xs);
+		font-weight: var(--kit-font-weight-semibold);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
-		color: var(--color-text-muted);
+		color: var(--kit-color-text-muted);
 
 		// См. комментарий в result-row: не все icon-компоненты знают про size
 		:deep(svg) {
@@ -60,21 +60,21 @@ const emit = defineEmits<{ (e: 'navigate'): void }>();
 	// Строки внутри группы разделены тонкой линией — так видно, где
 	// заканчивается многострочная карточка и начинается следующая
 	:deep(.search-row + .search-row) {
-		border-top: var(--border-width-thin) solid var(--color-border-light);
+		border-top: var(--kit-border-width-thin) solid var(--kit-color-border-light);
 	}
 
 	&__more {
 		display: block;
 		// Выровнено по тексту строк: иконка + отступ + внутренний отступ строки
-		padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-md)
-			calc(40px + var(--spacing-md) + var(--spacing-lg));
-		color: var(--color-primary);
+		padding: var(--kit-spacing-sm) var(--kit-spacing-lg) var(--kit-spacing-md)
+			calc(40px + var(--kit-spacing-md) + var(--kit-spacing-lg));
+		color: var(--kit-color-primary);
 		text-decoration: none;
-		font-size: var(--font-size-sm);
-		transition: background var(--transition-fast);
+		font-size: var(--kit-font-size-sm);
+		transition: background var(--kit-transition-fast);
 
 		&:hover {
-			background: var(--color-bg-secondary);
+			background: var(--kit-color-bg-secondary);
 		}
 	}
 }
@@ -82,12 +82,12 @@ const emit = defineEmits<{ (e: 'navigate'): void }>();
 @media (max-width: 640px) {
 	.search-group {
 		&__title {
-			padding: var(--spacing-sm) var(--spacing-md) var(--spacing-xs);
+			padding: var(--kit-spacing-sm) var(--kit-spacing-md) var(--kit-spacing-xs);
 		}
 
 		&__more {
-			padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md)
-				calc(36px + var(--spacing-md) + var(--spacing-md));
+			padding: var(--kit-spacing-sm) var(--kit-spacing-md) var(--kit-spacing-md)
+				calc(36px + var(--kit-spacing-md) + var(--kit-spacing-md));
 		}
 	}
 }

@@ -99,16 +99,16 @@ const { getDistanceKm } = useClinicRanking();
 .clinics-section__list {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .clinics-section__empty {
 	margin: 0;
-	padding: var(--spacing-xl);
+	padding: var(--kit-spacing-xl);
 	text-align: center;
-	color: var(--color-text-secondary);
-	background: var(--color-bg-tertiary);
-	border-radius: var(--border-radius-md);
+	color: var(--kit-color-text-secondary);
+	background: var(--kit-color-bg-tertiary);
+	border-radius: var(--kit-border-radius-md);
 }
 </style>
 

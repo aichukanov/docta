@@ -387,17 +387,17 @@ watch(() => props.clinicId, loadCoupons, { immediate: true });
 .coupons-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
-	padding: var(--spacing-md);
-	border: 1px solid var(--color-border-primary);
-	border-radius: var(--border-radius-md);
+	gap: var(--kit-spacing-md);
+	padding: var(--kit-spacing-md);
+	border: 1px solid var(--kit-color-border-primary);
+	border-radius: var(--kit-border-radius-md);
 }
 
 .section-header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 
 	h4 {
 		margin: 0;
@@ -405,30 +405,30 @@ watch(() => props.clinicId, loadCoupons, { immediate: true });
 }
 
 .coupons-status {
-	color: var(--color-success-dark);
-	font-size: var(--font-size-sm);
+	color: var(--kit-color-success-dark);
+	font-size: var(--kit-font-size-sm);
 }
 
 .coupons-loading,
 .coupons-empty {
-	color: var(--color-text-muted);
-	font-size: var(--font-size-sm);
+	color: var(--kit-color-text-muted);
+	font-size: var(--kit-font-size-sm);
 }
 
 .coupons-list {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .coupon-item {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
-	padding: var(--spacing-sm) var(--spacing-md);
-	border: 1px solid var(--color-border-secondary);
-	border-radius: var(--border-radius-md);
-	background: var(--color-surface-secondary);
+	gap: var(--kit-spacing-md);
+	padding: var(--kit-spacing-sm) var(--kit-spacing-md);
+	border: 1px solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-md);
+	background: var(--kit-color-surface-secondary);
 	flex-wrap: wrap;
 
 	&.inactive {
@@ -439,7 +439,7 @@ watch(() => props.clinicId, loadCoupons, { immediate: true });
 .coupon-item-image {
 	width: 80px;
 	height: auto;
-	border-radius: var(--border-radius-sm);
+	border-radius: var(--kit-border-radius-sm);
 }
 
 .coupon-item-body {
@@ -450,40 +450,40 @@ watch(() => props.clinicId, loadCoupons, { immediate: true });
 .coupon-item-title {
 	display: flex;
 	align-items: baseline;
-	gap: var(--spacing-sm);
-	font-weight: var(--font-weight-semibold);
+	gap: var(--kit-spacing-sm);
+	font-weight: var(--kit-font-weight-semibold);
 }
 
 .coupon-item-percent {
-	color: var(--color-primary-green);
-	font-size: var(--font-size-lg);
+	color: var(--kit-color-primary-green);
+	font-size: var(--kit-font-size-lg);
 }
 
 .coupon-item-meta {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--spacing-xs);
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	gap: var(--kit-spacing-xs);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 
 .coupon-item-status {
-	font-size: var(--font-size-sm);
-	color: var(--color-warning-dark);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-warning-dark);
 }
 
 .coupon-item-actions {
 	display: flex;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 	flex-wrap: wrap;
 }
 
 .coupon-form {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding-top: var(--spacing-md);
-	border-top: 1px solid var(--color-border-secondary);
+	gap: var(--kit-spacing-sm);
+	padding-top: var(--kit-spacing-md);
+	border-top: 1px solid var(--kit-color-border-secondary);
 
 	h5 {
 		margin: 0;
@@ -493,14 +493,14 @@ watch(() => props.clinicId, loadCoupons, { immediate: true });
 .coupon-form-row {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 	flex-wrap: wrap;
 }
 
 .coupon-form-label {
 	min-width: 140px;
-	color: var(--color-text-secondary);
-	font-size: var(--font-size-sm);
+	color: var(--kit-color-text-secondary);
+	font-size: var(--kit-font-size-sm);
 }
 
 .coupon-form-date {
@@ -509,12 +509,12 @@ watch(() => props.clinicId, loadCoupons, { immediate: true });
 
 .coupon-form-hint {
 	margin: 0;
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 
 .coupon-form-actions {
 	display: flex;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 </style>

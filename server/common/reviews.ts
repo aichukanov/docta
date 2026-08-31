@@ -1,5 +1,6 @@
 import type { Connection } from 'mysql2/promise';
 import { maskEmail } from '~/common/email-masking';
+import { Language } from '~/enums/language';
 import type { Rating, Review } from '~/interfaces/review';
 
 export type ReviewSort =
@@ -22,7 +23,25 @@ export function isValidSort(value: unknown): value is ReviewSort {
 }
 
 /**
- * Build CASE expression for localized text field.
+ * Колонка с переводом текста отзыва — по одной на локаль.
+ *
+ * Локаль приезжает из тела публичного запроса, поэтому в SQL уходит не она
+ * сама, а только значение, взятое отсюда по ключу. Подставлять её в текст
+ * запроса нельзя ни в каком виде: апостроф в значении закрывает строковый
+ * литерал, и `connection.execute` уже не спасает — запрос к этому моменту
+ * собран. Неизвестная локаль даёт фолбэк на оригинальный текст.
+ */
+const LOCALE_TEXT_COLUMNS: Record<string, string> = {
+	[Language.SR]: 'text_sr',
+	[Language.SR_CYRILLIC]: 'text_sr_cyrl',
+	[Language.EN]: 'text_en',
+	[Language.RU]: 'text_ru',
+	[Language.DE]: 'text_de',
+	[Language.TR]: 'text_tr',
+};
+
+/**
+ * Build expression for localized text field.
  * Used for reviews and review replies.
  */
 function localizedTextField(
@@ -30,15 +49,13 @@ function localizedTextField(
 	tableAlias: string,
 	fallbackField = 'original_text',
 ): string {
-	return `CASE
-		WHEN '${locale}' = 'sr' THEN COALESCE(${tableAlias}.text_sr, ${tableAlias}.${fallbackField})
-		WHEN '${locale}' = 'sr-cyrl' THEN COALESCE(${tableAlias}.text_sr_cyrl, ${tableAlias}.${fallbackField})
-		WHEN '${locale}' = 'en' THEN COALESCE(${tableAlias}.text_en, ${tableAlias}.${fallbackField})
-		WHEN '${locale}' = 'ru' THEN COALESCE(${tableAlias}.text_ru, ${tableAlias}.${fallbackField})
-		WHEN '${locale}' = 'de' THEN COALESCE(${tableAlias}.text_de, ${tableAlias}.${fallbackField})
-		WHEN '${locale}' = 'tr' THEN COALESCE(${tableAlias}.text_tr, ${tableAlias}.${fallbackField})
-		ELSE ${tableAlias}.${fallbackField}
-	END`;
+	const column = LOCALE_TEXT_COLUMNS[locale];
+
+	if (!column) {
+		return `${tableAlias}.${fallbackField}`;
+	}
+
+	return `COALESCE(${tableAlias}.${column}, ${tableAlias}.${fallbackField})`;
 }
 
 function buildOrderByClause(sort: ReviewSort, textExpr: string): string {

@@ -23,15 +23,15 @@ const { t } = useI18n({
 
 <style scoped>
 .empty-card {
-	background: var(--color-bg-primary);
-	border-radius: var(--border-radius-xl);
-	border: 1px solid var(--color-border-secondary);
-	box-shadow: var(--shadow-sm);
-	padding: var(--spacing-3xl) var(--spacing-2xl);
+	background: var(--kit-color-bg-primary);
+	border-radius: var(--kit-border-radius-xl);
+	border: 1px solid var(--kit-color-border-secondary);
+	box-shadow: var(--kit-shadow-sm);
+	padding: var(--kit-spacing-3xl) var(--kit-spacing-2xl);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 	text-align: center;
 	min-height: 240px;
 	justify-content: center;
@@ -40,38 +40,40 @@ const { t } = useI18n({
 .empty-card__icon {
 	width: 80px;
 	height: 80px;
-	border-radius: var(--border-radius-full);
-	background: var(--color-primary-bg);
-	color: var(--color-primary);
+	border-radius: var(--kit-border-radius-full);
+	background: var(--kit-color-primary-bg);
+	color: var(--kit-color-primary);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .empty-card__title {
-	font-size: var(--font-size-2xl);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-2xl);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	margin: 0;
 }
 
 .empty-card__desc {
-	font-size: var(--font-size-md);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-md);
+	color: var(--kit-color-text-muted);
 	margin: 0;
 	max-width: 400px;
 	line-height: 1.5;
 }
 
 .empty-card__email {
-	font-size: var(--font-size-md);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-primary);
+	font-size: var(--kit-font-size-md);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-primary);
 	text-decoration: none;
 	transition: color 0.15s ease;
 
 	&:hover {
-		color: var(--color-primary-hover);
+		/* Токена --color-primary-hover не существует: ссылка была мёртвой
+		   и ховер молча не срабатывал */
+		color: var(--kit-color-primary-dark);
 		text-decoration: underline;
 	}
 }

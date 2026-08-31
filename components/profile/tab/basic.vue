@@ -5,6 +5,8 @@ import accountCardMessages from '~/i18n/account-card';
 import profileMessages from '~/i18n/profile';
 import { combineI18nMessages } from '~/i18n/utils';
 
+const toast = useToast();
+
 const { t } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([profileMessages, accountCardMessages]),
@@ -45,9 +47,9 @@ async function unlinkAccount(provider: string) {
 		isLoading.value = true;
 		await $fetch(`/api/auth/unlink/${provider}`, { method: 'POST' });
 		await Promise.all([refreshAccounts(), refreshOAuthProfiles()]);
-		ElMessage.success(t('accountUnlinked'));
+		toast.success(t('accountUnlinked'));
 	} catch {
-		ElMessage.error(t('errorUnlinkAccount'));
+		toast.error(t('errorUnlinkAccount'));
 	} finally {
 		isLoading.value = false;
 	}
@@ -61,9 +63,9 @@ async function setPrimaryProvider(provider: string) {
 			body: { provider },
 		});
 		await refreshOAuthProfiles();
-		ElMessage.success(t('primaryProviderUpdated'));
+		toast.success(t('primaryProviderUpdated'));
 	} catch {
-		ElMessage.error(t('errorUpdatePriority'));
+		toast.error(t('errorUpdatePriority'));
 	} finally {
 		isLoading.value = false;
 	}
@@ -114,10 +116,10 @@ async function onPrivacyChange(value: string | number | boolean) {
 			body: { isPublic },
 		});
 		await userStore.fetchUser(true);
-		ElMessage.success(t('privacyUpdated'));
+		toast.success(t('privacyUpdated'));
 	} catch {
 		isPublicProfile.value = !isPublic;
-		ElMessage.error(t('errorUpdatingPrivacy'));
+		toast.error(t('errorUpdatingPrivacy'));
 	} finally {
 		isSavingPrivacy.value = false;
 	}
@@ -276,18 +278,18 @@ async function onPrivacyChange(value: string | number | boolean) {
 
 <style scoped>
 .profile-section {
-	background: var(--color-bg-primary);
-	border-radius: var(--border-radius-xl);
-	padding: var(--spacing-2xl);
-	box-shadow: var(--shadow-sm);
-	border: 1px solid var(--color-border-secondary);
+	background: var(--kit-color-bg-primary);
+	border-radius: var(--kit-border-radius-xl);
+	padding: var(--kit-spacing-2xl);
+	box-shadow: var(--kit-shadow-sm);
+	border: 1px solid var(--kit-color-border-secondary);
 }
 
 .profile-section__header {
 	display: flex;
 	align-items: flex-start;
-	gap: var(--spacing-md);
-	margin-bottom: var(--spacing-xl);
+	gap: var(--kit-spacing-md);
+	margin-bottom: var(--kit-spacing-xl);
 }
 
 .profile-section__icon {
@@ -296,23 +298,23 @@ async function onPrivacyChange(value: string | number | boolean) {
 	justify-content: center;
 	width: 40px;
 	height: 40px;
-	border-radius: var(--border-radius-lg);
-	background: var(--color-primary-bg);
-	color: var(--color-primary);
+	border-radius: var(--kit-border-radius-lg);
+	background: var(--kit-color-primary-bg);
+	color: var(--kit-color-primary);
 	flex-shrink: 0;
 }
 
 .profile-section__title {
-	font-size: var(--font-size-2xl);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-2xl);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	margin: 0 0 4px;
 	line-height: 1.3;
 }
 
 .profile-section__desc {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 	margin: 0;
 	line-height: 1.4;
 }
@@ -320,14 +322,14 @@ async function onPrivacyChange(value: string | number | boolean) {
 .accounts-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .privacy-toggle {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .privacy-toggle__text {
@@ -338,46 +340,46 @@ async function onPrivacyChange(value: string | number | boolean) {
 }
 
 .privacy-toggle__label {
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-primary);
+	font-size: var(--kit-font-size-base);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-text-primary);
 }
 
 .privacy-toggle__hint {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 	line-height: 1.4;
 }
 
 .privacy-preview {
-	margin-top: var(--spacing-xl);
+	margin-top: var(--kit-spacing-xl);
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .privacy-preview__label {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 
 .privacy-preview__card {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
-	padding: var(--spacing-md) var(--spacing-lg);
-	border: var(--border-width-thin) solid var(--color-border-secondary);
-	border-radius: var(--border-radius-lg);
-	background: var(--color-bg-secondary);
+	gap: var(--kit-spacing-md);
+	padding: var(--kit-spacing-md) var(--kit-spacing-lg);
+	border: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-lg);
+	background: var(--kit-color-bg-secondary);
 }
 
 .privacy-preview__author {
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-primary);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-primary);
 }
 
 .privacy-preview__author--anon {
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 	font-style: italic;
 }
 
@@ -387,7 +389,7 @@ async function onPrivacyChange(value: string | number | boolean) {
 	}
 
 	.profile-section {
-		padding: var(--spacing-xl) var(--spacing-lg);
+		padding: var(--kit-spacing-xl) var(--kit-spacing-lg);
 	}
 }
 </style>

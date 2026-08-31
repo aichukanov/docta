@@ -259,11 +259,11 @@ watch(
 .wh-editor {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
-	background: var(--color-surface-secondary);
-	border-radius: var(--border-radius-md);
-	border: 1px solid var(--color-border-primary);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-md);
+	background: var(--kit-color-surface-secondary);
+	border-radius: var(--kit-border-radius-md);
+	border: 1px solid var(--kit-color-border-primary);
 }
 
 .wh-header {
@@ -273,33 +273,33 @@ watch(
 
 	h4 {
 		margin: 0;
-		color: var(--color-text-primary);
+		color: var(--kit-color-text-primary);
 	}
 }
 
 .wh-loading {
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 	font-style: italic;
-	padding: var(--spacing-sm) 0;
+	padding: var(--kit-spacing-sm) 0;
 }
 
 .wh-days {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .wh-day {
-	background: var(--color-surface-primary);
-	border: 1px solid var(--color-border-primary);
-	border-radius: var(--border-radius-md);
-	padding: var(--spacing-sm);
+	background: var(--kit-color-surface-primary);
+	border: 1px solid var(--kit-color-border-primary);
+	border-radius: var(--kit-border-radius-md);
+	padding: var(--kit-spacing-sm);
 }
 
 .wh-day-header {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	flex-wrap: wrap;
 }
 
@@ -321,15 +321,15 @@ watch(
 .wh-intervals {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
-	margin-top: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
+	margin-top: var(--kit-spacing-xs);
 	padding-left: 38px;
 }
 
 .wh-interval {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .wh-time-picker {
@@ -337,17 +337,17 @@ watch(
 }
 
 .wh-separator {
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 }
 
 .wh-footer {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .wh-status {
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 	font-size: 13px;
 }
 </style>

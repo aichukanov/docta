@@ -52,9 +52,7 @@ const getServices = (clinicId: number) => props.clinicServices?.[clinicId];
 const { getDistanceKm, rankClinics } = useClinicRanking();
 const visibleClinics = computed(() =>
 	rankClinics(
-		clinicsStore
-			.getClinicsByIds(props.clinicIds)
-			.slice(0, LIST_CARD_MAX_CLINICS),
+		clinicsStore.getClinicsByIds(props.clinicIds, LIST_CARD_MAX_CLINICS),
 		props.clinicPrices,
 	),
 );
@@ -165,21 +163,21 @@ const trackDetailsLinkClick = () => {
 <style scoped lang="less">
 .list-card {
 	box-sizing: border-box;
-	background: var(--color-surface-secondary);
-	border: 1px solid var(--color-border-primary);
-	border-radius: var(--border-radius-lg);
-	padding: var(--spacing-xl) var(--spacing-2xl);
-	transition: all var(--transition-base);
-	box-shadow: var(--shadow-xs);
+	background: var(--kit-color-surface-secondary);
+	border: 1px solid var(--kit-color-border-primary);
+	border-radius: var(--kit-border-radius-lg);
+	padding: var(--kit-spacing-xl) var(--kit-spacing-2xl);
+	transition: all var(--kit-transition-base);
+	box-shadow: var(--kit-shadow-xs);
 
 	.list-card-header-wrapper {
 		display: flex;
 		flex-direction: column;
-		gap: var(--spacing-xs);
+		gap: var(--kit-spacing-xs);
 	}
 
 	.list-card-header {
-		font-size: var(--font-size-lg);
+		font-size: var(--kit-font-size-lg);
 		font-weight: 600;
 		color: #1f2937;
 		margin: 0;
@@ -189,53 +187,53 @@ const trackDetailsLinkClick = () => {
 			sans-serif;
 
 		.list-card-link {
-			color: var(--color-primary);
+			color: var(--kit-color-primary);
 			text-decoration: none;
 
 			&:hover {
-				color: var(--color-primary-dark);
+				color: var(--kit-color-primary-dark);
 				text-decoration: underline;
 			}
 		}
 	}
 
 	.list-card-local-name {
-		font-size: var(--font-size-sm);
-		font-weight: var(--font-weight-medium);
-		color: var(--color-text-secondary);
+		font-size: var(--kit-font-size-sm);
+		font-weight: var(--kit-font-weight-medium);
+		color: var(--kit-color-text-secondary);
 	}
 }
 
 .clinics-list {
-	margin-top: var(--spacing-xl);
+	margin-top: var(--kit-spacing-xl);
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .view-all-clinics {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 	width: 100%;
 	box-sizing: border-box;
-	padding: var(--spacing-md) var(--spacing-xl);
+	padding: var(--kit-spacing-md) var(--kit-spacing-xl);
 	background: linear-gradient(
 		180deg,
 		rgba(79, 70, 229, 0.04) 0%,
 		rgba(79, 70, 229, 0.08) 100%
 	);
-	border: 1px solid var(--color-border-accent);
-	border-radius: var(--border-radius-lg);
-	color: var(--color-primary);
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-semibold);
+	border: 1px solid var(--kit-color-border-accent);
+	border-radius: var(--kit-border-radius-lg);
+	color: var(--kit-color-primary);
+	font-size: var(--kit-font-size-base);
+	font-weight: var(--kit-font-weight-semibold);
 	text-decoration: none;
 	transition:
-		background var(--transition-base),
-		border-color var(--transition-base),
-		box-shadow var(--transition-base),
-		transform var(--transition-base);
+		background var(--kit-transition-base),
+		border-color var(--kit-transition-base),
+		box-shadow var(--kit-transition-base),
+		transform var(--kit-transition-base);
 
 	&__icon {
 		display: inline-flex;
@@ -243,10 +241,10 @@ const trackDetailsLinkClick = () => {
 		justify-content: center;
 		width: 32px;
 		height: 32px;
-		border-radius: var(--border-radius-full);
-		background: var(--color-bg-primary);
-		color: var(--color-primary);
-		box-shadow: var(--shadow-soft);
+		border-radius: var(--kit-border-radius-full);
+		background: var(--kit-color-bg-primary);
+		color: var(--kit-color-primary);
+		box-shadow: var(--kit-shadow-soft);
 		flex-shrink: 0;
 	}
 
@@ -257,19 +255,19 @@ const trackDetailsLinkClick = () => {
 
 	&__arrow {
 		flex-shrink: 0;
-		transition: transform var(--transition-base);
+		transition: transform var(--kit-transition-base);
 	}
 
 	&:hover {
-		background: var(--color-primary);
-		border-color: var(--color-primary);
-		color: var(--color-bg-primary);
-		box-shadow: var(--shadow-hover);
+		background: var(--kit-color-primary);
+		border-color: var(--kit-color-primary);
+		color: var(--kit-color-bg-primary);
+		box-shadow: var(--kit-shadow-hover);
 		transform: translateY(-1px);
 
 		.view-all-clinics__icon {
 			background: rgba(255, 255, 255, 0.18);
-			color: var(--color-bg-primary);
+			color: var(--kit-color-bg-primary);
 			box-shadow: none;
 		}
 
@@ -279,7 +277,7 @@ const trackDetailsLinkClick = () => {
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--color-primary);
+		outline: 2px solid var(--kit-color-primary);
 		outline-offset: 2px;
 	}
 
@@ -305,7 +303,7 @@ const trackDetailsLinkClick = () => {
 
 @media (max-width: 500px) {
 	.list-card {
-		padding: var(--spacing-sm) var(--spacing-xs);
+		padding: var(--kit-spacing-sm) var(--kit-spacing-xs);
 	}
 }
 </style>

@@ -9,8 +9,37 @@ function getEnumValues(enumType: Record<string, string | number>): number[] {
 	);
 }
 
-function getSpecialtyIds() {
-	return getEnumValues(DoctorSpecialty);
+/**
+ * Специальности, у которых реально есть хотя бы один публичный врач.
+ *
+ * Раньше в sitemap уезжал весь enum (78 значений). Листинг на пустой выборке
+ * отдаёт `noindex, follow` (components/list-page.vue), то есть sitemap просил
+ * индексировать страницу, которая сама просит этого не делать. Расхождение
+ * росло молча: новое значение enum'а появляется в sitemap в тот же день, а
+ * первый врач с этой специальностью — когда-нибудь.
+ *
+ * Результат пересекаем с enum'ом: id вне enum'а не проходит
+ * `validateSpecialtyIds`, листинг молча покажет полный каталог и отдаст
+ * `noindex` — такой URL в sitemap не нужен тем более.
+ */
+async function getSpecialtyIdsWithDoctors() {
+	const connection = await getConnection();
+
+	const query = `
+		SELECT DISTINCT ds.specialty_id as specialtyId
+		FROM doctor_specialties ds
+		INNER JOIN doctors d ON d.id = ds.doctor_id
+			AND ${doctorIsPublicSql('d')}
+		ORDER BY ds.specialty_id;
+	`;
+	const [rows] = await connection.execute<any[]>(query);
+	await connection.end();
+
+	const knownIds = new Set(getEnumValues(DoctorSpecialty));
+
+	return (rows as Array<{ specialtyId: number }>)
+		.map((row) => row.specialtyId)
+		.filter((specialtyId) => knownIds.has(specialtyId));
 }
 
 export async function getSpecialtyCityCombinations() {
@@ -63,7 +92,7 @@ async function getSpecialtyLanguageCombinations() {
 
 export async function getSitemapFilters() {
 	return {
-		specialtyIds: getSpecialtyIds(),
+		specialtyIds: await getSpecialtyIdsWithDoctors(),
 		specialtyCityCombinations: await getSpecialtyCityCombinations(),
 		specialtyLanguageCombinations: await getSpecialtyLanguageCombinations(),
 	};

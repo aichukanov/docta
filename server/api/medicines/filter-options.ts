@@ -1,4 +1,4 @@
-import { validateBody } from '~/common/validation';
+import { isValidLocale, validateBody } from '~/common/validation';
 import {
 	localizedNameSql,
 	nameFieldFor,
@@ -48,7 +48,12 @@ export default defineEventHandler(
 async function getFilterOptions(
 	body: { locale?: string } = {},
 ): Promise<MedicineFilterOptionsResponse> {
-	const nameField = nameFieldFor(body.locale);
+	// nameFieldFor и сам выбирает колонку по таблице, то есть склейки тут не
+	// было. Проверяем ради предсказуемого фолбэка и чтобы правило «локаль из
+	// тела запроса всегда проходит isValidLocale» не имело исключений.
+	const nameField = nameFieldFor(
+		isValidLocale(body.locale) ? body.locale : 'en',
+	);
 
 	// Все справочники — параллельно на одном соединении.
 	const [atcGroupRows, substanceRows, pharmaFormRows, manufacturerRows] =

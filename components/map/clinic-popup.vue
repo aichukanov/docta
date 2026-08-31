@@ -129,16 +129,16 @@ watch(pageNumber, () => {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .services-list {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	margin-top: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
+	margin-top: var(--kit-spacing-sm);
 	margin-right: -20px; // fix inner leaflet margin
-	padding-right: var(--spacing-sm);
+	padding-right: var(--kit-spacing-sm);
 	max-height: 200px;
 	overflow-y: auto;
 	overflow-x: hidden;
@@ -150,9 +150,9 @@ watch(pageNumber, () => {
 	overflow-wrap: break-word;
 
 	.clinic-name {
-		font-size: var(--font-size-base);
+		font-size: var(--kit-font-size-base);
 		font-weight: 600;
-		color: var(--color-primary);
+		color: var(--kit-color-primary);
 		text-decoration: none;
 
 		&:hover {
@@ -162,7 +162,7 @@ watch(pageNumber, () => {
 }
 
 .contacts-wrapper {
-	margin-top: var(--spacing-xs);
+	margin-top: var(--kit-spacing-xs);
 	align-self: stretch;
 }
 </style>

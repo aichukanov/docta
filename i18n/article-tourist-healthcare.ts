@@ -9,7 +9,7 @@ export default {
 			'TouristHealthcareTitle':
 				'Getting sick on holiday in Montenegro: where tourists can get help',
 			'TouristHealthcareDescription':
-				'Emergency number 124, the turistička ambulanta at local health centers, private clinics and hospital ERs, what treatment really costs without insurance, EHIC and bilateral agreements, travel insurance tips and pharmacies — a practical guide for tourists in Montenegro.',
+				'Emergency number 124, the turistička ambulanta at the local dom zdravlja, private clinics and hospital ERs — and what treatment really costs without insurance.',
 
 			'ThcToc_emergency':
 				'Emergency: dial 124 — and how ambulances really work',
@@ -111,7 +111,7 @@ export default {
 			'TouristHealthcareTitle':
 				'Заболел в отпуске в Черногории: куда обращаться туристу',
 			'TouristHealthcareDescription':
-				'Экстренный номер 124, туристическая амбуланта при доме здравля, частные клиники и приёмные отделения больниц, реальные цены без страховки, EHIC и двусторонние соглашения, советы по travel-страховке и аптеки — практический гид для туристов в Черногории.',
+				'Экстренный номер 124, туристическая амбуланта при доме здравля, частные клиники и приёмные отделения больниц — и сколько на деле стоит лечение без страховки.',
 
 			'ThcToc_emergency':
 				'Экстренная помощь: номер 124 — и как на самом деле работает скорая',
@@ -214,7 +214,7 @@ export default {
 			'TouristHealthcareTitle':
 				'Bolest na odmoru u Crnoj Gori: gdje turista može dobiti pomoć',
 			'TouristHealthcareDescription':
-				'Broj hitne pomoći 124, turistička ambulanta pri domu zdravlja, privatne klinike i bolnička prijemna odjeljenja, stvarne cijene bez osiguranja, EHIC i bilateralni sporazumi, savjeti za putno osiguranje i apoteke — praktični vodič za turiste u Crnoj Gori.',
+				'Broj hitne pomoći 124, turistička ambulanta pri domu zdravlja, privatne klinike i bolnička prijemna odjeljenja — i koliko stvarno košta liječenje bez osiguranja.',
 
 			'ThcToc_emergency':
 				'Hitna pomoć: broj 124 — i kako hitna zaista funkcioniše',
@@ -318,7 +318,7 @@ export default {
 			'TouristHealthcareTitle':
 				'Болест на одмору у Црној Гори: гдје туриста може добити помоћ',
 			'TouristHealthcareDescription':
-				'Број хитне помоћи 124, туристичка амбуланта при дому здравља, приватне клинике и болничка пријемна одјељења, стварне цијене без осигурања, EHIC и билатерални споразуми, савјети за путно осигурање и апотеке — практични водич за туристе у Црној Гори.',
+				'Број хитне помоћи 124, туристичка амбуланта при дому здравља, приватне клинике и болничка пријемна одјељења — и колико стварно кошта лијечење без осигурања.',
 
 			'ThcToc_emergency':
 				'Хитна помоћ: број 124 — и како хитна заиста функционише',
@@ -421,7 +421,7 @@ export default {
 			'TouristHealthcareTitle':
 				'Krank im Urlaub in Montenegro: Wohin als Tourist?',
 			'TouristHealthcareDescription':
-				'Notrufnummer 124, die turistička ambulanta am örtlichen Gesundheitszentrum, Privatkliniken und Notaufnahmen, reale Preise ohne Versicherung, EHIC und bilaterale Abkommen, Tipps zur Reiseversicherung und Apotheken — ein praktischer Leitfaden für Touristen in Montenegro.',
+				'Notrufnummer 124, die turistička ambulanta am Gesundheitszentrum, Privatkliniken und Notaufnahmen — und was die Behandlung ohne Versicherung wirklich kostet.',
 
 			'ThcToc_emergency':
 				'Notfall: Notruf 124 — und wie der Rettungsdienst wirklich arbeitet',
@@ -525,7 +525,7 @@ export default {
 			'TouristHealthcareTitle':
 				"Karadağ'da tatilde hastalanmak: turist nereye başvurmalı",
 			'TouristHealthcareDescription':
-				"Acil numarası 124, dom zdravlja'daki turistička ambulanta, özel klinikler ve hastane acil servisleri, sigortasız tedavinin gerçek fiyatları, EHIC ve ikili anlaşmalar, seyahat sigortası ipuçları ve eczaneler — Karadağ'daki turistler için pratik bir rehber.",
+				"Acil numarası 124, dom zdravlja'daki turistička ambulanta, özel klinikler ve hastane acil servisleri — ve sigortasız tedavinin gerçek fiyatları.",
 
 			'ThcToc_emergency':
 				'Acil durum: 124 numarası — ve ambulans gerçekte nasıl çalışır',

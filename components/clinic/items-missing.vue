@@ -30,7 +30,7 @@ const { t } = useI18n({
 	max-width: 1100px;
 	width: 100%;
 	margin: 0 auto;
-	padding: var(--spacing-xl);
+	padding: var(--kit-spacing-xl);
 	box-sizing: border-box;
 }
 </style>

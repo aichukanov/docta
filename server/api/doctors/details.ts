@@ -1,4 +1,5 @@
-import { validateBody } from '~/common/validation';
+import { REVIEWS_THRESHOLD } from '~/common/constants';
+import { isValidLocale, validateBody } from '~/common/validation';
 import { GONE_PAYLOAD, type GonePayload } from '~/common/gone';
 import type { DoctorData } from '~/interfaces/doctor';
 import { getCurrentUser } from '~/server/common/auth';
@@ -33,7 +34,7 @@ export default defineEventHandler(
 				return null;
 			}
 
-			const locale = body.locale || 'en';
+			const locale = isValidLocale(body.locale) ? body.locale : 'en';
 			const includeServices = body.includeServices || false;
 
 			const doctorsQuery = `
@@ -122,8 +123,20 @@ export default defineEventHandler(
 				'doctor',
 				doctor.id,
 			);
+			// limit как у клиник (server/api/clinics/details.ts): страница врача
+			// всё равно показывает только первые REVIEWS_THRESHOLD отзывов, а
+			// остальные уводит на /doctors/<slug>/reviews. Без лимита сюда
+			// приезжали все отзывы врача (до 59) — с шестисторонним OAuth-join,
+			// с EXISTS на строку в сортировке и со всеми ответами, — и всё это
+			// ещё уезжало в SSR-payload, чтобы на клиенте быть обрезанным до пяти.
+			//
+			// Порядок не трогаем: сортировка по умолчанию (rank) та же, лимит
+			// лишь отсекает хвост, который страница и так выбрасывала. Ссылку на
+			// подстраницу отзывов страница считает по rating.totalReviews, а он
+			// приходит отдельным запросом (fetchRating) и от лимита не зависит.
 			const { reviews: reviewsRows, ownReview: ownDoctorReview } =
 				await fetchReviews(connection, 'doctor', doctor.id, locale, {
+					limit: REVIEWS_THRESHOLD,
 					currentUserId: currentUser?.id,
 				});
 

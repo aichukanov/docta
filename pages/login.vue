@@ -213,7 +213,7 @@ onMounted(async () => {
 	font-size: 16px;
 	text-align: center;
 	margin: 0 0 32px 0;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 }
 
 .login-options {
@@ -232,7 +232,7 @@ onMounted(async () => {
 	display: flex;
 	align-items: center;
 	text-align: center;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 	margin: 8px 0;
 }
 

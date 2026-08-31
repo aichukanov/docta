@@ -332,7 +332,7 @@ schemaOrgStore.setSchemas([
 
 // Hero Section
 .hero {
-	padding: 60px var(--spacing-lg) 40px;
+	padding: 60px var(--kit-spacing-lg) 40px;
 	text-align: center;
 
 	&__content {
@@ -341,7 +341,7 @@ schemaOrgStore.setSchemas([
 	}
 
 	&__title {
-		font-size: var(--font-size-hero);
+		font-size: var(--kit-font-size-hero);
 		font-weight: 700;
 		color: #0f172a;
 		margin: 0 0 16px;
@@ -350,8 +350,8 @@ schemaOrgStore.setSchemas([
 	}
 
 	&__subtitle {
-		font-size: var(--font-size-hero-sub);
-		color: var(--color-text-secondary);
+		font-size: var(--kit-font-size-hero-sub);
+		color: var(--kit-color-text-secondary);
 		margin: 0;
 		line-height: 1.6;
 	}
@@ -369,7 +369,7 @@ schemaOrgStore.setSchemas([
 	gap: 16px;
 	max-width: 900px;
 	margin: 0 auto;
-	padding: 0 var(--spacing-lg) 60px;
+	padding: 0 var(--kit-spacing-lg) 60px;
 
 	&__card {
 		position: relative;
@@ -429,8 +429,8 @@ schemaOrgStore.setSchemas([
 			gap: 24px;
 			background: linear-gradient(
 				135deg,
-				var(--color-primary) 0%,
-				var(--color-primary-dark) 100%
+				var(--kit-color-primary) 0%,
+				var(--kit-color-primary-dark) 100%
 			);
 			border: none;
 
@@ -449,7 +449,7 @@ schemaOrgStore.setSchemas([
 
 			.bento__title {
 				color: #fff;
-				font-size: var(--font-size-3xl);
+				font-size: var(--kit-font-size-3xl);
 			}
 
 			.bento__desc {
@@ -458,7 +458,7 @@ schemaOrgStore.setSchemas([
 
 			.bento__arrow {
 				color: #fff;
-				font-size: var(--font-size-3xl);
+				font-size: var(--kit-font-size-3xl);
 			}
 
 			&:hover {
@@ -510,7 +510,7 @@ schemaOrgStore.setSchemas([
 	}
 
 	&__title {
-		font-size: var(--font-size-lg);
+		font-size: var(--kit-font-size-lg);
 		font-weight: 600;
 		color: #0f172a;
 		margin: 0 0 6px;
@@ -518,7 +518,7 @@ schemaOrgStore.setSchemas([
 	}
 
 	&__desc {
-		font-size: var(--font-size-sm);
+		font-size: var(--kit-font-size-sm);
 		color: #64748b;
 		margin: 0;
 		line-height: 1.5;
@@ -529,7 +529,7 @@ schemaOrgStore.setSchemas([
 		right: 24px;
 		top: 50%;
 		transform: translateY(-50%);
-		font-size: var(--font-size-xl);
+		font-size: var(--kit-font-size-xl);
 		color: #94a3b8;
 		opacity: 0;
 		transition: all 0.3s ease;
@@ -539,7 +539,7 @@ schemaOrgStore.setSchemas([
 // Responsive
 @media (max-width: 640px) {
 	.hero {
-		padding: 40px var(--spacing-lg) 24px;
+		padding: 40px var(--kit-spacing-lg) 24px;
 
 		&__search {
 			margin-top: 24px;
@@ -548,7 +548,7 @@ schemaOrgStore.setSchemas([
 
 	.bento {
 		grid-template-columns: 1fr;
-		padding: 0 var(--spacing-sm) 40px;
+		padding: 0 var(--kit-spacing-sm) 40px;
 
 		&__card {
 			padding: 20px;
@@ -569,7 +569,7 @@ schemaOrgStore.setSchemas([
 				}
 
 				.bento__title {
-					font-size: var(--font-size-xl);
+					font-size: var(--kit-font-size-xl);
 				}
 			}
 		}

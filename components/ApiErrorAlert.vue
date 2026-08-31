@@ -9,6 +9,10 @@ const { t } = useI18n({
 	messages: apiErrorMessages.messages,
 });
 
+// Подпись кнопки закрытия живёт в глобальном словаре, а не среди кодов ошибок,
+// поэтому за ней нужен отдельный t с глобальной областью.
+const { t: tGlobal } = useI18n({ useScope: 'global' });
+
 const props = withDefaults(
 	defineProps<{
 		error: ERROR_CODES | null;
@@ -30,11 +34,12 @@ const message = computed(() => {
 <template>
 	<template v-if="message">
 		<slot :message="message">
-			<el-alert
+			<KitAlert
 				v-bind="$attrs"
+				variant="error"
 				:title="message"
-				type="error"
 				:closable="closable"
+				:close-label="tGlobal('Close')"
 				@close="emit('close')"
 			/>
 		</slot>

@@ -8,6 +8,7 @@ import {
 } from '~/server/common/utils';
 import type { ClinicServiceList } from '~/interfaces/clinic';
 import {
+	isValidLocale,
 	validateBody,
 	validateName,
 	validateCityIds,
@@ -53,7 +54,7 @@ export async function getMedicationList(
 ) {
 	const whereFilters: string[] = [];
 	const queryParams: Array<number | string> = [];
-	const locale = body.locale || 'en';
+	const locale = isValidLocale(body.locale) ? body.locale : 'en';
 	const usePagination = body.page != null;
 	const pageRaw = Number(body.page);
 	const pageSizeRaw = Number(body.pageSize);

@@ -9,7 +9,7 @@ export default {
 			MentalHealthTitle:
 				'Psychologists, psychiatrists and antidepressants in Montenegro',
 			MentalHealthDescription:
-				'How mental health care works in Montenegro: state mental health centers and psychiatric hospitals, finding a therapist who speaks your language, continuing your medication after relocation, prices with and without the zdravstvena knjižica, and where to turn in a crisis.',
+				'How mental health care works in Montenegro: state mental health centers, finding a therapist who speaks your language, and prices with and without a knjižica.',
 
 			MhmToc_system: 'How mental health care is organized',
 			MhmToc_therapy: 'Therapy: finding a specialist in your language',
@@ -104,7 +104,7 @@ export default {
 		'ru': {
 			MentalHealthTitle: 'Психологи, психиатры и антидепрессанты в Черногории',
 			MentalHealthDescription:
-				'Как устроена помощь в сфере ментального здоровья в Черногории: государственные центры ментального здоровья и психиатрические больницы, поиск терапевта на своём языке, продолжение медикаментозного лечения после переезда, цены с книжицей и без, куда обращаться в кризисной ситуации.',
+				'Как устроена помощь в сфере ментального здоровья в Черногории: государственные центры ментального здоровья, поиск терапевта на своём языке, цены с книжицей и без.',
 
 			MhmToc_system: 'Как устроена помощь в сфере ментального здоровья',
 			MhmToc_therapy: 'Терапия: как найти специалиста на своём языке',
@@ -198,7 +198,7 @@ export default {
 		'sr': {
 			MentalHealthTitle: 'Psiholozi, psihijatri i antidepresivi u Crnoj Gori',
 			MentalHealthDescription:
-				'Kako funkcioniše zaštita mentalnog zdravlja u Crnoj Gori: državni centri za mentalno zdravlje i psihijatrijske bolnice, kako naći terapeuta koji govori vaš jezik, nastavak terapije ljekovima nakon preseljenja, cijene sa zdravstvenom knjižicom i bez nje, kome se obratiti u kriznoj situaciji.',
+				'Kako funkcioniše zaštita mentalnog zdravlja u Crnoj Gori: državni centri za mentalno zdravlje, terapeut koji govori vaš jezik, cijene sa knjižicom i bez nje.',
 
 			MhmToc_system: 'Kako je organizovana zaštita mentalnog zdravlja',
 			MhmToc_therapy: 'Terapija: kako naći stručnjaka na svom jeziku',
@@ -294,7 +294,7 @@ export default {
 		'sr-cyrl': {
 			MentalHealthTitle: 'Психолози, психијатри и антидепресиви у Црној Гори',
 			MentalHealthDescription:
-				'Како функционише заштита менталног здравља у Црној Гори: државни центри за ментално здравље и психијатријске болнице, како наћи терапеута који говори ваш језик, наставак терапије љековима након пресељења, цијене са здравственом књижицом и без ње, коме се обратити у кризној ситуацији.',
+				'Како функционише заштита менталног здравља у Црној Гори: државни центри за ментално здравље, терапеут који говори ваш језик, цијене са књижицом и без ње.',
 
 			MhmToc_system: 'Како је организована заштита менталног здравља',
 			MhmToc_therapy: 'Терапија: како наћи стручњака на свом језику',
@@ -390,7 +390,7 @@ export default {
 			MentalHealthTitle:
 				'Psychologen, Psychiater und Antidepressiva in Montenegro',
 			MentalHealthDescription:
-				'Wie die psychische Gesundheitsversorgung in Montenegro funktioniert: staatliche Zentren für mentale Gesundheit und psychiatrische Kliniken, einen Therapeuten in Ihrer Sprache finden, die Medikation nach dem Umzug fortsetzen, Preise mit und ohne zdravstvena knjižica und wohin man sich in einer Krise wendet.',
+				'Psychische Gesundheit in Montenegro: staatliche Zentren für mentale Gesundheit, einen Therapeuten in Ihrer Sprache finden, Preise mit und ohne zdravstvena knjižica.',
 
 			MhmToc_system: 'So ist die psychische Gesundheitsversorgung organisiert',
 			MhmToc_therapy: 'Therapie: einen Spezialisten in Ihrer Sprache finden',
@@ -486,7 +486,7 @@ export default {
 			MentalHealthTitle:
 				'Karadağ’da psikologlar, psikiyatristler ve antidepresanlar',
 			MentalHealthDescription:
-				'Karadağ’da ruh sağlığı hizmetleri nasıl işler: devlet ruh sağlığı merkezleri ve psikiyatri hastaneleri, kendi dilinizde terapist bulma, taşındıktan sonra ilaç tedavisine devam etme, zdravstvena knjižica ile ve olmadan fiyatlar, kriz durumunda nereye başvurulur.',
+				'Karadağ’da ruh sağlığı hizmetleri nasıl işler: devlet ruh sağlığı merkezleri, kendi dilinizde terapist bulma, zdravstvena knjižica ile ve onsuz fiyatlar.',
 
 			MhmToc_system: 'Ruh sağlığı hizmetleri nasıl örgütlenmiştir',
 			MhmToc_therapy: 'Terapi: kendi dilinizde uzman bulmak',

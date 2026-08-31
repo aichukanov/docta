@@ -34,21 +34,21 @@ defineProps<{
 .insurance-hero {
 	display: flex;
 	align-items: flex-start;
-	gap: var(--spacing-lg);
-	padding: var(--spacing-xl) 0;
+	gap: var(--kit-spacing-lg);
+	padding: var(--kit-spacing-xl) 0;
 }
 
 .insurance-hero__info {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	min-width: 0;
 }
 
 .insurance-hero__name {
-	font-size: var(--font-size-4xl);
+	font-size: var(--kit-font-size-4xl);
 	font-weight: 700;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 	margin: 0;
 	font-family:
 		system-ui,
@@ -58,16 +58,16 @@ defineProps<{
 }
 
 .insurance-hero__local-name {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 
 .insurance-hero__meta {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
-	font-size: var(--font-size-md);
-	color: var(--color-text-secondary);
+	gap: var(--kit-spacing-xs);
+	font-size: var(--kit-font-size-md);
+	color: var(--kit-color-text-secondary);
 
 	svg {
 		width: 18px;
@@ -78,7 +78,7 @@ defineProps<{
 
 @media (max-width: 500px) {
 	.insurance-hero__name {
-		font-size: var(--font-size-3xl);
+		font-size: var(--kit-font-size-3xl);
 	}
 }
 </style>

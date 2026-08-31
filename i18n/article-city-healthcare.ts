@@ -86,7 +86,7 @@ export default {
 			CityHcTitle_podgorica:
 				'Healthcare in Podgorica: Clinical Center, emergency care and private clinics',
 			CityHcDescription_podgorica:
-				'Medical help in Podgorica: ambulance 124, the Clinical Center of Montenegro and its Urgent Care Center, Dom zdravlja, private clinics and laboratories, 24-hour pharmacies.',
+				'Medical help in Podgorica: ambulance 124, the Clinical Center of Montenegro and its Urgent Care Center, Dom zdravlja, private clinics and 24-hour pharmacies.',
 			CityHcOverview1_podgorica:
 				"Podgorica is Montenegro's medical capital with the most complete infrastructure in the country. The key institution is the Clinical Center of Montenegro (KCCG), where complex patients are referred from all over the country. The city also has the Dom zdravlja with branches in different districts, the Institute of Public Health and the Blood Transfusion Institute.",
 			CityHcOverview2_podgorica:
@@ -131,7 +131,7 @@ export default {
 			CityHcTitle_kotor:
 				'Healthcare in Kotor: general hospital, Dom zdravlja and emergency care',
 			CityHcDescription_kotor:
-				'Medical help in Kotor: ambulance 124, Kotor General Hospital serving the whole Boka bay, Dom zdravlja Kotor, the specialized hospital in Risan, private laboratories and pharmacies.',
+				'Medical help in Kotor: ambulance 124, Kotor General Hospital serving the whole Boka bay, Dom zdravlja Kotor and the specialized hospital in Risan.',
 			CityHcOverview1_kotor:
 				'Kotor is the medical hub of the Boka Kotorska bay: it hosts the Kotor General Hospital (Opšta bolnica Kotor), which serves the whole coastal area including Tivat, Budva and Herceg Novi. Primary care is provided by Dom zdravlja Kotor with its ambulance service.',
 			CityHcOverview2_kotor:
@@ -358,7 +358,7 @@ export default {
 			CityHcTitle_kotor:
 				'Медицина в Которе: больница, Dom zdravlja и скорая помощь',
 			CityHcDescription_kotor:
-				'Медицинская помощь в Которе: скорая 124, Општа больница Котор, обслуживающая всю Боку, Dom zdravlja Kotor, специализированная больница в Рисане, частные лаборатории и аптеки.',
+				'Медицинская помощь в Которе: скорая 124, Општа больница Котор, обслуживающая всю Боку, Dom zdravlja Kotor и специализированная больница в Рисане.',
 			CityHcOverview1_kotor:
 				'Котор — медицинский центр Боки Которской: здесь находится Општа больница Котор (Opšta bolnica Kotor), обслуживающая всё побережье залива, включая Тиват, Будву и Херцег-Нови. Первичное звено — Dom zdravlja Kotor со службой скорой помощи.',
 			CityHcOverview2_kotor:
@@ -1031,7 +1031,7 @@ export default {
 			CityHcTitle_kotor:
 				'Medizin in Kotor: Allgemeines Krankenhaus, Dom zdravlja und Notfallhilfe',
 			CityHcDescription_kotor:
-				'Medizinische Hilfe in Kotor: Notruf 124, das Allgemeine Krankenhaus Kotor für die ganze Boka-Bucht, Dom zdravlja Kotor, die Spezialklinik in Risan, private Labore und Apotheken.',
+				'Medizinische Hilfe in Kotor: Notruf 124, das Allgemeine Krankenhaus Kotor für die ganze Boka-Bucht, Dom zdravlja Kotor und die Spezialklinik in Risan.',
 			CityHcOverview1_kotor:
 				'Kotor ist das medizinische Zentrum der Bucht von Kotor: Hier befindet sich das Allgemeine Krankenhaus Kotor (Opšta bolnica Kotor), das die gesamte Küstenregion einschließlich Tivat, Budva und Herceg Novi versorgt. Die Grundversorgung übernimmt das Dom zdravlja Kotor mit Rettungsdienst.',
 			CityHcOverview2_kotor:
@@ -1259,7 +1259,7 @@ export default {
 			CityHcTitle_kotor:
 				"Kotor'da sağlık hizmetleri: genel hastane, Dom zdravlja ve acil yardım",
 			CityHcDescription_kotor:
-				"Kotor'da tıbbi yardım: ambulans 124, tüm Boka körfezine hizmet veren Kotor Genel Hastanesi, Dom zdravlja Kotor, Risan'daki ihtisas hastanesi, özel laboratuvarlar ve eczaneler.",
+				"Kotor'da tıbbi yardım: ambulans 124, tüm Boka körfezine hizmet veren Kotor Genel Hastanesi, Dom zdravlja Kotor ve Risan'daki ihtisas hastanesi.",
 			CityHcOverview1_kotor:
 				'Kotor, Boka Kotorska körfezinin tıp merkezidir: Tivat, Budva ve Herceg Novi dahil tüm körfez bölgesine hizmet veren Kotor Genel Hastanesi (Opšta bolnica Kotor) buradadır. Birinci basamak hizmeti, acil servisiyle Dom zdravlja Kotor verir.',
 			CityHcOverview2_kotor:

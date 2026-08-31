@@ -1,8 +1,8 @@
 import { fixUrlRegionalParams } from '../common/redirect/regional-settings';
 import { fixRetiredFilterIds } from '../common/redirect/retired-filter-ids';
 import { checkSlugRedirect } from '../common/redirect/slug-redirects';
-import { sendSitemap } from '../common/sitemap/utils';
-import { generateSitemapPage } from '../common/sitemap/sitemap';
+import { parseSitemapSectionPath, sendSitemap } from '../common/sitemap/utils';
+import { getSitemapIndex, getSitemapSection } from '../common/sitemap/sitemap';
 import { requireAdmin } from '~/server/common/auth';
 
 export default defineEventHandler(async (event) => {
@@ -11,7 +11,23 @@ export default defineEventHandler(async (event) => {
 	const pathArray = pathname.split('/').slice(1); // remove a leading slash
 
 	if (pathArray[0] === 'sitemap.xml') {
-		return sendSitemap(event, await generateSitemapPage());
+		// Теперь это sitemap-индекс, а не сам список URL: после того как каждая
+		// страница стала давать по <url> на локаль, монолит упирался в лимиты
+		// спецификации. Адрес менять нельзя — на него ссылается robots.txt
+		// (public/robots.txt, файл отдаётся наружу как есть) и он же
+		// зарегистрирован в консолях поисковиков.
+		return sendSitemap(event, await getSitemapIndex());
+	} else if (pathArray[0] === 'sitemaps') {
+		// Файлы секций: /sitemaps/<section>-<part>.xml. Непонятный адрес
+		// намеренно проваливается дальше без ответа — пусть отдаётся обычный
+		// 404, а не пустой sitemap с кодом 200.
+		const sectionPath = parseSitemapSectionPath(pathArray);
+		if (sectionPath) {
+			return sendSitemap(
+				event,
+				await getSitemapSection(sectionPath.section, sectionPath.part),
+			);
+		}
 	} else if (
 		pathArray[0] === 'api' ||
 		// технические страницы авторизации: локаль в URL им не нужна, а лишний
@@ -30,7 +46,12 @@ export default defineEventHandler(async (event) => {
 	) {
 		// ignore these calls
 	} else if (pathArray[0] === 'admin') {
-		requireAdmin(event);
+		// Без await бросок уходил в отклонённый промис: h3 его не видел, гард
+		// молча пропускал кого угодно, а на каждый запрос оставался
+		// необработанный rejection. Данные при этом не утекали (все админские
+		// эндпоинты зовут requireAdmin корректно, страница — SPA-оболочка без
+		// данных), но краулер получал 200 вместо 401.
+		await requireAdmin(event);
 	} else {
 		// Редирект с числовых ID на slug-ссылки (включая объединённые сущности)
 		const slugRedirect = await checkSlugRedirect(event, pathArray);

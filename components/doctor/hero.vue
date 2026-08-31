@@ -35,7 +35,7 @@ const isNonPublic = computed(
 .doctor-hero {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
-	padding: var(--spacing-xl) 0;
+	gap: var(--kit-spacing-lg);
+	padding: var(--kit-spacing-xl) 0;
 }
 </style>

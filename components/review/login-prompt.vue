@@ -29,17 +29,17 @@ const loginLink = computed(() => ({
 .review-login-prompt {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .register-link {
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 	text-decoration: none;
-	font-size: var(--font-size-base);
+	font-size: var(--kit-font-size-base);
 }
 
 .register-link:hover {
-	color: var(--color-primary);
+	color: var(--kit-color-primary);
 	text-decoration: underline;
 }
 </style>

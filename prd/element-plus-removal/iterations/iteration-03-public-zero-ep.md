@@ -24,7 +24,7 @@
 
 ## Задачи
 
-- [ ] `AppTooltip`: hover + focus (клавиатура!), Teleport, `--z-tooltip`, `role="tooltip"` + `aria-describedby`. Использование: контакты (copy-button, line), approved-badge.
+- [ ] `AppTooltip`: hover + focus (клавиатура!), Teleport, `--kit-z-tooltip`, `role="tooltip"` + `aria-describedby`. Использование: контакты (copy-button, line), approved-badge.
 - [ ] `AppCollapse`: на `<details>/<summary>` или v-show + кнопка с `aria-expanded`. Использование: сводка клиники, попап карты.
 - [ ] `AppResult` не нужен в этом контуре — НЕ делать раньше времени.
 - [ ] Мигрировать формы отзывов (`review/form.vue`, `review/own-item.vue`, `review/item.vue`): textarea через `AppInput`, селект оценки через `AppSelect`, алерты/кнопки уже готовы. Паттерн `AppFormField` обкатывается здесь на небольшой форме (до auth-форм итерации 4).

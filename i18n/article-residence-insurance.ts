@@ -9,7 +9,7 @@ export default {
 			'ResidenceInsuranceTitle':
 				'Health insurance for a residence permit in Montenegro',
 			'ResidenceInsuranceDescription':
-				'Why every boravak application needs health insurance, how long a policy each city asks for — from 40 days in Podgorica to 2 years in Budva — prices at Sava, Lovćen and Uniqa, what the policy actually covers and who gets state insurance instead. Updated July 2026.',
+				'Health insurance is mandatory for a boravak, and each city asks for its own term — from 40 days in Podgorica to 2 years in Budva. Prices at Sava, Lovćen and Uniqa.',
 
 			'RipToc_why-required': 'Why the permit requires insurance',
 			'RipToc_duration': 'How long a policy each city wants',
@@ -122,7 +122,7 @@ export default {
 		'ru': {
 			'ResidenceInsuranceTitle': 'Медицинская страховка для ВНЖ в Черногории',
 			'ResidenceInsuranceDescription':
-				'Зачем при подаче на боравак нужна медицинская страховка, на какой срок её требуют в разных городах — от 40 дней в Подгорице до 2 лет в Будве, — цены Sava, Lovćen и Uniqa, что полис реально покрывает и кому вместо него положена государственная страховка. Актуально на июль 2026.',
+				'Для боравка медицинская страховка обязательна, а срок полиса города требуют разный — от 40 дней в Подгорице до 2 лет в Будве. Цены Sava, Lovćen и Uniqa.',
 
 			'RipToc_why-required': 'Почему для ВНЖ нужна страховка',
 			'RipToc_duration': 'На какой срок требуют в разных городах',
@@ -236,7 +236,7 @@ export default {
 			'ResidenceInsuranceTitle':
 				'Zdravstveno osiguranje za boravak u Crnoj Gori',
 			'ResidenceInsuranceDescription':
-				'Zašto je za zahtjev za boravak potrebno zdravstveno osiguranje, na koji period polisu traže u različitim gradovima — od 40 dana u Podgorici do 2 godine u Budvi — cijene kod Sava, Lovćen i Uniqa osiguranja, šta polisa stvarno pokriva i ko umjesto nje dobija državno osiguranje. Ažurirano: jul 2026.',
+				'Za boravak je zdravstveno osiguranje obavezno, a period polise gradovi traže različit — od 40 dana u Podgorici do 2 godine u Budvi. Cijene kod Sava, Lovćen i Uniqa.',
 
 			'RipToc_why-required': 'Zašto je za boravak potrebno osiguranje',
 			'RipToc_duration': 'Na koji period traže u različitim gradovima',
@@ -349,7 +349,7 @@ export default {
 			'ResidenceInsuranceTitle':
 				'Здравствено осигурање за боравак у Црној Гори',
 			'ResidenceInsuranceDescription':
-				'Зашто је за захтјев за боравак потребно здравствено осигурање, на који период полису траже у различитим градовима — од 40 дана у Подгорици до 2 године у Будви — цијене код Sava, Lovćen и Uniqa осигурања, шта полиса стварно покрива и ко умјесто ње добија државно осигурање. Ажурирано: јул 2026.',
+				'За боравак је здравствено осигурање обавезно, а период полисе градови траже различит — од 40 дана у Подгорици до 2 године у Будви. Цијене код Sava, Lovćen и Uniqa.',
 
 			'RipToc_why-required': 'Зашто је за боравак потребно осигурање',
 			'RipToc_duration': 'На који период траже у различитим градовима',
@@ -462,7 +462,7 @@ export default {
 			'ResidenceInsuranceTitle':
 				'Krankenversicherung für die Aufenthaltsgenehmigung in Montenegro',
 			'ResidenceInsuranceDescription':
-				'Warum jeder Boravak-Antrag eine Krankenversicherung braucht, für welche Dauer die Städte eine Police verlangen — von 40 Tagen in Podgorica bis 2 Jahren in Budva —, Preise bei Sava, Lovćen und Uniqa, was die Police wirklich abdeckt und wer stattdessen die staatliche Versicherung erhält. Stand: Juli 2026.',
+				'Für den Boravak ist eine Krankenversicherung Pflicht. Je nach Stadt sind 40 Tage (Podgorica) bis 2 Jahre (Budva) nötig — dazu Preise bei Sava, Lovćen und Uniqa.',
 
 			'RipToc_why-required':
 				'Warum der Aufenthaltstitel eine Versicherung erfordert',
@@ -576,7 +576,7 @@ export default {
 		'tr': {
 			'ResidenceInsuranceTitle': 'Karadağ oturum izni için sağlık sigortası',
 			'ResidenceInsuranceDescription':
-				"Boravak başvurusunda sağlık sigortası neden zorunlu, şehirler poliçeyi hangi süre için istiyor — Podgorica'da 40 günden Budva'da 2 yıla —, Sava, Lovćen ve Uniqa fiyatları, poliçenin gerçekte neyi kapsadığı ve kimin bunun yerine devlet sigortası aldığı. Güncelleme: Temmuz 2026.",
+				"Boravak için sağlık sigortası zorunlu, şehirler poliçeyi farklı süreyle istiyor — Podgorica'da 40 gün, Budva'da 2 yıl. Sava, Lovćen ve Uniqa fiyatları.",
 
 			'RipToc_why-required': 'Oturum izni için sigorta neden gerekli',
 			'RipToc_duration': 'Şehirler hangi süreyi istiyor',

@@ -7,7 +7,7 @@ import {
 	buildReferenceInfo,
 } from '~/server/common/utils';
 import type { LabTestItem } from '~/interfaces/clinic';
-import { validateBody } from '~/common/validation';
+import { isValidLocale, validateBody } from '~/common/validation';
 
 export default defineEventHandler(
 	async (event): Promise<LabTestItem | null> => {
@@ -24,7 +24,7 @@ export default defineEventHandler(
 				return null;
 			}
 
-			const locale = body.locale || 'en';
+			const locale = isValidLocale(body.locale) ? body.locale : 'en';
 			// Порядок клиник: композитный скор без локации (rank_score + бонус
 			// за цену); вклад расстояния добавит клиент (use-clinic-ranking.ts)
 			const rankOrder = getClinicRankOrderBySQL('c_rank', 'clt', {

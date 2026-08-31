@@ -36,14 +36,14 @@ const specialtyLink = (specialtyId: string) => ({
 
 <style scoped lang="less">
 .doctor-specialty {
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-medium);
+	font-size: var(--kit-font-size-base);
+	font-weight: var(--kit-font-weight-medium);
 	line-height: 1.3;
 	word-break: break-word;
 }
 
 .doctor-specialty__link {
-	color: var(--color-primary-green);
+	color: var(--kit-color-primary-green);
 	text-decoration: none;
 
 	&:hover {

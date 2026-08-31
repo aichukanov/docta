@@ -10,7 +10,7 @@ export default {
 			BirthInMontenegroTitle:
 				'Giving Birth in Montenegro: State Maternity Ward or Private Clinic',
 			BirthInMontenegroDescription:
-				'Where to give birth in Montenegro: maternity wards of state hospitals and the private option, prenatal care, cost of childbirth without insurance, epidural availability, newborn paperwork and patronage nurse visits. Current as of July 2026.',
+				'Where to give birth in Montenegro: state maternity wards and the one private clinic, what a birth costs without insurance, and whether an epidural is available.',
 
 			BimToc_prenatal: 'Prenatal care: dom zdravlja or a private gynecologist',
 			BimToc_where: 'Where babies are born: maternity wards of Montenegro',
@@ -130,7 +130,7 @@ export default {
 			BirthInMontenegroTitle:
 				'Роды в Черногории: государственный роддом или частная клиника',
 			BirthInMontenegroDescription:
-				'Где рожать в Черногории: роддома государственных больниц и частный вариант, ведение беременности, цены родов без страховки, доступность эпидуральной анестезии, документы для новорождённого и патронаж. Актуально на июль 2026 года.',
+				'Где рожать в Черногории: роддома государственных больниц и единственная частная клиника, сколько стоят роды без страховки и доступна ли эпидуральная анестезия.',
 
 			BimToc_prenatal:
 				'Ведение беременности: дом здравля или частный гинеколог',
@@ -250,7 +250,7 @@ export default {
 			BirthInMontenegroTitle:
 				'Porođaj u Crnoj Gori: državno porodilište ili privatna klinika',
 			BirthInMontenegroDescription:
-				'Gdje se porađa u Crnoj Gori: porodilišta državnih bolnica i privatna opcija, vođenje trudnoće, cijena porođaja bez osiguranja, dostupnost epiduralne analgezije, dokumenti za novorođenče i patronaža. Važi za jul 2026.',
+				'Gdje se porađa u Crnoj Gori: porodilišta državnih bolnica i jedina privatna klinika, koliko košta porođaj bez osiguranja i da li je dostupna epiduralna analgezija.',
 
 			BimToc_prenatal: 'Vođenje trudnoće: dom zdravlja ili privatni ginekolog',
 			BimToc_where: 'Gdje se porađa: porodilišta Crne Gore',
@@ -369,7 +369,7 @@ export default {
 			BirthInMontenegroTitle:
 				'Порођај у Црној Гори: државно породилиште или приватна клиника',
 			BirthInMontenegroDescription:
-				'Гдје се порађа у Црној Гори: породилишта државних болница и приватна опција, вођење трудноће, цијена порођаја без осигурања, доступност епидуралне аналгезије, документи за новорођенче и патронажа. Важи за јул 2026.',
+				'Гдје се порађа у Црној Гори: породилишта државних болница и једина приватна клиника, колико кошта порођај без осигурања и да ли је доступна епидурална аналгезија.',
 
 			BimToc_prenatal: 'Вођење трудноће: дом здравља или приватни гинеколог',
 			BimToc_where: 'Гдје се порађа: породилишта Црне Горе',
@@ -488,7 +488,7 @@ export default {
 			BirthInMontenegroTitle:
 				'Entbindung in Montenegro: staatliche Geburtsstation oder Privatklinik',
 			BirthInMontenegroDescription:
-				'Wo man in Montenegro entbindet: Geburtsstationen der staatlichen Krankenhäuser und die private Option, Schwangerschaftsvorsorge, Kosten der Geburt ohne Versicherung, Verfügbarkeit der PDA, Papiere für das Neugeborene und Hebammen-Hausbesuche. Stand: Juli 2026.',
+				'Wo man in Montenegro entbindet: staatliche Geburtsstationen und die einzige Privatklinik, was eine Geburt ohne Versicherung kostet und ob es eine PDA gibt.',
 
 			BimToc_prenatal:
 				'Schwangerschaftsvorsorge: dom zdravlja oder privater Gynäkologe',
@@ -611,7 +611,7 @@ export default {
 			BirthInMontenegroTitle:
 				'Karadağ’da Doğum: Devlet Doğumhanesi mi, Özel Klinik mi',
 			BirthInMontenegroDescription:
-				'Karadağ’da nerede doğum yapılır: devlet hastanelerinin doğumhaneleri ve özel seçenek, gebelik takibi, sigortasız doğumun maliyeti, epidural imkânı, yenidoğan evrakları ve ev ziyareti hemşiresi. Temmuz 2026 itibarıyla günceldir.',
+				'Karadağ’da nerede doğum yapılır: devlet hastanelerinin doğumhaneleri ve ülkedeki tek özel klinik, sigortasız doğumun maliyeti ve epidural imkânı hakkında bilgiler.',
 
 			BimToc_prenatal: 'Gebelik takibi: dom zdravlja mı, özel jinekolog mu',
 			BimToc_where: 'Nerede doğum yapılır: Karadağ’ın doğumhaneleri',

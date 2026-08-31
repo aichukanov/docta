@@ -168,13 +168,13 @@ const addLabTest = async () => {
 .labtest-add {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .clinic-prices-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 
 	.section-header {
 		display: flex;
@@ -182,14 +182,14 @@ const addLabTest = async () => {
 		align-items: center;
 
 		label {
-			color: var(--color-text-secondary);
+			color: var(--kit-color-text-secondary);
 			font-size: 14px;
 		}
 	}
 
 	.clinic-price-row {
 		display: flex;
-		gap: var(--spacing-sm);
+		gap: var(--kit-spacing-sm);
 		align-items: center;
 
 		.clinic-select {

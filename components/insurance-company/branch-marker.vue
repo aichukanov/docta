@@ -15,10 +15,10 @@
 	cursor: pointer;
 	transform: translate(-50%, -50%);
 	z-index: 1000;
-	background: var(--color-primary);
-	border-radius: var(--border-radius-full);
-	border: 2px solid var(--color-bg-primary);
-	box-shadow: var(--shadow-hover);
+	background: var(--kit-color-primary);
+	border-radius: var(--kit-border-radius-full);
+	border: 2px solid var(--kit-color-bg-primary);
+	box-shadow: var(--kit-shadow-hover);
 	transition: all 0.2s ease;
 }
 

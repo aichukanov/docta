@@ -677,7 +677,7 @@ const handleDecline = () => {
 }
 
 .btn-accept {
-	background: var(--color-primary);
+	background: var(--kit-color-primary);
 	color: white;
 }
 

@@ -334,9 +334,9 @@ onBeforeUnmount(() => {
 .app-header {
 	position: sticky;
 	top: 0;
-	z-index: var(--z-header);
+	z-index: var(--kit-z-header);
 	background: white;
-	border-bottom: 1px solid var(--color-bg-muted);
+	border-bottom: 1px solid var(--kit-color-bg-muted);
 	transition: all 0.3s ease;
 	box-sizing: border-box;
 	height: auto;
@@ -351,8 +351,8 @@ onBeforeUnmount(() => {
 		align-items: center;
 		justify-content: space-between;
 		min-height: 60px;
-		gap: var(--spacing-lg);
-		padding: 0 var(--spacing-lg);
+		gap: var(--kit-spacing-lg);
+		padding: 0 var(--kit-spacing-lg);
 		box-sizing: border-box;
 	}
 
@@ -383,21 +383,21 @@ onBeforeUnmount(() => {
 	&__nav {
 		display: flex;
 		align-items: center;
-		gap: var(--spacing-lg);
+		gap: var(--kit-spacing-lg);
 		flex: 1;
-		margin-left: var(--spacing-lg);
+		margin-left: var(--kit-spacing-lg);
 	}
 
 	&__nav-link {
 		display: flex;
 		align-items: center;
-		gap: var(--spacing-xs);
-		font-size: var(--font-size-base);
+		gap: var(--kit-spacing-xs);
+		font-size: var(--kit-font-size-base);
 		font-weight: 500;
-		color: var(--color-text-secondary);
+		color: var(--kit-color-text-secondary);
 		text-decoration: none;
-		padding: var(--spacing-sm) var(--spacing-md);
-		border-radius: var(--border-radius-sm);
+		padding: var(--kit-spacing-sm) var(--kit-spacing-md);
+		border-radius: var(--kit-border-radius-sm);
 		transition: all 0.2s ease;
 		white-space: nowrap;
 
@@ -408,12 +408,12 @@ onBeforeUnmount(() => {
 		}
 
 		&:hover {
-			color: var(--color-primary);
+			color: var(--kit-color-primary);
 			background: rgba(79, 70, 229, 0.06);
 		}
 
 		&.is-active {
-			color: var(--color-primary);
+			color: var(--kit-color-primary);
 			font-weight: 600;
 			background: rgba(79, 70, 229, 0.1);
 		}
@@ -422,15 +422,15 @@ onBeforeUnmount(() => {
 	&__nav-divider {
 		width: 1px;
 		height: 20px;
-		background-color: var(--color-bg-muted);
-		margin: 0 var(--spacing-xs);
+		background-color: var(--kit-color-bg-muted);
+		margin: 0 var(--kit-spacing-xs);
 		flex-shrink: 0;
 	}
 
 	&__actions {
 		display: flex;
 		align-items: center;
-		gap: var(--spacing-md);
+		gap: var(--kit-spacing-md);
 		/* Сжимаемый (min-width: 0), чтобы при нехватке места первым
 		   ужималось имя пользователя, а не ломалась шапка */
 		min-width: 0;
@@ -440,7 +440,7 @@ onBeforeUnmount(() => {
 	&__mobile-controls {
 		display: none;
 		align-items: center;
-		gap: var(--spacing-sm);
+		gap: var(--kit-spacing-sm);
 		flex-shrink: 0;
 
 		// Высота триггера языка по умолчанию — по контенту (auto);
@@ -459,9 +459,9 @@ onBeforeUnmount(() => {
 		width: 40px;
 		height: 40px;
 		padding: 0;
-		background: var(--color-bg-secondary);
-		border: 1px solid var(--color-border-secondary);
-		border-radius: var(--border-radius-md);
+		background: var(--kit-color-bg-secondary);
+		border: 1px solid var(--kit-color-border-secondary);
+		border-radius: var(--kit-border-radius-md);
 		cursor: pointer;
 		flex-shrink: 0;
 
@@ -469,12 +469,12 @@ onBeforeUnmount(() => {
 			display: block;
 			width: 18px;
 			height: 2px;
-			background: var(--color-text-primary);
+			background: var(--kit-color-text-primary);
 			border-radius: 2px;
 		}
 
 		&:hover {
-			background: var(--color-bg-tertiary);
+			background: var(--kit-color-bg-tertiary);
 		}
 	}
 
@@ -482,7 +482,7 @@ onBeforeUnmount(() => {
 		position: fixed;
 		inset: 0;
 		background: rgba(15, 23, 42, 0.45);
-		z-index: var(--z-modal);
+		z-index: var(--kit-z-modal);
 	}
 
 	&__drawer {
@@ -492,23 +492,23 @@ onBeforeUnmount(() => {
 		bottom: 0;
 		width: min(320px, 85vw);
 		background: white;
-		z-index: calc(var(--z-modal) + 1);
+		z-index: calc(var(--kit-z-modal) + 1);
 		display: flex;
 		flex-direction: column;
 		box-shadow: -8px 0 24px rgba(0, 0, 0, 0.12);
 		overflow-y: auto;
 		box-sizing: border-box;
-		padding: var(--spacing-lg);
+		padding: var(--kit-spacing-lg);
 	}
 
 	&__drawer-top {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: var(--spacing-md);
-		padding-bottom: var(--spacing-lg);
-		border-bottom: 1px solid var(--color-border-secondary);
-		margin-bottom: var(--spacing-lg);
+		gap: var(--kit-spacing-md);
+		padding-bottom: var(--kit-spacing-lg);
+		border-bottom: 1px solid var(--kit-color-border-secondary);
+		margin-bottom: var(--kit-spacing-lg);
 	}
 
 	&__drawer-close {
@@ -518,19 +518,19 @@ onBeforeUnmount(() => {
 		width: 36px;
 		height: 36px;
 		flex-shrink: 0;
-		background: var(--color-bg-secondary);
-		border: 1px solid var(--color-border-secondary);
-		border-radius: var(--border-radius-md);
-		color: var(--color-text-secondary);
+		background: var(--kit-color-bg-secondary);
+		border: 1px solid var(--kit-color-border-secondary);
+		border-radius: var(--kit-border-radius-md);
+		color: var(--kit-color-text-secondary);
 		cursor: pointer;
 
 		&:hover {
-			background: var(--color-bg-tertiary);
+			background: var(--kit-color-bg-tertiary);
 		}
 	}
 
 	&__drawer-location {
-		margin-bottom: var(--spacing-lg);
+		margin-bottom: var(--kit-spacing-lg);
 
 		:deep(.header-location) {
 			width: 100%;
@@ -540,18 +540,18 @@ onBeforeUnmount(() => {
 	&__drawer-nav {
 		display: flex;
 		flex-direction: column;
-		gap: var(--spacing-xs);
+		gap: var(--kit-spacing-xs);
 	}
 
 	&__drawer-link {
 		display: flex;
 		align-items: center;
-		gap: var(--spacing-md);
-		padding: var(--spacing-md);
-		border-radius: var(--border-radius-md);
-		color: var(--color-text-secondary);
+		gap: var(--kit-spacing-md);
+		padding: var(--kit-spacing-md);
+		border-radius: var(--kit-border-radius-md);
+		color: var(--kit-color-text-secondary);
 		text-decoration: none;
-		font-size: var(--font-size-base);
+		font-size: var(--kit-font-size-base);
 		font-weight: 500;
 
 		.nav-icon {
@@ -561,11 +561,11 @@ onBeforeUnmount(() => {
 		}
 
 		&:hover {
-			background: var(--color-bg-secondary);
+			background: var(--kit-color-bg-secondary);
 		}
 
 		&.is-active {
-			color: var(--color-primary);
+			color: var(--kit-color-primary);
 			font-weight: 600;
 			background: rgba(79, 70, 229, 0.1);
 		}
@@ -573,8 +573,8 @@ onBeforeUnmount(() => {
 
 	&__drawer-divider {
 		height: 1px;
-		background: var(--color-border-secondary);
-		margin: var(--spacing-sm) 0;
+		background: var(--kit-color-border-secondary);
+		margin: var(--kit-spacing-sm) 0;
 	}
 }
 
@@ -602,7 +602,7 @@ onBeforeUnmount(() => {
 	.app-header {
 		&__main-content {
 			flex-wrap: nowrap;
-			padding: var(--spacing-sm) var(--spacing-md);
+			padding: var(--kit-spacing-sm) var(--kit-spacing-md);
 		}
 
 		&__nav,

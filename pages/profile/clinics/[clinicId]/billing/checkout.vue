@@ -5,6 +5,8 @@ import { BillingService } from '~/enums/billing-service';
 import { formatEurCents, type BillingOrderDetails } from '~/interfaces/billing';
 import { ERROR_CODES } from '~/server/utils/api-codes';
 
+const toast = useToast();
+
 definePageMeta({
 	middleware: 'auth',
 	layout: 'default',
@@ -69,12 +71,12 @@ async function pay() {
 			window.location.href = result.data.paymentUrl;
 			return;
 		}
-		ElMessage.error(t('PaymentInitError'));
+		toast.error(t('PaymentInitError'));
 	} catch (e: any) {
 		if (e?.data?.data?.code === ERROR_CODES.PAYMENT_NOT_CONFIGURED) {
-			ElMessage.warning(t('PaymentUnavailable'));
+			toast.warning(t('PaymentUnavailable'));
 		} else {
-			ElMessage.error(t('PaymentInitError'));
+			toast.error(t('PaymentInitError'));
 		}
 	} finally {
 		isPaying.value = false;
@@ -93,10 +95,10 @@ async function cancelOrder() {
 		await $fetch(`/api/billing/orders/${order.value.id}/cancel`, {
 			method: 'POST',
 		});
-		ElMessage.success(t('OrderCancelled'));
+		toast.success(t('OrderCancelled'));
 		await navigateTo(billingLink.value);
 	} catch {
-		ElMessage.error(t('OrderCreateError'));
+		toast.error(t('OrderCreateError'));
 	} finally {
 		isCancelling.value = false;
 	}
@@ -169,80 +171,80 @@ useSeoMeta({ title: () => t('CheckoutTitle'), robots: 'noindex' });
 .checkout-page {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xl);
+	gap: var(--kit-spacing-xl);
 }
 
 .checkout-page__title {
-	font-size: var(--font-size-2xl);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-2xl);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	margin: 0;
 }
 
 .checkout-page__card {
-	background: var(--color-bg-primary);
-	border: 1px solid var(--color-border-secondary);
-	border-radius: var(--border-radius-xl);
-	box-shadow: var(--shadow-sm);
-	padding: var(--spacing-2xl);
+	background: var(--kit-color-bg-primary);
+	border: 1px solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-xl);
+	box-shadow: var(--kit-shadow-sm);
+	padding: var(--kit-spacing-2xl);
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .checkout-page__subtitle {
-	font-size: var(--font-size-lg);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-lg);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	margin: 0;
 }
 
 .checkout-page__items {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .checkout-page__item {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
-	padding: var(--spacing-sm) 0;
-	border-bottom: 1px solid var(--color-border-secondary);
+	gap: var(--kit-spacing-md);
+	padding: var(--kit-spacing-sm) 0;
+	border-bottom: 1px solid var(--kit-color-border-secondary);
 }
 
 .checkout-page__item-name {
 	flex: 1;
 	min-width: 0;
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-primary);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-text-primary);
 }
 
 .checkout-page__item-period {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 }
 
 .checkout-page__item-price {
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 }
 
 .checkout-page__total {
-	font-size: var(--font-size-lg);
-	color: var(--color-text-primary);
+	font-size: var(--kit-font-size-lg);
+	color: var(--kit-color-text-primary);
 	text-align: right;
 }
 
 .checkout-page__actions {
 	display: flex;
 	justify-content: flex-end;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 @media (max-width: 640px) {
 	.checkout-page__card {
-		padding: var(--spacing-xl) var(--spacing-lg);
+		padding: var(--kit-spacing-xl) var(--kit-spacing-lg);
 	}
 }
 </style>

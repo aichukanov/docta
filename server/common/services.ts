@@ -324,6 +324,60 @@ export async function getDoctorsForServiceByClinic(
 }
 
 /**
+ * Пары «клиника + специальность», в которых вообще есть смысл искать услуги
+ * для этой страницы листинга: пара берётся у КАЖДОГО врача отдельно
+ * (его клиники × его специальности), а не как произведение всех клиник
+ * страницы на все специальности страницы.
+ *
+ * Раньше в SQL уходили два независимых IN-списка — все клиники и все
+ * специальности двадцати врачей, — и запрос возвращал их декартово
+ * произведение, после чего JS выбрасывал строки, не подошедшие ни одному
+ * врачу. Замеры на листинге врачей (по 20 на страницу):
+ *   стр. 1: 459 → 426 строк, стр. 2: 620 → 373, стр. 3: 564 → 237,
+ *   стр. 5: 1122 → 490 (56 → 31 мс).
+ *
+ * Результат не меняется: строка выживает ровно тогда, когда её оставлял бы
+ * JS-фильтр хотя бы для одного врача. Пофамильная фильтрация ниже всё равно
+ * нужна — в одной клинике работают врачи с разными специальностями.
+ *
+ * Экспортируется ради юнит-теста (tests/unit/doctor-service-pairs.spec.ts).
+ */
+export function buildClinicSpecialtyPairs(
+	doctors: Array<{ clinicIds: string; specialtyIds: string }>,
+): Array<[number, number]> {
+	const seen = new Set<string>();
+	const pairs: Array<[number, number]> = [];
+
+	for (const doctor of doctors) {
+		const clinicIds = parseIdList(doctor.clinicIds);
+		const specialtyIds = parseIdList(doctor.specialtyIds);
+
+		for (const clinicId of clinicIds) {
+			for (const specialtyId of specialtyIds) {
+				const key = `${clinicId}_${specialtyId}`;
+
+				if (!seen.has(key)) {
+					seen.add(key);
+					pairs.push([clinicId, specialtyId]);
+				}
+			}
+		}
+	}
+
+	return pairs;
+}
+
+// GROUP_CONCAT-список идентификаторов в массив чисел. Пустая строка и NULL
+// дают пустой массив: у врача может не быть ни клиник, ни специальностей.
+function parseIdList(value: string | null | undefined): number[] {
+	return (value || '')
+		.split(',')
+		.filter(Boolean)
+		.map(Number)
+		.filter((id) => Number.isFinite(id));
+}
+
+/**
  * Загружает услуги для списка врачей (оптимизированно, одним запросом)
  * @param connection - соединение с БД
  * @param doctors - массив врачей с id, clinicIds и specialtyIds
@@ -338,24 +392,17 @@ export async function getServicesForDoctors(
 	// Собираем уникальные ID
 	const allDoctorIds = new Set<number>();
 	const allClinicIds = new Set<number>();
-	const allSpecialtyIds = new Set<number>();
 
 	doctors.forEach((doctor) => {
 		allDoctorIds.add(doctor.id);
 		doctor.clinicIds?.split(',').forEach((id) => allClinicIds.add(Number(id)));
-		doctor.specialtyIds
-			?.split(',')
-			.forEach((id) => allSpecialtyIds.add(Number(id)));
 	});
 
-	if (allClinicIds.size === 0 || allSpecialtyIds.size === 0) {
+	const clinicSpecialtyPairs = buildClinicSpecialtyPairs(doctors);
+
+	if (clinicSpecialtyPairs.length === 0) {
 		return new Map();
 	}
-
-	const clinicIdsArr = Array.from(allClinicIds);
-	const specialtyIdsArr = Array.from(allSpecialtyIds);
-	const clinicPlaceholders = clinicIdsArr.map(() => '?').join(',');
-	const specialtyPlaceholders = specialtyIdsArr.map(() => '?').join(',');
 
 	// Загружаем индивидуальные цены для всех врачей
 	const doctorPrices = await getDoctorServicePrices(
@@ -383,17 +430,18 @@ export async function getServicesForDoctors(
 		FROM clinic_medical_services cms
 		INNER JOIN medical_services ms ON cms.medical_service_id = ms.id
 		INNER JOIN medical_services_specialties mss ON ms.id = mss.medical_service_id
-		WHERE cms.clinic_id IN (${clinicPlaceholders})
-			AND mss.specialty_id IN (${specialtyPlaceholders})
+		WHERE (cms.clinic_id, mss.specialty_id) IN (${clinicSpecialtyPairs
+			.map(() => '(?,?)')
+			.join(',')})
 		GROUP BY cms.clinic_id, ms.id, ms.slug, ms.name_en, ms.name_sr, ms.name_sr_cyrl,
 			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price, cms.price_min, cms.price_max
 		ORDER BY cms.clinic_id, ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;
 	`;
 
-	const [serviceRows] = await connection.execute(servicesQuery, [
-		...clinicIdsArr,
-		...specialtyIdsArr,
-	]);
+	const [serviceRows] = await connection.execute(
+		servicesQuery,
+		clinicSpecialtyPairs.flat(),
+	);
 
 	// Группируем услуги по clinicId с сохранением specialtyIds и базовых цен
 	const servicesByClinic: Map<

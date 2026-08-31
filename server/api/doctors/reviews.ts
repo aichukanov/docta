@@ -1,4 +1,4 @@
-import { validateBody } from '~/common/validation';
+import { isValidLocale, validateBody } from '~/common/validation';
 import { GONE_PAYLOAD } from '~/common/gone';
 import { REVIEWS_PAGE_SIZE, REVIEWS_THRESHOLD } from '~/common/constants';
 import {
@@ -31,7 +31,7 @@ export default defineEventHandler(async (event) => {
 			return null;
 		}
 
-		const locale = body.locale || 'en';
+		const locale = isValidLocale(body.locale) ? body.locale : 'en';
 		const page = Math.max(1, parseInt(body.page) || 1);
 		const sort = isValidSort(body.sort) ? body.sort : 'rank';
 		const pageSize = REVIEWS_PAGE_SIZE;

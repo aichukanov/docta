@@ -162,20 +162,20 @@ const clinicNames = computed(() =>
 
 <style scoped>
 .doctor-card {
-	background: var(--color-bg-primary);
-	border-radius: var(--border-radius-xl);
-	padding: var(--spacing-2xl);
-	box-shadow: var(--shadow-sm);
-	border: 1px solid var(--color-border-secondary);
+	background: var(--kit-color-bg-primary);
+	border-radius: var(--kit-border-radius-xl);
+	padding: var(--kit-spacing-2xl);
+	box-shadow: var(--kit-shadow-sm);
+	border: 1px solid var(--kit-color-border-secondary);
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xl);
+	gap: var(--kit-spacing-xl);
 }
 
 .doctor-card__header {
 	display: flex;
 	align-items: flex-start;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .doctor-card__icon {
@@ -184,23 +184,23 @@ const clinicNames = computed(() =>
 	justify-content: center;
 	width: 40px;
 	height: 40px;
-	border-radius: var(--border-radius-lg);
-	background: var(--color-primary-bg);
-	color: var(--color-primary);
+	border-radius: var(--kit-border-radius-lg);
+	background: var(--kit-color-primary-bg);
+	color: var(--kit-color-primary);
 	flex-shrink: 0;
 }
 
 .doctor-card__title {
-	font-size: var(--font-size-2xl);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-2xl);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	margin: 0;
 	line-height: 40px;
 }
 
 .doctor-card__profile {
 	display: flex;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 	align-items: flex-start;
 }
 
@@ -212,25 +212,25 @@ const clinicNames = computed(() =>
 }
 
 .doctor-card__name {
-	font-size: var(--font-size-xl);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-xl);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	line-height: 1.3;
 }
 
 .doctor-card__local-name {
-	font-weight: var(--font-weight-normal);
-	color: var(--color-text-secondary);
+	font-weight: var(--kit-font-weight-normal);
+	color: var(--kit-color-text-secondary);
 }
 
 .doctor-card__subtitle {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 }
 
 .doctor-card__meta {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 	line-height: 1.4;
 }
 
@@ -246,19 +246,19 @@ const clinicNames = computed(() =>
 	width: 24px;
 	height: 24px;
 	border-radius: 50%;
-	border: 2px solid var(--color-bg-primary);
-	background: var(--color-primary);
+	border: 2px solid var(--kit-color-bg-primary);
+	background: var(--kit-color-primary);
 	color: #fff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	transition: all var(--transition-base);
+	transition: all var(--kit-transition-base);
 	padding: 0;
 }
 
 .doctor-card__avatar-upload:hover {
-	background: var(--color-primary-dark, #3730a3);
+	background: var(--kit-color-primary-dark, #3730a3);
 	transform: scale(1.1);
 }
 
@@ -283,19 +283,19 @@ const clinicNames = computed(() =>
 	width: 18px;
 	height: 18px;
 	border-radius: 50%;
-	border: 2px solid var(--color-bg-primary);
-	background: var(--color-danger);
+	border: 2px solid var(--kit-color-bg-primary);
+	background: var(--kit-color-danger);
 	color: #fff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	transition: all var(--transition-base);
+	transition: all var(--kit-transition-base);
 	padding: 0;
 }
 
 .doctor-card__avatar-remove:hover {
-	background: var(--color-danger-dark, #dc2626);
+	background: var(--kit-color-danger-dark, #dc2626);
 	transform: scale(1.1);
 }
 
@@ -316,7 +316,7 @@ const clinicNames = computed(() =>
 
 @media (max-width: 640px) {
 	.doctor-card {
-		padding: var(--spacing-xl) var(--spacing-lg);
+		padding: var(--kit-spacing-xl) var(--kit-spacing-lg);
 	}
 
 	.doctor-card__profile {

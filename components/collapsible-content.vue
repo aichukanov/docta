@@ -11,12 +11,16 @@ const props = withDefaults(
 const { t } = useI18n();
 
 const expanded = ref(false);
+// Есть ли что разворачивать — известно только после замера в браузере, поэтому
+// от этого флага зависит ТОЛЬКО кнопка. Ограничение высоты от него не зависит.
 const isOverflowing = ref(false);
 const contentRef = ref<HTMLElement | null>(null);
 let observer: ResizeObserver | null = null;
 
 const measure = () => {
 	if (!contentRef.value) return;
+	// scrollHeight у обрезанного блока — полная высота содержимого, обрезка
+	// max-height замеру не мешает.
 	isOverflowing.value = contentRef.value.scrollHeight > props.maxHeight + 4;
 };
 
@@ -33,10 +37,13 @@ onBeforeUnmount(() => {
 	observer?.disconnect();
 });
 
-const wrapperStyle = computed(() => {
-	if (!isOverflowing.value || expanded.value) return undefined;
-	return { maxHeight: `${props.maxHeight}px` };
-});
+// Обрезка ставится сразу на сервере: CSS-ограничение высоты замера не требует,
+// а если ждать onMounted, блок сначала рендерится на полную высоту и после
+// гидратации схлопывается — на странице врача это первая секция после
+// героблока, и всё под ней прыгает вверх на сотни пикселей.
+const wrapperStyle = computed(() =>
+	expanded.value ? undefined : { maxHeight: `${props.maxHeight}px` },
+);
 </script>
 
 <template>
@@ -84,7 +91,7 @@ const wrapperStyle = computed(() => {
 .collapsible-content {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .collapsible-content__wrapper {
@@ -106,7 +113,7 @@ const wrapperStyle = computed(() => {
 		background: linear-gradient(
 			to bottom,
 			rgba(255, 255, 255, 0),
-			var(--color-bg-primary)
+			var(--kit-color-bg-primary)
 		);
 	}
 }

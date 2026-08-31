@@ -8,6 +8,8 @@ import {
 	type BillingPeriod,
 } from '~/interfaces/billing';
 
+const toast = useToast();
+
 definePageMeta({
 	middleware: 'auth',
 	layout: 'default',
@@ -121,7 +123,7 @@ async function checkout() {
 			query: { orderId, ...getRegionalQuery(locale.value) },
 		});
 	} catch {
-		ElMessage.error(t('OrderCreateError'));
+		toast.error(t('OrderCreateError'));
 	} finally {
 		isCreating.value = false;
 	}
@@ -196,61 +198,61 @@ useSeoMeta({ title: () => t('BillingTitle'), robots: 'noindex' });
 .billing-page {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xl);
+	gap: var(--kit-spacing-xl);
 }
 
 .billing-page__header {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .billing-page__title {
-	font-size: var(--font-size-2xl);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-2xl);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	margin: 0;
 }
 
 .billing-page__subtitle {
-	font-size: var(--font-size-md);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-md);
+	color: var(--kit-color-text-secondary);
 	margin: 0;
 }
 
 .billing-page__section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .billing-page__section-title {
-	font-size: var(--font-size-xl);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-xl);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	margin: 0;
 }
 
 .billing-page__grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .billing-page__summary {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-	gap: var(--spacing-xl);
-	background: var(--color-bg-primary);
-	border: 1px solid var(--color-border-secondary);
-	border-radius: var(--border-radius-lg);
-	padding: var(--spacing-lg);
+	gap: var(--kit-spacing-xl);
+	background: var(--kit-color-bg-primary);
+	border: 1px solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-lg);
+	padding: var(--kit-spacing-lg);
 }
 
 .billing-page__total {
-	font-size: var(--font-size-lg);
-	color: var(--color-text-primary);
+	font-size: var(--kit-font-size-lg);
+	color: var(--kit-color-text-primary);
 }
 
 @media (max-width: 640px) {

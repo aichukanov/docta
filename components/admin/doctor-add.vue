@@ -294,17 +294,17 @@ const addDoctor = async () => {
 .doctor-add {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .service-prices-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
-	background: var(--color-surface-secondary);
-	border-radius: var(--border-radius-md);
-	border: 1px solid var(--color-border-primary);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-md);
+	background: var(--kit-color-surface-secondary);
+	border-radius: var(--kit-border-radius-md);
+	border: 1px solid var(--kit-color-border-primary);
 
 	.section-header {
 		display: flex;
@@ -313,13 +313,13 @@ const addDoctor = async () => {
 
 		h4 {
 			margin: 0;
-			color: var(--color-text-primary);
+			color: var(--kit-color-text-primary);
 		}
 	}
 
 	.service-price-row {
 		display: flex;
-		gap: var(--spacing-sm);
+		gap: var(--kit-spacing-sm);
 		align-items: center;
 
 		.clinic-select {
@@ -337,7 +337,7 @@ const addDoctor = async () => {
 	}
 
 	.no-services {
-		color: var(--color-text-secondary);
+		color: var(--kit-color-text-secondary);
 	}
 }
 </style>

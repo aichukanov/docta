@@ -29,20 +29,20 @@ defineProps<{
 .items-page-header {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .title-row {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 	flex-wrap: wrap;
 }
 
 .title {
-	font-size: var(--font-size-4xl);
-	font-weight: var(--font-weight-bold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-4xl);
+	font-weight: var(--kit-font-weight-bold);
+	color: var(--kit-color-text-heading);
 	margin: 0;
 	line-height: 1.2;
 }
@@ -50,12 +50,12 @@ defineProps<{
 .badges {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 @media (max-width: 640px) {
 	.title {
-		font-size: var(--font-size-3xl);
+		font-size: var(--kit-font-size-3xl);
 	}
 }
 </style>

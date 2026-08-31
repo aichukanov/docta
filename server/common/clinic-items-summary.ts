@@ -4,7 +4,7 @@ import type {
 	ClinicItemTypeSummary,
 } from '~/interfaces/clinic';
 import { doctorIsPublicSql } from '~/server/common/doctor-visibility';
-import { executeQuery } from '~/server/common/db-mysql';
+import { type Conn, withConnection } from '~/server/common/medicines/helpers';
 import { getLocalizedNameField } from '~/server/common/utils';
 
 type CountRow = { count: number };
@@ -173,24 +173,42 @@ function mapTopRow(row: TopRow): ClinicItemTopEntry {
 	};
 }
 
+// Все запросы сводки идут по одной клинике и должны делить одно соединение.
+// Раньше здесь стоял executeQuery, а он берёт из пула СВОЁ соединение на
+// каждый вызов: 11 запросов сводки = 11 соединений при connectionLimit: 10.
+// Один рендер страницы клиники блокировал сам себя, а две параллельные
+// страницы морили голодом весь сайт.
+async function query<T>(
+	connection: Conn,
+	sql: string,
+	params: any[],
+): Promise<T[]> {
+	const [rows] = await connection.execute(sql, params);
+	return rows as T[];
+}
+
 async function fetchOne(
+	connection: Conn,
 	type: keyof typeof TOTAL_SQL,
 	clinicId: number,
 	localizedNameField: string,
 ): Promise<ClinicItemTypeSummary> {
-	const totalPromise = executeQuery<CountRow>(TOTAL_SQL[type], [clinicId]);
+	const totalPromise = query<CountRow>(connection, TOTAL_SQL[type], [clinicId]);
 	const categoryPromise =
 		type === 'medications'
 			? Promise.resolve<CategoryRow[]>([])
-			: executeQuery<CategoryRow>(CATEGORY_SQL[type], [clinicId]);
+			: query<CategoryRow>(connection, CATEGORY_SQL[type], [clinicId]);
 
 	let topPromise: Promise<TopRow[]>;
 	if (type === 'doctors') {
-		topPromise = executeQuery<TopRow>(buildDoctorsTopSql(localizedNameField), [
-			clinicId,
-		]);
+		topPromise = query<TopRow>(
+			connection,
+			buildDoctorsTopSql(localizedNameField),
+			[clinicId],
+		);
 	} else if (type === 'services') {
-		topPromise = executeQuery<TopRow>(
+		topPromise = query<TopRow>(
+			connection,
 			buildPricedTopSql({
 				table: 'medical_services',
 				itemFk: 'medical_service_id',
@@ -203,7 +221,8 @@ async function fetchOne(
 			[clinicId],
 		);
 	} else if (type === 'labtests') {
-		topPromise = executeQuery<TopRow>(
+		topPromise = query<TopRow>(
+			connection,
 			buildPricedTopSql({
 				table: 'lab_tests',
 				itemFk: 'lab_test_id',
@@ -217,7 +236,8 @@ async function fetchOne(
 		);
 	} else {
 		// medications: no rank_score column, fall back to alphabetical.
-		topPromise = executeQuery<TopRow>(
+		topPromise = query<TopRow>(
+			connection,
 			buildPricedTopSql({
 				table: 'medications',
 				itemFk: 'medication_id',
@@ -253,11 +273,20 @@ export async function fetchClinicItemsSummary(
 	locale: string = 'en',
 ): Promise<ClinicItemsSummary> {
 	const localizedNameField = getLocalizedNameField(locale) || 'name_en';
-	const [services, labtests, medications, doctors] = await Promise.all([
-		fetchOne('services', clinicId, localizedNameField),
-		fetchOne('labtests', clinicId, localizedNameField),
-		fetchOne('medications', clinicId, localizedNameField),
-		fetchOne('doctors', clinicId, localizedNameField),
-	]);
-	return { services, labtests, medications, doctors };
+
+	// Соединение берётся один раз на всю сводку.
+	//
+	// Promise.all оставлен как форма записи, но параллелизма здесь больше нет:
+	// mysql2 выполняет команды одного соединения строго по очереди. Это
+	// осознанный размен — 11 запросов по одной клинике не стоят 11 из 10
+	// соединений пула, а сами они лёгкие (замер ниже в отчёте).
+	return withConnection(async (connection) => {
+		const [services, labtests, medications, doctors] = await Promise.all([
+			fetchOne(connection, 'services', clinicId, localizedNameField),
+			fetchOne(connection, 'labtests', clinicId, localizedNameField),
+			fetchOne(connection, 'medications', clinicId, localizedNameField),
+			fetchOne(connection, 'doctors', clinicId, localizedNameField),
+		]);
+		return { services, labtests, medications, doctors };
+	});
 }

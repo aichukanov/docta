@@ -76,33 +76,33 @@ const localizedName = computed(() =>
 .clinic-hero {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
-	padding: var(--spacing-xl) 0;
+	gap: var(--kit-spacing-md);
+	padding: var(--kit-spacing-xl) 0;
 }
 
 .clinic-hero__header {
 	display: flex;
 	align-items: flex-start;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .clinic-hero__header-info {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	min-width: 0;
 }
 
 .clinic-hero__title-row {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .clinic-hero__name {
-	font-size: var(--font-size-4xl);
+	font-size: var(--kit-font-size-4xl);
 	font-weight: 700;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 	margin: 0;
 	font-family:
 		system-ui,
@@ -113,29 +113,29 @@ const localizedName = computed(() =>
 
 /* Оригинальное название на сербской латинице — под локализованным */
 .clinic-hero__original-name {
-	font-size: var(--font-size-md);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-secondary);
-	margin-top: calc(-1 * var(--spacing-xs));
+	font-size: var(--kit-font-size-md);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-text-secondary);
+	margin-top: calc(-1 * var(--kit-spacing-xs));
 }
 
 .clinic-hero__actions {
 	display: flex;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .clinic-hero__types {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .clinic-hero__address {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
-	font-size: var(--font-size-md);
-	color: var(--color-text-secondary);
+	gap: var(--kit-spacing-xs);
+	font-size: var(--kit-font-size-md);
+	color: var(--kit-color-text-secondary);
 	font-style: normal;
 
 	svg {
@@ -147,7 +147,7 @@ const localizedName = computed(() =>
 
 @media (max-width: 500px) {
 	.clinic-hero__name {
-		font-size: var(--font-size-3xl);
+		font-size: var(--kit-font-size-3xl);
 	}
 }
 </style>

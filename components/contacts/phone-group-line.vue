@@ -88,50 +88,50 @@ const trackContactClick = (contactType: AnalyticsContactType) => {
 .phone-group-item {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
-	background: var(--color-bg-primary);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-sm);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-md);
+	background: var(--kit-color-bg-primary);
+	border: 1px solid var(--kit-color-border-light);
+	border-radius: var(--kit-border-radius-sm);
 }
 
 .phone-header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .phone-number {
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-primary);
+	font-size: var(--kit-font-size-base);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-primary);
 }
 
 .channel-buttons {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .channel-btn {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
-	padding: var(--spacing-sm) var(--spacing-md);
+	gap: var(--kit-spacing-xs);
+	padding: var(--kit-spacing-sm) var(--kit-spacing-md);
 	border: none;
-	border-radius: var(--border-radius-sm);
-	background: var(--color-bg-secondary);
-	color: var(--color-text-secondary);
-	font-size: var(--font-size-sm);
+	border-radius: var(--kit-border-radius-sm);
+	background: var(--kit-color-bg-secondary);
+	color: var(--kit-color-text-secondary);
+	font-size: var(--kit-font-size-sm);
 	text-decoration: none;
 	cursor: pointer;
-	transition: all var(--transition-base);
+	transition: all var(--kit-transition-base);
 }
 
 .channel-btn:hover {
-	background: var(--color-primary-bg);
-	color: var(--color-primary);
+	background: var(--kit-color-primary-bg);
+	color: var(--kit-color-primary);
 }
 
 .channel-whatsapp:hover {

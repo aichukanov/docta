@@ -438,10 +438,10 @@ const breadcrumbItems = computed(() => [
 .about-page {
 	background: linear-gradient(
 		180deg,
-		var(--color-bg-soft) 0%,
-		var(--color-bg-secondary) 100%
+		var(--kit-color-bg-soft) 0%,
+		var(--kit-color-bg-secondary) 100%
 	);
-	padding: calc(var(--spacing-3xl)) var(--spacing-lg);
+	padding: calc(var(--kit-spacing-3xl)) var(--kit-spacing-lg);
 }
 
 .about-page__container {
@@ -450,41 +450,41 @@ const breadcrumbItems = computed(() => [
 }
 
 .about-page__header {
-	margin-bottom: var(--spacing-2xl);
+	margin-bottom: var(--kit-spacing-2xl);
 
 	:deep(.app-breadcrumbs) {
-		margin-bottom: var(--spacing-lg);
+		margin-bottom: var(--kit-spacing-lg);
 	}
 }
 
 .about-page__title {
-	margin: 0 0 var(--spacing-sm);
-	font-size: var(--font-size-hero);
+	margin: 0 0 var(--kit-spacing-sm);
+	font-size: var(--kit-font-size-hero);
 	letter-spacing: -0.02em;
-	color: var(--color-text-heading);
+	color: var(--kit-color-text-heading);
 	line-height: 1.15;
 }
 
 .about-page__subtitle {
 	margin: 0;
 	max-width: 760px;
-	color: var(--color-text-secondary);
-	font-size: var(--font-size-xl);
+	color: var(--kit-color-text-secondary);
+	font-size: var(--kit-font-size-xl);
 	line-height: 1.7;
 }
 
 .about-page__grid {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: var(--spacing-xl);
+	gap: var(--kit-spacing-xl);
 }
 
 .about-card {
-	background: var(--color-surface-primary);
+	background: var(--kit-color-surface-primary);
 	border: 1px solid rgba(0, 0, 0, 0.05);
 	border-radius: 20px;
-	box-shadow: var(--shadow-sm);
-	padding: var(--spacing-2xl);
+	box-shadow: var(--kit-shadow-sm);
+	padding: var(--kit-spacing-2xl);
 }
 
 .about-card--highlight {
@@ -506,16 +506,16 @@ const breadcrumbItems = computed(() => [
 }
 
 .about-card__title {
-	margin: 0 0 var(--spacing-lg);
-	font-size: var(--font-size-2xl);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	margin: 0 0 var(--kit-spacing-lg);
+	font-size: var(--kit-font-size-2xl);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	letter-spacing: -0.01em;
 }
 
 .about-card__text {
-	margin: 0 0 var(--spacing-md);
-	color: var(--color-text-secondary);
+	margin: 0 0 var(--kit-spacing-md);
+	color: var(--kit-color-text-secondary);
 	line-height: 1.75;
 
 	&:last-child {
@@ -523,22 +523,22 @@ const breadcrumbItems = computed(() => [
 	}
 
 	&--note {
-		font-size: var(--font-size-sm);
-		color: var(--color-text-secondary);
-		margin-top: var(--spacing-lg);
-		padding-top: var(--spacing-md);
-		border-top: 1px solid var(--color-border-light);
+		font-size: var(--kit-font-size-sm);
+		color: var(--kit-color-text-secondary);
+		margin-top: var(--kit-spacing-lg);
+		padding-top: var(--kit-spacing-md);
+		border-top: 1px solid var(--kit-color-border-light);
 	}
 }
 
 .about-card__list {
 	margin: 0;
-	padding-left: var(--spacing-lg);
-	color: var(--color-text-secondary);
+	padding-left: var(--kit-spacing-lg);
+	color: var(--kit-color-text-secondary);
 	line-height: 1.75;
 
 	li + li {
-		margin-top: var(--spacing-sm);
+		margin-top: var(--kit-spacing-sm);
 	}
 }
 
@@ -554,20 +554,20 @@ const breadcrumbItems = computed(() => [
 .about-card__contacts {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
-	margin-top: var(--spacing-lg);
+	gap: var(--kit-spacing-md);
+	margin-top: var(--kit-spacing-lg);
 }
 
 .about-card__contact-link {
 	display: inline-flex;
 	align-items: center;
-	gap: var(--spacing-sm);
-	color: var(--color-text-secondary);
+	gap: var(--kit-spacing-sm);
+	color: var(--kit-color-text-secondary);
 	text-decoration: none;
-	font-size: var(--font-size-md);
+	font-size: var(--kit-font-size-md);
 
 	&:hover {
-		color: var(--color-primary);
+		color: var(--kit-color-primary);
 	}
 }
 
@@ -579,11 +579,11 @@ const breadcrumbItems = computed(() => [
 
 @media (max-width: 640px) {
 	.about-page {
-		padding: var(--spacing-2xl) var(--spacing-sm);
+		padding: var(--kit-spacing-2xl) var(--kit-spacing-sm);
 	}
 
 	.about-card {
-		padding: var(--spacing-xl);
+		padding: var(--kit-spacing-xl);
 		border-radius: 16px;
 	}
 }

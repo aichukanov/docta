@@ -81,20 +81,20 @@ const userDisplayName = computed(() => {
 .app-header-auth-link {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	min-width: 0;
 	text-decoration: none;
 	white-space: nowrap;
 
 	&--user {
-		color: var(--color-text-primary);
+		color: var(--kit-color-text-primary);
 		padding: 4px 10px 4px 4px;
-		border-radius: var(--border-radius-xl);
-		transition: all var(--transition-base);
+		border-radius: var(--kit-border-radius-xl);
+		transition: all var(--kit-transition-base);
 
 		&:hover {
 			background: rgba(79, 70, 229, 0.06);
-			color: var(--color-primary);
+			color: var(--kit-color-primary);
 		}
 	}
 
@@ -102,19 +102,19 @@ const userDisplayName = computed(() => {
 		box-sizing: border-box;
 		/* 40px — вровень с переключателем языка */
 		height: 40px;
-		font-weight: var(--font-weight-medium);
+		font-weight: var(--kit-font-weight-medium);
 		/* line-box = иконке (16px), иначе текст с наследуемым line-height
 		   оптически уезжает ниже центра */
 		line-height: 1;
 		color: white;
-		background: var(--color-primary);
-		padding: 0 var(--spacing-lg);
-		border-radius: var(--border-radius-lg);
-		transition: all var(--transition-base);
+		background: var(--kit-color-primary);
+		padding: 0 var(--kit-spacing-lg);
+		border-radius: var(--kit-border-radius-lg);
+		transition: all var(--kit-transition-base);
 
 		&:hover {
-			background: var(--color-primary-dark);
-			box-shadow: var(--shadow-hover);
+			background: var(--kit-color-primary-dark);
+			box-shadow: var(--kit-shadow-hover);
 		}
 	}
 
@@ -123,7 +123,7 @@ const userDisplayName = computed(() => {
 	}
 
 	&__name {
-		font-weight: var(--font-weight-medium);
+		font-weight: var(--kit-font-weight-medium);
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}

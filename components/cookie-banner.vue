@@ -33,29 +33,29 @@ const { giveConsent, declineConsent } = useCookieControl();
 <style lang="less" scoped>
 .cookie-banner {
 	position: fixed;
-	bottom: var(--spacing-lg);
-	left: var(--spacing-lg);
-	z-index: var(--z-cookie-consent);
+	bottom: var(--kit-spacing-lg);
+	left: var(--kit-spacing-lg);
+	z-index: var(--kit-z-cookie-consent);
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 	max-width: 360px;
-	padding: var(--spacing-md) var(--spacing-lg);
-	background: var(--color-bg-primary);
-	border: 1px solid var(--color-border-secondary);
-	border-radius: var(--border-radius-xl);
-	box-shadow: var(--shadow-xl);
+	padding: var(--kit-spacing-md) var(--kit-spacing-lg);
+	background: var(--kit-color-bg-primary);
+	border: 1px solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-xl);
+	box-shadow: var(--kit-shadow-xl);
 }
 
 .cookie-banner__text {
 	margin: 0;
-	font-size: var(--font-size-base);
+	font-size: var(--kit-font-size-base);
 	line-height: 1.4;
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 }
 
 .cookie-banner__link {
-	color: var(--color-primary);
+	color: var(--kit-color-primary);
 	text-decoration: none;
 	white-space: nowrap;
 
@@ -66,7 +66,7 @@ const { giveConsent, declineConsent } = useCookieControl();
 
 .cookie-banner__actions {
 	display: flex;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	justify-content: flex-end;
 	align-items: center;
 	flex-shrink: 0;
@@ -74,30 +74,30 @@ const { giveConsent, declineConsent } = useCookieControl();
 
 .cookie-banner__btn {
 	border: none;
-	padding: var(--spacing-sm) var(--spacing-lg);
-	border-radius: var(--border-radius-md);
+	padding: var(--kit-spacing-sm) var(--kit-spacing-lg);
+	border-radius: var(--kit-border-radius-md);
 	cursor: pointer;
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-medium);
 	white-space: nowrap;
-	transition: all var(--transition-base);
+	transition: all var(--kit-transition-base);
 
 	&--accept {
-		background: var(--color-text-heading);
+		background: var(--kit-color-text-heading);
 		color: white;
 
 		&:hover {
-			background: var(--color-primary-dark);
+			background: var(--kit-color-primary-dark);
 		}
 	}
 
 	&--decline {
 		background: transparent;
-		color: var(--color-text-muted);
+		color: var(--kit-color-text-muted);
 
 		&:hover {
-			color: var(--color-text-primary);
-			background: var(--color-bg-tertiary);
+			color: var(--kit-color-text-primary);
+			background: var(--kit-color-bg-tertiary);
 		}
 	}
 }
@@ -118,13 +118,13 @@ const { giveConsent, declineConsent } = useCookieControl();
 
 @media screen and (max-width: 540px) {
 	.cookie-banner {
-		left: var(--spacing-sm);
-		right: var(--spacing-sm);
-		bottom: var(--spacing-sm);
+		left: var(--kit-spacing-sm);
+		right: var(--kit-spacing-sm);
+		bottom: var(--kit-spacing-sm);
 		max-width: none;
 		flex-direction: column;
 		align-items: stretch;
-		gap: var(--spacing-sm);
+		gap: var(--kit-spacing-sm);
 	}
 
 	.cookie-banner__actions {

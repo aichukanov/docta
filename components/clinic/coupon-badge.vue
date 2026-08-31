@@ -100,17 +100,17 @@ const trackClick = () => {
 	display: inline-flex;
 	align-items: center;
 	flex-shrink: 0;
-	padding: 5px var(--spacing-md);
+	padding: 5px var(--kit-spacing-md);
 	line-height: 1.2;
 	/* Пунктирная рамка и тёмно-зелёный на светлом — читается как талон, а не как
 	   ещё одна плашка с ценой. Заливкой белый текст давал бы 3.7:1 на
-	   --color-success и провалил AA */
-	background: var(--color-success-bg);
-	border: 1px dashed var(--color-primary-green);
-	border-radius: var(--border-radius-md);
-	color: var(--color-primary-green);
-	font-size: var(--font-size-xs);
-	font-weight: var(--font-weight-bold);
+	   --kit-color-success и провалил AA */
+	background: var(--kit-color-success-bg);
+	border: 1px dashed var(--kit-color-primary-green);
+	border-radius: var(--kit-border-radius-md);
+	color: var(--kit-color-primary-green);
+	font-size: var(--kit-font-size-xs);
+	font-weight: var(--kit-font-weight-bold);
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
 	white-space: nowrap;
@@ -120,11 +120,11 @@ const trackClick = () => {
 	text-decoration: none;
 	cursor: pointer;
 	transition:
-		background var(--transition-fast),
-		border-color var(--transition-fast);
+		background var(--kit-transition-fast),
+		border-color var(--kit-transition-fast);
 
 	&:hover {
-		background: var(--color-success-border);
+		background: var(--kit-color-success-border);
 		border-style: solid;
 	}
 }

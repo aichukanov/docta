@@ -61,7 +61,7 @@ const props = withDefaults(
 	},
 );
 
-const { locale } = useI18n();
+const { t, locale } = useI18n();
 const { currentSearch, currentCategory, currentSort, pushQuery } =
 	useClinicItemsRoute();
 
@@ -161,8 +161,12 @@ const breadcrumbs = computed(() => [
 			@update:sort="onSortUpdate"
 		/>
 
-		<div v-loading="isLoading && items.length > 0" class="items-area">
-			<el-empty
+		<KitLoadingOverlay
+			:loading="isLoading && items.length > 0"
+			:label="t('Loading')"
+			class="items-area"
+		>
+			<KitEmpty
 				v-if="!isLoading && items.length === 0"
 				:description="emptyText"
 			/>
@@ -172,7 +176,7 @@ const breadcrumbs = computed(() => [
 			<div v-else class="items-grid">
 				<slot v-for="item in items" :key="item.id" :item="item" />
 			</div>
-		</div>
+		</KitLoadingOverlay>
 
 		<Pagination
 			v-if="pagination.totalPages > 1"
@@ -189,11 +193,11 @@ const breadcrumbs = computed(() => [
 .items-page {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xl);
+	gap: var(--kit-spacing-xl);
 	max-width: 1100px;
 	width: 100%;
 	margin: 0 auto;
-	padding: var(--spacing-xl);
+	padding: var(--kit-spacing-xl);
 	box-sizing: border-box;
 }
 
@@ -204,13 +208,13 @@ const breadcrumbs = computed(() => [
 .items-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 @media (max-width: 640px) {
 	.items-page {
-		padding: var(--spacing-md);
-		gap: var(--spacing-lg);
+		padding: var(--kit-spacing-md);
+		gap: var(--kit-spacing-lg);
 	}
 }
 </style>

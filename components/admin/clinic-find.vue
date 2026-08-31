@@ -917,44 +917,44 @@ onMounted(async () => {
 .clinic-info {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
-	margin-top: var(--spacing-lg);
+	gap: var(--kit-spacing-md);
+	margin-top: var(--kit-spacing-lg);
 	border-top: 1px solid black;
-	padding-top: var(--spacing-lg);
+	padding-top: var(--kit-spacing-lg);
 }
 
 .hidden-toggle {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
-	padding: var(--spacing-md);
-	border-radius: var(--border-radius-md);
-	border: 1px solid var(--color-border-primary);
-	background: var(--color-surface-secondary);
+	gap: var(--kit-spacing-md);
+	padding: var(--kit-spacing-md);
+	border-radius: var(--kit-border-radius-md);
+	border: 1px solid var(--kit-color-border-primary);
+	background: var(--kit-color-surface-secondary);
 
 	&.modified {
-		border-color: var(--color-warning);
+		border-color: var(--kit-color-warning);
 	}
 
 	&.active {
-		background: var(--color-danger-bg);
-		border-color: var(--color-danger-border);
+		background: var(--kit-color-danger-bg);
+		border-color: var(--kit-color-danger-border);
 	}
 
 	.hidden-hint {
 		font-size: 0.85em;
-		color: var(--color-danger-dark);
+		color: var(--kit-color-danger-dark);
 	}
 }
 
 .billing-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
-	background: var(--color-surface-secondary);
-	border-radius: var(--border-radius-md);
-	border: 1px solid var(--color-border-primary);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-md);
+	background: var(--kit-color-surface-secondary);
+	border-radius: var(--kit-border-radius-md);
+	border: 1px solid var(--kit-color-border-primary);
 }
 
 .section-header {
@@ -964,14 +964,14 @@ onMounted(async () => {
 
 	h4 {
 		margin: 0;
-		color: var(--color-text-primary);
+		color: var(--kit-color-text-primary);
 	}
 }
 
 .billing-form {
 	display: grid;
 	grid-template-columns: minmax(180px, 1.4fr) repeat(3, minmax(140px, 1fr)) auto;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	align-items: center;
 }
 
@@ -986,34 +986,34 @@ onMounted(async () => {
 .billing-list {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .billing-filter {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
-	color: var(--color-text-secondary);
+	gap: var(--kit-spacing-sm);
+	color: var(--kit-color-text-secondary);
 }
 
 .billing-item {
-	background: var(--color-surface-primary);
-	border: 1px solid var(--color-border-primary);
-	border-radius: var(--border-radius-md);
-	padding: var(--spacing-sm);
+	background: var(--kit-color-surface-primary);
+	border: 1px solid var(--kit-color-border-primary);
+	border-radius: var(--kit-border-radius-md);
+	padding: var(--kit-spacing-sm);
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .billing-item.deleted {
-	border-color: var(--color-danger);
-	background: var(--color-danger-bg);
+	border-color: var(--kit-color-danger);
+	background: var(--kit-color-danger-bg);
 }
 
 .billing-item.expired {
-	border-color: var(--color-warning);
-	background: var(--color-warning-bg);
+	border-color: var(--kit-color-warning);
+	background: var(--kit-color-warning-bg);
 }
 
 .billing-item-title {
@@ -1023,47 +1023,47 @@ onMounted(async () => {
 }
 
 .billing-item-price {
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 }
 
 .billing-item-meta {
 	display: flex;
-	gap: var(--spacing-xs);
-	color: var(--color-text-secondary);
+	gap: var(--kit-spacing-xs);
+	color: var(--kit-color-text-secondary);
 	font-size: 13px;
 }
 
 .billing-item-services {
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 	font-size: 13px;
 }
 
 .billing-item-status {
 	font-size: 12px;
 	font-weight: 600;
-	color: var(--color-danger-dark);
+	color: var(--kit-color-danger-dark);
 }
 
 .billing-item.expired .billing-item-status {
-	color: var(--color-warning-dark);
+	color: var(--kit-color-warning-dark);
 }
 
 .billing-empty,
 .billing-loading {
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 	font-style: italic;
 }
 
 .billing-loading {
-	padding: var(--spacing-xs) 0;
+	padding: var(--kit-spacing-xs) 0;
 }
 
 .billing-empty {
-	padding: var(--spacing-xs) 0;
+	padding: var(--kit-spacing-xs) 0;
 }
 
 .button-group {
 	display: flex;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 </style>

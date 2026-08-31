@@ -307,9 +307,9 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 
 <style scoped>
 .profile-page {
-	background: var(--color-bg-secondary);
+	background: var(--kit-color-bg-secondary);
 	min-height: calc(100vh - 120px);
-	padding: var(--spacing-2xl) var(--spacing-lg);
+	padding: var(--kit-spacing-2xl) var(--kit-spacing-lg);
 }
 
 .profile-layout {
@@ -317,24 +317,24 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xl);
+	gap: var(--kit-spacing-xl);
 }
 
 /* ── Hero ────────────────────────────────────── */
 
 .profile-hero {
 	position: relative;
-	background: var(--color-bg-primary);
-	border-radius: var(--border-radius-xl);
-	box-shadow: var(--shadow-sm);
-	border: 1px solid var(--color-border-secondary);
+	background: var(--kit-color-bg-primary);
+	border-radius: var(--kit-border-radius-xl);
+	box-shadow: var(--kit-shadow-sm);
+	border: 1px solid var(--kit-color-border-secondary);
 }
 
 .profile-hero__content {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xl);
-	padding: var(--spacing-2xl);
+	gap: var(--kit-spacing-xl);
+	padding: var(--kit-spacing-2xl);
 }
 
 .profile-hero__avatar-wrap {
@@ -353,14 +353,14 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 	width: 28px;
 	height: 28px;
 	border-radius: 50%;
-	border: 2px solid var(--color-bg-primary);
-	background: var(--color-primary);
+	border: 2px solid var(--kit-color-bg-primary);
+	background: var(--kit-color-primary);
 	color: #fff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	transition: all var(--transition-base);
+	transition: all var(--kit-transition-base);
 	padding: 0;
 }
 
@@ -390,19 +390,19 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	border: 2px solid var(--color-bg-primary);
-	background: var(--color-danger, #ef4444);
+	border: 2px solid var(--kit-color-bg-primary);
+	background: var(--kit-color-danger, #ef4444);
 	color: #fff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	transition: all var(--transition-base);
+	transition: all var(--kit-transition-base);
 	padding: 0;
 }
 
 .profile-hero__avatar-remove:hover {
-	background: var(--color-danger-dark, #dc2626);
+	background: var(--kit-color-danger-dark, #dc2626);
 	transform: scale(1.1);
 }
 
@@ -424,7 +424,7 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 	transform: translateX(-50%);
 	padding: 2px 10px;
 	font-size: 11px;
-	font-weight: var(--font-weight-semibold);
+	font-weight: var(--kit-font-weight-semibold);
 	border-radius: 20px;
 	white-space: nowrap;
 	letter-spacing: 0.3px;
@@ -432,15 +432,15 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 }
 
 .profile-hero__badge--user {
-	background: var(--color-success-bg);
-	color: var(--color-primary-green);
-	border: 1px solid var(--color-success-border);
+	background: var(--kit-color-success-bg);
+	color: var(--kit-color-primary-green);
+	border: 1px solid var(--kit-color-success-border);
 }
 
 .profile-hero__badge--admin {
-	background: var(--color-danger-bg);
-	color: var(--color-danger-dark);
-	border: 1px solid var(--color-danger-border);
+	background: var(--kit-color-danger-bg);
+	color: var(--kit-color-danger-dark);
+	border: 1px solid var(--kit-color-danger-border);
 }
 
 .profile-hero__info {
@@ -451,7 +451,7 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 .profile-hero__actions {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	margin-left: auto;
 	flex-shrink: 0;
 }
@@ -459,33 +459,33 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 .profile-hero__name-row {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .profile-hero__name {
-	font-size: var(--font-size-3xl);
-	font-weight: var(--font-weight-bold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-3xl);
+	font-weight: var(--kit-font-weight-bold);
+	color: var(--kit-color-text-heading);
 	margin: 0;
 	line-height: 1.3;
 }
 
 .profile-hero__username {
 	margin: 2px 0 0;
-	font-size: var(--font-size-md);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-md);
+	color: var(--kit-color-text-muted);
 }
 
 .profile-hero__email-row {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
-	margin-top: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
+	margin-top: var(--kit-spacing-xs);
 }
 
 .profile-hero__email {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 }
 
 .profile-hero__edit-btn {
@@ -496,23 +496,23 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 	height: 28px;
 	border: none;
 	background: transparent;
-	color: var(--color-text-muted);
-	border-radius: var(--border-radius-md);
+	color: var(--kit-color-text-muted);
+	border-radius: var(--kit-border-radius-md);
 	cursor: pointer;
-	transition: all var(--transition-base);
+	transition: all var(--kit-transition-base);
 	flex-shrink: 0;
 }
 
 .profile-hero__edit-btn:hover {
-	background: var(--color-bg-tertiary);
-	color: var(--color-primary);
+	background: var(--kit-color-bg-tertiary);
+	color: var(--kit-color-primary);
 }
 
 /* ── Body (sidebar + content) ────────────────── */
 
 .profile-body {
 	display: flex;
-	gap: var(--spacing-xl);
+	gap: var(--kit-spacing-xl);
 	align-items: flex-start;
 }
 
@@ -522,33 +522,33 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 	width: 220px;
 	flex-shrink: 0;
 	position: sticky;
-	top: calc(var(--spacing-2xl) + 60px);
+	top: calc(var(--kit-spacing-2xl) + 60px);
 }
 
 .profile-nav__list {
 	display: flex;
 	flex-direction: column;
 	gap: 2px;
-	background: var(--color-bg-primary);
-	border-radius: var(--border-radius-xl);
-	border: 1px solid var(--color-border-secondary);
-	box-shadow: var(--shadow-sm);
-	padding: var(--spacing-sm);
+	background: var(--kit-color-bg-primary);
+	border-radius: var(--kit-border-radius-xl);
+	border: 1px solid var(--kit-color-border-secondary);
+	box-shadow: var(--kit-shadow-sm);
+	padding: var(--kit-spacing-sm);
 }
 
 .profile-nav__item {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-sm) var(--spacing-md);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-sm) var(--kit-spacing-md);
 	border: none;
 	background: transparent;
-	border-radius: var(--border-radius-lg);
-	color: var(--color-text-secondary);
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
+	border-radius: var(--kit-border-radius-lg);
+	color: var(--kit-color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-medium);
 	cursor: pointer;
-	transition: all var(--transition-base);
+	transition: all var(--kit-transition-base);
 	white-space: nowrap;
 	text-align: left;
 	text-decoration: none;
@@ -557,26 +557,26 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 }
 
 .profile-nav__item:hover {
-	background: var(--color-bg-tertiary);
-	color: var(--color-text-primary);
+	background: var(--kit-color-bg-tertiary);
+	color: var(--kit-color-text-primary);
 }
 
 .profile-nav__item--active {
-	background: var(--color-primary-bg);
-	color: var(--color-primary);
+	background: var(--kit-color-primary-bg);
+	color: var(--kit-color-primary);
 }
 
 .profile-nav__item--active:hover {
-	background: var(--color-primary-bg);
-	color: var(--color-primary);
+	background: var(--kit-color-primary-bg);
+	color: var(--kit-color-primary);
 }
 
 .profile-nav__soon {
 	margin-left: auto;
 	font-size: 10px;
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-secondary);
-	background: var(--color-bg-tertiary);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-secondary);
+	background: var(--kit-color-bg-tertiary);
 	padding: 1px 6px;
 	border-radius: 6px;
 	text-transform: uppercase;
@@ -590,7 +590,7 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 	min-width: 0;
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xl);
+	gap: var(--kit-spacing-xl);
 }
 
 /* ── Dialogs ─────────────────────────────────── */
@@ -598,13 +598,13 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 .profile-dialog__footer {
 	display: flex;
 	justify-content: flex-end;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .profile-dialog__note {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
-	margin: 0 0 var(--spacing-lg);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
+	margin: 0 0 var(--kit-spacing-lg);
 	line-height: 1.5;
 }
 
@@ -612,19 +612,19 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 
 @media (max-width: 768px) {
 	.profile-page {
-		padding: var(--spacing-lg) var(--spacing-sm);
+		padding: var(--kit-spacing-lg) var(--kit-spacing-sm);
 	}
 
 	.profile-hero__content {
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		padding: var(--spacing-xl) var(--spacing-lg);
-		gap: var(--spacing-md);
+		padding: var(--kit-spacing-xl) var(--kit-spacing-lg);
+		gap: var(--kit-spacing-md);
 	}
 
 	.profile-hero__name {
-		font-size: var(--font-size-2xl);
+		font-size: var(--kit-font-size-2xl);
 	}
 
 	.profile-hero__name-row {
@@ -643,7 +643,7 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 	/* Nav becomes horizontal scrollable bar */
 	.profile-body {
 		flex-direction: column;
-		gap: var(--spacing-md);
+		gap: var(--kit-spacing-md);
 	}
 
 	.profile-content {
@@ -660,14 +660,14 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
 		scrollbar-width: thin;
-		gap: var(--spacing-xs);
-		padding: var(--spacing-xs);
+		gap: var(--kit-spacing-xs);
+		padding: var(--kit-spacing-xs);
 	}
 
 	.profile-nav__item {
 		flex-shrink: 0;
 		width: auto;
-		padding: var(--spacing-sm) var(--spacing-md);
+		padding: var(--kit-spacing-sm) var(--kit-spacing-md);
 	}
 
 	.profile-nav__soon {

@@ -75,14 +75,14 @@ const detail = computed(() => {
 	display: flex;
 	align-items: baseline;
 	flex-wrap: wrap;
-	gap: var(--spacing-xs) var(--spacing-sm);
-	font-size: var(--font-size-sm);
-	color: var(--color-danger-dark);
+	gap: var(--kit-spacing-xs) var(--kit-spacing-sm);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-danger-dark);
 	font-weight: 500;
 }
 
 .status-badge--open {
-	color: var(--color-primary-green);
+	color: var(--kit-color-primary-green);
 }
 
 .status-badge__dot {
@@ -95,7 +95,7 @@ const detail = computed(() => {
 }
 
 .status-badge__detail {
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 	font-weight: 400;
 }
 </style>

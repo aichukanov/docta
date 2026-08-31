@@ -63,43 +63,43 @@ const couponTabLink = computed(() =>
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 	flex-wrap: wrap;
-	padding: var(--spacing-md) var(--spacing-lg);
-	background: var(--color-success-bg);
-	border: 1px solid var(--color-success-border);
-	border-radius: var(--border-radius-lg);
+	padding: var(--kit-spacing-md) var(--kit-spacing-lg);
+	background: var(--kit-color-success-bg);
+	border: 1px solid var(--kit-color-success-border);
+	border-radius: var(--kit-border-radius-lg);
 }
 
 .coupon-banner__text {
 	display: flex;
 	align-items: baseline;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	flex-wrap: wrap;
 	margin: 0;
 	min-width: 0;
 }
 
 .coupon-banner__title {
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-base);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 }
 
 .coupon-banner__source {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 }
 
 .coupon-banner__link {
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-primary);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-primary);
 	text-decoration: none;
 	white-space: nowrap;
 
 	&:hover {
-		color: var(--color-primary-dark);
+		color: var(--kit-color-primary-dark);
 		text-decoration: underline;
 	}
 }

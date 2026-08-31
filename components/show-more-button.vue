@@ -34,12 +34,12 @@ defineEmits<{
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	padding: var(--spacing-md);
+	padding: var(--kit-spacing-md);
 	background: transparent;
-	border: 1px dashed var(--color-border-light);
-	border-radius: var(--border-radius-md);
-	color: var(--color-primary);
-	font-size: var(--font-size-sm);
+	border: 1px dashed var(--kit-color-border-light);
+	border-radius: var(--kit-border-radius-md);
+	color: var(--kit-color-primary);
+	font-size: var(--kit-font-size-sm);
 	font-family: inherit;
 	font-weight: 500;
 	cursor: pointer;
@@ -48,7 +48,7 @@ defineEmits<{
 		background 0.15s ease;
 
 	&:hover {
-		border-color: var(--color-primary);
+		border-color: var(--kit-color-primary);
 		background: rgba(79, 70, 229, 0.04);
 	}
 
@@ -58,10 +58,10 @@ defineEmits<{
 		left: 0;
 		right: 0;
 		bottom: 0;
-		padding: var(--spacing-sm);
+		padding: var(--kit-spacing-sm);
 		background: rgba(255, 255, 255, 0.85);
 		backdrop-filter: blur(2px);
-		border-color: var(--color-border-secondary);
+		border-color: var(--kit-color-border-secondary);
 	}
 }
 </style>

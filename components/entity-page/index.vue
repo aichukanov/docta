@@ -62,6 +62,19 @@ const backToSearch = () => {
 					:tabs="tabs"
 					class="entity-page__nav"
 				/>
+				<!-- Мобильный вариант таб-бара — sticky, то есть занимает место в
+				     потоке. Без заглушки серверная разметка его не содержит, и
+				     после гидратации между героблоком и телом вставляется полоса,
+				     сдвигая весь контент вниз. Заглушка держит ту же высоту
+				     (кнопка + вертикальные отступы полосы). На десктопе полоса
+				     display:none, поэтому заглушка тоже скрыта. -->
+				<template #fallback>
+					<div
+						v-if="tabs.length > 1"
+						class="entity-page__nav entity-page__nav-placeholder"
+						aria-hidden="true"
+					></div>
+				</template>
 			</ClientOnly>
 
 			<div class="entity-page__body">
@@ -81,11 +94,11 @@ const backToSearch = () => {
 	max-width: 900px;
 	margin: 0 auto;
 	width: 100%;
-	padding: 0 var(--spacing-md);
+	padding: 0 var(--kit-spacing-md);
 }
 
 .entity-page__back {
-	padding: var(--spacing-md) 0;
+	padding: var(--kit-spacing-md) 0;
 }
 
 .entity-page__hero {
@@ -95,8 +108,24 @@ const backToSearch = () => {
 .entity-page__body {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-2xl);
-	padding: var(--spacing-2xl) 0;
+	gap: var(--kit-spacing-2xl);
+	padding: var(--kit-spacing-2xl) 0;
+}
+
+/* Повторяет коробку .section-nav__mobile из tab-bar.vue: отступы полосы,
+   рамка снизу и высота кнопки — её вертикальные отступы, рамка и строка
+   текста в var(--kit-font-size-sm). Считаем токенами, а не готовыми пикселями,
+   чтобы правка отступов в теме не рассинхронизировала заглушку с баром. */
+.entity-page__nav-placeholder {
+	box-sizing: border-box;
+	padding: var(--kit-spacing-sm) 0;
+	border-bottom: 1px solid var(--kit-color-border-light);
+
+	&::before {
+		content: '';
+		display: block;
+		height: calc(2 * var(--kit-spacing-sm) + 2px + var(--kit-font-size-sm) * 1.2);
+	}
 }
 
 /* Широкие экраны: навигация по секциям выносится в левый рельс вне колонки
@@ -110,7 +139,7 @@ const backToSearch = () => {
 	.entity-page--with-nav .entity-page__layout {
 		display: grid;
 		grid-template-columns: 220px minmax(0, 1fr);
-		column-gap: var(--spacing-2xl);
+		column-gap: var(--kit-spacing-2xl);
 		grid-template-areas:
 			'nav hero'
 			'nav body';
@@ -127,16 +156,22 @@ const backToSearch = () => {
 	.entity-page--with-nav .entity-page__body {
 		grid-area: body;
 	}
+
+	/* На десктопе мобильной полосы нет — рельс стоит в отдельной колонке
+	   грида и сдвига не даёт, резервировать нечего. */
+	.entity-page__nav-placeholder {
+		display: none;
+	}
 }
 
 @media (max-width: 500px) {
 	.entity-page {
-		padding: 0 var(--spacing-sm);
+		padding: 0 var(--kit-spacing-sm);
 	}
 
 	.entity-page__body {
-		gap: var(--spacing-lg);
-		padding: var(--spacing-lg) 0;
+		gap: var(--kit-spacing-lg);
+		padding: var(--kit-spacing-lg) 0;
 	}
 }
 
@@ -146,14 +181,14 @@ const backToSearch = () => {
 	align-items: center;
 	justify-content: center;
 	padding: 40px;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 }
 
 .entity-page__spinner {
 	width: 40px;
 	height: 40px;
-	border: 3px solid var(--color-border-secondary);
-	border-top: 3px solid var(--color-primary);
+	border: 3px solid var(--kit-color-border-secondary);
+	border-top: 3px solid var(--kit-color-primary);
 	border-radius: 50%;
 	animation: spin 1s linear infinite;
 	margin-bottom: 16px;
@@ -171,7 +206,7 @@ const backToSearch = () => {
 .entity-page__not-found {
 	padding: 40px;
 	text-align: center;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 }
 </style>
 

@@ -9,7 +9,7 @@
 ```
 components/
 ├── ui/                          # новый кит (auto-import без префикса пути)
-│   ├── app-button.vue           # <AppButton>
+│   ├── app-button.vue           # <KitButton>
 │   ├── app-input.vue            # <AppInput> (type=text|password|email|textarea)
 │   ├── app-select.vue           # <AppSelect>
 │   ├── app-checkbox.vue
@@ -57,10 +57,10 @@ components: [
 Принцип: API проектируется от фактических мест использования (см. инвентаризацию),
 а не копированием API Element Plus. Ниже — самые нагруженные.
 
-### AppButton
+### KitButton
 
 ```vue
-<AppButton
+<KitButton
   type="primary | default | danger | text"   <!-- покрывает фактические варианты -->
   size="default | large | small"
   :loading="bool" :disabled="bool" :round="bool"
@@ -70,7 +70,7 @@ components: [
 ```
 
 Состояния hover/active/focus/disabled — только токены. Danger сразу строится на
-`--color-danger-dark` (фикс контраста из design-tokens.css:169-178 переезжает внутрь
+`--kit-color-danger-dark` (фикс контраста из design-tokens.css:169-178 переезжает внутрь
 компонента и удаляется из глобального CSS).
 
 ### AppSelect
@@ -87,7 +87,7 @@ components: [
 />
 ```
 
-Реализация: кнопка-триггер + Teleport-дроп (z-index `--z-dropdown`),
+Реализация: кнопка-триггер + Teleport-дроп (z-index `--kit-z-dropdown`),
 `role="combobox"` / `listbox` / `option`, навигация стрелками, закрытие по
 Escape/клику вне/выбору. Позиционирование — без popper: фиксированный дроп под
 триггером с flip при нехватке места (одна функция на getBoundingClientRect).
@@ -105,8 +105,8 @@ toast.success(t('profile.saved'));
 toast.error(message, { duration: 5000 });
 ```
 
-- `useToast` пишет в общий reactive-стек (useState), `AppToaster` в `app.vue` рендерит
-  стек через Teleport (z-index `--z-tooltip`), `role="status"` + `aria-live="polite"`.
+- `useToast` пишет в общий reactive-стек (useState), `KitToaster` в `app.vue` рендерит
+  стек через Teleport (z-index `--kit-z-tooltip`), `role="status"` + `aria-live="polite"`.
 - Миграция механическая: `ElMessage.success(x)` → `useToast().success(x)` (~35 мест).
 
 ### Формы (замена el-form)

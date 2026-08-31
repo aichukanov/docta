@@ -66,13 +66,13 @@ const { t } = useI18n({
 
 <style scoped lang="less">
 .price-outdated-icon {
-	color: var(--color-text-muted);
-	font-size: var(--font-size-lg);
+	color: var(--kit-color-text-muted);
+	font-size: var(--kit-font-size-lg);
 	flex-shrink: 0;
 	cursor: help;
 
 	&--small {
-		font-size: var(--font-size-base);
+		font-size: var(--kit-font-size-base);
 	}
 
 	&--inverse {

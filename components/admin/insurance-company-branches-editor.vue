@@ -114,11 +114,11 @@ const removeBranch = (index: number) => {
 .branches-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
-	background: var(--color-surface-secondary);
-	border-radius: var(--border-radius-md);
-	border: 1px solid var(--color-border-primary);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-md);
+	background: var(--kit-color-surface-secondary);
+	border-radius: var(--kit-border-radius-md);
+	border: 1px solid var(--kit-color-border-primary);
 }
 
 .section-header {
@@ -128,32 +128,32 @@ const removeBranch = (index: number) => {
 
 	h4 {
 		margin: 0;
-		color: var(--color-text-primary);
+		color: var(--kit-color-text-primary);
 	}
 }
 
 .branch-row {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
-	padding: var(--spacing-sm);
-	background: var(--color-surface-primary);
-	border: 1px solid var(--color-border-primary);
-	border-radius: var(--border-radius-md);
+	gap: var(--kit-spacing-xs);
+	padding: var(--kit-spacing-sm);
+	background: var(--kit-color-surface-primary);
+	border: 1px solid var(--kit-color-border-primary);
+	border-radius: var(--kit-border-radius-md);
 }
 
 .branch-row__header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 }
 
 .branch-row__grid {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(160px, 1fr));
-	gap: var(--spacing-xs) var(--spacing-sm);
+	gap: var(--kit-spacing-xs) var(--kit-spacing-sm);
 }
 
 .branch-row__working-hours {
@@ -161,7 +161,7 @@ const removeBranch = (index: number) => {
 }
 
 .no-branches {
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 	font-style: italic;
 }
 </style>

@@ -44,7 +44,7 @@ withDefaults(
 }
 
 .substance-badge {
-	font-size: var(--font-size-sm);
+	font-size: var(--kit-font-size-sm);
 	line-height: 1;
 	padding: 5px 9px;
 	border-radius: 999px;
@@ -52,22 +52,22 @@ withDefaults(
 }
 
 .substance-badge.is-match {
-	background: var(--color-primary-bg);
-	color: var(--color-primary-dark);
-	font-weight: var(--font-weight-semibold);
+	background: var(--kit-color-primary-bg);
+	color: var(--kit-color-primary-dark);
+	font-weight: var(--kit-font-weight-semibold);
 }
 
 .substance-badge.is-extra {
-	background: var(--color-bg-primary);
+	background: var(--kit-color-bg-primary);
 	color: #92620b;
-	border: 1px dashed var(--color-accent);
+	border: 1px dashed var(--kit-color-accent);
 	cursor: help;
 }
 
 .substance-badge.is-missing {
 	background: transparent;
-	color: var(--color-text-light);
-	border: 1px solid var(--color-border-secondary);
+	color: var(--kit-color-text-light);
+	border: 1px solid var(--kit-color-border-secondary);
 	text-decoration: line-through;
 }
 </style>

@@ -74,71 +74,71 @@ const notice = computed(() => {
 .owner-banner {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md) var(--spacing-xl);
-	background: var(--color-primary-bg);
-	border: 1px solid var(--color-border-accent);
-	border-radius: var(--border-radius-lg);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-md) var(--kit-spacing-xl);
+	background: var(--kit-color-primary-bg);
+	border: 1px solid var(--kit-color-border-accent);
+	border-radius: var(--kit-border-radius-lg);
 }
 
 .owner-banner__row {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .owner-banner__notice {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
-	padding: var(--spacing-xs) var(--spacing-md);
-	background: var(--color-warning-bg);
-	border: 1px solid var(--color-warning-border);
-	border-radius: var(--border-radius-md);
+	gap: var(--kit-spacing-xs);
+	padding: var(--kit-spacing-xs) var(--kit-spacing-md);
+	background: var(--kit-color-warning-bg);
+	border: 1px solid var(--kit-color-warning-border);
+	border-radius: var(--kit-border-radius-md);
 }
 
 .owner-banner__notice-text {
 	margin: 0;
-	font-size: var(--font-size-sm);
-	color: var(--color-warning-dark);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-warning-dark);
 	line-height: 1.5;
 }
 
 .owner-banner__reason {
 	margin: 0;
-	font-size: var(--font-size-sm);
-	color: var(--color-text-primary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-primary);
 	line-height: 1.5;
 }
 
 .owner-banner__reason-label {
-	font-weight: var(--font-weight-semibold);
-	margin-right: var(--spacing-xs);
+	font-weight: var(--kit-font-weight-semibold);
+	margin-right: var(--kit-spacing-xs);
 }
 
 .owner-banner__content {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
-	color: var(--color-primary);
+	gap: var(--kit-spacing-sm);
+	color: var(--kit-color-primary);
 }
 
 .owner-banner__text {
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-medium);
+	font-size: var(--kit-font-size-base);
+	font-weight: var(--kit-font-weight-medium);
 }
 
 .owner-banner__link {
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-primary);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-primary);
 	text-decoration: none;
 	white-space: nowrap;
-	transition: color var(--transition-fast);
+	transition: color var(--kit-transition-fast);
 
 	&:hover {
-		color: var(--color-primary-dark);
+		color: var(--kit-color-primary-dark);
 	}
 }
 </style>

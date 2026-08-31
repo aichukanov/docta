@@ -31,8 +31,8 @@ body {
 	justify-content: center;
 	background: linear-gradient(
 		135deg,
-		var(--color-auth-gradient-start) 0%,
-		var(--color-auth-gradient-end) 100%
+		var(--kit-color-auth-gradient-start) 0%,
+		var(--kit-color-auth-gradient-end) 100%
 	);
 	padding: 20px;
 	box-sizing: border-box;
@@ -57,7 +57,7 @@ body {
 	justify-content: space-between;
 	margin-bottom: 24px;
 	padding-bottom: 20px;
-	border-bottom: 1px solid var(--color-bg-tertiary);
+	border-bottom: 1px solid var(--kit-color-bg-tertiary);
 }
 
 .minimal-card__logo {

@@ -164,13 +164,13 @@ const reviewTarget = (r: RecentRealUserReview) => {
 .user-info {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .toolbar {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 	flex-wrap: wrap;
 }
 
@@ -179,7 +179,7 @@ const reviewTarget = (r: RecentRealUserReview) => {
 }
 
 .counter {
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 	font-size: 0.9em;
 }
 
@@ -193,41 +193,41 @@ const reviewTarget = (r: RecentRealUserReview) => {
 }
 
 .muted {
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 }
 
 .recent-reviews {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
-	padding-top: var(--spacing-md);
-	border-top: 1px solid var(--color-border-primary);
+	gap: var(--kit-spacing-md);
+	padding-top: var(--kit-spacing-md);
+	border-top: 1px solid var(--kit-color-border-primary);
 
 	h3 {
 		margin: 0;
-		color: var(--color-text-primary);
+		color: var(--kit-color-text-primary);
 	}
 }
 
 .empty {
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 	font-style: italic;
 }
 
 .review-card {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
-	background: var(--color-surface-secondary);
-	border: 1px solid var(--color-border-primary);
-	border-radius: var(--border-radius-md);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-md);
+	background: var(--kit-color-surface-secondary);
+	border: 1px solid var(--kit-color-border-primary);
+	border-radius: var(--kit-border-radius-md);
 }
 
 .review-header {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .review-author {
@@ -238,12 +238,12 @@ const reviewTarget = (r: RecentRealUserReview) => {
 
 .author-name {
 	font-weight: 600;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 }
 
 .author-meta {
 	font-size: 0.85em;
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 }
 
 .review-meta-right {
@@ -255,22 +255,22 @@ const reviewTarget = (r: RecentRealUserReview) => {
 
 .rating {
 	font-weight: 600;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 }
 
 .date {
 	font-size: 0.85em;
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 }
 
 .review-target {
 	font-size: 0.9em;
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 }
 
 .review-text {
 	white-space: pre-wrap;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 	line-height: 1.5;
 }
 </style>

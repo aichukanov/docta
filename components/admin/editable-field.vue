@@ -162,16 +162,16 @@ const showTranslateButton = computed(
 .field {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 
 	& > label {
-		color: var(--color-text-secondary);
+		color: var(--kit-color-text-secondary);
 		font-size: 14px;
 	}
 
 	&.modified {
 		& > label {
-			color: var(--color-warning-dark);
+			color: var(--kit-color-warning-dark);
 			font-weight: 500;
 		}
 	}
@@ -181,7 +181,7 @@ const showTranslateButton = computed(
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 
 	& > img {
 		border-radius: 8px;
@@ -193,13 +193,13 @@ const showTranslateButton = computed(
 .photo-inputs {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 	flex: 1;
 }
 
 .photo-actions {
 	display: flex;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .hidden-file-input {
@@ -208,13 +208,13 @@ const showTranslateButton = computed(
 
 .textarea-container {
 	display: flex;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 	align-items: flex-start;
 
 	.action-buttons {
 		display: flex;
 		flex-direction: column;
-		gap: var(--spacing-xs);
+		gap: var(--kit-spacing-xs);
 		margin-top: 4px;
 	}
 }

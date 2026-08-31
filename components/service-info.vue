@@ -60,25 +60,25 @@ const trackServiceLinkClick = () => {
 
 <style scoped lang="less">
 .service-wrapper {
-	background: var(--color-surface-secondary);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-md);
-	padding: var(--spacing-sm) var(--spacing-md);
-	transition: border-color var(--transition-base);
+	background: var(--kit-color-surface-secondary);
+	border: 1px solid var(--kit-color-border-light);
+	border-radius: var(--kit-border-radius-md);
+	padding: var(--kit-spacing-sm) var(--kit-spacing-md);
+	transition: border-color var(--kit-transition-base);
 
 	&:hover {
-		border-color: var(--color-primary);
+		border-color: var(--kit-color-primary);
 	}
 
 	.service-info {
 		display: flex;
 		flex-direction: column;
-		gap: var(--spacing-xs);
+		gap: var(--kit-spacing-xs);
 	}
 
 	.service-name {
 		margin: 0;
-		font-size: var(--font-size-md);
+		font-size: var(--kit-font-size-md);
 		font-weight: 500;
 		line-height: 1.3;
 		word-wrap: break-word;
@@ -86,20 +86,20 @@ const trackServiceLinkClick = () => {
 	}
 
 	.service-name-link {
-		color: var(--color-primary);
+		color: var(--kit-color-primary);
 		text-decoration: none;
 	}
 
 	.service-name-link:hover {
-		color: var(--color-primary-dark);
+		color: var(--kit-color-primary-dark);
 		text-decoration: underline;
 	}
 
 	.service-local-name {
-		font-size: var(--font-size-sm);
-		font-weight: var(--font-weight-medium);
-		color: var(--color-text-secondary);
-		margin-top: var(--spacing-xs);
+		font-size: var(--kit-font-size-sm);
+		font-weight: var(--kit-font-weight-medium);
+		color: var(--kit-color-text-secondary);
+		margin-top: var(--kit-spacing-xs);
 	}
 }
 </style>

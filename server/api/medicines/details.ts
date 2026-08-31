@@ -1,4 +1,4 @@
-import { validateBody } from '~/common/validation';
+import { isValidLocale, validateBody } from '~/common/validation';
 import { getMedicineDetails } from '~/server/common/medicines/details-service';
 import type { MedicineDetails } from '~/interfaces/medicine';
 
@@ -16,7 +16,7 @@ export default defineEventHandler(
 				return null;
 			}
 
-			return await getMedicineDetails(body.slug, body.locale || 'en');
+			return await getMedicineDetails(body.slug, isValidLocale(body.locale) ? body.locale : 'en');
 		} catch (error) {
 			console.error('API Error - medicine details:', error);
 			throw createError({

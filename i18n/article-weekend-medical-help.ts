@@ -9,7 +9,7 @@ export default {
 			WeekendMedicalHelpTitle:
 				'Pharmacies and clinics in Montenegro open on weekends',
 			WeekendMedicalHelpDescription:
-				'Where to get medical help on a Saturday or Sunday in Montenegro: round-the-clock and on-duty pharmacies, hospitals with 24/7 admission, and private clinics and laboratories that stay open on weekends. Current as of July 2026.',
+				'Where to get medical help on a Saturday or Sunday in Montenegro: 24-hour and on-duty pharmacies, hospitals with 24/7 admission, private clinics open on weekends.',
 
 			WmhToc_overview: 'What is open, and what is not',
 			WmhToc_pharmacies: 'Pharmacies: round-the-clock and on-duty',
@@ -104,7 +104,7 @@ export default {
 			WeekendMedicalHelpTitle:
 				'Аптеки и клиники в Черногории, открытые в выходные',
 			WeekendMedicalHelpDescription:
-				'Где получить медицинскую помощь в субботу и воскресенье в Черногории: круглосуточные и дежурные аптеки, больницы с круглосуточным приёмом, частные клиники и лаборатории, работающие по выходным. Актуально на июль 2026 года.',
+				'Где получить медицинскую помощь в субботу и воскресенье в Черногории: круглосуточные и дежурные аптеки, больницы с круглосуточным приёмом, частные клиники.',
 
 			WmhToc_overview: 'Что открыто, а что нет',
 			WmhToc_pharmacies: 'Аптеки: круглосуточные и дежурные',
@@ -199,7 +199,7 @@ export default {
 			WeekendMedicalHelpTitle:
 				'Apoteke i klinike u Crnoj Gori otvorene vikendom',
 			WeekendMedicalHelpDescription:
-				'Gdje potražiti medicinsku pomoć subotom ili nedjeljom u Crnoj Gori: non-stop i dežurne apoteke, bolnice sa non-stop prijemom, privatne klinike i laboratorije koje rade vikendom. Važi za jul 2026.',
+				'Gdje potražiti medicinsku pomoć subotom ili nedjeljom u Crnoj Gori: non-stop i dežurne apoteke, bolnice sa non-stop prijemom, privatne klinike vikendom.',
 
 			WmhToc_overview: 'Šta je otvoreno, a šta nije',
 			WmhToc_pharmacies: 'Apoteke: non-stop i dežurne',
@@ -294,7 +294,7 @@ export default {
 			WeekendMedicalHelpTitle:
 				'Апотеке и клинике у Црној Гори отворене викендом',
 			WeekendMedicalHelpDescription:
-				'Гдје потражити медицинску помоћ суботом или недјељом у Црној Гори: нон-стоп и дежурне апотеке, болнице са нон-стоп пријемом, приватне клинике и лабораторије које раде викендом. Важи за јул 2026.',
+				'Гдје потражити медицинску помоћ суботом или недјељом у Црној Гори: нон-стоп и дежурне апотеке, болнице са нон-стоп пријемом, приватне клинике викендом.',
 
 			WmhToc_overview: 'Шта је отворено, а шта није',
 			WmhToc_pharmacies: 'Апотеке: нон-стоп и дежурне',
@@ -389,7 +389,7 @@ export default {
 			WeekendMedicalHelpTitle:
 				'Apotheken und Kliniken in Montenegro, die am Wochenende geöffnet haben',
 			WeekendMedicalHelpDescription:
-				'Wo Sie in Montenegro samstags oder sonntags medizinische Hilfe finden: durchgehend geöffnete und Notdienst-Apotheken, Krankenhäuser mit 24-Stunden-Aufnahme sowie private Kliniken und Labore, die am Wochenende geöffnet sind. Stand: Juli 2026.',
+				'Medizinische Hilfe am Samstag oder Sonntag in Montenegro: 24-Stunden- und Notdienst-Apotheken, Krankenhäuser mit 24-Stunden-Aufnahme, Privatkliniken am Wochenende.',
 
 			WmhToc_overview: 'Was geöffnet ist — und was nicht',
 			WmhToc_pharmacies: 'Apotheken: durchgehend und im Notdienst',
@@ -484,7 +484,7 @@ export default {
 			WeekendMedicalHelpTitle:
 				"Karadağ'da hafta sonu açık eczaneler ve klinikler",
 			WeekendMedicalHelpDescription:
-				"Karadağ'da cumartesi veya pazar günü nereden tıbbi yardım alınır: 24 saat açık ve nöbetçi eczaneler, 7/24 kabul yapan hastaneler, hafta sonu açık özel klinikler ve laboratuvarlar. Temmuz 2026 itibarıyla günceldir.",
+				"Karadağ'da cumartesi veya pazar günü nereden tıbbi yardım alınır: 24 saat açık ve nöbetçi eczaneler, 7/24 kabul yapan hastaneler, hafta sonu açık özel klinikler.",
 
 			WmhToc_overview: 'Ne açık, ne kapalı',
 			WmhToc_pharmacies: 'Eczaneler: 24 saat açık ve nöbetçi',

@@ -128,3 +128,113 @@ test.describe('getCanonicalUrl — регрессы, которые нельзя
 		);
 	});
 });
+
+// Поверхность дублей, которую нельзя перечислить денайлистом: мусорные
+// query-параметры приходят снаружи (шеры в Facebook, промо-посты в Telegram,
+// реклама), и каждый такой URL раньше становился самоканоничным дублём со
+// своим кластером из семи hreflang.
+test.describe('getCanonicalUrl — мусорные параметры (allowlist)', () => {
+	const junk = [
+		'utm_source',
+		'utm_medium',
+		'utm_campaign',
+		'utm_term',
+		'utm_content',
+		'fbclid',
+		'gclid',
+		'yclid',
+		'msclkid',
+	];
+
+	for (const key of junk) {
+		test(`${key} вырезается`, () => {
+			expect(getCanonicalUrl('/doctors', { [key]: 'xyz123' }, SR)).toBe(
+				'https://docta.me/doctors',
+			);
+		});
+	}
+
+	test('мусор вырезается, фасет остаётся', () => {
+		expect(
+			getCanonicalUrl(
+				'/doctors',
+				{ fbclid: 'IwAR0', specialtyIds: '5', utm_source: 'telegram' },
+				SR,
+			),
+		).toBe('https://docta.me/doctors?specialtyIds=5');
+	});
+
+	test('неизвестный ключ не попадает в canonical', () => {
+		expect(getCanonicalUrl('/clinics', { hello: 'world' }, 'ru')).toBe(
+			'https://docta.me/clinics?lang=ru',
+		);
+	});
+});
+
+test.describe('getCanonicalUrl — осмысленные ключи остаются', () => {
+	// sort исключать нельзя: на страницах отзывов он меняет состав конкретной
+	// страницы пагинации, и `?sort=X&page=2` — не то же самое, что `?page=2`.
+	// Порядок тот же, что был до перехода на allowlist: `page` стоит в
+	// CANONICAL_QUERY_ORDER, `sort` — нет, поэтому он уезжает в хвост.
+	test('sort остаётся вместе с page', () => {
+		expect(
+			getCanonicalUrl(
+				'/doctors/ivanov/reviews',
+				{ sort: 'rating-desc', page: '2' },
+				SR,
+			),
+		).toBe('https://docta.me/doctors/ivanov/reviews?page=2&sort=rating-desc');
+	});
+
+	test('sort переживает соседство с мусором', () => {
+		const url = getCanonicalUrl(
+			'/clinics/x/reviews',
+			{ sort: 'newest', fbclid: 'abc' },
+			SR,
+		);
+		expect(url).toContain('sort=newest');
+		expect(url).not.toContain('fbclid');
+	});
+
+	// Страницы внутреннего поиска и нестабильных фильтров закрыты через
+	// noindex — canonical у них обязан оставаться self, иначе к noindex
+	// добавится второй, противоречащий сигнал.
+	const kept: Array<[string, Record<string, string>]> = [
+		['name', { name: 'petrov' }],
+		['search', { search: 'krv' }],
+		['category', { category: '3' }],
+		['openNow', { openNow: 'true' }],
+		['minRating', { minRating: '4' }],
+		['clinicIds', { clinicIds: '88' }],
+		['atcClassCodes', { atcClassCodes: 'R06' }],
+		['pharmaFormIds', { pharmaFormIds: '2' }],
+		['manufacturerIds', { manufacturerIds: '7' }],
+	];
+
+	for (const [key, query] of kept) {
+		test(`${key} остаётся в canonical`, () => {
+			expect(getCanonicalUrl('/doctors', query, SR)).toContain(
+				`${key}=${Object.values(query)[0]}`,
+			);
+		});
+	}
+
+	// Оба ключа не имели места в CANONICAL_QUERY_ORDER, из-за чего сортировались
+	// по появлению: перестановка давала два разных canonical на одну выборку.
+	test('перестановка фасетов лекарств даёт один canonical', () => {
+		const a = getCanonicalUrl(
+			'/medicines',
+			{ medicineCategoryIds: '1', dispensingModeIds: '2' },
+			SR,
+		);
+		const b = getCanonicalUrl(
+			'/medicines',
+			{ dispensingModeIds: '2', medicineCategoryIds: '1' },
+			SR,
+		);
+		expect(a).toBe(b);
+		expect(a).toBe(
+			'https://docta.me/medicines?medicineCategoryIds=1&dispensingModeIds=2',
+		);
+	});
+});

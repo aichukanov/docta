@@ -1,6 +1,7 @@
 import { LIST_PAGE_SIZE } from '~/common/constants';
 import { doctorIsPublicSql } from '~/server/common/doctor-visibility';
 import {
+	isValidLocale,
 	validateBody,
 	validateCityIds,
 	validateDoctorLanguageIds,
@@ -68,7 +69,7 @@ export async function getDoctorList(
 		sort?: 'name-asc' | 'rating-desc';
 	} = {},
 ) {
-	const locale = body.locale || 'en';
+	const locale = isValidLocale(body.locale) ? body.locale : 'en';
 	const whereFilters: string[] = [];
 	const queryParams: Array<number | string> = [];
 	const usePagination = body.page != null;

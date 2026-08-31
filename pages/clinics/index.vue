@@ -96,6 +96,9 @@ useFilterTracking('clinics');
 const sortByDistance = computed(() => !!userLocation.value);
 
 const filterList = computed(() => ({
+	// Карточки списка описание не показывают — оно есть только на странице
+	// клиники, у которой свой эндпоинт деталей.
+	fields: 'directory' as const,
 	cityIds: cityIds.value,
 	languageIds: languageIds.value,
 	clinicTypeIds: clinicTypeIds.value,
@@ -132,6 +135,10 @@ const { pending: isLoadingClinics, data: clinicsList } = await useFetch(
 // Грузится только на клиенте; в режиме списка тоже используется —
 // боковая карта показывает отфильтрованные клиники, а не все подряд.
 const mapFilterList = computed(() => ({
+	// Тот же справочный режим, и здесь он важнее всего: запрос идёт без
+	// пагинации, то есть описания приехали бы сразу по всем клиникам фильтра,
+	// а карте нужны только координаты, имя и слаг.
+	fields: 'directory' as const,
 	cityIds: cityIds.value,
 	languageIds: languageIds.value,
 	clinicTypeIds: clinicTypeIds.value,
@@ -290,6 +297,7 @@ watchEffect(() => {
 	<ListPage
 		filter-namespace="clinics"
 		:pageTitle="pageTitleWithCount"
+		:pageTitleBase="pageTitle"
 		:pageDescription="pageDescription"
 		:list="clinicsList?.clinics || []"
 		:totalCount="clinicsList?.totalCount || 0"
@@ -377,7 +385,7 @@ watchEffect(() => {
 	:deep(.el-radio-button__inner) {
 		display: inline-flex;
 		align-items: center;
-		gap: var(--spacing-xs);
+		gap: var(--kit-spacing-xs);
 	}
 }
 
@@ -392,14 +400,14 @@ watchEffect(() => {
 .map-view-exit {
 	display: none;
 	position: absolute;
-	bottom: var(--spacing-2xl);
+	bottom: var(--kit-spacing-2xl);
 	left: 50%;
 	transform: translateX(-50%);
-	z-index: var(--z-dropdown);
-	box-shadow: var(--shadow-lg);
+	z-index: var(--kit-z-dropdown);
+	box-shadow: var(--kit-shadow-lg);
 
 	.el-icon {
-		margin-right: var(--spacing-xs);
+		margin-right: var(--kit-spacing-xs);
 	}
 }
 

@@ -3,6 +3,8 @@ import { getRegionalQuery } from '~/common/url-utils';
 import type { UserAdminListItem } from '~/server/api/users/admin-list';
 import type { RecentRealUserReview } from '~/server/api/reviews/recent-from-real-users';
 
+const toast = useToast();
+
 // Проверка авторизации
 definePageMeta({
 	middleware: 'admin-auth',
@@ -177,7 +179,10 @@ async function loadClinicsData() {
 
 	isLoadingClinics.value = true;
 	try {
-		await clinicsStore.fetchClinics();
+		// Полный ответ, а не справочный: форма правки клиники подставляет
+		// описание из списка, когда админский эндпоинт деталей недоступен
+		// (components/admin/clinic-find.vue) — без описаний она затёрла бы их.
+		await clinicsStore.fetchClinics({ full: true });
 		loadedTabs.value.clinics = true;
 	} catch (error) {
 		console.error('Failed to load clinics:', error);
@@ -293,10 +298,10 @@ async function recalculateRankScores() {
 	isRecalculatingRanks.value = true;
 	try {
 		await $fetch('/api/admin/recalculate-rank-scores', { method: 'POST' });
-		ElMessage.success('Ранжирование пересчитано');
+		toast.success('Ранжирование пересчитано');
 	} catch (error) {
 		console.error('Failed to recalculate rank scores:', error);
-		ElMessage.error('Ошибка пересчёта ранжирования');
+		toast.error('Ошибка пересчёта ранжирования');
 	} finally {
 		isRecalculatingRanks.value = false;
 	}
@@ -551,7 +556,7 @@ async function recalculateRankScores() {
 
 .user-email {
 	font-size: 14px;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 	font-weight: 500;
 }
 

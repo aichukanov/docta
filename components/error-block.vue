@@ -35,25 +35,25 @@ const { t } = useI18n();
 
 <style scoped>
 .error-inline {
-	border: 1px solid var(--color-border-secondary, #e5e7eb);
+	border: 1px solid var(--kit-color-border-secondary, #e5e7eb);
 	border-radius: 8px;
 	padding: 16px;
-	background: var(--color-bg-primary);
+	background: var(--kit-color-bg-primary);
 	text-align: center;
 }
 .error-inline__code {
 	font-size: 32px;
 	font-weight: 800;
-	color: var(--color-primary, #4f46e5);
+	color: var(--kit-color-primary, #4f46e5);
 	margin-bottom: 8px;
 }
 .error-inline__title {
 	font-weight: 700;
-	font-size: var(--font-size-xl);
+	font-size: var(--kit-font-size-xl);
 	margin: 0;
 }
 .error-inline__message {
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 	margin: 8px 0 0 0;
 }
 </style>

@@ -10,7 +10,7 @@ export default {
 			'PharmaciesTitle':
 				'Pharmacies and medications in Montenegro: prescriptions, analogs, what to bring',
 			'PharmaciesDescription':
-				'How pharmacies work in Montenegro: the state Montefarm chain and private Benu and Tea Medica, on-duty pharmacies, e-prescriptions and why foreign prescriptions are not accepted, free medications from the Fund list, and how to find local analogs of your usual drugs. Current as of July 2026.',
+				'How pharmacies work in Montenegro: the state Montefarm chain and private ones like Benu, on-duty pharmacies, and why a foreign prescription is not accepted.',
 
 			'PhaToc_pharmacies':
 				'How pharmacies work: Montefarm, private chains, on-duty',
@@ -98,7 +98,7 @@ export default {
 			'PharmaciesTitle':
 				'Аптеки и лекарства в Черногории: рецепты, аналоги, что взять с собой',
 			'PharmaciesDescription':
-				'Как работают аптеки в Черногории: государственная сеть Montefarm и частные Benu и Tea Medica, дежурные аптеки, электронные рецепты и почему иностранный рецепт не примут, бесплатные лекарства по списку Фонда и как искать аналоги привычных препаратов. Актуально на июль 2026 года.',
+				'Как работают аптеки в Черногории: государственная сеть Montefarm и частные вроде Benu и Tea Medica, дежурные аптеки и почему иностранный рецепт не примут.',
 
 			'PhaToc_pharmacies':
 				'Как работают аптеки: Montefarm, частные сети, дежурные',
@@ -186,7 +186,7 @@ export default {
 			'PharmaciesTitle':
 				'Apoteke i ljekovi u Crnoj Gori: recepti, analozi, šta ponijeti sa sobom',
 			'PharmaciesDescription':
-				'Kako rade apoteke u Crnoj Gori: državni lanac Montefarm i privatni Benu i Tea Medica, dežurne apoteke, elektronski recepti i zašto strani recept neće biti prihvaćen, besplatni ljekovi sa liste Fonda i kako tražiti analoge uobičajenih preparata. Važi za jul 2026.',
+				'Kako rade apoteke u Crnoj Gori: državni lanac Montefarm i privatni lanci poput Benu i Tea Medica, dežurne apoteke i zašto strani recept neće biti prihvaćen.',
 
 			'PhaToc_pharmacies':
 				'Kako rade apoteke: Montefarm, privatni lanci, dežurne',
@@ -274,7 +274,7 @@ export default {
 			'PharmaciesTitle':
 				'Апотеке и љекови у Црној Гори: рецепти, аналози, шта понијети са собом',
 			'PharmaciesDescription':
-				'Како раде апотеке у Црној Гори: државни ланац Montefarm и приватни Benu и Tea Medica, дежурне апотеке, електронски рецепти и зашто страни рецепт неће бити прихваћен, бесплатни љекови са листе Фонда и како тражити аналоге уобичајених препарата. Важи за јул 2026.',
+				'Како раде апотеке у Црној Гори: државни ланац Montefarm и приватни ланци попут Benu и Tea Medica, дежурне апотеке и зашто страни рецепт неће бити прихваћен.',
 
 			'PhaToc_pharmacies':
 				'Како раде апотеке: Montefarm, приватни ланци, дежурне',
@@ -362,7 +362,7 @@ export default {
 			'PharmaciesTitle':
 				'Apotheken und Medikamente in Montenegro: Rezepte, Generika, was man mitnehmen sollte',
 			'PharmaciesDescription':
-				'So funktionieren Apotheken in Montenegro: die staatliche Kette Montefarm und die privaten Benu und Tea Medica, Notdienst-Apotheken, E-Rezepte und warum ausländische Rezepte nicht akzeptiert werden, kostenlose Medikamente von der Fondsliste und wie man lokale Pendants gewohnter Präparate findet. Stand: Juli 2026.',
+				'So funktionieren Apotheken in Montenegro: die staatliche Kette Montefarm und private wie Benu, Notdienst-Apotheken und warum ausländische Rezepte hier nicht gelten.',
 
 			'PhaToc_pharmacies':
 				'So funktionieren Apotheken: Montefarm, private Ketten, Notdienst',
@@ -453,7 +453,7 @@ export default {
 			'PharmaciesTitle':
 				"Karadağ'da eczaneler ve ilaçlar: reçeteler, muadiller, yanınızda ne getirmelisiniz",
 			'PharmaciesDescription':
-				"Karadağ'da eczaneler nasıl çalışır: devlet zinciri Montefarm ile özel Benu ve Tea Medica, nöbetçi eczaneler, e-reçeteler ve yabancı reçetelerin neden kabul edilmediği, Fon listesinden ücretsiz ilaçlar ve alıştığınız ilaçların yerel muadillerini bulma yolları. Temmuz 2026 itibarıyla günceldir.",
+				"Karadağ'da eczaneler nasıl çalışır: devlet zinciri Montefarm ile Benu gibi özel zincirler, nöbetçi eczaneler ve yabancı reçetelerin neden kabul edilmediği.",
 
 			'PhaToc_pharmacies':
 				'Eczaneler nasıl çalışır: Montefarm, özel zincirler, nöbetçiler',

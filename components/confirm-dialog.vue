@@ -49,19 +49,19 @@ const handleCancel = () => {
 
 <style scoped>
 .confirm-body {
-	font-size: var(--font-size-base);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-base);
+	color: var(--kit-color-text-secondary);
 	line-height: 1.5;
 }
 
 .confirm-btn {
-	padding: var(--spacing-sm) var(--spacing-lg);
-	border-radius: var(--border-radius-md);
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-medium);
+	padding: var(--kit-spacing-sm) var(--kit-spacing-lg);
+	border-radius: var(--kit-border-radius-md);
+	font-size: var(--kit-font-size-base);
+	font-weight: var(--kit-font-weight-medium);
 	cursor: pointer;
 	border: none;
-	transition: opacity var(--transition-base);
+	transition: opacity var(--kit-transition-base);
 }
 
 .confirm-btn:hover {
@@ -69,17 +69,17 @@ const handleCancel = () => {
 }
 
 .confirm-btn.cancel {
-	background: var(--color-bg-secondary);
-	color: var(--color-text-secondary);
+	background: var(--kit-color-bg-secondary);
+	color: var(--kit-color-text-secondary);
 }
 
 .confirm-btn.primary {
-	background: var(--color-primary);
-	color: var(--color-bg-primary);
+	background: var(--kit-color-primary);
+	color: var(--kit-color-bg-primary);
 }
 
 .confirm-btn.danger {
-	background: var(--color-danger-dark, #991b1b);
+	background: var(--kit-color-danger-dark, #991b1b);
 	color: #fff;
 }
 </style>

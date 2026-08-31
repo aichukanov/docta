@@ -7,7 +7,7 @@ import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
 import { fetchClinicCoupons } from '~/server/common/clinic-coupons';
 import type { ClinicItemsSummary, ClinicStatus } from '~/interfaces/clinic';
 import type { ClinicCoupon } from '~/interfaces/clinic-coupon';
-import { validateBody } from '~/common/validation';
+import { isValidLocale, validateBody } from '~/common/validation';
 
 export interface ClinicItemsSummaryResponse {
 	id: number;
@@ -40,7 +40,7 @@ export default defineEventHandler(
 				return null;
 			}
 
-			const locale = body.locale || 'en';
+			const locale = isValidLocale(body.locale) ? body.locale : 'en';
 			const connection = await getConnection();
 			// Статус, hidden и владельца читаем, а не фильтруем в SQL: подстранице
 			// нужно отличить «нет такой клиники» (404) от «скрыта админом» (410),

@@ -64,18 +64,18 @@ onBeforeUnmount(() => setAppInert(false));
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: var(--spacing-lg);
+	padding: var(--kit-spacing-lg);
 	background: rgba(0, 0, 0, 0.4);
 	backdrop-filter: blur(4px);
 }
 
 .dialog-panel {
-	background: var(--color-bg-primary);
-	border-radius: var(--border-radius-xl);
+	background: var(--kit-color-bg-primary);
+	border-radius: var(--kit-border-radius-xl);
 	width: 100%;
-	max-height: calc(100vh - 2 * var(--spacing-lg));
+	max-height: calc(100vh - 2 * var(--kit-spacing-lg));
 	overflow-y: auto;
-	box-shadow: var(--shadow-lg);
+	box-shadow: var(--kit-shadow-lg);
 	display: flex;
 	flex-direction: column;
 }
@@ -84,42 +84,42 @@ onBeforeUnmount(() => setAppInert(false));
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: var(--spacing-lg) var(--spacing-xl);
-	border-bottom: var(--border-width-thin) solid var(--color-border-secondary);
+	padding: var(--kit-spacing-lg) var(--kit-spacing-xl);
+	border-bottom: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
 }
 
 .dialog-title {
 	margin: 0;
-	font-size: var(--font-size-lg);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-lg);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 }
 
 .dialog-close {
 	background: none;
 	border: none;
-	font-size: var(--font-size-3xl);
+	font-size: var(--kit-font-size-3xl);
 	line-height: 1;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 	cursor: pointer;
-	padding: 0 var(--spacing-xs);
-	transition: color var(--transition-base);
+	padding: 0 var(--kit-spacing-xs);
+	transition: color var(--kit-transition-base);
 }
 
 .dialog-close:hover {
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 }
 
 .dialog-body {
-	padding: var(--spacing-xl);
+	padding: var(--kit-spacing-xl);
 }
 
 .dialog-footer {
 	display: flex;
 	justify-content: flex-end;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-lg) var(--spacing-xl);
-	border-top: var(--border-width-thin) solid var(--color-border-secondary);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-lg) var(--kit-spacing-xl);
+	border-top: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
 }
 
 .app-dialog-enter-active,

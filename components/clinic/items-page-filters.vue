@@ -94,7 +94,7 @@ const sortModel = computed({
 .items-page-filters {
 	display: grid;
 	grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 
 	@media (max-width: 760px) {
 		grid-template-columns: 1fr;

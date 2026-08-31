@@ -59,13 +59,13 @@ const { t } = useI18n({ useScope: 'local' });
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	gap: var(--spacing-sm);
-	margin-bottom: var(--spacing-lg);
+	gap: var(--kit-spacing-sm);
+	margin-bottom: var(--kit-spacing-lg);
 }
 
 .active-filters__title {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 </style>
 

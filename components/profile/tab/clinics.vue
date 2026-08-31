@@ -5,6 +5,8 @@ import { ERROR_CODES } from '~/server/utils/api-codes';
 import type { ClinicMyListItem } from '~/server/api/clinics/my-list';
 import type { ClinicStatus } from '~/interfaces/clinic';
 
+const toast = useToast();
+
 const { t } = useI18n({
 	useScope: 'local',
 	messages: clinicProfileI18n.messages,
@@ -52,14 +54,14 @@ async function setStatus(clinic: ClinicMyListItem, action: 'publish' | 'hide') {
 		if (result.data?.status) {
 			clinic.status = result.data.status;
 		}
-		ElMessage.success(t('StatusUpdated'));
+		toast.success(t('StatusUpdated'));
 	} catch (e: any) {
 		if (e?.data?.data?.code === ERROR_CODES.CLINIC_INCOMPLETE) {
-			ElMessage.warning(t('ErrorClinicIncomplete'));
+			toast.warning(t('ErrorClinicIncomplete'));
 		} else if (e?.data?.data?.code === ERROR_CODES.CLINIC_HIDDEN_BY_ADMIN) {
-			ElMessage.warning(t('ErrorClinicHiddenByAdmin'));
+			toast.warning(t('ErrorClinicHiddenByAdmin'));
 		} else {
-			ElMessage.error(t('ErrorUpdatingStatus'));
+			toast.error(t('ErrorUpdatingStatus'));
 		}
 	} finally {
 		togglingId.value = null;
@@ -102,22 +104,22 @@ async function setStatus(clinic: ClinicMyListItem, action: 'publish' | 'hide') {
 
 <style scoped>
 .clinics-tab__header {
-	background: var(--color-bg-primary);
-	border-radius: var(--border-radius-xl);
-	border: 1px solid var(--color-border-secondary);
-	box-shadow: var(--shadow-sm);
-	padding: var(--spacing-lg) var(--spacing-2xl);
+	background: var(--kit-color-bg-primary);
+	border-radius: var(--kit-border-radius-xl);
+	border: 1px solid var(--kit-color-border-secondary);
+	box-shadow: var(--kit-shadow-sm);
+	padding: var(--kit-spacing-lg) var(--kit-spacing-2xl);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 	flex-wrap: wrap;
 }
 
 .clinics-tab__header-left {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .clinics-tab__icon {
@@ -126,22 +128,22 @@ async function setStatus(clinic: ClinicMyListItem, action: 'publish' | 'hide') {
 	justify-content: center;
 	width: 40px;
 	height: 40px;
-	border-radius: var(--border-radius-lg);
-	background: var(--color-primary-bg);
-	color: var(--color-primary);
+	border-radius: var(--kit-border-radius-lg);
+	background: var(--kit-color-primary-bg);
+	color: var(--kit-color-primary);
 	flex-shrink: 0;
 }
 
 .clinics-tab__title {
-	font-size: var(--font-size-2xl);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-2xl);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	margin: 0;
 }
 
 @media (max-width: 640px) {
 	.clinics-tab__header {
-		padding: var(--spacing-lg);
+		padding: var(--kit-spacing-lg);
 	}
 }
 </style>

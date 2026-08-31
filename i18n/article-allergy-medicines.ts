@@ -52,7 +52,7 @@ export default {
 			AlgTitle:
 				'Allergy medicines in Montenegro: what to take instead of Zyrtec',
 			AlgDescription:
-				'Cetirizine (Zyrtec, Zodak, Cetrin) is not registered in Montenegro. Which antihistamines local pharmacies actually stock over the counter and on prescription, how to match your usual brand by active ingredient, which forms exist for children, and what to bring from home. Current as of August 2026.',
+				'Cetirizine (Zyrtec, Zodak) is not registered in Montenegro. Which antihistamines are sold here with or without a prescription, and how to match yours by ingredient.',
 
 			AlgToc_zyrtec: 'Cetirizine is not registered here',
 			AlgToc_otc: 'What you can buy over the counter',
@@ -209,7 +209,7 @@ export default {
 				'For desloratadine, bilastine or a steroid nasal spray you can go to an ',
 			AlgRecipe2Link: 'allergist',
 			AlgRecipe2Mid:
-				', while ordinary seasonal rhinitis is well within the scope of a family doctor or the doctor on duty at a private clinic. Our catalog lists the languages each doctor sees patients in — ',
+				', while ordinary seasonal rhinitis — pollen season, in other words — is well within the scope of a family doctor or the doctor on duty at a private clinic. Our catalog lists the languages each doctor sees patients in — ',
 			AlgRecipe2Link2: 'find a doctor who speaks your language',
 			AlgRecipe2End: '.',
 			AlgRecipe3a:
@@ -238,7 +238,7 @@ export default {
 		'ru': {
 			AlgTitle: 'Чем заменить Зиртек в Черногории: антигистаминные в аптеках',
 			AlgDescription:
-				'Цетиризина (Зиртек, Зодак, Цетрин) в черногорском реестре нет. Какие антигистаминные есть в аптеках Черногории без рецепта и по рецепту, чем заменить привычный бренд по действующему веществу, какие формы есть для детей и что стоит привезти с собой. Актуально на август 2026 года.',
+				'Цетиризина (Зиртек, Зодак) в реестре Черногории нет. Какие антигистаминные продают без рецепта и по рецепту и чем заменить привычный бренд по действующему веществу.',
 
 			AlgToc_zyrtec: 'Цетиризина в Черногории нет',
 			AlgToc_otc: 'Что можно купить без рецепта',
@@ -392,7 +392,7 @@ export default {
 				'За рецептом на дезлоратадин, биластин или гормональный спрей можно идти к ',
 			AlgRecipe2Link: 'аллергологу',
 			AlgRecipe2Mid:
-				', а с обычным сезонным ринитом справится семейный врач или дежурный врач частной клиники. В нашем каталоге у каждого врача указаны языки приёма — ',
+				', а с обычным сезонным ринитом (пыльца, цветение) справится семейный врач или дежурный врач частной клиники. В нашем каталоге у каждого врача указаны языки приёма — ',
 			AlgRecipe2Link2: 'найдите врача, говорящего на вашем языке',
 			AlgRecipe2End: '.',
 			AlgRecipe3a:
@@ -422,7 +422,7 @@ export default {
 			AlgTitle:
 				'Čime zamijeniti Zyrtec u Crnoj Gori: antihistaminici u apotekama',
 			AlgDescription:
-				'Cetirizina (Zyrtec, Zodak, Cetrin) nema u crnogorskom registru. Koji antihistaminici se u apotekama u Crnoj Gori izdaju bez recepta i na recept, kako pronaći poznati brend po aktivnoj supstanci, koji oblici postoje za djecu i šta vrijedi donijeti od kuće. Važi za avgust 2026.',
+				'Cetirizina (Zyrtec, Zodak) nema u registru Crne Gore. Koji antihistaminici se ovdje izdaju bez recepta i na recept i kako naći poznati brend po aktivnoj supstanci.',
 
 			AlgToc_zyrtec: 'Cetirizina u Crnoj Gori nema',
 			AlgToc_otc: 'Šta se može kupiti bez recepta',
@@ -577,7 +577,7 @@ export default {
 				'Za recept na desloratadin, bilastin ili hormonski sprej možete kod ',
 			AlgRecipe2Link: 'alergologa',
 			AlgRecipe2Mid:
-				', a sa običnim sezonskim rinitisom izaći će na kraj i porodični ljekar ili ljekar na dežurstvu u privatnoj klinici. U našem katalogu je za svakog ljekara naveden jezik na kojem prima — ',
+				', a sa običnim sezonskim rinitisom (polen, cvjetanje) izaći će na kraj i porodični ljekar ili ljekar na dežurstvu u privatnoj klinici. U našem katalogu je za svakog ljekara naveden jezik na kojem prima — ',
 			AlgRecipe2Link2: 'nađite ljekara koji govori vaš jezik',
 			AlgRecipe2End: '.',
 			AlgRecipe3a:
@@ -607,7 +607,7 @@ export default {
 			AlgTitle:
 				'Чиме замијенити Zyrtec у Црној Гори: антихистаминици у апотекама',
 			AlgDescription:
-				'Цетиризина (Zyrtec, Zodak, Cetrin) нема у црногорском регистру. Који антихистаминици се у апотекама у Црној Гори издају без рецепта и на рецепт, како пронаћи познати бренд по активној супстанци, који облици постоје за дјецу и шта вриједи донијети од куће. Важи за август 2026.',
+				'Цетиризина (Zyrtec, Zodak) нема у регистру Црне Горе. Који антихистаминици се овдје издају без рецепта и на рецепт и како наћи познати бренд по активној супстанци.',
 
 			AlgToc_zyrtec: 'Цетиризина у Црној Гори нема',
 			AlgToc_otc: 'Шта се може купити без рецепта',
@@ -762,7 +762,7 @@ export default {
 				'За рецепт на деслоратадин, биластин или хормонски спреј можете код ',
 			AlgRecipe2Link: 'алерголога',
 			AlgRecipe2Mid:
-				', а са обичним сезонским ринитисом изаћи ће на крај и породични љекар или љекар на дежурству у приватној клиници. У нашем каталогу је за сваког љекара наведен језик на којем прима — ',
+				', а са обичним сезонским ринитисом (полен, цвјетање) изаћи ће на крај и породични љекар или љекар на дежурству у приватној клиници. У нашем каталогу је за сваког љекара наведен језик на којем прима — ',
 			AlgRecipe2Link2: 'нађите љекара који говори ваш језик',
 			AlgRecipe2End: '.',
 			AlgRecipe3a:
@@ -792,7 +792,7 @@ export default {
 			AlgTitle:
 				'Zyrtec in Montenegro ersetzen: Antihistaminika in den Apotheken',
 			AlgDescription:
-				'Cetirizin (Zyrtec, Zodak) ist in Montenegro nicht zugelassen. Welche Antihistaminika die Apotheken hier rezeptfrei und auf Rezept führen, wie Sie Ihr gewohntes Präparat über den Wirkstoff finden, welche Formen es für Kinder gibt und was Sie besser mitbringen. Stand: August 2026.',
+				'Cetirizin (Zyrtec, Zodak) ist in Montenegro nicht zugelassen. Welche Antihistaminika es hier mit und ohne Rezept gibt und wie Sie Ersatz über den Wirkstoff finden.',
 
 			AlgToc_zyrtec: 'Cetirizin ist hier nicht zugelassen',
 			AlgToc_otc: 'Was es rezeptfrei gibt',
@@ -948,7 +948,7 @@ export default {
 				'Für ein Rezept auf Desloratadin, Bilastin oder ein Kortisonspray können Sie zu einer ',
 			AlgRecipe2Link: 'Allergologin oder einem Allergologen',
 			AlgRecipe2Mid:
-				' gehen; bei gewöhnlichem Heuschnupfen genügt die Hausärztin oder der Bereitschaftsarzt einer Privatklinik. In unserem Katalog steht bei jedem Arzt, in welchen Sprachen er behandelt — ',
+				' gehen; bei gewöhnlichem Heuschnupfen — also der Pollen-Saison — genügt die Hausärztin oder der Bereitschaftsarzt einer Privatklinik. In unserem Katalog steht bei jedem Arzt, in welchen Sprachen er behandelt — ',
 			AlgRecipe2Link2: 'finden Sie einen Arzt, der Ihre Sprache spricht',
 			AlgRecipe2End: '.',
 			AlgRecipe3a:
@@ -978,7 +978,7 @@ export default {
 			AlgTitle:
 				'Karadağ’da Zyrtec yerine ne var: eczanelerde antihistaminikler',
 			AlgDescription:
-				'Setirizin (Zyrtec, Zodak) Karadağ’da ruhsatlı değil. Buradaki eczanelerde reçetesiz ve reçeteyle hangi antihistaminikler bulunur, alıştığınız markayı etkin maddesinden nasıl bulursunuz, çocuklar için hangi formlar var ve yanınızda ne getirmelisiniz. Ağustos 2026 itibarıyla geçerlidir.',
+				'Setirizin (Zyrtec, Zodak) Karadağ’da ruhsatlı değil. Eczanelerde reçetesiz ve reçeteyle hangi antihistaminikler var, markanızı etkin maddesinden nasıl bulursunuz.',
 
 			AlgToc_zyrtec: 'Setirizin burada ruhsatlı değil',
 			AlgToc_otc: 'Reçetesiz alınabilenler',
@@ -1132,7 +1132,7 @@ export default {
 				'Desloratadin, bilastin veya kortizonlu sprey reçetesi için bir ',
 			AlgRecipe2Link: 'alerji uzmanına',
 			AlgRecipe2Mid:
-				' gidebilirsiniz; sıradan mevsimsel rinit için aile hekimi ya da özel klinikteki nöbetçi hekim yeterli olur. Kataloğumuzda her hekimin hangi dillerde hasta kabul ettiği yazılıdır — ',
+				' gidebilirsiniz; sıradan mevsimsel rinit, yani polen mevsimi için aile hekimi ya da özel klinikteki nöbetçi hekim yeterli olur. Kataloğumuzda her hekimin hangi dillerde hasta kabul ettiği yazılıdır — ',
 			AlgRecipe2Link2: 'dilinizi konuşan bir hekim bulun',
 			AlgRecipe2End: '.',
 			AlgRecipe3a:

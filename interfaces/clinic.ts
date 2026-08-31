@@ -65,7 +65,13 @@ export interface ClinicData extends ContactList, Coordinates {
 	town: string;
 	postalCode?: string;
 	languageIds: string;
-	description: string;
+	/**
+	 * Отсутствует в справочном режиме `/api/clinics/list` (`fields:
+	 * 'directory'`), которым питается стор клиник: карточкам листинга и
+	 * маркерам карты описание не нужно, а весит оно больше всего остального.
+	 * Страницы клиники и админка получают его через свои эндпоинты.
+	 */
+	description?: string;
 	logoUrl?: string;
 	features: BillingService[];
 	// Активный купон на скидку (лучший, если их несколько) — см.

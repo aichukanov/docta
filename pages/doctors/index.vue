@@ -272,6 +272,7 @@ watchEffect(() => {
 	<ListPage
 		filter-namespace="doctors"
 		:pageTitle="pageTitleWithCount"
+		:pageTitleBase="pageTitle"
 		:pageDescription="pageDescription"
 		:list="doctorsData.doctors"
 		:totalCount="doctorsData.totalCount"

@@ -21,6 +21,20 @@ export function validateBody(body: any, from: string) {
 	return true;
 }
 
+/**
+ * Локаль пришла из недоверенного источника (тело запроса, `?lang=`).
+ *
+ * Серверный код выбирает по локали колонку с переводом, поэтому значение
+ * обязано быть одним из известных — произвольную строку нельзя ни подставлять
+ * в SQL, ни использовать как ключ. Совпадает по форме с `isValidSort`
+ * (server/common/reviews.ts): вызывающий сам решает, чем подменить негодное.
+ */
+export function isValidLocale(value: unknown): value is Locale {
+	return (
+		typeof value === 'string' && locales.includes(value as (typeof locales)[number])
+	);
+}
+
 export function validateName({ name }: { name?: unknown }, from: string) {
 	if (typeof name !== 'string') {
 		showError(from, 'Invalid name: must be a string');

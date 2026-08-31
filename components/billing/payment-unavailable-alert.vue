@@ -25,7 +25,7 @@ const { t } = useI18n({
 <style scoped>
 .payment-alert__email {
 	color: inherit;
-	font-weight: var(--font-weight-semibold);
+	font-weight: var(--kit-font-weight-semibold);
 	text-decoration: underline;
 }
 </style>

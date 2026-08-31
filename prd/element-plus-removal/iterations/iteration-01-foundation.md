@@ -32,16 +32,16 @@ baseline бандла. Обкатать кит на тривиальных за�
 
 ### Тосты
 
-- [ ] `composables/use-toast.ts` + `components/ui/app-toaster.vue` (Teleport, `--z-tooltip`, `aria-live="polite"`, автозакрытие, очередь).
-- [ ] Подключить `AppToaster` в `app.vue`.
+- [ ] `composables/use-toast.ts` + `components/ui/app-toaster.vue` (Teleport, `--kit-z-tooltip`, `aria-live="polite"`, автозакрытие, очередь).
+- [ ] Подключить `KitToaster` в `app.vue`.
 - [ ] Механическая замена ~35 вызовов `ElMessage.*` → `useToast().*` по всему проекту (включая админку — это безопасная текстовая замена).
 
 ### Простые компоненты + тривиальные замены (обкатка)
 
-- [ ] `AppButton` (type: primary/default/danger/text; size; loading; disabled; icon-слот). Фикс контраста danger переносится из design-tokens.css внутрь компонента (глобальный CSS пока НЕ удалять — им ещё пользуется EP в немигрированных зонах).
-- [ ] `AppTag`, `AppAlert`, `AppSkeleton`, `AppEmpty`, `AppLoadingOverlay`.
+- [ ] `KitButton` (type: primary/default/danger/text; size; loading; disabled; icon-слот). Фикс контраста danger переносится из design-tokens.css внутрь компонента (глобальный CSS пока НЕ удалять — им ещё пользуется EP в немигрированных зонах).
+- [ ] `KitTag`, `KitAlert`, `KitSkeleton`, `KitEmpty`, `KitLoadingOverlay`.
 - [ ] Заменить внутренности обёрток без изменения их API: `ApiErrorAlert.vue` (el-alert), `skeleton-card.vue` (el-skeleton), `view-all-link.vue` (el-icon).
-- [ ] Заменить `v-loading` в `clinic/items-page.vue` на `AppLoadingOverlay`.
+- [ ] Заменить `v-loading` в `clinic/items-page.vue` на `KitLoadingOverlay`.
 
 ## Критерии приёмки
 

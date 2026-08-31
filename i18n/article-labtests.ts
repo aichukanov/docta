@@ -8,7 +8,7 @@ export default {
 			'LabTestsArticleTitle':
 				'Lab Tests and Check-ups in Montenegro: Labs, Prices, No Referral Needed',
 			'LabTestsArticleDescription':
-				'Where to get tested in Montenegro: private labs with no referral and their prices, the free route via your izabrani doktor, MRI and CT waiting lists, check-up packages and how to read the results. Updated July 2026.',
+				'Where to get tested in Montenegro: private labs take you with no referral, results the same day. Their prices and the free route via izabrani doktor.',
 
 			'LtcToc_private-labs': 'Private labs: no referral, no appointment',
 			'LtcToc_state-route': 'The state route: uput, free, but with queues',
@@ -122,7 +122,7 @@ export default {
 			'LabTestsArticleTitle':
 				'Анализы и чекапы в Черногории: лаборатории, цены, без направления',
 			'LabTestsArticleDescription':
-				'Где сдать анализы в Черногории: частные лаборатории без направления и цены, бесплатный путь через izabrani doktor, очереди на МРТ и КТ, чекап-пакеты и как читать результаты. Актуально на июль 2026 года.',
+				'Где сдать анализы в Черногории: частные лаборатории принимают без направления и записи, результаты в тот же день. Их цены и бесплатный путь через izabrani doktor.',
 
 			'LtcToc_private-labs': 'Частные лаборатории: без направления и записи',
 			'LtcToc_state-route':
@@ -237,7 +237,7 @@ export default {
 			'LabTestsArticleTitle':
 				'Analize i check-up u Crnoj Gori: laboratorije, cijene, bez uputa',
 			'LabTestsArticleDescription':
-				'Gdje uraditi analize u Crnoj Gori: privatne laboratorije bez uputa i cijene, besplatan put preko izabranog doktora, liste čekanja za MR i CT, check-up paketi i kako čitati rezultate. Ažurirano: jul 2026.',
+				'Gdje uraditi analize u Crnoj Gori: privatne laboratorije primaju bez uputa, rezultati istog dana. Njihove cijene i besplatan put preko izabranog doktora.',
 
 			'LtcToc_private-labs': 'Privatne laboratorije: bez uputa i zakazivanja',
 			'LtcToc_state-route': 'Državni put: uput, besplatno, ali uz redove',
@@ -352,7 +352,7 @@ export default {
 			'LabTestsArticleTitle':
 				'Анализе и check-up у Црној Гори: лабораторије, цијене, без упута',
 			'LabTestsArticleDescription':
-				'Гдје урадити анализе у Црној Гори: приватне лабораторије без упута и цијене, бесплатан пут преко изабраног доктора, листе чекања за МР и ЦТ, check-up пакети и како читати резултате. Ажурирано: јул 2026.',
+				'Гдје урадити анализе у Црној Гори: приватне лабораторије примају без упута, резултати истог дана. Њихове цијене и бесплатан пут преко изабраног доктора.',
 
 			'LtcToc_private-labs': 'Приватне лабораторије: без упута и заказивања',
 			'LtcToc_state-route': 'Државни пут: упут, бесплатно, али уз редове',
@@ -467,7 +467,7 @@ export default {
 			'LabTestsArticleTitle':
 				'Laboranalysen und Check-ups in Montenegro: Labore, Preise, ohne Überweisung',
 			'LabTestsArticleDescription':
-				'Wo man in Montenegro Laborwerte bestimmen lässt: private Labore ohne Überweisung und ihre Preise, der kostenlose Weg über den izabrani doktor, Wartelisten für MRT und CT, Check-up-Pakete und wie man die Befunde liest. Stand: Juli 2026.',
+				'Wo man in Montenegro Laborwerte bestimmen lässt: private Labore ohne Überweisung, Befunde am selben Tag. Ihre Preise und der kostenlose Weg über den izabrani doktor.',
 
 			'LtcToc_private-labs': 'Private Labore: ohne Überweisung und Termin',
 			'LtcToc_state-route':
@@ -583,7 +583,7 @@ export default {
 			'LabTestsArticleTitle':
 				"Karadağ'da Tahliller ve Check-up: Laboratuvarlar, Fiyatlar, Sevk Gerekmez",
 			'LabTestsArticleDescription':
-				"Karadağ'da tahlil nerede yaptırılır: sevksiz özel laboratuvarlar ve fiyatları, izabrani doktor üzerinden ücretsiz yol, MR ve BT bekleme listeleri, check-up paketleri ve sonuçların nasıl okunacağı. Güncellik: Temmuz 2026.",
+				"Karadağ'da tahlil nerede yaptırılır: özel laboratuvarlar sevksiz ve randevusuz kabul eder, sonuçlar aynı gün. Fiyatları ve izabrani doktor üzerinden ücretsiz yol.",
 
 			'LtcToc_private-labs': 'Özel laboratuvarlar: sevksiz ve randevusuz',
 			'LtcToc_state-route': 'Devlet yolu: uput, ücretsiz ama sıralı',

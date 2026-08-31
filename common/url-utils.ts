@@ -60,6 +60,14 @@ const CANONICAL_QUERY_ORDER = [
 	'categoryIds',
 	'clinicTypeIds',
 	'atcGroupIds',
+	// Фасеты лекарств: без них перестановка `?medicineCategoryIds=1&
+	// dispensingModeIds=2` давала два разных canonical на одну и ту же
+	// выборку — ровно та же ошибка, ради которой заведён этот список.
+	// Порядок именно такой, потому что эту пару публикует sitemap
+	// (`buildMedicineFiltersSection`: категория, затем режим отпуска), и
+	// canonical обязан совпадать с опубликованной формой побайтово.
+	'medicineCategoryIds',
+	'dispensingModeIds',
 	'cityIds',
 	'languageIds',
 	'page',
@@ -113,24 +121,57 @@ export function getRegionalUrl(url: string, query: UrlQuery, lang: string) {
 }
 
 /**
- * Параметры, которые не влияют на содержимое страницы и потому не должны
- * попадать в canonical.
+ * Единственные ключи, которым можно попасть в canonical (и, значит, во все семь
+ * hreflang — их строит тот же `getCanonicalUrl`).
  *
- * `tab` — чисто клиентский скролл к секции: `components/entity-page/tab-bar.vue`
- * читает его только в `onMounted`, серверная разметка от него не зависит вообще.
- * При этом Яндекс, исполнив JS, нашёл и проиндексировал 6 таких URL как
- * отдельные страницы (`/labtests/cholesterol?tab=clinics` и т.п.).
+ * Раньше здесь был денайлист из одного элемента (`tab`), то есть в canonical
+ * пускалось ВСЁ остальное. Мусор в query приходит не от нашего кода, а снаружи:
+ * Facebook дописывает `fbclid` при каждом шаре, промо-посты в Telegram несут
+ * `utm_*`, реклама — `gclid`/`yclid`/`msclkid`. Каждый такой URL получался
+ * самоканоничным дублём со своим языковым кластером, а поверхность росла от
+ * количества шеров, а не от количества страниц — перечислить её денайлистом
+ * нельзя в принципе. Поэтому allowlist: неизвестный ключ молча отбрасывается.
  *
- * `sort` СОЗНАТЕЛЬНО не входит: на страницах отзывов он меняет порядок, а
- * значит и состав конкретной страницы пагинации — канонизировать
- * `?sort=X&page=2` в `?page=2` было бы неправдой.
+ * `tab` в список не входит осознанно — это чисто клиентский скролл к секции
+ * (`components/entity-page/tab-bar.vue` читает его только в `onMounted`,
+ * серверная разметка от него не зависит вообще). Яндекс, исполнив JS, нашёл и
+ * проиндексировал 6 таких URL как отдельные страницы
+ * (`/labtests/cholesterol?tab=clinics` и т.п.).
+ *
+ * `sort` СОЗНАТЕЛЬНО входит: на страницах отзывов он меняет порядок, а значит и
+ * состав конкретной страницы пагинации — канонизировать `?sort=X&page=2` в
+ * `?page=2` было бы неправдой. Там, где сортировка действительно даёт дубль
+ * (листинги, подстраницы клиник), ответ — `noindex, follow`, а не подмена
+ * canonical: два противоречащих сигнала хуже одного честного.
+ *
+ * По той же причине в списке остаются `name`/`search` (внутренний поиск),
+ * `openNow`/`minRating` и `category`: страницы с ними закрыты через `noindex`,
+ * и canonical у них обязан оставаться self — noindex + canonical на другой URL
+ * Google просит не сочетать.
  */
-const NON_CANONICAL_QUERY_KEYS = ['tab'];
+const CANONICAL_QUERY_ALLOWED_KEYS = new Set([
+	...CANONICAL_QUERY_ORDER,
+	// Фасеты, у которых нет фиксированного места в порядке: они не встречаются
+	// в sitemap, поэтому сортируются по появлению и живут в конце строки.
+	'clinicIds',
+	'atcClassCodes',
+	'pharmaFormIds',
+	'manufacturerIds',
+	// Параметры подстраниц клиник (`composables/use-clinic-items-route.ts`)
+	'search',
+	'category',
+	'sort',
+	// Фильтры листингов, влияющие на состав выборки
+	'name',
+	'openNow',
+	'minRating',
+]);
 
 /**
  * Абсолютный канонический URL страницы: path + текущие query-параметры
  * с нормализованным `lang` (для дефолтной локали параметр опускается),
- * в каноническом порядке и без UI-параметров.
+ * в каноническом порядке и только из известных ключей
+ * (`CANONICAL_QUERY_ALLOWED_KEYS`).
  * Единая точка истины для rel=canonical (app.vue) и URL страниц
  * в schema.org разметке — они обязаны совпадать.
  */
@@ -141,7 +182,7 @@ export function getCanonicalUrl(
 ): string {
 	const meaningfulQuery: UrlQuery = {};
 	Object.entries(query).forEach(([key, value]) => {
-		if (!NON_CANONICAL_QUERY_KEYS.includes(key)) {
+		if (CANONICAL_QUERY_ALLOWED_KEYS.has(key)) {
 			meaningfulQuery[key] = value;
 		}
 	});

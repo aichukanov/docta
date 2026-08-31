@@ -323,18 +323,18 @@ const deleteCompany = async () => {
 .insurance-company-info {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
-	margin-top: var(--spacing-lg);
+	gap: var(--kit-spacing-md);
+	margin-top: var(--kit-spacing-lg);
 	border-top: 1px solid black;
-	padding-top: var(--spacing-lg);
+	padding-top: var(--kit-spacing-lg);
 }
 
 .button-group {
 	display: flex;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 :deep(.modified) {
-	border-color: var(--color-warning);
+	border-color: var(--kit-color-warning);
 }
 </style>

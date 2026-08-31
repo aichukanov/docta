@@ -145,22 +145,22 @@ const onMapReady = () => {
 
 <style lang="less" scoped>
 .details-page {
-	padding: var(--spacing-md);
+	padding: var(--kit-spacing-md);
 
 	.details-page-header {
-		margin-bottom: var(--spacing-md);
+		margin-bottom: var(--kit-spacing-md);
 	}
 
 	.details-page-content {
 		display: flex;
-		gap: var(--spacing-2xl);
+		gap: var(--kit-spacing-2xl);
 		justify-content: center;
 
 		.details-info-container {
 			display: flex;
 			flex-direction: row;
 			align-items: flex-start;
-			gap: var(--spacing-2xl);
+			gap: var(--kit-spacing-2xl);
 			width: 100%;
 			max-width: 1600px;
 
@@ -168,15 +168,15 @@ const onMapReady = () => {
 				flex: 1;
 				display: flex;
 				flex-direction: column;
-				gap: var(--spacing-2xl);
+				gap: var(--kit-spacing-2xl);
 				min-width: 0;
 			}
 
 			.map-container {
 				flex: 1;
 				position: sticky;
-				top: calc(60px + var(--spacing-lg));
-				height: calc(100vh - 60px - var(--spacing-lg) - var(--spacing-md));
+				top: calc(60px + var(--kit-spacing-lg));
+				height: calc(100vh - 60px - var(--kit-spacing-lg) - var(--kit-spacing-md));
 				min-height: 400px;
 				max-height: 700px;
 			}
@@ -187,13 +187,13 @@ const onMapReady = () => {
 .clinics-list {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .details-skeleton {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 	width: 100%;
 	max-width: 800px;
 }

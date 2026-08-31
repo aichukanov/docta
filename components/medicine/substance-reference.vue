@@ -118,17 +118,17 @@ const hasDetails = computed(() =>
 
 <style lang="less" scoped>
 .substance-reference {
-	margin-top: var(--spacing-lg);
+	margin-top: var(--kit-spacing-lg);
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .substance-reference__table {
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .substance-reference__table--hidden {
@@ -136,23 +136,23 @@ const hasDetails = computed(() =>
 }
 
 .substance-reference__table--nested {
-	margin-top: var(--spacing-sm);
-	padding-left: var(--spacing-md);
-	border-left: 2px solid var(--color-border-secondary);
+	margin-top: var(--kit-spacing-sm);
+	padding-left: var(--kit-spacing-md);
+	border-left: 2px solid var(--kit-color-border-secondary);
 }
 
 .substance-reference__row {
 	dt {
-		font-size: var(--font-size-sm);
-		font-weight: var(--font-weight-bold);
-		color: var(--color-text-secondary);
-		margin-bottom: var(--spacing-xs);
+		font-size: var(--kit-font-size-sm);
+		font-weight: var(--kit-font-weight-bold);
+		color: var(--kit-color-text-secondary);
+		margin-bottom: var(--kit-spacing-xs);
 	}
 
 	dd {
 		margin: 0;
-		font-size: var(--font-size-sm);
-		color: var(--color-text-primary);
+		font-size: var(--kit-font-size-sm);
+		color: var(--kit-color-text-primary);
 		line-height: 1.5;
 	}
 }
@@ -160,13 +160,13 @@ const hasDetails = computed(() =>
 .substance-reference__list {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .substance-reference__disclaimer {
 	margin: 0;
-	font-size: var(--font-size-xs);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-xs);
+	color: var(--kit-color-text-muted);
 	line-height: 1.4;
 }
 </style>

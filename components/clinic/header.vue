@@ -75,29 +75,29 @@ const localizedName = computed(() =>
 .clinic-header {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xl);
-	background: var(--color-surface-primary);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-md);
-	padding: var(--spacing-lg) var(--spacing-xl);
+	gap: var(--kit-spacing-xl);
+	background: var(--kit-color-surface-primary);
+	border: 1px solid var(--kit-color-border-light);
+	border-radius: var(--kit-border-radius-md);
+	padding: var(--kit-spacing-lg) var(--kit-spacing-xl);
 }
 
 .clinic-main-info {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .clinic-title-wrapper {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .clinic-title {
-	font-size: var(--font-size-2xl);
+	font-size: var(--kit-font-size-2xl);
 	font-weight: 600;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 	margin: 0;
 	font-family:
 		system-ui,
@@ -108,9 +108,9 @@ const localizedName = computed(() =>
 .clinic-address {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
-	font-size: var(--font-size-md);
-	color: var(--color-text-secondary);
+	gap: var(--kit-spacing-xs);
+	font-size: var(--kit-font-size-md);
+	color: var(--kit-color-text-secondary);
 	font-style: normal;
 
 	svg {
@@ -122,26 +122,26 @@ const localizedName = computed(() =>
 
 .clinic-actions {
 	display: flex;
-	gap: var(--spacing-sm);
-	margin-top: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
+	margin-top: var(--kit-spacing-sm);
 }
 
 .clinic-description-container {
-	margin-top: var(--spacing-xs);
+	margin-top: var(--kit-spacing-xs);
 }
 
 .clinic-contacts {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
-	padding-top: var(--spacing-lg);
-	border-top: 1px solid var(--color-border-light);
+	gap: var(--kit-spacing-md);
+	padding-top: var(--kit-spacing-lg);
+	border-top: 1px solid var(--kit-color-border-light);
 }
 
 .contacts-title {
-	font-size: var(--font-size-lg);
+	font-size: var(--kit-font-size-lg);
 	font-weight: 600;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 	margin: 0;
 	font-family:
 		system-ui,

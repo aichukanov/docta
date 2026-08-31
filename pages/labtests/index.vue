@@ -215,6 +215,7 @@ watchEffect(() => {
 	<ListPage
 		filter-namespace="labtests"
 		:pageTitle="pageTitleWithCount"
+		:pageTitleBase="pageTitle"
 		:pageDescription="pageDescription"
 		:list="labTestsList?.items || []"
 		:totalCount="labTestsList?.totalCount || 0"

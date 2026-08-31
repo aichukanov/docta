@@ -377,6 +377,7 @@ watchEffect(() => {
 	<ListPage
 		filter-namespace="medicines"
 		:pageTitle="pageTitleWithCount"
+		:pageTitleBase="pageTitle"
 		:pageDescription="pageDescription"
 		:list="medicinesList?.items || []"
 		:totalCount="medicinesList?.totalCount || 0"
@@ -475,28 +476,28 @@ watchEffect(() => {
 <style lang="less" scoped>
 /* Справка о веществе идёт под списком — отделяем её от последней карточки */
 .substance-reference-block {
-	margin-top: var(--spacing-xl);
-	padding-top: var(--spacing-lg);
-	border-top: 1px solid var(--color-border-secondary);
+	margin-top: var(--kit-spacing-xl);
+	padding-top: var(--kit-spacing-lg);
+	border-top: 1px solid var(--kit-color-border-secondary);
 }
 
 .medicine-card {
 	display: flex;
-	gap: var(--spacing-md);
-	padding: var(--spacing-lg) var(--spacing-xl);
-	background: var(--color-bg-primary);
-	border: 1px solid var(--color-border-primary);
-	border-radius: var(--border-radius-lg);
-	box-shadow: var(--shadow-xs);
+	gap: var(--kit-spacing-md);
+	padding: var(--kit-spacing-lg) var(--kit-spacing-xl);
+	background: var(--kit-color-bg-primary);
+	border: 1px solid var(--kit-color-border-primary);
+	border-radius: var(--kit-border-radius-lg);
+	box-shadow: var(--kit-shadow-xs);
 	text-decoration: none;
 	color: inherit;
 	transition:
-		border-color var(--transition-base),
-		box-shadow var(--transition-base);
+		border-color var(--kit-transition-base),
+		box-shadow var(--kit-transition-base);
 
 	&:hover {
-		border-color: var(--color-primary);
-		box-shadow: var(--shadow-hover);
+		border-color: var(--kit-color-primary);
+		box-shadow: var(--kit-shadow-hover);
 	}
 }
 
@@ -507,9 +508,9 @@ watchEffect(() => {
 	width: 40px;
 	height: 40px;
 	flex-shrink: 0;
-	background: var(--color-primary-bg);
-	border-radius: var(--border-radius-lg);
-	color: var(--color-primary);
+	background: var(--kit-color-primary-bg);
+	border-radius: var(--kit-border-radius-lg);
+	color: var(--kit-color-primary);
 }
 
 .medicine-card-content {
@@ -518,15 +519,15 @@ watchEffect(() => {
 }
 
 .medicine-name {
-	font-weight: var(--font-weight-semibold);
-	font-size: var(--font-size-base);
+	font-weight: var(--kit-font-weight-semibold);
+	font-size: var(--kit-font-size-base);
 	line-height: 1.3;
 }
 
 .medicine-substances {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
-	margin-top: var(--spacing-xs);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
+	margin-top: var(--kit-spacing-xs);
 	font-style: italic;
 }
 
@@ -534,28 +535,28 @@ watchEffect(() => {
 .medicine-match {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0 var(--spacing-xs);
-	margin-top: var(--spacing-xs);
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	gap: 0 var(--kit-spacing-xs);
+	margin-top: var(--kit-spacing-xs);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 }
 
 .medicine-match-label {
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 }
 
 .medicine-card-details {
-	margin-top: var(--spacing-md);
-	padding-top: var(--spacing-sm);
-	border-top: 1px solid var(--color-border-light);
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	margin-top: var(--kit-spacing-md);
+	padding-top: var(--kit-spacing-sm);
+	border-top: 1px solid var(--kit-color-border-light);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 }
 
 .medicine-card-meta {
-	margin-top: var(--spacing-xs);
-	font-size: var(--font-size-xs);
-	color: var(--color-text-muted);
+	margin-top: var(--kit-spacing-xs);
+	font-size: var(--kit-font-size-xs);
+	color: var(--kit-color-text-muted);
 }
 
 // Hide map sidebar — medicines aren't tied to locations

@@ -9,6 +9,19 @@ import {
 	SEO_DESCRIPTION_MAX_LENGTH,
 	SEO_TITLE_MAX_LENGTH,
 } from '../../common/seo-meta';
+import articlesI18n from '../../i18n/articles';
+import allergyI18n from '../../i18n/article-allergy-medicines';
+import birthI18n from '../../i18n/article-birth-in-montenegro';
+import childHealthcareI18n from '../../i18n/article-child-healthcare';
+import cityHealthcareI18n from '../../i18n/article-city-healthcare';
+import dentistryI18n from '../../i18n/article-dentistry';
+import labTestsI18n from '../../i18n/article-labtests';
+import unavailableI18n from '../../i18n/article-medications-unavailable';
+import mentalHealthI18n from '../../i18n/article-mental-health';
+import pharmaciesI18n from '../../i18n/article-pharmacies';
+import residenceInsuranceI18n from '../../i18n/article-residence-insurance';
+import touristHealthcareI18n from '../../i18n/article-tourist-healthcare';
+import weekendHelpI18n from '../../i18n/article-weekend-medical-help';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 
@@ -200,4 +213,104 @@ test.describe('карточки сущностей используют общу
 test('лимиты не съехали', () => {
 	expect(SEO_TITLE_MAX_LENGTH).toBe(70);
 	expect(SEO_DESCRIPTION_MAX_LENGTH).toBe(165);
+});
+
+test.describe('статьи используют общую обвязку', () => {
+	// Статьи мимо buildSeoDescription отдавали лид как есть: замер 2026-08-31 по
+	// шести локалям дал 147–338 символов при лимите 165, а обрезался в выдаче
+	// ровно хвост с отличием статьи — ценами, городами, сроками полиса.
+	const ARTICLE_SEO_SOURCES = [
+		'composables/use-article-page-seo.ts',
+		// Списочная schema (ItemList с врачами) не даёт этой статье пользоваться
+		// композаблом, поэтому обвязку она зовёт сама — и её тоже надо сторожить.
+		'pages/articles/russian-speaking-doctors-in-montenegro.vue',
+	];
+
+	for (const source of ARTICLE_SEO_SOURCES) {
+		test(`${source} собирает description через buildSeoDescription`, () => {
+			const code = readFileSync(resolve(ROOT, source), 'utf-8');
+			expect(code).toMatch(/buildSeoDescription|buildArticleSeoDescription/);
+		});
+
+		test(`${source} укладывает title через fitSeoTitle`, () => {
+			const code = readFileSync(resolve(ROOT, source), 'utf-8');
+			expect(code).toMatch(/fitSeoTitle|buildArticleSeoTitle/);
+		});
+	}
+});
+
+test.describe('лиды статей укладываются в лимиты выдачи', () => {
+	// Лид статьи — это и meta description, и абзац под h1, поэтому обвязка не
+	// режет его молча, а собирает из целых предложений. Чтобы собирать было из
+	// чего, сами тексты обязаны влезать: тест сторожит i18n, а не шаблон.
+	const ARTICLE_LOCALES = ['en', 'ru', 'sr', 'sr-cyrl', 'de', 'tr'];
+
+	// Ключи, живущие в i18n/article-*.ts: их значения перекрывают одноимённые из
+	// i18n/articles.ts на самих страницах статей (порядок в combineI18nMessages).
+	const messages: Record<string, Record<string, string>> = {};
+	for (const list of [
+		articlesI18n,
+		allergyI18n,
+		birthI18n,
+		childHealthcareI18n,
+		cityHealthcareI18n,
+		dentistryI18n,
+		labTestsI18n,
+		unavailableI18n,
+		mentalHealthI18n,
+		pharmaciesI18n,
+		residenceInsuranceI18n,
+		touristHealthcareI18n,
+		weekendHelpI18n,
+	]) {
+		for (const [locale, keys] of Object.entries(list.messages)) {
+			messages[locale] = { ...messages[locale], ...keys };
+		}
+	}
+
+	const CITY_SLUGS = ['budva', 'podgorica', 'kotor', 'bar'];
+	const ARTICLE_KEYS: Array<[string, string]> = [
+		['AlgTitle', 'AlgDescription'],
+		['BirthInMontenegroTitle', 'BirthInMontenegroDescription'],
+		['ChildHealthcareTitle', 'ChildHealthcareDescription'],
+		['DentistryTitle', 'DentistryDescription'],
+		['ResidenceInsuranceTitle', 'ResidenceInsuranceDescription'],
+		['LabTestsArticleTitle', 'LabTestsArticleDescription'],
+		['UnaTitle', 'UnaDescription'],
+		['MentalHealthTitle', 'MentalHealthDescription'],
+		['PharmaciesTitle', 'PharmaciesDescription'],
+		['TouristHealthcareTitle', 'TouristHealthcareDescription'],
+		['WeekendMedicalHelpTitle', 'WeekendMedicalHelpDescription'],
+		...CITY_SLUGS.map((city): [string, string] => [
+			`CityHcTitle_${city}`,
+			`CityHcDescription_${city}`,
+		]),
+	];
+
+	for (const [titleKey, descriptionKey] of ARTICLE_KEYS) {
+		test(`${descriptionKey} влезает в лимит во всех локалях`, () => {
+			for (const locale of ARTICLE_LOCALES) {
+				const description = messages[locale]?.[descriptionKey];
+				expect(description, `${locale}/${descriptionKey}`).toBeTruthy();
+				expect(
+					[...description].length,
+					`${locale}/${descriptionKey}`,
+				).toBeLessThanOrEqual(SEO_DESCRIPTION_MAX_LENGTH);
+			}
+		});
+
+		test(`${titleKey} есть чем укоротить до лимита`, () => {
+			for (const locale of ARTICLE_LOCALES) {
+				const title = messages[locale]?.[titleKey];
+				expect(title, `${locale}/${titleKey}`).toBeTruthy();
+				// Заголовки статей устроены как «Суть: перечисление подтем».
+				// Обвязка отбрасывает хвост после шва целиком, поэтому влезать
+				// обязана голова — резать её по символам нельзя.
+				const head = title.split(/\s*[:—–]\s+/)[0];
+				expect([...head].length, `${locale}/${titleKey}`).toBeLessThanOrEqual(
+					SEO_TITLE_MAX_LENGTH,
+				);
+			}
+		});
+	}
 });

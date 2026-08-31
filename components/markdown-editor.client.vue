@@ -55,10 +55,10 @@ const toolbars: ToolbarNames[] = [
 
 <style>
 .md-editor-wrapper.md-editor {
-	--md-bk-color: var(--color-bg-primary);
-	--md-border-color: var(--color-border-secondary);
+	--md-bk-color: var(--kit-color-bg-primary);
+	--md-border-color: var(--kit-color-border-secondary);
 
-	border-radius: var(--border-radius-md);
+	border-radius: var(--kit-border-radius-md);
 	font-family: inherit;
 }
 </style>

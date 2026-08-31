@@ -2,6 +2,7 @@ import { locales, defaultLocale } from '~/composables/use-locale';
 import { toIntlLocale } from '~/common/intl';
 import { combineI18nMessages } from '~/i18n/utils';
 import dateI18n, { datetimeFormats } from '~/i18n/date';
+import uiI18n from '~/i18n/ui';
 import { SITE_NAME } from '~/common/constants';
 
 // Форматы дат регистрируем и под кодами локалей приложения, и под тегами BCP 47,
@@ -45,6 +46,7 @@ export default defineI18nConfig(() => ({
 		datetimeLocales.map((l) => [l, datetimeFormats]),
 	),
 	// Даты нужны в разных местах, поэтому их словарь — глобальный, как и название
-	// приложения, а не подключается компонентами поимённо.
-	messages: combineI18nMessages([applicationName, dateI18n]),
+	// приложения и подписи контролов дизайн-системы, а не подключается
+	// компонентами поимённо.
+	messages: combineI18nMessages([applicationName, dateI18n, uiI18n]),
 }));

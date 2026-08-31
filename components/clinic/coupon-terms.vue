@@ -69,24 +69,24 @@ const terms = computed(() => {
 .coupon-terms {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .coupon-terms__source {
 	margin: 0;
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-primary);
+	font-size: var(--kit-font-size-base);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-text-primary);
 }
 
 .coupon-terms__list {
 	margin: 0;
-	padding-left: var(--spacing-lg);
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	padding-left: var(--kit-spacing-lg);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 
 	li + li {
-		margin-top: var(--spacing-xs);
+		margin-top: var(--kit-spacing-xs);
 	}
 }
 </style>

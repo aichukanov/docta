@@ -114,24 +114,24 @@ const emit = defineEmits<{
 <style scoped>
 .account-card {
 	position: relative;
-	border: 1px solid var(--color-border-secondary);
-	border-radius: var(--border-radius-lg);
-	padding: var(--spacing-xl);
-	transition: all var(--transition-base);
-	background: var(--color-bg-primary);
+	border: 1px solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-lg);
+	padding: var(--kit-spacing-xl);
+	transition: all var(--kit-transition-base);
+	background: var(--kit-color-bg-primary);
 }
 
 .account-card:hover {
-	border-color: var(--color-border-accent);
-	box-shadow: var(--shadow-hover);
+	border-color: var(--kit-color-border-accent);
+	box-shadow: var(--kit-shadow-hover);
 }
 
 .account-card--connected {
-	border-color: var(--color-success-border);
+	border-color: var(--kit-color-success-border);
 	background: linear-gradient(
 		135deg,
-		var(--color-success-bg-soft) 0%,
-		var(--color-bg-primary) 100%
+		var(--kit-color-success-bg-soft) 0%,
+		var(--kit-color-bg-primary) 100%
 	);
 }
 
@@ -139,13 +139,13 @@ const emit = defineEmits<{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-bottom: var(--spacing-md);
+	margin-bottom: var(--kit-spacing-md);
 }
 
 .account-card__provider {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .account-card__provider-icon {
@@ -154,92 +154,92 @@ const emit = defineEmits<{
 }
 
 .account-card__provider-name {
-	font-size: var(--font-size-lg);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-lg);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 }
 
 .account-card__status {
 	display: flex;
 	align-items: center;
 	gap: 6px;
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-medium);
 }
 
 .account-card__status--on {
-	color: var(--color-primary-green);
+	color: var(--kit-color-primary-green);
 }
 
 .account-card__status--off {
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 }
 
 .account-card__status-dot {
 	width: 8px;
 	height: 8px;
-	border-radius: var(--border-radius-full);
-	background: var(--color-success);
-	box-shadow: var(--shadow-success-glow);
+	border-radius: var(--kit-border-radius-full);
+	background: var(--kit-color-success);
+	box-shadow: var(--kit-shadow-success-glow);
 }
 
 .account-card__details {
 	display: flex;
 	flex-direction: column;
 	gap: 6px;
-	padding: var(--spacing-md);
-	border-radius: var(--border-radius-md);
-	margin-bottom: var(--spacing-md);
+	padding: var(--kit-spacing-md);
+	border-radius: var(--kit-border-radius-md);
+	margin-bottom: var(--kit-spacing-md);
 }
 
 .account-card__detail {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .account-card__detail-label {
-	font-size: var(--font-size-xs);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-xs);
+	color: var(--kit-color-text-muted);
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 }
 
 .account-card__detail-value {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-primary);
-	font-weight: var(--font-weight-medium);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-primary);
+	font-weight: var(--kit-font-weight-medium);
 }
 
 .account-card__verified-badge {
 	display: inline-flex;
 	align-items: center;
 	gap: 4px;
-	font-size: var(--font-size-xs);
-	color: var(--color-primary-green);
-	background: var(--color-success-bg);
+	font-size: var(--kit-font-size-xs);
+	color: var(--kit-color-primary-green);
+	background: var(--kit-color-success-bg);
 	padding: 2px 8px;
 	border-radius: 12px;
-	font-weight: var(--font-weight-medium);
+	font-weight: var(--kit-font-weight-medium);
 }
 
 .account-card__primary-badge {
 	display: inline-flex;
 	font-size: 11px;
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-primary);
-	background: var(--color-primary-bg);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-primary);
+	background: var(--kit-color-primary-bg);
 	padding: 3px 10px;
 	border-radius: 12px;
-	margin-bottom: var(--spacing-md);
+	margin-bottom: var(--kit-spacing-md);
 	text-transform: uppercase;
 	letter-spacing: 0.3px;
 }
 
 .account-card__actions {
 	display: flex;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	flex-wrap: wrap;
 }
 </style>

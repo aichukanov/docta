@@ -38,14 +38,14 @@ defineProps<{
 <style lang="less" scoped>
 .entity-section {
 	scroll-margin-top: 120px;
-	background: var(--color-bg-primary);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-md);
-	padding: var(--spacing-xl);
+	background: var(--kit-color-bg-primary);
+	border: 1px solid var(--kit-color-border-light);
+	border-radius: var(--kit-border-radius-md);
+	padding: var(--kit-spacing-xl);
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .entity-section__header {
@@ -53,7 +53,7 @@ defineProps<{
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .entity-section__actions {
@@ -74,8 +74,8 @@ defineProps<{
 
 @media (max-width: 500px) {
 	.entity-section {
-		padding: var(--spacing-md);
-		border-radius: var(--border-radius-sm);
+		padding: var(--kit-spacing-md);
+		border-radius: var(--kit-border-radius-sm);
 	}
 }
 </style>

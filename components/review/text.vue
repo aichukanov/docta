@@ -8,10 +8,11 @@ const props = defineProps<{
 	originalLanguage?: string;
 }>();
 
-const { t } = useI18n({
-	useScope: 'local',
-	messages: combineI18nMessages([reviewsI18n]),
-});
+// Слияние на уровне модуля, а не в setup: словарь отзывов константный, а этот
+// компонент рендерится на каждый отзыв страницы. Ссылка общая для экземпляров.
+const messages = combineI18nMessages([reviewsI18n]);
+
+const { t } = useI18n({ useScope: 'local', messages });
 
 const showingOriginal = ref(false);
 
@@ -45,18 +46,18 @@ const langName = computed(() => {
 <style scoped>
 .review-text {
 	line-height: 1.6;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 	white-space: pre-wrap;
 }
 
 .toggle-original-btn {
 	display: inline-block;
-	margin-top: var(--spacing-sm);
+	margin-top: var(--kit-spacing-sm);
 	padding: 0;
 	border: none;
 	background: none;
-	color: var(--color-primary);
-	font-size: var(--font-size-base);
+	color: var(--kit-color-primary);
+	font-size: var(--kit-font-size-base);
 	cursor: pointer;
 	text-decoration: none;
 }

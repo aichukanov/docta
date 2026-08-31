@@ -31,6 +31,19 @@ const activeTab = ref(
 
 const primaryKey = computed(() => props.languages[0]?.key || '');
 
+// Какие вкладки пользователь уже открывал.
+//
+// Раньше `v-show` по всем языкам монтировал редактор на КАЖДЫЙ язык сразу —
+// шесть экземпляров CodeMirror на одно поле, из которых виден один. Теперь
+// редактор создаётся при первом открытии вкладки и дальше живёт (то есть
+// позиция курсора и история отмен при переключении туда-обратно не теряются,
+// как и было с `v-show`).
+const visitedTabs = ref(new Set<string>([activeTab.value]));
+
+watch(activeTab, (key) => {
+	visitedTabs.value = new Set(visitedTabs.value).add(key);
+});
+
 function isFilled(key: string): boolean {
 	return Boolean(props.modelValue[key]?.trim());
 }
@@ -70,12 +83,14 @@ function updateField(key: string, value: string) {
 			v-show="activeTab === lang.key"
 			:key="lang.key"
 		>
-			<MarkdownEditor
-				v-if="type === 'markdown'"
-				:modelValue="modelValue[lang.key] || ''"
-				@update:modelValue="updateField(lang.key, $event)"
-				:placeholder="getPlaceholder(lang.key)"
-			/>
+			<template v-if="type === 'markdown'">
+				<LazyMarkdownEditor
+					v-if="visitedTabs.has(lang.key)"
+					:modelValue="modelValue[lang.key] || ''"
+					@update:modelValue="updateField(lang.key, $event)"
+					:placeholder="getPlaceholder(lang.key)"
+				/>
+			</template>
 			<el-input
 				v-else
 				:modelValue="modelValue[lang.key] || ''"
@@ -89,9 +104,9 @@ function updateField(key: string, value: string) {
 <style scoped>
 .loc-field__tabs {
 	display: flex;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 	flex-wrap: wrap;
-	margin-bottom: var(--spacing-sm);
+	margin-bottom: var(--kit-spacing-sm);
 }
 
 .loc-field__tab {
@@ -99,25 +114,25 @@ function updateField(key: string, value: string) {
 	display: inline-flex;
 	align-items: center;
 	gap: 4px;
-	padding: var(--spacing-xs) var(--spacing-md);
-	border: 1px solid var(--color-border-secondary);
-	border-radius: var(--border-radius-md);
-	background: var(--color-bg-primary);
-	color: var(--color-text-secondary);
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
+	padding: var(--kit-spacing-xs) var(--kit-spacing-md);
+	border: 1px solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-md);
+	background: var(--kit-color-bg-primary);
+	color: var(--kit-color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-medium);
 	cursor: pointer;
 	transition: all 0.15s ease;
 }
 
 .loc-field__tab:hover {
-	border-color: var(--color-primary);
-	color: var(--color-primary);
+	border-color: var(--kit-color-primary);
+	color: var(--kit-color-primary);
 }
 
 .loc-field__tab--active {
-	background: var(--color-primary);
-	border-color: var(--color-primary);
+	background: var(--kit-color-primary);
+	border-color: var(--kit-color-primary);
 	color: #fff;
 }
 
@@ -129,11 +144,11 @@ function updateField(key: string, value: string) {
 	width: 6px;
 	height: 6px;
 	border-radius: 50%;
-	background: var(--color-success-dark);
+	background: var(--kit-color-success-dark);
 	flex-shrink: 0;
 }
 
 .loc-field__tab--active .loc-field__dot {
-	background: var(--color-bg-primary);
+	background: var(--kit-color-bg-primary);
 }
 </style>

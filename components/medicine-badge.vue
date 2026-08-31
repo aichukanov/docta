@@ -25,9 +25,9 @@ const badge = computed(() => getBadgeType(props.dispensingModeId));
 <style lang="less" scoped>
 .medicine-badge {
 	display: inline-block;
-	font-size: var(--font-size-sm);
+	font-size: var(--kit-font-size-sm);
 	font-weight: 500;
-	padding: var(--spacing-xs) var(--spacing-md);
+	padding: var(--kit-spacing-xs) var(--kit-spacing-md);
 	border-radius: 16px;
 	white-space: nowrap;
 
@@ -42,8 +42,8 @@ const badge = computed(() => getBadgeType(props.dispensingModeId));
 	}
 
 	&--hospital {
-		background: var(--color-bg-tertiary);
-		color: var(--color-text-secondary);
+		background: var(--kit-color-bg-tertiary);
+		color: var(--kit-color-text-secondary);
 	}
 
 	&--restricted {

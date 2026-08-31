@@ -39,20 +39,21 @@ const { t, n, locale } = useI18n({
 
 const route = useRoute();
 
-const { pending: isLoading, data: labTestData } = await useFetch(
-	'/api/labtests/details',
-	{
+const clinicsStore = useClinicsStore();
+
+// Детали сущности и каталог клиник независимы — грузим параллельно, иначе на
+// SSR получается лишний последовательный round-trip (см. pages/doctors/index.vue)
+const [{ pending: isLoading, data: labTestData }] = await Promise.all([
+	useFetch('/api/labtests/details', {
 		key: 'labtest-details',
 		method: 'POST',
 		body: computed(() => ({
 			slug: route.params.labTestSlug,
 			locale: locale.value,
 		})),
-	},
-);
-
-const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics();
+	}),
+	clinicsStore.fetchClinics(),
+]);
 
 const isFound = computed(() => labTestData.value?.id != null);
 
@@ -114,6 +115,7 @@ const allLabTestClinics = computed(() =>
 
 const {
 	cityIds,
+	hasInvalidCityFilter,
 	filteredClinics: labTestClinics,
 	filteredClinicPrices,
 } = useClinicCityFilter(
@@ -256,7 +258,13 @@ const heroTitle = computed(() => {
 // Schema.org for lab test details
 const schemaOrgStore = useSchemaOrgStore();
 
-const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
+// Невалидный `?cityIds=` в URL: страница отдаёт полный список с 200 и
+// self-canonical на мусорный URL, поэтому уходит в noindex (follow — ссылки
+// со страницы честные). Тот же приём, что у листингов в list-page.vue.
+const robotsMeta = computed(() => {
+	if (!isFound.value) return 'noindex';
+	return hasInvalidCityFilter.value ? 'noindex, follow' : undefined;
+});
 
 useSeoMeta({
 	title: pageTitle,
@@ -388,13 +396,13 @@ watchEffect(() => {
 
 <style lang="less" scoped>
 .lab-test-hero {
-	padding: var(--spacing-xl) 0;
+	padding: var(--kit-spacing-xl) 0;
 }
 
 .lab-test-name {
-	font-size: var(--font-size-4xl);
+	font-size: var(--kit-font-size-4xl);
 	font-weight: 700;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 	margin: 0;
 	font-family:
 		system-ui,
@@ -405,9 +413,9 @@ watchEffect(() => {
 }
 
 .lab-test-original {
-	font-size: var(--font-size-md);
-	color: var(--color-text-secondary);
-	margin-top: var(--spacing-sm);
+	font-size: var(--kit-font-size-md);
+	color: var(--kit-color-text-secondary);
+	margin-top: var(--kit-spacing-sm);
 	font-style: italic;
 	word-break: break-word;
 }
@@ -415,25 +423,25 @@ watchEffect(() => {
 .lab-test-categories {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--spacing-xs);
-	margin-top: var(--spacing-md);
+	gap: var(--kit-spacing-xs);
+	margin-top: var(--kit-spacing-md);
 }
 
 .lab-test-synonyms {
-	font-size: var(--font-size-base);
-	color: var(--color-text-secondary);
-	margin-top: var(--spacing-md);
+	font-size: var(--kit-font-size-base);
+	color: var(--kit-color-text-secondary);
+	margin-top: var(--kit-spacing-md);
 
 	.synonyms-label {
-		color: var(--color-text-muted);
-		margin-right: var(--spacing-xs);
+		color: var(--kit-color-text-muted);
+		margin-right: var(--kit-spacing-xs);
 	}
 }
 
 .labtest-map {
 	height: 400px;
-	border-radius: var(--border-radius-md);
+	border-radius: var(--kit-border-radius-md);
 	overflow: hidden;
-	border: 1px solid var(--color-border-light);
+	border: 1px solid var(--kit-color-border-light);
 }
 </style>

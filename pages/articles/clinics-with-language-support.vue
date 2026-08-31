@@ -260,34 +260,34 @@ watchEffect(() => {
 .clinics-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .clinic-card {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
-	padding: var(--spacing-md) var(--spacing-lg);
-	background: var(--color-bg-tertiary);
-	border-radius: var(--border-radius-xl);
+	gap: var(--kit-spacing-xs);
+	padding: var(--kit-spacing-md) var(--kit-spacing-lg);
+	background: var(--kit-color-bg-tertiary);
+	border-radius: var(--kit-border-radius-xl);
 	text-decoration: none;
-	transition: background var(--transition-base);
+	transition: background var(--kit-transition-base);
 
 	&:hover {
-		background: var(--color-primary-bg);
+		background: var(--kit-color-primary-bg);
 	}
 }
 
 .clinic-name {
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-primary);
+	font-size: var(--kit-font-size-base);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-primary);
 	line-height: 1.3;
 }
 
 .clinic-city {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 
 @media (max-width: 600px) {

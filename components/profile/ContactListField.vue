@@ -149,13 +149,13 @@ const errors = computed(() =>
 .contact-field {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .contact-field__row {
 	display: flex;
 	align-items: flex-start;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .contact-field__input {
@@ -167,12 +167,12 @@ const errors = computed(() =>
 }
 
 .contact-field__error {
-	font-size: var(--font-size-xs);
-	color: var(--color-danger-dark);
+	font-size: var(--kit-font-size-xs);
+	color: var(--kit-color-danger-dark);
 }
 
 .contact-field__add {
 	align-self: flex-start;
-	font-size: var(--font-size-sm);
+	font-size: var(--kit-font-size-sm);
 }
 </style>

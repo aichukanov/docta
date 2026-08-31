@@ -45,9 +45,9 @@ defineProps<{
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: var(--spacing-sm);
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	gap: var(--kit-spacing-sm);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 
 	&__link {
 		color: inherit;
@@ -55,19 +55,19 @@ defineProps<{
 		transition: color 0.15s ease;
 
 		&:hover {
-			color: var(--color-primary);
+			color: var(--kit-color-primary);
 			text-decoration: underline;
 		}
 	}
 
 	&__separator {
-		color: var(--color-text-muted);
+		color: var(--kit-color-text-muted);
 		opacity: 0.5;
 	}
 
 	&__current {
-		color: var(--color-text-secondary);
-		font-weight: var(--font-weight-medium);
+		color: var(--kit-color-text-secondary);
+		font-weight: var(--kit-font-weight-medium);
 	}
 }
 </style>

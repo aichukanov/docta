@@ -179,27 +179,27 @@ const copyToAll = (sourceDay: DayOfWeek) => {
 .wh-editor {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .wh-editor__day {
-	background: var(--color-bg-secondary);
-	border: 1px solid var(--color-border-secondary);
-	border-radius: var(--border-radius-md);
-	padding: var(--spacing-sm);
+	background: var(--kit-color-bg-secondary);
+	border: 1px solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-md);
+	padding: var(--kit-spacing-sm);
 }
 
 .wh-editor__day-header {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	flex-wrap: wrap;
 }
 
 .wh-editor__day-label {
-	font-weight: var(--font-weight-semibold);
-	font-size: var(--font-size-sm);
-	color: var(--color-text-primary);
+	font-weight: var(--kit-font-weight-semibold);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-primary);
 	min-width: 32px;
 }
 
@@ -214,15 +214,15 @@ const copyToAll = (sourceDay: DayOfWeek) => {
 .wh-editor__intervals {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
-	margin-top: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
+	margin-top: var(--kit-spacing-xs);
 	padding-left: 40px;
 }
 
 .wh-editor__interval {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .wh-editor__time {
@@ -230,7 +230,7 @@ const copyToAll = (sourceDay: DayOfWeek) => {
 }
 
 .wh-editor__separator {
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 }
 
 @media (max-width: 640px) {

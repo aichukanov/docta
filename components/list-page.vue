@@ -1,6 +1,7 @@
 <script setup lang="ts" generic="T extends ListPageItem">
 import { Filter, ArrowDown } from '@element-plus/icons-vue';
 import { getCanonicalUrl, getRegionalQuery } from '~/common/url-utils';
+import { fitSeoTitle } from '~/common/seo-meta';
 import type { FilterNamespace } from '~/stores/filters';
 import { CITY_COORDINATES, type CityId } from '~/enums/cities';
 import { LIST_PAGE_SIZE } from '~/common/constants';
@@ -14,6 +15,10 @@ const props = withDefaults(
 		totalCount: number;
 		isLoading: boolean;
 		pageTitle: string;
+		// Тот же заголовок без хвоста «(N)». Нужен только для <title>: когда
+		// полный вариант не влезает в лимит Bing (70), счётчик — первое, чем
+		// можно пожертвовать. В h1 остаётся pageTitle.
+		pageTitleBase?: string;
 		pageDescription?: string;
 		filterQuery: Record<string, any>;
 		// Нужен, чтобы узнать у стора, не было ли в URL невалидных значений
@@ -140,12 +145,82 @@ const activeFiltersCount = computed(
 		}).length,
 );
 
+const totalPages = computed(() => Math.ceil(props.totalCount / LIST_PAGE_SIZE));
+
+/**
+ * Присутствие ключа, а не его значение: пустое (`?name=`) и вовсе безвоздушное
+ * (`?name`) значение тоже отдают базовый листинг, то есть дубль. Свои ссылки
+ * такого не порождают — параметр без значения всегда приходит снаружи.
+ */
+const hasQueryKey = (key: string) => key in route.query;
+
+/**
+ * Есть ли в URL параметры, из-за которых страница — дубль базового листинга.
+ *
+ * Только для `robots`: выборку это не меняет, фильтрация как была, так и есть.
+ * По смыслу — тот же `hasRedundantQuery`, что у подстраниц клиник
+ * (`composables/use-clinic-items-route.ts`), но у листингов свой набор ключей.
+ */
+const hasRedundantQuery = computed(() => {
+	// Внутренний поиск по сайту: Google прямо просит его не индексировать, а
+	// значение здесь любое — поверхность неограниченная. Ссылки на такие URL
+	// сайт генерирует сам (кнопка «ещё» в global-search), поэтому follow
+	// остаётся: по ним надо ходить, но не индексировать.
+	// На подстраницах клиник тот же поиск (`?search=`) закрыт давно.
+	if (hasQueryKey('name')) {
+		return true;
+	}
+
+	// Сортировка меняет порядок, а не состав; на шести листингах из семи её
+	// вообще никто не читает, там `?sort=` — чистый дубль базового URL.
+	if (hasQueryKey('sort')) {
+		return true;
+	}
+
+	// openNow/minRating читает только листинг клиник — на остальных они молча
+	// игнорируются и отдают полный каталог. Но и на клиниках индексировать
+	// нечего: выборка нестабильна (часы работы, средний рейтинг), в sitemap её
+	// нет, а `minRating=0`/`openNow=false` — просто состояние по умолчанию.
+	if (hasQueryKey('openNow') || hasQueryKey('minRating')) {
+		return true;
+	}
+
+	const page = route.query.page;
+	if (hasQueryKey('page')) {
+		// Дубль ключа (`?page=1&page=2`) — мусор сам по себе, как и `?page` без
+		// значения (в route.query это null).
+		if (Array.isArray(page) || page == null) {
+			return true;
+		}
+		// Натуральное число без ведущих нулей. `0`, `abc`, `-1`, `2.5`, `01`
+		// сводятся к первой странице, то есть к базовому URL.
+		if (!/^[1-9]\d*$/.test(String(page))) {
+			return true;
+		}
+		const pageNum = Number(page);
+		// `?page=1` — избыточный: ровно тот же контент, что и без параметра.
+		if (pageNum === 1) {
+			return true;
+		}
+		// Страница за пределами пагинации заведомо пуста.
+		if (totalPages.value > 0 && pageNum > totalPages.value) {
+			return true;
+		}
+	}
+
+	return false;
+});
+
 const robotsMeta = computed(() => {
 	if (props.list?.length === 0) {
 		return 'noindex, follow';
 	}
 
 	if (props.noindex) {
+		return 'noindex, follow';
+	}
+
+	if (hasRedundantQuery.value) {
 		return 'noindex, follow';
 	}
 
@@ -165,13 +240,51 @@ if (!hasSideMapSlot) {
 	await clinicsStore.fetchClinics();
 }
 
+/**
+ * Хвост «— Страница N из M» для страниц пагинации.
+ *
+ * У них canonical self (и это правильно: контент разный), но title и
+ * description совпадали с первой страницей — для поисковика это дубли, у
+ * которых нет ни одного отличающего признака. Формулировка и знак тире те же,
+ * что на страницах отзывов (`components/reviews-page.vue`), чтобы вид у
+ * пагинации был один на весь сайт.
+ */
+const pageSuffix = computed(() =>
+	totalPages.value > 1 && pageNumber.value > 1
+		? ` — ${t('PageOf', { page: pageNumber.value, total: totalPages.value })}`
+		: '',
+);
+
+// Лимит Bing — 70 символов, а шаблон листинга склеивает фасеты без оглядки на
+// длину: «специальность × язык» в ru доходит до сотни. Первым отбрасываем
+// счётчик `(N)` — из всех частей заголовка он наименее полезен в выдаче.
+const seoTitle = computed(() =>
+	fitSeoTitle([
+		`${props.pageTitle}${pageSuffix.value}`,
+		`${props.pageTitleBase || props.pageTitle}${pageSuffix.value}`,
+	]),
+);
+
+const seoDescription = computed(() =>
+	props.pageDescription
+		? `${props.pageDescription}${pageSuffix.value}`
+		: undefined,
+);
+
+// Заголовок и описание страницы задаются дважды: сама страница листинга (там
+// живут og:image и прочее) и этот компонент. Выигрывает регистрация, сделанная
+// позже, а ListPage — дочерний компонент, то есть его setup выполняется после
+// setup страницы. Поэтому номер страницы и лимит длины достаточно применить
+// здесь одним местом на все семь листингов.
 useSeoMeta({
-	title: props.pageTitle,
-	description: props.pageDescription,
+	title: seoTitle,
+	description: seoDescription,
+	ogTitle: seoTitle,
+	ogDescription: seoDescription,
+	twitterTitle: seoTitle,
+	twitterDescription: seoDescription,
 	robots: robotsMeta,
 });
-
-const totalPages = computed(() => Math.ceil(props.totalCount / LIST_PAGE_SIZE));
 
 const paginationLinks = computed(() => {
 	const links: Array<{ rel: string; href: string }> = [];
@@ -433,12 +546,12 @@ onMounted(async () => {
 	flex-direction: column;
 	flex: 0 0 280px;
 	width: 280px;
-	background: var(--color-bg-primary);
-	gap: var(--spacing-lg);
+	background: var(--kit-color-bg-primary);
+	gap: var(--kit-spacing-lg);
 	position: sticky;
-	top: calc(60px + var(--spacing-lg));
+	top: calc(60px + var(--kit-spacing-lg));
 	align-self: flex-start;
-	max-height: calc(100vh - 60px - 2 * var(--spacing-lg));
+	max-height: calc(100vh - 60px - 2 * var(--kit-spacing-lg));
 	overflow-y: auto;
 }
 
@@ -447,8 +560,8 @@ onMounted(async () => {
 	display: none;
 
 	&__chevron {
-		margin-left: var(--spacing-xs);
-		transition: transform var(--transition-base);
+		margin-left: var(--kit-spacing-xs);
+		transition: transform var(--kit-transition-base);
 
 		&.is-open {
 			transform: rotate(180deg);
@@ -460,9 +573,9 @@ onMounted(async () => {
 	flex: 1 1 60%;
 	min-width: 0;
 	box-sizing: border-box;
-	background: var(--color-bg-primary);
+	background: var(--kit-color-bg-primary);
 	border-right: 1px solid rgba(0, 0, 0, 0.06);
-	padding: var(--spacing-lg);
+	padding: var(--kit-spacing-lg);
 }
 
 .page-header {
@@ -470,21 +583,21 @@ onMounted(async () => {
 	align-items: flex-start;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	gap: var(--spacing-md);
-	margin-bottom: var(--spacing-2xl);
+	gap: var(--kit-spacing-md);
+	margin-bottom: var(--kit-spacing-2xl);
 
 	&__controls {
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
-		gap: var(--spacing-md);
+		gap: var(--kit-spacing-md);
 	}
 }
 
 .page-title {
-	font-size: var(--font-size-3xl);
+	font-size: var(--kit-font-size-3xl);
 	font-weight: 600;
-	color: var(--color-text-heading);
+	color: var(--kit-color-text-heading);
 	margin: 0;
 	font-family:
 		system-ui,
@@ -496,7 +609,7 @@ onMounted(async () => {
 .list-container {
 	display: flex;
 	flex-direction: row;
-	gap: var(--spacing-2xl);
+	gap: var(--kit-spacing-2xl);
 	width: 100%;
 	box-sizing: border-box;
 
@@ -512,7 +625,7 @@ onMounted(async () => {
 .list-wrapper {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 	width: 100%;
 	box-sizing: border-box;
 }
@@ -523,7 +636,7 @@ onMounted(async () => {
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 	width: 100%;
 	box-sizing: border-box;
 }
@@ -537,7 +650,7 @@ onMounted(async () => {
 .skeleton-list {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 	width: 100%;
 	box-sizing: border-box;
 }
@@ -545,7 +658,7 @@ onMounted(async () => {
 .empty-state {
 	text-align: center;
 	padding: 40px;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 }
 
 .loading-overlay {
@@ -563,9 +676,9 @@ onMounted(async () => {
 	width: 100%;
 	background: linear-gradient(
 		90deg,
-		var(--color-primary) 0%,
-		var(--color-primary-light) 50%,
-		var(--color-primary) 100%
+		var(--kit-color-primary) 0%,
+		var(--kit-color-primary-light) 50%,
+		var(--kit-color-primary) 100%
 	);
 	animation: loading-slide 0.8s linear infinite;
 }
@@ -608,7 +721,7 @@ onMounted(async () => {
 
 @media (max-width: 1300px) {
 	.page-header {
-		margin-bottom: var(--spacing-lg);
+		margin-bottom: var(--kit-spacing-lg);
 	}
 
 	.filters-toggle {
@@ -626,7 +739,7 @@ onMounted(async () => {
 			width: 100%;
 			max-height: none;
 			overflow-y: visible;
-			gap: var(--spacing-sm);
+			gap: var(--kit-spacing-sm);
 
 			&.is-open {
 				display: flex;
@@ -651,7 +764,7 @@ onMounted(async () => {
 		width: 100%;
 		position: static;
 		height: 450px;
-		margin-bottom: var(--spacing-2xl);
+		margin-bottom: var(--kit-spacing-2xl);
 	}
 
 	// На мобильном режим карты — настоящий фулскрин-оверлей поверх шапки
@@ -675,16 +788,16 @@ onMounted(async () => {
 			height: 100vh;
 			height: 100dvh;
 			margin-bottom: 0;
-			background: var(--color-bg-primary);
-			// Поверх sticky-шапки (--z-header), иначе та перекрывает верх карты
-			z-index: var(--z-modal);
+			background: var(--kit-color-bg-primary);
+			// Поверх sticky-шапки (--kit-z-header), иначе та перекрывает верх карты
+			z-index: var(--kit-z-modal);
 		}
 	}
 }
 
 @media (max-width: 500px) {
 	.list-sidebar {
-		padding: var(--spacing-sm);
+		padding: var(--kit-spacing-sm);
 	}
 }
 </style>
@@ -701,7 +814,8 @@ onMounted(async () => {
 		"AriaResultsList": "List of results",
 		"AriaLoadingResults": "Loading results",
 		"AriaPagination": "Results pagination",
-		"AriaMapSection": "Map with locations"
+		"AriaMapSection": "Map with locations",
+		"PageOf": "Page {page} of {total}"
 	},
 	"ru": {
 		"Loading": "Загрузка...",
@@ -713,7 +827,8 @@ onMounted(async () => {
 		"AriaResultsList": "Список результатов",
 		"AriaLoadingResults": "Загрузка результатов",
 		"AriaPagination": "Постраничная навигация",
-		"AriaMapSection": "Карта с расположениями"
+		"AriaMapSection": "Карта с расположениями",
+		"PageOf": "Страница {page} из {total}"
 	},
 	"sr": {
 		"Loading": "Učitavanje...",
@@ -725,7 +840,8 @@ onMounted(async () => {
 		"AriaResultsList": "Lista rezultata",
 		"AriaLoadingResults": "Učitavanje rezultata",
 		"AriaPagination": "Navigacija po stranicama",
-		"AriaMapSection": "Mapa sa lokacijama"
+		"AriaMapSection": "Mapa sa lokacijama",
+		"PageOf": "Stranica {page} od {total}"
 	},
 	"sr-cyrl": {
 		"Loading": "Учитавање...",
@@ -737,7 +853,8 @@ onMounted(async () => {
 		"AriaResultsList": "Листа резултата",
 		"AriaLoadingResults": "Учитавање резултата",
 		"AriaPagination": "Навигација по страницама",
-		"AriaMapSection": "Мапа са локацијама"
+		"AriaMapSection": "Мапа са локацијама",
+		"PageOf": "Страница {page} од {total}"
 	},
 	"de": {
 		"Loading": "Laden...",
@@ -749,7 +866,8 @@ onMounted(async () => {
 		"AriaResultsList": "Ergebnisliste",
 		"AriaLoadingResults": "Ergebnisse werden geladen",
 		"AriaPagination": "Seitennavigation",
-		"AriaMapSection": "Karte mit Standorten"
+		"AriaMapSection": "Karte mit Standorten",
+		"PageOf": "Seite {page} von {total}"
 	},
 	"tr": {
 		"Loading": "Yükleniyor...",
@@ -761,7 +879,8 @@ onMounted(async () => {
 		"AriaResultsList": "Sonuç listesi",
 		"AriaLoadingResults": "Sonuçlar yükleniyor",
 		"AriaPagination": "Sayfa navigasyonu",
-		"AriaMapSection": "Konumlu harita"
+		"AriaMapSection": "Konumlu harita",
+		"PageOf": "Sayfa {page} / {total}"
 	}
 }
 </i18n>

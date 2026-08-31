@@ -28,13 +28,13 @@ withDefaults(
 .tip-card {
 	display: flex;
 	align-items: flex-start;
-	gap: var(--spacing-lg);
-	padding: var(--spacing-lg) var(--spacing-xl);
-	background: var(--color-bg-primary);
-	border-radius: var(--border-radius-lg);
-	border: 1px solid var(--color-border-light);
+	gap: var(--kit-spacing-lg);
+	padding: var(--kit-spacing-lg) var(--kit-spacing-xl);
+	background: var(--kit-color-bg-primary);
+	border-radius: var(--kit-border-radius-lg);
+	border: 1px solid var(--kit-color-border-light);
 	position: relative;
-	transition: all var(--transition-base);
+	transition: all var(--kit-transition-base);
 
 	&::before {
 		content: '';
@@ -43,28 +43,28 @@ withDefaults(
 		top: 0;
 		bottom: 0;
 		width: 4px;
-		border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
+		border-radius: var(--kit-border-radius-lg) 0 0 var(--kit-border-radius-lg);
 	}
 
 	&--info {
 		&::before {
-			background: var(--color-primary);
+			background: var(--kit-color-primary);
 		}
 
 		.tip-icon-wrapper {
 			background: rgba(79, 70, 229, 0.1);
-			color: var(--color-primary);
+			color: var(--kit-color-primary);
 		}
 	}
 
 	&--emergency {
 		&::before {
-			background: var(--color-danger);
+			background: var(--kit-color-danger);
 		}
 
 		.tip-icon-wrapper {
 			background: rgba(239, 68, 68, 0.1);
-			color: var(--color-danger);
+			color: var(--kit-color-danger);
 		}
 	}
 }
@@ -76,7 +76,7 @@ withDefaults(
 	justify-content: center;
 	width: 40px;
 	height: 40px;
-	border-radius: var(--border-radius-md);
+	border-radius: var(--kit-border-radius-md);
 }
 
 .tip-icon {
@@ -86,8 +86,8 @@ withDefaults(
 
 .tip-content {
 	flex: 1;
-	font-size: var(--font-size-md);
-	color: var(--color-text-primary);
+	font-size: var(--kit-font-size-md);
+	color: var(--kit-color-text-primary);
 	line-height: 1.65;
 	padding-top: 8px;
 }
@@ -95,15 +95,15 @@ withDefaults(
 
 <style lang="less">
 .tip-content a {
-	color: var(--color-primary);
+	color: var(--kit-color-primary);
 	text-decoration: none;
-	font-weight: var(--font-weight-medium);
-	transition: all var(--transition-base);
+	font-weight: var(--kit-font-weight-medium);
+	transition: all var(--kit-transition-base);
 	border-bottom: 1px solid transparent;
 
 	&:hover {
-		color: var(--color-primary-dark);
-		border-bottom-color: var(--color-primary-dark);
+		color: var(--kit-color-primary-dark);
+		border-bottom-color: var(--kit-color-primary-dark);
 	}
 }
 </style>

@@ -10,7 +10,7 @@ export default {
 			DentistryTitle:
 				'Dentistry in Montenegro: prices, clinics and what state insurance covers',
 			DentistryDescription:
-				'What a filling, an extraction, a crown or an implant costs in Montenegro, who gets free dental care with the zdravstvena knjižica, how to find the on-call dentist for acute pain at night or on holidays, and how to choose a clinic. Updated July 2026.',
+				'What a filling, extraction, crown or implant costs in Montenegro, and who gets free dental care with the zdravstvena knjižica: children, pregnant women, over-67s.',
 
 			DstToc_state: 'State dentistry and the knjižica',
 			DstToc_prices: 'Private clinics and prices',
@@ -104,7 +104,7 @@ export default {
 			DentistryTitle:
 				'Стоматология в Черногории: цены, клиники и что покрывает книжица',
 			DentistryDescription:
-				'Сколько стоят пломба, удаление зуба, коронка и имплант в Черногории, кому стоматология бесплатна по здравственной книжице, как найти дежурного стоматолога при острой боли ночью и в праздники и как выбрать клинику. Актуально на июль 2026 года.',
+				'Сколько стоят пломба, удаление зуба, коронка и имплант в Черногории и кому стоматология бесплатна по здравственной книжице: детям, беременным, людям старше 67.',
 
 			DstToc_state: 'Государственная стоматология и книжица',
 			DstToc_prices: 'Частные клиники и цены',
@@ -198,7 +198,7 @@ export default {
 			DentistryTitle:
 				'Stomatologija u Crnoj Gori: cijene, klinike i šta pokriva zdravstvena knjižica',
 			DentistryDescription:
-				'Koliko koštaju plomba, vađenje zuba, krunica i implantat u Crnoj Gori, ko ima pravo na besplatnog izabranog stomatologa, kako do pripravnog stomatologa kod akutnog bola noću i praznicima i kako izabrati ordinaciju. Ažurirano: jul 2026.',
+				'Koliko koštaju plomba, vađenje zuba, krunica i implantat u Crnoj Gori i kome je stomatologija besplatna preko zdravstvene knjižice: djeca, trudnice, stariji od 67.',
 
 			DstToc_state: 'Državna stomatologija i zdravstvena knjižica',
 			DstToc_prices: 'Privatne klinike i cijene',
@@ -291,7 +291,7 @@ export default {
 			DentistryTitle:
 				'Стоматологија у Црној Гори: цијене, клинике и шта покрива здравствена књижица',
 			DentistryDescription:
-				'Колико коштају пломба, вађење зуба, круница и имплантат у Црној Гори, ко има право на бесплатног изабраног стоматолога, како до приправног стоматолога код акутног бола ноћу и празницима и како изабрати ординацију. Ажурирано: јул 2026.',
+				'Колико коштају пломба, вађење зуба, круница и имплантат у Црној Гори и коме је стоматологија бесплатна преко здравствене књижице: дјеца, труднице, старији од 67.',
 
 			DstToc_state: 'Државна стоматологија и здравствена књижица',
 			DstToc_prices: 'Приватне клинике и цијене',
@@ -384,7 +384,7 @@ export default {
 			DentistryTitle:
 				'Zahnmedizin in Montenegro: Preise, Kliniken und was die staatliche Versicherung abdeckt',
 			DentistryDescription:
-				'Was Füllung, Zahnextraktion, Krone oder Implantat in Montenegro kosten, wer mit der zdravstvena knjižica Anspruch auf kostenlose Zahnbehandlung hat, wie man bei akuten Schmerzen nachts und an Feiertagen den Bereitschaftszahnarzt findet und wie man eine Praxis auswählt. Stand: Juli 2026.',
+				'Was Füllung, Extraktion, Krone oder Implantat in Montenegro kosten und wer mit der zdravstvena knjižica kostenlos behandelt wird: Kinder, Schwangere, ab 67.',
 
 			DstToc_state: 'Staatliche Zahnmedizin und die knjižica',
 			DstToc_prices: 'Privatkliniken und Preise',
@@ -478,7 +478,7 @@ export default {
 			DentistryTitle:
 				"Karadağ'da diş hekimliği: fiyatlar, klinikler ve devlet sigortasının kapsadıkları",
 			DentistryDescription:
-				"Karadağ'da dolgu, diş çekimi, kuron ve implant ne kadar tutar; zdravstvena knjižica ile kimler ücretsiz diş tedavisi alır; gece ve tatillerde şiddetli ağrıda nöbetçi diş hekimine nasıl ulaşılır; klinik nasıl seçilir. Temmuz 2026 itibarıyla günceldir.",
+				"Karadağ'da dolgu, diş çekimi, kuron ve implant ne kadar tutar; zdravstvena knjižica ile kimler ücretsiz diş tedavisi alır: çocuklar, hamileler, 67 yaş üstü.",
 
 			DstToc_state: 'Devlet diş hekimliği ve knjižica',
 			DstToc_prices: 'Özel klinikler ve fiyatlar',

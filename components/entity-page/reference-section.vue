@@ -46,32 +46,32 @@ const { t } = useI18n({ useScope: 'local' });
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .reference-section__row {
 	dt {
-		font-size: var(--font-size-sm);
-		font-weight: var(--font-weight-bold);
-		color: var(--color-text-secondary);
-		margin-bottom: var(--spacing-xs);
+		font-size: var(--kit-font-size-sm);
+		font-weight: var(--kit-font-weight-bold);
+		color: var(--kit-color-text-secondary);
+		margin-bottom: var(--kit-spacing-xs);
 	}
 
 	dd {
 		margin: 0;
-		font-size: var(--font-size-md);
-		color: var(--color-text-primary);
+		font-size: var(--kit-font-size-md);
+		color: var(--kit-color-text-primary);
 		line-height: 1.6;
 	}
 }
 
 .reference-section__disclaimer {
 	margin: 0;
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 	font-style: italic;
-	border-top: 1px solid var(--color-border-light);
-	padding-top: var(--spacing-md);
+	border-top: 1px solid var(--kit-color-border-light);
+	padding-top: var(--kit-spacing-md);
 }
 </style>
 

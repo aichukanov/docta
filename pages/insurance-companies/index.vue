@@ -176,6 +176,7 @@ watchEffect(() => {
 	<ListPage
 		filter-namespace="insurance-companies"
 		:pageTitle="pageTitleWithCount"
+		:pageTitleBase="pageTitle"
 		:pageDescription="pageDescription"
 		:list="companiesList"
 		:totalCount="companiesList.length"
@@ -244,7 +245,7 @@ watchEffect(() => {
 	:deep(.el-radio-button__inner) {
 		display: inline-flex;
 		align-items: center;
-		gap: var(--spacing-xs);
+		gap: var(--kit-spacing-xs);
 	}
 }
 
@@ -258,14 +259,14 @@ watchEffect(() => {
 .map-view-exit {
 	display: none;
 	position: absolute;
-	bottom: var(--spacing-2xl);
+	bottom: var(--kit-spacing-2xl);
 	left: 50%;
 	transform: translateX(-50%);
-	z-index: var(--z-dropdown);
-	box-shadow: var(--shadow-lg);
+	z-index: var(--kit-z-dropdown);
+	box-shadow: var(--kit-shadow-lg);
 
 	.el-icon {
-		margin-right: var(--spacing-xs);
+		margin-right: var(--kit-spacing-xs);
 	}
 }
 

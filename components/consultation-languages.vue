@@ -35,22 +35,22 @@ const languagesText = computed(() => {
 .languages-wrapper {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 
 	.languages-title {
-		font-size: var(--font-size-sm);
-		color: var(--color-text-secondary);
+		font-size: var(--kit-font-size-sm);
+		color: var(--kit-color-text-secondary);
 	}
 
 	.languages {
 		display: flex;
 		align-items: center;
-		gap: var(--spacing-xs);
+		gap: var(--kit-spacing-xs);
 		flex-wrap: wrap;
 
 		.languages-text {
-			font-size: var(--font-size-sm);
-			color: var(--color-primary-green);
+			font-size: var(--kit-font-size-sm);
+			color: var(--kit-color-primary-green);
 			margin-top: -3px;
 		}
 	}

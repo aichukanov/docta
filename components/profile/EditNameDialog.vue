@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ERROR_CODES } from '~/server/utils/api-codes';
 
+const toast = useToast();
+
 const props = defineProps<{ initialName: string }>();
 const emit = defineEmits<{ updated: []; cancel: [] }>();
 
@@ -70,7 +72,7 @@ async function handleSubmit() {
 			method: 'POST',
 			body: { name: name.value },
 		});
-		ElMessage.success(t('nameUpdated'));
+		toast.success(t('nameUpdated'));
 		await fetchUser(true);
 		emit('updated');
 	} catch (err: any) {
@@ -113,7 +115,7 @@ async function handleSubmit() {
 .edit-name-dialog__footer {
 	display: flex;
 	justify-content: flex-end;
-	gap: var(--spacing-sm);
-	margin-top: var(--spacing-lg);
+	gap: var(--kit-spacing-sm);
+	margin-top: var(--kit-spacing-lg);
 }
 </style>

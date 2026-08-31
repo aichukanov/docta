@@ -94,22 +94,22 @@ const metaSecondaryText = computed(() => joinMeta(props.metaSecondary));
 // по левому краю текста строки.
 .search-row {
 	--search-row-icon: 40px;
-	--search-row-inset: var(--spacing-lg);
+	--search-row-inset: var(--kit-spacing-lg);
 
-	transition: background var(--transition-fast);
+	transition: background var(--kit-transition-fast);
 
 	// Фон наведения — на всей строке, а не на ссылке внутри: ярлыки форм
 	// (слот footer) лежат рядом со ссылкой, и подсветка только её обрывалась
 	// перед ними, будто карточка обрезана.
 	&:hover {
-		background: var(--color-bg-secondary);
+		background: var(--kit-color-bg-secondary);
 	}
 
 	&__link {
 		display: flex;
 		align-items: flex-start;
-		gap: var(--spacing-md);
-		padding: var(--spacing-md) var(--search-row-inset);
+		gap: var(--kit-spacing-md);
+		padding: var(--kit-spacing-md) var(--search-row-inset);
 		text-decoration: none;
 		color: inherit;
 	}
@@ -121,9 +121,9 @@ const metaSecondaryText = computed(() => joinMeta(props.metaSecondary));
 		flex: 0 0 var(--search-row-icon);
 		width: var(--search-row-icon);
 		height: var(--search-row-icon);
-		border-radius: var(--border-radius-lg);
-		background: var(--color-primary-bg);
-		color: var(--color-primary);
+		border-radius: var(--kit-border-radius-lg);
+		background: var(--kit-color-primary-bg);
+		color: var(--kit-color-primary);
 		overflow: hidden;
 
 		// Размер задаём здесь, а не пропом иконки: часть icon-компонентов
@@ -146,19 +146,19 @@ const metaSecondaryText = computed(() => joinMeta(props.metaSecondary));
 		display: flex;
 		align-items: baseline;
 		justify-content: space-between;
-		gap: var(--spacing-sm);
+		gap: var(--kit-spacing-sm);
 	}
 
 	&__title {
-		font-size: var(--font-size-base);
-		font-weight: var(--font-weight-semibold);
+		font-size: var(--kit-font-size-base);
+		font-weight: var(--kit-font-weight-semibold);
 		line-height: 1.3;
-		color: var(--color-text-heading);
+		color: var(--kit-color-text-heading);
 		overflow-wrap: anywhere;
 
 		// Бейдж рецептурности приходит слотом badge
 		:deep(.medicine-badge) {
-			margin-left: var(--spacing-sm);
+			margin-left: var(--kit-spacing-sm);
 			vertical-align: 1px;
 		}
 	}
@@ -166,59 +166,59 @@ const metaSecondaryText = computed(() => joinMeta(props.metaSecondary));
 	&__aside {
 		flex: 0 0 auto;
 		white-space: nowrap;
-		font-size: var(--font-size-sm);
-		font-weight: var(--font-weight-semibold);
-		color: var(--color-text-heading);
+		font-size: var(--kit-font-size-sm);
+		font-weight: var(--kit-font-weight-semibold);
+		color: var(--kit-color-text-heading);
 	}
 
 	&__subtitle {
 		display: block;
 		margin-top: 2px;
-		font-size: var(--font-size-sm);
-		color: var(--color-text-secondary);
+		font-size: var(--kit-font-size-sm);
+		color: var(--kit-color-text-secondary);
 	}
 
 	&__meta,
 	&__meta-secondary {
 		display: block;
-		margin-top: var(--spacing-xs);
-		color: var(--color-text-muted);
+		margin-top: var(--kit-spacing-xs);
+		color: var(--kit-color-text-muted);
 	}
 
 	&__meta {
-		font-size: var(--font-size-sm);
+		font-size: var(--kit-font-size-sm);
 	}
 
 	&__meta-secondary {
-		font-size: var(--font-size-xs);
+		font-size: var(--kit-font-size-xs);
 	}
 
 	&__hint {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0 var(--spacing-xs);
-		margin-top: var(--spacing-xs);
-		font-size: var(--font-size-sm);
-		color: var(--color-text-secondary);
+		gap: 0 var(--kit-spacing-xs);
+		margin-top: var(--kit-spacing-xs);
+		font-size: var(--kit-font-size-sm);
+		color: var(--kit-color-text-secondary);
 	}
 
 	&__hint-label {
-		color: var(--color-text-muted);
+		color: var(--kit-color-text-muted);
 	}
 
 	&__footer {
 		display: flex;
 		flex-wrap: wrap;
-		gap: var(--spacing-xs);
-		padding: 0 var(--search-row-inset) var(--spacing-md)
-			calc(var(--search-row-icon) + var(--spacing-md) + var(--search-row-inset));
+		gap: var(--kit-spacing-xs);
+		padding: 0 var(--search-row-inset) var(--kit-spacing-md)
+			calc(var(--search-row-icon) + var(--kit-spacing-md) + var(--search-row-inset));
 	}
 }
 
 @media (max-width: 640px) {
 	.search-row {
 		--search-row-icon: 36px;
-		--search-row-inset: var(--spacing-md);
+		--search-row-inset: var(--kit-spacing-md);
 
 		// На узком экране цена/рейтинг переносятся под название, а не сжимают
 		// его до переноса по буквам

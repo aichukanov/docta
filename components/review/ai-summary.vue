@@ -87,11 +87,11 @@ const sentimentLabel = computed(() => {
 .ai-summary {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
-	padding: var(--spacing-xl);
-	border: var(--border-width-thin) solid var(--color-border-secondary);
-	border-radius: var(--border-radius-xl);
-	background: var(--color-bg-secondary);
+	gap: var(--kit-spacing-md);
+	padding: var(--kit-spacing-xl);
+	border: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-xl);
+	background: var(--kit-color-bg-secondary);
 }
 
 .ai-summary-header {
@@ -99,75 +99,75 @@ const sentimentLabel = computed(() => {
 	align-items: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .ai-summary-title {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	margin: 0;
-	font-size: var(--font-size-lg);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-primary);
+	font-size: var(--kit-font-size-lg);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-primary);
 }
 
 .sentiment-badge {
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
-	padding: 2px var(--spacing-md);
-	border-radius: var(--border-radius-full, 999px);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-medium);
+	padding: 2px var(--kit-spacing-md);
+	border-radius: var(--kit-border-radius-full, 999px);
 }
 
 .sentiment-positive {
-	color: var(--color-success-dark);
-	background: var(--color-success-bg);
+	color: var(--kit-color-success-dark);
+	background: var(--kit-color-success-bg);
 }
 
 .sentiment-neutral {
-	color: var(--color-text-secondary);
-	background: var(--color-bg-primary);
+	color: var(--kit-color-text-secondary);
+	background: var(--kit-color-bg-primary);
 }
 
 .sentiment-negative {
-	color: var(--color-danger-dark);
-	background: var(--color-danger-bg);
+	color: var(--kit-color-danger-dark);
+	background: var(--kit-color-danger-bg);
 }
 
 .ai-summary-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .section-title {
 	margin: 0;
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-base);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-secondary);
 }
 
 .ai-summary-list {
 	margin: 0;
-	padding-left: var(--spacing-xl);
+	padding-left: var(--kit-spacing-xl);
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
-	color: var(--color-text-primary);
+	gap: var(--kit-spacing-xs);
+	color: var(--kit-color-text-primary);
 	line-height: 1.5;
 }
 
 .ai-summary-recommendations {
 	margin: 0;
-	padding: var(--spacing-md);
-	background: var(--color-bg-primary);
-	border-radius: var(--border-radius-md);
-	color: var(--color-text-primary);
+	padding: var(--kit-spacing-md);
+	background: var(--kit-color-bg-primary);
+	border-radius: var(--kit-border-radius-md);
+	color: var(--kit-color-text-primary);
 	line-height: 1.6;
 }
 
 .ai-summary-footer {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 </style>

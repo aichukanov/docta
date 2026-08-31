@@ -1,5 +1,15 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
+
+// Отдельным блоком, чтобы справочный режим мог его не запрашивать.
+const DESCRIPTION_COLUMNS = `
+				c.description_sr,
+				c.description_sr_cyrl,
+				c.description_en,
+				c.description_ru,
+				c.description_de,
+				c.description_tr,`;
+
 import { fetchClinicCoupons } from '~/server/common/clinic-coupons';
 import { getCurrentUser } from '~/server/common/auth';
 import {
@@ -18,6 +28,7 @@ import {
 } from '~/interfaces/clinic-working-hours';
 import { calculateStatus } from '~/common/clinic-working-hours';
 import {
+	isValidLocale,
 	validateCityIds,
 	validateClinicTypeIds,
 	validateDoctorLanguageIds,
@@ -127,6 +138,8 @@ export async function getClinicList(
 		specialtyIds?: number[];
 		name?: string;
 		locale?: string;
+		/** 'directory' — ответ без описаний, см. directoryOnly ниже. */
+		fields?: 'directory';
 		page?: number;
 		openNow?: boolean;
 		minRating?: number;
@@ -143,7 +156,15 @@ export async function getClinicList(
 		? []
 		: [clinicIsPublicSql('c')];
 	const queryParams: Array<number | string> = [];
-	const locale = body.locale || 'en';
+	const locale = isValidLocale(body.locale) ? body.locale : 'en';
+
+	// Справочный режим: клиника нужна как карточка в списке и точка на карте,
+	// а не как страница. Описание живёт в шести локализованных колонках и
+	// составляет основную массу ответа — при выборке без пагинации (её просит
+	// стор клиник) это сотни килобайт, уезжающих в payload каждой страницы
+	// листинга. Всё остальное — имя, адрес, координаты, рейтинг, расписание,
+	// купон — карточкам нужно, поэтому режим срезает только описания.
+	const directoryOnly = body.fields === 'directory';
 	const usePagination = body.page != null;
 	const openNow = body.openNow === true;
 	const sortByDistance =
@@ -277,12 +298,7 @@ export async function getClinicList(
 				c.whatsapp,
 				c.viber,
 				c.website,
-				c.description_sr,
-				c.description_sr_cyrl,
-				c.description_en,
-				c.description_ru,
-				c.description_de,
-				c.description_tr,
+				${directoryOnly ? '' : DESCRIPTION_COLUMNS}
 				c.logo_url as logoUrl,
 				c.rank_score as rankScore,
 				ANY_VALUE(cwh.monday) as monday,
@@ -343,7 +359,9 @@ export async function getClinicList(
 		);
 		const address = processLocalizedFieldForClinic(clinic, 'address', locale);
 		const town = processLocalizedFieldForClinic(clinic, 'town', locale);
-		const description = processLocalizedDescription(clinic, locale);
+		const description = directoryOnly
+			? undefined
+			: processLocalizedDescription(clinic, locale);
 		const features = clinic.features
 			? clinic.features.split(',').map(Number)
 			: [];

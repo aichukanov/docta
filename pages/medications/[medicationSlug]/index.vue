@@ -35,20 +35,21 @@ const { t, n, locale } = useI18n({
 
 const route = useRoute();
 
-const { pending: isLoading, data: medicationData } = await useFetch(
-	'/api/medications/details',
-	{
+const clinicsStore = useClinicsStore();
+
+// Детали сущности и каталог клиник независимы — грузим параллельно, иначе на
+// SSR получается лишний последовательный round-trip (см. pages/doctors/index.vue)
+const [{ pending: isLoading, data: medicationData }] = await Promise.all([
+	useFetch('/api/medications/details', {
 		key: 'medication-details',
 		method: 'POST',
 		body: computed(() => ({
 			slug: route.params.medicationSlug,
 			locale: locale.value,
 		})),
-	},
-);
-
-const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics();
+	}),
+	clinicsStore.fetchClinics(),
+]);
 
 const isFound = computed(() => medicationData.value?.id != null);
 
@@ -110,6 +111,7 @@ const allMedicationClinics = computed(() =>
 
 const {
 	cityIds,
+	hasInvalidCityFilter,
 	filteredClinics: medicationClinics,
 	filteredClinicPrices,
 } = useClinicCityFilter(
@@ -236,7 +238,13 @@ const heroTitle = computed(() => {
 // Schema.org for medication details
 const schemaOrgStore = useSchemaOrgStore();
 
-const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
+// Невалидный `?cityIds=` в URL: страница отдаёт полный список с 200 и
+// self-canonical на мусорный URL, поэтому уходит в noindex (follow — ссылки
+// со страницы честные). Тот же приём, что у листингов в list-page.vue.
+const robotsMeta = computed(() => {
+	if (!isFound.value) return 'noindex';
+	return hasInvalidCityFilter.value ? 'noindex, follow' : undefined;
+});
 
 useSeoMeta({
 	title: pageTitle,
@@ -344,13 +352,13 @@ watchEffect(() => {
 
 <style lang="less" scoped>
 .medication-hero {
-	padding: var(--spacing-xl) 0;
+	padding: var(--kit-spacing-xl) 0;
 }
 
 .medication-name {
-	font-size: var(--font-size-4xl);
+	font-size: var(--kit-font-size-4xl);
 	font-weight: 700;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 	margin: 0;
 	font-family:
 		system-ui,
@@ -360,16 +368,16 @@ watchEffect(() => {
 }
 
 .medication-local-name {
-	font-size: var(--font-size-md);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-secondary);
-	margin-top: var(--spacing-xs);
+	font-size: var(--kit-font-size-md);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-text-secondary);
+	margin-top: var(--kit-spacing-xs);
 }
 
 .medication-map {
 	height: 400px;
-	border-radius: var(--border-radius-md);
+	border-radius: var(--kit-border-radius-md);
 	overflow: hidden;
-	border: 1px solid var(--color-border-light);
+	border: 1px solid var(--kit-color-border-light);
 }
 </style>

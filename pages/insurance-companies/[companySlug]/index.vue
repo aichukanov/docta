@@ -216,7 +216,7 @@ watchEffect(() => {
 .insurance-branches-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .insurance-map {

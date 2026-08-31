@@ -203,17 +203,17 @@ function handleSubmit() {
 
 .register-checkbox__text {
 	font-size: 12px;
-	color: var(--color-text-secondary, #8a94a6);
+	color: var(--kit-color-text-secondary, #8a94a6);
 	line-height: 1.5;
 }
 
 .register-consent__link {
-	color: var(--color-primary, #4a7c59);
+	color: var(--kit-color-primary, #4a7c59);
 	text-decoration: underline;
 	text-underline-offset: 2px;
 
 	&:hover {
-		color: var(--color-primary-dark, #2d5a3d);
+		color: var(--kit-color-primary-dark, #2d5a3d);
 	}
 }
 

@@ -723,28 +723,28 @@ watch(doctorId, async (newDoctorId) => {
 .doctor-info {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
-	margin-top: var(--spacing-lg);
-	border-top: 1px solid var(--color-border-primary);
-	padding-top: var(--spacing-lg);
+	gap: var(--kit-spacing-md);
+	margin-top: var(--kit-spacing-lg);
+	border-top: 1px solid var(--kit-color-border-primary);
+	padding-top: var(--kit-spacing-lg);
 }
 
 .loading {
-	padding: var(--spacing-lg);
-	color: var(--color-text-secondary);
+	padding: var(--kit-spacing-lg);
+	color: var(--kit-color-text-secondary);
 }
 
 .service-prices-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
-	background: var(--color-surface-secondary);
-	border-radius: var(--border-radius-md);
-	border: 1px solid var(--color-border-primary);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-md);
+	background: var(--kit-color-surface-secondary);
+	border-radius: var(--kit-border-radius-md);
+	border: 1px solid var(--kit-color-border-primary);
 
 	&.modified {
-		border-color: var(--color-warning);
+		border-color: var(--kit-color-warning);
 	}
 
 	.section-header {
@@ -754,13 +754,13 @@ watch(doctorId, async (newDoctorId) => {
 
 		h4 {
 			margin: 0;
-			color: var(--color-text-primary);
+			color: var(--kit-color-text-primary);
 		}
 	}
 
 	.service-price-row {
 		display: flex;
-		gap: var(--spacing-sm);
+		gap: var(--kit-spacing-sm);
 		align-items: center;
 
 		.clinic-select {
@@ -778,50 +778,50 @@ watch(doctorId, async (newDoctorId) => {
 	}
 
 	.no-services {
-		color: var(--color-text-secondary);
+		color: var(--kit-color-text-secondary);
 	}
 }
 
 .hidden-toggle {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
-	padding: var(--spacing-md);
-	border-radius: var(--border-radius-md);
-	border: 1px solid var(--color-border-primary);
-	background: var(--color-surface-secondary);
+	gap: var(--kit-spacing-md);
+	padding: var(--kit-spacing-md);
+	border-radius: var(--kit-border-radius-md);
+	border: 1px solid var(--kit-color-border-primary);
+	background: var(--kit-color-surface-secondary);
 
 	&.modified {
-		border-color: var(--color-warning);
+		border-color: var(--kit-color-warning);
 	}
 
 	&.active {
-		background: var(--color-danger-bg);
-		border-color: var(--color-danger-border);
+		background: var(--kit-color-danger-bg);
+		border-color: var(--kit-color-danger-border);
 	}
 
 	.hidden-hint {
 		font-size: 0.85em;
-		color: var(--color-danger-dark);
+		color: var(--kit-color-danger-dark);
 	}
 }
 
 .user-link-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
-	background: var(--color-surface-secondary);
-	border-radius: var(--border-radius-md);
-	border: 1px solid var(--color-border-primary);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-md);
+	background: var(--kit-color-surface-secondary);
+	border-radius: var(--kit-border-radius-md);
+	border: 1px solid var(--kit-color-border-primary);
 
 	&.modified {
-		border-color: var(--color-warning);
+		border-color: var(--kit-color-warning);
 	}
 
 	.user-link-label {
 		font-weight: 500;
-		color: var(--color-text-primary);
+		color: var(--kit-color-text-primary);
 		font-size: 0.9em;
 	}
 
@@ -832,6 +832,6 @@ watch(doctorId, async (newDoctorId) => {
 
 .button-group {
 	display: flex;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 </style>

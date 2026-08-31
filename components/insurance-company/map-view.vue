@@ -200,24 +200,24 @@ defineExpose({
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	z-index: var(--z-raised);
-	background: var(--color-bg-primary);
-	padding: var(--spacing-lg) var(--spacing-2xl);
-	border-radius: var(--border-radius-md);
-	box-shadow: var(--shadow-md);
+	z-index: var(--kit-z-raised);
+	background: var(--kit-color-bg-primary);
+	padding: var(--kit-spacing-lg) var(--kit-spacing-2xl);
+	border-radius: var(--kit-border-radius-md);
+	box-shadow: var(--kit-shadow-md);
 }
 
 .insurance-catalog-popup {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .insurance-catalog-popup__company {
-	font-size: var(--font-size-base);
+	font-size: var(--kit-font-size-base);
 	font-weight: 600;
-	color: var(--color-primary);
+	color: var(--kit-color-primary);
 	text-decoration: none;
 
 	&:hover {
@@ -228,8 +228,8 @@ defineExpose({
 .insurance-catalog-popup__phone {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
-	color: var(--color-text-secondary);
-	font-size: var(--font-size-sm);
+	gap: var(--kit-spacing-xs);
+	color: var(--kit-color-text-secondary);
+	font-size: var(--kit-font-size-sm);
 }
 </style>

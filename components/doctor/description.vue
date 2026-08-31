@@ -12,14 +12,14 @@ defineProps<{
 
 <style scoped lang="less">
 .doctor-description {
-	background: var(--color-surface-primary);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-md);
-	padding: var(--spacing-lg) var(--spacing-xl);
+	background: var(--kit-color-surface-primary);
+	border: 1px solid var(--kit-color-border-light);
+	border-radius: var(--kit-border-radius-md);
+	padding: var(--kit-spacing-lg) var(--kit-spacing-xl);
 }
 
 .doctor-description-content {
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 	line-height: 1.6;
 }
 </style>

@@ -8,10 +8,11 @@ defineProps<{
 	reply: ReviewReply;
 }>();
 
-const { t } = useI18n({
-	useScope: 'local',
-	messages: combineI18nMessages([reviewsI18n]),
-});
+// Слияние на уровне модуля, а не в setup: словарь отзывов константный, а этот
+// компонент рендерится на каждый отзыв страницы. Ссылка общая для экземпляров.
+const messages = combineI18nMessages([reviewsI18n]);
+
+const { t } = useI18n({ useScope: 'local', messages });
 </script>
 
 <template>
@@ -41,26 +42,26 @@ const { t } = useI18n({
 
 <style scoped>
 .reply-item {
-	padding: var(--spacing-lg);
-	background: var(--color-bg-secondary);
-	border-radius: var(--border-radius-lg);
-	margin-top: var(--spacing-sm);
+	padding: var(--kit-spacing-lg);
+	background: var(--kit-color-bg-secondary);
+	border-radius: var(--kit-border-radius-lg);
+	margin-top: var(--kit-spacing-sm);
 }
 
 .reply-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: var(--spacing-sm);
+	margin-bottom: var(--kit-spacing-sm);
 }
 
 .reply-author {
-	color: var(--color-primary);
-	font-size: var(--font-size-md);
+	color: var(--kit-color-primary);
+	font-size: var(--kit-font-size-md);
 }
 
 .reply-date {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 </style>

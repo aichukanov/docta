@@ -32,8 +32,8 @@ const displayRating = computed(() => hoverRating.value || rating.value);
 	background: none;
 	border: none;
 	cursor: pointer;
-	font-size: var(--font-size-3xl);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-3xl);
+	color: var(--kit-color-text-muted);
 	padding: 0;
 	line-height: 1;
 	transition:
@@ -46,6 +46,6 @@ const displayRating = computed(() => hoverRating.value || rating.value);
 }
 
 .star-btn.active {
-	color: var(--color-rating);
+	color: var(--kit-color-rating);
 }
 </style>

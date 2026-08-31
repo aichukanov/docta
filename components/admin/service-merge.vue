@@ -102,14 +102,14 @@ const mergeServices = async () => {
 .service-merge {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .merge-info {
-	padding: var(--spacing-md);
+	padding: var(--kit-spacing-md);
 	background: rgba(245, 158, 11, 0.1);
 	border: 1px solid rgba(245, 158, 11, 0.3);
-	border-radius: var(--border-radius-md);
+	border-radius: var(--kit-border-radius-md);
 
 	p {
 		margin: 0;
@@ -119,15 +119,15 @@ const mergeServices = async () => {
 .flex-block {
 	display: flex;
 	flex-direction: row;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 
 	& > .merge-column {
 		flex: 1 1 50%;
 		max-width: 50%;
 
 		h4 {
-			margin: 0 0 var(--spacing-md) 0;
-			color: var(--color-text-primary);
+			margin: 0 0 var(--kit-spacing-md) 0;
+			color: var(--kit-color-text-primary);
 		}
 	}
 }
@@ -135,8 +135,8 @@ const mergeServices = async () => {
 .merge-action {
 	display: flex;
 	justify-content: center;
-	padding-top: var(--spacing-md);
-	border-top: 1px solid var(--color-border-primary);
+	padding-top: var(--kit-spacing-md);
+	border-top: 1px solid var(--kit-color-border-primary);
 }
 
 @media (max-width: 768px) {

@@ -83,6 +83,6 @@ const zoomed = ref(false);
 }
 
 .clinic-logo__fallback {
-	color: var(--color-text-tertiary);
+	color: var(--kit-color-text-tertiary);
 }
 </style>

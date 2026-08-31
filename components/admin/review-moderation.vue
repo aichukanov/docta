@@ -5,6 +5,8 @@ import type {
 	ModerationVerificationItem,
 } from '~/server/api/admin/reviews/queue.get';
 
+const toast = useToast();
+
 type QueueType = 'reviews' | 'verifications';
 type QueueStatus = 'pending' | 'approved' | 'rejected';
 
@@ -42,7 +44,7 @@ async function loadQueue() {
 		pageSize.value = data.pagination?.pageSize || 20;
 	} catch (error) {
 		console.error('Failed to load moderation queue:', error);
-		ElMessage.error('Ошибка загрузки очереди модерации');
+		toast.error('Ошибка загрузки очереди модерации');
 	} finally {
 		isLoading.value = false;
 	}
@@ -66,14 +68,12 @@ async function moderate(
 			method: 'POST',
 			body: { reviewId, action, reason },
 		});
-		ElMessage.success(
-			action === 'approve' ? 'Отзыв одобрен' : 'Отзыв отклонён',
-		);
+		toast.success(action === 'approve' ? 'Отзыв одобрен' : 'Отзыв отклонён');
 		rejectDialogVisible.value = false;
 		await loadQueue();
 	} catch (error) {
 		console.error('Failed to moderate review:', error);
-		ElMessage.error('Ошибка модерации');
+		toast.error('Ошибка модерации');
 	} finally {
 		isSubmitting.value = false;
 	}
@@ -90,14 +90,14 @@ async function verify(
 			method: 'POST',
 			body: { reviewId, action, reason },
 		});
-		ElMessage.success(
+		toast.success(
 			action === 'approve' ? 'Верификация одобрена' : 'Верификация отклонена',
 		);
 		rejectDialogVisible.value = false;
 		await loadQueue();
 	} catch (error) {
 		console.error('Failed to moderate verification:', error);
-		ElMessage.error('Ошибка модерации верификации');
+		toast.error('Ошибка модерации верификации');
 	} finally {
 		isSubmitting.value = false;
 	}
@@ -114,7 +114,7 @@ function submitReject() {
 	const { type, reviewId } = rejectTarget.value;
 	if (type === 'reviews') {
 		if (!rejectReason.value.trim()) {
-			ElMessage.error('Укажите причину отклонения');
+			toast.error('Укажите причину отклонения');
 			return;
 		}
 		moderate(reviewId, 'reject', rejectReason.value.trim());
@@ -177,7 +177,7 @@ function formatDate(date: string | null) {
 
 		<!-- Отзывы -->
 		<template v-else-if="activeType === 'reviews'">
-			<el-empty v-if="reviews.length === 0" description="Нет отзывов" />
+			<KitEmpty v-if="reviews.length === 0" description="Нет отзывов" />
 			<div v-else class="queue-list">
 				<el-card v-for="review in reviews" :key="review.id" shadow="never">
 					<div class="item-header">
@@ -249,7 +249,7 @@ function formatDate(date: string | null) {
 
 		<!-- Верификация -->
 		<template v-else>
-			<el-empty
+			<KitEmpty
 				v-if="verifications.length === 0"
 				description="Нет файлов верификации"
 			/>
@@ -366,19 +366,19 @@ function formatDate(date: string | null) {
 .stat-item {
 	text-align: center;
 	padding: 12px;
-	background: var(--color-bg-secondary);
+	background: var(--kit-color-bg-secondary);
 	border-radius: 8px;
 }
 
 .stat-value {
 	font-size: 24px;
 	font-weight: 700;
-	color: var(--color-primary);
+	color: var(--kit-color-primary);
 }
 
 .stat-label {
 	font-size: 13px;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 	margin-top: 4px;
 }
 
@@ -392,7 +392,7 @@ function formatDate(date: string | null) {
 .queue-loading {
 	padding: 24px;
 	text-align: center;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 }
 
 .queue-list {
@@ -410,7 +410,7 @@ function formatDate(date: string | null) {
 }
 
 .target-link {
-	color: var(--color-primary);
+	color: var(--kit-color-primary);
 	margin-left: 4px;
 }
 
@@ -419,32 +419,32 @@ function formatDate(date: string | null) {
 	flex-wrap: wrap;
 	gap: 12px;
 	font-size: 13px;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 	margin-bottom: 8px;
 }
 
 .item-text {
 	margin: 0 0 8px;
 	padding: 10px 12px;
-	background: var(--color-bg-secondary);
+	background: var(--kit-color-bg-secondary);
 	border-radius: 6px;
 	line-height: 1.5;
 	white-space: pre-wrap;
 }
 
 .item-text-empty {
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 }
 
 .rejection-reason {
 	margin: 0 0 8px;
 	font-size: 13px;
-	color: var(--color-danger-dark);
+	color: var(--kit-color-danger-dark);
 }
 
 .verification-preview {
 	margin-bottom: 8px;
-	border: 1px solid var(--color-border-secondary);
+	border: 1px solid var(--kit-color-border-secondary);
 	border-radius: 6px;
 	overflow: hidden;
 	max-width: 480px;
@@ -455,7 +455,7 @@ function formatDate(date: string | null) {
 	width: 100%;
 	max-height: 400px;
 	object-fit: contain;
-	background: var(--color-bg-secondary);
+	background: var(--kit-color-bg-secondary);
 }
 
 .item-actions {

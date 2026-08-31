@@ -7,6 +7,7 @@ import {
 	buildCollectionPageSchemas,
 	buildTopListItemElements,
 } from '~/common/schema-org-builders';
+import { buildArticleImageSrcSet } from '~/components/article-page.vue';
 import { combineI18nMessages } from '~/i18n/utils';
 import { LanguageId } from '~/enums/language';
 import articlesI18n from '~/i18n/articles';
@@ -40,9 +41,15 @@ const breadcrumbItems = computed(() => [
 ]);
 
 // Реальные цифры для мета-строк карточек: те же выборки,
-// что строят сами статьи
+// что строят сами статьи.
+//
+// Из ответа нужны ровно два числа, а список врачей приходит полными строками.
+// `transform` выполняется до сериализации ответа в payload, поэтому на клиент
+// уезжают только числа, а не 70 карточек врачей с контактами и рейтингами.
+// Пагинацией это не заменить: размер множества специальностей считается по
+// всей выборке, а не по первой странице.
 const clinicsStore = useClinicsStore();
-const [{ data: doctorsData }] = await Promise.all([
+const [{ data: doctorsStats }] = await Promise.all([
 	useFetch('/api/doctors/list', {
 		method: 'POST',
 		body: computed(() => ({
@@ -50,21 +57,26 @@ const [{ data: doctorsData }] = await Promise.all([
 			onlyDoctorLanguages: true,
 			locale: locale.value,
 		})),
+		transform: (data) => {
+			const specialtyIds = new Set<number>();
+			data.doctors.forEach((doctor) => {
+				doctor.specialtyIds
+					?.split(',')
+					.forEach((id: string) => specialtyIds.add(Number(id)));
+			});
+			return {
+				doctorsCount: data.totalCount,
+				specialtiesCount: specialtyIds.size,
+			};
+		},
 	}),
 	clinicsStore.fetchClinics(),
 ]);
 
-const doctorsCount = computed(() => doctorsData.value?.totalCount ?? 0);
-
-const specialtiesCount = computed(() => {
-	const ids = new Set<number>();
-	doctorsData.value?.doctors.forEach((doctor) => {
-		doctor.specialtyIds
-			?.split(',')
-			.forEach((id: string) => ids.add(Number(id)));
-	});
-	return ids.size;
-});
+const doctorsCount = computed(() => doctorsStats.value?.doctorsCount ?? 0);
+const specialtiesCount = computed(
+	() => doctorsStats.value?.specialtiesCount ?? 0,
+);
 
 const clinicLanguageStats = computed(() => {
 	const clinicIds = new Set<number>();
@@ -329,7 +341,17 @@ watchEffect(() => {
 					class="article-card"
 				>
 					<div v-if="article.image" class="article-card__image">
-						<img :src="article.image" :alt="article.title" loading="lazy" />
+						<!-- Слот карточки ~360 px (две колонки в контейнере 800 px),
+						     оригиналы до 1536 px — отдаём деривативы через srcset.
+						     Ленивую загрузку здесь оставляем: карточки ниже первого
+						     экрана, LCP-обложка живёт в самой статье. -->
+						<img
+							:src="article.image"
+							:srcset="buildArticleImageSrcSet(article.image)"
+							sizes="(max-width: 700px) calc(100vw - 48px), 360px"
+							:alt="article.title"
+							loading="lazy"
+						/>
 					</div>
 					<h2 class="article-card__title">{{ article.title }}</h2>
 					<p class="article-card__description">{{ article.description }}</p>
@@ -344,29 +366,29 @@ watchEffect(() => {
 
 <style scoped lang="less">
 .articles-page {
-	padding: var(--spacing-xl) 0 var(--spacing-3xl);
+	padding: var(--kit-spacing-xl) 0 var(--kit-spacing-3xl);
 }
 
 .page-title {
-	margin: var(--spacing-lg) 0 var(--spacing-sm);
-	font-size: var(--font-size-4xl);
-	font-weight: var(--font-weight-bold);
+	margin: var(--kit-spacing-lg) 0 var(--kit-spacing-sm);
+	font-size: var(--kit-font-size-4xl);
+	font-weight: var(--kit-font-weight-bold);
 	letter-spacing: -0.02em;
 	line-height: 1.2;
-	color: var(--color-text-heading);
+	color: var(--kit-color-text-heading);
 }
 
 .page-subtitle {
-	margin: 0 0 var(--spacing-3xl);
-	font-size: var(--font-size-lg);
+	margin: 0 0 var(--kit-spacing-3xl);
+	font-size: var(--kit-font-size-lg);
 	line-height: 1.7;
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 }
 
 .articles-list {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: var(--spacing-3xl) var(--spacing-2xl);
+	gap: var(--kit-spacing-3xl) var(--kit-spacing-2xl);
 }
 
 .article-card {
@@ -376,15 +398,15 @@ watchEffect(() => {
 
 	&__image {
 		aspect-ratio: 16 / 9;
-		border-radius: var(--border-radius-xl);
+		border-radius: var(--kit-border-radius-xl);
 		overflow: hidden;
-		margin-bottom: var(--spacing-lg);
+		margin-bottom: var(--kit-spacing-lg);
 
 		img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			transition: transform var(--transition-base);
+			transition: transform var(--kit-transition-base);
 		}
 	}
 
@@ -393,43 +415,43 @@ watchEffect(() => {
 	}
 
 	&__title {
-		margin: 0 0 var(--spacing-sm);
-		font-size: var(--font-size-xl);
-		font-weight: var(--font-weight-semibold);
+		margin: 0 0 var(--kit-spacing-sm);
+		font-size: var(--kit-font-size-xl);
+		font-weight: var(--kit-font-weight-semibold);
 		letter-spacing: -0.01em;
 		line-height: 1.35;
-		color: var(--color-text-heading);
-		transition: color var(--transition-base);
+		color: var(--kit-color-text-heading);
+		transition: color var(--kit-transition-base);
 	}
 
 	&:hover &__title {
-		color: var(--color-primary);
+		color: var(--kit-color-primary);
 	}
 
 	&__description {
 		margin: 0;
-		font-size: var(--font-size-base);
-		color: var(--color-text-secondary);
+		font-size: var(--kit-font-size-base);
+		color: var(--kit-color-text-secondary);
 		line-height: 1.6;
 	}
 
 	&__meta {
-		margin-top: var(--spacing-md);
-		font-size: var(--font-size-sm);
-		color: var(--color-text-muted);
+		margin-top: var(--kit-spacing-md);
+		font-size: var(--kit-font-size-sm);
+		color: var(--kit-color-text-muted);
 	}
 }
 
 @media (max-width: 700px) {
 	.articles-list {
 		grid-template-columns: 1fr;
-		gap: var(--spacing-2xl);
+		gap: var(--kit-spacing-2xl);
 	}
 }
 
 .container {
 	max-width: 800px;
 	margin: 0 auto;
-	padding: 0 var(--spacing-lg);
+	padding: 0 var(--kit-spacing-lg);
 }
 </style>

@@ -219,6 +219,7 @@ watchEffect(() => {
 	<ListPage
 		filter-namespace="services"
 		:pageTitle="pageTitleWithCount"
+		:pageTitleBase="pageTitle"
 		:pageDescription="pageDescription"
 		:list="medicalServicesList?.items || []"
 		:totalCount="medicalServicesList?.totalCount || 0"
@@ -279,10 +280,10 @@ watchEffect(() => {
 
 <style lang="less" scoped>
 .service-info {
-	padding: 0 var(--spacing-xs);
+	padding: 0 var(--kit-spacing-xs);
 
 	.service-name {
-		font-size: var(--font-size-xl);
+		font-size: var(--kit-font-size-xl);
 		font-weight: 600;
 		color: #1f2937;
 		margin: 0;
@@ -293,20 +294,20 @@ watchEffect(() => {
 		word-break: break-word;
 
 		.service-name-link {
-			color: var(--color-primary);
+			color: var(--kit-color-primary);
 			text-decoration: none;
 
 			&:hover {
-				color: var(--color-primary-dark);
+				color: var(--kit-color-primary-dark);
 				text-decoration: underline;
 			}
 		}
 	}
 
 	.service-local-name {
-		font-size: var(--font-size-sm);
+		font-size: var(--kit-font-size-sm);
 		color: #6b7280;
-		margin-top: var(--spacing-xs);
+		margin-top: var(--kit-spacing-xs);
 		font-style: italic;
 		word-break: break-word;
 	}
@@ -314,8 +315,8 @@ watchEffect(() => {
 	.service-categories {
 		display: flex;
 		flex-wrap: wrap;
-		gap: var(--spacing-xs);
-		margin-top: var(--spacing-sm);
+		gap: var(--kit-spacing-xs);
+		margin-top: var(--kit-spacing-sm);
 	}
 }
 </style>

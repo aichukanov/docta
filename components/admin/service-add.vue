@@ -233,38 +233,38 @@ const addService = async () => {
 .service-add {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .sort-order-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 
 	& > label {
-		color: var(--color-text-secondary);
+		color: var(--kit-color-text-secondary);
 		font-size: 14px;
 	}
 
 	.sort-order-input {
 		display: flex;
-		gap: var(--spacing-sm);
+		gap: var(--kit-spacing-sm);
 		align-items: center;
 	}
 
 	.hint {
 		font-size: 12px;
-		color: var(--color-text-muted);
+		color: var(--kit-color-text-muted);
 	}
 }
 
 .specialty-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 
 	& > label {
-		color: var(--color-text-secondary);
+		color: var(--kit-color-text-secondary);
 		font-size: 14px;
 	}
 
@@ -276,7 +276,7 @@ const addService = async () => {
 .clinic-prices-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 
 	.section-header {
 		display: flex;
@@ -284,14 +284,14 @@ const addService = async () => {
 		align-items: center;
 
 		label {
-			color: var(--color-text-secondary);
+			color: var(--kit-color-text-secondary);
 			font-size: 14px;
 		}
 	}
 
 	.clinic-price-row {
 		display: flex;
-		gap: var(--spacing-sm);
+		gap: var(--kit-spacing-sm);
 		align-items: center;
 
 		.clinic-select {

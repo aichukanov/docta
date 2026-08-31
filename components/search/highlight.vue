@@ -21,9 +21,9 @@ const parts = computed(() => highlightParts(props.text, props.query));
 <style lang="less" scoped>
 /* Заливка вместо жирного: жирный конфликтует с весом заголовка карточки */
 .search-highlight {
-	background: var(--color-search-highlight-bg);
+	background: var(--kit-color-search-highlight-bg);
 	color: inherit;
-	border-radius: var(--border-radius-sm);
+	border-radius: var(--kit-border-radius-sm);
 	padding: 0 1px;
 }
 </style>

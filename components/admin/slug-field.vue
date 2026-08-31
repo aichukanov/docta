@@ -71,16 +71,16 @@ function regenerate() {
 .field {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 
 	& > label {
-		color: var(--color-text-secondary);
+		color: var(--kit-color-text-secondary);
 		font-size: 14px;
 	}
 
 	&.modified {
 		& > label {
-			color: var(--color-warning-dark);
+			color: var(--kit-color-warning-dark);
 			font-weight: 500;
 		}
 	}

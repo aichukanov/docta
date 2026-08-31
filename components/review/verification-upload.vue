@@ -114,7 +114,7 @@ const upload = async () => {
 .verification-upload {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .file-input {
@@ -122,8 +122,8 @@ const upload = async () => {
 }
 
 .preview-wrap {
-	border: var(--border-width-thin) solid var(--color-border-secondary);
-	border-radius: var(--border-radius-md);
+	border: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-md);
 	overflow: hidden;
 	max-width: 320px;
 }
@@ -133,11 +133,11 @@ const upload = async () => {
 	width: 100%;
 	max-height: 240px;
 	object-fit: contain;
-	background: var(--color-bg-secondary);
+	background: var(--kit-color-bg-secondary);
 }
 
 .upload-actions {
 	display: flex;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 </style>

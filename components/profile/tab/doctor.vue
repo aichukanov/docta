@@ -4,6 +4,8 @@ import { ERROR_CODES } from '~/server/utils/api-codes';
 import type { DoctorMyProfile } from '~/server/api/doctors/my-profile';
 import type { DoctorProfileStatus } from '~/interfaces/doctor';
 
+const toast = useToast();
+
 const { t } = useI18n({
 	useScope: 'local',
 	messages: doctorProfileI18n.messages,
@@ -42,12 +44,12 @@ async function toggleVisibility() {
 			method: 'POST',
 		});
 		doctor.value.hidden = result.hidden;
-		ElMessage.success(t('visibilityUpdated'));
+		toast.success(t('visibilityUpdated'));
 	} catch (e: any) {
 		if (e?.data?.data?.code === ERROR_CODES.DOCTOR_PROFILE_HIDDEN_BY_ADMIN) {
-			ElMessage.warning(t('errorHiddenByAdmin'));
+			toast.warning(t('errorHiddenByAdmin'));
 		} else {
-			ElMessage.error(t('errorUpdating'));
+			toast.error(t('errorUpdating'));
 		}
 	} finally {
 		isToggling.value = false;

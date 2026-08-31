@@ -425,41 +425,41 @@ watch(serviceId, async (newId) => {
 .service-info {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
-	margin-top: var(--spacing-lg);
-	border-top: 1px solid var(--color-border-primary);
-	padding-top: var(--spacing-lg);
+	gap: var(--kit-spacing-md);
+	margin-top: var(--kit-spacing-lg);
+	border-top: 1px solid var(--kit-color-border-primary);
+	padding-top: var(--kit-spacing-lg);
 }
 
 .loading {
-	padding: var(--spacing-lg);
-	color: var(--color-text-secondary);
+	padding: var(--kit-spacing-lg);
+	color: var(--kit-color-text-secondary);
 }
 
 .sort-order-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 
 	& > label {
-		color: var(--color-text-secondary);
+		color: var(--kit-color-text-secondary);
 		font-size: 14px;
 	}
 
 	&.modified > label {
-		color: var(--color-warning-dark);
+		color: var(--kit-color-warning-dark);
 		font-weight: 500;
 	}
 
 	.sort-order-input {
 		display: flex;
-		gap: var(--spacing-sm);
+		gap: var(--kit-spacing-sm);
 		align-items: center;
 	}
 
 	.hint {
 		font-size: 12px;
-		color: var(--color-text-muted);
+		color: var(--kit-color-text-muted);
 	}
 }
 
@@ -467,18 +467,18 @@ watch(serviceId, async (newId) => {
 .category-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
-	padding: var(--spacing-md);
-	background: var(--color-surface-secondary);
-	border-radius: var(--border-radius-md);
-	border: 1px solid var(--color-border-primary);
+	gap: var(--kit-spacing-xs);
+	padding: var(--kit-spacing-md);
+	background: var(--kit-color-surface-secondary);
+	border-radius: var(--kit-border-radius-md);
+	border: 1px solid var(--kit-color-border-primary);
 
 	&.modified {
-		border-color: var(--color-warning);
+		border-color: var(--kit-color-warning);
 	}
 
 	& > label {
-		color: var(--color-text-secondary);
+		color: var(--kit-color-text-secondary);
 		font-size: 14px;
 	}
 
@@ -491,14 +491,14 @@ watch(serviceId, async (newId) => {
 .clinic-prices-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
-	background: var(--color-surface-secondary);
-	border-radius: var(--border-radius-md);
-	border: 1px solid var(--color-border-primary);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-md);
+	background: var(--kit-color-surface-secondary);
+	border-radius: var(--kit-border-radius-md);
+	border: 1px solid var(--kit-color-border-primary);
 
 	&.modified {
-		border-color: var(--color-warning);
+		border-color: var(--kit-color-warning);
 	}
 
 	.section-header {
@@ -508,13 +508,13 @@ watch(serviceId, async (newId) => {
 
 		h4 {
 			margin: 0;
-			color: var(--color-text-primary);
+			color: var(--kit-color-text-primary);
 		}
 	}
 
 	.clinic-price-row {
 		display: flex;
-		gap: var(--spacing-sm);
+		gap: var(--kit-spacing-sm);
 		align-items: center;
 
 		.clinic-select {
@@ -533,13 +533,13 @@ watch(serviceId, async (newId) => {
 	}
 
 	.no-clinics {
-		color: var(--color-text-secondary);
+		color: var(--kit-color-text-secondary);
 		font-style: italic;
 	}
 }
 
 .button-group {
 	display: flex;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 </style>

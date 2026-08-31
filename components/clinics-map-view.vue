@@ -162,11 +162,11 @@ onMounted(async () => {
 	height: 40px;
 	cursor: pointer;
 	transform: translate(-50%, -50%);
-	background: var(--color-primary);
-	color: var(--color-bg-primary);
-	border-radius: var(--border-radius-full);
-	border: 2px solid var(--color-bg-primary);
-	box-shadow: var(--shadow-hover);
+	background: var(--kit-color-primary);
+	color: var(--kit-color-bg-primary);
+	border-radius: var(--kit-border-radius-full);
+	border: 2px solid var(--kit-color-bg-primary);
+	box-shadow: var(--kit-shadow-hover);
 	transition: transform 0.2s ease;
 }
 
@@ -183,13 +183,13 @@ onMounted(async () => {
 	height: 40px;
 	cursor: pointer;
 	transform: translate(-50%, -50%);
-	background: var(--color-primary-dark);
-	color: var(--color-bg-primary);
-	border-radius: var(--border-radius-full);
-	border: 2px solid var(--color-bg-primary);
-	box-shadow: var(--shadow-hover);
-	font-weight: var(--font-weight-semibold);
-	font-size: var(--font-size-sm);
+	background: var(--kit-color-primary-dark);
+	color: var(--kit-color-bg-primary);
+	border-radius: var(--kit-border-radius-full);
+	border: 2px solid var(--kit-color-bg-primary);
+	box-shadow: var(--kit-shadow-hover);
+	font-weight: var(--kit-font-weight-semibold);
+	font-size: var(--kit-font-size-sm);
 	font-family:
 		system-ui,
 		-apple-system,
@@ -216,10 +216,10 @@ onMounted(async () => {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	z-index: var(--z-raised);
-	background: var(--color-bg-primary);
-	padding: var(--spacing-lg) var(--spacing-2xl);
-	border-radius: var(--border-radius-md);
-	box-shadow: var(--shadow-md);
+	z-index: var(--kit-z-raised);
+	background: var(--kit-color-bg-primary);
+	padding: var(--kit-spacing-lg) var(--kit-spacing-2xl);
+	border-radius: var(--kit-border-radius-md);
+	box-shadow: var(--kit-shadow-md);
 }
 </style>

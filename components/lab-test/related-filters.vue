@@ -110,33 +110,33 @@ const hasHub = computed(
 .labtests-related-filters {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xl);
-	margin-top: var(--spacing-2xl);
+	gap: var(--kit-spacing-xl);
+	margin-top: var(--kit-spacing-2xl);
 }
 
 .labtests-related-filters__title {
-	margin: 0 0 var(--spacing-md);
-	font-size: var(--font-size-md);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-secondary);
+	margin: 0 0 var(--kit-spacing-md);
+	font-size: var(--kit-font-size-md);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-secondary);
 }
 
 .labtests-related-filters__links {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 
 	a {
-		padding: var(--spacing-xs) var(--spacing-md);
-		border-radius: var(--border-radius-md);
-		background: var(--color-surface-secondary);
-		color: var(--color-primary);
+		padding: var(--kit-spacing-xs) var(--kit-spacing-md);
+		border-radius: var(--kit-border-radius-md);
+		background: var(--kit-color-surface-secondary);
+		color: var(--kit-color-primary);
 		text-decoration: none;
-		font-size: var(--font-size-sm);
-		transition: background var(--transition-fast);
+		font-size: var(--kit-font-size-sm);
+		transition: background var(--kit-transition-fast);
 
 		&:hover {
-			background: var(--color-surface-primary);
+			background: var(--kit-color-surface-primary);
 			text-decoration: underline;
 		}
 	}

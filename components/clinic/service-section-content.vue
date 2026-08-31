@@ -73,13 +73,13 @@ const isHidden = (index: number) =>
 .section-content {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .items-grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 
 	@media (max-width: 640px) {
 		grid-template-columns: 1fr;

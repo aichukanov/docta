@@ -68,12 +68,12 @@ const detailsLink = computed(() => {
 
 <style scoped lang="less">
 .lab-test-info {
-	padding: 0 var(--spacing-xs);
+	padding: 0 var(--kit-spacing-xs);
 
 	.lab-test-name {
-		font-size: var(--font-size-xl);
+		font-size: var(--kit-font-size-xl);
 		font-weight: 600;
-		color: var(--color-text-heading);
+		color: var(--kit-color-text-heading);
 		margin: 0;
 		font-family:
 			system-ui,
@@ -82,20 +82,20 @@ const detailsLink = computed(() => {
 		word-break: break-word;
 
 		.lab-test-link {
-			color: var(--color-primary);
+			color: var(--kit-color-primary);
 			text-decoration: none;
 
 			&:hover {
-				color: var(--color-primary-dark);
+				color: var(--kit-color-primary-dark);
 				text-decoration: underline;
 			}
 		}
 	}
 
 	.lab-test-original {
-		font-size: var(--font-size-sm);
-		color: var(--color-text-muted);
-		margin-top: var(--spacing-xs);
+		font-size: var(--kit-font-size-sm);
+		color: var(--kit-color-text-muted);
+		margin-top: var(--kit-spacing-xs);
 		font-style: italic;
 		word-break: break-word;
 	}
@@ -103,21 +103,21 @@ const detailsLink = computed(() => {
 	.lab-test-categories {
 		display: flex;
 		flex-wrap: wrap;
-		gap: var(--spacing-xs);
-		margin-top: var(--spacing-sm);
+		gap: var(--kit-spacing-xs);
+		margin-top: var(--kit-spacing-sm);
 	}
 
 	.lab-test-synonyms {
-		font-size: var(--font-size-sm);
-		color: var(--color-text-muted);
-		margin-top: var(--spacing-sm);
+		font-size: var(--kit-font-size-sm);
+		color: var(--kit-color-text-muted);
+		margin-top: var(--kit-spacing-sm);
 
 		.synonyms-label {
-			margin-right: var(--spacing-xs);
+			margin-right: var(--kit-spacing-xs);
 		}
 
 		.synonyms-list {
-			color: var(--color-text-muted);
+			color: var(--kit-color-text-muted);
 		}
 	}
 }

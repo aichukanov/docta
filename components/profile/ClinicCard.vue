@@ -96,19 +96,19 @@ const cityName = computed(() =>
 
 <style scoped>
 .clinic-card {
-	background: var(--color-bg-primary);
-	border-radius: var(--border-radius-xl);
-	padding: var(--spacing-2xl);
-	box-shadow: var(--shadow-sm);
-	border: 1px solid var(--color-border-secondary);
+	background: var(--kit-color-bg-primary);
+	border-radius: var(--kit-border-radius-xl);
+	padding: var(--kit-spacing-2xl);
+	box-shadow: var(--kit-shadow-sm);
+	border: 1px solid var(--kit-color-border-secondary);
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xl);
+	gap: var(--kit-spacing-xl);
 }
 
 .clinic-card__profile {
 	display: flex;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 	align-items: flex-start;
 }
 
@@ -120,32 +120,32 @@ const cityName = computed(() =>
 }
 
 .clinic-card__name {
-	font-size: var(--font-size-xl);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-xl);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	line-height: 1.3;
 }
 
 .clinic-card__local-name {
-	font-weight: var(--font-weight-normal);
-	color: var(--color-text-secondary);
+	font-weight: var(--kit-font-weight-normal);
+	color: var(--kit-color-text-secondary);
 }
 
 .clinic-card__meta {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 	line-height: 1.4;
 }
 
 .clinic-card__edit {
 	display: flex;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	flex-wrap: wrap;
 }
 
 @media (max-width: 640px) {
 	.clinic-card {
-		padding: var(--spacing-xl) var(--spacing-lg);
+		padding: var(--kit-spacing-xl) var(--kit-spacing-lg);
 	}
 
 	.clinic-card__profile {

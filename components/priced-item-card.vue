@@ -98,15 +98,15 @@ const formattedPrice = computed(() => {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
-	background: var(--color-surface-primary);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-md);
-	transition: border-color var(--transition-fast);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-md);
+	background: var(--kit-color-surface-primary);
+	border: 1px solid var(--kit-color-border-light);
+	border-radius: var(--kit-border-radius-md);
+	transition: border-color var(--kit-transition-fast);
 
 	&:hover {
-		border-color: var(--color-border-accent);
+		border-color: var(--kit-color-border-accent);
 	}
 }
 
@@ -118,44 +118,44 @@ const formattedPrice = computed(() => {
 }
 
 .item-name {
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-primary);
+	font-size: var(--kit-font-size-base);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-text-primary);
 	line-height: 1.3;
 	overflow-wrap: break-word;
 
 	&.item-link {
-		color: var(--color-primary);
+		color: var(--kit-color-primary);
 		text-decoration: none;
 
 		&:hover {
-			color: var(--color-primary-dark);
+			color: var(--kit-color-primary-dark);
 			text-decoration: underline;
 		}
 	}
 }
 
 .item-local-name {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 
 .item-price {
 	display: inline-flex;
 	align-items: center;
-	gap: var(--spacing-xs);
-	padding: var(--spacing-xs) var(--spacing-sm);
-	background: var(--color-primary);
-	border-radius: var(--border-radius-sm);
+	gap: var(--kit-spacing-xs);
+	padding: var(--kit-spacing-xs) var(--kit-spacing-sm);
+	background: var(--kit-color-primary);
+	border-radius: var(--kit-border-radius-sm);
 	color: white;
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-bold);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-bold);
 	white-space: nowrap;
 
 	&__unknown {
-		background: var(--color-surface-secondary);
-		color: var(--color-text-muted);
-		font-weight: var(--font-weight-normal);
+		background: var(--kit-color-surface-secondary);
+		color: var(--kit-color-text-muted);
+		font-weight: var(--kit-font-weight-normal);
 		font-style: italic;
 	}
 }

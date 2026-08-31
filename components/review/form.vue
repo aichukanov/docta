@@ -3,6 +3,8 @@ import reviewsI18n from '~/i18n/reviews';
 import { combineI18nMessages } from '~/i18n/utils';
 import type { Review } from '~/interfaces/review';
 
+const toast = useToast();
+
 export interface ReviewFormEntity {
 	id: number;
 	name: string;
@@ -50,7 +52,7 @@ const closeDialog = () => {
 };
 
 const onVerificationUploaded = () => {
-	ElMessage.success(t('VerificationUploaded'));
+	toast.success(t('VerificationUploaded'));
 	closeDialog();
 };
 
@@ -218,18 +220,18 @@ const handleSubmit = async () => {
 .review-form {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .verification-step {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .verification-hint {
 	margin: 0;
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 	line-height: 1.6;
 }
 
@@ -240,17 +242,17 @@ const handleSubmit = async () => {
 .form-field {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .form-label {
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-text-secondary);
 }
 
 .entity-name {
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-primary);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-primary);
 }
 </style>

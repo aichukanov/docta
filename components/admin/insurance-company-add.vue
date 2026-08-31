@@ -115,8 +115,8 @@ const addCompany = async () => {
 .insurance-company-add-form {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 
-	margin-bottom: var(--spacing-md);
+	margin-bottom: var(--kit-spacing-md);
 }
 </style>

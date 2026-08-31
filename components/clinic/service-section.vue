@@ -48,6 +48,6 @@ const sectionLink = computed(() => ({
 .service-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 </style>

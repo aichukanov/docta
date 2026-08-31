@@ -14,9 +14,9 @@
 				<IconCheck
 					v-if="isCopied"
 					:size="14"
-					color="var(--color-success-dark)"
+					color="var(--kit-color-success-dark)"
 				/>
-				<IconCopy v-else :size="14" color="var(--color-text-secondary)" />
+				<IconCopy v-else :size="14" color="var(--kit-color-text-secondary)" />
 			</template>
 		</el-button>
 	</el-tooltip>
@@ -65,7 +65,7 @@ async function copyToClipboard(): Promise<void> {
 }
 
 .copy-button:hover {
-	background: var(--color-bg-secondary);
+	background: var(--kit-color-bg-secondary);
 }
 </style>
 

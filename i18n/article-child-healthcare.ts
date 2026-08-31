@@ -4,7 +4,7 @@ export default {
 			'ChildHealthcareTitle':
 				'A child in Montenegro: pediatricians, vaccinations, kindergarten and school certificates',
 			'ChildHealthcareDescription':
-				'How pediatric care works in Montenegro: the izabrani pediatrician at the dom zdravlja, the Montenegrin vaccination calendar, certificates for kindergarten and school, care without a zdravstvena knjižica, and what to do in an emergency.',
+				'How pediatric care works in Montenegro: the izabrani pediatrician at the dom zdravlja, the Montenegrin vaccination calendar, kindergarten and school certificates.',
 			'ChmToc_system': 'How pediatric care works',
 			'ChmToc_vaccines': 'Vaccinations and the immunization calendar',
 			'ChmToc_certificates': 'Certificates for kindergarten and school',
@@ -56,7 +56,7 @@ export default {
 			'ChildHealthcareTitle':
 				'Ребёнок в Черногории: педиатры, прививки, справки в сад и школу',
 			'ChildHealthcareDescription':
-				'Как устроена детская медицина в Черногории: выбранный педиатр в dom zdravlja, черногорский календарь прививок, справки для сада и школы, помощь без здравственной книжицы и действия в экстренных ситуациях.',
+				'Как устроена детская медицина в Черногории: выбранный педиатр в dom zdravlja, черногорский календарь прививок и справки для детского сада и школы.',
 			'ChmToc_system': 'Как устроена детская медицина',
 			'ChmToc_vaccines': 'Прививки и календарь вакцинации',
 			'ChmToc_certificates': 'Справки для сада и школы',
@@ -108,7 +108,7 @@ export default {
 			'ChildHealthcareTitle':
 				'Dijete u Crnoj Gori: pedijatri, vakcine, potvrde za vrtić i školu',
 			'ChildHealthcareDescription':
-				'Kako funkcioniše dječja medicina u Crnoj Gori: izabrani pedijatar u domu zdravlja, crnogorski kalendar vakcinacije, potvrde za vrtić i školu, pomoć bez zdravstvene knjižice i postupanje u hitnim situacijama.',
+				'Kako funkcioniše dječja medicina u Crnoj Gori: izabrani pedijatar u domu zdravlja, crnogorski kalendar vakcinacije i potvrde za vrtić i školu.',
 			'ChmToc_system': 'Kako funkcioniše dječja medicina',
 			'ChmToc_vaccines': 'Vakcine i kalendar imunizacije',
 			'ChmToc_certificates': 'Potvrde za vrtić i školu',
@@ -160,7 +160,7 @@ export default {
 			'ChildHealthcareTitle':
 				'Дијете у Црној Гори: педијатри, вакцине, потврде за вртић и школу',
 			'ChildHealthcareDescription':
-				'Како функционише дјечја медицина у Црној Гори: изабрани педијатар у дому здравља, црногорски календар вакцинације, потврде за вртић и школу, помоћ без здравствене књижице и поступање у хитним ситуацијама.',
+				'Како функционише дјечја медицина у Црној Гори: изабрани педијатар у дому здравља, црногорски календар вакцинације и потврде за вртић и школу.',
 			'ChmToc_system': 'Како функционише дјечја медицина',
 			'ChmToc_vaccines': 'Вакцине и календар имунизације',
 			'ChmToc_certificates': 'Потврде за вртић и школу',
@@ -212,7 +212,7 @@ export default {
 			'ChildHealthcareTitle':
 				'Kind in Montenegro: Kinderärzte, Impfungen, Atteste für Kindergarten und Schule',
 			'ChildHealthcareDescription':
-				'So funktioniert die Kindermedizin in Montenegro: der izabrani-Kinderarzt im Dom zdravlja, der montenegrinische Impfkalender, Atteste für Kindergarten und Schule, Versorgung ohne zdravstvena knjižica und das richtige Verhalten im Notfall.',
+				'So funktioniert die Kindermedizin in Montenegro: der izabrani-Kinderarzt im Dom zdravlja, der montenegrinische Impfkalender, Atteste für Kindergarten und Schule.',
 			'ChmToc_system': 'So funktioniert die Kindermedizin',
 			'ChmToc_vaccines': 'Impfungen und der Impfkalender',
 			'ChmToc_certificates': 'Atteste für Kindergarten und Schule',
@@ -264,7 +264,7 @@ export default {
 			'ChildHealthcareTitle':
 				"Karadağ'da çocuk: çocuk doktorları, aşılar, kreş ve okul raporları",
 			'ChildHealthcareDescription':
-				"Karadağ'da çocuk sağlığı hizmetleri nasıl işler: dom zdravlja'daki izabrani çocuk doktoru, Karadağ aşı takvimi, kreş ve okul için raporlar, zdravstvena knjižica olmadan sağlık hizmeti ve acil durumlarda yapılacaklar.",
+				"Karadağ'da çocuk sağlığı hizmetleri nasıl işler: dom zdravlja'daki izabrani çocuk doktoru, Karadağ aşı takvimi, kreş ve okul için raporlar.",
 			'ChmToc_system': 'Çocuk sağlığı hizmetleri nasıl işler',
 			'ChmToc_vaccines': 'Aşılar ve aşı takvimi',
 			'ChmToc_certificates': 'Kreş ve okul için raporlar',

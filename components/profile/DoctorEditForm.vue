@@ -2,6 +2,8 @@
 import doctorProfileI18n from '~/i18n/doctor-profile';
 import type { DoctorMyProfile } from '~/server/api/doctors/my-profile';
 
+const toast = useToast();
+
 const props = defineProps<{
 	doctor: DoctorMyProfile;
 }>();
@@ -113,7 +115,7 @@ async function onPhotoFileChange(e: Event) {
 	const url = await upload(file, 'doctors');
 
 	if (url) {
-		ElMessage.success(t('photoUpdated'));
+		toast.success(t('photoUpdated'));
 	}
 
 	if (photoInput.value) {
@@ -133,7 +135,7 @@ function validate(): string | null {
 async function save() {
 	const error = validate();
 	if (error) {
-		ElMessage.warning(error);
+		toast.warning(error);
 		return;
 	}
 
@@ -159,10 +161,10 @@ async function save() {
 			},
 		});
 
-		ElMessage.success(t('profileSaved'));
+		toast.success(t('profileSaved'));
 		emit('saved');
 	} catch {
-		ElMessage.error(t('errorSaving'));
+		toast.error(t('errorSaving'));
 	} finally {
 		isSaving.value = false;
 	}
@@ -256,27 +258,27 @@ async function save() {
 
 <style scoped>
 .edit-form {
-	background: var(--color-bg-primary);
-	border-radius: var(--border-radius-xl);
-	padding: var(--spacing-2xl);
-	box-shadow: var(--shadow-sm);
-	border: 1px solid var(--color-border-secondary);
+	background: var(--kit-color-bg-primary);
+	border-radius: var(--kit-border-radius-xl);
+	padding: var(--kit-spacing-2xl);
+	box-shadow: var(--kit-shadow-sm);
+	border: 1px solid var(--kit-color-border-secondary);
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xl);
+	gap: var(--kit-spacing-xl);
 }
 
 .edit-form__header {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
-	color: var(--color-primary);
+	gap: var(--kit-spacing-md);
+	color: var(--kit-color-primary);
 }
 
 .edit-form__title {
-	font-size: var(--font-size-2xl);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-2xl);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	margin: 0;
 }
 
@@ -284,7 +286,7 @@ async function save() {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 .edit-form__avatar-wrap {
@@ -298,19 +300,19 @@ async function save() {
 	width: 28px;
 	height: 28px;
 	border-radius: 50%;
-	border: 2px solid var(--color-bg-primary);
-	background: var(--color-primary);
+	border: 2px solid var(--kit-color-bg-primary);
+	background: var(--kit-color-primary);
 	color: #fff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	transition: all var(--transition-base);
+	transition: all var(--kit-transition-base);
 	padding: 0;
 }
 
 .edit-form__avatar-upload:hover {
-	background: var(--color-primary-dark, #3730a3);
+	background: var(--kit-color-primary-dark, #3730a3);
 	transform: scale(1.1);
 }
 
@@ -335,19 +337,19 @@ async function save() {
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	border: 2px solid var(--color-bg-primary);
-	background: var(--color-danger);
+	border: 2px solid var(--kit-color-bg-primary);
+	background: var(--kit-color-danger);
 	color: #fff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	transition: all var(--transition-base);
+	transition: all var(--kit-transition-base);
 	padding: 0;
 }
 
 .edit-form__avatar-remove:hover {
-	background: var(--color-danger-dark);
+	background: var(--kit-color-danger-dark);
 	transform: scale(1.1);
 }
 
@@ -363,63 +365,63 @@ async function save() {
 }
 
 .edit-form__photo-hint {
-	font-size: var(--font-size-xs);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-xs);
+	color: var(--kit-color-text-muted);
 }
 
 .edit-form__fields {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .edit-form__field {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .edit-form__label {
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-text-secondary);
 }
 
 .edit-form__description-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
-	padding-top: var(--spacing-lg);
-	border-top: 1px solid var(--color-border-secondary);
+	gap: var(--kit-spacing-lg);
+	padding-top: var(--kit-spacing-lg);
+	border-top: 1px solid var(--kit-color-border-secondary);
 }
 
 .edit-form__section-header {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .edit-form__section-title {
-	font-size: var(--font-size-lg);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-lg);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 	margin: 0;
 }
 
 .edit-form__markdown-hint {
-	font-size: var(--font-size-xs);
-	color: var(--color-text-tertiary);
+	font-size: var(--kit-font-size-xs);
+	color: var(--kit-color-text-tertiary);
 }
 
 .edit-form__actions {
 	display: flex;
 	justify-content: flex-end;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 
 @media (max-width: 640px) {
 	.edit-form {
-		padding: var(--spacing-xl) var(--spacing-lg);
+		padding: var(--kit-spacing-xl) var(--kit-spacing-lg);
 	}
 }
 </style>

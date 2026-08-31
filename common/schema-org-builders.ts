@@ -7,6 +7,7 @@ import {
 	splitContacts,
 } from '~/common/contacts';
 import { getDoctorSpecialtySchemaOrgUrlById } from '~/common/schema-org-medical-specialty';
+import { getRegionalUrl } from '~/common/url-utils';
 import {
 	CLINIC_TYPE_MEDICAL_SPECIALTY,
 	CLINIC_TYPE_SCHEMA_ORG,
@@ -70,6 +71,26 @@ export function filterSchemaReviews<T extends { provider: string }>(
 	return (reviews || []).filter(
 		(review) => review.provider === SCHEMA_REVIEWS_PROVIDER,
 	);
+}
+
+/**
+ * Цены с пометкой «устаревшая» (`isOutdated`) в разметку НЕ попадают ни в каком
+ * виде.
+ *
+ * На странице такая цена рисуется как «45 € +X% ⓘ» с оговоркой в тултипе, а в
+ * JSON-LD уходило точное число — то есть разметка обещала цену, которой на
+ * странице нет. Для Google это spammy structured markup с риском ручной
+ * санкции; ровно по той же причине устаревшие цены уже вычищены из
+ * meta description на странице врача.
+ *
+ * Оговорка: цена при этом не исчезает из UI — фильтр касается только разметки,
+ * как и в случае со сторонними отзывами (см. SCHEMA_REVIEWS_PROVIDER).
+ */
+function isSchemaOfferPrice(
+	price: number | null | undefined,
+	isOutdated?: boolean,
+): price is number {
+	return price != null && price > 0 && !isOutdated;
 }
 
 /**
@@ -190,16 +211,58 @@ function buildClinicMedicalSpecialties(
 
 /**
  * Build entity schema base with common fields
+ *
+ * `mainEntityOfPage` / `url` обязаны совпадать с rel=canonical страницы, а он
+ * зависит от локали (`?lang=ru` и т.п.). Без этого на пяти локалях из шести
+ * разметка утверждала одну страницу, а canonical — другую. `pageUrl` приходит
+ * из `getCanonicalUrl` — единственной точки сборки canonical.
+ *
+ * `@id` при этом СОЗНАТЕЛЬНО остаётся безлокальным: это идентификатор узла в
+ * графе, на который ссылаются с других страниц (`memberOf`, `seller`,
+ * `employee`, `offeredBy`). Локализуй его — и ссылки перестанут сходиться
+ * ровно так же, как они не сходились из-за захардкоженного `#medicalorganization`.
  */
 export function buildEntitySchemaBase<
 	TType extends string | string[],
->(options: { url: string; type: TType; fragment: string }) {
+>(options: {
+	url: string;
+	type: TType;
+	fragment: string;
+	/** Канонический URL страницы с локалью; по умолчанию — URL сущности */
+	pageUrl?: string;
+}) {
+	const canonicalUrl = options.pageUrl || options.url;
 	return {
 		'@type': options.type,
 		'@id': `${options.url}#${options.fragment}`,
-		'mainEntityOfPage': options.url,
-		'url': options.url,
+		'mainEntityOfPage': canonicalUrl,
+		'url': canonicalUrl,
 	};
+}
+
+/**
+ * `@id` узла клиники. Фрагмент обязан совпадать с тем, что клиника ставит себе
+ * на собственной странице (`buildEntitySchemaBase` + `getClinicSchemaOrgType`):
+ * у реальной клиники это `#dentist`, `#hospital`, `#pharmacy`…, а не
+ * `#medicalorganization` — общий тип возвращается только когда типов нет вовсе.
+ * Пока фрагмент был захардкожен, `worksFor` / `seller` / `offeredBy` висели на
+ * несуществующих узлах.
+ */
+export function buildClinicNodeId(
+	clinic: Pick<ClinicData, 'slug' | 'clinicTypeIds'>,
+	siteUrl: string,
+): string {
+	const fragment = getClinicSchemaOrgType(clinic.clinicTypeIds).toLowerCase();
+	return `${siteUrl}/clinics/${clinic.slug}#${fragment}`;
+}
+
+/**
+ * URL сущности в нужной локали. Сборка URL — только через `url-utils`
+ * (`getRegionalUrl`, тот же, на котором стоит `getCanonicalUrl`): свой конкат
+ * `?lang=` уже приводил к расхождению порядка параметров с canonical.
+ */
+function localizeEntityUrl(url: string, locale?: string): string {
+	return locale ? getRegionalUrl(url, {}, locale) : url;
 }
 
 /**
@@ -240,6 +303,8 @@ export function buildTopListItemElements<
 		baseUrl: string;
 		buildPath: (item: TItem) => string;
 		limit?: number;
+		/** Локаль страницы: ссылка обязана вести на canonical той же локали */
+		locale?: string;
 	},
 ): ListItemSchema[] | undefined {
 	if (!items) {
@@ -251,7 +316,10 @@ export function buildTopListItemElements<
 		'@type': 'ListItem' as const,
 		'position': index + 1,
 		'name': item.name,
-		'url': `${options.baseUrl}${options.buildPath(item)}`,
+		'url': localizeEntityUrl(
+			`${options.baseUrl}${options.buildPath(item)}`,
+			options.locale,
+		),
 	}));
 }
 
@@ -267,29 +335,36 @@ export interface DoctorSchemaData {
 	specialtyIds?: number[];
 }
 
+/**
+ * Тип узла врача — всегда `Physician`.
+ *
+ * Раньше врач без звания (и «mr ph») размечался как `ProfessionalService` —
+ * потомок `LocalBusiness`, то есть разметка утверждала, что живой человек это
+ * бизнес-услуга, и при этом вешала на него свойства с доменом `Person`
+ * (`honorificPrefix`, `jobTitle`, `worksFor`).
+ *
+ * Из двух валидных вариантов (`Physician` или `Person`) выбран `Physician`:
+ * в schema.org это `MedicalOrganization` / `MedicalBusiness`, что нормально
+ * для врача как места приёма, и главное — только на нём допустимы
+ * `aggregateRating` и `review` (их домен — Organization/Place/Product, но не
+ * Person). Отзывы о враче у нас есть и работают в сниппете, а `Person` их бы
+ * обнулил. Плата за выбор — свойства домена Person здесь не используются,
+ * см. `buildDoctorSchema`.
+ *
+ * Отдельного типа `Pharmacist` в schema.org нет (потому и был закомментирован),
+ * поэтому аптекари идут тем же узлом.
+ *
+ * Параметр сохранён: он больше не влияет на результат, но точка выбора типа
+ * и фрагмента `@id` должна оставаться одна на весь проект.
+ */
 export function getSchemaType(professionalTitle?: string): {
 	schemaType: PersonSchemaType;
 	fragment: string;
 } {
-	if (!professionalTitle) {
-		return {
-			schemaType: 'ProfessionalService',
-			fragment: 'professionalservice',
-		};
-	} else if (professionalTitle === 'mr ph') {
-		return {
-			// это только для аптекарей
-			// schemaType: 'Pharmacist',
-			// fragment: 'pharmacist',
-			schemaType: 'ProfessionalService',
-			fragment: 'professionalservice',
-		};
-	} else {
-		return {
-			schemaType: 'Physician',
-			fragment: 'physician',
-		};
-	}
+	return {
+		schemaType: 'Physician',
+		fragment: 'physician',
+	};
 }
 
 /**
@@ -301,25 +376,29 @@ export function buildPersonSchemaRef(
 	options: {
 		siteUrl: string;
 		getSpecialtyName: (id: number) => string | undefined;
+		/** Локаль страницы: ссылка обязана вести на canonical той же локали */
+		locale?: string;
 	},
-): PersonListItemRef {
+): PersonListItemRef & { medicalSpecialty?: MedicalSpecialtySchema[] } {
 	const url = `${options.siteUrl}/doctors/${doctor.slug}`;
 	const { schemaType, fragment } = getSchemaType(
 		doctor.professionalTitle?.trim(),
 	);
 
-	// Build job titles from specialties
-	const jobTitles = doctor.specialtyIds
-		?.map((id) => options.getSpecialtyName(id))
-		.filter(isNonEmptyString);
+	// Специальности вместо `jobTitle`: узел врача — `Physician`, а домен
+	// `jobTitle` — только Person (см. getSchemaType)
+	const specialties = (doctor.specialtyIds
+		?.map((id) => buildMedicalSpecialtySchema(id, options.getSpecialtyName))
+		.filter(Boolean) || []) as MedicalSpecialtySchema[];
 
 	return {
 		'@type': schemaType,
+		// `@id` безлокальный — на него ссылаются с других страниц
 		'@id': `${url}#${fragment}`,
 		'name': doctor.name,
-		'url': url,
+		'url': localizeEntityUrl(url, options.locale),
 		'image': doctor.photoUrl || undefined,
-		'jobTitle': jobTitles && jobTitles.length > 0 ? jobTitles : undefined,
+		'medicalSpecialty': specialties.length > 0 ? specialties : undefined,
 	};
 }
 
@@ -341,6 +420,7 @@ export function buildDoctorListItemElements(
 		siteUrl: string;
 		limit?: number;
 		getSpecialtyName: (id: number) => string | undefined;
+		locale?: string;
 	},
 ): ListItemSchema[] | undefined {
 	if (!doctors) {
@@ -356,7 +436,11 @@ export function buildDoctorListItemElements(
 
 		const personRef = buildPersonSchemaRef(
 			{ ...doctor, specialtyIds },
-			{ siteUrl: options.siteUrl, getSpecialtyName: options.getSpecialtyName },
+			{
+				siteUrl: options.siteUrl,
+				getSpecialtyName: options.getSpecialtyName,
+				locale: options.locale,
+			},
 		);
 
 		return {
@@ -430,6 +514,7 @@ export function buildEntityListSchema<
 		itemListElement: buildTopListItemElements(options.items, {
 			baseUrl: options.siteUrl,
 			buildPath: options.buildPath,
+			locale: options.locale,
 		}),
 	});
 }
@@ -465,6 +550,7 @@ export function buildDoctorListSchema(options: {
 		itemListElement: buildDoctorListItemElements(options.doctors, {
 			siteUrl: options.siteUrl,
 			getSpecialtyName: options.getSpecialtyName,
+			locale: options.locale,
 		}),
 	});
 }
@@ -536,6 +622,8 @@ export interface DoctorServiceItem {
 	name: string;
 	price: number | null;
 	priceMax?: number | null;
+	/** Цена помечена как устаревшая — см. ClinicPrice.isOutdated */
+	isOutdated?: boolean;
 }
 
 /**
@@ -552,7 +640,7 @@ export interface DoctorClinicServicesMap {
 function buildDoctorServicesSchema(options: {
 	siteUrl: string;
 	clinicServices?: DoctorClinicServicesMap;
-	getClinicSlug?: (id: number) => string | undefined;
+	getClinic?: (id: number) => ClinicData | undefined;
 }): { hasOfferCatalog?: object; knowsAbout?: object[] } {
 	if (!options.clinicServices) {
 		return {};
@@ -569,13 +657,15 @@ function buildDoctorServicesSchema(options: {
 		options.clinicServices,
 	)) {
 		const clinicId = Number(clinicIdStr);
-		const clinicSlug = options.getClinicSlug?.(clinicId) || String(clinicId);
-		const clinicRef = `${options.siteUrl}/clinics/${clinicSlug}#medicalorganization`;
+		const clinic = options.getClinic?.(clinicId);
+		const clinicRef = clinic
+			? buildClinicNodeId(clinic, options.siteUrl)
+			: `${options.siteUrl}/clinics/${clinicId}#medicalorganization`;
 
 		for (const service of services) {
 			const serviceUrl = `${options.siteUrl}/services/${service.slug}`;
 
-			if (service.price && service.price > 0) {
+			if (isSchemaOfferPrice(service.price, service.isOutdated)) {
 				// Service with price → add to hasOfferCatalog
 				const hasPriceRange =
 					service.priceMax && service.priceMax !== service.price;
@@ -598,7 +688,8 @@ function buildDoctorServicesSchema(options: {
 							}
 						: undefined,
 					'priceCurrency': 'EUR',
-					// Just reference to clinic @id (full data is in worksFor)
+					'availability': 'https://schema.org/InStock',
+					// Just reference to clinic @id (full data is in memberOf)
 					'offeredBy': { '@id': clinicRef },
 				});
 			} else {
@@ -678,16 +769,7 @@ export function buildDoctorSchema(options: {
 	getCityName: (id: number) => string | undefined;
 }): SchemaOrg[] {
 	const doctorUrl = `${options.siteUrl}/doctors/${options.slug}`;
-	const honorificPrefix = options.title?.trim() || undefined;
-	const { schemaType, fragment } = getSchemaType(honorificPrefix);
-
-	// Build job titles for Person type
-	const jobTitles =
-		schemaType === 'ProfessionalService' || schemaType === 'Pharmacist'
-			? (options.specialtyIds
-					?.map((id) => options.getSpecialtyName(id))
-					.filter(isNonEmptyString) ?? [])
-			: [];
+	const { schemaType, fragment } = getSchemaType(options.title?.trim());
 
 	// Build medical specialties for Physician type
 	const specialties =
@@ -710,7 +792,7 @@ export function buildDoctorSchema(options: {
 	const servicesSchema = buildDoctorServicesSchema({
 		siteUrl: options.siteUrl,
 		clinicServices: options.clinicServices,
-		getClinicSlug: (id) => options.clinics?.find((c) => c.id === id)?.slug,
+		getClinic: (id) => options.clinics?.find((c) => c.id === id),
 	});
 
 	// Build aggregate rating
@@ -748,11 +830,18 @@ export function buildDoctorSchema(options: {
 			'datePublished': review.publishedAt || undefined,
 		}));
 
+	// Набор свойств собран под домен `Physician` (см. getSchemaType):
+	// `honorificPrefix` и `jobTitle` выброшены — их домен только Person, а
+	// звание и специальности и без них есть в `name`/`description` страницы и
+	// в `medicalSpecialty`. `worksFor` (тоже Person) заменён на `memberOf`,
+	// он допустим у Organization и означает ровно то же — врач приписан к
+	// клинике. `knowsLanguage` оставлен: его домен Person И Organization.
 	const doctorSchema = {
 		...buildEntitySchemaBase({
 			url: doctorUrl,
 			type: schemaType,
 			fragment,
+			pageUrl: options.pageUrl,
 		}),
 		name: options.name,
 		description: options.pageDescription || undefined,
@@ -760,14 +849,12 @@ export function buildDoctorSchema(options: {
 			?.map((clinic) => buildClinicPostalAddress(clinic, options.getCityName))
 			.filter(Boolean),
 		image: options.photoUrl || undefined,
-		honorificPrefix,
-		medicalSpecialty: schemaType === 'Physician' ? specialties : undefined,
-		jobTitle: jobTitles && jobTitles.length > 0 ? jobTitles : undefined,
+		medicalSpecialty: specialties.length > 0 ? specialties : undefined,
 		knowsLanguage: languages,
 		sameAs: sameAs.length > 0 ? sameAs : undefined,
-		worksFor: options.clinics?.map((clinic) => ({
+		memberOf: options.clinics?.map((clinic) => ({
 			...buildMedicalOrganizationRef(clinic, options.siteUrl),
-			'@id': `${options.siteUrl}/clinics/${clinic.slug}#medicalorganization`,
+			'@id': buildClinicNodeId(clinic, options.siteUrl),
 		})),
 		hasOfferCatalog: servicesSchema.hasOfferCatalog,
 		knowsAbout: servicesSchema.knowsAbout,
@@ -839,10 +926,19 @@ function buildOfferCatalogSchema(options: {
 		return undefined;
 	}
 
+	// Устаревшая цена для разметки всё равно что её отсутствие — см.
+	// isSchemaOfferPrice: такой элемент уходит в каталог без Offer
+	const usablePrice = (item: ClinicServiceOffer) => {
+		const priceInfo = item.clinicPrices?.find(
+			(p) => p.clinicId === options.clinicId,
+		);
+		return priceInfo && !priceInfo.isOutdated ? priceInfo : undefined;
+	};
+
 	// Limit to 10 items, prioritizing ones with prices
 	const sorted = [...options.items].sort((a, b) => {
-		const aPrice = a.clinicPrices?.find((p) => p.clinicId === options.clinicId);
-		const bPrice = b.clinicPrices?.find((p) => p.clinicId === options.clinicId);
+		const aPrice = usablePrice(a);
+		const bPrice = usablePrice(b);
 		const aHasPrice = aPrice?.price != null || aPrice?.priceMin != null;
 		const bHasPrice = bPrice?.price != null || bPrice?.priceMin != null;
 		if (aHasPrice !== bHasPrice) return aHasPrice ? -1 : 1;
@@ -852,9 +948,7 @@ function buildOfferCatalogSchema(options: {
 
 	const { itemType, fragment, urlPrefix } = options.config;
 	const itemListElement = limited.map((service) => {
-		const priceInfo = service.clinicPrices?.find(
-			(p) => p.clinicId === options.clinicId,
-		);
+		const priceInfo = usablePrice(service);
 		const serviceUrl = `${options.siteUrl}/${urlPrefix}/${service.slug}`;
 
 		const hasPrice = priceInfo?.price != null || priceInfo?.priceMin != null;
@@ -903,6 +997,7 @@ function buildOfferCatalogSchema(options: {
 					: undefined,
 			'priceSpecification': priceSpecification,
 			'priceCurrency': 'EUR',
+			'availability': 'https://schema.org/InStock',
 			'url': serviceUrl,
 		};
 	});
@@ -1037,6 +1132,7 @@ export function buildClinicSchema(options: {
 			url: clinicUrl,
 			type: schemaOrgType,
 			fragment: schemaOrgType.toLowerCase(),
+			pageUrl: options.pageUrl,
 		}),
 		name: clinic.name,
 		image: clinic.logoUrl ? `${siteUrl}${clinic.logoUrl}` : undefined,
@@ -1172,6 +1268,7 @@ export function buildInsuranceCompanySchema(options: {
 			url: companyUrl,
 			type: 'InsuranceAgency',
 			fragment: 'insuranceagency',
+			pageUrl: options.pageUrl,
 		}),
 		name: company.name,
 		image: company.logoUrl ? `${siteUrl}${company.logoUrl}` : undefined,
@@ -1234,7 +1331,9 @@ export function buildOffersSchema(options: {
 	getCityName: (id: number) => string | undefined;
 }) {
 	const validPrices =
-		options.clinicPrices?.filter((p) => p.price && p.price > 0) || [];
+		options.clinicPrices?.filter((p) =>
+			isSchemaOfferPrice(p.price, p.isOutdated),
+		) || [];
 
 	if (validPrices.length === 0) {
 		return undefined;
@@ -1283,10 +1382,11 @@ export function buildOffersSchema(options: {
 								'priceCurrency': 'EUR',
 							}
 						: undefined,
+					'availability': 'https://schema.org/InStock',
 					'url': clinicUrl,
 					'seller': {
 						...buildMedicalOrganizationRef(clinic, options.siteUrl),
-						'@id': `${clinicUrl}#medicalorganization`,
+						'@id': buildClinicNodeId(clinic, options.siteUrl),
 						'url': clinicUrl,
 					},
 				};
@@ -1337,6 +1437,7 @@ export function buildMedicalTestSchema(options: {
 			url: testUrl,
 			type: withProductType('MedicalTest', offers),
 			fragment: 'medicaltest',
+			pageUrl: options.pageUrl,
 		}),
 		name: options.name,
 		description: options.pageDescription || undefined,
@@ -1387,6 +1488,7 @@ export function buildDrugSchema(options: {
 			url: drugUrl,
 			type: withProductType('Drug', offers),
 			fragment: 'drug',
+			pageUrl: options.pageUrl,
 		}),
 		name: options.name,
 		description: options.pageDescription || undefined,
@@ -1439,6 +1541,7 @@ export function buildMedicineSchema(options: {
 			url: medicineUrl,
 			type: 'Drug',
 			fragment: 'drug',
+			pageUrl: options.pageUrl,
 		}),
 		name: options.name,
 		description: options.pageDescription || undefined,
@@ -1531,6 +1634,7 @@ export function buildMedicalProcedureSchema(options: {
 			url: procedureUrl,
 			type: withProductType('MedicalProcedure', offers),
 			fragment: 'medicalprocedure',
+			pageUrl: options.pageUrl,
 		}),
 		name: options.name,
 		description: options.pageDescription || undefined,
@@ -1612,6 +1716,7 @@ export function buildMedicalWebPageSchema(options: {
 		'itemListElement': buildDoctorListItemElements(doctors, {
 			siteUrl: options.siteUrl,
 			getSpecialtyName: options.getSpecialtyName ?? (() => undefined),
+			locale: options.locale,
 		}),
 	};
 

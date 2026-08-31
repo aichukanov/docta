@@ -182,32 +182,32 @@ onMounted(() => {
 .section-nav__mobile {
 	position: sticky;
 	top: 60px;
-	z-index: var(--z-raised);
-	background: var(--color-surface-primary, #fff);
-	border-bottom: 1px solid var(--color-border-light);
-	padding: var(--spacing-sm) 0;
+	z-index: var(--kit-z-raised);
+	background: var(--kit-color-surface-primary, #fff);
+	border-bottom: 1px solid var(--kit-color-border-light);
+	padding: var(--kit-spacing-sm) 0;
 }
 
 .mobile-trigger {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	width: 100%;
-	padding: var(--spacing-sm) var(--spacing-md);
-	border: 1px solid var(--color-border-secondary);
-	border-radius: var(--border-radius-md);
-	background: var(--color-bg-primary, #fff);
+	padding: var(--kit-spacing-sm) var(--kit-spacing-md);
+	border: 1px solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-md);
+	background: var(--kit-color-bg-primary, #fff);
 	font-family: inherit;
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-primary);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-primary);
 	cursor: pointer;
 }
 
 .mobile-trigger__chev {
 	flex-shrink: 0;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 	font-size: 12px;
 }
 
@@ -223,35 +223,35 @@ onMounted(() => {
 		gap: 2px;
 		position: sticky;
 		top: 76px;
-		border-left: 1px solid var(--color-border-light);
+		border-left: 1px solid var(--kit-color-border-light);
 	}
 
 	.rail-item {
 		text-align: left;
-		padding: var(--spacing-sm) var(--spacing-md);
+		padding: var(--kit-spacing-sm) var(--kit-spacing-md);
 		border: none;
 		border-left: 2px solid transparent;
 		margin-left: -1px;
-		border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+		border-radius: 0 var(--kit-border-radius-md) var(--kit-border-radius-md) 0;
 		background: none;
 		font-family: inherit;
-		font-size: var(--font-size-sm);
-		color: var(--color-text-secondary);
+		font-size: var(--kit-font-size-sm);
+		color: var(--kit-color-text-secondary);
 		cursor: pointer;
 		transition:
 			color 0.15s ease,
 			background-color 0.15s ease;
 
 		&:hover {
-			color: var(--color-text-primary);
-			background: var(--color-bg-secondary);
+			color: var(--kit-color-text-primary);
+			background: var(--kit-color-bg-secondary);
 		}
 
 		&--active {
-			color: var(--color-primary);
-			border-left-color: var(--color-primary);
-			font-weight: var(--font-weight-semibold);
-			background: var(--color-primary-bg);
+			color: var(--kit-color-primary);
+			border-left-color: var(--kit-color-primary);
+			font-weight: var(--kit-font-weight-semibold);
+			background: var(--kit-color-primary-bg);
 		}
 	}
 }
@@ -260,7 +260,7 @@ onMounted(() => {
 <style lang="less">
 /* Выпадающее меню телепортируется из scoped-области — стилизуем глобально */
 .section-nav-menu .el-dropdown-menu__item.is-active {
-	color: var(--color-primary);
-	font-weight: var(--font-weight-semibold);
+	color: var(--kit-color-primary);
+	font-weight: var(--kit-font-weight-semibold);
 }
 </style>

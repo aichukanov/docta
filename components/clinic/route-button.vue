@@ -28,7 +28,7 @@ const googleMapsUrl = computed(() => {
 .link-with-icon {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 </style>
 

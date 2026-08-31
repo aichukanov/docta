@@ -59,47 +59,47 @@ const anchorId = computed(() => `branch-${props.branch.id}`);
 .insurance-branch-item {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-md);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-md);
+	border: 1px solid var(--kit-color-border-light);
+	border-radius: var(--kit-border-radius-md);
 	// Учитываем sticky EntityPageTabBar при переходе по #branch-{id}
 	scroll-margin-top: 120px;
 	transition: border-color 0.2s ease;
 
 	// Подсветка при переходе по прямой ссылке на офис (#branch-{id})
 	&:target {
-		border-color: var(--color-primary);
+		border-color: var(--kit-color-primary);
 	}
 }
 
 .insurance-branch-item__address {
 	display: flex;
 	align-items: flex-start;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 	font-style: normal;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 
 	svg {
 		width: 18px;
 		height: 18px;
 		flex-shrink: 0;
 		margin-top: 2px;
-		color: var(--color-text-secondary);
+		color: var(--kit-color-text-secondary);
 	}
 }
 
 .insurance-branch-item__meta-row {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
-	color: var(--color-text-secondary);
-	font-size: var(--font-size-sm);
+	gap: var(--kit-spacing-xs);
+	color: var(--kit-color-text-secondary);
+	font-size: var(--kit-font-size-sm);
 }
 
 .insurance-branch-item__actions {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 }
 </style>

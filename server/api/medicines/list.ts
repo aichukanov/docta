@@ -1,4 +1,4 @@
-import { validateBody, validateName } from '~/common/validation';
+import { isValidLocale, validateBody, validateName } from '~/common/validation';
 import { isAtcClassCode } from '~/enums/atc-class';
 import { getMedicineCategoryAtcPrefixes } from '~/enums/medicine-category';
 import { LIST_PAGE_SIZE } from '~/common/constants';
@@ -65,7 +65,7 @@ export async function getMedicineList(
 ): Promise<MedicineListResponse> {
 	const whereFilters: string[] = [];
 	const queryParams: Array<number | string> = [];
-	const locale = body.locale || 'en';
+	const locale = isValidLocale(body.locale) ? body.locale : 'en';
 	const usePagination = body.page != null;
 	const pageRaw = Number(body.page);
 	// Глобальный поиск просит короткую страницу (ему нужно 5 карточек), листинг

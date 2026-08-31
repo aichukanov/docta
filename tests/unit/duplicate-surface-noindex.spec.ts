@@ -103,3 +103,56 @@ test.describe('7e: подстраницы клиник не индексирую
 		expect(source).toContain("raw('page')");
 	});
 });
+
+// Листинги: то же самое, но для параметров, которых нет ни в одном валидаторе
+// стора (`stores/filters.ts` проверяет только ключи вида `*Ids` и `minRating`).
+// `?name=` — внутренний поиск по сайту, ссылки на него сайт генерирует сам из
+// кнопки «ещё» в глобальном поиске; `?page=1`, `?sort=`, `?openNow=`,
+// `?minRating=` — избыточные параметры, отдающие контент базового листинга.
+test.describe('листинги: избыточные параметры дают noindex', () => {
+	const source = read(resolve(ROOT, 'components/list-page.vue'));
+
+	test('robotsMeta учитывает hasRedundantQuery', () => {
+		expect(source).toMatch(
+			/robotsMeta\s*=\s*computed\([\s\S]{0,400}hasRedundantQuery/,
+		);
+	});
+
+	test('внутренний поиск ?name= закрыт', () => {
+		expect(source).toMatch(
+			/hasRedundantQuery[\s\S]{0,2000}hasQueryKey\('name'\)/,
+		);
+	});
+
+	test('sort, openNow и minRating закрыты', () => {
+		expect(source).toContain("hasQueryKey('sort')");
+		expect(source).toContain("hasQueryKey('openNow')");
+		expect(source).toContain("hasQueryKey('minRating')");
+	});
+
+	test('page=1 и невалидный page закрыты', () => {
+		// Именно page===1, а не «любой page»: `?page=2` при живой второй
+		// странице — нормальный URL с self-canonical, закрывать его нельзя.
+		expect(source).toContain('pageNum === 1');
+		// Натуральное число без ведущих нулей: 'abc', '0', '-1', '01' → noindex.
+		expect(source).toContain('[1-9]');
+		expect(source).not.toMatch(
+			/if\s*\(hasQueryKey\('page'\)\)\s*\{?\s*return true/,
+		);
+	});
+});
+
+test.describe('листинги: у страниц пагинации свой title', () => {
+	const source = read(resolve(ROOT, 'components/list-page.vue'));
+
+	test('в title уходит номер страницы', () => {
+		// Как на страницах отзывов (`components/reviews-page.vue`): без этого
+		// вторая страница неотличима от первой ни title, ни description.
+		expect(source).toContain("t('PageOf'");
+		expect(source).toMatch(/title:\s*seoTitle/);
+	});
+
+	test('заголовок листинга подрезается под лимит Bing', () => {
+		expect(source).toContain('fitSeoTitle');
+	});
+});

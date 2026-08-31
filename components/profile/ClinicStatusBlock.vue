@@ -124,29 +124,29 @@ const clinicLink = computed(() => ({
 
 <style scoped>
 .status-block {
-	padding: var(--spacing-lg);
-	border-radius: var(--border-radius-lg);
-	border: 1px solid var(--color-border-primary);
+	padding: var(--kit-spacing-lg);
+	border-radius: var(--kit-border-radius-lg);
+	border: 1px solid var(--kit-color-border-primary);
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .status-block--draft,
 .status-block--pending_verification {
-	background: var(--color-warning-bg);
-	border-color: var(--color-warning-border);
+	background: var(--kit-color-warning-bg);
+	border-color: var(--kit-color-warning-border);
 }
 
 .status-block--published {
-	background: var(--color-success-bg);
-	border-color: var(--color-success-border);
+	background: var(--kit-color-success-bg);
+	border-color: var(--kit-color-success-border);
 }
 
 .status-block--rejected,
 .status-block--hidden {
-	background: var(--color-danger-bg);
-	border-color: var(--color-danger-border);
+	background: var(--kit-color-danger-bg);
+	border-color: var(--kit-color-danger-border);
 }
 
 .status-block__header {
@@ -158,8 +158,8 @@ const clinicLink = computed(() => ({
 	display: inline-flex;
 	align-items: center;
 	gap: 6px;
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-semibold);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-semibold);
 	padding: 4px 12px;
 	border-radius: 20px;
 	text-transform: uppercase;
@@ -168,24 +168,24 @@ const clinicLink = computed(() => ({
 
 .status-block--draft .status-block__badge,
 .status-block--pending_verification .status-block__badge {
-	background: var(--color-warning-border);
-	color: var(--color-warning-dark);
+	background: var(--kit-color-warning-border);
+	color: var(--kit-color-warning-dark);
 }
 
 .status-block--published .status-block__badge {
-	background: var(--color-success-border);
-	color: var(--color-primary-green);
+	background: var(--kit-color-success-border);
+	color: var(--kit-color-primary-green);
 }
 
 .status-block--rejected .status-block__badge,
 .status-block--hidden .status-block__badge {
-	background: var(--color-danger-border);
-	color: var(--color-danger-dark);
+	background: var(--kit-color-danger-border);
+	color: var(--kit-color-danger-dark);
 }
 
 .status-block__desc {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 	margin: 0;
 	line-height: 1.5;
 }
@@ -193,34 +193,34 @@ const clinicLink = computed(() => ({
 .status-block__reason {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
-	padding: var(--spacing-md);
-	background: var(--color-bg-primary);
-	border: 1px solid var(--color-danger-border);
-	border-radius: var(--border-radius-md);
+	gap: var(--kit-spacing-xs);
+	padding: var(--kit-spacing-md);
+	background: var(--kit-color-bg-primary);
+	border: 1px solid var(--kit-color-danger-border);
+	border-radius: var(--kit-border-radius-md);
 }
 
 .status-block__reason-text,
 .status-block__reason-action {
 	margin: 0;
-	font-size: var(--font-size-sm);
-	color: var(--color-text-primary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-primary);
 	line-height: 1.5;
 }
 
 .status-block__reason-action {
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 }
 
 .status-block__reason-label {
-	font-weight: var(--font-weight-semibold);
-	margin-right: var(--spacing-xs);
-	color: var(--color-danger-dark);
+	font-weight: var(--kit-font-weight-semibold);
+	margin-right: var(--kit-spacing-xs);
+	color: var(--kit-color-danger-dark);
 }
 
 .status-block__actions {
 	display: flex;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	flex-wrap: wrap;
 }
 </style>

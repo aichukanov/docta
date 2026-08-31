@@ -61,7 +61,7 @@ const emit = defineEmits<{
 .user-info h1 {
 	font-size: 28px;
 	margin: 0 0 24px 0;
-	color: var(--color-text-heading);
+	color: var(--kit-color-text-heading);
 }
 
 .user-card {
@@ -90,12 +90,12 @@ const emit = defineEmits<{
 .user-details h2 {
 	font-size: 20px;
 	margin: 0 0 4px 0;
-	color: var(--color-text-heading);
+	color: var(--kit-color-text-heading);
 }
 
 .user-details p {
 	font-size: 14px;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 	margin: 0 0 8px 0;
 }
 

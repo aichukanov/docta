@@ -458,35 +458,35 @@ watch(labTestId, async (newId) => {
 .labtest-info {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
-	margin-top: var(--spacing-lg);
-	border-top: 1px solid var(--color-border-primary);
-	padding-top: var(--spacing-lg);
+	gap: var(--kit-spacing-md);
+	margin-top: var(--kit-spacing-lg);
+	border-top: 1px solid var(--kit-color-border-primary);
+	padding-top: var(--kit-spacing-lg);
 }
 
 .loading {
-	padding: var(--spacing-lg);
-	color: var(--color-text-secondary);
+	padding: var(--kit-spacing-lg);
+	color: var(--kit-color-text-secondary);
 }
 
 .field {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 
 	& > label {
-		color: var(--color-text-secondary);
+		color: var(--kit-color-text-secondary);
 		font-size: 14px;
 	}
 
 	&.modified > label {
-		color: var(--color-warning-dark);
+		color: var(--kit-color-warning-dark);
 		font-weight: 500;
 	}
 
 	.textarea-with-button {
 		display: flex;
-		gap: var(--spacing-xs);
+		gap: var(--kit-spacing-xs);
 		align-items: flex-start;
 	}
 
@@ -499,14 +499,14 @@ watch(labTestId, async (newId) => {
 .clinic-prices-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
-	background: var(--color-surface-secondary);
-	border-radius: var(--border-radius-md);
-	border: 1px solid var(--color-border-primary);
+	gap: var(--kit-spacing-sm);
+	padding: var(--kit-spacing-md);
+	background: var(--kit-color-surface-secondary);
+	border-radius: var(--kit-border-radius-md);
+	border: 1px solid var(--kit-color-border-primary);
 
 	&.modified {
-		border-color: var(--color-warning);
+		border-color: var(--kit-color-warning);
 	}
 
 	.section-header {
@@ -516,13 +516,13 @@ watch(labTestId, async (newId) => {
 
 		h4 {
 			margin: 0;
-			color: var(--color-text-primary);
+			color: var(--kit-color-text-primary);
 		}
 	}
 
 	.clinic-price-row {
 		display: flex;
-		gap: var(--spacing-sm);
+		gap: var(--kit-spacing-sm);
 		align-items: center;
 
 		.clinic-select {
@@ -541,7 +541,7 @@ watch(labTestId, async (newId) => {
 	}
 
 	.no-clinics {
-		color: var(--color-text-secondary);
+		color: var(--kit-color-text-secondary);
 		font-style: italic;
 	}
 }
@@ -549,24 +549,24 @@ watch(labTestId, async (newId) => {
 .synonyms-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
-	padding: var(--spacing-md);
-	background: var(--color-surface-secondary);
-	border-radius: var(--border-radius-md);
-	border: 1px solid var(--color-border-primary);
+	gap: var(--kit-spacing-md);
+	padding: var(--kit-spacing-md);
+	background: var(--kit-color-surface-secondary);
+	border-radius: var(--kit-border-radius-md);
+	border: 1px solid var(--kit-color-border-primary);
 
 	&.modified {
-		border-color: var(--color-warning);
+		border-color: var(--kit-color-warning);
 	}
 
 	h4 {
 		margin: 0;
-		color: var(--color-text-primary);
+		color: var(--kit-color-text-primary);
 	}
 }
 
 .button-group {
 	display: flex;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 </style>

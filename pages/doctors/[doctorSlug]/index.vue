@@ -43,9 +43,12 @@ const { t, n, locale } = useI18n({
 
 const route = useRoute();
 
-const { pending: isLoading, data: doctorPayload } = await useFetch(
-	'/api/doctors/details',
-	{
+const clinicsStore = useClinicsStore();
+
+// Детали врача и каталог клиник независимы — грузим параллельно, иначе на SSR
+// получается лишний последовательный round-trip (см. pages/doctors/index.vue)
+const [{ pending: isLoading, data: doctorPayload }] = await Promise.all([
+	useFetch('/api/doctors/details', {
 		key: 'doctor-details',
 		method: 'POST',
 		body: computed(() => ({
@@ -53,8 +56,9 @@ const { pending: isLoading, data: doctorPayload } = await useFetch(
 			locale: locale.value,
 			includeServices: true,
 		})),
-	},
-);
+	}),
+	clinicsStore.fetchClinics(),
+]);
 
 // Скрытого админом врача эндпоинт отдаёт маркером `{ gone: true }` вместо
 // данных, чтобы страница ответила 410, а не 404 (см. common/gone.ts).
@@ -62,9 +66,6 @@ const { pending: isLoading, data: doctorPayload } = await useFetch(
 const doctorData = computed(() =>
 	isGonePayload(doctorPayload.value) ? null : doctorPayload.value,
 );
-
-const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics();
 
 const clinicServices = computed(() => doctorData.value?.clinicServices || {});
 
@@ -629,27 +630,27 @@ watchEffect(() => {
 .clinics-list {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .reviews-content {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 }
 
 .reviews-header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 	flex-wrap: wrap;
 }
 
 .doctor-map {
 	height: 400px;
-	border-radius: var(--border-radius-md);
+	border-radius: var(--kit-border-radius-md);
 	overflow: hidden;
-	border: 1px solid var(--color-border-light);
+	border: 1px solid var(--kit-color-border-light);
 }
 </style>

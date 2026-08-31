@@ -22,19 +22,19 @@ defineProps<{
 <style scoped lang="less">
 .article-section {
 	// Якорная навигация: не прятать заголовок секции под шапкой сайта
-	scroll-margin-top: calc(60px + var(--spacing-lg));
+	scroll-margin-top: calc(60px + var(--kit-spacing-lg));
 }
 
 .article-section__title {
-	margin: 0 0 var(--spacing-xl);
-	font-size: var(--font-size-2xl);
-	font-weight: var(--font-weight-semibold);
+	margin: 0 0 var(--kit-spacing-xl);
+	font-size: var(--kit-font-size-2xl);
+	font-weight: var(--kit-font-weight-semibold);
 	letter-spacing: -0.01em;
-	color: var(--color-text-heading);
+	color: var(--kit-color-text-heading);
 }
 
 .article-section__count {
-	font-weight: var(--font-weight-normal);
-	color: var(--color-text-muted);
+	font-weight: var(--kit-font-weight-normal);
+	color: var(--kit-color-text-muted);
 }
 </style>

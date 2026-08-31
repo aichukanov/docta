@@ -41,20 +41,21 @@ const { t, n, locale } = useI18n({
 
 const route = useRoute();
 
-const { pending: isLoading, data: medicalServiceData } = await useFetch(
-	'/api/services/details',
-	{
+const clinicsStore = useClinicsStore();
+
+// Детали сущности и каталог клиник независимы — грузим параллельно, иначе на
+// SSR получается лишний последовательный round-trip (см. pages/doctors/index.vue)
+const [{ pending: isLoading, data: medicalServiceData }] = await Promise.all([
+	useFetch('/api/services/details', {
 		key: 'service-details',
 		method: 'POST',
 		body: computed(() => ({
 			slug: route.params.serviceSlug,
 			locale: locale.value,
 		})),
-	},
-);
-
-const clinicsStore = useClinicsStore();
-await clinicsStore.fetchClinics();
+	}),
+	clinicsStore.fetchClinics(),
+]);
 
 const isFound = computed(() => medicalServiceData.value?.id != null);
 
@@ -116,6 +117,7 @@ const allMedicalServiceClinics = computed(() =>
 
 const {
 	cityIds,
+	hasInvalidCityFilter,
 	filteredClinics: medicalServiceClinics,
 	filteredClinicPrices,
 } = useClinicCityFilter(
@@ -270,7 +272,13 @@ const heroTitle = computed(() => {
 // Schema.org for medical service details
 const schemaOrgStore = useSchemaOrgStore();
 
-const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
+// Невалидный `?cityIds=` в URL: страница отдаёт полный список с 200 и
+// self-canonical на мусорный URL, поэтому уходит в noindex (follow — ссылки
+// со страницы честные). Тот же приём, что у листингов в list-page.vue.
+const robotsMeta = computed(() => {
+	if (!isFound.value) return 'noindex';
+	return hasInvalidCityFilter.value ? 'noindex, follow' : undefined;
+});
 
 useSeoMeta({
 	title: pageTitle,
@@ -423,13 +431,13 @@ watchEffect(() => {
 
 <style lang="less" scoped>
 .medical-service-hero {
-	padding: var(--spacing-xl) 0;
+	padding: var(--kit-spacing-xl) 0;
 }
 
 .medical-service-name {
-	font-size: var(--font-size-4xl);
+	font-size: var(--kit-font-size-4xl);
 	font-weight: 700;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 	margin: 0;
 	font-family:
 		system-ui,
@@ -440,9 +448,9 @@ watchEffect(() => {
 }
 
 .medical-service-local-name {
-	font-size: var(--font-size-md);
-	color: var(--color-text-secondary);
-	margin-top: var(--spacing-sm);
+	font-size: var(--kit-font-size-md);
+	color: var(--kit-color-text-secondary);
+	margin-top: var(--kit-spacing-sm);
 	font-style: italic;
 	word-break: break-word;
 }
@@ -450,45 +458,45 @@ watchEffect(() => {
 .medical-service-categories {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--spacing-xs);
-	margin-top: var(--spacing-md);
+	gap: var(--kit-spacing-xs);
+	margin-top: var(--kit-spacing-md);
 }
 
 .tariff-cards {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .tariff-info {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	background: var(--color-primary-bg);
-	border-left: 4px solid var(--color-primary);
-	border-radius: var(--border-radius-lg);
-	padding: var(--spacing-xl) var(--spacing-2xl);
-	margin-bottom: var(--spacing-lg);
+	gap: var(--kit-spacing-sm);
+	background: var(--kit-color-primary-bg);
+	border-left: 4px solid var(--kit-color-primary);
+	border-radius: var(--kit-border-radius-lg);
+	padding: var(--kit-spacing-xl) var(--kit-spacing-2xl);
+	margin-bottom: var(--kit-spacing-lg);
 }
 
 .tariff-info__lead {
-	font-size: var(--font-size-2xl);
-	font-weight: var(--font-weight-bold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-2xl);
+	font-weight: var(--kit-font-weight-bold);
+	color: var(--kit-color-text-heading);
 	line-height: 1.3;
 }
 
 .tariff-info__body {
 	margin: 0;
-	font-size: var(--font-size-md);
-	color: var(--color-text-primary);
+	font-size: var(--kit-font-size-md);
+	color: var(--kit-color-text-primary);
 	line-height: 1.6;
 }
 
 .service-map {
 	height: 400px;
-	border-radius: var(--border-radius-md);
+	border-radius: var(--kit-border-radius-md);
 	overflow: hidden;
-	border: 1px solid var(--color-border-light);
+	border: 1px solid var(--kit-color-border-light);
 }
 </style>

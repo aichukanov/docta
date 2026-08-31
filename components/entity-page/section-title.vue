@@ -27,14 +27,14 @@ defineProps<{
 .section-title-row {
 	display: flex;
 	align-items: baseline;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .section-title-icon {
 	display: flex;
 	align-items: center;
 	align-self: center;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 	flex-shrink: 0;
 }
 
@@ -43,14 +43,14 @@ defineProps<{
 	color: inherit;
 
 	&:hover .section-title {
-		color: var(--color-primary);
+		color: var(--kit-color-primary);
 	}
 }
 
 .section-title {
-	font-size: var(--font-size-lg);
+	font-size: var(--kit-font-size-lg);
 	font-weight: 600;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 	margin: 0;
 	font-family:
 		system-ui,
@@ -60,10 +60,10 @@ defineProps<{
 }
 
 .section-title-count {
-	font-size: var(--font-size-sm);
+	font-size: var(--kit-font-size-sm);
 	font-weight: 500;
-	color: var(--color-text-secondary);
-	background: var(--color-bg-tertiary);
+	color: var(--kit-color-text-secondary);
+	background: var(--kit-color-bg-tertiary);
 	padding: 2px 8px;
 	border-radius: 10px;
 	line-height: 1.4;

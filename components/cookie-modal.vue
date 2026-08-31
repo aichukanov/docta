@@ -192,14 +192,14 @@ function closeModal() {
 	justify-content: space-between;
 	align-items: center;
 	padding: 24px;
-	border-bottom: 1px solid var(--color-border-primary);
+	border-bottom: 1px solid var(--kit-color-border-primary);
 }
 
 .cookie-modal__title {
 	font-size: 24px;
 	font-weight: 600;
 	margin: 0;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 }
 
 .cookie-modal__close {
@@ -207,7 +207,7 @@ function closeModal() {
 	border: none;
 	font-size: 32px;
 	cursor: pointer;
-	color: var(--color-text-muted);
+	color: var(--kit-color-text-muted);
 	padding: 0;
 	width: 32px;
 	height: 32px;
@@ -217,7 +217,7 @@ function closeModal() {
 	transition: color 0.2s ease;
 
 	&:hover {
-		color: var(--color-text-primary);
+		color: var(--kit-color-text-primary);
 	}
 }
 
@@ -228,7 +228,7 @@ function closeModal() {
 .cookie-modal__description {
 	font-size: 16px;
 	line-height: 1.5;
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 	margin: 0 0 24px 0;
 }
 
@@ -239,7 +239,7 @@ function closeModal() {
 }
 
 .cookie-category {
-	border: 1px solid var(--color-border-primary);
+	border: 1px solid var(--kit-color-border-primary);
 	border-radius: 6px;
 	padding: 20px;
 }
@@ -260,13 +260,13 @@ function closeModal() {
 	font-size: 18px;
 	font-weight: 600;
 	margin: 0 0 8px 0;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 }
 
 .cookie-category__description {
 	font-size: 14px;
 	line-height: 1.4;
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 	margin: 0;
 }
 
@@ -276,9 +276,9 @@ function closeModal() {
 }
 
 .cookie-status-badge {
-	background: var(--color-success-bg);
-	border: 1px solid var(--color-success-border);
-	color: var(--color-primary-green);
+	background: var(--kit-color-success-bg);
+	border: 1px solid var(--kit-color-success-border);
+	color: var(--kit-color-primary-green);
 	font-size: 12px;
 	font-weight: 500;
 	padding: 4px 8px;
@@ -287,9 +287,9 @@ function closeModal() {
 }
 
 .cookie-status-badge--disabled {
-	background: var(--color-bg-tertiary);
-	border-color: var(--color-border-primary);
-	color: var(--color-text-muted);
+	background: var(--kit-color-bg-tertiary);
+	border-color: var(--kit-color-border-primary);
+	color: var(--kit-color-text-muted);
 }
 
 .cookie-category__details {
@@ -300,12 +300,12 @@ function closeModal() {
 
 .cookie-category__cookies {
 	font-size: 14px;
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 }
 
 .cookie-list {
 	font-family: monospace;
-	background: var(--color-bg-tertiary);
+	background: var(--kit-color-bg-tertiary);
 	padding: 2px 6px;
 	border-radius: 3px;
 	margin-left: 8px;
@@ -313,14 +313,14 @@ function closeModal() {
 
 .cookie-category__links {
 	font-size: 14px;
-	color: var(--color-text-secondary);
+	color: var(--kit-color-text-secondary);
 	display: flex;
 	gap: 12px;
 	align-items: center;
 }
 
 .cookie-link {
-	color: var(--color-primary);
+	color: var(--kit-color-primary);
 	text-decoration: none;
 
 	&:hover {
@@ -332,7 +332,7 @@ function closeModal() {
 	display: flex;
 	gap: 12px;
 	padding: 20px 24px;
-	border-top: 1px solid var(--color-border-primary);
+	border-top: 1px solid var(--kit-color-border-primary);
 	justify-content: flex-end;
 }
 
@@ -347,31 +347,31 @@ function closeModal() {
 	min-width: 120px;
 
 	&--primary {
-		background: var(--color-text-primary);
+		background: var(--kit-color-text-primary);
 		color: white;
 
 		&:hover {
-			background: var(--color-text-heading);
+			background: var(--kit-color-text-heading);
 		}
 	}
 
 	&--secondary {
-		background: var(--color-bg-tertiary);
-		color: var(--color-text-primary);
-		border: 1px solid var(--color-border-primary);
+		background: var(--kit-color-bg-tertiary);
+		color: var(--kit-color-text-primary);
+		border: 1px solid var(--kit-color-border-primary);
 
 		&:hover {
-			background: var(--color-border-primary);
+			background: var(--kit-color-border-primary);
 		}
 	}
 
 	&--tertiary {
 		background: white;
-		color: var(--color-text-primary);
-		border: 1px solid var(--color-text-light);
+		color: var(--kit-color-text-primary);
+		border: 1px solid var(--kit-color-text-light);
 
 		&:hover {
-			background: var(--color-bg-secondary);
+			background: var(--kit-color-bg-secondary);
 		}
 	}
 }

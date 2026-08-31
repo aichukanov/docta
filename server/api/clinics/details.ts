@@ -12,7 +12,7 @@ import {
 	processLocalizedDescription,
 } from '~/server/common/utils';
 import type { ClinicData } from '~/interfaces/clinic';
-import { validateBody } from '~/common/validation';
+import { isValidLocale, validateBody } from '~/common/validation';
 
 export default defineEventHandler(
 	async (event): Promise<ClinicData | GonePayload | null> => {
@@ -29,7 +29,7 @@ export default defineEventHandler(
 				return null;
 			}
 
-			const locale = body.locale || 'en';
+			const locale = isValidLocale(body.locale) ? body.locale : 'en';
 
 			const clinicsQuery = `
 			SELECT

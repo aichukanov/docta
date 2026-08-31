@@ -40,11 +40,98 @@ export async function getConnection() {
 		}
 
 		const connection = await pool.getConnection();
-		// Оборачиваем end(), чтобы он вызывал release() для пула
-		const originalEnd = connection.end.bind(connection);
-		(connection as any).end = async function () {
+
+		// Оборачиваем end(), чтобы он вызывал release() для пула.
+		//
+		// release() идемпотентен: часть хендлеров зовёт end() на нескольких
+		// ветках выхода (в некоторых файлах один захват и до четырёх end()),
+		// а ниже к тому же добавляется автоматическое освобождение.
+		let released = false;
+		let inTransaction = false;
+		let releaseRequested = false;
+		// Снятие страховочного слушателя, см. ниже.
+		let detachSafetyNet: (() => void) | null = null;
+
+		const release = () => {
+			if (released) {
+				return;
+			}
+
+			// Внутри транзакции соединение отпускать нельзя: release() её не
+			// откатывает, и следующий, кто возьмёт это соединение из пула,
+			// унаследует незакрытую транзакцию. Транзакции есть в биллинге и
+			// во всех write-эндпоинтах, так что цена ошибки здесь выше, чем
+			// у самой утечки. Откладываем до commit/rollback.
+			if (inTransaction) {
+				releaseRequested = true;
+				return;
+			}
+
+			released = true;
+			detachSafetyNet?.();
 			connection.release();
 		};
+
+		(connection as any).end = async function () {
+			release();
+		};
+
+		// Отслеживаем границы транзакции, чтобы release() знал, можно ли сейчас.
+		const trackTransaction = (
+			method: 'beginTransaction' | 'commit' | 'rollback',
+			open: boolean,
+		) => {
+			const original = (connection as any)[method].bind(connection);
+
+			(connection as any)[method] = async function (...args: any[]) {
+				const result = await original(...args);
+				inTransaction = open;
+
+				if (!open && releaseRequested) {
+					release();
+				}
+
+				return result;
+			};
+		};
+
+		trackTransaction('beginTransaction', true);
+		trackTransaction('commit', false);
+		trackTransaction('rollback', false);
+
+		// Страховка на случай исключения между захватом и end().
+		//
+		// Подавляющее большинство мест держит соединение по схеме
+		// «взять → поработать → end()» без try/finally, поэтому любой бросок
+		// посередине навсегда сжигал слот пула. При connectionLimit: 10 и
+		// queueLimit: 0 десять таких ошибок подвешивали сайт до рестарта pm2 —
+		// это уже случалось.
+		//
+		// Вместо правки сотни точек захвата отпускаем соединение, когда ответ
+		// закрыт. При нормальном завершении хендлер к этому моменту уже
+		// доработал; при обрыве со стороны клиента — не обязательно, поэтому
+		// выше стоит защита транзакций, а незавершённые обычные запросы
+		// mysql2 всё равно ставит в очередь команд соединения.
+		//
+		// Требует nitro.experimental.asyncContext (включён в nuxt.config.ts).
+		// Вне запроса — плагин пересчёта рейтингов на старте, скрипты —
+		// контекста нет, там остаётся явный end().
+		//
+		// Слушатель обязательно снимается при штатном release: один запрос может
+		// брать соединения десятками подряд (сборка sitemap — около двадцати), и
+		// без снятия они копились бы на одном ответе, а Node на одиннадцатом
+		// начал бы писать MaxListenersExceededWarning.
+		try {
+			const res = useEvent()?.node.res;
+
+			if (res) {
+				res.once('close', release);
+				detachSafetyNet = () => res.off('close', release);
+			}
+		} catch {
+			// нет запроса в контексте — штатная ситуация, не ошибка
+		}
+
 		return connection;
 	} catch (error) {
 		console.error('Database connection error:', error);

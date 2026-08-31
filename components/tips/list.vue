@@ -17,40 +17,40 @@ const { t } = useI18n({ useScope: 'local' });
 
 <style lang="less" scoped>
 .tips-section {
-	margin-top: var(--spacing-3xl);
-	padding: var(--spacing-2xl);
-	border-radius: var(--border-radius-xl);
+	margin-top: var(--kit-spacing-3xl);
+	padding: var(--kit-spacing-2xl);
+	border-radius: var(--kit-border-radius-xl);
 	box-sizing: border-box;
 
 	@media (max-width: 500px) {
-		padding: var(--spacing-lg);
-		margin-top: var(--spacing-xl);
+		padding: var(--kit-spacing-lg);
+		margin-top: var(--kit-spacing-xl);
 	}
 }
 
 .tips-header {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-lg);
-	margin-bottom: var(--spacing-xl);
+	gap: var(--kit-spacing-lg);
+	margin-bottom: var(--kit-spacing-xl);
 }
 
 .tips-header-line {
 	flex: 1;
 	height: 1px;
-	background: var(--color-border-secondary);
+	background: var(--kit-color-border-secondary);
 }
 
 .tips-title {
 	margin: 0;
-	font-size: var(--font-size-lg);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-lg);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-secondary);
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
 
 	@media (max-width: 400px) {
-		font-size: var(--font-size-md);
+		font-size: var(--kit-font-size-md);
 		text-align: center;
 	}
 }
@@ -58,7 +58,7 @@ const { t } = useI18n({ useScope: 'local' });
 .tips-grid {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 </style>
 

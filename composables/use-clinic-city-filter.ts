@@ -5,14 +5,29 @@ import { useFiltersStore, type FilterNamespace } from '~/stores/filters';
 import { validateCityIds } from '~/common/validation';
 import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
 
-const parseCityIdsFromQuery = (raw: unknown): number[] => {
-	if (raw == null) return [];
+/**
+ * Разбор `?cityIds=` детальной страницы.
+ *
+ * `isInvalid` нужен ровно затем же, зачем `invalidFilterKeys` в сторе фильтров
+ * (см. stores/filters.ts): раньше невалидное значение молча превращалось в
+ * «фильтра не было», страница отдавала ПОЛНЫЙ список с 200 и self-canonical на
+ * мусорный URL — а значение может быть любым, то есть это неограниченная
+ * поверхность дублей на 276 карточках услуг/анализов и 3553 карточках лекарств.
+ * Отсутствующий параметр ошибкой не считается — ошибка только когда он есть,
+ * но не проходит валидацию.
+ */
+const parseCityIdsFromQuery = (
+	raw: unknown,
+): { ids: number[]; isInvalid: boolean } => {
+	if (raw == null) return { ids: [], isInvalid: false };
 	const arr = Array.isArray(raw) ? raw : [raw];
 	const ids = arr
 		.map((v) => Number(v))
 		.filter((n) => Number.isFinite(n) && n > 0);
-	if (!ids.length) return [];
-	return validateCityIds({ cityIds: ids }, 'use-clinic-city-filter') ? ids : [];
+	const isValid =
+		ids.length > 0 &&
+		validateCityIds({ cityIds: ids }, 'use-clinic-city-filter');
+	return isValid ? { ids, isInvalid: false } : { ids: [], isInvalid: true };
 };
 
 const sameIdSet = (a: readonly number[], b: readonly number[]) => {
@@ -44,6 +59,10 @@ export function useClinicCityFilter(
 	const router = useRouter();
 	const { cityIds } = toRefs(filtersStore.namespaces[namespace]);
 
+	// Был ли `?cityIds=` в URL и не прошёл валидацию — страница обязана уйти
+	// в noindex, иначе мусорный URL остаётся индексируемым дублем
+	const hasInvalidCityFilter = ref(false);
+
 	const isSyncingFromRoute = ref(false);
 	// Фиксируем имя маршрута на момент монтирования. Во время back-navigation
 	// route обновляется ДО того, как страница успевает размонтироваться, и
@@ -57,7 +76,8 @@ export function useClinicCityFilter(
 		() => route.query.cityIds,
 		(raw) => {
 			if (route.name !== ownRouteName) return;
-			const parsed = parseCityIdsFromQuery(raw);
+			const { ids: parsed, isInvalid } = parseCityIdsFromQuery(raw);
+			hasInvalidCityFilter.value = isInvalid;
 			if (sameIdSet(parsed, cityIds.value)) return;
 			isSyncingFromRoute.value = true;
 			cityIds.value = parsed;
@@ -75,7 +95,7 @@ export function useClinicCityFilter(
 		watch(cityIds, (ids) => {
 			if (route.name !== ownRouteName) return;
 			if (isSyncingFromRoute.value) return;
-			const current = parseCityIdsFromQuery(route.query.cityIds);
+			const { ids: current } = parseCityIdsFromQuery(route.query.cityIds);
 			if (sameIdSet(ids, current)) return;
 			const nextQuery: LocationQueryRaw = { ...route.query };
 			if (ids.length) {
@@ -107,6 +127,7 @@ export function useClinicCityFilter(
 
 	return {
 		cityIds,
+		hasInvalidCityFilter,
 		filteredClinics,
 		filteredClinicPrices,
 	};

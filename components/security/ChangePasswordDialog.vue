@@ -2,6 +2,8 @@
 import securityMessages from '~/i18n/security-section';
 import { ERROR_CODES } from '~/server/utils/api-codes';
 
+const toast = useToast();
+
 const props = defineProps<{
 	modelValue: boolean;
 	userHasPassword: boolean;
@@ -70,7 +72,7 @@ async function handleChangePassword() {
 				confirmPassword: passwordForm.value.confirmPassword,
 			},
 		});
-		ElMessage.success(t('passwordChanged'));
+		toast.success(t('passwordChanged'));
 		show.value = false;
 	} catch (error: any) {
 		const details = error.data?.data?.details;
@@ -98,7 +100,7 @@ async function handleForgotPassword() {
 		});
 		forgotPasswordSent.value = true;
 	} catch {
-		ElMessage.error(t('forgotPasswordError'));
+		toast.error(t('forgotPasswordError'));
 	} finally {
 		isForgotPasswordLoading.value = false;
 	}
@@ -197,7 +199,7 @@ async function handleForgotPassword() {
 
 <style scoped>
 .password-dialog__forgot {
-	margin-top: var(--spacing-xs);
+	margin-top: var(--kit-spacing-xs);
 	text-align: right;
 }
 </style>

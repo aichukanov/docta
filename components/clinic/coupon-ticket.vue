@@ -48,27 +48,27 @@ const sourceLine = computed(() =>
 .coupon-ticket {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xl);
-	padding: var(--spacing-xl);
-	background: var(--color-success-bg);
-	border: 2px dashed var(--color-primary-green);
-	border-radius: var(--border-radius-lg);
+	gap: var(--kit-spacing-xl);
+	padding: var(--kit-spacing-xl);
+	background: var(--kit-color-success-bg);
+	border: 2px dashed var(--kit-color-primary-green);
+	border-radius: var(--kit-border-radius-lg);
 
 	&--compact {
-		padding: var(--spacing-lg);
-		gap: var(--spacing-lg);
+		padding: var(--kit-spacing-lg);
+		gap: var(--kit-spacing-lg);
 	}
 }
 
 .coupon-ticket__percent {
-	font-size: var(--font-size-5xl);
-	font-weight: var(--font-weight-bold);
+	font-size: var(--kit-font-size-5xl);
+	font-weight: var(--kit-font-weight-bold);
 	line-height: 1;
-	color: var(--color-primary-green);
+	color: var(--kit-color-primary-green);
 	flex-shrink: 0;
 
 	.coupon-ticket--compact & {
-		font-size: var(--font-size-4xl);
+		font-size: var(--kit-font-size-4xl);
 	}
 }
 
@@ -80,30 +80,30 @@ const sourceLine = computed(() =>
 }
 
 .coupon-ticket__title {
-	font-size: var(--font-size-md);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-heading);
+	font-size: var(--kit-font-size-md);
+	font-weight: var(--kit-font-weight-semibold);
+	color: var(--kit-color-text-heading);
 }
 
 .coupon-ticket__clinic {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 }
 
 .coupon-ticket__source {
-	margin-top: var(--spacing-xs);
-	font-size: var(--font-size-xs);
-	color: var(--color-text-muted);
+	margin-top: var(--kit-spacing-xs);
+	font-size: var(--kit-font-size-xs);
+	color: var(--kit-color-text-muted);
 }
 
 @media (max-width: 600px) {
 	.coupon-ticket {
-		gap: var(--spacing-md);
-		padding: var(--spacing-md);
+		gap: var(--kit-spacing-md);
+		padding: var(--kit-spacing-md);
 	}
 
 	.coupon-ticket__percent {
-		font-size: var(--font-size-4xl);
+		font-size: var(--kit-font-size-4xl);
 	}
 }
 </style>

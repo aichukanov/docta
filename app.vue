@@ -169,5 +169,7 @@ useUserStore().fetchUser();
 			<NuxtPage />
 		</NuxtLayout>
 		<ConfirmProvider />
+		<!-- Хост тостов @ach/ui-kit: ровно один на приложение -->
+		<KitToaster :close-label="t('Close')" />
 	</Html>
 </template>

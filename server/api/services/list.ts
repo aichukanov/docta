@@ -8,6 +8,7 @@ import {
 } from '~/server/common/utils';
 import type { ClinicServiceList } from '~/interfaces/clinic';
 import {
+	isValidLocale,
 	validateBody,
 	validateName,
 	validateCityIds,
@@ -50,7 +51,7 @@ export async function getMedicalServiceList(
 ) {
 	const whereFilters: string[] = [];
 	const queryParams: Array<number | string> = [];
-	const locale = body.locale || 'en';
+	const locale = isValidLocale(body.locale) ? body.locale : 'en';
 	const usePagination = body.page != null;
 	const pageRaw = Number(body.page);
 	const pageSizeRaw = Number(body.pageSize);
@@ -186,8 +187,16 @@ export async function getMedicalServiceList(
 	const matchedSynonymsParams: string[] = nameSearchActive
 		? [`%${body.name}%`]
 		: [];
-	let orderByClause =
-		'ms.sort_order IS NULL, ms.sort_order ASC, ms.rank_score DESC, ms.name_en ASC';
+	// Порядок тот же, что и раньше («ручной порядок вперёд, NULL в конец»), но
+	// выражен колонкой sort_rank = COALESCE(sort_order, 2147483647), под которую
+	// есть индекс idx_ms_sort_rank(sort_rank, rank_score DESC, name_en).
+	// С прежним выражением `ms.sort_order IS NULL, ms.sort_order ASC, ...`
+	// ведущим членом было выражение, индекс не применялся и MySQL читал всю
+	// таблицу с filesort на каждой странице и каждом смещении:
+	//   было:  type: ALL,   key: NULL,             rows: 5081, Using filesort
+	//   стало: type: index, key: idx_ms_sort_rank, rows: 20
+	// Колонку и индекс добавляет миграция 025 — код без неё не работает.
+	let orderByClause = 'ms.sort_rank ASC, ms.rank_score DESC, ms.name_en ASC';
 	if (body.sort === 'name-asc') {
 		orderByClause = `COALESCE(NULLIF(ms.${localizedNameField}, ''), ms.name_en) ASC`;
 	} else if (usePriceSort) {

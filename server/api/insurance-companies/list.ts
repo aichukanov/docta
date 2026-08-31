@@ -3,7 +3,7 @@ import {
 	processLocalizedNameForClinicOrDoctor,
 	processLocalizedFieldForClinic,
 } from '~/server/common/utils';
-import { validateCityIds, validateName } from '~/common/validation';
+import { isValidLocale, validateCityIds, validateName } from '~/common/validation';
 import type { InsuranceCompanyListItem } from '~/interfaces/insurance-company';
 import { foldedLikeAny } from '~/server/common/search-collation';
 
@@ -11,7 +11,7 @@ export default defineEventHandler(
 	async (event): Promise<InsuranceCompanyListItem[]> => {
 		try {
 			const body = (await readBody(event).catch(() => ({}))) || {};
-			const locale = body.locale || 'en';
+			const locale = isValidLocale(body.locale) ? body.locale : 'en';
 
 			if (
 				body.cityIds &&

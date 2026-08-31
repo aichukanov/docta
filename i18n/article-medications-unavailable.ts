@@ -15,7 +15,7 @@ export default {
 			UnaTitle:
 				"Medications you won't find in Montenegro: your usual home first-aid kit",
 			UnaDescription:
-				'Enterosgel, rehydration salts, cetirizine, miramistin, suprastin, corvalol — which drugs from a Russian or Ukrainian home kit you won’t find in Montenegro, why, how to look for a substitute by active ingredient, and what to keep in mind when bringing medicines from home. Current as of July 2026.',
+				'Enterosgel, Miramistin, Suprastin — which drugs from a Russian or Ukrainian home kit you won’t find in Montenegro, and how to find a substitute by active ingredient.',
 
 			UnaToc_why: 'Why your usual kit falls short here',
 			UnaToc_gaps: "What's really missing and how to find a substitute",
@@ -147,7 +147,7 @@ export default {
 			UnaTitle:
 				'Чего нет в аптеках Черногории: привычные лекарства из России и Украины',
 			UnaDescription:
-				'Энтеросгель, Регидрон, Зиртек, Мирамистин, Супрастин, Корвалол, Пенталгин — что из домашней аптечки не найти в Черногории, чем это объясняется, как искать замену по действующему веществу и что учесть при ввозе из дома. Актуально на июль 2026 года.',
+				'Энтеросгель, Мирамистин, Супрастин — чего из привычной домашней аптечки не найти в Черногории и как искать замену по действующему веществу. Актуально на июль 2026.',
 
 			UnaToc_why: 'Почему привычной аптечки здесь не хватает',
 			UnaToc_gaps: 'Чего действительно нет и как искать замену',
@@ -277,7 +277,7 @@ export default {
 			UnaTitle:
 				'Ljekovi koje nećete naći u Crnoj Gori: vaša uobičajena kućna apoteka',
 			UnaDescription:
-				'Enterosgel, so za rehidrataciju, cetirizine, Miramistin, Suprastin, Corvalol — koji se ljekovi iz ruske ili ukrajinske kućne apoteke ne mogu naći u Crnoj Gori, zašto, kako tražiti zamjenu po aktivnoj supstanci i šta imati u vidu pri unosu ljekova od kuće. Važi za jul 2026.',
+				'Enterosgel, Miramistin, Suprastin — čega iz uobičajene kućne apoteke nema u Crnoj Gori i kako tražiti zamjenu po aktivnoj supstanci. Važi za jul 2026.',
 
 			UnaToc_why: 'Zašto uobičajena apoteka ovdje nije dovoljna',
 			UnaToc_gaps: 'Čega zaista nema i kako tražiti zamjenu',
@@ -408,7 +408,7 @@ export default {
 			UnaTitle:
 				'Љекови које нећете наћи у Црној Гори: ваша уобичајена кућна апотека',
 			UnaDescription:
-				'Enterosgel, соли за рехидратацију, цетиризин, Miramistin, Suprastin, Corvalol — шта од уобичајене кућне апотеке нећете наћи у Црној Гори, чиме се то објашњава, како тражити замјену по активној супстанци и шта имати у виду при уносу љекова из домовине. Важи за јул 2026.',
+				'Enterosgel, Miramistin, Suprastin — чега из уобичајене кућне апотеке нема у Црној Гори и како тражити замјену по активној супстанци. Важи за јул 2026.',
 
 			UnaToc_why: 'Зашто уобичајена апотека овдје није довољна',
 			UnaToc_gaps: 'Чега заиста нема и како тражити замјену',
@@ -540,7 +540,7 @@ export default {
 			UnaTitle:
 				'Medikamente, die Sie in Montenegro nicht finden: Ihre gewohnte Hausapotheke',
 			UnaDescription:
-				'Enterosgel, Rehydratationssalze, Cetirizin, Miramistin, Suprastin, Corvalol — welche Medikamente aus einer russischen oder ukrainischen Hausapotheke Sie in Montenegro nicht finden, warum das so ist, wie Sie über den Wirkstoff ein Pendant suchen und was Sie beim Mitbringen von Medikamenten von zu Hause beachten sollten. Stand: Juli 2026.',
+				'Enterosgel, Miramistin, Suprastin — welche Medikamente aus der gewohnten Hausapotheke es in Montenegro nicht gibt und wie Sie über den Wirkstoff ein Pendant finden.',
 
 			UnaToc_why: 'Warum die gewohnte Hausapotheke hier nicht ausreicht',
 			UnaToc_gaps: 'Was wirklich fehlt und wie Sie ein Pendant finden',
@@ -671,7 +671,7 @@ export default {
 			UnaTitle:
 				"Karadağ'da bulamayacağınız ilaçlar: alıştığınız evdeki ilaç dolabı",
 			UnaDescription:
-				"Enterosgel, rehidrasyon tuzları, setirizin, miramistin, suprastin, corvalol — Rus veya Ukrayna evindeki ilaç dolabından hangi ilaçları Karadağ'da bulamayacağınız, bunun nedeni, etken maddeye göre nasıl muadil aranacağı ve ilaçları ülkenizden getirirken nelere dikkat edilmesi gerektiği. Temmuz 2026 itibarıyla günceldir.",
+				"Enterosgel, miramistin, suprastin — alıştığınız evdeki ilaç dolabından hangi ilaçlar Karadağ'da bulunmuyor ve etken maddeye göre muadil nasıl aranır.",
 
 			UnaToc_why: 'Alışık olduğunuz ilaç dolabı burada neden yetersiz kalıyor',
 			UnaToc_gaps: 'Gerçekte neyin eksik olduğu ve muadilin nasıl bulunacağı',

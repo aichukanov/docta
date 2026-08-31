@@ -31,14 +31,17 @@ defineEmits<{
 	(e: 'show-on-map'): void;
 }>();
 
-const { t, n, locale } = useI18n({
-	useScope: 'local',
-	messages: combineI18nMessages([
-		clinicCommonI18n,
-		clinicTypeI18n,
-		locationI18n,
-	]),
-});
+// Слияние вынесено на уровень модуля: объект словарей константный, а компонент
+// рендерится до трёх раз на карточку и до шестидесяти раз на листинге — там это
+// было шестьдесят одинаковых Object.assign по трём словарям на шесть локалей,
+// на каждый setup. Ссылка общая для всех экземпляров, vue-i18n её не мутирует.
+const messages = combineI18nMessages([
+	clinicCommonI18n,
+	clinicTypeI18n,
+	locationI18n,
+]);
+
+const { t, n, locale } = useI18n({ useScope: 'local', messages });
 
 const localizedName = computed(() =>
 	getLocalizedName(props.clinic, locale.value),
@@ -225,15 +228,15 @@ const reviewsLink = computed(() => {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	gap: var(--spacing-lg);
-	padding: var(--spacing-lg) var(--spacing-xl);
-	background: var(--color-surface-primary);
+	gap: var(--kit-spacing-lg);
+	padding: var(--kit-spacing-lg) var(--kit-spacing-xl);
+	background: var(--kit-color-surface-primary);
 }
 
 .clinic-info {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	flex: 1;
 	min-width: 0;
 }
@@ -242,63 +245,63 @@ const reviewsLink = computed(() => {
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .clinic-name-block {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 	min-width: 0;
 }
 
 .clinic-name-wrapper {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 /* Оригинальное название на сербской латинице — под локализованным */
 .clinic-original-name {
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	font-weight: var(--kit-font-weight-medium);
+	color: var(--kit-color-text-secondary);
 	overflow-wrap: break-word;
 }
 
 .clinic-name {
-	font-size: var(--font-size-lg);
+	font-size: var(--kit-font-size-lg);
 	font-weight: 600;
-	color: var(--color-primary);
+	color: var(--kit-color-primary);
 	text-decoration: none;
 	overflow-wrap: break-word;
 
 	&:hover {
-		color: var(--color-primary-dark);
+		color: var(--kit-color-primary-dark);
 		text-decoration: underline;
 	}
 }
 
 .clinic-header--highlight {
-	background: var(--color-highlight-bg);
+	background: var(--kit-color-highlight-bg);
 }
 
 .price-badge {
 	display: inline-flex;
 	align-items: center;
-	gap: var(--spacing-xs);
-	padding: var(--spacing-xs) var(--spacing-md);
-	background: var(--color-primary);
-	border-radius: var(--border-radius-sm);
+	gap: var(--kit-spacing-xs);
+	padding: var(--kit-spacing-xs) var(--kit-spacing-md);
+	background: var(--kit-color-primary);
+	border-radius: var(--kit-border-radius-sm);
 	color: white;
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-semibold);
+	font-size: var(--kit-font-size-base);
+	font-weight: var(--kit-font-weight-semibold);
 	white-space: nowrap;
 
 	&__unknown {
-		background: var(--color-surface-secondary);
-		color: var(--color-text-muted);
-		font-weight: var(--font-weight-normal);
+		background: var(--kit-color-surface-secondary);
+		color: var(--kit-color-text-muted);
+		font-weight: var(--kit-font-weight-normal);
 		font-style: italic;
 	}
 }
@@ -306,18 +309,18 @@ const reviewsLink = computed(() => {
 .clinic-address {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-xs);
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	gap: var(--kit-spacing-xs);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 
 	.address-icon {
 		flex-shrink: 0;
-		color: var(--color-text-muted);
+		color: var(--kit-color-text-muted);
 	}
 
 	.clinic-distance {
 		flex-shrink: 0;
-		color: var(--color-text-muted);
+		color: var(--kit-color-text-muted);
 		white-space: nowrap;
 	}
 }
@@ -325,20 +328,20 @@ const reviewsLink = computed(() => {
 .clinic-types {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 }
 
 .clinic-actions {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
+	gap: var(--kit-spacing-sm);
 	min-width: 160px;
 }
 
 @media (max-width: 950px) {
 	.clinic-header {
 		flex-direction: column;
-		gap: var(--spacing-md);
+		gap: var(--kit-spacing-md);
 	}
 
 	.clinic-actions {
@@ -351,7 +354,7 @@ const reviewsLink = computed(() => {
 
 @media (max-width: 600px) {
 	.clinic-header {
-		padding: var(--spacing-md);
+		padding: var(--kit-spacing-md);
 	}
 }
 </style>

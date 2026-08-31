@@ -35,40 +35,40 @@ const detailLink = computed(() => ({
 .insurance-summary-card {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
-	padding: var(--spacing-lg);
-	background: var(--color-surface-primary);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--border-radius-lg);
+	gap: var(--kit-spacing-md);
+	padding: var(--kit-spacing-lg);
+	background: var(--kit-color-surface-primary);
+	border: 1px solid var(--kit-color-border-light);
+	border-radius: var(--kit-border-radius-lg);
 	text-decoration: none;
 	transition: box-shadow 0.15s ease;
 
 	&:hover {
-		box-shadow: var(--shadow-hover);
+		box-shadow: var(--kit-shadow-hover);
 	}
 }
 
 .insurance-summary-card__info {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--kit-spacing-xs);
 	min-width: 0;
 }
 
 .insurance-summary-card__name {
-	font-size: var(--font-size-lg);
+	font-size: var(--kit-font-size-lg);
 	font-weight: 600;
-	color: var(--color-text-primary);
+	color: var(--kit-color-text-primary);
 	margin: 0;
 }
 
 .insurance-summary-card__local-name {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 
 .insurance-summary-card__meta {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-secondary);
 }
 </style>

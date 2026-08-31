@@ -242,7 +242,7 @@ const shareNatively = async () => {
 .coupon-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-lg);
+	gap: var(--kit-spacing-lg);
 	align-items: stretch;
 }
 
@@ -257,10 +257,10 @@ const shareNatively = async () => {
 	display: block;
 	width: 100%;
 	padding: 0;
-	border: 1px solid var(--color-border-secondary);
-	border-radius: var(--border-radius-lg);
+	border: 1px solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-lg);
 	overflow: hidden;
-	background: var(--color-surface-secondary);
+	background: var(--kit-color-surface-secondary);
 	cursor: zoom-in;
 
 	/* Свёрнутый блок стоит первым, выше информации о клинике: вся секция с
@@ -285,7 +285,7 @@ const shareNatively = async () => {
 	}
 
 	&:hover {
-		border-color: var(--color-border-accent);
+		border-color: var(--kit-color-border-accent);
 	}
 }
 
@@ -299,19 +299,19 @@ const shareNatively = async () => {
 	background: linear-gradient(
 		to bottom,
 		rgba(255, 255, 255, 0),
-		var(--color-bg-primary)
+		var(--kit-color-bg-primary)
 	);
 }
 
 .coupon-share {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-md);
+	gap: var(--kit-spacing-md);
 }
 
 .coupon-share__label {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	font-size: var(--kit-font-size-sm);
+	color: var(--kit-color-text-muted);
 }
 
 .coupon-share__link {
@@ -322,17 +322,17 @@ const shareNatively = async () => {
 	height: 36px;
 	padding: 0;
 	background: none;
-	border: 1px solid var(--color-border-secondary);
-	border-radius: var(--border-radius-full);
-	color: var(--color-text-secondary);
+	border: 1px solid var(--kit-color-border-secondary);
+	border-radius: var(--kit-border-radius-full);
+	color: var(--kit-color-text-secondary);
 	cursor: pointer;
 	transition:
-		border-color var(--transition-fast),
-		color var(--transition-fast);
+		border-color var(--kit-transition-fast),
+		color var(--kit-transition-fast);
 
 	&:hover {
-		border-color: var(--color-primary);
-		color: var(--color-primary);
+		border-color: var(--kit-color-primary);
+		color: var(--kit-color-primary);
 	}
 }
 </style>

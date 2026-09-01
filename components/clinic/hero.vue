@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LocationFilled } from '@element-plus/icons-vue';
+import IconMapPin from '~/components/icon/map-pin.vue';
 import { formatClinicAddressLine } from '~/common/clinic-address';
 import { getLocalizedName } from '~/common/utils';
 import type { ClinicData } from '~/interfaces/clinic';
@@ -50,7 +50,7 @@ const localizedName = computed(() =>
 				</div>
 
 				<address class="clinic-hero__address">
-					<LocationFilled aria-hidden="true" />
+					<IconMapPin aria-hidden="true" size="1em" />
 					<span>{{
 						formatClinicAddressLine({
 							clinic: clinic,

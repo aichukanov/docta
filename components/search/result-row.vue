@@ -211,7 +211,9 @@ const metaSecondaryText = computed(() => joinMeta(props.metaSecondary));
 		flex-wrap: wrap;
 		gap: var(--kit-spacing-xs);
 		padding: 0 var(--search-row-inset) var(--kit-spacing-md)
-			calc(var(--search-row-icon) + var(--kit-spacing-md) + var(--search-row-inset));
+			calc(
+				var(--search-row-icon) + var(--kit-spacing-md) + var(--search-row-inset)
+			);
 	}
 }
 

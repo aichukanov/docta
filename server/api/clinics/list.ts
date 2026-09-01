@@ -19,6 +19,7 @@ import {
 } from '~/server/common/utils';
 import type { ClinicList } from '~/interfaces/clinic';
 import type {
+	DayOfWeek,
 	DaySchedule,
 	WorkingHours,
 } from '~/interfaces/clinic-working-hours';
@@ -26,7 +27,6 @@ import {
 	DAYS_OF_WEEK,
 	DEFAULT_DAY_SCHEDULE,
 } from '~/interfaces/clinic-working-hours';
-import { calculateStatus } from '~/common/clinic-working-hours';
 import {
 	isValidLocale,
 	validateCityIds,
@@ -67,6 +67,83 @@ function buildWorkingHours(
 		friday: parseDaySchedule(row.friday),
 		saturday: parseDaySchedule(row.saturday),
 		sunday: parseDaySchedule(row.sunday),
+	};
+}
+
+// Клиники всегда в Черногории, сервер — в UTC. Та же константа, что в
+// common/clinic-working-hours.ts:13; оттуда она не экспортируется, поэтому
+// продублирована — менять надо в обоих местах.
+const CLINIC_TIMEZONE = 'Europe/Podgorica';
+
+// Сколько интервалов в одном дне может быть: зеркало MAX_INTERVALS_PER_DAY из
+// валидатора common/clinic-working-hours.ts (в экспорт он не вынесен).
+// Условие ниже разворачивается по индексам интервалов именно потому, что
+// коррелированный JSON_TABLE в MySQL 8.0.45 внутри EXISTS молча возвращает
+// пусто (0 строк там, где кросс-джойн той же JSON_TABLE даёт 99).
+const MAX_INTERVALS_PER_DAY = 3;
+
+/**
+ * SQL-условие «клиника открыта прямо сейчас».
+ *
+ * Раньше это считалось в JS поверх уже полученной выдачи, и ради одного
+ * фильтра ОТКЛЮЧАЛАСЬ пагинация в БД: выбирался весь список клиник и резался
+ * в памяти. В SQL условие выражается без таблиц часовых поясов MySQL — день
+ * недели и время в Europe/Podgorica считает Node, в запрос уезжают готовые
+ * значения.
+ *
+ * Время сравнивается как строка: формат строго «HH:mm» с ведущим нулём
+ * (TIME_REGEX в валидаторе), поэтому лексикографический порядок совпадает
+ * с числовым и отдельная конвертация в минуты не нужна.
+ *
+ * Совпадение с calculateStatus(): открыто ⇔ день типа '24/7' либо 'regular'
+ * с интервалом start <= now < end. Типы closed / on_demand / not_specified,
+ * отсутствующая строка расписания и NULL-день дают «закрыто» — ровно как
+ * parseDaySchedule + calculateStatus в JS.
+ */
+function buildOpenNowFilter(now: Date = new Date()): {
+	sql: string;
+	params: string[];
+} {
+	const parts = new Intl.DateTimeFormat('en-US', {
+		timeZone: CLINIC_TIMEZONE,
+		weekday: 'long',
+		hour: '2-digit',
+		minute: '2-digit',
+		hour12: false,
+	}).formatToParts(now);
+	const get = (type: string) => parts.find((p) => p.type === type)!.value;
+
+	const weekday = get('weekday').toLowerCase();
+	// Имя колонки уезжает в SQL конкатенацией, поэтому берётся только из
+	// белого списка. Intl всегда отдаёт полное английское имя дня, так что
+	// запасная ветка недостижима — она страхует сам факт конкатенации.
+	const day: DayOfWeek = (DAYS_OF_WEEK as string[]).includes(weekday)
+		? (weekday as DayOfWeek)
+		: 'monday';
+	// hour12:false отдаёт полночь как «24» — тот же %24, что в getClinicLocalTime
+	const hhmm = `${String(Number(get('hour')) % 24).padStart(2, '0')}:${get(
+		'minute',
+	)}`;
+
+	const typeExpr = `JSON_UNQUOTE(JSON_EXTRACT(cwh_open.${day}, '$.type'))`;
+	const intervalChecks: string[] = [];
+	const params: string[] = [];
+	for (let i = 0; i < MAX_INTERVALS_PER_DAY; i++) {
+		intervalChecks.push(
+			`(JSON_UNQUOTE(JSON_EXTRACT(cwh_open.${day}, '$.intervals[${i}].start')) <= ? AND JSON_UNQUOTE(JSON_EXTRACT(cwh_open.${day}, '$.intervals[${i}].end')) > ?)`,
+		);
+		params.push(hhmm, hhmm);
+	}
+
+	return {
+		sql: `EXISTS (
+				SELECT 1 FROM clinic_working_hours cwh_open
+				WHERE cwh_open.clinic_id = c.id AND (
+					${typeExpr} = '24/7'
+					OR (${typeExpr} = 'regular' AND (${intervalChecks.join(' OR ')}))
+				)
+			)`,
+		params,
 	};
 }
 
@@ -175,16 +252,23 @@ export async function getClinicList(
 	const pageSize = LIST_PAGE_SIZE;
 	const page = Math.max(Number.isFinite(pageRaw) ? pageRaw : 1, 1);
 	const offset = Math.max(Math.trunc((page - 1) * pageSize), 0);
-	// `openNow` filter requires evaluating each clinic's schedule in JS
-	// (timezone-aware calculation), which can't be expressed in SQL — paginate
-	// in-memory afterwards.
-	const useDbPagination = usePagination && !openNow;
-
 	const buildInPlaceholders = (values: Array<number | string>) => {
 		const arr = Array.isArray(values) ? values : [values];
 		queryParams.push(...arr);
 		return arr.map(() => '?').join(',');
 	};
+
+	// «Открыто сейчас» — теперь условие SQL, поэтому пагинация в БД работает и
+	// с этим фильтром. Раньше он отключал LIMIT целиком: список выбирался весь
+	// (142 КБ, 0,11 с на 138 клиниках) и резался в памяти уже после выборки.
+	//
+	// Порядок важен: whereFilters и queryParams заполняются синхронно, параметры
+	// позиционные — условие и его параметры добавляются одной операцией.
+	if (openNow) {
+		const openNowFilter = buildOpenNowFilter();
+		whereFilters.push(openNowFilter.sql);
+		queryParams.push(...openNowFilter.params);
+	}
 
 	if (body.cityIds != null && body.cityIds.length > 0) {
 		whereFilters.push(`c.city_id IN (${buildInPlaceholders(body.cityIds)})`);
@@ -245,9 +329,17 @@ export async function getClinicList(
 
 	const whereFiltersString =
 		whereFilters.length > 0 ? 'WHERE ' + whereFilters.join(' AND ') : '';
-	const paginationClause = useDbPagination
-		? `LIMIT ${pageSize} OFFSET ${offset}`
-		: '';
+	// LIMIT/OFFSET — связанными параметрами: с инлайном каждое смещение давало
+	// НОВОЕ подготовленное выражение и вытесняло LRU в 200 записей на
+	// соединение (maxPreparedStatements, db-mysql.ts), то есть пагинирующий
+	// трафик платил лишние COM_STMT_PREPARE + COM_STMT_CLOSE почти на каждом
+	// запросе. Значения СТРОКАМИ: mysql2 в execute() кодирует числа так, что
+	// MySQL отвечает «Incorrect arguments to mysqld_stmt_execute» именно на
+	// LIMIT/OFFSET, а строку приводит к целому сам.
+	const paginationClause = usePagination ? 'LIMIT ? OFFSET ?' : '';
+	const paginationParams: string[] = usePagination
+		? [String(pageSize), String(offset)]
+		: [];
 
 	// Haversine (км) от точки пользователя. Это сортировка, НЕ фильтр:
 	// все клиники остаются в выдаче, без координат — без бонуса близости.
@@ -336,7 +428,7 @@ export async function getClinicList(
 
 	const connection = await getConnection();
 	let totalCount = 0;
-	if (useDbPagination) {
+	if (usePagination) {
 		const [countRows] = await connection.execute(totalCountQuery, queryParams);
 		totalCount = Number((countRows as any[])?.[0]?.totalCount || 0);
 	}
@@ -344,6 +436,7 @@ export async function getClinicList(
 	const [clinics] = await connection.execute(clinicsQuery, [
 		...distanceParams,
 		...queryParams,
+		...paginationParams,
 	]);
 	await connection.end();
 
@@ -352,7 +445,7 @@ export async function getClinicList(
 	const coupons = await fetchClinicCoupons();
 
 	// Обрабатываем локализованные имена, town, address и description
-	let processedClinics = (clinics as any[]).map((clinic: any) => {
+	const processedClinics = (clinics as any[]).map((clinic: any) => {
 		const { name, localName } = processLocalizedNameForClinicOrDoctor(
 			clinic,
 			locale,
@@ -406,17 +499,7 @@ export async function getClinicList(
 		};
 	});
 
-	if (openNow) {
-		processedClinics = processedClinics.filter((c) =>
-			c.workingHours
-				? calculateStatus({ clinicId: c.id, ...c.workingHours }).isOpen
-				: false,
-		);
-		totalCount = processedClinics.length;
-		if (usePagination) {
-			processedClinics = processedClinics.slice(offset, offset + pageSize);
-		}
-	} else if (!usePagination) {
+	if (!usePagination) {
 		totalCount = processedClinics.length;
 	}
 

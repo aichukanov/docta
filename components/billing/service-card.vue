@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Star, CircleCheck } from '@element-plus/icons-vue';
+import IconCheckCircle from '~/components/icon/check-circle.vue';
+import IconStar from '~/components/icon/star.vue';
 import { formatDate } from '~/common/date-format';
 import clinicBillingI18n from '~/i18n/clinic-billing';
 import { BillingService } from '~/enums/billing-service';
@@ -41,7 +42,7 @@ const SERVICE_KEYS: Record<number, { name: string; desc: string }> = {
 };
 
 const serviceIcon = computed(() =>
-	props.service.id === BillingService.HIGHLIGHT ? Star : CircleCheck,
+	props.service.id === BillingService.HIGHLIGHT ? IconStar : IconCheckCircle,
 );
 
 const nameKey = computed(
@@ -74,7 +75,7 @@ const monthsModel = computed({
 	<section class="service-card" :class="{ 'service-card--selected': selected }">
 		<div class="service-card__header">
 			<div class="service-card__icon">
-				<el-icon :size="22"><component :is="serviceIcon" /></el-icon>
+				<component :is="serviceIcon" :size="22" />
 			</div>
 			<h3 class="service-card__name">{{ t(nameKey) }}</h3>
 		</div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LocationFilled } from '@element-plus/icons-vue';
+import IconMapPin from '~/components/icon/map-pin.vue';
 import { formatPhoneNumber, splitContacts } from '~/components/contacts/utils';
 import type { InsuranceBranchData } from '~/interfaces/insurance-company';
 
@@ -29,7 +29,7 @@ const anchorId = computed(() => `branch-${props.branch.id}`);
 <template>
 	<div :id="anchorId" class="insurance-branch-item">
 		<address class="insurance-branch-item__address">
-			<LocationFilled aria-hidden="true" />
+			<IconMapPin aria-hidden="true" size="1em" />
 			<ClinicLocationAddress :clinic="branch" />
 		</address>
 

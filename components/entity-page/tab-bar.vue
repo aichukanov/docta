@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowDown } from '@element-plus/icons-vue';
+import IconArrowDown from '~/components/icon/arrow-down.vue';
 
 export interface TabItem {
 	id: string;
@@ -114,17 +114,32 @@ const updateActiveTab = () => {
 	activeTabId.value = closest;
 };
 
+// Скролл сыплет десятками событий в секунду, а updateActiveTab читает
+// scrollHeight и getBoundingClientRect по каждой вкладке — это принудительный
+// пересчёт layout на каждый тик. Схлопываем в один пересчёт на кадр:
+// чаще подсветка всё равно не обновляется — браузер не рисует.
+let scrollFrame: number | null = null;
+
+const onScroll = () => {
+	if (scrollFrame !== null) return;
+	scrollFrame = requestAnimationFrame(() => {
+		scrollFrame = null;
+		updateActiveTab();
+	});
+};
+
 onMounted(() => {
 	const tab = route.query.tab as string | undefined;
 	if (tab && tabIds.value.has(tab)) {
 		nextTick(() => onTabClick(tab));
 	}
 
-	window.addEventListener('scroll', updateActiveTab, { passive: true });
+	window.addEventListener('scroll', onScroll, { passive: true });
 	updateActiveTab();
 
 	onUnmounted(() => {
-		window.removeEventListener('scroll', updateActiveTab);
+		window.removeEventListener('scroll', onScroll);
+		if (scrollFrame !== null) cancelAnimationFrame(scrollFrame);
 	});
 });
 </script>
@@ -154,7 +169,7 @@ onMounted(() => {
 			>
 				<button class="mobile-trigger" type="button">
 					<span class="mobile-trigger__label">{{ activeLabel }}</span>
-					<el-icon class="mobile-trigger__chev"><ArrowDown /></el-icon>
+					<IconArrowDown class="mobile-trigger__chev" size="1em" />
 				</button>
 				<template #dropdown>
 					<el-dropdown-menu>

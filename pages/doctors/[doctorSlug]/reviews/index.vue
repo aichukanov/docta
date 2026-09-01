@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { isGonePayload } from '~/common/gone';
 import { getSchemaType } from '~/common/schema-org-builders';
+import { getRegionalUrl } from '~/common/url-utils';
+import doctorI18n from '~/i18n/doctor';
 import specialtyI18n from '~/i18n/specialty';
 import reviewsI18n from '~/i18n/reviews';
 import { combineI18nMessages } from '~/i18n/utils';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([reviewsI18n, specialtyI18n]),
+	messages: combineI18nMessages([reviewsI18n, doctorI18n, specialtyI18n]),
 });
 
 const route = useRoute();
@@ -31,9 +33,18 @@ const reviewsData = computed(() =>
 	isGonePayload(reviewsPayload.value) ? null : reviewsPayload.value,
 );
 
+// Цель редиректа собирается через getRegionalUrl, а не конкатенацией: без
+// параметра языка русская версия подстраницы 301-редиректилась на сербскую
+// версию родителя (проверено на проде), а редирект на другую локаль Google
+// считает дефектом hreflang-кластера.
+const parentAnchorUrl = computed(
+	() =>
+		`${getRegionalUrl(`/doctors/${doctorSlug.value}`, {}, locale.value)}#reviews`,
+);
+
 // Redirect if below threshold
 if (import.meta.server && reviewsData.value?.shouldRedirect) {
-	await navigateTo(`/doctors/${doctorSlug.value}#reviews`, {
+	await navigateTo(parentAnchorUrl.value, {
 		redirectCode: 301,
 	});
 }
@@ -42,7 +53,7 @@ watch(
 	() => reviewsData.value?.shouldRedirect,
 	(shouldRedirect) => {
 		if (shouldRedirect) {
-			navigateTo(`/doctors/${doctorSlug.value}#reviews`);
+			navigateTo(parentAnchorUrl.value);
 		}
 	},
 );
@@ -50,6 +61,24 @@ watch(
 // 404, либо 410 если врача скрыл администратор
 if (!reviewsData.value) {
 	setMissingEntityStatus(reviewsPayload.value);
+}
+
+// Врача нет вовсе — в отличие от shouldRedirect, где данные есть и страница
+// просто уезжает на родителя
+const isMissing = computed(() => !reviewsData.value);
+const isGone = computed(() => isGonePayload(reviewsPayload.value));
+
+// Заголовок, описание и noindex живут в ReviewsPage, а он при отсутствии врача
+// не монтируется: код ответа был честным, но в <head> не было ни title, ни
+// description, ни robots (тот же «тихий 200», см.
+// prd/silent-200-index-hygiene). Мета ставим только для этого случая, иначе
+// перебили бы мету смонтированного ReviewsPage.
+if (isMissing.value) {
+	useSeoMeta({
+		title: () => t('DoctorNotFound'),
+		description: () => t('ReviewsNotFoundDescription'),
+		robots: 'noindex, follow',
+	});
 }
 
 const data = computed(() => {
@@ -132,4 +161,43 @@ const clinicInfoMap = computed(() => {
 			}}</CategoryTag>
 		</template>
 	</ReviewsPage>
+	<!-- Без ClientOnly: текст ошибки обязан быть в серверной разметке, иначе
+	краулер видит страницу, в которой об ошибке нет ни слова -->
+	<main v-else-if="isMissing" class="reviews-missing" role="main">
+		<ErrorBlock :code="isGone ? 410 : 404" :title="t('DoctorNotFound')" />
+	</main>
 </template>
+
+<i18n lang="json">
+{
+	"en": {
+		"ReviewsNotFoundDescription": "This doctor page does not exist, so there are no reviews for it."
+	},
+	"ru": {
+		"ReviewsNotFoundDescription": "Такой страницы врача нет, отзывов по ней тоже нет."
+	},
+	"sr": {
+		"ReviewsNotFoundDescription": "Ova stranica ljekara ne postoji, pa nema ni recenzija."
+	},
+	"sr-cyrl": {
+		"ReviewsNotFoundDescription": "Ова страница љекара не постоји, па нема ни рецензија."
+	},
+	"de": {
+		"ReviewsNotFoundDescription": "Diese Arztseite existiert nicht, daher gibt es auch keine Bewertungen."
+	},
+	"tr": {
+		"ReviewsNotFoundDescription": "Bu doktor sayfası mevcut değil, bu nedenle yorum da yok."
+	}
+}
+</i18n>
+
+<style scoped>
+/* Та же коробка, что у ReviewsPage — заглушка встаёт на её место */
+.reviews-missing {
+	max-width: 1100px;
+	width: 100%;
+	margin: 0 auto;
+	padding: var(--kit-spacing-xl);
+	box-sizing: border-box;
+}
+</style>

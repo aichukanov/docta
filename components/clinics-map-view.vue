@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { getClinicMarkerId, getLocalizedName } from '~/common/utils';
 import type { ClinicData } from '~/interfaces/clinic';
+import { CLINIC_ICON_SVG } from './map/markers';
 
 // Полноразмерная карта клиник (режим «Карта» на /clinics): кластеризация
 // маркеров, попап с названием/адресом/ссылкой. В отличие от
@@ -31,18 +32,7 @@ const clinicsWithCoords = computed(() =>
 	props.clinics.filter((clinic) => clinic.latitude && clinic.longitude),
 );
 
-// Иконка повторяет components/icon/clinic.vue (там Vue-компонент,
-// здесь нужен статичный HTML для divIcon)
-const MARKER_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="none" aria-hidden="true">
-	<line x1="32" y1="216" x2="248" y2="216" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
-	<path d="M48,216V48a8,8,0,0,1,8-8h96a8,8,0,0,1,8,8V216" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
-	<path d="M160,120h64a8,8,0,0,1,8,8v88" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
-	<line x1="104" y1="72" x2="104" y2="120" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
-	<line x1="80" y1="96" x2="128" y2="96" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
-	<polyline points="128 216 128 160 80 160 80 216" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
-</svg>`;
-
-const markerHtml = `<div class="clinics-map-marker">${MARKER_SVG}</div>`;
+const markerHtml = `<div class="clinics-map-marker">${CLINIC_ICON_SVG}</div>`;
 
 const openClinicPopup = async (clinic: ClinicData) => {
 	selectedClinic.value = null;
@@ -95,6 +85,9 @@ const fitToClinics = () => {
 // активный scope компонента потерян, и такой watch НЕ останавливается при
 // размонтировании — он продолжал дёргать syncMarkers на уже мёртвой карте.
 // Ждёт инициализации: до неё маркеров нет, стартовый набор ставит onMounted.
+// Без deep: массив клиник всегда приходит целиком новым (запрос карты,
+// стор на shallowRef), а глубокий обход стоил полного прохода по 126
+// объектам на каждом запуске; сам syncMarkers и так сверяется по id.
 watch(
 	() => props.clinics,
 	() => {
@@ -102,7 +95,6 @@ watch(
 		syncMarkers();
 		fitToClinics();
 	},
-	{ deep: true },
 );
 
 // Leaflet грузится с CDN, и за это время со страницы могли уйти

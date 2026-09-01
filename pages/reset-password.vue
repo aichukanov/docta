@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Lock } from '@element-plus/icons-vue';
+import IconLock from '~/components/icon/lock.vue';
 import resetPasswordMessages from '~/i18n/reset-password';
 import { ERROR_CODES } from '~/server/utils/api-codes';
 import { getRegionalQuery } from '~/common/url-utils';
@@ -100,7 +100,7 @@ const loginPageLink = computed(() => ({
 						show-password
 					>
 						<template #prefix>
-							<el-icon><Lock /></el-icon>
+							<IconLock size="1em" />
 						</template>
 					</el-input>
 				</el-form-item>
@@ -115,7 +115,7 @@ const loginPageLink = computed(() => ({
 						show-password
 					>
 						<template #prefix>
-							<el-icon><Lock /></el-icon>
+							<IconLock size="1em" />
 						</template>
 					</el-input>
 				</el-form-item>

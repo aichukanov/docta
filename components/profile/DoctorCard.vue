@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Edit } from '@element-plus/icons-vue';
+import IconEdit from '~/components/icon/edit.vue';
 import doctorProfileI18n from '~/i18n/doctor-profile';
 import specialtyI18n from '~/i18n/specialty';
 import { combineI18nMessages } from '~/i18n/utils';
@@ -144,7 +144,7 @@ const clinicNames = computed(() =>
 		</div>
 
 		<div v-if="status !== 'draft'" class="doctor-card__edit">
-			<el-button plain @click="emit('edit')" :icon="Edit">
+			<el-button plain @click="emit('edit')" :icon="IconEdit">
 				{{ t('editProfile') }}
 			</el-button>
 		</div>

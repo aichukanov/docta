@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LocationFilled } from '@element-plus/icons-vue';
+import IconMapPin from '~/components/icon/map-pin.vue';
 
 const { t } = useI18n();
 </script>
@@ -7,7 +7,7 @@ const { t } = useI18n();
 <template>
 	<el-button :title="t('ShowOnMap')">
 		<template #icon>
-			<el-icon><LocationFilled /></el-icon>
+			<IconMapPin size="1em" />
 		</template>
 		{{ t('ShowOnMap') }}
 	</el-button>

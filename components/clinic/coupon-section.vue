@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Share } from '@element-plus/icons-vue';
+import IconShare from '~/components/icon/share.vue';
 import {
 	buildCouponTitle,
 	COUPON_TAB_ID,
@@ -225,7 +225,7 @@ const shareNatively = async () => {
 					:title="t('CouponShareLabel')"
 					@click="shareNatively"
 				>
-					<el-icon :size="18"><Share /></el-icon>
+					<IconShare :size="18" />
 				</button>
 			</div>
 

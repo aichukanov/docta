@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { KitIconSpinner } from '@ach/ui-kit/icons';
 /**
  * Технический экран возврата из Telegram (top-level redirect-поток).
  *
@@ -108,9 +109,7 @@ onMounted(() => {
 
 <template>
 	<div class="telegram-return">
-		<el-icon class="is-loading" :size="40">
-			<Loading />
-		</el-icon>
+		<KitIconSpinner class="telegram-return__spinner" />
 	</div>
 </template>
 
@@ -120,6 +119,11 @@ onMounted(() => {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: var(--el-color-primary);
+	color: var(--kit-color-primary);
+}
+
+/* Размер спиннера — CSS: KitIconSpinner рисуется в 1em и наследует цвет */
+.telegram-return__spinner {
+	font-size: 40px;
 }
 </style>

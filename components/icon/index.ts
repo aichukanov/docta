@@ -26,6 +26,21 @@ export { default as LightbulbIcon } from './lightbulb.vue';
 export { default as AlertCircleIcon } from './alert-circle.vue';
 export { default as GoogleIcon } from './google.vue';
 
+// Иконки, заменившие набор Element Plus (миграция prd/element-plus-removal)
+export { default as IconPlus } from './plus.vue';
+export { default as IconRefreshLeft } from './refresh-left.vue';
+export { default as IconList } from './list.vue';
+export { default as IconMapLocation } from './map-location.vue';
+export { default as IconUpload } from './upload.vue';
+export { default as IconShare } from './share.vue';
+export { default as IconOfficeBuilding } from './office-building.vue';
+export { default as IconFilter } from './filter.vue';
+export { default as IconQuestionCircle } from './question-circle.vue';
+export { default as IconCreditCard } from './credit-card.vue';
+export { default as IconDiscount } from './discount.vue';
+export { default as IconBriefcase } from './briefcase.vue';
+export { default as IconArrowRight } from './arrow-right.vue';
+
 // Type definitions for icon props
 export interface IconProps {
 	size?: string | number;

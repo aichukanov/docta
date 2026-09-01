@@ -9,7 +9,13 @@ import {
 } from './composables/use-locale';
 import { useSchemaOrgStore } from './stores/schema-org';
 import type { SchemaOrg } from './types/schema-org';
-import { SITE_URL, SITE_NAME, OG_IMAGE } from './common/constants';
+import {
+	SITE_URL,
+	SITE_NAME,
+	OG_IMAGE,
+	OG_IMAGE_WIDTH,
+	OG_IMAGE_HEIGHT,
+} from './common/constants';
 
 const { t, locale } = useI18n({ useScope: 'global' });
 const router = useRouter();
@@ -41,12 +47,39 @@ const buildJsonLd = (schemas: SchemaOrg[]) => {
 			};
 };
 
+/**
+ * Признак «страницы нет»: ответ уже помечен кодом 4xx (404 на несуществующий
+ * слаг, 410 на скрытую админом сущность — см. composables/use-missing-entity-status).
+ *
+ * Читаем именно код ответа, а не флаг конкретной страницы: его ставят все
+ * детальные страницы, каждая своим способом (`setMissingEntityStatus` или
+ * `setResponseStatus`), и новая страница получит поведение по умолчанию.
+ *
+ * Момент важен: статус проставляется в setup страницы, то есть уже ПОСЛЕ setup
+ * app.vue. `app:rendered` срабатывает после рендера страницы, но до сериализации
+ * payload — только там значение и известно, и ещё успевает уехать на клиент,
+ * чтобы гидратация не вернула canonical обратно в DOM.
+ */
+const isMissingEntityPage = useState('seo-missing-entity', () => false);
+
+if (import.meta.server) {
+	const event = useRequestEvent();
+	useNuxtApp().hook('app:rendered', () => {
+		isMissingEntityPage.value = (event?.node.res.statusCode ?? 200) >= 400;
+	});
+}
+
 // Чистим схемы перед каждой клиентской навигацией: страницы без собственной
 // разметки (terms, privacy, 404 и т.п.) не должны наследовать схемы предыдущей
 // страницы. Страницы со схемами заново заполнят стор в своём setup/watchEffect.
 if (import.meta.client) {
 	router.beforeEach(() => {
 		schemaOrgStore.clearSchemas();
+		// Код ответа существует только у серверного рендера. При клиентском
+		// переходе флаг снимаем, иначе с 404-страницы он утёк бы на следующую,
+		// живую. Обратный случай (клиентский переход НА 404) остаётся без
+		// снятия canonical — краулеры грузят такие URL напрямую, то есть по SSR.
+		isMissingEntityPage.value = false;
 	});
 }
 
@@ -65,10 +98,24 @@ useHead(() => {
 	};
 });
 
-// Локаль устанавливается в server middleware (regional-settings.ts)
-// и передаётся через query параметр ?lang=XX
-const queryLocale = getLocaleFromQuery(route.query.lang as string | string[]);
-locale.value = queryLocale || defaultLocale;
+// Локаль определяется адресом страницы: сервер выбирает её только по `?lang=`
+// (server/common/redirect/regional-settings.ts), клиент обязан следовать за
+// тем же параметром.
+//
+// Раньше это было разовое присваивание в setup, и держалось оно на том, что
+// сервер редиректил до рендера, а клиентские переходы всегда шли через
+// переключатель языка, который менял `locale` сам. Обоих допущений больше
+// нет: сохранённый язык восстанавливает plugins/locale-preference.client.ts
+// уже после гидратации, и без этого watcher'а URL менялся на `?lang=de`, а
+// интерфейс оставался сербским. Заодно чинится переход «назад» между
+// адресами с разной локалью.
+watch(
+	() => route.query.lang,
+	(lang) => {
+		locale.value = getLocaleFromQuery(lang as string | string[]) || defaultLocale;
+	},
+	{ immediate: true },
+);
 
 function getLangLink(lang: string) {
 	return getCanonicalUrl(
@@ -88,7 +135,12 @@ function getLangLink(lang: string) {
 const isNotFoundRoute = computed(() => route.params.notfound !== undefined);
 
 const alternateLinks = computed(() => {
-	if (isNotFoundRoute.value) {
+	// Тот же довод, что и для catch-all: несуществующий URL нельзя ни
+	// канонизировать, ни объявлять его языковые версии. До этого исключение
+	// работало только на catch-all, а 404 на несуществующий слаг услуги/врача и
+	// 410 на скрытую клинику получали self-canonical и полный набор alternate на
+	// шесть языков мёртвой страницы.
+	if (isNotFoundRoute.value || isMissingEntityPage.value) {
 		return [];
 	}
 
@@ -137,7 +189,13 @@ useSeoMeta({
 	ogLocale: locale,
 	ogUrl: ogUrl,
 	ogImage: OG_IMAGE,
-	twitterCard: 'summary',
+	// Размеры обязательны для мгновенного превью: без них Facebook и Telegram
+	// показывают ссылку без картинки, пока сами не скачают файл
+	ogImageWidth: OG_IMAGE_WIDTH,
+	ogImageHeight: OG_IMAGE_HEIGHT,
+	ogImageType: 'image/jpeg',
+	// Дефолтная картинка теперь 1200×630 (1.91:1) — это формат большой карточки
+	twitterCard: 'summary_large_image',
 });
 
 useUserStore().fetchUser();

@@ -1,5 +1,6 @@
 <script setup lang="ts" generic="T extends ListPageItem">
-import { Filter, ArrowDown } from '@element-plus/icons-vue';
+import IconFilter from '~/components/icon/filter.vue';
+import IconArrowDown from '~/components/icon/arrow-down.vue';
 import { getCanonicalUrl, getRegionalQuery } from '~/common/url-utils';
 import { fitSeoTitle } from '~/common/seo-meta';
 import type { FilterNamespace } from '~/stores/filters';
@@ -384,18 +385,16 @@ onMounted(async () => {
 						class="filters-toggle"
 					>
 						<el-button
-							:icon="Filter"
+							:icon="IconFilter"
 							:aria-expanded="areFiltersOpen"
 							@click="areFiltersOpen = !areFiltersOpen"
 						>
 							{{ t('Filters') }}
-							<el-icon
+							<IconArrowDown
 								:size="14"
 								class="filters-toggle__chevron"
 								:class="{ 'is-open': areFiltersOpen }"
-							>
-								<ArrowDown />
-							</el-icon>
+							/>
 						</el-button>
 					</el-badge>
 				</div>

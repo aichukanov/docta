@@ -17,18 +17,22 @@ const totalCount = computed(() => props.items.length);
 const hasMoreItems = computed(() => totalCount.value > props.initialLimit);
 const hiddenCount = computed(() => totalCount.value - props.initialLimit);
 
-const isHidden = (index: number) =>
-	!showAll.value && index >= props.initialLimit;
+// Режем список, а не прячем хвост через CSS: у карточки клиники на листинге
+// лимит по умолчанию 2, а услуг у клиники бывают сотни — все они попадали в
+// DOM (и в разметку SSR) с display: none. Секции ещё и свёрнуты в
+// el-collapse-item, который рендерит содержимое через v-show, так что
+// невидимое всё равно рендерилось. Ср. clinic/category-subsection.vue.
+const visibleItems = computed(() =>
+	showAll.value || totalCount.value <= props.initialLimit
+		? props.items
+		: props.items.slice(0, props.initialLimit),
+);
 </script>
 
 <template>
 	<div v-if="items.length > 0" class="section-content">
 		<div class="items-grid">
-			<div
-				v-for="(item, index) in items"
-				:key="index"
-				:class="{ hidden: isHidden(index) }"
-			>
+			<div v-for="(item, index) in visibleItems" :key="index">
 				<slot :item="item" />
 			</div>
 		</div>
@@ -83,10 +87,6 @@ const isHidden = (index: number) =>
 
 	@media (max-width: 640px) {
 		grid-template-columns: 1fr;
-	}
-
-	.hidden {
-		display: none;
 	}
 }
 </style>

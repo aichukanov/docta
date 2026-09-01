@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Message, Lock } from '@element-plus/icons-vue';
+import IconEmail from '~/components/icon/email.vue';
+import IconLock from '~/components/icon/lock.vue';
 import loginMessages from '~/i18n/login';
 
 const { t } = useI18n({
@@ -39,7 +40,7 @@ function handleSubmit() {
 					:disabled="loading"
 				>
 					<template #prefix>
-						<el-icon><Message /></el-icon>
+						<IconEmail size="1em" />
 					</template>
 				</el-input>
 			</el-form-item>
@@ -53,7 +54,7 @@ function handleSubmit() {
 					show-password
 				>
 					<template #prefix>
-						<el-icon><Lock /></el-icon>
+						<IconLock size="1em" />
 					</template>
 				</el-input>
 			</el-form-item>

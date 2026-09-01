@@ -2,8 +2,8 @@
 import { OG_IMAGE, SITE_URL } from '~/common/constants';
 import {
 	buildBreadcrumbsSchema,
+	buildSchemaReviews,
 	buildWebPageSchema,
-	filterSchemaReviews,
 } from '~/common/schema-org-builders';
 import { getRegionalQuery, getRegionalUrl } from '~/common/url-utils';
 import type { ReviewFormEntity } from '~/components/review/form.vue';
@@ -120,7 +120,8 @@ useSeoMeta({
 	ogDescription: pageDescription,
 	ogImage: OG_IMAGE,
 	ogType: 'website',
-	twitterCard: 'summary',
+	// Дефолтная og:image теперь 1200×630 — формат большой карточки
+	twitterCard: 'summary_large_image',
 	twitterTitle: pageTitle,
 	twitterDescription: pageDescription,
 	twitterImage: OG_IMAGE,
@@ -159,35 +160,18 @@ const schemaOrgStore = useSchemaOrgStore();
 watchEffect(() => {
 	if (!props.reviews?.length) return;
 
-	// В разметку попадают только собственные docta_me-отзывы; aggregateRating
-	// не выводим, пока API-агрегат считает и сторонние отзывы (google_maps и
-	// т.п.) — см. SCHEMA_REVIEWS_PROVIDER в schema-org-builders.ts
-	const reviewSchemas = filterSchemaReviews(props.reviews)
-		.filter((r) => r.text)
-		.map((review) => ({
-			'@type': 'Review' as const,
-			'author': review.author
-				? {
-						'@type': 'Person' as const,
-						'name': review.author.name,
-					}
-				: undefined,
-			'reviewRating': review.rating
-				? {
-						'@type': 'Rating' as const,
-						'ratingValue': review.rating,
-					}
-				: undefined,
-			'reviewBody': review.text,
-			'datePublished': review.publishedAt || undefined,
-		}));
+	// В разметку попадают только собственные docta_me-отзывы, и только валидные
+	// (author + reviewRating обязательны у Google) — см. buildSchemaReviews.
+	// aggregateRating не выводим, пока API-агрегат считает и сторонние отзывы
+	// (google_maps и т.п.) — см. SCHEMA_REVIEWS_PROVIDER в schema-org-builders.ts
+	const reviewSchemas = buildSchemaReviews(props.reviews);
 
 	const reviewedEntity = {
 		'@type': props.schemaOrgType,
 		'@id': `${entityUrl.value}#${props.schemaOrgFragment}`,
 		'mainEntityOfPage': entityUrl.value,
 		'name': props.entityName,
-		'review': reviewSchemas.length > 0 ? reviewSchemas : undefined,
+		'review': reviewSchemas,
 	};
 
 	schemaOrgStore.setSchemas([
@@ -374,7 +358,8 @@ const totalReviewsCount = computed(
 
 .own-review-section {
 	padding-bottom: var(--kit-spacing-lg);
-	border-bottom: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
+	border-bottom: var(--kit-border-width-thin) solid
+		var(--kit-color-border-secondary);
 }
 
 .other-reviews-section {

@@ -9,7 +9,7 @@
 		stroke-width="2"
 		stroke-linecap="round"
 		stroke-linejoin="round"
-		:style="{ color }"
+		:style="color ? { color } : undefined"
 	>
 		<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
 		<polyline points="22 4 12 14.01 9 11.01" />
@@ -17,6 +17,12 @@
 </template>
 
 <script setup lang="ts">
+/*
+ * Инлайновый style ставится ТОЛЬКО когда цвет передали пропсом. Раньше он
+ * был всегда (`color: currentColor` по умолчанию) и молча перебивал любое
+ * CSS-правило вида `svg { color: ... }` — инлайн сильнее правила. Без пропса
+ * цвет наследуется, и стилизовать иконку из CSS снова можно.
+ */
 interface Props {
 	size?: string | number;
 	color?: string;
@@ -24,6 +30,5 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
 	size: 24,
-	color: 'currentColor',
 });
 </script>

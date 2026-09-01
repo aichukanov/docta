@@ -73,6 +73,57 @@ export function filterSchemaReviews<T extends { provider: string }>(
 	);
 }
 
+/** Отзыв в том виде, в каком он приходит из API отзывов */
+export interface SchemaReviewInput {
+	text: string;
+	rating?: number;
+	author?: { name: string; photoUrl?: string };
+	publishedAt?: string;
+	provider: string;
+}
+
+export interface SchemaReview {
+	'@type': 'Review';
+	'author': { '@type': 'Person'; 'name': string };
+	'reviewRating': { '@type': 'Rating'; 'ratingValue': number };
+	'reviewBody': string;
+	'datePublished'?: string;
+}
+
+/**
+ * Собственные отзывы docta.me в виде массива `Review` — единая сборка для
+ * страницы врача, страницы клиники и отдельной страницы отзывов.
+ *
+ * `author` и `reviewRating` у Google ОБЯЗАТЕЛЬНЫЕ, а раньше оба ставились
+ * условно: отзыв без имени автора или без оценки уезжал в разметку огрызком с
+ * `undefined` и делал элемент невалидным. Такие отзывы теперь выбрасываются из
+ * массива целиком — лучше меньше элементов, чем невалидные.
+ *
+ * Возвращает `undefined`, а не пустой массив: пустой `review: []` в JSON-LD —
+ * тоже ошибка валидации.
+ */
+export function buildSchemaReviews(
+	reviews: SchemaReviewInput[] | undefined,
+): SchemaReview[] | undefined {
+	const result = filterSchemaReviews(reviews)
+		.filter((review) => review.text && review.author?.name && review.rating)
+		.map((review) => ({
+			'@type': 'Review' as const,
+			'author': {
+				'@type': 'Person' as const,
+				'name': review.author!.name,
+			},
+			'reviewRating': {
+				'@type': 'Rating' as const,
+				'ratingValue': review.rating!,
+			},
+			'reviewBody': review.text,
+			'datePublished': review.publishedAt || undefined,
+		}));
+
+	return result.length > 0 ? result : undefined;
+}
+
 /**
  * Цены с пометкой «устаревшая» (`isOutdated`) в разметку НЕ попадают ни в каком
  * виде.
@@ -809,26 +860,8 @@ export function buildDoctorSchema(options: {
 		};
 	}
 
-	// Build reviews (only own docta.me reviews, skip ones without text)
-	const reviews = filterSchemaReviews(options.reviews)
-		.filter((review) => review.text)
-		.map((review) => ({
-			'@type': 'Review' as const,
-			'author': review.author
-				? {
-						'@type': 'Person' as const,
-						'name': review.author.name,
-					}
-				: undefined,
-			'reviewRating': review.rating
-				? {
-						'@type': 'Rating' as const,
-						'ratingValue': review.rating,
-					}
-				: undefined,
-			'reviewBody': review.text,
-			'datePublished': review.publishedAt || undefined,
-		}));
+	// Только собственные отзывы docta.me и только валидные (см. buildSchemaReviews)
+	const reviews = buildSchemaReviews(options.reviews);
 
 	// Набор свойств собран под домен `Physician` (см. getSchemaType):
 	// `honorificPrefix` и `jobTitle` выброшены — их домен только Person, а
@@ -859,7 +892,7 @@ export function buildDoctorSchema(options: {
 		hasOfferCatalog: servicesSchema.hasOfferCatalog,
 		knowsAbout: servicesSchema.knowsAbout,
 		aggregateRating,
-		review: reviews && reviews.length > 0 ? reviews : undefined,
+		review: reviews,
 	};
 
 	const webPageSchema = buildWebPageSchema({
@@ -1196,29 +1229,8 @@ export function buildClinicSchema(options: {
 						'reviewCount': options.rating.totalReviews,
 					}
 				: undefined,
-		review: (() => {
-			// Only own docta.me reviews, skip ones without text
-			const reviews = filterSchemaReviews(options.reviews)
-				.filter((review) => review.text)
-				.map((review) => ({
-					'@type': 'Review' as const,
-					'author': review.author
-						? {
-								'@type': 'Person' as const,
-								'name': review.author.name,
-							}
-						: undefined,
-					'reviewRating': review.rating
-						? {
-								'@type': 'Rating' as const,
-								'ratingValue': review.rating,
-							}
-						: undefined,
-					'reviewBody': review.text,
-					'datePublished': review.publishedAt || undefined,
-				}));
-			return reviews.length > 0 ? reviews : undefined;
-		})(),
+		// Только собственные отзывы docta.me и только валидные (см. buildSchemaReviews)
+		review: buildSchemaReviews(options.reviews),
 	};
 
 	const webPageSchema = buildWebPageSchema({

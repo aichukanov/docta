@@ -15,6 +15,14 @@ export interface User {
 	is_profile_public: boolean;
 	/** Способ авторизации — для user property в аналитике */
 	auth_provider: 'google' | 'telegram' | 'facebook' | 'password';
+	/**
+	 * Колонка auth_users.preferred_locale. Запрос ниже её и так выбирает —
+	 * объявляем в типе, чтобы getUserPreferredLocale брал значение отсюда,
+	 * а не ходил в БД вторым запросом за той же колонкой.
+	 */
+	preferred_locale?: string | null;
+	/** Колонка auth_users.email_verified — тоже уже в выборке. */
+	email_verified?: number | boolean | null;
 }
 
 /**

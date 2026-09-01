@@ -46,10 +46,7 @@ const classes = computed(() =>
 	[...ATC_CLASS_CODES]
 		.map((code) => ({
 			value: code,
-			label: capitalizeFirstLetter(
-				t(getAtcClassKeyByCode(code)),
-				locale.value,
-			),
+			label: capitalizeFirstLetter(t(getAtcClassKeyByCode(code)), locale.value),
 		}))
 		.sort((a, b) => a.label.localeCompare(b.label, locale.value)),
 );

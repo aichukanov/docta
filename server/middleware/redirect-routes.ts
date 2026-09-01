@@ -8,6 +8,17 @@ import { requireAdmin } from '~/server/common/auth';
 export default defineEventHandler(async (event) => {
 	const { pathname, searchParams } = getRequestURL(event);
 
+	// Слеш на конце: у каждого пути сайта был близнец, отдающий 200 с
+	// self-canonical на самого себя. То есть дубль в индексе на КАЖДЫЙ адрес,
+	// причём регистр при этом ловился (`/CLINICS/` → 302), а слеш — нет.
+	// Постоянный редирект, потому что зависит только от URL. Корень трогать
+	// нельзя: `/` — это и есть путь без слеша.
+	if (pathname.length > 1 && pathname.endsWith('/')) {
+		const target = pathname.slice(0, -1) + (searchParams.size ? `?${searchParams}` : '');
+		await sendRedirect(event, target, 301);
+		return;
+	}
+
 	const pathArray = pathname.split('/').slice(1); // remove a leading slash
 
 	if (pathArray[0] === 'sitemap.xml') {

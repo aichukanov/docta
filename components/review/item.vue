@@ -335,7 +335,8 @@ const clinic = computed(() => {
 }
 
 .review-replies {
-	border-top: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
+	border-top: var(--kit-border-width-thin) solid
+		var(--kit-color-border-secondary);
 	padding-top: var(--kit-spacing-lg);
 	margin-top: var(--kit-spacing-lg);
 }

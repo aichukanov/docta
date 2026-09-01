@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Edit, CreditCard } from '@element-plus/icons-vue';
+import IconCreditCard from '~/components/icon/credit-card.vue';
+import IconEdit from '~/components/icon/edit.vue';
 import clinicProfileI18n from '~/i18n/clinic-profile';
 import clinicBillingI18n from '~/i18n/clinic-billing';
 import clinicTypeI18n from '~/i18n/clinic-type';
@@ -72,11 +73,11 @@ const cityName = computed(() =>
 		</div>
 
 		<div class="clinic-card__edit">
-			<el-button plain :icon="Edit" @click="emit('edit')">
+			<el-button plain :icon="IconEdit" @click="emit('edit')">
 				{{ t('BtnEdit') }}
 			</el-button>
 			<NuxtLink :to="billingLink">
-				<el-button plain :icon="CreditCard">
+				<el-button plain :icon="IconCreditCard">
 					{{ t('BillingButton') }}
 				</el-button>
 			</NuxtLink>

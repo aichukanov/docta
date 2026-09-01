@@ -50,33 +50,40 @@ test.describe('Locale System', () => {
 			expect(finalUrl).not.toContain('lang=sr');
 		});
 
-		test('should use cookie locale when no query parameter', async ({
+		// Приоритет развёрнут осознанно (2026-08-31): раньше cookie перебивала
+		// `?lang=`, из-за чего один адрес отдавал разным людям разное и HTML
+		// нельзя было положить ни в какой общий кэш. Теперь сервер зависит
+		// только от URL, а сохранённый язык восстанавливает клиент
+		// (plugins/locale-preference.client.ts). Обоснование —
+		// server/common/redirect/regional-settings.ts.
+		test('cookie восстанавливает язык на голом URL — но уже на клиенте', async ({
 			page,
 		}) => {
-			// Устанавливаем cookie вручную
 			await setLocaleCookie(page, 'de');
 
 			await page.goto('/');
-			await page.waitForLoadState('domcontentloaded');
 
-			// Должен использовать локаль из cookie
+			// Плагин уводит на адрес с языком; ждём именно URL, а не
+			// domcontentloaded: серверная разметка приезжает на дефолтной локали.
+			await page.waitForURL(/lang=de/);
+
 			const htmlLang = await page.getAttribute('html', 'lang');
 			expect(htmlLang).toBe('de');
 		});
 
-		test('should prefer cookie over query parameter', async ({ page }) => {
-			// Устанавливаем cookie с одной локалью
+		test('явный ?lang= сильнее cookie', async ({ page }) => {
 			await setLocaleCookie(page, 'de');
 
-			// Открываем с другой локалью в query
 			await page.goto('/?lang=ru');
 			await page.waitForLoadState('domcontentloaded');
 
-			// Кука имеет приоритет над query-параметром
+			// Ссылка с языком — осознанный выбор отправителя: присланная в чат
+			// русская версия обязана открыться по-русски у кого угодно.
 			const htmlLang = await page.getAttribute('html', 'lang');
-			expect(htmlLang).toBe('de');
+			expect(htmlLang).toBe('ru');
+			expect(page.url()).toContain('lang=ru');
 
-			// Cookie остаётся прежним
+			// Cookie при этом не переписывается — её меняет только переключатель.
 			const cookies = await page.context().cookies();
 			const localeCookie = cookies.find((c) => c.name === 'locale');
 			expect(localeCookie?.value).toBe('de');
@@ -131,12 +138,13 @@ test.describe('Locale System', () => {
 			await header.selectLanguage('Русский');
 			await page.waitForURL(/lang=ru/);
 
-			// Переходим на другую страницу
+			// Переходим на другую страницу по голому адресу
 			await page.goto('/doctors');
-			await page.waitForLoadState('domcontentloaded');
 
-			// Проверяем что язык сохранился
-			expect(page.url()).toContain('lang=ru');
+			// Язык возвращает клиент после гидратации, а не сервер редиректом
+			// (см. plugins/locale-preference.client.ts), поэтому ждём URL,
+			// а не domcontentloaded: разметка приезжает на дефолтной локали.
+			await page.waitForURL(/lang=ru/);
 			const htmlLang = await page.getAttribute('html', 'lang');
 			expect(htmlLang).toBe('ru');
 		});

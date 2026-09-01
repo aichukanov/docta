@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowLeft } from '@element-plus/icons-vue';
+import IconBack from '~/components/icon/back.vue';
 import { getRegionalQuery } from '~/common/url-utils';
 import { useFiltersStore, type FilterNamespace } from '~/stores/filters';
 import type { ClinicData, ClinicPrice } from '~/interfaces/clinic';
@@ -75,7 +75,7 @@ const onMapReady = () => {
 <template>
 	<div class="details-page" role="main" :aria-label="t('AriaMainContent')">
 		<nav class="details-page-header" :aria-label="t('AriaBackToSearch')">
-			<el-button @click="backToSearch()" :icon="ArrowLeft">
+			<el-button @click="backToSearch()" :icon="IconBack">
 				{{ t('ToSearchPage') }}
 			</el-button>
 		</nav>
@@ -176,7 +176,9 @@ const onMapReady = () => {
 				flex: 1;
 				position: sticky;
 				top: calc(60px + var(--kit-spacing-lg));
-				height: calc(100vh - 60px - var(--kit-spacing-lg) - var(--kit-spacing-md));
+				height: calc(
+					100vh - 60px - var(--kit-spacing-lg) - var(--kit-spacing-md)
+				);
 				min-height: 400px;
 				max-height: 700px;
 			}

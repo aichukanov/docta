@@ -1,4 +1,4 @@
-import { getConnection } from '~/server/common/db-mysql';
+import { executeQuery, getConnection } from '~/server/common/db-mysql';
 import type { H3Event } from 'h3';
 
 /**
@@ -17,6 +17,75 @@ const ENTITY_TYPES: Record<string, { table: string; redirectTable?: string }> =
 		'medicines': { table: 'med_medicines' },
 		'insurance-companies': { table: 'insurance_companies' },
 	};
+
+// Таблица slug_redirects целиком в памяти.
+//
+// SELECT по ней уходил на КАЖДОЙ детальной странице всех семи сущностей и
+// стоял ПЕРЕД остальной работой: последовательный round-trip до начала
+// рендера, который в 99,9% случаев возвращает пусто. Строк в таблице
+// несколько десятков — она помещается в память целиком, и тогда обычная
+// страница не открывает соединение с БД вообще.
+// Образец такого кэша в проекте — citiesCache в
+// server/api/geo/detect-location.get.ts.
+//
+// TTL минута, а не час: таблица правится не только вручную — в неё пишут
+// addSlugRedirect (server/common/slug-db.ts) при смене слага и merge-эндпоинты
+// врачей/услуг/анализов. Пока запись не видна воркеру, старый URL отвечает 404
+// вместо 301, поэтому окно держим коротким. На БД это не нагрузка: один запрос
+// в минуту на воркер вместо одного на каждого посетителя. Инвалидация по
+// событию тут бы не помогла — pm2 поднят в кластере, и очистился бы кэш только
+// того воркера, который обработал запись.
+const SLUG_REDIRECTS_CACHE_TTL_MS = 60 * 1000;
+
+type SlugRedirectMap = Map<string, number>;
+
+let slugRedirectsCache: { map: SlugRedirectMap; expires: number } | null = null;
+// Прогрев один на всех: без этого пачка параллельных запросов сразу после
+// протухания ушла бы в БД целиком.
+let slugRedirectsLoading: Promise<SlugRedirectMap> | null = null;
+
+// Разделителем берём «/»: entity_type — ключ из списка выше, слаг — [a-z0-9-],
+// ни в том, ни в другом слеша нет, поэтому склейка ключа не даст коллизии.
+function slugRedirectKey(entityType: string, oldSlug: string): string {
+	return entityType + '/' + oldSlug;
+}
+
+async function getSlugRedirectMap(): Promise<SlugRedirectMap> {
+	if (slugRedirectsCache && slugRedirectsCache.expires > Date.now()) {
+		return slugRedirectsCache.map;
+	}
+
+	if (!slugRedirectsLoading) {
+		slugRedirectsLoading = (async () => {
+			try {
+				const rows = await executeQuery<{
+					entity_type: string;
+					old_slug: string;
+					entity_id: number;
+				}>('SELECT entity_type, old_slug, entity_id FROM slug_redirects');
+
+				const map: SlugRedirectMap = new Map();
+				for (const row of rows) {
+					map.set(
+						slugRedirectKey(row.entity_type, row.old_slug),
+						row.entity_id,
+					);
+				}
+
+				slugRedirectsCache = {
+					map,
+					expires: Date.now() + SLUG_REDIRECTS_CACHE_TTL_MS,
+				};
+
+				return map;
+			} finally {
+				slugRedirectsLoading = null;
+			}
+		})();
+	}
+
+	return await slugRedirectsLoading;
+}
 
 /**
  * Checks if the URL needs a redirect:
@@ -41,11 +110,11 @@ export async function checkSlugRedirect(
 	let connection: Awaited<ReturnType<typeof getConnection>> | null = null;
 
 	try {
-		connection = await getConnection();
 		let targetSlug: string | null = null;
 
 		if (isNumericId) {
 			// Numeric ID: resolve merged-entity redirect, then look up slug
+			connection = await getConnection();
 			let targetId = id;
 			if (config.redirectTable) {
 				const [redirectRows] = await connection.execute(
@@ -64,16 +133,17 @@ export async function checkSlugRedirect(
 			);
 			targetSlug = (rows as any[])[0]?.slug || null;
 		} else {
-			// String param: check if it's an old slug in slug_redirects
-			const [redirectRows] = await connection.execute(
-				`SELECT entity_id FROM slug_redirects WHERE entity_type = ? AND old_slug = ?`,
-				[entityType, param],
+			// String param: check if it's an old slug in slug_redirects.
+			// Промах (обычная страница с актуальным слагом) разрешается по кэшу
+			// в памяти — соединение с БД тут не берётся вообще.
+			const entityId = (await getSlugRedirectMap()).get(
+				slugRedirectKey(entityType, param),
 			);
-			const redirectRow = (redirectRows as any[])[0];
-			if (redirectRow) {
+			if (entityId != null) {
+				connection = await getConnection();
 				const [rows] = await connection.execute(
 					`SELECT slug FROM ${config.table} WHERE id = ?`,
-					[redirectRow.entity_id],
+					[entityId],
 				);
 				targetSlug = (rows as any[])[0]?.slug || null;
 			}

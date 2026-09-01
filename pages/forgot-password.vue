@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import forgotPasswordMessages from '~/i18n/forgot-password';
-import { Message } from '@element-plus/icons-vue';
+import IconEmail from '~/components/icon/email.vue';
 import { ERROR_CODES } from '~/server/utils/api-codes';
 import { getRegionalQuery } from '~/common/url-utils';
 
@@ -87,7 +87,7 @@ const loginPageLink = computed(() => ({
 						:disabled="isLoading"
 					>
 						<template #prefix>
-							<el-icon><Message /></el-icon>
+							<IconEmail size="1em" />
 						</template>
 					</el-input>
 				</el-form-item>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Search } from '@element-plus/icons-vue';
+import IconSearch from '~/components/icon/search.vue';
 
 interface CategoryOption {
 	categoryId: number;
@@ -63,7 +63,7 @@ const sortModel = computed({
 		<el-input
 			v-model="searchModel"
 			:placeholder="searchPlaceholder"
-			:prefix-icon="Search"
+			:prefix-icon="IconSearch"
 			size="large"
 			clearable
 			class="filter-search"

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LocationFilled } from '@element-plus/icons-vue';
+import IconMapPin from '~/components/icon/map-pin.vue';
 import { getRegionalQuery } from '~/common/url-utils';
 import { REVIEWS_THRESHOLD } from '~/common/constants';
 import { getLocalizedName } from '~/common/utils';
@@ -185,7 +185,7 @@ const reviewsLink = computed(() => {
 			</div>
 
 			<div class="clinic-address">
-				<el-icon class="address-icon"><LocationFilled /></el-icon>
+				<IconMapPin class="address-icon" size="1em" />
 				<ClinicLocationAddress :clinic="clinic" />
 				<span v-if="formattedDistance" class="clinic-distance">
 					· {{ formattedDistance }}

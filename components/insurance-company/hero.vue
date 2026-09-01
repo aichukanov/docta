@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LocationFilled } from '@element-plus/icons-vue';
+import IconMapPin from '~/components/icon/map-pin.vue';
 import type { InsuranceCompanyData } from '~/interfaces/insurance-company';
 
 defineProps<{
@@ -23,7 +23,7 @@ defineProps<{
 				company.localName
 			}}</span>
 			<div class="insurance-hero__meta">
-				<LocationFilled aria-hidden="true" />
+				<IconMapPin aria-hidden="true" size="1em" />
 				<span>{{ branchesLabel }}</span>
 			</div>
 		</div>

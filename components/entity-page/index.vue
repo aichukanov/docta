@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowLeft } from '@element-plus/icons-vue';
+import IconBack from '~/components/icon/back.vue';
 import { getRegionalQuery } from '~/common/url-utils';
 import { useFiltersStore, type FilterNamespace } from '~/stores/filters';
 import type { TabItem } from './tab-bar.vue';
@@ -36,7 +36,7 @@ const backToSearch = () => {
 		:aria-label="t('AriaMainContent')"
 	>
 		<nav class="entity-page__back" :aria-label="t('AriaBackToSearch')">
-			<el-button @click="backToSearch()" :icon="ArrowLeft">
+			<el-button @click="backToSearch()" :icon="IconBack">
 				{{ t('ToSearchPage') }}
 			</el-button>
 		</nav>
@@ -124,7 +124,9 @@ const backToSearch = () => {
 	&::before {
 		content: '';
 		display: block;
-		height: calc(2 * var(--kit-spacing-sm) + 2px + var(--kit-font-size-sm) * 1.2);
+		height: calc(
+			2 * var(--kit-spacing-sm) + 2px + var(--kit-font-size-sm) * 1.2
+		);
 	}
 }
 

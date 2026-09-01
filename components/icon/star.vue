@@ -5,7 +5,7 @@
 		:height="size"
 		viewBox="0 0 256 256"
 		fill="none"
-		:style="{ color }"
+		:style="color ? { color } : undefined"
 	>
 		<path
 			d="M128,16l30.6,66.4L232,93.2l-52,48.8L192.4,216,128,178.4,63.6,216l12.4-73.9L24,93.2l73.4-10.8Z"
@@ -18,6 +18,12 @@
 </template>
 
 <script setup lang="ts">
+/*
+ * Инлайновый style ставится ТОЛЬКО когда цвет передали пропсом. Раньше он
+ * был всегда (`color: currentColor` по умолчанию) и молча перебивал любое
+ * CSS-правило вида `svg { color: ... }` — инлайн сильнее правила. Без пропса
+ * цвет наследуется, и стилизовать иконку из CSS снова можно.
+ */
 interface Props {
 	size?: string | number;
 	color?: string;
@@ -25,6 +31,5 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
 	size: 24,
-	color: 'currentColor',
 });
 </script>

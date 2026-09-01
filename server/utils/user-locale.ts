@@ -3,6 +3,7 @@
  */
 import { Language } from '~/enums/language';
 import { executeQuery } from '~/server/common/db-mysql';
+import { getResolvedSessionUser } from '~/server/common/auth';
 import type { H3Event } from 'h3';
 import { getHeader } from 'h3';
 
@@ -14,6 +15,22 @@ import { getHeader } from 'h3';
 export async function getUserPreferredLocale(
 	userId: number,
 ): Promise<Language | null> {
+	// Сессия текущего запроса уже содержит preferred_locale: этот столбец
+	// выбирает тот же SELECT, что читает пользователя (server/utils/session.ts).
+	// Раньше regional-settings делал getCurrentUser, а сразу за ним — ВТОРОЙ
+	// запрос сюда за колонкой, которую первый уже привёз. Событие берём из
+	// asyncContext (включён в nuxt.config), как это делает db-mysql: сигнатуру
+	// функции менять нельзя — вызывающий код передаёт только userId.
+	try {
+		const cachedUser = getResolvedSessionUser(useEvent());
+
+		if (cachedUser?.id === userId && 'preferred_locale' in cachedUser) {
+			return (cachedUser.preferred_locale as Language) || null;
+		}
+	} catch {
+		// Нет запроса в контексте (крон, прогрев) — штатно, читаем из БД
+	}
+
 	try {
 		const results = await executeQuery(
 			'SELECT preferred_locale FROM auth_users WHERE id = ?',

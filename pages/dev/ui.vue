@@ -228,7 +228,8 @@ function demoLoading() {
 .showcase section {
 	margin-top: var(--kit-spacing-2xl);
 	padding-top: var(--kit-spacing-lg);
-	border-top: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
+	border-top: var(--kit-border-width-thin) solid
+		var(--kit-color-border-secondary);
 }
 
 .showcase h2 {

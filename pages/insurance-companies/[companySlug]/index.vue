@@ -1,24 +1,16 @@
 <script setup lang="ts">
 import type { InsuranceCompanyBranchesMap } from '#components';
 import { OG_IMAGE, SITE_URL } from '~/common/constants';
-import {
-	buildBreadcrumbsSchema,
-	buildInsuranceCompanySchema,
-} from '~/common/schema-org-builders';
-import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
+import { buildInsuranceCompanySchema } from '~/common/schema-org-builders';
+import { getCanonicalUrl } from '~/common/url-utils';
 import { combineI18nMessages } from '~/i18n/utils';
-import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import insuranceCompanyI18n from '~/i18n/insurance-company';
 import type { InsuranceCompanyData } from '~/interfaces/insurance-company';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([
-		breadcrumbI18n,
-		cityI18n,
-		insuranceCompanyI18n,
-	]),
+	messages: combineI18nMessages([cityI18n, insuranceCompanyI18n]),
 });
 
 const route = useRoute();
@@ -82,17 +74,26 @@ const scrollToMap = (branch: (typeof branches.value)[number]) => {
 	}
 };
 
+// У несуществующей компании заголовок и описание — про ошибку, а не пустая
+// строка и описание листинга: пустой <title> нечего показать в выдаче, а
+// описание листинга делало из 404 «валидную» страницу-дубль каталога.
 const pageTitle = computed(() => {
-	if (!isFound.value || !companyData.value) return '';
+	if (!isFound.value || !companyData.value) {
+		return t('InsuranceCompanyNotFound');
+	}
 	return companyData.value.name;
 });
 
 const pageDescription = computed(() => {
 	if (!isFound.value || !companyData.value) {
-		return t('InsuranceCompaniesDescription');
+		return t('InsuranceCompanyNotFound');
 	}
 	return t('InsuranceCompanyPageDescription', { name: companyData.value.name });
 });
+
+// Единственная из шести детальных страниц, где noindex не стоял: страница
+// несуществующей компании индексировалась как обычная
+const robotsMeta = computed(() => (isFound.value ? undefined : 'noindex'));
 
 const getCityName = (id: number): string | undefined => {
 	const key = `city_${id}`;
@@ -106,10 +107,12 @@ useSeoMeta({
 	ogTitle: pageTitle,
 	ogDescription: pageDescription,
 	ogImage: OG_IMAGE,
-	twitterCard: 'summary',
+	// Дефолтная og:image теперь 1200×630 — формат большой карточки
+	twitterCard: 'summary_large_image',
 	twitterTitle: pageTitle,
 	twitterDescription: pageDescription,
 	twitterImage: OG_IMAGE,
+	robots: robotsMeta,
 });
 
 const schemaOrgStore = useSchemaOrgStore();
@@ -123,8 +126,13 @@ watchEffect(() => {
 		locale.value,
 	);
 
-	schemaOrgStore.setSchemas([
-		...buildInsuranceCompanySchema({
+	// BreadcrumbList здесь больше не отдаётся: видимых крошек на странице нет
+	// (EntityPage рисует только кнопку «к поиску»), а размечать структуру,
+	// которой пользователь не видит, Google прямо запрещает. Вернуть разметку
+	// можно вместе с AppBreadcrumbs — но добавлять их надо в EntityPage, то есть
+	// сразу всем детальным страницам.
+	schemaOrgStore.setSchemas(
+		buildInsuranceCompanySchema({
 			siteUrl: SITE_URL,
 			company: companyData.value,
 			locale: locale.value,
@@ -133,22 +141,7 @@ watchEffect(() => {
 			pageUrl,
 			getCityName,
 		}),
-		buildBreadcrumbsSchema(pageUrl, [
-			{
-				name: t('BreadcrumbHome'),
-				url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
-			},
-			{
-				name: t('BreadcrumbInsuranceCompanies'),
-				url: getRegionalUrl(
-					`${SITE_URL}/insurance-companies`,
-					{},
-					locale.value,
-				),
-			},
-			{ name: companyData.value.name },
-		]),
-	]);
+	);
 });
 </script>
 
@@ -171,7 +164,9 @@ watchEffect(() => {
 
 		<template #sections>
 			<EntityPageSection sectionId="offices" :title="t('OfficesTitle')">
-				<template #icon><IconMapPin :size="20" color="#ffffff" /></template>
+				<template #icon
+					><IconMapPin :size="20" color="var(--kit-color-text-on-solid)"
+				/></template>
 				<div class="insurance-branches-list">
 					<InsuranceCompanyBranchItem
 						v-for="branch in branches"
@@ -192,12 +187,16 @@ watchEffect(() => {
 				sectionId="contacts"
 				:title="t('ContactsTitle')"
 			>
-				<template #icon><IconPhone :size="20" color="#ffffff" /></template>
+				<template #icon
+					><IconPhone :size="20" color="var(--kit-color-text-on-solid)"
+				/></template>
 				<ContactsList :list="companyData" />
 			</EntityPageSection>
 
 			<EntityPageSection sectionId="map" :title="t('TabMap')">
-				<template #icon><IconMapPin :size="20" color="#ffffff" /></template>
+				<template #icon
+					><IconMapPin :size="20" color="var(--kit-color-text-on-solid)"
+				/></template>
 				<div ref="mapSentinel" class="insurance-map">
 					<InsuranceCompanyBranchesMap
 						v-if="isMapVisible"

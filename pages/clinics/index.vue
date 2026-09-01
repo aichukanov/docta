@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { List, MapLocation } from '@element-plus/icons-vue';
+import IconList from '~/components/icon/list.vue';
+import IconMapLocation from '~/components/icon/map-location.vue';
 import { OG_IMAGE, SITE_URL } from '~/common/constants';
 import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
 import {
@@ -311,11 +312,11 @@ watchEffect(() => {
 		<template #header-actions>
 			<el-radio-group v-model="view" class="view-toggle">
 				<el-radio-button value="list">
-					<el-icon><List /></el-icon>
+					<IconList size="1em" />
 					{{ t('ViewList') }}
 				</el-radio-button>
 				<el-radio-button value="map">
-					<el-icon><MapLocation /></el-icon>
+					<IconMapLocation size="1em" />
 					{{ t('ViewMap') }}
 				</el-radio-button>
 			</el-radio-group>
@@ -330,7 +331,7 @@ watchEffect(() => {
 					round
 					@click="view = 'list'"
 				>
-					<el-icon><List /></el-icon>
+					<IconList size="1em" />
 					{{ t('BackToList') }}
 				</el-button>
 			</div>
@@ -406,7 +407,9 @@ watchEffect(() => {
 	z-index: var(--kit-z-dropdown);
 	box-shadow: var(--kit-shadow-lg);
 
-	.el-icon {
+	// Отступ у иконки внутри кнопки: раньше правило целило в обёртку
+	// .el-icon от Element Plus, которой больше нет
+	svg {
 		margin-right: var(--kit-spacing-xs);
 	}
 }

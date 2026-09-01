@@ -199,7 +199,17 @@ export async function getMedicineList(
 
 	const where =
 		whereFilters.length > 0 ? 'WHERE ' + whereFilters.join(' AND ') : '';
-	const pagination = usePagination ? `LIMIT ${pageSize} OFFSET ${offset}` : '';
+	// LIMIT/OFFSET — связанными параметрами: с инлайном каждое смещение давало
+	// НОВОЕ подготовленное выражение и вытесняло LRU в 200 записей на
+	// соединение (maxPreparedStatements, db-mysql.ts), то есть пагинирующий
+	// трафик платил лишние COM_STMT_PREPARE + COM_STMT_CLOSE почти на каждом
+	// запросе. Значения СТРОКАМИ: mysql2 в execute() кодирует числа так, что
+	// MySQL отвечает «Incorrect arguments to mysqld_stmt_execute» именно на
+	// LIMIT/OFFSET, а строку приводит к целому сам.
+	const pagination = usePagination ? 'LIMIT ? OFFSET ?' : '';
+	const paginationParams: string[] = usePagination
+		? [String(pageSize), String(offset)]
+		: [];
 
 	// Rank medicines whose total substance count is closest to the number of
 	// selected substances first: a single-substance medicine (e.g. pure
@@ -311,6 +321,7 @@ export async function getMedicineList(
 		const [rows] = await connection.execute(listQuery, [
 			...queryParams,
 			...orderParams,
+			...paginationParams,
 		]);
 
 		// Причина попадания в выдачу (вещество / зарубежный аналог) — только

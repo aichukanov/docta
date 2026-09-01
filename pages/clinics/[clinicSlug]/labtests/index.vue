@@ -64,12 +64,21 @@ const shouldRedirect = computed(
 	() => totalLabtests.value <= CLINIC_ITEMS_INLINE_THRESHOLD,
 );
 
+// Цель редиректа собирается через getRegionalUrl, а не конкатенацией: без
+// параметра языка русская версия подстраницы 301-редиректилась на сербскую
+// версию родителя, а редирект на другую локаль Google считает дефектом
+// hreflang-кластера.
+const parentAnchorUrl = computed(
+	() =>
+		`${getRegionalUrl(`/clinics/${clinicSlug.value}`, {}, locale.value)}#labtests`,
+);
+
 if (import.meta.server) {
 	if (!clinicData.value?.id) {
 		// 404, либо 410 если клинику скрыл администратор
 		setMissingEntityStatus(clinicPayload.value);
 	} else if (shouldRedirect.value) {
-		await navigateTo(`/clinics/${clinicSlug.value}#labtests`, {
+		await navigateTo(parentAnchorUrl.value, {
 			redirectCode: 301,
 		});
 	}
@@ -77,7 +86,7 @@ if (import.meta.server) {
 
 watch(shouldRedirect, (v) => {
 	if (import.meta.client && v) {
-		navigateTo(`/clinics/${clinicSlug.value}#labtests`);
+		navigateTo(parentAnchorUrl.value);
 	}
 });
 
@@ -180,7 +189,8 @@ useSeoMeta({
 	ogDescription: pageDescription,
 	ogImage: OG_IMAGE,
 	ogType: 'website',
-	twitterCard: 'summary',
+	// Дефолтная og:image теперь 1200×630 — формат большой карточки
+	twitterCard: 'summary_large_image',
 	twitterTitle: pageTitleText,
 	twitterDescription: pageDescription,
 	robots: robotsMeta,

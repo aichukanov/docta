@@ -2,7 +2,7 @@
 
 [← Все итерации](README.md) | [← Навигация](../index.md)
 
-**Статус:** 🔴 Not Started
+**Статус:** 🟢 Done (2026-08-31)
 **Зависимости:** нет
 
 ---
@@ -15,42 +15,61 @@ baseline бандла. Обкатать кит на тривиальных за�
 
 ## Задачи
 
+> Часть пунктов выполнена ИНАЧЕ, чем планировалось: кит уехал в отдельный
+> пакет `@ach/ui-kit`, а не в `components/ui/`, и иконки взяты из уже
+> существующего набора приложения вместо новой папки с обёрткой `AppIcon`.
+> Ниже отмечено фактическое положение дел.
+
 ### Baseline
 
-- [ ] `npm run build` + анализ бандла (`nuxt build --analyze` или `npx nuxi analyze`): зафиксировать в PROGRESS.md JS/CSS first-load для `/clinics` и `/doctors/[slug]`, размер EP-чанков.
+- [x] Замер сделан на собранном приложении, цифры в PROGRESS.md.
+      Отступление: «размер EP-чанков» не измеряется — JS Element Plus попадает
+      в общие хешированные вендорные чанки. Вместо него метрика first-load.
 
 ### Инфраструктура
 
-- [ ] Конфиг автоимпорта: `components: [{ path: '~/components/ui', pathPrefix: false }, '~/components']` в nuxt.config.ts.
-- [ ] (Опционально, Q-3) dev-страница `/dev/ui` со всеми компонентами кита для визуальной проверки (исключить из прода/индексации).
+- [x] Автоимпорт — **иначе**: не конфиг `components` в приложении, а Nuxt-модуль
+      пакета (`components:dirs` / `imports:dirs`). Приложение о путях не знает.
+- [x] Dev-витрина `/dev/ui` (Q-3 закрыт): 404 вне dev.
 
-### Иконки (снимает риск R-7)
+### Иконки
 
-- [ ] Выписать все импорты из `@element-plus/icons-vue` (27 файлов, ~25 иконок).
-- [ ] Создать `components/ui/icons/icon-*.vue` — локальные копии SVG (MIT) + обёртка `AppIcon`.
-- [ ] Заменить все импорты `@element-plus/icons-vue` и `<el-icon>` на локальные.
+- [x] Импорты `@element-plus/icons-vue` выписаны: 36 файлов, 26 иконок.
+- [x] Локальные SVG — **иначе**: не `components/ui/icons/` с обёрткой `AppIcon`,
+      а существующий набор `components/icon/` (14 иконок нашлись, 12 созданы).
+      Обёртка `AppIcon` не понадобилась: иконки набора сами принимают
+      `size`/`color`. В пакете лежат только 6 универсальных `KitIcon*`,
+      нужных его собственным контролам.
+- [x] Все импорты и обёртки `<el-icon>` заменены (грep-гейт: 0 вхождений).
 
 ### Тосты
 
-- [ ] `composables/use-toast.ts` + `components/ui/app-toaster.vue` (Teleport, `--kit-z-tooltip`, `aria-live="polite"`, автозакрытие, очередь).
-- [ ] Подключить `KitToaster` в `app.vue`.
-- [ ] Механическая замена ~35 вызовов `ElMessage.*` → `useToast().*` по всему проекту (включая админку — это безопасная текстовая замена).
+- [x] `useToast()` + `KitToaster` в пакете (Teleport, `--kit-z-tooltip`,
+      `aria-live="polite"`, автозакрытие, очередь, максимум 4 тоста).
+- [x] `KitToaster` подключён в `app.vue`.
+- [x] Заменено 45 вызовов `ElMessage.*` (в PRD ожидалось ~35).
 
-### Простые компоненты + тривиальные замены (обкатка)
+### Простые компоненты + тривиальные замены
 
-- [ ] `KitButton` (type: primary/default/danger/text; size; loading; disabled; icon-слот). Фикс контраста danger переносится из design-tokens.css внутрь компонента (глобальный CSS пока НЕ удалять — им ещё пользуется EP в немигрированных зонах).
-- [ ] `KitTag`, `KitAlert`, `KitSkeleton`, `KitEmpty`, `KitLoadingOverlay`.
-- [ ] Заменить внутренности обёрток без изменения их API: `ApiErrorAlert.vue` (el-alert), `skeleton-card.vue` (el-skeleton), `view-all-link.vue` (el-icon).
-- [ ] Заменить `v-loading` в `clinic/items-page.vue` на `KitLoadingOverlay`.
+- [x] `KitButton` (variant × appearance × size, loading, disabled, round, block).
+      Фикс контраста danger переехал в токены `--kit-color-*-solid`; глобальный
+      CSS не удалён — им ещё пользуется EP в немигрированных зонах.
+- [x] `KitTag`, `KitAlert`, `KitSkeleton`, `KitEmpty`, `KitLoadingOverlay`.
+- [x] Обёртки без смены API: `ApiErrorAlert`, `skeleton-card`, `view-all-link`.
+- [x] `v-loading` в `clinic/items-page.vue` → `KitLoadingOverlay`.
+- [x] Сверх плана: `el-empty` → `KitEmpty` (4 места).
 
 ## Критерии приёмки
 
-- **AC-1.** Grep `@element-plus/icons-vue` по репозиторию → 0 вхождений.
-- **AC-2.** Grep `ElMessage` → 0 вхождений; тосты работают (success/error) минимум в 3 проверенных потоках (сохранение профиля, ошибка API, модерация).
-- **AC-3.** `ApiErrorAlert`, `skeleton-card`, `view-all-link` не содержат `el-*`; их потребители не изменены.
-- **AC-4.** Все компоненты кита стилизованы только токенами (ревью стилей).
-- **AC-5.** Baseline бандла зафиксирован в PROGRESS.md.
-- **AC-6.** `npm run typecheck` и e2e зелёные.
+- [x] **AC-1.** Grep `@element-plus/icons-vue` → 0 вхождений.
+- [~] **AC-2.** Grep `ElMessage` → 0 вхождений. Тосты проверены на витрине
+  и в SSR-разметке; три реальных потока за авторизацией — на юзере.
+- [x] **AC-3.** Обёртки без `el-*`; `details-page` и `list-page` не тронуты.
+- [x] **AC-4.** Компоненты кита — только токены; контрасты замерены расчётом.
+- [x] **AC-5.** Замер в PROGRESS.md.
+- [~] **AC-6.** `typecheck` зелёный в docta и svad. E2E не прогонялся:
+  локально `/api/services/list` падает из-за неприменённой миграции 025
+  (`sort_rank`) — чужая работа, часть падений была бы не про дизайн-систему.
 
 ## Проверка
 

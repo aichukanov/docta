@@ -413,7 +413,9 @@ watchEffect(() => {
 			</EntityPageSection>
 
 			<EntityPageSection sectionId="map" :title="t('TabMap')">
-				<template #icon><IconMapPin :size="20" color="#ffffff" /></template>
+				<template #icon
+					><IconMapPin :size="20" color="var(--kit-color-text-on-solid)"
+				/></template>
 				<div ref="mapSentinel" class="service-map">
 					<LazyClinicServicesMap
 						v-if="isMapVisible"

@@ -140,9 +140,19 @@ export async function getMedicalServiceList(
 
 	const whereFiltersString =
 		whereFilters.length > 0 ? 'WHERE ' + whereFilters.join(' AND ') : '';
-	const paginationClause = usePagination
-		? `LIMIT ${pageSize} OFFSET ${offset}`
-		: '';
+	// LIMIT/OFFSET — связанными параметрами, а не текстом запроса. С инлайном
+	// каждое смещение давало НОВОЕ подготовленное выражение (5081 услуга ≈ 254
+	// страницы) и вытесняло LRU подготовленных выражений в 200 записей на
+	// соединение (maxPreparedStatements, db-mysql.ts): пагинирующий трафик
+	// оплачивал лишние COM_STMT_PREPARE + COM_STMT_CLOSE почти на каждом
+	// запросе. С плейсхолдерами текст один на все страницы.
+	// Значения передаём СТРОКАМИ: mysql2 в execute() кодирует JS-числа так, что
+	// MySQL отвечает «Incorrect arguments to mysqld_stmt_execute» именно на
+	// LIMIT/OFFSET, а строку приводит к целому сам (проверено на 8.0.45).
+	const paginationClause = usePagination ? 'LIMIT ? OFFSET ?' : '';
+	const paginationParams: string[] = usePagination
+		? [String(pageSize), String(offset)]
+		: [];
 
 	// City filter applied inside the SELECT subqueries so the card only lists
 	// clinics from the selected city (otherwise all clinics of the service leak through).
@@ -249,6 +259,7 @@ export async function getMedicalServiceList(
 		...matchedSynonymsParams,
 		...selectCityParams,
 		...queryParams,
+		...paginationParams,
 	]);
 	await connection.end();
 

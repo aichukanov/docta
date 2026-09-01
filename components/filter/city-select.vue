@@ -26,7 +26,7 @@
 			type="primary"
 			plain
 			class="city-quick-chip"
-			:icon="LocationFilled"
+			:icon="IconMapPin"
 			:title="t('QuickCityFilterTitle')"
 			@click="applyQuickCity"
 		>
@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { LocationFilled } from '@element-plus/icons-vue';
+import IconMapPin from '~/components/icon/map-pin.vue';
 import type { ElSelect } from 'element-plus';
 import { CityId } from '~/enums/cities';
 import { combineI18nMessages } from '~/i18n/utils';

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { RefreshLeft, Upload } from '@element-plus/icons-vue';
+import IconRefreshLeft from '~/components/icon/refresh-left.vue';
+import IconUpload from '~/components/icon/upload.vue';
 import { toCyrillic } from '~/common/serbian-transliteration';
 
 const props = withDefaults(
@@ -94,7 +95,7 @@ const showTranslateButton = computed(
 				/>
 				<div v-if="!readonly" class="photo-actions">
 					<el-button
-						:icon="Upload"
+						:icon="IconUpload"
 						:loading="isUploading"
 						@click="triggerFileSelect"
 					>
@@ -102,7 +103,7 @@ const showTranslateButton = computed(
 					</el-button>
 					<el-button
 						v-if="props.modified"
-						:icon="RefreshLeft"
+						:icon="IconRefreshLeft"
 						@click="$emit('reset')"
 					/>
 				</div>
@@ -133,7 +134,7 @@ const showTranslateButton = computed(
 				</el-button>
 				<el-button
 					v-if="props.modified"
-					:icon="RefreshLeft"
+					:icon="IconRefreshLeft"
 					@click="$emit('reset')"
 				/>
 			</div>
@@ -150,7 +151,7 @@ const showTranslateButton = computed(
 				</el-button>
 				<el-button
 					v-if="props.modified"
-					:icon="RefreshLeft"
+					:icon="IconRefreshLeft"
 					@click="$emit('reset')"
 				/>
 			</template>

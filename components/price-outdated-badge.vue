@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { QuestionFilled } from '@element-plus/icons-vue';
+import IconQuestionCircle from '~/components/icon/question-circle.vue';
 
 withDefaults(
 	defineProps<{
@@ -52,15 +52,14 @@ const { t } = useI18n({
 		placement="top"
 		effect="light"
 	>
-		<el-icon
+		<IconQuestionCircle
 			class="price-outdated-icon"
 			:class="{
 				'price-outdated-icon--small': small,
 				'price-outdated-icon--inverse': inverse,
 			}"
-		>
-			<QuestionFilled />
-		</el-icon>
+			size="1em"
+		/>
 	</el-tooltip>
 </template>
 

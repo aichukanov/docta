@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { OfficeBuilding } from '@element-plus/icons-vue';
+import IconOfficeBuilding from '~/components/icon/office-building.vue';
 
 const props = withDefaults(
 	defineProps<{
@@ -55,9 +55,11 @@ const zoomed = ref(false);
 			:loading="loading"
 			@error="onError"
 		/>
-		<el-icon v-else class="clinic-logo__fallback" :size="size * 0.5">
-			<OfficeBuilding />
-		</el-icon>
+		<IconOfficeBuilding
+			v-else
+			class="clinic-logo__fallback"
+			:size="size * 0.5"
+		/>
 	</div>
 	<ImageZoomOverlay v-model="zoomed" :src="logoUrl!" :alt="name" />
 </template>

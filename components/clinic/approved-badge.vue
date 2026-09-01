@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Select } from '@element-plus/icons-vue';
+import IconCheck from '~/components/icon/check.vue';
 import type { ClinicData } from '~/interfaces/clinic';
 import { BillingService } from '~/enums/billing-service';
 
@@ -57,9 +57,11 @@ const hasApproved = computed(() =>
 		placement="top"
 		effect="light"
 	>
-		<el-icon class="approved-icon" :class="{ 'approved-icon--small': small }">
-			<Select />
-		</el-icon>
+		<IconCheck
+			class="approved-icon"
+			:class="{ 'approved-icon--small': small }"
+			size="1em"
+		/>
 	</el-tooltip>
 </template>
 

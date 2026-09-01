@@ -30,7 +30,12 @@ const { t } = useI18n({ useScope: 'local' });
 </script>
 
 <template>
-	<div v-if="items.length" class="active-filters" role="region" :aria-label="t('ActiveFilters')">
+	<div
+		v-if="items.length"
+		class="active-filters"
+		role="region"
+		:aria-label="t('ActiveFilters')"
+	>
 		<span class="active-filters__title">{{ t('ActiveFilters') }}</span>
 		<el-tag
 			v-for="item in items"

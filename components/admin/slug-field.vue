@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RefreshLeft } from '@element-plus/icons-vue';
+import IconRefreshLeft from '~/components/icon/refresh-left.vue';
 import { generateSlug } from '~/common/slug-utils';
 
 const props = withDefaults(
@@ -59,7 +59,7 @@ function regenerate() {
 				</el-button>
 				<el-button
 					v-if="modified"
-					:icon="RefreshLeft"
+					:icon="IconRefreshLeft"
 					@click="$emit('reset')"
 				/>
 			</template>

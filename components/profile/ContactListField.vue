@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Close, Plus } from '@element-plus/icons-vue';
+import IconClose from '~/components/icon/close.vue';
+import IconPlus from '~/components/icon/plus.vue';
 import {
 	isValidContactValue,
 	joinContacts,
@@ -124,7 +125,7 @@ const errors = computed(() =>
 			</div>
 			<el-button
 				v-if="rows.length > 1 || row"
-				:icon="Close"
+				:icon="IconClose"
 				:title="removeLabel"
 				:aria-label="removeLabel"
 				circle
@@ -134,7 +135,7 @@ const errors = computed(() =>
 		</div>
 
 		<el-button
-			:icon="Plus"
+			:icon="IconPlus"
 			link
 			type="primary"
 			class="contact-field__add"

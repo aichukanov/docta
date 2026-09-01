@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ClinicServicesMap } from '#components';
-import { Clock, Discount } from '@element-plus/icons-vue';
+import IconClock from '~/components/icon/clock.vue';
+import IconDiscount from '~/components/icon/discount.vue';
 import { formatClinicAddressLine } from '~/common/clinic-address';
 import {
 	CLINIC_ITEMS_INLINE_THRESHOLD,
@@ -809,7 +810,7 @@ watchEffect(() => {
 			<!-- Coupons -->
 			<EntityPageSection v-if="coupon && clinicData" sectionId="coupons">
 				<template #icon>
-					<el-icon :size="20"><Discount /></el-icon>
+					<IconDiscount :size="20" />
 				</template>
 				<!-- Заголовок = купонный талон + на что действует: «просто скидка» в
 				     заголовке читалась как шум, слово «купон» обязательно -->
@@ -857,7 +858,7 @@ watchEffect(() => {
 				:title="t('WorkingHours')"
 			>
 				<template #icon>
-					<el-icon :size="20"><Clock /></el-icon>
+					<IconClock :size="20" />
 				</template>
 				<ClinicWorkingHours :workingHours="workingHoursData" />
 			</EntityPageSection>
@@ -1095,7 +1096,9 @@ watchEffect(() => {
 
 			<!-- Map -->
 			<EntityPageSection sectionId="map" :title="t('TabMap')">
-				<template #icon><IconMapPin :size="20" color="#ffffff" /></template>
+				<template #icon
+					><IconMapPin :size="20" color="var(--kit-color-text-on-solid)"
+				/></template>
 				<div ref="mapSentinel" class="clinic-map">
 					<LazyClinicServicesMap
 						v-if="isMapVisible"

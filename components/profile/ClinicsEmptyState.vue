@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Plus } from '@element-plus/icons-vue';
+import IconPlus from '~/components/icon/plus.vue';
 import clinicProfileI18n from '~/i18n/clinic-profile';
 
 const emit = defineEmits<{
@@ -19,7 +19,7 @@ const { t } = useI18n({
 		</div>
 		<h2 class="empty-card__title">{{ t('NoClinics') }}</h2>
 		<p class="empty-card__desc">{{ t('NoClinicsDesc') }}</p>
-		<el-button type="primary" :icon="Plus" @click="emit('create')">
+		<el-button type="primary" :icon="IconPlus" @click="emit('create')">
 			{{ t('CreateFirstClinic') }}
 		</el-button>
 	</div>

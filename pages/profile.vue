@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Briefcase } from '@element-plus/icons-vue';
+import IconBriefcase from '~/components/icon/briefcase.vue';
 import profileMessages from '~/i18n/profile';
 import { getRegionalQuery } from '~/common/url-utils';
 
@@ -231,7 +231,7 @@ const avatarDisplayUrl = computed(() => preview.value || user.value?.photo_url);
 							v-if="isAdmin"
 							:to="{ name: 'admin', query: getRegionalQuery(locale) }"
 						>
-							<el-button type="primary" plain :icon="Briefcase">
+							<el-button type="primary" plain :icon="IconBriefcase">
 								{{ t('adminPanel') }}
 							</el-button>
 						</NuxtLink>

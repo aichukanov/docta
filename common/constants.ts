@@ -29,7 +29,13 @@ export const MONTENEGRO_ZOOM_SETTINGS = {
 // Данные сайта
 export const SITE_URL = 'https://docta.me';
 export const SITE_NAME = 'docta.me';
-export const OG_IMAGE = `${SITE_URL}/apple-touch-icon.png`;
+// Дефолтное превью ссылки для соцсетей. Роут, а не файл из public/: нужен
+// размер 1200×630, а самая большая картинка в public/ — иконка 180×180,
+// которую Facebook и LinkedIn просто отбрасывают (минимум 200×200), оставляя
+// превью без картинки. Сборку см. в server/api/og/default.jpg.get.ts.
+export const OG_IMAGE = `${SITE_URL}/api/og/default.jpg`;
+export const OG_IMAGE_WIDTH = 1200;
+export const OG_IMAGE_HEIGHT = 630;
 
 // Контактные данные проекта
 export const PROJECT_CONTACTS = {

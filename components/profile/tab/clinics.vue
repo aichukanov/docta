@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Plus } from '@element-plus/icons-vue';
+import IconPlus from '~/components/icon/plus.vue';
 import clinicProfileI18n from '~/i18n/clinic-profile';
 import { ERROR_CODES } from '~/server/utils/api-codes';
 import type { ClinicMyListItem } from '~/server/api/clinics/my-list';
@@ -84,7 +84,7 @@ async function setStatus(clinic: ClinicMyListItem, action: 'publish' | 'hide') {
 				</div>
 				<h2 class="clinics-tab__title">{{ t('MyClinics') }}</h2>
 			</div>
-			<el-button type="primary" plain :icon="Plus" @click="openCreate">
+			<el-button type="primary" plain :icon="IconPlus" @click="openCreate">
 				{{ t('AddClinic') }}
 			</el-button>
 		</div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Loading } from '@element-plus/icons-vue';
+import { KitIconSpinner } from '@ach/ui-kit/icons';
 import confirmEmailChangeMessages from '~/i18n/confirm-email-change';
 import { ERROR_CODES } from '~/server/utils/api-codes';
 import { getRegionalQuery } from '~/common/url-utils';
@@ -64,9 +64,7 @@ onMounted(async () => {
 
 		<!-- Загрузка -->
 		<div v-if="isLoading" class="loading-section">
-			<el-icon class="is-loading" :size="40" color="#667eea">
-				<Loading />
-			</el-icon>
+			<KitIconSpinner class="loading-spinner" />
 			<p>{{ t('processing') }}</p>
 		</div>
 
@@ -122,6 +120,17 @@ onMounted(async () => {
 .loading-section {
 	text-align: center;
 	padding: 40px 20px;
+}
+
+/*
+ * Размер и цвет спиннера задаются здесь, а не пропсами: KitIconSpinner —
+ * 1em/currentColor, чтобы вписываться в любой контекст. Он же сам крутится
+ * и гасит анимацию при prefers-reduced-motion, поэтому класс is-loading
+ * от Element Plus больше не нужен.
+ */
+.loading-spinner {
+	font-size: 40px;
+	color: var(--kit-color-auth-gradient-start);
 }
 
 .loading-section p {

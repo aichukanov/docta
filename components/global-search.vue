@@ -699,7 +699,11 @@ onUnmounted(() => {
 <template>
 	<div class="global-search">
 		<div class="global-search__input-wrapper">
-			<IconSearch class="global-search__icon" :size="22" color="#94a3b8" />
+			<IconSearch
+				class="global-search__icon"
+				:size="22"
+				color="var(--kit-color-text-light)"
+			/>
 			<input
 				ref="inputRef"
 				v-model="searchQuery"

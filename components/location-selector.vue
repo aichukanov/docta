@@ -10,9 +10,7 @@
 		popper-class="header-location-popper"
 	>
 		<template #prefix>
-			<el-icon :size="18">
-				<LocationFilled />
-			</el-icon>
+			<IconMapPin :size="18" />
 		</template>
 		<template #header>
 			<p class="header-location-popper__hint">{{ t('LocationSortHint') }}</p>
@@ -27,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { LocationFilled } from '@element-plus/icons-vue';
+import IconMapPin from '~/components/icon/map-pin.vue';
 import { CityId } from '~/enums/cities';
 import cityI18n from '~/i18n/city';
 import locationI18n from '~/i18n/location';

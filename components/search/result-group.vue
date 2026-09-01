@@ -32,7 +32,8 @@ const emit = defineEmits<{ (e: 'navigate'): void }>();
 
 <style lang="less" scoped>
 .search-group {
-	border-bottom: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
+	border-bottom: var(--kit-border-width-thin) solid
+		var(--kit-color-border-secondary);
 
 	&:last-child {
 		border-bottom: none;

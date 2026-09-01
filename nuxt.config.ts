@@ -2,6 +2,26 @@ const IMMUTABLE = {
 	headers: { 'Cache-Control': 'max-age=31536000, public, immutable' },
 };
 
+// Страницы без единого обращения к БД: главная, правовые, статьи. Меняются
+// только выкаткой, поэтому час на общих кэшах и сутки на отдачу устаревшей
+// копии во время обновления.
+const CACHED_STATIC = {
+	headers: {
+		'Cache-Control':
+			'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+	},
+};
+
+// Каталог: карточки услуг, анализов, лекарств и листинги. Данные меняются
+// импортами и правками в админке — десять минут достаточно, чтобы правка
+// доехала без ручного сброса кэша.
+const CACHED_CATALOG = {
+	headers: {
+		'Cache-Control':
+			'public, max-age=0, s-maxage=600, stale-while-revalidate=86400',
+	},
+};
+
 export default defineNuxtConfig({
 	compatibilityDate: '2026-04-06',
 
@@ -122,6 +142,46 @@ export default defineNuxtConfig({
 
 	routeRules: {
 		'/**': { cors: true, ssr: true, prerender: false },
+
+		// ── Кэш HTML на общих кэшах (Cloudflare) ──────────────────────────
+		//
+		// Замер на проде: листинг отдаётся за ~1,9–2,5 с, и это рендер Vue, а
+		// не база — те же данные через API приходят за 23–66 мс. На сервере 4
+		// ядра, которые docta делит с тремя соседними приложениями, поэтому
+		// каждый закэшированный ответ — это освобождённое ядро-время.
+		//
+		// Стало возможным только после того, как локаль перестала зависеть от
+		// cookie (server/common/redirect/regional-settings.ts): раньше один
+		// адрес отдавал разным людям разное, и общий кэш отдал бы не тот язык.
+		// Ключ кэша включает query, так что `?lang=ru` и голый URL — разные
+		// записи.
+		//
+		// `max-age=0` — браузер каждый раз перепроверяет, поэтому правки
+		// контента видны сразу; `s-maxage` действует только на общие кэши;
+		// `stale-while-revalidate` отдаёт прошлую копию, пока обновляется
+		// новая, то есть посетитель не ждёт рендер никогда.
+		//
+		// ВАЖНО: Cloudflare по умолчанию HTML не кэширует даже с этими
+		// заголовками — нужен Cache Rule в панели. Без него правило безвредно,
+		// но и бесполезно.
+		//
+		// НЕ кэшируются `/clinics/**` и `/doctors/<slug>`: там в серверную
+		// разметку попадает баннер владельца (`isOwner`), то есть ответ
+		// зависит от того, кто смотрит. Границы правил проверены прогоном
+		// набора через radix3.
+		'/': CACHED_STATIC,
+		'/about': CACHED_STATIC,
+		'/terms': CACHED_STATIC,
+		'/privacy': CACHED_STATIC,
+		'/articles/**': CACHED_STATIC,
+
+		'/services/**': CACHED_CATALOG,
+		'/labtests/**': CACHED_CATALOG,
+		'/medicines/**': CACHED_CATALOG,
+		'/medications/**': CACHED_CATALOG,
+		'/insurance-companies/**': CACHED_CATALOG,
+		'/doctors': CACHED_CATALOG,
+		'/clinics': CACHED_CATALOG,
 		'/profile': { ssr: false },
 		'/login': { ssr: false },
 		'/reset-password': { ssr: false },

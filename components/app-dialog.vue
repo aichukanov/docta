@@ -85,7 +85,8 @@ onBeforeUnmount(() => setAppInert(false));
 	align-items: center;
 	justify-content: space-between;
 	padding: var(--kit-spacing-lg) var(--kit-spacing-xl);
-	border-bottom: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
+	border-bottom: var(--kit-border-width-thin) solid
+		var(--kit-color-border-secondary);
 }
 
 .dialog-title {
@@ -119,7 +120,8 @@ onBeforeUnmount(() => setAppInert(false));
 	justify-content: flex-end;
 	gap: var(--kit-spacing-sm);
 	padding: var(--kit-spacing-lg) var(--kit-spacing-xl);
-	border-top: var(--kit-border-width-thin) solid var(--kit-color-border-secondary);
+	border-top: var(--kit-border-width-thin) solid
+		var(--kit-color-border-secondary);
 }
 
 .app-dialog-enter-active,

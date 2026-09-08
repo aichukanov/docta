@@ -70,13 +70,18 @@ Cookie на ответ не влияет. Все редиректы постоя
 после гидратации, читая cookie. Это фолбэк: работает всегда, но первый экран
 успевает показаться на дефолтной локали.
 
-## Что нужно сделать в панели Cloudflare
+## Что настроено в панели Cloudflare
 
-Три шага. Первый обязателен — без него весь кэш HTML не включится вовсе;
-второй возвращает посетителю его язык; третий разгружает origin от ботов.
+**Все три шага живут в проде с 2026-09-08.** Ниже — что именно стоит в панели и
+как это проверить: настройки живут только в Cloudflare, в репозитории их нет, и
+восстановить их после потери доступа можно только по этому разделу.
 
-Порядок: сначала выкатить код, потом настраивать. Наоборот нельзя — правило
-кэша, поставленное до выката, закэширует ответы, которые ещё зависят от cookie.
+Первый шаг обязателен — без него весь кэш HTML не включается вовсе; второй
+возвращает посетителю его язык; третий разгружает origin от ботов.
+
+Порядок при повторной настройке: сначала выкатить код, потом панель. Наоборот
+нельзя — правило кэша, поставленное до выката, закэширует ответы, которые ещё
+зависят от cookie.
 
 ---
 
@@ -259,7 +264,17 @@ MySQL, и сейчас за неё платит каждый заход бота
 - **When:** `(http.request.uri.path eq "/sitemap.xml") or (starts_with(http.request.uri.path, "/sitemaps/"))`
 - **Then:** Eligible for cache, Edge TTL → Use cache-control header if present
 
-**Проверка** — та же, вторым запросом ожидается `HIT`.
+Условие по cookie здесь не нужно: sitemap одинаков для всех, `Set-Cookie` на
+нём нет, а `session_id` у бота не бывает.
+
+**Проверка** — та же, вторым запросом ожидается `HIT`. Проверено 2026-09-08:
+индекс и все секции дают `MISS → HIT`, содержимое из кэша целое (20 секций,
+6000 `lastmod` и 42 000 `hreflang` в `doctors-1`), несуществующая секция —
+`404` и `BYPASS`, то есть не залипает.
+
+Browser TTL в этом правиле не задан, поэтому зона поднимает браузерный
+`max-age` до своих 14400 вместо наших 3600. Краулеры на него не смотрят,
+так что это безвредно; для единообразия можно выставить **Respect origin**.
 
 ---
 
@@ -284,23 +299,34 @@ cookie), но расхождение неприятное и его легко �
 `Vary: Cookie` не рассматривался вовсе: ключом стало бы всё содержимое cookie,
 включая идентификатор сессии, и кэш выродился бы в пустой.
 
-## Как проверить, что работает
+## Как проверить, что всё работает
+
+Браузерный User-Agent обязателен: Cloudflare встречает `curl` с дефолтным UA
+челленджем (`403`, `Cf-Mitigated: challenge`), и заголовков кэша в таком ответе
+нет вовсе — выглядит как «правило не сработало».
 
 ```sh
-# Заголовки на месте (origin)
-curl -sI https://docta.me/services | grep -i cache-control
+UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/140.0.0.0 Safari/537.36'
 
-# Cloudflare кэширует (после правила): ожидается HIT на втором запросе
-curl -sI https://docta.me/services | grep -i cf-cache-status
-curl -sI https://docta.me/services | grep -i cf-cache-status
+# Кэш: второй запрос обязан дать HIT. И ни одного Set-Cookie в ответе.
+curl -sI -A "$UA" https://docta.me/services | grep -iE 'cf-cache-status|set-cookie'
+curl -sI -A "$UA" https://docta.me/services | grep -i cf-cache-status
+
+# Вошедший кэшем не обслуживается: DYNAMIC/BYPASS + private, no-store
+curl -sI -A "$UA" -H 'Cookie: session_id=x' https://docta.me/services |
+  grep -iE 'cf-cache-status|cache-control'
 
 # Локаль не зависит от cookie на origin
-curl -s -H 'Cookie: locale=de' https://docta.me/ | grep -o '<html[^>]*lang="[^"]*"'   # sr
-curl -s -H 'Cookie: locale=de' 'https://docta.me/?lang=ru' | grep -o '<html[^>]*lang="[^"]*"' # ru
+curl -s -A "$UA" -H 'Cookie: locale=de' https://docta.me/ | grep -o 'lang="[^"]*"' | head -1   # sr
+curl -s -A "$UA" 'https://docta.me/?lang=ru' | grep -o 'lang="[^"]*"' | head -1                # ru
 
-# Воркер редиректит по cookie (после установки)
-curl -sI -H 'Cookie: locale=de' https://docta.me/ | grep -iE '^(HTTP|location)'  # 302 -> /?lang=de
+# Воркер редиректит по cookie, но НЕ трогает статику в корне
+curl -sI -A "$UA" -H 'Cookie: locale=de' https://docta.me/ | grep -iE '^(HTTP|location)'  # 302 -> /?lang=de
+curl -sI -A "$UA" -H 'Cookie: locale=de' https://docta.me/favicon.svg | head -1           # 200
 ```
+
+В PowerShell — `curl.exe` (иначе это алиас `Invoke-WebRequest`) и
+`Select-String` вместо `grep`.
 
 ## Чего нельзя делать
 

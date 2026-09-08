@@ -328,9 +328,52 @@ CSS. Проверено локальной сборкой с
 - Мусор от Cloudflare `jsd/main.js`: 3 deprecation-warning, `third-party-cookies`
   от Mixpanel — решения из этапа 2.3.
 
+### Замер на проде после `experimentalMinChunkSize` (2026-09-08 15:13, `data/lighthouse/docta.me-20260908T151314.json`)
+
+Та же страница, тот же профиль, mobile simulate.
+
+| Метрика | 12:55 (до) | 15:13 (после) |
+|---|---|---|
+| **Performance score** | **55** | **90** |
+| FCP / LCP (simulated) | 5,8 с | 1,35 с |
+| Speed Index | 5,8 с | 2,2 с |
+| TTI | 11,6 с | 6,8 с |
+| TBT | 376 мс | 416 мс |
+| FCP / LCP (observed) | 608 мс | 383 мс |
+| Запросов всего | 145 | 98 |
+| JS-чанков `/_nuxt/` до 600 мс | 96 (326 КБ) | 46 (341 КБ) |
+| Main thread | 2,7 с | 2,4 с |
+
+Диагноз подтвердился: вес почти тот же, а симулированный FCP упал в четыре
+раза только от числа файлов — Lantern платил за каждый запрос отдельно.
+
+Что осталось в отчёте и почему:
+
+- **TBT 416 мс / TTI 6,8 с** — теперь главный пункт. Самый тяжёлый скрипт
+  по CPU: entry-чанк (475 мс eval), затем `jsd/main.js` Cloudflare (209 мс)
+  и gtag (151 мс). Entry уменьшится только с выносом Element Plus (этап 4);
+  Cloudflare и GA — решения из этапа 2.3.
+- Критическая цепочка 895 мс: HTML → `beacon.min.js` → `/cdn-cgi/rum`.
+  Целиком Cloudflare Web Analytics (панель, этап 2.3).
+- `unused-javascript` 200 КБ: gtag 170 КБ + Mixpanel. В лаборатории оба
+  всё равно догружаются в окне замера; лечится только отказом от SDK (2.2)
+  или от GA.
+- `image-delivery` 197 КБ, `unused-css` 18 КБ, bfcache (`no-store` для
+  залогиненных), deprecations от `jsd/main.js` — без изменений, см. выше.
+
 ### Осталось
 
-- **Выкатить `experimentalMinChunkSize` и перемерить** Lighthouse на проде.
+- 2.2 — тонкий клиент вместо `mixpanel-browser` (решение).
+- ~~2.3 — панель Cloudflare~~ — **решено 2026-09-08 оставить как есть.**
+  Web Analytics и JavaScript Detections инжектятся на edge, в коде их нет.
+- Аудит **закрыт 2026-09-08**. Финальная проверка прода Playwright: 10 типов
+  страниц без ошибок консоли и без упавших запросов, клиентская навигация без
+  расхождений стилей, клик согласия запускает Mixpanel и GA, мобильный вид в
+  порядке. Инварианты для будущих правок — `docs/rules/FRONTEND_PERFORMANCE.md`.
+- 3.3 — спрайт иконок (`/services` 647 КБ, 308 SVG; `/doctors` 579 КБ).
+- Фото врачей: отдавать уменьшенные варианты под 40–120 px (197 КБ на
+  странице клиники).
+- 4 — `nuxi analyze` entry-чанка к prd/element-plus-removal.
 - 2.2 — тонкий клиент вместо `mixpanel-browser` (решение).
 - 2.3 — панель Cloudflare: Web Analytics, JavaScript Detections (решение).
 - 3.3 — спрайт иконок: `/services` всё ещё 647 КБ и 308 SVG, `/doctors`

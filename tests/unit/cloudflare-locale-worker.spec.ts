@@ -12,7 +12,10 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 // присланную в чат ссылку открываться на чужом языке.
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const WORKER_PATH = resolve(HERE, '../../docs/rules/cloudflare-locale-worker.js');
+const WORKER_PATH = resolve(
+	HERE,
+	'../../docs/rules/cloudflare-locale-worker.js',
+);
 
 const worker = (await import(pathToFileURL(WORKER_PATH).href)).default;
 
@@ -119,16 +122,38 @@ test.describe('когда трогать нельзя', () => {
 			'/leaflet/leaflet-1.9.4/leaflet.js',
 			'/sitemap.xml',
 			'/sitemaps/core-1.xml',
+			'/__sitemap__/style.xsl',
 			'/robots.txt',
 			'/ads.txt',
 			'/89f50cfd072780601a781474285a3534.txt',
 			'/.well-known/x',
 			'/favicon.ico',
+			// Первый прогон на проде: favicon.svg получал 302, потому что в
+			// списке был только favicon.ico. Теперь правило — любой файл в корне.
+			'/favicon.svg',
+			'/favicon-96x96.png',
+			'/apple-touch-icon.png',
+			'/web-app-manifest-192x192.png',
+			'/site.webmanifest',
+			'/og-image.jpg',
 		];
 
 		for (const path of paths) {
 			const r = await run(`https://docta.me${path}`, { cookie: 'locale=ru' });
 			expect(r.passedThrough, path).toBe(true);
+		}
+	});
+
+	test('страницы с точкой не в корне редиректятся как обычно', async () => {
+		// Правило «файл в корне» не должно задеть адреса страниц: у них нет
+		// расширения, а точка в слаге глубже корня — не файл.
+		for (const path of [
+			'/services',
+			'/clinics/dr.-nikolic-podgorica',
+			'/doctors?page=2',
+		]) {
+			const r = await run(`https://docta.me${path}`, { cookie: 'locale=ru' });
+			expect(r.status, path).toBe(302);
 		}
 	});
 

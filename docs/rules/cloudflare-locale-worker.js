@@ -33,11 +33,18 @@ const SKIP_PREFIXES = [
 	'/photos/',
 	'/leaflet/',
 	'/sitemaps/',
+	// XSL-стиль, на который ссылается каждый sitemap (public/__sitemap__/).
+	'/__sitemap__/',
 	'/.well-known/',
 	'/cdn-cgi/',
 ];
 
-const SKIP_EXACT = new Set(['/sitemap.xml', '/favicon.ico', '/site.webmanifest']);
+// Любой файл в корне: robots.txt, ads.txt, ключи IndexNow, sitemap.xml,
+// favicon.svg, apple-touch-icon.png, site.webmanifest, og-картинки.
+// Перечислять их поимённо уже пробовали — первый же прогон на проде нашёл
+// `/favicon.svg` с редиректом: в списке был только favicon.ico. У страниц
+// сайта расширений в адресе нет, так что правило ничего лишнего не ловит.
+const ROOT_FILE = /^\/[^/]+\.[a-z0-9]+$/i;
 
 function getCookieLocale(request) {
 	const header = request.headers.get('Cookie');
@@ -59,11 +66,7 @@ function getCookieLocale(request) {
 }
 
 function shouldSkip(pathname) {
-	if (SKIP_EXACT.has(pathname)) {
-		return true;
-	}
-	// Любой .txt в корне: robots.txt, ads.txt, ключи IndexNow.
-	if (pathname.lastIndexOf('/') === 0 && pathname.endsWith('.txt')) {
+	if (ROOT_FILE.test(pathname)) {
 		return true;
 	}
 	return SKIP_PREFIXES.some((prefix) => pathname.startsWith(prefix));

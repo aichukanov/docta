@@ -116,6 +116,7 @@ test.describe('когда трогать нельзя', () => {
 			'/_nuxt/entry.js',
 			'/uploads/doctors/a.webp',
 			'/img/articles/x.webp',
+			'/leaflet/leaflet-1.9.4/leaflet.js',
 			'/sitemap.xml',
 			'/sitemaps/core-1.xml',
 			'/robots.txt',

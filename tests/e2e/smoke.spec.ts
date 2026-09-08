@@ -12,10 +12,12 @@ test.describe('Smoke tests', () => {
 		expect(body).toBeTruthy();
 	});
 
-	test('should have correct base URL', async ({ page }) => {
+	test('should have correct base URL', async ({ page, baseURL }) => {
 		await page.goto('/', { waitUntil: 'domcontentloaded' });
 
-		const url = page.url();
-		expect(url).toMatch(/localhost:3000|docta\.me/);
+		// Сверяем с настроенным адресом, а не со списком «localhost:3000 или
+		// docta.me»: прогон против собранного билда на другом порту — обычное
+		// дело, и захардкоженный список ронял тест не по делу.
+		expect(page.url()).toContain(new URL(baseURL!).host);
 	});
 });

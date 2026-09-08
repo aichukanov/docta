@@ -13,7 +13,6 @@ const ENTITY_TYPES: Record<string, { table: string; redirectTable?: string }> =
 			redirectTable: 'medical_service_redirects',
 		},
 		'labtests': { table: 'lab_tests', redirectTable: 'lab_test_redirects' },
-		'medications': { table: 'medications' },
 		'medicines': { table: 'med_medicines' },
 		'insurance-companies': { table: 'insurance_companies' },
 	};

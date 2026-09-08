@@ -947,7 +947,7 @@ interface OfferCatalogTypeConfig {
 
 /**
  * Build hasOfferCatalog schema for a clinic item type
- * (medical services / lab tests / medications).
+ * (medical services / lab tests).
  */
 function buildOfferCatalogSchema(options: {
 	siteUrl: string;
@@ -1058,13 +1058,6 @@ const LABTESTS_CATALOG_CONFIG: OfferCatalogTypeConfig = {
 	urlPrefix: 'labtests',
 	catalogName: 'Lab Tests',
 };
-const MEDICATIONS_CATALOG_CONFIG: OfferCatalogTypeConfig = {
-	itemType: 'Drug',
-	fragment: 'drug',
-	urlPrefix: 'medications',
-	catalogName: 'Medications',
-};
-
 const SCHEMA_DAY_MAP: Record<DayOfWeek, string> = {
 	monday: 'Monday',
 	tuesday: 'Tuesday',
@@ -1116,7 +1109,6 @@ export function buildClinicSchema(options: {
 	getCityName: (id: number) => string | undefined;
 	services?: ClinicServiceOffer[];
 	labTests?: ClinicServiceOffer[];
-	medications?: ClinicServiceOffer[];
 	doctors?: ClinicDoctorItem[];
 	workingHours?: WorkingHours | null;
 	/**
@@ -1204,12 +1196,6 @@ export function buildClinicSchema(options: {
 					clinicId: clinic.id,
 					items: options.labTests || [],
 					config: LABTESTS_CATALOG_CONFIG,
-				}),
-				buildOfferCatalogSchema({
-					siteUrl,
-					clinicId: clinic.id,
-					items: options.medications || [],
-					config: MEDICATIONS_CATALOG_CONFIG,
 				}),
 			].filter(Boolean);
 			if (catalogs.length === 0) return undefined;
@@ -1467,55 +1453,6 @@ export function buildMedicalTestSchema(options: {
 	});
 
 	return [webPageSchema, testSchema];
-}
-
-/**
- * Build Drug schema for medication pages
- */
-export function buildDrugSchema(options: {
-	siteUrl: string;
-	id: number;
-	slug: string;
-	name: string;
-	locale: string;
-	pageTitle: string;
-	pageDescription?: string;
-	/** Канонический URL страницы (с ?lang= и т.п.); по умолчанию — URL сущности */
-	pageUrl?: string;
-	clinics?: ClinicData[];
-	clinicPrices?: ClinicPrice[];
-	getCityName: (id: number) => string | undefined;
-}): SchemaOrg[] {
-	const drugUrl = `${options.siteUrl}/medications/${options.slug}`;
-
-	const offers = buildOffersSchema({
-		siteUrl: options.siteUrl,
-		clinics: options.clinics,
-		clinicPrices: options.clinicPrices,
-		getCityName: options.getCityName,
-	});
-
-	const drugSchema = {
-		...buildEntitySchemaBase({
-			url: drugUrl,
-			type: withProductType('Drug', offers),
-			fragment: 'drug',
-			pageUrl: options.pageUrl,
-		}),
-		name: options.name,
-		description: options.pageDescription || undefined,
-		offers,
-	};
-
-	const webPageSchema = buildWebPageSchema({
-		url: options.pageUrl || drugUrl,
-		locale: options.locale,
-		name: options.pageTitle,
-		description: options.pageDescription,
-		mainEntityId: drugSchema['@id'] as string,
-	});
-
-	return [webPageSchema, drugSchema];
 }
 
 /**

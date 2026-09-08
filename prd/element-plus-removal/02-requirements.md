@@ -25,7 +25,7 @@
 | `el-result` | 7 | auth-страницы | `AppResult` |
 | `el-tooltip` | 6 | контакты, бейджи, профиль | `AppTooltip` |
 | `el-time-picker` | 4 | график работы (профиль + админка) | `<input type="time">` в `AppTimeInput` |
-| `el-select-v2` | 4 | filterable-select, reviews-page, фильтры услуг | `AppSelect` с поиском (виртуализация не нужна: max ~130 элементов) |
+| `el-select-v2` | 4 | filterable-select, reviews-page, фильтры услуг | `KitSelect` с поиском и **виртуализацией** (оценка «max ~130» оказалась неверна: в админке до 8194 записей — см. PROGRESS.md) |
 | `el-skeleton` + `el-skeleton-item` | 5 | skeleton-card | `AppSkeleton` |
 | `el-input-number` | 4 | админка | `AppInputNumber` |
 | `el-empty` | 4 | каталоги, отзывы, админка | `AppEmpty` |

@@ -91,8 +91,12 @@ const uniqaLink = computed(() => insuranceCompanyLink('uniqa'));
 const generaliLink = computed(() => insuranceCompanyLink('generali'));
 const graweLink = computed(() => insuranceCompanyLink('grawe'));
 
-const medicationsLink = computed(() => ({
-	name: 'medications',
+// Текст ссылки во всех локалях говорит про реестр ЦИнМЕД, а вела она на
+// снятый теперь `/medications` (цены по клиникам) — та же путаница имён, что
+// и в шапке. Раздел `#section-medications` статьи оставлен как есть: это
+// якорь, на него могут ссылаться снаружи.
+const medicinesLink = computed(() => ({
+	name: 'medicines',
 	query: getRegionalQuery(locale.value),
 }));
 
@@ -298,7 +302,7 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t('HcsMedications1') }}</p>
 			<p>
 				{{ t('HcsMedications2') }}
-				<NuxtLink :to="medicationsLink">{{ t('HcsMedications2Link') }}</NuxtLink
+				<NuxtLink :to="medicinesLink">{{ t('HcsMedications2Link') }}</NuxtLink
 				>{{ t('HcsMedications2End') }}
 			</p>
 		</ArticleSection>

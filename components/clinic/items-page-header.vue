@@ -14,9 +14,7 @@ defineProps<{
 
 		<div class="title-row">
 			<h1 class="title">{{ title }}</h1>
-			<el-tag round size="large" type="primary" effect="dark">{{
-				count
-			}}</el-tag>
+			<KitTag size="large" round>{{ count }}</KitTag>
 		</div>
 
 		<div v-if="$slots.badges" class="badges">

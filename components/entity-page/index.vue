@@ -17,6 +17,11 @@ const { t, locale } = useI18n();
 const router = useRouter();
 const filtersStore = useFiltersStore();
 
+// Видимые крошки из той же BreadcrumbList, которую страница уже отдала в
+// разметку: раньше её отдавали все карточки, а крошек не было ни на одной.
+// Тот же источник использует ListPage — обоснование в самом composable.
+const breadcrumbs = useSchemaBreadcrumbs();
+
 const backToSearch = () => {
 	router.push({
 		name: props.backRouteName,
@@ -35,11 +40,26 @@ const backToSearch = () => {
 		role="main"
 		:aria-label="t('AriaMainContent')"
 	>
-		<nav class="entity-page__back" :aria-label="t('AriaBackToSearch')">
-			<el-button @click="backToSearch()" :icon="IconBack">
-				{{ t('ToSearchPage') }}
-			</el-button>
-		</nav>
+		<div class="entity-page__topbar">
+			<AppBreadcrumbs
+				v-if="isFound && breadcrumbs.length"
+				class="entity-page__breadcrumbs"
+				:items="breadcrumbs"
+				:aria-label="t('AriaBreadcrumbs')"
+			/>
+
+			<nav class="entity-page__back" :aria-label="t('AriaBackToSearch')">
+				<el-button
+					link
+					type="primary"
+					:icon="IconBack"
+					:aria-label="t('AriaBackToSearch')"
+					@click="backToSearch()"
+				>
+					{{ t('ToSearchPage') }}
+				</el-button>
+			</nav>
+		</div>
 
 		<div
 			v-if="isLoading"
@@ -97,8 +117,59 @@ const backToSearch = () => {
 	padding: 0 var(--kit-spacing-md);
 }
 
+/* Крошки и «к результатам» — одна служебная строка над героем: крошки слева,
+   ссылка справа. Это не дубль: крошка ведёт на чистый листинг раздела, а
+   ссылка возвращает к листингу с фильтрами, которые человек выбирал.
+   Верхний отступ тот же, что у листингов (.list-sidebar в list-page.vue),
+   иначе разделы разъезжаются по вертикали. */
+.entity-page__topbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--kit-spacing-lg);
+	min-height: 40px;
+	padding: var(--kit-spacing-lg) 0 var(--kit-spacing-md);
+}
+
+.entity-page__breadcrumbs {
+	min-width: 0;
+}
+
+/* Без крошек (загрузка, 404) ссылка всё равно остаётся справа. */
 .entity-page__back {
-	padding: var(--kit-spacing-md) 0;
+	margin-left: auto;
+	flex: none;
+}
+
+/* На узких экранах подпись не помещается рядом с крошками — остаётся одна
+   стрелка, и она встаёт перед крошками, как кнопка «назад» в мобильных
+   шапках. Подпись остаётся в aria-label кнопки. */
+@media (max-width: 640px) {
+	.entity-page__topbar {
+		justify-content: flex-start;
+		gap: var(--kit-spacing-sm);
+	}
+
+	.entity-page__back {
+		order: -1;
+		margin-left: calc(-1 * var(--kit-spacing-sm));
+	}
+
+	.entity-page__back :deep(.el-button) {
+		width: 32px;
+		height: 32px;
+		justify-content: center;
+	}
+
+	.entity-page__back :deep(.el-icon) {
+		margin: 0;
+	}
+
+	/* Обёртка слота от Element Plus: у неё свой отступ от иконки, поэтому
+	   пряча подпись, прячем обёртку целиком. */
+	.entity-page__back :deep(.el-button > span) {
+		display: none;
+	}
 }
 
 .entity-page__hero {
@@ -215,34 +286,40 @@ const backToSearch = () => {
 <i18n lang="json">
 {
 	"en": {
-		"ToSearchPage": "Back to search",
+		"ToSearchPage": "Back to results",
 		"AriaMainContent": "Main content",
-		"AriaBackToSearch": "Back to search results"
+		"AriaBackToSearch": "Back to search results",
+		"AriaBreadcrumbs": "Breadcrumbs"
 	},
 	"ru": {
-		"ToSearchPage": "К поиску",
+		"ToSearchPage": "К результатам поиска",
 		"AriaMainContent": "Основное содержимое",
-		"AriaBackToSearch": "Вернуться к результатам поиска"
+		"AriaBackToSearch": "Вернуться к результатам поиска",
+		"AriaBreadcrumbs": "Хлебные крошки"
 	},
 	"de": {
-		"ToSearchPage": "Zurück zur Suche",
+		"ToSearchPage": "Zurück zu den Ergebnissen",
 		"AriaMainContent": "Hauptinhalt",
-		"AriaBackToSearch": "Zurück zu den Suchergebnissen"
+		"AriaBackToSearch": "Zurück zu den Suchergebnissen",
+		"AriaBreadcrumbs": "Brotkrümelnavigation"
 	},
 	"tr": {
-		"ToSearchPage": "Aramaya geri dön",
+		"ToSearchPage": "Sonuçlara dön",
 		"AriaMainContent": "Ana içerik",
-		"AriaBackToSearch": "Arama sonuçlarına dön"
+		"AriaBackToSearch": "Arama sonuçlarına dön",
+		"AriaBreadcrumbs": "Site haritası yolu"
 	},
 	"sr": {
-		"ToSearchPage": "Nazad na pretragu",
+		"ToSearchPage": "Nazad na rezultate",
 		"AriaMainContent": "Glavni sadržaj",
-		"AriaBackToSearch": "Nazad na rezultate pretrage"
+		"AriaBackToSearch": "Nazad na rezultate pretrage",
+		"AriaBreadcrumbs": "Putanja navigacije"
 	},
 	"sr-cyrl": {
-		"ToSearchPage": "Назад на претрагу",
+		"ToSearchPage": "Назад на резултате",
 		"AriaMainContent": "Главни садржај",
-		"AriaBackToSearch": "Назад на резултате претраге"
+		"AriaBackToSearch": "Назад на резултате претраге",
+		"AriaBreadcrumbs": "Путања навигације"
 	}
 }
 </i18n>

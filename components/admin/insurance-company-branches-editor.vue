@@ -39,6 +39,8 @@ const emit = defineEmits<{
 	(e: 'update:modelValue', value: AdminBranchRow[]): void;
 }>();
 
+const { uiText } = useUiText();
+
 const addBranch = () => {
 	emit('update:modelValue', [...props.modelValue, createEmptyBranch()]);
 };
@@ -73,14 +75,13 @@ const removeBranch = (index: number) => {
 			</div>
 
 			<div class="branch-row__grid">
-				<el-select v-model="branch.cityId" filterable placeholder="Город">
-					<el-option
-						v-for="city in cityOptions"
-						:key="city.value"
-						:label="city.label"
-						:value="city.value"
-					/>
-				</el-select>
+				<KitSelect
+					v-model="branch.cityId"
+					:options="cityOptions"
+					filterable
+					placeholder="Город"
+					:no-data-text="uiText('NothingFound')"
+				/>
 				<el-input v-model="branch.postalCode" placeholder="Postal code" />
 
 				<el-input v-model="branch.address_sr" placeholder="Адрес (SR)" />

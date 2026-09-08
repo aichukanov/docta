@@ -1,11 +1,16 @@
-// Типы позиций, на которые может действовать купон. Значения совпадают с
-// элементами SET-колонки `clinic_coupons.applies_to` (миграция 020).
-export type ClinicCouponScope = 'services' | 'labtests' | 'medications';
+// Типы позиций, на которые может действовать купон. Значения — подмножество
+// SET-колонки `clinic_coupons.applies_to` (миграция 020).
+//
+// В колонке остался ещё и 'medications' — раздел лекарств с ценами по клиникам
+// снят с сайта, а SET менять не стали: миграцию ради значения, которым не
+// пользовался ни один купон, писать не за что. Приложению оно неизвестно, и
+// parseCouponScopes (common/clinic-coupon.ts) отбрасывает его как мусор, так
+// что даже вручную проставленное значение ничего не сломает.
+export type ClinicCouponScope = 'services' | 'labtests';
 
 export const CLINIC_COUPON_SCOPES: readonly ClinicCouponScope[] = [
 	'services',
 	'labtests',
-	'medications',
 ];
 
 /**

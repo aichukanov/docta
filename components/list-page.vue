@@ -49,14 +49,22 @@ const { t, locale } = useI18n({ useScope: 'local' });
 
 const router = useRouter();
 const route = useRoute();
-// Стор клиник питает только фолбэк-карту ниже — если страница подменяет
-// #side-map своей картой, он не нужен и грузить его незачем
-const hasSideMapSlot = !!useSlots()['side-map'];
+// Каталог клиник нужен двум потребителям: карточке по умолчанию (ListCard
+// резолвит `item.clinicIds` в сводки клиник) и фолбэк-карте ниже.
+//
+// Страница, подменяющая карточку своим #card или карту своим #side-map, ни
+// того ни другого не использует: сейчас это /clinics, /insurance-companies и
+// /medicines — у их элементов нет clinicIds вовсе.
+const slots = useSlots();
+const hasSideMapSlot = !!slots['side-map'];
+const hasCardSlot = !!slots.card;
 
 const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
 const { target: mapSentinel, hasBeenVisible: isMapVisible } = useInViewport();
 const pageNumber = ref(Number(route.query.page) || 1);
 const isSyncingFromRoute = ref(false);
+
+const breadcrumbs = useSchemaBreadcrumbs();
 
 const clinicsStore = useClinicsStore();
 const filtersStore = useFiltersStore();
@@ -237,9 +245,31 @@ const robotsMeta = computed(() => {
 	return undefined;
 });
 
-if (!hasSideMapSlot) {
+// Блокируем рендер каталогом только там, где он реально нужен разметке —
+// то есть под карточку по умолчанию.
+//
+// Раньше ждали всегда, кроме страниц со своим #side-map, и на /clinics,
+// /medicines и /insurance-companies это был чистый простой: каталог грузился
+// целиком и никем не использовался. Фолбэк-карта в счёт не идёт — она за
+// IntersectionObserver, а его в SSR нет, то есть на сервере карта не
+// рендерится ни разу.
+if (!hasCardSlot) {
 	await clinicsStore.fetchClinics();
 }
+
+// Фолбэк-карте каталог всё-таки нужен, но только когда она появилась в поле
+// зрения и только в браузере. Не блокирует рендер и не грузится вовсе, если
+// до карты не долистали.
+watch(
+	isMapVisible,
+	(visible) => {
+		if (visible && !hasSideMapSlot && !props.mapClinics) {
+			// Ошибку стор уже залогировал; карта просто останется пустой.
+			clinicsStore.fetchClinics().catch(() => {});
+		}
+	},
+	{ immediate: true },
+);
 
 /**
  * Хвост «— Страница N из M» для страниц пагинации.
@@ -373,8 +403,28 @@ onMounted(async () => {
 		:aria-label="t('AriaMainContent')"
 	>
 		<div class="list-sidebar">
+			<!-- Крошки из той же BreadcrumbList, что уходит в разметку: листинги
+			     отдавали её, не показывая ничего, а Google требует размечать
+			     только видимое. Трейл короткий («Главная / Врачи»), но он же
+			     даёт цепочку вместо URL в выдаче — снимать разметку было бы
+			     дороже, чем показать её содержимое. -->
+			<AppBreadcrumbs
+				v-if="breadcrumbs.length"
+				class="page-breadcrumbs"
+				:items="breadcrumbs"
+				:aria-label="t('AriaBreadcrumbs')"
+			/>
 			<div class="page-header">
-				<h1 class="page-title">{{ pageTitle }}</h1>
+				<!-- Счётчик — отдельной пилюлей, а не «(N)» внутри h1: заголовок
+				     остаётся заголовком. В <title> счётчик по-прежнему уходит
+				     через pageTitle (см. seoTitle). Без pageTitleBase страница
+				     сама решила, как выглядит заголовок — показываем как есть. -->
+				<div class="page-title-row">
+					<h1 class="page-title">{{ pageTitleBase || pageTitle }}</h1>
+					<KitTag v-if="pageTitleBase" size="large" round>
+						{{ totalCount }}
+					</KitTag>
+				</div>
 				<!-- На узких экранах контролы встают одной строкой под заголовком -->
 				<div class="page-header__controls">
 					<slot name="header-actions" />
@@ -577,13 +627,20 @@ onMounted(async () => {
 	padding: var(--kit-spacing-lg);
 }
 
+/* Крошки — надзаголовок: прижаты к h1, а не отдельная строка. Верхний отступ
+   даёт padding .list-sidebar — он же, что у служебной строки детальных
+   карточек (entity-page/index.vue), иначе разделы разъедутся по вертикали. */
+.page-breadcrumbs {
+	margin-bottom: var(--kit-spacing-sm);
+}
+
 .page-header {
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
 	gap: var(--kit-spacing-md);
-	margin-bottom: var(--kit-spacing-2xl);
+	margin-bottom: var(--kit-spacing-xl);
 
 	&__controls {
 		display: flex;
@@ -591,6 +648,14 @@ onMounted(async () => {
 		flex-wrap: wrap;
 		gap: var(--kit-spacing-md);
 	}
+}
+
+.page-title-row {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: var(--kit-spacing-md);
+	min-width: 0;
 }
 
 .page-title {
@@ -808,6 +873,7 @@ onMounted(async () => {
 		"Filters": "Filters",
 		"NotFound": "No results found",
 		"AriaMainContent": "Main content",
+		"AriaBreadcrumbs": "Breadcrumbs",
 		"AriaSearchFilters": "Search filters",
 		"AriaSearchResults": "Search results",
 		"AriaResultsList": "List of results",
@@ -821,6 +887,7 @@ onMounted(async () => {
 		"Filters": "Фильтры",
 		"NotFound": "Результаты не найдены",
 		"AriaMainContent": "Основное содержимое",
+		"AriaBreadcrumbs": "Хлебные крошки",
 		"AriaSearchFilters": "Фильтры поиска",
 		"AriaSearchResults": "Результаты поиска",
 		"AriaResultsList": "Список результатов",
@@ -834,6 +901,7 @@ onMounted(async () => {
 		"Filters": "Filteri",
 		"NotFound": "Rezultati nisu pronađeni",
 		"AriaMainContent": "Glavni sadržaj",
+		"AriaBreadcrumbs": "Navigacija",
 		"AriaSearchFilters": "Filteri pretrage",
 		"AriaSearchResults": "Rezultati pretrage",
 		"AriaResultsList": "Lista rezultata",
@@ -847,6 +915,7 @@ onMounted(async () => {
 		"Filters": "Филтери",
 		"NotFound": "Резултати нису пронађени",
 		"AriaMainContent": "Главни садржај",
+		"AriaBreadcrumbs": "Навигација",
 		"AriaSearchFilters": "Филтери претраге",
 		"AriaSearchResults": "Резултати претраге",
 		"AriaResultsList": "Листа резултата",
@@ -860,6 +929,7 @@ onMounted(async () => {
 		"Filters": "Filter",
 		"NotFound": "Keine Ergebnisse gefunden",
 		"AriaMainContent": "Hauptinhalt",
+		"AriaBreadcrumbs": "Brotkrümelnavigation",
 		"AriaSearchFilters": "Suchfilter",
 		"AriaSearchResults": "Suchergebnisse",
 		"AriaResultsList": "Ergebnisliste",
@@ -873,6 +943,7 @@ onMounted(async () => {
 		"Filters": "Filtreler",
 		"NotFound": "Sonuç bulunamadı",
 		"AriaMainContent": "Ana içerik",
+		"AriaBreadcrumbs": "Site haritası yolu",
 		"AriaSearchFilters": "Arama filtreleri",
 		"AriaSearchResults": "Arama sonuçları",
 		"AriaResultsList": "Sonuç listesi",

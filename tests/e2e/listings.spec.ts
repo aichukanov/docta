@@ -37,7 +37,7 @@ for (const section of LISTING_SECTIONS) {
 		});
 
 		test('заголовок содержит количество результатов', async () => {
-			const total = await listing.getTotalCountFromTitle();
+			const total = await listing.getTotalCountFromHeader();
 			expect(total).not.toBeNull();
 			expect(total!).toBeGreaterThan(0);
 		});
@@ -50,7 +50,7 @@ for (const section of LISTING_SECTIONS) {
 		});
 
 		test('пагинация ведёт на страницу 2 и обратно', async () => {
-			const total = await listing.getTotalCountFromTitle();
+			const total = await listing.getTotalCountFromHeader();
 			if (!total || total <= LIST_PAGE_SIZE) {
 				test.skip();
 				return;

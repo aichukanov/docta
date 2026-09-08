@@ -23,6 +23,8 @@ export default {
 				'Find clinics in Montenegro by city and consultation language. Addresses, contacts, doctors, and services on the map.',
 			ClinicsListDescriptionCity:
 				'Clinics in {city} — search by consultation language. Addresses, contacts, doctors, and services on the map.',
+			ClinicsListDescriptionFiltered:
+				'Found {count}: {title}. Addresses, contacts, doctors, and services on the map.',
 
 			ViewList: 'List',
 			ViewMap: 'Map',
@@ -55,6 +57,8 @@ export default {
 				'Найдите клинику в Черногории по городу и языку сопровождения. Адреса, контакты, врачи и услуги на карте.',
 			ClinicsListDescriptionCity:
 				'Клиники в {city} — поиск по языку сопровождения. Адреса, контакты, врачи и услуги на карте.',
+			ClinicsListDescriptionFiltered:
+				'Найдено {count}: {title}. Адреса, контакты, врачи и услуги на карте.',
 
 			ViewList: 'Список',
 			ViewMap: 'Карта',
@@ -83,6 +87,8 @@ export default {
 				"Karadağ'da şehir ve konsültasyon diline göre klinik bulun. Adresler, iletişim, doktorlar ve haritada hizmetler.",
 			ClinicsListDescriptionCity:
 				'{city} konsültasyon diline göre klinik arayın. Adresler, iletişim, doktorlar ve haritada hizmetler.',
+			ClinicsListDescriptionFiltered:
+				'{count} bulundu: {title}. Adresler, iletişim bilgileri, doktorlar ve hizmetler haritada.',
 
 			ViewList: 'Liste',
 			ViewMap: 'Harita',
@@ -113,6 +119,8 @@ export default {
 				'Finden Sie Kliniken in Montenegro nach Stadt und Beratungssprache. Adressen, Kontakte, Ärzte und Dienstleistungen auf der Karte.',
 			ClinicsListDescriptionCity:
 				'Kliniken in {city} — Suche nach Beratungssprache. Adressen, Kontakte, Ärzte und Dienstleistungen auf der Karte.',
+			ClinicsListDescriptionFiltered:
+				'{count} gefunden: {title}. Adressen, Kontakte, Ärzte und Leistungen auf der Karte.',
 
 			ViewList: 'Liste',
 			ViewMap: 'Karte',
@@ -143,6 +151,8 @@ export default {
 				'Pronađite klinike u Crnoj Gori po gradu i jeziku konsultacije. Adrese, kontakti, ljekari i usluge na mapi.',
 			ClinicsListDescriptionCity:
 				'Klinike u {city} — pretraga po jeziku konsultacije. Adrese, kontakti, ljekari i usluge na mapi.',
+			ClinicsListDescriptionFiltered:
+				'Pronađeno {count}: {title}. Adrese, kontakti, ljekari i usluge na karti.',
 
 			ViewList: 'Lista',
 			ViewMap: 'Mapa',
@@ -173,6 +183,8 @@ export default {
 				'Пронађите клинике у Црној Гори по граду и језику консултације. Адресе, контакти, љекари и услуге на мапи.',
 			ClinicsListDescriptionCity:
 				'Клинике у {city} — претрага по језику консултације. Адресе, контакти, љекари и услуге на мапи.',
+			ClinicsListDescriptionFiltered:
+				'Пронађено {count}: {title}. Адресе, контакти, љекари и услуге на карти.',
 
 			ViewList: 'Листа',
 			ViewMap: 'Мапа',

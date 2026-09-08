@@ -107,7 +107,10 @@ const serviceOptions = computed(() =>
 	})),
 );
 
-// Remote search для пользователей — не рендерим тысячи el-option разом
+const { uiText } = useUiText();
+
+// Remote search для пользователей: список приходит с сервера,
+// KitSelect при remote локально не фильтрует
 const userSearchResults = ref<{ label: string; value: number }[]>([]);
 const isSearchingUsers = ref(false);
 
@@ -440,24 +443,21 @@ watch(doctorId, async (newDoctorId) => {
 
 			<div class="user-link-section" :class="{ modified: userIdModified }">
 				<label class="user-link-label">Привязанный пользователь</label>
-				<el-select
+				<KitSelect
 					v-model="doctorModel.userId"
+					:options="userSearchResults"
+					:loading="isSearchingUsers"
+					:loading-text="uiText('Loading')"
+					:no-data-text="uiText('NothingFound')"
+					:clear-label="uiText('Clear')"
+					:disabled="!editable"
 					filterable
 					remote
 					clearable
-					:remote-method="searchUsers"
-					:loading="isSearchingUsers"
 					placeholder="Не привязан"
-					:disabled="!editable"
 					class="user-link-select"
-				>
-					<el-option
-						v-for="user in userSearchResults"
-						:key="user.value"
-						:label="user.label"
-						:value="user.value"
-					/>
-				</el-select>
+					@search="searchUsers"
+				/>
 			</div>
 
 			<AdminFieldGroup title="Имя">
@@ -658,32 +658,22 @@ watch(doctorId, async (newDoctorId) => {
 					:key="index"
 					class="service-price-row"
 				>
-					<el-select
+					<KitSelect
 						v-model="sp.clinicId"
+						:options="clinicOptions"
+						:no-data-text="uiText('NothingFound')"
 						filterable
 						placeholder="Клиника"
 						class="clinic-select"
-					>
-						<el-option
-							v-for="clinic in clinicOptions"
-							:key="clinic.value"
-							:label="clinic.label"
-							:value="clinic.value"
-						/>
-					</el-select>
-					<el-select
+					/>
+					<KitSelect
 						v-model="sp.serviceId"
+						:options="serviceOptions"
+						:no-data-text="uiText('NothingFound')"
 						filterable
 						placeholder="Услуга"
 						class="service-select"
-					>
-						<el-option
-							v-for="service in serviceOptions"
-							:key="service.value"
-							:label="service.label"
-							:value="service.value"
-						/>
-					</el-select>
+					/>
 					<el-input
 						v-model="sp.price"
 						placeholder="Цена"

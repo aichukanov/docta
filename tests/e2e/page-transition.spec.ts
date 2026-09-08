@@ -31,7 +31,8 @@ test('переход в карточку доживает до конца, по�
 
 	// Leaflet приезжает уже после клика — onMounted карты всё это время
 	// висит на await, а затем создаёт Teleport'ы маркеров
-	await page.route('**unpkg.com/leaflet**', async (route) => {
+	// (библиотека теперь своя, /leaflet/**, а не с unpkg — см. use-leaflet.ts)
+	await page.route('**/leaflet/**', async (route) => {
 		await new Promise((resolve) => setTimeout(resolve, 3000));
 		await route.continue();
 	});

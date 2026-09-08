@@ -187,7 +187,6 @@ test.describe('карточки сущностей используют общу
 		'pages/labtests/[labTestSlug]/index.vue',
 		'pages/doctors/[doctorSlug]/index.vue',
 		'pages/clinics/[clinicSlug]/index.vue',
-		'pages/medications/[medicationSlug]/index.vue',
 		'pages/medicines/[medicineSlug]/index.vue',
 	];
 

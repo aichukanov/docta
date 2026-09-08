@@ -65,6 +65,8 @@ const onReviewDeleted = () => {
 	ownReviewDeleted.value = true;
 };
 
+const { uiText } = useUiText();
+
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([breadcrumbI18n, reviewsI18n]),
@@ -305,14 +307,15 @@ const totalReviewsCount = computed(
 
 		<section class="other-reviews-section">
 			<div class="reviews-sort">
-				<el-select-v2
+				<KitSelect
 					:modelValue="currentSort"
 					:options="sortOptions"
 					:placeholder="t('SortLabel')"
 					:aria-label="t('SortLabel')"
+					:no-data-text="uiText('NothingFound')"
 					size="large"
 					class="sort-select"
-					@update:modelValue="onSortChange"
+					@update:modelValue="(value) => onSortChange(String(value ?? ''))"
 				/>
 			</div>
 

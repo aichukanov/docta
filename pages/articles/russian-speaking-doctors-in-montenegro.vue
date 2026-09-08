@@ -220,7 +220,6 @@ useSeoMeta({
 	ogDescription: seoDescription,
 	ogImage: articleImage,
 	ogUrl: pageUrl,
-	twitterCard: 'summary',
 	twitterTitle: seoTitle,
 	twitterDescription: seoDescription,
 	twitterImage: articleImage,

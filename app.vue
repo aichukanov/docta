@@ -69,17 +69,31 @@ if (import.meta.server) {
 	});
 }
 
-// Чистим схемы перед каждой клиентской навигацией: страницы без собственной
-// разметки (terms, privacy, 404 и т.п.) не должны наследовать схемы предыдущей
-// страницы. Страницы со схемами заново заполнят стор в своём setup/watchEffect.
+// Страницы без собственной разметки (terms, privacy, 404 и т.п.) не должны
+// наследовать схемы предыдущей страницы. Но чистить стор в beforeEach нельзя:
+// пока новая страница ждёт свой await в setup, на экране остаётся старая, а из
+// стора берутся и видимые крошки (useSchemaBreadcrumbs) — они исчезали, и
+// заголовок старой страницы подпрыгивал на высоту строки. Поэтому в beforeEach
+// только запоминаем текущий массив, а чистим на page:finish — когда новая
+// страница уже смонтирована — и только если она сама ничего не записала
+// (setSchemas всегда кладёт новый массив, так что достаточно сравнить ссылки).
 if (import.meta.client) {
+	let schemasBeforeNavigation: unknown = null;
+
 	router.beforeEach(() => {
-		schemaOrgStore.clearSchemas();
+		schemasBeforeNavigation = schemaOrgStore.schemas;
 		// Код ответа существует только у серверного рендера. При клиентском
 		// переходе флаг снимаем, иначе с 404-страницы он утёк бы на следующую,
 		// живую. Обратный случай (клиентский переход НА 404) остаётся без
 		// снятия canonical — краулеры грузят такие URL напрямую, то есть по SSR.
 		isMissingEntityPage.value = false;
+	});
+
+	useNuxtApp().hook('page:finish', () => {
+		if (schemaOrgStore.schemas === schemasBeforeNavigation) {
+			schemaOrgStore.clearSchemas();
+		}
+		schemasBeforeNavigation = null;
 	});
 }
 
@@ -112,7 +126,8 @@ useHead(() => {
 watch(
 	() => route.query.lang,
 	(lang) => {
-		locale.value = getLocaleFromQuery(lang as string | string[]) || defaultLocale;
+		locale.value =
+			getLocaleFromQuery(lang as string | string[]) || defaultLocale;
 	},
 	{ immediate: true },
 );

@@ -34,37 +34,138 @@ Cookie на ответ не влияет. Все редиректы постоя
 
 ## Что нужно сделать в панели Cloudflare
 
-### 1. Cache Rule на HTML
+Три шага. Первый обязателен — без него весь кэш HTML не включится вовсе;
+второй возвращает посетителю его язык; третий разгружает origin от ботов.
 
-Без правила Cloudflare не кэширует HTML даже с нашими заголовками —
-`cf-cache-status` останется `DYNAMIC`, и заголовки будут безвредны, но
-бесполезны.
+Порядок: сначала выкатить код, потом настраивать. Наоборот нельзя — правило
+кэша, поставленное до выката, закэширует ответы, которые ещё зависят от cookie.
 
-Rules → Cache Rules → Create:
+---
 
-- **When:** `(http.request.uri.path eq "/") or (starts_with(http.request.uri.path, "/articles/")) or (starts_with(http.request.uri.path, "/services")) or (starts_with(http.request.uri.path, "/labtests")) or (starts_with(http.request.uri.path, "/medicines")) or (starts_with(http.request.uri.path, "/medications")) or (starts_with(http.request.uri.path, "/insurance-companies")) or (http.request.uri.path eq "/doctors") or (http.request.uri.path eq "/clinics") or (http.request.uri.path in {"/about" "/terms" "/privacy"})`
-- **Then:** Eligible for cache, Edge TTL → «Use cache-control header if present»
+### Шаг 1. Правило кэша для HTML (обязательный)
 
-Отдельным правилом стоит закэшировать `/sitemap.xml` и `/sitemaps/*`: сейчас
-они отдаются с `Cache-Control: public, max-age=3600`, но `cf-cache-status`
-показывает `DYNAMIC`, то есть каждый заход бота доходит до origin.
+**Зачем.** Cloudflare по умолчанию кэширует картинки и скрипты, а HTML — нет,
+даже если сервер прислал `Cache-Control`. Заголовки мы уже отдаём, но пока нет
+правила, они лежат без дела: `cf-cache-status` показывает `DYNAMIC`, и каждый
+заход доходит до origin и стоит полного рендера страницы (~2 с и ядро CPU).
 
-### 2. Воркер, возвращающий выбор по cookie
+**Где.** Панель Cloudflare → домен docta.me → **Caching → Cache Rules** →
+Create rule. (В некоторых аккаунтах пункт лежит в **Rules → Cache Rules** —
+названия разделов Cloudflare периодически меняет.)
 
-Скрипт — `cloudflare-locale-worker.js` рядом с этим файлом.
+**Поле «When incoming requests match».** Переключиться в редактор выражения
+(Edit expression) и вставить:
 
-Он делает на краю сети ровно то, что раньше делал сервер: если в адресе нет
-`?lang=`, а в cookie лежит непустая локаль, отдаёт 302 на адрес с языком.
-Разница принципиальная — редирект обслуживается на краю, до кэша и без
-обращения к origin, а все адреса остаются кэшируемыми.
+```
+(http.request.uri.path eq "/") or
+(http.request.uri.path in {"/about" "/terms" "/privacy" "/doctors" "/clinics"}) or
+(starts_with(http.request.uri.path, "/articles")) or
+(starts_with(http.request.uri.path, "/services")) or
+(starts_with(http.request.uri.path, "/labtests")) or
+(starts_with(http.request.uri.path, "/medicines")) or
+(starts_with(http.request.uri.path, "/insurance-companies"))
+```
 
-Итог для посетителя: возвращающийся человек с cookie `ru` получает русскую
-версию из кэша за один лишний хоп (~10 мс на краю), а не рендер на origin за
-две секунды. Краулер приходит без cookie, видит голый URL и дефолтную локаль —
-ровно то, что объявлено в canonical и sitemap.
+**Поле «Then».**
 
-Установка: Workers & Pages → Create Worker → вставить скрипт → Deploy →
-добавить Route `docta.me/*` (и `www.docta.me/*`, если он проксируется).
+- Cache eligibility → **Eligible for cache**
+- Edge TTL → **Use cache-control header if present**
+- Browser TTL → **Respect origin** (у нас `max-age=0`, то есть браузер
+  перепроверяет каждый раз и правки контента видны сразу)
+
+**Почему список путей, а не «всё подряд».** `/clinics/<слаг>` и
+`/doctors/<слаг>` кэшировать НЕЛЬЗЯ: там в серверную разметку попадает баннер
+владельца клиники, и общий кэш показал бы его всем посетителям. Обратите
+внимание, что `/clinics` и `/doctors` в списке заданы через `in {...}` —
+точное совпадение, без вложенных путей, — а разделы вроде `/services` через
+`starts_with`, потому что там карточки кэшировать можно.
+
+Список обязан совпадать с `routeRules` в `nuxt.config.ts`. Меняете там —
+поправьте и здесь.
+
+**Как проверить.** Два запроса подряд:
+
+```sh
+curl -sI https://docta.me/services | grep -i cf-cache-status
+curl -sI https://docta.me/services | grep -i cf-cache-status
+```
+
+Первый может показать `MISS`, второй обязан — `HIT`. Если оба `DYNAMIC`,
+правило не сработало: проверьте выражение и что правило включено.
+
+И контрольная проверка, что лишнее НЕ закэшировалось:
+
+```sh
+curl -sI https://docta.me/clinics/<любой-слаг> | grep -i cf-cache-status
+```
+
+Здесь должно остаться `DYNAMIC`.
+
+---
+
+### Шаг 2. Воркер локали
+
+**Зачем.** Сервер теперь определяет язык только по адресу — иначе один URL
+отдавал бы разным людям разное, и кэшировать его было бы нельзя. Но
+возвращающийся посетитель по голой ссылке получит дефолтный сербский. Воркер
+возвращает ему его язык, причём на краю сети: редирект отдаётся до кэша и без
+обращения к origin.
+
+**Где.** Панель Cloudflare → **Workers & Pages** → Create → Create Worker →
+имя любое (например `docta-locale`) → Deploy → затем Edit code.
+
+**Что вставить.** Содержимое файла `cloudflare-locale-worker.js` рядом с этим
+документом, целиком, заменив шаблон. → Deploy.
+
+**Привязать к домену.** В воркере вкладка **Settings → Domains & Routes** →
+Add route:
+
+- Route: `docta.me/*`
+- Zone: docta.me
+
+Если `www.docta.me` тоже проксируется через Cloudflare — добавить и
+`www.docta.me/*`.
+
+**Как проверить.**
+
+```sh
+# Без cookie — никакого редиректа, отдаётся голый адрес
+curl -sI https://docta.me/ | head -1
+
+# С cookie — 302 на адрес с языком
+curl -sI -H 'Cookie: locale=de' https://docta.me/ | grep -iE '^(HTTP|location)'
+```
+
+Второй запрос обязан дать `302` и `location: https://docta.me/?lang=de`.
+
+**Важно при обновлении.** Воркер знает список путей, которые трогать нельзя
+(`/api/`, `/leaflet/`, robots.txt и прочее). Если этот список в репозитории
+меняется — воркер надо **передеплоить**, иначе, например, каждый файл карты
+начнёт получать редирект.
+
+---
+
+### Шаг 3. Правило кэша для sitemap
+
+**Зачем.** `/sitemap.xml` и секции отдаются с `Cache-Control: public,
+max-age=3600`, но `cf-cache-status` показывает `DYNAMIC` — Cloudflare XML тоже
+по умолчанию не кэширует. Сборка sitemap стоит порядка двадцати запросов к
+MySQL, и сейчас за неё платит каждый заход бота.
+
+**Где.** Там же, Cache Rules → Create rule.
+
+- **When:** `(http.request.uri.path eq "/sitemap.xml") or (starts_with(http.request.uri.path, "/sitemaps/"))`
+- **Then:** Eligible for cache, Edge TTL → Use cache-control header if present
+
+**Проверка** — та же, вторым запросом ожидается `HIT`.
+
+---
+
+### Если что-то пошло не так
+
+Правила и воркер выключаются в один клик и мгновенно: у Cache Rule есть
+тумблер, у воркера — удаление маршрута. Ничего из этого не меняет данные и не
+требует выката кода, поэтому откат безопасен в любой момент.
 
 ## Альтернатива, которую не выбрали
 

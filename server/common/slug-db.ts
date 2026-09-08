@@ -3,7 +3,6 @@ const TABLE_TO_ENTITY_TYPE: Record<string, string> = {
 	doctors: 'doctors',
 	medical_services: 'services',
 	lab_tests: 'labtests',
-	medications: 'medications',
 	med_medicines: 'medicines',
 	insurance_companies: 'insurance-companies',
 };

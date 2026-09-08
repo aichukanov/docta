@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import { getRegionalQuery } from '~/common/url-utils';
-import reviewsI18n from '~/i18n/reviews';
-import { combineI18nMessages } from '~/i18n/utils';
 
-const { t, locale } = useI18n({
-	useScope: 'local',
-	messages: combineI18nMessages([reviewsI18n]),
-});
+const { t, locale } = useReviewsI18n();
 
 const loginLink = computed(() => ({
 	path: '/login',

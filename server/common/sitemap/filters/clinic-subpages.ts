@@ -6,7 +6,6 @@ import { getConnection } from '~/server/common/db-mysql';
 export interface ClinicSubpageSlugs {
 	services: string[];
 	labtests: string[];
-	medications: string[];
 	doctors: string[];
 }
 
@@ -35,14 +34,6 @@ export async function getClinicSubpageSlugs(
 			GROUP BY c.id, c.slug
 			HAVING COUNT(DISTINCT clt.lab_test_id) > ?
 		`,
-		medications: `
-			SELECT c.slug
-			FROM clinics c
-			JOIN clinic_medications cm ON cm.clinic_id = c.id
-			WHERE ${clinicIsPublicSql('c')}
-			GROUP BY c.id, c.slug
-			HAVING COUNT(DISTINCT cm.medication_id) > ?
-		`,
 		doctors: `
 			SELECT c.slug
 			FROM clinics c
@@ -60,14 +51,13 @@ export async function getClinicSubpageSlugs(
 		return (rows as Array<{ slug: string }>).map((r) => r.slug);
 	};
 
-	const [services, labtests, medications, doctors] = await Promise.all([
+	const [services, labtests, doctors] = await Promise.all([
 		fetchSlugs(queries.services),
 		fetchSlugs(queries.labtests),
-		fetchSlugs(queries.medications),
 		fetchSlugs(queries.doctors),
 	]);
 
 	await connection.end();
 
-	return { services, labtests, medications, doctors };
+	return { services, labtests, doctors };
 }

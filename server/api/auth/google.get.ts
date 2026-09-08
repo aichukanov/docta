@@ -1,6 +1,7 @@
 import crypto from 'node:crypto';
 import { getOAuthConfig } from '~/server/utils/oauth-config';
 import { authLogger } from '~/server/utils/logger';
+import { isLoginPath } from '~/common/url-utils';
 
 export default defineEventHandler((event) => {
 	const config = getOAuthConfig();
@@ -53,7 +54,7 @@ export default defineEventHandler((event) => {
 		try {
 			const refererUrl = new URL(referer);
 			const returnTo = refererUrl.pathname + refererUrl.search;
-			if (returnTo && returnTo !== '/login') {
+			if (returnTo && !isLoginPath(returnTo)) {
 				setCookie(event, 'auth_redirect', returnTo, {
 					httpOnly: false, // Нужен доступ из браузера для sessionStorage
 					secure: protocol === 'https',

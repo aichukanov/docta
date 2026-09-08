@@ -228,11 +228,40 @@ const pageTitleWithCount = computed(() => {
 });
 
 const pageDescription = computed(() => {
-	if (cityIds.value.length === 1) {
+	// Отдельная формулировка для города: он самый частый фасет, и «Клиники в
+	// Баре» читается лучше, чем подстановка заголовка.
+	if (
+		cityIds.value.length === 1 &&
+		clinicTypeIds.value.length === 0 &&
+		languageIds.value.length === 0 &&
+		specialtyIds.value.length === 0 &&
+		!minRating.value
+	) {
 		return t('ClinicsListDescriptionCity', {
 			city: t(`city_${cityIds.value[0]}_genitive`),
 		});
 	}
+
+	// Любой другой фасет — через заголовок, он уже собран из всех выбранных
+	// значений. Раньше сюда проваливались все комбинации, кроме одного города,
+	// и, скажем, «Стоматологические клиники в Будве» получали ровно то же
+	// описание, что и голый /clinics, — при том что эти адреса лежат в sitemap
+	// и претендуют на выдачу по собственному запросу. Приём тот же, что на
+	// /doctors (DoctorsListDescriptionFiltered).
+	const hasFacets =
+		cityIds.value.length > 0 ||
+		clinicTypeIds.value.length > 0 ||
+		languageIds.value.length > 0 ||
+		specialtyIds.value.length > 0 ||
+		!!minRating.value;
+
+	if (hasFacets) {
+		return t('ClinicsListDescriptionFiltered', {
+			count: clinicsList.value?.totalCount || 0,
+			title: pageTitleFull.value,
+		});
+	}
+
 	return t('ClinicsListDescription');
 });
 
@@ -245,7 +274,6 @@ useSeoMeta({
 	ogTitle: pageTitleWithCount,
 	ogDescription: pageDescription,
 	ogImage: OG_IMAGE,
-	twitterCard: 'summary',
 	twitterTitle: pageTitleWithCount,
 	twitterDescription: pageDescription,
 	twitterImage: OG_IMAGE,

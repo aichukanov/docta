@@ -13,6 +13,7 @@ import {
 	createErrorResponse,
 } from '~/server/utils/api-codes';
 import { getLocalizedUrl } from '~/server/utils/base-url';
+import { isLoginPath } from '~/common/url-utils';
 
 export default defineEventHandler(async (event) => {
 	const body = await readBody(event);
@@ -118,7 +119,7 @@ export default defineEventHandler(async (event) => {
 
 		// Проверяем redirect
 		const redirectTo = getCookie(event, 'auth_redirect');
-		if (redirectTo && redirectTo !== '/login') {
+		if (redirectTo && !isLoginPath(redirectTo)) {
 			deleteCookie(event, 'auth_redirect');
 		}
 
@@ -130,7 +131,7 @@ export default defineEventHandler(async (event) => {
 				is_admin: false,
 				email_verified: false,
 			},
-			redirectTo: redirectTo || '/',
+			redirectTo: redirectTo && !isLoginPath(redirectTo) ? redirectTo : '/',
 			needsEmailVerification: true,
 			...(import.meta.dev && { verificationUrl }),
 		});

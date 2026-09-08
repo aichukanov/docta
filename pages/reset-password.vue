@@ -14,8 +14,17 @@ const { t, locale } = useI18n({
 });
 const { t: $t } = useI18n({ useScope: 'global' });
 
+// Служебная страница по одноразовой ссылке из письма. robots.txt её не
+// закрывает: Disallow запрещает обход, но не индексацию — адрес, утёкший
+// наружу (переслали письмо, кликнули из почтового клиента, префетч), Google
+// вправе показать в выдаче по внешней ссылке. Поэтому noindex мета-тегом.
+// nofollow — чтобы токен из URL не уезжал referrer'ом по ссылкам страницы.
+// ВАЖНО: страница ssr:false, meta появляется только после выполнения JS,
+// поэтому мета обязана дублироваться заголовком X-Robots-Tag в routeRules
+// (образец — /auth/telegram/return в nuxt.config.ts).
 useSeoMeta({
 	title: () => t('pageTitle') + ' | ' + $t('ApplicationName'),
+	robots: 'noindex, nofollow',
 });
 
 const route = useRoute();

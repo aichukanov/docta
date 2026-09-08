@@ -2,6 +2,7 @@ import { verifyPassword, validateEmail } from '~/server/utils/password';
 import { getUserByEmail } from '~/server/utils/session';
 import { createSession, setSessionCookie } from '~/server/utils/session';
 import { authLogger, logError } from '~/server/utils/logger';
+import { isLoginPath } from '~/common/url-utils';
 import {
 	SUCCESS_CODES,
 	ERROR_CODES,
@@ -54,7 +55,7 @@ export default defineEventHandler(async (event) => {
 
 		// Проверяем redirect
 		const redirectTo = getCookie(event, 'auth_redirect');
-		if (redirectTo && redirectTo !== '/login') {
+		if (redirectTo && !isLoginPath(redirectTo)) {
 			deleteCookie(event, 'auth_redirect');
 		}
 
@@ -67,7 +68,7 @@ export default defineEventHandler(async (event) => {
 				photo_url: user.photo_url,
 				is_admin: user.is_admin,
 			},
-			redirectTo: redirectTo || '/',
+			redirectTo: redirectTo && !isLoginPath(redirectTo) ? redirectTo : '/',
 		});
 	} catch (error: any) {
 		// Если это уже наша ошибка, пробрасываем

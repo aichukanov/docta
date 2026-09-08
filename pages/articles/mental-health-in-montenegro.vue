@@ -40,8 +40,10 @@ const kccgLink = computed(() =>
 	getClinicLink('klinicki-centar-crne-gore-podgorica'),
 );
 
-const medicationsLink = computed(() => ({
-	name: 'medications',
+// Реестр ЦИнМЕД — ровно то, что описывает текст ссылки. Раньше здесь стоял
+// снятый `/medications` (цены по клиникам).
+const medicinesLink = computed(() => ({
+	name: 'medicines',
 	query: getRegionalQuery(locale.value),
 }));
 
@@ -168,7 +170,7 @@ const { breadcrumbItems } = useArticlePageSeo({
 			<p>{{ t('MhmRx4') }}</p>
 			<p>
 				{{ t('MhmRx5') }}
-				<NuxtLink :to="medicationsLink">{{ t('MhmRx5Link') }}</NuxtLink
+				<NuxtLink :to="medicinesLink">{{ t('MhmRx5Link') }}</NuxtLink
 				>{{ t('MhmRx5End') }}
 			</p>
 		</ArticleSection>

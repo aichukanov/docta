@@ -31,6 +31,7 @@ const SKIP_PREFIXES = [
 	'/uploads/',
 	'/img/',
 	'/photos/',
+	'/leaflet/',
 	'/sitemaps/',
 	'/.well-known/',
 	'/cdn-cgi/',

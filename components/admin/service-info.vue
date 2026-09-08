@@ -46,6 +46,7 @@ const { t } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([specialtyI18n, medicalServiceCategoryI18n]),
 });
+const { uiText } = useUiText();
 
 const serviceId = ref<number | null>(null);
 const serviceModel = ref<ServiceAdminDetails | null>(null);
@@ -318,38 +319,28 @@ watch(serviceId, async (newId) => {
 				:class="{ modified: specialtyIdsModified }"
 			>
 				<label>Специальности</label>
-				<el-select
+				<KitSelect
 					v-model="serviceModel.specialtyIds"
+					:options="specialtyOptions"
 					filterable
 					multiple
 					placeholder="Выберите специальности"
+					:no-data-text="uiText('NothingFound')"
 					class="specialty-select"
-				>
-					<el-option
-						v-for="spec in specialtyOptions"
-						:key="spec.value"
-						:label="spec.label"
-						:value="spec.value"
-					/>
-				</el-select>
+				/>
 			</div>
 
 			<div class="category-section" :class="{ modified: categoryIdsModified }">
 				<label>Категории услуг</label>
-				<el-select
+				<KitSelect
 					v-model="serviceModel.categoryIds"
+					:options="categoryOptions"
 					filterable
 					multiple
 					placeholder="Выберите категории"
+					:no-data-text="uiText('NothingFound')"
 					class="category-select"
-				>
-					<el-option
-						v-for="cat in categoryOptions"
-						:key="cat.value"
-						:label="cat.label"
-						:value="cat.value"
-					/>
-				</el-select>
+				/>
 			</div>
 
 			<div
@@ -366,19 +357,14 @@ watch(serviceId, async (newId) => {
 					:key="index"
 					class="clinic-price-row"
 				>
-					<el-select
+					<KitSelect
 						v-model="cp.clinicId"
+						:options="clinicOptions"
 						filterable
 						placeholder="Клиника"
+						:no-data-text="uiText('NothingFound')"
 						class="clinic-select"
-					>
-						<el-option
-							v-for="clinic in clinicOptions"
-							:key="clinic.value"
-							:label="clinic.label"
-							:value="clinic.value"
-						/>
-					</el-select>
+					/>
 					<el-input
 						v-model="cp.price"
 						placeholder="Цена"

@@ -121,8 +121,24 @@ export class ListingPage extends BasePage {
 			.catch(() => false);
 	}
 
-	/** Общее число результатов из «Заголовок (123)» */
-	async getTotalCountFromTitle(): Promise<number | null> {
+	/**
+	 * Общее число результатов из шапки листинга.
+	 *
+	 * Счётчик переехал из «Заголовок (123)» в отдельную пилюлю рядом с `h1`
+	 * (`components/list-page.vue`) — заголовок остался заголовком. Старую
+	 * форму продолжаем разбирать: `pageTitleBase` необязателен, и страница без
+	 * него по-прежнему рисует счётчик внутри заголовка.
+	 */
+	async getTotalCountFromHeader(): Promise<number | null> {
+		const pill = this.page.locator('.page-title-row .kit-tag').first();
+
+		if (await pill.count()) {
+			const digits = ((await pill.textContent()) || '').replace(/\D/g, '');
+			if (digits) {
+				return Number.parseInt(digits, 10);
+			}
+		}
+
 		const title = (await this.page.locator('.page-title').textContent()) || '';
 		const match = title.match(/\((\d+)\)/);
 		return match ? Number.parseInt(match[1], 10) : null;

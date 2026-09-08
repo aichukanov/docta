@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { hasContacts } from '../contacts/utils';
+import clinicSummaryI18n from '~/i18n/clinic-summary';
 import type {
 	ClinicPrice,
 	ClinicData,
@@ -38,42 +39,9 @@ provideAnalyticsEntity(
 	})),
 );
 
-const summaryI18n = {
-	'en': {
-		Contacts: 'Contacts',
-		AvailableServices: 'Specialty services',
-		Doctors: 'Specialists',
-	},
-	'ru': {
-		Contacts: 'Контакты',
-		AvailableServices: 'Профильные услуги',
-		Doctors: 'Специалисты',
-	},
-	'de': {
-		Contacts: 'Kontakte',
-		AvailableServices: 'Fachleistungen',
-		Doctors: 'Spezialisten',
-	},
-	'tr': {
-		Contacts: 'İletişim',
-		AvailableServices: 'Uzmanlık hizmetleri',
-		Doctors: 'Uzmanlar',
-	},
-	'sr': {
-		Contacts: 'Kontakti',
-		AvailableServices: 'Profilne usluge',
-		Doctors: 'Stručnjaci',
-	},
-	'sr-cyrl': {
-		Contacts: 'Контакти',
-		AvailableServices: 'Профилне услуге',
-		Doctors: 'Стручњаци',
-	},
-};
-
 const { t } = useI18n({
 	useScope: 'local',
-	messages: summaryI18n,
+	messages: clinicSummaryI18n.messages,
 });
 
 const hasServices = computed(() => props.services && props.services.length > 0);

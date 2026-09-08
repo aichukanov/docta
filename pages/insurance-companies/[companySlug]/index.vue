@@ -1,16 +1,24 @@
 <script setup lang="ts">
 import type { InsuranceCompanyBranchesMap } from '#components';
 import { OG_IMAGE, SITE_URL } from '~/common/constants';
-import { buildInsuranceCompanySchema } from '~/common/schema-org-builders';
-import { getCanonicalUrl } from '~/common/url-utils';
+import {
+	buildBreadcrumbsSchema,
+	buildInsuranceCompanySchema,
+} from '~/common/schema-org-builders';
+import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
 import { combineI18nMessages } from '~/i18n/utils';
+import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import insuranceCompanyI18n from '~/i18n/insurance-company';
 import type { InsuranceCompanyData } from '~/interfaces/insurance-company';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([cityI18n, insuranceCompanyI18n]),
+	messages: combineI18nMessages([
+		breadcrumbI18n,
+		cityI18n,
+		insuranceCompanyI18n,
+	]),
 });
 
 const route = useRoute();
@@ -20,7 +28,9 @@ const { pending: isLoading, data: companyData } =
 	await useFetch<InsuranceCompanyData | null>(
 		'/api/insurance-companies/details',
 		{
-			key: 'insurance-company-details',
+			// Slug в ключе — иначе переход между компаниями показывает прежнюю,
+			// см. комментарий у useFetch в pages/clinics/[clinicSlug]/index.vue.
+			key: `insurance-company-details:${companySlug.value}`,
 			method: 'POST',
 			body: computed(() => ({
 				slug: companySlug.value,
@@ -126,13 +136,26 @@ watchEffect(() => {
 		locale.value,
 	);
 
-	// BreadcrumbList здесь больше не отдаётся: видимых крошек на странице нет
-	// (EntityPage рисует только кнопку «к поиску»), а размечать структуру,
-	// которой пользователь не видит, Google прямо запрещает. Вернуть разметку
-	// можно вместе с AppBreadcrumbs — но добавлять их надо в EntityPage, то есть
-	// сразу всем детальным страницам.
-	schemaOrgStore.setSchemas(
-		buildInsuranceCompanySchema({
+	// BreadcrumbList вернулась: AppBreadcrumbs теперь рисуется в EntityPage из
+	// этой же разметки, то есть крошки на странице видны и расхождения
+	// «размечено, но не показано» больше нет.
+	schemaOrgStore.setSchemas([
+		buildBreadcrumbsSchema(pageUrl, [
+			{
+				name: t('BreadcrumbHome'),
+				url: getRegionalUrl(`${SITE_URL}/`, {}, locale.value),
+			},
+			{
+				name: t('BreadcrumbInsuranceCompanies'),
+				url: getRegionalUrl(
+					`${SITE_URL}/insurance-companies`,
+					{},
+					locale.value,
+				),
+			},
+			{ name: companyData.value.name },
+		]),
+		...buildInsuranceCompanySchema({
 			siteUrl: SITE_URL,
 			company: companyData.value,
 			locale: locale.value,
@@ -141,7 +164,7 @@ watchEffect(() => {
 			pageUrl,
 			getCityName,
 		}),
-	);
+	]);
 });
 </script>
 

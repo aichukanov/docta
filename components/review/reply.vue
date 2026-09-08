@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import reviewsI18n from '~/i18n/reviews';
-import { combineI18nMessages } from '~/i18n/utils';
 import { getReviewDateFormat } from '~/common/date-format';
 import type { ReviewReply } from '~/interfaces/review';
 
@@ -8,11 +6,7 @@ defineProps<{
 	reply: ReviewReply;
 }>();
 
-// Слияние на уровне модуля, а не в setup: словарь отзывов константный, а этот
-// компонент рендерится на каждый отзыв страницы. Ссылка общая для экземпляров.
-const messages = combineI18nMessages([reviewsI18n]);
-
-const { t } = useI18n({ useScope: 'local', messages });
+const { t } = useReviewsI18n();
 </script>
 
 <template>

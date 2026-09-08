@@ -33,6 +33,77 @@ interface ViewportChangeEvent {
 	zoom: number;
 }
 
+/**
+ * Leaflet и плагин кластеризации отдаются со своего домена (public/leaflet/),
+ * а не с unpkg.com: чужой CDN — это лишние DNS + TLS + запрос на критическом
+ * пути (боковая карта листингов начинает грузиться сразу, наблюдатель
+ * пересечения срабатывает с запасом 200px), а при недоступности unpkg карта
+ * просто не работает (см. prd/maps/index.md, п. 3.3).
+ *
+ * Откуда файлы:
+ * - leaflet-1.9.4/{leaflet.js,leaflet.css,images/} — копия
+ *   node_modules/leaflet/dist (пакет `leaflet` уже в зависимостях), файлы
+ *   побайтово совпадают с раздачей unpkg: sha256 сходится со старыми
+ *   integrity-атрибутами (20nQCchB9co0… и p4NxAoJBhIIN…);
+ * - leaflet.markercluster-1.5.3/* — dist плагина
+ *   (npm-пакета в зависимостях нет).
+ *
+ * Как обновлять: положить новую версию в НОВУЮ папку `<пакет>-<версия>`
+ * и поменять константы ниже — так обновление не упирается в кеш браузера и
+ * CDN, а откат сводится к возврату константы. Старую папку удалять после
+ * выката. images/ нужны рядом с leaflet.css: Leaflet определяет путь к
+ * иконкам маркеров по url() из этой таблицы стилей.
+ */
+const LEAFLET_BASE = '/leaflet/leaflet-1.9.4';
+const MARKERCLUSTER_BASE = '/leaflet/leaflet.markercluster-1.5.3';
+
+// Промисы на уровне модуля, а не экземпляра composable: карт на странице
+// бывает несколько (боковая + полноэкранная), и раньше параллельные вызовы
+// вставляли в <head> по второму тегу <script> на ту же библиотеку
+let leafletPromise: Promise<void> | null = null;
+let markerClusterPromise: Promise<void> | null = null;
+
+/**
+ * Подключение таблицы стилей, не блокирующее первый рендер: динамически
+ * добавленный в <head> <link rel=stylesheet> Chrome считает render-blocking и
+ * держит кадр до загрузки файла. media="print" выводит его из-под этого
+ * правила, а после загрузки media переключается на "all".
+ *
+ * Ошибка загрузки не отклоняет промис: без стилей карта некрасивая, но живая,
+ * ронять из-за этого инициализацию нечего.
+ */
+function loadStylesheet(href: string): Promise<void> {
+	return new Promise((resolve) => {
+		if (document.querySelector(`link[data-leaflet-css="${href}"]`)) {
+			resolve();
+			return;
+		}
+
+		const link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.href = href;
+		link.media = 'print';
+		link.dataset.leafletCss = href;
+		link.onload = () => {
+			link.media = 'all';
+			resolve();
+		};
+		link.onerror = () => resolve();
+		document.head.appendChild(link);
+	});
+}
+
+function loadScript(src: string, errorMessage: string): Promise<void> {
+	return new Promise((resolve, reject) => {
+		const script = document.createElement('script');
+		script.src = src;
+		// Свой домен: integrity/crossorigin не нужны, файл лежит в репозитории
+		script.onload = () => resolve();
+		script.onerror = () => reject(new Error(errorMessage));
+		document.head.appendChild(script);
+	});
+}
+
 export function useLeaflet() {
 	let leafletMap: any = null;
 	let popup: any = null;
@@ -48,61 +119,53 @@ export function useLeaflet() {
 		mapClickHandler = handler;
 	};
 
-	const loadLeaflet = async (): Promise<void> => {
-		if (typeof window !== 'undefined' && window.L) {
+	// Стили ждём наравне со скриптом: карта инициализируется уже с ними,
+	// иначе первый кадр карты — расползшиеся тайлы
+	const loadLeaflet = (): Promise<void> => {
+		if (typeof window === 'undefined' || window.L) {
 			return Promise.resolve();
 		}
 
-		return new Promise((resolve, reject) => {
-			// Load CSS
-			const cssLink = document.createElement('link');
-			cssLink.rel = 'stylesheet';
-			cssLink.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
-			cssLink.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
-			cssLink.crossOrigin = '';
-			document.head.appendChild(cssLink);
+		if (!leafletPromise) {
+			leafletPromise = Promise.all([
+				loadStylesheet(`${LEAFLET_BASE}/leaflet.css`),
+				loadScript(`${LEAFLET_BASE}/leaflet.js`, 'Failed to load Leaflet'),
+			])
+				.then(() => undefined)
+				.catch((error) => {
+					// Сбрасываем кеш промиса, чтобы следующая карта повторила попытку
+					leafletPromise = null;
+					throw error;
+				});
+		}
 
-			// Load JS
-			const script = document.createElement('script');
-			script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-			script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
-			script.crossOrigin = '';
-
-			script.onload = () => resolve();
-			script.onerror = () => reject(new Error('Failed to load Leaflet'));
-
-			document.head.appendChild(script);
-		});
+		return leafletPromise;
 	};
 
-	const loadMarkerCluster = async (): Promise<void> => {
-		if (typeof window === 'undefined') return;
+	const loadMarkerCluster = (): Promise<void> => {
+		if (typeof window === 'undefined') return Promise.resolve();
 		// markercluster — плагин, его нет в @types/leaflet
 		if ((window.L as any)?.markerClusterGroup) {
 			return Promise.resolve();
 		}
 
-		const base = 'https://unpkg.com/leaflet.markercluster@1.5.3/dist';
+		if (!markerClusterPromise) {
+			markerClusterPromise = Promise.all([
+				loadStylesheet(`${MARKERCLUSTER_BASE}/MarkerCluster.css`),
+				loadStylesheet(`${MARKERCLUSTER_BASE}/MarkerCluster.Default.css`),
+				loadScript(
+					`${MARKERCLUSTER_BASE}/leaflet.markercluster.js`,
+					'Failed to load leaflet.markercluster',
+				),
+			])
+				.then(() => undefined)
+				.catch((error) => {
+					markerClusterPromise = null;
+					throw error;
+				});
+		}
 
-		['MarkerCluster.css', 'MarkerCluster.Default.css'].forEach((file) => {
-			const cssLink = document.createElement('link');
-			cssLink.rel = 'stylesheet';
-			cssLink.href = `${base}/${file}`;
-			cssLink.crossOrigin = '';
-			document.head.appendChild(cssLink);
-		});
-
-		return new Promise((resolve, reject) => {
-			const script = document.createElement('script');
-			script.src = `${base}/leaflet.markercluster.js`;
-			script.crossOrigin = '';
-
-			script.onload = () => resolve();
-			script.onerror = () =>
-				reject(new Error('Failed to load leaflet.markercluster'));
-
-			document.head.appendChild(script);
-		});
+		return markerClusterPromise;
 	};
 
 	const initializeMap = async (

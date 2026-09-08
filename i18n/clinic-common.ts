@@ -8,7 +8,6 @@ export default {
 			TabDoctors: 'Specialists',
 			TabServices: 'Services',
 			TabLabTests: 'Lab tests',
-			TabMedications: 'Medications',
 		},
 		'ru': {
 			LanguageAssistance: 'Сопровождение на следующих языках:',
@@ -18,7 +17,6 @@ export default {
 			TabDoctors: 'Специалисты',
 			TabServices: 'Услуги',
 			TabLabTests: 'Анализы',
-			TabMedications: 'Лекарства',
 		},
 		'de': {
 			LanguageAssistance: 'Unterstützung in folgenden Sprachen:',
@@ -28,7 +26,6 @@ export default {
 			TabDoctors: 'Spezialisten',
 			TabServices: 'Leistungen',
 			TabLabTests: 'Laboruntersuchungen',
-			TabMedications: 'Medikamente',
 		},
 		'tr': {
 			LanguageAssistance: 'Şu dillerde destek:',
@@ -38,7 +35,6 @@ export default {
 			TabDoctors: 'Uzmanlar',
 			TabServices: 'Hizmetler',
 			TabLabTests: 'Laboratuvar testleri',
-			TabMedications: 'İlaçlar',
 		},
 		'sr': {
 			LanguageAssistance: 'Pomoć na sljedećim jezicima:',
@@ -48,7 +44,6 @@ export default {
 			TabDoctors: 'Stručnjaci',
 			TabServices: 'Usluge',
 			TabLabTests: 'Analize',
-			TabMedications: 'Lijekovi',
 		},
 		'sr-cyrl': {
 			LanguageAssistance: 'Помоћ на сљедећим језицима:',
@@ -58,7 +53,6 @@ export default {
 			TabDoctors: 'Стручњаци',
 			TabServices: 'Услуге',
 			TabLabTests: 'Анализе',
-			TabMedications: 'Лијекови',
 		},
 	},
 };

@@ -12,7 +12,9 @@ export const useClinicsStore = defineStore('clinics', () => {
 	const isLoaded = ref(false);
 	const currentLocale = ref<string | null>(null);
 
-	const fetchPromise = ref<Promise<{
+	// shallowRef: здесь лежит промис, а не данные — оборачивать его в
+	// реактивный прокси незачем, подписка нужна только на саму замену ссылки.
+	const fetchPromise = shallowRef<Promise<{
 		clinics: ClinicData[];
 		totalCount: number;
 	} | null> | null>(null);

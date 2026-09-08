@@ -170,7 +170,6 @@ useSeoMeta({
 	ogDescription: pageDescription,
 	ogImage: articleImage,
 	ogUrl: pageUrl,
-	twitterCard: 'summary',
 	twitterTitle: pageTitle,
 	twitterDescription: pageDescription,
 	twitterImage: articleImage,

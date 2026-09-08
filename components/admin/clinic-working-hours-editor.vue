@@ -29,6 +29,14 @@ const DAY_TYPE_LABELS: Record<DayType, string> = {
 	'not_specified': 'Не указано',
 };
 
+const { uiText } = useUiText();
+
+/* KitSelect берёт список пропсом, поэтому подписи собираем заранее */
+const dayTypeOptions = DAY_TYPES.map((type) => ({
+	value: type,
+	label: DAY_TYPE_LABELS[type],
+}));
+
 const DAY_LABELS: Record<DayOfWeek, string> = {
 	monday: 'Пн',
 	tuesday: 'Вт',
@@ -175,19 +183,14 @@ watch(
 			<div v-for="day in DAYS_OF_WEEK" :key="day" class="wh-day">
 				<div class="wh-day-header">
 					<span class="wh-day-label">{{ DAY_LABELS[day] }}</span>
-					<el-select
+					<KitSelect
 						:model-value="schedule[day].type"
-						@update:model-value="(val: DayType) => setDayType(day, val)"
+						:options="dayTypeOptions"
+						:no-data-text="uiText('NothingFound')"
 						size="small"
 						class="wh-type-select"
-					>
-						<el-option
-							v-for="type in DAY_TYPES"
-							:key="type"
-							:label="DAY_TYPE_LABELS[type]"
-							:value="type"
-						/>
-					</el-select>
+						@update:model-value="(val) => setDayType(day, val as DayType)"
+					/>
 
 					<div class="wh-day-actions">
 						<el-button size="small" @click="copyToWeekdays(day)" title="Пн–Пт">

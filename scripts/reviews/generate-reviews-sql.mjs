@@ -103,9 +103,17 @@ function parseRelativeDate(desc, baseDate) {
     num = 1; unit = 'months'
   } else if (/недел[юя]\s+назад|недељ[уа]\s+дана|a\s+week\s+ago/i.test(cleaned)) {
     num = 1; unit = 'weeks'
+  } else if ((m = cleaned.match(/(\d+)\s*(час[аов]*|сат[аи]?|hour)/i))) {
+    // Свежие отзывы Google описывает часами и минутами («1 час назад»,
+    // «4 часа назад»). Точность до дня нам достаточна — округляем к дате сбора.
+    num = 0; unit = 'days'
+  } else if ((m = cleaned.match(/(\d+)\s*(минут[уыаио]*|минут[аи]?|minute)/i))) {
+    num = 0; unit = 'days'
+  } else if (/час\s+назад|an\s+hour\s+ago|минуту\s+назад|a\s+minute\s+ago/i.test(cleaned)) {
+    num = 0; unit = 'days'
   }
 
-  if (!num || !unit) return null
+  if (num == null || Number.isNaN(num) || !unit) return null
 
   const result = new Date(base)
   if (unit === 'days') result.setUTCDate(result.getUTCDate() - num)
@@ -322,7 +330,9 @@ for (const [reviewId, entry] of reviewMap) {
     profileUrl: normalizeProfileUrl(authorApi?.uri || authorHtml?.uri),
     contributorId: extractContributorId(author?.uri),
     originalText, originalLanguage, textSrCyrl,
-    likesCount: html?.likesCount ?? api?.likesCount ?? 0,
+    // HTML-парсер кладёт счётчик лайков в `_likesCount` (так во всех файлах
+    // data/google-places/), поле `likesCount` — только гипотетический формат API.
+    likesCount: html?._likesCount ?? html?.likesCount ?? api?._likesCount ?? api?.likesCount ?? 0,
     ownerReply: html?.ownerResponse?.text || api?._ownerReply || api?.ownerResponse?.text || null,
     ownerReplyLanguage: html?.ownerResponse?.languageCode || api?.ownerResponse?.languageCode || 'sr',
     ownerReplyPublishTime: parseRelativeDate(

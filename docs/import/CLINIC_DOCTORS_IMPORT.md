@@ -182,14 +182,18 @@ INSERT IGNORE INTO doctor_clinics (doctor_id, clinic_id) VALUES (@doctor_id, 70)
 
 Когда у врача есть **персональные цены** на услуги клиники — используем `clinic_medical_service_doctors`:
 
+Таблица адресует услугу **тройкой** `doctor_id + clinic_id + medical_service_id`
+— колонки `clinic_medical_service_id` в ней НЕТ. Сверено по
+`server/api/doctors/add.ts` и `server/api/doctors/admin-details.ts`.
+Ценовых колонок две: `price` и `price_max` (без `price_min`), обе nullable —
+строку можно завести и с пустыми ценами, только ради связи «врач ↔ услуга».
+
 ```sql
 -- После добавления врача и услуги клиники
-SET @cms_id = (SELECT id FROM clinic_medical_services
-    WHERE clinic_id = @clinic_id
-    AND medical_service_id = (SELECT id FROM medical_services WHERE name_en = 'Urologist Examination'));
+SET @service_id = (SELECT id FROM medical_services WHERE name_en = 'Urologist Examination');
 
-INSERT IGNORE INTO clinic_medical_service_doctors (clinic_medical_service_id, doctor_id, price, price_min, price_max)
-VALUES (@cms_id, @doctor_id, 40, NULL, NULL);
+INSERT IGNORE INTO clinic_medical_service_doctors (doctor_id, clinic_id, medical_service_id, price, price_max, created_at)
+VALUES (@doctor_id, @clinic_id, @service_id, 40, NULL, NOW());
 ```
 
 ### Цены при нескольких врачах

@@ -1,10 +1,11 @@
 <template>
-	<!-- el-select-v2 без filterable — как сортировка в clinic/items-page-filters:
+	<!-- KitSelect без filterable — как сортировка в clinic/items-page-filters:
 	     поисковая строка на двух вариантах только мешает -->
-	<el-select-v2
+	<KitSelect
 		v-model="sort"
 		:options="options"
 		:aria-label="t('SortLabel')"
+		:no-data-text="uiText('NothingFound')"
 		size="large"
 		class="medicine-sort-select"
 	/>
@@ -29,6 +30,7 @@ const emit = defineEmits<{
 }>();
 
 const { t } = useI18n({ useScope: 'local', messages: medicineI18n.messages });
+const { uiText } = useUiText();
 
 const sort = computed({
 	get: () => props.value,

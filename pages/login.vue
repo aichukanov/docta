@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import loginMessages from '~/i18n/login';
-import { getRegionalQuery } from '~/common/url-utils';
+import {
+	getRegionalQuery,
+	isLoginPath,
+	isSafeRedirectPath,
+} from '~/common/url-utils';
 import { ERROR_CODES } from '~/server/utils/api-codes';
 
 definePageMeta({
@@ -17,8 +21,16 @@ const seoTitle = computed(
 	() => t('loginTitle') + ' | ' + $t('ApplicationName'),
 );
 
+// Служебная страница авторизации. robots.txt её не закрывает: Disallow
+// запрещает обход, но не индексацию — по внешней ссылке адрес всё равно
+// попадает в выдачу. Поэтому noindex мета-тегом, nofollow — краулеру нечего
+// собирать по ссылкам личного кабинета.
+// ВАЖНО: страница ssr:false, meta появляется только после выполнения JS,
+// поэтому мета обязана дублироваться заголовком X-Robots-Tag в routeRules
+// (образец — /auth/telegram/return в nuxt.config.ts).
 useSeoMeta({
 	title: () => seoTitle.value,
+	robots: 'noindex, nofollow',
 });
 
 const userStore = useUserStore();
@@ -125,9 +137,25 @@ onMounted(async () => {
 	const user = await userStore.fetchUser();
 
 	if (user) {
-		const redirectTo = sessionStorage.getItem('auth_redirect');
-		if (redirectTo && redirectTo !== '/login') {
-			sessionStorage.removeItem('auth_redirect');
+		// Два источника адреса возврата. sessionStorage кладут клиентские гарды
+		// (middleware/auth.ts, middleware/admin-auth.ts). Параметр `?redirect=`
+		// приходит от серверного редиректа с /admin: в sessionStorage он писать
+		// не может, потому что до браузера ещё не дошёл.
+		//
+		// Значение параметра задаёт кто угодно, поэтому пропускаем только путь
+		// внутри сайта — иначе получаем открытый редирект сразу после ввода
+		// пароля (см. isSafeRedirectPath).
+		const fromQuery = route.query.redirect;
+		const fromStorage = sessionStorage.getItem('auth_redirect');
+		const redirectTo = isSafeRedirectPath(fromQuery)
+			? fromQuery
+			: isSafeRedirectPath(fromStorage)
+				? fromStorage
+				: null;
+
+		sessionStorage.removeItem('auth_redirect');
+
+		if (redirectTo && !isLoginPath(redirectTo)) {
 			await router.push(redirectTo);
 		} else {
 			await router.push({ path: '/profile', query: regionalQuery.value });

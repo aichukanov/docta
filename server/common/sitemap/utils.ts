@@ -38,7 +38,6 @@ export const SITEMAP_SECTIONS = [
 	'labtest-filters',
 	'medicines',
 	'medicine-filters',
-	'medications',
 ] as const;
 
 export type SitemapSection = (typeof SITEMAP_SECTIONS)[number];
@@ -49,7 +48,7 @@ const SITEMAP_SECTION_DIR = 'sitemaps';
 export interface SitemapLink {
 	loc: string;
 	/**
-	 * Опционально и сейчас НИКЕМ не заполняется — тег `<lastmod>` не выводится.
+	 * Настоящее время изменения — и только оно.
 	 *
 	 * Раньше здесь стоял `new Date()` на каждую ссылку, то есть все 13 638 URL
 	 * заявляли, что изменились в момент запроса sitemap (13 638 тегов, 65
@@ -59,9 +58,11 @@ export interface SitemapLink {
 	 * этот сигнал целиком. А для Google это единственный рычаг переобхода —
 	 * IndexNow он не поддерживает.
 	 *
-	 * Заполнять только настоящим временем изменения сущности (`updated_at`, а
-	 * для фасетных URL — максимум по участникам). До тех пор поле пустое, и это
-	 * осознанно: по спецификации `lastmod` необязателен.
+	 * Поэтому источник ровно один: `updated_at` сущности, а для фасетных URL —
+	 * максимум по участникам выборки (server/common/sitemap/lastmod.ts). Где
+	 * такой даты нет — у статических страниц, у сущностей без колонки до
+	 * применения миграции 026, — поле остаётся пустым, и тег не выводится:
+	 * по спецификации `lastmod` необязателен, и молчание честнее догадки.
 	 */
 	lastmod?: Date;
 	changefreq: string;
@@ -88,6 +89,7 @@ export function menuItemToLinks(
 	routeName: string,
 	query: UrlQuery = {},
 	isUrl = false,
+	lastmod?: Date,
 ): SitemapLink[] {
 	const url = isUrl
 		? routeName
@@ -111,7 +113,10 @@ export function menuItemToLinks(
 
 	return locales.map((lang) => ({
 		loc: getRegionalUrl(url, query, lang),
-		// lastmod сознательно не заполняем — см. SitemapLink выше
+		// Одна дата на все языковые версии: перевод не отдельная сущность,
+		// правка карточки меняет её сразу во всех локалях. Пустой lastmod
+		// остаётся пустым — см. SitemapLink выше.
+		lastmod,
 		changefreq: 'weekly',
 		alternatives: linksWithParams,
 	}));

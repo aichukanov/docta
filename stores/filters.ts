@@ -20,7 +20,6 @@ export type FilterNamespace =
 	| 'doctors'
 	| 'labtests'
 	| 'medicines'
-	| 'medications'
 	| 'insurance-companies';
 
 interface FilterState {
@@ -88,7 +87,6 @@ export const useFiltersStore = defineStore('filters', () => {
 		'doctors': createInitialState(),
 		'labtests': createInitialState(),
 		'medicines': createInitialState(),
-		'medications': createInitialState(),
 		'insurance-companies': createInitialState(),
 	});
 

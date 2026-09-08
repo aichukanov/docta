@@ -13,7 +13,6 @@ const props = defineProps<{ clinicId: number }>();
 const SCOPE_LABELS: Record<ClinicCouponScope, string> = {
 	services: 'Услуги',
 	labtests: 'Анализы',
-	medications: 'Лекарства',
 };
 
 const PAYMENT_LABELS: Record<ClinicCouponPaymentMethod, string> = {

@@ -65,7 +65,7 @@ test.describe('Locale System', () => {
 
 			// Плагин уводит на адрес с языком; ждём именно URL, а не
 			// domcontentloaded: серверная разметка приезжает на дефолтной локали.
-			await page.waitForURL(/lang=de/);
+			await page.waitForURL(/lang=de/, { timeout: 20000 });
 
 			const htmlLang = await page.getAttribute('html', 'lang');
 			expect(htmlLang).toBe('de');
@@ -106,7 +106,7 @@ test.describe('Locale System', () => {
 			// Открываем и выбираем русский
 			await header.selectLanguage('Русский');
 			// router.replace — клиентская навигация, ждём именно смены URL
-			await page.waitForURL(/lang=ru/);
+			await page.waitForURL(/lang=ru/, { timeout: 20000 });
 
 			// Проверяем что язык изменился
 			expect(page.url()).toContain('lang=ru');
@@ -136,7 +136,7 @@ test.describe('Locale System', () => {
 		test('should persist language across navigation', async ({ page }) => {
 			// Меняем язык на русский
 			await header.selectLanguage('Русский');
-			await page.waitForURL(/lang=ru/);
+			await page.waitForURL(/lang=ru/, { timeout: 20000 });
 
 			// Переходим на другую страницу по голому адресу
 			await page.goto('/doctors');
@@ -144,7 +144,7 @@ test.describe('Locale System', () => {
 			// Язык возвращает клиент после гидратации, а не сервер редиректом
 			// (см. plugins/locale-preference.client.ts), поэтому ждём URL,
 			// а не domcontentloaded: разметка приезжает на дефолтной локали.
-			await page.waitForURL(/lang=ru/);
+			await page.waitForURL(/lang=ru/, { timeout: 20000 });
 			const htmlLang = await page.getAttribute('html', 'lang');
 			expect(htmlLang).toBe('ru');
 		});

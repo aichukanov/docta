@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import reviewsI18n from '~/i18n/reviews';
-import { combineI18nMessages } from '~/i18n/utils';
 import type { Review } from '~/interfaces/review';
 
 const toast = useToast();
@@ -23,10 +21,8 @@ const emit = defineEmits<{
 	submitted: [review: Review];
 }>();
 
-const { t, locale } = useI18n({
-	useScope: 'local',
-	messages: combineI18nMessages([reviewsI18n]),
-});
+const { t, locale } = useReviewsI18n();
+const { uiText } = useUiText();
 
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
@@ -65,6 +61,13 @@ watch(visible, (isOpen) => {
 
 const relatedHint = computed(() =>
 	props.entityType === 'clinic' ? t('ReviewDoctorHint') : t('ReviewClinicHint'),
+);
+
+const relatedEntityOptions = computed(() =>
+	(props.relatedEntities ?? []).map(({ id, name }) => ({
+		value: id,
+		label: name,
+	})),
 );
 
 const handleSubmit = async () => {
@@ -165,22 +168,18 @@ const handleSubmit = async () => {
 				<label class="form-label">
 					{{ entityType === 'clinic' ? t('ReviewDoctor') : t('ReviewClinic') }}
 				</label>
-				<el-select
+				<KitSelect
 					v-model="selectedRelatedId"
+					:options="relatedEntityOptions"
 					clearable
+					:clear-label="uiText('Clear')"
+					:no-data-text="uiText('NothingFound')"
 					:placeholder="
 						entityType === 'clinic'
 							? t('ReviewSelectDoctor')
 							: t('ReviewSelectClinic')
 					"
-				>
-					<el-option
-						v-for="entity in relatedEntities"
-						:key="entity.id"
-						:value="entity.id"
-						:label="entity.name"
-					/>
-				</el-select>
+				/>
 			</div>
 
 			<!-- Rating -->

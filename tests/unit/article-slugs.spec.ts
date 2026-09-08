@@ -9,6 +9,8 @@ import articleUnavailableI18n from '../../i18n/article-medications-unavailable';
 import articleAllergyI18n from '../../i18n/article-allergy-medicines';
 import articleCityHealthcareI18n from '../../i18n/article-city-healthcare';
 import articleWeekendI18n from '../../i18n/article-weekend-medical-help';
+import articleTitleI18n from '../../i18n/article-title';
+import articleDescriptionI18n from '../../i18n/article-description';
 
 // ARTICLE_SLUGS кормит sitemap. Раньше этот список был захардкожен в
 // sitemap.ts двумя слагами при 17 статьях, и расхождение ничем не проявлялось:
@@ -68,9 +70,10 @@ test.describe('ARTICLE_SEARCH', () => {
 	});
 
 	// Поиск печатает заголовок статьи, а заголовки разбросаны по словарям:
-	// общие в i18n/articles.ts, у отдельных статей — свои файлы. Тот же набор
-	// подмешивает components/global-search.vue; если он разойдётся с этим
-	// списком, t() вернёт сам ключ, и в выдаче будет «AlgTitle».
+	// общие в i18n/articles.ts, у отдельных статей — свои файлы. Выжимку из
+	// них подмешивает components/global-search.vue (i18n/article-title.ts);
+	// если она разойдётся с этим списком, t() вернёт сам ключ, и в выдаче
+	// будет «AlgTitle».
 	const TITLE_DICTS = [
 		articlesI18n,
 		articleUnavailableI18n,
@@ -115,5 +118,148 @@ test.describe('ARTICLE_SEARCH', () => {
 			}
 		}
 		expect(problems).toEqual([]);
+	});
+});
+
+// i18n/article-title.ts — выжимка заголовков для глобального поиска. Она
+// существует только ради веса: раньше поиск ради восемнадцати строк тянул в
+// первый экран главной пять словарей статей целиком (347 КБ raw / 102 КБ gzip
+// текстов на шести локалях). Цена выжимки — второй экземпляр строк, а второго
+// названия у статьи быть не должно (см. i18n/article-search.ts), поэтому
+// расхождение обязано падать тестом, а не всплывать в выдаче.
+test.describe('i18n/article-title', () => {
+	const titles = articleTitleI18n.messages as Record<
+		string,
+		Record<string, string>
+	>;
+
+	const TITLE_DICTS = [
+		articlesI18n,
+		articleUnavailableI18n,
+		articleAllergyI18n,
+		articleCityHealthcareI18n,
+		articleWeekendI18n,
+	];
+
+	function canonicalTitle(locale: string, key: string): string | undefined {
+		for (const dict of TITLE_DICTS) {
+			const messages = dict.messages as Record<string, Record<string, string>>;
+			const value = messages[locale]?.[key];
+			if (value) return value;
+		}
+		return undefined;
+	}
+
+	test('содержит ровно те же локали, что и приложение', () => {
+		expect(Object.keys(titles).sort()).toEqual([...locales].sort());
+	});
+
+	test('дословно совпадает с заголовками из словарей статей', () => {
+		const problems: string[] = [];
+		for (const locale of locales) {
+			for (const { titleKey } of ARTICLE_SEARCH) {
+				const expected = canonicalTitle(locale, titleKey);
+				const actual = titles[locale]?.[titleKey];
+				if (actual !== expected) {
+					problems.push(
+						`${locale}/${titleKey}: «${actual}» вместо «${expected}»`,
+					);
+				}
+			}
+		}
+		expect(problems).toEqual([]);
+	});
+
+	// Лишний ключ означает, что в выжимку затёк кусок словаря статьи: она
+	// уедет на главную, и вся экономия схлопнется.
+	test('не содержит ничего, кроме заголовков из ARTICLE_SEARCH', () => {
+		const allowed = new Set(ARTICLE_SEARCH.map((entry) => entry.titleKey));
+		const extra: string[] = [];
+		for (const locale of Object.keys(titles)) {
+			for (const key of Object.keys(titles[locale])) {
+				if (!allowed.has(key)) extra.push(`${locale}/${key}`);
+			}
+		}
+		expect(extra).toEqual([]);
+	});
+});
+
+// i18n/article-description.ts — парная выжимка описаний для листинга
+// /articles. Причина та же, что у заголовков: страница печатает у каждой
+// карточки заголовок и описание, а импортировала ради этого пять словарей
+// целиком — 371 КБ исходников против 31 КБ выжимки. И риск тот же: второго
+// описания у статьи быть не должно, поэтому расхождение обязано падать здесь,
+// а не всплывать в мете и в выдаче.
+test.describe('i18n/article-description', () => {
+	const descriptions = articleDescriptionI18n.messages as Record<
+		string,
+		Record<string, string>
+	>;
+
+	// Порядок как в генераторе: при совпадении ключа выигрывает последний.
+	const SOURCE_DICTS = [
+		articlesI18n,
+		articleCityHealthcareI18n,
+		articleWeekendI18n,
+		articleUnavailableI18n,
+		articleAllergyI18n,
+	];
+
+	function canonical(locale: string, key: string): string | undefined {
+		let found: string | undefined;
+		for (const dict of SOURCE_DICTS) {
+			const messages = dict.messages as Record<string, Record<string, string>>;
+			const value = messages[locale]?.[key];
+			if (value) found = value;
+		}
+		return found;
+	}
+
+	test('содержит ровно те же локали, что и приложение', () => {
+		expect(Object.keys(descriptions).sort()).toEqual([...locales].sort());
+	});
+
+	test('дословно совпадает с описаниями из словарей статей', () => {
+		const problems: string[] = [];
+		for (const locale of locales) {
+			for (const key of Object.keys(descriptions[locale] ?? {})) {
+				const expected = canonical(locale, key);
+				// Ключи, которых нет в этих пяти словарях, живут в словарях
+				// отдельных статей (стоматология, роды, ментальное здоровье) —
+				// их сверяет проверка ниже, здесь пропускаем.
+				if (expected === undefined) continue;
+				if (descriptions[locale][key] !== expected) {
+					problems.push(
+						`${locale}/${key}: «${descriptions[locale][key]}» вместо «${expected}»`,
+					);
+				}
+			}
+		}
+		expect(problems).toEqual([]);
+	});
+
+	test('содержит только описания и две строки самого листинга', () => {
+		const extra: string[] = [];
+		for (const locale of Object.keys(descriptions)) {
+			for (const key of Object.keys(descriptions[locale])) {
+				const isDescription = key.endsWith('Description');
+				const isCityDescription = key.startsWith('CityHcDescription_');
+				const isPageOwn = key === 'Articles';
+				if (!isDescription && !isCityDescription && !isPageOwn) {
+					extra.push(`${locale}/${key}`);
+				}
+			}
+		}
+		expect(extra).toEqual([]);
+	});
+
+	test('непустые значения во всех локалях', () => {
+		const empty: string[] = [];
+		for (const locale of locales) {
+			for (const [key, value] of Object.entries(descriptions[locale] ?? {})) {
+				if (!value?.trim()) empty.push(`${locale}/${key}`);
+			}
+		}
+		expect(empty).toEqual([]);
 	});
 });

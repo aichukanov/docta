@@ -26,12 +26,50 @@ test.describe('robots.txt', () => {
 		expect(res.body).toMatch(/Sitemap:\s*https?:\/\//i);
 	});
 
-	test('закрыты приватные разделы', async ({ page }) => {
+	// Disallow оставлен только там, где обход и правда не нужен: /admin отдаёт
+	// 401 и в индекс не попадёт по коду ответа, /auth/ — колбэки без внешних
+	// ссылок, /dev/ — служебное.
+	test('закрыто от обхода только служебное', async ({ page }) => {
 		const res = await fetchText(page, '/robots.txt');
-		for (const path of ['/admin/', '/login', '/profile']) {
+
+		for (const path of ['/admin', '/auth/', '/dev/']) {
 			expect(res.body, `${path} должен быть в Disallow`).toContain(
 				`Disallow: ${path}`,
 			);
+		}
+	});
+
+	// Disallow и noindex — взаимоисключающие инструменты, а не усиливающие друг
+	// друга: закрытую страницу краулер не скачивает и мета-тега не видит, то
+	// есть URL остаётся в индексе без заголовка и описания, зато навсегда.
+	// Кабинет и страницы авторизации закрыты `noindex`, поэтому обход им нужен.
+	// Подробности — docs/rules/ROBOTS_TXT.md.
+	test('кабинет и авторизация НЕ закрыты от обхода: у них noindex', async ({
+		page,
+	}) => {
+		const res = await fetchText(page, '/robots.txt');
+
+		for (const path of [
+			'/login',
+			'/profile',
+			'/verify-email',
+			'/reset-password',
+			'/forgot-password',
+			'/confirm-email-change',
+		]) {
+			expect(res.body, `${path} не должен быть в Disallow`).not.toContain(
+				`Disallow: ${path}`,
+			);
+		}
+	});
+
+	test('трекинговые метки перечислены в Clean-param для Яндекса', async ({
+		page,
+	}) => {
+		const res = await fetchText(page, '/robots.txt');
+
+		for (const param of ['utm_source', 'fbclid', 'gclid']) {
+			expect(res.body, `${param} должен быть в Clean-param`).toContain(param);
 		}
 	});
 
@@ -47,31 +85,84 @@ test.describe('robots.txt', () => {
 	});
 });
 
-test.describe('sitemap.xml', () => {
-	test('валидный XML с абсолютными ссылками', async ({ page }) => {
+// `/sitemap.xml` — индекс, а не список страниц.
+//
+// После того как каждая страница стала давать по `<url>` на локаль (шесть
+// вместо одного), монолит упирался в оба лимита спецификации: 50 тыс. URL и
+// 50 МБ. Адрес менять было нельзя — на него ссылается robots.txt и он
+// зарегистрирован в консолях поисковиков, поэтому индексом стал он сам.
+test.describe('sitemap: индекс', () => {
+	test('валидный индекс с абсолютными ссылками на секции', async ({ page }) => {
 		const res = await fetchText(page, '/sitemap.xml');
 
 		expect(res.status).toBe(200);
 		expect(res.contentType).toContain('xml');
-		expect(res.body).toContain('<urlset');
-		expect(res.body).toContain('</urlset>');
+		expect(res.body).toContain('<sitemapindex');
+		expect(res.body).toContain('</sitemapindex>');
 
 		const locs = locations(res.body);
-		expect(locs.length).toBeGreaterThan(0);
+		expect(locs.length).toBeGreaterThan(1);
 		for (const loc of locs) {
-			expect(loc, 'в sitemap только абсолютные URL').toMatch(/^https?:\/\//);
+			expect(loc, 'в индексе только абсолютные URL').toMatch(/^https?:\/\//);
+			expect(loc, 'секции лежат в /sitemaps/').toContain('/sitemaps/');
 		}
 	});
 
-	test('содержит все листинги', async ({ page }) => {
-		const res = await fetchText(page, '/sitemap.xml');
+	test('кэшируется: сборка стоит два десятка запросов к БД', async ({
+		page,
+	}) => {
+		const res = await visit(page, '/sitemap.xml');
+		expect(res.headers['cache-control']).toContain('max-age=');
+	});
+
+	test('каждая секция из индекса отдаётся', async ({ page }) => {
+		const index = await fetchText(page, '/sitemap.xml');
+		const sections = locations(index.body).map((loc) => new URL(loc).pathname);
+
+		for (const path of sections) {
+			const res = await fetchText(page, path);
+			expect(res.status, `секция ${path}`).toBe(200);
+			expect(res.body, `секция ${path}`).toContain('<urlset');
+		}
+	});
+
+	test('непонятный адрес секции — 404, а не пустой sitemap с кодом 200', async ({
+		page,
+	}) => {
+		const res = await visit(page, '/sitemaps/nope-1.xml');
+		expect(res.status).toBe(404);
+	});
+});
+
+test.describe('sitemap: содержимое', () => {
+	test('листинги перечислены в core', async ({ page }) => {
+		const res = await fetchText(page, '/sitemaps/core-1.xml');
+
 		for (const section of LISTING_SECTIONS) {
 			expect(res.body, `нет ${section.url}`).toContain(`${section.url}</loc>`);
 		}
 	});
 
-	test('нет дублей URL', async ({ page }) => {
-		const locs = locations((await fetchText(page, '/sitemap.xml')).body);
+	// Раньше `<loc>` собирался только для дефолтной локали, а остальные пять
+	// упоминались лишь внутри `xhtml:link`. Прямого сигнала обойти `?lang=ru`
+	// не было ни одного — и кириллических страниц в индексе оказалось ровно ноль.
+	test('у каждой страницы свой адрес на каждую локаль', async ({ page }) => {
+		const res = await fetchText(page, '/sitemaps/core-1.xml');
+		const locs = locations(res.body);
+
+		const home = locs.filter((loc) => new URL(loc).pathname === '/');
+
+		expect(home.length, 'главная должна быть на всех локалях').toBeGreaterThan(
+			1,
+		);
+		expect(home.some((loc) => loc.includes('lang=ru'))).toBe(true);
+		expect(home.some((loc) => !loc.includes('lang='))).toBe(true);
+	});
+
+	test('нет дублей URL внутри секции', async ({ page }) => {
+		const locs = locations(
+			(await fetchText(page, '/sitemaps/core-1.xml')).body,
+		);
 		const duplicates = locs.filter((loc, i) => locs.indexOf(loc) !== i);
 		expect([...new Set(duplicates)]).toEqual([]);
 	});

@@ -1,6 +1,13 @@
 <script setup lang="ts">
-import { generateAvatarColor } from '~/common/avatar-colors';
-
+/**
+ * Аватар врача — обёртка над KitAvatar с предметной частью:
+ *  - инициалы без слов-званий («Prof. dr. Marko Petrović» → «MP», не «PD»);
+ *  - цвет считается по имени БЕЗ звания, иначе «Marko Petrović»
+ *    и «dr Marko Petrović» получили бы разные цвета;
+ *  - зум по клику, если показано настоящее фото.
+ *
+ * Рисование (фото, фолбэк на инициалы, палитра, контраст) — в дизайн-системе.
+ */
 const props = withDefaults(
 	defineProps<{
 		name: string;
@@ -8,7 +15,6 @@ const props = withDefaults(
 		size: number;
 		class?: string;
 		zoomable?: boolean;
-		// 'eager' — для изображений выше фолда (hero детальной страницы)
 		loading?: 'lazy' | 'eager';
 	}>(),
 	{
@@ -21,71 +27,58 @@ const props = withDefaults(
 
 const customClass = computed(() => props.class || '');
 
-function letterAvatarUrl(name: string, size: number) {
-	const bg = generateAvatarColor(name).substring(1);
-	return `https://ui-avatars.com/api/?name=${encodeURIComponent(
-		name,
-	)}&size=${size}&background=${bg}&color=ffffff&font-size=0.4`;
-}
+// Слова-звания в инициалы попадать не должны. Список шире, чем чистка имени
+// для цвета: там достаточно префиксов в начале строки, здесь звание может
+// стоять и в середине.
+const TITLE_WORD = /^(prof|prim|doc|dr|mr|sci|spec|med|mag)\.?$/i;
 
-const isRealPhoto = ref(!!props.photoUrl?.trim());
-
-const avatarUrl = ref(
-	props.photoUrl?.trim()
-		? props.photoUrl
-		: letterAvatarUrl(props.name, props.size),
-);
-
-watch(
-	() => props.photoUrl,
-	(url) => {
-		const hasPhoto = !!url?.trim();
-		isRealPhoto.value = hasPhoto;
-		avatarUrl.value = hasPhoto ? url! : letterAvatarUrl(props.name, props.size);
-	},
-);
-
-function onError() {
-	isRealPhoto.value = false;
-	avatarUrl.value = letterAvatarUrl(props.name, props.size);
-}
-
-const mounted = ref(false);
-onMounted(() => {
-	mounted.value = true;
+const initials = computed(() => {
+	const words = props.name.trim().split(/\s+/).filter(Boolean);
+	const meaningful = words.filter((word) => !TITLE_WORD.test(word));
+	const source = meaningful.length ? meaningful : words;
+	return source
+		.slice(0, 2)
+		.map((word) => Array.from(word)[0]?.toUpperCase() ?? '')
+		.join('');
 });
 
-const canZoom = computed(() => props.zoomable && isRealPhoto.value);
+/** Имя без звания — семя для выбора цвета. */
+const colorSeed = computed(() => {
+	const cleaned = props.name
+		.replace(/^Prof\.?\s*dr\.?\s+/i, '')
+		.replace(/^prim\.?\s*dr\.?\s+/i, '')
+		.replace(/^dr\.?\s+/i, '')
+		.trim();
+	return cleaned || props.name;
+});
+
+const hasPhoto = ref(!!props.photoUrl?.trim());
+const canZoom = computed(() => props.zoomable && hasPhoto.value);
 const zoomed = ref(false);
+const photoSrc = computed(() => props.photoUrl?.trim() || '');
 </script>
 
 <template>
-	<img
-		:src="avatarUrl"
-		:alt="name"
-		:class="[
-			'doctor-avatar',
-			customClass,
-			{ 'doctor-avatar--zoomable': canZoom },
-		]"
-		:width="size"
-		:height="size"
+	<KitAvatar
+		:name="name"
+		:photo-url="photoUrl"
+		:size="size"
+		:initials="initials"
+		:color-seed="colorSeed"
 		:loading="loading"
-		:referrerpolicy="mounted ? 'no-referrer' : undefined"
-		@error="onError"
+		:class="[customClass, { 'doctor-avatar--zoomable': canZoom }]"
+		@photo-state="hasPhoto = $event"
 		@click="canZoom && (zoomed = true)"
 	/>
-	<ImageZoomOverlay v-model="zoomed" :src="avatarUrl" :alt="name" />
+	<ImageZoomOverlay
+		v-if="canZoom"
+		v-model="zoomed"
+		:src="photoSrc"
+		:alt="name"
+	/>
 </template>
 
 <style scoped>
-.doctor-avatar {
-	border-radius: 10%;
-	object-fit: contain;
-	background-color: white;
-	flex-shrink: 0;
-}
-
 .doctor-avatar--zoomable {
 	cursor: zoom-in;
 }

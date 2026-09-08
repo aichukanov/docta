@@ -49,7 +49,9 @@ const clinicsStore = useClinicsStore();
 // получается лишний последовательный round-trip (см. pages/doctors/index.vue)
 const [{ pending: isLoading, data: doctorPayload }] = await Promise.all([
 	useFetch('/api/doctors/details', {
-		key: 'doctor-details',
+		// Slug в ключе — иначе переход врач → врач показывает прежнего врача,
+		// см. комментарий у useFetch в pages/clinics/[clinicSlug]/index.vue.
+		key: `doctor-details:${route.params.doctorSlug}`,
 		method: 'POST',
 		body: computed(() => ({
 			slug: route.params.doctorSlug,
@@ -433,7 +435,6 @@ useSeoMeta({
 	ogDescription: pageDescription,
 	ogImage: ogImage,
 	ogType: 'profile',
-	twitterCard: 'summary',
 	twitterTitle: pageTitle,
 	twitterDescription: pageDescription,
 	twitterImage: ogImage,

@@ -15,8 +15,17 @@ const getCached = defineCachedFunction(getCategoryCityCombinations, {
 
 export default defineEventHandler(async () => {
 	try {
-		const categoryCityCombinations = await getCached();
-		return { categoryCityCombinations };
+		const combinations = await getCached();
+
+		// Даты изменения из ответа выкидываем: они нужны только `<lastmod>` в
+		// sitemap, а тут поехали бы полем на каждую строку в каждый заход на
+		// каждый листинг.
+		return {
+			categoryCityCombinations: combinations.map((combo) => ({
+				categoryId: combo.categoryId,
+				cityId: combo.cityId,
+			})),
+		};
 	} catch (error) {
 		console.error('API Error - services/category-city-combinations:', error);
 		return { categoryCityCombinations: [] };

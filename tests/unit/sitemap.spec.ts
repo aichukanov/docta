@@ -138,6 +138,70 @@ test.describe('renderUrlset: у каждого <url> ровно один <loc>',
 	});
 });
 
+test.describe('lastmod: либо правда, либо ничего', () => {
+	// Третий заход на sitemap: тег <lastmod> когда-то заполнялся временем
+	// генерации файла, то есть каждый URL заявлял, что изменился в момент
+	// запроса. Такой сигнал поисковик перестаёт учитывать целиком, поэтому тег
+	// убрали совсем, а теперь вернули — но заполняется он ТОЛЬКО настоящей
+	// датой изменения (server/common/sitemap/lastmod.ts). Тест сторожит обе
+	// границы: без даты тега нет, с датой она выводится как есть.
+
+	test('без даты тега нет вовсе', () => {
+		const xml = renderUrlset(menuItemToLinks('doctors'));
+		expect(xml).not.toContain('<lastmod>');
+	});
+
+	test('дата уходит в каждую языковую версию страницы', () => {
+		const lastmod = new Date('2026-07-19T17:26:03.000Z');
+		const links = menuItemToLinks(
+			'doctors',
+			{ specialtyIds: 4 },
+			false,
+			lastmod,
+		);
+
+		expect(links).toHaveLength(locales.length);
+		for (const link of links) {
+			expect(link.lastmod).toEqual(lastmod);
+		}
+
+		const xml = renderUrlset(links);
+		expect(countOccurrences(xml, '<lastmod>')).toBe(locales.length);
+		expect(xml).toContain('<lastmod>2026-07-19T17:26:03.000Z</lastmod>');
+	});
+
+	test('дата не подставляется сама: генератор её не выдумывает', () => {
+		// Прямая защита от возврата `new Date()` внутрь menuItemToLinks —
+		// именно так тег и стал враньём в прошлый раз.
+		const source = readFileSync(
+			resolve(
+				dirname(fileURLToPath(import.meta.url)),
+				'../../server/common/sitemap/utils.ts',
+			),
+			'utf-8',
+		);
+		expect(source).not.toMatch(/lastmod:\s*new Date\(/);
+	});
+
+	test('в блоке <url> не больше одного <lastmod>', () => {
+		const xml = renderUrlset([
+			...menuItemToLinks(
+				'doctors',
+				{},
+				false,
+				new Date('2026-01-02T03:04:05Z'),
+			),
+			...menuItemToLinks('clinics'),
+		]);
+
+		for (const block of extractUrlBlocks(xml)) {
+			expect(countOccurrences(block, '<lastmod>')).toBeLessThanOrEqual(1);
+		}
+		// Страница без даты осталась без тега, страница с датой — с тегом.
+		expect(countOccurrences(xml, '<lastmod>')).toBe(locales.length);
+	});
+});
+
 test.describe('chunkSitemapLinks: границы файлов', () => {
 	// Ссылки одной страницы обязаны лежать в одном файле: иначе языковые
 	// версии окажутся в разных sitemap-ах с разными датами обхода.
@@ -221,4 +285,31 @@ test.describe('реестр секций не расходится со спис
 			);
 		});
 	}
+});
+
+// Ключ кэша индекса обязан зависеть от состава секций.
+//
+// Индекс кэшируется на час, и при снятии раздела (так было с `/medications`)
+// он продолжал рекламировать секцию, которой больше нет: адрес отдавал 404,
+// а Search Console записывала это как ошибку. Проверено вживую — до правки
+// `/sitemaps/medications-1.xml` висел в индексе и возвращал 404.
+//
+// Длина списка сюда не годится: переименование секции её не меняет.
+test('ключ кэша индекса включает имена секций', () => {
+	const source = readFileSync(
+		resolve(
+			dirname(fileURLToPath(import.meta.url)),
+			'../../server/common/sitemap/sitemap.ts',
+		),
+		'utf-8',
+	);
+
+	// Ключ собирается из SITEMAP_SECTIONS, а не из константной строки.
+	expect(source).toMatch(/SITEMAP_SECTIONS\.join\(/);
+
+	const getKey = source.match(
+		/name: 'sitemap',[\s\S]*?getKey: \(\) => ([^,]+),/,
+	);
+	expect(getKey, 'не нашёл getKey индекса').not.toBeNull();
+	expect(getKey![1]).toContain('SECTIONS_CACHE_KEY');
 });

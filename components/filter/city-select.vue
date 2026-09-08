@@ -1,24 +1,16 @@
 <template>
 	<FilterWrapper :label="hideLabel ? undefined : t('City')">
-		<el-select
-			ref="selectRef"
+		<KitSelect
 			v-model="cityIds"
+			:options="cityOptions"
 			:placeholder="t('AnyCity')"
 			:aria-label="t('City')"
+			:no-data-text="uiText('NothingFound')"
 			size="large"
 			:multiple="multiple"
-			collapse-tags
-			collapse-tags-tooltip
+			:max-tags="3"
 			class="filter-city"
-			@change="selectRef?.blur()"
-		>
-			<el-option
-				v-for="{ text, value } in cities"
-				:key="value"
-				:label="text"
-				:value="value"
-			/>
-		</el-select>
+		/>
 		<!-- Быстрый фильтр по городу пользователя (геопозиция из хедера) -->
 		<el-button
 			v-if="quickCity"
@@ -37,13 +29,10 @@
 
 <script setup lang="ts">
 import IconMapPin from '~/components/icon/map-pin.vue';
-import type { ElSelect } from 'element-plus';
 import { CityId } from '~/enums/cities';
 import { combineI18nMessages } from '~/i18n/utils';
 import citiesI18n from '~/i18n/city';
 import locationI18n from '~/i18n/location';
-
-const selectRef = ref<InstanceType<typeof ElSelect>>();
 
 const props = withDefaults(
 	defineProps<{
@@ -68,6 +57,7 @@ const { t } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([citiesI18n, locationI18n]),
 });
+const { uiText } = useUiText();
 
 const { userLocation } = useUserLocation();
 
@@ -95,6 +85,10 @@ const cities = computed(() => {
 		}))
 		.sort((a, b) => a.text.localeCompare(b.text));
 });
+
+const cityOptions = computed(() =>
+	cities.value.map(({ text, value }) => ({ value, label: text })),
+);
 
 // Чип показывается, пока город пользователя не выбран в фильтре
 // (и есть среди доступных, если список ограничен availableCities)

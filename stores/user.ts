@@ -1,12 +1,16 @@
 import { defineStore } from 'pinia';
-import { ref, computed } from 'vue';
+import { ref, shallowRef, computed } from 'vue';
 import type { User } from '~/server/utils/session';
-import { getRegionalQuery } from '~/common/url-utils';
+import { getRegionalQuery, isLoginPath } from '~/common/url-utils';
 
 export const useUserStore = defineStore('user', () => {
-	const user = ref<User | null>(null);
+	// shallowRef: объект пользователя приходит из /api/auth/active-user и всегда
+	// заменяется целиком (fetchUser/logout) — ни одно поле не правится точечно.
+	const user = shallowRef<User | null>(null);
 	const isUserLoading = ref(true);
-	const fetchPromise = ref<Promise<User | null> | null>(null);
+	// shallowRef: здесь лежит промис, а не данные. ref() пытался бы обернуть его
+	// в reactive() на каждой записи (для Promise это no-op, но и смысла нет).
+	const fetchPromise = shallowRef<Promise<User | null> | null>(null);
 
 	const isAdmin = computed(() => user.value?.is_admin || false);
 
@@ -45,7 +49,7 @@ export const useUserStore = defineStore('user', () => {
 	const loginWithGoogle = () => {
 		// Сохраняем текущий URL для редиректа после авторизации
 		const returnTo = useRoute().fullPath;
-		if (returnTo && returnTo !== '/login') {
+		if (returnTo && !isLoginPath(returnTo)) {
 			sessionStorage.setItem('auth_redirect', returnTo);
 		}
 

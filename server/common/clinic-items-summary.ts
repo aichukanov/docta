@@ -23,11 +23,6 @@ const TOTAL_SQL = {
 		FROM clinic_lab_tests
 		WHERE clinic_id = ?
 	`,
-	medications: `
-		SELECT COUNT(DISTINCT medication_id) AS count
-		FROM clinic_medications
-		WHERE clinic_id = ?
-	`,
 	doctors: `
 		SELECT COUNT(DISTINCT doctor_id) AS count
 		FROM doctor_clinics
@@ -88,7 +83,6 @@ function buildPricedTopSql(options: {
 	itemFk: string;
 	relationTable: string;
 	withPriceMin: boolean;
-	// clinic_medications не хранит флаг устаревшей цены (только услуги и анализы)
 	withOutdatedFlag: boolean;
 	localizedNameField: string;
 	orderBy: string;
@@ -120,8 +114,8 @@ function buildPricedTopSql(options: {
 	`;
 }
 
-// doctors only has en/ru/sr/sr_cyrl — unlike medical_services/lab_tests/
-// medications, there is no name_de / name_tr. Fall back to name_en for
+// doctors only has en/ru/sr/sr_cyrl — unlike medical_services/lab_tests,
+// there is no name_de / name_tr. Fall back to name_en for
 // locales the table doesn't carry.
 const DOCTOR_NAME_FIELDS = new Set([
 	'name_en',
@@ -175,7 +169,7 @@ function mapTopRow(row: TopRow): ClinicItemTopEntry {
 
 // Все запросы сводки идут по одной клинике и должны делить одно соединение.
 // Раньше здесь стоял executeQuery, а он берёт из пула СВОЁ соединение на
-// каждый вызов: 11 запросов сводки = 11 соединений при connectionLimit: 10.
+// каждый вызов: 9 запросов сводки = 9 соединений при connectionLimit: 10.
 // Один рендер страницы клиники блокировал сам себя, а две параллельные
 // страницы морили голодом весь сайт.
 async function query<T>(
@@ -194,10 +188,9 @@ async function fetchOne(
 	localizedNameField: string,
 ): Promise<ClinicItemTypeSummary> {
 	const totalPromise = query<CountRow>(connection, TOTAL_SQL[type], [clinicId]);
-	const categoryPromise =
-		type === 'medications'
-			? Promise.resolve<CategoryRow[]>([])
-			: query<CategoryRow>(connection, CATEGORY_SQL[type], [clinicId]);
+	const categoryPromise = query<CategoryRow>(connection, CATEGORY_SQL[type], [
+		clinicId,
+	]);
 
 	let topPromise: Promise<TopRow[]>;
 	if (type === 'doctors') {
@@ -220,7 +213,7 @@ async function fetchOne(
 			}),
 			[clinicId],
 		);
-	} else if (type === 'labtests') {
+	} else {
 		topPromise = query<TopRow>(
 			connection,
 			buildPricedTopSql({
@@ -231,21 +224,6 @@ async function fetchOne(
 				withOutdatedFlag: true,
 				localizedNameField,
 				orderBy: 'i.rank_score DESC, i.name_en ASC',
-			}),
-			[clinicId],
-		);
-	} else {
-		// medications: no rank_score column, fall back to alphabetical.
-		topPromise = query<TopRow>(
-			connection,
-			buildPricedTopSql({
-				table: 'medications',
-				itemFk: 'medication_id',
-				relationTable: 'clinic_medications',
-				withPriceMin: false,
-				withOutdatedFlag: false,
-				localizedNameField,
-				orderBy: 'i.name_en ASC',
 			}),
 			[clinicId],
 		);
@@ -278,15 +256,14 @@ export async function fetchClinicItemsSummary(
 	//
 	// Promise.all оставлен как форма записи, но параллелизма здесь больше нет:
 	// mysql2 выполняет команды одного соединения строго по очереди. Это
-	// осознанный размен — 11 запросов по одной клинике не стоят 11 из 10
+	// осознанный размен — 9 запросов по одной клинике не стоят 9 из 10
 	// соединений пула, а сами они лёгкие (замер ниже в отчёте).
 	return withConnection(async (connection) => {
-		const [services, labtests, medications, doctors] = await Promise.all([
+		const [services, labtests, doctors] = await Promise.all([
 			fetchOne(connection, 'services', clinicId, localizedNameField),
 			fetchOne(connection, 'labtests', clinicId, localizedNameField),
-			fetchOne(connection, 'medications', clinicId, localizedNameField),
 			fetchOne(connection, 'doctors', clinicId, localizedNameField),
 		]);
-		return { services, labtests, medications, doctors };
+		return { services, labtests, doctors };
 	});
 }

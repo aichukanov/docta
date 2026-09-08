@@ -5,8 +5,9 @@ import { LISTING_SECTIONS } from '../utils/sections';
 import { URLS } from '../utils/constants';
 
 // Разделы, которые обязаны быть в главном меню. Список берётся из общего
-// конфига: раньше тест ходил по `/medications`, хотя пункт «Lekovi» уже вёл
-// на `/medicines`, и промах ловился только таймаутом.
+// конфига, а не хардкодится: раньше тест ходил по снятому теперь
+// `/medications`, хотя пункт «Lekovi» уже вёл на `/medicines`, и промах
+// ловился только таймаутом.
 const HEADER_SECTIONS = LISTING_SECTIONS.filter((s) => s.inHeaderNav);
 
 test.describe('Navigation', () => {

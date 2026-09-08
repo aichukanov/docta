@@ -25,6 +25,8 @@ const formatUserOption = (user: UserListItem) => ({
 	value: user.id,
 });
 
+const { uiText } = useUiText();
+
 const searchUsers = async (query: string) => {
 	if (!query || query.length < 2) {
 		userSearchResults.value = [];
@@ -172,23 +174,20 @@ watch(() => props.clinicId, loadAdmins, { immediate: true });
 		</div>
 
 		<div class="admins-form">
-			<el-select
+			<KitSelect
 				v-model="selectedUserId"
+				:options="userSearchResults"
+				:loading="isSearchingUsers"
+				:loading-text="uiText('Loading')"
+				:no-data-text="uiText('NothingFound')"
+				:clear-label="uiText('Clear')"
 				filterable
 				remote
 				clearable
-				:remote-method="searchUsers"
-				:loading="isSearchingUsers"
 				placeholder="Найдите пользователя по email, имени или id"
 				class="admins-select"
-			>
-				<el-option
-					v-for="user in userSearchResults"
-					:key="user.value"
-					:label="user.label"
-					:value="user.value"
-				/>
-			</el-select>
+				@search="searchUsers"
+			/>
 			<el-button type="primary" :loading="isSaving" @click="addAdmin">
 				Выдать доступ
 			</el-button>

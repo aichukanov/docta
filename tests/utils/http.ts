@@ -12,6 +12,8 @@ export interface VisitResult {
 	url: string;
 	/** Сколько редиректов прошло по пути */
 	hops: number;
+	/** Заголовки конечного ответа, имена в нижнем регистре */
+	headers: Record<string, string>;
 }
 
 /** Навигация — для проверки статусов и редиректов. */
@@ -28,7 +30,12 @@ export async function visit(page: Page, url: string): Promise<VisitResult> {
 		from = from.redirectedFrom();
 	}
 
-	return { status: response.status(), url: page.url(), hops };
+	return {
+		status: response.status(),
+		url: page.url(),
+		hops,
+		headers: await response.allHeaders(),
+	};
 }
 
 export interface FetchResult {
@@ -37,6 +44,8 @@ export interface FetchResult {
 	body: string;
 	/** Был ли редирект по пути */
 	redirected: boolean;
+	/** Заголовки ответа, имена в нижнем регистре */
+	headers: Record<string, string>;
 }
 
 /**
@@ -57,11 +66,34 @@ export async function fetchText(page: Page, url: string): Promise<FetchResult> {
 
 	return await page.evaluate(async (target) => {
 		const response = await fetch(target);
+		const headers: Record<string, string> = {};
+		response.headers.forEach((value, name) => {
+			headers[name.toLowerCase()] = value;
+		});
+
 		return {
 			status: response.status,
 			contentType: response.headers.get('content-type') || '',
 			body: await response.text(),
 			redirected: response.redirected,
+			headers,
 		};
 	}, url);
+}
+
+/**
+ * Дожидается гидратации Vue-приложения.
+ *
+ * Серверная разметка интерактивна не сразу: до `app.mount()` ввод в поле
+ * меняет DOM, но слушателей Vue ещё нет — значение проставляется, а `v-model`
+ * о нём не узнаёт. Внешне это выглядит как «ничего не произошло», и на
+ * параллельном прогоне, где гидратация медленнее, тесты на ввод плавают.
+ *
+ * Признак — `__vue_app__` на контейнере: Vue вешает его при монтировании,
+ * то есть ровно тогда, когда разметка становится живой.
+ */
+export async function waitForHydration(page: Page): Promise<void> {
+	await page.waitForFunction(
+		() => !!(document.querySelector('#__nuxt') as any)?.__vue_app__,
+	);
 }

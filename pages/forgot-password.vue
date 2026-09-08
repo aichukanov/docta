@@ -14,8 +14,16 @@ const { t, locale } = useI18n({
 });
 const { t: $t } = useI18n({ useScope: 'global' });
 
+// Служебная страница авторизации. robots.txt её не закрывает: Disallow
+// запрещает обход, но не индексацию — по внешней ссылке адрес всё равно
+// попадает в выдачу. Поэтому noindex мета-тегом, nofollow — краулеру нечего
+// собирать по ссылкам личного кабинета.
+// ВАЖНО: страница ssr:false, meta появляется только после выполнения JS,
+// поэтому мета обязана дублироваться заголовком X-Robots-Tag в routeRules
+// (образец — /auth/telegram/return в nuxt.config.ts).
 useSeoMeta({
 	title: () => t('pageTitle') + ' | ' + $t('ApplicationName'),
+	robots: 'noindex, nofollow',
 });
 
 const email = ref('');

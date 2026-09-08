@@ -2,8 +2,6 @@
 import { getRegionalQuery } from '~/common/url-utils';
 import RatingStars from '~/components/rating-stars.vue';
 import ReviewProviderIcon from '~/components/review-provider-icon.vue';
-import reviewsI18n from '~/i18n/reviews';
-import { combineI18nMessages } from '~/i18n/utils';
 import { getReviewDateFormat } from '~/common/date-format';
 import type { Review } from '~/interfaces/review';
 
@@ -17,11 +15,7 @@ const emit = defineEmits<{
 	deleted: [];
 }>();
 
-// Слияние на уровне модуля, а не в setup: словарь отзывов константный, а этот
-// компонент рендерится на каждый отзыв страницы. Ссылка общая для экземпляров.
-const messages = combineI18nMessages([reviewsI18n]);
-
-const { t, locale } = useI18n({ useScope: 'local', messages });
+const { t, locale } = useReviewsI18n();
 
 const { confirm } = useConfirm();
 

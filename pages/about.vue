@@ -43,7 +43,6 @@ useSeoMeta({
 	ogDescription: pageDescription,
 	ogImage: OG_IMAGE,
 	ogUrl: aboutUrl,
-	twitterCard: 'summary',
 	twitterTitle: pageTitle,
 	twitterDescription: pageDescription,
 	twitterImage: OG_IMAGE,

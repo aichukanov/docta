@@ -36,6 +36,16 @@ const DAY_TYPE_LABEL_KEYS: Record<DayType, string> = {
 	'not_specified': 'DayTypeNotSpecified',
 };
 
+const { uiText } = useUiText();
+
+/* KitSelect берёт список пропсом, поэтому подписи собираем заранее */
+const dayTypeOptions = computed(() =>
+	DAY_TYPES.map((type) => ({
+		value: type,
+		label: t(DAY_TYPE_LABEL_KEYS[type]),
+	})),
+);
+
 const dayShortKey = (day: DayOfWeek) =>
 	`${day.charAt(0).toUpperCase()}${day.slice(1)}Short`;
 
@@ -108,19 +118,14 @@ const copyToAll = (sourceDay: DayOfWeek) => {
 		<div v-for="day in DAYS_OF_WEEK" :key="day" class="wh-editor__day">
 			<div class="wh-editor__day-header">
 				<span class="wh-editor__day-label">{{ t(dayShortKey(day)) }}</span>
-				<el-select
+				<KitSelect
 					:model-value="schedule[day].type"
-					@update:model-value="(val: DayType) => setDayType(day, val)"
+					:options="dayTypeOptions"
+					:no-data-text="uiText('NothingFound')"
 					size="small"
 					class="wh-editor__type-select"
-				>
-					<el-option
-						v-for="type in DAY_TYPES"
-						:key="type"
-						:label="t(DAY_TYPE_LABEL_KEYS[type])"
-						:value="type"
-					/>
-				</el-select>
+					@update:model-value="(val) => setDayType(day, val as DayType)"
+				/>
 				<el-button
 					size="small"
 					class="wh-editor__copy-btn"

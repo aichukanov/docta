@@ -37,7 +37,7 @@ withDefaults(
 .skeleton-card {
 	box-sizing: border-box;
 	background: var(--kit-color-surface-secondary);
-	border: 1px solid var(--kit-color-border-primary);
+	border: 1px solid var(--kit-color-border-secondary);
 	border-radius: var(--kit-border-radius-lg);
 	padding: var(--kit-spacing-xl) var(--kit-spacing-2xl);
 }

@@ -8,18 +8,22 @@ docta.me и svad, живёт отдельным репозиторием
 
 ```jsonc
 // package.json
-"@ach/ui-kit": "git+https://github.com/aichukanov/ui-kit.git#main"
+"@ach/ui-kit": "github:aichukanov/ui-kit#main"
 ```
+
+Форму записи выбирает npm, а не мы: `npm install @ach/ui-kit` сворачивает
+любой GitHub-спек к короткому `github:`. Править на `git+https://` руками
+бессмысленно — откатится на следующей установке.
 
 Точная версия пинуется **в `package-lock.json`**: npm пишет туда полный SHA
 коммита. Поэтому `npm ci` на сервере всегда ставит ровно тот код, который был
 на момент коммита лока, — а `npm install` локально подтягивает новый `main`
 и перезаписывает лок.
 
-### `git+ssh://` в локе — это нормально, не пугайтесь
+### `git+ssh://` в локе и `github:` в package.json — это нормально
 
-В `package.json` указан `git+https://`, но в `package-lock.json` npm запишет
-`git+ssh://git@github.com/...`: он нормализует URL известных хостингов.
+В `package-lock.json` npm запишет `git+ssh://git@github.com/...`, хотя
+в `package.json` стоит `github:`: он нормализует URL известных хостингов.
 Ключа SSH для этого НЕ нужно — GitHub-спеки npm считает hosted и откатывается
 на HTTPS сам. Проверено: `git ls-remote ssh://git@github.com/...` падает
 с `Permission denied (publickey)`, а `npm pack` по тому же ssh-спеку из лока
@@ -100,8 +104,16 @@ cd e:/pet/ui-kit
 git push
 
 cd e:/pet/docta.me/nuxt
-npm install @ach/ui-kit      # перезапишет SHA в локе
+npm install @ach/ui-kit      # снимает линк и перезаписывает SHA в локе
 ```
+
+**НЕ делайте `npm unlink @ach/ui-kit`.** В npm 7+ это алиас `npm uninstall`:
+он удаляет зависимость из `package.json` и из лока, а не просто снимает
+симлинк. Проверено на себе — пришлось восстанавливать. Линк снимается
+обычным `npm install @ach/ui-kit`.
+
+Проверить, что линка больше нет: в `node_modules/@ach/ui-kit` должна лежать
+папка, а не симлинк, а в `package-lock.json` — `git+ssh://...#<sha>`.
 
 ## Что пакет требует от приложения
 

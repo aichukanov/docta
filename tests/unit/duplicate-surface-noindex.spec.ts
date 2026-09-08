@@ -39,9 +39,9 @@ test.describe('7d: листинги передают filterNamespace в ListPage
 		});
 
 	test('найдены все страницы со ListPage', () => {
-		// На 2026-07-31 их 7: clinics, doctors, insurance-companies, labtests,
-		// medications, medicines, services.
-		expect(listingPages.length).toBeGreaterThanOrEqual(7);
+		// На 2026-09-03 их 6: clinics, doctors, insurance-companies, labtests,
+		// medicines, services.
+		expect(listingPages.length).toBeGreaterThanOrEqual(6);
 	});
 
 	for (const page of listingPages) {
@@ -78,7 +78,7 @@ test.describe('7d: стор помечает невалидные значени
 });
 
 test.describe('7e: подстраницы клиник не индексируют дубли', () => {
-	const subpages = ['services', 'labtests', 'medications', 'doctors'].map(
+	const subpages = ['services', 'labtests', 'doctors'].map(
 		(name) => ({
 			name,
 			path: resolve(PAGES, 'clinics/[clinicSlug]', name, 'index.vue'),

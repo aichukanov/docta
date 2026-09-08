@@ -208,3 +208,45 @@ export function getDetailLinkQuery(
 	}
 	return query;
 }
+
+/**
+ * Адрес возврата после входа не должен вести обратно на страницу входа —
+ * иначе после авторизации пользователь остаётся на /login с карточкой
+ * «Добро пожаловать» вместо кабинета. Сравниваем путь без query и hash:
+ * адрес почти всегда приходит с `?lang=`, и проверка на голое '/login'
+ * его пропускала.
+ */
+export function isLoginPath(path: string): boolean {
+	return path.split(/[?#]/, 1)[0] === '/login';
+}
+
+/**
+ * Безопасен ли адрес для редиректа после входа.
+ *
+ * Значение приходит из `?redirect=` — то есть его задаёт кто угодно, в том
+ * числе ссылкой из письма. Без проверки это классический открытый редирект:
+ * `/login?redirect=https://evil.example` уводит человека на чужой сайт уже
+ * после того, как он ввёл пароль на нашем домене, и выглядит это как наш
+ * собственный переход.
+ *
+ * Пропускаем только путь внутри сайта: начинается со слеша, но не со второго
+ * слеша и не с обратного (`//evil.example` и `/\evil.example` браузеры
+ * трактуют как протокол-относительный внешний адрес). Управляющие символы
+ * отсекаем целиком — ими маскируют схему.
+ */
+export function isSafeRedirectPath(value: unknown): value is string {
+	if (typeof value !== 'string' || value.length === 0) {
+		return false;
+	}
+
+	if (!value.startsWith('/')) {
+		return false;
+	}
+
+	if (value.startsWith('//') || value.startsWith('/\\')) {
+		return false;
+	}
+
+	// eslint-disable-next-line no-control-regex
+	return !/[\u0000-\u001f\u007f]/.test(value);
+}

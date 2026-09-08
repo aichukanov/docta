@@ -48,13 +48,7 @@ test.describe('Страница клиники', () => {
 			return;
 		}
 
-		const allowed = [
-			'doctors',
-			'services',
-			'labtests',
-			'medications',
-			'reviews',
-		];
+		const allowed = ['doctors', 'services', 'labtests', 'reviews'];
 		for (const href of hrefs) {
 			const tail = href.slice(clinicPath.length + 1).split(/[?#]/)[0];
 			expect(allowed, `неожиданная подстраница: ${href}`).toContain(tail);
@@ -62,7 +56,7 @@ test.describe('Страница клиники', () => {
 	});
 });
 
-const SUBPAGES = ['services', 'labtests', 'medications', 'doctors'] as const;
+const SUBPAGES = ['services', 'labtests', 'doctors'] as const;
 
 test.describe('Подстраницы клиники', () => {
 	// Подстраницы — отдельная поверхность индексации (пункт 7e SEO-аудита).

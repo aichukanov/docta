@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import IconSearch from '~/components/icon/search.vue';
 
+const { uiText } = useUiText();
+
 interface CategoryOption {
 	categoryId: number;
 	title: string;
@@ -68,21 +70,25 @@ const sortModel = computed({
 			clearable
 			class="filter-search"
 		/>
-		<el-select-v2
+		<KitSelect
 			v-if="categoryOptions.length > 0"
 			v-model="categoryModel"
 			:options="categoryOptions"
 			:placeholder="allCategoriesLabel"
+			:no-data-text="uiText('NothingFound')"
+			:clear-label="uiText('Clear')"
 			size="large"
 			filterable
 			clearable
 			class="filter-select"
 		/>
-		<el-select-v2
+		<KitSelect
 			v-if="sortOptions.length > 0"
 			v-model="sortModel"
 			:options="sortOptions"
 			:placeholder="sortPlaceholder"
+			:no-data-text="uiText('NothingFound')"
+			:clear-label="uiText('Clear')"
 			size="large"
 			clearable
 			class="filter-select"

@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { execSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -127,7 +128,6 @@ test.describe('редиректы подстраниц не теряют язы�
 	const pages = [
 		'pages/clinics/[clinicSlug]/services/index.vue',
 		'pages/clinics/[clinicSlug]/labtests/index.vue',
-		'pages/clinics/[clinicSlug]/medications/index.vue',
 		'pages/clinics/[clinicSlug]/doctors/index.vue',
 		'pages/clinics/[clinicSlug]/reviews/index.vue',
 		'pages/doctors/[doctorSlug]/reviews/index.vue',
@@ -142,4 +142,35 @@ test.describe('редиректы подстраниц не теряют язы�
 			expect(source).toContain('getRegionalUrl');
 		});
 	}
+});
+
+// Тип карточки X задаётся ОДИН раз, глобально в app.vue.
+//
+// Картинка предпросмотра теперь 1200×630 (server/api/og/default.jpg), то есть
+// широкая карточка уместна везде. Но `twitterCard: 'summary'` был жёстко
+// прописан в семнадцати страницах и перебивал глобальное значение — а
+// `useSeoMeta` на странице выигрывает у app.vue. Локальные строки убраны;
+// тест сторожит, чтобы они не вернулись копипастой блока меты из соседней
+// страницы (именно так они и расползлись).
+test('ни одна страница не откатывается на узкую карточку summary', () => {
+	const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
+
+	const found = execSync(
+		`grep -rln "twitterCard: .summary.," pages/ components/ || true`,
+		{ cwd: ROOT, encoding: 'utf-8' },
+	)
+		.trim()
+		.split('\n')
+		.filter(Boolean);
+
+	expect(found).toEqual([]);
+});
+
+test('app.vue задаёт широкую карточку и размеры картинки', () => {
+	const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
+	const source = readFileSync(resolve(ROOT, 'app.vue'), 'utf-8');
+
+	expect(source).toContain("twitterCard: 'summary_large_image'");
+	expect(source).toContain('ogImageWidth');
+	expect(source).toContain('ogImageHeight');
 });

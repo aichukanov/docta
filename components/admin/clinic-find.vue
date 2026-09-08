@@ -59,6 +59,8 @@ const emit = defineEmits<{
 	(e: 'updated'): void;
 }>();
 
+const { uiText } = useUiText();
+
 const clinicId = ref<number | null>(null);
 const clinicModel = ref<ClinicAdminModel | null>(null);
 const cityIds = ref<CityId[]>([]);
@@ -804,20 +806,15 @@ onMounted(async () => {
 				</div>
 
 				<div class="billing-form">
-					<el-select
+					<KitSelect
 						v-model="billingPurchaseModel.serviceIds"
+						:options="billingServiceOptions"
 						filterable
 						multiple
 						placeholder="Выберите услуги"
+						:no-data-text="uiText('NothingFound')"
 						class="billing-select"
-					>
-						<el-option
-							v-for="service in billingServiceOptions"
-							:key="service.value"
-							:label="service.label"
-							:value="service.value"
-						/>
-					</el-select>
+					/>
 					<el-input
 						v-model="billingPurchaseModel.price"
 						placeholder="Цена (EUR)"

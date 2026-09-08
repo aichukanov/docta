@@ -36,6 +36,8 @@ const emit = defineEmits<{
 	(e: 'updated'): void;
 }>();
 
+const { uiText } = useUiText();
+
 const labTestId = ref<number | null>(null);
 const labTestModel = ref<LabTestAdminDetails | null>(null);
 const originalLabTest = ref<LabTestAdminDetails | null>(null);
@@ -332,19 +334,14 @@ watch(labTestId, async (newId) => {
 					:key="index"
 					class="clinic-price-row"
 				>
-					<el-select
+					<KitSelect
 						v-model="cp.clinicId"
+						:options="clinicOptions"
 						filterable
 						placeholder="Клиника"
+						:no-data-text="uiText('NothingFound')"
 						class="clinic-select"
-					>
-						<el-option
-							v-for="clinic in clinicOptions"
-							:key="clinic.value"
-							:label="clinic.label"
-							:value="clinic.value"
-						/>
-					</el-select>
+					/>
 					<el-input
 						v-model="cp.price"
 						placeholder="Цена"

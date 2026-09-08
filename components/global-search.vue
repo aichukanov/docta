@@ -12,19 +12,12 @@ import {
 } from '~/common/medicine-search-groups';
 import { ARTICLE_SEARCH } from '~/common/articles';
 import { DoctorSpecialty } from '~/enums/specialty';
-import specialtyI18n from '~/i18n/specialty';
-import cityI18n from '~/i18n/city';
-import packagingI18n from '~/i18n/packaging';
-import clinicCommonI18n from '~/i18n/clinic-common';
-import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
-import labtestCategoryI18n from '~/i18n/labtest-category';
 import articleSearchI18n from '~/i18n/article-search';
-import articlesI18n from '~/i18n/articles';
-import articleUnavailableI18n from '~/i18n/article-medications-unavailable';
-import articleAllergyI18n from '~/i18n/article-allergy-medicines';
-import articleCityHealthcareI18n from '~/i18n/article-city-healthcare';
-import articleWeekendI18n from '~/i18n/article-weekend-medical-help';
-import searchMatchI18n from '~/i18n/search-match';
+// Только заголовки статей, а не их словари целиком: компонент живёт в первом
+// экране главной, а пять полных словарей статей — это 347 КБ raw (102 КБ gzip)
+// текстов на шести локалях ради восемнадцати строк выдачи.
+// Подробности — в i18n/article-title.ts.
+import articleTitleI18n from '~/i18n/article-title';
 import { combineI18nMessages } from '~/i18n/utils';
 import type {
 	ClinicPrice,
@@ -168,28 +161,57 @@ const globalSearchI18n = {
 	},
 };
 
-const { t, n, locale } = useI18n({
+const { t, n, locale, mergeLocaleMessage } = useI18n({
 	useScope: 'local',
+	// Здесь только то, что нужно до ввода запроса (плейсхолдер) и что весит
+	// копейки. Справочники каталога — специальности, города, категории услуг
+	// и анализов, фасовки, clinic-common, search-match — подтягиваются
+	// отдельным чанком в ensureCatalogMessages(): статически они занимали
+	// ~150 КБ raw на первом экране главной, а нужны только внутри дропдауна.
+	//
 	// globalSearchI18n последним: его ключи должны выигрывать у справочников
 	messages: combineI18nMessages([
-		specialtyI18n,
-		cityI18n,
-		packagingI18n,
-		clinicCommonI18n,
-		medicalServiceCategoryI18n,
-		labtestCategoryI18n,
-		// Заголовки статей живут в своих словарях — берём их, а не пишем
-		// поиску второе название (ARTICLE_SEARCH.titleKey, common/articles.ts)
-		articlesI18n,
-		articleUnavailableI18n,
-		articleAllergyI18n,
-		articleCityHealthcareI18n,
-		articleWeekendI18n,
+		// Заголовки статей — те же, что на самих страницах и на карточках
+		// /articles, а не второе название для поиска
+		// (ARTICLE_SEARCH.titleKey, common/articles.ts)
+		articleTitleI18n,
 		articleSearchI18n,
-		searchMatchI18n,
 		globalSearchI18n,
 	]),
 });
+
+// Загрузка справочников каталога. Промис один на компонент: повторные вызовы
+// (префетч по фокусу + ожидание в дебаунсе) ждут ту же загрузку.
+let catalogMessagesPromise: Promise<void> | null = null;
+
+function ensureCatalogMessages(): Promise<void> {
+	if (!catalogMessagesPromise) {
+		catalogMessagesPromise = loadSearchCatalogMessages()
+			.then((messages) => {
+				for (const messagesLocale in messages) {
+					mergeLocaleMessage(messagesLocale, messages[messagesLocale]);
+				}
+				// Порядок слияния тот же, что был при статическом импорте:
+				// собственные ключи компонента кладём поверх справочников.
+				const ownMessages: Record<
+					string,
+					Record<string, string>
+				> = globalSearchI18n.messages;
+				for (const messagesLocale in ownMessages) {
+					mergeLocaleMessage(messagesLocale, ownMessages[messagesLocale]);
+				}
+			})
+			.catch((error) => {
+				// Сбрасываем кэш: следующий ввод повторит загрузку. Выдачу при
+				// этом не блокируем — лучше показать её с сырыми ключами в
+				// подписях, чем не показать вовсе.
+				catalogMessagesPromise = null;
+				console.error('Failed to load search catalog messages:', error);
+			});
+	}
+
+	return catalogMessagesPromise;
+}
 
 const searchQuery = ref('');
 const isOpen = ref(false);
@@ -292,6 +314,12 @@ async function filterClinics(query: string) {
 	// Каталог мог ещё не приехать (грузим по фокусу, а не в setup).
 	// fetchClinics идемпотентен: повторные вызовы ждут тот же промис.
 	await clinicsStore.fetchClinics();
+
+	// Каталог мог ехать дольше, чем живёт запрос: та же защита, что и в
+	// debouncedSearch — не наполнять выдачу по устаревшему вводу.
+	if (searchQuery.value !== query) {
+		return;
+	}
 
 	const normalizedQuery = normalizeForSearch(query);
 	allFilteredClinics.value = clinicsStore.clinics
@@ -440,7 +468,21 @@ async function searchEntities(query: string) {
 }
 
 // Debounced поиск
-const debouncedSearch = debounce((query: string) => {
+const debouncedSearch = debounce(async (query: string) => {
+	// Справочники дожидаемся ДО первой фильтрации. filterSpecialties сравнивает
+	// запрос с локализованными названиями, а без словаря t('specialty_5')
+	// вернёт сырой ключ: специальности перестали бы находиться, а подписи в
+	// выдаче (города, категории, фасовки) остались бы ключами.
+	await ensureCatalogMessages();
+
+	// Пока ждали чанк, поле могло измениться или очиститься: debouncedSearch
+	// .cancel() в вотчере отменяет только ещё не начавшийся вызов, а этот уже
+	// стартовал и иначе наполнил бы закрытый список результатами по старому
+	// запросу.
+	if (searchQuery.value !== query) {
+		return;
+	}
+
 	filterSpecialties(query);
 	filterClinics(query);
 	filterArticles(query);
@@ -461,6 +503,10 @@ function onSearchFocus() {
 	// Ошибку стор уже залогировал; здесь глушим, чтобы предзагрузка не
 	// оставляла необработанный rejection — фильтрация всё равно повторит вызов.
 	clinicsStore.fetchClinics().catch(() => {});
+
+	// Тем же признаком намерения начинаем тянуть словари каталога: к концу
+	// набора запроса чанк уже приедет и дебаунс не будет его ждать.
+	ensureCatalogMessages();
 
 	if (canSearch(searchQuery.value)) {
 		isOpen.value = true;

@@ -1,33 +1,22 @@
 <template>
 	<FilterWrapper :label="t('ConsultationLanguage')">
-		<el-select
-			ref="selectRef"
+		<KitSelect
 			v-model="languageIds"
+			:options="languageOptions"
 			:placeholder="t('AnyLanguage')"
 			:aria-label="t('ConsultationLanguage')"
+			:no-data-text="uiText('NothingFound')"
 			size="large"
 			multiple
-			collapse-tags
-			collapse-tags-tooltip
+			:max-tags="3"
 			class="filter-language"
-			@change="selectRef?.blur()"
-		>
-			<el-option
-				v-for="{ text, value } in languages"
-				:key="value"
-				:label="text"
-				:value="value"
-			/>
-		</el-select>
+		/>
 	</FilterWrapper>
 </template>
 
 <script setup lang="ts">
-import type { ElSelect } from 'element-plus';
 import { LanguageId } from '~/enums/language';
 import languageI18n from '~/i18n/language';
-
-const selectRef = ref<InstanceType<typeof ElSelect>>();
 
 const props = defineProps<{
 	value: number[];
@@ -38,6 +27,7 @@ const emit = defineEmits<{
 }>();
 
 const { t } = useI18n(languageI18n);
+const { uiText } = useUiText();
 
 const languageIds = computed({
 	get: () => props.value,
@@ -72,4 +62,8 @@ const languages = computed(() => [
 		value: LanguageId.DE,
 	},
 ]);
+
+const languageOptions = computed(() =>
+	languages.value.map(({ text, value }) => ({ value, label: text })),
+);
 </script>

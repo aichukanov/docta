@@ -51,8 +51,6 @@ const ROUTE_COUPON_SCOPES: Record<string, ClinicCouponScope> = {
 	'services-serviceSlug': 'services',
 	'labtests': 'labtests',
 	'labtests-labTestSlug': 'labtests',
-	'medications': 'medications',
-	'medications-medicationSlug': 'medications',
 };
 
 /**
@@ -83,12 +81,11 @@ export function isCouponApplicable(
 const COUPON_SCOPE_KEYS: Record<ClinicCouponScope, string> = {
 	services: 'CouponScopeServices',
 	labtests: 'CouponScopeLabtests',
-	medications: 'CouponScopeMedications',
 };
 
 /**
  * Ключи фрагментов «на что действует» (i18n/clinic-coupon.ts) в постоянном
- * порядке — услуги, анализы, лекарства — независимо от порядка в SET-колонке,
+ * порядке — услуги, потом анализы — независимо от порядка в SET-колонке,
  * чтобы «услуги и анализы» не превращались местами в «анализы и услуги».
  */
 export function getCouponScopeKeys(appliesTo: ClinicCouponScope[]): string[] {

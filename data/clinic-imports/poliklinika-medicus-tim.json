@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "slug": "poliklinika-medicus-tim",
+  "name": "Poliklinika Medicus Tim",
+  "city": "Podgorica",
+  "cityId": 1,
+  "googlePlaceId": "ChIJpa36GwCTTRMR4xp8dn6lX_Q",
+  "clinicTypeIds": [1, 4],
+  "languageIds": [1],
+
+  "sql": [
+    "server/sql/insert-clinic-medicus-tim.sql",
+    "server/sql/insert-clinic-medicus-tim-services.sql"
+  ],
+
+  "status": {
+    "generated": "2026-09-03",
+    "appliedLocal": null,
+    "appliedProd": null,
+    "clinicId": null,
+    "doctorIds": {},
+    "note": "clinicId и doctorIds заполнить после применения — из блока VERIFICATION в конце обоих SQL."
+  },
+
+  "sources": [
+    {
+      "type": "google-places",
+      "ref": "data/google-places/podgorica/medicus-tim.json",
+      "collected": "2026-08-04",
+      "machineReadable": true,
+      "note": "Дал только place_id, координаты и город. Адреса у Google НЕТ: formattedAddress — плюс-код «F77V+JW4». Реверс-геокодинг по OSM Nominatim (не Google) даёт лишь район Златица и попадает в соседнюю парковку — номер дома оттуда брать нельзя."
+    },
+    {
+      "type": "google-places",
+      "ref": "data/google-places/all-podgorica.json",
+      "collected": "2026-08-04",
+      "machineReadable": true,
+      "note": "Тот же place_id, но 5 отзывов против 4 в пофайловом снимке (userRatingCount 5 против 4). Один прогон 04.08, Google отдал разную выборку на разные запросы. Если отзывы понадобятся — брать отсюда, но generate-reviews-sql.mjs ест только пофайловый JSON."
+    },
+    {
+      "type": "instagram",
+      "ref": "https://www.instagram.com/medicus_tim/",
+      "collected": "2026-09-03",
+      "machineReadable": false,
+      "note": "Основной и почти единственный источник. Машинно не читается ничем: WebFetch отдаёт только заголовок, curl с браузерным UA получает 200 и 600+ КБ залогиненной оболочки без og:description и профильного JSON, DuckDuckGo HTML — 202, Bing HTML — пустую выдачу. Данные сняты со скриншотов пользователя. Часть промо-постов помечена Instagram'ом «AI content», текст на картинках искажён."
+    },
+    {
+      "type": "facebook",
+      "ref": "https://www.facebook.com/p/Medicus-Tim-61573292403522/",
+      "collected": "2026-09-03",
+      "machineReadable": false,
+      "note": "Ничего не дал, кроме факта существования страницы. Записан в clinics.facebook."
+    }
+  ],
+
+  "coverage": {
+    "address": "Zlatica bb, prizemlje hotela Lazaro — только со скриншотов, у Google плюс-код",
+    "phone": "+38269898898;+38269884888",
+    "email": "не публикуется",
+    "website": "нет, только Instagram и Facebook",
+    "logo": "нет отдельного файла — логотип вшит в промо-картинки постов",
+    "doctorPhotos": "нет. Портреты живут только внутри промо-картинок (отдельного URL нет), и эти посты помечены «AI content» — как фото врача использовать нельзя",
+    "workingHours": "не публикуется ни в Instagram, ни в Google — clinic_working_hours пустая",
+    "prices": "не публикуются нигде. Под постом «Dopler donjih ekstremiteta» трое спрашивают цену, ответа нет. Все услуги с NULL",
+    "labTests": "лаборатория заявлена постом, но перечень дан ГРУППАМИ — конкретных анализов нет, clinic_lab_tests не заполнялась",
+    "reviews": "не импортировались по решению пользователя: 5 оценок, текст у одной, непоказательно"
+  },
+
+  "catalogAdditions": [
+    {
+      "table": "medical_services",
+      "nameEn": "MSCT Angiography",
+      "slug": "msct-angiography",
+      "categoryIds": [2],
+      "specialtyIds": [10],
+      "reason": "Источник заявляет «CT angiografija» без региона («detaljan prikaz krvnih sudova cijelog tijela»). В каталоге 12 региональных MSCT Angiography *, но ни одной общей; выбирать регионы за клинику — додумывание."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "HRCT Lungs",
+      "slug": "hrct-lungs",
+      "categoryIds": [2],
+      "specialtyIds": [10],
+      "reason": "«HRCT pluća». Ближайшее в каталоге, MSCT Lungs Covid Post-Covid, — другое исследование."
+    }
+  ],
+
+  "services": [
+    { "nameEn": "MSCT Coronary Angiography", "source": "CT koronarografija" },
+    { "nameEn": "MSCT Angiography", "source": "CT angiografija" },
+    { "nameEn": "MSCT Head (Endocranium) without Contrast", "source": "CT endokranijuma / CT glave i mozga" },
+    { "nameEn": "MSCT Head (Endocranium) with Contrast", "source": "CT endokranijuma / CT glave i mozga" },
+    { "nameEn": "MSCT Thorax (Chest) without Contrast", "source": "CT grudnog koša" },
+    { "nameEn": "MSCT Thorax (Chest) with Contrast", "source": "CT grudnog koša" },
+    { "nameEn": "MSCT Abdomen Native", "source": "CT abdomena (uključujući CT želuca)" },
+    { "nameEn": "MSCT Abdomen with Contrast", "source": "CT abdomena (uključujući CT želuca)" },
+    { "nameEn": "MSCT Abdomen and Pelvis Native", "source": "CT abdomena i karlice" },
+    { "nameEn": "MSCT Abdomen and Pelvis with Contrast", "source": "CT abdomena i karlice" },
+    { "nameEn": "MSCT Cervical Spine", "source": "CT kičme (vratne)" },
+    { "nameEn": "MSCT Thoracic Spine", "source": "CT kičme (grudne)" },
+    { "nameEn": "MSCT Lumbosacral Spine", "source": "CT kičme (slabinske)" },
+    { "nameEn": "MSCT Joint Pair", "source": "CT kičme i zglobova" },
+    { "nameEn": "MSCT IVU (Intravenous Urography)", "source": "CT urografija" },
+    { "nameEn": "MSCT Colonography", "source": "CT kolonografija" },
+    { "nameEn": "HRCT Lungs", "source": "HRCT pluća (high-resolution CT)" },
+    { "nameEn": "MSCT Chest Abdomen Pelvis Native", "source": "Body CT dijagnostika" },
+    { "nameEn": "MSCT Chest Abdomen Pelvis with Contrast", "source": "Body CT dijagnostika" },
+    { "nameEn": "CT Contrast Agent", "source": "контраст для перечисленных выше исследований" },
+
+    { "nameEn": "Echocardiography", "source": "Ultrazvuk srca / Ekspertski ultrazvuk srca" },
+    { "nameEn": "Abdomen Ultrasound", "source": "Ultrazvuk abdomena" },
+    { "nameEn": "Breast Ultrasound", "source": "Ultrazvuk dojke" },
+    { "nameEn": "Thyroid Ultrasound", "source": "Ultrazvuk štitaste žlijezde" },
+    { "nameEn": "Peripheral Region Ultrasound", "source": "Ultrazvuk perifernih regija" },
+    { "nameEn": "Soft Tissue Ultrasound", "source": "Ultrazvučni pregled mekih tkiva" },
+    { "nameEn": "Soft Tissue Ultrasound Muscle", "source": "Ultrazvučni pregled mišića" },
+    { "nameEn": "Musculoskeletal Ultrasound", "source": "Ultrazvučni pregled ahilove tetive" },
+    { "nameEn": "Orthopedic Ultrasound Single Joint", "source": "Ultrazvučni pregled ramena / koljena" },
+    { "nameEn": "Doppler Neck Blood Vessels", "source": "Dopler krvnih sudova vrata / Color Doppler krvnih sudova vrata" },
+    { "nameEn": "Doppler Upper Extremity Blood Vessels", "source": "Dopler krvnih sudova gornjih ekstremiteta" },
+    { "nameEn": "Doppler Lower Extremity Blood Vessels", "source": "Dopler krvnih sudova donjih ekstremiteta" },
+    { "nameEn": "Blood Vessels Doppler", "source": "Dopler perifernih krvnih sudova" },
+
+    { "nameEn": "Cardiologist Examination", "source": "Kardiološki pregled" },
+    { "nameEn": "ECG", "source": "Procjena poremećaja ritma i provođenja" },
+    { "nameEn": "Holter ECG Monitoring", "source": "Holter EKG" },
+    { "nameEn": "Holter Blood Pressure Monitoring", "source": "Holter pritiska" },
+
+    { "nameEn": "Internist Examination", "source": "Internistički pregled" },
+    { "nameEn": "First Nephrologist Examination", "source": "Nefrologija (bare-записи «Nephrologist Examination» в каталоге нет, только First/Follow-up)" },
+    { "nameEn": "Follow-up Nephrologist Examination", "source": "Nefrologija (bare-записи «Nephrologist Examination» в каталоге нет, только First/Follow-up)" },
+    { "nameEn": "Endocrinologist Examination", "source": "Endokrinološki pregled" },
+
+    { "nameEn": "Gynecological Specialist Examination", "source": "Ginekološki pregledi i konsultacije" },
+    { "nameEn": "PAP Test with Smear Collection", "source": "PAPA test i kolposkopija" },
+    { "nameEn": "Colposcopy", "source": "PAPA test i kolposkopija" },
+    { "nameEn": "Pregnancy Preventive Examination by Calendar", "source": "Praćenje trudnoće" },
+
+    { "nameEn": "Radiologist Examination", "source": "Konsultacije (dr Radinović)" },
+    { "nameEn": "Oncologist Examination", "source": "Specijalistički pregledi i konsultacije (dr Nikolić) / Subspecijalističke onkološke konsultacije (dr Kovčin)" }
+  ],
+
+  "doctors": [
+    {
+      "slug": "aida-kovacevic",
+      "nameSr": "Aida Kovačević",
+      "professionalTitle": "Dr",
+      "position": "Kardiolog",
+      "specialtyIds": [1],
+      "hasBio": false,
+      "services": ["Cardiologist Examination"],
+      "note": "Пост даёт только «Savremena kardiološka dijagnostika i liječenje» — это маркетинг, не факты, поэтому description_* не заполняется."
+    },
+    {
+      "slug": "miroslav-rabrenovic",
+      "nameSr": "Miroslav Rabrenović",
+      "professionalTitle": "Dr",
+      "position": "Spec. interne medicine – subspecijalista kardiologije",
+      "specialtyIds": [2, 1],
+      "hasBio": false,
+      "services": [
+        "Cardiologist Examination",
+        "Echocardiography",
+        "Holter ECG Monitoring",
+        "Holter Blood Pressure Monitoring"
+      ]
+    },
+    {
+      "slug": "nebojsa-ninkovic",
+      "nameSr": "Nebojša Ninković",
+      "professionalTitle": "Dr",
+      "position": "Internista – kardiolog",
+      "specialtyIds": [2, 1],
+      "hasBio": false,
+      "services": [
+        "Cardiologist Examination",
+        "Echocardiography",
+        "Doppler Upper Extremity Blood Vessels",
+        "Doppler Lower Extremity Blood Vessels",
+        "Doppler Neck Blood Vessels",
+        "ECG"
+      ]
+    },
+    {
+      "slug": "elvir-mucic",
+      "nameSr": "Elvir Mučić",
+      "professionalTitle": "Dr",
+      "position": "Specijalista interne medicine – nefrolog",
+      "specialtyIds": [2, 46],
+      "hasBio": true,
+      "services": [
+        "First Nephrologist Examination",
+        "Follow-up Nephrologist Examination",
+        "Internist Examination"
+      ]
+    },
+    {
+      "slug": "gordana-globarevic-vukcevic",
+      "nameSr": "Gordana Globarević Vukčević",
+      "professionalTitle": "Dr",
+      "position": "Specijalista ginekologije i akušerstva",
+      "specialtyIds": [5],
+      "hasBio": false,
+      "services": [
+        "Gynecological Specialist Examination",
+        "PAP Test with Smear Collection",
+        "Colposcopy",
+        "Pregnancy Preventive Examination by Calendar"
+      ],
+      "note": "Написание фамилии — см. openQuestions."
+    },
+    {
+      "slug": "valentina-kalinic",
+      "nameSr": "Valentina Kalinić",
+      "professionalTitle": "Dr",
+      "position": "Spec. interne medicine, subspec. endokrinologije",
+      "specialtyIds": [2, 12],
+      "hasBio": false,
+      "services": ["Internist Examination", "Endocrinologist Examination"]
+    },
+    {
+      "slug": "darko-radinovic",
+      "nameSr": "Darko Radinović",
+      "professionalTitle": "Dr",
+      "position": "Specijalista radiologije, subspecijalista interventne radiologije",
+      "specialtyIds": [10],
+      "hasBio": false,
+      "services": [
+        "Radiologist Examination",
+        "Peripheral Region Ultrasound",
+        "Abdomen Ultrasound",
+        "Thyroid Ultrasound",
+        "Doppler Neck Blood Vessels",
+        "Doppler Upper Extremity Blood Vessels",
+        "Doppler Lower Extremity Blood Vessels",
+        "Blood Vessels Doppler"
+      ],
+      "note": "Субспециализация «интервенционная радиология» отдельного значения в enums/specialty.ts не имеет — зафиксирована только в position."
+    },
+    {
+      "slug": "sanja-vrbica",
+      "nameSr": "Sanja Vrbica",
+      "professionalTitle": "Dr",
+      "position": "Spec. radiologije",
+      "specialtyIds": [10],
+      "hasBio": false,
+      "services": [
+        "Abdomen Ultrasound",
+        "Breast Ultrasound",
+        "Thyroid Ultrasound",
+        "Blood Vessels Doppler"
+      ]
+    },
+    {
+      "slug": "marina-mandaric",
+      "nameSr": "Marina Mandarić",
+      "professionalTitle": "Dr",
+      "position": "Specijalista radiologije",
+      "specialtyIds": [10],
+      "hasBio": false,
+      "services": [
+        "Breast Ultrasound",
+        "Abdomen Ultrasound",
+        "Thyroid Ultrasound",
+        "MSCT Chest Abdomen Pelvis Native",
+        "MSCT Chest Abdomen Pelvis with Contrast"
+      ]
+    },
+    {
+      "slug": "dejan-nikolic",
+      "nameSr": "Dejan Nikolić",
+      "professionalTitle": "Prof. dr",
+      "position": "Hirurg onkolog",
+      "specialtyIds": [77, 3],
+      "hasBio": true,
+      "services": ["Oncologist Examination"],
+      "note": "Redovni profesor hirurgije, redovni član Medicinske akademije SLD, osnivač prvog Melanoma centra na Balkanu, predsjednik Srpskog udruženja za karcinome kože."
+    },
+    {
+      "slug": "vladimir-kovcin",
+      "nameSr": "Vladimir Kovčin",
+      "professionalTitle": "Prof. dr",
+      "position": "Spec. interne medicine, subspec. onkologije",
+      "specialtyIds": [2, 47],
+      "hasBio": true,
+      "services": ["Oncologist Examination", "Internist Examination"],
+      "note": "40+ лет опыта; КБЦ «Bežanijska Kosa», Институт онкологии и радиологии Сербии, «Oncomed». 6 монографий, 23 главы, 200+ работ."
+    }
+  ],
+
+  "excluded": [
+    {
+      "source": "Šećer, Hormoni, Vitamini, Tumor markeri, Sistematski paketi",
+      "reason": "Лаборатория заявлена постом, но перечень дан ГРУППАМИ — конкретных анализов источник не называет. clinic_lab_tests не заполнялась, но тип DIAGNOSTIC_LAB (4) клинике проставлен."
+    },
+    {
+      "source": "Hipertenzija, Koronarne bolesti, Srčana slabost",
+      "reason": "Показания и состояния, а не услуги каталога."
+    },
+    {
+      "source": "Hormonski poremećaji i menopauza, Prevencija i rana dijagnostika",
+      "reason": "Темы приёма, а не отдельные услуги."
+    },
+    {
+      "source": "Stručno drugo mišljenje (dr Nikolić) / Drugo mišljenje (dr Kovčin)",
+      "reason": "Generic-услуги «второе мнение» в каталоге нет. Есть Pediatric Second Opinion Consultation и CT Radiology Second Opinion X-Ray — обе не подходят."
+    },
+    {
+      "source": "Konzilijarni pregled i predlog terapije (dr Kovčin)",
+      "reason": "Эквивалента в каталоге нет."
+    },
+    {
+      "source": "Pregled mladeža, Dijagnostika melanoma i karcinoma kože, Lipomi, ateromi, fibromi i tumori mekih tkiva (dr Nikolić)",
+      "reason": "Блок в посте озаглавлен «SPECIJALISTIČKI PREGLEDI I KONSULTACIJE» — все семь пунктов это осмотры, а не операции и не дерматоскопия. Заведён только приём онколога. Дерматоскопия в источнике не названа, достраивать нельзя."
+    },
+    {
+      "source": "Отзывы Google (5 оценок, текст у одной)",
+      "reason": "Решение пользователя: непоказательны."
+    },
+    {
+      "source": "Vaš pouzdan partner uz Lovćen i UNIQA osiguranje",
+      "reason": "Junction-таблицы «клиника ↔ страховая» в схеме нет. Факт перенесён в description_*."
+    }
+  ],
+
+  "openQuestions": [
+    {
+      "topic": "Написание фамилии гинеколога",
+      "detail": "Первый пост даёт «Gordana Globarevič Vukčevič» (č вместо ć) вместе с опечатками «prezjedi», «djagnostika», «menópauza» — картинка помечена «AI content» и текст в ней искажён. Второй пост той же врачихи даёт чистое «Globarević Vukčević». Взято второе как грамматически корректная сербская фамилия. Подтвердить у клиники."
+    },
+    {
+      "topic": "Контрастные варианты КТ",
+      "detail": "Источник называет области («CT abdomena»), каталог делит их на native/with contrast. Заведены ОБА варианта: клиника заявляет коронарографию, ангиографию и урографию, без контраста невозможные. Гранулярность каталога тоньше источника — решение под ревью."
+    },
+    {
+      "topic": "Body CT",
+      "detail": "«Body CT dijagnostika» (пост dr Mandarić, «dijagnostika cijelog tijela») сопоставлено с MSCT Chest Abdomen Pelvis Native/with Contrast. Точного эквивалента «всего тела» в каталоге нет."
+    },
+    {
+      "topic": "CT zglobova",
+      "detail": "«CT kičme i zglobova» — суставы сопоставлены с MSCT Joint Pair, единственной generic-суставной записью каталога. Три отдела позвоночника названы поимённо, поэтому три отдельные записи, а не MSCT Full Spine."
+    },
+    {
+      "topic": "Часы работы",
+      "detail": "Не публикуются нигде. clinic_working_hours пустая — заполнить после уточнения у клиники."
+    }
+  ]
+}

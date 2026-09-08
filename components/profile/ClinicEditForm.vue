@@ -38,6 +38,7 @@ const { t } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([clinicProfileI18n, cityI18n, languageI18n]),
 });
+const { uiText } = useUiText();
 
 const isCreate = computed(() => props.clinic == null);
 
@@ -172,6 +173,10 @@ const cities = computed(() =>
 		.sort((a, b) => a.text.localeCompare(b.text)),
 );
 
+const cityOptions = computed(() =>
+	cities.value.map(({ text, value }) => ({ value, label: text })),
+);
+
 // Индекс автоподставляется из выбранного города, пока пользователь
 // не ввёл свой (своим считаем всё, что не равно индексу прежнего города)
 watch(
@@ -198,6 +203,10 @@ const CLINIC_LANGUAGES = [
 
 const languages = computed(() =>
 	CLINIC_LANGUAGES.map((id) => ({ value: id, text: t(`language_${id}`) })),
+);
+
+const languageOptions = computed(() =>
+	languages.value.map(({ text, value }) => ({ value, label: text })),
 );
 
 // --- Логотип ---
@@ -415,19 +424,14 @@ async function save() {
 
 			<div class="clinic-form__field">
 				<label class="clinic-form__label">{{ t('FieldCity') }} *</label>
-				<el-select
+				<KitSelect
 					v-model="form.cityId"
+					:options="cityOptions"
 					:placeholder="t('FieldCityPlaceholder')"
+					:no-data-text="uiText('NothingFound')"
 					size="large"
 					filterable
-				>
-					<el-option
-						v-for="{ text, value } in cities"
-						:key="value"
-						:label="text"
-						:value="value"
-					/>
-				</el-select>
+				/>
 			</div>
 
 			<div class="clinic-form__field">
@@ -460,21 +464,15 @@ async function save() {
 
 			<div class="clinic-form__field">
 				<label class="clinic-form__label">{{ t('FieldLanguages') }} *</label>
-				<el-select
+				<KitSelect
 					v-model="form.languageIds"
+					:options="languageOptions"
 					:placeholder="t('FieldLanguagesPlaceholder')"
+					:no-data-text="uiText('NothingFound')"
+					:max-tags="3"
 					size="large"
 					multiple
-					collapse-tags
-					collapse-tags-tooltip
-				>
-					<el-option
-						v-for="{ text, value } in languages"
-						:key="value"
-						:label="text"
-						:value="value"
-					/>
-				</el-select>
+				/>
 			</div>
 		</div>
 

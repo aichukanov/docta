@@ -1,9 +1,10 @@
 import { fixUrlRegionalParams } from '../common/redirect/regional-settings';
 import { fixRetiredFilterIds } from '../common/redirect/retired-filter-ids';
+import { buildRemovedMedicationsAction } from '../common/redirect/removed-medications';
 import { checkSlugRedirect } from '../common/redirect/slug-redirects';
 import { parseSitemapSectionPath, sendSitemap } from '../common/sitemap/utils';
 import { getSitemapIndex, getSitemapSection } from '../common/sitemap/sitemap';
-import { requireAdmin } from '~/server/common/auth';
+import { getCurrentUser } from '~/server/common/auth';
 
 export default defineEventHandler(async (event) => {
 	const { pathname, searchParams } = getRequestURL(event);
@@ -14,7 +15,8 @@ export default defineEventHandler(async (event) => {
 	// Постоянный редирект, потому что зависит только от URL. Корень трогать
 	// нельзя: `/` — это и есть путь без слеша.
 	if (pathname.length > 1 && pathname.endsWith('/')) {
-		const target = pathname.slice(0, -1) + (searchParams.size ? `?${searchParams}` : '');
+		const target =
+			pathname.slice(0, -1) + (searchParams.size ? `?${searchParams}` : '');
 		await sendRedirect(event, target, 301);
 		return;
 	}
@@ -57,17 +59,66 @@ export default defineEventHandler(async (event) => {
 	) {
 		// ignore these calls
 	} else if (pathArray[0] === 'admin') {
-		// Без await бросок уходил в отклонённый промис: h3 его не видел, гард
-		// молча пропускал кого угодно, а на каждый запрос оставался
-		// необработанный rejection. Данные при этом не утекали (все админские
-		// эндпоинты зовут requireAdmin корректно, страница — SPA-оболочка без
-		// данных), но краулер получал 200 вместо 401.
-		await requireAdmin(event);
+		// Это страница, а не API, поэтому здесь НЕ `requireAdmin`: он бросает
+		// 401 с телом JSON, и браузер на такой ответ предлагает скачать файл
+		// вместо того, чтобы что-то показать. Сам `requireAdmin` не трогаем —
+		// его зовут 54 эндпоинта, и там JSON как раз правильный ответ.
+		//
+		// Раньше гард тут вызывался без `await`: бросок уходил в отклонённый
+		// промис, h3 его не видел, и админка отдавала 200 кому угодно. Данные
+		// при этом не утекали (страница — SPA-оболочка, а её API защищены), но
+		// краулер видел живую страницу.
+		const user = await getCurrentUser(event);
+
+		if (!user) {
+			// Куда вернуться после входа: страница логина обычно берёт адрес из
+			// sessionStorage (его кладёт middleware/admin-auth.ts), но серверный
+			// редирект туда писать не может — передаём параметром.
+			const target = pathname + (searchParams.size ? `?${searchParams}` : '');
+
+			await sendRedirect(
+				event,
+				`/login?redirect=${encodeURIComponent(target)}`,
+				302,
+			);
+			return;
+		}
+
+		if (!user.is_admin) {
+			// Залогинен, но не админ: логин ему не поможет, показывать нечего.
+			await sendRedirect(event, '/', 302);
+			return;
+		}
 	} else {
 		// Редирект с числовых ID на slug-ссылки (включая объединённые сущности)
 		const slugRedirect = await checkSlugRedirect(event, pathArray);
 		if (slugRedirect) {
 			await sendRedirect(event, slugRedirect.url, slugRedirect.status);
+			return;
+		}
+
+		// Снятый раздел `/medications` — см. removed-medications.ts. Идёт ПОСЛЕ
+		// slug-редиректа осознанно: тот превращает `/clinics/42/medications` в
+		// `/clinics/<slug>` одним хопом (хвост пути он отбрасывает сам), а
+		// поставь мы проверку раньше — вышло бы два.
+		const removedMedications = buildRemovedMedicationsAction(
+			pathArray,
+			getQuery(event),
+		);
+		if (removedMedications) {
+			if (removedMedications.type === 'gone') {
+				// 410, а не 404: страницы удалены намеренно и навсегда, преемника
+				// у карточки нет (см. комментарий в removed-medications.ts).
+				// createError, а не setResponseStatus: иначе Nuxt пошёл бы дальше
+				// и отрисовал бы обычную страницу «не найдено» с кодом 200.
+				throw createError({ statusCode: 410, statusMessage: 'Gone' });
+			}
+
+			await sendRedirect(
+				event,
+				removedMedications.url,
+				removedMedications.status,
+			);
 			return;
 		}
 

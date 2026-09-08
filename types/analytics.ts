@@ -18,10 +18,9 @@ export type AnalyticsEntityType =
 	| 'doctor'
 	| 'service'
 	| 'labtest'
-	// medicine — регистр лекарств (med_medicines), medication — аптечные
-	// позиции клиник (medications): разные таблицы, id пересекаются
+	// medicine — регистр лекарств (med_medicines). Парного 'medication'
+	// (аптечные позиции клиник) больше нет: раздел снят с сайта.
 	| 'medicine'
-	| 'medication'
 	| 'article';
 
 export type AnalyticsContactType =

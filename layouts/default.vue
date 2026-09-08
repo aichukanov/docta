@@ -363,7 +363,7 @@ body {
 body {
 	width: 100%;
 	background-color: var(--kit-color-bg-primary);
-	font-family: system-ui;
+	font-family: var(--kit-font-family);
 	font-size: var(--kit-font-size-base);
 	overflow-x: hidden;
 	overflow-y: auto;

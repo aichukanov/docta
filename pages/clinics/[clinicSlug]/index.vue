@@ -6,6 +6,8 @@ import { formatClinicAddressLine } from '~/common/clinic-address';
 import {
 	CLINIC_ITEMS_INLINE_THRESHOLD,
 	OG_IMAGE,
+	OG_IMAGE_HEIGHT,
+	OG_IMAGE_WIDTH,
 	REVIEWS_THRESHOLD,
 	SITE_NAME,
 	SITE_URL,
@@ -81,7 +83,12 @@ const clinicId = computed(() => clinicData.value?.id);
 const { pending: isLoading, data: clinicPayload } = await useFetch(
 	'/api/clinics/details',
 	{
-		key: 'clinic-details',
+		// Slug в ключе обязателен. При клиентском переходе клиника → клиника
+		// старый экземпляр страницы ещё жив (Suspense держит его, пока новый
+		// ждёт этот await), и со статичным ключом Nuxt отдавал новому экземпляру
+		// asyncData старого — вместе с его обработчиком и старым slug в body.
+		// Страница так и оставалась с прежней клиникой.
+		key: `clinic-details:${clinicSlug.value}`,
 		method: 'POST',
 		body: computed(() => ({
 			slug: clinicSlug.value,
@@ -134,7 +141,6 @@ const totals = computed(() => ({
 	doctors: itemsSummary.value?.doctors.totalCount ?? 0,
 	services: itemsSummary.value?.services.totalCount ?? 0,
 	labtests: itemsSummary.value?.labtests.totalCount ?? 0,
-	medications: itemsSummary.value?.medications.totalCount ?? 0,
 }));
 
 const isInline = (total: number) =>
@@ -144,7 +150,6 @@ const renderInline = computed(() => ({
 	doctors: isInline(totals.value.doctors),
 	services: isInline(totals.value.services),
 	labtests: isInline(totals.value.labtests),
-	medications: isInline(totals.value.medications),
 }));
 
 const fetchInlineList = async <T,>(
@@ -163,13 +168,12 @@ const fetchInlineList = async <T,>(
 	return res ?? empty;
 };
 
-// Все пять запросов зависят только от уже загруженных деталей клиники, но не
-// друг от друга: последовательные await давали пять round-trip'ов подряд.
+// Все четыре запроса зависят только от уже загруженных деталей клиники, но не
+// друг от друга: последовательные await давали четыре round-trip'а подряд.
 // Образец — pages/doctors/index.vue.
 const [
 	{ data: doctorsList },
 	{ data: labTestsList },
-	{ data: medicationsList },
 	{ data: medicalServicesList },
 	{ data: workingHoursData },
 ] = await Promise.all([
@@ -192,19 +196,6 @@ const [
 			fetchInlineList<LabTestList>(
 				'/api/labtests/list',
 				renderInline.value.labtests,
-				{
-					items: [],
-					totalCount: 0,
-				},
-			),
-		{ watch: [renderInline, clinicId] },
-	),
-	useAsyncData(
-		`medications-list-clinic-${clinicSlug.value}`,
-		() =>
-			fetchInlineList<ClinicServiceList>(
-				'/api/medications/list',
-				renderInline.value.medications,
 				{
 					items: [],
 					totalCount: 0,
@@ -295,7 +286,6 @@ const clinicDescription = computed(() => {
 
 const clinicDoctors = computed(() => doctorsList.value?.doctors || []);
 const clinicLabTests = computed(() => labTestsList.value?.items || []);
-const clinicMedications = computed(() => medicationsList.value?.items || []);
 const clinicMedicalServices = computed(
 	() => medicalServicesList.value?.items || [],
 );
@@ -357,9 +347,6 @@ const servicesSummary = computed(
 const labtestsSummary = computed(
 	() => itemsSummary.value?.labtests ?? EMPTY_TYPE_SUMMARY,
 );
-const medicationsSummary = computed(
-	() => itemsSummary.value?.medications ?? EMPTY_TYPE_SUMMARY,
-);
 const doctorsSummary = computed(
 	() => itemsSummary.value?.doctors ?? EMPTY_TYPE_SUMMARY,
 );
@@ -398,12 +385,6 @@ const tabs = computed(() => {
 		result.push({
 			id: 'labtests',
 			label: `${t('TabLabTests')} (${totals.value.labtests})`,
-		});
-	}
-	if (totals.value.medications > 0) {
-		result.push({
-			id: 'medications',
-			label: `${t('TabMedications')} (${totals.value.medications})`,
 		});
 	}
 	if (clinicData.value) {
@@ -662,15 +643,15 @@ useSeoMeta({
 	ogTitle: ogTitleText,
 	ogDescription: pageDescription,
 	ogImage: ogImageUrl,
-	// Размеры проставляем только для купона — он рисуется под 1200×630, и с
-	// ними Facebook показывает превью сразу, не дожидаясь своей загрузки
-	ogImageWidth: computed(() => (couponOgImage.value ? 1200 : undefined)),
-	ogImageHeight: computed(() => (couponOgImage.value ? 630 : undefined)),
+	// Размеры — всегда: и картинка купона, и дефолтная теперь 1200×630
+	// (server/api/og/default.jpg). Раньше здесь стоял undefined без купона, а
+	// undefined в useSeoMeta не «оставляет как в app.vue», а СНИМАЕТ тег —
+	// то есть страница клиники теряла размеры, выставленные глобально, и
+	// Facebook снова ждал собственной загрузки картинки.
+	ogImageWidth: OG_IMAGE_WIDTH,
+	ogImageHeight: OG_IMAGE_HEIGHT,
 	// og:type business.business валиден для Facebook, но отсутствует в union-типе useSeoMeta
 	ogType: 'business.business' as 'website',
-	twitterCard: computed(() =>
-		couponOgImage.value ? 'summary_large_image' : 'summary',
-	),
 	twitterTitle: ogTitleText,
 	twitterDescription: pageDescription,
 	twitterImage: ogImageUrl,
@@ -721,10 +702,6 @@ watchEffect(() => {
 			clinicLabTests.value.length > 0
 				? clinicLabTests.value
 				: topItemsToOffers(itemsSummary.value?.labtests.topItems, cid);
-		const schemaMedications =
-			clinicMedications.value.length > 0
-				? clinicMedications.value
-				: topItemsToOffers(itemsSummary.value?.medications.topItems, cid);
 		const schemaDoctors =
 			clinicDoctors.value.length > 0
 				? clinicDoctors.value
@@ -745,7 +722,6 @@ watchEffect(() => {
 				getCityName,
 				services: schemaServices,
 				labTests: schemaLabTests,
-				medications: schemaMedications,
 				doctors: schemaDoctors,
 				workingHours: workingHoursData.value,
 				// rating не передаём: API-агрегат включает сторонние отзывы
@@ -1005,54 +981,6 @@ watchEffect(() => {
 				</ClinicItemsSummary>
 			</EntityPageSection>
 
-			<!-- Medications -->
-			<EntityPageSection v-if="totals.medications > 0" sectionId="medications">
-				<ClinicServiceSection
-					v-if="renderInline.medications"
-					:title="t('MedicationsAtClinic')"
-					:items="clinicMedications"
-					routeName="medications"
-				>
-					<template #icon><IconMedication /></template>
-					<template #default="{ item }">
-						<PricedItemCard
-							:id="item.id"
-							:slug="item.slug"
-							:name="item.name"
-							:localName="item.localName"
-							:price="getClinicPrice(item.clinicPrices)?.price"
-							:priceMax="getClinicPrice(item.clinicPrices)?.priceMax"
-							routeName="medications-medicationSlug"
-							routeParamName="medicationSlug"
-						/>
-					</template>
-				</ClinicServiceSection>
-				<ClinicItemsSummary
-					v-else
-					:title="t('MedicationsAtClinic')"
-					:summary="medicationsSummary"
-					:clinicSlug="clinicSlug"
-					subpageRouteName="clinics-clinicSlug-medications"
-					categoryQueryKey="category"
-					:getCategoryTitle="() => ''"
-					:viewAllLabel="t('ViewAllMedications', { count: totals.medications })"
-					:popularLabel="t('PopularLabel')"
-				>
-					<template #icon><IconMedication /></template>
-					<template #item="{ item }">
-						<PricedItemCard
-							:id="item.id"
-							:slug="item.slug"
-							:name="item.name"
-							:localName="item.localName"
-							:price="item.price"
-							:priceMax="item.priceMax"
-							routeName="medications-medicationSlug"
-							routeParamName="medicationSlug"
-						/>
-					</template>
-				</ClinicItemsSummary>
-			</EntityPageSection>
 
 			<!-- Reviews -->
 			<EntityPageSection v-if="clinicData" sectionId="reviews">
@@ -1121,7 +1049,6 @@ watchEffect(() => {
 		"Contacts": "Contacts",
 		"MedicalServicesAtClinic": "Medical services",
 		"LabTestsAtClinic": "Lab tests",
-		"MedicationsAtClinic": "Medications",
 		"NoServicesAtClinic": "Information about services is not yet available",
 		"TabAbout": "About",
 		"TabContacts": "Contacts",
@@ -1135,7 +1062,6 @@ watchEffect(() => {
 		"SeoDescCta": "Find a doctor on Docta.me",
 		"ViewAllServices": "All services ({count})",
 		"ViewAllLabTests": "All lab tests ({count})",
-		"ViewAllMedications": "All medications ({count})",
 		"ViewAllDoctors": "All specialists ({count})",
 		"PopularLabel": "Popular",
 		"ByCategoryLabel": "Browse by category",
@@ -1146,7 +1072,6 @@ watchEffect(() => {
 		"Contacts": "Контакты",
 		"MedicalServicesAtClinic": "Медицинские услуги",
 		"LabTestsAtClinic": "Анализы",
-		"MedicationsAtClinic": "Лекарства",
 		"NoServicesAtClinic": "У нас пока нет информации об услугах",
 		"TabAbout": "Описание",
 		"TabContacts": "Контакты",
@@ -1160,7 +1085,6 @@ watchEffect(() => {
 		"SeoDescCta": "Найдите врача на Docta.me",
 		"ViewAllServices": "Все услуги ({count})",
 		"ViewAllLabTests": "Все анализы ({count})",
-		"ViewAllMedications": "Все лекарства ({count})",
 		"ViewAllDoctors": "Все специалисты ({count})",
 		"PopularLabel": "Популярные",
 		"ByCategoryLabel": "По категориям",
@@ -1171,7 +1095,6 @@ watchEffect(() => {
 		"Contacts": "Kontakte",
 		"MedicalServicesAtClinic": "Medizinische Dienstleistungen",
 		"LabTestsAtClinic": "Laboruntersuchungen",
-		"MedicationsAtClinic": "Medikamente",
 		"NoServicesAtClinic": "Informationen über die Leistungen sind noch nicht verfügbar",
 		"TabAbout": "Über uns",
 		"TabContacts": "Kontakte",
@@ -1185,7 +1108,6 @@ watchEffect(() => {
 		"SeoDescCta": "Finden Sie einen Arzt auf Docta.me",
 		"ViewAllServices": "Alle Leistungen ({count})",
 		"ViewAllLabTests": "Alle Laboruntersuchungen ({count})",
-		"ViewAllMedications": "Alle Medikamente ({count})",
 		"ViewAllDoctors": "Alle Spezialisten ({count})",
 		"PopularLabel": "Beliebt",
 		"ByCategoryLabel": "Nach Kategorie",
@@ -1196,7 +1118,6 @@ watchEffect(() => {
 		"Contacts": "İletişim",
 		"MedicalServicesAtClinic": "Tıbbi hizmetler",
 		"LabTestsAtClinic": "Laboratuvar testleri",
-		"MedicationsAtClinic": "İlaçlar",
 		"NoServicesAtClinic": "Hizmetler hakkında henüz bilgi bulunmamaktadır",
 		"TabAbout": "Hakkında",
 		"TabContacts": "İletişim",
@@ -1210,7 +1131,6 @@ watchEffect(() => {
 		"SeoDescCta": "Docta.me'de doktor bulun",
 		"ViewAllServices": "Tüm hizmetler ({count})",
 		"ViewAllLabTests": "Tüm laboratuvar testleri ({count})",
-		"ViewAllMedications": "Tüm ilaçlar ({count})",
 		"ViewAllDoctors": "Tüm uzmanlar ({count})",
 		"PopularLabel": "Popüler",
 		"ByCategoryLabel": "Kategoriye göre",
@@ -1221,7 +1141,6 @@ watchEffect(() => {
 		"Contacts": "Kontakti",
 		"MedicalServicesAtClinic": "Medicinske usluge",
 		"LabTestsAtClinic": "Laboratorijske analize",
-		"MedicationsAtClinic": "Lijekovi",
 		"NoServicesAtClinic": "Trenutno nemamo informacije o uslugama",
 		"TabAbout": "Opis",
 		"TabContacts": "Kontakti",
@@ -1235,7 +1154,6 @@ watchEffect(() => {
 		"SeoDescCta": "Pronađite ljekara na Docta.me",
 		"ViewAllServices": "Sve usluge ({count})",
 		"ViewAllLabTests": "Sve analize ({count})",
-		"ViewAllMedications": "Svi lijekovi ({count})",
 		"ViewAllDoctors": "Svi stručnjaci ({count})",
 		"PopularLabel": "Popularno",
 		"ByCategoryLabel": "Po kategoriji",
@@ -1246,7 +1164,6 @@ watchEffect(() => {
 		"Contacts": "Контакти",
 		"MedicalServicesAtClinic": "Медицинске услуге",
 		"LabTestsAtClinic": "Лабораторијске анализе",
-		"MedicationsAtClinic": "Лијекови",
 		"NoServicesAtClinic": "Тренутно немамо информације о услугама",
 		"TabAbout": "Опис",
 		"TabContacts": "Контакти",
@@ -1260,7 +1177,6 @@ watchEffect(() => {
 		"SeoDescCta": "Пронађите љекара на Docta.me",
 		"ViewAllServices": "Све услуге ({count})",
 		"ViewAllLabTests": "Све анализе ({count})",
-		"ViewAllMedications": "Сви лијекови ({count})",
 		"ViewAllDoctors": "Сви стручњаци ({count})",
 		"PopularLabel": "Популарно",
 		"ByCategoryLabel": "По категорији",

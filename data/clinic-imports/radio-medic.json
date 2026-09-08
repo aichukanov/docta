@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "slug": "radio-medic",
+  "name": "Radio Medic",
+  "city": "Podgorica",
+  "cityId": 1,
+  "googlePlaceId": "ChIJ-fDjmKTtTRMRm7C_ZAf5_uA",
+  "clinicTypeIds": [1],
+  "languageIds": [1],
+
+  "sql": [
+    "server/sql/insert-clinic-radio-medic.sql",
+    "server/sql/reviews-google/radio-medic-podgorica.sql"
+  ],
+
+  "status": {
+    "generated": "2026-09-03",
+    "appliedLocal": null,
+    "appliedProd": null,
+    "clinicId": null,
+    "doctorIds": {},
+    "note": "Порядок применения обязателен: второй SQL резолвит @clinic_id по google_place_id, до первого он даст NULL. clinicId и doctorIds заполнить после применения — из блока VERIFICATION в конце insert-clinic-radio-medic.sql."
+  },
+
+  "sources": [
+    {
+      "type": "website",
+      "ref": "https://radiomedic.me/",
+      "collected": "2026-09-03",
+      "machineReadable": true,
+      "note": "WordPress + Divi. Читается через WP REST API: /index.php?rest_route=/wp/v2/pages&per_page=30 отдаёт все 7 страниц (home, o-nama, magnetna-rezonanca-podgorica, skener, rentgen-podgorica, ultrazvuk, kontakt). В content.rendered остаются Divi-шорткоды [et_pb_*] — снимать вместе с HTML-тегами, иначе текст утонет в атрибутах. Дал адрес, телефоны, часы работы, модели аппаратов и рекламные тексты по модальностям. Ни одного имени врача, ни одной цены."
+    },
+    {
+      "type": "google-places",
+      "ref": "data/google-places/podgorica/radio-medic.json",
+      "collected": "2026-09-03",
+      "machineReadable": true,
+      "note": "Дал place_id, координаты (42.43067270 / 19.29123490 — единственный источник) и телефон +382 67 081 222. formattedAddress искажён: «UL, 2/1 Husinjskih Rudara, Podgorica 81000» — порядок слов сломан, адрес брать с сайта. ⚠️ Файл смешанный: 101 отзыв добавлен HTML-парсингом, а API-метадата в нём от прежнего сбора — userRatingCount 11 и rating 5 против фактических 101 отзыва (99×5★, 2×1★). При сверке количества отзывов на эти поля не опираться."
+    },
+    {
+      "type": "instagram",
+      "ref": "https://www.instagram.com/radiomedic.me/",
+      "collected": "2026-09-03",
+      "machineReadable": false,
+      "note": "Единственный источник состава врачей и перечня услуг — на сайте нет ни страницы команды, ни прайса. Данные сняты со скриншотов пользователя (посты «NAŠ TIM», «SAVREMENA OPREMA», «AKCIJA MR KOMPLETNE KIČME», «CT SNIMAK SINUSA», «SPECIJALNA CIJENA DOPLER», Stories «Ultrazvuk», «Magnet»). Bio независимо подтвердил адрес, оба телефона и сайт."
+    },
+    {
+      "type": "facebook",
+      "ref": "https://www.facebook.com/profile.php?id=61583620962680",
+      "collected": "2026-09-03",
+      "machineReadable": false,
+      "note": "Ссылка найдена только на /kontakt (у соц-иконок в футере остальных страниц Divi не проставил href). Ничего не дал, кроме факта существования страницы. Записан в clinics.facebook как profile.php?id=... — так же, как у клиник 23, 30, 60, 80, 102."
+    }
+  ],
+
+  "coverage": {
+    "address": "Husinjskih rudara 2/1 — сайт («ul Husinjskih Rudara 2/1», «Husinjskih rudara br 2/1, Podgorica»), bio Instagram и Google согласованы. Записан в сербской орфографии, кириллица «Хусињских рудара 2/1»",
+    "phone": "+38267081222;+38260020022 — оба с сайта и из bio Instagram, первый подтверждён Google",
+    "email": "не публикуется нигде: ни на сайте, ни формой обратной связи, ни в bio Instagram",
+    "website": "https://radiomedic.me/",
+    "logo": "нет отдельного файла — логотип вшит в картинки постов Instagram",
+    "doctorPhotos": "нет. Портреты живут только внутри карточек «NAŠ TIM», отдельных стабильных URL нет. photo_url у всех трёх NULL",
+    "workingHours": "пн–сб 07:00–21:00, вс закрыто — «Ponedeljak - Subota / Nedeljom ne radimo / 07 – 21h» в футере всех страниц сайта",
+    "prices": "одна из 17 позиций. MR cijele kičme = 255 € — зачёркнутая ОБЫЧНАЯ цена с карточки «AKCIJA» (255 € → 160 € do 15. septembra). Акционные цены не импортируются по решению владельца каталога, см. excluded",
+    "labTests": "лаборатории нет — клиника занимается только лучевой диагностикой. clinic_lab_tests не заполнялась",
+    "reviews": "101 отзыв импортирован (99×5★, 2×1★ без текста), ответов клиники нет. 27 отзывов с текстом переведены на sr/sr-cyrl/en/ru/de/tr вручную двухпроходным режимом — ANTHROPIC_API_KEY в .env отсутствует. Переводы: data/review-translations/radio-medic-podgorica-translations.json",
+    "equipment": "Philips MR 5300 (тунель 70 cm, AI-поток), Philips Incisive CT, Siemens MULTIX Impact (цифровой рентген), Siemens ACUSON Juniper (УЗ). Названы и на сайте, и постом «SAVREMENA OPREMA, JASNIJI UVID» — перенесено в description_*"
+  },
+
+  "catalogAdditions": [],
+
+  "services": [
+    { "nameEn": "MRI Full Spine", "source": "MR KOMPLETNE KIČME (пост «AKCIJA», 255 € → 160 €)" },
+    { "nameEn": "MRI Brain", "source": "MR mozga — «Precizan prikaz mozga i centralnog nervnog sistema» / «Kada je potrebno uraditi MR glave?»" },
+    { "nameEn": "MRI Knee Joint", "source": "«Kada je potrebno uraditi MR KOLJENA?»" },
+    { "nameEn": "MRI Musculoskeletal System", "source": "MR zglobno-koštanih struktura — «Detaljan prikaz zglobova, ligamenata, tetiva i okolnih mekanih tkiva»" },
+    { "nameEn": "MRI Pelvis", "source": "MR male karlice — «Precizan pregled koji daje važan uvid u stanje organa, mekih tkiva i drugih struktura male karlice»" },
+    { "nameEn": "MRI Prostate (Multiparametric)", "source": "«MR PROSTATE — Precizna i pravovremena dijagnostika»" },
+
+    { "nameEn": "MSCT Thorax (Chest) without Contrast", "source": "«CT PLUĆA — Precizan pregled kada je potreban detaljniji uvid u stanje pluća»" },
+    { "nameEn": "MSCT Paranasal Sinuses without Contrast", "source": "«CT SNIMAK SINUSA — Skenerom se prikazuje veličina svih sinusa, izgled njihovih koštanih zidova kao i izgled sluznice šupljina»" },
+
+    { "nameEn": "Abdomen Ultrasound", "source": "Abdomen (Stories «Koje se sve regije mogu snimiti ultrazvukom?»)" },
+    { "nameEn": "Thyroid Ultrasound", "source": "Štitasta žlijezda (Stories «Koje se sve regije mogu snimiti ultrazvukom?»)" },
+    { "nameEn": "Breast Ultrasound", "source": "Dojke (Stories «Koje se sve regije mogu snimiti ultrazvukom?»)" },
+    { "nameEn": "Blood Vessels Doppler", "source": "Krvni sudovi (Stories «Koje se sve regije mogu snimiti ultrazvukom?»)" },
+    { "nameEn": "Soft Tissue Ultrasound", "source": "Meki dijelovi (Stories «Koje se sve regije mogu snimiti ultrazvukom?»)" },
+    { "nameEn": "Musculoskeletal Ultrasound", "source": "Zglobovi, mišići i tetive (Stories «Koje se sve regije mogu snimiti ultrazvukom?»)" },
+    { "nameEn": "Urinary Tract Ultrasound", "source": "Urogenitalna regija (Stories «Koje se sve regije mogu snimiti ultrazvukom?»)" },
+
+    { "nameEn": "Lower Extremity Doppler", "source": "«DOPLER donjih ekstremiteta i vrata» (карточка «SPECIJALNA CIJENA», цена не взята)" },
+    { "nameEn": "Neck Doppler", "source": "«DOPLER donjih ekstremiteta i vrata» (карточка «SPECIJALNA CIJENA», цена не взята)" }
+  ],
+
+  "doctors": [
+    {
+      "slug": "mersida-cosovic",
+      "nameSr": "Mersida Ćosović",
+      "professionalTitle": "Dr",
+      "position": "Specijalista radiologije",
+      "specialtyIds": [10],
+      "hasBio": true,
+      "services": [],
+      "note": "Карточка «NAŠ TIM»: «Doktor medicine», «Specijalizacija Radiologija», «Osnovne studije i specijalizaciju završila na medicinskom fakultetuu Beogradu» (опечатка «fakultetuu» в источнике), «Edukacija i stručna usavršavanja u zemlji i regionu». Всё перенесено в description_*."
+    },
+    {
+      "slug": "aleksandra-jaric",
+      "nameSr": "Aleksandra Jarić",
+      "professionalTitle": "Dr",
+      "position": "Specijalista patologije dojke",
+      "specialtyIds": [10, 76],
+      "hasBio": true,
+      "services": [],
+      "note": "Карточка «NAŠ TIM»: 20+ лет радиологической диагностики в Институте онкологии и радиологии Сербии, национальный координатор скрининга рака груди в Сербии 2012–2014, участник проекта фондов ЕС. Две специальности: RADIOLOGY (10) по стажу и MAMMOLOGY (76) по «patologija dojke». ONCOLOGY (47) НЕ ставили: диагностика злокачественных заболеваний — не лечение, это была бы заявка сверх источника."
+    },
+    {
+      "slug": "oliver-radmili",
+      "nameSr": "Oliver Radmili",
+      "professionalTitle": "Dr",
+      "position": "Specijalista radiologije, subspecijalista angiologije",
+      "specialtyIds": [10],
+      "hasBio": true,
+      "services": [],
+      "note": "Карточка «NAŠ TIM»: «Ekspert za dijagnostiku», MDCT диагностика кардиоваскулярной системы, работает в Клинике васкулярной и эндоваскулярной хирургии УКЦ Сербии. Ангиологии отдельного значения в enums/specialty.ts нет; VASCULAR_SURGERY (34) был бы ошибкой — он радиолог, а не хирург, а клиника УКЦ — место работы, не специальность. Субспециализация зафиксирована в position и description_*."
+    }
+  ],
+
+  "excluded": [
+    {
+      "source": "Doktorica Mirela Kalic strucna i preljubazna (отзыв jelena jelena, 3 месяца назад)",
+      "reason": "Решение «завести карточку» принималось до того, как нашлись посты «NAŠ TIM», и его посылка изменилась дважды. 1) Она УЖЕ есть в базе: doctors.id = 1359, slug mirela-kalic, radiology, привязана к клинике 138 «Opšta Bolnica Berane» (импорт 2026-07-20) — то есть речь была бы о привязке второй клиники, а не о создании. 2) Сводная карточка «NAŠ TIM — SPECIJALISTA RADIOLOGIJE» перечисляет только Ćosović / Jarić / Radmili, её в составе нет. Единственный источник — отзыв пациента, фамилия в нём без диакритики. В SQL лежит готовая закомментированная строка INSERT IGNORE INTO doctor_clinics (1359, @clinic_id). См. openQuestions."
+    },
+    {
+      "source": "nasmijana, harizmatična i pozitivna Vanja Matović / Dunja je odlicna!",
+      "reason": "Роли в отзывах не указаны, в составе врачей их нет. Скорее всего техники или администраторы — таблица doctors только для врачей."
+    },
+    {
+      "source": "160 € за MR kompletne kičme (do 15. septembra); SPECIJALNA CIJENA DOPLER donjih ekstremiteta i vrata 60 €; CT -40% / MAGNET -30% do 15. septembra",
+      "reason": "Решение владельца каталога: за акциями клиник мы не следим, скидки игнорируем. Взята только зачёркнутая обычная цена 255 € за MR cijele kičme. Доплер 60 € вдвойне непригоден — это цена на ПАРУ услуг, её нельзя разложить на две позиции каталога. В clinic_coupons тоже не заводили: схема хранит один discount_percent на весь applies_to, две разные скидки по модальностям (CT -40% / MAGNET -30%) в неё не укладываются."
+    },
+    {
+      "source": "CT skenerom obavljamo snimanja svih regija tijela: glave, grudnog koša, abdomena, karlice, kičme, sinusa, krvnih sudova (angio CT)",
+      "reason": "Перечисление возможностей аппарата в рекламном тексте сайта, а не заявленный прайс. В позиции каталога развёрнуты только те регионы, которые клиника назвала ОТДЕЛЬНЫМ постом или Stories (pluća, sinusi). Остальные — домысел."
+    },
+    {
+      "source": "Radimo rendgensko snimanje pluća, kostiju, kičme, ekstremiteta, sinusa i drugih anatomskih oblasti; RENDGEN — KORISTI SE: kosti, pluća",
+      "reason": "Ни одной конкретной проекции или снимка клиника не называет — только области применения аппарата. Рентгеновские позиции не заводили, аппарат Siemens MULTIX Impact упомянут в description_*."
+    },
+    {
+      "source": "MR kičme (Stories «Zašto je MR kičme važan?»)",
+      "reason": "Generic-позиция без отдела. Клиника отдельно заявляет MR KOMPLETNE KIČME, она и заведена как MRI Full Spine. Разворачивать в три сегмента (шейный/грудной/поясничный) источник не даёт оснований."
+    },
+    {
+      "source": "jedini u Crnoj Gori posjedujemo potpuno NOVU magnetnu rezonancu s AI tehnologijom; najmoderniji CT skener u Podgorici; najbolji izbor",
+      "reason": "Маркетинговые превосходные степени — заявление клиники, а не проверяемый факт. В description_* оставлены только модели аппаратов и их характеристики (ширина тунеля 70 cm, снижение дозы, 3D-реконструкции)."
+    },
+    {
+      "source": "Отзывы на русском и английском в выдаче Google",
+      "reason": "В clinic_languages только SR (1). Языки сопровождения клиника заявляет отдельно и явно, radiomedic.me и Instagram об этом не пишут ничего; язык отзыва — язык пациента, а не заявление клиники."
+    }
+  ],
+
+  "openQuestions": [
+    {
+      "topic": "Тип клиники",
+      "detail": "Проставлен POLYCLINIC (1) — решение владельца каталога. Отдельного типа под лучевую диагностику в enums/clinic-type.ts нет. Альтернатива DIAGNOSTIC_LAB (4) отклонена: подпись «Диагностическая лаборатория» / «Diagnostic Laboratory» для МРТ/КТ-центра вводит в заблуждение (тип 4 носят Moj Lab, In Vitro, Lab Medical). Если заводить RADIOLOGY_CENTER — это правка enum + i18n на 6 языков + CLINIC_TYPE_SCHEMA_ORG + FILTERABLE_CLINIC_TYPES + новая фасетная страница в sitemap, и клиника в типе будет одна."
+    },
+    {
+      "topic": "Mirela Kalić — тот же человек?",
+      "detail": "doctors.id = 1359 — радиолог в Opšta Bolnica Berane. Отзыв называет её докторицей в Radio Medic, но официальный состав из Instagram её не включает. Если известно, что беранский радиолог читает снимки и здесь — раскомментировать строку в PART 4 SQL. Berane от Подгорицы ~130 км, совмещение госбольницы и частного центра в Черногории обычно, но по одному отзыву утверждать не стали."
+    },
+    {
+      "topic": "MR prostate — многопараметрическая?",
+      "detail": "Источник говорит просто «MR PROSTATE». Сопоставлено с MRI Prostate (Multiparametric), id 3174: в каталоге обе записи про простату многопараметрические (3174 и 3813 — почти дубликаты), простой «MRI Prostate» нет. Уточнение протокола взято из названия позиции, клиника его не называет."
+    },
+    {
+      "topic": "Urogenitalna regija → Ultrazvuk urotrakta",
+      "detail": "Ближайшая позиция каталога (id 1999). «Урогенитальная область» шире уротракта — включает и половые органы; отдельной позиции под неё в каталоге нет."
+    },
+    {
+      "topic": "КТ без контраста",
+      "detail": "Обе КТ-позиции заведены в варианте «bez kontrasta» (3180, 3177). Контрастные протоколы клиника отдельно не заявляла, хотя сайт упоминает angio CT — при появлении прайса проверить, есть ли контрастные варианты."
+    },
+    {
+      "topic": "email",
+      "detail": "Не публикуется нигде, включая bio Instagram. clinics.email пустой — заполнить после уточнения у клиники."
+    }
+  ]
+}

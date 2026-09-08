@@ -2,6 +2,8 @@ const IMMUTABLE = {
 	headers: { 'Cache-Control': 'max-age=31536000, public, immutable' },
 };
 
+const NOINDEX = { 'X-Robots-Tag': 'noindex, nofollow' };
+
 // Страницы без единого обращения к БД: главная, правовые, статьи. Меняются
 // только выкаткой, поэтому час на общих кэшах и сутки на отдачу устаревшей
 // копии во время обновления.
@@ -66,22 +68,27 @@ export default defineNuxtConfig({
 		baseURL: '/',
 
 		head: {
-			// Ни одного resource hint в проекте не было, при том что в критическом
-			// пути четыре сторонних домена — на каждый браузер платил DNS + TCP +
+			// Resource hints в проекте не было вовсе, при том что в критическом
+			// пути стояли сторонние домены — на каждый браузер платил DNS + TCP +
 			// TLS уже после разбора HTML, конкурируя с основным контентом.
 			//
-			// preconnect (дорогой, поднимает соединение целиком) — только двум
-			// доменам с картинками: фото врачей и генератор аватарок-заглушек.
-			// Аватар в карточке врача грузится eager и на детальной странице
-			// является LCP-элементом, то есть соединение нужно немедленно.
+			// Осталось два, и оба заработаны:
 			//
-			// Карта — dns-prefetch: она есть не на всех страницах и уходит под
-			// фолд, поднимать под неё соединение заранее на каждой странице
-			// невыгодно, а резолв имени сэкономить стоит.
+			// preconnect (дорогой, поднимает соединение целиком) — фото врачей.
+			// Аватар в карточке грузится eager и на детальной странице является
+			// LCP-элементом, то есть соединение нужно немедленно.
+			//
+			// Тайлы карты — dns-prefetch: карта есть не на всех страницах и
+			// уходит под фолд, поднимать под неё соединение заранее на каждой
+			// странице невыгодно, а резолв имени сэкономить стоит.
+			//
+			// Здесь были ещё unpkg.com и ui-avatars.com — оба домена ушли:
+			// Leaflet переехал в public/leaflet (composables/use-leaflet.ts),
+			// заглушка аватара рисуется инициалами локально, без запроса
+			// (components/doctor/avatar.vue). Подсказки на них стали бы
+			// соединением в никуда.
 			link: [
 				{ rel: 'preconnect', href: 'https://lh3.googleusercontent.com' },
-				{ rel: 'preconnect', href: 'https://ui-avatars.com' },
-				{ rel: 'dns-prefetch', href: 'https://unpkg.com' },
 				{ rel: 'dns-prefetch', href: 'https://tile.openstreetmap.org' },
 			],
 		},
@@ -141,7 +148,24 @@ export default defineNuxtConfig({
 	},
 
 	routeRules: {
-		'/**': { cors: true, ssr: true, prerender: false },
+		// `cors: true` здесь стоял с первого коммита, без обоснования и без
+		// единого потребителя в коде — снят 2026-09-03.
+		//
+		// Он не закрывал и не открывал доступ к данным: каталог публичный, и
+		// любой `curl` возьмёт его в любом случае. Что он давал — это право
+		// СТОРОННЕМУ САЙТУ читать наши страницы и API из браузеров своих
+		// посетителей: без своего сервера, с живыми IP и настоящими
+		// user-agent. То есть ровно тот слой, за который платится Cloudflare,
+		// обходился штатно и бесплатно.
+		//
+		// Утечки не было: `Allow-Credentials` nitro не выставляет, значит
+		// cookie кросс-доменно не уходили и авторизацию через это обойти было
+		// нельзя. Плюс `access-control-max-age: 0` запрещал кэшировать
+		// preflight — каждый кросс-доменный POST шёл двумя запросами.
+		//
+		// Понадобится снова (виджет, встраивание, публичное API) — включать
+		// точечно на конкретных путях, а не на `/**`, и уж точно не на HTML.
+		'/**': { ssr: true, prerender: false },
 
 		// ── Кэш HTML на общих кэшах (Cloudflare) ──────────────────────────
 		//
@@ -178,30 +202,40 @@ export default defineNuxtConfig({
 		'/services/**': CACHED_CATALOG,
 		'/labtests/**': CACHED_CATALOG,
 		'/medicines/**': CACHED_CATALOG,
-		'/medications/**': CACHED_CATALOG,
 		'/insurance-companies/**': CACHED_CATALOG,
 		'/doctors': CACHED_CATALOG,
 		'/clinics': CACHED_CATALOG,
-		'/profile': { ssr: false },
-		'/login': { ssr: false },
-		'/reset-password': { ssr: false },
-		'/verify-email': { ssr: false },
-		'/forgot-password': { ssr: false },
-		'/confirm-email-change': { ssr: false },
+		// Кабинет и страницы авторизации: noindex заголовком, а не только метой.
+		//
+		// Страницы с ssr:false отдают пустую оболочку, и мета появляется в ней
+		// только после выполнения JS — краулер может до неё не дождаться.
+		// Заголовок виден сразу, ещё до разбора тела. Тот же приём, что на
+		// /auth/telegram/return и /admin/**.
+		//
+		// Работает это только потому, что `Disallow` для них снят из robots.txt:
+		// закрытую от обхода страницу краулер не скачивает и никакого noindex не
+		// видит — см. docs/rules/ROBOTS_TXT.md.
+		'/profile': { ssr: false, headers: NOINDEX },
+		// Вкладки кабинета рендерятся на сервере — ssr тут не выключаем.
+		'/profile/**': { headers: NOINDEX },
+		'/login': { ssr: false, headers: NOINDEX },
+		'/reset-password': { ssr: false, headers: NOINDEX },
+		'/verify-email': { ssr: false, headers: NOINDEX },
+		'/forgot-password': { ssr: false, headers: NOINDEX },
+		'/confirm-email-change': { ssr: false, headers: NOINDEX },
 		// данные Telegram приезжают в hash-фрагменте — читать их может только клиент.
 		// Заголовком дублируем noindex: на ssr:false странице meta появляется
 		// только после выполнения JS, а краулер его может не дождаться
 		'/auth/telegram/return': {
 			ssr: false,
-			headers: { 'X-Robots-Tag': 'noindex, nofollow' },
+			headers: NOINDEX,
 		},
 		// Заголовком, а не только meta: страница ssr:false, её meta появляется
 		// после выполнения JS — тот же приём, что и на /auth/telegram/return.
 		'/admin/**': {
-			cors: true,
 			ssr: false,
 			prerender: false,
-			headers: { 'X-Robots-Tag': 'noindex, nofollow' },
+			headers: NOINDEX,
 		},
 		// Каталоги статики целиком.
 		'/img/**': IMMUTABLE,

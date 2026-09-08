@@ -20,6 +20,7 @@ const emit = defineEmits<{
 }>();
 
 const { t } = useI18n(specialtyI18n);
+const { uiText } = useUiText();
 
 const slug = ref('');
 const name = ref('');
@@ -156,20 +157,15 @@ const addService = async () => {
 
 		<div class="specialty-section">
 			<label>Специальности</label>
-			<el-select
+			<KitSelect
 				v-model="specialtyIds"
+				:options="specialtyOptions"
 				filterable
 				multiple
 				placeholder="Выберите специальности"
+				:no-data-text="uiText('NothingFound')"
 				class="specialty-select"
-			>
-				<el-option
-					v-for="spec in specialtyOptions"
-					:key="spec.value"
-					:label="spec.label"
-					:value="spec.value"
-				/>
-			</el-select>
+			/>
 		</div>
 
 		<div class="clinic-prices-section">
@@ -185,19 +181,14 @@ const addService = async () => {
 				:key="index"
 				class="clinic-price-row"
 			>
-				<el-select
+				<KitSelect
 					v-model="cp.clinicId"
+					:options="clinicOptions"
 					filterable
 					placeholder="Клиника"
+					:no-data-text="uiText('NothingFound')"
 					class="clinic-select"
-				>
-					<el-option
-						v-for="clinic in clinicOptions"
-						:key="clinic.value"
-						:label="clinic.label"
-						:value="clinic.value"
-					/>
-				</el-select>
+				/>
 				<el-input
 					v-model="cp.price"
 					placeholder="Цена"

@@ -4,14 +4,29 @@ import cityI18n from '~/i18n/city';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
 import { combineI18nMessages } from '~/i18n/utils';
 
-// Хаб перелинковки на /services: когда выбрана ровно одна категория —
-// ссылки на неё же в других городах; когда выбран ровно один город —
-// ссылки на другие категории услуг в этом городе (см.
-// docs/audit/seo-2026-07.md, пункт 1b).
+// Хаб перелинковки на /services. Источник комбинаций — тот же запрос, что и у
+// sitemap-фильтра (см. docs/audit/seo-2026-07.md, пункт 1b), поэтому ни одна
+// ссылка отсюда не ведёт на пустой листинг с `noindex`.
+//
+// Три режима, в зависимости от того, что выбрано:
+// 1. Ничего не выбрано (голый /services) — топ категорий. Раньше блок здесь
+//    молчал, и в фасетную сеть неоткуда было войти: панель фильтров — чекбоксы,
+//    а не ссылки, поэтому фасетные URL из sitemap не имели ни одной входящей
+//    ссылки и весь внутренний вес уходил в футер.
+// 2. Выбрана ровно одна категория — она же в других городах.
+// 3. Выбран ровно один город — другие категории в этом городе.
+// Режимы 2 и 3 совмещаются, когда выбрано и то и другое.
 const props = defineProps<{
 	serviceCategoryIds: number[];
 	cityIds: number[];
 }>();
+
+// Сколько ссылок показываем на голом листинге. Полный список категорий уже
+// стоит рядом в панели фильтров — выкладывать все 36 значками значило бы
+// продублировать её ковром ссылок. Хаб — короткий срез «самое ходовое», а не
+// второй фильтр; в фасетную сеть достаточно одной двери, дальше работают
+// режимы 2 и 3.
+const HUB_LINK_LIMIT = 12;
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -31,6 +46,37 @@ const selectedCityId = computed(() =>
 	props.cityIds.length === 1 ? props.cityIds[0] : null,
 );
 
+// Голый листинг — ни категории, ни города. Другие фильтры (поиск, код тарифа)
+// на выбор среза не влияют: ссылки всё равно ведут на чистые фасеты.
+const isUnfiltered = computed(
+	() => props.serviceCategoryIds.length === 0 && props.cityIds.length === 0,
+);
+
+/**
+ * Топ категорий для голого листинга.
+ *
+ * Ранжируем по числу городов, где категория вообще представлена. Счётчика услуг
+ * эндпоинт не отдаёт, а география — честный прокси востребованности: категория,
+ * которая есть по всей стране, полезна читателю из любого города, и её фасет
+ * заведомо не тонкая страница. При равенстве — меньший id enum'а: там
+ * перечислены основные категории, редкие добавлялись позже.
+ */
+const categoryCityCount = computed(() => {
+	const counts = new Map<number, number>();
+	for (const combo of combinations.value) {
+		counts.set(combo.categoryId, (counts.get(combo.categoryId) ?? 0) + 1);
+	}
+	return counts;
+});
+
+const topCategories = computed(() => {
+	if (!isUnfiltered.value) return [];
+	return [...categoryCityCount.value.entries()]
+		.sort((a, b) => b[1] - a[1] || a[0] - b[0])
+		.slice(0, HUB_LINK_LIMIT)
+		.map(([categoryId]) => categoryId);
+});
+
 const otherCitiesForCategory = computed(() => {
 	if (selectedCategoryId.value === null) return [];
 	return combinations.value
@@ -47,6 +93,18 @@ const otherCategoriesForCity = computed(() => {
 		.filter((categoryId) => categoryId !== selectedCategoryId.value);
 });
 
+// Ссылка на категорию без города: и человеку — способ расширить поиск на всю
+// страну, и краулеру — единственный вход на `?serviceCategoryIds=N` с фасетной
+// страницы. Без неё в sitemap оставались бы недостижимы все категории,
+// не попавшие в топ голого листинга.
+const categoryLink = (categoryId: number) => ({
+	name: 'services',
+	query: {
+		...getRegionalQuery(locale.value),
+		serviceCategoryIds: String(categoryId),
+	},
+});
+
 const categoryCityLink = (categoryId: number, cityId: number) => ({
 	name: 'services',
 	query: {
@@ -58,6 +116,7 @@ const categoryCityLink = (categoryId: number, cityId: number) => ({
 
 const hasHub = computed(
 	() =>
+		topCategories.value.length > 0 ||
 		otherCitiesForCategory.value.length > 0 ||
 		otherCategoriesForCity.value.length > 0,
 );
@@ -65,6 +124,21 @@ const hasHub = computed(
 
 <template>
 	<div v-if="hasHub" class="services-related-filters">
+		<div v-if="topCategories.length" class="services-related-filters__group">
+			<h3 class="services-related-filters__title">
+				{{ t('PopularCategories') }}
+			</h3>
+			<div class="services-related-filters__links">
+				<NuxtLink
+					v-for="categoryId in topCategories"
+					:key="categoryId"
+					:to="categoryLink(categoryId)"
+				>
+					{{ t(`medical_service_category_${categoryId}`) }}
+				</NuxtLink>
+			</div>
+		</div>
+
 		<div
 			v-if="otherCitiesForCategory.length"
 			class="services-related-filters__group"
@@ -74,6 +148,12 @@ const hasHub = computed(
 				{{ t('InOtherCities') }}
 			</h3>
 			<div class="services-related-filters__links">
+				<NuxtLink
+					v-if="selectedCityId !== null"
+					:to="categoryLink(selectedCategoryId!)"
+				>
+					{{ t('AllCities') }}
+				</NuxtLink>
 				<NuxtLink
 					v-for="cityId in otherCitiesForCategory"
 					:key="cityId"
@@ -147,27 +227,39 @@ const hasHub = computed(
 {
 	"en": {
 		"InOtherCities": "in other cities",
-		"OtherCategoriesIn": "Other service categories in {city}"
+		"OtherCategoriesIn": "Other service categories in {city}",
+		"PopularCategories": "Popular service categories",
+		"AllCities": "In all cities"
 	},
 	"ru": {
 		"InOtherCities": "в других городах",
-		"OtherCategoriesIn": "Другие категории услуг в {city}"
+		"OtherCategoriesIn": "Другие категории услуг в {city}",
+		"PopularCategories": "Популярные категории услуг",
+		"AllCities": "Во всех городах"
 	},
 	"sr": {
 		"InOtherCities": "u drugim gradovima",
-		"OtherCategoriesIn": "Druge kategorije usluga u {city}"
+		"OtherCategoriesIn": "Druge kategorije usluga u {city}",
+		"PopularCategories": "Popularne kategorije usluga",
+		"AllCities": "U svim gradovima"
 	},
 	"sr-cyrl": {
 		"InOtherCities": "у другим градовима",
-		"OtherCategoriesIn": "Друге категорије услуга у {city}"
+		"OtherCategoriesIn": "Друге категорије услуга у {city}",
+		"PopularCategories": "Популарне категорије услуга",
+		"AllCities": "У свим градовима"
 	},
 	"de": {
 		"InOtherCities": "in anderen Städten",
-		"OtherCategoriesIn": "Andere Leistungskategorien in {city}"
+		"OtherCategoriesIn": "Andere Leistungskategorien in {city}",
+		"PopularCategories": "Beliebte Leistungskategorien",
+		"AllCities": "In allen Städten"
 	},
 	"tr": {
 		"InOtherCities": "diğer şehirlerde",
-		"OtherCategoriesIn": "{city} içindeki diğer hizmet kategorileri"
+		"OtherCategoriesIn": "{city} içindeki diğer hizmet kategorileri",
+		"PopularCategories": "Popüler hizmet kategorileri",
+		"AllCities": "Tüm şehirlerde"
 	}
 }
 </i18n>

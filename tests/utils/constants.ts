@@ -4,11 +4,12 @@ export const URLS = {
 	DOCTORS: '/doctors',
 	SERVICES: '/services',
 	LABTESTS: '/labtests',
-	// Два разных раздела, названия легко перепутать:
-	// /medicines — реестр лекарств (пункт «Lekovi» в шапке),
-	// /medications — лекарства, которые продают клиники.
+	// Реестр лекарств ЦИнМЕД, пункт «Lekovi» в шапке. Был ещё почти
+	// одноимённый `/medications` (лекарства с ценами по клиникам) — раздел снят
+	// с сайта, его адреса отвечают 301/410 (server/common/redirect/
+	// removed-medications.ts). Имена путались постоянно, поэтому оговорка
+	// оставлена здесь же.
 	MEDICINES: '/medicines',
-	MEDICATIONS: '/medications',
 	INSURANCE_COMPANIES: '/insurance-companies',
 	ARTICLES: '/articles',
 } as const;

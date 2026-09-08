@@ -24,7 +24,6 @@ const ROUTE_PAGE_TYPES: Record<string, string> = {
 	'clinics-clinicSlug-doctors': 'clinic_doctors',
 	'clinics-clinicSlug-services': 'clinic_services',
 	'clinics-clinicSlug-labtests': 'clinic_labtests',
-	'clinics-clinicSlug-medications': 'clinic_medications',
 	'doctors': 'doctor_list',
 	'doctors-doctorSlug': 'doctor_detail',
 	'doctors-doctorSlug-reviews': 'doctor_reviews',
@@ -34,8 +33,6 @@ const ROUTE_PAGE_TYPES: Record<string, string> = {
 	'labtests-labTestSlug': 'labtest_detail',
 	'medicines': 'medicine_list',
 	'medicines-medicineSlug': 'medicine_detail',
-	'medications': 'medication_list',
-	'medications-medicationSlug': 'medication_detail',
 	'articles': 'article_list',
 };
 
@@ -55,7 +52,6 @@ const DETAIL_ROUTE_ENTITY_TYPES: Record<string, AnalyticsEntityType> = {
 	'services-serviceSlug': 'service',
 	'labtests-labTestSlug': 'labtest',
 	'medicines-medicineSlug': 'medicine',
-	'medications-medicationSlug': 'medication',
 };
 
 export function getEntityTypeByRouteName(

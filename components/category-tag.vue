@@ -18,7 +18,7 @@ defineProps<{
 	background: var(--kit-color-primary-bg);
 	padding: var(--kit-spacing-xs) var(--kit-spacing-md);
 	border-radius: var(--kit-border-radius-sm);
-	border: 1px solid rgba(79, 70, 229, 0.15);
+	font-weight: var(--kit-font-weight-medium);
 }
 
 .category-tag--small {

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import reviewsI18n from '~/i18n/reviews';
-import { combineI18nMessages } from '~/i18n/utils';
 import type { ReviewAiSummary } from '~/interfaces/review';
 
 const props = defineProps<{
@@ -8,10 +6,7 @@ const props = defineProps<{
 	entityId: number;
 }>();
 
-const { t, locale } = useI18n({
-	useScope: 'local',
-	messages: combineI18nMessages([reviewsI18n]),
-});
+const { t, locale } = useReviewsI18n();
 
 // Кэш читается быстро, но блок не критичен для SEO/SSR — грузим на клиенте.
 // params реактивные: при клиентском переходе между сущностями компонент

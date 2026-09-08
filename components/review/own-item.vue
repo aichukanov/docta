@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import type { ReviewFormEntity } from '~/components/review/form.vue';
-import reviewsI18n from '~/i18n/reviews';
-import { combineI18nMessages } from '~/i18n/utils';
 import type { Review } from '~/interfaces/review';
 
 const THREE_MONTHS_MS = 90 * 24 * 60 * 60 * 1000;
@@ -15,10 +13,7 @@ const props = defineProps<{
 	relatedEntities?: ReviewFormEntity[];
 }>();
 
-const { t, locale } = useI18n({
-	useScope: 'local',
-	messages: combineI18nMessages([reviewsI18n]),
-});
+const { t, locale } = useReviewsI18n();
 
 const isEditing = ref(false);
 const editRating = ref(props.review.rating || 0);

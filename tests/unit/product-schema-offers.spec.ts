@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 import {
 	buildMedicalTestSchema,
-	buildDrugSchema,
 	buildMedicalProcedureSchema,
 } from '../../common/schema-org-builders';
 import type { ClinicData, ClinicPrice } from '../../interfaces/clinic';
@@ -34,9 +33,11 @@ const common = {
 	getCityName,
 };
 
+// Был ещё Drug (карточка `/medications/<slug>`) — раздел снят с сайта вместе
+// с buildDrugSchema. Разметка `/medicines` строится другим билдером
+// (buildMedicineSchema) и Product не объявляет: цен у реестра нет.
 const builders = [
 	{ name: 'MedicalTest', build: buildMedicalTestSchema },
-	{ name: 'Drug', build: buildDrugSchema },
 	{ name: 'MedicalProcedure', build: buildMedicalProcedureSchema },
 ] as const;
 

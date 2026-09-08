@@ -36,17 +36,15 @@ test('scope страницы берётся из имени роута', () => {
 	expect(getCouponScopeByRoute('services')).toBe('services');
 	expect(getCouponScopeByRoute('services-serviceSlug')).toBe('services');
 	expect(getCouponScopeByRoute('labtests-labTestSlug')).toBe('labtests');
-	expect(getCouponScopeByRoute('medications')).toBe('medications');
 	// Каталог клиник и страница врача — цен конкретного типа нет
 	expect(getCouponScopeByRoute('clinics')).toBeNull();
 	expect(getCouponScopeByRoute('doctors-doctorSlug')).toBeNull();
 	expect(getCouponScopeByRoute(undefined)).toBeNull();
 });
 
-test('купон на услуги не показывается на страницах анализов и лекарств', () => {
+test('купон на услуги не показывается на страницах анализов', () => {
 	expect(isCouponApplicable(servicesCoupon, 'services')).toBe(true);
 	expect(isCouponApplicable(servicesCoupon, 'labtests')).toBe(false);
-	expect(isCouponApplicable(servicesCoupon, 'medications')).toBe(false);
 	// Страница без цен конкретного типа: условия читаются в баннере клиники
 	expect(isCouponApplicable(servicesCoupon, null)).toBe(true);
 	expect(isCouponApplicable(null, null)).toBe(false);
@@ -60,11 +58,6 @@ test('фрагменты «на что действует» — в постоя�
 	expect(getCouponScopeKeys(['labtests', 'services'])).toEqual([
 		'CouponScopeServices',
 		'CouponScopeLabtests',
-	]);
-	expect(getCouponScopeKeys(['medications', 'labtests', 'services'])).toEqual([
-		'CouponScopeServices',
-		'CouponScopeLabtests',
-		'CouponScopeMedications',
 	]);
 	expect(getCouponScopeKeys([])).toEqual([]);
 });
@@ -219,11 +212,14 @@ test('og-превью купона: адрес и версия файла', () =
 
 test('SET-колонка applies_to парсится, мусор отбрасывается', () => {
 	expect(parseCouponScopes('services')).toEqual(['services']);
-	expect(parseCouponScopes('services,medications')).toEqual([
+	expect(parseCouponScopes('services,labtests')).toEqual([
 		'services',
-		'medications',
+		'labtests',
 	]);
+	// Мусор и снятые значения (в SET-колонке остался 'medications' от
+	// удалённого раздела) отбрасываются
 	expect(parseCouponScopes('services,doctors')).toEqual(['services']);
+	expect(parseCouponScopes('services,medications')).toEqual(['services']);
 	expect(parseCouponScopes('')).toEqual([]);
 	expect(parseCouponScopes(null)).toEqual([]);
 });

@@ -27,6 +27,8 @@ const emit = defineEmits<{
 	(e: 'updated'): void;
 }>();
 
+const { uiText } = useUiText();
+
 const doctorSlug = ref('');
 const doctorName = ref('');
 const doctorNameRu = ref('');
@@ -236,32 +238,22 @@ const addDoctor = async () => {
 				:key="index"
 				class="service-price-row"
 			>
-				<el-select
+				<KitSelect
 					v-model="sp.clinicId"
+					:options="clinicOptions"
 					filterable
 					placeholder="Клиника"
+					:no-data-text="uiText('NothingFound')"
 					class="clinic-select"
-				>
-					<el-option
-						v-for="clinic in clinicOptions"
-						:key="clinic.value"
-						:label="clinic.label"
-						:value="clinic.value"
-					/>
-				</el-select>
-				<el-select
+				/>
+				<KitSelect
 					v-model="sp.serviceId"
+					:options="serviceOptions"
 					filterable
 					placeholder="Услуга"
+					:no-data-text="uiText('NothingFound')"
 					class="service-select"
-				>
-					<el-option
-						v-for="service in serviceOptions"
-						:key="service.value"
-						:label="service.label"
-						:value="service.value"
-					/>
-				</el-select>
+				/>
 				<el-input
 					v-model="sp.price"
 					placeholder="Цена"

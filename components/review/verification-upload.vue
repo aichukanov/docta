@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import reviewsI18n from '~/i18n/reviews';
-import { combineI18nMessages } from '~/i18n/utils';
-
 const props = defineProps<{
 	reviewId: number;
 }>();
@@ -10,10 +7,7 @@ const emit = defineEmits<{
 	uploaded: [];
 }>();
 
-const { t } = useI18n({
-	useScope: 'local',
-	messages: combineI18nMessages([reviewsI18n]),
-});
+const { t } = useReviewsI18n();
 
 // Клиентская валидация и превью — из общего composable,
 // сам аплоад идёт на отдельный приватный endpoint верификации

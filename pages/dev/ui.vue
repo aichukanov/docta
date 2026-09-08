@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { AVATAR_COLORS, getAvatarColor } from '@ach/ui-kit/avatar-colors';
 /**
  * Витрина компонентов дизайн-системы (@ach/ui-kit).
  *
@@ -34,6 +35,64 @@ const variants = [
 const appearances = ['solid', 'plain', 'text', 'link'] as const;
 const sizes = ['small', 'default', 'large'] as const;
 const alertVariants = ['info', 'success', 'warning', 'error'] as const;
+
+/*
+ * 10 000 строк — намеренно больше, чем в самом большом реальном списке
+ * (8194 отзыва в админке): виртуализацию надо проверять на запасе.
+ */
+const hugeOptions = Array.from({ length: 10000 }, (_, i) => ({
+	value: i,
+	label: `Услуга №${i + 1} — ${['УЗИ', 'Анализ', 'Приём', 'Рентген'][i % 4]}`,
+}));
+const hugeValue = ref<number | null>(null);
+const multiValue = ref<number[]>([]);
+const smallOptions = [
+	{ value: 'podgorica', label: 'Подгорица' },
+	{ value: 'budva', label: 'Будва' },
+	{ value: 'kotor', label: 'Котор' },
+	{ value: 'bar', label: 'Бар', disabled: true },
+];
+const smallValue = ref<string | null>(null);
+
+/* Демонстрация remote-поиска: имитируем задержку сервера */
+const remoteOptions = ref<{ value: number; label: string }[]>([]);
+const remoteLoading = ref(false);
+const remoteValue = ref<number | null>(null);
+let remoteTimer: ReturnType<typeof setTimeout> | null = null;
+
+function remoteSearch(query: string) {
+	if (remoteTimer) clearTimeout(remoteTimer);
+	if (!query) {
+		remoteOptions.value = [];
+		remoteLoading.value = false;
+		return;
+	}
+	remoteLoading.value = true;
+	remoteTimer = setTimeout(() => {
+		remoteOptions.value = Array.from({ length: 20 }, (_, i) => ({
+			value: i,
+			label: `${query} — результат ${i + 1}`,
+		}));
+		remoteLoading.value = false;
+	}, 500);
+}
+
+const manyTags = ref<number[]>([0, 1, 2, 3, 4, 5]);
+
+/*
+ * Все 16 цветов палитры сразу: цвет зависит от хеша семени, поэтому
+ * подбираем семена так, чтобы вышел каждый индекс — иначе часть палитры
+ * на витрину никогда не попадёт.
+ */
+const avatarSamples = computed(() => {
+	const byColor = new Map<string, string>();
+	for (let i = 0; i < 4000 && byColor.size < AVATAR_COLORS.length; i++) {
+		const seed = `Ana Bogdanović ${i}`;
+		const color = getAvatarColor(seed);
+		if (!byColor.has(color)) byColor.set(color, seed);
+	}
+	return [...byColor.entries()].map(([color, seed]) => ({ color, seed }));
+});
 
 function demoLoading() {
 	isLoading.value = true;
@@ -167,6 +226,98 @@ function demoLoading() {
 					warning
 				</KitButton>
 				<KitButton @click="toast.info('Ничего не изменилось')">info</KitButton>
+			</div>
+		</section>
+
+		<section>
+			<h2>KitSelect</h2>
+			<p class="showcase__note">
+				Верхний список — 10 000 записей. В DOM держится только видимое окно:
+				откройте devtools и посчитайте узлы <code>.kit-select__option</code>.
+			</p>
+			<div class="showcase__stack showcase__row--narrow">
+				<KitSelect
+					v-model="hugeValue"
+					:options="hugeOptions"
+					filterable
+					clearable
+					placeholder="Услуга из 10 000"
+					search-placeholder="Начните вводить название"
+					no-data-text="Ничего не найдено"
+					aria-label="Услуга"
+					clear-label="Очистить"
+				/>
+				<KitSelect
+					v-model="multiValue"
+					:options="hugeOptions"
+					multiple
+					filterable
+					clearable
+					placeholder="Несколько услуг"
+					no-data-text="Ничего не найдено"
+					aria-label="Услуги"
+					clear-label="Очистить"
+				/>
+				<KitSelect
+					v-model="remoteValue"
+					:options="remoteOptions"
+					:loading="remoteLoading"
+					remote
+					filterable
+					clearable
+					placeholder="Поиск на сервере (введите что-нибудь)"
+					search-placeholder="Введите запрос"
+					loading-text="Ищем…"
+					no-data-text="Начните вводить запрос"
+					aria-label="Серверный поиск"
+					clear-label="Очистить"
+					@search="remoteSearch"
+				/>
+				<KitSelect
+					v-model="manyTags"
+					:options="hugeOptions"
+					:max-tags="3"
+					multiple
+					filterable
+					clearable
+					placeholder="Мультивыбор со свёрткой тегов"
+					no-data-text="Ничего не найдено"
+					aria-label="Свёртка тегов"
+					clear-label="Очистить"
+				/>
+				<KitSelect
+					v-model="smallValue"
+					:options="smallOptions"
+					clearable
+					placeholder="Город (без поиска, есть отключённый пункт)"
+					no-data-text="Ничего не найдено"
+					aria-label="Город"
+					clear-label="Очистить"
+				/>
+			</div>
+		</section>
+		<section>
+			<h2>KitAvatar</h2>
+			<p class="showcase__note">
+				Цвета — из палитры Fluent UI (Microsoft). Инициалы всегда белые: каждый
+				цвет держит не меньше 4.5:1, это проверяет
+				<code>tests/unit/avatar-contrast.spec.ts</code>.
+			</p>
+			<div class="showcase__row">
+				<KitAvatar
+					v-for="s in avatarSamples"
+					:key="s.color"
+					:name="s.seed"
+					:color-seed="s.seed"
+					initials="АБ"
+					:size="56"
+				/>
+			</div>
+			<div class="showcase__row">
+				<KitAvatar name="Ana Bogdanović" :size="32" />
+				<KitAvatar name="Marko Petrović" :size="48" />
+				<KitAvatar name="Ivana Kovačević" :size="64" />
+				<KitAvatar name="Загородных Константин" :size="80" />
 			</div>
 		</section>
 

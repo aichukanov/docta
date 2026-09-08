@@ -5,10 +5,6 @@ import { REVIEWS_THRESHOLD } from '~/common/constants';
 import { getLocalizedName } from '~/common/utils';
 import RatingStars from '~/components/rating-stars.vue';
 import { BillingService } from '~/enums/billing-service';
-import clinicCommonI18n from '~/i18n/clinic-common';
-import clinicTypeI18n from '~/i18n/clinic-type';
-import locationI18n from '~/i18n/location';
-import { combineI18nMessages } from '~/i18n/utils';
 import type { ClinicData } from '~/interfaces/clinic';
 
 const props = withDefaults(
@@ -31,17 +27,11 @@ defineEmits<{
 	(e: 'show-on-map'): void;
 }>();
 
-// Слияние вынесено на уровень модуля: объект словарей константный, а компонент
-// рендерится до трёх раз на карточку и до шестидесяти раз на листинге — там это
-// было шестьдесят одинаковых Object.assign по трём словарям на шесть локалей,
-// на каждый setup. Ссылка общая для всех экземпляров, vue-i18n её не мутирует.
-const messages = combineI18nMessages([
-	clinicCommonI18n,
-	clinicTypeI18n,
-	locationI18n,
-]);
-
-const { t, n, locale } = useI18n({ useScope: 'local', messages });
+// Словарь общий на модуль — см. composables/use-clinic-summary-i18n.ts.
+// Держать слияние здесь бессмысленно: top-level const в <script setup>
+// компилируется внутрь setup() и выполняется на каждый из шестидесяти
+// экземпляров листинга.
+const { t, n, locale } = useClinicSummaryI18n();
 
 const localizedName = computed(() =>
 	getLocalizedName(props.clinic, locale.value),
@@ -186,7 +176,7 @@ const reviewsLink = computed(() => {
 
 			<div class="clinic-address">
 				<IconMapPin class="address-icon" size="1em" />
-				<ClinicLocationAddress :clinic="clinic" />
+				<ClinicLocationAddress class="clinic-address-text" :clinic="clinic" />
 				<span v-if="formattedDistance" class="clinic-distance">
 					· {{ formattedDistance }}
 				</span>
@@ -312,10 +302,23 @@ const reviewsLink = computed(() => {
 	gap: var(--kit-spacing-xs);
 	font-size: var(--kit-font-size-sm);
 	color: var(--kit-color-text-secondary);
+	// Строка всегда одной высоты: расстояние дописывается в конец уже после
+	// первого рендера (локация определяется асинхронно), и на узком экране
+	// длинный адрес от этого переносился на вторую строку — карточка росла и
+	// сдвигала всё, что под ней. Адрес режется многоточием, высота строки от
+	// появления расстояния не зависит
+	flex-wrap: nowrap;
 
 	.address-icon {
 		flex-shrink: 0;
 		color: var(--kit-color-text-muted);
+	}
+
+	.clinic-address-text {
+		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 
 	.clinic-distance {

@@ -25,7 +25,6 @@ const LIST_ENDPOINTS = [
 	'server/api/doctors/list.ts',
 	'server/api/labtests/list.ts',
 	'server/api/medicines/list.ts',
-	'server/api/medications/list.ts',
 ];
 
 function read(path: string) {

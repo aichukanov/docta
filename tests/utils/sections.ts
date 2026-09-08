@@ -1,11 +1,11 @@
 import { URLS } from './constants';
 
 /**
- * Описание раздела-листинга. Все семь листингов рендерятся одним компонентом
+ * Описание раздела-листинга. Все шесть листингов рендерятся одним компонентом
  * `components/list-page.vue`, а все детальные страницы — одним
  * `components/entity-page/index.vue`, поэтому общий контракт (карточки,
  * пагинация, переход в карточку, кнопка «к поиску») проверяется одним
- * параметризованным спеком, а не семью почти одинаковыми файлами.
+ * параметризованным спеком, а не шестью почти одинаковыми файлами.
  *
  * Различается только разметка самой карточки — она и вынесена в конфиг.
  */
@@ -49,12 +49,6 @@ export const LISTING_SECTIONS: ListingSection[] = [
 		url: URLS.MEDICINES,
 		nameSelector: '.medicine-name',
 		inHeaderNav: true,
-	},
-	{
-		key: 'medications',
-		url: URLS.MEDICATIONS,
-		nameSelector: '.list-card-header',
-		inHeaderNav: false,
 	},
 	{
 		key: 'insurance-companies',

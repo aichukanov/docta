@@ -1,4 +1,5 @@
 import { getConnection } from '~/server/common/db-mysql';
+import { lastmodSql, toLastmod } from '~/server/common/sitemap/lastmod';
 import { DispensingMode } from '~/enums/dispensing-mode';
 import {
 	MEDICINE_CATEGORY_IDS,
@@ -6,22 +7,35 @@ import {
 	type MedicineCategory,
 } from '~/enums/medicine-category';
 
+// Дата изменения фасета — максимум `updated_at` по лекарствам выборки, поэтому
+// `DISTINCT` ниже заменён на `GROUP BY` с `MAX(...)`: набор строк тот же,
+// добавилась агрегация.
+
 export async function getSubstanceAtcCombinations(): Promise<
-	Array<{ substanceId: string; atcGroupId: string }>
+	Array<{ substanceId: string; atcGroupId: string; lastmod?: Date }>
 > {
+	const lastmod = await lastmodSql('med_medicines', 'MAX(m.updated_at)');
 	const connection = await getConnection();
 	const [rows] = await connection.execute<any[]>(
-		`SELECT DISTINCT mms.substance_id as substanceId, m.atc_group_id as atcGroupId
+		`SELECT mms.substance_id as substanceId, m.atc_group_id as atcGroupId,
+		 	${lastmod} as lastmod
 		 FROM med_medicine_substances mms
 		 INNER JOIN med_medicines m ON m.id = mms.medicine_id AND m.is_active = 1
 		 WHERE m.atc_group_id IS NOT NULL
+		 GROUP BY mms.substance_id, m.atc_group_id
 		 ORDER BY mms.substance_id, m.atc_group_id`,
 	);
 	await connection.end();
 	return rows.map((r) => ({
 		substanceId: String(r.substanceId),
 		atcGroupId: String(r.atcGroupId),
+		lastmod: toLastmod(r.lastmod),
 	}));
+}
+
+export interface MedicineCategoryFacet {
+	categoryId: MedicineCategory;
+	lastmod?: Date;
 }
 
 /**
@@ -42,13 +56,17 @@ export async function getSubstanceAtcCombinations(): Promise<
  * лекарств (~2,5 тыс.), выгрузка дешёвая.
  */
 export async function getMedicineCategoryFacets(): Promise<{
-	categoryIds: MedicineCategory[];
-	otcCategoryIds: MedicineCategory[];
+	categoryIds: MedicineCategoryFacet[];
+	otcCategoryIds: MedicineCategoryFacet[];
 }> {
+	const lastmod = await lastmodSql('med_medicines', 'MAX(m.updated_at)');
+
 	const sql = `
-		SELECT DISTINCT m.atc_code as atcCode, m.dispensing_mode_id as dispensingModeId
+		SELECT m.atc_code as atcCode, m.dispensing_mode_id as dispensingModeId,
+			${lastmod} as lastmod
 		FROM med_medicines m
 		WHERE m.is_active = 1 AND m.atc_code IS NOT NULL AND m.atc_code != ''
+		GROUP BY m.atc_code, m.dispensing_mode_id
 	`;
 
 	const connection = await getConnection();
@@ -56,16 +74,32 @@ export async function getMedicineCategoryFacets(): Promise<{
 	await connection.end();
 
 	const codes = (
-		rows as Array<{ atcCode: string; dispensingModeId: number | null }>
+		rows as Array<{
+			atcCode: string;
+			dispensingModeId: number | null;
+			lastmod: unknown;
+		}>
 	).map((row) => ({
 		// LIKE в листинге сравнивает без учёта регистра (collation _ci),
 		// startsWith — с учётом, поэтому приводим сами.
 		atcCode: String(row.atcCode).toUpperCase(),
 		dispensingModeId: Number(row.dispensingModeId),
+		lastmod: toLastmod(row.lastmod),
 	}));
 
-	const categoryIds: MedicineCategory[] = [];
-	const otcCategoryIds: MedicineCategory[] = [];
+	// Максимум по строкам среза: категория «устарела» тогда же, когда последнее
+	// из вошедших в неё лекарств. Считаем в JS, потому что и сама принадлежность
+	// к категории считается тут же — по префиксам ATC, той же функцией, что и в
+	// листинге.
+	const maxLastmod = (rows: Array<{ lastmod?: Date }>): Date | undefined =>
+		rows.reduce<Date | undefined>(
+			(max, row) =>
+				row.lastmod && (!max || row.lastmod > max) ? row.lastmod : max,
+			undefined,
+		);
+
+	const categoryIds: MedicineCategoryFacet[] = [];
+	const otcCategoryIds: MedicineCategoryFacet[] = [];
 
 	for (const categoryId of MEDICINE_CATEGORY_IDS) {
 		const prefixes = getMedicineCategoryAtcPrefixes([categoryId]);
@@ -74,10 +108,14 @@ export async function getMedicineCategoryFacets(): Promise<{
 		);
 
 		if (matches.length > 0) {
-			categoryIds.push(categoryId);
+			categoryIds.push({ categoryId, lastmod: maxLastmod(matches) });
 		}
-		if (matches.some((row) => row.dispensingModeId === DispensingMode.OTC)) {
-			otcCategoryIds.push(categoryId);
+
+		const otcMatches = matches.filter(
+			(row) => row.dispensingModeId === DispensingMode.OTC,
+		);
+		if (otcMatches.length > 0) {
+			otcCategoryIds.push({ categoryId, lastmod: maxLastmod(otcMatches) });
 		}
 	}
 

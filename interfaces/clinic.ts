@@ -19,11 +19,7 @@ export type ClinicStatus =
 	| 'published'
 	| 'rejected';
 
-export type ClinicItemType =
-	| 'services'
-	| 'labtests'
-	| 'medications'
-	| 'doctors';
+export type ClinicItemType = 'services' | 'labtests' | 'doctors';
 
 export interface ClinicItemCategory {
 	categoryId: number | null;

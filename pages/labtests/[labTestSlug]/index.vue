@@ -45,7 +45,9 @@ const clinicsStore = useClinicsStore();
 // SSR получается лишний последовательный round-trip (см. pages/doctors/index.vue)
 const [{ pending: isLoading, data: labTestData }] = await Promise.all([
 	useFetch('/api/labtests/details', {
-		key: 'labtest-details',
+		// Slug в ключе — иначе переход анализ → анализ показывает прежний,
+		// см. комментарий у useFetch в pages/clinics/[clinicSlug]/index.vue.
+		key: `labtest-details:${route.params.labTestSlug}`,
 		method: 'POST',
 		body: computed(() => ({
 			slug: route.params.labTestSlug,
@@ -273,7 +275,6 @@ useSeoMeta({
 	ogDescription: pageDescription,
 	ogImage: OG_IMAGE,
 	ogType: 'article',
-	twitterCard: 'summary',
 	twitterTitle: pageTitle,
 	twitterDescription: pageDescription,
 	twitterImage: OG_IMAGE,

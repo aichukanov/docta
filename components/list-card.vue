@@ -164,7 +164,7 @@ const trackDetailsLinkClick = () => {
 .list-card {
 	box-sizing: border-box;
 	background: var(--kit-color-surface-secondary);
-	border: 1px solid var(--kit-color-border-primary);
+	border: 1px solid var(--kit-color-border-secondary);
 	border-radius: var(--kit-border-radius-lg);
 	padding: var(--kit-spacing-xl) var(--kit-spacing-2xl);
 	transition: all var(--kit-transition-base);
@@ -178,13 +178,9 @@ const trackDetailsLinkClick = () => {
 
 	.list-card-header {
 		font-size: var(--kit-font-size-lg);
-		font-weight: 600;
-		color: #1f2937;
+		font-weight: var(--kit-font-weight-semibold);
+		color: var(--kit-color-text-heading);
 		margin: 0;
-		font-family:
-			system-ui,
-			-apple-system,
-			sans-serif;
 
 		.list-card-link {
 			color: var(--kit-color-primary);

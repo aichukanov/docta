@@ -1,27 +1,25 @@
 <template>
-	<el-select
+	<KitSelect
 		v-model="selectedCityId"
-		size="large"
+		:options="cityOptions"
 		:aria-label="t('YourLocation')"
 		:placeholder="t('AllMontenegro')"
 		:loading="isLoadingLocation"
+		:loading-text="uiText('Loading')"
+		:no-data-text="uiText('NothingFound')"
+		:clear-label="uiText('Clear')"
+		size="large"
 		clearable
+		dropdown-width="20rem"
 		class="header-location"
-		popper-class="header-location-popper"
 	>
 		<template #prefix>
 			<IconMapPin :size="18" />
 		</template>
 		<template #header>
-			<p class="header-location-popper__hint">{{ t('LocationSortHint') }}</p>
+			{{ t('LocationSortHint') }}
 		</template>
-		<el-option
-			v-for="{ text, value } in cities"
-			:key="value"
-			:label="text"
-			:value="value"
-		/>
-	</el-select>
+	</KitSelect>
 </template>
 
 <script setup lang="ts">
@@ -30,6 +28,8 @@ import { CityId } from '~/enums/cities';
 import cityI18n from '~/i18n/city';
 import locationI18n from '~/i18n/location';
 import { combineI18nMessages } from '~/i18n/utils';
+
+const { uiText } = useUiText();
 
 const { t } = useI18n({
 	useScope: 'local',
@@ -66,6 +66,12 @@ const cities = computed(() =>
 		}))
 		.sort((a, b) => a.text.localeCompare(b.text)),
 );
+
+/* KitSelect ждёт { value, label }; `cities` с полем text оставляем как есть —
+   на него завязаны другие места компонента */
+const cityOptions = computed(() =>
+	cities.value.map(({ text, value }) => ({ value, label: text })),
+);
 </script>
 
 <style scoped>
@@ -82,17 +88,9 @@ const cities = computed(() =>
 }
 </style>
 
-<!-- Дропдаун телепортируется в body — стили попера вне scoped -->
-<style>
-.header-location-popper {
-	/* Без потолка длинная подсказка растянула бы попер на весь экран */
-	max-width: 320px;
-}
-
-.header-location-popper__hint {
-	margin: 0;
-	font-size: var(--kit-font-size-sm);
-	line-height: 1.4;
-	color: var(--kit-color-text-secondary);
-}
-</style>
+<!--
+	Глобальный блок стилей попера удалён вместе с el-select: у KitSelect
+	выпадашка своя, а подсказка над списком оформлена в самом компоненте
+	(.kit-select__header). Панель шире поля (dropdown-width): в ширину узкого
+	контрола подсказка над списком крошилась на пять строк.
+-->

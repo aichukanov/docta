@@ -10,21 +10,20 @@ import {
 import { buildArticleImageSrcSet } from '~/components/article-page.vue';
 import { combineI18nMessages } from '~/i18n/utils';
 import { LanguageId } from '~/enums/language';
-import articlesI18n from '~/i18n/articles';
-import cityHealthcareI18n from '~/i18n/article-city-healthcare';
-import weekendMedicalHelpI18n from '~/i18n/article-weekend-medical-help';
-import articleUnavailableI18n from '~/i18n/article-medications-unavailable';
-import articleAllergyI18n from '~/i18n/article-allergy-medicines';
+// Выжимки, а не полные словари статей: листинг печатает у каждой карточки
+// заголовок и описание, а импортировал ради этого ПЯТЬ словарей целиком —
+// то есть тексты статей на шести локалях, ~371 КБ исходников против 31 КБ
+// выжимки. Тексты нужны самим страницам статей, а не их списку.
+// Те же грабли раньше были у глобального поиска (components/global-search.vue).
+import articleTitleI18n from '~/i18n/article-title';
+import articleDescriptionI18n from '~/i18n/article-description';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: combineI18nMessages([
-		articlesI18n,
-		cityHealthcareI18n,
-		weekendMedicalHelpI18n,
-		articleUnavailableI18n,
-		articleAllergyI18n,
+		articleTitleI18n,
+		articleDescriptionI18n,
 		breadcrumbI18n,
 	]),
 });
@@ -292,7 +291,6 @@ useSeoMeta({
 	ogTitle: pageTitle,
 	ogDescription: pageDescription,
 	ogImage: OG_IMAGE,
-	twitterCard: 'summary',
 	twitterTitle: pageTitle,
 	twitterDescription: pageDescription,
 	twitterImage: OG_IMAGE,

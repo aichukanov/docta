@@ -8,20 +8,32 @@ export function useCookieControl() {
 		default: () => null,
 	});
 
-	const isConsentGiven = computed(() => consentCookie.value === 'accepted');
-	const isConsentDecided = computed(() => consentCookie.value !== null);
+	// Одно значение на приложение. У каждого вызова useCookie() свой ref, и
+	// между ними Nuxt разносит новое значение асинхронно (событие cookieStore).
+	// Из-за этого watch в layout по своему ref'у уже вызывал initMixpanel(), а
+	// композабл аналитики по своему ещё видел «согласия нет» и выходил —
+	// Mixpanel после клика «Разрешить» не стартовал до следующей полной
+	// загрузки. useState синхронен и SSR-безопасен; cookie остаётся хранилищем,
+	// а watch подхватывает смену из другой вкладки.
+	const consent = useState<ConsentValue>(
+		'cookie-consent',
+		() => consentCookie.value,
+	);
+	watch(consentCookie, (value) => {
+		consent.value = value;
+	});
 
-	const giveConsent = () => {
-		consentCookie.value = 'accepted';
+	const setConsent = (value: ConsentValue) => {
+		consent.value = value;
+		consentCookie.value = value;
 	};
 
-	const declineConsent = () => {
-		consentCookie.value = 'declined';
-	};
+	const isConsentGiven = computed(() => consent.value === 'accepted');
+	const isConsentDecided = computed(() => consent.value !== null);
 
-	const revokeConsent = () => {
-		consentCookie.value = null;
-	};
+	const giveConsent = () => setConsent('accepted');
+	const declineConsent = () => setConsent('declined');
+	const revokeConsent = () => setConsent(null);
 
 	return {
 		isConsentGiven: readonly(isConsentGiven),

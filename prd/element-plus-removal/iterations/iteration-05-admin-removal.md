@@ -35,9 +35,13 @@ review-moderation (диалог, пагинация, радио-фильтры),
 ### Демонтаж (строго после grep-нуля по всему репо)
 
 - [ ] Полный grep-гейт: `<el-`, `\bEl[A-Z]`, `v-loading`, `@element-plus` → 0 во всём репозитории.
-- [ ] nuxt.config.ts: убрать `@element-plus/nuxt` из modules.
+- [ ] nuxt.config.ts: убрать `@element-plus/nuxt` из modules и ключ `elementPlus: { importStyle: false }`.
+- [ ] nuxt.config.ts, `css`: убрать обе строки — `~/assets/css/element-plus.css` и `@ach/ui-kit/element-plus-bridge.css`. Остаётся только `tokens.css`, который добавляет модуль пакета.
+- [ ] Удалить файл `assets/css/element-plus.css` (сводный CSS theme-chalk, заведён 2026-09-08 в перф-аудите: `docs/audit/lighthouse-perf-2026-09.md`, этап 1).
+- [ ] Проверить, что глобальные стили и `*-styles` компонентов не ссылаются на `.el-*`-классы и `--el-*`-переменные (`grep -rn "\.el-\|--el-" assets components pages layouts`). Локальные переопределения `.el-button{…}` в scoped-стилях компонентов встречаются — с исчезновением разметки EP они становятся мёртвым кодом.
 - [ ] package.json: удалить `element-plus`, `@element-plus/nuxt`; `npm install`; проверить, что lock не тянет EP.
-- [ ] design-tokens.css: удалить мост `:root:root { --el-* }` (строки 130–167) и фикс `.el-button--danger` (169–178; к этому моменту логика уже внутри AppButton с итерации 1).
+- [ ] Пакет `@ach/ui-kit`: удалить `src/styles/element-plus-bridge.css` (мост `:root:root { --el-* }` + фикс `.el-button--danger`; переехал туда из `design-tokens.css` в итерации 1). Пакет общий со svad — сначала убедиться, что svad мост тоже не подключает.
+- [ ] Хук `build:manifest` и `features.inlineStyles` в nuxt.config.ts НЕ трогать: они про Nuxt, а не про EP — без них `<link>` на CSS общих чанков дублируют инлайн (см. тот же аудит). После удаления EP только перепроверить, что в SSR-HTML по-прежнему один `<link rel="stylesheet">`.
 - [ ] Финальный замер: `nuxt build --analyze`, дельта против baseline → PROGRESS.md.
 - [ ] Точечный WCAG-проход по компонентам кита (select, tabs, dialog, tooltip, switch, формы) — закрытие NFR-1; зафиксировать результат (память: re-audit планировался на новых компонентах).
 

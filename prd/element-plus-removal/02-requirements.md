@@ -50,6 +50,11 @@
 
 - `@element-plus/nuxt` в `modules` (nuxt.config.ts:4)
 - Мост токенов `:root:root { --el-* }` + фикс danger-кнопок в `assets/css/design-tokens.css:130-178`
+  — с итерации 1 живёт в пакете: `@ach/ui-kit/element-plus-bridge.css`, подключён строкой в `css`
+- С 2026-09-08 (перф-аудит): `elementPlus: { importStyle: false }` и сводный
+  `assets/css/element-plus.css` — CSS theme-chalk только используемых компонентов, одной
+  ссылкой вместо поимпортных чанков `el-*.css`. Новый el-компонент требует строки в этом файле.
+  Удаляется вместе с EP (итерация 5).
 - `--el-*`-переменные локально в 4 auth-страницах (verify/reset/forgot/confirm-email)
 - `@element-plus/icons-vue` НЕ объявлен в package.json — транзитивная зависимость
 

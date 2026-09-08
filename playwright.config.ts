@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+// Адрес задаётся ТОЛЬКО через E2E_BASE_URL. Не через BASE_URL — тот занят
+// приложением (`.env`) и означает совсем другое.
 const baseURL = process.env.E2E_BASE_URL || 'http://localhost:3000';
 const isProduction = baseURL.includes('docta.me');
 const isLocal = !isProduction;

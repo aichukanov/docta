@@ -69,23 +69,25 @@ const svadLink = computed(() => {
 	return url.toString();
 });
 
-const { initMixpanel, initGTag, disableAnalytics } = useAnalytics();
+const { startAnalytics, initMixpanel, initGTag, disableAnalytics } =
+	useAnalytics();
 
 // Cloudflare Web Analytics is injected automatically at the Cloudflare edge
 // (domain proxied through Cloudflare) — no client-side beacon needed.
 
-watch(
-	isConsentGiven,
-	() => {
-		if (isConsentGiven.value) {
-			initMixpanel();
-			initGTag();
-		} else {
-			disableAnalytics();
-		}
-	},
-	{ immediate: true },
-);
+// Первичный старт — после гидрации, в простое (см. useAnalytics); здесь без
+// `immediate`, иначе SDK грузились бы прямо в setup и конкурировали с LCP.
+// Watch ловит только смену согласия по клику на баннере — тогда сразу.
+startAnalytics();
+
+watch(isConsentGiven, (given) => {
+	if (given) {
+		initMixpanel();
+		initGTag();
+	} else {
+		disableAnalytics();
+	}
+});
 </script>
 
 <template>

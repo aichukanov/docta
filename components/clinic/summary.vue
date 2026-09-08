@@ -53,6 +53,23 @@ const hasFooterContent = computed(
 
 // Услуги открыты по умолчанию
 const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
+
+// Контакты рендерятся только после первого раскрытия. el-collapse-item
+// прячет содержимое через v-show, и на листинге из 20 карточек в HTML уезжало
+// ~100 КБ скрытых копи-кнопок, тултипов и иконок мессенджеров, а гидрация
+// заводила сотни экземпляров ElTooltip — треть документа ради того, что никто
+// не видит (docs/audit/lighthouse-perf-2026-09.md, этап 3). SEO-ценности у
+// контактов в свёрнутой карточке нет: они есть на странице клиники.
+// Секции «Услуги» и «Врачи» так не трогать — их ссылки нужны в SSR-HTML
+// (перелинковка врачей на страницах услуг).
+const contactsRendered = ref(false);
+watch(
+	activeCollapse,
+	(names) => {
+		if (names.includes('contacts')) contactsRendered.value = true;
+	},
+	{ immediate: true },
+);
 </script>
 
 <template>
@@ -77,7 +94,10 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 							<span class="collapse-count">({{ services?.length }})</span>
 						</span>
 					</template>
-					<ClinicServiceSectionContent
+					<!-- hydrate-on-visible: HTML со ссылками на услуги остаётся в SSR,
+					     а JS-гидрация карточек под фолдом откладывается до скролла -->
+					<LazyClinicServiceSectionContent
+						hydrate-on-visible
 						:items="services || []"
 						:initialLimit="serviceLimit"
 					>
@@ -95,7 +115,7 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 								routeParamName="serviceSlug"
 							/>
 						</template>
-					</ClinicServiceSectionContent>
+					</LazyClinicServiceSectionContent>
 				</el-collapse-item>
 
 				<el-collapse-item v-if="hasDoctors" name="doctors">
@@ -105,10 +125,13 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 							<span class="collapse-count">({{ doctors?.length }})</span>
 						</span>
 					</template>
+					<!-- Секция свёрнута (v-show), IntersectionObserver сработает при
+					     раскрытии — ссылки на врачей в SSR-HTML при этом остаются -->
 					<div class="clinic-doctors">
-						<DoctorInfo
+						<LazyDoctorInfo
 							v-for="doctor in doctors"
 							:key="doctor.id"
+							hydrate-on-visible
 							:service="doctor"
 							short
 						/>
@@ -120,7 +143,7 @@ const activeCollapse = ref<string[]>(hasServices.value ? ['services'] : []);
 					name="contacts"
 					:title="t('Contacts')"
 				>
-					<ContactsList :list="clinic" />
+					<ContactsList v-if="contactsRendered" :list="clinic" />
 				</el-collapse-item>
 			</el-collapse>
 		</footer>

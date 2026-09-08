@@ -96,7 +96,11 @@ export default defineNuxtConfig({
 
 	gtag: {
 		id: process.env.GTAG_ID || 'G-CN6LNPX9NF',
-		enabled: process.env.NODE_ENV === 'production',
+		// Скрипт не вставляется в <head> модулем: его подключает useAnalytics
+		// через initialize() в простое после гидрации, и только когда
+		// public.gtagEnabled. dataLayer и consent-default модуль всё равно
+		// заводит сразу, так что команды до загрузки не теряются.
+		enabled: false,
 		loadingStrategy: 'async',
 		initCommands: [
 			[
@@ -113,9 +117,54 @@ export default defineNuxtConfig({
 		],
 	},
 	// Токены приезжают из @ach/ui-kit — модуль пакета добавляет их первыми.
-	// Мост Element Plus подключён явно, чтобы его было видно и можно было
-	// удалить одной строкой вместе с самим Element Plus.
-	css: ['@ach/ui-kit/element-plus-bridge.css'],
+	// Дальше стили Element Plus одним файлом и мост к токенам: мост
+	// переопределяет переменные EP, поэтому обязан идти после них. Обе строки
+	// удаляются вместе с самим Element Plus.
+	css: [
+		'~/assets/css/element-plus.css',
+		'@ach/ui-kit/element-plus-bridge.css',
+	],
+
+	// Стили EP не тянуть из чанков компонентов: иначе каждый el-компонент
+	// приносит свой CSS отдельным блокирующим <link> (до 20 на страницу).
+	// Список подключаемых стилей — assets/css/element-plus.css.
+	elementPlus: { importStyle: false },
+
+	experimental: {
+		defaults: {
+			// Префетч страниц по наведению, а не по попаданию ссылки во вьюпорт:
+			// на листинге ~100 внутренних ссылок, и дефолтный `visibility`
+			// вешал на каждую IntersectionObserver и тянул чанки + payload всех
+			// видимых страниц, конкурируя с LCP (158 мс на чанке NuxtLink).
+			nuxtLink: { prefetchOn: { visibility: false, interaction: true } },
+		},
+	},
+
+	features: {
+		// Инлайнить в HTML только стили .vue-компонентов (дефолт Nuxt 4).
+		// Глобальный CSS (токены, EP, мост) остаётся одной кэшируемой ссылкой:
+		// с true он и инлайнился на каждой странице, и подключался ссылкой.
+		inlineStyles: (id) => !!id && id.includes('.vue'),
+	},
+
+	hooks: {
+		// Nuxt инлайнит стили отрендеренных компонентов, но <link> на CSS общих
+		// чанков (_KitAvatar, use-in-viewport…) при этом оставляет: его
+		// собственная зачистка манифеста сравнивает имя CSS-файла с именем
+		// компонента, а Rollup называет общий чанк по первому модулю. Итог —
+		// половина блокирующих ссылок дублировала инлайн байт в байт
+		// (docs/audit/lighthouse-perf-2026-09.md).
+		//
+		// Весь CSS вне entry — стили .vue, и он уже в <style>. Ссылки на него в
+		// SSR-HTML лишние. При клиентской навигации CSS чанков подтягивает
+		// preload-helper Vite по своему списку зависимостей, манифест Nuxt
+		// для этого не используется.
+		'build:manifest'(manifest) {
+			for (const chunk of Object.values(manifest)) {
+				if (!chunk.isEntry) chunk.css = [];
+			}
+		},
+	},
 
 	components: ['~/components'],
 
@@ -140,6 +189,7 @@ export default defineNuxtConfig({
 		dbUser: process.env.DB_USER || '',
 		dbPassword: process.env.DB_PASSWORD || '',
 		public: {
+			gtagEnabled: process.env.NODE_ENV === 'production',
 			telegramBotId: (process.env.TELEGRAM_BOT_TOKEN || '').split(':')[0],
 			mixpanelToken: process.env.MIXPANEL_TOKEN,
 			stripePublishableKey:
@@ -189,10 +239,27 @@ export default defineNuxtConfig({
 		// заголовками — нужен Cache Rule в панели. Без него правило безвредно,
 		// но и бесполезно.
 		//
-		// НЕ кэшируются `/clinics/**` и `/doctors/<slug>`: там в серверную
-		// разметку попадает баннер владельца (`isOwner`), то есть ответ
-		// зависит от того, кто смотрит. Границы правил проверены прогоном
-		// набора через radix3.
+		// Карточки клиник и врачей сначала были исключены: в их серверную
+		// разметку попадает баннер владельца (`isOwner`). Исключение снято —
+		// оно было и слишком дорогим, и недостаточным.
+		//
+		// Дорогим: это самый крупный раздел. В sitemap 8196 адресов врачей и
+		// 2274 клиники против 204 во всём core — то есть без них кэш накрывал
+		// бы 2% поверхности сайта.
+		//
+		// Недостаточным: персональные данные лежат в payload КАЖДОЙ страницы,
+		// а не только этих двух. Pinia сериализует стор пользователя в
+		// `__NUXT_DATA__`, потому что `app.vue` зовёт `fetchUser()` в setup и
+		// на сервере тот ходит в API с cookie запроса. Проверено на проде.
+		//
+		// Правильная граница — не путь, а наличие cookie сессии. Она проходит
+		// в двух местах, и оба обязательны:
+		//   * Cache Rule в Cloudflare обходит кэш при cookie `session_id` —
+		//     иначе вошедший получал бы анонимную версию из кэша и владелец
+		//     клиники не увидел бы баннера;
+		//   * `server/plugins/private-cache.ts` меняет заголовок на
+		//     `private, no-store`, если cookie есть — чтобы персональный ответ
+		//     не попал в общий кэш даже при неверно настроенном правиле.
 		'/': CACHED_STATIC,
 		'/about': CACHED_STATIC,
 		'/terms': CACHED_STATIC,
@@ -203,6 +270,8 @@ export default defineNuxtConfig({
 		'/labtests/**': CACHED_CATALOG,
 		'/medicines/**': CACHED_CATALOG,
 		'/insurance-companies/**': CACHED_CATALOG,
+		'/doctors/**': CACHED_CATALOG,
+		'/clinics/**': CACHED_CATALOG,
 		'/doctors': CACHED_CATALOG,
 		'/clinics': CACHED_CATALOG,
 		// Кабинет и страницы авторизации: noindex заголовком, а не только метой.

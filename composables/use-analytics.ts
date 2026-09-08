@@ -14,6 +14,19 @@ type Mixpanel = (typeof import('mixpanel-browser'))['default'];
 let mixpanelInstance: Mixpanel | null = null;
 let mixpanelLoadPromise: Promise<void> | null = null;
 
+// Первичный запуск аналитики — в простое браузера после гидрации. SDK Mixpanel
+// и gtag.js вместе ~290 КБ JS; стартуя прямо в setup, они конкурировали с LCP
+// и давали основную часть TBT (docs/audit/lighthouse-perf-2026-09.md, этап 2).
+// `timeout` — чтобы на занятой вкладке запуск не откладывался бесконечно.
+// Safari без requestIdleCallback — просто пауза.
+const runWhenIdle = (fn: () => void) => {
+	if (typeof window.requestIdleCallback === 'function') {
+		window.requestIdleCallback(() => fn(), { timeout: 3000 });
+	} else {
+		window.setTimeout(fn, 2000);
+	}
+};
+
 // Тип страницы по имени роута — идёт в super property page_type и в каждое
 // событие, чтобы воронки различали источник (service_detail → clinic и т.п.)
 const ROUTE_PAGE_TYPES: Record<string, string> = {
@@ -80,7 +93,7 @@ export function useAnalyticsEntity(): ComputedRef<AnalyticsEntityRef | null> {
 
 export function useAnalytics() {
 	const config = useRuntimeConfig();
-	const { gtag } = useGtag();
+	const { gtag, initialize: initializeGTag } = useGtag();
 	const { isConsentGiven } = useCookieControl();
 	const router = useRouter();
 	// $i18n вместо useI18n(): композабл вызывается и вне setup (плагины)
@@ -137,6 +150,32 @@ export function useAnalytics() {
 		}
 	};
 
+	// Скрипт gtag.js модуль сам не подключает (`enabled: false` в nuxt.config) —
+	// иначе он уезжал бы в <head> и грузился в критическом пути у всех.
+	// Команды до его загрузки не теряются: они копятся в dataLayer.
+	const loadGTag = () => {
+		if (!import.meta.client || !config.public.gtagEnabled) return;
+		initializeGTag();
+	};
+
+	// Точка входа для первичного запуска из layout: всё тяжёлое — после
+	// гидрации и в простое. Смена согласия позже (клик по баннеру)
+	// обрабатывается watch'ем в layout и стартует сразу.
+	const startAnalytics = () => {
+		if (!import.meta.client) return;
+		onNuxtReady(() => {
+			runWhenIdle(() => {
+				loadGTag();
+				if (isConsentGiven.value) {
+					initMixpanel();
+					initGTag();
+				} else {
+					disableAnalytics();
+				}
+			});
+		});
+	};
+
 	const initGTag = () => {
 		if (!import.meta.client) return;
 		gtag('consent', 'update', {
@@ -160,7 +199,8 @@ export function useAnalytics() {
 	};
 
 	// События не отправляются без согласия; если SDK ещё грузится после
-	// согласия — событие не теряется, а ждёт окончания загрузки
+	// согласия — событие не теряется, а ждёт окончания загрузки. Если
+	// загрузка ещё не начата (отложенный старт), первое событие её запускает.
 	const withMixpanel = (fn: (mixpanel: Mixpanel) => void) => {
 		if (!import.meta.client || !isConsentGiven.value) return;
 
@@ -169,6 +209,7 @@ export function useAnalytics() {
 			return;
 		}
 
+		if (!mixpanelLoadPromise) initMixpanel();
 		mixpanelLoadPromise?.then(() => {
 			if (mixpanelInstance) fn(mixpanelInstance);
 		});
@@ -205,6 +246,7 @@ export function useAnalytics() {
 	};
 
 	return {
+		startAnalytics,
 		initMixpanel,
 		initGTag,
 		disableAnalytics,

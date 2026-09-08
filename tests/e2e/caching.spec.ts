@@ -69,27 +69,80 @@ test.describe('Кэш HTML', () => {
 		expect(res.headers['cache-control']).toContain('s-maxage=');
 	});
 
-	// Ключевая проверка раздела: эти страницы показывают владельцу клиники
-	// баннер управления прямо в серверной разметке. Попади они в общий кэш —
-	// баннер увидел бы любой посетитель, а владелец получил бы чужую версию.
-	test('страница клиники НЕ кэшируется: в разметке баннер владельца', async ({
-		page,
-	}) => {
+	// Карточки клиник и врачей — самый крупный и самый тяжёлый раздел, и они
+	// тоже кэшируются. Баннер владельца в их разметке от кэша отделяет не
+	// путь, а cookie сессии (следующий блок).
+	test('страница клиники кэшируется для анонима', async ({ page }) => {
 		const href = await firstDetailHref(page, URLS.CLINICS, '/clinics');
 		const res = await visit(page, href);
 
 		expect(res.status).toBe(200);
-		expect(res.headers['cache-control']).toBeFalsy();
+		expect(res.headers['cache-control']).toContain('s-maxage=');
 	});
 
-	test('страница врача НЕ кэшируется: в разметке баннер владельца', async ({
-		page,
-	}) => {
+	test('страница врача кэшируется для анонима', async ({ page }) => {
 		const href = await firstDetailHref(page, URLS.DOCTORS, '/doctors');
 		const res = await visit(page, href);
 
 		expect(res.status).toBe(200);
-		expect(res.headers['cache-control']).toBeFalsy();
+		expect(res.headers['cache-control']).toContain('s-maxage=');
+	});
+
+	// Граница между «можно в общий кэш» и «нельзя» — наличие cookie сессии, и
+	// это самая дорогая проверка раздела.
+	//
+	// Персональные данные лежат не только в баннере владельца: Pinia
+	// сериализует стор пользователя в `__NUXT_DATA__` каждой страницы, потому
+	// что `app.vue` зовёт `fetchUser()` в setup, а на сервере тот ходит в API
+	// с cookie запроса. У анонима там `null`, у вошедшего — имя, email и
+	// `is_admin`. Прогрей такой ответ запись в Cloudflare — и его получит
+	// каждый, кто зайдёт следом.
+	//
+	// Проверяется наличие cookie, не её валидность: смысл всей затеи в том,
+	// чтобы на кэшируемых маршрутах не ходить в базу.
+	test.describe('Ответ вошедшему не попадает в общий кэш', () => {
+		const withSession = [URLS.HOME, URLS.SERVICES, URLS.CLINICS];
+
+		for (const url of withSession) {
+			test(`${url}: с cookie сессии кэш снимается`, async ({
+				page,
+				context,
+			}) => {
+				const anonymous = await visit(page, url);
+				expect(anonymous.headers['cache-control']).toContain('s-maxage=');
+
+				await context.addCookies([
+					{
+						name: 'session_id',
+						value: 'e2e-not-a-real-session',
+						url: new URL(anonymous.url).origin,
+					},
+				]);
+
+				const res = await visit(page, url);
+
+				expect(res.headers['cache-control']).toContain('no-store');
+				expect(res.headers['cache-control']).not.toContain('s-maxage=');
+			});
+		}
+
+		test('статика от cookie не страдает', async ({ page, context }) => {
+			const first = await visit(page, '/favicon.svg');
+
+			await context.addCookies([
+				{
+					name: 'session_id',
+					value: 'e2e-not-a-real-session',
+					url: new URL(first.url).origin,
+				},
+			]);
+
+			const res = await visit(page, '/favicon.svg');
+
+			// У статики нет `s-maxage`, поэтому правило её не касается: иначе
+			// вошедший посетитель качал бы иконки заново на каждой странице.
+			expect(res.headers['cache-control']).toContain('immutable');
+		});
 	});
 
 	test('кабинет не кэшируется и закрыт заголовком от индексации', async ({

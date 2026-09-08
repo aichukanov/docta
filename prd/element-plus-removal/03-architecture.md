@@ -164,9 +164,14 @@ provide/inject. Сабмит — обычный `<form @submit.prevent>` (бон
 ## Порядок демонтажа инфраструктуры (строго в конце, итерация 5)
 
 1. Grep-гейт по всему репозиторию: `<el-`, `\bEl[A-Z]`, `v-loading`, `@element-plus` → 0 вхождений.
-2. `nuxt.config.ts`: убрать `@element-plus/nuxt` из modules; добавить конфиг `components` для `ui/`.
+2. `nuxt.config.ts`: убрать `@element-plus/nuxt` из modules и `elementPlus: { importStyle: false }`;
+   из `css` — `~/assets/css/element-plus.css` и `@ach/ui-kit/element-plus-bridge.css`.
 3. `package.json`: удалить `element-plus`, `@element-plus/nuxt`.
-4. `design-tokens.css`: удалить блок моста `:root:root { --el-* }` и фикс `.el-button--danger`.
+4. Удалить `assets/css/element-plus.css` (сводный CSS theme-chalk используемых компонентов,
+   появился 2026-09-08 вместо поимпортных стилей модуля — см. `docs/audit/lighthouse-perf-2026-09.md`)
+   и `src/styles/element-plus-bridge.css` в пакете `@ach/ui-kit` (мост `:root:root { --el-* }` +
+   фикс `.el-button--danger`; svad тоже пользуется пакетом — проверить его первым).
+   Хук `build:manifest` и `features.inlineStyles` в nuxt.config.ts остаются: это про Nuxt, не про EP.
 5. Auth-страницы: удалить локальные `--el-*`-переменные (4 файла).
 6. `npm run typecheck` + полный e2e + `nuxt build --analyze` (зафиксировать дельту бандла в PROGRESS.md).
 

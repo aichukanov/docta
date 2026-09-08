@@ -4,6 +4,16 @@
 
 Система локализации настроена и работает. **Не переносите конфигурацию из `i18n.config.ts` в `nuxt.config.ts`** - это сломает работу.
 
+Это про runtime-конфиг vue-i18n (сообщения, форматы, `fallbackLocale`).
+Опции самого модуля — другое дело: в `nuxt.config.ts` под ключом `i18n`
+стоит `detectBrowserLanguage: false`, и стоит он там намеренно (см. ниже).
+
+**Серверная часть ниже описана по состоянию до 2026-08-31.** С тех пор
+сервер выбирает локаль ТОЛЬКО по адресу, cookie на ответ не влияет, а
+предпочтение посетителя восстанавливает Cloudflare Worker. Актуальное описание
+и причины — `docs/rules/EDGE_LOCALE_CACHE.md`; этот документ остаётся как
+описание клиентской части и список запретов.
+
 ## Как работает система
 
 ### 1. Server-side (SSR)
@@ -61,26 +71,25 @@ export default defineI18nConfig(() => ({
 }));
 ```
 
-**⚠️ Внимание:**
+**Cookie ровно одна — `locale`.** Её пишет переключатель языка, читает
+`plugins/locale-preference.client.ts`.
 
-- Cookie `i18n_redirected` создаётся модулем `@nuxtjs/i18n`, но **мы его не используем**
-- Наша логика работает с cookie `locale`
-
-## Два cookie - это нормально
-
-В браузере будет два cookie:
-
-- `locale` - используется нашим кодом (server middleware, app.vue)
-- `i18n_redirected` - создаётся модулем @nuxtjs/i18n, игнорируется
-
-Это **не баг**, это особенность работы модуля @nuxtjs/i18n.
+Раньше рядом жила вторая, `i18n_redirected`: её писал `@nuxtjs/i18n` по
+своему дефолту `detectBrowserLanguage.useCookie`, наш код её никогда не читал,
+и этот документ называл такое соседство нормой. Это было терпимо до тех пор,
+пока HTML не начали кэшировать на Cloudflare: **ответ с `Set-Cookie` не
+кэшируется никогда**, и лишняя cookie в каждом первом ответе выключала кэш
+для всех, кто приходит без cookie — то есть для каждого бота. С 2026-09-08 в
+`nuxt.config.ts` стоит `detectBrowserLanguage: false`, а e2e-тест
+`caching.spec.ts` следит, чтобы на кэшируемых маршрутах `Set-Cookie` не
+появлялся. Подробно — `docs/rules/EDGE_LOCALE_CACHE.md`.
 
 ## Что НЕ нужно делать
 
 ❌ **НЕ создавайте плагины** для установки локали (типа `plugins/01.locale.client.ts`)
 ❌ **НЕ создавайте middleware** для установки локали (типа `middleware/locale.global.ts`)
 ❌ **НЕ переносите** настройки из `i18n.config.ts` в `nuxt.config.ts`
-❌ **НЕ меняйте** cookieKey на `locale` в `detectBrowserLanguage`
+❌ **НЕ включайте** `detectBrowserLanguage` обратно — его `Set-Cookie` выключает кэш HTML на Cloudflare
 ❌ **НЕ используйте** `useI18n()` в плагинах - это вызовет ошибки
 
 ## Приоритет определения локали
@@ -97,6 +106,7 @@ export default defineI18nConfig(() => ({
 ### На клиенте (app.vue):
 
 Локаль просто читается из query параметра (установленного на сервере):
+
 ```typescript
 const queryLocale = getLocaleFromQuery(route.query.lang);
 locale.value = queryLocale || defaultLocale;
@@ -107,19 +117,21 @@ locale.value = queryLocale || defaultLocale;
 **Приоритет максимальный!** Если пользователь залогинен, его предпочитаемая локаль из БД (`auth_users.preferred_locale`) имеет наивысший приоритет и игнорирует cookie и query параметры.
 
 **Проверка на сервере** (`regional-settings.ts`):
+
 ```typescript
 const user = await getCurrentUser(event);
 if (user?.id) {
-  const userLocale = await getUserLocale(user.id, event);
-  if (userLocale) {
-    // Используем локаль из профиля
-    // Cookie и query параметры игнорируются
-    return { locale: userLocale, redirectStatus: null };
-  }
+	const userLocale = await getUserLocale(user.id, event);
+	if (userLocale) {
+		// Используем локаль из профиля
+		// Cookie и query параметры игнорируются
+		return { locale: userLocale, redirectStatus: null };
+	}
 }
 ```
 
 **Сохранение через компонент** (`language-switcher.vue`):
+
 - Сохраняет выбранную локаль в БД через API
 - Обновляет cookie `locale`
 - Обновляет `i18n.locale`
@@ -175,9 +187,8 @@ http://localhost:3000/?lang=sr
 # → редирект 301 на http://localhost:3000/
 
 # Проверить cookie
-# В DevTools → Application → Cookies должны быть:
-# - locale=ru (наш)
-# - i18n_redirected=ru (от @nuxtjs/i18n, игнорируется)
+# В DevTools → Application → Cookies после переключения языка — только locale=ru.
+# Второй cookie (i18n_redirected) быть не должно: см. раздел про i18n выше.
 ```
 
 ### Для залогиненных пользователей:
@@ -225,6 +236,7 @@ npm run test:e2e -- locale.spec.ts --debug
 ### Покрытие тестами
 
 #### ✅ Незалогиненные пользователи - Query параметры:
+
 - Загрузка страницы с локалью из query параметра (`?lang=ru`, `?lang=en`)
 - Проверка установки cookie
 - Редирект от дефолтной локали (`?lang=sr` → `/`)
@@ -232,28 +244,33 @@ npm run test:e2e -- locale.spec.ts --debug
 - Использование cookie когда нет query параметра
 
 #### ✅ Незалогиненные пользователи - Language Switcher:
+
 - Переключение языка через компонент
 - Сохранение выбранного языка после перезагрузки
 - Сохранение языка при навигации между страницами
 
 #### ✅ SSR и гидратация:
+
 - Рендеринг правильной локали на сервере
 - Отсутствие ошибок гидратации
 - Одинаковая локаль на сервере и клиенте
 
 #### 🔄 Залогиненные пользователи (требуют фикстур):
+
 - Загрузка локали из БД при авторизации
 - Игнорирование query параметра для залогиненных
 - Сохранение локали в БД при изменении через switcher
 - Использование query параметра после разлогина
 
 #### ✅ Граничные случаи:
+
 - Обработка невалидных локалей
 - Множественные `lang` параметры в URL
 - Удаление устаревших локалей (ME, BA) из cookie
 - Изменение локали во время навигации
 
 #### ✅ Производительность:
+
 - Отсутствие layout shift при загрузке локали
 - Быстрая загрузка локали из профиля
 
@@ -265,15 +282,16 @@ npm run test:e2e -- locale.spec.ts --debug
 import { test } from '../fixtures/auth.fixture';
 
 test('should load user locale from database', async ({ authenticatedPage }) => {
-  // authenticatedPage уже содержит авторизованного пользователя
-  await authenticatedPage.goto('/');
-  
-  const htmlLang = await authenticatedPage.getAttribute('html', 'lang');
-  expect(htmlLang).toBe('ru'); // Локаль из профиля пользователя
+	// authenticatedPage уже содержит авторизованного пользователя
+	await authenticatedPage.goto('/');
+
+	const htmlLang = await authenticatedPage.getAttribute('html', 'lang');
+	expect(htmlLang).toBe('ru'); // Локаль из профиля пользователя
 });
 ```
 
 **⚠️ TODO:** Фикстуры требуют реализации:
+
 1. API для создания тестовых пользователей (`/api/test/create-user`)
 2. Страница логина (`/login`)
 3. Методы работы с сессиями в тестах

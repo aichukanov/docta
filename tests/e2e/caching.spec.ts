@@ -58,6 +58,20 @@ test.describe('Кэш HTML', () => {
 			// сразу, а не через час.
 			expect(res.headers['cache-control']).toContain('max-age=0');
 		});
+
+		// Ответ с `Set-Cookie` Cloudflare не кэширует никогда, каким бы ни был
+		// `Cache-Control`, — правило видит совпадение и отвечает `BYPASS`.
+		// Так уже было: `@nuxtjs/i18n` по умолчанию писал `i18n_redirected`
+		// в каждый первый ответ, наш код её не читал, а кэш не работал ни
+		// для кого без cookie — то есть ни для одного бота. Контекст у теста
+		// свежий, cookie нет, это и есть тот самый «первый ответ».
+		test(`${url}: без Set-Cookie, иначе Cloudflare не закэширует`, async ({
+			page,
+		}) => {
+			const res = await visit(page, url);
+
+			expect(res.headers['set-cookie']).toBeUndefined();
+		});
 	}
 
 	test('локализованная версия кэшируется отдельно, но кэшируется', async ({

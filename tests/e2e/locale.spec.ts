@@ -108,10 +108,13 @@ test.describe('Locale System', () => {
 			// router.replace — клиентская навигация, ждём именно смены URL
 			await page.waitForURL(/lang=ru/, { timeout: 20000 });
 
-			// Проверяем что язык изменился
+			// Проверяем что язык изменился. Атрибут <html lang> приходит
+			// отдельным тиком unhead — ждём, а не читаем сразу (та же гонка,
+			// что и в тесте про навигацию ниже).
 			expect(page.url()).toContain('lang=ru');
-			const htmlLang = await page.getAttribute('html', 'lang');
-			expect(htmlLang).toBe('ru');
+			await expect(page.locator('html')).toHaveAttribute('lang', 'ru', {
+				timeout: 10000,
+			});
 
 			// Проверяем что cookie обновился
 			const cookies = await page.context().cookies();
@@ -145,8 +148,15 @@ test.describe('Locale System', () => {
 			// (см. plugins/locale-preference.client.ts), поэтому ждём URL,
 			// а не domcontentloaded: разметка приезжает на дефолтной локали.
 			await page.waitForURL(/lang=ru/, { timeout: 20000 });
-			const htmlLang = await page.getAttribute('html', 'lang');
-			expect(htmlLang).toBe('ru');
+
+			// Атрибут <html lang> обновляет unhead отдельным тиком после смены
+			// locale: тексты уже русские, а атрибут ещё `sr`. Читать его сразу
+			// после смены URL — гонка; раньше её маскировала детекция
+			// @nuxtjs/i18n, которая синхронизировала head сама и теперь
+			// выключена (Set-Cookie ломал кэш Cloudflare). Ждём атрибут.
+			await expect(page.locator('html')).toHaveAttribute('lang', 'ru', {
+				timeout: 10000,
+			});
 		});
 	});
 

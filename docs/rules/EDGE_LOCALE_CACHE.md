@@ -97,16 +97,31 @@ Create rule. (В некоторых аккаунтах пункт лежит в 
 ```
 (not http.cookie contains "session_id") and (
   (http.request.uri.path eq "/") or
-  (http.request.uri.path in {"/about" "/terms" "/privacy"}) or
-  (starts_with(http.request.uri.path, "/articles")) or
-  (starts_with(http.request.uri.path, "/services")) or
-  (starts_with(http.request.uri.path, "/labtests")) or
-  (starts_with(http.request.uri.path, "/medicines")) or
-  (starts_with(http.request.uri.path, "/insurance-companies")) or
-  (starts_with(http.request.uri.path, "/doctors")) or
-  (starts_with(http.request.uri.path, "/clinics"))
+  (http.request.uri.path in {"/about" "/terms" "/privacy" "/articles" "/services"
+                             "/labtests" "/medicines" "/insurance-companies"
+                             "/doctors" "/clinics"}) or
+  (starts_with(http.request.uri.path, "/articles/")) or
+  (starts_with(http.request.uri.path, "/services/")) or
+  (starts_with(http.request.uri.path, "/labtests/")) or
+  (starts_with(http.request.uri.path, "/medicines/")) or
+  (starts_with(http.request.uri.path, "/insurance-companies/")) or
+  (starts_with(http.request.uri.path, "/doctors/")) or
+  (starts_with(http.request.uri.path, "/clinics/"))
 )
 ```
+
+**Почему префиксы со слэшем, а листинги отдельным списком.** `starts_with` —
+обычная проверка начала строки, слэша после префикса она не требует. Форма
+`starts_with(path, "/doctors")` накрыла бы и `/doctors-old`, и `/doctorsxyz`.
+Сегодня таких маршрутов нет, но появиться они могут — например, посадочная
+страница под рекламу, которую кэшировать нельзя. Слэш в префиксе снимает
+вопрос заранее, а сами листинги перечислены точным совпадением.
+
+Это отличается от `routeRules`, где записи выглядят как `/doctors/**`, и
+отличается осознанно: у radix3 и у Rules Language разный синтаксис, а не
+разная логика. Проверено на проде: `/articles`, `/services`, `/labtests`,
+`/medicines` и `/insurance-companies` заданы в конфиге ТОЛЬКО через `/**` и
+при этом отдают `s-maxage` — то есть `/x/**` в nitro покрывает и сам `/x`.
 
 **Поле «Then».**
 
@@ -135,6 +150,24 @@ curl -sI https://docta.me/services | grep -i cf-cache-status
 
 Первый может показать `MISS`, второй обязан — `HIT`. Если оба `DYNAMIC`,
 правило не сработало: проверьте выражение и что правило включено.
+
+Если же ответ `BYPASS` — правило сработало, но Cloudflare **отказался
+класть ответ в кэш**. Почти наверняка в ответе есть `Set-Cookie`: ответ с
+этим заголовком не кэшируется никогда, каким бы ни был `Cache-Control`.
+Именно так и провалилась первая попытка 2026-09-08: `@nuxtjs/i18n` по
+умолчанию писал `i18n_redirected=sr` в каждый первый ответ, наш код эту cookie
+не читал, а кэш из-за неё не работал ни для кого без cookie — то есть ни для
+одного бота. Снято `detectBrowserLanguage: false` в `nuxt.config.ts`, сторожит
+тест «без Set-Cookie» в `tests/e2e/caching.spec.ts`. Любой новый `Set-Cookie`
+на кэшируемом маршруте вернёт ту же поломку.
+
+Замечание о клиенте: Cloudflare может встретить `curl` без User-Agent
+челленджем (`403`, `Cf-Mitigated: challenge`), и заголовков кэша в таком ответе
+не будет. Проверять с браузерным UA:
+
+```powershell
+curl.exe -sI -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/140.0.0.0 Safari/537.36" https://docta.me/services | Select-String -Pattern "cf-cache-status|set-cookie"
+```
 
 Карточки клиник и врачей — самый ценный кусок кэша, их стоит проверить
 отдельно:

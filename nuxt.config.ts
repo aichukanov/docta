@@ -120,15 +120,23 @@ export default defineNuxtConfig({
 	// Дальше стили Element Plus одним файлом и мост к токенам: мост
 	// переопределяет переменные EP, поэтому обязан идти после них. Обе строки
 	// удаляются вместе с самим Element Plus.
-	css: [
-		'~/assets/css/element-plus.css',
-		'@ach/ui-kit/element-plus-bridge.css',
-	],
+	css: ['~/assets/css/element-plus.css', '@ach/ui-kit/element-plus-bridge.css'],
 
 	// Стили EP не тянуть из чанков компонентов: иначе каждый el-компонент
 	// приносит свой CSS отдельным блокирующим <link> (до 20 на страницу).
 	// Список подключаемых стилей — assets/css/element-plus.css.
 	elementPlus: { importStyle: false },
+
+	i18n: {
+		// Дефолт модуля — `useCookie: true` — писал `i18n_redirected=sr` в
+		// каждый первый ответ. Локаль у нас определяется адресом, а
+		// предпочтение хранит своя cookie `locale`, так что эту никто не
+		// читал (docs/rules/LOCALE_ARCHITECTURE.md). Но ответ с `Set-Cookie`
+		// Cloudflare не кэширует вовсе: `cf-cache-status: BYPASS` на каждой
+		// странице при правильно настроенном Cache Rule — это было оно.
+		// Боты cookie не хранят, поэтому у них бы бypass был на КАЖДЫЙ запрос.
+		detectBrowserLanguage: false,
+	},
 
 	experimental: {
 		defaults: {
@@ -163,6 +171,26 @@ export default defineNuxtConfig({
 			for (const chunk of Object.values(manifest)) {
 				if (!chunk.isEntry) chunk.css = [];
 			}
+		},
+
+		// Rollup режет клиент на ~350 чанков, из них 130 меньше 2 КБ; на страницу
+		// уходило ~100 <link rel="modulepreload">. Каждый — отдельный запрос с
+		// приоритетом High, и Lighthouse (Lantern) считает их блокирующими
+		// первую отрисовку: FCP в симуляции 5,8 с при реальных 0,6 с. Порог
+		// сливает мелкие чанки с их общими зависимыми, не меняя по смыслу, что и
+		// когда загружается. Замер: чанков 353 → 234, preload на странице
+		// клиники 96 → 46 (docs/audit/lighthouse-perf-2026-09.md, §5).
+		//
+		// Через хук, а не через `vite.build.rollupOptions.output`: сборку делает
+		// Vite 7 на Rollup 4 (@nuxt/vite-builder), а типы конфига Nuxt берёт из
+		// вложенного Vite 8 на Rolldown, где этой опции нет — поле в конфиге не
+		// проходит typecheck. Object.assign типизируется без каста. При
+		// переезде на Vite 8 опцию пересмотреть.
+		'vite:extendConfig'(config, { isClient }) {
+			if (!isClient) return;
+			const output = config.build?.rollupOptions?.output;
+			if (!output || Array.isArray(output)) return;
+			Object.assign(output, { experimentalMinChunkSize: 20000 });
 		},
 	},
 
@@ -272,8 +300,12 @@ export default defineNuxtConfig({
 		'/insurance-companies/**': CACHED_CATALOG,
 		'/doctors/**': CACHED_CATALOG,
 		'/clinics/**': CACHED_CATALOG,
-		'/doctors': CACHED_CATALOG,
-		'/clinics': CACHED_CATALOG,
+		// Отдельных `/doctors` и `/clinics` здесь больше нет: `/x/**` в radix3
+		// покрывает и сам `/x`. Видно по соседям — у `/articles`, `/services`,
+		// `/labtests`, `/medicines` и `/insurance-companies` голых записей
+		// никогда не было, и все пятеро отдают `s-maxage` на проде. Пара
+		// осталась с тех пор, когда карточки врачей и клиник из кэша
+		// исключались и правила `/**` для них не существовало.
 		// Кабинет и страницы авторизации: noindex заголовком, а не только метой.
 		//
 		// Страницы с ssr:false отдают пустую оболочку, и мета появляется в ней

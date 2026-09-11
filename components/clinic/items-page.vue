@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getRegionalQuery } from '~/common/url-utils';
+import { getCanonicalPath, getRegionalQuery } from '~/common/url-utils';
 import type { ClinicStatus } from '~/interfaces/clinic';
 import type {
 	ClinicCoupon,
@@ -62,6 +62,7 @@ const props = withDefaults(
 );
 
 const { t, locale } = useI18n();
+const route = useRoute();
 const { currentSearch, currentCategory, currentSort, pushQuery } =
 	useClinicItemsRoute();
 
@@ -96,6 +97,18 @@ const onSortUpdate = (sort: string) => {
 	const next = !sort || sort === props.defaultSort ? null : sort;
 	pushQuery({ sort: next, page: null });
 };
+
+/**
+ * Адрес N-й страницы подстраницы клиники: тот же canonical, что отдаёт
+ * `app.vue`, только без домена. Без этих ссылок краулер видел бы страницу
+ * `?page=2` только исполнив JS (FR-10 в prd/element-plus-removal).
+ */
+const buildPageHref = (page: number) =>
+	getCanonicalPath(
+		route.path,
+		{ ...route.query, page: page > 1 ? String(page) : undefined },
+		locale.value,
+	);
 
 const onPageChange = (page: number) => {
 	pushQuery({ page: page > 1 ? page : null });
@@ -183,6 +196,7 @@ const breadcrumbs = computed(() => [
 			:total="pagination.totalCount"
 			:currentPage="pagination.page"
 			:pageSize="pagination.pageSize"
+			:href="buildPageHref"
 			align="center"
 			@update:current-page="onPageChange"
 		/>

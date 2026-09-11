@@ -68,15 +68,21 @@ export class ListingPage extends BasePage {
 
 	async hasPagination(): Promise<boolean> {
 		return await this.page
-			.locator('.el-pagination')
+			.locator('.kit-pagination')
 			.isVisible()
 			.catch(() => false);
 	}
 
+	/*
+	 * Номер страницы ищется по тексту, а не по aria-label: подписи приходят
+	 * из словаря приложения и на сербском выглядят как «Stranica 2».
+	 * На листингах номер — ссылка (`<a href>`), в попапе карты — кнопка;
+	 * общий у них класс, поэтому селектор по нему.
+	 */
 	private pageButton(pageNumber: number): Locator {
-		return this.page.locator(
-			`.el-pagination .el-pager li.number[aria-label="page ${pageNumber}"]`,
-		);
+		return this.page
+			.locator('.kit-pagination .kit-pagination__item')
+			.filter({ hasText: new RegExp(`^${pageNumber}$`) });
 	}
 
 	async goToPage(pageNumber: number) {
@@ -96,29 +102,36 @@ export class ListingPage extends BasePage {
 
 	async waitForActivePageNumber(pageNumber: number): Promise<void> {
 		await this.waitForCookieBanner();
-		const selector = `.el-pagination .el-pager li.number[aria-label="page ${pageNumber}"]`;
-		await this.page.locator(selector).waitFor({ state: 'visible' });
-		await this.page.waitForFunction((targetSelector) => {
-			const el = document.querySelector(targetSelector);
-			return el?.getAttribute('aria-current') === 'true';
-		}, selector);
+		const active = this.pageButton(pageNumber).and(
+			this.page.locator('[aria-current="page"]'),
+		);
+		await active.waitFor({ state: 'visible' });
 	}
 
 	async getActivePageNumber(): Promise<number> {
 		const active = this.page
-			.locator('.el-pagination .el-pager li[aria-current="true"]')
+			.locator('.kit-pagination .kit-pagination__item[aria-current="page"]')
 			.first();
-		const label = await active.getAttribute('aria-label');
-		const text = label || (await active.textContent()) || '';
+		const text = (await active.textContent()) || '';
 		const parsed = Number.parseInt(text.match(/(\d+)/)?.[1] ?? '', 10);
 		return Number.isNaN(parsed) ? 1 : parsed;
 	}
 
 	async hasEnabledNextPage(): Promise<boolean> {
 		return await this.page
-			.locator('.el-pagination .btn-next:not(.is-disabled)')
+			.locator('.kit-pagination__item--next:not(:disabled)')
 			.isVisible()
 			.catch(() => false);
+	}
+
+	/**
+	 * Ссылка на N-ю страницу прямо из разметки — без клика и без JS.
+	 *
+	 * Нужна проверке краулимости: номера обязаны быть `<a href>` уже
+	 * в серверном HTML (FR-10 в prd/element-plus-removal).
+	 */
+	async getPageHref(pageNumber: number): Promise<string | null> {
+		return await this.pageButton(pageNumber).getAttribute('href');
 	}
 
 	/**

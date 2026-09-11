@@ -1,5 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { getCanonicalUrl } from '../../common/url-utils';
+import { readFileSync } from 'node:fs';
+import { readdirSync, statSync } from 'node:fs';
+import { dirname, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { getCanonicalUrl, getCanonicalPath } from '../../common/url-utils';
 
 // prd/silent-200-index-hygiene, итерация 3.
 //
@@ -235,6 +239,57 @@ test.describe('getCanonicalUrl — осмысленные ключи остаю�
 		expect(a).toBe(b);
 		expect(a).toBe(
 			'https://docta.me/medicines?medicineCategoryIds=1&dispensingModeIds=2',
+		);
+	});
+});
+
+test.describe('canonical собирается в одном месте', () => {
+	const HERE = dirname(fileURLToPath(import.meta.url));
+	const ROOT = resolve(HERE, '../..');
+	const DIRS = ['app.vue', 'components', 'pages', 'composables', 'common'];
+
+	const sources = (): string[] => {
+		const files: string[] = [];
+		const walk = (path: string) => {
+			if (statSync(path).isFile()) {
+				if (/\.(vue|ts)$/.test(path)) files.push(path);
+				return;
+			}
+			for (const entry of readdirSync(path)) walk(join(path, entry));
+		};
+		for (const dir of DIRS) walk(resolve(ROOT, dir));
+		return files;
+	};
+
+	/*
+	 * Своя склейка canonical — не стилистика, а два реальных дефекта разом.
+	 * `components/reviews-page.vue` собирал его вручную и до 2026-09-08
+	 * (а) давал `?lang=ru&page=2` там, где весь остальной сайт даёт
+	 * `?page=2&lang=ru` — при том что hreflang этой же странице ставит
+	 * `app.vue` канонической функцией, то есть self-canonical и языковые
+	 * версии указывали на разные адреса; и (б) выбрасывал `?sort=`, из-за
+	 * чего `?sort=rating_low&page=2` канонизировалась в `?page=2` — страницу
+	 * с другими отзывами.
+	 *
+	 * Дубликат выигрывал молча: ключ `canonical` тот же, а setup дочернего
+	 * компонента идёт после `app.vue`.
+	 */
+	test('rel=canonical регистрирует только app.vue', () => {
+		const registering = sources().filter((file) =>
+			/rel:\s*'canonical'|rel="canonical"/.test(readFileSync(file, 'utf-8')),
+		);
+
+		// Сравнение со списком, а не с пустотой: сломайся обход или регулярка —
+		// проверка «лишних нет» прошла бы зелёной, ничего не проверив.
+		expect(registering.map((file) => file.slice(ROOT.length + 1))).toEqual([
+			'app.vue',
+		]);
+	});
+
+	test('getCanonicalPath — тот же адрес без домена', () => {
+		const query = { specialtyIds: '4', page: '2' };
+		expect(`https://docta.me${getCanonicalPath('/doctors', query, 'ru')}`).toBe(
+			getCanonicalUrl('/doctors', query, 'ru'),
 		);
 	});
 });

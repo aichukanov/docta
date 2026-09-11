@@ -1,43 +1,55 @@
 <template>
-	<div class="pagination-wrapper" :class="`pagination-wrapper_align_${align}`">
-		<el-pagination
-			background
-			layout="prev, pager, next"
+	<nav
+		class="pagination-wrapper"
+		:class="`pagination-wrapper_align_${align}`"
+		:aria-label="uiText('Pagination')"
+	>
+		<KitPagination
 			:total="total"
 			:page-size="pageSize"
-			:pager-count="5"
+			:current-page="currentPage"
 			:disabled="disabled"
-			v-model:current-page="pageNumber"
+			:href="href"
+			:prev-label="uiText('PreviousPage')"
+			:next-label="uiText('NextPage')"
+			:page-label="pageLabel"
+			@update:current-page="emit('update:current-page', $event)"
 		/>
-	</div>
+	</nav>
 </template>
 
 <script setup lang="ts">
-const props = withDefaults(
+withDefaults(
 	defineProps<{
 		total: number;
 		currentPage: number;
 		disabled?: boolean;
 		pageSize?: number;
 		align?: 'center' | 'right';
+		/**
+		 * Построитель адреса страницы: с ним номера рендерятся ссылками, без
+		 * него — кнопками. Передавать обязаны все, у кого страница отражена
+		 * в URL: без `href` в серверной разметке нет ни одной ссылки вглубь
+		 * листинга, и краулер туда не попадает (FR-10 миграции с Element Plus).
+		 *
+		 * Адрес обязан совпадать с `rel=canonical` целевой страницы вплоть до
+		 * порядка параметров, поэтому строится через `getCanonicalPath`, а не
+		 * своей склейкой — см. `components/list-page.vue`.
+		 */
+		href?: (page: number) => string;
 	}>(),
 	{
 		pageSize: 20,
 		disabled: false,
 		align: 'right',
+		href: undefined,
 	},
 );
 
 const emit = defineEmits(['update:current-page']);
 
-const pageNumber = computed({
-	get() {
-		return props.currentPage;
-	},
-	set(value) {
-		emit('update:current-page', value);
-	},
-});
+const { uiText } = useUiText();
+const pageLabel = (page: number) => uiText('PageN', { page });
 </script>
 
 <style lang="less" scoped>

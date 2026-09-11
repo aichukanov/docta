@@ -98,6 +98,13 @@ function demoLoading() {
 	isLoading.value = true;
 	setTimeout(() => (isLoading.value = false), 1500);
 }
+
+const pagerPage = ref(1);
+const pagerLinkPage = ref(7);
+// Витрина не меняет адрес страницы — href здесь показывает разметку, а не
+// навигацию: важно увидеть, что номера действительно <a href>.
+const demoPageHref = (page: number) =>
+	page > 1 ? `/dev/ui?page=${page}` : '/dev/ui';
 </script>
 
 <template>
@@ -344,6 +351,43 @@ function demoLoading() {
 						>
 					</template>
 				</KitEmpty>
+			</div>
+		</section>
+
+		<section>
+			<h2>KitPagination</h2>
+			<p class="showcase__note">
+				С <code>href</code> номера — настоящие ссылки (проверяется в HTML, а не
+				в браузере); без него — кнопки, как в попапе карты, где страница не
+				отражена в адресе.
+			</p>
+			<div class="showcase__stack">
+				<KitPagination
+					:total="400"
+					:page-size="20"
+					:current-page="pagerLinkPage"
+					:href="demoPageHref"
+					prev-label="Предыдущая страница"
+					next-label="Следующая страница"
+					:page-label="(page: number) => `Страница ${page}`"
+					@update:current-page="pagerLinkPage = $event"
+				/>
+				<KitPagination
+					:total="60"
+					:page-size="20"
+					:current-page="pagerPage"
+					prev-label="Предыдущая страница"
+					next-label="Следующая страница"
+					@update:current-page="pagerPage = $event"
+				/>
+				<KitPagination
+					:total="60"
+					:page-size="20"
+					:current-page="2"
+					disabled
+					prev-label="Предыдущая страница"
+					next-label="Следующая страница"
+				/>
 			</div>
 		</section>
 

@@ -345,11 +345,13 @@ This file provides a structured reference of the MySQL database for the docta.me
 ### `slug_redirects`
 
 - `id` (int, PK, AI)
-- `entity_type` (varchar(50), NOT NULL): Entity type: clinics, doctors, services, labtests, medications.
+- `entity_type` (varchar(50), NOT NULL): Entity type the OLD url belonged to: clinics, doctors, services, labtests, medications.
 - `old_slug` (varchar(280), NOT NULL): Previous slug value.
 - `entity_id` (int, NOT NULL): ID of the entity the old slug should redirect to.
+- `target_entity_type` (varchar(50), NULL): Catalog the target lives in. `NULL` means the same as `entity_type` — the ordinary case, a renamed slug. Set only when a record moved between catalogs, e.g. lab tests that price imports had filed under `medical_services` (migration 029): the row then reads `services` → `labtests`, and `/services/<old_slug>` 301s to `/labtests/<new_slug>`.
 - `created_at` (timestamp)
 - _Unique constraint_: (`entity_type`, `old_slug`)
+- _Comment_: Read by `checkSlugRedirect` (`server/common/redirect/slug-redirects.ts`), which caches the whole table in memory for a minute. A cross-catalog row redirects even when the slug is unchanged — slugs are unique per table, so the same slug legitimately exists in both catalogs.
 
 ### `medical_services`
 

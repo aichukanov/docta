@@ -45,10 +45,18 @@ export async function ensureUniqueSlug(
 			continue;
 		}
 
-		// Also check slug_redirects — old slug pointing to a DIFFERENT entity
+		// Also check slug_redirects — old slug pointing to a DIFFERENT entity.
+		// «Та же сущность» — это совпадение И id, И каталога: после переезда
+		// записей между каталогами (миграция 029) строка с entity_type
+		// 'services' может вести на анализ, и там своя нумерация id, в которой
+		// excludeId значит совсем другую запись. Сравнение одних id пропустило
+		// бы слаг, по которому уже стоит 301, и живая страница уводила бы
+		// редиректом сама с себя.
 		const [redirectConflict] = await connection.execute(
-			`SELECT entity_id FROM slug_redirects WHERE entity_type = ? AND old_slug = ? AND entity_id != ?`,
-			[entityType, slug, excludeId || 0],
+			`SELECT entity_id FROM slug_redirects
+			  WHERE entity_type = ? AND old_slug = ?
+			    AND NOT (entity_id = ? AND COALESCE(target_entity_type, entity_type) = ?)`,
+			[entityType, slug, excludeId || 0, entityType],
 		);
 		if ((redirectConflict as any[]).length > 0) {
 			slug = `${baseSlug}-${suffix}`;

@@ -7,6 +7,7 @@ import {
 	buildReferenceInfo,
 } from '~/server/common/utils';
 import type { LabTestItem } from '~/interfaces/clinic';
+import { fetchLabTestTariffs } from '~/server/common/tariffs';
 import { isValidLocale, validateBody } from '~/common/validation';
 
 export default defineEventHandler(
@@ -89,6 +90,11 @@ export default defineEventHandler(
 				`SELECT * FROM lab_test_reference_info WHERE lab_test_id = ?`,
 				[row.id],
 			);
+
+			// Лабораторные коды прайса ФЗОЦГ (K01/K02, L01, Z01) ссылаются на
+			// lab_tests — см. server/common/tariffs.ts и миграцию 028.
+			const tariffs = await fetchLabTestTariffs(connection, row.id);
+
 			await connection.end();
 
 			const synonyms = (synonymRows as any[]).map((r) => r.another_name);
@@ -107,6 +113,7 @@ export default defineEventHandler(
 				categoryIds: row.categoryIds
 					? row.categoryIds.split(',').map(Number)
 					: undefined,
+				tariffs,
 				referenceInfo: buildReferenceInfo(
 					(referenceInfoRows as any[])[0],
 					locale,

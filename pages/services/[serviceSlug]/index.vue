@@ -391,27 +391,10 @@ watchEffect(() => {
 				@show-on-map="showClinicOnMap"
 			/>
 
-			<EntityPageSection
+			<MedicalServiceFzocgTariffSection
 				v-if="hasTariffs"
-				sectionId="fzocg-tariff"
-				:title="t('TabFzocgTariff')"
-				:count="tariffs.length"
-			>
-				<template #icon><IconClinic :size="20" /></template>
-				<aside class="tariff-info">
-					<strong class="tariff-info__lead">
-						{{ t('TariffInfoLead') }}
-					</strong>
-					<p class="tariff-info__body">{{ t('TariffInfoBody') }}</p>
-				</aside>
-				<div class="tariff-cards">
-					<MedicalServiceFzocgTariffCard
-						v-for="tariffItem in tariffs"
-						:key="tariffItem.id"
-						:tariff="tariffItem"
-					/>
-				</div>
-			</EntityPageSection>
+				:tariffs="tariffs"
+			/>
 
 			<EntityPageSection sectionId="map" :title="t('TabMap')">
 				<template #icon
@@ -463,37 +446,6 @@ watchEffect(() => {
 	flex-wrap: wrap;
 	gap: var(--kit-spacing-xs);
 	margin-top: var(--kit-spacing-md);
-}
-
-.tariff-cards {
-	display: flex;
-	flex-direction: column;
-	gap: var(--kit-spacing-md);
-}
-
-.tariff-info {
-	display: flex;
-	flex-direction: column;
-	gap: var(--kit-spacing-sm);
-	background: var(--kit-color-primary-bg);
-	border-left: 4px solid var(--kit-color-primary);
-	border-radius: var(--kit-border-radius-lg);
-	padding: var(--kit-spacing-xl) var(--kit-spacing-2xl);
-	margin-bottom: var(--kit-spacing-lg);
-}
-
-.tariff-info__lead {
-	font-size: var(--kit-font-size-2xl);
-	font-weight: var(--kit-font-weight-bold);
-	color: var(--kit-color-text-heading);
-	line-height: 1.3;
-}
-
-.tariff-info__body {
-	margin: 0;
-	font-size: var(--kit-font-size-md);
-	color: var(--kit-color-text-primary);
-	line-height: 1.6;
 }
 
 .service-map {

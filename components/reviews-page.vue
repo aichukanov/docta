@@ -5,7 +5,12 @@ import {
 	buildSchemaReviews,
 	buildWebPageSchema,
 } from '~/common/schema-org-builders';
-import { getRegionalQuery, getRegionalUrl } from '~/common/url-utils';
+import {
+	getCanonicalPath,
+	getCanonicalUrl,
+	getRegionalQuery,
+	getRegionalUrl,
+} from '~/common/url-utils';
 import type { ReviewFormEntity } from '~/components/review/form.vue';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import reviewsI18n from '~/i18n/reviews';
@@ -78,21 +83,36 @@ const router = useRouter();
 const entityUrl = computed(
 	() => `${SITE_URL}/${props.entityType}s/${props.entitySlug}`,
 );
-const reviewsUrl = computed(() => `${entityUrl.value}/reviews`);
-const langQuery = computed(() => {
-	const q = getRegionalQuery(locale.value);
-	return q.lang ? `lang=${q.lang}` : '';
+/*
+ * Адрес N-й страницы отзывов — общей канонической функцией, как везде.
+ *
+ * Раньше здесь была своя склейка, и она расходилась с остальным сайтом
+ * дважды. По порядку параметров: отзывы канонизировались в `?lang=ru&page=2`,
+ * все прочие страницы — в `?page=2&lang=ru`, хотя hreflang им обеим ставил
+ * `app.vue` в канонической форме — то есть self-canonical и языковые версии
+ * указывали на разные адреса одной страницы. И по составу: `?sort=` из
+ * canonical выбрасывался, так что `?sort=rating_low&page=2` канонизировалась
+ * в `?page=2` — страницу с ДРУГИМИ отзывами. Именно ради этого случая `sort`
+ * и внесён в allowlist (`common/url-utils.ts`).
+ */
+const buildPageQuery = (page: number) => ({
+	...route.query,
+	page: page > 1 ? String(page) : undefined,
 });
 
-const canonicalUrl = computed(() => {
-	const params = [
-		langQuery.value,
-		props.pagination.page > 1 ? `page=${props.pagination.page}` : '',
-	]
-		.filter(Boolean)
-		.join('&');
-	return params ? `${reviewsUrl.value}?${params}` : reviewsUrl.value;
-});
+/** Абсолютный — для rel=prev/next и для schema.org. */
+const buildPageUrl = (page: number) =>
+	getCanonicalUrl(route.path, buildPageQuery(page), locale.value);
+
+/**
+ * Он же без домена — для href номеров пагинации. Ссылки нужны краулеру:
+ * `el-pagination` рисовал номера как `<li>`, и вторая страница отзывов была
+ * достижима только исполнением JS (FR-10 в prd/element-plus-removal).
+ */
+const buildPageHref = (page: number) =>
+	getCanonicalPath(route.path, buildPageQuery(page), locale.value);
+
+const canonicalUrl = computed(() => buildPageUrl(props.pagination.page));
 
 const pageTitle = computed(() => {
 	const title = t('ReviewsPageTitle', { name: props.entityName });
@@ -129,28 +149,19 @@ useSeoMeta({
 	twitterImage: OG_IMAGE,
 });
 
-const buildReviewsLink = (page?: number) => {
-	const params = [langQuery.value, page && page > 1 ? `page=${page}` : '']
-		.filter(Boolean)
-		.join('&');
-	return params ? `${reviewsUrl.value}?${params}` : reviewsUrl.value;
-};
-
+/*
+ * Canonical эта страница больше НЕ регистрирует: он ставится в `app.vue` той
+ * же `getCanonicalUrl` из тех же route.path и route.query. Пока дубликат тут
+ * жил, он молча выигрывал у общего (одинаковый ключ, дочерний setup позже) —
+ * и вместе с ним выигрывали обе его ошибки.
+ */
 const headLinks = computed(() => {
-	const links: Array<{ key?: string; rel: string; href: string }> = [
-		{ key: 'canonical', rel: 'canonical', href: canonicalUrl.value },
-	];
+	const links: Array<{ rel: string; href: string }> = [];
 	if (props.pagination.page > 1) {
-		links.push({
-			rel: 'prev',
-			href: buildReviewsLink(props.pagination.page - 1),
-		});
+		links.push({ rel: 'prev', href: buildPageUrl(props.pagination.page - 1) });
 	}
 	if (props.pagination.page < props.pagination.totalPages) {
-		links.push({
-			rel: 'next',
-			href: buildReviewsLink(props.pagination.page + 1),
-		});
+		links.push({ rel: 'next', href: buildPageUrl(props.pagination.page + 1) });
 	}
 	return links;
 });
@@ -341,6 +352,7 @@ const totalReviewsCount = computed(
 			:total="pagination.totalReviews"
 			:currentPage="pagination.page"
 			:pageSize="pagination.pageSize"
+			:href="buildPageHref"
 			align="center"
 			@update:current-page="onPageChange"
 		/>

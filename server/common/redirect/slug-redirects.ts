@@ -36,7 +36,13 @@ const ENTITY_TYPES: Record<string, { table: string; redirectTable?: string }> =
 // того воркера, который обработал запись.
 const SLUG_REDIRECTS_CACHE_TTL_MS = 60 * 1000;
 
-type SlugRedirectMap = Map<string, number>;
+// Цель редиректа: id записи и каталог, в котором она лежит. Каталог отличается
+// от исходного, когда запись переехала между каталогами — так анализы,
+// заведённые импортами в medical_services, уводят свой старый /services/… на
+// /labtests/… (миграции 028 и 029). NULL в target_entity_type означает «тот же
+// каталог» — так выглядят все обычные переименования слага.
+type SlugRedirectTarget = { entityId: number; entityType: string };
+type SlugRedirectMap = Map<string, SlugRedirectTarget>;
 
 let slugRedirectsCache: { map: SlugRedirectMap; expires: number } | null = null;
 // Прогрев один на всех: без этого пачка параллельных запросов сразу после
@@ -61,14 +67,17 @@ async function getSlugRedirectMap(): Promise<SlugRedirectMap> {
 					entity_type: string;
 					old_slug: string;
 					entity_id: number;
-				}>('SELECT entity_type, old_slug, entity_id FROM slug_redirects');
+					target_entity_type: string | null;
+				}>(
+					'SELECT entity_type, old_slug, entity_id, target_entity_type FROM slug_redirects',
+				);
 
 				const map: SlugRedirectMap = new Map();
 				for (const row of rows) {
-					map.set(
-						slugRedirectKey(row.entity_type, row.old_slug),
-						row.entity_id,
-					);
+					map.set(slugRedirectKey(row.entity_type, row.old_slug), {
+						entityId: row.entity_id,
+						entityType: row.target_entity_type || row.entity_type,
+					});
 				}
 
 				slugRedirectsCache = {
@@ -110,6 +119,10 @@ export async function checkSlugRedirect(
 
 	try {
 		let targetSlug: string | null = null;
+		// Каталог цели. Меняется только на переезде между каталогами; числовой
+		// ID всегда разрешается внутри своего каталога — id услуги и id анализа
+		// живут в разных нумерациях, и связать их таблицам *_redirects нечем.
+		let targetEntityType = entityType;
 
 		if (isNumericId) {
 			// Numeric ID: resolve merged-entity redirect, then look up slug
@@ -135,23 +148,29 @@ export async function checkSlugRedirect(
 			// String param: check if it's an old slug in slug_redirects.
 			// Промах (обычная страница с актуальным слагом) разрешается по кэшу
 			// в памяти — соединение с БД тут не берётся вообще.
-			const entityId = (await getSlugRedirectMap()).get(
+			const target = (await getSlugRedirectMap()).get(
 				slugRedirectKey(entityType, param),
 			);
-			if (entityId != null) {
-				connection = await getConnection();
-				const [rows] = await connection.execute(
-					`SELECT slug FROM ${config.table} WHERE id = ?`,
-					[entityId],
-				);
-				targetSlug = (rows as any[])[0]?.slug || null;
+			if (target) {
+				const targetConfig = ENTITY_TYPES[target.entityType];
+				if (targetConfig) {
+					targetEntityType = target.entityType;
+					connection = await getConnection();
+					const [rows] = await connection.execute(
+						`SELECT slug FROM ${targetConfig.table} WHERE id = ?`,
+						[target.entityId],
+					);
+					targetSlug = (rows as any[])[0]?.slug || null;
+				}
 			}
 		}
 
-		if (targetSlug && targetSlug !== param) {
+		// Сменился каталог — редирект нужен даже при совпадающем слаге:
+		// /services/urine-culture и /labtests/urine-culture это разные адреса.
+		if (targetSlug && (targetSlug !== param || targetEntityType !== entityType)) {
 			const { searchParams } = getRequestURL(event);
 			const queryString = searchParams.toString();
-			const newUrl = `/${entityType}/${targetSlug}${
+			const newUrl = `/${targetEntityType}/${targetSlug}${
 				queryString ? `?${queryString}` : ''
 			}`;
 			return { url: newUrl, status: 301 };

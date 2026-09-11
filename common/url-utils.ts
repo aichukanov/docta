@@ -180,6 +180,23 @@ export function getCanonicalUrl(
 	query: UrlQuery,
 	lang: string,
 ): string {
+	return `${SITE_URL}${getCanonicalPath(path, query, lang)}`;
+}
+
+/**
+ * Тот же канонический адрес, но без домена — для `href` внутри страницы.
+ *
+ * Нужен пагинации (`components/pagination.vue`): её ссылки обязаны совпадать
+ * с `rel=canonical` целевой страницы вплоть до порядка параметров, но абсолютный
+ * адрес в разметке уводил бы на прод из локальной сборки и из e2e. Отдельная
+ * функция, а не отрезание `SITE_URL` на месте: совпадение форм тогда
+ * гарантировано устройством, а не дисциплиной.
+ */
+export function getCanonicalPath(
+	path: string,
+	query: UrlQuery,
+	lang: string,
+): string {
 	const meaningfulQuery: UrlQuery = {};
 	Object.entries(query).forEach(([key, value]) => {
 		if (CANONICAL_QUERY_ALLOWED_KEYS.has(key)) {
@@ -187,7 +204,7 @@ export function getCanonicalUrl(
 		}
 	});
 
-	return getRegionalUrl(`${SITE_URL}${path}`, meaningfulQuery, lang);
+	return getRegionalUrl(path, meaningfulQuery, lang);
 }
 
 /**

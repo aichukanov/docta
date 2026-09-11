@@ -1,7 +1,11 @@
 <script setup lang="ts" generic="T extends ListPageItem">
 import IconFilter from '~/components/icon/filter.vue';
 import IconArrowDown from '~/components/icon/arrow-down.vue';
-import { getCanonicalUrl, getRegionalQuery } from '~/common/url-utils';
+import {
+	getCanonicalUrl,
+	getCanonicalPath,
+	getRegionalQuery,
+} from '~/common/url-utils';
 import { fitSeoTitle } from '~/common/seo-meta';
 import type { FilterNamespace } from '~/stores/filters';
 import { CITY_COORDINATES, type CityId } from '~/enums/cities';
@@ -317,29 +321,41 @@ useSeoMeta({
 	robots: robotsMeta,
 });
 
+/*
+ * Адрес N-й страницы листинга. Собирается канонической функцией, а не своей
+ * склейкой: иначе порядок параметров расходится с canonical этой же страницы.
+ * До правки rel=next отдавал `?lang=ru&page=3`, а сама третья страница
+ * канонизировалась в `?page=3&lang=ru` — та же перестановка, против которой
+ * затевалась итерация 3 в prd/silent-200-index-hygiene.
+ *
+ * Первая страница — адрес БЕЗ `page`: `?page=1` избыточен и закрыт noindex
+ * (см. hasRedundantQuery выше).
+ */
+const buildPageQuery = (p: number) => ({
+	...props.filterQuery,
+	...(p > 1 ? { page: String(p) } : {}),
+});
+
+/** Для <head>: там ссылка обязана быть абсолютной. */
+const buildPageUrl = (p: number) =>
+	getCanonicalUrl(route.path, buildPageQuery(p), locale.value);
+
+/**
+ * Для href номеров страниц: тот же адрес без домена. Ссылки нужны краулеру —
+ * `el-pagination` рисовал номера как `<li>`, и вглубь листинга он не попадал
+ * вовсе (FR-10 в prd/element-plus-removal).
+ */
+const buildPageHref = (p: number) =>
+	getCanonicalPath(route.path, buildPageQuery(p), locale.value);
+
 const paginationLinks = computed(() => {
 	const links: Array<{ rel: string; href: string }> = [];
 
-	// Через getCanonicalUrl, а не своей сборкой URL: иначе порядок параметров
-	// расходится с canonical этой же страницы. До правки rel=next отдавал
-	// `?lang=ru&page=3`, а сама третья страница канонизировалась в
-	// `?page=3&lang=ru` — та же перестановка, против которой затевалась
-	// итерация 3 в prd/silent-200-index-hygiene.
-	const buildUrl = (p: number) =>
-		getCanonicalUrl(
-			route.path,
-			{
-				...props.filterQuery,
-				...(p > 1 ? { page: String(p) } : {}),
-			},
-			locale.value,
-		);
-
 	if (pageNumber.value > 1) {
-		links.push({ rel: 'prev', href: buildUrl(pageNumber.value - 1) });
+		links.push({ rel: 'prev', href: buildPageUrl(pageNumber.value - 1) });
 	}
 	if (pageNumber.value < totalPages.value) {
-		links.push({ rel: 'next', href: buildUrl(pageNumber.value + 1) });
+		links.push({ rel: 'next', href: buildPageUrl(pageNumber.value + 1) });
 	}
 	return links;
 });
@@ -542,13 +558,12 @@ onMounted(async () => {
 						<div class="loading-bar" aria-hidden="true"></div>
 					</div>
 
-					<nav :aria-label="t('AriaPagination')">
-						<Pagination
-							:total="totalCount"
-							:page-size="LIST_PAGE_SIZE"
-							v-model:current-page="pageNumber"
-						/>
-					</nav>
+					<Pagination
+						:total="totalCount"
+						:page-size="LIST_PAGE_SIZE"
+						:href="buildPageHref"
+						v-model:current-page="pageNumber"
+					/>
 				</section>
 			</div>
 		</div>
@@ -878,7 +893,6 @@ onMounted(async () => {
 		"AriaSearchResults": "Search results",
 		"AriaResultsList": "List of results",
 		"AriaLoadingResults": "Loading results",
-		"AriaPagination": "Results pagination",
 		"AriaMapSection": "Map with locations",
 		"PageOf": "Page {page} of {total}"
 	},
@@ -892,7 +906,6 @@ onMounted(async () => {
 		"AriaSearchResults": "Результаты поиска",
 		"AriaResultsList": "Список результатов",
 		"AriaLoadingResults": "Загрузка результатов",
-		"AriaPagination": "Постраничная навигация",
 		"AriaMapSection": "Карта с расположениями",
 		"PageOf": "Страница {page} из {total}"
 	},
@@ -906,7 +919,6 @@ onMounted(async () => {
 		"AriaSearchResults": "Rezultati pretrage",
 		"AriaResultsList": "Lista rezultata",
 		"AriaLoadingResults": "Učitavanje rezultata",
-		"AriaPagination": "Navigacija po stranicama",
 		"AriaMapSection": "Mapa sa lokacijama",
 		"PageOf": "Stranica {page} od {total}"
 	},
@@ -920,7 +932,6 @@ onMounted(async () => {
 		"AriaSearchResults": "Резултати претраге",
 		"AriaResultsList": "Листа резултата",
 		"AriaLoadingResults": "Учитавање резултата",
-		"AriaPagination": "Навигација по страницама",
 		"AriaMapSection": "Мапа са локацијама",
 		"PageOf": "Страница {page} од {total}"
 	},
@@ -934,7 +945,6 @@ onMounted(async () => {
 		"AriaSearchResults": "Suchergebnisse",
 		"AriaResultsList": "Ergebnisliste",
 		"AriaLoadingResults": "Ergebnisse werden geladen",
-		"AriaPagination": "Seitennavigation",
 		"AriaMapSection": "Karte mit Standorten",
 		"PageOf": "Seite {page} von {total}"
 	},
@@ -948,7 +958,6 @@ onMounted(async () => {
 		"AriaSearchResults": "Arama sonuçları",
 		"AriaResultsList": "Sonuç listesi",
 		"AriaLoadingResults": "Sonuçlar yükleniyor",
-		"AriaPagination": "Sayfa navigasyonu",
 		"AriaMapSection": "Konumlu harita",
 		"PageOf": "Sayfa {page} / {total}"
 	}

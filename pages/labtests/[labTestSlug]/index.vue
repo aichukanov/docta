@@ -21,6 +21,7 @@ import cityI18n from '~/i18n/city';
 import entityAutoFactsI18n from '~/i18n/entity-auto-facts';
 import labTestI18n from '~/i18n/labtest';
 import labTestCategoryI18n from '~/i18n/labtest-category';
+import medicalServiceTariffI18n from '~/i18n/medical-service-tariff';
 import seoDescriptionI18n from '~/i18n/seo-description';
 import { combineI18nMessages } from '~/i18n/utils';
 import type { ClinicData } from '~/interfaces/clinic';
@@ -34,6 +35,7 @@ const { t, n, locale } = useI18n({
 		labTestCategoryI18n,
 		entityAutoFactsI18n,
 		seoDescriptionI18n,
+		medicalServiceTariffI18n,
 	]),
 });
 
@@ -158,6 +160,11 @@ const autoFacts = computed(() =>
 
 const formatPrice = (value: number) => n(value, priceFormatOptions(value));
 
+// Лабораторные позиции прайса ФЗОЦГ (разделы K01/K02, L01, Z01) привязаны
+// к анализам, а не к услугам — см. server/common/tariffs.ts.
+const tariffs = computed(() => labTestData.value?.tariffs ?? []);
+const hasTariffs = computed(() => tariffs.value.length > 0);
+
 // Табы — на полном наборе клиник: фильтр не должен прятать таб «Клиники».
 const tabs = computed(() => {
 	const result = [];
@@ -166,6 +173,9 @@ const tabs = computed(() => {
 	}
 	if (allLabTestClinics.value.length > 0) {
 		result.push({ id: 'clinics', label: t('TabClinics') });
+	}
+	if (hasTariffs.value) {
+		result.push({ id: 'fzocg-tariff', label: t('TabFzocgTariff') });
 	}
 	result.push({ id: 'map', label: t('TabMap') });
 	return result;
@@ -376,6 +386,11 @@ watchEffect(() => {
 				:clinicPrices="labTestData?.clinicPrices"
 				:title="t('TabClinics')"
 				@show-on-map="showClinicOnMap"
+			/>
+
+			<MedicalServiceFzocgTariffSection
+				v-if="hasTariffs"
+				:tariffs="tariffs"
 			/>
 
 			<EntityPageSection sectionId="map" :title="t('TabMap')">

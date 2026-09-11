@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { URLS } from '../utils/constants';
 import { LISTING_SECTIONS } from '../utils/sections';
 import { SITE_URL } from '../../common/constants';
-import { fetchText, visit } from '../utils/http';
+import { fetchText, visit, waitForHydration } from '../utils/http';
 
 // Индексационная обвязка: robots.txt, sitemap, редиректы и noindex.
 // Unit-тесты (canonical-url, retired-filter-ids, duplicate-surface-noindex)
@@ -255,5 +255,90 @@ test.describe('Мета-разметка листингов', () => {
 			.getAttribute('content')
 			.catch(() => null);
 		expect(robots ?? '').not.toContain('noindex');
+	});
+});
+
+/*
+ * Пагинация обязана быть проходимой без JS. `el-pagination` рисовал номера
+ * как `<li class="number">` без ссылки, поэтому `?page=2` и дальше отдавали
+ * 200, но краулер до них не доходил, а вес с первой страницы вглубь листинга
+ * не передавался (FR-10 в prd/element-plus-removal).
+ *
+ * Проверяется по СЫРОМУ ответу сервера, а не по DOM после гидратации:
+ * в браузере ссылки появились бы в любом случае.
+ */
+test.describe('Пагинация краулится', () => {
+	/** Первая ссылка на страницу 2 в серверной разметке. */
+	const findSecondPageHref = (html: string): string | null => {
+		// Класс ищется внутри атрибута, а не целым его значением: Vue склеивает
+		// статический класс с модификатором и порядок не гарантирует.
+		const match = html.match(
+			/class="[^"]*kit-pagination__item[^"]*"[^>]*href="([^"]*page=2[^"]*)"/,
+		);
+		return match ? match[1].replace(/&amp;/g, '&') : null;
+	};
+
+	for (const section of LISTING_SECTIONS) {
+		test(`${section.url}: номер страницы — ссылка в HTML до JS`, async ({
+			page,
+		}) => {
+			const { body } = await fetchText(page, section.url);
+
+			// Раздел может не набирать вторую страницу (страховых всего пять) —
+			// тогда проверять нечего. Признак — `rel=next` в <head>: он ставится
+			// из того же расчёта страниц, но другим кодом, поэтому годится как
+			// независимая проверка «вторая страница вообще есть».
+			// По наличию `kit-pagination__item` в теле судить нельзя: стили
+			// компонента инлайнятся в HTML и содержат это имя всегда.
+			if (!/<link[^>]*rel="next"/.test(body)) {
+				test.skip();
+				return;
+			}
+
+			const href = findSecondPageHref(body);
+			expect(href, 'в разметке нет ссылки на вторую страницу').not.toBeNull();
+			expect(href).toBe(`${section.url}?page=2`);
+		});
+	}
+
+	test('адрес ссылки совпадает с canonical целевой страницы', async ({
+		page,
+	}) => {
+		// Совпадение обязано быть побайтовым, включая порядок параметров:
+		// иначе возвращаются дубли, против которых заведён канонический
+		// порядок (prd/silent-200-index-hygiene, итерация 3).
+		const { body } = await fetchText(page, `${URLS.DOCTORS}?lang=ru`);
+		const href = findSecondPageHref(body);
+		expect(href).not.toBeNull();
+
+		await page.goto(href!, { waitUntil: 'domcontentloaded' });
+		const canonical = await page
+			.locator('link[rel="canonical"]')
+			.getAttribute('href');
+		expect(canonical).toBe(`${SITE_URL}${href}`);
+	});
+
+	test('обычный клик остаётся SPA-переходом', async ({ page }) => {
+		// Ссылка нужна краулеру, но человеку перезагрузка ни к чему: левый клик
+		// гасится и уходит в роутер. Признак перезагрузки — потеря метки,
+		// поставленной в window до клика.
+		await page.goto(URLS.DOCTORS, { waitUntil: 'domcontentloaded' });
+		await waitForHydration(page);
+
+		const link = page
+			.locator('.kit-pagination .kit-pagination__item[href*="page=2"]')
+			.first();
+		if (!(await link.isVisible().catch(() => false))) {
+			test.skip();
+			return;
+		}
+
+		await page.evaluate(() => {
+			(window as any).__noReload = true;
+		});
+		await link.click();
+		await page.waitForURL(/page=2/);
+
+		expect(await page.evaluate(() => (window as any).__noReload)).toBe(true);
 	});
 });

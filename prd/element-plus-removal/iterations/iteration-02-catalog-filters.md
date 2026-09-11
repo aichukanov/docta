@@ -28,7 +28,7 @@ SEO-трафик) не тянут EP-селекты/инпуты.
 - [ ] `AppInput` (text/email/password/textarea, prefix-иконка, clearable) — здесь нужен для фильтра по имени; полноценная обкатка форм — в итерации 4.
 - [ ] `AppCheckbox` (фильтр «открыто сейчас»).
 - [ ] `AppSegmented` — кнопочная группа (переключатель список/карта на /clinics).
-- [ ] **`AppPagination` — номера страниц настоящими `<a href>`** (prev/pager/next, до 5 страниц, disabled): заменить внутренности `pagination.vue`. Единственная задача итерации с SEO-нагрузкой, а не только с бандлом, — разбор ниже.
+- [x] **`KitPagination` — номера страниц настоящими `<a href>`** (prev/pager/next, до 5 страниц, disabled): внутренности `pagination.vue` заменены 2026-09-08, разбор итога — в [TASK-pagination-links.md](../TASK-pagination-links.md). Единственная задача итерации с SEO-нагрузкой, а не только с бандлом, — разбор ниже.
 - [ ] Заменить внутренности `filterable-select.vue` на `AppSelect` (API обёртки не менять — потребители reviews-page и items-page-filters не трогаются до итерации 3).
 - [ ] Мигрировать `components/filter/*`, `location-selector.vue`, шесть каталожных страниц.
 

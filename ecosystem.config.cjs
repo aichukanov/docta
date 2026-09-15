@@ -23,6 +23,11 @@ module.exports = {
 			script: './.output/server/index.mjs',
 			env: {
 				NODE_ENV: 'production',
+				// Слушаем только петлю: наружу приложение смотрит через nginx-прокси.
+				// Без этого Nitro биндится на 0.0.0.0 и порт 3001 доступен из интернета
+				// в обход прокси — так и было на старом сервере.
+				HOST: '127.0.0.1',
+				NITRO_HOST: '127.0.0.1',
 				NUXT_DB_HOST: process.env.DB_HOST,
 				NUXT_DB_USER: process.env.DB_USER,
 				NUXT_DB_PASSWORD: process.env.DB_PASSWORD,

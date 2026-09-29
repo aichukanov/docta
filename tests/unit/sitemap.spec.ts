@@ -7,6 +7,7 @@ import {
 	SITEMAP_SECTIONS,
 	chunkSitemapLinks,
 	getSitemapSectionUrl,
+	maxLastmod,
 	menuItemToLinks,
 	parseSitemapSectionPath,
 	renderSitemapIndex,
@@ -199,6 +200,42 @@ test.describe('lastmod: либо правда, либо ничего', () => {
 		}
 		// Страница без даты осталась без тега, страница с датой — с тегом.
 		expect(countOccurrences(xml, '<lastmod>')).toBe(locales.length);
+	});
+});
+
+test.describe('lastmod в индексе: у части — максимум по её страницам', () => {
+	// По <lastmod> записи индекса Google решает, какие дочерние файлы
+	// перечитывать. Индекс без дат он парсил успешно («Файл индекса Sitemap
+	// успешно обработан»), но сами дочерние файлы неделями не забирал
+	// (сентябрь 2026) — пока их не отправили в Search Console вручную.
+
+	test('maxLastmod берёт максимум и не спотыкается о страницы без даты', () => {
+		const links = [
+			...menuItemToLinks('doctors', {}, false, new Date('2026-09-01T00:00:00Z')),
+			...menuItemToLinks('clinics'),
+			...menuItemToLinks('services', {}, false, new Date('2026-09-20T10:00:00Z')),
+		];
+
+		expect(maxLastmod(links)).toEqual(new Date('2026-09-20T10:00:00.000Z'));
+	});
+
+	test('без единой даты в части — undefined, а не выдумка', () => {
+		expect(maxLastmod(menuItemToLinks('doctors'))).toBeUndefined();
+		expect(maxLastmod([])).toBeUndefined();
+	});
+
+	test('дата выводится только у частей, где она есть', () => {
+		const xml = renderSitemapIndex([
+			{
+				section: 'doctors',
+				part: 1,
+				lastmod: new Date('2026-09-20T10:00:00Z'),
+			},
+			{ section: 'doctors', part: 2 },
+		]);
+
+		expect(countOccurrences(xml, '<lastmod>')).toBe(1);
+		expect(xml).toContain('<lastmod>2026-09-20T10:00:00.000Z</lastmod>');
 	});
 });
 

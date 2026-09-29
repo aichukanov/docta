@@ -1,6 +1,7 @@
 import {
 	SITEMAP_SECTIONS,
 	chunkSitemapLinks,
+	maxLastmod,
 	menuItemToLinks,
 	renderSitemapIndex,
 	renderUrlset,
@@ -49,25 +50,32 @@ import { getSlugLastmodMap, lastmodSql, toLastmod } from './lastmod';
  * страницы — отзывы, и новый отзыв меняет её, не трогая строку сущности.
  */
 async function getSlugsWithReviews(
-	entity: 'doctor' | 'clinic',
+	entity: 'doctor' | 'clinic' | 'insurance_company',
 ): Promise<Array<{ slug: string; lastmod?: Date }>> {
 	const lastmod = await lastmodSql('reviews', 'MAX(r.updated_at)');
 	const connection = await getConnection();
 
-	const query =
-		entity === 'doctor'
-			? `SELECT d.slug, ${lastmod} as lastmod
-				FROM doctors d
-				JOIN reviews r ON r.doctor_id = d.id AND r.rating IS NOT NULL AND r.status != 'rejected'
-				WHERE ${doctorIsPublicSql('d')}
-				GROUP BY d.id
-				HAVING COUNT(*) > ?`
-			: `SELECT c.slug, ${lastmod} as lastmod
-				FROM clinics c
-				JOIN reviews r ON r.clinic_id = c.id AND r.rating IS NOT NULL AND r.status != 'rejected'
-				WHERE ${clinicIsPublicSql('c')}
-				GROUP BY c.id
-				HAVING COUNT(*) > ?`;
+	const queries = {
+		doctor: `SELECT d.slug, ${lastmod} as lastmod
+			FROM doctors d
+			JOIN reviews r ON r.doctor_id = d.id AND r.rating IS NOT NULL AND r.status != 'rejected'
+			WHERE ${doctorIsPublicSql('d')}
+			GROUP BY d.id
+			HAVING COUNT(*) > ?`,
+		clinic: `SELECT c.slug, ${lastmod} as lastmod
+			FROM clinics c
+			JOIN reviews r ON r.clinic_id = c.id AND r.rating IS NOT NULL AND r.status != 'rejected'
+			WHERE ${clinicIsPublicSql('c')}
+			GROUP BY c.id
+			HAVING COUNT(*) > ?`,
+		// У страховых нет черновиков и скрытия — фильтра видимости нет
+		insurance_company: `SELECT ic.slug, ${lastmod} as lastmod
+			FROM insurance_companies ic
+			JOIN reviews r ON r.insurance_company_id = ic.id AND r.rating IS NOT NULL AND r.status != 'rejected'
+			GROUP BY ic.id
+			HAVING COUNT(*) > ?`,
+	};
+	const query = queries[entity];
 
 	const [rows] = await connection.execute(query, [REVIEWS_THRESHOLD]);
 	await connection.end();
@@ -89,6 +97,7 @@ async function getSlugsWithReviews(
 
 async function buildCoreSection(): Promise<SitemapLink[]> {
 	const insuranceCompanies = await getInsuranceCompanyList();
+	const companiesWithReviews = await getSlugsWithReviews('insurance_company');
 
 	return [
 		// Главная и «О проекте»
@@ -119,6 +128,16 @@ async function buildCoreSection(): Promise<SitemapLink[]> {
 		...insuranceCompanies.flatMap((company) =>
 			menuItemToLinks(
 				`${SITE_URL}/insurance-companies/${company.slug}`,
+				{},
+				true,
+				company.lastmod,
+			),
+		),
+		// Подстраницы отзывов страховых — только когда отзывов больше порога
+		// (иначе подстраница 301-редиректится на якорь детальной)
+		...companiesWithReviews.flatMap((company) =>
+			menuItemToLinks(
+				`${SITE_URL}/insurance-companies/${company.slug}/reviews`,
 				{},
 				true,
 				company.lastmod,
@@ -470,12 +489,19 @@ async function generateSitemapSection(section: SitemapSection, part: number) {
 }
 
 async function generateSitemapIndex() {
-	const parts: Array<{ section: SitemapSection; part: number }> = [];
+	const parts: Array<{
+		section: SitemapSection;
+		part: number;
+		lastmod?: Date;
+	}> = [];
 
 	for (const section of SITEMAP_SECTIONS) {
 		const chunks = chunkSitemapLinks(await SECTION_BUILDERS[section]());
 		for (let i = 0; i < chunks.length; i++) {
-			parts.push({ section, part: i + 1 });
+			// Дата части может обогнать закэшированный файл секции максимум на час
+			// (кэши независимые): бот, пришедший по свежей дате, получит прошлую
+			// копию и заберёт обновление следующим заходом — это не ошибка.
+			parts.push({ section, part: i + 1, lastmod: maxLastmod(chunks[i]) });
 		}
 	}
 

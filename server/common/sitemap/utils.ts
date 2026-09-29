@@ -225,19 +225,46 @@ ${routes.map(getUrlData).join('\n')}
 ${footer}`;
 }
 
+/**
+ * Дата изменения файла секции — максимум по датам его страниц.
+ *
+ * Страницы без даты максимум не сдвигают, а часть, где дат нет вовсе
+ * (core до миграции 026), остаётся без даты — по тем же правилам, что и
+ * отдельный `<url>`: настоящая дата или ничего, см. SitemapLink.
+ */
+export function maxLastmod(links: SitemapLink[]): Date | undefined {
+	let max: Date | undefined;
+
+	for (const link of links) {
+		if (link.lastmod && (!max || link.lastmod > max)) {
+			max = link.lastmod;
+		}
+	}
+
+	return max;
+}
+
 /** `<sitemapindex>` — содержимое `/sitemap.xml`. */
 export function renderSitemapIndex(
-	parts: Array<{ section: SitemapSection; part: number }>,
+	parts: Array<{ section: SitemapSection; part: number; lastmod?: Date }>,
 ): string {
 	const header = `${XML_DECLARATION}
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 	const footer = `</sitemapindex>`;
 
-	const entries = parts.map(
-		({ section, part }) => `	<sitemap>
-		<loc>${escapeXmlUrl(getSitemapSectionUrl(section, part))}</loc>
-	</sitemap>`,
-	);
+	const entries = parts.map(({ section, part, lastmod }) => {
+		// По <lastmod> записи индекса Google решает, какой дочерний файл пора
+		// перечитать. Индекс без дат он парсил успешно, но до самих дочерних
+		// файлов неделями не доходил (сентябрь 2026) — пока их не отправили в
+		// Search Console вручную.
+		const lastmodTag = lastmod
+			? `\n\t\t<lastmod>${lastmod.toISOString()}</lastmod>`
+			: '';
+
+		return `	<sitemap>
+		<loc>${escapeXmlUrl(getSitemapSectionUrl(section, part))}</loc>${lastmodTag}
+	</sitemap>`;
+	});
 
 	return `${header}
 ${entries.join('\n')}

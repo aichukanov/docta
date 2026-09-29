@@ -620,6 +620,9 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 
 .medicine-badges {
 	display: flex;
+	// Без переноса два бейджа («Aktivna dozvola» + режим отпуска) не влезали
+	// в 232px и уезжали за правый край экрана, утаскивая туда всю страницу
+	flex-wrap: wrap;
 	gap: var(--kit-spacing-sm);
 	margin-top: var(--kit-spacing-md);
 }
@@ -715,7 +718,7 @@ const analogStrength = (analog: any) => localizeStrength(analog.strength, t);
 
 .foreign-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
 	gap: var(--kit-spacing-lg);
 }
 

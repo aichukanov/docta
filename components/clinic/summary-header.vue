@@ -345,12 +345,18 @@ const reviewsLink = computed(() => {
 	.clinic-header {
 		flex-direction: column;
 		gap: var(--kit-spacing-md);
+		// В колонке align-items: flex-start (он задан выше для строки) означает
+		// уже горизонтальное выравнивание, и дети получают ширину по
+		// max-content — .clinic-info вылезал из карточки на 30-40px вместе с
+		// адресом и рейтингом. min-width: 0 тут не помогает: это поперечная
+		// ось. stretch даёт детям ширину карточки — и заодно делает лишним
+		// ручной width: 100% у .clinic-actions.
+		align-items: stretch;
 	}
 
 	.clinic-actions {
 		flex-direction: row;
 		flex-wrap: wrap;
-		width: 100%;
 		min-width: unset;
 	}
 }

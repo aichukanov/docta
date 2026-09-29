@@ -153,6 +153,10 @@ const hasCategories = computed(() => topCategories.value.length > 0);
 
 .category-item {
 	margin: 0;
+	// Плитка — элемент грида, а у него автоминимум равен min-content: без
+	// min-width: 0 колонка раздувалась до самого длинного названия
+	// («Otorinolaringologija …»), и список вылезал из карточки
+	min-width: 0;
 }
 
 .category-link {
@@ -178,6 +182,10 @@ const hasCategories = computed(() => topCategories.value.length > 0);
 .category-title {
 	font-size: var(--kit-font-size-md);
 	font-weight: 500;
+	// Без min-width: 0 многоточие ниже не срабатывает НИКОГДА: flex-элемент
+	// не сжимается ниже min-content, а у строки с nowrap min-content равен
+	// всей строке — вместо обрезки росла плитка и вылезала из карточки
+	min-width: 0;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;

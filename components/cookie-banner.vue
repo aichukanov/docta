@@ -35,6 +35,10 @@ const { giveConsent, declineConsent } = useCookieControl();
 	position: fixed;
 	bottom: var(--kit-spacing-lg);
 	left: var(--kit-spacing-lg);
+	// Прижат и справа: с одним left баннер разворачивался на свои 360px
+	// и на экране 320px кнопка «Отклонить» оказывалась за краем. max-width
+	// ниже по-прежнему держит ширину на больших экранах
+	right: var(--kit-spacing-lg);
 	z-index: var(--kit-z-cookie-consent);
 	display: flex;
 	flex-direction: column;

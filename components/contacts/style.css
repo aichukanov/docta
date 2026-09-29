@@ -48,6 +48,17 @@
 	display: flex;
 	align-items: center;
 	gap: var(--kit-spacing-sm);
+	/*
+	 * Адрес мессенджера — строка без пробелов (facebook.com/Stomatoloska…),
+	 * рвать её негде, поэтому min-content ссылки был 331px и распирал
+	 * карточку контактов до 355px при доступных 252px.
+	 *
+	 * Нужны обе строки: min-width позволяет flex-элементу сжаться ниже
+	 * min-content, а overflow-wrap: anywhere (именно anywhere, не break-word —
+	 * break-word не уменьшает сам min-content) даёт строке перенос.
+	 */
+	min-width: 0;
+	overflow-wrap: anywhere;
 	color: var(--kit-color-text-primary);
 	text-decoration: none;
 	font-size: var(--kit-font-size-sm);

@@ -500,7 +500,12 @@ body {
 			display: grid;
 			grid-auto-flow: column;
 			grid-template-rows: repeat(3, auto);
-			grid-template-columns: repeat(2, minmax(140px, 1fr));
+			// minmax(0, 1fr), а не minmax(140px, 1fr): фиксированный минимум
+			// трека не сжимается, и две колонки по 140px плюс отступ требовали
+			// 328px — на экране уже 300px футер распирал документ в
+			// горизонтальный скролл. Теперь колонки делят то, что есть, а
+			// длинные пункты переносятся.
+			grid-template-columns: repeat(2, minmax(0, 1fr));
 			gap: var(--kit-spacing-xs) var(--kit-spacing-3xl);
 			align-content: start;
 		}
@@ -657,7 +662,7 @@ body {
 			padding: var(--kit-spacing-lg);
 
 			.footer-nav {
-				grid-template-columns: repeat(2, minmax(120px, 1fr));
+				grid-template-columns: repeat(2, minmax(0, 1fr));
 				gap: var(--kit-spacing-xs) var(--kit-spacing-lg);
 			}
 		}

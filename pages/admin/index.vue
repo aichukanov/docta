@@ -221,6 +221,8 @@ async function loadReviewsData() {
 			$fetch('/api/reviews/list'),
 			loadDoctorsData(),
 			loadUsersData(),
+			// Селектор «Страховая компания» в редакторе отзыва
+			loadInsuranceCompaniesData(),
 		]);
 		reviewsList.value = data;
 		loadedTabs.value.reviews = true;
@@ -438,6 +440,7 @@ async function recalculateRankScores() {
 							:reviews="reviewsList"
 							:clinics="clinicsList.clinics"
 							:doctors="doctorsList?.doctors || []"
+							:insuranceCompanies="insuranceCompaniesList"
 							:users="usersList"
 							editable
 							@updated="updateReviews"

@@ -576,7 +576,7 @@ watchEffect(() => {
 				</div>
 				<div class="reviews-content">
 					<RatingSummary
-						v-if="doctorData.rating && doctorData.rating.totalReviews > 0"
+						v-if="doctorData.rating"
 						:rating="doctorData.rating"
 						:hideWriteButton="!!ownReview"
 						@writeReview="showReviewDialog = true"

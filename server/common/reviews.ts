@@ -3,6 +3,18 @@ import { maskEmail } from '~/common/email-masking';
 import { Language } from '~/enums/language';
 import type { Rating, Review } from '~/interfaces/review';
 
+/**
+ * Тип сущности-цели отзыва и её FK-колонка в `reviews`.
+ * Полиморфизм таблицы — по nullable-колонкам, ровно одна заполнена.
+ */
+const ENTITY_ID_COLUMNS = {
+	doctor: 'doctor_id',
+	clinic: 'clinic_id',
+	insurance_company: 'insurance_company_id',
+} as const;
+
+export type ReviewEntityType = keyof typeof ENTITY_ID_COLUMNS;
+
 export type ReviewSort =
 	| 'rank'
 	| 'newest'
@@ -88,14 +100,14 @@ function buildOrderByClause(sort: ReviewSort, textExpr: string): string {
 }
 
 /**
- * Fetch rating for a doctor or clinic.
+ * Fetch rating for a doctor, clinic or insurance company.
  */
 export async function fetchRating(
 	connection: Connection,
-	entityType: 'doctor' | 'clinic',
+	entityType: ReviewEntityType,
 	entityId: number,
 ): Promise<Rating> {
-	const column = entityType === 'doctor' ? 'doctor_id' : 'clinic_id';
+	const column = ENTITY_ID_COLUMNS[entityType];
 	const query = `
 		SELECT
 			ROUND(AVG(rating), 1) as averageRating,
@@ -132,6 +144,7 @@ const reviewSelectFields = (textExpr: string) => `
 	r.user_id as userId,
 	r.doctor_id as doctorId,
 	r.clinic_id as clinicId,
+	r.insurance_company_id as insuranceCompanyId,
 	r.provider,
 	r.provider_review_id as providerReviewId,
 	r.rating,
@@ -176,12 +189,13 @@ const REVIEW_JOINS = `
 `;
 
 /**
- * Fetch reviews for a doctor or clinic with SQL-level sorting, pagination, and filtering.
+ * Fetch reviews for a doctor, clinic or insurance company with SQL-level
+ * sorting, pagination, and filtering.
  * Own review (if currentUserId provided) is fetched separately and unaffected by minRating/pagination.
  */
 export async function fetchReviews(
 	connection: Connection,
-	entityType: 'doctor' | 'clinic',
+	entityType: ReviewEntityType,
 	entityId: number,
 	locale: string,
 	options: FetchReviewsOptions = {},
@@ -194,7 +208,7 @@ export async function fetchReviews(
 		boostMinRating,
 		currentUserId,
 	} = options;
-	const column = entityType === 'doctor' ? 'doctor_id' : 'clinic_id';
+	const column = ENTITY_ID_COLUMNS[entityType];
 	const textExpr = localizedTextField(locale, 'r');
 	const replyTextExpr = localizedTextField(locale, 'rr');
 	const selectFields = reviewSelectFields(textExpr);
@@ -278,6 +292,7 @@ export async function fetchReviews(
 				rr.responder_type as responderType,
 				rr.clinic_id as clinicId,
 				rr.doctor_id as doctorId,
+				rr.insurance_company_id as insuranceCompanyId,
 				rr.user_id as userId,
 				rr.original_text as originalText,
 				rr.original_language as originalLanguage,

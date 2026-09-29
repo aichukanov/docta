@@ -22,15 +22,22 @@ interface UserListItem {
 	name: string;
 }
 
+// Лёгкий элемент из /api/insurance-companies/list (id + name)
+interface InsuranceCompanyListItem {
+	id: number;
+	name: string;
+}
+
 const props = withDefaults(
 	defineProps<{
 		reviews: ReviewListItem[];
 		clinics: ClinicData[];
 		doctors: DoctorListItem[];
+		insuranceCompanies?: InsuranceCompanyListItem[];
 		users: UserListItem[];
 		editable?: boolean;
 	}>(),
-	{ editable: false },
+	{ editable: false, insuranceCompanies: () => [] },
 );
 
 const emit = defineEmits<{
@@ -54,6 +61,10 @@ const doctorOptions = computed(() =>
 	props.doctors.map((d) => ({ label: d.name, value: d.id })),
 );
 
+const insuranceCompanyOptions = computed(() =>
+	props.insuranceCompanies.map((c) => ({ label: c.name, value: c.id })),
+);
+
 const userOptions = computed(() =>
 	props.users.map((u) => ({
 		label: `id="${u.id}" | ${u.email || 'phantom'} | ${u.name}`,
@@ -69,6 +80,9 @@ const clinicIdModified = computed(() => fieldModified('clinicId'));
 const doctorIdModified = computed(() => fieldModified('doctorId'));
 const medicalServiceIdModified = computed(() =>
 	fieldModified('medicalServiceId'),
+);
+const insuranceCompanyIdModified = computed(() =>
+	fieldModified('insuranceCompanyId'),
 );
 const ratingModified = computed(() => fieldModified('rating'));
 const originalLanguageModified = computed(() =>
@@ -96,6 +110,7 @@ const hasChanges = computed(
 		clinicIdModified.value ||
 		doctorIdModified.value ||
 		medicalServiceIdModified.value ||
+		insuranceCompanyIdModified.value ||
 		ratingModified.value ||
 		originalLanguageModified.value ||
 		originalTextModified.value ||
@@ -108,8 +123,16 @@ const hasChanges = computed(
 		repliesModified.value,
 );
 
-const originalReplyFor = (responderType: 'clinic' | 'doctor') =>
+const originalReplyFor = (
+	responderType: 'clinic' | 'doctor' | 'insurance_company',
+) =>
 	originalReview.value?.replies.find((r) => r.responderType === responderType);
+
+const REPLY_TITLES: Record<string, string> = {
+	clinic: 'Ответ клиники',
+	doctor: 'Ответ врача',
+	insurance_company: 'Ответ страховой',
+};
 
 const loadReviewDetails = async (id: number) => {
 	isLoading.value = true;
@@ -273,6 +296,21 @@ watch(reviewId, async (newId) => {
 				/>
 			</div>
 
+			<!-- Привязка: страховая компания -->
+			<div
+				class="association-section"
+				:class="{ modified: insuranceCompanyIdModified }"
+			>
+				<label class="section-label">Страховая компания</label>
+				<FilterableSelect
+					:items="insuranceCompanyOptions"
+					v-model:value="reviewModel.insuranceCompanyId"
+					placeholder="Не привязана"
+					clearable
+					class="wide-select"
+				/>
+			</div>
+
 			<!-- Привязка: услуга (редко меняется) -->
 			<div
 				class="association-section"
@@ -378,9 +416,7 @@ watch(reviewId, async (newId) => {
 				<AdminFieldGroup
 					v-for="(reply, idx) in reviewModel.replies"
 					:key="reply.id"
-					:title="
-						reply.responderType === 'clinic' ? 'Ответ клиники' : 'Ответ врача'
-					"
+					:title="REPLY_TITLES[reply.responderType] || 'Ответ'"
 				>
 					<div class="reply-meta">
 						<span><strong>Источник:</strong> {{ reply.provider }}</span>

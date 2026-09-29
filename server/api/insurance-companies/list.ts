@@ -55,7 +55,9 @@ export default defineEventHandler(
 
 			const [companyRows] = await connection.execute(
 				`SELECT ic.id, ic.slug, ic.name_sr, ic.name_ru, ic.name_sr_cyrl,
-					ic.website, ic.phone, ic.logo_url as logoUrl
+					ic.website, ic.phone, ic.logo_url as logoUrl,
+					(SELECT ROUND(AVG(r.rating), 1) FROM reviews r WHERE r.insurance_company_id = ic.id AND r.rating IS NOT NULL AND r.status != 'rejected') as averageRating,
+					(SELECT COUNT(*) FROM reviews r WHERE r.insurance_company_id = ic.id AND r.rating IS NOT NULL AND r.status != 'rejected') as totalReviews
 				FROM insurance_companies ic
 				${whereClause}
 				ORDER BY ic.name_sr ASC;`,
@@ -126,6 +128,12 @@ export default defineEventHandler(
 					logoUrl: row.logoUrl || '',
 					website: row.website,
 					phone: row.phone,
+					rating: {
+						averageRating: row.averageRating
+							? parseFloat(row.averageRating)
+							: null,
+						totalReviews: row.totalReviews || 0,
+					},
 					branchCount: branches.length,
 					branches,
 				};

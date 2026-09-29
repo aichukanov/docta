@@ -21,7 +21,7 @@ export interface ModerationReviewItem {
 	isVerified: boolean;
 	authorName: string | null;
 	authorEmail: string | null;
-	targetType: 'doctor' | 'clinic' | 'service';
+	targetType: 'doctor' | 'clinic' | 'insurance_company' | 'service';
 	targetName: string;
 	targetSlug: string | null;
 }
@@ -97,14 +97,16 @@ export default defineEventHandler(async (event) => {
 				CASE
 					WHEN r.doctor_id IS NOT NULL THEN 'doctor'
 					WHEN r.clinic_id IS NOT NULL THEN 'clinic'
+					WHEN r.insurance_company_id IS NOT NULL THEN 'insurance_company'
 					ELSE 'service'
 				END AS targetType,
-				COALESCE(d.name_sr, c.name_sr, '') AS targetName,
-				COALESCE(d.slug, c.slug) AS targetSlug
+				COALESCE(d.name_sr, c.name_sr, ic.name_sr, '') AS targetName,
+				COALESCE(d.slug, c.slug, ic.slug) AS targetSlug
 			FROM reviews r
 			LEFT JOIN auth_users u ON r.user_id = u.id
 			LEFT JOIN doctors d ON r.doctor_id = d.id
 			LEFT JOIN clinics c ON r.clinic_id = c.id
+			LEFT JOIN insurance_companies ic ON r.insurance_company_id = ic.id
 			WHERE r.provider = 'docta_me' AND r.status = ?
 			ORDER BY r.published_at ASC
 			LIMIT ${PAGE_SIZE} OFFSET ${offset}`,
@@ -141,12 +143,13 @@ export default defineEventHandler(async (event) => {
 			r.rating,
 			r.original_text AS text,
 			u.name AS authorName,
-			COALESCE(d.name_sr, c.name_sr, '') AS targetName
+			COALESCE(d.name_sr, c.name_sr, ic.name_sr, '') AS targetName
 		FROM review_verification_files vf
 		JOIN reviews r ON r.id = vf.review_id
 		LEFT JOIN auth_users u ON r.user_id = u.id
 		LEFT JOIN doctors d ON r.doctor_id = d.id
 		LEFT JOIN clinics c ON r.clinic_id = c.id
+		LEFT JOIN insurance_companies ic ON r.insurance_company_id = ic.id
 		WHERE vf.status = ?
 		ORDER BY vf.uploaded_at ASC
 		LIMIT ${PAGE_SIZE} OFFSET ${offset}`,

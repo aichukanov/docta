@@ -1244,6 +1244,7 @@ export function buildInsuranceCompanySchema(options: {
 	pageDescription?: string;
 	pageUrl?: string;
 	getCityName: (id: number) => string | undefined;
+	reviews?: SchemaReviewInput[];
 }): SchemaOrg[] {
 	const { siteUrl, company, locale, getCityName } = options;
 	const companyUrl = `${siteUrl}/insurance-companies/${company.slug}`;
@@ -1288,6 +1289,10 @@ export function buildInsuranceCompanySchema(options: {
 					: undefined,
 			'telephone': branch.phone || splitContacts(company.phone)[0] || undefined,
 		})),
+		// Только собственные отзывы docta_me и только валидные; aggregateRating
+		// не выводим, пока API-агрегат считает и сторонние отзывы —
+		// см. SCHEMA_REVIEWS_PROVIDER
+		review: buildSchemaReviews(options.reviews),
 	};
 
 	const webPageSchema = buildWebPageSchema({

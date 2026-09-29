@@ -130,6 +130,8 @@ export interface InsuranceAgencySchema extends SchemaOrgBase {
 	'url'?: string;
 	'sameAs'?: string[];
 	'location'?: InsuranceAgencyLocationSchema[];
+	// Review[] из buildSchemaReviews (только собственные docta_me-отзывы)
+	'review'?: object[];
 }
 
 export interface MedicalTestSchema extends SchemaOrgBase {

@@ -123,6 +123,21 @@ function submitReject() {
 	}
 }
 
+// Подпись и раздел сайта для цели отзыва (у услуг публичного пути к отзывам нет)
+const TARGET_LABELS: Record<ModerationReviewItem['targetType'], string> = {
+	doctor: 'Врач',
+	clinic: 'Клиника',
+	insurance_company: 'Страховая',
+	service: 'Услуга',
+};
+
+const TARGET_BASE_PATHS: Record<ModerationReviewItem['targetType'], string> = {
+	doctor: 'doctors',
+	clinic: 'clinics',
+	insurance_company: 'insurance-companies',
+	service: 'services',
+};
+
 const statusTagType = (s: string) =>
 	s === 'approved' ? 'success' : s === 'rejected' ? 'danger' : 'warning';
 
@@ -182,14 +197,10 @@ function formatDate(date: string | null) {
 				<el-card v-for="review in reviews" :key="review.id" shadow="never">
 					<div class="item-header">
 						<div>
-							<strong
-								>{{
-									review.targetType === 'doctor' ? 'Врач' : 'Клиника'
-								}}:</strong
-							>
+							<strong>{{ TARGET_LABELS[review.targetType] }}:</strong>
 							<a
 								v-if="review.targetSlug"
-								:href="`/${review.targetType}s/${review.targetSlug}`"
+								:href="`/${TARGET_BASE_PATHS[review.targetType]}/${review.targetSlug}`"
 								target="_blank"
 								class="target-link"
 							>

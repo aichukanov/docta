@@ -15,6 +15,8 @@ export interface RecentRealUserReview {
 	clinicName: string;
 	doctorId: number | null;
 	doctorName: string;
+	insuranceCompanyId: number | null;
+	insuranceCompanyName: string;
 }
 
 export default defineEventHandler(
@@ -35,14 +37,17 @@ export default defineEventHandler(
 					r.provider,
 					r.clinic_id,
 					r.doctor_id,
+					r.insurance_company_id,
 					COALESCE(u.name, '') AS author_name,
 					COALESCE(u.photo_url, '') AS author_photo_url,
 					COALESCE(c.name_sr, '') AS clinic_name,
-					COALESCE(d.name_sr, '') AS doctor_name
+					COALESCE(d.name_sr, '') AS doctor_name,
+					COALESCE(ic.name_sr, '') AS insurance_company_name
 				FROM reviews r
 				INNER JOIN auth_users u ON r.user_id = u.id
 				LEFT JOIN clinics c ON r.clinic_id = c.id
 				LEFT JOIN doctors d ON r.doctor_id = d.id
+				LEFT JOIN insurance_companies ic ON r.insurance_company_id = ic.id
 				WHERE u.is_phantom = FALSE
 				ORDER BY r.published_at DESC, r.id DESC
 				LIMIT 10`,
@@ -66,6 +71,8 @@ export default defineEventHandler(
 				clinicName: r.clinic_name,
 				doctorId: r.doctor_id ?? null,
 				doctorName: r.doctor_name,
+				insuranceCompanyId: r.insurance_company_id ?? null,
+				insuranceCompanyName: r.insurance_company_name,
 			}));
 		} catch (error) {
 			console.error('API Error - recent reviews from real users:', error);

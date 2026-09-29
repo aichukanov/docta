@@ -21,12 +21,15 @@ const { t } = useI18n({
 
 <template>
 	<div class="rating-summary">
-		<div class="rating-info">
+		<!-- Ноль отзывов — вместо пустых звёзд приглашение оставить первый:
+		     кнопка живёт только здесь, без этой ветки её не было бы вовсе -->
+		<div v-if="rating.totalReviews > 0" class="rating-info">
 			<RatingStars :rating="rating.averageRating" :show-value="true" />
 			<span class="reviews-count">
 				{{ t('BasedOn', { count: rating.totalReviews }) }}
 			</span>
 		</div>
+		<span v-else class="reviews-count">{{ t('NoReviews') }}</span>
 		<el-button
 			v-if="!hideWriteButton"
 			type="primary"

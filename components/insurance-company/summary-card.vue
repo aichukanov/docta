@@ -27,6 +27,13 @@ const detailLink = computed(() => ({
 				>{{ company.localName }}</span
 			>
 			<span class="insurance-summary-card__meta">{{ branchesLabel }}</span>
+			<!-- Без count-link: карточка сама ссылка, вложенный <a> невалиден -->
+			<RatingStars
+				v-if="company.rating && company.rating.averageRating"
+				:rating="company.rating.averageRating"
+				:count="company.rating.totalReviews"
+				show-value
+			/>
 		</div>
 	</NuxtLink>
 </template>

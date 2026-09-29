@@ -53,8 +53,12 @@ export default defineEventHandler(async (event) => {
 		);
 	}
 
-	const reviewRows = await executeQuery<{ id: number; user_id: number }>(
-		`SELECT id, user_id FROM reviews
+	const reviewRows = await executeQuery<{
+		id: number;
+		user_id: number;
+		insurance_company_id: number | null;
+	}>(
+		`SELECT id, user_id, insurance_company_id FROM reviews
 		WHERE id = ? AND provider = 'docta_me'`,
 		[reviewId],
 	);
@@ -63,6 +67,11 @@ export default defineEventHandler(async (event) => {
 	}
 	if (reviewRows[0].user_id !== user!.id) {
 		createErrorResponse(403, ERROR_CODES.REVIEW_NOT_OWN);
+	}
+	// К страховой не ходят на приём — визит подтверждать нечем, форма этот шаг
+	// не показывает; прямой запрос отбиваем тоже
+	if (reviewRows[0].insurance_company_id) {
+		createErrorResponse(400, ERROR_CODES.REVIEW_INVALID_ENTITY);
 	}
 
 	// Повторная загрузка разрешена только после отклонения модератором:

@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import reviewsI18n from '~/i18n/reviews';
 import type { Review } from '~/interfaces/review';
-import { combineI18nMessages } from '~/i18n/utils';
 
-const props = withDefaults(
+withDefaults(
 	defineProps<{
 		reviews?: Review[];
 		clinicInfo?: Record<number, { name: string; slug: string }>;
@@ -13,28 +11,20 @@ const props = withDefaults(
 		clinicInfo: () => ({}),
 	},
 );
-
-const { t } = useI18n({
-	useScope: 'local',
-	messages: combineI18nMessages([reviewsI18n]),
-});
 </script>
 
 <template>
-	<div class="doctor-reviews">
-		<!-- Reviews list -->
-		<div class="reviews-list" v-if="reviews.length > 0">
+	<!-- Пустое состояние — забота вызывающего (RatingSummary на детальной,
+	     KitEmpty на странице отзывов): список чужих отзывов бывает пуст и при
+	     наличии собственного, свой текст «нет отзывов» здесь врал бы -->
+	<div class="doctor-reviews" v-if="reviews.length > 0">
+		<div class="reviews-list">
 			<ReviewItem
 				v-for="review in reviews"
 				:key="review.id"
 				:review="review"
 				:clinicInfo="clinicInfo"
 			/>
-		</div>
-
-		<!-- No reviews -->
-		<div class="no-reviews" v-else>
-			{{ t('NoReviews') }}
 		</div>
 	</div>
 </template>

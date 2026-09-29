@@ -1,8 +1,9 @@
 export interface ReviewReply {
 	id: number;
-	responderType: 'clinic' | 'doctor';
+	responderType: 'clinic' | 'doctor' | 'insurance_company';
 	clinicId?: number;
 	doctorId?: number;
+	insuranceCompanyId?: number;
 	userId?: number;
 	originalText?: string;
 	originalLanguage: string;
@@ -20,6 +21,7 @@ export interface Review {
 	clinicId?: number;
 	doctorId?: number;
 	medicalServiceId?: number;
+	insuranceCompanyId?: number;
 	provider: 'google_maps' | 'facebook' | 'telegram' | 'docta_me';
 	providerReviewId?: string;
 	rating?: number;

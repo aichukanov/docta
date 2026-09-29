@@ -1,11 +1,28 @@
 <script setup lang="ts">
 import IconMapPin from '~/components/icon/map-pin.vue';
+import { REVIEWS_THRESHOLD } from '~/common/constants';
+import { getRegionalQuery } from '~/common/url-utils';
 import type { InsuranceCompanyData } from '~/interfaces/insurance-company';
 
-defineProps<{
+const props = defineProps<{
 	company: InsuranceCompanyData;
 	branchesLabel: string;
 }>();
+
+const { locale } = useI18n();
+
+// Больше порога — отдельная страница отзывов, иначе якорь на детальной
+const reviewsLink = computed(() => {
+	if (!props.company.slug || !props.company.rating?.totalReviews) return null;
+	const base = {
+		params: { companySlug: props.company.slug },
+		query: getRegionalQuery(locale.value),
+	};
+	if (props.company.rating.totalReviews > REVIEWS_THRESHOLD) {
+		return { name: 'insurance-companies-companySlug-reviews', ...base };
+	}
+	return { name: 'insurance-companies-companySlug', ...base, hash: '#reviews' };
+});
 </script>
 
 <template>
@@ -26,6 +43,13 @@ defineProps<{
 				<IconMapPin aria-hidden="true" size="1em" />
 				<span>{{ branchesLabel }}</span>
 			</div>
+			<RatingStars
+				v-if="company.rating && company.rating.averageRating"
+				:rating="company.rating.averageRating"
+				:count="company.rating.totalReviews"
+				:count-link="reviewsLink"
+				show-value
+			/>
 		</div>
 	</header>
 </template>

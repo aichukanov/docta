@@ -4,7 +4,7 @@ import { validateBody, validateNonNegativeInteger } from '~/common/validation';
 
 export interface ReplyAdminData {
 	id: number;
-	responderType: 'clinic' | 'doctor';
+	responderType: 'clinic' | 'doctor' | 'insurance_company';
 	originalLanguage: string;
 	originalText: string;
 	text_sr: string;
@@ -23,6 +23,7 @@ export interface ReviewAdminDetails {
 	clinicId: number | null;
 	doctorId: number | null;
 	medicalServiceId: number | null;
+	insuranceCompanyId: number | null;
 	provider: string;
 	providerReviewId: string;
 	rating: number | null;
@@ -41,6 +42,7 @@ export interface ReviewAdminDetails {
 	authorPhotoUrl: string;
 	clinicName: string;
 	doctorName: string;
+	insuranceCompanyName: string;
 	replies: ReplyAdminData[];
 }
 
@@ -66,6 +68,7 @@ export default defineEventHandler(
 			const [rows]: any = await connection.execute(
 				`SELECT
 					r.id, r.user_id, r.clinic_id, r.doctor_id, r.medical_service_id,
+					r.insurance_company_id,
 					r.provider, r.provider_review_id, r.rating,
 					r.original_language, r.original_text,
 					r.text_sr, r.text_sr_cyrl, r.text_en, r.text_ru, r.text_de, r.text_tr,
@@ -73,11 +76,13 @@ export default defineEventHandler(
 					COALESCE(u.name, '') as author_name,
 					COALESCE(u.photo_url, '') as author_photo_url,
 					COALESCE(c.name_sr, '') as clinic_name,
-					COALESCE(d.name_sr, '') as doctor_name
+					COALESCE(d.name_sr, '') as doctor_name,
+					COALESCE(ic.name_sr, '') as insurance_company_name
 				FROM reviews r
 				LEFT JOIN auth_users u ON r.user_id = u.id
 				LEFT JOIN clinics c ON r.clinic_id = c.id
 				LEFT JOIN doctors d ON r.doctor_id = d.id
+				LEFT JOIN insurance_companies ic ON r.insurance_company_id = ic.id
 				WHERE r.id = ?`,
 				[body.reviewId],
 			);
@@ -122,6 +127,7 @@ export default defineEventHandler(
 				clinicId: r.clinic_id ?? null,
 				doctorId: r.doctor_id ?? null,
 				medicalServiceId: r.medical_service_id ?? null,
+				insuranceCompanyId: r.insurance_company_id ?? null,
 				provider: r.provider,
 				providerReviewId: r.provider_review_id || '',
 				rating: r.rating ?? null,
@@ -141,6 +147,7 @@ export default defineEventHandler(
 				authorPhotoUrl: r.author_photo_url,
 				clinicName: r.clinic_name,
 				doctorName: r.doctor_name,
+				insuranceCompanyName: r.insurance_company_name,
 				replies,
 			};
 		} catch (error) {

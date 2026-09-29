@@ -2,7 +2,7 @@
 import type { ReviewAiSummary } from '~/interfaces/review';
 
 const props = defineProps<{
-	entityType: 'doctor' | 'clinic';
+	entityType: 'doctor' | 'clinic' | 'insurance_company';
 	entityId: number;
 }>();
 

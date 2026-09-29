@@ -9,7 +9,7 @@ export interface ReviewFormEntity {
 }
 
 const props = defineProps<{
-	entityType: 'doctor' | 'clinic';
+	entityType: 'doctor' | 'clinic' | 'insurance_company';
 	entityId: number;
 	entityName: string;
 	relatedEntities?: ReviewFormEntity[];
@@ -57,6 +57,14 @@ watch(visible, (isOpen) => {
 		step.value = 'form';
 		createdReviewId.value = null;
 	}
+});
+
+// Подпись строки с целью отзыва (read-only)
+const entityLabel = computed(() => {
+	if (props.entityType === 'clinic') return t('ReviewClinic');
+	if (props.entityType === 'insurance_company')
+		return t('ReviewInsuranceCompany');
+	return t('ReviewDoctor');
 });
 
 const relatedHint = computed(() =>
@@ -108,11 +116,13 @@ const handleSubmit = async () => {
 			},
 		};
 		emit('submitted', review);
-		// Отзыв создан — предлагаем опционально подтвердить визит документом
-		if (review.id) {
+		// Отзыв создан — предлагаем опционально подтвердить визит документом.
+		// К страховой не ходят на приём — подтверждать нечего, шаг пропускаем
+		if (review.id && props.entityType !== 'insurance_company') {
 			createdReviewId.value = review.id;
 			step.value = 'verification';
 		} else {
+			toast.success(t('ReviewSubmitted'));
 			closeDialog();
 		}
 	} catch (e: unknown) {
@@ -155,7 +165,7 @@ const handleSubmit = async () => {
 			<!-- Primary entity (read-only) -->
 			<div class="form-field">
 				<label class="form-label">
-					{{ entityType === 'clinic' ? t('ReviewClinic') : t('ReviewDoctor') }}
+					{{ entityLabel }}
 				</label>
 				<span class="entity-name">{{ entityName }}</span>
 			</div>

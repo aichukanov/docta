@@ -19,11 +19,13 @@ export default defineEventHandler(async (event): Promise<ReviewListItem[]> => {
 				r.published_at,
 				COALESCE(u.name, 'Аноним') as author_name,
 				COALESCE(c.name_sr, '') as clinic_name,
-				COALESCE(d.name_sr, '') as doctor_name
+				COALESCE(d.name_sr, '') as doctor_name,
+				COALESCE(ic.name_sr, '') as insurance_company_name
 			FROM reviews r
 			LEFT JOIN auth_users u ON r.user_id = u.id
 			LEFT JOIN clinics c ON r.clinic_id = c.id
 			LEFT JOIN doctors d ON r.doctor_id = d.id
+			LEFT JOIN insurance_companies ic ON r.insurance_company_id = ic.id
 			ORDER BY r.published_at DESC
 			LIMIT 1000
 		`);
@@ -35,7 +37,7 @@ export default defineEventHandler(async (event): Promise<ReviewListItem[]> => {
 				`#${r.id}`,
 				r.rating ? `${r.rating}★` : '',
 				r.author_name,
-				r.clinic_name || r.doctor_name || '',
+				r.clinic_name || r.doctor_name || r.insurance_company_name || '',
 				r.published_at
 					? new Date(r.published_at).toISOString().slice(0, 10)
 					: '',

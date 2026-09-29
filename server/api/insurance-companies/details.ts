@@ -1,4 +1,7 @@
+import { REVIEWS_THRESHOLD } from '~/common/constants';
+import { getCurrentUser } from '~/server/common/auth';
 import { getConnection } from '~/server/common/db-mysql';
+import { fetchRating, fetchReviews } from '~/server/common/reviews';
 import {
 	processLocalizedNameForClinicOrDoctor,
 	processLocalizedFieldForClinic,
@@ -9,6 +12,7 @@ import { isValidLocale, validateBody } from '~/common/validation';
 export default defineEventHandler(
 	async (event): Promise<InsuranceCompanyData | null> => {
 		try {
+			const currentUser = await getCurrentUser(event);
 			const body = await readBody(event);
 
 			if (!validateBody(body, 'api/insurance-companies/details')) {
@@ -45,6 +49,26 @@ export default defineEventHandler(
 				ORDER BY city_id ASC, id ASC;`,
 				[company.id],
 			);
+
+			// Рейтинг и первые отзывы — как на странице клиники
+			const rating = await fetchRating(
+				connection,
+				'insurance_company',
+				company.id,
+			);
+			const { reviews, ownReview } = await fetchReviews(
+				connection,
+				'insurance_company',
+				company.id,
+				locale,
+				{
+					boostMinRating: 4,
+					limit: REVIEWS_THRESHOLD,
+					currentUserId: currentUser?.id,
+				},
+			);
+			const allReviews = ownReview ? [ownReview, ...reviews] : reviews;
+
 			await connection.end();
 
 			const { name, localName } = processLocalizedNameForClinicOrDoctor(
@@ -80,6 +104,8 @@ export default defineEventHandler(
 				whatsapp: company.whatsapp,
 				viber: company.viber,
 				branches,
+				rating,
+				reviews: allReviews,
 			};
 		} catch (error) {
 			console.error('API Error - insurance company details:', error);

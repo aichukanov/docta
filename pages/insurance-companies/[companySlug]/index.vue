@@ -1,16 +1,22 @@
 <script setup lang="ts">
 import type { InsuranceCompanyBranchesMap } from '#components';
-import { OG_IMAGE, SITE_URL } from '~/common/constants';
+import { OG_IMAGE, REVIEWS_THRESHOLD, SITE_URL } from '~/common/constants';
 import {
 	buildBreadcrumbsSchema,
 	buildInsuranceCompanySchema,
 } from '~/common/schema-org-builders';
-import { getCanonicalUrl, getRegionalUrl } from '~/common/url-utils';
+import {
+	getCanonicalUrl,
+	getRegionalQuery,
+	getRegionalUrl,
+} from '~/common/url-utils';
 import { combineI18nMessages } from '~/i18n/utils';
 import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import insuranceCompanyI18n from '~/i18n/insurance-company';
+import reviewsI18n from '~/i18n/reviews';
 import type { InsuranceCompanyData } from '~/interfaces/insurance-company';
+import type { Review } from '~/interfaces/review';
 
 const { t, locale } = useI18n({
 	useScope: 'local',
@@ -18,6 +24,7 @@ const { t, locale } = useI18n({
 		breadcrumbI18n,
 		cityI18n,
 		insuranceCompanyI18n,
+		reviewsI18n,
 	]),
 });
 
@@ -51,10 +58,76 @@ const branchesLabel = computed(() =>
 	t('OfficeCount', { count: branches.value.length }),
 );
 
-const tabs = computed(() => [
-	{ id: 'offices', label: t('OfficesTitle') },
-	{ id: 'map', label: t('TabMap') },
-]);
+const tabs = computed(() => {
+	const result = [{ id: 'offices', label: t('OfficesTitle') }];
+	if (companyData.value) {
+		const reviewCount =
+			companyData.value.rating?.totalReviews ||
+			companyData.value.reviews?.length ||
+			0;
+		result.push({
+			id: 'reviews',
+			label:
+				reviewCount > 0
+					? `${t('TabReviews')} (${reviewCount})`
+					: t('TabReviews'),
+		});
+	}
+	result.push({ id: 'map', label: t('TabMap') });
+	return result;
+});
+
+// === Отзывы — та же механика, что на странице клиники ===
+
+const hasSeparateReviewsPage = computed(() => {
+	const total =
+		companyData.value?.rating?.totalReviews ||
+		companyData.value?.reviews?.length ||
+		0;
+	return total > REVIEWS_THRESHOLD;
+});
+
+const allCompanyReviews = computed(() => companyData.value?.reviews || []);
+
+const localOwnReview = ref<Review | null>(null);
+const ownReviewDeleted = ref(false);
+const showReviewDialog = ref(false);
+
+const ownReview = computed(() => {
+	if (ownReviewDeleted.value) return null;
+	return (
+		localOwnReview.value || allCompanyReviews.value.find((r) => r.isOwn) || null
+	);
+});
+const otherReviews = computed(() =>
+	allCompanyReviews.value.filter((r) => !r.isOwn),
+);
+
+const displayedReviews = computed(() => {
+	if (hasSeparateReviewsPage.value) {
+		return otherReviews.value.slice(0, REVIEWS_THRESHOLD);
+	}
+	return otherReviews.value;
+});
+
+const onReviewSubmitted = (review: Review) => {
+	localOwnReview.value = review;
+	ownReviewDeleted.value = false;
+};
+
+const onReviewDeleted = () => {
+	localOwnReview.value = null;
+	ownReviewDeleted.value = true;
+};
+
+const allReviewsLink = computed(() => {
+	if (!hasSeparateReviewsPage.value) return undefined;
+	return {
+		name: 'insurance-companies-companySlug-reviews',
+		params: { companySlug: companySlug.value },
+		query: getRegionalQuery(locale.value),
+	};
+});
 
 // Аналог scrollToMap на странице клиники — открывает попап нужного филиала
 // на карте офисов (см. components/insurance-company/branches-map.vue).
@@ -163,6 +236,17 @@ watchEffect(() => {
 			pageDescription: pageDescription.value,
 			pageUrl,
 			getCityName,
+			// aggregateRating не передаём: API-агрегат может включать сторонние
+			// отзывы, в разметку идут только собственные docta_me
+			// (см. buildSchemaReviews и комментарий на странице клиники)
+			reviews: displayedReviews.value.map((review) => ({
+				id: review.id,
+				text: review.text,
+				rating: review.rating,
+				author: review.author,
+				publishedAt: review.publishedAt,
+				provider: review.provider,
+			})),
 		}),
 	]);
 });
@@ -216,6 +300,43 @@ watchEffect(() => {
 				<ContactsList :list="companyData" />
 			</EntityPageSection>
 
+			<!-- Reviews -->
+			<EntityPageSection v-if="companyData" sectionId="reviews">
+				<div class="reviews-header">
+					<EntityPageSectionTitle :title="t('TabReviews')">
+						<template #icon><IconStar :size="20" /></template>
+					</EntityPageSectionTitle>
+					<ViewAllLink
+						v-if="allReviewsLink && companyData.rating"
+						:to="allReviewsLink"
+						:label="t('AllReviews', { count: companyData.rating.totalReviews })"
+					/>
+				</div>
+				<div class="reviews-content">
+					<RatingSummary
+						v-if="companyData.rating"
+						:rating="companyData.rating"
+						:hideWriteButton="!!ownReview"
+						@writeReview="showReviewDialog = true"
+					/>
+					<ReviewItem
+						v-if="ownReview"
+						:review="ownReview"
+						@updated="(r) => (localOwnReview = r)"
+						@deleted="onReviewDeleted"
+					/>
+					<DoctorReviews :reviews="displayedReviews" />
+				</div>
+				<ReviewForm
+					v-if="companyData.id"
+					v-model="showReviewDialog"
+					entityType="insurance_company"
+					:entityId="companyData.id"
+					:entityName="companyData.name"
+					@submitted="onReviewSubmitted"
+				/>
+			</EntityPageSection>
+
 			<EntityPageSection sectionId="map" :title="t('TabMap')">
 				<template #icon
 					><IconMapPin :size="20" color="var(--kit-color-text-on-solid)"
@@ -237,8 +358,22 @@ watchEffect(() => {
 <style scoped lang="less">
 .insurance-branches-list {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));
 	gap: var(--kit-spacing-md);
+}
+
+.reviews-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--kit-spacing-md);
+	flex-wrap: wrap;
+}
+
+.reviews-content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--kit-spacing-lg);
 }
 
 .insurance-map {

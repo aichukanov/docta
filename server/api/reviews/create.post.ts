@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
 	// Validate entity
 	if (
 		!entityType ||
-		!['doctor', 'clinic'].includes(entityType) ||
+		!['doctor', 'clinic', 'insurance_company'].includes(entityType) ||
 		!entityId ||
 		typeof entityId !== 'number'
 	) {
@@ -44,6 +44,14 @@ export default defineEventHandler(async (event) => {
 		);
 		if (rows.length === 0)
 			createErrorResponse(400, ERROR_CODES.REVIEW_INVALID_ENTITY);
+	} else if (entityType === 'insurance_company') {
+		// У страховых нет черновиков и скрытия — достаточно существования
+		const rows = await executeQuery(
+			`SELECT id FROM insurance_companies WHERE id = ?`,
+			[entityId],
+		);
+		if (rows.length === 0)
+			createErrorResponse(400, ERROR_CODES.REVIEW_INVALID_ENTITY);
 	} else {
 		// Черновики не принимают отзывы — публично их страниц не существует
 		const rows = await executeQuery(
@@ -54,11 +62,15 @@ export default defineEventHandler(async (event) => {
 			createErrorResponse(400, ERROR_CODES.REVIEW_INVALID_ENTITY);
 	}
 
-	// Determine doctor_id and clinic_id based on entityType + optional related entity
+	// Determine target FKs based on entityType + optional related entity
+	// (related — только для пары врач/клиника)
 	let doctorId: number | null = null;
 	let clinicId: number | null = null;
+	let insuranceCompanyId: number | null = null;
 
-	if (entityType === 'doctor') {
+	if (entityType === 'insurance_company') {
+		insuranceCompanyId = entityId;
+	} else if (entityType === 'doctor') {
 		doctorId = entityId;
 		if (relatedEntityId && typeof relatedEntityId === 'number') {
 			const clinicRows = await executeQuery(
@@ -86,7 +98,12 @@ export default defineEventHandler(async (event) => {
 	}
 
 	// Check for duplicate (same user + same primary entity, within last 3 months)
-	const primaryColumn = entityType === 'doctor' ? 'doctor_id' : 'clinic_id';
+	const primaryColumns: Record<string, string> = {
+		doctor: 'doctor_id',
+		clinic: 'clinic_id',
+		insurance_company: 'insurance_company_id',
+	};
+	const primaryColumn = primaryColumns[entityType];
 	const duplicateRows = await executeQuery(
 		`SELECT id FROM reviews
 		WHERE user_id = ? AND ${primaryColumn} = ? AND provider = 'docta_me'
@@ -116,12 +133,13 @@ export default defineEventHandler(async (event) => {
 	// админ позже одобряет или отклоняет его в очереди модерации
 	const rows = await executeQuery(
 		`INSERT INTO reviews
-			(user_id, doctor_id, clinic_id, provider, rating, original_language, original_text, ${textColumn}, status, published_at, likes_count, created_at, updated_at)
-		VALUES (?, ?, ?, 'docta_me', ?, ?, ?, ?, 'pending', NOW(), 0, NOW(), NOW())`,
+			(user_id, doctor_id, clinic_id, insurance_company_id, provider, rating, original_language, original_text, ${textColumn}, status, published_at, likes_count, created_at, updated_at)
+		VALUES (?, ?, ?, ?, 'docta_me', ?, ?, ?, ?, 'pending', NOW(), 0, NOW(), NOW())`,
 		[
 			user!.id,
 			doctorId,
 			clinicId,
+			insuranceCompanyId,
 			rating,
 			originalLanguage,
 			trimmedText,

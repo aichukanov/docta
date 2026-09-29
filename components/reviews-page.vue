@@ -18,8 +18,12 @@ import { combineI18nMessages } from '~/i18n/utils';
 import type { Rating, Review } from '~/interfaces/review';
 
 const props = defineProps<{
-	/** 'doctor' | 'clinic' */
-	entityType: string;
+	entityType: 'doctor' | 'clinic' | 'insurance_company';
+	/**
+	 * Сегмент раздела в URL. По умолчанию `${entityType}s`; для страховых
+	 * (`/insurance-companies/...`) множественное число так не образуется.
+	 */
+	entityBasePath?: string;
 	entitySlug: string;
 	entityName: string;
 	rating: Rating;
@@ -80,8 +84,11 @@ const { t, locale } = useI18n({
 const route = useRoute();
 const router = useRouter();
 
+const entityBasePath = computed(
+	() => props.entityBasePath || `${props.entityType}s`,
+);
 const entityUrl = computed(
-	() => `${SITE_URL}/${props.entityType}s/${props.entitySlug}`,
+	() => `${SITE_URL}/${entityBasePath.value}/${props.entitySlug}`,
 );
 /*
  * Адрес N-й страницы отзывов — общей канонической функцией, как везде.
@@ -204,7 +211,7 @@ watchEffect(() => {
 			{
 				name: t(props.breadcrumbParentKey),
 				url: getRegionalUrl(
-					`${SITE_URL}/${props.entityType}s`,
+					`${SITE_URL}/${entityBasePath.value}`,
 					{},
 					locale.value,
 				),
@@ -302,11 +309,7 @@ const totalReviewsCount = computed(
 			@writeReview="showReviewDialog = true"
 		/>
 
-		<ReviewAiSummary
-			v-if="entityId"
-			:entityType="entityType as 'doctor' | 'clinic'"
-			:entityId="entityId"
-		/>
+		<ReviewAiSummary v-if="entityId" :entityType="entityType" :entityId="entityId" />
 
 		<section v-if="currentOwnReview" class="own-review-section">
 			<ReviewItem
@@ -340,7 +343,7 @@ const totalReviewsCount = computed(
 		<ReviewForm
 			v-if="entityId"
 			v-model="showReviewDialog"
-			:entityType="entityType as 'doctor' | 'clinic'"
+			:entityType="entityType"
 			:entityId="entityId"
 			:entityName="entityName"
 			:relatedEntities="relatedEntities"

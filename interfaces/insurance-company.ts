@@ -1,5 +1,6 @@
 import type { ContactList } from './contacts';
 import type { Coordinates } from './clinic';
+import type { Rating, Review } from './review';
 import type { CityId } from '~/enums/cities';
 
 export interface InsuranceBranchData extends Coordinates {
@@ -21,6 +22,9 @@ export interface InsuranceCompanyData extends ContactList {
 	localName: string;
 	logoUrl?: string;
 	branches: InsuranceBranchData[];
+	rating?: Rating;
+	// Первые отзывы для секции на детальной (own-отзыв первым), как у клиники
+	reviews?: Review[];
 }
 
 export interface InsuranceCompanyListItem {
@@ -31,6 +35,7 @@ export interface InsuranceCompanyListItem {
 	logoUrl?: string;
 	website: string;
 	phone: string;
+	rating?: Rating;
 	branchCount: number;
 	// Все филиалы (или только попавшие под фильтр городов) — нужны каталогу
 	// для карты со всеми офисами компаний сразу

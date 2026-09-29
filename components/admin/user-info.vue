@@ -40,6 +40,7 @@ const formatDateTime = (iso: string | null) => {
 const reviewTarget = (r: RecentRealUserReview) => {
 	if (r.clinicName) return `Клиника: ${r.clinicName}`;
 	if (r.doctorName) return `Врач: ${r.doctorName}`;
+	if (r.insuranceCompanyName) return `Страховая: ${r.insuranceCompanyName}`;
 	return '—';
 };
 </script>

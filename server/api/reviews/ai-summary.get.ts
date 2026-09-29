@@ -3,7 +3,7 @@ import type { ReviewAiSummary } from '~/interfaces/review';
 
 const VALID_LOCALES = ['en', 'ru', 'sr', 'sr-cyrl', 'de', 'tr'];
 
-type AiSummaryEntityType = 'doctor' | 'clinic';
+type AiSummaryEntityType = 'doctor' | 'clinic' | 'insurance_company';
 
 function parseJsonColumn(value: unknown): string[] {
 	if (Array.isArray(value)) return value;
@@ -20,7 +20,7 @@ function parseJsonColumn(value: unknown): string[] {
 
 /**
  * Кэшированный AI-обзор отзывов сущности.
- * GET /api/reviews/ai-summary?entityType=doctor|clinic&entityId=N&locale=ru
+ * GET /api/reviews/ai-summary?entityType=doctor|clinic|insurance_company&entityId=N&locale=ru
  *
  * Только чтение кэша из review_ai_summaries (или null). Генерация — ручной
  * workflow без API-ключа: см. docs/import/AI_SUMMARY_WORKFLOW.md.
@@ -35,7 +35,7 @@ export default defineEventHandler(
 			: 'en';
 
 		if (
-			!['doctor', 'clinic'].includes(entityType) ||
+			!['doctor', 'clinic', 'insurance_company'].includes(entityType) ||
 			!entityId ||
 			entityId <= 0
 		) {

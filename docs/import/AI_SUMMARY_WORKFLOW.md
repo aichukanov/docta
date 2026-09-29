@@ -19,7 +19,8 @@
   отзывов (`reviews_count` в кэше против текущего количества).
 
 ```sql
--- Кандидаты: doctor/clinic с ≥3 текстовыми отзывами, без кэша или с устаревшим
+-- Кандидаты: doctor/clinic/insurance_company с ≥3 текстовыми отзывами,
+-- без кэша или с устаревшим
 SELECT t.entity_type, t.entity_id, t.eligible, s.reviews_count AS cached_count
 FROM (
 	SELECT 'clinic' AS entity_type, clinic_id AS entity_id, COUNT(*) AS eligible
@@ -33,6 +34,12 @@ FROM (
 	WHERE doctor_id IS NOT NULL AND status != 'rejected'
 		AND original_text IS NOT NULL AND CHAR_LENGTH(original_text) > 0
 	GROUP BY doctor_id
+	UNION ALL
+	SELECT 'insurance_company', insurance_company_id, COUNT(*)
+	FROM reviews
+	WHERE insurance_company_id IS NOT NULL AND status != 'rejected'
+		AND original_text IS NOT NULL AND CHAR_LENGTH(original_text) > 0
+	GROUP BY insurance_company_id
 ) t
 LEFT JOIN review_ai_summaries s
 	ON s.entity_type = t.entity_type AND s.entity_id = t.entity_id AND s.language = 'en'
@@ -47,7 +54,7 @@ WHERE t.eligible >= 3
 ```sql
 SELECT rating, original_text
 FROM reviews
-WHERE clinic_id = :id  -- или doctor_id = :id
+WHERE clinic_id = :id  -- или doctor_id / insurance_company_id = :id
 	AND status != 'rejected'
 	AND original_text IS NOT NULL AND CHAR_LENGTH(original_text) > 0
 ORDER BY published_at DESC
@@ -94,25 +101,31 @@ ON DUPLICATE KEY UPDATE
 ```
 
 Файл кладётся в `server/sql/` (например, `insert-ai-summaries-2026-06.sql`),
-применяет пользователь:
+применяет пользователь. Формат команд (локальная + прод через SSH-туннель,
+абсолютные пути под cmd.exe) — скилл `.claude/skills/migration-commands/SKILL.md`:
 
-```bash
-mysql -u docta_admin -p --default-character-set=utf8mb4 docta_me < server/sql/insert-ai-summaries-2026-06.sql
+```
+:: локальная БД
+mysql -h 127.0.0.1 -u root -p --default-character-set=utf8mb4 docta_me < E:\pet\docta.me\nuxt\server\sql\insert-ai-summaries-<дата>.sql
+
+:: прод — сначала туннель (E:\pet\server\db-tunnel.ps1), затем:
+mysql -h 127.0.0.1 -P 3307 -u docta_admin -p --default-character-set=utf8mb4 docta_me < E:\pet\docta.me\nuxt\server\sql\insert-ai-summaries-<дата>.sql
 ```
 
 ## Шаг 5 — проверка
 
-Открыть страницу отзывов сущности (`/clinics/<slug>/reviews` или
-`/doctors/<slug>/reviews`) в паре локалей — блок «AI-обзор отзывов» должен
+Открыть страницу отзывов сущности (`/clinics/<slug>/reviews`,
+`/doctors/<slug>/reviews` или `/insurance-companies/<slug>/reviews`) в паре
+локалей — блок «AI-обзор отзывов» должен
 показывать сильные/слабые стороны и рекомендации; дата — из
 `regenerated_at`/`generated_at`.
 
-## Схема таблицы (миграция 005)
+## Схема таблицы (миграция 005; enum расширен миграцией 035)
 
 ```sql
 CREATE TABLE review_ai_summaries (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	entity_type ENUM('doctor', 'clinic') NOT NULL,
+	entity_type ENUM('doctor', 'clinic', 'insurance_company') NOT NULL,
 	entity_id INT NOT NULL,
 	language VARCHAR(10) NOT NULL,
 	sentiment ENUM('positive', 'neutral', 'negative') NOT NULL,

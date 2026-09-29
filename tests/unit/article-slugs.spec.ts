@@ -7,6 +7,7 @@ import { locales } from '../../composables/use-locale';
 import articlesI18n from '../../i18n/articles';
 import articleUnavailableI18n from '../../i18n/article-medications-unavailable';
 import articleAllergyI18n from '../../i18n/article-allergy-medicines';
+import articleBloodDonationI18n from '../../i18n/article-blood-donation';
 import articleCityHealthcareI18n from '../../i18n/article-city-healthcare';
 import articleWeekendI18n from '../../i18n/article-weekend-medical-help';
 import articleTitleI18n from '../../i18n/article-title';
@@ -78,6 +79,7 @@ test.describe('ARTICLE_SEARCH', () => {
 		articlesI18n,
 		articleUnavailableI18n,
 		articleAllergyI18n,
+		articleBloodDonationI18n,
 		articleCityHealthcareI18n,
 		articleWeekendI18n,
 	];
@@ -137,6 +139,7 @@ test.describe('i18n/article-title', () => {
 		articlesI18n,
 		articleUnavailableI18n,
 		articleAllergyI18n,
+		articleBloodDonationI18n,
 		articleCityHealthcareI18n,
 		articleWeekendI18n,
 	];
@@ -203,6 +206,7 @@ test.describe('i18n/article-description', () => {
 		articleWeekendI18n,
 		articleUnavailableI18n,
 		articleAllergyI18n,
+		articleBloodDonationI18n,
 	];
 
 	function canonical(locale: string, key: string): string | undefined {

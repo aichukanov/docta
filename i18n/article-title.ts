@@ -20,6 +20,8 @@ export default {
 				"Medications you won't find in Montenegro: your usual home first-aid kit",
 			AlgTitle:
 				'Allergy medicines in Montenegro: what to take instead of Zyrtec',
+			BldTitle:
+				'Donating blood in Montenegro: where to go, how often, and what documents you need',
 			PharmaciesTitle:
 				'Pharmacies and medications in Montenegro: prescriptions, analogs, what to bring',
 			BirthInMontenegroTitle:
@@ -56,6 +58,8 @@ export default {
 			UnaTitle:
 				'Чего нет в аптеках Черногории: привычные лекарства из России и Украины',
 			AlgTitle: 'Чем заменить Зиртек в Черногории: антигистаминные в аптеках',
+			BldTitle:
+				'Донорство крови в Черногории: где сдать, как часто и что нужно из документов',
 			PharmaciesTitle:
 				'Аптеки и лекарства в Черногории: рецепты, аналоги, что взять с собой',
 			BirthInMontenegroTitle:
@@ -91,6 +95,8 @@ export default {
 				'Ljekovi koje nećete naći u Crnoj Gori: vaša uobičajena kućna apoteka',
 			AlgTitle:
 				'Čime zamijeniti Zyrtec u Crnoj Gori: antihistaminici u apotekama',
+			BldTitle:
+				'Davanje krvi u Crnoj Gori: gdje, koliko često i koji dokument je potreban',
 			PharmaciesTitle:
 				'Apoteke i ljekovi u Crnoj Gori: recepti, analozi, šta ponijeti sa sobom',
 			BirthInMontenegroTitle:
@@ -126,6 +132,8 @@ export default {
 				'Љекови које нећете наћи у Црној Гори: ваша уобичајена кућна апотека',
 			AlgTitle:
 				'Чиме замијенити Zyrtec у Црној Гори: антихистаминици у апотекама',
+			BldTitle:
+				'Давање крви у Црној Гори: гдје, колико често и који документ је потребан',
 			PharmaciesTitle:
 				'Апотеке и љекови у Црној Гори: рецепти, аналози, шта понијети са собом',
 			BirthInMontenegroTitle:
@@ -161,6 +169,8 @@ export default {
 				'Medikamente, die Sie in Montenegro nicht finden: Ihre gewohnte Hausapotheke',
 			AlgTitle:
 				'Zyrtec in Montenegro ersetzen: Antihistaminika in den Apotheken',
+			BldTitle:
+				'Blut spenden in Montenegro: wo, wie oft und mit welchen Dokumenten',
 			PharmaciesTitle:
 				'Apotheken und Medikamente in Montenegro: Rezepte, Generika, was man mitnehmen sollte',
 			BirthInMontenegroTitle:
@@ -198,6 +208,7 @@ export default {
 				"Karadağ'da bulamayacağınız ilaçlar: alıştığınız evdeki ilaç dolabı",
 			AlgTitle:
 				'Karadağ’da Zyrtec yerine ne var: eczanelerde antihistaminikler',
+			BldTitle: 'Karadağ’da kan bağışı: nerede, ne sıklıkla ve hangi belgeyle',
 			PharmaciesTitle:
 				"Karadağ'da eczaneler ve ilaçlar: reçeteler, muadiller, yanınızda ne getirmelisiniz",
 			BirthInMontenegroTitle:

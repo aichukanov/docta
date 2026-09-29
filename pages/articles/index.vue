@@ -198,6 +198,17 @@ const articles = computed(() =>
 			},
 		},
 		{
+			title: t('BldTitle'),
+			description: t('BldDescription'),
+			image: '/img/articles/blood-donation-in-montenegro.webp',
+			date: '2026-09-16',
+			meta: '',
+			link: {
+				path: '/articles/blood-donation-in-montenegro',
+				query: getRegionalQuery(locale.value),
+			},
+		},
+		{
 			title: t('WeekendMedicalHelpTitle'),
 			description: t('WeekendMedicalHelpDescription'),
 			image: '/img/articles/weekend-medical-help-in-montenegro.webp',

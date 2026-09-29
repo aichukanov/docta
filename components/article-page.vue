@@ -17,6 +17,7 @@ export const ARTICLE_IMAGE_SIZES: Record<
 > = {
 	'allergy-medicines-in-montenegro': { width: 1024, height: 559 },
 	'birth-in-montenegro': { width: 1264, height: 841 },
+	'blood-donation-in-montenegro': { width: 1024, height: 559 },
 	'child-healthcare-in-montenegro': { width: 1264, height: 848 },
 	'clinics-with-language-support': { width: 1536, height: 1024 },
 	'dentistry-in-montenegro': { width: 1264, height: 848 },

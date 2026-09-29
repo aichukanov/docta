@@ -17,6 +17,8 @@ export default {
 				'Useful articles about healthcare in Montenegro: Russian-speaking doctors, clinics with multilingual support, and more.',
 			AlgDescription:
 				'Cetirizine (Zyrtec, Zodak) is not registered in Montenegro. Which antihistamines are sold here with or without a prescription, and how to match yours by ingredient.',
+			BldDescription:
+				'Nine donation points of the national Blood Transfusion Institute — addresses, phone numbers, the days each one takes donors. Who is eligible, how often you may come back, how to prepare, and what to do if you have no residence permit. Current as of September 2026.',
 			BirthInMontenegroDescription:
 				'Where to give birth in Montenegro: maternity wards of state hospitals and the private option, prenatal care, cost of childbirth without insurance, epidural availability, newborn paperwork and patronage nurse visits. Current as of July 2026.',
 			ChildHealthcareDescription:
@@ -58,6 +60,8 @@ export default {
 				'Полезные статьи о здравоохранении в Черногории: русскоязычные врачи, клиники с языковой поддержкой и многое другое.',
 			AlgDescription:
 				'Цетиризина (Зиртек, Зодак) в реестре Черногории нет. Какие антигистаминные продают без рецепта и по рецепту и чем заменить привычный бренд по действующему веществу.',
+			BldDescription:
+				'Девять пунктов Завода трансфузии крови — адреса, телефоны, дни приёма. Кому можно быть донором, через сколько можно прийти снова, как подготовиться и что делать, если боравка нет. Актуально на сентябрь 2026 года.',
 			BirthInMontenegroDescription:
 				'Где рожать в Черногории: роддома государственных больниц и частный вариант, ведение беременности, цены родов без страховки, доступность эпидуральной анестезии, документы для новорождённого и патронаж. Актуально на июль 2026 года.',
 			ChildHealthcareDescription:
@@ -99,6 +103,8 @@ export default {
 				'Korisni članci o zdravstvenoj zaštiti u Crnoj Gori: doktori koji govore ruski, klinike sa višejezičnom podrškom i još mnogo toga.',
 			AlgDescription:
 				'Cetirizina (Zyrtec, Zodak) nema u registru Crne Gore. Koji antihistaminici se ovdje izdaju bez recepta i na recept i kako naći poznati brend po aktivnoj supstanci.',
+			BldDescription:
+				'Devet punktova Zavoda za transfuziju krvi — adrese, telefoni i dani kada primaju davaoce. Ko može da daje krv, koliko često, kako se pripremiti i šta ako nemate boravak. Ažurirano u septembru 2026.',
 			BirthInMontenegroDescription:
 				'Gdje se porađa u Crnoj Gori: porodilišta državnih bolnica i privatna opcija, vođenje trudnoće, cijena porođaja bez osiguranja, dostupnost epiduralne analgezije, dokumenti za novorođenče i patronaža. Važi za jul 2026.',
 			ChildHealthcareDescription:
@@ -140,6 +146,8 @@ export default {
 				'Nützliche Artikel über das Gesundheitswesen in Montenegro: russischsprachige Ärzte, Kliniken mit mehrsprachiger Unterstützung und mehr.',
 			AlgDescription:
 				'Cetirizin (Zyrtec, Zodak) ist in Montenegro nicht zugelassen. Welche Antihistaminika es hier mit und ohne Rezept gibt und wie Sie Ersatz über den Wirkstoff finden.',
+			BldDescription:
+				'Neun Spendestellen des staatlichen Bluttransfusionsinstituts — Adressen, Telefonnummern und die Tage, an denen sie Spender annehmen. Wer spenden darf, wie oft, wie man sich vorbereitet und was gilt, wenn man keine Aufenthaltskarte hat. Stand: September 2026.',
 			BirthInMontenegroDescription:
 				'Wo man in Montenegro entbindet: Geburtsstationen der staatlichen Krankenhäuser und die private Option, Schwangerschaftsvorsorge, Kosten der Geburt ohne Versicherung, Verfügbarkeit der PDA, Papiere für das Neugeborene und Hebammen-Hausbesuche. Stand: Juli 2026.',
 			ChildHealthcareDescription:
@@ -181,6 +189,8 @@ export default {
 				"Karadağ'daki sağlık hizmetleri hakkında yararlı makaleler: Rusça konuşan doktorlar, çok dilli destek sunan klinikler ve daha fazlası.",
 			AlgDescription:
 				'Setirizin (Zyrtec, Zodak) Karadağ’da ruhsatlı değil. Eczanelerde reçetesiz ve reçeteyle hangi antihistaminikler var, markanızı etkin maddesinden nasıl bulursunuz.',
+			BldDescription:
+				'Kan Transfüzyon Kurumu’nun dokuz bağış noktası — adresler, telefonlar ve bağışçı kabul günleri. Kimler bağış yapabilir, ne sıklıkla, nasıl hazırlanılır ve oturum kartınız yoksa ne olur. Eylül 2026 itibarıyla günceldir.',
 			BirthInMontenegroDescription:
 				"Karadağ'da nerede doğum yapılır: devlet hastanelerinin doğumhaneleri ve özel seçenek, gebelik takibi, sigortasız doğumun maliyeti, epidural imkânı, yenidoğan evrakları ve ev ziyareti hemşiresi. Temmuz 2026 itibarıyla günceldir.",
 			ChildHealthcareDescription:
@@ -222,6 +232,8 @@ export default {
 				'Корисни чланци о здравственој заштити у Црној Гори: доктори који говоре руски, клинике са вишејезичном подршком и још много тога.',
 			AlgDescription:
 				'Цетиризина (Zyrtec, Zodak) нема у регистру Црне Горе. Који антихистаминици се овдје издају без рецепта и на рецепт и како наћи познати бренд по активној супстанци.',
+			BldDescription:
+				'Девет пунктова Завода за трансфузију крви — адресе, телефони и дани када примају даваоце. Ко може да даје крв, колико често, како се припремити и шта ако немате боравак. Ажурирано у септембру 2026.',
 			BirthInMontenegroDescription:
 				'Гдје се порађа у Црној Гори: породилишта државних болница и приватна опција, вођење трудноће, цијена порођаја без осигурања, доступност епидуралне аналгезије, документи за новорођенче и патронажа. Важи за јул 2026.',
 			ChildHealthcareDescription:

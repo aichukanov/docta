@@ -1,15 +1,6 @@
 import { executeQuery } from '~/server/common/db-mysql';
-import { getClientIp } from '~/server/utils/client-ip';
-import { isBotUserAgent } from '~/server/utils/bot-user-agent';
+import { PRIVATE_CACHE_CONTROL } from '~/server/common/private-cache';
 import type { DetectedLocation } from '~/interfaces/geo';
-
-interface IpApiResponse {
-	city?: string;
-	country_code?: string;
-	latitude?: number;
-	longitude?: number;
-	error?: boolean;
-}
 
 interface CityRow {
 	id: number;
@@ -18,70 +9,30 @@ interface CityRow {
 	longitude: number | null;
 }
 
-// Кэш результатов по IP: бесплатный лимит ipapi.co — 1000 запросов/день.
-// IP в БД не сохраняем (приватность) — только in-memory с TTL.
-// null тоже кэшируем: неудачный детект не должен дёргать ipapi на каждый заход.
-const IP_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
-const IP_CACHE_MAX_SIZE = 5000;
-const ipCache = new Map<
-	string,
-	{ data: DetectedLocation | null; expires: number }
->();
-
-// Отказ ipapi (429, таймаут, сеть) кэшируем отдельным коротким TTL.
-//
-// Раньше `catch` возвращал `null` НЕ кэшируя, и это делало исчерпание лимита
-// самоподдерживающимся: после первого 429 каждый следующий заход того же
-// посетителя снова шёл в ipapi, снова получал 429 — за неделю 4810 ошибок по
-// 1556 IP, 88% всего error-лога прода (docs/audit/server-logs-2026-07-30.md).
-// Тот же класс, что `catch → null` в slug-redirects: тихая деградация.
-//
-// TTL короткий именно потому, что причина временная: «город не сматчился» —
-// это факт про IP и живёт сутки, а «ipapi сейчас недоступен» — про сервис, и
-// после сброса суточной квоты детект должен заработать сам.
-const IP_ERROR_CACHE_TTL_MS = 10 * 60 * 1000;
-
-// Логи этого эндпоинта сами стали проблемой: 4810 одинаковых строк за неделю
-// топили всё остальное. Пишем не чаще раза в 5 минут, с числом подавленных —
-// сигнал «ipapi лежит» сохраняется, шум исчезает.
-const ERROR_LOG_INTERVAL_MS = 5 * 60 * 1000;
-let lastErrorLoggedAt = 0;
-let suppressedErrorCount = 0;
-
-function logErrorThrottled(error: unknown): void {
-	const now = Date.now();
-	if (now - lastErrorLoggedAt < ERROR_LOG_INTERVAL_MS) {
-		suppressedErrorCount++;
-		return;
-	}
-	const suffix =
-		suppressedErrorCount > 0
-			? ` (подавлено похожих за интервал: ${suppressedErrorCount})`
-			: '';
-	console.error(`[GEO] Error detecting location${suffix}:`, error);
-	lastErrorLoggedAt = now;
-	suppressedErrorCount = 0;
-}
-
 // Список городов меняется редко — кэшируем на час
 const CITIES_CACHE_TTL_MS = 60 * 60 * 1000;
 let citiesCache: { rows: CityRow[]; expires: number } | null = null;
 
-function isPrivateIp(ip: string): boolean {
-	return (
-		ip === '127.0.0.1' ||
-		ip === '::1' ||
-		ip.startsWith('10.') ||
-		ip.startsWith('192.168.') ||
-		/^172\.(1[6-9]|2\d|3[01])\./.test(ip) ||
-		ip.startsWith('fc') ||
-		ip.startsWith('fd') ||
-		ip.startsWith('fe80')
+// Заголовки не приходят, если Managed Transform «Add visitor location
+// headers» выключён в панели Cloudflare или запрос пришёл мимо Cloudflare.
+// Первый случай — это молчаливая смерть геодетекта на всём сайте, поэтому он
+// должен быть виден в логе. Одна строка на процесс: причина не рассасывается
+// сама, повторять её каждый запрос смысла нет (эндпоинт зовёт каждый клиент).
+let missingHeadersWarned = false;
+
+function warnMissingHeadersOnce(): void {
+	if (missingHeadersWarned) return;
+	missingHeadersWarned = true;
+	console.warn(
+		'[GEO] Нет заголовка cf-ipcity. Проверить в Cloudflare: Rules → ' +
+			'Managed Transforms → Add visitor location headers.',
 	);
 }
 
-// ipapi возвращает английские/латинские названия; в БД — латиница с диакритикой.
-// NFD-нормализация снимает č/ć/š/ž, đ не раскладывается — заменяем вручную.
+// Cloudflare отдаёт названия городов латиницей без диакритики; в БД —
+// латиница с диакритикой. NFD-нормализация снимает č/ć/š/ž, đ не
+// раскладывается — заменяем вручную. Нормализуются обе стороны сравнения,
+// поэтому написание с диакритикой в заголовке тоже сматчится.
 function normalizeCityName(name: string): string {
 	return name
 		.toLowerCase()
@@ -102,81 +53,82 @@ async function getCities(): Promise<CityRow[]> {
 	return rows;
 }
 
-function cacheResult(
-	ip: string,
-	data: DetectedLocation | null,
-	ttlMs: number = IP_CACHE_TTL_MS,
-): DetectedLocation | null {
-	if (ipCache.size >= IP_CACHE_MAX_SIZE) {
-		const oldestKey = ipCache.keys().next().value;
-		if (oldestKey) ipCache.delete(oldestKey);
-	}
-	ipCache.set(ip, { data, expires: Date.now() + ttlMs });
-	return data;
+function parseCoordinate(raw: string | undefined): number | null {
+	if (!raw) return null;
+	const value = Number(raw);
+	return Number.isFinite(value) ? value : null;
 }
 
-// Без фолбэков: либо город уверенно сматчился с таблицей cities (Черногория),
-// либо null — пользователь может быть где угодно, и подставлять Подгорицу
-// или сырые IP-координаты значит втихую искажать ранжирование.
+/**
+ * Локация посетителя из заголовков Cloudflare.
+ *
+ * Раньше здесь был запрос к ipapi.co, и вся обвязка вокруг него существовала
+ * только ради его бесплатного лимита в 1000 запросов в сутки: кэш результатов
+ * по IP, отдельный короткий TTL на отказы, throttled-логгер и отсев ботов по
+ * User-Agent. Лимит всё равно выжигался — 4810 ошибок 429 за неделю, 88% всего
+ * error-лога прода (docs/audit/server-logs-2026-07-30.md).
+ *
+ * Cloudflare, за которым и так стоят домены, кладёт `cf-ipcity`,
+ * `cf-iplatitude` и `cf-iplongitude` в каждый запрос — ровно те три поля,
+ * которые читались из ответа ipapi. Внешнего вызова больше нет, значит нет ни
+ * лимита, ни таймаута в пути пользовательского запроса, ни смысла в кэше и
+ * отсеве ботов: заголовок бесплатен и приходит уже разобранным.
+ *
+ * Включается в панели: Rules → Managed Transforms → Add visitor location
+ * headers. Без этого заголовков нет и эндпоинт всегда отвечает `null`.
+ *
+ * Без фолбэков: либо город уверенно сматчился с таблицей cities (Черногория),
+ * либо null — посетитель может быть где угодно, и подставлять Подгорицу или
+ * сырые координаты IP значит втихую искажать ранжирование.
+ */
 export default defineEventHandler(
 	async (event): Promise<DetectedLocation | null> => {
-		const clientIp = getClientIp(event);
+		// Ответ зависит от IP посетителя, а не от адреса. На общих кэшах
+		// (Cloudflare) такому ответу делать нечего: одна запись раздала бы
+		// всем город первого попавшего. Сейчас `/api/` под Cache Rule не
+		// подпадает, но правило может измениться, а этот заголовок — нет.
+		setResponseHeader(event, 'cache-control', PRIVATE_CACHE_CONTROL);
 
-		if (!clientIp || clientIp === 'unknown' || isPrivateIp(clientIp)) {
+		const city = getRequestHeader(event, 'cf-ipcity');
+
+		if (!city) {
+			// Заголовка нет и у локальной разработки, и у запроса мимо
+			// Cloudflare — предупреждаем только там, где Cloudflare заведомо
+			// был: свой заголовок с IP он проставляет всегда.
+			if (getRequestHeader(event, 'cf-connecting-ip')) {
+				warnMissingHeadersOnce();
+			}
 			return null;
 		}
 
-		// Геолокация нужна живому посетителю (ранжирование клиник по
-		// расстоянию), а эндпоинт вызывается с клиента — значит его дёргают
-		// краулеры, исполняющие JS. В логах прода квоту жгли Googlebot
-		// (66.249.77.100) и Baiduspider (116.179.37.x). Ботам отвечаем `null`,
-		// не тратя ни запроса к ipapi, ни места в кэше.
-		if (isBotUserAgent(getRequestHeader(event, 'user-agent'))) {
+		const cities = await getCities();
+		const normalized = normalizeCityName(city);
+		const matched = cities.find(
+			(row) => normalizeCityName(row.name) === normalized,
+		);
+
+		if (!matched) {
 			return null;
 		}
 
-		try {
-			const cached = ipCache.get(clientIp);
-			if (cached && cached.expires > Date.now()) {
-				return cached.data;
-			}
+		// Берём центр города из БД: расстояние считаем от центра города, а не
+		// от неточной точки IP (и так совпадает с ручным выбором города).
+		// Координаты из заголовков — только фолбэк для городов без координат.
+		const latitude =
+			matched.latitude ??
+			parseCoordinate(getRequestHeader(event, 'cf-iplatitude'));
+		const longitude =
+			matched.longitude ??
+			parseCoordinate(getRequestHeader(event, 'cf-iplongitude'));
 
-			const response = await $fetch<IpApiResponse>(
-				`https://ipapi.co/${clientIp}/json/`,
-				{ timeout: 3000 },
-			);
-
-			if (
-				response.error ||
-				!response.city ||
-				typeof response.latitude !== 'number' ||
-				typeof response.longitude !== 'number'
-			) {
-				return cacheResult(clientIp, null);
-			}
-
-			const cities = await getCities();
-			const normalized = normalizeCityName(response.city);
-			const matched = cities.find(
-				(city) => normalizeCityName(city.name) === normalized,
-			);
-
-			if (!matched) {
-				return cacheResult(clientIp, null);
-			}
-
-			// Берём центр города из БД: расстояние считаем от центра города,
-			// а не от неточной IP-точки (и так совпадает с ручным выбором города)
-			return cacheResult(clientIp, {
-				cityId: matched.id,
-				latitude: Number(matched.latitude ?? response.latitude),
-				longitude: Number(matched.longitude ?? response.longitude),
-			});
-		} catch (error) {
-			logErrorThrottled(error);
-			// Кэшируем отказ, иначе следующий заход того же посетителя снова
-			// пойдёт в ipapi — именно это делало 429 самоподдерживающимся.
-			return cacheResult(clientIp, null, IP_ERROR_CACHE_TTL_MS);
+		if (latitude === null || longitude === null) {
+			return null;
 		}
+
+		return {
+			cityId: matched.id,
+			latitude: Number(latitude),
+			longitude: Number(longitude),
+		};
 	},
 );

@@ -42,7 +42,9 @@
 
 - PRD-статусы устарели — верить коду, не PROGRESS.md.
 - SQL-миграции не применять самостоятельно: файл в `server/sql/migrations/` + готовая
-  команда mysql пользователю; после подтверждения отметить в `APPLIED.md`.
+  команда mysql пользователю (формат команд — скилл `migration-commands`).
+  Отметка в `APPLIED.md` больше не нужна: лог заброшен с июня 2026, факт применения
+  фиксируется в PROGRESS.md нужного PRD.
 - i18n: 6 локалей (en, ru, sr, sr-cyrl, de, tr), сербский — иекавица,
   правила в `docs/rules/i18n.md` и `docs/rules/LOCALE_ARCHITECTURE.md`.
 - Дизайн: только токены из design-tokens.css; AppBreadcrumbs, не el-breadcrumb.

@@ -7,6 +7,22 @@
 - `lab-tests*.json` — справки для `lab_tests` (`pages/labtests/[labTestSlug]/`)
 - `medical-services*.json` — справки для `medical_services` (`pages/services/[serviceSlug]/`)
 - `TODO-worklist.md` — что ещё не написано, разбито на тиры по приоритету
+- `_roster-lab-tests.json`, `_roster-medical-services.json` — позиции без справки
+  (название во всех локалях, категории, покрытие клиниками). Файлы с `_` сборщик
+  не читает: префикс не совпадает. Пересобрать —
+  `node scripts/entity-reference/build-reference-roster.mjs [--min-clinics 5]`
+
+## Скрипты
+
+| скрипт | что делает |
+|---|---|
+| `build-reference-roster.mjs` | ростер «что ещё без справки» из БД: исключает написанное (по JSON, не по БД — локальная отстаёт) и выбывающие половинки непринятых миграций дедупликации |
+| `validate-reference-batches.mjs` | проверка батчей перед сборкой SQL: слаг есть в БД, все локали и поля на месте, нет `|`, нет экавицы в `sr`, нет числовых референсов, нет копипасты между позициями |
+| `generate-sr-cyrl.mjs` | заполняет `sr_cyrl` транслитерацией из `sr` |
+| `build-entity-reference-sql.mjs` | собирает `server/sql/migrations/insert-entity-reference-info.sql` |
+
+Порядок: написать батчи → `validate-reference-batches.mjs` → `generate-sr-cyrl.mjs`
+→ `build-entity-reference-sql.mjs` → применяет SQL пользователь.
 
 ### ⚠️ Новый батч — НОВЫЙ ФАЙЛ, не дописывать в общий
 

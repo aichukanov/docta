@@ -1,0 +1,722 @@
+[
+  {
+    "slug": "first-psychiatrist-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Первичная консультация врача-психиатра с оценкой психического состояния и жалоб",
+        "how": "Беседа о жалобах, сне, настроении, прежнем лечении и принимаемых препаратах; врач оценивает психический статус и при необходимости назначает обследования; обычно 40–60 минут",
+        "when": "Стойко сниженное настроение, тревога и панические приступы, нарушения сна, навязчивые мысли, изменения поведения, направление от другого врача, оформление документов по требованию",
+        "prep": "Подготовка не требуется; принести выписки и результаты прежних обследований, список принимаемых препаратов, при желании прийти с близким человеком",
+        "abnormal": "По итогам приёма врач формулирует предварительное заключение и план — наблюдение, психотерапию, обследование или лекарственную терапию; срок повторного визита определяет психиатр"
+      },
+      "en": {
+        "what": "An initial consultation with a psychiatrist that assesses mental state and current complaints",
+        "how": "A conversation about complaints, sleep, mood, previous treatment and current medication; the doctor assesses the mental state and may order further tests; usually 40–60 minutes",
+        "when": "Persistently low mood, anxiety and panic attacks, sleep problems, intrusive thoughts, changes in behaviour, referral from another doctor, paperwork required by an employer or institution",
+        "prep": "No preparation needed; bring previous reports and test results, a list of current medication, and a close person if you prefer",
+        "abnormal": "After the visit the doctor sets out a preliminary conclusion and a plan — observation, psychotherapy, further tests or medication; the psychiatrist decides when the next visit is needed"
+      },
+      "sr": {
+        "what": "Prvi pregled kod psihijatra sa procjenom psihičkog stanja i tegoba",
+        "how": "Razgovor o tegobama, snu, raspoloženju, ranijem liječenju i terapiji koju pacijent uzima; ljekar procjenjuje psihički status i po potrebi traži dodatna ispitivanja; obično traje 40–60 minuta",
+        "when": "Dugotrajno sniženo raspoloženje, anksioznost i napadi panike, poremećaji sna, nametljive misli, promjene u ponašanju, uput drugog ljekara, izdavanje dokumentacije po zahtjevu",
+        "prep": "Priprema nije potrebna; ponijeti ranije nalaze i otpusne liste, spisak lijekova koje uzimate, a po želji doći sa bliskom osobom",
+        "abnormal": "Nakon pregleda ljekar daje prvo mišljenje i plan — praćenje, psihoterapiju, dodatna ispitivanja ili terapiju lijekovima; rok sljedeće kontrole određuje psihijatar"
+      },
+      "de": {
+        "what": "Eine Erstkonsultation beim Psychiater zur Beurteilung des psychischen Zustands und der Beschwerden",
+        "how": "Gespräch über Beschwerden, Schlaf, Stimmung, frühere Behandlungen und eingenommene Medikamente; der Arzt beurteilt den psychischen Befund und veranlasst bei Bedarf weitere Untersuchungen; meist 40–60 Minuten",
+        "when": "Anhaltend gedrückte Stimmung, Angst und Panikattacken, Schlafstörungen, aufdringliche Gedanken, Verhaltensänderungen, Überweisung durch einen anderen Arzt, angeforderte Bescheinigungen",
+        "prep": "Keine Vorbereitung nötig; frühere Befunde und Arztbriefe sowie eine Liste der eingenommenen Medikamente mitbringen, auf Wunsch eine Vertrauensperson",
+        "abnormal": "Nach dem Termin formuliert der Arzt eine vorläufige Einschätzung und einen Plan — Beobachtung, Psychotherapie, weitere Untersuchungen oder medikamentöse Therapie; den Termin der Kontrolle legt der Psychiater fest"
+      },
+      "tr": {
+        "what": "Ruhsal durumun ve mevcut şikâyetlerin değerlendirildiği ilk psikiyatri konsültasyonu",
+        "how": "Şikâyetler, uyku, duygudurum, önceki tedaviler ve kullanılan ilaçlar konuşulur; hekim ruhsal durumu değerlendirir ve gerekirse ek tetkik ister; genellikle 40–60 dakika sürer",
+        "when": "Sürekli düşük duygudurum, kaygı ve panik atak, uyku bozuklukları, takıntılı düşünceler, davranış değişiklikleri, başka bir hekimin yönlendirmesi, istenen belgelerin düzenlenmesi",
+        "prep": "Hazırlık gerekmez; önceki raporları ve tetkik sonuçlarını, kullandığınız ilaçların listesini getirin, isterseniz yakınınızla gelin",
+        "abnormal": "Görüşme sonunda hekim ön değerlendirmesini ve planı belirtir — izlem, psikoterapi, ek tetkik veya ilaç tedavisi; kontrol zamanını psikiyatri uzmanı belirler"
+      },
+      "sr_cyrl": {
+        "what": "Први преглед код психијатра са процјеном психичког стања и тегоба",
+        "how": "Разговор о тегобама, сну, расположењу, ранијем лијечењу и терапији коју пацијент узима; љекар процјењује психички статус и по потреби тражи додатна испитивања; обично траје 40–60 минута",
+        "when": "Дуготрајно снижено расположење, анксиозност и напади панике, поремећаји сна, наметљиве мисли, промјене у понашању, упут другог љекара, издавање документације по захтјеву",
+        "prep": "Припрема није потребна; понијети раније налазе и отпусне листе, списак лијекова које узимате, а по жељи доћи са блиском особом",
+        "abnormal": "Након прегледа љекар даје прво мишљење и план — праћење, психотерапију, додатна испитивања или терапију лијековима; рок сљедеће контроле одређује психијатар"
+      }
+    }
+  },
+  {
+    "slug": "follow-up-psychiatrist-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторный приём психиатра для оценки динамики состояния и переносимости назначенной терапии",
+        "how": "Врач сравнивает состояние с прошлым визитом, уточняет сон, аппетит и побочные эффекты, при необходимости корректирует схему и продлевает рецепты; обычно 20–30 минут",
+        "when": "В срок, назначенный на первичном приёме, при изменении самочувствия, появлении побочных эффектов, перед продолжением лечения и для оформления документов",
+        "prep": "Принести упаковки или список принимаемых препаратов, результаты назначенных анализов, заметки о сне и самочувствии за период между визитами",
+        "abnormal": "Изменения могут быть связаны как с течением самого состояния, так и с реакцией на препараты или внешними обстоятельствами; решение о продолжении, замене или отмене терапии принимает только врач"
+      },
+      "en": {
+        "what": "A follow-up visit to the psychiatrist that reviews how the condition and the prescribed treatment are going",
+        "how": "The doctor compares the current state with the previous visit, asks about sleep, appetite and side effects, adjusts the regimen if needed and renews prescriptions; usually 20–30 minutes",
+        "when": "At the interval set at the first visit, if well-being changes, if side effects appear, before continuing treatment and for paperwork",
+        "prep": "Bring the packages or a list of the medication you take, the results of any tests ordered, and notes on sleep and well-being since the last visit",
+        "abnormal": "Changes may be related to the course of the condition itself, to the reaction to medication or to circumstances in life; only the doctor decides whether treatment continues, changes or stops"
+      },
+      "sr": {
+        "what": "Kontrolni pregled psihijatra radi procjene toka stanja i podnošenja propisane terapije",
+        "how": "Ljekar poredi stanje sa prethodnim pregledom, pita o snu, apetitu i neželjenim dejstvima, po potrebi mijenja terapiju i obnavlja recepte; obično 20–30 minuta",
+        "when": "U roku određenom na prvom pregledu, pri promjeni stanja, pojavi neželjenih dejstava, prije nastavka liječenja i radi dokumentacije",
+        "prep": "Ponijeti kutije ili spisak lijekova koje uzimate, nalaze traženih analiza i bilješke o snu i stanju u periodu između pregleda",
+        "abnormal": "Promjene mogu biti povezane sa tokom samog stanja, sa reakcijom na lijekove ili sa životnim okolnostima; odluku o nastavku, zamjeni ili prekidu terapije donosi isključivo ljekar"
+      },
+      "de": {
+        "what": "Ein Kontrolltermin beim Psychiater zur Beurteilung des Verlaufs und der Verträglichkeit der Therapie",
+        "how": "Der Arzt vergleicht den Zustand mit dem letzten Termin, fragt nach Schlaf, Appetit und Nebenwirkungen, passt bei Bedarf die Therapie an und stellt Rezepte neu aus; meist 20–30 Minuten",
+        "when": "Zum bei der Erstvorstellung vereinbarten Termin, bei verändertem Befinden, bei Nebenwirkungen, vor der Fortsetzung der Behandlung und für Bescheinigungen",
+        "prep": "Packungen oder eine Liste der eingenommenen Medikamente, die Ergebnisse angeordneter Untersuchungen sowie Notizen zu Schlaf und Befinden seit dem letzten Termin mitbringen",
+        "abnormal": "Veränderungen können mit dem Verlauf des Zustands selbst, mit der Reaktion auf Medikamente oder mit Lebensumständen zusammenhängen; über Fortsetzung, Wechsel oder Absetzen der Therapie entscheidet allein der Arzt"
+      },
+      "tr": {
+        "what": "Durumun seyrini ve verilen tedavinin nasıl gittiğini değerlendiren kontrol psikiyatri muayenesi",
+        "how": "Hekim durumu önceki görüşmeyle karşılaştırır, uyku, iştah ve yan etkileri sorar, gerekirse tedaviyi düzenler ve reçeteleri yeniler; genellikle 20–30 dakika sürer",
+        "when": "İlk muayenede belirlenen sürede, durumda değişiklik olduğunda, yan etki ortaya çıktığında, tedaviye devam öncesinde ve belge düzenlenmesi için",
+        "prep": "Kullandığınız ilaçların kutularını veya listesini, istenen tetkiklerin sonuçlarını ve iki görüşme arasındaki uyku ile genel durum notlarınızı getirin",
+        "abnormal": "Değişiklikler durumun kendi seyriyle, ilaçlara verilen yanıtla veya yaşam koşullarıyla ilişkili olabilir; tedavinin sürdürülmesi, değiştirilmesi ya da kesilmesi kararını yalnızca hekim verir"
+      },
+      "sr_cyrl": {
+        "what": "Контролни преглед психијатра ради процјене тока стања и подношења прописане терапије",
+        "how": "Љекар пореди стање са претходним прегледом, пита о сну, апетиту и нежељеним дејствима, по потреби мијења терапију и обнавља рецепте; обично 20–30 минута",
+        "when": "У року одређеном на првом прегледу, при промјени стања, појави нежељених дејстава, прије наставка лијечења и ради документације",
+        "prep": "Понијети кутије или списак лијекова које узимате, налазе тражених анализа и биљешке о сну и стању у периоду између прегледа",
+        "abnormal": "Промјене могу бити повезане са током самог стања, са реакцијом на лијекове или са животним околностима; одлуку о наставку, замјени или прекиду терапије доноси искључиво љекар"
+      }
+    }
+  },
+  {
+    "slug": "first-radiologist-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Консультация врача лучевой диагностики: выбор подходящего метода визуализации и разбор уже сделанных снимков",
+        "how": "Врач изучает направление и прежние исследования (рентген, УЗИ, КТ, МРТ) на диске, плёнке или в распечатке, сопоставляет их с жалобами и формулирует письменное заключение либо рекомендацию по дальнейшему обследованию; 20–30 минут",
+        "when": "Нужно определить, какое исследование делать, получить второе мнение по снимкам, сравнить исследования разных лет, подготовиться к операции или приёму узкого специалиста",
+        "prep": "Принести все снимки и описания на диске, плёнке или в распечатке, направление и выписки; если обсуждается контраст, сообщить об аллергии и болезнях почек",
+        "abnormal": "Находки на снимках могут быть связаны с возрастными изменениями, воспалением, травмой или иными процессами; их значение врач оценивает вместе с клинической картиной и при необходимости назначает уточняющее исследование"
+      },
+      "en": {
+        "what": "A consultation with a radiologist: choosing a suitable imaging method and reviewing images already taken",
+        "how": "The doctor looks at the referral and previous studies (X-ray, ultrasound, CT, MRI) on disc, film or printout, compares them with the complaints and writes a report or a recommendation for further imaging; 20–30 minutes",
+        "when": "When it is unclear which study to do, for a second opinion on images, to compare studies from different years, before surgery or a specialist appointment",
+        "prep": "Bring all images and reports on disc, film or printout, plus the referral and discharge letters; if contrast is discussed, mention allergies and kidney disease",
+        "abnormal": "Findings on images may be related to age-related changes, inflammation, injury or other processes; the doctor weighs them together with the clinical picture and may order a clarifying study"
+      },
+      "sr": {
+        "what": "Konsultacija radiologa: izbor odgovarajuće metode snimanja i tumačenje već urađenih snimaka",
+        "how": "Ljekar pregleda uput i ranija ispitivanja (rendgen, ultrazvuk, CT, MR) sa diska, filma ili odštampana, upoređuje ih sa tegobama i piše nalaz ili preporuku za dalju dijagnostiku; 20–30 minuta",
+        "when": "Kada nije jasno koje snimanje uraditi, radi drugog mišljenja o snimcima, poređenja ispitivanja iz različitih godina, pripreme za operaciju ili pregled specijaliste",
+        "prep": "Ponijeti sve snimke i nalaze na disku, filmu ili odštampane, uput i otpusne liste; ako se razmatra kontrast, reći za alergije i bolesti bubrega",
+        "abnormal": "Nalazi na snimcima mogu biti povezani sa promjenama zbog godina, upalom, povredom ili drugim procesima; njihov značaj ljekar procjenjuje zajedno sa kliničkom slikom i po potrebi traži dodatno snimanje"
+      },
+      "de": {
+        "what": "Eine Beratung durch den Radiologen: Auswahl des passenden Bildgebungsverfahrens und Beurteilung bereits vorhandener Aufnahmen",
+        "how": "Der Arzt sichtet Überweisung und Voraufnahmen (Röntgen, Ultraschall, CT, MRT) auf CD, Film oder Ausdruck, vergleicht sie mit den Beschwerden und erstellt einen Befund oder eine Empfehlung für weitere Untersuchungen; 20–30 Minuten",
+        "when": "Wenn unklar ist, welche Untersuchung sinnvoll ist, für eine Zweitmeinung zu Aufnahmen, zum Vergleich von Untersuchungen verschiedener Jahre, vor einer Operation oder einer Facharztvorstellung",
+        "prep": "Alle Aufnahmen und Befunde auf CD, Film oder Ausdruck sowie Überweisung und Arztbriefe mitbringen; wenn Kontrastmittel infrage kommt, Allergien und Nierenerkrankungen angeben",
+        "abnormal": "Befunde in der Bildgebung können mit altersbedingten Veränderungen, Entzündung, Verletzung oder anderen Prozessen zusammenhängen; ihre Bedeutung beurteilt der Arzt zusammen mit dem klinischen Bild und veranlasst bei Bedarf eine ergänzende Untersuchung"
+      },
+      "tr": {
+        "what": "Radyoloji uzmanıyla görüşme: uygun görüntüleme yönteminin seçilmesi ve daha önce çekilmiş görüntülerin değerlendirilmesi",
+        "how": "Hekim sevk belgesini ve önceki tetkikleri (röntgen, ultrason, BT, MR) diskten, filmden ya da çıktıdan inceler, şikâyetlerle karşılaştırır ve rapor ya da ileri tetkik önerisi yazar; 20–30 dakika sürer",
+        "when": "Hangi tetkikin yapılacağı belirsizken, görüntüler için ikinci görüş alınırken, farklı yıllara ait tetkikler karşılaştırılırken, ameliyat veya uzman muayenesi öncesinde",
+        "prep": "Tüm görüntüleri ve raporları disk, film ya da çıktı olarak, sevk belgesi ve epikrizlerle birlikte getirin; kontrast madde söz konusuysa alerjilerinizi ve böbrek hastalığınızı belirtin",
+        "abnormal": "Görüntülerdeki bulgular yaşa bağlı değişikliklerle, iltihapla, yaralanmayla ya da başka süreçlerle ilişkili olabilir; hekim bunları klinik tabloyla birlikte değerlendirir ve gerekirse ek tetkik ister"
+      },
+      "sr_cyrl": {
+        "what": "Консултација радиолога: избор одговарајуће методе снимања и тумачење већ урађених снимака",
+        "how": "Љекар прегледа упут и ранија испитивања (рендген, ултразвук, CT, МР) са диска, филма или одштампана, упоређује их са тегобама и пише налаз или препоруку за даљу дијагностику; 20–30 минута",
+        "when": "Када није јасно које снимање урадити, ради другог мишљења о снимцима, поређења испитивања из различитих година, припреме за операцију или преглед специјалисте",
+        "prep": "Понијети све снимке и налазе на диску, филму или одштампане, упут и отпусне листе; ако се разматра контраст, рећи за алергије и болести бубрега",
+        "abnormal": "Налази на снимцима могу бити повезани са промјенама због година, упалом, повредом или другим процесима; њихов значај љекар процјењује заједно са клиничком сликом и по потреби тражи додатно снимање"
+      }
+    }
+  },
+  {
+    "slug": "follow-up-internist-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторный приём интерниста для оценки результатов обследования и хода лечения",
+        "how": "Врач уточняет изменения жалоб, измеряет давление и пульс, выслушивает сердце и лёгкие, разбирает анализы и инструментальные исследования и корректирует назначения; 15–25 минут",
+        "when": "В срок, назначенный на первичном приёме, получение результатов лабораторных и инструментальных исследований, контроль давления, диабета, болезней щитовидной железы, лёгких и сердца, продолжение терапии",
+        "prep": "Принести результаты назначенных исследований, дневник давления или сахара и список принимаемых препаратов; анализы на липиды и глюкозу сдают заранее по указанию врача",
+        "abnormal": "Отклонения в анализах и измерениях могут быть связаны с течением хронического заболевания, действием препаратов или временными факторами; значение каждого показателя врач-интернист оценивает в совокупности"
+      },
+      "en": {
+        "what": "A follow-up appointment with an internal medicine specialist to review test results and the course of treatment",
+        "how": "The doctor checks how the complaints have changed, measures blood pressure and pulse, listens to the heart and lungs, goes through laboratory and imaging results and adjusts the prescriptions; 15–25 minutes",
+        "when": "At the interval set at the first visit, to receive laboratory and imaging results, to monitor blood pressure, diabetes, thyroid, lung and heart conditions, to continue therapy",
+        "prep": "Bring the results of the tests that were ordered, a blood pressure or glucose diary and a list of current medication; lipid and glucose tests are done in advance as instructed by the doctor",
+        "abnormal": "Deviations in tests and measurements may be related to the course of a chronic condition, to the effect of medication or to temporary factors; the internist assesses each value in context"
+      },
+      "sr": {
+        "what": "Kontrolni pregled interniste radi tumačenja nalaza i procjene toka liječenja",
+        "how": "Ljekar provjerava kako su se tegobe promijenile, mjeri pritisak i puls, sluša srce i pluća, analizira laboratoriju i snimanja i koriguje terapiju; 15–25 minuta",
+        "when": "U roku određenom na prvom pregledu, preuzimanje laboratorijskih i radioloških nalaza, kontrola pritiska, dijabetesa, bolesti štitne žlijezde, pluća i srca, nastavak terapije",
+        "prep": "Ponijeti nalaze traženih ispitivanja, dnevnik pritiska ili šećera i spisak lijekova; analize masnoća i glikemije rade se unaprijed po uputstvu ljekara",
+        "abnormal": "Odstupanja u nalazima i mjerenjima mogu biti povezana sa tokom hronične bolesti, dejstvom lijekova ili privremenim faktorima; značaj svakog parametra internista procjenjuje u cjelini"
+      },
+      "de": {
+        "what": "Ein Kontrolltermin beim Internisten zur Beurteilung der Befunde und des Behandlungsverlaufs",
+        "how": "Der Arzt erfragt die Veränderung der Beschwerden, misst Blutdruck und Puls, hört Herz und Lunge ab, bespricht Labor- und Bildbefunde und passt die Verordnungen an; 15–25 Minuten",
+        "when": "Zum bei der Erstvorstellung vereinbarten Termin, zur Besprechung von Labor- und Bildbefunden, zur Kontrolle von Blutdruck, Diabetes, Schilddrüsen-, Lungen- und Herzerkrankungen, zur Fortführung der Therapie",
+        "prep": "Die Ergebnisse der angeordneten Untersuchungen, ein Blutdruck- oder Zuckertagebuch und eine Medikamentenliste mitbringen; Blutfette und Glukose werden nach Anweisung des Arztes vorab bestimmt",
+        "abnormal": "Abweichungen in Befunden und Messwerten können mit dem Verlauf einer chronischen Erkrankung, der Wirkung von Medikamenten oder vorübergehenden Faktoren zusammenhängen; die Bedeutung jedes Wertes beurteilt der Internist im Gesamtzusammenhang"
+      },
+      "tr": {
+        "what": "Tetkik sonuçlarının ve tedavi seyrinin gözden geçirildiği dahiliye kontrol muayenesi",
+        "how": "Hekim şikâyetlerdeki değişimi sorar, tansiyon ve nabzı ölçer, kalp ve akciğerleri dinler, laboratuvar ve görüntüleme sonuçlarını değerlendirip tedaviyi düzenler; 15–25 dakika sürer",
+        "when": "İlk muayenede belirlenen sürede, laboratuvar ve görüntüleme sonuçlarının değerlendirilmesi, tansiyon, diyabet, tiroid, akciğer ve kalp hastalıklarının takibi, tedavinin sürdürülmesi",
+        "prep": "İstenen tetkiklerin sonuçlarını, tansiyon veya şeker takip defterini ve kullandığınız ilaçların listesini getirin; lipid ve glukoz tetkikleri hekimin tarifine göre önceden yaptırılır",
+        "abnormal": "Sonuç ve ölçümlerdeki sapmalar kronik hastalığın seyriyle, ilaçların etkisiyle ya da geçici etkenlerle ilişkili olabilir; her değerin anlamını dahiliye uzmanı bütünlük içinde değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Контролни преглед интернисте ради тумачења налаза и процјене тока лијечења",
+        "how": "Љекар провјерава како су се тегобе промијениле, мјери притисак и пулс, слуша срце и плућа, анализира лабораторију и снимања и коригује терапију; 15–25 минута",
+        "when": "У року одређеном на првом прегледу, преузимање лабораторијских и радиолошких налаза, контрола притиска, дијабетеса, болести штитне жлијезде, плућа и срца, наставак терапије",
+        "prep": "Понијети налазе тражених испитивања, дневник притиска или шећера и списак лијекова; анализе масноћа и гликемије раде се унапријед по упутству љекара",
+        "abnormal": "Одступања у налазима и мјерењима могу бити повезана са током хроничне болести, дејством лијекова или привременим факторима; значај сваког параметра интерниста процјењује у цјелини"
+      }
+    }
+  },
+  {
+    "slug": "hip-ultrasound",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ультразвуковая оценка тазобедренных суставов: у младенцев — развития сустава, у взрослых — окружающих мягких тканей и жидкости в суставе",
+        "how": "Ребёнка укладывают на бок, взрослого — на спину или бок, на кожу наносят гель и перемещают датчик над суставом с обеих сторон; 10–20 минут, безболезненно",
+        "when": "Скрининг дисплазии у детей первых месяцев жизни, ягодичное предлежание в родах или случаи в семье, асимметрия складок и ограничение разведения ножек, у взрослых — боль в области сустава, подозрение на бурсит или выпот",
+        "prep": "Не требуется; ребёнка лучше покормить заранее и взять сменную пелёнку, одежда должна легко сниматься",
+        "abnormal": "Изменения могут быть связаны с незрелостью или неправильным развитием сустава у ребёнка, а у взрослых — с воспалением околосуставных тканей; заключение и необходимость лечения или рентгена определяет ортопед"
+      },
+      "en": {
+        "what": "An ultrasound assessment of the hip joints: joint development in infants, surrounding soft tissue and joint fluid in adults",
+        "how": "The child is placed on the side and an adult on the back or side, gel is applied and the probe is moved over the joint on both sides; 10–20 minutes, painless",
+        "when": "Screening for hip dysplasia in the first months of life, breech birth or cases in the family, asymmetric skin folds and limited leg abduction, in adults hip pain, suspected bursitis or joint effusion",
+        "prep": "Not required; it is better to feed the baby beforehand and bring a spare nappy, and clothing should be easy to remove",
+        "abnormal": "Findings may be related to immaturity or abnormal development of the joint in a child, and in adults to inflammation of the tissues around the joint; the orthopaedist issues the report and decides on any treatment or X-ray"
+      },
+      "sr": {
+        "what": "Ultrazvučna procjena kukova: kod odojčadi razvoja zgloba, kod odraslih okolnih mekih tkiva i tečnosti u zglobu",
+        "how": "Dijete se postavlja na bok, a odrasla osoba na leđa ili bok, na kožu se nanosi gel i sonda se pomjera preko zgloba sa obje strane; 10–20 minuta, bezbolno",
+        "when": "Skrining displazije kod beba u prvim mjesecima života, karlična prezentacija na porođaju ili slučajevi u porodici, asimetrija nabora i ograničeno razmicanje nožica, kod odraslih bol u predjelu kuka, sumnja na burzitis ili izliv",
+        "prep": "Nije potrebna; bebu je bolje nahraniti prije dolaska i ponijeti pelenu, a odjeća treba da se lako skida",
+        "abnormal": "Promjene mogu biti povezane sa nezrelošću ili nepravilnim razvojem zgloba kod djeteta, a kod odraslih sa upalom tkiva oko zgloba; nalaz i potrebu za liječenjem ili rendgenom procjenjuje ortoped"
+      },
+      "de": {
+        "what": "Eine Ultraschallbeurteilung der Hüftgelenke: bei Säuglingen der Gelenkentwicklung, bei Erwachsenen der umgebenden Weichteile und der Gelenkflüssigkeit",
+        "how": "Das Kind wird auf die Seite gelegt, Erwachsene auf den Rücken oder die Seite, Gel wird aufgetragen und der Schallkopf beidseits über das Gelenk geführt; 10–20 Minuten, schmerzfrei",
+        "when": "Screening auf Hüftdysplasie in den ersten Lebensmonaten, Beckenendlage bei der Geburt oder Fälle in der Familie, asymmetrische Hautfalten und eingeschränktes Abspreizen der Beine, bei Erwachsenen Hüftschmerzen, Verdacht auf Schleimbeutelentzündung oder Erguss",
+        "prep": "Nicht erforderlich; das Baby am besten vorher füttern und eine Windel mitbringen, die Kleidung sollte leicht auszuziehen sein",
+        "abnormal": "Veränderungen können bei Kindern mit einer Unreife oder Fehlentwicklung des Gelenks und bei Erwachsenen mit einer Entzündung der gelenknahen Gewebe zusammenhängen; über Befund und weitere Behandlung oder ein Röntgenbild entscheidet der Orthopäde"
+      },
+      "tr": {
+        "what": "Kalça eklemlerinin ultrasonla değerlendirilmesi: bebeklerde eklem gelişimi, erişkinlerde çevre yumuşak dokular ve eklem içi sıvı",
+        "how": "Bebek yan yatırılır, erişkin sırtüstü veya yan yatar, cilde jel sürülür ve prob her iki eklem üzerinde gezdirilir; 10–20 dakika sürer, ağrısızdır",
+        "when": "İlk aylarda kalça displazisi taraması, makat geliş ya da ailede benzer durum, cilt kıvrımlarında asimetri ve bacakların açılmasında kısıtlılık, erişkinlerde kalça ağrısı, bursit veya eklem sıvısı şüphesi",
+        "prep": "Hazırlık gerekmez; bebeği önceden beslemek ve yedek bez getirmek iyi olur, giysiler kolay çıkarılabilir olmalıdır",
+        "abnormal": "Bulgular çocukta eklemin olgunlaşmamış ya da düzensiz gelişmiş olmasıyla, erişkinde eklem çevresi dokuların iltihabıyla ilişkili olabilir; raporu ve tedavi ya da röntgen gerekip gerekmediğini ortopedi uzmanı belirler"
+      },
+      "sr_cyrl": {
+        "what": "Ултразвучна процјена кукова: код одојчади развоја зглоба, код одраслих околних меких ткива и течности у зглобу",
+        "how": "Дијете се поставља на бок, а одрасла особа на леђа или бок, на кожу се наноси гел и сонда се помјера преко зглоба са обје стране; 10–20 минута, безболно",
+        "when": "Скрининг дисплазије код беба у првим мјесецима живота, карлична презентација на порођају или случајеви у породици, асиметрија набора и ограничено размицање ножица, код одраслих бол у предјелу кука, сумња на бурзитис или излив",
+        "prep": "Није потребна; бебу је боље нахранити прије доласка и понијети пелену, а одјећа треба да се лако скида",
+        "abnormal": "Промјене могу бити повезане са незрелошћу или неправилним развојем зглоба код дјетета, а код одраслих са упалом ткива око зглоба; налаз и потребу за лијечењем или рендгеном процјењује ортопед"
+      }
+    }
+  },
+  {
+    "slug": "ultrasound-neck-glands-and-soft-tissue",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обзорное ультразвуковое исследование шеи: щитовидная и слюнные железы, лимфоузлы и мягкие ткани за один приём",
+        "how": "Пациент лежит на спине с валиком под плечами, врач наносит гель и последовательно осматривает железы, узлы и мягкие ткани с обеих сторон; 15–25 минут",
+        "when": "Прощупываемое образование или припухлость на шее, боль и сухость во рту со стороны слюнной железы, увеличенные лимфоузлы, изменения гормонов щитовидной железы, наблюдение за ранее найденными узлами",
+        "prep": "Не требуется; лучше прийти без цепочек и в одежде со свободным воротом, взять прежние протоколы УЗИ для сравнения",
+        "abnormal": "Найденные узлы, кисты, камень в протоке железы или увеличенные лимфоузлы могут быть связаны с воспалительными, обменными или иными процессами; необходимость анализов, пункции или наблюдения определяет эндокринолог либо хирург"
+      },
+      "en": {
+        "what": "A survey ultrasound of the neck: thyroid and salivary glands, lymph nodes and soft tissue in one appointment",
+        "how": "The patient lies on the back with a cushion under the shoulders, gel is applied and the doctor examines the glands, nodes and soft tissue on both sides in turn; 15–25 minutes",
+        "when": "A palpable lump or swelling in the neck, pain and dry mouth on the side of a salivary gland, enlarged lymph nodes, changes in thyroid hormones, monitoring of previously found nodules",
+        "prep": "Not required; it is better to come without necklaces and in clothes with an open collar, and to bring previous ultrasound reports for comparison",
+        "abnormal": "Nodules, cysts, a stone in a gland duct or enlarged lymph nodes may be related to inflammatory, metabolic or other processes; the endocrinologist or surgeon decides on tests, fine-needle sampling or follow-up"
+      },
+      "sr": {
+        "what": "Pregledni ultrazvuk vrata: štitna i pljuvačne žlijezde, limfni čvorovi i meka tkiva u jednom pregledu",
+        "how": "Pacijent leži na leđima sa jastučićem ispod ramena, nanosi se gel i ljekar redom pregleda žlijezde, čvorove i meka tkiva sa obje strane; 15–25 minuta",
+        "when": "Opipljiva tvorevina ili oteklina na vratu, bol i suvoća usta sa strane pljuvačne žlijezde, uvećani limfni čvorovi, promjene hormona štitne žlijezde, praćenje ranije nađenih čvorova",
+        "prep": "Nije potrebna; bolje je doći bez lančića i u odjeći sa širokim okovratnikom i ponijeti ranije ultrazvučne nalaze radi poređenja",
+        "abnormal": "Nađeni čvorovi, ciste, kamen u kanalu žlijezde ili uvećani limfni čvorovi mogu biti povezani sa upalnim, metaboličkim ili drugim procesima; potrebu za analizama, punkcijom ili praćenjem određuje endokrinolog ili hirurg"
+      },
+      "de": {
+        "what": "Eine Übersichtssonographie des Halses: Schilddrüse und Speicheldrüsen, Lymphknoten und Weichteile in einem Termin",
+        "how": "Der Patient liegt auf dem Rücken mit einer Rolle unter den Schultern, Gel wird aufgetragen und der Arzt untersucht nacheinander Drüsen, Lymphknoten und Weichteile beidseits; 15–25 Minuten",
+        "when": "Tastbare Schwellung am Hals, Schmerzen und Mundtrockenheit im Bereich einer Speicheldrüse, vergrößerte Lymphknoten, veränderte Schilddrüsenwerte, Verlaufskontrolle bekannter Knoten",
+        "prep": "Nicht erforderlich; am besten ohne Halsketten und in Kleidung mit weitem Kragen kommen und frühere Ultraschallbefunde zum Vergleich mitbringen",
+        "abnormal": "Knoten, Zysten, ein Stein im Drüsengang oder vergrößerte Lymphknoten können mit entzündlichen, stoffwechselbedingten oder anderen Prozessen zusammenhängen; über Laborwerte, Punktion oder Verlaufskontrolle entscheidet der Endokrinologe oder Chirurg"
+      },
+      "tr": {
+        "what": "Boynun genel ultrason incelemesi: tiroid ve tükürük bezleri, lenf düğümleri ve yumuşak dokular tek seansta",
+        "how": "Hasta omuzlarının altına destek konularak sırtüstü yatar, jel sürülür ve hekim sırayla bezleri, lenf düğümlerini ve yumuşak dokuları iki taraflı inceler; 15–25 dakika sürer",
+        "when": "Boyunda ele gelen şişlik, tükürük bezi tarafında ağrı ve ağız kuruluğu, büyümüş lenf düğümleri, tiroid hormonlarında değişiklik, daha önce saptanmış nodüllerin takibi",
+        "prep": "Hazırlık gerekmez; kolye takmadan ve yakası geniş bir kıyafetle gelmek, karşılaştırma için önceki ultrason raporlarını getirmek iyi olur",
+        "abnormal": "Saptanan nodüller, kistler, bez kanalındaki taş veya büyümüş lenf düğümleri iltihabi, metabolik ya da başka süreçlerle ilişkili olabilir; tetkik, iğne biyopsisi veya takip gerekliliğini endokrinoloji uzmanı ya da cerrah belirler"
+      },
+      "sr_cyrl": {
+        "what": "Прегледни ултразвук врата: штитна и пљувачне жлијезде, лимфни чворови и мека ткива у једном прегледу",
+        "how": "Пацијент лежи на леђима са јастучићем испод рамена, наноси се гел и љекар редом прегледа жлијезде, чворове и мека ткива са обје стране; 15–25 минута",
+        "when": "Опипљива творевина или отеклина на врату, бол и сувоћа уста са стране пљувачне жлијезде, увећани лимфни чворови, промјене хормона штитне жлијезде, праћење раније нађених чворова",
+        "prep": "Није потребна; боље је доћи без ланчића и у одјећи са широким оковратником и понијети раније ултразвучне налазе ради поређења",
+        "abnormal": "Нађени чворови, цисте, камен у каналу жлијезде или увећани лимфни чворови могу бити повезани са упалним, метаболичким или другим процесима; потребу за анализама, пункцијом или праћењем одређује ендокринолог или хирург"
+      }
+    }
+  },
+  {
+    "slug": "colonoscopy-with-anesthesia",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Эндоскопический осмотр толстой кишки, который выполняют во сне под внутривенной седацией или наркозом",
+        "how": "Анестезиолог вводит препарат в вену, после засыпания эндоскопист проводит гибкий аппарат по толстой кишке и при необходимости берёт биопсию или удаляет полип; сама процедура 20–40 минут плюс время наблюдения после пробуждения",
+        "when": "Плохая переносимость исследования без анестезии, спайки и боль при осмотре, длительные жалобы на стул или кровь в стуле, профилактический скрининг колоректальных заболеваний по возрасту, наблюдение после удаления полипов",
+        "prep": "Очищение кишечника накануне по схеме врача, отказ от еды и питья перед наркозом на срок, указанный анестезиологом, согласование постоянных препаратов и обязательный сопровождающий — за руль в этот день нельзя",
+        "abnormal": "Найденные полипы, воспаление или другие изменения оценивает эндоскопист, а при взятии биопсии заключение даёт гистология; срок следующего исследования назначает гастроэнтеролог"
+      },
+      "en": {
+        "what": "An endoscopic examination of the large bowel performed asleep under intravenous sedation or general anaesthesia",
+        "how": "An anaesthetist gives the drug into a vein, then the endoscopist passes a flexible instrument through the colon and, if needed, takes a biopsy or removes a polyp; the procedure itself takes 20–40 minutes plus recovery time",
+        "when": "Poor tolerance of the examination without anaesthesia, adhesions and pain during the procedure, long-standing bowel complaints or blood in the stool, age-based screening for colorectal disease, surveillance after polyp removal",
+        "prep": "Bowel cleansing the day before as prescribed, no food or drink before anaesthesia for the period the anaesthetist specifies, agreement on regular medication, and an accompanying person — driving is not allowed that day",
+        "abnormal": "Polyps, inflammation or other findings are assessed by the endoscopist, and if a biopsy is taken the conclusion comes from histology; the gastroenterologist sets the interval for the next examination"
+      },
+      "sr": {
+        "what": "Endoskopski pregled debelog crijeva koji se radi u snu, uz intravensku sedaciju ili opštu anesteziju",
+        "how": "Anesteziolog daje lijek u venu, a nakon uspavljivanja endoskopičar vodi savitljiv instrument kroz debelo crijevo i po potrebi uzima biopsiju ili uklanja polip; sama procedura traje 20–40 minuta, uz vrijeme oporavka",
+        "when": "Loše podnošenje pregleda bez anestezije, priraslice i bol tokom pregleda, dugotrajne tegobe sa stolicom ili krv u stolici, preventivni skrining kolorektalnih oboljenja po godinama, praćenje nakon uklanjanja polipa",
+        "prep": "Čišćenje crijeva dan ranije po šemi ljekara, bez hrane i pića prije anestezije u roku koji odredi anesteziolog, dogovor o stalnoj terapiji i obavezna pratnja — tog dana se ne vozi",
+        "abnormal": "Nađene polipe, upalu ili druge promjene procjenjuje endoskopičar, a ako je uzeta biopsija zaključak daje histologija; rok sljedećeg pregleda određuje gastroenterolog"
+      },
+      "de": {
+        "what": "Eine endoskopische Untersuchung des Dickdarms, die im Schlaf unter intravenöser Sedierung oder Narkose durchgeführt wird",
+        "how": "Der Anästhesist gibt das Medikament über die Vene, nach dem Einschlafen führt der Endoskopiker ein flexibles Gerät durch den Dickdarm und entnimmt bei Bedarf eine Biopsie oder entfernt einen Polypen; der Eingriff selbst dauert 20–40 Minuten, dazu kommt die Aufwachphase",
+        "when": "Schlechte Verträglichkeit der Untersuchung ohne Narkose, Verwachsungen und Schmerzen während der Untersuchung, anhaltende Stuhlbeschwerden oder Blut im Stuhl, altersabhängige Vorsorge auf kolorektale Erkrankungen, Kontrolle nach Polypenabtragung",
+        "prep": "Darmreinigung am Vortag nach ärztlichem Schema, Nüchternheit vor der Narkose für die vom Anästhesisten genannte Zeit, Absprache zur Dauermedikation und eine Begleitperson — an diesem Tag darf nicht selbst gefahren werden",
+        "abnormal": "Polypen, Entzündungen oder andere Veränderungen beurteilt der Endoskopiker, bei entnommener Biopsie folgt der Befund aus der Histologie; den Abstand zur nächsten Untersuchung legt der Gastroenterologe fest"
+      },
+      "tr": {
+        "what": "Damar yoluyla sedasyon ya da genel anestezi altında, uykuda yapılan kalın bağırsak endoskopisi",
+        "how": "Anestezi uzmanı ilacı damardan verir, hasta uyuduktan sonra endoskopist esnek cihazı kalın bağırsak boyunca ilerletir ve gerekirse biyopsi alır ya da polip çıkarır; işlem 20–40 dakika sürer, buna uyanma süresi eklenir",
+        "when": "Anestezisiz incelemeye kötü tolerans, yapışıklıklar ve işlem sırasında ağrı, uzun süreli dışkılama şikâyetleri ya da dışkıda kan, yaşa bağlı kolorektal hastalık taraması, polip alındıktan sonraki takip",
+        "prep": "Bir gün önce hekimin şemasına göre bağırsak temizliği, anestezi öncesi uzmanın belirttiği süre boyunca aç kalma, sürekli kullanılan ilaçların hekimle konuşulması ve yanınızda bir refakatçi — o gün araç kullanılmaz",
+        "abnormal": "Bulunan polipler, iltihap veya diğer değişiklikler endoskopist tarafından değerlendirilir, biyopsi alındıysa sonucu patoloji verir; bir sonraki incelemenin zamanını gastroenteroloji uzmanı belirler"
+      },
+      "sr_cyrl": {
+        "what": "Ендоскопски преглед дебелог цријева који се ради у сну, уз интравенску седацију или општу анестезију",
+        "how": "Анестезиолог даје лијек у вену, а након успављивања ендоскопичар води савитљив инструмент кроз дебело цријево и по потреби узима биопсију или уклања полип; сама процедура траје 20–40 минута, уз вријеме опоравка",
+        "when": "Лоше подношење прегледа без анестезије, прираслице и бол током прегледа, дуготрајне тегобе са столицом или крв у столици, превентивни скрининг колоректалних обољења по годинама, праћење након уклањања полипа",
+        "prep": "Чишћење цријева дан раније по шеми љекара, без хране и пића прије анестезије у року који одреди анестезиолог, договор о сталној терапији и обавезна пратња — тог дана се не вози",
+        "abnormal": "Нађене полипе, упалу или друге промјене процјењује ендоскопичар, а ако је узета биопсија закључак даје хистологија; рок сљедећег прегледа одређује гастроентеролог"
+      }
+    }
+  },
+  {
+    "slug": "hepatobiliary-tract-x-ray",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Рентгенологическое исследование желчного пузыря и желчных протоков, как правило с контрастным веществом",
+        "how": "Пациента укладывают на стол рентгеновского аппарата, контраст вводят в вену, принимают внутрь или подают через дренаж и катетер в зависимости от методики, затем делают серию снимков; 20–40 минут",
+        "when": "Боль в правом подреберье, желтуха, подозрение на препятствие оттоку желчи, уточнение данных УЗИ, контроль проходимости протоков и положения дренажа после операции",
+        "prep": "Натощак, по назначению врача — лёгкая диета и очищение кишечника накануне; заранее сообщить об аллергии на контраст и йод, о болезнях почек и щитовидной железы, о возможной беременности",
+        "abnormal": "Изменения могут быть связаны с камнями, сужением или воспалением желчных путей и другими причинами нарушенного оттока желчи; заключение даёт рентгенолог, а дальнейшую тактику — хирург или гастроэнтеролог"
+      },
+      "en": {
+        "what": "An X-ray study of the gallbladder and bile ducts, usually with a contrast agent",
+        "how": "The patient lies on the X-ray table, contrast is given into a vein, by mouth or through a drain or catheter depending on the technique, and a series of images is taken; 20–40 minutes",
+        "when": "Pain in the right upper abdomen, jaundice, suspected obstruction of bile flow, clarification of ultrasound findings, checking duct patency and drain position after surgery",
+        "prep": "On an empty stomach; a light diet and bowel cleansing the day before if the doctor prescribes it; report allergy to contrast or iodine, kidney and thyroid disease and possible pregnancy in advance",
+        "abnormal": "Changes may be related to stones, narrowing or inflammation of the bile ducts and to other causes of impaired bile flow; the radiologist writes the report and the surgeon or gastroenterologist decides what follows"
+      },
+      "sr": {
+        "what": "Rendgensko ispitivanje žučne kese i žučnih puteva, po pravilu uz kontrastno sredstvo",
+        "how": "Pacijent leži na rendgenskom stolu, kontrast se daje u venu, na usta ili kroz dren i kateter zavisno od tehnike, a zatim se pravi serija snimaka; 20–40 minuta",
+        "when": "Bol pod desnim rebarnim lukom, žutica, sumnja na prepreku otjecanju žuči, dopuna ultrazvučnog nalaza, provjera prohodnosti puteva i položaja drena poslije operacije",
+        "prep": "Natašte, po nalogu ljekara laka dijeta i čišćenje crijeva dan ranije; unaprijed prijaviti alergiju na kontrast i jod, bolesti bubrega i štitne žlijezde, kao i moguću trudnoću",
+        "abnormal": "Promjene mogu biti povezane sa kamenom, suženjem ili upalom žučnih puteva i drugim uzrocima otežanog otjecanja žuči; nalaz piše radiolog, a dalju taktiku određuje hirurg ili gastroenterolog"
+      },
+      "de": {
+        "what": "Eine Röntgenuntersuchung von Gallenblase und Gallenwegen, in der Regel mit Kontrastmittel",
+        "how": "Der Patient liegt auf dem Röntgentisch, das Kontrastmittel wird je nach Technik über die Vene, oral oder über Drainage und Katheter gegeben, danach wird eine Bildserie angefertigt; 20–40 Minuten",
+        "when": "Schmerzen im rechten Oberbauch, Gelbsucht, Verdacht auf eine Abflussbehinderung der Galle, Abklärung von Ultraschallbefunden, Kontrolle der Gangdurchgängigkeit und der Drainagelage nach einer Operation",
+        "prep": "Nüchtern; auf ärztliche Anweisung leichte Kost und Darmreinigung am Vortag; Allergien gegen Kontrastmittel oder Jod, Nieren- und Schilddrüsenerkrankungen sowie eine mögliche Schwangerschaft vorab mitteilen",
+        "abnormal": "Veränderungen können mit Steinen, Engstellen oder Entzündungen der Gallenwege sowie anderen Ursachen einer gestörten Galleabfuhr zusammenhängen; den Befund erstellt der Radiologe, das weitere Vorgehen legt der Chirurg oder Gastroenterologe fest"
+      },
+      "tr": {
+        "what": "Safra kesesi ve safra yollarının, genellikle kontrast madde kullanılarak yapılan röntgen incelemesi",
+        "how": "Hasta röntgen masasına yatar, tekniğe göre kontrast madde damardan, ağızdan ya da dren veya kateter yoluyla verilir ve ardından bir dizi görüntü alınır; 20–40 dakika sürer",
+        "when": "Sağ üst karın ağrısı, sarılık, safra akışında tıkanıklık şüphesi, ultrason bulgularının netleştirilmesi, ameliyat sonrası kanal açıklığının ve dren konumunun kontrolü",
+        "prep": "Aç karnına gelinir; hekim isterse bir gün önce hafif diyet ve bağırsak temizliği yapılır; kontrast ya da iyot alerjisi, böbrek ve tiroid hastalığı ile olası gebelik önceden bildirilir",
+        "abnormal": "Değişiklikler taş, darlık ya da safra yolu iltihabı ve safra akışını bozan başka nedenlerle ilişkili olabilir; raporu radyoloji uzmanı yazar, sonraki adımı cerrah veya gastroenteroloji uzmanı belirler"
+      },
+      "sr_cyrl": {
+        "what": "Рендгенско испитивање жучне кесе и жучних путева, по правилу уз контрастно средство",
+        "how": "Пацијент лежи на рендгенском столу, контраст се даје у вену, на уста или кроз дрен и катетер зависно од технике, а затим се прави серија снимака; 20–40 минута",
+        "when": "Бол под десним ребарним луком, жутица, сумња на препреку отјецању жучи, допуна ултразвучног налаза, провјера проходности путева и положаја дрена послије операције",
+        "prep": "Наташте, по налогу љекара лака дијета и чишћење цријева дан раније; унапријед пријавити алергију на контраст и јод, болести бубрега и штитне жлијезде, као и могућу трудноћу",
+        "abnormal": "Промјене могу бити повезане са каменом, сужењем или упалом жучних путева и другим узроцима отежаног отјецања жучи; налаз пише радиолог, а даљу тактику одређује хирург или гастроентеролог"
+      }
+    }
+  },
+  {
+    "slug": "breast-augmentation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Пластическая операция, которая меняет объём и форму груди с помощью имплантов или собственной жировой ткани",
+        "how": "Под общей анестезией хирург делает разрез выбранным доступом, формирует карман и устанавливает имплант либо вводит подготовленный жир, затем ушивает разрез и надевает компрессионное бельё; обычно 1–2 часа, часто с ночёвкой в стационаре",
+        "when": "Желание изменить объём или форму груди, асимметрия, восстановление объёма после беременности, кормления или снижения веса, реконструкция после операции на молочной железе",
+        "prep": "Консультации хирурга и анестезиолога, предоперационные анализы и УЗИ или маммография по возрасту, отказ от курения и согласование препаратов, влияющих на свёртывание, в сроки, указанные врачом; в день операции натощак и с сопровождающим",
+        "abnormal": "После операции ожидаемы отёк, синяки и снижение чувствительности кожи, которые уходят постепенно; при нарастающей боли, температуре, кровотечении или выделениях из шва нужно связаться с оперировавшим хирургом, а плановые осмотры и контроль имплантов идут по графику врача"
+      },
+      "en": {
+        "what": "Plastic surgery that changes the volume and shape of the breast using implants or the patient's own fat",
+        "how": "Under general anaesthesia the surgeon makes an incision through the chosen approach, creates a pocket and places the implant or injects prepared fat, then closes the incision and fits a compression garment; usually 1–2 hours, often with an overnight stay",
+        "when": "A wish to change breast volume or shape, asymmetry, restoring volume after pregnancy, breastfeeding or weight loss, reconstruction after breast surgery",
+        "prep": "Consultations with the surgeon and anaesthetist, preoperative tests and ultrasound or mammography according to age, stopping smoking and agreeing on medication that affects clotting within the timeframe the doctor gives; on the day of surgery come fasting and with an accompanying person",
+        "abnormal": "Swelling, bruising and reduced skin sensation are expected after surgery and settle gradually; if pain increases or fever, bleeding or discharge from the wound appear, contact the operating surgeon, and keep the scheduled check-ups and implant follow-up"
+      },
+      "sr": {
+        "what": "Plastična operacija kojom se mijenjaju zapremina i oblik dojki pomoću implantata ili sopstvenog masnog tkiva",
+        "how": "U opštoj anesteziji hirurg pravi rez izabranim pristupom, formira ležište i postavlja implantat ili ubrizgava pripremljeno masno tkivo, zatim šije rez i stavlja kompresivni grudnjak; obično 1–2 sata, često uz jedno noćenje",
+        "when": "Želja za promjenom zapremine ili oblika dojki, asimetrija, vraćanje volumena poslije trudnoće, dojenja ili gubitka težine, rekonstrukcija nakon operacije dojke",
+        "prep": "Pregledi hirurga i anesteziologa, preoperativne analize i ultrazvuk ili mamografija po godinama, prestanak pušenja i dogovor o lijekovima koji utiču na zgrušavanje u rokovima koje odredi ljekar; na dan operacije natašte i sa pratnjom",
+        "abnormal": "Poslije operacije očekuju se otok, modrice i smanjen osjećaj u koži, koji postepeno prolaze; ako se bol pojačava ili se jave temperatura, krvarenje i iscjedak iz reza, treba se javiti hirurgu koji je operisao, a kontrole i praćenje implantata idu po rasporedu ljekara"
+      },
+      "de": {
+        "what": "Ein plastisch-chirurgischer Eingriff, der Volumen und Form der Brust mit Implantaten oder Eigenfett verändert",
+        "how": "In Vollnarkose setzt der Chirurg den Schnitt über den gewählten Zugang, bildet eine Tasche und legt das Implantat ein oder spritzt aufbereitetes Eigenfett ein, danach folgen Naht und Kompressions-BH; meist 1–2 Stunden, oft mit einer Übernachtung",
+        "when": "Wunsch nach anderem Volumen oder anderer Form der Brust, Asymmetrie, Wiederherstellung des Volumens nach Schwangerschaft, Stillzeit oder Gewichtsabnahme, Rekonstruktion nach einer Brustoperation",
+        "prep": "Beratung bei Chirurg und Anästhesist, präoperative Laborwerte und Ultraschall oder Mammographie je nach Alter, Rauchstopp und Absprache zu gerinnungswirksamen Medikamenten in den vom Arzt genannten Fristen; am Operationstag nüchtern und mit Begleitperson",
+        "abnormal": "Nach dem Eingriff sind Schwellung, Blutergüsse und ein vermindertes Hautgefühl zu erwarten und bilden sich allmählich zurück; bei zunehmenden Schmerzen, Fieber, Blutung oder Wundsekret den operierenden Chirurgen kontaktieren, Kontrolltermine und Implantatnachsorge erfolgen nach dem Plan des Arztes"
+      },
+      "tr": {
+        "what": "Göğsün hacmini ve biçimini implant ya da kişinin kendi yağ dokusuyla değiştiren plastik cerrahi girişimi",
+        "how": "Genel anestezi altında cerrah seçilen yoldan kesi yapar, implant için cep hazırlayıp implantı yerleştirir ya da hazırlanan yağ dokusunu enjekte eder, sonra kesiyi kapatıp korse uygular; genellikle 1–2 saat sürer, sıklıkla bir gece yatış gerekir",
+        "when": "Göğsün hacmini veya biçimini değiştirme isteği, asimetri, gebelik, emzirme ya da kilo kaybı sonrası hacmin geri kazanılması, meme ameliyatı sonrası rekonstrüksiyon",
+        "prep": "Cerrah ve anestezi uzmanı görüşmeleri, ameliyat öncesi tetkikler ve yaşa göre ultrason veya mamografi, sigaranın bırakılması ve pıhtılaşmayı etkileyen ilaçların hekimin belirttiği sürelerde düzenlenmesi; ameliyat günü aç karnına ve refakatçiyle gelinir",
+        "abnormal": "Ameliyattan sonra şişlik, morarma ve ciltte his azalması beklenir ve zamanla geçer; ağrı artarsa ya da ateş, kanama, kesiden akıntı olursa ameliyatı yapan cerrahla iletişime geçilmeli, kontroller ve implant takibi hekimin planına göre sürdürülmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Пластична операција којом се мијењају запремина и облик дојки помоћу имплантата или сопственог масног ткива",
+        "how": "У општој анестезији хирург прави рез изабраним приступом, формира лежиште и поставља имплантат или убризгава припремљено масно ткиво, затим шије рез и ставља компресивни грудњак; обично 1–2 сата, често уз једно ноћење",
+        "when": "Жеља за промјеном запремине или облика дојки, асиметрија, враћање волумена послије трудноће, дојења или губитка тежине, реконструкција након операције дојке",
+        "prep": "Прегледи хирурга и анестезиолога, преоперативне анализе и ултразвук или мамографија по годинама, престанак пушења и договор о лијековима који утичу на згрушавање у роковима које одреди љекар; на дан операције наташте и са пратњом",
+        "abnormal": "Послије операције очекују се оток, модрице и смањен осјећај у кожи, који постепено пролазе; ако се бол појачава или се јаве температура, крварење и исцједак из реза, треба се јавити хирургу који је оперисао, а контроле и праћење имплантата иду по распореду љекара"
+      }
+    }
+  },
+  {
+    "slug": "follow-up-surgical-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторный осмотр хирурга для контроля заживления, хода лечения или динамики выявленных изменений",
+        "how": "Врач осматривает и пальпирует область вмешательства или образование, при необходимости снимает и меняет повязку, оценивает шов и разбирает результаты анализов, УЗИ или гистологии; 10–20 минут",
+        "when": "В срок, назначенный после операции или первичного приёма, получение результатов гистологии, контроль заживления раны и грыжи, наблюдение за образованиями кожи и мягких тканей",
+        "prep": "Не требуется; принести выписку из стационара, протокол операции и результаты назначенных исследований, надеть одежду, которая открывает нужную область",
+        "abnormal": "Задержка заживления, уплотнение, покраснение или боль в области вмешательства могут быть связаны с воспалением, скоплением жидкости или нагрузкой на шов; объём дальнейшего лечения определяет хирург на осмотре"
+      },
+      "en": {
+        "what": "A follow-up visit to the surgeon to check healing, the course of treatment or the progress of a known finding",
+        "how": "The doctor inspects and palpates the operated area or the lump, removes and renews the dressing if needed, assesses the wound and reviews laboratory, ultrasound or histology results; 10–20 minutes",
+        "when": "At the interval set after surgery or the first visit, to receive histology results, to check wound or hernia healing, to monitor skin and soft tissue lesions",
+        "prep": "No preparation needed; bring the discharge letter, the operation report and the results of any ordered tests, and wear clothes that give access to the area",
+        "abnormal": "Delayed healing, firmness, redness or pain around the operated area may be related to inflammation, a fluid collection or strain on the wound; the surgeon decides at the visit what treatment follows"
+      },
+      "sr": {
+        "what": "Kontrolni pregled hirurga radi provjere zarastanja, toka liječenja ili praćenja već utvrđene promjene",
+        "how": "Ljekar pregleda i palpira operisano područje ili tvorevinu, po potrebi skida i mijenja zavoj, procjenjuje ranu i tumači nalaze laboratorije, ultrazvuka ili histologije; 10–20 minuta",
+        "when": "U roku određenom nakon operacije ili prvog pregleda, preuzimanje histološkog nalaza, kontrola zarastanja rane i kile, praćenje promjena na koži i mekim tkivima",
+        "prep": "Priprema nije potrebna; ponijeti otpusnu listu, operativni protokol i nalaze traženih ispitivanja, obući odjeću koja otkriva potrebno područje",
+        "abnormal": "Sporije zarastanje, otvrdnuće, crvenilo ili bol u operisanom području mogu biti povezani sa upalom, nakupljanjem tečnosti ili opterećenjem rane; obim daljeg liječenja hirurg određuje na pregledu"
+      },
+      "de": {
+        "what": "Eine chirurgische Kontrolluntersuchung zur Prüfung der Heilung, des Behandlungsverlaufs oder eines bekannten Befundes",
+        "how": "Der Arzt betrachtet und tastet das operierte Gebiet oder den Befund, wechselt bei Bedarf den Verband, beurteilt die Naht und bespricht Labor-, Ultraschall- oder Histologiebefunde; 10–20 Minuten",
+        "when": "Zum nach der Operation oder der Erstvorstellung vereinbarten Termin, zur Besprechung des histologischen Befundes, zur Kontrolle der Wund- oder Bruchheilung, zur Verlaufskontrolle von Haut- und Weichteilveränderungen",
+        "prep": "Keine Vorbereitung nötig; Arztbrief, Operationsbericht und die Ergebnisse angeordneter Untersuchungen mitbringen sowie Kleidung tragen, die den Bereich zugänglich macht",
+        "abnormal": "Verzögerte Heilung, Verhärtung, Rötung oder Schmerzen im Operationsgebiet können mit einer Entzündung, einer Flüssigkeitsansammlung oder Belastung der Naht zusammenhängen; das weitere Vorgehen legt der Chirurg beim Termin fest"
+      },
+      "tr": {
+        "what": "İyileşmenin, tedavi seyrinin ya da bilinen bir bulgunun izlendiği kontrol cerrahi muayenesi",
+        "how": "Hekim ameliyat bölgesini veya kitleyi inceleyip elle muayene eder, gerekirse pansumanı değiştirir, dikiş hattını değerlendirir ve laboratuvar, ultrason ya da patoloji sonuçlarını gözden geçirir; 10–20 dakika sürer",
+        "when": "Ameliyat ya da ilk muayeneden sonra belirlenen sürede, patoloji sonucunun değerlendirilmesi, yara ve fıtık iyileşmesinin kontrolü, deri ve yumuşak doku lezyonlarının takibi",
+        "prep": "Hazırlık gerekmez; epikrizi, ameliyat raporunu ve istenen tetkiklerin sonuçlarını getirin ve ilgili bölgeye kolay ulaşılan bir kıyafet giyin",
+        "abnormal": "İyileşmede gecikme, sertlik, kızarıklık ya da ameliyat bölgesinde ağrı iltihapla, sıvı birikimiyle veya yara hattının zorlanmasıyla ilişkili olabilir; sonraki tedaviyi cerrah muayenede belirler"
+      },
+      "sr_cyrl": {
+        "what": "Контролни преглед хирурга ради провјере зарастања, тока лијечења или праћења већ утврђене промјене",
+        "how": "Љекар прегледа и палпира оперисано подручје или творевину, по потреби скида и мијења завој, процјењује рану и тумачи налазе лабораторије, ултразвука или хистологије; 10–20 минута",
+        "when": "У року одређеном након операције или првог прегледа, преузимање хистолошког налаза, контрола зарастања ране и киле, праћење промјена на кожи и меким ткивима",
+        "prep": "Припрема није потребна; понијети отпусну листу, оперативни протокол и налазе тражених испитивања, обући одјећу која открива потребно подручје",
+        "abnormal": "Спорије зарастање, отврднуће, црвенило или бол у оперисаном подручју могу бити повезани са упалом, накупљањем течности или оптерећењем ране; обим даљег лијечења хирург одређује на прегледу"
+      }
+    }
+  },
+  {
+    "slug": "follow-up-urologist-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторный приём уролога для оценки результатов обследования и эффекта назначенного лечения",
+        "how": "Врач уточняет изменения мочеиспускания и боли, при необходимости осматривает пациента и делает УЗИ мочевого пузыря с оценкой остаточной мочи, разбирает анализы мочи, посев и прежние исследования; 15–25 минут",
+        "when": "В срок, назначенный на первичном приёме, получение результатов анализов и УЗИ, контроль лечения инфекции мочевых путей, простатита и увеличенной простаты, наблюдение после отхождения камня или операции",
+        "prep": "Принести результаты назначенных анализов и снимков и список препаратов; для УЗИ мочевого пузыря прийти с наполненным пузырём, если врач просил, и не мочиться перед приёмом",
+        "abnormal": "Сохраняющиеся жалобы или изменения в анализах могут быть связаны с неполным ответом на лечение, повторной инфекцией или другими причинами; необходимость смены терапии и дополнительных исследований определяет уролог"
+      },
+      "en": {
+        "what": "A follow-up appointment with the urologist to review test results and the effect of the prescribed treatment",
+        "how": "The doctor asks how urination and pain have changed, examines the patient and if needed performs a bladder ultrasound with residual urine measurement, and reviews urine tests, cultures and earlier studies; 15–25 minutes",
+        "when": "At the interval set at the first visit, to receive laboratory and ultrasound results, to monitor treatment of urinary tract infection, prostatitis and prostate enlargement, follow-up after a stone has passed or after surgery",
+        "prep": "Bring the results of the tests and images that were ordered and a list of medication; for a bladder ultrasound come with a full bladder if the doctor asked for it and do not empty it before the appointment",
+        "abnormal": "Persisting complaints or changes in the tests may be related to an incomplete response to treatment, a repeat infection or other causes; the urologist decides whether the therapy changes and which further studies are needed"
+      },
+      "sr": {
+        "what": "Kontrolni pregled urologa radi procjene nalaza i djelovanja propisane terapije",
+        "how": "Ljekar provjerava kako su se mokrenje i bol promijenili, po potrebi pregleda pacijenta i radi ultrazvuk bešike sa mjerenjem rezidualnog urina, te tumači nalaze urina, urinokulturu i ranija ispitivanja; 15–25 minuta",
+        "when": "U roku određenom na prvom pregledu, preuzimanje nalaza analiza i ultrazvuka, kontrola liječenja infekcije mokraćnih puteva, prostatitisa i uvećane prostate, praćenje nakon izlaska kamena ili operacije",
+        "prep": "Ponijeti nalaze traženih analiza i snimaka i spisak lijekova; za ultrazvuk bešike doći pune bešike ako je ljekar tako tražio i ne mokriti prije pregleda",
+        "abnormal": "Tegobe koje ostaju ili promjene u nalazima mogu biti povezane sa nepotpunim odgovorom na terapiju, ponovnom infekcijom ili drugim uzrocima; potrebu za izmjenom terapije i dodatnim ispitivanjima procjenjuje urolog"
+      },
+      "de": {
+        "what": "Ein Kontrolltermin beim Urologen zur Beurteilung der Befunde und der Wirkung der verordneten Behandlung",
+        "how": "Der Arzt erfragt Veränderungen beim Wasserlassen und bei Schmerzen, untersucht bei Bedarf und führt eine Blasensonographie mit Restharnbestimmung durch, außerdem bespricht er Urinbefunde, Kulturen und Voruntersuchungen; 15–25 Minuten",
+        "when": "Zum bei der Erstvorstellung vereinbarten Termin, zur Besprechung von Labor- und Ultraschallbefunden, zur Kontrolle der Behandlung von Harnwegsinfekten, Prostataentzündung und Prostatavergrößerung, zur Nachsorge nach Steinabgang oder Operation",
+        "prep": "Die Ergebnisse der angeordneten Untersuchungen und Aufnahmen sowie eine Medikamentenliste mitbringen; für die Blasensonographie mit gefüllter Blase kommen, wenn der Arzt es verlangt hat, und vorher nicht Wasser lassen",
+        "abnormal": "Anhaltende Beschwerden oder veränderte Befunde können mit einem unvollständigen Ansprechen auf die Therapie, einer erneuten Infektion oder anderen Ursachen zusammenhängen; ob die Therapie geändert wird und welche weiteren Untersuchungen nötig sind, entscheidet der Urologe"
+      },
+      "tr": {
+        "what": "Tetkik sonuçlarının ve verilen tedavinin etkisinin değerlendirildiği ürolojik kontrol muayenesi",
+        "how": "Hekim idrar yapma ve ağrıdaki değişimi sorar, gerekirse muayene eder ve rezidü idrar ölçümüyle birlikte mesane ultrasonu yapar, idrar tetkiklerini, kültürü ve önceki incelemeleri değerlendirir; 15–25 dakika sürer",
+        "when": "İlk muayenede belirlenen sürede, tetkik ve ultrason sonuçlarının değerlendirilmesi, idrar yolu enfeksiyonu, prostat iltihabı ve prostat büyümesi tedavisinin takibi, taş düşürme ya da ameliyat sonrası izlem",
+        "prep": "İstenen tetkik ve görüntülerin sonuçlarını ve ilaç listenizi getirin; hekim mesane ultrasonu için istediyse idrarınızı tutarak gelin ve muayene öncesinde boşaltmayın",
+        "abnormal": "Süren şikâyetler ya da tetkiklerdeki değişiklikler tedaviye tam yanıt alınmamasıyla, enfeksiyonun tekrarlamasıyla veya başka nedenlerle ilişkili olabilir; tedavinin değişip değişmeyeceğine ve ek tetkiklere ürolog karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Контролни преглед уролога ради процјене налаза и дјеловања прописане терапије",
+        "how": "Љекар провјерава како су се мокрење и бол промијенили, по потреби прегледа пацијента и ради ултразвук бешике са мјерењем резидуалног урина, те тумачи налазе урина, уринокултуру и ранија испитивања; 15–25 минута",
+        "when": "У року одређеном на првом прегледу, преузимање налаза анализа и ултразвука, контрола лијечења инфекције мокраћних путева, простатитиса и увећане простате, праћење након изласка камена или операције",
+        "prep": "Понијети налазе тражених анализа и снимака и списак лијекова; за ултразвук бешике доћи пуне бешике ако је љекар тако тражио и не мокрити прије прегледа",
+        "abnormal": "Тегобе које остају или промјене у налазима могу бити повезане са непотпуним одговором на терапију, поновном инфекцијом или другим узроцима; потребу за измјеном терапије и додатним испитивањима процјењује уролог"
+      }
+    }
+  },
+  {
+    "slug": "labiaplasty",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Хирургическая коррекция формы и размера малых или больших половых губ",
+        "how": "Чаще под местной анестезией с седацией или под общей анестезией хирург иссекает избыток ткани и ушивает края рассасывающимися нитями; вмешательство обычно 45–90 минут, как правило амбулаторно",
+        "when": "Дискомфорт и натирание при ходьбе, спорте и ношении белья, боль при половом акте, выраженная асимметрия, изменения после родов или снижения веса, эстетический запрос",
+        "prep": "Консультация гинеколога или пластического хирурга, мазок и предоперационные анализы, планирование вне менструации, гигиеническая подготовка зоны по указанию врача; при седации или общей анестезии — натощак и с сопровождающим",
+        "abnormal": "В первые дни ожидаемы отёк, тянущая боль и скудные выделения, нити рассасываются постепенно; при нарастающей боли, кровотечении, гнойных выделениях или температуре нужно связаться с врачом, а сроки возврата к спорту и половой жизни определяет хирург"
+      },
+      "en": {
+        "what": "Surgical correction of the shape and size of the inner or outer labia",
+        "how": "Usually under local anaesthesia with sedation or under general anaesthesia, the surgeon removes excess tissue and closes the edges with absorbable sutures; the procedure usually takes 45–90 minutes and is normally done as a day case",
+        "when": "Discomfort and rubbing when walking, during sport and from underwear, pain during intercourse, marked asymmetry, changes after childbirth or weight loss, aesthetic reasons",
+        "prep": "Consultation with a gynaecologist or plastic surgeon, a swab and preoperative tests, scheduling outside menstruation, hygienic preparation of the area as instructed; with sedation or general anaesthesia come fasting and with an accompanying person",
+        "abnormal": "Swelling, a pulling sensation and slight discharge are expected in the first days and the sutures dissolve gradually; if pain increases or bleeding, purulent discharge or fever appear, contact the doctor, and the surgeon says when sport and sexual activity can resume"
+      },
+      "sr": {
+        "what": "Hirurška korekcija oblika i veličine malih ili velikih stidnih usana",
+        "how": "Najčešće u lokalnoj anesteziji uz sedaciju ili u opštoj anesteziji hirurg uklanja višak tkiva i šije ivice koncem koji se resorbuje; zahvat obično traje 45–90 minuta i po pravilu je ambulantni",
+        "when": "Nelagoda i žuljanje pri hodu, sportu i nošenju veša, bol pri odnosu, izražena asimetrija, promjene poslije porođaja ili gubitka težine, estetski razlozi",
+        "prep": "Pregled ginekologa ili plastičnog hirurga, bris i preoperativne analize, zakazivanje van menstruacije, higijenska priprema predjela po uputstvu ljekara; uz sedaciju ili opštu anesteziju natašte i sa pratnjom",
+        "abnormal": "Prvih dana očekuju se otok, zatezanje i oskudan iscjedak, a konci se postepeno resorbuju; ako se bol pojačava ili se jave krvarenje, gnojav iscjedak i temperatura, treba se javiti ljekaru, a rok za povratak sportu i seksualnoj aktivnosti određuje hirurg"
+      },
+      "de": {
+        "what": "Eine operative Korrektur von Form und Größe der inneren oder äußeren Schamlippen",
+        "how": "Meist in örtlicher Betäubung mit Sedierung oder in Vollnarkose entfernt der Chirurg überschüssiges Gewebe und verschließt die Ränder mit selbstauflösendem Nahtmaterial; der Eingriff dauert meist 45–90 Minuten und erfolgt in der Regel ambulant",
+        "when": "Beschwerden und Reiben beim Gehen, beim Sport und durch Unterwäsche, Schmerzen beim Geschlechtsverkehr, ausgeprägte Asymmetrie, Veränderungen nach Geburt oder Gewichtsabnahme, ästhetische Gründe",
+        "prep": "Vorstellung bei Gynäkologe oder plastischem Chirurgen, Abstrich und präoperative Laborwerte, Terminplanung außerhalb der Menstruation, hygienische Vorbereitung des Bereichs nach Anweisung; bei Sedierung oder Vollnarkose nüchtern und mit Begleitperson",
+        "abnormal": "In den ersten Tagen sind Schwellung, Ziehen und geringe Sekretion zu erwarten, die Fäden lösen sich allmählich auf; bei zunehmenden Schmerzen, Blutung, eitrigem Ausfluss oder Fieber den Arzt kontaktieren, wann Sport und Geschlechtsverkehr wieder möglich sind, legt der Chirurg fest"
+      },
+      "tr": {
+        "what": "İç veya dış dudakların biçim ve boyutunun cerrahi olarak düzeltilmesi",
+        "how": "Genellikle sedasyon eşliğinde lokal ya da genel anestezi altında cerrah fazla dokuyu çıkarır ve kenarları eriyen dikişlerle kapatır; işlem çoğunlukla 45–90 dakika sürer ve kural olarak günübirliktir",
+        "when": "Yürürken, spor yaparken ve iç çamaşırından kaynaklanan rahatsızlık ve sürtünme, ilişkide ağrı, belirgin asimetri, doğum ya da kilo kaybı sonrası değişiklikler, estetik nedenler",
+        "prep": "Kadın hastalıkları uzmanı ya da plastik cerrah görüşmesi, sürüntü ve ameliyat öncesi tetkikler, adet dönemi dışında randevu, bölgenin hekimin tarifine göre hazırlanması; sedasyon veya genel anestezide aç karnına ve refakatçiyle gelinir",
+        "abnormal": "İlk günlerde şişlik, gerginlik ve az miktarda akıntı beklenir, dikişler zamanla erir; ağrı artarsa ya da kanama, iltihaplı akıntı ve ateş olursa hekimle iletişime geçilmeli, spora ve cinsel yaşama ne zaman dönüleceğini cerrah belirler"
+      },
+      "sr_cyrl": {
+        "what": "Хируршка корекција облика и величине малих или великих стидних усана",
+        "how": "Најчешће у локалној анестезији уз седацију или у општој анестезији хирург уклања вишак ткива и шије ивице концем који се ресорбује; захват обично траје 45–90 минута и по правилу је амбулантни",
+        "when": "Нелагода и жуљање при ходу, спорту и ношењу веша, бол при односу, изражена асиметрија, промјене послије порођаја или губитка тежине, естетски разлози",
+        "prep": "Преглед гинеколога или пластичног хирурга, брис и преоперативне анализе, заказивање ван менструације, хигијенска припрема предјела по упутству љекара; уз седацију или општу анестезију наташте и са пратњом",
+        "abnormal": "Првих дана очекују се оток, затезање и оскудан исцједак, а конци се постепено ресорбују; ако се бол појачава или се јаве крварење, гнојав исцједак и температура, треба се јавити љекару, а рок за повратак спорту и сексуалној активности одређује хирург"
+      }
+    }
+  },
+  {
+    "slug": "prick-test-nutritive-allergens",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Кожная проба на пищевые аллергены — молоко, яйцо, орехи, рыба и морепродукты, злаки, соя, фрукты",
+        "how": "На предплечье или спину наносят капли экстрактов продуктов и прокалывают кожу через каплю одноразовым ланцетом, реакцию читают примерно через четверть часа; при необходимости берут свежий продукт по методике prick-to-prick",
+        "when": "Сыпь, отёк губ и век, зуд во рту, тошнота или боль в животе после еды, крапивница неясной причины, подозрение на связь симптомов с конкретным продуктом, обследование ребёнка с атопическим дерматитом",
+        "prep": "Отменить антигистаминные препараты заранее на срок, указанный аллергологом, не наносить кремы и мази на зону проб, не проводить при обострении кожных болезней и раньше, чем разрешит врач после тяжёлой реакции; продукт перед пробой резко не исключать без указания врача",
+        "abnormal": "Положительная проба показывает сенсибилизацию, а не подтверждённую пищевую аллергию — врач-аллерголог сопоставляет её с реальной реакцией на продукт и при необходимости добавляет анализы крови или пробную диету под наблюдением"
+      },
+      "en": {
+        "what": "A skin test for food allergens — milk, egg, nuts, fish and seafood, cereals, soy, fruit",
+        "how": "Drops of food extracts are placed on the forearm or back and the skin is pricked through each drop with a single-use lancet, the reaction is read after about a quarter of an hour; fresh food may be used with the prick-to-prick technique",
+        "when": "Rash, swelling of the lips and eyelids, itching in the mouth, nausea or abdominal pain after eating, urticaria of unclear cause, a suspected link between symptoms and a particular food, assessment of a child with atopic dermatitis",
+        "prep": "Stop antihistamines in advance for the period the allergist specifies, do not apply creams or ointments to the test area, do not test during a flare of skin disease or sooner than the doctor allows after a severe reaction; do not abruptly exclude the food before the test unless the doctor says so",
+        "abnormal": "A positive test shows sensitisation rather than confirmed food allergy — the allergist compares it with the real-life reaction to the food and may add blood tests or a supervised trial diet"
+      },
+      "sr": {
+        "what": "Kožni test na nutritivne alergene — mlijeko, jaje, orašasti plodovi, riba i plodovi mora, žitarice, soja, voće",
+        "how": "Na podlakticu ili leđa se stavljaju kapi ekstrakata namirnica i kroz svaku kap se lancetom za jednokratnu upotrebu ubode koža, a reakcija se očitava nakon petnaestak minuta; po potrebi se koristi svježa namirnica po prick-to-prick metodi",
+        "when": "Osip, oticanje usana i kapaka, svrab u ustima, mučnina ili bol u stomaku poslije jela, koprivnjača nejasnog uzroka, sumnja na vezu simptoma sa određenom namirnicom, obrada djeteta sa atopijskim dermatitisom",
+        "prep": "Prekinuti antihistaminike unaprijed, na rok koji odredi alergolog, ne mazati kreme i masti na predio testiranja, ne raditi test u pogoršanju kožnih bolesti ni ranije nego što ljekar dozvoli nakon teške reakcije; namirnicu ne izbacivati naglo bez dogovora sa ljekarom",
+        "abnormal": "Pozitivan test pokazuje preosjetljivost, a ne i potvrđenu alergiju na hranu — alergolog ga poredi sa stvarnom reakcijom na namirnicu i po potrebi dodaje analize krvi ili probnu dijetu pod nadzorom"
+      },
+      "de": {
+        "what": "Ein Hauttest auf Nahrungsmittelallergene — Milch, Ei, Nüsse, Fisch und Meeresfrüchte, Getreide, Soja, Obst",
+        "how": "Auf Unterarm oder Rücken werden Tropfen von Nahrungsmittelextrakten aufgebracht und die Haut wird durch jeden Tropfen mit einer Einmallanzette angeritzt, die Reaktion wird nach etwa einer Viertelstunde abgelesen; bei Bedarf wird frische Nahrung im Prick-to-Prick-Verfahren verwendet",
+        "when": "Ausschlag, Schwellung von Lippen und Lidern, Juckreiz im Mund, Übelkeit oder Bauchschmerzen nach dem Essen, Nesselsucht unklarer Ursache, Verdacht auf einen Zusammenhang der Beschwerden mit einem bestimmten Lebensmittel, Abklärung bei Kindern mit Neurodermitis",
+        "prep": "Antihistaminika rechtzeitig und für die vom Allergologen genannte Dauer absetzen, keine Cremes oder Salben auf die Testfläche auftragen, nicht während eines Schubs einer Hauterkrankung und nicht früher als vom Arzt erlaubt nach einer schweren Reaktion testen; das Lebensmittel vorher nicht ohne ärztliche Absprache abrupt weglassen",
+        "abnormal": "Ein positiver Test zeigt eine Sensibilisierung und nicht zwingend eine bestätigte Nahrungsmittelallergie — der Allergologe vergleicht ihn mit der Reaktion im Alltag und ergänzt bei Bedarf Blutuntersuchungen oder eine überwachte Auslassdiät"
+      },
+      "tr": {
+        "what": "Besin alerjenlerine yönelik deri testi — süt, yumurta, kuruyemiş, balık ve deniz ürünleri, tahıllar, soya, meyve",
+        "how": "Ön kola ya da sırta besin ekstresi damlaları konur ve her damlanın üzerinden tek kullanımlık lansetle deri çizilir, yanıt yaklaşık on beş dakika sonra okunur; gerektiğinde taze besinle prick-to-prick yöntemi kullanılır",
+        "when": "Yemekten sonra döküntü, dudak ve göz kapağında şişlik, ağızda kaşıntı, bulantı ya da karın ağrısı, nedeni belirsiz ürtiker, şikâyetlerin belirli bir besinle ilişkili olduğu şüphesi, atopik dermatitli çocuğun değerlendirilmesi",
+        "prep": "Antihistaminikleri alerji uzmanının belirttiği süre boyunca önceden bırakın, test bölgesine krem ve merhem sürmeyin, deri hastalığı alevlenmesinde ve ağır reaksiyon sonrası hekim izin vermeden test yaptırmayın; söz konusu besini hekime danışmadan aniden kesmeyin",
+        "abnormal": "Pozitif test duyarlanmayı gösterir, kanıtlanmış besin alerjisini değil — alerji uzmanı bunu günlük yaşamdaki yanıtla karşılaştırır ve gerekirse kan tetkiki ya da gözetim altında deneme diyeti ekler"
+      },
+      "sr_cyrl": {
+        "what": "Кожни тест на нутритивне алергене — млијеко, јаје, орашасти плодови, риба и плодови мора, житарице, соја, воће",
+        "how": "На подлактицу или леђа се стављају капи екстраката намирница и кроз сваку кап се ланцетом за једнократну употребу убоде кожа, а реакција се очитава након петнаестак минута; по потреби се користи свјежа намирница по прицк-то-прицк методи",
+        "when": "Осип, отицање усана и капака, свраб у устима, мучнина или бол у стомаку послије јела, копривњача нејасног узрока, сумња на везу симптома са одређеном намирницом, обрада дјетета са атопијским дерматитисом",
+        "prep": "Прекинути антихистаминике унапријед, на рок који одреди алерголог, не мазати креме и масти на предио тестирања, не радити тест у погоршању кожних болести ни раније него што љекар дозволи након тешке реакције; намирницу не избацивати нагло без договора са љекаром",
+        "abnormal": "Позитиван тест показује преосјетљивост, а не и потврђену алергију на храну — алерголог га пореди са стварном реакцијом на намирницу и по потреби додаје анализе крви или пробну дијету под надзором"
+      }
+    }
+  },
+  {
+    "slug": "thyroidectomy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Хирургическое удаление всей щитовидной железы или одной её доли",
+        "how": "Под общей анестезией хирург делает разрез на передней поверхности шеи, выделяет железу, оберегая возвратный нерв и околощитовидные железы, удаляет запланированный объём и ушивает рану; обычно 1,5–3 часа и несколько дней в стационаре",
+        "when": "Крупный узловой или диффузный зоб со сдавлением соседних структур, узлы с неясным результатом пункции, повышенная функция железы, не поддающаяся препаратам или радиойоду, образования, которые по итогам обследования решено удалить",
+        "prep": "Предоперационные анализы, гормоны, УЗИ и заключение эндокринолога, осмотр ЛОР-врача с оценкой голосовых связок и беседа с анестезиологом, отказ от еды и питья по указанию анестезиолога, согласование препаратов, влияющих на свёртывание",
+        "abnormal": "После операции ожидаемы боль в горле, отёк и временная охриплость; онемение или покалывание в пальцах и вокруг рта, нарастающий отёк шеи или затруднённое дыхание требуют немедленного обращения к врачу, а заместительную гормональную терапию подбирает эндокринолог по контрольным анализам"
+      },
+      "en": {
+        "what": "Surgical removal of the whole thyroid gland or one of its lobes",
+        "how": "Under general anaesthesia the surgeon makes an incision on the front of the neck, exposes the gland while protecting the recurrent nerve and the parathyroid glands, removes the planned part and closes the wound; usually 1.5–3 hours with a few days in hospital",
+        "when": "A large nodular or diffuse goitre pressing on neighbouring structures, nodules with an unclear biopsy result, overactivity of the gland that does not respond to medication or radioiodine, findings that the work-up concluded should be removed",
+        "prep": "Preoperative tests, hormones, ultrasound and an endocrinologist's report, an ENT check of the vocal cords and a talk with the anaesthetist, fasting as instructed by the anaesthetist, agreement on medication that affects clotting",
+        "abnormal": "A sore throat, swelling and temporary hoarseness are expected after surgery; numbness or tingling in the fingers and around the mouth, growing neck swelling or difficult breathing require immediate contact with a doctor, and hormone replacement is adjusted by the endocrinologist from follow-up tests"
+      },
+      "sr": {
+        "what": "Hirurško uklanjanje cijele štitne žlijezde ili jednog njenog režnja",
+        "how": "U opštoj anesteziji hirurg pravi rez na prednjoj strani vrata, oslobađa žlijezdu čuvajući povratni živac i paratireoidne žlijezde, uklanja planirani dio i zatvara ranu; obično 1,5–3 sata, uz nekoliko dana bolničkog liječenja",
+        "when": "Velika nodozna ili difuzna guša koja pritiska okolne strukture, čvorovi sa nejasnim nalazom punkcije, pojačan rad žlijezde koji ne reaguje na lijekove ili radiojod, promjene za koje je nakon obrade odlučeno da se uklone",
+        "prep": "Preoperativne analize, hormoni, ultrazvuk i mišljenje endokrinologa, ORL pregled glasnih žica i razgovor sa anesteziologom, bez hrane i pića po uputstvu anesteziologa, dogovor o lijekovima koji utiču na zgrušavanje",
+        "abnormal": "Poslije operacije očekuju se bol u grlu, otok i privremena promuklost; trnjenje prstiju i oko usta, otok vrata koji raste ili otežano disanje traže hitno javljanje ljekaru, a nadoknadu hormona određuje endokrinolog na osnovu kontrolnih nalaza"
+      },
+      "de": {
+        "what": "Die operative Entfernung der gesamten Schilddrüse oder eines ihrer Lappen",
+        "how": "In Vollnarkose setzt der Chirurg einen Schnitt an der Halsvorderseite, stellt die Drüse unter Schonung des Stimmbandnervs und der Nebenschilddrüsen dar, entfernt den geplanten Anteil und verschließt die Wunde; meist 1,5–3 Stunden mit einigen Tagen stationärem Aufenthalt",
+        "when": "Großer Knoten- oder diffuser Kropf mit Druck auf benachbarte Strukturen, Knoten mit unklarem Punktionsbefund, Überfunktion, die auf Medikamente oder Radiojod nicht anspricht, Befunde, für die nach der Abklärung eine Entfernung beschlossen wurde",
+        "prep": "Präoperative Laborwerte, Hormone, Ultraschall und Befund des Endokrinologen, HNO-Kontrolle der Stimmbänder und Gespräch mit dem Anästhesisten, Nüchternheit nach Anweisung des Anästhesisten, Absprache zu gerinnungswirksamen Medikamenten",
+        "abnormal": "Halsschmerzen, Schwellung und vorübergehende Heiserkeit sind nach der Operation zu erwarten; Kribbeln in den Fingern und um den Mund, zunehmende Halsschwellung oder Atemnot erfordern sofortigen Arztkontakt, die Hormonersatztherapie stellt der Endokrinologe anhand der Kontrollwerte ein"
+      },
+      "tr": {
+        "what": "Tiroid bezinin tamamının ya da bir lobunun cerrahi olarak çıkarılması",
+        "how": "Genel anestezi altında cerrah boynun ön yüzüne kesi yapar, ses sinirini ve paratiroid bezlerini koruyarak bezi serbestleştirir, planlanan bölümü çıkarır ve yarayı kapatır; genellikle 1,5–3 saat sürer ve birkaç gün hastanede kalınır",
+        "when": "Komşu yapılara bası yapan büyük nodüler ya da diffüz guatr, biyopsi sonucu net olmayan nodüller, ilaç veya radyoaktif iyotla kontrol altına alınamayan aşırı çalışma, değerlendirme sonunda çıkarılmasına karar verilen bulgular",
+        "prep": "Ameliyat öncesi tetkikler, hormonlar, ultrason ve endokrinoloji görüşü, ses tellerinin KBB tarafından kontrolü ve anestezi görüşmesi, anestezi uzmanının tarifine göre aç kalma, pıhtılaşmayı etkileyen ilaçların düzenlenmesi",
+        "abnormal": "Ameliyattan sonra boğaz ağrısı, şişlik ve geçici ses kısıklığı beklenir; parmaklarda ve ağız çevresinde uyuşma, boyunda artan şişlik ya da soluk almada güçlük hemen hekime başvurmayı gerektirir, hormon desteğini ise kontrol tetkiklerine göre endokrinoloji uzmanı ayarlar"
+      },
+      "sr_cyrl": {
+        "what": "Хируршко уклањање цијеле штитне жлијезде или једног њеног режња",
+        "how": "У општој анестезији хирург прави рез на предњој страни врата, ослобађа жлијезду чувајући повратни живац и паратиреоидне жлијезде, уклања планирани дио и затвара рану; обично 1,5–3 сата, уз неколико дана болничког лијечења",
+        "when": "Велика нодозна или дифузна гуша која притиска околне структуре, чворови са нејасним налазом пункције, појачан рад жлијезде који не реагује на лијекове или радиојод, промјене за које је након обраде одлучено да се уклоне",
+        "prep": "Преоперативне анализе, хормони, ултразвук и мишљење ендокринолога, ОРЛ преглед гласних жица и разговор са анестезиологом, без хране и пића по упутству анестезиолога, договор о лијековима који утичу на згрушавање",
+        "abnormal": "Послије операције очекују се бол у грлу, оток и привремена промуклост; трњење прстију и око уста, оток врата који расте или отежано дисање траже хитно јављање љекару, а надокнаду хормона одређује ендокринолог на основу контролних налаза"
+      }
+    }
+  },
+  {
+    "slug": "wound-care",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обработка и перевязка раны: очищение, удаление загрязнений и наложение стерильной повязки",
+        "how": "Медсестра или хирург промывает рану антисептиком, удаляет загрязнения и нежизнеспособные ткани, при необходимости под местной анестезией ушивает или сближает края и накладывает стерильную повязку; 10–30 минут в зависимости от размера раны",
+        "when": "Порезы, ссадины, укушенные и рваные раны, ожоги и потёртости, промокшая или загрязнённая повязка, плановые перевязки после операции, длительно не заживающие раны и трофические язвы",
+        "prep": "Не требуется; до визита прикрыть рану чистой салфеткой, не заливать спиртом и не наносить мази, взять данные о прививке от столбняка и список принимаемых препаратов",
+        "abnormal": "Нарастающая боль, расходящееся вокруг раны покраснение, отёк, гнойное отделяемое или температура могут говорить об инфекции и требуют осмотра врача; частоту перевязок и необходимость антибиотика или прививки определяет врач"
+      },
+      "en": {
+        "what": "Cleaning and dressing of a wound: washing, removal of contamination and application of a sterile dressing",
+        "how": "A nurse or surgeon rinses the wound with antiseptic, removes dirt and non-viable tissue, closes or approximates the edges under local anaesthesia if needed and applies a sterile dressing; 10–30 minutes depending on the size of the wound",
+        "when": "Cuts, grazes, bites and lacerations, burns and blisters, a soaked or soiled dressing, scheduled dressing changes after surgery, slow-healing wounds and leg ulcers",
+        "prep": "Not required; cover the wound with a clean pad before the visit, do not pour spirit on it or apply ointments, and bring your tetanus vaccination details and a list of your medication",
+        "abnormal": "Increasing pain, redness spreading around the wound, swelling, purulent discharge or fever may indicate infection and call for a doctor's review; the doctor decides how often the dressing is changed and whether an antibiotic or a vaccination is needed"
+      },
+      "sr": {
+        "what": "Obrada i previjanje rane: čišćenje, uklanjanje prljavštine i postavljanje sterilnog zavoja",
+        "how": "Medicinska sestra ili hirurg ispira ranu antiseptikom, uklanja nečistoću i oštećeno tkivo, po potrebi u lokalnoj anesteziji šije ili približava ivice i postavlja sterilan zavoj; 10–30 minuta zavisno od veličine rane",
+        "when": "Posjekotine, ogrebotine, ujedi i razderotine, opekotine i žuljevi, mokar ili prljav zavoj, planirana previjanja poslije operacije, rane koje dugo ne zarastaju i potkoljenične ulceracije",
+        "prep": "Nije potrebna; ranu prije dolaska prekriti čistom gazom, ne polijevati alkoholom i ne mazati masti, ponijeti podatke o vakcini protiv tetanusa i spisak lijekova",
+        "abnormal": "Pojačan bol, crvenilo koje se širi oko rane, otok, gnojav iscjedak ili temperatura mogu ukazivati na infekciju i traže pregled ljekara; koliko često se previja i da li je potreban antibiotik ili vakcina odlučuje ljekar"
+      },
+      "de": {
+        "what": "Wundreinigung und Verbandwechsel: Säuberung, Entfernung von Verschmutzungen und Anlegen eines sterilen Verbands",
+        "how": "Pflegekraft oder Chirurg spült die Wunde mit einem Antiseptikum, entfernt Schmutz und abgestorbenes Gewebe, verschließt oder adaptiert die Ränder bei Bedarf in örtlicher Betäubung und legt einen sterilen Verband an; 10–30 Minuten je nach Größe der Wunde",
+        "when": "Schnitt-, Schürf-, Biss- und Risswunden, Verbrennungen und Blasen, durchnässter oder verschmutzter Verband, geplante Verbandwechsel nach einer Operation, schlecht heilende Wunden und Unterschenkelgeschwüre",
+        "prep": "Nicht erforderlich; die Wunde vor dem Termin mit einer sauberen Kompresse abdecken, keinen Alkohol daraufgießen und keine Salben auftragen, den Tetanus-Impfnachweis und eine Medikamentenliste mitbringen",
+        "abnormal": "Zunehmende Schmerzen, sich ausbreitende Rötung, Schwellung, eitriges Sekret oder Fieber können auf eine Infektion hinweisen und erfordern eine ärztliche Kontrolle; wie oft gewechselt wird und ob ein Antibiotikum oder eine Impfung nötig ist, entscheidet der Arzt"
+      },
+      "tr": {
+        "what": "Yaranın temizlenmesi ve pansumanı: yıkama, kirin uzaklaştırılması ve steril örtü uygulanması",
+        "how": "Hemşire ya da cerrah yarayı antiseptikle yıkar, kiri ve canlılığını yitirmiş dokuyu uzaklaştırır, gerekirse lokal anestezi altında kenarları diker veya yaklaştırır ve steril pansuman uygular; yaranın büyüklüğüne göre 10–30 dakika sürer",
+        "when": "Kesikler, sıyrıklar, ısırık ve yırtık yaralar, yanıklar ve su toplaması, ıslanmış ya da kirlenmiş pansuman, ameliyat sonrası planlı pansumanlar, geç iyileşen yaralar ve bacak ülserleri",
+        "prep": "Hazırlık gerekmez; gelmeden önce yarayı temiz bir gazlı bezle örtün, üzerine alkol dökmeyin ve merhem sürmeyin, tetanoz aşı bilginizi ve ilaç listenizi getirin",
+        "abnormal": "Artan ağrı, yara çevresinde yayılan kızarıklık, şişlik, iltihaplı akıntı ya da ateş enfeksiyona işaret edebilir ve hekim değerlendirmesi gerektirir; pansumanın sıklığına, antibiyotik ya da aşı gerekip gerekmediğine hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Обрада и превијање ране: чишћење, уклањање прљавштине и постављање стерилног завоја",
+        "how": "Медицинска сестра или хирург испира рану антисептиком, уклања нечистоћу и оштећено ткиво, по потреби у локалној анестезији шије или приближава ивице и поставља стерилан завој; 10–30 минута зависно од величине ране",
+        "when": "Посјекотине, огреботине, уједи и раздеротине, опекотине и жуљеви, мокар или прљав завој, планирана превијања послије операције, ране које дуго не зарастају и поткољеничне улцерације",
+        "prep": "Није потребна; рану прије доласка прекрити чистом газом, не полијевати алкохолом и не мазати масти, понијети податке о вакцини против тетануса и списак лијекова",
+        "abnormal": "Појачан бол, црвенило које се шири око ране, оток, гнојав исцједак или температура могу указивати на инфекцију и траже преглед љекара; колико често се превија и да ли је потребан антибиотик или вакцина одлучује љекар"
+      }
+    }
+  }
+]

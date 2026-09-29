@@ -1,0 +1,770 @@
+[
+  {
+    "slug": "follow-up-ophthalmologist-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Контрольный визит к офтальмологу, на котором текущее состояние глаз сравнивают с данными предыдущего осмотра",
+        "how": "Врач уточняет, как переносится назначенное лечение, повторяет нужные измерения (острота зрения, внутриглазное давление, осмотр на щелевой лампе) и сопоставляет их с прошлыми записями; приём короче первичного, обычно 10–20 минут",
+        "when": "В срок, назначенный на предыдущем приёме, — контроль подобранных капель, наблюдение при глаукоме или диабете, проверка заживления после травмы или операции, оценка новой коррекции зрения",
+        "prep": "Принести предыдущее заключение и рецепт на капли, прийти в очках или линзах, которые носите сейчас, и знать, в какое время закапывали капли в день визита; если планируется осмотр глазного дна с расширением зрачка, после капель несколько часов труднее фокусировать взгляд и за руль садиться нежелательно",
+        "abnormal": "Врач решает, оставить назначения прежними, изменить их или направить на дополнительные исследования. Если зрение ухудшилось, появились боль, вспышки или пелена, к врачу идут не дожидаясь назначенного срока"
+      },
+      "en": {
+        "what": "Return visit to an ophthalmologist at which the current state of the eyes is compared with the previous examination",
+        "how": "The doctor checks how the prescribed treatment is tolerated, repeats the relevant measurements (visual acuity, intraocular pressure, slit-lamp examination) and compares them with the earlier records; shorter than a first visit, usually 10–20 minutes",
+        "when": "At the interval set at the previous visit — checking prescribed drops, monitoring in glaucoma or diabetes, following healing after an injury or surgery, assessing a new vision correction",
+        "prep": "Bring the previous report and the prescription for your drops, come wearing the glasses or lenses you use now, and know at what time the drops were instilled on the day of the visit; if a fundus examination with pupil dilation is planned, focusing is harder for several hours after the drops and driving is best avoided",
+        "abnormal": "The doctor decides whether to keep the prescription unchanged, adjust it, or order further tests. If vision has worsened or pain, flashes or a veil appear, see a doctor without waiting for the scheduled date"
+      },
+      "sr": {
+        "what": "Kontrolni dolazak kod oftalmologa na kojem se trenutno stanje očiju upoređuje sa nalazom sa prethodnog pregleda",
+        "how": "Ljekar provjerava kako se podnosi propisana terapija, ponavlja potrebna mjerenja (oštrina vida, očni pritisak, pregled na biomikroskopu) i upoređuje ih sa ranijim zapisima; kraći je od prvog pregleda, obično 10–20 minuta",
+        "when": "U roku koji je određen na prethodnom pregledu — kontrola propisanih kapi, praćenje kod glaukoma ili dijabetesa, provjera zarastanja poslije povrede ili operacije, procjena nove korekcije vida",
+        "prep": "Ponijeti prethodni nalaz i recept za kapi, doći sa naočarima ili sočivima koja sada nosite i znati u koje vrijeme su kapi ukapane na dan pregleda; ako je planiran pregled očnog dna sa širenjem zjenice, poslije kapi je nekoliko sati teže izoštriti pogled i bolje je ne voziti",
+        "abnormal": "Ljekar odlučuje da li terapija ostaje ista, mijenja se ili su potrebna dodatna ispitivanja. Ako je vid oslabio ili se jave bol, bljeskovi ili zamagljenje poput zavjese, treba se javiti i prije zakazanog roka"
+      },
+      "de": {
+        "what": "Kontrolltermin beim Augenarzt, bei dem der aktuelle Augenbefund mit der vorherigen Untersuchung verglichen wird",
+        "how": "Der Arzt fragt, wie die verordnete Behandlung vertragen wird, wiederholt die nötigen Messungen (Sehschärfe, Augeninnendruck, Spaltlampenuntersuchung) und vergleicht sie mit den früheren Aufzeichnungen; kürzer als der Ersttermin, meist 10–20 Minuten",
+        "when": "Zu dem Termin, der beim vorherigen Besuch festgelegt wurde — Kontrolle verordneter Tropfen, Überwachung bei Glaukom oder Diabetes, Heilungskontrolle nach Verletzung oder Operation, Beurteilung einer neuen Sehkorrektur",
+        "prep": "Den vorherigen Befund und das Rezept für die Tropfen mitbringen, mit der aktuell getragenen Brille oder den Kontaktlinsen kommen und wissen, wann am Tag des Termins getropft wurde; ist eine Untersuchung des Augenhintergrunds mit Pupillenerweiterung geplant, fällt das Scharfstellen nach den Tropfen für einige Stunden schwerer und man sollte nicht selbst fahren",
+        "abnormal": "Der Arzt entscheidet, ob die Verordnung bleibt, geändert wird oder weitere Untersuchungen nötig sind. Bei verschlechtertem Sehen, Schmerzen, Lichtblitzen oder einem Schleier im Blickfeld wartet man nicht bis zum geplanten Termin"
+      },
+      "tr": {
+        "what": "Gözlerin güncel durumunun önceki muayeneyle karşılaştırıldığı göz hekimi kontrol ziyareti",
+        "how": "Hekim verilen tedavinin nasıl tolere edildiğini sorar, gereken ölçümleri (görme keskinliği, göz içi basıncı, biyomikroskop muayenesi) yineler ve önceki kayıtlarla karşılaştırır; ilk muayeneden kısadır, genelde 10–20 dakika",
+        "when": "Önceki muayenede belirlenen süre sonunda — verilen damlaların kontrolü, glokom ya da diyabette takip, yaralanma veya ameliyat sonrası iyileşmenin izlenmesi, yeni numaranın değerlendirilmesi",
+        "prep": "Önceki raporu ve damla reçetesini getirin, şu an kullandığınız gözlük ya da lenslerle gelin ve muayene günü damlayı hangi saatte damlattığınızı bilin; göz bebeği genişletilerek göz dibi muayenesi planlanıyorsa damladan sonra birkaç saat odaklanmak zorlaşır ve araç kullanmamak daha doğru olur",
+        "abnormal": "Hekim tedavinin aynı kalmasına, değiştirilmesine ya da ek tetkik istenmesine karar verir. Görme azaldıysa ya da ağrı, ışık çakmaları veya perde hissi ortaya çıktıysa planlanan tarihi beklemeden başvurmak gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Контролни долазак код офталмолога на којем се тренутно стање очију упоређује са налазом са претходног прегледа",
+        "how": "Љекар провјерава како се подноси прописана терапија, понавља потребна мјерења (оштрина вида, очни притисак, преглед на биомикроскопу) и упоређује их са ранијим записима; краћи је од првог прегледа, обично 10–20 минута",
+        "when": "У року који је одређен на претходном прегледу — контрола прописаних капи, праћење код глаукома или дијабетеса, провјера зарастања послије повреде или операције, процјена нове корекције вида",
+        "prep": "Понијети претходни налаз и рецепт за капи, доћи са наочарима или сочивима која сада носите и знати у које вријеме су капи укапане на дан прегледа; ако је планиран преглед очног дна са ширењем зјенице, послије капи је неколико сати теже изоштрити поглед и боље је не возити",
+        "abnormal": "Љекар одлучује да ли терапија остаје иста, мијења се или су потребна додатна испитивања. Ако је вид ослабио или се јаве бол, бљескови или замагљење попут завјесе, треба се јавити и прије заказаног рока"
+      }
+    }
+  },
+  {
+    "slug": "foreign-body-removal-eye",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Извлечение попавшей в глаз частицы с поверхности роговицы, конъюнктивы или из-под века",
+        "how": "В глаз закапывают обезболивающие капли, врач осматривает его на щелевой лампе, выворачивает веко и убирает частицу иглой, шпателем или магнитом, при металлическом осколке дополнительно снимает окружающее пятно окисления; занимает несколько минут, затем назначают капли или мазь",
+        "when": "Попадание окалины, металлической или древесной стружки, песка, стекла, ощущение царапания при моргании, слезотечение и светобоязнь после работы без защитных очков",
+        "prep": "Не тереть глаз и не пытаться вынуть частицу самостоятельно, снять контактные линзы, взять солнцезащитные очки и приехать не за рулём — после капель и повязки зрение несколько часов нечёткое",
+        "abnormal": "Резь и ощущение инородного тела могут сохраняться, пока заживает поверхность роговицы. Нарастающая боль, гнойное отделяемое, покраснение или снижение зрения означают, что к офтальмологу нужно вернуться, не дожидаясь контрольного визита"
+      },
+      "en": {
+        "what": "Removal of a particle lodged on the cornea, on the conjunctiva or under the eyelid",
+        "how": "Anaesthetic drops are instilled, the doctor examines the eye at the slit lamp, everts the eyelid and lifts the particle out with a needle, spatula or magnet, and with a metal fragment also removes the surrounding rust ring; it takes a few minutes, after which drops or ointment are prescribed",
+        "when": "Grinding sparks, metal or wood shavings, sand or glass entering the eye, a scratching sensation when blinking, watering and light sensitivity after working without protective glasses",
+        "prep": "Do not rub the eye or try to remove the particle yourself, take out contact lenses, bring sunglasses and do not come by car — vision stays blurred for several hours after the drops and the dressing",
+        "abnormal": "Stinging and a foreign-body sensation may persist while the corneal surface heals. Increasing pain, discharge, redness or reduced vision mean a return to the ophthalmologist without waiting for the scheduled check"
+      },
+      "sr": {
+        "what": "Vađenje čestice koja je dospjela na rožnjaču, na vežnjaču ili ispod kapka",
+        "how": "U oko se ukapaju anestetičke kapi, ljekar ga pregleda na biomikroskopu, izvrne kapak i skine česticu iglom, špatulom ili magnetom, a kod metalnog opiljka uklanja i okolni prsten korozije; traje nekoliko minuta, nakon čega se propisuju kapi ili mast",
+        "when": "Ulazak varnica sa brusilice, metalne ili drvene strugotine, pijeska ili stakla u oko, osjećaj grebanja pri treptanju, suzenje i osjetljivost na svjetlo poslije rada bez zaštitnih naočara",
+        "prep": "Ne trljati oko i ne pokušavati sami izvaditi česticu, skinuti kontaktna sočiva, ponijeti naočare za sunce i ne dolaziti automobilom — poslije kapi i zavoja vid je nekoliko sati zamućen",
+        "abnormal": "Peckanje i osjećaj stranog tijela mogu potrajati dok površina rožnjače zarasta. Bol koja se pojačava, gnojni iscjedak, crvenilo ili slabljenje vida znak su da se treba vratiti oftalmologu i prije zakazane kontrole"
+      },
+      "de": {
+        "what": "Entfernung eines Partikels von der Hornhaut, der Bindehaut oder unter dem Augenlid",
+        "how": "Es werden betäubende Tropfen gegeben, der Arzt untersucht das Auge an der Spaltlampe, klappt das Lid um und hebt das Partikel mit Nadel, Spatel oder Magnet heraus, bei einem Metallsplitter zusätzlich den umgebenden Rostring; das dauert wenige Minuten, danach werden Tropfen oder Salbe verordnet",
+        "when": "Schleiffunken, Metall- oder Holzspäne, Sand oder Glas im Auge, Kratzgefühl beim Blinzeln, Tränen und Lichtempfindlichkeit nach Arbeiten ohne Schutzbrille",
+        "prep": "Das Auge nicht reiben und das Partikel nicht selbst entfernen, Kontaktlinsen herausnehmen, eine Sonnenbrille mitbringen und nicht selbst fahren — nach Tropfen und Verband ist das Sehen für einige Stunden unscharf",
+        "abnormal": "Brennen und Fremdkörpergefühl können anhalten, solange die Hornhautoberfläche heilt. Zunehmende Schmerzen, eitriges Sekret, Rötung oder nachlassendes Sehen bedeuten, dass man den Augenarzt vor dem geplanten Kontrolltermin aufsucht"
+      },
+      "tr": {
+        "what": "Korneaya, konjonktivaya ya da göz kapağının altına kaçan parçacığın çıkarılması",
+        "how": "Göze uyuşturucu damla damlatılır, hekim gözü biyomikroskopla inceler, kapağı çevirerek parçacığı iğne, spatula veya mıknatısla alır, metal kıymık varsa çevresindeki pas halkasını da temizler; birkaç dakika sürer, ardından damla ya da pomat verilir",
+        "when": "Taşlama kıvılcımı, metal veya tahta talaşı, kum ya da camın göze kaçması, göz kırparken çizilme hissi, koruyucu gözlüksüz çalışmanın ardından sulanma ve ışıktan rahatsızlık",
+        "prep": "Gözü ovmayın ve parçacığı kendiniz çıkarmaya çalışmayın, kontakt lensleri çıkarın, güneş gözlüğü getirin ve araçla gelmeyin — damla ve kapama sonrası görme birkaç saat bulanık kalır",
+        "abnormal": "Kornea yüzeyi iyileşirken batma ve yabancı cisim hissi sürebilir. Artan ağrı, iltihaplı akıntı, kızarıklık ya da görmede azalma, kontrol randevusunu beklemeden göz hekimine dönmek gerektiğini gösterir"
+      },
+      "sr_cyrl": {
+        "what": "Вађење честице која је доспјела на рожњачу, на вежњачу или испод капка",
+        "how": "У око се укапају анестетичке капи, љекар га прегледа на биомикроскопу, изврне капак и скине честицу иглом, шпатулом или магнетом, а код металног опиљка уклања и околни прстен корозије; траје неколико минута, након чега се прописују капи или маст",
+        "when": "Улазак варница са брусилице, металне или дрвене струготине, пијеска или стакла у око, осјећај гребања при трептању, сузење и осјетљивост на свјетло послије рада без заштитних наочара",
+        "prep": "Не трљати око и не покушавати сами извадити честицу, скинути контактна сочива, понијети наочаре за сунце и не долазити аутомобилом — послије капи и завоја вид је неколико сати замућен",
+        "abnormal": "Пецкање и осјећај страног тијела могу потрајати док површина рожњаче зараста. Бол која се појачава, гнојни исцједак, црвенило или слабљење вида знак су да се треба вратити офталмологу и прије заказане контроле"
+      }
+    }
+  },
+  {
+    "slug": "intraocular-pressure-determination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Измерение давления жидкости внутри глаза — основной скрининговый показатель при наблюдении за глаукомой",
+        "how": "Бесконтактным тонометром, который направляет в глаз короткую струю воздуха, или контактным способом: после обезболивающих капель и окрашивания слёзной плёнки к роговице на секунду прикасается измерительная головка; на оба глаза уходит пара минут",
+        "when": "Профилактический осмотр в зрелом возрасте, глаукома у близких родственников, наблюдение и подбор капель при глаукоме, длительный приём гормональных препаратов, травма глаза, жалобы на радужные круги вокруг источников света",
+        "prep": "Снять контактные линзы, не затягивать воротник и галстук, не тереть глаза перед измерением; если используется контактный метод с каплями, несколько часов после них труднее фокусировать взгляд и за руль садиться нежелательно",
+        "abnormal": "Отклонение может быть связано с глаукомой или с повышением давления на фоне лекарств, но зависит также от толщины роговицы и времени суток, поэтому одно измерение ничего не решает. Результат трактует и дальнейшее наблюдение назначает офтальмолог"
+      },
+      "en": {
+        "what": "Measurement of the fluid pressure inside the eye — the main screening value in glaucoma monitoring",
+        "how": "Either with a non-contact tonometer that directs a short puff of air at the eye, or by the contact method: after anaesthetic drops and staining of the tear film, a measuring tip touches the cornea for a second; both eyes take a couple of minutes",
+        "when": "Preventive check-ups in later adulthood, glaucoma in close relatives, monitoring and adjusting drops in glaucoma, long-term steroid treatment, eye injury, complaints of haloes around lights",
+        "prep": "Take out contact lenses, avoid a tight collar or tie, and do not rub the eyes before the measurement; if the contact method with drops is used, focusing is harder for several hours afterwards and driving is best avoided",
+        "abnormal": "A deviation may be related to glaucoma or to a rise in pressure caused by medication, but it also depends on corneal thickness and the time of day, so a single reading decides nothing. The ophthalmologist interprets the result and sets the follow-up"
+      },
+      "sr": {
+        "what": "Mjerenje pritiska tečnosti unutar oka — osnovni skrining podatak u praćenju glaukoma",
+        "how": "Bezkontaktnim tonometrom koji u oko usmjerava kratak mlaz vazduha ili kontaktnim putem: poslije anestetičkih kapi i bojenja suznog filma mjerna glava na sekundu dodirne rožnjaču; za oba oka traje par minuta",
+        "when": "Preventivni pregled u zrelijim godinama, glaukom kod bliskih srodnika, praćenje i podešavanje kapi kod glaukoma, duža terapija kortikosteroidima, povreda oka, tegobe sa duginim krugovima oko izvora svjetlosti",
+        "prep": "Skinuti kontaktna sočiva, ne stezati okovratnik i kravatu, ne trljati oči prije mjerenja; ako se koristi kontaktna metoda sa kapima, nekoliko sati poslije njih teže je izoštriti pogled i bolje je ne voziti",
+        "abnormal": "Odstupanje može biti povezano sa glaukomom ili sa porastom pritiska zbog lijekova, ali zavisi i od debljine rožnjače i doba dana, pa jedno mjerenje ništa ne rješava. Nalaz tumači i dalje praćenje određuje oftalmolog"
+      },
+      "de": {
+        "what": "Messung des Flüssigkeitsdrucks im Auge — der zentrale Screeningwert bei der Glaukomüberwachung",
+        "how": "Entweder mit einem berührungslosen Tonometer, das einen kurzen Luftstoß auf das Auge richtet, oder im Kontaktverfahren: nach betäubenden Tropfen und Anfärben des Tränenfilms berührt ein Messköpfchen für eine Sekunde die Hornhaut; für beide Augen dauert es ein paar Minuten",
+        "when": "Vorsorge im höheren Erwachsenenalter, Glaukom bei nahen Verwandten, Überwachung und Anpassung der Tropfen beim Glaukom, längere Kortisontherapie, Augenverletzung, Beschwerden über Farbringe um Lichtquellen",
+        "prep": "Kontaktlinsen herausnehmen, Kragen und Krawatte nicht eng tragen, die Augen vor der Messung nicht reiben; wird das Kontaktverfahren mit Tropfen verwendet, fällt das Scharfstellen danach für einige Stunden schwerer und man sollte nicht selbst fahren",
+        "abnormal": "Eine Abweichung kann mit einem Glaukom oder mit einem medikamentenbedingten Druckanstieg zusammenhängen, hängt aber auch von Hornhautdicke und Tageszeit ab, sodass eine einzelne Messung nichts entscheidet. Die Beurteilung und das weitere Vorgehen legt der Augenarzt fest"
+      },
+      "tr": {
+        "what": "Göz içindeki sıvı basıncının ölçümü — glokom takibinde temel tarama değeri",
+        "how": "Göze kısa bir hava üfleyen temassız tonometreyle ya da temaslı yöntemle: uyuşturucu damla ve gözyaşı filminin boyanmasından sonra ölçüm başlığı korneaya bir saniye dokunur; iki göz için birkaç dakika sürer",
+        "when": "İleri yetişkinlikte koruyucu muayene, yakın akrabalarda glokom, glokomda takip ve damla ayarı, uzun süreli kortizon tedavisi, göz travması, ışık kaynakları çevresinde hale görme şikâyeti",
+        "prep": "Kontakt lensleri çıkarın, yaka ve kravatı sıkı bağlamayın, ölçümden önce gözleri ovmayın; damlalı temaslı yöntem kullanılırsa sonrasında birkaç saat odaklanmak zorlaşır ve araç kullanmamak daha doğru olur",
+        "abnormal": "Sapma glokomla ya da ilaçlara bağlı basınç artışıyla ilişkili olabilir, ancak kornea kalınlığına ve günün saatine de bağlıdır, bu yüzden tek ölçüm bir şey belirlemez. Sonucu göz hekimi yorumlar ve takibi o planlar"
+      },
+      "sr_cyrl": {
+        "what": "Мјерење притиска течности унутар ока — основни скрининг податак у праћењу глаукома",
+        "how": "Безконтактним тонометром који у око усмјерава кратак млаз ваздуха или контактним путем: послије анестетичких капи и бојења сузног филма мјерна глава на секунду додирне рожњачу; за оба ока траје пар минута",
+        "when": "Превентивни преглед у зрелијим годинама, глауком код блиских сродника, праћење и подешавање капи код глаукома, дужа терапија кортикостероидима, повреда ока, тегобе са дугиним круговима око извора свјетлости",
+        "prep": "Скинути контактна сочива, не стезати оковратник и кравату, не трљати очи прије мјерења; ако се користи контактна метода са капима, неколико сати послије њих теже је изоштрити поглед и боље је не возити",
+        "abnormal": "Одступање може бити повезано са глаукомом или са порастом притиска због лијекова, али зависи и од дебљине рожњаче и доба дана, па једно мјерење ништа не рјешава. Налаз тумачи и даље праћење одређује офталмолог"
+      }
+    }
+  },
+  {
+    "slug": "lacrimal-duct-irrigation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Проверка проходимости слёзоотводящих путей промыванием стерильным раствором, одновременно диагностическая и лечебная процедура",
+        "how": "После обезболивающих капель врач слегка расширяет слёзную точку зондом, вводит тупую канюлю и подаёт раствор, а пациента просят сказать, чувствует ли он жидкость в носу или горле; занимает несколько минут",
+        "when": "Постоянное слезотечение, слипание ресниц и отделяемое в углу глаза, подозрение на сужение или закупорку слёзного канала, воспаление слёзного мешка у младенцев по назначению офтальмолога, подготовка к операциям на глазу",
+        "prep": "Снять контактные линзы, не наносить макияж, взять салфетки, при приёме разжижающих кровь препаратов сказать об этом врачу; после капель несколько часов труднее фокусировать взгляд и за руль садиться нежелательно",
+        "abnormal": "Если раствор не проходит в нос или возвращается обратно через слёзную точку, это может быть связано с сужением либо непроходимостью канала. Нужно ли повторное промывание, зондирование или операция, решает офтальмолог"
+      },
+      "en": {
+        "what": "Checking the patency of the tear drainage pathway by flushing it with sterile solution, at once diagnostic and therapeutic",
+        "how": "After anaesthetic drops the doctor slightly widens the tear punctum with a probe, inserts a blunt cannula and pushes the solution through, asking the patient whether the fluid is felt in the nose or throat; it takes a few minutes",
+        "when": "Constant watering, sticky lashes and discharge in the corner of the eye, suspected narrowing or blockage of the tear duct, inflammation of the tear sac in infants as directed by an ophthalmologist, preparation for eye surgery",
+        "prep": "Take out contact lenses, wear no eye make-up, bring tissues, and tell the doctor if you take blood thinners; after the drops, focusing is harder for several hours and driving is best avoided",
+        "abnormal": "If the solution does not reach the nose or comes back through the punctum, this may be related to narrowing or blockage of the duct. Whether repeat irrigation, probing or surgery is needed is decided by the ophthalmologist"
+      },
+      "sr": {
+        "what": "Provjera prohodnosti suznih puteva ispiranjem sterilnim rastvorom, istovremeno dijagnostički i terapijski zahvat",
+        "how": "Poslije anestetičkih kapi ljekar sondom blago proširi suznu tačku, uvede tupu kanilu i propusti rastvor, a pacijenta pita da li osjeća tečnost u nosu ili grlu; traje nekoliko minuta",
+        "when": "Stalno suzenje, slijepljene trepavice i iscjedak u uglu oka, sumnja na suženje ili začepljenje suznog kanala, upala suzne kesice kod odojčadi po nalogu oftalmologa, priprema za operacije oka",
+        "prep": "Skinuti kontaktna sočiva, ne stavljati šminku, ponijeti maramice, a ako uzimate lijekove za razrjeđivanje krvi, reći to ljekaru; poslije kapi je nekoliko sati teže izoštriti pogled i bolje je ne voziti",
+        "abnormal": "Ako rastvor ne prolazi u nos ili se vraća kroz suznu tačku, to može biti povezano sa suženjem ili neprohodnošću kanala. Da li je potrebno ponovno ispiranje, sondiranje ili operacija, odlučuje oftalmolog"
+      },
+      "de": {
+        "what": "Prüfung der Durchgängigkeit der Tränenwege durch Spülung mit steriler Lösung, zugleich diagnostisch und therapeutisch",
+        "how": "Nach betäubenden Tropfen erweitert der Arzt das Tränenpünktchen leicht mit einer Sonde, führt eine stumpfe Kanüle ein und spült die Lösung durch, während der Patient sagt, ob er die Flüssigkeit in Nase oder Rachen spürt; das dauert wenige Minuten",
+        "when": "Ständiges Tränen, verklebte Wimpern und Sekret im Augenwinkel, Verdacht auf Verengung oder Verschluss des Tränenwegs, Entzündung des Tränensacks bei Säuglingen auf Anweisung des Augenarztes, Vorbereitung auf Augenoperationen",
+        "prep": "Kontaktlinsen herausnehmen, kein Augen-Make-up auftragen, Taschentücher mitbringen und die Einnahme blutverdünnender Medikamente angeben; nach den Tropfen fällt das Scharfstellen für einige Stunden schwerer und man sollte nicht selbst fahren",
+        "abnormal": "Erreicht die Lösung die Nase nicht oder kommt sie durch das Tränenpünktchen zurück, kann das mit einer Verengung oder einem Verschluss des Gangs zusammenhängen. Ob eine erneute Spülung, eine Sondierung oder eine Operation nötig ist, entscheidet der Augenarzt"
+      },
+      "tr": {
+        "what": "Gözyaşı yollarının açıklığının steril sıvıyla yıkanarak denetlenmesi, hem tanı hem tedavi amaçlı bir işlem",
+        "how": "Uyuşturucu damladan sonra hekim gözyaşı noktasını sondayla hafifçe genişletir, künt bir kanül yerleştirip sıvıyı verir ve hastaya sıvıyı burnunda ya da boğazında hissedip hissetmediğini sorar; birkaç dakika sürer",
+        "when": "Sürekli sulanma, kirpiklerin yapışması ve göz kenarında akıntı, gözyaşı kanalında darlık ya da tıkanıklık şüphesi, göz hekiminin isteğiyle bebeklerde gözyaşı kesesi iltihabı, göz ameliyatlarına hazırlık",
+        "prep": "Kontakt lensleri çıkarın, göz makyajı yapmayın, mendil getirin, kan sulandırıcı kullanıyorsanız hekime söyleyin; damladan sonra birkaç saat odaklanmak zorlaşır ve araç kullanmamak daha doğru olur",
+        "abnormal": "Sıvı buruna geçmiyor ya da gözyaşı noktasından geri geliyorsa bu kanalın darlığı veya tıkanıklığıyla ilişkili olabilir. Yıkamanın yinelenmesi, sondalama ya da ameliyat gerekip gerekmediğine göz hekimi karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Провјера проходности сузних путева испирањем стерилним раствором, истовремено дијагностички и терапијски захват",
+        "how": "Послије анестетичких капи љекар сондом благо прошири сузну тачку, уведе тупу канилу и пропусти раствор, а пацијента пита да ли осјећа течност у носу или грлу; траје неколико минута",
+        "when": "Стално сузење, слијепљене трепавице и исцједак у углу ока, сумња на сужење или зачепљење сузног канала, упала сузне кесице код одојчади по налогу офталмолога, припрема за операције ока",
+        "prep": "Скинути контактна сочива, не стављати шминку, понијети марамице, а ако узимате лијекове за разрјеђивање крви, рећи то љекару; послије капи је неколико сати теже изоштрити поглед и боље је не возити",
+        "abnormal": "Ако раствор не пролази у нос или се враћа кроз сузну тачку, то може бити повезано са сужењем или непроходношћу канала. Да ли је потребно поновно испирање, сондирање или операција, одлучује офталмолог"
+      }
+    }
+  },
+  {
+    "slug": "daily-intraocular-pressure-profile",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Серия измерений внутриглазного давления в разное время одних суток, показывающая размах его колебаний",
+        "how": "Давление измеряют несколько раз за день по расписанию клиники — обычно утром, днём и вечером, одним и тем же тонометром, а значения сводят в общий график; каждое измерение занимает пару минут, но визит растянут на весь день",
+        "when": "Подозрение на глаукому при нормальных разовых измерениях, прогрессирование изменений зрительного нерва на фоне лечения, проверка эффективности подобранных капель, жалобы, меняющиеся в течение дня",
+        "prep": "Спланировать день так, чтобы приходить в клинику по графику, продолжать назначенные капли и записать время каждого закапывания, снять контактные линзы; если применяется контактная тонометрия с каплями, несколько часов после них труднее фокусировать взгляд и за руль садиться нежелательно",
+        "abnormal": "Большой размах колебаний или стабильно высокие значения могут быть связаны с глаукомой или с недостаточным эффектом лечения. Профиль оценивают вместе с полем зрения и состоянием зрительного нерва, выводы делает офтальмолог"
+      },
+      "en": {
+        "what": "A series of intraocular pressure measurements taken at different times of the same day, showing how widely it fluctuates",
+        "how": "Pressure is measured several times during the day on the clinic's schedule — usually morning, midday and evening, with the same tonometer — and the values are plotted together; each measurement takes a couple of minutes, but the visit spans the whole day",
+        "when": "Suspected glaucoma despite normal single readings, progression of optic nerve changes during treatment, checking how well prescribed drops work, complaints that change through the day",
+        "prep": "Plan the day around the scheduled visits to the clinic, keep using the prescribed drops and note the time of each instillation, take out contact lenses; if contact tonometry with drops is used, focusing is harder for several hours afterwards and driving is best avoided",
+        "abnormal": "Wide swings or consistently high values may be related to glaucoma or to treatment that is not working well enough. The profile is assessed together with the visual field and the optic nerve, and the conclusion is drawn by the ophthalmologist"
+      },
+      "sr": {
+        "what": "Niz mjerenja očnog pritiska u različito doba istog dana, koji pokazuje koliko on oscilira",
+        "how": "Pritisak se mjeri više puta tokom dana po rasporedu ustanove — obično ujutru, u podne i uveče, istim tonometrom — a vrijednosti se unose u zajednički grafikon; svako mjerenje traje par minuta, ali je posjeta rastegnuta na cio dan",
+        "when": "Sumnja na glaukom uprkos urednim pojedinačnim mjerenjima, napredovanje promjena na očnom živcu tokom terapije, provjera djelovanja propisanih kapi, tegobe koje se mijenjaju tokom dana",
+        "prep": "Isplanirati dan tako da se dolazi po rasporedu, nastaviti sa propisanim kapima i zapisati vrijeme svakog ukapavanja, skinuti kontaktna sočiva; ako se koristi kontaktna tonometrija sa kapima, nekoliko sati poslije njih teže je izoštriti pogled i bolje je ne voziti",
+        "abnormal": "Velike oscilacije ili stalno visoke vrijednosti mogu biti povezane sa glaukomom ili sa nedovoljnim djelovanjem terapije. Profil se procjenjuje zajedno sa vidnim poljem i stanjem očnog živca, a zaključak donosi oftalmolog"
+      },
+      "de": {
+        "what": "Eine Reihe von Augeninnendruckmessungen zu verschiedenen Zeiten desselben Tages, die die Schwankungsbreite zeigt",
+        "how": "Der Druck wird nach dem Zeitplan der Praxis mehrfach am Tag gemessen — meist morgens, mittags und abends mit demselben Tonometer — und die Werte werden gemeinsam aufgetragen; jede Messung dauert ein paar Minuten, der Termin zieht sich aber über den ganzen Tag",
+        "when": "Glaukomverdacht trotz unauffälliger Einzelmessungen, Fortschreiten von Sehnervveränderungen unter Therapie, Überprüfung der Wirkung verordneter Tropfen, Beschwerden, die sich im Tagesverlauf ändern",
+        "prep": "Den Tag nach den Terminen in der Praxis planen, die verordneten Tropfen weiter anwenden und die Uhrzeit jeder Anwendung notieren, Kontaktlinsen herausnehmen; wird eine Kontakttonometrie mit Tropfen eingesetzt, fällt das Scharfstellen danach für einige Stunden schwerer und man sollte nicht selbst fahren",
+        "abnormal": "Große Schwankungen oder durchgehend hohe Werte können mit einem Glaukom oder mit einer nicht ausreichend wirksamen Therapie zusammenhängen. Das Profil wird zusammen mit Gesichtsfeld und Sehnervbefund beurteilt, die Schlussfolgerung zieht der Augenarzt"
+      },
+      "tr": {
+        "what": "Aynı günün farklı saatlerinde yapılan, göz içi basıncının ne kadar dalgalandığını gösteren ölçüm dizisi",
+        "how": "Basınç gün içinde kliniğin planına göre birkaç kez — genelde sabah, öğlen ve akşam, aynı tonometreyle — ölçülür ve değerler ortak bir grafiğe işlenir; her ölçüm birkaç dakika sürer ama ziyaret güne yayılır",
+        "when": "Tek ölçümler normalken glokom şüphesi, tedavi altında görme siniri değişikliklerinin ilerlemesi, verilen damlaların etkisinin denetlenmesi, gün içinde değişen şikâyetler",
+        "prep": "Günü klinikteki randevu saatlerine göre planlayın, verilen damlaları kullanmayı sürdürüp her damlatma saatini not edin, kontakt lensleri çıkarın; damlalı temaslı tonometri uygulanırsa sonrasında birkaç saat odaklanmak zorlaşır ve araç kullanmamak daha doğru olur",
+        "abnormal": "Geniş dalgalanma ya da sürekli yüksek değerler glokomla veya tedavinin yeterince etkili olmamasıyla ilişkili olabilir. Profil görme alanı ve görme siniri bulgularıyla birlikte değerlendirilir, sonucu göz hekimi çıkarır"
+      },
+      "sr_cyrl": {
+        "what": "Низ мјерења очног притиска у различито доба истог дана, који показује колико он осцилира",
+        "how": "Притисак се мјери више пута током дана по распореду установе — обично ујутру, у подне и увече, истим тонометром — а вриједности се уносе у заједнички графикон; свако мјерење траје пар минута, али је посјета растегнута на цио дан",
+        "when": "Сумња на глауком упркос уредним појединачним мјерењима, напредовање промјена на очном живцу током терапије, провјера дјеловања прописаних капи, тегобе које се мијењају током дана",
+        "prep": "Испланирати дан тако да се долази по распореду, наставити са прописаним капима и записати вријеме сваког укапавања, скинути контактна сочива; ако се користи контактна тонометрија са капима, неколико сати послије њих теже је изоштрити поглед и боље је не возити",
+        "abnormal": "Велике осцилације или стално високе вриједности могу бити повезане са глаукомом или са недовољним дјеловањем терапије. Профил се процјењује заједно са видним пољем и стањем очног живца, а закључак доноси офталмолог"
+      }
+    }
+  },
+  {
+    "slug": "dry-eye-test-schirmer",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Оценка того, сколько слезы вырабатывает глаз, с помощью бумажной полоски, впитывающей слёзную жидкость",
+        "how": "За нижнее веко каждого глаза закладывают тонкую полоску фильтровальной бумаги, пациент сидит с прикрытыми глазами, затем измеряют длину увлажнённого участка; занимает около пяти минут, может выполняться с обезболивающими каплями или без них",
+        "when": "Сухость, жжение и ощущение песка в глазах, покраснение к концу дня, непереносимость контактных линз, долгая работа за экраном, обследование перед рефракционной операцией, сухость глаз при аутоиммунных заболеваниях",
+        "prep": "Не закапывать никаких капель в день исследования и снять линзы заранее — точный срок уточните в клинике, не наносить макияж; если тест делают с обезболивающими каплями, несколько часов после них труднее фокусировать взгляд и за руль садиться нежелательно",
+        "abnormal": "Слабое увлажнение полоски может быть связано с синдромом сухого глаза, действием некоторых лекарств, гормональными изменениями или системными заболеваниями, а избыточное — с рефлекторным слезотечением от раздражения. Итог оценивает офтальмолог вместе с осмотром глазной поверхности"
+      },
+      "en": {
+        "what": "Assessment of how much tear fluid the eye produces, using a paper strip that absorbs it",
+        "how": "A thin strip of filter paper is placed under the lower lid of each eye, the patient sits with the eyes gently closed, and the length of the moistened section is then measured; it takes about five minutes and may be done with or without anaesthetic drops",
+        "when": "Dryness, burning and a gritty sensation, redness by the end of the day, intolerance of contact lenses, long hours at a screen, work-up before refractive surgery, dry eyes in autoimmune conditions",
+        "prep": "Use no eye drops on the day of the test and remove lenses in advance — ask the clinic how long before, and wear no eye make-up; if the test is done with anaesthetic drops, focusing is harder for several hours afterwards and driving is best avoided",
+        "abnormal": "Poor wetting of the strip may be related to dry eye disease, the effect of certain medicines, hormonal changes or systemic conditions, while excessive wetting may reflect reflex tearing from irritation. The ophthalmologist interprets it together with the examination of the ocular surface"
+      },
+      "sr": {
+        "what": "Procjena koliko suza oko stvara, pomoću papirne trake koja upija suznu tečnost",
+        "how": "Ispod donjeg kapka svakog oka postavlja se tanka traka filter papira, pacijent sjedi blago zatvorenih očiju, a zatim se mjeri dužina navlaženog dijela; traje oko pet minuta i može se raditi sa anestetičkim kapima ili bez njih",
+        "when": "Suvoća, peckanje i osjećaj pijeska u očima, crvenilo pred kraj dana, nepodnošenje kontaktnih sočiva, dugo rada za ekranom, obrada prije refraktivne operacije, suve oči kod autoimunih bolesti",
+        "prep": "Na dan testa ne ukapavati nikakve kapi i sočiva skinuti ranije — tačan rok provjeriti u ustanovi, ne stavljati šminku; ako se test radi sa anestetičkim kapima, nekoliko sati poslije njih teže je izoštriti pogled i bolje je ne voziti",
+        "abnormal": "Slabo vlaženje trake može biti povezano sa sindromom suvog oka, djelovanjem pojedinih lijekova, hormonskim promjenama ili sistemskim bolestima, a prekomjerno sa refleksnim suzenjem zbog nadraženosti. Nalaz tumači oftalmolog zajedno sa pregledom površine oka"
+      },
+      "de": {
+        "what": "Beurteilung, wie viel Tränenflüssigkeit das Auge bildet, mit einem saugfähigen Papierstreifen",
+        "how": "Ein schmaler Filterpapierstreifen wird unter das Unterlid beider Augen gelegt, der Patient sitzt mit locker geschlossenen Augen, danach wird die Länge des befeuchteten Abschnitts gemessen; es dauert etwa fünf Minuten und kann mit oder ohne betäubende Tropfen erfolgen",
+        "when": "Trockenheit, Brennen und Sandkorngefühl, Rötung gegen Abend, Unverträglichkeit von Kontaktlinsen, langes Arbeiten am Bildschirm, Abklärung vor refraktiver Chirurgie, trockene Augen bei Autoimmunerkrankungen",
+        "prep": "Am Testtag keine Augentropfen anwenden und Linsen rechtzeitig herausnehmen — den genauen Abstand in der Praxis erfragen, kein Augen-Make-up auftragen; wird der Test mit betäubenden Tropfen durchgeführt, fällt das Scharfstellen danach für einige Stunden schwerer und man sollte nicht selbst fahren",
+        "abnormal": "Eine geringe Befeuchtung des Streifens kann mit einem trockenen Auge, der Wirkung bestimmter Medikamente, hormonellen Veränderungen oder Systemerkrankungen zusammenhängen, eine übermäßige mit reflektorischem Tränen bei Reizung. Die Einordnung nimmt der Augenarzt zusammen mit der Untersuchung der Augenoberfläche vor"
+      },
+      "tr": {
+        "what": "Gözün ne kadar gözyaşı ürettiğinin, sıvıyı emen bir kâğıt şeritle değerlendirilmesi",
+        "how": "Her iki gözün alt kapağının altına ince bir filtre kâğıdı şeridi yerleştirilir, hasta gözleri hafifçe kapalı oturur, ardından ıslanan bölümün uzunluğu ölçülür; yaklaşık beş dakika sürer, uyuşturucu damlayla ya da damlasız yapılabilir",
+        "when": "Kuruluk, yanma ve gözde kum hissi, gün sonuna doğru kızarıklık, kontakt lense tahammülsüzlük, ekran başında uzun çalışma, refraktif cerrahi öncesi değerlendirme, otoimmün hastalıklarda göz kuruluğu",
+        "prep": "Test günü hiçbir damla kullanmayın ve lensleri önceden çıkarın — süreyi klinikten öğrenin, göz makyajı yapmayın; test uyuşturucu damlayla yapılırsa sonrasında birkaç saat odaklanmak zorlaşır ve araç kullanmamak daha doğru olur",
+        "abnormal": "Şeridin az ıslanması kuru göz hastalığıyla, bazı ilaçların etkisiyle, hormonal değişikliklerle ya da sistemik hastalıklarla ilişkili olabilir; fazla ıslanma ise tahrişe bağlı refleks sulanmayı yansıtabilir. Sonucu göz hekimi, göz yüzeyi muayenesiyle birlikte yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Процјена колико суза око ствара, помоћу папирне траке која упија сузну течност",
+        "how": "Испод доњег капка сваког ока поставља се танка трака филтер папира, пацијент сједи благо затворених очију, а затим се мјери дужина навлаженог дијела; траје око пет минута и може се радити са анестетичким капима или без њих",
+        "when": "Сувоћа, пецкање и осјећај пијеска у очима, црвенило пред крај дана, неподношење контактних сочива, дуго рада за екраном, обрада прије рефрактивне операције, суве очи код аутоимуних болести",
+        "prep": "На дан теста не укапавати никакве капи и сочива скинути раније — тачан рок провјерити у установи, не стављати шминку; ако се тест ради са анестетичким капима, неколико сати послије њих теже је изоштрити поглед и боље је не возити",
+        "abnormal": "Слабо влажење траке може бити повезано са синдромом сувог ока, дјеловањем појединих лијекова, хормонским промјенама или системским болестима, а прекомјерно са рефлексним сузењем због надражености. Налаз тумачи офталмолог заједно са прегледом површине ока"
+      }
+    }
+  },
+  {
+    "slug": "fundus-photography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Цветной снимок сетчатки, диска зрительного нерва и сосудов глазного дна, который остаётся в карте для сравнения в будущем",
+        "how": "Пациент упирается лбом и подбородком в фундус-камеру и смотрит на метку, аппарат делает несколько кадров с яркой вспышкой; сама съёмка занимает несколько минут, часто перед ней закапывают расширяющие зрачок капли",
+        "when": "Наблюдение при диабете и гипертонии, глаукома, возрастные изменения и дистрофии сетчатки, родинки и другие образования глазного дна, документирование состояния перед лечением и для сравнения в динамике",
+        "prep": "Взять солнцезащитные очки и предыдущие снимки, если они есть; при расширении зрачка после капель несколько часов труднее фокусировать взгляд, свет кажется ярким, и за руль садиться нежелательно — лучше приехать с сопровождающим",
+        "abnormal": "Изменения сосудов, кровоизлияния, отёк в центральной зоне или изменения диска зрительного нерва могут быть связаны с диабетической и гипертонической ретинопатией, глаукомой или возрастными изменениями сетчатки. Снимок описывает и дальнейшую тактику определяет офтальмолог"
+      },
+      "en": {
+        "what": "A colour image of the retina, optic disc and fundus vessels that stays in the record for future comparison",
+        "how": "The patient rests the forehead and chin on the fundus camera and looks at a target while the device takes several frames with a bright flash; the imaging itself takes a few minutes and is often preceded by pupil-dilating drops",
+        "when": "Monitoring in diabetes and hypertension, glaucoma, age-related and other retinal changes, naevi and other fundus lesions, documenting the state before treatment and for comparison over time",
+        "prep": "Bring sunglasses and any earlier images; if the pupil is dilated, focusing is harder for several hours after the drops, light feels bright, and driving is best avoided — coming with someone else is preferable",
+        "abnormal": "Vessel changes, haemorrhages, swelling in the central zone or changes of the optic disc may be related to diabetic and hypertensive retinopathy, glaucoma or age-related retinal changes. The ophthalmologist reports the image and decides the next steps"
+      },
+      "sr": {
+        "what": "Snimak u boji mrežnjače, glave očnog živca i krvnih sudova očnog dna, koji ostaje u kartonu radi kasnijeg poređenja",
+        "how": "Pacijent nasloni čelo i bradu na fundus kameru i gleda u oznaku dok aparat pravi nekoliko snimaka sa jakim bljeskom; samo snimanje traje nekoliko minuta, a često mu prethodi ukapavanje kapi koje šire zjenicu",
+        "when": "Praćenje kod dijabetesa i povišenog pritiska, glaukom, starosne i druge promjene na mrežnjači, mladeži i druge tvorevine očnog dna, dokumentovanje stanja prije terapije i radi poređenja kroz vrijeme",
+        "prep": "Ponijeti naočare za sunce i ranije snimke ako ih ima; kod širenja zjenice je poslije kapi nekoliko sati teže izoštriti pogled, svjetlo se čini jakim i bolje je ne voziti — poželjno je doći sa pratiocem",
+        "abnormal": "Promjene krvnih sudova, krvarenja, otok u centralnoj zoni ili promjene glave očnog živca mogu biti povezane sa dijabetesnom i hipertenzivnom retinopatijom, glaukomom ili starosnim promjenama mrežnjače. Snimak opisuje i dalje korake određuje oftalmolog"
+      },
+      "de": {
+        "what": "Eine Farbaufnahme von Netzhaut, Sehnervenkopf und Fundusgefäßen, die zum späteren Vergleich in der Akte bleibt",
+        "how": "Der Patient legt Stirn und Kinn an die Funduskamera und blickt auf eine Marke, während das Gerät mehrere Aufnahmen mit hellem Blitz macht; die Aufnahme selbst dauert wenige Minuten, oft werden vorher pupillenerweiternde Tropfen gegeben",
+        "when": "Überwachung bei Diabetes und Bluthochdruck, Glaukom, altersbedingte und andere Netzhautveränderungen, Muttermale und andere Fundusbefunde, Dokumentation vor einer Behandlung und für den Verlaufsvergleich",
+        "prep": "Sonnenbrille und frühere Aufnahmen mitbringen; bei erweiterter Pupille fällt das Scharfstellen nach den Tropfen für einige Stunden schwerer, Licht wirkt hell und man sollte nicht selbst fahren — besser in Begleitung kommen",
+        "abnormal": "Gefäßveränderungen, Blutungen, eine Schwellung in der zentralen Zone oder Veränderungen des Sehnervenkopfes können mit diabetischer und hypertensiver Retinopathie, einem Glaukom oder altersbedingten Netzhautveränderungen zusammenhängen. Die Befundung und das weitere Vorgehen übernimmt der Augenarzt"
+      },
+      "tr": {
+        "what": "Retinanın, optik diskin ve göz dibi damarlarının, ileride karşılaştırmak üzere dosyada kalan renkli görüntüsü",
+        "how": "Hasta alnını ve çenesini fundus kamerasına dayar ve bir işarete bakarken cihaz parlak flaşla birkaç kare çeker; çekim birkaç dakika sürer, öncesinde sıklıkla göz bebeğini genişleten damla damlatılır",
+        "when": "Diyabet ve yüksek tansiyonda takip, glokom, yaşa bağlı ve diğer retina değişiklikleri, göz dibindeki benler ve başka oluşumlar, tedavi öncesi durumun ve zaman içindeki karşılaştırmanın belgelenmesi",
+        "prep": "Güneş gözlüğü ve varsa önceki görüntüleri getirin; göz bebeği genişletilirse damladan sonra birkaç saat odaklanmak zorlaşır, ışık parlak gelir ve araç kullanmamak daha doğru olur — yanınızda biriyle gelmek yerinde olur",
+        "abnormal": "Damar değişiklikleri, kanamalar, merkezi bölgede şişlik ya da optik diskteki değişiklikler diyabetik ve hipertansif retinopatiyle, glokomla veya yaşa bağlı retina değişiklikleriyle ilişkili olabilir. Görüntüyü göz hekimi raporlar ve sonraki adımlara o karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Снимак у боји мрежњаче, главе очног живца и крвних судова очног дна, који остаје у картону ради каснијег поређења",
+        "how": "Пацијент наслони чело и браду на фундус камеру и гледа у ознаку док апарат прави неколико снимака са јаким бљеском; само снимање траје неколико минута, а често му претходи укапавање капи које шире зјеницу",
+        "when": "Праћење код дијабетеса и повишеног притиска, глауком, старосне и друге промјене на мрежњачи, младежи и друге творевине очног дна, документовање стања прије терапије и ради поређења кроз вријеме",
+        "prep": "Понијети наочаре за сунце и раније снимке ако их има; код ширења зјенице је послије капи неколико сати теже изоштрити поглед, свјетло се чини јаким и боље је не возити — пожељно је доћи са пратиоцем",
+        "abnormal": "Промјене крвних судова, крварења, оток у централној зони или промјене главе очног живца могу бити повезане са дијабетесном и хипертензивном ретинопатијом, глаукомом или старосним промјенама мрежњаче. Снимак описује и даље кораке одређује офталмолог"
+      }
+    }
+  },
+  {
+    "slug": "orthopedic-ultrasound-single-joint",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Прицельное ультразвуковое исследование одного конкретного сустава по направлению ортопеда",
+        "how": "Врач наносит гель на область сустава и ведёт датчик по нему в нескольких плоскостях, просит согнуть и разогнуть конечность и при необходимости сравнивает картину со здоровой стороной; на один сустав уходит 10–20 минут",
+        "when": "Боль и отёк в плече, локте, колене или голеностопе, щелчки и блокировка сустава, подозрение на скопление жидкости или воспаление сумки, контроль сустава после травмы либо внутрисуставной инъекции",
+        "prep": "Подготовка не нужна; надеть одежду, которую легко подвернуть или снять с нужного сустава, взять направление и предыдущие снимки, при отёке не наносить кремы на кожу в этой зоне",
+        "abnormal": "Выпот в полости сустава, утолщение синовиальной оболочки, изменения сухожилий и сумок могут быть связаны с воспалением, перегрузкой или последствиями травмы. Сопоставляет находки с жалобами и решает, нужны ли рентген, МРТ или пункция, врач-ортопед"
+      },
+      "en": {
+        "what": "A targeted ultrasound examination of one specific joint, referred by an orthopaedist",
+        "how": "The doctor applies gel over the joint and moves the probe across it in several planes, asks you to bend and straighten the limb and, if needed, compares the picture with the healthy side; one joint takes 10–20 minutes",
+        "when": "Pain and swelling in the shoulder, elbow, knee or ankle, clicking and locking of the joint, suspected fluid collection or bursitis, follow-up of a joint after injury or an intra-articular injection",
+        "prep": "No preparation needed; wear clothing that is easy to roll up or remove over the joint in question, bring the referral and any earlier images, and do not apply creams to the skin there if it is swollen",
+        "abnormal": "Effusion in the joint cavity, thickening of the synovial lining, changes in tendons and bursae may be related to inflammation, overload or the aftermath of an injury. The orthopaedist matches the findings to the symptoms and decides whether X-ray, MRI or aspiration is needed"
+      },
+      "sr": {
+        "what": "Ciljani ultrazvučni pregled jednog određenog zgloba po uputu ortopeda",
+        "how": "Ljekar nanese gel na područje zgloba i vodi sondu po njemu u više ravni, traži da savijete i ispravite ekstremitet i po potrebi upoređuje sliku sa zdravom stranom; za jedan zglob treba 10–20 minuta",
+        "when": "Bol i otok u ramenu, laktu, koljenu ili skočnom zglobu, škljocanje i blokade zgloba, sumnja na nakupljanje tečnosti ili upalu burze, kontrola zgloba poslije povrede ili injekcije u zglob",
+        "prep": "Priprema nije potrebna; obući odjeću koju je lako zavrnuti ili skinuti sa datog zgloba, ponijeti uput i ranije snimke, a kod otoka ne mazati kremu na kožu tog područja",
+        "abnormal": "Izliv u zglobu, zadebljanje sinovijalne ovojnice, promjene tetiva i burzi mogu biti povezani sa upalom, preopterećenjem ili posljedicama povrede. Nalaz sa tegobama upoređuje i o potrebi rendgena, magnetne rezonance ili punkcije odlučuje ljekar ortoped"
+      },
+      "de": {
+        "what": "Gezielte Ultraschalluntersuchung eines bestimmten Gelenks auf Überweisung des Orthopäden",
+        "how": "Der Arzt trägt Gel über dem Gelenk auf und führt den Schallkopf in mehreren Ebenen darüber, lässt die Gliedmaße beugen und strecken und vergleicht bei Bedarf mit der gesunden Seite; ein Gelenk dauert 10–20 Minuten",
+        "when": "Schmerz und Schwellung in Schulter, Ellenbogen, Knie oder Sprunggelenk, Knacken und Blockaden, Verdacht auf Flüssigkeitsansammlung oder Schleimbeutelentzündung, Kontrolle nach Verletzung oder Gelenkinjektion",
+        "prep": "Keine Vorbereitung nötig; Kleidung tragen, die sich über dem betroffenen Gelenk leicht hochschieben oder ausziehen lässt, Überweisung und frühere Aufnahmen mitbringen und bei Schwellung keine Cremes auf die Haut auftragen",
+        "abnormal": "Ein Gelenkerguss, eine verdickte Gelenkinnenhaut sowie Veränderungen an Sehnen und Schleimbeuteln können mit Entzündung, Überlastung oder Verletzungsfolgen zusammenhängen. Der Orthopäde gleicht die Befunde mit den Beschwerden ab und entscheidet über Röntgen, MRT oder Punktion"
+      },
+      "tr": {
+        "what": "Ortopedistin yönlendirmesiyle tek bir eklemin hedefe yönelik ultrason incelemesi",
+        "how": "Hekim eklem bölgesine jel sürer ve probu birkaç düzlemde gezdirir, uzvu büküp açmanızı ister ve gerekirse görüntüyü sağlam tarafla karşılaştırır; tek eklem için 10–20 dakika yeter",
+        "when": "Omuz, dirsek, diz ya da ayak bileğinde ağrı ve şişlik, eklemde takılma ve kilitlenme, sıvı toplanması veya bursa iltihabı şüphesi, travma ya da eklem içi enjeksiyon sonrası takip",
+        "prep": "Hazırlık gerekmez; ilgili eklem üzerinden kolayca sıyrılan ya da çıkarılan giysi giyin, sevk kâğıdını ve önceki görüntüleri getirin, şişlik varsa o bölgeye krem sürmeyin",
+        "abnormal": "Eklem boşluğunda sıvı, sinovyal zarın kalınlaşması, tendon ve bursa değişiklikleri iltihapla, aşırı yüklenmeyle ya da travma sonrasıyla ilişkili olabilir. Bulguları şikâyetlerle karşılaştıran ve röntgen, MR veya ponksiyon gerekip gerekmediğine karar veren ortopedi uzmanıdır"
+      },
+      "sr_cyrl": {
+        "what": "Циљани ултразвучни преглед једног одређеног зглоба по упуту ортопеда",
+        "how": "Љекар нанесе гел на подручје зглоба и води сонду по њему у више равни, тражи да савијете и исправите екстремитет и по потреби упоређује слику са здравом страном; за један зглоб треба 10–20 минута",
+        "when": "Бол и оток у рамену, лакту, кољену или скочном зглобу, шкљоцање и блокаде зглоба, сумња на накупљање течности или упалу бурзе, контрола зглоба послије повреде или ињекције у зглоб",
+        "prep": "Припрема није потребна; обући одјећу коју је лако заврнути или скинути са датог зглоба, понијети упут и раније снимке, а код отока не мазати крему на кожу тог подручја",
+        "abnormal": "Излив у зглобу, задебљање синовијалне овојнице, промјене тетива и бурзи могу бити повезани са упалом, преоптерећењем или посљедицама повреде. Налаз са тегобама упоређује и о потреби рендгена, магнетне резонанце или пункције одлучује љекар ортопед"
+      }
+    }
+  },
+  {
+    "slug": "immobilization",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обездвиживание повреждённой конечности или сустава подходящим фиксатором — гипсом, лонгетой, ортезом или бандажом",
+        "how": "Врач подбирает вид фиксации по локализации и характеру повреждения, накладывает её поверх мягкой подкладки, проверяет, не сдавлены ли сосуды и нервы, и объясняет, как ухаживать за повязкой и какую нагрузку давать; занимает 15–40 минут",
+        "when": "Переломы и трещины, вывихи после вправления, растяжения и разрывы связок, повреждения сухожилий, состояние после операций на костях и суставах, фиксация на время транспортировки",
+        "prep": "Снять с повреждённой конечности кольца, часы и браслеты, прийти в свободной одежде с широким рукавом или штаниной, взять снимки — как правило, рентген нужен и до наложения, и после него",
+        "abnormal": "Небольшой дискомфорт в первые дни привычен, а вот нарастающая боль, отёк, онемение, побледнение или посинение пальцев означают, что фиксатор давит и к врачу надо обратиться срочно. Срок ношения и момент снятия определяет ортопед по контрольным снимкам"
+      },
+      "en": {
+        "what": "Immobilising an injured limb or joint with a suitable device — a cast, a splint, an orthosis or a brace",
+        "how": "The doctor chooses the type of fixation according to the site and nature of the injury, applies it over a soft padding, checks that vessels and nerves are not compressed, and explains how to care for it and how much load is allowed; it takes 15–40 minutes",
+        "when": "Fractures and cracks, dislocations after reduction, sprains and ligament tears, tendon injuries, the period after bone and joint surgery, fixation for transport",
+        "prep": "Remove rings, watches and bracelets from the injured limb, come in loose clothing with a wide sleeve or trouser leg, and bring your images — an X-ray is usually needed both before application and after it",
+        "abnormal": "Mild discomfort in the first days is usual, but increasing pain, swelling, numbness, pale or bluish fingers mean the device is pressing and a doctor should be seen urgently. How long it is worn and when it comes off is decided by the orthopaedist from the follow-up images"
+      },
+      "sr": {
+        "what": "Obezbjeđivanje mirovanja povrijeđenog ekstremiteta ili zgloba odgovarajućim sredstvom — gipsom, longetom, ortozom ili steznikom",
+        "how": "Ljekar bira vrstu imobilizacije prema mjestu i vrsti povrede, postavlja je preko meke podloge, provjerava da krvni sudovi i živci nisu pritisnuti i objašnjava kako se održava zavoj i koliko se smije opterećivati; traje 15–40 minuta",
+        "when": "Prelomi i pukotine, iščašenja nakon namještanja, istegnuća i rupture ligamenata, povrede tetiva, period poslije operacija kostiju i zglobova, fiksacija za vrijeme prevoza",
+        "prep": "Skinuti prstenje, sat i narukvice sa povrijeđenog ekstremiteta, doći u širokoj odjeći sa širokim rukavom ili nogavicom i ponijeti snimke — rendgen je po pravilu potreban i prije postavljanja i poslije njega",
+        "abnormal": "Blaga nelagoda prvih dana je uobičajena, ali bol koja se pojačava, otok, utrnulost, blijedi ili modri prsti znače da sredstvo pritiska i treba se hitno javiti ljekaru. Koliko se nosi i kada se skida, određuje ortoped na osnovu kontrolnih snimaka"
+      },
+      "de": {
+        "what": "Ruhigstellung einer verletzten Gliedmaße oder eines Gelenks mit einem passenden Hilfsmittel — Gips, Schiene, Orthese oder Bandage",
+        "how": "Der Arzt wählt die Art der Fixierung nach Ort und Art der Verletzung, legt sie über eine weiche Polsterung an, prüft, dass Gefäße und Nerven nicht eingeengt sind, und erklärt die Pflege und die erlaubte Belastung; das dauert 15–40 Minuten",
+        "when": "Brüche und Fissuren, Luxationen nach der Einrenkung, Zerrungen und Bandrisse, Sehnenverletzungen, die Zeit nach Knochen- und Gelenkoperationen, Fixierung für den Transport",
+        "prep": "Ringe, Uhr und Armbänder von der verletzten Gliedmaße ablegen, in weiter Kleidung mit breitem Ärmel oder Hosenbein kommen und die Aufnahmen mitbringen — ein Röntgenbild ist in der Regel vor und nach dem Anlegen nötig",
+        "abnormal": "Leichtes Unbehagen in den ersten Tagen ist üblich, doch zunehmender Schmerz, Schwellung, Taubheit, blasse oder bläuliche Finger bedeuten, dass das Hilfsmittel drückt und dringend ein Arzt aufzusuchen ist. Tragedauer und Abnahmezeitpunkt legt der Orthopäde anhand der Kontrollaufnahmen fest"
+      },
+      "tr": {
+        "what": "Yaralı uzvun ya da eklemin uygun bir gereçle — alçı, atel, ortez veya breys — hareketsiz kılınması",
+        "how": "Hekim yaralanmanın yerine ve türüne göre tespit biçimini seçer, yumuşak bir ped üzerine uygular, damar ve sinirlerin sıkışmadığını denetler ve bakımını ve ne kadar yük verilebileceğini anlatır; 15–40 dakika sürer",
+        "when": "Kırıklar ve çatlaklar, redüksiyon sonrası çıkıklar, burkulma ve bağ yırtıkları, tendon yaralanmaları, kemik ve eklem ameliyatlarından sonraki dönem, nakil sırasında tespit",
+        "prep": "Yaralı uzuvdaki yüzük, saat ve bilezikleri çıkarın, kolu ya da paçası geniş bol giysiyle gelin ve görüntülerinizi getirin — genellikle uygulama öncesi ve sonrası röntgen gerekir",
+        "abnormal": "İlk günlerde hafif rahatsızlık olağandır, ancak artan ağrı, şişlik, uyuşma, soluk ya da morumsu parmaklar gerecin bastırdığını gösterir ve ivedilikle hekime başvurmayı gerektirir. Ne kadar takılacağına ve ne zaman çıkacağına ortopedist kontrol görüntülerine bakarak karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Обезбјеђивање мировања повријеђеног екстремитета или зглоба одговарајућим средством — гипсом, лонгетом, ортозом или стезником",
+        "how": "Љекар бира врсту имобилизације према мјесту и врсти повреде, поставља је преко меке подлоге, провјерава да крвни судови и живци нису притиснути и објашњава како се одржава завој и колико се смије оптерећивати; траје 15–40 минута",
+        "when": "Преломи и пукотине, ишчашења након намјештања, истегнућа и руптуре лигамената, повреде тетива, период послије операција костију и зглобова, фиксација за вријеме превоза",
+        "prep": "Скинути прстење, сат и наруквице са повријеђеног екстремитета, доћи у широкој одјећи са широким рукавом или ногавицом и понијети снимке — рендген је по правилу потребан и прије постављања и послије њега",
+        "abnormal": "Блага нелагода првих дана је уобичајена, али бол која се појачава, оток, утрнулост, блиједи или модри прсти значе да средство притиска и треба се хитно јавити љекару. Колико се носи и када се скида, одређује ортопед на основу контролних снимака"
+      }
+    }
+  },
+  {
+    "slug": "pediatric-hip-ultrasound",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ультразвуковая оценка формы и положения тазобедренных суставов у младенцев, пока кости ещё не окостенели",
+        "how": "Ребёнка укладывают на бок, датчик с гелем прикладывают снаружи бедра и делают стандартные срезы, по которым измеряют форму вертлужной впадины и покрытие головки бедра; занимает 10–15 минут, безболезненно и без облучения",
+        "when": "Скрининг в первые месяцы жизни, тазовое предлежание или многоплодная беременность, дисплазия у близких родственников, асимметрия складок и разная длина ножек, ограничение разведения бёдер, контроль в ходе лечения",
+        "prep": "Покормить и перепеленать ребёнка перед визитом, чтобы он был спокоен, взять пелёнку, запасной подгузник и одежду, которую легко снять; специальной подготовки процедура не требует",
+        "abnormal": "Отклонение формы или положения сустава может быть связано с незрелостью либо дисплазией разной степени, и у части детей картина выравнивается сама по мере роста. Нужны ли наблюдение, отводящая шина или консультация детского ортопеда, решает врач"
+      },
+      "en": {
+        "what": "Ultrasound assessment of the shape and position of the hip joints in infants, while the bones are still largely cartilage",
+        "how": "The baby is placed on the side, a gel-covered probe is held against the outer hip and standard sections are obtained, from which the shape of the socket and the coverage of the femoral head are measured; it takes 10–15 minutes, is painless and uses no radiation",
+        "when": "Screening in the first months of life, breech presentation or multiple pregnancy, hip dysplasia in close relatives, asymmetric skin folds and unequal leg length, limited hip abduction, monitoring during treatment",
+        "prep": "Feed and change the baby before the visit so that they are calm, bring a blanket, a spare nappy and clothes that are easy to remove; the examination itself needs no special preparation",
+        "abnormal": "A deviation in the shape or position of the joint may be related to immaturity or to dysplasia of varying degree, and in some children the picture settles on its own with growth. Whether observation, an abduction brace or a paediatric orthopaedist is needed is decided by the doctor"
+      },
+      "sr": {
+        "what": "Ultrazvučna procjena oblika i položaja kukova kod odojčadi, dok su kosti još pretežno hrskavičave",
+        "how": "Dijete se položi na bok, sonda sa gelom se prisloni sa spoljne strane kuka i naprave se standardni presjeci po kojima se mjere oblik čašice i pokrivenost glave butne kosti; traje 10–15 minuta, bezbolno je i bez zračenja",
+        "when": "Skrining u prvim mjesecima života, karlična prezentacija ili višeplodna trudnoća, displazija kod bliskih srodnika, nesimetrični nabori i različita dužina nogica, ograničeno razmicanje kukova, praćenje tokom liječenja",
+        "prep": "Nahraniti i previti dijete prije dolaska da bude mirno, ponijeti pelenu, rezervnu pelenu za jednokratnu upotrebu i odjeću koja se lako skida; sam pregled ne traži posebnu pripremu",
+        "abnormal": "Odstupanje u obliku ili položaju zgloba može biti povezano sa nezrelošću ili displazijom različitog stepena, a kod dijela djece se slika sama uredi sa rastom. Da li su potrebni praćenje, gaćice za razmicanje ili pregled dječjeg ortopeda, odlučuje ljekar"
+      },
+      "de": {
+        "what": "Ultraschallbeurteilung von Form und Stellung der Hüftgelenke bei Säuglingen, solange die Knochen noch weitgehend knorpelig sind",
+        "how": "Das Kind wird auf die Seite gelegt, der Schallkopf mit Gel wird außen an die Hüfte gehalten und es werden Standardschnitte angefertigt, aus denen Pfannenform und Überdachung des Hüftkopfes bestimmt werden; es dauert 10–15 Minuten, ist schmerzfrei und ohne Strahlung",
+        "when": "Screening in den ersten Lebensmonaten, Beckenendlage oder Mehrlingsschwangerschaft, Hüftdysplasie bei nahen Verwandten, asymmetrische Falten und ungleiche Beinlänge, eingeschränktes Abspreizen, Verlaufskontrolle unter Behandlung",
+        "prep": "Das Kind vor dem Termin füttern und wickeln, damit es ruhig ist, eine Decke, eine Ersatzwindel und leicht auszuziehende Kleidung mitbringen; die Untersuchung selbst erfordert keine besondere Vorbereitung",
+        "abnormal": "Eine Abweichung in Form oder Stellung des Gelenks kann mit Unreife oder einer Dysplasie unterschiedlichen Grades zusammenhängen, und bei einem Teil der Kinder normalisiert sich der Befund mit dem Wachstum von selbst. Ob Beobachtung, eine Spreizhilfe oder ein Kinderorthopäde nötig sind, entscheidet der Arzt"
+      },
+      "tr": {
+        "what": "Kemikler hâlâ büyük ölçüde kıkırdakken bebeklerde kalça eklemlerinin biçim ve konumunun ultrasonla değerlendirilmesi",
+        "how": "Bebek yan yatırılır, jelli prob kalçanın dış yüzüne dayanır ve soket biçiminin ve femur başının örtülme oranının ölçüldüğü standart kesitler alınır; 10–15 dakika sürer, ağrısızdır ve ışın içermez",
+        "when": "Yaşamın ilk aylarında tarama, makat geliş ya da çoğul gebelik, yakın akrabalarda kalça displazisi, asimetrik cilt kıvrımları ve bacak boyu farkı, kalçanın açılmasında kısıtlılık, tedavi sırasında takip",
+        "prep": "Sakin olması için bebeği ziyaret öncesi besleyip altını değiştirin, örtü, yedek bez ve kolay çıkan giysi getirin; incelemenin kendisi özel hazırlık istemez",
+        "abnormal": "Eklemin biçim ya da konumundaki sapma olgunlaşmamışlıkla veya değişik derecede displaziyle ilişkili olabilir; bazı çocuklarda görünüm büyümeyle kendiliğinden düzelir. Takip, açıcı cihaz ya da çocuk ortopedisti gerekip gerekmediğine hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Ултразвучна процјена облика и положаја кукова код одојчади, док су кости још претежно хрскавичаве",
+        "how": "Дијете се положи на бок, сонда са гелом се прислони са спољне стране кука и направе се стандардни пресјеци по којима се мјере облик чашице и покривеност главе бутне кости; траје 10–15 минута, безболно је и без зрачења",
+        "when": "Скрининг у првим мјесецима живота, карлична презентација или вишеплодна трудноћа, дисплазија код блиских сродника, несиметрични набори и различита дужина ногица, ограничено размицање кукова, праћење током лијечења",
+        "prep": "Нахранити и превити дијете прије доласка да буде мирно, понијети пелену, резервну пелену за једнократну употребу и одјећу која се лако скида; сам преглед не тражи посебну припрему",
+        "abnormal": "Одступање у облику или положају зглоба може бити повезано са незрелошћу или дисплазијом различитог степена, а код дијела дјеце се слика сама уреди са растом. Да ли су потребни праћење, гаћице за размицање или преглед дјечјег ортопеда, одлучује љекар"
+      }
+    }
+  },
+  {
+    "slug": "wound-dressing",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обработка раны со сменой повязки: очищение, оценка заживления и наложение нового покрытия",
+        "how": "Старую повязку снимают, рану промывают антисептиком, при необходимости убирают налёт и нежизнеспособные ткани, накладывают подходящее покрытие и фиксируют бинтом или пластырем; занимает 10–20 минут",
+        "when": "Послеоперационные раны, порезы, ссадины и ожоги, раны после вскрытия гнойника, длительно не заживающие и хронические раны, уход за раной между визитами к оперировавшему врачу",
+        "prep": "Подготовка не нужна; не мочить повязку перед визитом и не снимать её самостоятельно, взять выписку или направление, если операцию делали в другом месте, и сказать медсестре об аллергии на пластырь или антисептики",
+        "abnormal": "Обычно от перевязки к перевязке отделяемого становится меньше, а края раны стягиваются. Усиление боли, покраснение вокруг раны, неприятный запах, обильное промокание повязки или повышение температуры — повод показаться врачу, не дожидаясь следующей назначенной перевязки"
+      },
+      "en": {
+        "what": "Wound care with a change of dressing: cleaning, assessment of healing and application of a new covering",
+        "how": "The old dressing is removed, the wound is cleaned with antiseptic, any slough or non-viable tissue is taken away if needed, a suitable covering is applied and secured with a bandage or tape; it takes 10–20 minutes",
+        "when": "Surgical wounds, cuts, grazes and burns, wounds after an abscess has been opened, slow-healing and chronic wounds, wound care between visits to the operating surgeon",
+        "prep": "No preparation needed; do not wet the dressing before the visit or remove it yourself, bring the discharge letter or referral if the surgery was done elsewhere, and tell the nurse about any allergy to tape or antiseptics",
+        "abnormal": "Normally the discharge lessens from one dressing to the next and the wound edges draw together. More pain, redness around the wound, an unpleasant smell, a dressing soaking through or a fever are reasons to see a doctor without waiting for the next scheduled change"
+      },
+      "sr": {
+        "what": "Njega rane sa promjenom zavoja: čišćenje, procjena zarastanja i postavljanje nove obloge",
+        "how": "Stari zavoj se skida, rana se ispira antiseptikom, po potrebi se uklanjaju naslage i neživo tkivo, postavlja se odgovarajuća obloga i učvršćuje zavojem ili flasterom; traje 10–20 minuta",
+        "when": "Hirurške rane, posjekotine, ogrebotine i opekotine, rane poslije otvaranja gnojne upale, sporo zarastajuće i hronične rane, njega rane između kontrola kod hirurga koji je operisao",
+        "prep": "Priprema nije potrebna; ne kvasiti zavoj prije dolaska i ne skidati ga sami, ponijeti otpusnu listu ili uput ako je operacija rađena drugdje i reći sestri za alergiju na flaster ili antiseptike",
+        "abnormal": "Obično iscjedak od previjanja do previjanja postaje slabiji, a ivice rane se približavaju. Jača bol, crvenilo oko rane, neprijatan miris, obilno natapanje zavoja ili povišena temperatura razlog su da se javite ljekaru i prije sljedećeg zakazanog previjanja"
+      },
+      "de": {
+        "what": "Wundversorgung mit Verbandwechsel: Reinigung, Beurteilung der Heilung und Anlegen einer neuen Auflage",
+        "how": "Der alte Verband wird abgenommen, die Wunde mit Antiseptikum gereinigt, bei Bedarf werden Beläge und abgestorbenes Gewebe entfernt, dann wird eine passende Auflage aufgebracht und mit Binde oder Pflaster fixiert; das dauert 10–20 Minuten",
+        "when": "Operationswunden, Schnitt- und Schürfwunden, Verbrennungen, Wunden nach Eröffnung eines Abszesses, schlecht heilende und chronische Wunden, Wundpflege zwischen den Terminen beim operierenden Arzt",
+        "prep": "Keine Vorbereitung nötig; den Verband vor dem Termin nicht nass machen und nicht selbst abnehmen, Entlassungsbrief oder Überweisung mitbringen, falls anderswo operiert wurde, und Allergien gegen Pflaster oder Antiseptika angeben",
+        "abnormal": "Üblicherweise nimmt die Sekretion von Wechsel zu Wechsel ab und die Wundränder nähern sich an. Stärkere Schmerzen, Rötung um die Wunde, unangenehmer Geruch, ein durchnässter Verband oder Fieber sind Anlass, den Arzt vor dem nächsten geplanten Wechsel aufzusuchen"
+      },
+      "tr": {
+        "what": "Pansuman değişimiyle yara bakımı: temizleme, iyileşmenin değerlendirilmesi ve yeni örtünün konması",
+        "how": "Eski pansuman alınır, yara antiseptikle temizlenir, gerekirse ölü doku ve birikintiler uzaklaştırılır, uygun örtü konur ve sargı ya da flasterle tespit edilir; 10–20 dakika sürer",
+        "when": "Ameliyat yaraları, kesik, sıyrık ve yanıklar, apse boşaltıldıktan sonraki yaralar, geç iyileşen ve kronik yaralar, ameliyatı yapan hekimin kontrolleri arasındaki yara bakımı",
+        "prep": "Hazırlık gerekmez; pansumanı gelmeden önce ıslatmayın ve kendiniz açmayın, ameliyat başka yerde yapıldıysa epikrizi ya da sevki getirin ve flaster veya antiseptik alerjinizi hemşireye söyleyin",
+        "abnormal": "Genelde akıntı her pansumanda azalır ve yara kenarları birbirine yaklaşır. Ağrının artması, yara çevresinde kızarıklık, kötü koku, pansumanın bol ıslanması ya da ateş, bir sonraki randevuyu beklemeden hekime görünmeyi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Њега ране са промјеном завоја: чишћење, процјена зарастања и постављање нове облоге",
+        "how": "Стари завој се скида, рана се испира антисептиком, по потреби се уклањају наслаге и неживо ткиво, поставља се одговарајућа облога и учвршћује завојем или фластером; траје 10–20 минута",
+        "when": "Хируршке ране, посјекотине, огреботине и опекотине, ране послије отварања гнојне упале, споро зарастајуће и хроничне ране, њега ране између контрола код хирурга који је оперисао",
+        "prep": "Припрема није потребна; не квасити завој прије доласка и не скидати га сами, понијети отпусну листу или упут ако је операција рађена другдје и рећи сестри за алергију на фластер или антисептике",
+        "abnormal": "Обично исцједак од превијања до превијања постаје слабији, а ивице ране се приближавају. Јача бол, црвенило око ране, непријатан мирис, обилно натапање завоја или повишена температура разлог су да се јавите љекару и прије сљедећег заказаног превијања"
+      }
+    }
+  },
+  {
+    "slug": "first-orthopedist-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Первое обращение к ортопеду, на котором собирают историю проблемы и составляют план обследования",
+        "how": "Врач выясняет, когда и при каких обстоятельствах появились боль или травма, осматривает проблемную область и сравнивает её со здоровой стороной, оценивает походку, объём движений и стабильность сустава специальными пробами, разбирает принесённые снимки; занимает 20–40 минут",
+        "when": "Свежая травма, впервые появившаяся боль в суставе или спине, хромота и щелчки, деформация или отёк, онемение в конечности, нарушения осанки и стоп у детей, второе мнение перед предложенной операцией",
+        "prep": "Принести все имеющиеся снимки и диски (рентген, УЗИ, МРТ, КТ) и выписки, список принимаемых препаратов, надеть одежду, которую легко снять с нужной области, а при жалобах на стопы и колени взять обувь и стельки, которые носите",
+        "abnormal": "По итогам приёма врач формирует план: дообследование, консервативное лечение, фиксация, физиотерапия или направление к оперирующему специалисту. Сроки контрольного визита он называет сразу"
+      },
+      "en": {
+        "what": "A first visit to an orthopaedist, at which the history of the problem is taken and a plan of investigation is drawn up",
+        "how": "The doctor establishes when and how the pain or injury began, examines the affected area and compares it with the healthy side, assesses gait, range of motion and joint stability with specific tests, and reviews the images you bring; it takes 20–40 minutes",
+        "when": "A recent injury, joint or back pain appearing for the first time, limping and clicking, deformity or swelling, numbness in a limb, posture and foot problems in children, a second opinion on surgery that has been proposed",
+        "prep": "Bring all available images and discs (X-ray, ultrasound, MRI, CT) and reports, a list of the medicines you take, wear clothing that is easy to remove over the area in question, and for foot or knee complaints bring the shoes and insoles you use",
+        "abnormal": "After the visit the doctor sets out a plan: further tests, conservative treatment, immobilisation, physiotherapy or referral to a surgeon. The date of the follow-up visit is given straight away"
+      },
+      "sr": {
+        "what": "Prvi dolazak kod ortopeda, na kojem se uzima istorija tegobe i pravi plan ispitivanja",
+        "how": "Ljekar utvrđuje kada su i kako nastali bol ili povreda, pregleda zahvaćeno područje i upoređuje ga sa zdravom stranom, procjenjuje hod, obim pokreta i stabilnost zgloba posebnim testovima i pregleda donesene snimke; traje 20–40 minuta",
+        "when": "Svježa povreda, bol u zglobu ili leđima koja se javlja prvi put, šepanje i škljocanje, deformitet ili otok, utrnulost u ekstremitetu, poremećaji držanja i stopala kod djece, drugo mišljenje o predloženoj operaciji",
+        "prep": "Ponijeti sve postojeće snimke i diskove (rendgen, ultrazvuk, magnetna rezonanca, skener) i nalaze, spisak lijekova koje uzimate, obući odjeću koja se lako skida sa datog područja, a kod tegoba sa stopalima i koljenima ponijeti obuću i uloške koje nosite",
+        "abnormal": "Poslije pregleda ljekar pravi plan: dodatna obrada, konzervativno liječenje, imobilizacija, fizikalna terapija ili upućivanje hirurgu. Rok kontrolnog pregleda saopštava odmah"
+      },
+      "de": {
+        "what": "Erster Besuch beim Orthopäden, bei dem die Vorgeschichte erhoben und ein Untersuchungsplan aufgestellt wird",
+        "how": "Der Arzt klärt, wann und wodurch Schmerz oder Verletzung entstanden sind, untersucht den betroffenen Bereich und vergleicht ihn mit der gesunden Seite, beurteilt Gangbild, Beweglichkeit und Gelenkstabilität mit gezielten Tests und sichtet die mitgebrachten Aufnahmen; das dauert 20–40 Minuten",
+        "when": "Frische Verletzung, erstmals auftretende Gelenk- oder Rückenschmerzen, Hinken und Knacken, Fehlstellung oder Schwellung, Taubheitsgefühl in einer Gliedmaße, Haltungs- und Fußprobleme bei Kindern, Zweitmeinung zu einer vorgeschlagenen Operation",
+        "prep": "Alle vorhandenen Aufnahmen und CDs (Röntgen, Ultraschall, MRT, CT) und Befunde mitbringen, eine Liste der eingenommenen Medikamente, Kleidung tragen, die sich über der betroffenen Stelle leicht ausziehen lässt, und bei Fuß- oder Kniebeschwerden die getragenen Schuhe und Einlagen mitnehmen",
+        "abnormal": "Nach dem Termin legt der Arzt das weitere Vorgehen fest: zusätzliche Abklärung, konservative Behandlung, Ruhigstellung, Physiotherapie oder Überweisung an einen Operateur. Den Termin für die Kontrolle nennt er sofort"
+      },
+      "tr": {
+        "what": "Sorunun öyküsünün alındığı ve tetkik planının çıkarıldığı ilk ortopedi başvurusu",
+        "how": "Hekim ağrının ya da yaralanmanın ne zaman ve nasıl başladığını saptar, ilgili bölgeyi muayene edip sağlam tarafla karşılaştırır, yürüyüşü, hareket açıklığını ve eklem sağlamlığını özel testlerle değerlendirir ve getirdiğiniz görüntüleri inceler; 20–40 dakika sürer",
+        "when": "Yeni bir yaralanma, ilk kez ortaya çıkan eklem ya da sırt ağrısı, topallama ve takılma sesi, şekil bozukluğu veya şişlik, uzuvda uyuşma, çocuklarda duruş ve ayak sorunları, önerilen ameliyat için ikinci görüş",
+        "prep": "Elinizdeki tüm görüntüleri ve diskleri (röntgen, ultrason, MR, tomografi) ve raporları, kullandığınız ilaçların listesini getirin, ilgili bölgeden kolay çıkan giysi giyin, ayak ve diz şikâyetlerinde kullandığınız ayakkabı ve tabanlıkları da yanınıza alın",
+        "abnormal": "Muayene sonunda hekim planı çizer: ek tetkik, cerrahi dışı tedavi, tespit, fizik tedavi ya da cerraha yönlendirme. Kontrol randevusunun süresini de aynı görüşmede söyler"
+      },
+      "sr_cyrl": {
+        "what": "Први долазак код ортопеда, на којем се узима историја тегобе и прави план испитивања",
+        "how": "Љекар утврђује када су и како настали бол или повреда, прегледа захваћено подручје и упоређује га са здравом страном, процјењује ход, обим покрета и стабилност зглоба посебним тестовима и прегледа донесене снимке; траје 20–40 минута",
+        "when": "Свјежа повреда, бол у зглобу или леђима која се јавља први пут, шепање и шкљоцање, деформитет или оток, утрнулост у екстремитету, поремећаји држања и стопала код дјеце, друго мишљење о предложеној операцији",
+        "prep": "Понијети све постојеће снимке и дискове (рендген, ултразвук, магнетна резонанца, скенер) и налазе, списак лијекова које узимате, обући одјећу која се лако скида са датог подручја, а код тегоба са стопалима и кољенима понијети обућу и улошке које носите",
+        "abnormal": "Послије прегледа љекар прави план: додатна обрада, конзервативно лијечење, имобилизација, физикална терапија или упућивање хирургу. Рок контролног прегледа саопштава одмах"
+      }
+    }
+  },
+  {
+    "slug": "follow-up-orthopedist-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Контрольный приём ортопеда, на котором оценивают, как идёт восстановление по сравнению с прошлым визитом",
+        "how": "Врач сравнивает боль, отёк и объём движений с предыдущими записями, смотрит контрольные снимки, при необходимости снимает или меняет фиксатор, проверяет опору на конечность и разрешает следующий уровень нагрузки; приём короче первичного, обычно 10–20 минут",
+        "when": "В срок, назначенный после травмы или операции, — оценка сращения перелома, снятие гипса или ортеза, контроль после физиотерапии или внутрисуставной инъекции, продление или изменение назначений, допуск к работе и спорту",
+        "prep": "Принести контрольные снимки и предыдущее заключение, прийти в фиксаторе или ортезе, если его носите, взять костыли и обувь, в которой ходите, и отметить, какие движения стали легче, а какие по-прежнему болезненны",
+        "abnormal": "Если боль не уменьшается или объём движений не растёт, врач меняет тактику или назначает дообследование, а не просто продлевает прежнее. Резкое усиление боли, отёк или потеря опоры до назначенного срока — повод прийти раньше"
+      },
+      "en": {
+        "what": "A follow-up visit to the orthopaedist at which recovery is assessed against the previous visit",
+        "how": "The doctor compares pain, swelling and range of motion with the earlier records, reviews the control images, removes or changes the fixation if needed, checks weight-bearing and allows the next level of load; shorter than a first visit, usually 10–20 minutes",
+        "when": "At the interval set after an injury or operation — assessing fracture healing, removing a cast or orthosis, checking after physiotherapy or an intra-articular injection, extending or changing the prescription, clearance for work and sport",
+        "prep": "Bring the control images and the previous report, come wearing the cast or orthosis if you use one, bring your crutches and the shoes you walk in, and note which movements have become easier and which still hurt",
+        "abnormal": "If pain is not easing or movement is not improving, the doctor changes the approach or orders further tests rather than simply extending the previous plan. A sharp increase in pain, swelling or loss of weight-bearing before the scheduled date is a reason to come earlier"
+      },
+      "sr": {
+        "what": "Kontrolni pregled ortopeda na kojem se oporavak procjenjuje u odnosu na prethodni dolazak",
+        "how": "Ljekar upoređuje bol, otok i obim pokreta sa ranijim zapisima, gleda kontrolne snimke, po potrebi skida ili mijenja imobilizaciju, provjerava oslanjanje na ekstremitet i dozvoljava sljedeći nivo opterećenja; kraći je od prvog pregleda, obično 10–20 minuta",
+        "when": "U roku određenom poslije povrede ili operacije — procjena srastanja preloma, skidanje gipsa ili ortoze, kontrola nakon fizikalne terapije ili injekcije u zglob, produžetak ili izmjena terapije, dozvola za rad i sport",
+        "prep": "Ponijeti kontrolne snimke i prethodni nalaz, doći sa gipsom ili ortozom ako je nosite, ponijeti štake i obuću u kojoj hodate i zapamtiti koji su pokreti postali lakši a koji i dalje bole",
+        "abnormal": "Ako bol ne popušta ili se pokretljivost ne popravlja, ljekar mijenja pristup ili traži dodatnu obradu, a ne produžava prosto ranije rješenje. Nagli porast bola, otok ili gubitak oslonca prije zakazanog roka razlog su da se dođe ranije"
+      },
+      "de": {
+        "what": "Kontrolltermin beim Orthopäden, bei dem der Heilungsverlauf gegenüber dem letzten Besuch beurteilt wird",
+        "how": "Der Arzt vergleicht Schmerz, Schwellung und Beweglichkeit mit den früheren Aufzeichnungen, sichtet die Kontrollaufnahmen, nimmt die Fixierung bei Bedarf ab oder wechselt sie, prüft die Belastbarkeit und gibt die nächste Belastungsstufe frei; kürzer als der Ersttermin, meist 10–20 Minuten",
+        "when": "Zu dem nach Verletzung oder Operation festgelegten Termin — Beurteilung der Bruchheilung, Abnahme von Gips oder Orthese, Kontrolle nach Physiotherapie oder Gelenkinjektion, Verlängerung oder Änderung der Verordnung, Freigabe für Arbeit und Sport",
+        "prep": "Kontrollaufnahmen und den vorherigen Befund mitbringen, mit Gips oder Orthese kommen, falls getragen, Gehstützen und die üblichen Schuhe mitnehmen und sich merken, welche Bewegungen leichter fallen und welche noch wehtun",
+        "abnormal": "Lassen die Schmerzen nicht nach oder bessert sich die Beweglichkeit nicht, ändert der Arzt das Vorgehen oder veranlasst weitere Abklärung, statt das Bisherige einfach zu verlängern. Stark zunehmender Schmerz, Schwellung oder Verlust der Belastbarkeit vor dem Termin sind Grund, früher zu kommen"
+      },
+      "tr": {
+        "what": "İyileşmenin önceki ziyaretle karşılaştırıldığı ortopedi kontrol muayenesi",
+        "how": "Hekim ağrıyı, şişliği ve hareket açıklığını önceki kayıtlarla karşılaştırır, kontrol görüntülerine bakar, gerekirse tespiti çıkarır ya da değiştirir, uzva basmayı denetler ve bir sonraki yük düzeyine izin verir; ilk muayeneden kısadır, genelde 10–20 dakika",
+        "when": "Yaralanma ya da ameliyat sonrası belirlenen süre sonunda — kırık kaynamasının değerlendirilmesi, alçı veya ortezin çıkarılması, fizik tedavi ya da eklem içi enjeksiyon sonrası kontrol, tedavinin uzatılması veya değiştirilmesi, işe ve spora dönüş onayı",
+        "prep": "Kontrol görüntülerini ve önceki raporu getirin, alçı ya da ortez kullanıyorsanız onunla gelin, koltuk değneklerinizi ve yürüdüğünüz ayakkabıyı yanınıza alın, hangi hareketlerin kolaylaştığını ve hangilerinin hâlâ ağrıdığını not edin",
+        "abnormal": "Ağrı azalmıyor ya da hareket açıklığı artmıyorsa hekim öncekini uzatmak yerine yaklaşımı değiştirir veya ek tetkik ister. Randevu tarihinden önce ağrının hızla artması, şişlik ya da basamama, daha erken gelmeyi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Контролни преглед ортопеда на којем се опоравак процјењује у односу на претходни долазак",
+        "how": "Љекар упоређује бол, оток и обим покрета са ранијим записима, гледа контролне снимке, по потреби скида или мијења имобилизацију, провјерава ослањање на екстремитет и дозвољава сљедећи ниво оптерећења; краћи је од првог прегледа, обично 10–20 минута",
+        "when": "У року одређеном послије повреде или операције — процјена срастања прелома, скидање гипса или ортозе, контрола након физикалне терапије или ињекције у зглоб, продужетак или измјена терапије, дозвола за рад и спорт",
+        "prep": "Понијети контролне снимке и претходни налаз, доћи са гипсом или ортозом ако је носите, понијети штаке и обућу у којој ходате и запамтити који су покрети постали лакши а који и даље боле",
+        "abnormal": "Ако бол не попушта или се покретљивост не поправља, љекар мијења приступ или тражи додатну обраду, а не продужава просто раније рјешење. Нагли пораст бола, оток или губитак ослонца прије заказаног рока разлог су да се дође раније"
+      }
+    }
+  },
+  {
+    "slug": "chalazion-removal-local-anesthesia",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Небольшая операция на веке: вскрытие и вычищение закупоренной сальной железы, образовавшей плотный узелок",
+        "how": "Веко обезболивают инъекцией анестетика и фиксируют зажимом, делают короткий разрез чаще со стороны слизистой, содержимое и капсулу выскабливают кюреткой, затем накладывают мазь и давящую повязку на несколько часов; занимает 15–30 минут, у маленьких детей может потребоваться общий наркоз — решает врач",
+        "when": "Плотный безболезненный узелок на веке, который не рассосался после тёплых компрессов и назначенного лечения, повторно появляющийся халязион, узелок, давящий на роговицу и искажающий зрение, заметный косметический дефект",
+        "prep": "Сказать врачу о приёме разжижающих кровь препаратов и об аллергии на анестетики, не наносить макияж и снять контактные линзы, прийти с сопровождающим — глаз закрывают повязкой и за руль садиться нельзя",
+        "abnormal": "Отёк, синяк на веке и лёгкая болезненность в первые дни ожидаемы и постепенно уходят. Нарастающая боль, гнойное отделяемое, повышение температуры, ухудшение зрения или новый узелок на том же месте — повод показаться офтальмологу"
+      },
+      "en": {
+        "what": "A minor eyelid operation: opening and clearing a blocked oil gland that has formed a firm lump",
+        "how": "The lid is numbed with an injection and held in a clamp, a short incision is made usually on the inner side, the contents and the capsule are scraped out with a curette, and ointment and a pressure dressing are applied for a few hours; it takes 15–30 minutes, and in small children general anaesthesia may be needed — the doctor decides",
+        "when": "A firm painless lump on the lid that has not resolved with warm compresses and prescribed treatment, a chalazion that keeps coming back, a lump pressing on the cornea and distorting vision, a noticeable cosmetic problem",
+        "prep": "Tell the doctor about blood thinners and any allergy to anaesthetics, wear no make-up and take out contact lenses, and come with someone else — the eye is covered with a dressing and you must not drive",
+        "abnormal": "Swelling, bruising of the lid and mild soreness in the first days are expected and settle gradually. Increasing pain, discharge, fever, worsening vision or a new lump in the same place are reasons to see the ophthalmologist"
+      },
+      "sr": {
+        "what": "Mali zahvat na kapku: otvaranje i čišćenje začepljene lojne žlijezde koja je stvorila čvrst čvorić",
+        "how": "Kapak se obezboli injekcijom anestetika i pridrži klemom, napravi se kratak rez najčešće sa unutrašnje strane, sadržaj i čaura se izostružu kiretom, a zatim se stavljaju mast i kompresivni zavoj na nekoliko sati; traje 15–30 minuta, a kod male djece može biti potrebna opšta anestezija — odluku donosi ljekar",
+        "when": "Čvrst bezbolan čvorić na kapku koji se nije povukao uz tople obloge i propisanu terapiju, halacion koji se ponavlja, čvorić koji pritiska rožnjaču i izobličuje vid, uočljiv estetski nedostatak",
+        "prep": "Reći ljekaru za lijekove za razrjeđivanje krvi i alergiju na anestetike, ne stavljati šminku i skinuti kontaktna sočiva, doći sa pratiocem — oko se pokriva zavojem i ne smije se voziti",
+        "abnormal": "Otok, modrica na kapku i blaga osjetljivost prvih dana su očekivani i postepeno prolaze. Bol koja se pojačava, gnojni iscjedak, povišena temperatura, slabljenje vida ili nov čvorić na istom mjestu razlog su da se javite oftalmologu"
+      },
+      "de": {
+        "what": "Kleiner Eingriff am Augenlid: Eröffnen und Ausräumen einer verstopften Talgdrüse, die einen derben Knoten gebildet hat",
+        "how": "Das Lid wird mit einer Injektion betäubt und mit einer Klemme gehalten, es wird ein kurzer Schnitt meist auf der Innenseite gesetzt, Inhalt und Kapsel werden mit einer Kürette ausgeschabt, danach kommen Salbe und für einige Stunden ein Druckverband; es dauert 15–30 Minuten, bei kleinen Kindern kann eine Vollnarkose nötig sein — das entscheidet der Arzt",
+        "when": "Ein derber schmerzloser Knoten am Lid, der auf warme Umschläge und die verordnete Behandlung nicht zurückgegangen ist, ein wiederkehrendes Chalazion, ein Knoten, der auf die Hornhaut drückt und das Sehen verzerrt, eine deutliche kosmetische Beeinträchtigung",
+        "prep": "Blutverdünner und Allergien gegen Betäubungsmittel angeben, kein Make-up auftragen und Kontaktlinsen herausnehmen, in Begleitung kommen — das Auge wird verbunden und man darf nicht selbst fahren",
+        "abnormal": "Schwellung, ein Bluterguss am Lid und leichte Empfindlichkeit in den ersten Tagen sind zu erwarten und klingen allmählich ab. Zunehmende Schmerzen, eitriges Sekret, Fieber, nachlassendes Sehen oder ein neuer Knoten an derselben Stelle sind Anlass, den Augenarzt aufzusuchen"
+      },
+      "tr": {
+        "what": "Göz kapağında küçük bir cerrahi işlem: sert bir kitle oluşturmuş tıkalı yağ bezinin açılıp temizlenmesi",
+        "how": "Kapak enjeksiyonla uyuşturulup klempe alınır, çoğunlukla iç yüzden kısa bir kesi yapılır, içerik ve kapsül küretle kazınır, ardından pomat ve birkaç saatlik baskılı kapama uygulanır; 15–30 dakika sürer, küçük çocuklarda genel anestezi gerekebilir — buna hekim karar verir",
+        "when": "Sıcak kompres ve verilen tedaviyle gerilemeyen sert ve ağrısız kapak kitlesi, yineleyen şalazyon, korneaya bastırıp görmeyi bozan kitle, belirgin kozmetik sorun",
+        "prep": "Kan sulandırıcı kullanımınızı ve anestezik alerjinizi hekime söyleyin, makyaj yapmayın ve kontakt lensleri çıkarın, yanınızda biriyle gelin — göz kapatılır ve araç kullanılamaz",
+        "abnormal": "İlk günlerde şişlik, kapakta morarma ve hafif hassasiyet beklenir ve yavaşça geçer. Artan ağrı, iltihaplı akıntı, ateş, görmenin bozulması ya da aynı yerde yeni bir kitle, göz hekimine görünmeyi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Мали захват на капку: отварање и чишћење зачепљене лојне жлијезде која је створила чврст чворић",
+        "how": "Капак се обезболи ињекцијом анестетика и придржи клемом, направи се кратак рез најчешће са унутрашње стране, садржај и чаура се изостружу киретом, а затим се стављају маст и компресивни завој на неколико сати; траје 15–30 минута, а код мале дјеце може бити потребна општа анестезија — одлуку доноси љекар",
+        "when": "Чврст безболан чворић на капку који се није повукао уз топле облоге и прописану терапију, халацион који се понавља, чворић који притиска рожњачу и изобличује вид, уочљив естетски недостатак",
+        "prep": "Рећи љекару за лијекове за разрјеђивање крви и алергију на анестетике, не стављати шминку и скинути контактна сочива, доћи са пратиоцем — око се покрива завојем и не смије се возити",
+        "abnormal": "Оток, модрица на капку и блага осјетљивост првих дана су очекивани и постепено пролазе. Бол која се појачава, гнојни исцједак, повишена температура, слабљење вида или нов чворић на истом мјесту разлог су да се јавите офталмологу"
+      }
+    }
+  },
+  {
+    "slug": "pterygium-removal",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Операция по удалению разрастания конъюнктивы, наползающего с угла глаза на роговицу",
+        "how": "Под местной анестезией разросшуюся ткань отсекают от роговицы и удаляют, а обнажённый участок чаще всего закрывают лоскутом собственной конъюнктивы, который фиксируют швами или биологическим клеем; занимает 20–40 минут, амбулаторно, после операции глаз закрывают повязкой",
+        "when": "Разрастание приближается к зрачку или уже снижает зрение, вызывает астигматизм, постоянное покраснение, жжение и ощущение инородного тела, мешает носить контактные линзы, заметный косметический дефект",
+        "prep": "Пройти осмотр глаза, снять контактные линзы заранее в указанный врачом срок, сообщить о разжижающих кровь препаратах и хронических заболеваниях, прийти с сопровождающим — в день операции за руль садиться нельзя",
+        "abnormal": "Покраснение, слезотечение и ощущение инородного тела в первые дни и недели ожидаемы и постепенно уменьшаются. Сильная боль, гнойное отделяемое, снижение зрения или повторный рост ткани на том же месте требуют осмотра офтальмолога"
+      },
+      "en": {
+        "what": "Surgical removal of a conjunctival growth that has crept from the corner of the eye onto the cornea",
+        "how": "Under local anaesthesia the overgrown tissue is detached from the cornea and removed, and the bare area is usually covered with a graft of the patient's own conjunctiva, secured with sutures or biological glue; it takes 20–40 minutes as a day case, and the eye is covered with a dressing afterwards",
+        "when": "The growth is approaching the pupil or already reducing vision, causes astigmatism, persistent redness, burning and a foreign-body sensation, makes contact lenses impossible to wear, or is a noticeable cosmetic problem",
+        "prep": "Have the eye examined beforehand, stop wearing contact lenses for the period the doctor specifies, report blood thinners and chronic conditions, and come with someone else — you must not drive on the day of surgery",
+        "abnormal": "Redness, watering and a foreign-body sensation in the first days and weeks are expected and gradually subside. Severe pain, discharge, reduced vision or regrowth of the tissue in the same place call for an ophthalmologist's review"
+      },
+      "sr": {
+        "what": "Operacija uklanjanja izraslina vežnjače koje se iz ugla oka šire preko rožnjače",
+        "how": "U lokalnoj anesteziji izrasla tkiva se odvajaju od rožnjače i uklanjaju, a ogoljeno mjesto se najčešće pokriva režnjem sopstvene vežnjače koji se učvršćuje koncima ili biološkim ljepkom; traje 20–40 minuta, ambulantno, a poslije zahvata se oko pokriva zavojem",
+        "when": "Izraslina se približava zjenici ili već slabi vid, izaziva astigmatizam, stalno crvenilo, peckanje i osjećaj stranog tijela, onemogućava nošenje kontaktnih sočiva ili predstavlja uočljiv estetski nedostatak",
+        "prep": "Obaviti pregled oka, skinuti kontaktna sočiva u roku koji ljekar odredi, prijaviti lijekove za razrjeđivanje krvi i hronične bolesti i doći sa pratiocem — na dan operacije se ne smije voziti",
+        "abnormal": "Crvenilo, suzenje i osjećaj stranog tijela prvih dana i sedmica su očekivani i postepeno slabe. Jaka bol, gnojni iscjedak, slabljenje vida ili ponovni rast tkiva na istom mjestu traže pregled oftalmologa"
+      },
+      "de": {
+        "what": "Operative Entfernung einer Bindehautwucherung, die vom Augenwinkel auf die Hornhaut vorgewachsen ist",
+        "how": "In örtlicher Betäubung wird das gewucherte Gewebe von der Hornhaut gelöst und entfernt, die freiliegende Stelle meist mit einem Transplantat aus eigener Bindehaut gedeckt und mit Nähten oder Gewebekleber fixiert; es dauert 20–40 Minuten ambulant, danach wird das Auge verbunden",
+        "when": "Die Wucherung nähert sich der Pupille oder mindert bereits das Sehen, verursacht Astigmatismus, dauerhafte Rötung, Brennen und Fremdkörpergefühl, verhindert das Tragen von Kontaktlinsen oder stört kosmetisch deutlich",
+        "prep": "Das Auge vorab untersuchen lassen, Kontaktlinsen für den vom Arzt genannten Zeitraum weglassen, Blutverdünner und chronische Erkrankungen angeben und in Begleitung kommen — am Operationstag darf man nicht selbst fahren",
+        "abnormal": "Rötung, Tränen und Fremdkörpergefühl in den ersten Tagen und Wochen sind zu erwarten und nehmen allmählich ab. Starke Schmerzen, eitriges Sekret, nachlassendes Sehen oder erneutes Wachstum an derselben Stelle erfordern eine augenärztliche Kontrolle"
+      },
+      "tr": {
+        "what": "Göz kenarından korneaya doğru ilerleyen konjonktiva büyümesinin ameliyatla çıkarılması",
+        "how": "Lokal anesteziyle büyümüş doku korneadan ayrılıp çıkarılır, açıkta kalan alan çoğunlukla hastanın kendi konjonktivasından alınan yamayla kapatılıp dikiş ya da biyolojik yapıştırıcıyla tespit edilir; günübirlik olarak 20–40 dakika sürer, sonrasında göz kapatılır",
+        "when": "Büyümenin göz bebeğine yaklaşması ya da görmeyi azaltması, astigmatizm, sürekli kızarıklık, yanma ve yabancı cisim hissi, kontakt lens kullanımını engellemesi ya da belirgin kozmetik sorun oluşturması",
+        "prep": "Önceden göz muayenesi olun, kontakt lensleri hekimin belirttiği süre boyunca kullanmayın, kan sulandırıcıları ve kronik hastalıklarınızı bildirin ve yanınızda biriyle gelin — ameliyat günü araç kullanılamaz",
+        "abnormal": "İlk günlerde ve haftalarda kızarıklık, sulanma ve yabancı cisim hissi beklenir ve giderek azalır. Şiddetli ağrı, iltihaplı akıntı, görmede azalma ya da dokunun aynı yerde yeniden büyümesi göz hekimi değerlendirmesi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Операција уклањања израслина вежњаче које се из угла ока шире преко рожњаче",
+        "how": "У локалној анестезији израсла ткива се одвајају од рожњаче и уклањају, а огољено мјесто се најчешће покрива режњем сопствене вежњаче који се учвршћује концима или биолошким љепком; траје 20–40 минута, амбулантно, а послије захвата се око покрива завојем",
+        "when": "Израслина се приближава зјеници или већ слаби вид, изазива астигматизам, стално црвенило, пецкање и осјећај страног тијела, онемогућава ношење контактних сочива или представља уочљив естетски недостатак",
+        "prep": "Обавити преглед ока, скинути контактна сочива у року који љекар одреди, пријавити лијекове за разрјеђивање крви и хроничне болести и доћи са пратиоцем — на дан операције се не смије возити",
+        "abnormal": "Црвенило, сузење и осјећај страног тијела првих дана и седмица су очекивани и постепено слабе. Јака бол, гнојни исцједак, слабљење вида или поновни раст ткива на истом мјесту траже преглед офталмолога"
+      }
+    }
+  },
+  {
+    "slug": "ectropion-surgery",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Пластическая операция, возвращающая вывернутое наружу веко в правильное положение к глазному яблоку",
+        "how": "Под местной анестезией хирург укорачивает и подтягивает веко и его связки, при рубцовых изменениях добавляет пересадку кожи, затем накладывает швы; занимает 30–60 минут, обычно амбулаторно, на глаз кладут повязку",
+        "when": "Постоянное слезотечение и стекание слезы по щеке, хроническое покраснение и раздражение глаза, вывернутое веко из-за возрастного ослабления тканей, рубцов после травм или операций либо паралича лицевого нерва, угроза повреждения роговицы от пересыхания",
+        "prep": "Сообщить о разжижающих кровь препаратах, хронических заболеваниях и аллергии на анестетики, не наносить макияж, взять назначенные капли и мазь и прийти с сопровождающим — за руль в день операции садиться нельзя",
+        "abnormal": "Отёк, синяки и ощущение натяжения века держатся до нескольких недель и постепенно проходят. Нарастающая боль, гнойное отделяемое, расхождение швов, ухудшение зрения или сохраняющееся неполное смыкание века — повод обратиться к офтальмологу, не дожидаясь снятия швов"
+      },
+      "en": {
+        "what": "Plastic surgery that returns an outward-turned eyelid to its correct position against the eyeball",
+        "how": "Under local anaesthesia the surgeon shortens and tightens the lid and its supporting ligaments, adding a skin graft where scarring is the cause, and then places sutures; it takes 30–60 minutes, usually as a day case, and the eye is dressed afterwards",
+        "when": "Constant watering with tears running down the cheek, chronic redness and irritation, a lid turned outward because of age-related laxity, scarring after injury or surgery, or facial nerve palsy, and the risk of corneal damage from drying",
+        "prep": "Report blood thinners, chronic conditions and any allergy to anaesthetics, wear no make-up, bring the prescribed drops and ointment, and come with someone else — you must not drive on the day of surgery",
+        "abnormal": "Swelling, bruising and a feeling of tightness in the lid last up to a few weeks and gradually resolve. Increasing pain, discharge, separated sutures, worsening vision or a lid that still does not close fully are reasons to contact the ophthalmologist before the sutures are due out"
+      },
+      "sr": {
+        "what": "Plastična operacija koja izvrnuti kapak vraća u pravilan položaj uz očnu jabučicu",
+        "how": "U lokalnoj anesteziji hirurg skraćuje i zateže kapak i njegove veze, a kod ožiljnih promjena dodaje presadak kože, zatim postavlja konce; traje 30–60 minuta, obično ambulantno, a na oko se stavlja zavoj",
+        "when": "Stalno suzenje sa slivanjem suza niz obraz, hronično crvenilo i nadraženost oka, izvrnut kapak zbog starosne mlitavosti tkiva, ožiljaka poslije povreda ili operacija ili uzetosti facijalnog živca, opasnost od oštećenja rožnjače usljed sušenja",
+        "prep": "Prijaviti lijekove za razrjeđivanje krvi, hronične bolesti i alergiju na anestetike, ne stavljati šminku, ponijeti propisane kapi i mast i doći sa pratiocem — na dan operacije se ne smije voziti",
+        "abnormal": "Otok, modrice i osjećaj zategnutosti kapka traju do nekoliko sedmica i postepeno prolaze. Bol koja se pojačava, gnojni iscjedak, popuštanje konaca, slabljenje vida ili kapak koji se i dalje ne zatvara potpuno razlog su da se javite oftalmologu i prije skidanja konaca"
+      },
+      "de": {
+        "what": "Plastische Operation, die ein nach außen gekipptes Augenlid wieder an den Augapfel anlegt",
+        "how": "In örtlicher Betäubung kürzt und strafft der Chirurg das Lid und seine Haltebänder, bei narbiger Ursache kommt eine Hauttransplantation hinzu, danach werden Nähte gesetzt; es dauert 30–60 Minuten, meist ambulant, anschließend wird das Auge verbunden",
+        "when": "Ständiges Tränen mit Tränenlaufen über die Wange, chronische Rötung und Reizung, ein nach außen gekipptes Lid durch altersbedingte Erschlaffung, Narben nach Verletzung oder Operation oder eine Fazialisparese, drohende Hornhautschädigung durch Austrocknung",
+        "prep": "Blutverdünner, chronische Erkrankungen und Allergien gegen Betäubungsmittel angeben, kein Make-up auftragen, die verordneten Tropfen und Salben mitbringen und in Begleitung kommen — am Operationstag darf man nicht selbst fahren",
+        "abnormal": "Schwellung, Blutergüsse und ein Spannungsgefühl im Lid halten bis zu einigen Wochen an und klingen allmählich ab. Zunehmende Schmerzen, eitriges Sekret, aufgegangene Nähte, nachlassendes Sehen oder ein weiterhin nicht vollständig schließendes Lid sind Anlass, den Augenarzt vor dem Fadenzug aufzusuchen"
+      },
+      "tr": {
+        "what": "Dışa dönmüş göz kapağını göz küresine doğru düzgün konumuna getiren plastik cerrahi işlemi",
+        "how": "Lokal anesteziyle cerrah kapağı ve bağlarını kısaltıp gerer, nedeni skar dokusuysa deri grefti ekler, ardından dikişleri koyar; genelde günübirlik olarak 30–60 dakika sürer ve sonrasında göz kapatılır",
+        "when": "Sürekli sulanma ve gözyaşının yanağa akması, gözde kronik kızarıklık ve tahriş, yaşa bağlı gevşeme, yaralanma ya da ameliyat sonrası skar veya yüz siniri felci nedeniyle dışa dönmüş kapak, kurumaya bağlı kornea hasarı riski",
+        "prep": "Kan sulandırıcıları, kronik hastalıkları ve anestezik alerjisini bildirin, makyaj yapmayın, verilen damla ve pomadı getirin ve yanınızda biriyle gelin — ameliyat günü araç kullanılamaz",
+        "abnormal": "Şişlik, morarma ve kapakta gerginlik hissi birkaç haftaya kadar sürer ve yavaşça geçer. Artan ağrı, iltihaplı akıntı, dikişlerin açılması, görmenin bozulması ya da kapağın hâlâ tam kapanmaması, dikiş alma gününü beklemeden göz hekimine başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Пластична операција која изврнути капак враћа у правилан положај уз очну јабучицу",
+        "how": "У локалној анестезији хирург скраћује и затеже капак и његове везе, а код ожиљних промјена додаје пресадак коже, затим поставља конце; траје 30–60 минута, обично амбулантно, а на око се ставља завој",
+        "when": "Стално сузење са сливањем суза низ образ, хронично црвенило и надраженост ока, изврнут капак због старосне млитавости ткива, ожиљака послије повреда или операција или узетости фацијалног живца, опасност од оштећења рожњаче усљед сушења",
+        "prep": "Пријавити лијекове за разрјеђивање крви, хроничне болести и алергију на анестетике, не стављати шминку, понијети прописане капи и маст и доћи са пратиоцем — на дан операције се не смије возити",
+        "abnormal": "Оток, модрице и осјећај затегнутости капка трају до неколико седмица и постепено пролазе. Бол која се појачава, гнојни исцједак, попуштање конаца, слабљење вида или капак који се и даље не затвара потпуно разлог су да се јавите офталмологу и прије скидања конаца"
+      }
+    }
+  }
+]

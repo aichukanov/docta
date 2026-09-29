@@ -1,0 +1,674 @@
+[
+  {
+    "slug": "stool-culture",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Бактериологический посев кала для выявления возбудителей кишечных инфекций",
+        "how": "Небольшую порцию кала собирают в стерильный контейнер, в лаборатории её засевают на питательные среды и при росте определяют чувствительность к антибиотикам",
+        "when": "Длительная диарея, подозрение на кишечную инфекцию, контроль после перенесённой инфекции, профосмотр работников пищевой сферы и детских учреждений",
+        "prep": "Кал собирают в стерильный контейнер из аптеки, по возможности до начала приёма антибиотиков; в образец не должна попадать моча или вода из унитаза",
+        "abnormal": "Рост патогенных бактерий может быть связан с кишечной инфекцией или с бессимптомным носительством, а обычная флора кишечника не всегда объясняет жалобы. Результат вместе с симптомами оценивает врач"
+      },
+      "en": {
+        "what": "Bacterial culture of stool to detect causative agents of intestinal infections",
+        "how": "A small stool sample is collected in a sterile container, plated on culture media in the laboratory, and any growth is tested for antibiotic susceptibility",
+        "when": "Prolonged diarrhoea, suspected intestinal infection, follow-up after an infection, occupational screening of food handlers and childcare staff",
+        "prep": "Collect stool into a sterile container from a pharmacy, ideally before starting antibiotics; urine and toilet water must not get into the sample",
+        "abnormal": "Growth of pathogenic bacteria may be related to an intestinal infection or to symptom-free carriage, while normal gut flora does not always explain the complaints. The result is assessed by a doctor together with the symptoms"
+      },
+      "sr": {
+        "what": "Bakteriološka kultura stolice radi otkrivanja uzročnika crijevnih infekcija",
+        "how": "Mala količina stolice sakuplja se u sterilnu posudu, u laboratoriji se zasijava na hranljive podloge, a kod porasta se radi antibiogram",
+        "when": "Dugotrajni proliv, sumnja na crijevnu infekciju, kontrola nakon preboljele infekcije, sistematski pregledi radnika u prehrani i vrtićima",
+        "prep": "Stolica se sakuplja u sterilnu posudu iz apoteke, po mogućnosti prije početka uzimanja antibiotika; u uzorak ne smiju dospjeti mokraća ni voda",
+        "abnormal": "Porast patogenih bakterija može biti povezan sa crijevnom infekcijom ili sa kliconoštvom bez tegoba, a uobičajena crijevna flora ne objašnjava uvijek tegobe. Nalaz zajedno sa simptomima procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Bakteriologische Stuhlkultur zum Nachweis von Erregern von Darminfektionen",
+        "how": "Eine kleine Stuhlmenge wird in ein steriles Gefäß gegeben, im Labor auf Nährböden ausgestrichen und bei Wachstum auf Antibiotikaempfindlichkeit geprüft",
+        "when": "Anhaltender Durchfall, Verdacht auf eine Darminfektion, Kontrolle nach durchgemachter Infektion, Untersuchung von Beschäftigten in Lebensmittelbetrieben und Kitas",
+        "prep": "Stuhl in ein steriles Gefäß aus der Apotheke geben, möglichst vor Beginn einer Antibiotikatherapie; Urin und Toilettenwasser dürfen nicht in die Probe gelangen",
+        "abnormal": "Das Wachstum krankmachender Bakterien kann mit einer Darminfektion oder mit beschwerdefreier Besiedlung zusammenhängen, während die normale Darmflora die Beschwerden nicht immer erklärt. Der Befund wird zusammen mit den Symptomen vom Arzt beurteilt"
+      },
+      "tr": {
+        "what": "Bağırsak enfeksiyonu etkenlerini saptamak için yapılan gaita kültürü",
+        "how": "Az miktarda dışkı steril kaba alınır, laboratuvarda besiyerlerine ekilir ve üreme olursa antibiyogram yapılır",
+        "when": "Uzun süren ishal, bağırsak enfeksiyonu şüphesi, geçirilmiş enfeksiyon sonrası kontrol, gıda sektörü ve kreş çalışanlarının taraması",
+        "prep": "Dışkı eczaneden alınan steril kaba konur, mümkünse antibiyotik başlanmadan önce verilir; örneğe idrar veya tuvalet suyu karışmamalıdır",
+        "abnormal": "Hastalık yapan bakterilerin üremesi bağırsak enfeksiyonu veya belirtisiz taşıyıcılıkla ilişkili olabilir, olağan bağırsak florası ise şikayetleri her zaman açıklamaz. Sonucu belirtilerle birlikte hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Бактериолошка култура столице ради откривања узрочника цријевних инфекција",
+        "how": "Мала количина столице сакупља се у стерилну посуду, у лабораторији се засијава на хранљиве подлоге, а код пораста се ради антибиограм",
+        "when": "Дуготрајни пролив, сумња на цријевну инфекцију, контрола након пребољеле инфекције, систематски прегледи радника у прехрани и вртићима",
+        "prep": "Столица се сакупља у стерилну посуду из апотеке, по могућности прије почетка узимања антибиотика; у узорак не смију доспјети мокраћа ни вода",
+        "abnormal": "Пораст патогених бактерија може бити повезан са цријевном инфекцијом или са клицоноштвом без тегоба, а уобичајена цријевна флора не објашњава увијек тегобе. Налаз заједно са симптомима процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "trichomonas-test",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Лабораторное исследование урогенитального материала на простейшее Trichomonas vaginalis",
+        "how": "Берут мазок из влагалища или уретры, материал смотрят под микроскопом, засевают на среду или исследуют методом PCR",
+        "when": "Выделения, зуд или жжение в области половых органов, обследование по направлению гинеколога либо уролога, обследование полового партнёра, подготовка к беременности",
+        "prep": "Женщинам — вне менструации, мужчинам — не мочиться около двух часов до взятия; заранее сообщить врачу о приёме антибактериальных препаратов и об использовании вагинальных свечей",
+        "abnormal": "Обнаружение возбудителя означает, что дальнейшие шаги нужно обсудить с врачом, а отрицательный результат при сохраняющихся жалобах не всегда исключает другие причины. Выводы делает лечащий врач"
+      },
+      "en": {
+        "what": "Laboratory test of urogenital material for the protozoan Trichomonas vaginalis",
+        "how": "A swab is taken from the vagina or urethra and examined under the microscope, cultured, or tested by PCR",
+        "when": "Discharge, itching or burning in the genital area, examination referred by a gynaecologist or urologist, testing of a sexual partner, pregnancy planning",
+        "prep": "Women outside menstruation, men should not urinate for about two hours before sampling; tell the doctor in advance about antibiotics or vaginal suppositories being used",
+        "abnormal": "Detection of the organism means the next steps should be discussed with a doctor, while a negative result with persisting complaints does not always rule out other causes. The conclusion is drawn by the treating doctor"
+      },
+      "sr": {
+        "what": "Laboratorijsko ispitivanje urogenitalnog materijala na praživotinju Trichomonas vaginalis",
+        "how": "Uzima se bris vagine ili uretre, materijal se pregleda pod mikroskopom, zasijava na podlogu ili ispituje metodom PCR",
+        "when": "Sekret, svrab ili peckanje u predjelu genitalija, pregled po uputu ginekologa ili urologa, ispitivanje polnog partnera, priprema za trudnoću",
+        "prep": "Kod žena van menstruacije, kod muškaraca bez mokrenja oko dva sata prije uzimanja; ljekaru unaprijed reći o uzimanju antibiotika i o vaginaletama",
+        "abnormal": "Nalaz uzročnika znači da dalje korake treba dogovoriti sa ljekarom, a negativan nalaz uz tegobe koje traju ne isključuje uvijek druge uzroke. Zaključak donosi ljekar koji liječi"
+      },
+      "de": {
+        "what": "Laboruntersuchung von Urogenitalmaterial auf den Einzeller Trichomonas vaginalis",
+        "how": "Ein Abstrich aus Scheide oder Harnröhre wird mikroskopiert, kulturell angelegt oder mittels PCR untersucht",
+        "when": "Ausfluss, Juckreiz oder Brennen im Genitalbereich, Untersuchung auf Überweisung von Gynäkologe oder Urologe, Untersuchung des Sexualpartners, Kinderwunsch",
+        "prep": "Bei Frauen außerhalb der Menstruation, bei Männern etwa zwei Stunden vor der Entnahme nicht Wasser lassen; Antibiotika und Vaginalzäpfchen dem Arzt vorher mitteilen",
+        "abnormal": "Ein Erregernachweis bedeutet, dass das weitere Vorgehen mit dem Arzt zu besprechen ist, ein negatives Ergebnis bei anhaltenden Beschwerden schließt andere Ursachen nicht immer aus. Die Bewertung nimmt der behandelnde Arzt vor"
+      },
+      "tr": {
+        "what": "Ürogenital örnekte Trichomonas vaginalis adlı tek hücreli parazitin araştırılması",
+        "how": "Vajina veya üretradan sürüntü alınır, örnek mikroskopta incelenir, besiyerine ekilir ya da PCR yöntemiyle çalışılır",
+        "when": "Genital bölgede akıntı, kaşıntı veya yanma, kadın hastalıkları ya da üroloji hekiminin yönlendirmesi, cinsel eşin incelenmesi, gebelik hazırlığı",
+        "prep": "Kadınlarda adet dönemi dışında, erkeklerde örnek alınmadan yaklaşık iki saat önce idrara çıkılmamalıdır; kullanılan antibiyotikler ve vajinal fitiller hekime önceden bildirilmelidir",
+        "abnormal": "Etkenin saptanması sonraki adımların hekimle konuşulması gerektiğini gösterir, şikayet sürerken çıkan olumsuz sonuç ise diğer nedenleri her zaman dışlamaz. Değerlendirmeyi tedaviyi yürüten hekim yapar"
+      },
+      "sr_cyrl": {
+        "what": "Лабораторијско испитивање урогениталног материјала на праживотињу Trichomonas vaginalis",
+        "how": "Узима се брис вагине или уретре, материјал се прегледа под микроскопом, засијава на подлогу или испитује методом ПЦР",
+        "when": "Секрет, свраб или пецкање у предјелу гениталија, преглед по упуту гинеколога или уролога, испитивање полног партнера, припрема за трудноћу",
+        "prep": "Код жена ван менструације, код мушкараца без мокрења око два сата прије узимања; љекару унапријед рећи о узимању антибиотика и о вагиналетама",
+        "abnormal": "Налаз узрочника значи да даље кораке треба договорити са љекаром, а негативан налаз уз тегобе које трају не искључује увијек друге узроке. Закључак доноси љекар који лијечи"
+      }
+    }
+  },
+  {
+    "slug": "umbilicus-swab-bacteria",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Посев материала с пупочной ранки или пупочной складки на бактериальную флору",
+        "how": "Стерильным тампоном проводят по коже пупка и вокруг него, материал засевают на питательные среды и при росте определяют чувствительность к антибиотикам",
+        "when": "Покраснение, отёк или выделения в области пупка, медленное заживление пупочной ранки у новорождённого, обследование перед назначением антибактериальной терапии",
+        "prep": "Специальная подготовка не нужна; перед взятием пупок не обрабатывать антисептиками, мазями и присыпками",
+        "abnormal": "Рост бактерий может быть связан с воспалением пупочной ранки или с колонизацией кожи без воспаления. Нужно ли лечение, решает врач по осмотру"
+      },
+      "en": {
+        "what": "Culture of material from the umbilical wound or navel fold for bacterial flora",
+        "how": "A sterile swab is wiped over the skin of the navel and around it, the material is plated on culture media and any growth is tested for antibiotic susceptibility",
+        "when": "Redness, swelling or discharge around the navel, slow healing of the umbilical stump in a newborn, work-up before antibiotic treatment is prescribed",
+        "prep": "No special preparation is needed; do not apply antiseptics, ointments or powders to the navel before sampling",
+        "abnormal": "Bacterial growth may be related to inflammation of the umbilical wound or to skin colonisation without inflammation. Whether treatment is needed is decided by the doctor after examination"
+      },
+      "sr": {
+        "what": "Kultura materijala sa pupčane ranice ili nabora pupka na bakterijsku floru",
+        "how": "Sterilnim štapićem prelazi se preko kože pupka i okoline, materijal se zasijava na hranljive podloge, a kod porasta se radi antibiogram",
+        "when": "Crvenilo, otok ili sekret oko pupka, sporo zarastanje pupčane ranice kod novorođenčeta, ispitivanje prije uvođenja antibiotske terapije",
+        "prep": "Posebna priprema nije potrebna; pupak prije uzimanja ne tretirati antisepticima, mastima ni puderima",
+        "abnormal": "Porast bakterija može biti povezan sa upalom pupčane ranice ili sa kolonizacijom kože bez upale. Da li je liječenje potrebno, odlučuje ljekar nakon pregleda"
+      },
+      "de": {
+        "what": "Kultur von Material aus der Nabelwunde oder der Nabelfalte auf Bakterienflora",
+        "how": "Mit einem sterilen Tupfer wird über die Haut des Nabels und die Umgebung gestrichen, das Material wird auf Nährböden ausgestrichen und bei Wachstum auf Antibiotikaempfindlichkeit geprüft",
+        "when": "Rötung, Schwellung oder Sekret am Nabel, langsame Heilung der Nabelwunde beim Neugeborenen, Abklärung vor Beginn einer Antibiotikatherapie",
+        "prep": "Keine besondere Vorbereitung nötig; der Nabel sollte vor der Entnahme nicht mit Antiseptika, Salben oder Puder behandelt werden",
+        "abnormal": "Bakterienwachstum kann mit einer Entzündung der Nabelwunde oder mit einer Besiedlung der Haut ohne Entzündung zusammenhängen. Ob eine Behandlung nötig ist, entscheidet der Arzt nach der Untersuchung"
+      },
+      "tr": {
+        "what": "Göbek yarasından veya göbek kıvrımından alınan örneğin bakteri kültürü",
+        "how": "Steril bir eküvyon göbek ve çevresindeki deri üzerinde gezdirilir, örnek besiyerlerine ekilir ve üreme olursa antibiyogram yapılır",
+        "when": "Göbek çevresinde kızarıklık, şişlik veya akıntı, yenidoğanda göbek yarasının geç kapanması, antibiyotik tedavisi öncesi değerlendirme",
+        "prep": "Özel bir hazırlık gerekmez; örnek alınmadan önce göbeğe antiseptik, merhem veya pudra uygulanmamalıdır",
+        "abnormal": "Bakteri üremesi göbek yarasındaki iltihapla ya da iltihap olmadan deride kolonizasyonla ilişkili olabilir. Tedavi gerekip gerekmediğine muayene sonrası hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Култура материјала са пупчане ранице или набора пупка на бактеријску флору",
+        "how": "Стерилним штапићем прелази се преко коже пупка и околине, материјал се засијава на хранљиве подлоге, а код пораста се ради антибиограм",
+        "when": "Црвенило, оток или секрет око пупка, споро зарастање пупчане ранице код новорођенчета, испитивање прије увођења антибиотске терапије",
+        "prep": "Посебна припрема није потребна; пупак прије узимања не третирати антисептицима, мастима ни пудерима",
+        "abnormal": "Пораст бактерија може бити повезан са упалом пупчане ранице или са колонизацијом коже без упале. Да ли је лијечење потребно, одлучује љекар након прегледа"
+      }
+    }
+  },
+  {
+    "slug": "bacteriological-examination-ear-swab",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Посев отделяемого из наружного слухового прохода на бактериальную флору",
+        "how": "Врач берёт материал из уха стерильным тампоном, в лаборатории его засевают на среды и при росте определяют чувствительность к антибиотикам",
+        "when": "Боль и выделения из уха, затяжной наружный отит, отсутствие эффекта от назначенного лечения, повторяющиеся воспаления уха",
+        "prep": "Перед взятием не закапывать ушные капли и не мыть ухо; сроки отмены местных средств уточняет оториноларинголог",
+        "abnormal": "Рост бактерий может быть связан с воспалением наружного или среднего уха, а часть находок относится к обычной флоре кожи. Результат сопоставляет с осмотром оториноларинголог"
+      },
+      "en": {
+        "what": "Culture of discharge from the external ear canal for bacterial flora",
+        "how": "The doctor takes material from the ear with a sterile swab, the laboratory plates it on culture media and tests any growth for antibiotic susceptibility",
+        "when": "Ear pain and discharge, protracted external otitis, lack of response to prescribed treatment, recurrent ear inflammation",
+        "prep": "Do not use ear drops or wash the ear before sampling; when to stop topical products is advised by the ENT doctor",
+        "abnormal": "Bacterial growth may be related to inflammation of the outer or middle ear, while some findings belong to the normal skin flora. The ENT doctor compares the result with the examination"
+      },
+      "sr": {
+        "what": "Kultura sekreta iz spoljašnjeg ušnog kanala na bakterijsku floru",
+        "how": "Ljekar uzima materijal iz uha sterilnim štapićem, u laboratoriji se zasijava na podloge, a kod porasta se radi antibiogram",
+        "when": "Bol i sekrecija iz uha, dugotrajna upala spoljašnjeg uha, izostanak efekta propisane terapije, ponavljane upale uha",
+        "prep": "Prije uzimanja ne kapati kapi za uho i ne prati uho; kada prekinuti lokalnu terapiju kaže otorinolaringolog",
+        "abnormal": "Porast bakterija može biti povezan sa upalom spoljašnjeg ili srednjeg uha, a dio nalaza pripada uobičajenoj flori kože. Nalaz sa pregledom poredi otorinolaringolog"
+      },
+      "de": {
+        "what": "Kultur von Sekret aus dem äußeren Gehörgang auf Bakterienflora",
+        "how": "Der Arzt entnimmt das Material mit einem sterilen Tupfer aus dem Ohr, im Labor wird es auf Nährböden ausgestrichen und bei Wachstum auf Antibiotikaempfindlichkeit geprüft",
+        "when": "Ohrenschmerzen und Sekretion, langwierige Entzündung des äußeren Gehörgangs, fehlendes Ansprechen auf die verordnete Behandlung, wiederkehrende Ohrentzündungen",
+        "prep": "Vor der Entnahme keine Ohrentropfen anwenden und das Ohr nicht spülen; wann örtliche Mittel abzusetzen sind, sagt der HNO-Arzt",
+        "abnormal": "Bakterienwachstum kann mit einer Entzündung des äußeren oder mittleren Ohres zusammenhängen, ein Teil der Befunde gehört zur normalen Hautflora. Der HNO-Arzt setzt den Befund mit der Untersuchung in Beziehung"
+      },
+      "tr": {
+        "what": "Dış kulak yolundaki akıntının bakteri kültürü",
+        "how": "Hekim kulaktan steril eküvyonla örnek alır, laboratuvarda besiyerlerine ekilir ve üreme olursa antibiyogram yapılır",
+        "when": "Kulak ağrısı ve akıntı, uzayan dış kulak iltihabı, verilen tedaviye yanıt alınamaması, tekrarlayan kulak iltihapları",
+        "prep": "Örnek alınmadan önce kulak damlası kullanılmamalı ve kulak yıkanmamalıdır; yerel ilaçların ne zaman kesileceğini kulak burun boğaz hekimi söyler",
+        "abnormal": "Bakteri üremesi dış veya orta kulak iltihabıyla ilişkili olabilir, bulguların bir bölümü ise derinin olağan florasına aittir. Sonucu muayene bulgularıyla kulak burun boğaz hekimi karşılaştırır"
+      },
+      "sr_cyrl": {
+        "what": "Култура секрета из спољашњег ушног канала на бактеријску флору",
+        "how": "Љекар узима материјал из уха стерилним штапићем, у лабораторији се засијава на подлоге, а код пораста се ради антибиограм",
+        "when": "Бол и секреција из уха, дуготрајна упала спољашњег уха, изостанак ефекта прописане терапије, понављане упале уха",
+        "prep": "Прије узимања не капати капи за ухо и не прати ухо; када прекинути локалну терапију каже оториноларинголог",
+        "abnormal": "Пораст бактерија може бити повезан са упалом спољашњег или средњег уха, а дио налаза припада уобичајеној флори коже. Налаз са прегледом пореди оториноларинголог"
+      }
+    }
+  },
+  {
+    "slug": "breast-swab-bacteria",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Посев отделяемого соска или содержимого молочной железы на бактериальную флору",
+        "how": "Стерильным тампоном берут отделяемое соска либо материал из свищевого хода, в лаборатории его засевают на питательные среды",
+        "when": "Боль, покраснение и уплотнение груди при кормлении, затяжной мастит, выделения из соска, контроль по назначению врача после лечения",
+        "prep": "Перед взятием сосок не обрабатывать антисептиками и кремами; при грудном вскармливании первые капли молока сцеживают и для посева не используют",
+        "abnormal": "Рост бактерий может быть связан с воспалением ткани железы или с обычной флорой кожи соска. Нужно ли лечение, определяет врач по осмотру и жалобам"
+      },
+      "en": {
+        "what": "Culture of nipple discharge or breast fluid for bacterial flora",
+        "how": "A sterile swab collects discharge from the nipple or material from a fistula tract, and the laboratory plates it on culture media",
+        "when": "Pain, redness and a lump in the breast during breastfeeding, protracted mastitis, nipple discharge, follow-up after treatment as prescribed by the doctor",
+        "prep": "Do not apply antiseptics or creams to the nipple before sampling; during breastfeeding the first drops of milk are expressed and not used for culture",
+        "abnormal": "Bacterial growth may be related to inflammation of the breast tissue or to the normal flora of the nipple skin. Whether treatment is needed is decided by the doctor based on examination and symptoms"
+      },
+      "sr": {
+        "what": "Kultura sekreta bradavice ili sadržaja dojke na bakterijsku floru",
+        "how": "Sterilnim štapićem uzima se sekret sa bradavice ili materijal iz fistuloznog kanala, u laboratoriji se zasijava na hranljive podloge",
+        "when": "Bol, crvenilo i čvor u dojci tokom dojenja, dugotrajni mastitis, sekrecija iz bradavice, kontrola poslije liječenja po savjetu ljekara",
+        "prep": "Prije uzimanja bradavicu ne tretirati antisepticima ni kremama; kod dojenja prve kapi mlijeka se izmuzu i ne koriste za kulturu",
+        "abnormal": "Porast bakterija može biti povezan sa upalom tkiva dojke ili sa uobičajenom florom kože bradavice. Da li je liječenje potrebno, procjenjuje ljekar na osnovu pregleda i tegoba"
+      },
+      "de": {
+        "what": "Kultur von Sekret der Brustwarze oder Brustdrüsenflüssigkeit auf Bakterienflora",
+        "how": "Mit einem sterilen Tupfer wird Sekret von der Brustwarze oder Material aus einem Fistelgang entnommen und im Labor auf Nährböden ausgestrichen",
+        "when": "Schmerzen, Rötung und Verhärtung der Brust beim Stillen, langwierige Mastitis, Sekretion aus der Brustwarze, Kontrolle nach Behandlung auf ärztliche Anordnung",
+        "prep": "Vor der Entnahme keine Antiseptika oder Cremes auf die Brustwarze auftragen; beim Stillen werden die ersten Milchtropfen abgepumpt und nicht für die Kultur verwendet",
+        "abnormal": "Bakterienwachstum kann mit einer Entzündung des Drüsengewebes oder mit der normalen Hautflora der Brustwarze zusammenhängen. Ob eine Behandlung nötig ist, entscheidet der Arzt anhand von Untersuchung und Beschwerden"
+      },
+      "tr": {
+        "what": "Meme başı akıntısının veya meme içeriğinin bakteri kültürü",
+        "how": "Steril eküvyonla meme başındaki akıntı ya da fistül ağzından gelen materyal alınır ve laboratuvarda besiyerlerine ekilir",
+        "when": "Emzirme döneminde memede ağrı, kızarıklık ve sertlik, uzayan mastit, meme başı akıntısı, hekimin isteğiyle tedavi sonrası kontrol",
+        "prep": "Örnek alınmadan önce meme başına antiseptik ve krem uygulanmamalıdır; emziren annelerde ilk süt damlaları sağılıp kültür için kullanılmaz",
+        "abnormal": "Bakteri üremesi meme dokusundaki iltihapla ya da meme başı derisinin olağan florasıyla ilişkili olabilir. Tedavi gerekip gerekmediğine muayene ve şikayetlere göre hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Култура секрета брадавице или садржаја дојке на бактеријску флору",
+        "how": "Стерилним штапићем узима се секрет са брадавице или материјал из фистулозног канала, у лабораторији се засијава на хранљиве подлоге",
+        "when": "Бол, црвенило и чвор у дојци током дојења, дуготрајни маститис, секреција из брадавице, контрола послије лијечења по савјету љекара",
+        "prep": "Прије узимања брадавицу не третирати антисептицима ни кремама; код дојења прве капи млијека се измузу и не користе за културу",
+        "abnormal": "Пораст бактерија може бити повезан са упалом ткива дојке или са уобичајеном флором коже брадавице. Да ли је лијечење потребно, процјењује љекар на основу прегледа и тегоба"
+      }
+    }
+  },
+  {
+    "slug": "clostridium-difficile-toxin-a-and-b",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование кала на токсины A и B бактерии Clostridium difficile",
+        "how": "Порцию кала собирают в стерильный контейнер, в лаборатории токсины выявляют иммунохимическим методом",
+        "when": "Диарея на фоне или после приёма антибиотиков, расстройство стула после стационарного лечения, повторные эпизоды диареи у пожилых пациентов",
+        "prep": "Специальная подготовка не нужна; сдают образец жидкой или неоформленной консистенции и доставляют его в лабораторию как можно быстрее",
+        "abnormal": "Обнаружение токсинов может быть связано с антибиотик-ассоциированным поражением кишечника, при этом результат имеет значение только вместе с симптомами. Тактику определяет врач"
+      },
+      "en": {
+        "what": "Stool test for toxins A and B of the bacterium Clostridium difficile",
+        "how": "A stool portion is collected in a sterile container and the toxins are detected in the laboratory by an immunoassay",
+        "when": "Diarrhoea during or after antibiotic treatment, loose stools after a hospital stay, repeated episodes of diarrhoea in elderly patients",
+        "prep": "No special preparation is needed; a liquid or unformed stool sample is submitted and delivered to the laboratory as quickly as possible",
+        "abnormal": "Detection of the toxins may be related to antibiotic-associated bowel damage, and the result is meaningful only together with the symptoms. The approach is decided by the doctor"
+      },
+      "sr": {
+        "what": "Ispitivanje stolice na toksine A i B bakterije Clostridium difficile",
+        "how": "Uzorak stolice sakuplja se u sterilnu posudu, a toksini se u laboratoriji dokazuju imunohemijskom metodom",
+        "when": "Proliv tokom ili poslije uzimanja antibiotika, tečne stolice nakon bolničkog liječenja, ponovljene epizode proliva kod starijih pacijenata",
+        "prep": "Posebna priprema nije potrebna; predaje se tečan ili neoformljen uzorak i dostavlja u laboratoriju što prije",
+        "abnormal": "Nalaz toksina može biti povezan sa oštećenjem crijeva nakon antibiotika, a značenje dobija tek uz kliničke tegobe. Dalji postupak određuje ljekar"
+      },
+      "de": {
+        "what": "Stuhluntersuchung auf die Toxine A und B des Bakteriums Clostridium difficile",
+        "how": "Eine Stuhlportion wird in ein steriles Gefäß gegeben, im Labor werden die Toxine mit einem immunchemischen Verfahren nachgewiesen",
+        "when": "Durchfall während oder nach einer Antibiotikatherapie, dünne Stühle nach einem Krankenhausaufenthalt, wiederholte Durchfallepisoden bei älteren Patienten",
+        "prep": "Keine besondere Vorbereitung nötig; abgegeben wird eine flüssige oder ungeformte Probe, die möglichst rasch ins Labor gebracht wird",
+        "abnormal": "Ein Toxinnachweis kann mit einer antibiotikaassoziierten Darmschädigung zusammenhängen, aussagekräftig ist er nur zusammen mit den Beschwerden. Das weitere Vorgehen legt der Arzt fest"
+      },
+      "tr": {
+        "what": "Dışkıda Clostridium difficile bakterisinin A ve B toksinlerinin araştırılması",
+        "how": "Steril kaba alınan dışkı örneğinde toksinler laboratuvarda immünokimyasal yöntemle saptanır",
+        "when": "Antibiyotik kullanımı sırasında veya sonrasında ishal, hastane yatışı sonrası sulu dışkılama, yaşlı hastalarda yinelenen ishal atakları",
+        "prep": "Özel bir hazırlık gerekmez; sulu ya da şekilsiz örnek verilir ve laboratuvara mümkün olduğunca hızlı ulaştırılır",
+        "abnormal": "Toksinlerin saptanması antibiyotiğe bağlı bağırsak hasarıyla ilişkili olabilir, sonuç ancak belirtilerle birlikte anlam taşır. İzlenecek yolu hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Испитивање столице на токсине А и Б бактерије Clostridium difficile",
+        "how": "Узорак столице сакупља се у стерилну посуду, а токсини се у лабораторији доказују имунохемијском методом",
+        "when": "Пролив током или послије узимања антибиотика, течне столице након болничког лијечења, поновљене епизоде пролива код старијих пацијената",
+        "prep": "Посебна припрема није потребна; предаје се течан или неоформљен узорак и доставља у лабораторију што прије",
+        "abnormal": "Налаз токсина може бити повезан са оштећењем цријева након антибиотика, а значење добија тек уз клиничке тегобе. Даљи поступак одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "endocervical-swab-for-gonorrhea",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Взятие материала из канала шейки матки для выявления возбудителя гонореи",
+        "how": "Гинеколог вводит зеркало и стерильным тампоном берёт материал из цервикального канала, исследование проводят микроскопией, посевом или методом PCR",
+        "when": "Выделения и дискомфорт внизу живота, обследование по направлению гинеколога, планирование беременности, обследование полового партнёра, профилактический контроль",
+        "prep": "Вне менструации, за сутки до взятия отказаться от вагинальных свечей, спринцеваний и половых контактов; о приёме антибиотиков сообщить врачу",
+        "abnormal": "Обнаружение возбудителя означает, что дальнейшие шаги нужно обсудить с врачом, а отрицательный результат при жалобах не исключает других причин воспаления. Трактует результат гинеколог"
+      },
+      "en": {
+        "what": "Sampling from the cervical canal to detect the causative agent of gonorrhoea",
+        "how": "The gynaecologist inserts a speculum and takes material from the cervical canal with a sterile swab, which is examined by microscopy, culture or PCR",
+        "when": "Discharge and lower abdominal discomfort, examination referred by a gynaecologist, pregnancy planning, testing of a sexual partner, routine screening",
+        "prep": "Outside menstruation; for a day before sampling avoid vaginal suppositories, douching and sexual contact, and tell the doctor about any antibiotics taken",
+        "abnormal": "Detection of the organism means the next steps should be discussed with a doctor, while a negative result with ongoing complaints does not exclude other causes of inflammation. The gynaecologist interprets the result"
+      },
+      "sr": {
+        "what": "Uzimanje materijala iz kanala grlića materice radi dokazivanja uzročnika gonoreje",
+        "how": "Ginekolog postavlja spekulum i sterilnim štapićem uzima materijal iz cervikalnog kanala, a nalaz se radi mikroskopijom, kulturom ili metodom PCR",
+        "when": "Sekret i nelagodnost u donjem dijelu trbuha, pregled po uputu ginekologa, planiranje trudnoće, ispitivanje polnog partnera, preventivna kontrola",
+        "prep": "Van menstruacije, dan prije uzimanja bez vaginaleta, ispiranja i polnih odnosa; o uzimanju antibiotika obavijestiti ljekara",
+        "abnormal": "Nalaz uzročnika znači da dalje korake treba dogovoriti sa ljekarom, a negativan nalaz uz tegobe ne isključuje druge uzroke upale. Nalaz tumači ginekolog"
+      },
+      "de": {
+        "what": "Materialentnahme aus dem Gebärmutterhalskanal zum Nachweis des Gonorrhoe-Erregers",
+        "how": "Der Gynäkologe führt ein Spekulum ein und entnimmt mit einem sterilen Tupfer Material aus dem Zervikalkanal, das mikroskopisch, kulturell oder mittels PCR untersucht wird",
+        "when": "Ausfluss und Unterbauchbeschwerden, Untersuchung auf Überweisung des Gynäkologen, Kinderwunsch, Untersuchung des Sexualpartners, Vorsorgekontrolle",
+        "prep": "Außerhalb der Menstruation, einen Tag vorher auf Vaginalzäpfchen, Spülungen und Geschlechtsverkehr verzichten; eingenommene Antibiotika dem Arzt mitteilen",
+        "abnormal": "Ein Erregernachweis bedeutet, dass das weitere Vorgehen mit dem Arzt zu besprechen ist, ein negatives Ergebnis bei Beschwerden schließt andere Entzündungsursachen nicht aus. Die Deutung übernimmt der Gynäkologe"
+      },
+      "tr": {
+        "what": "Gonore etkenini saptamak için rahim ağzı kanalından örnek alınması",
+        "how": "Kadın hastalıkları hekimi spekulum yerleştirip steril eküvyonla servikal kanaldan örnek alır, örnek mikroskopi, kültür veya PCR yöntemiyle incelenir",
+        "when": "Akıntı ve alt karın bölgesinde rahatsızlık, kadın hastalıkları hekiminin yönlendirmesi, gebelik planlaması, cinsel eşin incelenmesi, koruyucu kontrol",
+        "prep": "Adet dönemi dışında yapılır, örnekten bir gün önce vajinal fitil, duş ve cinsel ilişkiden kaçınılır; kullanılan antibiyotikler hekime bildirilir",
+        "abnormal": "Etkenin saptanması sonraki adımların hekimle konuşulması gerektiğini gösterir, şikayet sürerken çıkan olumsuz sonuç ise başka iltihap nedenlerini dışlamaz. Sonucu kadın hastalıkları hekimi yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Узимање материјала из канала грлића материце ради доказивања узрочника гонореје",
+        "how": "Гинеколог поставља спекулум и стерилним штапићем узима материјал из цервикалног канала, а налаз се ради микроскопијом, културом или методом ПЦР",
+        "when": "Секрет и нелагодност у доњем дијелу трбуха, преглед по упуту гинеколога, планирање трудноће, испитивање полног партнера, превентивна контрола",
+        "prep": "Ван менструације, дан прије узимања без вагиналета, испирања и полних односа; о узимању антибиотика обавијестити љекара",
+        "abnormal": "Налаз узрочника значи да даље кораке треба договорити са љекаром, а негативан налаз уз тегобе не искључује друге узроке упале. Налаз тумачи гинеколог"
+      }
+    }
+  },
+  {
+    "slug": "perianal-swab",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Взятие материала с кожных складок вокруг заднего прохода для лабораторного исследования",
+        "how": "Стерильным тампоном или липкой лентой собирают материал с кожи вокруг ануса, затем его смотрят под микроскопом или засевают на среды",
+        "when": "Зуд в области заднего прохода, особенно ночной, подозрение на энтеробиоз у детей, оформление в детский сад, бассейн или стационар, микробиологическое обследование по назначению врача",
+        "prep": "Материал берут утром, до подмывания и до стула; накануне не использовать мази, свечи и антисептики",
+        "abnormal": "Находки могут быть связаны с паразитарной или бактериальной колонизацией, а однократный отрицательный результат её не всегда исключает. Нужно ли повторить исследование, решает врач"
+      },
+      "en": {
+        "what": "Sampling from the skin folds around the anus for laboratory examination",
+        "how": "Material is collected from the skin around the anus with a sterile swab or adhesive tape, then examined under the microscope or plated on culture media",
+        "when": "Itching around the anus, especially at night, suspected pinworm infection in children, clearance for kindergarten, swimming pool or hospital admission, microbiological work-up ordered by a doctor",
+        "prep": "The sample is taken in the morning, before washing and before a bowel movement; avoid ointments, suppositories and antiseptics the day before",
+        "abnormal": "Findings may be related to parasitic or bacterial colonisation, and a single negative result does not always rule it out. Whether the test should be repeated is decided by the doctor"
+      },
+      "sr": {
+        "what": "Uzimanje materijala sa kožnih nabora oko čmara za laboratorijsko ispitivanje",
+        "how": "Sterilnim štapićem ili ljepljivom trakom sakuplja se materijal sa kože oko analnog otvora, a zatim se pregleda pod mikroskopom ili zasijava na podloge",
+        "when": "Svrab oko čmara, naročito noću, sumnja na enterobijazu kod djece, upis u vrtić, bazen ili prijem u bolnicu, mikrobiološko ispitivanje po savjetu ljekara",
+        "prep": "Materijal se uzima ujutru, prije pranja i prije stolice; dan ranije ne koristiti masti, supozitorije i antiseptike",
+        "abnormal": "Nalaz može biti povezan sa parazitskom ili bakterijskom kolonizacijom, a jedan negativan nalaz je ne isključuje uvijek. Da li ispitivanje treba ponoviti, odlučuje ljekar"
+      },
+      "de": {
+        "what": "Materialentnahme aus den Hautfalten rund um den After für die Laboruntersuchung",
+        "how": "Mit einem sterilen Tupfer oder Klebestreifen wird Material von der Haut um den After gewonnen und anschließend mikroskopiert oder auf Nährböden ausgestrichen",
+        "when": "Juckreiz am After, besonders nachts, Verdacht auf Madenwürmer bei Kindern, Nachweis für Kindergarten, Schwimmbad oder Klinikaufnahme, mikrobiologische Abklärung auf ärztliche Anordnung",
+        "prep": "Die Entnahme erfolgt morgens, vor der Reinigung und vor dem Stuhlgang; am Vortag keine Salben, Zäpfchen und Antiseptika verwenden",
+        "abnormal": "Die Befunde können mit einer parasitären oder bakteriellen Besiedlung zusammenhängen, ein einzelnes negatives Ergebnis schließt sie nicht immer aus. Ob die Untersuchung zu wiederholen ist, entscheidet der Arzt"
+      },
+      "tr": {
+        "what": "Anüs çevresindeki deri kıvrımlarından laboratuvar incelemesi için örnek alınması",
+        "how": "Steril eküvyon veya yapışkan bantla anüs çevresindeki deriden örnek toplanır, ardından mikroskopta incelenir ya da besiyerine ekilir",
+        "when": "Özellikle geceleri olan makat çevresi kaşıntısı, çocuklarda kıl kurdu şüphesi, kreş, havuz veya hastane kaydı için istenen belge, hekimin istediği mikrobiyolojik inceleme",
+        "prep": "Örnek sabah, yıkanmadan ve dışkılamadan önce alınır; bir gün öncesinden merhem, fitil ve antiseptik kullanılmamalıdır",
+        "abnormal": "Bulgular parazit veya bakteri kolonizasyonuyla ilişkili olabilir, tek bir olumsuz sonuç bunu her zaman dışlamaz. İncelemenin yinelenip yinelenmeyeceğine hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Узимање материјала са кожних набора око чмара за лабораторијско испитивање",
+        "how": "Стерилним штапићем или љепљивом траком сакупља се материјал са коже око аналног отвора, а затим се прегледа под микроскопом или засијава на подлоге",
+        "when": "Свраб око чмара, нарочито ноћу, сумња на ентеробијазу код дјеце, упис у вртић, базен или пријем у болницу, микробиолошко испитивање по савјету љекара",
+        "prep": "Материјал се узима ујутру, прије прања и прије столице; дан раније не користити масти, супозиторије и антисептике",
+        "abnormal": "Налаз може бити повезан са паразитском или бактеријском колонизацијом, а један негативан налаз је не искључује увијек. Да ли испитивање треба поновити, одлучује љекар"
+      }
+    }
+  },
+  {
+    "slug": "right-eye-swab-bacteria",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Посев отделяемого конъюнктивы правого глаза на бактериальную флору",
+        "how": "Стерильным тампоном берут отделяемое с внутренней поверхности нижнего века правого глаза, материал засевают на питательные среды",
+        "when": "Покраснение, отёк век и гнойное отделяемое правого глаза, затяжной конъюнктивит, отсутствие эффекта от назначенных капель, воспаление глаза у новорождённого",
+        "prep": "Перед взятием глаз не промывать и не закапывать капли, косметику с век смыть заранее; контактные линзы снять",
+        "abnormal": "Рост бактерий может быть связан с воспалением конъюнктивы или с обычной флорой кожи век. Результат сопоставляет с осмотром офтальмолог"
+      },
+      "en": {
+        "what": "Culture of discharge from the conjunctiva of the right eye for bacterial flora",
+        "how": "A sterile swab collects discharge from the inner surface of the lower lid of the right eye, and the material is plated on culture media",
+        "when": "Redness, lid swelling and purulent discharge of the right eye, protracted conjunctivitis, no response to prescribed drops, eye inflammation in a newborn",
+        "prep": "Do not rinse the eye or use drops before sampling, remove eye make-up in advance and take out contact lenses",
+        "abnormal": "Bacterial growth may be related to inflammation of the conjunctiva or to the normal flora of the eyelid skin. The ophthalmologist compares the result with the examination"
+      },
+      "sr": {
+        "what": "Kultura sekreta konjunktive desnog oka na bakterijsku floru",
+        "how": "Sterilnim štapićem uzima se sekret sa unutrašnje strane donjeg kapka desnog oka, a materijal se zasijava na hranljive podloge",
+        "when": "Crvenilo, otok kapaka i gnojni sekret desnog oka, dugotrajni konjunktivitis, izostanak efekta propisanih kapi, upala oka kod novorođenčeta",
+        "prep": "Prije uzimanja oko ne ispirati i ne kapati kapi, šminku sa kapaka ukloniti ranije, a kontaktna sočiva izvaditi",
+        "abnormal": "Porast bakterija može biti povezan sa upalom konjunktive ili sa uobičajenom florom kože kapaka. Nalaz sa pregledom poredi oftalmolog"
+      },
+      "de": {
+        "what": "Kultur von Sekret der Bindehaut des rechten Auges auf Bakterienflora",
+        "how": "Mit einem sterilen Tupfer wird Sekret von der Innenseite des Unterlids des rechten Auges entnommen und auf Nährböden ausgestrichen",
+        "when": "Rötung, Lidschwellung und eitriges Sekret des rechten Auges, langwierige Bindehautentzündung, fehlendes Ansprechen auf verordnete Tropfen, Augenentzündung beim Neugeborenen",
+        "prep": "Vor der Entnahme das Auge nicht spülen und keine Tropfen anwenden, Augen-Make-up vorher entfernen und Kontaktlinsen herausnehmen",
+        "abnormal": "Bakterienwachstum kann mit einer Bindehautentzündung oder mit der normalen Hautflora der Lider zusammenhängen. Der Augenarzt setzt den Befund mit der Untersuchung in Beziehung"
+      },
+      "tr": {
+        "what": "Sağ gözün konjonktivasındaki akıntının bakteri kültürü",
+        "how": "Steril eküvyonla sağ gözün alt kapağının iç yüzündeki akıntı alınır ve besiyerlerine ekilir",
+        "when": "Sağ gözde kızarıklık, kapak şişliği ve iltihaplı akıntı, uzayan konjonktivit, verilen damlalara yanıt alınamaması, yenidoğanda göz iltihabı",
+        "prep": "Örnek alınmadan önce göz yıkanmamalı ve damla damlatılmamalı, göz makyajı önceden temizlenmeli, kontakt lens çıkarılmalıdır",
+        "abnormal": "Bakteri üremesi konjonktiva iltihabıyla ya da göz kapağı derisinin olağan florasıyla ilişkili olabilir. Sonucu muayene bulgularıyla göz hekimi karşılaştırır"
+      },
+      "sr_cyrl": {
+        "what": "Култура секрета коњунктиве десног ока на бактеријску флору",
+        "how": "Стерилним штапићем узима се секрет са унутрашње стране доњег капка десног ока, а материјал се засијава на хранљиве подлоге",
+        "when": "Црвенило, оток капака и гнојни секрет десног ока, дуготрајни коњунктивитис, изостанак ефекта прописаних капи, упала ока код новорођенчета",
+        "prep": "Прије узимања око не испирати и не капати капи, шминку са капака уклонити раније, а контактна сочива извадити",
+        "abnormal": "Пораст бактерија може бити повезан са упалом коњунктиве или са уобичајеном флором коже капака. Налаз са прегледом пореди офталмолог"
+      }
+    }
+  },
+  {
+    "slug": "sperm-culture-bacteria",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Бактериологический посев эякулята для выявления бактерий в мужских половых путях",
+        "how": "Эякулят получают путём мастурбации в стерильный контейнер, материал засевают на питательные среды и при росте определяют чувствительность к антибиотикам",
+        "when": "Подозрение на воспаление предстательной железы или придатка яичка, жжение и дискомфорт при мочеиспускании, обследование при бесплодии, контроль после лечения по назначению уролога",
+        "prep": "Половое воздержание 2–5 дней, перед сбором помочиться, вымыть руки и наружные половые органы с мылом; материал собирать только в стерильный контейнер, без презерватива и смазки",
+        "abnormal": "Рост бактерий может быть связан с воспалительным процессом в мочеполовых путях либо с попаданием флоры кожи при сборе. Значимость находки оценивает уролог"
+      },
+      "en": {
+        "what": "Bacterial culture of semen to detect bacteria in the male genital tract",
+        "how": "Semen is obtained by masturbation into a sterile container, plated on culture media, and any growth is tested for antibiotic susceptibility",
+        "when": "Suspected inflammation of the prostate or epididymis, burning and discomfort on urination, infertility work-up, follow-up after treatment as directed by a urologist",
+        "prep": "Sexual abstinence of 2–5 days, urinate before collection and wash hands and genitals with soap; collect only into a sterile container, without a condom or lubricant",
+        "abnormal": "Bacterial growth may be related to an inflammatory process in the urogenital tract or to skin flora entering the sample during collection. The significance of the finding is assessed by the urologist"
+      },
+      "sr": {
+        "what": "Bakteriološka kultura ejakulata radi otkrivanja bakterija u muškim polnim putevima",
+        "how": "Ejakulat se dobija masturbacijom u sterilnu posudu, zasijava se na hranljive podloge, a kod porasta se radi antibiogram",
+        "when": "Sumnja na upalu prostate ili pasjemenika, peckanje i nelagodnost pri mokrenju, ispitivanje kod neplodnosti, kontrola poslije liječenja po savjetu urologa",
+        "prep": "Polna uzdržanost 2–5 dana, prije uzimanja pomokriti se i oprati ruke i spoljašnje polne organe sapunom; uzorak sakupljati samo u sterilnu posudu, bez kondoma i lubrikanta",
+        "abnormal": "Porast bakterija može biti povezan sa upalnim procesom u mokraćnim i polnim putevima ili sa florom kože koja je dospjela u uzorak. Značaj nalaza procjenjuje urolog"
+      },
+      "de": {
+        "what": "Bakteriologische Kultur des Ejakulats zum Nachweis von Bakterien im männlichen Genitaltrakt",
+        "how": "Das Ejakulat wird durch Masturbation in ein steriles Gefäß gewonnen, auf Nährböden ausgestrichen und bei Wachstum auf Antibiotikaempfindlichkeit geprüft",
+        "when": "Verdacht auf Entzündung der Prostata oder des Nebenhodens, Brennen und Beschwerden beim Wasserlassen, Abklärung bei unerfülltem Kinderwunsch, Kontrolle nach Behandlung auf urologische Anordnung",
+        "prep": "Sexuelle Karenz von 2–5 Tagen, vor der Gewinnung Wasser lassen sowie Hände und äußere Genitalien mit Seife waschen; Auffangen nur in ein steriles Gefäß, ohne Kondom und Gleitmittel",
+        "abnormal": "Bakterienwachstum kann mit einem entzündlichen Prozess im Urogenitaltrakt oder mit Hautflora zusammenhängen, die bei der Gewinnung in die Probe gelangt ist. Die Bedeutung des Befundes beurteilt der Urologe"
+      },
+      "tr": {
+        "what": "Erkek genital yollarında bakteri aramak için yapılan meni kültürü",
+        "how": "Meni mastürbasyonla steril kaba alınır, besiyerlerine ekilir ve üreme olursa antibiyogram yapılır",
+        "when": "Prostat veya epididim iltihabı şüphesi, idrar yaparken yanma ve rahatsızlık, kısırlık araştırması, üroloji hekiminin isteğiyle tedavi sonrası kontrol",
+        "prep": "2–5 gün cinsel perhiz, örnek vermeden önce idrara çıkmak ve elleri ile dış genital bölgeyi sabunla yıkamak gerekir; örnek yalnızca steril kaba, prezervatif ve kayganlaştırıcı kullanmadan alınır",
+        "abnormal": "Bakteri üremesi idrar ve genital yollardaki iltihapla ya da örnek alınırken bulaşan deri florasıyla ilişkili olabilir. Bulgunun önemini üroloji hekimi değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Бактериолошка култура ејакулата ради откривања бактерија у мушким полним путевима",
+        "how": "Ејакулат се добија мастурбацијом у стерилну посуду, засијава се на хранљиве подлоге, а код пораста се ради антибиограм",
+        "when": "Сумња на упалу простате или пасјеменика, пецкање и нелагодност при мокрењу, испитивање код неплодности, контрола послије лијечења по савјету уролога",
+        "prep": "Полна уздржаност 2–5 дана, прије узимања помокрити се и опрати руке и спољашње полне органе сапуном; узорак сакупљати само у стерилну посуду, без кондома и лубриканта",
+        "abnormal": "Пораст бактерија може бити повезан са упалним процесом у мокраћним и полним путевима или са флором коже која је доспјела у узорак. Значај налаза процјењује уролог"
+      }
+    }
+  },
+  {
+    "slug": "sputum-bacteria",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Бактериологический посев мокроты из нижних дыхательных путей",
+        "how": "Пациент откашливает мокроту в стерильный контейнер, в лаборатории её засевают на среды и при росте определяют чувствительность к антибиотикам",
+        "when": "Затяжной кашель с мокротой, пневмония, обострение хронического бронхита и ХОБЛ, отсутствие эффекта от назначенного лечения",
+        "prep": "Мокроту собирают утром натощак, после чистки зубов и полоскания рта водой, откашливая её из глубины дыхательных путей, а не сплёвывая слюну",
+        "abnormal": "Рост бактерий может быть связан с инфекцией дыхательных путей или с флорой полости рта, попавшей в образец. Результат вместе с клинической картиной оценивает врач"
+      },
+      "en": {
+        "what": "Bacterial culture of sputum from the lower airways",
+        "how": "The patient coughs sputum into a sterile container, the laboratory plates it on culture media and tests any growth for antibiotic susceptibility",
+        "when": "Prolonged productive cough, pneumonia, exacerbation of chronic bronchitis and COPD, lack of response to prescribed treatment",
+        "prep": "Sputum is collected in the morning before eating, after brushing the teeth and rinsing the mouth with water, coughing it up from deep in the airways rather than spitting saliva",
+        "abnormal": "Bacterial growth may be related to an airway infection or to mouth flora that entered the sample. The result is assessed by a doctor together with the clinical picture"
+      },
+      "sr": {
+        "what": "Bakteriološka kultura ispljuvka iz donjih disajnih puteva",
+        "how": "Pacijent iskašljava sputum u sterilnu posudu, u laboratoriji se zasijava na podloge, a kod porasta se radi antibiogram",
+        "when": "Dugotrajan kašalj sa iskašljavanjem, upala pluća, pogoršanje hroničnog bronhitisa i HOBP, izostanak efekta propisane terapije",
+        "prep": "Sputum se sakuplja ujutru natašte, poslije pranja zuba i ispiranja usta vodom, iskašljavanjem iz dubine disajnih puteva, a ne pljuvanjem pljuvačke",
+        "abnormal": "Porast bakterija može biti povezan sa infekcijom disajnih puteva ili sa florom usne duplje koja je dospjela u uzorak. Nalaz uz kliničku sliku procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Bakteriologische Kultur von Auswurf aus den unteren Atemwegen",
+        "how": "Der Patient hustet Sputum in ein steriles Gefäß, im Labor wird es auf Nährböden ausgestrichen und bei Wachstum auf Antibiotikaempfindlichkeit geprüft",
+        "when": "Anhaltender Husten mit Auswurf, Lungenentzündung, Verschlechterung von chronischer Bronchitis und COPD, fehlendes Ansprechen auf die verordnete Behandlung",
+        "prep": "Der Auswurf wird morgens nüchtern gewonnen, nach dem Zähneputzen und Ausspülen des Mundes mit Wasser, tief aus den Atemwegen abgehustet und nicht als Speichel ausgespuckt",
+        "abnormal": "Bakterienwachstum kann mit einer Atemwegsinfektion oder mit Mundflora zusammenhängen, die in die Probe gelangt ist. Der Befund wird zusammen mit dem klinischen Bild vom Arzt beurteilt"
+      },
+      "tr": {
+        "what": "Alt solunum yollarından alınan balgamın bakteri kültürü",
+        "how": "Hasta balgamı steril kaba öksürerek çıkarır, laboratuvarda besiyerlerine ekilir ve üreme olursa antibiyogram yapılır",
+        "when": "Balgamlı uzun süren öksürük, zatürre, kronik bronşit ve KOAH alevlenmesi, verilen tedaviye yanıt alınamaması",
+        "prep": "Balgam sabah aç karnına, dişler fırçalanıp ağız suyla çalkalandıktan sonra, tükürük değil solunum yollarının derininden öksürükle çıkarılan materyal olarak toplanır",
+        "abnormal": "Bakteri üremesi solunum yolu enfeksiyonuyla ya da örneğe karışan ağız florasıyla ilişkili olabilir. Sonucu klinik tabloyla birlikte hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Бактериолошка култура испљувка из доњих дисајних путева",
+        "how": "Пацијент искашљава спутум у стерилну посуду, у лабораторији се засијава на подлоге, а код пораста се ради антибиограм",
+        "when": "Дуготрајан кашаљ са искашљавањем, упала плућа, погоршање хроничног бронхитиса и ХОБП, изостанак ефекта прописане терапије",
+        "prep": "Спутум се сакупља ујутру наташте, послије прања зуба и испирања уста водом, искашљавањем из дубине дисајних путева, а не пљувањем пљувачке",
+        "abnormal": "Пораст бактерија може бити повезан са инфекцијом дисајних путева или са флором усне дупље која је доспјела у узорак. Налаз уз клиничку слику процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "sputum-fungi",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микологическое исследование мокроты — посев на дрожжевые и плесневые грибы",
+        "how": "Откашлянную в стерильный контейнер мокроту засевают на специальные среды для грибов, рост оценивают дольше, чем при бактериальном посеве",
+        "when": "Затяжной кашель без ответа на антибактериальное лечение, длительный приём антибиотиков или ингаляционных гормонов, обследование при сниженном иммунитете, контроль по назначению пульмонолога",
+        "prep": "Собирают утром натощак, после чистки зубов и полоскания рта водой, чтобы в контейнер попала мокрота из лёгких, а не слюна",
+        "abnormal": "Рост грибов может отражать как колонизацию слизистых, так и участие грибов в воспалении, различить это можно только с учётом симптомов и других обследований. Вывод делает врач"
+      },
+      "en": {
+        "what": "Mycological examination of sputum, a culture for yeasts and moulds",
+        "how": "Sputum coughed into a sterile container is plated on special fungal media, and growth is assessed over a longer period than in bacterial culture",
+        "when": "Prolonged cough without response to antibacterial treatment, long-term use of antibiotics or inhaled steroids, work-up in reduced immunity, monitoring as directed by a pulmonologist",
+        "prep": "Collected in the morning before eating, after brushing the teeth and rinsing the mouth with water, so that sputum from the lungs rather than saliva reaches the container",
+        "abnormal": "Fungal growth may reflect colonisation of the mucous membranes or involvement of fungi in inflammation, and the two can be told apart only alongside symptoms and other tests. The conclusion is drawn by a doctor"
+      },
+      "sr": {
+        "what": "Mikološko ispitivanje ispljuvka, kultura na kvasnice i plijesni",
+        "how": "Sputum iskašljan u sterilnu posudu zasijava se na posebne podloge za gljivice, a porast se prati duže nego kod bakteriološke kulture",
+        "when": "Dugotrajan kašalj bez odgovora na antibiotsku terapiju, dugotrajno uzimanje antibiotika ili inhalacionih kortikosteroida, ispitivanje kod oslabljenog imuniteta, kontrola po savjetu pulmologa",
+        "prep": "Uzorak se sakuplja ujutru natašte, poslije pranja zuba i ispiranja usta vodom, tako da u posudu dospije ispljuvak iz pluća, a ne pljuvačka",
+        "abnormal": "Porast gljivica može značiti kolonizaciju sluznica, ali i učešće gljivica u upali, a razlikovanje je moguće samo uz simptome i druge nalaze. Zaključak donosi ljekar"
+      },
+      "de": {
+        "what": "Mykologische Untersuchung des Auswurfs, eine Kultur auf Hefe- und Schimmelpilze",
+        "how": "In ein steriles Gefäß abgehusteter Auswurf wird auf spezielle Pilznährböden ausgestrichen, das Wachstum wird länger beobachtet als bei der Bakterienkultur",
+        "when": "Anhaltender Husten ohne Ansprechen auf antibakterielle Behandlung, längere Einnahme von Antibiotika oder inhalativen Kortikosteroiden, Abklärung bei geschwächter Immunabwehr, Kontrolle auf Anordnung des Pneumologen",
+        "prep": "Gewinnung morgens nüchtern, nach dem Zähneputzen und Ausspülen des Mundes mit Wasser, damit Auswurf aus der Lunge und nicht Speichel in das Gefäß gelangt",
+        "abnormal": "Pilzwachstum kann eine Besiedlung der Schleimhäute oder eine Beteiligung von Pilzen an der Entzündung widerspiegeln, unterscheiden lässt sich das nur zusammen mit Symptomen und weiteren Untersuchungen. Die Bewertung nimmt der Arzt vor"
+      },
+      "tr": {
+        "what": "Balgamın mantar yönünden incelenmesi, maya ve küf mantarları için kültür",
+        "how": "Steril kaba öksürülerek alınan balgam mantarlara özgü besiyerlerine ekilir, üreme bakteri kültürüne göre daha uzun sürede değerlendirilir",
+        "when": "Antibiyotik tedavisine yanıt vermeyen uzun süreli öksürük, uzun süreli antibiyotik veya soluma yoluyla kortizon kullanımı, bağışıklığı düşük kişilerde inceleme, göğüs hastalıkları hekiminin istediği kontrol",
+        "prep": "Örnek sabah aç karnına, dişler fırçalanıp ağız suyla çalkalandıktan sonra alınır, böylece kaba tükürük değil akciğerden gelen balgam toplanır",
+        "abnormal": "Mantar üremesi mukozalarda kolonizasyonu da, iltihaba mantarların katıldığını da gösterebilir, ikisi ancak belirtiler ve diğer tetkiklerle birlikte ayırt edilir. Değerlendirmeyi hekim yapar"
+      },
+      "sr_cyrl": {
+        "what": "Миколошко испитивање испљувка, култура на кваснице и плијесни",
+        "how": "Спутум искашљан у стерилну посуду засијава се на посебне подлоге за гљивице, а пораст се прати дуже него код бактериолошке културе",
+        "when": "Дуготрајан кашаљ без одговора на антибиотску терапију, дуготрајно узимање антибиотика или инхалационих кортикостероида, испитивање код ослабљеног имунитета, контрола по савјету пулмолога",
+        "prep": "Узорак се сакупља ујутру наташте, послије прања зуба и испирања уста водом, тако да у посуду доспије испљувак из плућа, а не пљувачка",
+        "abnormal": "Пораст гљивица може значити колонизацију слузница, али и учешће гљивица у упали, а разликовање је могуће само уз симптоме и друге налазе. Закључак доноси љекар"
+      }
+    }
+  },
+  {
+    "slug": "wound-swab-bacteria",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Посев отделяемого раны на бактериальную флору с определением чувствительности к антибиотикам",
+        "how": "Стерильным тампоном берут отделяемое со дна и краёв раны после удаления поверхностного налёта, материал засевают на питательные среды",
+        "when": "Гнойное отделяемое, покраснение и отёк вокруг раны, длительно незаживающие и послеоперационные раны, трофические язвы, подбор антибиотика врачом",
+        "prep": "Перед взятием рану не обрабатывать антисептиками, повязку снимают непосредственно перед процедурой",
+        "abnormal": "Рост бактерий может быть связан с инфицированием раны или с колонизацией без признаков воспаления. Нужно ли лечение и какое, определяет врач по виду раны и жалобам"
+      },
+      "en": {
+        "what": "Culture of wound discharge for bacterial flora with antibiotic susceptibility testing",
+        "how": "A sterile swab collects discharge from the base and edges of the wound after the surface coating is removed, and the material is plated on culture media",
+        "when": "Purulent discharge, redness and swelling around the wound, slow-healing and post-operative wounds, trophic ulcers, selection of an antibiotic by the doctor",
+        "prep": "Do not apply antiseptics to the wound before sampling; the dressing is removed immediately before the procedure",
+        "abnormal": "Bacterial growth may be related to wound infection or to colonisation without signs of inflammation. Whether and which treatment is needed is decided by the doctor based on the wound and the symptoms"
+      },
+      "sr": {
+        "what": "Kultura sekreta rane na bakterijsku floru sa antibiogramom",
+        "how": "Sterilnim štapićem uzima se sekret sa dna i ivica rane nakon uklanjanja površinskih naslaga, a materijal se zasijava na hranljive podloge",
+        "when": "Gnojni sekret, crvenilo i otok oko rane, rane koje dugo ne zarastaju i postoperativne rane, potkoljenični ulkusi, izbor antibiotika od strane ljekara",
+        "prep": "Prije uzimanja ranu ne tretirati antisepticima, a zavoj se skida neposredno prije postupka",
+        "abnormal": "Porast bakterija može biti povezan sa infekcijom rane ili sa kolonizacijom bez znakova upale. Da li je i kakvo liječenje potrebno, određuje ljekar prema izgledu rane i tegobama"
+      },
+      "de": {
+        "what": "Kultur von Wundsekret auf Bakterienflora mit Antibiogramm",
+        "how": "Mit einem sterilen Tupfer wird Sekret vom Wundgrund und den Wundrändern entnommen, nachdem der oberflächliche Belag entfernt wurde, und auf Nährböden ausgestrichen",
+        "when": "Eitriges Sekret, Rötung und Schwellung um die Wunde, schlecht heilende und postoperative Wunden, Unterschenkelgeschwüre, Auswahl eines Antibiotikums durch den Arzt",
+        "prep": "Die Wunde vor der Entnahme nicht mit Antiseptika behandeln, der Verband wird unmittelbar vor dem Eingriff entfernt",
+        "abnormal": "Bakterienwachstum kann mit einer Wundinfektion oder mit einer Besiedlung ohne Entzündungszeichen zusammenhängen. Ob und welche Behandlung nötig ist, entscheidet der Arzt anhand von Wundbild und Beschwerden"
+      },
+      "tr": {
+        "what": "Yara akıntısının bakteri kültürü ve antibiyogramı",
+        "how": "Yüzeydeki tabaka temizlendikten sonra steril eküvyonla yaranın tabanından ve kenarlarından akıntı alınır ve besiyerlerine ekilir",
+        "when": "İltihaplı akıntı, yara çevresinde kızarıklık ve şişlik, geç iyileşen ve ameliyat sonrası yaralar, bacak ülserleri, hekimin antibiyotik seçimi",
+        "prep": "Örnek alınmadan önce yaraya antiseptik uygulanmamalı, pansuman işlemden hemen önce açılmalıdır",
+        "abnormal": "Bakteri üremesi yara enfeksiyonuyla ya da iltihap belirtisi olmadan kolonizasyonla ilişkili olabilir. Tedavi gerekip gerekmediğine ve türüne, yaranın görünümü ve şikayetlere göre hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Култура секрета ране на бактеријску флору са антибиограмом",
+        "how": "Стерилним штапићем узима се секрет са дна и ивица ране након уклањања површинских наслага, а материјал се засијава на хранљиве подлоге",
+        "when": "Гнојни секрет, црвенило и оток око ране, ране које дуго не зарастају и постоперативне ране, поткољенични улкуси, избор антибиотика од стране љекара",
+        "prep": "Прије узимања рану не третирати антисептицима, а завој се скида непосредно прије поступка",
+        "abnormal": "Пораст бактерија може бити повезан са инфекцијом ране или са колонизацијом без знакова упале. Да ли је и какво лијечење потребно, одређује љекар према изгледу ране и тегобама"
+      }
+    }
+  },
+  {
+    "slug": "wound-swab-fungi",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование отделяемого раны на дрожжевые и плесневые грибы",
+        "how": "Материал с раны берут стерильным тампоном и засевают на специальные среды для грибов, рост оценивают в течение более длительного времени, чем при бактериальном посеве",
+        "when": "Длительно незаживающие раны, отсутствие эффекта от антибактериального лечения, раны у пациентов с диабетом и сниженным иммунитетом, ожоговые поверхности",
+        "prep": "Рану перед взятием не обрабатывать антисептиками и противогрибковыми средствами, повязку снимают непосредственно перед процедурой",
+        "abnormal": "Обнаружение грибов может отражать как поверхностную колонизацию, так и их участие в воспалении раны. Значение находки оценивает лечащий врач"
+      },
+      "en": {
+        "what": "Examination of wound discharge for yeasts and moulds",
+        "how": "Material is taken from the wound with a sterile swab and plated on special fungal media, with growth assessed over a longer period than in bacterial culture",
+        "when": "Slow-healing wounds, no response to antibacterial treatment, wounds in patients with diabetes or reduced immunity, burn surfaces",
+        "prep": "Do not treat the wound with antiseptics or antifungal products before sampling; the dressing is removed immediately before the procedure",
+        "abnormal": "Detection of fungi may reflect superficial colonisation or their involvement in wound inflammation. The significance of the finding is assessed by the treating doctor"
+      },
+      "sr": {
+        "what": "Ispitivanje sekreta rane na kvasnice i plijesni",
+        "how": "Materijal sa rane uzima se sterilnim štapićem i zasijava na posebne podloge za gljivice, a porast se prati duže nego kod bakteriološke kulture",
+        "when": "Rane koje dugo ne zarastaju, izostanak efekta antibiotske terapije, rane kod pacijenata sa dijabetesom i oslabljenim imunitetom, opekotinske površine",
+        "prep": "Ranu prije uzimanja ne tretirati antisepticima ni antimikoticima, a zavoj se skida neposredno prije postupka",
+        "abnormal": "Nalaz gljivica može značiti površinsku kolonizaciju, ali i njihovo učešće u upali rane. Značaj nalaza procjenjuje ljekar koji liječi"
+      },
+      "de": {
+        "what": "Untersuchung von Wundsekret auf Hefe- und Schimmelpilze",
+        "how": "Das Material wird mit einem sterilen Tupfer aus der Wunde entnommen und auf spezielle Pilznährböden ausgestrichen, das Wachstum wird länger beobachtet als bei der Bakterienkultur",
+        "when": "Schlecht heilende Wunden, fehlendes Ansprechen auf antibakterielle Behandlung, Wunden bei Patienten mit Diabetes oder geschwächter Immunabwehr, Brandwunden",
+        "prep": "Die Wunde vor der Entnahme nicht mit Antiseptika oder Antimykotika behandeln, der Verband wird unmittelbar vor dem Eingriff entfernt",
+        "abnormal": "Ein Pilznachweis kann eine oberflächliche Besiedlung oder eine Beteiligung an der Wundentzündung widerspiegeln. Die Bedeutung des Befundes beurteilt der behandelnde Arzt"
+      },
+      "tr": {
+        "what": "Yara akıntısının maya ve küf mantarları yönünden incelenmesi",
+        "how": "Yaradan steril eküvyonla alınan örnek mantarlara özgü besiyerlerine ekilir, üreme bakteri kültürüne göre daha uzun sürede değerlendirilir",
+        "when": "Geç iyileşen yaralar, antibiyotik tedavisine yanıt alınamaması, şeker hastalığı veya bağışıklık düşüklüğü olan hastalardaki yaralar, yanık yüzeyleri",
+        "prep": "Örnek alınmadan önce yaraya antiseptik ve mantar ilacı uygulanmamalı, pansuman işlemden hemen önce açılmalıdır",
+        "abnormal": "Mantar saptanması yüzeysel kolonizasyonu da, mantarların yara iltihabına katıldığını da gösterebilir. Bulgunun önemini tedaviyi yürüten hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Испитивање секрета ране на кваснице и плијесни",
+        "how": "Материјал са ране узима се стерилним штапићем и засијава на посебне подлоге за гљивице, а пораст се прати дуже него код бактериолошке културе",
+        "when": "Ране које дуго не зарастају, изостанак ефекта антибиотске терапије, ране код пацијената са дијабетесом и ослабљеним имунитетом, опекотинске површине",
+        "prep": "Рану прије узимања не третирати антисептицима ни антимикотицима, а завој се скида непосредно прије поступка",
+        "abnormal": "Налаз гљивица може значити површинску колонизацију, али и њихово учешће у упали ране. Значај налаза процјењује љекар који лијечи"
+      }
+    }
+  }
+]

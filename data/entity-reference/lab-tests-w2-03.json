@@ -1,0 +1,770 @@
+[
+  {
+    "slug": "ureaplasma-urealyticum-pcr",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Молекулярный тест, выявляющий ДНК бактерии Ureaplasma urealyticum в урогенитальном материале",
+        "how": "Мазок из уретры или цервикального канала либо первая порция утренней мочи, далее исследование методом ПЦР в лаборатории",
+        "when": "Выделения, дискомфорт при мочеиспускании, планирование беременности, обследование при бесплодии, обследование партнёра, контроль после лечения",
+        "prep": "Не мочиться 2–3 часа перед сдачей мазка или мочи, женщинам — вне дней менструации; сроки после приёма антибактериальных препаратов уточняет врач",
+        "abnormal": "Обнаружение ДНК означает присутствие микроорганизма в пробе, который встречается и без жалоб. Клиническое значение результата и необходимость обследования партнёра оценивает врач"
+      },
+      "en": {
+        "what": "Molecular test that detects DNA of the bacterium Ureaplasma urealyticum in a urogenital sample",
+        "how": "Swab from the urethra or cervical canal, or a first-morning urine portion, followed by PCR analysis in the laboratory",
+        "when": "Discharge, discomfort when urinating, pregnancy planning, infertility work-up, examination of a partner, follow-up after treatment",
+        "prep": "Do not urinate for 2–3 hours before the swab or urine sample, women outside menstruation days; the interval after antibacterial medicines is set by the doctor",
+        "abnormal": "Detection of DNA means the microorganism is present in the sample, and it also occurs without any complaints. The clinical significance of the result and the need to examine a partner are assessed by a doctor"
+      },
+      "sr": {
+        "what": "Molekularni test koji otkriva DNK bakterije Ureaplasma urealyticum u urogenitalnom uzorku",
+        "how": "Bris uretre ili cervikalnog kanala ili prvi jutarnji mlaz mokraće, nakon čega slijedi PCR analiza u laboratoriji",
+        "when": "Sekret, nelagoda pri mokrenju, planiranje trudnoće, obrada zbog neplodnosti, pregled partnera, kontrola poslije terapije",
+        "prep": "Ne mokriti 2–3 sata prije uzimanja brisa ili mokraće, žene van dana menstruacije; rok poslije uzimanja antibakterijskih lijekova određuje ljekar",
+        "abnormal": "Nalaz DNK znači da je mikroorganizam prisutan u uzorku, a nalazi se i bez tegoba. Klinički značaj nalaza i potrebu pregleda partnera procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Molekularer Test, der DNA des Bakteriums Ureaplasma urealyticum in einer urogenitalen Probe nachweist",
+        "how": "Abstrich aus Harnröhre oder Gebärmutterhalskanal oder erster Morgenurin, anschließend PCR-Analyse im Labor",
+        "when": "Ausfluss, Beschwerden beim Wasserlassen, Kinderwunsch, Abklärung bei unerfülltem Kinderwunsch, Untersuchung des Partners, Kontrolle nach einer Behandlung",
+        "prep": "2–3 Stunden vor dem Abstrich oder der Urinprobe nicht Wasser lassen, Frauen außerhalb der Menstruationstage; den Abstand zu antibakteriellen Medikamenten legt der Arzt fest",
+        "abnormal": "Ein DNA-Nachweis bedeutet, dass der Erreger in der Probe vorhanden ist, er kommt auch ohne Beschwerden vor. Die klinische Bedeutung und die Notwendigkeit einer Partneruntersuchung beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "Ürogenital örnekte Ureaplasma urealyticum bakterisinin DNA molekülünü arayan moleküler test",
+        "how": "Üretra veya servikal kanaldan sürüntü ya da sabah ilk idrar örneği alınır, ardından laboratuvarda PCR ile incelenir",
+        "when": "Akıntı, idrar yaparken rahatsızlık, gebelik planlaması, kısırlık araştırması, eşin incelenmesi, tedavi sonrası kontrol",
+        "prep": "Sürüntü veya idrar örneğinden 2–3 saat önce idrara çıkılmamalı, kadınlarda adet günleri dışında alınmalıdır; antibakteriyel ilaçlardan sonraki bekleme süresini hekim belirler",
+        "abnormal": "DNA saptanması mikroorganizmanın örnekte bulunduğunu gösterir ve şikayet olmadan da görülebilir. Sonucun klinik önemini ve eşin incelenmesi gerekip gerekmediğini hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Молекуларни тест који открива ДНК бактерије Ureaplasma urealyticum у урогениталном узорку",
+        "how": "Брис уретре или цервикалног канала или први јутарњи млаз мокраће, након чега слиједи ПЦР анализа у лабораторији",
+        "when": "Секрет, нелагода при мокрењу, планирање трудноће, обрада због неплодности, преглед партнера, контрола послије терапије",
+        "prep": "Не мокрити 2–3 сата прије узимања бриса или мокраће, жене ван дана менструације; рок послије узимања антибактеријских лијекова одређује љекар",
+        "abnormal": "Налаз ДНК значи да је микроорганизам присутан у узорку, а налази се и без тегоба. Клинички значај налаза и потребу прегледа партнера процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "varicella-zoster-virus-igg",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgG к вирусу ветряной оспы и опоясывающего лишая",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Оценка иммунного статуса перед вакцинацией, планирование беременности, обследование медицинских работников, контакт с заболевшим, подготовка к иммуносупрессивной терапии",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Наличие или отсутствие IgG может быть связано с перенесённым ранее контактом с вирусом или с вакцинацией. Вывод об иммунном статусе делает врач с учётом анамнеза"
+      },
+      "en": {
+        "what": "Blood test for IgG class antibodies to the varicella zoster virus",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Assessment of immune status before vaccination, pregnancy planning, examination of healthcare workers, contact with an ill person, preparation for immunosuppressive therapy",
+        "prep": "No special preparation required",
+        "abnormal": "The presence or absence of IgG may be related to an earlier contact with the virus or to vaccination. Conclusions about immune status are made by a doctor taking the history into account"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgG na virus varičele i herpesa zostera",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Procjena imunskog statusa prije vakcinacije, planiranje trudnoće, pregled zdravstvenih radnika, kontakt sa oboljelim, priprema za imunosupresivnu terapiju",
+        "prep": "Nije potrebna posebna priprema",
+        "abnormal": "Prisustvo ili odsustvo IgG može biti povezano sa ranijim kontaktom sa virusom ili sa vakcinacijom. Zaključak o imunskom statusu donosi ljekar uzimajući u obzir anamnezu"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgG gegen das Varizella-Zoster-Virus",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Beurteilung des Immunstatus vor einer Impfung, Kinderwunsch, Untersuchung von medizinischem Personal, Kontakt zu einer erkrankten Person, Vorbereitung auf eine immunsuppressive Therapie",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "Das Vorhandensein oder Fehlen von IgG kann mit einem früheren Kontakt mit dem Virus oder mit einer Impfung zusammenhängen. Die Einschätzung des Immunstatus trifft der Arzt unter Berücksichtigung der Vorgeschichte"
+      },
+      "tr": {
+        "what": "Suçiçeği ve zona etkeni virüse karşı IgG sınıfı antikorları ölçen kan testi",
+        "how": "Venöz kan alınır, birkaç dakika sürer",
+        "when": "Aşı öncesi bağışıklık durumunun değerlendirilmesi, gebelik planlaması, sağlık çalışanlarının taranması, hasta biriyle temas, bağışıklığı baskılayan tedavi öncesi hazırlık",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "IgG bulunması veya bulunmaması virüsle daha önceki temas ya da aşılanma ile ilişkili olabilir. Bağışıklık durumu hakkındaki değerlendirmeyi, öyküyü de dikkate alarak hekim yapar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgG на вирус варичеле и херпеса зостера",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Процјена имунског статуса прије вакцинације, планирање трудноће, преглед здравствених радника, контакт са обољелим, припрема за имуносупресивну терапију",
+        "prep": "Није потребна посебна припрема",
+        "abnormal": "Присуство или одсуство IgG може бити повезано са ранијим контактом са вирусом или са вакцинацијом. Закључак о имунском статусу доноси љекар узимајући у обзир анамнезу"
+      }
+    }
+  },
+  {
+    "slug": "varicella-zoster-virus-igm",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgM к вирусу ветряной оспы и опоясывающего лишая, которые появляются при недавнем контакте с вирусом",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Сыпь неясного происхождения, подозрение на недавнее заражение, обследование при опоясывающем лишае, контакт с заболевшим во время беременности",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Результат может быть связан с недавним контактом с вирусом или с его реактивацией, встречаются и перекрёстные реакции. Оценивает результат врач вместе с IgG и клинической картиной"
+      },
+      "en": {
+        "what": "Blood test for IgM class antibodies to the varicella zoster virus, which appear after a recent contact with the virus",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Rash of unclear origin, suspected recent infection, work-up of shingles, contact with an ill person during pregnancy",
+        "prep": "No special preparation required",
+        "abnormal": "The result may be related to a recent contact with the virus or to its reactivation, and cross-reactions also occur. It is interpreted by a doctor together with IgG and the clinical picture"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgM na virus varičele i zostera, koja se javljaju pri nedavnom kontaktu sa virusom",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Osip nejasnog porijekla, sumnja na nedavnu infekciju, obrada kod herpesa zostera, kontakt sa oboljelim u trudnoći",
+        "prep": "Nije potrebna posebna priprema",
+        "abnormal": "Nalaz može biti povezan sa nedavnim kontaktom sa virusom ili sa njegovom reaktivacijom, a moguće su i unakrsne reakcije. Nalaz tumači ljekar zajedno sa IgG i kliničkom slikom"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgM gegen das Varizella-Zoster-Virus, die bei einem kürzlichen Kontakt mit dem Virus auftreten",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Hautausschlag unklarer Ursache, Verdacht auf eine kürzliche Infektion, Abklärung bei Gürtelrose, Kontakt zu einer erkrankten Person in der Schwangerschaft",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "Das Ergebnis kann mit einem kürzlichen Kontakt mit dem Virus oder einer Reaktivierung zusammenhängen, auch Kreuzreaktionen kommen vor. Die Beurteilung erfolgt durch den Arzt zusammen mit IgG und dem klinischen Bild"
+      },
+      "tr": {
+        "what": "Suçiçeği ve zona etkeni virüse karşı, yakın zamanlı temasta ortaya çıkan IgM sınıfı antikorları ölçen kan testi",
+        "how": "Venöz kan alınır, birkaç dakika sürer",
+        "when": "Nedeni belirsiz döküntü, yakın zamanda geçirilmiş enfeksiyon şüphesi, zona araştırması, gebelikte hasta biriyle temas",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "Sonuç virüsle yakın zamanlı temas veya virüsün yeniden etkinleşmesi ile ilişkili olabilir, çapraz reaksiyonlar da görülebilir. Değerlendirmeyi IgG ve klinik tabloyla birlikte hekim yapar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgM на вирус варичеле и зостера, која се јављају при недавном контакту са вирусом",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Осип нејасног поријекла, сумња на недавну инфекцију, обрада код херпеса зостера, контакт са обољелим у трудноћи",
+        "prep": "Није потребна посебна припрема",
+        "abnormal": "Налаз може бити повезан са недавним контактом са вирусом или са његовом реактивацијом, а могуће су и унакрсне реакције. Налаз тумачи љекар заједно са IgG и клиничком сликом"
+      }
+    }
+  },
+  {
+    "slug": "anti-sars-cov",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела к коронавирусу SARS-CoV-2",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Оценка контакта с вирусом в прошлом, ситуация после перенесённого заболевания или вакцинации, эпидемиологические обследования",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Наличие антител может быть связано с перенесённой инфекцией или с вакцинацией и само по себе не измеряет степень защиты. Трактует результат врач"
+      },
+      "en": {
+        "what": "Blood test for antibodies to the SARS-CoV-2 coronavirus",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Assessment of past contact with the virus, situation after an illness or vaccination, epidemiological examinations",
+        "prep": "No special preparation required",
+        "abnormal": "The presence of antibodies may be related to a past infection or to vaccination and does not on its own measure the degree of protection. The result is interpreted by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela na koronavirus SARS-CoV-2",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Procjena ranijeg kontakta sa virusom, stanje poslije preboljele infekcije ili vakcinacije, epidemiološka ispitivanja",
+        "prep": "Nije potrebna posebna priprema",
+        "abnormal": "Prisustvo antitijela može biti povezano sa preboljelom infekcijom ili sa vakcinacijom i samo po sebi ne mjeri stepen zaštite. Nalaz tumači ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper gegen das Coronavirus SARS-CoV-2",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Beurteilung eines früheren Kontakts mit dem Virus, Situation nach durchgemachter Erkrankung oder Impfung, epidemiologische Untersuchungen",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "Das Vorhandensein von Antikörpern kann mit einer durchgemachten Infektion oder einer Impfung zusammenhängen und misst für sich allein nicht den Grad des Schutzes. Das Ergebnis beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "SARS-CoV-2 koronavirüsüne karşı antikorları ölçen kan testi",
+        "how": "Venöz kan alınır, birkaç dakika sürer",
+        "when": "Virüsle geçmişteki temasın değerlendirilmesi, hastalık veya aşı sonrası durum, salgın araştırmaları",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "Antikor bulunması geçirilmiş enfeksiyon veya aşılanma ile ilişkili olabilir ve tek başına korunma düzeyini ölçmez. Sonucu hekim yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела на коронавирус SARS-CoV-2",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Процјена ранијег контакта са вирусом, стање послије пребољеле инфекције или вакцинације, епидемиолошка испитивања",
+        "prep": "Није потребна посебна припрема",
+        "abnormal": "Присуство антитијела може бити повезано са пребољелом инфекцијом или са вакцинацијом и само по себи не мјери степен заштите. Налаз тумачи љекар"
+      }
+    }
+  },
+  {
+    "slug": "campylobacter-culture",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Бактериологический посев кала на кампилобактер, одну из частых причин кишечных инфекций",
+        "how": "Образец кала высевают на селективные среды в особых условиях инкубации, результат готовится несколько дней",
+        "when": "Длительная диарея, кишечные жалобы после поездки или употребления недостаточно термически обработанной птицы, обследование при вспышках, оформление санитарной книжки",
+        "prep": "Кал собирают в контейнер из лаборатории, до начала антибактериальной терапии либо в сроки, которые укажет врач, и доставляют в лабораторию в тот же день",
+        "abnormal": "Рост бактерии в посеве может быть связан с кишечной инфекцией, а отсутствие роста её не исключает. Дальнейшую тактику определяет врач"
+      },
+      "en": {
+        "what": "Stool culture for Campylobacter, one of the common causes of intestinal infections",
+        "how": "The stool sample is cultured on selective media under special incubation conditions, the result takes several days",
+        "when": "Prolonged diarrhoea, bowel complaints after travel or after eating undercooked poultry, examination during outbreaks, occupational health certificates",
+        "prep": "Collect the stool in a container from the laboratory, before starting antibacterial therapy or at the time indicated by the doctor, and deliver the sample the same day",
+        "abnormal": "Growth of the bacterium in the culture may be related to an intestinal infection, while absence of growth does not rule it out. Further management is decided by a doctor"
+      },
+      "sr": {
+        "what": "Bakteriološka kultura stolice na kampilobakter, jedan od čestih uzroka crijevnih infekcija",
+        "how": "Uzorak stolice se zasijava na selektivne podloge u posebnim uslovima inkubacije, nalaz se čeka nekoliko dana",
+        "when": "Dugotrajni proliv, crijevne tegobe poslije putovanja ili nedovoljno termički obrađenog pilećeg mesa, ispitivanje kod epidemija, sanitarni pregled",
+        "prep": "Stolicu sakupiti u posudu iz laboratorije, prije početka antibakterijske terapije ili u roku koji odredi ljekar, i dostaviti je istog dana",
+        "abnormal": "Porast bakterije u kulturi može biti povezan sa crijevnom infekcijom, dok izostanak porasta ne isključuje infekciju. Dalji postupak određuje ljekar"
+      },
+      "de": {
+        "what": "Stuhlkultur auf Campylobacter, einen der häufigen Erreger von Darminfektionen",
+        "how": "Die Stuhlprobe wird auf Selektivnährböden unter besonderen Bebrütungsbedingungen angezüchtet, das Ergebnis dauert mehrere Tage",
+        "when": "Anhaltender Durchfall, Darmbeschwerden nach einer Reise oder nach nicht ausreichend gegartem Geflügel, Untersuchung bei Ausbrüchen, Gesundheitszeugnis für die Arbeit",
+        "prep": "Stuhl im Behälter aus dem Labor sammeln, vor Beginn einer antibakteriellen Therapie oder zu dem vom Arzt genannten Zeitpunkt, und die Probe am selben Tag abgeben",
+        "abnormal": "Ein Wachstum des Erregers in der Kultur kann mit einer Darminfektion zusammenhängen, ein fehlendes Wachstum schließt sie nicht aus. Das weitere Vorgehen legt der Arzt fest"
+      },
+      "tr": {
+        "what": "Bağırsak enfeksiyonlarının sık nedenlerinden biri olan Campylobacter için dışkı kültürü",
+        "how": "Dışkı örneği özel inkübasyon koşullarında seçici besiyerlerine ekilir, sonuç birkaç gün sürer",
+        "when": "Uzun süren ishal, seyahat sonrası veya yeterince pişmemiş tavuk sonrası bağırsak şikayetleri, salgın araştırmaları, portör muayenesi",
+        "prep": "Dışkı laboratuvardan alınan kaba, antibakteriyel tedaviye başlamadan önce ya da hekimin belirttiği sürede toplanmalı ve aynı gün laboratuvara ulaştırılmalıdır",
+        "abnormal": "Kültürde bakteri üremesi bağırsak enfeksiyonu ile ilişkili olabilir, üreme olmaması ise enfeksiyonu dışlamaz. İzlenecek yolu hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Бактериолошка култура столице на кампилобактер, један од честих узрока цријевних инфекција",
+        "how": "Узорак столице се засијава на селективне подлоге у посебним условима инкубације, налаз се чека неколико дана",
+        "when": "Дуготрајни пролив, цријевне тегобе послије путовања или недовољно термички обрађеног пилећег меса, испитивање код епидемија, санитарни преглед",
+        "prep": "Столицу сакупити у посуду из лабораторије, прије почетка антибактеријске терапије или у року који одреди љекар, и доставити је истог дана",
+        "abnormal": "Пораст бактерије у култури може бити повезан са цријевном инфекцијом, док изостанак пораста не искључује инфекцију. Даљи поступак одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "chlamydia-trachomatis-real-time-pcr",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Молекулярный тест, выявляющий ДНК бактерии Chlamydia trachomatis методом ПЦР в реальном времени",
+        "how": "Мазок из уретры или цервикального канала либо первая порция мочи, анализ выполняется в лаборатории в закрытой системе",
+        "when": "Выделения, боль внизу живота, дискомфорт при мочеиспускании, скрининг при планировании беременности, обследование при бесплодии, обследование партнёра",
+        "prep": "Не мочиться 2–3 часа перед сдачей, женщинам — вне дней менструации и без предварительного спринцевания; интервал после антибактериальных препаратов уточняет врач",
+        "abnormal": "Обнаружение ДНК означает присутствие бактерии в пробе. Дальнейшее обследование, в том числе партнёра, и контроль назначает врач"
+      },
+      "en": {
+        "what": "Molecular test that detects DNA of the bacterium Chlamydia trachomatis by real-time PCR",
+        "how": "Swab from the urethra or cervical canal, or a first urine portion, the analysis is run in the laboratory in a closed system",
+        "when": "Discharge, lower abdominal pain, discomfort when urinating, screening when planning a pregnancy, infertility work-up, examination of a partner",
+        "prep": "Do not urinate for 2–3 hours before the sample, women outside menstruation days and without prior douching; the interval after antibacterial medicines is set by the doctor",
+        "abnormal": "Detection of DNA means the bacterium is present in the sample. Further examination, including that of a partner, and follow-up are prescribed by a doctor"
+      },
+      "sr": {
+        "what": "Molekularni test koji otkriva DNK bakterije Chlamydia trachomatis metodom PCR u realnom vremenu",
+        "how": "Bris uretre ili cervikalnog kanala ili prvi mlaz mokraće, analiza se radi u laboratoriji u zatvorenom sistemu",
+        "when": "Sekret, bol u donjem dijelu trbuha, nelagoda pri mokrenju, skrining pri planiranju trudnoće, obrada zbog neplodnosti, pregled partnera",
+        "prep": "Ne mokriti 2–3 sata prije uzimanja uzorka, žene van dana menstruacije i bez prethodnog ispiranja; razmak poslije antibakterijskih lijekova određuje ljekar",
+        "abnormal": "Nalaz DNK znači da je bakterija prisutna u uzorku. Dalju obradu, uključujući pregled partnera, i kontrolu određuje ljekar"
+      },
+      "de": {
+        "what": "Molekularer Test, der DNA des Bakteriums Chlamydia trachomatis mittels Real-Time-PCR nachweist",
+        "how": "Abstrich aus Harnröhre oder Gebärmutterhalskanal oder erste Urinportion, die Analyse erfolgt im Labor in einem geschlossenen System",
+        "when": "Ausfluss, Schmerzen im Unterbauch, Beschwerden beim Wasserlassen, Screening bei Kinderwunsch, Abklärung bei unerfülltem Kinderwunsch, Untersuchung des Partners",
+        "prep": "2–3 Stunden vor der Probenentnahme nicht Wasser lassen, Frauen außerhalb der Menstruationstage und ohne vorherige Spülung; den Abstand zu antibakteriellen Medikamenten legt der Arzt fest",
+        "abnormal": "Ein DNA-Nachweis bedeutet, dass das Bakterium in der Probe vorhanden ist. Die weitere Abklärung, auch des Partners, und die Kontrolle legt der Arzt fest"
+      },
+      "tr": {
+        "what": "Chlamydia trachomatis bakterisini gerçek zamanlı PCR yöntemiyle saptayan moleküler test",
+        "how": "Üretra veya servikal kanaldan sürüntü ya da ilk idrar örneği alınır, analiz laboratuvarda kapalı sistemde yapılır",
+        "when": "Akıntı, karın alt bölgesinde ağrı, idrar yaparken rahatsızlık, gebelik planlarken tarama, kısırlık araştırması, eşin incelenmesi",
+        "prep": "Örnek vermeden 2–3 saat önce idrara çıkılmamalı, kadınlarda adet günleri dışında ve öncesinde vajinal duş yapılmadan alınmalıdır; antibakteriyel ilaçlardan sonraki aralığı hekim belirler",
+        "abnormal": "DNA saptanması bakterinin örnekte bulunduğunu gösterir. Eşin incelenmesi dahil ileri tetkikleri ve kontrolü hekim planlar"
+      },
+      "sr_cyrl": {
+        "what": "Молекуларни тест који открива ДНК бактерије Chlamydia trachomatis методом ПЦР у реалном времену",
+        "how": "Брис уретре или цервикалног канала или први млаз мокраће, анализа се ради у лабораторији у затвореном систему",
+        "when": "Секрет, бол у доњем дијелу трбуха, нелагода при мокрењу, скрининг при планирању трудноће, обрада због неплодности, преглед партнера",
+        "prep": "Не мокрити 2–3 сата прије узимања узорка, жене ван дана менструације и без претходног испирања; размак послије антибактеријских лијекова одређује љекар",
+        "abnormal": "Налаз ДНК значи да је бактерија присутна у узорку. Даљу обраду, укључујући преглед партнера, и контролу одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "echinococcus-igg-elisa",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgG к эхинококку методом ELISA",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Кистозное образование в печени или лёгких, выявленное при УЗИ или КТ, контакт с собаками и скотом в эндемичных районах, длительно повышенные эозинофилы",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Результат может быть связан с контактом с паразитом, возможны перекрёстные реакции с другими гельминтозами. Оценивает результат врач вместе с данными визуализации"
+      },
+      "en": {
+        "what": "Blood test for IgG class antibodies to Echinococcus using the ELISA method",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "A cystic lesion in the liver or lungs found on ultrasound or CT, contact with dogs and livestock in endemic areas, persistently elevated eosinophils",
+        "prep": "No special preparation required",
+        "abnormal": "The result may be related to contact with the parasite, and cross-reactions with other helminth infections are possible. It is assessed by a doctor together with imaging findings"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgG na ehinokok ELISA metodom",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Cistična promjena u jetri ili plućima viđena na ultrazvuku ili CT, kontakt sa psima i stokom u endemskim područjima, dugotrajno povišeni eozinofili",
+        "prep": "Nije potrebna posebna priprema",
+        "abnormal": "Nalaz može biti povezan sa kontaktom sa parazitom, a moguće su i unakrsne reakcije sa drugim parazitozama. Nalaz procjenjuje ljekar zajedno sa nalazima snimanja"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgG gegen Echinokokken mittels ELISA",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Zystische Veränderung in Leber oder Lunge im Ultraschall oder CT, Kontakt mit Hunden und Nutztieren in Endemiegebieten, anhaltend erhöhte Eosinophile",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "Das Ergebnis kann mit einem Kontakt mit dem Parasiten zusammenhängen, Kreuzreaktionen mit anderen Wurmerkrankungen sind möglich. Die Beurteilung erfolgt durch den Arzt zusammen mit den Bildbefunden"
+      },
+      "tr": {
+        "what": "Ekinokok parazitine karşı IgG sınıfı antikorları ELISA yöntemiyle ölçen kan testi",
+        "how": "Venöz kan alınır, birkaç dakika sürer",
+        "when": "Ultrason veya BT ile karaciğer ya da akciğerde saptanan kistik oluşum, endemik bölgelerde köpek ve çiftlik hayvanlarıyla temas, uzun süre yüksek seyreden eozinofiller",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "Sonuç parazitle temas ile ilişkili olabilir, diğer parazit hastalıklarıyla çapraz reaksiyon görülebilir. Görüntüleme bulgularıyla birlikte hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgG на ехинокок ELISA методом",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Цистична промјена у јетри или плућима виђена на ултразвуку или CT, контакт са псима и стоком у ендемским подручјима, дуготрајно повишени еозинофили",
+        "prep": "Није потребна посебна припрема",
+        "abnormal": "Налаз може бити повезан са контактом са паразитом, а могуће су и унакрсне реакције са другим паразитозама. Налаз процјењује љекар заједно са налазима снимања"
+      }
+    }
+  },
+  {
+    "slug": "hbsab",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела к поверхностному антигену вируса гепатита B (anti-HBs)",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Проверка иммунного статуса после вакцинации, обследование медицинских работников и студентов, планирование вакцинации, оценка ситуации после контакта",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Уровень антител может быть связан с проведённой вакцинацией или с перенесённым ранее контактом с вирусом. Вывод о защите и необходимости ревакцинации делает врач"
+      },
+      "en": {
+        "what": "Blood test for antibodies to the hepatitis B surface antigen (anti-HBs)",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Checking immune status after vaccination, examination of healthcare workers and students, planning vaccination, assessment of the situation after a contact",
+        "prep": "No special preparation required",
+        "abnormal": "The antibody level may be related to a completed vaccination or to an earlier contact with the virus. Conclusions about protection and the need for a booster are made by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela na površinski antigen virusa hepatitisa B (anti-HBs)",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Provjera imunskog statusa poslije vakcinacije, pregled zdravstvenih radnika i studenata, planiranje vakcinacije, procjena stanja poslije kontakta",
+        "prep": "Nije potrebna posebna priprema",
+        "abnormal": "Nivo antitijela može biti povezan sa sprovedenom vakcinacijom ili sa ranijim kontaktom sa virusom. Zaključak o zaštiti i potrebi revakcinacije donosi ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper gegen das Hepatitis-B-Oberflächenantigen (Anti-HBs)",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Überprüfung des Immunstatus nach einer Impfung, Untersuchung von medizinischem Personal und Studierenden, Impfplanung, Beurteilung der Situation nach einem Kontakt",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "Die Höhe der Antikörper kann mit einer durchgeführten Impfung oder mit einem früheren Kontakt mit dem Virus zusammenhängen. Über den Schutz und eine Auffrischimpfung entscheidet der Arzt"
+      },
+      "tr": {
+        "what": "Hepatit B yüzey antijenine karşı antikorları (anti-HBs) ölçen kan testi",
+        "how": "Venöz kan alınır, birkaç dakika sürer",
+        "when": "Aşı sonrası bağışıklık durumunun kontrolü, sağlık çalışanlarının ve öğrencilerin incelenmesi, aşı planlaması, temas sonrası durumun değerlendirilmesi",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "Antikor düzeyi yapılmış aşılanma veya virüsle daha önceki temas ile ilişkili olabilir. Korunma durumu ve pekiştirme aşısı gereği hakkındaki kararı hekim verir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела на површински антиген вируса хепатитиса Б (анти-HBs)",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Провјера имунског статуса послије вакцинације, преглед здравствених радника и студената, планирање вакцинације, процјена стања послије контакта",
+        "prep": "Није потребна посебна припрема",
+        "abnormal": "Ниво антитијела може бити повезан са спроведеном вакцинацијом или са ранијим контактом са вирусом. Закључак о заштити и потреби ревакцинације доноси љекар"
+      }
+    }
+  },
+  {
+    "slug": "helicobacter-pylori-igg",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgG к бактерии Helicobacter pylori",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Боль и тяжесть в верхней части живота, изжога, обследование при гастрите и язвенной болезни, случаи инфекции в семье",
+        "prep": "Специальной подготовки обычно не требуется, чаще кровь сдают утром натощак",
+        "abnormal": "Наличие IgG может быть связано как с текущим, так и с перенесённым ранее контактом с бактерией и само по себе не подтверждает активную инфекцию. Необходимость уточняющих тестов определяет врач"
+      },
+      "en": {
+        "what": "Blood test for IgG class antibodies to the bacterium Helicobacter pylori",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Pain and heaviness in the upper abdomen, heartburn, work-up for gastritis and peptic ulcer disease, cases of the infection in the family",
+        "prep": "Usually no special preparation is required, the sample is most often taken in the morning on an empty stomach",
+        "abnormal": "The presence of IgG may be related to either a current or an earlier contact with the bacterium and does not on its own confirm an active infection. The need for confirmatory tests is determined by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgG na bakteriju Helicobacter pylori",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Bol i težina u gornjem dijelu trbuha, žgaravica, obrada kod gastritisa i čira, slučajevi infekcije u porodici",
+        "prep": "Obično nije potrebna posebna priprema, krv se najčešće uzima ujutru našte",
+        "abnormal": "Prisustvo IgG može biti povezano i sa aktuelnim i sa ranijim kontaktom sa bakterijom i samo po sebi ne potvrđuje aktivnu infekciju. Potrebu za dodatnim testovima procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgG gegen das Bakterium Helicobacter pylori",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Schmerzen und Völlegefühl im Oberbauch, Sodbrennen, Abklärung bei Gastritis und Magengeschwür, Fälle der Infektion in der Familie",
+        "prep": "In der Regel keine besondere Vorbereitung nötig, die Entnahme erfolgt meist morgens nüchtern",
+        "abnormal": "Der Nachweis von IgG kann sowohl mit einem aktuellen als auch mit einem früheren Kontakt mit dem Bakterium zusammenhängen und bestätigt für sich allein keine aktive Infektion. Über weitere klärende Tests entscheidet der Arzt"
+      },
+      "tr": {
+        "what": "Helicobacter pylori bakterisine karşı IgG sınıfı antikorları ölçen kan testi",
+        "how": "Venöz kan alınır, birkaç dakika sürer",
+        "when": "Karnın üst bölümünde ağrı ve dolgunluk, mide yanması, gastrit ve ülser araştırması, ailede görülen enfeksiyon",
+        "prep": "Genellikle özel bir hazırlık gerekmez, kan çoğunlukla sabah aç karnına alınır",
+        "abnormal": "IgG bulunması bakteriyle hem güncel hem de daha önceki temas ile ilişkili olabilir ve tek başına aktif enfeksiyonu doğrulamaz. Doğrulayıcı testlerin gerekliliğine hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgG на бактерију Helicobacter pylori",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Бол и тежина у горњем дијелу трбуха, жгаравица, обрада код гастритиса и чира, случајеви инфекције у породици",
+        "prep": "Обично није потребна посебна припрема, крв се најчешће узима ујутру наште",
+        "abnormal": "Присуство IgG може бити повезано и са актуелним и са ранијим контактом са бактеријом и само по себи не потврђује активну инфекцију. Потребу за додатним тестовима процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "herpes-simplex-i-igg",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgG к вирусу простого герпеса 1 типа, который чаще связан с высыпаниями на губах",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Оценка перенесённого ранее контакта с вирусом, повторяющиеся высыпания на губах и лице, планирование беременности, подготовка к терапии, снижающей иммунитет",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Наличие IgG обычно отражает контакт с вирусом в прошлом и широко встречается у взрослых. Значение результата в конкретной ситуации определяет врач"
+      },
+      "en": {
+        "what": "Blood test for IgG class antibodies to herpes simplex virus type 1, which is more often linked with sores on the lips",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Assessment of an earlier contact with the virus, recurring sores on the lips and face, pregnancy planning, preparation for treatment that lowers immunity",
+        "prep": "No special preparation required",
+        "abnormal": "The presence of IgG usually reflects a contact with the virus in the past and is common in adults. What the result means in a particular situation is determined by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgG na virus herpes simpleks tip 1, koji je češće povezan sa promjenama na usnama",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Procjena ranijeg kontakta sa virusom, ponavljane promjene na usnama i licu, planiranje trudnoće, priprema za terapiju koja smanjuje imunitet",
+        "prep": "Nije potrebna posebna priprema",
+        "abnormal": "Prisustvo IgG obično odražava raniji kontakt sa virusom i često se nalazi kod odraslih. Značaj nalaza u konkretnoj situaciji procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgG gegen Herpes-simplex-Virus Typ 1, das häufiger mit Bläschen an den Lippen verbunden ist",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Beurteilung eines früheren Kontakts mit dem Virus, wiederkehrende Bläschen an Lippen und Gesicht, Kinderwunsch, Vorbereitung auf eine Therapie, die die Abwehr schwächt",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "Der Nachweis von IgG spiegelt meist einen Kontakt mit dem Virus in der Vergangenheit wider und ist bei Erwachsenen häufig. Was das Ergebnis im Einzelfall bedeutet, beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "Daha çok dudaktaki uçuklarla ilişkili herpes simpleks virüs tip 1'e karşı IgG sınıfı antikorları ölçen kan testi",
+        "how": "Venöz kan alınır, birkaç dakika sürer",
+        "when": "Virüsle daha önceki temasın değerlendirilmesi, dudak ve yüzde tekrarlayan döküntüler, gebelik planlaması, bağışıklığı azaltan tedavi öncesi hazırlık",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "IgG bulunması genellikle virüsle geçmişte kurulmuş bir teması yansıtır ve erişkinlerde sık görülür. Sonucun kişiye özel anlamını hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgG на вирус херпес симплекс тип 1, који је чешће повезан са промјенама на уснама",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Процјена ранијег контакта са вирусом, понављане промјене на уснама и лицу, планирање трудноће, припрема за терапију која смањује имунитет",
+        "prep": "Није потребна посебна припрема",
+        "abnormal": "Присуство IgG обично одражава ранији контакт са вирусом и често се налази код одраслих. Значај налаза у конкретној ситуацији процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "herpes-simplex-ii-igg",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgG к вирусу простого герпеса 2 типа, который чаще связан с генитальной локализацией",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Оценка перенесённого ранее контакта с вирусом, повторяющиеся высыпания в генитальной области, планирование и ведение беременности, обследование пары",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Наличие IgG говорит о контакте с вирусом в прошлом и не указывает на время заражения. Трактовку в конкретной ситуации, в том числе при беременности, даёт врач"
+      },
+      "en": {
+        "what": "Blood test for IgG class antibodies to herpes simplex virus type 2, which is more often linked with genital localisation",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Assessment of an earlier contact with the virus, recurring lesions in the genital area, planning and management of pregnancy, examination of a couple",
+        "prep": "No special preparation required",
+        "abnormal": "The presence of IgG indicates a contact with the virus in the past and does not show when it happened. Interpretation in a particular situation, including during pregnancy, is given by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgG na virus herpes simpleks tip 2, koji je češće povezan sa genitalnom lokalizacijom",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Procjena ranijeg kontakta sa virusom, ponavljane promjene u genitalnoj regiji, planiranje i vođenje trudnoće, pregled para",
+        "prep": "Nije potrebna posebna priprema",
+        "abnormal": "Prisustvo IgG govori o ranijem kontaktu sa virusom i ne pokazuje kada je do njega došlo. Tumačenje u konkretnoj situaciji, uključujući trudnoću, daje ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgG gegen Herpes-simplex-Virus Typ 2, das häufiger mit einer genitalen Lokalisation verbunden ist",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Beurteilung eines früheren Kontakts mit dem Virus, wiederkehrende Veränderungen im Genitalbereich, Planung und Betreuung einer Schwangerschaft, Untersuchung des Paares",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "Der Nachweis von IgG weist auf einen früheren Kontakt mit dem Virus hin und sagt nichts über den Zeitpunkt aus. Die Einordnung im Einzelfall, auch in der Schwangerschaft, nimmt der Arzt vor"
+      },
+      "tr": {
+        "what": "Daha çok genital bölgeyle ilişkili herpes simpleks virüs tip 2'ye karşı IgG sınıfı antikorları ölçen kan testi",
+        "how": "Venöz kan alınır, birkaç dakika sürer",
+        "when": "Virüsle daha önceki temasın değerlendirilmesi, genital bölgede tekrarlayan lezyonlar, gebelik planlaması ve takibi, çiftin birlikte incelenmesi",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "IgG bulunması virüsle geçmişte temas kurulduğunu gösterir, bunun ne zaman olduğunu belirtmez. Gebelik dahil kişiye özel yorumu hekim yapar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgG на вирус херпес симплекс тип 2, који је чешће повезан са гениталном локализацијом",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Процјена ранијег контакта са вирусом, понављане промјене у гениталној регији, планирање и вођење трудноће, преглед пара",
+        "prep": "Није потребна посебна припрема",
+        "abnormal": "Присуство IgG говори о ранијем контакту са вирусом и не показује када је до њега дошло. Тумачење у конкретној ситуацији, укључујући трудноћу, даје љекар"
+      }
+    }
+  },
+  {
+    "slug": "hsv1-igg",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Типоспецифический анализ крови на IgG к вирусу герпеса HSV1, отличающий их от антител к HSV2",
+        "how": "Однократный забор венозной крови, сама процедура занимает пару минут",
+        "when": "Уточнение типа вируса при герпетических высыпаниях, оценка иммунного статуса до беременности, обследование перед лечением, снижающим иммунитет, эпидемиологические исследования",
+        "prep": "Подготовка не требуется, время суток значения не имеет",
+        "abnormal": "Положительный IgG отражает встречу с вирусом HSV1 когда-то в прошлом, а не активное обострение. Связь результата с текущими жалобами оценивает врач"
+      },
+      "en": {
+        "what": "Type-specific blood test for IgG to the herpes virus HSV1, distinguishing them from antibodies to HSV2",
+        "how": "A single venous blood draw, the procedure itself takes a couple of minutes",
+        "when": "Clarifying the virus type in herpetic lesions, assessing immune status before pregnancy, check-up before treatment that lowers immunity, epidemiological studies",
+        "prep": "No preparation required, the time of day does not matter",
+        "abnormal": "A positive IgG reflects an encounter with HSV1 at some point in the past rather than an active flare-up. Whether it is related to current complaints is assessed by a doctor"
+      },
+      "sr": {
+        "what": "Tipski specifična analiza krvi na IgG na herpes virus HSV1, koja ih razlikuje od antitijela na HSV2",
+        "how": "Jednokratno uzimanje venske krvi, sam postupak traje par minuta",
+        "when": "Utvrđivanje tipa virusa kod herpetičnih promjena, procjena imunskog statusa prije trudnoće, pregled prije terapije koja smanjuje imunitet, epidemiološka ispitivanja",
+        "prep": "Priprema nije potrebna, doba dana nije važno",
+        "abnormal": "Pozitivan IgG odražava raniji susret sa virusom HSV1, a ne aktivno pogoršanje. Vezu nalaza sa aktuelnim tegobama procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Typspezifischer Bluttest auf IgG gegen das Herpesvirus HSV1, der diese von Antikörpern gegen HSV2 unterscheidet",
+        "how": "Einmalige venöse Blutentnahme, der Eingriff selbst dauert ein paar Minuten",
+        "when": "Klärung des Virustyps bei Herpesbläschen, Beurteilung des Immunstatus vor einer Schwangerschaft, Untersuchung vor einer immunschwächenden Therapie, epidemiologische Studien",
+        "prep": "Keine Vorbereitung nötig, die Tageszeit spielt keine Rolle",
+        "abnormal": "Ein positives IgG spiegelt einen früheren Kontakt mit HSV1 wider und keinen aktiven Schub. Ob es mit aktuellen Beschwerden zusammenhängt, beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "HSV1 herpes virüsüne karşı IgG antikorlarını, HSV2 antikorlarından ayırt edecek şekilde ölçen tipe özgü kan testi",
+        "how": "Tek seferlik venöz kan alımı, işlemin kendisi birkaç dakika sürer",
+        "when": "Herpes döküntülerinde virüs tipinin belirlenmesi, gebelik öncesi bağışıklık durumunun değerlendirilmesi, bağışıklığı azaltan tedavi öncesi inceleme, salgın araştırmaları",
+        "prep": "Hazırlık gerekmez, günün saati önemli değildir",
+        "abnormal": "Pozitif IgG, HSV1 ile geçmişte kurulan teması yansıtır, aktif bir alevlenmeyi değil. Güncel şikayetlerle ilişkisini hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Типски специфична анализа крви на IgG на херпес вирус HSV1, која их разликује од антитијела на HSV2",
+        "how": "Једнократно узимање венске крви, сам поступак траје пар минута",
+        "when": "Утврђивање типа вируса код херпетичних промјена, процјена имунског статуса прије трудноће, преглед прије терапије која смањује имунитет, епидемиолошка испитивања",
+        "prep": "Припрема није потребна, доба дана није важно",
+        "abnormal": "Позитиван IgG одражава ранији сусрет са вирусом HSV1, а не активно погоршање. Везу налаза са актуелним тегобама процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "hsv2-igg",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Типоспецифический анализ крови на IgG к вирусу герпеса HSV2, отличающий их от антител к HSV1",
+        "how": "Однократный забор венозной крови, сама процедура занимает пару минут",
+        "when": "Уточнение типа вируса при повторяющихся высыпаниях, обследование до и во время беременности, обследование обоих партнёров, подготовка к терапии, снижающей иммунитет",
+        "prep": "Подготовка не требуется, время суток значения не имеет",
+        "abnormal": "Положительный IgG отражает контакт с вирусом HSV2 в прошлом и не говорит о его активности сейчас. Дальнейшие шаги и необходимость других тестов определяет врач"
+      },
+      "en": {
+        "what": "Type-specific blood test for IgG to the herpes virus HSV2, distinguishing them from antibodies to HSV1",
+        "how": "A single venous blood draw, the procedure itself takes a couple of minutes",
+        "when": "Clarifying the virus type in recurring lesions, examination before and during pregnancy, examination of both partners, preparation for treatment that lowers immunity",
+        "prep": "No preparation required, the time of day does not matter",
+        "abnormal": "A positive IgG reflects a past contact with HSV2 and says nothing about its activity now. Further steps and the need for other tests are determined by a doctor"
+      },
+      "sr": {
+        "what": "Tipski specifična analiza krvi na IgG na herpes virus HSV2, koja ih razlikuje od antitijela na HSV1",
+        "how": "Jednokratno uzimanje venske krvi, sam postupak traje par minuta",
+        "when": "Utvrđivanje tipa virusa kod ponavljanih promjena, pregled prije i tokom trudnoće, pregled oba partnera, priprema za terapiju koja smanjuje imunitet",
+        "prep": "Priprema nije potrebna, doba dana nije važno",
+        "abnormal": "Pozitivan IgG odražava raniji kontakt sa virusom HSV2 i ne govori o njegovoj aktivnosti sada. Dalje korake i potrebu za drugim testovima određuje ljekar"
+      },
+      "de": {
+        "what": "Typspezifischer Bluttest auf IgG gegen das Herpesvirus HSV2, der diese von Antikörpern gegen HSV1 unterscheidet",
+        "how": "Einmalige venöse Blutentnahme, der Eingriff selbst dauert ein paar Minuten",
+        "when": "Klärung des Virustyps bei wiederkehrenden Veränderungen, Untersuchung vor und während einer Schwangerschaft, Untersuchung beider Partner, Vorbereitung auf eine immunschwächende Therapie",
+        "prep": "Keine Vorbereitung nötig, die Tageszeit spielt keine Rolle",
+        "abnormal": "Ein positives IgG spiegelt einen früheren Kontakt mit HSV2 wider und sagt nichts über dessen derzeitige Aktivität aus. Die weiteren Schritte und den Bedarf an zusätzlichen Tests legt der Arzt fest"
+      },
+      "tr": {
+        "what": "HSV2 herpes virüsüne karşı IgG antikorlarını, HSV1 antikorlarından ayırt edecek şekilde ölçen tipe özgü kan testi",
+        "how": "Tek seferlik venöz kan alımı, işlemin kendisi birkaç dakika sürer",
+        "when": "Tekrarlayan döküntülerde virüs tipinin belirlenmesi, gebelik öncesinde ve gebelik sırasında inceleme, iki eşin birlikte incelenmesi, bağışıklığı azaltan tedavi öncesi hazırlık",
+        "prep": "Hazırlık gerekmez, günün saati önemli değildir",
+        "abnormal": "Pozitif IgG, HSV2 ile geçmişteki teması yansıtır ve virüsün şu anki etkinliği hakkında bilgi vermez. Sonraki adımları ve ek test gerekliliğini hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Типски специфична анализа крви на IgG на херпес вирус HSV2, која их разликује од антитијела на HSV1",
+        "how": "Једнократно узимање венске крви, сам поступак траје пар минута",
+        "when": "Утврђивање типа вируса код понављаних промјена, преглед прије и током трудноће, преглед оба партнера, припрема за терапију која смањује имунитет",
+        "prep": "Припрема није потребна, доба дана није важно",
+        "abnormal": "Позитиван IgG одражава ранији контакт са вирусом HSV2 и не говори о његовој активности сада. Даље кораке и потребу за другим тестовима одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "influenza-a-plus-b-iht",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Быстрый иммунохроматографический тест, определяющий антигены вирусов гриппа A и B",
+        "how": "Мазок из носа или носоглотки, тест-кассета даёт результат примерно за 15 минут",
+        "when": "Острое начало болезни с высокой температурой в сезон гриппа, различение гриппа и других респираторных инфекций, обследование в закрытых коллективах, пациенты из групп риска",
+        "prep": "Тест информативнее в первые дни болезни; перед мазком не промывать нос и не использовать назальные спреи, если врач не сказал иначе",
+        "abnormal": "Положительный результат может быть связан с текущей инфекцией вирусом гриппа A или B, отрицательный её не исключает. Решение о дальнейшем обследовании принимает врач"
+      },
+      "en": {
+        "what": "Rapid immunochromatographic test that detects influenza A and B virus antigens",
+        "how": "A nasal or nasopharyngeal swab, the test cassette gives a result in about 15 minutes",
+        "when": "Acute onset of illness with high fever during the flu season, telling influenza apart from other respiratory infections, examination in closed communities, patients from risk groups",
+        "prep": "The test is most informative in the first days of illness; before the swab do not rinse the nose or use nasal sprays unless the doctor says otherwise",
+        "abnormal": "A positive result may be related to a current influenza A or B infection, while a negative one does not rule it out. The decision on further examination is made by a doctor"
+      },
+      "sr": {
+        "what": "Brzi imunohromatografski test koji otkriva antigene virusa gripa A i B",
+        "how": "Bris nosa ili nazofarinksa, test kaseta daje rezultat za oko 15 minuta",
+        "when": "Naglo započeta bolest sa visokom temperaturom u sezoni gripa, razlikovanje gripa od drugih respiratornih infekcija, ispitivanje u kolektivima, pacijenti iz rizičnih grupa",
+        "prep": "Test je najinformativniji u prvim danima bolesti; prije brisa ne ispirati nos i ne koristiti sprejeve za nos, osim ako ljekar ne kaže drugačije",
+        "abnormal": "Pozitivan nalaz može biti povezan sa aktuelnom infekcijom virusom gripa A ili B, dok negativan ne isključuje bolest. Odluku o daljoj obradi donosi ljekar"
+      },
+      "de": {
+        "what": "Immunchromatographischer Schnelltest, der Antigene der Influenzaviren A und B nachweist",
+        "how": "Abstrich aus Nase oder Nasenrachen, die Testkassette liefert das Ergebnis in etwa 15 Minuten",
+        "when": "Plötzlicher Krankheitsbeginn mit hohem Fieber in der Grippesaison, Abgrenzung der Grippe von anderen Atemwegsinfekten, Untersuchung in Gemeinschaftseinrichtungen, Patienten aus Risikogruppen",
+        "prep": "Der Test ist in den ersten Krankheitstagen am aussagekräftigsten; vor dem Abstrich die Nase nicht spülen und keine Nasensprays verwenden, sofern der Arzt nichts anderes sagt",
+        "abnormal": "Ein positives Ergebnis kann mit einer aktuellen Infektion durch Influenza A oder B zusammenhängen, ein negatives schließt sie nicht aus. Über das weitere Vorgehen entscheidet der Arzt"
+      },
+      "tr": {
+        "what": "İnfluenza A ve B virüsü antijenlerini saptayan hızlı immünokromatografik test",
+        "how": "Burun veya nazofarenks sürüntüsü alınır, test kaseti sonucu yaklaşık 15 dakikada verir",
+        "when": "Grip mevsiminde yüksek ateşle ani başlayan hastalık, gribin diğer solunum yolu enfeksiyonlarından ayrılması, toplu yaşam alanlarında inceleme, risk grubundaki hastalar",
+        "prep": "Test hastalığın ilk günlerinde daha bilgi vericidir; sürüntüden önce burun yıkanmamalı ve hekim aksini söylemedikçe burun spreyi kullanılmamalıdır",
+        "abnormal": "Pozitif sonuç güncel influenza A veya B enfeksiyonu ile ilişkili olabilir, negatif sonuç ise hastalığı dışlamaz. İleri inceleme kararını hekim verir"
+      },
+      "sr_cyrl": {
+        "what": "Брзи имунохроматографски тест који открива антигене вируса грипа А и Б",
+        "how": "Брис носа или назофаринкса, тест касета даје резултат за око 15 минута",
+        "when": "Нагло започета болест са високом температуром у сезони грипа, разликовање грипа од других респираторних инфекција, испитивање у колективима, пацијенти из ризичних група",
+        "prep": "Тест је најинформативнији у првим данима болести; прије бриса не испирати нос и не користити спрејеве за нос, осим ако љекар не каже другачије",
+        "abnormal": "Позитиван налаз може бити повезан са актуелном инфекцијом вирусом грипа А или Б, док негативан не искључује болест. Одлуку о даљој обради доноси љекар"
+      }
+    }
+  },
+  {
+    "slug": "neisseria-gonorrhoeae-real-time-pcr",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Молекулярный тест, выявляющий ДНК бактерии Neisseria gonorrhoeae методом ПЦР в реальном времени",
+        "how": "Мазок из уретры, цервикального канала, глотки или прямой кишки либо порция мочи, анализ выполняет лаборатория",
+        "when": "Выделения, жжение при мочеиспускании, профилактическое обследование, обследование партнёра, подготовка к гинекологическим или урологическим вмешательствам, контроль после лечения",
+        "prep": "Не мочиться 2–3 часа перед сдачей, женщинам — вне дней менструации; сроки после антибактериальных препаратов уточняет врач",
+        "abnormal": "Обнаружение ДНК означает присутствие бактерии в пробе. Дальнейшее обследование, лечение и обследование партнёра назначает врач"
+      },
+      "en": {
+        "what": "Molecular test that detects DNA of the bacterium Neisseria gonorrhoeae by real-time PCR",
+        "how": "Swab from the urethra, cervical canal, throat or rectum, or a urine portion, the analysis is performed in the laboratory",
+        "when": "Discharge, burning when urinating, preventive check-up, examination of a partner, preparation for gynaecological or urological procedures, follow-up after treatment",
+        "prep": "Do not urinate for 2–3 hours before the sample, women outside menstruation days; the timing after antibacterial medicines is set by the doctor",
+        "abnormal": "Detection of DNA means the bacterium is present in the sample. Further examination, treatment and examination of a partner are prescribed by a doctor"
+      },
+      "sr": {
+        "what": "Molekularni test koji otkriva DNK bakterije Neisseria gonorrhoeae metodom PCR u realnom vremenu",
+        "how": "Bris uretre, cervikalnog kanala, ždrijela ili rektuma ili uzorak mokraće, analizu radi laboratorija",
+        "when": "Sekret, peckanje pri mokrenju, preventivni pregled, pregled partnera, priprema za ginekološke ili urološke zahvate, kontrola poslije terapije",
+        "prep": "Ne mokriti 2–3 sata prije uzimanja uzorka, žene van dana menstruacije; rok poslije antibakterijskih lijekova određuje ljekar",
+        "abnormal": "Nalaz DNK znači da je bakterija prisutna u uzorku. Dalju obradu, terapiju i pregled partnera određuje ljekar"
+      },
+      "de": {
+        "what": "Molekularer Test, der DNA des Bakteriums Neisseria gonorrhoeae mittels Real-Time-PCR nachweist",
+        "how": "Abstrich aus Harnröhre, Gebärmutterhalskanal, Rachen oder Enddarm oder eine Urinprobe, die Analyse führt das Labor durch",
+        "when": "Ausfluss, Brennen beim Wasserlassen, Vorsorgeuntersuchung, Untersuchung des Partners, Vorbereitung auf gynäkologische oder urologische Eingriffe, Kontrolle nach einer Behandlung",
+        "prep": "2–3 Stunden vor der Probenentnahme nicht Wasser lassen, Frauen außerhalb der Menstruationstage; den Abstand zu antibakteriellen Medikamenten legt der Arzt fest",
+        "abnormal": "Ein DNA-Nachweis bedeutet, dass das Bakterium in der Probe vorhanden ist. Weitere Abklärung, Behandlung und die Untersuchung des Partners veranlasst der Arzt"
+      },
+      "tr": {
+        "what": "Neisseria gonorrhoeae bakterisini gerçek zamanlı PCR yöntemiyle saptayan moleküler test",
+        "how": "Üretra, servikal kanal, boğaz veya rektumdan sürüntü ya da idrar örneği alınır, analiz laboratuvarda yapılır",
+        "when": "Akıntı, idrar yaparken yanma, koruyucu inceleme, eşin incelenmesi, jinekolojik veya ürolojik girişim öncesi hazırlık, tedavi sonrası kontrol",
+        "prep": "Örnek vermeden 2–3 saat önce idrara çıkılmamalı, kadınlarda adet günleri dışında alınmalıdır; antibakteriyel ilaçlardan sonraki süreyi hekim belirler",
+        "abnormal": "DNA saptanması bakterinin örnekte bulunduğunu gösterir. İleri tetkikleri, tedaviyi ve eşin incelenmesini hekim planlar"
+      },
+      "sr_cyrl": {
+        "what": "Молекуларни тест који открива ДНК бактерије Neisseria gonorrhoeae методом ПЦР у реалном времену",
+        "how": "Брис уретре, цервикалног канала, ждријела или ректума или узорак мокраће, анализу ради лабораторија",
+        "when": "Секрет, пецкање при мокрењу, превентивни преглед, преглед партнера, припрема за гинеколошке или уролошке захвате, контрола послије терапије",
+        "prep": "Не мокрити 2–3 сата прије узимања узорка, жене ван дана менструације; рок послије антибактеријских лијекова одређује љекар",
+        "abnormal": "Налаз ДНК значи да је бактерија присутна у узорку. Даљу обраду, терапију и преглед партнера одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "quantiferon",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови, оценивающий реакцию иммунных клеток на антигены микобактерии туберкулёза (тест IGRA)",
+        "how": "Забор венозной крови в специальные пробирки, которые перемешивают и быстро передают в лабораторию, сам забор занимает несколько минут",
+        "when": "Скрининг на латентную туберкулёзную инфекцию, обследование перед иммуносупрессивной и биологической терапией, контакт с больным туберкулёзом, обследование медицинских работников, требования при трудоустройстве и оформлении документов",
+        "prep": "Специальной подготовки не требуется, но время сдачи согласуют с лабораторией: пробирки должны быть обработаны в течение нескольких часов",
+        "abnormal": "Положительный результат может быть связан с контактом с микобактерией туберкулёза и не различает латентную инфекцию и активное заболевание. Дальнейшее обследование, включая снимок лёгких, назначает врач"
+      },
+      "en": {
+        "what": "Blood test that measures the response of immune cells to antigens of the tuberculosis mycobacterium (an IGRA test)",
+        "how": "Venous blood is drawn into special tubes that are mixed and delivered to the laboratory promptly, the draw itself takes a few minutes",
+        "when": "Screening for latent tuberculosis infection, examination before immunosuppressive and biological therapy, contact with a person ill with tuberculosis, examination of healthcare workers, requirements for employment and paperwork",
+        "prep": "No special preparation required, but the appointment time is agreed with the laboratory: the tubes must be processed within a few hours",
+        "abnormal": "A positive result may be related to contact with the tuberculosis mycobacterium and does not distinguish latent infection from active disease. Further examination, including a chest image, is ordered by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi koja procjenjuje reakciju imunskih ćelija na antigene bacila tuberkuloze (IGRA test)",
+        "how": "Uzimanje venske krvi u posebne epruvete koje se promiješaju i brzo šalju u laboratoriju, samo uzimanje traje nekoliko minuta",
+        "when": "Skrining na latentnu tuberkuloznu infekciju, pregled prije imunosupresivne i biološke terapije, kontakt sa oboljelim od tuberkuloze, pregled zdravstvenih radnika, zahtjevi pri zapošljavanju i sređivanju dokumenata",
+        "prep": "Nije potrebna posebna priprema, ali se termin dogovara sa laboratorijom: epruvete moraju biti obrađene u roku od nekoliko sati",
+        "abnormal": "Pozitivan nalaz može biti povezan sa kontaktom sa bacilom tuberkuloze i ne razlikuje latentnu infekciju od aktivne bolesti. Dalju obradu, uključujući snimak pluća, određuje ljekar"
+      },
+      "de": {
+        "what": "Bluttest, der die Reaktion der Immunzellen auf Antigene des Tuberkulosebakteriums misst (IGRA-Test)",
+        "how": "Venöses Blut wird in spezielle Röhrchen abgenommen, die gemischt und zügig ins Labor gebracht werden, die Entnahme selbst dauert einige Minuten",
+        "when": "Screening auf eine latente Tuberkuloseinfektion, Untersuchung vor immunsuppressiver und biologischer Therapie, Kontakt zu einer an Tuberkulose erkrankten Person, Untersuchung von medizinischem Personal, Anforderungen bei Anstellung und Behördengängen",
+        "prep": "Keine besondere Vorbereitung nötig, der Termin wird jedoch mit dem Labor abgestimmt: die Röhrchen müssen innerhalb weniger Stunden verarbeitet werden",
+        "abnormal": "Ein positives Ergebnis kann mit einem Kontakt mit dem Tuberkulosebakterium zusammenhängen und unterscheidet nicht zwischen latenter Infektion und aktiver Erkrankung. Die weitere Abklärung, einschließlich einer Lungenaufnahme, veranlasst der Arzt"
+      },
+      "tr": {
+        "what": "Bağışıklık hücrelerinin tüberküloz basili antijenlerine verdiği yanıtı ölçen kan testi (IGRA testi)",
+        "how": "Venöz kan özel tüplere alınır, tüpler karıştırılıp kısa sürede laboratuvara ulaştırılır, kan alımı birkaç dakika sürer",
+        "when": "Latent tüberküloz enfeksiyonu taraması, bağışıklığı baskılayan ve biyolojik tedavi öncesi inceleme, tüberkülozlu biriyle temas, sağlık çalışanlarının taranması, işe giriş ve resmi belge gereklilikleri",
+        "prep": "Özel bir hazırlık gerekmez, ancak randevu saati laboratuvarla birlikte belirlenir: tüplerin birkaç saat içinde işlenmesi gerekir",
+        "abnormal": "Pozitif sonuç tüberküloz basili ile temas ile ilişkili olabilir ve latent enfeksiyonu aktif hastalıktan ayırmaz. Akciğer görüntülemesi dahil ileri incelemeleri hekim planlar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви која процјењује реакцију имунских ћелија на антигене бацила туберкулозе (IGRA тест)",
+        "how": "Узимање венске крви у посебне епрувете које се промијешају и брзо шаљу у лабораторију, само узимање траје неколико минута",
+        "when": "Скрининг на латентну туберкулозну инфекцију, преглед прије имуносупресивне и биолошке терапије, контакт са обољелим од туберкулозе, преглед здравствених радника, захтјеви при запошљавању и сређивању докумената",
+        "prep": "Није потребна посебна припрема, али се термин договара са лабораторијом: епрувете морају бити обрађене у року од неколико сати",
+        "abnormal": "Позитиван налаз може бити повезан са контактом са бацилом туберкулозе и не разликује латентну инфекцију од активне болести. Даљу обраду, укључујући снимак плућа, одређује љекар"
+      }
+    }
+  }
+]

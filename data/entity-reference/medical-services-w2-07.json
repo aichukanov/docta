@@ -1,0 +1,770 @@
+[
+  {
+    "slug": "entropion-surgery",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Пластическая операция, возвращающая завёрнутое внутрь веко и ресницы в правильное положение, чтобы они не тёрли глаз",
+        "how": "Под местной анестезией хирург подтягивает или укорачивает мышцы и связки века, при рубцовых изменениях изнутри добавляет пластику слизистой или хряща, затем накладывает швы; занимает 30–60 минут, обычно амбулаторно, на глаз кладут повязку",
+        "when": "Ресницы касаются роговицы и царапают её, постоянное ощущение инородного тела, слезотечение и светобоязнь, повторные воспаления и эрозии роговицы, заворот века из-за возрастного ослабления тканей, спазма или рубцов после воспалений и травм",
+        "prep": "Сообщить о разжижающих кровь препаратах, хронических заболеваниях и аллергии на анестетики, прийти без макияжа, взять назначенные капли и мазь и обеспечить сопровождающего — за руль в день операции садиться нельзя",
+        "abnormal": "Слезотечение, отёк и синяки вокруг глаза в первые недели ожидаемы и постепенно уменьшаются. Усиливающаяся боль, гнойное отделяемое, расхождение швов, снижение зрения или снова касающиеся глаза ресницы — повод показаться офтальмологу раньше назначенного срока"
+      },
+      "en": {
+        "what": "A plastic surgery that returns an inward-turned eyelid and its lashes to the correct position so they no longer rub the eye",
+        "how": "Under local anaesthesia the surgeon tightens or shortens the eyelid muscles and ligaments, adds a mucous membrane or cartilage graft if the lid is scarred, and closes with sutures; it takes 30–60 minutes, usually as an outpatient procedure, and the eye is covered with a dressing",
+        "when": "Lashes touching and scratching the cornea, a constant foreign body sensation, watering and light sensitivity, repeated inflammation and corneal erosions, an inward-turned lid due to age-related laxity, spasm or scarring after inflammation or injury",
+        "prep": "Report blood-thinning medicines, chronic conditions and any allergy to anaesthetics, come without make-up, bring the prescribed drops and ointment and arrange for someone to accompany you, as you must not drive on the day of surgery",
+        "abnormal": "Watering, swelling and bruising around the eye in the first weeks are expected and gradually subside. Increasing pain, purulent discharge, opened sutures, worsening vision or lashes touching the eye again are reasons to see an ophthalmologist before the scheduled visit"
+      },
+      "sr": {
+        "what": "Plastična operacija koja uvrnuti kapak i trepavice vraća u pravilan položaj kako ne bi grebali oko",
+        "how": "U lokalnoj anesteziji hirurg zateže ili skraćuje mišiće i veze kapka, kod ožiljnih promjena dodaje presadak sluznice ili hrskavice, a zatim postavlja konce; traje 30–60 minuta, obično ambulantno, a na oko se stavlja zavoj",
+        "when": "Trepavice dodiruju i grebu rožnjaču, stalan osjećaj stranog tijela, suzenje i preosjetljivost na svjetlost, ponavljane upale i erozije rožnjače, uvrnut kapak zbog starosne mlitavosti tkiva, grča ili ožiljaka poslije upala i povreda",
+        "prep": "Prijaviti lijekove za razrjeđivanje krvi, hronične bolesti i alergiju na anestetike, doći bez šminke, ponijeti propisane kapi i mast i obezbijediti pratioca — na dan operacije se ne smije voziti",
+        "abnormal": "Suzenje, otok i modrice oko oka prvih sedmica su očekivani i postepeno slabe. Bol koja se pojačava, gnojni iscjedak, popuštanje konaca, slabljenje vida ili trepavice koje ponovo dodiruju oko razlog su da se javite oftalmologu i prije zakazanog termina"
+      },
+      "de": {
+        "what": "Plastische Operation, die ein nach innen gedrehtes Lid samt Wimpern wieder in die richtige Lage bringt, damit sie nicht am Auge reiben",
+        "how": "In örtlicher Betäubung strafft oder kürzt der Chirurg Lidmuskeln und Lidbänder, bei vernarbtem Lid wird zusätzlich Schleimhaut oder Knorpel transplantiert, danach wird genäht; 30–60 Minuten, meist ambulant, das Auge wird verbunden",
+        "when": "Wimpern berühren und zerkratzen die Hornhaut, ständiges Fremdkörpergefühl, Tränen und Lichtempfindlichkeit, wiederholte Entzündungen und Hornhauterosionen, ein nach innen gedrehtes Lid durch altersbedingte Erschlaffung, Verkrampfung oder Narben nach Entzündungen und Verletzungen",
+        "prep": "Blutverdünnende Medikamente, chronische Erkrankungen und Allergien gegen Betäubungsmittel angeben, ohne Make-up kommen, die verordneten Tropfen und Salben mitbringen und eine Begleitperson organisieren — am Operationstag darf nicht selbst gefahren werden",
+        "abnormal": "Tränen, Schwellung und Blutergüsse rund um das Auge sind in den ersten Wochen zu erwarten und klingen allmählich ab. Zunehmende Schmerzen, eitriges Sekret, aufgegangene Nähte, nachlassendes Sehvermögen oder erneut am Auge reibende Wimpern sind Gründe, den Augenarzt vor dem vereinbarten Termin aufzusuchen"
+      },
+      "tr": {
+        "what": "İçe dönmüş göz kapağını ve kirpikleri, gözü çizmeyecek şekilde doğru konuma getiren plastik ameliyat",
+        "how": "Lokal anestezi altında cerrah kapak kaslarını ve bağlarını gerer ya da kısaltır, kapak nedbeliyse mukoza veya kıkırdak grefti ekler, ardından dikiş atar; 30–60 dakika sürer, genellikle ayaktan yapılır ve göz kapatılır",
+        "when": "Kirpiklerin korneaya değip çizmesi, sürekli batma hissi, sulanma ve ışığa duyarlılık, tekrarlayan iltihaplar ve kornea erozyonları, yaşa bağlı gevşeme, kasılma ya da iltihap ve yaralanma sonrası nedbeye bağlı içe dönük kapak",
+        "prep": "Kan sulandırıcı ilaçları, kronik hastalıkları ve anestezik alerjisini bildirin, makyajsız gelin, reçete edilen damla ve merhemi yanınıza alın ve refakatçi ayarlayın — ameliyat günü araç kullanılmamalı",
+        "abnormal": "İlk haftalarda sulanma, şişlik ve göz çevresinde morluk beklenen durumlardır ve giderek azalır. Artan ağrı, iltihaplı akıntı, dikişlerin açılması, görmenin bozulması ya da kirpiklerin yeniden göze değmesi, planlanan randevuyu beklemeden göz hekimine başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Пластична операција која уврнути капак и трепавице враћа у правилан положај како не би гребали око",
+        "how": "У локалној анестезији хирург затеже или скраћује мишиће и везе капка, код ожиљних промјена додаје пресадак слузнице или хрскавице, а затим поставља конце; траје 30–60 минута, обично амбулантно, а на око се ставља завој",
+        "when": "Трепавице додирују и гребу рожњачу, сталан осјећај страног тијела, сузење и преосјетљивост на свјетлост, понављане упале и ерозије рожњаче, уврнут капак због старосне млитавости ткива, грча или ожиљака послије упала и повреда",
+        "prep": "Пријавити лијекове за разрјеђивање крви, хроничне болести и алергију на анестетике, доћи без шминке, понијети прописане капи и маст и обезбиједити пратиоца — на дан операције се не смије возити",
+        "abnormal": "Сузење, оток и модрице око ока првих седмица су очекивани и постепено слабе. Бол која се појачава, гнојни исцједак, попуштање конаца, слабљење вида или трепавице које поново додирују око разлог су да се јавите офталмологу и прије заказаног термина"
+      }
+    }
+  },
+  {
+    "slug": "pterygium-removal-with-conjunctival-graft",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление разрастания конъюнктивы с роговицы с закрытием обнажённого участка лоскутом собственной конъюнктивы пациента",
+        "how": "Под местной анестезией разросшуюся ткань отделяют от роговицы и иссекают, затем из-под верхнего века берут тонкий лоскут конъюнктивы и укладывают на обнажённую склеру, фиксируя швами или биологическим клеем; 30–50 минут, амбулаторно, глаз закрывают повязкой",
+        "when": "Крупное разрастание конъюнктивы, повторный рост после прежней операции, снижение зрения и астигматизм из-за наползания ткани на роговицу, постоянное раздражение глаза — вариант с лоскутом выбирает хирург, чтобы уменьшить вероятность повторного роста",
+        "prep": "Пройти осмотр глаза, заранее снять контактные линзы в назначенный врачом срок, сообщить о разжижающих кровь препаратах, хронических заболеваниях и прежних операциях на глазу, прийти с сопровождающим — за руль в день операции садиться нельзя",
+        "abnormal": "Ощущение инородного тела, покраснение и отёк в зоне пересаженного лоскута держатся дольше, чем после простого иссечения, и уменьшаются в течение нескольких недель. Сильная боль, гнойное отделяемое, смещение лоскута, снижение зрения или новое разрастание на том же месте требуют осмотра офтальмолога"
+      },
+      "en": {
+        "what": "Removal of a conjunctival overgrowth from the cornea, with the bare area covered by a graft of the patient's own conjunctiva",
+        "how": "Under local anaesthesia the overgrown tissue is separated from the cornea and excised, then a thin piece of conjunctiva is taken from under the upper eyelid and laid over the bare sclera, secured with sutures or biological glue; 30–50 minutes as an outpatient procedure, and the eye is covered with a dressing",
+        "when": "A large overgrowth, regrowth after previous surgery, reduced vision and astigmatism from tissue creeping onto the cornea, persistent eye irritation — the surgeon chooses the graft technique to reduce the chance of regrowth",
+        "prep": "Have an eye examination, remove contact lenses in advance within the period set by the doctor, report blood-thinning medicines, chronic conditions and previous eye surgery, and come with someone to accompany you, as you must not drive on the day of surgery",
+        "abnormal": "A foreign body sensation, redness and swelling over the grafted area last longer than after a simple excision and ease over several weeks. Severe pain, purulent discharge, a displaced graft, worsening vision or new growth in the same place require an ophthalmologist's examination"
+      },
+      "sr": {
+        "what": "Uklanjanje izrasline vežnjače sa rožnjače uz pokrivanje ogoljelog mjesta presatkom sopstvene vežnjače",
+        "how": "U lokalnoj anesteziji izraslo tkivo se odvaja od rožnjače i isijeca, zatim se ispod gornjeg kapka uzima tanak režanj vežnjače i postavlja na ogoljelu bjeloočnicu, a učvršćuje se koncima ili biološkim ljepkom; 30–50 minuta, ambulantno, oko se pokriva zavojem",
+        "when": "Velika izraslina, ponovni rast poslije ranije operacije, slabljenje vida i astigmatizam zbog širenja tkiva preko rožnjače, stalna nadraženost oka — tehniku sa presatkom hirurg bira da bi smanjio vjerovatnoću ponovnog rasta",
+        "prep": "Obaviti pregled oka, skinuti kontaktna sočiva u roku koji ljekar odredi, prijaviti lijekove za razrjeđivanje krvi, hronične bolesti i ranije operacije oka i doći sa pratiocem — na dan operacije se ne smije voziti",
+        "abnormal": "Osjećaj stranog tijela, crvenilo i otok iznad presatka traju duže nego poslije običnog isijecanja i popuštaju tokom nekoliko sedmica. Jaka bol, gnojni iscjedak, pomjeranje presatka, slabljenje vida ili nova izraslina na istom mjestu traže pregled oftalmologa"
+      },
+      "de": {
+        "what": "Entfernung einer Bindehautwucherung von der Hornhaut, wobei die freiliegende Stelle mit einem Transplantat aus körpereigener Bindehaut gedeckt wird",
+        "how": "In örtlicher Betäubung wird das gewucherte Gewebe von der Hornhaut gelöst und entfernt, anschließend wird ein dünnes Bindehautstück von unter dem Oberlid entnommen und auf die freiliegende Lederhaut gelegt, fixiert mit Nähten oder biologischem Kleber; 30–50 Minuten, ambulant, das Auge wird verbunden",
+        "when": "Große Wucherung, erneutes Wachstum nach einer früheren Operation, Sehverschlechterung und Astigmatismus durch das Vorwachsen auf die Hornhaut, anhaltende Reizung des Auges — die Technik mit Transplantat wählt die Chirurgin oder der Chirurg, um ein erneutes Wachstum seltener zu machen",
+        "prep": "Augenuntersuchung durchführen lassen, Kontaktlinsen in der von der Ärztin oder dem Arzt genannten Frist vorher herausnehmen, blutverdünnende Medikamente, chronische Erkrankungen und frühere Augenoperationen angeben und mit einer Begleitperson kommen — am Operationstag darf nicht selbst gefahren werden",
+        "abnormal": "Fremdkörpergefühl, Rötung und Schwellung über dem Transplantat halten länger an als nach einer einfachen Entfernung und lassen über mehrere Wochen nach. Starke Schmerzen, eitriges Sekret, ein verrutschtes Transplantat, nachlassendes Sehen oder erneutes Wachstum an derselben Stelle erfordern eine augenärztliche Untersuchung"
+      },
+      "tr": {
+        "what": "Korneadaki konjonktiva büyümesinin çıkarılması ve açıkta kalan alanın hastanın kendi konjonktivasından alınan greftle kapatılması",
+        "how": "Lokal anestezi altında büyümüş doku korneadan ayrılıp çıkarılır, ardından üst göz kapağının altından ince bir konjonktiva parçası alınıp açıkta kalan skleraya yerleştirilir ve dikiş ya da biyolojik yapıştırıcıyla tespit edilir; 30–50 dakika sürer, ayaktan yapılır, göz kapatılır",
+        "when": "Büyük bir büyüme, önceki ameliyattan sonra yeniden büyüme, dokunun korneaya ilerlemesine bağlı görme azalması ve astigmatizma, sürekli göz tahrişi — greftli tekniği, yeniden büyüme olasılığını azaltmak için cerrah seçer",
+        "prep": "Göz muayenesinden geçin, kontakt lensleri hekimin belirttiği süre kadar önceden çıkarın, kan sulandırıcı ilaçları, kronik hastalıkları ve geçirilmiş göz ameliyatlarını bildirin ve yanınızda bir refakatçiyle gelin — ameliyat günü araç kullanılmamalı",
+        "abnormal": "Greftin bulunduğu bölgede batma hissi, kızarıklık ve şişlik basit çıkarmaya göre daha uzun sürer ve birkaç hafta içinde azalır. Şiddetli ağrı, iltihaplı akıntı, greftin yer değiştirmesi, görmenin bozulması ya da aynı yerde yeni büyüme göz hekimi muayenesi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање израслине вежњаче са рожњаче уз покривање огољелог мјеста пресатком сопствене вежњаче",
+        "how": "У локалној анестезији израсло ткиво се одваја од рожњаче и исијеца, затим се испод горњег капка узима танак режањ вежњаче и поставља на огољелу бјелоочницу, а учвршћује се концима или биолошким љепком; 30–50 минута, амбулантно, око се покрива завојем",
+        "when": "Велика израслина, поновни раст послије раније операције, слабљење вида и астигматизам због ширења ткива преко рожњаче, стална надраженост ока — технику са пресатком хирург бира да би смањио вјероватноћу поновног раста",
+        "prep": "Обавити преглед ока, скинути контактна сочива у року који љекар одреди, пријавити лијекове за разрјеђивање крви, хроничне болести и раније операције ока и доћи са пратиоцем — на дан операције се не смије возити",
+        "abnormal": "Осјећај страног тијела, црвенило и оток изнад пресатка трају дуже него послије обичног исијецања и попуштају током неколико седмица. Јака бол, гнојни исцједак, помјерање пресатка, слабљење вида или нова израслина на истом мјесту траже преглед офталмолога"
+      }
+    }
+  },
+  {
+    "slug": "msct-angiography-aorta",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Послойное исследование аорты и её ветвей на компьютерном томографе с внутривенным контрастом; использует рентгеновское излучение и назначается врачом по показаниям",
+        "how": "В вену на руке ставят катетер и вводят контрастное вещество (обычны ощущение тепла и привкус во рту), пациент лежит на столе и по команде задерживает дыхание; сканирование занимает секунды, весь визит обычно 15–30 минут",
+        "when": "Подозрение на аневризму или расслоение аорты, наблюдение за уже известным расширением аорты, оценка перед операцией или стентированием и контроль после них, выраженный атеросклероз, травма грудной клетки и живота",
+        "prep": "Не есть несколько часов перед исследованием, если клиника этого просит, принести свежие анализы функции почек, если их запрашивали, заранее сообщить о возможной беременности, о прежних реакциях на контрастное вещество и о принимаемых препаратах, снять металлические предметы; после исследования советуют пить больше воды",
+        "abnormal": "Снимки могут показать расширение, расслоение, сужение или отложения в стенке аорты, а часть находок оказывается вариантом строения сосудов. Заключение даёт рентгенолог, а дальнейшую тактику определяет сосудистый хирург или кардиолог"
+      },
+      "en": {
+        "what": "A layer-by-layer CT study of the aorta and its branches with intravenous contrast; it uses X-rays and is ordered by a doctor for specific indications",
+        "how": "A cannula is placed in an arm vein and contrast is injected (a warm feeling and a taste in the mouth are common), the patient lies on the table and holds their breath on command; the scan itself takes seconds and the whole visit usually 15–30 minutes",
+        "when": "Suspected aortic aneurysm or dissection, monitoring of a known dilated aorta, assessment before surgery or stenting and follow-up afterwards, advanced atherosclerosis, chest and abdominal trauma",
+        "prep": "Do not eat for several hours before the scan if the clinic asks, bring recent kidney function results if they were requested, report a possible pregnancy, any previous reaction to contrast media and the medicines you take, and remove metal objects; drinking more water afterwards is usually advised",
+        "abnormal": "The images may show widening, dissection, narrowing or deposits in the aortic wall, and some findings turn out to be normal anatomical variants. The report is written by a radiologist, while further management is decided by a vascular surgeon or cardiologist"
+      },
+      "sr": {
+        "what": "Slojeviti prikaz aorte i njenih grana na skeneru uz kontrast u venu; koristi rendgensko zračenje i radi se po uputu ljekara prema indikacijama",
+        "how": "U venu na ruci postavlja se kanila i ubrizgava se kontrast (uobičajen je osjećaj toplote i ukus u ustima), pacijent leži na stolu i na znak zadržava dah; samo snimanje traje nekoliko sekundi, a cijeli dolazak obično 15–30 minuta",
+        "when": "Sumnja na aneurizmu ili disekciju aorte, praćenje već poznatog proširenja aorte, procjena prije operacije ili ugradnje stenta i kontrola poslije njih, uznapredovala ateroskleroza, povrede grudnog koša i stomaka",
+        "prep": "Ne jesti nekoliko sati prije pregleda ako klinika tako traži, ponijeti svježe nalaze bubrežne funkcije ako su traženi, unaprijed prijaviti moguću trudnoću, ranije reakcije na kontrast i lijekove koje uzimate i skinuti metalne predmete; poslije pregleda se savjetuje više vode",
+        "abnormal": "Snimci mogu pokazati proširenje, disekciju, suženje ili naslage u zidu aorte, a dio nalaza bude varijanta građe krvnih sudova. Nalaz piše radiolog, a dalju taktiku određuje vaskularni hirurg ili kardiolog"
+      },
+      "de": {
+        "what": "Schichtweise CT-Darstellung der Hauptschlagader und ihrer Äste mit Kontrastmittel über die Vene; sie arbeitet mit Röntgenstrahlen und wird ärztlich nach Indikation angeordnet",
+        "how": "In eine Armvene wird eine Kanüle gelegt und Kontrastmittel gespritzt (Wärmegefühl und Geschmack im Mund sind üblich), man liegt auf dem Tisch und hält auf Ansage die Luft an; die Aufnahme dauert Sekunden, der gesamte Termin meist 15–30 Minuten",
+        "when": "Verdacht auf ein Aortenaneurysma oder eine Dissektion, Verlaufskontrolle einer bekannten Aortenerweiterung, Beurteilung vor einer Operation oder Stentimplantation und Kontrolle danach, ausgeprägte Arteriosklerose, Verletzungen von Brustkorb und Bauch",
+        "prep": "Auf Vorgabe der Klinik einige Stunden nichts essen, angeforderte aktuelle Nierenwerte mitbringen, eine mögliche Schwangerschaft, frühere Reaktionen auf Kontrastmittel und eingenommene Medikamente vorab angeben und Metallgegenstände ablegen; nach der Untersuchung wird empfohlen, mehr zu trinken",
+        "abnormal": "Die Bilder können Erweiterungen, eine Dissektion, Engstellen oder Ablagerungen in der Aortenwand zeigen, ein Teil der Befunde erweist sich als anatomische Normvariante. Den Befund schreibt die Radiologie, das weitere Vorgehen legen Gefäßchirurgie oder Kardiologie fest"
+      },
+      "tr": {
+        "what": "Damardan kontrast verilerek aort ve dallarının kesitsel olarak görüntülenmesi; X ışını kullanır ve hekim tarafından endikasyona göre istenir",
+        "how": "Kol damarına kanül takılıp kontrast madde verilir (sıcaklık hissi ve ağızda tat olağandır), hasta masada yatar ve söylendiğinde nefesini tutar; çekim saniyeler sürer, tüm ziyaret genellikle 15–30 dakikadır",
+        "when": "Aort anevrizması ya da diseksiyon kuşkusu, bilinen aort genişlemesinin izlenmesi, ameliyat veya stent öncesi değerlendirme ve sonrasında kontrol, ileri ateroskleroz, göğüs ve karın travmaları",
+        "prep": "Klinik isterse çekimden birkaç saat önce yemek yemeyin, istenmişse güncel böbrek fonksiyon sonuçlarını getirin, olası gebeliği, kontrast maddeye karşı önceki tepkileri ve kullandığınız ilaçları önceden bildirin, metal eşyaları çıkarın; çekimden sonra bol su içilmesi önerilir",
+        "abnormal": "Görüntüler aort duvarında genişleme, diseksiyon, darlık ya da birikim gösterebilir, bulguların bir kısmı damar yapısının normal varyantı çıkar. Raporu radyolog yazar, sonraki adımlara damar cerrahı ya da kardiyolog karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Слојевити приказ аорте и њених грана на скенеру уз контраст у вену; користи рендгенско зрачење и ради се по упуту љекара према индикацијама",
+        "how": "У вену на руци поставља се канила и убризгава се контраст (уобичајен је осјећај топлоте и укус у устима), пацијент лежи на столу и на знак задржава дах; само снимање траје неколико секунди, а цијели долазак обично 15–30 минута",
+        "when": "Сумња на анеуризму или дисекцију аорте, праћење већ познатог проширења аорте, процјена прије операције или уградње стента и контрола послије њих, узнапредовала атеросклероза, повреде грудног коша и стомака",
+        "prep": "Не јести неколико сати прије прегледа ако клиника тако тражи, понијети свјеже налазе бубрежне функције ако су тражени, унапријед пријавити могућу трудноћу, раније реакције на контраст и лијекове које узимате и скинути металне предмете; послије прегледа се савјетује више воде",
+        "abnormal": "Снимци могу показати проширење, дисекцију, сужење или наслаге у зиду аорте, а дио налаза буде варијанта грађе крвних судова. Налаз пише радиолог, а даљу тактику одређује васкуларни хирург или кардиолог"
+      }
+    }
+  },
+  {
+    "slug": "msct-angiography-head-and-neck-vessels",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Исследование артерий шеи и головного мозга на компьютерном томографе с внутривенным контрастом; использует рентгеновское излучение и назначается врачом по показаниям",
+        "how": "Контраст вводят через катетер в вене руки и сканируют область от дуги аорты до сосудов мозга, пока пациент неподвижно лежит; сканирование длится секунды, визит обычно 15–30 минут",
+        "when": "Перенесённый инсульт или преходящее нарушение мозгового кровообращения, шум над сонной артерией и подозрение на её сужение, подозрение на аневризму или сосудистую мальформацию, стойкое головокружение, подготовка к операции на сосудах шеи и контроль после стентирования",
+        "prep": "Не есть несколько часов, если клиника просит, заранее сообщить о возможной беременности, прежних реакциях на контраст, заболеваниях почек и принимаемых препаратах, снять серьги, пирсинг, очки и съёмные протезы, взять прежние снимки и УЗИ сосудов",
+        "abnormal": "Снимки могут показать сужения, извитость, аневризму или закупорку сосуда, а часть особенностей оказывается врождённым вариантом строения. Заключение делает рентгенолог, а решение о лечении принимает невролог или сосудистый хирург"
+      },
+      "en": {
+        "what": "A CT study of the arteries of the neck and brain with intravenous contrast; it uses X-rays and is ordered by a doctor for specific indications",
+        "how": "Contrast is given through a cannula in an arm vein and the area from the aortic arch to the brain vessels is scanned while the patient lies still; the scan lasts seconds and the visit usually 15–30 minutes",
+        "when": "A previous stroke or transient ischaemic attack, a bruit over the carotid artery and suspected narrowing, suspected aneurysm or vascular malformation, persistent dizziness, planning surgery on the neck vessels and follow-up after stenting",
+        "prep": "Do not eat for several hours if the clinic asks, report in advance a possible pregnancy, previous reactions to contrast, kidney disease and the medicines you take, remove earrings, piercings, glasses and removable dentures, and bring earlier scans and vascular ultrasound reports",
+        "abnormal": "The images may show narrowing, tortuosity, an aneurysm or a blocked vessel, and some features are congenital anatomical variants. The radiologist writes the report, while the neurologist or vascular surgeon decides on treatment"
+      },
+      "sr": {
+        "what": "Prikaz arterija vrata i mozga na skeneru uz kontrast u venu; koristi rendgensko zračenje i radi se po uputu ljekara prema indikacijama",
+        "how": "Kontrast se daje kroz kanilu u veni ruke, a snima se područje od luka aorte do moždanih krvnih sudova dok pacijent mirno leži; snimanje traje nekoliko sekundi, a dolazak obično 15–30 minuta",
+        "when": "Preboljeli moždani udar ili prolazni ispad moždane cirkulacije, šum nad karotidnom arterijom i sumnja na suženje, sumnja na aneurizmu ili vaskularnu malformaciju, uporna vrtoglavica, priprema za operaciju krvnih sudova vrata i kontrola poslije ugradnje stenta",
+        "prep": "Ne jesti nekoliko sati ako klinika tako traži, unaprijed prijaviti moguću trudnoću, ranije reakcije na kontrast, bolesti bubrega i lijekove koje uzimate, skinuti minđuše, pirsing, naočare i pokretne proteze i ponijeti ranije snimke i ultrazvuk krvnih sudova",
+        "abnormal": "Snimci mogu pokazati suženje, vijugavost, aneurizmu ili začepljenje krvnog suda, a dio osobenosti je urođena varijanta građe. Nalaz daje radiolog, a odluku o liječenju donosi neurolog ili vaskularni hirurg"
+      },
+      "de": {
+        "what": "CT-Darstellung der Hals- und Hirnarterien mit Kontrastmittel über die Vene; sie arbeitet mit Röntgenstrahlen und wird ärztlich nach Indikation angeordnet",
+        "how": "Das Kontrastmittel läuft über eine Kanüle in einer Armvene, gescannt wird der Bereich vom Aortenbogen bis zu den Hirngefäßen, während man ruhig liegt; die Aufnahme dauert Sekunden, der Termin meist 15–30 Minuten",
+        "when": "Durchgemachter Schlaganfall oder vorübergehende Durchblutungsstörung, Strömungsgeräusch über der Halsschlagader und Verdacht auf eine Engstelle, Verdacht auf ein Aneurysma oder eine Gefäßfehlbildung, anhaltender Schwindel, Planung einer Operation an den Halsgefäßen und Kontrolle nach Stentimplantation",
+        "prep": "Auf Wunsch der Klinik einige Stunden nichts essen, eine mögliche Schwangerschaft, frühere Reaktionen auf Kontrastmittel, Nierenerkrankungen und eingenommene Medikamente vorab angeben, Ohrringe, Piercings, Brille und herausnehmbaren Zahnersatz ablegen und frühere Aufnahmen sowie Gefäßultraschall mitbringen",
+        "abnormal": "Die Bilder können Engstellen, Schlängelungen, ein Aneurysma oder einen Gefäßverschluss zeigen, manche Besonderheiten sind angeborene Normvarianten. Den Befund erstellt die Radiologie, über die Behandlung entscheiden Neurologie oder Gefäßchirurgie"
+      },
+      "tr": {
+        "what": "Damardan kontrast verilerek boyun ve beyin atardamarlarının tomografiyle görüntülenmesi; X ışını kullanır ve hekim endikasyona göre ister",
+        "how": "Kontrast kol damarındaki kanülden verilir ve hasta hareketsiz yatarken aort kavsinden beyin damarlarına kadar olan bölge taranır; çekim saniyeler, ziyaret genellikle 15–30 dakika sürer",
+        "when": "Geçirilmiş inme ya da geçici iskemik atak, şah damarı üzerinde üfürüm ve darlık kuşkusu, anevrizma veya damar malformasyonu kuşkusu, süren baş dönmesi, boyun damarı ameliyatı planı ve stent sonrası kontrol",
+        "prep": "Klinik isterse birkaç saat aç kalın, olası gebeliği, kontrast maddeye önceki tepkileri, böbrek hastalığını ve kullandığınız ilaçları önceden bildirin, küpe, piercing, gözlük ve hareketli protezleri çıkarın, önceki görüntüleri ve damar ultrasonunu getirin",
+        "abnormal": "Görüntüler damarda darlık, kıvrımlanma, anevrizma ya da tıkanıklık gösterebilir; bazı özellikler doğuştan gelen yapı varyantıdır. Raporu radyolog yazar, tedavi kararını nörolog ya da damar cerrahı verir"
+      },
+      "sr_cyrl": {
+        "what": "Приказ артерија врата и мозга на скенеру уз контраст у вену; користи рендгенско зрачење и ради се по упуту љекара према индикацијама",
+        "how": "Контраст се даје кроз канилу у вени руке, а снима се подручје од лука аорте до можданих крвних судова док пацијент мирно лежи; снимање траје неколико секунди, а долазак обично 15–30 минута",
+        "when": "Пребољели мождани удар или пролазни испад мождане циркулације, шум над каротидном артеријом и сумња на сужење, сумња на анеуризму или васкуларну малформацију, упорна вртоглавица, припрема за операцију крвних судова врата и контрола послије уградње стента",
+        "prep": "Не јести неколико сати ако клиника тако тражи, унапријед пријавити могућу трудноћу, раније реакције на контраст, болести бубрега и лијекове које узимате, скинути минђуше, пирсинг, наочаре и покретне протезе и понијети раније снимке и ултразвук крвних судова",
+        "abnormal": "Снимци могу показати сужење, вијугавост, анеуризму или зачепљење крвног суда, а дио особености је урођена варијанта грађе. Налаз даје радиолог, а одлуку о лијечењу доноси неуролог или васкуларни хирург"
+      }
+    }
+  },
+  {
+    "slug": "msct-colonography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Исследование толстой кишки на компьютерном томографе с построением объёмного изображения её просвета; использует рентгеновское излучение и назначается врачом по показаниям",
+        "how": "Кишку осторожно раздувают воздухом или углекислым газом через тонкую трубку и сканируют в положении на спине и на животе; седация не нужна, всё занимает около 20–30 минут, возможны вздутие и спазмы, которые проходят",
+        "when": "Скрининговое обследование толстой кишки, когда колоноскопия противопоказана, не завершена или от неё отказываются, поиск полипов и сужений просвета, оценка кишки выше места, куда не прошёл эндоскоп — по назначению врача",
+        "prep": "Очищение кишечника по схеме клиники накануне, лёгкая еда без клетчатки за 1–2 дня и ограничение еды в день исследования; заранее сообщить о возможной беременности, о прежних реакциях на контрастное вещество, если контраст планируется, и о заболеваниях сердца и почек",
+        "abnormal": "Исследование может выявить полипы, утолщение стенки или сужение просвета, но взять биопсию по снимкам нельзя — для этого потребуется колоноскопия. Заключение даёт рентгенолог, а дальнейшие шаги определяет гастроэнтеролог или хирург"
+      },
+      "en": {
+        "what": "A CT study of the large bowel that builds a three-dimensional image of its lumen; it uses X-rays and is ordered by a doctor for specific indications",
+        "how": "The bowel is gently inflated with air or carbon dioxide through a thin tube and scanned lying on the back and on the front; no sedation is used, the whole procedure takes about 20–30 minutes, and bloating and cramps may occur but pass",
+        "when": "Screening of the large bowel when colonoscopy is contraindicated, incomplete or declined, looking for polyps and narrowings, assessing the bowel beyond a point the endoscope could not pass — as ordered by a doctor",
+        "prep": "Bowel cleansing according to the clinic's protocol the day before, low-fibre food for 1–2 days and limited food on the day of the scan; report in advance a possible pregnancy, any previous reaction to contrast media if contrast is planned, and heart or kidney disease",
+        "abnormal": "The study may reveal polyps, wall thickening or a narrowed lumen, but a biopsy cannot be taken from images — colonoscopy is needed for that. The radiologist writes the report and the gastroenterologist or surgeon decides the next steps"
+      },
+      "sr": {
+        "what": "Pregled debelog crijeva na skeneru uz trodimenzionalni prikaz njegovog lumena; koristi rendgensko zračenje i radi se po uputu ljekara prema indikacijama",
+        "how": "Crijevo se blago napuni vazduhom ili ugljen-dioksidom kroz tanku cjevčicu i snima se u položaju na leđima i na stomaku; sedacija nije potrebna, sve traje oko 20–30 minuta, a nadutost i grčevi su mogući i prolaze",
+        "when": "Skrining debelog crijeva kada je kolonoskopija kontraindikovana, nepotpuna ili se pacijent na nju ne odlučuje, traženje polipa i suženja, procjena crijeva iza mjesta do kojeg endoskop nije prošao — po uputu ljekara",
+        "prep": "Čišćenje crijeva po protokolu klinike dan ranije, laka ishrana bez vlakana 1–2 dana i ograničenje hrane na dan pregleda; unaprijed prijaviti moguću trudnoću, ranije reakcije na kontrast ako je kontrast planiran, kao i bolesti srca i bubrega",
+        "abnormal": "Pregled može otkriti polipe, zadebljanje zida ili suženje lumena, ali se biopsija sa snimaka ne može uzeti — za to je potrebna kolonoskopija. Nalaz daje radiolog, a dalje korake određuje gastroenterolog ili hirurg"
+      },
+      "de": {
+        "what": "CT-Untersuchung des Dickdarms mit dreidimensionaler Darstellung seines Innenraums; sie arbeitet mit Röntgenstrahlen und wird ärztlich nach Indikation angeordnet",
+        "how": "Der Darm wird über ein dünnes Röhrchen vorsichtig mit Luft oder Kohlendioxid gefüllt und in Rücken- und Bauchlage gescannt; ohne Sedierung, insgesamt etwa 20–30 Minuten, Blähgefühl und Krämpfe sind möglich und vergehen wieder",
+        "when": "Dickdarm-Vorsorge, wenn eine Darmspiegelung nicht möglich, unvollständig oder nicht gewünscht ist, Suche nach Polypen und Engstellen, Beurteilung des Darms jenseits einer für das Endoskop nicht passierbaren Stelle — auf ärztliche Anordnung",
+        "prep": "Darmreinigung nach dem Schema der Klinik am Vortag, ballaststoffarme Kost über 1–2 Tage und wenig Essen am Untersuchungstag; eine mögliche Schwangerschaft, frühere Reaktionen auf Kontrastmittel, falls Kontrastmittel geplant ist, sowie Herz- und Nierenerkrankungen vorab angeben",
+        "abnormal": "Die Untersuchung kann Polypen, eine verdickte Wand oder eine Engstelle zeigen, eine Gewebeprobe lässt sich aus Bildern jedoch nicht gewinnen — dafür ist eine Darmspiegelung nötig. Den Befund schreibt die Radiologie, über das weitere Vorgehen entscheiden Gastroenterologie oder Chirurgie"
+      },
+      "tr": {
+        "what": "Kalın bağırsağın tomografiyle incelenip iç boşluğunun üç boyutlu görüntülenmesi; X ışını kullanır ve hekim endikasyona göre ister",
+        "how": "Bağırsak ince bir borudan hava ya da karbondioksitle hafifçe şişirilir ve sırtüstü ile yüzüstü pozisyonda taranır; sedasyon gerekmez, tümü yaklaşık 20–30 dakika sürer, geçici şişkinlik ve kramp olabilir",
+        "when": "Kolonoskopinin sakıncalı, eksik kalmış ya da tercih edilmediği durumlarda kalın bağırsak taraması, polip ve darlık arayışı, endoskobun geçemediği noktanın ötesindeki bağırsağın değerlendirilmesi — hekim istemiyle",
+        "prep": "Bir gün önce kliniğin şemasına göre bağırsak temizliği, 1–2 gün lifsiz hafif beslenme ve çekim günü yemeğin kısıtlanması; olası gebeliği, kontrast planlanıyorsa kontrast maddeye önceki tepkileri, kalp ve böbrek hastalıklarını önceden bildirin",
+        "abnormal": "İnceleme polip, duvar kalınlaşması ya da darlık gösterebilir, ancak görüntüden biyopsi alınamaz — bunun için kolonoskopi gerekir. Raporu radyolog yazar, sonraki adımları gastroenterolog ya da cerrah belirler"
+      },
+      "sr_cyrl": {
+        "what": "Преглед дебелог цријева на скенеру уз тродимензионални приказ његовог лумена; користи рендгенско зрачење и ради се по упуту љекара према индикацијама",
+        "how": "Цријево се благо напуни ваздухом или угљен-диоксидом кроз танку цјевчицу и снима се у положају на леђима и на стомаку; седација није потребна, све траје око 20–30 минута, а надутост и грчеви су могући и пролазе",
+        "when": "Скрининг дебелог цријева када је колоноскопија контраиндикована, непотпуна или се пацијент на њу не одлучује, тражење полипа и сужења, процјена цријева иза мјеста до којег ендоскоп није прошао — по упуту љекара",
+        "prep": "Чишћење цријева по протоколу клинике дан раније, лака исхрана без влакана 1–2 дана и ограничење хране на дан прегледа; унапријед пријавити могућу трудноћу, раније реакције на контраст ако је контраст планиран, као и болести срца и бубрега",
+        "abnormal": "Преглед може открити полипе, задебљање зида или сужење лумена, али се биопсија са снимака не може узети — за то је потребна колоноскопија. Налаз даје радиолог, а даље кораке одређује гастроентеролог или хирург"
+      }
+    }
+  },
+  {
+    "slug": "msct-coronary-angiography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Исследование собственных артерий сердца на компьютерном томографе с внутривенным контрастом и синхронизацией по ЭКГ; использует рентгеновское излучение и назначается врачом по показаниям",
+        "how": "На грудь крепят электроды ЭКГ, в вену вводят контраст, пациент лежит и задерживает дыхание на несколько секунд; по решению врача перед сканированием могут применяться средства, замедляющие пульс и расширяющие сосуды; весь визит обычно 30–60 минут",
+        "when": "Боль в груди неясного происхождения при невысокой вероятности ишемической болезни, спорные результаты нагрузочных проб, оценка коронарных артерий перед некардиальной операцией, контроль шунтов — показания определяет кардиолог",
+        "prep": "Не есть несколько часов, в день исследования отказаться от кофе, крепкого чая и энергетиков, приём постоянных препаратов согласовать с врачом; заранее сообщить о возможной беременности, аллергии на контрастное вещество, астме и болезнях почек, снять металл с области груди",
+        "abnormal": "Снимки могут показать сужения, отложения кальция или необычное отхождение артерий, а незначительные изменения встречаются и у людей без жалоб. Значимость находок и необходимость инвазивной коронарографии оценивает кардиолог"
+      },
+      "en": {
+        "what": "A CT study of the heart's own arteries with intravenous contrast and ECG gating; it uses X-rays and is ordered by a doctor for specific indications",
+        "how": "ECG electrodes are attached to the chest, contrast is injected into a vein and the patient lies still holding their breath for a few seconds; the doctor may use agents that slow the pulse and widen the vessels before the scan; the whole visit usually takes 30–60 minutes",
+        "when": "Chest pain of unclear origin when the likelihood of coronary disease is not high, equivocal stress test results, assessment of the coronary arteries before non-cardiac surgery, follow-up of bypass grafts — the indication is set by a cardiologist",
+        "prep": "Do not eat for several hours, avoid coffee, strong tea and energy drinks on the day of the scan and agree the timing of your regular medicines with the doctor; report in advance a possible pregnancy, allergy to contrast media, asthma and kidney disease, and remove metal from the chest area",
+        "abnormal": "The images may show narrowings, calcium deposits or unusual origins of the arteries, and minor changes also occur in people without symptoms. The cardiologist judges how significant the findings are and whether invasive coronary angiography is needed"
+      },
+      "sr": {
+        "what": "Prikaz srčanih arterija na skeneru uz kontrast u venu i sinhronizaciju sa EKG-om; koristi rendgensko zračenje i radi se po uputu ljekara prema indikacijama",
+        "how": "Na grudi se postavljaju EKG elektrode, u venu se daje kontrast, a pacijent mirno leži i zadržava dah nekoliko sekundi; po odluci ljekara se prije snimanja mogu primijeniti sredstva koja usporavaju puls i šire krvne sudove; cijeli dolazak obično traje 30–60 minuta",
+        "when": "Bol u grudima nejasnog porijekla kada vjerovatnoća koronarne bolesti nije visoka, nejasni rezultati testa opterećenja, procjena koronarnih arterija prije nekardijalne operacije, kontrola bajpas graftova — indikaciju postavlja kardiolog",
+        "prep": "Ne jesti nekoliko sati, na dan pregleda izbjegavati kafu, jak čaj i energetska pića, a uzimanje stalne terapije dogovoriti sa ljekarom; unaprijed prijaviti moguću trudnoću, alergiju na kontrast, astmu i bolesti bubrega i skinuti metal sa područja grudi",
+        "abnormal": "Snimci mogu pokazati suženja, naslage kalcijuma ili neuobičajen polazak arterija, a manje promjene se viđaju i kod ljudi bez tegoba. Značaj nalaza i potrebu za invazivnom koronarografijom procjenjuje kardiolog"
+      },
+      "de": {
+        "what": "CT-Darstellung der Herzkranzgefäße mit Kontrastmittel über die Vene und EKG-Triggerung; sie arbeitet mit Röntgenstrahlen und wird ärztlich nach Indikation angeordnet",
+        "how": "EKG-Elektroden werden auf dem Brustkorb angebracht, Kontrastmittel wird in eine Vene gespritzt, man liegt ruhig und hält einige Sekunden die Luft an; ärztlich können vor der Aufnahme Mittel eingesetzt werden, die den Puls verlangsamen und die Gefäße erweitern; der gesamte Termin dauert meist 30–60 Minuten",
+        "when": "Brustschmerz unklarer Ursache bei nicht hoher Wahrscheinlichkeit einer koronaren Herzkrankheit, uneindeutige Belastungstests, Beurteilung der Herzkranzgefäße vor nicht-herzchirurgischen Eingriffen, Kontrolle von Bypässen — die Indikation stellt die Kardiologie",
+        "prep": "Einige Stunden nichts essen, am Untersuchungstag auf Kaffee, starken Tee und Energydrinks verzichten und die Einnahme der Dauermedikation mit der Ärztin oder dem Arzt abstimmen; eine mögliche Schwangerschaft, eine Kontrastmittelallergie, Asthma und Nierenerkrankungen vorab angeben und Metall im Brustbereich ablegen",
+        "abnormal": "Die Bilder können Engstellen, Kalkablagerungen oder ungewöhnliche Gefäßabgänge zeigen, geringe Veränderungen kommen auch bei Menschen ohne Beschwerden vor. Wie bedeutsam die Befunde sind und ob eine invasive Koronarangiographie nötig ist, beurteilt die Kardiologie"
+      },
+      "tr": {
+        "what": "Damardan kontrast verilerek ve EKG ile senkronize edilerek kalbin kendi atardamarlarının tomografiyle görüntülenmesi; X ışını kullanır ve hekim endikasyona göre ister",
+        "how": "Göğse EKG elektrotları yerleştirilir, damardan kontrast verilir ve hasta hareketsiz yatıp birkaç saniye nefesini tutar; hekim kararıyla çekim öncesinde nabzı yavaşlatan ve damarları genişleten ajanlar kullanılabilir; tüm ziyaret genellikle 30–60 dakika sürer",
+        "when": "Koroner hastalık olasılığının yüksek olmadığı durumlarda nedeni belirsiz göğüs ağrısı, efor testinin belirsiz sonuçları, kalp dışı ameliyat öncesi koroner damarların değerlendirilmesi, baypas greftlerinin kontrolü — endikasyonu kardiyolog koyar",
+        "prep": "Birkaç saat aç kalın, çekim günü kahve, koyu çay ve enerji içeceklerinden kaçının, sürekli kullandığınız ilaçların zamanlamasını hekiminizle konuşun; olası gebeliği, kontrast madde alerjisini, astımı ve böbrek hastalığını önceden bildirin, göğüs bölgesindeki metalleri çıkarın",
+        "abnormal": "Görüntüler damarlarda darlık, kalsiyum birikimi ya da atardamarların alışılmadık çıkışını gösterebilir; küçük değişiklikler şikayeti olmayan kişilerde de görülür. Bulguların önemini ve invaziv koroner anjiyografi gerekip gerekmediğini kardiyolog değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Приказ срчаних артерија на скенеру уз контраст у вену и синхронизацију са ЕКГ-ом; користи рендгенско зрачење и ради се по упуту љекара према индикацијама",
+        "how": "На груди се постављају ЕКГ електроде, у вену се даје контраст, а пацијент мирно лежи и задржава дах неколико секунди; по одлуци љекара се прије снимања могу примијенити средства која успоравају пулс и шире крвне судове; цијели долазак обично траје 30–60 минута",
+        "when": "Бол у грудима нејасног поријекла када вјероватноћа коронарне болести није висока, нејасни резултати теста оптерећења, процјена коронарних артерија прије некардијалне операције, контрола бајпас графтова — индикацију поставља кардиолог",
+        "prep": "Не јести неколико сати, на дан прегледа избјегавати кафу, јак чај и енергетска пића, а узимање сталне терапије договорити са љекаром; унапријед пријавити могућу трудноћу, алергију на контраст, астму и болести бубрега и скинути метал са подручја груди",
+        "abnormal": "Снимци могу показати сужења, наслаге калцијума или неуобичајен полазак артерија, а мање промјене се виђају и код људи без тегоба. Значај налаза и потребу за инвазивном коронарографијом процјењује кардиолог"
+      }
+    }
+  },
+  {
+    "slug": "msct-thorax-chest-without-contrast",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Послойное сканирование органов грудной клетки без введения контраста; использует рентгеновское излучение и назначается врачом по показаниям",
+        "how": "Пациент лежит на спине с поднятыми за голову руками и задерживает дыхание на несколько секунд, пока стол проходит через кольцо томографа; само сканирование длится секунды, весь визит 10–15 минут",
+        "when": "Уточнение изменений, найденных на рентгене, длительный кашель и одышка, наблюдение за узелками в лёгких, последствия пневмонии, интерстициальные изменения, травма грудной клетки, оценка лёгких перед операцией",
+        "prep": "Специальной подготовки не требуется, есть и пить можно как обычно; снять с области груди украшения, бельё с металлическими элементами и одежду с застёжками, заранее сообщить о возможной беременности, а также о прежних реакциях на контрастное вещество, если врач решит дополнить исследование контрастом",
+        "abnormal": "Снимок может показать очаги и узелки, изменения лёгочной ткани и плевры или увеличенные лимфоузлы, а часть находок оказывается следом перенесённого заболевания. Описание делает рентгенолог, а дальнейшие шаги определяет пульмонолог или лечащий врач"
+      },
+      "en": {
+        "what": "A layer-by-layer scan of the chest organs performed without contrast; it uses X-rays and is ordered by a doctor for specific indications",
+        "how": "You lie on your back with your arms above your head and hold your breath for a few seconds while the table moves through the scanner ring; the scan itself takes seconds and the whole visit 10–15 minutes",
+        "when": "Clarifying changes seen on a plain X-ray, a long-standing cough and shortness of breath, follow-up of lung nodules, consequences of pneumonia, interstitial changes, chest trauma, assessment of the lungs before surgery",
+        "prep": "No special preparation is needed and you may eat and drink as usual; remove jewellery, underwear with metal parts and clothing with fasteners from the chest area and report a possible pregnancy in advance, as well as previous reactions to contrast media in case the doctor decides to add contrast",
+        "abnormal": "The scan may show spots and nodules, changes in lung tissue and the pleura, or enlarged lymph nodes, and some findings turn out to be traces of a past illness. The radiologist writes the report and the pulmonologist or treating doctor decides the next steps"
+      },
+      "sr": {
+        "what": "Slojevito snimanje organa grudnog koša bez davanja kontrasta; koristi rendgensko zračenje i radi se po uputu ljekara prema indikacijama",
+        "how": "Pacijent leži na leđima sa rukama iznad glave i zadržava dah nekoliko sekundi dok sto prolazi kroz prsten aparata; samo snimanje traje nekoliko sekundi, a cijeli dolazak 10–15 minuta",
+        "when": "Razjašnjenje promjena viđenih na rendgenskom snimku, dugotrajan kašalj i otežano disanje, praćenje čvorića u plućima, posljedice upale pluća, intersticijske promjene, povreda grudnog koša, procjena pluća prije operacije",
+        "prep": "Posebna priprema nije potrebna, jede se i pije uobičajeno; skinuti nakit, donji veš sa metalnim dijelovima i odjeću sa kopčama sa područja grudi i unaprijed prijaviti moguću trudnoću, kao i ranije reakcije na kontrast ako ljekar odluči da pregled dopuni kontrastom",
+        "abnormal": "Snimak može pokazati žarišta i čvoriće, promjene plućnog tkiva i poplućnice ili uvećane limfne čvorove, a dio nalaza bude trag ranije preboljele bolesti. Opis piše radiolog, a dalje korake određuje pulmolog ili ljekar koji vas vodi"
+      },
+      "de": {
+        "what": "Schichtaufnahme der Brustorgane ohne Kontrastmittel; sie arbeitet mit Röntgenstrahlen und wird ärztlich nach Indikation angeordnet",
+        "how": "Man liegt auf dem Rücken mit den Armen über dem Kopf und hält einige Sekunden die Luft an, während der Tisch durch den Ring des Geräts fährt; die Aufnahme selbst dauert Sekunden, der gesamte Termin 10–15 Minuten",
+        "when": "Abklärung von Veränderungen aus einer Röntgenaufnahme, lang anhaltender Husten und Atemnot, Verlaufskontrolle von Lungenrundherden, Folgen einer Lungenentzündung, interstitielle Veränderungen, Brustkorbverletzungen, Beurteilung der Lunge vor einer Operation",
+        "prep": "Keine besondere Vorbereitung, Essen und Trinken wie gewohnt; Schmuck, Wäsche mit Metallteilen und Kleidung mit Verschlüssen im Brustbereich ablegen und eine mögliche Schwangerschaft vorab angeben, ebenso frühere Reaktionen auf Kontrastmittel, falls die Ärztin oder der Arzt die Untersuchung um Kontrastmittel ergänzt",
+        "abnormal": "Die Aufnahme kann Herde und Rundherde, Veränderungen von Lungengewebe und Rippenfell oder vergrößerte Lymphknoten zeigen, ein Teil der Befunde sind Spuren einer früheren Erkrankung. Den Befund schreibt die Radiologie, das weitere Vorgehen legen Pneumologie oder die behandelnde Praxis fest"
+      },
+      "tr": {
+        "what": "Göğüs organlarının kontrast verilmeden kesitsel olarak taranması; X ışını kullanır ve hekim endikasyona göre ister",
+        "how": "Hasta sırtüstü yatar, kollarını başının üzerine alır ve masa cihazın halkasından geçerken birkaç saniye nefesini tutar; çekim saniyeler, tüm ziyaret 10–15 dakika sürer",
+        "when": "Düz röntgende görülen değişikliklerin netleştirilmesi, uzun süren öksürük ve nefes darlığı, akciğer nodüllerinin izlenmesi, zatürre sonrası değişiklikler, interstisyel değişiklikler, göğüs travması, ameliyat öncesi akciğer değerlendirmesi",
+        "prep": "Özel hazırlık gerekmez, her zamanki gibi yiyip içebilirsiniz; göğüs bölgesindeki takıları, metal parçalı iç çamaşırını ve tokalı giysileri çıkarın, olası gebeliği ve hekim kontrast eklemeye karar verirse kontrast maddeye önceki tepkilerinizi önceden bildirin",
+        "abnormal": "Çekim odak ve nodülleri, akciğer dokusu ile akciğer zarındaki değişiklikleri ya da büyümüş lenf düğümlerini gösterebilir; bulguların bir kısmı geçirilmiş bir hastalığın izidir. Raporu radyolog yazar, sonraki adımları göğüs hastalıkları uzmanı ya da tedaviyi yürüten hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Слојевито снимање органа грудног коша без давања контраста; користи рендгенско зрачење и ради се по упуту љекара према индикацијама",
+        "how": "Пацијент лежи на леђима са рукама изнад главе и задржава дах неколико секунди док сто пролази кроз прстен апарата; само снимање траје неколико секунди, а цијели долазак 10–15 минута",
+        "when": "Разјашњење промјена виђених на рендгенском снимку, дуготрајан кашаљ и отежано дисање, праћење чворића у плућима, посљедице упале плућа, интерстицијске промјене, повреда грудног коша, процјена плућа прије операције",
+        "prep": "Посебна припрема није потребна, једе се и пије уобичајено; скинути накит, доњи веш са металним дијеловима и одјећу са копчама са подручја груди и унапријед пријавити могућу трудноћу, као и раније реакције на контраст ако љекар одлучи да преглед допуни контрастом",
+        "abnormal": "Снимак може показати жаришта и чвориће, промјене плућног ткива и поплућнице или увећане лимфне чворове, а дио налаза буде траг раније пребољеле болести. Опис пише радиолог, а даље кораке одређује пулмолог или љекар који вас води"
+      }
+    }
+  },
+  {
+    "slug": "x-ray-chest",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обзорный рентгеновский снимок лёгких и грудной клетки в одной или двух проекциях",
+        "how": "Пациент стоит у стойки аппарата, прижавшись грудью к панели, и снимок делают на глубоком вдохе с задержкой дыхания; сама съёмка занимает секунды, весь визит несколько минут",
+        "when": "Длительный кашель, повышенная температура и подозрение на пневмонию, одышка, боль в груди и травма рёбер, проверка перед операцией или трудоустройством, контроль после перенесённого воспаления лёгких",
+        "prep": "Специальной подготовки не требуется; раздеться до пояса или переодеться, убрать цепочки и другие металлические предметы с шеи и груди, заранее сообщить о возможной беременности",
+        "abnormal": "Изменения на снимке могут быть связаны с воспалением, застойными явлениями, жидкостью в плевральной полости или следами перенесённых болезней, и часть из них требует уточнения на КТ. Заключение даёт рентгенолог, а тактику определяет пульмонолог или лечащий врач"
+      },
+      "en": {
+        "what": "A plain X-ray of the lungs and chest in one or two views",
+        "how": "You stand at the X-ray unit with your chest against the panel and the image is taken on a deep breath held in; the exposure lasts seconds and the whole visit a few minutes",
+        "when": "A long-standing cough, fever and suspected pneumonia, shortness of breath, chest pain and rib injury, a check before surgery or employment, follow-up after pneumonia",
+        "prep": "No special preparation is needed; undress to the waist or change into a gown, remove chains and other metal objects from the neck and chest, and report a possible pregnancy in advance",
+        "abnormal": "Changes on the image may be linked to inflammation, congestion, fluid in the pleural cavity or traces of past illness, and some of them need clarification with CT. The radiologist writes the report and the pulmonologist or treating doctor sets the plan"
+      },
+      "sr": {
+        "what": "Nativni rendgenski snimak pluća i grudnog koša u jednoj ili dvije projekcije",
+        "how": "Pacijent stoji uz aparat, grudima naslonjen na ploču, a snimak se pravi u dubokom udahu sa zadržanim dahom; samo snimanje traje nekoliko sekundi, a dolazak nekoliko minuta",
+        "when": "Dugotrajan kašalj, povišena temperatura i sumnja na upalu pluća, otežano disanje, bol u grudima i povreda rebara, provjera prije operacije ili zaposlenja, kontrola poslije preboljele upale pluća",
+        "prep": "Posebna priprema nije potrebna; skinuti odjeću do pojasa ili obući bolnički mantil, ukloniti lančiće i druge metalne predmete sa vrata i grudi i unaprijed prijaviti moguću trudnoću",
+        "abnormal": "Promjene na snimku mogu biti povezane sa upalom, zastojem, tečnošću u poplućnoj šupljini ili tragovima ranijih bolesti, a dio njih traži dopunu skenerom. Nalaz daje radiolog, a taktiku određuje pulmolog ili ljekar koji vas vodi"
+      },
+      "de": {
+        "what": "Röntgenübersichtsaufnahme der Lunge und des Brustkorbs in einer oder zwei Ebenen",
+        "how": "Man steht mit der Brust an der Aufnahmeplatte und die Aufnahme erfolgt bei tief eingeatmeter, angehaltener Luft; die Belichtung dauert Sekunden, der gesamte Termin wenige Minuten",
+        "when": "Lang anhaltender Husten, Fieber und Verdacht auf eine Lungenentzündung, Atemnot, Brustschmerz und Rippenverletzung, Untersuchung vor einer Operation oder Einstellung, Kontrolle nach einer Lungenentzündung",
+        "prep": "Keine besondere Vorbereitung; Oberkörper frei machen oder ein Untersuchungshemd anziehen, Ketten und andere Metallgegenstände von Hals und Brust ablegen und eine mögliche Schwangerschaft vorab angeben",
+        "abnormal": "Veränderungen im Bild können mit einer Entzündung, einer Stauung, Flüssigkeit im Rippenfellraum oder Spuren früherer Erkrankungen zusammenhängen, ein Teil davon muss im CT geklärt werden. Den Befund schreibt die Radiologie, das Vorgehen legen Pneumologie oder die behandelnde Praxis fest"
+      },
+      "tr": {
+        "what": "Akciğerlerin ve göğüs kafesinin bir ya da iki pozisyonda çekilen düz röntgeni",
+        "how": "Hasta göğsünü panele dayayıp cihazın önünde durur ve görüntü derin nefes alıp tutarken alınır; ışınlama saniyeler, tüm ziyaret birkaç dakika sürer",
+        "when": "Uzun süren öksürük, ateş ve zatürre kuşkusu, nefes darlığı, göğüs ağrısı ve kaburga yaralanması, ameliyat ya da işe giriş öncesi kontrol, geçirilmiş zatürre sonrası takip",
+        "prep": "Özel hazırlık gerekmez; belden yukarısını çıkarın ya da önlük giyin, boyun ve göğüsteki zincir gibi metal eşyaları çıkarın ve olası gebeliği önceden bildirin",
+        "abnormal": "Görüntüdeki değişiklikler iltihap, göllenme, akciğer zarı boşluğunda sıvı ya da geçirilmiş hastalık izleriyle ilişkili olabilir ve bir kısmı tomografiyle netleştirilmeyi gerektirir. Raporu radyolog yazar, planı göğüs hastalıkları uzmanı ya da tedaviyi yürüten hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Нативни рендгенски снимак плућа и грудног коша у једној или двије пројекције",
+        "how": "Пацијент стоји уз апарат, грудима наслоњен на плочу, а снимак се прави у дубоком удаху са задржаним дахом; само снимање траје неколико секунди, а долазак неколико минута",
+        "when": "Дуготрајан кашаљ, повишена температура и сумња на упалу плућа, отежано дисање, бол у грудима и повреда ребара, провјера прије операције или запослења, контрола послије пребољеле упале плућа",
+        "prep": "Посебна припрема није потребна; скинути одјећу до појаса или обући болнички мантил, уклонити ланчиће и друге металне предмете са врата и груди и унапријед пријавити могућу трудноћу",
+        "abnormal": "Промјене на снимку могу бити повезане са упалом, застојем, течношћу у поплућној шупљини или траговима ранијих болести, а дио њих тражи допуну скенером. Налаз даје радиолог, а тактику одређује пулмолог или љекар који вас води"
+      }
+    }
+  },
+  {
+    "slug": "follow-up-pulmonologist-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Контрольный приём пульмонолога, на котором дыхание и жалобы сравнивают с состоянием на прошлом визите",
+        "how": "Врач уточняет, как изменились кашель и одышка, выслушивает лёгкие, разбирает спирометрию, снимки и анализы, проверяет технику пользования ингалятором и при необходимости меняет назначения; приём короче первичного, обычно 15–20 минут",
+        "when": "В срок, назначенный на предыдущем приёме, — контроль астмы и ХОБЛ, оценка после курса лечения бронхита или пневмонии, разбор результатов спирометрии и рентгена, продление рецептов и коррекция терапии",
+        "prep": "Принести предыдущее заключение, снимки и спирометрию, взять ингаляторы и другие препараты в упаковках, отметить частоту приступов и ночных пробуждений, при домашних измерениях — записи пикфлоуметрии; о времени последней ингаляции сказать врачу",
+        "abnormal": "Врач решает, оставить схему прежней, изменить её или назначить дополнительное обследование. Усиление одышки, кровь в мокроте или лихорадка до назначенного срока — повод прийти раньше"
+      },
+      "en": {
+        "what": "A follow-up visit to the pulmonologist where breathing and symptoms are compared with the state at the previous appointment",
+        "how": "The doctor asks how the cough and breathlessness have changed, listens to the lungs, reviews spirometry, imaging and blood tests, checks inhaler technique and adjusts the prescriptions if needed; shorter than a first visit, usually 15–20 minutes",
+        "when": "At the interval set at the previous visit — monitoring of asthma and COPD, assessment after treatment for bronchitis or pneumonia, review of spirometry and X-ray results, renewal of prescriptions and adjustment of therapy",
+        "prep": "Bring the previous report, images and spirometry, take your inhalers and other medicines in their packaging, note how often attacks and night-time awakenings occur and bring peak flow records if you measure at home; tell the doctor when you last used an inhaler",
+        "abnormal": "The doctor decides whether to keep the regimen, change it or order further tests. Worsening breathlessness, blood in the sputum or fever before the scheduled date is a reason to come earlier"
+      },
+      "sr": {
+        "what": "Kontrolni pregled pulmologa na kojem se disanje i tegobe upoređuju sa stanjem sa prethodnog dolaska",
+        "how": "Ljekar provjerava kako su se promijenili kašalj i zaduha, sluša pluća, pregleda spirometriju, snimke i analize, provjerava tehniku uzimanja inhalatora i po potrebi mijenja terapiju; kraći je od prvog pregleda, obično 15–20 minuta",
+        "when": "U roku određenom na prethodnom pregledu — praćenje astme i HOBP, procjena poslije liječenja bronhitisa ili upale pluća, tumačenje nalaza spirometrije i rendgena, produžetak recepata i prilagođavanje terapije",
+        "prep": "Ponijeti prethodni nalaz, snimke i spirometriju, donijeti inhalatore i ostale lijekove u originalnim pakovanjima, zabilježiti učestalost napada i noćnih buđenja, a ako mjerite kod kuće i zapise pikflou mjerenja; reći ljekaru kada ste posljednji put uzeli inhalaciju",
+        "abnormal": "Ljekar odlučuje da li terapija ostaje ista, mijenja se ili su potrebna dodatna ispitivanja. Pojačana zaduha, krv u iskašljaju ili temperatura prije zakazanog termina razlog su da se dođe ranije"
+      },
+      "de": {
+        "what": "Kontrolltermin beim Lungenfacharzt, bei dem Atmung und Beschwerden mit dem Zustand beim letzten Besuch verglichen werden",
+        "how": "Die Ärztin oder der Arzt fragt, wie sich Husten und Atemnot verändert haben, hört die Lunge ab, bespricht Spirometrie, Aufnahmen und Laborwerte, überprüft die Inhalationstechnik und passt die Verordnungen bei Bedarf an; kürzer als der Ersttermin, meist 15–20 Minuten",
+        "when": "Zum bei der letzten Untersuchung festgelegten Termin — Kontrolle von Asthma und COPD, Beurteilung nach der Behandlung einer Bronchitis oder Lungenentzündung, Besprechung von Spirometrie und Röntgenbefund, Verlängerung von Rezepten und Anpassung der Therapie",
+        "prep": "Vorbefund, Aufnahmen und Spirometrie mitbringen, Inhalatoren und andere Medikamente in der Originalpackung mitnehmen, die Häufigkeit von Anfällen und nächtlichem Aufwachen notieren und bei Messungen zu Hause auch die Peak-Flow-Werte; dem Arzt sagen, wann zuletzt inhaliert wurde",
+        "abnormal": "Die Ärztin oder der Arzt entscheidet, ob das Schema bleibt, geändert wird oder weitere Untersuchungen nötig sind. Zunehmende Atemnot, Blut im Auswurf oder Fieber vor dem vereinbarten Termin sind Gründe, früher zu kommen"
+      },
+      "tr": {
+        "what": "Solunumun ve şikayetlerin önceki muayenedeki durumla karşılaştırıldığı göğüs hastalıkları kontrol muayenesi",
+        "how": "Hekim öksürük ve nefes darlığının nasıl değiştiğini sorar, akciğerleri dinler, solunum fonksiyon testi, görüntüleme ve tahlilleri değerlendirir, inhaler kullanım tekniğini kontrol eder ve gerekirse tedaviyi değiştirir; ilk muayeneden kısadır, genellikle 15–20 dakika",
+        "when": "Önceki muayenede belirlenen sürede — astım ve KOAH takibi, bronşit ya da zatürre tedavisi sonrası değerlendirme, solunum fonksiyon testi ve röntgen sonuçlarının yorumlanması, reçetelerin yenilenmesi ve tedavinin düzenlenmesi",
+        "prep": "Önceki raporu, görüntüleri ve solunum testini getirin, inhalerlerinizi ve diğer ilaçları kutularıyla yanınıza alın, atakların ve gece uyanmalarının sıklığını not edin, evde ölçüm yapıyorsanız peak flow kayıtlarını getirin; son inhalasyonu ne zaman yaptığınızı hekime söyleyin",
+        "abnormal": "Hekim tedavinin aynı kalmasına, değişmesine ya da ek tetkik istenmesine karar verir. Nefes darlığının artması, balgamda kan ya da ateş, planlanan tarihi beklemeden başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Контролни преглед пулмолога на којем се дисање и тегобе упоређују са стањем са претходног доласка",
+        "how": "Љекар провјерава како су се промијенили кашаљ и задуха, слуша плућа, прегледа спирометрију, снимке и анализе, провјерава технику узимања инхалатора и по потреби мијења терапију; краћи је од првог прегледа, обично 15–20 минута",
+        "when": "У року одређеном на претходном прегледу — праћење астме и ХОБП, процјена послије лијечења бронхитиса или упале плућа, тумачење налаза спирометрије и рендгена, продужетак рецепата и прилагођавање терапије",
+        "prep": "Понијети претходни налаз, снимке и спирометрију, донијети инхалаторе и остале лијекове у оригиналним паковањима, забиљежити учесталост напада и ноћних буђења, а ако мјерите код куће и записе пикфлоу мјерења; рећи љекару када сте посљедњи пут узели инхалацију",
+        "abnormal": "Љекар одлучује да ли терапија остаје иста, мијења се или су потребна додатна испитивања. Појачана задуха, крв у искашљају или температура прије заказаног термина разлог су да се дође раније"
+      }
+    }
+  },
+  {
+    "slug": "mediastinum-x-ray",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Прицельный рентгеновский снимок пространства между лёгкими, где лежат сердце, крупные сосуды, трахея, пищевод и лимфоузлы",
+        "how": "Снимки делают стоя, в прямой и боковой проекции, на задержке дыхания; при необходимости врач добавляет снимок после глотка контрастной взвеси, чтобы оценить пищевод; занимает 5–10 минут",
+        "when": "Расширение тени средостения на обзорном снимке грудной клетки, подозрение на увеличенные лимфоузлы или загрудинный зоб, затруднённое глотание и осиплость, травма грудной клетки, наблюдение за ранее выявленными изменениями",
+        "prep": "Специальной подготовки обычно не требуется, а на исследование с контрастной взвесью приходят натощак; снять металлические украшения и одежду с застёжками, заранее сообщить о возможной беременности",
+        "abnormal": "Изменение ширины и контуров средостения может быть связано с увеличением лимфоузлов, сосудов, щитовидной железы или объёмным образованием и почти всегда уточняется на КТ. Заключение делает рентгенолог, а дальнейшие шаги определяет лечащий врач"
+      },
+      "en": {
+        "what": "A targeted X-ray of the space between the lungs that holds the heart, great vessels, trachea, oesophagus and lymph nodes",
+        "how": "Images are taken standing, in frontal and lateral views with the breath held; if needed the doctor adds a view after a sip of contrast suspension to assess the oesophagus; it takes 5–10 minutes",
+        "when": "A widened mediastinal shadow on a plain chest film, suspected enlarged lymph nodes or a retrosternal goitre, difficulty swallowing and hoarseness, chest trauma, follow-up of previously detected changes",
+        "prep": "Usually no special preparation is needed, while for a study with contrast suspension you come on an empty stomach; remove metal jewellery and clothing with fasteners and report a possible pregnancy in advance",
+        "abnormal": "A change in the width and contours of the mediastinum may be linked to enlarged lymph nodes, vessels, the thyroid gland or a mass and is almost always clarified with CT. The radiologist writes the report and the treating doctor decides the next steps"
+      },
+      "sr": {
+        "what": "Ciljani rendgenski snimak prostora između pluća u kojem su srce, veliki krvni sudovi, dušnik, jednjak i limfni čvorovi",
+        "how": "Snima se stojeći, u prednjoj i bočnoj projekciji, sa zadržanim dahom; po potrebi ljekar dodaje snimak poslije gutljaja kontrastne kaše radi procjene jednjaka; traje 5–10 minuta",
+        "when": "Proširena sjenka medijastinuma na nativnom snimku grudnog koša, sumnja na uvećane limfne čvorove ili gušu iza grudne kosti, otežano gutanje i promuklost, povreda grudnog koša, praćenje ranije uočenih promjena",
+        "prep": "Posebna priprema obično nije potrebna, a za snimanje sa kontrastnom kašom dolazi se natašte; skinuti metalni nakit i odjeću sa kopčama i unaprijed prijaviti moguću trudnoću",
+        "abnormal": "Promjena širine i obrisa medijastinuma može biti povezana sa uvećanim limfnim čvorovima, krvnim sudovima, štitnom žlijezdom ili tvorbom i gotovo uvijek se razjašnjava skenerom. Nalaz daje radiolog, a dalje korake određuje ljekar koji vas vodi"
+      },
+      "de": {
+        "what": "Gezielte Röntgenaufnahme des Raums zwischen den Lungen, in dem Herz, große Gefäße, Luftröhre, Speiseröhre und Lymphknoten liegen",
+        "how": "Die Aufnahmen entstehen im Stehen in zwei Ebenen bei angehaltener Luft; bei Bedarf ergänzt die Ärztin oder der Arzt eine Aufnahme nach einem Schluck Kontrastbrei zur Beurteilung der Speiseröhre; es dauert 5–10 Minuten",
+        "when": "Verbreiterter Mediastinalschatten in der Übersichtsaufnahme, Verdacht auf vergrößerte Lymphknoten oder einen Kropf hinter dem Brustbein, Schluckbeschwerden und Heiserkeit, Brustkorbverletzung, Kontrolle bereits bekannter Veränderungen",
+        "prep": "Meist keine besondere Vorbereitung, für eine Untersuchung mit Kontrastbrei kommt man nüchtern; Metallschmuck und Kleidung mit Verschlüssen ablegen und eine mögliche Schwangerschaft vorab angeben",
+        "abnormal": "Eine veränderte Breite und Kontur des Mediastinums kann mit vergrößerten Lymphknoten, Gefäßen, der Schilddrüse oder einer Raumforderung zusammenhängen und wird fast immer im CT geklärt. Den Befund schreibt die Radiologie, über das weitere Vorgehen entscheidet die behandelnde Praxis"
+      },
+      "tr": {
+        "what": "Kalbin, büyük damarların, soluk borusunun, yemek borusunun ve lenf düğümlerinin bulunduğu, akciğerler arasındaki bölgenin hedefe yönelik röntgeni",
+        "how": "Görüntüler ayakta, ön ve yan pozisyonda, nefes tutularak alınır; gerekirse hekim yemek borusunu değerlendirmek için bir yudum kontrast bulamacından sonra ek çekim ister; 5–10 dakika sürer",
+        "when": "Düz göğüs grafisinde genişlemiş mediasten gölgesi, büyümüş lenf düğümü ya da göğüs kemiği arkasında guatr kuşkusu, yutma güçlüğü ve ses kısıklığı, göğüs travması, daha önce saptanmış değişikliklerin takibi",
+        "prep": "Genellikle özel hazırlık gerekmez, kontrast bulamacıyla yapılan incelemeye ise aç gelinir; metal takıları ve tokalı giysileri çıkarın, olası gebeliği önceden bildirin",
+        "abnormal": "Mediastenin genişliğindeki ve sınırlarındaki değişiklik büyümüş lenf düğümleri, damarlar, tiroit bezi ya da bir kitleyle ilişkili olabilir ve neredeyse her zaman tomografiyle netleştirilir. Raporu radyolog yazar, sonraki adımları tedaviyi yürüten hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Циљани рендгенски снимак простора између плућа у којем су срце, велики крвни судови, душник, једњак и лимфни чворови",
+        "how": "Снима се стојећи, у предњој и бочној пројекцији, са задржаним дахом; по потреби љекар додаје снимак послије гутљаја контрастне каше ради процјене једњака; траје 5–10 минута",
+        "when": "Проширена сјенка медијастинума на нативном снимку грудног коша, сумња на увећане лимфне чворове или гушу иза грудне кости, отежано гутање и промуклост, повреда грудног коша, праћење раније уочених промјена",
+        "prep": "Посебна припрема обично није потребна, а за снимање са контрастном кашом долази се наташте; скинути метални накит и одјећу са копчама и унапријед пријавити могућу трудноћу",
+        "abnormal": "Промјена ширине и обриса медијастинума може бити повезана са увећаним лимфним чворовима, крвним судовима, штитном жлијездом или творбом и готово увијек се разјашњава скенером. Налаз даје радиолог, а даље кораке одређује љекар који вас води"
+      }
+    }
+  },
+  {
+    "slug": "lung-fluoroscopy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Наблюдение лёгких и диафрагмы в движении на экране рентгеновской установки, а не на одном снимке",
+        "how": "Пациент стоит за экраном, врач-рентгенолог смотрит изображение в реальном времени и просит дышать, задержать дыхание или повернуться, чтобы вывести нужную зону; занимает несколько минут и проводится по направлению врача, так как связано с рентгеновским излучением",
+        "when": "Оценка подвижности диафрагмы и подозрение на её паралич, уточнение положения тени, найденной на снимке, поиск свободной жидкости при перемене положения тела, контроль положения инородного тела или дренажа",
+        "prep": "Специальной подготовки не требуется; раздеться до пояса, снять цепочки и металлические предметы, обязательно сообщить о возможной беременности",
+        "abnormal": "Метод хорошо показывает подвижность и симметричность движений, но мелкие изменения лёгочной ткани на нём видны хуже, чем на снимке или КТ, поэтому результат обычно дополняют ими. Выводы делает врач, назначивший исследование"
+      },
+      "en": {
+        "what": "Observation of the lungs and diaphragm in motion on the screen of an X-ray unit rather than on a single still image",
+        "how": "You stand behind the screen while the radiologist watches the image in real time and asks you to breathe, hold your breath or turn so that the area of interest comes into view; it takes a few minutes and is done on a doctor's referral, since it involves X-rays",
+        "when": "Assessing the movement of the diaphragm and suspected paralysis, clarifying the position of a shadow seen on a film, looking for free fluid as the body position changes, checking the position of a foreign body or a drain",
+        "prep": "No special preparation is needed; undress to the waist, remove chains and metal objects, and always report a possible pregnancy",
+        "abnormal": "The method shows movement and symmetry well, but small changes in lung tissue are less visible than on a film or CT, so the result is usually complemented by them. The conclusions are drawn by the doctor who ordered the study"
+      },
+      "sr": {
+        "what": "Posmatranje pluća i dijafragme u pokretu na ekranu rendgen aparata, a ne na jednom snimku",
+        "how": "Pacijent stoji iza ekrana dok radiolog prati sliku u realnom vremenu i traži da dišete, zadržite dah ili se okrenete kako bi se prikazala željena zona; traje nekoliko minuta i radi se po uputu ljekara jer podrazumijeva rendgensko zračenje",
+        "when": "Procjena pokretljivosti dijafragme i sumnja na njenu uzetost, razjašnjenje položaja sjenke uočene na snimku, traženje slobodne tečnosti pri promjeni položaja tijela, provjera položaja stranog tijela ili drena",
+        "prep": "Posebna priprema nije potrebna; skinuti odjeću do pojasa, ukloniti lančiće i metalne predmete i obavezno prijaviti moguću trudnoću",
+        "abnormal": "Metoda dobro prikazuje pokretljivost i simetriju, ali se sitne promjene plućnog tkiva vide slabije nego na snimku ili skeneru, pa se nalaz obično njima dopunjuje. Zaključke izvodi ljekar koji je pregled uputio"
+      },
+      "de": {
+        "what": "Beobachtung von Lunge und Zwerchfell in Bewegung am Bildschirm des Röntgengeräts statt auf einem Einzelbild",
+        "how": "Man steht hinter dem Schirm, während die Radiologin oder der Radiologe das Bild in Echtzeit verfolgt und bittet, zu atmen, die Luft anzuhalten oder sich zu drehen, damit der gewünschte Bereich sichtbar wird; es dauert wenige Minuten und erfolgt auf ärztliche Überweisung, da Röntgenstrahlen eingesetzt werden",
+        "when": "Beurteilung der Zwerchfellbeweglichkeit und Verdacht auf eine Lähmung, Klärung der Lage eines im Bild gesehenen Schattens, Suche nach freier Flüssigkeit bei Lagewechsel, Kontrolle der Lage eines Fremdkörpers oder einer Drainage",
+        "prep": "Keine besondere Vorbereitung; Oberkörper frei machen, Ketten und Metallgegenstände ablegen und eine mögliche Schwangerschaft unbedingt angeben",
+        "abnormal": "Die Methode zeigt Beweglichkeit und Symmetrie gut, feine Veränderungen des Lungengewebes sind jedoch schlechter zu sehen als auf einer Aufnahme oder im CT, weshalb das Ergebnis meist dadurch ergänzt wird. Die Schlüsse zieht die Ärztin oder der Arzt, die oder der die Untersuchung veranlasst hat"
+      },
+      "tr": {
+        "what": "Akciğerlerin ve diyaframın tek bir durağan görüntü yerine röntgen cihazının ekranında hareket halinde izlenmesi",
+        "how": "Hasta ekranın arkasında durur, radyolog görüntüyü gerçek zamanlı izlerken nefes almanızı, tutmanızı ya da dönmenizi ister; birkaç dakika sürer ve X ışını kullandığı için hekim istemiyle yapılır",
+        "when": "Diyafram hareketinin değerlendirilmesi ve felç kuşkusu, filmde görülen bir gölgenin konumunun netleştirilmesi, vücut pozisyonu değişirken serbest sıvı arayışı, yabancı cisim ya da dren konumunun kontrolü",
+        "prep": "Özel hazırlık gerekmez; belden yukarısını çıkarın, zincir ve metal eşyaları bırakın ve olası gebeliği mutlaka bildirin",
+        "abnormal": "Yöntem hareketi ve simetriyi iyi gösterir, ancak akciğer dokusundaki küçük değişiklikler filme ya da tomografiye göre daha az seçilir, bu yüzden sonuç genellikle onlarla tamamlanır. Sonucu, incelemeyi isteyen hekim yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Посматрање плућа и дијафрагме у покрету на екрану рендген апарата, а не на једном снимку",
+        "how": "Пацијент стоји иза екрана док радиолог прати слику у реалном времену и тражи да дишете, задржите дах или се окренете како би се приказала жељена зона; траје неколико минута и ради се по упуту љекара јер подразумијева рендгенско зрачење",
+        "when": "Процјена покретљивости дијафрагме и сумња на њену узетост, разјашњење положаја сјенке уочене на снимку, тражење слободне течности при промјени положаја тијела, провјера положаја страног тијела или дрена",
+        "prep": "Посебна припрема није потребна; скинути одјећу до појаса, уклонити ланчиће и металне предмете и обавезно пријавити могућу трудноћу",
+        "abnormal": "Метода добро приказује покретљивост и симетрију, али се ситне промјене плућног ткива виде слабије него на снимку или скенеру, па се налаз обично њима допуњује. Закључке изводи љекар који је преглед упутио"
+      }
+    }
+  },
+  {
+    "slug": "first-neurosurgeon-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Первичная консультация нейрохирурга — оценка того, есть ли показания к операции на позвоночнике или нервной системе или достаточно консервативного лечения",
+        "how": "Врач расспрашивает о характере и длительности боли, проверяет силу мышц, рефлексы, чувствительность и походку, разбирает снимки МРТ и КТ и сопоставляет их с симптомами; приём занимает 20–40 минут",
+        "when": "Грыжа межпозвонкового диска с болью, отдающей в руку или ногу, онемение и слабость в конечностях, сужение позвоночного канала, последствия травмы головы и позвоночника, туннельные синдромы, объёмные образования и гидроцефалия по направлению невролога",
+        "prep": "Взять снимки МРТ и КТ на диске или флешке вместе с описаниями, прежние заключения и выписки, список принимаемых препаратов и удобную для осмотра одежду",
+        "abnormal": "По итогам приёма врач говорит, нужна ли операция, можно ли продолжать наблюдение и лечение без неё и какие исследования требуются для решения. Необходимость и срочность вмешательства определяет нейрохирург, а не размер находки на снимке"
+      },
+      "en": {
+        "what": "A first consultation with a neurosurgeon to judge whether there is an indication for spinal or nervous-system surgery or whether conservative treatment is enough",
+        "how": "The doctor asks about the character and duration of the pain, tests muscle strength, reflexes, sensation and gait, reviews MRI and CT images and matches them with the symptoms; the appointment takes 20–40 minutes",
+        "when": "A disc herniation with pain radiating into the arm or leg, numbness and weakness in the limbs, spinal canal narrowing, consequences of head and spine injury, nerve entrapment syndromes, masses and hydrocephalus on a neurologist's referral",
+        "prep": "Bring MRI and CT images on a disc or flash drive together with their reports, previous conclusions and discharge summaries, a list of the medicines you take and clothing that is easy to examine in",
+        "abnormal": "At the end of the visit the doctor says whether surgery is indicated, whether observation and treatment without it can continue and what further studies are needed to decide. The need for an operation and its urgency are judged by the neurosurgeon, not by the size of a finding on the image"
+      },
+      "sr": {
+        "what": "Prvi pregled neurohirurga radi procjene da li postoji indikacija za operaciju kičme ili nervnog sistema ili je dovoljno konzervativno liječenje",
+        "how": "Ljekar ispituje karakter i trajanje bola, provjerava snagu mišića, reflekse, osjet i hod, pregleda snimke magnetne rezonance i skenera i upoređuje ih sa tegobama; pregled traje 20–40 minuta",
+        "when": "Diskus hernija sa bolom koji se širi u ruku ili nogu, trnjenje i slabost u ekstremitetima, suženje kičmenog kanala, posljedice povrede glave i kičme, tunelski sindromi, tvorbe i hidrocefalus po uputu neurologa",
+        "prep": "Ponijeti snimke magnetne rezonance i skenera na disku ili USB-u zajedno sa nalazima, ranije nalaze i otpusne liste, spisak lijekova koje uzimate i odjeću pogodnu za pregled",
+        "abnormal": "Na kraju pregleda ljekar kaže da li je operacija potrebna, može li se nastaviti praćenje i liječenje bez nje i koja su ispitivanja potrebna za odluku. Potrebu i hitnost zahvata procjenjuje neurohirurg, a ne veličina nalaza na snimku"
+      },
+      "de": {
+        "what": "Erstvorstellung beim Neurochirurgen zur Beurteilung, ob eine Operation an Wirbelsäule oder Nervensystem angezeigt ist oder eine konservative Behandlung ausreicht",
+        "how": "Die Ärztin oder der Arzt fragt nach Art und Dauer der Schmerzen, prüft Muskelkraft, Reflexe, Sensibilität und Gangbild, sieht MRT- und CT-Aufnahmen durch und gleicht sie mit den Beschwerden ab; der Termin dauert 20–40 Minuten",
+        "when": "Bandscheibenvorfall mit in Arm oder Bein ausstrahlenden Schmerzen, Taubheit und Schwäche in den Gliedmaßen, Verengung des Wirbelkanals, Folgen von Kopf- und Wirbelsäulenverletzungen, Engpasssyndrome der Nerven, Raumforderungen und Hydrozephalus auf Überweisung der Neurologie",
+        "prep": "MRT- und CT-Aufnahmen auf CD oder USB-Stick samt Befunden mitbringen, frühere Berichte und Entlassungsbriefe, eine Liste der eingenommenen Medikamente sowie bequeme Kleidung für die Untersuchung",
+        "abnormal": "Am Ende des Termins sagt die Ärztin oder der Arzt, ob eine Operation nötig ist, ob Beobachtung und Behandlung ohne sie fortgeführt werden können und welche Untersuchungen für die Entscheidung fehlen. Über Notwendigkeit und Dringlichkeit entscheidet die Neurochirurgie, nicht die Größe eines Befundes im Bild"
+      },
+      "tr": {
+        "what": "Omurga ya da sinir sistemi ameliyatı için endikasyon olup olmadığını, yoksa konservatif tedavinin yeterli olup olmadığını değerlendiren ilk beyin ve sinir cerrahisi muayenesi",
+        "how": "Hekim ağrının niteliğini ve süresini sorar, kas gücünü, refleksleri, duyuyu ve yürüyüşü değerlendirir, MR ve BT görüntülerini inceleyip şikayetlerle karşılaştırır; muayene 20–40 dakika sürer",
+        "when": "Kola ya da bacağa yayılan ağrıyla seyreden disk fıtığı, kollarda ve bacaklarda uyuşma ve güçsüzlük, omurga kanalı darlığı, kafa ve omurga travması sonrası durumlar, tuzak nöropatileri, nörolog sevkiyle kitleler ve hidrosefali",
+        "prep": "MR ve BT görüntülerini raporlarıyla birlikte diskte ya da bellekte getirin, önceki raporları ve çıkış özetlerini, kullandığınız ilaçların listesini ve muayeneye uygun rahat giysileri yanınıza alın",
+        "abnormal": "Muayene sonunda hekim ameliyatın gerekip gerekmediğini, ameliyatsız izlem ve tedavinin sürdürülüp sürdürülemeyeceğini ve karar için hangi tetkiklerin gerektiğini söyler. Girişimin gerekliliğine ve aciliyetine görüntüdeki bulgunun büyüklüğü değil, beyin cerrahı karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Први преглед неурохирурга ради процјене да ли постоји индикација за операцију кичме или нервног система или је довољно конзервативно лијечење",
+        "how": "Љекар испитује карактер и трајање бола, провјерава снагу мишића, рефлексе, осјет и ход, прегледа снимке магнетне резонанце и скенера и упоређује их са тегобама; преглед траје 20–40 минута",
+        "when": "Дискус хернија са болом који се шири у руку или ногу, трњење и слабост у екстремитетима, сужење кичменог канала, посљедице повреде главе и кичме, тунелски синдроми, творбе и хидроцефалус по упуту неуролога",
+        "prep": "Понијети снимке магнетне резонанце и скенера на диску или USB-у заједно са налазима, раније налазе и отпусне листе, списак лијекова које узимате и одјећу погодну за преглед",
+        "abnormal": "На крају прегледа љекар каже да ли је операција потребна, може ли се наставити праћење и лијечење без ње и која су испитивања потребна за одлуку. Потребу и хитност захвата процјењује неурохирург, а не величина налаза на снимку"
+      }
+    }
+  },
+  {
+    "slug": "follow-up-neurologist-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторный приём невролога для оценки динамики жалоб и разбора назначенных обследований",
+        "how": "Врач сравнивает силу, рефлексы, чувствительность и координацию с записями прошлого визита, разбирает МРТ, ЭЭГ, ЭМГ и анализы, уточняет переносимость препаратов и корректирует лечение; приём короче первичного, обычно 15–25 минут",
+        "when": "В срок, назначенный на первичном приёме, — разбор результатов обследования, контроль лечения головной боли, головокружения, эпилепсии и полинейропатии, наблюдение после инсульта или травмы",
+        "prep": "Принести снимки и заключения назначенных исследований, дневник головной боли или приступов, если его вели, и список препаратов с отметками, что помогало, а что вызывало побочные эффекты",
+        "abnormal": "Врач решает, продолжить прежнюю терапию, изменить её или направить к другому специалисту. Новая слабость, нарушение речи, асимметрия лица или резкая головная боль — повод обратиться срочно, не дожидаясь назначенного визита"
+      },
+      "en": {
+        "what": "A repeat visit to the neurologist to assess how the symptoms have changed and to review the tests that were ordered",
+        "how": "The doctor compares strength, reflexes, sensation and coordination with the notes from the previous visit, reviews MRI, EEG, EMG and blood tests, checks how the medicines are tolerated and adjusts the treatment; shorter than a first visit, usually 15–25 minutes",
+        "when": "At the interval set at the first visit — review of test results, monitoring of treatment for headache, dizziness, epilepsy or polyneuropathy, follow-up after a stroke or injury",
+        "prep": "Bring the images and reports of the tests you were sent for, a headache or seizure diary if you kept one, and a list of your medicines with notes on what helped and what caused side effects",
+        "abnormal": "The doctor decides whether to continue the previous therapy, change it or refer you to another specialist. New weakness, a speech problem, facial asymmetry or a sudden severe headache are reasons to seek help urgently rather than wait for the scheduled visit"
+      },
+      "sr": {
+        "what": "Ponovni pregled neurologa radi procjene toka tegoba i tumačenja naloženih ispitivanja",
+        "how": "Ljekar upoređuje snagu, reflekse, osjet i koordinaciju sa zapisima sa prethodnog dolaska, pregleda nalaze magnetne rezonance, EEG-a, EMG-a i analiza, provjerava podnošenje terapije i koriguje je; kraći je od prvog pregleda, obično 15–25 minuta",
+        "when": "U roku određenom na prvom pregledu — tumačenje rezultata ispitivanja, kontrola liječenja glavobolje, vrtoglavice, epilepsije i polineuropatije, praćenje poslije moždanog udara ili povrede",
+        "prep": "Ponijeti snimke i nalaze traženih ispitivanja, dnevnik glavobolje ili napada ako ste ga vodili i spisak lijekova sa bilješkama šta je pomagalo, a šta izazivalo neželjena dejstva",
+        "abnormal": "Ljekar odlučuje da li se terapija nastavlja, mijenja ili je potrebno uputiti vas drugom specijalisti. Nova slabost, smetnje govora, asimetrija lica ili iznenadna jaka glavobolja razlog su za hitno javljanje, bez čekanja zakazanog termina"
+      },
+      "de": {
+        "what": "Wiedervorstellung beim Neurologen, um den Verlauf der Beschwerden zu beurteilen und die veranlassten Untersuchungen zu besprechen",
+        "how": "Die Ärztin oder der Arzt vergleicht Kraft, Reflexe, Sensibilität und Koordination mit den Notizen des letzten Besuchs, bespricht MRT, EEG, EMG und Laborwerte, fragt nach der Verträglichkeit der Medikamente und passt die Behandlung an; kürzer als der Ersttermin, meist 15–25 Minuten",
+        "when": "Zum beim Ersttermin festgelegten Zeitpunkt — Besprechung der Befunde, Kontrolle der Behandlung von Kopfschmerzen, Schwindel, Epilepsie oder Polyneuropathie, Nachsorge nach Schlaganfall oder Verletzung",
+        "prep": "Aufnahmen und Befunde der veranlassten Untersuchungen mitbringen, ein Kopfschmerz- oder Anfallstagebuch, falls geführt, und eine Liste der Medikamente mit Notizen, was geholfen und was Nebenwirkungen verursacht hat",
+        "abnormal": "Die Ärztin oder der Arzt entscheidet, ob die bisherige Therapie fortgeführt, geändert oder eine Überweisung nötig ist. Neue Schwäche, Sprachstörungen, eine Gesichtsasymmetrie oder plötzlicher heftiger Kopfschmerz sind Gründe, sofort Hilfe zu suchen und nicht auf den Termin zu warten"
+      },
+      "tr": {
+        "what": "Şikayetlerin seyrini değerlendirmek ve istenen tetkikleri yorumlamak için yapılan nörolog kontrol muayenesi",
+        "how": "Hekim kas gücünü, refleksleri, duyuyu ve koordinasyonu önceki muayene kayıtlarıyla karşılaştırır, MR, EEG, EMG ve tahlilleri değerlendirir, ilaçların nasıl tolere edildiğini sorar ve tedaviyi düzenler; ilk muayeneden kısadır, genellikle 15–25 dakika",
+        "when": "İlk muayenede belirlenen sürede — tetkik sonuçlarının yorumlanması, baş ağrısı, baş dönmesi, epilepsi ve polinöropati tedavisinin takibi, inme ya da travma sonrası izlem",
+        "prep": "İstenen tetkiklerin görüntü ve raporlarını, tuttuysanız baş ağrısı ya da nöbet günlüğünü ve neyin iyi geldiğini, neyin yan etki yaptığını not ettiğiniz ilaç listesini getirin",
+        "abnormal": "Hekim mevcut tedavinin sürdürülmesine, değiştirilmesine ya da başka bir uzmana yönlendirmeye karar verir. Yeni ortaya çıkan güçsüzlük, konuşma bozukluğu, yüzde asimetri ya da ani şiddetli baş ağrısı, randevuyu beklemeden acilen başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Поновни преглед неуролога ради процјене тока тегоба и тумачења наложених испитивања",
+        "how": "Љекар упоређује снагу, рефлексе, осјет и координацију са записима са претходног доласка, прегледа налазе магнетне резонанце, ЕЕГ-а, ЕМГ-а и анализа, провјерава подношење терапије и коригује је; краћи је од првог прегледа, обично 15–25 минута",
+        "when": "У року одређеном на првом прегледу — тумачење резултата испитивања, контрола лијечења главобоље, вртоглавице, епилепсије и полинеуропатије, праћење послије можданог удара или повреде",
+        "prep": "Понијети снимке и налазе тражених испитивања, дневник главобоље или напада ако сте га водили и списак лијекова са биљешкама шта је помагало, а шта изазивало нежељена дејства",
+        "abnormal": "Љекар одлучује да ли се терапија наставља, мијења или је потребно упутити вас другом специјалисти. Нова слабост, сметње говора, асиметрија лица или изненадна јака главобоља разлог су за хитно јављање, без чекања заказаног термина"
+      }
+    }
+  },
+  {
+    "slug": "electroencephalography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Запись электрической активности коры головного мозга с поверхности головы — короткое рутинное исследование, в отличие от суточного мониторинга",
+        "how": "На голову надевают шапочку или крепят электроды с гелем, пациент лежит или сидит с закрытыми глазами, по команде открывает и закрывает глаза, глубоко дышит и смотрит на мигающую лампу; запись занимает 20–40 минут и безболезненна",
+        "when": "Приступы и эпизоды потери сознания, судороги, повторяющиеся состояния замирания, уточнение характера приступов и контроль лечения эпилепсии, оценка после травмы головы, нарушения сна по назначению невролога",
+        "prep": "Вымыть голову и не использовать лак, гель и масла, поесть перед исследованием, в день записи не пить кофе и энергетики, препараты не отменять самостоятельно — режим приёма согласовать с врачом; детям заранее объяснить, что процедура безболезненная",
+        "abnormal": "Изменения на записи могут быть связаны с разными состояниями, а нормальная запись не исключает приступов, потому что она короткая. Результат оценивает невролог вместе с описанием приступов и другими обследованиями"
+      },
+      "en": {
+        "what": "A recording of the electrical activity of the brain's cortex from the surface of the head — a short routine study, unlike 24-hour monitoring",
+        "how": "A cap is put on the head or electrodes are attached with gel; the patient lies or sits with eyes closed, opens and closes the eyes on command, breathes deeply and looks at a flashing lamp; the recording takes 20–40 minutes and is painless",
+        "when": "Seizures and episodes of loss of consciousness, convulsions, repeated staring spells, clarifying the nature of attacks and monitoring epilepsy treatment, assessment after head injury, sleep disorders as ordered by a neurologist",
+        "prep": "Wash your hair and use no hairspray, gel or oils, eat before the study, avoid coffee and energy drinks on the day and do not stop your medicines on your own — agree the schedule with the doctor; explain to children in advance that the procedure is painless",
+        "abnormal": "Changes in the recording may be linked to various conditions, and a normal recording does not rule out seizures because it is short. The neurologist assesses the result together with the description of the attacks and other investigations"
+      },
+      "sr": {
+        "what": "Snimanje električne aktivnosti moždane kore sa površine glave — kratko rutinsko ispitivanje, za razliku od cjelodnevnog praćenja",
+        "how": "Na glavu se stavlja kapa ili se elektrode lijepe gelom, pacijent leži ili sjedi zatvorenih očiju, na znak otvara i zatvara oči, duboko diše i gleda u trepćuću lampu; snimanje traje 20–40 minuta i bezbolno je",
+        "when": "Napadi i epizode gubitka svijesti, grčevi, ponavljana stanja odsutnosti, razjašnjenje prirode napada i kontrola liječenja epilepsije, procjena poslije povrede glave, poremećaji spavanja po preporuci neurologa",
+        "prep": "Oprati kosu i ne koristiti lak, gel ni ulja, pojesti nešto prije snimanja, na dan snimanja ne piti kafu ni energetska pića, a lijekove ne prekidati na svoju ruku — raspored uzimanja dogovoriti sa ljekarom; djeci unaprijed objasniti da je postupak bezbolan",
+        "abnormal": "Promjene u zapisu mogu biti povezane sa različitim stanjima, a uredan zapis ne isključuje napade jer je snimanje kratko. Rezultat procjenjuje neurolog zajedno sa opisom napada i ostalim ispitivanjima"
+      },
+      "de": {
+        "what": "Aufzeichnung der elektrischen Aktivität der Hirnrinde von der Kopfoberfläche — eine kurze Routineuntersuchung, anders als eine 24-Stunden-Ableitung",
+        "how": "Eine Haube wird aufgesetzt oder Elektroden werden mit Gel befestigt; man liegt oder sitzt mit geschlossenen Augen, öffnet und schließt die Augen auf Ansage, atmet tief und schaut in eine blinkende Lampe; die Ableitung dauert 20–40 Minuten und ist schmerzfrei",
+        "when": "Anfälle und Episoden von Bewusstlosigkeit, Krämpfe, wiederholte Absencen, Klärung der Anfallsart und Kontrolle der Epilepsiebehandlung, Beurteilung nach Kopfverletzung, Schlafstörungen auf Anordnung der Neurologie",
+        "prep": "Haare waschen und weder Haarspray noch Gel oder Öle verwenden, vorher etwas essen, am Untersuchungstag auf Kaffee und Energydrinks verzichten und Medikamente nicht eigenmächtig absetzen — die Einnahme mit der Ärztin oder dem Arzt abstimmen; Kindern vorher erklären, dass die Untersuchung nicht wehtut",
+        "abnormal": "Veränderungen in der Ableitung können mit verschiedenen Zuständen zusammenhängen, und eine unauffällige Ableitung schließt Anfälle nicht aus, weil sie nur kurz ist. Das Ergebnis beurteilt die Neurologie zusammen mit der Anfallsbeschreibung und weiteren Untersuchungen"
+      },
+      "tr": {
+        "what": "Beyin kabuğunun elektriksel etkinliğinin kafa yüzeyinden kaydedilmesi — 24 saatlik izleme göre kısa süren rutin bir inceleme",
+        "how": "Başa başlık takılır ya da elektrotlar jelle yapıştırılır; hasta gözleri kapalı yatar veya oturur, söylendiğinde gözlerini açıp kapar, derin nefes alır ve yanıp sönen lambaya bakar; kayıt 20–40 dakika sürer ve ağrısızdır",
+        "when": "Nöbetler ve bilinç kaybı atakları, kasılmalar, yinelenen dalma halleri, nöbetlerin niteliğinin aydınlatılması ve epilepsi tedavisinin takibi, kafa travması sonrası değerlendirme, nörolog istemiyle uyku bozuklukları",
+        "prep": "Saçınızı yıkayın, sprey, jel ve yağ kullanmayın, kayıttan önce bir şeyler yiyin, o gün kahve ve enerji içeceği içmeyin, ilaçlarınızı kendiliğinizden kesmeyin — kullanım düzenini hekiminizle konuşun; çocuklara işlemin acıtmadığını önceden anlatın",
+        "abnormal": "Kayıttaki değişiklikler farklı durumlarla ilişkili olabilir, normal bir kayıt ise süre kısa olduğu için nöbetleri dışlamaz. Sonucu nörolog, nöbet tarifi ve diğer incelemelerle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Снимање електричне активности мождане коре са површине главе — кратко рутинско испитивање, за разлику од цјелодневног праћења",
+        "how": "На главу се ставља капа или се електроде лијепе гелом, пацијент лежи или сједи затворених очију, на знак отвара и затвара очи, дубоко дише и гледа у трепћућу лампу; снимање траје 20–40 минута и безболно је",
+        "when": "Напади и епизоде губитка свијести, грчеви, понављана стања одсутности, разјашњење природе напада и контрола лијечења епилепсије, процјена послије повреде главе, поремећаји спавања по препоруци неуролога",
+        "prep": "Опрати косу и не користити лак, гел ни уља, појести нешто прије снимања, на дан снимања не пити кафу ни енергетска пића, а лијекове не прекидати на своју руку — распоред узимања договорити са љекаром; дјеци унапријед објаснити да је поступак безболан",
+        "abnormal": "Промјене у запису могу бити повезане са различитим стањима, а уредан запис не искључује нападе јер је снимање кратко. Резултат процјењује неуролог заједно са описом напада и осталим испитивањима"
+      }
+    }
+  },
+  {
+    "slug": "follow-up-neurosurgeon-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Контрольный визит к нейрохирургу после операции или в ходе наблюдения за найденными изменениями",
+        "how": "Врач осматривает послеоперационную рану или рубец, проверяет силу, чувствительность и рефлексы и сравнивает их с состоянием до вмешательства, смотрит контрольные снимки и определяет допустимую нагрузку и сроки реабилитации; приём короче первичного, обычно 15–25 минут",
+        "when": "В срок, назначенный после операции, — снятие швов и оценка заживления, проверка контрольных снимков при наблюдении без операции, подбор режима нагрузки и физиотерапии, решение о возвращении к работе и вождению",
+        "prep": "Принести выписку после операции, контрольные снимки с описаниями, прежние заключения и список препаратов; надеть одежду, которую легко снять для осмотра шва, и взять корсет или воротник, если его носите",
+        "abnormal": "Врач сравнивает восстановление с ожидаемым и решает, расширять ли нагрузку, продлевать реабилитацию или назначать дообследование. Нарастающая слабость в конечностях, потеря контроля над мочеиспусканием, покраснение и выделения из раны или температура требуют немедленного обращения"
+      },
+      "en": {
+        "what": "A follow-up visit to the neurosurgeon after an operation or during observation of previously found changes",
+        "how": "The doctor inspects the surgical wound or scar, tests strength, sensation and reflexes and compares them with the state before the operation, reviews control images and sets the permitted load and rehabilitation schedule; shorter than a first visit, usually 15–25 minutes",
+        "when": "At the interval set after surgery — suture removal and assessment of healing, review of control images during non-surgical observation, choosing the level of activity and physiotherapy, decisions about returning to work and driving",
+        "prep": "Bring the discharge summary after the operation, control images with their reports, previous conclusions and a list of medicines; wear clothes that are easy to take off for inspection of the wound and bring your brace or collar if you use one",
+        "abnormal": "The doctor compares the recovery with what was expected and decides whether to increase activity, extend rehabilitation or order further tests. Increasing weakness in the limbs, loss of bladder control, redness or discharge from the wound, or fever require immediate medical attention"
+      },
+      "sr": {
+        "what": "Kontrolni dolazak kod neurohirurga poslije operacije ili tokom praćenja ranije uočenih promjena",
+        "how": "Ljekar pregleda operativnu ranu ili ožiljak, provjerava snagu, osjet i reflekse i upoređuje ih sa stanjem prije zahvata, gleda kontrolne snimke i određuje dozvoljeno opterećenje i tok rehabilitacije; kraći je od prvog pregleda, obično 15–25 minuta",
+        "when": "U roku određenom poslije operacije — skidanje konaca i procjena zarastanja, provjera kontrolnih snimaka kod praćenja bez operacije, određivanje nivoa opterećenja i fizikalne terapije, odluka o povratku na posao i vožnji",
+        "prep": "Ponijeti otpusnu listu poslije operacije, kontrolne snimke sa nalazima, ranije nalaze i spisak lijekova; obući odjeću koja se lako skida radi pregleda rane i ponijeti mider ili kragnu ako ih nosite",
+        "abnormal": "Ljekar upoređuje oporavak sa očekivanim i odlučuje da li se opterećenje povećava, rehabilitacija produžava ili je potrebna dodatna obrada. Slabost u ekstremitetima koja se pojačava, gubitak kontrole mokrenja, crvenilo i iscjedak iz rane ili temperatura traže da se javite odmah"
+      },
+      "de": {
+        "what": "Kontrolltermin beim Neurochirurgen nach einer Operation oder während der Beobachtung bereits bekannter Veränderungen",
+        "how": "Die Ärztin oder der Arzt betrachtet die Operationswunde oder Narbe, prüft Kraft, Sensibilität und Reflexe und vergleicht sie mit dem Zustand vor dem Eingriff, sieht Kontrollaufnahmen durch und legt die erlaubte Belastung und den Ablauf der Rehabilitation fest; kürzer als der Ersttermin, meist 15–25 Minuten",
+        "when": "Zum nach der Operation festgelegten Termin — Nahtentfernung und Beurteilung der Heilung, Durchsicht der Kontrollaufnahmen bei Beobachtung ohne Operation, Festlegung von Belastung und Physiotherapie, Entscheidung über die Rückkehr zu Arbeit und Autofahren",
+        "prep": "Entlassungsbrief nach der Operation, Kontrollaufnahmen mit Befunden, frühere Berichte und eine Medikamentenliste mitbringen; Kleidung tragen, die sich zur Kontrolle der Wunde leicht ausziehen lässt, und Korsett oder Halskrause mitnehmen, falls Sie eines tragen",
+        "abnormal": "Die Ärztin oder der Arzt vergleicht die Erholung mit dem Erwarteten und entscheidet, ob die Belastung gesteigert, die Rehabilitation verlängert oder zusätzlich untersucht wird. Zunehmende Schwäche in den Gliedmaßen, Verlust der Blasenkontrolle, Rötung oder Sekret aus der Wunde sowie Fieber erfordern sofortige Hilfe"
+      },
+      "tr": {
+        "what": "Ameliyat sonrasında ya da daha önce saptanmış değişikliklerin izlemi sırasında yapılan beyin ve sinir cerrahisi kontrol muayenesi",
+        "how": "Hekim ameliyat yarasını ya da nedbeyi inceler, kas gücünü, duyuyu ve refleksleri değerlendirip girişim öncesiyle karşılaştırır, kontrol görüntülerine bakar ve izin verilen yüklenmeyi ve rehabilitasyon süresini belirler; ilk muayeneden kısadır, genellikle 15–25 dakika",
+        "when": "Ameliyattan sonra belirlenen sürede — dikişlerin alınması ve iyileşmenin değerlendirilmesi, ameliyatsız izlemde kontrol görüntülerinin gözden geçirilmesi, yüklenme düzeyinin ve fizyoterapinin belirlenmesi, işe dönüş ve araç kullanımı kararı",
+        "prep": "Ameliyat çıkış özetini, kontrol görüntülerini ve raporlarını, önceki raporları ve ilaç listesini getirin; yaranın incelenmesi için kolay çıkarılabilen giysiler giyin ve kullanıyorsanız korse ya da boyunluğunuzu yanınıza alın",
+        "abnormal": "Hekim iyileşmeyi beklenenle karşılaştırır ve yüklenmenin artırılmasına, rehabilitasyonun uzatılmasına ya da ek tetkike karar verir. Kol ve bacaklarda artan güçsüzlük, idrar kontrolünün kaybı, yarada kızarıklık ve akıntı ya da ateş hemen başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Контролни долазак код неурохирурга послије операције или током праћења раније уочених промјена",
+        "how": "Љекар прегледа оперативну рану или ожиљак, провјерава снагу, осјет и рефлексе и упоређује их са стањем прије захвата, гледа контролне снимке и одређује дозвољено оптерећење и ток рехабилитације; краћи је од првог прегледа, обично 15–25 минута",
+        "when": "У року одређеном послије операције — скидање конаца и процјена зарастања, провјера контролних снимака код праћења без операције, одређивање нивоа оптерећења и физикалне терапије, одлука о повратку на посао и вожњи",
+        "prep": "Понијети отпусну листу послије операције, контролне снимке са налазима, раније налазе и списак лијекова; обући одјећу која се лако скида ради прегледа ране и понијети мидер или крагну ако их носите",
+        "abnormal": "Љекар упоређује опоравак са очекиваним и одлучује да ли се оптерећење повећава, рехабилитација продужава или је потребна додатна обрада. Слабост у екстремитетима која се појачава, губитак контроле мокрења, црвенило и исцједак из ране или температура траже да се јавите одмах"
+      }
+    }
+  },
+  {
+    "slug": "follow-up-ent-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Контрольный приём отоларинголога, на котором состояние уха, носа и горла сравнивают с прошлым визитом",
+        "how": "Врач повторно осматривает нужную зону отоскопом или носовым зеркалом, при необходимости очищает ухо и меняет тампоны, разбирает аудиограмму, мазок или снимок пазух и корректирует назначения; приём короче первичного, обычно 10–20 минут",
+        "when": "В срок, назначенный на предыдущем приёме, — контроль после отита или синусита, проверка заживления барабанной перепонки, наблюдение после операции на носе или миндалинах, разбор аудиограммы и мазка, оценка эффекта назначенного лечения",
+        "prep": "Принести предыдущее заключение, аудиограмму, снимок пазух и результат мазка, взять список принимаемых препаратов и капель; перед приёмом высморкаться и не чистить ухо ватными палочками",
+        "abnormal": "Врач решает, завершить лечение, продлить его или назначить дополнительное обследование. Резкое снижение слуха, сильная боль, выделения с кровью или высокая температура — повод прийти раньше назначенного срока"
+      },
+      "en": {
+        "what": "A follow-up appointment with the ENT doctor where the state of the ear, nose and throat is compared with the previous visit",
+        "how": "The doctor re-examines the relevant area with an otoscope or nasal speculum, cleans the ear or changes packing if needed, reviews the audiogram, swab or sinus image and adjusts the prescriptions; shorter than a first visit, usually 10–20 minutes",
+        "when": "At the interval set at the previous visit — follow-up after otitis or sinusitis, checking the healing of the eardrum, observation after nose or tonsil surgery, review of an audiogram and swab, assessment of the effect of the prescribed treatment",
+        "prep": "Bring the previous report, audiogram, sinus image and swab result, and a list of the medicines and drops you use; blow your nose before the appointment and do not clean the ear with cotton buds",
+        "abnormal": "The doctor decides whether to finish the treatment, extend it or order further tests. A sudden drop in hearing, severe pain, bloody discharge or a high fever are reasons to come earlier than the scheduled date"
+      },
+      "sr": {
+        "what": "Kontrolni pregled ORL specijaliste na kojem se stanje uha, nosa i grla upoređuje sa prethodnim dolaskom",
+        "how": "Ljekar ponovo pregleda potrebnu zonu otoskopom ili nosnim spekulumom, po potrebi čisti uho i mijenja tampone, tumači audiogram, bris ili snimak sinusa i prilagođava terapiju; kraći je od prvog pregleda, obično 10–20 minuta",
+        "when": "U roku određenom na prethodnom pregledu — kontrola poslije upale uha ili sinusa, provjera zarastanja bubne opne, praćenje poslije operacije nosa ili krajnika, tumačenje audiograma i brisa, procjena djelovanja propisane terapije",
+        "prep": "Ponijeti prethodni nalaz, audiogram, snimak sinusa i rezultat brisa i spisak lijekova i kapi koje koristite; prije pregleda izduvati nos i ne čistiti uho štapićima za uši",
+        "abnormal": "Ljekar odlučuje da li se liječenje završava, produžava ili su potrebna dodatna ispitivanja. Naglo slabljenje sluha, jaka bol, krvav iscjedak ili visoka temperatura razlog su da se dođe prije zakazanog roka"
+      },
+      "de": {
+        "what": "Kontrolltermin beim HNO-Arzt, bei dem der Zustand von Ohr, Nase und Rachen mit dem letzten Besuch verglichen wird",
+        "how": "Die Ärztin oder der Arzt untersucht den betroffenen Bereich erneut mit Otoskop oder Nasenspekulum, reinigt bei Bedarf das Ohr und wechselt Tamponaden, bespricht Audiogramm, Abstrich oder Nebenhöhlenaufnahme und passt die Verordnungen an; kürzer als der Ersttermin, meist 10–20 Minuten",
+        "when": "Zum beim letzten Besuch festgelegten Termin — Kontrolle nach Mittelohr- oder Nebenhöhlenentzündung, Überprüfung der Heilung des Trommelfells, Nachsorge nach Operationen an Nase oder Mandeln, Besprechung von Audiogramm und Abstrich, Beurteilung der Wirkung der Behandlung",
+        "prep": "Vorbefund, Audiogramm, Nebenhöhlenaufnahme und Abstrichergebnis mitbringen sowie eine Liste der verwendeten Medikamente und Tropfen; vor dem Termin die Nase putzen und das Ohr nicht mit Wattestäbchen reinigen",
+        "abnormal": "Die Ärztin oder der Arzt entscheidet, ob die Behandlung beendet, verlängert oder zusätzlich untersucht wird. Plötzlicher Hörverlust, starke Schmerzen, blutiges Sekret oder hohes Fieber sind Gründe, früher als geplant zu kommen"
+      },
+      "tr": {
+        "what": "Kulak, burun ve boğazın durumunun önceki muayeneyle karşılaştırıldığı KBB kontrol muayenesi",
+        "how": "Hekim ilgili bölgeyi otoskop ya da burun spekulumuyla yeniden inceler, gerekirse kulağı temizler ve tamponları değiştirir, odyogramı, kültürü ya da sinüs görüntüsünü değerlendirip tedaviyi düzenler; ilk muayeneden kısadır, genellikle 10–20 dakika",
+        "when": "Önceki muayenede belirlenen sürede — orta kulak ya da sinüs iltihabı sonrası kontrol, kulak zarının iyileşmesinin denetimi, burun veya bademcik ameliyatı sonrası izlem, odyogram ve kültür sonucunun yorumlanması, verilen tedavinin etkisinin değerlendirilmesi",
+        "prep": "Önceki raporu, odyogramı, sinüs görüntüsünü ve kültür sonucunu, kullandığınız ilaç ve damlaların listesiyle birlikte getirin; muayeneden önce burnunuzu temizleyin ve kulağı pamuklu çubukla temizlemeyin",
+        "abnormal": "Hekim tedavinin sonlandırılmasına, uzatılmasına ya da ek tetkike karar verir. Ani işitme kaybı, şiddetli ağrı, kanlı akıntı ya da yüksek ateş, planlanan tarihten önce başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Контролни преглед ОРЛ специјалисте на којем се стање уха, носа и грла упоређује са претходним доласком",
+        "how": "Љекар поново прегледа потребну зону отоскопом или носним спекулумом, по потреби чисти ухо и мијења тампоне, тумачи аудиограм, брис или снимак синуса и прилагођава терапију; краћи је од првог прегледа, обично 10–20 минута",
+        "when": "У року одређеном на претходном прегледу — контрола послије упале уха или синуса, провјера зарастања бубне опне, праћење послије операције носа или крајника, тумачење аудиограма и бриса, процјена дјеловања прописане терапије",
+        "prep": "Понијети претходни налаз, аудиограм, снимак синуса и резултат бриса и списак лијекова и капи које користите; прије прегледа издувати нос и не чистити ухо штапићима за уши",
+        "abnormal": "Љекар одлучује да ли се лијечење завршава, продужава или су потребна додатна испитивања. Нагло слабљење слуха, јака бол, крвав исцједак или висока температура разлог су да се дође прије заказаног рока"
+      }
+    }
+  }
+]

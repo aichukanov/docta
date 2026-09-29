@@ -1,0 +1,866 @@
+[
+  {
+    "slug": "ck",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на фермент мышечной ткани, отражающий состояние скелетных мышц и сердечной мышцы",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Боли в мышцах и мышечная слабость, подозрение на повреждение мышц, контроль при приёме препаратов, влияющих на мышцы, оценка состояния после травм",
+        "prep": "Сдают утром, желательно натощак; за сутки исключить интенсивную физическую нагрузку, внутримышечные инъекции обсудить с врачом",
+        "abnormal": "Повышение может быть связано с повреждением скелетных мышц после нагрузки или травмы, реже — с сердечной мышцей или приёмом некоторых препаратов. Результат оценивает врач вместе с другими показателями"
+      },
+      "en": {
+        "what": "Blood test for a muscle enzyme that reflects the condition of skeletal muscle and heart muscle",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Muscle pain and weakness, suspected muscle damage, monitoring during treatment with medications that affect muscles, assessment after injuries",
+        "prep": "Taken in the morning, preferably fasting; avoid intense physical exercise for a day before and discuss intramuscular injections with the doctor",
+        "abnormal": "An increase may be related to skeletal muscle damage after exertion or injury and, less often, to the heart muscle or to certain medications. The result is assessed by a doctor together with other indicators"
+      },
+      "sr": {
+        "what": "Analiza krvi na enzim mišićnog tkiva koji odražava stanje skeletnih mišića i srčanog mišića",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Bolovi u mišićima i mišićna slabost, sumnja na oštećenje mišića, praćenje tokom uzimanja lijekova koji djeluju na mišiće, procjena stanja nakon povreda",
+        "prep": "Uzima se ujutru, po mogućnosti natašte; dan ranije izbjegavati intenzivan fizički napor, a intramuskularne injekcije dogovoriti sa ljekarom",
+        "abnormal": "Povišene vrijednosti mogu biti povezane sa oštećenjem skeletnih mišića poslije napora ili povrede, rjeđe sa srčanim mišićem ili uzimanjem pojedinih lijekova. Nalaz procjenjuje ljekar zajedno sa ostalim pokazateljima"
+      },
+      "de": {
+        "what": "Bluttest auf ein Muskelenzym, das den Zustand der Skelett- und Herzmuskulatur widerspiegelt",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Muskelschmerzen und Muskelschwäche, Verdacht auf Muskelschädigung, Kontrolle unter Medikamenten, die die Muskulatur beeinflussen, Beurteilung nach Verletzungen",
+        "prep": "Morgens, möglichst nüchtern; am Vortag intensive körperliche Belastung meiden, intramuskuläre Injektionen mit dem Arzt abstimmen",
+        "abnormal": "Erhöhte Werte können mit einer Schädigung der Skelettmuskulatur nach Belastung oder Verletzung, seltener mit dem Herzmuskel oder bestimmten Medikamenten zusammenhängen. Die Beurteilung erfolgt durch den Arzt zusammen mit weiteren Werten"
+      },
+      "tr": {
+        "what": "İskelet kaslarının ve kalp kasının durumunu yansıtan kas enzimini ölçen kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Kas ağrısı ve güçsüzlük, kas hasarı şüphesi, kasları etkileyen ilaçların kullanımı sırasında izlem, yaralanma sonrası değerlendirme",
+        "prep": "Sabah, tercihen aç karnına alınır; bir gün önce yoğun fiziksel egzersizden kaçınılmalı, kas içi enjeksiyonlar hekimle görüşülmelidir",
+        "abnormal": "Yüksek değerler efor veya yaralanma sonrası iskelet kası hasarıyla, daha seyrek olarak kalp kasıyla ya da bazı ilaçlarla ilişkili olabilir. Sonucu diğer göstergelerle birlikte hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на ензим мишићног ткива који одражава стање скелетних мишића и срчаног мишића",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Болови у мишићима и мишићна слабост, сумња на оштећење мишића, праћење током узимања лијекова који дјелују на мишиће, процјена стања након повреда",
+        "prep": "Узима се ујутру, по могућности наташте; дан раније избјегавати интензиван физички напор, а интрамускуларне ињекције договорити са љекаром",
+        "abnormal": "Повишене вриједности могу бити повезане са оштећењем скелетних мишића послије напора или повреде, рјеђе са срчаним мишићем или узимањем појединих лијекова. Налаз процјењује љекар заједно са осталим показатељима"
+      }
+    }
+  },
+  {
+    "slug": "ck-mb",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на сердечную фракцию креатинкиназы",
+        "how": "Забор венозной крови, при необходимости повторно через несколько часов",
+        "when": "Боль в грудной клетке, подозрение на повреждение сердечной мышцы, наблюдение после кардиологических вмешательств",
+        "prep": "Специальной подготовки не требуется; в неотложной ситуации кровь берут в любое время, при плановой сдаче — утром натощак",
+        "abnormal": "Повышение может быть связано с повреждением сердечной мышцы, а также скелетных мышц. Результат оценивает врач вместе с ЭКГ и другими анализами"
+      },
+      "en": {
+        "what": "Blood test for the cardiac fraction of creatine kinase",
+        "how": "Venous blood draw, repeated after a few hours if needed",
+        "when": "Chest pain, suspected damage to the heart muscle, follow-up after cardiac procedures",
+        "prep": "No special preparation is required; in urgent situations blood is taken at any time, for a planned test in the morning on an empty stomach",
+        "abnormal": "An increase may be related to damage to the heart muscle and also to skeletal muscle. The result is assessed by a doctor together with the ECG and other tests"
+      },
+      "sr": {
+        "what": "Analiza krvi na srčanu frakciju kreatin kinaze",
+        "how": "Uzimanje venske krvi, po potrebi ponovo nakon nekoliko sati",
+        "when": "Bol u grudima, sumnja na oštećenje srčanog mišića, praćenje poslije kardioloških zahvata",
+        "prep": "Posebna priprema nije potrebna; u hitnim situacijama krv se uzima u bilo koje doba, a planirano ujutru natašte",
+        "abnormal": "Povišene vrijednosti mogu biti povezane sa oštećenjem srčanog mišića, ali i skeletnih mišića. Nalaz tumači ljekar zajedno sa EKG-om i drugim analizama"
+      },
+      "de": {
+        "what": "Bluttest auf die herzspezifische Fraktion der Kreatinkinase",
+        "how": "Entnahme von venösem Blut, bei Bedarf Wiederholung nach einigen Stunden",
+        "when": "Brustschmerzen, Verdacht auf eine Schädigung des Herzmuskels, Verlaufskontrolle nach kardiologischen Eingriffen",
+        "prep": "Keine besondere Vorbereitung nötig; in Notfallsituationen jederzeit, bei geplanter Untersuchung morgens nüchtern",
+        "abnormal": "Erhöhte Werte können mit einer Schädigung des Herzmuskels, aber auch der Skelettmuskulatur zusammenhängen. Die Beurteilung erfolgt durch den Arzt zusammen mit EKG und weiteren Untersuchungen"
+      },
+      "tr": {
+        "what": "Kreatin kinazın kalp kaynaklı fraksiyonunu ölçen kan testi",
+        "how": "Venöz kan alımı, gerekirse birkaç saat sonra tekrarlanır",
+        "when": "Göğüs ağrısı, kalp kası hasarı şüphesi, kardiyolojik girişimler sonrası izlem",
+        "prep": "Özel hazırlık gerekmez; acil durumlarda her saatte, planlı testte sabah aç karnına alınır",
+        "abnormal": "Yüksek değerler kalp kası hasarıyla, ayrıca iskelet kası hasarıyla ilişkili olabilir. Sonucu EKG ve diğer tetkiklerle birlikte hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на срчану фракцију креатин киназе",
+        "how": "Узимање венске крви, по потреби поново након неколико сати",
+        "when": "Бол у грудима, сумња на оштећење срчаног мишића, праћење послије кардиолошких захвата",
+        "prep": "Посебна припрема није потребна; у хитним ситуацијама крв се узима у било које доба, а планирано ујутру наташте",
+        "abnormal": "Повишене вриједности могу бити повезане са оштећењем срчаног мишића, али и скелетних мишића. Налаз тумачи љекар заједно са ЕКГ-ом и другим анализама"
+      }
+    }
+  },
+  {
+    "slug": "creatinine-clearance",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Расчётный показатель фильтрационной работы почек по креатинину в крови и суточной моче",
+        "how": "Сбор мочи за 24 часа и однократный забор венозной крови в тот же период",
+        "when": "Оценка функции почек, наблюдение при хронической болезни почек, подбор и контроль терапии препаратами, которые выводятся почками, обследование перед некоторыми процедурами",
+        "prep": "Мочу собирают ровно сутки в выданную лабораторией ёмкость, первую утреннюю порцию не включают; в день сбора избегать больших нагрузок, сообщить рост и вес",
+        "abnormal": "Отклонения могут быть связаны со снижением фильтрационной способности почек, обезвоживанием, особенностями питания или неполным сбором мочи. Интерпретирует результат врач"
+      },
+      "en": {
+        "what": "Calculated measure of kidney filtration based on creatinine in blood and in a 24-hour urine sample",
+        "how": "Urine is collected over 24 hours and a single venous blood sample is taken during the same period",
+        "when": "Assessment of kidney function, follow-up in chronic kidney disease, choosing and monitoring medications cleared by the kidneys, work-up before certain procedures",
+        "prep": "Collect urine for exactly 24 hours into the container provided by the laboratory, excluding the first morning portion; avoid heavy exercise on the collection day and report your height and weight",
+        "abnormal": "Deviations may be related to reduced filtration capacity of the kidneys, dehydration, dietary habits or incomplete urine collection. Interpretation is done by a doctor"
+      },
+      "sr": {
+        "what": "Izračunati pokazatelj filtracione funkcije bubrega na osnovu kreatinina u krvi i u 24-časovnom urinu",
+        "how": "Urin se sakuplja tokom 24 sata, a u istom periodu se jednom uzima venska krv",
+        "when": "Procjena rada bubrega, praćenje kod hronične bubrežne bolesti, uvođenje i kontrola terapije lijekovima koji se izlučuju preko bubrega, priprema za pojedine zahvate",
+        "prep": "Urin se sakuplja tačno 24 sata u posudu koju daje laboratorija, prva jutarnja porcija se ne sakuplja; na dan sakupljanja izbjegavati veliki fizički napor i prijaviti visinu i tjelesnu težinu",
+        "abnormal": "Odstupanja mogu biti povezana sa smanjenom filtracionom sposobnošću bubrega, dehidratacijom, navikama u ishrani ili nepotpunim sakupljanjem urina. Nalaz tumači ljekar"
+      },
+      "de": {
+        "what": "Berechneter Wert der Nierenfiltration aus dem Kreatinin in Blut und 24-Stunden-Urin",
+        "how": "Urin wird über 24 Stunden gesammelt, im selben Zeitraum erfolgt eine einmalige venöse Blutentnahme",
+        "when": "Beurteilung der Nierenfunktion, Verlaufskontrolle bei chronischer Nierenerkrankung, Auswahl und Kontrolle von Medikamenten, die über die Nieren ausgeschieden werden, Abklärung vor bestimmten Eingriffen",
+        "prep": "Urin genau 24 Stunden im Gefäß des Labors sammeln, die erste Morgenportion nicht mitsammeln; am Sammeltag starke körperliche Belastung meiden und Größe sowie Gewicht angeben",
+        "abnormal": "Abweichungen können mit einer verminderten Filtrationsleistung der Nieren, Flüssigkeitsmangel, Ernährungsgewohnheiten oder unvollständiger Urinsammlung zusammenhängen. Die Interpretation erfolgt durch den Arzt"
+      },
+      "tr": {
+        "what": "Kandaki ve 24 saatlik idrardaki kreatinine dayanarak hesaplanan böbrek filtrasyon göstergesi",
+        "how": "İdrar 24 saat boyunca biriktirilir, aynı dönemde bir kez venöz kan alınır",
+        "when": "Böbrek fonksiyonunun değerlendirilmesi, kronik böbrek hastalığında izlem, böbrekten atılan ilaçların seçimi ve takibi, bazı girişimler öncesi inceleme",
+        "prep": "İdrar, laboratuvarın verdiği kapta tam 24 saat biriktirilir, ilk sabah idrarı alınmaz; toplama günü ağır egzersizden kaçınılmalı, boy ve kilo bildirilmelidir",
+        "abnormal": "Sapmalar böbreklerin filtrasyon kapasitesinin azalmasıyla, sıvı kaybıyla, beslenme alışkanlıklarıyla veya idrarın eksik toplanmasıyla ilişkili olabilir. Sonucu hekim yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Израчунати показатељ филтрационе функције бубрега на основу креатинина у крви и у 24-часовном урину",
+        "how": "Урин се сакупља током 24 сата, а у истом периоду се једном узима венска крв",
+        "when": "Процјена рада бубрега, праћење код хроничне бубрежне болести, увођење и контрола терапије лијековима који се излучују преко бубрега, припрема за поједине захвате",
+        "prep": "Урин се сакупља тачно 24 сата у посуду коју даје лабораторија, прва јутарња порција се не сакупља; на дан сакупљања избјегавати велики физички напор и пријавити висину и тјелесну тежину",
+        "abnormal": "Одступања могу бити повезана са смањеном филтрационом способношћу бубрега, дехидратацијом, навикама у исхрани или непотпуним сакупљањем урина. Налаз тумачи љекар"
+      }
+    }
+  },
+  {
+    "slug": "ldh",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на фермент, который есть почти во всех тканях и попадает в кровь при повреждении клеток",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Общая оценка повреждения тканей, обследование при анемии, наблюдение при некоторых заболеваниях печени и крови, дополнение к другим биохимическим анализам",
+        "prep": "Сдают утром натощак; накануне избегать интенсивной физической нагрузки",
+        "abnormal": "Повышение может быть связано с разрушением клеток самых разных тканей — крови, печени, мышц — и не указывает на конкретный орган. Причину уточняет врач дополнительными исследованиями"
+      },
+      "en": {
+        "what": "Blood test for an enzyme present in almost all tissues that enters the blood when cells are damaged",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "General assessment of tissue damage, work-up of anemia, follow-up in some liver and blood disorders, addition to other biochemical tests",
+        "prep": "Taken in the morning on an empty stomach; avoid intense physical exercise the day before",
+        "abnormal": "An increase may be related to cell breakdown in very different tissues — blood, liver, muscle — and does not point to a particular organ. The cause is clarified by a doctor with additional tests"
+      },
+      "sr": {
+        "what": "Analiza krvi na enzim koji se nalazi u gotovo svim tkivima i dospijeva u krv pri oštećenju ćelija",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Opšta procjena oštećenja tkiva, ispitivanje anemije, praćenje kod pojedinih oboljenja jetre i krvi, dopuna drugim biohemijskim analizama",
+        "prep": "Uzima se ujutru natašte; dan ranije izbjegavati intenzivan fizički napor",
+        "abnormal": "Povišene vrijednosti mogu biti povezane sa razgradnjom ćelija u različitim tkivima — krvi, jetri, mišićima — i ne upućuju na konkretan organ. Uzrok ljekar utvrđuje dodatnim ispitivanjima"
+      },
+      "de": {
+        "what": "Bluttest auf ein Enzym, das in fast allen Geweben vorkommt und bei Zellschädigung ins Blut gelangt",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Allgemeine Beurteilung von Gewebeschäden, Abklärung einer Anämie, Verlaufskontrolle bei bestimmten Leber- und Bluterkrankungen, Ergänzung zu anderen biochemischen Werten",
+        "prep": "Morgens nüchtern; am Vortag intensive körperliche Belastung meiden",
+        "abnormal": "Erhöhte Werte können mit dem Zerfall von Zellen ganz unterschiedlicher Gewebe — Blut, Leber, Muskulatur — zusammenhängen und weisen nicht auf ein bestimmtes Organ hin. Die Ursache klärt der Arzt mit weiteren Untersuchungen"
+      },
+      "tr": {
+        "what": "Neredeyse tüm dokularda bulunan ve hücreler zarar gördüğünde kana geçen bir enzimi ölçen kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Doku hasarının genel değerlendirilmesi, anemi araştırması, bazı karaciğer ve kan hastalıklarında izlem, diğer biyokimya testlerine ek olarak",
+        "prep": "Sabah aç karnına alınır; bir önceki gün yoğun fiziksel egzersizden kaçınılmalıdır",
+        "abnormal": "Yüksek değerler kan, karaciğer, kas gibi çok farklı dokularda hücre yıkımıyla ilişkili olabilir ve tek bir organa işaret etmez. Nedenini hekim ek tetkiklerle belirler"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на ензим који се налази у готово свим ткивима и доспијева у крв при оштећењу ћелија",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Општа процјена оштећења ткива, испитивање анемије, праћење код појединих обољења јетре и крви, допуна другим биохемијским анализама",
+        "prep": "Узима се ујутру наташте; дан раније избјегавати интензиван физички напор",
+        "abnormal": "Повишене вриједности могу бити повезане са разградњом ћелија у различитим ткивима — крви, јетри, мишићима — и не упућују на конкретан орган. Узрок љекар утврђује додатним испитивањима"
+      }
+    }
+  },
+  {
+    "slug": "urea-clearance",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Показатель выведения мочевины почками, рассчитываемый по крови и суточной моче",
+        "how": "Сбор мочи за 24 часа вместе с забором венозной крови",
+        "when": "Дополнительная оценка выделительной функции почек, наблюдение при хронической болезни почек, уточнение результатов других почечных проб",
+        "prep": "Сутки собирать всю мочу в ёмкость из лаборатории и хранить её в прохладном месте; питьевой режим и питание в дни сбора обсудить с врачом",
+        "abnormal": "Отклонения могут быть связаны с работой почек, объёмом выпитой жидкости, количеством белка в питании или ошибками сбора мочи. Врач оценивает показатель вместе с креатинином"
+      },
+      "en": {
+        "what": "Measure of urea removal by the kidneys, calculated from blood and a 24-hour urine sample",
+        "how": "Urine collection over 24 hours together with a venous blood draw",
+        "when": "Additional assessment of kidney excretory function, follow-up in chronic kidney disease, clarifying the results of other kidney tests",
+        "prep": "Collect all urine for 24 hours into the laboratory container and keep it cool; discuss fluid intake and diet during the collection days with your doctor",
+        "abnormal": "Deviations may be related to kidney function, the amount of fluid consumed, the protein content of the diet or errors in urine collection. A doctor assesses the value together with creatinine"
+      },
+      "sr": {
+        "what": "Pokazatelj izlučivanja ureje preko bubrega, izračunat iz krvi i 24-časovnog urina",
+        "how": "Sakupljanje urina tokom 24 sata uz uzimanje venske krvi",
+        "when": "Dodatna procjena izlučne funkcije bubrega, praćenje kod hronične bubrežne bolesti, pojašnjenje nalaza drugih bubrežnih proba",
+        "prep": "Sav urin se 24 sata sakuplja u posudu iz laboratorije i čuva na hladnom; unos tečnosti i ishranu tokom dana sakupljanja dogovoriti sa ljekarom",
+        "abnormal": "Odstupanja mogu biti povezana sa radom bubrega, količinom unijete tečnosti, količinom bjelančevina u ishrani ili greškama pri sakupljanju urina. Ljekar nalaz procjenjuje zajedno sa kreatininom"
+      },
+      "de": {
+        "what": "Kennwert der Harnstoffausscheidung durch die Nieren, berechnet aus Blut und 24-Stunden-Urin",
+        "how": "Urinsammlung über 24 Stunden zusammen mit einer venösen Blutentnahme",
+        "when": "Ergänzende Beurteilung der Ausscheidungsfunktion der Nieren, Verlaufskontrolle bei chronischer Nierenerkrankung, Präzisierung anderer Nierenwerte",
+        "prep": "Den gesamten Urin 24 Stunden im Laborgefäß sammeln und kühl aufbewahren; Trinkmenge und Ernährung an den Sammeltagen mit dem Arzt besprechen",
+        "abnormal": "Abweichungen können mit der Nierenfunktion, der Trinkmenge, dem Eiweißanteil der Ernährung oder Fehlern bei der Urinsammlung zusammenhängen. Der Arzt beurteilt den Wert zusammen mit dem Kreatinin"
+      },
+      "tr": {
+        "what": "Kan ve 24 saatlik idrardan hesaplanan, böbreklerin üreyi atma yeteneğini gösteren ölçüm",
+        "how": "24 saat boyunca idrar biriktirilmesi ve venöz kan alınması",
+        "when": "Böbreklerin atım işlevinin ek değerlendirmesi, kronik böbrek hastalığında izlem, diğer böbrek testlerinin sonuçlarının netleştirilmesi",
+        "prep": "Tüm idrar 24 saat boyunca laboratuvar kabında biriktirilir ve serin yerde saklanır; toplama günlerindeki sıvı alımı ve beslenme hekimle görüşülmelidir",
+        "abnormal": "Sapmalar böbrek fonksiyonu, alınan sıvı miktarı, beslenmedeki protein miktarı veya idrar toplamadaki hatalarla ilişkili olabilir. Hekim sonucu kreatininle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Показатељ излучивања уреје преко бубрега, израчунат из крви и 24-часовног урина",
+        "how": "Сакупљање урина током 24 сата уз узимање венске крви",
+        "when": "Додатна процјена излучне функције бубрега, праћење код хроничне бубрежне болести, појашњење налаза других бубрежних проба",
+        "prep": "Сав урин се 24 сата сакупља у посуду из лабораторије и чува на хладном; унос течности и исхрану током дана сакупљања договорити са љекаром",
+        "abnormal": "Одступања могу бити повезана са радом бубрега, количином унијете течности, количином бјеланчевина у исхрани или грешкама при сакупљању урина. Љекар налаз процјењује заједно са креатинином"
+      }
+    }
+  },
+  {
+    "slug": "direct-bilirubin",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на связанную печенью фракцию билирубина",
+        "how": "Забор венозной крови, обычно натощак",
+        "when": "Уточнение причины желтухи, оценка работы печени и оттока жёлчи, наблюдение при заболеваниях печени и жёлчных путей",
+        "prep": "Натощак 4–8 часов, разрешена только вода; накануне избегать жирной пищи и алкоголя",
+        "abnormal": "Повышение чаще связано с затруднённым оттоком жёлчи или работой клеток печени, тогда как общий билирубин меняется и по другим причинам. Соотношение фракций трактует врач"
+      },
+      "en": {
+        "what": "Blood test for the bilirubin fraction already processed (conjugated) by the liver",
+        "how": "Venous blood draw, usually on an empty stomach",
+        "when": "Clarifying the cause of jaundice, assessment of liver function and bile flow, follow-up in liver and biliary tract disease",
+        "prep": "Fasting for 4–8 hours, only water allowed; avoid fatty food and alcohol the day before",
+        "abnormal": "An increase is more often related to impaired bile flow or to liver cell function, whereas total bilirubin changes for other reasons as well. A doctor interprets the ratio of the fractions"
+      },
+      "sr": {
+        "what": "Analiza krvi na frakciju bilirubina koju je jetra već vezala (konjugovala)",
+        "how": "Uzimanje venske krvi, obično natašte",
+        "when": "Utvrđivanje uzroka žutice, procjena rada jetre i otjecanja žuči, praćenje oboljenja jetre i žučnih puteva",
+        "prep": "Natašte 4–8 sati, dozvoljena samo voda; dan ranije izbjegavati masnu hranu i alkohol",
+        "abnormal": "Povišene vrijednosti češće su povezane sa otežanim otjecanjem žuči ili radom ćelija jetre, dok se ukupni bilirubin mijenja i iz drugih razloga. Odnos frakcija tumači ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf den Bilirubinanteil, den die Leber bereits umgewandelt (konjugiert) hat",
+        "how": "Entnahme von venösem Blut, in der Regel nüchtern",
+        "when": "Abklärung der Ursache einer Gelbsucht, Beurteilung der Leberfunktion und des Galleabflusses, Verlaufskontrolle bei Leber- und Gallenwegserkrankungen",
+        "prep": "4–8 Stunden nüchtern, nur Wasser erlaubt; am Vortag fettreiche Speisen und Alkohol meiden",
+        "abnormal": "Erhöhte Werte hängen häufiger mit einem gestörten Galleabfluss oder der Funktion der Leberzellen zusammen, während sich das Gesamtbilirubin auch aus anderen Gründen ändert. Das Verhältnis der Fraktionen beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "Karaciğer tarafından bağlanmış (konjuge) bilirubin fraksiyonunu ölçen kan testi",
+        "how": "Genellikle aç karnına venöz kan alımı",
+        "when": "Sarılığın nedeninin araştırılması, karaciğer işlevi ve safra akışının değerlendirilmesi, karaciğer ve safra yolu hastalıklarında izlem",
+        "prep": "4–8 saat aç karnına, sadece su içilebilir; bir önceki gün yağlı yiyecek ve alkolden kaçınılmalıdır",
+        "abnormal": "Yüksek değerler daha çok safra akışının bozulması veya karaciğer hücrelerinin işleviyle ilişkilidir, total bilirubin ise başka nedenlerle de değişir. Fraksiyonların oranını hekim yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на фракцију билирубина коју је јетра већ везала (коњуговала)",
+        "how": "Узимање венске крви, обично наташте",
+        "when": "Утврђивање узрока жутице, процјена рада јетре и отјецања жучи, праћење обољења јетре и жучних путева",
+        "prep": "Наташте 4–8 сати, дозвољена само вода; дан раније избјегавати масну храну и алкохол",
+        "abnormal": "Повишене вриједности чешће су повезане са отежаним отјецањем жучи или радом ћелија јетре, док се укупни билирубин мијења и из других разлога. Однос фракција тумачи љекар"
+      }
+    }
+  },
+  {
+    "slug": "tibc",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови, показывающий, сколько железа способны связать белки сыворотки в целом",
+        "how": "Забор венозной крови, обычно вместе с железом и другими показателями обмена железа",
+        "when": "Обследование при анемии, оценка запасов и обмена железа, контроль на фоне терапии препаратами железа",
+        "prep": "Строго натощак утром; препараты железа накануне принимать только по согласованию с врачом",
+        "abnormal": "Изменения могут быть связаны с дефицитом или избытком железа, воспалением, питанием или беременностью. Показатель трактуется только вместе с железом и ферритином, вывод делает врач"
+      },
+      "en": {
+        "what": "Blood test showing how much iron the serum proteins are able to bind in total",
+        "how": "Venous blood draw, usually together with iron and other markers of iron metabolism",
+        "when": "Work-up of anemia, assessment of iron stores and iron metabolism, monitoring during iron supplementation",
+        "prep": "Strictly fasting in the morning; iron supplements the day before only after agreement with the doctor",
+        "abnormal": "Changes may be related to iron deficiency or excess, inflammation, diet or pregnancy. The value is interpreted only together with iron and ferritin, and the conclusion is drawn by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi koja pokazuje koliko gvožđa bjelančevine seruma ukupno mogu da vežu",
+        "how": "Uzimanje venske krvi, obično zajedno sa gvožđem i drugim pokazateljima metabolizma gvožđa",
+        "when": "Ispitivanje anemije, procjena zaliha i prometa gvožđa, kontrola tokom terapije preparatima gvožđa",
+        "prep": "Strogo natašte, ujutru; preparate gvožđa dan ranije uzimati samo uz dogovor sa ljekarom",
+        "abnormal": "Promjene mogu biti povezane sa nedostatkom ili viškom gvožđa, upalom, ishranom ili trudnoćom. Vrijednost se tumači samo zajedno sa gvožđem i feritinom, a zaključak donosi ljekar"
+      },
+      "de": {
+        "what": "Bluttest, der zeigt, wie viel Eisen die Serumproteine insgesamt binden können",
+        "how": "Entnahme von venösem Blut, meist zusammen mit Eisen und weiteren Eisenwerten",
+        "when": "Abklärung einer Anämie, Beurteilung von Eisenspeichern und Eisenstoffwechsel, Kontrolle unter Eisentherapie",
+        "prep": "Streng nüchtern am Morgen; Eisenpräparate am Vortag nur nach Rücksprache mit dem Arzt",
+        "abnormal": "Veränderungen können mit Eisenmangel oder Eisenüberschuss, Entzündungen, Ernährung oder einer Schwangerschaft zusammenhängen. Der Wert wird nur zusammen mit Eisen und Ferritin beurteilt, die Schlussfolgerung zieht der Arzt"
+      },
+      "tr": {
+        "what": "Serum proteinlerinin toplamda ne kadar demir bağlayabildiğini gösteren kan testi",
+        "how": "Genellikle demir ve diğer demir metabolizması göstergeleriyle birlikte venöz kan alımı",
+        "when": "Anemi araştırması, demir depolarının ve metabolizmasının değerlendirilmesi, demir tedavisi sırasında izlem",
+        "prep": "Sabah, kesinlikle aç karnına; demir preparatları bir gün önce yalnızca hekimle görüşerek alınmalıdır",
+        "abnormal": "Değişiklikler demir eksikliği veya fazlalığı, iltihap, beslenme ya da gebelikle ilişkili olabilir. Değer yalnızca demir ve ferritinle birlikte yorumlanır, sonucu hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви која показује колико гвожђа бјеланчевине серума укупно могу да вежу",
+        "how": "Узимање венске крви, обично заједно са гвожђем и другим показатељима метаболизма гвожђа",
+        "when": "Испитивање анемије, процјена залиха и промета гвожђа, контрола током терапије препаратима гвожђа",
+        "prep": "Строго наташте, ујутру; препарате гвожђа дан раније узимати само уз договор са љекаром",
+        "abnormal": "Промјене могу бити повезане са недостатком или вишком гвожђа, упалом, исхраном или трудноћом. Вриједност се тумачи само заједно са гвожђем и феритином, а закључак доноси љекар"
+      }
+    }
+  },
+  {
+    "slug": "uibc",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на ту часть железосвязывающей способности, которая ещё не занята железом",
+        "how": "Забор венозной крови, обычно вместе с сывороточным железом; сумма двух показателей даёт общую способность",
+        "when": "Уточнение обмена железа при анемии, расчёт насыщения трансферрина, наблюдение при лечении препаратами железа",
+        "prep": "Сдают утром натощак; о приёме препаратов железа и витаминов сообщить врачу заранее",
+        "abnormal": "Отклонения могут быть связаны с недостатком или избытком железа в организме и с воспалительными процессами. Отдельно от железа и общей железосвязывающей способности показатель не трактуется, этим занимается врач"
+      },
+      "en": {
+        "what": "Blood test for the part of the iron-binding capacity that is not yet occupied by iron",
+        "how": "Venous blood draw, usually together with serum iron; adding the two gives the total capacity",
+        "when": "Clarifying iron metabolism in anemia, calculating transferrin saturation, monitoring during iron treatment",
+        "prep": "Taken in the morning on an empty stomach; tell the doctor in advance about iron supplements and vitamins",
+        "abnormal": "Deviations may be related to iron deficiency or excess in the body and to inflammatory processes. The value is not interpreted apart from iron and total iron-binding capacity, and this is done by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na onaj dio kapaciteta vezivanja gvožđa koji još nije popunjen gvožđem",
+        "how": "Uzimanje venske krvi, obično uz gvožđe u serumu; sabiranjem se dobija ukupni kapacitet",
+        "when": "Pojašnjenje prometa gvožđa kod anemije, izračunavanje zasićenja transferina, praćenje tokom terapije gvožđem",
+        "prep": "Uzima se ujutru natašte; o uzimanju preparata gvožđa i vitamina unaprijed obavijestiti ljekara",
+        "abnormal": "Odstupanja mogu biti povezana sa nedostatkom ili viškom gvožđa u organizmu i sa upalnim procesima. Vrijednost se ne tumači odvojeno od gvožđa i ukupnog kapaciteta vezivanja, to radi ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf den Teil der Eisenbindungskapazität, der noch nicht mit Eisen besetzt ist",
+        "how": "Entnahme von venösem Blut, meist zusammen mit dem Serumeisen; die Summe ergibt die totale Kapazität",
+        "when": "Genauere Abklärung des Eisenstoffwechsels bei Anämie, Berechnung der Transferrinsättigung, Kontrolle unter Eisentherapie",
+        "prep": "Morgens nüchtern; die Einnahme von Eisenpräparaten und Vitaminen dem Arzt vorab mitteilen",
+        "abnormal": "Abweichungen können mit Eisenmangel oder Eisenüberschuss sowie mit Entzündungsprozessen zusammenhängen. Der Wert wird nicht getrennt von Eisen und totaler Eisenbindungskapazität beurteilt, das übernimmt der Arzt"
+      },
+      "tr": {
+        "what": "Demir bağlama kapasitesinin henüz demirle dolmamış bölümünü ölçen kan testi",
+        "how": "Genellikle serum demiriyle birlikte venöz kan alımı; ikisinin toplamı total kapasiteyi verir",
+        "when": "Anemide demir metabolizmasının netleştirilmesi, transferrin satürasyonunun hesaplanması, demir tedavisi sırasında izlem",
+        "prep": "Sabah aç karnına alınır; demir preparatı ve vitamin kullanımı hekime önceden bildirilmelidir",
+        "abnormal": "Sapmalar vücutta demir eksikliği veya fazlalığıyla ve iltihabi süreçlerle ilişkili olabilir. Değer, demir ve total demir bağlama kapasitesinden ayrı yorumlanmaz, bunu hekim yapar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на онај дио капацитета везивања гвожђа који још није попуњен гвожђем",
+        "how": "Узимање венске крви, обично уз гвожђе у серуму; сабирањем се добија укупни капацитет",
+        "when": "Појашњење промета гвожђа код анемије, израчунавање засићења трансферина, праћење током терапије гвожђем",
+        "prep": "Узима се ујутру наташте; о узимању препарата гвожђа и витамина унапријед обавијестити љекара",
+        "abnormal": "Одступања могу бити повезана са недостатком или вишком гвожђа у организму и са упалним процесима. Вриједност се не тумачи одвојено од гвожђа и укупног капацитета везивања, то ради љекар"
+      }
+    }
+  },
+  {
+    "slug": "albumin",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на основной белок плазмы, который вырабатывает печень",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Оценка работы печени и почек, обследование при отёках, наблюдение за питанием и общим состоянием при хронических болезнях, подготовка к операции",
+        "prep": "Сдают утром натощак; обезвоживание и долгое наложение жгута искажают результат, поэтому накануне важен обычный питьевой режим",
+        "abnormal": "Изменения могут быть связаны с работой печени, потерями белка через почки или кишечник, питанием, воспалением или количеством жидкости в организме. Причину определяет врач"
+      },
+      "en": {
+        "what": "Blood test for the main plasma protein produced by the liver",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Assessment of liver and kidney function, work-up of edema, monitoring nutrition and general status in chronic disease, preparation for surgery",
+        "prep": "Taken in the morning on an empty stomach; dehydration and a long tourniquet time distort the result, so keep your usual fluid intake the day before",
+        "abnormal": "Changes may be related to liver function, protein loss through the kidneys or bowel, nutrition, inflammation or the amount of fluid in the body. The cause is determined by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na glavnu bjelančevinu plazme koju stvara jetra",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Procjena rada jetre i bubrega, ispitivanje otoka, praćenje uhranjenosti i opšteg stanja kod hroničnih bolesti, priprema za operaciju",
+        "prep": "Uzima se ujutru natašte; dehidratacija i dugo stajanje poveske mijenjaju nalaz, pa dan ranije zadržati uobičajen unos tečnosti",
+        "abnormal": "Promjene mogu biti povezane sa radom jetre, gubitkom bjelančevina preko bubrega ili crijeva, ishranom, upalom ili količinom tečnosti u organizmu. Uzrok utvrđuje ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf das wichtigste Plasmaprotein, das die Leber bildet",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Beurteilung der Leber- und Nierenfunktion, Abklärung von Ödemen, Kontrolle von Ernährungszustand und Allgemeinbefinden bei chronischen Erkrankungen, Vorbereitung auf Operationen",
+        "prep": "Morgens nüchtern; Flüssigkeitsmangel und langes Stauen verfälschen den Wert, daher am Vortag die gewohnte Trinkmenge beibehalten",
+        "abnormal": "Veränderungen können mit der Leberfunktion, Eiweißverlusten über Nieren oder Darm, der Ernährung, Entzündungen oder dem Flüssigkeitshaushalt zusammenhängen. Die Ursache bestimmt der Arzt"
+      },
+      "tr": {
+        "what": "Karaciğerin ürettiği başlıca plazma proteinini ölçen kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Karaciğer ve böbrek işlevinin değerlendirilmesi, ödem araştırması, kronik hastalıklarda beslenme ve genel durumun izlenmesi, ameliyat öncesi hazırlık",
+        "prep": "Sabah aç karnına alınır; sıvı kaybı ve turnikenin uzun süre bağlı kalması sonucu bozar, bu nedenle bir önceki gün olağan sıvı alımı sürdürülmelidir",
+        "abnormal": "Değişiklikler karaciğer işlevi, böbrek veya bağırsak yoluyla protein kaybı, beslenme, iltihap ya da vücuttaki sıvı miktarıyla ilişkili olabilir. Nedeni hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на главну бјеланчевину плазме коју ствара јетра",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Процјена рада јетре и бубрега, испитивање отока, праћење ухрањености и општег стања код хроничних болести, припрема за операцију",
+        "prep": "Узима се ујутру наташте; дехидратација и дуго стајање повеске мијењају налаз, па дан раније задржати уобичајен унос течности",
+        "abnormal": "Промјене могу бити повезане са радом јетре, губитком бјеланчевина преко бубрега или цријева, исхраном, упалом или количином течности у организму. Узрок утврђује љекар"
+      }
+    }
+  },
+  {
+    "slug": "amylase",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на фермент, расщепляющий углеводы; его вырабатывают поджелудочная и слюнные железы",
+        "how": "Забор венозной крови; при необходимости фермент определяют и в моче",
+        "when": "Боль в верхней части живота, подозрение на воспаление поджелудочной железы, наблюдение при заболеваниях слюнных желёз",
+        "prep": "Натощак 8–12 часов, разрешена только вода; накануне исключить алкоголь и жирную пищу",
+        "abnormal": "Повышение может быть связано с поджелудочной железой, слюнными железами или другими процессами в брюшной полости. Что стоит за изменением, определяет врач по жалобам и дополнительным исследованиям"
+      },
+      "en": {
+        "what": "Blood test for the enzyme that breaks down carbohydrates, produced by the pancreas and the salivary glands",
+        "how": "Venous blood draw; when needed the enzyme is also measured in urine",
+        "when": "Pain in the upper abdomen, suspected inflammation of the pancreas, follow-up in salivary gland disorders",
+        "prep": "Fasting for 8–12 hours, only water allowed; avoid alcohol and fatty food the day before",
+        "abnormal": "An increase may be related to the pancreas, the salivary glands or other processes in the abdomen. What lies behind the change is determined by a doctor from the symptoms and additional tests"
+      },
+      "sr": {
+        "what": "Analiza krvi na enzim koji razgrađuje ugljene hidrate, a stvaraju ga pankreas i pljuvačne žlijezde",
+        "how": "Uzimanje venske krvi; po potrebi se enzim određuje i u urinu",
+        "when": "Bol u gornjem dijelu trbuha, sumnja na upalu pankreasa, praćenje oboljenja pljuvačnih žlijezda",
+        "prep": "Natašte 8–12 sati, dozvoljena samo voda; dan ranije izbjegavati alkohol i masnu hranu",
+        "abnormal": "Povišene vrijednosti mogu biti povezane sa pankreasom, pljuvačnim žlijezdama ili drugim zbivanjima u trbuhu. Šta stoji iza promjene, utvrđuje ljekar na osnovu tegoba i dodatnih pretraga"
+      },
+      "de": {
+        "what": "Bluttest auf das kohlenhydratspaltende Enzym, das von Bauchspeicheldrüse und Speicheldrüsen gebildet wird",
+        "how": "Entnahme von venösem Blut; bei Bedarf wird das Enzym auch im Urin bestimmt",
+        "when": "Schmerzen im Oberbauch, Verdacht auf eine Entzündung der Bauchspeicheldrüse, Verlaufskontrolle bei Speicheldrüsenerkrankungen",
+        "prep": "8–12 Stunden nüchtern, nur Wasser erlaubt; am Vortag Alkohol und fettreiche Speisen meiden",
+        "abnormal": "Erhöhte Werte können mit der Bauchspeicheldrüse, den Speicheldrüsen oder anderen Vorgängen im Bauchraum zusammenhängen. Was dahintersteckt, klärt der Arzt anhand der Beschwerden und weiterer Untersuchungen"
+      },
+      "tr": {
+        "what": "Pankreas ve tükürük bezlerinin ürettiği, karbonhidratları parçalayan enzimi ölçen kan testi",
+        "how": "Venöz kan alımı; gerektiğinde enzim idrarda da ölçülür",
+        "when": "Üst karın ağrısı, pankreas iltihabı şüphesi, tükürük bezi hastalıklarında izlem",
+        "prep": "8–12 saat aç karnına, sadece su içilebilir; bir önceki gün alkol ve yağlı yiyeceklerden kaçınılmalıdır",
+        "abnormal": "Yüksek değerler pankreas, tükürük bezleri veya karın içindeki başka süreçlerle ilişkili olabilir. Değişikliğin nedenini hekim şikayetlere ve ek tetkiklere göre belirler"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на ензим који разграђује угљене хидрате, а стварају га панкреас и пљувачне жлијезде",
+        "how": "Узимање венске крви; по потреби се ензим одређује и у урину",
+        "when": "Бол у горњем дијелу трбуха, сумња на упалу панкреаса, праћење обољења пљувачних жлијезда",
+        "prep": "Наташте 8–12 сати, дозвољена само вода; дан раније избјегавати алкохол и масну храну",
+        "abnormal": "Повишене вриједности могу бити повезане са панкреасом, пљувачним жлијездама или другим збивањима у трбуху. Шта стоји иза промјене, утврђује љекар на основу тегоба и додатних претрага"
+      }
+    }
+  },
+  {
+    "slug": "homocysteine",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на аминокислоту, обмен которой зависит от витаминов группы B",
+        "how": "Забор венозной крови; пробирку быстро доставляют в лабораторию, поэтому время сдачи согласуют с её графиком",
+        "when": "Оценка сердечно-сосудистых факторов риска, обследование при дефиците витамина B12 и фолиевой кислоты, наблюдение при некоторых наследственных нарушениях обмена, планирование беременности",
+        "prep": "Строго натощак 10–12 часов, разрешена только вода; о приёме витаминов группы B сообщить врачу",
+        "abnormal": "Повышение может быть связано с недостатком витаминов B12, B6 или фолиевой кислоты, работой почек, приёмом некоторых препаратов или наследственными особенностями обмена. Трактует результат врач"
+      },
+      "en": {
+        "what": "Blood test for an amino acid whose metabolism depends on B vitamins",
+        "how": "Venous blood draw; the sample must reach the laboratory quickly, so the appointment is arranged around laboratory hours",
+        "when": "Assessment of cardiovascular risk factors, work-up of vitamin B12 and folate deficiency, follow-up in certain inherited metabolic disorders, pregnancy planning",
+        "prep": "Strictly fasting for 10–12 hours, only water allowed; tell the doctor about any B-vitamin supplements",
+        "abnormal": "An increase may be related to a lack of vitamin B12, B6 or folate, kidney function, certain medications or inherited features of metabolism. The result is interpreted by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na aminokiselinu čiji metabolizam zavisi od vitamina B grupe",
+        "how": "Uzimanje venske krvi; uzorak brzo mora stići u laboratoriju, pa se termin usklađuje sa njenim radnim vremenom",
+        "when": "Procjena kardiovaskularnih faktora rizika, ispitivanje nedostatka vitamina B12 i folne kiseline, praćenje pojedinih nasljednih poremećaja metabolizma, planiranje trudnoće",
+        "prep": "Strogo natašte 10–12 sati, dozvoljena samo voda; o uzimanju vitamina B grupe obavijestiti ljekara",
+        "abnormal": "Povišene vrijednosti mogu biti povezane sa nedostatkom vitamina B12, B6 ili folne kiseline, radom bubrega, uzimanjem nekih lijekova ili nasljednim osobinama metabolizma. Nalaz tumači ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf eine Aminosäure, deren Stoffwechsel von B-Vitaminen abhängt",
+        "how": "Entnahme von venösem Blut; die Probe muss rasch ins Labor, daher richtet sich der Termin nach den Laborzeiten",
+        "when": "Beurteilung kardiovaskulärer Risikofaktoren, Abklärung eines Vitamin-B12- oder Folsäuremangels, Verlaufskontrolle bei bestimmten angeborenen Stoffwechselstörungen, Planung einer Schwangerschaft",
+        "prep": "Streng nüchtern 10–12 Stunden, nur Wasser erlaubt; die Einnahme von B-Vitaminen dem Arzt mitteilen",
+        "abnormal": "Erhöhte Werte können mit einem Mangel an Vitamin B12, B6 oder Folsäure, der Nierenfunktion, bestimmten Medikamenten oder angeborenen Stoffwechselbesonderheiten zusammenhängen. Die Interpretation erfolgt durch den Arzt"
+      },
+      "tr": {
+        "what": "Metabolizması B grubu vitaminlere bağlı olan bir amino asidi ölçen kan testi",
+        "how": "Venöz kan alımı; örnek laboratuvara hızla ulaşmalıdır, bu nedenle randevu laboratuvarın çalışma saatlerine göre ayarlanır",
+        "when": "Kalp ve damar risk etkenlerinin değerlendirilmesi, B12 vitamini ve folik asit eksikliğinin araştırılması, bazı kalıtsal metabolizma bozukluklarında izlem, gebelik planlaması",
+        "prep": "10–12 saat kesinlikle aç karnına, sadece su içilebilir; B grubu vitamin kullanımı hekime bildirilmelidir",
+        "abnormal": "Yüksek değerler B12, B6 vitamini veya folik asit eksikliği, böbrek işlevi, bazı ilaçlar ya da kalıtsal metabolizma özellikleriyle ilişkili olabilir. Sonucu hekim yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на аминокиселину чији метаболизам зависи од витамина Б групе",
+        "how": "Узимање венске крви; узорак брзо мора стићи у лабораторију, па се термин усклађује са њеним радним временом",
+        "when": "Процјена кардиоваскуларних фактора ризика, испитивање недостатка витамина Б12 и фолне киселине, праћење појединих насљедних поремећаја метаболизма, планирање трудноће",
+        "prep": "Строго наташте 10–12 сати, дозвољена само вода; о узимању витамина Б групе обавијестити љекара",
+        "abnormal": "Повишене вриједности могу бити повезане са недостатком витамина Б12, Б6 или фолне киселине, радом бубрега, узимањем неких лијекова или насљедним особинама метаболизма. Налаз тумачи љекар"
+      }
+    }
+  },
+  {
+    "slug": "lipase",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на фермент поджелудочной железы, расщепляющий жиры",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Боль в животе, подозрение на воспаление поджелудочной железы, наблюдение при хронических заболеваниях поджелудочной железы",
+        "prep": "Натощак 8–12 часов, разрешена только вода; накануне исключить алкоголь и жирную пищу",
+        "abnormal": "Повышение чаще связано с поджелудочной железой и держится дольше, чем изменение амилазы; влияют также болезни почек и кишечника. Результат оценивает врач"
+      },
+      "en": {
+        "what": "Blood test for the pancreatic enzyme that breaks down fats",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Abdominal pain, suspected inflammation of the pancreas, follow-up in chronic pancreatic disease",
+        "prep": "Fasting for 8–12 hours, only water allowed; avoid alcohol and fatty food the day before",
+        "abnormal": "An increase is more often related to the pancreas and lasts longer than a change in amylase; kidney and bowel disease also have an effect. The result is assessed by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na enzim pankreasa koji razgrađuje masti",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Bol u trbuhu, sumnja na upalu pankreasa, praćenje hroničnih oboljenja pankreasa",
+        "prep": "Natašte 8–12 sati, dozvoljena samo voda; dan ranije izbjegavati alkohol i masnu hranu",
+        "abnormal": "Povišene vrijednosti češće su povezane sa pankreasom i zadržavaju se duže nego promjena amilaze; uticaj imaju i bolesti bubrega i crijeva. Nalaz procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf das fettspaltende Enzym der Bauchspeicheldrüse",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Bauchschmerzen, Verdacht auf eine Entzündung der Bauchspeicheldrüse, Verlaufskontrolle bei chronischen Erkrankungen der Bauchspeicheldrüse",
+        "prep": "8–12 Stunden nüchtern, nur Wasser erlaubt; am Vortag Alkohol und fettreiche Speisen meiden",
+        "abnormal": "Erhöhte Werte hängen häufiger mit der Bauchspeicheldrüse zusammen und halten länger an als eine Veränderung der Amylase; auch Nieren- und Darmerkrankungen wirken sich aus. Die Beurteilung erfolgt durch den Arzt"
+      },
+      "tr": {
+        "what": "Pankreasın yağları parçalayan enzimini ölçen kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Karın ağrısı, pankreas iltihabı şüphesi, kronik pankreas hastalıklarında izlem",
+        "prep": "8–12 saat aç karnına, sadece su içilebilir; bir önceki gün alkol ve yağlı yiyeceklerden kaçınılmalıdır",
+        "abnormal": "Yüksek değerler daha çok pankreasla ilişkilidir ve amilazdaki değişiklikten daha uzun sürer; böbrek ve bağırsak hastalıkları da etkili olur. Sonucu hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на ензим панкреаса који разграђује масти",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Бол у трбуху, сумња на упалу панкреаса, праћење хроничних обољења панкреаса",
+        "prep": "Наташте 8–12 сати, дозвољена само вода; дан раније избјегавати алкохол и масну храну",
+        "abnormal": "Повишене вриједности чешће су повезане са панкреасом и задржавају се дуже него промјена амилазе; утицај имају и болести бубрега и цријева. Налаз процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "transferrin",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на белок, который переносит железо по кровотоку",
+        "how": "Забор венозной крови, обычно вместе с железом и ферритином",
+        "when": "Обследование при анемии, оценка обмена и запасов железа, расчёт насыщения трансферрина железом, наблюдение при заболеваниях печени",
+        "prep": "Сдают утром натощак; препараты железа перед анализом принимать только по согласованию с врачом",
+        "abnormal": "Изменения могут быть связаны с дефицитом или избытком железа, работой печени, воспалением, беременностью или приёмом гормональных препаратов. Вывод врач делает по всей группе показателей"
+      },
+      "en": {
+        "what": "Blood test for the protein that carries iron through the bloodstream",
+        "how": "Venous blood draw, usually together with iron and ferritin",
+        "when": "Work-up of anemia, assessment of iron metabolism and stores, calculation of transferrin saturation, follow-up in liver disease",
+        "prep": "Taken in the morning on an empty stomach; iron supplements before the test only after agreement with the doctor",
+        "abnormal": "Changes may be related to iron deficiency or excess, liver function, inflammation, pregnancy or hormonal medication. The doctor draws the conclusion from the whole group of values"
+      },
+      "sr": {
+        "what": "Analiza krvi na bjelančevinu koja prenosi gvožđe kroz krvotok",
+        "how": "Uzimanje venske krvi, obično zajedno sa gvožđem i feritinom",
+        "when": "Ispitivanje anemije, procjena prometa i zaliha gvožđa, izračunavanje zasićenja transferina gvožđem, praćenje oboljenja jetre",
+        "prep": "Uzima se ujutru natašte; preparate gvožđa prije analize uzimati samo uz dogovor sa ljekarom",
+        "abnormal": "Promjene mogu biti povezane sa nedostatkom ili viškom gvožđa, radom jetre, upalom, trudnoćom ili uzimanjem hormonskih lijekova. Zaključak ljekar donosi na osnovu cijele grupe pokazatelja"
+      },
+      "de": {
+        "what": "Bluttest auf das Protein, das Eisen im Blutkreislauf transportiert",
+        "how": "Entnahme von venösem Blut, meist zusammen mit Eisen und Ferritin",
+        "when": "Abklärung einer Anämie, Beurteilung von Eisenstoffwechsel und Eisenspeichern, Berechnung der Transferrinsättigung, Verlaufskontrolle bei Lebererkrankungen",
+        "prep": "Morgens nüchtern; Eisenpräparate vor der Untersuchung nur nach Rücksprache mit dem Arzt",
+        "abnormal": "Veränderungen können mit Eisenmangel oder Eisenüberschuss, der Leberfunktion, Entzündungen, einer Schwangerschaft oder Hormonpräparaten zusammenhängen. Die Schlussfolgerung zieht der Arzt aus der gesamten Wertegruppe"
+      },
+      "tr": {
+        "what": "Demiri kan dolaşımında taşıyan proteini ölçen kan testi",
+        "how": "Genellikle demir ve ferritinle birlikte venöz kan alımı",
+        "when": "Anemi araştırması, demir metabolizmasının ve depolarının değerlendirilmesi, transferrin satürasyonunun hesaplanması, karaciğer hastalıklarında izlem",
+        "prep": "Sabah aç karnına alınır; demir preparatları test öncesinde yalnızca hekimle görüşerek alınmalıdır",
+        "abnormal": "Değişiklikler demir eksikliği veya fazlalığı, karaciğer işlevi, iltihap, gebelik ya da hormon ilaçlarıyla ilişkili olabilir. Hekim sonucu göstergelerin tümüne bakarak değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на бјеланчевину која преноси гвожђе кроз крвоток",
+        "how": "Узимање венске крви, обично заједно са гвожђем и феритином",
+        "when": "Испитивање анемије, процјена промета и залиха гвожђа, израчунавање засићења трансферина гвожђем, праћење обољења јетре",
+        "prep": "Узима се ујутру наташте; препарате гвожђа прије анализе узимати само уз договор са љекаром",
+        "abnormal": "Промјене могу бити повезане са недостатком или вишком гвожђа, радом јетре, упалом, трудноћом или узимањем хормонских лијекова. Закључак љекар доноси на основу цијеле групе показатеља"
+      }
+    }
+  },
+  {
+    "slug": "osteocalcin",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на белок, который вырабатывают костные клетки при образовании новой костной ткани",
+        "how": "Забор венозной крови утром, занимает несколько минут",
+        "when": "Оценка костного обмена, наблюдение при остеопорозе и контроль его лечения, обследование при нарушениях обмена кальция и витамина D",
+        "prep": "Строго утром натощак, так как показатель заметно меняется в течение суток; о приёме препаратов для костей и витамина D сообщить врачу",
+        "abnormal": "Изменения могут быть связаны со скоростью обновления костной ткани, работой паращитовидных желёз, обменом витамина D или проводимой терапией. Результат врач оценивает вместе с денситометрией и другими анализами"
+      },
+      "en": {
+        "what": "Blood test for a protein produced by bone cells when new bone tissue is formed",
+        "how": "Venous blood draw in the morning, takes a few minutes",
+        "when": "Assessment of bone turnover, follow-up in osteoporosis and monitoring of its treatment, work-up of calcium and vitamin D metabolism disorders",
+        "prep": "Strictly in the morning on an empty stomach, as the value changes noticeably during the day; tell the doctor about bone medication and vitamin D supplements",
+        "abnormal": "Changes may be related to the rate of bone renewal, parathyroid function, vitamin D metabolism or ongoing treatment. The doctor assesses the result together with densitometry and other tests"
+      },
+      "sr": {
+        "what": "Analiza krvi na bjelančevinu koju stvaraju koštane ćelije pri izgradnji novog koštanog tkiva",
+        "how": "Uzimanje venske krvi ujutru, traje nekoliko minuta",
+        "when": "Procjena koštanog metabolizma, praćenje osteoporoze i kontrola njenog liječenja, ispitivanje poremećaja metabolizma kalcijuma i vitamina D",
+        "prep": "Strogo ujutru natašte, jer se vrijednost primjetno mijenja tokom dana; o uzimanju lijekova za kosti i vitamina D obavijestiti ljekara",
+        "abnormal": "Promjene mogu biti povezane sa brzinom obnavljanja koštanog tkiva, radom paratireoidnih žlijezda, metabolizmom vitamina D ili terapijom koja se sprovodi. Nalaz ljekar procjenjuje zajedno sa denzitometrijom i drugim analizama"
+      },
+      "de": {
+        "what": "Bluttest auf ein Protein, das Knochenzellen beim Aufbau neuen Knochengewebes bilden",
+        "how": "Entnahme von venösem Blut am Morgen, dauert einige Minuten",
+        "when": "Beurteilung des Knochenstoffwechsels, Verlaufskontrolle bei Osteoporose und deren Therapiekontrolle, Abklärung von Störungen des Kalzium- und Vitamin-D-Stoffwechsels",
+        "prep": "Streng morgens nüchtern, da sich der Wert im Tagesverlauf deutlich ändert; Knochenmedikamente und Vitamin-D-Präparate dem Arzt mitteilen",
+        "abnormal": "Veränderungen können mit der Geschwindigkeit des Knochenumbaus, der Funktion der Nebenschilddrüsen, dem Vitamin-D-Stoffwechsel oder der laufenden Therapie zusammenhängen. Der Arzt beurteilt den Wert zusammen mit der Knochendichtemessung und weiteren Untersuchungen"
+      },
+      "tr": {
+        "what": "Yeni kemik dokusu oluşurken kemik hücrelerinin ürettiği bir proteini ölçen kan testi",
+        "how": "Sabah venöz kan alımı, birkaç dakika sürer",
+        "when": "Kemik metabolizmasının değerlendirilmesi, osteoporozda izlem ve tedavinin takibi, kalsiyum ve D vitamini metabolizması bozukluklarının araştırılması",
+        "prep": "Değer gün içinde belirgin şekilde değiştiğinden kesinlikle sabah aç karnına alınır; kemik ilaçları ve D vitamini kullanımı hekime bildirilmelidir",
+        "abnormal": "Değişiklikler kemik yenilenme hızı, paratiroid bezlerinin çalışması, D vitamini metabolizması ya da uygulanan tedaviyle ilişkili olabilir. Hekim sonucu kemik yoğunluğu ölçümü ve diğer tetkiklerle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на бјеланчевину коју стварају коштане ћелије при изградњи новог коштаног ткива",
+        "how": "Узимање венске крви ујутру, траје неколико минута",
+        "when": "Процјена коштаног метаболизма, праћење остеопорозе и контрола њеног лијечења, испитивање поремећаја метаболизма калцијума и витамина Д",
+        "prep": "Строго ујутру наташте, јер се вриједност примјетно мијења током дана; о узимању лијекова за кости и витамина Д обавијестити љекара",
+        "abnormal": "Промјене могу бити повезане са брзином обнављања коштаног ткива, радом паратиреоидних жлијезда, метаболизмом витамина Д или терапијом која се спроводи. Налаз љекар процјењује заједно са дензитометријом и другим анализама"
+      }
+    }
+  },
+  {
+    "slug": "ace",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на фермент, участвующий в регуляции артериального давления и водно-солевого обмена",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Обследование и наблюдение при гранулематозных заболеваниях, прежде всего саркоидозе, оценка активности процесса в динамике",
+        "prep": "Сдают утром натощак; о приёме препаратов из группы ингибиторов АПФ обязательно сообщить врачу и лаборатории — они меняют результат",
+        "abnormal": "Изменения могут быть связаны с активностью гранулематозного воспаления, заболеваниями печени и щитовидной железы или приёмом лекарств. Отдельно от клинической картины показатель не используется, трактует его врач"
+      },
+      "en": {
+        "what": "Blood test for an enzyme involved in the regulation of blood pressure and water-salt balance",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Work-up and follow-up of granulomatous diseases, primarily sarcoidosis, assessment of disease activity over time",
+        "prep": "Taken in the morning on an empty stomach; always tell the doctor and the laboratory about ACE inhibitor medication — it changes the result",
+        "abnormal": "Changes may be related to the activity of granulomatous inflammation, liver or thyroid disease, or medication. The value is not used apart from the clinical picture and is interpreted by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na enzim koji učestvuje u regulaciji krvnog pritiska i ravnoteže vode i soli",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Ispitivanje i praćenje granulomatoznih bolesti, prije svega sarkoidoze, procjena aktivnosti procesa tokom vremena",
+        "prep": "Uzima se ujutru natašte; o uzimanju lijekova iz grupe ACE inhibitora obavezno obavijestiti ljekara i laboratoriju, jer mijenjaju nalaz",
+        "abnormal": "Promjene mogu biti povezane sa aktivnošću granulomatozne upale, oboljenjima jetre i štitne žlijezde ili uzimanjem lijekova. Vrijednost se ne koristi odvojeno od kliničke slike, tumači je ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf ein Enzym, das an der Regulation von Blutdruck und Wasser-Salz-Haushalt beteiligt ist",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Abklärung und Verlaufskontrolle granulomatöser Erkrankungen, vor allem der Sarkoidose, Beurteilung der Aktivität im Verlauf",
+        "prep": "Morgens nüchtern; die Einnahme von ACE-Hemmern unbedingt dem Arzt und dem Labor mitteilen, da sie den Wert verändern",
+        "abnormal": "Veränderungen können mit der Aktivität einer granulomatösen Entzündung, Leber- oder Schilddrüsenerkrankungen oder Medikamenten zusammenhängen. Der Wert wird nicht losgelöst vom klinischen Bild verwendet und vom Arzt beurteilt"
+      },
+      "tr": {
+        "what": "Kan basıncının ve su-tuz dengesinin düzenlenmesinde rol alan bir enzimi ölçen kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Granülomatöz hastalıkların, başta sarkoidoz olmak üzere, araştırılması ve izlenmesi, hastalık aktivitesinin zaman içinde değerlendirilmesi",
+        "prep": "Sabah aç karnına alınır; ACE inhibitörü grubu ilaç kullanımı sonucu değiştirdiğinden hekime ve laboratuvara mutlaka bildirilmelidir",
+        "abnormal": "Değişiklikler granülomatöz iltihabın aktivitesi, karaciğer ve tiroid hastalıkları ya da ilaç kullanımıyla ilişkili olabilir. Değer klinik tablodan ayrı kullanılmaz, yorumu hekim yapar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на ензим који учествује у регулацији крвног притиска и равнотеже воде и соли",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Испитивање и праћење грануломатозних болести, прије свега саркоидозе, процјена активности процеса током времена",
+        "prep": "Узима се ујутру наташте; о узимању лијекова из групе ACE инхибитора обавезно обавијестити љекара и лабораторију, јер мијењају налаз",
+        "abnormal": "Промјене могу бити повезане са активношћу грануломатозне упале, обољењима јетре и штитне жлијезде или узимањем лијекова. Вриједност се не користи одвојено од клиничке слике, тумачи је љекар"
+      }
+    }
+  },
+  {
+    "slug": "beta-crosslaps",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на продукт распада костного коллагена — маркер скорости рассасывания кости",
+        "how": "Забор венозной крови строго в утренние часы, так как показатель сильно колеблется в течение суток",
+        "when": "Оценка костного обмена при остеопорозе, контроль эффективности назначенной терапии, обследование при нарушениях обмена кальция",
+        "prep": "Утром натощак, приём пищи снижает значение; при повторных анализах стараются сохранять одно и то же время сдачи",
+        "abnormal": "Изменения могут быть связаны с ускоренным или замедленным обновлением костной ткани, гормональными перестройками или ответом на лечение. Результат врач оценивает вместе с денситометрией"
+      },
+      "en": {
+        "what": "Blood test for a breakdown product of bone collagen — a marker of how fast bone is being resorbed",
+        "how": "Venous blood draw strictly in the morning hours, as the value fluctuates markedly during the day",
+        "when": "Assessment of bone turnover in osteoporosis, monitoring the effect of prescribed therapy, work-up of calcium metabolism disorders",
+        "prep": "In the morning on an empty stomach, as food lowers the value; for repeat tests the same time of day is kept",
+        "abnormal": "Changes may be related to faster or slower bone renewal, hormonal changes or the response to treatment. The doctor assesses the result together with densitometry"
+      },
+      "sr": {
+        "what": "Analiza krvi na proizvod razgradnje koštanog kolagena — pokazatelj brzine razgradnje kosti",
+        "how": "Uzimanje venske krvi isključivo u jutarnjim satima, jer vrijednost izrazito varira tokom dana",
+        "when": "Procjena koštanog metabolizma kod osteoporoze, praćenje djelovanja propisane terapije, ispitivanje poremećaja metabolizma kalcijuma",
+        "prep": "Ujutru natašte, jer obrok snižava vrijednost; kod ponovljenih analiza zadržava se isto doba dana",
+        "abnormal": "Promjene mogu biti povezane sa ubrzanim ili usporenim obnavljanjem koštanog tkiva, hormonskim promjenama ili odgovorom na liječenje. Nalaz ljekar procjenjuje zajedno sa denzitometrijom"
+      },
+      "de": {
+        "what": "Bluttest auf ein Abbauprodukt des Knochenkollagens — ein Marker für die Geschwindigkeit des Knochenabbaus",
+        "how": "Entnahme von venösem Blut ausschließlich in den Morgenstunden, da der Wert im Tagesverlauf stark schwankt",
+        "when": "Beurteilung des Knochenstoffwechsels bei Osteoporose, Kontrolle der Wirkung einer verordneten Therapie, Abklärung von Störungen des Kalziumstoffwechsels",
+        "prep": "Morgens nüchtern, da Nahrungsaufnahme den Wert senkt; bei Verlaufskontrollen wird dieselbe Tageszeit beibehalten",
+        "abnormal": "Veränderungen können mit einem beschleunigten oder verlangsamten Knochenumbau, hormonellen Umstellungen oder dem Ansprechen auf die Behandlung zusammenhängen. Der Arzt beurteilt den Wert zusammen mit der Knochendichtemessung"
+      },
+      "tr": {
+        "what": "Kemik kollajeninin yıkım ürününü, yani kemik yıkım hızının bir göstergesini ölçen kan testi",
+        "how": "Değer gün içinde belirgin şekilde dalgalandığından yalnızca sabah saatlerinde venöz kan alımı",
+        "when": "Osteoporozda kemik metabolizmasının değerlendirilmesi, uygulanan tedavinin etkisinin izlenmesi, kalsiyum metabolizması bozukluklarının araştırılması",
+        "prep": "Sabah aç karnına, çünkü yemek değeri düşürür; tekrarlanan testlerde aynı saat tercih edilir",
+        "abnormal": "Değişiklikler kemik yenilenmesinin hızlanması veya yavaşlaması, hormonal değişimler ya da tedaviye yanıtla ilişkili olabilir. Hekim sonucu kemik yoğunluğu ölçümüyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на производ разградње коштаног колагена — показатељ брзине разградње кости",
+        "how": "Узимање венске крви искључиво у јутарњим сатима, јер вриједност изразито варира током дана",
+        "when": "Процјена коштаног метаболизма код остеопорозе, праћење дјеловања прописане терапије, испитивање поремећаја метаболизма калцијума",
+        "prep": "Ујутру наташте, јер оброк снижава вриједност; код поновљених анализа задржава се исто доба дана",
+        "abnormal": "Промјене могу бити повезане са убрзаним или успореним обнављањем коштаног ткива, хормонским промјенама или одговором на лијечење. Налаз љекар процјењује заједно са дензитометријом"
+      }
+    }
+  },
+  {
+    "slug": "fructosamine",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на гликированные белки сыворотки, отражающие средний уровень сахара за последние 2–3 недели",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Контроль сахарного диабета за короткий период, ситуации, когда HbA1c малоинформативен — беременность, недавняя смена терапии, заболевания крови",
+        "prep": "Специальная подготовка обычно не требуется, но чаще сдают утром натощак; условия уточните у направившего врача",
+        "abnormal": "Изменения могут быть связаны с уровнем глюкозы в предшествующие недели, а также с содержанием белка в крови и заболеваниями печени или почек. Результат оценивает врач"
+      },
+      "en": {
+        "what": "Blood test for glycated serum proteins, reflecting the average blood sugar level over the past 2–3 weeks",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Short-term monitoring of diabetes, situations where HbA1c is of limited use — pregnancy, a recent change of therapy, blood disorders",
+        "prep": "Special preparation is usually not required, but the sample is most often taken in the morning on an empty stomach; check the conditions with the referring doctor",
+        "abnormal": "Changes may be related to glucose levels in the preceding weeks and also to the protein content of the blood and to liver or kidney disease. The result is assessed by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na glikovane bjelančevine seruma, koje odražavaju prosječan nivo šećera tokom posljednje 2–3 sedmice",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Kratkoročna kontrola šećerne bolesti, situacije u kojima je HbA1c manje upotrebljiv — trudnoća, nedavna promjena terapije, bolesti krvi",
+        "prep": "Posebna priprema obično nije potrebna, ali se najčešće uzima ujutru natašte; uslove provjeriti kod ljekara koji je uputio na analizu",
+        "abnormal": "Promjene mogu biti povezane sa nivoom glukoze u prethodnim sedmicama, ali i sa količinom bjelančevina u krvi te oboljenjima jetre ili bubrega. Nalaz procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf glykierte Serumproteine, die den durchschnittlichen Blutzuckerspiegel der letzten 2–3 Wochen widerspiegeln",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Kurzfristige Kontrolle eines Diabetes, Situationen mit eingeschränkter Aussagekraft des HbA1c — Schwangerschaft, kürzlich geänderte Therapie, Bluterkrankungen",
+        "prep": "Eine besondere Vorbereitung ist meist nicht nötig, die Abnahme erfolgt aber überwiegend morgens nüchtern; die Bedingungen beim überweisenden Arzt erfragen",
+        "abnormal": "Veränderungen können mit den Glukosewerten der vergangenen Wochen sowie mit dem Eiweißgehalt des Blutes und Leber- oder Nierenerkrankungen zusammenhängen. Die Beurteilung erfolgt durch den Arzt"
+      },
+      "tr": {
+        "what": "Son 2–3 haftadaki ortalama kan şekeri düzeyini yansıtan glike serum proteinlerini ölçen kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Diyabetin kısa dönemli takibi, HbA1c'nin yeterli bilgi vermediği durumlar: gebelik, tedavinin yakın zamanda değişmesi, kan hastalıkları",
+        "prep": "Genellikle özel hazırlık gerekmez, ancak çoğunlukla sabah aç karnına alınır; koşulları yönlendiren hekime danışın",
+        "abnormal": "Değişiklikler önceki haftalardaki glukoz düzeyiyle, ayrıca kandaki protein miktarı ve karaciğer veya böbrek hastalıklarıyla ilişkili olabilir. Sonucu hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на гликоване бјеланчевине серума, које одражавају просјечан ниво шећера током посљедње 2–3 седмице",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Краткорочна контрола шећерне болести, ситуације у којима је HbA1c мање употребљив — трудноћа, недавна промјена терапије, болести крви",
+        "prep": "Посебна припрема обично није потребна, али се најчешће узима ујутру наташте; услове провјерити код љекара који је упутио на анализу",
+        "abnormal": "Промјене могу бити повезане са нивоом глукозе у претходним седмицама, али и са количином бјеланчевина у крви те обољењима јетре или бубрега. Налаз процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "pancreatic-amylase",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на панкреатическую фракцию амилазы — ту часть фермента, которую вырабатывает именно поджелудочная железа",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Боль в верхней части живота, уточнение результата общей амилазы, обследование и наблюдение при заболеваниях поджелудочной железы",
+        "prep": "Натощак 8–12 часов, разрешена только вода; накануне исключить алкоголь и жирную пищу",
+        "abnormal": "Повышение чаще связано с поджелудочной железой, в отличие от общей амилазы, на которую влияют и слюнные железы; сказывается также работа почек. Вывод делает врач"
+      },
+      "en": {
+        "what": "Blood test for the pancreatic fraction of amylase — the part of the enzyme produced specifically by the pancreas",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Pain in the upper abdomen, clarifying a total amylase result, work-up and follow-up of pancreatic disease",
+        "prep": "Fasting for 8–12 hours, only water allowed; avoid alcohol and fatty food the day before",
+        "abnormal": "An increase is more often related to the pancreas, unlike total amylase, which is also affected by the salivary glands; kidney function plays a role as well. The conclusion is drawn by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na pankreasnu frakciju amilaze — onaj dio enzima koji stvara upravo pankreas",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Bol u gornjem dijelu trbuha, pojašnjenje nalaza ukupne amilaze, ispitivanje i praćenje oboljenja pankreasa",
+        "prep": "Natašte 8–12 sati, dozvoljena samo voda; dan ranije izbjegavati alkohol i masnu hranu",
+        "abnormal": "Povišene vrijednosti češće su povezane sa pankreasom, za razliku od ukupne amilaze na koju utiču i pljuvačne žlijezde; značaj ima i rad bubrega. Zaključak donosi ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf die Pankreasfraktion der Amylase — jenen Anteil des Enzyms, der gezielt von der Bauchspeicheldrüse gebildet wird",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Schmerzen im Oberbauch, Präzisierung eines Gesamtamylase-Ergebnisses, Abklärung und Verlaufskontrolle von Erkrankungen der Bauchspeicheldrüse",
+        "prep": "8–12 Stunden nüchtern, nur Wasser erlaubt; am Vortag Alkohol und fettreiche Speisen meiden",
+        "abnormal": "Erhöhte Werte hängen häufiger mit der Bauchspeicheldrüse zusammen als die Gesamtamylase, die auch von den Speicheldrüsen beeinflusst wird; auch die Nierenfunktion spielt eine Rolle. Die Schlussfolgerung zieht der Arzt"
+      },
+      "tr": {
+        "what": "Amilazın doğrudan pankreas tarafından üretilen fraksiyonunu ölçen kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Üst karın ağrısı, total amilaz sonucunun netleştirilmesi, pankreas hastalıklarının araştırılması ve izlenmesi",
+        "prep": "8–12 saat aç karnına, sadece su içilebilir; bir önceki gün alkol ve yağlı yiyeceklerden kaçınılmalıdır",
+        "abnormal": "Yüksek değerler, tükürük bezlerinden de etkilenen total amilazın aksine daha çok pankreasla ilişkilidir; böbrek işlevi de rol oynar. Sonucu hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на панкреасну фракцију амилазе — онај дио ензима који ствара управо панкреас",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Бол у горњем дијелу трбуха, појашњење налаза укупне амилазе, испитивање и праћење обољења панкреаса",
+        "prep": "Наташте 8–12 сати, дозвољена само вода; дан раније избјегавати алкохол и масну храну",
+        "abnormal": "Повишене вриједности чешће су повезане са панкреасом, за разлику од укупне амилазе на коју утичу и пљувачне жлијезде; значај има и рад бубрега. Закључак доноси љекар"
+      }
+    }
+  }
+]

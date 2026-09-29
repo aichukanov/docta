@@ -1,0 +1,770 @@
+[
+  {
+    "slug": "cerumen-ear-irrigation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Вымывание ушной серы, закрывшей слуховой проход, струёй тёплой жидкости",
+        "how": "ЛОР осматривает ухо отоскопом, затем шприцем или ирригатором направляет тёплый физраствор вдоль стенки прохода и под контролем зрения убирает размягчённую серу; обычно несколько минут на ухо",
+        "when": "Ощущение заложенности и приглушённый слух, шум или зуд в ухе, сера, закрывающая барабанную перепонку при осмотре или мешающая снятию слепка уха",
+        "prep": "Если врач назначил размягчающие капли, использовать их в предшествующие дни; заранее сказать о перенесённой операции на ухе, отверстии в перепонке, недавнем воспалении или выделениях из уха",
+        "abnormal": "Слух обычно возвращается сразу, как только проход освобождён, а короткое ощущение влаги или лёгкого головокружения проходит. Если сохраняются боль, выделения, головокружение или сниженный слух, нужен повторный осмотр ЛОР-врача"
+      },
+      "en": {
+        "what": "Washing out earwax that has blocked the ear canal with a stream of warm fluid",
+        "how": "The ENT doctor looks into the ear with an otoscope, then flushes warm saline along the canal wall with a syringe or irrigator and removes the softened wax under direct vision; usually a few minutes per ear",
+        "when": "A blocked feeling and muffled hearing, ringing or itching in the ear, wax that hides the eardrum during an examination or prevents an ear impression being taken",
+        "prep": "Use softening drops in the days before if your doctor prescribed them; say in advance if you have had ear surgery, a hole in the eardrum, a recent infection or discharge from the ear",
+        "abnormal": "Hearing usually returns as soon as the canal is clear, and a brief wet or slightly dizzy feeling passes. Lasting pain, discharge, dizziness or reduced hearing means you should be re-examined by an ENT doctor"
+      },
+      "sr": {
+        "what": "Ispiranje ušne masti koja je zatvorila slušni kanal mlazom tople tečnosti",
+        "how": "ORL ljekar pregleda uho otoskopom, zatim špricem ili aparatom usmjerava topli fiziološki rastvor uz zid kanala i pod kontrolom oka uklanja omekšali cerumen; obično nekoliko minuta po uhu",
+        "when": "Osjećaj zapušenosti i prigušen sluh, zujanje ili svrab u uhu, vosak koji zaklanja bubnu opnu pri pregledu ili smeta uzimanju otiska uha",
+        "prep": "Ako je ljekar propisao kapi za omekšavanje, koristiti ih prethodnih dana; unaprijed reći za operaciju uha, rupu na bubnoj opni, skorašnju upalu ili curenje iz uha",
+        "abnormal": "Sluh se obično vraća čim se kanal oslobodi, a kratkotrajan osjećaj vlage ili blage vrtoglavice prolazi. Ako ostanu bol, sekret, vrtoglavica ili slabiji sluh, potreban je ponovni ORL pregled"
+      },
+      "de": {
+        "what": "Ausspülen von Ohrenschmalz, das den Gehörgang verschlossen hat, mit einem warmen Flüssigkeitsstrahl",
+        "how": "Die HNO-Ärztin oder der HNO-Arzt betrachtet das Ohr mit dem Otoskop, spült dann warme Kochsalzlösung mit Spritze oder Spülgerät an der Kanalwand entlang und entfernt das aufgeweichte Schmalz unter Sicht; meist wenige Minuten pro Ohr",
+        "when": "Verstopfungsgefühl und dumpfes Hören, Ohrgeräusche oder Juckreiz, Schmalz das bei der Untersuchung das Trommelfell verdeckt oder eine Ohrabformung verhindert",
+        "prep": "Vom Arzt verordnete aufweichende Tropfen in den Tagen davor anwenden; vorher mitteilen, ob eine Ohroperation, ein Loch im Trommelfell, eine kürzliche Entzündung oder Ausfluss aus dem Ohr vorliegt",
+        "abnormal": "Das Hören kehrt meist zurück, sobald der Gang frei ist; ein kurzes Nässe- oder leichtes Schwindelgefühl vergeht. Bleiben Schmerzen, Ausfluss, Schwindel oder ein schlechteres Gehör, ist eine erneute HNO-Kontrolle nötig"
+      },
+      "tr": {
+        "what": "Kulak yolunu tıkayan kulak kirinin ılık sıvı akımıyla dışarı alınması",
+        "how": "KBB hekimi kulağı otoskopla inceler, ardından şırınga veya yıkama cihazıyla ılık serum fizyolojiği kanal duvarı boyunca verir ve yumuşayan kiri göz kontrolünde çıkarır; kulak başına genelde birkaç dakika",
+        "when": "Tıkanıklık hissi ve duymada azalma, kulakta çınlama veya kaşıntı, muayenede kulak zarını kapatan ya da kulak kalıbı alınmasını engelleyen kir",
+        "prep": "Hekim yumuşatıcı damla verdiyse önceki günlerde kullanın; kulak ameliyatı, kulak zarında delik, yakın zamanda geçirilmiş iltihap veya kulaktan akıntı varsa önceden söyleyin",
+        "abnormal": "Kanal açılır açılmaz işitme genellikle düzelir, kısa süreli ıslaklık ya da hafif baş dönmesi hissi geçer. Ağrı, akıntı, baş dönmesi veya işitme azlığı sürerse KBB hekimine yeniden görünmek gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Испирање ушне масти која је затворила слушни канал млазом топле течности",
+        "how": "ОРЛ љекар прегледа ухо отоскопом, затим шприцем или апаратом усмјерава топли физиолошки раствор уз зид канала и под контролом ока уклања омекшали церумен; обично неколико минута по уху",
+        "when": "Осјећај запушености и пригушен слух, зујање или свраб у уху, восак који заклања бубну опну при прегледу или смета узимању отиска уха",
+        "prep": "Ако је љекар прописао капи за омекшавање, користити их претходних дана; унапријед рећи за операцију уха, рупу на бубној опни, скорашњу упалу или цурење из уха",
+        "abnormal": "Слух се обично враћа чим се канал ослободи, а краткотрајан осјећај влаге или благе вртоглавице пролази. Ако остану бол, секрет, вртоглавица или слабији слух, потребан је поновни ОРЛ преглед"
+      }
+    }
+  },
+  {
+    "slug": "abdominal-paracentesis",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Прокол стенки живота иглой, чтобы взять на анализ или вывести свободную жидкость из брюшной полости",
+        "how": "Место прокола выбирают, часто под контролем УЗИ, кожу обрабатывают и обезболивают, жидкость набирают в пробирки или выпускают через тонкий катетер, затем накладывают повязку; от нескольких минут до примерно часа при выведении большого объёма",
+        "when": "Скопление жидкости в животе неясной причины, нарастающее вздутие и одышка из-за этой жидкости, подозрение на воспаление жидкости, наблюдение при болезнях печени",
+        "prep": "Опорожнить мочевой пузырь перед процедурой, сказать врачу о разжижающих кровь препаратах и нарушениях свёртывания, ничего не отменяя самостоятельно; при седации нужен сопровождающий",
+        "abnormal": "Жидкость отправляют в лабораторию, результат трактует врач. Усиление боли в животе, температура, головокружение, подтекание из места прокола или кровь на повязке — повод показаться врачу"
+      },
+      "en": {
+        "what": "A puncture of the abdominal wall with a needle to sample or drain free fluid from the abdominal cavity",
+        "how": "The puncture site is chosen, often with ultrasound, the skin is disinfected and numbed, fluid is drawn into tubes or let out through a thin catheter and a dressing is applied; from a few minutes to about an hour when a large volume is removed",
+        "when": "Fluid in the abdomen of unclear cause, growing distension and breathlessness caused by that fluid, suspected infection of the fluid, monitoring in liver disease",
+        "prep": "Empty the bladder beforehand and tell the doctor about blood-thinning medicines and clotting disorders without stopping anything on your own; arrange someone to accompany you if sedation is planned",
+        "abnormal": "The fluid is sent to the laboratory and the result is interpreted by the doctor. Increasing abdominal pain, fever, dizziness, leakage from the puncture site or blood on the dressing should be shown to a doctor"
+      },
+      "sr": {
+        "what": "Ubod igle kroz trbušni zid radi uzimanja uzorka ili izvlačenja slobodne tečnosti iz trbušne duplje",
+        "how": "Ubodno mjesto se bira, često uz ultrazvuk, koža se dezinfikuje i lokalno anestezira, tečnost se uzima u epruvete ili ispušta kroz tanak kateter, a zatim se stavlja zavoj; traje od nekoliko minuta do oko sat vremena kada se izvlači veća količina",
+        "when": "Nakupljanje tečnosti u trbuhu nejasnog uzroka, rastuće napinjanje trbuha i otežano disanje zbog te tečnosti, sumnja na upalu tečnosti, praćenje kod bolesti jetre",
+        "prep": "Isprazniti mokraćnu bešiku, reći ljekaru za lijekove koji razrjeđuju krv i poremećaje zgrušavanja, ali ništa ne prekidati na svoju ruku; ako je planirana sedacija, potrebna je pratnja",
+        "abnormal": "Tečnost se šalje u laboratoriju, a nalaz tumači ljekar. Jači bol u trbuhu, povišena temperatura, vrtoglavica, curenje sa mjesta uboda ili krv na zavoju traže ljekarski pregled"
+      },
+      "de": {
+        "what": "Punktion der Bauchdecke mit einer Nadel, um freie Flüssigkeit aus der Bauchhöhle zu gewinnen oder abzulassen",
+        "how": "Die Einstichstelle wird, oft per Ultraschall, festgelegt, die Haut desinfiziert und betäubt, Flüssigkeit in Röhrchen entnommen oder über einen dünnen Katheter abgelassen, danach ein Verband angelegt; wenige Minuten bis etwa eine Stunde bei großen Mengen",
+        "when": "Bauchwasser unklarer Ursache, zunehmender Bauchumfang und Atemnot dadurch, Verdacht auf eine Infektion der Flüssigkeit, Verlaufskontrolle bei Lebererkrankungen",
+        "prep": "Vorher die Blase entleeren, blutverdünnende Medikamente und Gerinnungsstörungen angeben, ohne etwas eigenmächtig abzusetzen; bei geplanter Sedierung eine Begleitperson mitbringen",
+        "abnormal": "Die Flüssigkeit geht ins Labor, das Ergebnis beurteilt die Ärztin oder der Arzt. Zunehmende Bauchschmerzen, Fieber, Schwindel, Nachlaufen aus der Einstichstelle oder Blut im Verband gehören ärztlich kontrolliert"
+      },
+      "tr": {
+        "what": "Karın boşluğundaki serbest sıvıdan örnek almak ya da sıvıyı boşaltmak için karın duvarından iğneyle girilmesi",
+        "how": "Giriş yeri çoğu kez ultrasonla belirlenir, cilt temizlenip uyuşturulur, sıvı tüplere alınır veya ince bir kateterle boşaltılır, ardından pansuman yapılır; birkaç dakikadan, çok sıvı alınıyorsa yaklaşık bir saate kadar sürer",
+        "when": "Nedeni belirsiz karın içi sıvı birikimi, bu sıvıya bağlı artan şişkinlik ve nefes darlığı, sıvıda iltihap şüphesi, karaciğer hastalıklarında izlem",
+        "prep": "İşlemden önce mesaneyi boşaltın, kan sulandırıcı ilaçları ve pıhtılaşma sorunlarını hekime bildirin, hiçbir ilacı kendi başınıza kesmeyin; sedasyon planlanıyorsa yanınızda refakatçi bulunsun",
+        "abnormal": "Alınan sıvı laboratuvara gönderilir, sonucu hekim yorumlar. Artan karın ağrısı, ateş, baş dönmesi, giriş yerinden sızıntı veya pansumanda kan hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Убод игле кроз трбушни зид ради узимања узорка или извлачења слободне течности из трбушне дупље",
+        "how": "Убодно мјесто се бира, често уз ултразвук, кожа се дезинфикује и локално анестезира, течност се узима у епрувете или испушта кроз танак катетер, а затим се ставља завој; траје од неколико минута до око сат времена када се извлачи већа количина",
+        "when": "Накупљање течности у трбуху нејасног узрока, растуће напињање трбуха и отежано дисање због те течности, сумња на упалу течности, праћење код болести јетре",
+        "prep": "Испразнити мокраћну бешику, рећи љекару за лијекове који разрјеђују крв и поремећаје згрушавања, али ништа не прекидати на своју руку; ако је планирана седација, потребна је пратња",
+        "abnormal": "Течност се шаље у лабораторију, а налаз тумачи љекар. Јачи бол у трбуху, повишена температура, вртоглавица, цурење са мјеста убода или крв на завоју траже љекарски преглед"
+      }
+    }
+  },
+  {
+    "slug": "urinary-catheter-placement",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Введение стерильной трубки через мочеиспускательный канал в мочевой пузырь для отведения мочи",
+        "how": "Область обрабатывают, в канал вводят обезболивающий гель, затем проводят катетер в пузырь, раздувают баллончик на его конце и подсоединяют мочеприёмник; несколько минут",
+        "when": "Невозможность помочиться, измерение количества выделяемой мочи, подготовка к операции или исследованию, длительный уход за лежачим пациентом, введение растворов в пузырь",
+        "prep": "Специальной подготовки не нужно; сказать врачу о перенесённых операциях и сужениях уретры, о проблемах с простатой, аллергии на латекс и обезболивающие гели",
+        "abnormal": "Позывы и лёгкое жжение в первые часы обычны. Отсутствие оттока мочи, кровь в моче, температура, боль в пояснице или выпавший катетер нужно показать врачу"
+      },
+      "en": {
+        "what": "Insertion of a sterile tube through the urethra into the bladder to drain urine",
+        "how": "The area is cleaned, anaesthetic gel is put into the urethra, the catheter is passed into the bladder, a small balloon at its tip is inflated and a drainage bag is attached; a few minutes",
+        "when": "Inability to pass urine, measuring urine output, preparation for surgery or an examination, long-term care of an immobile patient, instilling solutions into the bladder",
+        "prep": "No special preparation; tell the doctor about previous surgery or narrowing of the urethra, prostate problems and any allergy to latex or anaesthetic gels",
+        "abnormal": "An urge to urinate and mild burning in the first hours are usual. No urine draining, blood in the urine, fever, flank pain or a catheter that falls out should be reported to a doctor"
+      },
+      "sr": {
+        "what": "Uvođenje sterilne cjevčice kroz mokraćnu cijev u bešiku radi odvođenja mokraće",
+        "how": "Predio se očisti, u mokraćnu cijev se stavi anestetički gel, zatim se plasira kateter, balončić na vrhu se napuni i priključi se kesa za mokraću; traje nekoliko minuta",
+        "when": "Nemogućnost mokrenja, mjerenje količine mokraće, priprema za operaciju ili pretragu, dugotrajna njega nepokretnog pacijenta, ubrizgavanje rastvora u bešiku",
+        "prep": "Posebna priprema nije potrebna; reći ljekaru za ranije operacije i suženja mokraćne cijevi, tegobe sa prostatom i alergiju na lateks ili anestetičke gelove",
+        "abnormal": "Nagon na mokrenje i blago peckanje prvih sati su uobičajeni. Izostanak oticanja mokraće, krv u mokraći, povišena temperatura, bol u slabinama ili ispadanje katetera treba prijaviti ljekaru"
+      },
+      "de": {
+        "what": "Einführen eines sterilen Schlauchs durch die Harnröhre in die Blase zur Harnableitung",
+        "how": "Der Bereich wird gereinigt, Betäubungsgel in die Harnröhre gegeben, der Katheter eingeführt, der kleine Ballon an der Spitze gefüllt und ein Urinbeutel angeschlossen; wenige Minuten",
+        "when": "Harnverhalt, Messung der Urinmenge, Vorbereitung auf eine Operation oder Untersuchung, Langzeitpflege bettlägeriger Patienten, Einbringen von Lösungen in die Blase",
+        "prep": "Keine besondere Vorbereitung; frühere Operationen oder Engstellen der Harnröhre, Prostatabeschwerden und eine Allergie gegen Latex oder Betäubungsgele angeben",
+        "abnormal": "Harndrang und leichtes Brennen in den ersten Stunden sind üblich. Kein Urinfluss, Blut im Urin, Fieber, Flankenschmerz oder ein herausgerutschter Katheter gehören ärztlich abgeklärt"
+      },
+      "tr": {
+        "what": "İdrarın boşaltılması için üretradan mesaneye steril bir sondanın yerleştirilmesi",
+        "how": "Bölge temizlenir, üretraya uyuşturucu jel verilir, sonda mesaneye ilerletilir, ucundaki küçük balon şişirilir ve idrar torbası takılır; birkaç dakika sürer",
+        "when": "İdrar yapamama, idrar miktarının ölçülmesi, ameliyat veya tetkik öncesi hazırlık, yatağa bağımlı hastanın uzun süreli bakımı, mesaneye solüsyon verilmesi",
+        "prep": "Özel hazırlık gerekmez; üretra ameliyatı ya da darlığı, prostat sorunları ve lateks veya uyuşturucu jellere alerji varsa hekime söyleyin",
+        "abnormal": "İlk saatlerde idrar yapma hissi ve hafif yanma olağandır. İdrarın gelmemesi, idrarda kan, ateş, böğür ağrısı veya sondanın çıkması hekime bildirilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Увођење стерилне цјевчице кроз мокраћну цијев у бешику ради одвођења мокраће",
+        "how": "Предио се очисти, у мокраћну цијев се стави анестетички гел, затим се пласира катетер, балончић на врху се напуни и прикључи се кеса за мокраћу; траје неколико минута",
+        "when": "Немогућност мокрења, мјерење количине мокраће, припрема за операцију или претрагу, дуготрајна њега непокретног пацијента, убризгавање раствора у бешику",
+        "prep": "Посебна припрема није потребна; рећи љекару за раније операције и сужења мокраћне цијеви, тегобе са простатом и алергију на латекс или анестетичке гелове",
+        "abnormal": "Нагон на мокрење и благо пецкање првих сати су уобичајени. Изостанак отицања мокраће, крв у мокраћи, повишена температура, бол у слабинама или испадање катетера треба пријавити љекару"
+      }
+    }
+  },
+  {
+    "slug": "anterior-nasal-packing",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Введение тампона или кровоостанавливающего материала в передний отдел носа, чтобы остановить носовое кровотечение",
+        "how": "Врач осматривает полость носа, при необходимости обезболивает слизистую и плотно укладывает марлевый тампон, губку или раздувающийся баллон, иногда с обеих сторон; занимает несколько минут, извлекает тампон врач на контрольном визите",
+        "when": "Кровотечение из передних отделов носа, не останавливающееся прижатием, повторяющиеся носовые кровотечения, кровотечение после травмы носа или на фоне разжижающих кровь препаратов",
+        "prep": "Подготовки нет, помощь оказывают сразу; сказать врачу о разжижающих кровь препаратах, нарушениях свёртывания и перенесённых операциях на носу, ничего не отменяя самостоятельно",
+        "abnormal": "С тампоном нос заложен, слезотечение и лёгкая головная боль часты, а срок, на который его оставляют, называет врач. Возобновившееся кровотечение, температура, сильная боль или стекание крови в горло требуют быстрого осмотра"
+      },
+      "en": {
+        "what": "Placing a pack or haemostatic material in the front part of the nose to stop a nosebleed",
+        "how": "The doctor examines the nasal cavity, numbs the lining if needed and packs gauze, a sponge or an inflatable balloon firmly into the front of the nose, sometimes on both sides; it takes a few minutes and the pack is removed by a doctor at a follow-up visit",
+        "when": "Bleeding from the front of the nose that does not stop with pressure, repeated nosebleeds, bleeding after an injury to the nose or while taking blood-thinning medicines",
+        "prep": "No preparation, help is given straight away; tell the doctor about blood thinners, clotting disorders and previous nasal surgery, without stopping any medicine yourself",
+        "abnormal": "With the pack in place the nose is blocked and watery eyes or mild headache are common, and how long it stays is decided by the doctor. Renewed bleeding, fever, severe pain or blood running down the throat needs prompt review"
+      },
+      "sr": {
+        "what": "Postavljanje tampona ili hemostatskog materijala u prednji dio nosa radi zaustavljanja krvarenja",
+        "how": "Ljekar pregleda nosnu šupljinu, po potrebi anestezira sluznicu i čvrsto postavi gazu, spužvicu ili balon koji se naduva, ponekad sa obje strane; traje nekoliko minuta, a tampon vadi ljekar na kontroli",
+        "when": "Krvarenje iz prednjeg dijela nosa koje ne prestaje pritiskom, ponavljana krvarenja, krvarenje poslije povrede nosa ili uz lijekove za razrjeđivanje krvi",
+        "prep": "Priprema nije potrebna, pomoć se pruža odmah; reći ljekaru za lijekove koji razrjeđuju krv, poremećaje zgrušavanja i ranije operacije nosa, bez samostalnog prekidanja terapije",
+        "abnormal": "Dok je tampon u nosu, nos je zapušen, suzenje i blaga glavobolja su česti, a koliko ostaje određuje ljekar. Ponovno krvarenje, povišena temperatura, jak bol ili slijevanje krvi niz grlo traže brz pregled"
+      },
+      "de": {
+        "what": "Einlegen einer Tamponade oder eines blutstillenden Materials in den vorderen Nasenabschnitt, um Nasenbluten zu stoppen",
+        "how": "Die Nasenhöhle wird untersucht, die Schleimhaut bei Bedarf betäubt und Gaze, ein Schwämmchen oder ein aufblasbarer Ballon fest im vorderen Nasenabschnitt platziert, manchmal beidseits; wenige Minuten, entfernt wird die Tamponade ärztlich bei der Kontrolle",
+        "when": "Nasenbluten aus dem vorderen Bereich, das auf Druck nicht aufhört, wiederholtes Nasenbluten, Blutung nach einer Nasenverletzung oder unter blutverdünnenden Medikamenten",
+        "prep": "Keine Vorbereitung, die Versorgung erfolgt sofort; Blutverdünner, Gerinnungsstörungen und frühere Nasenoperationen angeben, ohne Medikamente eigenmächtig abzusetzen",
+        "abnormal": "Mit der Tamponade ist die Nase verstopft, tränende Augen und leichte Kopfschmerzen sind häufig, und wie lange sie bleibt legt die Ärztin oder der Arzt fest. Erneutes Bluten, Fieber, starke Schmerzen oder Blut, das in den Rachen läuft, erfordert eine rasche Kontrolle"
+      },
+      "tr": {
+        "what": "Burun kanamasını durdurmak için burnun ön bölümüne tampon ya da kanama durdurucu malzeme yerleştirilmesi",
+        "how": "Hekim burun içini inceler, gerekirse mukozayı uyuşturur ve gazlı bez, sünger ya da şişirilebilen balonu burnun ön kısmına sıkıca yerleştirir, bazen iki tarafa; birkaç dakika sürer, tamponu kontrol muayenesinde hekim çıkarır",
+        "when": "Bastırmakla durmayan ön burun kanaması, yinelenen kanamalar, burun travması sonrası ya da kan sulandırıcı kullanırken oluşan kanama",
+        "prep": "Hazırlık gerekmez, müdahale hemen yapılır; kan sulandırıcı ilaçları, pıhtılaşma sorunlarını ve geçirilmiş burun ameliyatlarını bildirin, ilaçlarınızı kendiniz kesmeyin",
+        "abnormal": "Tampon dururken burun tıkalıdır, gözlerin sulanması ve hafif baş ağrısı sıktır, ne kadar kalacağına hekim karar verir. Kanamanın yeniden başlaması, ateş, şiddetli ağrı veya kanın boğaza akması hızlı değerlendirme gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Постављање тампона или хемостатског материјала у предњи дио носа ради заустављања крварења",
+        "how": "Љекар прегледа носну шупљину, по потреби анестезира слузницу и чврсто постави газу, спужвицу или балон који се надува, понекад са обје стране; траје неколико минута, а тампон вади љекар на контроли",
+        "when": "Крварење из предњег дијела носа које не престаје притиском, понављана крварења, крварење послије повреде носа или уз лијекове за разрјеђивање крви",
+        "prep": "Припрема није потребна, помоћ се пружа одмах; рећи љекару за лијекове који разрјеђују крв, поремећаје згрушавања и раније операције носа, без самосталног прекидања терапије",
+        "abnormal": "Док је тампон у носу, нос је запушен, сузење и блага главобоља су чести, а колико остаје одређује љекар. Поновно крварење, повишена температура, јак бол или слијевање крви низ грло траже брз преглед"
+      }
+    }
+  },
+  {
+    "slug": "artificial-anus-care",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обработка кожи вокруг стомы и замена калоприёмника после выведения кишки на переднюю брюшную стенку",
+        "how": "Медсестра снимает пластину, очищает кожу и стому водой, осматривает край слизистой, при необходимости наносит защитные средства и подбирает новую пластину с мешком подходящего размера; около четверти часа",
+        "when": "Плановая смена калоприёмника, раздражение или мокнутие кожи вокруг стомы, подтекание из-под пластины, обучение пациента и близких уходу после операции",
+        "prep": "Подготовка не нужна; удобнее приходить до еды, когда стома спокойнее, и принести используемые пластины и мешки, если подбирается другой размер",
+        "abnormal": "В норме кожа вокруг спокойная, а сама стома розовая и влажная. Потемнение стомы, её западение или выпадение, кровотечение, сильное раздражение кожи, отсутствие стула и газов или боль в животе нужно показать врачу"
+      },
+      "en": {
+        "what": "Cleaning the skin around a stoma and changing the pouch after the bowel has been brought out onto the abdominal wall",
+        "how": "The nurse removes the baseplate, cleans the skin and the stoma with water, checks the edge of the mucosa, applies protective products if needed and fits a new plate and pouch of the right size; about a quarter of an hour",
+        "when": "Routine pouch change, irritated or weeping skin around the stoma, leakage under the baseplate, teaching the patient and family how to manage the stoma after surgery",
+        "prep": "No preparation needed; it is easier to come before a meal when the stoma is quieter, and to bring the plates and pouches you use if a different size is being fitted",
+        "abnormal": "Normally the surrounding skin is calm and the stoma itself is pink and moist. A dark, sunken or protruding stoma, bleeding, badly irritated skin, no stool or gas, or abdominal pain should be seen by a doctor"
+      },
+      "sr": {
+        "what": "Čišćenje kože oko stome i zamjena kesice nakon što je crijevo izvedeno na trbušni zid",
+        "how": "Sestra skida podlogu, vodom očisti kožu i stomu, pregleda rub sluznice, po potrebi nanese zaštitna sredstva i postavi novu podlogu i kesicu odgovarajuće veličine; traje petnaestak minuta",
+        "when": "Redovna zamjena kesice, nadraživanje ili vlaženje kože oko stome, curenje ispod podloge, obuka pacijenta i porodice za njegu poslije operacije",
+        "prep": "Priprema nije potrebna; lakše je doći prije obroka, dok je stoma mirnija, i ponijeti podloge i kesice koje koristite ako se bira druga veličina",
+        "abnormal": "Koža okolo je inače mirna, a sama stoma ružičasta i vlažna. Tamna, uvučena ili isturena stoma, krvarenje, jako nadražena koža, izostanak stolice i gasova ili bol u trbuhu traže pregled ljekara"
+      },
+      "de": {
+        "what": "Reinigung der Haut um ein Stoma und Wechsel des Beutels, nachdem der Darm auf die Bauchdecke ausgeleitet wurde",
+        "how": "Die Pflegekraft löst die Basisplatte, reinigt Haut und Stoma mit Wasser, beurteilt den Schleimhautrand, trägt bei Bedarf Hautschutz auf und setzt eine neue Platte mit passendem Beutel ein; etwa eine Viertelstunde",
+        "when": "Planmäßiger Beutelwechsel, gereizte oder nässende Haut um das Stoma, Undichtigkeit unter der Platte, Anleitung von Patient und Angehörigen nach der Operation",
+        "prep": "Keine Vorbereitung nötig; günstig ist ein Termin vor dem Essen, wenn das Stoma ruhiger ist, und die bisher genutzten Platten und Beutel mitzubringen, falls eine andere Größe angepasst wird",
+        "abnormal": "Normalerweise ist die umgebende Haut reizlos und das Stoma rosig und feucht. Ein dunkles, eingezogenes oder vorgefallenes Stoma, Blutung, stark gereizte Haut, fehlender Stuhl- und Windabgang oder Bauchschmerzen gehören ärztlich beurteilt"
+      },
+      "tr": {
+        "what": "Bağırsağın karın duvarına ağızlaştırılmasından sonra stoma çevresindeki cildin temizlenmesi ve torbanın değiştirilmesi",
+        "how": "Hemşire adaptörü çıkarır, cildi ve stomayı suyla temizler, mukoza kenarını değerlendirir, gerekirse koruyucu ürün uygular ve uygun ölçüde yeni adaptör ile torba takar; yaklaşık on beş dakika",
+        "when": "Planlı torba değişimi, stoma çevresinde tahriş veya ıslanma, adaptör altından sızıntı, ameliyat sonrası hasta ve yakınlarının bakım eğitimi",
+        "prep": "Hazırlık gerekmez; stoma daha sakinken, yemekten önce gelmek kolaylık sağlar, farklı ölçü denenecekse kullandığınız adaptör ve torbaları getirin",
+        "abnormal": "Normalde çevredeki cilt sakin, stoma ise pembe ve nemlidir. Stomanın kararması, içe çekilmesi veya dışa taşması, kanama, ileri cilt tahrişi, gaita ve gaz çıkışının olmaması ya da karın ağrısı hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Чишћење коже око стоме и замјена кесице након што је цријево изведено на трбушни зид",
+        "how": "Сестра скида подлогу, водом очисти кожу и стому, прегледа руб слузнице, по потреби нанесе заштитна средства и постави нову подлогу и кесицу одговарајуће величине; траје петнаестак минута",
+        "when": "Редовна замјена кесице, надраживање или влажење коже око стоме, цурење испод подлоге, обука пацијента и породице за његу послије операције",
+        "prep": "Припрема није потребна; лакше је доћи прије оброка, док је стома мирнија, и понијети подлоге и кесице које користите ако се бира друга величина",
+        "abnormal": "Кожа около је иначе мирна, а сама стома ружичаста и влажна. Тамна, увучена или истурена стома, крварење, јако надражена кожа, изостанак столице и гасова или бол у трбуху траже преглед љекара"
+      }
+    }
+  },
+  {
+    "slug": "atheroma-cyst-xanthoma-or-small-benign-tumor-excision",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление под местной анестезией небольшого подкожного образования вместе с его капсулой",
+        "how": "Кожу обрабатывают и обезболивают, образование выделяют через небольшой разрез и удаляют целиком, рану ушивают и закрывают повязкой; чаще от четверти часа до часа, домой в тот же день",
+        "when": "Растущее или мешающее подкожное уплотнение, повторно воспаляющаяся атерома, трение об одежду, косметические причины, необходимость исследования ткани",
+        "prep": "Обычно достаточно осмотра хирурга; сказать о разжижающих кровь препаратах, аллергии на местные анестетики и склонности к грубым рубцам, не отменяя препараты самостоятельно",
+        "abnormal": "Удалённую ткань обычно отправляют на гистологическое исследование, и ответ разбирает врач. Сроки заживления зависят от объёма вмешательства, их называет хирург; нарастающая боль, покраснение, отделяемое из раны или температура — повод прийти раньше"
+      },
+      "en": {
+        "what": "Removal of a small lump under the skin together with its capsule, under local anaesthesia",
+        "how": "The skin is disinfected and numbed, the lump is freed through a small incision and taken out whole, the wound is closed with stitches and covered; usually between a quarter of an hour and an hour, with discharge the same day",
+        "when": "A growing or bothersome lump under the skin, a repeatedly inflamed sebaceous cyst, rubbing against clothing, cosmetic reasons, the need for a tissue examination",
+        "prep": "A surgical consultation is usually enough; mention blood-thinning medicines, allergy to local anaesthetics and a tendency to thick scars, without stopping any medicine yourself",
+        "abnormal": "The removed tissue is usually sent for histology and the report is explained by the doctor. Healing time depends on the extent of the procedure and is stated by the surgeon; increasing pain, redness, discharge from the wound or fever means you should be seen sooner"
+      },
+      "sr": {
+        "what": "Uklanjanje manje potkožne promjene zajedno sa njenom čahurom u lokalnoj anesteziji",
+        "how": "Koža se dezinfikuje i anestezira, promjena se kroz mali rez oslobodi i izvadi u cjelini, rana se ušije i previje; najčešće od petnaestak minuta do sat vremena, a kući se ide istog dana",
+        "when": "Potkožna kvržica koja raste ili smeta, ponavljano upaljen aterom, trenje o odjeću, estetski razlozi, potreba za histološkim pregledom",
+        "prep": "Obično je dovoljan pregled hirurga; navesti lijekove za razrjeđivanje krvi, alergiju na lokalne anestetike i sklonost zadebljalim ožiljcima, bez samostalnog prekidanja terapije",
+        "abnormal": "Uklonjeno tkivo se najčešće šalje na histologiju, a nalaz objašnjava ljekar. Trajanje zarastanja zavisi od obima zahvata i određuje ga hirurg; pojačan bol, crvenilo, sekret iz rane ili povišena temperatura znače da treba doći ranije"
+      },
+      "de": {
+        "what": "Entfernung einer kleinen Geschwulst unter der Haut samt Kapsel in örtlicher Betäubung",
+        "how": "Die Haut wird desinfiziert und betäubt, die Veränderung über einen kleinen Schnitt freigelegt und vollständig entfernt, die Wunde genäht und verbunden; meist eine Viertelstunde bis eine Stunde, Entlassung am selben Tag",
+        "when": "Wachsender oder störender Knoten unter der Haut, wiederholt entzündetes Atherom, Reibung an der Kleidung, kosmetische Gründe, notwendige Gewebeuntersuchung",
+        "prep": "Meist genügt ein chirurgisches Vorgespräch; Blutverdünner, Allergien gegen örtliche Betäubungsmittel und Neigung zu wulstigen Narben angeben, ohne Medikamente eigenmächtig abzusetzen",
+        "abnormal": "Das entnommene Gewebe geht in der Regel zur Histologie, den Befund erläutert die Ärztin oder der Arzt. Die Heilungsdauer hängt vom Umfang des Eingriffs ab und wird vom Operateur genannt; zunehmende Schmerzen, Rötung, Wundsekret oder Fieber erfordern eine frühere Kontrolle"
+      },
+      "tr": {
+        "what": "Cilt altındaki küçük bir oluşumun kapsülüyle birlikte lokal anestezi altında çıkarılması",
+        "how": "Cilt temizlenip uyuşturulur, oluşum küçük bir kesiden serbestleştirilerek bütün hâlinde alınır, yara dikilip kapatılır; genellikle on beş dakika ile bir saat arası sürer, aynı gün eve dönülür",
+        "when": "Büyüyen ya da rahatsızlık veren cilt altı şişlik, tekrar tekrar iltihaplanan aterom, giysiyle sürtünme, estetik nedenler, doku incelemesi gerekliliği",
+        "prep": "Genellikle cerrahi muayene yeterlidir; kan sulandırıcı ilaçları, lokal anestezik alerjisini ve kalın iz bırakma eğilimini bildirin, ilaçlarınızı kendi başınıza kesmeyin",
+        "abnormal": "Çıkarılan doku çoğunlukla patolojik incelemeye gönderilir, sonucu hekim açıklar. İyileşme süresi işlemin kapsamına bağlıdır ve süreyi cerrah söyler; artan ağrı, kızarıklık, yaradan akıntı ya da ateş varsa daha erken başvurmak gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање мање поткожне промјене заједно са њеном чахуром у локалној анестезији",
+        "how": "Кожа се дезинфикује и анестезира, промјена се кроз мали рез ослободи и извади у цјелини, рана се ушије и превије; најчешће од петнаестак минута до сат времена, а кући се иде истог дана",
+        "when": "Поткожна квржица која расте или смета, понављано упаљен атером, трење о одјећу, естетски разлози, потреба за хистолошким прегледом",
+        "prep": "Обично је довољан преглед хирурга; навести лијекове за разрјеђивање крви, алергију на локалне анестетике и склоност задебљалим ожиљцима, без самосталног прекидања терапије",
+        "abnormal": "Уклоњено ткиво се најчешће шаље на хистологију, а налаз објашњава љекар. Трајање зарастања зависи од обима захвата и одређује га хирург; појачан бол, црвенило, секрет из ране или повишена температура значе да треба доћи раније"
+      }
+    }
+  },
+  {
+    "slug": "cystoscopy-female",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Осмотр мочевого пузыря и мочеиспускательного канала у женщин тонким эндоскопом через уретру",
+        "how": "В канал вводят обезболивающий гель, затем проводят цистоскоп и наполняют пузырь стерильным раствором, чтобы осмотреть стенку; короткая женская уретра делает введение быстрым, сам осмотр обычно занимает несколько минут",
+        "when": "Кровь в моче, повторяющиеся инфекции мочевых путей, недержание мочи и подозрение на свищ, контроль после лечения опухоли пузыря, необъяснённые жалобы при мочеиспускании",
+        "prep": "Обычно требуется свежий анализ мочи, при активной инфекции осмотр откладывают; сказать об аллергии на анестетики и разжижающих кровь препаратах; при седации нужен сопровождающий, за руль в этот день не садятся",
+        "abnormal": "Увиденное врач описывает сразу, взятые биопсии оценивает лаборатория. Жжение и розоватая моча при первых мочеиспусканиях обычны; температура, сильная боль, яркая кровь со сгустками или невозможность помочиться требуют срочного осмотра"
+      },
+      "en": {
+        "what": "Inspection of the bladder and urethra in women with a thin endoscope passed through the urethra",
+        "how": "Anaesthetic gel is put into the urethra, the cystoscope is passed in and the bladder is filled with sterile fluid so the wall can be seen; the short female urethra makes insertion quick and the inspection itself usually takes a few minutes",
+        "when": "Blood in the urine, recurrent urinary infections, incontinence and suspected fistula, follow-up after treatment of a bladder tumour, unexplained symptoms when passing urine",
+        "prep": "A recent urine test is usually required and the examination is postponed during an active infection; report anaesthetic allergies and blood thinners; with sedation you need someone to accompany you and should not drive that day",
+        "abnormal": "The doctor describes what is seen straight away, while any biopsy is assessed in the laboratory. Burning and pink urine at the first few voids are usual; fever, severe pain, bright blood with clots or inability to pass urine needs urgent review"
+      },
+      "sr": {
+        "what": "Pregled mokraćne bešike i mokraćne cijevi kod žena tankim endoskopom kroz uretru",
+        "how": "U mokraćnu cijev se stavlja anestetički gel, uvodi se cistoskop i bešika se puni sterilnim rastvorom da bi se vidio zid; kratka ženska uretra čini uvođenje brzim, a sam pregled obično traje nekoliko minuta",
+        "when": "Krv u mokraći, ponavljane infekcije mokraćnih puteva, nekontrolisano mokrenje i sumnja na fistulu, kontrola poslije liječenja tumora bešike, nerazjašnjene tegobe pri mokrenju",
+        "prep": "Obično se traži svjež nalaz urina, a kod aktivne infekcije pregled se odlaže; prijaviti alergiju na anestetike i lijekove za razrjeđivanje krvi; uz sedaciju je potrebna pratnja i tog dana se ne vozi",
+        "abnormal": "Ljekar odmah opisuje viđeno, a uzorke biopsije procjenjuje laboratorija. Peckanje i ružičasta mokraća pri prvim mokrenjima su uobičajeni; povišena temperatura, jak bol, svježa krv sa ugrušcima ili nemogućnost mokrenja traže hitan pregled"
+      },
+      "de": {
+        "what": "Betrachtung von Blase und Harnröhre bei Frauen mit einem dünnen Endoskop über die Harnröhre",
+        "how": "Betäubungsgel wird in die Harnröhre gegeben, das Zystoskop eingeführt und die Blase mit steriler Lösung gefüllt, damit die Wand beurteilt werden kann; die kurze weibliche Harnröhre erlaubt ein zügiges Einführen, die Inspektion dauert meist wenige Minuten",
+        "when": "Blut im Urin, wiederkehrende Harnwegsinfekte, Inkontinenz und Verdacht auf eine Fistel, Kontrolle nach Behandlung eines Blasentumors, unklare Beschwerden beim Wasserlassen",
+        "prep": "Meist wird ein frischer Urinbefund verlangt, bei akuter Infektion wird verschoben; Allergien gegen Betäubungsmittel und Blutverdünner angeben; bei Sedierung ist eine Begleitperson nötig und an diesem Tag darf nicht gefahren werden",
+        "abnormal": "Die Ärztin oder der Arzt beschreibt den Befund sofort, Gewebeproben beurteilt das Labor. Brennen und rosafarbener Urin beim ersten Wasserlassen sind üblich; Fieber, starke Schmerzen, frisches Blut mit Gerinnseln oder Harnverhalt erfordern eine sofortige Kontrolle"
+      },
+      "tr": {
+        "what": "Kadınlarda mesane ve üretranın üretradan geçirilen ince bir endoskopla incelenmesi",
+        "how": "Üretraya uyuşturucu jel verilir, sistoskop ilerletilir ve duvarın görülebilmesi için mesane steril sıvıyla doldurulur; kadında üretra kısa olduğu için giriş hızlıdır, incelemenin kendisi genellikle birkaç dakika sürer",
+        "when": "İdrarda kan, tekrarlayan idrar yolu enfeksiyonları, idrar kaçırma ve fistül şüphesi, mesane tümörü tedavisi sonrası izlem, açıklanamayan işeme şikâyetleri",
+        "prep": "Genellikle yeni tarihli idrar tahlili istenir, aktif enfeksiyonda işlem ertelenir; anestezik alerjisini ve kan sulandırıcıları bildirin; sedasyon yapılacaksa refakatçi gerekir ve o gün araç kullanılmaz",
+        "abnormal": "Hekim gördüklerini hemen aktarır, biyopsi alınmışsa sonucu laboratuvar verir. İlk işemelerde yanma ve pembe idrar olağandır; ateş, şiddetli ağrı, pıhtılı taze kan veya idrar yapamama acil değerlendirme gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Преглед мокраћне бешике и мокраћне цијеви код жена танким ендоскопом кроз уретру",
+        "how": "У мокраћну цијев се ставља анестетички гел, уводи се цистоскоп и бешика се пуни стерилним раствором да би се видио зид; кратка женска уретра чини увођење брзим, а сам преглед обично траје неколико минута",
+        "when": "Крв у мокраћи, понављане инфекције мокраћних путева, неконтролисано мокрење и сумња на фистулу, контрола послије лијечења тумора бешике, неразјашњене тегобе при мокрењу",
+        "prep": "Обично се тражи свјеж налаз урина, а код активне инфекције преглед се одлаже; пријавити алергију на анестетике и лијекове за разрјеђивање крви; уз седацију је потребна пратња и тог дана се не вози",
+        "abnormal": "Љекар одмах описује виђено, а узорке биопсије процјењује лабораторија. Пецкање и ружичаста мокраћа при првим мокрењима су уобичајени; повишена температура, јак бол, свјежа крв са угрушцима или немогућност мокрења траже хитан преглед"
+      }
+    }
+  },
+  {
+    "slug": "cystoscopy-male",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Эндоскопический осмотр мочевого пузыря, простатического отдела и мочеиспускательного канала у мужчин",
+        "how": "После обезболивающего геля цистоскоп проводят по более длинному мужскому каналу мимо простаты в пузырь, который наполняют раствором; применяют гибкий или жёсткий прибор, при жёстком чаще используют седацию",
+        "when": "Кровь в моче, затруднённое мочеиспускание с подозрением на сужение канала или увеличенную простату, повторяющиеся инфекции, контроль после лечения опухоли пузыря, удаление стента",
+        "prep": "Нужен свежий анализ мочи, при активной инфекции осмотр переносят; сказать о разжижающих кровь препаратах и аллергии на анестетики, ничего не отменяя самостоятельно; при седации нужен сопровождающий",
+        "abnormal": "Найденное врач описывает сразу, материал биопсии оценивает лаборатория. Лёгкое жжение и следы крови при первых мочеиспусканиях обычны; температура, озноб, сгустки крови или задержка мочи требуют срочного обращения"
+      },
+      "en": {
+        "what": "Endoscopic inspection of the bladder, the prostatic part and the urethra itself in men",
+        "how": "After anaesthetic gel the cystoscope is guided along the longer male urethra past the prostate into the bladder, which is filled with fluid; a flexible or a rigid instrument is used, and the rigid one is more often done with sedation",
+        "when": "Blood in the urine, difficulty passing urine with suspected stricture or an enlarged prostate, recurrent infections, follow-up after treatment of a bladder tumour, stent removal",
+        "prep": "A fresh urine test is needed and the examination is postponed during an active infection; report blood thinners and anaesthetic allergies without stopping anything yourself; sedation requires someone to accompany you",
+        "abnormal": "Findings are described by the doctor right away and biopsies are assessed in the laboratory. Mild burning and traces of blood at the first voids are usual; fever, chills, blood clots or retention of urine call for urgent attention"
+      },
+      "sr": {
+        "what": "Endoskopski pregled bešike, prostatičnog dijela i same mokraćne cijevi kod muškaraca",
+        "how": "Poslije anestetičkog gela cistoskop se vodi kroz dužu mušku uretru pored prostate do bešike, koja se puni rastvorom; koristi se savitljiv ili kruti instrument, a uz kruti se češće daje sedacija",
+        "when": "Krv u mokraći, otežano mokrenje uz sumnju na suženje uretre ili uvećanu prostatu, ponavljane infekcije, kontrola poslije liječenja tumora bešike, vađenje stenta",
+        "prep": "Potreban je svjež nalaz urina, a kod aktivne infekcije pregled se odlaže; prijaviti lijekove za razrjeđivanje krvi i alergiju na anestetike, bez samostalnog prekidanja terapije; uz sedaciju je obavezna pratnja",
+        "abnormal": "Nalaz ljekar opisuje odmah, a biopsije procjenjuje laboratorija. Blago peckanje i tragovi krvi pri prvim mokrenjima su uobičajeni; povišena temperatura, drhtavica, ugrušci krvi ili zastoj mokraće traže hitno javljanje"
+      },
+      "de": {
+        "what": "Endoskopische Betrachtung von Blase, prostatischem Abschnitt und Harnröhre beim Mann",
+        "how": "Nach Betäubungsgel wird das Zystoskop durch die längere männliche Harnröhre an der Prostata vorbei in die mit Lösung gefüllte Blase geführt; verwendet wird ein flexibles oder ein starres Gerät, beim starren häufiger mit Sedierung",
+        "when": "Blut im Urin, erschwertes Wasserlassen mit Verdacht auf Verengung oder vergrößerte Prostata, wiederkehrende Infekte, Kontrolle nach Behandlung eines Blasentumors, Entfernung eines Stents",
+        "prep": "Ein frischer Urinbefund ist nötig, bei akuter Infektion wird verschoben; Blutverdünner und Allergien gegen Betäubungsmittel angeben, ohne etwas eigenmächtig abzusetzen; bei Sedierung ist eine Begleitperson Pflicht",
+        "abnormal": "Den Befund schildert die Ärztin oder der Arzt sofort, Proben beurteilt das Labor. Leichtes Brennen und Blutspuren beim ersten Wasserlassen sind üblich; Fieber, Schüttelfrost, Blutgerinnsel oder Harnverhalt erfordern sofortige Hilfe"
+      },
+      "tr": {
+        "what": "Erkeklerde mesanenin, üretranın prostat bölümünün ve üretranın endoskopla incelenmesi",
+        "how": "Uyuşturucu jelden sonra sistoskop, erkekteki daha uzun üretradan prostatın yanından geçirilerek sıvıyla doldurulan mesaneye ilerletilir; bükülebilir ya da sert cihaz kullanılır, sert cihazda daha sık sedasyon tercih edilir",
+        "when": "İdrarda kan, darlık ya da büyümüş prostat şüphesiyle zor işeme, tekrarlayan enfeksiyonlar, mesane tümörü tedavisi sonrası izlem, stent çıkarılması",
+        "prep": "Yeni tarihli idrar tahlili gerekir, aktif enfeksiyonda işlem ertelenir; kan sulandırıcıları ve anestezik alerjisini bildirin, ilaç kesmeye kendiniz karar vermeyin; sedasyon yapılacaksa refakatçi zorunludur",
+        "abnormal": "Bulguları hekim hemen aktarır, biyopsileri laboratuvar değerlendirir. İlk işemelerde hafif yanma ve kan izi olağandır; ateş, titreme, kan pıhtısı ya da idrar yapamama acil başvuru gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Ендоскопски преглед бешике, простатичног дијела и саме мокраћне цијеви код мушкараца",
+        "how": "Послије анестетичког гела цистоскоп се води кроз дужу мушку уретру поред простате до бешике, која се пуни раствором; користи се савитљив или крути инструмент, а уз крути се чешће даје седација",
+        "when": "Крв у мокраћи, отежано мокрење уз сумњу на сужење уретре или увећану простату, понављане инфекције, контрола послије лијечења тумора бешике, вађење стента",
+        "prep": "Потребан је свјеж налаз урина, а код активне инфекције преглед се одлаже; пријавити лијекове за разрјеђивање крви и алергију на анестетике, без самосталног прекидања терапије; уз седацију је обавезна пратња",
+        "abnormal": "Налаз љекар описује одмах, а биопсије процјењује лабораторија. Благо пецкање и трагови крви при првим мокрењима су уобичајени; повишена температура, дрхтавица, угрушци крви или застој мокраће траже хитно јављање"
+      }
+    }
+  },
+  {
+    "slug": "endotracheal-intubation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Введение дыхательной трубки в трахею, чтобы обеспечить проходимость дыхательных путей и искусственную вентиляцию",
+        "how": "Пациент уже спит под наркозом или находится в тяжёлом состоянии; анестезиолог ларингоскопом или видеоларингоскопом выводит гортань, проводит трубку между голосовыми связками, раздувает манжету и проверяет положение по дыханию и капнографии; сама манипуляция занимает считанные минуты",
+        "when": "Общий наркоз при операциях, остановка дыхания и тяжёлая дыхательная недостаточность, защита дыхательных путей при нарушении сознания, потребность в длительной искусственной вентиляции",
+        "prep": "Перед плановой операцией — голодная пауза по указанию анестезиолога, снять съёмные протезы и пирсинг; заранее сказать о шатающихся зубах, ограниченном открывании рта и подвижности шеи, аллергиях и прежних трудностях с наркозом. В экстренной ситуации подготовки нет",
+        "abnormal": "После извлечения трубки короткое время обычны боль в горле, осиплость и кашель. Нарастающая одышка, стойкая осиплость, шумное дыхание или кровь в мокроте требуют осмотра врача"
+      },
+      "en": {
+        "what": "Placing a breathing tube into the windpipe to keep the airway open and allow ventilation",
+        "how": "The patient is already asleep under anaesthesia or critically ill; the anaesthetist views the larynx with a laryngoscope or video laryngoscope, passes the tube between the vocal cords, inflates the cuff and confirms the position by breath sounds and capnography; the manoeuvre itself takes minutes",
+        "when": "General anaesthesia for surgery, respiratory arrest and severe respiratory failure, protection of the airway when consciousness is impaired, the need for prolonged mechanical ventilation",
+        "prep": "Before planned surgery, fasting as instructed by the anaesthetist and removal of dentures and piercings; mention loose teeth, limited mouth opening or neck movement, allergies and past difficulties with anaesthesia. In an emergency there is no preparation",
+        "abnormal": "After the tube is removed a sore throat, hoarse voice and cough are common for a short while. Increasing breathlessness, a voice that stays hoarse, noisy breathing or blood in the sputum should be checked by a doctor"
+      },
+      "sr": {
+        "what": "Postavljanje disajne cijevi u dušnik radi održavanja disajnog puta i vještačke ventilacije",
+        "how": "Pacijent je već uspavan u anesteziji ili je u teškom stanju; anesteziolog laringoskopom ili videolaringoskopom prikaže grkljan, provuče cijev između glasnica, napuni balončić i provjeri položaj po disanju i kapnografiji; sam zahvat traje svega nekoliko minuta",
+        "when": "Opšta anestezija pri operacijama, zastoj disanja i teška respiratorna insuficijencija, zaštita disajnog puta kod poremećaja svijesti, potreba za dugotrajnom vještačkom ventilacijom",
+        "prep": "Pred planiranu operaciju gladovanje po uputstvu anesteziologa, skidanje proteza i pirsinga; unaprijed reći za klimave zube, ograničeno otvaranje usta i pokretljivost vrata, alergije i ranije teškoće sa anestezijom. U hitnom slučaju pripreme nema",
+        "abnormal": "Poslije vađenja cijevi kratko su česti grebanje u grlu, promukao glas i kašalj. Pojačano gušenje, glas koji ostaje promukao, šumno disanje ili krv u iskašljaju treba da pogleda ljekar"
+      },
+      "de": {
+        "what": "Einlegen eines Beatmungsschlauchs in die Luftröhre, um den Atemweg zu sichern und die Beatmung zu ermöglichen",
+        "how": "Die Patientin oder der Patient ist bereits in Narkose oder kritisch krank; die Anästhesie stellt den Kehlkopf mit Laryngoskop oder Videolaryngoskop dar, führt den Tubus zwischen die Stimmbänder, blockt die Manschette und prüft die Lage über Atemgeräusch und Kapnographie; der Vorgang selbst dauert Minuten",
+        "when": "Vollnarkose bei Operationen, Atemstillstand und schweres Lungenversagen, Schutz der Atemwege bei Bewusstseinsstörung, Bedarf an längerer maschineller Beatmung",
+        "prep": "Vor geplanten Eingriffen Nüchternheit nach Vorgabe der Anästhesie, Zahnersatz und Piercings ablegen; lockere Zähne, eingeschränkte Mundöffnung oder Halsbeweglichkeit, Allergien und frühere Narkoseprobleme angeben. Im Notfall entfällt jede Vorbereitung",
+        "abnormal": "Nach dem Ziehen des Tubus sind Halsschmerzen, Heiserkeit und Husten für kurze Zeit üblich. Zunehmende Atemnot, anhaltende Heiserkeit, geräuschvolle Atmung oder Blut im Auswurf gehören ärztlich abgeklärt"
+      },
+      "tr": {
+        "what": "Hava yolunu açık tutmak ve solunumu desteklemek için soluk borusuna tüp yerleştirilmesi",
+        "how": "Hasta anestezi altında uyutulmuş ya da ağır durumdadır; anestezi hekimi laringoskop veya video laringoskopla gırtlağı görür, tüpü ses telleri arasından geçirir, kafı şişirir ve yerini solunum sesi ile kapnografiyle doğrular; işlemin kendisi birkaç dakika sürer",
+        "when": "Ameliyatlarda genel anestezi, solunum durması ve ağır solunum yetmezliği, bilinç bozukluğunda hava yolunun korunması, uzun süreli mekanik ventilasyon gereği",
+        "prep": "Planlı ameliyattan önce anestezi hekiminin belirttiği kadar aç kalmak, takma diş ve piercingleri çıkarmak; sallanan dişleri, ağız açıklığı ve boyun hareketi kısıtlılığını, alerjileri ve geçmiş anestezi güçlüklerini bildirmek. Acil durumda hazırlık yapılamaz",
+        "abnormal": "Tüp çıkarıldıktan sonra kısa süre boğaz ağrısı, ses kısıklığı ve öksürük sık görülür. Artan nefes darlığı, geçmeyen ses kısıklığı, gürültülü solunum ya da balgamda kan hekimce değerlendirilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Постављање дисајне цијеви у душник ради одржавања дисајног пута и вјештачке вентилације",
+        "how": "Пацијент је већ успаван у анестезији или је у тешком стању; анестезиолог ларингоскопом или видеоларингоскопом прикаже гркљан, провуче цијев између гласница, напуни балончић и провјери положај по дисању и капнографији; сам захват траје свега неколико минута",
+        "when": "Општа анестезија при операцијама, застој дисања и тешка респираторна инсуфицијенција, заштита дисајног пута код поремећаја свијести, потреба за дуготрајном вјештачком вентилацијом",
+        "prep": "Пред планирану операцију гладовање по упутству анестезиолога, скидање протеза и пирсинга; унапријед рећи за климаве зубе, ограничено отварање уста и покретљивост врата, алергије и раније тешкоће са анестезијом. У хитном случају припреме нема",
+        "abnormal": "Послије вађења цијеви кратко су чести гребање у грлу, промукао глас и кашаљ. Појачано гушење, глас који остаје промукао, шумно дисање или крв у искашљају треба да погледа љекар"
+      }
+    }
+  },
+  {
+    "slug": "gastric-lavage",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Промывание желудка через зонд для удаления его содержимого",
+        "how": "Зонд вводят через рот или нос, порциями вводят и выводят жидкость, пока промывные воды не станут чистыми, часть содержимого при необходимости сохраняют для анализа; всё под наблюдением врача с контролем дыхания",
+        "when": "Приём токсичного вещества незадолго до обращения, необходимость получить содержимое желудка для исследования, подготовка перед отдельными эндоскопическими вмешательствами по решению врача",
+        "prep": "Плановой подготовки нет, решение принимает врач по ситуации; важно сказать, что и когда было принято, назвать болезни пищевода, перенесённые операции на желудке и разжижающие кровь препараты. Вызывать рвоту или промывать желудок дома не рекомендуется",
+        "abnormal": "После процедуры часты першение в горле и тошнота, а нужны ли наблюдение и дальнейшее лечение — решает врач. Рвота с кровью, боль в груди или животе, затруднённое дыхание либо температура требуют немедленного осмотра"
+      },
+      "en": {
+        "what": "Washing out the stomach through a tube to remove its contents",
+        "how": "A tube is passed through the mouth or nose, fluid is instilled and withdrawn in portions until the returning fluid is clear, and part of the contents may be kept for analysis; all under medical supervision with the breathing watched",
+        "when": "Ingestion of a toxic substance a short time before arrival, the need to obtain stomach contents for testing, preparation before certain endoscopic procedures when a doctor decides so",
+        "prep": "There is no planned preparation, the doctor decides according to the situation; it is important to say what was taken and when, and to mention diseases of the oesophagus, previous stomach surgery and blood-thinning medicines. Inducing vomiting or washing out the stomach at home is not advised",
+        "abnormal": "A scratchy throat and nausea afterwards are common, and whether observation or further treatment is needed is decided by the doctor. Vomiting blood, chest or abdominal pain, difficulty breathing or fever requires immediate examination"
+      },
+      "sr": {
+        "what": "Ispiranje želuca preko sonde radi uklanjanja njegovog sadržaja",
+        "how": "Sonda se uvodi kroz usta ili nos, tečnost se u porcijama ubacuje i izvlači dok sadržaj ne postane bistar, a dio se po potrebi čuva za analizu; sve pod nadzorom ljekara uz praćenje disanja",
+        "when": "Uzimanje toksične materije kratko prije dolaska, potreba da se dobije želudačni sadržaj za ispitivanje, priprema pred pojedine endoskopske zahvate po odluci ljekara",
+        "prep": "Planske pripreme nema, ljekar odlučuje prema situaciji; važno je reći šta je i kada uzeto, navesti bolesti jednjaka, ranije operacije želuca i lijekove za razrjeđivanje krvi. Izazivanje povraćanja ili ispiranje želuca kod kuće se ne preporučuje",
+        "abnormal": "Poslije zahvata su česti grebanje u grlu i mučnina, a da li su potrebni posmatranje i dalje liječenje procjenjuje ljekar. Povraćanje krvi, bol u grudima ili trbuhu, otežano disanje ili povišena temperatura traže hitan pregled"
+      },
+      "de": {
+        "what": "Spülung des Magens über eine Sonde, um seinen Inhalt zu entfernen",
+        "how": "Eine Sonde wird über Mund oder Nase eingeführt, portionsweise Flüssigkeit eingebracht und wieder abgezogen, bis die Spülflüssigkeit klar ist, ein Teil des Inhalts kann für Untersuchungen aufbewahrt werden; alles unter ärztlicher Aufsicht mit Überwachung der Atmung",
+        "when": "Aufnahme einer giftigen Substanz kurz vor dem Eintreffen, notwendige Gewinnung von Mageninhalt für Untersuchungen, Vorbereitung vor bestimmten endoskopischen Eingriffen nach ärztlicher Entscheidung",
+        "prep": "Eine planbare Vorbereitung gibt es nicht, die Ärztin oder der Arzt entscheidet nach Lage; wichtig sind Angaben dazu, was wann eingenommen wurde, sowie zu Speiseröhrenerkrankungen, früheren Magenoperationen und Blutverdünnern. Erbrechen auslösen oder zu Hause spülen wird nicht empfohlen",
+        "abnormal": "Kratzen im Hals und Übelkeit danach sind häufig; ob eine Überwachung oder weitere Behandlung nötig ist, entscheidet die Ärztin oder der Arzt. Bluterbrechen, Brust- oder Bauchschmerzen, Atemnot oder Fieber erfordern eine sofortige Untersuchung"
+      },
+      "tr": {
+        "what": "Mide içeriğinin sonda yoluyla yıkanarak boşaltılması",
+        "how": "Ağız ya da burundan sonda yerleştirilir, sıvı bölümler hâlinde verilip geri alınır ve gelen sıvı berraklaşana dek sürdürülür, gerekirse içeriğin bir kısmı incelenmek üzere saklanır; tümü solunum izlenerek hekim gözetiminde yapılır",
+        "when": "Başvurudan kısa süre önce zehirli madde alınması, inceleme için mide içeriğinin elde edilmesi gereği, hekim kararıyla bazı endoskopik işlemler öncesi hazırlık",
+        "prep": "Planlı bir hazırlık yoktur, hekim duruma göre karar verir; neyin ne zaman alındığını söylemek, yemek borusu hastalıklarını, geçirilmiş mide ameliyatlarını ve kan sulandırıcı ilaçları bildirmek önemlidir. Evde kusturmak ya da mide yıkamak önerilmez",
+        "abnormal": "İşlemden sonra boğazda gıcık ve bulantı sık görülür; gözlem ya da ek tedavi gerekip gerekmediğine hekim karar verir. Kan kusma, göğüs veya karın ağrısı, solunum güçlüğü ya da ateş hemen değerlendirilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Испирање желуца преко сонде ради уклањања његовог садржаја",
+        "how": "Сонда се уводи кроз уста или нос, течност се у порцијама убацује и извлачи док садржај не постане бистар, а дио се по потреби чува за анализу; све под надзором љекара уз праћење дисања",
+        "when": "Узимање токсичне материје кратко прије доласка, потреба да се добије желудачни садржај за испитивање, припрема пред поједине ендоскопске захвате по одлуци љекара",
+        "prep": "Планске припреме нема, љекар одлучује према ситуацији; важно је рећи шта је и када узето, навести болести једњака, раније операције желуца и лијекове за разрјеђивање крви. Изазивање повраћања или испирање желуца код куће се не препоручује",
+        "abnormal": "Послије захвата су чести гребање у грлу и мучнина, а да ли су потребни посматрање и даље лијечење процјењује љекар. Повраћање крви, бол у грудима или трбуху, отежано дисање или повишена температура траже хитан преглед"
+      }
+    }
+  },
+  {
+    "slug": "incarcerated-hernia-reduction",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ручное возвращение ущемлённого содержимого грыжи обратно в брюшную полость",
+        "how": "Врач осматривает выпячивание и оценивает состояние тканей, при отсутствии противопоказаний мягким равномерным давлением возвращает содержимое на место, иногда после обезболивания; занимает несколько минут, после чего за пациентом наблюдают",
+        "when": "Внезапно переставшая вправляться и болезненная грыжа, нарастающее напряжение и боль над выпячиванием; при признаках нарушенного кровоснабжения вправление не делают, и хирург принимает решение в пользу операции",
+        "prep": "Подготовки нет, обращаться нужно сразу и не пытаться вправлять грыжу самостоятельно; до осмотра хирурга не есть и не пить, поскольку может понадобиться срочная операция",
+        "abnormal": "После удавшегося вправления боль обычно быстро стихает, за пациентом наблюдают и планируют операцию в срок, который называет хирург. Возврат боли, рвота, вздутие, отсутствие стула и газов, температура или покраснение над грыжей требуют немедленного осмотра"
+      },
+      "en": {
+        "what": "Manual repositioning of trapped hernia contents back into the abdominal cavity",
+        "how": "The doctor examines the swelling and assesses the tissue and, if nothing speaks against it, returns the contents with gentle steady pressure, sometimes after pain relief; it takes a few minutes and the patient is then observed",
+        "when": "A hernia that has suddenly become irreducible and painful, increasing tension and pain over the bulge; where the blood supply appears compromised the manoeuvre is not attempted and the surgeon decides in favour of an operation",
+        "prep": "There is no preparation, you should seek help at once and not try to push the hernia back yourself; do not eat or drink before the surgical review, as an urgent operation may be needed",
+        "abnormal": "After a successful reduction the pain usually settles quickly, the patient is observed and an operation is planned within a period the surgeon states. Returning pain, vomiting, bloating, no stool or gas, fever or redness over the hernia needs immediate examination"
+      },
+      "sr": {
+        "what": "Ručno vraćanje uklještenog sadržaja kile nazad u trbušnu duplju",
+        "how": "Ljekar pregleda izbočenje i procijeni stanje tkiva, pa uz odsustvo kontraindikacija nježnim, ravnomjernim pritiskom vraća sadržaj na mjesto, ponekad nakon davanja analgezije; traje nekoliko minuta, poslije čega se pacijent posmatra",
+        "when": "Kila koja je iznenada prestala da se vraća i postala bolna, rastuća napetost i bol iznad izbočenja; kada postoje znaci ugroženog krvotoka, repozicija se ne radi i hirurg odlučuje o operaciji",
+        "prep": "Pripreme nema, treba se javiti odmah i ne pokušavati vraćanje kile samostalno; do pregleda hirurga ne jesti i ne piti, jer može biti potrebna hitna operacija",
+        "abnormal": "Poslije uspjele repozicije bol obično brzo popušta, pacijent se posmatra i planira se operacija u roku koji određuje hirurg. Povratak bola, povraćanje, nadutost, izostanak stolice i gasova, temperatura ili crvenilo iznad kile traže hitan pregled"
+      },
+      "de": {
+        "what": "Manuelles Zurückverlagern eingeklemmten Bruchinhalts in die Bauchhöhle",
+        "how": "Die Ärztin oder der Arzt untersucht die Vorwölbung, beurteilt das Gewebe und bringt den Inhalt, wenn nichts dagegenspricht, mit sanftem gleichmäßigem Druck zurück, mitunter nach einer Schmerzgabe; wenige Minuten, danach wird überwacht",
+        "when": "Ein plötzlich nicht mehr zurückdrückbarer, schmerzhafter Bruch, zunehmende Spannung und Schmerz über der Vorwölbung; bei Zeichen einer gestörten Durchblutung wird nicht reponiert und die Chirurgie entscheidet für eine Operation",
+        "prep": "Es gibt keine Vorbereitung, man sollte sofort Hilfe suchen und den Bruch nicht selbst zurückdrücken; bis zur chirurgischen Beurteilung nichts essen und trinken, da eine dringende Operation nötig sein kann",
+        "abnormal": "Nach gelungener Reposition lassen die Schmerzen meist rasch nach, es wird überwacht und eine Operation in einem vom Chirurgen genannten Zeitraum geplant. Wiederkehrender Schmerz, Erbrechen, Blähbauch, fehlender Stuhl- und Windabgang, Fieber oder Rötung über dem Bruch erfordern eine sofortige Untersuchung"
+      },
+      "tr": {
+        "what": "Sıkışmış fıtık içeriğinin elle karın boşluğuna geri yerleştirilmesi",
+        "how": "Hekim şişliği muayene eder ve dokunun durumunu değerlendirir, engel yoksa yumuşak ve düzenli basınçla içeriği yerine gönderir, bazen ağrı kesici verdikten sonra; birkaç dakika sürer, ardından hasta gözlenir",
+        "when": "Aniden geri itilemez ve ağrılı hâle gelen fıtık, şişlik üzerinde artan gerginlik ve ağrı; dolaşımın bozulduğuna dair bulgu varsa redüksiyon denenmez ve cerrah ameliyat kararı verir",
+        "prep": "Hazırlık yoktur, hemen başvurmak ve fıtığı kendi başınıza itmeye çalışmamak gerekir; acil ameliyat gerekebileceği için cerrah değerlendirmesine kadar yiyip içmeyin",
+        "abnormal": "Başarılı redüksiyondan sonra ağrı genellikle hızla azalır, hasta gözlenir ve cerrahın belirlediği süre içinde ameliyat planlanır. Ağrının geri dönmesi, kusma, şişkinlik, gaita ve gaz çıkışının kesilmesi, ateş ya da fıtık üzerinde kızarıklık acil muayene gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Ручно враћање укљештеног садржаја киле назад у трбушну дупљу",
+        "how": "Љекар прегледа избочење и процијени стање ткива, па уз одсуство контраиндикација њежним, равномјерним притиском враћа садржај на мјесто, понекад након давања аналгезије; траје неколико минута, послије чега се пацијент посматра",
+        "when": "Кила која је изненада престала да се враћа и постала болна, растућа напетост и бол изнад избочења; када постоје знаци угроженог крвотока, репозиција се не ради и хирург одлучује о операцији",
+        "prep": "Припреме нема, треба се јавити одмах и не покушавати враћање киле самостално; до прегледа хирурга не јести и не пити, јер може бити потребна хитна операција",
+        "abnormal": "Послије успјеле репозиције бол обично брзо попушта, пацијент се посматра и планира се операција у року који одређује хирург. Повратак бола, повраћање, надутост, изостанак столице и гасова, температура или црвенило изнад киле траже хитан преглед"
+      }
+    }
+  },
+  {
+    "slug": "paraphimosis-reduction",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Возвращение крайней плоти, ущемившей головку полового члена, в нормальное положение",
+        "how": "Область обезболивают гелем или блокадой, отёк уменьшают равномерным сдавлением и холодом, затем врач мягким давлением переводит крайнюю плоть через головку; если это не удаётся, ущемляющее кольцо рассекают небольшим надрезом",
+        "when": "Крайняя плоть осталась за головкой и не возвращается, нарастают отёк, боль и изменение цвета головки, состояние после катетеризации или гигиенических манипуляций — обращаться нужно срочно",
+        "prep": "Подготовки нет, это неотложное состояние; не пытаться справиться дома, а врачу сказать об аллергии на анестетики и разжижающих кровь препаратах",
+        "abnormal": "После вправления отёк спадает постепенно, а уролог обсуждает плановое лечение, включая обрезание. Повторное ущемление, потемнение головки, усиление боли, температура или невозможность помочиться требуют срочного обращения"
+      },
+      "en": {
+        "what": "Returning a foreskin that has become trapped behind the glans to its normal position",
+        "how": "The area is numbed with gel or a local block, the swelling is reduced with steady compression and cooling, and the doctor then eases the foreskin back over the glans; if that fails, a small cut is made in the constricting ring",
+        "when": "A foreskin retracted behind the glans that will not come forward, increasing swelling, pain and colour change of the glans, a state that followed catheterisation or washing — attention must be sought urgently",
+        "prep": "No preparation, this is an emergency; do not try to manage it at home, and tell the doctor about allergies to anaesthetics and any blood-thinning medicines",
+        "abnormal": "After reduction the swelling settles gradually and the urologist discusses planned treatment, including circumcision. Recurrence, a darkening glans, worsening pain, fever or inability to pass urine requires urgent care"
+      },
+      "sr": {
+        "what": "Vraćanje kožice koja je uklještila glavić polnog organa u normalan položaj",
+        "how": "Predio se anestezira gelom ili blokom, otok se smanjuje ravnomjernim pritiskom i hlađenjem, a zatim ljekar nježnim pritiskom prevodi kožicu preko glavića; ako to ne uspije, stežući prsten se rasijeca malim rezom",
+        "when": "Kožica je zaostala iza glavića i ne vraća se, rastu otok, bol i promjena boje glavića, stanje poslije kateterizacije ili higijenskih postupaka — javiti se treba hitno",
+        "prep": "Pripreme nema, riječ je o hitnom stanju; ne pokušavati rješavati kod kuće, a ljekaru reći za alergiju na anestetike i lijekove za razrjeđivanje krvi",
+        "abnormal": "Poslije repozicije otok se postepeno povlači, a urolog razgovara o planiranom liječenju, uključujući obrezivanje. Ponovno uklještenje, tamnjenje glavića, jačanje bola, temperatura ili nemogućnost mokrenja traže hitno javljanje"
+      },
+      "de": {
+        "what": "Zurückbringen einer hinter der Eichel eingeklemmten Vorhaut in ihre normale Lage",
+        "how": "Der Bereich wird mit Gel oder einer Leitungsanästhesie betäubt, die Schwellung durch gleichmäßigen Druck und Kühlung verringert, dann schiebt die Ärztin oder der Arzt die Vorhaut behutsam über die Eichel zurück; gelingt das nicht, wird der einschnürende Ring mit einem kleinen Schnitt entlastet",
+        "when": "Hinter der Eichel zurückgebliebene Vorhaut, die sich nicht zurückstreifen lässt, zunehmende Schwellung, Schmerz und Farbveränderung der Eichel, Zustand nach Katheterisierung oder Reinigung — die Vorstellung muss sofort erfolgen",
+        "prep": "Keine Vorbereitung, es handelt sich um einen Notfall; nicht selbst zu Hause behandeln und Allergien gegen Betäubungsmittel sowie Blutverdünner mitteilen",
+        "abnormal": "Nach der Reposition geht die Schwellung allmählich zurück, die Urologie bespricht eine geplante Behandlung einschließlich Beschneidung. Erneute Einklemmung, dunkler werdende Eichel, stärkere Schmerzen, Fieber oder Harnverhalt erfordern sofortige Hilfe"
+      },
+      "tr": {
+        "what": "Glans arkasında sıkışıp kalan sünnet derisinin normal konumuna geri getirilmesi",
+        "how": "Bölge jel ya da blok anesteziyle uyuşturulur, şişlik düzenli baskı ve soğutmayla azaltılır, ardından hekim yumuşak baskıyla deriyi glansın üzerinden geri alır; bu başarısız olursa sıkıştıran halkaya küçük bir kesi yapılır",
+        "when": "Glans arkasında kalıp öne gelmeyen sünnet derisi, artan şişlik, ağrı ve glansın renk değiştirmesi, sonda takılması ya da temizlik sonrası gelişen durum — başvuru acil olmalıdır",
+        "prep": "Hazırlık yoktur, bu acil bir durumdur; evde çözmeye çalışmayın, anestezik alerjinizi ve kan sulandırıcı ilaçlarınızı hekime bildirin",
+        "abnormal": "Redüksiyondan sonra şişlik yavaş yavaş iner, ürolog sünnet dahil planlı tedaviyi değerlendirir. Durumun tekrarlaması, glansın kararması, ağrının artması, ateş ya da idrar yapamama acil başvuru gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Враћање кожице која је укљештила главић полног органа у нормалан положај",
+        "how": "Предио се анестезира гелом или блоком, оток се смањује равномјерним притиском и хлађењем, а затим љекар њежним притиском преводи кожицу преко главића; ако то не успије, стежући прстен се расијеца малим резом",
+        "when": "Кожица је заостала иза главића и не враћа се, расту оток, бол и промјена боје главића, стање послије катетеризације или хигијенских поступака — јавити се треба хитно",
+        "prep": "Припреме нема, ријеч је о хитном стању; не покушавати рјешавати код куће, а љекару рећи за алергију на анестетике и лијекове за разрјеђивање крви",
+        "abnormal": "Послије репозиције оток се постепено повлачи, а уролог разговара о планираном лијечењу, укључујући обрезивање. Поновно укљештење, тамњење главића, јачање бола, температура или немогућност мокрења траже хитно јављање"
+      }
+    }
+  },
+  {
+    "slug": "pleural-drainage",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Выведение воздуха или жидкости из плевральной полости через трубку, установленную между рёбрами",
+        "how": "Место выбирают по осмотру и УЗИ или рентгену, кожу обрабатывают и обезболивают, через небольшой разрез устанавливают дренаж и подключают к системе с клапаном или отсосом, положение проверяют снимком; установка занимает около получаса",
+        "when": "Жидкость в плевральной полости с одышкой, пневмоторакс, гной в плевральной полости, кровь после травмы груди, выведение большого выпота для анализа",
+        "prep": "Сказать о разжижающих кровь препаратах и нарушениях свёртывания, ничего не отменяя самостоятельно; понадобится свежий снимок или УЗИ, а во время установки просят не двигаться и дышать по команде",
+        "abnormal": "Полученную жидкость обычно отправляют на исследование, результат трактует врач, он же по контрольным снимкам решает, сколько дренаж остаётся. Нарастающая одышка, боль в груди, температура, кровь в системе или подтекание вокруг трубки — повод сразу позвать врача"
+      },
+      "en": {
+        "what": "Removal of air or fluid from the pleural cavity through a tube placed between the ribs",
+        "how": "The site is chosen by examination and ultrasound or X-ray, the skin is disinfected and numbed, the drain is placed through a small incision and connected to a valve or suction system, and the position is checked on a film; placement takes about half an hour",
+        "when": "Fluid in the pleural cavity causing breathlessness, pneumothorax, pus in the pleural cavity, blood after a chest injury, removal of a large effusion for analysis",
+        "prep": "Report blood-thinning medicines and clotting disorders without stopping anything yourself; a recent X-ray or ultrasound is needed, and during placement you are asked to keep still and breathe on command",
+        "abnormal": "The fluid obtained is usually sent for testing and the result is interpreted by the doctor, who also decides from control films how long the drain stays. Increasing breathlessness, chest pain, fever, blood in the system or leakage around the tube means calling the doctor at once"
+      },
+      "sr": {
+        "what": "Izvlačenje vazduha ili tečnosti iz pleuralne šupljine kroz cijev postavljenu između rebara",
+        "how": "Mjesto se bira pregledom i ultrazvukom ili rendgenom, koža se dezinfikuje i anestezira, kroz mali rez se plasira dren i spoji na sistem sa ventilom ili sukcijom, a položaj se provjerava snimkom; postavljanje traje oko pola sata",
+        "when": "Tečnost u pleuralnoj šupljini sa gušenjem, pneumotoraks, gnoj u pleuri, krv poslije povrede grudnog koša, izvlačenje većeg izliva radi analize",
+        "prep": "Prijaviti lijekove za razrjeđivanje krvi i poremećaje zgrušavanja, bez samostalnog prekidanja terapije; potreban je svjež snimak ili ultrazvuk, a tokom postavljanja se traži mirovanje i disanje po komandi",
+        "abnormal": "Dobijena tečnost se obično šalje na ispitivanje, a nalaz tumači ljekar, koji prema kontrolnim snimcima odlučuje i koliko dren ostaje. Pojačano gušenje, bol u grudima, temperatura, krv u sistemu ili curenje oko cijevi znače da odmah treba pozvati ljekara"
+      },
+      "de": {
+        "what": "Ableitung von Luft oder Flüssigkeit aus dem Pleuraraum über einen zwischen den Rippen eingelegten Schlauch",
+        "how": "Die Stelle wird über Untersuchung und Ultraschall oder Röntgen bestimmt, die Haut desinfiziert und betäubt, die Drainage über einen kleinen Schnitt eingelegt und an ein Ventil- oder Sogsystem angeschlossen, die Lage im Bild kontrolliert; das Einlegen dauert etwa eine halbe Stunde",
+        "when": "Flüssigkeit im Pleuraraum mit Atemnot, Pneumothorax, Eiter im Pleuraraum, Blut nach Brustkorbverletzung, Ablassen eines großen Ergusses zur Untersuchung",
+        "prep": "Blutverdünner und Gerinnungsstörungen angeben, ohne etwas eigenmächtig abzusetzen; ein aktuelles Röntgenbild oder ein Ultraschall wird benötigt, während des Einlegens soll man still liegen und auf Kommando atmen",
+        "abnormal": "Die gewonnene Flüssigkeit geht meist zur Untersuchung, den Befund beurteilt die Ärztin oder der Arzt und legt anhand von Kontrollbildern auch fest, wie lange die Drainage bleibt. Zunehmende Atemnot, Brustschmerz, Fieber, Blut im System oder Nässen um den Schlauch erfordern sofort ärztliche Hilfe"
+      },
+      "tr": {
+        "what": "Kaburgalar arasından yerleştirilen bir dren aracılığıyla plevra boşluğundaki hava ya da sıvının boşaltılması",
+        "how": "Giriş yeri muayene ve ultrason veya röntgenle belirlenir, cilt temizlenip uyuşturulur, küçük bir kesiden dren yerleştirilip valfli ya da aspirasyonlu sisteme bağlanır, konumu filmle doğrulanır; yerleştirme yaklaşık yarım saat sürer",
+        "when": "Nefes darlığı yapan plevral sıvı, pnömotoraks, plevrada iltihap birikimi, göğüs travması sonrası kan, incelenmek üzere büyük sıvı birikiminin boşaltılması",
+        "prep": "Kan sulandırıcı ilaçları ve pıhtılaşma sorunlarını bildirin, ilaçlarınızı kendiniz kesmeyin; yeni tarihli röntgen ya da ultrason gerekir, yerleştirme sırasında hareketsiz kalmanız ve komutla nefes almanız istenir",
+        "abnormal": "Alınan sıvı genellikle incelemeye gönderilir, sonucu hekim yorumlar ve kontrol filmlerine göre drenin ne kadar kalacağına da o karar verir. Artan nefes darlığı, göğüs ağrısı, ateş, sistemde kan ya da dren çevresinden sızıntı olursa hemen hekime haber verin"
+      },
+      "sr_cyrl": {
+        "what": "Извлачење ваздуха или течности из плеуралне шупљине кроз цијев постављену између ребара",
+        "how": "Мјесто се бира прегледом и ултразвуком или рендгеном, кожа се дезинфикује и анестезира, кроз мали рез се пласира дрен и споји на систем са вентилом или сукцијом, а положај се провјерава снимком; постављање траје око пола сата",
+        "when": "Течност у плеуралној шупљини са гушењем, пнеумоторакс, гној у плеури, крв послије повреде грудног коша, извлачење већег излива ради анализе",
+        "prep": "Пријавити лијекове за разрјеђивање крви и поремећаје згрушавања, без самосталног прекидања терапије; потребан је свјеж снимак или ултразвук, а током постављања се тражи мировање и дисање по команди",
+        "abnormal": "Добијена течност се обично шаље на испитивање, а налаз тумачи љекар, који према контролним снимцима одлучује и колико дрен остаје. Појачано гушење, бол у грудима, температура, крв у систему или цурење око цијеви значе да одмах треба позвати љекара"
+      }
+    }
+  },
+  {
+    "slug": "sputum-collection-for-cytology",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Сбор откашлянной мокроты, чтобы исследовать её клетки под микроскопом",
+        "how": "Пациент откашливает мокроту из глубины дыхательных путей прямо в стерильный контейнер, обычно несколько порций в разные дни; при сухом кашле образец получают после ингаляции физраствора",
+        "when": "Длительный кашель неясной причины, кровь в мокроте, изменения на снимке лёгких, наблюдение курильщиков с жалобами по назначению пульмонолога",
+        "prep": "Собирать утром натощак, почистив зубы и прополоскав рот водой без зубной пасты и ополаскивателя; нужна именно мокрота из лёгких, а не слюна, контейнер быстро доставить в лабораторию",
+        "abnormal": "Лаборатория описывает найденные клетки и признаки воспаления, а трактует ответ врач вместе с осмотром и снимками. По одному образцу выводы не делают, обычно исследуют несколько порций"
+      },
+      "en": {
+        "what": "Collection of coughed-up sputum so that its cells can be examined under a microscope",
+        "how": "The patient coughs sputum from deep in the airways straight into a sterile container, usually several samples on different days; with a dry cough the sample is obtained after inhaling saline",
+        "when": "A long-lasting cough of unclear cause, blood in the sputum, changes on a chest film, follow-up of smokers with symptoms as directed by a pulmonologist",
+        "prep": "Collect in the morning before eating, after brushing the teeth and rinsing the mouth with water without toothpaste or mouthwash; what is needed is sputum from the lungs and not saliva, and the container should reach the laboratory quickly",
+        "abnormal": "The laboratory describes the cells and signs of inflammation it finds, and the report is interpreted by the doctor together with the examination and imaging. Conclusions are not drawn from a single sample, several are usually examined"
+      },
+      "sr": {
+        "what": "Uzimanje iskašljanog sputuma radi pregleda njegovih ćelija pod mikroskopom",
+        "how": "Pacijent iskašljava sputum iz dubine disajnih puteva direktno u sterilnu posudu, obično nekoliko uzoraka različitih dana; kod suvog kašlja uzorak se dobija poslije inhalacije fiziološkog rastvora",
+        "when": "Dugotrajan kašalj nejasnog uzroka, krv u iskašljaju, promjene na snimku pluća, praćenje pušača sa tegobama po uputu pulmologa",
+        "prep": "Uzorak uzimati ujutro, natašte, nakon pranja zuba i ispiranja usta vodom bez paste i vodice za usta; potreban je sputum iz pluća, a ne pljuvačka, i posudu brzo dostaviti u laboratoriju",
+        "abnormal": "Laboratorija opisuje nađene ćelije i znakove upale, a nalaz tumači ljekar zajedno sa pregledom i snimcima. Zaključci se ne donose po jednom uzorku, obično se pregleda nekoliko"
+      },
+      "de": {
+        "what": "Gewinnung von abgehustetem Auswurf, damit dessen Zellen unter dem Mikroskop untersucht werden können",
+        "how": "Die Patientin oder der Patient hustet Sekret aus der Tiefe der Atemwege direkt in ein steriles Gefäß, meist mehrere Proben an verschiedenen Tagen; bei trockenem Husten wird die Probe nach Inhalation von Kochsalzlösung gewonnen",
+        "when": "Länger bestehender Husten unklarer Ursache, Blut im Auswurf, Veränderungen im Lungenbild, Verlaufskontrolle bei Rauchern mit Beschwerden auf pneumologische Anweisung",
+        "prep": "Morgens nüchtern sammeln, vorher Zähne putzen und den Mund mit Wasser ohne Zahnpasta und Mundspülung ausspülen; gebraucht wird Sekret aus der Lunge und kein Speichel, das Gefäß soll rasch ins Labor gelangen",
+        "abnormal": "Das Labor beschreibt die gefundenen Zellen und Entzündungszeichen, gedeutet wird der Befund von der Ärztin oder dem Arzt zusammen mit Untersuchung und Bildgebung. Aus einer einzelnen Probe wird kein Schluss gezogen, meist werden mehrere untersucht"
+      },
+      "tr": {
+        "what": "Hücrelerinin mikroskopta incelenebilmesi için öksürükle çıkarılan balgamın toplanması",
+        "how": "Hasta hava yollarının derininden gelen balgamı doğrudan steril kaba çıkarır, genellikle farklı günlerde birkaç örnek verilir; kuru öksürükte örnek serum fizyolojik inhalasyonundan sonra alınır",
+        "when": "Nedeni belirsiz uzun süreli öksürük, balgamda kan, akciğer filminde değişiklik, göğüs hastalıkları hekiminin yönlendirmesiyle şikâyeti olan sigara içenlerin izlemi",
+        "prep": "Örneği sabah aç karnına, dişleri fırçaladıktan ve ağzı diş macunu ile gargara kullanmadan suyla çalkaladıktan sonra verin; tükürük değil akciğerden gelen balgam gerekir, kap laboratuvara hızlıca ulaştırılmalıdır",
+        "abnormal": "Laboratuvar bulunan hücreleri ve iltihap belirtilerini tanımlar, sonucu muayene ve görüntülemeyle birlikte hekim yorumlar. Tek örnekten sonuç çıkarılmaz, genellikle birkaç örnek incelenir"
+      },
+      "sr_cyrl": {
+        "what": "Узимање искашљаног спутума ради прегледа његових ћелија под микроскопом",
+        "how": "Пацијент искашљава спутум из дубине дисајних путева директно у стерилну посуду, обично неколико узорака различитих дана; код сувог кашља узорак се добија послије инхалације физиолошког раствора",
+        "when": "Дуготрајан кашаљ нејасног узрока, крв у искашљају, промјене на снимку плућа, праћење пушача са тегобама по упуту пулмолога",
+        "prep": "Узорак узимати ујутро, наташте, након прања зуба и испирања уста водом без пасте и водице за уста; потребан је спутум из плућа, а не пљувачка, и посуду брзо доставити у лабораторију",
+        "abnormal": "Лабораторија описује нађене ћелије и знакове упале, а налаз тумачи љекар заједно са прегледом и снимцима. Закључци се не доносе по једном узорку, обично се прегледа неколико"
+      }
+    }
+  },
+  {
+    "slug": "tick-removal",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Извлечение присосавшегося клеща целиком с обработкой места укуса",
+        "how": "Клеща захватывают пинцетом или специальным крючком у самой кожи и вынимают равномерным движением, ранку осматривают на остатки ротового аппарата и обрабатывают антисептиком; дело нескольких минут",
+        "when": "Присосавшийся клещ, которого не удаётся снять дома, укус у ребёнка, укус на лице, шее или половых органах, оставшиеся в коже части клеща",
+        "prep": "Подготовки нет, лучше прийти поскорее; клеща не смазывать маслом, кремом или спиртом и не прижигать. Если он уже снят дома, принести его в закрытой ёмкости и назвать врачу дату и место укуса",
+        "abnormal": "Небольшое покраснение и зуд в точке укуса в первые дни обычны. Расширяющееся кольцевидное покраснение, температура, ломота, сыпь или увеличенные лимфоузлы в недели после укуса нужно показать врачу, он же решает вопрос о дальнейшем наблюдении"
+      },
+      "en": {
+        "what": "Extraction of an attached tick in one piece, with cleaning of the bite site",
+        "how": "The tick is gripped with forceps or a special hook right at the skin and drawn out with a steady movement, the wound is checked for remaining mouthparts and cleaned with antiseptic; a matter of minutes",
+        "when": "An attached tick that cannot be removed at home, a bite in a child, a bite on the face, neck or genitals, parts of a tick left in the skin",
+        "prep": "No preparation, it is better to come soon; do not cover the tick with oil, cream or alcohol and do not burn it. If it has already been removed at home, bring it in a closed container and give the doctor the date and place of the bite",
+        "abnormal": "Slight redness and itching at the bite in the first days are usual. Spreading ring-shaped redness, fever, aching, a rash or swollen lymph nodes in the weeks after the bite should be shown to a doctor, who also decides on any further follow-up"
+      },
+      "sr": {
+        "what": "Vađenje pripijenog krpelja u cjelini uz obradu mjesta uboda",
+        "how": "Krpelj se pincetom ili posebnom kukicom uhvati uz samu kožu i izvuče ravnomjernim pokretom, ranica se pregleda da nije ostao dio usnog aparata i obriše antiseptikom; traje svega nekoliko minuta",
+        "when": "Pripijen krpelj koji se ne može ukloniti kod kuće, ubod kod djeteta, ubod na licu, vratu ili polnim organima, dijelovi krpelja zaostali u koži",
+        "prep": "Pripreme nema, bolje je javiti se odmah; krpelja ne premazivati uljem, kremom ili alkoholom i ne paliti ga. Ako je već izvađen kod kuće, donijeti ga u zatvorenoj posudi i reći ljekaru datum i mjesto uboda",
+        "abnormal": "Blago crvenilo i svrab na mjestu uboda prvih dana su uobičajeni. Crvenilo koje se širi u obliku prstena, povišena temperatura, bolovi u tijelu, osip ili uvećani limfni čvorovi u nedjeljama poslije uboda treba da vidi ljekar, koji odlučuje i o daljem praćenju"
+      },
+      "de": {
+        "what": "Vollständiges Entfernen einer festgesaugten Zecke mit Versorgung der Einstichstelle",
+        "how": "Die Zecke wird mit Pinzette oder Spezialhaken direkt an der Haut gefasst und mit gleichmäßigem Zug herausgezogen, die Stelle auf verbliebene Mundwerkzeuge kontrolliert und desinfiziert; eine Sache von Minuten",
+        "when": "Festsitzende Zecke, die zu Hause nicht zu entfernen ist, Stich bei einem Kind, Stich im Gesicht, am Hals oder im Genitalbereich, in der Haut verbliebene Zeckenteile",
+        "prep": "Keine Vorbereitung, besser zeitnah kommen; die Zecke nicht mit Öl, Creme oder Alkohol bedecken und nicht verbrennen. Wurde sie bereits zu Hause entfernt, im geschlossenen Gefäß mitbringen und Datum sowie Ort des Stichs nennen",
+        "abnormal": "Leichte Rötung und Juckreiz an der Stelle in den ersten Tagen sind üblich. Eine sich ringförmig ausbreitende Rötung, Fieber, Gliederschmerzen, Ausschlag oder geschwollene Lymphknoten in den Wochen danach gehören ärztlich beurteilt, über das weitere Vorgehen entscheidet die Ärztin oder der Arzt"
+      },
+      "tr": {
+        "what": "Yapışmış kenenin bütün olarak çıkarılması ve ısırık yerinin bakımı",
+        "how": "Kene pens ya da özel kanca ile cilde en yakın yerden tutulup düzenli bir hareketle çekilir, ağız parçası kalmış mı diye bakılır ve bölge antiseptikle temizlenir; birkaç dakika sürer",
+        "when": "Evde çıkarılamayan yapışık kene, çocuktaki ısırık, yüz, boyun ya da genital bölgedeki ısırık, ciltte kalan kene parçaları",
+        "prep": "Hazırlık gerekmez, kısa sürede başvurmak daha iyidir; keneyi yağ, krem veya alkolle kaplamayın ve yakmayın. Kene evde çıkarıldıysa kapalı bir kapta getirin, ısırığın tarihini ve yerini hekime söyleyin",
+        "abnormal": "İlk günlerde ısırık yerinde hafif kızarıklık ve kaşıntı olağandır. Isırıktan sonraki haftalarda halka biçiminde yayılan kızarıklık, ateş, vücut ağrısı, döküntü ya da lenf bezi büyümesi hekime gösterilmelidir, sonraki izleme de hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Вађење припијеног крпеља у цјелини уз обраду мјеста убода",
+        "how": "Крпељ се пинцетом или посебном кукицом ухвати уз саму кожу и извуче равномјерним покретом, раница се прегледа да није остао дио усног апарата и обрише антисептиком; траје свега неколико минута",
+        "when": "Припијен крпељ који се не може уклонити код куће, убод код дјетета, убод на лицу, врату или полним органима, дијелови крпеља заостали у кожи",
+        "prep": "Припреме нема, боље је јавити се одмах; крпеља не премазивати уљем, кремом или алкохолом и не палити га. Ако је већ извађен код куће, донијети га у затвореној посуди и рећи љекару датум и мјесто убода",
+        "abnormal": "Благо црвенило и свраб на мјесту убода првих дана су уобичајени. Црвенило које се шири у облику прстена, повишена температура, болови у тијелу, осип или увећани лимфни чворови у недјељама послије убода треба да види љекар, који одлучује и о даљем праћењу"
+      }
+    }
+  },
+  {
+    "slug": "tuberculin-skin-test",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Внутрикожная проба с туберкулином, показывающая реакцию иммунитета на антигены туберкулёзной бактерии",
+        "how": "Тонкой иглой в кожу предплечья вводят небольшое количество туберкулина, образуется бледная папула; размер уплотнения врач измеряет линейкой на назначенном визите, обычно через двое-трое суток",
+        "when": "Контакт с больным туберкулёзом, проверка перед отдельными видами лечения и работы, обследование при длительном кашле или изменениях на снимке лёгких, осмотр детей по направлению",
+        "prep": "Специальной подготовки нет; место пробы не тереть, не расчёсывать, не заклеивать пластырем и не мазать ничем до осмотра; сказать врачу о недавних живых вакцинах, тяжёлых аллергиях и препаратах, подавляющих иммунитет",
+        "abnormal": "Результат оценивает только врач: он измеряет уплотнение и учитывает контакты, прививки и состояние иммунитета, а реакция может быть связана и с инфицированием, и с прежней вакцинацией. Выраженный отёк, пузырь или язвочка на месте пробы — повод прийти раньше"
+      },
+      "en": {
+        "what": "An intradermal test with tuberculin that shows how the immune system reacts to antigens of the tuberculosis bacterium",
+        "how": "A small amount of tuberculin is injected into the skin of the forearm with a fine needle, raising a pale wheal; the firm area is then measured with a ruler at the visit the doctor schedules, usually two to three days later",
+        "when": "Contact with a person ill with tuberculosis, screening before certain treatments and jobs, assessment of a long cough or changes on a chest film, examination of children on referral",
+        "prep": "No special preparation; do not rub or scratch the test site, do not cover it with a plaster and do not apply anything to it before the reading; tell the doctor about recent live vaccines, severe allergies and medicines that suppress the immune system",
+        "abnormal": "Only a doctor reads the result, measuring the firm swelling and taking contacts, vaccination and the state of the immune system into account, and a reaction may be linked both to infection and to an earlier vaccine. Marked swelling, a blister or a small ulcer at the site is a reason to come sooner"
+      },
+      "sr": {
+        "what": "Intradermalni test tuberkulinom koji pokazuje reakciju imuniteta na antigene bacila tuberkuloze",
+        "how": "Tankom iglom se u kožu podlaktice ubrizga mala količina tuberkulina i nastaje blijeda papula; veličinu očvrsnulog područja ljekar zatim izmjeri lenjirom na zakazanoj kontroli, obično poslije dva do tri dana",
+        "when": "Kontakt sa oboljelim od tuberkuloze, provjera pred pojedine terapije i poslove, obrada dugotrajnog kašlja ili promjena na snimku pluća, pregled djece po uputu",
+        "prep": "Posebna priprema nije potrebna; mjesto testa ne trljati, ne češati, ne lijepiti flasterom i ničim ne mazati do očitavanja; reći ljekaru za nedavne žive vakcine, teške alergije i lijekove koji potiskuju imunitet",
+        "abnormal": "Nalaz očitava isključivo ljekar, mjereći očvrsnuće i uzimajući u obzir kontakte, vakcinaciju i stanje imuniteta, a reakcija može biti povezana i sa infekcijom i sa ranijom vakcinom. Izražen otok, plik ili ranica na mjestu testa razlog su da se javite ranije"
+      },
+      "de": {
+        "what": "Intrakutaner Test mit Tuberkulin, der die Reaktion des Immunsystems auf Antigene des Tuberkulosebakteriums zeigt",
+        "how": "Mit einer feinen Nadel wird eine kleine Menge Tuberkulin in die Haut des Unterarms gespritzt, es entsteht eine blasse Quaddel; die Verhärtung wird beim vereinbarten Termin, meist nach zwei bis drei Tagen, mit dem Lineal gemessen",
+        "when": "Kontakt zu einer an Tuberkulose erkrankten Person, Untersuchung vor bestimmten Therapien und Tätigkeiten, Abklärung von langem Husten oder Veränderungen im Lungenbild, Untersuchung von Kindern auf Überweisung",
+        "prep": "Keine besondere Vorbereitung; die Teststelle nicht reiben oder kratzen, nicht mit Pflaster abdecken und bis zum Ablesen nichts darauf auftragen; kürzlich erhaltene Lebendimpfungen, schwere Allergien und Medikamente, die das Immunsystem unterdrücken, angeben",
+        "abnormal": "Das Ergebnis liest ausschließlich die Ärztin oder der Arzt ab, misst die Verhärtung und berücksichtigt Kontakte, Impfungen und den Zustand des Immunsystems, und eine Reaktion kann sowohl mit einer Ansteckung als auch mit einer früheren Impfung zusammenhängen. Starke Schwellung, eine Blase oder ein kleines Geschwür an der Stelle ist ein Grund, früher vorstellig zu werden"
+      },
+      "tr": {
+        "what": "Bağışıklık sisteminin tüberküloz basili antijenlerine verdiği yanıtı gösteren, cilt içine yapılan tüberkülin testi",
+        "how": "İnce bir iğneyle ön kol derisine az miktarda tüberkülin verilir ve soluk bir kabarıklık oluşur; sertleşen alanın büyüklüğü, hekimin verdiği randevuda, genellikle iki üç gün sonra cetvelle ölçülür",
+        "when": "Tüberkülozlu biriyle temas, bazı tedaviler ve işler öncesi tarama, uzun süren öksürüğün ya da akciğer filmindeki değişikliklerin araştırılması, sevkle gelen çocukların değerlendirilmesi",
+        "prep": "Özel hazırlık gerekmez; test yerini ovmayın, kaşımayın, flasterle kapatmayın ve okuma yapılana dek üzerine bir şey sürmeyin; yakın zamanda yapılan canlı aşıları, ağır alerjileri ve bağışıklığı baskılayan ilaçları hekime bildirin",
+        "abnormal": "Sonucu yalnızca hekim okur; sertliği ölçer, temas öyküsünü, aşıları ve bağışıklık durumunu birlikte değerlendirir, yanıt hem bulaşla hem de önceki aşıyla ilişkili olabilir. Belirgin şişlik, testin yerinde su toplaması veya yara erken başvuru nedenidir"
+      },
+      "sr_cyrl": {
+        "what": "Интрадермални тест туберкулином који показује реакцију имунитета на антигене бацила туберкулозе",
+        "how": "Танком иглом се у кожу подлактице убризга мала количина туберкулина и настаје блиједа папула; величину очврснулог подручја љекар затим измјери лењиром на заказаној контроли, обично послије два до три дана",
+        "when": "Контакт са обољелим од туберкулозе, провјера пред поједине терапије и послове, обрада дуготрајног кашља или промјена на снимку плућа, преглед дјеце по упуту",
+        "prep": "Посебна припрема није потребна; мјесто теста не трљати, не чешати, не лијепити фластером и ничим не мазати до очитавања; рећи љекару за недавне живе вакцине, тешке алергије и лијекове који потискују имунитет",
+        "abnormal": "Налаз очитава искључиво љекар, мјерећи очврснуће и узимајући у обзир контакте, вакцинацију и стање имунитета, а реакција може бити повезана и са инфекцијом и са ранијом вакцином. Изражен оток, плик или раница на мјесту теста разлог су да се јавите раније"
+      }
+    }
+  }
+]

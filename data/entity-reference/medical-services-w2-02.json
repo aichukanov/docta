@@ -1,0 +1,578 @@
+[
+  {
+    "slug": "dental-sinus-lift",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Операция наращивания кости в боковом отделе верхней челюсти: дно верхнечелюстной пазухи приподнимают, а освободившееся пространство заполняют костным материалом",
+        "how": "Под местной анестезией через небольшое окно в кости или через ложе будущего импланта приподнимают слизистую пазухи, вносят костнозамещающий материал и ушивают рану; 40–90 минут, имплант ставят сразу или после приживления материала",
+        "when": "Недостаточная высота кости для импланта в боковом отделе верхней челюсти, давняя потеря жевательных зубов с опустившимся дном пазухи, планирование имплантации по данным КТ",
+        "prep": "Сделать КТ челюстей, заранее пролечить воспаление пазухи и зубов, сообщить о хронических болезнях и препаратах (особенно разжижающих кровь), в день операции не планировать нагрузок и перелётов",
+        "abnormal": "Отёк щеки, синяк и заложенность носа в первые дни обычны, сморкаться и напрягаться нельзя. Кровотечение из носа, нарастающая боль, температура или гнойные выделения — повод обратиться к хирургу; приживление материала оценивают по контрольному снимку через несколько месяцев"
+      },
+      "en": {
+        "what": "A bone augmentation in the upper back jaw in which the floor of the maxillary sinus is lifted and the space created is filled with graft material",
+        "how": "Under local anaesthesia the sinus membrane is lifted through a small window in the bone or through the future implant site, graft material is placed and the wound is stitched; 40–90 minutes, with the implant placed at the same time or after the graft has healed",
+        "when": "Too little bone height for an implant in the upper back jaw, long-standing loss of chewing teeth with a dropped sinus floor, implant planning based on a CT scan",
+        "prep": "Have a CT scan of the jaws, treat any sinus or tooth infection first, report chronic conditions and medication (especially blood thinners), and avoid exertion and flights on the day of surgery",
+        "abnormal": "Cheek swelling, bruising and a blocked nose in the first days are common, and blowing the nose or straining should be avoided. Nosebleeds, increasing pain, fever or pus are reasons to contact the surgeon; graft healing is assessed on a follow-up X-ray a few months later"
+      },
+      "sr": {
+        "what": "Koštana augmentacija u bočnom dijelu gornje vilice kod koje se dno maksilarnog sinusa podiže, a dobijeni prostor popunjava koštanim materijalom",
+        "how": "U lokalnoj anesteziji sluzokoža sinusa se podigne kroz malo koštano prozorče ili kroz ležište budućeg implantata, unese se koštani nadomjestak i rana zašije; 40–90 minuta, implantat se ugrađuje istovremeno ili nakon srastanja materijala",
+        "when": "Nedovoljna visina kosti za implantat u bočnoj regiji gornje vilice, dugotrajan gubitak zuba za žvakanje sa spuštenim dnom sinusa, planiranje implantacije na osnovu skenera",
+        "prep": "Uraditi CT vilica, prethodno sanirati upalu sinusa i zuba, prijaviti hronične bolesti i lijekove (naročito one za razrjeđivanje krvi), na dan operacije izbjegavati napore i letove avionom",
+        "abnormal": "Otok obraza, modrica i zapušen nos prvih dana su uobičajeni, a šmrkanje i naprezanje treba izbjegavati. Krvarenje iz nosa, bol koji jača, temperatura ili gnojni iscjedak razlog su da se javite hirurgu; srastanje materijala procjenjuje se na kontrolnom snimku nakon nekoliko mjeseci"
+      },
+      "de": {
+        "what": "Ein Knochenaufbau im Seitenzahnbereich des Oberkiefers, bei dem der Boden der Kieferhöhle angehoben und der entstandene Raum mit Knochenersatzmaterial gefüllt wird",
+        "how": "In örtlicher Betäubung wird die Kieferhöhlenschleimhaut über ein kleines Knochenfenster oder über das spätere Implantatbett angehoben, Knochenersatzmaterial eingebracht und die Wunde vernäht; 40–90 Minuten, das Implantat wird gleichzeitig oder nach dem Einheilen gesetzt",
+        "when": "Zu geringe Knochenhöhe für ein Implantat im Oberkieferseitenzahnbereich, langer Zahnverlust mit abgesunkenem Kieferhöhlenboden, Implantatplanung anhand einer Schnittbildaufnahme",
+        "prep": "Eine CT-Aufnahme der Kiefer anfertigen lassen, Entzündungen der Kieferhöhle und der Zähne vorher behandeln, chronische Erkrankungen und Medikamente (besonders Blutverdünner) angeben und am Operationstag Anstrengung und Flugreisen vermeiden",
+        "abnormal": "Wangenschwellung, Blutergüsse und eine verstopfte Nase in den ersten Tagen sind üblich, Naseputzen und Pressen sollten unterbleiben. Nasenbluten, zunehmende Schmerzen, Fieber oder Eiter sind ein Grund, sich beim Chirurgen zu melden; das Einheilen wird nach einigen Monaten auf einem Kontrollröntgen beurteilt"
+      },
+      "tr": {
+        "what": "Üst çenenin arka bölgesinde, maksiller sinüs tabanının yükseltilip açılan boşluğun kemik greftiyle doldurulduğu bir kemik güçlendirme işlemi",
+        "how": "Lokal anestezi altında sinüs zarı kemikte açılan küçük bir pencereden ya da implant yuvasından yukarı kaldırılır, greft malzemesi yerleştirilir ve yara dikilir; 40–90 dakika sürer, implant aynı seansta ya da greft iyileştikten sonra yerleştirilir",
+        "when": "Üst çene arka bölgede implant için kemik yüksekliğinin yetersiz olması, çiğneme dişlerinin uzun süredir eksik olması ve sinüs tabanının alçalması, tomografiye dayalı implant planlaması",
+        "prep": "Çenelerin tomografisini çektirin, sinüs ve diş iltihaplarını önceden tedavi ettirin, kronik hastalıklarınızı ve ilaçlarınızı (özellikle kan sulandırıcıları) bildirin, ameliyat günü ağır efor ve uçuş planlamayın",
+        "abnormal": "İlk günlerde yanakta şişlik, morluk ve burun tıkanıklığı olağandır; burun silkmek ve ıkınmaktan kaçınılmalıdır. Burun kanaması, artan ağrı, ateş ya da iltihaplı akıntı cerraha başvurma nedenidir; greftin kaynaması birkaç ay sonraki kontrol röntgeniyle değerlendirilir"
+      },
+      "sr_cyrl": {
+        "what": "Коштана аугментација у бочном дијелу горње вилице код које се дно максиларног синуса подиже, а добијени простор попуњава коштаним материјалом",
+        "how": "У локалној анестезији слузокожа синуса се подигне кроз мало коштано прозорче или кроз лежиште будућег имплантата, унесе се коштани надомјестак и рана зашије; 40–90 минута, имплантат се уграђује истовремено или након срастања материјала",
+        "when": "Недовољна висина кости за имплантат у бочној регији горње вилице, дуготрајан губитак зуба за жвакање са спуштеним дном синуса, планирање имплантације на основу скенера",
+        "prep": "Урадити CT вилица, претходно санирати упалу синуса и зуба, пријавити хроничне болести и лијекове (нарочито оне за разрјеђивање крви), на дан операције избјегавати напоре и летове авионом",
+        "abnormal": "Оток образа, модрица и запушен нос првих дана су уобичајени, а шмркање и напрезање треба избјегавати. Крварење из носа, бол који јача, температура или гнојни исцједак разлог су да се јавите хирургу; срастање материјала процјењује се на контролном снимку након неколико мјесеци"
+      }
+    }
+  },
+  {
+    "slug": "extraction-of-semi-impacted-or-impacted-tooth",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Хирургическое удаление зуба, который не прорезался полностью или целиком остался в кости",
+        "how": "Под местной анестезией делают разрез десны, при необходимости убирают часть кости и распиливают зуб на фрагменты, рану промывают и ушивают; 30–60 минут, швы снимают примерно через неделю",
+        "when": "Ретинированные зубы мудрости с воспалением десневого капюшона или давлением на соседний зуб, непрорезавшиеся клыки и сверхкомплектные зубы, подготовка к ортодонтическому лечению, киста вокруг коронки непрорезавшегося зуба",
+        "prep": "Поесть перед визитом, принести панорамный снимок или КТ, сообщить о препаратах (особенно разжижающих кровь) и хронических болезнях, ближайшие дни оставить без тяжёлых нагрузок и перелётов",
+        "abnormal": "Отёк, ограниченное открывание рта и болезненность два-четыре дня ожидаемы. Боль, которая усиливается после третьего дня, неприятный запах из раны, температура или онемение губы — повод обратиться к хирургу раньше срока"
+      },
+      "en": {
+        "what": "Surgical removal of a tooth that has not erupted fully or has stayed entirely within the bone",
+        "how": "Under local anaesthesia the gum is incised, part of the bone is removed if needed and the tooth is sectioned into fragments, then the wound is rinsed and stitched; 30–60 minutes, sutures removed after about a week",
+        "when": "Impacted wisdom teeth with an inflamed gum flap or pressure on the neighbouring tooth, unerupted canines and supernumerary teeth, preparation for orthodontic treatment, a cyst around the crown of an unerupted tooth",
+        "prep": "Eat before the appointment, bring a panoramic X-ray or CT scan, report medication (especially blood thinners) and chronic conditions, and keep the following days free of heavy exertion and flights",
+        "abnormal": "Swelling, limited mouth opening and tenderness for two to four days are expected. Pain that increases after the third day, a bad smell from the wound, fever or numbness of the lip are reasons to contact the surgeon sooner"
+      },
+      "sr": {
+        "what": "Hirurško vađenje zuba koji nije potpuno iznikao ili je u cijelosti ostao u kosti",
+        "how": "U lokalnoj anesteziji napravi se rez desni, po potrebi se ukloni dio kosti i zub rasiječe na dijelove, a rana se ispere i zašije; 30–60 minuta, konci se skidaju nakon oko nedjelju dana",
+        "when": "Impaktirani umnjaci sa upalom sluzokožne kapuljače ili pritiskom na susjedni zub, neiznikli očnjaci i prekobrojni zubi, priprema za ortodontsku terapiju, cista oko krunice neizniklog zuba",
+        "prep": "Jesti prije dolaska, ponijeti panoramski snimak ili skener, prijaviti lijekove (naročito one za razrjeđivanje krvi) i hronične bolesti, a naredne dane ne planirati veće napore i letove",
+        "abnormal": "Otok, otežano otvaranje usta i osjetljivost dva do četiri dana su očekivani. Bol koji jača poslije trećeg dana, neprijatan miris iz rane, temperatura ili utrnulost usne razlog su da se ranije javite hirurgu"
+      },
+      "de": {
+        "what": "Operative Entfernung eines Zahns, der nicht vollständig durchgebrochen ist oder ganz im Knochen liegt",
+        "how": "In örtlicher Betäubung wird das Zahnfleisch eröffnet, bei Bedarf Knochen abgetragen und der Zahn in Teile zerlegt, danach wird die Wunde gespült und vernäht; 30–60 Minuten, Fäden werden nach etwa einer Woche gezogen",
+        "when": "Verlagerte Weisheitszähne mit entzündeter Schleimhautkapuze oder Druck auf den Nachbarzahn, nicht durchgebrochene Eckzähne und überzählige Zähne, Vorbereitung einer kieferorthopädischen Behandlung, Zyste um die Krone eines verlagerten Zahns",
+        "prep": "Vor dem Termin essen, Panoramaröntgen oder Schnittbild mitbringen, Medikamente (besonders Blutverdünner) und chronische Erkrankungen angeben und die nächsten Tage ohne starke Belastung und Flugreisen planen",
+        "abnormal": "Schwellung, eingeschränkte Mundöffnung und Druckempfindlichkeit über zwei bis vier Tage sind zu erwarten. Schmerzen, die nach dem dritten Tag zunehmen, schlechter Geruch aus der Wunde, Fieber oder ein taubes Lippengefühl sind Gründe, sich früher zu melden"
+      },
+      "tr": {
+        "what": "Tam olarak sürmemiş ya da bütünüyle kemik içinde kalmış bir dişin cerrahi olarak çıkarılması",
+        "how": "Lokal anestezi altında diş eti kesilir, gerekirse bir miktar kemik alınır ve diş parçalara ayrılır, ardından yara yıkanıp dikilir; 30–60 dakika sürer, dikişler yaklaşık bir hafta sonra alınır",
+        "when": "Diş eti kapağı iltihaplı ya da komşu dişe baskı yapan gömülü yirmi yaş dişleri, sürmemiş köpek dişleri ve fazladan dişler, ortodontik tedavi hazırlığı, sürmemiş dişin kronu çevresindeki kist",
+        "prep": "Randevudan önce yemek yiyin, panoramik röntgen ya da tomografi getirin, ilaçlarınızı (özellikle kan sulandırıcıları) ve kronik hastalıklarınızı bildirin, sonraki günlerde ağır efor ve uçuş planlamayın",
+        "abnormal": "İki ila dört gün şişlik, ağzı açmakta zorluk ve hassasiyet beklenir. Üçüncü günden sonra artan ağrı, yaradan kötü koku gelmesi, ateş ya da dudakta uyuşma cerraha erken başvuru nedenidir"
+      },
+      "sr_cyrl": {
+        "what": "Хируршко вађење зуба који није потпуно изникао или је у цијелости остао у кости",
+        "how": "У локалној анестезији направи се рез десни, по потреби се уклони дио кости и зуб расијече на дијелове, а рана се испере и зашије; 30–60 минута, конци се скидају након око недјељу дана",
+        "when": "Импактирани умњаци са упалом слузокожне капуљаче или притиском на сусједни зуб, неизникли очњаци и прекобројни зуби, припрема за ортодонтску терапију, циста око крунице неизниклог зуба",
+        "prep": "Јести прије доласка, понијети панорамски снимак или скенер, пријавити лијекове (нарочито оне за разрјеђивање крви) и хроничне болести, а наредне дане не планирати веће напоре и летове",
+        "abnormal": "Оток, отежано отварање уста и осјетљивост два до четири дана су очекивани. Бол који јача послије трећег дана, непријатан мирис из ране, температура или утрнулост усне разлог су да се раније јавите хирургу"
+      }
+    }
+  },
+  {
+    "slug": "extraoral-abscess-incision",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Вскрытие гнойного очага челюстно-лицевой области разрезом снаружи, со стороны кожи",
+        "how": "Под местным обезболиванием или седацией делают разрез кожи над очагом, полость опорожняют и промывают, оставляют дренаж; 15–40 минут, дренаж меняют и убирают на перевязках",
+        "when": "Абсцесс или флегмона лица и шеи, когда очаг недоступен изнутри рта, распространение зубной инфекции в мягкие ткани, нагноение после травмы или воспалённого лимфоузла",
+        "prep": "Чаще всего вмешательство экстренное и особой подготовки не требует; сообщить об аллергии на анестетики и антибиотики и о принимаемых лекарствах, при планируемой седации соблюдать указания врача о голодании",
+        "abnormal": "После вскрытия боль и температура обычно снижаются за один-два дня, по дренажу какое-то время идёт отделяемое. Сохраняющаяся лихорадка, растущий отёк, затруднённое глотание или дыхание требуют немедленной помощи; причину очага, чаще всего зуб, врач лечит отдельно"
+      },
+      "en": {
+        "what": "Opening a collection of pus in the face or neck through an incision made from the outside, on the skin",
+        "how": "Under local anaesthesia or sedation the skin over the collection is incised, the cavity is emptied and rinsed and a drain is left in place; 15–40 minutes, with the drain changed and removed at dressing visits",
+        "when": "An abscess or spreading infection of the face and neck when the focus cannot be reached from inside the mouth, dental infection that has spread into the soft tissues, pus after an injury or an inflamed lymph node",
+        "prep": "This is usually an urgent procedure with no special preparation; report anaesthetic and antibiotic allergies and current medication, and follow the fasting instructions if sedation is planned",
+        "abnormal": "Pain and fever usually settle within a day or two after drainage while some discharge continues through the drain. Persisting fever, growing swelling, difficulty swallowing or breathing need immediate care; the underlying cause, most often a tooth, is treated separately by the doctor"
+      },
+      "sr": {
+        "what": "Otvaranje gnojne kolekcije na licu ili vratu rezom sa spoljašnje strane, kroz kožu",
+        "how": "U lokalnoj anesteziji ili sedaciji napravi se rez na koži iznad kolekcije, šupljina se isprazni i ispere i ostavi se dren; 15–40 minuta, dren se mijenja i vadi na previjanju",
+        "when": "Apsces ili flegmona lica i vrata kada se žarište ne može dosegnuti iz usne duplje, širenje zubne infekcije u meka tkiva, gnojenje poslije povrede ili upale limfnog čvora",
+        "prep": "Najčešće je riječ o hitnoj intervenciji bez posebne pripreme; prijaviti alergije na anestetike i antibiotike i lijekove koje uzimate, a ako je planirana sedacija pridržavati se uputstva o gladovanju",
+        "abnormal": "Bol i temperatura obično popuste za dan ili dva, dok kroz dren još neko vrijeme ide sekret. Temperatura koja se održava, otok koji raste, otežano gutanje ili disanje traže hitnu pomoć; uzrok žarišta, najčešće zub, ljekar liječi posebno"
+      },
+      "de": {
+        "what": "Eröffnung einer Eiteransammlung im Gesicht oder am Hals über einen Schnitt von außen, durch die Haut",
+        "how": "In örtlicher Betäubung oder Sedierung wird die Haut über der Ansammlung eingeschnitten, die Höhle entleert und gespült und eine Drainage eingelegt; 15–40 Minuten, die Drainage wird beim Verbandwechsel gewechselt und entfernt",
+        "when": "Abszess oder Phlegmone im Gesicht und am Hals, wenn der Herd vom Mund aus nicht erreichbar ist, Ausbreitung einer Zahninfektion ins Weichgewebe, Eiterung nach einer Verletzung oder bei entzündetem Lymphknoten",
+        "prep": "Meist ein Notfalleingriff ohne besondere Vorbereitung; Allergien gegen Betäubungsmittel und Antibiotika sowie eingenommene Medikamente angeben und bei geplanter Sedierung die Nüchternheitsvorgaben einhalten",
+        "abnormal": "Schmerzen und Fieber lassen nach der Entlastung meist innerhalb von ein bis zwei Tagen nach, über die Drainage fließt noch eine Weile Sekret ab. Anhaltendes Fieber, zunehmende Schwellung, Schluck- oder Atembeschwerden erfordern sofortige Hilfe; die Ursache, meist ein Zahn, wird ärztlich gesondert behandelt"
+      },
+      "tr": {
+        "what": "Yüz veya boyundaki iltihap birikintisinin dışarıdan, deri üzerinden yapılan kesiyle boşaltılması",
+        "how": "Lokal anestezi ya da sedasyon altında birikintinin üzerindeki deri kesilir, boşluk boşaltılıp yıkanır ve dren yerleştirilir; 15–40 dakika sürer, dren pansumanlarda değiştirilir ve çıkarılır",
+        "when": "Odağa ağız içinden ulaşılamayan yüz ve boyun apsesi, diş kaynaklı enfeksiyonun yumuşak dokuya yayılması, yaralanma sonrası iltihaplanma ya da iltihaplı lenf bezi",
+        "prep": "Çoğunlukla acil bir işlemdir ve özel hazırlık gerektirmez; anestezik ve antibiyotik alerjilerinizi ve kullandığınız ilaçları bildirin, sedasyon planlanıyorsa hekimin açlık talimatına uyun",
+        "abnormal": "Boşaltmadan sonra ağrı ve ateş genellikle bir iki günde geriler, drenden bir süre akıntı gelmeye devam eder. Ateşin sürmesi, şişliğin büyümesi, yutma veya nefes almada zorluk acil başvuru gerektirir; odağın nedeni, çoğu kez bir diş, hekim tarafından ayrıca tedavi edilir"
+      },
+      "sr_cyrl": {
+        "what": "Отварање гнојне колекције на лицу или врату резом са спољашње стране, кроз кожу",
+        "how": "У локалној анестезији или седацији направи се рез на кожи изнад колекције, шупљина се испразни и испере и остави се дрен; 15–40 минута, дрен се мијења и вади на превијању",
+        "when": "Апсцес или флегмона лица и врата када се жариште не може досегнути из усне дупље, ширење зубне инфекције у мека ткива, гнојење послије повреде или упале лимфног чвора",
+        "prep": "Најчешће је ријеч о хитној интервенцији без посебне припреме; пријавити алергије на анестетике и антибиотике и лијекове које узимате, а ако је планирана седација придржавати се упутства о гладовању",
+        "abnormal": "Бол и температура обично попусте за дан или два, док кроз дрен још неко вријеме иде секрет. Температура која се одржава, оток који расте, отежано гутање или дисање траже хитну помоћ; узрок жаришта, најчешће зуб, љекар лијечи посебно"
+      }
+    }
+  },
+  {
+    "slug": "initial-dental-examination-and-medical-record-opening",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Первый приём с полным осмотром полости рта и заведением стоматологической карты пациента",
+        "how": "Врач записывает жалобы, перенесённые болезни, аллергии и принимаемые лекарства, осматривает каждый зуб, дёсны и прикус, вносит статус в карту и при необходимости направляет на снимок; 20–40 минут",
+        "when": "Первое обращение в клинику, смена стоматолога, плановый осмотр раз в шесть-двенадцать месяцев, начало планирования лечения или протезирования",
+        "prep": "Специальной подготовки нет: почистить зубы перед визитом и взять прежние снимки, выписки и список лекарств",
+        "abnormal": "По итогам осмотра в карте остаются план лечения и очерёдность вмешательств. Если между визитами появляются боль, кровоточивость дёсен или скол зуба, ждать планового контроля не нужно"
+      },
+      "en": {
+        "what": "A first appointment with a full examination of the mouth and the opening of a patient's dental record",
+        "how": "The dentist records complaints, past illnesses, allergies and medication, examines every tooth, the gums and the bite, notes the findings in the chart and orders an X-ray if needed; 20–40 minutes",
+        "when": "A first visit to a clinic, changing dentist, a routine check-up every six to twelve months, the start of treatment or prosthetic planning",
+        "prep": "No special preparation: brush your teeth before the visit and bring previous X-rays, reports and a list of medication",
+        "abnormal": "The examination ends with a treatment plan and the order of the steps recorded in the chart. If pain, bleeding gums or a chipped tooth appear between visits, there is no need to wait for the next scheduled check"
+      },
+      "sr": {
+        "what": "Prvi pregled sa potpunim uvidom u stanje usne duplje i otvaranjem stomatološkog kartona",
+        "how": "Stomatolog upiše tegobe, ranije bolesti, alergije i lijekove, pregleda svaki zub, desni i zagrižaj, unese nalaz u karton i po potrebi uputi na snimak; 20–40 minuta",
+        "when": "Prvi dolazak u ordinaciju, promjena stomatologa, redovna kontrola na šest do dvanaest mjeseci, početak planiranja liječenja ili protetike",
+        "prep": "Posebna priprema nije potrebna: oprati zube prije dolaska i ponijeti ranije snimke, nalaze i spisak lijekova",
+        "abnormal": "Nakon pregleda u kartonu ostaju plan liječenja i redoslijed intervencija. Ako se između posjeta jave bol, krvarenje desni ili odlom zuba, ne treba čekati redovnu kontrolu"
+      },
+      "de": {
+        "what": "Ein Ersttermin mit vollständiger Untersuchung der Mundhöhle und Anlegen der Patientenakte",
+        "how": "Beschwerden, frühere Erkrankungen, Allergien und Medikamente werden erfasst, jeder Zahn, das Zahnfleisch und der Biss untersucht, der Befund in der Karte dokumentiert und bei Bedarf ein Röntgenbild veranlasst; 20–40 Minuten",
+        "when": "Erster Besuch in einer Praxis, Zahnarztwechsel, Routinekontrolle alle sechs bis zwölf Monate, Beginn einer Behandlungs- oder Prothetikplanung",
+        "prep": "Keine besondere Vorbereitung: vor dem Termin Zähne putzen und frühere Röntgenbilder, Befunde und eine Medikamentenliste mitbringen",
+        "abnormal": "Am Ende der Untersuchung stehen Behandlungsplan und Reihenfolge der Schritte in der Akte. Treten zwischen den Terminen Schmerzen, Zahnfleischbluten oder ein abgebrochener Zahn auf, muss nicht bis zur nächsten Kontrolle gewartet werden"
+      },
+      "tr": {
+        "what": "Ağzın bütünüyle incelendiği ve hasta dosyasının açıldığı ilk muayene",
+        "how": "Hekim şikâyetleri, geçirilmiş hastalıkları, alerjileri ve kullanılan ilaçları kaydeder, her dişi, diş etlerini ve kapanışı inceler, bulguları dosyaya işler ve gerekirse röntgen ister; 20–40 dakika",
+        "when": "Kliniğe ilk başvuru, hekim değişikliği, altı ile on iki ayda bir yapılan rutin kontrol, tedavi ya da protez planlamasının başlangıcı",
+        "prep": "Özel bir hazırlık gerekmez: gelmeden önce dişlerinizi fırçalayın, önceki röntgenleri, raporları ve ilaç listenizi getirin",
+        "abnormal": "Muayene sonunda tedavi planı ve işlem sırası dosyaya kaydedilir. Randevular arasında ağrı, diş eti kanaması ya da kırık ortaya çıkarsa planlı kontrolü beklemek gerekmez"
+      },
+      "sr_cyrl": {
+        "what": "Први преглед са потпуним увидом у стање усне дупље и отварањем стоматолошког картона",
+        "how": "Стоматолог упише тегобе, раније болести, алергије и лијекове, прегледа сваки зуб, десни и загрижај, унесе налаз у картон и по потреби упути на снимак; 20–40 минута",
+        "when": "Први долазак у ординацију, промјена стоматолога, редовна контрола на шест до дванаест мјесеци, почетак планирања лијечења или протетике",
+        "prep": "Посебна припрема није потребна: опрати зубе прије доласка и понијети раније снимке, налазе и списак лијекова",
+        "abnormal": "Након прегледа у картону остају план лијечења и редослијед интервенција. Ако се између посјета јаве бол, крварење десни или одлом зуба, не треба чекати редовну контролу"
+      }
+    }
+  },
+  {
+    "slug": "pulp-capping-direct-or-indirect",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Защитная лечебная прокладка на дно глубокой полости, которая помогает сохранить живой нерв зуба",
+        "how": "Кариозные ткани убирают, на вскрытый (прямое) или истончённый (непрямое) слой над пульпой кладут материал на основе кальция или биокерамики и закрывают пломбой; 20–40 минут",
+        "when": "Глубокий кариес близко к нерву, случайное вскрытие рога пульпы при препарировании, скол коронки с обнажением пульпы у молодого зуба, попытка обойтись без лечения каналов",
+        "prep": "Специальной подготовки нет; сказать врачу, болел ли зуб самопроизвольно или ночью — от этого зависит выбор метода",
+        "abnormal": "Чувствительность к холодному и при накусывании в первые недели обычна и постепенно уходит. Самопроизвольная или ночная боль и отёк десны говорят о том, что нерв сохранить не удалось, и требуют повторного визита; состояние зуба врач контролирует на приёме и по снимку"
+      },
+      "en": {
+        "what": "A protective medicated lining placed over the floor of a deep cavity to help keep the tooth's nerve alive",
+        "how": "Decay is removed and a calcium- or bioceramic-based material is placed on the exposed (direct) or thinned (indirect) layer over the pulp, then covered with a filling; 20–40 minutes",
+        "when": "Deep decay close to the nerve, an accidental exposure of a pulp horn while drilling, a crown fracture exposing the pulp in a young tooth, an attempt to avoid root canal treatment",
+        "prep": "No special preparation; tell the dentist whether the tooth has ached spontaneously or at night, as this guides the choice of method",
+        "abnormal": "Sensitivity to cold and on biting during the first weeks is usual and gradually fades. Spontaneous or night pain and gum swelling suggest the nerve has not survived and call for another visit; the tooth is monitored at check-ups and on X-rays"
+      },
+      "sr": {
+        "what": "Zaštitni ljekoviti sloj koji se postavlja na dno dubokog kaviteta kako bi zub zadržao živi nerv",
+        "how": "Karijesno tkivo se ukloni, pa se na otvoreni (direktno) ili istanjeni (indirektno) sloj iznad pulpe stavi materijal na bazi kalcijuma ili biokeramike i sve prekrije plombom; 20–40 minuta",
+        "when": "Duboki karijes blizu nerva, slučajno otvaranje roga pulpe pri brušenju, odlom krunice sa otkrivenom pulpom kod mladog zuba, pokušaj da se izbjegne liječenje kanala",
+        "prep": "Posebna priprema nije potrebna; reći stomatologu da li je zub bolio spontano ili noću, jer od toga zavisi izbor metode",
+        "abnormal": "Osjetljivost na hladno i pri zagrizu u prvim nedjeljama je uobičajena i postepeno prolazi. Spontana ili noćna bol i otok desni znak su da nerv nije sačuvan i razlog za novu posjetu; stanje zuba stomatolog prati na pregledu i na snimku"
+      },
+      "de": {
+        "what": "Eine schützende medikamentöse Unterfüllung auf dem Boden einer tiefen Kavität, die den Zahnnerv erhalten helfen soll",
+        "how": "Die Karies wird entfernt und ein Material auf Kalzium- oder Biokeramikbasis auf die freiliegende (direkt) oder verbliebene dünne Schicht über der Pulpa (indirekt) aufgebracht und mit einer Füllung abgedeckt; 20–40 Minuten",
+        "when": "Tiefe Karies nahe am Nerv, versehentliche Eröffnung eines Pulpahorns beim Bohren, Kronenfraktur mit freiliegender Pulpa bei einem jungen Zahn, Versuch, eine Wurzelbehandlung zu vermeiden",
+        "prep": "Keine besondere Vorbereitung; dem Zahnarzt mitteilen, ob der Zahn spontan oder nachts geschmerzt hat, davon hängt die Methodenwahl ab",
+        "abnormal": "Empfindlichkeit auf Kälte und beim Zubeißen ist in den ersten Wochen üblich und lässt allmählich nach. Spontane oder nächtliche Schmerzen und eine Zahnfleischschwellung sprechen dafür, dass der Nerv nicht erhalten blieb, und erfordern einen weiteren Termin; der Zahn wird bei Kontrollen und auf dem Röntgenbild überwacht"
+      },
+      "tr": {
+        "what": "Dişin canlı sinirini korumaya yardımcı olmak için derin kavitenin tabanına konulan koruyucu ilaçlı örtü",
+        "how": "Çürük doku temizlenir, pulpa üzerindeki açılmış (direkt) ya da incelmiş (indirekt) tabakaya kalsiyum veya biyoseramik esaslı malzeme konur ve üzeri dolguyla kapatılır; 20–40 dakika",
+        "when": "Sinire yakın derin çürük, kavite açarken pulpa boynuzunun istemeden açılması, genç bir dişte pulpayı açığa çıkaran kron kırığı, kanal tedavisinden kaçınma girişimi",
+        "prep": "Özel hazırlık gerekmez; dişin kendiliğinden ya da geceleri ağrıyıp ağrımadığını hekime söyleyin, yöntem seçimi buna göre yapılır",
+        "abnormal": "İlk haftalarda soğuğa ve ısırmaya karşı hassasiyet olağandır ve giderek azalır. Kendiliğinden ya da gece gelen ağrı ve diş etinde şişlik sinirin korunamadığını düşündürür ve yeni bir randevu gerektirir; diş, kontrollerde ve röntgende izlenir"
+      },
+      "sr_cyrl": {
+        "what": "Заштитни љековити слој који се поставља на дно дубоког кавитета како би зуб задржао живи нерв",
+        "how": "Каријесно ткиво се уклони, па се на отворени (директно) или истањени (индиректно) слој изнад пулпе стави материјал на бази калцијума или биокерамике и све прекрије пломбом; 20–40 минута",
+        "when": "Дубоки каријес близу нерва, случајно отварање рога пулпе при брушењу, одлом крунице са откривеном пулпом код младог зуба, покушај да се избјегне лијечење канала",
+        "prep": "Посебна припрема није потребна; рећи стоматологу да ли је зуб болио спонтано или ноћу, јер од тога зависи избор методе",
+        "abnormal": "Осјетљивост на хладно и при загризу у првим недјељама је уобичајена и постепено пролази. Спонтана или ноћна бол и оток десни знак су да нерв није сачуван и разлог за нову посјету; стање зуба стоматолог прати на прегледу и на снимку"
+      }
+    }
+  },
+  {
+    "slug": "root-canal-treatment-first-root",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Очистка, дезинфекция и пломбирование первого корневого канала зуба",
+        "how": "Под анестезией зуб изолируют, вскрывают полость, убирают воспалённую или погибшую пульпу, канал проходят инструментами на рабочую длину, промывают и заполняют пломбировочным материалом; 40–60 минут, обычно с контрольным снимком",
+        "when": "Пульпит или воспаление у верхушки корня однокорневого зуба (резец, клык), травма с обнажением пульпы, подготовка зуба под штифт и коронку",
+        "prep": "Поесть перед визитом, принести прежние снимки, сообщить об аллергии на анестетики и хронических болезнях",
+        "abnormal": "Чувствительность при накусывании несколько дней после пломбирования канала обычна. Нарастающая боль, отёк или температура — повод прийти раньше; результат проверяют по контрольному снимку"
+      },
+      "en": {
+        "what": "Cleaning, disinfecting and filling of the first root canal of a tooth",
+        "how": "Under anaesthesia the tooth is isolated, the pulp chamber opened, inflamed or dead pulp removed, the canal shaped with files to working length, rinsed and sealed with filling material; 40–60 minutes, usually with a check X-ray",
+        "when": "Pulpitis or inflammation at the root tip of a single-rooted tooth such as an incisor or canine, injury exposing the pulp, preparing a tooth for a post and crown",
+        "prep": "Eat before the appointment, bring earlier X-rays, and report anaesthetic allergies and chronic conditions",
+        "abnormal": "Tenderness on biting for a few days after the canal is filled is usual. Increasing pain, swelling or fever are reasons to come back sooner; the result is checked on a follow-up X-ray"
+      },
+      "sr": {
+        "what": "Čišćenje, dezinfekcija i punjenje prvog korijenskog kanala zuba",
+        "how": "U anesteziji se zub izoluje, otvori se komora, ukloni upaljena ili odumrla pulpa, kanal se instrumentima obradi do radne dužine, ispere i napuni materijalom za zaptivanje; 40–60 minuta, obično uz kontrolni snimak",
+        "when": "Pulpitis ili upala oko vrha korijena jednokorijenog zuba (sjekutić, očnjak), povreda sa otkrivenom pulpom, priprema zuba za kočić i krunicu",
+        "prep": "Jesti prije dolaska, ponijeti ranije snimke, prijaviti alergiju na anestetike i hronične bolesti",
+        "abnormal": "Osjetljivost pri zagrizu nekoliko dana nakon punjenja kanala je uobičajena. Bol koji jača, otok ili temperatura razlog su za raniji dolazak; ishod se provjerava na kontrolnom snimku"
+      },
+      "de": {
+        "what": "Reinigung, Desinfektion und Füllung des ersten Wurzelkanals eines Zahns",
+        "how": "In Betäubung wird der Zahn isoliert, die Pulpakammer eröffnet, entzündetes oder abgestorbenes Gewebe entfernt, der Kanal mit Feilen auf Arbeitslänge aufbereitet, gespült und dicht gefüllt; 40–60 Minuten, meist mit Kontrollröntgen",
+        "when": "Pulpitis oder Entzündung an der Wurzelspitze eines einwurzeligen Zahns (Schneidezahn, Eckzahn), Verletzung mit freiliegender Pulpa, Vorbereitung des Zahns für Stift und Krone",
+        "prep": "Vor dem Termin essen, frühere Röntgenbilder mitbringen und Allergien gegen Betäubungsmittel sowie chronische Erkrankungen angeben",
+        "abnormal": "Druckempfindlichkeit beim Zubeißen über einige Tage nach der Kanalfüllung ist üblich. Zunehmende Schmerzen, Schwellung oder Fieber sind Gründe, früher wiederzukommen; das Ergebnis wird auf einem Kontrollröntgen überprüft"
+      },
+      "tr": {
+        "what": "Dişin birinci kök kanalının temizlenmesi, dezenfekte edilmesi ve doldurulması",
+        "how": "Anestezi altında diş izole edilir, pulpa odası açılır, iltihaplı ya da ölmüş doku çıkarılır, kanal eğelerle çalışma boyuna kadar şekillendirilir, yıkanır ve sızdırmaz malzemeyle doldurulur; 40–60 dakika, genellikle kontrol röntgeniyle",
+        "when": "Tek köklü bir dişte (kesici, köpek dişi) pulpa ya da kök ucu iltihabı, pulpayı açığa çıkaran travma, dişin post ve kron için hazırlanması",
+        "prep": "Randevudan önce yemek yiyin, önceki röntgenleri getirin, anestezik alerjinizi ve kronik hastalıklarınızı bildirin",
+        "abnormal": "Kanal dolumundan sonra birkaç gün ısırırken hassasiyet olağandır. Artan ağrı, şişlik ya da ateş daha erken başvuru nedenidir; sonuç kontrol röntgeniyle değerlendirilir"
+      },
+      "sr_cyrl": {
+        "what": "Чишћење, дезинфекција и пуњење првог коријенског канала зуба",
+        "how": "У анестезији се зуб изолује, отвори се комора, уклони упаљена или одумрла пулпа, канал се инструментима обради до радне дужине, испере и напуни материјалом за заптивање; 40–60 минута, обично уз контролни снимак",
+        "when": "Пулпитис или упала око врха коријена једнокоријеног зуба (сјекутић, очњак), повреда са откривеном пулпом, припрема зуба за кочић и круницу",
+        "prep": "Јести прије доласка, понијети раније снимке, пријавити алергију на анестетике и хроничне болести",
+        "abnormal": "Осјетљивост при загризу неколико дана након пуњења канала је уобичајена. Бол који јача, оток или температура разлог су за ранији долазак; исход се провјерава на контролном снимку"
+      }
+    }
+  },
+  {
+    "slug": "root-canal-treatment-second-root",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обработка второго корневого канала многокорневого зуба, которая считается дополнительно к первому каналу",
+        "how": "В то же посещение врач находит устье второго канала, проходит его инструментами, промывает и пломбирует вместе с остальными; удлиняет приём примерно на 20–30 минут",
+        "when": "Лечение премоляров и других зубов с двумя каналами, пульпит или воспаление у верхушки корня многокорневого зуба, повторное открытие зуба с ранее не пройденным каналом",
+        "prep": "Отдельной подготовки нет: работа идёт в рамках того же визита, что и первый канал",
+        "abnormal": "Ноющая чувствительность и дискомфорт при накусывании несколько дней ожидаемы. Если боль усиливается или появляются отёк и свищ на десне, нужен внеплановый осмотр; плотность пломбирования каналов проверяют по снимку"
+      },
+      "en": {
+        "what": "Treatment of the second root canal in a multi-rooted tooth, counted in addition to the first canal",
+        "how": "In the same appointment the dentist locates the orifice of the second canal, shapes it with files, rinses and fills it together with the others; adds roughly 20–30 minutes to the visit",
+        "when": "Treatment of premolars and other teeth with two canals, pulpitis or inflammation at the root tip of a multi-rooted tooth, reopening a tooth where a canal was left untreated",
+        "prep": "No separate preparation: the work is done within the same visit as the first canal",
+        "abnormal": "Dull sensitivity and discomfort on biting for a few days are expected. If pain increases or swelling or a gum fistula appears, an unscheduled visit is needed; how completely the canals are filled is checked on an X-ray"
+      },
+      "sr": {
+        "what": "Obrada drugog korijenskog kanala u višekorijenom zubu, koja se računa uz prvi kanal",
+        "how": "U istoj posjeti stomatolog pronađe ušće drugog kanala, obradi ga instrumentima, ispere i napuni zajedno sa ostalima; produžava pregled za otprilike 20–30 minuta",
+        "when": "Liječenje pretkutnjaka i drugih zuba sa dva kanala, pulpitis ili upala oko vrha korijena višekorijenog zuba, ponovno otvaranje zuba u kojem kanal ranije nije obrađen",
+        "prep": "Posebna priprema nije potrebna: radi se u okviru iste posjete kao i prvi kanal",
+        "abnormal": "Tupa osjetljivost i nelagoda pri zagrizu nekoliko dana su očekivani. Ako bol jača ili se jave otok i fistula na desni, potreban je vanredni pregled; zaptivenost kanala provjerava se na snimku"
+      },
+      "de": {
+        "what": "Aufbereitung des zweiten Wurzelkanals eines mehrwurzeligen Zahns, die zusätzlich zum ersten Kanal berechnet wird",
+        "how": "Im selben Termin wird der Eingang des zweiten Kanals aufgesucht, der Kanal mit Feilen aufbereitet, gespült und zusammen mit den übrigen gefüllt; verlängert den Termin um etwa 20–30 Minuten",
+        "when": "Behandlung von Prämolaren und anderen Zähnen mit zwei Kanälen, Pulpitis oder Entzündung an der Wurzelspitze eines mehrwurzeligen Zahns, erneutes Öffnen eines Zahns mit zuvor unbehandeltem Kanal",
+        "prep": "Keine gesonderte Vorbereitung: die Behandlung erfolgt im selben Termin wie beim ersten Kanal",
+        "abnormal": "Dumpfe Empfindlichkeit und Beschwerden beim Zubeißen über einige Tage sind zu erwarten. Nehmen die Schmerzen zu oder treten Schwellung oder eine Fistel am Zahnfleisch auf, ist ein zusätzlicher Termin nötig; die Dichtigkeit der Kanalfüllung wird auf dem Röntgenbild kontrolliert"
+      },
+      "tr": {
+        "what": "Çok köklü bir dişte, birinci kanala ek olarak sayılan ikinci kök kanalının tedavisi",
+        "how": "Aynı seansta hekim ikinci kanalın ağzını bulur, eğelerle şekillendirir, yıkar ve diğerleriyle birlikte doldurur; randevuyu yaklaşık 20–30 dakika uzatır",
+        "when": "İki kanallı küçük azı ve benzeri dişlerin tedavisi, çok köklü dişte pulpa ya da kök ucu iltihabı, daha önce bir kanalı işlenmemiş dişin yeniden açılması",
+        "prep": "Ayrı bir hazırlık gerekmez: işlem birinci kanalla aynı seansta yapılır",
+        "abnormal": "Birkaç gün künt hassasiyet ve ısırırken rahatsızlık beklenir. Ağrı artarsa ya da şişlik veya diş etinde fistül görülürse randevu dışı kontrol gerekir; kanalların doluluğu röntgenle denetlenir"
+      },
+      "sr_cyrl": {
+        "what": "Обрада другог коријенског канала у вишекоријеном зубу, која се рачуна уз први канал",
+        "how": "У истој посјети стоматолог пронађе ушће другог канала, обради га инструментима, испере и напуни заједно са осталима; продужава преглед за отприлике 20–30 минута",
+        "when": "Лијечење преткутњака и других зуба са два канала, пулпитис или упала око врха коријена вишекоријеног зуба, поновно отварање зуба у којем канал раније није обрађен",
+        "prep": "Посебна припрема није потребна: ради се у оквиру исте посјете као и први канал",
+        "abnormal": "Тупа осјетљивост и нелагода при загризу неколико дана су очекивани. Ако бол јача или се јаве оток и фистула на десни, потребан је ванредни преглед; заптивеност канала провјерава се на снимку"
+      }
+    }
+  },
+  {
+    "slug": "root-canal-treatment-third-root",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обработка третьего корневого канала, обычно в жевательных зубах с тремя и более каналами",
+        "how": "Врач находит и проходит третий канал, определяет рабочую длину, промывает и заполняет его вместе с остальными; удлиняет лечение на 20–30 минут, иногда требует второго визита",
+        "when": "Пульпит или воспаление у верхушки корня моляров, сложная анатомия каналов, повторное лечение зуба, в котором один канал ранее не был найден",
+        "prep": "Дополнительной подготовки нет; перед долгим приёмом стоит поесть заранее и предупредить врача, если тяжело долго держать рот открытым",
+        "abnormal": "После лечения многоканального зуба чувствительность при жевании может держаться дольше, до нескольких дней. Сохраняющаяся или усиливающаяся боль и отёк — повод обратиться; такому зубу часто нужна коронка для защиты, решение принимает стоматолог"
+      },
+      "en": {
+        "what": "Treatment of the third root canal, usually in back teeth that have three or more canals",
+        "how": "The dentist finds and negotiates the third canal, determines its working length, rinses and fills it together with the rest; extends treatment by 20–30 minutes and sometimes requires a second visit",
+        "when": "Pulpitis or inflammation at the root tip of molars, complex canal anatomy, retreatment of a tooth where one canal was previously missed",
+        "prep": "No additional preparation; before a long appointment it helps to eat beforehand and to tell the dentist if keeping the mouth open for a long time is difficult",
+        "abnormal": "After treating a multi-canal tooth, sensitivity on chewing may last longer, up to several days. Pain that persists or grows and swelling are reasons to get in touch; such a tooth often needs a crown for protection, which the dentist decides on"
+      },
+      "sr": {
+        "what": "Obrada trećeg korijenskog kanala, najčešće u kutnjacima sa tri i više kanala",
+        "how": "Stomatolog pronađe i prohodi treći kanal, odredi radnu dužinu, ispere ga i napuni zajedno sa ostalima; produžava liječenje za 20–30 minuta, a ponekad traži i drugu posjetu",
+        "when": "Pulpitis ili upala oko vrha korijena kutnjaka, složena anatomija kanala, ponovno liječenje zuba u kojem jedan kanal ranije nije pronađen",
+        "prep": "Dodatna priprema nije potrebna; pred duži zahvat je dobro jesti unaprijed i reći stomatologu ako teško držite usta dugo otvorena",
+        "abnormal": "Nakon liječenja zuba sa više kanala osjetljivost pri žvakanju može trajati duže, do nekoliko dana. Bol koja se održava ili jača i otok razlog su da se javite; takav zub često traži krunicu radi zaštite, o čemu odlučuje stomatolog"
+      },
+      "de": {
+        "what": "Aufbereitung des dritten Wurzelkanals, meist bei Backenzähnen mit drei oder mehr Kanälen",
+        "how": "Der dritte Kanal wird aufgefunden und durchgängig gemacht, die Arbeitslänge bestimmt, der Kanal gespült und zusammen mit den übrigen gefüllt; verlängert die Behandlung um 20–30 Minuten und erfordert manchmal einen zweiten Termin",
+        "when": "Pulpitis oder Entzündung an der Wurzelspitze von Molaren, komplexe Kanalanatomie, Wiederbehandlung eines Zahns, bei dem ein Kanal zuvor übersehen wurde",
+        "prep": "Keine zusätzliche Vorbereitung; vor einem längeren Termin ist es sinnvoll, vorher zu essen und mitzuteilen, wenn langes Offenhalten des Mundes schwerfällt",
+        "abnormal": "Nach der Behandlung eines mehrkanaligen Zahns kann die Empfindlichkeit beim Kauen länger anhalten, bis zu mehreren Tagen. Anhaltende oder zunehmende Schmerzen und Schwellungen sind ein Grund, sich zu melden; ein solcher Zahn braucht häufig eine Krone zum Schutz, was zahnärztlich entschieden wird"
+      },
+      "tr": {
+        "what": "Genellikle üç ve daha fazla kanalı olan azı dişlerinde üçüncü kök kanalının tedavisi",
+        "how": "Hekim üçüncü kanalı bulup geçirgen hale getirir, çalışma boyunu belirler, yıkar ve diğerleriyle birlikte doldurur; tedaviyi 20–30 dakika uzatır, bazen ikinci seans gerekir",
+        "when": "Büyük azı dişlerinde pulpa ya da kök ucu iltihabı, karmaşık kanal anatomisi, daha önce bir kanalı atlanmış dişin yeniden tedavisi",
+        "prep": "Ek hazırlık gerekmez; uzun sürecek seanstan önce yemek yemek ve ağzı uzun süre açık tutmakta zorlanıyorsanız hekime söylemek işe yarar",
+        "abnormal": "Çok kanallı bir dişin tedavisinden sonra çiğnerken hassasiyet birkaç güne kadar uzayabilir. Süren ya da artan ağrı ve şişlik başvuru nedenidir; bu tür dişler korunmak için çoğu kez kron gerektirir, buna hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Обрада трећег коријенског канала, најчешће у кутњацима са три и више канала",
+        "how": "Стоматолог пронађе и проходи трећи канал, одреди радну дужину, испере га и напуни заједно са осталима; продужава лијечење за 20–30 минута, а понекад тражи и другу посјету",
+        "when": "Пулпитис или упала око врха коријена кутњака, сложена анатомија канала, поновно лијечење зуба у којем један канал раније није пронађен",
+        "prep": "Додатна припрема није потребна; пред дужи захват је добро јести унапријед и рећи стоматологу ако тешко држите уста дуго отворена",
+        "abnormal": "Након лијечења зуба са више канала осјетљивост при жвакању може трајати дуже, до неколико дана. Бол која се одржава или јача и оток разлог су да се јавите; такав зуб често тражи круницу ради заштите, о чему одлучује стоматолог"
+      }
+    }
+  },
+  {
+    "slug": "surgical-exposure-impacted-tooth",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Хирургическое открытие коронки непрорезавшегося зуба, чтобы ортодонт мог вывести его в зубной ряд",
+        "how": "Под местной анестезией отслаивают лоскут десны или убирают слизистую над зубом, при необходимости снимают часть кости, приклеивают к зубу кнопку с цепочкой и ушивают рану; 30–60 минут",
+        "when": "Ретинированный клык или другой постоянный зуб, не прорезавшийся в срок, план вытяжения зуба брекет-системой, сверхкомплектный зуб, мешающий прорезыванию",
+        "prep": "Нужны панорамный снимок или КТ и согласованный с ортодонтом план; поесть перед визитом, сообщить о препаратах и хронических болезнях",
+        "abnormal": "Отёк и болезненность несколько дней обычны, тягу начинают после заживления раны. Отклеившаяся кнопка, потерянная цепочка, нарастающие боль и отёк — повод связаться с хирургом или ортодонтом; перемещение зуба занимает месяцы и контролируется на приёмах"
+      },
+      "en": {
+        "what": "Surgical uncovering of the crown of an unerupted tooth so that an orthodontist can bring it into the arch",
+        "how": "Under local anaesthesia a gum flap is raised or the mucosa over the tooth is removed, some bone is taken away if needed, a bracket with a chain is bonded to the tooth and the wound is stitched; 30–60 minutes",
+        "when": "An impacted canine or another permanent tooth that has not erupted on time, a plan to pull the tooth into place with braces, a supernumerary tooth blocking eruption",
+        "prep": "A panoramic X-ray or CT scan and a plan agreed with the orthodontist are needed; eat before the appointment and report medication and chronic conditions",
+        "abnormal": "Swelling and tenderness for a few days are usual, and traction starts once the wound has healed. A detached bracket, a lost chain, or growing pain and swelling are reasons to contact the surgeon or orthodontist; moving the tooth takes months and is monitored at appointments"
+      },
+      "sr": {
+        "what": "Hirurško otkrivanje krunice neizniklog zuba kako bi ga ortodont mogao uvesti u zubni niz",
+        "how": "U lokalnoj anesteziji podigne se režanj desni ili se ukloni sluzokoža iznad zuba, po potrebi se skine dio kosti, na zub se zalijepi bravica sa lančićem i rana zašije; 30–60 minuta",
+        "when": "Impaktirani očnjak ili drugi stalni zub koji nije iznikao na vrijeme, plan izvlačenja zuba fiksnim aparatom, prekobrojni zub koji smeta nicanju",
+        "prep": "Potrebni su panoramski snimak ili skener i plan dogovoren sa ortodontom; jesti prije dolaska, prijaviti lijekove i hronične bolesti",
+        "abnormal": "Otok i osjetljivost nekoliko dana su uobičajeni, a vuča počinje kada rana zaraste. Odlijepljena bravica, izgubljen lančić ili bol i otok koji rastu razlog su da se javite hirurgu ili ortodontu; pomjeranje zuba traje mjesecima i prati se na kontrolama"
+      },
+      "de": {
+        "what": "Operative Freilegung der Krone eines nicht durchgebrochenen Zahns, damit er kieferorthopädisch in die Zahnreihe eingeordnet werden kann",
+        "how": "In örtlicher Betäubung wird ein Zahnfleischlappen gebildet oder die Schleimhaut über dem Zahn entfernt, bei Bedarf Knochen abgetragen, ein Attachment mit Kettchen aufgeklebt und die Wunde vernäht; 30–60 Minuten",
+        "when": "Verlagerter Eckzahn oder ein anderer bleibender Zahn, der nicht rechtzeitig durchbricht, geplante Einordnung des Zahns mit einer festen Spange, überzähliger Zahn, der den Durchbruch blockiert",
+        "prep": "Panoramaröntgen oder Schnittbild und ein mit der Kieferorthopädie abgestimmter Plan sind nötig; vor dem Termin essen und Medikamente sowie chronische Erkrankungen angeben",
+        "abnormal": "Schwellung und Empfindlichkeit über einige Tage sind üblich, der Zug beginnt nach der Wundheilung. Ein gelöstes Attachment, ein verlorenes Kettchen oder zunehmende Schmerzen und Schwellung sind Gründe, sich beim Chirurgen oder in der kieferorthopädischen Praxis zu melden; die Einordnung dauert Monate und wird bei Kontrollen überwacht"
+      },
+      "tr": {
+        "what": "Sürmemiş bir dişin kronunun, ortodontistin onu diş sırasına çekebilmesi için cerrahi olarak açığa çıkarılması",
+        "how": "Lokal anestezi altında diş eti flebi kaldırılır ya da dişin üzerindeki mukoza alınır, gerekirse bir miktar kemik uzaklaştırılır, dişe zincirli bir braket yapıştırılır ve yara dikilir; 30–60 dakika",
+        "when": "Zamanında sürmemiş gömülü köpek dişi ya da başka bir daimi diş, dişin tel tedavisiyle sıraya çekilmesi planı, sürmeyi engelleyen fazladan diş",
+        "prep": "Panoramik röntgen ya da tomografi ve ortodontistle üzerinde anlaşılmış bir plan gerekir; randevudan önce yemek yiyin, ilaçlarınızı ve kronik hastalıklarınızı bildirin",
+        "abnormal": "Birkaç gün şişlik ve hassasiyet olağandır, çekme işlemi yara iyileştikten sonra başlar. Braketin düşmesi, zincirin kaybolması ya da artan ağrı ve şişlik cerraha veya ortodontiste başvuru nedenidir; dişin yerine gelmesi aylar sürer ve kontrollerde izlenir"
+      },
+      "sr_cyrl": {
+        "what": "Хируршко откривање крунице неизниклог зуба како би га ортодонт могао увести у зубни низ",
+        "how": "У локалној анестезији подигне се режањ десни или се уклони слузокожа изнад зуба, по потреби се скине дио кости, на зуб се залијепи бравица са ланчићем и рана зашије; 30–60 минута",
+        "when": "Импактирани очњак или други стални зуб који није изникао на вријеме, план извлачења зуба фиксним апаратом, прекобројни зуб који смета ницању",
+        "prep": "Потребни су панорамски снимак или скенер и план договорен са ортодонтом; јести прије доласка, пријавити лијекове и хроничне болести",
+        "abnormal": "Оток и осјетљивост неколико дана су уобичајени, а вуча почиње када рана зарасте. Одлијепљена бравица, изгубљен ланчић или бол и оток који расту разлог су да се јавите хирургу или ортодонту; помјерање зуба траје мјесецима и прати се на контролама"
+      }
+    }
+  },
+  {
+    "slug": "tooth-extraction-simple",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление прорезавшегося зуба щипцами и элеватором, без разрезов и швов",
+        "how": "После местной анестезии десну отделяют от шейки зуба, зуб расшатывают и извлекают, рану сдавливают и накрывают тампоном; 10–20 минут, одно посещение",
+        "when": "Зуб разрушен и не подлежит восстановлению, выраженная подвижность при болезни дёсен, хронический очаг воспаления у корня, удаление по плану ортодонта или перед протезированием",
+        "prep": "Поесть полноценно за час-два, сообщить о разжижающих кровь препаратах, диабете и болезнях сердца, накануне не пить алкоголь",
+        "abnormal": "Кровяной сгусток в лунке и лёгкая болезненность в первые сутки нормальны, выполаскивать сгусток нельзя. Кровотечение, которое не останавливается, сильная боль на второй-третий день или неприятный запах из лунки — повод показаться стоматологу"
+      },
+      "en": {
+        "what": "Removal of an erupted tooth with forceps and an elevator, without incisions or stitches",
+        "how": "After local anaesthesia the gum is separated from the neck of the tooth, the tooth is loosened and lifted out, then the socket is compressed and covered with a gauze pack; 10–20 minutes, one appointment",
+        "when": "A tooth destroyed beyond repair, marked mobility due to gum disease, a chronic inflammatory focus at the root, removal planned by the orthodontist or before dentures",
+        "prep": "Eat a proper meal an hour or two before, report blood thinners, diabetes and heart conditions, and avoid alcohol the day before",
+        "abnormal": "A blood clot in the socket and mild soreness on the first day are normal, and the clot must not be rinsed out. Bleeding that will not stop, severe pain on the second or third day, or a bad smell from the socket are reasons to see the dentist"
+      },
+      "sr": {
+        "what": "Vađenje izniklog zuba kliještima i polugom, bez rezova i šavova",
+        "how": "Poslije lokalne anestezije desni se odvoje od vrata zuba, zub se rasklima i izvadi, a rana se pritisne i prekrije gazom; 10–20 minuta, jedna posjeta",
+        "when": "Zub razoren preko mogućnosti sanacije, izražena pokretljivost zbog bolesti desni, hronično upalno žarište uz korijen, vađenje po planu ortodonta ili prije protetike",
+        "prep": "Pojesti pravi obrok sat ili dva ranije, prijaviti lijekove za razrjeđivanje krvi, dijabetes i srčane bolesti, dan ranije izbjegavati alkohol",
+        "abnormal": "Krvni ugrušak u rani i blaga osjetljivost prvog dana su normalni, a ugrušak se ne smije ispirati. Krvarenje koje ne prestaje, jaka bol drugog ili trećeg dana i neprijatan miris iz rane razlog su za pregled kod stomatologa"
+      },
+      "de": {
+        "what": "Entfernung eines durchgebrochenen Zahns mit Zange und Hebel, ohne Schnitte und Nähte",
+        "how": "Nach der örtlichen Betäubung wird das Zahnfleisch vom Zahnhals gelöst, der Zahn gelockert und herausgehoben, danach die Wunde komprimiert und mit einem Tupfer abgedeckt; 10–20 Minuten, ein Termin",
+        "when": "Ein nicht mehr erhaltungsfähiger Zahn, deutliche Lockerung bei Zahnfleischerkrankung, chronischer Entzündungsherd an der Wurzel, geplante Entfernung durch die Kieferorthopädie oder vor einer Prothese",
+        "prep": "Ein bis zwei Stunden vorher richtig essen, Blutverdünner, Diabetes und Herzerkrankungen angeben und am Vortag auf Alkohol verzichten",
+        "abnormal": "Ein Blutgerinnsel in der Wunde und leichte Beschwerden am ersten Tag sind normal, das Gerinnsel darf nicht ausgespült werden. Blutung, die nicht aufhört, starke Schmerzen am zweiten oder dritten Tag oder schlechter Geruch aus der Wunde sind Gründe für einen Zahnarztbesuch"
+      },
+      "tr": {
+        "what": "Sürmüş bir dişin kesi ve dikiş olmadan, pens ve elevatörle çıkarılması",
+        "how": "Lokal anesteziden sonra diş eti diş boynundan ayrılır, diş gevşetilip çıkarılır, ardından soket bastırılıp tamponla kapatılır; 10–20 dakika, tek seans",
+        "when": "Kurtarılamayacak kadar harap olmuş diş, diş eti hastalığına bağlı belirgin sallanma, kök çevresinde kronik iltihap odağı, ortodontistin planladığı ya da protez öncesi çekim",
+        "prep": "Bir iki saat önce doyurucu bir öğün yiyin, kan sulandırıcı ilaçları, şeker ve kalp hastalığını bildirin, bir gün önce alkol almayın",
+        "abnormal": "İlk gün sokette pıhtı ve hafif hassasiyet normaldir, pıhtı çalkalanarak çıkarılmamalıdır. Durmayan kanama, ikinci ya da üçüncü gün şiddetlenen ağrı ya da soketten kötü koku gelmesi diş hekimine başvuru nedenidir"
+      },
+      "sr_cyrl": {
+        "what": "Вађење изниклог зуба клијештима и полугом, без резова и шавова",
+        "how": "Послије локалне анестезије десни се одвоје од врата зуба, зуб се расклима и извади, а рана се притисне и прекрије газом; 10–20 минута, једна посјета",
+        "when": "Зуб разорен преко могућности санације, изражена покретљивост због болести десни, хронично упално жариште уз коријен, вађење по плану ортодонта или прије протетике",
+        "prep": "Појести прави оброк сат или два раније, пријавити лијекове за разрјеђивање крви, дијабетес и срчане болести, дан раније избјегавати алкохол",
+        "abnormal": "Крвни угрушак у рани и блага осјетљивост првог дана су нормални, а угрушак се не смије испирати. Крварење које не престаје, јака бол другог или трећег дана и непријатан мирис из ране разлог су за преглед код стоматолога"
+      }
+    }
+  },
+  {
+    "slug": "tooth-restoration-with-fiberglass-post",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Восстановление коронковой части зуба композитом с опорой на стекловолоконный штифт в корневом канале",
+        "how": "Канал распломбировывают на нужную глубину, штифт примеряют, укорачивают и вклеивают адгезивным цементом, вокруг него послойно наращивают композит и выверяют по прикусу; один визит, 40–60 минут",
+        "when": "Зуб с пролеченными каналами и малым остатком стенок, отлом коронки при сохранном корне, подготовка зуба под коронку",
+        "prep": "Каналы должны быть заранее пролечены и запломбированы, нужен свежий снимок; в день визита особой подготовки нет",
+        "abnormal": "Стекловолоконный штифт по упругости близок к тканям зуба и не просвечивает через реставрацию. Боль при накусывании, подвижность реставрации или скол края нужно показать стоматологу — такой зуб часто дополнительно защищают коронкой"
+      },
+      "en": {
+        "what": "Rebuilding the crown part of a tooth in composite, supported by a fibreglass post set in the root canal",
+        "how": "The canal is reopened to the required depth, the post is tried in, shortened and bonded with adhesive cement, composite is built up around it in layers and adjusted to the bite; one visit, 40–60 minutes",
+        "when": "A root-filled tooth with little remaining wall, a crown fractured off while the root is sound, preparing a tooth to receive a crown",
+        "prep": "The canals must already be treated and filled and a recent X-ray is needed; nothing special is required on the day of the visit",
+        "abnormal": "A fibreglass post is close to tooth tissue in elasticity and does not show through the restoration. Pain on biting, a loose restoration or a chipped edge should be shown to the dentist — such a tooth is often protected with a crown as well"
+      },
+      "sr": {
+        "what": "Nadoknada kruničnog dijela zuba kompozitom koji se oslanja na stakloplastični kočić u korijenskom kanalu",
+        "how": "Kanal se otvori do potrebne dubine, kočić se proba, skrati i zalijepi adhezivnim cementom, oko njega se kompozit nanosi u slojevima i uskladi sa zagrižajem; jedna posjeta, 40–60 minuta",
+        "when": "Zub sa liječenim kanalima i malo preostalih zidova, odlomljena krunica uz očuvan korijen, priprema zuba za krunicu",
+        "prep": "Kanali moraju biti prethodno liječeni i napunjeni, potreban je svjež snimak; na dan posjete posebna priprema nije potrebna",
+        "abnormal": "Stakloplastični kočić je po elastičnosti blizak zubnom tkivu i ne prosijava kroz nadoknadu. Bol pri zagrizu, klimanje nadoknade ili odlom ivice treba pokazati stomatologu — takav zub se često dodatno zaštiti krunicom"
+      },
+      "de": {
+        "what": "Wiederaufbau des Kronenanteils eines Zahns aus Komposit, das sich auf einen Glasfaserstift im Wurzelkanal stützt",
+        "how": "Der Kanal wird auf die erforderliche Tiefe eröffnet, der Stift eingeprobt, gekürzt und adhäsiv eingeklebt, das Komposit schichtweise darum aufgebaut und in den Biss eingeschliffen; ein Termin, 40–60 Minuten",
+        "when": "Ein wurzelbehandelter Zahn mit wenig verbliebener Substanz, eine abgebrochene Krone bei erhaltener Wurzel, Vorbereitung des Zahns für eine Überkronung",
+        "prep": "Die Wurzelkanäle müssen bereits behandelt und gefüllt sein, ein aktuelles Röntgenbild ist nötig; am Behandlungstag ist keine besondere Vorbereitung erforderlich",
+        "abnormal": "Ein Glasfaserstift liegt in der Elastizität nahe am Zahngewebe und schimmert nicht durch die Restauration. Schmerzen beim Zubeißen, eine lockere Restauration oder eine abgeplatzte Kante sollten zahnärztlich kontrolliert werden — ein solcher Zahn wird oft zusätzlich mit einer Krone geschützt"
+      },
+      "tr": {
+        "what": "Kök kanalına yerleştirilen fiberglas postun desteğiyle dişin kron kısmının kompozitle yeniden yapılması",
+        "how": "Kanal gereken derinliğe kadar açılır, post denenir, kısaltılır ve adeziv simanla yapıştırılır, çevresine kompozit tabakalar halinde eklenir ve kapanışa göre düzeltilir; tek seans, 40–60 dakika",
+        "when": "Kanal tedavisi görmüş ve duvarı az kalmış diş, kökü sağlamken kırılmış kron, dişin kron için hazırlanması",
+        "prep": "Kanalların önceden tedavi edilip doldurulmuş olması ve güncel bir röntgen gerekir; işlem günü özel hazırlık gerekmez",
+        "abnormal": "Fiberglas post esneklik bakımından diş dokusuna yakındır ve restorasyonun altından yansımaz. Isırırken ağrı, restorasyonun oynaması ya da kenar kırığı hekime gösterilmelidir — bu tür dişler çoğu kez ayrıca kronla korunur"
+      },
+      "sr_cyrl": {
+        "what": "Надокнада круничног дијела зуба композитом који се ослања на стаклопластични кочић у коријенском каналу",
+        "how": "Канал се отвори до потребне дубине, кочић се проба, скрати и залијепи адхезивним цементом, око њега се композит наноси у слојевима и усклади са загрижајем; једна посјета, 40–60 минута",
+        "when": "Зуб са лијеченим каналима и мало преосталих зидова, одломљена круница уз очуван коријен, припрема зуба за круницу",
+        "prep": "Канали морају бити претходно лијечени и напуњени, потребан је свјеж снимак; на дан посјете посебна припрема није потребна",
+        "abnormal": "Стаклопластични кочић је по еластичности близак зубном ткиву и не просијава кроз надокнаду. Бол при загризу, климање надокнаде или одлом ивице треба показати стоматологу — такав зуб се често додатно заштити круницом"
+      }
+    }
+  },
+  {
+    "slug": "vestibuloplasty",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Операция на мягких тканях, которая углубляет преддверие полости рта и снимает натяжение слизистой у края десны",
+        "how": "Под местной анестезией слизистую отделяют от надкостницы и перемещают глубже, фиксируют швами, рану закрывают повязкой или трансплантатом; 30–60 минут, заживление две-три недели",
+        "when": "Мелкое преддверие с натяжением тяжей и рецессией десны, подготовка к съёмному протезу, который плохо держится, перед имплантацией и пародонтологическими операциями, помехи речи и гигиене из-за натянутых тяжей",
+        "prep": "Заранее пролечить воспаление дёсен и сделать профессиональную чистку, поесть перед визитом, сообщить о препаратах и хронических болезнях",
+        "abnormal": "Несколько дней возможны отёк, чувство натяжения и болезненность, первое время лучше мягкая пища. Кровотечение, разошедшиеся швы, нарастающая боль или температура — повод обратиться к врачу; окончательный результат оценивают через несколько недель, после заживления"
+      },
+      "en": {
+        "what": "A soft tissue operation that deepens the oral vestibule and releases the mucosal pull at the gum margin",
+        "how": "Under local anaesthesia the mucosa is separated from the periosteum and repositioned deeper, fixed with sutures, and the wound is covered with a dressing or a graft; 30–60 minutes, healing over two to three weeks",
+        "when": "A shallow vestibule with pulling attachments and gum recession, preparation for a denture that does not stay in place, before implant and periodontal surgery, speech and hygiene problems caused by tight bands",
+        "prep": "Treat gum inflammation and have professional cleaning beforehand, eat before the appointment, and report medication and chronic conditions",
+        "abnormal": "Swelling, tightness and soreness are possible for several days and soft food is better at first. Bleeding, opened sutures, increasing pain or fever are reasons to contact the doctor; the final result is assessed after a few weeks, once healing is complete"
+      },
+      "sr": {
+        "what": "Operacija mekih tkiva kojom se produbljuje predvorje usne duplje i otklanja zatezanje sluzokože uz rub desni",
+        "how": "U lokalnoj anesteziji sluzokoža se odvoji od pokosnice i pomjeri dublje, fiksira šavovima, a rana prekrije zavojem ili transplantatom; 30–60 minuta, zarastanje traje dvije do tri nedjelje",
+        "when": "Plitko predvorje sa zateznim pripojima i povlačenjem desni, priprema za protezu koja ne stoji dobro, prije ugradnje implantata i parodontoloških zahvata, smetnje u govoru i higijeni zbog zategnutih pripoja",
+        "prep": "Prethodno sanirati upalu desni i uraditi profesionalno čišćenje, jesti prije dolaska, prijaviti lijekove i hronične bolesti",
+        "abnormal": "Nekoliko dana su mogući otok, osjećaj zatezanja i osjetljivost, a u početku je bolja mekana hrana. Krvarenje, popuštanje šavova, bol koji jača ili temperatura razlog su da se javite ljekaru; konačan rezultat se procjenjuje nakon nekoliko nedjelja, kada rana zaraste"
+      },
+      "de": {
+        "what": "Ein Weichgewebseingriff, der den Mundvorhof vertieft und den Schleimhautzug am Zahnfleischrand beseitigt",
+        "how": "In örtlicher Betäubung wird die Schleimhaut vom Periost gelöst, tiefer verlagert und mit Nähten fixiert, die Wunde mit einem Verband oder Transplantat gedeckt; 30–60 Minuten, Heilung über zwei bis drei Wochen",
+        "when": "Flacher Mundvorhof mit ziehenden Bändern und Zahnfleischrückgang, Vorbereitung auf eine Prothese, die keinen Halt findet, vor Implantat- und Parodontalchirurgie, Sprech- und Hygieneprobleme durch straffe Bänder",
+        "prep": "Zahnfleischentzündungen vorher behandeln und eine professionelle Zahnreinigung durchführen lassen, vor dem Termin essen, Medikamente und chronische Erkrankungen angeben",
+        "abnormal": "Über mehrere Tage sind Schwellung, Spannungsgefühl und Empfindlichkeit möglich, anfangs ist weiche Kost sinnvoll. Blutung, aufgegangene Nähte, zunehmende Schmerzen oder Fieber sind Gründe, sich zu melden; das endgültige Ergebnis wird nach einigen Wochen, nach abgeschlossener Heilung, beurteilt"
+      },
+      "tr": {
+        "what": "Ağız ön boşluğunu derinleştiren ve diş eti kenarındaki mukoza gerginliğini gideren yumuşak doku ameliyatı",
+        "how": "Lokal anestezi altında mukoza periosttan ayrılıp daha derine taşınır, dikişlerle tespit edilir ve yara pansumanla ya da greftle kapatılır; 30–60 dakika, iyileşme iki ila üç hafta sürer",
+        "when": "Bağ gerginliği ve diş eti çekilmesiyle giden sığ vestibül, yerinde durmayan protez için hazırlık, implant ve diş eti cerrahisi öncesi, gergin bağlar nedeniyle konuşma ve temizlik güçlüğü",
+        "prep": "Diş eti iltihabını önceden tedavi ettirin ve profesyonel temizlik yaptırın, randevudan önce yemek yiyin, ilaçlarınızı ve kronik hastalıklarınızı bildirin",
+        "abnormal": "Birkaç gün şişlik, gerginlik ve hassasiyet olabilir, başlangıçta yumuşak gıda tercih edilmelidir. Kanama, dikişlerin açılması, artan ağrı ya da ateş hekime başvuru nedenidir; kesin sonuç iyileşme tamamlandıktan birkaç hafta sonra değerlendirilir"
+      },
+      "sr_cyrl": {
+        "what": "Операција меких ткива којом се продубљује предворје усне дупље и отклања затезање слузокоже уз руб десни",
+        "how": "У локалној анестезији слузокожа се одвоји од покоснице и помјери дубље, фиксира шавовима, а рана прекрије завојем или трансплантатом; 30–60 минута, зарастање траје двије до три недјеље",
+        "when": "Плитко предворје са затезним припојима и повлачењем десни, припрема за протезу која не стоји добро, прије уградње имплантата и пародонтолошких захвата, сметње у говору и хигијени због затегнутих припоја",
+        "prep": "Претходно санирати упалу десни и урадити професионално чишћење, јести прије доласка, пријавити лијекове и хроничне болести",
+        "abnormal": "Неколико дана су могући оток, осјећај затезања и осјетљивост, а у почетку је боља мекана храна. Крварење, попуштање шавова, бол који јача или температура разлог су да се јавите љекару; коначан резултат се процјењује након неколико недјеља, када рана зарасте"
+      }
+    }
+  }
+]

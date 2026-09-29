@@ -1,0 +1,770 @@
+[
+  {
+    "slug": "histopathology-cervical-biopsy",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микроскопическое исследование кусочка ткани шейки матки, взятого при биопсии",
+        "how": "Материал фиксируют, заливают в парафин, режут на тонкие срезы, окрашивают и изучают под микроскопом; саму биопсию гинеколог выполняет отдельно",
+        "when": "Изменения, замеченные при кольпоскопии, отклонения в цитологическом мазке, стойкое выявление ВПЧ высокого риска, контроль после лечения шейки матки",
+        "prep": "Подготовка относится к процедуре биопсии и обсуждается с гинекологом; на лабораторном этапе от пациентки ничего не требуется",
+        "abnormal": "Заключение описывает характер изменений в ткани — от воспалительных до требующих наблюдения или лечения. Что это значит в конкретном случае и какие шаги нужны дальше, определяет гинеколог"
+      },
+      "en": {
+        "what": "Microscopic examination of a piece of cervical tissue obtained by biopsy",
+        "how": "The sample is fixed, embedded in paraffin, cut into thin sections, stained and examined under a microscope; the biopsy itself is performed separately by a gynaecologist",
+        "when": "Changes seen at colposcopy, an abnormal cytology smear, persistently detected high-risk HPV, follow-up after treatment of the cervix",
+        "prep": "Preparation applies to the biopsy procedure and is discussed with the gynaecologist; the laboratory stage requires nothing from the patient",
+        "abnormal": "The report describes the nature of the tissue changes, from inflammatory to those needing follow-up or treatment. What this means in a particular case and what comes next is decided by the gynaecologist"
+      },
+      "sr": {
+        "what": "Mikroskopski pregled djelića tkiva grlića materice uzetog biopsijom",
+        "how": "Uzorak se fiksira, ukalupljuje u parafin, reže na tanke presjeke, boji i pregleda pod mikroskopom; samu biopsiju ginekolog radi zasebno",
+        "when": "Promjene uočene na kolposkopiji, odstupanja u citološkom brisu, uporno prisustvo HPV visokog rizika, kontrola poslije liječenja grlića materice",
+        "prep": "Priprema se odnosi na sam zahvat biopsije i dogovara se sa ginekologom; za laboratorijski dio pacijentkinja ne radi ništa",
+        "abnormal": "Nalaz opisuje prirodu promjena u tkivu, od upalnih do onih koje traže praćenje ili liječenje. Šta to znači u konkretnom slučaju i koji su sljedeći koraci, određuje ginekolog"
+      },
+      "de": {
+        "what": "Mikroskopische Untersuchung eines bei der Biopsie entnommenen Gewebestücks des Gebärmutterhalses",
+        "how": "Das Material wird fixiert, in Paraffin eingebettet, in dünne Schnitte geschnitten, gefärbt und unter dem Mikroskop beurteilt; die Biopsie selbst nimmt die Frauenärztin oder der Frauenarzt gesondert vor",
+        "when": "Auffälligkeiten bei der Kolposkopie, abweichender zytologischer Abstrich, anhaltender Nachweis von Hochrisiko-HPV, Kontrolle nach Behandlung am Gebärmutterhals",
+        "prep": "Die Vorbereitung betrifft den Eingriff selbst und wird mit der Frauenärztin oder dem Frauenarzt besprochen; für den Laborteil ist nichts zu tun",
+        "abnormal": "Der Befund beschreibt die Art der Gewebeveränderungen, von entzündlich bis hin zu solchen, die Kontrolle oder Behandlung erfordern. Was das im Einzelfall bedeutet und wie es weitergeht, entscheidet die Frauenärztin oder der Frauenarzt"
+      },
+      "tr": {
+        "what": "Biyopsiyle alınan rahim ağzı dokusunun mikroskopla incelenmesi",
+        "how": "Örnek tespit edilir, parafine gömülür, ince kesitler alınır, boyanır ve mikroskopta değerlendirilir; biyopsi işlemini kadın doğum hekimi ayrıca yapar",
+        "when": "Kolposkopide görülen değişiklikler, sitolojik yaymada sapma, yüksek riskli HPV'nin sürekli saptanması, rahim ağzı tedavisi sonrası kontrol",
+        "prep": "Hazırlık biyopsi işlemiyle ilgilidir ve kadın doğum hekimiyle konuşulur; laboratuvar aşamasında hastadan bir şey istenmez",
+        "abnormal": "Rapor, dokudaki değişikliklerin niteliğini iltihabi olandan izlem ya da tedavi gerektirene kadar tanımlar. Bunun o kişide ne anlama geldiğine ve sonraki adımlara kadın doğum hekimi karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Микроскопски преглед дјелића ткива грлића материце узетог биопсијом",
+        "how": "Узорак се фиксира, укалупљује у парафин, реже на танке пресјеке, боји и прегледа под микроскопом; саму биопсију гинеколог ради засебно",
+        "when": "Промјене уочене на колпоскопији, одступања у цитолошком брису, упорно присуство HPV високог ризика, контрола послије лијечења грлића материце",
+        "prep": "Припрема се односи на сам захват биопсије и договара се са гинекологом; за лабораторијски дио пацијенткиња не ради ништа",
+        "abnormal": "Налаз описује природу промјена у ткиву, од упалних до оних које траже праћење или лијечење. Шта то значи у конкретном случају и који су сљедећи кораци, одређује гинеколог"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-liver-biopsy",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микроскопическое исследование столбика ткани печени, полученного при пункционной биопсии",
+        "how": "Материал фиксируют, заливают в парафин, режут на тонкие срезы и окрашивают, в том числе специальными красителями для оценки соединительной ткани; саму пункцию врач выполняет отдельно, обычно под контролем УЗИ",
+        "when": "Стойкое повышение печёночных показателей без ясной причины, хронические вирусные гепатиты, оценка выраженности фиброза и жирового перерождения, уточнение причины хронического поражения печени, наблюдение после трансплантации",
+        "prep": "Подготовка относится к самой пункции: заранее сдают показатели свёртывания крови, а вопрос о временной отмене препаратов, разжижающих кровь, решает только врач",
+        "abnormal": "Заключение описывает степень и характер изменений ткани печени. Сопоставляет его с анализами и клинической картиной и определяет дальнейшую тактику лечащий врач"
+      },
+      "en": {
+        "what": "Microscopic examination of a core of liver tissue obtained by needle biopsy",
+        "how": "The material is fixed, embedded in paraffin, cut into thin sections and stained, including special stains that show connective tissue; the puncture itself is performed separately by a doctor, usually under ultrasound guidance",
+        "when": "Persistently elevated liver values without a clear cause, chronic viral hepatitis, assessment of fibrosis and fatty change, clarifying the cause of chronic liver damage, follow-up after transplantation",
+        "prep": "Preparation concerns the puncture: clotting parameters are checked beforehand, and only the doctor decides whether blood-thinning medicines are paused",
+        "abnormal": "The report describes the extent and nature of the changes in liver tissue. The treating doctor matches it with laboratory results and the clinical picture and decides on further management"
+      },
+      "sr": {
+        "what": "Mikroskopski pregled isječka tkiva jetre dobijenog punkcionom biopsijom",
+        "how": "Uzorak se fiksira, ukalupljuje u parafin, reže na tanke presjeke i boji, uz posebna bojenja za procjenu vezivnog tkiva; samu punkciju ljekar radi zasebno, najčešće pod kontrolom ultrazvuka",
+        "when": "Uporno povišeni jetreni pokazatelji bez jasnog uzroka, hronični virusni hepatitisi, procjena stepena fibroze i masne promjene, razjašnjenje uzroka hroničnog oštećenja jetre, praćenje poslije transplantacije",
+        "prep": "Priprema se odnosi na samu punkciju: unaprijed se rade parametri koagulacije, a o privremenom prekidu lijekova koji razrjeđuju krv odlučuje isključivo ljekar",
+        "abnormal": "Nalaz opisuje stepen i prirodu promjena u tkivu jetre. Sa analizama i kliničkom slikom poredi ga i dalji postupak određuje ljekar koji vodi liječenje"
+      },
+      "de": {
+        "what": "Mikroskopische Untersuchung eines durch Punktionsbiopsie gewonnenen Lebergewebszylinders",
+        "how": "Das Material wird fixiert, in Paraffin eingebettet, in dünne Schnitte geschnitten und gefärbt, auch mit Spezialfärbungen zur Beurteilung des Bindegewebes; die Punktion selbst führt der Arzt gesondert durch, meist unter Ultraschallkontrolle",
+        "when": "Dauerhaft erhöhte Leberwerte ohne klare Ursache, chronische Virushepatitiden, Beurteilung von Fibrose und Verfettung, Abklärung einer chronischen Leberschädigung, Verlaufskontrolle nach Transplantation",
+        "prep": "Die Vorbereitung betrifft die Punktion: Gerinnungswerte werden vorab bestimmt, über ein vorübergehendes Pausieren blutverdünnender Medikamente entscheidet ausschließlich der Arzt",
+        "abnormal": "Der Befund beschreibt Ausmaß und Art der Veränderungen im Lebergewebe. Die behandelnde Ärztin oder der behandelnde Arzt ordnet ihn den Laborwerten und dem klinischen Bild zu und legt das weitere Vorgehen fest"
+      },
+      "tr": {
+        "what": "İğne biyopsisiyle alınan karaciğer doku örneğinin mikroskopla incelenmesi",
+        "how": "Örnek tespit edilir, parafine gömülür, ince kesitler alınır ve bağ dokusunu gösteren özel boyalar dahil olmak üzere boyanır; biyopsi işlemini hekim genellikle ultrason eşliğinde ayrıca yapar",
+        "when": "Nedeni belirsiz sürekli yüksek karaciğer değerleri, kronik viral hepatitler, fibroz ve yağlanma derecesinin değerlendirilmesi, kronik karaciğer hasarının nedeninin araştırılması, nakil sonrası izlem",
+        "prep": "Hazırlık biyopsi işlemiyle ilgilidir: önceden pıhtılaşma testleri yapılır, kan sulandırıcı ilaçlara ara verilip verilmeyeceğine yalnızca hekim karar verir",
+        "abnormal": "Rapor karaciğer dokusundaki değişikliklerin derecesini ve niteliğini tanımlar. Sonucu laboratuvar bulguları ve klinik tabloyla birleştirip izlenecek yolu tedaviyi yürüten hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Микроскопски преглед исјечка ткива јетре добијеног пункционом биопсијом",
+        "how": "Узорак се фиксира, укалупљује у парафин, реже на танке пресјеке и боји, уз посебна бојења за процјену везивног ткива; саму пункцију љекар ради засебно, најчешће под контролом ултразвука",
+        "when": "Упорно повишени јетрени показатељи без јасног узрока, хронични вирусни хепатитиси, процјена степена фиброзе и масне промјене, разјашњење узрока хроничног оштећења јетре, праћење послије трансплантације",
+        "prep": "Припрема се односи на саму пункцију: унапријед се раде параметри коагулације, а о привременом прекиду лијекова који разрјеђују крв одлучује искључиво љекар",
+        "abnormal": "Налаз описује степен и природу промјена у ткиву јетре. Са анализама и клиничком сликом пореди га и даљи поступак одређује љекар који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-vulvar-biopsy",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микроскопическое исследование участка кожи и слизистой вульвы, взятого при биопсии",
+        "how": "Небольшой фрагмент ткани, взятый гинекологом под местным обезболиванием, фиксируют, заливают в парафин, режут на срезы, окрашивают и изучают под микроскопом",
+        "when": "Длительный зуд и жжение в области вульвы, изменения цвета и плотности кожи, стойкие пятна и узелки, незаживающие ранки, уточнение природы хронических кожных изменений, контроль после лечения",
+        "prep": "Подготовка касается процедуры биопсии: в день вмешательства не пользоваться кремами и антисептическими средствами гигиены, остальное уточняет гинеколог",
+        "abnormal": "Заключение описывает характер изменений — воспалительные, дистрофические или требующие дальнейшего наблюдения и лечения. Трактует результат и назначает следующие шаги гинеколог"
+      },
+      "en": {
+        "what": "Microscopic examination of a sample of vulvar skin and mucosa taken by biopsy",
+        "how": "A small tissue fragment taken by the gynaecologist under local anaesthesia is fixed, embedded in paraffin, sectioned, stained and examined under a microscope",
+        "when": "Long-lasting itching and burning of the vulva, changes in skin colour and texture, persistent patches and nodules, non-healing sores, clarifying the nature of chronic skin changes, follow-up after treatment",
+        "prep": "Preparation concerns the biopsy procedure: on that day avoid creams and antiseptic hygiene products, the gynaecologist explains the rest",
+        "abnormal": "The report describes the nature of the changes, inflammatory, dystrophic or requiring further follow-up and treatment. The gynaecologist interprets the result and decides on the next steps"
+      },
+      "sr": {
+        "what": "Mikroskopski pregled isječka kože i sluznice vulve uzetog biopsijom",
+        "how": "Mali komadić tkiva koji ginekolog uzme u lokalnoj anesteziji fiksira se, ukalupljuje u parafin, reže na presjeke, boji i pregleda pod mikroskopom",
+        "when": "Dugotrajan svrab i peckanje u predjelu vulve, promjene boje i čvrstine kože, uporne mrlje i kvržice, ranice koje ne zarastaju, razjašnjenje prirode hroničnih promjena na koži, kontrola poslije liječenja",
+        "prep": "Priprema se odnosi na sam zahvat: na dan biopsije ne koristiti kreme i antiseptična higijenska sredstva, ostalo dogovara ginekolog",
+        "abnormal": "Nalaz opisuje prirodu promjena, upalne, distrofične ili one koje traže dalje praćenje i liječenje. Rezultat tumači i sljedeće korake određuje ginekolog"
+      },
+      "de": {
+        "what": "Mikroskopische Untersuchung einer per Biopsie entnommenen Probe von Haut und Schleimhaut der Vulva",
+        "how": "Das unter örtlicher Betäubung entnommene kleine Gewebestück wird fixiert, in Paraffin eingebettet, geschnitten, gefärbt und unter dem Mikroskop beurteilt",
+        "when": "Anhaltender Juckreiz und Brennen im Vulvabereich, Veränderungen von Hautfarbe und Hautbeschaffenheit, hartnäckige Flecken und Knötchen, nicht heilende Stellen, Abklärung chronischer Hautveränderungen, Kontrolle nach Behandlung",
+        "prep": "Die Vorbereitung betrifft den Eingriff: am Tag der Biopsie keine Cremes und keine antiseptischen Pflegeprodukte verwenden, alles Weitere bespricht die Frauenärztin oder der Frauenarzt",
+        "abnormal": "Der Befund beschreibt die Art der Veränderungen, entzündlich, dystrophisch oder weiter kontrollbedürftig. Die Deutung und das weitere Vorgehen legt die Frauenärztin oder der Frauenarzt fest"
+      },
+      "tr": {
+        "what": "Biyopsiyle alınan vulva derisi ve mukozası örneğinin mikroskopla incelenmesi",
+        "how": "Kadın doğum hekiminin lokal anesteziyle aldığı küçük doku parçası tespit edilir, parafine gömülür, kesitlenir, boyanır ve mikroskopta incelenir",
+        "when": "Vulva bölgesinde uzun süreli kaşıntı ve yanma, deri renginde ve dokusunda değişiklik, geçmeyen lekeler ve kabartılar, iyileşmeyen yaralar, kronik deri değişikliklerinin nedeninin araştırılması, tedavi sonrası kontrol",
+        "prep": "Hazırlık işlemle ilgilidir: biyopsi günü krem ve antiseptik hijyen ürünleri kullanılmaz, gerisini kadın doğum hekimi anlatır",
+        "abnormal": "Rapor değişikliklerin niteliğini iltihabi, distrofik ya da izlem ve tedavi gerektiren olarak tanımlar. Sonucu yorumlayıp sonraki adımları kadın doğum hekimi belirler"
+      },
+      "sr_cyrl": {
+        "what": "Микроскопски преглед исјечка коже и слузнице вулве узетог биопсијом",
+        "how": "Мали комадић ткива који гинеколог узме у локалној анестезији фиксира се, укалупљује у парафин, реже на пресјеке, боји и прегледа под микроскопом",
+        "when": "Дуготрајан свраб и пецкање у предјелу вулве, промјене боје и чврстине коже, упорне мрље и квржице, ранице које не зарастају, разјашњење природе хроничних промјена на кожи, контрола послије лијечења",
+        "prep": "Припрема се односи на сам захват: на дан биопсије не користити креме и антисептична хигијенска средства, остало договара гинеколог",
+        "abnormal": "Налаз описује природу промјена, упалне, дистрофичне или оне које траже даље праћење и лијечење. Резултат тумачи и сљедеће кораке одређује гинеколог"
+      }
+    }
+  },
+  {
+    "slug": "protia-allergy-q64-inhalation-panel-64-allergens",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Панель специфических IgE к 64 вдыхаемым аллергенам: пыльца деревьев, трав и сорняков, клещи домашней пыли, плесневые грибы, эпителий и шерсть животных",
+        "how": "Однократный забор венозной крови, из одной пробы лаборатория определяет сразу весь набор показателей",
+        "when": "Сезонный или круглогодичный насморк, чихание, заложенность носа, зуд глаз, подозрение на аллергическую астму, поиск причины обострений, ситуации, когда кожные пробы нежелательны",
+        "prep": "Специальной подготовки не требуется, антигистаминные препараты отменять не нужно — на анализ крови они не влияют",
+        "abnormal": "Выявление специфических IgE говорит о сенсибилизации к аллергену и само по себе не равно аллергии. Сопоставляет набор показателей с симптомами и условиями жизни врач-аллерголог"
+      },
+      "en": {
+        "what": "A panel of specific IgE against 64 inhaled allergens: tree, grass and weed pollen, house dust mites, moulds, animal dander and hair",
+        "how": "A single venous blood draw, the laboratory determines the whole set of parameters from one sample",
+        "when": "Seasonal or year-round runny nose, sneezing, blocked nose, itchy eyes, suspected allergic asthma, looking for the trigger of flare-ups, situations where skin testing is not advisable",
+        "prep": "No special preparation is needed and antihistamines do not have to be stopped, they do not affect a blood test",
+        "abnormal": "Detected specific IgE indicates sensitisation to an allergen and by itself is not the same as an allergy. An allergist compares the set of results with the symptoms and living conditions"
+      },
+      "sr": {
+        "what": "Panel specifičnih IgE na 64 inhalaciona alergena: polen drveća, trava i korova, grinje kućne prašine, plijesni, epitel i dlaka životinja",
+        "how": "Jedno vađenje venske krvi, laboratorija iz istog uzorka određuje čitav skup pokazatelja",
+        "when": "Sezonska ili cjelogodišnja kijavica, kijanje, zapušen nos, svrab očiju, sumnja na alergijsku astmu, traženje uzroka pogoršanja, situacije kada kožni testovi nisu poželjni",
+        "prep": "Posebna priprema nije potrebna, antihistaminike nije potrebno prekidati jer ne utiču na nalaz iz krvi",
+        "abnormal": "Nalaz specifičnih IgE govori o senzibilizaciji na alergen i sam po sebi ne znači alergiju. Skup pokazatelja sa tegobama i uslovima života poredi ljekar alergolog"
+      },
+      "de": {
+        "what": "Panel spezifischer IgE gegen 64 Inhalationsallergene: Baum-, Gras- und Kräuterpollen, Hausstaubmilben, Schimmelpilze, Tierepithelien und Tierhaare",
+        "how": "Eine einzige venöse Blutentnahme, aus derselben Probe bestimmt das Labor den gesamten Parametersatz",
+        "when": "Saisonaler oder ganzjähriger Schnupfen, Niesen, verstopfte Nase, juckende Augen, Verdacht auf allergisches Asthma, Suche nach dem Auslöser von Beschwerdeschüben, Situationen, in denen Hauttests nicht infrage kommen",
+        "prep": "Keine besondere Vorbereitung nötig, Antihistaminika müssen nicht abgesetzt werden, sie beeinflussen den Bluttest nicht",
+        "abnormal": "Nachweisbare spezifische IgE zeigen eine Sensibilisierung gegenüber einem Allergen an und bedeuten für sich genommen noch keine Allergie. Die Zusammenschau mit Beschwerden und Lebensumständen nimmt die Allergologin oder der Allergologe vor"
+      },
+      "tr": {
+        "what": "Ağaç, çayır ve yabani ot polenleri, ev tozu akarları, küfler, hayvan epiteli ve tüyü gibi 64 solunum alerjenine karşı özgül IgE paneli",
+        "how": "Tek seferde venöz kan alınır, laboratuvar aynı örnekten tüm parametreleri çalışır",
+        "when": "Mevsimsel ya da yıl boyu süren burun akıntısı, hapşırma, burun tıkanıklığı, göz kaşıntısı, alerjik astım şüphesi, alevlenmelerin nedeninin aranması, deri testinin uygun olmadığı durumlar",
+        "prep": "Özel hazırlık gerekmez, antihistaminiklerin kesilmesine gerek yoktur, kan testini etkilemezler",
+        "abnormal": "Özgül IgE saptanması alerjene duyarlanmayı gösterir, tek başına alerji anlamına gelmez. Sonuç kümesini şikayetler ve yaşam koşullarıyla birlikte alerji uzmanı değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Панел специфичних IgE на 64 инхалациона алергена: полен дрвећа, трава и корова, гриње кућне прашине, плијесни, епител и длака животиња",
+        "how": "Једно вађење венске крви, лабораторија из истог узорка одређује читав скуп показатеља",
+        "when": "Сезонска или цјелогодишња кијавица, кијање, запушен нос, свраб очију, сумња на алергијску астму, тражење узрока погоршања, ситуације када кожни тестови нису пожељни",
+        "prep": "Посебна припрема није потребна, антихистаминике није потребно прекидати јер не утичу на налаз из крви",
+        "abnormal": "Налаз специфичних IgE говори о сензибилизацији на алерген и сам по себи не значи алергију. Скуп показатеља са тегобама и условима живота пореди љекар алерголог"
+      }
+    }
+  },
+  {
+    "slug": "protia-allergy-q64-nutritive-panel-72-allergens",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Панель специфических IgE к 72 пищевым аллергенам: молоко и яйцо, злаки, орехи, рыба и морепродукты, овощи, фрукты, специи",
+        "how": "Из одной пробы венозной крови определяют весь список показателей, повторные визиты не нужны",
+        "when": "Крапивница, отёки, зуд и высыпания после еды, обострения атопического дерматита, жалобы со стороны желудка и кишечника после определённых продуктов, подбор рациона вместе с врачом",
+        "prep": "Специальной подготовки не требуется, исключать подозрительные продукты перед сдачей не нужно — тест выявляет антитела, а не реакцию на недавнюю еду",
+        "abnormal": "Найденные IgE указывают на сенсибилизацию, но переносимость продукта оценивают только вместе с историей реакций, при необходимости — пробной диетой под наблюдением врача-аллерголога"
+      },
+      "en": {
+        "what": "A panel of specific IgE against 72 food allergens: milk and egg, cereals, nuts, fish and seafood, vegetables, fruit, spices",
+        "how": "The whole list of parameters is determined from a single venous blood sample, no repeat visits are needed",
+        "when": "Hives, swelling, itching and rashes after meals, flare-ups of atopic dermatitis, stomach and bowel complaints after certain foods, planning a diet together with a doctor",
+        "prep": "No special preparation is required and there is no need to avoid suspected foods beforehand, the test detects antibodies rather than a reaction to a recent meal",
+        "abnormal": "Detected IgE point to sensitisation, but tolerance of a food is judged only together with the history of reactions and, if needed, a trial diet supervised by an allergist"
+      },
+      "sr": {
+        "what": "Panel specifičnih IgE na 72 nutritivna alergena: mlijeko i jaje, žitarice, orašasti plodovi, riba i morski plodovi, povrće, voće, začini",
+        "how": "Iz jednog uzorka venske krvi određuje se cijeli spisak pokazatelja, bez ponovnih dolazaka",
+        "when": "Koprivnjača, otoci, svrab i osip poslije jela, pogoršanja atopijskog dermatitisa, tegobe želuca i crijeva poslije određenih namirnica, planiranje ishrane zajedno sa ljekarom",
+        "prep": "Posebna priprema nije potrebna, sumnjive namirnice nije potrebno izbjegavati prije vađenja krvi jer test otkriva antitijela, a ne reakciju na skorašnji obrok",
+        "abnormal": "Nađena IgE ukazuju na senzibilizaciju, ali se podnošljivost namirnice procjenjuje samo uz istoriju reakcija i po potrebi probnu ishranu pod nadzorom alergologa"
+      },
+      "de": {
+        "what": "Panel spezifischer IgE gegen 72 Nahrungsmittelallergene: Milch und Ei, Getreide, Nüsse, Fisch und Meeresfrüchte, Gemüse, Obst, Gewürze",
+        "how": "Aus einer einzigen venösen Blutprobe wird die gesamte Liste der Parameter bestimmt, weitere Termine entfallen",
+        "when": "Nesselsucht, Schwellungen, Juckreiz und Hautausschlag nach dem Essen, Schübe einer Neurodermitis, Magen-Darm-Beschwerden nach bestimmten Lebensmitteln, Ernährungsplanung gemeinsam mit dem Arzt",
+        "prep": "Keine besondere Vorbereitung nötig, verdächtige Lebensmittel müssen vorher nicht gemieden werden, der Test weist Antikörper nach und nicht die Reaktion auf eine kürzliche Mahlzeit",
+        "abnormal": "Nachgewiesene IgE sprechen für eine Sensibilisierung, die Verträglichkeit eines Lebensmittels wird jedoch nur zusammen mit der Vorgeschichte der Reaktionen und gegebenenfalls einer ärztlich begleiteten Probediät beurteilt"
+      },
+      "tr": {
+        "what": "Süt ve yumurta, tahıllar, sert kabuklu yemişler, balık ve deniz ürünleri, sebze, meyve ve baharatlar gibi 72 besin alerjenine karşı özgül IgE paneli",
+        "how": "Tek bir venöz kan örneğinden tüm parametreler çalışılır, tekrar gelmek gerekmez",
+        "when": "Yemek sonrası kurdeşen, şişlik, kaşıntı ve döküntü, atopik dermatit alevlenmeleri, belirli besinlerden sonra mide ve bağırsak şikayetleri, hekimle birlikte beslenme planlaması",
+        "prep": "Özel hazırlık gerekmez, şüpheli besinleri önceden kesmeye gerek yoktur, test yakın zamanda yenen yemeğe verilen tepkiyi değil antikorları gösterir",
+        "abnormal": "Saptanan IgE duyarlanmayı gösterir, ancak bir besinin tolere edilip edilmediği yalnızca tepki öyküsüyle ve gerekirse alerji uzmanı gözetiminde deneme diyetiyle değerlendirilir"
+      },
+      "sr_cyrl": {
+        "what": "Панел специфичних IgE на 72 нутритивна алергена: млијеко и јаје, житарице, орашасти плодови, риба и морски плодови, поврће, воће, зачини",
+        "how": "Из једног узорка венске крви одређује се цијели списак показатеља, без поновних долазака",
+        "when": "Копривњача, отоци, свраб и осип послије јела, погоршања атопијског дерматитиса, тегобе желуца и цријева послије одређених намирница, планирање исхране заједно са љекаром",
+        "prep": "Посебна припрема није потребна, сумњиве намирнице није потребно избјегавати прије вађења крви јер тест открива антитијела, а не реакцију на скорашњи оброк",
+        "abnormal": "Нађена IgE указују на сензибилизацију, али се подношљивост намирнице процјењује само уз историју реакција и по потреби пробну исхрану под надзором алерголога"
+      }
+    }
+  },
+  {
+    "slug": "protia-allergy-q64s-combined-panel-63-allergens",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Комбинированная панель специфических IgE к 63 аллергенам — в одном исследовании и вдыхаемые, и пищевые позиции",
+        "how": "Одна проба венозной крови, показатели определяются параллельно на единой тест-системе",
+        "when": "Жалобы, которые трудно связать с одним источником: сочетание насморка и высыпаний, круглогодичные симптомы без явной сезонности, первичное обследование при подозрении на аллергию",
+        "prep": "Специальной подготовки не требуется, приём пищи и антигистаминных препаратов на результат не влияет",
+        "abnormal": "Панель показывает, к каким группам аллергенов есть сенсибилизация. Какие из найденных позиций действительно значимы для конкретного человека, решает врач-аллерголог по симптомам, при необходимости дополняя обследование"
+      },
+      "en": {
+        "what": "A combined panel of specific IgE against 63 allergens, covering both inhaled and food items in one test",
+        "how": "One venous blood sample, the parameters are measured in parallel on a single test system",
+        "when": "Complaints that are hard to trace to a single source: rhinitis together with skin rash, year-round symptoms without clear seasonality, first work-up for suspected allergy",
+        "prep": "No special preparation is needed, meals and antihistamines do not affect the result",
+        "abnormal": "The panel shows which allergen groups there is sensitisation to. Which of the findings actually matter for a particular person is decided by an allergist based on symptoms, adding further tests if necessary"
+      },
+      "sr": {
+        "what": "Kombinovani panel specifičnih IgE na 63 alergena, u jednom pregledu i inhalacione i nutritivne stavke",
+        "how": "Jedan uzorak venske krvi, pokazatelji se određuju uporedo na jednom test-sistemu",
+        "when": "Tegobe koje je teško vezati za jedan izvor: kijavica zajedno sa osipom, cjelogodišnji simptomi bez jasne sezonalnosti, prva obrada kod sumnje na alergiju",
+        "prep": "Posebna priprema nije potrebna, obrok i antihistaminici ne utiču na nalaz",
+        "abnormal": "Panel pokazuje na koje grupe alergena postoji senzibilizacija. Koje su od nađenih stavki zaista značajne za konkretnu osobu, prema tegobama procjenjuje alergolog i po potrebi dopunjava obradu"
+      },
+      "de": {
+        "what": "Kombiniertes Panel spezifischer IgE gegen 63 Allergene, in einer Untersuchung sowohl Inhalations- als auch Nahrungsmittelallergene",
+        "how": "Eine venöse Blutprobe, die Parameter werden parallel auf einem Testsystem bestimmt",
+        "when": "Beschwerden, die sich schwer auf eine Quelle zurückführen lassen: Schnupfen zusammen mit Hautausschlag, ganzjährige Symptome ohne klare Saison, Erstabklärung bei Allergieverdacht",
+        "prep": "Keine besondere Vorbereitung nötig, Mahlzeiten und Antihistaminika beeinflussen das Ergebnis nicht",
+        "abnormal": "Das Panel zeigt, gegenüber welchen Allergengruppen eine Sensibilisierung besteht. Welche Befunde für die einzelne Person tatsächlich bedeutsam sind, entscheidet die Allergologin oder der Allergologe anhand der Beschwerden und ergänzt bei Bedarf weitere Untersuchungen"
+      },
+      "tr": {
+        "what": "Tek incelemede hem solunum hem besin alerjenlerini kapsayan, 63 alerjene karşı özgül IgE kombine paneli",
+        "how": "Tek bir venöz kan örneği alınır, parametreler tek test sisteminde eş zamanlı çalışılır",
+        "when": "Tek bir kaynağa bağlanması güç şikayetler: burun akıntısının döküntüyle birlikte olması, mevsim ayrımı olmayan yıl boyu süren belirtiler, alerji şüphesinde ilk değerlendirme",
+        "prep": "Özel hazırlık gerekmez, yemek ve antihistaminikler sonucu etkilemez",
+        "abnormal": "Panel hangi alerjen gruplarına duyarlanma olduğunu gösterir. Bulunanlardan hangilerinin o kişi için gerçekten önemli olduğuna alerji uzmanı şikayetlere göre karar verir, gerekirse incelemeyi genişletir"
+      },
+      "sr_cyrl": {
+        "what": "Комбиновани панел специфичних IgE на 63 алергена, у једном прегледу и инхалационе и нутритивне ставке",
+        "how": "Један узорак венске крви, показатељи се одређују упоредо на једном тест-систему",
+        "when": "Тегобе које је тешко везати за један извор: кијавица заједно са осипом, цјелогодишњи симптоми без јасне сезоналности, прва обрада код сумње на алергију",
+        "prep": "Посебна припрема није потребна, оброк и антихистаминици не утичу на налаз",
+        "abnormal": "Панел показује на које групе алергена постоји сензибилизација. Које су од нађених ставки заиста значајне за конкретну особу, према тегобама процјењује алерголог и по потреби допуњава обраду"
+      }
+    }
+  },
+  {
+    "slug": "protia-allergy-q96m-combined-panel-107-allergens",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Расширенная комбинированная панель специфических IgE к 107 аллергенам — самый широкий набор в этой линейке, вдыхаемые и пищевые позиции вместе",
+        "how": "Однократный забор венозной крови, вся панель выполняется из одной пробы без дополнительных визитов",
+        "when": "Множественные или меняющиеся жалобы, безуспешный поиск причины по узким панелям, планирование лечения у аллерголога, обследование перед специфической иммунотерапией по решению врача",
+        "prep": "Специальной подготовки не требуется, сдать кровь можно в любое время дня",
+        "abnormal": "Чем шире панель, тем чаще находятся показатели без клинического значения: сенсибилизация не равна аллергии. Значимые позиции отбирает и дальнейшие шаги планирует врач-аллерголог"
+      },
+      "en": {
+        "what": "An extended combined panel of specific IgE against 107 allergens, the widest set in this line, inhaled and food items together",
+        "how": "A single venous blood draw, the whole panel is run from one sample with no extra visits",
+        "when": "Multiple or changing complaints, an unsuccessful search for the trigger with narrower panels, planning treatment with an allergist, work-up before specific immunotherapy at the doctor's discretion",
+        "prep": "No special preparation is required, the sample can be taken at any time of day",
+        "abnormal": "The wider the panel, the more often results appear that have no clinical meaning, since sensitisation is not the same as an allergy. An allergist selects the relevant findings and plans the next steps"
+      },
+      "sr": {
+        "what": "Prošireni kombinovani panel specifičnih IgE na 107 alergena, najširi skup u ovoj liniji, inhalacione i nutritivne stavke zajedno",
+        "how": "Jedno vađenje venske krvi, cijeli panel se radi iz istog uzorka bez dodatnih dolazaka",
+        "when": "Brojne ili promjenljive tegobe, neuspješno traženje uzroka užim panelima, planiranje liječenja kod alergologa, obrada prije specifične imunoterapije po odluci ljekara",
+        "prep": "Posebna priprema nije potrebna, krv se može dati u bilo koje doba dana",
+        "abnormal": "Što je panel širi, to se češće nađu pokazatelji bez kliničkog značaja jer senzibilizacija nije isto što i alergija. Značajne stavke izdvaja i dalje korake planira alergolog"
+      },
+      "de": {
+        "what": "Erweitertes kombiniertes Panel spezifischer IgE gegen 107 Allergene, der umfangreichste Satz dieser Reihe, Inhalations- und Nahrungsmittelallergene zusammen",
+        "how": "Eine einzige venöse Blutentnahme, das gesamte Panel wird aus einer Probe ohne weitere Termine bearbeitet",
+        "when": "Vielfältige oder wechselnde Beschwerden, erfolglose Ursachensuche mit kleineren Panels, Therapieplanung beim Allergologen, Abklärung vor einer spezifischen Immuntherapie nach ärztlicher Entscheidung",
+        "prep": "Keine besondere Vorbereitung nötig, die Blutentnahme ist zu jeder Tageszeit möglich",
+        "abnormal": "Je breiter das Panel, desto häufiger finden sich Werte ohne klinische Bedeutung, denn eine Sensibilisierung ist nicht gleich einer Allergie. Welche Befunde relevant sind und wie es weitergeht, entscheidet die Allergologin oder der Allergologe"
+      },
+      "tr": {
+        "what": "Bu serinin en geniş kapsamlı seçeneği olan, solunum ve besin alerjenlerini birlikte içeren 107 alerjene karşı özgül IgE kombine paneli",
+        "how": "Tek seferde venöz kan alınır, panelin tamamı aynı örnekten çalışılır, ek randevu gerekmez",
+        "when": "Çok sayıda ya da değişken şikayet, dar panellerle nedenin bulunamaması, alerji uzmanıyla tedavi planlaması, hekim kararıyla özgül immünoterapi öncesi değerlendirme",
+        "prep": "Özel hazırlık gerekmez, kan günün herhangi bir saatinde alınabilir",
+        "abnormal": "Panel genişledikçe klinik karşılığı olmayan sonuçlar daha sık çıkar, çünkü duyarlanma alerjiyle aynı şey değildir. Anlamlı bulguları seçip sonraki adımları alerji uzmanı planlar"
+      },
+      "sr_cyrl": {
+        "what": "Проширени комбиновани панел специфичних IgE на 107 алергена, најшири скуп у овој линији, инхалационе и нутритивне ставке заједно",
+        "how": "Једно вађење венске крви, цијели панел се ради из истог узорка без додатних долазака",
+        "when": "Бројне или промјенљиве тегобе, неуспјешно тражење узрока ужим панелима, планирање лијечења код алерголога, обрада прије специфичне имунотерапије по одлуци љекара",
+        "prep": "Посебна припрема није потребна, крв се може дати у било које доба дана",
+        "abnormal": "Што је панел шири, то се чешће нађу показатељи без клиничког значаја јер сензибилизација није исто што и алергија. Значајне ставке издваја и даље кораке планира алерголог"
+      }
+    }
+  },
+  {
+    "slug": "bordetella-pertussis-pcr",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Молекулярный тест, выявляющий ДНК бактерии Bordetella pertussis — возбудителя коклюша",
+        "how": "Мазок тонким тампоном из носоглотки, сам забор занимает меньше минуты, ДНК определяют методом ПЦР в лаборатории",
+        "when": "Затяжной приступообразный кашель, кашель дольше двух недель, особенно у детей и подростков, кашель после контакта с больным коклюшем, обследование контактных в семье",
+        "prep": "Примерно за час до мазка не есть, не пить и не полоскать горло, не пользоваться спреями и каплями в нос; интервал после начала антибиотиков уточняет врач",
+        "abnormal": "Обнаружение ДНК означает присутствие бактерии в пробе. На поздних сроках болезни и после антибиотиков тест может быть отрицательным даже при коклюше, поэтому результат оценивает врач вместе с картиной заболевания"
+      },
+      "en": {
+        "what": "A molecular test that detects the DNA of Bordetella pertussis, the bacterium causing whooping cough",
+        "how": "A thin swab is taken from the nasopharynx, sampling itself takes less than a minute, the DNA is detected by PCR in the laboratory",
+        "when": "Prolonged coughing fits, a cough lasting more than two weeks, especially in children and teenagers, cough after contact with someone with whooping cough, testing of household contacts",
+        "prep": "For about an hour before the swab do not eat, drink or rinse the throat and do not use nasal sprays or drops; the interval after starting antibiotics is set by the doctor",
+        "abnormal": "Detected DNA means the bacterium is present in the sample. Late in the illness and after antibiotics the test can be negative even with whooping cough, so the result is interpreted by a doctor together with the clinical picture"
+      },
+      "sr": {
+        "what": "Molekularni test koji otkriva DNK bakterije Bordetella pertussis, uzročnika velikog kašlja",
+        "how": "Bris tankim štapićem iz nazofarinksa, samo uzimanje traje kraće od minuta, DNK se određuje metodom PCR u laboratoriji",
+        "when": "Dugotrajan kašalj u napadima, kašalj duži od dvije sedmice, naročito kod djece i adolescenata, kašalj poslije kontakta sa oboljelim od velikog kašlja, obrada kontakata u porodici",
+        "prep": "Otprilike sat prije brisa ne jesti, ne piti i ne ispirati grlo, ne koristiti sprejeve i kapi za nos; razmak poslije početka antibiotika određuje ljekar",
+        "abnormal": "Nalaz DNK znači da je bakterija prisutna u uzorku. U kasnijoj fazi bolesti i poslije antibiotika test može biti negativan i kod velikog kašlja, pa rezultat tumači ljekar uz kliničku sliku"
+      },
+      "de": {
+        "what": "Molekularer Test zum Nachweis der DNA von Bordetella pertussis, dem Erreger des Keuchhustens",
+        "how": "Abstrich mit einem dünnen Tupfer aus dem Nasenrachenraum, die Entnahme dauert weniger als eine Minute, die DNA wird im Labor mittels PCR bestimmt",
+        "when": "Anhaltende Hustenanfälle, Husten über mehr als zwei Wochen, besonders bei Kindern und Jugendlichen, Husten nach Kontakt zu einer erkrankten Person, Abklärung von Kontaktpersonen im Haushalt",
+        "prep": "Etwa eine Stunde vor dem Abstrich nicht essen, trinken oder gurgeln und keine Nasensprays oder Nasentropfen verwenden; den Abstand nach Beginn einer Antibiotikatherapie legt der Arzt fest",
+        "abnormal": "Nachgewiesene DNA bedeutet, dass der Erreger in der Probe vorhanden ist. Im späten Krankheitsverlauf und nach Antibiotika kann der Test trotz Keuchhusten negativ ausfallen, daher beurteilt der Arzt das Ergebnis zusammen mit dem klinischen Bild"
+      },
+      "tr": {
+        "what": "Boğmaca etkeni Bordetella pertussis bakterisinin DNA'sını saptayan moleküler test",
+        "how": "Genizden ince çubukla sürüntü alınır, örnek alma bir dakikadan kısa sürer, DNA laboratuvarda PCR yöntemiyle belirlenir",
+        "when": "Nöbetler halinde süren uzun öksürük, iki haftadan uzun süren öksürük, özellikle çocuk ve ergenlerde, boğmacalı biriyle temas sonrası öksürük, ev içi temaslıların incelenmesi",
+        "prep": "Sürüntüden yaklaşık bir saat önce yememek, içmemek ve gargara yapmamak, burun spreyi ve damlası kullanmamak gerekir; antibiyotik başlandıysa bekleme süresini hekim belirler",
+        "abnormal": "DNA saptanması bakterinin örnekte bulunduğunu gösterir. Hastalığın geç döneminde ve antibiyotik sonrası test boğmaca varken bile negatif çıkabilir, bu nedenle sonucu hekim klinik tabloyla birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Молекуларни тест који открива ДНК бактерије Bordetella pertussis, узрочника великог кашља",
+        "how": "Брис танким штапићем из назофаринкса, само узимање траје краће од минута, ДНК се одређује методом ПЦР у лабораторији",
+        "when": "Дуготрајан кашаљ у нападима, кашаљ дужи од двије седмице, нарочито код дјеце и адолесцената, кашаљ послије контакта са обољелим од великог кашља, обрада контаката у породици",
+        "prep": "Отприлике сат прије бриса не јести, не пити и не испирати грло, не користити спрејеве и капи за нос; размак послије почетка антибиотика одређује љекар",
+        "abnormal": "Налаз ДНК значи да је бактерија присутна у узорку. У каснијој фази болести и послије антибиотика тест може бити негативан и код великог кашља, па резултат тумачи љекар уз клиничку слику"
+      }
+    }
+  },
+  {
+    "slug": "chlamydia-trachomatis-pcr-urine",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Молекулярный тест на ДНК бактерии Chlamydia trachomatis в моче — вариант без взятия мазка",
+        "how": "Пациент самостоятельно собирает первую порцию мочи в стерильный контейнер, дальше ДНК определяют методом ПЦР",
+        "when": "Дискомфорт и жжение при мочеиспускании, выделения, скрининг при смене партнёра и при планировании беременности, обследование партнёра, контроль после лечения по назначению врача",
+        "prep": "Не мочиться 2–3 часа до сбора, собрать именно первую порцию струи, не использовать антисептики при гигиене; сроки после приёма антибиотиков уточняет врач",
+        "abnormal": "Обнаружение ДНК означает присутствие бактерии в пробе. Отрицательный результат из мочи не всегда исключает инфекцию другой локализации, поэтому необходимость мазка и дальнейшую тактику определяет врач"
+      },
+      "en": {
+        "what": "A molecular test for Chlamydia trachomatis DNA in urine, an option that avoids taking a swab",
+        "how": "The patient collects the first portion of urine into a sterile container, the DNA is then detected by PCR",
+        "when": "Discomfort or burning on urination, discharge, screening after a change of partner and when planning a pregnancy, testing of a partner, follow-up after treatment as prescribed",
+        "prep": "Do not urinate for 2–3 hours before collection, collect exactly the first portion of the stream, do not use antiseptics for hygiene beforehand; the interval after antibiotics is set by the doctor",
+        "abnormal": "Detected DNA means the bacterium is present in the sample. A negative urine result does not always rule out infection at another site, so the need for a swab and the next steps are decided by the doctor"
+      },
+      "sr": {
+        "what": "Molekularni test na DNK bakterije Chlamydia trachomatis iz mokraće, varijanta bez uzimanja brisa",
+        "how": "Pacijent sam sakuplja prvi mlaz mokraće u sterilnu posudu, DNK se zatim određuje metodom PCR",
+        "when": "Nelagoda i peckanje pri mokrenju, sekret, skrining pri promjeni partnera i pri planiranju trudnoće, pregled partnera, kontrola poslije liječenja po nalogu ljekara",
+        "prep": "Ne mokriti 2–3 sata prije sakupljanja, uzeti baš prvi mlaz, ne koristiti antiseptike pri higijeni; razmak poslije antibiotika određuje ljekar",
+        "abnormal": "Nalaz DNK znači da je bakterija prisutna u uzorku. Negativan nalaz iz mokraće ne isključuje uvijek infekciju na drugom mjestu, pa potrebu za brisom i dalje korake određuje ljekar"
+      },
+      "de": {
+        "what": "Molekularer Test auf DNA von Chlamydia trachomatis im Urin, eine Variante ohne Abstrich",
+        "how": "Die Patientin oder der Patient fängt die erste Urinportion in einem sterilen Becher auf, anschließend wird die DNA mittels PCR bestimmt",
+        "when": "Beschwerden oder Brennen beim Wasserlassen, Ausfluss, Screening bei Partnerwechsel und bei Kinderwunsch, Untersuchung des Partners, Kontrolle nach Behandlung auf ärztliche Anordnung",
+        "prep": "2–3 Stunden vor der Gewinnung nicht Wasser lassen, genau die erste Portion des Strahls auffangen, vorher keine Antiseptika zur Reinigung verwenden; den Abstand nach einer Antibiotikatherapie legt der Arzt fest",
+        "abnormal": "Nachgewiesene DNA bedeutet, dass der Erreger in der Probe vorhanden ist. Ein negativer Urinbefund schließt eine Infektion an anderer Stelle nicht immer aus, über einen Abstrich und das weitere Vorgehen entscheidet der Arzt"
+      },
+      "tr": {
+        "what": "İdrarda Chlamydia trachomatis DNA'sını arayan, sürüntü almayı gerektirmeyen moleküler test",
+        "how": "Hasta ilk idrar akımını steril kaba kendisi toplar, ardından DNA PCR yöntemiyle belirlenir",
+        "when": "İdrar yaparken rahatsızlık ve yanma, akıntı, partner değişiminde ve gebelik planlamasında tarama, partnerin incelenmesi, hekim önerisiyle tedavi sonrası kontrol",
+        "prep": "Toplamadan 2–3 saat önce idrara çıkmamak, akımın tam ilk bölümünü almak, temizlikte antiseptik kullanmamak gerekir; antibiyotik sonrası bekleme süresini hekim belirler",
+        "abnormal": "DNA saptanması bakterinin örnekte bulunduğunu gösterir. İdrarda negatif sonuç başka bölgedeki enfeksiyonu her zaman dışlamaz, sürüntü gerekip gerekmediğine ve sonraki adımlara hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Молекуларни тест на ДНК бактерије Chlamydia trachomatis из мокраће, варијанта без узимања бриса",
+        "how": "Пацијент сам сакупља први млаз мокраће у стерилну посуду, ДНК се затим одређује методом ПЦР",
+        "when": "Нелагода и пецкање при мокрењу, секрет, скрининг при промјени партнера и при планирању трудноће, преглед партнера, контрола послије лијечења по налогу љекара",
+        "prep": "Не мокрити 2–3 сата прије сакупљања, узети баш први млаз, не користити антисептике при хигијени; размак послије антибиотика одређује љекар",
+        "abnormal": "Налаз ДНК значи да је бактерија присутна у узорку. Негативан налаз из мокраће не искључује увијек инфекцију на другом мјесту, па потребу за брисом и даље кораке одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "sars-cov-2-pcr",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Молекулярный тест, выявляющий РНК вируса SARS-CoV-2 методом ПЦР в реальном времени",
+        "how": "Мазок из носоглотки и ротоглотки одноразовым тампоном, забор занимает около минуты, дальше пробу исследуют в лаборатории",
+        "when": "Симптомы респираторной инфекции, контакт с заболевшим, обследование перед плановой госпитализацией или вмешательством, требования конкретного учреждения или страны назначения",
+        "prep": "За час-два до мазка не есть, не пить, не чистить зубы, не полоскать рот и не использовать спреи и капли в нос",
+        "abnormal": "Положительный результат означает, что РНК вируса найдена в пробе; отрицательный не исключает инфекцию в самом начале болезни или при неправильном заборе. Решение о лечении и изоляции принимает врач"
+      },
+      "en": {
+        "what": "A molecular test detecting SARS-CoV-2 viral RNA by real-time PCR",
+        "how": "A swab from the nasopharynx and throat with a single-use swab, sampling takes about a minute, the sample is then processed in the laboratory",
+        "when": "Symptoms of a respiratory infection, contact with an infected person, checking before a planned hospital admission or procedure, requirements of a particular institution or destination country",
+        "prep": "One to two hours before the swab do not eat, drink, brush teeth, rinse the mouth or use nasal sprays and drops",
+        "abnormal": "A positive result means viral RNA was found in the sample, a negative one does not rule out infection very early in the illness or after incorrect sampling. Decisions about treatment and isolation are made by a doctor"
+      },
+      "sr": {
+        "what": "Molekularni test koji otkriva RNK virusa SARS-CoV-2 metodom PCR u realnom vremenu",
+        "how": "Bris iz nazofarinksa i ždrijela jednokratnim štapićem, uzimanje traje oko minut, uzorak se zatim obrađuje u laboratoriji",
+        "when": "Simptomi respiratorne infekcije, kontakt sa oboljelim, provjera prije planiranog prijema u bolnicu ili zahvata, zahtjevi konkretne ustanove ili zemlje u koju se putuje",
+        "prep": "Sat do dva prije brisa ne jesti, ne piti, ne prati zube, ne ispirati usta i ne koristiti sprejeve i kapi za nos",
+        "abnormal": "Pozitivan nalaz znači da je RNK virusa nađena u uzorku, negativan ne isključuje infekciju na samom početku bolesti ili kod loše uzetog uzorka. Odluku o liječenju i izolaciji donosi ljekar"
+      },
+      "de": {
+        "what": "Molekularer Test zum Nachweis der RNA des Virus SARS-CoV-2 mittels Real-Time-PCR",
+        "how": "Abstrich aus Nasenrachenraum und Rachen mit einem Einwegtupfer, die Entnahme dauert etwa eine Minute, danach wird die Probe im Labor untersucht",
+        "when": "Symptome eines Atemwegsinfekts, Kontakt zu einer erkrankten Person, Untersuchung vor geplanter Aufnahme oder einem Eingriff, Vorgaben einer bestimmten Einrichtung oder des Ziellandes",
+        "prep": "Ein bis zwei Stunden vor dem Abstrich nicht essen, trinken, Zähne putzen, den Mund spülen oder Nasensprays und Nasentropfen verwenden",
+        "abnormal": "Ein positives Ergebnis bedeutet, dass Virus-RNA in der Probe nachgewiesen wurde, ein negatives schließt eine Infektion ganz zu Beginn der Erkrankung oder bei fehlerhafter Entnahme nicht aus. Über Behandlung und Isolation entscheidet der Arzt"
+      },
+      "tr": {
+        "what": "SARS-CoV-2 virüsünün RNA'sını gerçek zamanlı PCR yöntemiyle saptayan moleküler test",
+        "how": "Tek kullanımlık çubukla genizden ve boğazdan sürüntü alınır, işlem yaklaşık bir dakika sürer, örnek sonra laboratuvarda çalışılır",
+        "when": "Solunum yolu enfeksiyonu belirtileri, hasta biriyle temas, planlı hastane yatışı veya işlem öncesi kontrol, ilgili kurumun ya da gidilecek ülkenin istediği koşullar",
+        "prep": "Sürüntüden bir iki saat önce yememek, içmemek, diş fırçalamamak, ağzı çalkalamamak ve burun spreyi ya da damlası kullanmamak gerekir",
+        "abnormal": "Pozitif sonuç virüs RNA'sının örnekte bulunduğunu gösterir, negatif sonuç hastalığın ilk gününde ya da örnek hatalı alındığında enfeksiyonu dışlamaz. Tedavi ve izolasyon kararını hekim verir"
+      },
+      "sr_cyrl": {
+        "what": "Молекуларни тест који открива РНК вируса SARS-CoV-2 методом ПЦР у реалном времену",
+        "how": "Брис из назофаринкса и ждријела једнократним штапићем, узимање траје око минут, узорак се затим обрађује у лабораторији",
+        "when": "Симптоми респираторне инфекције, контакт са обољелим, провјера прије планираног пријема у болницу или захвата, захтјеви конкретне установе или земље у коју се путује",
+        "prep": "Сат до два прије бриса не јести, не пити, не прати зубе, не испирати уста и не користити спрејеве и капи за нос",
+        "abnormal": "Позитиван налаз значи да је РНК вируса нађена у узорку, негативан не искључује инфекцију на самом почетку болести или код лоше узетог узорка. Одлуку о лијечењу и изолацији доноси љекар"
+      }
+    }
+  },
+  {
+    "slug": "fecal-occult-blood",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ кала на следы крови, не видимые глазом",
+        "how": "Пациент дома собирает небольшую пробу кала в контейнер с лопаточкой и приносит в лабораторию; современные иммунохимические тесты реагируют только на человеческий гемоглобин",
+        "when": "Профилактические программы обследования кишечника, анемия неясного происхождения, стойкие изменения стула, боли в животе, наблюдение по назначению врача",
+        "prep": "Для иммунохимического теста диета обычно не нужна; не собирать пробу в дни менструации, при обострении геморроя и кровоточивости дёсен, не брать материал из воды в унитазе",
+        "abnormal": "Обнаружение крови может быть связано с кровоточивостью на любом уровне пищеварительного тракта, включая геморрой и трещины. Уточняющее обследование, чаще всего осмотр кишечника, назначает врач"
+      },
+      "en": {
+        "what": "A stool test for traces of blood that are not visible to the eye",
+        "how": "At home the patient collects a small stool sample into a container with a spatula and brings it to the laboratory; modern immunochemical tests react only to human haemoglobin",
+        "when": "Preventive bowel screening programmes, anaemia of unclear origin, persistent changes in stool, abdominal pain, monitoring as prescribed by a doctor",
+        "prep": "An immunochemical test usually needs no diet; do not collect the sample during menstruation, during a haemorrhoid flare-up or with bleeding gums, and never take it from toilet water",
+        "abnormal": "Blood in the sample may be related to bleeding at any level of the digestive tract, including haemorrhoids and fissures. Further investigation, most often an examination of the bowel, is arranged by the doctor"
+      },
+      "sr": {
+        "what": "Analiza stolice na tragove krvi koji se ne vide golim okom",
+        "how": "Pacijent kod kuće sakupi mali uzorak stolice u posudu sa lopaticom i donese ga u laboratoriju; savremeni imunohemijski testovi reaguju samo na ljudski hemoglobin",
+        "when": "Preventivni programi pregleda crijeva, anemija nejasnog uzroka, uporne promjene stolice, bolovi u trbuhu, praćenje po nalogu ljekara",
+        "prep": "Za imunohemijski test dijeta obično nije potrebna; uzorak ne uzimati u dane menstruacije, kod pogoršanja hemoroida i krvarenja desni, niti iz vode u šolji",
+        "abnormal": "Nalaz krvi može biti povezan sa krvarenjem na bilo kom nivou probavnog trakta, uključujući hemoroide i fisure. Dopunsku obradu, najčešće pregled crijeva, određuje ljekar"
+      },
+      "de": {
+        "what": "Stuhltest auf Blutspuren, die mit bloßem Auge nicht sichtbar sind",
+        "how": "Zu Hause entnimmt die Patientin oder der Patient mit einem Spatel eine kleine Stuhlprobe in ein Röhrchen und bringt sie ins Labor; moderne immunchemische Tests reagieren nur auf menschliches Hämoglobin",
+        "when": "Vorsorgeprogramme zur Darmuntersuchung, Blutarmut unklarer Ursache, anhaltende Stuhlveränderungen, Bauchschmerzen, Verlaufskontrolle auf ärztliche Anordnung",
+        "prep": "Für den immunchemischen Test ist meist keine Diät nötig; die Probe nicht während der Menstruation, bei akuten Hämorrhoiden oder Zahnfleischbluten und nie aus dem Toilettenwasser entnehmen",
+        "abnormal": "Nachgewiesenes Blut kann mit einer Blutung auf jeder Ebene des Verdauungstrakts zusammenhängen, auch mit Hämorrhoiden oder Einrissen. Die weiterführende Abklärung, meist eine Darmuntersuchung, veranlasst der Arzt"
+      },
+      "tr": {
+        "what": "Gaitada gözle görülmeyen kan izlerini arayan test",
+        "how": "Hasta evde spatulalı kaba küçük bir gaita örneği alır ve laboratuvara getirir; güncel immünkimyasal testler yalnızca insan hemoglobinine tepki verir",
+        "when": "Koruyucu bağırsak tarama programları, nedeni belirsiz kansızlık, dışkıda süregelen değişiklikler, karın ağrısı, hekim önerisiyle izlem",
+        "prep": "İmmünkimyasal test için genellikle diyet gerekmez; örneği adet günlerinde, hemoroit alevlenmesinde ve diş eti kanaması varken almamak, klozetteki sudan hiç almamak gerekir",
+        "abnormal": "Kan bulunması hemoroit ve çatlaklar dahil sindirim yolunun herhangi bir düzeyindeki kanamayla ilişkili olabilir. Çoğunlukla bağırsak incelemesi olan ileri tetkiki hekim planlar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа столице на трагове крви који се не виде голим оком",
+        "how": "Пацијент код куће сакупи мали узорак столице у посуду са лопатицом и донесе га у лабораторију; савремени имунохемијски тестови реагују само на људски хемоглобин",
+        "when": "Превентивни програми прегледа цријева, анемија нејасног узрока, упорне промјене столице, болови у трбуху, праћење по налогу љекара",
+        "prep": "За имунохемијски тест дијета обично није потребна; узорак не узимати у дане менструације, код погоршања хемороида и крварења десни, нити из воде у шољи",
+        "abnormal": "Налаз крви може бити повезан са крварењем на било ком нивоу пробавног тракта, укључујући хемороиде и фисуре. Допунску обраду, најчешће преглед цријева, одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "calprotectin",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Белок из нейтрофилов, который определяют в кале как показатель воспаления в кишечнике",
+        "how": "Небольшая проба кала в контейнере, анализ выполняется в лаборатории; кровь для этого исследования брать не нужно",
+        "when": "Длительная диарея, боль в животе, различение воспалительных и функциональных причин жалоб, наблюдение за течением хронических воспалительных заболеваний кишечника, оценка эффекта назначенного лечения",
+        "prep": "Специальной диеты не требуется; сообщите врачу о приёме нестероидных противовоспалительных препаратов — они могут влиять на результат, материал не берут из воды в унитазе",
+        "abnormal": "Повышение может быть связано с воспалением в кишечнике, кишечной инфекцией или приёмом некоторых препаратов. Нужно ли эндоскопическое обследование, решает врач"
+      },
+      "en": {
+        "what": "A neutrophil protein measured in stool as an indicator of inflammation in the bowel",
+        "how": "A small stool sample is collected into a container and analysed in the laboratory; no blood draw is needed for this test",
+        "when": "Prolonged diarrhoea, abdominal pain, distinguishing inflammatory from functional causes of complaints, monitoring chronic inflammatory bowel disease, assessing the effect of prescribed treatment",
+        "prep": "No special diet is required; tell the doctor about non-steroidal anti-inflammatory drugs as they can affect the result, and never take the sample from toilet water",
+        "abnormal": "An elevated value may be related to inflammation in the bowel, an intestinal infection or certain medicines. Whether an endoscopic examination is needed is decided by the doctor"
+      },
+      "sr": {
+        "what": "Bjelančevina iz neutrofila koja se mjeri u stolici kao pokazatelj upale u crijevima",
+        "how": "Mali uzorak stolice u posudi, analiza se radi u laboratoriji; vađenje krvi za ovaj nalaz nije potrebno",
+        "when": "Dugotrajni proliv, bol u trbuhu, razlikovanje upalnih od funkcionalnih uzroka tegoba, praćenje hroničnih upalnih bolesti crijeva, procjena djelovanja propisane terapije",
+        "prep": "Posebna dijeta nije potrebna; obavijestiti ljekara o uzimanju nesteroidnih antiinflamatornih lijekova jer mogu uticati na nalaz, uzorak ne uzimati iz vode u šolji",
+        "abnormal": "Povišena vrijednost može biti povezana sa upalom u crijevima, crijevnom infekcijom ili uzimanjem pojedinih lijekova. Da li je potrebna endoskopska obrada, odlučuje ljekar"
+      },
+      "de": {
+        "what": "Ein Protein aus neutrophilen Granulozyten, das im Stuhl als Hinweis auf eine Entzündung im Darm bestimmt wird",
+        "how": "Eine kleine Stuhlprobe wird in ein Röhrchen gegeben und im Labor untersucht; eine Blutentnahme ist dafür nicht nötig",
+        "when": "Anhaltender Durchfall, Bauchschmerzen, Unterscheidung entzündlicher von funktionellen Ursachen der Beschwerden, Verlaufskontrolle chronisch entzündlicher Darmerkrankungen, Beurteilung des Therapieerfolgs",
+        "prep": "Keine besondere Diät nötig; die Einnahme nicht steroidaler Entzündungshemmer dem Arzt mitteilen, da sie das Ergebnis beeinflussen kann, und die Probe nie aus dem Toilettenwasser entnehmen",
+        "abnormal": "Ein erhöhter Wert kann mit einer Entzündung im Darm, einer Darminfektion oder bestimmten Medikamenten zusammenhängen. Ob eine endoskopische Abklärung nötig ist, entscheidet der Arzt"
+      },
+      "tr": {
+        "what": "Bağırsaktaki iltihabın göstergesi olarak gaitada ölçülen, nötrofillerden kaynaklanan bir protein",
+        "how": "Küçük bir gaita örneği kaba alınır ve laboratuvarda çalışılır; bu tetkik için kan alınması gerekmez",
+        "when": "Uzun süren ishal, karın ağrısı, şikayetlerin iltihabi mi işlevsel mi olduğunun ayrımı, kronik iltihabi bağırsak hastalıklarının izlemi, verilen tedavinin etkisinin değerlendirilmesi",
+        "prep": "Özel diyet gerekmez; steroid olmayan ağrı kesici kullanımı sonucu etkileyebileceğinden hekime bildirilmeli, örnek klozetteki sudan alınmamalıdır",
+        "abnormal": "Yüksek değer bağırsaktaki iltihapla, bağırsak enfeksiyonuyla ya da bazı ilaçların kullanımıyla ilişkili olabilir. Endoskopik incelemenin gerekip gerekmediğine hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Бјеланчевина из неутрофила која се мјери у столици као показатељ упале у цријевима",
+        "how": "Мали узорак столице у посуди, анализа се ради у лабораторији; вађење крви за овај налаз није потребно",
+        "when": "Дуготрајни пролив, бол у трбуху, разликовање упалних од функционалних узрока тегоба, праћење хроничних упалних болести цријева, процјена дјеловања прописане терапије",
+        "prep": "Посебна дијета није потребна; обавијестити љекара о узимању нестероидних антиинфламаторних лијекова јер могу утицати на налаз, узорак не узимати из воде у шољи",
+        "abnormal": "Повишена вриједност може бити повезана са упалом у цријевима, цријевном инфекцијом или узимањем појединих лијекова. Да ли је потребна ендоскопска обрада, одлучује љекар"
+      }
+    }
+  },
+  {
+    "slug": "afp",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Белок, который вырабатывает печень плода; у взрослых его определяют в крови как один из показателей наблюдения, а при беременности он входит в комплекс скрининга",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Пренатальный скрининг второго триместра в составе набора показателей, наблюдение при хронических заболеваниях печени, динамическое наблюдение по назначению врача",
+        "prep": "Специальной подготовки обычно не требуется; при беременности нужно точно указать срок — без него результат не оценивают",
+        "abnormal": "Показатель не трактуется сам по себе: при беременности его оценивают только вместе с остальными показателями скрининга и сроком, вне беременности — в динамике и вместе с другими исследованиями. Выводы делает врач"
+      },
+      "en": {
+        "what": "A protein produced by the fetal liver; in adults it is measured in blood as one of the monitoring parameters, and in pregnancy it belongs to a screening set",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Second-trimester prenatal screening as part of a set of parameters, monitoring in chronic liver disease, follow-up over time as prescribed by a doctor",
+        "prep": "Usually no special preparation is needed; in pregnancy the exact gestational age must be stated, without it the result is not assessed",
+        "abnormal": "The value is not interpreted on its own: in pregnancy it is assessed only together with the other screening parameters and the gestational age, outside pregnancy over time and alongside other investigations. Conclusions are drawn by a doctor"
+      },
+      "sr": {
+        "what": "Bjelančevina koju stvara jetra ploda; kod odraslih se mjeri u krvi kao jedan od pokazatelja praćenja, a u trudnoći ulazi u sklop skrininga",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Prenatalni skrining u drugom tromjesečju kao dio skupa pokazatelja, praćenje kod hroničnih bolesti jetre, praćenje kroz vrijeme po nalogu ljekara",
+        "prep": "Posebna priprema obično nije potrebna; u trudnoći je nužno tačno navesti gestacijsku starost, bez toga se nalaz ne procjenjuje",
+        "abnormal": "Pokazatelj se ne tumači sam za sebe: u trudnoći se procjenjuje isključivo zajedno sa ostalim pokazateljima skrininga i gestacijskom starošću, van trudnoće kroz vrijeme i uz druge nalaze. Zaključak donosi ljekar"
+      },
+      "de": {
+        "what": "Ein Eiweiß, das die Leber des Ungeborenen bildet; bei Erwachsenen wird es im Blut als Verlaufsparameter bestimmt, in der Schwangerschaft gehört es zu einem Screening-Satz",
+        "how": "Venöse Blutentnahme, dauert einige Minuten",
+        "when": "Pränatales Screening im zweiten Trimester als Teil eines Parametersatzes, Verlaufskontrolle bei chronischen Lebererkrankungen, Kontrolle im Zeitverlauf auf ärztliche Anordnung",
+        "prep": "Meist ist keine besondere Vorbereitung nötig; in der Schwangerschaft muss die Schwangerschaftswoche genau angegeben werden, sonst ist der Wert nicht beurteilbar",
+        "abnormal": "Der Wert wird nicht für sich allein gedeutet: in der Schwangerschaft nur zusammen mit den übrigen Screening-Parametern und der Schwangerschaftswoche, außerhalb der Schwangerschaft im Verlauf und zusammen mit anderen Untersuchungen. Die Bewertung nimmt der Arzt vor"
+      },
+      "tr": {
+        "what": "Bebeğin karaciğerinde üretilen bir protein; yetişkinlerde izlem parametrelerinden biri olarak kanda ölçülür, gebelikte ise tarama setinin parçasıdır",
+        "how": "Venöz kan alınır, birkaç dakika sürer",
+        "when": "İkinci üç aylık dönemde parametre setinin parçası olarak prenatal tarama, kronik karaciğer hastalıklarında izlem, hekim önerisiyle zaman içinde takip",
+        "prep": "Genellikle özel hazırlık gerekmez; gebelikte gebelik haftasının tam olarak bildirilmesi gerekir, aksi halde sonuç değerlendirilmez",
+        "abnormal": "Değer tek başına yorumlanmaz: gebelikte yalnızca diğer tarama parametreleri ve gebelik haftasıyla birlikte, gebelik dışında ise zaman içindeki seyriyle ve diğer tetkiklerle birlikte değerlendirilir. Yorumu hekim yapar"
+      },
+      "sr_cyrl": {
+        "what": "Бјеланчевина коју ствара јетра плода; код одраслих се мјери у крви као један од показатеља праћења, а у трудноћи улази у склоп скрининга",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Пренатални скрининг у другом тромјесечју као дио скупа показатеља, праћење код хроничних болести јетре, праћење кроз вријеме по налогу љекара",
+        "prep": "Посебна припрема обично није потребна; у трудноћи је нужно тачно навести гестацијску старост, без тога се налаз не процјењује",
+        "abnormal": "Показатељ се не тумачи сам за себе: у трудноћи се процјењује искључиво заједно са осталим показатељима скрининга и гестацијском старошћу, ван трудноће кроз вријеме и уз друге налазе. Закључак доноси љекар"
+      }
+    }
+  },
+  {
+    "slug": "interleukin-6",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Цитокин, по которому оценивают активность воспалительного ответа организма",
+        "how": "Забор венозной крови в отдельную пробирку, исследование выполняется в лаборатории",
+        "when": "Оценка выраженности воспаления при тяжёлых инфекциях, наблюдение в стационаре, ревматические и аутоиммунные заболевания, дополнение к другим маркерам воспаления, контроль на фоне назначенной терапии",
+        "prep": "Строгого голодания обычно не требуется; перед забором желательно 15 минут покоя, накануне избегать интенсивных физических нагрузок",
+        "abnormal": "Повышение может быть связано с активным воспалением любой природы — инфекцией, травмой, обострением хронического заболевания. Изолированно показатель не трактуется, врач оценивает его вместе с остальными данными"
+      },
+      "en": {
+        "what": "A cytokine used to assess how active the body's inflammatory response is",
+        "how": "Venous blood draw into a separate tube, the assay is run in the laboratory",
+        "when": "Assessing the intensity of inflammation in severe infections, monitoring in hospital, rheumatic and autoimmune diseases, as an addition to other inflammatory markers, monitoring during prescribed therapy",
+        "prep": "Strict fasting is usually not required; about 15 minutes of rest before the draw is advisable and intense physical exercise should be avoided the day before",
+        "abnormal": "An increase may be related to active inflammation of any origin, such as infection, injury or a flare of a chronic disease. The marker is not interpreted in isolation, the doctor assesses it together with the rest of the findings"
+      },
+      "sr": {
+        "what": "Citokin po kojem se procjenjuje aktivnost upalnog odgovora organizma",
+        "how": "Uzimanje venske krvi u zasebnu epruvetu, analiza se radi u laboratoriji",
+        "when": "Procjena jačine upale kod teških infekcija, praćenje u bolnici, reumatske i autoimune bolesti, dopuna drugim pokazateljima upale, kontrola tokom propisane terapije",
+        "prep": "Strogo gladovanje obično nije potrebno; poželjno je petnaestak minuta mirovanja prije vađenja krvi, a dan ranije izbjegavati jake fizičke napore",
+        "abnormal": "Povišena vrijednost može biti povezana sa aktivnom upalom bilo kog porijekla, infekcijom, povredom ili pogoršanjem hronične bolesti. Pokazatelj se ne tumači izdvojeno, ljekar ga procjenjuje uz ostale nalaze"
+      },
+      "de": {
+        "what": "Ein Zytokin, mit dem die Aktivität der Entzündungsreaktion des Körpers beurteilt wird",
+        "how": "Venöse Blutentnahme in ein eigenes Röhrchen, die Bestimmung erfolgt im Labor",
+        "when": "Beurteilung der Entzündungsstärke bei schweren Infektionen, Überwachung im Krankenhaus, rheumatische und autoimmune Erkrankungen, Ergänzung zu anderen Entzündungsmarkern, Kontrolle unter laufender Therapie",
+        "prep": "Striktes Nüchternsein ist meist nicht nötig; etwa 15 Minuten Ruhe vor der Entnahme sind sinnvoll, am Vortag starke körperliche Belastung meiden",
+        "abnormal": "Ein Anstieg kann mit einer aktiven Entzündung jeder Ursache zusammenhängen, etwa Infektion, Verletzung oder Schub einer chronischen Erkrankung. Der Wert wird nicht isoliert gedeutet, der Arzt beurteilt ihn zusammen mit den übrigen Befunden"
+      },
+      "tr": {
+        "what": "Vücudun iltihap yanıtının ne kadar etkin olduğunu değerlendirmeye yarayan bir sitokin",
+        "how": "Ayrı bir tüpe venöz kan alınır, çalışma laboratuvarda yapılır",
+        "when": "Ağır enfeksiyonlarda iltihabın şiddetinin değerlendirilmesi, hastanede izlem, romatizmal ve otoimmün hastalıklar, diğer iltihap belirteçlerine ek olarak, verilen tedavi sırasında takip",
+        "prep": "Genellikle sıkı açlık gerekmez; kan alınmadan önce yaklaşık 15 dakika dinlenmek iyi olur, bir gün önce yoğun fiziksel efordan kaçınılmalıdır",
+        "abnormal": "Yükseklik enfeksiyon, yaralanma ya da kronik bir hastalığın alevlenmesi gibi her türden etkin iltihapla ilişkili olabilir. Belirteç tek başına yorumlanmaz, hekim diğer bulgularla birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Цитокин по којем се процјењује активност упалног одговора организма",
+        "how": "Узимање венске крви у засебну епрувету, анализа се ради у лабораторији",
+        "when": "Процјена јачине упале код тешких инфекција, праћење у болници, реуматске и аутоимуне болести, допуна другим показатељима упале, контрола током прописане терапије",
+        "prep": "Строго гладовање обично није потребно; пожељно је петнаестак минута мировања прије вађења крви, а дан раније избјегавати јаке физичке напоре",
+        "abnormal": "Повишена вриједност може бити повезана са активном упалом било ког поријекла, инфекцијом, повредом или погоршањем хроничне болести. Показатељ се не тумачи издвојено, љекар га процјењује уз остале налазе"
+      }
+    }
+  },
+  {
+    "slug": "ogtt-3-point",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Тест с сахарной нагрузкой: уровень глюкозы измеряют натощак, затем через 60 и 120 минут после приёма раствора глюкозы",
+        "how": "Первый забор крови натощак, затем пациент выпивает подготовленный лабораторией раствор и остаётся в клинике ещё на два часа, за это время кровь берут ещё дважды",
+        "when": "Пограничный результат глюкозы натощак, скрининг гестационного диабета во время беременности, оценка нарушений углеводного обмена, избыточный вес и другие факторы риска по направлению врача",
+        "prep": "Натощак 8–12 часов, разрешена только вода; за три дня до теста не ограничивать углеводы в питании, во время теста не есть, не курить и не ходить, при плохом самочувствии сразу сказать персоналу",
+        "abnormal": "Отклонения в любой из трёх точек могут быть связаны с нарушением углеводного обмена или с временными факторами — недавней болезнью, стрессом, приёмом лекарств. Заключение делает врач и при необходимости назначает повторный тест"
+      },
+      "en": {
+        "what": "A glucose load test: glucose is measured fasting and then 60 and 120 minutes after drinking a glucose solution",
+        "how": "The first sample is taken fasting, the patient then drinks the solution prepared by the laboratory and stays at the clinic for two more hours, during which blood is drawn twice more",
+        "when": "A borderline fasting glucose result, screening for gestational diabetes during pregnancy, assessment of carbohydrate metabolism disorders, excess weight and other risk factors on a doctor's referral",
+        "prep": "Fasting for 8–12 hours, only water allowed; do not restrict carbohydrates in the three days before, and during the test do not eat, smoke or walk around, telling the staff at once if you feel unwell",
+        "abnormal": "Deviations at any of the three time points may be related to a carbohydrate metabolism disorder or to temporary factors such as a recent illness, stress or medicines. The conclusion is made by a doctor, who may order a repeat test"
+      },
+      "sr": {
+        "what": "Test opterećenja šećerom: glukoza se mjeri našte, pa 60 i 120 minuta poslije ispijanja rastvora glukoze",
+        "how": "Prvo vađenje krvi je našte, zatim pacijent popije rastvor koji priprema laboratorija i ostaje u ustanovi još dva sata, tokom kojih se krv vadi još dva puta",
+        "when": "Granična vrijednost glukoze našte, skrining gestacijskog dijabetesa tokom trudnoće, procjena poremećaja metabolizma ugljenih hidrata, prekomjerna težina i drugi faktori rizika po uputu ljekara",
+        "prep": "Natašte 8–12 sati, dozvoljena samo voda; tri dana prije testa ne ograničavati unos ugljenih hidrata, tokom testa ne jesti, ne pušiti i ne hodati, a kod lošeg osjećaja odmah obavijestiti osoblje",
+        "abnormal": "Odstupanja u bilo kojoj od tri tačke mogu biti povezana sa poremećajem metabolizma ugljenih hidrata ili sa privremenim faktorima, skorašnjom bolešću, stresom, lijekovima. Zaključak donosi ljekar i po potrebi određuje ponovni test"
+      },
+      "de": {
+        "what": "Belastungstest mit Zucker: Glukose wird nüchtern sowie 60 und 120 Minuten nach dem Trinken einer Glukoselösung gemessen",
+        "how": "Die erste Blutentnahme erfolgt nüchtern, danach trinkt die Patientin oder der Patient die vom Labor vorbereitete Lösung und bleibt zwei weitere Stunden in der Einrichtung, in denen noch zweimal Blut abgenommen wird",
+        "when": "Grenzwertiger Nüchternblutzucker, Screening auf Schwangerschaftsdiabetes während der Schwangerschaft, Abklärung von Störungen des Kohlenhydratstoffwechsels, Übergewicht und weitere Risikofaktoren nach ärztlicher Überweisung",
+        "prep": "Nüchtern seit 8–12 Stunden, nur Wasser erlaubt; in den drei Tagen davor Kohlenhydrate nicht einschränken, während des Tests nicht essen, nicht rauchen und nicht umhergehen, bei Unwohlsein sofort das Personal informieren",
+        "abnormal": "Abweichungen an einem der drei Messpunkte können mit einer Störung des Kohlenhydratstoffwechsels oder mit vorübergehenden Faktoren wie einer kürzlichen Erkrankung, Stress oder Medikamenten zusammenhängen. Die Beurteilung erfolgt durch den Arzt, der bei Bedarf eine Wiederholung veranlasst"
+      },
+      "tr": {
+        "what": "Şeker yükleme testi: glukoz açken, ardından glukoz çözeltisi içildikten 60 ve 120 dakika sonra ölçülür",
+        "how": "İlk kan açken alınır, sonra hasta laboratuvarın hazırladığı çözeltiyi içer ve iki saat daha kurumda kalır, bu süre içinde iki kez daha kan alınır",
+        "when": "Sınırda açlık glukoz sonucu, gebelik sırasında gebelik şekeri taraması, karbonhidrat metabolizması bozukluklarının değerlendirilmesi, hekim yönlendirmesiyle fazla kilo ve diğer risk etkenleri",
+        "prep": "8–12 saat açlık, sadece su içilebilir; testten önceki üç gün karbonhidratı kısıtlamamak, test sırasında yememek, sigara içmemek ve dolaşmamak, kötü hissedildiğinde hemen personele söylemek gerekir",
+        "abnormal": "Üç ölçümün herhangi birindeki sapma karbonhidrat metabolizması bozukluğuyla ya da yakın zamandaki hastalık, stres, ilaç gibi geçici etkenlerle ilişkili olabilir. Sonucu hekim değerlendirir, gerekirse testi yineletir"
+      },
+      "sr_cyrl": {
+        "what": "Тест оптерећења шећером: глукоза се мјери наште, па 60 и 120 минута послије испијања раствора глукозе",
+        "how": "Прво вађење крви је наште, затим пацијент попије раствор који припрема лабораторија и остаје у установи још два сата, током којих се крв вади још два пута",
+        "when": "Гранична вриједност глукозе наште, скрининг гестацијског дијабетеса током трудноће, процјена поремећаја метаболизма угљених хидрата, прекомјерна тежина и други фактори ризика по упуту љекара",
+        "prep": "Наташте 8–12 сати, дозвољена само вода; три дана прије теста не ограничавати унос угљених хидрата, током теста не јести, не пушити и не ходати, а код лошег осјећаја одмах обавијестити особље",
+        "abnormal": "Одступања у било којој од три тачке могу бити повезана са поремећајем метаболизма угљених хидрата или са привременим факторима, скорашњом болешћу, стресом, лијековима. Закључак доноси љекар и по потреби одређује поновни тест"
+      }
+    }
+  },
+  {
+    "slug": "valproic-acid",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Измерение концентрации вальпроевой кислоты в крови у пациентов, которым этот препарат назначен",
+        "how": "Забор венозной крови; время забора относительно приёма препарата задаёт лечащий врач, чаще всего кровь берут перед очередным приёмом",
+        "when": "Контроль назначенной терапии, изменение самочувствия на фоне лечения, подозрение на недостаточный эффект или на нежелательные реакции, сопутствующие заболевания печени и почек, одновременный приём других препаратов, беременность по решению врача",
+        "prep": "Схему приёма самостоятельно не менять: пропустить или перенести дозу перед анализом можно только по указанию врача; при себе иметь сведения о препарате и времени последнего приёма",
+        "abnormal": "Результат сам по себе ничего не означает — его сопоставляет с назначенной схемой лечения, самочувствием и другими анализами только лечащий врач"
+      },
+      "en": {
+        "what": "Measurement of the valproic acid concentration in the blood of patients to whom this medicine has been prescribed",
+        "how": "Venous blood draw; the timing relative to the dose is set by the treating doctor, the sample is most often taken before the next dose",
+        "when": "Monitoring prescribed therapy, a change in how the patient feels during treatment, suspicion of insufficient effect or of unwanted reactions, concomitant liver or kidney disease, use of other medicines at the same time, pregnancy at the doctor's discretion",
+        "prep": "Do not change the dosing schedule on your own: a dose is skipped or moved before the test only on the doctor's instruction; bring details of the medicine and the time of the last intake",
+        "abnormal": "The result means nothing on its own, it is compared with the prescribed treatment schedule, the patient's condition and other tests by the treating doctor only"
+      },
+      "sr": {
+        "what": "Mjerenje koncentracije valproične kiseline u krvi kod pacijenata kojima je ovaj lijek propisan",
+        "how": "Uzimanje venske krvi; vrijeme vađenja u odnosu na uzimanje terapije određuje ljekar koji vodi liječenje, uzorak se najčešće uzima prije naredne doze",
+        "when": "Kontrola propisane terapije, promjena stanja tokom liječenja, sumnja na nedovoljan učinak ili na neželjene reakcije, prateće bolesti jetre i bubrega, istovremeno uzimanje drugih lijekova, trudnoća po odluci ljekara",
+        "prep": "Raspored uzimanja ne mijenjati na svoju ruku: doza se prije analize preskače ili pomjera isključivo po uputstvu ljekara; ponijeti podatke o terapiji i vremenu posljednjeg uzimanja",
+        "abnormal": "Rezultat sam po sebi ništa ne znači, sa propisanom shemom liječenja, stanjem pacijenta i drugim nalazima poredi ga isključivo ljekar koji vodi liječenje"
+      },
+      "de": {
+        "what": "Messung der Valproinsäure-Konzentration im Blut bei Patientinnen und Patienten, denen dieses Medikament verordnet wurde",
+        "how": "Venöse Blutentnahme; den Zeitpunkt im Verhältnis zur Einnahme legt die behandelnde Ärztin oder der behandelnde Arzt fest, meist wird vor der nächsten Gabe Blut entnommen",
+        "when": "Kontrolle der verordneten Therapie, Veränderung des Befindens unter Behandlung, Verdacht auf unzureichende Wirkung oder auf unerwünschte Reaktionen, begleitende Leber- oder Nierenerkrankungen, gleichzeitige Einnahme weiterer Medikamente, Schwangerschaft nach ärztlicher Entscheidung",
+        "prep": "Das Einnahmeschema nicht eigenmächtig ändern: eine Dosis wird vor der Untersuchung nur auf ärztliche Anweisung ausgelassen oder verschoben; Angaben zum Medikament und zur Zeit der letzten Einnahme mitbringen",
+        "abnormal": "Der Wert allein sagt nichts aus, er wird ausschließlich von der behandelnden Ärztin oder dem behandelnden Arzt mit dem verordneten Therapieschema, dem Befinden und weiteren Befunden abgeglichen"
+      },
+      "tr": {
+        "what": "Bu ilacın reçete edildiği hastalarda kandaki valproik asit düzeyinin ölçülmesi",
+        "how": "Venöz kan alınır; kanın ilaca göre hangi saatte alınacağını tedaviyi yürüten hekim belirler, örnek çoğunlukla bir sonraki dozdan önce alınır",
+        "when": "Verilen tedavinin takibi, tedavi sırasında genel durumdaki değişiklik, etkinin yetersiz olduğu ya da istenmeyen tepkiler geliştiği kuşkusu, eşlik eden karaciğer ve böbrek hastalıkları, aynı anda başka ilaç kullanımı, hekim kararıyla gebelik",
+        "prep": "İlaç düzenini kendi başınıza değiştirmeyin: testten önce doz yalnızca hekimin talimatıyla atlanır ya da ertelenir; ilaç bilgisini ve son alım saatini yanınızda getirin",
+        "abnormal": "Sonuç tek başına bir anlam taşımaz, yalnızca tedaviyi yürüten hekim onu verilen tedavi şemasıyla, hastanın durumuyla ve diğer tetkiklerle karşılaştırır"
+      },
+      "sr_cyrl": {
+        "what": "Мјерење концентрације валпроичне киселине у крви код пацијената којима је овај лијек прописан",
+        "how": "Узимање венске крви; вријеме вађења у односу на узимање терапије одређује љекар који води лијечење, узорак се најчешће узима прије наредне дозе",
+        "when": "Контрола прописане терапије, промјена стања током лијечења, сумња на недовољан учинак или на нежељене реакције, пратеће болести јетре и бубрега, истовремено узимање других лијекова, трудноћа по одлуци љекара",
+        "prep": "Распоред узимања не мијењати на своју руку: доза се прије анализе прескаче или помјера искључиво по упутству љекара; понијети податке о терапији и времену посљедњег узимања",
+        "abnormal": "Резултат сам по себи ништа не значи, са прописаном схемом лијечења, стањем пацијента и другим налазима пореди га искључиво љекар који води лијечење"
+      }
+    }
+  }
+]

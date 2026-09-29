@@ -1,0 +1,914 @@
+[
+  {
+    "slug": "c-peptide",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Показатель собственной выработки инсулина поджелудочной железой",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Оценка остаточной выработки инсулина при сахарном диабете, уточнение типа диабета, эпизоды низкого сахара крови неясного происхождения",
+        "prep": "Обычно сдаётся утром натощак, часто вместе с глюкозой; если принимаются препараты, влияющие на сахар крови, порядок сдачи уточняет врач",
+        "abnormal": "Изменения могут быть связаны с работой бета-клеток поджелудочной железы, уровнем глюкозы в момент забора или функцией почек. Оценивает врач вместе с глюкозой и клинической картиной"
+      },
+      "en": {
+        "what": "Indicator of the body's own insulin production by the pancreas",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Assessing remaining insulin production in diabetes mellitus, clarifying the type of diabetes, episodes of low blood sugar of unclear origin",
+        "prep": "Usually taken in the morning on an empty stomach, often together with glucose; if you take medications affecting blood sugar, the doctor specifies how to schedule the test",
+        "abnormal": "Changes may be related to the function of the pancreatic beta cells, the glucose level at the time of sampling, or kidney function. A doctor evaluates it together with glucose and the clinical picture"
+      },
+      "sr": {
+        "what": "Pokazatelj sopstvene proizvodnje insulina u pankreasu",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Procjena preostale proizvodnje insulina kod šećerne bolesti, razjašnjenje tipa dijabetesa, epizode niskog šećera u krvi nejasnog porijekla",
+        "prep": "Obično se uzima ujutru natašte, često zajedno sa glukozom; ako se uzimaju lijekovi koji utiču na šećer u krvi, način davanja uzorka određuje ljekar",
+        "abnormal": "Promjene mogu biti povezane sa radom beta ćelija pankreasa, nivoom glukoze u trenutku uzimanja uzorka ili funkcijom bubrega. Ljekar procjenjuje nalaz zajedno sa glukozom i kliničkom slikom"
+      },
+      "de": {
+        "what": "Kennwert für die eigene Insulinproduktion der Bauchspeicheldrüse",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Beurteilung der verbliebenen Insulinproduktion bei Diabetes mellitus, Abklärung des Diabetestyps, Episoden von niedrigem Blutzucker unklarer Ursache",
+        "prep": "Wird meist morgens nüchtern abgenommen, oft zusammen mit Glukose; bei Einnahme blutzuckerwirksamer Medikamente legt der Arzt das Vorgehen fest",
+        "abnormal": "Veränderungen können mit der Funktion der Betazellen der Bauchspeicheldrüse, dem Glukosewert zum Zeitpunkt der Entnahme oder der Nierenfunktion zusammenhängen. Die Beurteilung erfolgt durch den Arzt zusammen mit dem Glukosewert und dem klinischen Bild"
+      },
+      "tr": {
+        "what": "Pankreasın kendi insülin üretimini gösteren bir değer",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Diyabette kalan insülin üretiminin değerlendirilmesi, diyabet tipinin netleştirilmesi, nedeni belirsiz düşük kan şekeri atakları",
+        "prep": "Genellikle sabah aç karnına, çoğu zaman glukozla birlikte alınır; kan şekerini etkileyen ilaç kullanılıyorsa testin nasıl yapılacağını hekim belirler",
+        "abnormal": "Değişiklikler pankreastaki beta hücrelerinin çalışmasıyla, örnek alındığı andaki glukoz düzeyiyle veya böbrek fonksiyonuyla ilişkili olabilir. Hekim sonucu glukoz ve klinik tabloyla birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Показатељ сопствене производње инсулина у панкреасу",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Процјена преостале производње инсулина код шећерне болести, разјашњење типа дијабетеса, епизоде ниског шећера у крви нејасног поријекла",
+        "prep": "Обично се узима ујутру наташте, често заједно са глукозом; ако се узимају лијекови који утичу на шећер у крви, начин давања узорка одређује љекар",
+        "abnormal": "Промјене могу бити повезане са радом бета ћелија панкреаса, нивоом глукозе у тренутку узимања узорка или функцијом бубрега. Љекар процјењује налаз заједно са глукозом и клиничком сликом"
+      }
+    }
+  },
+  {
+    "slug": "fsh",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на гормон гипофиза, который управляет созреванием яйцеклеток у женщин и выработкой сперматозоидов у мужчин",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Оценка причин нарушений менструального цикла, обследование при трудностях с зачатием, оценка работы яичников и яичек, уточнение периода менопаузы",
+        "prep": "У женщин репродуктивного возраста анализ привязан к дню менструального цикла, конкретный день назначает врач; у мужчин привязки к циклу нет и специальной подготовки обычно не требуется",
+        "abnormal": "Отклонение само по себе не диагноз: результат оценивается врачом вместе с фазой цикла и остальными показателями гормонального профиля"
+      },
+      "en": {
+        "what": "Blood test for a pituitary hormone that drives egg maturation in women and sperm production in men",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Assessing causes of menstrual cycle disorders, work-up for difficulties conceiving, evaluation of ovarian and testicular function, clarifying the menopausal period",
+        "prep": "In women of reproductive age the test is tied to a day of the menstrual cycle, which the doctor sets; in men there is no cycle timing and no special preparation is usually required",
+        "abnormal": "A deviation on its own is not a diagnosis: the result is assessed by a doctor together with the cycle phase and the other values of the hormone profile"
+      },
+      "sr": {
+        "what": "Analiza krvi na hormon hipofize koji upravlja sazrijevanjem jajnih ćelija kod žena i stvaranjem spermatozoida kod muškaraca",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Procjena uzroka poremećaja menstrualnog ciklusa, ispitivanje kod teškoća sa začećem, procjena rada jajnika i testisa, razjašnjenje perioda menopauze",
+        "prep": "Kod žena reproduktivne dobi analiza je vezana za dan menstrualnog ciklusa, a konkretan dan određuje ljekar; kod muškaraca nema vezanosti za ciklus i obično nije potrebna posebna priprema",
+        "abnormal": "Odstupanje samo po sebi nije dijagnoza: nalaz procjenjuje ljekar zajedno sa fazom ciklusa i ostalim pokazateljima hormonskog profila"
+      },
+      "de": {
+        "what": "Bluttest auf ein Hypophysenhormon, das die Eizellreifung bei Frauen und die Spermienbildung bei Männern steuert",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Abklärung von Ursachen für Menstruationsstörungen, Untersuchung bei unerfülltem Kinderwunsch, Beurteilung der Eierstock- und Hodenfunktion, Einordnung der Wechseljahre",
+        "prep": "Bei Frauen im gebärfähigen Alter ist die Untersuchung an einen Zyklustag gebunden, den der Arzt festlegt; bei Männern besteht keine Zyklusbindung und in der Regel ist keine besondere Vorbereitung nötig",
+        "abnormal": "Eine Abweichung allein ist keine Diagnose: Der Befund wird vom Arzt zusammen mit der Zyklusphase und den übrigen Werten des Hormonprofils beurteilt"
+      },
+      "tr": {
+        "what": "Kadınlarda yumurta olgunlaşmasını, erkeklerde sperm üretimini yöneten bir hipofiz hormonu için kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Adet döngüsü bozukluklarının nedenlerinin araştırılması, gebe kalma güçlüğünde inceleme, yumurtalık ve testis fonksiyonunun değerlendirilmesi, menopoz döneminin netleştirilmesi",
+        "prep": "Üreme çağındaki kadınlarda test adet döngüsünün belirli bir gününe bağlıdır ve bu günü hekim belirler; erkeklerde döngü bağlantısı yoktur ve genellikle özel hazırlık gerekmez",
+        "abnormal": "Tek başına bir sapma tanı anlamına gelmez: sonucu hekim, döngü evresi ve hormon profilinin diğer değerleriyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на хормон хипофизе који управља сазријевањем јајних ћелија код жена и стварањем сперматозоида код мушкараца",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Процјена узрока поремећаја менструалног циклуса, испитивање код тешкоћа са зачећем, процјена рада јајника и тестиса, разјашњење периода менопаузе",
+        "prep": "Код жена репродуктивне доби анализа је везана за дан менструалног циклуса, а конкретан дан одређује љекар; код мушкараца нема везаности за циклус и обично није потребна посебна припрема",
+        "abnormal": "Одступање само по себи није дијагноза: налаз процјењује љекар заједно са фазом циклуса и осталим показатељима хормонског профила"
+      }
+    }
+  },
+  {
+    "slug": "lh",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на гормон гипофиза, который запускает овуляцию у женщин и выработку тестостерона у мужчин",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Обследование при нарушениях менструального цикла, определение времени овуляции, обследование при трудностях с зачатием, оценка работы половых желёз",
+        "prep": "У женщин репродуктивного возраста день цикла для сдачи определяет врач, иногда анализ повторяют несколько дней подряд; мужчинам достаточно спокойного состояния перед забором",
+        "abnormal": "Отдельный результат сам по себе не диагноз: врач оценивает его вместе с фазой цикла и остальными гормонами"
+      },
+      "en": {
+        "what": "Blood test for a pituitary hormone that triggers ovulation in women and testosterone production in men",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Work-up of menstrual cycle disorders, timing of ovulation, evaluation of difficulties conceiving, assessment of gonadal function",
+        "prep": "In women of reproductive age the doctor sets the cycle day for the test and may order samples on several consecutive days; men only need to be calm before the draw",
+        "abnormal": "A single result is not a diagnosis on its own: the doctor assesses it together with the cycle phase and the other hormones"
+      },
+      "sr": {
+        "what": "Analiza krvi na hormon hipofize koji pokreće ovulaciju kod žena i stvaranje testosterona kod muškaraca",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Ispitivanje poremećaja menstrualnog ciklusa, određivanje vremena ovulacije, obrada kod teškoća sa začećem, procjena rada polnih žlijezda",
+        "prep": "Kod žena reproduktivne dobi dan ciklusa za analizu određuje ljekar, ponekad se uzorak uzima nekoliko dana zaredom; muškarcima je dovoljno mirno stanje prije vađenja krvi",
+        "abnormal": "Pojedinačan nalaz sam po sebi nije dijagnoza: ljekar ga procjenjuje zajedno sa fazom ciklusa i ostalim hormonima"
+      },
+      "de": {
+        "what": "Bluttest auf ein Hypophysenhormon, das den Eisprung bei Frauen und die Testosteronbildung bei Männern auslöst",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Abklärung von Zyklusstörungen, Bestimmung des Eisprungzeitpunkts, Untersuchung bei unerfülltem Kinderwunsch, Beurteilung der Keimdrüsenfunktion",
+        "prep": "Bei Frauen im gebärfähigen Alter legt der Arzt den Zyklustag fest, mitunter wird an mehreren aufeinanderfolgenden Tagen Blut abgenommen; bei Männern genügt ein ruhiger Zustand vor der Entnahme",
+        "abnormal": "Ein einzelner Wert ist für sich genommen keine Diagnose: Der Arzt beurteilt ihn zusammen mit der Zyklusphase und den übrigen Hormonen"
+      },
+      "tr": {
+        "what": "Kadınlarda yumurtlamayı, erkeklerde testosteron üretimini tetikleyen bir hipofiz hormonu için kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Adet döngüsü bozukluklarının incelenmesi, yumurtlama zamanının belirlenmesi, gebe kalma güçlüğünde değerlendirme, üreme bezlerinin işlevinin değerlendirilmesi",
+        "prep": "Üreme çağındaki kadınlarda test günü hekim tarafından belirlenir, bazen birkaç gün üst üste örnek alınır; erkeklerde kan alınmadan önce sakin olmak yeterlidir",
+        "abnormal": "Tek bir sonuç başlı başına tanı değildir: hekim bunu döngü evresi ve diğer hormonlarla birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на хормон хипофизе који покреће овулацију код жена и стварање тестостерона код мушкараца",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Испитивање поремећаја менструалног циклуса, одређивање времена овулације, обрада код тешкоћа са зачећем, процјена рада полних жлијезда",
+        "prep": "Код жена репродуктивне доби дан циклуса за анализу одређује љекар, понекад се узорак узима неколико дана заредом; мушкарцима је довољно мирно стање прије вађења крви",
+        "abnormal": "Појединачан налаз сам по себи није дијагноза: љекар га процјењује заједно са фазом циклуса и осталим хормонима"
+      }
+    }
+  },
+  {
+    "slug": "progesterone",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на гормон, который отвечает за вторую фазу менструального цикла и поддержание беременности",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Подтверждение произошедшей овуляции, обследование при нарушениях цикла и трудностях с зачатием, наблюдение при беременности по назначению врача",
+        "prep": "У женщин репродуктивного возраста кровь сдаётся в день цикла, относящийся к его второй фазе, и этот день назначает врач; другой специальной подготовки обычно не требуется",
+        "abnormal": "Сам по себе результат не диагноз: врач оценивает его вместе с фазой цикла и остальными показателями"
+      },
+      "en": {
+        "what": "Blood test for the hormone responsible for the second phase of the menstrual cycle and for maintaining pregnancy",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Confirming that ovulation has occurred, work-up of cycle disorders and difficulties conceiving, monitoring during pregnancy as prescribed by a doctor",
+        "prep": "In women of reproductive age blood is taken on a cycle day belonging to the second phase of the cycle, and the doctor sets that day; no other special preparation is usually required",
+        "abnormal": "The result alone is not a diagnosis: the doctor assesses it together with the cycle phase and the other values"
+      },
+      "sr": {
+        "what": "Analiza krvi na hormon koji je odgovoran za drugu fazu menstrualnog ciklusa i održavanje trudnoće",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Potvrda da je došlo do ovulacije, obrada poremećaja ciklusa i teškoća sa začećem, praćenje u trudnoći po preporuci ljekara",
+        "prep": "Kod žena reproduktivne dobi krv se uzima u danu ciklusa koji pripada drugoj fazi, a taj dan određuje ljekar; druga posebna priprema obično nije potrebna",
+        "abnormal": "Nalaz sam po sebi nije dijagnoza: ljekar ga procjenjuje zajedno sa fazom ciklusa i ostalim pokazateljima"
+      },
+      "de": {
+        "what": "Bluttest auf das Hormon, das für die zweite Phase des Menstruationszyklus und den Erhalt der Schwangerschaft zuständig ist",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Bestätigung eines stattgefundenen Eisprungs, Abklärung von Zyklusstörungen und unerfülltem Kinderwunsch, Verlaufskontrolle in der Schwangerschaft nach ärztlicher Anordnung",
+        "prep": "Bei Frauen im gebärfähigen Alter wird das Blut an einem Zyklustag der zweiten Zyklusphase abgenommen, den der Arzt festlegt; eine weitere besondere Vorbereitung ist meist nicht nötig",
+        "abnormal": "Der Wert allein ist keine Diagnose: Der Arzt beurteilt ihn zusammen mit der Zyklusphase und den übrigen Werten"
+      },
+      "tr": {
+        "what": "Adet döngüsünün ikinci evresinden ve gebeliğin sürdürülmesinden sorumlu hormon için kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Yumurtlamanın gerçekleştiğinin doğrulanması, döngü bozuklukları ve gebe kalma güçlüğünün araştırılması, hekim önerisiyle gebelikte izlem",
+        "prep": "Üreme çağındaki kadınlarda kan, döngünün ikinci evresine denk gelen ve hekimin belirlediği bir günde alınır; bunun dışında genellikle özel hazırlık gerekmez",
+        "abnormal": "Sonuç tek başına tanı değildir: hekim bunu döngü evresi ve diğer göstergelerle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на хормон који је одговоран за другу фазу менструалног циклуса и одржавање трудноће",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Потврда да је дошло до овулације, обрада поремећаја циклуса и тешкоћа са зачећем, праћење у трудноћи по препоруци љекара",
+        "prep": "Код жена репродуктивне доби крв се узима у дану циклуса који припада другој фази, а тај дан одређује љекар; друга посебна припрема обично није потребна",
+        "abnormal": "Налаз сам по себи није дијагноза: љекар га процјењује заједно са фазом циклуса и осталим показатељима"
+      }
+    }
+  },
+  {
+    "slug": "insulin",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на гормон поджелудочной железы, который регулирует усвоение глюкозы тканями",
+        "how": "Забор венозной крови, обычно вместе с пробой на глюкозу",
+        "when": "Оценка углеводного обмена, обследование при избыточном весе, при эпизодах слабости после еды, при подозрении на сниженную чувствительность тканей к инсулину",
+        "prep": "Натощак 8–12 часов, разрешена только вода; сдаётся утром, о приёме сахароснижающих препаратов нужно сообщить врачу",
+        "abnormal": "Изменения могут быть связаны с чувствительностью тканей к инсулину, питанием накануне, весом или приёмом некоторых препаратов. Оценивает врач вместе с уровнем глюкозы"
+      },
+      "en": {
+        "what": "Blood test for the pancreatic hormone that regulates how tissues take up glucose",
+        "how": "Venous blood draw, usually together with a glucose sample",
+        "when": "Assessing carbohydrate metabolism, work-up in excess weight, episodes of weakness after meals, suspected reduced tissue sensitivity to insulin",
+        "prep": "Fasting for 8–12 hours, only water allowed; taken in the morning, tell the doctor about any glucose-lowering medications",
+        "abnormal": "Changes may be related to tissue sensitivity to insulin, food eaten the day before, body weight, or certain medications. A doctor evaluates it together with the glucose level"
+      },
+      "sr": {
+        "what": "Analiza krvi na hormon pankreasa koji reguliše iskorišćavanje glukoze u tkivima",
+        "how": "Uzimanje venske krvi, obično zajedno sa uzorkom za glukozu",
+        "when": "Procjena metabolizma ugljenih hidrata, ispitivanje kod prekomjerne tjelesne težine, kod slabosti poslije obroka, kod sumnje na smanjenu osjetljivost tkiva na insulin",
+        "prep": "Natašte 8–12 sati, dozvoljena je samo voda; uzorak se uzima ujutru, a o uzimanju lijekova za snižavanje šećera treba obavijestiti ljekara",
+        "abnormal": "Promjene mogu biti povezane sa osjetljivošću tkiva na insulin, ishranom dan ranije, tjelesnom težinom ili uzimanjem određenih lijekova. Ljekar procjenjuje nalaz zajedno sa nivoom glukoze"
+      },
+      "de": {
+        "what": "Bluttest auf das Hormon der Bauchspeicheldrüse, das die Glukoseaufnahme in die Gewebe steuert",
+        "how": "Entnahme von venösem Blut, meist zusammen mit einer Probe für Glukose",
+        "when": "Beurteilung des Kohlenhydratstoffwechsels, Abklärung bei Übergewicht, bei Schwäche nach dem Essen, bei Verdacht auf verminderte Insulinempfindlichkeit der Gewebe",
+        "prep": "Nüchtern seit 8–12 Stunden, nur Wasser erlaubt; Abnahme morgens, die Einnahme blutzuckersenkender Medikamente sollte dem Arzt mitgeteilt werden",
+        "abnormal": "Veränderungen können mit der Insulinempfindlichkeit der Gewebe, der Ernährung am Vortag, dem Körpergewicht oder der Einnahme bestimmter Medikamente zusammenhängen. Die Beurteilung erfolgt durch den Arzt zusammen mit dem Glukosewert"
+      },
+      "tr": {
+        "what": "Dokuların glukozu kullanmasını düzenleyen pankreas hormonu için kan testi",
+        "how": "Venöz kan alımı, genellikle glukoz örneğiyle birlikte",
+        "when": "Karbonhidrat metabolizmasının değerlendirilmesi, fazla kiloda inceleme, yemek sonrası halsizlik ataklarında, dokuların insüline duyarlılığının azaldığı şüphesinde",
+        "prep": "8–12 saat aç karnına, sadece su içilebilir; örnek sabah alınır, kan şekerini düşüren ilaç kullanılıyorsa hekime bildirilmelidir",
+        "abnormal": "Değişiklikler dokuların insüline duyarlılığıyla, bir önceki günkü beslenmeyle, kiloyla veya bazı ilaçların kullanımıyla ilişkili olabilir. Hekim sonucu glukoz düzeyiyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на хормон панкреаса који регулише искоришћавање глукозе у ткивима",
+        "how": "Узимање венске крви, обично заједно са узорком за глукозу",
+        "when": "Процјена метаболизма угљених хидрата, испитивање код прекомјерне тјелесне тежине, код слабости послије оброка, код сумње на смањену осјетљивост ткива на инсулин",
+        "prep": "Наташте 8–12 сати, дозвољена је само вода; узорак се узима ујутру, а о узимању лијекова за снижавање шећера треба обавијестити љекара",
+        "abnormal": "Промјене могу бити повезане са осјетљивошћу ткива на инсулин, исхраном дан раније, тјелесном тежином или узимањем одређених лијекова. Љекар процјењује налаз заједно са нивоом глукозе"
+      }
+    }
+  },
+  {
+    "slug": "anti-mullerian-hormone",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на гормон, который отражает запас фолликулов в яичниках",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Оценка овариального резерва, планирование беременности и программ ЭКО, обследование при нарушениях цикла, оценка перед вмешательствами на яичниках",
+        "prep": "Специальной подготовки обычно не требуется, уровень мало зависит от дня цикла; о приёме гормональных контрацептивов нужно сообщить врачу",
+        "abnormal": "Изменения могут быть связаны с возрастом, индивидуальными особенностями яичников или перенесёнными вмешательствами. Оценивает врач вместе с остальными данными обследования"
+      },
+      "en": {
+        "what": "Blood test for the hormone that reflects the pool of follicles in the ovaries",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Assessing ovarian reserve, planning pregnancy and IVF programmes, work-up of cycle disorders, evaluation before ovarian procedures",
+        "prep": "No special preparation is usually required, the level depends little on the cycle day; tell the doctor about any hormonal contraceptives you take",
+        "abnormal": "Changes may be related to age, individual ovarian characteristics, or previous procedures. A doctor evaluates it together with the rest of the work-up"
+      },
+      "sr": {
+        "what": "Analiza krvi na hormon koji odražava zalihu folikula u jajnicima",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Procjena ovarijalne rezerve, planiranje trudnoće i postupaka vantjelesne oplodnje, ispitivanje poremećaja ciklusa, procjena prije zahvata na jajnicima",
+        "prep": "Posebna priprema obično nije potrebna, nivo malo zavisi od dana ciklusa; o uzimanju hormonske kontracepcije treba obavijestiti ljekara",
+        "abnormal": "Promjene mogu biti povezane sa godinama, individualnim osobinama jajnika ili ranijim zahvatima. Ljekar procjenjuje nalaz zajedno sa ostalim podacima ispitivanja"
+      },
+      "de": {
+        "what": "Bluttest auf das Hormon, das den Vorrat an Follikeln in den Eierstöcken widerspiegelt",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Beurteilung der Eierstockreserve, Planung einer Schwangerschaft und von IVF-Behandlungen, Abklärung von Zyklusstörungen, Einschätzung vor Eingriffen an den Eierstöcken",
+        "prep": "In der Regel ist keine besondere Vorbereitung nötig, der Wert hängt kaum vom Zyklustag ab; die Einnahme hormoneller Verhütungsmittel sollte dem Arzt mitgeteilt werden",
+        "abnormal": "Veränderungen können mit dem Alter, individuellen Eigenschaften der Eierstöcke oder früheren Eingriffen zusammenhängen. Die Beurteilung erfolgt durch den Arzt zusammen mit den übrigen Untersuchungsbefunden"
+      },
+      "tr": {
+        "what": "Yumurtalıklardaki folikül rezervini yansıtan hormon için kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Yumurtalık rezervinin değerlendirilmesi, gebelik ve tüp bebek planlaması, döngü bozukluklarının incelenmesi, yumurtalık girişimleri öncesi değerlendirme",
+        "prep": "Genellikle özel hazırlık gerekmez, düzey döngü gününe az bağlıdır; hormonal doğum kontrol yöntemi kullanılıyorsa hekime bildirilmelidir",
+        "abnormal": "Değişiklikler yaşla, yumurtalıkların bireysel özellikleriyle veya geçirilmiş girişimlerle ilişkili olabilir. Hekim sonucu incelemenin diğer verileriyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на хормон који одражава залиху фоликула у јајницима",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Процјена оваријалне резерве, планирање трудноће и поступака вантјелесне оплодње, испитивање поремећаја циклуса, процјена прије захвата на јајницима",
+        "prep": "Посебна припрема обично није потребна, ниво мало зависи од дана циклуса; о узимању хормонске контрацепције треба обавијестити љекара",
+        "abnormal": "Промјене могу бити повезане са годинама, индивидуалним особинама јајника или ранијим захватима. Љекар процјењује налаз заједно са осталим подацима испитивања"
+      }
+    }
+  },
+  {
+    "slug": "calcitonin",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на гормон щитовидной железы, участвующий в обмене кальция",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Обследование при узловых образованиях щитовидной железы, наблюдение после лечения заболеваний щитовидной железы, обследование по назначению эндокринолога",
+        "prep": "Обычно сдаётся утром натощак; о принимаемых препаратах, особенно влияющих на желудок и на обмен кальция, нужно сообщить врачу",
+        "abnormal": "Изменения могут быть связаны с особенностями щитовидной железы, функцией почек, приёмом некоторых препаратов или методом конкретной лаборатории. Результат оценивает эндокринолог, при необходимости анализ повторяют"
+      },
+      "en": {
+        "what": "Blood test for a thyroid hormone involved in calcium metabolism",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Work-up of thyroid nodules, follow-up after treatment of thyroid conditions, examination as prescribed by an endocrinologist",
+        "prep": "Usually taken in the morning on an empty stomach; tell the doctor about medications you take, especially those affecting the stomach and calcium metabolism",
+        "abnormal": "Changes may be related to features of the thyroid gland, kidney function, certain medications, or the method used by a particular laboratory. An endocrinologist evaluates the result and may repeat the test"
+      },
+      "sr": {
+        "what": "Analiza krvi na hormon štitne žlijezde koji učestvuje u metabolizmu kalcijuma",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Ispitivanje kod čvorova na štitnoj žlijezdi, praćenje poslije liječenja oboljenja štitne žlijezde, pregled po uputu endokrinologa",
+        "prep": "Obično se uzima ujutru natašte; o lijekovima koji se uzimaju, naročito onima koji djeluju na želudac i na metabolizam kalcijuma, treba obavijestiti ljekara",
+        "abnormal": "Promjene mogu biti povezane sa osobinama štitne žlijezde, funkcijom bubrega, uzimanjem određenih lijekova ili metodom konkretne laboratorije. Nalaz procjenjuje endokrinolog, a po potrebi se analiza ponavlja"
+      },
+      "de": {
+        "what": "Bluttest auf ein Schilddrüsenhormon, das am Kalziumstoffwechsel beteiligt ist",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Abklärung von Schilddrüsenknoten, Verlaufskontrolle nach Behandlung von Schilddrüsenerkrankungen, Untersuchung nach Anordnung des Endokrinologen",
+        "prep": "Wird meist morgens nüchtern abgenommen; eingenommene Medikamente, insbesondere solche mit Wirkung auf Magen und Kalziumstoffwechsel, sollten dem Arzt mitgeteilt werden",
+        "abnormal": "Veränderungen können mit Besonderheiten der Schilddrüse, der Nierenfunktion, der Einnahme bestimmter Medikamente oder der Methode des jeweiligen Labors zusammenhängen. Der Endokrinologe beurteilt den Befund und wiederholt die Untersuchung bei Bedarf"
+      },
+      "tr": {
+        "what": "Kalsiyum metabolizmasında rol oynayan bir tiroid hormonu için kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Tiroid nodüllerinin araştırılması, tiroid hastalıklarının tedavisi sonrası izlem, endokrinoloji uzmanının isteğiyle inceleme",
+        "prep": "Genellikle sabah aç karnına alınır; kullanılan ilaçlar, özellikle mideyi ve kalsiyum metabolizmasını etkileyenler hekime bildirilmelidir",
+        "abnormal": "Değişiklikler tiroid bezinin özellikleriyle, böbrek fonksiyonuyla, bazı ilaçların kullanımıyla veya laboratuvarın kullandığı yöntemle ilişkili olabilir. Sonucu endokrinoloji uzmanı değerlendirir, gerektiğinde test tekrarlanır"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на хормон штитне жлијезде који учествује у метаболизму калцијума",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Испитивање код чворова на штитној жлијезди, праћење послије лијечења обољења штитне жлијезде, преглед по упуту ендокринолога",
+        "prep": "Обично се узима ујутру наташте; о лијековима који се узимају, нарочито онима који дјелују на желудац и на метаболизам калцијума, треба обавијестити љекара",
+        "abnormal": "Промјене могу бити повезане са особинама штитне жлијезде, функцијом бубрега, узимањем одређених лијекова или методом конкретне лабораторије. Налаз процјењује ендокринолог, а по потреби се анализа понавља"
+      }
+    }
+  },
+  {
+    "slug": "dhea-s",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на андроген, который вырабатывается преимущественно надпочечниками",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Оценка работы надпочечников, обследование при избыточном оволосении, акне, нарушениях цикла, уточнение источника избытка мужских половых гормонов",
+        "prep": "Специальной подготовки обычно не требуется, уровень мало меняется в течение суток и не привязан ко дню цикла; о приёме гормональных препаратов нужно сообщить врачу",
+        "abnormal": "Изменения могут быть связаны с работой надпочечников, возрастом или приёмом некоторых препаратов. Интерпретирует врач вместе с остальными гормонами"
+      },
+      "en": {
+        "what": "Blood test for an androgen produced mainly by the adrenal glands",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Assessing adrenal function, work-up of excess hair growth, acne, cycle disorders, clarifying the source of excess male sex hormones",
+        "prep": "No special preparation is usually required, the level changes little during the day and is not tied to the cycle day; tell the doctor about any hormonal medications",
+        "abnormal": "Changes may be related to adrenal function, age, or certain medications. A doctor interprets it together with the other hormones"
+      },
+      "sr": {
+        "what": "Analiza krvi na androgen koji uglavnom stvaraju nadbubrežne žlijezde",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Procjena rada nadbubrežnih žlijezda, ispitivanje kod pojačane maljavosti, akni, poremećaja ciklusa, utvrđivanje izvora viška muških polnih hormona",
+        "prep": "Posebna priprema obično nije potrebna, nivo se malo mijenja tokom dana i nije vezan za dan ciklusa; o uzimanju hormonske terapije treba obavijestiti ljekara",
+        "abnormal": "Promjene mogu biti povezane sa radom nadbubrežnih žlijezda, godinama ili uzimanjem određenih lijekova. Tumačenje daje ljekar zajedno sa ostalim hormonima"
+      },
+      "de": {
+        "what": "Bluttest auf ein Androgen, das überwiegend in den Nebennieren gebildet wird",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Beurteilung der Nebennierenfunktion, Abklärung von vermehrter Behaarung, Akne, Zyklusstörungen, Eingrenzung der Quelle überschüssiger männlicher Sexualhormone",
+        "prep": "In der Regel ist keine besondere Vorbereitung nötig, der Wert schwankt im Tagesverlauf kaum und ist nicht an den Zyklustag gebunden; hormonelle Medikamente sollten dem Arzt mitgeteilt werden",
+        "abnormal": "Veränderungen können mit der Nebennierenfunktion, dem Alter oder der Einnahme bestimmter Medikamente zusammenhängen. Die Interpretation erfolgt durch den Arzt zusammen mit den übrigen Hormonen"
+      },
+      "tr": {
+        "what": "Başlıca böbreküstü bezlerinde üretilen bir androjen için kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Böbreküstü bezi işlevinin değerlendirilmesi, aşırı tüylenme, akne, döngü bozukluklarının incelenmesi, fazla erkeklik hormonunun kaynağının belirlenmesi",
+        "prep": "Genellikle özel hazırlık gerekmez, düzey gün içinde az değişir ve döngü gününe bağlı değildir; hormon ilacı kullanılıyorsa hekime bildirilmelidir",
+        "abnormal": "Değişiklikler böbreküstü bezlerinin çalışmasıyla, yaşla veya bazı ilaçların kullanımıyla ilişkili olabilir. Hekim sonucu diğer hormonlarla birlikte yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на андроген који углавном стварају надбубрежне жлијезде",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Процјена рада надбубрежних жлијезда, испитивање код појачане маљавости, акни, поремећаја циклуса, утврђивање извора вишка мушких полних хормона",
+        "prep": "Посебна припрема обично није потребна, ниво се мало мијења током дана и није везан за дан циклуса; о узимању хормонске терапије треба обавијестити љекара",
+        "abnormal": "Промјене могу бити повезане са радом надбубрежних жлијезда, годинама или узимањем одређених лијекова. Тумачење даје љекар заједно са осталим хормонима"
+      }
+    }
+  },
+  {
+    "slug": "inhibin-b",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на гормон, который отражает работу яичников у женщин и созревание сперматозоидов у мужчин",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Оценка репродуктивного потенциала вместе с другими гормонами, обследование при трудностях с зачатием, у мужчин — при изменениях в спермограмме",
+        "prep": "У женщин анализ обычно привязан к определённому дню цикла, который назначает врач; у мужчин привязки к циклу нет, забор чаще проводится утром",
+        "abnormal": "Результат сам по себе не диагноз: врач оценивает его вместе с фазой цикла и остальными показателями репродуктивного профиля"
+      },
+      "en": {
+        "what": "Blood test for a hormone that reflects ovarian function in women and sperm maturation in men",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Assessing reproductive potential together with other hormones, work-up of difficulties conceiving, in men with changes in the semen analysis",
+        "prep": "In women the test is usually tied to a particular cycle day set by the doctor; in men there is no cycle timing and the sample is usually taken in the morning",
+        "abnormal": "The result alone is not a diagnosis: the doctor assesses it together with the cycle phase and the other values of the reproductive profile"
+      },
+      "sr": {
+        "what": "Analiza krvi na hormon koji odražava rad jajnika kod žena i sazrijevanje spermatozoida kod muškaraca",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Procjena reproduktivnog potencijala zajedno sa drugim hormonima, ispitivanje kod teškoća sa začećem, kod muškaraca uz izmijenjen nalaz spermograma",
+        "prep": "Kod žena je analiza obično vezana za određeni dan ciklusa koji određuje ljekar; kod muškaraca nema vezanosti za ciklus i uzorak se najčešće uzima ujutru",
+        "abnormal": "Nalaz sam po sebi nije dijagnoza: ljekar ga procjenjuje zajedno sa fazom ciklusa i ostalim pokazateljima reproduktivnog profila"
+      },
+      "de": {
+        "what": "Bluttest auf ein Hormon, das die Eierstockfunktion bei Frauen und die Spermienreifung bei Männern widerspiegelt",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Einschätzung des Fortpflanzungspotenzials zusammen mit anderen Hormonen, Abklärung bei unerfülltem Kinderwunsch, bei Männern bei verändertem Spermiogramm",
+        "prep": "Bei Frauen ist die Untersuchung meist an einen bestimmten Zyklustag gebunden, den der Arzt festlegt; bei Männern besteht keine Zyklusbindung, die Entnahme erfolgt meist morgens",
+        "abnormal": "Der Wert allein ist keine Diagnose: Der Arzt beurteilt ihn zusammen mit der Zyklusphase und den übrigen Werten des Fortpflanzungsprofils"
+      },
+      "tr": {
+        "what": "Kadınlarda yumurtalık işlevini, erkeklerde sperm olgunlaşmasını yansıtan hormon için kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Diğer hormonlarla birlikte üreme potansiyelinin değerlendirilmesi, gebe kalma güçlüğünün araştırılması, erkeklerde sperm tahlilindeki değişikliklerde",
+        "prep": "Kadınlarda test genellikle hekimin belirlediği bir döngü gününe bağlıdır; erkeklerde döngü bağlantısı yoktur ve örnek çoğunlukla sabah alınır",
+        "abnormal": "Sonuç tek başına tanı değildir: hekim bunu döngü evresi ve üreme profilinin diğer değerleriyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на хормон који одражава рад јајника код жена и сазријевање сперматозоида код мушкараца",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Процјена репродуктивног потенцијала заједно са другим хормонима, испитивање код тешкоћа са зачећем, код мушкараца уз измијењен налаз спермограма",
+        "prep": "Код жена је анализа обично везана за одређени дан циклуса који одређује љекар; код мушкараца нема везаности за циклус и узорак се најчешће узима ујутру",
+        "abnormal": "Налаз сам по себи није дијагноза: љекар га процјењује заједно са фазом циклуса и осталим показатељима репродуктивног профила"
+      }
+    }
+  },
+  {
+    "slug": "shbg",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на белок, который переносит половые гормоны и определяет, какая их часть доступна тканям",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Уточнение результата анализа на тестостерон, обследование при нарушениях цикла, избыточном оволосении, снижении либидо, оценка гормонального фона при нарушениях обмена веществ",
+        "prep": "Обычно сдаётся утром вместе с тестостероном; специальной подготовки не требуется, но о приёме гормональных препаратов нужно сообщить врачу",
+        "abnormal": "Изменения могут быть связаны с гормональным фоном, работой печени и щитовидной железы, весом или приёмом эстрогенов. Оценивает врач вместе с уровнем половых гормонов"
+      },
+      "en": {
+        "what": "Blood test for the protein that carries sex hormones and determines how much of them is available to tissues",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Clarifying a testosterone result, work-up of cycle disorders, excess hair growth, reduced libido, assessing hormonal status in metabolic disorders",
+        "prep": "Usually taken in the morning together with testosterone; no special preparation is needed, but tell the doctor about any hormonal medications",
+        "abnormal": "Changes may be related to hormonal status, liver and thyroid function, body weight, or the use of estrogens. A doctor evaluates it together with the sex hormone levels"
+      },
+      "sr": {
+        "what": "Analiza krvi na bjelančevinu koja prenosi polne hormone i određuje koliki je njihov dio dostupan tkivima",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Razjašnjenje nalaza testosterona, ispitivanje kod poremećaja ciklusa, pojačane maljavosti, smanjenog libida, procjena hormonskog statusa kod poremećaja metabolizma",
+        "prep": "Obično se uzima ujutru zajedno sa testosteronom; posebna priprema nije potrebna, ali o uzimanju hormonske terapije treba obavijestiti ljekara",
+        "abnormal": "Promjene mogu biti povezane sa hormonskim statusom, radom jetre i štitne žlijezde, tjelesnom težinom ili uzimanjem estrogena. Ljekar procjenjuje nalaz zajedno sa nivoom polnih hormona"
+      },
+      "de": {
+        "what": "Bluttest auf das Eiweiß, das Sexualhormone transportiert und bestimmt, welcher Anteil davon den Geweben zur Verfügung steht",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Einordnung eines Testosteronwerts, Abklärung von Zyklusstörungen, vermehrter Behaarung, vermindertem Libido, Beurteilung des Hormonstatus bei Stoffwechselstörungen",
+        "prep": "Wird meist morgens zusammen mit Testosteron abgenommen; eine besondere Vorbereitung ist nicht nötig, hormonelle Medikamente sollten dem Arzt mitgeteilt werden",
+        "abnormal": "Veränderungen können mit dem Hormonstatus, der Leber- und Schilddrüsenfunktion, dem Körpergewicht oder der Einnahme von Östrogenen zusammenhängen. Die Beurteilung erfolgt durch den Arzt zusammen mit den Sexualhormonwerten"
+      },
+      "tr": {
+        "what": "Cinsiyet hormonlarını taşıyan ve bunların ne kadarının dokular için kullanılabilir olduğunu belirleyen protein için kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Testosteron sonucunun netleştirilmesi, döngü bozuklukları, aşırı tüylenme, libido azalmasının incelenmesi, metabolizma bozukluklarında hormonal durumun değerlendirilmesi",
+        "prep": "Genellikle sabah testosteronla birlikte alınır; özel bir hazırlık gerekmez, ancak hormon ilacı kullanılıyorsa hekime bildirilmelidir",
+        "abnormal": "Değişiklikler hormonal durumla, karaciğer ve tiroid işleviyle, kiloyla veya östrojen kullanımıyla ilişkili olabilir. Hekim sonucu cinsiyet hormonu düzeyleriyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на бјеланчевину која преноси полне хормоне и одређује колики је њихов дио доступан ткивима",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Разјашњење налаза тестостерона, испитивање код поремећаја циклуса, појачане маљавости, смањеног либида, процјена хормонског статуса код поремећаја метаболизма",
+        "prep": "Обично се узима ујутру заједно са тестостероном; посебна припрема није потребна, али о узимању хормонске терапије треба обавијестити љекара",
+        "abnormal": "Промјене могу бити повезане са хормонским статусом, радом јетре и штитне жлијезде, тјелесном тежином или узимањем естрогена. Љекар процјењује налаз заједно са нивоом полних хормона"
+      }
+    }
+  },
+  {
+    "slug": "t3",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на общий трийодтиронин, гормон щитовидной железы вместе со связанной с белками частью",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Оценка работы щитовидной железы вместе с TSH, контроль лечения заболеваний щитовидной железы, при жалобах на сердцебиение, потливость, изменения веса",
+        "prep": "Обычно сдаётся утром; о приёме препаратов для щитовидной железы и добавок с биотином нужно сообщить врачу, так как они влияют на результат",
+        "abnormal": "Изменения могут быть связаны с работой щитовидной железы, количеством белков-переносчиков в крови, беременностью или приёмом некоторых препаратов. Интерпретирует врач вместе с TSH"
+      },
+      "en": {
+        "what": "Blood test for total triiodothyronine, a thyroid hormone including the protein-bound fraction",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Assessing thyroid function together with TSH, monitoring treatment of thyroid conditions, in case of palpitations, sweating, weight changes",
+        "prep": "Usually taken in the morning; tell the doctor about thyroid medications and biotin supplements, as they affect the result",
+        "abnormal": "Changes may be related to thyroid function, the amount of carrier proteins in the blood, pregnancy, or certain medications. A doctor interprets it together with TSH"
+      },
+      "sr": {
+        "what": "Analiza krvi na ukupni trijodtironin, hormon štitne žlijezde zajedno sa dijelom vezanim za bjelančevine",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Procjena rada štitne žlijezde zajedno sa TSH, kontrola liječenja oboljenja štitne žlijezde, kod lupanja srca, znojenja, promjene tjelesne težine",
+        "prep": "Obično se uzima ujutru; o uzimanju lijekova za štitnu žlijezdu i dodataka sa biotinom treba obavijestiti ljekara, jer utiču na nalaz",
+        "abnormal": "Promjene mogu biti povezane sa radom štitne žlijezde, količinom bjelančevina nosača u krvi, trudnoćom ili uzimanjem određenih lijekova. Tumačenje daje ljekar zajedno sa TSH"
+      },
+      "de": {
+        "what": "Bluttest auf Gesamt-Trijodthyronin, ein Schilddrüsenhormon einschließlich des eiweißgebundenen Anteils",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Beurteilung der Schilddrüsenfunktion zusammen mit TSH, Kontrolle der Behandlung von Schilddrüsenerkrankungen, bei Herzklopfen, Schwitzen, Gewichtsveränderungen",
+        "prep": "Wird meist morgens abgenommen; Schilddrüsenmedikamente und Biotinpräparate sollten dem Arzt mitgeteilt werden, da sie den Wert beeinflussen",
+        "abnormal": "Veränderungen können mit der Schilddrüsenfunktion, der Menge der Transporteiweiße im Blut, einer Schwangerschaft oder der Einnahme bestimmter Medikamente zusammenhängen. Die Interpretation erfolgt durch den Arzt zusammen mit TSH"
+      },
+      "tr": {
+        "what": "Proteine bağlı kısım dahil olmak üzere total triiyodotironin adlı tiroid hormonu için kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "TSH ile birlikte tiroid işlevinin değerlendirilmesi, tiroid hastalıklarının tedavisinin izlenmesi, çarpıntı, terleme, kilo değişikliği şikayetlerinde",
+        "prep": "Genellikle sabah alınır; tiroid ilaçları ve biotin içeren takviyeler sonucu etkilediğinden hekime bildirilmelidir",
+        "abnormal": "Değişiklikler tiroid bezinin çalışmasıyla, kandaki taşıyıcı protein miktarıyla, gebelikle veya bazı ilaçların kullanımıyla ilişkili olabilir. Hekim sonucu TSH ile birlikte yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на укупни тријодтиронин, хормон штитне жлијезде заједно са дијелом везаним за бјеланчевине",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Процјена рада штитне жлијезде заједно са TSH, контрола лијечења обољења штитне жлијезде, код лупања срца, знојења, промјене тјелесне тежине",
+        "prep": "Обично се узима ујутру; о узимању лијекова за штитну жлијезду и додатака са биотином треба обавијестити љекара, јер утичу на налаз",
+        "abnormal": "Промјене могу бити повезане са радом штитне жлијезде, количином бјеланчевина носача у крви, трудноћом или узимањем одређених лијекова. Тумачење даје љекар заједно са TSH"
+      }
+    }
+  },
+  {
+    "slug": "t4",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на общий тироксин, основной гормон щитовидной железы вместе со связанной с белками частью",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Оценка работы щитовидной железы вместе с TSH, контроль заместительной терапии, при утомляемости, зябкости, изменениях веса и состояния кожи",
+        "prep": "Обычно сдаётся утром; если назначены препараты щитовидной железы, порядок их приёма в день анализа уточняет врач",
+        "abnormal": "Изменения могут быть связаны с работой щитовидной железы, количеством белков-переносчиков, беременностью или приёмом некоторых препаратов. Оценивает врач вместе с TSH и клинической картиной"
+      },
+      "en": {
+        "what": "Blood test for total thyroxine, the main thyroid hormone including the protein-bound fraction",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Assessing thyroid function together with TSH, monitoring replacement therapy, in case of fatigue, feeling cold, changes in weight or skin condition",
+        "prep": "Usually taken in the morning; if thyroid medications are prescribed, the doctor specifies how to take them on the day of the test",
+        "abnormal": "Changes may be related to thyroid function, the amount of carrier proteins, pregnancy, or certain medications. A doctor evaluates it together with TSH and the clinical picture"
+      },
+      "sr": {
+        "what": "Analiza krvi na ukupni tiroksin, osnovni hormon štitne žlijezde zajedno sa dijelom vezanim za bjelančevine",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Procjena rada štitne žlijezde zajedno sa TSH, kontrola nadomjesne terapije, kod umora, osjećaja hladnoće, promjene tjelesne težine i stanja kože",
+        "prep": "Obično se uzima ujutru; ako su propisani lijekovi za štitnu žlijezdu, način njihovog uzimanja na dan analize određuje ljekar",
+        "abnormal": "Promjene mogu biti povezane sa radom štitne žlijezde, količinom bjelančevina nosača, trudnoćom ili uzimanjem određenih lijekova. Ljekar procjenjuje nalaz zajedno sa TSH i kliničkom slikom"
+      },
+      "de": {
+        "what": "Bluttest auf Gesamt-Thyroxin, das wichtigste Schilddrüsenhormon einschließlich des eiweißgebundenen Anteils",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Beurteilung der Schilddrüsenfunktion zusammen mit TSH, Kontrolle einer Substitutionstherapie, bei Müdigkeit, Frösteln, Gewichts- und Hautveränderungen",
+        "prep": "Wird meist morgens abgenommen; bei verordneten Schilddrüsenmedikamenten legt der Arzt fest, wie sie am Untersuchungstag einzunehmen sind",
+        "abnormal": "Veränderungen können mit der Schilddrüsenfunktion, der Menge der Transporteiweiße, einer Schwangerschaft oder der Einnahme bestimmter Medikamente zusammenhängen. Die Beurteilung erfolgt durch den Arzt zusammen mit TSH und dem klinischen Bild"
+      },
+      "tr": {
+        "what": "Proteine bağlı kısım dahil olmak üzere temel tiroid hormonu olan total tiroksin için kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "TSH ile birlikte tiroid işlevinin değerlendirilmesi, replasman tedavisinin izlenmesi, yorgunluk, üşüme, kilo ve cilt değişikliklerinde",
+        "prep": "Genellikle sabah alınır; tiroid ilacı kullanılıyorsa test günü nasıl alınacağını hekim belirler",
+        "abnormal": "Değişiklikler tiroid bezinin çalışmasıyla, taşıyıcı protein miktarıyla, gebelikle veya bazı ilaçların kullanımıyla ilişkili olabilir. Hekim sonucu TSH ve klinik tabloyla birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на укупни тироксин, основни хормон штитне жлијезде заједно са дијелом везаним за бјеланчевине",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Процјена рада штитне жлијезде заједно са TSH, контрола надомјесне терапије, код умора, осјећаја хладноће, промјене тјелесне тежине и стања коже",
+        "prep": "Обично се узима ујутру; ако су прописани лијекови за штитну жлијезду, начин њиховог узимања на дан анализе одређује љекар",
+        "abnormal": "Промјене могу бити повезане са радом штитне жлијезде, количином бјеланчевина носача, трудноћом или узимањем одређених лијекова. Љекар процјењује налаз заједно са TSH и клиничком сликом"
+      }
+    }
+  },
+  {
+    "slug": "thyroglobulin",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на белок, который вырабатывает только ткань щитовидной железы",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Наблюдение после лечения заболеваний щитовидной железы, обследование по назначению эндокринолога, обычно вместе с антителами к тиреоглобулину",
+        "prep": "Специальной подготовки обычно не требуется; важно сообщить врачу о перенесённых операциях на щитовидной железе и о принимаемых препаратах",
+        "abnormal": "Результат зависит от объёма сохранившейся ткани железы, наличия антител и метода лаборатории. Поэтому его оценивает только врач, в динамике и вместе с другими исследованиями"
+      },
+      "en": {
+        "what": "Blood test for a protein produced only by thyroid tissue",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Follow-up after treatment of thyroid conditions, examination as prescribed by an endocrinologist, usually together with thyroglobulin antibodies",
+        "prep": "No special preparation is usually required; it is important to tell the doctor about previous thyroid surgery and the medications you take",
+        "abnormal": "The result depends on the amount of remaining thyroid tissue, the presence of antibodies, and the laboratory method. It is therefore assessed only by a doctor, over time and together with other investigations"
+      },
+      "sr": {
+        "what": "Analiza krvi na bjelančevinu koju stvara isključivo tkivo štitne žlijezde",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Praćenje poslije liječenja oboljenja štitne žlijezde, pregled po uputu endokrinologa, obično zajedno sa antitijelima na tireoglobulin",
+        "prep": "Posebna priprema obično nije potrebna; važno je obavijestiti ljekara o ranijim operacijama štitne žlijezde i o lijekovima koji se uzimaju",
+        "abnormal": "Nalaz zavisi od količine preostalog tkiva žlijezde, prisustva antitijela i metode laboratorije. Zato ga procjenjuje samo ljekar, kroz praćenje i zajedno sa drugim ispitivanjima"
+      },
+      "de": {
+        "what": "Bluttest auf ein Eiweiß, das ausschließlich von Schilddrüsengewebe gebildet wird",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Verlaufskontrolle nach Behandlung von Schilddrüsenerkrankungen, Untersuchung nach Anordnung des Endokrinologen, meist zusammen mit Thyreoglobulin-Antikörpern",
+        "prep": "In der Regel ist keine besondere Vorbereitung nötig; wichtig ist, dem Arzt frühere Schilddrüsenoperationen und eingenommene Medikamente mitzuteilen",
+        "abnormal": "Der Wert hängt von der Menge des verbliebenen Schilddrüsengewebes, dem Vorhandensein von Antikörpern und der Labormethode ab. Er wird deshalb nur vom Arzt im Verlauf und zusammen mit anderen Untersuchungen beurteilt"
+      },
+      "tr": {
+        "what": "Yalnızca tiroid dokusu tarafından üretilen bir protein için kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Tiroid hastalıklarının tedavisi sonrası izlem, endokrinoloji uzmanının isteğiyle inceleme, genellikle tiroglobulin antikorlarıyla birlikte",
+        "prep": "Genellikle özel hazırlık gerekmez; geçirilmiş tiroid ameliyatlarının ve kullanılan ilaçların hekime bildirilmesi önemlidir",
+        "abnormal": "Sonuç, kalan tiroid dokusunun miktarına, antikorların varlığına ve laboratuvarın yöntemine bağlıdır. Bu nedenle yalnızca hekim tarafından, zaman içindeki seyir ve diğer incelemelerle birlikte değerlendirilir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на бјеланчевину коју ствара искључиво ткиво штитне жлијезде",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Праћење послије лијечења обољења штитне жлијезде, преглед по упуту ендокринолога, обично заједно са антитијелима на тиреоглобулин",
+        "prep": "Посебна припрема обично није потребна; важно је обавијестити љекара о ранијим операцијама штитне жлијезде и о лијековима који се узимају",
+        "abnormal": "Налаз зависи од количине преосталог ткива жлијезде, присуства антитијела и методе лабораторије. Зато га процјењује само љекар, кроз праћење и заједно са другим испитивањима"
+      }
+    }
+  },
+  {
+    "slug": "17-hydroxyprogesterone",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на промежуточное вещество, которое образуется при выработке гормонов надпочечников",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Обследование при избыточном оволосении, нарушениях цикла и трудностях с зачатием, уточнение причин гормональных изменений у детей и взрослых",
+        "prep": "Забор обычно проводится утром, так как уровень меняется в течение суток; у женщин репродуктивного возраста день цикла для сдачи назначает врач",
+        "abnormal": "Изменения могут быть связаны с работой надпочечников, временем забора или фазой цикла. Результат оценивает врач вместе с остальными гормонами, при необходимости анализ повторяют"
+      },
+      "en": {
+        "what": "Blood test for an intermediate substance formed during the production of adrenal hormones",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Work-up of excess hair growth, cycle disorders and difficulties conceiving, clarifying causes of hormonal changes in children and adults",
+        "prep": "The sample is usually taken in the morning, as the level changes during the day; in women of reproductive age the doctor sets the cycle day for the test",
+        "abnormal": "Changes may be related to adrenal function, the time of sampling, or the cycle phase. A doctor evaluates the result together with the other hormones and may repeat the test"
+      },
+      "sr": {
+        "what": "Analiza krvi na međuproizvod koji nastaje pri stvaranju hormona nadbubrežnih žlijezda",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Ispitivanje kod pojačane maljavosti, poremećaja ciklusa i teškoća sa začećem, razjašnjenje uzroka hormonskih promjena kod djece i odraslih",
+        "prep": "Uzorak se obično uzima ujutru, jer se nivo mijenja tokom dana; kod žena reproduktivne dobi dan ciklusa za analizu određuje ljekar",
+        "abnormal": "Promjene mogu biti povezane sa radom nadbubrežnih žlijezda, vremenom uzimanja uzorka ili fazom ciklusa. Nalaz procjenjuje ljekar zajedno sa ostalim hormonima, a po potrebi se analiza ponavlja"
+      },
+      "de": {
+        "what": "Bluttest auf eine Zwischenstufe, die bei der Bildung der Nebennierenhormone entsteht",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Abklärung von vermehrter Behaarung, Zyklusstörungen und unerfülltem Kinderwunsch, Klärung von Ursachen hormoneller Veränderungen bei Kindern und Erwachsenen",
+        "prep": "Die Entnahme erfolgt meist morgens, da der Wert im Tagesverlauf schwankt; bei Frauen im gebärfähigen Alter legt der Arzt den Zyklustag fest",
+        "abnormal": "Veränderungen können mit der Nebennierenfunktion, dem Zeitpunkt der Entnahme oder der Zyklusphase zusammenhängen. Der Arzt beurteilt den Befund zusammen mit den übrigen Hormonen und wiederholt die Untersuchung bei Bedarf"
+      },
+      "tr": {
+        "what": "Böbreküstü bezi hormonlarının üretimi sırasında oluşan bir ara madde için kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Aşırı tüylenme, döngü bozuklukları ve gebe kalma güçlüğünün araştırılması, çocuk ve erişkinlerde hormonal değişikliklerin nedenlerinin netleştirilmesi",
+        "prep": "Düzey gün içinde değiştiğinden örnek genellikle sabah alınır; üreme çağındaki kadınlarda test günü hekim tarafından belirlenir",
+        "abnormal": "Değişiklikler böbreküstü bezlerinin çalışmasıyla, örneğin alındığı saatle veya döngü evresiyle ilişkili olabilir. Hekim sonucu diğer hormonlarla birlikte değerlendirir, gerektiğinde test tekrarlanır"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на међупроизвод који настаје при стварању хормона надбубрежних жлијезда",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Испитивање код појачане маљавости, поремећаја циклуса и тешкоћа са зачећем, разјашњење узрока хормонских промјена код дјеце и одраслих",
+        "prep": "Узорак се обично узима ујутру, јер се ниво мијења током дана; код жена репродуктивне доби дан циклуса за анализу одређује љекар",
+        "abnormal": "Промјене могу бити повезане са радом надбубрежних жлијезда, временом узимања узорка или фазом циклуса. Налаз процјењује љекар заједно са осталим хормонима, а по потреби се анализа понавља"
+      }
+    }
+  },
+  {
+    "slug": "acth",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на гормон гипофиза, который управляет выработкой кортизола надпочечниками",
+        "how": "Забор венозной крови в отдельную пробирку, пробу быстро доставляют в лабораторию с соблюдением условий хранения",
+        "when": "Оценка работы гипофиза и надпочечников, уточнение причин изменений уровня кортизола, наблюдение по назначению эндокринолога",
+        "prep": "Забор проводится утром в определённые часы, так как уровень меняется в течение суток; накануне желательно избегать стресса и тяжёлой физической нагрузки",
+        "abnormal": "Изменения могут быть связаны с работой гипофиза или надпочечников, временем забора, стрессом или приёмом гормональных препаратов. Оценивает врач вместе с уровнем кортизола"
+      },
+      "en": {
+        "what": "Blood test for the pituitary hormone that controls cortisol production by the adrenal glands",
+        "how": "Venous blood draw into a separate tube, the sample is delivered to the laboratory quickly and under the required storage conditions",
+        "when": "Assessing pituitary and adrenal function, clarifying causes of changes in cortisol levels, follow-up as prescribed by an endocrinologist",
+        "prep": "The sample is taken in the morning at specific hours, as the level changes during the day; it is advisable to avoid stress and heavy physical exertion the day before",
+        "abnormal": "Changes may be related to pituitary or adrenal function, the time of sampling, stress, or the use of hormonal medications. A doctor evaluates it together with the cortisol level"
+      },
+      "sr": {
+        "what": "Analiza krvi na hormon hipofize koji upravlja stvaranjem kortizola u nadbubrežnim žlijezdama",
+        "how": "Uzimanje venske krvi u posebnu epruvetu, uzorak se brzo dostavlja u laboratoriju uz propisane uslove čuvanja",
+        "when": "Procjena rada hipofize i nadbubrežnih žlijezda, razjašnjenje uzroka promjena nivoa kortizola, praćenje po uputu endokrinologa",
+        "prep": "Uzorak se uzima ujutru u određeno vrijeme, jer se nivo mijenja tokom dana; dan ranije je poželjno izbjegavati stres i teže fizičko naprezanje",
+        "abnormal": "Promjene mogu biti povezane sa radom hipofize ili nadbubrežnih žlijezda, vremenom uzimanja uzorka, stresom ili uzimanjem hormonske terapije. Ljekar procjenjuje nalaz zajedno sa nivoom kortizola"
+      },
+      "de": {
+        "what": "Bluttest auf das Hypophysenhormon, das die Cortisolbildung in den Nebennieren steuert",
+        "how": "Entnahme von venösem Blut in ein eigenes Röhrchen, die Probe wird rasch und unter den erforderlichen Lagerbedingungen ins Labor gebracht",
+        "when": "Beurteilung der Hypophysen- und Nebennierenfunktion, Klärung von Ursachen veränderter Cortisolwerte, Verlaufskontrolle nach Anordnung des Endokrinologen",
+        "prep": "Die Entnahme erfolgt morgens zu bestimmten Zeiten, da der Wert im Tagesverlauf schwankt; am Vortag sollten Stress und starke körperliche Belastung möglichst vermieden werden",
+        "abnormal": "Veränderungen können mit der Funktion von Hypophyse oder Nebennieren, dem Entnahmezeitpunkt, Stress oder der Einnahme hormoneller Medikamente zusammenhängen. Die Beurteilung erfolgt durch den Arzt zusammen mit dem Cortisolwert"
+      },
+      "tr": {
+        "what": "Böbreküstü bezlerinde kortizol üretimini yöneten hipofiz hormonu için kan testi",
+        "how": "Ayrı bir tüpe venöz kan alınır, örnek gerekli saklama koşullarında hızlıca laboratuvara ulaştırılır",
+        "when": "Hipofiz ve böbreküstü bezlerinin işlevinin değerlendirilmesi, kortizol düzeyindeki değişikliklerin nedeninin netleştirilmesi, endokrinoloji uzmanının isteğiyle izlem",
+        "prep": "Düzey gün içinde değiştiğinden örnek sabah belirli saatlerde alınır; bir önceki gün stresten ve ağır fiziksel efordan kaçınılması önerilir",
+        "abnormal": "Değişiklikler hipofiz veya böbreküstü bezlerinin çalışmasıyla, örneğin alındığı saatle, stresle veya hormon ilacı kullanımıyla ilişkili olabilir. Hekim sonucu kortizol düzeyiyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на хормон хипофизе који управља стварањем кортизола у надбубрежним жлијездама",
+        "how": "Узимање венске крви у посебну епрувету, узорак се брзо доставља у лабораторију уз прописане услове чувања",
+        "when": "Процјена рада хипофизе и надбубрежних жлијезда, разјашњење узрока промјена нивоа кортизола, праћење по упуту ендокринолога",
+        "prep": "Узорак се узима ујутру у одређено вријеме, јер се ниво мијења током дана; дан раније је пожељно избјегавати стрес и теже физичко напрезање",
+        "abnormal": "Промјене могу бити повезане са радом хипофизе или надбубрежних жлијезда, временом узимања узорка, стресом или узимањем хормонске терапије. Љекар процјењује налаз заједно са нивоом кортизола"
+      }
+    }
+  },
+  {
+    "slug": "androstenedione",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на предшественник мужских и женских половых гормонов",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Обследование при избыточном оволосении, акне, нарушениях цикла, уточнение источника избытка андрогенов вместе с другими гормонами",
+        "prep": "Обычно сдаётся утром, так как уровень меняется в течение суток; у женщин репродуктивного возраста день цикла для сдачи определяет врач",
+        "abnormal": "Изменения могут быть связаны с работой яичников или надпочечников, фазой цикла или приёмом гормональных препаратов. Оценивает врач вместе с остальными показателями"
+      },
+      "en": {
+        "what": "Blood test for a precursor of male and female sex hormones",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Work-up of excess hair growth, acne, cycle disorders, identifying the source of excess androgens together with other hormones",
+        "prep": "Usually taken in the morning, as the level changes during the day; in women of reproductive age the doctor sets the cycle day for the test",
+        "abnormal": "Changes may be related to ovarian or adrenal function, the cycle phase, or the use of hormonal medications. A doctor evaluates it together with the other values"
+      },
+      "sr": {
+        "what": "Analiza krvi na preteču muških i ženskih polnih hormona",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Ispitivanje kod pojačane maljavosti, akni, poremećaja ciklusa, utvrđivanje izvora viška androgena zajedno sa drugim hormonima",
+        "prep": "Obično se uzima ujutru, jer se nivo mijenja tokom dana; kod žena reproduktivne dobi dan ciklusa za analizu određuje ljekar",
+        "abnormal": "Promjene mogu biti povezane sa radom jajnika ili nadbubrežnih žlijezda, fazom ciklusa ili uzimanjem hormonske terapije. Ljekar procjenjuje nalaz zajedno sa ostalim pokazateljima"
+      },
+      "de": {
+        "what": "Bluttest auf eine Vorstufe der männlichen und weiblichen Sexualhormone",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Abklärung von vermehrter Behaarung, Akne, Zyklusstörungen, Eingrenzung der Quelle überschüssiger Androgene zusammen mit anderen Hormonen",
+        "prep": "Wird meist morgens abgenommen, da der Wert im Tagesverlauf schwankt; bei Frauen im gebärfähigen Alter legt der Arzt den Zyklustag fest",
+        "abnormal": "Veränderungen können mit der Funktion der Eierstöcke oder Nebennieren, der Zyklusphase oder der Einnahme hormoneller Medikamente zusammenhängen. Die Beurteilung erfolgt durch den Arzt zusammen mit den übrigen Werten"
+      },
+      "tr": {
+        "what": "Erkek ve kadın cinsiyet hormonlarının bir öncülü için kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Aşırı tüylenme, akne, döngü bozukluklarının incelenmesi, diğer hormonlarla birlikte fazla androjenin kaynağının belirlenmesi",
+        "prep": "Düzey gün içinde değiştiğinden genellikle sabah alınır; üreme çağındaki kadınlarda test günü hekim tarafından belirlenir",
+        "abnormal": "Değişiklikler yumurtalıkların veya böbreküstü bezlerinin çalışmasıyla, döngü evresiyle ya da hormon ilacı kullanımıyla ilişkili olabilir. Hekim sonucu diğer göstergelerle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на претечу мушких и женских полних хормона",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Испитивање код појачане маљавости, акни, поремећаја циклуса, утврђивање извора вишка андрогена заједно са другим хормонима",
+        "prep": "Обично се узима ујутру, јер се ниво мијења током дана; код жена репродуктивне доби дан циклуса за анализу одређује љекар",
+        "abnormal": "Промјене могу бити повезане са радом јајника или надбубрежних жлијезда, фазом циклуса или узимањем хормонске терапије. Љекар процјењује налаз заједно са осталим показатељима"
+      }
+    }
+  },
+  {
+    "slug": "free-testosterone",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на не связанную с белками часть тестостерона, доступную тканям",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Уточнение гормонального статуса, когда общий тестостерон малоинформативен, обследование при снижении либидо и утомляемости у мужчин, при избыточном оволосении и нарушениях цикла у женщин",
+        "prep": "Обычно сдаётся утром, так как уровень меняется в течение суток; часто вместе с общим тестостероном и SHBG",
+        "abnormal": "Изменения могут быть связаны с гормональным фоном, возрастом, весом, количеством белков-переносчиков или приёмом некоторых препаратов. Интерпретирует врач вместе с общим тестостероном"
+      },
+      "en": {
+        "what": "Blood test for the fraction of testosterone not bound to proteins and available to tissues",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Clarifying hormonal status when total testosterone is not informative enough, work-up of reduced libido and fatigue in men, of excess hair growth and cycle disorders in women",
+        "prep": "Usually taken in the morning, as the level changes during the day; often together with total testosterone and SHBG",
+        "abnormal": "Changes may be related to hormonal status, age, body weight, the amount of carrier proteins, or certain medications. A doctor interprets it together with total testosterone"
+      },
+      "sr": {
+        "what": "Analiza krvi na dio testosterona koji nije vezan za bjelančevine i dostupan je tkivima",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Razjašnjenje hormonskog statusa kada ukupni testosteron nije dovoljno informativan, ispitivanje kod smanjenog libida i umora kod muškaraca, kod pojačane maljavosti i poremećaja ciklusa kod žena",
+        "prep": "Obično se uzima ujutru, jer se nivo mijenja tokom dana; često zajedno sa ukupnim testosteronom i SHBG",
+        "abnormal": "Promjene mogu biti povezane sa hormonskim statusom, godinama, tjelesnom težinom, količinom bjelančevina nosača ili uzimanjem određenih lijekova. Tumačenje daje ljekar zajedno sa ukupnim testosteronom"
+      },
+      "de": {
+        "what": "Bluttest auf den nicht an Eiweiße gebundenen Anteil des Testosterons, der den Geweben zur Verfügung steht",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Klärung des Hormonstatus, wenn das Gesamttestosteron wenig aussagt, Abklärung von vermindertem Libido und Müdigkeit bei Männern, von vermehrter Behaarung und Zyklusstörungen bei Frauen",
+        "prep": "Wird meist morgens abgenommen, da der Wert im Tagesverlauf schwankt; oft zusammen mit Gesamttestosteron und SHBG",
+        "abnormal": "Veränderungen können mit dem Hormonstatus, dem Alter, dem Körpergewicht, der Menge der Transporteiweiße oder der Einnahme bestimmter Medikamente zusammenhängen. Die Interpretation erfolgt durch den Arzt zusammen mit dem Gesamttestosteron"
+      },
+      "tr": {
+        "what": "Testosteronun proteine bağlı olmayan ve dokular için kullanılabilir olan kısmı için kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Total testosteronun yeterli bilgi vermediği durumlarda hormonal durumun netleştirilmesi, erkeklerde libido azalması ve yorgunluğun, kadınlarda aşırı tüylenme ve döngü bozukluklarının incelenmesi",
+        "prep": "Düzey gün içinde değiştiğinden genellikle sabah alınır; çoğu zaman total testosteron ve SHBG ile birlikte",
+        "abnormal": "Değişiklikler hormonal durumla, yaşla, kiloyla, taşıyıcı protein miktarıyla veya bazı ilaçların kullanımıyla ilişkili olabilir. Hekim sonucu total testosteronla birlikte yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на дио тестостерона који није везан за бјеланчевине и доступан је ткивима",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Разјашњење хормонског статуса када укупни тестостерон није довољно информативан, испитивање код смањеног либида и умора код мушкараца, код појачане маљавости и поремећаја циклуса код жена",
+        "prep": "Обично се узима ујутру, јер се ниво мијења током дана; често заједно са укупним тестостероном и SHBG",
+        "abnormal": "Промјене могу бити повезане са хормонским статусом, годинама, тјелесном тежином, количином бјеланчевина носача или узимањем одређених лијекова. Тумачење даје љекар заједно са укупним тестостероном"
+      }
+    }
+  },
+  {
+    "slug": "pth",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на гормон паращитовидных желёз, который регулирует обмен кальция и фосфора",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Обследование при изменениях уровня кальция, при остеопорозе, мочекаменной болезни, при хронической болезни почек, наблюдение по назначению эндокринолога",
+        "prep": "Обычно сдаётся утром, чаще вместе с кальцием и витамином D; о приёме препаратов кальция и витамина D нужно сообщить врачу",
+        "abnormal": "Изменения могут быть связаны с работой паращитовидных желёз, уровнем кальция и витамина D, функцией почек. Оценивает врач только вместе с этими показателями"
+      },
+      "en": {
+        "what": "Blood test for the parathyroid hormone that regulates calcium and phosphorus metabolism",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Work-up of changes in calcium levels, osteoporosis, kidney stones, chronic kidney disease, follow-up as prescribed by an endocrinologist",
+        "prep": "Usually taken in the morning, most often together with calcium and vitamin D; tell the doctor about calcium and vitamin D supplements you take",
+        "abnormal": "Changes may be related to parathyroid function, calcium and vitamin D levels, or kidney function. A doctor evaluates it only together with these values"
+      },
+      "sr": {
+        "what": "Analiza krvi na hormon paratireoidnih žlijezda koji reguliše metabolizam kalcijuma i fosfora",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Ispitivanje kod promjena nivoa kalcijuma, kod osteoporoze, kamena u bubregu, kod hronične bolesti bubrega, praćenje po uputu endokrinologa",
+        "prep": "Obično se uzima ujutru, najčešće zajedno sa kalcijumom i vitaminom D; o uzimanju preparata kalcijuma i vitamina D treba obavijestiti ljekara",
+        "abnormal": "Promjene mogu biti povezane sa radom paratireoidnih žlijezda, nivoom kalcijuma i vitamina D, funkcijom bubrega. Ljekar nalaz procjenjuje isključivo zajedno sa tim pokazateljima"
+      },
+      "de": {
+        "what": "Bluttest auf das Hormon der Nebenschilddrüsen, das den Kalzium- und Phosphatstoffwechsel steuert",
+        "how": "Entnahme von venösem Blut, dauert einige Minuten",
+        "when": "Abklärung veränderter Kalziumwerte, bei Osteoporose, Nierensteinen, chronischer Nierenerkrankung, Verlaufskontrolle nach Anordnung des Endokrinologen",
+        "prep": "Wird meist morgens abgenommen, häufig zusammen mit Kalzium und Vitamin D; die Einnahme von Kalzium- und Vitamin-D-Präparaten sollte dem Arzt mitgeteilt werden",
+        "abnormal": "Veränderungen können mit der Funktion der Nebenschilddrüsen, dem Kalzium- und Vitamin-D-Spiegel oder der Nierenfunktion zusammenhängen. Der Arzt beurteilt den Befund nur zusammen mit diesen Werten"
+      },
+      "tr": {
+        "what": "Kalsiyum ve fosfor metabolizmasını düzenleyen paratiroid bezi hormonu için kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Kalsiyum düzeyindeki değişikliklerin, osteoporozun, böbrek taşının, kronik böbrek hastalığının araştırılması, endokrinoloji uzmanının isteğiyle izlem",
+        "prep": "Genellikle sabah, çoğunlukla kalsiyum ve D vitamini ile birlikte alınır; kalsiyum ve D vitamini takviyesi kullanılıyorsa hekime bildirilmelidir",
+        "abnormal": "Değişiklikler paratiroid bezlerinin çalışmasıyla, kalsiyum ve D vitamini düzeyiyle veya böbrek fonksiyonuyla ilişkili olabilir. Hekim sonucu yalnızca bu göstergelerle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на хормон паратиреоидних жлијезда који регулише метаболизам калцијума и фосфора",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Испитивање код промјена нивоа калцијума, код остеопорозе, камена у бубрегу, код хроничне болести бубрега, праћење по упуту ендокринолога",
+        "prep": "Обично се узима ујутру, најчешће заједно са калцијумом и витамином Д; о узимању препарата калцијума и витамина Д треба обавијестити љекара",
+        "abnormal": "Промјене могу бити повезане са радом паратиреоидних жлијезда, нивоом калцијума и витамина Д, функцијом бубрега. Љекар налаз процјењује искључиво заједно са тим показатељима"
+      }
+    }
+  },
+  {
+    "slug": "free-estriol",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на гормон, который во время беременности вырабатывается плацентой и организмом плода",
+        "how": "Забор венозной крови у беременной, занимает несколько минут",
+        "when": "Входит в биохимический скрининг второго триместра беременности, назначается врачом в определённый срок беременности",
+        "prep": "Специальной подготовки обычно не требуется; важно точно знать срок беременности, его подтверждает врач по данным УЗИ",
+        "abnormal": "Отдельный показатель самостоятельного значения не имеет. Он оценивается врачом только в комплексе с остальными показателями скрининга и сроком беременности"
+      },
+      "en": {
+        "what": "Blood test for a hormone produced during pregnancy by the placenta and the fetus",
+        "how": "Venous blood draw from the pregnant woman, takes a few minutes",
+        "when": "Part of the biochemical screening in the second trimester of pregnancy, ordered by a doctor at a specific stage of pregnancy",
+        "prep": "No special preparation is usually required; it is important to know the exact stage of pregnancy, which the doctor confirms by ultrasound",
+        "abnormal": "The value on its own has no independent meaning. It is assessed by a doctor only together with the other screening values and the stage of pregnancy"
+      },
+      "sr": {
+        "what": "Analiza krvi na hormon koji tokom trudnoće stvaraju posteljica i organizam ploda",
+        "how": "Uzimanje venske krvi trudnice, traje nekoliko minuta",
+        "when": "Dio je biohemijskog skrininga u drugom tromjesečju trudnoće, a ljekar ga određuje u tačno određenoj nedjelji trudnoće",
+        "prep": "Posebna priprema obično nije potrebna; važno je tačno znati gestacijsku starost, koju ljekar potvrđuje ultrazvukom",
+        "abnormal": "Pojedinačan pokazatelj sam za sebe nema značaj. Procjenjuje ga ljekar isključivo zajedno sa ostalim pokazateljima skrininga i gestacijskom starošću"
+      },
+      "de": {
+        "what": "Bluttest auf ein Hormon, das während der Schwangerschaft von der Plazenta und vom Kind gebildet wird",
+        "how": "Entnahme von venösem Blut bei der Schwangeren, dauert einige Minuten",
+        "when": "Teil des biochemischen Screenings im zweiten Schwangerschaftsdrittel, wird vom Arzt zu einem bestimmten Schwangerschaftszeitpunkt angeordnet",
+        "prep": "In der Regel ist keine besondere Vorbereitung nötig; wichtig ist das genaue Schwangerschaftsalter, das der Arzt per Ultraschall bestätigt",
+        "abnormal": "Der einzelne Wert hat für sich genommen keine Aussagekraft. Er wird vom Arzt ausschließlich zusammen mit den übrigen Screeningwerten und dem Schwangerschaftsalter beurteilt"
+      },
+      "tr": {
+        "what": "Gebelik sırasında plasenta ve bebek tarafından üretilen bir hormon için kan testi",
+        "how": "Gebeden venöz kan alımı, birkaç dakika sürer",
+        "when": "Gebeliğin ikinci üç ayındaki biyokimyasal taramanın bir parçasıdır, hekim tarafından gebeliğin belirli bir döneminde istenir",
+        "prep": "Genellikle özel hazırlık gerekmez; gebelik haftasının tam olarak bilinmesi önemlidir, bunu hekim ultrasonla doğrular",
+        "abnormal": "Tek bir gösterge başlı başına anlam taşımaz. Hekim bunu yalnızca taramanın diğer göstergeleri ve gebelik haftasıyla birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на хормон који током трудноће стварају постељица и организам плода",
+        "how": "Узимање венске крви труднице, траје неколико минута",
+        "when": "Дио је биохемијског скрининга у другом тромјесечју трудноће, а љекар га одређује у тачно одређеној недјељи трудноће",
+        "prep": "Посебна припрема обично није потребна; важно је тачно знати гестацијску старост, коју љекар потврђује ултразвуком",
+        "abnormal": "Појединачан показатељ сам за себе нема значај. Процјењује га љекар искључиво заједно са осталим показатељима скрининга и гестацијском старошћу"
+      }
+    }
+  }
+]

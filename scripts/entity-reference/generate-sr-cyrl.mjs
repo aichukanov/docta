@@ -66,6 +66,64 @@ const PROTECTED_LATIN_TOKENS = [
 	'I-III',
 	'II-III',
 	'I-II',
+
+	// --- волна 2 (анализы и услуги, 2026-09) ---
+	// Латинские видовые названия: транслитерация ломает их в «Хелицобацтер».
+	// Идут первыми: составные токены должны перехватываться раньше одиночных.
+	'Bordetella pertussis',
+	'Chlamydia trachomatis',
+	'Clostridium difficile',
+	'Gardnerella vaginalis',
+	'Helicobacter pylori',
+	'Mycoplasma genitalium',
+	'Mycoplasma hominis',
+	'Neisseria gonorrhoeae',
+	'Toxoplasma gondii',
+	'Trichomonas vaginalis',
+	'Ureaplasma urealyticum',
+	'Epstein-Barr',
+	'Candida',
+	'Demodex',
+	// Онкомаркеры: «CA» отдельно не защищаем — только вместе с номером,
+	// иначе под защиту попадёт любое случайное «ca» в тексте.
+	'CA 125',
+	'CA 15-3',
+	'CA 19-9',
+	'CA 72-4',
+	'CYFRA 21-1',
+	'HE4',
+	'NSE',
+	'ROMA',
+	// Лабораторные обозначения и методы
+	'Anti-CCP',
+	'Anti-Tg',
+	'ANA',
+	'ASA',
+	'ELISA',
+	'IGRA',
+	'IgA',
+	'IgE',
+	'HBs',
+	'HPV',
+	'HSV1',
+	'HSV2',
+	'KOH',
+	'LE',
+	'USB',
+	'SARS-CoV-2',
+	'spike',
+	'SHBG',
+	'TSHR',
+	'TSH',
+	'ACE',
+	// Услуги: аппаратура и материалы
+	'Air-Flow',
+	'Bio-Oss',
+	'CBCT',
+	'LBC',
+	'CT',
+	// НЕ защищаем: DNK, RNK, PCR, EKG, HOBP, ORL, B12, B6 — у них устоявшаяся
+	// сербская кириллица (ДНК, ПЦР, ЕКГ, ХОБП, ОРЛ, Б12), список их только испортит.
 ];
 
 const FIELDS = ['what', 'how', 'when', 'prep', 'abnormal'];

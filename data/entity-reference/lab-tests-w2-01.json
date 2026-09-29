@@ -1,0 +1,818 @@
+[
+  {
+    "slug": "covid-19-antigen-test",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Быстрый тест на антигены вируса SARS-CoV-2 в мазке из носа или носоглотки",
+        "how": "Мазок тампоном из носового хода или носоглотки, занимает меньше минуты, результат обычно готов в тот же визит",
+        "when": "Симптомы респираторной инфекции, контакт с заболевшим, требования при госпитализации или поездке",
+        "prep": "Примерно за 15 минут до мазка не есть, не пить, не курить и не использовать спреи и капли для носа",
+        "abnormal": "Положительный результат может быть связан с текущей инфекцией SARS-CoV-2, отрицательный не исключает её при сохраняющихся симптомах. Дальнейшую тактику определяет врач"
+      },
+      "en": {
+        "what": "Rapid test for SARS-CoV-2 antigens in a nasal or nasopharyngeal swab",
+        "how": "A swab is taken from the nasal passage or the nasopharynx, takes less than a minute, the result is usually ready during the same visit",
+        "when": "Symptoms of a respiratory infection, contact with an infected person, requirements for hospital admission or travel",
+        "prep": "About 15 minutes before the swab, avoid eating, drinking, smoking and using nasal sprays or drops",
+        "abnormal": "A positive result may be related to a current SARS-CoV-2 infection, a negative one does not rule it out if symptoms persist. Further steps are decided by a doctor"
+      },
+      "sr": {
+        "what": "Brzi test na antigene virusa SARS-CoV-2 u brisu nosa ili nazofarinksa",
+        "how": "Uzima se bris štapićem iz nosa ili nazofarinksa, traje manje od minuta, nalaz je obično gotov tokom iste posjete",
+        "when": "Simptomi respiratorne infekcije, kontakt sa oboljelim, zahtjevi prilikom hospitalizacije ili putovanja",
+        "prep": "Otprilike 15 minuta prije brisa ne jesti, ne piti, ne pušiti i ne koristiti sprejeve i kapi za nos",
+        "abnormal": "Pozitivan nalaz može biti povezan sa aktuelnom infekcijom SARS-CoV-2, a negativan je ne isključuje ako tegobe traju. Dalju taktiku određuje ljekar"
+      },
+      "de": {
+        "what": "Schnelltest auf Antigene des SARS-CoV-2-Virus in einem Nasen- oder Nasenrachenabstrich",
+        "how": "Abstrich mit einem Tupfer aus Nase oder Nasenrachenraum, dauert weniger als eine Minute, das Ergebnis liegt meist noch beim selben Termin vor",
+        "when": "Symptome eines Atemwegsinfekts, Kontakt mit einer erkrankten Person, Vorgaben bei Krankenhausaufnahme oder Reisen",
+        "prep": "Etwa 15 Minuten vor dem Abstrich nicht essen, nicht trinken, nicht rauchen und keine Nasensprays oder Nasentropfen verwenden",
+        "abnormal": "Ein positives Ergebnis kann mit einer aktuellen SARS-CoV-2-Infektion zusammenhängen, ein negatives schließt sie bei anhaltenden Beschwerden nicht aus. Das weitere Vorgehen legt der Arzt fest"
+      },
+      "tr": {
+        "what": "Burun veya nazofarenks sürüntüsünde SARS-CoV-2 virüsü antijenlerini arayan hızlı test",
+        "how": "Burundan veya nazofarenksten çubukla sürüntü alınır, bir dakikadan kısa sürer, sonuç genellikle aynı ziyarette hazır olur",
+        "when": "Solunum yolu enfeksiyonu belirtileri, hasta biriyle temas, hastaneye yatış veya seyahat koşulları",
+        "prep": "Sürüntüden yaklaşık 15 dakika önce yememek, içmemek, sigara içmemek ve burun spreyi veya damlası kullanmamak gerekir",
+        "abnormal": "Pozitif sonuç güncel bir SARS-CoV-2 enfeksiyonuyla ilişkili olabilir, negatif sonuç ise şikayetler sürüyorsa bunu dışlamaz. Sonraki adımları hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Брзи тест на антигене вируса SARS-CoV-2 у брису носа или назофаринкса",
+        "how": "Узима се брис штапићем из носа или назофаринкса, траје мање од минута, налаз је обично готов током исте посјете",
+        "when": "Симптоми респираторне инфекције, контакт са обољелим, захтјеви приликом хоспитализације или путовања",
+        "prep": "Отприлике 15 минута прије бриса не јести, не пити, не пушити и не користити спрејеве и капи за нос",
+        "abnormal": "Позитиван налаз може бити повезан са актуелном инфекцијом SARS-CoV-2, а негативан је не искључује ако тегобе трају. Даљу тактику одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "torch-panel",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Комплекс анализов крови на антитела к группе инфекций, значимых при беременности: токсоплазма, краснуха, цитомегаловирус, герпес и другие",
+        "how": "Однократный забор венозной крови, из одной пробы определяют сразу несколько показателей",
+        "when": "Планирование беременности, постановка на учёт и наблюдение во время беременности, оценка иммунного статуса к этим инфекциям",
+        "prep": "Специальной подготовки обычно не требуется, время сдачи уточняет направивший врач",
+        "abnormal": "Сочетание антител разных классов может говорить о перенесённой ранее инфекции или о недавнем контакте с возбудителем. Панель целиком оценивает врач и при необходимости назначает повторное или уточняющее исследование"
+      },
+      "en": {
+        "what": "A combined blood test for antibodies to a group of infections relevant in pregnancy: toxoplasma, rubella, cytomegalovirus, herpes and others",
+        "how": "A single venous blood draw, several markers are determined from one sample",
+        "when": "Pregnancy planning, registration and follow-up during pregnancy, assessment of immune status to these infections",
+        "prep": "No special preparation is usually needed, the timing is confirmed by the referring doctor",
+        "abnormal": "A combination of antibodies of different classes may point to a past infection or to recent contact with a pathogen. The doctor assesses the panel as a whole and may order a repeat or confirmatory test"
+      },
+      "sr": {
+        "what": "Objedinjena analiza krvi na antitijela na grupu infekcija značajnih u trudnoći: toksoplazma, rubela, citomegalovirus, herpes i druge",
+        "how": "Jedno uzimanje venske krvi, iz istog uzorka se određuje više pokazatelja",
+        "when": "Planiranje trudnoće, prijava i praćenje trudnoće, procjena imunskog statusa na ove infekcije",
+        "prep": "Posebna priprema obično nije potrebna, vrijeme uzimanja uzorka određuje ljekar koji je uputio na analizu",
+        "abnormal": "Kombinacija antitijela različitih klasa može ukazivati na ranije preboljelu infekciju ili na skorašnji kontakt sa uzročnikom. Panel u cjelini tumači ljekar i po potrebi traži ponovljenu ili dopunsku analizu"
+      },
+      "de": {
+        "what": "Kombinierte Blutuntersuchung auf Antikörper gegen eine Gruppe von Infektionen mit Bedeutung in der Schwangerschaft: Toxoplasma, Röteln, Zytomegalievirus, Herpes und weitere",
+        "how": "Eine einzige venöse Blutentnahme, aus derselben Probe werden mehrere Werte bestimmt",
+        "when": "Kinderwunsch, Erstvorstellung und Betreuung in der Schwangerschaft, Beurteilung des Immunstatus gegenüber diesen Infektionen",
+        "prep": "In der Regel keine besondere Vorbereitung, den Zeitpunkt legt der überweisende Arzt fest",
+        "abnormal": "Eine Kombination von Antikörpern verschiedener Klassen kann auf eine früher durchgemachte Infektion oder einen kürzlichen Kontakt mit einem Erreger hinweisen. Der Arzt beurteilt das Panel als Ganzes und veranlasst bei Bedarf eine Kontroll- oder Zusatzuntersuchung"
+      },
+      "tr": {
+        "what": "Gebelikte önem taşıyan bir grup enfeksiyona karşı antikorları birlikte inceleyen kan testi: toksoplazma, kızamıkçık, sitomegalovirüs, herpes ve diğerleri",
+        "how": "Tek bir venöz kan alımı yapılır, aynı örnekten birden fazla gösterge çalışılır",
+        "when": "Gebelik planlaması, gebeliğin takibe alınması ve izlemi, bu enfeksiyonlara karşı bağışıklık durumunun değerlendirilmesi",
+        "prep": "Genellikle özel bir hazırlık gerekmez, örnek verme zamanını yönlendiren hekim belirler",
+        "abnormal": "Farklı sınıflardaki antikorların birlikteliği geçirilmiş bir enfeksiyona ya da etkenle yakın zamanda temasa işaret edebilir. Paneli bir bütün olarak hekim değerlendirir ve gerekirse tekrar ya da doğrulama testi ister"
+      },
+      "sr_cyrl": {
+        "what": "Обједињена анализа крви на антитијела на групу инфекција значајних у трудноћи: токсоплазма, рубела, цитомегаловирус, херпес и друге",
+        "how": "Једно узимање венске крви, из истог узорка се одређује више показатеља",
+        "when": "Планирање трудноће, пријава и праћење трудноће, процјена имунског статуса на ове инфекције",
+        "prep": "Посебна припрема обично није потребна, вријеме узимања узорка одређује љекар који је упутио на анализу",
+        "abnormal": "Комбинација антитијела различитих класа може указивати на раније пребољелу инфекцију или на скорашњи контакт са узрочником. Панел у цјелини тумачи љекар и по потреби тражи поновљену или допунску анализу"
+      }
+    }
+  },
+  {
+    "slug": "asto",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела к стрептолизину O, веществу, которое выделяет бета-гемолитический стрептококк группы A",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Недавняя ангина или скарлатина, боли в суставах, обследование при подозрении на осложнения стрептококковой инфекции, контроль показателя в динамике",
+        "prep": "Обычно сдаётся утром натощак, конкретные требования уточняет направивший врач",
+        "abnormal": "Повышенный уровень может быть связан с перенесённой стрептококковой инфекцией и сохраняется некоторое время после выздоровления. Результат оценивает врач вместе с жалобами и другими анализами"
+      },
+      "en": {
+        "what": "Blood test for antibodies to streptolysin O, a substance produced by group A beta-haemolytic streptococcus",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Recent tonsillitis or scarlet fever, joint pain, work-up for suspected complications of a streptococcal infection, follow-up of the value over time",
+        "prep": "Usually taken in the morning on an empty stomach, specific requirements are confirmed by the referring doctor",
+        "abnormal": "An elevated level may be related to a past streptococcal infection and stays for some time after recovery. The result is assessed by a doctor together with symptoms and other tests"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela na streptolizin O, materiju koju stvara beta-hemolitički streptokok grupe A",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Nedavna angina ili šarlah, bolovi u zglobovima, ispitivanje kod sumnje na komplikacije streptokokne infekcije, praćenje vrijednosti u dinamici",
+        "prep": "Obično se uzima ujutru našte, konkretne uslove određuje ljekar koji je uputio na analizu",
+        "abnormal": "Povišen nivo može biti povezan sa preboljelom streptokoknom infekcijom i zadržava se izvjesno vrijeme poslije oporavka. Nalaz tumači ljekar zajedno sa tegobama i drugim analizama"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper gegen Streptolysin O, einen Stoff, den beta-hämolysierende Streptokokken der Gruppe A bilden",
+        "how": "Venöse Blutentnahme, dauert einige Minuten",
+        "when": "Kürzliche Mandelentzündung oder Scharlach, Gelenkschmerzen, Abklärung bei Verdacht auf Folgen einer Streptokokkeninfektion, Verlaufskontrolle des Werts",
+        "prep": "Wird meist morgens nüchtern abgenommen, konkrete Vorgaben nennt der überweisende Arzt",
+        "abnormal": "Ein erhöhter Wert kann mit einer durchgemachten Streptokokkeninfektion zusammenhängen und bleibt noch einige Zeit nach der Genesung bestehen. Der Arzt beurteilt das Ergebnis zusammen mit den Beschwerden und weiteren Werten"
+      },
+      "tr": {
+        "what": "A grubu beta-hemolitik streptokokun ürettiği streptolizin O maddesine karşı antikorları ölçen kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Yakın zamanda geçirilen bademcik iltihabı veya kızıl, eklem ağrıları, streptokok enfeksiyonu komplikasyonu şüphesinde inceleme, değerin zaman içinde izlenmesi",
+        "prep": "Genellikle sabah aç karnına alınır, ayrıntılı koşulları yönlendiren hekim belirtir",
+        "abnormal": "Yüksek değer geçirilmiş bir streptokok enfeksiyonuyla ilişkili olabilir ve iyileşmeden sonra bir süre daha yüksek kalır. Sonucu şikayetler ve diğer testlerle birlikte hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела на стрептолизин О, материју коју ствара бета-хемолитички стрептокок групе А",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Недавна ангина или шарлах, болови у зглобовима, испитивање код сумње на компликације стрептококне инфекције, праћење вриједности у динамици",
+        "prep": "Обично се узима ујутру наште, конкретне услове одређује љекар који је упутио на анализу",
+        "abnormal": "Повишен ниво може бити повезан са пребољелом стрептококном инфекцијом и задржава се извјесно вријеме послије опоравка. Налаз тумачи љекар заједно са тегобама и другим анализама"
+      }
+    }
+  },
+  {
+    "slug": "cytomegalovirus-igg",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgG к цитомегаловирусу",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Планирование и ведение беременности, оценка иммунного статуса, обследование перед трансплантацией, длительная утомляемость или увеличение лимфоузлов",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Наличие IgG обычно говорит о контакте с вирусом в прошлом, их отсутствие — о том, что такого контакта не было. Значение результата и необходимость дополнительных тестов определяет врач"
+      },
+      "en": {
+        "what": "Blood test for IgG class antibodies to cytomegalovirus",
+        "how": "Venous blood draw from a vein, takes a few minutes",
+        "when": "Pregnancy planning and follow-up, assessment of immune status, work-up before transplantation, prolonged fatigue or enlarged lymph nodes",
+        "prep": "No special preparation is required",
+        "abnormal": "The presence of IgG usually points to contact with the virus in the past, their absence to the fact that there was no such contact. The meaning of the result and the need for further tests are determined by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgG na citomegalovirus",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Planiranje i praćenje trudnoće, procjena imunskog statusa, ispitivanje prije transplantacije, dugotrajan umor ili uvećani limfni čvorovi",
+        "prep": "Posebna priprema nije potrebna",
+        "abnormal": "Prisustvo IgG obično govori o ranijem kontaktu sa virusom, a njihovo odsustvo o tome da takvog kontakta nije bilo. Značenje nalaza i potrebu za dodatnim testovima određuje ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgG gegen das Zytomegalievirus",
+        "how": "Blutentnahme aus einer Vene, dauert einige Minuten",
+        "when": "Kinderwunsch und Schwangerschaftsbetreuung, Beurteilung des Immunstatus, Abklärung vor einer Transplantation, anhaltende Müdigkeit oder geschwollene Lymphknoten",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "Nachweisbare IgG sprechen in der Regel für einen früheren Kontakt mit dem Virus, ihr Fehlen dafür, dass es keinen solchen Kontakt gab. Die Bedeutung des Befunds und den Bedarf an weiteren Tests legt der Arzt fest"
+      },
+      "tr": {
+        "what": "Sitomegalovirüse karşı IgG sınıfı antikorları ölçen kan testi",
+        "how": "Damardan venöz kan alınır, birkaç dakika sürer",
+        "when": "Gebelik planlaması ve takibi, bağışıklık durumunun değerlendirilmesi, nakil öncesi inceleme, uzun süren yorgunluk veya lenf bezi büyümesi",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "IgG varlığı genellikle virüsle geçmişte temas edildiğini, yokluğu ise böyle bir temasın olmadığını gösterir. Sonucun anlamını ve ek test gerekip gerekmediğini hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgG на цитомегаловирус",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Планирање и праћење трудноће, процјена имунског статуса, испитивање прије трансплантације, дуготрајан умор или увећани лимфни чворови",
+        "prep": "Посебна припрема није потребна",
+        "abnormal": "Присуство IgG обично говори о ранијем контакту са вирусом, а њихово одсуство о томе да таквог контакта није било. Значење налаза и потребу за додатним тестовима одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "cytomegalovirus-igm",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgM к цитомегаловирусу",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Повышение температуры неясного происхождения, увеличение лимфоузлов, беременность, обследование при ослабленном иммунитете",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "IgM могут появляться при недавнем контакте с вирусом или при его повторной активации, встречаются и неспецифические реакции. Результат оценивает врач вместе с IgG и при необходимости с тестом на авидность"
+      },
+      "en": {
+        "what": "Blood test for IgM class antibodies to cytomegalovirus",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Fever of unclear origin, enlarged lymph nodes, pregnancy, work-up in case of weakened immunity",
+        "prep": "No special preparation is required",
+        "abnormal": "IgM may appear after recent contact with the virus or during its reactivation, non-specific reactions also occur. The result is assessed by a doctor together with IgG and, if needed, an avidity test"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgM na citomegalovirus",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Povišena temperatura nejasnog uzroka, uvećani limfni čvorovi, trudnoća, ispitivanje kod oslabljenog imuniteta",
+        "prep": "Posebna priprema nije potrebna",
+        "abnormal": "IgM se mogu javiti pri skorašnjem kontaktu sa virusom ili pri njegovoj ponovnoj aktivaciji, moguće su i nespecifične reakcije. Nalaz tumači ljekar zajedno sa IgG i po potrebi uz test aviditeta"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgM gegen das Zytomegalievirus",
+        "how": "Venöse Blutentnahme, dauert einige Minuten",
+        "when": "Fieber unklarer Ursache, geschwollene Lymphknoten, Schwangerschaft, Abklärung bei geschwächter Immunabwehr",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "IgM können bei kürzlichem Kontakt mit dem Virus oder bei dessen Reaktivierung auftreten, auch unspezifische Reaktionen kommen vor. Der Arzt beurteilt den Befund zusammen mit IgG und bei Bedarf einem Aviditätstest"
+      },
+      "tr": {
+        "what": "Sitomegalovirüse karşı IgM sınıfı antikorları ölçen kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Nedeni belirsiz ateş, lenf bezi büyümesi, gebelik, bağışıklığı zayıf kişilerde inceleme",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "IgM, virüsle yakın zamanda temas ya da virüsün yeniden etkinleşmesi durumunda görülebilir, özgül olmayan reaksiyonlar da olabilir. Sonucu hekim IgG ile ve gerekirse avidite testiyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgM на цитомегаловирус",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Повишена температура нејасног узрока, увећани лимфни чворови, трудноћа, испитивање код ослабљеног имунитета",
+        "prep": "Посебна припрема није потребна",
+        "abnormal": "IgM се могу јавити при скорашњем контакту са вирусом или при његовој поновној активацији, могуће су и неспецифичне реакције. Налаз тумачи љекар заједно са IgG и по потреби уз тест авидитета"
+      }
+    }
+  },
+  {
+    "slug": "epstein-barr-igg",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgG к вирусу Эпштейна-Барр",
+        "how": "Однократный забор венозной крови, процедура занимает несколько минут",
+        "when": "Длительная утомляемость, увеличение лимфоузлов, обследование после перенесённого инфекционного мононуклеоза, оценка иммунного статуса",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Наличие IgG обычно указывает на контакт с вирусом в прошлом, у взрослых такой контакт очень распространён. Результат трактует врач с учётом жалоб и других показателей"
+      },
+      "en": {
+        "what": "Blood test for IgG class antibodies to the Epstein-Barr virus",
+        "how": "A single venous blood draw, the procedure takes a few minutes",
+        "when": "Prolonged fatigue, enlarged lymph nodes, follow-up after infectious mononucleosis, assessment of immune status",
+        "prep": "No special preparation is required",
+        "abnormal": "The presence of IgG usually points to contact with the virus in the past, which is very common in adults. The result is interpreted by a doctor taking symptoms and other markers into account"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgG na Epstein-Barr virus",
+        "how": "Jedno uzimanje venske krvi, postupak traje nekoliko minuta",
+        "when": "Dugotrajan umor, uvećani limfni čvorovi, kontrola poslije preboljele infektivne mononukleoze, procjena imunskog statusa",
+        "prep": "Posebna priprema nije potrebna",
+        "abnormal": "Prisustvo IgG obično ukazuje na raniji kontakt sa virusom, koji je kod odraslih vrlo čest. Nalaz tumači ljekar uzimajući u obzir tegobe i druge pokazatelje"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgG gegen das Epstein-Barr-Virus",
+        "how": "Eine einmalige venöse Blutentnahme, der Vorgang dauert einige Minuten",
+        "when": "Anhaltende Müdigkeit, geschwollene Lymphknoten, Kontrolle nach durchgemachter infektiöser Mononukleose, Beurteilung des Immunstatus",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "Nachweisbare IgG sprechen meist für einen früheren Kontakt mit dem Virus, der bei Erwachsenen sehr häufig ist. Der Arzt deutet den Befund unter Berücksichtigung der Beschwerden und weiterer Werte"
+      },
+      "tr": {
+        "what": "Epstein-Barr virüsüne karşı IgG sınıfı antikorları ölçen kan testi",
+        "how": "Tek seferlik venöz kan alımı, işlem birkaç dakika sürer",
+        "when": "Uzun süren yorgunluk, lenf bezi büyümesi, geçirilmiş enfeksiyöz mononükleoz sonrası kontrol, bağışıklık durumunun değerlendirilmesi",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "IgG varlığı genellikle virüsle geçmişte temas edildiğini gösterir, bu temas erişkinlerde çok yaygındır. Sonucu şikayetleri ve diğer göstergeleri dikkate alarak hekim yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgG на Epstein-Barr вирус",
+        "how": "Једно узимање венске крви, поступак траје неколико минута",
+        "when": "Дуготрајан умор, увећани лимфни чворови, контрола послије пребољеле инфективне мононуклеозе, процјена имунског статуса",
+        "prep": "Посебна припрема није потребна",
+        "abnormal": "Присуство IgG обично указује на ранији контакт са вирусом, који је код одраслих врло чест. Налаз тумачи љекар узимајући у обзир тегобе и друге показатеље"
+      }
+    }
+  },
+  {
+    "slug": "epstein-barr-igm",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgM к вирусу Эпштейна-Барр",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Затяжная ангина, повышение температуры, увеличение лимфоузлов и селезёнки, обследование при подозрении на инфекционный мононуклеоз",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "IgM чаще связаны с недавним контактом с вирусом или его активацией, возможны перекрёстные реакции с другими герпесвирусами. Окончательную оценку даёт врач вместе с общим анализом крови и IgG"
+      },
+      "en": {
+        "what": "Blood test for IgM class antibodies to the Epstein-Barr virus",
+        "how": "Venous blood draw from a vein, takes a few minutes",
+        "when": "Prolonged sore throat, fever, enlarged lymph nodes and spleen, work-up for suspected infectious mononucleosis",
+        "prep": "No special preparation is required",
+        "abnormal": "IgM is more often related to recent contact with the virus or its activation, cross-reactions with other herpesviruses are possible. The final assessment is made by a doctor together with a complete blood count and IgG"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgM na Epstein-Barr virus",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Dugotrajna angina, povišena temperatura, uvećani limfni čvorovi i slezena, ispitivanje kod sumnje na infektivnu mononukleozu",
+        "prep": "Posebna priprema nije potrebna",
+        "abnormal": "IgM su češće povezani sa skorašnjim kontaktom sa virusom ili njegovom aktivacijom, moguće su ukrštene reakcije sa drugim herpes virusima. Konačnu ocjenu daje ljekar uz kompletnu krvnu sliku i IgG"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgM gegen das Epstein-Barr-Virus",
+        "how": "Blutentnahme aus einer Vene, dauert einige Minuten",
+        "when": "Langwierige Halsentzündung, Fieber, geschwollene Lymphknoten und vergrößerte Milz, Abklärung bei Verdacht auf infektiöse Mononukleose",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "IgM hängen häufiger mit einem kürzlichen Kontakt mit dem Virus oder dessen Aktivierung zusammen, Kreuzreaktionen mit anderen Herpesviren sind möglich. Die abschließende Beurteilung trifft der Arzt zusammen mit dem Blutbild und den IgG-Werten"
+      },
+      "tr": {
+        "what": "Epstein-Barr virüsüne karşı IgM sınıfı antikorları ölçen kan testi",
+        "how": "Damardan venöz kan alınır, birkaç dakika sürer",
+        "when": "Uzun süren boğaz iltihabı, ateş, lenf bezlerinin ve dalağın büyümesi, enfeksiyöz mononükleoz şüphesinde inceleme",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "IgM daha çok virüsle yakın zamanda temas ya da virüsün etkinleşmesiyle ilişkilidir, diğer herpes virüsleriyle çapraz reaksiyonlar olabilir. Son değerlendirmeyi hekim tam kan sayımı ve IgG ile birlikte yapar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgM на Epstein-Barr вирус",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Дуготрајна ангина, повишена температура, увећани лимфни чворови и слезена, испитивање код сумње на инфективну мононуклеозу",
+        "prep": "Посебна припрема није потребна",
+        "abnormal": "IgM су чешће повезани са скорашњим контактом са вирусом или његовом активацијом, могуће су укрштене реакције са другим херпес вирусима. Коначну оцјену даје љекар уз комплетну крвну слику и IgG"
+      }
+    }
+  },
+  {
+    "slug": "herpes-simplex-i-igm",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgM к вирусу простого герпеса 1 типа",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Впервые возникшие высыпания на губах или слизистой рта, обследование при беременности, обследование при ослабленном иммунитете",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "IgM могут появляться при недавнем контакте с вирусом или при его активации, возможны перекрёстные реакции с другими герпесвирусами. Результат оценивает врач вместе с IgG и данными осмотра"
+      },
+      "en": {
+        "what": "Blood test for IgM class antibodies to herpes simplex virus type 1",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "A first episode of blisters on the lips or oral mucosa, work-up during pregnancy, work-up in case of weakened immunity",
+        "prep": "No special preparation is required",
+        "abnormal": "IgM may appear after recent contact with the virus or during its activation, cross-reactions with other herpesviruses are possible. The result is assessed by a doctor together with IgG and the physical examination"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgM na virus herpes simplex tip 1",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Prvi put nastale promjene na usnama ili sluzokoži usta, ispitivanje u trudnoći, ispitivanje kod oslabljenog imuniteta",
+        "prep": "Posebna priprema nije potrebna",
+        "abnormal": "IgM se mogu javiti pri skorašnjem kontaktu sa virusom ili pri njegovoj aktivaciji, moguće su ukrštene reakcije sa drugim herpes virusima. Nalaz tumači ljekar uz IgG i nalaz pregleda"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgM gegen das Herpes-simplex-Virus Typ 1",
+        "how": "Venöse Blutentnahme, dauert einige Minuten",
+        "when": "Erstmals aufgetretene Bläschen an Lippen oder Mundschleimhaut, Abklärung in der Schwangerschaft, Abklärung bei geschwächter Immunabwehr",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "IgM können bei kürzlichem Kontakt mit dem Virus oder bei dessen Aktivierung auftreten, Kreuzreaktionen mit anderen Herpesviren sind möglich. Der Arzt beurteilt den Befund zusammen mit IgG und der körperlichen Untersuchung"
+      },
+      "tr": {
+        "what": "Herpes simplex virüsü tip 1 için IgM sınıfı antikorları ölçen kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Dudakta veya ağız içi mukozada ilk kez ortaya çıkan lezyonlar, gebelikte inceleme, bağışıklığı zayıf kişilerde inceleme",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "IgM, virüsle yakın zamanda temas ya da virüsün etkinleşmesi durumunda görülebilir, diğer herpes virüsleriyle çapraz reaksiyonlar olabilir. Sonucu hekim IgG ve muayene bulgularıyla birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgM на вирус херпес симплеx тип 1",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Први пут настале промјене на уснама или слузокожи уста, испитивање у трудноћи, испитивање код ослабљеног имунитета",
+        "prep": "Посебна припрема није потребна",
+        "abnormal": "IgM се могу јавити при скорашњем контакту са вирусом или при његовој активацији, могуће су укрштене реакције са другим херпес вирусима. Налаз тумачи љекар уз IgG и налаз прегледа"
+      }
+    }
+  },
+  {
+    "slug": "herpes-simplex-ii-igm",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgM к вирусу простого герпеса 2 типа",
+        "how": "Однократный забор венозной крови, занимает несколько минут",
+        "when": "Впервые возникшие высыпания в аногенитальной области, обследование при планировании и ведении беременности, обследование при ослабленном иммунитете",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "IgM могут быть связаны с недавним контактом с вирусом или его активацией, встречаются перекрёстные реакции с вирусом 1 типа. Результат интерпретирует врач вместе с IgG и данными осмотра"
+      },
+      "en": {
+        "what": "Blood test for IgM class antibodies to herpes simplex virus type 2",
+        "how": "A single venous blood draw, takes a few minutes",
+        "when": "A first episode of lesions in the anogenital area, work-up during pregnancy planning and follow-up, work-up in case of weakened immunity",
+        "prep": "No special preparation is required",
+        "abnormal": "IgM may be related to recent contact with the virus or its activation, cross-reactions with the type 1 virus occur. The result is interpreted by a doctor together with IgG and the physical examination"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgM na virus herpes simplex tip 2",
+        "how": "Jedno uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Prvi put nastale promjene u anogenitalnoj regiji, ispitivanje pri planiranju i praćenju trudnoće, ispitivanje kod oslabljenog imuniteta",
+        "prep": "Posebna priprema nije potrebna",
+        "abnormal": "IgM mogu biti povezani sa skorašnjim kontaktom sa virusom ili njegovom aktivacijom, javljaju se i ukrštene reakcije sa virusom tipa 1. Nalaz tumači ljekar uz IgG i nalaz pregleda"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgM gegen das Herpes-simplex-Virus Typ 2",
+        "how": "Eine einmalige venöse Blutentnahme, dauert einige Minuten",
+        "when": "Erstmals aufgetretene Veränderungen im Anogenitalbereich, Abklärung bei Kinderwunsch und in der Schwangerschaft, Abklärung bei geschwächter Immunabwehr",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "IgM können mit einem kürzlichen Kontakt mit dem Virus oder dessen Aktivierung zusammenhängen, Kreuzreaktionen mit dem Typ-1-Virus kommen vor. Der Arzt deutet den Befund zusammen mit IgG und der Untersuchung"
+      },
+      "tr": {
+        "what": "Herpes simplex virüsü tip 2 için IgM sınıfı antikorları ölçen kan testi",
+        "how": "Tek seferlik venöz kan alımı, birkaç dakika sürer",
+        "when": "Anogenital bölgede ilk kez ortaya çıkan lezyonlar, gebelik planlaması ve takibinde inceleme, bağışıklığı zayıf kişilerde inceleme",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "IgM, virüsle yakın zamanda temas ya da virüsün etkinleşmesiyle ilişkili olabilir, tip 1 virüsle çapraz reaksiyonlar görülebilir. Sonucu hekim IgG ve muayene bulgularıyla birlikte yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgM на вирус херпес симплеx тип 2",
+        "how": "Једно узимање венске крви, траје неколико минута",
+        "when": "Први пут настале промјене у аногениталној регији, испитивање при планирању и праћењу трудноће, испитивање код ослабљеног имунитета",
+        "prep": "Посебна припрема није потребна",
+        "abnormal": "IgM могу бити повезани са скорашњим контактом са вирусом или његовом активацијом, јављају се и укрштене реакције са вирусом типа 1. Налаз тумачи љекар уз IgG и налаз прегледа"
+      }
+    }
+  },
+  {
+    "slug": "rubella-igg",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgG к вирусу краснухи",
+        "how": "Забор венозной крови из вены, процедура занимает несколько минут",
+        "when": "Планирование беременности, постановка на учёт по беременности, оценка защиты после вакцинации или перенесённой инфекции",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Наличие IgG обычно говорит о защите после вакцинации или перенесённой инфекции, их отсутствие — о том, что такой защиты нет. Дальнейшую тактику, включая вопрос о вакцинации, определяет врач"
+      },
+      "en": {
+        "what": "Blood test for IgG class antibodies to the rubella virus",
+        "how": "Venous blood draw from a vein, the procedure takes a few minutes",
+        "when": "Pregnancy planning, registration for pregnancy care, assessment of protection after vaccination or a past infection",
+        "prep": "No special preparation is required",
+        "abnormal": "The presence of IgG usually points to protection after vaccination or a past infection, their absence to the fact that there is no such protection. Further steps, including the question of vaccination, are decided by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgG na virus rubele",
+        "how": "Uzimanje venske krvi iz vene, postupak traje nekoliko minuta",
+        "when": "Planiranje trudnoće, prijava trudnoće, procjena zaštite poslije vakcinacije ili preboljele infekcije",
+        "prep": "Posebna priprema nije potrebna",
+        "abnormal": "Prisustvo IgG obično govori o zaštiti poslije vakcinacije ili preboljele infekcije, a njihovo odsustvo o tome da te zaštite nema. Dalju taktiku, uključujući pitanje vakcinacije, određuje ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgG gegen das Rötelnvirus",
+        "how": "Blutentnahme aus einer Vene, der Vorgang dauert einige Minuten",
+        "when": "Kinderwunsch, Anmeldung zur Schwangerschaftsvorsorge, Beurteilung des Schutzes nach Impfung oder durchgemachter Infektion",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "Nachweisbare IgG sprechen meist für einen Schutz nach Impfung oder durchgemachter Infektion, ihr Fehlen dafür, dass dieser Schutz nicht besteht. Das weitere Vorgehen einschließlich der Impffrage legt der Arzt fest"
+      },
+      "tr": {
+        "what": "Kızamıkçık virüsüne karşı IgG sınıfı antikorları ölçen kan testi",
+        "how": "Damardan venöz kan alınır, işlem birkaç dakika sürer",
+        "when": "Gebelik planlaması, gebeliğin takibe alınması, aşı ya da geçirilmiş enfeksiyon sonrası korunmanın değerlendirilmesi",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "IgG varlığı genellikle aşı veya geçirilmiş enfeksiyon sonrası korunmayı, yokluğu ise böyle bir korunmanın bulunmadığını gösterir. Aşı konusu dahil sonraki adımları hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgG на вирус рубеле",
+        "how": "Узимање венске крви из вене, поступак траје неколико минута",
+        "when": "Планирање трудноће, пријава трудноће, процјена заштите послије вакцинације или пребољеле инфекције",
+        "prep": "Посебна припрема није потребна",
+        "abnormal": "Присуство IgG обично говори о заштити послије вакцинације или пребољеле инфекције, а њихово одсуство о томе да те заштите нема. Даљу тактику, укључујући питање вакцинације, одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "rubella-igm",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgM к вирусу краснухи",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Сыпь и повышение температуры, контакт с больным краснухой, обследование во время беременности",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "IgM могут появляться при недавнем контакте с вирусом, возможны и неспецифические реакции. Результат оценивает врач вместе с IgG и при необходимости с повторным исследованием через некоторое время"
+      },
+      "en": {
+        "what": "Blood test for IgM class antibodies to the rubella virus",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Rash and fever, contact with a person ill with rubella, work-up during pregnancy",
+        "prep": "No special preparation is required",
+        "abnormal": "IgM may appear after recent contact with the virus, non-specific reactions are also possible. The result is assessed by a doctor together with IgG and, if needed, a repeat test after some time"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgM na virus rubele",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Osip i povišena temperatura, kontakt sa oboljelim od rubele, ispitivanje tokom trudnoće",
+        "prep": "Posebna priprema nije potrebna",
+        "abnormal": "IgM se mogu javiti pri skorašnjem kontaktu sa virusom, moguće su i nespecifične reakcije. Nalaz tumači ljekar uz IgG i po potrebi uz ponovljenu analizu poslije izvjesnog vremena"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgM gegen das Rötelnvirus",
+        "how": "Venöse Blutentnahme, dauert einige Minuten",
+        "when": "Hautausschlag und Fieber, Kontakt mit einer an Röteln erkrankten Person, Abklärung während der Schwangerschaft",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "IgM können bei kürzlichem Kontakt mit dem Virus auftreten, auch unspezifische Reaktionen sind möglich. Der Arzt beurteilt den Befund zusammen mit IgG und bei Bedarf einer Kontrolle nach einiger Zeit"
+      },
+      "tr": {
+        "what": "Kızamıkçık virüsüne karşı IgM sınıfı antikorları ölçen kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Döküntü ve ateş, kızamıkçık geçiren biriyle temas, gebelik sırasında inceleme",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "IgM, virüsle yakın zamanda temas durumunda görülebilir, özgül olmayan reaksiyonlar da olabilir. Sonucu hekim IgG ile ve gerekirse bir süre sonra tekrarlanan testle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgM на вирус рубеле",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Осип и повишена температура, контакт са обољелим од рубеле, испитивање током трудноће",
+        "prep": "Посебна припрема није потребна",
+        "abnormal": "IgM се могу јавити при скорашњем контакту са вирусом, могуће су и неспецифичне реакције. Налаз тумачи љекар уз IgG и по потреби уз поновљену анализу послије извјесног времена"
+      }
+    }
+  },
+  {
+    "slug": "sars-cov-2-igg-spike-protein",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgG к шиповидному белку (spike) вируса SARS-CoV-2",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Оценка иммунного ответа после перенесённой инфекции или вакцинации, ретроспективная оценка контакта с вирусом",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Наличие антител говорит о том, что иммунная система встречалась с этим белком после инфекции или вакцинации, при этом уровень антител не равен гарантированной защите. Результат трактует врач"
+      },
+      "en": {
+        "what": "Blood test for IgG class antibodies to the spike protein of the SARS-CoV-2 virus",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Assessment of the immune response after a past infection or vaccination, retrospective assessment of contact with the virus",
+        "prep": "No special preparation is required",
+        "abnormal": "The presence of antibodies shows that the immune system has met this protein after an infection or vaccination, while the antibody level does not equal guaranteed protection. The result is interpreted by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgG na spike protein virusa SARS-CoV-2",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Procjena imunskog odgovora poslije preboljele infekcije ili vakcinacije, naknadna procjena kontakta sa virusom",
+        "prep": "Posebna priprema nije potrebna",
+        "abnormal": "Prisustvo antitijela govori da se imuni sistem susreo sa ovim proteinom poslije infekcije ili vakcinacije, ali nivo antitijela ne znači zagarantovanu zaštitu. Nalaz tumači ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgG gegen das Spike-Protein des SARS-CoV-2-Virus",
+        "how": "Venöse Blutentnahme, dauert einige Minuten",
+        "when": "Beurteilung der Immunantwort nach durchgemachter Infektion oder Impfung, nachträgliche Einschätzung eines Viruskontakts",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "Nachweisbare Antikörper zeigen, dass das Immunsystem diesem Protein nach einer Infektion oder Impfung begegnet ist, die Höhe der Antikörper entspricht dabei keinem garantierten Schutz. Den Befund deutet der Arzt"
+      },
+      "tr": {
+        "what": "SARS-CoV-2 virüsünün spike proteinine karşı IgG sınıfı antikorları ölçen kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Geçirilmiş enfeksiyon veya aşı sonrası bağışıklık yanıtının değerlendirilmesi, virüsle temasın geriye dönük değerlendirilmesi",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "Antikor varlığı, bağışıklık sisteminin enfeksiyon ya da aşı sonrası bu proteinle karşılaştığını gösterir, antikor düzeyi ise garantili korunma anlamına gelmez. Sonucu hekim yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgG на spike протеин вируса SARS-CoV-2",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Процјена имунског одговора послије пребољеле инфекције или вакцинације, накнадна процјена контакта са вирусом",
+        "prep": "Посебна припрема није потребна",
+        "abnormal": "Присуство антитијела говори да се имуни систем сусрео са овим протеином послије инфекције или вакцинације, али ниво антитијела не значи загарантовану заштиту. Налаз тумачи љекар"
+      }
+    }
+  },
+  {
+    "slug": "stool-parasites",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование образца кала на яйца гельминтов и цисты простейших",
+        "how": "Пациент собирает небольшой образец кала в контейнер, в лаборатории его исследуют под микроскопом",
+        "when": "Боли в животе, диарея, потеря веса, зуд, обследование детей в организованном коллективе, оформление санитарной книжки, обследование после поездок",
+        "prep": "Образец собирают в чистый контейнер без примеси мочи и доставляют в лабораторию как можно быстрее, приём слабительных, противопаразитарных и висмутсодержащих препаратов заранее согласуют с врачом",
+        "abnormal": "Обнаружение яиц или цист может быть связано с паразитарной инфекцией, при этом отрицательный результат одного образца её не исключает, поэтому врач иногда назначает повторные исследования"
+      },
+      "en": {
+        "what": "Examination of a stool sample for helminth eggs and protozoan cysts",
+        "how": "The patient collects a small stool sample in a container, in the laboratory it is examined under a microscope",
+        "when": "Abdominal pain, diarrhoea, weight loss, itching, screening of children in day care or school, occupational health certificates, check-up after travel",
+        "prep": "The sample is collected in a clean container without urine in it and delivered to the laboratory as soon as possible, the use of laxatives, antiparasitic and bismuth-containing medicines is agreed with the doctor in advance",
+        "abnormal": "Finding eggs or cysts may be related to a parasitic infection, while a negative result from a single sample does not rule it out, so a doctor sometimes orders repeat testing"
+      },
+      "sr": {
+        "what": "Pregled uzorka stolice na jaja crijevnih parazita i ciste protozoa",
+        "how": "Pacijent uzima mali uzorak stolice u kontejner, a u laboratoriji se uzorak pregleda pod mikroskopom",
+        "when": "Bolovi u stomaku, proliv, gubitak tjelesne težine, svrab, pregled djece u kolektivu, izdavanje sanitarne knjižice, pregled poslije putovanja",
+        "prep": "Uzorak se uzima u čist kontejner, bez primjese urina, i dostavlja u laboratoriju što prije, a uzimanje laksativa, antiparazitnih lijekova i preparata sa bizmutom prethodno se dogovara sa ljekarom",
+        "abnormal": "Nalaz jaja ili cisti može biti povezan sa parazitnom infekcijom, dok negativan nalaz jednog uzorka je ne isključuje, pa ljekar ponekad traži ponovljene preglede"
+      },
+      "de": {
+        "what": "Untersuchung einer Stuhlprobe auf Wurmeier und Zysten von Einzellern",
+        "how": "Der Patient sammelt eine kleine Stuhlprobe in einem Behälter, im Labor wird sie unter dem Mikroskop untersucht",
+        "when": "Bauchschmerzen, Durchfall, Gewichtsverlust, Juckreiz, Untersuchung von Kindern in Gemeinschaftseinrichtungen, Gesundheitszeugnis für die Arbeit, Kontrolle nach Reisen",
+        "prep": "Die Probe wird in einem sauberen Behälter ohne Urinbeimischung gesammelt und möglichst rasch ins Labor gebracht, die Einnahme von Abführmitteln, Antiparasitika und bismuthaltigen Präparaten wird vorher mit dem Arzt abgestimmt",
+        "abnormal": "Der Nachweis von Eiern oder Zysten kann mit einer parasitären Infektion zusammenhängen, ein negatives Ergebnis einer einzelnen Probe schließt sie dagegen nicht aus, weshalb der Arzt manchmal Wiederholungsuntersuchungen veranlasst"
+      },
+      "tr": {
+        "what": "Dışkı örneğinde parazit yumurtaları ve protozoon kistlerinin aranması",
+        "how": "Hasta kaba küçük bir dışkı örneği alır, laboratuvarda örnek mikroskopla incelenir",
+        "when": "Karın ağrısı, ishal, kilo kaybı, kaşıntı, toplu ortamdaki çocukların taranması, portör muayenesi, seyahat sonrası kontrol",
+        "prep": "Örnek temiz bir kaba, idrar karışmadan alınır ve en kısa sürede laboratuvara ulaştırılır, müshil, antiparaziter ve bizmut içeren ilaçların kullanımı önceden hekimle görüşülür",
+        "abnormal": "Yumurta veya kist bulunması paraziter bir enfeksiyonla ilişkili olabilir, tek örneğin negatif çıkması ise bunu dışlamaz, bu nedenle hekim bazen testin tekrarlanmasını ister"
+      },
+      "sr_cyrl": {
+        "what": "Преглед узорка столице на јаја цријевних паразита и цисте протозоа",
+        "how": "Пацијент узима мали узорак столице у контејнер, а у лабораторији се узорак прегледа под микроскопом",
+        "when": "Болови у стомаку, пролив, губитак тјелесне тежине, свраб, преглед дјеце у колективу, издавање санитарне књижице, преглед послије путовања",
+        "prep": "Узорак се узима у чист контејнер, без примјесе урина, и доставља у лабораторију што прије, а узимање лаксатива, антипаразитних лијекова и препарата са бизмутом претходно се договара са љекаром",
+        "abnormal": "Налаз јаја или цисти може бити повезан са паразитном инфекцијом, док негативан налаз једног узорка је не искључује, па љекар понекад тражи поновљене прегледе"
+      }
+    }
+  },
+  {
+    "slug": "toxoplasma-igg",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgG к паразиту Toxoplasma gondii",
+        "how": "Однократный забор венозной крови, занимает несколько минут",
+        "when": "Планирование и ведение беременности, оценка иммунного статуса, обследование при ослабленном иммунитете, увеличение лимфоузлов",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Наличие IgG обычно говорит о контакте с возбудителем в прошлом, их отсутствие — о том, что контакта не было и во время беременности особенно важны меры профилактики. Результат оценивает врач"
+      },
+      "en": {
+        "what": "Blood test for IgG class antibodies to the parasite Toxoplasma gondii",
+        "how": "A single venous blood draw, takes a few minutes",
+        "when": "Pregnancy planning and follow-up, assessment of immune status, work-up in case of weakened immunity, enlarged lymph nodes",
+        "prep": "No special preparation is required",
+        "abnormal": "The presence of IgG usually points to contact with the parasite in the past, their absence to the fact that there was no such contact and that preventive measures matter especially during pregnancy. The result is assessed by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgG na parazita Toxoplasma gondii",
+        "how": "Jedno uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Planiranje i praćenje trudnoće, procjena imunskog statusa, ispitivanje kod oslabljenog imuniteta, uvećani limfni čvorovi",
+        "prep": "Posebna priprema nije potrebna",
+        "abnormal": "Prisustvo IgG obično govori o ranijem kontaktu sa uzročnikom, a njihovo odsustvo o tome da kontakta nije bilo i da su u trudnoći mjere prevencije posebno važne. Nalaz tumači ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgG gegen den Parasiten Toxoplasma gondii",
+        "how": "Eine einmalige venöse Blutentnahme, dauert einige Minuten",
+        "when": "Kinderwunsch und Schwangerschaftsbetreuung, Beurteilung des Immunstatus, Abklärung bei geschwächter Immunabwehr, geschwollene Lymphknoten",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "Nachweisbare IgG sprechen meist für einen früheren Kontakt mit dem Erreger, ihr Fehlen dafür, dass es keinen solchen Kontakt gab und vorbeugende Maßnahmen in der Schwangerschaft besonders wichtig sind. Den Befund beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "Toxoplasma gondii paraziti için IgG sınıfı antikorları ölçen kan testi",
+        "how": "Tek seferlik venöz kan alımı, birkaç dakika sürer",
+        "when": "Gebelik planlaması ve takibi, bağışıklık durumunun değerlendirilmesi, bağışıklığı zayıf kişilerde inceleme, lenf bezi büyümesi",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "IgG varlığı genellikle etkenle geçmişte temas edildiğini, yokluğu ise böyle bir temasın olmadığını ve gebelikte korunma önlemlerinin ayrıca önem taşıdığını gösterir. Sonucu hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgG на паразита Toxoplasma gondii",
+        "how": "Једно узимање венске крви, траје неколико минута",
+        "when": "Планирање и праћење трудноће, процјена имунског статуса, испитивање код ослабљеног имунитета, увећани лимфни чворови",
+        "prep": "Посебна припрема није потребна",
+        "abnormal": "Присуство IgG обично говори о ранијем контакту са узрочником, а њихово одсуство о томе да контакта није било и да су у трудноћи мјере превенције посебно важне. Налаз тумачи љекар"
+      }
+    }
+  },
+  {
+    "slug": "toxoplasma-igm",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgM к паразиту Toxoplasma gondii",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Беременность, увеличение лимфоузлов, длительно повышенная температура, обследование при ослабленном иммунитете",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "IgM могут быть связаны с недавним контактом с возбудителем, но иногда сохраняются долго и бывают неспецифическими. Для уточнения врач назначает IgG и тест на авидность антител"
+      },
+      "en": {
+        "what": "Blood test for IgM class antibodies to the parasite Toxoplasma gondii",
+        "how": "Venous blood draw from a vein, takes a few minutes",
+        "when": "Pregnancy, enlarged lymph nodes, prolonged low-grade fever, work-up in case of weakened immunity",
+        "prep": "No special preparation is required",
+        "abnormal": "IgM may be related to recent contact with the parasite, but it sometimes persists for a long time and can be non-specific. To clarify this, a doctor orders IgG and an antibody avidity test"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgM na parazita Toxoplasma gondii",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Trudnoća, uvećani limfni čvorovi, dugotrajno povišena temperatura, ispitivanje kod oslabljenog imuniteta",
+        "prep": "Posebna priprema nije potrebna",
+        "abnormal": "IgM mogu biti povezani sa skorašnjim kontaktom sa uzročnikom, ali se ponekad zadržavaju dugo i mogu biti nespecifični. Radi razjašnjenja ljekar traži IgG i test aviditeta antitijela"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgM gegen den Parasiten Toxoplasma gondii",
+        "how": "Blutentnahme aus einer Vene, dauert einige Minuten",
+        "when": "Schwangerschaft, geschwollene Lymphknoten, länger anhaltend erhöhte Temperatur, Abklärung bei geschwächter Immunabwehr",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "IgM können mit einem kürzlichen Kontakt mit dem Erreger zusammenhängen, bleiben aber manchmal lange bestehen und können unspezifisch sein. Zur Klärung veranlasst der Arzt IgG und einen Aviditätstest der Antikörper"
+      },
+      "tr": {
+        "what": "Toxoplasma gondii paraziti için IgM sınıfı antikorları ölçen kan testi",
+        "how": "Damardan venöz kan alınır, birkaç dakika sürer",
+        "when": "Gebelik, lenf bezi büyümesi, uzun süren hafif ateş, bağışıklığı zayıf kişilerde inceleme",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "IgM etkenle yakın zamanda temasla ilişkili olabilir, ancak bazen uzun süre kalır ve özgül olmayabilir. Durumu netleştirmek için hekim IgG ve antikor avidite testi ister"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgM на паразита Toxoplasma gondii",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Трудноћа, увећани лимфни чворови, дуготрајно повишена температура, испитивање код ослабљеног имунитета",
+        "prep": "Посебна припрема није потребна",
+        "abnormal": "IgM могу бити повезани са скорашњим контактом са узрочником, али се понекад задржавају дуго и могу бити неспецифични. Ради разјашњења љекар тражи IgG и тест авидитета антитијела"
+      }
+    }
+  },
+  {
+    "slug": "vdrl",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Нетрепонемный скрининговый тест крови, который применяют при обследовании на сифилис",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Обследование перед операцией, беременностью и донорством крови, контроль после назначенного врачом лечения, уточнение результата трепонемного теста",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Положительный результат требует подтверждающего трепонемного теста и консультации врача, так как при ряде других состояний возможны ложноположительные реакции"
+      },
+      "en": {
+        "what": "A non-treponemal blood screening test used in the work-up for syphilis",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Preventive screening, preparation for surgery or blood donation, pregnancy, at personal request",
+        "prep": "No special preparation is required",
+        "abnormal": "A positive result requires a confirmatory treponemal test and a doctor's consultation, since false-positive reactions are possible in a number of other conditions"
+      },
+      "sr": {
+        "what": "Netreponemski skrining test krvi koji se koristi pri ispitivanju na sifilis",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Pregled prije operacije, u trudnoći i kod davanja krvi, kontrola nakon liječenja koje je odredio ljekar, dopuna nalaza treponemskog testa",
+        "prep": "Nije potrebna posebna priprema",
+        "abnormal": "Pozitivan nalaz zahtijeva potvrdni treponemski test i konsultaciju sa ljekarom, jer su kod niza drugih stanja moguće lažno pozitivne reakcije"
+      },
+      "de": {
+        "what": "Nicht-treponemaler Bluttest, der als Screening bei der Abklärung auf Syphilis eingesetzt wird",
+        "how": "Venöse Blutentnahme, dauert einige Minuten",
+        "when": "Vorsorgliches Screening, Vorbereitung auf eine Operation oder Blutspende, Schwangerschaft, auf eigenen Wunsch",
+        "prep": "Keine besondere Vorbereitung erforderlich",
+        "abnormal": "Ein positives Ergebnis erfordert einen bestätigenden treponemalen Test und eine ärztliche Beratung, da bei einer Reihe anderer Zustände falsch positive Reaktionen möglich sind"
+      },
+      "tr": {
+        "what": "Sifiliz araştırmasında tarama amacıyla kullanılan, treponemal olmayan kan testi",
+        "how": "Venöz kan alımı, birkaç dakika sürer",
+        "when": "Koruyucu tarama, ameliyat veya kan bağışı öncesi hazırlık, gebelik, kişisel istek",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "Pozitif sonuç doğrulayıcı treponemal test ve hekim değerlendirmesi gerektirir, çünkü başka birçok durumda yalancı pozitif reaksiyonlar görülebilir"
+      },
+      "sr_cyrl": {
+        "what": "Нетрепонемски скрининг тест крви који се користи при испитивању на сифилис",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Преглед прије операције, у трудноћи и код давања крви, контрола након лијечења које је одредио љекар, допуна налаза трепонемског теста",
+        "prep": "Није потребна посебна припрема",
+        "abnormal": "Позитиван налаз захтијева потврдни трепонемски тест и консултацију са љекаром, јер су код низа других стања могуће лажно позитивне реакције"
+      }
+    }
+  },
+  {
+    "slug": "adenovirus-rotavirus-in-stool",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Экспресс-тест образца кала на антигены ротавируса и аденовируса",
+        "how": "Небольшой образец кала собирают в контейнер, в лаборатории его исследуют быстрым иммунохроматографическим методом",
+        "when": "Острая диарея и рвота, особенно у детей, случаи кишечной инфекции в семье или детском коллективе, обследование при госпитализации",
+        "prep": "Образец собирают в чистый контейнер без примеси мочи и доставляют в лабораторию в тот же день, специальной диеты не требуется",
+        "abnormal": "Положительный результат может быть связан с вирусной кишечной инфекцией, отрицательный не исключает других причин диареи. Лечение и наблюдение определяет врач"
+      },
+      "en": {
+        "what": "Rapid test of a stool sample for rotavirus and adenovirus antigens",
+        "how": "A small stool sample is collected in a container and examined in the laboratory by a rapid immunochromatographic method",
+        "when": "Acute diarrhoea and vomiting, especially in children, cases of intestinal infection in the family or a children's group, work-up on hospital admission",
+        "prep": "The sample is collected in a clean container without urine in it and delivered to the laboratory the same day, no special diet is needed",
+        "abnormal": "A positive result may be related to a viral intestinal infection, a negative one does not rule out other causes of diarrhoea. Treatment and follow-up are decided by a doctor"
+      },
+      "sr": {
+        "what": "Brzi test uzorka stolice na antigene rotavirusa i adenovirusa",
+        "how": "Mali uzorak stolice uzima se u kontejner, a u laboratoriji se ispituje brzom imunohromatografskom metodom",
+        "when": "Akutni proliv i povraćanje, naročito kod djece, slučajevi crijevne infekcije u porodici ili dječjem kolektivu, ispitivanje pri prijemu u bolnicu",
+        "prep": "Uzorak se uzima u čist kontejner, bez primjese urina, i dostavlja u laboratoriju istog dana, posebna dijeta nije potrebna",
+        "abnormal": "Pozitivan nalaz može biti povezan sa virusnom crijevnom infekcijom, a negativan ne isključuje druge uzroke proliva. Liječenje i praćenje određuje ljekar"
+      },
+      "de": {
+        "what": "Schnelltest einer Stuhlprobe auf Rotavirus- und Adenovirus-Antigene",
+        "how": "Eine kleine Stuhlprobe wird in einem Behälter gesammelt und im Labor mit einem schnellen immunchromatographischen Verfahren untersucht",
+        "when": "Akuter Durchfall und Erbrechen, besonders bei Kindern, Fälle von Darminfektionen in der Familie oder in einer Kindergruppe, Abklärung bei Krankenhausaufnahme",
+        "prep": "Die Probe wird in einem sauberen Behälter ohne Urinbeimischung gesammelt und am selben Tag ins Labor gebracht, eine besondere Diät ist nicht nötig",
+        "abnormal": "Ein positives Ergebnis kann mit einer viralen Darminfektion zusammenhängen, ein negatives schließt andere Ursachen des Durchfalls nicht aus. Behandlung und weitere Kontrolle legt der Arzt fest"
+      },
+      "tr": {
+        "what": "Dışkı örneğinde rotavirüs ve adenovirüs antijenlerini arayan hızlı test",
+        "how": "Kaba küçük bir dışkı örneği alınır, laboratuvarda hızlı immünokromatografik yöntemle incelenir",
+        "when": "Özellikle çocuklarda akut ishal ve kusma, ailede veya çocuk topluluğunda bağırsak enfeksiyonu vakaları, hastaneye yatışta inceleme",
+        "prep": "Örnek temiz bir kaba, idrar karışmadan alınır ve aynı gün laboratuvara ulaştırılır, özel bir diyet gerekmez",
+        "abnormal": "Pozitif sonuç viral bir bağırsak enfeksiyonuyla ilişkili olabilir, negatif sonuç ise ishalin diğer nedenlerini dışlamaz. Tedaviyi ve izlemi hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Брзи тест узорка столице на антигене ротавируса и аденовируса",
+        "how": "Мали узорак столице узима се у контејнер, а у лабораторији се испитује брзом имунохроматографском методом",
+        "when": "Акутни пролив и повраћање, нарочито код дјеце, случајеви цријевне инфекције у породици или дјечјем колективу, испитивање при пријему у болницу",
+        "prep": "Узорак се узима у чист контејнер, без примјесе урина, и доставља у лабораторију истог дана, посебна дијета није потребна",
+        "abnormal": "Позитиван налаз може бити повезан са вирусном цријевном инфекцијом, а негативан не искључује друге узроке пролива. Лијечење и праћење одређује љекар"
+      }
+    }
+  }
+]

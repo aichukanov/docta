@@ -1,0 +1,818 @@
+[
+  {
+    "slug": "bleeding-time",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Простая проба, показывающая, за какое время останавливается кровотечение из небольшого прокола кожи",
+        "how": "Медсестра делает небольшой прокол кожи пальца или предплечья и с секундомером отмечает момент остановки кровотечения, занимает несколько минут",
+        "when": "Обследование перед небольшими вмешательствами, склонность к синякам и кровоточивости дёсен, оценка первичного гемостаза",
+        "prep": "Специальной подготовки не требуется; о приёме антикоагулянтов, аспирина и других влияющих на свёртывание препаратов заранее сообщите врачу и лаборатории, решение о паузе в приёме принимает только врач",
+        "abnormal": "Удлинение времени может быть связано с особенностями работы тромбоцитов, приёмом препаратов или состоянием сосудистой стенки. Значение результата оценивает врач вместе с другими показателями свёртывания"
+      },
+      "en": {
+        "what": "A simple test showing how long it takes for bleeding from a small skin puncture to stop",
+        "how": "A nurse makes a small puncture on the finger or forearm and times the moment the bleeding stops, taking a few minutes",
+        "when": "Work-up before minor procedures, tendency to bruising and bleeding gums, assessment of primary hemostasis",
+        "prep": "No special preparation required; inform the doctor and the laboratory in advance about anticoagulants, aspirin and other medications affecting clotting, as only the doctor decides whether to pause them",
+        "abnormal": "A prolonged time may be related to platelet function, medication use, or the condition of the vessel wall. The meaning of the result is assessed by a doctor together with other clotting values"
+      },
+      "sr": {
+        "what": "Jednostavna proba koja pokazuje za koliko se zaustavlja krvarenje iz malog uboda kože",
+        "how": "Medicinska sestra napravi mali ubod na prstu ili podlaktici i štopericom bilježi trenutak prestanka krvarenja, traje nekoliko minuta",
+        "when": "Obrada prije manjih zahvata, sklonost modricama i krvarenju desni, procjena primarne hemostaze",
+        "prep": "Nije potrebna posebna priprema; o antikoagulansima, aspirinu i drugim lijekovima koji utiču na zgrušavanje unaprijed obavijestite ljekara i laboratoriju, a odluku o pauzi u terapiji donosi isključivo ljekar",
+        "abnormal": "Produženo vrijeme može biti povezano sa radom trombocita, uzimanjem lijekova ili stanjem zida krvnih sudova. Značaj nalaza procjenjuje ljekar zajedno sa ostalim pokazateljima zgrušavanja"
+      },
+      "de": {
+        "what": "Ein einfacher Test, der zeigt, wie lange die Blutung aus einem kleinen Hautstich bis zum Stillstand braucht",
+        "how": "Eine Pflegekraft setzt einen kleinen Stich an Finger oder Unterarm und stoppt die Zeit bis zum Ende der Blutung, dauert wenige Minuten",
+        "when": "Abklärung vor kleineren Eingriffen, Neigung zu blauen Flecken und Zahnfleischbluten, Beurteilung der primären Hämostase",
+        "prep": "Keine besondere Vorbereitung erforderlich; informieren Sie Arzt und Labor vorab über Antikoagulanzien, Aspirin und andere gerinnungswirksame Medikamente, über ein Pausieren entscheidet ausschließlich der Arzt",
+        "abnormal": "Eine verlängerte Zeit kann mit der Funktion der Blutplättchen, der Einnahme von Medikamenten oder dem Zustand der Gefäßwand zusammenhängen. Die Bedeutung des Ergebnisses beurteilt der Arzt zusammen mit weiteren Gerinnungswerten"
+      },
+      "tr": {
+        "what": "Küçük bir cilt deliğinden gelen kanamanın ne kadar sürede durduğunu gösteren basit bir test",
+        "how": "Hemşire parmakta veya ön kolda küçük bir delik açar ve kanamanın durduğu anı kronometreyle kaydeder, birkaç dakika sürer",
+        "when": "Küçük girişimler öncesi inceleme, kolay morarma ve diş eti kanaması, birincil hemostazın değerlendirilmesi",
+        "prep": "Özel bir hazırlık gerektirmez; antikoagülan, aspirin ve pıhtılaşmayı etkileyen diğer ilaçlar hakkında hekimi ve laboratuvarı önceden bilgilendirin, bunlara ara verilip verilmeyeceğine yalnızca hekim karar verir",
+        "abnormal": "Sürenin uzaması trombositlerin işleyişi, ilaç kullanımı veya damar duvarının durumuyla ilişkili olabilir. Sonucun anlamını hekim diğer pıhtılaşma göstergeleriyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Једноставна проба која показује за колико се зауставља крварење из малог убода коже",
+        "how": "Медицинска сестра направи мали убод на прсту или подлактици и штоперицом биљежи тренутак престанка крварења, траје неколико минута",
+        "when": "Обрада прије мањих захвата, склоност модрицама и крварењу десни, процјена примарне хемостазе",
+        "prep": "Није потребна посебна припрема; о антикоагулансима, аспирину и другим лијековима који утичу на згрушавање унапријед обавијестите љекара и лабораторију, а одлуку о паузи у терапији доноси искључиво љекар",
+        "abnormal": "Продужено вријеме може бити повезано са радом тромбоцита, узимањем лијекова или стањем зида крвних судова. Значај налаза процјењује љекар заједно са осталим показатељима згрушавања"
+      }
+    }
+  },
+  {
+    "slug": "coagulation-time",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Базовая проба, оценивающая, за какое время взятая кровь образует сгусток в пробирке",
+        "how": "Забор крови и наблюдение за образованием сгустка в пробирке при контролируемой температуре, занимает несколько минут",
+        "when": "Ориентировочная оценка свёртывания перед вмешательствами, обследование при кровоточивости, дополнение к другим коагуляционным тестам",
+        "prep": "Специальной подготовки не требуется; о приёме антикоагулянтов и других влияющих на свёртывание препаратов предупредите врача и лабораторию, самостоятельно отменять их нельзя",
+        "abnormal": "Отклонения могут быть связаны с приёмом препаратов, недостатком факторов свёртывания или условиями забора материала. Результат трактует врач, обычно вместе с более точными тестами"
+      },
+      "en": {
+        "what": "A basic test assessing how long a drawn blood sample takes to form a clot in a tube",
+        "how": "Blood is drawn and the formation of a clot in the tube is observed at a controlled temperature, taking a few minutes",
+        "when": "Rough assessment of clotting before procedures, work-up for bleeding tendency, supplement to other coagulation tests",
+        "prep": "No special preparation required; tell the doctor and the laboratory about anticoagulants and other medications affecting clotting, and do not stop them on your own",
+        "abnormal": "Deviations may be related to medication use, a lack of clotting factors, or the conditions of sample collection. The result is interpreted by a doctor, usually together with more precise tests"
+      },
+      "sr": {
+        "what": "Osnovna proba koja procjenjuje za koliko uzeta krv stvori ugrušak u epruveti",
+        "how": "Uzima se krv i prati se stvaranje ugruška u epruveti na kontrolisanoj temperaturi, traje nekoliko minuta",
+        "when": "Okvirna procjena zgrušavanja prije zahvata, obrada kod sklonosti krvarenju, dopuna drugim koagulacionim testovima",
+        "prep": "Nije potrebna posebna priprema; o antikoagulansima i drugim lijekovima koji utiču na zgrušavanje obavijestite ljekara i laboratoriju, njihovo prekidanje na svoju ruku nije dozvoljeno",
+        "abnormal": "Odstupanja mogu biti povezana sa uzimanjem lijekova, nedostatkom faktora zgrušavanja ili uslovima uzimanja uzorka. Nalaz tumači ljekar, obično uz preciznije testove"
+      },
+      "de": {
+        "what": "Ein grundlegender Test, der beurteilt, wie lange eine entnommene Blutprobe im Röhrchen bis zur Gerinnselbildung braucht",
+        "how": "Es wird Blut entnommen und die Gerinnselbildung im Röhrchen bei kontrollierter Temperatur beobachtet, dauert wenige Minuten",
+        "when": "Grobe Einschätzung der Gerinnung vor Eingriffen, Abklärung bei Blutungsneigung, Ergänzung zu anderen Gerinnungstests",
+        "prep": "Keine besondere Vorbereitung erforderlich; informieren Sie Arzt und Labor über Antikoagulanzien und andere gerinnungswirksame Medikamente und setzen Sie diese nicht eigenmächtig ab",
+        "abnormal": "Abweichungen können mit der Einnahme von Medikamenten, einem Mangel an Gerinnungsfaktoren oder den Bedingungen der Probenentnahme zusammenhängen. Das Ergebnis interpretiert der Arzt, meist zusammen mit genaueren Tests"
+      },
+      "tr": {
+        "what": "Alınan kanın tüp içinde ne kadar sürede pıhtı oluşturduğunu değerlendiren temel bir test",
+        "how": "Kan alınır ve kontrollü sıcaklıkta tüpte pıhtı oluşumu izlenir, birkaç dakika sürer",
+        "when": "Girişim öncesi pıhtılaşmanın kaba değerlendirmesi, kanamaya eğilimde inceleme, diğer koagülasyon testlerinin tamamlayıcısı",
+        "prep": "Özel bir hazırlık gerektirmez; antikoagülanlar ve pıhtılaşmayı etkileyen diğer ilaçlar hakkında hekimi ve laboratuvarı bilgilendirin, bu ilaçları kendi başınıza bırakmayın",
+        "abnormal": "Sapmalar ilaç kullanımı, pıhtılaşma faktörlerinin eksikliği veya örnek alma koşullarıyla ilişkili olabilir. Sonucu hekim, genellikle daha kesin testlerle birlikte yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Основна проба која процјењује за колико узета крв створи угрушак у епрувети",
+        "how": "Узима се крв и прати се стварање угрушка у епрувети на контролисаној температури, траје неколико минута",
+        "when": "Оквирна процјена згрушавања прије захвата, обрада код склоности крварењу, допуна другим коагулационим тестовима",
+        "prep": "Није потребна посебна припрема; о антикоагулансима и другим лијековима који утичу на згрушавање обавијестите љекара и лабораторију, њихово прекидање на своју руку није дозвољено",
+        "abnormal": "Одступања могу бити повезана са узимањем лијекова, недостатком фактора згрушавања или условима узимања узорка. Налаз тумачи љекар, обично уз прецизније тестове"
+      }
+    }
+  },
+  {
+    "slug": "antithrombin-iii",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на естественный белок, сдерживающий избыточное свёртывание",
+        "how": "Забор венозной крови в пробирку с цитратом",
+        "when": "Обследование при повторных тромбозах, тромбозе в молодом возрасте, семейной склонности к тромбозам, планирование беременности по назначению врача",
+        "prep": "Кровь сдают вне острого эпизода тромбоза; о приёме гепарина, варфарина и других антикоагулянтов обязательно сообщают врачу и лаборатории, а решение о паузе в лечении принимает врач",
+        "abnormal": "Снижение показателя может быть связано с наследственными особенностями, болезнями печени, потерей белка или влиянием лекарств. Результат оценивает врач, обычно в составе панели на тромбофилию"
+      },
+      "en": {
+        "what": "A blood test for a natural protein that restrains excessive clotting",
+        "how": "Venous blood draw into a citrate tube",
+        "when": "Work-up for recurrent thrombosis, thrombosis at a young age, family tendency to thrombosis, pregnancy planning as directed by a doctor",
+        "prep": "The sample is taken outside an acute thrombosis episode; heparin, warfarin and other anticoagulants must be reported to the doctor and the laboratory, and only the doctor decides on any pause in treatment",
+        "abnormal": "A reduced value may be related to inherited features, liver disease, protein loss, or the influence of medications. The result is assessed by a doctor, usually as part of a thrombophilia panel"
+      },
+      "sr": {
+        "what": "Analiza krvi na prirodni protein koji sprječava pretjerano zgrušavanje",
+        "how": "Uzimanje venske krvi u epruvetu sa citratom",
+        "when": "Obrada kod ponovljenih tromboza, tromboze u mlađem životnom dobu, porodične sklonosti trombozama, planiranje trudnoće po uputu ljekara",
+        "prep": "Uzorak se uzima van akutne epizode tromboze; o heparinu, varfarinu i drugim antikoagulansima obavezno se obavještavaju ljekar i laboratorija, a o pauzi u terapiji odlučuje ljekar",
+        "abnormal": "Sniženje vrijednosti može biti povezano sa nasljednim osobinama, oboljenjima jetre, gubitkom bjelančevina ili uticajem lijekova. Nalaz procjenjuje ljekar, obično u sklopu panela za trombofiliju"
+      },
+      "de": {
+        "what": "Bluttest auf ein körpereigenes Eiweiß, das eine übermäßige Gerinnung bremst",
+        "how": "Entnahme von venösem Blut in ein Citratröhrchen",
+        "when": "Abklärung bei wiederholten Thrombosen, Thrombose in jungen Jahren, familiärer Thromboseneigung, Schwangerschaftsplanung auf ärztliche Anweisung",
+        "prep": "Die Probe wird außerhalb eines akuten Thromboseereignisses entnommen; Heparin, Warfarin und andere Antikoagulanzien sind Arzt und Labor mitzuteilen, über eine Pause der Behandlung entscheidet allein der Arzt",
+        "abnormal": "Ein erniedrigter Wert kann mit erblichen Besonderheiten, Lebererkrankungen, Eiweißverlust oder dem Einfluss von Medikamenten zusammenhängen. Das Ergebnis beurteilt der Arzt, meist im Rahmen einer Thrombophilie-Abklärung"
+      },
+      "tr": {
+        "what": "Aşırı pıhtılaşmayı frenleyen doğal bir proteini ölçen kan testi",
+        "how": "Sitratlı tüpe venöz kan alımı",
+        "when": "Tekrarlayan tromboz, genç yaşta tromboz, ailede tromboz eğilimi, hekim yönlendirmesiyle gebelik planlaması",
+        "prep": "Örnek akut tromboz dönemi dışında alınır; heparin, varfarin ve diğer antikoagülanlar hekime ve laboratuvara mutlaka bildirilir, tedaviye ara verilip verilmeyeceğine yalnızca hekim karar verir",
+        "abnormal": "Değerin düşük olması kalıtsal özellikler, karaciğer hastalıkları, protein kaybı veya ilaç etkisiyle ilişkili olabilir. Sonucu hekim, genellikle trombofili paneli kapsamında değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на природни протеин који спрјечава претјерано згрушавање",
+        "how": "Узимање венске крви у епрувету са цитратом",
+        "when": "Обрада код поновљених тромбоза, тромбозе у млађем животном добу, породичне склоности тромбозама, планирање трудноће по упуту љекара",
+        "prep": "Узорак се узима ван акутне епизоде тромбозе; о хепарину, варфарину и другим антикоагулансима обавезно се обавјештавају љекар и лабораторија, а о паузи у терапији одлучује љекар",
+        "abnormal": "Снижење вриједности може бити повезано са насљедним особинама, обољењима јетре, губитком бјеланчевина или утицајем лијекова. Налаз процјењује љекар, обично у склопу панела за тромбофилију"
+      }
+    }
+  },
+  {
+    "slug": "lupus-anticoagulant",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование крови на антитела, влияющие на фосфолипид-зависимые реакции свёртывания в пробирке",
+        "how": "Забор венозной крови, исследование выполняется набором коагуляционных тестов, положительный результат обычно повторяют спустя некоторое время",
+        "when": "Обследование при тромбозах, повторных потерях беременности, аутоиммунных заболеваниях по назначению врача, необъяснимом удлинении коагуляционных тестов",
+        "prep": "Специальной подготовки не требуется; антикоагулянты и гепарин влияют на результат, поэтому о них заранее сообщают врачу и лаборатории, а срок сдачи определяет врач",
+        "abnormal": "Положительный результат может быть связан с антифосфолипидными антителами, недавней инфекцией или влиянием лекарств и сам по себе не является диагнозом. Подтверждение требует повторного исследования и оценки врача"
+      },
+      "en": {
+        "what": "A blood test for antibodies that interfere with phospholipid-dependent clotting reactions in the tube",
+        "how": "Venous blood draw; the test is performed as a set of coagulation assays, and a positive result is usually repeated after some time",
+        "when": "Work-up for thrombosis, recurrent pregnancy loss, autoimmune diseases as directed by a doctor, unexplained prolongation of clotting tests",
+        "prep": "No special preparation required; anticoagulants and heparin affect the result, so they are reported to the doctor and the laboratory in advance, and the doctor decides on the timing of the test",
+        "abnormal": "A positive result may be related to antiphospholipid antibodies, a recent infection, or the influence of medications, and is not a diagnosis in itself. Confirmation requires repeat testing and assessment by a doctor"
+      },
+      "sr": {
+        "what": "Ispitivanje krvi na antitijela koja ometaju fosfolipid-zavisne reakcije zgrušavanja u epruveti",
+        "how": "Uzimanje venske krvi, ispitivanje se radi setom koagulacionih testova, a pozitivan nalaz se obično ponavlja nakon izvjesnog vremena",
+        "when": "Obrada kod tromboza, ponovljenih gubitaka trudnoće, autoimunih oboljenja po uputu ljekara, neobjašnjenog produženja koagulacionih testova",
+        "prep": "Nije potrebna posebna priprema; antikoagulansi i heparin utiču na nalaz, pa se o njima unaprijed obavještavaju ljekar i laboratorija, a termin vađenja određuje ljekar",
+        "abnormal": "Pozitivan nalaz može biti povezan sa antifosfolipidnim antitijelima, nedavnom infekcijom ili uticajem lijekova i sam po sebi nije dijagnoza. Potvrda zahtijeva ponovljeno ispitivanje i procjenu ljekara"
+      },
+      "de": {
+        "what": "Blutuntersuchung auf Antikörper, die phospholipidabhängige Gerinnungsreaktionen im Reagenzglas stören",
+        "how": "Entnahme von venösem Blut; die Untersuchung besteht aus mehreren Gerinnungstests, ein positiver Befund wird in der Regel nach einiger Zeit wiederholt",
+        "when": "Abklärung bei Thrombosen, wiederholten Fehlgeburten, Autoimmunerkrankungen auf ärztliche Anweisung, ungeklärter Verlängerung von Gerinnungstests",
+        "prep": "Keine besondere Vorbereitung erforderlich; Antikoagulanzien und Heparin beeinflussen den Befund und werden Arzt und Labor vorab mitgeteilt, den Zeitpunkt der Blutentnahme legt der Arzt fest",
+        "abnormal": "Ein positiver Befund kann mit Antiphospholipid-Antikörpern, einer kürzlichen Infektion oder dem Einfluss von Medikamenten zusammenhängen und ist für sich genommen keine Diagnose. Die Bestätigung erfordert eine Wiederholung und die Beurteilung durch den Arzt"
+      },
+      "tr": {
+        "what": "Tüp içinde fosfolipide bağlı pıhtılaşma tepkimelerini bozan antikorları araştıran kan tetkiki",
+        "how": "Venöz kan alınır, inceleme bir dizi koagülasyon testiyle yapılır ve pozitif sonuç genellikle bir süre sonra yinelenir",
+        "when": "Tromboz, yinelenen gebelik kayıpları, hekim yönlendirmesiyle otoimmün hastalıklar, koagülasyon testlerinde açıklanamayan uzama",
+        "prep": "Özel bir hazırlık gerektirmez; antikoagülanlar ve heparin sonucu etkiler, bu nedenle hekime ve laboratuvara önceden bildirilir, kan alma zamanını hekim belirler",
+        "abnormal": "Pozitif sonuç antifosfolipid antikorlarıyla, yakın zamanda geçirilen bir enfeksiyonla veya ilaç etkisiyle ilişkili olabilir ve tek başına tanı değildir. Doğrulama için testin yinelenmesi ve hekim değerlendirmesi gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Испитивање крви на антитијела која ометају фосфолипид-зависне реакције згрушавања у епрувети",
+        "how": "Узимање венске крви, испитивање се ради сетом коагулационих тестова, а позитиван налаз се обично понавља након извјесног времена",
+        "when": "Обрада код тромбоза, поновљених губитака трудноће, аутоимуних обољења по упуту љекара, необјашњеног продужења коагулационих тестова",
+        "prep": "Није потребна посебна припрема; антикоагуланси и хепарин утичу на налаз, па се о њима унапријед обавјештавају љекар и лабораторија, а термин вађења одређује љекар",
+        "abnormal": "Позитиван налаз може бити повезан са антифосфолипидним антитијелима, недавном инфекцијом или утицајем лијекова и сам по себи није дијагноза. Потврда захтијева поновљено испитивање и процјену љекара"
+      }
+    }
+  },
+  {
+    "slug": "protein-c",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на один из естественных белков-регуляторов свёртывания, вырабатываемых печенью",
+        "how": "Забор венозной крови в цитратную пробирку",
+        "when": "Обследование при венозных тромбозах, семейной склонности к тромбозам, планирование терапии по назначению врача",
+        "prep": "Сдают вне острого тромбоза; о приёме варфарина и других антикоагулянтов предупреждают врача и лабораторию, а срок сдачи относительно терапии назначает врач",
+        "abnormal": "Снижение может быть связано с наследственным дефицитом, заболеваниями печени, нехваткой витамина K или приёмом препаратов. Результат интерпретирует врач вместе с другими тестами на тромбофилию"
+      },
+      "en": {
+        "what": "A blood test for one of the natural regulatory proteins of clotting produced by the liver",
+        "how": "Venous blood draw into a citrate tube",
+        "when": "Work-up for venous thrombosis, family tendency to thrombosis, treatment planning as directed by a doctor",
+        "prep": "Taken outside an acute thrombosis; warfarin and other anticoagulants are reported to the doctor and the laboratory, and the doctor sets the timing of the test relative to therapy",
+        "abnormal": "A reduced value may be related to inherited deficiency, liver disease, lack of vitamin K, or medication use. The result is interpreted by a doctor together with other thrombophilia tests"
+      },
+      "sr": {
+        "what": "Analiza krvi na jedan od prirodnih proteina regulatora zgrušavanja koje stvara jetra",
+        "how": "Uzimanje venske krvi u citratnu epruvetu",
+        "when": "Obrada kod venskih tromboza, porodične sklonosti trombozama, planiranje terapije po uputu ljekara",
+        "prep": "Vadi se van akutne tromboze; o varfarinu i drugim antikoagulansima obavještavaju se ljekar i laboratorija, a vrijeme vađenja u odnosu na terapiju određuje ljekar",
+        "abnormal": "Sniženje može biti povezano sa nasljednim nedostatkom, oboljenjima jetre, manjkom vitamina K ili uzimanjem lijekova. Nalaz tumači ljekar zajedno sa ostalim testovima na trombofiliju"
+      },
+      "de": {
+        "what": "Bluttest auf eines der natürlichen, in der Leber gebildeten Regulatorproteine der Gerinnung",
+        "how": "Entnahme von venösem Blut in ein Citratröhrchen",
+        "when": "Abklärung bei Venenthrombosen, familiärer Thromboseneigung, Therapieplanung auf ärztliche Anweisung",
+        "prep": "Die Entnahme erfolgt außerhalb einer akuten Thrombose; Warfarin und andere Antikoagulanzien werden Arzt und Labor mitgeteilt, den Zeitpunkt im Verhältnis zur Therapie bestimmt der Arzt",
+        "abnormal": "Ein erniedrigter Wert kann mit einem angeborenen Mangel, Lebererkrankungen, Vitamin-K-Mangel oder der Einnahme von Medikamenten zusammenhängen. Das Ergebnis interpretiert der Arzt zusammen mit weiteren Thrombophilie-Tests"
+      },
+      "tr": {
+        "what": "Karaciğerde üretilen ve pıhtılaşmayı düzenleyen doğal proteinlerden birini ölçen kan testi",
+        "how": "Sitratlı tüpe venöz kan alımı",
+        "when": "Ven trombozu, ailede tromboz eğilimi, hekim yönlendirmesiyle tedavi planlaması",
+        "prep": "Akut tromboz dönemi dışında alınır; varfarin ve diğer antikoagülanlar hekime ve laboratuvara bildirilir, testin tedaviye göre zamanlamasını hekim belirler",
+        "abnormal": "Düşük değer kalıtsal eksiklik, karaciğer hastalıkları, K vitamini azlığı veya ilaç kullanımıyla ilişkili olabilir. Sonucu hekim diğer trombofili testleriyle birlikte yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на један од природних протеина регулатора згрушавања које ствара јетра",
+        "how": "Узимање венске крви у цитратну епрувету",
+        "when": "Обрада код венских тромбоза, породичне склоности тромбозама, планирање терапије по упуту љекара",
+        "prep": "Вади се ван акутне тромбозе; о варфарину и другим антикоагулансима обавјештавају се љекар и лабораторија, а вријеме вађења у односу на терапију одређује љекар",
+        "abnormal": "Снижење може бити повезано са насљедним недостатком, обољењима јетре, мањком витамина К или узимањем лијекова. Налаз тумачи љекар заједно са осталим тестовима на тромбофилију"
+      }
+    }
+  },
+  {
+    "slug": "protein-s",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на белок-помощник системы протеина C, участвующий в торможении свёртывания",
+        "how": "Забор венозной крови в цитратную пробирку, лаборатория может определять свободную и общую фракции",
+        "when": "Обследование при венозных тромбозах, тромбозах необычной локализации, тромбозах у близких родственников по назначению врача",
+        "prep": "Сдают вне острого тромбоза и по возможности вне беременности; о гормональной контрацепции и антикоагулянтах сообщают врачу и лаборатории, самостоятельно отменять препараты нельзя",
+        "abnormal": "Снижение может быть связано с наследственными особенностями, беременностью, приёмом гормональных препаратов или болезнями печени. Итог оценивает врач, часто после повторного исследования"
+      },
+      "en": {
+        "what": "A blood test for the cofactor protein of the protein C system, involved in restraining clotting",
+        "how": "Venous blood draw into a citrate tube; the laboratory may measure the free and the total fraction",
+        "when": "Work-up for venous thrombosis, thrombosis at unusual sites, thrombosis in close relatives as directed by a doctor",
+        "prep": "Taken outside an acute thrombosis and, where possible, outside pregnancy; hormonal contraception and anticoagulants are reported to the doctor and the laboratory, and medications must not be stopped on your own",
+        "abnormal": "A reduced value may be related to inherited features, pregnancy, hormonal medication, or liver disease. The conclusion is made by a doctor, often after a repeat test"
+      },
+      "sr": {
+        "what": "Analiza krvi na pomoćni protein sistema proteina C koji učestvuje u kočenju zgrušavanja",
+        "how": "Uzimanje venske krvi u citratnu epruvetu, laboratorija može određivati slobodnu i ukupnu frakciju",
+        "when": "Obrada kod venskih tromboza, tromboza neuobičajene lokalizacije, tromboza kod bliskih srodnika po uputu ljekara",
+        "prep": "Vadi se van akutne tromboze i po mogućnosti van trudnoće; o hormonskoj kontracepciji i antikoagulansima obavještavaju se ljekar i laboratorija, a lijekovi se ne prekidaju na svoju ruku",
+        "abnormal": "Sniženje može biti povezano sa nasljednim osobinama, trudnoćom, uzimanjem hormonskih lijekova ili oboljenjima jetre. Zaključak donosi ljekar, često nakon ponovljenog ispitivanja"
+      },
+      "de": {
+        "what": "Bluttest auf das Kofaktor-Eiweiß des Protein-C-Systems, das an der Hemmung der Gerinnung beteiligt ist",
+        "how": "Entnahme von venösem Blut in ein Citratröhrchen, das Labor kann die freie und die Gesamtfraktion bestimmen",
+        "when": "Abklärung bei Venenthrombosen, Thrombosen an ungewöhnlicher Stelle, Thrombosen bei nahen Verwandten auf ärztliche Anweisung",
+        "prep": "Die Entnahme erfolgt außerhalb einer akuten Thrombose und möglichst außerhalb einer Schwangerschaft; hormonelle Verhütung und Antikoagulanzien werden Arzt und Labor mitgeteilt, Medikamente dürfen nicht eigenmächtig abgesetzt werden",
+        "abnormal": "Ein erniedrigter Wert kann mit erblichen Besonderheiten, einer Schwangerschaft, hormonellen Medikamenten oder Lebererkrankungen zusammenhängen. Die Beurteilung trifft der Arzt, häufig nach einer Wiederholung"
+      },
+      "tr": {
+        "what": "Pıhtılaşmanın frenlenmesinde görev alan, protein C sisteminin yardımcı proteinini ölçen kan testi",
+        "how": "Sitratlı tüpe venöz kan alımı, laboratuvar serbest ve toplam fraksiyonu ölçebilir",
+        "when": "Ven trombozu, alışılmadık bölgelerde tromboz, hekim yönlendirmesiyle yakın akrabalarda görülen tromboz",
+        "prep": "Akut tromboz dışında ve mümkünse gebelik dışında alınır; hormonal doğum kontrol yöntemleri ve antikoagülanlar hekime ve laboratuvara bildirilir, ilaçlar kendi başınıza bırakılmamalıdır",
+        "abnormal": "Düşük değer kalıtsal özellikler, gebelik, hormonal ilaç kullanımı veya karaciğer hastalıklarıyla ilişkili olabilir. Sonucu hekim, çoğu zaman tekrar testten sonra değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на помоћни протеин система протеина Ц који учествује у кочењу згрушавања",
+        "how": "Узимање венске крви у цитратну епрувету, лабораторија може одређивати слободну и укупну фракцију",
+        "when": "Обрада код венских тромбоза, тромбоза неуобичајене локализације, тромбоза код блиских сродника по упуту љекара",
+        "prep": "Вади се ван акутне тромбозе и по могућности ван трудноће; о хормонској контрацепцији и антикоагулансима обавјештавају се љекар и лабораторија, а лијекови се не прекидају на своју руку",
+        "abnormal": "Снижење може бити повезано са насљедним особинама, трудноћом, узимањем хормонских лијекова или обољењима јетре. Закључак доноси љекар, често након поновљеног испитивања"
+      }
+    }
+  },
+  {
+    "slug": "phosphorus",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на неорганический фосфат — минерал, участвующий в обмене костной ткани и энергии",
+        "how": "Забор венозной крови",
+        "when": "Оценка костного и минерального обмена, заболевания почек, нарушения уровня кальция и витамина D, наблюдение при хронических болезнях по назначению врача",
+        "prep": "Утром натощак, разрешена вода; добавки с фосфатами и витамином D накануне принимают только по согласованию с врачом",
+        "abnormal": "Изменения могут быть связаны с работой почек, обменом кальция, функцией паращитовидных желёз или питанием. Значение результата определяет врач в сочетании с кальцием и другими показателями"
+      },
+      "en": {
+        "what": "Blood test for inorganic phosphate — a mineral involved in bone and energy metabolism",
+        "how": "Venous blood draw",
+        "when": "Assessment of bone and mineral metabolism, kidney disease, disturbances of calcium and vitamin D levels, follow-up of chronic conditions as directed by a doctor",
+        "prep": "In the morning on an empty stomach, water allowed; supplements with phosphates and vitamin D are taken the day before only in agreement with the doctor",
+        "abnormal": "Changes may be related to kidney function, calcium metabolism, parathyroid function, or diet. The meaning of the result is determined by a doctor together with calcium and other values"
+      },
+      "sr": {
+        "what": "Analiza krvi na neorganski fosfat, mineral koji učestvuje u metabolizmu kostiju i energije",
+        "how": "Uzimanje venske krvi",
+        "when": "Procjena koštanog i mineralnog metabolizma, bubrežna oboljenja, poremećaji nivoa kalcijuma i vitamina D, praćenje hroničnih bolesti po uputu ljekara",
+        "prep": "Ujutru natašte, dozvoljena je voda; dodaci sa fosfatima i vitaminom D uzimaju se dan ranije samo uz dogovor sa ljekarom",
+        "abnormal": "Promjene mogu biti povezane sa radom bubrega, metabolizmom kalcijuma, funkcijom paratireoidnih žlijezda ili ishranom. Značenje nalaza određuje ljekar uz kalcijum i druge pokazatelje"
+      },
+      "de": {
+        "what": "Bluttest auf anorganisches Phosphat, einen Mineralstoff des Knochen- und Energiestoffwechsels",
+        "how": "Entnahme von venösem Blut",
+        "when": "Beurteilung des Knochen- und Mineralstoffwechsels, Nierenerkrankungen, Störungen des Kalzium- und Vitamin-D-Spiegels, Verlaufskontrolle chronischer Erkrankungen auf ärztliche Anweisung",
+        "prep": "Morgens nüchtern, Wasser ist erlaubt; Präparate mit Phosphat und Vitamin D am Vortag nur in Absprache mit dem Arzt einnehmen",
+        "abnormal": "Veränderungen können mit der Nierenfunktion, dem Kalziumstoffwechsel, der Funktion der Nebenschilddrüsen oder der Ernährung zusammenhängen. Die Bedeutung des Ergebnisses bestimmt der Arzt zusammen mit Kalzium und weiteren Werten"
+      },
+      "tr": {
+        "what": "Kemik ve enerji metabolizmasında rol alan bir mineral olan inorganik fosfatı ölçen kan testi",
+        "how": "Venöz kan alımı",
+        "when": "Kemik ve mineral metabolizmasının değerlendirilmesi, böbrek hastalıkları, kalsiyum ve D vitamini düzeyi bozuklukları, hekim yönlendirmesiyle kronik hastalık takibi",
+        "prep": "Sabah aç karnına, su içilebilir; fosfat ve D vitamini içeren takviyeler bir gün önce yalnızca hekimle görüşerek alınır",
+        "abnormal": "Değişiklikler böbrek işlevi, kalsiyum metabolizması, paratiroid bezlerinin çalışması veya beslenmeyle ilişkili olabilir. Sonucun anlamını hekim kalsiyum ve diğer değerlerle birlikte belirler"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на неоргански фосфат, минерал који учествује у метаболизму костију и енергије",
+        "how": "Узимање венске крви",
+        "when": "Процјена коштаног и минералног метаболизма, бубрежна обољења, поремећаји нивоа калцијума и витамина Д, праћење хроничних болести по упуту љекара",
+        "prep": "Ујутру наташте, дозвољена је вода; додаци са фосфатима и витамином Д узимају се дан раније само уз договор са љекаром",
+        "abnormal": "Промјене могу бити повезане са радом бубрега, метаболизмом калцијума, функцијом паратиреоидних жлијезда или исхраном. Значење налаза одређује љекар уз калцијум и друге показатеље"
+      }
+    }
+  },
+  {
+    "slug": "ionized-calcium",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на свободную, биологически активную часть кальция, не связанную с белками",
+        "how": "Забор венозной или артериальной крови с быстрой доставкой в лабораторию, часто выполняется вместе с анализом газов крови",
+        "when": "Уточнение нарушений кальциевого обмена, заболевания паращитовидных желёз, почечная недостаточность, наблюдение за состоянием при интенсивной терапии",
+        "prep": "Утром натощак, без длительного сжимания кулака и жгута; о приёме препаратов кальция и витамина D сообщают лаборатории",
+        "abnormal": "Отклонения могут быть связаны с функцией паращитовидных желёз и почек, уровнем витамина D или кислотно-щелочным состоянием крови. Оценку проводит врач с учётом общего кальция и альбумина"
+      },
+      "en": {
+        "what": "Blood test for the free, biologically active portion of calcium that is not bound to proteins",
+        "how": "Venous or arterial blood draw with prompt delivery to the laboratory, often performed together with blood gas analysis",
+        "when": "Clarification of calcium metabolism disorders, parathyroid disease, kidney failure, monitoring in intensive care",
+        "prep": "In the morning on an empty stomach, without prolonged fist clenching or tourniquet use; calcium and vitamin D supplements are reported to the laboratory",
+        "abnormal": "Deviations may be related to parathyroid and kidney function, vitamin D level, or the acid-base state of the blood. The assessment is made by a doctor taking total calcium and albumin into account"
+      },
+      "sr": {
+        "what": "Analiza krvi na slobodni, biološki aktivni dio kalcijuma koji nije vezan za bjelančevine",
+        "how": "Uzimanje venske ili arterijske krvi uz brzu dostavu u laboratoriju, često se radi zajedno sa gasnim analizama krvi",
+        "when": "Razjašnjenje poremećaja metabolizma kalcijuma, oboljenja paratireoidnih žlijezda, bubrežna slabost, praćenje stanja u intenzivnoj njezi",
+        "prep": "Ujutru natašte, bez dužeg stiskanja šake i podveze; o preparatima kalcijuma i vitamina D obavještava se laboratorija",
+        "abnormal": "Odstupanja mogu biti povezana sa funkcijom paratireoidnih žlijezda i bubrega, nivoom vitamina D ili acido-baznim stanjem krvi. Procjenu vrši ljekar uz ukupni kalcijum i albumin"
+      },
+      "de": {
+        "what": "Bluttest auf den freien, biologisch aktiven Anteil des Kalziums, der nicht an Eiweiße gebunden ist",
+        "how": "Entnahme von venösem oder arteriellem Blut mit rascher Zustellung ins Labor, häufig zusammen mit der Blutgasanalyse",
+        "when": "Klärung von Störungen des Kalziumstoffwechsels, Erkrankungen der Nebenschilddrüsen, Niereninsuffizienz, Überwachung in der Intensivmedizin",
+        "prep": "Morgens nüchtern, ohne längeres Faustschließen und Abbinden; Kalzium- und Vitamin-D-Präparate werden dem Labor mitgeteilt",
+        "abnormal": "Abweichungen können mit der Funktion der Nebenschilddrüsen und der Nieren, dem Vitamin-D-Spiegel oder dem Säure-Basen-Status des Blutes zusammenhängen. Die Beurteilung erfolgt durch den Arzt unter Berücksichtigung von Gesamtkalzium und Albumin"
+      },
+      "tr": {
+        "what": "Kalsiyumun proteine bağlı olmayan, serbest ve biyolojik olarak etkin bölümünü ölçen kan testi",
+        "how": "Venöz veya arteriyel kan alınır ve hızla laboratuvara ulaştırılır, sıklıkla kan gazı analiziyle birlikte yapılır",
+        "when": "Kalsiyum metabolizması bozukluklarının netleştirilmesi, paratiroid hastalıkları, böbrek yetmezliği, yoğun bakımda izlem",
+        "prep": "Sabah aç karnına, yumruk uzun süre sıkılmadan ve turnike uzun tutulmadan; kalsiyum ve D vitamini takviyeleri laboratuvara bildirilir",
+        "abnormal": "Sapmalar paratiroid ve böbrek işlevi, D vitamini düzeyi veya kanın asit-baz durumuyla ilişkili olabilir. Değerlendirmeyi hekim, total kalsiyum ve albümini de dikkate alarak yapar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на слободни, биолошки активни дио калцијума који није везан за бјеланчевине",
+        "how": "Узимање венске или артеријске крви уз брзу доставу у лабораторију, често се ради заједно са гасним анализама крви",
+        "when": "Разјашњење поремећаја метаболизма калцијума, обољења паратиреоидних жлијезда, бубрежна слабост, праћење стања у интензивној њези",
+        "prep": "Ујутру наташте, без дужег стискања шаке и подвезе; о препаратима калцијума и витамина Д обавјештава се лабораторија",
+        "abnormal": "Одступања могу бити повезана са функцијом паратиреоидних жлијезда и бубрега, нивоом витамина Д или ацидо-базним стањем крви. Процјену врши љекар уз укупни калцијум и албумин"
+      }
+    }
+  },
+  {
+    "slug": "magnesium",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на магний — минерал, важный для работы мышц, нервов и сердечного ритма",
+        "how": "Забор венозной крови",
+        "when": "Судороги и подёргивания мышц, нарушения сердечного ритма, длительный приём мочегонных, заболевания почек и кишечника, контроль при питании через зонд",
+        "prep": "Утром натощак; о препаратах магния и слабительных, принятых накануне, нужно сказать врачу, так как они меняют результат",
+        "abnormal": "Отклонения могут быть связаны с питанием, потерями через почки или кишечник, приёмом лекарств. Трактовку даёт врач вместе с калием и кальцием"
+      },
+      "en": {
+        "what": "Blood test for magnesium — a mineral important for muscle and nerve function and heart rhythm",
+        "how": "Venous blood draw",
+        "when": "Cramps and muscle twitching, heart rhythm disturbances, long-term diuretic use, kidney and bowel disease, monitoring during tube feeding",
+        "prep": "In the morning on an empty stomach; magnesium supplements and laxatives taken the day before should be mentioned to the doctor, as they change the result",
+        "abnormal": "Deviations may be related to diet, losses through the kidneys or bowel, or medication use. The interpretation is given by a doctor together with potassium and calcium"
+      },
+      "sr": {
+        "what": "Analiza krvi na magnezijum, mineral važan za rad mišića, nerava i srčanog ritma",
+        "how": "Uzimanje venske krvi",
+        "when": "Grčevi i trzanje mišića, poremećaji srčanog ritma, dugotrajno uzimanje diuretika, oboljenja bubrega i crijeva, praćenje kod ishrane preko sonde",
+        "prep": "Ujutru natašte; o preparatima magnezijuma i laksativima uzetim dan ranije treba reći ljekaru jer mijenjaju nalaz",
+        "abnormal": "Odstupanja mogu biti povezana sa ishranom, gubicima preko bubrega ili crijeva i uzimanjem lijekova. Tumačenje daje ljekar zajedno sa kalijumom i kalcijumom"
+      },
+      "de": {
+        "what": "Bluttest auf Magnesium, einen Mineralstoff für Muskel- und Nervenfunktion sowie den Herzrhythmus",
+        "how": "Entnahme von venösem Blut",
+        "when": "Krämpfe und Muskelzucken, Herzrhythmusstörungen, langfristige Einnahme von Diuretika, Nieren- und Darmerkrankungen, Kontrolle bei Sondenernährung",
+        "prep": "Morgens nüchtern; am Vortag eingenommene Magnesiumpräparate und Abführmittel sollten dem Arzt mitgeteilt werden, da sie das Ergebnis verändern",
+        "abnormal": "Abweichungen können mit der Ernährung, Verlusten über Nieren oder Darm sowie der Einnahme von Medikamenten zusammenhängen. Die Interpretation nimmt der Arzt zusammen mit Kalium und Kalzium vor"
+      },
+      "tr": {
+        "what": "Kas ve sinir işlevi ile kalp ritmi için önemli bir mineral olan magnezyumu ölçen kan testi",
+        "how": "Venöz kan alımı",
+        "when": "Kramplar ve kas seğirmeleri, kalp ritmi bozuklukları, uzun süreli diüretik kullanımı, böbrek ve bağırsak hastalıkları, sonda ile beslenmede izlem",
+        "prep": "Sabah aç karnına; bir gün önce alınan magnezyum takviyeleri ve müshiller sonucu değiştirdiği için hekime söylenmelidir",
+        "abnormal": "Sapmalar beslenme, böbrek veya bağırsak yoluyla kayıplar ya da ilaç kullanımıyla ilişkili olabilir. Yorumu hekim potasyum ve kalsiyumla birlikte yapar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на магнезијум, минерал важан за рад мишића, нерава и срчаног ритма",
+        "how": "Узимање венске крви",
+        "when": "Грчеви и трзање мишића, поремећаји срчаног ритма, дуготрајно узимање диуретика, обољења бубрега и цријева, праћење код исхране преко сонде",
+        "prep": "Ујутру наташте; о препаратима магнезијума и лаксативима узетим дан раније треба рећи љекару јер мијењају налаз",
+        "abnormal": "Одступања могу бити повезана са исхраном, губицима преко бубрега или цријева и узимањем лијекова. Тумачење даје љекар заједно са калијумом и калцијумом"
+      }
+    }
+  },
+  {
+    "slug": "chloride",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на хлориды — основной отрицательно заряженный электролит внеклеточной жидкости",
+        "how": "Забор венозной крови, чаще всего вместе с натрием и калием",
+        "when": "Оценка водно-солевого баланса, обезвоживание, рвота и диарея, заболевания почек, разбор нарушений кислотно-щелочного равновесия",
+        "prep": "Специальной подготовки не требуется, предпочтителен утренний забор; о мочегонных и капельницах сообщают врачу",
+        "abnormal": "Изменения могут быть связаны с потерей жидкости, почечными и дыхательными механизмами регуляции, приёмом препаратов. Результат оценивают вместе с натрием и бикарбонатами, вывод делает врач"
+      },
+      "en": {
+        "what": "Blood test for chloride — the main negatively charged electrolyte of the fluid outside the cells",
+        "how": "Venous blood draw, most often together with sodium and potassium",
+        "when": "Assessment of water and salt balance, dehydration, vomiting and diarrhea, kidney disease, work-up of acid-base disturbances",
+        "prep": "No special preparation required, a morning draw is preferable; diuretics and intravenous fluids are reported to the doctor",
+        "abnormal": "Changes may be related to fluid loss, renal and respiratory regulation mechanisms, or medication use. The result is assessed together with sodium and bicarbonate, and the conclusion is made by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na hloride, glavni negativno naelektrisani elektrolit tečnosti izvan ćelija",
+        "how": "Uzimanje venske krvi, najčešće zajedno sa natrijumom i kalijumom",
+        "when": "Procjena vodeno-solne ravnoteže, dehidracija, povraćanje i proljev, bubrežna oboljenja, obrada poremećaja acido-bazne ravnoteže",
+        "prep": "Nije potrebna posebna priprema, poželjno je jutarnje vađenje; o diureticima i infuzijama obavještava se ljekar",
+        "abnormal": "Promjene mogu biti povezane sa gubitkom tečnosti, bubrežnim i disajnim mehanizmima regulacije ili uzimanjem lijekova. Nalaz se procjenjuje uz natrijum i bikarbonate, a zaključak donosi ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf Chlorid, das wichtigste negativ geladene Elektrolyt der Flüssigkeit außerhalb der Zellen",
+        "how": "Entnahme von venösem Blut, meist zusammen mit Natrium und Kalium",
+        "when": "Beurteilung des Wasser- und Salzhaushalts, Austrocknung, Erbrechen und Durchfall, Nierenerkrankungen, Abklärung von Säure-Basen-Störungen",
+        "prep": "Keine besondere Vorbereitung erforderlich, eine Entnahme am Morgen ist vorzuziehen; Diuretika und Infusionen werden dem Arzt mitgeteilt",
+        "abnormal": "Veränderungen können mit Flüssigkeitsverlusten, Regulationsmechanismen von Nieren und Lunge oder der Einnahme von Medikamenten zusammenhängen. Der Wert wird zusammen mit Natrium und Bikarbonat beurteilt, die Schlussfolgerung zieht der Arzt"
+      },
+      "tr": {
+        "what": "Hücre dışı sıvının başlıca negatif yüklü elektroliti olan klorürü ölçen kan testi",
+        "how": "Venöz kan alımı, çoğunlukla sodyum ve potasyumla birlikte",
+        "when": "Su-tuz dengesinin değerlendirilmesi, sıvı kaybı, kusma ve ishal, böbrek hastalıkları, asit-baz bozukluklarının incelenmesi",
+        "prep": "Özel bir hazırlık gerektirmez, sabah alınması tercih edilir; diüretikler ve damar içi sıvılar hekime bildirilir",
+        "abnormal": "Değişiklikler sıvı kaybı, böbrek ve solunum yoluyla düzenleme mekanizmaları veya ilaç kullanımıyla ilişkili olabilir. Sonuç sodyum ve bikarbonatla birlikte değerlendirilir, kararı hekim verir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на хлориде, главни негативно наелектрисани електролит течности изван ћелија",
+        "how": "Узимање венске крви, најчешће заједно са натријумом и калијумом",
+        "when": "Процјена водено-солне равнотеже, дехидрација, повраћање и прољев, бубрежна обољења, обрада поремећаја ацидо-базне равнотеже",
+        "prep": "Није потребна посебна припрема, пожељно је јутарње вађење; о диуретицима и инфузијама обавјештава се љекар",
+        "abnormal": "Промјене могу бити повезане са губитком течности, бубрежним и дисајним механизмима регулације или узимањем лијекова. Налаз се процјењује уз натријум и бикарбонате, а закључак доноси љекар"
+      }
+    }
+  },
+  {
+    "slug": "bicarbonates",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Показатель крови, отражающий щелочной резерв и участие почек в поддержании кислотно-щелочного равновесия",
+        "how": "Определяется в венозной или артериальной крови, часто в составе анализа газов крови, образец доставляют в лабораторию сразу",
+        "when": "Разбор нарушений кислотно-щелочного равновесия, тяжёлое обезвоживание, заболевания почек и лёгких, наблюдение при обострении хронических болезней",
+        "prep": "Специальной подготовки не требуется; перед забором важно спокойно посидеть и не задерживать дыхание",
+        "abnormal": "Отклонения могут быть связаны с дыхательными нарушениями, работой почек, рвотой или потерей жидкости. Результат оценивают вместе с pH и газами крови, интерпретацию проводит врач"
+      },
+      "en": {
+        "what": "A blood value reflecting the alkaline reserve and the role of the kidneys in maintaining acid-base balance",
+        "how": "Measured in venous or arterial blood, often as part of a blood gas analysis, with the sample delivered to the laboratory immediately",
+        "when": "Work-up of acid-base disturbances, severe dehydration, kidney and lung disease, monitoring during flare-ups of chronic conditions",
+        "prep": "No special preparation required; before the draw it is important to sit calmly and not to hold your breath",
+        "abnormal": "Deviations may be related to breathing disorders, kidney function, vomiting, or fluid loss. The result is assessed together with pH and blood gases, and interpreted by a doctor"
+      },
+      "sr": {
+        "what": "Pokazatelj u krvi koji odražava alkalnu rezervu i ulogu bubrega u održavanju acido-bazne ravnoteže",
+        "how": "Određuje se u venskoj ili arterijskoj krvi, često u sklopu gasnih analiza, a uzorak se odmah dostavlja u laboratoriju",
+        "when": "Obrada poremećaja acido-bazne ravnoteže, teška dehidracija, oboljenja bubrega i pluća, praćenje kod pogoršanja hroničnih bolesti",
+        "prep": "Nije potrebna posebna priprema; prije vađenja je važno mirno sjediti i ne zadržavati dah",
+        "abnormal": "Odstupanja mogu biti povezana sa disajnim poremećajima, radom bubrega, povraćanjem ili gubitkom tečnosti. Nalaz se procjenjuje uz pH i gasne analize, a tumači ga ljekar"
+      },
+      "de": {
+        "what": "Ein Blutwert, der die alkalische Reserve und die Rolle der Nieren im Säure-Basen-Haushalt widerspiegelt",
+        "how": "Bestimmung in venösem oder arteriellem Blut, häufig im Rahmen der Blutgasanalyse, die Probe wird sofort ins Labor gebracht",
+        "when": "Abklärung von Säure-Basen-Störungen, schwere Austrocknung, Nieren- und Lungenerkrankungen, Überwachung bei Verschlechterung chronischer Erkrankungen",
+        "prep": "Keine besondere Vorbereitung erforderlich; vor der Entnahme ruhig sitzen und die Luft nicht anhalten",
+        "abnormal": "Abweichungen können mit Atemstörungen, der Nierenfunktion, Erbrechen oder Flüssigkeitsverlust zusammenhängen. Der Wert wird zusammen mit pH und Blutgasen beurteilt, die Interpretation erfolgt durch den Arzt"
+      },
+      "tr": {
+        "what": "Alkali rezervi ve böbreklerin asit-baz dengesindeki rolünü yansıtan bir kan değeri",
+        "how": "Venöz veya arteriyel kanda, çoğu zaman kan gazı analizinin bir parçası olarak ölçülür, örnek hemen laboratuvara ulaştırılır",
+        "when": "Asit-baz bozukluklarının incelenmesi, ağır sıvı kaybı, böbrek ve akciğer hastalıkları, kronik hastalıkların alevlenmesinde izlem",
+        "prep": "Özel bir hazırlık gerektirmez; kan alınmadan önce sakin oturmak ve nefes tutmamak önemlidir",
+        "abnormal": "Sapmalar solunum bozuklukları, böbrek işlevi, kusma veya sıvı kaybıyla ilişkili olabilir. Sonuç pH ve kan gazlarıyla birlikte değerlendirilir, yorumu hekim yapar"
+      },
+      "sr_cyrl": {
+        "what": "Показатељ у крви који одражава алкалну резерву и улогу бубрега у одржавању ацидо-базне равнотеже",
+        "how": "Одређује се у венској или артеријској крви, често у склопу гасних анализа, а узорак се одмах доставља у лабораторију",
+        "when": "Обрада поремећаја ацидо-базне равнотеже, тешка дехидрација, обољења бубрега и плућа, праћење код погоршања хроничних болести",
+        "prep": "Није потребна посебна припрема; прије вађења је важно мирно сједити и не задржавати дах",
+        "abnormal": "Одступања могу бити повезана са дисајним поремећајима, радом бубрега, повраћањем или губитком течности. Налаз се процјењује уз пХ и гасне анализе, а тумачи га љекар"
+      }
+    }
+  },
+  {
+    "slug": "leukocyte-formula",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Подсчёт долей разных видов белых клеток крови в образце",
+        "how": "Забор венозной или капиллярной крови, подсчёт на анализаторе, при необходимости лаборант просматривает мазок под микроскопом",
+        "when": "Уточнение картины при инфекциях, длительной температуре, воспалительных и аллергических состояниях, наблюдение в ходе лечения",
+        "prep": "Специальной подготовки не требуется, предпочтителен забор утром до физической нагрузки",
+        "abnormal": "Сдвиги в соотношении клеток могут быть связаны с бактериальной или вирусной инфекцией, аллергией, паразитами, приёмом препаратов и другими причинами. Картину оценивает врач вместе с жалобами и остальными показателями крови"
+      },
+      "en": {
+        "what": "A count of the proportions of the different types of white blood cells in the sample",
+        "how": "Venous or capillary blood draw, counted on an analyzer, with a laboratory technician reviewing the smear under a microscope when needed",
+        "when": "Clarifying the picture in infections, prolonged fever, inflammatory and allergic conditions, monitoring during treatment",
+        "prep": "No special preparation required, a morning draw before physical exertion is preferable",
+        "abnormal": "Shifts in the ratio of the cells may be related to bacterial or viral infection, allergy, parasites, medication use, and other causes. The picture is assessed by a doctor together with the symptoms and the rest of the blood values"
+      },
+      "sr": {
+        "what": "Brojanje udjela različitih vrsta bijelih krvnih ćelija u uzorku",
+        "how": "Uzimanje venske ili kapilarne krvi, brojanje na analizatoru, a po potrebi laborant pregleda razmaz pod mikroskopom",
+        "when": "Razjašnjenje slike kod infekcija, dugotrajne temperature, upalnih i alergijskih stanja, praćenje tokom liječenja",
+        "prep": "Nije potrebna posebna priprema, poželjno je vađenje ujutru prije fizičkog napora",
+        "abnormal": "Pomjeranje odnosa ćelija može biti povezano sa bakterijskom ili virusnom infekcijom, alergijom, parazitima, uzimanjem lijekova i drugim uzrocima. Sliku procjenjuje ljekar uz tegobe i ostale pokazatelje krvi"
+      },
+      "de": {
+        "what": "Auszählung der Anteile der verschiedenen Arten weißer Blutkörperchen in der Probe",
+        "how": "Entnahme von venösem oder kapillarem Blut, Auszählung am Analysegerät, bei Bedarf begutachtet eine Fachkraft den Ausstrich unter dem Mikroskop",
+        "when": "Genauere Einordnung bei Infektionen, anhaltendem Fieber, entzündlichen und allergischen Zuständen, Verlaufskontrolle während einer Behandlung",
+        "prep": "Keine besondere Vorbereitung erforderlich, eine Entnahme am Morgen vor körperlicher Belastung ist vorzuziehen",
+        "abnormal": "Verschiebungen im Verhältnis der Zellen können mit bakteriellen oder viralen Infektionen, Allergien, Parasiten, Medikamenten und anderen Ursachen zusammenhängen. Das Bild beurteilt der Arzt zusammen mit den Beschwerden und den übrigen Blutwerten"
+      },
+      "tr": {
+        "what": "Örnekteki farklı akyuvar türlerinin oranlarının sayımı",
+        "how": "Venöz veya kapiller kan alınır, sayım cihazda yapılır, gerektiğinde laboratuvar uzmanı yaymayı mikroskopta inceler",
+        "when": "Enfeksiyonlarda, uzun süren ateşte, iltihabi ve alerjik durumlarda tablonun netleştirilmesi, tedavi sırasında izlem",
+        "prep": "Özel bir hazırlık gerektirmez, sabah ve fiziksel zorlanmadan önce alınması tercih edilir",
+        "abnormal": "Hücre oranlarındaki kaymalar bakteriyel veya viral enfeksiyon, alerji, parazitler, ilaç kullanımı ve başka nedenlerle ilişkili olabilir. Tabloyu hekim şikayetler ve diğer kan değerleriyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Бројање удјела различитих врста бијелих крвних ћелија у узорку",
+        "how": "Узимање венске или капиларне крви, бројање на анализатору, а по потреби лаборант прегледа размаз под микроскопом",
+        "when": "Разјашњење слике код инфекција, дуготрајне температуре, упалних и алергијских стања, праћење током лијечења",
+        "prep": "Није потребна посебна припрема, пожељно је вађење ујутру прије физичког напора",
+        "abnormal": "Помјерање односа ћелија може бити повезано са бактеријском или вирусном инфекцијом, алергијом, паразитима, узимањем лијекова и другим узроцима. Слику процјењује љекар уз тегобе и остале показатеље крви"
+      }
+    }
+  },
+  {
+    "slug": "erythrocyte-resistance",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Лабораторная проба, показывающая устойчивость эритроцитов к разрушению в солевых растворах разной концентрации",
+        "how": "Кровь помещают в серию растворов с убывающей концентрацией соли и отмечают, в каком из них разрушение эритроцитов начинается и в каком завершается",
+        "when": "Обследование при подозрении на наследственные особенности оболочки эритроцитов, уточнение причины анемии по назначению гематолога",
+        "prep": "Специальной подготовки не требуется; о недавнем переливании крови и приёме препаратов железа нужно сообщить врачу",
+        "abnormal": "Изменение устойчивости эритроцитов может быть связано с наследственными особенностями их оболочки или с другими формами анемии. Результат интерпретирует врач вместе с общим анализом крови и мазком"
+      },
+      "en": {
+        "what": "A laboratory test showing how resistant red blood cells are to breaking down in salt solutions of different concentrations",
+        "how": "Blood is placed in a series of solutions with decreasing salt concentration, and the point where red cell breakdown begins and where it is complete is recorded",
+        "when": "Work-up for suspected inherited features of the red cell membrane, clarifying the cause of anemia as directed by a hematologist",
+        "prep": "No special preparation required; a recent blood transfusion and iron supplements should be reported to the doctor",
+        "abnormal": "A change in the resistance of red blood cells may be related to inherited features of their membrane or to other forms of anemia. The result is interpreted by a doctor together with the blood count and the blood smear"
+      },
+      "sr": {
+        "what": "Laboratorijska proba koja pokazuje otpornost eritrocita na razgradnju u slanim rastvorima različite koncentracije",
+        "how": "Krv se stavlja u niz rastvora sa opadajućom koncentracijom soli i bilježi se u kojem počinje i u kojem se završava razgradnja eritrocita",
+        "when": "Obrada kod sumnje na nasljedne osobine opne eritrocita, razjašnjenje uzroka anemije po uputu hematologa",
+        "prep": "Nije potrebna posebna priprema; o nedavnoj transfuziji krvi i uzimanju preparata gvožđa treba obavijestiti ljekara",
+        "abnormal": "Promjena otpornosti eritrocita može biti povezana sa nasljednim osobinama njihove opne ili sa drugim oblicima anemije. Nalaz tumači ljekar uz kompletnu krvnu sliku i razmaz krvi"
+      },
+      "de": {
+        "what": "Ein Labortest, der zeigt, wie widerstandsfähig rote Blutkörperchen gegenüber dem Zerfall in Salzlösungen unterschiedlicher Konzentration sind",
+        "how": "Das Blut wird in eine Reihe von Lösungen mit abnehmender Salzkonzentration gegeben, und es wird festgehalten, wo der Zerfall der roten Blutkörperchen beginnt und wo er abgeschlossen ist",
+        "when": "Abklärung bei Verdacht auf erbliche Besonderheiten der Erythrozytenmembran, Klärung der Ursache einer Anämie auf Anweisung eines Hämatologen",
+        "prep": "Keine besondere Vorbereitung erforderlich; eine kürzliche Bluttransfusion und Eisenpräparate sind dem Arzt mitzuteilen",
+        "abnormal": "Eine veränderte Widerstandsfähigkeit der roten Blutkörperchen kann mit erblichen Besonderheiten ihrer Membran oder mit anderen Formen der Anämie zusammenhängen. Das Ergebnis interpretiert der Arzt zusammen mit dem Blutbild und dem Blutausstrich"
+      },
+      "tr": {
+        "what": "Alyuvarların farklı yoğunluktaki tuz çözeltilerinde parçalanmaya ne kadar dayanıklı olduğunu gösteren laboratuvar testi",
+        "how": "Kan, tuz yoğunluğu giderek azalan bir dizi çözeltiye konur ve alyuvar parçalanmasının nerede başlayıp nerede tamamlandığı kaydedilir",
+        "when": "Alyuvar zarının kalıtsal özelliklerinden şüphelenildiğinde inceleme, hematolog yönlendirmesiyle anemi nedeninin netleştirilmesi",
+        "prep": "Özel bir hazırlık gerektirmez; yakın zamanda yapılan kan nakli ve demir preparatları hekime bildirilmelidir",
+        "abnormal": "Alyuvarların direncindeki değişim, hücre zarının kalıtsal özellikleriyle veya başka anemi biçimleriyle ilişkili olabilir. Sonucu hekim tam kan sayımı ve kan yaymasıyla birlikte yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Лабораторијска проба која показује отпорност еритроцита на разградњу у сланим растворима различите концентрације",
+        "how": "Крв се ставља у низ раствора са опадајућом концентрацијом соли и биљежи се у којем почиње и у којем се завршава разградња еритроцита",
+        "when": "Обрада код сумње на насљедне особине опне еритроцита, разјашњење узрока анемије по упуту хематолога",
+        "prep": "Није потребна посебна припрема; о недавној трансфузији крви и узимању препарата гвожђа треба обавијестити љекара",
+        "abnormal": "Промјена отпорности еритроцита може бити повезана са насљедним особинама њихове опне или са другим облицима анемије. Налаз тумачи љекар уз комплетну крвну слику и размаз крви"
+      }
+    }
+  },
+  {
+    "slug": "reticulocytes",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Подсчёт молодых эритроцитов, недавно вышедших из костного мозга",
+        "how": "Забор венозной или капиллярной крови, подсчёт на анализаторе или в окрашенном мазке",
+        "when": "Уточнение причины анемии, оценка ответа на лечение препаратами железа или витамином B12, наблюдение после кровопотери и при болезнях костного мозга",
+        "prep": "Специальной подготовки не требуется; о начатом лечении анемии и недавнем переливании крови сообщают врачу",
+        "abnormal": "Повышение или снижение доли молодых эритроцитов может быть связано с активностью костного мозга, нехваткой железа или витаминов, потерей или разрушением клеток крови. Смысл результата определяет врач"
+      },
+      "en": {
+        "what": "A count of young red blood cells that have recently left the bone marrow",
+        "how": "Venous or capillary blood draw, counted on an analyzer or in a stained smear",
+        "when": "Clarifying the cause of anemia, assessing the response to iron or vitamin B12 treatment, follow-up after blood loss and in bone marrow disorders",
+        "prep": "No special preparation required; a started anemia treatment and a recent blood transfusion are reported to the doctor",
+        "abnormal": "A higher or lower share of young red blood cells may be related to bone marrow activity, a lack of iron or vitamins, or the loss or breakdown of blood cells. The meaning of the result is determined by a doctor"
+      },
+      "sr": {
+        "what": "Brojanje mladih eritrocita koji su nedavno napustili koštanu srž",
+        "how": "Uzimanje venske ili kapilarne krvi, brojanje na analizatoru ili u obojenom razmazu",
+        "when": "Razjašnjenje uzroka anemije, procjena odgovora na terapiju gvožđem ili vitaminom B12, praćenje nakon gubitka krvi i kod oboljenja koštane srži",
+        "prep": "Nije potrebna posebna priprema; o započetoj terapiji anemije i nedavnoj transfuziji obavještava se ljekar",
+        "abnormal": "Povećanje ili smanjenje udjela mladih eritrocita može biti povezano sa aktivnošću koštane srži, manjkom gvožđa ili vitamina, gubitkom ili razgradnjom krvnih ćelija. Smisao nalaza određuje ljekar"
+      },
+      "de": {
+        "what": "Auszählung junger roter Blutkörperchen, die das Knochenmark erst kürzlich verlassen haben",
+        "how": "Entnahme von venösem oder kapillarem Blut, Auszählung am Analysegerät oder im gefärbten Ausstrich",
+        "when": "Klärung der Ursache einer Anämie, Beurteilung des Ansprechens auf eine Behandlung mit Eisen oder Vitamin B12, Verlaufskontrolle nach Blutverlust und bei Knochenmarkerkrankungen",
+        "prep": "Keine besondere Vorbereitung erforderlich; eine begonnene Anämiebehandlung und eine kürzliche Bluttransfusion sind dem Arzt mitzuteilen",
+        "abnormal": "Ein höherer oder niedrigerer Anteil junger roter Blutkörperchen kann mit der Aktivität des Knochenmarks, einem Mangel an Eisen oder Vitaminen oder dem Verlust bzw. Abbau von Blutzellen zusammenhängen. Die Bedeutung des Ergebnisses bestimmt der Arzt"
+      },
+      "tr": {
+        "what": "Kemik iliğinden yakın zamanda ayrılmış genç alyuvarların sayımı",
+        "how": "Venöz veya kapiller kan alınır, sayım cihazda veya boyalı yaymada yapılır",
+        "when": "Anemi nedeninin netleştirilmesi, demir veya B12 vitamini tedavisine yanıtın değerlendirilmesi, kan kaybı sonrası ve kemik iliği hastalıklarında izlem",
+        "prep": "Özel bir hazırlık gerektirmez; başlanan anemi tedavisi ve yakın zamanda yapılan kan nakli hekime bildirilir",
+        "abnormal": "Genç alyuvar oranının artması veya azalması kemik iliğinin etkinliği, demir ya da vitamin azlığı, kan hücrelerinin kaybı veya yıkımıyla ilişkili olabilir. Sonucun anlamını hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Бројање младих еритроцита који су недавно напустили коштану срж",
+        "how": "Узимање венске или капиларне крви, бројање на анализатору или у обојеном размазу",
+        "when": "Разјашњење узрока анемије, процјена одговора на терапију гвожђем или витамином Б12, праћење након губитка крви и код обољења коштане сржи",
+        "prep": "Није потребна посебна припрема; о започетој терапији анемије и недавној трансфузији обавјештава се љекар",
+        "abnormal": "Повећање или смањење удјела младих еритроцита може бити повезано са активношћу коштане сржи, мањком гвожђа или витамина, губитком или разградњом крвних ћелија. Смисао налаза одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "complete-blood-count-with-leukocyte-formula",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Расширенный вариант общего анализа крови, где к основным показателям добавлен подсчёт видов лейкоцитов",
+        "how": "Один забор венозной или капиллярной крови, из которого лаборатория получает и клеточные показатели, и распределение лейкоцитов",
+        "when": "Первичное обследование при жалобах, подозрение на инфекцию или воспаление, диспансеризация, подготовка к операции, наблюдение во время терапии",
+        "prep": "Специальной подготовки не требуется, чаще сдают утром, а интенсивные нагрузки накануне лучше отложить",
+        "abnormal": "Сочетание изменений клеточных показателей и соотношения лейкоцитов может быть связано с инфекцией, воспалением, анемией или ответом на лечение. Какие именно показатели значимы, решает врач по всей картине"
+      },
+      "en": {
+        "what": "An extended version of the blood count in which the counting of white cell types is added to the main values",
+        "how": "A single venous or capillary blood draw from which the laboratory obtains both the cell values and the distribution of white cells",
+        "when": "Initial work-up for complaints, suspected infection or inflammation, routine check-ups, preparation for surgery, follow-up during therapy",
+        "prep": "No special preparation required, the sample is usually taken in the morning, and intense exertion the day before is better postponed",
+        "abnormal": "A combination of changes in the cell values and in the white cell ratio may be related to infection, inflammation, anemia, or a response to treatment. Which values matter is decided by a doctor based on the whole picture"
+      },
+      "sr": {
+        "what": "Prošireni oblik krvne slike u kojem je osnovnim pokazateljima dodato brojanje vrsta leukocita",
+        "how": "Jedno vađenje venske ili kapilarne krvi iz kojeg laboratorija dobija i ćelijske pokazatelje i raspodjelu leukocita",
+        "when": "Prva obrada kod tegoba, sumnja na infekciju ili upalu, sistematski pregled, priprema za operaciju, praćenje tokom terapije",
+        "prep": "Nije potrebna posebna priprema, uzorak se najčešće uzima ujutru, a jači fizički napor dan ranije bolje je odložiti",
+        "abnormal": "Kombinacija promjena ćelijskih pokazatelja i odnosa leukocita može biti povezana sa infekcijom, upalom, anemijom ili odgovorom na liječenje. Koji su pokazatelji značajni, odlučuje ljekar prema cjelokupnoj slici"
+      },
+      "de": {
+        "what": "Eine erweiterte Form des Blutbildes, bei der zu den Grundwerten die Auszählung der Leukozytenarten hinzukommt",
+        "how": "Eine einzige Entnahme von venösem oder kapillarem Blut, aus der das Labor sowohl die Zellwerte als auch die Verteilung der weißen Blutkörperchen bestimmt",
+        "when": "Erstabklärung bei Beschwerden, Verdacht auf Infektion oder Entzündung, Vorsorgeuntersuchung, Vorbereitung auf eine Operation, Verlaufskontrolle während einer Therapie",
+        "prep": "Keine besondere Vorbereitung erforderlich, die Entnahme erfolgt meist morgens, starke körperliche Belastung am Vortag sollte verschoben werden",
+        "abnormal": "Eine Kombination aus veränderten Zellwerten und einem verschobenen Leukozytenverhältnis kann mit einer Infektion, Entzündung, Anämie oder einer Reaktion auf die Behandlung zusammenhängen. Welche Werte bedeutsam sind, entscheidet der Arzt anhand des Gesamtbildes"
+      },
+      "tr": {
+        "what": "Temel değerlere akyuvar türlerinin sayımının eklendiği, genişletilmiş kan sayımı",
+        "how": "Tek bir venöz veya kapiller kan alımıyla laboratuvar hem hücre değerlerini hem de akyuvar dağılımını elde eder",
+        "when": "Şikayetlerde ilk inceleme, enfeksiyon veya iltihap şüphesi, genel kontrol, ameliyata hazırlık, tedavi sırasında izlem",
+        "prep": "Özel bir hazırlık gerektirmez, örnek genellikle sabah alınır, bir gün önce ağır fiziksel zorlanmayı ertelemek daha iyidir",
+        "abnormal": "Hücre değerlerindeki değişikliklerin ve akyuvar oranlarındaki kaymaların birlikteliği enfeksiyon, iltihap, anemi veya tedaviye yanıtla ilişkili olabilir. Hangi değerlerin önemli olduğuna hekim bütün tabloya bakarak karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Проширени облик крвне слике у којем је основним показатељима додато бројање врста леукоцита",
+        "how": "Једно вађење венске или капиларне крви из којег лабораторија добија и ћелијске показатеље и расподјелу леукоцита",
+        "when": "Прва обрада код тегоба, сумња на инфекцију или упалу, систематски преглед, припрема за операцију, праћење током терапије",
+        "prep": "Није потребна посебна припрема, узорак се најчешће узима ујутру, а јачи физички напор дан раније боље је одложити",
+        "abnormal": "Комбинација промјена ћелијских показатеља и односа леукоцита може бити повезана са инфекцијом, упалом, анемијом или одговором на лијечење. Који су показатељи значајни, одлучује љекар према цјелокупној слици"
+      }
+    }
+  },
+  {
+    "slug": "platelets",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Подсчёт количества кровяных пластинок, отвечающих за первичную остановку кровотечения",
+        "how": "Забор венозной или капиллярной крови, подсчёт на анализаторе, при необычном результате лаборатория дополнительно проверяет мазок",
+        "when": "Кровоточивость дёсен и лёгкое образование синяков, подготовка к операции, контроль при приёме некоторых препаратов, наблюдение при заболеваниях крови",
+        "prep": "Специальной подготовки не требуется; кровь берут без длительного пережатия вены, иначе результат может исказиться",
+        "abnormal": "Отклонения могут быть связаны с инфекцией, воспалением, приёмом лекарств, заболеваниями костного мозга или особенностями образца, например слипанием клеток в пробирке. Значимость оценивает врач, при необходимости назначая повторный анализ"
+      },
+      "en": {
+        "what": "A count of the blood platelets responsible for the initial stopping of bleeding",
+        "how": "Venous or capillary blood draw, counted on an analyzer; if the result is unusual, the laboratory additionally checks the smear",
+        "when": "Bleeding gums and easy bruising, preparation for surgery, monitoring during certain medications, follow-up in blood disorders",
+        "prep": "No special preparation required; blood is drawn without prolonged tourniquet use, otherwise the result may be distorted",
+        "abnormal": "Deviations may be related to infection, inflammation, medication use, bone marrow disorders, or features of the sample, such as cells clumping in the tube. The significance is assessed by a doctor, who may order a repeat test"
+      },
+      "sr": {
+        "what": "Brojanje krvnih pločica koje su odgovorne za početno zaustavljanje krvarenja",
+        "how": "Uzimanje venske ili kapilarne krvi, brojanje na analizatoru, a kod neobičnog nalaza laboratorija dodatno provjerava razmaz",
+        "when": "Krvarenje desni i lako stvaranje modrica, priprema za operaciju, kontrola tokom uzimanja pojedinih lijekova, praćenje kod bolesti krvi",
+        "prep": "Nije potrebna posebna priprema; krv se vadi bez dužeg stezanja vene, jer se nalaz inače može izmijeniti",
+        "abnormal": "Odstupanja mogu biti povezana sa infekcijom, upalom, uzimanjem lijekova, oboljenjima koštane srži ili osobinama uzorka, na primjer slijepljivanjem ćelija u epruveti. Značaj procjenjuje ljekar, po potrebi uz ponovljenu analizu"
+      },
+      "de": {
+        "what": "Auszählung der Blutplättchen, die für das erste Stillen einer Blutung zuständig sind",
+        "how": "Entnahme von venösem oder kapillarem Blut, Auszählung am Analysegerät; bei einem ungewöhnlichen Ergebnis prüft das Labor zusätzlich den Ausstrich",
+        "when": "Zahnfleischbluten und leichte Blutergüsse, Vorbereitung auf eine Operation, Kontrolle bei bestimmten Medikamenten, Verlaufskontrolle bei Bluterkrankungen",
+        "prep": "Keine besondere Vorbereitung erforderlich; die Entnahme erfolgt ohne längeres Abbinden der Vene, da das Ergebnis sonst verfälscht werden kann",
+        "abnormal": "Abweichungen können mit einer Infektion, Entzündung, Medikamenteneinnahme, Knochenmarkerkrankungen oder Eigenschaften der Probe zusammenhängen, etwa dem Verklumpen der Zellen im Röhrchen. Die Bedeutung beurteilt der Arzt und ordnet bei Bedarf eine Wiederholung an"
+      },
+      "tr": {
+        "what": "Kanamanın ilk durdurulmasından sorumlu kan pulcuklarının sayımı",
+        "how": "Venöz veya kapiller kan alınır ve cihazda sayılır; sonuç alışılmadıksa laboratuvar ayrıca yaymayı kontrol eder",
+        "when": "Diş eti kanaması ve kolay morarma, ameliyata hazırlık, bazı ilaçların kullanımı sırasında kontrol, kan hastalıklarında izlem",
+        "prep": "Özel bir hazırlık gerektirmez; kan, turnike uzun süre tutulmadan alınır, aksi halde sonuç yanıltıcı olabilir",
+        "abnormal": "Sapmalar enfeksiyon, iltihap, ilaç kullanımı, kemik iliği hastalıkları veya örneğe özgü durumlarla, örneğin hücrelerin tüpte kümelenmesiyle ilişkili olabilir. Önemini hekim değerlendirir, gerekirse testi yineletir"
+      },
+      "sr_cyrl": {
+        "what": "Бројање крвних плочица које су одговорне за почетно заустављање крварења",
+        "how": "Узимање венске или капиларне крви, бројање на анализатору, а код необичног налаза лабораторија додатно провјерава размаз",
+        "when": "Крварење десни и лако стварање модрица, припрема за операцију, контрола током узимања појединих лијекова, праћење код болести крви",
+        "prep": "Није потребна посебна припрема; крв се вади без дужег стезања вене, јер се налаз иначе може измијенити",
+        "abnormal": "Одступања могу бити повезана са инфекцијом, упалом, узимањем лијекова, обољењима коштане сржи или особинама узорка, на примјер слијепљивањем ћелија у епрувети. Значај процјењује љекар, по потреби уз поновљену анализу"
+      }
+    }
+  },
+  {
+    "slug": "oral-glucose-tolerance-test",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Нагрузочная проба, показывающая, как организм справляется с усвоением сахара",
+        "how": "Сначала берут кровь натощак, затем пациент выпивает подготовленный лабораторией раствор глюкозы, после чего кровь берут повторно через заданные промежутки; вся проба занимает около двух часов, которые нужно провести в лаборатории",
+        "when": "Скрининг нарушений углеводного обмена, обследование беременных по назначению врача, пограничные результаты глюкозы натощак",
+        "prep": "Натощак 8–12 часов, разрешена вода; накануне обычное питание без строгих диет, в день пробы нельзя есть, курить и активно двигаться, при остром заболевании пробу переносят",
+        "abnormal": "Результат может быть связан с особенностями углеводного обмена, недавней болезнью, приёмом некоторых препаратов или беременностью. Вывод делает врач, обычно с учётом повторного исследования"
+      },
+      "en": {
+        "what": "A challenge test showing how the body handles the absorption of sugar",
+        "how": "Blood is first drawn fasting, then the patient drinks a glucose solution prepared by the laboratory, after which blood is drawn again at set intervals; the whole test takes about two hours, which must be spent at the laboratory",
+        "when": "Screening for carbohydrate metabolism disorders, testing during pregnancy as directed by a doctor, borderline fasting glucose results",
+        "prep": "Fasting for 8–12 hours, water allowed; usual diet without strict restrictions the day before, and on the day of the test no eating, smoking or physical activity, while during an acute illness the test is postponed",
+        "abnormal": "The result may be related to features of carbohydrate metabolism, a recent illness, certain medications, or pregnancy. The conclusion is made by a doctor, usually taking a repeat test into account"
+      },
+      "sr": {
+        "what": "Test opterećenja koji pokazuje kako organizam podnosi unos šećera",
+        "how": "Prvo se vadi krv natašte, zatim pacijent popije rastvor glukoze koji priprema laboratorija, a krv se ponovo vadi u zadatim razmacima; cijeli postupak traje oko dva sata koje treba provesti u laboratoriji",
+        "when": "Skrining poremećaja metabolizma ugljenih hidrata, ispitivanje trudnica po uputu ljekara, granični nalazi glukoze natašte",
+        "prep": "Natašte 8–12 sati, dozvoljena je voda; dan ranije uobičajena ishrana bez strogih dijeta, a na dan testa se ne jede, ne puši i ne vježba, dok se tokom akutne bolesti test odlaže",
+        "abnormal": "Nalaz može biti povezan sa osobinama metabolizma ugljenih hidrata, nedavnom bolešću, uzimanjem pojedinih lijekova ili trudnoćom. Zaključak donosi ljekar, obično uz ponovljeno ispitivanje"
+      },
+      "de": {
+        "what": "Ein Belastungstest, der zeigt, wie der Körper mit der Aufnahme von Zucker zurechtkommt",
+        "how": "Zuerst wird nüchtern Blut abgenommen, dann trinkt die Patientin oder der Patient eine vom Labor vorbereitete Glukoselösung, danach wird in festgelegten Abständen erneut Blut abgenommen; der gesamte Ablauf dauert etwa zwei Stunden, die im Labor verbracht werden",
+        "when": "Screening auf Störungen des Kohlenhydratstoffwechsels, Untersuchung in der Schwangerschaft auf ärztliche Anweisung, grenzwertige Nüchternwerte der Glukose",
+        "prep": "8–12 Stunden nüchtern, Wasser ist erlaubt; am Vortag normale Ernährung ohne strenge Diät, am Testtag nicht essen, nicht rauchen und sich nicht körperlich anstrengen, bei einer akuten Erkrankung wird der Test verschoben",
+        "abnormal": "Das Ergebnis kann mit Besonderheiten des Kohlenhydratstoffwechsels, einer kürzlichen Erkrankung, bestimmten Medikamenten oder einer Schwangerschaft zusammenhängen. Die Schlussfolgerung zieht der Arzt, meist unter Berücksichtigung einer Wiederholung"
+      },
+      "tr": {
+        "what": "Vücudun şekeri ne ölçüde iyi kullandığını gösteren bir yükleme testi",
+        "how": "Önce aç karnına kan alınır, ardından hasta laboratuvarın hazırladığı glikoz çözeltisini içer ve belirlenen aralıklarla yeniden kan alınır; tüm işlem yaklaşık iki saat sürer ve bu süre laboratuvarda geçirilir",
+        "when": "Karbonhidrat metabolizması bozukluklarının taranması, hekim yönlendirmesiyle gebelikte inceleme, sınırda açlık glikoz sonuçları",
+        "prep": "8–12 saat açlık, su içilebilir; bir gün önce katı diyet yapmadan olağan beslenme, test günü yememek, sigara içmemek ve fiziksel olarak zorlanmamak, akut hastalık sırasında test ertelenir",
+        "abnormal": "Sonuç karbonhidrat metabolizmasının özellikleri, yakın zamanda geçirilen bir hastalık, bazı ilaçlar veya gebelikle ilişkili olabilir. Kararı hekim, genellikle testin tekrarını da dikkate alarak verir"
+      },
+      "sr_cyrl": {
+        "what": "Тест оптерећења који показује како организам подноси унос шећера",
+        "how": "Прво се вади крв наташте, затим пацијент попије раствор глукозе који припрема лабораторија, а крв се поново вади у задатим размацима; цијели поступак траје око два сата које треба провести у лабораторији",
+        "when": "Скрининг поремећаја метаболизма угљених хидрата, испитивање трудница по упуту љекара, гранични налази глукозе наташте",
+        "prep": "Наташте 8–12 сати, дозвољена је вода; дан раније уобичајена исхрана без строгих дијета, а на дан теста се не једе, не пуши и не вјежба, док се током акутне болести тест одлаже",
+        "abnormal": "Налаз може бити повезан са особинама метаболизма угљених хидрата, недавном болешћу, узимањем појединих лијекова или трудноћом. Закључак доноси љекар, обично уз поновљено испитивање"
+      }
+    }
+  }
+]

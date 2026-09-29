@@ -1,0 +1,818 @@
+[
+  {
+    "slug": "magnetic-therapy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Физиотерапевтическая процедура, при которой на выбранный участок тела действует импульсное магнитное поле, проходящее через одежду и гипс",
+        "how": "Пациент лежит или сидит, конечность помещают в кольцевой индуктор либо на зону кладут плоский аппликатор; само поле не ощущается, кожа не нагревается, раздеваться обычно не нужно",
+        "when": "Боль и отёк после травм, восстановление после переломов, длительные боли в суставах и позвоночнике, реабилитация по назначению физиотерапевта",
+        "prep": "Не требуется; с зоны воздействия снимают металлические украшения и часы, а о кардиостимуляторе, других вживлённых электронных устройствах, металлической фиксации в зоне и о беременности говорят врачу заранее",
+        "abnormal": "Действие курса оценивают после нескольких процедур по динамике жалоб. При усилении боли или новых жалобах процедуры продолжают только после осмотра врача"
+      },
+      "en": {
+        "what": "A physiotherapy procedure in which a pulsed magnetic field acts on the selected part of the body and passes through clothing and a plaster cast",
+        "how": "The patient lies or sits while the limb is placed inside a ring coil or a flat applicator is laid on the area; the field itself is not felt and the skin does not heat up, so undressing is usually unnecessary",
+        "when": "Pain and swelling after injuries, recovery after fractures, long-standing joint and spine pain, rehabilitation prescribed by a physiotherapist",
+        "prep": "None needed; metal jewellery and a watch are removed from the treated area, and a pacemaker, other implanted electronic devices, metal fixation in the area and pregnancy are reported to the doctor beforehand",
+        "abnormal": "The effect of a course is judged after several sessions from how the symptoms change. If pain increases or new complaints appear, sessions continue only after a doctor has examined the patient"
+      },
+      "sr": {
+        "what": "Fizikalna procedura kod koje impulsno magnetno polje djeluje na izabrani dio tijela i prolazi kroz odjeću i gips",
+        "how": "Pacijent leži ili sjedi, ekstremitet se stavlja u prstenasti induktor ili se na zonu položi pločasti aplikator; samo polje se ne osjeća i koža se ne zagrijava, pa svlačenje obično nije potrebno",
+        "when": "Bol i otok poslije povreda, oporavak nakon preloma, dugotrajni bolovi u zglobovima i kičmi, rehabilitacija po preporuci fizijatra",
+        "prep": "Nije potrebna; sa zone se skidaju metalni nakit i sat, a unaprijed se ljekaru kaže za pejsmejker, druge ugrađene elektronske uređaje, metalnu fiksaciju u zoni i za trudnoću",
+        "abnormal": "Djelovanje ciklusa procjenjuje se poslije nekoliko procedura, prema promjeni tegoba. Ako se bol pojača ili se jave nove tegobe, procedure se nastavljaju tek nakon pregleda ljekara"
+      },
+      "de": {
+        "what": "Physikalische Behandlung, bei der ein gepulstes Magnetfeld auf den ausgewählten Körperbereich einwirkt und dabei Kleidung und Gips durchdringt",
+        "how": "Der Patient liegt oder sitzt, die Gliedmaße wird in eine Ringspule gelegt oder ein flacher Applikator auf die Stelle gelegt; das Feld selbst ist nicht spürbar und die Haut erwärmt sich nicht, Ausziehen ist meist nicht nötig",
+        "when": "Schmerz und Schwellung nach Verletzungen, Erholung nach Knochenbrüchen, anhaltende Gelenk- und Rückenschmerzen, Rehabilitation auf Anordnung des Physiotherapeuten",
+        "prep": "Keine; Metallschmuck und Uhr werden aus dem Behandlungsbereich abgelegt, und über Herzschrittmacher, andere implantierte elektronische Geräte, Metall im Behandlungsbereich sowie eine Schwangerschaft wird vorab informiert",
+        "abnormal": "Die Wirkung einer Serie wird nach mehreren Sitzungen am Verlauf der Beschwerden beurteilt. Bei zunehmenden Schmerzen oder neuen Beschwerden werden die Sitzungen erst nach ärztlicher Untersuchung fortgesetzt"
+      },
+      "tr": {
+        "what": "Seçilen vücut bölgesine darbeli manyetik alanın uygulandığı, alanın giysi ve alçıdan geçebildiği bir fizik tedavi yöntemi",
+        "how": "Hasta yatar ya da oturur, uzuv halka biçimli sargının içine yerleştirilir veya bölgeye yassı bir başlık konur; alanın kendisi hissedilmez, cilt ısınmaz, genellikle soyunmak gerekmez",
+        "when": "Yaralanma sonrası ağrı ve şişlik, kırık sonrası iyileşme dönemi, uzun süreli eklem ve omurga ağrıları, fizyoterapist tarafından planlanan rehabilitasyon",
+        "prep": "Hazırlık gerekmez; uygulama bölgesindeki metal takı ve saat çıkarılır, kalp pili, vücuttaki diğer elektronik cihazlar, bölgedeki metal tespit malzemeleri ve gebelik önceden hekime bildirilir",
+        "abnormal": "Seansların etkisi birkaç uygulamadan sonra şikayetlerin seyrine göre değerlendirilir. Ağrı artarsa veya yeni şikayetler ortaya çıkarsa seanslara ancak hekim muayenesinden sonra devam edilir"
+      },
+      "sr_cyrl": {
+        "what": "Физикална процедура код које импулсно магнетно поље дјелује на изабрани дио тијела и пролази кроз одјећу и гипс",
+        "how": "Пацијент лежи или сједи, екстремитет се ставља у прстенасти индуктор или се на зону положи плочасти апликатор; само поље се не осјећа и кожа се не загријава, па свлачење обично није потребно",
+        "when": "Бол и оток послије повреда, опоравак након прелома, дуготрајни болови у зглобовима и кичми, рехабилитација по препоруци физијатра",
+        "prep": "Није потребна; са зоне се скидају метални накит и сат, а унапријед се љекару каже за пејсмејкер, друге уграђене електронске уређаје, металну фиксацију у зони и за трудноћу",
+        "abnormal": "Дјеловање циклуса процјењује се послије неколико процедура, према промјени тегоба. Ако се бол појача или се јаве нове тегобе, процедуре се настављају тек након прегледа љекара"
+      }
+    }
+  },
+  {
+    "slug": "electrophoresis",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Введение лекарственного средства через кожу постоянным током: препарат наносят на прокладку под электродом, и он поступает в поверхностные ткани зоны воздействия",
+        "how": "На кожу кладут влажные прокладки с электродами и фиксируют их, ток увеличивают постепенно; под электродами ощущается лёгкое покалывание и тепло, боли и жжения быть не должно",
+        "when": "Боль и воспаление в суставах, мышцах и позвоночнике, последствия травм, рубцы и спайки, когда врач хочет подвести препарат местно",
+        "prep": "Кожа под электродами должна быть чистой и целой, без крема; врачу сообщают об аллергии на лекарства, кардиостимуляторе и металлических конструкциях в зоне, сам препарат выбирает врач",
+        "abnormal": "Кратковременное покраснение под электродами обычно проходит за час-другой. Стойкое раздражение кожи, сыпь или усиление боли — повод прервать курс и показаться врачу"
+      },
+      "en": {
+        "what": "Delivery of a medicine through the skin with direct current: the drug is put on the pad under the electrode and passes into the surface tissues of the treated area",
+        "how": "Moist pads with electrodes are placed on the skin and fixed, the current is raised gradually; light tingling and warmth are felt under the electrodes, while pain or burning should not occur",
+        "when": "Pain and inflammation in joints, muscles and the spine, consequences of injuries, scars and adhesions, when the doctor wants the medicine delivered locally",
+        "prep": "The skin under the electrodes must be clean and intact, without cream; drug allergies, a pacemaker and metal fixation in the area are reported to the doctor, and the medicine itself is chosen by the doctor",
+        "abnormal": "Short-lived redness under the electrodes usually fades within an hour or two. Persistent skin irritation, a rash or increasing pain is a reason to stop the course and see a doctor"
+      },
+      "sr": {
+        "what": "Unošenje lijeka kroz kožu jednosmjernom strujom: lijek se stavlja na oblogu ispod elektrode i ulazi u površinska tkiva tretirane zone",
+        "how": "Na kožu se postavljaju vlažne obloge sa elektrodama i učvrste se, a struja se pojačava postepeno; ispod elektroda se osjeća blago peckanje i toplota, dok bol i žarenje ne treba da se jave",
+        "when": "Bol i upala u zglobovima, mišićima i kičmi, posljedice povreda, ožiljci i priraslice, kada ljekar želi da lijek djeluje lokalno",
+        "prep": "Koža ispod elektroda mora biti čista i bez oštećenja, bez kreme; ljekaru se kaže za alergiju na lijekove, pejsmejker i metalnu fiksaciju u zoni, a izbor lijeka određuje ljekar",
+        "abnormal": "Kratkotrajno crvenilo ispod elektroda obično nestane za sat ili dva. Trajna iritacija kože, osip ili pojačan bol razlog su da se ciklus prekine i da se pacijent javi ljekaru"
+      },
+      "de": {
+        "what": "Einbringen eines Medikaments durch die Haut mittels Gleichstrom: das Mittel wird auf die Auflage unter der Elektrode gegeben und gelangt in die oberflächlichen Gewebe des behandelten Bereichs",
+        "how": "Feuchte Auflagen mit Elektroden werden auf die Haut gelegt und fixiert, der Strom wird langsam gesteigert; unter den Elektroden spürt man leichtes Kribbeln und Wärme, Schmerz oder Brennen sollten nicht auftreten",
+        "when": "Schmerzen und Entzündungen in Gelenken, Muskeln und Wirbelsäule, Folgen von Verletzungen, Narben und Verwachsungen, wenn das Mittel örtlich wirken soll",
+        "prep": "Die Haut unter den Elektroden muss sauber und unverletzt sein, ohne Creme; Arzneimittelallergien, ein Herzschrittmacher und Metall im Behandlungsbereich werden vorher mitgeteilt, das Mittel wählt der Arzt",
+        "abnormal": "Kurzzeitige Rötung unter den Elektroden klingt meist in ein bis zwei Stunden ab. Anhaltende Hautreizung, Ausschlag oder zunehmender Schmerz sind ein Grund, die Serie zu unterbrechen und den Arzt aufzusuchen"
+      },
+      "tr": {
+        "what": "Doğru akım yardımıyla ilacın ciltten geçirilmesi: ilaç elektrodun altındaki pede sürülür ve uygulanan bölgenin yüzeyel dokularına geçer",
+        "how": "Cilde nemli pedler ve elektrotlar yerleştirilip sabitlenir, akım kademeli olarak artırılır; elektrotların altında hafif karıncalanma ve sıcaklık hissedilir, ağrı ya da yanma olmamalıdır",
+        "when": "Eklem, kas ve omurga ağrısı ile iltihabı, yaralanma sonrası durumlar, nedbe ve yapışıklıklar, ilacın bölgesel olarak verilmek istendiği durumlar",
+        "prep": "Elektrotların altındaki cilt temiz ve bütün olmalı, krem sürülmemelidir; ilaç alerjisi, kalp pili ve bölgedeki metal implantlar hekime bildirilir, ilacı hekim seçer",
+        "abnormal": "Elektrot altındaki kısa süreli kızarıklık genellikle bir iki saat içinde geçer. Kalıcı cilt tahrişi, döküntü veya artan ağrı seansların durdurulup hekime başvurulmasını gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уношење лијека кроз кожу једносмјерном струјом: лијек се ставља на облогу испод електроде и улази у површинска ткива третиране зоне",
+        "how": "На кожу се постављају влажне облоге са електродама и учврсте се, а струја се појачава постепено; испод електрода се осјећа благо пецкање и топлота, док бол и жарење не треба да се јаве",
+        "when": "Бол и упала у зглобовима, мишићима и кичми, посљедице повреда, ожиљци и прираслице, када љекар жели да лијек дјелује локално",
+        "prep": "Кожа испод електрода мора бити чиста и без оштећења, без креме; љекару се каже за алергију на лијекове, пејсмејкер и металну фиксацију у зони, а избор лијека одређује љекар",
+        "abnormal": "Краткотрајно црвенило испод електрода обично нестане за сат или два. Трајна иритација коже, осип или појачан бол разлог су да се циклус прекине и да се пацијент јави љекару"
+      }
+    }
+  },
+  {
+    "slug": "diadynamic-currents",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Физиотерапия импульсными токами низкой частоты, которые подают на кожу через электроды и которые ощущаются как ритмичная вибрация в зоне боли",
+        "how": "Электроды фиксируют на болезненном участке и плавно увеличивают силу тока до отчётливого покалывания и подрагивания мышц под ними; о жжении или боли нужно сразу сказать физиотерапевту",
+        "when": "Острая и подострая боль в мышцах и суставах, боль в пояснице и шее, последствия ушибов и растяжений, невралгии",
+        "prep": "Специальная подготовка не нужна; кожа под электродами должна быть сухой и целой, без крема, металлические украшения с зоны снимают, а о кардиостимуляторе, металле в зоне и беременности предупреждают заранее — допустимость решает врач",
+        "abnormal": "К ощущению тока в ходе сеанса обычно привыкают, и силу подстраивают — это нормально. Эффект курса оценивают после нескольких процедур, а при усилении боли или онемении процедуры продолжают только после осмотра врача"
+      },
+      "en": {
+        "what": "Physiotherapy with low-frequency pulsed currents delivered to the skin through electrodes and felt as a rhythmic vibration in the painful area",
+        "how": "Electrodes are fixed over the painful spot and the current is raised smoothly until distinct tingling and twitching of the muscles underneath is felt; any burning or pain should be reported to the physiotherapist at once",
+        "when": "Acute and subacute muscle and joint pain, low back and neck pain, consequences of bruises and sprains, neuralgia",
+        "prep": "No special preparation; the skin under the electrodes must be dry and intact, without cream, metal jewellery is removed from the area, and a pacemaker, metal in the area or pregnancy is mentioned in advance, with the doctor deciding whether the method is suitable",
+        "abnormal": "The sensation of the current usually becomes less noticeable during a session and the intensity is adjusted, which is normal. The effect of a course is judged after several sessions, and with increasing pain or numbness sessions continue only after a medical examination"
+      },
+      "sr": {
+        "what": "Fizikalna terapija impulsnim strujama niske frekvencije koje se preko elektroda dovode na kožu i osjećaju se kao ritmična vibracija u bolnoj zoni",
+        "how": "Elektrode se učvrste na bolnom mjestu i jačina struje se postepeno pojačava do jasnog peckanja i titranja mišića ispod njih; žarenje ili bol odmah treba reći fizioterapeutu",
+        "when": "Akutan i subakutan bol u mišićima i zglobovima, bol u krstima i vratu, posljedice nagnječenja i istegnuća, neuralgije",
+        "prep": "Posebna priprema nije potrebna; koža ispod elektroda mora biti suva i bez oštećenja, bez kreme, metalni nakit se skida sa zone, a za pejsmejker, metal u zoni i trudnoću se kaže unaprijed, jer o primjeni odlučuje ljekar",
+        "abnormal": "Na osjećaj struje se tokom seanse obično navikne i jačina se prilagođava, što je uobičajeno. Djelovanje ciklusa procjenjuje se poslije nekoliko procedura, a ako se bol pojača ili se javi utrnulost, procedure se nastavljaju tek nakon pregleda ljekara"
+      },
+      "de": {
+        "what": "Physikalische Therapie mit niederfrequenten Impulsströmen, die über Elektroden auf die Haut gegeben werden und als rhythmisches Vibrieren im schmerzhaften Bereich spürbar sind",
+        "how": "Die Elektroden werden über der schmerzhaften Stelle fixiert und die Stromstärke langsam bis zu deutlichem Kribbeln und Zucken der darunterliegenden Muskeln gesteigert; Brennen oder Schmerz sollte dem Physiotherapeuten sofort gemeldet werden",
+        "when": "Akute und subakute Muskel- und Gelenkschmerzen, Kreuz- und Nackenschmerzen, Folgen von Prellungen und Zerrungen, Neuralgien",
+        "prep": "Keine besondere Vorbereitung; die Haut unter den Elektroden muss trocken und unverletzt sein, ohne Creme, Metallschmuck wird abgelegt, und Herzschrittmacher, Metall im Bereich oder eine Schwangerschaft werden vorher genannt, über die Anwendbarkeit entscheidet der Arzt",
+        "abnormal": "Dass die Stromempfindung während der Sitzung nachlässt und die Intensität nachgeregelt wird, ist üblich. Die Wirkung der Serie wird nach mehreren Sitzungen beurteilt, bei zunehmendem Schmerz oder Taubheitsgefühl wird erst nach ärztlicher Untersuchung fortgefahren"
+      },
+      "tr": {
+        "what": "Elektrotlar aracılığıyla cilde verilen ve ağrılı bölgede ritmik titreşim olarak hissedilen düşük frekanslı darbeli akımlarla yapılan fizik tedavi",
+        "how": "Elektrotlar ağrılı bölgeye sabitlenir ve akım, altındaki kaslarda belirgin karıncalanma ve seğirme hissedilene kadar yavaşça artırılır; yanma veya ağrı hemen fizyoterapiste söylenmelidir",
+        "when": "Kas ve eklemlerde akut ve subakut ağrı, bel ve boyun ağrısı, ezilme ve burkulma sonrası durumlar, nevraljiler",
+        "prep": "Özel hazırlık gerekmez; elektrotların altındaki cilt kuru ve bütün olmalı, krem sürülmemeli, bölgedeki metal takılar çıkarılmalı, kalp pili, bölgedeki metal ve gebelik önceden bildirilmelidir, uygunluğuna hekim karar verir",
+        "abnormal": "Seans sırasında akım hissinin azalması ve şiddetin yeniden ayarlanması olağandır. Seansların etkisi birkaç uygulamadan sonra değerlendirilir, ağrı artarsa veya uyuşma olursa uygulamaya ancak hekim muayenesinden sonra devam edilir"
+      },
+      "sr_cyrl": {
+        "what": "Физикална терапија импулсним струјама ниске фреквенције које се преко електрода доводе на кожу и осјећају се као ритмична вибрација у болној зони",
+        "how": "Електроде се учврсте на болном мјесту и јачина струје се постепено појачава до јасног пецкања и титрања мишића испод њих; жарење или бол одмах треба рећи физиотерапеуту",
+        "when": "Акутан и субакутан бол у мишићима и зглобовима, бол у крстима и врату, посљедице нагњечења и истегнућа, неуралгије",
+        "prep": "Посебна припрема није потребна; кожа испод електрода мора бити сува и без оштећења, без креме, метални накит се скида са зоне, а за пејсмејкер, метал у зони и трудноћу се каже унапријед, јер о примјени одлучује љекар",
+        "abnormal": "На осјећај струје се током сеансе обично навикне и јачина се прилагођава, што је уобичајено. Дјеловање циклуса процјењује се послије неколико процедура, а ако се бол појача или се јави утрнулост, процедуре се настављају тек након прегледа љекара"
+      }
+    }
+  },
+  {
+    "slug": "interferential-currents",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Физиотерапия, при которой два тока средней частоты пересекаются в глубине тканей и создают низкочастотное воздействие в месте пересечения",
+        "how": "Вокруг болезненной зоны обычно накладывают четыре электрода так, чтобы токи пересеклись под ними; ощущается мягкая глубокая пульсация, кожа раздражается меньше, чем при низкочастотных токах",
+        "when": "Глубокая боль в крупных суставах и позвоночнике, мышечный спазм, боль и отёк после травм, длительная боль в плече и колене",
+        "prep": "Подготовки не требуется; одежду с зоны снимают, кожу оставляют сухой и без крема, а о кардиостимуляторе, металлических имплантатах в зоне и беременности говорят до начала — допустимость решает врач",
+        "abnormal": "Ощущение пульсации во время сеанса ожидаемо, после него зона может немного покраснеть. Результат курса оценивают после нескольких процедур, а при усилении боли или новых жалобах нужен осмотр врача"
+      },
+      "en": {
+        "what": "Physiotherapy in which two medium-frequency currents cross deep inside the tissue and produce a low-frequency effect where they intersect",
+        "how": "Usually four electrodes are placed around the painful area so that the currents cross underneath; a soft deep pulsation is felt and the skin is irritated less than with low-frequency currents",
+        "when": "Deep pain in large joints and the spine, muscle spasm, pain and swelling after injuries, long-lasting shoulder and knee pain",
+        "prep": "No preparation is needed; clothing is removed from the area, the skin is left dry and free of cream, and a pacemaker, metal implants in the area or pregnancy are mentioned before the start, with the doctor deciding on suitability",
+        "abnormal": "The pulsing sensation during a session is expected, and the area may be slightly red afterwards. The result of a course is judged after several sessions, and increasing pain or new complaints call for a medical examination"
+      },
+      "sr": {
+        "what": "Fizikalna terapija kod koje se dvije struje srednje frekvencije ukrštaju u dubini tkiva i na mjestu ukrštanja stvaraju niskofrekventno djelovanje",
+        "how": "Oko bolne zone obično se postavljaju četiri elektrode tako da se struje ukrste ispod njih; osjeća se blaga duboka pulsacija, a koža se nadražuje manje nego kod niskofrekventnih struja",
+        "when": "Dubok bol u velikim zglobovima i kičmi, grč mišića, bol i otok poslije povreda, dugotrajan bol u ramenu i koljenu",
+        "prep": "Priprema nije potrebna; odjeća se skida sa zone, koža ostaje suva i bez kreme, a za pejsmejker, metalne implantate u zoni i trudnoću kaže se prije početka, jer o primjeni odlučuje ljekar",
+        "abnormal": "Osjećaj pulsiranja tokom seanse je očekivan, a poslije nje zona može biti blago crvena. Rezultat ciklusa procjenjuje se poslije nekoliko procedura, a pojačan bol ili nove tegobe traže pregled ljekara"
+      },
+      "de": {
+        "what": "Physikalische Therapie, bei der sich zwei mittelfrequente Ströme in der Tiefe des Gewebes kreuzen und an der Kreuzungsstelle eine niederfrequente Wirkung erzeugen",
+        "how": "Meist werden vier Elektroden um den schmerzhaften Bereich gesetzt, sodass sich die Ströme darunter kreuzen; spürbar ist ein weiches, tiefes Pulsieren, die Haut wird weniger gereizt als bei niederfrequenten Strömen",
+        "when": "Tiefer Schmerz in großen Gelenken und der Wirbelsäule, Muskelverspannung, Schmerz und Schwellung nach Verletzungen, lang anhaltende Schulter- und Knieschmerzen",
+        "prep": "Keine Vorbereitung nötig; die Kleidung wird vom Bereich entfernt, die Haut bleibt trocken und ohne Creme, Herzschrittmacher, Metallimplantate im Bereich oder eine Schwangerschaft werden vor Beginn genannt, über die Anwendbarkeit entscheidet der Arzt",
+        "abnormal": "Das Pulsieren während der Sitzung ist zu erwarten, danach kann der Bereich leicht gerötet sein. Das Ergebnis der Serie wird nach mehreren Sitzungen beurteilt, zunehmender Schmerz oder neue Beschwerden erfordern eine ärztliche Untersuchung"
+      },
+      "tr": {
+        "what": "İki orta frekanslı akımın doku derinliğinde kesiştiği ve kesişme yerinde düşük frekanslı bir etki oluşturduğu fizik tedavi yöntemi",
+        "how": "Genellikle ağrılı bölgenin çevresine, akımlar altta kesişecek biçimde dört elektrot yerleştirilir; yumuşak ve derin bir zonklama hissedilir, cilt düşük frekanslı akımlara göre daha az tahriş olur",
+        "when": "Büyük eklemlerde ve omurgada derin ağrı, kas spazmı, yaralanma sonrası ağrı ve şişlik, uzun süreli omuz ve diz ağrısı",
+        "prep": "Hazırlık gerekmez; bölgedeki giysiler çıkarılır, cilt kuru ve kremsiz bırakılır, kalp pili, bölgedeki metal implantlar ve gebelik başlamadan önce bildirilir, uygunluğuna hekim karar verir",
+        "abnormal": "Seans sırasında zonklama hissi beklenen bir durumdur, sonrasında bölge hafif kızarabilir. Seansların sonucu birkaç uygulamadan sonra değerlendirilir, ağrının artması veya yeni şikayetler hekim muayenesini gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Физикална терапија код које се двије струје средње фреквенције укрштају у дубини ткива и на мјесту укрштања стварају нискофреквентно дјеловање",
+        "how": "Око болне зоне обично се постављају четири електроде тако да се струје укрсте испод њих; осјећа се блага дубока пулсација, а кожа се надражује мање него код нискофреквентних струја",
+        "when": "Дубок бол у великим зглобовима и кичми, грч мишића, бол и оток послије повреда, дуготрајан бол у рамену и кољену",
+        "prep": "Припрема није потребна; одјећа се скида са зоне, кожа остаје сува и без креме, а за пејсмејкер, металне имплантате у зони и трудноћу каже се прије почетка, јер о примјени одлучује љекар",
+        "abnormal": "Осјећај пулсирања током сеансе је очекиван, а послије ње зона може бити благо црвена. Резултат циклуса процјењује се послије неколико процедура, а појачан бол или нове тегобе траже преглед љекара"
+      }
+    }
+  },
+  {
+    "slug": "active-and-resistance-exercises",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Занятие лечебной физкультурой, где пациент сам выполняет движения, а часть упражнений делает против сопротивления — рук терапевта, эластичной ленты или отягощения",
+        "how": "Физиотерапевт показывает упражнение, следит за техникой и дыханием и подбирает сопротивление так, чтобы движение оставалось контролируемым; занятие проходит в спортивной одежде",
+        "when": "Слабость мышц после травм, операций и длительной неподвижности, восстановление объёма движений в суставе, программы реабилитации и подготовка к возвращению к нагрузкам",
+        "prep": "Удобная одежда и обувь, не заниматься сразу после плотной еды; заранее сказать терапевту о боли, головокружении и об ограничениях нагрузки, назначенных лечащим врачом",
+        "abnormal": "Умеренная мышечная усталость на следующий день ожидаема, прогресс оценивают через несколько занятий. Резкая боль, отёк сустава или головокружение — повод прервать занятие и показаться врачу"
+      },
+      "en": {
+        "what": "A therapeutic exercise session in which the patient performs movements independently and does part of the exercises against resistance from the therapist's hands, an elastic band or a weight",
+        "how": "The physiotherapist demonstrates the exercise, watches technique and breathing and sets the resistance so that the movement stays controlled; the session is done in sports clothing",
+        "when": "Muscle weakness after injuries, surgery and long immobilisation, restoring the range of motion in a joint, rehabilitation programmes and preparation for returning to physical loads",
+        "prep": "Comfortable clothes and shoes, no training straight after a heavy meal; the therapist is told in advance about pain, dizziness and any load restrictions set by the treating doctor",
+        "abnormal": "Moderate muscle fatigue the next day is expected, and progress is judged after several sessions. Sharp pain, joint swelling or dizziness is a reason to stop the session and see a doctor"
+      },
+      "sr": {
+        "what": "Termin kineziterapije na kojem pacijent sam izvodi pokrete, a dio vježbi radi protiv otpora ruku terapeuta, elastične trake ili tega",
+        "how": "Fizioterapeut pokaže vježbu, prati tehniku i disanje i bira otpor tako da pokret ostane kontrolisan; vježba se u sportskoj odjeći",
+        "when": "Slabost mišića poslije povreda, operacija i dugotrajnog mirovanja, vraćanje obima pokreta u zglobu, rehabilitacioni programi i priprema za povratak opterećenjima",
+        "prep": "Udobna odjeća i obuća, ne vježbati neposredno poslije obilnog obroka; terapeutu unaprijed reći za bol, vrtoglavicu i za ograničenja opterećenja koja je odredio ljekar",
+        "abnormal": "Umjeren zamor mišića sjutradan je očekivan, a napredak se procjenjuje poslije nekoliko termina. Oštar bol, otok zgloba ili vrtoglavica razlog su da se vježbanje prekine i da se pacijent javi ljekaru"
+      },
+      "de": {
+        "what": "Eine Übungseinheit, in der der Patient die Bewegungen selbst ausführt und einen Teil der Übungen gegen Widerstand durch die Hände des Therapeuten, ein Band oder ein Gewicht macht",
+        "how": "Der Physiotherapeut zeigt die Übung, achtet auf Technik und Atmung und wählt den Widerstand so, dass die Bewegung kontrolliert bleibt; geübt wird in Sportkleidung",
+        "when": "Muskelschwäche nach Verletzungen, Operationen und langer Ruhigstellung, Wiederherstellung des Bewegungsumfangs eines Gelenks, Rehabilitationsprogramme und Vorbereitung auf wieder höhere Belastung",
+        "prep": "Bequeme Kleidung und Schuhe, nicht direkt nach einer großen Mahlzeit üben; Schmerzen, Schwindel und ärztlich verordnete Belastungsgrenzen werden dem Therapeuten vorher mitgeteilt",
+        "abnormal": "Mäßiger Muskelkater am Folgetag ist zu erwarten, der Fortschritt wird nach mehreren Einheiten beurteilt. Heftiger Schmerz, ein geschwollenes Gelenk oder Schwindel sind ein Grund, die Einheit abzubrechen und den Arzt aufzusuchen"
+      },
+      "tr": {
+        "what": "Hastanın hareketleri kendi yaptığı, egzersizlerin bir bölümünü terapistin eli, elastik bant veya ağırlık gibi bir dirence karşı gerçekleştirdiği egzersiz seansı",
+        "how": "Fizyoterapist egzersizi gösterir, tekniği ve nefesi izler ve direnci hareket kontrollü kalacak biçimde ayarlar; seans spor kıyafetiyle yapılır",
+        "when": "Yaralanma, ameliyat ve uzun süreli hareketsizlik sonrası kas güçsüzlüğü, eklem hareket açıklığının geri kazanılması, rehabilitasyon programları ve yüklenmeye dönüş hazırlığı",
+        "prep": "Rahat kıyafet ve ayakkabı, ağır bir yemekten hemen sonra çalışmamak; ağrı, baş dönmesi ve hekimin koyduğu yüklenme kısıtlamaları terapiste önceden bildirilir",
+        "abnormal": "Ertesi gün orta düzeyde kas yorgunluğu beklenen bir durumdur, ilerleme birkaç seans sonra değerlendirilir. Keskin ağrı, eklemde şişlik veya baş dönmesi seansın durdurulup hekime başvurulmasını gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Термин кинезитерапије на којем пацијент сам изводи покрете, а дио вјежби ради против отпора руку терапеута, еластичне траке или тега",
+        "how": "Физиотерапеут покаже вјежбу, прати технику и дисање и бира отпор тако да покрет остане контролисан; вјежба се у спортској одјећи",
+        "when": "Слабост мишића послије повреда, операција и дуготрајног мировања, враћање обима покрета у зглобу, рехабилитациони програми и припрема за повратак оптерећењима",
+        "prep": "Удобна одјећа и обућа, не вјежбати непосредно послије обилног оброка; терапеуту унапријед рећи за бол, вртоглавицу и за ограничења оптерећења која је одредио љекар",
+        "abnormal": "Умјерен замор мишића сјутрадан је очекиван, а напредак се процјењује послије неколико термина. Оштар бол, оток зглоба или вртоглавица разлог су да се вјежбање прекине и да се пацијент јави љекару"
+      }
+    }
+  },
+  {
+    "slug": "activities-of-daily-living-training",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обучение бытовым действиям — одеванию, еде, гигиене, пересаживанию с кровати — с учётом нарушенных двигательных схем",
+        "how": "Терапевт разбирает действие на шаги, показывает безопасный способ его выполнения и подбирает приёмы и приспособления под возможности пациента; отработку продолжают дома",
+        "when": "Восстановление после инсульта и травм, неврологические и ортопедические нарушения движений, снижение самостоятельности в быту, подготовка к выписке домой",
+        "prep": "Удобная одежда и привычная обувь; полезно принести используемые приспособления (трость, ортез) и список того, что дома не получается",
+        "abnormal": "Прогресс оценивают по тому, что удаётся делать самостоятельно, обычно через несколько занятий. Если навык теряется или появляются новые нарушения движений, нужен осмотр врача"
+      },
+      "en": {
+        "what": "Training in everyday tasks such as dressing, eating, hygiene and getting out of bed, adapted to disturbed movement patterns",
+        "how": "The therapist breaks the task into steps, shows a safe way to perform it and selects techniques and aids that match the patient's abilities; practice continues at home",
+        "when": "Recovery after stroke and injuries, neurological and orthopaedic movement disorders, reduced independence in everyday life, preparation for discharge home",
+        "prep": "Comfortable clothes and the usual shoes; it helps to bring the aids already in use (a cane, a brace) and a list of what does not work at home",
+        "abnormal": "Progress is measured by what the patient manages alone, usually after several sessions. If a skill is lost or new movement problems appear, a medical examination is needed"
+      },
+      "sr": {
+        "what": "Uvježbavanje svakodnevnih radnji, kao što su oblačenje, ishrana, higijena i ustajanje iz kreveta, prilagođeno poremećenim obrascima pokreta",
+        "how": "Terapeut radnju razloži na korake, pokaže bezbjedan način izvođenja i bira tehnike i pomagala prema mogućnostima pacijenta; uvježbavanje se nastavlja kod kuće",
+        "when": "Oporavak poslije moždanog udara i povreda, neurološki i ortopedski poremećaji pokreta, smanjena samostalnost u svakodnevnom životu, priprema za odlazak kući",
+        "prep": "Udobna odjeća i uobičajena obuća; korisno je ponijeti pomagala koja se već koriste (štap, ortozu) i spisak onoga što kod kuće ne ide",
+        "abnormal": "Napredak se mjeri onim što pacijent uspijeva sam, obično poslije nekoliko termina. Ako se vještina gubi ili se jave novi poremećaji pokreta, potreban je pregled ljekara"
+      },
+      "de": {
+        "what": "Einübung alltäglicher Handlungen wie Anziehen, Essen, Körperpflege und Aufstehen aus dem Bett, angepasst an gestörte Bewegungsmuster",
+        "how": "Der Therapeut zerlegt die Handlung in Schritte, zeigt einen sicheren Ablauf und wählt Techniken und Hilfsmittel passend zu den Möglichkeiten des Patienten; geübt wird auch zu Hause weiter",
+        "when": "Erholung nach Schlaganfall und Verletzungen, neurologische und orthopädische Bewegungsstörungen, nachlassende Selbstständigkeit im Alltag, Vorbereitung auf die Entlassung nach Hause",
+        "prep": "Bequeme Kleidung und die gewohnten Schuhe; hilfreich sind die bereits genutzten Hilfsmittel (Gehstock, Orthese) und eine Liste dessen, was zu Hause nicht gelingt",
+        "abnormal": "Der Fortschritt bemisst sich daran, was allein gelingt, meist nach mehreren Einheiten. Geht eine Fähigkeit verloren oder treten neue Bewegungsstörungen auf, ist eine ärztliche Untersuchung nötig"
+      },
+      "tr": {
+        "what": "Giyinme, yemek yeme, kişisel bakım ve yataktan kalkma gibi günlük işlerin, bozulmuş hareket örüntüleri gözetilerek yeniden öğretilmesi",
+        "how": "Terapist işi adımlara ayırır, güvenli yapma yolunu gösterir ve hastanın olanaklarına uygun teknik ve yardımcı araçları seçer; çalışma evde de sürdürülür",
+        "when": "İnme ve yaralanma sonrası iyileşme, nörolojik ve ortopedik hareket bozuklukları, günlük yaşamda bağımsızlığın azalması, eve taburculuğa hazırlık",
+        "prep": "Rahat kıyafet ve alışılmış ayakkabı; kullanılan yardımcı araçları (baston, ortez) ve evde yapılamayanların listesini getirmek yararlıdır",
+        "abnormal": "İlerleme, hastanın tek başına yapabildikleriyle ölçülür ve genellikle birkaç seans sonra görülür. Kazanılan beceri yitirilirse ya da yeni hareket bozuklukları ortaya çıkarsa hekim muayenesi gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Увјежбавање свакодневних радњи, као што су облачење, исхрана, хигијена и устајање из кревета, прилагођено поремећеним обрасцима покрета",
+        "how": "Терапеут радњу разложи на кораке, покаже безбједан начин извођења и бира технике и помагала према могућностима пацијента; увјежбавање се наставља код куће",
+        "when": "Опоравак послије можданог удара и повреда, неуролошки и ортопедски поремећаји покрета, смањена самосталност у свакодневном животу, припрема за одлазак кући",
+        "prep": "Удобна одјећа и уобичајена обућа; корисно је понијети помагала која се већ користе (штап, ортозу) и списак онога што код куће не иде",
+        "abnormal": "Напредак се мјери оним што пацијент успијева сам, обично послије неколико термина. Ако се вјештина губи или се јаве нови поремећаји покрета, потребан је преглед љекара"
+      }
+    }
+  },
+  {
+    "slug": "apparatus-assisted-massage",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Массаж аппаратом: вибрационная, вакуумная или компрессионная насадка обрабатывает зону вместо рук терапевта",
+        "how": "Пациент лежит, на конечность надевают манжету или ведут насадкой по коже; ощущается вибрация, лёгкая тяга кожи или ритмичное сдавление, интенсивность подбирают по переносимости",
+        "when": "Отёки и тяжесть в ногах, мышечное напряжение, восстановление после нагрузок и травм, как часть курса физиотерапии",
+        "prep": "Подготовка не нужна; украшения с зоны снимают, крем перед сеансом не наносят, а о варикозе, перенесённом тромбозе, повреждениях кожи и беременности сообщают заранее",
+        "abnormal": "После вакуумных методик на коже возможны временные следы, которые проходят за несколько дней. Боль во время процедуры, стойкие синяки или нарастание отёка — повод прервать курс и обратиться к врачу"
+      },
+      "en": {
+        "what": "Massage performed by a device: a vibrating, vacuum or compression attachment works on the area instead of the therapist's hands",
+        "how": "The patient lies down while a cuff is put on the limb or the attachment is moved over the skin; vibration, a light pull on the skin or rhythmic squeezing is felt, and the intensity is set to what is comfortable",
+        "when": "Swelling and heaviness in the legs, muscle tension, recovery after physical loads and injuries, as part of a physiotherapy course",
+        "prep": "No preparation is required; jewellery is removed from the area, no cream is applied before the session, and varicose veins, past thrombosis, skin damage and pregnancy are reported in advance",
+        "abnormal": "After vacuum techniques temporary marks on the skin are possible and fade within a few days. Pain during the procedure, persistent bruises or increasing swelling is a reason to stop the course and see a doctor"
+      },
+      "sr": {
+        "what": "Masaža aparatom: vibraciona, vakuumska ili kompresivna nastavka obrađuje zonu umjesto ruku terapeuta",
+        "how": "Pacijent leži, na ekstremitet se navlači manžetna ili se nastavkom prelazi preko kože; osjeća se vibracija, blago povlačenje kože ili ritmično stezanje, a jačina se bira prema podnošljivosti",
+        "when": "Otoci i težina u nogama, napetost mišića, oporavak poslije opterećenja i povreda, kao dio fizioterapijskog ciklusa",
+        "prep": "Priprema nije potrebna; nakit se skida sa zone, krema se prije seanse ne nanosi, a za proširene vene, preboljelu trombozu, oštećenja kože i trudnoću se kaže unaprijed",
+        "abnormal": "Poslije vakuumskih tehnika mogući su privremeni tragovi na koži koji nestaju za nekoliko dana. Bol tokom procedure, uporne modrice ili porast otoka razlog su da se ciklus prekine i da se pacijent javi ljekaru"
+      },
+      "de": {
+        "what": "Massage mit einem Gerät: ein Vibrations-, Vakuum- oder Kompressionsaufsatz bearbeitet den Bereich anstelle der Hände des Therapeuten",
+        "how": "Der Patient liegt, an der Gliedmaße wird eine Manschette angelegt oder der Aufsatz über die Haut geführt; spürbar sind Vibration, ein leichter Zug an der Haut oder rhythmischer Druck, die Intensität richtet sich nach der Verträglichkeit",
+        "when": "Schwellungen und schwere Beine, Muskelverspannung, Erholung nach Belastung und Verletzungen, als Teil einer physiotherapeutischen Serie",
+        "prep": "Keine Vorbereitung nötig; Schmuck wird abgelegt, vor der Sitzung keine Creme auftragen, und Krampfadern, eine frühere Thrombose, Hautverletzungen sowie eine Schwangerschaft werden vorher mitgeteilt",
+        "abnormal": "Nach Vakuumtechniken sind vorübergehende Male auf der Haut möglich, die nach einigen Tagen verschwinden. Schmerz während der Anwendung, bleibende blaue Flecken oder zunehmende Schwellung sind ein Grund, die Serie zu unterbrechen und den Arzt aufzusuchen"
+      },
+      "tr": {
+        "what": "Cihazla yapılan masaj: terapistin elleri yerine titreşimli, vakumlu veya basınçlı bir başlık bölgeyi çalışır",
+        "how": "Hasta yatar, uzva manşon geçirilir ya da başlık cilt üzerinde gezdirilir; titreşim, ciltte hafif çekilme veya ritmik sıkıştırma hissedilir, şiddet hastanın tolere ettiği düzeye göre ayarlanır",
+        "when": "Bacaklarda şişlik ve ağırlık hissi, kas gerginliği, yüklenme ve yaralanma sonrası toparlanma, fizyoterapi programının bir parçası olarak",
+        "prep": "Hazırlık gerekmez; bölgedeki takılar çıkarılır, seans öncesi krem sürülmez, varis, geçirilmiş tromboz, ciltteki yaralar ve gebelik önceden bildirilir",
+        "abnormal": "Vakum uygulamalarından sonra ciltte birkaç gün içinde geçen geçici izler görülebilir. İşlem sırasında ağrı, kalıcı morluklar veya şişliğin artması seansların durdurulup hekime başvurulmasını gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Масажа апаратом: вибрациона, вакуумска или компресивна наставка обрађује зону умјесто руку терапеута",
+        "how": "Пацијент лежи, на екстремитет се навлачи манжетна или се наставком прелази преко коже; осјећа се вибрација, благо повлачење коже или ритмично стезање, а јачина се бира према подношљивости",
+        "when": "Отоци и тежина у ногама, напетост мишића, опоравак послије оптерећења и повреда, као дио физиотерапијског циклуса",
+        "prep": "Припрема није потребна; накит се скида са зоне, крема се прије сеансе не наноси, а за проширене вене, пребољелу тромбозу, оштећења коже и трудноћу се каже унапријед",
+        "abnormal": "Послије вакуумских техника могући су привремени трагови на кожи који нестају за неколико дана. Бол током процедуре, упорне модрице или пораст отока разлог су да се циклус прекине и да се пацијент јави љекару"
+      }
+    }
+  },
+  {
+    "slug": "dry-needling",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Введение тонкой иглы без лекарства в напряжённый участок мышцы — триггерную точку, найденную на ощупь",
+        "how": "Специалист нащупывает уплотнение в мышце и вводит стерильную одноразовую иглу; возможны кратковременное непроизвольное подёргивание мышцы и ноющее ощущение, игла остаётся в тканях недолго",
+        "when": "Миофасциальная боль и мышечные уплотнения, боль в шее, плече и пояснице, ограничение движения из-за напряжённой мышцы, спортивные перегрузки",
+        "prep": "Подготовки не требуется; лучше поесть заранее и надеть одежду, открывающую нужную зону, а также сказать о препаратах, разжижающих кровь, нарушениях свёртываемости и о боязни игл",
+        "abnormal": "Болезненность в месте укола день-два и небольшой синяк ожидаемы. Нарастающая боль, онемение, отёк или повышение температуры — повод показаться врачу"
+      },
+      "en": {
+        "what": "Insertion of a thin needle without any medicine into a tense spot in a muscle, a trigger point found by palpation",
+        "how": "The specialist feels for the tight band in the muscle and inserts a sterile single-use needle; a brief involuntary muscle twitch and an aching sensation are possible, and the needle stays in the tissue only briefly",
+        "when": "Myofascial pain and muscle knots, neck, shoulder and low back pain, restricted movement caused by a tense muscle, sports overload",
+        "prep": "No preparation is needed; it is better to eat beforehand and wear clothes that expose the area, and to mention blood-thinning medicines, clotting disorders and fear of needles",
+        "abnormal": "Soreness at the puncture site for a day or two and a small bruise are expected. Increasing pain, numbness, swelling or fever is a reason to see a doctor"
+      },
+      "sr": {
+        "what": "Ubadanje tanke igle bez lijeka u napeto mjesto u mišiću, takozvanu okidačku tačku koja se nađe pipanjem",
+        "how": "Stručnjak napipa zategnuto vlakno u mišiću i uvodi sterilnu iglu za jednokratnu upotrebu; mogući su kratak nevoljni trzaj mišića i tup osjećaj, a igla ostaje u tkivu kratko",
+        "when": "Miofascijalni bol i čvorići u mišićima, bol u vratu, ramenu i krstima, ograničen pokret zbog napetog mišića, sportsko preopterećenje",
+        "prep": "Priprema nije potrebna; bolje je prethodno jesti i obući odjeću koja otkriva zonu, a treba reći i za lijekove koji razrjeđuju krv, poremećaje zgrušavanja i strah od igala",
+        "abnormal": "Osjetljivost na mjestu uboda dan ili dva i mala modrica su očekivani. Bol koji se pojačava, utrnulost, otok ili povišena temperatura razlog su za pregled kod ljekara"
+      },
+      "de": {
+        "what": "Einstich einer dünnen Nadel ohne Medikament in einen verspannten Muskelpunkt, einen durch Tasten gefundenen Triggerpunkt",
+        "how": "Die Fachkraft tastet den verhärteten Strang im Muskel und setzt eine sterile Einwegnadel; ein kurzes unwillkürliches Muskelzucken und ein dumpfes Gefühl sind möglich, die Nadel bleibt nur kurz im Gewebe",
+        "when": "Myofasziale Schmerzen und Muskelverhärtungen, Nacken-, Schulter- und Kreuzschmerzen, eingeschränkte Beweglichkeit durch einen verspannten Muskel, sportliche Überlastung",
+        "prep": "Keine Vorbereitung nötig; vorher etwas essen und Kleidung tragen, die den Bereich freigibt, außerdem blutverdünnende Medikamente, Gerinnungsstörungen und Angst vor Nadeln ansprechen",
+        "abnormal": "Druckempfindlichkeit an der Einstichstelle für ein bis zwei Tage und ein kleiner blauer Fleck sind zu erwarten. Zunehmender Schmerz, Taubheitsgefühl, Schwellung oder Fieber sind ein Grund, den Arzt aufzusuchen"
+      },
+      "tr": {
+        "what": "Elle muayenede bulunan gergin kas noktasına, yani tetik noktaya ilaç verilmeden ince bir iğne batırılması",
+        "how": "Uygulayıcı kastaki sert bandı elle bulur ve steril tek kullanımlık iğneyi yerleştirir; kısa süreli istemsiz kas seğirmesi ve künt bir his olabilir, iğne dokuda kısa süre kalır",
+        "when": "Miyofasiyal ağrı ve kas düğümleri, boyun, omuz ve bel ağrısı, gergin kasa bağlı hareket kısıtlılığı, sporda aşırı yüklenme",
+        "prep": "Hazırlık gerekmez; öncesinde bir şeyler yemek ve bölgeyi açıkta bırakan kıyafet giymek uygundur, kan sulandırıcı ilaçlar, pıhtılaşma bozuklukları ve iğne korkusu belirtilmelidir",
+        "abnormal": "Giriş yerinde bir iki gün süren hassasiyet ve küçük bir morluk beklenen durumlardır. Artan ağrı, uyuşma, şişlik veya ateş hekime başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Убадање танке игле без лијека у напето мјесто у мишићу, такозвану окидачку тачку која се нађе пипањем",
+        "how": "Стручњак напипа затегнуто влакно у мишићу и уводи стерилну иглу за једнократну употребу; могући су кратак невољни трзај мишића и туп осјећај, а игла остаје у ткиву кратко",
+        "when": "Миофасцијални бол и чворићи у мишићима, бол у врату, рамену и крстима, ограничен покрет због напетог мишића, спортско преоптерећење",
+        "prep": "Припрема није потребна; боље је претходно јести и обући одјећу која открива зону, а треба рећи и за лијекове који разрјеђују крв, поремећаје згрушавања и страх од игала",
+        "abnormal": "Осјетљивост на мјесту убода дан или два и мала модрица су очекивани. Бол који се појачава, утрнулост, оток или повишена температура разлог су за преглед код љекара"
+      }
+    }
+  },
+  {
+    "slug": "gait-training-with-walking-aid",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обучение ходьбе с тростью, костылями или ходунками: подбор опоры по росту и отработка безопасной техники",
+        "how": "Терапевт настраивает высоту опоры, показывает порядок шагов и распределение веса, затем страхует пациента при ходьбе по ровному, поворотах, лестнице и присаживании",
+        "when": "После переломов и операций на суставах ног, ограничение опоры на ногу, слабость и неустойчивость, риск падений, неврологические нарушения ходьбы",
+        "prep": "Устойчивая обувь с закрытой пяткой и удобная одежда; принести своё средство опоры, если оно уже есть, и знать разрешённую врачом нагрузку на ногу",
+        "abnormal": "Дистанцию и самостоятельность наращивают постепенно, обычно за несколько занятий. Падение, усиление боли в оперированной ноге или новая неустойчивость — повод прервать занятия и показаться врачу"
+      },
+      "en": {
+        "what": "Training to walk with a cane, crutches or a walker: fitting the aid to the patient's height and practising a safe technique",
+        "how": "The therapist adjusts the height of the aid, shows the sequence of steps and how to distribute weight, then supports the patient while walking on level ground, turning, using stairs and sitting down",
+        "when": "After fractures and surgery on the leg joints, limited weight bearing on a leg, weakness and unsteadiness, risk of falls, neurological gait disorders",
+        "prep": "Stable shoes with a closed heel and comfortable clothes; bring your own walking aid if you already have one and know the weight bearing allowed by your doctor",
+        "abnormal": "Distance and independence are increased step by step, usually over several sessions. A fall, more pain in the operated leg or new unsteadiness is a reason to pause the sessions and see a doctor"
+      },
+      "sr": {
+        "what": "Obuka hoda sa štapom, štakama ili hodalicom: podešavanje pomagala prema visini i uvježbavanje bezbjedne tehnike",
+        "how": "Terapeut podesi visinu pomagala, pokaže redoslijed koraka i raspored težine, a zatim pridržava pacijenta pri hodu po ravnom, okretanju, na stepenicama i pri sjedanju",
+        "when": "Poslije preloma i operacija zglobova nogu, ograničeno oslanjanje na nogu, slabost i nesigurnost, rizik od padova, neurološki poremećaji hoda",
+        "prep": "Stabilna obuća sa zatvorenom petom i udobna odjeća; ponijeti svoje pomagalo ako već postoji i znati koliko oslanjanja na nogu je ljekar dozvolio",
+        "abnormal": "Dužina hoda i samostalnost povećavaju se postepeno, obično kroz nekoliko termina. Pad, jači bol u operisanoj nozi ili nova nesigurnost razlog su da se termini prekinu i da se pacijent javi ljekaru"
+      },
+      "de": {
+        "what": "Gangschulung mit Gehstock, Unterarmgehstützen oder Rollator: Anpassung des Hilfsmittels an die Körpergröße und Einüben einer sicheren Technik",
+        "how": "Der Therapeut stellt die Höhe des Hilfsmittels ein, zeigt die Schrittfolge und die Gewichtsverteilung und sichert den Patienten beim Gehen auf ebener Strecke, beim Wenden, auf der Treppe und beim Hinsetzen",
+        "when": "Nach Brüchen und Operationen an den Beingelenken, eingeschränkte Belastung eines Beins, Schwäche und Unsicherheit, Sturzgefahr, neurologische Gangstörungen",
+        "prep": "Feste Schuhe mit geschlossener Ferse und bequeme Kleidung; das eigene Hilfsmittel mitbringen, falls vorhanden, und die ärztlich erlaubte Belastung des Beins kennen",
+        "abnormal": "Gehstrecke und Selbstständigkeit werden schrittweise gesteigert, meist über mehrere Einheiten. Ein Sturz, stärkere Schmerzen im operierten Bein oder neue Unsicherheit sind ein Grund, die Einheiten auszusetzen und den Arzt aufzusuchen"
+      },
+      "tr": {
+        "what": "Baston, koltuk değneği veya yürüteçle yürümenin öğretilmesi: yardımcı cihazın boya göre ayarlanması ve güvenli tekniğin çalışılması",
+        "how": "Terapist cihazın yüksekliğini ayarlar, adım sırasını ve ağırlığın nasıl dağıtılacağını gösterir, ardından düz zeminde yürürken, dönerken, merdivende ve otururken hastayı destekler",
+        "when": "Bacak eklemlerindeki kırık ve ameliyatlardan sonra, bacağa yük vermenin kısıtlı olduğu durumlar, güçsüzlük ve dengesizlik, düşme riski, nörolojik yürüyüş bozuklukları",
+        "prep": "Topuğu kapalı sağlam ayakkabı ve rahat kıyafet; varsa kendi yardımcı cihazını getirmek ve hekimin izin verdiği yük miktarını bilmek gerekir",
+        "abnormal": "Yürüme mesafesi ve bağımsızlık kademeli olarak, genellikle birkaç seansta artar. Düşme, ameliyat edilen bacakta ağrının artması veya yeni ortaya çıkan dengesizlik seanslara ara verip hekime başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Обука хода са штапом, штакама или ходалицом: подешавање помагала према висини и увјежбавање безбједне технике",
+        "how": "Терапеут подеси висину помагала, покаже редослијед корака и распоред тежине, а затим придржава пацијента при ходу по равном, окретању, на степеницама и при сједању",
+        "when": "Послије прелома и операција зглобова ногу, ограничено ослањање на ногу, слабост и несигурност, ризик од падова, неуролошки поремећаји хода",
+        "prep": "Стабилна обућа са затвореном петом и удобна одјећа; понијети своје помагало ако већ постоји и знати колико ослањања на ногу је љекар дозволио",
+        "abnormal": "Дужина хода и самосталност повећавају се постепено, обично кроз неколико термина. Пад, јачи бол у оперисаној нози или нова несигурност разлог су да се термини прекину и да се пацијент јави љекару"
+      }
+    }
+  },
+  {
+    "slug": "iastm-therapy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Работа с мягкими тканями инструментом: терапевт скользит гладким металлическим или пластиковым инструментом по коже над напряжённым участком",
+        "how": "На кожу наносят масло или крем и обрабатывают зону короткими движениями инструмента под разными углами; ощущается давление и шероховатость, обработка одной зоны занимает несколько минут",
+        "when": "Рубцовые изменения и спайки после травм и операций, длительное напряжение мышц и фасций, тендинопатии, ограничение подвижности мягких тканей",
+        "prep": "Подготовки не требуется; нужно открыть обрабатываемую зону и сказать о приёме антикоагулянтов, склонности к синякам, варикозе и повреждениях кожи",
+        "abnormal": "Покраснение и мелкие синяки после сеанса встречаются часто и проходят за несколько дней. Сильная боль, обширные гематомы или нарастающий отёк требуют осмотра врача"
+      },
+      "en": {
+        "what": "Instrument-assisted work on soft tissue: the therapist glides a smooth metal or plastic tool over the skin above a tense area",
+        "how": "Oil or cream is applied to the skin and the area is worked with short strokes of the tool at different angles; pressure and a rough sensation are felt, and one area takes a few minutes",
+        "when": "Scar tissue and adhesions after injuries and surgery, long-standing muscle and fascia tension, tendinopathies, restricted mobility of soft tissue",
+        "prep": "No preparation is needed; the area has to be exposed, and anticoagulant medicines, a tendency to bruise, varicose veins and skin damage should be mentioned",
+        "abnormal": "Redness and small bruises after a session are common and fade within a few days. Severe pain, large haematomas or increasing swelling require a medical examination"
+      },
+      "sr": {
+        "what": "Obrada mekih tkiva instrumentom: terapeut glatkim metalnim ili plastičnim instrumentom klizi po koži iznad napetog područja",
+        "how": "Na kožu se nanese ulje ili krema i zona se obrađuje kratkim potezima instrumenta pod različitim uglovima; osjeća se pritisak i hrapavost, a obrada jedne zone traje nekoliko minuta",
+        "when": "Ožiljne promjene i priraslice poslije povreda i operacija, dugotrajna napetost mišića i fascija, tendinopatije, smanjena pokretljivost mekih tkiva",
+        "prep": "Priprema nije potrebna; potrebno je otkriti zonu koja se obrađuje i reći za antikoagulantnu terapiju, sklonost modricama, proširene vene i oštećenja kože",
+        "abnormal": "Crvenilo i sitne modrice poslije seanse su česti i prolaze za nekoliko dana. Jak bol, velike hematome ili otok koji raste traže pregled ljekara"
+      },
+      "de": {
+        "what": "Instrumentengestützte Arbeit am Weichteilgewebe: der Therapeut führt ein glattes Metall- oder Kunststoffinstrument über die Haut oberhalb einer verspannten Stelle",
+        "how": "Öl oder Creme wird aufgetragen und der Bereich mit kurzen Zügen des Instruments in verschiedenen Winkeln bearbeitet; spürbar sind Druck und ein raues Gefühl, eine Zone dauert einige Minuten",
+        "when": "Narbenveränderungen und Verwachsungen nach Verletzungen und Operationen, länger bestehende Muskel- und Faszienspannung, Tendinopathien, eingeschränkte Verschieblichkeit der Weichteile",
+        "prep": "Keine Vorbereitung nötig; der Bereich muss frei liegen, und gerinnungshemmende Medikamente, eine Neigung zu blauen Flecken, Krampfadern und Hautverletzungen sind anzusprechen",
+        "abnormal": "Rötung und kleine blaue Flecken nach der Sitzung sind häufig und klingen in einigen Tagen ab. Starke Schmerzen, großflächige Hämatome oder zunehmende Schwellung erfordern eine ärztliche Untersuchung"
+      },
+      "tr": {
+        "what": "Yumuşak dokunun aletle çalışılması: terapist düz metal veya plastik bir aleti gergin bölgenin üzerindeki cilt üzerinde kaydırır",
+        "how": "Cilde yağ veya krem sürülür ve bölge, aletin farklı açılardaki kısa hareketleriyle çalışılır; basınç ve pürüzlü bir his duyulur, bir bölge birkaç dakika sürer",
+        "when": "Yaralanma ve ameliyat sonrası nedbe ve yapışıklıklar, uzun süreli kas ve fasya gerginliği, tendinopatiler, yumuşak dokuda hareket kısıtlılığı",
+        "prep": "Hazırlık gerekmez; çalışılacak bölgenin açık olması gerekir, kan sulandırıcı ilaç kullanımı, kolay morarma, varis ve ciltteki yaralar bildirilmelidir",
+        "abnormal": "Seans sonrası kızarıklık ve küçük morluklar sık görülür ve birkaç günde geçer. Şiddetli ağrı, geniş hematom veya artan şişlik hekim muayenesini gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Обрада меких ткива инструментом: терапеут глатким металним или пластичним инструментом клизи по кожи изнад напетог подручја",
+        "how": "На кожу се нанесе уље или крема и зона се обрађује кратким потезима инструмента под различитим угловима; осјећа се притисак и храпавост, а обрада једне зоне траје неколико минута",
+        "when": "Ожиљне промјене и прираслице послије повреда и операција, дуготрајна напетост мишића и фасција, тендинопатије, смањена покретљивост меких ткива",
+        "prep": "Припрема није потребна; потребно је открити зону која се обрађује и рећи за антикоагулантну терапију, склоност модрицама, проширене вене и оштећења коже",
+        "abnormal": "Црвенило и ситне модрице послије сеансе су чести и пролазе за неколико дана. Јак бол, велике хематоме или оток који расте траже преглед љекара"
+      }
+    }
+  },
+  {
+    "slug": "manual-muscle-test-per-extremity",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Оценка силы отдельных мышечных групп одной конечности вручную, без аппаратуры",
+        "how": "Пациент выполняет движение сначала без нагрузки, затем преодолевая сопротивление руки специалиста; каждую группу мышц оценивают по стандартной шкале и заносят в протокол, осмотр одной конечности занимает несколько минут",
+        "when": "Слабость в руке или ноге, контроль восстановления после травм, операций и неврологических заболеваний, подбор и коррекция программы реабилитации",
+        "prep": "Подготовки не требуется; нужна одежда, открывающая руку или ногу, а о боли в конечности лучше сказать до начала — она влияет на результат",
+        "abnormal": "Снижение силы может быть связано с болью, длительным бездействием, повреждением мышцы или нарушением нервной проводимости. Результат трактует и решает вопрос о дообследовании врач"
+      },
+      "en": {
+        "what": "A hands-on assessment of the strength of individual muscle groups in one limb, without any equipment",
+        "how": "The patient performs the movement first without load and then against resistance from the examiner's hand; each muscle group is graded on a standard scale and recorded, and one limb takes a few minutes",
+        "when": "Weakness in an arm or a leg, monitoring recovery after injuries, surgery and neurological disease, choosing and adjusting a rehabilitation programme",
+        "prep": "No preparation is needed; clothing that leaves the arm or leg free is required, and any pain in the limb is best mentioned beforehand because it affects the result",
+        "abnormal": "Reduced strength may be related to pain, long inactivity, muscle damage or impaired nerve conduction. The result is interpreted by a doctor, who also decides whether further tests are needed"
+      },
+      "sr": {
+        "what": "Ručna procjena snage pojedinih mišićnih grupa jednog ekstremiteta, bez aparata",
+        "how": "Pacijent pokret izvodi prvo bez opterećenja, a zatim savladavajući otpor ruke ispitivača; svaka mišićna grupa ocjenjuje se po standardnoj skali i upisuje u nalaz, a pregled jednog ekstremiteta traje nekoliko minuta",
+        "when": "Slabost u ruci ili nozi, praćenje oporavka poslije povreda, operacija i neuroloških oboljenja, izbor i prilagođavanje rehabilitacionog programa",
+        "prep": "Priprema nije potrebna; potrebna je odjeća koja oslobađa ruku ili nogu, a bol u ekstremitetu bolje je pomenuti prije početka jer utiče na rezultat",
+        "abnormal": "Smanjena snaga može biti povezana sa bolom, dugim mirovanjem, oštećenjem mišića ili poremećajem nervne provodljivosti. Nalaz tumači ljekar, koji odlučuje i o daljim ispitivanjima"
+      },
+      "de": {
+        "what": "Manuelle Beurteilung der Kraft einzelner Muskelgruppen einer Gliedmaße, ohne Geräte",
+        "how": "Der Patient führt die Bewegung zuerst ohne Last und dann gegen den Widerstand der Hand des Untersuchers aus; jede Muskelgruppe wird nach einer üblichen Skala bewertet und dokumentiert, eine Gliedmaße dauert wenige Minuten",
+        "when": "Schwäche in Arm oder Bein, Verlaufskontrolle nach Verletzungen, Operationen und neurologischen Erkrankungen, Auswahl und Anpassung des Rehabilitationsprogramms",
+        "prep": "Keine Vorbereitung nötig; die Kleidung sollte Arm oder Bein frei lassen, und Schmerzen in der Gliedmaße werden am besten vorher angesprochen, da sie das Ergebnis beeinflussen",
+        "abnormal": "Verminderte Kraft kann mit Schmerzen, langer Inaktivität, einer Muskelschädigung oder einer gestörten Nervenleitung zusammenhängen. Das Ergebnis beurteilt der Arzt, der auch über weitere Untersuchungen entscheidet"
+      },
+      "tr": {
+        "what": "Bir ekstremitedeki kas gruplarının gücünün cihaz kullanılmadan elle değerlendirilmesi",
+        "how": "Hasta hareketi önce yüksüz, sonra uygulayıcının elinin direncine karşı yapar; her kas grubu standart bir ölçekle derecelendirilip kayda geçer, bir ekstremite birkaç dakika sürer",
+        "when": "Kol veya bacakta güçsüzlük, yaralanma, ameliyat ve nörolojik hastalık sonrası iyileşmenin izlenmesi, rehabilitasyon programının seçimi ve düzenlenmesi",
+        "prep": "Hazırlık gerekmez; kolu veya bacağı açıkta bırakan kıyafet gerekir, ekstremitedeki ağrı sonucu etkilediği için başlamadan önce söylenmelidir",
+        "abnormal": "Güç azalması ağrı, uzun süreli hareketsizlik, kas hasarı veya sinir iletimindeki bozuklukla ilişkili olabilir. Sonucu hekim yorumlar ve ileri incelemeye o karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Ручна процјена снаге појединих мишићних група једног екстремитета, без апарата",
+        "how": "Пацијент покрет изводи прво без оптерећења, а затим савладавајући отпор руке испитивача; свака мишићна група оцјењује се по стандардној скали и уписује у налаз, а преглед једног екстремитета траје неколико минута",
+        "when": "Слабост у руци или нози, праћење опоравка послије повреда, операција и неуролошких обољења, избор и прилагођавање рехабилитационог програма",
+        "prep": "Припрема није потребна; потребна је одјећа која ослобађа руку или ногу, а бол у екстремитету боље је поменути прије почетка јер утиче на резултат",
+        "abnormal": "Смањена снага може бити повезана са болом, дугим мировањем, оштећењем мишића или поремећајем нервне проводљивости. Налаз тумачи љекар, који одлучује и о даљим испитивањима"
+      }
+    }
+  },
+  {
+    "slug": "manual-segmental-massage",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ручной массаж рефлексогенных зон спины, связанных с определёнными сегментами позвоночника, а не общая проработка всего тела",
+        "how": "Терапевт находит участки натяжения кожи и подкожной ткани вдоль позвоночника и обрабатывает их короткими тянущими и растирающими приёмами; ощущается местное натяжение и тепло",
+        "when": "Напряжение и боль в спине, последствия сидячей работы, реабилитация после травм позвоночника, назначения физиотерапевта в составе курса",
+        "prep": "Специальной подготовки нет; не есть плотно непосредственно перед сеансом и сказать о кожных заболеваниях в зоне, недавних операциях на спине и о беременности",
+        "abnormal": "Лёгкая болезненность и покраснение кожи после сеанса обычно проходят в тот же день, а эффект курса оценивают после нескольких процедур. Усиление боли, онемение или отдача боли в ногу — повод обратиться к врачу"
+      },
+      "en": {
+        "what": "Hands-on massage of reflex zones of the back linked to particular spinal segments, rather than a general treatment of the whole body",
+        "how": "The therapist finds areas of tension in the skin and subcutaneous tissue along the spine and works them with short pulling and rubbing strokes; local tension and warmth are felt",
+        "when": "Back tension and pain, consequences of sedentary work, rehabilitation after spinal injuries, prescriptions by a physiotherapist as part of a course",
+        "prep": "No special preparation; avoid a heavy meal right before the session and mention skin conditions in the area, recent back surgery and pregnancy",
+        "abnormal": "Slight soreness and skin redness after a session usually pass the same day, and the effect of a course is judged after several sessions. Increasing pain, numbness or pain radiating into the leg is a reason to see a doctor"
+      },
+      "sr": {
+        "what": "Ručna masaža refleksnih zona leđa povezanih sa određenim segmentima kičme, a ne opšta obrada cijelog tijela",
+        "how": "Terapeut pronalazi mjesta zategnutosti kože i potkožnog tkiva uz kičmu i obrađuje ih kratkim potezima povlačenja i trljanja; osjeća se lokalna zategnutost i toplota",
+        "when": "Napetost i bol u leđima, posljedice sjedećeg načina rada, rehabilitacija poslije povreda kičme, preporuka fizioterapeuta u okviru ciklusa",
+        "prep": "Posebna priprema nije potrebna; ne jesti obilno neposredno prije seanse i reći za kožna oboljenja u zoni, skorašnje operacije leđa i za trudnoću",
+        "abnormal": "Blaga osjetljivost i crvenilo kože poslije seanse obično prođu istog dana, a djelovanje ciklusa procjenjuje se poslije nekoliko procedura. Pojačan bol, utrnulost ili bol koji se širi u nogu razlog su da se pacijent javi ljekaru"
+      },
+      "de": {
+        "what": "Manuelle Massage von Reflexzonen des Rückens, die bestimmten Wirbelsäulensegmenten zugeordnet sind, und keine allgemeine Behandlung des ganzen Körpers",
+        "how": "Der Therapeut sucht Spannungsstellen in Haut und Unterhaut entlang der Wirbelsäule und bearbeitet sie mit kurzen ziehenden und reibenden Griffen; spürbar sind örtliche Spannung und Wärme",
+        "when": "Verspannung und Schmerzen im Rücken, Folgen sitzender Tätigkeit, Rehabilitation nach Wirbelsäulenverletzungen, Verordnung des Physiotherapeuten im Rahmen einer Serie",
+        "prep": "Keine besondere Vorbereitung; direkt vor der Sitzung nicht schwer essen und Hauterkrankungen im Bereich, kürzliche Rückenoperationen sowie eine Schwangerschaft mitteilen",
+        "abnormal": "Leichte Druckempfindlichkeit und Hautrötung nach der Sitzung vergehen meist am selben Tag, die Wirkung der Serie wird nach mehreren Sitzungen beurteilt. Zunehmender Schmerz, Taubheitsgefühl oder ins Bein ausstrahlender Schmerz sind ein Grund, den Arzt aufzusuchen"
+      },
+      "tr": {
+        "what": "Tüm vücudun genel çalışılması yerine, omurganın belirli segmentleriyle ilişkili sırt refleks bölgelerine uygulanan elle masaj",
+        "how": "Terapist omurga boyunca ciltte ve cilt altı dokuda gerginlik olan yerleri bulur ve bunları kısa çekme ve ovma hareketleriyle çalışır; bölgesel gerginlik ve sıcaklık hissedilir",
+        "when": "Sırtta gerginlik ve ağrı, masa başı çalışmanın sonuçları, omurga yaralanmaları sonrası rehabilitasyon, fizyoterapistin program kapsamındaki önerisi",
+        "prep": "Özel hazırlık gerekmez; seanstan hemen önce ağır yemek yenmemeli, bölgedeki cilt hastalıkları, yakın zamanda geçirilen sırt ameliyatları ve gebelik bildirilmelidir",
+        "abnormal": "Seans sonrası hafif hassasiyet ve ciltte kızarıklık genellikle aynı gün geçer, seansların etkisi birkaç uygulamadan sonra değerlendirilir. Ağrının artması, uyuşma veya bacağa vuran ağrı hekime başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Ручна масажа рефлексних зона леђа повезаних са одређеним сегментима кичме, а не општа обрада цијелог тијела",
+        "how": "Терапеут проналази мјеста затегнутости коже и поткожног ткива уз кичму и обрађује их кратким потезима повлачења и трљања; осјећа се локална затегнутост и топлота",
+        "when": "Напетост и бол у леђима, посљедице сједећег начина рада, рехабилитација послије повреда кичме, препорука физиотерапеута у оквиру циклуса",
+        "prep": "Посебна припрема није потребна; не јести обилно непосредно прије сеансе и рећи за кожна обољења у зони, скорашње операције леђа и за трудноћу",
+        "abnormal": "Блага осјетљивост и црвенило коже послије сеансе обично прођу истог дана, а дјеловање циклуса процјењује се послије неколико процедура. Појачан бол, утрнулост или бол који се шири у ногу разлог су да се пацијент јави љекару"
+      }
+    }
+  },
+  {
+    "slug": "microwave-diathermy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Прогрев тканей микроволнами: энергия излучателя поглощается тканями и превращается в тепло на небольшой глубине",
+        "how": "Излучатель устанавливают над кожей без касания, зону освобождают от одежды; во время сеанса ощущается ровное приятное тепло, жжения быть не должно",
+        "when": "Длительная боль в суставах и мышцах, мышечный спазм, воспалительные изменения околосуставных тканей, разогрев зоны перед упражнениями и массажем",
+        "prep": "С зоны снимают металлические предметы и влажную одежду, при воздействии на голову убирают слуховой аппарат; о кардиостимуляторе, металлических имплантатах, нарушении чувствительности и беременности сообщают заранее — решение принимает врач",
+        "abnormal": "Небольшое покраснение кожи после прогрева проходит быстро. Жжение во время сеанса, длительная краснота или усиление боли — повод продолжать процедуры только после осмотра врача"
+      },
+      "en": {
+        "what": "Heating of tissue with microwaves: energy from the emitter is absorbed by the tissue and turns into heat at a shallow depth",
+        "how": "The emitter is positioned above the skin without touching it and the area is uncovered; during the session a steady pleasant warmth is felt and burning should not occur",
+        "when": "Long-standing joint and muscle pain, muscle spasm, inflammatory changes in the tissue around a joint, warming up an area before exercise and massage",
+        "prep": "Metal objects and damp clothing are removed from the area and a hearing aid is taken out when the head is treated; a pacemaker, metal implants, impaired sensation and pregnancy are reported in advance, and the doctor makes the decision",
+        "abnormal": "Slight skin redness after the warming passes quickly. Burning during the session, long-lasting redness or increasing pain means the sessions are continued only after a medical examination"
+      },
+      "sr": {
+        "what": "Zagrijavanje tkiva mikrotalasima: energija emitera se upija u tkivo i pretvara u toplotu na maloj dubini",
+        "how": "Emiter se postavlja iznad kože bez dodira, a zona se oslobodi odjeće; tokom seanse osjeća se ravnomjerna prijatna toplota, dok žarenje ne treba da se javi",
+        "when": "Dugotrajan bol u zglobovima i mišićima, grč mišića, upalne promjene tkiva oko zgloba, zagrijavanje zone prije vježbi i masaže",
+        "prep": "Sa zone se uklanjaju metalni predmeti i vlažna odjeća, a kod djelovanja na glavu se vadi slušni aparat; za pejsmejker, metalne implantate, poremećaj osjeta i trudnoću kaže se unaprijed, a odluku donosi ljekar",
+        "abnormal": "Blago crvenilo kože poslije zagrijavanja brzo prolazi. Žarenje tokom seanse, dugotrajno crvenilo ili pojačan bol znače da se procedure nastavljaju tek nakon pregleda ljekara"
+      },
+      "de": {
+        "what": "Erwärmung von Gewebe mit Mikrowellen: die Energie des Strahlers wird vom Gewebe aufgenommen und in geringer Tiefe in Wärme umgewandelt",
+        "how": "Der Strahler wird ohne Hautkontakt über der Stelle positioniert, der Bereich wird freigemacht; während der Sitzung ist eine gleichmäßige angenehme Wärme spürbar, Brennen sollte nicht auftreten",
+        "when": "Länger bestehende Gelenk- und Muskelschmerzen, Muskelverspannung, entzündliche Veränderungen des gelenknahen Gewebes, Aufwärmen der Region vor Übungen und Massage",
+        "prep": "Metallgegenstände und feuchte Kleidung werden aus dem Bereich entfernt, bei Anwendung am Kopf wird das Hörgerät herausgenommen; Herzschrittmacher, Metallimplantate, Gefühlsstörungen und eine Schwangerschaft werden vorher genannt, die Entscheidung trifft der Arzt",
+        "abnormal": "Eine leichte Hautrötung nach der Erwärmung vergeht rasch. Brennen während der Sitzung, anhaltende Rötung oder zunehmender Schmerz bedeuten, dass erst nach ärztlicher Untersuchung weiterbehandelt wird"
+      },
+      "tr": {
+        "what": "Dokunun mikrodalgayla ısıtılması: kaynaktan gelen enerji doku tarafından soğurulur ve yüzeye yakın derinlikte ısıya dönüşür",
+        "how": "Kaynak cilde değmeden bölgenin üzerine yerleştirilir ve bölge giysiden arındırılır; seans sırasında düzenli ve rahat bir sıcaklık hissedilir, yanma olmamalıdır",
+        "when": "Eklem ve kaslarda uzun süreli ağrı, kas spazmı, eklem çevresi dokularda iltihabi değişiklikler, egzersiz ve masaj öncesi bölgenin ısıtılması",
+        "prep": "Bölgedeki metal eşyalar ve nemli giysiler çıkarılır, baş bölgesine uygulamada işitme cihazı alınır; kalp pili, metal implantlar, duyu bozukluğu ve gebelik önceden bildirilir, kararı hekim verir",
+        "abnormal": "Isıtma sonrası ciltteki hafif kızarıklık kısa sürede geçer. Seans sırasında yanma, uzun süren kızarıklık veya ağrının artması durumunda uygulamalara ancak hekim muayenesinden sonra devam edilir"
+      },
+      "sr_cyrl": {
+        "what": "Загријавање ткива микроталасима: енергија емитера се упија у ткиво и претвара у топлоту на малој дубини",
+        "how": "Емитер се поставља изнад коже без додира, а зона се ослободи одјеће; током сеансе осјећа се равномјерна пријатна топлота, док жарење не треба да се јави",
+        "when": "Дуготрајан бол у зглобовима и мишићима, грч мишића, упалне промјене ткива око зглоба, загријавање зоне прије вјежби и масаже",
+        "prep": "Са зоне се уклањају метални предмети и влажна одјећа, а код дјеловања на главу се вади слушни апарат; за пејсмејкер, металне имплантате, поремећај осјета и трудноћу каже се унапријед, а одлуку доноси љекар",
+        "abnormal": "Благо црвенило коже послије загријавања брзо пролази. Жарење током сеансе, дуготрајно црвенило или појачан бол значе да се процедуре настављају тек након прегледа љекара"
+      }
+    }
+  },
+  {
+    "slug": "passive-and-assisted-exercises",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Движения в суставах, которые терапевт выполняет за пациента или помогает довести начатое пациентом движение",
+        "how": "Пациент лежит расслабленно, терапевт фиксирует конечность и плавно проводит её через доступный объём движения; при поддерживающих упражнениях движение начинает сам пациент, а терапевт помогает его завершить",
+        "when": "Слабость или паралич после инсульта и травм, ранний период после операций, длительный постельный режим, профилактика тугоподвижности суставов",
+        "prep": "Подготовки не требуется; нужна свободная одежда, а терапевту заранее говорят о боли и об ограничениях движения после операции",
+        "abnormal": "Объём движений расширяют постепенно, изменения заметны через несколько занятий. Резкая боль, щелчок в суставе, отёк или покраснение конечности — повод остановиться и показаться врачу"
+      },
+      "en": {
+        "what": "Joint movements that the therapist performs for the patient or helps to complete once the patient has started them",
+        "how": "The patient lies relaxed while the therapist holds the limb and guides it smoothly through the available range of motion; in assisted exercises the patient starts the movement and the therapist helps to finish it",
+        "when": "Weakness or paralysis after stroke and injuries, the early period after surgery, prolonged bed rest, prevention of joint stiffness",
+        "prep": "No preparation is needed; loose clothing is required, and the therapist is told in advance about pain and any movement restrictions after surgery",
+        "abnormal": "The range of motion is extended gradually and changes become noticeable after several sessions. Sharp pain, a click in the joint, swelling or redness of the limb is a reason to stop and see a doctor"
+      },
+      "sr": {
+        "what": "Pokreti u zglobovima koje terapeut izvodi umjesto pacijenta ili pomaže da se započeti pokret dovrši",
+        "how": "Pacijent leži opušteno, terapeut pridržava ekstremitet i vodi ga polako kroz raspoloživi obim pokreta; kod potpomognutih vježbi pokret započinje pacijent, a terapeut pomaže da se dovrši",
+        "when": "Slabost ili oduzetost poslije moždanog udara i povreda, rani period poslije operacija, dugotrajno ležanje, sprječavanje ukočenosti zglobova",
+        "prep": "Priprema nije potrebna; potrebna je široka odjeća, a terapeutu se unaprijed kaže za bol i za ograničenja pokreta poslije operacije",
+        "abnormal": "Obim pokreta se širi postepeno, a promjene se primjećuju poslije nekoliko termina. Oštar bol, škljocanje u zglobu, otok ili crvenilo ekstremiteta razlog su da se stane i da se pacijent javi ljekaru"
+      },
+      "de": {
+        "what": "Gelenkbewegungen, die der Therapeut für den Patienten ausführt oder die er zu Ende führt, nachdem der Patient sie begonnen hat",
+        "how": "Der Patient liegt entspannt, der Therapeut hält die Gliedmaße und führt sie langsam durch den möglichen Bewegungsumfang; bei assistierten Übungen beginnt der Patient die Bewegung und der Therapeut hilft, sie abzuschließen",
+        "when": "Schwäche oder Lähmung nach Schlaganfall und Verletzungen, frühe Phase nach Operationen, längere Bettlägerigkeit, Vorbeugung von Gelenksteife",
+        "prep": "Keine Vorbereitung nötig; weite Kleidung ist erforderlich, und Schmerzen sowie Bewegungseinschränkungen nach einer Operation werden dem Therapeuten vorher mitgeteilt",
+        "abnormal": "Der Bewegungsumfang wird schrittweise erweitert, Veränderungen zeigen sich nach mehreren Einheiten. Heftiger Schmerz, ein Knacken im Gelenk, Schwellung oder Rötung der Gliedmaße sind ein Grund aufzuhören und den Arzt aufzusuchen"
+      },
+      "tr": {
+        "what": "Terapistin hasta yerine yaptığı ya da hastanın başlattığı hareketi tamamlamasına yardım ettiği eklem hareketleri",
+        "how": "Hasta gevşek biçimde yatarken terapist uzvu tutar ve mevcut hareket açıklığı boyunca yavaşça hareket ettirir; yardımlı egzersizlerde hareketi hasta başlatır, terapist tamamlamasına yardım eder",
+        "when": "İnme ve yaralanma sonrası güçsüzlük veya felç, ameliyat sonrası erken dönem, uzun süreli yatak istirahati, eklem sertliğinin önlenmesi",
+        "prep": "Hazırlık gerekmez; bol kıyafet gerekir, ağrı ve ameliyat sonrası hareket kısıtlamaları terapiste önceden bildirilir",
+        "abnormal": "Hareket açıklığı kademeli olarak artırılır, değişim birkaç seans sonra fark edilir. Keskin ağrı, eklemde ses, şişlik veya uzuvda kızarıklık durumunda ara verilip hekime başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Покрети у зглобовима које терапеут изводи умјесто пацијента или помаже да се започети покрет доврши",
+        "how": "Пацијент лежи опуштено, терапеут придржава екстремитет и води га полако кроз расположиви обим покрета; код потпомогнутих вјежби покрет започиње пацијент, а терапеут помаже да се доврши",
+        "when": "Слабост или одузетост послије можданог удара и повреда, рани период послије операција, дуготрајно лежање, спрјечавање укочености зглобова",
+        "prep": "Припрема није потребна; потребна је широка одјећа, а терапеуту се унапријед каже за бол и за ограничења покрета послије операције",
+        "abnormal": "Обим покрета се шири постепено, а промјене се примјећују послије неколико термина. Оштар бол, шкљоцање у зглобу, оток или црвенило екстремитета разлог су да се стане и да се пацијент јави љекару"
+      }
+    }
+  },
+  {
+    "slug": "sonophoresis",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Введение лекарственного средства через кожу с помощью ультразвука: препарат входит в состав контактного геля, которым обрабатывают зону",
+        "how": "На кожу наносят гель с лекарством и водят излучателем по зоне круговыми движениями без пауз на одном месте; ощущается лёгкое тепло или не ощущается ничего, процедура безболезненна",
+        "when": "Боль и воспаление в суставах, сухожилиях и мышцах, рубцовые и спаечные изменения, ситуации, когда врач хочет подвести препарат местно, а не внутрь",
+        "prep": "Кожа должна быть чистой и целой, без остатков крема; об аллергии на лекарства говорят до начала, сам препарат подбирает врач",
+        "abnormal": "После процедуры возможно кратковременное покраснение кожи, а эффект курса оценивают после нескольких сеансов. Сыпь, зуд или усиление боли — повод прервать курс и обратиться к врачу"
+      },
+      "en": {
+        "what": "Delivery of a medicine through the skin with ultrasound: the drug is part of the contact gel used to treat the area",
+        "how": "Gel with the medicine is applied to the skin and the transducer is moved over the area in circles without stopping in one spot; mild warmth or nothing at all is felt and the procedure is painless",
+        "when": "Pain and inflammation in joints, tendons and muscles, scars and adhesions, situations where the doctor wants the medicine delivered locally rather than by mouth",
+        "prep": "The skin must be clean and intact, with no cream left on it; drug allergies are mentioned before the start, and the medicine itself is chosen by the doctor",
+        "abnormal": "Brief redness of the skin after the procedure is possible, and the effect of a course is judged after several sessions. A rash, itching or increasing pain is a reason to stop the course and see a doctor"
+      },
+      "sr": {
+        "what": "Unošenje lijeka kroz kožu pomoću ultrazvuka: lijek je sastavni dio kontaktnog gela kojim se obrađuje zona",
+        "how": "Na kožu se nanosi gel sa lijekom, a sonda se vodi preko zone kružnim pokretima bez zadržavanja na jednom mjestu; osjeća se blaga toplota ili ništa, a procedura je bezbolna",
+        "when": "Bol i upala u zglobovima, tetivama i mišićima, ožiljne promjene i priraslice, situacije kada ljekar želi da lijek djeluje lokalno, a ne da se uzima na usta",
+        "prep": "Koža mora biti čista i bez oštećenja, bez ostataka kreme; za alergiju na lijekove kaže se prije početka, a sam lijek bira ljekar",
+        "abnormal": "Poslije procedure moguće je kratkotrajno crvenilo kože, a djelovanje ciklusa procjenjuje se poslije nekoliko seansi. Osip, svrab ili pojačan bol razlog su da se ciklus prekine i da se pacijent javi ljekaru"
+      },
+      "de": {
+        "what": "Einbringen eines Medikaments durch die Haut mittels Ultraschall: das Mittel ist Bestandteil des Kontaktgels, mit dem der Bereich behandelt wird",
+        "how": "Gel mit dem Medikament wird auf die Haut aufgetragen und der Schallkopf in kreisenden Bewegungen ohne Verweilen an einer Stelle über den Bereich geführt; spürbar ist leichte Wärme oder nichts, die Anwendung ist schmerzfrei",
+        "when": "Schmerz und Entzündung in Gelenken, Sehnen und Muskeln, Narben und Verwachsungen, Situationen, in denen das Mittel örtlich statt über den Magen wirken soll",
+        "prep": "Die Haut muss sauber und unverletzt sein, ohne Cremereste; Arzneimittelallergien werden vor Beginn genannt, das Mittel selbst wählt der Arzt",
+        "abnormal": "Nach der Anwendung ist eine kurze Hautrötung möglich, die Wirkung der Serie wird nach mehreren Sitzungen beurteilt. Ausschlag, Juckreiz oder zunehmender Schmerz sind ein Grund, die Serie zu unterbrechen und den Arzt aufzusuchen"
+      },
+      "tr": {
+        "what": "İlacın ultrason yardımıyla ciltten geçirilmesi: ilaç, bölgeye uygulanan iletim jelinin içinde bulunur",
+        "how": "Cilde ilaç içeren jel sürülür ve başlık, tek bir noktada durmadan dairesel hareketlerle bölge üzerinde gezdirilir; hafif sıcaklık hissedilir ya da hiçbir şey duyulmaz, işlem ağrısızdır",
+        "when": "Eklem, tendon ve kaslarda ağrı ve iltihap, nedbe ve yapışıklıklar, ilacın ağız yoluyla değil bölgesel olarak verilmek istendiği durumlar",
+        "prep": "Cilt temiz ve bütün olmalı, üzerinde krem kalıntısı bulunmamalıdır; ilaç alerjisi işlem öncesinde bildirilir, ilacı hekim seçer",
+        "abnormal": "İşlem sonrası ciltte kısa süreli kızarıklık olabilir, seansların etkisi birkaç uygulamadan sonra değerlendirilir. Döküntü, kaşıntı veya ağrının artması seansların durdurulup hekime başvurulmasını gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уношење лијека кроз кожу помоћу ултразвука: лијек је саставни дио контактног гела којим се обрађује зона",
+        "how": "На кожу се наноси гел са лијеком, а сонда се води преко зоне кружним покретима без задржавања на једном мјесту; осјећа се блага топлота или ништа, а процедура је безболна",
+        "when": "Бол и упала у зглобовима, тетивама и мишићима, ожиљне промјене и прираслице, ситуације када љекар жели да лијек дјелује локално, а не да се узима на уста",
+        "prep": "Кожа мора бити чиста и без оштећења, без остатака креме; за алергију на лијекове каже се прије почетка, а сам лијек бира љекар",
+        "abnormal": "Послије процедуре могуће је краткотрајно црвенило коже, а дјеловање циклуса процјењује се послије неколико сеанси. Осип, свраб или појачан бол разлог су да се циклус прекине и да се пацијент јави љекару"
+      }
+    }
+  },
+  {
+    "slug": "underwater-ultrasound-therapy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ультразвуковая терапия, при которой конечность погружают в ванночку, и вода служит средой для передачи ультразвука",
+        "how": "Кисть или стопу опускают в ёмкость с тёплой водой, излучатель держат в воде на небольшом расстоянии от кожи и медленно перемещают; прямого контакта с кожей нет, ощущений почти нет",
+        "when": "Боль и тугоподвижность мелких суставов кисти и стопы, неровные и болезненные зоны, где неудобен прямой контакт, состояния после травм пальцев и запястья",
+        "prep": "С руки или ноги снимают украшения, кожа должна быть без крема и повязок; открытые раны и свежие швы в зоне погружения сначала показывают врачу",
+        "abnormal": "После сеанса возможно ощущение тепла в суставах, а результат курса оценивают после нескольких процедур. Усиление боли или отёк — повод продолжать только после осмотра врача"
+      },
+      "en": {
+        "what": "Ultrasound therapy in which the limb is immersed in a bath and the water acts as the medium that carries the ultrasound",
+        "how": "The hand or foot is placed in a container of warm water, the transducer is held in the water a short distance from the skin and moved slowly; there is no direct contact with the skin and almost nothing is felt",
+        "when": "Pain and stiffness in the small joints of the hand and foot, uneven or tender areas where direct contact is awkward, conditions after finger and wrist injuries",
+        "prep": "Jewellery is removed from the hand or foot and the skin must be free of cream and dressings; open wounds and fresh stitches in the immersed area are shown to a doctor first",
+        "abnormal": "A feeling of warmth in the joints after the session is possible, and the result of a course is judged after several sessions. Increasing pain or swelling means treatment continues only after a medical examination"
+      },
+      "sr": {
+        "what": "Terapija ultrazvukom kod koje se ekstremitet uroni u kadicu, a voda služi kao sredina koja prenosi ultrazvuk",
+        "how": "Šaka ili stopalo se spuštaju u posudu sa toplom vodom, sonda se drži u vodi na maloj udaljenosti od kože i polako pomjera; nema direktnog dodira sa kožom i gotovo da se ništa ne osjeća",
+        "when": "Bol i ukočenost sitnih zglobova šake i stopala, neravne i osjetljive zone gdje je direktan dodir nezgodan, stanja poslije povreda prstiju i ručnog zgloba",
+        "prep": "Sa ruke ili noge se skida nakit, a koža mora biti bez kreme i zavoja; otvorene rane i svježi šavovi u zoni uranjanja prvo se pokazuju ljekaru",
+        "abnormal": "Poslije seanse je moguć osjećaj toplote u zglobovima, a rezultat ciklusa procjenjuje se poslije nekoliko procedura. Pojačan bol ili otok znače da se nastavlja tek nakon pregleda ljekara"
+      },
+      "de": {
+        "what": "Ultraschalltherapie, bei der die Gliedmaße in ein Wasserbad getaucht wird und das Wasser den Ultraschall überträgt",
+        "how": "Hand oder Fuß werden in ein Gefäß mit warmem Wasser gelegt, der Schallkopf wird im Wasser in kurzem Abstand zur Haut gehalten und langsam bewegt; ein direkter Hautkontakt besteht nicht und man spürt kaum etwas",
+        "when": "Schmerz und Steifigkeit der kleinen Hand- und Fußgelenke, unebene oder empfindliche Stellen, an denen direkter Kontakt unangenehm ist, Zustände nach Finger- und Handgelenksverletzungen",
+        "prep": "Schmuck wird von Hand oder Fuß abgelegt, die Haut muss frei von Creme und Verbänden sein; offene Wunden und frische Nähte im Tauchbereich werden zuerst dem Arzt gezeigt",
+        "abnormal": "Ein Wärmegefühl in den Gelenken nach der Sitzung ist möglich, das Ergebnis der Serie wird nach mehreren Sitzungen beurteilt. Zunehmender Schmerz oder Schwellung bedeuten, dass erst nach ärztlicher Untersuchung fortgefahren wird"
+      },
+      "tr": {
+        "what": "Uzvun bir kap içinde suya batırıldığı ve suyun ultrasonu ileten ortam olarak kullanıldığı ultrason tedavisi",
+        "how": "El veya ayak ılık su dolu kabın içine konur, başlık su içinde cilde yakın mesafede tutulup yavaşça hareket ettirilir; ciltle doğrudan temas yoktur ve neredeyse hiçbir şey hissedilmez",
+        "when": "El ve ayağın küçük eklemlerinde ağrı ve tutukluk, doğrudan temasın zor olduğu girintili ve hassas bölgeler, parmak ve el bileği yaralanmaları sonrası durumlar",
+        "prep": "El veya ayaktaki takılar çıkarılır, cilt kremsiz ve pansumansız olmalıdır; batırılacak bölgedeki açık yaralar ve yeni dikişler önce hekime gösterilir",
+        "abnormal": "Seans sonrası eklemlerde sıcaklık hissi olabilir, seansların sonucu birkaç uygulamadan sonra değerlendirilir. Ağrının artması veya şişlik durumunda uygulamaya ancak hekim muayenesinden sonra devam edilir"
+      },
+      "sr_cyrl": {
+        "what": "Терапија ултразвуком код које се екстремитет урони у кадицу, а вода служи као средина која преноси ултразвук",
+        "how": "Шака или стопало се спуштају у посуду са топлом водом, сонда се држи у води на малој удаљености од коже и полако помјера; нема директног додира са кожом и готово да се ништа не осјећа",
+        "when": "Бол и укоченост ситних зглобова шаке и стопала, неравне и осјетљиве зоне гдје је директан додир незгодан, стања послије повреда прстију и ручног зглоба",
+        "prep": "Са руке или ноге се скида накит, а кожа мора бити без креме и завоја; отворене ране и свјежи шавови у зони урањања прво се показују љекару",
+        "abnormal": "Послије сеансе је могућ осјећај топлоте у зглобовима, а резултат циклуса процјењује се послије неколико процедура. Појачан бол или оток значе да се наставља тек након прегледа љекара"
+      }
+    }
+  },
+  {
+    "slug": "visceral-osteopathy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Мягкая мануальная работа с животом: специалист руками оценивает подвижность внутренних органов и окружающих их тканей и снимает найденное напряжение",
+        "how": "Пациент лежит на спине, специалист медленно и без усилия пальпирует живот и подреберья, задерживаясь в местах натяжения; сеанс проходит через тонкую одежду или на коже",
+        "when": "Ощущение напряжения и дискомфорта в животе, боль в спине, связанная с напряжением брюшной стенки, состояния после операций на животе и рубцы — когда причина жалоб уже уточнена врачом",
+        "prep": "Приходить не сразу после еды, лучше через пару часов; взять с собой результаты уже сделанных обследований живота и список принимаемых лекарств",
+        "abnormal": "Метод не заменяет обследование: острая или нарастающая боль в животе, температура, рвота, кровь в стуле или моче требуют срочного осмотра врача, а не продолжения сеансов"
+      },
+      "en": {
+        "what": "Gentle manual work on the abdomen: the practitioner assesses the mobility of the internal organs and the surrounding tissue by hand and releases the tension that is found",
+        "how": "The patient lies on the back while the practitioner palpates the abdomen and the area under the ribs slowly and without force, pausing where tension is felt; the session is done through thin clothing or on the skin",
+        "when": "A feeling of tension and discomfort in the abdomen, back pain linked to tension of the abdominal wall, conditions after abdominal surgery and scars, once the cause of the complaints has been established by a doctor",
+        "prep": "Do not come straight after a meal, a couple of hours later is better; bring the results of abdominal examinations already done and a list of the medicines you take",
+        "abnormal": "The method does not replace examination: acute or increasing abdominal pain, fever, vomiting, blood in the stool or urine require an urgent medical examination rather than further sessions"
+      },
+      "sr": {
+        "what": "Blaga manuelna obrada trbuha: stručnjak rukama procjenjuje pokretljivost unutrašnjih organa i okolnih tkiva i otpušta napetost koju nađe",
+        "how": "Pacijent leži na leđima, a stručnjak polako i bez sile pipa trbuh i podrebarje, zadržavajući se na mjestima zategnutosti; seansa se radi preko tanke odjeće ili na koži",
+        "when": "Osjećaj napetosti i nelagode u trbuhu, bol u leđima povezan sa napetošću trbušnog zida, stanja poslije operacija na trbuhu i ožiljci, kada je uzrok tegoba već utvrdio ljekar",
+        "prep": "Ne dolaziti neposredno poslije obroka, bolje je poslije dva sata; ponijeti nalaze već urađenih pregleda trbuha i spisak lijekova koji se uzimaju",
+        "abnormal": "Metoda ne zamjenjuje pregled: jak ili sve jači bol u trbuhu, povišena temperatura, povraćanje, krv u stolici ili mokraći traže hitan pregled ljekara, a ne nastavak seansi"
+      },
+      "de": {
+        "what": "Sanfte manuelle Arbeit am Bauch: die Fachkraft beurteilt mit den Händen die Beweglichkeit der inneren Organe und des umliegenden Gewebes und löst die gefundene Spannung",
+        "how": "Der Patient liegt auf dem Rücken, während die Fachkraft Bauch und Rippenbogen langsam und ohne Kraft abtastet und an Spannungsstellen verweilt; die Sitzung erfolgt durch dünne Kleidung oder auf der Haut",
+        "when": "Spannungs- und Unwohlseinsgefühl im Bauch, Rückenschmerzen im Zusammenhang mit Spannung der Bauchwand, Zustände nach Bauchoperationen und Narben, wenn die Ursache der Beschwerden ärztlich geklärt ist",
+        "prep": "Nicht direkt nach einer Mahlzeit kommen, besser einige Stunden später; bereits vorhandene Befunde von Bauchuntersuchungen und eine Liste der eingenommenen Medikamente mitbringen",
+        "abnormal": "Die Methode ersetzt keine Untersuchung: akute oder zunehmende Bauchschmerzen, Fieber, Erbrechen, Blut im Stuhl oder Urin erfordern eine dringende ärztliche Untersuchung und nicht weitere Sitzungen"
+      },
+      "tr": {
+        "what": "Karın bölgesine yumuşak elle uygulama: uygulayıcı iç organların ve çevresindeki dokuların hareketliliğini elle değerlendirir ve saptadığı gerginliği gevşetir",
+        "how": "Hasta sırtüstü yatarken uygulayıcı karnı ve kaburga altını yavaşça ve zorlamadan elle muayene eder, gerginlik hissettiği yerlerde bekler; seans ince giysi üzerinden ya da doğrudan ciltten yapılır",
+        "when": "Karında gerginlik ve rahatsızlık hissi, karın duvarındaki gerginlikle ilişkili sırt ağrısı, karın ameliyatları sonrası durumlar ve nedbeler, şikayetlerin nedeni hekim tarafından belirlendikten sonra",
+        "prep": "Yemekten hemen sonra gelinmemeli, birkaç saat beklemek daha uygundur; daha önce yapılmış karın tetkiklerinin sonuçları ve kullanılan ilaçların listesi getirilmelidir",
+        "abnormal": "Bu yöntem tetkikin yerini tutmaz: şiddetli ya da artan karın ağrısı, ateş, kusma, dışkıda veya idrarda kan seanslara devam edilmesini değil acil hekim muayenesini gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Блага мануелна обрада трбуха: стручњак рукама процјењује покретљивост унутрашњих органа и околних ткива и отпушта напетост коју нађе",
+        "how": "Пацијент лежи на леђима, а стручњак полако и без силе пипа трбух и подребарје, задржавајући се на мјестима затегнутости; сеанса се ради преко танке одјеће или на кожи",
+        "when": "Осјећај напетости и нелагоде у трбуху, бол у леђима повезан са напетошћу трбушног зида, стања послије операција на трбуху и ожиљци, када је узрок тегоба већ утврдио љекар",
+        "prep": "Не долазити непосредно послије оброка, боље је послије два сата; понијети налазе већ урађених прегледа трбуха и списак лијекова који се узимају",
+        "abnormal": "Метода не замјењује преглед: јак или све јачи бол у трбуху, повишена температура, повраћање, крв у столици или мокраћи траже хитан преглед љекара, а не наставак сеанси"
+      }
+    }
+  }
+]

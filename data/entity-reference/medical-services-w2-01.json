@@ -1,0 +1,626 @@
+[
+  {
+    "slug": "tooth-extraction-complex",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление зуба, которое нельзя выполнить обычными щипцами — с разделением корней или снятием части кости",
+        "how": "Под местной анестезией зуб разделяют на фрагменты и извлекают по частям, при необходимости отслаивают десну и накладывают швы; 30-60 минут",
+        "when": "Разрушенная коронка, искривлённые или сросшиеся корни, оставшийся в кости корень, хрупкий зуб после лечения каналов",
+        "prep": "Поесть перед визитом, сообщить о хронических болезнях и препаратах, разжижающих кровь, взять с собой имеющийся снимок",
+        "abnormal": "Отёк, боль и ограниченное открывание рта в первые 2-3 дня ожидаемы. Если боль нарастает после третьего дня, поднимается температура или кровотечение не останавливается, нужно показаться стоматологу"
+      },
+      "en": {
+        "what": "Removal of a tooth that cannot be taken out with forceps alone — the roots are separated or some bone is removed",
+        "how": "Under local anesthesia the tooth is sectioned and taken out in fragments, the gum is lifted and sutured if needed; 30-60 minutes",
+        "when": "A destroyed crown, curved or fused roots, a root left in the bone, a brittle tooth after root canal treatment",
+        "prep": "Eat before the visit, report chronic conditions and blood thinners, bring any existing X-ray",
+        "abnormal": "Swelling, pain and limited mouth opening in the first 2-3 days are expected. If pain increases after the third day, fever appears or bleeding does not stop, see a dentist"
+      },
+      "sr": {
+        "what": "Vađenje zuba koje se ne može uraditi običnim kliještima — uz razdvajanje korijena ili uklanjanje dijela kosti",
+        "how": "U lokalnoj anesteziji zub se razdvaja na dijelove i vadi u fragmentima, po potrebi se podigne režanj desni i postave konci; 30-60 minuta",
+        "when": "Razrušena kruna, savijeni ili srasli korijeni, korijen zaostao u kosti, krt zub poslije liječenja kanala",
+        "prep": "Jesti prije dolaska, prijaviti hronične bolesti i lijekove za razrjeđivanje krvi, ponijeti postojeći snimak",
+        "abnormal": "Otok, bol i otežano otvaranje usta prvih 2-3 dana su očekivani. Ako bol jača poslije trećeg dana, javi se temperatura ili krvarenje ne prestaje, treba se javiti stomatologu"
+      },
+      "de": {
+        "what": "Zahnentfernung, die mit der üblichen Zange nicht möglich ist — mit Trennung der Wurzeln oder Abtragung von Knochen",
+        "how": "In Lokalanästhesie wird der Zahn zerteilt und in Fragmenten entfernt, bei Bedarf wird das Zahnfleisch gelöst und genäht; 30-60 Minuten",
+        "when": "Zerstörte Zahnkrone, gekrümmte oder verwachsene Wurzeln, im Knochen verbliebene Wurzel, brüchiger Zahn nach Wurzelbehandlung",
+        "prep": "Vor dem Termin essen, chronische Erkrankungen und blutverdünnende Medikamente mitteilen, vorhandene Röntgenaufnahmen mitbringen",
+        "abnormal": "Schwellung, Schmerzen und eine eingeschränkte Mundöffnung in den ersten 2-3 Tagen sind zu erwarten. Nehmen die Schmerzen nach dem dritten Tag zu, tritt Fieber auf oder stoppt die Blutung nicht, sollte der Zahnarzt aufgesucht werden"
+      },
+      "tr": {
+        "what": "Yalnızca pense ile yapılamayan diş çekimi — kökler ayrılarak veya bir miktar kemik alınarak yapılır",
+        "how": "Lokal anestezi altında diş parçalara ayrılıp parça parça çıkarılır, gerekirse diş eti kaldırılır ve dikiş atılır; 30-60 dakika",
+        "when": "Harap olmuş kron, eğri veya kaynaşmış kökler, kemik içinde kalmış kök, kanal tedavisi sonrası kırılgan diş",
+        "prep": "Randevudan önce yemek yemek, kronik hastalıkları ve kan sulandırıcı ilaçları bildirmek, varsa röntgeni yanında getirmek",
+        "abnormal": "İlk 2-3 gün şişlik, ağrı ve ağzı açmakta zorlanma beklenen durumlardır. Ağrı üçüncü günden sonra artıyorsa, ateş çıkarsa veya kanama durmuyorsa diş hekimine başvurmak gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Вађење зуба које се не може урадити обичним клијештима — уз раздвајање коријена или уклањање дијела кости",
+        "how": "У локалној анестезији зуб се раздваја на дијелове и вади у фрагментима, по потреби се подигне режањ десни и поставе конци; 30-60 минута",
+        "when": "Разрушена круна, савијени или срасли коријени, коријен заостао у кости, крт зуб послије лијечења канала",
+        "prep": "Јести прије доласка, пријавити хроничне болести и лијекове за разрјеђивање крви, понијети постојећи снимак",
+        "abnormal": "Оток, бол и отежано отварање уста првих 2-3 дана су очекивани. Ако бол јача послије трећег дана, јави се температура или крварење не престаје, треба се јавити стоматологу"
+      }
+    }
+  },
+  {
+    "slug": "intraoral-abscess-incision",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Вскрытие гнойного очага в полости рта разрезом со стороны слизистой, чтобы дать отток гною",
+        "how": "Под местной анестезией делают небольшой разрез слизистой, эвакуируют гной, промывают полость и при необходимости ставят дренаж; 15-30 минут",
+        "when": "Гнойное воспаление у корня зуба или под слизистой с отёком и болью, осложнение периодонтита или перикоронита, нагноившаяся киста",
+        "prep": "Специальной подготовки нет; сообщить об аллергии на анестетики и принимаемых препаратах, не откладывать визит при нарастающем отёке",
+        "abnormal": "После оттока гноя боль обычно быстро уменьшается, несколько дней возможны отёк и скудное отделяемое. Если отёк растёт, поднимается температура или затрудняются глотание и открывание рта, нужно срочно обратиться к врачу"
+      },
+      "en": {
+        "what": "Opening a pus collection in the mouth through an incision in the mucosa so that it can drain",
+        "how": "Under local anesthesia a small incision is made in the mucosa, the pus is drained, the cavity is rinsed and a drain is placed if needed; 15-30 minutes",
+        "when": "Purulent inflammation near a tooth root or under the mucosa with swelling and pain, a complication of periodontitis or pericoronitis, an infected cyst",
+        "prep": "No special preparation; report allergies to anesthetics and medications taken, and do not postpone the visit if the swelling is growing",
+        "abnormal": "After drainage the pain usually eases quickly, with swelling and slight discharge for a few days. If the swelling grows, fever appears or swallowing and opening the mouth become difficult, seek medical help urgently"
+      },
+      "sr": {
+        "what": "Otvaranje gnojne kolekcije u ustima rezom kroz sluzokožu radi otjecanja gnoja",
+        "how": "U lokalnoj anesteziji napravi se mali rez sluzokože, gnoj se isprazni, šupljina ispere i po potrebi postavi dren; 15-30 minuta",
+        "when": "Gnojna upala uz korijen zuba ili ispod sluzokože sa otokom i bolom, komplikacija parodontitisa ili perikoronitisa, inficirana cista",
+        "prep": "Posebna priprema nije potrebna; prijaviti alergiju na anestetike i lijekove koje uzimate, ne odlagati dolazak ako otok raste",
+        "abnormal": "Poslije otjecanja gnoja bol obično brzo popušta, a otok i oskudan iscjedak mogu trajati nekoliko dana. Ako otok raste, javi se temperatura ili otežano gutanje i otvaranje usta, treba se hitno javiti ljekaru"
+      },
+      "de": {
+        "what": "Eröffnung einer Eiteransammlung im Mund über einen Schnitt in der Schleimhaut zur Entlastung",
+        "how": "In Lokalanästhesie wird die Schleimhaut kurz eingeschnitten, der Eiter entleert, die Höhle gespült und bei Bedarf eine Drainage eingelegt; 15-30 Minuten",
+        "when": "Eitrige Entzündung an einer Zahnwurzel oder unter der Schleimhaut mit Schwellung und Schmerzen, Komplikation einer Parodontitis oder Perikoronitis, infizierte Zyste",
+        "prep": "Keine besondere Vorbereitung; Allergien gegen Betäubungsmittel und eingenommene Medikamente mitteilen, den Termin bei zunehmender Schwellung nicht aufschieben",
+        "abnormal": "Nach der Entlastung lassen die Schmerzen meist rasch nach, Schwellung und geringe Sekretion können einige Tage bestehen. Nimmt die Schwellung zu, tritt Fieber auf oder werden Schlucken und Mundöffnung schwierig, ist umgehend ärztliche Hilfe nötig"
+      },
+      "tr": {
+        "what": "Ağız içindeki iltihap birikintisinin mukozadan kesi yapılarak boşaltılması",
+        "how": "Lokal anestezi altında mukozada küçük bir kesi yapılır, iltihap boşaltılır, boşluk yıkanır ve gerekirse dren konur; 15-30 dakika",
+        "when": "Diş kökü çevresinde veya mukoza altında şişlik ve ağrıyla seyreden iltihap, periodontit ya da perikoronit komplikasyonu, enfekte kist",
+        "prep": "Özel hazırlık gerekmez; anestezi alerjisi ve kullanılan ilaçlar bildirilmeli, şişlik büyüyorsa başvuru ertelenmemelidir",
+        "abnormal": "Boşaltmadan sonra ağrı genellikle hızla azalır, birkaç gün şişlik ve hafif akıntı olabilir. Şişlik artarsa, ateş çıkarsa ya da yutma ve ağzı açma güçleşirse acilen hekime başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Отварање гнојне колекције у устима резом кроз слузокожу ради отјецања гноја",
+        "how": "У локалној анестезији направи се мали рез слузокоже, гној се испразни, шупљина испере и по потреби постави дрен; 15-30 минута",
+        "when": "Гнојна упала уз коријен зуба или испод слузокоже са отоком и болом, компликација пародонтитиса или перикоронитиса, инфицирана циста",
+        "prep": "Посебна припрема није потребна; пријавити алергију на анестетике и лијекове које узимате, не одлагати долазак ако оток расте",
+        "abnormal": "Послије отјецања гноја бол обично брзо попушта, а оток и оскудан исцједак могу трајати неколико дана. Ако оток расте, јави се температура или отежано гутање и отварање уста, треба се хитно јавити љекару"
+      }
+    }
+  },
+  {
+    "slug": "cystectomy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Операция по удалению кисты челюсти вместе с её оболочкой",
+        "how": "Под местной анестезией отслаивают лоскут десны, открывают доступ к кости, удаляют кисту с оболочкой, рану ушивают; 30-60 минут, швы снимают через 7-10 дней",
+        "when": "Киста у корня зуба, выявленная на снимке, киста, которая растёт или нагноилась, подготовка к имплантации или протезированию",
+        "prep": "Нужен снимок или КТ по назначению врача, поесть перед визитом, сообщить о принимаемых препаратах, особенно разжижающих кровь",
+        "abnormal": "Отёк и болезненность в первые дни ожидаемы, кость на месте полости восстанавливается месяцами. Нарастающая боль, температура или выделения из раны — повод обратиться раньше срока; заживление стоматолог оценивает по контрольному снимку"
+      },
+      "en": {
+        "what": "Surgical removal of a jaw cyst together with its lining",
+        "how": "Under local anesthesia a gum flap is raised, the bone is opened, the cyst is removed with its lining and the wound is sutured; 30-60 minutes, sutures out after 7-10 days",
+        "when": "A cyst at a tooth root seen on an X-ray, a cyst that is growing or has become infected, preparation for implants or prosthetics",
+        "prep": "An X-ray or CT scan as ordered by the dentist, eat before the visit, report medications being taken, especially blood thinners",
+        "abnormal": "Swelling and tenderness in the first days are expected; the bone at the site fills in over months. Increasing pain, fever or discharge from the wound is a reason to come in sooner; healing is assessed by the dentist on a follow-up X-ray"
+      },
+      "sr": {
+        "what": "Hirurško uklanjanje ciste vilice zajedno sa njenom ovojnicom",
+        "how": "U lokalnoj anesteziji podiže se režanj desni, otvori pristup kosti, cista se odstrani sa ovojnicom, a rana zašije; 30-60 minuta, konci se skidaju nakon 7-10 dana",
+        "when": "Cista uz korijen zuba viđena na snimku, cista koja raste ili se inficirala, priprema za implantaciju ili protetiku",
+        "prep": "Potreban je snimak ili skener po nalogu stomatologa, jesti prije dolaska, prijaviti lijekove koje uzimate, posebno one za razrjeđivanje krvi",
+        "abnormal": "Otok i osjetljivost prvih dana su očekivani, a kost na mjestu šupljine popunjava se mjesecima. Bol koji jača, temperatura ili iscjedak iz rane razlog su za raniji dolazak; zarastanje stomatolog procjenjuje na kontrolnom snimku"
+      },
+      "de": {
+        "what": "Operative Entfernung einer Kieferzyste samt ihrer Hülle",
+        "how": "In Lokalanästhesie wird ein Zahnfleischlappen gebildet, der Knochen freigelegt, die Zyste mit Hülle entfernt und die Wunde genäht; 30-60 Minuten, Fadenentfernung nach 7-10 Tagen",
+        "when": "Im Röntgenbild entdeckte Zyste an einer Zahnwurzel, wachsende oder infizierte Zyste, Vorbereitung auf Implantate oder Zahnersatz",
+        "prep": "Röntgen- oder DVT-Aufnahme nach Anweisung des Zahnarztes, vor dem Termin essen, eingenommene Medikamente mitteilen, insbesondere Blutverdünner",
+        "abnormal": "Schwellung und Druckempfindlichkeit in den ersten Tagen sind zu erwarten, der Knochen füllt den Hohlraum über Monate auf. Zunehmende Schmerzen, Fieber oder Sekret aus der Wunde sind ein Grund für einen früheren Termin; die Heilung beurteilt der Zahnarzt auf einer Kontrollaufnahme"
+      },
+      "tr": {
+        "what": "Çene kistinin zarıyla birlikte cerrahi olarak çıkarılması",
+        "how": "Lokal anestezi altında diş eti flebi kaldırılır, kemiğe ulaşılır, kist zarıyla birlikte alınır ve yara dikilir; 30-60 dakika, dikişler 7-10 gün sonra alınır",
+        "when": "Röntgende görülen diş kökü kisti, büyüyen veya enfekte olan kist, implant ya da protez öncesi hazırlık",
+        "prep": "Hekimin istediği röntgen veya tomografi, randevudan önce yemek yemek, kullanılan ilaçların, özellikle kan sulandırıcıların bildirilmesi",
+        "abnormal": "İlk günlerde şişlik ve hassasiyet beklenir, boşluktaki kemik aylar içinde dolar. Artan ağrı, ateş veya yaradan akıntı erken başvuru nedenidir; iyileşmeyi hekim kontrol röntgeniyle değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Хируршко уклањање цисте вилице заједно са њеном овојницом",
+        "how": "У локалној анестезији подиже се режањ десни, отвори приступ кости, циста се одстрани са овојницом, а рана зашије; 30-60 минута, конци се скидају након 7-10 дана",
+        "when": "Циста уз коријен зуба виђена на снимку, циста која расте или се инфицирала, припрема за имплантацију или протетику",
+        "prep": "Потребан је снимак или скенер по налогу стоматолога, јести прије доласка, пријавити лијекове које узимате, посебно оне за разрјеђивање крви",
+        "abnormal": "Оток и осјетљивост првих дана су очекивани, а кост на мјесту шупљине попуњава се мјесецима. Бол који јача, температура или исцједак из ране разлог су за ранији долазак; зарастање стоматолог процјењује на контролном снимку"
+      }
+    }
+  },
+  {
+    "slug": "dental-calculus-removal-and-air-flow",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Снятие твёрдых зубных отложений ультразвуком и последующая обработка аппаратом Air-Flow, убирающим пигментный налёт",
+        "how": "Ультразвуковым скейлером снимают камень над десной и у её края, затем струёй воды с мелким порошком очищают налёт в промежутках и фиссурах, в конце полируют; 30-45 минут",
+        "when": "Видимый зубной камень, налёт от кофе, чая и курения, кровоточивость дёсен, плановая гигиена, подготовка к отбеливанию, протезированию или брекетам",
+        "prep": "Подготовка не нужна; предупредить о чувствительности зубов, заболеваниях дёсен и наличии кардиостимулятора",
+        "abnormal": "День-два возможны чувствительность к холодному и лёгкая кровоточивость дёсен. Если кровоточивость и болезненность держатся дольше, это может быть связано с воспалением дёсен — состояние оценивает стоматолог"
+      },
+      "en": {
+        "what": "Removal of hardened deposits with an ultrasonic scaler followed by Air-Flow treatment that clears stained plaque",
+        "how": "The scaler removes calculus above and at the gum margin, then a jet of water with fine powder cleans plaque between the teeth and in the fissures, finishing with polishing; 30-45 minutes",
+        "when": "Visible calculus, staining from coffee, tea and smoking, bleeding gums, routine hygiene, preparation for whitening, prosthetics or braces",
+        "prep": "No preparation needed; mention sensitive teeth, gum disease and a pacemaker if you have one",
+        "abnormal": "Sensitivity to cold and slight gum bleeding may last a day or two. If bleeding and tenderness persist longer, it may be linked to gum inflammation — the dentist assesses this"
+      },
+      "sr": {
+        "what": "Skidanje tvrdih naslaga ultrazvukom i naknadni tretman Air-Flow aparatom koji uklanja pigmentne naslage",
+        "how": "Ultrazvučnim skalerom uklanja se kamenac iznad i uz rub desni, zatim mlaz vode sa finim prahom čisti naslage u međuzubnim prostorima i fisurama, na kraju slijedi poliranje; 30-45 minuta",
+        "when": "Vidljiv zubni kamenac, naslage od kafe, čaja i duvana, krvarenje desni, redovna higijena, priprema za bijeljenje, protetiku ili fiksni aparatić",
+        "prep": "Priprema nije potrebna; napomenuti osjetljivost zuba, bolesti desni i postojanje pejsmejkera",
+        "abnormal": "Dan ili dva mogući su osjetljivost na hladno i blago krvarenje desni. Ako krvarenje i osjetljivost potraju duže, to može biti povezano sa upalom desni — stanje procjenjuje stomatolog"
+      },
+      "de": {
+        "what": "Entfernung harter Beläge mit Ultraschall und anschließende Air-Flow-Reinigung, die Verfärbungen löst",
+        "how": "Mit dem Ultraschallscaler wird Zahnstein über und am Zahnfleischrand entfernt, danach reinigt ein Wasser-Pulver-Strahl Beläge in den Zwischenräumen und Fissuren, zum Schluss wird poliert; 30-45 Minuten",
+        "when": "Sichtbarer Zahnstein, Verfärbungen durch Kaffee, Tee und Rauchen, Zahnfleischbluten, regelmäßige Prophylaxe, Vorbereitung auf Bleaching, Zahnersatz oder feste Zahnspange",
+        "prep": "Keine Vorbereitung nötig; empfindliche Zähne, Zahnfleischerkrankungen und einen Herzschrittmacher vorher mitteilen",
+        "abnormal": "Ein bis zwei Tage können Kälteempfindlichkeit und leichtes Zahnfleischbluten auftreten. Halten Blutung und Empfindlichkeit länger an, kann das mit einer Zahnfleischentzündung zusammenhängen — die Beurteilung übernimmt der Zahnarzt"
+      },
+      "tr": {
+        "what": "Sert birikintilerin ultrasonla temizlenmesi ve ardından renklenmeleri gideren Air-Flow uygulaması",
+        "how": "Ultrasonik aletle diş eti kenarındaki ve üstündeki taşlar alınır, sonra su ve ince toz püskürtülerek ara yüzlerdeki ve fissürlerdeki birikinti temizlenir, işlem cilalamayla biter; 30-45 dakika",
+        "when": "Görünür diş taşı, kahve, çay ve sigara lekeleri, diş eti kanaması, rutin ağız bakımı, beyazlatma, protez veya ortodontik tedavi öncesi hazırlık",
+        "prep": "Hazırlık gerekmez; diş hassasiyeti, diş eti hastalığı ve kalp pili varsa bildirilmelidir",
+        "abnormal": "Bir iki gün soğuğa karşı hassasiyet ve hafif diş eti kanaması olabilir. Kanama ve hassasiyet daha uzun sürerse bu diş eti iltihabıyla ilişkili olabilir — değerlendirmeyi diş hekimi yapar"
+      },
+      "sr_cyrl": {
+        "what": "Скидање тврдих наслага ултразвуком и накнадни третман Air-Flow апаратом који уклања пигментне наслаге",
+        "how": "Ултразвучним скалером уклања се каменац изнад и уз руб десни, затим млаз воде са финим прахом чисти наслаге у међузубним просторима и фисурама, на крају слиједи полирање; 30-45 минута",
+        "when": "Видљив зубни каменац, наслаге од кафе, чаја и дувана, крварење десни, редовна хигијена, припрема за бијељење, протетику или фиксни апаратић",
+        "prep": "Припрема није потребна; напоменути осјетљивост зуба, болести десни и постојање пејсмејкера",
+        "abnormal": "Дан или два могући су осјетљивост на хладно и благо крварење десни. Ако крварење и осјетљивост потрају дуже, то може бити повезано са упалом десни — стање процјењује стоматолог"
+      }
+    }
+  },
+  {
+    "slug": "filling-retention-with-metal-post",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Восстановление сильно разрушенного зуба пломбой, которую удерживает металлический штифт в корневом канале",
+        "how": "Канал распломбировывают на нужную глубину, подбирают и фиксируют металлический штифт, поверх него формируют пломбу; один визит, 30-60 минут",
+        "when": "Зуб с пролеченными каналами и потерей большей части коронки, когда пломбе не за что держаться, восстановление культи под будущую коронку",
+        "prep": "Каналы должны быть пролечены заранее; в день процедуры подготовка не требуется, полезно взять предыдущий снимок",
+        "abnormal": "Несколько дней возможна чувствительность при накусывании. Если появляются боль, подвижность пломбы, скол или трещина зуба, нужно показаться стоматологу — конструкцию проверяют и при необходимости переделывают"
+      },
+      "en": {
+        "what": "Rebuilding a heavily damaged tooth with a filling held by a metal post set in the root canal",
+        "how": "The canal is reopened to the required depth, a metal post is selected and cemented, and the filling is built over it; one visit, 30-60 minutes",
+        "when": "A root-treated tooth that has lost most of its crown and offers nothing for a filling to hold on to, a build-up before a future crown",
+        "prep": "The root canals must be treated beforehand; no preparation on the day, bringing a previous X-ray is useful",
+        "abnormal": "Sensitivity when biting may last a few days. If pain, a loose filling, a chip or a crack in the tooth appears, see the dentist — the build-up is checked and redone if needed"
+      },
+      "sr": {
+        "what": "Nadogradnja jako oštećenog zuba plombom koju drži metalni kočić u korijenskom kanalu",
+        "how": "Kanal se otvori do potrebne dubine, izabere se i cementira metalni kočić, a preko njega se oblikuje plomba; jedna posjeta, 30-60 minuta",
+        "when": "Zub sa liječenim kanalima koji je izgubio veći dio krune, pa plomba nema uporište, nadogradnja prije izrade krunice",
+        "prep": "Kanali moraju biti prethodno liječeni; na dan zahvata priprema nije potrebna, korisno je ponijeti raniji snimak",
+        "abnormal": "Nekoliko dana moguća je osjetljivost pri zagrizu. Ako se jave bol, klimanje plombe, odlom ili pukotina zuba, treba se javiti stomatologu — nadogradnja se provjerava i po potrebi ponavlja"
+      },
+      "de": {
+        "what": "Aufbau eines stark zerstörten Zahns mit einer Füllung, die ein Metallstift im Wurzelkanal hält",
+        "how": "Der Kanal wird bis zur nötigen Tiefe freigelegt, ein Metallstift ausgewählt und einzementiert, darüber wird die Füllung modelliert; ein Termin, 30-60 Minuten",
+        "when": "Wurzelbehandelter Zahn mit Verlust des größten Teils der Krone, wenn die Füllung keinen Halt findet, Aufbau vor einer geplanten Krone",
+        "prep": "Die Wurzelkanäle müssen zuvor behandelt sein; am Behandlungstag ist keine Vorbereitung nötig, eine frühere Röntgenaufnahme ist hilfreich",
+        "abnormal": "Einige Tage kann der Zahn beim Zubeißen empfindlich sein. Treten Schmerzen, eine lockere Füllung, ein Abplatzen oder ein Riss auf, sollte der Zahnarzt den Aufbau prüfen und bei Bedarf erneuern"
+      },
+      "tr": {
+        "what": "Çok harap olmuş dişin, kök kanalına yerleştirilen metal post ile tutturulan dolguyla onarılması",
+        "how": "Kanal gereken derinlikte açılır, uygun metal post seçilip simante edilir ve üzerine dolgu şekillendirilir; tek seans, 30-60 dakika",
+        "when": "Kanal tedavisi yapılmış ve kronunun büyük kısmını kaybetmiş, dolgunun tutunacağı doku kalmamış diş, kron öncesi altyapı hazırlığı",
+        "prep": "Kanal tedavisi önceden tamamlanmış olmalıdır; işlem günü hazırlık gerekmez, önceki röntgeni getirmek yararlıdır",
+        "abnormal": "Birkaç gün ısırırken hassasiyet olabilir. Ağrı, dolguda oynama, kırık veya dişte çatlak görülürse hekime başvurulmalı; yapı kontrol edilir ve gerekirse yenilenir"
+      },
+      "sr_cyrl": {
+        "what": "Надоградња јако оштећеног зуба пломбом коју држи метални кочић у коријенском каналу",
+        "how": "Канал се отвори до потребне дубине, изабере се и цементира метални кочић, а преко њега се обликује пломба; једна посјета, 30-60 минута",
+        "when": "Зуб са лијеченим каналима који је изгубио већи дио круне, па пломба нема упориште, надоградња прије израде крунице",
+        "prep": "Канали морају бити претходно лијечени; на дан захвата припрема није потребна, корисно је понијети ранији снимак",
+        "abnormal": "Неколико дана могућа је осјетљивост при загризу. Ако се јаве бол, климање пломбе, одлом или пукотина зуба, треба се јавити стоматологу — надоградња се провјерава и по потреби понавља"
+      }
+    }
+  },
+  {
+    "slug": "gingivectomy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Хирургическое иссечение избыточной или воспалённой ткани десны с формированием её контура",
+        "how": "Под местной анестезией лишнюю десну убирают скальпелем, лазером или электроножом, край выравнивают, иногда накладывают защитную повязку; 20-40 минут на участок",
+        "when": "Разросшаяся десна, в том числе на фоне приёма некоторых лекарств или ношения брекетов, десневые карманы, открытие края зуба перед пломбой или коронкой, слишком заметная десна при улыбке",
+        "prep": "Перед вмешательством обычно проводят профессиональную чистку; сообщить о препаратах, разжижающих кровь, и хронических болезнях",
+        "abnormal": "Первые дни десна чувствительна и может немного кровить, окончательный контур формируется за несколько недель. Усиление боли, отёк или продолжающееся кровотечение — повод обратиться к стоматологу"
+      },
+      "en": {
+        "what": "Surgical trimming of excess or inflamed gum tissue with reshaping of its contour",
+        "how": "Under local anesthesia the surplus gum is removed with a scalpel, laser or electrosurgery, the margin is shaped and sometimes covered with a protective dressing; 20-40 minutes per area",
+        "when": "Overgrown gums, including with certain medications or braces, gum pockets, exposing the tooth margin before a filling or crown, a very visible gum line when smiling",
+        "prep": "Professional cleaning is usually done beforehand; report blood thinners and chronic conditions",
+        "abnormal": "The gum is tender for the first days and may bleed slightly; the final contour settles over several weeks. Increasing pain, swelling or continuing bleeding is a reason to contact the dentist"
+      },
+      "sr": {
+        "what": "Hirurško uklanjanje viška ili upaljenog tkiva desni uz oblikovanje njihove konture",
+        "how": "U lokalnoj anesteziji višak desni uklanja se skalpelom, laserom ili elektronožem, rub se poravna, ponekad se stavi zaštitni zavoj; 20-40 minuta po regiji",
+        "when": "Uvećane desni, uključujući one uz pojedine lijekove ili fiksni aparatić, parodontalni džepovi, otkrivanje ruba zuba prije plombe ili krunice, previše vidljive desni pri osmijehu",
+        "prep": "Prije zahvata se obično uradi profesionalno čišćenje; prijaviti lijekove za razrjeđivanje krvi i hronične bolesti",
+        "abnormal": "Prvih dana desni su osjetljive i mogu blago krvariti, konačna kontura se formira kroz nekoliko sedmica. Jači bol, otok ili krvarenje koje ne prestaje razlog su za javljanje stomatologu"
+      },
+      "de": {
+        "what": "Chirurgisches Abtragen von überschüssigem oder entzündetem Zahnfleisch mit Formung der Kontur",
+        "how": "In Lokalanästhesie wird das überschüssige Zahnfleisch mit Skalpell, Laser oder Elektrochirurgie entfernt, der Rand geformt und manchmal mit einem Schutzverband abgedeckt; 20-40 Minuten pro Bereich",
+        "when": "Wucherndes Zahnfleisch, auch unter bestimmten Medikamenten oder einer festen Spange, Zahnfleischtaschen, Freilegen des Zahnrandes vor Füllung oder Krone, beim Lächeln stark sichtbares Zahnfleisch",
+        "prep": "Vorher wird meist eine professionelle Zahnreinigung durchgeführt; Blutverdünner und chronische Erkrankungen mitteilen",
+        "abnormal": "In den ersten Tagen ist das Zahnfleisch empfindlich und kann leicht bluten, die endgültige Kontur bildet sich über einige Wochen. Zunehmende Schmerzen, Schwellung oder anhaltende Blutung sind ein Grund, den Zahnarzt aufzusuchen"
+      },
+      "tr": {
+        "what": "Fazla veya iltihaplı diş eti dokusunun cerrahi olarak alınması ve konturunun şekillendirilmesi",
+        "how": "Lokal anestezi altında fazla diş eti bistüri, lazer veya elektrocerrahi ile alınır, kenar düzeltilir, bazen koruyucu pat uygulanır; bölge başına 20-40 dakika",
+        "when": "Büyümüş diş etleri, bazı ilaçlara veya ortodontik tedaviye bağlı büyümeler dahil, diş eti cepleri, dolgu ya da kron öncesi diş kenarının açığa çıkarılması, gülerken diş etinin fazla görünmesi",
+        "prep": "İşlemden önce genellikle profesyonel temizlik yapılır; kan sulandırıcı ilaçlar ve kronik hastalıklar bildirilmelidir",
+        "abnormal": "İlk günlerde diş eti hassastır ve hafif kanayabilir, nihai kontur birkaç haftada oturur. Ağrının artması, şişlik veya durmayan kanama hekime başvurma nedenidir"
+      },
+      "sr_cyrl": {
+        "what": "Хируршко уклањање вишка или упаљеног ткива десни уз обликовање њихове контуре",
+        "how": "У локалној анестезији вишак десни уклања се скалпелом, ласером или електроножем, руб се поравна, понекад се стави заштитни завој; 20-40 минута по регији",
+        "when": "Увећане десни, укључујући оне уз поједине лијекове или фиксни апаратић, пародонтални џепови, откривање руба зуба прије пломбе или крунице, превише видљиве десни при осмијеху",
+        "prep": "Прије захвата се обично уради професионално чишћење; пријавити лијекове за разрјеђивање крви и хроничне болести",
+        "abnormal": "Првих дана десни су осјетљиве и могу благо крварити, коначна контура се формира кроз неколико седмица. Јачи бол, оток или крварење које не престаје разлог су за јављање стоматологу"
+      }
+    }
+  },
+  {
+    "slug": "impacted-tooth-extraction",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление зуба, который не прорезался и полностью или частично остаётся в кости либо под десной",
+        "how": "Под местной анестезией отслаивают лоскут десны, снимают часть кости над зубом, при необходимости делят зуб на фрагменты, рану ушивают; 40-90 минут, швы снимают через 7-10 дней",
+        "when": "Ретинированные зубы мудрости с воспалением или давлением на соседний зуб, ретинированные клыки перед ортодонтическим лечением, киста вокруг непрорезавшегося зуба",
+        "prep": "Нужен панорамный снимок или КТ, поесть перед визитом, сообщить о препаратах и хронических болезнях, на день операции не планировать нагрузок и поездок",
+        "abnormal": "Отёк щеки, ограниченное открывание рта и болезненность первые 3-5 дней ожидаемы. Онемение губы или языка, нарастающая боль, температура или неприятный запах из раны — повод обратиться к врачу"
+      },
+      "en": {
+        "what": "Removal of a tooth that has not erupted and remains fully or partly in the bone or under the gum",
+        "how": "Under local anesthesia a gum flap is raised, bone over the tooth is removed, the tooth is sectioned if needed and the wound is sutured; 40-90 minutes, sutures out after 7-10 days",
+        "when": "Impacted wisdom teeth with inflammation or pressure on the neighbouring tooth, impacted canines before orthodontic treatment, a cyst around an unerupted tooth",
+        "prep": "A panoramic X-ray or CT scan is needed, eat before the visit, report medications and chronic conditions, and keep the day of surgery free of exertion and travel",
+        "abnormal": "Cheek swelling, limited mouth opening and soreness in the first 3-5 days are expected. Numbness of the lip or tongue, increasing pain, fever or a foul smell from the wound is a reason to see the dentist"
+      },
+      "sr": {
+        "what": "Vađenje zuba koji nije nikao i ostaje potpuno ili djelimično u kosti ili ispod desni",
+        "how": "U lokalnoj anesteziji podiže se režanj desni, uklanja se dio kosti iznad zuba, zub se po potrebi razdvoji na dijelove, a rana zašije; 40-90 minuta, konci se skidaju nakon 7-10 dana",
+        "when": "Impaktirani umnjaci sa upalom ili pritiskom na susjedni zub, impaktirani očnjaci prije ortodontske terapije, cista oko neizniklog zuba",
+        "prep": "Potreban je panoramski snimak ili skener, jesti prije dolaska, prijaviti lijekove i hronične bolesti, na dan operacije ne planirati napore i putovanja",
+        "abnormal": "Otok obraza, otežano otvaranje usta i bolna osjetljivost prvih 3-5 dana su očekivani. Utrnulost usne ili jezika, bol koji jača, temperatura ili neprijatan miris iz rane razlog su za javljanje stomatologu"
+      },
+      "de": {
+        "what": "Entfernung eines Zahns, der nicht durchgebrochen ist und ganz oder teilweise im Knochen oder unter dem Zahnfleisch liegt",
+        "how": "In Lokalanästhesie wird ein Zahnfleischlappen gebildet, Knochen über dem Zahn abgetragen, der Zahn bei Bedarf zerteilt und die Wunde genäht; 40-90 Minuten, Fadenentfernung nach 7-10 Tagen",
+        "when": "Verlagerte Weisheitszähne mit Entzündung oder Druck auf den Nachbarzahn, verlagerte Eckzähne vor kieferorthopädischer Behandlung, Zyste um einen nicht durchgebrochenen Zahn",
+        "prep": "Panoramaaufnahme oder DVT erforderlich, vor dem Termin essen, Medikamente und chronische Erkrankungen mitteilen, am Operationstag Anstrengung und Reisen vermeiden",
+        "abnormal": "Wangenschwellung, eingeschränkte Mundöffnung und Druckschmerz in den ersten 3-5 Tagen sind zu erwarten. Taubheitsgefühl an Lippe oder Zunge, zunehmende Schmerzen, Fieber oder übler Geruch aus der Wunde sind ein Grund, den Zahnarzt aufzusuchen"
+      },
+      "tr": {
+        "what": "Sürmemiş, tamamen veya kısmen kemik içinde ya da diş eti altında kalmış dişin çıkarılması",
+        "how": "Lokal anestezi altında diş eti flebi kaldırılır, dişin üzerindeki kemik alınır, gerekirse diş parçalara ayrılır ve yara dikilir; 40-90 dakika, dikişler 7-10 gün sonra alınır",
+        "when": "İltihaplanan veya komşu dişe baskı yapan gömülü yirmi yaş dişleri, ortodontik tedavi öncesi gömülü kanin dişler, sürmemiş diş çevresindeki kist",
+        "prep": "Panoramik röntgen veya tomografi gerekir, randevudan önce yemek yenmeli, ilaçlar ve kronik hastalıklar bildirilmeli, ameliyat günü efor ve seyahat planlanmamalıdır",
+        "abnormal": "İlk 3-5 gün yanakta şişlik, ağzı açmada kısıtlılık ve hassasiyet beklenir. Dudak veya dilde uyuşma, artan ağrı, ateş ya da yarada kötü koku hekime başvurma nedenidir"
+      },
+      "sr_cyrl": {
+        "what": "Вађење зуба који није никао и остаје потпуно или дјелимично у кости или испод десни",
+        "how": "У локалној анестезији подиже се режањ десни, уклања се дио кости изнад зуба, зуб се по потреби раздвоји на дијелове, а рана зашије; 40-90 минута, конци се скидају након 7-10 дана",
+        "when": "Импактирани умњаци са упалом или притиском на сусједни зуб, импактирани очњаци прије ортодонтске терапије, циста око неизниклог зуба",
+        "prep": "Потребан је панорамски снимак или скенер, јести прије доласка, пријавити лијекове и хроничне болести, на дан операције не планирати напоре и путовања",
+        "abnormal": "Оток образа, отежано отварање уста и болна осјетљивост првих 3-5 дана су очекивани. Утрнулост усне или језика, бол који јача, температура или непријатан мирис из ране разлог су за јављање стоматологу"
+      }
+    }
+  },
+  {
+    "slug": "specialist-dental-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Приём у стоматолога узкой специализации — хирурга, пародонтолога, ортодонта или протезиста — по конкретному вопросу",
+        "how": "Разбор жалоб и имеющихся снимков, осмотр полости рта и прикуса, при необходимости дополнительная диагностика, в конце заключение и предложенный план; 20-40 минут",
+        "when": "Направление от стоматолога общей практики, планирование имплантации, протезирования или ортодонтии, заболевания дёсен, второе мнение по предложенному плану лечения",
+        "prep": "Подготовка не требуется; взять предыдущие снимки, заключения и список принимаемых лекарств",
+        "abnormal": "Не применимо — это диагностический приём. По его итогам врач предлагает дальнейшее обследование, лечение или наблюдение и сам определяет срок контрольного визита"
+      },
+      "en": {
+        "what": "An appointment with a dentist of a narrow specialty — surgeon, periodontist, orthodontist or prosthodontist — for a specific question",
+        "how": "Review of complaints and existing images, examination of the mouth and bite, additional diagnostics if needed, ending with a report and a proposed plan; 20-40 minutes",
+        "when": "Referral from a general dentist, planning implants, prosthetics or orthodontics, gum disease, a second opinion on a proposed treatment plan",
+        "prep": "No preparation needed; bring previous X-rays, reports and a list of medications taken",
+        "abnormal": "Not applicable — this is a diagnostic appointment. Based on it the specialist proposes further tests, treatment or monitoring and sets the timing of the follow-up visit"
+      },
+      "sr": {
+        "what": "Pregled kod stomatologa uže specijalnosti — hirurga, parodontologa, ortodonta ili protetičara — zbog konkretnog pitanja",
+        "how": "Razgovor o tegobama i uvid u postojeće snimke, pregled usne duplje i zagrižaja, po potrebi dodatna dijagnostika, na kraju nalaz i predloženi plan; 20-40 minuta",
+        "when": "Uput od stomatologa opšte prakse, planiranje implantacije, protetike ili ortodoncije, bolesti desni, drugo mišljenje o predloženom planu liječenja",
+        "prep": "Priprema nije potrebna; ponijeti ranije snimke, nalaze i spisak lijekova koje uzimate",
+        "abnormal": "Nije primjenjivo — riječ je o dijagnostičkom pregledu. Na osnovu njega specijalista predlaže dalju dijagnostiku, liječenje ili praćenje i određuje rok kontrole"
+      },
+      "de": {
+        "what": "Untersuchung bei einem Zahnarzt mit Spezialisierung — Chirurg, Parodontologe, Kieferorthopäde oder Prothetiker — zu einer konkreten Fragestellung",
+        "how": "Besprechung der Beschwerden und vorhandener Aufnahmen, Untersuchung von Mundhöhle und Biss, bei Bedarf weitere Diagnostik, abschließend Befund und vorgeschlagener Plan; 20-40 Minuten",
+        "when": "Überweisung vom Hauszahnarzt, Planung von Implantaten, Zahnersatz oder Kieferorthopädie, Zahnfleischerkrankungen, Zweitmeinung zu einem vorgeschlagenen Behandlungsplan",
+        "prep": "Keine Vorbereitung nötig; frühere Aufnahmen, Befunde und eine Liste der eingenommenen Medikamente mitbringen",
+        "abnormal": "Nicht zutreffend — es handelt sich um eine diagnostische Untersuchung. Auf ihrer Grundlage schlägt der Spezialist weitere Diagnostik, Behandlung oder Kontrolle vor und legt den Termin der Nachkontrolle fest"
+      },
+      "tr": {
+        "what": "Belirli bir sorun için cerrah, periodontolog, ortodontist veya protez uzmanı gibi dal uzmanı bir diş hekimine muayene",
+        "how": "Şikâyetlerin ve mevcut görüntülerin değerlendirilmesi, ağız ve kapanış muayenesi, gerekirse ek tetkik, sonunda rapor ve önerilen tedavi planı; 20-40 dakika",
+        "when": "Genel diş hekiminden sevk, implant, protez veya ortodonti planlaması, diş eti hastalıkları, önerilen tedavi planı için ikinci görüş",
+        "prep": "Hazırlık gerekmez; önceki röntgenler, raporlar ve kullanılan ilaçların listesi getirilmelidir",
+        "abnormal": "Uygulanmaz — bu bir teşhis muayenesidir. Sonucuna göre uzman ileri tetkik, tedavi veya izlem önerir ve kontrol zamanını belirler"
+      },
+      "sr_cyrl": {
+        "what": "Преглед код стоматолога уже специјалности — хирурга, пародонтолога, ортодонта или протетичара — због конкретног питања",
+        "how": "Разговор о тегобама и увид у постојеће снимке, преглед усне дупље и загрижаја, по потреби додатна дијагностика, на крају налаз и предложени план; 20-40 минута",
+        "when": "Упут од стоматолога опште праксе, планирање имплантације, протетике или ортодонције, болести десни, друго мишљење о предложеном плану лијечења",
+        "prep": "Припрема није потребна; понијети раније снимке, налазе и списак лијекова које узимате",
+        "abnormal": "Није примјењиво — ријеч је о дијагностичком прегледу. На основу њега специјалиста предлаже даљу дијагностику, лијечење или праћење и одређује рок контроле"
+      }
+    }
+  },
+  {
+    "slug": "3d-dental-x-ray-cbct",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Объёмный рентгеновский снимок челюстей на конусно-лучевом томографе, показывающий зубы и кость в трёх плоскостях",
+        "how": "Пациент сидит или стоит с зафиксированной головой, аппарат делает один оборот за 10-40 секунд, затем врач разбирает объёмную реконструкцию; визит занимает около 10-15 минут",
+        "when": "Планирование имплантации и костной пластики, положение ретинированных зубов относительно нерва, повторное лечение каналов, кисты и воспаления в кости, травмы, оценка пазух перед синус-лифтингом",
+        "prep": "Снять серьги, пирсинг, очки и съёмные протезы; предупредить о беременности — тогда исследование откладывают или заменяют",
+        "abnormal": "Описание снимка готовит рентгенолог или стоматолог: находки могут быть связаны с воспалением, кистой, изменениями кости или положением зубов и требуют очной оценки лечащим стоматологом"
+      },
+      "en": {
+        "what": "A three-dimensional X-ray of the jaws on a cone beam scanner, showing teeth and bone in three planes",
+        "how": "You sit or stand with your head fixed while the scanner makes one rotation in 10-40 seconds; the dentist then reviews the 3D reconstruction. The visit itself takes about 10-15 minutes",
+        "when": "Planning implants and bone grafting, the position of impacted teeth relative to the nerve, root canal retreatment, cysts and inflammation in bone, trauma, assessing the sinuses before a sinus lift",
+        "prep": "Remove earrings, piercings, glasses and removable dentures; report pregnancy, in which case the scan is postponed or replaced",
+        "abnormal": "The report is written by a radiologist or dentist: findings may relate to inflammation, a cyst, bone changes or tooth position and need to be assessed in person by the treating dentist"
+      },
+      "sr": {
+        "what": "Trodimenzionalni rendgenski snimak vilica na CBCT aparatu koji prikazuje zube i kost u tri ravni",
+        "how": "Pacijent sjedi ili stoji sa fiksiranom glavom dok aparat napravi jedan krug za 10-40 sekundi, a stomatolog zatim pregleda trodimenzionalnu rekonstrukciju; posjeta traje oko 10-15 minuta",
+        "when": "Planiranje implantacije i augmentacije kosti, položaj impaktiranih zuba u odnosu na nerv, ponovno liječenje kanala, ciste i upale u kosti, povrede, procjena sinusa prije sinus lifta",
+        "prep": "Skinuti minđuše, pirsing, naočare i pokretne proteze; prijaviti trudnoću — tada se snimanje odlaže ili zamjenjuje",
+        "abnormal": "Nalaz piše radiolog ili stomatolog: promjene mogu biti povezane sa upalom, cistom, promjenama kosti ili položajem zuba i traže procjenu kod stomatologa koji vodi liječenje"
+      },
+      "de": {
+        "what": "Dreidimensionale Röntgenaufnahme der Kiefer mit digitaler Volumentomografie, die Zähne und Knochen in drei Ebenen zeigt",
+        "how": "Der Kopf wird fixiert, das Gerät dreht sich in 10-40 Sekunden einmal um den Kopf, anschließend wertet der Zahnarzt die 3D-Rekonstruktion aus; der Termin dauert etwa 10-15 Minuten",
+        "when": "Planung von Implantaten und Knochenaufbau, Lage verlagerter Zähne zum Nerv, Wurzelkanal-Revision, Zysten und Entzündungen im Knochen, Verletzungen, Beurteilung der Kieferhöhlen vor einem Sinuslift",
+        "prep": "Ohrringe, Piercings, Brille und herausnehmbaren Zahnersatz ablegen; eine Schwangerschaft mitteilen, dann wird die Aufnahme verschoben oder ersetzt",
+        "abnormal": "Den Befund erstellt ein Radiologe oder Zahnarzt: Auffälligkeiten können mit Entzündungen, einer Zyste, Knochenveränderungen oder der Zahnstellung zusammenhängen und müssen vom behandelnden Zahnarzt persönlich beurteilt werden"
+      },
+      "tr": {
+        "what": "Çenelerin konik ışınlı tomografiyle alınan, diş ve kemiği üç düzlemde gösteren üç boyutlu röntgeni",
+        "how": "Baş sabitlenmiş halde oturarak veya ayakta durulur, cihaz 10-40 saniyede bir tur atar, ardından hekim üç boyutlu görüntüyü değerlendirir; randevu yaklaşık 10-15 dakika sürer",
+        "when": "İmplant ve kemik grefti planlaması, gömülü dişlerin sinire göre konumu, kanal tedavisinin yenilenmesi, kemikteki kist ve iltihaplar, travmalar, sinüs lifti öncesi sinüs değerlendirmesi",
+        "prep": "Küpe, piercing, gözlük ve hareketli protezler çıkarılmalı; gebelik bildirilmeli, bu durumda çekim ertelenir veya başka yöntemle değiştirilir",
+        "abnormal": "Raporu radyolog veya diş hekimi yazar: bulgular iltihap, kist, kemik değişiklikleri ya da diş konumuyla ilişkili olabilir ve tedaviyi yürüten hekim tarafından yerinde değerlendirilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Тродимензионални рендгенски снимак вилица на CBCT апарату који приказује зубе и кост у три равни",
+        "how": "Пацијент сједи или стоји са фиксираном главом док апарат направи један круг за 10-40 секунди, а стоматолог затим прегледа тродимензионалну реконструкцију; посјета траје око 10-15 минута",
+        "when": "Планирање имплантације и аугментације кости, положај импактираних зуба у односу на нерв, поновно лијечење канала, цисте и упале у кости, повреде, процјена синуса прије синус лифта",
+        "prep": "Скинути минђуше, пирсинг, наочаре и покретне протезе; пријавити трудноћу — тада се снимање одлаже или замјењује",
+        "abnormal": "Налаз пише радиолог или стоматолог: промјене могу бити повезане са упалом, цистом, промјенама кости или положајем зуба и траже процјену код стоматолога који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "alveolar-ridge-leveling",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Сглаживание неровностей костного гребня челюсти, чтобы протез лежал устойчиво, а слизистая не травмировалась",
+        "how": "Под местной анестезией отслаивают десну, фрезой или костными щипцами убирают острые выступы кости, рану ушивают; 20-40 минут, швы снимают через 7-10 дней",
+        "when": "Острые края лунок после удаления зубов, неровный гребень перед изготовлением съёмного протеза, костные выступы, которые натирают слизистую",
+        "prep": "Поесть перед визитом, сообщить о препаратах, разжижающих кровь, и хронических болезнях; имеющийся протез взять с собой",
+        "abnormal": "Отёк и болезненность в первые дни ожидаемы, слизистая заживает 1-2 недели, а протез обычно перебазируют или изготавливают позже. Нарастающая боль, температура или расхождение швов — повод обратиться к стоматологу"
+      },
+      "en": {
+        "what": "Smoothing irregularities of the jaw's bony ridge so that a denture sits steadily and the mucosa is not injured",
+        "how": "Under local anesthesia the gum is lifted, sharp bone edges are trimmed with a bur or bone forceps and the wound is sutured; 20-40 minutes, sutures out after 7-10 days",
+        "when": "Sharp socket edges after extractions, an uneven ridge before a removable denture is made, bony prominences that rub the mucosa",
+        "prep": "Eat before the visit, report blood thinners and chronic conditions; bring your denture if you have one",
+        "abnormal": "Swelling and tenderness in the first days are expected, the mucosa heals over 1-2 weeks, and a denture is usually relined or made later. Increasing pain, fever or opened sutures is a reason to see the dentist"
+      },
+      "sr": {
+        "what": "Poravnavanje neravnina koštanog grebena vilice kako bi proteza stabilno nalijegala, a sluzokoža se ne povređivala",
+        "how": "U lokalnoj anesteziji podiže se režanj desni, svrdlom ili koštanim kliještima uklanjaju se oštri koštani izbočci, a rana se zašije; 20-40 minuta, konci se skidaju nakon 7-10 dana",
+        "when": "Oštre ivice alveola poslije vađenja zuba, neravan greben prije izrade pokretne proteze, koštani izbočci koji žuljaju sluzokožu",
+        "prep": "Jesti prije dolaska, prijaviti lijekove za razrjeđivanje krvi i hronične bolesti; ako imate protezu, ponijeti je",
+        "abnormal": "Otok i osjetljivost prvih dana su očekivani, sluzokoža zarasta 1-2 sedmice, a proteza se obično podlaže ili izrađuje kasnije. Bol koji jača, temperatura ili razilaženje šavova razlog su za javljanje stomatologu"
+      },
+      "de": {
+        "what": "Glätten von Unebenheiten des knöchernen Kieferkamms, damit eine Prothese stabil aufliegt und die Schleimhaut nicht verletzt wird",
+        "how": "In Lokalanästhesie wird das Zahnfleisch gelöst, scharfe Knochenkanten werden mit Fräse oder Knochenzange abgetragen und die Wunde genäht; 20-40 Minuten, Fadenentfernung nach 7-10 Tagen",
+        "when": "Scharfe Alveolenränder nach Zahnentfernungen, unebener Kieferkamm vor Anfertigung einer herausnehmbaren Prothese, Knochenvorsprünge, die die Schleimhaut scheuern",
+        "prep": "Vor dem Termin essen, Blutverdünner und chronische Erkrankungen mitteilen; eine vorhandene Prothese mitbringen",
+        "abnormal": "Schwellung und Druckempfindlichkeit in den ersten Tagen sind zu erwarten, die Schleimhaut heilt in 1-2 Wochen, die Prothese wird meist später unterfüttert oder neu angefertigt. Zunehmende Schmerzen, Fieber oder aufgegangene Nähte sind ein Grund für einen Zahnarztbesuch"
+      },
+      "tr": {
+        "what": "Protezin sağlam oturması ve mukozanın zedelenmemesi için çene kemiği kretindeki düzensizliklerin düzeltilmesi",
+        "how": "Lokal anestezi altında diş eti kaldırılır, keskin kemik çıkıntıları frez veya kemik pensiyle alınır ve yara dikilir; 20-40 dakika, dikişler 7-10 gün sonra alınır",
+        "when": "Diş çekimlerinden sonra kalan keskin soket kenarları, hareketli protez yapımı öncesi düzensiz kret, mukozayı tahriş eden kemik çıkıntıları",
+        "prep": "Randevudan önce yemek yemek, kan sulandırıcı ilaçları ve kronik hastalıkları bildirmek; mevcut protezi yanında getirmek",
+        "abnormal": "İlk günlerde şişlik ve hassasiyet beklenir, mukoza 1-2 haftada iyileşir, protez genellikle daha sonra beslenir veya yeniden yapılır. Artan ağrı, ateş ya da dikişlerin açılması hekime başvurma nedenidir"
+      },
+      "sr_cyrl": {
+        "what": "Поравнавање неравнина коштаног гребена вилице како би протеза стабилно налијегала, а слузокожа се не повређивала",
+        "how": "У локалној анестезији подиже се режањ десни, сврдлом или коштаним клијештима уклањају се оштри коштани избочци, а рана се зашије; 20-40 минута, конци се скидају након 7-10 дана",
+        "when": "Оштре ивице алвеола послије вађења зуба, нераван гребен прије израде покретне протезе, коштани избочци који жуљају слузокожу",
+        "prep": "Јести прије доласка, пријавити лијекове за разрјеђивање крви и хроничне болести; ако имате протезу, понијети је",
+        "abnormal": "Оток и осјетљивост првих дана су очекивани, слузокожа зараста 1-2 седмице, а протеза се обично подлаже или израђује касније. Бол који јача, температура или разилажење шавова разлог су за јављање стоматологу"
+      }
+    }
+  },
+  {
+    "slug": "bone-augmentation-biooss",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Наращивание объёма костной ткани челюсти костнозамещающим материалом Bio-Oss, чаще всего под установку импланта",
+        "how": "Под местной анестезией открывают доступ к кости, укладывают гранулы материала, накрывают мембраной и ушивают десну; 40-90 минут, перестройка кости занимает несколько месяцев",
+        "when": "Недостаточная ширина или высота кости для импланта, дефект кости после удаления зуба или операции по поводу кисты, установка импланта одновременно с восполнением дефицита кости",
+        "prep": "Нужен снимок КТ, поесть перед визитом, сообщить о хронических болезнях и препаратах, разжижающих кровь; курение заметно ухудшает заживление",
+        "abnormal": "Отёк и болезненность первые дни ожидаемы, из-под швов могут выходить отдельные гранулы. Контрольный снимок и оценку готовности к имплантации врач назначает через несколько месяцев, а при нарастающей боли, температуре или расхождении швов обратиться нужно раньше"
+      },
+      "en": {
+        "what": "Building up jaw bone volume with the Bio-Oss bone substitute, most often before an implant",
+        "how": "Under local anesthesia the bone is exposed, the granules are placed, covered with a membrane and the gum is sutured; 40-90 minutes, remodelling of the bone takes several months",
+        "when": "Insufficient bone width or height for an implant, a bone defect after tooth removal or cyst surgery, implant placement combined with filling a bone deficit",
+        "prep": "A CT scan is needed, eat before the visit, report chronic conditions and blood thinners; smoking noticeably impairs healing",
+        "abnormal": "Swelling and tenderness in the first days are expected and single granules may come out through the sutures. A follow-up scan and the assessment of readiness for an implant are scheduled after several months; with increasing pain, fever or opened sutures come in sooner"
+      },
+      "sr": {
+        "what": "Povećanje zapremine kosti vilice materijalom za nadoknadu kosti Bio-Oss, najčešće prije ugradnje implanta",
+        "how": "U lokalnoj anesteziji otvori se pristup kosti, postave se granule materijala, prekriju membranom i desni zašiju; 40-90 minuta, pregradnja kosti traje nekoliko mjeseci",
+        "when": "Nedovoljna širina ili visina kosti za implant, koštani defekt poslije vađenja zuba ili operacije ciste, ugradnja implanta uz istovremenu nadoknadu kosti",
+        "prep": "Potreban je CBCT snimak, jesti prije dolaska, prijaviti hronične bolesti i lijekove za razrjeđivanje krvi; pušenje osjetno usporava zarastanje",
+        "abnormal": "Otok i osjetljivost prvih dana su očekivani, a pojedine granule mogu izaći kroz šavove. Kontrolni snimak i procjenu spremnosti za implant stomatolog zakazuje poslije nekoliko mjeseci, a kod jačanja bola, temperature ili razilaženja šavova treba doći ranije"
+      },
+      "de": {
+        "what": "Aufbau des Kieferknochens mit dem Knochenersatzmaterial Bio-Oss, meist vor einer Implantation",
+        "how": "In Lokalanästhesie wird der Knochen freigelegt, das Granulat eingebracht, mit einer Membran abgedeckt und das Zahnfleisch vernäht; 40-90 Minuten, der Umbau des Knochens dauert mehrere Monate",
+        "when": "Zu geringe Knochenbreite oder -höhe für ein Implantat, Knochendefekt nach Zahnentfernung oder Zystenoperation, Implantation mit gleichzeitigem Knochenaufbau",
+        "prep": "Eine DVT-Aufnahme ist erforderlich, vor dem Termin essen, chronische Erkrankungen und Blutverdünner mitteilen; Rauchen verschlechtert die Heilung deutlich",
+        "abnormal": "Schwellung und Druckempfindlichkeit in den ersten Tagen sind zu erwarten, einzelne Granulatkörner können aus der Naht austreten. Kontrollaufnahme und Beurteilung der Implantatreife erfolgen nach mehreren Monaten; bei zunehmenden Schmerzen, Fieber oder aufgegangenen Nähten früher vorstellig werden"
+      },
+      "tr": {
+        "what": "Genellikle implant öncesinde çene kemiği hacminin Bio-Oss kemik grefti materyaliyle artırılması",
+        "how": "Lokal anestezi altında kemiğe ulaşılır, greft granülleri yerleştirilir, membranla örtülür ve diş eti dikilir; 40-90 dakika, kemiğin yeniden şekillenmesi birkaç ay sürer",
+        "when": "İmplant için yetersiz kemik genişliği veya yüksekliği, diş çekimi ya da kist ameliyatı sonrası kemik defekti, implantla eş zamanlı kemik desteği",
+        "prep": "Tomografi gerekir, randevudan önce yemek yenmeli, kronik hastalıklar ve kan sulandırıcı ilaçlar bildirilmeli; sigara iyileşmeyi belirgin şekilde bozar",
+        "abnormal": "İlk günlerde şişlik ve hassasiyet beklenir, dikiş arasından tek tük granül çıkabilir. Kontrol röntgeni ve implanta hazır olma değerlendirmesi birkaç ay sonra yapılır; ağrı artarsa, ateş çıkarsa veya dikişler açılırsa daha erken başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Повећање запремине кости вилице материјалом за надокнаду кости Bio-Oss, најчешће прије уградње импланта",
+        "how": "У локалној анестезији отвори се приступ кости, поставе се грануле материјала, прекрију мембраном и десни зашију; 40-90 минута, преградња кости траје неколико мјесеци",
+        "when": "Недовољна ширина или висина кости за имплант, коштани дефект послије вађења зуба или операције цисте, уградња импланта уз истовремену надокнаду кости",
+        "prep": "Потребан је CBCT снимак, јести прије доласка, пријавити хроничне болести и лијекове за разрјеђивање крви; пушење осјетно успорава зарастање",
+        "abnormal": "Оток и осјетљивост првих дана су очекивани, а поједине грануле могу изаћи кроз шавове. Контролни снимак и процјену спремности за имплант стоматолог заказује послије неколико мјесеци, а код јачања бола, температуре или разилажења шавова треба доћи раније"
+      }
+    }
+  },
+  {
+    "slug": "comprehensive-dental-diagnostics-with-treatment-plan",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Развёрнутое обследование полости рта со снимками и составлением письменного плана лечения по этапам",
+        "how": "Осмотр зубов, дёсен и прикуса, панорамный или прицельные снимки, при необходимости фотографии и слепки, затем врач расписывает этапы, их очерёдность и ориентировочные сроки; 40-60 минут, готовый план часто выдают на втором визите",
+        "when": "Большой объём предстоящего лечения, планирование имплантации и протезирования, ортодонтия, длительный перерыв в посещениях стоматолога, второе мнение",
+        "prep": "Подготовка не требуется; взять прежние снимки и заключения, список принимаемых лекарств и заранее записанные вопросы",
+        "abnormal": "Не применимо — это диагностический этап. По его итогам врач предлагает варианты лечения и их очерёдность, а план обычно корректируют по ходу работы"
+      },
+      "en": {
+        "what": "A full examination of the mouth with X-rays and a written, staged treatment plan",
+        "how": "Examination of teeth, gums and bite, a panoramic or periapical X-ray, photos and impressions if needed, after which the dentist sets out the stages, their order and approximate timing; 40-60 minutes, the finished plan is often handed over at a second visit",
+        "when": "A large amount of upcoming treatment, planning implants and prosthetics, orthodontics, a long gap since the last dental visit, a second opinion",
+        "prep": "No preparation needed; bring earlier X-rays and reports, a list of medications and the questions you want to ask",
+        "abnormal": "Not applicable — this is a diagnostic stage. Based on it the dentist offers treatment options and their order, and the plan is usually adjusted as the work progresses"
+      },
+      "sr": {
+        "what": "Detaljan pregled usne duplje sa snimcima i izradom pisanog plana liječenja po fazama",
+        "how": "Pregled zuba, desni i zagrižaja, panoramski ili ciljani snimci, po potrebi fotografije i otisci, nakon čega stomatolog razrađuje faze, njihov redoslijed i okvirne rokove; 40-60 minuta, gotov plan se često predaje na drugoj posjeti",
+        "when": "Veliki obim predstojećeg liječenja, planiranje implantacije i protetike, ortodoncija, duža pauza u odlascima kod stomatologa, drugo mišljenje",
+        "prep": "Priprema nije potrebna; ponijeti ranije snimke i nalaze, spisak lijekova koje uzimate i unaprijed zapisana pitanja",
+        "abnormal": "Nije primjenjivo — riječ je o dijagnostičkoj fazi. Na osnovu nje stomatolog nudi opcije liječenja i njihov redoslijed, a plan se obično koriguje tokom rada"
+      },
+      "de": {
+        "what": "Ausführliche Untersuchung der Mundhöhle mit Röntgenaufnahmen und einem schriftlichen, in Etappen gegliederten Behandlungsplan",
+        "how": "Untersuchung von Zähnen, Zahnfleisch und Biss, Panorama- oder Einzelaufnahmen, bei Bedarf Fotos und Abformungen, danach legt der Zahnarzt Etappen, Reihenfolge und ungefähre Zeiträume fest; 40-60 Minuten, der fertige Plan wird oft beim zweiten Termin übergeben",
+        "when": "Umfangreiche geplante Behandlung, Planung von Implantaten und Zahnersatz, Kieferorthopädie, lange Pause seit dem letzten Zahnarztbesuch, Zweitmeinung",
+        "prep": "Keine Vorbereitung nötig; frühere Aufnahmen und Befunde, eine Medikamentenliste und vorbereitete Fragen mitbringen",
+        "abnormal": "Nicht zutreffend — dies ist ein diagnostischer Schritt. Auf seiner Grundlage schlägt der Zahnarzt Behandlungsoptionen und deren Reihenfolge vor, der Plan wird im Verlauf meist angepasst"
+      },
+      "tr": {
+        "what": "Ağzın röntgenlerle birlikte ayrıntılı değerlendirilmesi ve aşamalı, yazılı bir tedavi planının hazırlanması",
+        "how": "Dişler, diş etleri ve kapanış incelenir, panoramik veya periapikal röntgen alınır, gerekirse fotoğraf ve ölçü yapılır, ardından hekim aşamaları, sıralarını ve yaklaşık süreleri belirler; 40-60 dakika, hazır plan çoğu zaman ikinci randevuda teslim edilir",
+        "when": "Kapsamlı bir tedavi ihtiyacı, implant ve protez planlaması, ortodonti, uzun süredir diş hekimine gidilmemiş olması, ikinci görüş",
+        "prep": "Hazırlık gerekmez; önceki röntgenler ve raporlar, ilaç listesi ve sormak istediğiniz sorular getirilmelidir",
+        "abnormal": "Uygulanmaz — bu bir teşhis aşamasıdır. Sonucuna göre hekim tedavi seçeneklerini ve sıralarını önerir, plan tedavi ilerledikçe genellikle güncellenir"
+      },
+      "sr_cyrl": {
+        "what": "Детаљан преглед усне дупље са снимцима и израдом писаног плана лијечења по фазама",
+        "how": "Преглед зуба, десни и загрижаја, панорамски или циљани снимци, по потреби фотографије и отисци, након чега стоматолог разрађује фазе, њихов редослијед и оквирне рокове; 40-60 минута, готов план се често предаје на другој посјети",
+        "when": "Велики обим предстојећег лијечења, планирање имплантације и протетике, ортодонција, дужа пауза у одласцима код стоматолога, друго мишљење",
+        "prep": "Припрема није потребна; понијети раније снимке и налазе, списак лијекова које узимате и унапријед записана питања",
+        "abnormal": "Није примјењиво — ријеч је о дијагностичкој фази. На основу ње стоматолог нуди опције лијечења и њихов редослијед, а план се обично коригује током рада"
+      }
+    }
+  },
+  {
+    "slug": "dental-local-anesthesia",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обезболивание участка челюсти инъекцией анестетика перед стоматологическим вмешательством",
+        "how": "Врач обрабатывает слизистую гелем и делает укол рядом с зубом или у нервного ствола; онемение наступает за несколько минут и держится примерно от одного до трёх часов в зависимости от препарата и вида укола",
+        "when": "Лечение кариеса и корневых каналов, удаление зубов, вмешательства на десне и кости, снятие отложений при выраженной чувствительности",
+        "prep": "Плотно поесть заранее, сообщить об аллергии на анестетики, хронических болезнях, беременности и принимаемых лекарствах; после укола не есть, пока онемение не пройдёт, чтобы не прикусить губу или язык",
+        "abnormal": "Онемение губы, языка и щеки проходит за несколько часов, место укола может быть болезненным день-два. Если онемение держится дольше суток либо появляются сыпь, отёк, затруднённое дыхание или сильная боль в месте укола, нужно обратиться к врачу"
+      },
+      "en": {
+        "what": "Numbing an area of the jaw with an injection of anesthetic before a dental procedure",
+        "how": "The dentist applies a numbing gel to the mucosa and injects next to the tooth or near a nerve trunk; numbness sets in within minutes and lasts roughly one to three hours depending on the drug and the type of injection",
+        "when": "Treatment of caries and root canals, tooth extractions, gum and bone procedures, scaling when the teeth are very sensitive",
+        "prep": "Eat a proper meal beforehand, report allergies to anesthetics, chronic conditions, pregnancy and medications taken; after the injection avoid eating until the numbness wears off so you do not bite your lip or tongue",
+        "abnormal": "Numbness of the lip, tongue and cheek passes within a few hours and the injection site may be sore for a day or two. If numbness lasts more than a day, or a rash, swelling, difficulty breathing or severe pain at the injection site appears, contact a doctor"
+      },
+      "sr": {
+        "what": "Obezbolivanje dijela vilice injekcijom anestetika prije stomatološkog zahvata",
+        "how": "Stomatolog premaže sluzokožu gelom i da injekciju uz zub ili uz nervno stablo; utrnulost nastupa za nekoliko minuta i traje otprilike od jednog do tri sata, zavisno od lijeka i vrste anestezije",
+        "when": "Liječenje karijesa i korijenskih kanala, vađenje zuba, zahvati na desnima i kosti, skidanje naslaga kod izražene osjetljivosti",
+        "prep": "Dobro se najesti ranije, prijaviti alergiju na anestetike, hronične bolesti, trudnoću i lijekove koje uzimate; poslije injekcije ne jesti dok utrnulost ne prođe, da se ne ugrizu usna ili jezik",
+        "abnormal": "Utrnulost usne, jezika i obraza prolazi za nekoliko sati, a mjesto uboda može biti osjetljivo dan ili dva. Ako utrnulost traje duže od jednog dana ili se jave osip, otok, otežano disanje ili jak bol na mjestu uboda, treba se javiti ljekaru"
+      },
+      "de": {
+        "what": "Betäubung eines Kieferbereichs durch eine Injektion vor einem zahnärztlichen Eingriff",
+        "how": "Der Zahnarzt trägt ein Betäubungsgel auf die Schleimhaut auf und spritzt neben den Zahn oder in die Nähe eines Nervenstammes; die Taubheit setzt nach wenigen Minuten ein und hält je nach Mittel und Injektionsart etwa ein bis drei Stunden an",
+        "when": "Behandlung von Karies und Wurzelkanälen, Zahnentfernungen, Eingriffe an Zahnfleisch und Knochen, Zahnsteinentfernung bei starker Empfindlichkeit",
+        "prep": "Vorher richtig essen, Allergien gegen Betäubungsmittel, chronische Erkrankungen, Schwangerschaft und eingenommene Medikamente mitteilen; nach der Injektion nichts essen, solange die Taubheit anhält, um Lippe oder Zunge nicht zu verletzen",
+        "abnormal": "Die Taubheit von Lippe, Zunge und Wange klingt innerhalb weniger Stunden ab, die Einstichstelle kann ein bis zwei Tage druckempfindlich sein. Hält die Taubheit länger als einen Tag an oder treten Hautausschlag, Schwellung, Atemnot oder starke Schmerzen an der Einstichstelle auf, ist ärztliche Hilfe nötig"
+      },
+      "tr": {
+        "what": "Diş tedavisi öncesinde çenenin bir bölgesinin anestezik enjeksiyonla uyuşturulması",
+        "how": "Hekim mukozaya uyuşturucu jel sürer ve dişin yanına ya da sinir gövdesinin yakınına enjeksiyon yapar; uyuşma birkaç dakikada başlar ve ilaca ve anestezi türüne göre yaklaşık bir ila üç saat sürer",
+        "when": "Çürük ve kanal tedavisi, diş çekimi, diş eti ve kemik işlemleri, ileri hassasiyette diş taşı temizliği",
+        "prep": "Öncesinde doyurucu bir öğün yemek, anestezi alerjisi, kronik hastalıklar, gebelik ve kullanılan ilaçları bildirmek; enjeksiyondan sonra dudağı veya dili ısırmamak için uyuşma geçene kadar yemek yememek",
+        "abnormal": "Dudak, dil ve yanaktaki uyuşma birkaç saatte geçer, enjeksiyon yeri bir iki gün hassas olabilir. Uyuşma bir günden uzun sürerse ya da döküntü, şişlik, nefes darlığı veya enjeksiyon yerinde şiddetli ağrı olursa hekime başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Обезболивање дијела вилице ињекцијом анестетика прије стоматолошког захвата",
+        "how": "Стоматолог премаже слузокожу гелом и да ињекцију уз зуб или уз нервно стабло; утрнулост наступа за неколико минута и траје отприлике од једног до три сата, зависно од лијека и врсте анестезије",
+        "when": "Лијечење каријеса и коријенских канала, вађење зуба, захвати на деснима и кости, скидање наслага код изражене осјетљивости",
+        "prep": "Добро се најести раније, пријавити алергију на анестетике, хроничне болести, трудноћу и лијекове које узимате; послије ињекције не јести док утрнулост не прође, да се не угризу усна или језик",
+        "abnormal": "Утрнулост усне, језика и образа пролази за неколико сати, а мјесто убода може бити осјетљиво дан или два. Ако утрнулост траје дуже од једног дана или се јаве осип, оток, отежано дисање или јак бол на мјесту убода, треба се јавити љекару"
+      }
+    }
+  }
+]

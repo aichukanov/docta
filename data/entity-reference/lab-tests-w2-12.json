@@ -1,0 +1,386 @@
+[
+  {
+    "slug": "iga",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на иммуноглобулин класса A — антитела, которые защищают слизистые дыхательных путей и кишечника",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Частые инфекции дыхательных путей и кишечника, обследование при подозрении на слабую иммунную защиту слизистых, проверка перед трактовкой серологии на целиакию, иммунограмма",
+        "prep": "Специальной подготовки не требуется, кровь обычно сдают утром",
+        "abnormal": "Снижение может быть связано с врождённым или приобретённым дефицитом IgA и влияет на трактовку других анализов, построенных на антителах этого класса, повышение — с хроническим воспалением слизистых или заболеванием печени. Результат оценивает врач вместе с IgG и IgM"
+      },
+      "en": {
+        "what": "Blood test for class A immunoglobulin, the antibodies that protect the mucous membranes of the airways and the gut",
+        "how": "Blood draw from a vein, takes a few minutes",
+        "when": "Frequent respiratory and intestinal infections, evaluation for weak mucosal immune defence, check before interpreting coeliac disease serology, immune panel",
+        "prep": "No special preparation is required, blood is usually taken in the morning",
+        "abnormal": "A low level may be related to a congenital or acquired IgA deficiency and affects the interpretation of other tests based on this antibody class, a high level to chronic mucosal inflammation or liver disease. The result is assessed by a doctor together with IgG and IgM"
+      },
+      "sr": {
+        "what": "Analiza krvi na imunoglobulin klase A, antitijela koja štite sluznice disajnih puteva i crijeva",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Česte infekcije disajnih puteva i crijeva, ispitivanje pri sumnji na slabu imunu zaštitu sluznica, provjera prije tumačenja serologije na celijakiju, imunogram",
+        "prep": "Nije potrebna posebna priprema, krv se obično uzima ujutru",
+        "abnormal": "Snižen nivo može biti povezan sa urođenim ili stečenim nedostatkom IgA i utiče na tumačenje drugih testova zasnovanih na ovoj klasi antitijela, povišen sa hroničnim zapaljenjem sluznica ili oboljenjem jetre. Rezultat procjenjuje ljekar zajedno sa IgG i IgM"
+      },
+      "de": {
+        "what": "Bluttest auf Immunglobulin der Klasse A, die Antikörper, die die Schleimhäute von Atemwegen und Darm schützen",
+        "how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
+        "when": "Häufige Atemwegs- und Darminfekte, Abklärung bei Verdacht auf eine schwache Schleimhautabwehr, Kontrolle vor der Beurteilung der Zöliakie-Serologie, Immunstatus",
+        "prep": "Eine besondere Vorbereitung ist nicht nötig, das Blut wird meist morgens entnommen",
+        "abnormal": "Ein niedriger Wert kann mit einem angeborenen oder erworbenen IgA-Mangel zusammenhängen und beeinflusst die Beurteilung anderer Tests, die auf dieser Antikörperklasse beruhen, ein hoher Wert mit einer chronischen Schleimhautentzündung oder einer Lebererkrankung. Der Arzt beurteilt das Ergebnis zusammen mit IgG und IgM"
+      },
+      "tr": {
+        "what": "Solunum yollarının ve bağırsağın mukozasını koruyan A sınıfı immünoglobulin için kan testi",
+        "how": "Damardan kan alınması, birkaç dakika sürer",
+        "when": "Sık solunum yolu ve bağırsak enfeksiyonları, mukoza bağışıklığının zayıflığı şüphesi, çölyak serolojisinin yorumlanmasından önce kontrol, bağışıklık paneli",
+        "prep": "Özel bir hazırlık gerekmez, kan genellikle sabah alınır",
+        "abnormal": "Düşük değer doğuştan veya sonradan gelişen IgA eksikliğiyle ilişkili olabilir ve bu antikor sınıfına dayanan diğer testlerin yorumunu etkiler, yüksek değer ise kronik mukoza iltihabı veya karaciğer hastalığıyla ilişkili olabilir. Sonucu hekim IgG ve IgM ile birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на имуноглобулин класе А, антитијела која штите слузнице дисајних путева и цријева",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Честе инфекције дисајних путева и цријева, испитивање при сумњи на слабу имуну заштиту слузница, провјера прије тумачења серологије на целијакију, имунограм",
+        "prep": "Није потребна посебна припрема, крв се обично узима ујутру",
+        "abnormal": "Снижен ниво може бити повезан са урођеним или стеченим недостатком IgA и утиче на тумачење других тестова заснованих на овој класи антитијела, повишен са хроничним запаљењем слузница или обољењем јетре. Резултат процјењује љекар заједно са IgG и IgM"
+      }
+    }
+  },
+  {
+    "slug": "igg",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на иммуноглобулин класса G — основные антитела крови, которые сохраняются долго и обеспечивают длительный иммунитет",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Повторяющиеся и затяжные инфекции, обследование при подозрении на недостаточную выработку антител, контроль на фоне заместительной терапии иммуноглобулинами, хроническое воспаление и заболевания печени",
+        "prep": "Специальной подготовки не требуется, кровь обычно сдают утром",
+        "abnormal": "Снижение может быть связано с недостаточной выработкой антител или их потерей через почки и кишечник, повышение — с длительным воспалительным или инфекционным процессом. Уровень меняется медленно, поэтому повторное измерение через месяцы показывает врачу устойчивую тенденцию, а не сиюминутные колебания"
+      },
+      "en": {
+        "what": "Blood test for class G immunoglobulin, the main antibodies of the blood that persist for a long time and provide lasting immunity",
+        "how": "Blood draw from a vein, takes a few minutes",
+        "when": "Recurrent and prolonged infections, evaluation for insufficient antibody production, monitoring during immunoglobulin replacement therapy, chronic inflammation and liver disease",
+        "prep": "No special preparation is required, blood is usually taken in the morning",
+        "abnormal": "A low level may be related to insufficient antibody production or to losses through the kidneys and gut, a high level to a long-standing inflammatory or infectious process. The level changes slowly, so a repeat test after months shows the doctor a steady trend rather than short-term fluctuation"
+      },
+      "sr": {
+        "what": "Analiza krvi na imunoglobulin klase G, glavna antitijela u krvi koja se dugo zadržavaju i obezbjeđuju dugotrajan imunitet",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Ponavljane i dugotrajne infekcije, ispitivanje pri sumnji na nedovoljno stvaranje antitijela, kontrola tokom nadoknadne terapije imunoglobulinima, hronično zapaljenje i oboljenja jetre",
+        "prep": "Nije potrebna posebna priprema, krv se obično uzima ujutru",
+        "abnormal": "Snižen nivo može biti povezan sa nedovoljnim stvaranjem antitijela ili njihovim gubitkom preko bubrega i crijeva, povišen sa dugotrajnim zapaljenjskim ili infektivnim procesom. Nivo se mijenja sporo, pa ponovljeno mjerenje poslije nekoliko mjeseci ljekaru pokazuje trajniju tendenciju, a ne trenutna kolebanja"
+      },
+      "de": {
+        "what": "Bluttest auf Immunglobulin der Klasse G, die wichtigsten Antikörper im Blut, die lange bestehen bleiben und für den dauerhaften Immunschutz sorgen",
+        "how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
+        "when": "Wiederkehrende und langwierige Infekte, Abklärung bei Verdacht auf eine unzureichende Antikörperbildung, Verlaufskontrolle unter Immunglobulin-Substitution, chronische Entzündungen und Lebererkrankungen",
+        "prep": "Eine besondere Vorbereitung ist nicht nötig, das Blut wird meist morgens entnommen",
+        "abnormal": "Ein niedriger Wert kann mit einer unzureichenden Antikörperbildung oder mit Verlusten über Nieren und Darm zusammenhängen, ein hoher Wert mit einem lang bestehenden Entzündungs- oder Infektionsprozess. Der Wert ändert sich langsam, daher zeigt eine Kontrolle nach Monaten dem Arzt eine dauerhafte Tendenz und keine kurzfristigen Schwankungen"
+      },
+      "tr": {
+        "what": "Kanda uzun süre kalan ve kalıcı bağışıklığı sağlayan başlıca antikorlar olan G sınıfı immünoglobulin için kan testi",
+        "how": "Damardan kan alınması, birkaç dakika sürer",
+        "when": "Tekrarlayan ve uzayan enfeksiyonlar, yetersiz antikor üretimi şüphesi, immünoglobulin replasman tedavisi sırasında izlem, kronik iltihap ve karaciğer hastalıkları",
+        "prep": "Özel bir hazırlık gerekmez, kan genellikle sabah alınır",
+        "abnormal": "Düşük değer antikor üretiminin yetersizliğiyle ya da böbrek ve bağırsak yoluyla kaybıyla, yüksek değer uzun süren iltihabi veya enfeksiyöz bir süreçle ilişkili olabilir. Değer yavaş değiştiğinden aylar sonra yapılan tekrar ölçüm hekime anlık dalgalanmayı değil kalıcı eğilimi gösterir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на имуноглобулин класе Г, главна антитијела у крви која се дуго задржавају и обезбјеђују дуготрајан имунитет",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Понављане и дуготрајне инфекције, испитивање при сумњи на недовољно стварање антитијела, контрола током надокнадне терапије имуноглобулинима, хронично запаљење и обољења јетре",
+        "prep": "Није потребна посебна припрема, крв се обично узима ујутру",
+        "abnormal": "Снижен ниво може бити повезан са недовољним стварањем антитијела или њиховим губитком преко бубрега и цријева, повишен са дуготрајним запаљењским или инфективним процесом. Ниво се мијења споро, па поновљено мјерење послије неколико мјесеци љекару показује трајнију тенденцију, а не тренутна колебања"
+      }
+    }
+  },
+  {
+    "slug": "igm",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на иммуноглобулин класса M — антитела, которые организм вырабатывает первыми при новой встрече с возбудителем",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Оценка ранней фазы иммунного ответа, повторяющиеся инфекции у детей и взрослых, обследование при подозрении на нарушение созревания антител, иммунограмма вместе с IgA и IgG",
+        "prep": "Специальной подготовки не требуется, кровь обычно сдают утром",
+        "abnormal": "Повышение может быть связано с недавним или текущим инфекционным процессом, снижение — с недостаточной выработкой антител. Повторное измерение в паре с IgG помогает врачу отличить свежий иммунный ответ от давнего"
+      },
+      "en": {
+        "what": "Blood test for class M immunoglobulin, the antibodies the body produces first when it meets a pathogen anew",
+        "how": "Blood draw from a vein, takes a few minutes",
+        "when": "Assessment of the early phase of the immune response, recurrent infections in children and adults, evaluation for impaired antibody maturation, immune panel together with IgA and IgG",
+        "prep": "No special preparation is required, blood is usually taken in the morning",
+        "abnormal": "A high level may be related to a recent or ongoing infection, a low level to insufficient antibody production. A repeat test paired with IgG helps the doctor tell a fresh immune response from an older one"
+      },
+      "sr": {
+        "what": "Analiza krvi na imunoglobulin klase M, antitijela koja organizam stvara prva pri novom susretu sa uzročnikom",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Procjena rane faze imunog odgovora, ponavljane infekcije kod djece i odraslih, ispitivanje pri sumnji na poremećaj sazrijevanja antitijela, imunogram zajedno sa IgA i IgG",
+        "prep": "Nije potrebna posebna priprema, krv se obično uzima ujutru",
+        "abnormal": "Povišen nivo može biti povezan sa skorašnjom ili aktuelnom infekcijom, snižen sa nedovoljnim stvaranjem antitijela. Ponovljeno mjerenje u paru sa IgG pomaže ljekaru da razlikuje svjež imuni odgovor od ranijeg"
+      },
+      "de": {
+        "what": "Bluttest auf Immunglobulin der Klasse M, die Antikörper, die der Körper bei einem neuen Kontakt mit einem Erreger als Erste bildet",
+        "how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
+        "when": "Beurteilung der frühen Phase der Immunantwort, wiederkehrende Infekte bei Kindern und Erwachsenen, Abklärung bei Verdacht auf eine gestörte Antikörperreifung, Immunstatus zusammen mit IgA und IgG",
+        "prep": "Eine besondere Vorbereitung ist nicht nötig, das Blut wird meist morgens entnommen",
+        "abnormal": "Ein hoher Wert kann mit einer kürzlichen oder aktuellen Infektion zusammenhängen, ein niedriger mit einer unzureichenden Antikörperbildung. Eine Wiederholung zusammen mit IgG hilft dem Arzt, eine frische Immunantwort von einer länger zurückliegenden zu unterscheiden"
+      },
+      "tr": {
+        "what": "Vücudun bir etkenle yeni karşılaşmasında ilk olarak ürettiği antikorlar olan M sınıfı immünoglobulin için kan testi",
+        "how": "Damardan kan alınması, birkaç dakika sürer",
+        "when": "Bağışıklık yanıtının erken evresinin değerlendirilmesi, çocuklarda ve erişkinlerde tekrarlayan enfeksiyonlar, antikor olgunlaşmasında bozukluk şüphesi, IgA ve IgG ile birlikte bağışıklık paneli",
+        "prep": "Özel bir hazırlık gerekmez, kan genellikle sabah alınır",
+        "abnormal": "Yüksek değer yakın zamandaki veya süregelen bir enfeksiyonla, düşük değer yetersiz antikor üretimiyle ilişkili olabilir. IgG ile birlikte yapılan tekrar ölçüm hekime yeni bir bağışıklık yanıtını eskisinden ayırt etmede yardımcı olur"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на имуноглобулин класе М, антитијела која организам ствара прва при новом сусрету са узрочником",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Процјена ране фазе имуног одговора, понављане инфекције код дјеце и одраслих, испитивање при сумњи на поремећај сазријевања антитијела, имунограм заједно са IgA и IgG",
+        "prep": "Није потребна посебна припрема, крв се обично узима ујутру",
+        "abnormal": "Повишен ниво може бити повезан са скорашњом или актуелном инфекцијом, снижен са недовољним стварањем антитијела. Поновљено мјерење у пару са IgG помаже љекару да разликује свјеж имуни одговор од ранијег"
+      }
+    }
+  },
+  {
+    "slug": "ige",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на общий иммуноглобулин класса E — антитела, участвующие в аллергических реакциях и в ответе на паразитов",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Подозрение на аллергию, атопический дерматит, бронхиальная астма, крапивница, круглогодичный или сезонный насморк, обследование перед подбором аллергологических тестов, подозрение на паразитарную инвазию",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Повышение общего IgE может быть связано с аллергической настроенностью организма или с паразитарной инвазией, но не показывает, на какой именно аллерген реагирует человек, для этого нужны специфические IgE или кожные пробы. Результат вместе с жалобами оценивает аллерголог"
+      },
+      "en": {
+        "what": "Blood test for total class E immunoglobulin, the antibodies involved in allergic reactions and in the response to parasites",
+        "how": "Blood draw from a vein, takes a few minutes",
+        "when": "Suspected allergy, atopic dermatitis, bronchial asthma, urticaria, year-round or seasonal rhinitis, work-up before choosing allergy tests, suspected parasitic infestation",
+        "prep": "No special preparation is required",
+        "abnormal": "A raised total IgE may be related to an allergic predisposition or to a parasitic infestation, but it does not show which allergen the person reacts to, which requires specific IgE tests or skin tests. An allergist assesses the result together with the symptoms"
+      },
+      "sr": {
+        "what": "Analiza krvi na ukupni imunoglobulin klase E, antitijela koja učestvuju u alergijskim reakcijama i u odgovoru na parazite",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Sumnja na alergiju, atopijski dermatitis, astma, koprivnjača, cjelogodišnja ili sezonska kijavica, priprema za izbor alergoloških testova, sumnja na parazitarnu infekciju",
+        "prep": "Nije potrebna posebna priprema",
+        "abnormal": "Povišen ukupni IgE može biti povezan sa alergijskom sklonošću organizma ili sa parazitarnom infekcijom, ali ne pokazuje na koji tačno alergen osoba reaguje, za to su potrebni specifični IgE ili kožni testovi. Rezultat zajedno sa tegobama procjenjuje alergolog"
+      },
+      "de": {
+        "what": "Bluttest auf Gesamt-Immunglobulin der Klasse E, die Antikörper, die an allergischen Reaktionen und an der Abwehr von Parasiten beteiligt sind",
+        "how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
+        "when": "Verdacht auf eine Allergie, Neurodermitis, Asthma bronchiale, Nesselsucht, ganzjähriger oder saisonaler Schnupfen, Abklärung vor der Auswahl von Allergietests, Verdacht auf Parasitenbefall",
+        "prep": "Eine besondere Vorbereitung ist nicht nötig",
+        "abnormal": "Ein erhöhtes Gesamt-IgE kann mit einer allergischen Veranlagung oder mit einem Parasitenbefall zusammenhängen, zeigt aber nicht, auf welches Allergen der Körper reagiert, dafür sind spezifische IgE-Tests oder Hauttests nötig. Der Allergologe beurteilt das Ergebnis zusammen mit den Beschwerden"
+      },
+      "tr": {
+        "what": "Alerjik reaksiyonlarda ve parazitlere karşı yanıtta rol alan antikorlar olan total E sınıfı immünoglobulin için kan testi",
+        "how": "Damardan kan alınması, birkaç dakika sürer",
+        "when": "Alerji şüphesi, atopik dermatit, bronş astımı, ürtiker, yıl boyu süren veya mevsimsel nezle, alerji testlerinin seçiminden önce değerlendirme, parazit şüphesi",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "Yüksek total IgE alerjik yatkınlıkla veya parazit enfeksiyonuyla ilişkili olabilir, ancak kişinin hangi alerjene tepki verdiğini göstermez, bunun için spesifik IgE veya deri testleri gerekir. Sonucu şikayetlerle birlikte alerji uzmanı değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на укупни имуноглобулин класе Е, антитијела која учествују у алергијским реакцијама и у одговору на паразите",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Сумња на алергију, атопијски дерматитис, астма, копривњача, цјелогодишња или сезонска кијавица, припрема за избор алерголошких тестова, сумња на паразитарну инфекцију",
+        "prep": "Није потребна посебна припрема",
+        "abnormal": "Повишен укупни IgE може бити повезан са алергијском склоношћу организма или са паразитарном инфекцијом, али не показује на који тачно алерген особа реагује, за то су потребни специфични IgE или кожни тестови. Резултат заједно са тегобама процјењује алерголог"
+      }
+    }
+  },
+  {
+    "slug": "c3-complement",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на белок системы комплемента C3 — часть врождённого иммунитета, которая расходуется при активном воспалении",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Обследование при аутоиммунных заболеваниях, болезни почек с изменениями в моче, повторяющиеся бактериальные инфекции, наблюдение за активностью известного аутоиммунного процесса",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Снижение может быть связано с активным расходом комплемента при аутоиммунном или почечном процессе, повышение — с острым воспалением, так как C3 ещё и белок острой фазы. Повторные измерения врач использует, чтобы следить за активностью процесса в динамике"
+      },
+      "en": {
+        "what": "Blood test for the complement protein C3, a part of innate immunity that is consumed during active inflammation",
+        "how": "Blood draw from a vein, takes a few minutes",
+        "when": "Work-up of autoimmune diseases, kidney disease with abnormal urine findings, recurrent bacterial infections, following the activity of a known autoimmune process",
+        "prep": "No special preparation is required",
+        "abnormal": "A low level may be related to active consumption of complement in an autoimmune or kidney process, a high level to acute inflammation, since C3 is also an acute-phase protein. Doctors use repeat measurements to follow how active the process is over time"
+      },
+      "sr": {
+        "what": "Analiza krvi na protein sistema komplementa C3, dio urođenog imuniteta koji se troši tokom aktivnog zapaljenja",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Ispitivanje autoimunih bolesti, bubrežna oboljenja sa promjenama u mokraći, ponavljane bakterijske infekcije, praćenje aktivnosti poznatog autoimunog procesa",
+        "prep": "Nije potrebna posebna priprema",
+        "abnormal": "Snižen nivo može biti povezan sa pojačanim trošenjem komplementa u autoimunom ili bubrežnom procesu, povišen sa akutnim zapaljenjem, jer je C3 i protein akutne faze. Ponovljena mjerenja ljekar koristi da prati koliko je proces aktivan tokom vremena"
+      },
+      "de": {
+        "what": "Bluttest auf das Komplementprotein C3, einen Teil der angeborenen Immunabwehr, der bei aktiver Entzündung verbraucht wird",
+        "how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
+        "when": "Abklärung von Autoimmunerkrankungen, Nierenerkrankungen mit auffälligem Urinbefund, wiederkehrende bakterielle Infekte, Verlaufskontrolle der Aktivität eines bekannten Autoimmunprozesses",
+        "prep": "Eine besondere Vorbereitung ist nicht nötig",
+        "abnormal": "Ein niedriger Wert kann mit einem verstärkten Verbrauch des Komplements bei einem Autoimmun- oder Nierenprozess zusammenhängen, ein hoher Wert mit einer akuten Entzündung, da C3 auch ein Akute-Phase-Protein ist. Wiederholte Messungen nutzt der Arzt, um die Aktivität des Prozesses im Verlauf zu verfolgen"
+      },
+      "tr": {
+        "what": "Aktif iltihap sırasında tüketilen ve doğuştan gelen bağışıklığın bir parçası olan kompleman proteini C3 için kan testi",
+        "how": "Damardan kan alınması, birkaç dakika sürer",
+        "when": "Otoimmün hastalıkların değerlendirilmesi, idrar bulguları bozuk olan böbrek hastalıkları, tekrarlayan bakteriyel enfeksiyonlar, bilinen bir otoimmün sürecin etkinliğinin izlenmesi",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "Düşük değer otoimmün veya böbrek kaynaklı bir süreçte komplemanın artan tüketimiyle, yüksek değer ise C3 aynı zamanda bir akut faz proteini olduğundan akut iltihapla ilişkili olabilir. Hekim tekrarlanan ölçümleri sürecin ne kadar etkin olduğunu zaman içinde izlemek için kullanır"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на протеин система комплемента Ц3, дио урођеног имунитета који се троши током активног запаљења",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Испитивање аутоимуних болести, бубрежна обољења са промјенама у мокраћи, понављане бактеријске инфекције, праћење активности познатог аутоимуног процеса",
+        "prep": "Није потребна посебна припрема",
+        "abnormal": "Снижен ниво може бити повезан са појачаним трошењем комплемента у аутоимуном или бубрежном процесу, повишен са акутним запаљењем, јер је Ц3 и протеин акутне фазе. Поновљена мјерења љекар користи да прати колико је процес активан током времена"
+      }
+    }
+  },
+  {
+    "slug": "c4-complement",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на белок системы комплемента C4 — компонент её классического пути активации",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Повторяющиеся отёки без крапивницы, обследование при аутоиммунных заболеваниях и васкулитах, дополнение к результату C3",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Стойко низкий уровень может быть связан с наследственным недостатком этого белка или с активацией классического пути комплемента при аутоиммунном процессе. Сопоставление C4 с C3 помогает врачу понять, какой путь активации задействован"
+      },
+      "en": {
+        "what": "Blood test for the complement protein C4, a component of the classical activation pathway",
+        "how": "Blood draw from a vein, takes a few minutes",
+        "when": "Recurrent swellings without hives, work-up of autoimmune diseases and vasculitis, addition to the C3 result",
+        "prep": "No special preparation is required",
+        "abnormal": "A persistently low level may be related to an inherited deficiency of this protein or to activation of the classical complement pathway in an autoimmune process. Comparing C4 with C3 helps the doctor see which activation pathway is involved"
+      },
+      "sr": {
+        "what": "Analiza krvi na protein sistema komplementa C4, sastavni dio njegovog klasičnog puta aktivacije",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Ponavljani otoci bez koprivnjače, ispitivanje autoimunih bolesti i vaskulitisa, dopuna nalazu C3",
+        "prep": "Nije potrebna posebna priprema",
+        "abnormal": "Trajno snižen nivo može biti povezan sa nasljednim nedostatkom ovog proteina ili sa aktivacijom klasičnog puta komplementa u autoimunom procesu. Poređenje C4 sa C3 pomaže ljekaru da sagleda koji je put aktivacije uključen"
+      },
+      "de": {
+        "what": "Bluttest auf das Komplementprotein C4, einen Bestandteil des klassischen Aktivierungswegs",
+        "how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
+        "when": "Wiederkehrende Schwellungen ohne Quaddeln, Abklärung von Autoimmunerkrankungen und Vaskulitiden, Ergänzung zum C3-Befund",
+        "prep": "Eine besondere Vorbereitung ist nicht nötig",
+        "abnormal": "Ein dauerhaft niedriger Wert kann mit einem erblichen Mangel dieses Proteins oder mit der Aktivierung des klassischen Komplementwegs bei einem Autoimmunprozess zusammenhängen. Der Vergleich von C4 mit C3 hilft dem Arzt zu erkennen, welcher Aktivierungsweg beteiligt ist"
+      },
+      "tr": {
+        "what": "Kompleman sisteminin klasik aktivasyon yolunun bir bileşeni olan C4 proteini için kan testi",
+        "how": "Damardan kan alınması, birkaç dakika sürer",
+        "when": "Kurdeşen olmadan tekrarlayan şişlikler, otoimmün hastalıkların ve vaskülitlerin değerlendirilmesi, C3 sonucunun tamamlanması",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "Sürekli düşük değer bu proteinin kalıtsal eksikliğiyle veya otoimmün süreçte klasik kompleman yolunun etkinleşmesiyle ilişkili olabilir. C4 değerinin C3 ile karşılaştırılması hekime hangi aktivasyon yolunun devrede olduğunu görmede yardımcı olur"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на протеин система комплемента Ц4, саставни дио његовог класичног пута активације",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Понављани отоци без копривњаче, испитивање аутоимуних болести и васкулитиса, допуна налазу Ц3",
+        "prep": "Није потребна посебна припрема",
+        "abnormal": "Трајно снижен ниво може бити повезан са насљедним недостатком овог протеина или са активацијом класичног пута комплемента у аутоимуном процесу. Поређење Ц4 са Ц3 помаже љекару да сагледа који је пут активације укључен"
+      }
+    }
+  },
+  {
+    "slug": "spermatozoa-antibodies-asa",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ на антитела к сперматозоидам (ASA) — иммунный фактор, который может мешать оплодотворению",
+        "how": "Исследование венозной крови или образца спермы, забор занимает несколько минут",
+        "when": "Обследование пары при трудностях с зачатием, склеивание сперматозоидов в спермограмме, перенесённая травма или воспаление яичка, операции на половых путях, включая вазэктомию",
+        "prep": "Для образца спермы половое воздержание от 2 до 7 дней, для анализа крови подготовка не нужна",
+        "abnormal": "Обнаружение таких антител может быть связано с иммунным фактором снижения фертильности и рассматривается только вместе со спермограммой и обследованием обоих партнёров. Дальнейшую тактику определяет уролог или врач-репродуктолог"
+      },
+      "en": {
+        "what": "Test for antisperm antibodies (ASA), an immune factor that can interfere with fertilisation",
+        "how": "Examination of venous blood or of a semen sample, collection takes a few minutes",
+        "when": "Work-up of a couple with difficulty conceiving, clumping of sperm on a semen analysis, past testicular injury or inflammation, surgery on the genital tract including vasectomy",
+        "prep": "For a semen sample, sexual abstinence of 2 to 7 days, the blood test needs no preparation",
+        "abnormal": "Finding such antibodies may be related to an immune factor in reduced fertility and is considered only together with the semen analysis and the assessment of both partners. Further steps are decided by a urologist or a fertility specialist"
+      },
+      "sr": {
+        "what": "Ispitivanje antitijela na spermatozoide (ASA), imunog faktora koji može ometati oplodnju",
+        "how": "Analiza venske krvi ili uzorka sjemena, uzimanje traje nekoliko minuta",
+        "when": "Ispitivanje para kod otežanog začeća, slijepljivanje spermatozoida u spermogramu, ranija povreda ili zapaljenje testisa, operacije na polnim putevima uključujući vazektomiju",
+        "prep": "Za uzorak sjemena potrebna je polna apstinencija od 2 do 7 dana, za analizu krvi priprema nije potrebna",
+        "abnormal": "Nalaz ovih antitijela može biti povezan sa imunim faktorom smanjene plodnosti i razmatra se samo zajedno sa spermogramom i pregledom oba partnera. Dalji postupak određuje urolog ili specijalista za reprodukciju"
+      },
+      "de": {
+        "what": "Untersuchung auf Spermien-Antikörper (ASA), einen Immunfaktor, der die Befruchtung stören kann",
+        "how": "Untersuchung von venösem Blut oder einer Samenprobe, die Gewinnung dauert wenige Minuten",
+        "when": "Abklärung bei einem Paar mit unerfülltem Kinderwunsch, Verklumpung der Spermien im Spermiogramm, frühere Hodenverletzung oder Hodenentzündung, Operationen am Genitaltrakt einschließlich Vasektomie",
+        "prep": "Für die Samenprobe sexuelle Karenz von 2 bis 7 Tagen, für die Blutentnahme ist keine Vorbereitung nötig",
+        "abnormal": "Der Nachweis solcher Antikörper kann mit einem immunologischen Faktor einer verminderten Fruchtbarkeit zusammenhängen und wird nur zusammen mit dem Spermiogramm und der Untersuchung beider Partner bewertet. Das weitere Vorgehen legt der Urologe oder der Reproduktionsmediziner fest"
+      },
+      "tr": {
+        "what": "Döllenmeyi engelleyebilen bir bağışıklık etkeni olan sperm antikorları (ASA) incelemesi",
+        "how": "Damardan alınan kanın veya semen örneğinin incelenmesi, örnek alımı birkaç dakika sürer",
+        "when": "Gebe kalmakta güçlük çeken çiftlerin değerlendirilmesi, spermiyogramda spermlerin kümeleşmesi, geçirilmiş testis travması veya iltihabı, vazektomi dahil genital yol ameliyatları",
+        "prep": "Semen örneği için 2 ila 7 gün cinsel perhiz gerekir, kan testi için hazırlık gerekmez",
+        "abnormal": "Bu antikorların saptanması doğurganlığın azalmasında bağışıklık etkeniyle ilişkili olabilir ve yalnızca spermiyogram ve her iki eşin değerlendirilmesiyle birlikte ele alınır. Sonraki adımları üroloji uzmanı veya üreme sağlığı uzmanı belirler"
+      },
+      "sr_cyrl": {
+        "what": "Испитивање антитијела на сперматозоиде (ASA), имуног фактора који може ометати оплодњу",
+        "how": "Анализа венске крви или узорка сјемена, узимање траје неколико минута",
+        "when": "Испитивање пара код отежаног зачећа, слијепљивање сперматозоида у спермограму, ранија повреда или запаљење тестиса, операције на полним путевима укључујући вазектомију",
+        "prep": "За узорак сјемена потребна је полна апстиненција од 2 до 7 дана, за анализу крви припрема није потребна",
+        "abnormal": "Налаз ових антитијела може бити повезан са имуним фактором смањене плодности и разматра се само заједно са спермограмом и прегледом оба партнера. Даљи поступак одређује уролог или специјалиста за репродукцију"
+      }
+    }
+  },
+  {
+    "slug": "hcv-total-antibodies",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Скрининговый анализ крови на суммарные антитела к вирусу гепатита C — классов IgM и IgG вместе",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Профилактический скрининг, подготовка к операции, донорство крови, беременность, обследование при изменённых печёночных показателях, по личному желанию",
+        "prep": "Специальной подготовки не требуется",
+        "abnormal": "Положительный результат говорит о контакте с вирусом сейчас или в прошлом и сам по себе эти ситуации не различает, для уточнения назначают подтверждающий тест на РНК вируса. Дальнейшие шаги определяет врач"
+      },
+      "en": {
+        "what": "Screening blood test for total antibodies to the hepatitis C virus, classes IgM and IgG together",
+        "how": "Blood draw from a vein, takes a few minutes",
+        "when": "Preventive screening, preparation for surgery, blood donation, pregnancy, evaluation of altered liver values, at personal request",
+        "prep": "No special preparation is required",
+        "abnormal": "A positive result indicates contact with the virus now or in the past and by itself does not distinguish between the two, so a confirmatory test for viral RNA is ordered. Further steps are decided by a doctor"
+      },
+      "sr": {
+        "what": "Skrining analiza krvi na ukupna antitijela na virus hepatitisa C, klase IgM i IgG zajedno",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Preventivni skrining, priprema za operaciju, davanje krvi, trudnoća, ispitivanje kod izmijenjenih nalaza jetre, na lični zahtjev",
+        "prep": "Nije potrebna posebna priprema",
+        "abnormal": "Pozitivan nalaz govori o kontaktu sa virusom sada ili ranije i sam po sebi ne razlikuje te situacije, zbog čega se radi potvrdni test na RNK virusa. Dalje korake određuje ljekar"
+      },
+      "de": {
+        "what": "Screening-Bluttest auf Gesamt-Antikörper gegen das Hepatitis-C-Virus, Klassen IgM und IgG zusammen",
+        "how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
+        "when": "Vorsorgescreening, Vorbereitung auf eine Operation, Blutspende, Schwangerschaft, Abklärung bei veränderten Leberwerten, auf eigenen Wunsch",
+        "prep": "Eine besondere Vorbereitung ist nicht nötig",
+        "abnormal": "Ein positives Ergebnis spricht für einen Kontakt mit dem Virus jetzt oder in der Vergangenheit und unterscheidet diese beiden Situationen für sich allein nicht, zur Klärung wird ein Bestätigungstest auf die Virus-RNA durchgeführt. Das weitere Vorgehen legt der Arzt fest"
+      },
+      "tr": {
+        "what": "Hepatit C virüsüne karşı IgM ve IgG sınıflarının birlikte ölçüldüğü total antikorlar için tarama kan testi",
+        "how": "Damardan kan alınması, birkaç dakika sürer",
+        "when": "Koruyucu tarama, ameliyat öncesi hazırlık, kan bağışı, gebelik, karaciğer değerlerinde değişiklik olduğunda değerlendirme, kişisel istek üzerine",
+        "prep": "Özel bir hazırlık gerekmez",
+        "abnormal": "Pozitif sonuç virüsle şu anda veya geçmişte temas olduğunu gösterir ve tek başına bu iki durumu ayırt etmez, netleştirmek için virüs RNA'sını arayan doğrulayıcı test yapılır. Sonraki adımları hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Скрининг анализа крви на укупна антитијела на вирус хепатитиса Ц, класе IgM и IgG заједно",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Превентивни скрининг, припрема за операцију, давање крви, трудноћа, испитивање код измијењених налаза јетре, на лични захтјев",
+        "prep": "Није потребна посебна припрема",
+        "abnormal": "Позитиван налаз говори о контакту са вирусом сада или раније и сам по себи не разликује те ситуације, због чега се ради потврдни тест на РНК вируса. Даље кораке одређује љекар"
+      }
+    }
+  }
+]

@@ -1,0 +1,578 @@
+[
+  {
+    "slug": "calcium-in-urine",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Измерение количества кальция, которое почки выводят с мочой",
+        "how": "Чаще исследуется суточный сбор: вся моча за день собирается в одну ёмкость, иногда достаточно разовой порции",
+        "when": "Мочекаменная болезнь и повторное образование камней, нарушения обмена кальция, заболевания паращитовидных желёз, контроль при приёме витамина D и препаратов кальция, снижение плотности костей",
+        "prep": "При суточном сборе первая утренняя порция сливается, дальше собирается вся моча до утра следующего дня, ёмкость хранится в холоде; приём витамина D, кальция и мочегонных заранее обсуждают с врачом, питьевой режим обычный",
+        "abnormal": "Отклонения могут быть связаны с питанием, обменом кальция и витамина D, работой паращитовидных желёз или почек, а также с приёмом некоторых препаратов. Результат врач оценивает вместе с кальцием крови"
+      },
+      "en": {
+        "what": "Measurement of the amount of calcium the kidneys remove with urine",
+        "how": "Most often a 24-hour collection is examined, with all urine passed during the day gathered in one container, sometimes a single portion is enough",
+        "when": "Kidney stones and recurrent stone formation, disorders of calcium metabolism, parathyroid gland conditions, monitoring while taking vitamin D or calcium supplements, reduced bone density",
+        "prep": "For a 24-hour collection the first morning portion is discarded, then all urine is collected until the next morning and the container is kept cool; vitamin D, calcium supplements and diuretics are discussed with the doctor in advance, drinking habits stay as usual",
+        "abnormal": "Deviations may be related to diet, calcium and vitamin D metabolism, parathyroid or kidney function, or certain medications. The result is assessed by a doctor together with blood calcium"
+      },
+      "sr": {
+        "what": "Mjerenje količine kalcijuma koju bubrezi izlučuju mokraćom",
+        "how": "Najčešće se ispituje 24-časovni uzorak, gdje se sva mokraća tokom dana sakuplja u jednu posudu, a ponekad je dovoljan i jednokratni uzorak",
+        "when": "Kamen u bubregu i ponavljano stvaranje kamenaca, poremećaji metabolizma kalcijuma, bolesti paratireoidnih žlijezda, kontrola tokom uzimanja vitamina D i preparata kalcijuma, smanjena gustina kostiju",
+        "prep": "Kod 24-časovnog sakupljanja prva jutarnja porcija se baca, zatim se sakuplja sva mokraća do sljedećeg jutra, a posuda se drži na hladnom; uzimanje vitamina D, kalcijuma i diuretika unaprijed dogovoriti sa ljekarom, unos tečnosti ostaje uobičajen",
+        "abnormal": "Odstupanja mogu biti povezana sa ishranom, metabolizmom kalcijuma i vitamina D, radom paratireoidnih žlijezda ili bubrega, kao i sa nekim lijekovima. Nalaz ljekar procjenjuje zajedno sa kalcijumom u krvi"
+      },
+      "de": {
+        "what": "Messung der Kalziummenge, die die Nieren mit dem Urin ausscheiden",
+        "how": "Meist wird Sammelurin über 24 Stunden untersucht, bei dem der gesamte Urin eines Tages in einem Behälter gesammelt wird, manchmal genügt eine Einzelprobe",
+        "when": "Nierensteine und wiederkehrende Steinbildung, Störungen des Kalziumstoffwechsels, Erkrankungen der Nebenschilddrüsen, Kontrolle bei Einnahme von Vitamin D und Kalziumpräparaten, verminderte Knochendichte",
+        "prep": "Beim Sammeln über 24 Stunden wird die erste Morgenportion verworfen, danach wird der gesamte Urin bis zum nächsten Morgen gesammelt und der Behälter kühl aufbewahrt; Vitamin D, Kalziumpräparate und Entwässerungsmittel vorher mit dem Arzt besprechen, die Trinkmenge bleibt wie gewohnt",
+        "abnormal": "Abweichungen können mit der Ernährung, dem Kalzium- und Vitamin-D-Stoffwechsel, der Funktion der Nebenschilddrüsen oder der Nieren sowie mit bestimmten Medikamenten zusammenhängen. Der Befund wird vom Arzt zusammen mit dem Kalzium im Blut beurteilt"
+      },
+      "tr": {
+        "what": "Böbreklerin idrarla attığı kalsiyum miktarının ölçümü",
+        "how": "Genellikle gün boyunca çıkarılan tüm idrarın tek kapta toplandığı 24 saatlik örnek incelenir, bazen tek seferlik örnek de yeterlidir",
+        "when": "Böbrek taşı ve tekrarlayan taş oluşumu, kalsiyum metabolizması bozuklukları, paratiroid bezi hastalıkları, D vitamini ve kalsiyum takviyesi kullanımında izlem, kemik yoğunluğunda azalma",
+        "prep": "24 saatlik toplamada ilk sabah idrarı atılır, ardından ertesi sabaha kadar tüm idrar toplanır ve kap serin yerde tutulur; D vitamini, kalsiyum ve idrar söktürücü ilaçlar önceden hekimle görüşülür, sıvı alımı her zamanki gibi sürer",
+        "abnormal": "Sapmalar beslenme, kalsiyum ve D vitamini metabolizması, paratiroid bezleri veya böbrek işleviyle ya da bazı ilaçlarla ilişkili olabilir. Sonucu hekim kandaki kalsiyumla birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Мјерење количине калцијума коју бубрези излучују мокраћом",
+        "how": "Најчешће се испитује 24-часовни узорак, гдје се сва мокраћа током дана сакупља у једну посуду, а понекад је довољан и једнократни узорак",
+        "when": "Камен у бубрегу и понављано стварање каменаца, поремећаји метаболизма калцијума, болести паратиреоидних жлијезда, контрола током узимања витамина Д и препарата калцијума, смањена густина костију",
+        "prep": "Код 24-часовног сакупљања прва јутарња порција се баца, затим се сакупља сва мокраћа до сљедећег јутра, а посуда се држи на хладном; узимање витамина Д, калцијума и диуретика унапријед договорити са љекаром, унос течности остаје уобичајен",
+        "abnormal": "Одступања могу бити повезана са исхраном, метаболизмом калцијума и витамина Д, радом паратиреоидних жлијезда или бубрега, као и са неким лијековима. Налаз љекар процјењује заједно са калцијумом у крви"
+      }
+    }
+  },
+  {
+    "slug": "creatinine-in-urine",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Измерение креатинина — продукта распада мышечной ткани, который выводится почками",
+        "how": "Исследуется разовая порция или суточный сбор: разовая нужна для пересчёта других показателей на креатинин, суточная — для расчёта клиренса",
+        "when": "Оценка фильтрационной функции почек, расчёт клиренса креатинина, пересчёт белка, альбумина и электролитов в разовой порции, наблюдение при хронической болезни почек",
+        "prep": "Для разовой порции достаточно обычной гигиены и чистого контейнера; при суточном сборе вся моча за день идёт в одну ёмкость, которая хранится в холоде, а накануне избегают интенсивных нагрузок и большого количества мяса",
+        "abnormal": "Отклонения могут быть связаны с мышечной массой, питанием, питьевым режимом или работой почек. Врач оценивает результат вместе с креатинином крови и объёмом мочи"
+      },
+      "en": {
+        "what": "Measurement of creatinine, a breakdown product of muscle tissue that is removed by the kidneys",
+        "how": "Either a single portion or a 24-hour collection is analysed: the single portion serves to express other values per creatinine, the 24-hour one to calculate clearance",
+        "when": "Assessment of kidney filtration, creatinine clearance calculation, expressing protein, albumin and electrolytes in a spot sample, follow-up in chronic kidney disease",
+        "prep": "For a single portion usual hygiene and a clean container are enough; for a 24-hour collection all urine of the day goes into one container kept cool, and intense exercise and large amounts of meat are avoided the day before",
+        "abnormal": "Deviations may be related to muscle mass, diet, fluid intake or kidney function. The doctor assesses the result together with blood creatinine and the urine volume"
+      },
+      "sr": {
+        "what": "Mjerenje kreatinina, produkta razgradnje mišićnog tkiva koji se izlučuje preko bubrega",
+        "how": "Ispituje se jednokratni uzorak ili 24-časovno sakupljanje: jednokratni služi za preračunavanje drugih parametara na kreatinin, a dnevni za izračunavanje klirensa",
+        "when": "Procjena filtracione funkcije bubrega, izračunavanje klirensa kreatinina, preračunavanje proteina, albumina i elektrolita u jednokratnom uzorku, praćenje hronične bubrežne bolesti",
+        "prep": "Za jednokratni uzorak dovoljni su uobičajena higijena i čista posuda; kod 24-časovnog sakupljanja sva mokraća ide u jednu posudu koja se drži na hladnom, a dan prije izbjegavaju se veći fizički napori i velika količina mesa",
+        "abnormal": "Odstupanja mogu biti povezana sa mišićnom masom, ishranom, unosom tečnosti ili radom bubrega. Ljekar nalaz procjenjuje zajedno sa kreatininom u krvi i zapreminom mokraće"
+      },
+      "de": {
+        "what": "Bestimmung von Kreatinin, einem Abbauprodukt der Muskulatur, das über die Nieren ausgeschieden wird",
+        "how": "Untersucht wird entweder eine Einzelprobe oder Sammelurin über 24 Stunden: die Einzelprobe dient dem Bezug anderer Werte auf Kreatinin, der Sammelurin der Berechnung der Clearance",
+        "when": "Beurteilung der Nierenfiltration, Berechnung der Kreatinin-Clearance, Bezug von Eiweiß, Albumin und Elektrolyten in der Einzelprobe, Verlaufskontrolle bei chronischer Nierenerkrankung",
+        "prep": "Für die Einzelprobe genügen übliche Hygiene und ein sauberer Behälter; beim Sammelurin wird der gesamte Urin des Tages in einem kühl gelagerten Behälter gesammelt, am Vortag starke körperliche Belastung und große Fleischmengen meiden",
+        "abnormal": "Abweichungen können mit der Muskelmasse, der Ernährung, der Trinkmenge oder der Nierenfunktion zusammenhängen. Der Arzt beurteilt den Wert zusammen mit dem Kreatinin im Blut und der Urinmenge"
+      },
+      "tr": {
+        "what": "Kas dokusunun yıkım ürünü olan ve böbreklerle atılan kreatininin ölçümü",
+        "how": "Tek seferlik örnek ya da 24 saatlik toplama incelenir: tek örnek diğer değerlerin kreatinine oranlanmasında, günlük toplama ise klirens hesabında kullanılır",
+        "when": "Böbrek süzme işlevinin değerlendirilmesi, kreatinin klirensi hesabı, tek örnekte protein, albümin ve elektrolitlerin oranlanması, kronik böbrek hastalığında izlem",
+        "prep": "Tek örnek için olağan hijyen ve temiz bir kap yeterlidir; 24 saatlik toplamada günün tüm idrarı serin yerde saklanan tek kaba toplanır, bir gün önce yoğun egzersizden ve fazla etten kaçınılır",
+        "abnormal": "Sapmalar kas kütlesi, beslenme, sıvı alımı veya böbrek işleviyle ilişkili olabilir. Hekim sonucu kandaki kreatinin ve idrar hacmiyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Мјерење креатинина, продукта разградње мишићног ткива који се излучује преко бубрега",
+        "how": "Испитује се једнократни узорак или 24-часовно сакупљање: једнократни служи за прерачунавање других параметара на креатинин, а дневни за израчунавање клиренса",
+        "when": "Процјена филтрационе функције бубрега, израчунавање клиренса креатинина, прерачунавање протеина, албумина и електролита у једнократном узорку, праћење хроничне бубрежне болести",
+        "prep": "За једнократни узорак довољни су уобичајена хигијена и чиста посуда; код 24-часовног сакупљања сва мокраћа иде у једну посуду која се држи на хладном, а дан прије избјегавају се већи физички напори и велика количина меса",
+        "abnormal": "Одступања могу бити повезана са мишићном масом, исхраном, уносом течности или радом бубрега. Љекар налаз процјењује заједно са креатинином у крви и запремином мокраће"
+      }
+    }
+  },
+  {
+    "slug": "phosphorus-in-urine",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Измерение количества фосфатов, которые почки выводят с мочой",
+        "how": "Обычно исследуется суточный сбор мочи, реже — разовая утренняя порция; сбор пациент проводит дома",
+        "when": "Мочекаменная болезнь, нарушения фосфорно-кальциевого обмена, заболевания паращитовидных желёз, болезни почек с потерей электролитов, наблюдение при дефиците витамина D",
+        "prep": "При суточном сборе первую утреннюю порцию не собирают, всю последующую мочу собирают до того же часа следующего утра и держат в прохладе; приём витамина D, фосфатсвязывающих средств и антацидов заранее обсуждают с врачом",
+        "abnormal": "Изменения могут быть связаны с питанием, обменом кальция и фосфора, работой паращитовидных желёз или канальцев почек. Результат читают вместе с фосфором и кальцием крови, это делает врач"
+      },
+      "en": {
+        "what": "Measurement of the amount of phosphate the kidneys excrete with urine",
+        "how": "Usually a 24-hour collection is examined, less often a single morning portion, and the collection is done at home",
+        "when": "Kidney stones, disorders of calcium and phosphate balance, parathyroid conditions, kidney diseases with electrolyte loss, follow-up in vitamin D deficiency",
+        "prep": "For the 24-hour collection the first morning portion is not collected, all further urine is gathered until the same hour the next morning and kept cool; vitamin D, phosphate binders and antacids are discussed with the doctor in advance",
+        "abnormal": "Changes may be related to diet, calcium and phosphate metabolism, parathyroid function or the kidney tubules. The result has to be read together with blood phosphate and calcium, which is done by a doctor"
+      },
+      "sr": {
+        "what": "Mjerenje količine fosfata koju bubrezi izlučuju mokraćom",
+        "how": "Obično se ispituje 24-časovno sakupljanje, rjeđe jednokratni jutarnji uzorak, a sakupljanje se obavlja kod kuće",
+        "when": "Kamen u bubregu, poremećaji ravnoteže kalcijuma i fosfora, bolesti paratireoidnih žlijezda, bubrežne bolesti sa gubitkom elektrolita, praćenje kod nedostatka vitamina D",
+        "prep": "Kod 24-časovnog sakupljanja prva jutarnja porcija se ne sakuplja, sva naredna mokraća skuplja se do istog sata narednog jutra i drži na hladnom; uzimanje vitamina D, preparata za vezivanje fosfata i antacida unaprijed dogovoriti sa ljekarom",
+        "abnormal": "Promjene mogu biti povezane sa ishranom, metabolizmom kalcijuma i fosfora, radom paratireoidnih žlijezda ili bubrežnih tubula. Nalaz se tumači zajedno sa fosforom i kalcijumom u krvi, a to radi ljekar"
+      },
+      "de": {
+        "what": "Messung der Phosphatmenge, die die Nieren mit dem Urin ausscheiden",
+        "how": "Meist wird Sammelurin über 24 Stunden untersucht, seltener eine einzelne Morgenprobe, gesammelt wird zu Hause",
+        "when": "Nierensteine, Störungen des Kalzium-Phosphat-Haushalts, Erkrankungen der Nebenschilddrüsen, Nierenerkrankungen mit Elektrolytverlust, Kontrolle bei Vitamin-D-Mangel",
+        "prep": "Beim Sammeln über 24 Stunden wird die erste Morgenportion nicht gesammelt, der weitere Urin bis zur gleichen Stunde am nächsten Morgen aufgefangen und kühl gelagert; Vitamin D, Phosphatbinder und Säureblocker vorher mit dem Arzt besprechen",
+        "abnormal": "Veränderungen können mit der Ernährung, dem Kalzium-Phosphat-Stoffwechsel, den Nebenschilddrüsen oder den Nierentubuli zusammenhängen. Der Wert muss zusammen mit Phosphat und Kalzium im Blut gelesen werden, das übernimmt der Arzt"
+      },
+      "tr": {
+        "what": "Böbreklerin idrarla attığı fosfat miktarının ölçümü",
+        "how": "Genellikle 24 saatlik toplama, daha seyrek olarak tek seferlik sabah örneği incelenir, toplama evde yapılır",
+        "when": "Böbrek taşı, kalsiyum-fosfor dengesi bozuklukları, paratiroid hastalıkları, elektrolit kaybına yol açan böbrek hastalıkları, D vitamini eksikliğinde izlem",
+        "prep": "24 saatlik toplamada ilk sabah idrarı toplanmaz, sonraki tüm idrar ertesi sabah aynı saate kadar biriktirilir ve serin yerde saklanır; D vitamini, fosfat bağlayıcılar ve mide ilaçları önceden hekimle görüşülür",
+        "abnormal": "Değişiklikler beslenme, kalsiyum-fosfor metabolizması, paratiroid bezleri veya böbrek tübülleriyle ilişkili olabilir. Sonuç kandaki fosfor ve kalsiyumla birlikte yorumlanmalıdır, bunu hekim yapar"
+      },
+      "sr_cyrl": {
+        "what": "Мјерење количине фосфата коју бубрези излучују мокраћом",
+        "how": "Обично се испитује 24-часовно сакупљање, рјеђе једнократни јутарњи узорак, а сакупљање се обавља код куће",
+        "when": "Камен у бубрегу, поремећаји равнотеже калцијума и фосфора, болести паратиреоидних жлијезда, бубрежне болести са губитком електролита, праћење код недостатка витамина Д",
+        "prep": "Код 24-часовног сакупљања прва јутарња порција се не сакупља, сва наредна мокраћа скупља се до истог сата наредног јутра и држи на хладном; узимање витамина Д, препарата за везивање фосфата и антацида унапријед договорити са љекаром",
+        "abnormal": "Промјене могу бити повезане са исхраном, метаболизмом калцијума и фосфора, радом паратиреоидних жлијезда или бубрежних тубула. Налаз се тумачи заједно са фосфором и калцијумом у крви, а то ради љекар"
+      }
+    }
+  },
+  {
+    "slug": "uric-acid-in-urine",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Измерение количества мочевой кислоты, которое выводится с мочой за определённое время",
+        "how": "Стандартно проводится суточный сбор мочи в одну ёмкость, по решению врача исследуется разовая порция с пересчётом на креатинин",
+        "when": "Подагра, уратные камни, повторная мочекаменная болезнь, оценка обмена пуринов, обследование при повышенной мочевой кислоте в крови",
+        "prep": "За два-три дня до сбора сохраняют обычный, согласованный с врачом рацион без избытка мяса, субпродуктов и алкоголя; сбор начинается после того, как первая утренняя порция слита, и заканчивается первой порцией следующего утра",
+        "abnormal": "Отклонения могут быть связаны с питанием, обменом пуринов, приёмом некоторых препаратов или работой почек. Значение результата врач определяет вместе с мочевой кислотой крови"
+      },
+      "en": {
+        "what": "Measurement of how much uric acid leaves the body with urine over a defined period",
+        "how": "The standard approach is a 24-hour collection into one container, and if the doctor decides so a single portion is analysed and expressed per creatinine",
+        "when": "Gout, urate stones, recurrent kidney stone disease, assessment of purine metabolism, work-up of elevated uric acid in blood",
+        "prep": "For two or three days before the collection keep the usual diet agreed with the doctor, without an excess of meat, offal and alcohol; the collection starts after the first morning portion has been discarded and ends with the first portion of the next morning",
+        "abnormal": "Deviations may be related to diet, purine metabolism, some medications or kidney function. What the value means is decided by a doctor together with blood uric acid"
+      },
+      "sr": {
+        "what": "Mjerenje količine mokraćne kiseline koja se mokraćom izluči u određenom periodu",
+        "how": "Standardno se radi 24-časovno sakupljanje u jednu posudu, a po odluci ljekara ispituje se jednokratni uzorak sa preračunavanjem na kreatinin",
+        "when": "Giht, uratni kamenci, ponavljana bolest kamena u bubregu, procjena metabolizma purina, obrada povišene mokraćne kiseline u krvi",
+        "prep": "Dva do tri dana prije sakupljanja zadržati uobičajenu ishranu dogovorenu sa ljekarom, bez viška mesa, iznutrica i alkohola; sakupljanje počinje nakon što se prva jutarnja porcija baci, a završava se prvom porcijom narednog jutra",
+        "abnormal": "Odstupanja mogu biti povezana sa ishranom, metabolizmom purina, nekim lijekovima ili radom bubrega. Značenje nalaza ljekar utvrđuje zajedno sa mokraćnom kiselinom u krvi"
+      },
+      "de": {
+        "what": "Messung, wie viel Harnsäure in einem festgelegten Zeitraum mit dem Urin ausgeschieden wird",
+        "how": "Üblich ist das Sammeln über 24 Stunden in einem Behälter, nach ärztlicher Entscheidung wird eine Einzelprobe untersucht und auf Kreatinin bezogen",
+        "when": "Gicht, Harnsäuresteine, wiederkehrendes Nierensteinleiden, Beurteilung des Purinstoffwechsels, Abklärung erhöhter Harnsäure im Blut",
+        "prep": "Zwei bis drei Tage vor dem Sammeln die gewohnte, mit dem Arzt abgesprochene Ernährung beibehalten, ohne Übermaß an Fleisch, Innereien und Alkohol; das Sammeln beginnt nach dem Verwerfen der ersten Morgenportion und endet mit der ersten Portion am nächsten Morgen",
+        "abnormal": "Abweichungen können mit der Ernährung, dem Purinstoffwechsel, bestimmten Medikamenten oder der Nierenfunktion zusammenhängen. Die Bedeutung des Werts bestimmt der Arzt zusammen mit der Harnsäure im Blut"
+      },
+      "tr": {
+        "what": "Belirli bir sürede idrarla atılan ürik asit miktarının ölçümü",
+        "how": "Standart yöntem tek kapta 24 saatlik toplamadır, hekim uygun görürse tek seferlik örnek alınıp kreatinine oranlanır",
+        "when": "Gut hastalığı, ürat taşları, tekrarlayan böbrek taşı hastalığı, pürin metabolizmasının değerlendirilmesi, kanda yüksek ürik asidin araştırılması",
+        "prep": "Toplamadan iki üç gün önce hekimle kararlaştırılan olağan beslenme sürdürülür, aşırı et, sakatat ve alkolden kaçınılır; toplama ilk sabah idrarı atıldıktan sonra başlar ve ertesi sabahın ilk idrarıyla biter",
+        "abnormal": "Sapmalar beslenme, pürin metabolizması, bazı ilaçlar veya böbrek işleviyle ilişkili olabilir. Sonucun anlamını hekim kandaki ürik asitle birlikte belirler"
+      },
+      "sr_cyrl": {
+        "what": "Мјерење количине мокраћне киселине која се мокраћом излучи у одређеном периоду",
+        "how": "Стандардно се ради 24-часовно сакупљање у једну посуду, а по одлуци љекара испитује се једнократни узорак са прерачунавањем на креатинин",
+        "when": "Гихт, уратни каменци, понављана болест камена у бубрегу, процјена метаболизма пурина, обрада повишене мокраћне киселине у крви",
+        "prep": "Два до три дана прије сакупљања задржати уобичајену исхрану договорену са љекаром, без вишка меса, изнутрица и алкохола; сакупљање почиње након што се прва јутарња порција баци, а завршава се првом порцијом наредног јутра",
+        "abnormal": "Одступања могу бити повезана са исхраном, метаболизмом пурина, неким лијековима или радом бубрега. Значење налаза љекар утврђује заједно са мокраћном киселином у крви"
+      }
+    }
+  },
+  {
+    "slug": "protein-in-urine",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Определение наличия и концентрации белка в разовой порции мочи",
+        "how": "Пациент сдаёт одну порцию мочи в контейнер, лаборатория проверяет, есть ли белок и в какой концентрации; занимает пару минут",
+        "when": "Профилактический осмотр, отёки, пенистая или изменившая цвет моча, повышенное давление, контроль при беременности, наблюдение при болезнях почек",
+        "prep": "Утренняя порция после гигиены наружных половых органов, средняя струя в стерильный контейнер; накануне избегать тяжёлых физических нагрузок, во время менструации сдачу лучше отложить",
+        "abnormal": "Появление белка может быть связано с нагрузкой, повышенной температурой, обезвоживанием или с процессами в почках и мочевых путях. Однократная находка требует повторного анализа, решение принимает врач"
+      },
+      "en": {
+        "what": "Detection and measurement of protein in a single urine sample",
+        "how": "One portion of urine is passed into a container and the laboratory checks whether protein is present and in what concentration, which takes a couple of minutes",
+        "when": "Preventive examination, swelling, foamy or discoloured urine, high blood pressure, monitoring during pregnancy, follow-up of kidney conditions",
+        "prep": "Morning portion after hygiene of the external genitals, midstream into a sterile container; avoid heavy physical exertion the day before and postpone the test during menstruation",
+        "abnormal": "Protein in urine may be related to exertion, fever, dehydration or to processes in the kidneys and urinary tract. A single finding calls for a repeat test, and the decision is made by a doctor"
+      },
+      "sr": {
+        "what": "Otkrivanje i mjerenje proteina u jednokratnom uzorku mokraće",
+        "how": "Pacijent daje jednu porciju mokraće u posudu, a laboratorija utvrđuje da li ima proteina i u kojoj koncentraciji, što traje nekoliko minuta",
+        "when": "Preventivni pregled, otoci, pjenušava ili promijenjena boja mokraće, povišen krvni pritisak, kontrola u trudnoći, praćenje bubrežnih bolesti",
+        "prep": "Jutarnja porcija poslije higijene spoljašnjih genitalija, srednji mlaz u sterilnu posudu; dan prije izbjegavati veće fizičke napore, a tokom menstruacije analizu odložiti",
+        "abnormal": "Prisustvo proteina može biti povezano sa naporom, povišenom tjelesnom temperaturom, dehidratacijom ili sa procesima u bubrezima i mokraćnim putevima. Jedan nalaz traži ponavljanje analize, a odluku donosi ljekar"
+      },
+      "de": {
+        "what": "Nachweis und Bestimmung von Eiweiß in einer einzelnen Urinprobe",
+        "how": "Eine Urinportion wird in einen Behälter gegeben, das Labor prüft, ob und wie viel Eiweiß enthalten ist, das dauert wenige Minuten",
+        "when": "Vorsorgeuntersuchung, Ödeme, schäumender oder verfärbter Urin, hoher Blutdruck, Kontrolle in der Schwangerschaft, Verlaufskontrolle bei Nierenerkrankungen",
+        "prep": "Morgenportion nach Reinigung des Intimbereichs, Mittelstrahl in einen sterilen Behälter; am Vortag starke körperliche Belastung meiden, während der Menstruation den Test verschieben",
+        "abnormal": "Eiweiß im Urin kann mit Belastung, Fieber, Flüssigkeitsmangel oder mit Vorgängen in Nieren und Harnwegen zusammenhängen. Ein einzelner Befund erfordert eine Kontrolle, darüber entscheidet der Arzt"
+      },
+      "tr": {
+        "what": "Tek seferlik idrar örneğinde proteinin saptanması ve ölçülmesi",
+        "how": "Hastanın kaba verdiği tek idrar örneğinde laboratuvar protein olup olmadığını ve derişimini belirler, işlem birkaç dakika sürer",
+        "when": "Koruyucu muayene, ödem, köpüklü veya rengi değişmiş idrar, yüksek tansiyon, gebelikte izlem, böbrek hastalıklarının takibi",
+        "prep": "Genital bölge temizliğinden sonra sabah idrarı, orta akım steril kaba alınır; bir gün önce ağır fiziksel efordan kaçınılır, adet döneminde test ertelenir",
+        "abnormal": "İdrarda protein bulunması efor, ateş, sıvı kaybı ya da böbrek ve idrar yollarındaki süreçlerle ilişkili olabilir. Tek bir sonuç tekrar test gerektirir, kararı hekim verir"
+      },
+      "sr_cyrl": {
+        "what": "Откривање и мјерење протеина у једнократном узорку мокраће",
+        "how": "Пацијент даје једну порцију мокраће у посуду, а лабораторија утврђује да ли има протеина и у којој концентрацији, што траје неколико минута",
+        "when": "Превентивни преглед, отоци, пјенушава или промијењена боја мокраће, повишен крвни притисак, контрола у трудноћи, праћење бубрежних болести",
+        "prep": "Јутарња порција послије хигијене спољашњих гениталија, средњи млаз у стерилну посуду; дан прије избјегавати веће физичке напоре, а током менструације анализу одложити",
+        "abnormal": "Присуство протеина може бити повезано са напором, повишеном тјелесном температуром, дехидратацијом или са процесима у бубрезима и мокраћним путевима. Један налаз тражи понављање анализе, а одлуку доноси љекар"
+      }
+    }
+  },
+  {
+    "slug": "microalbumin-in-urine",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Выявление небольших количеств альбумина, которые обычный тест на белок не улавливает",
+        "how": "Чаще исследуется первая утренняя порция с одновременным определением креатинина для расчёта соотношения, реже используется суточный сбор",
+        "when": "Регулярный контроль при сахарном диабете и артериальной гипертензии, наблюдение при хронической болезни почек, оценка сердечно-сосудистого риска",
+        "prep": "Первая утренняя порция после гигиены; за сутки избегать интенсивных нагрузок, анализ не сдают при повышенной температуре, инфекции мочевых путей и во время менструации",
+        "abnormal": "Повышенное выделение альбумина может быть связано с состоянием почечных фильтров, высоким давлением, повышенным сахаром крови или временными причинами. Для выводов нужен повторный анализ и оценка врача"
+      },
+      "en": {
+        "what": "Detection of small amounts of albumin that a routine protein test does not pick up",
+        "how": "Most often the first morning portion is analysed together with creatinine so that the ratio can be calculated, less often a 24-hour collection is used",
+        "when": "Regular monitoring in diabetes mellitus and arterial hypertension, follow-up in chronic kidney disease, cardiovascular risk assessment",
+        "prep": "First morning portion after hygiene; avoid intense exercise for a day before, and do not take the test during fever, a urinary tract infection or menstruation",
+        "abnormal": "Increased albumin excretion may be related to the state of the kidney filters, high blood pressure, high blood sugar or temporary causes. Conclusions require a repeat test and assessment by a doctor"
+      },
+      "sr": {
+        "what": "Otkrivanje malih količina albumina koje obična analiza proteina ne registruje",
+        "how": "Najčešće se ispituje prva jutarnja porcija uz istovremeno određivanje kreatinina radi izračunavanja odnosa, rjeđe se koristi 24-časovno sakupljanje",
+        "when": "Redovna kontrola kod šećerne bolesti i povišenog krvnog pritiska, praćenje hronične bubrežne bolesti, procjena kardiovaskularnog rizika",
+        "prep": "Prva jutarnja porcija poslije higijene; dan prije izbjegavati intenzivne napore, a analizu ne raditi kod povišene tjelesne temperature, infekcije mokraćnih puteva i tokom menstruacije",
+        "abnormal": "Povećano izlučivanje albumina može biti povezano sa stanjem bubrežnih filtera, visokim pritiskom, povišenim šećerom u krvi ili privremenim uzrocima. Za zaključak su potrebni ponovljena analiza i procjena ljekara"
+      },
+      "de": {
+        "what": "Nachweis kleiner Albuminmengen, die ein üblicher Eiweißtest nicht erfasst",
+        "how": "Meist wird die erste Morgenportion zusammen mit Kreatinin untersucht, um das Verhältnis zu berechnen, seltener kommt Sammelurin über 24 Stunden zum Einsatz",
+        "when": "Regelmäßige Kontrolle bei Diabetes mellitus und Bluthochdruck, Verlaufskontrolle bei chronischer Nierenerkrankung, Einschätzung des Herz-Kreislauf-Risikos",
+        "prep": "Erste Morgenportion nach der Hygiene; am Tag davor starke Anstrengung meiden, bei Fieber, Harnwegsinfekt und während der Menstruation nicht durchführen",
+        "abnormal": "Eine erhöhte Albuminausscheidung kann mit dem Zustand der Nierenfilter, hohem Blutdruck, hohem Blutzucker oder vorübergehenden Ursachen zusammenhängen. Für Schlussfolgerungen sind eine Kontrolle und die Beurteilung durch den Arzt nötig"
+      },
+      "tr": {
+        "what": "Standart protein testinin yakalayamadığı küçük miktarlardaki albüminin saptanması",
+        "how": "Çoğunlukla ilk sabah idrarı, oran hesaplanabilsin diye kreatininle birlikte incelenir, daha seyrek olarak 24 saatlik toplama kullanılır",
+        "when": "Diyabet ve yüksek tansiyonda düzenli kontrol, kronik böbrek hastalığında izlem, kalp-damar riskinin değerlendirilmesi",
+        "prep": "Hijyen sonrası ilk sabah idrarı; bir gün önce yoğun egzersizden kaçınılır, ateş, idrar yolu enfeksiyonu ve adet döneminde test yapılmaz",
+        "abnormal": "Albümin atılımının artması böbrek süzgeçlerinin durumu, yüksek tansiyon, yüksek kan şekeri ya da geçici nedenlerle ilişkili olabilir. Sonuç çıkarmak için testin tekrarı ve hekim değerlendirmesi gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Откривање малих количина албумина које обична анализа протеина не региструје",
+        "how": "Најчешће се испитује прва јутарња порција уз истовремено одређивање креатинина ради израчунавања односа, рјеђе се користи 24-часовно сакупљање",
+        "when": "Редовна контрола код шећерне болести и повишеног крвног притиска, праћење хроничне бубрежне болести, процјена кардиоваскуларног ризика",
+        "prep": "Прва јутарња порција послије хигијене; дан прије избјегавати интензивне напоре, а анализу не радити код повишене тјелесне температуре, инфекције мокраћних путева и током менструације",
+        "abnormal": "Повећано излучивање албумина може бити повезано са стањем бубрежних филтера, високим притиском, повишеним шећером у крви или привременим узроцима. За закључак су потребни поновљена анализа и процјена љекара"
+      }
+    }
+  },
+  {
+    "slug": "spermogram",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Лабораторное исследование эякулята: объём, количество, подвижность и строение сперматозоидов",
+        "how": "Образец получают путём мастурбации в отдельной комнате клиники в стерильный контейнер, исследование начинают примерно в течение часа",
+        "when": "Обследование пары при трудностях с зачатием, оценка мужской фертильности, контроль после операций и лечения (варикоцеле, воспаления), проверка после вазэктомии, подготовка к программам вспомогательной репродукции",
+        "prep": "Половое воздержание от двух до пяти дней (точный срок называет клиника), несколько дней избегать алкоголя и перегрева (сауна, горячая ванна), не сдавать во время острого заболевания с температурой и вскоре после курса антибиотиков",
+        "abnormal": "Отклонения могут быть связаны с временными факторами (болезнь, стресс, перегрев, недавняя лихорадка) или с состоянием репродуктивной системы. По одному анализу выводы не делают, назначают повтор и консультацию уролога или андролога"
+      },
+      "en": {
+        "what": "Laboratory analysis of semen: volume, number, motility and shape of sperm cells",
+        "how": "The sample is produced by masturbation into a sterile container in a separate room at the clinic and is examined within about an hour",
+        "when": "Work-up of a couple with difficulty conceiving, assessment of male fertility, follow-up after surgery or treatment such as varicocele or inflammation, check after vasectomy, preparation for assisted reproduction",
+        "prep": "Sexual abstinence of two to five days (the clinic states the exact period), avoid alcohol and overheating such as sauna or hot baths for several days, do not attend during an acute illness with fever or shortly after a course of antibiotics",
+        "abnormal": "Deviations may be related to temporary factors such as illness, stress, overheating or recent fever, or to the state of the reproductive system. Conclusions are not drawn from one sample, a repeat test and a consultation with a urologist or andrologist are arranged"
+      },
+      "sr": {
+        "what": "Laboratorijska analiza ejakulata: zapremina, broj, pokretljivost i oblik spermatozoida",
+        "how": "Uzorak se dobija masturbacijom u sterilnu posudu u posebnoj prostoriji klinike i obrađuje se u roku od otprilike jednog sata",
+        "when": "Obrada para sa teškoćama u začeću, procjena muške plodnosti, kontrola poslije operacija i liječenja (varikokela, upale), provjera poslije vazektomije, priprema za postupke vantjelesne oplodnje",
+        "prep": "Polna apstinencija od dva do pet dana (tačan period određuje klinika), nekoliko dana izbjegavati alkohol i pregrijavanje (sauna, vruća kupka), ne dolaziti tokom akutne bolesti sa povišenom temperaturom ni ubrzo poslije terapije antibioticima",
+        "abnormal": "Odstupanja mogu biti povezana sa privremenim faktorima (bolest, stres, pregrijavanje, nedavno povišena temperatura) ili sa stanjem reproduktivnog sistema. Zaključak se ne donosi na osnovu jednog nalaza, već se radi ponovna analiza i pregled urologa ili androloga"
+      },
+      "de": {
+        "what": "Laboruntersuchung des Ejakulats: Menge, Anzahl, Beweglichkeit und Form der Samenzellen",
+        "how": "Die Probe wird durch Masturbation in einem separaten Raum der Klinik in einen sterilen Becher gewonnen und innerhalb etwa einer Stunde untersucht",
+        "when": "Abklärung eines Paares mit unerfülltem Kinderwunsch, Beurteilung der männlichen Fruchtbarkeit, Kontrolle nach Operationen und Behandlungen wie Varikozele oder Entzündungen, Kontrolle nach Vasektomie, Vorbereitung auf eine künstliche Befruchtung",
+        "prep": "Sexuelle Karenz von zwei bis fünf Tagen (den genauen Zeitraum nennt die Klinik), einige Tage vorher Alkohol und Überhitzung wie Sauna oder heiße Bäder meiden, nicht während einer akuten fieberhaften Erkrankung oder kurz nach einer Antibiotikatherapie",
+        "abnormal": "Abweichungen können mit vorübergehenden Faktoren wie Krankheit, Stress, Überhitzung oder kürzlichem Fieber oder mit dem Zustand des Fortpflanzungssystems zusammenhängen. Aus einer einzelnen Untersuchung werden keine Schlüsse gezogen, es folgen eine Wiederholung und ein Gespräch beim Urologen oder Andrologen"
+      },
+      "tr": {
+        "what": "Meninin laboratuvar incelemesi: hacim, sperm sayısı, hareketlilik ve şekil",
+        "how": "Örnek klinikte ayrı bir odada mastürbasyonla steril kaba alınır ve yaklaşık bir saat içinde incelenir",
+        "when": "Gebe kalmakta güçlük çeken çiftlerin araştırılması, erkek doğurganlığının değerlendirilmesi, varikosel veya iltihap tedavisi ve ameliyat sonrası kontrol, vazektomi sonrası kontrol, yardımcı üreme tedavilerine hazırlık",
+        "prep": "İki ila beş gün cinsel perhiz (kesin süreyi klinik belirtir), birkaç gün alkolden ve sauna, sıcak banyo gibi aşırı ısınmadan kaçınma, ateşli akut hastalık sırasında ve antibiyotik kürünün hemen ardından test yapılmaz",
+        "abnormal": "Sapmalar hastalık, stres, aşırı ısınma, yakın zamanda geçirilmiş ateş gibi geçici etkenlerle ya da üreme sisteminin durumuyla ilişkili olabilir. Tek bir sonuçla yorum yapılmaz, test tekrarlanır ve üroloji veya androloji görüşü alınır"
+      },
+      "sr_cyrl": {
+        "what": "Лабораторијска анализа ејакулата: запремина, број, покретљивост и облик сперматозоида",
+        "how": "Узорак се добија мастурбацијом у стерилну посуду у посебној просторији клинике и обрађује се у року од отприлике једног сата",
+        "when": "Обрада пара са тешкоћама у зачећу, процјена мушке плодности, контрола послије операција и лијечења (варикокела, упале), провјера послије вазектомије, припрема за поступке вантјелесне оплодње",
+        "prep": "Полна апстиненција од два до пет дана (тачан период одређује клиника), неколико дана избјегавати алкохол и прегријавање (сауна, врућа купка), не долазити током акутне болести са повишеном температуром ни убрзо послије терапије антибиотицима",
+        "abnormal": "Одступања могу бити повезана са привременим факторима (болест, стрес, прегријавање, недавно повишена температура) или са стањем репродуктивног система. Закључак се не доноси на основу једног налаза, већ се ради поновна анализа и преглед уролога или андролога"
+      }
+    }
+  },
+  {
+    "slug": "amylase-in-urine",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Измерение активности фермента поджелудочной железы и слюнных желёз, который выводится с мочой",
+        "how": "Исследуется разовая порция мочи, иногда делают сбор за несколько часов или за сутки, чтобы оценить выведение фермента",
+        "when": "Боль в верхней части живота, подозрение на воспаление поджелудочной железы, наблюдение в динамике, обследование при болезнях слюнных желёз",
+        "prep": "Специальная подготовка не нужна; моча собирается в чистый контейнер, о принимаемых препаратах и алкоголе накануне стоит сообщить врачу",
+        "abnormal": "Изменение активности может быть связано с состоянием поджелудочной железы, слюнных желёз, работой почек или с приёмом некоторых препаратов. Результат читают вместе с амилазой крови и клинической картиной, это делает врач"
+      },
+      "en": {
+        "what": "Measurement of the activity of an enzyme of the pancreas and salivary glands that is excreted with urine",
+        "how": "A single urine portion is analysed, and sometimes a timed collection over several hours or a full day is used to assess how much enzyme is excreted",
+        "when": "Pain in the upper abdomen, suspected inflammation of the pancreas, follow-up over time, work-up of salivary gland conditions",
+        "prep": "No special preparation is needed; the urine is collected in a clean container, and medications or alcohol taken the day before should be mentioned to the doctor",
+        "abnormal": "A change in activity may be related to the pancreas, the salivary glands, kidney function or certain medications. The result is read together with blood amylase and the clinical picture, which is done by a doctor"
+      },
+      "sr": {
+        "what": "Mjerenje aktivnosti enzima gušterače i pljuvačnih žlijezda koji se izlučuje mokraćom",
+        "how": "Ispituje se jednokratni uzorak mokraće, a ponekad se radi sakupljanje kroz nekoliko sati ili tokom dana radi procjene izlučivanja enzima",
+        "when": "Bol u gornjem dijelu trbuha, sumnja na upalu gušterače, praćenje toka, obrada oboljenja pljuvačnih žlijezda",
+        "prep": "Posebna priprema nije potrebna; mokraća se skuplja u čistu posudu, a o lijekovima i alkoholu uzetim dan prije treba obavijestiti ljekara",
+        "abnormal": "Promjena aktivnosti može biti povezana sa stanjem gušterače, pljuvačnih žlijezda, radom bubrega ili sa uzimanjem nekih lijekova. Nalaz se tumači zajedno sa amilazom u krvi i kliničkom slikom, a to radi ljekar"
+      },
+      "de": {
+        "what": "Bestimmung der Aktivität eines Enzyms der Bauchspeicheldrüse und der Speicheldrüsen, das mit dem Urin ausgeschieden wird",
+        "how": "Untersucht wird eine einzelne Urinportion, manchmal wird über mehrere Stunden oder einen Tag gesammelt, um die ausgeschiedene Enzymmenge zu beurteilen",
+        "when": "Schmerzen im Oberbauch, Verdacht auf eine Entzündung der Bauchspeicheldrüse, Verlaufskontrolle, Abklärung von Speicheldrüsenerkrankungen",
+        "prep": "Eine besondere Vorbereitung ist nicht nötig; der Urin wird in einem sauberen Behälter aufgefangen, Medikamente und Alkohol vom Vortag sollten dem Arzt mitgeteilt werden",
+        "abnormal": "Eine veränderte Aktivität kann mit der Bauchspeicheldrüse, den Speicheldrüsen, der Nierenfunktion oder bestimmten Medikamenten zusammenhängen. Der Wert wird zusammen mit der Amylase im Blut und dem Beschwerdebild vom Arzt beurteilt"
+      },
+      "tr": {
+        "what": "Pankreas ve tükürük bezlerine ait olup idrarla atılan bir enzimin etkinliğinin ölçümü",
+        "how": "Tek seferlik idrar örneği incelenir, bazen enzim atılımını değerlendirmek için birkaç saatlik ya da günlük toplama yapılır",
+        "when": "Üst karın ağrısı, pankreas iltihabı şüphesi, seyrin izlenmesi, tükürük bezi hastalıklarının araştırılması",
+        "prep": "Özel bir hazırlık gerekmez; idrar temiz bir kaba alınır, bir gün önce kullanılan ilaçlar ve alkol hekime bildirilmelidir",
+        "abnormal": "Etkinlikteki değişiklik pankreas, tükürük bezleri, böbrek işlevi veya bazı ilaçlarla ilişkili olabilir. Sonuç kandaki amilaz ve klinik tabloyla birlikte hekim tarafından yorumlanır"
+      },
+      "sr_cyrl": {
+        "what": "Мјерење активности ензима гуштераче и пљувачних жлијезда који се излучује мокраћом",
+        "how": "Испитује се једнократни узорак мокраће, а понекад се ради сакупљање кроз неколико сати или током дана ради процјене излучивања ензима",
+        "when": "Бол у горњем дијелу трбуха, сумња на упалу гуштераче, праћење тока, обрада обољења пљувачних жлијезда",
+        "prep": "Посебна припрема није потребна; мокраћа се скупља у чисту посуду, а о лијековима и алкохолу узетим дан прије треба обавијестити љекара",
+        "abnormal": "Промјена активности може бити повезана са стањем гуштераче, пљувачних жлијезда, радом бубрега или са узимањем неких лијекова. Налаз се тумачи заједно са амилазом у крви и клиничком сликом, а то ради љекар"
+      }
+    }
+  },
+  {
+    "slug": "protein-in-24h-urine",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Измерение общего количества белка, которое теряется с мочой за целые сутки",
+        "how": "Мочу собирают в одну градуированную ёмкость в течение 24 часов, в лабораторию сдают измеренный общий объём и порцию из перемешанного сбора",
+        "when": "Уточнение белка, найденного в разовой порции, наблюдение при болезнях почек, контроль повышенного давления при беременности, отслеживание динамики на фоне лечения",
+        "prep": "Сбор начинают после того, как первая утренняя порция слита, и заканчивают первой порцией следующего утра, которую включают в сбор; ёмкость держат в прохладном месте, питьевой режим обычный, тяжёлых нагрузок в день сбора лучше избегать",
+        "abnormal": "Повышенная суточная потеря белка может быть связана с состоянием почечных фильтров, высоким давлением или системными заболеваниями. Величину и причину врач оценивает вместе с анализами крови"
+      },
+      "en": {
+        "what": "Measurement of the total amount of protein lost with urine over a full day",
+        "how": "Urine is collected into one graduated container for 24 hours, and the measured total volume plus a sample from the mixed collection go to the laboratory",
+        "when": "Clarifying protein found in a single portion, follow-up of kidney disease, monitoring of high blood pressure in pregnancy, tracking change during treatment",
+        "prep": "The collection starts after the first morning portion has been discarded and ends with the first portion of the following morning, which is included; the container is kept in a cool place, drinking stays as usual and hard exercise on the collection day is better avoided",
+        "abnormal": "An increased daily protein loss may be related to the state of the kidney filters, high blood pressure or systemic conditions. The amount and its cause are assessed by a doctor together with blood tests"
+      },
+      "sr": {
+        "what": "Mjerenje ukupne količine proteina koja se mokraćom izgubi tokom cijelog dana",
+        "how": "Mokraća se 24 sata skuplja u jednu graduisanu posudu, a u laboratoriju se nose izmjerena ukupna zapremina i uzorak iz promiješanog sakupljenog materijala",
+        "when": "Provjera proteina nađenih u jednokratnom uzorku, praćenje bubrežnih bolesti, kontrola povišenog pritiska u trudnoći, praćenje promjene tokom liječenja",
+        "prep": "Sakupljanje počinje nakon što se prva jutarnja porcija baci, a završava prvom porcijom narednog jutra koja se uključuje; posuda se drži na hladnom, unos tečnosti je uobičajen, a veće fizičke napore na dan sakupljanja bolje je izbjegavati",
+        "abnormal": "Povećan dnevni gubitak proteina može biti povezan sa stanjem bubrežnih filtera, visokim pritiskom ili sistemskim bolestima. Količinu i uzrok ljekar procjenjuje zajedno sa analizama krvi"
+      },
+      "de": {
+        "what": "Bestimmung der gesamten Eiweißmenge, die im Verlauf eines Tages mit dem Urin verloren geht",
+        "how": "Der Urin wird 24 Stunden in einem Messbehälter gesammelt, ins Labor kommen das gemessene Gesamtvolumen und eine Probe aus dem durchmischten Sammelurin",
+        "when": "Abklärung von Eiweiß aus einer Einzelprobe, Verlaufskontrolle bei Nierenerkrankungen, Überwachung bei Bluthochdruck in der Schwangerschaft, Beurteilung des Verlaufs unter Therapie",
+        "prep": "Das Sammeln beginnt nach dem Verwerfen der ersten Morgenportion und endet mit der ersten Portion am nächsten Morgen, die mitgesammelt wird; der Behälter wird kühl gelagert, die Trinkmenge bleibt gewohnt, starke Belastung am Sammeltag besser vermeiden",
+        "abnormal": "Ein erhöhter täglicher Eiweißverlust kann mit dem Zustand der Nierenfilter, hohem Blutdruck oder systemischen Erkrankungen zusammenhängen. Menge und Ursache beurteilt der Arzt zusammen mit Blutwerten"
+      },
+      "tr": {
+        "what": "Bir gün boyunca idrarla kaybedilen toplam protein miktarının ölçümü",
+        "how": "İdrar 24 saat boyunca dereceli tek bir kapta toplanır, laboratuvara ölçülen toplam hacim ve karıştırılmış toplamadan alınan örnek götürülür",
+        "when": "Tek örnekte bulunan proteinin doğrulanması, böbrek hastalıklarının takibi, gebelikte yüksek tansiyonun izlenmesi, tedavi sırasında değişimin izlenmesi",
+        "prep": "Toplama ilk sabah idrarı atıldıktan sonra başlar ve ertesi sabahın ilk idrarı da eklenerek biter; kap serin yerde tutulur, sıvı alımı olağan sürer, toplama gününde ağır egzersizden kaçınmak daha iyidir",
+        "abnormal": "Günlük protein kaybının artması böbrek süzgeçlerinin durumu, yüksek tansiyon veya sistemik hastalıklarla ilişkili olabilir. Miktarı ve nedenini hekim kan testleriyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Мјерење укупне количине протеина која се мокраћом изгуби током цијелог дана",
+        "how": "Мокраћа се 24 сата скупља у једну градуисану посуду, а у лабораторију се носе измјерена укупна запремина и узорак из промијешаног сакупљеног материјала",
+        "when": "Провјера протеина нађених у једнократном узорку, праћење бубрежних болести, контрола повишеног притиска у трудноћи, праћење промјене током лијечења",
+        "prep": "Сакупљање почиње након што се прва јутарња порција баци, а завршава првом порцијом наредног јутра која се укључује; посуда се држи на хладном, унос течности је уобичајен, а веће физичке напоре на дан сакупљања боље је избјегавати",
+        "abnormal": "Повећан дневни губитак протеина може бити повезан са стањем бубрежних филтера, високим притиском или системским болестима. Количину и узрок љекар процјењује заједно са анализама крви"
+      }
+    }
+  },
+  {
+    "slug": "bilirubin-in-urine",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Обнаружение жёлчного пигмента, которого в моче здорового человека практически нет",
+        "how": "Свежую разовую порцию проверяют тест-полоской в составе общего анализа мочи, при необходимости подтверждают отдельным методом",
+        "when": "Желтушность кожи и глаз, тёмная моча, обследование при болезнях печени и жёлчных путей, контроль при лечении, дающем нагрузку на печень",
+        "prep": "Свежая порция после гигиены, контейнер закрывают и быстро доставляют в лабораторию, образец берегут от света — билирубин разрушается при хранении на свету",
+        "abnormal": "Появление билирубина может быть связано с работой печени или с оттоком жёлчи. Это повод для дальнейшего обследования, его направление определяет врач"
+      },
+      "en": {
+        "what": "Detection of a bile pigment that is practically absent from the urine of a healthy person",
+        "how": "A fresh single portion is tested with a reagent strip as part of the routine urinalysis and confirmed by a separate method if needed",
+        "when": "Yellowing of the skin and eyes, dark urine, work-up of liver and bile duct conditions, monitoring during treatment that puts a load on the liver",
+        "prep": "A fresh portion after hygiene, the container is closed and delivered quickly, and the sample is kept away from light because bilirubin breaks down during storage in the light",
+        "abnormal": "The appearance of bilirubin may be related to liver function or to the flow of bile. It is a reason for further examination, and the doctor decides what that should be"
+      },
+      "sr": {
+        "what": "Otkrivanje žučnog pigmenta kojeg u mokraći zdrave osobe praktično nema",
+        "how": "Svjež jednokratni uzorak ispituje se test-trakom u okviru opšte analize mokraće, a po potrebi se potvrđuje posebnom metodom",
+        "when": "Žuta prebojenost kože i očiju, tamna mokraća, obrada bolesti jetre i žučnih puteva, kontrola tokom terapije koja opterećuje jetru",
+        "prep": "Svjež uzorak poslije higijene, posuda se zatvara i brzo nosi u laboratoriju, a uzorak se čuva od svjetlosti jer se bilirubin razgrađuje stajanjem na svjetlu",
+        "abnormal": "Pojava bilirubina može biti povezana sa radom jetre ili sa otjecanjem žuči. To je razlog za dalju obradu, a njen smjer određuje ljekar"
+      },
+      "de": {
+        "what": "Nachweis eines Gallenfarbstoffs, der im Urin eines gesunden Menschen praktisch nicht vorkommt",
+        "how": "Eine frische Einzelprobe wird im Rahmen der Urinuntersuchung mit einem Teststreifen geprüft und bei Bedarf mit einem gesonderten Verfahren bestätigt",
+        "when": "Gelbfärbung von Haut und Augen, dunkler Urin, Abklärung von Leber- und Gallenwegserkrankungen, Kontrolle bei leberbelastender Therapie",
+        "prep": "Frische Probe nach der Hygiene, der Behälter wird verschlossen und zügig abgegeben, die Probe vor Licht schützen, da Bilirubin bei Lichteinwirkung zerfällt",
+        "abnormal": "Auftretendes Bilirubin kann mit der Leberfunktion oder dem Gallenabfluss zusammenhängen. Das ist ein Anlass für weitere Abklärung, deren Richtung der Arzt festlegt"
+      },
+      "tr": {
+        "what": "Sağlıklı kişinin idrarında neredeyse bulunmayan bir safra pigmentinin saptanması",
+        "how": "Taze tek örnek, tam idrar tetkiki kapsamında test çubuğuyla incelenir, gerekirse ayrı bir yöntemle doğrulanır",
+        "when": "Ciltte ve gözlerde sararma, koyu renkli idrar, karaciğer ve safra yolu hastalıklarının araştırılması, karaciğeri zorlayan tedavilerde izlem",
+        "prep": "Hijyen sonrası taze örnek, kap kapatılır ve hızla laboratuvara ulaştırılır, örnek ışıktan korunur çünkü bilirubin ışıkta bekleyince bozulur",
+        "abnormal": "İdrarda bilirubin görülmesi karaciğerin işleyişi veya safra akışıyla ilişkili olabilir. Bu, ileri incelemeyi gerektirir, yönünü hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Откривање жучног пигмента којег у мокраћи здраве особе практично нема",
+        "how": "Свјеж једнократни узорак испитује се тест-траком у оквиру опште анализе мокраће, а по потреби се потврђује посебном методом",
+        "when": "Жута пребојеност коже и очију, тамна мокраћа, обрада болести јетре и жучних путева, контрола током терапије која оптерећује јетру",
+        "prep": "Свјеж узорак послије хигијене, посуда се затвара и брзо носи у лабораторију, а узорак се чува од свјетлости јер се билирубин разграђује стајањем на свјетлу",
+        "abnormal": "Појава билирубина може бити повезана са радом јетре или са отјецањем жучи. То је разлог за даљу обраду, а њен смјер одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "urea-in-urine",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Измерение мочевины — конечного продукта белкового обмена, который выводят почки",
+        "how": "Обычно анализируют суточный сбор, показывающий общее выведение азота, реже используют разовую порцию",
+        "when": "Оценка выделительной функции почек, контроль белкового обмена, наблюдение при болезнях почек и печени, расчёт азотистого баланса при лечебном питании",
+        "prep": "При суточном сборе первую утреннюю порцию не включают, всю последующую мочу собирают до следующего утра; питание в дни сбора остаётся обычным, количество белка менять не нужно, ёмкость держат в прохладе",
+        "abnormal": "Отклонения могут быть связаны с количеством белка в питании, объёмом выпитой жидкости, работой почек или печени. Результат интерпретируют вместе с мочевиной крови, это делает врач"
+      },
+      "en": {
+        "what": "Measurement of urea, the end product of protein metabolism that the kidneys remove",
+        "how": "Usually a 24-hour collection is analysed, which shows the total nitrogen output, less often a single portion is used",
+        "when": "Assessment of the excretory function of the kidneys, monitoring of protein metabolism, follow-up in kidney and liver disease, nitrogen balance calculation during therapeutic nutrition",
+        "prep": "For the 24-hour collection the first morning portion is not included, all further urine is gathered until the next morning; eating stays as usual during the collection days, there is no need to change the amount of protein, and the container is kept cool",
+        "abnormal": "Deviations may be related to the amount of protein in the diet, fluid intake, kidney or liver function. The value is interpreted together with blood urea, which is done by a doctor"
+      },
+      "sr": {
+        "what": "Mjerenje uree, krajnjeg produkta metabolizma bjelančevina koji izlučuju bubrezi",
+        "how": "Obično se analizira 24-časovno sakupljanje, koje pokazuje ukupno izlučivanje azota, rjeđe se koristi jednokratni uzorak",
+        "when": "Procjena izlučne funkcije bubrega, praćenje metabolizma bjelančevina, kontrola kod bolesti bubrega i jetre, izračunavanje azotnog bilansa kod posebne ishrane",
+        "prep": "Kod 24-časovnog sakupljanja prva jutarnja porcija se ne uključuje, sva naredna mokraća skuplja se do narednog jutra; ishrana tokom dana sakupljanja ostaje uobičajena, količinu bjelančevina nije potrebno mijenjati, a posuda se drži na hladnom",
+        "abnormal": "Odstupanja mogu biti povezana sa količinom bjelančevina u ishrani, unosom tečnosti, radom bubrega ili jetre. Nalaz se tumači zajedno sa ureom u krvi, a to radi ljekar"
+      },
+      "de": {
+        "what": "Bestimmung von Harnstoff, dem Endprodukt des Eiweißstoffwechsels, das über die Nieren ausgeschieden wird",
+        "how": "Meist wird Sammelurin über 24 Stunden untersucht, der die gesamte Stickstoffausscheidung zeigt, seltener genügt eine Einzelprobe",
+        "when": "Beurteilung der Ausscheidungsfunktion der Nieren, Kontrolle des Eiweißstoffwechsels, Verlauf bei Nieren- und Lebererkrankungen, Berechnung der Stickstoffbilanz bei besonderer Ernährungstherapie",
+        "prep": "Beim Sammeln über 24 Stunden wird die erste Morgenportion nicht mitgesammelt, der weitere Urin bis zum nächsten Morgen aufgefangen; die Ernährung bleibt an den Sammeltagen gewohnt, die Eiweißmenge muss nicht geändert werden, der Behälter wird kühl gelagert",
+        "abnormal": "Abweichungen können mit der Eiweißmenge in der Nahrung, der Trinkmenge, der Nieren- oder Leberfunktion zusammenhängen. Der Wert wird zusammen mit dem Harnstoff im Blut vom Arzt beurteilt"
+      },
+      "tr": {
+        "what": "Protein metabolizmasının son ürünü olan ve böbreklerle atılan ürenin ölçümü",
+        "how": "Genellikle toplam azot atılımını gösteren 24 saatlik toplama incelenir, daha seyrek olarak tek seferlik örnek kullanılır",
+        "when": "Böbreklerin atım işlevinin değerlendirilmesi, protein metabolizmasının izlenmesi, böbrek ve karaciğer hastalıklarında takip, özel beslenme tedavisinde azot dengesi hesabı",
+        "prep": "24 saatlik toplamada ilk sabah idrarı dahil edilmez, sonraki tüm idrar ertesi sabaha kadar biriktirilir; toplama günlerinde beslenme olağan sürer, protein miktarını değiştirmek gerekmez, kap serin yerde saklanır",
+        "abnormal": "Sapmalar beslenmedeki protein miktarı, sıvı alımı, böbrek veya karaciğer işleviyle ilişkili olabilir. Sonuç kandaki üreyle birlikte hekim tarafından yorumlanır"
+      },
+      "sr_cyrl": {
+        "what": "Мјерење урее, крајњег продукта метаболизма бјеланчевина који излучују бубрези",
+        "how": "Обично се анализира 24-часовно сакупљање, које показује укупно излучивање азота, рјеђе се користи једнократни узорак",
+        "when": "Процјена излучне функције бубрега, праћење метаболизма бјеланчевина, контрола код болести бубрега и јетре, израчунавање азотног биланса код посебне исхране",
+        "prep": "Код 24-часовног сакупљања прва јутарња порција се не укључује, сва наредна мокраћа скупља се до наредног јутра; исхрана током дана сакупљања остаје уобичајена, количину бјеланчевина није потребно мијењати, а посуда се држи на хладном",
+        "abnormal": "Одступања могу бити повезана са количином бјеланчевина у исхрани, уносом течности, радом бубрега или јетре. Налаз се тумачи заједно са уреом у крви, а то ради љекар"
+      }
+    }
+  },
+  {
+    "slug": "urobilinogen-in-urine",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Определение вещества, которое образуется из билирубина в кишечнике, частично возвращается в кровь и выводится почками",
+        "how": "Свежую разовую порцию проверяют тест-полоской, обычно вместе с остальными показателями общего анализа мочи",
+        "when": "Обследование при болезнях печени, состояния с усиленным распадом эритроцитов, жалобы на желтушность кожи, изменение цвета мочи или кала",
+        "prep": "Свежая порция, лучше утренняя, после гигиены; исследовать нужно быстро и хранить образец в темноте, так как уробилиноген разрушается на свету",
+        "abnormal": "Отклонения могут быть связаны с работой печени, состоянием жёлчных путей, ускоренным распадом эритроцитов или с приёмом некоторых препаратов. Результат оценивают вместе с билирубином крови и мочи, это делает врач"
+      },
+      "en": {
+        "what": "Measurement of a substance formed from bilirubin in the intestine, part of which returns to the blood and is excreted by the kidneys",
+        "how": "A fresh single portion is checked with a reagent strip, usually together with the other parameters of a routine urinalysis",
+        "when": "Work-up of liver disease, conditions with increased breakdown of red blood cells, complaints of yellow skin, changes in the colour of urine or stool",
+        "prep": "A fresh portion, preferably the morning one, after hygiene; it should be examined quickly and kept in the dark, since urobilinogen breaks down in the light",
+        "abnormal": "Deviations may be related to liver function, the bile ducts, faster breakdown of red blood cells or certain medications. The result is assessed together with bilirubin in blood and urine, which is done by a doctor"
+      },
+      "sr": {
+        "what": "Određivanje materije koja nastaje od bilirubina u crijevima, a dijelom se vraća u krv i izlučuje preko bubrega",
+        "how": "Svjež jednokratni uzorak provjerava se test-trakom, obično uz ostale parametre opšte analize mokraće",
+        "when": "Obrada bolesti jetre, stanja sa pojačanom razgradnjom crvenih krvnih zrnaca, tegobe sa žutom prebojenošću kože, promjena boje mokraće ili stolice",
+        "prep": "Svjež uzorak, najbolje jutarnji, poslije higijene; treba ga brzo obraditi i čuvati u mraku jer se urobilinogen razgrađuje na svjetlu",
+        "abnormal": "Odstupanja mogu biti povezana sa radom jetre, žučnim putevima, bržom razgradnjom crvenih krvnih zrnaca ili sa nekim lijekovima. Nalaz se procjenjuje zajedno sa bilirubinom u krvi i mokraći, a to radi ljekar"
+      },
+      "de": {
+        "what": "Bestimmung eines Stoffes, der im Darm aus Bilirubin entsteht, teilweise ins Blut zurückkehrt und über die Nieren ausgeschieden wird",
+        "how": "Eine frische Einzelprobe wird mit einem Teststreifen geprüft, meist gemeinsam mit den übrigen Werten der Urinuntersuchung",
+        "when": "Abklärung von Lebererkrankungen, Zustände mit vermehrtem Abbau roter Blutkörperchen, Beschwerden mit gelblicher Haut, Veränderungen der Farbe von Urin oder Stuhl",
+        "prep": "Frische Probe, am besten der Morgenurin, nach der Hygiene; sie sollte rasch untersucht und dunkel aufbewahrt werden, da Urobilinogen im Licht zerfällt",
+        "abnormal": "Abweichungen können mit der Leberfunktion, den Gallenwegen, einem schnelleren Abbau roter Blutkörperchen oder bestimmten Medikamenten zusammenhängen. Der Wert wird zusammen mit Bilirubin in Blut und Urin vom Arzt beurteilt"
+      },
+      "tr": {
+        "what": "Bağırsakta bilirubinden oluşan, bir kısmı kana geri dönüp böbreklerle atılan maddenin ölçümü",
+        "how": "Taze tek örnek, genellikle tam idrar tetkikinin diğer değerleriyle birlikte test çubuğuyla incelenir",
+        "when": "Karaciğer hastalıklarının araştırılması, alyuvarların hızlı yıkıldığı durumlar, ciltte sararma şikayeti, idrar veya dışkı renginde değişiklik",
+        "prep": "Hijyen sonrası taze, tercihen sabah örneği; ürobilinojen ışıkta bozulduğu için örnek hızla incelenmeli ve karanlıkta saklanmalıdır",
+        "abnormal": "Sapmalar karaciğer işlevi, safra yolları, alyuvarların daha hızlı yıkımı veya bazı ilaçlarla ilişkili olabilir. Sonuç kandaki ve idrardaki bilirubinle birlikte hekim tarafından değerlendirilir"
+      },
+      "sr_cyrl": {
+        "what": "Одређивање материје која настаје од билирубина у цријевима, а дијелом се враћа у крв и излучује преко бубрега",
+        "how": "Свјеж једнократни узорак провјерава се тест-траком, обично уз остале параметре опште анализе мокраће",
+        "when": "Обрада болести јетре, стања са појачаном разградњом црвених крвних зрнаца, тегобе са жутом пребојеношћу коже, промјена боје мокраће или столице",
+        "prep": "Свјеж узорак, најбоље јутарњи, послије хигијене; треба га брзо обрадити и чувати у мраку јер се уробилиноген разграђује на свјетлу",
+        "abnormal": "Одступања могу бити повезана са радом јетре, жучним путевима, бржом разградњом црвених крвних зрнаца или са неким лијековима. Налаз се процјењује заједно са билирубином у крви и мокраћи, а то ради љекар"
+      }
+    }
+  }
+]

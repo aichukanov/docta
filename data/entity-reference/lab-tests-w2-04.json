@@ -1,0 +1,722 @@
+[
+  {
+    "slug": "cervical-swab-bacteria",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Бактериологическое исследование материала из канала шейки матки для выявления бактериальной флоры",
+        "how": "Врач вводит гинекологическое зеркало и стерильным тампоном берёт отделяемое из цервикального канала, занимает несколько минут",
+        "when": "Выделения, зуд или дискомфорт, планирование беременности, подготовка к гинекологическим вмешательствам, контроль после лечения, профилактический осмотр",
+        "prep": "Забор вне менструального кровотечения; за сутки исключить половые контакты, спринцевания, вагинальные свечи и кремы; о недавнем приёме антибиотиков сообщить врачу",
+        "abnormal": "Рост бактерий может быть связан с нарушением состава микрофлоры, воспалительным процессом или бессимптомным носительством. Значимость находки и чувствительность к антибиотикам оценивает врач"
+      },
+      "en": {
+        "what": "Bacteriological examination of material from the cervical canal to identify bacterial flora",
+        "how": "The doctor inserts a speculum and collects secretions from the cervical canal with a sterile swab, takes a few minutes",
+        "when": "Discharge, itching or discomfort, pregnancy planning, preparation for gynaecological procedures, follow-up after treatment, preventive examination",
+        "prep": "Taken outside menstrual bleeding; for one day before avoid sexual intercourse, douching, vaginal suppositories and creams; tell the doctor about any recent antibiotics",
+        "abnormal": "Growth of bacteria may be related to a disturbed balance of the microflora, an inflammatory process or symptom-free carriage. The significance of the finding and antibiotic susceptibility are assessed by a doctor"
+      },
+      "sr": {
+        "what": "Bakteriološko ispitivanje materijala iz cervikalnog kanala radi utvrđivanja bakterijske flore",
+        "how": "Ljekar postavlja ginekološki spekulum i sterilnim štapićem uzima sekret iz cervikalnog kanala, traje nekoliko minuta",
+        "when": "Pojačan sekret, svrab ili nelagodnost, planiranje trudnoće, priprema za ginekološke zahvate, kontrola poslije liječenja, preventivni pregled",
+        "prep": "Uzima se van menstrualnog krvarenja; dan ranije izbjegavati seksualne odnose, ispiranja, vaginalete i kreme; obavijestiti ljekara o nedavnom uzimanju antibiotika",
+        "abnormal": "Porast bakterija može biti povezan sa poremećajem sastava mikroflore, upalnim procesom ili nosilaštvom bez tegoba. Značaj nalaza i osjetljivost na antibiotike procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Bakteriologische Untersuchung von Material aus dem Gebärmutterhalskanal zum Nachweis der bakteriellen Flora",
+        "how": "Der Arzt führt ein Spekulum ein und entnimmt mit einem sterilen Tupfer Sekret aus dem Zervikalkanal, dauert wenige Minuten",
+        "when": "Ausfluss, Juckreiz oder Beschwerden, Kinderwunsch, Vorbereitung auf gynäkologische Eingriffe, Kontrolle nach einer Behandlung, Vorsorgeuntersuchung",
+        "prep": "Entnahme außerhalb der Menstruationsblutung; einen Tag zuvor auf Geschlechtsverkehr, Spülungen sowie Vaginalzäpfchen und -cremes verzichten; kürzlich eingenommene Antibiotika dem Arzt mitteilen",
+        "abnormal": "Ein Nachweis von Bakterien kann mit einer gestörten Zusammensetzung der Mikroflora, einem entzündlichen Prozess oder einer beschwerdefreien Besiedlung zusammenhängen. Die Bedeutung des Befunds und die Antibiotikaempfindlichkeit beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "Bakteriyel florayı belirlemek için servikal kanaldan alınan örneğin bakteriyolojik incelemesi",
+        "how": "Hekim spekulum yerleştirir ve steril çubukla servikal kanaldan salgı alır, işlem birkaç dakika sürer",
+        "when": "Akıntı, kaşıntı veya rahatsızlık hissi, gebelik planlaması, jinekolojik girişimlere hazırlık, tedavi sonrası kontrol, koruyucu muayene",
+        "prep": "Adet kanaması dışında alınır; bir gün öncesinden cinsel ilişki, vajinal duş, vajinal fitil ve kremlerden kaçınılmalı; yakın zamanda antibiyotik kullanıldıysa hekime bildirilmelidir",
+        "abnormal": "Bakteri üremesi mikroflora dengesindeki bozulmayla, iltihabi bir süreçle veya belirtisiz taşıyıcılıkla ilişkili olabilir. Bulgunun önemini ve antibiyotik duyarlılığını hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Бактериолошко испитивање материјала из цервикалног канала ради утврђивања бактеријске флоре",
+        "how": "Љекар поставља гинеколошки спекулум и стерилним штапићем узима секрет из цервикалног канала, траје неколико минута",
+        "when": "Појачан секрет, свраб или нелагодност, планирање трудноће, припрема за гинеколошке захвате, контрола послије лијечења, превентивни преглед",
+        "prep": "Узима се ван менструалног крварења; дан раније избјегавати сексуалне односе, испирања, вагиналете и креме; обавијестити љекара о недавном узимању антибиотика",
+        "abnormal": "Пораст бактерија може бити повезан са поремећајем састава микрофлоре, упалним процесом или носилаштвом без тегоба. Значај налаза и осјетљивост на антибиотике процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "glans-swab-bacteria",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Бактериологическое исследование отделяемого с кожи головки полового члена",
+        "how": "Стерильным тампоном проводят по поверхности головки, материал засевают на питательные среды, забор занимает около минуты",
+        "when": "Покраснение, зуд, налёт или выделения в области головки, дискомфорт при мочеиспускании, повторяющиеся воспаления, контроль после лечения",
+        "prep": "Не наносить на область мази и антисептики и не мыть её непосредственно перед забором; о приёме антибиотиков сообщить врачу",
+        "abnormal": "Рост бактерий может быть связан с воспалением кожи головки, особенностями гигиены или сопутствующими состояниями, а также встречается у людей без жалоб. Значимость находки и чувствительность к антибиотикам оценивает врач"
+      },
+      "en": {
+        "what": "Bacteriological examination of secretions from the skin of the glans penis",
+        "how": "A sterile swab is wiped over the surface of the glans and the material is cultured on nutrient media, collection takes about a minute",
+        "when": "Redness, itching, coating or discharge around the glans, discomfort when urinating, recurring inflammation, follow-up after treatment",
+        "prep": "Do not apply ointments or antiseptics to the area and do not wash it immediately before the sample is taken; tell the doctor about any antibiotics you are taking",
+        "abnormal": "Growth of bacteria may be related to inflammation of the skin of the glans, hygiene conditions or accompanying conditions, and also occurs in people without complaints. The significance of the finding and antibiotic susceptibility are assessed by a doctor"
+      },
+      "sr": {
+        "what": "Bakteriološko ispitivanje sekreta sa kože glansa penisa",
+        "how": "Sterilnim štapićem prelazi se preko površine glansa, materijal se zasijava na hranljive podloge, uzimanje traje oko minut",
+        "when": "Crvenilo, svrab, naslage ili sekret u predjelu glansa, nelagodnost pri mokrenju, ponavljane upale, kontrola poslije liječenja",
+        "prep": "Ne nanositi masti i antiseptike na to područje i ne prati ga neposredno prije uzimanja uzorka; obavijestiti ljekara o uzimanju antibiotika",
+        "abnormal": "Porast bakterija može biti povezan sa upalom kože glansa, uslovima higijene ili pratećim stanjima, a nalazi se i kod osoba bez tegoba. Značaj nalaza i osjetljivost na antibiotike procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Bakteriologische Untersuchung des Sekrets von der Haut der Eichel",
+        "how": "Mit einem sterilen Tupfer wird über die Oberfläche der Eichel gestrichen, das Material wird auf Nährböden angezüchtet, die Entnahme dauert etwa eine Minute",
+        "when": "Rötung, Juckreiz, Belag oder Ausfluss im Bereich der Eichel, Beschwerden beim Wasserlassen, wiederkehrende Entzündungen, Kontrolle nach einer Behandlung",
+        "prep": "Vor der Entnahme keine Salben oder Antiseptika auftragen und die Stelle nicht unmittelbar davor waschen; eingenommene Antibiotika dem Arzt mitteilen",
+        "abnormal": "Ein Nachweis von Bakterien kann mit einer Entzündung der Eichelhaut, den Hygienebedingungen oder Begleiterkrankungen zusammenhängen und kommt auch bei Menschen ohne Beschwerden vor. Die Bedeutung des Befunds und die Antibiotikaempfindlichkeit beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "Penis başının derisinden alınan salgının bakteriyolojik incelemesi",
+        "how": "Steril çubuk glans yüzeyinde gezdirilir, örnek besiyerine ekilir, alım yaklaşık bir dakika sürer",
+        "when": "Glans bölgesinde kızarıklık, kaşıntı, beyaz tabaka veya akıntı, idrar yaparken rahatsızlık, tekrarlayan iltihaplar, tedavi sonrası kontrol",
+        "prep": "Bölgeye merhem ve antiseptik uygulanmamalı, örnek alınmadan hemen önce yıkanmamalıdır; kullanılan antibiyotikler hekime bildirilmelidir",
+        "abnormal": "Bakteri üremesi glans derisinin iltihabıyla, hijyen koşullarıyla veya eşlik eden durumlarla ilişkili olabilir ve şikayeti olmayan kişilerde de görülür. Bulgunun önemini ve antibiyotik duyarlılığını hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Бактериолошко испитивање секрета са коже гланса пениса",
+        "how": "Стерилним штапићем прелази се преко површине гланса, материјал се засијава на хранљиве подлоге, узимање траје око минут",
+        "when": "Црвенило, свраб, наслаге или секрет у предјелу гланса, нелагодност при мокрењу, понављане упале, контрола послије лијечења",
+        "prep": "Не наносити масти и антисептике на то подручје и не прати га непосредно прије узимања узорка; обавијестити љекара о узимању антибиотика",
+        "abnormal": "Пораст бактерија може бити повезан са упалом коже гланса, условима хигијене или пратећим стањима, а налази се и код особа без тегоба. Значај налаза и осјетљивост на антибиотике процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "glans-swab-fungi",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микологическое исследование материала с кожи головки полового члена на дрожжеподобные грибы",
+        "how": "Стерильным тампоном берут налёт и отделяемое с поверхности головки и засевают на среду для грибов",
+        "when": "Зуд, жжение, покраснение, белый налёт, повторяющиеся жалобы, контроль после курса лечения",
+        "prep": "За несколько дней до забора не применять противогрибковые кремы, область не мыть непосредственно перед процедурой; точный интервал уточняет врач",
+        "abnormal": "Обнаружение грибов может быть связано с изменением местной микрофлоры, влажностью и раздражением кожи или сопутствующими состояниями, включая нарушения углеводного обмена. Результат трактует врач"
+      },
+      "en": {
+        "what": "Mycological examination of material from the skin of the glans penis for yeast-like fungi",
+        "how": "A sterile swab collects coating and secretions from the surface of the glans, which are cultured on a medium for fungi",
+        "when": "Itching, burning, redness, white coating, recurring complaints, follow-up after a course of treatment",
+        "prep": "Do not use antifungal creams for several days before the test and do not wash the area immediately before the procedure; the exact interval is specified by the doctor",
+        "abnormal": "Detection of fungi may be related to changes in the local microflora, moisture and skin irritation, or accompanying conditions including disorders of carbohydrate metabolism. The result is interpreted by a doctor"
+      },
+      "sr": {
+        "what": "Mikološko ispitivanje materijala sa kože glansa penisa na kvasnice",
+        "how": "Sterilnim štapićem uzimaju se naslage i sekret sa površine glansa i zasijavaju na podlogu za gljivice",
+        "when": "Svrab, peckanje, crvenilo, bijele naslage, ponavljane tegobe, kontrola poslije završenog liječenja",
+        "prep": "Nekoliko dana prije uzimanja ne koristiti antimikotske kreme, područje ne prati neposredno prije zahvata; tačan razmak određuje ljekar",
+        "abnormal": "Nalaz gljivica može biti povezan sa promjenom lokalne mikroflore, vlagom i nadražajem kože ili pratećim stanjima, uključujući poremećaje metabolizma ugljenih hidrata. Nalaz tumači ljekar"
+      },
+      "de": {
+        "what": "Mykologische Untersuchung von Material der Eichelhaut auf Hefepilze",
+        "how": "Mit einem sterilen Tupfer werden Belag und Sekret von der Oberfläche der Eichel entnommen und auf einem Pilznährboden angezüchtet",
+        "when": "Juckreiz, Brennen, Rötung, weißer Belag, wiederkehrende Beschwerden, Kontrolle nach einer Behandlung",
+        "prep": "Einige Tage vor der Entnahme keine Antipilzcremes anwenden und die Stelle nicht unmittelbar vor der Untersuchung waschen; den genauen Abstand legt der Arzt fest",
+        "abnormal": "Ein Pilznachweis kann mit Veränderungen der lokalen Mikroflora, Feuchtigkeit und Hautreizung oder Begleiterkrankungen einschließlich Störungen des Kohlenhydratstoffwechsels zusammenhängen. Den Befund beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "Penis başı derisinden alınan örnekte maya mantarlarının araştırılması",
+        "how": "Steril çubukla glans yüzeyindeki tabaka ve salgı alınır ve mantar besiyerine ekilir",
+        "when": "Kaşıntı, yanma, kızarıklık, beyaz tabaka, tekrarlayan şikayetler, tedavi sonrası kontrol",
+        "prep": "Örnekten birkaç gün önce antifungal kremler kullanılmamalı, bölge işlemden hemen önce yıkanmamalıdır; süreyi hekim belirler",
+        "abnormal": "Mantar saptanması yerel mikrofloranın değişmesiyle, nem ve deri tahrişiyle ya da karbonhidrat metabolizması bozuklukları dahil eşlik eden durumlarla ilişkili olabilir. Sonucu hekim yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Миколошко испитивање материјала са коже гланса пениса на кваснице",
+        "how": "Стерилним штапићем узимају се наслаге и секрет са површине гланса и засијавају на подлогу за гљивице",
+        "when": "Свраб, пецкање, црвенило, бијеле наслаге, понављане тегобе, контрола послије завршеног лијечења",
+        "prep": "Неколико дана прије узимања не користити антимикотске креме, подручје не прати непосредно прије захвата; тачан размак одређује љекар",
+        "abnormal": "Налаз гљивица може бити повезан са промјеном локалне микрофлоре, влагом и надражајем коже или пратећим стањима, укључујући поремећаје метаболизма угљених хидрата. Налаз тумачи љекар"
+      }
+    }
+  },
+  {
+    "slug": "nose-swab-bacteria",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Бактериологическое исследование отделяемого слизистой носа",
+        "how": "Стерильный тампон вводят в носовой ход и проводят по слизистой, процедура занимает меньше минуты и обычно безболезненна",
+        "when": "Затяжной насморк, гнойные выделения, синусит, обследование перед операцией или госпитализацией, проверка носительства у медицинских работников и работников пищевой сферы",
+        "prep": "В день забора не использовать капли, спреи и мази для носа, нос не промывать; о приёме антибиотиков сообщить врачу",
+        "abnormal": "Рост микроорганизмов может отражать как бессимптомное носительство, так и участие бактерий в воспалении. Значимость результата и чувствительность к антибиотикам определяет врач"
+      },
+      "en": {
+        "what": "Bacteriological examination of secretions from the nasal mucosa",
+        "how": "A sterile swab is inserted into the nostril and wiped over the mucosa, the procedure takes less than a minute and is usually painless",
+        "when": "Prolonged runny nose, purulent discharge, sinusitis, examination before surgery or hospital admission, carrier screening for healthcare and food industry workers",
+        "prep": "On the day of the test do not use nasal drops, sprays or ointments and do not rinse the nose; tell the doctor about any antibiotics you are taking",
+        "abnormal": "Growth of micro-organisms may reflect symptom-free carriage or the involvement of bacteria in inflammation. The significance of the result and antibiotic susceptibility are determined by a doctor"
+      },
+      "sr": {
+        "what": "Bakteriološko ispitivanje sekreta sa sluznice nosa",
+        "how": "Sterilni štapić se uvodi u nosni hodnik i prelazi preko sluznice, postupak traje manje od minuta i obično je bezbolan",
+        "when": "Dugotrajna sekrecija iz nosa, gnojav sekret, sinusitis, ispitivanje prije operacije ili prijema u bolnicu, provjera nosilaštva kod zdravstvenih radnika i radnika u proizvodnji hrane",
+        "prep": "Na dan uzimanja ne koristiti kapi, sprejeve i masti za nos i ne ispirati nos; obavijestiti ljekara o uzimanju antibiotika",
+        "abnormal": "Porast mikroorganizama može odražavati nosilaštvo bez tegoba, ali i učešće bakterija u upali. Značaj nalaza i osjetljivost na antibiotike određuje ljekar"
+      },
+      "de": {
+        "what": "Bakteriologische Untersuchung des Sekrets der Nasenschleimhaut",
+        "how": "Ein steriler Tupfer wird in den Nasengang eingeführt und über die Schleimhaut gestrichen, der Vorgang dauert weniger als eine Minute und ist meist schmerzfrei",
+        "when": "Anhaltender Schnupfen, eitriges Sekret, Nasennebenhöhlenentzündung, Untersuchung vor Operationen oder Krankenhausaufnahme, Trägerprüfung bei Beschäftigten im Gesundheitswesen und in der Lebensmittelbranche",
+        "prep": "Am Tag der Entnahme keine Nasentropfen, -sprays oder -salben verwenden und die Nase nicht spülen; eingenommene Antibiotika dem Arzt mitteilen",
+        "abnormal": "Der Nachweis von Mikroorganismen kann eine beschwerdefreie Besiedlung widerspiegeln, aber auch eine Beteiligung von Bakterien an einer Entzündung. Die Bedeutung des Ergebnisses und die Antibiotikaempfindlichkeit bestimmt der Arzt"
+      },
+      "tr": {
+        "what": "Burun içinden alınan salgının bakteriyolojik incelemesi",
+        "how": "Steril çubuk burun deliğine yerleştirilip mukoza üzerinde gezdirilir, işlem bir dakikadan kısa sürer ve genellikle ağrısızdır",
+        "when": "Uzun süren burun akıntısı, iltihaplı akıntı, sinüzit, ameliyat veya hastaneye yatış öncesi inceleme, sağlık ve gıda sektörü çalışanlarında taşıyıcılık taraması",
+        "prep": "Örnek alınacağı gün burun damlası, sprey ve merhem kullanılmamalı, burun yıkanmamalıdır; kullanılan antibiyotikler hekime bildirilmelidir",
+        "abnormal": "Mikroorganizma üremesi belirtisiz taşıyıcılığı da, bakterilerin iltihaba katılımını da yansıtabilir. Sonucun önemini ve antibiyotik duyarlılığını hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Бактериолошко испитивање секрета са слузнице носа",
+        "how": "Стерилни штапић се уводи у носни ходник и прелази преко слузнице, поступак траје мање од минута и обично је безболан",
+        "when": "Дуготрајна секреција из носа, гнојав секрет, синуситис, испитивање прије операције или пријема у болницу, провјера носилаштва код здравствених радника и радника у производњи хране",
+        "prep": "На дан узимања не користити капи, спрејеве и масти за нос и не испирати нос; обавијестити љекара о узимању антибиотика",
+        "abnormal": "Пораст микроорганизама може одражавати носилаштво без тегоба, али и учешће бактерија у упали. Значај налаза и осјетљивост на антибиотике одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "nose-swab-fungi",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование отделяемого слизистой носа на наличие грибов",
+        "how": "Стерильным тампоном берут материал из носового хода и засевают на питательную среду для грибов, забор занимает меньше минуты",
+        "when": "Длительная заложенность и выделения без улучшения на обычном лечении, хронический синусит, состояния со сниженным иммунитетом, наблюдение после антибактериальной терапии",
+        "prep": "В день забора не использовать назальные спреи, капли и мази, нос не промывать; о недавнем приёме противогрибковых средств сообщить врачу",
+        "abnormal": "Находка грибов может отражать как их обычное присутствие на слизистой, так и участие в воспалительном процессе, особенно при сниженном иммунитете. Результат оценивает врач"
+      },
+      "en": {
+        "what": "Examination of nasal mucosa secretions for the presence of fungi",
+        "how": "A sterile swab collects material from the nasal passage and it is cultured on a medium for fungi, collection takes less than a minute",
+        "when": "Long-lasting congestion and discharge that does not improve with usual treatment, chronic sinusitis, conditions with reduced immunity, monitoring after antibacterial therapy",
+        "prep": "On the day of the test do not use nasal sprays, drops or ointments and do not rinse the nose; tell the doctor about any recent antifungal medicines",
+        "abnormal": "Detection of fungi may reflect their usual presence on the mucosa or their involvement in an inflammatory process, especially when immunity is reduced. The result is assessed by a doctor"
+      },
+      "sr": {
+        "what": "Ispitivanje sekreta sa sluznice nosa na prisustvo gljivica",
+        "how": "Sterilnim štapićem uzima se materijal iz nosnog hodnika i zasijava na hranljivu podlogu za gljivice, uzimanje traje manje od minuta",
+        "when": "Dugotrajna zapušenost i sekrecija bez poboljšanja uz uobičajeno liječenje, hronični sinusitis, stanja sa smanjenim imunitetom, praćenje poslije antibiotske terapije",
+        "prep": "Na dan uzimanja ne koristiti nazalne sprejeve, kapi i masti i ne ispirati nos; obavijestiti ljekara o nedavnom uzimanju antimikotskih lijekova",
+        "abnormal": "Nalaz gljivica može odražavati njihovo uobičajeno prisustvo na sluznici, ali i učešće u upalnom procesu, naročito kod smanjenog imuniteta. Nalaz procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Untersuchung des Sekrets der Nasenschleimhaut auf Pilze",
+        "how": "Mit einem sterilen Tupfer wird Material aus dem Nasengang entnommen und auf einem Pilznährboden angezüchtet, die Entnahme dauert weniger als eine Minute",
+        "when": "Anhaltende Verstopfung und Sekretion ohne Besserung unter der üblichen Behandlung, chronische Nasennebenhöhlenentzündung, Zustände mit geschwächter Immunabwehr, Verlaufskontrolle nach antibakterieller Therapie",
+        "prep": "Am Tag der Entnahme keine Nasensprays, -tropfen oder -salben verwenden und die Nase nicht spülen; kürzlich eingenommene Antipilzmittel dem Arzt mitteilen",
+        "abnormal": "Ein Pilznachweis kann das übliche Vorkommen auf der Schleimhaut widerspiegeln, aber auch eine Beteiligung an einem entzündlichen Prozess, vor allem bei geschwächter Immunabwehr. Den Befund beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "Burun içinden alınan salgıda mantar varlığının araştırılması",
+        "how": "Steril çubukla burun yolundan örnek alınır ve mantar besiyerine ekilir, alım bir dakikadan kısa sürer",
+        "when": "Alışılmış tedaviye rağmen geçmeyen tıkanıklık ve akıntı, kronik sinüzit, bağışıklığın azaldığı durumlar, antibiyotik tedavisi sonrası izlem",
+        "prep": "Örnek alınacağı gün burun spreyi, damla ve merhem kullanılmamalı, burun yıkanmamalıdır; yakın zamanda antifungal ilaç kullanıldıysa hekime bildirilmelidir",
+        "abnormal": "Mantar saptanması mukozadaki olağan varlığı kadar, özellikle bağışıklığın azaldığı durumlarda iltihabi sürece katılımı da yansıtabilir. Sonucu hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Испитивање секрета са слузнице носа на присуство гљивица",
+        "how": "Стерилним штапићем узима се материјал из носног ходника и засијава на хранљиву подлогу за гљивице, узимање траје мање од минута",
+        "when": "Дуготрајна запушеност и секреција без побољшања уз уобичајено лијечење, хронични синуситис, стања са смањеним имунитетом, праћење послије антибиотске терапије",
+        "prep": "На дан узимања не користити назалне спрејеве, капи и масти и не испирати нос; обавијестити љекара о недавном узимању антимикотских лијекова",
+        "abnormal": "Налаз гљивица може одражавати њихово уобичајено присуство на слузници, али и учешће у упалном процесу, нарочито код смањеног имунитета. Налаз процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "oral-cavity-swab-bacteria",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Бактериологическое исследование материала со слизистой полости рта",
+        "how": "Стерильным тампоном проводят по слизистой щёк, дёсен и нёба, материал засевают на питательные среды",
+        "when": "Воспаление слизистой и дёсен, налёт и язвочки во рту, стойкий неприятный запах, подготовка к стоматологическим вмешательствам, контроль после лечения",
+        "prep": "Забор утром до еды: не чистить зубы, не полоскать рот, не пить и не курить за 2–3 часа до процедуры",
+        "abnormal": "Рост бактерий может быть связан с воспалением слизистой, состоянием зубов и дёсен или временным изменением микрофлоры после лечения. Значение находки оценивает врач"
+      },
+      "en": {
+        "what": "Bacteriological examination of material from the mucosa of the oral cavity",
+        "how": "A sterile swab is wiped over the mucosa of the cheeks, gums and palate and the material is cultured on nutrient media",
+        "when": "Inflammation of the mucosa and gums, coating and small ulcers in the mouth, persistent bad breath, preparation for dental procedures, follow-up after treatment",
+        "prep": "Taken in the morning before eating: do not brush your teeth, rinse your mouth, drink or smoke for 2–3 hours before the procedure",
+        "abnormal": "Growth of bacteria may be related to inflammation of the mucosa, the condition of teeth and gums, or a temporary change of the microflora after treatment. The meaning of the finding is assessed by a doctor"
+      },
+      "sr": {
+        "what": "Bakteriološko ispitivanje materijala sa sluznice usne duplje",
+        "how": "Sterilnim štapićem prelazi se preko sluznice obraza, desni i nepca, materijal se zasijava na hranljive podloge",
+        "when": "Upala sluznice i desni, naslage i ranice u ustima, uporan neprijatan zadah, priprema za stomatološke zahvate, kontrola poslije liječenja",
+        "prep": "Uzima se ujutru prije jela: ne prati zube, ne ispirati usta, ne piti i ne pušiti 2–3 sata prije zahvata",
+        "abnormal": "Porast bakterija može biti povezan sa upalom sluznice, stanjem zuba i desni ili privremenom promjenom mikroflore poslije liječenja. Značenje nalaza procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Bakteriologische Untersuchung von Material der Mundschleimhaut",
+        "how": "Mit einem sterilen Tupfer wird über die Schleimhaut von Wangen, Zahnfleisch und Gaumen gestrichen, das Material wird auf Nährböden angezüchtet",
+        "when": "Entzündung der Schleimhaut und des Zahnfleischs, Belag und kleine Wunden im Mund, anhaltender Mundgeruch, Vorbereitung auf zahnärztliche Eingriffe, Kontrolle nach einer Behandlung",
+        "prep": "Entnahme morgens vor dem Essen: 2–3 Stunden vorher nicht Zähne putzen, nicht spülen, nicht trinken und nicht rauchen",
+        "abnormal": "Ein Nachweis von Bakterien kann mit einer Schleimhautentzündung, dem Zustand von Zähnen und Zahnfleisch oder einer vorübergehenden Veränderung der Mikroflora nach einer Behandlung zusammenhängen. Die Bedeutung des Befunds beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "Ağız içi mukozasından alınan örneğin bakteriyolojik incelemesi",
+        "how": "Steril çubuk yanak, diş eti ve damak mukozasında gezdirilir, örnek besiyerlerine ekilir",
+        "when": "Mukoza ve diş eti iltihabı, ağızda tabaka ve küçük yaralar, geçmeyen ağız kokusu, diş hekimliği girişimlerine hazırlık, tedavi sonrası kontrol",
+        "prep": "Sabah aç karnına alınır: işlemden 2–3 saat önce diş fırçalanmamalı, ağız çalkalanmamalı, bir şey içilmemeli ve sigara kullanılmamalıdır",
+        "abnormal": "Bakteri üremesi mukoza iltihabıyla, diş ve diş eti durumuyla ya da tedavi sonrası mikrofloranın geçici değişimiyle ilişkili olabilir. Bulgunun anlamını hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Бактериолошко испитивање материјала са слузнице усне дупље",
+        "how": "Стерилним штапићем прелази се преко слузнице образа, десни и непца, материјал се засијава на хранљиве подлоге",
+        "when": "Упала слузнице и десни, наслаге и ранице у устима, упоран непријатан задах, припрема за стоматолошке захвате, контрола послије лијечења",
+        "prep": "Узима се ујутру прије јела: не прати зубе, не испирати уста, не пити и не пушити 2–3 сата прије захвата",
+        "abnormal": "Пораст бактерија може бити повезан са упалом слузнице, стањем зуба и десни или привременом промјеном микрофлоре послије лијечења. Значење налаза процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "prepuce-swab-bacteria",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Бактериологическое исследование отделяемого с внутренней поверхности крайней плоти",
+        "how": "Крайнюю плоть аккуратно отводят и стерильным тампоном берут материал из препуциального мешка, занимает около минуты",
+        "when": "Покраснение и отёк крайней плоти, налёт и неприятный запах, боль при отведении, повторяющиеся воспаления, контроль после лечения",
+        "prep": "Не мыть область и не применять антисептики и мази непосредственно перед забором; о приёме антибиотиков сообщить врачу",
+        "abnormal": "Рост бактерий может быть связан с воспалением крайней плоти, затруднённой гигиеной при узком препуциальном кольце или сопутствующими состояниями. Дальнейшие шаги определяет врач"
+      },
+      "en": {
+        "what": "Bacteriological examination of secretions from the inner surface of the foreskin",
+        "how": "The foreskin is gently retracted and a sterile swab collects material from the preputial sac, takes about a minute",
+        "when": "Redness and swelling of the foreskin, coating and unpleasant odour, pain on retraction, recurring inflammation, follow-up after treatment",
+        "prep": "Do not wash the area and do not use antiseptics or ointments immediately before the sample is taken; tell the doctor about any antibiotics you are taking",
+        "abnormal": "Growth of bacteria may be related to inflammation of the foreskin, difficult hygiene with a narrow preputial ring, or accompanying conditions. Further steps are decided by a doctor"
+      },
+      "sr": {
+        "what": "Bakteriološko ispitivanje sekreta sa unutrašnje površine prepucijuma",
+        "how": "Prepucijum se pažljivo povuče unazad i sterilnim štapićem se uzima materijal iz prepucijalne kese, traje oko minut",
+        "when": "Crvenilo i otok prepucijuma, naslage i neprijatan miris, bol pri povlačenju, ponavljane upale, kontrola poslije liječenja",
+        "prep": "Ne prati područje i ne koristiti antiseptike i masti neposredno prije uzimanja uzorka; obavijestiti ljekara o uzimanju antibiotika",
+        "abnormal": "Porast bakterija može biti povezan sa upalom prepucijuma, otežanom higijenom kod uskog prepucijalnog prstena ili pratećim stanjima. Dalje korake određuje ljekar"
+      },
+      "de": {
+        "what": "Bakteriologische Untersuchung des Sekrets von der Innenseite der Vorhaut",
+        "how": "Die Vorhaut wird vorsichtig zurückgezogen und mit einem sterilen Tupfer Material aus dem Vorhautsack entnommen, dauert etwa eine Minute",
+        "when": "Rötung und Schwellung der Vorhaut, Belag und unangenehmer Geruch, Schmerzen beim Zurückziehen, wiederkehrende Entzündungen, Kontrolle nach einer Behandlung",
+        "prep": "Die Stelle unmittelbar vor der Entnahme nicht waschen und keine Antiseptika oder Salben anwenden; eingenommene Antibiotika dem Arzt mitteilen",
+        "abnormal": "Ein Nachweis von Bakterien kann mit einer Entzündung der Vorhaut, erschwerter Hygiene bei enger Vorhaut oder Begleiterkrankungen zusammenhängen. Das weitere Vorgehen legt der Arzt fest"
+      },
+      "tr": {
+        "what": "Prepusyumun iç yüzeyinden alınan salgının bakteriyolojik incelemesi",
+        "how": "Sünnet derisi dikkatlice geri çekilir ve steril çubukla prepusyum boşluğundan örnek alınır, yaklaşık bir dakika sürer",
+        "when": "Sünnet derisinde kızarıklık ve şişlik, tabaka ve kötü koku, geri çekerken ağrı, tekrarlayan iltihaplar, tedavi sonrası kontrol",
+        "prep": "Örnek alınmadan hemen önce bölge yıkanmamalı, antiseptik ve merhem kullanılmamalıdır; kullanılan antibiyotikler hekime bildirilmelidir",
+        "abnormal": "Bakteri üremesi sünnet derisi iltihabıyla, dar prepusyum halkası nedeniyle güçleşen hijyenle veya eşlik eden durumlarla ilişkili olabilir. Sonraki adımları hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Бактериолошко испитивање секрета са унутрашње површине препуцијума",
+        "how": "Препуцијум се пажљиво повуче уназад и стерилним штапићем се узима материјал из препуцијалне кесе, траје око минут",
+        "when": "Црвенило и оток препуцијума, наслаге и непријатан мирис, бол при повлачењу, понављане упале, контрола послије лијечења",
+        "prep": "Не прати подручје и не користити антисептике и масти непосредно прије узимања узорка; обавијестити љекара о узимању антибиотика",
+        "abnormal": "Пораст бактерија може бити повезан са упалом препуцијума, отежаном хигијеном код уског препуцијалног прстена или пратећим стањима. Даље кораке одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "prepuce-swab-fungi",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование материала с внутренней поверхности крайней плоти на дрожжеподобные грибы",
+        "how": "Крайнюю плоть отводят, стерильным тампоном собирают налёт и отделяемое, материал засевают на среду для грибов",
+        "when": "Зуд, белый творожистый налёт, покраснение, жжение, повторяющиеся воспаления, контроль после курса лечения",
+        "prep": "За несколько дней до забора не применять противогрибковые кремы, область не мыть непосредственно перед процедурой; интервал уточняет врач",
+        "abnormal": "Грибы нередко находят и без жалоб: под крайней плотью дольше сохраняется влага, и рост усиливается при раздражении кожи или узкой крайней плоти. Значение находки определяет врач"
+      },
+      "en": {
+        "what": "Examination of material from the inner surface of the foreskin for yeast-like fungi",
+        "how": "The foreskin is retracted, a sterile swab collects coating and secretions, and the material is cultured on a medium for fungi",
+        "when": "Itching, white curd-like coating, redness, burning, recurring inflammation, follow-up after a course of treatment",
+        "prep": "Do not use antifungal creams for several days before the test and do not wash the area immediately before the procedure; the interval is specified by the doctor",
+        "abnormal": "Fungi are often found without any complaints: moisture is retained longer under the foreskin, and growth increases with skin irritation or a narrow foreskin. The doctor decides what the finding means"
+      },
+      "sr": {
+        "what": "Ispitivanje materijala sa unutrašnje površine prepucijuma na kvasnice",
+        "how": "Prepucijum se povuče unazad, sterilnim štapićem se skupljaju naslage i sekret, materijal se zasijava na podlogu za gljivice",
+        "when": "Svrab, bijele sirevite naslage, crvenilo, peckanje, ponavljane upale, kontrola poslije završenog liječenja",
+        "prep": "Nekoliko dana prije uzimanja ne koristiti antimikotske kreme, područje ne prati neposredno prije zahvata; razmak određuje ljekar",
+        "abnormal": "Gljivice se često nalaze i bez tegoba: ispod prepucijuma se duže zadržava vlaga, a rast je izraženiji uz nadražaj kože ili uzak prepucijum. Značaj nalaza procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Untersuchung von Material der Vorhautinnenseite auf Hefepilze",
+        "how": "Die Vorhaut wird zurückgezogen, mit einem sterilen Tupfer werden Belag und Sekret entnommen und auf einem Pilznährboden angezüchtet",
+        "when": "Juckreiz, weißlich-krümeliger Belag, Rötung, Brennen, wiederkehrende Entzündungen, Kontrolle nach einer Behandlung",
+        "prep": "Einige Tage vor der Entnahme keine Antipilzcremes anwenden und die Stelle nicht unmittelbar vor der Untersuchung waschen; den Abstand legt der Arzt fest",
+        "abnormal": "Pilze werden häufig auch ohne Beschwerden gefunden: unter der Vorhaut bleibt Feuchtigkeit länger bestehen, und das Wachstum nimmt bei Hautreizung oder enger Vorhaut zu. Was der Befund bedeutet, entscheidet der Arzt"
+      },
+      "tr": {
+        "what": "Prepusyumun iç yüzeyinden alınan örnekte maya mantarlarının araştırılması",
+        "how": "Sünnet derisi geri çekilir, steril çubukla tabaka ve salgı toplanır, örnek mantar besiyerine ekilir",
+        "when": "Kaşıntı, beyaz kesilmiş süt görünümünde tabaka, kızarıklık, yanma, tekrarlayan iltihaplar, tedavi sonrası kontrol",
+        "prep": "Örnekten birkaç gün önce antifungal krem kullanılmamalı, bölge işlemden hemen önce yıkanmamalıdır; süreyi hekim belirler",
+        "abnormal": "Mantarlar çoğu zaman şikâyet olmadan da bulunur: sünnet derisinin altında nem daha uzun süre kalır ve ciltte tahriş ya da dar sünnet derisi varsa üreme artar. Bulgunun anlamını hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Испитивање материјала са унутрашње површине препуцијума на кваснице",
+        "how": "Препуцијум се повуче уназад, стерилним штапићем се скупљају наслаге и секрет, материјал се засијава на подлогу за гљивице",
+        "when": "Свраб, бијеле сиревите наслаге, црвенило, пецкање, понављане упале, контрола послије завршеног лијечења",
+        "prep": "Неколико дана прије узимања не користити антимикотске креме, подручје не прати непосредно прије захвата; размак одређује љекар",
+        "abnormal": "Гљивице се често налазе и без тегоба: испод препуцијума се дуже задржава влага, а раст је израженији уз надражај коже или узак препуцијум. Значај налаза процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "skin-swab-bacteria",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Бактериологическое исследование отделяемого с поражённого участка кожи",
+        "how": "Стерильным тампоном проводят по поверхности очага, раны или содержимого пузырька, материал засевают на питательные среды",
+        "when": "Гнойнички, мокнущие и долго не заживающие ранки, воспаление вокруг швов, фурункулы, признаки инфицирования ожога или укуса, контроль после лечения",
+        "prep": "Не наносить на участок мази, кремы и антисептики и не мыть его непосредственно перед забором; о приёме антибиотиков сообщить врачу",
+        "abnormal": "Рост бактерий может отражать инфицирование очага или присутствие обычной кожной флоры. Значимость находки и чувствительность к антибиотикам оценивает врач"
+      },
+      "en": {
+        "what": "Bacteriological examination of discharge from an affected area of skin",
+        "how": "A sterile swab is wiped over the surface of the lesion, wound or blister content and the material is cultured on nutrient media",
+        "when": "Pustules, weeping and slow-healing sores, inflammation around stitches, boils, signs of an infected burn or bite, follow-up after treatment",
+        "prep": "Do not apply ointments, creams or antiseptics to the area and do not wash it immediately before the sample is taken; tell the doctor about any antibiotics you are taking",
+        "abnormal": "Growth of bacteria may reflect infection of the lesion or the presence of the usual skin flora. The significance of the finding and antibiotic susceptibility are assessed by a doctor"
+      },
+      "sr": {
+        "what": "Bakteriološko ispitivanje sekreta sa promijenjenog dijela kože",
+        "how": "Sterilnim štapićem prelazi se preko površine promjene, rane ili sadržaja mjehurića, materijal se zasijava na hranljive podloge",
+        "when": "Gnojne promjene, vlažne i sporo zarastajuće ranice, upala oko šavova, čirevi, znaci infekcije opekotine ili ujeda, kontrola poslije liječenja",
+        "prep": "Ne nanositi masti, kreme i antiseptike na to mjesto i ne prati ga neposredno prije uzimanja uzorka; obavijestiti ljekara o uzimanju antibiotika",
+        "abnormal": "Porast bakterija može odražavati infekciju promjene ili prisustvo uobičajene kožne flore. Značaj nalaza i osjetljivost na antibiotike procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Bakteriologische Untersuchung von Sekret aus einer betroffenen Hautstelle",
+        "how": "Mit einem sterilen Tupfer wird über die Oberfläche des Herdes, der Wunde oder den Blaseninhalt gestrichen, das Material wird auf Nährböden angezüchtet",
+        "when": "Eitrige Hautveränderungen, nässende und schlecht heilende Wunden, Entzündung um Nähte, Furunkel, Anzeichen einer infizierten Verbrennung oder Bisswunde, Kontrolle nach einer Behandlung",
+        "prep": "Keine Salben, Cremes oder Antiseptika auf die Stelle auftragen und sie nicht unmittelbar vor der Entnahme waschen; eingenommene Antibiotika dem Arzt mitteilen",
+        "abnormal": "Ein Nachweis von Bakterien kann eine Infektion des Herdes oder das Vorhandensein der üblichen Hautflora widerspiegeln. Die Bedeutung des Befunds und die Antibiotikaempfindlichkeit beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "Etkilenen deri bölgesinden alınan akıntının bakteriyolojik incelemesi",
+        "how": "Steril çubuk lezyon, yara yüzeyi veya kabarcık içeriği üzerinde gezdirilir, örnek besiyerlerine ekilir",
+        "when": "İrinli kabarcıklar, sulanan ve geç iyileşen yaralar, dikiş çevresinde iltihap, çıban, yanık veya ısırık yerinde enfeksiyon belirtileri, tedavi sonrası kontrol",
+        "prep": "Bölgeye merhem, krem ve antiseptik uygulanmamalı, örnek alınmadan hemen önce yıkanmamalıdır; kullanılan antibiyotikler hekime bildirilmelidir",
+        "abnormal": "Bakteri üremesi lezyonun enfekte olduğunu da, derinin olağan florasının varlığını da yansıtabilir. Bulgunun önemini ve antibiyotik duyarlılığını hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Бактериолошко испитивање секрета са промијењеног дијела коже",
+        "how": "Стерилним штапићем прелази се преко површине промјене, ране или садржаја мјехурића, материјал се засијава на хранљиве подлоге",
+        "when": "Гнојне промјене, влажне и споро зарастајуће ранице, упала око шавова, чиреви, знаци инфекције опекотине или уједа, контрола послије лијечења",
+        "prep": "Не наносити масти, креме и антисептике на то мјесто и не прати га непосредно прије узимања узорка; обавијестити љекара о узимању антибиотика",
+        "abnormal": "Пораст бактерија може одражавати инфекцију промјене или присуство уобичајене кожне флоре. Значај налаза и осјетљивост на антибиотике процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "skin-swab-fungi",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование материала с поражённого участка кожи на грибы",
+        "how": "С края очага берут чешуйки кожи или проводят стерильным тампоном, материал смотрят под микроскопом и засевают на среду для грибов",
+        "when": "Шелушащиеся пятна с чётким краем, зуд, изменения кожи между пальцами и в складках, очаги на волосистой части головы, контроль после лечения",
+        "prep": "За несколько дней до забора не применять противогрибковые кремы и не мыть участок непосредственно перед процедурой; конкретный интервал уточняет врач",
+        "abnormal": "Обнаружение грибов может быть связано с грибковым поражением кожи, а также с поверхностным загрязнением материала. Результат посева и микроскопии интерпретирует врач-дерматолог"
+      },
+      "en": {
+        "what": "Examination of material from an affected area of skin for fungi",
+        "how": "Skin scales are taken from the edge of the lesion or a sterile swab is used, the material is examined under a microscope and cultured on a medium for fungi",
+        "when": "Scaly patches with a clear border, itching, skin changes between the toes and in skin folds, patches on the scalp, follow-up after treatment",
+        "prep": "Do not use antifungal creams for several days before the test and do not wash the area immediately before the procedure; the exact interval is specified by the doctor",
+        "abnormal": "Detection of fungi may be related to a fungal skin condition, and also to surface contamination of the sample. The culture and microscopy results are interpreted by a dermatologist"
+      },
+      "sr": {
+        "what": "Ispitivanje materijala sa promijenjenog dijela kože na gljivice",
+        "how": "Sa ivice promjene uzimaju se ljuspice kože ili se prelazi sterilnim štapićem, materijal se gleda pod mikroskopom i zasijava na podlogu za gljivice",
+        "when": "Ljuskave promjene sa jasnom ivicom, svrab, promjene kože među prstima i u pregibima, žarišta na vlasištu, kontrola poslije liječenja",
+        "prep": "Nekoliko dana prije uzimanja ne koristiti antimikotske kreme i ne prati to mjesto neposredno prije zahvata; tačan razmak određuje ljekar",
+        "abnormal": "Nalaz gljivica može biti povezan sa gljivičnom promjenom kože, ali i sa površinskim zagađenjem uzorka. Rezultat kulture i mikroskopije tumači ljekar dermatolog"
+      },
+      "de": {
+        "what": "Untersuchung von Material einer betroffenen Hautstelle auf Pilze",
+        "how": "Am Rand des Herdes werden Hautschuppen entnommen oder ein steriler Tupfer verwendet, das Material wird mikroskopisch untersucht und auf einem Pilznährboden angezüchtet",
+        "when": "Schuppende Flecken mit deutlichem Rand, Juckreiz, Hautveränderungen zwischen den Zehen und in Hautfalten, Herde auf der Kopfhaut, Kontrolle nach einer Behandlung",
+        "prep": "Einige Tage vor der Entnahme keine Antipilzcremes anwenden und die Stelle nicht unmittelbar vor der Untersuchung waschen; den genauen Abstand legt der Arzt fest",
+        "abnormal": "Ein Pilznachweis kann mit einer Pilzerkrankung der Haut, aber auch mit einer oberflächlichen Verunreinigung des Materials zusammenhängen. Kultur- und Mikroskopiebefund beurteilt der Hautarzt"
+      },
+      "tr": {
+        "what": "Etkilenen deri bölgesinden alınan örnekte mantar araştırması",
+        "how": "Lezyonun kenarından deri pulları kazınır veya steril çubuk kullanılır, örnek mikroskopta incelenir ve mantar besiyerine ekilir",
+        "when": "Sınırı belirgin pullanan lekeler, kaşıntı, parmak araları ve kıvrım bölgelerinde deri değişiklikleri, saçlı deride odaklar, tedavi sonrası kontrol",
+        "prep": "Örnekten birkaç gün önce antifungal krem kullanılmamalı, bölge işlemden hemen önce yıkanmamalıdır; süreyi hekim belirler",
+        "abnormal": "Mantar saptanması derinin mantar hastalığıyla olduğu kadar örneğin yüzeysel kirlenmesiyle de ilişkili olabilir. Kültür ve mikroskopi sonucunu dermatoloji uzmanı yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Испитивање материјала са промијењеног дијела коже на гљивице",
+        "how": "Са ивице промјене узимају се љуспице коже или се прелази стерилним штапићем, материјал се гледа под микроскопом и засијава на подлогу за гљивице",
+        "when": "Љускаве промјене са јасном ивицом, свраб, промјене коже међу прстима и у прегибима, жаришта на власишту, контрола послије лијечења",
+        "prep": "Неколико дана прије узимања не користити антимикотске креме и не прати то мјесто непосредно прије захвата; тачан размак одређује љекар",
+        "abnormal": "Налаз гљивица може бити повезан са гљивичном промјеном коже, али и са површинским загађењем узорка. Резултат културе и микроскопије тумачи љекар дерматолог"
+      }
+    }
+  },
+  {
+    "slug": "stool-fungi",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование кала на дрожжеподобные и плесневые грибы",
+        "how": "Пациент сам собирает небольшую порцию кала в стерильный контейнер, в лаборатории материал засевают на питательную среду для грибов",
+        "when": "Длительные нарушения стула и вздутие, жалобы после курса антибиотиков, состояния со сниженным иммунитетом, наблюдение по назначению врача",
+        "prep": "Собрать кал в стерильный контейнер без примеси мочи и воды, накануне не использовать слабительные и клизмы, доставить материал в лабораторию в указанные ею сроки",
+        "abnormal": "Рост грибов может отражать как их обычное присутствие в кишечнике, так и изменение микрофлоры, например после антибактериальной терапии. Значимость результата оценивает врач"
+      },
+      "en": {
+        "what": "Examination of stool for yeast-like and mould fungi",
+        "how": "The patient collects a small portion of stool into a sterile container and the laboratory cultures the material on a medium for fungi",
+        "when": "Long-lasting bowel disturbances and bloating, complaints after a course of antibiotics, conditions with reduced immunity, monitoring as prescribed by a doctor",
+        "prep": "Collect stool into a sterile container without urine or water mixed in, avoid laxatives and enemas the day before, and deliver the sample within the time the laboratory specifies",
+        "abnormal": "Growth of fungi may reflect their usual presence in the bowel or a change of the microflora, for example after antibacterial therapy. The significance of the result is assessed by a doctor"
+      },
+      "sr": {
+        "what": "Ispitivanje stolice na kvasnice i plijesni",
+        "how": "Pacijent sam sakuplja manju količinu stolice u sterilnu posudu, a u laboratoriji se materijal zasijava na hranljivu podlogu za gljivice",
+        "when": "Dugotrajne promjene stolice i nadutost, tegobe poslije terapije antibioticima, stanja sa smanjenim imunitetom, praćenje po preporuci ljekara",
+        "prep": "Stolicu sakupiti u sterilnu posudu bez primjese mokraće i vode, dan ranije ne koristiti laksative i klizme, uzorak dostaviti u laboratoriju u roku koji ona navodi",
+        "abnormal": "Porast gljivica može odražavati njihovo uobičajeno prisustvo u crijevima, ali i promjenu mikroflore, na primjer poslije antibiotske terapije. Značaj nalaza procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Untersuchung des Stuhls auf Hefe- und Schimmelpilze",
+        "how": "Der Patient sammelt selbst eine kleine Stuhlprobe in einem sterilen Behälter, im Labor wird das Material auf einem Pilznährboden angezüchtet",
+        "when": "Anhaltende Stuhlveränderungen und Blähungen, Beschwerden nach einer Antibiotikatherapie, Zustände mit geschwächter Immunabwehr, Verlaufskontrolle auf ärztliche Anordnung",
+        "prep": "Stuhl in einem sterilen Behälter ohne Beimengung von Urin oder Wasser sammeln, am Vortag keine Abführmittel und Einläufe anwenden und die Probe innerhalb der vom Labor genannten Frist abgeben",
+        "abnormal": "Ein Pilzwachstum kann das übliche Vorkommen im Darm widerspiegeln, aber auch eine Veränderung der Mikroflora, zum Beispiel nach einer antibakteriellen Therapie. Die Bedeutung des Ergebnisses beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "Dışkıda maya ve küf mantarlarının araştırılması",
+        "how": "Hasta küçük bir gaita örneğini steril kaba kendisi toplar, laboratuvarda örnek mantar besiyerine ekilir",
+        "when": "Uzun süren dışkılama düzensizlikleri ve şişkinlik, antibiyotik tedavisi sonrası şikayetler, bağışıklığın azaldığı durumlar, hekim önerisiyle izlem",
+        "prep": "Gaita, idrar ve su karışmadan steril kaba toplanmalı, bir gün öncesinden müshil ve lavman kullanılmamalı, örnek laboratuvarın belirttiği süre içinde teslim edilmelidir",
+        "abnormal": "Mantar üremesi bağırsaktaki olağan varlığı kadar, örneğin antibiyotik tedavisi sonrası mikrofloranın değişmesini de yansıtabilir. Sonucun önemini hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Испитивање столице на кваснице и плијесни",
+        "how": "Пацијент сам сакупља мању количину столице у стерилну посуду, а у лабораторији се материјал засијава на хранљиву подлогу за гљивице",
+        "when": "Дуготрајне промјене столице и надутост, тегобе послије терапије антибиотицима, стања са смањеним имунитетом, праћење по препоруци љекара",
+        "prep": "Столицу сакупити у стерилну посуду без примјесе мокраће и воде, дан раније не користити лаксативе и клизме, узорак доставити у лабораторију у року који она наводи",
+        "abnormal": "Пораст гљивица може одражавати њихово уобичајено присуство у цријевима, али и промјену микрофлоре, на примјер послије антибиотске терапије. Значај налаза процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "throat-swab-fungi",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование материала со слизистой глотки и миндалин на грибы",
+        "how": "Стерильным тампоном проводят по задней стенке глотки и миндалинам, материал засевают на среду для грибов, занимает меньше минуты",
+        "when": "Белый налёт во рту и на миндалинах, жжение и дискомфорт в горле, длительные жалобы после антибиотиков или ингаляционных препаратов, состояния со сниженным иммунитетом",
+        "prep": "Забор утром до еды: не чистить зубы, не полоскать горло, не пить и не использовать спреи за 2–3 часа до процедуры",
+        "abnormal": "Обнаружение грибов может быть связано с изменением микрофлоры слизистой, применением некоторых препаратов или сниженным иммунитетом. Результат оценивает врач"
+      },
+      "en": {
+        "what": "Examination of material from the pharyngeal mucosa and tonsils for fungi",
+        "how": "A sterile swab is wiped over the back wall of the throat and the tonsils and the material is cultured on a medium for fungi, takes less than a minute",
+        "when": "White coating in the mouth and on the tonsils, burning and discomfort in the throat, prolonged complaints after antibiotics or inhaled medicines, conditions with reduced immunity",
+        "prep": "Taken in the morning before eating: do not brush your teeth, gargle, drink or use sprays for 2–3 hours before the procedure",
+        "abnormal": "Detection of fungi may be related to a change of the mucosal microflora, the use of certain medicines, or reduced immunity. The result is assessed by a doctor"
+      },
+      "sr": {
+        "what": "Ispitivanje materijala sa sluznice ždrijela i krajnika na gljivice",
+        "how": "Sterilnim štapićem prelazi se preko zadnjeg zida ždrijela i krajnika, materijal se zasijava na podlogu za gljivice, traje manje od minuta",
+        "when": "Bijele naslage u ustima i na krajnicima, peckanje i nelagodnost u grlu, dugotrajne tegobe poslije antibiotika ili inhalacionih lijekova, stanja sa smanjenim imunitetom",
+        "prep": "Uzima se ujutru prije jela: ne prati zube, ne ispirati grlo, ne piti i ne koristiti sprejeve 2–3 sata prije zahvata",
+        "abnormal": "Nalaz gljivica može biti povezan sa promjenom mikroflore sluznice, primjenom pojedinih lijekova ili smanjenim imunitetom. Nalaz procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Untersuchung von Material der Rachenschleimhaut und der Mandeln auf Pilze",
+        "how": "Mit einem sterilen Tupfer wird über Rachenhinterwand und Mandeln gestrichen und das Material auf einem Pilznährboden angezüchtet, dauert weniger als eine Minute",
+        "when": "Weißer Belag im Mund und auf den Mandeln, Brennen und Missempfindungen im Hals, anhaltende Beschwerden nach Antibiotika oder Inhalationsmitteln, Zustände mit geschwächter Immunabwehr",
+        "prep": "Entnahme morgens vor dem Essen: 2–3 Stunden vorher nicht Zähne putzen, nicht gurgeln, nicht trinken und keine Sprays anwenden",
+        "abnormal": "Ein Pilznachweis kann mit einer Veränderung der Schleimhautflora, der Anwendung bestimmter Medikamente oder einer geschwächten Immunabwehr zusammenhängen. Den Befund beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "Yutak mukozası ve bademciklerden alınan örnekte mantar araştırması",
+        "how": "Steril çubuk yutağın arka duvarı ve bademcikler üzerinde gezdirilir, örnek mantar besiyerine ekilir, işlem bir dakikadan kısa sürer",
+        "when": "Ağızda ve bademciklerde beyaz tabaka, boğazda yanma ve rahatsızlık, antibiyotik veya inhaler ilaç kullanımı sonrası uzayan şikayetler, bağışıklığın azaldığı durumlar",
+        "prep": "Sabah aç karnına alınır: işlemden 2–3 saat önce diş fırçalanmamalı, gargara yapılmamalı, bir şey içilmemeli ve sprey kullanılmamalıdır",
+        "abnormal": "Mantar saptanması mukoza florasının değişmesiyle, bazı ilaçların kullanımıyla veya bağışıklığın azalmasıyla ilişkili olabilir. Sonucu hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Испитивање материјала са слузнице ждријела и крајника на гљивице",
+        "how": "Стерилним штапићем прелази се преко задњег зида ждријела и крајника, материјал се засијава на подлогу за гљивице, траје мање од минута",
+        "when": "Бијеле наслаге у устима и на крајницима, пецкање и нелагодност у грлу, дуготрајне тегобе послије антибиотика или инхалационих лијекова, стања са смањеним имунитетом",
+        "prep": "Узима се ујутру прије јела: не прати зубе, не испирати грло, не пити и не користити спрејеве 2–3 сата прије захвата",
+        "abnormal": "Налаз гљивица може бити повезан са промјеном микрофлоре слузнице, примјеном појединих лијекова или смањеним имунитетом. Налаз процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "tongue-swab-bacteria",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Бактериологическое исследование налёта и отделяемого с поверхности языка",
+        "how": "Стерильным тампоном проводят по спинке языка, материал засевают на питательные среды",
+        "when": "Стойкий налёт на языке, жжение и изменение вкуса, воспаление слизистой рта, неприятный запах, контроль после лечения",
+        "prep": "Забор утром до еды: не чистить зубы, не пользоваться ополаскивателем, не пить и не курить за 2–3 часа до процедуры",
+        "abnormal": "Рост бактерий может быть связан с воспалением слизистой, состоянием зубов и гигиеной полости рта или временным изменением микрофлоры. Значение находки определяет врач"
+      },
+      "en": {
+        "what": "Bacteriological examination of coating and secretions from the surface of the tongue",
+        "how": "A sterile swab is wiped over the back of the tongue and the material is cultured on nutrient media",
+        "when": "Persistent coating on the tongue, burning and altered taste, inflammation of the oral mucosa, bad breath, follow-up after treatment",
+        "prep": "Taken in the morning before eating: do not brush your teeth, use mouthwash, drink or smoke for 2–3 hours before the procedure",
+        "abnormal": "Growth of bacteria may be related to inflammation of the mucosa, the condition of the teeth and oral hygiene, or a temporary change of the microflora. The meaning of the finding is determined by a doctor"
+      },
+      "sr": {
+        "what": "Bakteriološko ispitivanje naslaga i sekreta sa površine jezika",
+        "how": "Sterilnim štapićem prelazi se preko gornje strane jezika, materijal se zasijava na hranljive podloge",
+        "when": "Uporne naslage na jeziku, peckanje i promjena ukusa, upala sluznice usta, neprijatan zadah, kontrola poslije liječenja",
+        "prep": "Uzima se ujutru prije jela: ne prati zube, ne koristiti vodicu za ispiranje usta, ne piti i ne pušiti 2–3 sata prije zahvata",
+        "abnormal": "Porast bakterija može biti povezan sa upalom sluznice, stanjem zuba i higijenom usne duplje ili privremenom promjenom mikroflore. Značenje nalaza određuje ljekar"
+      },
+      "de": {
+        "what": "Bakteriologische Untersuchung von Belag und Sekret der Zungenoberfläche",
+        "how": "Mit einem sterilen Tupfer wird über den Zungenrücken gestrichen, das Material wird auf Nährböden angezüchtet",
+        "when": "Hartnäckiger Zungenbelag, Brennen und Geschmacksveränderungen, Entzündung der Mundschleimhaut, Mundgeruch, Kontrolle nach einer Behandlung",
+        "prep": "Entnahme morgens vor dem Essen: 2–3 Stunden vorher nicht Zähne putzen, keine Mundspülung verwenden, nicht trinken und nicht rauchen",
+        "abnormal": "Ein Nachweis von Bakterien kann mit einer Schleimhautentzündung, dem Zustand der Zähne und der Mundhygiene oder einer vorübergehenden Veränderung der Mikroflora zusammenhängen. Die Bedeutung des Befunds bestimmt der Arzt"
+      },
+      "tr": {
+        "what": "Dilin yüzeyindeki tabaka ve salgının bakteriyolojik incelemesi",
+        "how": "Steril çubuk dilin sırt kısmında gezdirilir, örnek besiyerlerine ekilir",
+        "when": "Dilde geçmeyen tabaka, yanma ve tat değişikliği, ağız mukozası iltihabı, ağız kokusu, tedavi sonrası kontrol",
+        "prep": "Sabah aç karnına alınır: işlemden 2–3 saat önce diş fırçalanmamalı, ağız suyu kullanılmamalı, bir şey içilmemeli ve sigara kullanılmamalıdır",
+        "abnormal": "Bakteri üremesi mukoza iltihabıyla, diş durumu ve ağız hijyeniyle ya da mikrofloranın geçici değişimiyle ilişkili olabilir. Bulgunun anlamını hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Бактериолошко испитивање наслага и секрета са површине језика",
+        "how": "Стерилним штапићем прелази се преко горње стране језика, материјал се засијава на хранљиве подлоге",
+        "when": "Упорне наслаге на језику, пецкање и промјена укуса, упала слузнице уста, непријатан задах, контрола послије лијечења",
+        "prep": "Узима се ујутру прије јела: не прати зубе, не користити водицу за испирање уста, не пити и не пушити 2–3 сата прије захвата",
+        "abnormal": "Пораст бактерија може бити повезан са упалом слузнице, стањем зуба и хигијеном усне дупље или привременом промјеном микрофлоре. Значење налаза одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "urethral-swab-bacteria",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Бактериологическое исследование отделяемого мочеиспускательного канала",
+        "how": "Тонкий стерильный зонд вводят в наружное отверстие уретры на небольшую глубину, забор занимает несколько секунд и может быть неприятным",
+        "when": "Выделения из уретры, жжение и боль при мочеиспускании, учащённые позывы, обследование при планировании беременности или перед вмешательствами, контроль после лечения",
+        "prep": "Не мочиться 2–3 часа до забора, накануне исключить половые контакты и местные антисептики; о приёме антибиотиков сообщить врачу",
+        "abnormal": "Рост бактерий может быть связан с воспалением мочеиспускательного канала или с присутствием обычной флоры наружных отделов. Значимость результата и чувствительность к антибиотикам оценивает врач"
+      },
+      "en": {
+        "what": "Bacteriological examination of discharge from the urethra",
+        "how": "A thin sterile probe is inserted a short way into the opening of the urethra, collection takes a few seconds and may be uncomfortable",
+        "when": "Discharge from the urethra, burning and pain when urinating, frequent urge to urinate, examination when planning a pregnancy or before procedures, follow-up after treatment",
+        "prep": "Do not urinate for 2–3 hours before the test, avoid sexual intercourse and local antiseptics the day before; tell the doctor about any antibiotics you are taking",
+        "abnormal": "Growth of bacteria may be related to inflammation of the urethra or to the presence of the usual flora of the outer part. The significance of the result and antibiotic susceptibility are assessed by a doctor"
+      },
+      "sr": {
+        "what": "Bakteriološko ispitivanje sekreta mokraćne cijevi",
+        "how": "Tanka sterilna sonda se uvodi plitko u spoljašnji otvor uretre, uzimanje traje nekoliko sekundi i može biti neprijatno",
+        "when": "Sekret iz uretre, peckanje i bol pri mokrenju, učestali nagon za mokrenjem, ispitivanje pri planiranju trudnoće ili prije zahvata, kontrola poslije liječenja",
+        "prep": "Ne mokriti 2–3 sata prije uzimanja, dan ranije izbjegavati seksualne odnose i lokalne antiseptike; obavijestiti ljekara o uzimanju antibiotika",
+        "abnormal": "Porast bakterija može biti povezan sa upalom mokraćne cijevi ili sa prisustvom uobičajene flore spoljašnjeg dijela. Značaj nalaza i osjetljivost na antibiotike procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Bakteriologische Untersuchung des Sekrets der Harnröhre",
+        "how": "Eine dünne sterile Sonde wird ein kurzes Stück in die Harnröhrenöffnung eingeführt, die Entnahme dauert wenige Sekunden und kann unangenehm sein",
+        "when": "Ausfluss aus der Harnröhre, Brennen und Schmerzen beim Wasserlassen, häufiger Harndrang, Untersuchung bei Kinderwunsch oder vor Eingriffen, Kontrolle nach einer Behandlung",
+        "prep": "2–3 Stunden vor der Entnahme nicht Wasser lassen, am Vortag auf Geschlechtsverkehr und örtliche Antiseptika verzichten; eingenommene Antibiotika dem Arzt mitteilen",
+        "abnormal": "Ein Nachweis von Bakterien kann mit einer Entzündung der Harnröhre oder mit der üblichen Flora des äußeren Abschnitts zusammenhängen. Die Bedeutung des Ergebnisses und die Antibiotikaempfindlichkeit beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "İdrar kanalı salgısının bakteriyolojik incelemesi",
+        "how": "İnce steril bir çubuk üretranın dış ağzından kısa bir mesafe ilerletilir, alım birkaç saniye sürer ve rahatsızlık verebilir",
+        "when": "Üretradan akıntı, idrar yaparken yanma ve ağrı, sık idrara çıkma isteği, gebelik planlaması veya girişim öncesi inceleme, tedavi sonrası kontrol",
+        "prep": "Örnekten önce 2–3 saat idrara çıkılmamalı, bir gün öncesinden cinsel ilişki ve bölgesel antiseptiklerden kaçınılmalıdır; kullanılan antibiyotikler hekime bildirilmelidir",
+        "abnormal": "Bakteri üremesi üretra iltihabıyla ya da dış bölümün olağan florasının varlığıyla ilişkili olabilir. Sonucun önemini ve antibiyotik duyarlılığını hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Бактериолошко испитивање секрета мокраћне цијеви",
+        "how": "Танка стерилна сонда се уводи плитко у спољашњи отвор уретре, узимање траје неколико секунди и може бити непријатно",
+        "when": "Секрет из уретре, пецкање и бол при мокрењу, учестали нагон за мокрењем, испитивање при планирању трудноће или прије захвата, контрола послије лијечења",
+        "prep": "Не мокрити 2–3 сата прије узимања, дан раније избјегавати сексуалне односе и локалне антисептике; обавијестити љекара о узимању антибиотика",
+        "abnormal": "Пораст бактерија може бити повезан са упалом мокраћне цијеви или са присуством уобичајене флоре спољашњег дијела. Значај налаза и осјетљивост на антибиотике процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "urethral-swab-fungi",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование отделяемого мочеиспускательного канала на дрожжеподобные грибы",
+        "how": "Тонким стерильным зондом берут материал из наружного отверстия уретры и засевают его на среду для грибов",
+        "when": "Жжение и зуд при мочеиспускании, белёсые выделения, повторяющиеся жалобы, контроль после курса лечения",
+        "prep": "Не мочиться 2–3 часа до забора, накануне исключить половые контакты и местные противогрибковые средства",
+        "abnormal": "Обнаружение грибов может быть связано с изменением местной микрофлоры, недавним приёмом антибиотиков или сопутствующими состояниями. Результат трактует врач"
+      },
+      "en": {
+        "what": "Examination of discharge from the urethra for yeast-like fungi",
+        "how": "A thin sterile probe collects material from the opening of the urethra and it is cultured on a medium for fungi",
+        "when": "Burning and itching when urinating, whitish discharge, recurring complaints, follow-up after a course of treatment",
+        "prep": "Do not urinate for 2–3 hours before the test and avoid sexual intercourse and local antifungal products the day before",
+        "abnormal": "Detection of fungi may be related to a change of the local microflora, recent use of antibiotics, or accompanying conditions. The result is interpreted by a doctor"
+      },
+      "sr": {
+        "what": "Ispitivanje sekreta mokraćne cijevi na kvasnice",
+        "how": "Tankom sterilnom sondom uzima se materijal iz spoljašnjeg otvora uretre i zasijava na podlogu za gljivice",
+        "when": "Peckanje i svrab pri mokrenju, bjelkast sekret, ponavljane tegobe, kontrola poslije završenog liječenja",
+        "prep": "Ne mokriti 2–3 sata prije uzimanja, dan ranije izbjegavati seksualne odnose i lokalne antimikotske preparate",
+        "abnormal": "Nalaz gljivica može biti povezan sa promjenom lokalne mikroflore, nedavnim uzimanjem antibiotika ili pratećim stanjima. Nalaz tumači ljekar"
+      },
+      "de": {
+        "what": "Untersuchung des Harnröhrensekrets auf Hefepilze",
+        "how": "Mit einer dünnen sterilen Sonde wird Material aus der Harnröhrenöffnung entnommen und auf einem Pilznährboden angezüchtet",
+        "when": "Brennen und Juckreiz beim Wasserlassen, weißlicher Ausfluss, wiederkehrende Beschwerden, Kontrolle nach einer Behandlung",
+        "prep": "2–3 Stunden vor der Entnahme nicht Wasser lassen und am Vortag auf Geschlechtsverkehr sowie örtliche Antipilzmittel verzichten",
+        "abnormal": "Ein Pilznachweis kann mit einer Veränderung der lokalen Mikroflora, einer kürzlichen Antibiotikaeinnahme oder Begleiterkrankungen zusammenhängen. Den Befund beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "İdrar kanalı salgısında maya mantarlarının araştırılması",
+        "how": "İnce steril bir çubukla üretranın dış ağzından örnek alınır ve mantar besiyerine ekilir",
+        "when": "İdrar yaparken yanma ve kaşıntı, beyazımsı akıntı, tekrarlayan şikayetler, tedavi sonrası kontrol",
+        "prep": "Örnekten önce 2–3 saat idrara çıkılmamalı, bir gün öncesinden cinsel ilişki ve bölgesel antifungal ürünlerden kaçınılmalıdır",
+        "abnormal": "Mantar saptanması yerel mikrofloranın değişmesiyle, yakın zamanda antibiyotik kullanımıyla veya eşlik eden durumlarla ilişkili olabilir. Sonucu hekim yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Испитивање секрета мокраћне цијеви на кваснице",
+        "how": "Танком стерилном сондом узима се материјал из спољашњег отвора уретре и засијава на подлогу за гљивице",
+        "when": "Пецкање и свраб при мокрењу, бјелкаст секрет, понављане тегобе, контрола послије завршеног лијечења",
+        "prep": "Не мокрити 2–3 сата прије узимања, дан раније избјегавати сексуалне односе и локалне антимикотске препарате",
+        "abnormal": "Налаз гљивица може бити повезан са промјеном локалне микрофлоре, недавним узимањем антибиотика или пратећим стањима. Налаз тумачи љекар"
+      }
+    }
+  }
+]

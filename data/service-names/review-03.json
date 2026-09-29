@@ -1,0 +1,610 @@
+[
+	{
+		"slug": "guillotine-hand-amputation",
+		"names": {
+			"en": "Guillotine Arm Amputation",
+			"sr": "Giljotinska amputacija ruke",
+			"de": "Guillotine-Amputation des Arms",
+			"tr": "Giyotin kol amputasyonu"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "half-palmar-fasciectomy",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		},
+		"note": "Противоречие объёма: sr/ru — иссечение ДО половины палмарной фасции, а привязанный FZOCG D05114 — «više od jedne polovine palmarne fascije uključujući vertikalne trake i digitalne procetke» (БОЛЕЕ половины). Названия не менял. Если услуга — это D05114, переименовать в «более половины ладонного апоневроза»; если нет — отвязать тариф."
+	},
+	{
+		"slug": "hallux-valgus-correction-with-metatarsal-osteotomy",
+		"names": {
+			"sr": "Hallux valgus, korekcija sa metatarzalnom osteotomijom",
+			"ru": "Коррекция Hallux valgus с метатарзальной остеотомией"
+		},
+		"synonyms": {
+			"en": ["Bunion Surgery"],
+			"sr": ["Haluks valgus", "Operacija čukljeva"],
+			"ru": ["Вальгусная деформация большого пальца стопы", "Операция на косточке большого пальца"],
+			"de": ["Ballenzeh-Operation"],
+			"tr": ["Halluks valgus ameliyatı"]
+		}
+	},
+	{
+		"slug": "hallux-valgus-correction-with-x-ostectomy",
+		"names": {
+			"en": "Hallux Valgus Correction with Exostectomy",
+			"sr": "Hallux valgus, korekcija pomoću egzostektomije",
+			"ru": "Коррекция Hallux valgus с экзостэктомией",
+			"de": "Hallux-valgus-Korrektur mit Exostektomie",
+			"tr": "Ekzostektomi ile halluks valgus düzeltmesi"
+		},
+		"synonyms": {
+			"en": ["Bunionectomy"],
+			"sr": ["Haluks valgus"],
+			"ru": ["Вальгусная деформация большого пальца стопы", "Удаление косточки на большом пальце стопы"],
+			"de": ["Ballenzeh-Operation"],
+			"tr": ["Halluks valgus ameliyatı"]
+		},
+		"note": "«x-ostektomija» из прайса FZOCG D05059 прочитана как экзостэктомия (egzostektomija, удаление экзостоза — «Silver»-операция при hallux valgus); «X-остэктомии» как метода нет. Если в прайсе имелось в виду иное — откатить все пять локалей."
+	},
+	{
+		"slug": "hand-amputation-through-metacarpal-joint",
+		"names": {
+			"de": "Handamputation auf Höhe des Metakarpalgelenks"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "hand-and-foot-extensor-tenotomy",
+		"names": {
+			"en": "Hand and Foot Extensor Tenotomy (One or More)",
+			"sr": "Tenotomija ekstenzora šake i stopala, jednog ili više",
+			"ru": "Тенотомия разгибателей кисти и стопы (одного или нескольких)",
+			"de": "Strecksehnen-Tenotomie an Hand und Fuß (eine oder mehrere)",
+			"tr": "El ve ayak ekstansör tenotomisi (bir veya daha fazla)"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "hand-proximal-or-middle-phalanx-fracture-reduction",
+		"names": {
+			"ru": "Репозиция перелома проксимальной или средней фаланги пальца кисти (закрытая или открытая)",
+			"de": "Reposition einer Grund- oder Mittelgliedfraktur der Finger (geschlossen oder offen)",
+			"tr": "El parmağı proksimal veya orta falanks kırığı redüksiyonu (kapalı veya açık)"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "hanging-cast-reduction",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "hip-disarticulation",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Eksartikulacija kuka"],
+			"ru": ["Экзартикуляция бедра", "Вычленение бедра"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "hip-fixation-cast",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "hip-to-ankle-plaster-reduction",
+		"names": {
+			"de": "Reposition mit Gips von der Hüfte bis zum Sprunggelenk",
+			"tr": "Kalçadan ayak bileğine alçı ile redüksiyon"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "humerus-diaphysis-fracture-closed-or-open-reduction",
+		"names": {
+			"en": "Humerus Diaphysis Fracture (Open Reduction with/without Fixation)",
+			"sr": "Fraktura dijafize humerusa — zatvorena ili otvorena (složena), otvorena repozicija sa/bez fiksacije",
+			"ru": "Открытая репозиция закрытого или открытого перелома диафиза плечевой кости с фиксацией или без",
+			"de": "Offene Reposition einer geschlossenen oder offenen Humerusschaftfraktur mit oder ohne Fixation",
+			"tr": "Kapalı veya açık humerus diyafiz kırığının açık redüksiyonu, fiksasyonlu veya fiksasyonsuz"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Остеосинтез диафиза плечевой кости"],
+			"de": ["Oberarmschaftbruch"],
+			"tr": []
+		}
+	},
+	{
+		"slug": "immobilization",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "interphalangeal-joint-dislocation-reduction",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Iščašenje prsta"],
+			"ru": ["Вправление вывиха пальца"],
+			"de": [],
+			"tr": ["Parmak çıkığı"]
+		}
+	},
+	{
+		"slug": "intertrochanteric-or-peritrochanteric-fracture",
+		"names": {
+			"en": "Intertrochanteric or Peritrochanteric Fracture (Open Reduction with Internal Fixation)",
+			"sr": "Intertrohanterična ili peritrohanterična fraktura — otvorena repozicija sa unutrašnjom fiksacijom",
+			"ru": "Открытая репозиция с внутренней фиксацией при межвертельном или чрезвертельном переломе",
+			"de": "Offene Reposition mit innerer Fixation bei inter- oder peritrochantärer Fraktur",
+			"tr": "İntertrokanterik veya peritrokanterik kırığın açık redüksiyonu ve iç fiksasyonu"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Вертельный перелом бедра", "Остеосинтез вертельного перелома"],
+			"de": ["Pertrochantäre Femurfraktur"],
+			"tr": []
+		},
+		"note": "В FZOCG D05151 «otvorena (složena), otvorena repozicija sa unutrašnjom fiksacijom». «otvorena (složena)» (открытый перелом) в названия не вынесено: это единственная в каталоге позиция на остеосинтез вертельных переломов, а они почти всегда закрытые — похоже на обрыв «zatvorena ili otvorena (složena)», как у соседних D05004/D05150. Если позиция и правда только для открытых переломов — дописать во все локали."
+	},
+	{
+		"slug": "knee-arthrotomy-capsulotomy-with-exploration-and-foreign-body-removal",
+		"names": {
+			"en": "Knee Arthrotomy (Capsulotomy) with Exploration, Drainage and Foreign Body Removal",
+			"ru": "Артротомия (капсулотомия) коленного сустава с ревизией, дренированием и удалением инородного тела",
+			"de": "Kniearthrotomie (Kapsulotomie) mit Exploration, Drainage und Fremdkörperentfernung",
+			"tr": "Diz artrotomisi (kapsülotomi) — eksplorasyon, drenaj ve yabancı cisim çıkarılması"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "knee-dislocation-closed-or-open-reduction-withwithout-fixation",
+		"names": {
+			"ru": "Репозиция вывиха коленного сустава (закрытая или открытая) с внутренней фиксацией или без",
+			"de": "Reposition einer Knieluxation (geschlossen oder offen) mit oder ohne innere Fixation",
+			"tr": "Diz dislokasyonu redüksiyonu (kapalı veya açık), iç fiksasyonlu veya fiksasyonsuz"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Iščašenje koljena"],
+			"ru": ["Вывих колена"],
+			"de": [],
+			"tr": ["Diz çıkığı"]
+		}
+	},
+	{
+		"slug": "knee-fixation-bandage",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Повязка на колено"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "knee-fixation-cast",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "lateral-or-medial-fasciotomy-tennis-elbow",
+		"names": {
+			"sr": "Lateralna ili medijalna fasciotomija (npr. epikondilitis, teniski lakat)"
+		},
+		"synonyms": {
+			"en": ["Tennis Elbow Surgery"],
+			"sr": ["Operacija teniskog lakta"],
+			"ru": ["Операция при эпикондилите"],
+			"de": ["Tennisarm-Operation"],
+			"tr": ["Tenisçi dirseği ameliyatı"]
+		}
+	},
+	{
+		"slug": "leg-plaster-cast-hip-to-toes-over-10-years",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "leg-plaster-cast-hip-to-toes-under-10-years",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "lorenz-cast-reduction",
+		"names": {
+			"sr": "Repozicija — Lorencov gips"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "lower-leg-fasciotomy-with-decompression",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "lower-leg-flexor-tendon-primary-repair-one-or-more",
+		"names": {
+			"ru": "Первичный шов одного или нескольких сухожилий сгибателей голени",
+			"de": "Primäre Beugesehnennaht am Unterschenkel (eine oder mehrere Sehnen)",
+			"tr": "Alt bacak fleksör tendon primer onarımı (bir veya daha fazla)"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "lower-leg-plaster-knee-to-toes-over-10-years",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "lower-leg-plaster-knee-to-toes-under-10-years",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "lower-leg-to-foot-plaster-splint-over-10-years",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "lower-leg-to-foot-plaster-splint-under-10-years",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "macen-bandage",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "manipulative-reduction-of-ankle-joint-dislocation",
+		"names": {
+			"ru": "Закрытое вправление вывиха голеностопного сустава",
+			"de": "Manipulative Reposition einer Sprunggelenksluxation"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "manipulative-reduction-of-open-calcaneus-fracture",
+		"names": {
+			"ru": "Закрытая репозиция открытого перелома пяточной кости",
+			"de": "Manipulative Reposition einer offenen Calcaneusfraktur"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "manipulative-reduction-of-open-distal-fracture",
+		"names": {
+			"en": "Manipulative Reduction of Open Distal Tibia (Medial Malleolus) Fracture",
+			"sr": "Manipulativna repozicija otvorene frakture distalnog dijela potkoljenice (medijalnog maleolusa)",
+			"ru": "Закрытая репозиция открытого перелома дистальной части голени (внутренней лодыжки)",
+			"de": "Manipulative Reposition einer offenen distalen Tibiafraktur (Innenknöchel)",
+			"tr": "Açık distal tibia (medial malleol) kırığı manipülatif redüksiyonu"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "manipulative-reduction-of-open-distal-fracture-variant",
+		"names": {
+			"en": "Manipulative Reduction of Open Distal Fibula Fracture",
+			"sr": "Manipulativna repozicija otvorene frakture distalnog dijela fibule",
+			"ru": "Закрытая репозиция открытого перелома дистальной части малоберцовой кости",
+			"de": "Manipulative Reposition einer offenen distalen Fibulafraktur",
+			"tr": "Açık distal fibula kırığı manipülatif redüksiyonu"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "manipulative-reduction-of-open-fibula-fracture",
+		"names": {
+			"en": "Manipulative Reduction of Open Fibula Fracture (Shaft or Proximal)",
+			"sr": "Manipulativna repozicija otvorene frakture fibule (dijafiza ili proksimalni dio)",
+			"ru": "Закрытая репозиция открытого перелома диафиза или проксимальной части малоберцовой кости",
+			"de": "Manipulative Reposition einer offenen Fibulafraktur (Schaft oder proximal)",
+			"tr": "Açık fibula kırığı manipülatif redüksiyonu (diyafiz veya proksimal)"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "manipulative-reduction-of-open-iliacpubic-fracture",
+		"names": {
+			"en": "Manipulative Reduction of Open Iliac, Pubic or Ischial Fracture",
+			"sr": "Manipulativna repozicija otvorene frakture ilijačne, pubične i sjedalne kosti",
+			"ru": "Закрытая репозиция открытого перелома подвздошной, лобковой или седалищной кости",
+			"de": "Manipulative Reposition einer offenen Darmbein-, Schambein- oder Sitzbeinfraktur",
+			"tr": "Açık iliak, pubik veya iskiyal kırık manipülatif redüksiyonu"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "medial-or-lateral-epicondyle-fracture-open-with-k-wire-or-plate",
+		"names": {
+			"sr": "Fraktura medijalnog ili lateralnog epikondila — otvorena (složena), sa Kiršnerovom iglom ili pločom",
+			"ru": "Репозиция открытого перелома медиального или латерального надмыщелка с фиксацией спицей Киршнера или пластиной",
+			"de": "Reposition einer offenen medialen oder lateralen Epikondylenfraktur mit Kirschner-Draht oder Platte",
+			"tr": "Açık medial veya lateral epikondil kırığı redüksiyonu (Kirschner teli veya plak ile)"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "medial-or-lateral-femoral-condyle-fracture-open-reduction",
+		"names": {
+			"en": "Medial or Lateral Femoral Condyle Fracture (Open Reduction with/without Fixation)",
+			"sr": "Fraktura medijalnog ili lateralnog kondila femura — zatvorena ili otvorena, otvorena repozicija sa/bez fiksacije",
+			"ru": "Открытая репозиция закрытого или открытого перелома медиального или латерального мыщелка бедра с фиксацией или без",
+			"de": "Offene Reposition einer geschlossenen oder offenen Femurkondylenfraktur (medial oder lateral) mit oder ohne Fixation",
+			"tr": "Kapalı veya açık medial ya da lateral femur kondil kırığının açık redüksiyonu, fiksasyonlu veya fiksasyonsuz"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Перелом мыщелка бедра", "Остеосинтез мыщелка бедренной кости"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "metacarpal-fracture-manipulation-reduction",
+		"names": {
+			"sr": "Zatvorena manipulativna repozicija frakture metakarpalnih kostiju",
+			"ru": "Закрытая репозиция перелома пястных костей",
+			"tr": "Metakarpal kırık kapalı manipülatif redüksiyonu"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "metacarpal-fracture-reduction",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Перелом пястной кости"],
+			"de": ["Mittelhandbruch"],
+			"tr": []
+		}
+	},
+	{
+		"slug": "metacarpophalangeal-joint-dislocation-reduction",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "metatarsal-amputation-with-one-or-more-toes",
+		"names": {
+			"ru": "Ампутация плюсневой кости с одним или несколькими пальцами",
+			"de": "Metatarsalamputation mit einer oder mehreren Zehen",
+			"tr": "Bir veya daha fazla parmakla metatars amputasyonu"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "metatarsal-bone-fracture-reduction-withwithout-fixation",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Перелом плюсневой кости"],
+			"de": ["Mittelfußbruch"],
+			"tr": []
+		}
+	},
+	{
+		"slug": "metatarsal-fracture-manipulation-reduction",
+		"names": {
+			"ru": "Закрытая репозиция перелома плюсневых костей",
+			"tr": "Metatarsal kırık kapalı manipülatif redüksiyonu"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "metatarsal-head-ostectomy-one-or-more",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	}
+]

@@ -1,0 +1,230 @@
+[
+	{
+		"slug": "mri-pelvis",
+		"names": {},
+		"synonyms": {
+			"en": ["Pelvic MRI"],
+			"sr": ["Magnetna rezonanca male karlice"],
+			"ru": [],
+			"de": ["Becken-MRT"],
+			"tr": ["Pelvik MR"]
+		},
+		"note": "дубль-кандидат mri-pelvic-organs (3171, review-20: «MR pregled karličnih organa» / «МРТ органов малого таза») — FZOCG J09017 «MR male karlice» привязан к ней"
+	},
+	{
+		"slug": "newborn-discharge",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "newborn-initial-hospital-workup",
+		"names": {
+			"ru": "Первичный осмотр новорождённого в стационаре",
+			"de": "Stationäre Aufnahmeuntersuchung des Neugeborenen"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] },
+		"note": "ru «Первичная обработка новорождённого» — устойчивый термин для туалета новорождённого после родов (пуповина, глаза, кожа), а Y01019 — врачебный осмотр при поступлении; приведено к серии Y01 из review-30 (ru «Первичный осмотр … в стационаре», de «Stationäre Aufnahmeuntersuchung …»)"
+	},
+	{
+		"slug": "newborn-standard-nursing-care",
+		"names": {
+			"sr": "Obična njega novorođenčeta",
+			"ru": "Обычный уход за новорождённым"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "non-medical-bed-day-cost-general-and-special-hospitals",
+		"names": {
+			"en": "Non-Medical Bed-Day Costs in General and Special Hospitals",
+			"ru": "Немедицинская часть стоимости койко-дня в общих и специальных больницах",
+			"de": "Nichtmedizinischer Kostenanteil des Pflegetags in Allgemein- und Fachkrankenhäusern",
+			"tr": "Genel ve dal hastanelerinde yatak gününün tıbbi olmayan maliyeti"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] },
+		"note": "tr «özel hastane» — это частная больница, специальная — «dal hastanesi». Ошибка в тарифе: у Y04003 name_sr_latin «stacionar u DZ» сдвинут, в исходном OCR и прайсе Danilo — «opšte i specijalne bolnice»; название услуги верное"
+	},
+	{
+		"slug": "non-medical-bed-day-cost-intensive-coronary-and-neonatal",
+		"names": {
+			"en": "Non-Medical Bed-Day Costs in Intensive Care, Coronary Care and Neonatal Units",
+			"ru": "Немедицинская часть стоимости койко-дня в реанимации, кардиоблоке и неонатологии",
+			"de": "Nichtmedizinischer Kostenanteil des Pflegetags auf Intensiv- und Koronarstation und in der Neonatologie",
+			"tr": "Yoğun bakım, koroner bakım ve yenidoğan ünitelerinde yatak gününün tıbbi olmayan maliyeti"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] },
+		"note": "Ошибка в тарифе: у Y04004 name_sr_latin «u Centru za rizičnu novorodjenčad» сдвинут (это Y04009), в исходном OCR — «u intenzivnoj njezi, koronarnoj jedinici i neonatologiji - opšte i specijalne bolnice»; название услуги верное"
+	},
+	{
+		"slug": "nursing-care-discharge-letter",
+		"names": {
+			"ru": "Сестринский выписной эпикриз",
+			"tr": "Hemşirelik taburcu epikrizi"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "on-call-doctor-specialist-examination",
+		"names": {
+			"en": "On-Call Specialist Examination",
+			"ru": "Осмотр дежурного врача-специалиста",
+			"de": "Fachärztliche Untersuchung durch den Bereitschaftsarzt",
+			"tr": "Nöbetçi uzman hekim muayenesi"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Pregled dežurnog lekara"],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "operating-theatre-costs-tier-i-121-to-180-points",
+		"names": {
+			"en": "Operating Theatre Costs in General Hospitals (Operations of 121 to 180 Points)",
+			"sr": "Troškovi operacione sale u opštim bolnicama (operacije od 121 do 180 bodova)",
+			"ru": "Расходы на операционную в общих больницах (операции от 121 до 180 баллов)",
+			"de": "Operationssaalkosten in Allgemeinkrankenhäusern (Operationen mit 121 bis 180 Punkten)",
+			"tr": "Genel hastanelerde ameliyathane maliyeti (121-180 puanlık ameliyatlar)"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] },
+		"note": "«tier I» — английское слово в sr и калька в остальных (ru ещё и «операционной зала»). По документу FZOCG Y05001–Y05005 — «Troškovi operacija u operacionim salama opštih bolnica», Y05006–Y05010 — «…u operacionom bloku Kliničkog centra i specijalnih bolnica»; tier расшифрован так во всех локалях. Пять соседей вне ростеров (tier-i-over-180-points, tier-ii-5-to-20, tier-ii-51-to-120, tier-ii-121-to-180, tier-ii-over-180) остались с «tier» — выровнять в fix-90"
+	},
+	{
+		"slug": "operating-theatre-costs-tier-i-21-to-50-points",
+		"names": {
+			"en": "Operating Theatre Costs in General Hospitals (Operations of 21 to 50 Points)",
+			"sr": "Troškovi operacione sale u opštim bolnicama (operacije od 21 do 50 bodova)",
+			"ru": "Расходы на операционную в общих больницах (операции от 21 до 50 баллов)",
+			"de": "Operationssaalkosten in Allgemeinkrankenhäusern (Operationen mit 21 bis 50 Punkten)",
+			"tr": "Genel hastanelerde ameliyathane maliyeti (21-50 puanlık ameliyatlar)"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "operating-theatre-costs-tier-i-5-to-20-points",
+		"names": {
+			"en": "Operating Theatre Costs in General Hospitals (Operations of 5 to 20 Points)",
+			"sr": "Troškovi operacione sale u opštim bolnicama (operacije od 5 do 20 bodova)",
+			"ru": "Расходы на операционную в общих больницах (операции от 5 до 20 баллов)",
+			"de": "Operationssaalkosten in Allgemeinkrankenhäusern (Operationen mit 5 bis 20 Punkten)",
+			"tr": "Genel hastanelerde ameliyathane maliyeti (5-20 puanlık ameliyatlar)"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "operating-theatre-costs-tier-i-51-to-120-points",
+		"names": {
+			"en": "Operating Theatre Costs in General Hospitals (Operations of 51 to 120 Points)",
+			"sr": "Troškovi operacione sale u opštim bolnicama (operacije od 51 do 120 bodova)",
+			"ru": "Расходы на операционную в общих больницах (операции от 51 до 120 баллов)",
+			"de": "Operationssaalkosten in Allgemeinkrankenhäusern (Operationen mit 51 bis 120 Punkten)",
+			"tr": "Genel hastanelerde ameliyathane maliyeti (51-120 puanlık ameliyatlar)"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "operating-theatre-costs-tier-ii-21-to-50-points",
+		"names": {
+			"en": "Operating Theatre Costs in Clinical Centre and Special Hospitals (Operations of 21 to 50 Points)",
+			"sr": "Troškovi operacionog bloka Kliničkog centra i specijalnih bolnica (operacije od 21 do 50 bodova)",
+			"ru": "Расходы на операционный блок Клинического центра и специальных больниц (операции от 21 до 50 баллов)",
+			"de": "Operationssaalkosten im Klinischen Zentrum und in Fachkrankenhäusern (Operationen mit 21 bis 50 Punkten)",
+			"tr": "Klinik Merkez ve dal hastanelerinde ameliyathane maliyeti (21-50 puanlık ameliyatlar)"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "peritoneal-dialysis",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Peritonealna dijaliza"],
+			"ru": [],
+			"de": ["Bauchfelldialyse"],
+			"tr": ["Karın zarı diyalizi"]
+		}
+	},
+	{
+		"slug": "professor-consultative-examination",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "relaxation-technique",
+		"names": {},
+		"synonyms": {
+			"en": ["Relaxation Training"],
+			"sr": ["Tehnike relaksacije"],
+			"ru": ["Техники релаксации", "Релаксационная терапия"],
+			"de": ["Entspannungstraining"],
+			"tr": ["Gevşeme egzersizleri"]
+		}
+	},
+	{
+		"slug": "renal-concentration-test",
+		"names": {},
+		"synonyms": {
+			"en": ["Urine Concentration Test"],
+			"sr": [],
+			"ru": ["Концентрационная проба"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "semi-intensive-care-bed-day",
+		"names": {
+			"sr": "Jedan dan boravka u poluintenzivnoj njezi",
+			"ru": "Койко-день в палате полуинтенсивной терапии",
+			"de": "Pflegetag in der Halbintensivpflege"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "semi-intensive-nursing-care-for-children-1-month-to-7-years",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "semi-intensive-nursing-care-for-patients-over-7-years",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "specialist-consultative-examination",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "standard-nursing-care-for-patients-over-7-years",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "tubular-function-test",
+		"names": {},
+		"synonyms": {
+			"en": ["Renal Tubular Function Test"],
+			"sr": [],
+			"ru": ["Исследование функции почечных канальцев"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "ultrasound-lymph-nodes",
+		"names": {
+			"de": "Ultraschall der Lymphknoten",
+			"tr": "Lenf nodları ultrasonu"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Ultrazvuk limfnih žlijezda", "Ultrazvuk limfnih čvorova", "Ultrazvuk limfnih žlezda"],
+			"ru": ["УЗИ лимфоузлов"],
+			"de": ["Lymphknotensonographie"],
+			"tr": ["Lenf nodu USG"]
+		}
+	}
+]

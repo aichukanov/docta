@@ -1,0 +1,600 @@
+[
+	{
+		"slug": "mri-pelvis",
+		"id": 3812,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "MRI Pelvis",
+			"sr": "MR male karlice",
+			"sr_cyrl": "МР мале карлице",
+			"ru": "МРТ малого таза",
+			"de": "MRT Becken",
+			"tr": "Pelvis MR"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "newborn-discharge",
+		"id": 6924,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Newborn Discharge",
+			"sr": "Otpust novorođenčeta",
+			"sr_cyrl": "Отпуст новорођенчета",
+			"ru": "Выписка новорождённого",
+			"de": "Neugeborenen-Entlassung",
+			"tr": "Yenidoğan taburculuğu"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y01007",
+				"name": "Otpust novorodjenčeta"
+			}
+		],
+		"hints": [
+			"truncated_ru: новорождённого"
+		]
+	},
+	{
+		"slug": "newborn-initial-hospital-workup",
+		"id": 6925,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Newborn Initial Hospital Workup",
+			"sr": "Početna bolnička obrada novorođenčeta",
+			"sr_cyrl": "Почетна болничка обрада новорођенчета",
+			"ru": "Первичная больничная обработка новорождённого",
+			"de": "Erstaufnahme-Untersuchung des Neugeborenen",
+			"tr": "Yenidoğan ilk hastane değerlendirmesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y01019",
+				"name": "Početna bolnička obrada novorodjenčeta"
+			}
+		],
+		"hints": [
+			"truncated_ru: новорождённого"
+		]
+	},
+	{
+		"slug": "newborn-standard-nursing-care",
+		"id": 6939,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Newborn Standard Nursing Care",
+			"sr": "Njega novorođenčeta - obična njega",
+			"sr_cyrl": "Њега новорођенчета - обична њега",
+			"ru": "Уход за новорождённым - обычный",
+			"de": "Neugeborenen-Standardpflege",
+			"tr": "Yenidoğan standart hemşirelik bakımı"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y02009",
+				"name": "Njega novorodjenčeta - obična njega"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "non-medical-bed-day-cost-general-and-special-hospitals",
+		"id": 6945,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Non-Medical Bed-Day Cost General and Special Hospitals",
+			"sr": "Nemedicinski dio bolničkog dana - opšte i specijalne bolnice",
+			"sr_cyrl": "Немедицински дио болничког дана - опште и специјалне болнице",
+			"ru": "Немедицинская часть койко-дня - общие и специальные больницы",
+			"de": "Nichtmedizinischer Anteil Bett-Tag - Allgemein- und Spezialkrankenhäuser",
+			"tr": "Genel ve özel hastane gayri-tıbbi yatak günü maliyeti"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y04003",
+				"name": "Nemedicinski dio BO dana - stacionar u DZ"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "non-medical-bed-day-cost-intensive-coronary-and-neonatal",
+		"id": 6946,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Non-Medical Bed-Day Cost Intensive Coronary and Neonatal",
+			"sr": "Nemedicinski dio bolničkog dana u intenzivnoj njezi, koronarnoj jedinici i neonatologiji",
+			"sr_cyrl": "Немедицински дио болничког дана у интензивној њези, коронарној јединици и неонатологији",
+			"ru": "Немедицинская часть койко-дня в реанимации, кардиоблоке и неонатологии",
+			"de": "Nichtmedizinischer Anteil Bett-Tag Intensiv, Koronar und Neonatologie",
+			"tr": "Yoğun bakım koroner ve neonatal gayri-tıbbi yatak günü maliyeti"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y04004",
+				"name": "Nemedicinski dio BO dana u Centru za rizičnu novorodjenčad"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "nursing-care-discharge-letter",
+		"id": 6923,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Nursing Care Discharge Letter",
+			"sr": "Otpusno pismo zdravstvene njege",
+			"sr_cyrl": "Отпусно писмо здравствене његе",
+			"ru": "Выписное письмо медицинского ухода",
+			"de": "Pflege-Entlassungsbericht",
+			"tr": "Hemşirelik bakımı taburcu mektubu"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y01006",
+				"name": "Otpusno pismo zdravstvene njege"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "on-call-doctor-specialist-examination",
+		"id": 7011,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "On-Call Doctor Specialist Examination",
+			"sr": "Specijalistički pregled dežurnog ljekara",
+			"sr_cyrl": "Специјалистички преглед дежурног љекара",
+			"ru": "Специалистический осмотр дежурного врача",
+			"de": "Facharzt-Untersuchung des Bereitschaftsarztes",
+			"tr": "Nöbetçi doktor uzman muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y11001",
+				"name": "Specijalistički pregled dežurnog ljekara"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "operating-theatre-costs-tier-i-121-to-180-points",
+		"id": 6951,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Operating Theatre Costs Tier I 121 to 180 Points",
+			"sr": "Troškovi operacione sale tier I 121-180 bodova",
+			"sr_cyrl": "Трошкови операционе сале tier I 121-180 бодова",
+			"ru": "Расходы операционной зала тариф I 121-180 баллов",
+			"de": "Operationssaal-Kosten Stufe I 121-180 Punkte",
+			"tr": "Ameliyathane maliyeti Tier I 121-180 puan"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y05004",
+				"name": "Operacije od 157,30 do 234,00 €"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "operating-theatre-costs-tier-i-21-to-50-points",
+		"id": 6949,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Operating Theatre Costs Tier I 21 to 50 Points",
+			"sr": "Troškovi operacione sale tier I 21-50 bodova",
+			"sr_cyrl": "Трошкови операционе сале tier I 21-50 бодова",
+			"ru": "Расходы операционной зала тариф I 21-50 баллов",
+			"de": "Operationssaal-Kosten Stufe I 21-50 Punkte",
+			"tr": "Ameliyathane maliyeti Tier I 21-50 puan"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y05002",
+				"name": "Operacije od 27,30 do 65,00 €"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "operating-theatre-costs-tier-i-5-to-20-points",
+		"id": 6948,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Operating Theatre Costs Tier I 5 to 20 Points",
+			"sr": "Troškovi operacione sale tier I 5-20 bodova",
+			"sr_cyrl": "Трошкови операционе сале tier I 5-20 бодова",
+			"ru": "Расходы операционной зала тариф I 5-20 баллов",
+			"de": "Operationssaal-Kosten Stufe I 5-20 Punkte",
+			"tr": "Ameliyathane maliyeti Tier I 5-20 puan"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y05001",
+				"name": "Operacije od 6,50 do 26,00 €"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "operating-theatre-costs-tier-i-51-to-120-points",
+		"id": 6950,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Operating Theatre Costs Tier I 51 to 120 Points",
+			"sr": "Troškovi operacione sale tier I 51-120 bodova",
+			"sr_cyrl": "Трошкови операционе сале tier I 51-120 бодова",
+			"ru": "Расходы операционной зала тариф I 51-120 баллов",
+			"de": "Operationssaal-Kosten Stufe I 51-120 Punkte",
+			"tr": "Ameliyathane maliyeti Tier I 51-120 puan"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y05003",
+				"name": "Operacije od 66,30 do 156,00 €"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "operating-theatre-costs-tier-ii-21-to-50-points",
+		"id": 6954,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Operating Theatre Costs Tier II 21 to 50 Points",
+			"sr": "Troškovi operacione sale tier II 21-50 bodova",
+			"sr_cyrl": "Трошкови операционе сале tier II 21-50 бодова",
+			"ru": "Расходы операционной зала тариф II 21-50 баллов",
+			"de": "Operationssaal-Kosten Stufe II 21-50 Punkte",
+			"tr": "Ameliyathane maliyeti Tier II 21-50 puan"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y05007",
+				"name": "Operacije od 27,30 do 65,00 €"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "peritoneal-dialysis",
+		"id": 5273,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [
+			"nephrology"
+		],
+		"names": {
+			"en": "Peritoneal Dialysis",
+			"sr": "Peritoneumska dijaliza — intermitentna zamjena bubrežne funkcije",
+			"sr_cyrl": "Перитонеумска дијализа — интермитентна замена бубрежне функције",
+			"ru": "Перитонеальный диализ (интермиттирующая заместительная почечная терапия)",
+			"de": "Peritonealdialyse (intermittierender Nierenersatz)",
+			"tr": "Periton diyalizi (aralıklı renal replasman)"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "V01008",
+				"name": "Intermitentna zamjena bubrežne funkcije - Peritoneumska dijaliza"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "professor-consultative-examination",
+		"id": 6922,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Professor Consultative Examination",
+			"sr": "Konsultativni pregled profesora",
+			"sr_cyrl": "Консултативни преглед професора",
+			"ru": "Консультативный осмотр профессора",
+			"de": "Konsiliarische Untersuchung durch einen Professor",
+			"tr": "Profesör konsültasyon muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y01005",
+				"name": "Konsultativni pregled profesora"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "relaxation-technique",
+		"id": 5202,
+		"clinics": 4,
+		"categories": [],
+		"specialties": [
+			"psychiatry",
+			"psychology"
+		],
+		"names": {
+			"en": "Relaxation Technique",
+			"sr": "Tehnika relaksacije",
+			"sr_cyrl": "Техника релаксације",
+			"ru": "Техника релаксации",
+			"de": "Entspannungstechnik",
+			"tr": "Gevşeme tekniği"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "H01011",
+				"name": "Tehnika relaksacije"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "H01011",
+				"name": "Tehnika relaksacije"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "renal-concentration-test",
+		"id": 5270,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [
+			"nephrology"
+		],
+		"names": {
+			"en": "Renal Concentration Test",
+			"sr": "Test koncentracione sposobnosti bubrega",
+			"sr_cyrl": "Тест концентрационе способности бубрега",
+			"ru": "Тест концентрационной способности почек",
+			"de": "Konzentrationsversuch der Niere",
+			"tr": "Renal konsantrasyon testi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "V01005",
+				"name": "Test koncentracione sposobnosti bubrega"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "semi-intensive-care-bed-day",
+		"id": 6961,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Semi-Intensive Care Bed-Day",
+			"sr": "Boravak u poluintenzivnoj njezi",
+			"sr_cyrl": "Боравак у полуинтензивној његи",
+			"ru": "Пребывание в полуинтенсивной терапии",
+			"de": "Halbintensivpflege Bett-Tag",
+			"tr": "Yarı yoğun bakım yatak günü"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y06004",
+				"name": "Jedan dan boravka u poluintenzivnoj njezi"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "semi-intensive-nursing-care-for-children-1-month-to-7-years",
+		"id": 6936,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Semi-Intensive Nursing Care for Children 1 Month to 7 Years",
+			"sr": "Poluintenzivna njega za dijete od 1 mjeseca do 7 godina",
+			"sr_cyrl": "Полуинтензивна њега за дијете од 1 мјесеца до 7 година",
+			"ru": "Полуинтенсивный уход за ребёнком от 1 месяца до 7 лет",
+			"de": "Halbintensivpflege für Kinder von 1 Monat bis 7 Jahren",
+			"tr": "1 ay-7 yaş çocuk yarı yoğun bakım hemşireliği"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y02003",
+				"name": "Poluintenzivna njega za dijete od 1 mjeseca do 7 godina"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "semi-intensive-nursing-care-for-patients-over-7-years",
+		"id": 6937,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Semi-Intensive Nursing Care for Patients Over 7 Years",
+			"sr": "Poluintenzivna njega za starije od 7 godina",
+			"sr_cyrl": "Полуинтензивна њега за старије од 7 година",
+			"ru": "Полуинтенсивный уход за пациентами старше 7 лет",
+			"de": "Halbintensivpflege für Patienten über 7 Jahren",
+			"tr": "7 yaş üstü yarı yoğun bakım hemşireliği"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y02004",
+				"name": "Poluintenzivna njega za starije od 7 godina"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "specialist-consultative-examination",
+		"id": 6921,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Specialist Consultative Examination",
+			"sr": "Konsultativni pregled specijaliste",
+			"sr_cyrl": "Консултативни преглед специјалисте",
+			"ru": "Консультативный осмотр специалиста",
+			"de": "Konsiliarische Facharzt-Untersuchung",
+			"tr": "Uzman konsültasyon muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y01004",
+				"name": "Konsultativni pregled specijaliste"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "standard-nursing-care-for-patients-over-7-years",
+		"id": 6938,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Standard Nursing Care for Patients Over 7 Years",
+			"sr": "Obična njega za starije od 7 godina",
+			"sr_cyrl": "Обична њега за старије од 7 година",
+			"ru": "Обычный уход за пациентами старше 7 лет",
+			"de": "Standardpflege für Patienten über 7 Jahren",
+			"tr": "7 yaş üstü standart hemşirelik bakımı"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y02005",
+				"name": "Obična njega za starije od 7 godina"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "tubular-function-test",
+		"id": 5268,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [
+			"nephrology"
+		],
+		"names": {
+			"en": "Tubular Function Test",
+			"sr": "Ispitivanje tubulskih funkcija",
+			"sr_cyrl": "Испитивање тубулских функција",
+			"ru": "Исследование канальцевых функций",
+			"de": "Untersuchung der tubulären Funktionen",
+			"tr": "Tübüler fonksiyon testi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "V01003",
+				"name": "Ispitivanje tubulskih funkcija"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "ultrasound-lymph-nodes",
+		"id": 3843,
+		"clinics": 3,
+		"categories": [],
+		"specialties": [],
+		"names": {
+			"en": "Ultrasound Lymph Nodes",
+			"sr": "UZ limfnih žlijezda",
+			"sr_cyrl": "УЗ лимфних жлијезда",
+			"ru": "УЗИ лимфатических узлов",
+			"de": "Ultraschall Lymphknoten",
+			"tr": "Lenf Nodları Ultrason"
+		},
+		"existing_synonyms": {
+			"tr": [
+				"Lenf bezi ultrasonu"
+			],
+			"en": [
+				"Lymph Node Ultrasound"
+			],
+			"de": [
+				"Sonographie Lymphknoten"
+			],
+			"sr": [
+				"UZ pregled limfnih žljezda"
+			],
+			"sr-cyrl": [
+				"УЗ преглед лимфних жљезда"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	}
+]

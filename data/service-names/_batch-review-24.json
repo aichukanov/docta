@@ -1,0 +1,1344 @@
+[
+	{
+		"slug": "anti-vegf-injection",
+		"id": 2288,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions",
+			"Ophthalmology"
+		],
+		"specialties": [
+			"ophthalmology"
+		],
+		"names": {
+			"en": "Anti-VEGF Injection",
+			"sr": "Anti-VEGF injekcija (terapija očne retine)",
+			"sr_cyrl": "Anti-VEGF инјекција (терапија очне ретине)",
+			"ru": "Анти-VEGF инъекция (терапия сетчатки)",
+			"de": "Anti-VEGF-Injektion (Netzhauttherapie)",
+			"tr": "Anti-VEGF Enjeksiyonu (Retina Tedavisi)"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "catheter-placement",
+		"id": 2088,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions",
+			"General Medicine"
+		],
+		"specialties": [
+			"internal_medicine"
+		],
+		"names": {
+			"en": "Catheter Placement",
+			"sr": "Plasiranje katetera",
+			"sr_cyrl": "Пласирање катетера",
+			"ru": "Установка катетера",
+			"de": "Kathetereinlage",
+			"tr": "Kateter Yerleştirme"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "central-venous-catheter-placement",
+		"id": 5827,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions",
+			"General Medicine"
+		],
+		"specialties": [
+			"anesthesiology"
+		],
+		"names": {
+			"en": "Central Venous Catheter Placement",
+			"sr": "Plasiranje centralnog venskog katetera",
+			"sr_cyrl": "Пласирање централног венског катетера",
+			"ru": "Установка центрального венозного катетера",
+			"de": "Anlage eines zentralen Venenkatheters",
+			"tr": "Santral venöz kateter yerleştirme"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "X15004",
+				"name": "Plasiranje centralnog venskog katetera"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "X15006",
+				"name": "Plasiranje centrainog venskog katetera"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "donor-plasmapheresis",
+		"id": 5818,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions",
+			"General Medicine",
+			"Laboratory Services"
+		],
+		"specialties": [
+			"hematology"
+		],
+		"names": {
+			"en": "Donor Plasmapheresis",
+			"sr": "Donorska plazmafereza",
+			"sr_cyrl": "Донорска плазмафереза",
+			"ru": "Донорский плазмаферез",
+			"de": "Spender-Plasmapherese",
+			"tr": "Donör plazmaferez"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-transfuziologija",
+				"code": "X13002",
+				"name": "Donorska plazmafereza"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "enema-administration-medium",
+		"id": 7059,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Enema Administration Medium",
+			"sr": "Davanje klizme (srednja)",
+			"sr_cyrl": "Давање клизме (средња)",
+			"ru": "Постановка клизмы (средняя)",
+			"de": "Einlauf (mittel)",
+			"tr": "Lavman uygulaması (orta)"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "erythrocyte-suspension-in-oas-preparation",
+		"id": 5813,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions",
+			"General Medicine",
+			"Laboratory Services"
+		],
+		"specialties": [
+			"hematology"
+		],
+		"names": {
+			"en": "Erythrocyte Suspension in OAS Preparation",
+			"sr": "Priprema eritrocita u OAS-u",
+			"sr_cyrl": "Припрема еритроцита у OAS-у",
+			"ru": "Приготовление эритроцитов в OAS",
+			"de": "Erythrozyten in OAS-Zubereitung",
+			"tr": "OAS içinde eritrosit hazırlığı"
+		},
+		"existing_synonyms": {
+			"tr": [
+				"Eritrositlerin katkı çözeltisinde (SAGM) hazırlanması"
+			],
+			"de": [
+				"Herstellung von Erythrozyten in Additivlösung (SAGM)"
+			],
+			"en": [
+				"Preparation of Erythrocytes in Additive Solution (SAGM)"
+			],
+			"ru": [
+				"Приготовление эритроцитов в добавочном растворе (SAGM)"
+			],
+			"sr-cyrl": [
+				"Припрема еритроцита у ОАС-у"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-transfuziologija",
+				"code": "X12063",
+				"name": "Priprema eritrocita u OAS-u"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "filtered-erythrocyte-preparation",
+		"id": 5815,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions",
+			"General Medicine",
+			"Laboratory Services"
+		],
+		"specialties": [
+			"hematology"
+		],
+		"names": {
+			"en": "Filtered Erythrocyte Preparation",
+			"sr": "Priprema filtriranih eritrocita",
+			"sr_cyrl": "Припрема филтрираних еритроцита",
+			"ru": "Приготовление фильтрованных эритроцитов",
+			"de": "Gefilterte Erythrozyten",
+			"tr": "Filtre edilmiş eritrosit hazırlığı"
+		},
+		"existing_synonyms": {
+			"tr": [
+				"Filtrelenmiş eritrositlerin hazırlanması"
+			],
+			"de": [
+				"Herstellung gefilterter Erythrozyten"
+			],
+			"en": [
+				"Preparation of Filtered Erythrocytes"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-transfuziologija",
+				"code": "X12065",
+				"name": "Priprema filtriranih eritrocita"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "infusion-therapy",
+		"id": 1973,
+		"clinics": 12,
+		"categories": [
+			"Injections & Infusions"
+		],
+		"specialties": [
+			"internal_medicine"
+		],
+		"names": {
+			"en": "Infusion Therapy",
+			"sr": "Infuziona terapija",
+			"sr_cyrl": "Инфузиона терапија",
+			"ru": "Инфузионная терапия",
+			"de": "Infusionstherapie",
+			"tr": "İnfüzyon Tedavisi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "inhalation-administration",
+		"id": 1468,
+		"clinics": 4,
+		"categories": [
+			"Injections & Infusions",
+			"ENT"
+		],
+		"specialties": [
+			"pulmonology",
+			"pediatric_pulmonology"
+		],
+		"names": {
+			"en": "Inhalation Administration",
+			"sr": "Inhalaciona primjena",
+			"sr_cyrl": "Инхалациона примена",
+			"ru": "Ингаляционное введение",
+			"de": "Inhalationsverabreichung",
+			"tr": "İnhalasyon Uygulaması"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": [
+			"ekavica_sr: primena",
+			"шаг 1 уже поправил sr: «Inhalaciona primena» → «Inhalaciona primjena» — не переделывай без причины"
+		]
+	},
+	{
+		"slug": "injection-materials-consumption",
+		"id": 6969,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Injection Materials Consumption",
+			"sr": "Utrošak materijala kod davanja injekcija",
+			"sr_cyrl": "Утрошак материјала код давања ињекција",
+			"ru": "Расход материалов при инъекциях",
+			"de": "Materialverbrauch bei Injektionen",
+			"tr": "Enjeksiyon malzeme tüketimi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y08001",
+				"name": "Utrošak materijala kod davanja svih vrsta injekcija"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "intra-articular-injection",
+		"id": 1981,
+		"clinics": 4,
+		"categories": [
+			"Injections & Infusions"
+		],
+		"specialties": [
+			"rheumatology"
+		],
+		"names": {
+			"en": "Intra-articular Injection",
+			"sr": "Apliciranje lijeka intraartikularno",
+			"sr_cyrl": "Аплицирање лијека интраартикуларно",
+			"ru": "Внутрисуставная инъекция",
+			"de": "Intraartikuläre Injektion",
+			"tr": "İntraartiküler Enjeksiyon"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "intramuscular-injection",
+		"id": 1592,
+		"clinics": 12,
+		"categories": [
+			"Injections & Infusions"
+		],
+		"specialties": [
+			"general_medicine"
+		],
+		"names": {
+			"en": "Intramuscular Injection",
+			"sr": "Intramuskularna injekcija",
+			"sr_cyrl": "Интрамускуларна инјекција",
+			"ru": "Внутримышечная инъекция",
+			"de": "Intramuskuläre Injektion",
+			"tr": "İntramüsküler Enjeksiyon"
+		},
+		"existing_synonyms": {
+			"sr": [
+				"Davanje injekcije i.m."
+			],
+			"en": [
+				"Intramuscular Injection Administration"
+			],
+			"sr-cyrl": [
+				"Давање ињекције и.м."
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "intramuscular-medication-application",
+		"id": 1974,
+		"clinics": 4,
+		"categories": [
+			"Injections & Infusions"
+		],
+		"specialties": [
+			"internal_medicine"
+		],
+		"names": {
+			"en": "Intramuscular Medication Application",
+			"sr": "Aplikacija lijeka intramuskularno",
+			"sr_cyrl": "Апликација лијека интрамускуларно",
+			"ru": "Внутримышечное введение препарата",
+			"de": "Intramuskuläre Medikamentenverabreichung",
+			"tr": "İntramüsküler İlaç Uygulaması"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "intramuscular-therapy-2",
+		"id": 1976,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions"
+		],
+		"specialties": [
+			"internal_medicine"
+		],
+		"names": {
+			"en": "Intramuscular Therapy 2",
+			"sr": "Intramuskularna terapija 2",
+			"sr_cyrl": "Интрамускуларна терапија 2",
+			"ru": "Внутримышечная терапия 2",
+			"de": "Intramuskuläre Therapie 2",
+			"tr": "İntramüsküler Tedavi 2"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "intravenous-medication-application",
+		"id": 1980,
+		"clinics": 14,
+		"categories": [
+			"Injections & Infusions",
+			"Ambulatory Surgery"
+		],
+		"specialties": [
+			"internal_medicine",
+			"general_medicine"
+		],
+		"names": {
+			"en": "Intravenous Medication Application",
+			"sr": "Aplikacija lijeka intravenski",
+			"sr_cyrl": "Апликација лијека интравенски",
+			"ru": "Внутривенное введение препарата",
+			"de": "Intravenöse Medikamentenverabreichung",
+			"tr": "İntravenöz İlaç Uygulaması"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Intravenöse Therapieverabreichung"
+			],
+			"en": [
+				"Intravenous Therapy Administration"
+			],
+			"tr": [
+				"İntravenöz Terapi Uygulaması"
+			],
+			"sr": [
+				"Intravenska primena terapije"
+			],
+			"sr-cyrl": [
+				"Интравенска примена терапије"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "X01028",
+				"name": "Davanie intravenskih injekcija"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "iv-cannula-application",
+		"id": 1979,
+		"clinics": 8,
+		"categories": [
+			"Injections & Infusions",
+			"Ambulatory Surgery"
+		],
+		"specialties": [
+			"internal_medicine"
+		],
+		"names": {
+			"en": "IV Cannula Application",
+			"sr": "Aplikacija intravenske kanile (braunile)",
+			"sr_cyrl": "Апликација интравенске каниле (браунилe)",
+			"ru": "Установка внутривенной канюли",
+			"de": "Anlage einer IV-Kanüle",
+			"tr": "IV Kanül Uygulaması"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "X01033",
+				"name": "Kateterizacija mokraćne bešike kod žene sa ili bez ispiranja"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "laryngeal-mask-placement",
+		"id": 5841,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions",
+			"General Medicine"
+		],
+		"specialties": [
+			"anesthesiology"
+		],
+		"names": {
+			"en": "Laryngeal Mask Placement",
+			"sr": "Plasiranje laringealne maske",
+			"sr_cyrl": "Пласирање ларингеалне маске",
+			"ru": "Установка ларингеальной маски",
+			"de": "Anlage einer Larynxmaske",
+			"tr": "Laringeal maske yerleştirme"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "X15020",
+				"name": "Plasiranje laringealne maske"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "oxygen-administration",
+		"id": 5291,
+		"clinics": 4,
+		"categories": [
+			"Injections & Infusions",
+			"Ambulatory Surgery"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Oxygen Administration",
+			"sr": "Davanje kiseonika",
+			"sr_cyrl": "Давање кисеоника",
+			"ru": "Подача кислорода",
+			"de": "Sauerstoffgabe",
+			"tr": "Oksijen verilmesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "X01006",
+				"name": "Davanje kiseonika"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "X01006",
+				"name": "Davanje klizme za ispiranje"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "sedation-and-anesthesia-for-ambulatory-surgery",
+		"id": 5828,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions",
+			"General Medicine"
+		],
+		"specialties": [
+			"anesthesiology"
+		],
+		"names": {
+			"en": "Sedation and Anesthesia for Ambulatory Surgery",
+			"sr": "Sedacija i anestezija za izvođenje ambulantnih hirurških intervencija",
+			"sr_cyrl": "Седација и анестезија за извођење амбулантних хируршких интервенција",
+			"ru": "Седация и анестезия для амбулаторных хирургических вмешательств",
+			"de": "Sedierung und Anästhesie für ambulante Chirurgie",
+			"tr": "Ayaktan cerrahi için sedasyon ve anestezi"
+		},
+		"existing_synonyms": {
+			"tr": [
+				"Ayaktan cerrahi girişimler için sedasyon ve anestezi"
+			],
+			"en": [
+				"Sedation and Anesthesia for Outpatient Surgical Interventions"
+			],
+			"de": [
+				"Sedierung und Anästhesie für ambulante chirurgische Eingriffe"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "X15007",
+				"name": "Sedacija i anestezija za izvođenje ambulantnih hirurških intervencija"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "subconjunctival-injection",
+		"id": 4256,
+		"clinics": 4,
+		"categories": [
+			"Injections & Infusions",
+			"Ophthalmology"
+		],
+		"specialties": [
+			"ophthalmology"
+		],
+		"names": {
+			"en": "Subconjunctival Injection",
+			"sr": "Subkonjunktivalna injekcija",
+			"sr_cyrl": "Субконјунктивална инјекција",
+			"ru": "Субконъюнктивальная инъекция",
+			"de": "Subkonjunktivale Injektion",
+			"tr": "Subkonjonktival Enjeksiyon"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "X06004",
+				"name": "Davanje injekcije subkonjuktivalno"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "subcutaneous-injection",
+		"id": 1591,
+		"clinics": 4,
+		"categories": [
+			"Injections & Infusions"
+		],
+		"specialties": [
+			"general_medicine"
+		],
+		"names": {
+			"en": "Subcutaneous Injection",
+			"sr": "Potkožna injekcija",
+			"sr_cyrl": "Поткожна инјекција",
+			"ru": "Подкожная инъекция",
+			"de": "Subkutane Injektion",
+			"tr": "Subkutan Enjeksiyon"
+		},
+		"existing_synonyms": {
+			"sr": [
+				"Davanje injekcije s.c."
+			],
+			"en": [
+				"Subcutaneous Injection Administration"
+			],
+			"sr-cyrl": [
+				"Давање ињекције с.ц."
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "therapeutic-cytapheresis",
+		"id": 5820,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions",
+			"General Medicine",
+			"Laboratory Services"
+		],
+		"specialties": [
+			"hematology"
+		],
+		"names": {
+			"en": "Therapeutic Cytapheresis",
+			"sr": "Terapijska citafereza",
+			"sr_cyrl": "Терапијска цитафереза",
+			"ru": "Терапевтический цитаферез",
+			"de": "Therapeutische Zytapherese",
+			"tr": "Terapötik sitaferez"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-transfuziologija",
+				"code": "X13004",
+				"name": "Terapijska citafereza"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "therapeutic-plasmapheresis",
+		"id": 5819,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions",
+			"General Medicine",
+			"Laboratory Services"
+		],
+		"specialties": [
+			"hematology"
+		],
+		"names": {
+			"en": "Therapeutic Plasmapheresis",
+			"sr": "Terapijska plazmafereza",
+			"sr_cyrl": "Терапијска плазмафереза",
+			"ru": "Терапевтический плазмаферез",
+			"de": "Therapeutische Plasmapherese",
+			"tr": "Terapötik plazmaferez"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-transfuziologija",
+				"code": "X13003",
+				"name": "Terapijska plazmafereza"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "venous-blood-draw",
+		"id": 4979,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions",
+			"Laboratory Services"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Venous Blood Draw",
+			"sr": "Uzimanje krvi iz vene",
+			"sr_cyrl": "Узимање крви из вене",
+			"ru": "Забор крови из вены",
+			"de": "Venöse Blutentnahme",
+			"tr": "Venöz kan alımı"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Z04001",
+				"name": "Uzimanje krvi iz vene"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "vima-volatile-induction-and-maintenance-anesthesia",
+		"id": 5837,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions",
+			"General Medicine"
+		],
+		"specialties": [
+			"anesthesiology"
+		],
+		"names": {
+			"en": "VIMA (Volatile Induction and Maintenance Anesthesia)",
+			"sr": "VIMA — uvod i održavanje inhalacionom anestezijom",
+			"sr_cyrl": "VIMA — увод и одржавање инхалационом анестезијом",
+			"ru": "VIMA — введение и поддержание ингаляционной анестезии",
+			"de": "VIMA (volatile Induktion und Erhaltung)",
+			"tr": "VIMA (volatil indüksiyon ve idame anestezi)"
+		},
+		"existing_synonyms": {
+			"tr": [
+				"VIMA (inhalasyon anestezisi ile indüksiyon ve idame)"
+			],
+			"sr": [
+				"VIMA (uvod i održavanje inhalacionom anestezijom)"
+			],
+			"de": [
+				"VIMA (volatile Einleitung und Aufrechterhaltung der Anästhesie)"
+			],
+			"en": [
+				"VIMA (Volatile Induction and Maintenance of Anesthesia)"
+			],
+			"ru": [
+				"VIMA (индукция и поддержание ингаляционной анестезии)"
+			],
+			"sr-cyrl": [
+				"ВИМА (увод и одржавање инхалационом анестезијом)"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "X15016",
+				"name": "VIMA (uvod i održavanje inhalacionom anestezijom)"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "washed-erythrocyte-preparation",
+		"id": 5814,
+		"clinics": 3,
+		"categories": [
+			"Injections & Infusions",
+			"General Medicine",
+			"Laboratory Services"
+		],
+		"specialties": [
+			"hematology"
+		],
+		"names": {
+			"en": "Washed Erythrocyte Preparation",
+			"sr": "Priprema opranih eritrocita",
+			"sr_cyrl": "Припрема опраних еритроцита",
+			"ru": "Приготовление отмытых эритроцитов",
+			"de": "Gewaschene Erythrozyten",
+			"tr": "Yıkanmış eritrosit hazırlığı"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Herstellung gewaschener Erythrozyten"
+			],
+			"en": [
+				"Preparation of Washed Erythrocytes"
+			],
+			"tr": [
+				"Yıkanmış eritrositlerin hazırlanması"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-transfuziologija",
+				"code": "X12064",
+				"name": "Priprema opranih eritrocita"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "abscess-incision",
+		"id": 1476,
+		"clinics": 4,
+		"categories": [
+			"Wound Care",
+			"ENT"
+		],
+		"specialties": [
+			"general_surgery",
+			"dermatovenerology"
+		],
+		"names": {
+			"en": "Abscess Incision",
+			"sr": "Incizija apscesa",
+			"sr_cyrl": "Инцизија апсцеса",
+			"ru": "Вскрытие абсцесса",
+			"de": "Abszessinzision",
+			"tr": "Apse İnsizyonu"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "ambulatory-large-dressing",
+		"id": 6972,
+		"clinics": 3,
+		"categories": [
+			"Wound Care"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Ambulatory Large Dressing",
+			"sr": "Veliki zavoj (ambulantni)",
+			"sr_cyrl": "Велики завој (амбулантни)",
+			"ru": "Большая амбулаторная повязка",
+			"de": "Großer Verband (ambulant)",
+			"tr": "Büyük ambulans pansumanı"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y09003",
+				"name": "Veliki zavoj"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "ambulatory-small-dressing",
+		"id": 6970,
+		"clinics": 3,
+		"categories": [
+			"Wound Care"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Ambulatory Small Dressing",
+			"sr": "Mali zavoj (ambulantni)",
+			"sr_cyrl": "Мали завој (амбулантни)",
+			"ru": "Малая амбулаторная повязка",
+			"de": "Kleiner Verband (ambulant)",
+			"tr": "Küçük ambulans pansumanı"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y09001",
+				"name": "Mali zavoj"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "artificial-anus-care",
+		"id": 5296,
+		"clinics": 5,
+		"categories": [
+			"Wound Care",
+			"Ambulatory Surgery"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Artificial Anus Care",
+			"sr": "Toaleta vještačkog anusa",
+			"sr_cyrl": "Тоалета вештачког ануса",
+			"ru": "Уход за искусственным анусом",
+			"de": "Pflege des künstlichen Afters",
+			"tr": "Yapay anüs bakımı"
+		},
+		"existing_synonyms": {
+			"en": [
+				"Colostomy Site Care"
+			],
+			"tr": [
+				"Kolostomi bakımı"
+			],
+			"de": [
+				"Pflege des künstlichen Darmausgangs"
+			],
+			"sr-cyrl": [
+				"Тоалета вјештачког ануса"
+			],
+			"ru": [
+				"Уход за колостомой"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "X01013",
+				"name": "Toaleta vještačkog anusa"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "X01013",
+				"name": "Toaleta i održavanje stome"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "atheroma-cyst-xanthoma-or-small-benign-tumor-excision",
+		"id": 5328,
+		"clinics": 5,
+		"categories": [
+			"Wound Care",
+			"Ambulatory Surgery"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Atheroma, Cyst, Xanthoma or Small Benign Tumor Excision",
+			"sr": "Ekstirpacija ateroma, ciste, ksantoma ili manjeg benignog tumora",
+			"sr_cyrl": "Екстирпација атерома, цисте, ксантома или мањег бенигног тумора",
+			"ru": "Удаление атеромы, кисты, ксантомы или малой доброкачественной опухоли",
+			"de": "Exstirpation von Atherom, Zyste, Xanthom oder kleinem benignen Tumor",
+			"tr": "Aterom, kist, ksantom veya küçük benign tümör çıkarımı"
+		},
+		"existing_synonyms": {
+			"tr": [
+				"Aterom kist veya benign tümör eksizyonu"
+			],
+			"en": [
+				"Atheroma Cyst or Benign Tumor Excision"
+			],
+			"sr": [
+				"Ekstirpacija ateroma, ciste ili manjeg benignog tumora"
+			],
+			"de": [
+				"Exzision von Atherom, Zyste oder gutartigem Tumor"
+			],
+			"sr-cyrl": [
+				"Екстирпација атерома, цисте или мањег бенигног тумора"
+			],
+			"ru": [
+				"Удаление атеромы, кисты или доброкачественной опухоли"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "X02021",
+				"name": "Ekstirpac. ateroma, ciste ili manjeg benin. tumora"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "X02021",
+				"name": "Ekstirpacija ateroma, ciste, ksantoma ili manjeg benignog tumora"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "burn-wound-care",
+		"id": 7056,
+		"clinics": 3,
+		"categories": [
+			"Wound Care"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Burn Wound Care",
+			"sr": "Obrada opekotina",
+			"sr_cyrl": "Обрада опекотина",
+			"ru": "Обработка ожогов",
+			"de": "Brandwundenversorgung",
+			"tr": "Yanık bakımı"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "X02002",
+				"name": "Obrada opekotina"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "large-wound-care",
+		"id": 2138,
+		"clinics": 3,
+		"categories": [
+			"Wound Care"
+		],
+		"specialties": [
+			"general_surgery"
+		],
+		"names": {
+			"en": "Large Wound Care",
+			"sr": "Obrada rane - velika",
+			"sr_cyrl": "Обрада ране - велика",
+			"ru": "Обработка раны - большая",
+			"de": "Wundversorgung - groß",
+			"tr": "Yara Bakımı - Büyük"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "medium-wound-care",
+		"id": 2139,
+		"clinics": 3,
+		"categories": [
+			"Wound Care"
+		],
+		"specialties": [
+			"general_surgery"
+		],
+		"names": {
+			"en": "Medium Wound Care",
+			"sr": "Obrada rane - srednja",
+			"sr_cyrl": "Обрада ране - средња",
+			"ru": "Обработка раны - средняя",
+			"de": "Wundversorgung - mittel",
+			"tr": "Yara Bakımı - Orta"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "operation-large-dressing",
+		"id": 6968,
+		"clinics": 3,
+		"categories": [
+			"Wound Care"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Operation Large Dressing",
+			"sr": "Veliki zavoj (operativni)",
+			"sr_cyrl": "Велики завој (оперативни)",
+			"ru": "Большая операционная повязка",
+			"de": "Großer Verband (Operation)",
+			"tr": "Büyük operasyon pansumanı"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y07005",
+				"name": "Veliki zavoj"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "operation-medium-dressing-i",
+		"id": 6966,
+		"clinics": 3,
+		"categories": [
+			"Wound Care"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Operation Medium Dressing I",
+			"sr": "Srednji zavoj I (operativni)",
+			"sr_cyrl": "Средњи завој I (оперативни)",
+			"ru": "Средняя операционная повязка I",
+			"de": "Mittlerer Verband I (Operation)",
+			"tr": "Orta operasyon pansumanı I"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y07003",
+				"name": "Srednji zavoj I"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "operation-medium-dressing-ii",
+		"id": 6967,
+		"clinics": 3,
+		"categories": [
+			"Wound Care"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Operation Medium Dressing II",
+			"sr": "Srednji zavoj II (operativni)",
+			"sr_cyrl": "Средњи завој II (оперативни)",
+			"ru": "Средняя операционная повязка II",
+			"de": "Mittlerer Verband II (Operation)",
+			"tr": "Orta operasyon pansumanı II"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y07004",
+				"name": "Srednji zavoj II"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "operation-small-dressing-ii",
+		"id": 6965,
+		"clinics": 3,
+		"categories": [
+			"Wound Care"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Operation Small Dressing II",
+			"sr": "Mali zavoj II (operativni)",
+			"sr_cyrl": "Мали завој II (оперативни)",
+			"ru": "Малая операционная повязка II",
+			"de": "Kleiner Verband II (Operation)",
+			"tr": "Küçük operasyon pansumanı II"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Y07002",
+				"name": "Mali zavoj II"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "small-wound-care",
+		"id": 2140,
+		"clinics": 3,
+		"categories": [
+			"Wound Care"
+		],
+		"specialties": [
+			"general_surgery"
+		],
+		"names": {
+			"en": "Small Wound Care",
+			"sr": "Obrada rane - mala",
+			"sr_cyrl": "Обрада ране - мала",
+			"ru": "Обработка раны - малая",
+			"de": "Wundversorgung - klein",
+			"tr": "Yara Bakımı - Küçük"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Kleine Wundversorgung"
+			],
+			"tr": [
+				"Küçük Yara Bakımı"
+			],
+			"sr": [
+				"Mala obrada rane"
+			],
+			"en": [
+				"Minor Wound Care"
+			],
+			"sr-cyrl": [
+				"Мала обрада ране"
+			],
+			"ru": [
+				"Малая обработка раны"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "surgical-suture-removal",
+		"id": 7052,
+		"clinics": 3,
+		"categories": [
+			"Wound Care"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Surgical Suture Removal",
+			"sr": "Skidanje hirurških konaca",
+			"sr_cyrl": "Скидање хируршких конаца",
+			"ru": "Снятие хирургических швов",
+			"de": "Entfernung chirurgischer Fäden",
+			"tr": "Cerrahi sütür alınması"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "suture-removal",
+		"id": 2054,
+		"clinics": 12,
+		"categories": [
+			"Wound Care",
+			"Ambulatory Surgery"
+		],
+		"specialties": [
+			"general_surgery"
+		],
+		"names": {
+			"en": "Suture Removal",
+			"sr": "Skidanje konaca",
+			"sr_cyrl": "Скидање конаца",
+			"ru": "Снятие швов",
+			"de": "Fädenentfernung",
+			"tr": "Dikiş Alınması"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "X01015",
+				"name": "Skidanje hirurških konaca"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "X01015",
+				"name": "Primarna obrada rane (bez šavova)"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "tick-removal",
+		"id": 3345,
+		"clinics": 5,
+		"categories": [
+			"Wound Care",
+			"Ambulatory Surgery"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Tick Removal",
+			"sr": "Vađenje krpelja",
+			"sr_cyrl": "Вађење крпеља",
+			"ru": "Удаление клеща",
+			"de": "Zeckenentfernung",
+			"tr": "Kene Çıkarma"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "X01062",
+				"name": "Skidanje ixodes ricinusa sa kože"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "wound-care",
+		"id": 1977,
+		"clinics": 5,
+		"categories": [
+			"Wound Care"
+		],
+		"specialties": [
+			"general_surgery"
+		],
+		"names": {
+			"en": "Wound Care",
+			"sr": "Obrada rane",
+			"sr_cyrl": "Обрада ране",
+			"ru": "Обработка раны",
+			"de": "Wundversorgung",
+			"tr": "Yara Bakımı"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "wound-dressing",
+		"id": 3302,
+		"clinics": 6,
+		"categories": [
+			"Wound Care",
+			"Orthopedics"
+		],
+		"specialties": [
+			"orthopedics_traumatology"
+		],
+		"names": {
+			"en": "Wound Dressing",
+			"sr": "Prevoj povrede",
+			"sr_cyrl": "Превој повреде",
+			"ru": "Перевязка раны",
+			"de": "Wundverband",
+			"tr": "Yara Pansumanı"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "wound-suturing-under-local-anesthesia",
+		"id": 7066,
+		"clinics": 3,
+		"categories": [
+			"Wound Care"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Wound Suturing Under Local Anesthesia",
+			"sr": "Obrada rane sa šivanjem uz lokalnu anesteziju",
+			"sr_cyrl": "Обрада ране са шивањем уз локалну анестезију",
+			"ru": "Обработка раны с ушиванием под местной анестезией",
+			"de": "Wundnaht in Lokalanästhesie",
+			"tr": "Lokal anestezi altında yara dikişi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "X03001",
+				"name": "Obrada rane sa šivanjem uz lokalnu anesteziju"
+			}
+		],
+		"hints": []
+	}
+]

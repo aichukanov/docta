@@ -23,13 +23,24 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 		try {
 			await connection.beginTransaction();
 
-			// Удаляем связи
+			// Удаляем связи. Список обязан покрывать ВСЕ таблицы, ссылающиеся
+			// на услугу: категории и привязка врачей раньше тут отсутствовали,
+			// и каждое удаление услуги оставляло висящие строки (убраны
+			// миграцией 032, которая заодно завела на них FK с CASCADE).
 			await connection.execute(
 				'DELETE FROM clinic_medical_services WHERE medical_service_id = ?',
 				[body.serviceId],
 			);
 			await connection.execute(
 				'DELETE FROM medical_services_specialties WHERE medical_service_id = ?',
+				[body.serviceId],
+			);
+			await connection.execute(
+				'DELETE FROM medical_service_categories_relations WHERE medical_service_id = ?',
+				[body.serviceId],
+			);
+			await connection.execute(
+				'DELETE FROM clinic_medical_service_doctors WHERE medical_service_id = ?',
 				[body.serviceId],
 			);
 

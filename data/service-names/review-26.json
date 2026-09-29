@@ -1,0 +1,829 @@
+[
+	{
+		"slug": "aorta-ultrasound",
+		"names": {},
+		"synonyms": {
+			"en": [
+				"Aortic Ultrasound"
+			],
+			"sr": [
+				"UZ aorte"
+			],
+			"ru": [
+				"УЗИ брюшной аорты",
+				"УЗДГ аорты"
+			],
+			"de": [
+				"Aortensonographie"
+			],
+			"tr": [
+				"Aort USG"
+			]
+		}
+	},
+	{
+		"slug": "cardiac-rehabilitation-bed-day",
+		"names": {
+			"de": "Pflegetag in der kardiologischen Rehabilitation"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Kardiorehabilitacija"
+			],
+			"ru": [
+				"Кардиореабилитация"
+			],
+			"de": [],
+			"tr": []
+		},
+		"note": "de «Bett-Tag» — калька, по-немецки «Pflegetag»; та же калька в review-31 (6945, 6946, 6961) — выровнять серию"
+	},
+	{
+		"slug": "cardiac-rhythm-cardioversion",
+		"names": {
+			"tr": "Kalp Ritmi Kardiyoversiyonu"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Kardioverzija"
+			],
+			"ru": [],
+			"de": [],
+			"tr": []
+		},
+		"note": "возможный дубль electric-cardioversion (5826, FZOCG X15005): обе — электрическая кардиоверсия — в очередь дедупликации"
+	},
+	{
+		"slug": "cardiac-telemetry",
+		"names": {
+			"sr": "Telemetrija srca"
+		},
+		"synonyms": {
+			"en": [
+				"ECG Telemetry"
+			],
+			"sr": [
+				"EKG telemetrija"
+			],
+			"ru": [
+				"Телеметрия ЭКГ",
+				"Кардиотелеметрия"
+			],
+			"de": [
+				"EKG-Telemetrie"
+			],
+			"tr": []
+		}
+	},
+	{
+		"slug": "cardiologist-examination",
+		"names": {},
+		"synonyms": {
+			"en": [
+				"Cardiologist Consultation",
+				"Cardiology Consultation"
+			],
+			"sr": [
+				"Kardiološki pregled",
+				"Konsultacija kardiologa"
+			],
+			"ru": [
+				"Приём кардиолога",
+				"Консультация кардиолога"
+			],
+			"de": [
+				"Untersuchung beim Kardiologen"
+			],
+			"tr": [
+				"Kardiyolog muayenesi"
+			]
+		}
+	},
+	{
+		"slug": "cardiologist-examination-with-ecg",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Kardiološki pregled sa EKG-om"
+			],
+			"ru": [
+				"Приём кардиолога с ЭКГ"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "cardiologist-examination-with-ecg-and-echocardiography-heart-ultrasound",
+		"names": {
+			"sr": "Pregled kardiologa sa EKG-om i ehokardiografijom (ultrazvuk srca)",
+			"tr": "EKG ve Ekokardiyografi ile Kardiyoloji Muayenesi (Kalp Ultrasonu)"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [
+				"Приём кардиолога с ЭКГ и УЗИ сердца",
+				"Осмотр кардиолога с ЭКГ и ЭхоКГ"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "cardiologist-examination-with-ultrasound",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [
+				"Приём кардиолога с УЗИ"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "carotid-artery-color-doppler",
+		"names": {},
+		"synonyms": {
+			"en": [
+				"Carotid Duplex Scan"
+			],
+			"sr": [
+				"Dopler karotida"
+			],
+			"ru": [
+				"УЗДГ сонных артерий",
+				"Дуплексное сканирование сонных артерий",
+				"Доплер сонных артерий"
+			],
+			"de": [
+				"Karotis-Duplexsonographie"
+			],
+			"tr": [
+				"Karotis Doppler USG"
+			]
+		},
+		"note": "близка к 7222 «Doppler sonografija vrata» (en «Carotid Doppler Ultrasound») и doppler-neck-blood-vessels — проверить на дубль"
+	},
+	{
+		"slug": "ecg",
+		"names": {},
+		"synonyms": {
+			"en": [
+				"Electrocardiogram",
+				"Electrocardiography"
+			],
+			"sr": [
+				"Elektrokardiogram",
+				"Elektrokardiografija"
+			],
+			"ru": [
+				"Электрокардиограмма",
+				"Электрокардиография"
+			],
+			"de": [],
+			"tr": [
+				"Elektrokardiyografi"
+			]
+		},
+		"note": "возможный дубль ecg-recording-and-interpretation (3559): её название — текст FZOCG X01040, привязанного к этой услуге — в очередь дедупликации"
+	},
+	{
+		"slug": "ecg-recording-and-interpretation",
+		"names": {},
+		"synonyms": {
+			"en": [
+				"ECG with Interpretation"
+			],
+			"sr": [],
+			"ru": [
+				"ЭКГ с расшифровкой"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "echocardiography",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		},
+		"note": "возможный дубль echocardiography-heart-ultrasound (1991, FZOCG X14002 «Ehokardiografija») — в очередь дедупликации; синонимы отданы 1991"
+	},
+	{
+		"slug": "echocardiography-heart-ultrasound",
+		"names": {
+			"sr": "Ehokardiografija (ultrazvuk srca)"
+		},
+		"synonyms": {
+			"en": [
+				"Cardiac Ultrasound",
+				"Transthoracic Echocardiography"
+			],
+			"sr": [
+				"Eho srca",
+				"UZ srca"
+			],
+			"ru": [
+				"ЭхоКГ",
+				"Эхо сердца"
+			],
+			"de": [
+				"Herzecho",
+				"Transthorakale Echokardiographie"
+			],
+			"tr": [
+				"Kalp Ekosu"
+			]
+		}
+	},
+	{
+		"slug": "electric-cardioversion",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Električna kardioverzija"
+			],
+			"ru": [
+				"Электроимпульсная терапия",
+				"ЭИТ"
+			],
+			"de": [
+				"Elektrokardioversion"
+			],
+			"tr": []
+		}
+	},
+	{
+		"slug": "ergocycle-stress-test-with-complete-ecg",
+		"names": {
+			"ru": "Нагрузочный тест на велоэргометре с полной записью ЭКГ",
+			"tr": "Tam EKG kaydı ile bisiklet ergometresinde efor testi"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [
+				"ВЭМ-проба"
+			],
+			"de": [
+				"Fahrradergometrie"
+			],
+			"tr": []
+		}
+	},
+	{
+		"slug": "ergometry-ecg-stress-test",
+		"names": {
+			"ru": "Эргометрия - нагрузочный ЭКГ-тест",
+			"de": "Ergometrie - Belastungs-EKG"
+		},
+		"synonyms": {
+			"en": [
+				"Exercise ECG"
+			],
+			"sr": [
+				"Dinamska elektrokardiografija"
+			],
+			"ru": [
+				"ЭКГ с нагрузкой"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "ergometry-stress-test",
+		"names": {
+			"ru": "Эргометрия - нагрузочный тест"
+		},
+		"synonyms": {
+			"en": [
+				"Exercise Stress Test"
+			],
+			"sr": [],
+			"ru": [
+				"Проба с физической нагрузкой"
+			],
+			"de": [],
+			"tr": []
+		},
+		"note": "возможный дубль ergometry-ecg-stress-test (2302, FZOCG X14003): эргометрия всегда идёт с ЭКГ — в очередь дедупликации"
+	},
+	{
+		"slug": "follow-up-cardiologist-examination",
+		"names": {
+			"sr": "Kontrolni pregled kardiologa"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Ponovni pregled kardiologa"
+			],
+			"ru": [
+				"Повторный приём кардиолога",
+				"Повторный осмотр кардиолога"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "holter-blood-pressure-24h",
+		"names": {},
+		"synonyms": {
+			"en": [
+				"ABPM",
+				"24-Hour Blood Pressure Monitoring"
+			],
+			"sr": [
+				"Holter pritiska"
+			],
+			"ru": [
+				"СМАД",
+				"Холтер давления",
+				"Суточный мониторинг давления"
+			],
+			"de": [
+				"24-Stunden-Blutdruckmessung"
+			],
+			"tr": [
+				"Tansiyon Holteri"
+			]
+		}
+	},
+	{
+		"slug": "holter-blood-pressure-monitoring",
+		"names": {
+			"de": "Langzeit-Blutdruckmessung"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		},
+		"note": "дубль holter-blood-pressure-24h (1993): название sr = текст FZOCG X14008, привязанного к 1993 — в очередь дедупликации; синонимы отданы 1993"
+	},
+	{
+		"slug": "holter-ecg-24h",
+		"names": {},
+		"synonyms": {
+			"en": [
+				"24-Hour Holter Monitoring",
+				"Ambulatory ECG"
+			],
+			"sr": [
+				"Holter srca"
+			],
+			"ru": [
+				"Суточное мониторирование ЭКГ",
+				"Холтер сердца"
+			],
+			"de": [
+				"Langzeit-EKG"
+			],
+			"tr": [
+				"Ritim Holter"
+			]
+		}
+	},
+	{
+		"slug": "holter-ecg-monitoring",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		},
+		"note": "дубль holter-ecg-24h (1992, FZOCG X14001 «Holter EKG») — в очередь дедупликации; синонимы отданы 1992"
+	},
+	{
+		"slug": "professor-cardiologist-examination",
+		"names": {
+			"de": "Kardiologische Untersuchung durch einen Professor"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [
+				"Консультация профессора-кардиолога",
+				"Приём профессора-кардиолога"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "stress-echocardiography",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Stres eho test",
+				"Dinamska ehokardiografija"
+			],
+			"ru": [
+				"Стресс-эхокардиография",
+				"Стресс-ЭхоКГ"
+			],
+			"de": [
+				"Stressecho"
+			],
+			"tr": []
+		}
+	},
+	{
+		"slug": "transesophageal-echocardiography-tee",
+		"names": {},
+		"synonyms": {
+			"en": [
+				"Transoesophageal Echocardiography"
+			],
+			"sr": [
+				"Transezofagealna ehokardiografija"
+			],
+			"ru": [
+				"ЧП ЭхоКГ",
+				"Чреспищеводное УЗИ сердца"
+			],
+			"de": [
+				"Schluckecho"
+			],
+			"tr": []
+		}
+	},
+	{
+		"slug": "abdominal-hysterectomy",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Uklanjanje materice abdominalnim putem"
+			],
+			"ru": [
+				"Удаление матки полостным методом",
+				"Лапаротомная гистерэктомия"
+			],
+			"de": [
+				"Abdominale Gebärmutterentfernung"
+			],
+			"tr": [
+				"Açık ameliyatla rahim alınması"
+			]
+		}
+	},
+	{
+		"slug": "abdominal-hysterectomy-with-conservation",
+		"names": {
+			"en": "Abdominal Hysterectomy with Preservation of Adnexa",
+			"sr": "Abdominalna histerektomija sa konzervacijom adneksa",
+			"de": "Abdominale Hysterektomie unter Erhalt der Adnexe",
+			"tr": "Adneksler Korunarak Abdominal Histerektomi"
+		},
+		"synonyms": {
+			"en": [
+				"Hysterectomy with Ovarian Preservation"
+			],
+			"sr": [
+				"Uklanjanje materice uz očuvanje jajnika"
+			],
+			"ru": [
+				"Удаление матки с сохранением придатков",
+				"Удаление матки с сохранением яичников"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "bartholin-gland-incision",
+		"names": {
+			"en": "Bartholin Gland Incision (Cyst or Abscess Drainage)",
+			"ru": "Вскрытие бартолиновой железы (дренаж кисты или абсцесса)",
+			"tr": "Bartolin Bezi İnsizyonu (Kist veya Apse Drenajı)"
+		},
+		"synonyms": {
+			"en": [
+				"Bartholin Abscess Drainage"
+			],
+			"sr": [
+				"Incizija Bartolinove žlijezde"
+			],
+			"ru": [
+				"Вскрытие бартолинита",
+				"Вскрытие абсцесса бартолиновой железы"
+			],
+			"de": [],
+			"tr": [
+				"Bartolin apsesi drenajı"
+			]
+		}
+	},
+	{
+		"slug": "cervical-amputation",
+		"names": {
+			"tr": "Rahim Ağzı Amputasyonu"
+		},
+		"synonyms": {
+			"en": [
+				"Cervix Amputation"
+			],
+			"sr": [
+				"Amputacija cerviksa"
+			],
+			"ru": [],
+			"de": [
+				"Portioamputation"
+			],
+			"tr": [
+				"Serviks amputasyonu"
+			]
+		}
+	},
+	{
+		"slug": "cervical-biopsy",
+		"names": {},
+		"synonyms": {
+			"en": [
+				"Cervix Biopsy"
+			],
+			"sr": [
+				"Biopsija cerviksa"
+			],
+			"ru": [],
+			"de": [
+				"Portiobiopsie"
+			],
+			"tr": [
+				"Serviks biyopsisi"
+			]
+		}
+	},
+	{
+		"slug": "condyloma-and-benign-growth-removal-vulva-vagina",
+		"names": {
+			"en": "Removal of Condylomas and Other Benign Growths of the Vulva and Vagina",
+			"ru": "Удаление кондилом и других доброкачественных образований вульвы и влагалища",
+			"de": "Entfernung von Kondylomen und anderen gutartigen Wucherungen an Vulva und Vagina",
+			"tr": "Vulva ve Vajinadaki Kondilom ve Diğer İyi Huylu Oluşumların Çıkarılması"
+		},
+		"synonyms": {
+			"en": [
+				"Genital Wart Removal"
+			],
+			"sr": [
+				"Uklanjanje genitalnih bradavica"
+			],
+			"ru": [
+				"Удаление остроконечных кондилом",
+				"Удаление генитальных бородавок"
+			],
+			"de": [
+				"Feigwarzenentfernung"
+			],
+			"tr": [
+				"Genital siğil alınması"
+			]
+		}
+	},
+	{
+		"slug": "hymenotomy",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Presijecanje himena"
+			],
+			"ru": [
+				"Рассечение девственной плевы"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "hysteroscopy-asherman-syndrome",
+		"names": {
+			"en": "Hysteroscopy for Asherman Syndrome",
+			"sr": "Histeroskopija (Ašermanov sindrom)",
+			"de": "Hysteroskopie bei Asherman-Syndrom",
+			"tr": "Asherman Sendromunda Histeroskopi"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Asherman sindrom"
+			],
+			"ru": [],
+			"de": [],
+			"tr": []
+		},
+		"note": "возможный дубль 5916 «Hysteroscopic Adhesiolysis» (лечение Ашермана — это и есть адгезиолизис); привязан FZOCG D01030 «Histeroskopija dijagnostička», а операция лечебная — проверить привязку"
+	},
+	{
+		"slug": "labiaplasty",
+		"names": {},
+		"synonyms": {
+			"en": [
+				"Labioplasty"
+			],
+			"sr": [
+				"Labioplastika"
+			],
+			"ru": [
+				"Пластика половых губ",
+				"Лабиапластика"
+			],
+			"de": [
+				"Schamlippenkorrektur"
+			],
+			"tr": []
+		}
+	},
+	{
+		"slug": "laparoscopic-myomectomy",
+		"names": {},
+		"synonyms": {
+			"en": [
+				"Laparoscopic Fibroid Removal"
+			],
+			"sr": [
+				"Laparoskopsko uklanjanje mioma"
+			],
+			"ru": [
+				"Лапароскопическое удаление миомы матки"
+			],
+			"de": [
+				"Laparoskopische Myomentfernung"
+			],
+			"tr": [
+				"Laparoskopik miyom ameliyatı"
+			]
+		},
+		"note": "привязан FZOCG D01037 «Histeroskopska miomektomija» — гистероскопическая, а не лапароскопическая: похоже на ошибочную привязку"
+	},
+	{
+		"slug": "laparoscopic-salpingectomy",
+		"names": {},
+		"synonyms": {
+			"en": [
+				"Laparoscopic Fallopian Tube Removal"
+			],
+			"sr": [
+				"Laparoskopsko uklanjanje jajovoda"
+			],
+			"ru": [
+				"Лапароскопическое удаление маточной трубы"
+			],
+			"de": [
+				"Laparoskopische Eileiterentfernung"
+			],
+			"tr": [
+				"Laparoskopik tüp alınması"
+			]
+		}
+	},
+	{
+		"slug": "laparoscopic-salpingo-oophorectomy",
+		"names": {
+			"sr": "Laparoskopska salpingo-ooforektomija"
+		},
+		"synonyms": {
+			"en": [
+				"Laparoscopic Adnexectomy"
+			],
+			"sr": [
+				"Laparoskopska adneksektomija"
+			],
+			"ru": [
+				"Лапароскопическая аднексэктомия",
+				"Лапароскопическое удаление придатков матки"
+			],
+			"de": [
+				"Laparoskopische Adnexektomie"
+			],
+			"tr": []
+		},
+		"note": "привязан FZOCG D01044 «Totalna obostrana salpingektomija-laparoskopska» — удаление труб без яичников: похоже на ошибочную привязку"
+	},
+	{
+		"slug": "total-laparoscopic-abdominal-hysterectomy",
+		"names": {},
+		"synonyms": {
+			"en": [
+				"Total Laparoscopic Hysterectomy",
+				"TLH"
+			],
+			"sr": [
+				"Laparoskopsko uklanjanje materice"
+			],
+			"ru": [
+				"Лапароскопическая экстирпация матки",
+				"Лапароскопическое удаление матки"
+			],
+			"de": [
+				"Laparoskopische Gebärmutterentfernung"
+			],
+			"tr": [
+				"Laparoskopik rahim alınması"
+			]
+		},
+		"note": "привязан FZOCG D01061 «Radikalna histerektomija sa Wertheim Meigs» — радикальная операция, а не TLH: похоже на ошибочную привязку"
+	},
+	{
+		"slug": "uterine-polypectomy-hysteroscopy",
+		"names": {
+			"en": "Hysteroscopic Uterine Polypectomy",
+			"ru": "Гистероскопическая полипэктомия матки",
+			"de": "Hysteroskopische Uteruspolypektomie"
+		},
+		"synonyms": {
+			"en": [
+				"Endometrial Polyp Removal"
+			],
+			"sr": [
+				"Histeroskopska polipektomija",
+				"Uklanjanje polipa materice"
+			],
+			"ru": [
+				"Удаление полипа эндометрия",
+				"Удаление полипа матки"
+			],
+			"de": [],
+			"tr": [
+				"Rahim polibi alınması"
+			]
+		}
+	},
+	{
+		"slug": "uterine-septum-resection-hysteroscopy",
+		"names": {
+			"en": "Hysteroscopic Uterine Septum Resection",
+			"ru": "Гистероскопическая резекция внутриматочной перегородки",
+			"de": "Hysteroskopische Uterusseptumresektion"
+		},
+		"synonyms": {
+			"en": [
+				"Hysteroscopic Septoplasty",
+				"Hysteroscopic Metroplasty"
+			],
+			"sr": [
+				"Histeroskopska resekcija septuma"
+			],
+			"ru": [
+				"Рассечение внутриматочной перегородки",
+				"Гистероскопическая метропластика"
+			],
+			"de": [],
+			"tr": [
+				"Rahim perdesi ameliyatı"
+			]
+		}
+	},
+	{
+		"slug": "vaginal-hysterectomy",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Uklanjanje materice vaginalnim putem"
+			],
+			"ru": [
+				"Влагалищная экстирпация матки",
+				"Удаление матки влагалищным доступом"
+			],
+			"de": [
+				"Vaginale Gebärmutterentfernung"
+			],
+			"tr": [
+				"Vajinal yoldan rahim alınması"
+			]
+		}
+	},
+	{
+		"slug": "vulvectomy",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	}
+]

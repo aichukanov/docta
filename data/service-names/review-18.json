@@ -1,0 +1,424 @@
+[
+	{
+		"slug": "intra-arterial-therapy-via-perfusor",
+		"names": {
+			"ru": "Внутриартериальное введение препаратов через перфузор",
+			"de": "Intraarterielle Medikamentengabe per Perfusor"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": ["Внутриартериальная инфузия"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "joint-puncture",
+		"names": {},
+		"synonyms": {
+			"en": ["Arthrocentesis"],
+			"sr": ["Artrocenteza", "Punkcija koljena"],
+			"ru": ["Артроцентез", "Пункция коленного сустава"],
+			"de": ["Kniegelenkpunktion"],
+			"tr": ["Artrosentez"]
+		},
+		"note": "тариф X01050 в medical_service_tariffs назван «Toaleta veće rane mokrim oblogama»; в OCR-исходнике (fzocg/sekundarna-ostalo/paddleocr/base.items.json) — «Punkcija zgloba u terapijske ili dijagnostičke svrhe»: привязка верна, неверно имя тарифа"
+	},
+	{
+		"slug": "lymph-node-biopsy-or-excision",
+		"names": {
+			"tr": "Lenf düğümü biyopsisi veya eksizyonu"
+		},
+		"synonyms": {
+			"en": ["Lymph Node Removal"],
+			"sr": ["Biopsija limfnog čvora"],
+			"ru": ["Биопсия лимфоузла", "Удаление лимфоузла"],
+			"de": ["Lymphknotenentfernung"],
+			"tr": ["Lenf bezi biyopsisi"]
+		},
+		"note": "привязка к fzocg-pzz X01025 ошибочна: в ПЗЗ этот код — «Stavljanje IUD» (коды pzz и sekundarna пересекаются); sekundarna X01025 верна"
+	},
+	{
+		"slug": "major-local-anesthesia",
+		"names": {
+			"de": "Größere Lokalanästhesie"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "microscopic-gastric-juice-analysis",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Mikroskopska analiza želudačnog soka"],
+			"ru": ["Микроскопия желудочного сока"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "minor-local-anesthesia",
+		"names": {
+			"de": "Kleinere Lokalanästhesie"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] },
+		"note": "тариф X01058 в medical_service_tariffs назван «Plasiranje/evakuacija nazogastrične… sonde sa ispiranjem»; в OCR-исходнике — «Lokalna anestezija - manja»: привязка верна, неверно имя тарифа"
+	},
+	{
+		"slug": "nasogastric-or-orogastric-tube-placement-with-lavage",
+		"names": {
+			"de": "Anlage/Entfernung einer nasogastralen oder orogastralen Sonde mit Lavage"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "nonspecific-bronchial-provocation-test",
+		"names": {},
+		"synonyms": {
+			"en": ["Methacholine Challenge Test"],
+			"sr": ["Metaholinski test"],
+			"ru": ["Метахолиновый тест", "Бронхопровокационная проба"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "occlusive-plethysmography-of-arterial-or-venous-flow",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "paraphimosis-reduction",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": ["Репозиция парафимоза"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "phlebomat-apparatus-therapy",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] },
+		"note": "тариф X01070 в medical_service_tariffs — «Terapija febrolnat aparatom», ошибка OCR: в PaddleOCR-исходнике «Terapija flebomat aparatom»"
+	},
+	{
+		"slug": "photoplethysmography",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "pleural-puncture-with-lavage",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Плевральная пункция с промыванием"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "primary-wound-care-with-sutures",
+		"names": {
+			"de": "Primäre Wundversorgung mit Naht"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["ПХО раны с наложением швов", "Первичная хирургическая обработка раны с наложением швов"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "primary-wound-care-without-sutures",
+		"names": {
+			"de": "Primäre Wundversorgung ohne Naht"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Zbrinjavanje rane bez šivanja"],
+			"ru": ["ПХО раны без наложения швов", "Первичная хирургическая обработка раны без наложения швов"],
+			"de": [],
+			"tr": []
+		},
+		"note": "тариф sekundarna X01014 в medical_service_tariffs назван «Toaleta vještačkog anusa» (это X01013); в OCR-исходнике X01014 — «Primarna obrada rane (bez šavova)»: привязка верна, неверно имя тарифа"
+	},
+	{
+		"slug": "pyrotherapy",
+		"names": {},
+		"synonyms": {
+			"en": ["Fever Therapy"],
+			"sr": [],
+			"ru": ["Пирогенная терапия"],
+			"de": ["Fiebertherapie"],
+			"tr": []
+		}
+	},
+	{
+		"slug": "rapid-blood-glucose-test",
+		"names": {
+			"de": "Blutzucker-Schnelltest"
+		},
+		"synonyms": {
+			"en": ["Fingerstick Glucose Test"],
+			"sr": ["Određivanje glikemije glukometrom", "Mjerenje šećera glukometrom"],
+			"ru": ["Глюкометрия", "Измерение сахара глюкометром"],
+			"de": [],
+			"tr": ["Parmaktan kan şekeri ölçümü"]
+		},
+		"note": "тариф X01034 в medical_service_tariffs назван «Postavljanje kanile i uključivanje infuzije» (это X01033); в OCR-исходнике X01034 — «Određivanje glikemije glukometrom»: привязка верна, неверно имя тарифа"
+	},
+	{
+		"slug": "rectoscopy-with-biopsy",
+		"names": {},
+		"synonyms": { "en": [], "sr": ["Rektoskopija sa biopsijom"], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "rheography-of-upper-or-lower-extremities",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": ["Реовазография конечностей"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "secondary-wound-care",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["ВХО раны", "Вторичная хирургическая обработка раны"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "skin-tumor-excision-with-reconstruction",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": ["Удаление новообразования кожи с пластикой"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "sputum-collection-for-bacterial-and-fungal-analysis",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "sputum-collection-for-cytology",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "sternal-puncture",
+		"names": {},
+		"synonyms": {
+			"en": ["Sternal Bone Marrow Aspiration"],
+			"sr": ["Punkcija koštane srži iz grudne kosti"],
+			"ru": ["Пункция костного мозга из грудины"],
+			"de": ["Knochenmarkpunktion am Brustbein"],
+			"tr": []
+		}
+	},
+	{
+		"slug": "subcutaneous-or-intramuscular-injection",
+		"names": {
+			"ru": "Подкожная или внутримышечная инъекция"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "superficial-vein-pressure-measurement",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": ["Флеботонометрия"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "swab-collection-for-laboratory-analysis",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "thermography",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": ["Тепловизионная диагностика"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "topical-local-anesthesia",
+		"names": {},
+		"synonyms": {
+			"en": ["Topical Anesthesia"],
+			"sr": ["Površinska anestezija", "Topikalna anestezija"],
+			"ru": ["Поверхностная анестезия", "Аппликационная анестезия"],
+			"de": [],
+			"tr": ["Topikal anestezi"]
+		}
+	},
+	{
+		"slug": "tube-feeding-per-meal",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Hranjenje preko sonde"],
+			"ru": ["Кормление через зонд"],
+			"de": [],
+			"tr": []
+		},
+		"note": "тариф X01055 в medical_service_tariffs назван «Lokalna anestezija»; в OCR-исходнике — «Ishrana bolesnika preko sonde, jedan obrok»: привязка верна, неверно имя тарифа"
+	},
+	{
+		"slug": "urinary-catheter-placement",
+		"names": {},
+		"synonyms": {
+			"en": ["Foley Catheter Insertion"],
+			"sr": ["Postavljanje urinarnog katetera"],
+			"ru": ["Постановка мочевого катетера", "Установка катетера Фолея"],
+			"de": [],
+			"tr": []
+		},
+		"note": "тариф X01032 в medical_service_tariffs назван «Uzimanje sputuma za citološku analizu»; в OCR-исходнике — «Kateterizacija mokraćne bešike kod žene sa ili bez ispiranja» (только у женщин, у мужчин — X01035). Возможный дубль bladder-catheterization (review-21) — на слияние"
+	},
+	{
+		"slug": "viral-wart-surgical-removal",
+		"names": {
+			"en": "Surgical Removal of Viral Warts",
+			"de": "Chirurgische Entfernung von Viruswarzen",
+			"tr": "Viral siğillerin cerrahi olarak alınması"
+		},
+		"synonyms": {
+			"en": ["Wart Removal"],
+			"sr": ["Uklanjanje bradavica"],
+			"ru": ["Удаление бородавок", "Иссечение бородавок"],
+			"de": ["Warzenentfernung"],
+			"tr": ["Siğil alma"]
+		}
+	},
+	{
+		"slug": "aesthetic-consultation",
+		"names": {},
+		"synonyms": {
+			"en": ["Aesthetic Medicine Consultation"],
+			"sr": [],
+			"ru": ["Консультация по эстетической медицине", "Консультация врача-косметолога"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "first-neurosurgeon-examination",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Первичный приём нейрохирурга", "Первичная консультация нейрохирурга"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "first-surgical-examination",
+		"names": {
+			"ru": "Первичный осмотр хирурга"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Первичная консультация хирурга", "Первичный приём хирурга"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "first-thoracic-surgeon-examination",
+		"names": {
+			"ru": "Первичный осмотр торакального хирурга"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": ["Первичный приём торакального хирурга"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "first-vascular-surgeon-examination",
+		"names": {
+			"ru": "Первичный осмотр сосудистого хирурга"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Первичный приём сосудистого хирурга", "Первичный приём ангиохирурга"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "follow-up-neurosurgeon-examination",
+		"names": {
+			"ru": "Контрольный осмотр нейрохирурга",
+			"de": "Neurochirurgische Kontrolluntersuchung"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Ponovni pregled neurohirurga"],
+			"ru": ["Повторный осмотр нейрохирурга", "Повторный приём нейрохирурга"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "follow-up-surgical-examination",
+		"names": {
+			"tr": "Genel cerrahi kontrol muayenesi"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Kontrolni pregled hirurga"],
+			"ru": ["Контрольный осмотр хирурга", "Повторный приём хирурга"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "follow-up-thoracic-surgeon-examination",
+		"names": {
+			"sr": "Kontrolni pregled — grudni hirurg",
+			"ru": "Контрольный осмотр торакального хирурга",
+			"de": "Kontrolluntersuchung beim Thoraxchirurgen",
+			"tr": "Göğüs cerrahı kontrol muayenesi"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Kontrolni pregled specijaliste grudne hirurgije", "Ponovni pregled — grudni hirurg"],
+			"ru": ["Повторный приём торакального хирурга"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "follow-up-vascular-surgeon-examination",
+		"names": {
+			"ru": "Контрольный осмотр сосудистого хирурга",
+			"tr": "Damar cerrahı kontrol muayenesi"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Ponovni pregled — vaskularni hirurg"],
+			"ru": ["Повторный приём сосудистого хирурга", "Повторный приём ангиохирурга"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "plastic-surgeon-follow-up-examination",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": ["Повторный приём пластического хирурга"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "surgical-examination",
+		"names": {},
+		"synonyms": {
+			"en": ["Surgeon Consultation"],
+			"sr": ["Pregled hirurga"],
+			"ru": ["Осмотр хирурга", "Приём хирурга", "Консультация хирурга"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "vascular-surgeon-examination",
+		"names": {
+			"de": "Untersuchung beim Gefäßchirurgen"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Приём ангиохирурга", "Приём флеболога", "Консультация сосудистого хирурга"],
+			"de": [],
+			"tr": []
+		}
+	}
+]

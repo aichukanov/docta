@@ -19,6 +19,7 @@ import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createJiti } from 'jiti';
+import { PROTECTED_LATIN_TOKENS } from '../common/sr-cyrl-protected.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..', '..');
@@ -28,103 +29,6 @@ const { toCyrillic } = await jiti.import(
 	resolve(ROOT, 'common/serbian-transliteration.ts'),
 );
 
-// Токены, которые остаются латиницей: бренды, международные обозначения,
-// иностранные фамилии в названиях формул/методик.
-const PROTECTED_LATIN_TOKENS = [
-	'LASIK',
-	'Fowler-Sabine',
-	'PSA',
-	'HbA1c',
-	'HCG',
-	'HCV',
-	'TPHA',
-	// PAPP-A намеренно НЕ защищён: батч 7 зафиксировал «ПАПП-А» кириллицей,
-	// эта форма уже в проде и проверена (см. PROGRESS.md)
-	'OCT',
-	'VEGF',
-	'FRC',
-	'Rh',
-	'IgE',
-	'IgG',
-	'IgM',
-	// бренды имплантационных/ортодонтических систем и препаратов (тир B)
-	'Nobel Biocare',
-	'Straumann',
-	'Bredent',
-	'Invisalign',
-	'Vistabel',
-	'Botox',
-	// протоколы, материалы, обозначения
-	'All on 4',
-	'All on 6',
-	'E-max',
-	'CAD/CAM',
-	'CoCr',
-	'PRP',
-	'IOL',
-	// римские цифры стадий: без защиты «I-III» превращается в «И-ИИИ»
-	'I-III',
-	'II-III',
-	'I-II',
-
-	// --- волна 2 (анализы и услуги, 2026-09) ---
-	// Латинские видовые названия: транслитерация ломает их в «Хелицобацтер».
-	// Идут первыми: составные токены должны перехватываться раньше одиночных.
-	'Bordetella pertussis',
-	'Chlamydia trachomatis',
-	'Clostridium difficile',
-	'Gardnerella vaginalis',
-	'Helicobacter pylori',
-	'Mycoplasma genitalium',
-	'Mycoplasma hominis',
-	'Neisseria gonorrhoeae',
-	'Toxoplasma gondii',
-	'Trichomonas vaginalis',
-	'Ureaplasma urealyticum',
-	'Epstein-Barr',
-	'Candida',
-	'Demodex',
-	// Онкомаркеры: «CA» отдельно не защищаем — только вместе с номером,
-	// иначе под защиту попадёт любое случайное «ca» в тексте.
-	'CA 125',
-	'CA 15-3',
-	'CA 19-9',
-	'CA 72-4',
-	'CYFRA 21-1',
-	'HE4',
-	'NSE',
-	'ROMA',
-	// Лабораторные обозначения и методы
-	'Anti-CCP',
-	'Anti-Tg',
-	'ANA',
-	'ASA',
-	'ELISA',
-	'IGRA',
-	'IgA',
-	'IgE',
-	'HBs',
-	'HPV',
-	'HSV1',
-	'HSV2',
-	'KOH',
-	'LE',
-	'USB',
-	'SARS-CoV-2',
-	'spike',
-	'SHBG',
-	'TSHR',
-	'TSH',
-	'ACE',
-	// Услуги: аппаратура и материалы
-	'Air-Flow',
-	'Bio-Oss',
-	'CBCT',
-	'LBC',
-	'CT',
-	// НЕ защищаем: DNK, RNK, PCR, EKG, HOBP, ORL, B12, B6 — у них устоявшаяся
-	// сербская кириллица (ДНК, ПЦР, ЕКГ, ХОБП, ОРЛ, Б12), список их только испортит.
-];
 
 const FIELDS = ['what', 'how', 'when', 'prep', 'abnormal'];
 const DATA_DIR = 'data/entity-reference';

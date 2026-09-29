@@ -1,0 +1,1179 @@
+[
+	{
+		"slug": "body-composition-analysis",
+		"id": 3954,
+		"clinics": 3,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"general_medicine"
+		],
+		"names": {
+			"en": "Body Composition Analysis",
+			"sr": "Analiza tjelesne kompozicije",
+			"sr_cyrl": "Анализа телесне композиције",
+			"ru": "Анализ состава тела",
+			"de": "Körperzusammensetzungsanalyse",
+			"tr": "Vücut Kompozisyon Analizi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": [
+			"ekavica_sr: telesne",
+			"шаг 1 уже поправил sr: «Analiza telesne kompozicije» → «Analiza tjelesne kompozicije» — не переделывай без причины"
+		]
+	},
+	{
+		"slug": "family-medicine-examination",
+		"id": 1963,
+		"clinics": 4,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"family_medicine"
+		],
+		"names": {
+			"en": "Family Medicine Examination",
+			"sr": "Pregled specijaliste porodične medicine",
+			"sr_cyrl": "Преглед специјалисте породичне медицине",
+			"ru": "Осмотр семейного врача",
+			"de": "Familienmedizinische Untersuchung",
+			"tr": "Aile Hekimliği Muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "first-curative-examination",
+		"id": 7028,
+		"clinics": 3,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"general_medicine"
+		],
+		"names": {
+			"en": "First Curative Examination",
+			"sr": "Prvi kurativni pregled",
+			"sr_cyrl": "Први куративни преглед",
+			"ru": "Первичный лечебный осмотр",
+			"de": "Erste kurative Untersuchung",
+			"tr": "İlk küratif muayene"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "A02001",
+				"name": "Prvi kurativni pregled"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "first-infectious-disease-specialist-examination",
+		"id": 4886,
+		"clinics": 3,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"general_medicine",
+			"infectious_diseases"
+		],
+		"names": {
+			"en": "First Infectious Disease Specialist Examination",
+			"sr": "Prvi pregled - infektolog",
+			"sr_cyrl": "Први преглед - инфектолог",
+			"ru": "Первичная консультация инфекциониста",
+			"de": "Erste infektiologische Untersuchung",
+			"tr": "İlk enfeksiyon hastalıkları muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "I01001",
+				"name": "Preventivni pregled rizičnog neonatusa i odojčeta"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "I01001",
+				"name": "Prvi pregled - infektolog"
+			}
+		],
+		"hints": [
+			"short_vs_en: sr: 25/47"
+		]
+	},
+	{
+		"slug": "first-microbiologist-examination",
+		"id": 4982,
+		"clinics": 3,
+		"categories": [
+			"General Medicine",
+			"Laboratory Services"
+		],
+		"specialties": [
+			"general_medicine"
+		],
+		"names": {
+			"en": "First Microbiologist Examination",
+			"sr": "Prvi specijalistički pregled - mikrobiolog",
+			"sr_cyrl": "Први специјалистички преглед - микробиолог",
+			"ru": "Первичная консультация микробиолога",
+			"de": "Erste mikrobiologische Untersuchung",
+			"tr": "İlk mikrobiyoloji muayenesi"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Erste mikrobiologische Facharztuntersuchung"
+			],
+			"en": [
+				"First Microbiologist Specialist Examination"
+			],
+			"tr": [
+				"İlk mikrobiyoloji uzman muayenesi"
+			],
+			"sr": [
+				"Prvi specijalistički pregled mikrobiolog"
+			],
+			"ru": [
+				"Первичный осмотр микробиолога"
+			],
+			"sr-cyrl": [
+				"Први специјалистички преглед микробиолог"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "K01001",
+				"name": "Prvi specijalistički pregled"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "K01001",
+				"name": "Prvi specijalistički pregled"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "first-nephrologist-examination",
+		"id": 4880,
+		"clinics": 3,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"general_medicine",
+			"nephrology"
+		],
+		"names": {
+			"en": "First Nephrologist Examination",
+			"sr": "Prvi pregled - nefrolog",
+			"sr_cyrl": "Први преглед - нефролог",
+			"ru": "Первичная консультация нефролога",
+			"de": "Erste nephrologische Untersuchung",
+			"tr": "İlk nefroloji muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "E09001",
+				"name": "Prvi pregled - nefrolog"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "first-radiologist-examination",
+		"id": 4924,
+		"clinics": 5,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"radiology",
+			"general_medicine"
+		],
+		"names": {
+			"en": "First Radiologist Examination",
+			"sr": "Prvi specijalistički pregled - radiolog",
+			"sr_cyrl": "Први специјалистички преглед - радиолог",
+			"ru": "Первичная консультация рентгенолога",
+			"de": "Erste radiologische Untersuchung",
+			"tr": "İlk radyoloji muayenesi"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Erste fachärztliche radiologische Untersuchung"
+			],
+			"en": [
+				"First Radiologist Specialist Examination"
+			],
+			"tr": [
+				"İlk radyoloji uzman muayenesi"
+			],
+			"sr": [
+				"Prvi specijalistički pregled radiologa"
+			],
+			"ru": [
+				"Первичный осмотр радиолога"
+			],
+			"sr-cyrl": [
+				"Први специјалистички преглед радиолога"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "J01001",
+				"name": "Prvi specijalistički pregled (radiolog)"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "J01001",
+				"name": "Prvi specijalistički pregled (radiolog)"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "follow-up-general-practitioner-examination",
+		"id": 1560,
+		"clinics": 8,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"internal_medicine",
+			"family_medicine",
+			"general_medicine"
+		],
+		"names": {
+			"en": "Follow-up General Practitioner Examination",
+			"sr": "Kontrolni pregled opšteg ljekara",
+			"sr_cyrl": "Контролни преглед општег лекара",
+			"ru": "Повторный осмотр терапевта",
+			"de": "Nachuntersuchung Allgemeinarzt",
+			"tr": "Genel Pratisyen Kontrol Muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": [
+			"ekavica_sr: lekara",
+			"шаг 1 уже поправил sr: «Kontrolni pregled opšteg lekara» → «Kontrolni pregled opšteg ljekara» — не переделывай без причины"
+		]
+	},
+	{
+		"slug": "follow-up-infectious-disease-specialist-examination",
+		"id": 4887,
+		"clinics": 3,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"general_medicine",
+			"infectious_diseases"
+		],
+		"names": {
+			"en": "Follow-up Infectious Disease Specialist Examination",
+			"sr": "Ponovni pregled - infektolog",
+			"sr_cyrl": "Поновни преглед - инфектолог",
+			"ru": "Контрольная консультация инфекциониста",
+			"de": "Infektiologische Kontrolluntersuchung",
+			"tr": "Kontrol enfeksiyon hastalıkları muayenesi"
+		},
+		"existing_synonyms": {
+			"en": [
+				"Follow-up Infectologist Examination"
+			],
+			"de": [
+				"Kontrolluntersuchung Infektiologie"
+			],
+			"sr": [
+				"Kontrolni infektološki pregled"
+			],
+			"sr-cyrl": [
+				"Контролни инфектолошки преглед"
+			],
+			"ru": [
+				"Повторный осмотр инфекциониста"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "I01002",
+				"name": "Kontrolni preventivni pregled rizičnog neonatusa i odojčeta"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "I01002",
+				"name": "Ponovni (kontrolni) pregled - infektolog"
+			}
+		],
+		"hints": [
+			"short_vs_en: sr: 28/51"
+		]
+	},
+	{
+		"slug": "follow-up-internist-examination",
+		"id": 3904,
+		"clinics": 5,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"internal_medicine"
+		],
+		"names": {
+			"en": "Follow-up Internist Examination",
+			"sr": "Kontrolni internistički pregled",
+			"sr_cyrl": "Контролни интернистички преглед",
+			"ru": "Контрольный осмотр интерниста",
+			"de": "Internistische Nachuntersuchung",
+			"tr": "Dahiliye Kontrol Muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "E02002",
+				"name": "Ponovni (kontrolni) pregled - internista"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "follow-up-nephrologist-examination",
+		"id": 4881,
+		"clinics": 3,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"general_medicine",
+			"nephrology"
+		],
+		"names": {
+			"en": "Follow-up Nephrologist Examination",
+			"sr": "Ponovni pregled - nefrolog",
+			"sr_cyrl": "Поновни преглед - нефролог",
+			"ru": "Контрольная консультация нефролога",
+			"de": "Nephrologische Kontrolluntersuchung",
+			"tr": "Kontrol nefroloji muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "E09002",
+				"name": "Ponovni (kontrolni) pregled - nefrolog"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "follow-up-professor-examination",
+		"id": 1938,
+		"clinics": 3,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"internal_medicine"
+		],
+		"names": {
+			"en": "Follow-up Professor Examination",
+			"sr": "Kontrolni profesorski pregled",
+			"sr_cyrl": "Контролни професорски преглед",
+			"ru": "Контрольный профессорский осмотр",
+			"de": "Professorale Kontrolluntersuchung",
+			"tr": "Kontrol Profesör Muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "follow-up-specialist-examination",
+		"id": 2061,
+		"clinics": 3,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"internal_medicine"
+		],
+		"names": {
+			"en": "Follow-up Specialist Examination",
+			"sr": "Kontrolni specijalistički pregled",
+			"sr_cyrl": "Контролни специјалистички преглед",
+			"ru": "Контрольный специализированный осмотр",
+			"de": "Facharzt-Kontrolluntersuchung",
+			"tr": "Kontrol Uzman Muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "general-practitioner-examination",
+		"id": 1556,
+		"clinics": 9,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"internal_medicine",
+			"family_medicine",
+			"general_medicine"
+		],
+		"names": {
+			"en": "General Practitioner Examination",
+			"sr": "Pregled opšteg ljekara",
+			"sr_cyrl": "Преглед општег лекара",
+			"ru": "Осмотр терапевта",
+			"de": "Allgemeinarztuntersuchung",
+			"tr": "Genel Pratisyen Muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": [
+			"ekavica_sr: lekara",
+			"шаг 1 уже поправил sr: «Pregled opšteg lekara» → «Pregled opšteg ljekara» — не переделывай без причины"
+		]
+	},
+	{
+		"slug": "hematologist-examination",
+		"id": 1962,
+		"clinics": 4,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"hematology"
+		],
+		"names": {
+			"en": "Hematologist Examination",
+			"sr": "Pregled hematologa",
+			"sr_cyrl": "Преглед хематолога",
+			"ru": "Осмотр гематолога",
+			"de": "Hämatologische Untersuchung",
+			"tr": "Hematoloji Muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "internist-examination",
+		"id": 3898,
+		"clinics": 4,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"internal_medicine"
+		],
+		"names": {
+			"en": "Internist Examination",
+			"sr": "Internistički pregled",
+			"sr_cyrl": "Интернистички преглед",
+			"ru": "Осмотр интерниста",
+			"de": "Internistische Untersuchung",
+			"tr": "Dahiliye Muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "internist-examination-with-ecg",
+		"id": 1942,
+		"clinics": 7,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"internal_medicine"
+		],
+		"names": {
+			"en": "Internist Examination with ECG",
+			"sr": "Pregled interniste sa EKG-om",
+			"sr_cyrl": "Преглед интернисте са ЕКГ-ом",
+			"ru": "Осмотр терапевта с ЭКГ",
+			"de": "Internistische Untersuchung mit EKG",
+			"tr": "EKG ile Dahiliye Muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "medical-certificate-for-athletes",
+		"id": 4540,
+		"clinics": 5,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"general_medicine"
+		],
+		"names": {
+			"en": "Medical Certificate for Athletes",
+			"sr": "Ljekarsko uvjerenje za sportiste",
+			"sr_cyrl": "Љекарско увјерење за спортисте",
+			"ru": "Медицинская справка для спортсменов",
+			"de": "Ärztliches Attest für Sportler",
+			"tr": "Sporcular İçin Sağlık Raporu"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "medical-certificate-for-boat-operation-up-to-12-meters",
+		"id": 4531,
+		"clinics": 5,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"general_medicine"
+		],
+		"names": {
+			"en": "Medical Certificate for Boat Operation up to 12 Meters",
+			"sr": "Ljekarsko uvjerenje za upravljanje čamcem do 12 metara",
+			"sr_cyrl": "Љекарско увјерење за управљање чамцем до 12 метара",
+			"ru": "Медицинская справка для управления лодкой до 12 метров",
+			"de": "Ärztliches Attest für Bootsführung bis 12 Meter",
+			"tr": "12 Metreye Kadar Tekne Kullanımı İçin Sağlık Raporu"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "medical-certificate-for-child-adoption",
+		"id": 4535,
+		"clinics": 7,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"general_medicine"
+		],
+		"names": {
+			"en": "Medical Certificate for Child Adoption",
+			"sr": "Ljekarsko uvjerenje za podobnost za usvajanje djeteta",
+			"sr_cyrl": "Љекарско увјерење за подобност за усвајање дјетета",
+			"ru": "Медицинская справка для усыновления ребёнка",
+			"de": "Ärztliches Attest für Kindesadoption",
+			"tr": "Çocuk Evlat Edinme İçin Sağlık Raporu"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "medical-certificate-for-collective-accommodation",
+		"id": 4539,
+		"clinics": 6,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"general_medicine"
+		],
+		"names": {
+			"en": "Medical Certificate for Collective Accommodation",
+			"sr": "Ljekarsko uvjerenje za kolektivni smještaj",
+			"sr_cyrl": "Љекарско увјерење за колективни смјештај",
+			"ru": "Медицинская справка для коллективного проживания",
+			"de": "Ärztliches Attest für Gemeinschaftsunterkunft",
+			"tr": "Toplu Konaklama İçin Sağlık Raporu"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "medical-certificate-for-court-expert",
+		"id": 4537,
+		"clinics": 6,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"general_medicine"
+		],
+		"names": {
+			"en": "Medical Certificate for Court Expert",
+			"sr": "Ljekarsko uvjerenje za posao sudskog vještaka",
+			"sr_cyrl": "Љекарско увјерење за посао судског вјештака",
+			"ru": "Медицинская справка для работы судебным экспертом",
+			"de": "Ärztliches Attest für Gerichtssachverständige",
+			"tr": "Mahkeme Bilirkişisi İçin Sağlık Raporu"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "medical-certificate-for-difficult-working-conditions-without-high-risk",
+		"id": 4526,
+		"clinics": 6,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"general_medicine"
+		],
+		"names": {
+			"en": "Medical Certificate for Difficult Working Conditions Without High Risk",
+			"sr": "Ljekarsko uvjerenje za otežane uslove bez povećanog rizika",
+			"sr_cyrl": "Љекарско увјерење за отежане услове без повећаног ризика",
+			"ru": "Медицинская справка для работы в тяжёлых условиях без повышенного риска",
+			"de": "Ärztliches Attest für erschwerte Arbeitsbedingungen ohne erhöhtes Risiko",
+			"tr": "Yüksek Risk Olmaksızın Zorlu Çalışma Koşulları İçin Sağlık Raporu"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "medical-certificate-for-driving-instructor-category-b-c-d-e",
+		"id": 4530,
+		"clinics": 4,
+		"categories": [
+			"General Medicine"
+		],
+		"specialties": [
+			"general_medicine"
+		],
+		"names": {
+			"en": "Medical Certificate for Driving Instructor Category B, C, D, E",
+			"sr": "Ljekarsko uvjerenje za posao instruktora B, C, D i E kategorije",
+			"sr_cyrl": "Љекарско увјерење за посао инструктора B, C, D и E категорије",
+			"ru": "Медицинская справка для инструктора по вождению категории B, C, D, E",
+			"de": "Ärztliches Attest für Fahrlehrer Kategorie B, C, D, E",
+			"tr": "B, C, D, E Kategorisi Sürücü Eğitmeni İçin Sağlık Raporu"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "biorevitalization",
+		"id": 3771,
+		"clinics": 3,
+		"categories": [
+			"Dermatology",
+			"Plastic Surgery"
+		],
+		"specialties": [
+			"dermatovenerology",
+			"plastic_surgery",
+			"aesthetic_medicine"
+		],
+		"names": {
+			"en": "Biorevitalization",
+			"sr": "Biorevitalizacija",
+			"sr_cyrl": "Биоревитализација",
+			"ru": "Биоревитализация",
+			"de": "Biorevitalisierung",
+			"tr": "Biorevitalizasyon"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "botox-injection",
+		"id": 2163,
+		"clinics": 4,
+		"categories": [
+			"Dermatology",
+			"Plastic Surgery"
+		],
+		"specialties": [
+			"aesthetic_medicine"
+		],
+		"names": {
+			"en": "Botox Injection",
+			"sr": "Botoks injekcija",
+			"sr_cyrl": "Botox инјекција",
+			"ru": "Инъекция Botox",
+			"de": "Botox Injektion",
+			"tr": "Botoks Enjeksiyonu"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "botox-single-region",
+		"id": 3767,
+		"clinics": 3,
+		"categories": [
+			"Dermatology",
+			"Plastic Surgery"
+		],
+		"specialties": [
+			"dermatovenerology",
+			"aesthetic_medicine"
+		],
+		"names": {
+			"en": "Botox Single Region",
+			"sr": "Botox jedna regija",
+			"sr_cyrl": "Ботокс једна регија",
+			"ru": "Ботокс одна зона",
+			"de": "Botox eine Region",
+			"tr": "Botoks Tek Bölge"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "botox-treatment",
+		"id": 4188,
+		"clinics": 3,
+		"categories": [
+			"Dermatology",
+			"Plastic Surgery"
+		],
+		"specialties": [
+			"dermatovenerology",
+			"plastic_surgery"
+		],
+		"names": {
+			"en": "Botox Treatment",
+			"sr": "Botox",
+			"sr_cyrl": "Ботокс",
+			"ru": "Лечение ботоксом",
+			"de": "Botox Behandlung",
+			"tr": "Botoks tedavisi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "chemical-peeling-face",
+		"id": 4143,
+		"clinics": 3,
+		"categories": [
+			"Dermatology"
+		],
+		"specialties": [
+			"dermatovenerology"
+		],
+		"names": {
+			"en": "Chemical Peeling Face",
+			"sr": "Hemijski piling lica",
+			"sr_cyrl": "Хемијски пилинг лица",
+			"ru": "Химический пилинг лица",
+			"de": "Chemisches Peeling Gesicht",
+			"tr": "Kimyasal Peeling Yüz"
+		},
+		"existing_synonyms": {
+			"en": [
+				"Chemical Peel Face"
+			],
+			"sr": [
+				"Hemijski piling – lice"
+			],
+			"sr-cyrl": [
+				"Хемијски пилинг – лице"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "dermatologist-examination",
+		"id": 1958,
+		"clinics": 9,
+		"categories": [
+			"Dermatology"
+		],
+		"specialties": [
+			"dermatovenerology"
+		],
+		"names": {
+			"en": "Dermatologist Examination",
+			"sr": "Pregled dermatologa",
+			"sr_cyrl": "Преглед дерматолога",
+			"ru": "Осмотр дерматолога",
+			"de": "Dermatologische Untersuchung",
+			"tr": "Dermatoloji Muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "dermatologist-examination-with-dermatoscopy",
+		"id": 2311,
+		"clinics": 3,
+		"categories": [
+			"Dermatology"
+		],
+		"specialties": [
+			"pulmonology"
+		],
+		"names": {
+			"en": "Dermatologist Examination with Dermatoscopy",
+			"sr": "Pregled dermatologa sa dermoskopijom",
+			"sr_cyrl": "Преглед дерматолога са дермоскопијом",
+			"ru": "Осмотр дерматолога с дерматоскопией",
+			"de": "Dermatologische Untersuchung mit Dermatoskopie",
+			"tr": "Dermatoskopili Dermatoloji Muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "dermatoscopy",
+		"id": 2187,
+		"clinics": 4,
+		"categories": [
+			"Dermatology"
+		],
+		"specialties": [
+			"dermatovenerology"
+		],
+		"names": {
+			"en": "Dermatoscopy",
+			"sr": "Dermatoskopija",
+			"sr_cyrl": "Дерматоскопија",
+			"ru": "Дерматоскопия",
+			"de": "Dermatoskopie",
+			"tr": "Dermatoskopi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "facial-mesotherapy-single-treatment",
+		"id": 3769,
+		"clinics": 3,
+		"categories": [
+			"Dermatology",
+			"Plastic Surgery"
+		],
+		"specialties": [
+			"dermatovenerology",
+			"aesthetic_medicine"
+		],
+		"names": {
+			"en": "Facial Mesotherapy Single Treatment",
+			"sr": "Mezoterapija lica jedan tretman",
+			"sr_cyrl": "Мезотерапија лица један третман",
+			"ru": "Мезотерапия лица один сеанс",
+			"de": "Gesichtsmesotherapie Einzelbehandlung",
+			"tr": "Yüz Mezoterapi Tek Seans"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "follow-up-dermatologist-examination",
+		"id": 2298,
+		"clinics": 6,
+		"categories": [
+			"Dermatology"
+		],
+		"specialties": [
+			"dermatovenerology"
+		],
+		"names": {
+			"en": "Follow-up Dermatologist Examination",
+			"sr": "Kontrolni pregled dermatologa",
+			"sr_cyrl": "Контролни преглед дерматолога",
+			"ru": "Контрольный осмотр дерматолога",
+			"de": "Dermatologische Kontrolluntersuchung",
+			"tr": "Kontrol Dermatoloji Muayenesi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "P01002",
+				"name": "Ponovni (kontrolni) pregled - dermatovenerolog"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "hyaluronic-acid-filler",
+		"id": 2165,
+		"clinics": 4,
+		"categories": [
+			"Dermatology"
+		],
+		"specialties": [
+			"aesthetic_medicine"
+		],
+		"names": {
+			"en": "Hyaluronic Acid Filler",
+			"sr": "Hijaluron filer",
+			"sr_cyrl": "Hijaluron филер",
+			"ru": "Филлер с гиалуроновой кислотой",
+			"de": "Hyaluronsäure Filler",
+			"tr": "Hyaluronik Asit Dolgu"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "hyaluronic-filler",
+		"id": 3490,
+		"clinics": 4,
+		"categories": [
+			"Dermatology",
+			"Plastic Surgery"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Hyaluronic Filler",
+			"sr": "Hijaluronski filer",
+			"sr_cyrl": "Хијалуронски филер",
+			"ru": "Гиалуроновый филлер",
+			"de": "Hyaluronfiller",
+			"tr": "Hyaluronik Dolgu"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "hyaluronic-fillers-1ml",
+		"id": 3766,
+		"clinics": 4,
+		"categories": [
+			"Dermatology",
+			"Plastic Surgery"
+		],
+		"specialties": [
+			"plastic_surgery",
+			"aesthetic_medicine"
+		],
+		"names": {
+			"en": "Hyaluronic Fillers 1ml",
+			"sr": "Hijaluronski fileri 1ml",
+			"sr_cyrl": "Хијалуронски филери 1мл",
+			"ru": "Гиалуроновые филлеры 1мл",
+			"de": "Hyaluronsäure-Filler 1ml",
+			"tr": "Hyaluronik Dolgu 1ml"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "hyperhidrosis-botox-treatment",
+		"id": 4190,
+		"clinics": 4,
+		"categories": [
+			"Dermatology",
+			"Plastic Surgery"
+		],
+		"specialties": [
+			"dermatovenerology",
+			"plastic_surgery"
+		],
+		"names": {
+			"en": "Hyperhidrosis Botox Treatment",
+			"sr": "Hiperhidroza",
+			"sr_cyrl": "Хиперхидроза",
+			"ru": "Лечение гипергидроза ботоксом",
+			"de": "Hyperhidrose Botox-Behandlung",
+			"tr": "Hiperhidroz botoks tedavisi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "jalupro-super-hydro-treatment",
+		"id": 2168,
+		"clinics": 3,
+		"categories": [
+			"Dermatology"
+		],
+		"specialties": [
+			"dermatovenerology",
+			"aesthetic_medicine"
+		],
+		"names": {
+			"en": "Jalupro Super Hydro Treatment",
+			"sr": "Jalupro Super Hydro tretman",
+			"sr_cyrl": "Jalupro Super Hydro третман",
+			"ru": "Jalupro Super Hydro процедура",
+			"de": "Jalupro Super Hydro Behandlung",
+			"tr": "Jalupro Super Hydro Tedavi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "lipolysis",
+		"id": 1506,
+		"clinics": 3,
+		"categories": [
+			"Dermatology",
+			"Plastic Surgery"
+		],
+		"specialties": [
+			"plastic_surgery",
+			"aesthetic_medicine"
+		],
+		"names": {
+			"en": "Lipolysis",
+			"sr": "Lipoliza",
+			"sr_cyrl": "Липолиза",
+			"ru": "Липолиз",
+			"de": "Lipolyse",
+			"tr": "Lipoliz"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "prp-facial-treatment",
+		"id": 1499,
+		"clinics": 4,
+		"categories": [
+			"Dermatology"
+		],
+		"specialties": [
+			"dermatovenerology",
+			"aesthetic_medicine"
+		],
+		"names": {
+			"en": "PRP Facial Treatment",
+			"sr": "PRP tretman lica",
+			"sr_cyrl": "ПРП третман лица",
+			"ru": "PRP-терапия лица",
+			"de": "PRP-Gesichtsbehandlung",
+			"tr": "PRP Yüz Tedavisi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "radiowave-skin-lesion-removal",
+		"id": 3715,
+		"clinics": 4,
+		"categories": [
+			"Dermatology",
+			"Plastic Surgery"
+		],
+		"specialties": [
+			"dermatovenerology",
+			"plastic_surgery"
+		],
+		"names": {
+			"en": "Radiowave Skin Lesion Removal",
+			"sr": "Uklanjanje kožnih promjena radiotalasima",
+			"sr_cyrl": "Уклањање кожних промена радиоталасима",
+			"ru": "Радиоволновое удаление кожных образований",
+			"de": "Radiowellen Hautläsion Entfernung",
+			"tr": "Radyodalga Cilt Lezyonu Çıkarma"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "scalp-mesotherapy",
+		"id": 4426,
+		"clinics": 3,
+		"categories": [
+			"Dermatology",
+			"Plastic Surgery"
+		],
+		"specialties": [
+			"dermatovenerology",
+			"plastic_surgery"
+		],
+		"names": {
+			"en": "Scalp Mesotherapy",
+			"sr": "Mezoterapija vlasišta",
+			"sr_cyrl": "Мезотерапија власишта",
+			"ru": "Мезотерапия кожи головы",
+			"de": "Mesotherapie Kopfhaut",
+			"tr": "Saç derisi mezoterapi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "scar-correction",
+		"id": 3486,
+		"clinics": 5,
+		"categories": [
+			"Dermatology",
+			"Plastic Surgery"
+		],
+		"specialties": [
+			"plastic_surgery"
+		],
+		"names": {
+			"en": "Scar Correction",
+			"sr": "Korekcija ožiljka",
+			"sr_cyrl": "Корекција ожиљка",
+			"ru": "Коррекция рубца",
+			"de": "Narbenkorrektur",
+			"tr": "Yara İzi Düzeltme"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "vistabel-botox",
+		"id": 4189,
+		"clinics": 3,
+		"categories": [
+			"Dermatology",
+			"Plastic Surgery"
+		],
+		"specialties": [
+			"dermatovenerology",
+			"plastic_surgery"
+		],
+		"names": {
+			"en": "Vistabel Botox",
+			"sr": "Vistabel",
+			"sr_cyrl": "Вистабел",
+			"ru": "Вистабель ботокс",
+			"de": "Vistabel Botox",
+			"tr": "Vistabel botoks"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": [
+			"copy_of_en: de"
+		]
+	}
+]

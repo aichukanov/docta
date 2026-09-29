@@ -90,6 +90,7 @@ SET collation_connection = 'utf8mb4_unicode_ci';
 -- Step 1.3: Insert clinic_medical_services (prices) — INSERT IGNORE
 -- Step 1.4: Insert category relations — INSERT IGNORE
 -- Step 1.5: Insert specialty relations — INSERT IGNORE (auto for matching categories)
+-- Step 1.6: Insert synonyms — INSERT IGNORE
 
 -- ═══════════════════════════════════════════════════════════════
 -- PART 2: LAB TESTS
@@ -336,6 +337,45 @@ SELECT id, @spec_cardiology FROM medical_services WHERE name_en IN (
 | Ортодонтические услуги         | ORTHODONTICS (не DENTISTRY!)                     |
 | Брекеты, ретейнеры, трейнеры   | ORTHODONTICS                                     |
 
+### 1.6 Синонимы услуг — INSERT IGNORE
+
+Полный аналог синонимов анализов (2.5), только таблица `medical_service_synonyms`. Поиск их уже читает: `server/api/services/list.ts` подмешивает `EXISTS` по этой таблице в фильтр и отдаёт найденные синонимы в выдачу. **Заполнять обязательно** — по состоянию на сентябрь 2026 синонимы есть лишь у 83 услуг из 4991, и почти все они попали туда побочно, при слиянии дубликатов (`docs/audit/service-names-2026-09.md`).
+
+```sql
+INSERT IGNORE INTO medical_service_synonyms (medical_service_id, another_name, language)
+SELECT id, 'ОПТГ', 'ru' FROM medical_services WHERE name_en = 'Panoramic X-Ray'
+UNION ALL SELECT id, 'Панорамный снимок зубов', 'ru' FROM medical_services WHERE name_en = 'Panoramic X-Ray'
+UNION ALL SELECT id, 'Ortopantomogram', 'sr' FROM medical_services WHERE name_en = 'Panoramic X-Ray'
+UNION ALL SELECT id, 'Ортопантомограм', 'sr-cyrl' FROM medical_services WHERE name_en = 'Panoramic X-Ray'
+UNION ALL SELECT id, 'OPG', 'en' FROM medical_services WHERE name_en = 'Panoramic X-Ray'
+UNION ALL SELECT id, 'OPG-Aufnahme', 'de' FROM medical_services WHERE name_en = 'Panoramic X-Ray'
+UNION ALL SELECT id, 'Panoramik film', 'tr' FROM medical_services WHERE name_en = 'Panoramic X-Ray';
+```
+
+#### Когда добавлять синоним
+
+| Ситуация                       | Примеры                                                            |
+| ------------------------------ | ------------------------------------------------------------------ |
+| Бытовое название рядом с медицинским | «УЗИ груди» → Breast Ultrasound, «чистка зубов» → Dental Calculus Removal |
+| Аббревиатура                   | ОПТГ, КТГ, ЭХО-КГ, EMG, OPG, RIA                                   |
+| Синоним специальности          | «терапевт» и «врач общей практики» → General Practitioner Examination |
+| Формулировка клиники из прайса | `Pregled ljekara opšte prakse` при названии `Pregled opšteg ljekara` |
+| Бренд в названии услуги        | «Нобель Биокеа» к `Dental Implant Nobel Biocare`, «Инвизилайн» к `Invisalign Aligner` |
+| Локальное слово                | `Hidžama` ↔ «хиджама», «вакуумные банки», «баночная терапия»        |
+| Устаревшее или менее частотное название | «рентген» к услугам, названным `RTG`                       |
+
+#### Чего в синонимах быть не должно
+
+- **Собственного названия услуги** в той же локали — оно и так ищется по `name_*`. Такие строки уже приходилось чистить миграцией 031 после слияний.
+- **Названия другой услуги**, если она есть в каталоге отдельной записью: синоним перетянет на себя её запросы. Ставьте синоним только на ту услугу, которую человек действительно ищет этими словами.
+- **Слишком общего слова** («операция», «анестезия», «УЗИ») — оно совпадёт с сотней позиций и мусорит выдачу.
+
+#### Отличия от `lab_test_synonyms`
+
+- `UNIQUE` — по тройке (`medical_service_id`, `another_name`, `language`), а не глобально по имени: одна формулировка законно указывает на несколько услуг. `INSERT IGNORE` погасит дубль внутри услуги, но не между разными услугами.
+- Обе таблицы (`medical_services` и `medical_service_synonyms`) в `utf8mb4_unicode_ci`, поэтому сравнение колонок не падает с ERROR 1267 — в отличие от пары `lab_tests` / `lab_test_synonyms`, где нужен явный `COLLATE`.
+- Код языка — **`sr-cyrl` через дефис**. Комментарий в `server/sql/create-medical-service-synonyms.sql` обещает `sr_cyrl` с подчёркиванием; в данных везде дефис, комментарий врёт.
+
 ---
 
 ## PART 1.6: Личные услуги врачей (clinic_medical_service_doctors)
@@ -468,7 +508,7 @@ SELECT id, @cat_inflammatory_markers FROM lab_tests WHERE name_en IN (
 
 ### 2.5 Синонимы анализов — INSERT IGNORE
 
-Синонимы нужны для поиска: аббревиатуры, альтернативные названия, сокращения на разных языках.
+Синонимы нужны для поиска: аббревиатуры, альтернативные названия, сокращения на разных языках. Для услуг — то же самое в `medical_service_synonyms`, см. 1.6 (там же перечислены отличия двух таблиц).
 
 ```sql
 INSERT IGNORE INTO lab_test_synonyms (lab_test_id, another_name, language)

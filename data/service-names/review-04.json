@@ -1,0 +1,438 @@
+[
+	{
+		"slug": "metatarsal-osteotomy",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] },
+		"note": "FZOCG D05088 — «Ostektomija metatarzalne kosti», а в прайсе клиники (Danilo, тот же код) — «OSTEOTOMIJA METATARZALNE KOSTI»; не менял, вопрос уже в _decisions.md (fix-04)"
+	},
+	{
+		"slug": "metatarsal-osteotomy-one-or-more",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "metatarsophalangeal-joint-dislocation-reduction",
+		"names": {
+			"ru": "Репозиция вывиха плюснефалангового сустава (закрытая или открытая)"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "minerva-plaster-cast-reduction",
+		"names": {
+			"de": "Reposition mit Minerva-Gips",
+			"tr": "Minerva alçısı ile redüksiyon"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "monteggia-elbow-fracture-proximal-end",
+		"names": {
+			"en": "Closed Reduction of Monteggia Elbow Fracture (Proximal Ulna with Radial Head Dislocation)",
+			"sr": "Fraktura lakta, Monteggia tip (proksimalni kraj ulne sa dislokacijom glave radiusa) — zatvorena manipulativna repozicija",
+			"ru": "Закрытая репозиция перелома Монтеджи (проксимальный отдел локтевой кости с вывихом головки лучевой кости)",
+			"de": "Geschlossene Reposition einer Monteggia-Fraktur (proximale Ulnafraktur mit Radiusköpfchenluxation)",
+			"tr": "Monteggia tipi dirsek kırığı kapalı redüksiyonu (radius başı dislokasyonlu proksimal ulna kırığı)"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "multiple-foot-extensor-tenolysis-same-incision",
+		"names": {
+			"ru": "Тенолизис нескольких разгибателей стопы (через один разрез)",
+			"de": "Multiple Strecker-Tenolyse am Fuß (über denselben Schnitt)",
+			"tr": "Ayakta çoklu ekstansör tenolizi (aynı kesiden)"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "multiple-foot-flexor-tenolysis-same-incision",
+		"names": {
+			"ru": "Тенолизис нескольких сгибателей стопы (через один разрез)",
+			"de": "Multiple Beuger-Tenolyse am Fuß (über denselben Schnitt)",
+			"tr": "Ayakta çoklu fleksör tenolizi (aynı kesiden)"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "navicular-pseudarthrosis-repair-withwithout-bone-graft",
+		"names": {
+			"en": "Navicular Pseudarthrosis Repair with/without Radial Styloidectomy, Including Bone Graft and Fixation",
+			"sr": "Reparacija pseudoartroze navikularne kosti sa ili bez stiloidektomije radiusa, uključujući koštani kalem i fiksaciju",
+			"ru": "Лечение псевдоартроза ладьевидной кости с костной пластикой и фиксацией, со стилоидэктомией лучевой кости или без",
+			"de": "Operation einer Kahnbeinpseudarthrose mit oder ohne Styloidektomie des Radius, einschließlich Knochentransplantat und Fixation",
+			"tr": "Naviküler psödoartroz onarımı, radius stiloidektomili veya stiloidektomisiz (kemik grefti ve fiksasyon dahil)"
+		},
+		"synonyms": {
+			"en": ["Scaphoid Nonunion Repair"],
+			"sr": ["Pseudoartroza skafoidne kosti"],
+			"ru": ["Ложный сустав ладьевидной кости"],
+			"de": [],
+			"tr": ["Skafoid psödoartrozu"]
+		},
+		"note": "прайс клиники обрезан на «…NAVIKULARNE KOSTI SA ILI BEZ», при импорте дописали «с/без трансплантата»; по FZOCG D05140 «с/без» относится к стилоидэктомии лучевой кости, а трансплантат и фиксация входят всегда — переписал все 5 локалей (вопрос fix-05 в _decisions.md)"
+	},
+	{
+		"slug": "open-flexor-tenotomy-of-multiple-fingers",
+		"names": {
+			"ru": "Открытая тенотомия сгибателей нескольких пальцев"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "open-flexor-tenotomy-of-multiple-tendons-same-incision",
+		"names": {
+			"ru": "Открытая тенотомия нескольких сгибателей (через один разрез)",
+			"de": "Offene Beuger-Tenotomie mehrerer Sehnen (über denselben Schnitt)",
+			"tr": "Çoklu fleksör tenotomi (açık, aynı kesiden)"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "open-flexor-tenotomy-of-one-or-more-fingers",
+		"names": {
+			"sr": "Tenotomija fleksora, otvorena, jedan ili više prstiju",
+			"ru": "Открытая тенотомия сгибателей одного или нескольких пальцев",
+			"de": "Offene Beuger-Tenotomie an einem oder mehreren Fingern",
+			"tr": "Bir veya daha fazla parmakta açık fleksör tenotomi"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "open-or-closed-coccyx-fracture-reduction",
+		"names": {},
+		"synonyms": {
+			"en": ["Tailbone Fracture"],
+			"sr": ["Prelom trtice"],
+			"ru": ["Перелом копчика"],
+			"de": ["Steißbeinbruch"],
+			"tr": ["Kuyruk sokumu kırığı"]
+		}
+	},
+	{
+		"slug": "open-reduction-of-patellar-fracture-with-repair",
+		"names": {
+			"en": "Open Reduction of Patellar Fracture with Repair and/or Excision",
+			"ru": "Открытая репозиция перелома надколенника с восстановлением и/или иссечением",
+			"de": "Offene Reposition einer Patellafraktur mit Rekonstruktion und/oder Exzision",
+			"tr": "Patella kırığı açık redüksiyonu, onarım ve/veya eksizyon ile"
+		},
+		"synonyms": {
+			"en": ["Kneecap Fracture"],
+			"sr": ["Prelom čašice koljena"],
+			"ru": ["Перелом коленной чашечки"],
+			"de": ["Kniescheibenbruch"],
+			"tr": ["Diz kapağı kırığı"]
+		}
+	},
+	{
+		"slug": "open-reduction-of-radius-and-ulna-diaphysis-fracture",
+		"names": {
+			"en": "Reduction of Open Radius and Ulna Diaphysis Fracture with Fixation and Soft Tissue Closure",
+			"sr": "Fraktura dijafize radiusa i ulne — otvorena (složena), sa prostim zatvaranjem mekog tkiva, manipulativna repozicija sa fiksacijom",
+			"ru": "Репозиция открытого перелома диафиза лучевой и локтевой костей с фиксацией и ушиванием мягких тканей",
+			"de": "Reposition einer offenen Radius-Ulna-Diaphysenfraktur mit Fixation und Weichteilverschluss",
+			"tr": "Açık radius-ulna diyafiz kırığı redüksiyonu, fiksasyon ve yumuşak doku kapatılması ile"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] },
+		"note": "прайс клиники обрезан на «…OTVORENA(SLOŽENA) SA PROS» и совпадает с началом FZOCG D05014: «otvorena (složena) sa prostim zatvaranjem mekog tkiva, manipulativna repozicija sa unutrašnjom ili spoljašnjom fiksacijom» — открытый перелом, а не открытая репозиция; «proširenom repozicijom» было ошибочной расшифровкой «PROS». Переписал все 5 локалей (вопрос fix-04 в _decisions.md)"
+	},
+	{
+		"slug": "orthopedist-examination",
+		"names": {},
+		"synonyms": {
+			"en": ["Orthopedic Consultation", "Orthopaedic Examination"],
+			"sr": ["Ortopedski pregled"],
+			"ru": ["Приём ортопеда", "Консультация ортопеда", "Приём травматолога-ортопеда"],
+			"de": ["Untersuchung beim Orthopäden"],
+			"tr": ["Ortopedist muayenesi"]
+		}
+	},
+	{
+		"slug": "osteosynthetic-material-removal",
+		"names": {},
+		"synonyms": {
+			"en": ["Orthopedic Hardware Removal"],
+			"sr": ["Vađenje pločice i šrafova"],
+			"ru": ["Удаление металлоконструкции"],
+			"de": ["Metallentfernung"],
+			"tr": ["Platin çıkarılması"]
+		}
+	},
+	{
+		"slug": "partial-bone-excision-curettage-sequestrectomy-or",
+		"names": {
+			"en": "Superficial Partial Bone Excision for Osteomyelitis (Curettage, Sequestrectomy or Diaphysectomy)",
+			"sr": "Parcijalna ekscizija kosti (kiretaža, sekvestracija ili dijafizektomija) kod osteomijelitisa, superficijalno",
+			"ru": "Поверхностная частичная резекция кости (кюретаж, секвестрэктомия или диафизэктомия) при остеомиелите",
+			"de": "Oberflächliche partielle Knochenexzision (Kürettage, Sequestrektomie oder Diaphysektomie) bei Osteomyelitis",
+			"tr": "Osteomiyelitte yüzeyel parsiyel kemik eksizyonu (küretaj, sekestrektomi veya diyafizektomi)"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "partial-bone-excision-curettage-sequestrectomy-diaphysectomy",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "partial-bone-excision-curettage-sequestrectomy",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "partial-dupuytren-fasciectomy",
+		"names": {
+			"ru": "Частичная фасциэктомия при контрактуре Дюпюитрена"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "patellar-dislocation-closed-or-open-reduction",
+		"names": {
+			"ru": "Репозиция вывиха надколенника (закрытая или открытая)",
+			"de": "Reposition einer Patellaluxation (geschlossen oder offen)",
+			"tr": "Patella dislokasyonu redüksiyonu (kapalı veya açık)"
+		},
+		"synonyms": {
+			"en": ["Kneecap Dislocation"],
+			"sr": ["Iščašenje patele"],
+			"ru": ["Вывих коленной чашечки"],
+			"de": ["Kniescheibenluxation"],
+			"tr": ["Diz kapağı çıkığı"]
+		}
+	},
+	{
+		"slug": "plaster-body-jacket",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "plaster-body-jacket-including-head",
+		"names": {
+			"ru": "Гипсовый корсет на туловище, включая голову"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "plaster-brace-reduction",
+		"names": {
+			"de": "Reposition mit Gipsmieder",
+			"tr": "Alçı breys ile redüksiyon"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] },
+		"note": "«mider gips» (X09147, 70,89 €) и «korzet gips» (X09146, 125,10 €) — оба гипсовые корсеты, чем отличаются, из прайса не понять; в tr названия совпадали дословно («Korse alçı redüksiyonu»). Развёл по en (brace/corset → breys/korse), в de — родные термины Gipsmieder/Gipskorsett; ru («гипсовый корсет» / «корсетный гипс») не трогал"
+	},
+	{
+		"slug": "plaster-cast-correction",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Korekcija gipsa"],
+			"ru": ["Коррекция гипсовой повязки"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "plaster-cast-or-splint-removal",
+		"names": {
+			"tr": "Alçı veya atel çıkarılması"
+		},
+		"synonyms": {
+			"en": ["Cast Removal"],
+			"sr": [],
+			"ru": ["Снять гипс", "Снятие гипсовой повязки"],
+			"de": ["Gipsabnahme"],
+			"tr": ["Alçı çıkarma"]
+		}
+	},
+	{
+		"slug": "plaster-corset-reduction",
+		"names": {
+			"de": "Reposition mit Gipskorsett",
+			"tr": "Alçı korse ile redüksiyon"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "plaster-cylinder-hip-to-ankle-under-10-years",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "plaster-splint-for-hand-and-fingers",
+		"names": {
+			"en": "Hand and Finger Plaster Splint Reduction",
+			"ru": "Репозиция — гипсовая лонгета на кисть и пальцы",
+			"de": "Reposition mit Gipsschiene für Hand und Finger",
+			"tr": "El ve parmak alçı ateli ile redüksiyon"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "plaster-splint-hip-to-ankle-and-toes-under-10-years",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "prepatellar-bursectomy",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Prepatelarna burzektomija"],
+			"ru": ["Препателлярная бурсэктомия"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "primary-extensor-tendon-repair-one-or-more",
+		"names": {
+			"sr": "Primarna reparacija tetive ekstenzora, jedne ili više",
+			"ru": "Первичный шов сухожилия разгибателя (одного или нескольких)",
+			"de": "Primäre Strecksehnennaht (eine oder mehrere Sehnen)",
+			"tr": "Primer ekstansör tendon onarımı (bir veya daha fazla)"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "primary-multi-tendon-flexor-repair-with-excision",
+		"names": {
+			"en": "Primary Multi-Tendon Flexor Repair with Excision of Flexor Digitorum Superficialis",
+			"sr": "Primarna tendorafija više fleksornih tetiva uz ekstirpaciju sublimisa",
+			"ru": "Первичный шов нескольких сухожилий сгибателей с иссечением сухожилия поверхностного сгибателя пальцев",
+			"de": "Primäre Naht mehrerer Beugesehnen mit Exstirpation der Superficialissehne",
+			"tr": "Çoklu fleksör tendon primer onarımı (yüzeyel fleksör tendonunun eksizyonu ile)"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "primary-peripheral-nerve-neurorrhaphy",
+		"names": {
+			"de": "Primäre periphere Nervennaht"
+		},
+		"synonyms": {
+			"en": ["Primary Nerve Repair"],
+			"sr": ["Primarni šav živca"],
+			"ru": ["Первичный шов нерва"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "primary-suture-of-ruptured-collateral-ligament",
+		"names": {
+			"en": "Primary Suture of Ruptured Ankle Collateral Ligament",
+			"sr": "Primarna sutura rupturiranog ili prekinutog kolateralnog ligamenta gležnja",
+			"ru": "Первичный шов разрыва коллатеральной связки голеностопного сустава",
+			"de": "Primäre Naht eines rupturierten Kollateralbands des Sprunggelenks",
+			"tr": "Ayak bileği yırtık kolateral bağının primer sütürü"
+		},
+		"synonyms": {
+			"en": ["Ankle Ligament Repair"],
+			"sr": ["Šav ligamenta gležnja"],
+			"ru": ["Шов связки голеностопа"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "primary-ulnar-or-median-nerve-neurorrhaphy",
+		"names": {
+			"en": "Primary Ulnar or Median Nerve Neurorrhaphy at Forearm Level",
+			"sr": "Primarna neurorafija ulnarisa ili medianusa u visini podlaktice",
+			"ru": "Первичная невроррафия локтевого или срединного нерва на уровне предплечья",
+			"de": "Primäre Ulnaris- oder Medianus-Neurorrhaphie am Unterarm",
+			"tr": "Önkol seviyesinde ulnar veya median sinir primer nörorafisi"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Шов локтевого нерва", "Шов срединного нерва"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "proximal-phalanx-big-toe-osteotomy-for-shortening-or-rotation",
+		"names": {
+			"en": "Big Toe Proximal Phalanx Osteotomy for Shortening, Angular or Rotational Correction (Hallux Valgus)",
+			"sr": "Osteotomija proksimalne falange palca za skraćenje, ugaonu ili rotacionu korekciju (Hallux valgus)",
+			"ru": "Остеотомия проксимальной фаланги большого пальца стопы для укорочения, угловой или ротационной коррекции (Hallux valgus)",
+			"de": "Osteotomie der Großzehengrundphalanx zur Verkürzung, Achsen- oder Rotationskorrektur (Hallux valgus)",
+			"tr": "Kısaltma, açısal veya rotasyonel düzeltme için ayak başparmağı proksimal falanks osteotomisi (halluks valgus)"
+		},
+		"synonyms": {
+			"en": ["Akin Osteotomy"],
+			"sr": [],
+			"ru": ["Остеотомия по Акину"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "quadriceps-rupture-suture",
+		"names": {},
+		"synonyms": {
+			"en": ["Quadriceps Tendon Repair"],
+			"sr": ["Ruptura kvadricepsa"],
+			"ru": ["Шов сухожилия четырёхглавой мышцы бедра"],
+			"de": ["Quadrizepssehnennaht"],
+			"tr": []
+		}
+	},
+	{
+		"slug": "radial-diaphysis-fracture-closed-or-open-withwithout-fixation",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "radial-head-resection",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "re-amputation-through-femur",
+		"names": {
+			"ru": "Реампутация ноги через бедренную кость"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "reduction-of-shoulder-dislocation-with-greater-tuberosity-fracture",
+		"names": {
+			"ru": "Репозиция вывиха плеча с переломом большого бугорка плечевой кости"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "removal-of-subtotal-hip-prosthesis-with-reintervention-prep",
+		"names": {
+			"ru": "Удаление субтотального эндопротеза тазобедренного сустава с подготовкой к ревизионному эндопротезированию",
+			"de": "Entfernung einer subtotalen Hüftendoprothese mit Vorbereitung auf eine Revisionsprothese",
+			"tr": "Subtotal kalça protezinin çıkarılması ve revizyon protezine hazırlık"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "removal-of-total-hip-prosthesis-with-reintervention-prep",
+		"names": {
+			"ru": "Удаление тотального эндопротеза тазобедренного сустава с подготовкой к ревизионному эндопротезированию",
+			"de": "Entfernung einer Hüft-Totalendoprothese mit Vorbereitung auf eine Revisionsprothese",
+			"tr": "Total kalça protezinin çıkarılması ve revizyon protezine hazırlık"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "rheumatologist-examination",
+		"names": {},
+		"synonyms": {
+			"en": ["Rheumatology Consultation"],
+			"sr": ["Reumatološki pregled"],
+			"ru": ["Приём ревматолога", "Консультация ревматолога"],
+			"de": ["Untersuchung beim Rheumatologen"],
+			"tr": ["Romatolog muayenesi"]
+		}
+	}
+]

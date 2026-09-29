@@ -1,0 +1,442 @@
+[
+	{
+		"slug": "anal-fissure-surgery",
+		"names": {
+			"de": "Analfissur-Operation"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Operacija analne ragade"],
+			"ru": ["Иссечение анальной трещины", "Операция трещины заднего прохода"],
+			"de": ["Afterriss-Operation"],
+			"tr": ["Makat çatlağı ameliyatı"]
+		}
+	},
+	{
+		"slug": "bilateral-hernia-operation",
+		"names": {},
+		"synonyms": {
+			"en": ["Bilateral Hernia Repair"],
+			"sr": ["Obostrana hernioplastika"],
+			"ru": ["Двусторонняя герниопластика"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "cholecystectomy-with-t-tube-drainage",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		},
+		"note": "FZOCG D02013 — холецистэктомия с интраоперационной холангиографией, а не с Т-дренажем: привязка к тарифу, похоже, неточная. По смыслу близка к 6076 Cholecystectomy with Choledochostomy and Drainage"
+	},
+	{
+		"slug": "epigastric-hernia-operation",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Operacija epigastrične hernije"],
+			"ru": ["Операция грыжи белой линии живота"],
+			"de": ["Oberbauchbruch-Operation"],
+			"tr": []
+		},
+		"note": "в каталоге есть 6101 «Epigastric Hernia Repair» — похоже на дубль этой услуги (очередь дедупликации)"
+	},
+	{
+		"slug": "exploratory-laparotomy",
+		"names": {
+			"ru": "Диагностическая лапаротомия"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Eksploracija trbušne duplje"],
+			"ru": ["Эксплоративная лапаротомия", "Ревизия брюшной полости"],
+			"de": ["Probelaparotomie"],
+			"tr": ["Tanısal laparotomi"]
+		}
+	},
+	{
+		"slug": "gastro-entero-and-entero-entero-anastomosis",
+		"names": {
+			"en": "Gastroenterostomy and Enteroenterostomy",
+			"sr": "Gastroenteroanastomoza i enteroenteroanastomoza",
+			"de": "Gastroentero- und Enteroenteroanastomose",
+			"tr": "Gastroenterostomi ve Enteroenterostomi"
+		},
+		"synonyms": {
+			"en": ["Gastrojejunostomy"],
+			"sr": ["Gastrojejunalna anastomoza"],
+			"ru": ["Гастроэнтероанастомоз"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "hartmann-reconstruction",
+		"names": {
+			"en": "Reconstruction after Hartmann Procedure",
+			"sr": "Rekonstrukcija nakon Hartmanove operacije",
+			"de": "Rekonstruktion nach Hartmann-Operation",
+			"tr": "Hartmann Ameliyatı Sonrası Rekonstrüksiyon"
+		},
+		"synonyms": {
+			"en": ["Hartmann Reversal"],
+			"sr": ["Zatvaranje kolostome nakon Hartmanove operacije"],
+			"ru": ["Закрытие колостомы после операции Гартмана"],
+			"de": ["Hartmann-Rückverlagerung"],
+			"tr": []
+		},
+		"note": "FZOCG D02230 «Hartmanova procedura laparoskopska» — сама операция Гартмана, а не реконструкция после неё (так во всех локалях и в slug); похоже на ошибочную привязку к тарифу"
+	},
+	{
+		"slug": "hemorrhoid-rubber-band-ligation",
+		"names": {
+			"en": "Hemorrhoid Rubber Band Ligation (per Node)",
+			"ru": "Латексное лигирование геморроя, за узел",
+			"de": "Gummibandligatur von Hämorrhoiden, pro Knoten",
+			"tr": "Hemoroid Lastik Bant Ligasyonu (nodül başına)"
+		},
+		"synonyms": {
+			"en": ["Hemorrhoid Banding"],
+			"sr": [],
+			"ru": ["Лигирование геморроидальных узлов"],
+			"de": ["Barron-Ligatur"],
+			"tr": []
+		}
+	},
+	{
+		"slug": "hemorrhoid-surgery-classic",
+		"names": {
+			"en": "Classic Hemorrhoid Surgery",
+			"de": "Klassische Hämorrhoiden-Operation",
+			"tr": "Klasik Hemoroid Ameliyatı"
+		},
+		"synonyms": {
+			"en": ["Hemorrhoidectomy"],
+			"sr": ["Klasična operacija hemoroida", "Hemoroidektomija"],
+			"ru": ["Классическая геморроидэктомия"],
+			"de": ["Hämorrhoidektomie"],
+			"tr": []
+		}
+	},
+	{
+		"slug": "hepatectomy",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		},
+		"note": "hepatectomy и liver-resection по названиям не различить («Гепатэктомия» / «Резекция печени»), а по FZOCG это обширная резекция (D02261: многосегментарная, лобэктомия) и сегментарная (D02154). Дописать уточнение из FZOCG в обе или оставить — решение; не менял"
+	},
+	{
+		"slug": "hernia-operation",
+		"names": {},
+		"synonyms": {
+			"en": ["Hernia Repair"],
+			"sr": ["Operacija hernije", "Hernioplastika"],
+			"ru": ["Грыжесечение", "Герниопластика"],
+			"de": ["Bruchoperation"],
+			"tr": ["Herni ameliyatı"]
+		}
+	},
+	{
+		"slug": "incarcerated-hernia-operation",
+		"names": {
+			"de": "Operation einer eingeklemmten Hernie"
+		},
+		"synonyms": {
+			"en": ["Incarcerated Hernia Repair"],
+			"sr": ["Operacija uklještene hernije", "Operativno liječenje ukliještene hernije"],
+			"ru": ["Грыжесечение при ущемлённой грыже"],
+			"de": [],
+			"tr": ["Sıkışmış fıtık ameliyatı"]
+		},
+		"note": "по FZOCG D02029 это операция без резекции кишки, а рядом есть 5970 Incarcerated Hernia Surgery with Bowel Resection; в названиях «без резекции кишки» нет. Дописать из FZOCG во все локали — решение; не менял"
+	},
+	{
+		"slug": "laparoscopic-appendectomy",
+		"names": {},
+		"synonyms": {
+			"en": ["Laparoscopic Appendicectomy"],
+			"sr": ["Laparoskopska apendektomija"],
+			"ru": ["Лапароскопическое удаление аппендикса"],
+			"de": ["Laparoskopische Blinddarmentfernung"],
+			"tr": ["Laparoskopik apandisit ameliyatı"]
+		}
+	},
+	{
+		"slug": "laparoscopic-cholecystectomy",
+		"names": {},
+		"synonyms": {
+			"en": ["Laparoscopic Gallbladder Removal"],
+			"sr": ["Laparoskopska holecistektomija", "Laparoskopska operacija žučnog mjehura"],
+			"ru": ["Лапароскопическое удаление желчного пузыря"],
+			"de": ["Laparoskopische Gallenblasenentfernung"],
+			"tr": ["Laparoskopik safra kesesi ameliyatı"]
+		}
+	},
+	{
+		"slug": "laparoscopic-liver-biopsy",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Laparoskopska biopsija jetre"],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "laparoscopic-right-hemicolectomy",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Лапароскопическая правосторонняя гемиколэктомия"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "laparoscopic-umbilical-hernia-repair",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Laparoskopska operacija pupčane kile"],
+			"ru": ["Лапароскопическая пластика пупочной грыжи"],
+			"de": ["Laparoskopische Nabelbruch-Operation"],
+			"tr": ["Laparoskopik göbek fıtığı ameliyatı"]
+		}
+	},
+	{
+		"slug": "laser-hemorrhoid-surgery",
+		"names": {},
+		"synonyms": {
+			"en": ["Laser Hemorrhoidoplasty"],
+			"sr": ["Laserska operacija hemoroida"],
+			"ru": ["Лазерная геморроидопластика", "Лазерное удаление геморроя"],
+			"de": ["Laserbehandlung von Hämorrhoiden"],
+			"tr": ["Lazerle hemoroid tedavisi"]
+		}
+	},
+	{
+		"slug": "laser-perianal-fistula-surgery",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Лазерное лечение свища прямой кишки"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "laser-pilonidal-sinus-surgery",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Laserska operacija pilonidalne ciste"],
+			"ru": ["Лазерное лечение копчиковой кисты", "Лазерное лечение эпителиального копчикового хода"],
+			"de": ["Laserbehandlung der Steißbeinfistel"],
+			"tr": ["Lazerle kıl dönmesi tedavisi"]
+		}
+	},
+	{
+		"slug": "left-hemicolectomy-with-colo-colo-anastomosis",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Lijeva hemikolektomija sa anastomozom"],
+			"ru": ["Левосторонняя гемиколэктомия с анастомозом"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "left-hemicolectomy-with-colostomy",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Lijeva hemikolektomija sa formiranjem stome"],
+			"ru": ["Левосторонняя гемиколэктомия с колостомой"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "liver-resection",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "miles-rectal-amputation",
+		"names": {
+			"ru": "Брюшно-промежностная экстирпация прямой кишки (операция Майлса)"
+		},
+		"synonyms": {
+			"en": ["Abdominoperineal Resection"],
+			"sr": ["Abdominoperinealna resekcija rektuma"],
+			"ru": [],
+			"de": ["Abdominoperineale Rektumexstirpation"],
+			"tr": ["Abdominoperineal rezeksiyon"]
+		}
+	},
+	{
+		"slug": "open-appendectomy",
+		"names": {},
+		"synonyms": {
+			"en": ["Open Appendicectomy"],
+			"sr": [],
+			"ru": ["Удаление аппендикса открытым доступом"],
+			"de": ["Offene Blinddarmentfernung"],
+			"tr": ["Açık apandisit ameliyatı"]
+		}
+	},
+	{
+		"slug": "pancreatic-head-carcinoma-whipple",
+		"names": {
+			"en": "Whipple Procedure for Pancreatic Head Carcinoma",
+			"sr": "Duodenopankreatektomija (Whipple) kod karcinoma glave pankreasa",
+			"ru": "Операция Уиппла при раке головки поджелудочной железы",
+			"de": "Whipple-Operation bei Pankreaskopfkarzinom",
+			"tr": "Pankreas Başı Karsinomunda Whipple Ameliyatı"
+		},
+		"synonyms": {
+			"en": ["Pancreaticoduodenectomy"],
+			"sr": [],
+			"ru": ["Гастропанкреатодуоденальная резекция"],
+			"de": ["Pankreaskopfresektion"],
+			"tr": ["Pankreatikoduodenektomi"]
+		}
+	},
+	{
+		"slug": "perianal-fistula-surgery",
+		"names": {
+			"de": "Perianalfistel-Operation"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Операция свища прямой кишки", "Операция параректального свища"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "pilonidal-cyst-surgery-classic",
+		"names": {
+			"en": "Classic Pilonidal Cyst Surgery",
+			"de": "Klassische Pilonidalsinus-Operation",
+			"tr": "Klasik Pilonidal Kist Ameliyatı"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Klasična operacija pilonidalne ciste", "Ekscizija pilonidalnog sinusa sa primarnim šavom"],
+			"ru": ["Иссечение копчиковой кисты", "Операция эпителиального копчикового хода"],
+			"de": ["Steißbeinfistel-Operation"],
+			"tr": ["Kıl dönmesi ameliyatı"]
+		}
+	},
+	{
+		"slug": "pilonidal-sinus-surgical-treatment",
+		"names": {
+			"de": "Chirurgische Behandlung des Pilonidalsinus"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Хирургическое лечение копчиковой кисты"],
+			"de": ["Chirurgische Behandlung der Steißbeinfistel"],
+			"tr": ["Kıl dönmesi cerrahi tedavisi"]
+		},
+		"note": "с pilonidal-cyst-surgery-classic по названиям не различить; по FZOCG эта — D02001 открытое иссечение, та — D02023 иссечение с первичным швом. Уточнения не дописывал — решение"
+	},
+	{
+		"slug": "recurrent-inguinal-hernia-repair",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Operacija recidivantne ingvinalne hernije", "Operacija recidivantne preponske kile"],
+			"ru": ["Пластика рецидивной паховой грыжи"],
+			"de": ["Operation eines Leistenbruchrezidivs"],
+			"tr": ["Tekrarlayan kasık fıtığı ameliyatı"]
+		}
+	},
+	{
+		"slug": "recurrent-ventral-hernia-repair",
+		"names": {
+			"sr": "Plastika recidivantne ventralne hernije",
+			"ru": "Пластика рецидивирующей вентральной грыжи"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Пластика рецидивной вентральной грыжи"],
+			"de": [],
+			"tr": ["Tekrarlayan karın duvarı fıtığı ameliyatı"]
+		}
+	},
+	{
+		"slug": "right-hemicolectomy-with-anastomosis",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Desna hemikolektomija sa anastomozom"],
+			"ru": ["Правосторонняя гемиколэктомия с анастомозом"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "total-colectomy-with-ileo-rectal-anastomosis",
+		"names": {
+			"sr": "Totalna kolektomija sa ileorektalnom anastomozom",
+			"ru": "Тотальная колэктомия с илеоректальным анастомозом"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "total-gastrectomy-with-d2-lymphadenectomy",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "umbilical-hernia-operation",
+		"names": {
+			"de": "Nabelbruch-Operation"
+		},
+		"synonyms": {
+			"en": ["Umbilical Hernia Repair"],
+			"sr": ["Operacija umbilikalne hernije"],
+			"ru": ["Пластика пупочной грыжи"],
+			"de": ["Nabelhernien-Operation"],
+			"tr": ["Umbilikal herni ameliyatı"]
+		}
+	}
+]

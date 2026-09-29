@@ -1,0 +1,699 @@
+[
+	{
+		"slug": "std-multiplex-2",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "Мультиплексный ПЦР-тест, который в одном урогенитальном образце ищет ДНК двух возбудителей инфекций, передающихся половым путём",
+				"how": "Берут мазок из уретры, влагалища или цервикального канала либо порцию мочи и исследуют методом ПЦР в реальном времени; какие именно возбудители входят в панель, указывает лаборатория",
+				"when": "Прицельная проверка по назначению врача, когда нужно исключить конкретную пару возбудителей, контроль после назначенного лечения, обследование полового партнёра",
+				"prep": "Не мочиться около двух часов до взятия мазка, женщинам сдавать вне менструации; за сутки исключить интимные контакты, спринцевания и вагинальные средства",
+				"abnormal": "Обнаружение ДНК означает, что возбудитель присутствует в исследованном материале, а отрицательный ответ относится только к тем двум возбудителям, которые входят в панель. Дальнейшие шаги определяет врач"
+			},
+			"en": {
+				"what": "Multiplex PCR test that looks for the DNA of two sexually transmitted pathogens in a single urogenital sample",
+				"how": "A swab from the urethra, vagina or cervical canal, or a urine sample, is examined by real-time PCR; the laboratory states which pathogens the panel covers",
+				"when": "Targeted testing ordered by a doctor when a specific pair of pathogens has to be ruled out, follow-up after prescribed treatment, examination of a sexual partner",
+				"prep": "Do not urinate for about two hours before the swab, women should not be tested during menstruation; avoid intercourse, douching and vaginal products for a day beforehand",
+				"abnormal": "Detected DNA means the pathogen is present in the sample, while a negative result applies only to the two pathogens included in the panel. Further steps are decided by the doctor"
+			},
+			"sr": {
+				"what": "Multipleks PCR test koji u jednom urogenitalnom uzorku traži DNK dva uzročnika polno prenosivih infekcija",
+				"how": "Uzima se bris uretre, vagine ili cervikalnog kanala ili uzorak mokraće, a materijal se obrađuje metodom PCR u realnom vremenu; koje uzročnike panel obuhvata, navodi laboratorija",
+				"when": "Ciljana provjera po uputu ljekara kada treba isključiti određeni par uzročnika, kontrola poslije propisane terapije, pregled polnog partnera",
+				"prep": "Ne mokriti oko dva sata prije uzimanja brisa, žene se ne testiraju tokom menstruacije; dan ranije izbjegavati odnose, ispiranja i vaginalne preparate",
+				"abnormal": "Nalaz DNK znači da je uzročnik prisutan u uzorku, a negativan rezultat se odnosi samo na ta dva uzročnika koja panel obuhvata. Dalje korake određuje ljekar"
+			},
+			"de": {
+				"what": "Multiplex-PCR-Test, der in einer einzigen urogenitalen Probe die DNA von zwei sexuell übertragbaren Erregern sucht",
+				"how": "Ein Abstrich aus Harnröhre, Scheide oder Gebärmutterhalskanal oder eine Urinprobe wird mittels Real-Time-PCR untersucht; welche Erreger das Panel umfasst, gibt das Labor an",
+				"when": "Gezielte Untersuchung auf ärztliche Anordnung, wenn ein bestimmtes Erregerpaar ausgeschlossen werden soll, Kontrolle nach verordneter Behandlung, Untersuchung des Sexualpartners",
+				"prep": "Etwa zwei Stunden vor der Abstrichentnahme nicht urinieren, Frauen nicht während der Menstruation; am Vortag auf Geschlechtsverkehr, Spülungen und Vaginalpräparate verzichten",
+				"abnormal": "Nachgewiesene DNA bedeutet, dass der Erreger in der Probe vorhanden ist, ein negatives Ergebnis gilt nur für die beiden im Panel enthaltenen Erreger. Das weitere Vorgehen legt der Arzt fest"
+			},
+			"tr": {
+				"what": "Tek bir ürogenital örnekte cinsel yolla bulaşan iki etkenin DNA'sını arayan multipleks PCR testi",
+				"how": "Üretra, vajina veya servikal kanaldan sürüntü ya da idrar örneği alınır ve gerçek zamanlı PCR ile incelenir; panelin hangi etkenleri kapsadığını laboratuvar bildirir",
+				"when": "Belirli bir etken çiftinin dışlanması gerektiğinde hekim isteğiyle hedefli inceleme, verilen tedavi sonrası kontrol, cinsel partnerin değerlendirilmesi",
+				"prep": "Sürüntüden yaklaşık iki saat önce idrara çıkılmamalı, kadınlar adet döneminde test yaptırmamalı; bir gün önce cinsel ilişki, vajinal duş ve vajinal ürünlerden kaçınılmalı",
+				"abnormal": "DNA saptanması etkenin örnekte bulunduğunu gösterir, negatif sonuç yalnızca panele dahil iki etken için geçerlidir. Sonraki adımları hekim belirler"
+			}
+		}
+	},
+	{
+		"slug": "std-multiplex-3",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "ПЦР-панель на трёх возбудителей урогенитальных инфекций, результат по каждому выдаётся отдельной строкой",
+				"how": "Материалом служит мазок со слизистой половых путей или моча, ДНК всех трёх возбудителей ищут в одной реакции одновременно",
+				"when": "Выделения, зуд и жжение, дискомфорт при мочеиспускании, плановое обследование у гинеколога или уролога, подготовка к беременности",
+				"prep": "Женщинам сдавать вне менструации, мужчинам не мочиться около двух часов до взятия; о недавнем приёме антибиотиков и о местных средствах сказать врачу заранее",
+				"abnormal": "Положительный результат по одному из показателей говорит о присутствии этого возбудителя в материале и не описывает тяжесть состояния. Как трактовать находку и нужно ли обследовать партнёра, решает врач"
+			},
+			"en": {
+				"what": "PCR panel covering three urogenital pathogens, with a separate result reported for each one",
+				"how": "The sample is a swab from the genital mucosa or urine, and the DNA of all three pathogens is searched for in one reaction at the same time",
+				"when": "Discharge, itching and burning, discomfort when urinating, routine gynaecological or urological check-up, preparing for pregnancy",
+				"prep": "Women should not be tested during menstruation, men should not urinate for about two hours before the swab; tell the doctor in advance about recent antibiotics and topical products",
+				"abnormal": "A positive result for one of the parameters means that this pathogen is present in the sample and says nothing about how severe the condition is. How to interpret the finding and whether the partner should be tested is decided by the doctor"
+			},
+			"sr": {
+				"what": "PCR panel na tri uzročnika urogenitalnih infekcija, sa zasebnim nalazom za svaki od njih",
+				"how": "Uzorak je bris sluznice polnih puteva ili mokraća, a DNK sva tri uzročnika traži se istovremeno u jednoj reakciji",
+				"when": "Sekret, svrab i pečenje, nelagoda pri mokrenju, redovan pregled kod ginekologa ili urologa, priprema za trudnoću",
+				"prep": "Žene se ne testiraju tokom menstruacije, muškarci ne mokre oko dva sata prije uzimanja; ljekaru unaprijed reći o nedavnim antibioticima i lokalnim preparatima",
+				"abnormal": "Pozitivan nalaz za jedan od parametara govori da je taj uzročnik prisutan u materijalu i ne opisuje težinu stanja. Kako tumačiti nalaz i da li ispitati partnera, procjenjuje ljekar"
+			},
+			"de": {
+				"what": "PCR-Panel für drei urogenitale Erreger, wobei für jeden ein eigenes Ergebnis ausgewiesen wird",
+				"how": "Als Material dient ein Abstrich der Genitalschleimhaut oder Urin, die DNA aller drei Erreger wird gleichzeitig in einem Ansatz gesucht",
+				"when": "Ausfluss, Juckreiz und Brennen, Beschwerden beim Wasserlassen, routinemäßige gynäkologische oder urologische Untersuchung, Vorbereitung auf eine Schwangerschaft",
+				"prep": "Frauen nicht während der Menstruation, Männer etwa zwei Stunden vor der Entnahme nicht urinieren; kürzlich eingenommene Antibiotika und örtliche Präparate vorab dem Arzt mitteilen",
+				"abnormal": "Ein positives Ergebnis für einen der Parameter zeigt, dass dieser Erreger in der Probe vorhanden ist, und sagt nichts über die Schwere des Zustands aus. Wie der Befund zu deuten ist und ob der Partner untersucht wird, entscheidet der Arzt"
+			},
+			"tr": {
+				"what": "Üç ürogenital etkeni kapsayan ve her biri için ayrı sonuç veren PCR paneli",
+				"how": "Örnek olarak genital mukozadan sürüntü veya idrar kullanılır, üç etkenin DNA'sı aynı anda tek bir reaksiyonda aranır",
+				"when": "Akıntı, kaşıntı ve yanma, idrar yaparken rahatsızlık, jinekolog veya üroloji uzmanında rutin kontrol, gebelik hazırlığı",
+				"prep": "Kadınlar adet döneminde test yaptırmamalı, erkekler sürüntüden yaklaşık iki saat önce idrara çıkmamalı; yakın zamanda kullanılan antibiyotikler ve lokal ürünler hekime önceden bildirilmeli",
+				"abnormal": "Parametrelerden birinin pozitif olması o etkenin örnekte bulunduğunu gösterir, durumun ağırlığı hakkında bilgi vermez. Bulgunun nasıl yorumlanacağına ve partnerin incelenip incelenmeyeceğine hekim karar verir"
+			}
+		}
+	},
+	{
+		"slug": "std-multiplex-4",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "Базовый набор из четырёх показателей: одновременный поиск ДНК четырёх возбудителей инфекций мочеполовой системы",
+				"how": "Один мазок из половых путей или порция мочи разделяется в лаборатории на реакции, каждая из которых отвечает за своего возбудителя",
+				"when": "Первичное обследование при симптомах урогенитальной инфекции, обследование обоих партнёров, подготовка к гинекологическим вмешательствам и к программам вспомогательной репродукции",
+				"prep": "Не мочиться около двух часов до мазка, сдавать вне менструации; за сутки отказаться от интимных контактов и местных препаратов, приём антибиотиков обсудить с врачом",
+				"abnormal": "Выявление одного или нескольких возбудителей означает их присутствие в материале, а отрицательный результат не исключает инфекций, которых нет в этом наборе. Итог оценивает врач вместе с жалобами и осмотром"
+			},
+			"en": {
+				"what": "Basic four-parameter set: a simultaneous search for the DNA of four urogenital pathogens",
+				"how": "One genital swab or a urine sample is split in the laboratory into reactions, each responsible for its own pathogen",
+				"when": "First-line testing when urogenital infection symptoms appear, examination of both partners, preparation for gynaecological procedures and assisted reproduction programmes",
+				"prep": "Do not urinate for about two hours before the swab and do not attend during menstruation; skip intercourse and topical products for a day, discuss antibiotics with the doctor",
+				"abnormal": "Finding one or several pathogens means they are present in the sample, while a negative result does not rule out infections that are outside this set. The doctor assesses the result together with complaints and examination"
+			},
+			"sr": {
+				"what": "Osnovni set od četiri parametra: istovremena potraga za DNK četiri uzročnika urogenitalnih infekcija",
+				"how": "Jedan bris polnih puteva ili uzorak mokraće u laboratoriji se dijeli na reakcije, a svaka odgovara svom uzročniku",
+				"when": "Prvo ispitivanje kod simptoma urogenitalne infekcije, pregled oba partnera, priprema za ginekološke zahvate i za programe potpomognute oplodnje",
+				"prep": "Ne mokriti oko dva sata prije brisa i ne dolaziti tokom menstruacije; dan ranije bez odnosa i lokalnih preparata, antibiotike dogovoriti sa ljekarom",
+				"abnormal": "Nalaz jednog ili više uzročnika znači da su prisutni u materijalu, a negativan rezultat ne isključuje infekcije koje nisu u ovom setu. Nalaz procjenjuje ljekar zajedno sa tegobama i pregledom"
+			},
+			"de": {
+				"what": "Basissatz mit vier Parametern: gleichzeitige Suche nach der DNA von vier urogenitalen Erregern",
+				"how": "Ein Genitalabstrich oder eine Urinprobe wird im Labor auf mehrere Reaktionen aufgeteilt, von denen jede für einen Erreger zuständig ist",
+				"when": "Erstuntersuchung bei Symptomen einer urogenitalen Infektion, Untersuchung beider Partner, Vorbereitung auf gynäkologische Eingriffe und auf Kinderwunschbehandlungen",
+				"prep": "Etwa zwei Stunden vor dem Abstrich nicht urinieren und nicht während der Menstruation kommen; einen Tag lang auf Geschlechtsverkehr und örtliche Präparate verzichten, Antibiotika mit dem Arzt besprechen",
+				"abnormal": "Der Nachweis eines oder mehrerer Erreger bedeutet, dass sie in der Probe vorhanden sind, ein negatives Ergebnis schließt Infektionen außerhalb dieses Satzes nicht aus. Das Ergebnis beurteilt der Arzt zusammen mit Beschwerden und Untersuchung"
+			},
+			"tr": {
+				"what": "Dört parametrelik temel set: dört ürogenital etkenin DNA'sının aynı anda araştırılması",
+				"how": "Tek bir genital sürüntü veya idrar örneği laboratuvarda her biri kendi etkeninden sorumlu reaksiyonlara ayrılır",
+				"when": "Ürogenital enfeksiyon belirtilerinde ilk inceleme, her iki partnerin değerlendirilmesi, jinekolojik girişimlere ve yardımcı üreme programlarına hazırlık",
+				"prep": "Sürüntüden yaklaşık iki saat önce idrara çıkılmamalı, adet döneminde gelinmemeli; bir gün önce cinsel ilişki ve lokal ürünlerden kaçınılmalı, antibiyotikler hekimle konuşulmalı",
+				"abnormal": "Bir veya birkaç etkenin saptanması bunların örnekte bulunduğunu gösterir, negatif sonuç ise bu setin dışındaki enfeksiyonları dışlamaz. Sonucu hekim şikayetler ve muayene ile birlikte değerlendirir"
+			}
+		}
+	},
+	{
+		"slug": "std-multiplex-4-plus-hpv-quant-4",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "Комбинированное исследование: панель на четырёх возбудителей урогенитальных инфекций и количественное определение четырёх типов вируса папилломы человека высокого канцерогенного риска",
+				"how": "Гинеколог или уролог берёт мазок со слизистой половых путей, в лаборатории из одного материала ставят обе части исследования, для ВПЧ результат выдают с количественной оценкой",
+				"when": "Сочетание жалоб со стороны половых путей с плановым скринингом шейки матки, наблюдение после изменений в цитологическом мазке, обследование при планировании беременности",
+				"prep": "Женщинам сдавать вне менструации, за двое суток исключить интимные контакты, спринцевания, вагинальные свечи и кремы, накануне не проходить УЗИ с вагинальным датчиком",
+				"abnormal": "Обнаружение ВПЧ означает присутствие вируса в материале, а не диагноз: вирус часто исчезает сам, и количественный результат важен прежде всего в динамике. Значение находок и график наблюдения определяет гинеколог"
+			},
+			"en": {
+				"what": "Combined test: a panel of four urogenital pathogens plus quantitative detection of four high-risk human papillomavirus types",
+				"how": "A gynaecologist or urologist takes a swab from the genital mucosa, and the laboratory runs both parts of the test on the same material, reporting the HPV part with a quantitative value",
+				"when": "Genital complaints combined with routine cervical screening, follow-up after changes in a cytology smear, testing when planning a pregnancy",
+				"prep": "Women should not be tested during menstruation, should avoid intercourse, douching, vaginal suppositories and creams for two days and should not have a transvaginal ultrasound the day before",
+				"abnormal": "Detecting HPV means the virus is present in the sample, not a diagnosis: the virus often clears on its own and the quantitative value is meaningful mainly over time. The gynaecologist decides what the findings mean and how often the test is repeated"
+			},
+			"sr": {
+				"what": "Kombinovano ispitivanje: panel na četiri uzročnika urogenitalnih infekcija i kvantitativno određivanje četiri tipa humanog papiloma virusa visokog rizika",
+				"how": "Ginekolog ili urolog uzima bris sluznice polnih puteva, a laboratorija iz istog materijala radi oba dijela ispitivanja, pri čemu se nalaz za HPV izdaje sa brojčanom vrijednošću",
+				"when": "Tegobe polnih puteva uz redovan skrining grlića materice, praćenje poslije promjena u citološkom brisu, ispitivanje pri planiranju trudnoće",
+				"prep": "Žene se ne testiraju tokom menstruacije, dva dana ranije izbjegavati odnose, ispiranja, vaginalete i kreme, a dan prije ne raditi ultrazvuk vaginalnom sondom",
+				"abnormal": "Nalaz HPV znači da je virus prisutan u materijalu, a ne dijagnozu: virus često nestane sam, a brojčana vrijednost ima značaj prije svega u praćenju kroz vrijeme. Značaj nalaza i raspored kontrola određuje ginekolog"
+			},
+			"de": {
+				"what": "Kombinierte Untersuchung: ein Panel mit vier urogenitalen Erregern und der quantitative Nachweis von vier Hochrisiko-Typen des humanen Papillomvirus",
+				"how": "Die Ärztin oder der Arzt entnimmt einen Abstrich der Genitalschleimhaut, das Labor führt beide Teile aus demselben Material durch und gibt den HPV-Teil mit einem Zahlenwert an",
+				"when": "Genitale Beschwerden zusammen mit dem regulären Gebärmutterhalsscreening, Verlaufskontrolle nach Veränderungen im Zellabstrich, Untersuchung bei Kinderwunsch",
+				"prep": "Frauen nicht während der Menstruation, zwei Tage vorher auf Geschlechtsverkehr, Spülungen, Vaginalzäpfchen und Cremes verzichten, am Vortag keinen vaginalen Ultraschall",
+				"abnormal": "Ein HPV-Nachweis bedeutet, dass das Virus in der Probe vorhanden ist, und ist keine Diagnose: das Virus verschwindet häufig von selbst, und der Zahlenwert ist vor allem im Verlauf aussagekräftig. Bedeutung und Kontrollabstände legt die Frauenärztin oder der Frauenarzt fest"
+			},
+			"tr": {
+				"what": "Birleşik inceleme: dört ürogenital etkeni kapsayan panel ile yüksek riskli dört insan papilloma virüsü tipinin sayısal olarak belirlenmesi",
+				"how": "Jinekolog veya ürolog genital mukozadan sürüntü alır, laboratuvar aynı materyalden her iki incelemeyi de yapar ve HPV bölümünü sayısal değerle bildirir",
+				"when": "Genital şikayetlerin rutin rahim ağzı taramasıyla birlikte olduğu durumlar, sitolojik yaymada değişiklik sonrası izlem, gebelik planlarken yapılan inceleme",
+				"prep": "Kadınlar adet döneminde test yaptırmamalı, iki gün önceden cinsel ilişki, vajinal duş, vajinal fitil ve kremlerden kaçınmalı, bir gün önce vajinal ultrason yaptırmamalı",
+				"abnormal": "HPV saptanması virüsün örnekte bulunduğunu gösterir, tanı anlamına gelmez: virüs çoğu kez kendiliğinden temizlenir ve sayısal değer asıl olarak izlemde anlam taşır. Bulguların anlamını ve kontrol aralıklarını jinekolog belirler"
+			}
+		}
+	},
+	{
+		"slug": "std-multiplex-5",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "Расширенная ПЦР-панель на пять возбудителей инфекций, передающихся половым путём, в одном образце",
+				"how": "Мазок из уретры, влагалища или цервикального канала либо моча, исследование проводится молекулярным методом с раздельным ответом по каждому возбудителю",
+				"when": "Сохраняющиеся жалобы при отрицательных узких тестах, повторные эпизоды воспаления мочеполовых органов, обследование при бесплодии, обследование партнёров",
+				"prep": "Не мочиться около двух часов перед взятием мазка, женщинам приходить вне менструации; сроки после антибактериального лечения согласовать с врачом",
+				"abnormal": "Найденные возбудители присутствуют в исследованном материале, но часть из них встречается и у людей без жалоб. Связь результата с симптомами устанавливает врач"
+			},
+			"en": {
+				"what": "Extended PCR panel covering five sexually transmitted pathogens in a single sample",
+				"how": "A swab from the urethra, vagina or cervical canal, or urine, is analysed by a molecular method with a separate answer for each pathogen",
+				"when": "Persisting complaints despite negative single-pathogen tests, repeated episodes of urogenital inflammation, infertility work-up, testing of partners",
+				"prep": "Do not urinate for about two hours before the swab, women should avoid menstruation days; agree the interval after antibacterial treatment with the doctor",
+				"abnormal": "The pathogens found are present in the examined material, but some of them also occur in people without any complaints. The link between the result and the symptoms is established by the doctor"
+			},
+			"sr": {
+				"what": "Prošireni PCR panel na pet uzročnika polno prenosivih infekcija u jednom uzorku",
+				"how": "Bris uretre, vagine ili cervikalnog kanala ili mokraća obrađuju se molekularnom metodom, uz zaseban odgovor za svaki uzročnik",
+				"when": "Tegobe koje traju uprkos negativnim pojedinačnim testovima, ponavljane upale mokraćno-polnih organa, obrada zbog neplodnosti, ispitivanje partnera",
+				"prep": "Ne mokriti oko dva sata prije uzimanja brisa, žene dolaze van dana menstruacije; razmak poslije antibakterijske terapije dogovoriti sa ljekarom",
+				"abnormal": "Uzročnici koji se nađu prisutni su u ispitivanom materijalu, ali se dio njih sreće i kod osoba bez tegoba. Vezu nalaza sa simptomima utvrđuje ljekar"
+			},
+			"de": {
+				"what": "Erweitertes PCR-Panel für fünf sexuell übertragbare Erreger aus einer einzigen Probe",
+				"how": "Ein Abstrich aus Harnröhre, Scheide oder Gebärmutterhalskanal oder Urin wird molekularbiologisch untersucht, mit getrenntem Befund für jeden Erreger",
+				"when": "Anhaltende Beschwerden trotz negativer Einzeltests, wiederholte Entzündungen der Harn- und Geschlechtsorgane, Abklärung bei unerfülltem Kinderwunsch, Untersuchung der Partner",
+				"prep": "Etwa zwei Stunden vor der Abstrichentnahme nicht urinieren, Frauen außerhalb der Menstruationstage; den Abstand nach einer antibakteriellen Behandlung mit dem Arzt abstimmen",
+				"abnormal": "Gefundene Erreger sind in der untersuchten Probe vorhanden, ein Teil von ihnen kommt jedoch auch bei Menschen ohne Beschwerden vor. Den Zusammenhang zwischen Befund und Symptomen stellt der Arzt her"
+			},
+			"tr": {
+				"what": "Tek bir örnekte cinsel yolla bulaşan beş etkeni kapsayan genişletilmiş PCR paneli",
+				"how": "Üretra, vajina veya servikal kanaldan sürüntü ya da idrar moleküler yöntemle incelenir ve her etken için ayrı sonuç verilir",
+				"when": "Tekli testler negatif olmasına rağmen süren şikayetler, ürogenital bölgede tekrarlayan iltihaplar, kısırlık araştırması, partnerlerin incelenmesi",
+				"prep": "Sürüntüden yaklaşık iki saat önce idrara çıkılmamalı, kadınlar adet günleri dışında gelmeli; antibakteriyel tedaviden sonraki bekleme süresi hekimle kararlaştırılmalı",
+				"abnormal": "Saptanan etkenler incelenen materyalde bulunmaktadır, ancak bunların bir kısmı şikayeti olmayan kişilerde de görülür. Sonuç ile belirtiler arasındaki bağlantıyı hekim kurar"
+			}
+		}
+	},
+	{
+		"slug": "std-multiplex-6",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "Панель из шести показателей, охватывающая распространённых возбудителей воспалительных процессов мочеполовой системы",
+				"how": "Из одного мазка или порции мочи лаборатория параллельно ставит шесть реакций ПЦР и выдаёт ответ по каждому показателю",
+				"when": "Хронические и повторяющиеся воспаления мочеполовой системы, обследование перед процедурами вспомогательной репродукции, обследование партнёров, контроль после курса лечения",
+				"prep": "Женщинам сдавать вне менструации, за сутки исключить интимные контакты и вагинальные средства, мужчинам не мочиться около двух часов до взятия",
+				"abnormal": "Сочетание нескольких положительных показателей не суммируется в диагноз: каждый оценивают отдельно, с учётом жалоб и осмотра. Трактовку и дальнейшую тактику определяет врач"
+			},
+			"en": {
+				"what": "Six-parameter panel covering common causes of inflammation in the urinary and genital tract",
+				"how": "From a single swab or urine sample the laboratory runs six PCR reactions in parallel and reports each parameter separately",
+				"when": "Chronic and recurring inflammation of the urogenital tract, testing before assisted reproduction procedures, examination of partners, follow-up after a course of treatment",
+				"prep": "Women should not be tested during menstruation and should avoid intercourse and vaginal products for a day, men should not urinate for about two hours before the swab",
+				"abnormal": "Several positive parameters do not add up to a diagnosis: each is assessed separately, together with complaints and examination. Interpretation and further steps are decided by the doctor"
+			},
+			"sr": {
+				"what": "Panel od šest parametara koji obuhvata česte uzročnike upala mokraćnih i polnih organa",
+				"how": "Iz jednog brisa ili uzorka mokraće laboratorija paralelno postavlja šest PCR reakcija i izdaje nalaz za svaki parametar",
+				"when": "Hronične i ponavljane upale mokraćno-polnog sistema, ispitivanje prije postupaka potpomognute oplodnje, pregled partnera, kontrola poslije završene terapije",
+				"prep": "Žene se ne testiraju tokom menstruacije i dan ranije izbjegavaju odnose i vaginalne preparate, muškarci ne mokre oko dva sata prije uzimanja",
+				"abnormal": "Više pozitivnih parametara ne sabira se u dijagnozu: svaki se procjenjuje posebno, uz tegobe i pregled. Tumačenje i dalji postupak određuje ljekar"
+			},
+			"de": {
+				"what": "Panel mit sechs Parametern, das häufige Erreger von Entzündungen der Harn- und Geschlechtsorgane abdeckt",
+				"how": "Aus einem Abstrich oder einer Urinprobe führt das Labor sechs PCR-Reaktionen parallel durch und weist jeden Parameter einzeln aus",
+				"when": "Chronische und wiederkehrende Entzündungen im Urogenitaltrakt, Untersuchung vor Kinderwunschbehandlungen, Untersuchung der Partner, Kontrolle nach abgeschlossener Therapie",
+				"prep": "Frauen nicht während der Menstruation und einen Tag vorher ohne Geschlechtsverkehr und Vaginalpräparate, Männer etwa zwei Stunden vor der Entnahme nicht urinieren",
+				"abnormal": "Mehrere positive Parameter ergeben zusammen keine Diagnose: jeder wird einzeln bewertet, zusammen mit Beschwerden und Untersuchung. Deutung und weiteres Vorgehen legt der Arzt fest"
+			},
+			"tr": {
+				"what": "İdrar ve genital yolda iltihaba yol açan sık etkenleri kapsayan altı parametreli panel",
+				"how": "Laboratuvar tek bir sürüntü veya idrar örneğinden altı PCR reaksiyonunu aynı anda çalışır ve her parametreyi ayrı bildirir",
+				"when": "Ürogenital sistemin kronik ve tekrarlayan iltihapları, yardımcı üreme işlemleri öncesi inceleme, partnerlerin değerlendirilmesi, tedavi sonrası kontrol",
+				"prep": "Kadınlar adet döneminde test yaptırmamalı ve bir gün önce cinsel ilişki ile vajinal ürünlerden kaçınmalı, erkekler sürüntüden yaklaşık iki saat önce idrara çıkmamalı",
+				"abnormal": "Birden fazla pozitif parametre toplanarak tanıya dönüşmez: her biri şikayetler ve muayene ile birlikte ayrı ayrı değerlendirilir. Yorum ve sonraki adımlar hekime aittir"
+			}
+		}
+	},
+	{
+		"slug": "std-multiplex-7",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "Самая широкая панель этой серии: семь возбудителей урогенитальных инфекций проверяются одним молекулярным исследованием",
+				"how": "Берут один мазок со слизистой половых путей или порцию мочи, и лаборатория параллельно определяет ДНК семи микроорганизмов",
+				"when": "Неспецифические или длительные жалобы, обследование при бесплодии и невынашивании беременности, обследование после незащищённого контакта по направлению врача, проверка перед лечением партнёров",
+				"prep": "Не мочиться около двух часов перед мазком, женщинам приходить вне менструации; за сутки без интимных контактов, спринцеваний и вагинальных препаратов",
+				"abnormal": "Широкая панель чаще находит микроорганизмы, которые присутствуют и в норме, поэтому положительный ответ сам по себе не равен инфекции и не требует автоматического лечения. Решение принимает врач по результату и клинической картине"
+			},
+			"en": {
+				"what": "The broadest panel of this series: seven urogenital pathogens checked in a single molecular test",
+				"how": "One swab from the genital mucosa or a urine sample is taken, and the laboratory determines the DNA of seven microorganisms in parallel",
+				"when": "Non-specific or long-lasting complaints, work-up for infertility and recurrent pregnancy loss, testing after unprotected contact on a doctor's referral, check before treating partners",
+				"prep": "Do not urinate for about two hours before the swab, women should come outside menstruation; for one day no intercourse, douching or vaginal preparations",
+				"abnormal": "A broad panel more often finds microorganisms that also belong to the normal flora, so a positive answer alone is not the same as an infection and does not automatically call for treatment. The doctor decides based on the result and the clinical picture"
+			},
+			"sr": {
+				"what": "Najširi panel u ovoj seriji: sedam uzročnika urogenitalnih infekcija provjerava se jednim molekularnim ispitivanjem",
+				"how": "Uzima se jedan bris sluznice polnih puteva ili uzorak mokraće, a laboratorija paralelno određuje DNK sedam mikroorganizama",
+				"when": "Nespecifične ili dugotrajne tegobe, obrada zbog neplodnosti i ponavljanih gubitaka trudnoće, ispitivanje poslije nezaštićenog odnosa po uputu ljekara, provjera prije liječenja partnera",
+				"prep": "Ne mokriti oko dva sata prije brisa, žene dolaze van menstruacije; jedan dan bez odnosa, ispiranja i vaginalnih preparata",
+				"abnormal": "Širok panel češće nađe i mikroorganizme koji pripadaju uobičajenoj flori, pa pozitivan nalaz sam po sebi nije isto što i infekcija i ne znači automatski liječenje. Odluku donosi ljekar prema nalazu i kliničkoj slici"
+			},
+			"de": {
+				"what": "Das breiteste Panel dieser Reihe: sieben urogenitale Erreger werden in einer einzigen molekularen Untersuchung geprüft",
+				"how": "Es wird ein Abstrich der Genitalschleimhaut oder eine Urinprobe entnommen, das Labor bestimmt die DNA von sieben Mikroorganismen parallel",
+				"when": "Unspezifische oder lang anhaltende Beschwerden, Abklärung bei unerfülltem Kinderwunsch und wiederholten Fehlgeburten, Untersuchung nach ungeschütztem Kontakt auf ärztliche Überweisung, Kontrolle vor der Behandlung der Partner",
+				"prep": "Etwa zwei Stunden vor dem Abstrich nicht urinieren, Frauen außerhalb der Menstruation; einen Tag lang kein Geschlechtsverkehr, keine Spülungen und keine Vaginalpräparate",
+				"abnormal": "Ein breites Panel findet häufiger auch Mikroorganismen der normalen Flora, daher ist ein positiver Befund allein noch keine Infektion und bedeutet nicht automatisch eine Behandlung. Die Entscheidung trifft der Arzt anhand von Befund und klinischem Bild"
+			},
+			"tr": {
+				"what": "Bu serinin en geniş paneli: tek bir moleküler incelemeyle yedi ürogenital etken araştırılır",
+				"how": "Genital mukozadan tek bir sürüntü ya da idrar örneği alınır, laboratuvar yedi mikroorganizmanın DNA'sını aynı anda belirler",
+				"when": "Belirsiz veya uzun süren şikayetler, kısırlık ve tekrarlayan gebelik kayıplarının araştırılması, hekim yönlendirmesiyle korunmasız ilişki sonrası inceleme, partnerlerin tedavisi öncesi kontrol",
+				"prep": "Sürüntüden yaklaşık iki saat önce idrara çıkılmamalı, kadınlar adet dönemi dışında gelmeli; bir gün boyunca cinsel ilişki, vajinal duş ve vajinal ilaç kullanılmamalı",
+				"abnormal": "Geniş paneller normal florada da bulunan mikroorganizmaları daha sık saptar, bu yüzden pozitif sonuç tek başına enfeksiyon demek değildir ve kendiliğinden tedavi gerektirmez. Kararı, sonuç ve klinik tabloya göre hekim verir"
+			}
+		}
+	},
+	{
+		"slug": "stool-culture-salmonella-shigella-ecoli",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "Целенаправленный посев кала на сальмонеллы, шигеллы и E. coli O157",
+				"how": "Небольшую порцию кала собирают в стерильный контейнер, в лаборатории её засевают на селективные среды, а выросшие колонии дополнительно идентифицируют",
+				"when": "Диарея, в том числе с кровью, лихорадка и боли в животе после подозрительной еды, вспышки кишечных инфекций, обследование контактных лиц, справки для работы с продуктами и в детских учреждениях",
+				"prep": "Кал собирают в стерильный контейнер, по возможности до начала антибактериального лечения; в образец не должны попасть моча и вода из унитаза",
+				"abnormal": "Рост одного из этих микроорганизмов может быть связан с кишечной инфекцией или с носительством без жалоб, а отрицательный посев не исключает другие причины диареи. Результат вместе с симптомами оценивает врач"
+			},
+			"en": {
+				"what": "Targeted stool culture for Salmonella, Shigella and E. coli O157",
+				"how": "A small portion of stool is collected in a sterile container, plated on selective media in the laboratory, and any colonies that grow are identified further",
+				"when": "Diarrhoea, including bloody diarrhoea, fever and abdominal pain after suspicious food, outbreaks of intestinal infection, testing of contacts, certificates for food handling and childcare work",
+				"prep": "Collect stool in a sterile container, if possible before antibacterial treatment starts; urine and toilet water must not get into the sample",
+				"abnormal": "Growth of one of these organisms may be related to an intestinal infection or to carriage without complaints, and a negative culture does not rule out other causes of diarrhoea. The doctor assesses the result together with the symptoms"
+			},
+			"sr": {
+				"what": "Ciljana koprokultura na Salmonella, Shigella i E. coli O157",
+				"how": "Mala količina stolice sakuplja se u sterilnu posudu, u laboratoriji se zasijava na selektivne podloge, a izrasle kolonije se dodatno identifikuju",
+				"when": "Proliv, uključujući i onaj sa krvlju, povišena temperatura i bolovi u trbuhu poslije sumnjive hrane, epidemije crijevnih infekcija, ispitivanje kontakata, uvjerenja za rad sa hranom i u vrtićima",
+				"prep": "Stolicu sakupiti u sterilnu posudu, po mogućnosti prije početka antibakterijske terapije; u uzorak ne smiju dospjeti mokraća ni voda iz šolje",
+				"abnormal": "Porast nekog od ovih mikroorganizama može biti povezan sa crijevnom infekcijom ili sa kliconoštvom bez tegoba, a negativna kultura ne isključuje druge uzroke proliva. Nalaz uz simptome procjenjuje ljekar"
+			},
+			"de": {
+				"what": "Gezielte Stuhlkultur auf Salmonellen, Shigellen und E. coli O157",
+				"how": "Eine kleine Stuhlmenge wird in einem sterilen Gefäß gesammelt, im Labor auf Selektivnährböden ausgestrichen und gewachsene Kolonien werden weiter identifiziert",
+				"when": "Durchfall, auch blutiger, Fieber und Bauchschmerzen nach verdächtigen Speisen, Ausbrüche von Darminfektionen, Untersuchung von Kontaktpersonen, Atteste für Lebensmittelberufe und Kinderbetreuung",
+				"prep": "Stuhl in einem sterilen Gefäß sammeln, möglichst vor Beginn einer antibakteriellen Behandlung; Urin und Toilettenwasser dürfen nicht in die Probe gelangen",
+				"abnormal": "Das Wachstum eines dieser Erreger kann mit einer Darminfektion oder mit beschwerdefreiem Trägertum zusammenhängen, und eine negative Kultur schließt andere Durchfallursachen nicht aus. Der Arzt bewertet den Befund zusammen mit den Symptomen"
+			},
+			"tr": {
+				"what": "Salmonella, Shigella ve E. coli O157'ye yönelik hedefli gaita kültürü",
+				"how": "Az miktarda gaita steril kaba alınır, laboratuvarda seçici besiyerlerine ekilir ve üreyen koloniler ayrıca tanımlanır",
+				"when": "Kanlı olanlar dahil ishal, şüpheli yiyecek sonrası ateş ve karın ağrısı, bağırsak enfeksiyonu salgınları, temaslıların taranması, gıda ve çocuk bakımı işleri için belge",
+				"prep": "Gaita steril kaba, mümkünse antibakteriyel tedavi başlamadan önce alınmalı; örneğe idrar ve klozet suyu karışmamalı",
+				"abnormal": "Bu mikroorganizmalardan birinin üremesi bağırsak enfeksiyonuyla ya da şikayetsiz taşıyıcılıkla ilişkili olabilir, negatif kültür ise ishalin diğer nedenlerini dışlamaz. Sonucu hekim belirtilerle birlikte değerlendirir"
+			}
+		}
+	},
+	{
+		"slug": "tb-test",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "Лабораторный тест, который проверяет признаки контакта организма с микобактерией туберкулёза",
+				"how": "Чаще всего берут кровь из вены, взятие занимает несколько минут; какой именно метод и материал использует лаборатория, уточняют при записи",
+				"when": "Длительный кашель, потеря веса и ночная потливость, контакт с больным туберкулёзом, обследование перед иммуносупрессивной терапией, медосмотры и оформление документов",
+				"prep": "Специальной подготовки обычно не требуется, время сдачи согласуют с лабораторией",
+				"abnormal": "Положительный результат может быть связан с контактом с микобактерией и сам по себе не разделяет перенесённую, скрытую и активную инфекцию. Дальнейшее обследование, включая снимок лёгких, назначает врач"
+			},
+			"en": {
+				"what": "Laboratory test that checks for signs that the body has been in contact with the tuberculosis bacterium",
+				"how": "Most often venous blood is drawn and the draw takes a few minutes; the exact method and material used should be confirmed with the laboratory when booking",
+				"when": "Long-lasting cough, weight loss and night sweats, contact with someone who has tuberculosis, assessment before immunosuppressive therapy, occupational health checks and paperwork",
+				"prep": "No special preparation is usually needed, the appointment time is agreed with the laboratory",
+				"abnormal": "A positive result may be related to contact with the bacterium and does not by itself separate a past, latent or active infection. Further examination, including a chest X-ray, is arranged by the doctor"
+			},
+			"sr": {
+				"what": "Laboratorijski test koji provjerava znake da je organizam bio u kontaktu sa bacilom tuberkuloze",
+				"how": "Najčešće se uzima venska krv i samo uzimanje traje nekoliko minuta; tačnu metodu i materijal treba provjeriti sa laboratorijom prilikom zakazivanja",
+				"when": "Dugotrajan kašalj, gubitak tjelesne težine i noćno znojenje, kontakt sa oboljelim od tuberkuloze, procjena prije imunosupresivne terapije, sistematski pregledi i sređivanje dokumenata",
+				"prep": "Posebna priprema obično nije potrebna, a termin se dogovara sa laboratorijom",
+				"abnormal": "Pozitivan nalaz može biti povezan sa kontaktom sa bacilom i sam po sebi ne razdvaja preboljelu, latentnu i aktivnu infekciju. Dalju obradu, uključujući snimak pluća, određuje ljekar"
+			},
+			"de": {
+				"what": "Labortest, der nach Hinweisen darauf sucht, dass der Körper Kontakt mit dem Tuberkulosebakterium hatte",
+				"how": "Meist wird venöses Blut abgenommen, die Entnahme dauert einige Minuten; welche Methode und welches Material genau verwendet werden, klärt man bei der Terminvereinbarung mit dem Labor",
+				"when": "Lang anhaltender Husten, Gewichtsverlust und Nachtschweiß, Kontakt zu einer an Tuberkulose erkrankten Person, Beurteilung vor immunsuppressiver Therapie, arbeitsmedizinische Untersuchungen und Behördengänge",
+				"prep": "Eine besondere Vorbereitung ist in der Regel nicht nötig, der Termin wird mit dem Labor abgestimmt",
+				"abnormal": "Ein positives Ergebnis kann mit einem Kontakt mit dem Bakterium zusammenhängen und trennt für sich genommen eine durchgemachte, latente und aktive Infektion nicht. Die weitere Abklärung, einschließlich einer Röntgenaufnahme der Lunge, veranlasst der Arzt"
+			},
+			"tr": {
+				"what": "Vücudun tüberküloz basiliyle temas ettiğine dair belirtileri araştıran laboratuvar testi",
+				"how": "Çoğunlukla venöz kan alınır ve işlem birkaç dakika sürer; hangi yöntem ve materyalin kullanıldığı randevu alırken laboratuvardan öğrenilir",
+				"when": "Uzun süren öksürük, kilo kaybı ve gece terlemesi, tüberkülozlu biriyle temas, bağışıklığı baskılayan tedavi öncesi değerlendirme, işyeri sağlık kontrolleri ve resmi belgeler",
+				"prep": "Genellikle özel bir hazırlık gerekmez, randevu saati laboratuvarla birlikte belirlenir",
+				"abnormal": "Pozitif sonuç basille temasla ilişkili olabilir ve tek başına geçirilmiş, latent ve aktif enfeksiyonu birbirinden ayırmaz. Akciğer filmi dahil ileri incelemeleri hekim planlar"
+			}
+		}
+	},
+	{
+		"slug": "thrombophilia-folate-panel",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "Генетическая панель: варианты генов, связанных со свёртыванием крови, вместе с вариантами генов фолатного обмена",
+				"how": "Берут кровь из вены или мазок со слизистой щеки, ДНК исследуют в лаборатории методом ПЦР; в заключении перечислены найденные варианты генов",
+				"when": "Направление гематолога, гинеколога или генетика: тромбоз в молодом возрасте, тромбозы у близких родственников, повторные потери беременности, планирование беременности, обсуждение гормональной терапии",
+				"prep": "Подготовка не нужна, материал можно сдавать в любое время суток, результат не зависит от еды и от текущего лечения",
+				"abnormal": "Найденный вариант гена — это особенность ДНК, а не диагноз: такие варианты встречаются и у людей без каких-либо проблем со здоровьем. Значение результата оценивает врач-генетик или лечащий врач вместе с личным и семейным анамнезом"
+			},
+			"en": {
+				"what": "Genetic panel covering variants of genes involved in blood clotting together with variants of folate metabolism genes",
+				"how": "Venous blood or a buccal swab is taken and the DNA is analysed in the laboratory by PCR; the report lists the gene variants that were found",
+				"when": "Referral from a haematologist, gynaecologist or geneticist: thrombosis at a young age, thrombosis in close relatives, repeated pregnancy losses, pregnancy planning, discussing hormonal therapy",
+				"prep": "No preparation is needed, the sample can be taken at any time of day, and the result does not depend on food or on current medication",
+				"abnormal": "A gene variant that is found is a feature of the DNA, not a diagnosis: such variants also occur in people with no health problems at all. A geneticist or the treating doctor assesses what the result means together with the personal and family history"
+			},
+			"sr": {
+				"what": "Genetski panel koji obuhvata varijante gena povezanih sa zgrušavanjem krvi i varijante gena folatnog metabolizma",
+				"how": "Uzima se venska krv ili bris sluznice obraza, a DNK se u laboratoriji obrađuje metodom PCR; nalaz navodi koje su varijante gena nađene",
+				"when": "Uput hematologa, ginekologa ili genetičara: tromboza u mladosti, tromboze kod bliskih srodnika, ponavljani gubici trudnoće, planiranje trudnoće, razgovor o hormonskoj terapiji",
+				"prep": "Priprema nije potrebna, uzorak se može uzeti u bilo koje doba dana, a nalaz ne zavisi od hrane ni od terapije koja je u toku",
+				"abnormal": "Nađena varijanta gena je osobina DNK, a ne dijagnoza: takve varijante sreću se i kod osoba bez ikakvih zdravstvenih tegoba. Značaj nalaza procjenjuje genetičar ili ljekar koji liječi, zajedno sa ličnom i porodičnom anamnezom"
+			},
+			"de": {
+				"what": "Genetisches Panel mit Varianten von Genen der Blutgerinnung sowie Varianten von Genen des Folatstoffwechsels",
+				"how": "Es wird venöses Blut oder ein Abstrich der Wangenschleimhaut entnommen und die DNA im Labor mittels PCR untersucht; der Befund listet die gefundenen Genvarianten auf",
+				"when": "Überweisung durch Hämatologie, Gynäkologie oder Humangenetik: Thrombose in jungen Jahren, Thrombosen bei nahen Verwandten, wiederholte Fehlgeburten, Planung einer Schwangerschaft, Gespräch über eine Hormontherapie",
+				"prep": "Keine Vorbereitung nötig, die Probe kann zu jeder Tageszeit entnommen werden, das Ergebnis hängt weder von Mahlzeiten noch von der laufenden Behandlung ab",
+				"abnormal": "Eine gefundene Genvariante ist ein Merkmal der DNA und keine Diagnose: solche Varianten kommen auch bei Menschen ohne jede gesundheitliche Auffälligkeit vor. Was der Befund bedeutet, beurteilt die Humangenetik oder die behandelnde Ärztin gemeinsam mit Eigen- und Familienanamnese"
+			},
+			"tr": {
+				"what": "Kan pıhtılaşmasında rol alan genlerin varyantları ile folat metabolizması genlerinin varyantlarını kapsayan genetik panel",
+				"how": "Venöz kan ya da yanak içinden sürüntü alınır, DNA laboratuvarda PCR yöntemiyle incelenir; raporda bulunan gen varyantları sıralanır",
+				"when": "Hematoloji, kadın hastalıkları veya genetik uzmanının yönlendirmesi: genç yaşta tromboz, yakın akrabalarda tromboz, tekrarlayan gebelik kayıpları, gebelik planlaması, hormon tedavisinin konuşulması",
+				"prep": "Hazırlık gerekmez, örnek günün herhangi bir saatinde alınabilir ve sonuç yemekten ya da sürmekte olan tedaviden etkilenmez",
+				"abnormal": "Bulunan gen varyantı DNA'ya ait bir özelliktir, tanı değildir: bu varyantlar hiçbir sağlık sorunu olmayan kişilerde de görülür. Sonucun anlamını genetik uzmanı veya tedaviyi yürüten hekim, kişisel ve aile öyküsüyle birlikte değerlendirir"
+			}
+		}
+	},
+	{
+		"slug": "trichomonas-rapid-test",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "Проверка урогенитального материала на простейшее Trichomonas vaginalis нативным микроскопическим препаратом и быстрым тестом на антиген",
+				"how": "Берут мазок из влагалища или уретры, часть материала сразу смотрят под микроскопом как нативный препарат, часть наносят на тест-кассету, которая даёт ответ за несколько минут",
+				"when": "Обильные или пенистые выделения, зуд и жжение, дискомфорт при мочеиспускании, обследование полового партнёра, жалобы, сохраняющиеся после лечения",
+				"prep": "Женщинам сдавать вне менструации, мужчинам не мочиться около двух часов до взятия мазка; за сутки исключить интимные контакты, спринцевания и вагинальные средства",
+				"abnormal": "Подвижные простейшие под микроскопом или положительный быстрый тест говорят о присутствии возбудителя в материале, а отрицательный ответ при сохраняющихся жалобах не исключает других причин и может потребовать ПЦР. Решение принимает врач"
+			},
+			"en": {
+				"what": "Examination of urogenital material for the protozoan Trichomonas vaginalis using a native microscopic preparation and a rapid antigen test",
+				"how": "A swab is taken from the vagina or urethra, part of the material is examined under the microscope straight away as a native preparation, and part is applied to a test cassette that gives an answer within minutes",
+				"when": "Heavy or frothy discharge, itching and burning, discomfort when urinating, examination of a sexual partner, complaints that persist after treatment",
+				"prep": "Women should not be tested during menstruation, men should not urinate for about two hours before the swab; avoid intercourse, douching and vaginal products for a day",
+				"abnormal": "Motile protozoa under the microscope or a positive rapid test indicate that the pathogen is present in the material, while a negative answer with persisting complaints does not exclude other causes and may call for a PCR test. The decision is made by the doctor"
+			},
+			"sr": {
+				"what": "Ispitivanje urogenitalnog materijala na praživotinju Trichomonas vaginalis nativnim mikroskopskim preparatom i brzim testom na antigen",
+				"how": "Uzima se bris vagine ili uretre, dio materijala se odmah pregleda pod mikroskopom kao nativni preparat, a dio se nanosi na test kasetu koja daje odgovor za nekoliko minuta",
+				"when": "Obilan ili pjenušav sekret, svrab i pečenje, nelagoda pri mokrenju, pregled polnog partnera, tegobe koje traju i poslije terapije",
+				"prep": "Žene se ne testiraju tokom menstruacije, muškarci ne mokre oko dva sata prije uzimanja brisa; jedan dan izbjegavati odnose, ispiranja i vaginalne preparate",
+				"abnormal": "Pokretne praživotinje pod mikroskopom ili pozitivan brzi test govore da je uzročnik prisutan u materijalu, a negativan odgovor uz tegobe koje traju ne isključuje druge uzroke i može tražiti PCR. Odluku donosi ljekar"
+			},
+			"de": {
+				"what": "Untersuchung von urogenitalem Material auf den Einzeller Trichomonas vaginalis mittels Nativpräparat und Antigen-Schnelltest",
+				"how": "Es wird ein Abstrich aus Scheide oder Harnröhre entnommen, ein Teil wird sofort als Nativpräparat mikroskopiert, ein Teil auf eine Testkassette aufgetragen, die innerhalb weniger Minuten ein Ergebnis liefert",
+				"when": "Starker oder schaumiger Ausfluss, Juckreiz und Brennen, Beschwerden beim Wasserlassen, Untersuchung des Sexualpartners, Beschwerden, die nach einer Behandlung bestehen bleiben",
+				"prep": "Frauen nicht während der Menstruation, Männer etwa zwei Stunden vor dem Abstrich nicht urinieren; einen Tag lang auf Geschlechtsverkehr, Spülungen und Vaginalpräparate verzichten",
+				"abnormal": "Bewegliche Einzeller im Mikroskop oder ein positiver Schnelltest zeigen, dass der Erreger im Material vorhanden ist, ein negatives Ergebnis bei fortbestehenden Beschwerden schließt andere Ursachen nicht aus und kann eine PCR erforderlich machen. Die Entscheidung trifft der Arzt"
+			},
+			"tr": {
+				"what": "Ürogenital materyalde Trichomonas vaginalis adlı tek hücreli parazitin nativ mikroskobik preparat ve hızlı antijen testiyle araştırılması",
+				"how": "Vajina veya üretradan sürüntü alınır, materyalin bir kısmı hemen nativ preparat olarak mikroskopta incelenir, bir kısmı ise birkaç dakikada sonuç veren test kasetine uygulanır",
+				"when": "Bol veya köpüklü akıntı, kaşıntı ve yanma, idrar yaparken rahatsızlık, cinsel partnerin incelenmesi, tedaviden sonra süren şikayetler",
+				"prep": "Kadınlar adet döneminde test yaptırmamalı, erkekler sürüntüden yaklaşık iki saat önce idrara çıkmamalı; bir gün cinsel ilişki, vajinal duş ve vajinal üründen kaçınılmalı",
+				"abnormal": "Mikroskopta hareketli parazitlerin görülmesi ya da hızlı testin pozitif olması etkenin materyalde bulunduğunu gösterir, şikayetler sürerken negatif sonuç ise diğer nedenleri dışlamaz ve PCR gerektirebilir. Kararı hekim verir"
+			}
+		}
+	},
+	{
+		"slug": "ureaplasma-pcr",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "ПЦР в реальном времени на ДНК уреаплазм: тест выявляет группу целиком, без разделения на отдельные виды",
+				"how": "Мазок из уретры или цервикального канала либо первая порция утренней мочи, материал исследуют в лаборатории",
+				"when": "Выделения и дискомфорт при мочеиспускании, обследование при планировании беременности и при бесплодии, обследование партнёра, контроль после назначенного врачом лечения",
+				"prep": "Не мочиться 2–3 часа перед сдачей мазка или мочи, женщинам приходить вне дней менструации; срок после антибактериальных препаратов определяет врач",
+				"abnormal": "Положительный результат означает присутствие уреаплазм в пробе; они встречаются и у людей без жалоб, поэтому отдельно от симптомов результат не трактуют. Нужно ли что-то делать дальше, решает врач"
+			},
+			"en": {
+				"what": "Real-time PCR for ureaplasma DNA: the test detects the group as a whole, without separating the individual species",
+				"how": "A swab from the urethra or cervical canal, or the first portion of morning urine, is analysed in the laboratory",
+				"when": "Discharge and discomfort when urinating, testing when planning a pregnancy and during infertility work-up, examination of a partner, follow-up after treatment prescribed by a doctor",
+				"prep": "Do not urinate for two to three hours before giving the swab or urine, women should come outside the days of menstruation; the doctor sets the interval after antibacterial medication",
+				"abnormal": "A positive result means ureaplasmas are present in the sample; they also occur in people without complaints, so the result is not interpreted apart from the symptoms. Whether anything needs to be done next is decided by the doctor"
+			},
+			"sr": {
+				"what": "PCR u realnom vremenu na DNK ureaplazmi: test otkriva grupu u cjelini, bez razdvajanja pojedinačnih vrsta",
+				"how": "Bris uretre ili cervikalnog kanala ili prvi mlaz jutarnje mokraće obrađuje se u laboratoriji",
+				"when": "Sekret i nelagoda pri mokrenju, ispitivanje pri planiranju trudnoće i u obradi neplodnosti, pregled partnera, kontrola poslije terapije koju je odredio ljekar",
+				"prep": "Ne mokriti dva do tri sata prije davanja brisa ili mokraće, žene dolaze van dana menstruacije; razmak poslije antibakterijskih lijekova određuje ljekar",
+				"abnormal": "Pozitivan nalaz znači da su ureaplazme prisutne u uzorku; nalaze se i kod osoba bez tegoba, pa se nalaz ne tumači odvojeno od simptoma. Da li je potrebno nešto dalje činiti, odlučuje ljekar"
+			},
+			"de": {
+				"what": "Real-Time-PCR auf Ureaplasmen-DNA: der Test erfasst die Gruppe als Ganzes, ohne die einzelnen Arten zu trennen",
+				"how": "Ein Abstrich aus Harnröhre oder Gebärmutterhalskanal oder die erste Portion des Morgenurins wird im Labor untersucht",
+				"when": "Ausfluss und Beschwerden beim Wasserlassen, Untersuchung bei Kinderwunsch und im Rahmen der Abklärung von Unfruchtbarkeit, Untersuchung des Partners, Kontrolle nach ärztlich verordneter Behandlung",
+				"prep": "Zwei bis drei Stunden vor der Abgabe von Abstrich oder Urin nicht urinieren, Frauen außerhalb der Menstruationstage; den Abstand nach antibakteriellen Medikamenten legt der Arzt fest",
+				"abnormal": "Ein positives Ergebnis bedeutet, dass Ureaplasmen in der Probe vorhanden sind; sie kommen auch bei Menschen ohne Beschwerden vor, daher wird der Befund nicht losgelöst von den Symptomen gedeutet. Ob weitere Schritte nötig sind, entscheidet der Arzt"
+			},
+			"tr": {
+				"what": "Üreaplazma DNA'sına yönelik gerçek zamanlı PCR: test grubu bir bütün olarak saptar, türleri birbirinden ayırmaz",
+				"how": "Üretra veya servikal kanaldan sürüntü ya da sabah idrarının ilk kısmı laboratuvarda incelenir",
+				"when": "Akıntı ve idrar yaparken rahatsızlık, gebelik planlaması ve kısırlık araştırması kapsamında inceleme, partnerin değerlendirilmesi, hekimin verdiği tedaviden sonra kontrol",
+				"prep": "Sürüntü veya idrar vermeden iki üç saat önce idrara çıkılmamalı, kadınlar adet günleri dışında gelmeli; antibakteriyel ilaçlardan sonraki bekleme süresini hekim belirler",
+				"abnormal": "Pozitif sonuç örnekte üreaplazma bulunduğunu gösterir; bu bakteriler şikayeti olmayan kişilerde de bulunur, bu nedenle sonuç belirtilerden bağımsız yorumlanmaz. Sonraki adıma hekim karar verir"
+			}
+		}
+	},
+	{
+		"slug": "urine-culture-bacteria",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "Микробиологический посев мочи: лаборатория определяет, какие бактерии растут в образце и к каким антибиотикам они чувствительны",
+				"how": "Пациент собирает среднюю порцию мочи в стерильный контейнер, материал засевают на питательные среды и оценивают количество выросших бактерий",
+				"when": "Жжение и учащённое мочеиспускание, боль внизу живота или в пояснице, повторяющиеся инфекции мочевых путей, контроль при беременности и после курса лечения, проверка перед урологическими вмешательствами",
+				"prep": "Собрать среднюю порцию утренней мочи в стерильный контейнер после гигиены наружных половых органов, до начала антибиотиков или по согласованию с врачом, и быстро доставить в лабораторию",
+				"abnormal": "Рост бактерий может отражать инфекцию мочевых путей, бессимптомную бактериурию или загрязнение пробы при сборе. Значение находки и антибиотикограммы оценивает врач"
+			},
+			"en": {
+				"what": "Microbiological culture of urine: the laboratory determines which bacteria grow in the sample and which antibiotics they are susceptible to",
+				"how": "The patient collects a midstream portion of urine in a sterile container, the material is plated on culture media and the amount of bacterial growth is assessed",
+				"when": "Burning and frequent urination, pain in the lower abdomen or the lower back, recurrent urinary tract infections, monitoring in pregnancy and after a course of treatment, assessment before urological procedures",
+				"prep": "Collect the midstream portion of the morning urine in a sterile container after washing the external genitals, before antibiotics are started or as agreed with the doctor, and deliver it to the laboratory quickly",
+				"abnormal": "Bacterial growth may reflect a urinary tract infection, asymptomatic bacteriuria or contamination of the sample during collection. The doctor assesses the finding and the susceptibility report"
+			},
+			"sr": {
+				"what": "Mikrobiološka kultura mokraće: laboratorija utvrđuje koje bakterije rastu u uzorku i na koje su antibiotike osjetljive",
+				"how": "Pacijent sakuplja srednji mlaz mokraće u sterilnu posudu, materijal se zasijava na podloge i procjenjuje se količina izraslih bakterija",
+				"when": "Pečenje i često mokrenje, bol u donjem dijelu trbuha ili u krstima, ponavljane infekcije mokraćnih puteva, praćenje u trudnoći i poslije završene terapije, provjera prije uroloških zahvata",
+				"prep": "Sakupiti srednji mlaz jutarnje mokraće u sterilnu posudu poslije pranja spoljašnjih genitalija, prije uvođenja antibiotika ili po dogovoru sa ljekarom, i brzo dostaviti u laboratoriju",
+				"abnormal": "Porast bakterija može odražavati infekciju mokraćnih puteva, bakteriuriju bez tegoba ili zaprljanje uzorka pri sakupljanju. Nalaz i antibiogram procjenjuje ljekar"
+			},
+			"de": {
+				"what": "Mikrobiologische Urinkultur: das Labor bestimmt, welche Bakterien in der Probe wachsen und auf welche Antibiotika sie empfindlich sind",
+				"how": "Der Patient sammelt den Mittelstrahl des Urins in einem sterilen Gefäß, das Material wird auf Nährböden ausgestrichen und die Menge des Bakterienwachstums beurteilt",
+				"when": "Brennen und häufiges Wasserlassen, Schmerzen im Unterbauch oder in der Flanke, wiederkehrende Harnwegsinfekte, Kontrolle in der Schwangerschaft und nach einer Behandlung, Abklärung vor urologischen Eingriffen",
+				"prep": "Den Mittelstrahl des Morgenurins nach Reinigung des äußeren Genitalbereichs in einem sterilen Gefäß auffangen, vor Beginn von Antibiotika oder nach Absprache mit dem Arzt, und zügig ins Labor bringen",
+				"abnormal": "Bakterienwachstum kann einen Harnwegsinfekt, eine beschwerdefreie Bakteriurie oder eine Verunreinigung beim Sammeln widerspiegeln. Befund und Antibiogramm beurteilt der Arzt"
+			},
+			"tr": {
+				"what": "İdrarın mikrobiyolojik kültürü: laboratuvar örnekte hangi bakterilerin ürediğini ve hangi antibiyotiklere duyarlı olduğunu belirler",
+				"how": "Hasta orta akım idrarını steril kaba toplar, materyal besiyerlerine ekilir ve üreyen bakteri miktarı değerlendirilir",
+				"when": "Yanma ve sık idrara çıkma, alt karın veya bel ağrısı, tekrarlayan idrar yolu enfeksiyonları, gebelikte ve tedavi sonrası izlem, ürolojik girişimler öncesi kontrol",
+				"prep": "Sabah idrarının orta akımı, dış genital bölge temizlendikten sonra steril kaba alınmalı, antibiyotiğe başlamadan önce veya hekimle kararlaştırıldığı şekilde toplanmalı ve laboratuvara hızlıca ulaştırılmalı",
+				"abnormal": "Bakteri üremesi idrar yolu enfeksiyonunu, şikayetsiz bakteriüriyi ya da örnek alınırken bulaşmayı yansıtabilir. Sonucu ve antibiyogramı hekim değerlendirir"
+			}
+		}
+	},
+	{
+		"slug": "urine-culture-fungi",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "Посев мочи на дрожжевые грибы, чаще всего рода Candida",
+				"how": "Среднюю порцию мочи засевают на специальные среды для грибов и наблюдают рост дольше, чем при бактериальном посеве",
+				"when": "Жалобы со стороны мочевых путей при отрицательном бактериальном посеве, длительная антибактериальная терапия, сахарный диабет, постоянный мочевой катетер, сниженный иммунитет",
+				"prep": "Среднюю порцию мочи собрать в стерильный контейнер после гигиены наружных половых органов, по возможности до начала противогрибковых препаратов",
+				"abnormal": "Рост грибов может означать колонизацию мочевых путей или загрязнение пробы, но также и грибковую инфекцию. Различает эти ситуации врач по жалобам и другим анализам"
+			},
+			"en": {
+				"what": "Urine culture for yeasts, most often of the Candida genus",
+				"how": "A midstream urine sample is plated on special media for fungi and the growth is followed for longer than in a bacterial culture",
+				"when": "Urinary complaints with a negative bacterial culture, long antibacterial therapy, diabetes mellitus, an indwelling urinary catheter, reduced immunity",
+				"prep": "Collect a midstream urine sample in a sterile container after washing the external genitals, if possible before antifungal medication is started",
+				"abnormal": "Growth of fungi may mean colonisation of the urinary tract or contamination of the sample, but also a fungal infection. The doctor distinguishes these situations from the complaints and other tests"
+			},
+			"sr": {
+				"what": "Kultura mokraće na kvasnice, najčešće iz roda Candida",
+				"how": "Srednji mlaz mokraće zasijava se na posebne podloge za gljivice, a porast se prati duže nego kod bakteriološke kulture",
+				"when": "Tegobe mokraćnih puteva uz negativnu bakteriološku kulturu, dugotrajna antibakterijska terapija, šećerna bolest, stalni urinarni kateter, oslabljen imunitet",
+				"prep": "Srednji mlaz mokraće sakupiti u sterilnu posudu poslije pranja spoljašnjih genitalija, po mogućnosti prije uvođenja antimikotika",
+				"abnormal": "Porast gljivica može značiti kolonizaciju mokraćnih puteva ili zaprljanje uzorka, ali i gljivičnu infekciju. Ove situacije razlikuje ljekar prema tegobama i drugim nalazima"
+			},
+			"de": {
+				"what": "Urinkultur auf Hefepilze, meist der Gattung Candida",
+				"how": "Eine Mittelstrahlurinprobe wird auf spezielle Pilznährböden ausgestrichen und das Wachstum länger beobachtet als bei einer bakteriellen Kultur",
+				"when": "Harnwegsbeschwerden bei negativer bakterieller Kultur, lange antibakterielle Therapie, Diabetes mellitus, dauerhafter Blasenkatheter, geschwächte Immunabwehr",
+				"prep": "Mittelstrahlurin nach Reinigung des äußeren Genitalbereichs in einem sterilen Gefäß auffangen, möglichst bevor Antimykotika begonnen werden",
+				"abnormal": "Pilzwachstum kann eine Besiedlung der Harnwege oder eine Verunreinigung der Probe bedeuten, aber auch eine Pilzinfektion. Diese Situationen unterscheidet der Arzt anhand der Beschwerden und weiterer Befunde"
+			},
+			"tr": {
+				"what": "İdrarın, çoğunlukla Candida cinsi mayalara yönelik kültürü",
+				"how": "Orta akım idrar örneği mantarlar için özel besiyerlerine ekilir ve üreme bakteri kültürüne göre daha uzun süre izlenir",
+				"when": "Bakteri kültürü negatifken süren idrar yolu şikayetleri, uzun süreli antibakteriyel tedavi, şeker hastalığı, kalıcı idrar sondası, bağışıklığın zayıf olması",
+				"prep": "Orta akım idrarı, dış genital bölge temizlendikten sonra steril kaba, mümkünse mantar ilacı başlanmadan önce alınmalı",
+				"abnormal": "Mantar üremesi idrar yollarında kolonizasyonu ya da örneğe bulaşmayı gösterebileceği gibi mantar enfeksiyonunu da gösterebilir. Bu durumları hekim şikayetlere ve diğer tetkiklere bakarak ayırt eder"
+			}
+		}
+	},
+	{
+		"slug": "vaginal-discharge-dmp",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "Комплексное исследование вагинальных выделений: микроскопия окрашенного препарата и посев материала на бактерии и дрожжевые грибы",
+				"how": "Гинеколог берёт мазок из влагалища, часть материала окрашивают и смотрят под микроскопом, часть засевают на питательные среды, при росте выполняют антибиотикограмму",
+				"when": "Выделения с изменённым цветом или запахом, зуд и жжение, повторяющиеся воспаления влагалища, обследование при планировании беременности и перед гинекологическими вмешательствами",
+				"prep": "Приходить вне менструации, за сутки исключить интимные контакты, спринцевания, вагинальные свечи и кремы; о приёме антибиотиков сообщить врачу",
+				"abnormal": "Сдвиг в составе флоры или рост определённых микроорганизмов могут быть связаны с воспалением, а могут отражать временное изменение вагинальной флоры без жалоб. Нужно ли лечение, решает гинеколог по результату и симптомам"
+			},
+			"en": {
+				"what": "Combined examination of vaginal discharge: microscopy of a stained preparation plus culture of the material for bacteria and yeasts",
+				"how": "A gynaecologist takes a swab from the vagina, part of the material is stained and examined under the microscope and part is plated on culture media, with a susceptibility test if growth appears",
+				"when": "Discharge with changed colour or smell, itching and burning, recurrent vaginal inflammation, testing when planning a pregnancy and before gynaecological procedures",
+				"prep": "Attend outside menstruation, avoid intercourse, douching, vaginal suppositories and creams for a day; tell the doctor about any antibiotics taken",
+				"abnormal": "A shift in the flora or growth of certain microorganisms may be related to inflammation, but may also reflect a temporary change in the vaginal flora without complaints. Whether treatment is needed is decided by the gynaecologist from the result and the symptoms"
+			},
+			"sr": {
+				"what": "Objedinjeno ispitivanje vaginalnog sekreta: mikroskopija obojenog preparata i zasijavanje materijala na bakterije i kvasnice",
+				"how": "Ginekolog uzima bris vagine, dio materijala se boji i pregleda pod mikroskopom, a dio se zasijava na hranljive podloge, uz antibiogram ako dođe do porasta",
+				"when": "Sekret promijenjene boje ili mirisa, svrab i pečenje, ponavljane upale vagine, ispitivanje pri planiranju trudnoće i prije ginekoloških zahvata",
+				"prep": "Dolaziti van menstruacije, jedan dan izbjegavati odnose, ispiranja, vaginalete i kreme; ljekaru reći o antibioticima koji se uzimaju",
+				"abnormal": "Pomak u sastavu flore ili porast pojedinih mikroorganizama mogu biti povezani sa upalom, ali mogu odražavati i privremenu promjenu vaginalne flore bez tegoba. Da li je liječenje potrebno, procjenjuje ginekolog prema nalazu i simptomima"
+			},
+			"de": {
+				"what": "Kombinierte Untersuchung des Vaginalsekrets: Mikroskopie eines gefärbten Präparats und Anzucht des Materials auf Bakterien und Hefen",
+				"how": "Die Frauenärztin entnimmt einen Abstrich aus der Scheide, ein Teil des Materials wird gefärbt und mikroskopiert, ein Teil auf Nährböden ausgestrichen, bei Wachstum folgt ein Antibiogramm",
+				"when": "Ausfluss mit verändertem Farbton oder Geruch, Juckreiz und Brennen, wiederkehrende Scheidenentzündungen, Untersuchung bei Kinderwunsch und vor gynäkologischen Eingriffen",
+				"prep": "Außerhalb der Menstruation kommen, einen Tag lang auf Geschlechtsverkehr, Spülungen, Vaginalzäpfchen und Cremes verzichten; eingenommene Antibiotika dem Arzt mitteilen",
+				"abnormal": "Eine Verschiebung der Flora oder das Wachstum bestimmter Mikroorganismen können mit einer Entzündung zusammenhängen, aber auch eine vorübergehende Veränderung der Scheidenflora ohne Beschwerden widerspiegeln. Ob eine Behandlung nötig ist, entscheidet die Frauenärztin anhand von Befund und Symptomen"
+			},
+			"tr": {
+				"what": "Vajinal akıntının birlikte değerlendirilmesi: boyalı preparatın mikroskopla incelenmesi ve materyalin bakteri ile mayalar için kültüre ekilmesi",
+				"how": "Jinekolog vajinadan sürüntü alır, materyalin bir kısmı boyanıp mikroskopta incelenir, bir kısmı besiyerlerine ekilir ve üreme olursa antibiyogram yapılır",
+				"when": "Rengi veya kokusu değişmiş akıntı, kaşıntı ve yanma, tekrarlayan vajina iltihapları, gebelik planlarken ve jinekolojik girişimler öncesi inceleme",
+				"prep": "Adet dönemi dışında gelinmeli, bir gün cinsel ilişki, vajinal duş, vajinal fitil ve kremlerden kaçınılmalı; kullanılan antibiyotikler hekime bildirilmeli",
+				"abnormal": "Floradaki kayma ya da bazı mikroorganizmaların üremesi iltihapla ilişkili olabileceği gibi şikayet yaratmayan geçici bir flora değişimini de yansıtabilir. Tedavi gerekip gerekmediğine jinekolog sonuç ve belirtilere göre karar verir"
+			}
+		}
+	},
+	{
+		"slug": "wound-swab-aerobic-bacteria",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "Посев материала из раны в аэробных условиях, то есть на бактерии, которым для роста нужен кислород",
+				"how": "Стерильным тампоном берут материал со дна и краёв раны, засевают на среды и инкубируют в присутствии кислорода, при росте выполняют антибиотикограмму",
+				"when": "Гнойное отделяемое и неприятный запах, покраснение и отёк краёв раны, послеоперационные и медленно заживающие раны, язвы и ожоговые поверхности, подбор антибактериального лечения врачом",
+				"prep": "Повязку снимают непосредственно перед взятием, рану перед этим не обрабатывают антисептиками; об уже начатых антибиотиках сообщают лаборатории",
+				"abnormal": "Рост аэробных бактерий может отражать инфекцию раны или колонизацию без воспаления, а часть возбудителей растёт только без кислорода и в этот посев не попадает. Результат оценивает лечащий врач"
+			},
+			"en": {
+				"what": "Culture of wound material under aerobic conditions, that is, for bacteria that need oxygen to grow",
+				"how": "Material is taken with a sterile swab from the base and the edges of the wound, plated on media and incubated in the presence of oxygen, with a susceptibility test if growth appears",
+				"when": "Purulent discharge and unpleasant smell, redness and swelling of the wound edges, postoperative and slow-healing wounds, ulcers and burn surfaces, selection of antibacterial treatment by the doctor",
+				"prep": "The dressing is removed immediately before sampling and the wound is not treated with antiseptics beforehand; any antibiotics already started should be reported to the laboratory",
+				"abnormal": "Growth of aerobic bacteria may reflect wound infection or colonisation without inflammation, and some pathogens grow only without oxygen and are not covered by this culture. The treating doctor assesses the result"
+			},
+			"sr": {
+				"what": "Zasijavanje materijala iz rane u aerobnim uslovima, dakle na bakterije kojima je za rast potreban kiseonik",
+				"how": "Sterilnim štapićem uzima se materijal sa dna i ivica rane, zasijava se na podloge i inkubira uz prisustvo kiseonika, a kod porasta se radi antibiogram",
+				"when": "Gnojni sekret i neprijatan miris, crvenilo i otok ivica rane, postoperativne rane i rane koje sporo zarastaju, ulceracije i opekotinske površine, izbor antibakterijske terapije od strane ljekara",
+				"prep": "Zavoj se skida neposredno prije uzimanja, a rana se prethodno ne tretira antisepticima; o već započetim antibioticima obavijestiti laboratoriju",
+				"abnormal": "Porast aerobnih bakterija može odražavati infekciju rane ili kolonizaciju bez upale, a dio uzročnika raste samo bez kiseonika i ne ulazi u ovu kulturu. Nalaz procjenjuje ljekar koji liječi"
+			},
+			"de": {
+				"what": "Anzucht von Wundmaterial unter aeroben Bedingungen, also auf Bakterien, die zum Wachstum Sauerstoff brauchen",
+				"how": "Mit einem sterilen Tupfer wird Material vom Wundgrund und von den Wundrändern entnommen, auf Nährböden ausgestrichen und unter Sauerstoff bebrütet, bei Wachstum folgt ein Antibiogramm",
+				"when": "Eitriges Sekret und unangenehmer Geruch, Rötung und Schwellung der Wundränder, postoperative und schlecht heilende Wunden, Geschwüre und Verbrennungsflächen, Auswahl der antibakteriellen Behandlung durch den Arzt",
+				"prep": "Der Verband wird unmittelbar vor der Entnahme abgenommen, die Wunde vorher nicht mit Antiseptika behandeln; bereits begonnene Antibiotika dem Labor mitteilen",
+				"abnormal": "Das Wachstum aerober Bakterien kann eine Wundinfektion oder eine Besiedlung ohne Entzündung widerspiegeln, und ein Teil der Erreger wächst nur ohne Sauerstoff und wird von dieser Kultur nicht erfasst. Den Befund beurteilt der behandelnde Arzt"
+			},
+			"tr": {
+				"what": "Yara materyalinin aerobik koşullarda, yani üremek için oksijene ihtiyaç duyan bakterilere yönelik kültürü",
+				"how": "Steril eküvyonla yaranın tabanından ve kenarlarından materyal alınır, besiyerlerine ekilir ve oksijenli ortamda inkübe edilir, üreme olursa antibiyogram yapılır",
+				"when": "İrinli akıntı ve kötü koku, yara kenarlarında kızarıklık ve şişlik, ameliyat sonrası ve geç iyileşen yaralar, ülserler ve yanık yüzeyleri, hekimin antibakteriyel tedaviyi seçmesi",
+				"prep": "Pansuman örnek alınmadan hemen önce açılır ve yara öncesinde antiseptikle temizlenmez; başlanmış antibiyotikler laboratuvara bildirilmelidir",
+				"abnormal": "Aerobik bakteri üremesi yara enfeksiyonunu ya da iltihapsız kolonizasyonu yansıtabilir, bazı etkenler ise yalnızca oksijensiz ortamda ürediği için bu kültüre girmez. Sonucu tedaviyi yürüten hekim değerlendirir"
+			}
+		}
+	},
+	{
+		"slug": "wound-swab-aerobic-fungi",
+		"entity_type": "lab_test",
+		"translations": {
+			"ru": {
+				"what": "Посев материала из раны на среды для грибов с инкубацией в присутствии кислорода",
+				"how": "Материал берут стерильным тампоном со дна раны, засевают на среды для грибов и наблюдают рост в течение нескольких дней, дольше, чем при бактериальном посеве",
+				"when": "Раны, которые долго не заживают, отсутствие эффекта от антибактериального лечения, белый или творожистый налёт на раневой поверхности, сахарный диабет, сниженный иммунитет, ожоги",
+				"prep": "Перед взятием рану не обрабатывать антисептиками и противогрибковыми мазями, повязку снимают непосредственно перед процедурой",
+				"abnormal": "Рост грибов может означать поверхностную колонизацию раны или их участие в воспалении. Вид гриба вместе с видом раны и жалобами оценивает лечащий врач, он же решает, нужно ли лечение"
+			},
+			"en": {
+				"what": "Culture of wound material on fungal media with incubation in the presence of oxygen",
+				"how": "Material is collected from the wound base with a sterile swab, plated on fungal media and observed over several days, longer than in a bacterial culture",
+				"when": "Wounds that do not heal for a long time, no effect from antibacterial treatment, white or curd-like coating on the wound surface, diabetes mellitus, reduced immunity, burns",
+				"prep": "Do not treat the wound with antiseptics or antifungal ointments before sampling, the dressing is removed immediately before the procedure",
+				"abnormal": "Growth of fungi may mean superficial colonisation of the wound or their involvement in the inflammation. The treating doctor assesses the type of fungus together with the wound and the complaints and decides whether treatment is needed"
+			},
+			"sr": {
+				"what": "Zasijavanje materijala iz rane na podloge za gljivice uz inkubaciju u prisustvu kiseonika",
+				"how": "Materijal se sterilnim štapićem uzima sa dna rane, zasijava na podloge za gljivice i prati nekoliko dana, duže nego kod bakteriološke kulture",
+				"when": "Rane koje dugo ne zarastaju, izostanak efekta antibakterijske terapije, bjeličaste ili sirolike naslage na površini rane, šećerna bolest, oslabljen imunitet, opekotine",
+				"prep": "Prije uzimanja ranu ne tretirati antisepticima ni antimikoticima, a zavoj se skida neposredno prije postupka",
+				"abnormal": "Porast gljivica može značiti površinsku kolonizaciju rane ili njihovo učešće u upali. Vrstu gljivice zajedno sa izgledom rane i tegobama procjenjuje ljekar koji liječi i on odlučuje da li je terapija potrebna"
+			},
+			"de": {
+				"what": "Anzucht von Wundmaterial auf Pilznährböden mit Bebrütung unter Sauerstoff",
+				"how": "Das Material wird mit einem sterilen Tupfer vom Wundgrund entnommen, auf Pilznährböden ausgestrichen und über mehrere Tage beobachtet, länger als bei einer bakteriellen Kultur",
+				"when": "Wunden, die lange nicht heilen, ausbleibende Wirkung einer antibakteriellen Behandlung, weißlicher oder krümeliger Belag auf der Wundfläche, Diabetes mellitus, geschwächte Immunabwehr, Verbrennungen",
+				"prep": "Die Wunde vor der Entnahme nicht mit Antiseptika oder Antimykotika behandeln, der Verband wird unmittelbar vor dem Eingriff abgenommen",
+				"abnormal": "Pilzwachstum kann eine oberflächliche Besiedlung der Wunde oder eine Beteiligung an der Entzündung bedeuten. Die Pilzart zusammen mit dem Wundbild und den Beschwerden beurteilt der behandelnde Arzt, er entscheidet auch über eine Behandlung"
+			},
+			"tr": {
+				"what": "Yara materyalinin oksijenli ortamda inkübe edilerek mantar besiyerlerine ekilmesi",
+				"how": "Materyal steril eküvyonla yaranın tabanından alınır, mantar besiyerlerine ekilir ve bakteri kültürüne göre daha uzun, birkaç gün boyunca izlenir",
+				"when": "Uzun süre iyileşmeyen yaralar, antibakteriyel tedaviye yanıt alınamaması, yara yüzeyinde beyazımsı veya kesilmiş süt görünümünde tabaka, şeker hastalığı, bağışıklığın zayıf olması, yanıklar",
+				"prep": "Örnek alınmadan önce yara antiseptik ve mantar merhemleriyle temizlenmemeli, pansuman işlemden hemen önce açılmalı",
+				"abnormal": "Mantar üremesi yarada yüzeysel kolonizasyonu ya da mantarların iltihaba katılımını gösterebilir. Mantar türünü yaranın görünümü ve şikayetlerle birlikte tedaviyi yürüten hekim değerlendirir ve tedavi gerekip gerekmediğine karar verir"
+			}
+		}
+	}
+]

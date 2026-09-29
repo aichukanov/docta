@@ -40,7 +40,15 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				'DELETE FROM doctor_clinics WHERE doctor_id = ?';
 			await connection.execute(deleteClinicsQuery, [body.doctorId]);
 
-			// 4. Удаляем самого врача
+			// 4. Удаляем цены врача на услуги в клиниках. Этой строки тут не
+			// было, и каждое удаление врача оставляло висящие связи (убраны
+			// миграцией 032, она же завела на них FK с CASCADE). В слиянии
+			// врачей (merge.ts) та же уборка делалась с самого начала.
+			const deleteServicePricesQuery =
+				'DELETE FROM clinic_medical_service_doctors WHERE doctor_id = ?';
+			await connection.execute(deleteServicePricesQuery, [body.doctorId]);
+
+			// 5. Удаляем самого врача
 			const deleteDoctorQuery = 'DELETE FROM doctors WHERE id = ?';
 			const [result]: any = await connection.execute(deleteDoctorQuery, [
 				body.doctorId,

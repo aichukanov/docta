@@ -34,7 +34,15 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 				'DELETE FROM doctor_clinics WHERE clinic_id = ?';
 			await connection.execute(deleteDoctorsQuery, [body.clinicId]);
 
-			// 3. Удаляем саму клинику
+			// 3. Удаляем цены врачей на услуги в этой клинике. Прайс-листы
+			// (clinic_medical_services, clinic_lab_tests) уходят сами по FK
+			// с CASCADE, а у этой таблицы ключа не было — строки оставались бы
+			// висеть (см. миграцию 032, она завела FK и сюда).
+			const deleteServicePricesQuery =
+				'DELETE FROM clinic_medical_service_doctors WHERE clinic_id = ?';
+			await connection.execute(deleteServicePricesQuery, [body.clinicId]);
+
+			// 4. Удаляем саму клинику
 			const deleteClinicQuery = 'DELETE FROM clinics WHERE id = ?';
 			const [result]: any = await connection.execute(deleteClinicQuery, [
 				body.clinicId,

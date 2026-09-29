@@ -1,0 +1,236 @@
+[
+	{
+		"slug": "anterior-hematoma-puncture",
+		"names": {
+			"en": "Subcutaneous Hematoma Puncture",
+			"sr": "Punkcija potkožnih hematoma",
+			"ru": "Пункция подкожной гематомы",
+			"de": "Punktion subkutaner Hämatome",
+			"tr": "Deri altı hematom ponksiyonu"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] },
+		"note": "«prednjih» — ошибка чтения скана ДЗ Херцег-Нови (код HN_X01011, Мойковац скопировал); у Колашина под тем же X01011 «Punkcija potkožnih hematoma», так же в FZOCG ПЗЗ X01011. Тариф fzocg-pzz X01011 при этом привязан к 5294 aspiration-puncture-of-abscess-or-hematoma, а не к этой услуге — похоже на ошибочную привязку (коды pzz и sekundarna пересекаются). Из-за неё review-17 дал 5294 синонимы «Punkcija potkožnog hematoma» / «Пункция подкожной гематомы» — это название этой услуги, полный прогон валидатора ловит столкновение; синонимы у 5294 снять."
+	},
+	{
+		"slug": "behavioral-psychotherapy",
+		"names": {},
+		"synonyms": {
+			"en": ["Behavior Therapy", "Behavioral Therapy"],
+			"sr": ["Bihejvioralna terapija", "Bihevioralna terapija"],
+			"ru": ["Поведенческая терапия", "Бихевиоральная терапия"],
+			"de": [],
+			"tr": ["Davranış terapisi"]
+		}
+	},
+	{
+		"slug": "child-follow-up-hospital-round",
+		"names": {
+			"ru": "Повторный осмотр ребёнка в стационаре"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "child-initial-hospital-workup",
+		"names": {
+			"ru": "Первичный осмотр ребёнка в стационаре",
+			"de": "Stationäre Aufnahmeuntersuchung des Kindes"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "chronic-hemodialysis-session",
+		"names": {},
+		"synonyms": {
+			"en": ["Maintenance Hemodialysis"],
+			"sr": [],
+			"ru": ["Программный гемодиализ"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "chronic-patient-nursing-care",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "consilium-medical-examination",
+		"names": {
+			"ru": "Осмотр консилиумом врачей",
+			"tr": "Hekim konseyi muayenesi"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Ljekarski konzilijum", "Lekarski konzilijum"],
+			"ru": ["Консилиум врачей"],
+			"de": [],
+			"tr": []
+		},
+		"note": "Konzilijarni pregled прочитан как осмотр консилиумом (так уже в en/ru/de; консультация специалиста — отдельная позиция Y01004); tr «Konsültasyon muayenesi» подтянут под это."
+	},
+	{
+		"slug": "continuous-renal-replacement-therapy-crrt",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["ПЗПТ"],
+			"de": [],
+			"tr": ["SRRT"]
+		}
+	},
+	{
+		"slug": "first-psychiatrist-examination",
+		"names": {},
+		"synonyms": {
+			"en": ["Psychiatric Consultation"],
+			"sr": ["Pregled kod psihijatra"],
+			"ru": ["Консультация психиатра"],
+			"de": [],
+			"tr": ["Psikiyatrist muayenesi"]
+		}
+	},
+	{
+		"slug": "follow-up-hospital-round",
+		"names": {
+			"ru": "Повторный осмотр в стационаре (обход)"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "follow-up-psychiatrist-examination",
+		"names": {
+			"tr": "Psikiyatri kontrol muayenesi"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Ponovni pregled psihijatra"],
+			"ru": ["Повторная консультация психиатра"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "food-costs-for-children-under-1-year",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "food-costs-for-patients-over-1-year",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "functional-renal-test",
+		"names": {
+			"ru": "Функциональное исследование почек",
+			"de": "Nierenfunktionsprüfung",
+			"tr": "Fonksiyonel böbrek testi"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Функциональные пробы почек"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "heteroanamnesis",
+		"names": {},
+		"synonyms": {
+			"en": ["Collateral History"],
+			"sr": [],
+			"ru": ["Объективный анамнез", "Сбор анамнеза у родственников"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "hospital-care-for-involuntarily-hospitalized-patient",
+		"names": {
+			"en": "Hospital Care for Involuntarily Hospitalized Patients and Patients under Compulsory Treatment Order",
+			"sr": "Bolnička obrada prisilno hospitalizovanih pacijenata i pacijenata sa mjerom obaveznog liječenja i čuvanja",
+			"ru": "Ведение в стационаре принудительно госпитализированных пациентов и пациентов на принудительном лечении",
+			"de": "Stationäre Betreuung von zwangseingewiesenen Patienten und Patienten im Maßregelvollzug",
+			"tr": "Zorunlu yatırılmış ve güvenlik tedbiri olarak zorunlu tedavi gören hastaların hastane bakımı"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] },
+		"note": "Y01026 в исходном скане FZOCG: «prisilno hospitalizovanih pacijenata i pacijenata sa izrečenom mjerom bezbjednosti obaveznog liječenja i čuvanja u zdravstvenoj ustanovi» (в fzocg ростера LLM-версия «psiho hospitalizovanih…»). Вторая группа пациентов была потеряна во всех локалях — дописана."
+	},
+	{
+		"slug": "hospital-discharge-letter",
+		"names": {
+			"tr": "Taburcu epikrizi"
+		},
+		"synonyms": {
+			"en": ["Discharge Summary"],
+			"sr": ["Otpusna lista"],
+			"ru": ["Выписка из больницы", "Выписка из стационара"],
+			"de": ["Entlassbrief"],
+			"tr": ["Taburcu özeti"]
+		}
+	},
+	{
+		"slug": "infant-follow-up-hospital-round",
+		"names": {
+			"ru": "Повторный осмотр грудного ребёнка в стационаре"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "infant-initial-hospital-workup",
+		"names": {
+			"ru": "Первичный осмотр грудного ребёнка в стационаре",
+			"de": "Stationäre Aufnahmeuntersuchung des Säuglings"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "initial-hospital-workup",
+		"names": {
+			"ru": "Первичный осмотр в стационаре",
+			"de": "Stationäre Aufnahmeuntersuchung"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] },
+		"note": "Серия Y01 (početna / dalja bolnička obrada) продолжается в review-31 (новорождённый, Y01019/Y01023): здесь ru «Первичная больничная обработка» → «Первичный осмотр … в стационаре», «Дальнейший больничный обход» → «Повторный осмотр … в стационаре», de «Erstaufnahme-Untersuchung» → «Stationäre Aufnahmeuntersuchung …» — новорождённых привести к тому же."
+	},
+	{
+		"slug": "initial-hospital-workup-of-involuntarily-hospitalized-patient",
+		"names": {
+			"ru": "Первичный осмотр принудительно госпитализированного пациента в стационаре",
+			"de": "Stationäre Aufnahmeuntersuchung eines zwangseingewiesenen Patienten"
+		},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "inpatient-abortion-procedure",
+		"names": {
+			"ru": "Аборт в стационаре",
+			"tr": "Serviste abortus işlemi"
+		},
+		"synonyms": {
+			"en": ["Termination of Pregnancy"],
+			"sr": ["Prekid trudnoće"],
+			"ru": ["Прерывание беременности в стационаре"],
+			"de": ["Abtreibung"],
+			"tr": ["Kürtaj"]
+		}
+	},
+	{
+		"slug": "intensive-nursing-care-for-children-1-month-to-7-years",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "loading-tests-for-suspected-renal-tubular-acidosis",
+		"names": {},
+		"synonyms": {
+			"en": ["Acid Loading Test"],
+			"sr": [],
+			"ru": [],
+			"de": ["Säurebelastungstest"],
+			"tr": []
+		}
+	}
+]

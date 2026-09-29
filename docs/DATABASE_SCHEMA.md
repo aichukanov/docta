@@ -34,6 +34,8 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `clinic_admins`                         | Junction table: Clinic <-> managing users (cabinet access). _(migration 022)_                  |
 | `clinic_working_hours`                  | Working hours per clinic (JSON per weekday).                                                  |
 | `clinic_coupons`                        | Discount coupons per clinic (percent + item types). _(migration 020)_                         |
+| `insurance_companies`                   | Directory of private insurers operating in Montenegro. _(migrations 010-012)_                 |
+| `insurance_company_branches`            | Branch offices of an insurer (1:N), with address, coordinates and hours.                      |
 | `doctor_clinics`                        | Junction table: Doctor <-> Clinic (includes position).                                        |
 | `doctor_specialties`                    | Junction table: Doctor <-> Specialty.                                                         |
 | `doctor_languages`                      | Junction table: Doctor <-> Languages spoken.                                                  |
@@ -43,14 +45,17 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `lab_test_categories`                   | Categories for lab tests.                                                                     |
 | `lab_test_categories_relations`         | Junction table: Lab Test <-> Category.                                                        |
 | `lab_test_synonyms`                     | Alternative names for lab tests for search optimization.                                      |
+| `lab_test_reference_info`               | Editorial reference card for a lab test, 5 fields x 6 languages.                              |
+| `medical_service_reference_info`        | Editorial reference card for a service, same shape as the lab test one.                       |
 | `medical_service_synonyms`              | Alternative names for medical services (search + names kept from merges).                     |
+| `medical_service_tariffs`               | State-insurance (FZOCG) reference pricelists, linked to either catalog. NOT clinic prices.    |
 | `medical_service_duplicate_candidates`  | Review queue of suspected duplicate service pairs.                                            |
 | `lab_test_duplicate_candidates`         | Review queue of suspected duplicate lab test pairs.                                           |
 | `medical_service_redirects`             | Redirect map for merged medical service records.                                              |
 | `doctor_redirects`                      | Redirect map for merged doctor profiles.                                                      |
 | `lab_test_redirects`                    | Redirect map for merged lab test records.                                                     |
 | `slug_redirects`                        | Redirect map for renamed slugs (old slug → entity id).                                        |
-| `reviews`                               | Polymorphic reviews for clinics, doctors, and services.                                       |
+| `reviews`                               | Polymorphic reviews for clinics, doctors, services, and insurance companies.                  |
 | `review_replies`                        | Replies to reviews (one from clinic, one from doctor).                                        |
 | `review_likes`                          | Likes on reviews by registered users.                                                         |
 | `review_reply_likes`                    | Likes on review replies by registered users.                                                  |
@@ -58,8 +63,12 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `review_moderation_logs`                | Audit log of review moderation actions. _(migration 005, applied 2026-06-12)_                 |
 | `review_ai_summaries`                   | Cached AI summaries of reviews per entity per locale. _(migration 005, applied 2026-06-12)_   |
 | `billing_paid_services`                 | Catalog of paid services available for clinics.                                               |
+| `billing_service_prices`                | Price per paid service per period, with deactivated rows kept for history.                    |
 | `billing_clinic_service_purchases`      | Purchase records of paid services by clinics.                                                 |
 | `billing_clinic_service_purchase_items` | Junction table: Purchase <-> Paid Service.                                                    |
+| `billing_orders`                        | Checkout orders for paid services (Stripe flow, not yet in use).                              |
+| `billing_order_items`                   | Junction table: Order <-> Paid Service, with the price frozen at order time.                  |
+| `billing_payment_transactions`          | Payment attempts against an order (Stripe session, status, error).                            |
 | `countries`                             | Shared country table with 6-language translations.                                            |
 | `med_dispensing_modes`                  | Medicine dispensing modes (prescription/OTC) with translations.                               |
 | `med_pharma_forms`                      | Pharmaceutical dosage forms with translations.                                                |
@@ -69,6 +78,9 @@ This file provides a structured reference of the MySQL database for the docta.me
 | `med_manufacturers`                     | Drug manufacturers with full addresses and country FK.                                        |
 | `med_medicines`                         | CInMED medicine register (3553 medicines).                                                    |
 | `med_medicine_substances`               | Junction table: Medicine <-> Substance (M:N).                                                 |
+| `med_substance_reference_info`          | Editorial reference card for a substance, 3 fields x 6 languages. _(migration 024)_           |
+| `med_foreign_products`                  | Brand names of the same substances on foreign markets (RU/UA/TR/DE/PL/US). _(migration 017)_  |
+| `med_foreign_product_substances`        | Junction table: Foreign product <-> Substance (M:N).                                          |
 
 ## Detailed Table Definitions
 
@@ -304,18 +316,30 @@ This file provides a structured reference of the MySQL database for the docta.me
 ### `lab_test_categories_relations`
 
 - `id` (int, PK, AI)
-- `lab_test_id` (int): Lab Test ID.
+- `lab_test_id` (int, FK -> lab_tests.id, CASCADE): Lab Test ID.
 - `category_id` (int): Category ID.
 - _Unique constraint_: (`lab_test_id`, `category_id`)
+- _Comment_: FK added by migration 032 — see `medical_service_categories_relations`.
 
 ### `lab_test_synonyms`
 
 - `id` (int, PK, AI)
-- `lab_test_id` (int): Lab Test ID.
+- `lab_test_id` (int, FK -> lab_tests.id, CASCADE): Lab Test ID. _(FK added by migration 032)_
 - `another_name` (varchar(255), Indexed): Alternative name.
 - `language` (varchar(10)): Language code.
 - _Unique constraint_: (`another_name`, `language`) — globally unique, unlike `medical_service_synonyms` which scopes uniqueness per record.
-- _Comment_: Merging lab tests writes the losing record's names here (all six languages), so a clinic's own phrasing keeps resolving after the merge.
+- _Comment_: Merging lab tests writes the losing record's names here (all six languages), so a clinic's own phrasing keeps resolving after the merge. A merge also moves the losing record's existing synonyms across, and one of those can end up equal to the surviving record's own name — the cleanup query for that lives in `duplicate-synonyms-fix.txt` and ran as migration 031.
+- _Collation trap_: this table is `utf8mb4_0900_ai_ci` while `lab_tests` is `utf8mb4_unicode_ci`. Comparing `another_name` against a `lab_tests.name_*` column fails with ERROR 1267 unless an explicit `COLLATE utf8mb4_unicode_ci` is written into the expression; the `SET NAMES` header does not help, it only governs literals.
+
+### `lab_test_reference_info`
+
+- `id` (int, PK, AI)
+- `lab_test_id` (int, NOT NULL, FK -> lab_tests.id, CASCADE)
+- `what_*`, `how_*`, `indications_*`, `prep_*`, `abnormal_*` (text): Five content fields, each with `_en`, `_sr`, `_sr_cyrl`, `_ru`, `_de`, `_tr` variants.
+- `created_at`, `updated_at` (timestamp)
+- _Unique constraint_: (`lab_test_id`) — one card per lab test.
+- _Comment_: Editorial content written for the catalogue, not imported from any clinic. Five fields, each in six languages, and the set is fixed by an approved format: `what` (what it is), `how` (how it is done), `indications` (when it is ordered), `prep` (how to prepare), `abnormal` (what a deviation can mean). The generic medical disclaimer is NOT stored here — it lives in the page footer, so a card only carries its own specifics.
+- _Merge behaviour_: `UNIQUE` on the entity id means a merge can only carry the card over if the surviving record has none; the merge endpoints therefore use `UPDATE IGNORE`, and a losing record's card is dropped with it.
 
 ### `lab_test_duplicate_candidates`
 
@@ -373,6 +397,9 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `created_at` (timestamp)
 - _Unique constraint_: (`medical_service_id`, `another_name`, `language`)
 - _Comment_: Mirrors `lab_test_synonyms`, but scoped per service rather than globally unique on name — the same wording may legitimately point at more than one service. Merging services writes the losing record's names here, so a clinic's own phrasing keeps resolving after the merge.
+- _Coverage_: until migrations 036/037 only 83 of 4991 services had any row here, nearly all as merge fallout rather than editorial work — the import prompt documented synonyms for lab tests only, so no import ever wrote one for a service. 036/037 add 3854 rows for 927 services (every service in ≥3 clinics was reviewed). Batches, pipeline and rules: `data/service-names/README.md`; audit: `docs/audit/service-names-2026-09.md`; the convention for new imports: `docs/import/CLINIC_SERVICES_IMPORT.md` §1.6.
+- _Language codes_: `sr-cyrl` with a hyphen, as in `lab_test_synonyms`. The `sr_cyrl` spelling in the table comment in `server/sql/create-medical-service-synonyms.sql` is wrong — no row uses it.
+- _Collation_: unlike the lab-test pair, both this table and `medical_services` are `utf8mb4_unicode_ci`, so comparing `another_name` against a `name_*` column does NOT need an explicit `COLLATE`.
 
 ### `medical_service_duplicate_candidates`
 
@@ -396,15 +423,50 @@ This file provides a structured reference of the MySQL database for the docta.me
 ### `medical_service_categories_relations`
 
 - `id` (int, PK, AI)
-- `medical_service_id` (int): Medical Service ID.
+- `medical_service_id` (int, FK -> medical_services.id, CASCADE): Medical Service ID.
 - `medical_service_category_id` (int): Medical Service Category ID.
 - _Unique constraint_: (`medical_service_id`, `medical_service_category_id`)
+- _Comment_: The FK dates from migration 032. Until then this table had none and `server/api/services/remove.ts` did not clean it, so every deleted service left rows pointing at nothing — invisible on the site but skewing counts (services per category). The same migration added FKs to `medical_services_specialties`, `clinic_medical_service_doctors`, `lab_test_categories_relations` and `lab_test_synonyms` for the same reason.
 
 ### `medical_services_specialties`
 
 - `id` (int, PK, AI)
-- `medical_service_id` (int): Medical Service ID.
+- `medical_service_id` (int, FK -> medical_services.id, CASCADE): Medical Service ID.
 - `specialty_id` (int): Specialty ID.
+- _Comment_: FK added by migration 032 — see `medical_service_categories_relations`.
+
+### `medical_service_tariffs`
+
+Reference tariffs from the state insurer (FZOCG) pricelists. **Not** clinic prices: a row is what FZOCG pays or charges for a position, shown on detail pages as context next to the clinics' own prices.
+
+- `id` (int, PK, AI)
+- `tariff_source` (enum, NOT NULL): Which pricelist the row came from — `fzocg-pzz` (primary care), `fzocg-sekundarna` (secondary/tertiary), `fzocg-drg`, `fzocg-transfuziologija`, `fzocg-apotekarska`, `fzocg-medicinsko-pomagala`, `fzocg-van-mreze`.
+- `code` (varchar(50), NOT NULL, Indexed): Service code as printed in the source PDF (e.g. `J09001`, `A05Z`, `AA1101`).
+- `medical_service_id` (int, NULL, FK -> medical_services.id, SET NULL): Link into the services catalog.
+- `lab_test_id` (int, NULL, FK -> lab_tests.id, SET NULL): Link into the lab test catalog. Laboratory sections of the pricelist (`K01`/`K02` microbiology, `L01` histopathology, `Z01` biochemistry and haematology) belong to lab tests, not services. _(migration 028)_
+- `scheme` (enum('single','dual','operacija','coefficient'), NOT NULL): Which of the price columns below are populated.
+- `price_eur` (decimal(10,2)): `scheme=single` — the only price. `scheme=coefficient` — the computed final price.
+- `price_odjeljenje_eur`, `price_ambulanta_eur` (decimal(10,2)): `scheme=dual` — inpatient (department) and outpatient price.
+- `price_operacija_eur`, `price_anestezija_eur`, `price_ukupno_eur` (decimal(10,2)): `scheme=operacija` — operation portion, anesthesia portion, and their total.
+- `coefficient` (decimal(8,4)), `base_coefficient_eur` (decimal(10,2)): `scheme=coefficient` — DRG coefficient and base rate; their product is `price_eur`.
+- `name_sr_latin` (varchar(500)): Position name exactly as printed in the source PDF (Serbian Latin).
+- `section`, `subsection` (varchar): Section headings of the source document — the only thing that disambiguates codes reused across pricelists.
+- `amended_from`, `effective_from` (date): Effective date of the latest amendment and of the base document.
+- `source_signed_number` (varchar(50)), `source_pdf` (varchar(500)), `notes` (text): Provenance.
+- `created_at`, `updated_at` (timestamp)
+- _Unique constraint_: (`tariff_source`, `code`) — `code` alone is NOT unique, and this is not an edge case: 246 codes occur in more than one pricelist, usually meaning something entirely different. `L01008` is `Patronažna posjeta kod babinjara` in `fzocg-pzz` but `Pregled endoskopske resekcije polipa kolona` in `fzocg-sekundarna`. Every lookup must scope by `tariff_source`.
+- _Indexes_: `idx_medical_service_id`, `idx_lab_test_id`, `idx_code`
+- _Comment_: 5822 rows; 2809 linked to services, 23 to lab tests, 2990 linked to neither — a code without a catalog counterpart is normal and stays searchable. **At most one of the two catalog links is set.** That is a convention, not a DB constraint: MySQL 8 refuses a `CHECK` on a column used by a FK with `ON DELETE SET NULL` (ERROR 3823), and both columns are such. It holds because migration 029 assigns one link and nulls the other in a single `UPDATE`, and because `server/common/tariffs.ts` queries strictly one column per request. Read by `server/api/services/details.ts` and `server/api/labtests/details.ts`, rendered by `components/medical-service/fzocg-tariff-section.vue` on both detail pages, and searchable by code in `/services`.
+
+### `medical_service_reference_info`
+
+- `id` (int, PK, AI)
+- `medical_service_id` (int, NOT NULL, FK -> medical_services.id, CASCADE)
+- `what_*`, `how_*`, `indications_*`, `prep_*`, `abnormal_*` (text): Same five fields x six languages as `lab_test_reference_info`.
+- `created_at`, `updated_at` (timestamp)
+- _Unique constraint_: (`medical_service_id`) — one card per service.
+- _Comment_: Editorial content written for the catalogue, not imported from any clinic. Five fields, each in six languages, and the set is fixed by an approved format: `what` (what it is), `how` (how it is done), `indications` (when it is ordered), `prep` (how to prepare), `abnormal` (what a deviation can mean). The generic medical disclaimer is NOT stored here — it lives in the page footer, so a card only carries its own specifics.
+- _Merge behaviour_: `UNIQUE` on the entity id means a merge can only carry the card over if the surviving record has none; the merge endpoints therefore use `UPDATE IGNORE`, and a losing record's card is dropped with it.
 
 ### `medications`
 
@@ -440,13 +502,14 @@ This file provides a structured reference of the MySQL database for the docta.me
 ### `clinic_medical_service_doctors`
 
 - `id` (int, PK, AI)
-- `clinic_id` (int): Clinic ID.
-- `medical_service_id` (int): Medical Service ID.
-- `doctor_id` (int): Doctor ID.
+- `clinic_id` (int, FK -> clinics.id, CASCADE): Clinic ID.
+- `medical_service_id` (int, FK -> medical_services.id, CASCADE): Medical Service ID.
+- `doctor_id` (int, FK -> doctors.id, CASCADE): Doctor ID.
 - `price` (decimal(10,2)): Price of the service for this doctor.
 - `price_max` (decimal(10,2)): Maximum price (for price ranges).
 - `created_at` (datetime)
-- _Comment_: Links doctors to specific medical services within a clinic, with individual pricing.
+- _Unique constraint_: (`doctor_id`, `clinic_id`, `medical_service_id`)
+- _Comment_: Links doctors to specific medical services within a clinic, with individual pricing. Feeds the "Doctors" block inside the clinic card on a service page (see `prd/service-page-doctor-links`). All three FKs date from migration 032: none of `services/remove.ts`, `doctors/remove.ts` or `clinics/remove.ts` cleaned this table, so deletions on any of the three sides left orphans behind. Those endpoints now delete explicitly as well.
 
 ### `clinic_medications`
 
@@ -537,6 +600,29 @@ history matters, patients may already have come with that coupon.
 - `language_id` (int): Language ID.
 - `create_time` (datetime)
 
+### `insurance_companies`
+
+- `id` (int, PK, AI)
+- `slug` (varchar(100), Unique, NOT NULL)
+- `name_sr` (varchar(255), NOT NULL), `name_sr_cyrl`, `name_ru` (varchar(255)): Name. Columns mirror the `clinics` convention — no `name_en`/`name_de`/`name_tr`, an insurer's legal name is not translated.
+- `website`, `phone`, `email` (varchar(255)): Contacts. `phone` holds digits-only `+382...` values, several separated by `;`.
+- `facebook`, `instagram`, `telegram`, `whatsapp`, `viber` (varchar(255)) _(migration 011)_
+- `logo_url` (varchar(500))
+- `created_at`, `updated_at` (timestamp)
+- _Comment_: Private insurers operating in Montenegro (Sava, Lovcen, Uniqa, Generali, Grawe), collected from the insurers' own sites. Used by `server/api/insurance-companies/*` and `pages/insurance-companies/*`. Unrelated to FZOCG, the state insurer, whose pricelists live in `medical_service_tariffs`.
+
+### `insurance_company_branches`
+
+- `id` (int, PK, AI)
+- `insurance_company_id` (int, NOT NULL, FK -> insurance_companies.id, CASCADE)
+- `city_id` (int, NOT NULL, FK -> cities.id)
+- `address_sr`, `address_sr_cyrl` (text), `town_sr`, `town_sr_cyrl` (varchar(255)), `postal_code` (varchar(20))
+- `latitude` (decimal(10,8)), `longitude` (decimal(11,8))
+- `phone`, `email` (varchar(255)): Branch contacts; override the company's when set.
+- `working_hours` (varchar(255)) _(migration 012)_
+- `created_at` (timestamp)
+- _Comment_: 1:N, unlike `clinics` where one row is one address — an insurer usually has several offices.
+
 ### `doctor_clinics`
 
 - `id` (int, PK, AI)
@@ -573,6 +659,18 @@ history matters, patients may already have come with that coupon.
 - `id` (int, PK, AI)
 - `name` (varchar(50), Unique, NOT NULL): Service name (e.g., "dofollow", "highlight", "approved").
 
+### `billing_service_prices`
+
+- `id` (int, PK, AI)
+- `service_id` (int, NOT NULL): Paid service this price belongs to.
+- `months` (int, NOT NULL): Period the price covers — 1, 3, 6 or 12.
+- `price_cents` (int, NOT NULL), `currency` (varchar(3), NOT NULL, default 'EUR')
+- `active` (tinyint(1), NOT NULL, default 1): Whether the price is on sale.
+- `created_at`, `updated_at` (timestamp)
+- _Unique constraint_: (`service_id`, `months`, `active`) — `active` is deliberately part of the key, so a withdrawn price can stay in the table next to the one that replaced it instead of being deleted.
+- _Indexes_: `idx_service_active` (service_id, active)
+- _Comment_: Current state after migration 008 — HIGHLIGHT at 10 EUR/month (27/48/84 for 3/6/12), APPROVED at 1 EUR/month and 10 EUR/year with the 3- and 6-month rows deactivated, and every DOFOLLOW row deactivated. See `billing_paid_services` for why DOFOLLOW was withdrawn.
+
 ### `billing_clinic_service_purchases`
 
 - `id` (int, PK, AI)
@@ -591,6 +689,38 @@ history matters, patients may already have come with that coupon.
 - _Unique constraint_: (`purchase_id`, `service_id`)
 - _Relationship_: Links specific paid services to a purchase.
 
+### `billing_orders`
+
+- `id` (varchar(36), PK): Order UUID.
+- `clinic_id` (int, NOT NULL, FK -> clinics.id)
+- `created_by` (int, FK -> auth_users.id, SET NULL): Who placed the order.
+- `status` (enum('pending_payment','processing','completed','failed','cancelled'), NOT NULL, default 'pending_payment')
+- `total_amount_cents` (int, NOT NULL), `currency` (varchar(3), NOT NULL, default 'EUR')
+- `created_at`, `updated_at` (timestamp)
+- _Indexes_: `idx_clinic_status` (clinic_id, status), `idx_created` (created_at)
+- _Comment_: The Stripe checkout flow. Empty in production: keys were never wired up, and the alert on a placed order falls back to a `mailto:`. Distinct from `billing_clinic_service_purchases`, which records placements granted manually through the admin panel and is the path actually in use.
+
+### `billing_order_items`
+
+- `id` (int, PK, AI)
+- `order_id` (varchar(36), NOT NULL, FK -> billing_orders.id, CASCADE)
+- `service_id` (int, NOT NULL, FK -> billing_paid_services.id): A paid placement (HIGHLIGHT, APPROVED), NOT a medical service.
+- `months` (int, NOT NULL): Period — 1, 3, 6 or 12.
+- `price_cents` (int, NOT NULL): Price frozen at order time, so later price changes do not rewrite history.
+- `created_at` (timestamp)
+
+### `billing_payment_transactions`
+
+- `id` (int, PK, AI)
+- `order_id` (varchar(36), NOT NULL, FK -> billing_orders.id)
+- `transaction_id` (varchar(255), Unique, NOT NULL): Stripe Checkout Session id (`cs_...`).
+- `payment_provider` (varchar(50), NOT NULL): `stripe`.
+- `amount_cents` (int, NOT NULL), `currency` (varchar(3), NOT NULL, default 'EUR')
+- `status` (enum('pending','success','failed','refunded'), NOT NULL, default 'pending')
+- `payment_url` (text), `session_id` (varchar(255)), `metadata` (json), `error_message` (text)
+- `created_at`, `updated_at` (timestamp)
+- _Comment_: One row per payment attempt, so a retried order keeps its history.
+
 ### `reviews`
 
 - `id` (int, PK, AI)
@@ -598,6 +728,7 @@ history matters, patients may already have come with that coupon.
 - `clinic_id` (int, NULL, FK -> clinics.id): Review target: clinic.
 - `doctor_id` (int, NULL, FK -> doctors.id): Review target: doctor.
 - `medical_service_id` (int, NULL, FK -> medical_services.id): Review target: service.
+- `insurance_company_id` (int, NULL, FK -> insurance_companies.id): Review target: insurance company. _(migration 035)_
 - `provider` (enum: 'google_maps', 'facebook', 'telegram', 'docta_me', NOT NULL): Source of the review.
 - `provider_review_id` (varchar(255), NULL): External ID for deduplication.
 - `rating` (tinyint unsigned, NULL): Rating 1-5.
@@ -608,17 +739,18 @@ history matters, patients may already have come with that coupon.
 - `likes_count` (int unsigned, NOT NULL, default 0): Denormalized like counter for sorting.
 - `status` (enum: 'pending', 'approved', 'rejected', NOT NULL, default 'approved'): POST-moderation status. New user reviews are inserted as 'pending' (publicly visible); 'rejected' reviews are hidden from public lists, ratings, and ranking, but the author still sees their own review with the rejection reason. Imported/external reviews stay 'approved' via the column default.- `is_verified` (boolean, NOT NULL, default FALSE): Visit confirmed by a moderator-approved verification file.- `moderated_by` (int, NULL, FK -> auth_users.id, SET NULL): Admin who moderated.- `moderated_at` (datetime, NULL): When moderated.- `rejection_reason` (text, NULL): Shown to the author when status='rejected'.- `created_at`, `updated_at` (timestamp)
 - _Unique constraint_: (`provider`, `provider_review_id`)
-- _Indexes_: `idx_reviews_user_id`, `idx_reviews_clinic_rating` (clinic_id, rating), `idx_reviews_doctor_rating` (doctor_id, rating), `idx_reviews_clinic_user` (clinic_id, user_id), `idx_reviews_doctor_user` (doctor_id, user_id), `idx_medical_service_id`, `idx_provider`, `idx_rating`, `idx_reviews_likes_count` (likes_count DESC)
-- _Foreign Keys_: `user_id` -> `auth_users.id` (SET NULL), `clinic_id` -> `clinics.id` (CASCADE), `doctor_id` -> `doctors.id` (CASCADE), `medical_service_id` -> `medical_services.id` (CASCADE)
-- _Comment_: Polymorphic reviews — exactly one of clinic_id/doctor_id/medical_service_id must be NOT NULL. Author info (name, photo, profile link) is stored in `auth_users` — use JOIN by `user_id`.
+- _Indexes_: `idx_reviews_user_id`, `idx_reviews_clinic_rating` (clinic_id, rating), `idx_reviews_doctor_rating` (doctor_id, rating), `idx_reviews_clinic_user` (clinic_id, user_id), `idx_reviews_doctor_user` (doctor_id, user_id), `idx_reviews_insurance_rating` (insurance_company_id, rating), `idx_reviews_insurance_user` (insurance_company_id, user_id), `idx_medical_service_id`, `idx_provider`, `idx_rating`, `idx_reviews_likes_count` (likes_count DESC)
+- _Foreign Keys_: `user_id` -> `auth_users.id` (SET NULL), `clinic_id` -> `clinics.id` (CASCADE), `doctor_id` -> `doctors.id` (CASCADE), `medical_service_id` -> `medical_services.id` (CASCADE), `insurance_company_id` -> `insurance_companies.id` (CASCADE)
+- _Comment_: Polymorphic reviews — exactly one of clinic_id/doctor_id/medical_service_id/insurance_company_id must be NOT NULL (clinic_id + doctor_id may be set together when a review names both). Author info (name, photo, profile link) is stored in `auth_users` — use JOIN by `user_id`.
 
 ### `review_replies`
 
 - `id` (int, PK, AI)
 - `review_id` (int, FK -> reviews.id, NOT NULL): Parent review.
-- `responder_type` (enum: 'clinic', 'doctor', NOT NULL): Who is replying.
+- `responder_type` (enum: 'clinic', 'doctor', 'insurance_company', NOT NULL): Who is replying.
 - `clinic_id` (int, NULL, FK -> clinics.id): Clinic that replied (when responder_type='clinic').
 - `doctor_id` (int, NULL, FK -> doctors.id): Doctor that replied (when responder_type='doctor').
+- `insurance_company_id` (int, NULL, FK -> insurance_companies.id): Insurer that replied (when responder_type='insurance_company'). _(migration 035)_
 - `user_id` (int, NULL, FK -> auth_users.id): User who posted the reply (clinic manager or doctor). ON DELETE SET NULL.
 - `original_text` (text, NOT NULL): Reply text as written.
 - `original_language` (varchar(10), NOT NULL, default 'sr'): Language code of the original reply.
@@ -629,8 +761,8 @@ history matters, patients may already have come with that coupon.
 - `created_at`, `updated_at` (timestamp)
 - _Unique constraint_: (`review_id`, `responder_type`) — at most one reply per responder type per review.
 - _Indexes_: `idx_review_replies_review_id`, `idx_review_replies_clinic_id`, `idx_review_replies_doctor_id`
-- _Foreign Keys_: `review_id` -> `reviews.id` (CASCADE), `clinic_id` -> `clinics.id` (CASCADE), `doctor_id` -> `doctors.id` (CASCADE), `user_id` -> `auth_users.id` (SET NULL)
-- _Comment_: Each review can have at most 2 replies: one from the clinic and one from the doctor. No threading. Exactly one of clinic_id/doctor_id must be NOT NULL (matches responder_type).
+- _Foreign Keys_: `review_id` -> `reviews.id` (CASCADE), `clinic_id` -> `clinics.id` (CASCADE), `doctor_id` -> `doctors.id` (CASCADE), `insurance_company_id` -> `insurance_companies.id` (CASCADE), `user_id` -> `auth_users.id` (SET NULL)
+- _Comment_: At most one reply per responder type. No threading. Exactly one of clinic_id/doctor_id/insurance_company_id must be NOT NULL (matches responder_type).
 
 ### `review_likes`
 
@@ -682,7 +814,7 @@ history matters, patients may already have come with that coupon.
 ### `review_ai_summaries`
 
 - `id` (int, PK, AI)
-- `entity_type` (enum: 'doctor', 'clinic', NOT NULL)
+- `entity_type` (enum: 'doctor', 'clinic', 'insurance_company', NOT NULL)
 - `entity_id` (int, NOT NULL)
 - `language` (varchar(10), NOT NULL): One of the 6 site locales.
 - `sentiment` (enum: 'positive', 'neutral', 'negative', NOT NULL): Shared across locales of one entity.
@@ -860,3 +992,32 @@ history matters, patients may already have come with that coupon.
 - `medicine_id` (int unsigned, PK, FK → `med_medicines.id`, CASCADE)
 - `substance_id` (smallint unsigned, PK, FK → `med_substances.id`, CASCADE)
 - 4404 links. Most medicines have 1 substance; combo drugs and vaccines have multiple.
+
+### `med_substance_reference_info`
+
+- `id` (int, PK, AI)
+- `substance_id` (smallint unsigned, NOT NULL, Unique, FK → `med_substances.id`, CASCADE)
+- `what_*`, `used_for_*`, `caution_*` (text): Three content fields, each with `_en`, `_sr`, `_sr_cyrl`, `_ru`, `_de`, `_tr` variants.
+- `created_at`, `updated_at` (timestamp)
+- 209 substances covered.
+- _Comment_: The substance-level counterpart of `lab_test_reference_info`, but three fields instead of five — what the substance is, what it is used for, what to be careful about. Written for the catalogue, not scraped. _(migration 024)_
+
+### `med_foreign_products`
+
+- `id` (int unsigned, PK, AI)
+- `market_code` (varchar(4), NOT NULL, Indexed): Market the brand is sold on — `RU`, `UA`, `TR`, `DE`, `PL`, `US`.
+- `brand_name` (varchar(255), NOT NULL): Brand as sold on that market.
+- `pharma_form_id` (smallint unsigned, FK → `med_pharma_forms.id`, SET NULL): Dosage form.
+- `strength` (varchar(160)): Strength as printed on the package.
+- `note` (varchar(500)), `sort_order` (int unsigned)
+- `created_at` (timestamp)
+- _Unique constraint_: (`market_code`, `brand_name`, `pharma_form_id`) — one row per market × brand × form, so the same brand sold as tablets and as syrup is two rows.
+- 3059 products.
+- _Comment_: Feeds the "Analogues in other countries" tab on a medicine page. A local medicine is matched to these by set-matching its substances plus dose and form, top 5 per market; see `prd/drug-cross-country-reference/IMPLEMENTATION.md`. _(migration 017)_
+
+### `med_foreign_product_substances`
+
+- `product_id` (int unsigned, PK, FK → `med_foreign_products.id`, CASCADE)
+- `substance_id` (smallint unsigned, PK, FK → `med_substances.id`, CASCADE)
+- 3358 links.
+- _Comment_: A foreign brand resolves only through substances that already exist in `med_substances`, i.e. that are registered in Montenegro. A brand whose substance has no local registration cannot be stored, and such a question is answered by an article rather than by the catalogue.

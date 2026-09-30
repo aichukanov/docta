@@ -1,0 +1,699 @@
+[
+	{
+		"slug": "knee-arthrotomy-capsulotomy-with-exploration-and-foreign-body-removal",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Операция со вскрытием полости коленного сустава, осмотром его изнутри, промыванием, дренированием и удалением инородного тела",
+				"how": "Под обезболиванием хирург рассекает кожу и капсулу сустава, осматривает суставные поверхности и завороты, вымывает содержимое, извлекает инородное тело или свободный фрагмент, ставит дренаж и ушивает рану; выполняется в операционной, после неё нужно наблюдение",
+				"when": "Проникающее ранение колена, инородное тело в суставе, свободный костно-хрящевой фрагмент, гнойное воспаление сустава, необходимость осмотреть сустав изнутри, когда артроскопия невозможна",
+				"prep": "Анализы и снимки по назначению хирурга, отказ от еды и питья на срок, названный анестезиологом, сообщить о принимаемых препаратах и аллергии, снять украшения, договориться о сопровождении домой",
+				"abnormal": "После операции ожидаемы боль, отёк и ограничение движений, нога какое-то время остаётся в иммобилизации, дренаж убирают в назначенный срок. Лихорадка, покраснение и подтекание из раны, нарастающая боль требуют осмотра раньше срока, а нагрузку и реабилитацию определяет оперировавший хирург"
+			},
+			"en": {
+				"what": "An operation that opens the knee joint for inspection from inside, washout, drainage and removal of a foreign body",
+				"how": "Under anaesthesia the surgeon opens the skin and the joint capsule, inspects the joint surfaces and recesses, washes out the contents, removes the foreign body or a loose fragment, leaves a drain and closes the wound; it is done in an operating theatre and is followed by observation",
+				"when": "A penetrating wound of the knee, a foreign body in the joint, a loose bone or cartilage fragment, purulent inflammation of the joint, the need to inspect the joint when arthroscopy is not possible",
+				"prep": "Tests and imaging as ordered by the surgeon, no food or drink for the period set by the anaesthetist, tell the team about your medicines and allergies, remove jewellery and arrange for someone to take you home",
+				"abnormal": "Pain, swelling and limited movement are expected afterwards, the leg stays immobilised for a time and the drain is removed when the surgeon decides. Fever, redness or discharge from the wound and increasing pain call for an earlier review, while weight bearing and rehabilitation are set by the operating surgeon"
+			},
+			"sr": {
+				"what": "Operacija kojom se otvara zglob koljena radi pregleda iznutra, ispiranja, drenaže i vađenja stranog tijela",
+				"how": "U anesteziji hirurg presijeca kožu i zglobnu čauru, pregleda zglobne površine i recesuse, ispira sadržaj, vadi strano tijelo ili slobodan fragment, postavlja dren i zatvara ranu; radi se u operacionoj sali, uz nadzor poslije zahvata",
+				"when": "Prodorna rana koljena, strano tijelo u zglobu, slobodan koštano-hrskavični fragment, gnojno zapaljenje zgloba, potreba da se zglob pregleda kada artroskopija nije moguća",
+				"prep": "Analize i snimci po nalogu hirurga, bez hrane i pića u periodu koji odredi anesteziolog, prijaviti terapiju koju uzimate i alergije, skinuti nakit i obezbijediti pratnju za povratak kući",
+				"abnormal": "Poslije operacije su očekivani bol, otok i ograničen pokret, noga neko vrijeme ostaje u imobilizaciji, a dren se vadi u dogovoreno vrijeme. Povišena temperatura, crvenilo i curenje iz rane i bol koji jača traže raniji pregled, dok opterećenje i rehabilitaciju određuje hirurg koji je operisao"
+			},
+			"de": {
+				"what": "Eine Operation, bei der das Kniegelenk eröffnet, von innen inspiziert, gespült, drainiert und ein Fremdkörper entfernt wird",
+				"how": "In Narkose eröffnet der Chirurg Haut und Gelenkkapsel, beurteilt Gelenkflächen und Recessus, spült den Gelenkinhalt aus, entfernt den Fremdkörper oder ein freies Fragment, legt eine Drainage ein und verschließt die Wunde; der Eingriff findet im Operationssaal statt, danach folgt eine Überwachung",
+				"when": "Penetrierende Knieverletzung, Fremdkörper im Gelenk, freies Knochen- oder Knorpelfragment, eitrige Gelenkentzündung, Notwendigkeit der Inspektion, wenn eine Arthroskopie nicht möglich ist",
+				"prep": "Laborwerte und Bildgebung nach Anordnung des Chirurgen, Nüchternheit für den von der Anästhesie genannten Zeitraum, Medikamente und Allergien angeben, Schmuck ablegen und Begleitung für den Heimweg organisieren",
+				"abnormal": "Schmerzen, Schwellung und eingeschränkte Beweglichkeit sind danach zu erwarten, das Bein bleibt zunächst ruhiggestellt und die Drainage wird zum festgelegten Zeitpunkt entfernt. Fieber, Rötung, Sekret aus der Wunde und zunehmende Schmerzen erfordern eine frühere Vorstellung, Belastung und Rehabilitation legt der operierende Chirurg fest"
+			},
+			"tr": {
+				"what": "Diz eklemini açarak içeriden inceleme, yıkama, drenaj ve yabancı cisim çıkarma ameliyatı",
+				"how": "Anestezi altında cerrah deriyi ve eklem kapsülünü açar, eklem yüzlerini ve girintileri inceler, eklem içini yıkar, yabancı cismi ya da serbest parçayı çıkarır, dren koyar ve yarayı kapatır; ameliyathanede yapılır ve sonrasında gözlem gerektirir",
+				"when": "Dize delici yaralanma, eklem içinde yabancı cisim, serbest kemik ya da kıkırdak parçası, eklemin irinli iltihabı, artroskopinin mümkün olmadığı durumlarda eklemi içeriden görme ihtiyacı",
+				"prep": "Cerrahın istediği tetkik ve görüntülemeler, anestezi uzmanının belirttiği süre boyunca aç kalmak, kullanılan ilaçları ve alerjileri bildirmek, takıları çıkarmak ve eve dönüş için refakatçi ayarlamak",
+				"abnormal": "Ameliyat sonrası ağrı, şişlik ve hareket kısıtlılığı beklenir, bacak bir süre tespitte kalır ve dren belirlenen günde alınır. Ateş, kızarıklık, yaradan akıntı ve artan ağrı erken değerlendirme gerektirir, yük verme ve rehabilitasyon zamanını ameliyatı yapan cerrah belirler"
+			}
+		}
+	},
+	{
+		"slug": "knee-dislocation-closed-or-open-reduction-withwithout-fixation",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Вправление вывиха коленного сустава — руками без разреза или открытым способом, при необходимости с внутренней фиксацией",
+				"how": "Под обезболиванием врач тягой по оси возвращает суставные поверхности на место и сразу проверяет пульс и чувствительность на стопе; если закрытое вправление не удаётся, сустав вправляют через разрез и при необходимости фиксируют конструкцией, затем ногу иммобилизуют и делают контрольный снимок",
+				"when": "Тяжёлая травма колена с деформацией и невозможностью движений, вывих после ДТП или падения с высоты, снимок, подтвердивший потерю контакта суставных поверхностей",
+				"prep": "Помощь оказывают неотложно, плановой подготовки нет: не есть и не пить до осмотра, зафиксировать ногу подручными средствами и как можно быстрее добраться до приёмного отделения",
+				"abnormal": "Вывих колена часто сопровождается разрывом связок и повреждением сосудов и нервов, поэтому после вправления кровоток и чувствительность проверяют повторно и обычно назначают дополнительные исследования. Похолодание и онемение стопы, нарастающий отёк и невозможность пошевелить пальцами требуют немедленного осмотра, а дальнейшую тактику, в том числе операцию на связках, определяет ортопед"
+			},
+			"en": {
+				"what": "Putting a dislocated knee back in place, by hand without an incision or through open surgery, with internal fixation if needed",
+				"how": "Under anaesthesia the doctor restores the joint by traction along the axis and immediately checks the pulse and sensation in the foot; if closed reduction fails, the joint is reduced through an incision and may be held with fixation, after which the leg is immobilised and a check X-ray is taken",
+				"when": "A severe knee injury with deformity and inability to move the leg, dislocation after a road accident or a fall from height, imaging that confirms the joint surfaces have lost contact",
+				"prep": "This is an emergency and there is no planned preparation: do not eat or drink before assessment, splint the leg with whatever is at hand and get to an emergency department as quickly as possible",
+				"abnormal": "A knee dislocation often comes with torn ligaments and injury to vessels and nerves, so blood flow and sensation are rechecked after reduction and further imaging is usually ordered. A cold or numb foot, growing swelling and inability to move the toes need immediate review, and the orthopaedic surgeon decides on further treatment, including ligament surgery"
+			},
+			"sr": {
+				"what": "Vraćanje iščašenog koljena u pravilan položaj, rukama bez reza ili otvorenim putem, po potrebi uz unutrašnju fiksaciju",
+				"how": "U anesteziji ljekar vučom po osovini vraća zglobne površine na mjesto i odmah provjerava puls i osjet na stopalu; ako zatvorena repozicija ne uspije, zglob se namješta kroz rez i po potrebi fiksira, a zatim se noga imobiliše i radi kontrolni snimak",
+				"when": "Teška povreda koljena sa deformitetom i nemogućnošću pokreta, iščašenje poslije saobraćajne nesreće ili pada s visine, snimak koji potvrđuje gubitak kontakta zglobnih površina",
+				"prep": "Pomoć se pruža hitno, planirane pripreme nema: ne jesti i ne piti do pregleda, nogu učvrstiti priručnim sredstvima i što prije stići do urgentne službe",
+				"abnormal": "Iščašenje koljena često prati kidanje ligamenata i povreda krvnih sudova i nerava, pa se poslije namještanja ponovo provjeravaju protok krvi i osjet i obično se traže dodatna snimanja. Hladno ili utrnulo stopalo, otok koji raste i nemogućnost pokretanja prstiju traže hitan pregled, a dalji tok liječenja, uključujući operaciju ligamenata, određuje ortoped"
+			},
+			"de": {
+				"what": "Das Einrenken eines ausgekugelten Kniegelenks, geschlossen von Hand oder offen über einen Schnitt, bei Bedarf mit innerer Fixierung",
+				"how": "In Narkose bringt der Arzt die Gelenkflächen durch Zug in der Achse zurück und prüft sofort Puls und Gefühl am Fuß; gelingt die geschlossene Reposition nicht, wird das Gelenk offen eingerichtet und gegebenenfalls fixiert, danach wird das Bein ruhiggestellt und eine Kontrollaufnahme gemacht",
+				"when": "Schwere Knieverletzung mit Fehlstellung und Bewegungsunfähigkeit, Luxation nach Verkehrsunfall oder Sturz aus Höhe, radiologisch bestätigter Kontaktverlust der Gelenkflächen",
+				"prep": "Es handelt sich um einen Notfall, eine geplante Vorbereitung gibt es nicht: nichts essen und trinken, das Bein behelfsmäßig schienen und so schnell wie möglich in die Notaufnahme fahren",
+				"abnormal": "Eine Knieluxation geht häufig mit Bandrissen und Verletzungen von Gefäßen und Nerven einher, daher werden Durchblutung und Gefühl nach der Reposition erneut geprüft und meist weitere Untersuchungen veranlasst. Ein kalter oder tauber Fuß, zunehmende Schwellung und fehlende Zehenbewegung erfordern eine sofortige Vorstellung, das weitere Vorgehen einschließlich einer Bandoperation legt der Orthopäde fest"
+			},
+			"tr": {
+				"what": "Çıkmış diz ekleminin kesi yapılmadan elle ya da açık cerrahiyle yerine oturtulması, gerekirse iç tespitle birlikte",
+				"how": "Anestezi altında hekim eksen boyunca çekerek eklem yüzlerini yerine getirir ve hemen ayaktaki nabzı ve duyuyu kontrol eder; kapalı redüksiyon başarısız olursa eklem kesiyle açılarak yerleştirilir ve gerekirse tespit edilir, ardından bacak tespite alınır ve kontrol filmi çekilir",
+				"when": "Şekil bozukluğu ve hareket kaybıyla giden ağır diz yaralanması, trafik kazası veya yüksekten düşme sonrası çıkık, eklem yüzlerinin ayrıldığını gösteren görüntüleme",
+				"prep": "Acil bir durumdur, planlı hazırlık yoktur: değerlendirmeye kadar aç kalmak, bacağı eldeki malzemeyle sabitlemek ve en kısa sürede acil servise ulaşmak",
+				"abnormal": "Diz çıkığına sıklıkla bağ yırtıkları ile damar ve sinir yaralanmaları eşlik eder, bu nedenle redüksiyon sonrası dolaşım ve duyu yeniden değerlendirilir ve genellikle ek görüntüleme istenir. Ayağın soğuması veya uyuşması, artan şişlik ve parmakların oynatılamaması acil değerlendirme gerektirir, bağ ameliyatı dahil sonraki tedaviyi ortopedi uzmanı belirler"
+			}
+		}
+	},
+	{
+		"slug": "knee-fixation-bandage",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Бинтовая повязка, ограничивающая движения в коленном суставе без гипса",
+				"how": "Колено укладывают в положение, которое выбрал врач, на кожу кладут мягкую прокладку, затем сустав бинтуют турами эластичного или марлевого бинта от середины голени до нижней трети бедра; занимает несколько минут и безболезненно",
+				"when": "Ушиб колена и растяжение связок, отёк и выпот после травмы, период после пункции сустава или снятия гипса, временная фиксация на время дороги к врачу",
+				"prep": "Не нужна; прийти в свободных брюках или шортах и взять снимки, если они уже сделаны",
+				"abnormal": "Повязка должна ограничивать движение, а не пережимать ногу: покалывание, онемение, похолодание или синюшность стопы означают, что её нужно ослабить и наложить заново. Если боль и отёк не уменьшаются за несколько дней, сустав осматривает травматолог, он же решает, нужна ли более жёсткая фиксация"
+			},
+			"en": {
+				"what": "A bandage that limits movement of the knee joint without plaster",
+				"how": "The knee is placed in the position chosen by the doctor, soft padding is laid on the skin and the joint is wrapped in turns of elastic or gauze bandage from mid-calf to the lower thigh; it takes a few minutes and is painless",
+				"when": "A bruised knee and sprained ligaments, swelling and effusion after injury, the period after a joint puncture or after a cast is removed, temporary fixation for the trip to the doctor",
+				"prep": "None needed; come in loose trousers or shorts and bring your images if any have already been taken",
+				"abnormal": "The bandage should restrict movement without compressing the leg: tingling, numbness, coldness or a bluish colour of the foot mean it has to be loosened and reapplied. If pain and swelling do not settle within a few days a trauma surgeon examines the joint and decides whether firmer fixation is needed"
+			},
+			"sr": {
+				"what": "Zavoj koji ograničava pokrete u koljenu bez upotrebe gipsa",
+				"how": "Koljeno se postavi u položaj koji odredi ljekar, na kožu se stavi mekana podloga, a zglob se povija elastičnim ili gaznim zavojem od sredine potkoljenice do donje trećine buta; traje nekoliko minuta i bezbolno je",
+				"when": "Nagnječenje koljena i istegnuće ligamenata, otok i izliv poslije povrede, period poslije punkcije zgloba ili skidanja gipsa, privremena fiksacija do dolaska kod ljekara",
+				"prep": "Nije potrebna; doći u širim pantalonama ili šortsu i ponijeti snimke ako su već urađeni",
+				"abnormal": "Zavoj treba da ograniči pokret, a ne da steže nogu: trnjenje, utrnulost, hladnoća ili plavičasta boja stopala znače da ga treba olabaviti i ponovo postaviti. Ako bol i otok ne popuštaju za nekoliko dana, zglob pregleda ljekar traumatolog, koji odlučuje i da li je potrebna čvršća imobilizacija"
+			},
+			"de": {
+				"what": "Ein Verband, der das Kniegelenk ohne Gips in seiner Beweglichkeit einschränkt",
+				"how": "Das Knie wird in die vom Arzt gewählte Stellung gebracht, auf die Haut kommt eine weiche Polsterung, dann wird das Gelenk mit elastischer oder Mullbinde von der Wadenmitte bis zum unteren Oberschenkel gewickelt; das dauert wenige Minuten und ist schmerzfrei",
+				"when": "Prellung des Knies und Bänderdehnung, Schwellung und Erguss nach einer Verletzung, Zeit nach einer Gelenkpunktion oder nach Gipsabnahme, vorübergehende Ruhigstellung für den Weg zum Arzt",
+				"prep": "Keine Vorbereitung nötig; in weiter Hose oder Shorts kommen und vorhandene Aufnahmen mitbringen",
+				"abnormal": "Der Verband soll die Bewegung begrenzen, aber das Bein nicht abschnüren: Kribbeln, Taubheit, Kälte oder eine bläuliche Verfärbung des Fußes bedeuten, dass er gelockert und neu angelegt werden muss. Lassen Schmerz und Schwellung nach einigen Tagen nicht nach, untersucht ein Unfallchirurg das Gelenk und entscheidet über eine festere Ruhigstellung"
+			},
+			"tr": {
+				"what": "Diz eklemini alçı kullanmadan hareket açısından sınırlayan sargı",
+				"how": "Diz hekimin seçtiği konuma getirilir, cilde yumuşak bir ped konur ve eklem baldır ortasından uyluk alt bölümüne kadar elastik ya da gazlı sargıyla sarılır; birkaç dakika sürer ve ağrısızdır",
+				"when": "Diz ezilmesi ve bağ zorlanması, yaralanma sonrası şişlik ve eklem sıvısı, eklem ponksiyonu ya da alçı çıkarımı sonrası dönem, hekime ulaşana kadar geçici tespit",
+				"prep": "Gerekmez; bol pantolon veya şortla gelmek ve varsa çekilmiş filmleri getirmek yeterlidir",
+				"abnormal": "Sargı hareketi sınırlamalı, bacağı sıkmamalıdır: karıncalanma, uyuşma, soğuma ya da ayakta morarma sargının gevşetilip yeniden sarılması gerektiğini gösterir. Ağrı ve şişlik birkaç gün içinde azalmazsa eklemi travmatoloji uzmanı değerlendirir ve daha sert bir tespitin gerekip gerekmediğine karar verir"
+			}
+		}
+	},
+	{
+		"slug": "knee-fixation-cast",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Жёсткая фиксация коленного сустава повязкой из гипсового бинта, удерживающей сустав неподвижно",
+				"how": "Ногу удерживают в заданном положении, на кожу надевают трикотаж и вату, поверх слоями накладывают смоченный гипсовый бинт от нижней трети бедра до середины голени; гипс твердеет за несколько минут, а полную прочность набирает к следующему дню",
+				"when": "Переломы и повреждения связок в области колена, период после вправления или операции, продолжение фиксации, когда мягкая повязка не удерживает сустав",
+				"prep": "Особой подготовки нет, но возьмите снимки и наденьте одежду, которая снимается через повязку; костыли и сопровождающий облегчают дорогу домой",
+				"abnormal": "Чувство тяжести и стянутости в первые дни ожидаемо; давление в одной точке, жжение, влажный, треснувший или ослабевший гипс означают, что повязку пора менять. Онемение и синюшность пальцев стопы и нарастающая боль требуют срочного осмотра, а срок ношения и день контрольного снимка определяет травматолог"
+			},
+			"en": {
+				"what": "Rigid immobilisation of the knee with a plaster bandage that holds the joint still",
+				"how": "The leg is held in the required position, a stockinette and cotton padding are put on the skin and wet plaster bandages are wrapped in layers from the lower thigh to mid-calf; the plaster sets within minutes and reaches full strength by the next day",
+				"when": "Fractures and ligament injuries around the knee, the period after reduction or surgery, continued fixation when a soft bandage does not hold the joint",
+				"prep": "No special preparation, but bring your images and wear clothing that can be taken off over the cast; crutches and someone to accompany you make the trip home easier",
+				"abnormal": "A feeling of heaviness and tightness in the first days is expected; pressure at one spot, burning and a wet, cracked or loosened cast mean the dressing has to be changed. Numbness and a bluish colour of the toes and increasing pain need urgent review, and the trauma surgeon sets how long the cast stays on and when the check X-ray is taken"
+			},
+			"sr": {
+				"what": "Čvrsta imobilizacija koljena zavojem od gipsa koji zglob drži nepomičnim",
+				"how": "Noga se drži u traženom položaju, na kožu se stavljaju triko i vata, a preko toga se u slojevima postavlja nakvašen gipsani zavoj od donje trećine buta do sredine potkoljenice; gips se stegne za nekoliko minuta, a punu čvrstinu dostiže sjutradan",
+				"when": "Prelomi i povrede ligamenata u predjelu koljena, period poslije namještanja ili operacije, nastavak imobilizacije kada mekani zavoj ne drži zglob",
+				"prep": "Posebne pripreme nema, ali ponesite snimke i obucite odjeću koja se može skinuti preko zavoja; štake i pratnja olakšavaju povratak kući",
+				"abnormal": "Osjećaj težine i zategnutosti prvih dana je očekivan; pritisak na jednom mjestu, žarenje i vlažan, napukao ili olabavio gips znače da zavoj treba zamijeniti. Utrnulost i plavičasti prsti stopala i bol koji jača traže hitan pregled, a koliko se gips nosi i kada se radi kontrolni snimak određuje traumatolog"
+			},
+			"de": {
+				"what": "Starre Ruhigstellung des Kniegelenks mit einem Gipsverband, der das Gelenk unbeweglich hält",
+				"how": "Das Bein wird in der nötigen Stellung gehalten, auf die Haut kommen Schlauchverband und Watte, darüber werden angefeuchtete Gipsbinden in Schichten vom unteren Oberschenkel bis zur Wadenmitte gewickelt; der Gips härtet in wenigen Minuten aus und ist am Folgetag voll fest",
+				"when": "Brüche und Bandverletzungen im Bereich des Knies, Zeit nach Reposition oder Operation, Fortsetzung der Ruhigstellung, wenn ein weicher Verband das Gelenk nicht hält",
+				"prep": "Keine besondere Vorbereitung, aber Aufnahmen mitbringen und Kleidung tragen, die sich über den Gips ausziehen lässt; Gehstützen und eine Begleitperson erleichtern den Heimweg",
+				"abnormal": "Ein Gefühl von Schwere und Enge in den ersten Tagen ist normal; Druck an einer Stelle, Brennen sowie ein feuchter, gerissener oder locker gewordener Gips bedeuten, dass der Verband gewechselt werden muss. Taubheit und bläuliche Zehen sowie zunehmende Schmerzen erfordern eine rasche Kontrolle, Tragedauer und Zeitpunkt der Kontrollaufnahme legt der Unfallchirurg fest"
+			},
+			"tr": {
+				"what": "Diz ekleminin, eklemi hareketsiz tutan alçı sargıyla sert şekilde tespit edilmesi",
+				"how": "Bacak istenen konumda tutulur, cilde çorap ve pamuk konur, üzerine uyluk alt bölümünden baldır ortasına kadar ıslatılmış alçı sargılar kat kat sarılır; alçı birkaç dakikada sertleşir, tam dayanıklılığa ertesi gün ulaşır",
+				"when": "Diz çevresindeki kırıklar ve bağ yaralanmaları, redüksiyon veya ameliyat sonrası dönem, yumuşak sargının eklemi tutmadığı durumlarda tespitin sürdürülmesi",
+				"prep": "Özel hazırlık gerekmez; filmleri getirmek ve alçının üzerinden çıkarılabilen giysi giymek yeterlidir, koltuk değneği ve refakatçi dönüşü kolaylaştırır",
+				"abnormal": "İlk günlerde ağırlık ve gerginlik hissi beklenir; tek bir noktada baskı, yanma ve ıslanmış, çatlamış ya da gevşemiş alçı sargının değiştirilmesi gerektiğini gösterir. Parmaklarda uyuşma, morarma ve artan ağrı acil değerlendirme gerektirir, alçının ne kadar kalacağını ve kontrol filminin zamanını travmatoloji uzmanı belirler"
+			}
+		}
+	},
+	{
+		"slug": "lateral-or-medial-fasciotomy-tennis-elbow",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Небольшая операция на наружной или внутренней стороне локтя, при которой рассекают место прикрепления сухожилий к надмыщелку, чтобы снять натяжение",
+				"how": "Под местным или проводниковым обезболиванием хирург делает короткий разрез над надмыщелком, рассекает фасцию и изменённую часть сухожильного начала мышц, при необходимости убирает рубцовую ткань, ушивает рану и накладывает повязку; вмешательство короткое и обычно проходит в дневном стационаре",
+				"when": "Длительная боль по наружной стороне локтя (теннисный локоть) или по внутренней (локоть гольфиста), не поддающаяся неоперативному лечению, повторяющиеся обострения, ограничение работы кистью и предплечьем",
+				"prep": "Осмотр и обследование у хирурга заранее, снять украшения с руки, уточнить время без еды и питья, если планируется седация, организовать возвращение домой без руля",
+				"abnormal": "После операции ожидаемы боль и отёк в области разреза, руку несколько дней щадят, а сила хвата восстанавливается постепенно с упражнениями, которые назначает врач. Возвращение прежней боли, покраснение, выделения из раны или лихорадка — повод показаться, а сроки снятия швов и возврата к нагрузке определяет оперировавший хирург"
+			},
+			"en": {
+				"what": "A small operation on the outer or inner side of the elbow in which the tendon attachment at the epicondyle is released to take the tension off it",
+				"how": "Under local or regional anaesthesia the surgeon makes a short incision over the epicondyle, divides the fascia and the altered part of the tendon origin, removes scarred tissue if needed, closes the wound and applies a dressing; the procedure is short and usually done as a day case",
+				"when": "Long-standing pain on the outer side of the elbow (tennis elbow) or on the inner side (golfer's elbow) that has not responded to non-surgical treatment, repeated flare-ups, limited use of the hand and forearm",
+				"prep": "Assessment and work-up with the surgeon beforehand, no jewellery on the arm, confirm the fasting time if sedation is planned, arrange a way home without driving",
+				"abnormal": "Pain and swelling around the incision are expected, the arm is spared for several days and grip strength returns gradually with the exercises the doctor prescribes. Return of the old pain, redness, discharge from the wound or fever is a reason to be seen, while stitch removal and the return to load are set by the operating surgeon"
+			},
+			"sr": {
+				"what": "Manja operacija na spoljašnjoj ili unutrašnjoj strani lakta kojom se presijeca pripoj tetiva na epikondilu da bi se smanjila napetost",
+				"how": "U lokalnoj ili regionalnoj anesteziji hirurg pravi kratak rez iznad epikondila, presijeca fasciju i izmijenjeni dio tetivnog pripoja, po potrebi uklanja ožiljno tkivo, zatvara ranu i stavlja zavoj; zahvat je kratak i najčešće se radi u dnevnoj bolnici",
+				"when": "Dugotrajan bol sa spoljašnje strane lakta (teniski lakat) ili sa unutrašnje (golferski lakat) koji ne popušta uz neoperativno liječenje, ponavljana pogoršanja, otežan rad šakom i podlakticom",
+				"prep": "Prethodni pregled i obrada kod hirurga, skinuti nakit sa ruke, provjeriti vrijeme bez hrane i pića ako je planirana sedacija, obezbijediti povratak kući bez vožnje",
+				"abnormal": "Poslije zahvata su očekivani bol i otok oko reza, ruka se nekoliko dana štedi, a snaga stiska se vraća postepeno uz vježbe koje odredi ljekar. Povratak ranijeg bola, crvenilo, curenje iz rane ili povišena temperatura su razlog za pregled, dok vađenje konaca i povratak opterećenju određuje hirurg koji je operisao"
+			},
+			"de": {
+				"what": "Ein kleiner Eingriff an der Außen- oder Innenseite des Ellenbogens, bei dem der Sehnenansatz am Epicondylus eingekerbt und entlastet wird",
+				"how": "In örtlicher oder regionaler Betäubung setzt der Chirurg einen kurzen Schnitt über dem Epicondylus, durchtrennt die Faszie und den veränderten Teil des Sehnenursprungs, entfernt bei Bedarf Narbengewebe, verschließt die Wunde und legt einen Verband an; der Eingriff ist kurz und erfolgt meist ambulant",
+				"when": "Anhaltende Schmerzen an der Außenseite (Tennisellenbogen) oder Innenseite des Ellenbogens (Golferellenbogen), die auf nicht-operative Behandlung nicht ansprechen, wiederholte Beschwerdeschübe, eingeschränkter Gebrauch von Hand und Unterarm",
+				"prep": "Vorherige Untersuchung und Abklärung beim Chirurgen, kein Schmuck am Arm, bei geplanter Sedierung die Nüchternzeit erfragen, Heimweg ohne eigenes Autofahren organisieren",
+				"abnormal": "Schmerz und Schwellung im Bereich des Schnitts sind zu erwarten, der Arm wird einige Tage geschont und die Griffkraft kehrt schrittweise mit den verordneten Übungen zurück. Wiederkehrender alter Schmerz, Rötung, Wundsekret oder Fieber sind ein Grund zur Vorstellung, Fadenzug und Belastungsaufbau bestimmt der operierende Chirurg"
+			},
+			"tr": {
+				"what": "Dirseğin dış ya da iç yüzünde, tendonların epikondildeki yapışma yerini gevşetmek için yapılan küçük ameliyat",
+				"how": "Lokal ya da bölgesel anestezi altında cerrah epikondil üzerine kısa bir kesi yapar, fasyayı ve tendon başlangıcının değişmiş bölümünü serbestleştirir, gerekirse nedbe dokusunu alır, yarayı kapatır ve sargı uygular; işlem kısadır ve genellikle günübirlik yapılır",
+				"when": "Ameliyatsız tedaviyle geçmeyen uzun süreli dirsek dış yan ağrısı (tenisçi dirseği) ya da iç yan ağrısı (golfçü dirseği), yinelenen alevlenmeler, el ve ön kolu kullanmada kısıtlılık",
+				"prep": "Önceden cerrah muayenesi ve tetkikler, kolda takı bulundurmamak, sedasyon planlanıyorsa aç kalma süresini öğrenmek, dönüşte araç kullanmayacak şekilde plan yapmak",
+				"abnormal": "Kesi çevresinde ağrı ve şişlik beklenir, kol birkaç gün korunur ve kavrama gücü hekimin verdiği egzersizlerle yavaş yavaş geri döner. Eski ağrının geri dönmesi, kızarıklık, yaradan akıntı ya da ateş değerlendirme gerektirir, dikişlerin alınmasını ve yüklenmeye dönüşü ameliyatı yapan cerrah belirler"
+			}
+		}
+	},
+	{
+		"slug": "leg-plaster-cast-hip-to-toes-over-10-years",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Циркулярный гипс на всю ногу — от бедра до кончиков пальцев — у пациентов старше десяти лет",
+				"how": "Ногу удерживают в нужном положении, надевают трикотажный чулок и вату, затем гипсовые бинты накладывают снизу вверх, формируя сплошную повязку до верхней трети бедра; у подростка и взрослого повязка тяжёлая, на наложение и застывание уходит около часа",
+				"when": "Переломы бедренной кости и голени, повреждения связок и суставов ноги, фиксация после вправления или операции, когда нужно обездвижить и колено, и голеностоп",
+				"prep": "Взять снимки и направление, надеть свободные брюки, которые расстёгиваются по шву, приготовить костыли и сопровождающего и заранее решить вопрос с транспортом — в такой повязке нога не сгибается",
+				"abnormal": "Первые дни уходят на привыкание к весу и неподвижности, а небольшой отёк спадает, если держать ногу приподнятой. Жгучая боль в одной точке, онемение, холодные или синюшные пальцы, размокший, треснувший или ослабевший гипс требуют осмотра, а срок ношения и даты контрольных снимков назначает травматолог"
+			},
+			"en": {
+				"what": "A circular plaster cast over the whole leg, from the thigh down to the toes, in patients over ten years of age",
+				"how": "The leg is held in the required position, a stockinette and cotton wool are put on, then plaster bandages are applied from below upwards into one continuous cast reaching the upper thigh; in a teenager or an adult the cast is heavy and applying and setting it takes about an hour",
+				"when": "Fractures of the thigh bone and the lower leg, injuries of the ligaments and joints of the leg, fixation after reduction or surgery when both the knee and the ankle have to be immobilised",
+				"prep": "Bring your images and referral, wear loose trousers that open along the seam, arrange crutches and an escort and sort out transport in advance, as the leg does not bend in such a cast",
+				"abnormal": "The first days go into getting used to the weight and the stiffness, and mild swelling settles if the leg is kept raised. Burning pain at one point, numbness, cold or bluish toes and a soaked, cracked or loosened cast call for a review, while the trauma surgeon sets how long it stays on and when the check images are taken"
+			},
+			"sr": {
+				"what": "Kružni gipsani zavoj preko cijele noge, od buta do vrhova prstiju, kod pacijenata starijih od deset godina",
+				"how": "Noga se drži u potrebnom položaju, stavljaju se triko i vata, a zatim se gipsani zavoji postavljaju odozdo naviše u jedinstvenu oblogu do gornje trećine buta; kod adolescenta i odraslog zavoj je težak, a postavljanje i stezanje traju oko sat vremena",
+				"when": "Prelomi butne kosti i potkoljenice, povrede ligamenata i zglobova noge, fiksacija poslije namještanja ili operacije kada moraju mirovati i koljeno i skočni zglob",
+				"prep": "Ponijeti snimke i uput, obući široke pantalone koje se otvaraju po šavu, pripremiti štake i pratnju i unaprijed riješiti prevoz, jer se u ovakvom zavoju noga ne savija",
+				"abnormal": "Prvi dani prolaze u privikavanju na težinu i nepokretnost, a blag otok popušta ako se noga drži podignuto. Žareći bol na jednom mjestu, utrnulost, hladni ili plavičasti prsti i raskvašen, napukao ili olabavio gips traže pregled, a koliko se zavoj nosi i kada se rade kontrolni snimci određuje traumatolog"
+			},
+			"de": {
+				"what": "Ein zirkulärer Gipsverband über das ganze Bein, vom Oberschenkel bis zu den Zehen, bei Patienten über zehn Jahren",
+				"how": "Das Bein wird in der nötigen Stellung gehalten, Schlauchverband und Watte werden angelegt, dann werden Gipsbinden von unten nach oben zu einem durchgehenden Verband bis zum oberen Oberschenkel gewickelt; bei Jugendlichen und Erwachsenen ist der Gips schwer, Anlegen und Aushärten dauern etwa eine Stunde",
+				"when": "Brüche von Oberschenkel und Unterschenkel, Band- und Gelenkverletzungen des Beins, Ruhigstellung nach Reposition oder Operation, wenn Knie und Sprunggelenk zugleich fixiert werden müssen",
+				"prep": "Aufnahmen und Überweisung mitbringen, weite Hose tragen, die sich an der Naht öffnen lässt, Gehstützen und Begleitung organisieren und den Transport vorher klären, denn in diesem Verband lässt sich das Bein nicht beugen",
+				"abnormal": "Die ersten Tage dienen der Gewöhnung an Gewicht und Unbeweglichkeit, eine leichte Schwellung geht bei Hochlagerung zurück. Brennender Schmerz an einer Stelle, Taubheit, kalte oder bläuliche Zehen sowie ein durchnässter, gerissener oder locker gewordener Gips erfordern eine Kontrolle, Tragedauer und Kontrollaufnahmen legt der Unfallchirurg fest"
+			},
+			"tr": {
+				"what": "On yaş üstü hastalarda uyluktan parmak uçlarına kadar tüm bacağı saran sirküler alçı",
+				"how": "Bacak gerekli konumda tutulur, çorap ve pamuk sarılır, ardından alçı sargılar aşağıdan yukarıya doğru uyluk üst bölümüne kadar tek parça halinde uygulanır; ergen ve erişkinde alçı ağırdır, uygulama ve sertleşme yaklaşık bir saat alır",
+				"when": "Uyluk ve baldır kemiği kırıkları, bacak bağ ve eklem yaralanmaları, hem dizin hem ayak bileğinin hareketsiz tutulması gereken redüksiyon ya da ameliyat sonrası dönem",
+				"prep": "Film ve sevk belgesini getirmek, dikişinden açılabilen bol pantolon giymek, koltuk değneği ve refakatçi ayarlamak, ulaşımı önceden planlamak gerekir, çünkü bu alçıda bacak bükülmez",
+				"abnormal": "İlk günler ağırlığa ve hareketsizliğe alışmakla geçer, hafif şişlik bacak yukarıda tutulunca azalır. Tek noktada yanıcı ağrı, uyuşma, parmakların soğuması ya da morarması ve ıslanmış, çatlamış veya gevşemiş alçı değerlendirme gerektirir, alçının süresini ve kontrol filmlerinin zamanını travmatoloji uzmanı belirler"
+			}
+		}
+	},
+	{
+		"slug": "leg-plaster-cast-hip-to-toes-under-10-years",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Гипсовая повязка на всю ногу ребёнка младше десяти лет — от бедра до пальцев",
+				"how": "Ребёнка укладывают, ногу держат в положении, которое задал врач, поверх мягкой подкладки накладывают гипсовые бинты до верхней трети бедра; у маленького пациента это делается быстро, а при болезненной травме — после обезболивания или в наркозе",
+				"when": "Переломы бедренной кости и голени у детей, фиксация после вправления, продолжение лечения после операции, ситуации, когда ногу нужно обездвижить целиком",
+				"prep": "Уточнить у врача режим еды и питья, если планируется наркоз, взять снимки, подгузники или сменную одежду и игрушку, заранее решить, как ребёнка довезти домой",
+				"abnormal": "В первые дни ребёнок может быть беспокойным и плохо спать, это проходит; непрекращающийся плач, нарастающий отёк, бледные или прохладные пальцы стопы, запах из-под гипса и мокнущие участки — повод показать ребёнка врачу. Детская кость срастается быстрее, но сроки контрольных снимков и снятия повязки определяет детский травматолог"
+			},
+			"en": {
+				"what": "A plaster cast over the whole leg of a child under ten, from the thigh to the toes",
+				"how": "The child is laid down, the leg is held in the position the doctor has chosen, soft padding and then plaster bandages are applied up to the upper thigh; in a small patient this is done quickly, and with a painful injury after pain relief or under anaesthesia",
+				"when": "Fractures of the thigh bone and the lower leg in children, fixation after reduction, continued treatment after surgery, situations where the whole leg has to be immobilised",
+				"prep": "Check the food and drink rules with the doctor if anaesthesia is planned, bring images, nappies or a change of clothes and a toy, and decide in advance how to get the child home",
+				"abnormal": "In the first days a child may be restless and sleep poorly, and this passes; constant crying, growing swelling, pale or cool toes, a smell from under the cast and damp areas are a reason to have the child seen. Children's bones heal faster, but the paediatric trauma surgeon sets the dates for check images and removal"
+			},
+			"sr": {
+				"what": "Gipsani zavoj preko cijele noge djeteta mlađeg od deset godina, od buta do prstiju",
+				"how": "Dijete se polegne, noga se drži u položaju koji je odredio ljekar, preko meke podloge se postavljaju gipsani zavoji do gornje trećine buta; kod malog pacijenta to ide brzo, a kod bolne povrede poslije analgezije ili u anesteziji",
+				"when": "Prelomi butne kosti i potkoljenice kod djece, fiksacija poslije namještanja, nastavak liječenja nakon operacije, situacije kada noga mora mirovati cijelom dužinom",
+				"prep": "Provjeriti sa ljekarom režim hrane i pića ako je planirana anestezija, ponijeti snimke, pelene ili rezervnu odjeću i igračku, te unaprijed riješiti prevoz djeteta kući",
+				"abnormal": "Prvih dana dijete može biti nemirno i loše spavati, što prolazi; neprekidan plač, otok koji raste, blijedi ili hladni prsti stopala, miris ispod gipsa i vlažna mjesta su razlog da se dijete pokaže ljekaru. Dječja kost brže sraste, ali rokove kontrolnih snimaka i skidanja zavoja određuje dječji traumatolog"
+			},
+			"de": {
+				"what": "Ein Gipsverband über das ganze Bein eines Kindes unter zehn Jahren, vom Oberschenkel bis zu den Zehen",
+				"how": "Das Kind wird hingelegt, das Bein in der vom Arzt gewählten Stellung gehalten, über eine weiche Polsterung werden Gipsbinden bis zum oberen Oberschenkel angelegt; beim kleinen Patienten geht das schnell, bei schmerzhafter Verletzung nach Schmerzlinderung oder in Narkose",
+				"when": "Oberschenkel- und Unterschenkelbrüche bei Kindern, Ruhigstellung nach Reposition, Weiterbehandlung nach einer Operation, Situationen, in denen das ganze Bein ruhiggestellt werden muss",
+				"prep": "Bei geplanter Narkose die Nüchternzeiten mit dem Arzt klären, Aufnahmen, Windeln oder Wechselkleidung und ein Spielzeug mitnehmen und den Heimtransport vorher organisieren",
+				"abnormal": "In den ersten Tagen kann das Kind unruhig sein und schlecht schlafen, das gibt sich; anhaltendes Weinen, zunehmende Schwellung, blasse oder kühle Zehen, Geruch unter dem Gips und feuchte Stellen sind ein Grund, das Kind vorzustellen. Kinderknochen heilen schneller, die Termine für Kontrollaufnahmen und Abnahme legt der Kinderunfallchirurg fest"
+			},
+			"tr": {
+				"what": "On yaşın altındaki çocukta uyluktan parmaklara kadar tüm bacağı saran alçı",
+				"how": "Çocuk yatırılır, bacak hekimin belirlediği konumda tutulur, yumuşak pedin üzerine uyluk üst bölümüne kadar alçı sargılar uygulanır; küçük hastada işlem hızlıdır, ağrılı yaralanmada ağrı giderildikten sonra ya da anestezi altında yapılır",
+				"when": "Çocuklarda uyluk ve baldır kemiği kırıkları, redüksiyon sonrası tespit, ameliyat sonrası tedavinin sürdürülmesi, bacağın tümüyle hareketsiz tutulması gereken durumlar",
+				"prep": "Anestezi planlanıyorsa yeme içme kurallarını hekime sormak, filmleri, bez ya da yedek kıyafet ve bir oyuncak getirmek, çocuğun eve nasıl götürüleceğini önceden planlamak",
+				"abnormal": "İlk günlerde çocuk huzursuz olabilir ve kötü uyuyabilir, bu geçer; durmayan ağlama, artan şişlik, solgun ya da soğuk ayak parmakları, alçı altından gelen koku ve ıslanmış bölgeler hekime başvurmayı gerektirir. Çocuk kemiği daha hızlı kaynar, ancak kontrol filmi ve alçının çıkarılma zamanını çocuk travmatoloji uzmanı belirler"
+			}
+		}
+	},
+	{
+		"slug": "lorenz-cast-reduction",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Вправление бедра ребёнку с последующей фиксацией гипсовой повязкой в положении Лоренца — с согнутыми и разведёнными ножками",
+				"how": "Под наркозом врач плавно возвращает головку бедренной кости во впадину, положение проверяют снимком или ультразвуком, после чего накладывают гипсовую повязку, удерживающую ножки согнутыми и разведёнными, с окном для гигиены",
+				"when": "Врождённый вывих и тяжёлая дисплазия тазобедренного сустава у ребёнка, когда шины и стремена не удержали сустав, продолжение лечения после закрытого вправления",
+				"prep": "Соблюдать назначенный врачом интервал без еды и питья перед наркозом, взять снимки и прежние заключения, подгузники и свободную одежду, договориться о перевозке в автокресле, подходящем для повязки",
+				"abnormal": "Ножки в такой повязке разведены, и ребёнку нужно несколько дней, чтобы привыкнуть; важно, чтобы стопы оставались тёплыми и подвижными, а кожа по краям гипса — чистой и сухой. Беспокойство, отказ от еды, опрелости, запах из-под гипса и любое подозрение, что бедро снова сместилось, требуют осмотра, а сроки смены повязки и снимков определяет детский ортопед"
+			},
+			"en": {
+				"what": "Reduction of a child's hip followed by a plaster cast in the Lorenz position, with the legs bent and spread apart",
+				"how": "Under anaesthesia the doctor gently guides the head of the thigh bone back into the socket, the position is checked by X-ray or ultrasound, and a cast is then applied that holds the legs flexed and abducted, with an opening left for hygiene",
+				"when": "Congenital dislocation and severe hip dysplasia in a child when a harness or splint has not held the joint, continuation of treatment after closed reduction",
+				"prep": "Keep to the fasting interval before anaesthesia given by the doctor, bring images and previous reports, nappies and loose clothes, and arrange transport in a car seat that fits the cast",
+				"abnormal": "The legs are held apart in this cast and the child needs a few days to get used to it; the feet should stay warm and able to move and the skin at the edges of the cast clean and dry. Restlessness, refusing food, skin irritation, a smell from under the cast or any suspicion that the hip has slipped again call for review, and the paediatric orthopaedic surgeon sets the dates for cast changes and imaging"
+			},
+			"sr": {
+				"what": "Namještanje kuka kod djeteta i fiksacija gipsanim zavojem u Lorencovom položaju, sa savijenim i raširenim nožicama",
+				"how": "U anesteziji ljekar nježno vraća glavu butne kosti u čašicu, položaj se provjerava snimkom ili ultrazvukom, a zatim se postavlja gipsani zavoj koji drži nožice savijene i raširene, uz otvor za higijenu",
+				"when": "Urođeno iščašenje i teža displazija kuka kod djeteta kada gaćice ili udlage nisu zadržale zglob, nastavak liječenja poslije zatvorenog namještanja",
+				"prep": "Poštovati interval bez hrane i pića prije anestezije koji odredi ljekar, ponijeti snimke i ranije nalaze, pelene i široku odjeću, te obezbijediti prevoz u autosjedištu koje odgovara zavoju",
+				"abnormal": "Nožice su u ovom zavoju raširene i djetetu treba nekoliko dana da se privikne; važno je da stopala ostanu topla i pokretna, a koža uz ivice gipsa čista i suva. Nemir, odbijanje hrane, ranice od vlage, miris ispod gipsa i svaka sumnja da se kuk ponovo pomjerio traže pregled, a rokove zamjene zavoja i snimanja određuje dječji ortoped"
+			},
+			"de": {
+				"what": "Das Einrenken der Hüfte eines Kindes und die anschließende Fixierung im Gipsverband in Lorenz-Stellung, mit gebeugten und gespreizten Beinen",
+				"how": "In Narkose führt der Arzt den Hüftkopf behutsam in die Pfanne zurück, die Stellung wird mit Röntgen oder Ultraschall kontrolliert, danach wird ein Gipsverband angelegt, der die Beine gebeugt und abgespreizt hält, mit einer Öffnung für die Pflege",
+				"when": "Angeborene Hüftluxation und ausgeprägte Hüftdysplasie beim Kind, wenn Spreizhose oder Schiene das Gelenk nicht gehalten haben, Fortsetzung der Behandlung nach geschlossener Reposition",
+				"prep": "Die vom Arzt genannte Nüchternzeit vor der Narkose einhalten, Aufnahmen und Vorbefunde, Windeln und weite Kleidung mitbringen und den Transport in einem zum Gips passenden Kindersitz organisieren",
+				"abnormal": "Die Beine sind in diesem Verband gespreizt und das Kind braucht einige Tage zur Gewöhnung; die Füße sollen warm und beweglich bleiben, die Haut an den Gipsrändern sauber und trocken. Unruhe, Nahrungsverweigerung, wunde Haut, Geruch unter dem Gips und jeder Verdacht, dass die Hüfte erneut herausgerutscht ist, erfordern eine Vorstellung, Gipswechsel und Kontrollen legt der Kinderorthopäde fest"
+			},
+			"tr": {
+				"what": "Çocukta kalçanın yerine oturtulması ve ardından bacakların bükülü ve açık tutulduğu Lorenz konumunda alçıya alınması",
+				"how": "Anestezi altında hekim uyluk kemiği başını yavaşça yuvasına yerleştirir, konum röntgen ya da ultrasonla doğrulanır, sonra bacakları bükülü ve açık tutan, temizlik için açıklık bırakılan alçı uygulanır",
+				"when": "Çocukta doğuştan kalça çıkığı ve ileri kalça displazisi, bez ya da atellerin eklemi tutmadığı durumlar, kapalı redüksiyon sonrası tedavinin sürdürülmesi",
+				"prep": "Anestezi öncesi hekimin belirttiği aç kalma süresine uymak, filmleri ve önceki raporları, bez ve bol kıyafet getirmek, alçıya uygun oto koltuğuyla ulaşımı planlamak",
+				"abnormal": "Bu alçıda bacaklar açık durur ve çocuk birkaç günde alışır; ayakların sıcak ve hareketli, alçı kenarındaki cildin temiz ve kuru kalması önemlidir. Huzursuzluk, beslenmeyi reddetme, ciltte pişik, alçı altından koku ve kalçanın yeniden kaydığı yönünde her şüphe değerlendirme gerektirir, alçı değişimi ve görüntüleme zamanlarını çocuk ortopedisti belirler"
+			}
+		}
+	},
+	{
+		"slug": "lower-leg-fasciotomy-with-decompression",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Неотложная операция, при которой рассекают плотные фасциальные футляры голени, чтобы снизить давление в мышцах и восстановить кровоток",
+				"how": "В операционной под наркозом хирург делает один или два продольных разреза по голени, вскрывает все мышечные футляры и оценивает состояние мышц; рану оставляют открытой под повязкой и закрывают позже — швами или отдельной операцией, по мере спадения отёка",
+				"when": "Нарастающее напряжение и распирающая боль в голени после перелома, ушиба, длительного сдавления или сосудистой операции, подозрение на компартмент-синдром, когда под угрозой кровоснабжение мышц",
+				"prep": "Ситуация неотложная, подготовка сводится к обследованию в приёмном отделении; до него нельзя есть и пить, ногу не бинтуют туго и не греют",
+				"abnormal": "После рассечения боль и напряжение обычно уменьшаются, но рана остаётся открытой, требует перевязок и повторных вмешательств для закрытия, а отёк и временная слабость мышц встречаются часто. Сохраняющаяся или возвращающаяся распирающая боль, онемение, слабость стопы и лихорадка — повод для срочного осмотра, сроки закрытия раны и объём нагрузки определяет хирург"
+			},
+			"en": {
+				"what": "An emergency operation in which the tight fascial compartments of the lower leg are opened to lower the pressure in the muscles and restore blood flow",
+				"how": "In theatre under anaesthesia the surgeon makes one or two long incisions along the lower leg, opens all muscle compartments and assesses the muscle; the wound is left open under a dressing and closed later, with sutures or a separate operation, as the swelling subsides",
+				"when": "Growing tension and bursting pain in the lower leg after a fracture, a crush injury, prolonged compression or vascular surgery, suspected compartment syndrome threatening the blood supply of the muscles",
+				"prep": "The situation is urgent and preparation is limited to assessment in the emergency department; do not eat or drink before it, and do not bandage the leg tightly or warm it",
+				"abnormal": "After the release, pain and tension usually ease, but the wound stays open, needs dressing changes and further procedures to close it, and swelling and temporary muscle weakness are common. Persisting or returning bursting pain, numbness, weakness of the foot and fever call for urgent review, while the surgeon decides when the wound is closed and how much load is allowed"
+			},
+			"sr": {
+				"what": "Hitna operacija kojom se presijecaju čvrsti fascijalni prostori potkoljenice da bi se smanjio pritisak u mišićima i obnovio protok krvi",
+				"how": "U operacionoj sali, u anesteziji, hirurg pravi jedan ili dva uzdužna reza po potkoljenici, otvara sve mišićne lože i procjenjuje stanje mišića; rana ostaje otvorena ispod zavoja i zatvara se kasnije, šavovima ili posebnom operacijom, kako otok popušta",
+				"when": "Rastuća napetost i razdirući bol u potkoljenici poslije preloma, nagnječenja, dugotrajnog pritiska ili operacije na krvnim sudovima, sumnja na kompartment sindrom kada je ugrožena ishrana mišića",
+				"prep": "Stanje je hitno, priprema se svodi na obradu u urgentnom centru; do nje ne jesti i ne piti, nogu ne povijati čvrsto i ne grijati",
+				"abnormal": "Poslije presijecanja bol i napetost obično popuste, ali rana ostaje otvorena, traži previjanje i dodatne zahvate radi zatvaranja, a otok i privremena slabost mišića su česti. Razdirući bol koji se vraća ili ne prolazi, utrnulost, slabost stopala i povišena temperatura traže hitan pregled, a kada se rana zatvara i koliko se noga smije opteretiti odlučuje hirurg"
+			},
+			"de": {
+				"what": "Eine Notfalloperation, bei der die festen Faszienlogen des Unterschenkels gespalten werden, um den Druck in den Muskeln zu senken und die Durchblutung wiederherzustellen",
+				"how": "Im Operationssaal setzt der Chirurg in Narkose ein oder zwei lange Längsschnitte am Unterschenkel, eröffnet alle Muskellogen und beurteilt die Muskulatur; die Wunde bleibt unter einem Verband offen und wird später mit Nähten oder in einer weiteren Operation verschlossen, sobald die Schwellung zurückgeht",
+				"when": "Zunehmende Spannung und berstender Schmerz im Unterschenkel nach Bruch, Quetschung, längerer Kompression oder Gefäßoperation, Verdacht auf ein Kompartmentsyndrom mit gefährdeter Muskeldurchblutung",
+				"prep": "Es handelt sich um einen Notfall, die Vorbereitung beschränkt sich auf die Abklärung in der Notaufnahme; vorher nichts essen und trinken, das Bein nicht fest wickeln und nicht wärmen",
+				"abnormal": "Nach der Spaltung lassen Schmerz und Spannung meist nach, die Wunde bleibt jedoch offen, erfordert Verbandwechsel und weitere Eingriffe zum Verschluss, Schwellung und vorübergehende Muskelschwäche sind häufig. Anhaltender oder wiederkehrender berstender Schmerz, Taubheit, Fußschwäche und Fieber erfordern eine sofortige Kontrolle, Wundverschluss und Belastung bestimmt der Chirurg"
+			},
+			"tr": {
+				"what": "Baldırdaki sıkı fasya bölmelerinin, kas içi basıncı düşürmek ve kan akımını geri getirmek için açıldığı acil ameliyat",
+				"how": "Ameliyathanede anestezi altında cerrah baldır boyunca bir ya da iki uzun kesi yapar, tüm kas bölmelerini açar ve kasların durumunu değerlendirir; yara sargı altında açık bırakılır, şişlik azaldıkça dikişle ya da ayrı bir ameliyatla kapatılır",
+				"when": "Kırık, ezilme, uzun süreli baskı ya da damar ameliyatı sonrası baldırda artan gerginlik ve patlayıcı ağrı, kas dolaşımını tehdit eden kompartman sendromu şüphesi",
+				"prep": "Durum acildir, hazırlık acil serviste yapılan değerlendirmeyle sınırlıdır; öncesinde yememek ve içmemek, bacağı sıkı sarmamak ve ısıtmamak gerekir",
+				"abnormal": "Gevşetme sonrası ağrı ve gerginlik genellikle azalır, ancak yara açık kalır, pansuman ve kapatma için ek girişimler gerektirir, şişlik ile geçici kas güçsüzlüğü sık görülür. Geçmeyen ya da yeniden başlayan patlayıcı ağrı, uyuşma, ayakta güçsüzlük ve ateş acil değerlendirme gerektirir, yaranın ne zaman kapatılacağını ve yük verme düzeyini cerrah belirler"
+			}
+		}
+	},
+	{
+		"slug": "lower-leg-flexor-tendon-primary-repair-one-or-more",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Операция по сшиванию одного или нескольких повреждённых сухожилий сгибателей в области голени вскоре после травмы",
+				"how": "Под обезболиванием хирург расширяет рану, находит концы разорванного сухожилия, сопоставляет их и соединяет специальным швом, рану промывают и ушивают, а голень и стопу фиксируют лонгетой в положении, которое снимает натяжение шва",
+				"when": "Резаная или рваная рана голени с потерей сгибания стопы или пальцев, разрыв сухожилия при травме, ситуации, когда перестали работать мышцы задней группы голени",
+				"prep": "Операция срочная: рану закрыть чистой повязкой, ногу не нагружать, до осмотра не есть и не пить, сказать врачу о прививке от столбняка и принимаемых препаратах",
+				"abnormal": "Сшитое сухожилие срастается постепенно, поэтому фиксация и ограничение нагрузки держатся неделями, а сила и объём движений возвращаются на реабилитации. Резкая боль с внезапной потерей движения, расхождение краёв раны, покраснение и лихорадка требуют срочного осмотра, а график нагрузки и упражнений определяет оперировавший хирург"
+			},
+			"en": {
+				"what": "An operation to stitch one or more torn flexor tendons in the lower leg soon after the injury",
+				"how": "Under anaesthesia the surgeon widens the wound, finds the ends of the torn tendon, brings them together and joins them with a special suture, the wound is washed out and closed and the leg and foot are put in a splint in a position that takes tension off the repair",
+				"when": "A cut or a lacerated wound of the lower leg with loss of bending of the foot or toes, a tendon rupture from injury, situations where the muscles at the back of the lower leg no longer work",
+				"prep": "This is an urgent operation: cover the wound with a clean dressing, keep weight off the leg, do not eat or drink before assessment and tell the doctor about your tetanus vaccination and your medicines",
+				"abnormal": "A repaired tendon heals gradually, so immobilisation and restricted load last for weeks and strength and range of movement come back during rehabilitation. Sudden pain with loss of movement, wound edges coming apart, redness and fever need urgent review, while the schedule of load and exercises is set by the operating surgeon"
+			},
+			"sr": {
+				"what": "Operacija kojom se ušiva jedna ili više pokidanih tetiva fleksora potkoljenice ubrzo poslije povrede",
+				"how": "U anesteziji hirurg proširuje ranu, pronalazi krajeve pokidane tetive, spaja ih i ušiva posebnim šavom, rana se ispira i zatvara, a potkoljenica i stopalo se fiksiraju longetom u položaju koji rasterećuje šav",
+				"when": "Posjekotina ili razderina potkoljenice sa gubitkom savijanja stopala ili prstiju, prekid tetive pri povredi, stanja u kojima mišići zadnje lože potkoljenice više ne rade",
+				"prep": "Operacija je hitna: ranu prekriti čistim zavojem, nogu ne opterećivati, do pregleda ne jesti i ne piti, a ljekaru reći za vakcinu protiv tetanusa i terapiju koju uzimate",
+				"abnormal": "Ušivena tetiva sraste postepeno, pa imobilizacija i ograničeno opterećenje traju nedjeljama, a snaga i obim pokreta se vraćaju uz rehabilitaciju. Oštar bol sa iznenadnim gubitkom pokreta, razmicanje ivica rane, crvenilo i povišena temperatura traže hitan pregled, a raspored opterećenja i vježbi određuje hirurg koji je operisao"
+			},
+			"de": {
+				"what": "Eine Operation, bei der eine oder mehrere gerissene Beugesehnen am Unterschenkel kurz nach der Verletzung genäht werden",
+				"how": "In Narkose erweitert der Chirurg die Wunde, sucht die Enden der gerissenen Sehne, führt sie zusammen und vereinigt sie mit einer speziellen Naht, die Wunde wird gespült und verschlossen, Unterschenkel und Fuß kommen in eine Schiene in entlastender Stellung",
+				"when": "Schnitt- oder Risswunde am Unterschenkel mit Ausfall der Beugung von Fuß oder Zehen, Sehnenriss durch eine Verletzung, Ausfall der Muskulatur der hinteren Unterschenkelloge",
+				"prep": "Dringliche Operation: die Wunde mit einem sauberen Verband abdecken, das Bein nicht belasten, vorher nichts essen und trinken und den Tetanusimpfschutz sowie eingenommene Medikamente angeben",
+				"abnormal": "Die genähte Sehne heilt langsam, deshalb bestehen Ruhigstellung und Belastungsgrenzen über Wochen, Kraft und Beweglichkeit kehren in der Rehabilitation zurück. Plötzlicher Schmerz mit Bewegungsverlust, auseinanderweichende Wundränder, Rötung und Fieber erfordern eine sofortige Kontrolle, Belastungs- und Übungsplan legt der operierende Chirurg fest"
+			},
+			"tr": {
+				"what": "Baldırdaki bir ya da daha fazla kopmuş fleksör tendonun yaralanmadan kısa süre sonra dikilmesi ameliyatı",
+				"how": "Anestezi altında cerrah yarayı genişletir, kopan tendonun uçlarını bulur, karşı karşıya getirir ve özel bir dikişle birleştirir, yara yıkanıp kapatılır, baldır ve ayak dikişi rahatlatan konumda atele alınır",
+				"when": "Ayak ya da parmakları bükme kaybıyla giden baldır kesisi veya yırtılması, yaralanmaya bağlı tendon kopması, baldır arka grup kaslarının çalışmadığı durumlar",
+				"prep": "Ameliyat aciledir: yarayı temiz bir sargıyla kapatmak, bacağa yük vermemek, değerlendirmeye kadar aç kalmak, tetanoz aşısını ve kullanılan ilaçları hekime bildirmek",
+				"abnormal": "Dikilen tendon yavaş iyileşir, bu yüzden tespit ve yük kısıtlaması haftalarca sürer, güç ve hareket açıklığı rehabilitasyonla geri gelir. Ani ağrıyla birlikte hareket kaybı, yara kenarlarının ayrılması, kızarıklık ve ateş acil değerlendirme gerektirir, yüklenme ve egzersiz programını ameliyatı yapan cerrah belirler"
+			}
+		}
+	},
+	{
+		"slug": "lower-leg-plaster-knee-to-toes-over-10-years",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Циркулярная гипсовая повязка на голень и стопу — от колена до пальцев — у пациентов старше десяти лет",
+				"how": "Стопу устанавливают под прямым углом к голени, надевают трикотаж и вату, затем накладывают гипсовые бинты от основания пальцев до уровня ниже колена; гипс твердеет за несколько минут, полную прочность набирает к следующему дню и без разрешения врача его не нагружают",
+				"when": "Переломы костей голени в нижней части, переломы лодыжек и костей стопы, тяжёлые повреждения связок голеностопа, фиксация после вправления или операции на стопе",
+				"prep": "Прийти со снимками и направлением, в брюках с широкой штаниной, взять костыли; устойчивая удобная обувь на здоровую ногу облегчает передвижение",
+				"abnormal": "Умеренный отёк в первые дни ожидаем и уменьшается, если держать ногу приподнятой и регулярно шевелить пальцами. Боль в одной точке под гипсом, онемение, изменение цвета пальцев и треснувшая или ослабевшая повязка — повод показаться врачу, а когда можно наступать на ногу и когда снимать гипс, решает травматолог по контрольному снимку"
+			},
+			"en": {
+				"what": "A circular plaster cast on the lower leg and foot, from the knee to the toes, in patients over ten years of age",
+				"how": "The foot is set at a right angle to the lower leg, a stockinette and cotton wool are put on and plaster bandages are wrapped from the base of the toes to just below the knee; the plaster sets within minutes, reaches full strength by the next day and must not be loaded without the doctor's permission",
+				"when": "Fractures of the lower part of the shin bones, fractures of the ankle and the bones of the foot, severe ankle ligament injuries, fixation after reduction or after foot surgery",
+				"prep": "Come with your images and referral, in trousers with wide legs, and bring crutches; a stable, comfortable shoe for the healthy foot makes walking easier",
+				"abnormal": "Moderate swelling in the first days is expected and settles if the leg is kept raised and the toes are moved regularly. Pain at one point under the cast, numbness, a change in the colour of the toes and a cracked or loosened cast are a reason to be seen, while the trauma surgeon decides from the check X-ray when you may step on the leg and when the cast comes off"
+			},
+			"sr": {
+				"what": "Kružni gipsani zavoj na potkoljenici i stopalu, od koljena do prstiju, kod pacijenata starijih od deset godina",
+				"how": "Stopalo se postavi pod pravim uglom prema potkoljenici, stave se triko i vata, a gipsani zavoji se povijaju od korijena prstiju do ispod koljena; gips se stegne za nekoliko minuta, punu čvrstinu dostiže sjutradan i ne smije se opterećivati bez odobrenja ljekara",
+				"when": "Prelomi donjeg dijela kostiju potkoljenice, prelomi skočnog zgloba i kostiju stopala, teže povrede ligamenata gležnja, fiksacija poslije namještanja ili operacije stopala",
+				"prep": "Doći sa snimcima i uputom, u pantalonama široke nogavice i ponijeti štake; stabilna i udobna obuća za zdravu nogu olakšava kretanje",
+				"abnormal": "Umjeren otok prvih dana je očekivan i popušta ako se noga drži podignuto, a prsti redovno pomjeraju. Bol na jednom mjestu ispod gipsa, utrnulost, promjena boje prstiju i napukao ili olabavio zavoj su razlog za pregled, a kada se smije stati na nogu i kada se gips skida odlučuje traumatolog na osnovu kontrolnog snimka"
+			},
+			"de": {
+				"what": "Ein zirkulärer Gipsverband an Unterschenkel und Fuß, vom Knie bis zu den Zehen, bei Patienten über zehn Jahren",
+				"how": "Der Fuß wird im rechten Winkel zum Unterschenkel eingestellt, Schlauchverband und Watte werden angelegt, dann werden Gipsbinden vom Zehenansatz bis unterhalb des Knies gewickelt; der Gips härtet in Minuten aus, ist am Folgetag voll fest und darf ohne ärztliche Erlaubnis nicht belastet werden",
+				"when": "Brüche im unteren Bereich der Unterschenkelknochen, Sprunggelenks- und Fußbrüche, schwere Bandverletzungen des Sprunggelenks, Ruhigstellung nach Reposition oder Fußoperation",
+				"prep": "Mit Aufnahmen und Überweisung kommen, Hose mit weitem Bein tragen und Gehstützen mitbringen; ein stabiler, bequemer Schuh für den gesunden Fuß erleichtert das Gehen",
+				"abnormal": "Eine mäßige Schwellung in den ersten Tagen ist zu erwarten und geht bei Hochlagerung und regelmäßigem Bewegen der Zehen zurück. Punktueller Schmerz unter dem Gips, Taubheit, Farbveränderung der Zehen sowie ein gerissener oder locker gewordener Verband sind ein Grund zur Vorstellung, wann das Bein belastet werden darf und wann der Gips abgenommen wird, entscheidet der Unfallchirurg anhand der Kontrollaufnahme"
+			},
+			"tr": {
+				"what": "On yaş üstü hastalarda dizden parmaklara kadar baldır ve ayağı saran sirküler alçı",
+				"how": "Ayak baldıra dik açıda yerleştirilir, çorap ve pamuk sarılır, alçı sargılar parmak diplerinden diz altına kadar uygulanır; alçı birkaç dakikada sertleşir, ertesi gün tam dayanıklılığa ulaşır ve hekim izin vermeden yük verilmemelidir",
+				"when": "Baldır kemiklerinin alt bölüm kırıkları, ayak bileği ve ayak kemiği kırıkları, ağır ayak bileği bağ yaralanmaları, redüksiyon ya da ayak ameliyatı sonrası tespit",
+				"prep": "Film ve sevk belgesiyle, geniş paçalı pantolonla gelmek ve koltuk değneği getirmek; sağlam ayağa giyilecek dengeli ve rahat bir ayakkabı yürümeyi kolaylaştırır",
+				"abnormal": "İlk günlerdeki orta derecede şişlik beklenir ve bacak yukarıda tutulup parmaklar düzenli oynatılınca azalır. Alçı altında tek noktada ağrı, uyuşma, parmak renginde değişiklik ve çatlamış ya da gevşemiş alçı değerlendirme gerektirir, ayağa ne zaman basılacağına ve alçının ne zaman alınacağına travmatoloji uzmanı kontrol filmine bakarak karar verir"
+			}
+		}
+	},
+	{
+		"slug": "lower-leg-plaster-knee-to-toes-under-10-years",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Гипсовая повязка на голень и стопу ребёнка младше десяти лет — от колена до пальцев",
+				"how": "Ножку держат в нужном положении, кожу защищают трикотажем и ватой, а гипсовый бинт накладывают от пальцев до уровня под коленом; у ребёнка повязка лёгкая и накладывается быстро, при болезненной травме — после обезболивания",
+				"when": "Переломы костей голени, лодыжек и стопы у детей, повреждения связок голеностопа, фиксация после вправления, продолжение лечения после лонгеты",
+				"prep": "Взять снимки, сменную одежду и любимую игрушку, надеть на ребёнка свободные брюки; если планируется седация, врач заранее скажет, когда прекратить еду и питьё",
+				"abnormal": "Ребёнок обычно привыкает к повязке за день-два, а лёгкий отёк спадает при приподнятой ножке. Жалобы на боль в одном месте, отказ шевелить пальчиками, бледные или холодные пальцы, запах и мокнущие участки гипса — повод для внепланового осмотра; детские кости срастаются быстрее, но длительность фиксации назначает детский травматолог"
+			},
+			"en": {
+				"what": "A plaster cast on the lower leg and foot of a child under ten, from the knee to the toes",
+				"how": "The leg is held in the required position, the skin is protected with a stockinette and cotton wool and the plaster bandage is applied from the toes to just below the knee; in a child the cast is light and quick to apply, and with a painful injury it follows pain relief",
+				"when": "Fractures of the shin bones, the ankle and the foot in children, ankle ligament injuries, fixation after reduction, continued treatment after a splint",
+				"prep": "Bring images, a change of clothes and a favourite toy and dress the child in loose trousers; if sedation is planned the doctor will say in advance when to stop food and drink",
+				"abnormal": "A child usually gets used to the cast within a day or two, and mild swelling settles with the leg raised. Complaints of pain in one spot, refusing to move the toes, pale or cold toes, smell and damp patches on the cast are a reason for an unscheduled review; children's bones heal faster, but the length of fixation is set by the paediatric trauma surgeon"
+			},
+			"sr": {
+				"what": "Gipsani zavoj na potkoljenici i stopalu djeteta mlađeg od deset godina, od koljena do prstiju",
+				"how": "Nožica se drži u potrebnom položaju, koža se štiti trikoom i vatom, a gipsani zavoj se postavlja od prstiju do ispod koljena; kod djeteta je zavoj lagan i brzo se postavlja, a kod bolne povrede tek poslije analgezije",
+				"when": "Prelomi kostiju potkoljenice, gležnja i stopala kod djece, povrede ligamenata skočnog zgloba, fiksacija poslije namještanja, nastavak liječenja poslije longete",
+				"prep": "Ponijeti snimke, rezervnu odjeću i omiljenu igračku, a dijete obući u široke pantalone; ako je planirana sedacija, ljekar će unaprijed reći kada prestati sa hranom i pićem",
+				"abnormal": "Dijete se obično privikne na zavoj za dan-dva, a blag otok popušta kada je nožica podignuta. Bol na jednom mjestu, odbijanje da pomjera prstiće, blijedi ili hladni prsti, miris i vlažna mjesta na gipsu su razlog za vanredni pregled; dječja kost brže sraste, ali dužinu imobilizacije određuje dječji traumatolog"
+			},
+			"de": {
+				"what": "Ein Gipsverband an Unterschenkel und Fuß eines Kindes unter zehn Jahren, vom Knie bis zu den Zehen",
+				"how": "Das Bein wird in der nötigen Stellung gehalten, die Haut mit Schlauchverband und Watte geschützt und die Gipsbinde von den Zehen bis unterhalb des Knies angelegt; beim Kind ist der Verband leicht und schnell angelegt, bei schmerzhafter Verletzung erst nach Schmerzlinderung",
+				"when": "Brüche der Unterschenkelknochen, des Sprunggelenks und des Fußes bei Kindern, Bandverletzungen des Sprunggelenks, Ruhigstellung nach Reposition, Weiterbehandlung nach einer Schiene",
+				"prep": "Aufnahmen, Wechselkleidung und ein Lieblingsspielzeug mitbringen und dem Kind weite Hosen anziehen; bei geplanter Sedierung nennt der Arzt vorher die Nüchternzeiten",
+				"abnormal": "Ein Kind gewöhnt sich meist in ein bis zwei Tagen an den Gips, eine leichte Schwellung geht bei Hochlagerung zurück. Klagen über Schmerz an einer Stelle, fehlende Zehenbewegung, blasse oder kalte Zehen, Geruch und feuchte Stellen am Gips sind ein Grund für eine außerplanmäßige Kontrolle; Kinderknochen heilen schneller, die Dauer der Ruhigstellung legt der Kinderunfallchirurg fest"
+			},
+			"tr": {
+				"what": "On yaşın altındaki çocukta dizden parmaklara kadar baldır ve ayağı saran alçı",
+				"how": "Bacak gerekli konumda tutulur, cilt çorap ve pamukla korunur, alçı sargı parmaklardan diz altına kadar uygulanır; çocukta alçı hafiftir ve hızlı sarılır, ağrılı yaralanmada ağrı giderildikten sonra yapılır",
+				"when": "Çocuklarda baldır, ayak bileği ve ayak kemiği kırıkları, ayak bileği bağ yaralanmaları, redüksiyon sonrası tespit, atelden sonra tedavinin sürdürülmesi",
+				"prep": "Filmleri, yedek kıyafeti ve sevdiği bir oyuncağı getirmek, çocuğa bol pantolon giydirmek; sedasyon planlanıyorsa hekim yeme içmenin ne zaman kesileceğini önceden söyler",
+				"abnormal": "Çocuk alçıya genellikle bir iki günde alışır, hafif şişlik bacak yukarıda tutulunca azalır. Tek noktada ağrıdan yakınma, parmaklarını oynatmak istememe, solgun ya da soğuk parmaklar, alçıda koku ve ıslak bölgeler plansız değerlendirme gerektirir; çocuk kemiği daha hızlı kaynar, ancak tespit süresini çocuk travmatoloji uzmanı belirler"
+			}
+		}
+	},
+	{
+		"slug": "lower-leg-to-foot-plaster-splint-over-10-years",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Гипсовая лонгета — незамкнутая шина по задней поверхности голени и стопы — у пациентов старше десяти лет",
+				"how": "Из нескольких слоёв гипсового бинта формируют полосу по длине голени и стопы, укладывают её на мягкую подкладку сзади и прибинтовывают эластичным бинтом; такая повязка не охватывает ногу по кругу и оставляет место отёку, наложение занимает около пятнадцати-двадцати минут",
+				"when": "Свежая травма с отёком, переломы лодыжек и костей стопы до окончательной фиксации, растяжения и разрывы связок голеностопа, иммобилизация до осмотра специалиста или до операции",
+				"prep": "Подготовка не нужна; взять снимок, если он сделан, прийти в широких брюках, взять костыли и снять с повреждённой ноги кольца и носок",
+				"abnormal": "Лонгета допускает нарастание отёка, поэтому удобна в первые дни после травмы; ослабевший бинт, сместившаяся или размокшая лонгета перестают держать ногу. Онемение, синюшность пальцев и усиление боли — повод показаться врачу, он же решает, нужно ли менять лонгету на циркулярный гипс и когда"
+			},
+			"en": {
+				"what": "A plaster splint — an open slab along the back of the lower leg and the foot — in patients over ten years of age",
+				"how": "Several layers of plaster bandage are shaped into a strip the length of the lower leg and foot, laid on soft padding at the back and held with an elastic bandage; the splint does not go round the leg and leaves room for swelling, and it takes about fifteen to twenty minutes",
+				"when": "A fresh injury with swelling, ankle and foot fractures before final fixation, sprains and tears of the ankle ligaments, immobilisation until a specialist review or until surgery",
+				"prep": "No preparation needed; bring an image if one has been taken, wear wide trousers, bring crutches and take the rings and the sock off the injured leg",
+				"abnormal": "A splint allows swelling to increase, which is why it suits the first days after an injury; a loosened bandage or a splint that has slipped or become soggy stops holding the leg. Numbness, bluish toes and increasing pain are a reason to be seen, and the doctor also decides whether and when the splint is replaced with a circular cast"
+			},
+			"sr": {
+				"what": "Gipsana longeta — otvorena udlaga po zadnjoj strani potkoljenice i stopala — kod pacijenata starijih od deset godina",
+				"how": "Od više slojeva gipsanog zavoja oblikuje se traka dužine potkoljenice i stopala, postavlja se na meku podlogu pozadi i pričvršćuje elastičnim zavojem; longeta ne obuhvata nogu ukrug i ostavlja prostor za otok, a postavljanje traje petnaestak do dvadesetak minuta",
+				"when": "Svježa povreda sa otokom, prelomi gležnja i kostiju stopala do konačne fiksacije, istegnuća i kidanja ligamenata skočnog zgloba, imobilizacija do pregleda specijaliste ili do operacije",
+				"prep": "Priprema nije potrebna; ponijeti snimak ako je urađen, doći u širim pantalonama, ponijeti štake i skinuti prstenje i čarapu sa povrijeđene noge",
+				"abnormal": "Longeta dopušta da otok raste, pa odgovara prvim danima poslije povrede; olabavio zavoj, pomjerena ili raskvašena longeta prestaju da drže nogu. Utrnulost, plavičasti prsti i bol koji jača su razlog za pregled, a ljekar odlučuje i da li se i kada longeta mijenja kružnim gipsom"
+			},
+			"de": {
+				"what": "Eine Gipsschiene — eine offene Längsschale an der Rückseite von Unterschenkel und Fuß — bei Patienten über zehn Jahren",
+				"how": "Aus mehreren Lagen Gipsbinde wird ein Streifen in Länge von Unterschenkel und Fuß geformt, auf eine weiche Polsterung an der Rückseite gelegt und mit einer elastischen Binde fixiert; die Schiene umschließt das Bein nicht ringsum und lässt Platz für die Schwellung, das Anlegen dauert etwa fünfzehn bis zwanzig Minuten",
+				"when": "Frische Verletzung mit Schwellung, Sprunggelenks- und Fußbrüche bis zur endgültigen Versorgung, Zerrungen und Risse der Sprunggelenksbänder, Ruhigstellung bis zur fachärztlichen Vorstellung oder bis zur Operation",
+				"prep": "Keine Vorbereitung nötig; vorhandene Aufnahme mitbringen, weite Hose tragen, Gehstützen mitnehmen und Ringe sowie den Strumpf am verletzten Bein ablegen",
+				"abnormal": "Die Schiene lässt eine zunehmende Schwellung zu und eignet sich deshalb für die ersten Tage nach der Verletzung; eine gelockerte Binde sowie eine verrutschte oder durchweichte Schiene halten das Bein nicht mehr. Taubheit, bläuliche Zehen und zunehmender Schmerz sind ein Grund zur Vorstellung, ob und wann die Schiene durch einen zirkulären Gips ersetzt wird, entscheidet der Arzt"
+			},
+			"tr": {
+				"what": "On yaş üstü hastalarda baldır ve ayağın arka yüzüne uygulanan açık alçı ateli",
+				"how": "Birkaç kat alçı sargıdan baldır ve ayak boyunda bir şerit hazırlanır, arka yüzde yumuşak pedin üzerine yerleştirilir ve elastik sargıyla tutturulur; atel bacağı çepeçevre sarmaz ve şişmeye yer bırakır, uygulama on beş ila yirmi dakika sürer",
+				"when": "Şişlikle giden yeni yaralanma, kesin tespite kadar ayak bileği ve ayak kırıkları, ayak bileği bağ zorlanma ve yırtıkları, uzman değerlendirmesine ya da ameliyata kadar tespit",
+				"prep": "Hazırlık gerekmez; varsa filmi getirmek, geniş pantolonla gelmek, koltuk değneği getirmek ve yaralı bacaktaki yüzük ile çorabı çıkarmak yeterlidir",
+				"abnormal": "Atel şişliğin artmasına izin verdiği için yaralanmanın ilk günlerine uygundur; gevşemiş sargı, kaymış ya da ıslanmış atel bacağı tutmaz olur. Uyuşma, parmaklarda morarma ve artan ağrı değerlendirme gerektirir, atelin sirküler alçıya çevrilip çevrilmeyeceğine ve zamanına hekim karar verir"
+			}
+		}
+	},
+	{
+		"slug": "lower-leg-to-foot-plaster-splint-under-10-years",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Гипсовая лонгета по задней поверхности голени и стопы у ребёнка младше десяти лет",
+				"how": "Полосу из слоёв гипсового бинта подгоняют по размеру ножки, укладывают на вату сзади — от подколенной области до пальцев — и фиксируют мягким бинтом; процедура безболезненная и занимает несколько минут",
+				"when": "Переломы и трещины костей голени и стопы у детей, повреждения связок голеностопа, фиксация после вправления, случаи, когда из-за отёка циркулярный гипс пока не накладывают",
+				"prep": "Специальной подготовки нет; взять снимки, если они есть, свободную одежду и то, чем ребёнка отвлечь, а при болезненной травме врач заранее объяснит, как будут снимать боль",
+				"abnormal": "Ребёнку в лонгете обычно становится легче уже в первые часы, а отёк постепенно спадает. Если ребёнок не шевелит пальчиками, жалуется на онемение, пальцы бледные или холодные, а лонгета съехала или намокла — с осмотром тянуть не стоит; срок фиксации и переход на другой вид повязки определяет детский травматолог"
+			},
+			"en": {
+				"what": "A plaster splint along the back of the lower leg and foot of a child under ten",
+				"how": "A strip made of layers of plaster bandage is fitted to the size of the leg, laid on cotton padding at the back from below the knee to the toes and secured with a soft bandage; the procedure is painless and takes a few minutes",
+				"when": "Fractures and cracks of the lower leg and foot bones in children, ankle ligament injuries, fixation after reduction, cases where swelling means a circular cast is not applied yet",
+				"prep": "No special preparation; bring any images, loose clothing and something to distract the child, and with a painful injury the doctor will explain in advance how pain will be relieved",
+				"abnormal": "A child in a splint usually feels better within hours and the swelling gradually settles. If the child does not move the toes, complains of numbness, the toes are pale or cold, or the splint has slipped or got wet, a review should not wait; the paediatric trauma surgeon decides how long fixation lasts and when another type of dressing is used"
+			},
+			"sr": {
+				"what": "Gipsana longeta po zadnjoj strani potkoljenice i stopala kod djeteta mlađeg od deset godina",
+				"how": "Traka od slojeva gipsanog zavoja prilagodi se veličini nožice, postavi na vatu pozadi — od ispod koljena do prstiju — i pričvrsti mekim zavojem; zahvat je bezbolan i traje nekoliko minuta",
+				"when": "Prelomi i naprsline kostiju potkoljenice i stopala kod djece, povrede ligamenata skočnog zgloba, fiksacija poslije namještanja, slučajevi kada se zbog otoka kružni gips još ne postavlja",
+				"prep": "Posebne pripreme nema; ponijeti snimke ako postoje, široku odjeću i nešto čime se dijete zabavlja, a kod bolne povrede ljekar unaprijed objašnjava kako će se bol smiriti",
+				"abnormal": "Djetetu u longeti obično bude lakše već prvih sati, a otok postepeno popušta. Ako dijete ne pomjera prstiće, žali se na utrnulost, prsti su blijedi ili hladni, a longeta je spala ili se pokvasila, pregled ne treba odlagati; koliko imobilizacija traje i kada se prelazi na drugu vrstu zavoja određuje dječji traumatolog"
+			},
+			"de": {
+				"what": "Eine Gipsschiene an der Rückseite von Unterschenkel und Fuß bei einem Kind unter zehn Jahren",
+				"how": "Ein Streifen aus mehreren Gipslagen wird auf die Größe des Beins angepasst, an der Rückseite von unterhalb des Knies bis zu den Zehen auf Watte gelegt und mit einer weichen Binde fixiert; der Vorgang ist schmerzfrei und dauert wenige Minuten",
+				"when": "Brüche und Anrisse der Unterschenkel- und Fußknochen bei Kindern, Bandverletzungen des Sprunggelenks, Ruhigstellung nach Reposition, Fälle, in denen wegen der Schwellung noch kein zirkulärer Gips angelegt wird",
+				"prep": "Keine besondere Vorbereitung; vorhandene Aufnahmen, weite Kleidung und etwas zur Ablenkung mitbringen, bei schmerzhafter Verletzung erklärt der Arzt vorab, wie der Schmerz gelindert wird",
+				"abnormal": "Einem Kind in der Schiene geht es meist schon in den ersten Stunden besser, die Schwellung geht allmählich zurück. Bewegt das Kind die Zehen nicht, klagt es über Taubheit, sind die Zehen blass oder kalt oder ist die Schiene verrutscht oder nass geworden, sollte die Vorstellung nicht warten; Dauer der Ruhigstellung und Wechsel auf einen anderen Verband bestimmt der Kinderunfallchirurg"
+			},
+			"tr": {
+				"what": "On yaşın altındaki çocukta baldır ve ayağın arka yüzüne uygulanan alçı atel",
+				"how": "Alçı sargı katlarından hazırlanan şerit bacağın ölçüsüne göre ayarlanır, arka yüzde diz altından parmaklara kadar pamuğun üzerine konur ve yumuşak sargıyla tutturulur; işlem ağrısızdır ve birkaç dakika sürer",
+				"when": "Çocuklarda baldır ve ayak kemiklerinde kırık ve çatlaklar, ayak bileği bağ yaralanmaları, redüksiyon sonrası tespit, şişlik nedeniyle sirküler alçının henüz uygulanmadığı durumlar",
+				"prep": "Özel hazırlık yoktur; varsa filmler, bol kıyafet ve çocuğun ilgisini dağıtacak bir şey getirmek yeterlidir, ağrılı yaralanmada hekim ağrının nasıl giderileceğini önceden anlatır",
+				"abnormal": "Atel uygulanan çocuk genellikle ilk saatlerde rahatlar, şişlik yavaş yavaş azalır. Çocuk parmaklarını oynatmıyorsa, uyuşmadan yakınıyorsa, parmaklar solgun ya da soğuksa, atel kaymış ya da ıslanmışsa değerlendirme ertelenmemelidir; tespitin süresini ve başka bir sargıya geçişi çocuk travmatoloji uzmanı belirler"
+			}
+		}
+	},
+	{
+		"slug": "macen-bandage",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Фиксирующая бинтовая повязка, которую накладывают по названной по автору методике, чтобы обездвижить повреждённую область",
+				"how": "Врач придаёт конечности нужное положение, защищает кожу мягкой подкладкой и накладывает туры бинта по определённой схеме, после чего проверяет, не давит ли повязка; наложение занимает несколько минут и обычно безболезненно",
+				"when": "Травмы костей, суставов и мягких тканей, которым нужна мягкая фиксация, период после вправления или снятия гипса, иммобилизация на время перевозки и заживления — конкретное показание определяет травматолог",
+				"prep": "Подготовка не требуется; взять снимки, если они уже сделаны, и прийти в одежде, открывающей нужную область",
+				"abnormal": "Повязка должна ограничивать движение, не нарушая кровоток: онемение, похолодание, синюшность или отёк ниже повязки означают, что её нужно ослабить. Сползшая, намокшая или ослабевшая повязка перестаёт держать, а срок ношения и дальнейшую тактику определяет врач, который её накладывал"
+			},
+			"en": {
+				"what": "A fixation bandage applied by a technique named after its author to immobilise an injured area",
+				"how": "The doctor places the limb in the required position, protects the skin with soft padding and lays the turns of the bandage in a set pattern, then checks that it does not press anywhere; it takes a few minutes and is usually painless",
+				"when": "Injuries of bones, joints and soft tissue that need soft fixation, the period after a reduction or after a cast is removed, immobilisation for transport and healing — the exact indication is set by the trauma surgeon",
+				"prep": "No preparation is needed; bring any images that have already been taken and wear clothing that gives access to the area",
+				"abnormal": "The bandage should limit movement without impairing circulation: numbness, coldness, a bluish colour or swelling below it means it has to be loosened. A bandage that has slipped, got wet or worked loose no longer holds, and the doctor who applied it sets how long it is worn and what comes next"
+			},
+			"sr": {
+				"what": "Fiksacioni zavoj koji se postavlja po tehnici nazvanoj po autoru kako bi povrijeđeni dio tijela mirovao",
+				"how": "Ljekar dovede ekstremitet u potreban položaj, kožu zaštiti mekom podlogom i postavlja zavoj po određenoj shemi, a zatim provjerava da li negdje pritiska; postavljanje traje nekoliko minuta i obično je bezbolno",
+				"when": "Povrede kostiju, zglobova i mekih tkiva kojima je potrebna mekana fiksacija, period poslije namještanja ili skidanja gipsa, imobilizacija za prevoz i zarastanje — tačnu indikaciju određuje traumatolog",
+				"prep": "Priprema nije potrebna; ponijeti snimke ako su već urađeni i obući odjeću koja otkriva potrebni dio tijela",
+				"abnormal": "Zavoj treba da ograniči pokret bez ometanja cirkulacije: utrnulost, hladnoća, plavičasta boja ili otok ispod zavoja znače da ga treba olabaviti. Zavoj koji je spao, pokvasio se ili olabavio više ne drži, a koliko se nosi i šta slijedi određuje ljekar koji ga je postavio"
+			},
+			"de": {
+				"what": "Ein Fixationsverband, der nach einer nach ihrem Autor benannten Technik zur Ruhigstellung eines verletzten Bereichs angelegt wird",
+				"how": "Der Arzt bringt die Extremität in die nötige Stellung, schützt die Haut mit einer weichen Polsterung und legt die Bindentouren nach einem festen Schema an, danach wird geprüft, ob der Verband irgendwo drückt; das dauert wenige Minuten und ist meist schmerzfrei",
+				"when": "Verletzungen von Knochen, Gelenken und Weichteilen, die eine weiche Fixierung benötigen, die Zeit nach einer Reposition oder Gipsabnahme, Ruhigstellung für Transport und Heilung — die genaue Indikation stellt der Unfallchirurg",
+				"prep": "Keine Vorbereitung nötig; vorhandene Aufnahmen mitbringen und Kleidung tragen, die den betroffenen Bereich zugänglich macht",
+				"abnormal": "Der Verband soll die Bewegung begrenzen, ohne die Durchblutung zu stören: Taubheit, Kälte, bläuliche Verfärbung oder Schwellung unterhalb des Verbands bedeuten, dass er gelockert werden muss. Ein verrutschter, nass gewordener oder gelockerter Verband hält nicht mehr, Tragedauer und weiteres Vorgehen legt der Arzt fest, der ihn angelegt hat"
+			},
+			"tr": {
+				"what": "Yaralı bölgeyi hareketsiz tutmak için adını uygulayıcısından alan bir teknikle sarılan tespit sargısı",
+				"how": "Hekim uzvu gereken konuma getirir, cildi yumuşak bir pedle korur ve sargıyı belirli bir düzende sarar, ardından bir yeri sıkıp sıkmadığını kontrol eder; birkaç dakika sürer ve genellikle ağrısızdır",
+				"when": "Yumuşak tespit gerektiren kemik, eklem ve yumuşak doku yaralanmaları, redüksiyon ya da alçı çıkarımı sonrası dönem, nakil ve iyileşme süresince tespit — kesin endikasyonu travmatoloji uzmanı belirler",
+				"prep": "Hazırlık gerekmez; daha önce çekilmiş filmleri getirmek ve ilgili bölgeye erişim sağlayan giysi giymek yeterlidir",
+				"abnormal": "Sargı dolaşımı bozmadan hareketi sınırlamalıdır: sargının altında uyuşma, soğuma, morarma ya da şişlik gevşetilmesi gerektiğini gösterir. Kaymış, ıslanmış ya da gevşemiş sargı tutmaz olur, ne kadar taşınacağını ve sonraki adımı sargıyı uygulayan hekim belirler"
+			}
+		}
+	},
+	{
+		"slug": "manipulative-reduction-of-ankle-joint-dislocation",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Возвращение стопы и костей голеностопного сустава в правильное положение руками врача, без разреза",
+				"how": "После обезболивания врач одной рукой удерживает голень, а другой тягой по оси и разворотом стопы устраняет смещение, затем ногу фиксируют лонгетой и делают контрольный снимок; вправление занимает несколько минут и выполняется неотложно, потому что смещённый сустав давит на кожу и сосуды",
+				"when": "Заметная деформация голеностопа после подворачивания ноги, падения или удара, невозможность наступить на ногу, подтверждённое снимком смещение в суставе, нередко вместе с переломом лодыжек",
+				"prep": "Времени на подготовку нет, помощь оказывают срочно; до осмотра не есть и не пить, ногу не нагружать и не пытаться вправить самостоятельно",
+				"abnormal": "После вправления боль обычно резко уменьшается и форма сустава восстанавливается, но отёк держится дольше, а часть таких повреждений позже требует операции. Побледнение кожи над суставом, онемение и похолодание пальцев, нарастающая боль под повязкой означают, что к врачу нужно вернуться немедленно; сроки фиксации и нагрузки определяет травматолог"
+			},
+			"en": {
+				"what": "Putting the foot and the bones of the ankle joint back into the correct position by hand, without an incision",
+				"how": "After pain relief the doctor holds the lower leg with one hand and corrects the displacement with traction along the axis and rotation of the foot with the other, then the leg is put in a splint and a check X-ray is taken; reduction takes a few minutes and is done urgently, because a displaced joint presses on the skin and the vessels",
+				"when": "Obvious deformity of the ankle after a twist, a fall or a blow, inability to stand on the leg, imaging that confirms displacement in the joint, often together with a fracture of the malleoli",
+				"prep": "There is no time for preparation, help is given urgently; do not eat or drink before assessment, keep weight off the leg and do not try to reduce it yourself",
+				"abnormal": "After reduction the pain usually drops sharply and the shape of the joint is restored, but swelling lasts longer and some of these injuries later need surgery. Pale skin over the joint, numbness and cold toes and increasing pain under the dressing mean going back to the doctor immediately; fixation time and weight bearing are set by the trauma surgeon"
+			},
+			"sr": {
+				"what": "Vraćanje stopala i kostiju skočnog zgloba u pravilan položaj rukama ljekara, bez reza",
+				"how": "Poslije smirivanja bola ljekar jednom rukom drži potkoljenicu, a drugom vučom po osovini i okretanjem stopala otklanja pomjeranje, zatim se noga fiksira longetom i radi kontrolni snimak; namještanje traje nekoliko minuta i radi se hitno, jer pomjeren zglob pritiska kožu i krvne sudove",
+				"when": "Vidljiv deformitet gležnja poslije uvrtanja, pada ili udarca, nemogućnost oslonca na nogu, snimak koji potvrđuje pomjeranje u zglobu, nerijetko uz prelom maleola",
+				"prep": "Za pripremu nema vremena, pomoć se pruža hitno; do pregleda ne jesti i ne piti, nogu ne opterećivati i ne pokušavati namještanje samostalno",
+				"abnormal": "Poslije namještanja bol obično naglo popusti i oblik zgloba se vrati, ali otok traje duže, a dio ovakvih povreda kasnije zahtijeva operaciju. Blijeda koža iznad zgloba, utrnulost i hladni prsti i bol koji jača ispod zavoja znače da se ljekaru treba vratiti odmah; trajanje imobilizacije i opterećenje određuje traumatolog"
+			},
+			"de": {
+				"what": "Das Zurückbringen von Fuß und Sprunggelenkknochen in die richtige Stellung von Hand, ohne Schnitt",
+				"how": "Nach Schmerzlinderung hält der Arzt mit einer Hand den Unterschenkel und korrigiert mit der anderen durch Zug in der Achse und Drehung des Fußes die Fehlstellung, anschließend wird das Bein in einer Schiene ruhiggestellt und eine Kontrollaufnahme gemacht; die Reposition dauert wenige Minuten und erfolgt dringlich, weil das verschobene Gelenk auf Haut und Gefäße drückt",
+				"when": "Deutliche Fehlstellung des Sprunggelenks nach Umknicken, Sturz oder Schlag, Unfähigkeit aufzutreten, bildgebend bestätigte Verschiebung im Gelenk, häufig zusammen mit einem Knöchelbruch",
+				"prep": "Für eine Vorbereitung bleibt keine Zeit, die Versorgung erfolgt sofort; vorher nichts essen und trinken, das Bein nicht belasten und keine eigenen Einrenkversuche unternehmen",
+				"abnormal": "Nach der Reposition lässt der Schmerz meist deutlich nach und die Gelenkform ist wiederhergestellt, die Schwellung hält jedoch länger an und ein Teil dieser Verletzungen wird später operiert. Blasse Haut über dem Gelenk, Taubheit und kalte Zehen sowie zunehmender Schmerz unter dem Verband bedeuten eine sofortige Wiedervorstellung; Dauer der Ruhigstellung und Belastung legt der Unfallchirurg fest"
+			},
+			"tr": {
+				"what": "Ayak ve ayak bileği eklemi kemiklerinin kesi yapılmadan hekim tarafından elle doğru konuma getirilmesi",
+				"how": "Ağrı giderildikten sonra hekim bir eliyle baldırı tutar, diğer eliyle eksende çekerek ve ayağı döndürerek yer değişikliğini düzeltir, ardından bacak atele alınır ve kontrol filmi çekilir; redüksiyon birkaç dakika sürer ve acilen yapılır, çünkü yerinden çıkmış eklem cilde ve damarlara baskı yapar",
+				"when": "Burkulma, düşme veya darbe sonrası ayak bileğinde belirgin şekil bozukluğu, ayağa basamama, eklemde yer değişikliğini gösteren görüntüleme, sıklıkla malleol kırığıyla birlikte",
+				"prep": "Hazırlığa zaman yoktur, müdahale acil yapılır; değerlendirmeye kadar aç kalmak, bacağa yük vermemek ve kendi kendine yerine oturtmaya çalışmamak gerekir",
+				"abnormal": "Redüksiyondan sonra ağrı genellikle hızla azalır ve eklemin şekli düzelir, ancak şişlik daha uzun sürer ve bu yaralanmaların bir bölümü sonradan ameliyat gerektirir. Eklem üzerindeki ciltte solukluk, uyuşma ve parmakların soğuması, sargı altında artan ağrı hemen hekime dönmeyi gerektirir; tespit süresini ve yük vermeyi travmatoloji uzmanı belirler"
+			}
+		}
+	},
+	{
+		"slug": "manipulative-reduction-of-open-calcaneus-fracture",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Сопоставление отломков пяточной кости руками при открытом переломе, когда рана сообщается с местом перелома",
+				"how": "В операционной или перевязочной рану промывают и очищают от загрязнений, затем под обезболиванием врач тягой за пятку и боковым сжатием устраняет грубое смещение, рану закрывают повязкой, стопу фиксируют лонгетой и делают снимок; такие переломы ведут как неотложные и нередко оперируют позже",
+				"when": "Открытый перелом пяточной кости после падения с высоты или прямого удара, рана в области пятки с видимой деформацией стопы, подтверждённый снимком перелом со смещением и повреждением кожи",
+				"prep": "Неотложная ситуация: рану накрыть чистой повязкой, ногу не нагружать, до осмотра не есть и не пить, сказать врачу о прививке от столбняка, хронических болезнях и препаратах",
+				"abnormal": "При открытом переломе на первом месте состояние раны и кожи над пяткой, поэтому после сопоставления следуют наблюдение, перевязки и чаще всего операция, а поскольку пяточная кость несёт вес тела, возвращение опоры занимает долгое время. Лихорадка, покраснение, выделения из раны, усиливающаяся боль и онемение требуют немедленного осмотра, а когда можно наступать на ногу, решает травматолог"
+			},
+			"en": {
+				"what": "Bringing the fragments of the heel bone back into position by hand in an open fracture, where a wound connects with the fracture site",
+				"how": "In a theatre or a dressing room the wound is washed out and cleaned of contamination, then under pain relief the doctor corrects the gross displacement by traction on the heel and side-to-side compression, the wound is covered, the foot is put in a splint and an X-ray is taken; such fractures are treated as emergencies and are often operated on later",
+				"when": "An open heel bone fracture after a fall from height or a direct blow, a wound over the heel with visible deformity of the foot, imaging that shows a displaced fracture with damaged skin",
+				"prep": "An emergency: cover the wound with a clean dressing, keep weight off the leg, do not eat or drink before assessment and tell the doctor about tetanus vaccination, chronic conditions and medicines",
+				"abnormal": "In an open fracture the state of the wound and of the skin over the heel comes first, so observation, dressing changes and most often surgery follow the reduction, and because the heel bone carries body weight, getting back to standing takes a long time. Fever, redness, discharge from the wound, increasing pain and numbness need immediate review, and the trauma surgeon decides when weight bearing may start"
+			},
+			"sr": {
+				"what": "Namještanje ulomaka petne kosti rukama kod otvorenog preloma, kada rana komunicira sa mjestom preloma",
+				"how": "U operacionoj sali ili previjalištu rana se ispira i čisti od nečistoća, zatim ljekar uz smirivanje bola vučom za petu i bočnim pritiskom otklanja grubo pomjeranje, rana se pokriva zavojem, stopalo fiksira longetom i radi se snimak; ovakvi prelomi se vode kao hitni i nerijetko se kasnije operišu",
+				"when": "Otvoren prelom petne kosti poslije pada s visine ili direktnog udarca, rana u predjelu pete sa vidljivim deformitetom stopala, snimak koji pokazuje pomjeren prelom uz oštećenu kožu",
+				"prep": "Hitno stanje: ranu prekriti čistim zavojem, nogu ne opterećivati, do pregleda ne jesti i ne piti i reći ljekaru za vakcinu protiv tetanusa, hronične bolesti i terapiju",
+				"abnormal": "Kod otvorenog preloma na prvom mjestu su stanje rane i kože iznad pete, pa poslije namještanja slijede nadzor, previjanja i najčešće operacija, a pošto petna kost nosi težinu tijela, povratak oslonca traje dugo. Povišena temperatura, crvenilo, curenje iz rane, bol koji jača i utrnulost traže hitan pregled, a kada se smije stati na nogu odlučuje traumatolog"
+			},
+			"de": {
+				"what": "Das Zurückbringen der Fersenbeinfragmente von Hand bei einem offenen Bruch, bei dem eine Wunde mit der Bruchstelle in Verbindung steht",
+				"how": "Im Operationssaal oder Verbandsraum wird die Wunde gespült und von Verschmutzungen gereinigt, dann korrigiert der Arzt unter Schmerzlinderung die grobe Fehlstellung durch Zug an der Ferse und seitlichen Druck, die Wunde wird abgedeckt, der Fuß geschient und geröntgt; solche Brüche gelten als Notfall und werden häufig später operiert",
+				"when": "Offener Fersenbeinbruch nach Sturz aus Höhe oder direktem Schlag, Wunde an der Ferse mit sichtbarer Fehlstellung des Fußes, radiologisch bestätigter verschobener Bruch mit Hautverletzung",
+				"prep": "Notfall: die Wunde mit einem sauberen Verband abdecken, das Bein nicht belasten, vorher nichts essen und trinken und Tetanusimpfung, Vorerkrankungen und Medikamente angeben",
+				"abnormal": "Beim offenen Bruch stehen der Zustand der Wunde und der Haut über der Ferse an erster Stelle, deshalb folgen nach der Reposition Überwachung, Verbandwechsel und meist eine Operation; da das Fersenbein das Körpergewicht trägt, dauert die Rückkehr zur Belastung lange. Fieber, Rötung, Wundsekret, zunehmender Schmerz und Taubheit erfordern eine sofortige Vorstellung, den Beginn der Belastung legt der Unfallchirurg fest"
+			},
+			"tr": {
+				"what": "Yaranın kırık hattıyla birleştiği açık kırıkta topuk kemiği parçalarının elle yerine getirilmesi",
+				"how": "Ameliyathane ya da pansuman odasında yara yıkanıp kirden temizlenir, ardından ağrı giderilerek hekim topuktan çekme ve yandan bastırma ile kaba yer değişikliğini düzeltir, yara sargıyla kapatılır, ayak atele alınır ve film çekilir; bu kırıklar acil olarak ele alınır ve sıklıkla sonradan ameliyat edilir",
+				"when": "Yüksekten düşme ya da doğrudan darbe sonrası açık topuk kemiği kırığı, ayakta şekil bozukluğuyla birlikte topuk bölgesinde yara, ciltte hasarla birlikte yer değiştirmiş kırığı gösteren görüntüleme",
+				"prep": "Acil durumdur: yarayı temiz bir sargıyla örtmek, bacağa yük vermemek, değerlendirmeye kadar aç kalmak ve tetanoz aşısını, kronik hastalıkları ve ilaçları hekime bildirmek",
+				"abnormal": "Açık kırıkta önce yaranın ve topuk üzerindeki cildin durumu gelir, bu nedenle redüksiyondan sonra izlem, pansuman ve çoğu kez ameliyat yapılır; topuk kemiği vücut ağırlığını taşıdığı için basmaya dönüş uzun sürer. Ateş, kızarıklık, yaradan akıntı, artan ağrı ve uyuşma acil değerlendirme gerektirir, ayağa ne zaman basılacağına travmatoloji uzmanı karar verir"
+			}
+		}
+	}
+]

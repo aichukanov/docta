@@ -1,0 +1,699 @@
+[
+	{
+		"slug": "plaster-cast-correction",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Переделка уже наложенной гипсовой повязки, когда она перестала держать конечность как нужно",
+				"how": "Врач осматривает конечность и снимок, затем подрезает края, делает клин, заменяет часть повязки или накладывает её заново поверх новой подкладки; занимает 15–30 минут",
+				"when": "Спал отёк и гипс стал свободным, повязка давит или натирает, край мешает движению соседнего сустава, гипс намок, треснул или размягчился, на контрольном снимке отломки немного сместились",
+				"prep": "Взять последние рентгеновские снимки и направление, прийти в одежде, которую легко снять с этой руки или ноги, и не мочить повязку в день визита",
+				"abnormal": "После коррекции повязка должна сидеть плотно, но не пережимать: онемение, похолодание, побледнение или посинение пальцев, нарастающая боль и боль под гипсом в одной точке — повод вернуться к врачу, не дожидаясь контроля. Нужен ли повторный снимок и когда менять повязку дальше, решает ортопед"
+			},
+			"en": {
+				"what": "Reworking of an already applied plaster cast when it no longer holds the limb as intended",
+				"how": "The doctor examines the limb and the X-ray, then trims the edges, wedges the cast, replaces part of it or applies it again over fresh padding; this takes 15–30 minutes",
+				"when": "Swelling has gone down and the cast has become loose, the cast presses or rubs, an edge blocks a neighbouring joint, the plaster is wet, cracked or softened, or a check X-ray shows the fragments have shifted slightly",
+				"prep": "Bring the latest X-rays and the referral, come in clothing that is easy to take off over that arm or leg, and keep the cast dry on the day of the visit",
+				"abnormal": "After the correction the cast should fit firmly but not squeeze: numbness, coldness, pale or bluish fingers or toes, increasing pain and pain at one single spot under the plaster are reasons to come back without waiting for the scheduled check. Whether another X-ray is needed and when the cast is changed next is decided by the orthopaedist"
+			},
+			"sr": {
+				"what": "Prepravka već postavljenog gipsa kada više ne drži ekstremitet onako kako treba",
+				"how": "Ljekar pregleda ekstremitet i snimak, zatim skraćuje ivice, postavlja klin, mijenja dio zavoja ili ga postavlja ponovo preko nove podloge; traje 15–30 minuta",
+				"when": "Otok je splasnuo pa je gips postao širok, zavoj pritiska ili žulja, ivica smeta pokretu susjednog zgloba, gips je pokisao, napukao ili omekšao, na kontrolnom snimku su se fragmenti malo pomjerili",
+				"prep": "Ponijeti posljednje rendgenske snimke i uput, doći u odjeći koja se lako skida sa te ruke ili noge i ne kvasiti zavoj na dan pregleda",
+				"abnormal": "Poslije korekcije zavoj treba da stoji čvrsto, ali da ne steže: utrnulost, hladnoća, blijedi ili modri prsti, bol koja se pojačava i bol na jednom mjestu ispod gipsa razlog su da se vratite ljekaru i prije zakazane kontrole. Da li je potreban novi snimak i kada se zavoj sljedeći put mijenja, odlučuje ortoped"
+			},
+			"de": {
+				"what": "Das Nacharbeiten eines bereits angelegten Gipsverbands, wenn er die Gliedmaße nicht mehr wie vorgesehen hält",
+				"how": "Der Arzt begutachtet Gliedmaße und Röntgenbild, kürzt dann die Ränder, keilt den Gips, ersetzt einen Teil davon oder legt ihn über neuer Polsterung erneut an; das dauert 15–30 Minuten",
+				"when": "Die Schwellung ist zurückgegangen und der Gips sitzt locker, der Verband drückt oder scheuert, eine Kante behindert das Nachbargelenk, der Gips ist nass, gerissen oder weich geworden, oder die Kontrollaufnahme zeigt eine leichte Verschiebung der Fragmente",
+				"prep": "Die letzten Röntgenbilder und die Überweisung mitbringen, Kleidung tragen, die sich über Arm oder Bein leicht ausziehen lässt, und den Verband am Tag des Termins trocken halten",
+				"abnormal": "Nach der Korrektur soll der Verband fest sitzen, aber nicht einschnüren: Taubheit, Kälte, blasse oder bläuliche Finger und Zehen, zunehmender Schmerz und Schmerz an einer einzelnen Stelle unter dem Gips sind Gründe, ohne Abwarten der Kontrolle zurückzukommen. Ob eine neue Aufnahme nötig ist und wann der Verband als Nächstes gewechselt wird, entscheidet der Orthopäde"
+			},
+			"tr": {
+				"what": "Takılı alçının, uzvu gerektiği gibi tutmadığı durumlarda yeniden düzenlenmesi",
+				"how": "Hekim uzvu ve röntgeni değerlendirir, ardından kenarları keser, kama açar, alçının bir bölümünü değiştirir veya yeni ped üzerine yeniden sarar; işlem 15–30 dakika sürer",
+				"when": "Şişlik indiği için alçının bollaşması, sargının bastırması veya vurması, kenarın komşu eklemin hareketini engellemesi, alçının ıslanması, çatlaması ya da yumuşaması, kontrol röntgeninde kırık uçlarının hafif kayması",
+				"prep": "Son röntgen filmlerini ve sevk belgesini getirmek, o kol ya da bacaktan kolay çıkarılabilen kıyafetle gelmek ve randevu günü alçıyı ıslatmamak",
+				"abnormal": "Düzeltmeden sonra sargı sıkı durmalı ama boğmamalıdır: uyuşma, soğukluk, parmakların solması ya da morarması, artan ağrı ve alçı altında tek bir noktadaki ağrı, kontrol gününü beklemeden hekime dönmeyi gerektirir. Yeni film gerekip gerekmediğine ve sargının ne zaman değişeceğine ortopedi uzmanı karar verir"
+			}
+		}
+	},
+	{
+		"slug": "plaster-cast-or-splint-removal",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Процедура окончания иммобилизации, при которой затвердевшую повязку разрезают и убирают с конечности",
+				"how": "Циркулярный гипс разрезают осциллирующей пилой, полотно которой вибрирует и не режет кожу, лонгету просто разбинтовывают, затем кожу очищают и конечность осматривают; занимает 5–15 минут",
+				"when": "Истёк назначенный срок фиксации, на контрольном снимке перелом сросся, повязку нужно убрать перед операцией, исследованием или её заменой",
+				"prep": "Подготовка не нужна; стоит взять снимки и направление, прийти в свободной одежде и взять с собой крем — кожа под гипсом обычно сухая и шелушится",
+				"abnormal": "Сразу после снятия обычны сухая шелушащаяся кожа, более тонкая и слабая мышца, чем на здоровой стороне, скованность сустава и отёк при первых нагрузках — это проходит по мере восстановления. Как нагружать конечность и нужна ли реабилитация, определяет ортопед, а резкую боль в месте перелома при первой нагрузке нужно показать врачу"
+			},
+			"en": {
+				"what": "A procedure that ends immobilisation: the hardened dressing is cut open and taken off the limb",
+				"how": "A circular cast is opened with an oscillating saw whose blade vibrates and does not cut skin, a splint is simply unwrapped, then the skin is cleaned and the limb examined; it takes 5–15 minutes",
+				"when": "The prescribed period of fixation has ended, a check X-ray shows the fracture has healed, or the dressing has to come off before surgery, an imaging study or a change of cast",
+				"prep": "No preparation is needed; it helps to bring the X-rays and the referral, wear loose clothing and take some skin cream along — the skin under a cast is usually dry and flaky",
+				"abnormal": "Right after removal, dry flaking skin, a thinner and weaker muscle than on the healthy side, joint stiffness and swelling with the first loads are usual and settle as recovery goes on. How to load the limb and whether rehabilitation is needed is decided by the orthopaedist, and sharp pain at the fracture site during the first loading should be shown to a doctor"
+			},
+			"sr": {
+				"what": "Postupak kojim se završava imobilizacija: očvrsli zavoj se presijeca i uklanja sa ekstremiteta",
+				"how": "Puni gips se presijeca oscilirajućom testerom čiji list vibrira i ne siječe kožu, longeta se jednostavno odmota, zatim se koža očisti i ekstremitet pregleda; traje 5–15 minuta",
+				"when": "Istekao je određeni period fiksacije, na kontrolnom snimku je prelom srastao, zavoj treba ukloniti prije operacije, snimanja ili njegove zamjene",
+				"prep": "Priprema nije potrebna; korisno je ponijeti snimke i uput, doći u široj odjeći i ponijeti kremu — koža ispod gipsa je obično suva i ljušti se",
+				"abnormal": "Odmah nakon skidanja uobičajeni su suva koža koja se ljušti, tanji i slabiji mišić nego na zdravoj strani, ukočenost zgloba i otok pri prvim opterećenjima, što prolazi kako oporavak napreduje. Kako opterećivati ekstremitet i da li je potrebna rehabilitacija određuje ortoped, a oštar bol na mjestu preloma pri prvom oslanjanju treba pokazati ljekaru"
+			},
+			"de": {
+				"what": "Der Abschluss der Ruhigstellung: der ausgehärtete Verband wird aufgeschnitten und von der Gliedmaße genommen",
+				"how": "Ein zirkulärer Gips wird mit einer oszillierenden Säge geöffnet, deren Blatt schwingt und die Haut nicht schneidet, eine Schiene wird einfach abgewickelt, danach wird die Haut gereinigt und die Gliedmaße untersucht; das dauert 5–15 Minuten",
+				"when": "Die verordnete Dauer der Fixierung ist abgelaufen, die Kontrollaufnahme zeigt eine verheilte Fraktur, oder der Verband muss vor einer Operation, einer Bildgebung oder seinem Wechsel herunter",
+				"prep": "Keine Vorbereitung nötig; hilfreich sind die Röntgenbilder und die Überweisung, weite Kleidung und eine Hautcreme — die Haut unter dem Gips ist meist trocken und schuppig",
+				"abnormal": "Direkt nach der Abnahme sind trockene, schuppige Haut, ein dünnerer und schwächerer Muskel als auf der gesunden Seite, Gelenksteife und Schwellung bei den ersten Belastungen üblich und bilden sich im Verlauf zurück. Wie belastet wird und ob eine Rehabilitation nötig ist, legt der Orthopäde fest; scharfer Schmerz an der Bruchstelle bei der ersten Belastung gehört ärztlich abgeklärt"
+			},
+			"tr": {
+				"what": "İmmobilizasyonu sonlandıran işlem: sertleşmiş sargı kesilerek uzuvdan alınır",
+				"how": "Sirküler alçı, ağzı titreşen ve deriyi kesmeyen osilan testereyle açılır, atel ise sargısı çözülerek alınır, sonra cilt temizlenip uzuv muayene edilir; işlem 5–15 dakika sürer",
+				"when": "Verilen tespit süresinin dolması, kontrol röntgeninde kırığın kaynaması, ameliyat, görüntüleme ya da sargı değişimi öncesinde sargının çıkarılması gerekmesi",
+				"prep": "Hazırlık gerekmez; röntgen filmlerini ve sevki getirmek, bol kıyafetle gelmek ve yanında nemlendirici bulundurmak işe yarar — alçı altındaki cilt genellikle kuru ve pul pulludur",
+				"abnormal": "Çıkarmadan hemen sonra kuru ve pullanan cilt, sağlam tarafa göre incelmiş ve güçsüz kas, eklemde tutukluk ve ilk yüklenmelerde şişlik olağandır ve iyileşme ilerledikçe geçer. Uzvun nasıl yükleneceğine ve rehabilitasyon gerekip gerekmediğine ortopedi uzmanı karar verir; ilk yüklenmede kırık yerinde keskin ağrı olursa hekime görünmek gerekir"
+			}
+		}
+	},
+	{
+		"slug": "plaster-corset-reduction",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Вправление положения позвоночника с последующей фиксацией туловища гипсовым корсетом",
+				"how": "Пациента укладывают или подвешивают в положении, при котором позвоночник разгибается, и в этом положении на туловище накладывают мягкую подкладку и слои гипса от груди до таза, оставляя свободными живот и дыхание; занимает около часа, затем делают контрольный снимок",
+				"when": "Компрессионный перелом тела позвонка в грудном и поясничном отделе без повреждения нервных структур, период после вправления, когда позвоночник нужно удержать в разогнутом положении без операции",
+				"prep": "Взять снимки и направление, прийти натощак или по указанию врача, если планируется обезболивание, надеть тонкую хлопковую майку и заранее договориться, кто поможет добраться домой",
+				"abnormal": "В первые дни привычны чувство сдавления, трудности с глубоким вдохом после еды и боль в спине при перемене положения; усиливающаяся боль, онемение или слабость в ногах, нарушение мочеиспускания, а также давление корсета на кожу с покраснением требуют срочного осмотра. Срок ношения, контрольные снимки и переход на пластиковый корсет определяет врач"
+			},
+			"en": {
+				"what": "Repositioning of the spine followed by fixation of the trunk in a plaster corset",
+				"how": "The patient is placed or suspended in a position that extends the spine, and in that position soft padding and layers of plaster are applied over the trunk from the chest to the pelvis, leaving the abdomen and breathing free; it takes about an hour and is followed by a check X-ray",
+				"when": "A compression fracture of a vertebral body in the thoracic or lumbar spine without injury to the nerve structures, and the period after reduction when the spine has to be kept extended without surgery",
+				"prep": "Bring the X-rays and the referral, come fasting or as the doctor instructs if pain relief is planned, wear a thin cotton shirt and arrange in advance for someone to help you get home",
+				"abnormal": "In the first days a feeling of tightness, difficulty taking a deep breath after meals and back pain when changing position are usual; increasing pain, numbness or weakness in the legs, trouble passing urine, or pressure of the corset on the skin with redness call for an urgent check. How long it is worn, the schedule of control X-rays and the switch to a plastic brace are decided by the doctor"
+			},
+			"sr": {
+				"what": "Namještanje položaja kičme uz fiksaciju trupa gipsanim korzetom",
+				"how": "Pacijent se postavi ili ovjesi u položaj u kojem se kičma isprsi, pa se u tom položaju preko trupa stavljaju meka podloga i slojevi gipsa od grudi do karlice, uz slobodan trbuh i disanje; traje oko sat vremena, a zatim se radi kontrolni snimak",
+				"when": "Kompresivni prelom tijela pršljena u grudnom i slabinskom dijelu bez povrede nervnih struktura, period poslije namještanja kada kičmu treba zadržati u ispruženom položaju bez operacije",
+				"prep": "Ponijeti snimke i uput, doći natašte ili po uputstvu ljekara ako je planirana analgezija, obući tanku pamučnu majicu i unaprijed dogovoriti ko će pomoći oko povratka kući",
+				"abnormal": "Prvih dana su uobičajeni osjećaj stezanja, otežan dubok udah poslije jela i bol u leđima pri promjeni položaja; bol koja jača, utrnulost ili slabost u nogama, otežano mokrenje i pritisak korzeta na kožu sa crvenilom traže hitan pregled. Koliko se nosi, rokove kontrolnih snimaka i prelazak na plastični steznik određuje ljekar"
+			},
+			"de": {
+				"what": "Das Einrichten der Wirbelsäule mit anschließender Fixierung des Rumpfes in einem Gipskorsett",
+				"how": "Der Patient wird in einer Position gelagert oder aufgehängt, in der sich die Wirbelsäule streckt, und in dieser Haltung werden über dem Rumpf weiche Polsterung und Gipslagen von der Brust bis zum Becken angelegt, wobei Bauch und Atmung frei bleiben; das dauert etwa eine Stunde, danach folgt eine Kontrollaufnahme",
+				"when": "Kompressionsfraktur eines Wirbelkörpers im Brust- oder Lendenbereich ohne Verletzung der Nervenstrukturen sowie die Zeit nach der Reposition, in der die Wirbelsäule ohne Operation gestreckt gehalten werden muss",
+				"prep": "Röntgenbilder und Überweisung mitbringen, bei geplanter Schmerzausschaltung nüchtern oder nach ärztlicher Anweisung erscheinen, ein dünnes Baumwollshirt tragen und die Heimfahrt mit einer Begleitperson vorab klären",
+				"abnormal": "In den ersten Tagen sind Engegefühl, erschwertes tiefes Einatmen nach dem Essen und Rückenschmerz beim Lagewechsel üblich; zunehmender Schmerz, Taubheit oder Schwäche in den Beinen, Probleme beim Wasserlassen sowie Druckstellen mit Rötung erfordern eine sofortige Kontrolle. Tragedauer, Kontrollaufnahmen und den Wechsel auf ein Kunststoffkorsett legt der Arzt fest"
+			},
+			"tr": {
+				"what": "Omurganın konumunun düzeltilmesi ve gövdenin alçı korse ile tespiti",
+				"how": "Hasta, omurganın gerildiği bir pozisyonda yatırılır ya da askıya alınır ve bu pozisyonda gövdeye göğüsten leğen kemiğine kadar yumuşak ped ve alçı katları sarılır, karın ve solunum serbest bırakılır; yaklaşık bir saat sürer, ardından kontrol filmi çekilir",
+				"when": "Sinir yapıları etkilenmemiş sırt ve bel omurgasında omur cismi çökme kırığı, düzeltme sonrası omurganın ameliyatsız biçimde gergin tutulması gereken dönem",
+				"prep": "Röntgen filmlerini ve sevki getirmek, ağrı kesici uygulaması planlanıyorsa hekimin söylediği süre aç kalmak, ince pamuklu bir iç tişört giymek ve eve dönüş için önceden yardım ayarlamak",
+				"abnormal": "İlk günlerde sıkışma hissi, yemek sonrası derin nefes almakta zorlanma ve pozisyon değiştirirken sırt ağrısı olağandır; artan ağrı, bacaklarda uyuşma veya güçsüzlük, idrar yapma güçlüğü ve korsenin cilde bastırıp kızarıklık yapması acil değerlendirme gerektirir. Ne kadar taşınacağını, kontrol filmlerinin zamanını ve plastik korseye geçişi hekim belirler"
+			}
+		}
+	},
+	{
+		"slug": "plaster-cylinder-hip-to-ankle-under-10-years",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Циркулярная гипсовая повязка на всю ногу ребёнка младше десяти лет — от верхней трети бедра до голеностопа, при этом стопа и пальцы остаются свободными",
+				"how": "Ногу удерживают в заданном врачом положении, накладывают мягкую подкладку и поверх неё слои гипса или синтетического бинта по всей длине, затем повязку моделируют по форме ноги; занимает 20–40 минут",
+				"when": "Переломы бедренной и большеберцовой костей у детей, фиксация после вправления, повреждения связок и капсулы коленного сустава, период после операций на бедре и колене",
+				"prep": "Взять снимки, направление и свободные штаны или шорты; если предстоит обезболивание или наркоз, соблюдать назначенный врачом перерыв в еде и питье и заранее продумать, как везти ребёнка домой",
+				"abnormal": "Ребёнок привыкает к повязке несколько дней, возможны неудобство при сидении и нарушенный сон; холодные, синеватые или отёкшие пальцы стопы, постоянный плач, жалоба на жжение в одной точке под гипсом, неприятный запах или намокшая повязка — повод показаться врачу. Сроки контрольных снимков, смены повязки и разрешённую нагрузку определяет детский ортопед"
+			},
+			"en": {
+				"what": "A circular plaster cast on the whole leg of a child under ten, running from the upper thigh to the ankle while the foot and toes stay free",
+				"how": "The leg is held in the position set by the doctor, soft padding and then layers of plaster or synthetic bandage are applied along its whole length, and the cast is moulded to the shape of the leg; it takes 20–40 minutes",
+				"when": "Fractures of the femur and tibia in children, fixation after a reduction, injuries of the ligaments and capsule of the knee, and the period after surgery on the hip or knee",
+				"prep": "Bring the X-rays, the referral and loose trousers or shorts; if pain relief or general anaesthesia is planned, keep the fasting interval the doctor gives and think through in advance how the child will be taken home",
+				"abnormal": "A child gets used to the cast over several days, and discomfort when sitting and disturbed sleep are possible; cold, bluish or swollen toes, constant crying, a complaint of burning at one spot under the plaster, a bad smell or a soaked cast are reasons to see the doctor. The timing of control X-rays, cast changes and the allowed load is decided by the paediatric orthopaedist"
+			},
+			"sr": {
+				"what": "Kružni gipsani zavoj preko cijele noge djeteta mlađeg od deset godina, od gornje trećine butine do skočnog zgloba, dok stopalo i prsti ostaju slobodni",
+				"how": "Noga se drži u položaju koji je odredio ljekar, postavljaju se meka podloga pa slojevi gipsa ili sintetičkog zavoja cijelom dužinom, a zavoj se modeluje prema obliku noge; traje 20–40 minuta",
+				"when": "Prelomi butne i golenjače kod djece, fiksacija poslije namještanja, povrede ligamenata i čahure koljena, period nakon operacija kuka i koljena",
+				"prep": "Ponijeti snimke, uput i široke pantalone ili šorc; ako je planirana analgezija ili opšta anestezija, poštovati pauzu u hrani i piću koju odredi ljekar i unaprijed osmisliti prevoz djeteta kući",
+				"abnormal": "Dijete se navikava na zavoj nekoliko dana, pa su mogući nelagoda pri sjedenju i poremećen san; hladni, modrikasti ili otečeni prsti stopala, stalan plač, žalba na žarenje na jednom mjestu ispod gipsa, neprijatan miris ili pokisao zavoj razlog su za pregled. Rokove kontrolnih snimaka, zamjene zavoja i dozvoljeno opterećenje određuje dječji ortoped"
+			},
+			"de": {
+				"what": "Ein zirkulärer Gipsverband über das ganze Bein eines Kindes unter zehn Jahren, vom oberen Oberschenkel bis zum Sprunggelenk, wobei Fuß und Zehen frei bleiben",
+				"how": "Das Bein wird in der vom Arzt vorgegebenen Stellung gehalten, über weiche Polsterung kommen Gips- oder Kunststofflagen über die gesamte Länge, danach wird der Verband der Beinform angemodelliert; das dauert 20–40 Minuten",
+				"when": "Oberschenkel- und Schienbeinbrüche bei Kindern, Fixierung nach einer Reposition, Band- und Kapselverletzungen des Knies sowie die Zeit nach Operationen an Hüfte und Knie",
+				"prep": "Röntgenbilder, Überweisung und weite Hose oder Shorts mitbringen; bei geplanter Schmerzausschaltung oder Narkose die ärztlich vorgegebene Nüchternzeit einhalten und den Heimtransport des Kindes vorab planen",
+				"abnormal": "Das Kind gewöhnt sich über einige Tage an den Verband, Unbehagen beim Sitzen und gestörter Schlaf sind möglich; kalte, bläuliche oder geschwollene Zehen, anhaltendes Weinen, Brennen an einer Stelle unter dem Gips, unangenehmer Geruch oder ein durchnässter Verband gehören ärztlich kontrolliert. Kontrollaufnahmen, Verbandwechsel und die erlaubte Belastung legt der Kinderorthopäde fest"
+			},
+			"tr": {
+				"what": "On yaşından küçük bir çocukta uyluğun üst kısmından ayak bileğine uzanan, ayak ve parmakları serbest bırakan tam bacak sirküler alçısı",
+				"how": "Bacak hekimin belirlediği pozisyonda tutulur, yumuşak ped ve üzerine tüm boy boyunca alçı ya da sentetik sargı katları uygulanır, sargı bacağın şekline göre modellenir; işlem 20–40 dakika sürer",
+				"when": "Çocuklarda uyluk ve kaval kemiği kırıkları, redüksiyon sonrası tespit, diz bağ ve kapsül yaralanmaları, kalça ve diz ameliyatlarından sonraki dönem",
+				"prep": "Röntgen filmlerini, sevki ve bol pantolon ya da şort getirmek; ağrı kesici veya genel anestezi planlanıyorsa hekimin verdiği aç kalma süresine uymak ve çocuğun eve nasıl götürüleceğini önceden planlamak",
+				"abnormal": "Çocuk sargıya birkaç günde alışır, otururken rahatsızlık ve uyku düzeninde bozulma görülebilir; ayak parmaklarının soğuk, morumsu ya da şiş olması, sürekli ağlama, alçı altında tek bir noktada yanma yakınması, kötü koku ya da ıslanmış sargı hekime başvurmayı gerektirir. Kontrol filmlerinin zamanını, sargı değişimini ve izin verilen yükü çocuk ortopedisi uzmanı belirler"
+			}
+		}
+	},
+	{
+		"slug": "plaster-splint-hip-to-ankle-and-toes-under-10-years",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Гипсовая лонгета — не замкнутая по кругу полоса гипса на задней поверхности ноги ребёнка младше десяти лет, от бедра до голеностопа с захватом пальцев, закреплённая бинтом",
+				"how": "Гипсовый бинт складывают в несколько слоёв по длине ноги, укладывают на подкладку по задней поверхности от бедра до кончиков пальцев, моделируют по форме и прибинтовывают мягким бинтом; занимает 15–30 минут",
+				"when": "Свежая травма с отёком, когда фиксация должна оставить запас на набухание тканей, переломы и повреждения связок голени и стопы, фиксация пальцев, временная иммобилизация до окончательного решения врача",
+				"prep": "Подготовка обычно не нужна: взять снимки и направление, надеть свободные штаны, а если планируется обезболивание — соблюдать назначенный врачом перерыв в еде и питье",
+				"abnormal": "Лонгета мягче циркулярного гипса, но бинт тоже может пережимать: отёк, холодные или синеватые пальцы, онемение и усиливающаяся боль — повод в тот же день ослабить бинт у врача. Когда лонгету меняют на циркулярный гипс и сколько её носить, решает детский ортопед по контрольным снимкам"
+			},
+			"en": {
+				"what": "A plaster splint — a strip of plaster that does not close around the limb, laid along the back of the leg of a child under ten from the thigh to the ankle and over the toes, and held with a bandage",
+				"how": "The plaster bandage is folded into several layers along the leg, placed over the padding on the back of the limb from the thigh to the tips of the toes, moulded to its shape and wrapped with a soft bandage; it takes 15–30 minutes",
+				"when": "A fresh injury with swelling, when the fixation has to leave room for the tissues to swell, fractures and ligament injuries of the lower leg and foot, fixation of the toes, and temporary immobilisation until the doctor makes a final decision",
+				"prep": "Usually no preparation is needed: bring the X-rays and the referral, wear loose trousers, and if pain relief is planned keep the fasting interval the doctor gives",
+				"abnormal": "A splint is gentler than a circular cast, but the bandage can still press: swelling, cold or bluish toes, numbness and increasing pain are reasons to have it loosened by a doctor the same day. When the splint is replaced by a circular cast and how long it is worn is decided by the paediatric orthopaedist from the control X-rays"
+			},
+			"sr": {
+				"what": "Gipsana longeta — traka gipsa koja ne obuhvata nogu u krug, postavljena po zadnjoj strani noge djeteta mlađeg od deset godina, od butine do skočnog zgloba i preko prstiju, pričvršćena zavojem",
+				"how": "Gipsani zavoj se presavije u nekoliko slojeva po dužini noge, položi preko podloge sa zadnje strane od butine do vrhova prstiju, modeluje prema obliku i obavije mekim zavojem; traje 15–30 minuta",
+				"when": "Svježa povreda sa otokom, kada fiksacija mora ostaviti prostora za bubrenje tkiva, prelomi i povrede ligamenata potkoljenice i stopala, fiksacija prstiju, privremena imobilizacija do konačne odluke ljekara",
+				"prep": "Priprema obično nije potrebna: ponijeti snimke i uput, obući široke pantalone, a ako je planirana analgezija poštovati pauzu u hrani i piću koju odredi ljekar",
+				"abnormal": "Longeta je blaža od punog gipsa, ali i zavoj može da stegne: otok, hladni ili modrikasti prsti, utrnulost i bol koja se pojačava razlog su da ljekar isti dan olabavi zavoj. Kada se longeta zamjenjuje punim gipsom i koliko se nosi, odlučuje dječji ortoped na osnovu kontrolnih snimaka"
+			},
+			"de": {
+				"what": "Eine Gipsschiene — ein nicht ringsum geschlossener Gipsstreifen, der bei einem Kind unter zehn Jahren auf der Rückseite des Beins vom Oberschenkel bis zum Sprunggelenk und über die Zehen gelegt und mit einer Binde fixiert wird",
+				"how": "Die Gipsbinde wird der Beinlänge nach mehrlagig gefaltet, über der Polsterung auf der Rückseite vom Oberschenkel bis zu den Zehenspitzen aufgelegt, der Form angepasst und mit einer weichen Binde umwickelt; das dauert 15–30 Minuten",
+				"when": "Frische Verletzung mit Schwellung, wenn die Fixierung Platz für zunehmende Schwellung lassen muss, Brüche und Bandverletzungen von Unterschenkel und Fuß, Ruhigstellung der Zehen sowie vorübergehende Ruhigstellung bis zur endgültigen Entscheidung des Arztes",
+				"prep": "Meist ist keine Vorbereitung nötig: Röntgenbilder und Überweisung mitbringen, weite Hose tragen und bei geplanter Schmerzausschaltung die ärztlich vorgegebene Nüchternzeit einhalten",
+				"abnormal": "Eine Schiene ist milder als ein zirkulärer Gips, doch auch die Binde kann einschnüren: Schwellung, kalte oder bläuliche Zehen, Taubheit und zunehmender Schmerz gehören noch am selben Tag ärztlich gelockert. Wann die Schiene durch einen zirkulären Gips ersetzt wird und wie lange sie bleibt, entscheidet der Kinderorthopäde anhand der Kontrollaufnahmen"
+			},
+			"tr": {
+				"what": "Alçı atel — on yaşından küçük bir çocukta bacağın arka yüzüne uyluktan ayak bileğine ve parmakların üzerine kadar yerleştirilen, çevreyi tam sarmayan ve sargıyla tespit edilen alçı şeridi",
+				"how": "Alçılı sargı bacak boyunca kat kat katlanır, ped üzerine arka yüzden uyluktan parmak uçlarına kadar yerleştirilir, şekline göre modellenir ve yumuşak sargıyla sarılır; işlem 15–30 dakika sürer",
+				"when": "Dokunun şişmesine pay bırakılması gereken şişlikli taze yaralanmalar, bacak ve ayak kırıkları ile bağ yaralanmaları, parmakların tespiti, hekimin kesin kararına kadar geçici immobilizasyon",
+				"prep": "Genellikle hazırlık gerekmez: röntgen filmlerini ve sevki getirmek, bol pantolon giymek, ağrı kesici planlanıyorsa hekimin verdiği aç kalma süresine uymak",
+				"abnormal": "Atel sirküler alçıdan daha yumuşaktır ama sargı da sıkabilir: şişlik, parmakların soğuması ya da morarması, uyuşma ve artan ağrı, aynı gün hekime gidip sargıyı gevşetmeyi gerektirir. Atelin ne zaman sirküler alçıyla değiştirileceğine ve ne kadar kalacağına çocuk ortopedisi uzmanı kontrol filmlerine bakarak karar verir"
+			}
+		}
+	},
+	{
+		"slug": "prepatellar-bursectomy",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Операция по удалению слизистой сумки, расположенной между кожей и надколенником",
+				"how": "Через разрез над надколенником, чаще под местной или проводниковой анестезией, хирург выделяет и удаляет воспалённую сумку целиком, при необходимости оставляет дренаж и зашивает кожу; занимает около получаса",
+				"when": "Хроническое воспаление препателлярной сумки с повторяющимися припуханиями, гнойный бурсит, не поддавшийся пункции и лечению без операции, постоянная травматизация колена при работе на коленях",
+				"prep": "Взять направление и результаты обследования, при необходимости побрить колено по указанию клиники, уточнить у врача режим еды, питья и приём препаратов, влияющих на свёртывание, договориться о поездке домой",
+				"abnormal": "После операции несколько недель ожидаемы отёк, ограничение сгибания колена и чувствительность рубца при опоре на колено; нарастающая боль, покраснение, выделения из раны или температура — повод обратиться раньше контрольного осмотра. Когда возвращаться к работе на коленях и нужна ли защита, решает оперировавший врач"
+			},
+			"en": {
+				"what": "An operation to remove the small fluid-filled sac that lies between the skin and the kneecap",
+				"how": "Through an incision over the kneecap, usually under local or regional anaesthesia, the surgeon frees and removes the inflamed sac as a whole, leaves a drain if needed and closes the skin; it takes about half an hour",
+				"when": "Chronic inflammation of the prepatellar bursa with repeated swelling, purulent bursitis that has not settled with aspiration and non-surgical treatment, and constant irritation of the knee in work performed while kneeling",
+				"prep": "Bring the referral and the results of the work-up, shave the knee if the clinic asks, check with the doctor about eating, drinking and medicines that affect clotting, and arrange a ride home",
+				"abnormal": "Swelling, limited knee bending and a scar that is sensitive when you lean on the knee are expected for several weeks after the operation; increasing pain, redness, discharge from the wound or fever are reasons to come earlier than the follow-up visit. When kneeling work can be resumed and whether a knee pad is needed is decided by the operating surgeon"
+			},
+			"sr": {
+				"what": "Operacija kojom se uklanja sluzna kesa smještena između kože i čašice koljena",
+				"how": "Kroz rez iznad čašice, najčešće u lokalnoj ili regionalnoj anesteziji, hirurg izdvoji i u cjelini ukloni upaljenu kesu, po potrebi ostavi dren i ušije kožu; traje oko pola sata",
+				"when": "Hronična upala prepatelarne burze sa ponavljanim oticanjem, gnojni burzitis koji nije popustio na punkciju i liječenje bez operacije, stalno povređivanje koljena pri radu na koljenima",
+				"prep": "Ponijeti uput i nalaze obrade, po potrebi obrijati koljeno prema uputstvu ustanove, provjeriti sa ljekarom režim hrane, pića i lijekova koji utiču na zgrušavanje i dogovoriti prevoz kući",
+				"abnormal": "Poslije operacije se nekoliko sedmica očekuju otok, ograničeno savijanje koljena i osjetljiv ožiljak pri oslanjanju na koljeno; bol koja se pojačava, crvenilo, sekret iz rane ili povišena temperatura razlog su da se javite prije kontrolnog pregleda. Kada se vraća radu na koljenima i da li je potrebna zaštita, odlučuje hirurg koji je operisao"
+			},
+			"de": {
+				"what": "Eine Operation, bei der der Schleimbeutel zwischen Haut und Kniescheibe entfernt wird",
+				"how": "Über einen Schnitt vor der Kniescheibe, meist in örtlicher oder regionaler Betäubung, löst der Chirurg den entzündeten Beutel und entfernt ihn vollständig, legt bei Bedarf eine Drainage ein und verschließt die Haut; das dauert etwa eine halbe Stunde",
+				"when": "Chronische Entzündung des Schleimbeutels vor der Kniescheibe mit wiederkehrender Schwellung, eitrige Bursitis, die auf Punktion und nichtoperative Behandlung nicht angesprochen hat, und ständige Reizung des Knies bei kniender Arbeit",
+				"prep": "Überweisung und Befunde mitbringen, das Knie nach Vorgabe der Klinik rasieren, mit dem Arzt Essen, Trinken und gerinnungswirksame Medikamente klären und die Heimfahrt organisieren",
+				"abnormal": "Nach der Operation sind für einige Wochen Schwellung, eingeschränkte Kniebeugung und eine beim Knien empfindliche Narbe zu erwarten; zunehmender Schmerz, Rötung, Sekret aus der Wunde oder Fieber sind Gründe, früher als zur Kontrolle zu kommen. Wann kniende Arbeit wieder möglich ist und ob ein Knieschutz nötig wird, entscheidet der operierende Chirurg"
+			},
+			"tr": {
+				"what": "Cilt ile diz kapağı arasında yer alan bursanın çıkarıldığı ameliyat",
+				"how": "Diz kapağı üzerindeki kesiden, çoğunlukla lokal ya da bölgesel anestezi altında, cerrah iltihaplı bursayı bütün olarak çıkarır, gerekirse dren bırakır ve cildi kapatır; işlem yaklaşık yarım saat sürer",
+				"when": "Yinelenen şişliklerle seyreden kronik prepatellar bursit, ponksiyon ve ameliyatsız tedaviyle geçmeyen iltihaplı bursit, diz üstünde çalışmaya bağlı sürekli zorlanma",
+				"prep": "Sevki ve tetkik sonuçlarını getirmek, kurumun isteği doğrultusunda dizi tıraş etmek, yeme içme düzenini ve kan sulandırıcı ilaçları hekimle görüşmek, eve dönüş için ulaşım ayarlamak",
+				"abnormal": "Ameliyattan sonra birkaç hafta şişlik, dizin bükülmesinde kısıtlılık ve diz üstüne basıldığında hassas bir izin olması beklenir; ağrının artması, kızarıklık, yaradan akıntı ya da ateş kontrol gününü beklemeden başvurmayı gerektirir. Diz üstünde çalışmaya ne zaman dönüleceğine ve koruyucu gerekip gerekmediğine ameliyatı yapan cerrah karar verir"
+			}
+		}
+	},
+	{
+		"slug": "primary-extensor-tendon-repair-one-or-more",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Сшивание одного или нескольких повреждённых сухожилий разгибателей сразу после травмы — они идут по тыльной стороне кисти и пальцев и разгибают их",
+				"how": "Через рану или её продление, чаще под проводниковой анестезией, хирург находит концы сухожилий, сшивает их специальным швом и проверяет разгибание пальца, затем накладывает шину в положении разгибания; занимает от получаса до полутора часов",
+				"when": "Резаная рана тыла кисти, предплечья или пальца с потерей разгибания, открытая травма с пересечением сухожилия, отрыв сухожилия у места прикрепления",
+				"prep": "Обратиться как можно раньше — свежий шов проще и надёжнее; не есть и не пить по указанию врача, снять кольца с кисти, рану закрыть чистой повязкой и не пытаться промывать её самостоятельно",
+				"abnormal": "После шва палец несколько недель держат в шине, а разгибание восстанавливается постепенно; возможны скованность и небольшое отставание в разгибании, а рубец может спаиваться с сухожилием. Расхождение шва при ранней нагрузке, нарастающая боль, покраснение или выделения из раны требуют осмотра, а режим шины и упражнений определяет хирург"
+			},
+			"en": {
+				"what": "Suturing of one or several damaged extensor tendons soon after the injury — these run along the back of the hand and fingers and straighten them",
+				"how": "Through the wound or its extension, usually under regional anaesthesia, the surgeon finds the tendon ends, joins them with a dedicated stitch, checks that the finger extends and applies a splint in extension; it takes from half an hour to an hour and a half",
+				"when": "A cut on the back of the hand, forearm or finger with loss of extension, an open injury in which the tendon has been divided, and an avulsion of the tendon from its attachment",
+				"prep": "Come as early as possible — a fresh repair is simpler and more reliable; follow the doctor's fasting instructions, take rings off the hand, cover the wound with a clean dressing and do not try to rinse it yourself",
+				"abnormal": "After the repair the finger is kept in a splint for several weeks and extension returns gradually; stiffness and a slight lag in straightening are possible, and the scar may stick to the tendon. A repair that gives way under early load, increasing pain, redness or discharge from the wound need to be examined, and the splint and exercise regimen is set by the surgeon"
+			},
+			"sr": {
+				"what": "Ušivanje jedne ili više oštećenih tetiva ekstenzora ubrzo nakon povrede — one idu po nadlanici i prstima i opružaju ih",
+				"how": "Kroz ranu ili njeno proširenje, najčešće u regionalnoj anesteziji, hirurg pronađe krajeve tetive, spoji ih posebnim šavom, provjeri opružanje prsta i postavi udlagu u ispruženom položaju; traje od pola sata do sat i po",
+				"when": "Posjekotina nadlanice, podlaktice ili prsta sa gubitkom opružanja, otvorena povreda sa presječenom tetivom, otrgnuće tetive sa mjesta pripoja",
+				"prep": "Javiti se što prije — svjež šav je jednostavniji i pouzdaniji; ne jesti i ne piti po uputstvu ljekara, skinuti prstenje sa šake, ranu pokriti čistom gazom i ne ispirati je samostalno",
+				"abnormal": "Poslije šava prst se nekoliko sedmica drži u udlagi, a opružanje se vraća postepeno; mogući su ukočenost i blag zaostatak u opružanju, a ožiljak može da sraste sa tetivom. Popuštanje šava pri ranom opterećenju, bol koja se pojačava, crvenilo ili sekret iz rane traže pregled, a režim udlage i vježbi određuje hirurg"
+			},
+			"de": {
+				"what": "Das Nähen einer oder mehrerer verletzter Strecksehnen kurz nach dem Unfall — sie verlaufen über Handrücken und Finger und strecken diese",
+				"how": "Über die Wunde oder ihre Erweiterung, meist in regionaler Betäubung, sucht der Chirurg die Sehnenenden, verbindet sie mit einer speziellen Naht, prüft die Streckung des Fingers und legt eine Schiene in Streckstellung an; das dauert eine halbe bis anderthalb Stunden",
+				"when": "Schnittwunde an Handrücken, Unterarm oder Finger mit Streckverlust, offene Verletzung mit durchtrennter Sehne und Ausriss der Sehne am Ansatz",
+				"prep": "Möglichst früh kommen — eine frische Naht ist einfacher und stabiler; Nüchternheit nach ärztlicher Anweisung, Ringe von der Hand nehmen, die Wunde mit einem sauberen Verband abdecken und nicht selbst ausspülen",
+				"abnormal": "Nach der Naht bleibt der Finger einige Wochen in der Schiene, die Streckung kehrt allmählich zurück; Steifigkeit und ein leichtes Streckdefizit sind möglich, und die Narbe kann mit der Sehne verkleben. Ein bei früher Belastung nachgebender Nahtbereich, zunehmender Schmerz, Rötung oder Wundsekret gehören untersucht; Schienen- und Übungsregime legt der Chirurg fest"
+			},
+			"tr": {
+				"what": "Yaralanmadan kısa süre sonra bir ya da birkaç ekstansör tendonun dikilmesi — bu tendonlar el sırtı ve parmaklar boyunca uzanır ve onları açar",
+				"how": "Yaradan ya da yaranın genişletilmesiyle, çoğunlukla bölgesel anestezi altında cerrah tendon uçlarını bulur, özel bir dikişle birleştirir, parmağın açılmasını kontrol eder ve açık pozisyonda atel uygular; işlem yarım saat ile bir buçuk saat arasında sürer",
+				"when": "El sırtı, ön kol ya da parmakta açma kaybıyla giden kesi, tendonun kesildiği açık yaralanma, tendonun yapışma yerinden kopması",
+				"prep": "Mümkün olduğunca erken başvurmak — taze onarım hem daha kolay hem daha güvenilirdir; hekimin belirttiği süre aç kalmak, eldeki yüzükleri çıkarmak, yarayı temiz bir örtüyle kapatmak ve kendi başına yıkamaya çalışmamak",
+				"abnormal": "Onarımdan sonra parmak birkaç hafta atelde tutulur ve açma hareketi yavaş yavaş geri gelir; tutukluk ve açmada hafif bir eksiklik görülebilir, iz tendona yapışabilir. Erken yüklenmede onarımın açılması, artan ağrı, kızarıklık ya da yaradan akıntı muayene gerektirir; atel ve egzersiz düzenini cerrah belirler"
+			}
+		}
+	},
+	{
+		"slug": "primary-multi-tendon-flexor-repair-with-excision",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Сшивание нескольких повреждённых сухожилий сгибателей на ладонной стороне сразу после травмы с удалением размозжённых и нежизнеспособных участков",
+				"how": "В операционной под проводниковой или общей анестезией рану расширяют, иссекают разрушенные ткани и нежизнеспособные концы сухожилий, каждое сухожилие сшивают прочным швом в правильном порядке, проверяют скольжение и накладывают шину; работу ведут с оптическим увеличением, длительность зависит от числа сухожилий",
+				"when": "Глубокая резаная рана ладони, запястья или пальцев с потерей сгибания нескольких пальцев, травма с размозжением тканей, повреждение сухожилий вместе с сосудами и нервами",
+				"prep": "Не есть и не пить с момента травмы до осмотра хирурга, снять кольца и часы, рану закрыть чистой повязкой, взять документ и данные о принимаемых препаратах — вмешательство обычно проводится в стационаре",
+				"abnormal": "Сгибатели идут в узких каналах, поэтому после шва ожидаемы отёк, скованность и длительное восстановление по контролируемой программе движений; основные риски — спайки и повторный разрыв при ранней нагрузке. Внезапная потеря сгибания пальца, нарастающая боль, покраснение или выделения из раны требуют срочного осмотра, а темп нагрузок задаёт оперировавший хирург"
+			},
+			"en": {
+				"what": "Suturing of several damaged flexor tendons on the palm side soon after the injury, with removal of crushed and non-viable tissue",
+				"how": "In the operating room under regional or general anaesthesia the wound is extended, destroyed tissue and non-viable tendon ends are excised, each tendon is joined with a strong stitch in the correct order, gliding is checked and a splint is applied; the work is done with optical magnification and its length depends on the number of tendons",
+				"when": "A deep cut of the palm, wrist or fingers with loss of bending in several fingers, an injury with crushed tissue, and tendon damage combined with injury to vessels and nerves",
+				"prep": "Nothing to eat or drink from the moment of injury until the surgeon has seen you, rings and watch removed, the wound covered with a clean dressing, ID and a list of your medicines with you — the operation is usually done in hospital",
+				"abnormal": "Flexor tendons run in narrow sheaths, so swelling, stiffness and a long recovery under a controlled motion programme are expected; the main risks are adhesions and a re-rupture under early load. A sudden loss of bending in a finger, increasing pain, redness or discharge from the wound need an urgent check, and the pace of loading is set by the operating surgeon"
+			},
+			"sr": {
+				"what": "Ušivanje više oštećenih fleksornih tetiva sa dlanske strane ubrzo nakon povrede, uz odstranjenje zgnječenog i neupotrebljivog tkiva",
+				"how": "U operacionoj sali, u regionalnoj ili opštoj anesteziji, rana se proširi, razoreno tkivo i krajevi tetiva koji se ne mogu sačuvati se isijecaju, svaka tetiva se spaja čvrstim šavom pravilnim redom, provjerava se klizanje i postavlja udlaga; radi se uz optičko uvećanje, a trajanje zavisi od broja tetiva",
+				"when": "Duboka posjekotina dlana, ručnog zgloba ili prstiju sa gubitkom savijanja više prstiju, povreda sa zgnječenjem tkiva, oštećenje tetiva zajedno sa krvnim sudovima i živcima",
+				"prep": "Ne jesti i ne piti od trenutka povrede do pregleda hirurga, skinuti prstenje i sat, ranu pokriti čistom gazom, ponijeti dokument i spisak lijekova koje uzimate — zahvat se obično radi u bolnici",
+				"abnormal": "Fleksorne tetive klize u uskim kanalima, pa se poslije šava očekuju otok, ukočenost i dug oporavak po kontrolisanom programu pokreta; glavni rizici su priraslice i ponovno pucanje pri ranom opterećenju. Iznenadni gubitak savijanja prsta, bol koja se pojačava, crvenilo ili sekret iz rane traže hitan pregled, a tempo opterećenja određuje hirurg koji je operisao"
+			},
+			"de": {
+				"what": "Das Nähen mehrerer verletzter Beugesehnen der Handinnenfläche kurz nach dem Unfall, mit Entfernung gequetschten und nicht erhaltungsfähigen Gewebes",
+				"how": "Im OP in regionaler oder Vollnarkose wird die Wunde erweitert, zerstörtes Gewebe und nicht erhaltungsfähige Sehnenenden werden entfernt, jede Sehne wird in der richtigen Reihenfolge mit einer kräftigen Naht verbunden, das Gleiten geprüft und eine Schiene angelegt; gearbeitet wird mit optischer Vergrößerung, die Dauer hängt von der Zahl der Sehnen ab",
+				"when": "Tiefe Schnittwunde von Handfläche, Handgelenk oder Fingern mit Beugeverlust mehrerer Finger, Verletzung mit Quetschung sowie Sehnenschaden zusammen mit Gefäßen und Nerven",
+				"prep": "Ab dem Unfall nichts essen und trinken, bis der Chirurg untersucht hat, Ringe und Uhr ablegen, die Wunde sauber abdecken, Ausweis und Medikamentenliste mitbringen — der Eingriff erfolgt in der Regel stationär",
+				"abnormal": "Beugesehnen gleiten in engen Kanälen, daher sind Schwellung, Steifigkeit und eine lange Genesung nach einem kontrollierten Bewegungsprogramm zu erwarten; die Hauptrisiken sind Verklebungen und ein erneuter Riss bei zu früher Belastung. Plötzlicher Beugeverlust eines Fingers, zunehmender Schmerz, Rötung oder Wundsekret erfordern eine sofortige Kontrolle; das Belastungstempo gibt der operierende Chirurg vor"
+			},
+			"tr": {
+				"what": "Yaralanmadan kısa süre sonra avuç tarafındaki birden çok fleksör tendonun, ezilmiş ve canlılığını yitirmiş dokunun çıkarılmasıyla birlikte dikilmesi",
+				"how": "Ameliyathanede bölgesel ya da genel anestezi altında yara genişletilir, harap olmuş doku ve canlılığını yitirmiş tendon uçları kesilip alınır, her tendon doğru sırayla sağlam bir dikişle birleştirilir, kayma kontrol edilir ve atel uygulanır; işlem optik büyütmeyle yapılır, süresi tendon sayısına bağlıdır",
+				"when": "Birden çok parmakta bükme kaybıyla giden derin avuç içi, el bileği ya da parmak kesisi, ezilmeli yaralanma, tendonların damar ve sinirlerle birlikte zedelenmesi",
+				"prep": "Yaralanma anından cerrah muayene edene kadar hiçbir şey yiyip içmemek, yüzük ve saati çıkarmak, yarayı temiz bir örtüyle kapatmak, kimlik ve kullanılan ilaçların listesini yanına almak — girişim genellikle hastanede yapılır",
+				"abnormal": "Fleksör tendonlar dar kılıflar içinde kaydığı için onarım sonrasında şişlik, tutukluk ve denetimli hareket programıyla uzun bir iyileşme beklenir; başlıca riskler yapışıklık ve erken yüklenmede yeniden kopmadır. Parmakta ani bükme kaybı, artan ağrı, kızarıklık ya da yaradan akıntı acil değerlendirme gerektirir; yüklenme temposunu ameliyatı yapan cerrah belirler"
+			}
+		}
+	},
+	{
+		"slug": "primary-peripheral-nerve-neurorrhaphy",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Сшивание концов пересечённого периферического нерва сразу после травмы, чтобы восстановить путь для прорастания нервных волокон",
+				"how": "Под оптическим увеличением и анестезией хирург находит концы нерва, освежает их, сопоставляет пучки в правильном повороте и сшивает оболочку тончайшими нитями, затем конечность фиксируют шиной в положении без натяжения; занимает час и больше",
+				"when": "Резаная или рваная рана конечности с выпадением чувствительности и движений в зоне нерва, открытая травма с явным пересечением нерва, повреждение нерва, обнаруженное во время операции по другому поводу",
+				"prep": "Чем раньше, тем лучше: рану закрыть чистой повязкой, не есть и не пить до осмотра хирурга, снять украшения с повреждённой конечности и сообщить врачу о принимаемых препаратах",
+				"abnormal": "Нерв прорастает медленно, от места шва к периферии, поэтому чувствительность и сила возвращаются месяцами и не всегда полностью; покалывание и неприятные ощущения по ходу восстановления обычны. Динамику оценивает врач, он же решает вопрос об электронейромиографии и реабилитации, а усиление боли, покраснение и выделения из раны — повод прийти раньше"
+			},
+			"en": {
+				"what": "Suturing of the ends of a divided peripheral nerve soon after the injury, to restore the path along which the nerve fibres can grow back",
+				"how": "Under optical magnification and anaesthesia the surgeon finds the nerve ends, freshens them, aligns the bundles in the correct rotation and stitches the sheath with very fine sutures, after which the limb is splinted in a position without tension; it takes an hour or more",
+				"when": "A cut or torn wound of a limb with loss of sensation and movement in the area supplied by the nerve, an open injury with an obviously divided nerve, and nerve damage found during an operation done for another reason",
+				"prep": "The sooner the better: cover the wound with a clean dressing, do not eat or drink until the surgeon has seen you, take jewellery off the injured limb and tell the doctor which medicines you take",
+				"abnormal": "A nerve regrows slowly, from the suture towards the periphery, so sensation and strength return over months and not always completely; tingling and unpleasant sensations along the way are usual. Progress is assessed by the doctor, who also decides about nerve conduction studies and rehabilitation, while increasing pain, redness and discharge from the wound are reasons to come sooner"
+			},
+			"sr": {
+				"what": "Ušivanje krajeva presječenog perifernog živca ubrzo nakon povrede, da bi se obnovio put kojim nervna vlakna mogu ponovo da rastu",
+				"how": "Uz optičko uvećanje i anesteziju hirurg pronađe krajeve živca, osvježi ih, poravna snopove u pravilnom zaokretu i ušije ovojnicu vrlo tankim koncem, a ekstremitet se zatim fiksira udlagom u položaju bez zatezanja; traje sat vremena i duže",
+				"when": "Posjekotina ili razderotina ekstremiteta sa gubitkom osjeta i pokreta u području živca, otvorena povreda sa očito presječenim živcem, oštećenje živca otkriveno tokom operacije iz drugog razloga",
+				"prep": "Što ranije, to bolje: ranu pokriti čistom gazom, ne jesti i ne piti do pregleda hirurga, skinuti nakit sa povrijeđenog ekstremiteta i reći ljekaru koje lijekove uzimate",
+				"abnormal": "Živac raste sporo, od mjesta šava prema periferiji, pa se osjet i snaga vraćaju mjesecima i ne uvijek u potpunosti; trnjenje i neprijatni osjećaji tokom oporavka su uobičajeni. Napredak prati ljekar, koji odlučuje i o elektroneurografiji i rehabilitaciji, a jačanje bola, crvenilo i sekret iz rane razlog su da dođete ranije"
+			},
+			"de": {
+				"what": "Das Nähen der Enden eines durchtrennten peripheren Nervs kurz nach der Verletzung, um den Weg für das Nachwachsen der Nervenfasern wiederherzustellen",
+				"how": "Unter optischer Vergrößerung und Anästhesie sucht der Chirurg die Nervenenden, frischt sie an, richtet die Faserbündel in der korrekten Drehung aus und näht die Hülle mit feinsten Fäden, anschließend wird die Gliedmaße spannungsfrei geschient; der Eingriff dauert eine Stunde und länger",
+				"when": "Schnitt- oder Risswunde einer Gliedmaße mit Gefühls- und Bewegungsausfall im Versorgungsgebiet des Nervs, offene Verletzung mit eindeutig durchtrenntem Nerv sowie ein Nervenschaden, der bei einer Operation aus anderem Anlass entdeckt wird",
+				"prep": "Je früher, desto besser: die Wunde sauber abdecken, bis zur Untersuchung durch den Chirurgen nichts essen und trinken, Schmuck von der verletzten Gliedmaße ablegen und die eingenommenen Medikamente angeben",
+				"abnormal": "Ein Nerv wächst langsam von der Naht zur Peripherie, daher kehren Gefühl und Kraft über Monate und nicht immer vollständig zurück; Kribbeln und unangenehme Missempfindungen auf diesem Weg sind üblich. Den Verlauf beurteilt der Arzt, der auch über Elektroneurografie und Rehabilitation entscheidet; zunehmender Schmerz, Rötung und Wundsekret sind Gründe, früher zu kommen"
+			},
+			"tr": {
+				"what": "Yaralanmadan kısa süre sonra kesilmiş bir çevresel sinirin uçlarının, sinir liflerinin yeniden uzayabileceği yolu onarmak amacıyla dikilmesi",
+				"how": "Optik büyütme altında ve anestezi ile cerrah sinir uçlarını bulur, tazeler, demetleri doğru dönüşte karşılıklı getirir ve kılıfı çok ince dikişlerle birleştirir, ardından uzuv gerginlik olmayacak pozisyonda atele alınır; işlem bir saat ve üzeri sürer",
+				"when": "Sinirin beslediği bölgede his ve hareket kaybıyla giden kesi ya da yırtık yara, sinirin belirgin biçimde kesildiği açık yaralanma, başka bir nedenle yapılan ameliyat sırasında fark edilen sinir hasarı",
+				"prep": "Ne kadar erken o kadar iyi: yarayı temiz bir örtüyle kapatmak, cerrah muayene edene kadar yiyip içmemek, yaralı uzuvdaki takıları çıkarmak ve kullanılan ilaçları hekime bildirmek",
+				"abnormal": "Sinir, dikiş yerinden uca doğru yavaş uzar; bu nedenle his ve güç aylar içinde ve her zaman tam olmayacak şekilde geri gelir, bu süreçte karıncalanma ve rahatsız edici duyumlar olağandır. Gidişatı hekim değerlendirir, sinir ileti incelemesi ve rehabilitasyon kararını da o verir; ağrının artması, kızarıklık ve yaradan akıntı daha erken başvurmayı gerektirir"
+			}
+		}
+	},
+	{
+		"slug": "primary-suture-of-ruptured-collateral-ligament",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Сшивание собственной боковой связки сустава сразу после её разрыва, без замены трансплантатом",
+				"how": "Через разрез над повреждённой связкой хирург находит её концы или место отрыва от кости, сшивает связку либо подшивает её к кости якорным швом и проверяет устойчивость сустава, затем накладывает ортез или гипс; занимает около часа",
+				"when": "Свежий полный разрыв боковой связки колена, голеностопа или пальца с нестабильностью сустава, отрыв связки вместе с фрагментом кости, разрыв связки большого пальца кисти, при котором концы разошлись и сами не срастутся",
+				"prep": "Предоперационное обследование и осмотр анестезиолога, снимки и при необходимости МРТ, отказ от еды и питья по указанию врача, а ортез и костыли подготовить заранее, если врач их рекомендует",
+				"abnormal": "После операции ожидаемы отёк, ограничение движений в ортезе и постепенное возвращение опоры и силы, а сустав несколько недель может ощущаться тугим. Резкое усиление боли, покраснение, температуру или чувство разболтанности сустава нужно показать врачу, а сроки снятия ортеза и возвращения к спорту определяет оперировавший врач"
+			},
+			"en": {
+				"what": "Stitching of a joint's own collateral ligament right after it has torn, without replacing it with a graft",
+				"how": "Through an incision over the damaged ligament the surgeon finds its ends or the point where it pulled off the bone, sutures the ligament or reattaches it to the bone with an anchor, checks the stability of the joint and applies a brace or cast; it takes about an hour",
+				"when": "A fresh complete tear of a collateral ligament of the knee, ankle or finger with an unstable joint, a ligament avulsed together with a fragment of bone, and a torn thumb ligament whose ends have separated and will not heal on their own",
+				"prep": "Pre-operative work-up and an anaesthetist review, X-rays and an MRI if required, fasting as instructed, and a brace and crutches prepared in advance if the doctor recommends them",
+				"abnormal": "Swelling, movement limited by the brace and a gradual return of weight-bearing and strength are expected after surgery, and the joint may feel tight for several weeks. A sharp increase in pain, redness, fever or a feeling that the joint is loose should be shown to a doctor, and the time to take off the brace and return to sport is set by the operating surgeon"
+			},
+			"sr": {
+				"what": "Ušivanje sopstvenog kolateralnog ligamenta zgloba odmah nakon rupture, bez zamjene kalemom",
+				"how": "Kroz rez iznad oštećenog ligamenta hirurg pronađe njegove krajeve ili mjesto otrgnuća od kosti, ušije ligament ili ga sidrenim šavom pričvrsti za kost, provjeri stabilnost zgloba i postavi ortozu ili gips; traje oko sat vremena",
+				"when": "Svježa potpuna ruptura kolateralnog ligamenta koljena, skočnog zgloba ili prsta sa nestabilnošću, otrgnuće ligamenta zajedno sa koštanim fragmentom, ruptura ligamenta palca šake kod koje su se krajevi razmakli i neće sami srasti",
+				"prep": "Preoperativna obrada i pregled anesteziologa, snimci i po potrebi MR, bez hrane i pića po uputstvu ljekara, a ortozu i štake pripremiti unaprijed ako ih ljekar preporuči",
+				"abnormal": "Poslije operacije se očekuju otok, ograničeni pokreti u ortozi i postepen povratak oslonca i snage, a zglob može biti zategnut nekoliko sedmica. Naglo jačanje bola, crvenilo, povišenu temperaturu ili osjećaj da je zglob klimav treba pokazati ljekaru, a rokove skidanja ortoze i povratka sportu određuje hirurg koji je operisao"
+			},
+			"de": {
+				"what": "Das Nähen des eigenen Seitenbands eines Gelenks unmittelbar nach dem Riss, ohne Ersatz durch ein Transplantat",
+				"how": "Über einen Schnitt am verletzten Band sucht der Chirurg die Bandenden oder die Stelle des knöchernen Ausrisses, näht das Band oder befestigt es mit einem Fadenanker am Knochen, prüft die Stabilität des Gelenks und legt Orthese oder Gips an; das dauert etwa eine Stunde",
+				"when": "Frischer vollständiger Riss eines Seitenbands an Knie, Sprunggelenk oder Finger mit instabilem Gelenk, Bandausriss mit Knochenfragment sowie ein Bandriss am Daumen, dessen Enden auseinandergewichen sind und nicht von selbst verheilen",
+				"prep": "Voruntersuchungen und Vorstellung beim Anästhesisten, Röntgen und bei Bedarf MRT, Nüchternheit nach Anweisung sowie Orthese und Gehstützen vorab besorgen, wenn der Arzt sie empfiehlt",
+				"abnormal": "Nach der Operation sind Schwellung, durch die Orthese begrenzte Beweglichkeit und eine allmähliche Rückkehr von Belastbarkeit und Kraft zu erwarten, das Gelenk kann sich einige Wochen straff anfühlen. Stark zunehmender Schmerz, Rötung, Fieber oder das Gefühl eines lockeren Gelenks gehören ärztlich kontrolliert; wann die Orthese abgelegt und Sport wieder aufgenommen wird, legt der operierende Chirurg fest"
+			},
+			"tr": {
+				"what": "Eklemin kendi yan bağının, yırtılmasının hemen ardından greft kullanılmadan dikilmesi",
+				"how": "Zedelenen bağın üzerindeki kesiden cerrah bağ uçlarını ya da kemikten koptuğu yeri bulur, bağı diker veya ankor dikişle kemiğe tespit eder, eklemin sağlamlığını kontrol eder ve ortez ya da alçı uygular; işlem yaklaşık bir saat sürer",
+				"when": "Dizde, ayak bileğinde ya da parmakta eklemi dengesiz bırakan taze tam yan bağ yırtığı, bağın kemik parçasıyla birlikte kopması, uçları ayrılmış ve kendiliğinden iyileşmeyecek başparmak bağ yırtığı",
+				"prep": "Ameliyat öncesi tetkikler ve anestezi değerlendirmesi, röntgen ve gerekirse MR, hekimin belirttiği süre aç kalmak, hekim öneriyorsa ortez ve koltuk değneğini önceden hazırlamak",
+				"abnormal": "Ameliyat sonrasında şişlik, ortezle sınırlanan hareket ve yük ile gücün yavaş yavaş geri gelmesi beklenir; eklem birkaç hafta gergin hissedilebilir. Ağrının aniden artması, kızarıklık, ateş ya da eklemin boşalma hissi hekime gösterilmelidir; ortezin ne zaman çıkacağına ve spora dönüş zamanına ameliyatı yapan cerrah karar verir"
+			}
+		}
+	},
+	{
+		"slug": "primary-ulnar-or-median-nerve-neurorrhaphy",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Сшивание пересечённого локтевого или срединного нерва на предплечье и запястье — от них зависят чувствительность кисти и работа мелких мышц",
+				"how": "Операция идёт под увеличением: рану на запястье или предплечье расширяют, находят концы нерва среди сухожилий и сосудов, сопоставляют пучки и сшивают оболочку микрошвом, часто одновременно восстанавливают повреждённые сухожилия и артерию, затем кисть фиксируют шиной в согнутом положении",
+				"when": "Порезы запястья и предплечья с онемением пальцев и слабостью кисти, травма стеклом или ножом с потерей чувствительности мизинца и безымянного пальца (локтевой нерв) или большого и указательного (срединный нерв), открытые переломы с повреждением нерва",
+				"prep": "Рану закрыть чистой повязкой и сразу ехать в травматологию, не есть и не пить до осмотра хирурга, снять кольца и часы с этой руки, сообщить о хронических болезнях и препаратах для разжижения крови",
+				"abnormal": "Чувствительность кисти возвращается раньше, чем сила мелких мышц, восстановление растягивается на месяцы, а часть функции может не вернуться полностью — тем вероятнее, чем выше уровень повреждения. Объём восстановления оценивает врач по осмотру и электронейромиографии, а шину, упражнения и защиту нечувствительной кожи от ожогов и порезов назначает оперировавший хирург"
+			},
+			"en": {
+				"what": "Suturing of a divided ulnar or median nerve at the forearm or wrist — the nerves that carry sensation of the hand and drive its small muscles",
+				"how": "The operation is done under magnification: the wound at the wrist or forearm is extended, the nerve ends are found among the tendons and vessels, the bundles are aligned and the sheath joined with microsutures, often together with repair of damaged tendons and an artery, after which the hand is splinted in a flexed position",
+				"when": "Cuts of the wrist and forearm with numb fingers and a weak hand, an injury from glass or a knife with loss of feeling in the little and ring finger (ulnar nerve) or the thumb and index finger (median nerve), and open fractures with nerve damage",
+				"prep": "Cover the wound with a clean dressing and go to the trauma unit at once, do not eat or drink until the surgeon has seen you, take rings and the watch off that hand, and report chronic conditions and blood-thinning medicines",
+				"abnormal": "Sensation in the hand returns earlier than the strength of the small muscles, recovery stretches over months, and part of the function may not come back fully — the more likely the higher the level of injury. The extent of recovery is judged by the doctor from the examination and nerve conduction studies, and the splint, exercises and protection of numb skin from burns and cuts are prescribed by the operating surgeon"
+			},
+			"sr": {
+				"what": "Ušivanje presječenog ulnarnog ili srednjeg živca na podlaktici i ručnom zglobu — od njih zavise osjet šake i rad sitnih mišića",
+				"how": "Operacija se radi uz uvećanje: rana na ručnom zglobu ili podlaktici se proširi, krajevi živca se pronađu među tetivama i krvnim sudovima, snopovi se poravnaju i ovojnica ušije mikrošavom, često se istovremeno zbrinjavaju i oštećene tetive i arterija, a šaka se zatim fiksira udlagom u savijenom položaju",
+				"when": "Posjekotine ručnog zgloba i podlaktice sa utrnulošću prstiju i slabom šakom, povreda staklom ili nožem sa gubitkom osjeta malog i domalog prsta (ulnarni živac) ili palca i kažiprsta (srednji živac), otvoreni prelomi sa oštećenjem živca",
+				"prep": "Ranu pokriti čistom gazom i odmah krenuti u traumatologiju, ne jesti i ne piti do pregleda hirurga, skinuti prstenje i sat sa te ruke, prijaviti hronične bolesti i lijekove za razrjeđivanje krvi",
+				"abnormal": "Osjet šake se vraća prije nego snaga sitnih mišića, oporavak se proteže mjesecima, a dio funkcije može izostati — to je vjerovatnije što je povreda viša. Obim oporavka procjenjuje ljekar na osnovu pregleda i elektroneurografije, a udlagu, vježbe i zaštitu neosjetljive kože od opekotina i posjekotina propisuje hirurg koji je operisao"
+			},
+			"de": {
+				"what": "Das Nähen eines durchtrennten Ellen- oder Mittelnervs an Unterarm und Handgelenk — von ihnen hängen das Gefühl der Hand und die Arbeit ihrer kleinen Muskeln ab",
+				"how": "Der Eingriff erfolgt unter Vergrößerung: die Wunde am Handgelenk oder Unterarm wird erweitert, die Nervenenden werden zwischen Sehnen und Gefäßen aufgesucht, die Bündel ausgerichtet und die Hülle mit Mikronähten verbunden, oft zusammen mit der Versorgung verletzter Sehnen und einer Arterie, danach wird die Hand in Beugestellung geschient",
+				"when": "Schnittverletzungen an Handgelenk und Unterarm mit tauben Fingern und schwacher Hand, Verletzungen durch Glas oder Messer mit Gefühlsverlust an Klein- und Ringfinger (Ellennerv) oder an Daumen und Zeigefinger (Mittelnerv) sowie offene Brüche mit Nervenschaden",
+				"prep": "Die Wunde sauber abdecken und sofort in die Unfallaufnahme fahren, bis zur Untersuchung durch den Chirurgen nichts essen und trinken, Ringe und Uhr von dieser Hand nehmen und chronische Erkrankungen sowie blutverdünnende Medikamente angeben",
+				"abnormal": "Das Gefühl der Hand kehrt früher zurück als die Kraft der kleinen Muskeln, die Erholung zieht sich über Monate, und ein Teil der Funktion kann unvollständig bleiben — umso eher, je höher die Verletzung liegt. Das Ausmaß beurteilt der Arzt anhand der Untersuchung und der Elektroneurografie; Schiene, Übungen und der Schutz gefühlloser Haut vor Verbrennungen und Schnitten werden vom operierenden Chirurgen verordnet"
+			},
+			"tr": {
+				"what": "Ön kol ve el bileği düzeyinde kesilmiş ulnar ya da median sinirin dikilmesi — elin duyusu ve küçük kaslarının çalışması bu sinirlere bağlıdır",
+				"how": "Ameliyat büyütme altında yapılır: el bileği ya da ön koldaki yara genişletilir, sinir uçları tendon ve damarlar arasında bulunur, demetler karşılıklı getirilip kılıf mikro dikişlerle birleştirilir, sıklıkla zedelenen tendonlar ve bir atardamar da aynı seansta onarılır, ardından el bükülü pozisyonda atele alınır",
+				"when": "Parmaklarda uyuşma ve elde güçsüzlükle giden el bileği ve ön kol kesileri, serçe ve yüzük parmağında (ulnar sinir) ya da başparmak ve işaret parmağında (median sinir) his kaybına yol açan cam ya da bıçak yaralanmaları, sinir hasarının eşlik ettiği açık kırıklar",
+				"prep": "Yarayı temiz bir örtüyle kapatıp hemen travma birimine gitmek, cerrah muayene edene kadar yiyip içmemek, o eldeki yüzük ve saati çıkarmak, kronik hastalıkları ve kan sulandırıcı ilaçları bildirmek",
+				"abnormal": "Elin duyusu küçük kasların gücünden önce geri gelir, iyileşme aylara yayılır ve işlevin bir bölümü tam olarak dönmeyebilir — yaralanma ne kadar yukarıdaysa bu olasılık o kadar artar. İyileşmenin düzeyini hekim muayene ve sinir ileti incelemesiyle değerlendirir; ateli, egzersizleri ve hissizleşmiş cildin yanık ve kesiklerden korunmasını ameliyatı yapan cerrah belirler"
+			}
+		}
+	},
+	{
+		"slug": "proximal-phalanx-big-toe-osteotomy-for-shortening-or-rotation",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Пересечение основной фаланги большого пальца стопы и её фиксация в новом положении, чтобы изменить длину, угол или разворот пальца",
+				"how": "Через небольшой разрез по внутренней стороне пальца хирург пропиливает кость, убирает или разворачивает клин нужного размера, сводит фрагменты и фиксирует их винтом, скобой или спицей; этап короткий и часто выполняется вместе с операцией на плюсневой кости",
+				"when": "Отклонение большого пальца наружу, которое сохраняется после коррекции плюсневой кости, разворот пальца с натиранием соседнего, слишком длинный палец с перегрузкой и деформацией ногтя, повторное вмешательство после неполной коррекции",
+				"prep": "Предоперационное обследование, рентген стопы с нагрузкой и осмотр анестезиолога; не есть и не пить по указанию врача, заранее купить послеоперационную обувь с разгрузкой переднего отдела и договориться о поездке домой",
+				"abnormal": "Отёк стопы держится долго, иногда несколько месяцев, обувь по размеру подходит не сразу, а палец в первое время двигается хуже — такой ход событий обычен. Нарастающая боль, покраснение, выделения из раны, температура или потеря достигнутого положения пальца требуют осмотра, а когда наступать полной стопой и менять обувь, определяет оперировавший врач"
+			},
+			"en": {
+				"what": "Cutting the main phalanx of the big toe and fixing it in a new position in order to change the toe's length, angle or rotation",
+				"how": "Through a small incision on the inner side of the toe the surgeon cuts the bone, removes or rotates a wedge of the required size, brings the fragments together and fixes them with a screw, staple or wire; the step is short and is often combined with surgery on the metatarsal bone",
+				"when": "A big toe that still points outwards after the metatarsal has been corrected, a rotated toe that rubs against its neighbour, an overlong toe with overload and nail deformity, and repeat surgery after incomplete correction",
+				"prep": "Pre-operative work-up, weight-bearing X-rays of the foot and an anaesthetist review; fasting as instructed, post-operative shoes that offload the forefoot bought in advance, and a ride home arranged",
+				"abnormal": "Swelling of the foot lasts a long time, sometimes several months, ordinary shoes do not fit straight away and the toe moves less well at first — this course is usual. Increasing pain, redness, discharge from the wound, fever or loss of the position achieved need to be examined, and when to walk on the whole foot and change shoes is decided by the operating surgeon"
+			},
+			"sr": {
+				"what": "Presijecanje osnovne falange palca stopala i njena fiksacija u novom položaju, da bi se promijenili dužina, ugao ili rotacija prsta",
+				"how": "Kroz mali rez sa unutrašnje strane prsta hirurg presiječe kost, ukloni ili zaokrene klin potrebne veličine, približi fragmente i učvrsti ih zavrtnjem, spajalicom ili iglom; korak je kratak i često se radi zajedno sa zahvatom na metatarzalnoj kosti",
+				"when": "Palac koji i poslije korekcije metatarzalne kosti ostaje skrenut prema van, zaokrenut prst koji žulja susjedni, predugačak prst sa preopterećenjem i deformisanim noktom, ponovni zahvat poslije nepotpune korekcije",
+				"prep": "Preoperativna obrada, rendgen stopala pod opterećenjem i pregled anesteziologa; bez hrane i pića po uputstvu ljekara, unaprijed nabaviti postoperativnu obuću koja rasterećuje prednji dio stopala i dogovoriti prevoz kući",
+				"abnormal": "Otok stopala se dugo zadržava, ponekad mjesecima, obuća po broju ne odgovara odmah, a prst se u početku slabije pokreće — takav tok je uobičajen. Bol koja se pojačava, crvenilo, sekret iz rane, povišena temperatura ili gubitak postignutog položaja prsta traže pregled, a kada se staje na cijelo stopalo i mijenja obuća, određuje hirurg koji je operisao"
+			},
+			"de": {
+				"what": "Das Durchtrennen des Grundglieds der Großzehe und seine Fixierung in neuer Stellung, um Länge, Winkel oder Drehung der Zehe zu verändern",
+				"how": "Über einen kleinen Schnitt an der Innenseite der Zehe durchtrennt der Chirurg den Knochen, entnimmt oder dreht einen Keil der nötigen Größe, führt die Fragmente zusammen und fixiert sie mit Schraube, Klammer oder Draht; der Schritt ist kurz und wird oft mit einem Eingriff am Mittelfußknochen kombiniert",
+				"when": "Eine Großzehe, die nach Korrektur des Mittelfußknochens weiterhin nach außen zeigt, eine verdrehte Zehe, die an der Nachbarzehe scheuert, eine zu lange Zehe mit Überlastung und Nagelveränderung sowie Folgeeingriffe nach unvollständiger Korrektur",
+				"prep": "Voruntersuchungen, Röntgen des Fußes unter Belastung und Vorstellung beim Anästhesisten; Nüchternheit nach Anweisung, einen Vorfußentlastungsschuh vorab besorgen und die Heimfahrt organisieren",
+				"abnormal": "Die Schwellung des Fußes hält lange an, manchmal Monate, normale Schuhe passen nicht sofort und die Zehe bewegt sich anfangs schlechter — dieser Verlauf ist üblich. Zunehmender Schmerz, Rötung, Wundsekret, Fieber oder der Verlust der erreichten Stellung gehören untersucht; wann der ganze Fuß belastet und das Schuhwerk gewechselt wird, entscheidet der operierende Chirurg"
+			},
+			"tr": {
+				"what": "Ayak başparmağının temel falanksının kesilerek parmağın uzunluğunu, açısını ya da dönüşünü değiştirmek üzere yeni konumda tespit edilmesi",
+				"how": "Parmağın iç yüzündeki küçük kesiden cerrah kemiği keser, gereken büyüklükte kama alır ya da döndürür, parçaları yaklaştırıp vida, klips veya telle tespit eder; bu basamak kısadır ve sıklıkla tarak kemiği ameliyatıyla birlikte yapılır",
+				"when": "Tarak kemiği düzeltildikten sonra da dışa dönük kalan başparmak, komşu parmağa sürten dönmüş parmak, aşırı uzun ve tırnağı bozulacak kadar zorlanan parmak, eksik düzeltme sonrası ikinci girişim",
+				"prep": "Ameliyat öncesi tetkikler, yük altında ayak röntgeni ve anestezi değerlendirmesi; hekimin belirttiği süre aç kalmak, ön ayağı rahatlatan ameliyat sonrası ayakkabıyı önceden almak ve eve dönüş için ulaşım ayarlamak",
+				"abnormal": "Ayaktaki şişlik uzun sürer, kimi zaman aylarca; normal ayakkabı hemen olmaz ve parmak başlangıçta daha az hareket eder — bu seyir olağandır. Artan ağrı, kızarıklık, yaradan akıntı, ateş ya da elde edilen parmak konumunun kaybı muayene gerektirir; tüm ayakla basmaya ve ayakkabı değişimine ameliyatı yapan cerrah karar verir"
+			}
+		}
+	},
+	{
+		"slug": "quadriceps-rupture-suture",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Сшивание разорванного сухожилия четырёхглавой мышцы бедра над надколенником, через которое передаётся усилие при разгибании колена",
+				"how": "Через разрез над надколенником хирург находит концы сухожилия, сшивает их прочными нитями или проводит через каналы в надколеннике, проверяет разгибание и накладывает ортез с фиксированным углом; операция проходит под анестезией и занимает около часа",
+				"when": "Разрыв сухожилия квадрицепса после резкого напряжения мышцы при согнутом колене, невозможность выпрямить ногу и удержать её на весу, западение над надколенником после травмы",
+				"prep": "Предоперационное обследование и осмотр анестезиолога, снимки и УЗИ или МРТ колена; не есть и не пить по указанию врача, заранее подготовить ортез и костыли — оперировать лучше в ближайшие дни после травмы",
+				"abnormal": "После шва колено держат в ортезе, разгибание восстанавливается раньше сгибания, а сила мышцы возвращается месяцами, поэтому отёк и слабость бедра в это время обычны. Повторная потеря разгибания, щелчок с внезапной слабостью, нарастающая боль, покраснение или температура требуют срочного осмотра, а темп сгибания и нагрузки задаёт оперировавший врач"
+			},
+			"en": {
+				"what": "Repair of the torn tendon of the thigh's four-headed muscle above the kneecap, through which the force of straightening the knee is transmitted",
+				"how": "Through an incision above the kneecap the surgeon finds the ends of the tendon, joins them with strong sutures or passes them through tunnels in the kneecap, checks the straightening and applies a brace locked at a set angle; the operation is done under anaesthesia and takes about an hour",
+				"when": "A rupture of the quadriceps tendon after a sudden contraction with the knee bent, inability to straighten the leg and hold it up, and a dent above the kneecap after an injury",
+				"prep": "Pre-operative work-up and an anaesthetist review, X-rays and an ultrasound or MRI of the knee; fasting as instructed, a brace and crutches ready in advance — surgery is best done within a few days of the injury",
+				"abnormal": "After the repair the knee is kept in a brace, straightening comes back before bending, and muscle strength returns over months, so swelling and a weak thigh are usual in that period. Loss of straightening again, a snap with sudden weakness, increasing pain, redness or fever call for an urgent check, and the pace of bending and loading is set by the operating surgeon"
+			},
+			"sr": {
+				"what": "Ušivanje pokidane tetive četvoroglavog mišića butine iznad čašice, preko koje se prenosi sila pri opružanju koljena",
+				"how": "Kroz rez iznad čašice hirurg pronađe krajeve tetive, spoji ih čvrstim koncem ili ih provuče kroz kanale u čašici, provjeri opružanje i postavi ortozu sa zaključanim uglom; operacija se radi u anesteziji i traje oko sat vremena",
+				"when": "Ruptura tetive kvadricepsa poslije naglog naprezanja mišića pri savijenom koljenu, nemogućnost da se noga ispravi i zadrži u vazduhu, udubljenje iznad čašice poslije povrede",
+				"prep": "Preoperativna obrada i pregled anesteziologa, snimci i ultrazvuk ili MR koljena; bez hrane i pića po uputstvu ljekara, ortozu i štake pripremiti unaprijed — bolje je operisati u prvim danima poslije povrede",
+				"abnormal": "Poslije šava koljeno se drži u ortozi, opružanje se vraća prije savijanja, a snaga mišića tek kroz mjesece, pa su otok i slabost butine u tom periodu uobičajeni. Ponovni gubitak opružanja, škljocaj sa naglom slabošću, bol koja se pojačava, crvenilo ili povišena temperatura traže hitan pregled, a tempo savijanja i opterećenja određuje hirurg koji je operisao"
+			},
+			"de": {
+				"what": "Die Naht der gerissenen Sehne des vierköpfigen Oberschenkelmuskels oberhalb der Kniescheibe, über die die Kraft beim Strecken des Knies übertragen wird",
+				"how": "Über einen Schnitt oberhalb der Kniescheibe sucht der Chirurg die Sehnenenden, verbindet sie mit kräftigen Fäden oder führt sie durch Bohrkanäle in der Kniescheibe, prüft die Streckung und legt eine in einem festen Winkel verriegelte Orthese an; die Operation erfolgt in Narkose und dauert etwa eine Stunde",
+				"when": "Riss der Quadrizepssehne nach plötzlicher Anspannung bei gebeugtem Knie, Unvermögen, das Bein zu strecken und angehoben zu halten, sowie eine Delle oberhalb der Kniescheibe nach dem Unfall",
+				"prep": "Voruntersuchungen und Vorstellung beim Anästhesisten, Röntgen sowie Ultraschall oder MRT des Knies; Nüchternheit nach Anweisung, Orthese und Gehstützen vorab bereitlegen — operiert wird am besten in den ersten Tagen nach der Verletzung",
+				"abnormal": "Nach der Naht bleibt das Knie in der Orthese, die Streckung kehrt vor der Beugung zurück und die Muskelkraft erst über Monate, weshalb Schwellung und ein schwacher Oberschenkel in dieser Zeit üblich sind. Erneuter Streckverlust, ein Knacken mit plötzlicher Schwäche, zunehmender Schmerz, Rötung oder Fieber erfordern eine sofortige Kontrolle; das Tempo von Beugung und Belastung gibt der operierende Chirurg vor"
+			},
+			"tr": {
+				"what": "Diz açılırken kuvveti ileten, diz kapağının üzerindeki kuadriseps tendonunun yırtığının dikilmesi",
+				"how": "Diz kapağının üzerindeki kesiden cerrah tendon uçlarını bulur, sağlam dikişlerle birleştirir ya da diz kapağındaki tünellerden geçirir, dizin açılmasını kontrol eder ve açısı kilitli ortez uygular; ameliyat anestezi altında yapılır ve yaklaşık bir saat sürer",
+				"when": "Diz bükülüyken kasın ani kasılmasıyla oluşan kuadriseps tendon yırtığı, bacağı düzeltip havada tutamama, yaralanma sonrası diz kapağının üzerinde çökme",
+				"prep": "Ameliyat öncesi tetkikler ve anestezi değerlendirmesi, röntgen ile diz ultrasonu veya MR; hekimin belirttiği süre aç kalmak, ortez ve koltuk değneğini önceden hazırlamak — ameliyatın yaralanmadan sonraki ilk günlerde yapılması tercih edilir",
+				"abnormal": "Onarımdan sonra diz ortezde tutulur, açma hareketi bükmeden önce geri gelir, kas gücü ise aylar içinde döner; bu dönemde şişlik ve uylukta güçsüzlük olağandır. Açma hareketinin yeniden kaybı, ani güçsüzlükle birlikte kopma hissi, artan ağrı, kızarıklık ya da ateş acil değerlendirme gerektirir; bükme ve yüklenme temposunu ameliyatı yapan cerrah belirler"
+			}
+		}
+	},
+	{
+		"slug": "radial-diaphysis-fracture-closed-or-open-withwithout-fixation",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Лечение перелома средней части лучевой кости предплечья: открытое сопоставление отломков через разрез, с фиксацией пластиной или стержнем либо без неё",
+				"how": "Под анестезией хирург обнажает место перелома, сопоставляет отломки, восстанавливая длину и поворот кости, и при необходимости закрепляет их пластиной с винтами или внутрикостным стержнем, затем зашивает рану и делает контрольный снимок",
+				"when": "Перелом диафиза лучевой кости со смещением, который не удержать гипсом, перелом вместе с локтевой костью, открытый перелом, перелом в сочетании с вывихом в лучелоктевом суставе, вторичное смещение под гипсом",
+				"prep": "Предоперационное обследование и осмотр анестезиолога, свежие снимки предплечья, отказ от еды и питья по указанию врача, снять кольца и часы с этой руки, сообщить о препаратах для разжижения крови",
+				"abnormal": "Для предплечья важно не только сращение, но и возвращение поворота кисти ладонью вверх и вниз, поэтому движения начинают рано, а полное восстановление занимает месяцы. Отёк и дискомфорт в первые недели обычны, а нарастающая боль, онемение пальцев, покраснение и выделения из раны требуют срочного осмотра; сроки нагрузки и вопрос об удалении пластины позже решает оперировавший врач"
+			},
+			"en": {
+				"what": "Treatment of a fracture of the middle part of the radius in the forearm: open alignment of the fragments through an incision, with or without fixation by a plate or a nail",
+				"how": "Under anaesthesia the surgeon exposes the fracture, puts the fragments back restoring the length and the rotation of the bone and, where needed, secures them with a plate and screws or an intramedullary nail, then closes the wound and takes a check X-ray",
+				"when": "A displaced fracture of the radial shaft that a cast cannot hold, a fracture together with the ulna, an open fracture, a fracture combined with dislocation in the radioulnar joint, and secondary displacement inside a cast",
+				"prep": "Pre-operative work-up and an anaesthetist review, recent X-rays of the forearm, fasting as instructed, rings and watch off that arm, and blood-thinning medicines reported to the doctor",
+				"abnormal": "For the forearm what matters is not only union but also the return of turning the palm up and down, so movement is started early and full recovery takes months. Swelling and discomfort in the first weeks are usual, while increasing pain, numb fingers, redness and discharge from the wound need an urgent check; loading times and whether the plate is removed later are decided by the operating surgeon"
+			},
+			"sr": {
+				"what": "Liječenje preloma srednjeg dijela žbice podlaktice: otvoreno namještanje fragmenata kroz rez, sa fiksacijom pločicom ili klinom ili bez nje",
+				"how": "U anesteziji hirurg prikaže mjesto preloma, namjesti fragmente vraćajući dužinu i rotaciju kosti i po potrebi ih učvrsti pločicom sa zavrtnjima ili intramedularnim klinom, zatim ušije ranu i uradi kontrolni snimak",
+				"when": "Prelom dijafize radiusa sa pomjeranjem koji gips ne može zadržati, prelom zajedno sa ulnom, otvoreni prelom, prelom udružen sa iščašenjem u radioulnarnom zglobu, naknadno pomjeranje ispod gipsa",
+				"prep": "Preoperativna obrada i pregled anesteziologa, svježi snimci podlaktice, bez hrane i pića po uputstvu ljekara, skinuti prstenje i sat sa te ruke i prijaviti lijekove za razrjeđivanje krvi",
+				"abnormal": "Za podlakticu nije važno samo srastanje nego i povratak okretanja dlana nagore i nadolje, pa se pokreti počinju rano, a potpun oporavak traje mjesecima. Otok i nelagoda prvih sedmica su uobičajeni, dok bol koja se pojačava, utrnuli prsti, crvenilo i sekret iz rane traže hitan pregled; rokove opterećenja i pitanje kasnijeg vađenja pločice rješava hirurg koji je operisao"
+			},
+			"de": {
+				"what": "Behandlung eines Bruchs im mittleren Teil der Speiche am Unterarm: offenes Einrichten der Fragmente über einen Schnitt, mit oder ohne Fixierung durch Platte oder Nagel",
+				"how": "In Narkose legt der Chirurg die Bruchstelle frei, richtet die Fragmente unter Wiederherstellung von Länge und Drehung des Knochens ein und sichert sie bei Bedarf mit Platte und Schrauben oder einem Marknagel, danach wird die Wunde verschlossen und eine Kontrollaufnahme angefertigt",
+				"when": "Verschobener Schaftbruch der Speiche, den ein Gips nicht hält, Bruch zusammen mit der Elle, offener Bruch, Bruch mit Luxation im Radioulnargelenk sowie eine Nachverschiebung im Gips",
+				"prep": "Voruntersuchungen und Vorstellung beim Anästhesisten, aktuelle Aufnahmen des Unterarms, Nüchternheit nach Anweisung, Ringe und Uhr von diesem Arm ablegen und blutverdünnende Medikamente angeben",
+				"abnormal": "Am Unterarm zählt nicht nur die knöcherne Heilung, sondern auch die Rückkehr der Drehung der Handfläche nach oben und unten, deshalb wird früh bewegt und die vollständige Erholung dauert Monate. Schwellung und Beschwerden in den ersten Wochen sind üblich, während zunehmender Schmerz, taube Finger, Rötung und Wundsekret eine sofortige Kontrolle erfordern; Belastung und eine spätere Materialentfernung legt der operierende Chirurg fest"
+			},
+			"tr": {
+				"what": "Ön koldaki radius kemiğinin orta bölümündeki kırığın tedavisi: kesi yoluyla açık redüksiyon ve plak ya da çivi ile tespit veya tespitsiz uygulama",
+				"how": "Anestezi altında cerrah kırık bölgesini açar, kemiğin uzunluğunu ve dönüşünü geri kazandırarak parçaları yerine getirir, gerekirse vidalı plak ya da kemik içi çiviyle tespit eder, ardından yarayı kapatıp kontrol filmi çeker",
+				"when": "Alçının tutamayacağı kaymış radius cisim kırığı, ulna ile birlikte kırık, açık kırık, radioulnar eklem çıkığının eşlik ettiği kırık, alçı içinde sonradan gelişen kayma",
+				"prep": "Ameliyat öncesi tetkikler ve anestezi değerlendirmesi, güncel ön kol filmleri, hekimin belirttiği süre aç kalmak, o koldaki yüzük ve saati çıkarmak, kan sulandırıcı ilaçları bildirmek",
+				"abnormal": "Ön kolda sonucu belirleyen yalnız kaynama değil, avuç içini yukarı ve aşağı çevirme hareketinin geri gelmesidir; bu nedenle harekete erken başlanır ve tam iyileşme aylar alır. İlk haftalarda şişlik ve rahatsızlık olağandır; artan ağrı, parmaklarda uyuşma, kızarıklık ve yaradan akıntı acil değerlendirme gerektirir, yüklenme zamanına ve plağın ileride çıkarılıp çıkarılmayacağına ameliyatı yapan cerrah karar verir"
+			}
+		}
+	},
+	{
+		"slug": "radial-head-resection",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Удаление головки лучевой кости — её верхней части, которая участвует в локтевом суставе и в повороте предплечья",
+				"how": "Через разрез по наружной стороне локтя хирург удаляет разрушенную головку, при необходимости ставит на её место протез, проверяет объём сгибания и поворота и зашивает рану; операция идёт под анестезией и занимает около часа",
+				"when": "Многооскольчатый перелом головки лучевой кости, который невозможно собрать и закрепить, блокада поворота предплечья отломком, последствия неправильно сросшегося перелома, разрушение головки при хроническом артрите",
+				"prep": "Предоперационное обследование, снимки и часто КТ локтя, осмотр анестезиолога; не есть и не пить по указанию врача, снять кольца и часы с этой руки, договориться о поездке домой",
+				"abnormal": "После операции движения в локте начинают рано, поворот предплечья обычно улучшается, но полного объёма достигают не все, а со временем возможны лёгкая нестабильность локтя и ощущение слабости при упоре. Нарастающая боль, отёк, онемение пальцев, покраснение и выделения из раны — повод обратиться раньше срока, а программу разработки движений определяет оперировавший врач"
+			},
+			"en": {
+				"what": "Removal of the head of the radius — its upper part, which takes part in the elbow joint and in turning the forearm",
+				"how": "Through an incision on the outer side of the elbow the surgeon removes the destroyed head, puts an implant in its place if needed, checks the range of bending and rotation and closes the wound; the operation is done under anaesthesia and takes about an hour",
+				"when": "A multi-fragment fracture of the radial head that cannot be put together and fixed, a fragment blocking rotation of the forearm, the consequences of a fracture that healed in a wrong position, and destruction of the head in chronic arthritis",
+				"prep": "Pre-operative work-up, X-rays and often a CT scan of the elbow, an anaesthetist review; fasting as instructed, rings and watch off that arm, and a ride home arranged",
+				"abnormal": "Movement of the elbow is started early after the operation and rotation of the forearm usually improves, though not everyone regains the full range, and mild instability of the elbow or a feeling of weakness when leaning on the arm may appear with time. Increasing pain, swelling, numb fingers, redness and discharge from the wound are reasons to come earlier, and the programme for regaining movement is set by the operating surgeon"
+			},
+			"sr": {
+				"what": "Uklanjanje glavice žbice — njenog gornjeg dijela koji učestvuje u zglobu lakta i u okretanju podlaktice",
+				"how": "Kroz rez sa spoljašnje strane lakta hirurg ukloni razorenu glavicu, po potrebi na njeno mjesto postavi protezu, provjeri obim savijanja i rotacije i ušije ranu; operacija se radi u anesteziji i traje oko sat vremena",
+				"when": "Višeiverni prelom glavice radiusa koji se ne može sastaviti i učvrstiti, fragment koji blokira okretanje podlaktice, posljedice loše srastalog preloma, razaranje glavice kod hroničnog artritisa",
+				"prep": "Preoperativna obrada, snimci i često CT lakta, pregled anesteziologa; bez hrane i pića po uputstvu ljekara, skinuti prstenje i sat sa te ruke i dogovoriti prevoz kući",
+				"abnormal": "Poslije operacije se pokreti u laktu počinju rano i okretanje podlaktice se obično popravlja, ali pun obim ne postignu svi, a vremenom su mogući blaga nestabilnost lakta i osjećaj slabosti pri oslanjanju. Bol koja se pojačava, otok, utrnulost prstiju, crvenilo i sekret iz rane razlog su da se javite ranije, a program razrade pokreta određuje hirurg koji je operisao"
+			},
+			"de": {
+				"what": "Die Entfernung des Speichenköpfchens — des oberen Speichenanteils, der am Ellenbogengelenk und an der Unterarmdrehung beteiligt ist",
+				"how": "Über einen Schnitt an der Außenseite des Ellenbogens entfernt der Chirurg das zerstörte Köpfchen, setzt bei Bedarf eine Prothese ein, prüft Beugung und Drehung und verschließt die Wunde; die Operation erfolgt in Narkose und dauert etwa eine Stunde",
+				"when": "Mehrfragmentbruch des Speichenköpfchens, der nicht rekonstruierbar ist, ein Fragment, das die Unterarmdrehung blockiert, Folgen eines in Fehlstellung verheilten Bruchs sowie Zerstörung des Köpfchens bei chronischer Arthritis",
+				"prep": "Voruntersuchungen, Röntgen und häufig eine CT des Ellenbogens, Vorstellung beim Anästhesisten; Nüchternheit nach Anweisung, Ringe und Uhr von diesem Arm ablegen und die Heimfahrt organisieren",
+				"abnormal": "Nach der Operation wird früh bewegt und die Unterarmdrehung bessert sich meist, doch nicht alle erreichen den vollen Umfang, und mit der Zeit sind eine leichte Instabilität des Ellenbogens und ein Schwächegefühl beim Abstützen möglich. Zunehmender Schmerz, Schwellung, taube Finger, Rötung und Wundsekret sind Gründe, früher zu kommen; das Bewegungsprogramm legt der operierende Chirurg fest"
+			},
+			"tr": {
+				"what": "Dirsek eklemine ve ön kolun dönme hareketine katılan radius başının çıkarılması",
+				"how": "Dirseğin dış yüzündeki kesiden cerrah parçalanmış başı çıkarır, gerekirse yerine protez yerleştirir, bükme ve dönme açıklığını kontrol eder ve yarayı kapatır; ameliyat anestezi altında yapılır ve yaklaşık bir saat sürer",
+				"when": "Birleştirilip tespit edilemeyen çok parçalı radius baş kırığı, ön kolun dönüşünü kilitleyen kemik parçası, yanlış kaynamış kırığın sonuçları, kronik artritte başın harap olması",
+				"prep": "Ameliyat öncesi tetkikler, röntgen ve sıklıkla dirsek tomografisi, anestezi değerlendirmesi; hekimin belirttiği süre aç kalmak, o koldaki yüzük ve saati çıkarmak ve eve dönüş için ulaşım ayarlamak",
+				"abnormal": "Ameliyattan sonra dirsek hareketlerine erken başlanır ve ön kolun dönüşü genellikle düzelir, ancak herkes tam açıklığa ulaşmaz; zamanla dirsekte hafif dengesizlik ve destek alırken güçsüzlük hissi görülebilir. Artan ağrı, şişlik, parmaklarda uyuşma, kızarıklık ve yaradan akıntı erken başvurmayı gerektirir; hareket açma programını ameliyatı yapan cerrah belirler"
+			}
+		}
+	},
+	{
+		"slug": "re-amputation-through-femur",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Повторная операция на уже ампутированной ноге с формированием новой культи на уровне бедренной кости",
+				"how": "В операционной под анестезией хирург иссекает нежизнеспособные ткани и старый рубец, укорачивает бедренную кость до уровня, где ткани хорошо кровоснабжаются, обрабатывает нервы и сосуды, укрывает опил мышцами и формирует культю; длительность зависит от объёма вмешательства",
+				"when": "Незаживающая или инфицированная культя, недостаточное кровоснабжение на прежнем уровне, болезненная культя из-за невромы или костного выступа, культя, форма которой не подходит для протеза",
+				"prep": "Госпитализация, анализы, оценка кровотока и осмотр анестезиолога, обсуждение нового уровня и перспектив протезирования, отказ от еды и питья по указанию врача и согласование постоянно принимаемых препаратов",
+				"abnormal": "После операции ожидаются боль, отёк культи и поэтапное заживление, фантомные ощущения часто сохраняются; ампутация выше колена меняет и программу реабилитации, и тип протеза. Расхождение шва, выделения, температура или резкое усиление боли требуют обращения к врачу, а сроки формирования культи, компрессии и примерки протеза определяет лечащий врач"
+			},
+			"en": {
+				"what": "A repeat operation on an already amputated leg in which a new stump is formed at the level of the thigh bone",
+				"how": "In the operating room under anaesthesia the surgeon excises non-viable tissue and the old scar, shortens the femur to a level where the tissues have a good blood supply, deals with the nerves and vessels, covers the bone end with muscle and shapes the stump; the length depends on the extent of the work",
+				"when": "A stump that does not heal or is infected, insufficient blood supply at the previous level, a painful stump due to a neuroma or a bony spur, and a stump whose shape does not suit a prosthesis",
+				"prep": "Admission to hospital, blood tests, assessment of the blood flow and an anaesthetist review, a discussion of the new level and the prospects for a prosthesis, fasting as instructed and agreement on the medicines you take regularly",
+				"abnormal": "Pain, swelling of the stump and healing in stages are expected after the operation, and phantom sensations often persist; an amputation above the knee also changes the rehabilitation programme and the type of prosthesis. A wound that opens, discharge, fever or a sharp increase in pain should be reported to a doctor, and the timing of stump shaping, compression and prosthesis fitting is set by the treating physician"
+			},
+			"sr": {
+				"what": "Ponovna operacija na već amputiranoj nozi, kojom se novi patrljak oblikuje na nivou butne kosti",
+				"how": "U operacionoj sali u anesteziji hirurg isijeca tkivo koje se ne može sačuvati i stari ožiljak, skraćuje butnu kost do nivoa sa dobrom prokrvljenošću, zbrine živce i krvne sudove, prekrije presjek kosti mišićima i oblikuje patrljak; trajanje zavisi od obima zahvata",
+				"when": "Patrljak koji ne zarasta ili je inficiran, nedovoljna prokrvljenost na dosadašnjem nivou, bolan patrljak zbog neuroma ili koštanog šiljka, patrljak čiji oblik ne odgovara protezi",
+				"prep": "Prijem u bolnicu, analize, procjena protoka krvi i pregled anesteziologa, razgovor o novom nivou i mogućnostima protetisanja, uzdržavanje od hrane i pića po uputstvu i usaglašavanje stalne terapije",
+				"abnormal": "Poslije operacije se očekuju bol, otok patrljka i zarastanje u fazama, a fantomski osjećaji često ostaju; amputacija iznad koljena mijenja i program rehabilitacije i vrstu proteze. Razilaženje rane, sekret, povišena temperatura ili naglo jača bol traže javljanje ljekaru, a rokove oblikovanja patrljka, kompresije i probe proteze određuje ljekar koji vas liječi"
+			},
+			"de": {
+				"what": "Eine erneute Operation an einem bereits amputierten Bein, bei der ein neuer Stumpf auf Höhe des Oberschenkelknochens gebildet wird",
+				"how": "Im OP in Narkose entfernt der Chirurg nicht erhaltungsfähiges Gewebe und die alte Narbe, kürzt den Oberschenkelknochen bis auf ein gut durchblutetes Niveau, versorgt Nerven und Gefäße, deckt das Knochenende mit Muskulatur und formt den Stumpf; die Dauer hängt vom Umfang des Eingriffs ab",
+				"when": "Ein nicht heilender oder infizierter Stumpf, unzureichende Durchblutung auf der bisherigen Höhe, ein schmerzhafter Stumpf durch ein Neurom oder einen Knochensporn sowie ein Stumpf, dessen Form nicht zur Prothese passt",
+				"prep": "Stationäre Aufnahme, Laboruntersuchungen, Beurteilung der Durchblutung und Vorstellung beim Anästhesisten, Besprechung des neuen Niveaus und der Prothesenversorgung, Nüchternheit nach Anweisung und Abstimmung der Dauermedikation",
+				"abnormal": "Nach der Operation sind Schmerz, Schwellung des Stumpfes und eine stufenweise Heilung zu erwarten, Phantomempfindungen bleiben oft bestehen; eine Amputation oberhalb des Knies verändert auch Rehabilitationsprogramm und Prothesentyp. Eine aufgehende Wunde, Sekret, Fieber oder stark zunehmender Schmerz gehören dem Arzt gemeldet; Zeitpunkte von Stumpfformung, Kompression und Prothesenanprobe legt der behandelnde Arzt fest"
+			},
+			"tr": {
+				"what": "Daha önce ampute edilmiş bacakta, uyluk kemiği düzeyinde yeni bir güdük oluşturulan ikinci ameliyat",
+				"how": "Ameliyathanede anestezi altında cerrah canlılığını yitirmiş dokuyu ve eski izi çıkarır, uyluk kemiğini kanlanmanın yeterli olduğu düzeye kadar kısaltır, sinir ve damarları düzenler, kemik kesisini kaslarla örter ve güdüğü şekillendirir; süre girişimin genişliğine bağlıdır",
+				"when": "İyileşmeyen ya da enfekte güdük, önceki düzeyde yetersiz kanlanma, nöroma ya da kemik çıkıntısına bağlı ağrılı güdük, biçimi protezle uyuşmayan güdük",
+				"prep": "Hastaneye yatış, tahliller, kan akımının değerlendirilmesi ve anestezi muayenesi, yeni düzeyin ve protez olanaklarının konuşulması, hekimin belirttiği süre aç kalmak ve sürekli kullanılan ilaçların gözden geçirilmesi",
+				"abnormal": "Ameliyattan sonra ağrı, güdükte şişlik ve aşamalı iyileşme beklenir, hayalet duyumlar çoğu zaman sürer; diz üstü ampütasyon rehabilitasyon programını ve protez tipini de değiştirir. Yaranın açılması, akıntı, ateş ya da ağrının aniden artması hekime bildirilmelidir; güdüğün şekillendirilmesi, kompresyon ve protez provası zamanlarını tedaviyi yürüten hekim belirler"
+			}
+		}
+	},
+	{
+		"slug": "reduction-of-shoulder-dislocation-with-greater-tuberosity-fracture",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Возвращение головки плечевой кости в сустав в ситуации, когда вместе с вывихом сломан большой бугорок — место прикрепления мышц вращательной манжеты",
+				"how": "После обезболивания врач медленно, без рывков, тягой и поворотом возвращает головку плеча в сустав, затем руку фиксируют повязкой и обязательно делают контрольный снимок — он показывает и вправление, и положение отломка бугорка; занимает 15–30 минут",
+				"when": "Свежий вывих плеча после падения на руку или резкого движения, если на снимке виден отрыв большого бугорка, повторный вывих с такой же травмой кости",
+				"prep": "Не есть и не пить до осмотра врача — может понадобиться медикаментозный сон, снять с руки кольца, часы и браслеты, прийти в одежде с широким рукавом, а снимок до вправления делают всегда",
+				"abnormal": "После вправления боль обычно резко уменьшается, но отломок бугорка иногда остаётся смещённым или сдвигается позже, поэтому повторный снимок назначают уже через несколько дней; сохраняющаяся слабость при подъёме руки может быть связана с повреждением вращательной манжеты. Онемение по наружной поверхности плеча, холодная кисть и нарастающая боль требуют срочного осмотра, а сроки фиксации и начало движений определяет травматолог"
+			},
+			"en": {
+				"what": "Putting the head of the humerus back into the joint when the dislocation comes together with a break of the greater tuberosity, the bony prominence where the rotator cuff muscles attach",
+				"how": "After pain relief the doctor slowly and without jerks uses traction and rotation to return the head of the humerus into the socket, then the arm is fixed in a sling and a check X-ray is always taken — it shows both the reduction and the position of the tuberosity fragment; it takes 15–30 minutes",
+				"when": "A fresh shoulder dislocation after a fall on the arm or a sudden movement when the X-ray shows the greater tuberosity torn off, and a repeat dislocation with the same bone injury",
+				"prep": "Nothing to eat or drink until the doctor has seen you — sedation may be needed, take rings, watch and bracelets off that arm, come in a top with a wide sleeve, and an X-ray before the reduction is always taken",
+				"abnormal": "Pain usually drops sharply after the reduction, but the tuberosity fragment sometimes stays displaced or moves later, which is why a repeat X-ray is scheduled within days; persistent weakness when lifting the arm may be related to a rotator cuff injury. Numbness over the outer side of the shoulder, a cold hand and increasing pain need an urgent check, and how long the arm is fixed and when movement starts is decided by the trauma surgeon"
+			},
+			"sr": {
+				"what": "Vraćanje glave nadlaktične kosti u zglob kada je uz iščašenje slomljen i veliki tuberkulum, koštana izbočina na koju se pripajaju mišići rotatorne manžetne",
+				"how": "Poslije analgezije ljekar polako, bez trzaja, vučom i rotacijom vraća glavu humerusa u zglob, zatim se ruka fiksira mitelom i obavezno se radi kontrolni snimak — on pokazuje i namještanje i položaj odlomljenog tuberkuluma; traje 15–30 minuta",
+				"when": "Svježe iščašenje ramena poslije pada na ruku ili naglog pokreta, kada se na snimku vidi otkinut veliki tuberkulum, ponovljeno iščašenje sa istom koštanom povredom",
+				"prep": "Ne jesti i ne piti do pregleda ljekara — može biti potrebna sedacija, skinuti prstenje, sat i narukvice sa te ruke, doći u odjeći sa širokim rukavom, a snimak prije namještanja radi se uvijek",
+				"abnormal": "Poslije namještanja bol obično naglo popusti, ali odlomljeni tuberkulum ponekad ostane pomjeren ili se pomjeri kasnije, pa se kontrolni snimak zakazuje već za nekoliko dana; uporna slabost pri podizanju ruke može biti povezana sa povredom rotatorne manžetne. Utrnulost po spoljašnjoj strani ramena, hladna šaka i bol koja se pojačava traže hitan pregled, a trajanje fiksacije i početak pokreta određuje traumatolog"
+			},
+			"de": {
+				"what": "Das Zurückbringen des Oberarmkopfes in das Gelenk, wenn zugleich der große Höcker des Oberarmknochens gebrochen ist — der Knochenvorsprung, an dem die Muskeln der Rotatorenmanschette ansetzen",
+				"how": "Nach Schmerzausschaltung bringt der Arzt den Oberarmkopf langsam und ohne Ruck durch Zug und Drehung zurück in die Pfanne, danach wird der Arm in einer Schlinge ruhiggestellt und immer eine Kontrollaufnahme angefertigt — sie zeigt sowohl die Einrenkung als auch die Lage des abgesprengten Höckers; das dauert 15–30 Minuten",
+				"when": "Frische Schulterluxation nach Sturz auf den Arm oder einer ruckartigen Bewegung, wenn die Aufnahme einen abgerissenen großen Höcker zeigt, sowie eine erneute Luxation mit derselben knöchernen Verletzung",
+				"prep": "Bis zur ärztlichen Untersuchung nichts essen und trinken — eine Sedierung kann nötig sein, Ringe, Uhr und Armbänder von diesem Arm ablegen, in einem Oberteil mit weitem Ärmel kommen; eine Aufnahme vor dem Einrenken wird immer gemacht",
+				"abnormal": "Nach dem Einrenken lässt der Schmerz meist deutlich nach, doch der abgesprengte Höcker bleibt manchmal verschoben oder rutscht später ab, weshalb schon nach wenigen Tagen eine erneute Aufnahme angesetzt wird; anhaltende Schwäche beim Heben des Arms kann mit einer Schädigung der Rotatorenmanschette zusammenhängen. Taubheit an der Außenseite der Schulter, eine kalte Hand und zunehmender Schmerz erfordern eine sofortige Kontrolle; Dauer der Ruhigstellung und Beginn der Bewegung legt der Unfallchirurg fest"
+			},
+			"tr": {
+				"what": "Omuz çıkığına rotator manşet kaslarının yapıştığı kemik çıkıntı olan büyük tüberkülün kırığı eşlik ettiğinde humerus başının eklem içine geri yerleştirilmesi",
+				"how": "Ağrı giderildikten sonra hekim yavaşça, ani hareket yapmadan, çekme ve döndürmeyle humerus başını eklem yerine getirir, ardından kol askıya alınır ve mutlaka kontrol filmi çekilir — bu film hem redüksiyonu hem de kopan tüberkülün konumunu gösterir; işlem 15–30 dakika sürer",
+				"when": "Kol üstüne düşme ya da ani hareket sonrası gelişen ve filmde büyük tüberkülün koptuğu görülen taze omuz çıkığı, aynı kemik yaralanmasıyla yinelenen çıkık",
+				"prep": "Hekim muayene edene kadar yiyip içmemek — sedasyon gerekebilir, o koldaki yüzük, saat ve bilezikleri çıkarmak, geniş kollu bir üstle gelmek; redüksiyon öncesi film her zaman çekilir",
+				"abnormal": "Redüksiyondan sonra ağrı genellikle belirgin azalır, ancak kopan tüberkül kimi zaman kaymış kalır ya da sonradan kayar; bu nedenle birkaç gün içinde kontrol filmi istenir, kolu kaldırırken süren güçsüzlük rotator manşet yaralanmasıyla ilişkili olabilir. Omuzun dış yüzünde uyuşma, elin soğuması ve artan ağrı acil değerlendirme gerektirir; tespit süresini ve harekete başlama zamanını travmatoloji uzmanı belirler"
+			}
+		}
+	}
+]

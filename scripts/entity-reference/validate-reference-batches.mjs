@@ -40,6 +40,20 @@ const EKAVICA = new Set([
 ]);
 const tokens = (s) => s.toLowerCase().split(/[^\p{L}]+/u).filter(Boolean);
 
+/**
+ * Слова, в которых латиница и кириллица перемешаны внутри одного слова:
+ * «slične» с кириллической «е», «kayманın» вместо «kaymanın». Глазами такое
+ * не видно, а поиск по слову потом не находит его никогда.
+ */
+function mixedScriptWords(text) {
+	const bad = [];
+	for (const word of String(text).split(/[^\p{L}]+/u)) {
+		if (!word) continue;
+		if (/\p{Script=Latin}/u.test(word) && /\p{Script=Cyrillic}/u.test(word)) bad.push(word);
+	}
+	return [...new Set(bad)];
+}
+
 // Числовой референс с единицей измерения: «3,5–5,5 ммоль/л», «10 mg/dL».
 const UNIT_RE = /\d\s*(?:[-–—]\s*\d[\d.,]*\s*)?(ммоль|мкмоль|мкг|мг\/|г\/л|ед\/л|мкме|ме\/|mmol|µmol|umol|mg\/d|g\/l|u\/l|iu\/l|ng\/m|pg\/m|mIU|mIU\/|nmol)/i;
 
@@ -95,6 +109,10 @@ for (const file of files) {
 					continue;
 				}
 				if (v.includes('|')) problems.push(`${where}: символ | в ${loc}.${f}`);
+				const mixed = mixedScriptWords(v);
+				if (mixed.length) {
+					problems.push(`${where}: смешение алфавитов «${mixed.join(', ')}» в ${loc}.${f}`);
+				}
 				if (UNIT_RE.test(v)) problems.push(`${where}: числовой референс в ${loc}.${f}: «${v.slice(0, 90)}»`);
 				if (loc === 'sr') {
 					const bad = tokens(v).filter((t) => EKAVICA.has(t));
